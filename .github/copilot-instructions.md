@@ -9,7 +9,7 @@ Purpose: Make AI agents productive immediately in this repo. Keep changes minima
 ## Default Agent Behaviors
 - Log each Q&A: create one file per exchange in `dev-logs/` named `YYYY-MM-DD-<summary>.md`. Use ISO date, short hyphenated summary (sanitize: spaces→`-`, remove `/\\:*?"<>|`).
 - Log format:
-  - `日期：<YYYY年M月D日>`
+  - `日期：<YYYY年M月D日H时M分>`
   - `摘要：<一句话>`
   - `【question】` + original text
   - `【try to solve】` + final answer

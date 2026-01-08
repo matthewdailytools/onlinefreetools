@@ -5,12 +5,16 @@ import { TaskDelete } from "./endpoints/taskDelete";
 import { TaskFetch } from "./endpoints/taskFetch";
 import { TaskList } from "./endpoints/taskList";
 
+type Env = {
+	ASSETS: Fetcher;
+};
+
 // Start a Hono app
 const app = new Hono<{ Bindings: Env }>();
 
 // Setup OpenAPI registry
 const openapi = fromHono(app, {
-	docs_url: "/",
+	docs_url: "/docs",
 });
 
 // Register OpenAPI endpoints
@@ -23,4 +27,12 @@ openapi.delete("/api/tasks/:taskSlug", TaskDelete);
 // app.get('/test', (c) => c.text('Hono!'))
 
 // Export the Hono app
-export default app;
+export default {
+	async fetch(request: Request, env: Env, ctx: ExecutionContext) {
+		const response = await app.fetch(request, env, ctx);
+		if (response.status === 404) {
+			return env.ASSETS.fetch(request);
+		}
+		return response;
+	},
+};
