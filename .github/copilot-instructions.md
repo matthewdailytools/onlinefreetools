@@ -11,8 +11,8 @@ Purpose: Make AI agents productive immediately in this repo. Keep changes minima
 - Log format:
   - `日期：<YYYY年M月D日>`
   - `摘要：<一句话>`
-  - `【用户提问】` + original text
-  - `【Copilot回答】` + final answer
+  - `【question】` + original text
+  - `【try to solve】` + final answer
   - Optionally append `【执行操作】` with file paths/commands changed.
 - Keep edits surgical: modify only files directly relevant to the user request. Do not introduce frameworks or unrelated refactors without explicit instruction.
 
