@@ -14,7 +14,9 @@ Purpose: Make AI agents productive immediately in this repo. Keep changes minima
   - `【question】` + original text
   - `【try to solve】` + final answer
   - Optionally append `【执行操作】` with file paths/commands changed.
+- Logging scope: do not log the act of creating the log file itself in `【执行操作】`; only list user-relevant file or config changes.
 - Exclusions: do not record the AI's trailing or clarifying prompts (e.g., the last AI question asking for confirmation). Only include the user's original question and the final, consolidated answer. 不要记录最后 AI 的提问/澄清性问题，只保留用户问题与最终答案。
+- Visibility: keep full Q&A content visible in the chat; logging to `dev-logs/` is a backend record and should not reduce or hide the conversation shown to the user.
 - Keep edits surgical: modify only files directly relevant to the user request. Do not introduce frameworks or unrelated refactors without explicit instruction.
 - Do not save sensitive data: use environment variables or other secure methods.
 
@@ -36,6 +38,15 @@ Purpose: Make AI agents productive immediately in this repo. Keep changes minima
 - Naming:
   - Files/dirs: kebab-case; environment names: `dev`, `staging`, `prod`.
 - Commits: concise imperative subject; include affected paths (e.g., `worker: add hello route`).
+
+## SEO Defaults
+- HTML head: include unique `<title>`, `<meta name="description">` (120–160 chars), `<meta name="viewport" content="width=device-width,initial-scale=1">`.
+- Social cards: set Open Graph/Twitter tags (`og:title`, `og:description`, `og:url`, `og:image` minimal 1200x630, `twitter:card=summary_large_image`).
+- URLs: prefer kebab-case, stable slugs; avoid query-string only content; add canonical link if duplicates possible.
+- Semantics: use proper heading levels (h1 per page, ordered h2/h3), semantic tags (`header`, `main`, `nav`, `section`, `article`, `footer`), and descriptive link text.
+- Performance: ship optimized images (WebP/AVIF fallbacks), lazy-load non-critical media, set `loading="lazy"` on below-the-fold images.
+- Indexing: provide `robots.txt` allowing normal crawl; add `sitemap.xml` when pages list stabilizes; noindex gated/test pages via `meta robots="noindex"`.
+- Internationalization: if multiple languages emerge, add `lang` on `<html>` and `hreflang` links per locale.
 
 ## When Uncertain
 - Prefer adding small, reversible scaffolding with clear paths to expand (e.g., create `wrangler.toml` and a minimal Worker).
