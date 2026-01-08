@@ -1,25 +1,16 @@
-# Cloudflare Workers OpenAPI 3.1
+# Online Free Tools / 在线工具学习项目
 
-This is a Cloudflare Worker with OpenAPI 3.1 using [chanfana](https://github.com/cloudflare/chanfana) and [Hono](https://github.com/honojs/hono).
+## Overview / 项目简介
+- Learning project for building and iterating on online utilities; updates are irregular by design.
+- Live domain: https://www.onlinefreetools.org
+- Runs on Cloudflare (Pages + Workers) with Wrangler for local dev and deploy.
 
-This is an example project made to be used as a quick start into building OpenAPI compliant Workers that generates the
-`openapi.json` schema automatically from code and validates the incoming request to the defined parameters or request body.
+## Getting Started / 快速开始
+- Install Node.js LTS and Wrangler: `npm install -g wrangler`
+- Install dependencies: `npm install`
+- Local dev (Workers): `wrangler dev`
+- Deploy: `wrangler deploy`
 
-## Get started
-
-1. Sign up for [Cloudflare Workers](https://workers.dev). The free tier is more than enough for most use cases.
-2. Clone this project and install dependencies with `npm install`
-3. Run `wrangler login` to login to your Cloudflare account in wrangler
-4. Run `wrangler deploy` to publish the API to Cloudflare Workers
-
-## Project structure
-
-1. Your main router is defined in `src/index.ts`.
-2. Each endpoint has its own file in `src/endpoints/`.
-3. For more information read the [chanfana documentation](https://chanfana.pages.dev/) and [Hono documentation](https://hono.dev/docs).
-
-## Development
-
-1. Run `wrangler dev` to start a local instance of the API.
-2. Open `http://localhost:8787/` in your browser to see the Swagger interface where you can try the endpoints.
-3. Changes made in the `src/` folder will automatically trigger the server to reload, you only need to refresh the Swagger interface.
+## Notes / 备注
+- 功能与在线工具会不定期更新，最新状态以线上域名为准。
+- 开发问答日志存放于 `dev-logs/`，按日期+摘要命名。
