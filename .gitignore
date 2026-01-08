@@ -1,5 +1,6 @@
 # rules  
-.github 
+.github
+.github/ 
 # Logs
 
 logs
