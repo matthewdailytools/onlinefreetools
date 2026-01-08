@@ -14,7 +14,9 @@ Purpose: Make AI agents productive immediately in this repo. Keep changes minima
   - `【question】` + original text
   - `【try to solve】` + final answer
   - Optionally append `【执行操作】` with file paths/commands changed.
+- Exclusions: do not record the AI's trailing or clarifying prompts (e.g., the last AI question asking for confirmation). Only include the user's original question and the final, consolidated answer. 不要记录最后 AI 的提问/澄清性问题，只保留用户问题与最终答案。
 - Keep edits surgical: modify only files directly relevant to the user request. Do not introduce frameworks or unrelated refactors without explicit instruction.
+- Do not save sensitive data: use environment variables or other secure methods.
 
 ## Cloudflare Workflows
 - Prereqs: Node.js LTS, `npm i -g wrangler`.
