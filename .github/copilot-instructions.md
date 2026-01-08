@@ -3,11 +3,11 @@
 Purpose: Make AI agents productive immediately in this repo. Keep changes minimal, focused, and aligned with current structure.
 
 ## Repo Snapshot
-- Minimal repo; root serves as project root. Existing folders: `dev-logs/` for conversation logs.
+- Minimal repo; root serves as project root. Conversation logs live in `public/dev-logs/`.
 - Target platform: Cloudflare (Pages + Workers). Use Wrangler for local/dev/deploy.
 
 ## Default Agent Behaviors
-- Log each Q&A: create one file per exchange in `dev-logs/` named `YYYY-MM-DD-<summary>.md`. Use ISO date, short hyphenated summary (sanitize: spaces→`-`, remove `/\\:*?"<>|`).
+- Log each Q&A: create one file per exchange in `public/dev-logs/` named `YYYY-MM-DD-<summary>.md`. Use ISO date, short hyphenated summary (sanitize: spaces→`-`, remove `/\\:*?"<>|`).
 - Log format:
   - `日期：<YYYY年M月D日H时M分>`
   - `摘要：<一句话>`
@@ -16,7 +16,7 @@ Purpose: Make AI agents productive immediately in this repo. Keep changes minima
   - Optionally append `【执行操作】` with file paths/commands changed.
 - Logging scope: do not log the act of creating the log file itself in `【执行操作】`; only list user-relevant file or config changes.
 - Exclusions: do not record the AI's trailing or clarifying prompts (e.g., the last AI question asking for confirmation). Only include the user's original question and the final, consolidated answer. 不要记录最后 AI 的提问/澄清性问题，只保留用户问题与最终答案。
-- Visibility: keep full Q&A content visible in the chat; logging to `dev-logs/` is a backend record and should not reduce or hide the conversation shown to the user.
+- Visibility: keep full Q&A content visible in the chat; logging to `public/dev-logs/` is a backend record and should not reduce or hide the conversation shown to the user.
 - Keep edits surgical: modify only files directly relevant to the user request. Do not introduce frameworks or unrelated refactors without explicit instruction.
 - Do not save sensitive data: use environment variables or other secure methods.
 
