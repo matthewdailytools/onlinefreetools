@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>修复本地静态首页未展示 | 开发日志</title>
+  <meta name="description" content="修复本地静态首页未展示" />
+  <link rel="canonical" href="https://www.onlinefreetools.org/devlogs/2026-01-09-%E4%BF%AE%E5%A4%8D%E9%9D%99%E6%80%81%E9%A6%96%E9%A1%B5%E6%9C%AA%E5%B1%95%E7%A4%BA.html" />
+  <meta property="og:title" content="修复本地静态首页未展示 | 开发日志" />
+  <meta property="og:description" content="修复本地静态首页未展示" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.onlinefreetools.org/devlogs/2026-01-09-%E4%BF%AE%E5%A4%8D%E9%9D%99%E6%80%81%E9%A6%96%E9%A1%B5%E6%9C%AA%E5%B1%95%E7%A4%BA.html" />
+  <meta property="og:image" content="https://www.onlinefreetools.org/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="bg-light">
+  <div class="container py-4">
+    <header class="d-flex justify-content-between align-items-center mb-3">
+      <h1 class="h4 mb-0">修复本地静态首页未展示 | 开发日志</h1>
+      <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">返回日志清单</a>
+    </header>
+    <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>日期：2026年1月9日
+摘要：修复本地静态首页未展示</p>
+<p>【question】
+打开<a href="http://localhost:8787/%E6%B2%A1%E6%9C%89%E7%9C%8B%E5%88%B0%E9%9D%99%E6%80%81%E9%A6%96%E9%A1%B5%EF%BC%8C%E4%B8%BA%E4%BB%80%E4%B9%88%EF%BC%8C%E9%9C%80%E8%A6%81%E4%BF%AE%E6%AD%A3">http://localhost:8787/没有看到静态首页，为什么，需要修正</a></p>
+<p>【try to solve】
+原因：Worker 根路径被 OpenAPI 文档占用，且未启用静态资源绑定，导致 <code>public/index.html</code> 未被服务。
+修正：</p>
+<ul>
+<li>将 OpenAPI 文档路由改为 <code>/docs</code>。</li>
+<li>启用 Wrangler <code>assets</code> 绑定，指向 <code>public/</code>，并在 Worker 中对 404 回退到静态资源。</li>
+</ul>
+<p>【执行操作】</p>
+<ul>
+<li>更新 <code>wrangler.jsonc</code>：添加 <code>assets.directory ./public/</code>，绑定名 <code>ASSETS</code></li>
+<li>更新 <code>src/index.ts</code>：OpenAPI 文档路由改为 <code>/docs</code>，引入 <code>ASSETS</code> 绑定并在 404 时回退静态资源</li>
+</ul>
+</article>
+  </div>
+</body>
+</html>

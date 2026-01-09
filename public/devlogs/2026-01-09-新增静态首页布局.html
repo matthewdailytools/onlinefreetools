@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>新增静态首页布局 | 开发日志</title>
+  <meta name="description" content="新增静态首页布局" />
+  <link rel="canonical" href="https://www.onlinefreetools.org/devlogs/2026-01-09-%E6%96%B0%E5%A2%9E%E9%9D%99%E6%80%81%E9%A6%96%E9%A1%B5%E5%B8%83%E5%B1%80.html" />
+  <meta property="og:title" content="新增静态首页布局 | 开发日志" />
+  <meta property="og:description" content="新增静态首页布局" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.onlinefreetools.org/devlogs/2026-01-09-%E6%96%B0%E5%A2%9E%E9%9D%99%E6%80%81%E9%A6%96%E9%A1%B5%E5%B8%83%E5%B1%80.html" />
+  <meta property="og:image" content="https://www.onlinefreetools.org/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="bg-light">
+  <div class="container py-4">
+    <header class="d-flex justify-content-between align-items-center mb-3">
+      <h1 class="h4 mb-0">新增静态首页布局 | 开发日志</h1>
+      <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">返回日志清单</a>
+    </header>
+    <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>日期：2026年1月9日
+摘要：新增静态首页布局</p>
+<p>【question】
+增加静态首页，以bootstrap+js+html作为技术栈，适配h5和pc，布局为导航，具备sidebar（可点击隐藏），顶部菜单，底部footer，内容区为工具分类成列卡片。分类类别名称在sidebar</p>
+<p>【try to solve】
+已在 <code>public/index.html</code> 添加基于 Bootstrap 5 的静态首页，适配移动与桌面，具体包括：</p>
+<ul>
+<li>固定顶部导航（含搜索框）</li>
+<li>可点击折叠的分类 sidebar，移动端点击分类后自动收起</li>
+<li>内容区按分类分区的卡片栅格（示例分类与卡片占位）</li>
+<li>底部 footer</li>
+</ul>
+<p>【执行操作】</p>
+<ul>
+<li>创建 <code>public/index.html</code></li>
+</ul>
+</article>
+  </div>
+</body>
+</html>

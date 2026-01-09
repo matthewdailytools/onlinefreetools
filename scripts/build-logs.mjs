@@ -11,7 +11,7 @@ try { marked = (await import('marked')).marked; } catch {
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const srcDir = path.join(root, 'dev-logs');
-const outDir = path.join(root, 'public', 'logs');
+const outDir = path.join(root, 'public', 'devlogs');
 
 const baseTemplate = ({ title, description, canonical, ogImage, body }) => `<!doctype html>
 <html lang="zh">
@@ -33,7 +33,7 @@ const baseTemplate = ({ title, description, canonical, ogImage, body }) => `<!do
   <div class="container py-4">
     <header class="d-flex justify-content-between align-items-center mb-3">
       <h1 class="h4 mb-0">${title}</h1>
-      <a class="btn btn-outline-secondary btn-sm" href="/logs/">返回日志清单</a>
+      <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">返回日志清单</a>
     </header>
     <article class="bg-white shadow-sm p-3 p-md-4 rounded">${body}</article>
   </div>
@@ -47,17 +47,17 @@ const indexTemplate = ({ items }) => `<!doctype html>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>开发日志清单 | Online Free Tools</title>
   <meta name="description" content="Online Free Tools 开发日志清单，按日期汇总所有问答记录。" />
-  <link rel="canonical" href="https://www.onlinefreetools.org/logs/" />
+  <link rel="canonical" href="https://www.onlinefreetools.org/devlogs/" />
   <meta property="og:title" content="开发日志清单 | Online Free Tools" />
   <meta property="og:description" content="按日期浏览项目的开发问答与实施记录。" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.onlinefreetools.org/logs/" />
+  <meta property="og:url" content="https://www.onlinefreetools.org/devlogs/" />
   <meta property="og:image" content="https://www.onlinefreetools.org/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script type="application/ld+json">{
-    "@context":"https://schema.org","@type":"CollectionPage","name":"开发日志清单","url":"https://www.onlinefreetools.org/logs/",
-    "breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://www.onlinefreetools.org/"},{"@type":"ListItem","position":2,"name":"开发日志","item":"https://www.onlinefreetools.org/logs/"}]}
+    "@context":"https://schema.org","@type":"CollectionPage","name":"开发日志清单","url":"https://www.onlinefreetools.org/devlogs/",
+    "breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://www.onlinefreetools.org/"},{"@type":"ListItem","position":2,"name":"开发日志","item":"https://www.onlinefreetools.org/devlogs/"}]}
   }</script>
 </head>
 <body class="bg-light">
@@ -107,11 +107,11 @@ const main = async () => {
     const outFile = path.join(outDir, `${base}.html`);
     const title = summary ? `${summary} | 开发日志` : base;
     const description = summary || 'Online Free Tools 开发日志';
-    const canonical = `https://www.onlinefreetools.org/logs/${encodeURIComponent(base)}.html`;
+    const canonical = `https://www.onlinefreetools.org/devlogs/${encodeURIComponent(base)}.html`;
     const ogImage = `https://www.onlinefreetools.org/og-image.png`;
     const page = baseTemplate({ title, description, canonical, ogImage, body: htmlBody });
     await fs.writeFile(outFile, page, 'utf-8');
-    items.push({ href: `/logs/${base}.html`, title: `${base.replace(/^[0-9-]+/, '').trim() || summary || base}`, date: (date || '').split(' ')[0] || date || '' });
+    items.push({ href: `/devlogs/${base}.html`, title: `${base.replace(/^[0-9-]+/, '').trim() || summary || base}`, date: (date || '').split(' ')[0] || date || '' });
   }
   const index = indexTemplate({ items });
   await fs.writeFile(path.join(outDir, 'index.html'), index, 'utf-8');

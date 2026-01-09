@@ -50,9 +50,9 @@ Purpose: Make AI agents productive immediately in this repo. Keep changes minima
 
 ### Dev Logs SEO
 - Source Markdown lives in `dev-logs/`.
-- Generated HTML lives in `public/logs/`. The index (`public/logs/index.html`) must include: unique `<title>`/`<meta description>`, `canonical` to `/logs/`, Open Graph/Twitter tags, and JSON-LD (`CollectionPage` + `BreadcrumbList`).
+- Generated HTML lives in `public/devlogs/`. The index (`public/devlogs/index.html`) must include: unique `<title>`/`<meta description>`, `canonical` to `/devlogs/`, Open Graph/Twitter tags, and JSON-LD (`CollectionPage` + `BreadcrumbList`).
 - Per-log HTML pages should include unique `<title>`/`<meta description>`（从摘要派生）、`canonical`、OG/Twitter tags。
-- Maintain `public/robots.txt` with sitemap reference and keep `public/sitemap.xml` updated（至少包含 `/` 与 `/logs/`，可扩展各日志 HTML）。
+- Maintain `public/robots.txt` with sitemap reference and keep `public/sitemap.xml` updated（至少包含 `/` 与 `/devlogs/`，可扩展各日志 HTML）。
 
 ## When Uncertain
 - Prefer adding small, reversible scaffolding with clear paths to expand (e.g., create `wrangler.toml` and a minimal Worker).
