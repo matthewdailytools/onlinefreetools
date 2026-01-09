@@ -3,11 +3,11 @@
 Purpose: Make AI agents productive immediately in this repo. Keep changes minimal, focused, and aligned with current structure.
 
 ## Repo Snapshot
-- Minimal repo; root serves as project root. Conversation logs live in `public/dev-logs/`.
+- Minimal repo; root serves as project root. Conversation logs live in `dev-logs/`.
 - Target platform: Cloudflare (Pages + Workers). Use Wrangler for local/dev/deploy.
 
 ## Default Agent Behaviors
-- Log each Q&A: create one file per exchange in `public/dev-logs/` named `YYYY-MM-DD-<summary>.md`. Use ISO date, short hyphenated summary (sanitize: spaces→`-`, remove `/\\:*?"<>|`).
+- Log each Q&A: create one file per exchange in `dev-logs/` named `YYYY-MM-DD-HH-MM-<summary>.md`. Use ISO date + 24h time (local), short hyphenated summary (sanitize: spaces→`-`, remove `/\\:*?"<>|`).
 - Log format:
   - `日期：<YYYY年M月D日H时M分>`
   - `摘要：<一句话>`
@@ -48,10 +48,11 @@ Purpose: Make AI agents productive immediately in this repo. Keep changes minima
 - Indexing: provide `robots.txt` allowing normal crawl; add `sitemap.xml` when pages list stabilizes; noindex gated/test pages via `meta robots="noindex"`.
 - Internationalization: if multiple languages emerge, add `lang` on `<html>` and `hreflang` links per locale.
 
-### Dev Logs (public/dev-logs/) SEO
-- Index page (`public/dev-logs/index.html`) must include: unique `<title>`/`<meta description>`, `canonical` to `/dev-logs/`, Open Graph/Twitter tags, and JSON-LD (`CollectionPage` + `BreadcrumbList`).
-- Prefer HTML for individual log entries. If using Markdown, ensure discoverability via the index and avoid duplicate content; optionally add an HTML viewer page that renders Markdown with proper meta tags.
-- Maintain `public/robots.txt` with sitemap reference and keep `public/sitemap.xml` updated (at minimum include `/` and `/dev-logs/`, optionally add per-log HTML pages).
+### Dev Logs SEO
+- Source Markdown lives in `dev-logs/`.
+- Generated HTML lives in `public/logs/`. The index (`public/logs/index.html`) must include: unique `<title>`/`<meta description>`, `canonical` to `/logs/`, Open Graph/Twitter tags, and JSON-LD (`CollectionPage` + `BreadcrumbList`).
+- Per-log HTML pages should include unique `<title>`/`<meta description>`（从摘要派生）、`canonical`、OG/Twitter tags。
+- Maintain `public/robots.txt` with sitemap reference and keep `public/sitemap.xml` updated（至少包含 `/` 与 `/logs/`，可扩展各日志 HTML）。
 
 ## When Uncertain
 - Prefer adding small, reversible scaffolding with clear paths to expand (e.g., create `wrangler.toml` and a minimal Worker).
