@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Markdown 转 HTML | Online Free Tools</title>
+  <meta name="description" content="将 Markdown 文本快速转换为 HTML，支持预览、复制、下载完整文档。" />
+  <link rel="canonical" href="https://www.onlinefreetools.org/tools/markdown-to-html.html" />
+  <meta property="og:title" content="Markdown 转 HTML | Online Free Tools" />
+  <meta property="og:description" content="在线将 Markdown 转换为 HTML，支持预览、复制与下载。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.onlinefreetools.org/tools/markdown-to-html.html" />
+  <meta property="og:image" content="https://www.onlinefreetools.org/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body { background: #f8f9fa; }
+    .container-narrow { max-width: 1100px; }
+    textarea { min-height: 320px; }
+    #preview { min-height: 320px; background: #fff; border: 1px solid #dee2e6; border-radius: .5rem; padding: 1rem; }
+    .tools-bar { gap: .5rem; }
+  </style>
+</head>
+<body>
+  <div class="container container-narrow py-4">
+    <header class="d-flex justify-content-between align-items-center mb-3">
+      <div>
+        <h1 class="h4 mb-1">Markdown 转 HTML</h1>
+        <p class="text-muted mb-0">支持预览、复制和下载完整 HTML 文档（含 head/meta）。</p>
+      </div>
+      <div class="d-flex gap-2">
+        <a class="btn btn-outline-secondary btn-sm" href="/">返回首页</a>
+      </div>
+    </header>
+
+    <div class="d-flex align-items-center tools-bar mb-3">
+      <button id="btnCopy" class="btn btn-primary btn-sm">复制 HTML</button>
+      <button id="btnDownload" class="btn btn-outline-primary btn-sm">下载 HTML</button>
+      <button id="btnClear" class="btn btn-outline-secondary btn-sm">清空</button>
+      <div class="form-check ms-2">
+        <input class="form-check-input" type="checkbox" id="fullDoc" checked>
+        <label class="form-check-label" for="fullDoc">生成完整 HTML 文档</label>
+      </div>
+    </div>
+
+    <div class="row g-3">
+      <div class="col-12 col-lg-6">
+        <label for="mdInput" class="form-label">Markdown 输入</label>
+        <textarea id="mdInput" class="form-control" placeholder="# 标题\n\n支持基本 Markdown 语法，例如**加粗**、列表与代码块。\n\n- 列表项 1\n- 列表项 2\n\n```js\nconsole.log('Hello Markdown');\n```"></textarea>
+      </div>
+      <div class="col-12 col-lg-6">
+        <label class="form-label">HTML 预览</label>
+        <div id="preview"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/11.1.1/marked.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.5/purify.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    const mdInput = document.getElementById('mdInput');
+    const preview = document.getElementById('preview');
+    const btnCopy = document.getElementById('btnCopy');
+    const btnDownload = document.getElementById('btnDownload');
+    const btnClear = document.getElementById('btnClear');
+    const fullDoc = document.getElementById('fullDoc');
+
+    const toHTML = (md) => {
+      const raw = marked.parse(md || '');
+      return DOMPurify.sanitize(raw);
+    };
+
+    const wrapHTML = (bodyHTML) => `<!doctype html>\n<html lang=\"zh\">\n<head>\n  <meta charset=\"utf-8\" />\n  <meta name=\"viewport\" content=\"width=device-width,initial-scale=1\" />\n  <title>Markdown 转 HTML 导出</title>\n  <meta name=\"description\" content=\"由 Markdown 转换的静态 HTML 导出文件\" />\n</head>\n<body>\n${bodyHTML}\n</body>\n</html>`;
+
+    const render = () => {
+      const html = toHTML(mdInput.value);
+      preview.innerHTML = html;
+    };
+
+    const copyHTML = async () => {
+      const html = toHTML(mdInput.value);
+      const value = fullDoc.checked ? wrapHTML(html) : html;
+      await navigator.clipboard.writeText(value);
+      btnCopy.textContent = '已复制';
+      setTimeout(() => btnCopy.textContent = '复制 HTML', 1200);
+    };
+
+    const downloadHTML = () => {
+      const html = toHTML(mdInput.value);
+      const value = fullDoc.checked ? wrapHTML(html) : html;
+      const blob = new Blob([value], { type: 'text/html;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'markdown.html';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    };
+
+    mdInput.addEventListener('input', render);
+    btnCopy.addEventListener('click', copyHTML);
+    btnDownload.addEventListener('click', downloadHTML);
+    btnClear.addEventListener('click', () => { mdInput.value = ''; render(); });
+
+    // 初次渲染
+    render();
+  </script>
+</body>
+</html>

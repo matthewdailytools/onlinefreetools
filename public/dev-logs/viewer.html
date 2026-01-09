@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>日志查看器 | Online Free Tools</title>
+  <meta name="description" content="查看 Online Free Tools 的单篇开发日志内容。" />
+  <link rel="canonical" href="https://www.onlinefreetools.org/dev-logs/viewer.html" />
+  <meta property="og:title" content="日志查看器 | Online Free Tools" />
+  <meta property="og:description" content="查看单篇开发日志内容与细节。" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.onlinefreetools.org/dev-logs/viewer.html" />
+  <meta property="og:image" content="https://www.onlinefreetools.org/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    .container-narrow { max-width: 860px; }
+    .log-meta { color: #6c757d; }
+    pre { background: #f8f9fa; padding: 1rem; border-radius: .5rem; }
+  </style>
+</head>
+<body class="bg-light">
+  <div class="container container-narrow py-4">
+    <header class="d-flex justify-content-between align-items-center mb-3">
+      <div>
+        <h1 class="h4 mb-1" id="pageTitle">日志查看器</h1>
+        <p class="log-meta mb-0" id="pageMeta">从左上角返回索引或首页</p>
+      </div>
+      <div class="d-flex gap-2">
+        <a class="btn btn-outline-secondary btn-sm" href="/dev-logs/">返回日志索引</a>
+        <a class="btn btn-outline-secondary btn-sm" href="/">返回首页</a>
+      </div>
+    </header>
+
+    <article class="bg-white shadow-sm p-3 p-md-4 rounded">
+      <div id="viewer">正在加载日志内容…</div>
+    </article>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/11.1.1/marked.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    (function() {
+      const params = new URLSearchParams(window.location.search);
+      const file = params.get('file');
+      if (!file) {
+        document.getElementById('viewer').textContent = '缺少文件参数 ?file=<日志文件名.md>'; return;
+      }
+      const fileUrl = file.startsWith('http') ? file : `${file}`;
+      fetch(fileUrl).then(r => {
+        if (!r.ok) throw new Error('无法加载日志文件');
+        return r.text();
+      }).then(text => {
+        // 尝试解析摘要和日期以用于 meta
+        const lines = text.split(/\r?\n/);
+        let date = '';
+        let summary = '';
+        for (const line of lines) {
+          if (!date && line.startsWith('日期：')) date = line.replace('日期：','').trim();
+          if (!summary && line.startsWith('摘要：')) summary = line.replace('摘要：','').trim();
+          if (date && summary) break;
+        }
+        const title = summary ? `${summary} | 开发日志` : `开发日志 | ${file}`;
+        const desc = summary || 'Online Free Tools 单篇开发日志详情。';
+        // 注入文档标题与 meta
+        document.title = title;
+        const descMeta = document.querySelector('meta[name="description"]');
+        if (descMeta) descMeta.setAttribute('content', desc);
+        const canonical = document.querySelector('link[rel="canonical"]');
+        if (canonical) canonical.setAttribute('href', `${location.origin}/dev-logs/viewer.html?file=${encodeURIComponent(file)}`);
+        const ogTitle = document.querySelector('meta[property="og:title"]');
+        if (ogTitle) ogTitle.setAttribute('content', title);
+        const ogDesc = document.querySelector('meta[property="og:description"]');
+        if (ogDesc) ogDesc.setAttribute('content', desc);
+        const ogUrl = document.querySelector('meta[property="og:url"]');
+        if (ogUrl) ogUrl.setAttribute('content', `${location.origin}/dev-logs/viewer.html?file=${encodeURIComponent(file)}`);
+        // 页面标题与 meta展示
+        document.getElementById('pageTitle').textContent = summary || '开发日志';
+        document.getElementById('pageMeta').textContent = date ? `日期：${date}` : 'Online Free Tools';
+        // 渲染 Markdown
+        const html = marked.parse(text);
+        document.getElementById('viewer').innerHTML = html;
+      }).catch(err => {
+        document.getElementById('viewer').textContent = `加载失败：${err.message}`;
+      });
+    })();
+  </script>
+</body>
+</html>

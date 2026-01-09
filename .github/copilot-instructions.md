@@ -48,6 +48,11 @@ Purpose: Make AI agents productive immediately in this repo. Keep changes minima
 - Indexing: provide `robots.txt` allowing normal crawl; add `sitemap.xml` when pages list stabilizes; noindex gated/test pages via `meta robots="noindex"`.
 - Internationalization: if multiple languages emerge, add `lang` on `<html>` and `hreflang` links per locale.
 
+### Dev Logs (public/dev-logs/) SEO
+- Index page (`public/dev-logs/index.html`) must include: unique `<title>`/`<meta description>`, `canonical` to `/dev-logs/`, Open Graph/Twitter tags, and JSON-LD (`CollectionPage` + `BreadcrumbList`).
+- Prefer HTML for individual log entries. If using Markdown, ensure discoverability via the index and avoid duplicate content; optionally add an HTML viewer page that renders Markdown with proper meta tags.
+- Maintain `public/robots.txt` with sitemap reference and keep `public/sitemap.xml` updated (at minimum include `/` and `/dev-logs/`, optionally add per-log HTML pages).
+
 ## When Uncertain
 - Prefer adding small, reversible scaffolding with clear paths to expand (e.g., create `wrangler.toml` and a minimal Worker).
 - Document assumptions in `dev-logs` for traceability.
