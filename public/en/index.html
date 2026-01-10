@@ -14,6 +14,38 @@
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="alternate" hreflang="zh" href="https://www.onlinefreetools.org/" />
   <link rel="alternate" hreflang="en" href="https://www.onlinefreetools.org/en/" />
+  
+  <script>
+    (function () {
+      try {
+        var enabled = ["zh","en"];
+        var fallback = 'en';
+        var path = window.location.pathname || '/';
+
+        // If the URL already contains a non-zh language prefix, respect it.
+        var hasPrefix = enabled.some(function (l) {
+          return l && l !== 'zh' && (path === '/' + l || path.indexOf('/' + l + '/') === 0);
+        });
+        if (hasPrefix) return;
+
+        var langs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language])
+          .filter(Boolean)
+          .map(function (x) { return String(x).toLowerCase().split('-')[0]; });
+
+        var picked = null;
+        for (var i = 0; i < langs.length; i++) {
+          if (enabled.indexOf(langs[i]) !== -1) { picked = langs[i]; break; }
+        }
+        if (!picked) picked = enabled.indexOf(fallback) !== -1 ? fallback : (enabled[0] || fallback);
+
+        if (picked === "en") return;
+        if (picked !== 'zh') {
+          var target = ('/' + picked + path).replace(///+/g, '/');
+          window.location.replace(target + window.location.search + window.location.hash);
+        }
+      } catch (e) {}
+    })();
+  </script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     body { min-height: 100vh; }
@@ -76,7 +108,7 @@
     
     <aside id="sidebar" class="bg-light border-end p-3">
       <h6 class="text-muted text-uppercase">Categories</h6>
-      <div class="list-group list-group-flush small" id="categoryList"><a class="list-group-item list-group-item-action" href="#cat-text">Text</a><a class="list-group-item list-group-item-action" href="#cat-image">Image</a><a class="list-group-item list-group-item-action" href="#cat-dev">Developer</a><a class="list-group-item list-group-item-action" href="#cat-convert">Convert</a><a class="list-group-item list-group-item-action" href="#cat-misc">More</a></div>
+      <div class="list-group list-group-flush small" id="categoryList"><a class="list-group-item list-group-item-action" href="#cat-text">Text</a><a class="list-group-item list-group-item-action" href="#cat-dev">Developer</a></div>
     </aside>
     <main id="content" class="p-4">
     <section id="featured" class="mb-4">
@@ -88,27 +120,18 @@
         <div class="col">
           <div class="card h-100 shadow-sm">
             <div class="card-body">
-              <h5 class="card-title">JSON Formatter</h5>
-              <p class="card-text text-muted">Pretty-print and validate JSON.</p>
-              <a href="#" class="btn btn-primary btn-sm">Open</a>
+              <h5 class="card-title">Website Headers</h5>
+              <p class="card-text text-muted">Fetch and view HTTP response headers for a given URL.</p>
+              <a href="/en/tools/website-headers" class="btn btn-primary btn-sm">Open</a>
             </div>
           </div>
         </div>
         <div class="col">
           <div class="card h-100 shadow-sm">
             <div class="card-body">
-              <h5 class="card-title">Image Compress</h5>
-              <p class="card-text text-muted">Compress images with good balance.</p>
-              <a href="#" class="btn btn-primary btn-sm">Open</a>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100 shadow-sm">
-            <div class="card-body">
-              <h5 class="card-title">Regex Tester</h5>
-              <p class="card-text text-muted">Test and highlight matches in real time.</p>
-              <a href="#" class="btn btn-primary btn-sm">Open</a>
+              <h5 class="card-title">Markdown → HTML</h5>
+              <p class="card-text text-muted">Render Markdown into HTML.</p>
+              <a href="/en/tools/markdown-to-html.html" class="btn btn-primary btn-sm">Open</a>
             </div>
           </div>
         </div>
@@ -131,43 +154,7 @@
               <div class="card-body">
                 <h6 class="card-title">Markdown → HTML</h6>
                 <p class="card-text small text-muted">Render Markdown into HTML.</p>
-                <a href="/tools/markdown-to-html.html" class="btn btn-outline-primary btn-sm">Open</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <div class="card-body">
-                <h6 class="card-title">Remove Duplicate Lines</h6>
-                <p class="card-text small text-muted">Deduplicate lines and keep uniques.</p>
-                <a href="#" class="btn btn-outline-primary btn-sm">Open</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="mb-4" id="cat-image">
-        <div class="d-flex align-items-center mb-2">
-          <span class="badge text-bg-secondary me-2">Image</span>
-          <span class="text-muted small">compress, crop, convert</span>
-        </div>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
-          <div class="col">
-            <div class="card h-100">
-              <div class="card-body">
-                <h6 class="card-title">Image Crop</h6>
-                <p class="card-text small text-muted">Crop by ratio or custom size.</p>
-                <a href="#" class="btn btn-outline-primary btn-sm">Open</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <div class="card-body">
-                <h6 class="card-title">Format Convert</h6>
-                <p class="card-text small text-muted">Convert between JPG/PNG/WebP.</p>
-                <a href="#" class="btn btn-outline-primary btn-sm">Open</a>
+                <a href="/en/tools/markdown-to-html.html" class="btn btn-outline-primary btn-sm">Open</a>
               </div>
             </div>
           </div>
@@ -183,72 +170,9 @@
           <div class="col">
             <div class="card h-100">
               <div class="card-body">
-                <h6 class="card-title">UUID Generator</h6>
-                <p class="card-text small text-muted">Generate multiple UUIDs.</p>
-                <a href="#" class="btn btn-outline-primary btn-sm">Open</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <div class="card-body">
-                <h6 class="card-title">Base64 Encode/Decode</h6>
-                <p class="card-text small text-muted">Encode/decode text snippets quickly.</p>
-                <a href="#" class="btn btn-outline-primary btn-sm">Open</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="mb-4" id="cat-convert">
-        <div class="d-flex align-items-center mb-2">
-          <span class="badge text-bg-secondary me-2">Convert</span>
-          <span class="text-muted small">docs, data, media</span>
-        </div>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
-          <div class="col">
-            <div class="card h-100">
-              <div class="card-body">
-                <h6 class="card-title">CSV ↔ JSON</h6>
-                <p class="card-text small text-muted">Convert table data and JSON.</p>
-                <a href="#" class="btn btn-outline-primary btn-sm">Open</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <div class="card-body">
-                <h6 class="card-title">Unit Converter</h6>
-                <p class="card-text small text-muted">Length, weight, temperature, etc.</p>
-                <a href="#" class="btn btn-outline-primary btn-sm">Open</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="mb-4" id="cat-misc">
-        <div class="d-flex align-items-center mb-2">
-          <span class="badge text-bg-secondary me-2">More</span>
-          <span class="text-muted small">misc utilities</span>
-        </div>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
-          <div class="col">
-            <div class="card h-100">
-              <div class="card-body">
-                <h6 class="card-title">Timer</h6>
-                <p class="card-text small text-muted">Lightweight timing helper.</p>
-                <a href="#" class="btn btn-outline-primary btn-sm">Open</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <div class="card-body">
-                <h6 class="card-title">Random Generator</h6>
-                <p class="card-text small text-muted">Configurable range and count.</p>
-                <a href="#" class="btn btn-outline-primary btn-sm">Open</a>
+                <h6 class="card-title">Website Headers</h6>
+                <p class="card-text small text-muted">Fetch and view HTTP response headers for a given URL.</p>
+                <a href="/en/tools/website-headers" class="btn btn-outline-primary btn-sm">Open</a>
               </div>
             </div>
           </div>

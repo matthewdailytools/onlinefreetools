@@ -14,6 +14,38 @@
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="alternate" hreflang="zh" href="https://www.onlinefreetools.org/" />
   <link rel="alternate" hreflang="en" href="https://www.onlinefreetools.org/en/" />
+  
+  <script>
+    (function () {
+      try {
+        var enabled = ["zh","en"];
+        var fallback = 'en';
+        var path = window.location.pathname || '/';
+
+        // If the URL already contains a non-zh language prefix, respect it.
+        var hasPrefix = enabled.some(function (l) {
+          return l && l !== 'zh' && (path === '/' + l || path.indexOf('/' + l + '/') === 0);
+        });
+        if (hasPrefix) return;
+
+        var langs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language])
+          .filter(Boolean)
+          .map(function (x) { return String(x).toLowerCase().split('-')[0]; });
+
+        var picked = null;
+        for (var i = 0; i < langs.length; i++) {
+          if (enabled.indexOf(langs[i]) !== -1) { picked = langs[i]; break; }
+        }
+        if (!picked) picked = enabled.indexOf(fallback) !== -1 ? fallback : (enabled[0] || fallback);
+
+        if (picked === "zh") return;
+        if (picked !== 'zh') {
+          var target = ('/' + picked + path).replace(///+/g, '/');
+          window.location.replace(target + window.location.search + window.location.hash);
+        }
+      } catch (e) {}
+    })();
+  </script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     body { min-height: 100vh; }
@@ -76,7 +108,7 @@
     
     <aside id="sidebar" class="bg-light border-end p-3">
       <h6 class="text-muted text-uppercase">分类</h6>
-      <div class="list-group list-group-flush small" id="categoryList"><a class="list-group-item list-group-item-action" href="#cat-text">文本工具</a><a class="list-group-item list-group-item-action" href="#cat-image">图像工具</a><a class="list-group-item list-group-item-action" href="#cat-dev">开发者工具</a><a class="list-group-item list-group-item-action" href="#cat-convert">格式转换</a><a class="list-group-item list-group-item-action" href="#cat-misc">更多</a></div>
+      <div class="list-group list-group-flush small" id="categoryList"><a class="list-group-item list-group-item-action" href="#cat-text">文本工具</a><a class="list-group-item list-group-item-action" href="#cat-dev">开发者工具</a></div>
     </aside>
     <main id="content" class="p-4">
     <section id="featured" class="mb-4">
@@ -88,27 +120,18 @@
         <div class="col">
           <div class="card h-100 shadow-sm">
             <div class="card-body">
-              <h5 class="card-title">JSON 格式化</h5>
-              <p class="card-text text-muted">快速美化与校验 JSON。</p>
-              <a href="#" class="btn btn-primary btn-sm">开始使用</a>
+              <h5 class="card-title">获取网站响应 Header</h5>
+              <p class="card-text text-muted">输入网址，查询该网站的 HTTP 响应 Header。</p>
+              <a href="/tools/website-headers" class="btn btn-primary btn-sm">打开</a>
             </div>
           </div>
         </div>
         <div class="col">
           <div class="card h-100 shadow-sm">
             <div class="card-body">
-              <h5 class="card-title">图片压缩</h5>
-              <p class="card-text text-muted">在线压缩，保持清晰度与体积平衡。</p>
-              <a href="#" class="btn btn-primary btn-sm">开始使用</a>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100 shadow-sm">
-            <div class="card-body">
-              <h5 class="card-title">正则测试</h5>
-              <p class="card-text text-muted">实时匹配与高亮，便于调试表达式。</p>
-              <a href="#" class="btn btn-primary btn-sm">开始使用</a>
+              <h5 class="card-title">Markdown 转 HTML</h5>
+              <p class="card-text text-muted">将 Markdown 快速渲染为 HTML。</p>
+              <a href="/tools/markdown-to-html.html" class="btn btn-primary btn-sm">打开</a>
             </div>
           </div>
         </div>
@@ -135,42 +158,6 @@
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="card h-100">
-              <div class="card-body">
-                <h6 class="card-title">文本去重</h6>
-                <p class="card-text small text-muted">去除重复行，保持唯一列表。</p>
-                <a href="#" class="btn btn-outline-primary btn-sm">打开</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="mb-4" id="cat-image">
-        <div class="d-flex align-items-center mb-2">
-          <span class="badge text-bg-secondary me-2">图像工具</span>
-          <span class="text-muted small">压缩、裁剪、转换</span>
-        </div>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
-          <div class="col">
-            <div class="card h-100">
-              <div class="card-body">
-                <h6 class="card-title">图片裁剪</h6>
-                <p class="card-text small text-muted">按比例或自定义尺寸裁剪。</p>
-                <a href="#" class="btn btn-outline-primary btn-sm">打开</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <div class="card-body">
-                <h6 class="card-title">格式转换</h6>
-                <p class="card-text small text-muted">JPG/PNG/WebP 互转。</p>
-                <a href="#" class="btn btn-outline-primary btn-sm">打开</a>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 
@@ -183,72 +170,9 @@
           <div class="col">
             <div class="card h-100">
               <div class="card-body">
-                <h6 class="card-title">UUID 生成</h6>
-                <p class="card-text small text-muted">一键生成多组 UUID。</p>
-                <a href="#" class="btn btn-outline-primary btn-sm">打开</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <div class="card-body">
-                <h6 class="card-title">Base64 编解码</h6>
-                <p class="card-text small text-muted">快速编解码文本或文件片段。</p>
-                <a href="#" class="btn btn-outline-primary btn-sm">打开</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="mb-4" id="cat-convert">
-        <div class="d-flex align-items-center mb-2">
-          <span class="badge text-bg-secondary me-2">格式转换</span>
-          <span class="text-muted small">文档、数据与媒体</span>
-        </div>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
-          <div class="col">
-            <div class="card h-100">
-              <div class="card-body">
-                <h6 class="card-title">CSV ↔ JSON</h6>
-                <p class="card-text small text-muted">数据表与 JSON 快速互转。</p>
-                <a href="#" class="btn btn-outline-primary btn-sm">打开</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <div class="card-body">
-                <h6 class="card-title">单位换算</h6>
-                <p class="card-text small text-muted">长度、重量、温度常用换算。</p>
-                <a href="#" class="btn btn-outline-primary btn-sm">打开</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="mb-4" id="cat-misc">
-        <div class="d-flex align-items-center mb-2">
-          <span class="badge text-bg-secondary me-2">更多</span>
-          <span class="text-muted small">杂项工具合集</span>
-        </div>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
-          <div class="col">
-            <div class="card h-100">
-              <div class="card-body">
-                <h6 class="card-title">倒计时/计时器</h6>
-                <p class="card-text small text-muted">轻量计时辅助。</p>
-                <a href="#" class="btn btn-outline-primary btn-sm">打开</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <div class="card-body">
-                <h6 class="card-title">随机数生成</h6>
-                <p class="card-text small text-muted">可设置范围与数量。</p>
-                <a href="#" class="btn btn-outline-primary btn-sm">打开</a>
+                <h6 class="card-title">获取网站响应 Header</h6>
+                <p class="card-text small text-muted">输入网址，查询该网站的 HTTP 响应 Header。</p>
+                <a href="/tools/website-headers" class="btn btn-outline-primary btn-sm">打开</a>
               </div>
             </div>
           </div>

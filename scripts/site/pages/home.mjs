@@ -13,17 +13,11 @@ export const getHomePageModel = (lang) => {
     lang === 'en'
       ? [
           { href: '#cat-text', label: 'Text' },
-          { href: '#cat-image', label: 'Image' },
           { href: '#cat-dev', label: 'Developer' },
-          { href: '#cat-convert', label: 'Convert' },
-          { href: '#cat-misc', label: 'More' },
         ]
       : [
           { href: '#cat-text', label: '文本工具' },
-          { href: '#cat-image', label: '图像工具' },
           { href: '#cat-dev', label: '开发者工具' },
-          { href: '#cat-convert', label: '格式转换' },
-          { href: '#cat-misc', label: '更多' },
         ];
 
   const title =
@@ -37,6 +31,17 @@ export const getHomePageModel = (lang) => {
   const viewAll = lang === 'en' ? 'View all' : '查看全部';
   const allToolsH2 = lang === 'en' ? 'All Tools' : '全部工具';
 
+  const toolHeadersHref = withLangPath(lang, '/tools/website-headers');
+  const toolHeadersTitle = lang === 'en' ? 'Website Headers' : '获取网站响应 Header';
+  const toolHeadersDesc =
+    lang === 'en'
+      ? 'Fetch and view HTTP response headers for a given URL.'
+      : '输入网址，查询该网站的 HTTP 响应 Header。';
+
+  const toolMdHref = withLangPath(lang, '/tools/markdown-to-html.html');
+  const toolMdTitle = lang === 'en' ? 'Markdown → HTML' : 'Markdown 转 HTML';
+  const toolMdDesc = lang === 'en' ? 'Render Markdown into HTML.' : '将 Markdown 快速渲染为 HTML。';
+
   const contentHtml = `
     <section id="featured" class="mb-4">
       <div class="d-flex justify-content-between align-items-center mb-3">
@@ -47,27 +52,18 @@ export const getHomePageModel = (lang) => {
         <div class="col">
           <div class="card h-100 shadow-sm">
             <div class="card-body">
-              <h5 class="card-title">${lang === 'en' ? 'JSON Formatter' : 'JSON 格式化'}</h5>
-              <p class="card-text text-muted">${lang === 'en' ? 'Pretty-print and validate JSON.' : '快速美化与校验 JSON。'}</p>
-              <a href="#" class="btn btn-primary btn-sm">${lang === 'en' ? 'Open' : '开始使用'}</a>
+              <h5 class="card-title">${toolHeadersTitle}</h5>
+              <p class="card-text text-muted">${toolHeadersDesc}</p>
+              <a href="${toolHeadersHref}" class="btn btn-primary btn-sm">${lang === 'en' ? 'Open' : '打开'}</a>
             </div>
           </div>
         </div>
         <div class="col">
           <div class="card h-100 shadow-sm">
             <div class="card-body">
-              <h5 class="card-title">${lang === 'en' ? 'Image Compress' : '图片压缩'}</h5>
-              <p class="card-text text-muted">${lang === 'en' ? 'Compress images with good balance.' : '在线压缩，保持清晰度与体积平衡。'}</p>
-              <a href="#" class="btn btn-primary btn-sm">${lang === 'en' ? 'Open' : '开始使用'}</a>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100 shadow-sm">
-            <div class="card-body">
-              <h5 class="card-title">${lang === 'en' ? 'Regex Tester' : '正则测试'}</h5>
-              <p class="card-text text-muted">${lang === 'en' ? 'Test and highlight matches in real time.' : '实时匹配与高亮，便于调试表达式。'}</p>
-              <a href="#" class="btn btn-primary btn-sm">${lang === 'en' ? 'Open' : '开始使用'}</a>
+              <h5 class="card-title">${toolMdTitle}</h5>
+              <p class="card-text text-muted">${toolMdDesc}</p>
+              <a href="${toolMdHref}" class="btn btn-primary btn-sm">${lang === 'en' ? 'Open' : '打开'}</a>
             </div>
           </div>
         </div>
@@ -88,45 +84,9 @@ export const getHomePageModel = (lang) => {
           <div class="col">
             <div class="card h-100">
               <div class="card-body">
-                <h6 class="card-title">${lang === 'en' ? 'Markdown → HTML' : 'Markdown 转 HTML'}</h6>
-                <p class="card-text small text-muted">${lang === 'en' ? 'Render Markdown into HTML.' : '将 Markdown 快速渲染为 HTML。'}</p>
-                <a href="/tools/markdown-to-html.html" class="btn btn-outline-primary btn-sm">${lang === 'en' ? 'Open' : '打开'}</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <div class="card-body">
-                <h6 class="card-title">${lang === 'en' ? 'Remove Duplicate Lines' : '文本去重'}</h6>
-                <p class="card-text small text-muted">${lang === 'en' ? 'Deduplicate lines and keep uniques.' : '去除重复行，保持唯一列表。'}</p>
-                <a href="#" class="btn btn-outline-primary btn-sm">${lang === 'en' ? 'Open' : '打开'}</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="mb-4" id="cat-image">
-        <div class="d-flex align-items-center mb-2">
-          <span class="badge text-bg-secondary me-2">${lang === 'en' ? 'Image' : '图像工具'}</span>
-          <span class="text-muted small">${lang === 'en' ? 'compress, crop, convert' : '压缩、裁剪、转换'}</span>
-        </div>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
-          <div class="col">
-            <div class="card h-100">
-              <div class="card-body">
-                <h6 class="card-title">${lang === 'en' ? 'Image Crop' : '图片裁剪'}</h6>
-                <p class="card-text small text-muted">${lang === 'en' ? 'Crop by ratio or custom size.' : '按比例或自定义尺寸裁剪。'}</p>
-                <a href="#" class="btn btn-outline-primary btn-sm">${lang === 'en' ? 'Open' : '打开'}</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <div class="card-body">
-                <h6 class="card-title">${lang === 'en' ? 'Format Convert' : '格式转换'}</h6>
-                <p class="card-text small text-muted">${lang === 'en' ? 'Convert between JPG/PNG/WebP.' : 'JPG/PNG/WebP 互转。'}</p>
-                <a href="#" class="btn btn-outline-primary btn-sm">${lang === 'en' ? 'Open' : '打开'}</a>
+                <h6 class="card-title">${toolMdTitle}</h6>
+                <p class="card-text small text-muted">${toolMdDesc}</p>
+                <a href="${toolMdHref}" class="btn btn-outline-primary btn-sm">${lang === 'en' ? 'Open' : '打开'}</a>
               </div>
             </div>
           </div>
@@ -142,72 +102,9 @@ export const getHomePageModel = (lang) => {
           <div class="col">
             <div class="card h-100">
               <div class="card-body">
-                <h6 class="card-title">${lang === 'en' ? 'UUID Generator' : 'UUID 生成'}</h6>
-                <p class="card-text small text-muted">${lang === 'en' ? 'Generate multiple UUIDs.' : '一键生成多组 UUID。'}</p>
-                <a href="#" class="btn btn-outline-primary btn-sm">${lang === 'en' ? 'Open' : '打开'}</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <div class="card-body">
-                <h6 class="card-title">${lang === 'en' ? 'Base64 Encode/Decode' : 'Base64 编解码'}</h6>
-                <p class="card-text small text-muted">${lang === 'en' ? 'Encode/decode text snippets quickly.' : '快速编解码文本或文件片段。'}</p>
-                <a href="#" class="btn btn-outline-primary btn-sm">${lang === 'en' ? 'Open' : '打开'}</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="mb-4" id="cat-convert">
-        <div class="d-flex align-items-center mb-2">
-          <span class="badge text-bg-secondary me-2">${lang === 'en' ? 'Convert' : '格式转换'}</span>
-          <span class="text-muted small">${lang === 'en' ? 'docs, data, media' : '文档、数据与媒体'}</span>
-        </div>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
-          <div class="col">
-            <div class="card h-100">
-              <div class="card-body">
-                <h6 class="card-title">${lang === 'en' ? 'CSV ↔ JSON' : 'CSV ↔ JSON'}</h6>
-                <p class="card-text small text-muted">${lang === 'en' ? 'Convert table data and JSON.' : '数据表与 JSON 快速互转。'}</p>
-                <a href="#" class="btn btn-outline-primary btn-sm">${lang === 'en' ? 'Open' : '打开'}</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <div class="card-body">
-                <h6 class="card-title">${lang === 'en' ? 'Unit Converter' : '单位换算'}</h6>
-                <p class="card-text small text-muted">${lang === 'en' ? 'Length, weight, temperature, etc.' : '长度、重量、温度常用换算。'}</p>
-                <a href="#" class="btn btn-outline-primary btn-sm">${lang === 'en' ? 'Open' : '打开'}</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="mb-4" id="cat-misc">
-        <div class="d-flex align-items-center mb-2">
-          <span class="badge text-bg-secondary me-2">${lang === 'en' ? 'More' : '更多'}</span>
-          <span class="text-muted small">${lang === 'en' ? 'misc utilities' : '杂项工具合集'}</span>
-        </div>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
-          <div class="col">
-            <div class="card h-100">
-              <div class="card-body">
-                <h6 class="card-title">${lang === 'en' ? 'Timer' : '倒计时/计时器'}</h6>
-                <p class="card-text small text-muted">${lang === 'en' ? 'Lightweight timing helper.' : '轻量计时辅助。'}</p>
-                <a href="#" class="btn btn-outline-primary btn-sm">${lang === 'en' ? 'Open' : '打开'}</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <div class="card-body">
-                <h6 class="card-title">${lang === 'en' ? 'Random Generator' : '随机数生成'}</h6>
-                <p class="card-text small text-muted">${lang === 'en' ? 'Configurable range and count.' : '可设置范围与数量。'}</p>
-                <a href="#" class="btn btn-outline-primary btn-sm">${lang === 'en' ? 'Open' : '打开'}</a>
+                <h6 class="card-title">${toolHeadersTitle}</h6>
+                <p class="card-text small text-muted">${toolHeadersDesc}</p>
+                <a href="${toolHeadersHref}" class="btn btn-outline-primary btn-sm">${lang === 'en' ? 'Open' : '打开'}</a>
               </div>
             </div>
           </div>

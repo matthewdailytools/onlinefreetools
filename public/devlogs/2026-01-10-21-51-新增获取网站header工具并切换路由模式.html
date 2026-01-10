@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>修复本地静态首页未展示 | 开发日志</title>
-  <meta name="description" content="修复本地静态首页未展示" />
-  <link rel="canonical" href="https://www.onlinefreetools.org/devlogs/2026-01-09-%E4%BF%AE%E5%A4%8D%E9%9D%99%E6%80%81%E9%A6%96%E9%A1%B5%E6%9C%AA%E5%B1%95%E7%A4%BA.html" />
-  <meta property="og:title" content="修复本地静态首页未展示 | 开发日志" />
-  <meta property="og:description" content="修复本地静态首页未展示" />
+  <title>新增“获取网站响应 Header”工具（Worker 路由模式，含 API），提供中英文页面并保留语言配置扩展，同时清理首页未实现工具入口。 | 开发日志</title>
+  <meta name="description" content="新增“获取网站响应 Header”工具（Worker 路由模式，含 API），提供中英文页面并保留语言配置扩展，同时清理首页未实现工具入口。" />
+  <link rel="canonical" href="https://www.onlinefreetools.org/devlogs/2026-01-10-21-51-%E6%96%B0%E5%A2%9E%E8%8E%B7%E5%8F%96%E7%BD%91%E7%AB%99header%E5%B7%A5%E5%85%B7%E5%B9%B6%E5%88%87%E6%8D%A2%E8%B7%AF%E7%94%B1%E6%A8%A1%E5%BC%8F.html" />
+  <meta property="og:title" content="新增“获取网站响应 Header”工具（Worker 路由模式，含 API），提供中英文页面并保留语言配置扩展，同时清理首页未实现工具入口。 | 开发日志" />
+  <meta property="og:description" content="新增“获取网站响应 Header”工具（Worker 路由模式，含 API），提供中英文页面并保留语言配置扩展，同时清理首页未实现工具入口。" />
   <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://www.onlinefreetools.org/devlogs/2026-01-09-%E4%BF%AE%E5%A4%8D%E9%9D%99%E6%80%81%E9%A6%96%E9%A1%B5%E6%9C%AA%E5%B1%95%E7%A4%BA.html" />
+  <meta property="og:url" content="https://www.onlinefreetools.org/devlogs/2026-01-10-21-51-%E6%96%B0%E5%A2%9E%E8%8E%B7%E5%8F%96%E7%BD%91%E7%AB%99header%E5%B7%A5%E5%85%B7%E5%B9%B6%E5%88%87%E6%8D%A2%E8%B7%AF%E7%94%B1%E6%A8%A1%E5%BC%8F.html" />
   <meta property="og:image" content="https://www.onlinefreetools.org/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="alternate" hreflang="zh" href="https://www.onlinefreetools.org/devlogs/2026-01-09-%E4%BF%AE%E5%A4%8D%E9%9D%99%E6%80%81%E9%A6%96%E9%A1%B5%E6%9C%AA%E5%B1%95%E7%A4%BA.html" />
+  <link rel="alternate" hreflang="zh" href="https://www.onlinefreetools.org/devlogs/2026-01-10-21-51-%E6%96%B0%E5%A2%9E%E8%8E%B7%E5%8F%96%E7%BD%91%E7%AB%99header%E5%B7%A5%E5%85%B7%E5%B9%B6%E5%88%87%E6%8D%A2%E8%B7%AF%E7%94%B1%E6%A8%A1%E5%BC%8F.html" />
   
   <script>
     (function () {
@@ -107,24 +107,32 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">修复本地静态首页未展示 | 开发日志</h1>
+          <h1 class="h4 mb-0">新增“获取网站响应 Header”工具（Worker 路由模式，含 API），提供中英文页面并保留语言配置扩展，同时清理首页未实现工具入口。 | 开发日志</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">返回日志清单</a>
         </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>日期：2026年1月9日
-摘要：修复本地静态首页未展示</p>
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>日期：2026年1月10日21时51分
+摘要：新增“获取网站响应 Header”工具（Worker 路由模式，含 API），提供中英文页面并保留语言配置扩展，同时清理首页未实现工具入口。</p>
 <p>【question】
-打开<a href="http://localhost:8787/%E6%B2%A1%E6%9C%89%E7%9C%8B%E5%88%B0%E9%9D%99%E6%80%81%E9%A6%96%E9%A1%B5%EF%BC%8C%E4%B8%BA%E4%BB%80%E4%B9%88%EF%BC%8C%E9%9C%80%E8%A6%81%E4%BF%AE%E6%AD%A3">http://localhost:8787/没有看到静态首页，为什么，需要修正</a></p>
+增加工具：怎么获取网站header信息。采用路由模式而不是静态页面， 提供中英文语言，保留语言配置拓展。清理目前没有实现的工具入口。</p>
 <p>【try to solve】
-原因：Worker 根路径被 OpenAPI 文档占用，且未启用静态资源绑定，导致 <code>public/index.html</code> 未被服务。
-修正：</p>
+新增一个“获取网站响应 Header”的工具，采用 Worker 路由返回 HTML（不再生成静态工具页），并提供后端 API 由服务器侧请求目标网址获取响应 Header：</p>
 <ul>
-<li>将 OpenAPI 文档路由改为 <code>/docs</code>。</li>
-<li>启用 Wrangler <code>assets</code> 绑定，指向 <code>public/</code>，并在 Worker 中对 404 回退到静态资源。</li>
+<li>路由页面：<code>/tools/website-headers</code>（默认语言），以及 <code>/&lt;lang&gt;/tools/website-headers</code>（例如 <code>/en/tools/website-headers</code>）</li>
+<li>API：<code>/api/tools/website-headers?url=...</code>，返回 <code>status/finalUrl/headers</code> 等 JSON</li>
+<li>安全限制：仅允许 http/https；拦截 localhost/内网 IP（如 127.0.0.1、10.0.0.0/8、192.168.0.0/16、172.16.0.0/12、::1、fc00::/7、fe80::/10 等），减少 SSRF 风险</li>
+<li>i18n：页面提供中文/英文文案与语言切换入口，语言配置以可扩展列表形式组织</li>
+<li>默认语言配置：在 <code>wrangler.jsonc</code> 增加 <code>SITE_DEFAULT_LANG</code>（默认 <code>zh</code>）与 <code>SITE_LANGS</code>（默认 <code>zh,en</code>）以便后续扩展与环境配置</li>
 </ul>
+<p>同时清理首页未实现的工具入口：移除所有 <code>href=&quot;#&quot;</code> 的占位卡片，仅保留已存在的 <code>Markdown → HTML</code>，并新增新工具入口链接到 <code>/tools/website-headers</code>（英文页对应 <code>/en/tools/website-headers</code>）。</p>
 <p>【执行操作】</p>
 <ul>
-<li>更新 <code>wrangler.jsonc</code>：添加 <code>assets.directory ./public/</code>，绑定名 <code>ASSETS</code></li>
-<li>更新 <code>src/index.ts</code>：OpenAPI 文档路由改为 <code>/docs</code>，引入 <code>ASSETS</code> 绑定并在 404 时回退静态资源</li>
+<li>新增：<code>src/site/i18n.ts</code>、<code>src/site/lang.ts</code></li>
+<li>新增：<code>src/pages/websiteHeadersPage.ts</code></li>
+<li>新增：<code>src/tools/websiteHeaders.ts</code></li>
+<li>更新：<code>src/index.ts</code>（新增工具路由与 API）</li>
+<li>更新：<code>scripts/site/pages/home.mjs</code>（清理未实现入口 + 新增工具入口）</li>
+<li>更新：<code>wrangler.jsonc</code>、<code>worker-configuration.d.ts</code>（新增 vars 并重新 typegen）</li>
+<li>生成：<code>public/index.html</code>、<code>public/en/index.html</code>（首页入口更新）</li>
 </ul>
 </article>
       </section>

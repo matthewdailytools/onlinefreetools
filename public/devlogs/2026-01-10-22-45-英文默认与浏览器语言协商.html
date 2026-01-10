@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>修复本地静态首页未展示 | 开发日志</title>
-  <meta name="description" content="修复本地静态首页未展示" />
-  <link rel="canonical" href="https://www.onlinefreetools.org/devlogs/2026-01-09-%E4%BF%AE%E5%A4%8D%E9%9D%99%E6%80%81%E9%A6%96%E9%A1%B5%E6%9C%AA%E5%B1%95%E7%A4%BA.html" />
-  <meta property="og:title" content="修复本地静态首页未展示 | 开发日志" />
-  <meta property="og:description" content="修复本地静态首页未展示" />
+  <title>将英文设为默认回落语言，并基于浏览器可接受语言自动选择页面语言（无匹配则显示英文）。 | 开发日志</title>
+  <meta name="description" content="将英文设为默认回落语言，并基于浏览器可接受语言自动选择页面语言（无匹配则显示英文）。" />
+  <link rel="canonical" href="https://www.onlinefreetools.org/devlogs/2026-01-10-22-45-%E8%8B%B1%E6%96%87%E9%BB%98%E8%AE%A4%E4%B8%8E%E6%B5%8F%E8%A7%88%E5%99%A8%E8%AF%AD%E8%A8%80%E5%8D%8F%E5%95%86.html" />
+  <meta property="og:title" content="将英文设为默认回落语言，并基于浏览器可接受语言自动选择页面语言（无匹配则显示英文）。 | 开发日志" />
+  <meta property="og:description" content="将英文设为默认回落语言，并基于浏览器可接受语言自动选择页面语言（无匹配则显示英文）。" />
   <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://www.onlinefreetools.org/devlogs/2026-01-09-%E4%BF%AE%E5%A4%8D%E9%9D%99%E6%80%81%E9%A6%96%E9%A1%B5%E6%9C%AA%E5%B1%95%E7%A4%BA.html" />
+  <meta property="og:url" content="https://www.onlinefreetools.org/devlogs/2026-01-10-22-45-%E8%8B%B1%E6%96%87%E9%BB%98%E8%AE%A4%E4%B8%8E%E6%B5%8F%E8%A7%88%E5%99%A8%E8%AF%AD%E8%A8%80%E5%8D%8F%E5%95%86.html" />
   <meta property="og:image" content="https://www.onlinefreetools.org/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="alternate" hreflang="zh" href="https://www.onlinefreetools.org/devlogs/2026-01-09-%E4%BF%AE%E5%A4%8D%E9%9D%99%E6%80%81%E9%A6%96%E9%A1%B5%E6%9C%AA%E5%B1%95%E7%A4%BA.html" />
+  <link rel="alternate" hreflang="zh" href="https://www.onlinefreetools.org/devlogs/2026-01-10-22-45-%E8%8B%B1%E6%96%87%E9%BB%98%E8%AE%A4%E4%B8%8E%E6%B5%8F%E8%A7%88%E5%99%A8%E8%AF%AD%E8%A8%80%E5%8D%8F%E5%95%86.html" />
   
   <script>
     (function () {
@@ -107,24 +107,41 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">修复本地静态首页未展示 | 开发日志</h1>
+          <h1 class="h4 mb-0">将英文设为默认回落语言，并基于浏览器可接受语言自动选择页面语言（无匹配则显示英文）。 | 开发日志</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">返回日志清单</a>
         </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>日期：2026年1月9日
-摘要：修复本地静态首页未展示</p>
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>日期：2026年1月10日22时45分
+摘要：将英文设为默认回落语言，并基于浏览器可接受语言自动选择页面语言（无匹配则显示英文）。</p>
 <p>【question】
-打开<a href="http://localhost:8787/%E6%B2%A1%E6%9C%89%E7%9C%8B%E5%88%B0%E9%9D%99%E6%80%81%E9%A6%96%E9%A1%B5%EF%BC%8C%E4%B8%BA%E4%BB%80%E4%B9%88%EF%BC%8C%E9%9C%80%E8%A6%81%E4%BF%AE%E6%AD%A3">http://localhost:8787/没有看到静态首页，为什么，需要修正</a></p>
+设置英文为默认语言，并且判断浏览器可接受语言作为页面语言，网站没有对应语言则显示英文</p>
 <p>【try to solve】
-原因：Worker 根路径被 OpenAPI 文档占用，且未启用静态资源绑定，导致 <code>public/index.html</code> 未被服务。
-修正：</p>
+实现两层语言选择策略：</p>
+<ol>
+<li>Worker（动态路由）</li>
+</ol>
 <ul>
-<li>将 OpenAPI 文档路由改为 <code>/docs</code>。</li>
-<li>启用 Wrangler <code>assets</code> 绑定，指向 <code>public/</code>，并在 Worker 中对 404 回退到静态资源。</li>
+<li>将英文设为默认回落语言（<code>SITE_DEFAULT_LANG=en</code>）。</li>
+<li>对工具路由等由 Worker 返回 HTML 的页面，按 <code>Accept-Language</code> 选择最匹配语言；若请求的语言不受支持或未启用，则回落英文。</li>
+</ul>
+<ol start="2">
+<li>静态页面（首页 / devlogs）</li>
+</ol>
+<ul>
+<li>由于静态资源可能被平台优先直接命中，为保证“按浏览器语言选择”，在所有静态生成页面的 <code>&lt;head&gt;</code> 注入一段极早执行的脚本：<ul>
+<li>读取 <code>navigator.languages</code>（或 <code>navigator.language</code>）选择最匹配的站点语言；</li>
+<li>当 URL 未带语言前缀时，若选择结果为英文，则跳转到 <code>/en/...</code>；</li>
+<li>若浏览器语言没有匹配站点语言，则回落英文。</li>
+</ul>
+</li>
 </ul>
 <p>【执行操作】</p>
 <ul>
-<li>更新 <code>wrangler.jsonc</code>：添加 <code>assets.directory ./public/</code>，绑定名 <code>ASSETS</code></li>
-<li>更新 <code>src/index.ts</code>：OpenAPI 文档路由改为 <code>/docs</code>，引入 <code>ASSETS</code> 绑定并在 404 时回退静态资源</li>
+<li>更新：<code>wrangler.jsonc</code>（<code>SITE_DEFAULT_LANG</code> 改为 <code>en</code>）</li>
+<li>更新：<code>worker-configuration.d.ts</code>（重新 typegen）</li>
+<li>更新：<code>src/index.ts</code>（增加 Accept-Language 协商与回落英文逻辑，用于 Worker 返回的 HTML 路由）</li>
+<li>更新：<code>scripts/site/layout.mjs</code>（静态页注入浏览器语言自动选择/跳转脚本）</li>
+<li>更新：<code>README.md</code>（补充浏览器语言说明）</li>
+<li>生成：重新运行 <code>build:site</code> 输出静态页面</li>
 </ul>
 </article>
       </section>

@@ -4,13 +4,103 @@ import { TaskCreate } from "./endpoints/taskCreate";
 import { TaskDelete } from "./endpoints/taskDelete";
 import { TaskFetch } from "./endpoints/taskFetch";
 import { TaskList } from "./endpoints/taskList";
+import { isSupportedLang, type SiteLang } from "./site/i18n";
+import { renderWebsiteHeadersPage } from "./pages/websiteHeadersPage";
+import { handleWebsiteHeadersApi } from "./tools/websiteHeaders";
 
 type Env = {
 	ASSETS: Fetcher;
+	SITE_DEFAULT_LANG?: string;
+	SITE_LANGS?: string;
 };
 
 // Start a Hono app
 const app = new Hono<{ Bindings: Env }>();
+
+const parseLangList = (raw: string | undefined) => {
+	const items = String(raw || "")
+		.split(",")
+		.map((s) => s.trim())
+		.filter(Boolean);
+	return Array.from(new Set(items));
+};
+
+const getEnabledLangs = (env: Env): SiteLang[] => {
+	const list = parseLangList(env.SITE_LANGS);
+	const enabled = list.filter((x) => isSupportedLang(x)) as SiteLang[];
+	return enabled.length ? enabled : (["zh", "en"] as SiteLang[]);
+};
+
+const getFallbackLang = (env: Env): SiteLang => {
+	const raw = (env.SITE_DEFAULT_LANG || "en").trim();
+	return (isSupportedLang(raw) ? raw : "en") as SiteLang;
+};
+
+const parseAcceptLanguage = (value: string | null) => {
+	if (!value) return [] as { tag: string; q: number }[];
+	return value
+		.split(",")
+		.map((part) => {
+			const [tagRaw, ...params] = part.trim().split(";");
+			let q = 1;
+			for (const p of params) {
+				const m = p.trim().match(/^q=(0(\.\d+)?|1(\.0+)?)$/);
+				if (m) q = Number(m[1]);
+			}
+			return { tag: tagRaw.trim().toLowerCase(), q };
+		})
+		.filter((x) => x.tag)
+		.sort((a, b) => b.q - a.q);
+};
+
+const pickLang = (acceptLanguage: string | null, enabled: SiteLang[], fallback: SiteLang): SiteLang => {
+	const candidates = parseAcceptLanguage(acceptLanguage);
+	for (const c of candidates) {
+		const primary = c.tag.split("-")[0];
+		if (isSupportedLang(primary) && enabled.includes(primary as SiteLang)) return primary as SiteLang;
+	}
+	if (enabled.includes(fallback)) return fallback;
+	return enabled[0] || fallback;
+};
+
+const getExplicitLangFromPath = (pathname: string, enabled: SiteLang[]) => {
+	const seg = pathname.replace(/^\/+/, "").split("/")[0].toLowerCase();
+	if (isSupportedLang(seg) && enabled.includes(seg as SiteLang)) return seg as SiteLang;
+	return null;
+};
+
+const withLangPrefix = (lang: SiteLang, pathname: string) => {
+	const safe = pathname.startsWith("/") ? pathname : `/${pathname}`;
+	return lang === "zh" ? safe : `/${lang}${safe}`;
+};
+
+app.use("*", async (c, next) => {
+	const url = new URL(c.req.url);
+	const pathname = url.pathname;
+
+	// Do not interfere with APIs, docs, or obvious static assets.
+	const isStaticAsset = /\.(css|js|png|jpg|jpeg|gif|webp|avif|svg|ico|map|woff2?|ttf|eot|xml|txt|webmanifest)$/i.test(
+		pathname
+	);
+	if (pathname.startsWith("/api/") || pathname === "/api" || pathname.startsWith("/docs") || isStaticAsset) {
+		return next();
+	}
+	if (c.req.method !== "GET") return next();
+
+	const accept = c.req.header("accept") || "";
+	if (!accept.includes("text/html")) return next();
+
+	const enabled = getEnabledLangs(c.env);
+	const explicit = getExplicitLangFromPath(pathname, enabled);
+	if (explicit) return next();
+
+	const fallback = getFallbackLang(c.env);
+	const picked = pickLang(c.req.header("accept-language"), enabled, fallback);
+	if (picked === "zh") return next();
+
+	url.pathname = withLangPrefix(picked, pathname === "/" ? "/" : pathname);
+	return c.redirect(url.toString(), 302);
+});
 
 // Setup OpenAPI registry
 const openapi = fromHono(app, {
@@ -22,6 +112,51 @@ openapi.get("/api/tasks", TaskList);
 openapi.post("/api/tasks", TaskCreate);
 openapi.get("/api/tasks/:taskSlug", TaskFetch);
 openapi.delete("/api/tasks/:taskSlug", TaskDelete);
+
+app.get("/api/tools/website-headers", handleWebsiteHeadersApi);
+
+app.get("/tools/website-headers", (c) => {
+	const enabled = getEnabledLangs(c.env);
+	const lang = enabled.includes("zh") ? ("zh" as SiteLang) : getFallbackLang(c.env);
+	const html = renderWebsiteHeadersPage(lang, getFallbackLang(c.env));
+	return c.html(html);
+});
+
+app.get("/:lang/tools/website-headers", (c) => {
+	const langParam = c.req.param("lang");
+	if (!isSupportedLang(langParam)) {
+		return c.redirect(withLangPrefix(getFallbackLang(c.env), "/tools/website-headers"), 302);
+	}
+	const enabled = getEnabledLangs(c.env);
+	const lang = (enabled.includes(langParam as SiteLang) ? (langParam as SiteLang) : getFallbackLang(c.env)) as SiteLang;
+	const html = renderWebsiteHeadersPage(lang, getFallbackLang(c.env));
+	return c.html(html);
+});
+
+// Catch-all (GET): perform language negotiation before falling back to static assets.
+app.get("*", (c) => {
+	const url = new URL(c.req.url);
+	const pathname = url.pathname;
+	const isStaticAsset = /\.(css|js|png|jpg|jpeg|gif|webp|avif|svg|ico|map|woff2?|ttf|eot|xml|txt|webmanifest)$/i.test(
+		pathname
+	);
+	if (pathname.startsWith("/api/") || pathname === "/api" || pathname.startsWith("/docs") || isStaticAsset) {
+		return c.notFound();
+	}
+
+	const accept = c.req.header("accept") || "";
+	if (!accept.includes("text/html")) return c.notFound();
+
+	const enabled = getEnabledLangs(c.env);
+	const explicit = getExplicitLangFromPath(pathname, enabled);
+	if (explicit) return c.notFound();
+
+	const picked = pickLang(c.req.header("accept-language"), enabled, getFallbackLang(c.env));
+	if (picked === "zh") return c.notFound();
+
+	url.pathname = withLangPrefix(picked, pathname === "/" ? "/" : pathname);
+	return c.redirect(url.toString(), 302);
+});
 
 // You may also register routes for non OpenAPI directly on Hono
 // app.get('/test', (c) => c.text('Hono!'))

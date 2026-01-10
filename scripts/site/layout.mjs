@@ -27,6 +27,50 @@ export const renderLayout = ({
   const canonical = absoluteUrl(canonicalPath);
   const tracking = getTrackingSnippets();
 
+  const enabledLangs = Array.isArray(alternates)
+    ? Array.from(
+        new Set(
+          alternates
+            .filter((a) => a && a.lang)
+            .map((a) => String(a.lang).trim())
+            .filter(Boolean)
+        )
+      )
+    : [lang];
+
+  const clientLangRedirectScript = `
+  <script>
+    (function () {
+      try {
+        var enabled = ${JSON.stringify(enabledLangs)};
+        var fallback = 'en';
+        var path = window.location.pathname || '/';
+
+        // If the URL already contains a non-zh language prefix, respect it.
+        var hasPrefix = enabled.some(function (l) {
+          return l && l !== 'zh' && (path === '/' + l || path.indexOf('/' + l + '/') === 0);
+        });
+        if (hasPrefix) return;
+
+        var langs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language])
+          .filter(Boolean)
+          .map(function (x) { return String(x).toLowerCase().split('-')[0]; });
+
+        var picked = null;
+        for (var i = 0; i < langs.length; i++) {
+          if (enabled.indexOf(langs[i]) !== -1) { picked = langs[i]; break; }
+        }
+        if (!picked) picked = enabled.indexOf(fallback) !== -1 ? fallback : (enabled[0] || fallback);
+
+        if (picked === ${JSON.stringify(lang)}) return;
+        if (picked !== 'zh') {
+          var target = ('/' + picked + path).replace(/\/\/+/g, '/');
+          window.location.replace(target + window.location.search + window.location.hash);
+        }
+      } catch (e) {}
+    })();
+  </script>`;
+
   const alternateLinks = Array.isArray(alternates)
     ? alternates
         .filter((a) => a && a.lang && a.href)
@@ -94,6 +138,7 @@ export const renderLayout = ({
   <meta property="og:image" content="${ogImageUrl}" />
   <meta name="twitter:card" content="summary_large_image" />
   ${alternateLinks}
+  ${clientLangRedirectScript}
   <link href="${bootstrapCss}" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>${sidebarCss}</style>
   ${tracking.headHtml}

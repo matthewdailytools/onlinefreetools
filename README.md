@@ -19,6 +19,12 @@
 	- `SITE_DEFAULT_LANG=zh` (default)
 	- Example: `SITE_DEFAULT_LANG=en SITE_LANGS=zh,en npm run build:site`
 
+### Browser language
+
+- Static pages (home/devlogs) will auto-select language based on browser settings.
+	- If the URL has no language prefix, the page uses `navigator.languages` to pick the best supported language.
+	- If none matches, it falls back to English (`en`).
+
 ### Tracking Injection / 跟踪代码注入
 
 ### i18n / 多语言

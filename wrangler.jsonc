@@ -13,6 +13,10 @@
 	"assets": {
 		"directory": "./public/",
 		"binding": "ASSETS"
+	},
+	"vars": {
+		"SITE_DEFAULT_LANG": "en",
+		"SITE_LANGS": "zh,en"
 	}
 	/**
 	 * Smart Placement
