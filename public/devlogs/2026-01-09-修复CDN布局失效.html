@@ -13,11 +13,12 @@
   <meta property="og:image" content="https://www.onlinefreetools.org/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="alternate" hreflang="zh" href="https://www.onlinefreetools.org/devlogs/2026-01-09-%E4%BF%AE%E5%A4%8DCDN%E5%B8%83%E5%B1%80%E5%A4%B1%E6%95%88.html" />
+  <link rel="alternate" hreflang="en" href="https://www.onlinefreetools.org/en/devlogs/2026-01-09-%E4%BF%AE%E5%A4%8DCDN%E5%B8%83%E5%B1%80%E5%A4%B1%E6%95%88.html" />
   
   <script>
     (function () {
       try {
-        var enabled = ["zh"];
+        var enabled = ["zh","en"];
         var fallback = 'en';
         var path = window.location.pathname || '/';
 
@@ -88,11 +89,12 @@
           <div class="d-flex align-items-center gap-2">
             
             
-      <div>
-        <button class="btn btn-outline-secondary btn-sm" type="button" disabled aria-label="Language">
-          中文
-        </button>
-      </div>
+    <div class="dropdown">
+      <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        中文
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end"><li><span class="dropdown-item active" aria-current="true">中文</span></li><li><a class="dropdown-item" href="/en/devlogs/2026-01-09-修复CDN布局失效.html">English</a></li></ul>
+    </div>
           </div>
         </div>
       </div>

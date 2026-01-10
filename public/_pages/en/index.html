@@ -1,15 +1,15 @@
 <!doctype html>
-<html lang="zh">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Online Free Tools | 学习项目首页</title>
-  <meta name="description" content="Online Free Tools 学习项目，聚合多类在线小工具，支持移动与桌面访问。" />
-  <link rel="canonical" href="https://www.onlinefreetools.org/" />
-  <meta property="og:title" content="Online Free Tools | 学习项目首页" />
-  <meta property="og:description" content="Online Free Tools 学习项目，聚合多类在线小工具，支持移动与桌面访问。" />
+  <title>Online Free Tools | Home</title>
+  <meta name="description" content="Online Free Tools learning project: a collection of small online utilities for mobile and desktop." />
+  <link rel="canonical" href="https://www.onlinefreetools.org/en/" />
+  <meta property="og:title" content="Online Free Tools | Home" />
+  <meta property="og:description" content="Online Free Tools learning project: a collection of small online utilities for mobile and desktop." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.onlinefreetools.org/" />
+  <meta property="og:url" content="https://www.onlinefreetools.org/en/" />
   <meta property="og:image" content="https://www.onlinefreetools.org/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="alternate" hreflang="zh" href="https://www.onlinefreetools.org/" />
@@ -38,7 +38,7 @@
         }
         if (!picked) picked = enabled.indexOf(fallback) !== -1 ? fallback : (enabled[0] || fallback);
 
-        if (picked === "zh") return;
+        if (picked === "en") return;
         if (picked !== 'zh') {
           var target = ('/' + picked + path).replace(///+/g, '/');
           window.location.replace(target + window.location.search + window.location.hash);
@@ -80,24 +80,24 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom fixed-top">
       <div class="container-fluid">
         <button class="btn btn-outline-secondary me-2" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
-        <a class="navbar-brand fw-semibold" href="/">Online Free Tools</a>
+        <a class="navbar-brand fw-semibold" href="/en/">Online Free Tools</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="topNav">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="#featured">推荐</a></li><li class="nav-item"><a class="nav-link" href="#all-tools">全部工具</a></li><li class="nav-item"><a class="nav-link" href="/devlogs/">开发日志</a></li></ul>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="#featured">Featured</a></li><li class="nav-item"><a class="nav-link" href="#all-tools">All Tools</a></li><li class="nav-item"><a class="nav-link" href="/en/devlogs/">Dev Logs</a></li></ul>
           <div class="d-flex align-items-center gap-2">
             
           <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="搜索工具" aria-label="Search">
-            <button class="btn btn-outline-primary" type="submit">搜索</button>
+            <input class="form-control me-2" type="search" placeholder="Search tools" aria-label="Search">
+            <button class="btn btn-outline-primary" type="submit">Search</button>
           </form>
             
     <div class="dropdown">
       <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-        中文
+        English
       </button>
-      <ul class="dropdown-menu dropdown-menu-end"><li><span class="dropdown-item active" aria-current="true">中文</span></li><li><a class="dropdown-item" href="/en/">English</a></li></ul>
+      <ul class="dropdown-menu dropdown-menu-end"><li><a class="dropdown-item" href="/">中文</a></li><li><span class="dropdown-item active" aria-current="true">English</span></li></ul>
     </div>
           </div>
         </div>
@@ -107,75 +107,79 @@
   <div class="layout sidebar-collapsed" id="layoutRoot">
     
     <aside id="sidebar" class="bg-light border-end p-3">
-      <h6 class="text-muted text-uppercase">分类</h6>
-      <div class="list-group list-group-flush small" id="categoryList"><a class="list-group-item list-group-item-action" href="#cat-text">文本工具</a><a class="list-group-item list-group-item-action" href="#cat-dev">开发者工具</a></div>
+      <h6 class="text-muted text-uppercase">Categories</h6>
+      <div class="list-group list-group-flush small" id="categoryList"><a class="list-group-item list-group-item-action" href="#cat-text">Text</a><a class="list-group-item list-group-item-action" href="#cat-dev">Developer</a></div>
     </aside>
     <main id="content" class="p-4">
     <section id="featured" class="mb-4">
       <div class="d-flex justify-content-between align-items-center mb-3">
-        <h2 class="h5 mb-0">推荐</h2>
-        <a class="btn btn-sm btn-outline-secondary" href="#all-tools">查看全部</a>
+        <h2 class="h5 mb-0">Featured</h2>
+        <a class="btn btn-sm btn-outline-secondary" href="#all-tools">View all</a>
       </div>
       <div class="row row-cols-1 row-cols-md-3 g-3">
-        <div class="col">
-          <div class="card h-100 shadow-sm">
-            <div class="card-body">
-              <h5 class="card-title">获取网站响应 Header</h5>
-              <p class="card-text text-muted">输入网址，查询该网站的 HTTP 响应 Header。</p>
-              <a href="/tools/website-headers" class="btn btn-primary btn-sm">打开</a>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100 shadow-sm">
-            <div class="card-body">
-              <h5 class="card-title">Markdown 转 HTML</h5>
-              <p class="card-text text-muted">将 Markdown 快速渲染为 HTML。</p>
-              <a href="/tools/markdown-to-html.html" class="btn btn-primary btn-sm">打开</a>
-            </div>
-          </div>
-        </div>
+        
+  <div class="col">
+    <div class="card h-100 shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title">Website Headers</h5>
+        <p class="card-text text-muted">Fetch and view HTTP response headers for a given URL.</p>
+        <a href="/en/tools/website-headers" class="btn btn-primary btn-sm">Open</a>
+      </div>
+    </div>
+  </div>
+        
+  <div class="col">
+    <div class="card h-100 shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title">Markdown → HTML</h5>
+        <p class="card-text text-muted">Render Markdown into HTML.</p>
+        <a href="/en/tools/markdown-to-html.html" class="btn btn-primary btn-sm">Open</a>
+      </div>
+    </div>
+  </div>
       </div>
     </section>
 
     <section id="all-tools">
       <div class="d-flex justify-content-between align-items-center mb-3">
-        <h2 class="h5 mb-0">全部工具</h2>
+        <h2 class="h5 mb-0">All Tools</h2>
       </div>
 
       <div class="mb-4" id="cat-text">
         <div class="d-flex align-items-center mb-2">
-          <span class="badge text-bg-secondary me-2">文本工具</span>
-          <span class="text-muted small">格式化、对比、生成</span>
+          <span class="badge text-bg-secondary me-2">Text</span>
+          <span class="text-muted small">format, diff, generate</span>
         </div>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
-          <div class="col">
-            <div class="card h-100">
-              <div class="card-body">
-                <h6 class="card-title">Markdown 转 HTML</h6>
-                <p class="card-text small text-muted">将 Markdown 快速渲染为 HTML。</p>
-                <a href="/tools/markdown-to-html.html" class="btn btn-outline-primary btn-sm">打开</a>
-              </div>
-            </div>
-          </div>
+          
+  <div class="col">
+    <div class="card h-100">
+      <div class="card-body">
+        <h6 class="card-title">Markdown → HTML</h6>
+        <p class="card-text small text-muted">Render Markdown into HTML.</p>
+        <a href="/en/tools/markdown-to-html.html" class="btn btn-outline-primary btn-sm">Open</a>
+      </div>
+    </div>
+  </div>
         </div>
       </div>
 
       <div class="mb-4" id="cat-dev">
         <div class="d-flex align-items-center mb-2">
-          <span class="badge text-bg-secondary me-2">开发者工具</span>
-          <span class="text-muted small">调试、生成、校验</span>
+          <span class="badge text-bg-secondary me-2">Developer</span>
+          <span class="text-muted small">debug, generate, validate</span>
         </div>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
-          <div class="col">
-            <div class="card h-100">
-              <div class="card-body">
-                <h6 class="card-title">获取网站响应 Header</h6>
-                <p class="card-text small text-muted">输入网址，查询该网站的 HTTP 响应 Header。</p>
-                <a href="/tools/website-headers" class="btn btn-outline-primary btn-sm">打开</a>
-              </div>
-            </div>
-          </div>
+          
+  <div class="col">
+    <div class="card h-100">
+      <div class="card-body">
+        <h6 class="card-title">Website Headers</h6>
+        <p class="card-text small text-muted">Fetch and view HTTP response headers for a given URL.</p>
+        <a href="/en/tools/website-headers" class="btn btn-outline-primary btn-sm">Open</a>
+      </div>
+    </div>
+  </div>
         </div>
       </div>
     </section>
@@ -184,7 +188,7 @@
   
   <footer class="bg-light border-top text-center py-3">
     <div class="container">
-      <small class="text-muted">Online Free Tools · 学习项目 · 持续迭代</small>
+      <small class="text-muted">Online Free Tools · Learning project · Iterating</small>
     </div>
   </footer>
   

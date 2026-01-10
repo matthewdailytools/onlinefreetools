@@ -1,19 +1,19 @@
 <!doctype html>
-<html lang="zh">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>切换CDN到Cloudflare | 开发日志</title>
-  <meta name="description" content="切换CDN到Cloudflare" />
-  <link rel="canonical" href="https://www.onlinefreetools.org/devlogs/2026-01-09-%E5%88%87%E6%8D%A2CDN%E5%88%B0Cloudflare.html" />
-  <meta property="og:title" content="切换CDN到Cloudflare | 开发日志" />
-  <meta property="og:description" content="切换CDN到Cloudflare" />
+  <title>首页改为统一走动态构建流水线，并拆分 header/sidebar/footer/content 模块，补齐多语言文案。 | Dev Logs</title>
+  <meta name="description" content="首页改为统一走动态构建流水线，并拆分 header/sidebar/footer/content 模块，补齐多语言文案。" />
+  <link rel="canonical" href="https://www.onlinefreetools.org/en/devlogs/2026-01-10-23-17-%E9%A6%96%E9%A1%B5%E5%8A%A8%E6%80%81%E6%9E%84%E5%BB%BA-%E6%A8%A1%E5%9D%97%E6%8B%86%E5%88%86-%E5%A4%9A%E8%AF%AD%E8%A8%80.html" />
+  <meta property="og:title" content="首页改为统一走动态构建流水线，并拆分 header/sidebar/footer/content 模块，补齐多语言文案。 | Dev Logs" />
+  <meta property="og:description" content="首页改为统一走动态构建流水线，并拆分 header/sidebar/footer/content 模块，补齐多语言文案。" />
   <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://www.onlinefreetools.org/devlogs/2026-01-09-%E5%88%87%E6%8D%A2CDN%E5%88%B0Cloudflare.html" />
+  <meta property="og:url" content="https://www.onlinefreetools.org/en/devlogs/2026-01-10-23-17-%E9%A6%96%E9%A1%B5%E5%8A%A8%E6%80%81%E6%9E%84%E5%BB%BA-%E6%A8%A1%E5%9D%97%E6%8B%86%E5%88%86-%E5%A4%9A%E8%AF%AD%E8%A8%80.html" />
   <meta property="og:image" content="https://www.onlinefreetools.org/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="alternate" hreflang="zh" href="https://www.onlinefreetools.org/devlogs/2026-01-09-%E5%88%87%E6%8D%A2CDN%E5%88%B0Cloudflare.html" />
-  <link rel="alternate" hreflang="en" href="https://www.onlinefreetools.org/en/devlogs/2026-01-09-%E5%88%87%E6%8D%A2CDN%E5%88%B0Cloudflare.html" />
+  <link rel="alternate" hreflang="zh" href="https://www.onlinefreetools.org/devlogs/2026-01-10-23-17-%E9%A6%96%E9%A1%B5%E5%8A%A8%E6%80%81%E6%9E%84%E5%BB%BA-%E6%A8%A1%E5%9D%97%E6%8B%86%E5%88%86-%E5%A4%9A%E8%AF%AD%E8%A8%80.html" />
+  <link rel="alternate" hreflang="en" href="https://www.onlinefreetools.org/en/devlogs/2026-01-10-23-17-%E9%A6%96%E9%A1%B5%E5%8A%A8%E6%80%81%E6%9E%84%E5%BB%BA-%E6%A8%A1%E5%9D%97%E6%8B%86%E5%88%86-%E5%A4%9A%E8%AF%AD%E8%A8%80.html" />
   
   <script>
     (function () {
@@ -38,7 +38,7 @@
         }
         if (!picked) picked = enabled.indexOf(fallback) !== -1 ? fallback : (enabled[0] || fallback);
 
-        if (picked === "zh") return;
+        if (picked === "en") return;
         if (picked !== 'zh') {
           var target = ('/' + picked + path).replace(///+/g, '/');
           window.location.replace(target + window.location.search + window.location.hash);
@@ -80,20 +80,20 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom fixed-top">
       <div class="container-fluid">
         <button class="btn btn-outline-secondary me-2" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
-        <a class="navbar-brand fw-semibold" href="/">Online Free Tools</a>
+        <a class="navbar-brand fw-semibold" href="/en/">Online Free Tools</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="topNav">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="/">首页</a></li><li class="nav-item"><a class="nav-link" href="/devlogs/">开发日志</a></li></ul>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="/en/">Home</a></li><li class="nav-item"><a class="nav-link" href="/en/devlogs/">Dev Logs</a></li></ul>
           <div class="d-flex align-items-center gap-2">
             
             
     <div class="dropdown">
       <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-        中文
+        English
       </button>
-      <ul class="dropdown-menu dropdown-menu-end"><li><span class="dropdown-item active" aria-current="true">中文</span></li><li><a class="dropdown-item" href="/en/devlogs/2026-01-09-切换CDN到Cloudflare.html">English</a></li></ul>
+      <ul class="dropdown-menu dropdown-menu-end"><li><a class="dropdown-item" href="/devlogs/2026-01-10-23-17-首页动态构建-模块拆分-多语言.html">中文</a></li><li><span class="dropdown-item active" aria-current="true">English</span></li></ul>
     </div>
           </div>
         </div>
@@ -103,24 +103,31 @@
   <div class="layout sidebar-collapsed" id="layoutRoot">
     
     <aside id="sidebar" class="bg-light border-end p-3">
-      <h6 class="text-muted text-uppercase">导航</h6>
-      <div class="list-group list-group-flush small" id="navList"><a class="list-group-item list-group-item-action" href="/">首页</a><a class="list-group-item list-group-item-action" href="/devlogs/">开发日志</a></div>
+      <h6 class="text-muted text-uppercase">Navigation</h6>
+      <div class="list-group list-group-flush small" id="navList"><a class="list-group-item list-group-item-action" href="/en/">Home</a><a class="list-group-item list-group-item-action" href="/en/devlogs/">Dev Logs</a></div>
     </aside>
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">切换CDN到Cloudflare | 开发日志</h1>
-          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">返回日志清单</a>
+          <h1 class="h4 mb-0">首页改为统一走动态构建流水线，并拆分 header/sidebar/footer/content 模块，补齐多语言文案。 | Dev Logs</h1>
+          <a class="btn btn-outline-secondary btn-sm" href="/en/devlogs/">Back to Logs</a>
         </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>日期：2026年1月9日
-摘要：切换CDN到Cloudflare</p>
-<p>【question】
-js和css的cdn文件修改为cloudflare的cdn文件</p>
-<p>【try to solve】
-已将 <code>public/index.html</code> 中的 Bootstrap 5.3.3 CSS/JS 由 jsdelivr 改为 Cloudflare cdnjs，并保留 SRI 与 <code>referrerpolicy=&quot;no-referrer&quot;</code>。</p>
-<p>【执行操作】</p>
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>日期：2026年1月10日23时17分
+摘要：首页改为统一走动态构建流水线，并拆分 header/sidebar/footer/content 模块，补齐多语言文案。
+【question】
+首页也动态构建，拆分header，sidebar，footer，content模块，以及多国语言支持
+【try to solve】</p>
 <ul>
-<li>更新 <code>public/index.html</code></li>
+<li>首页继续由 <code>scripts/build-site.mjs</code> 统一生成到 <code>public/</code> 与 <code>public/en/</code>（随 <code>siteConfig.enabledLangs</code> 输出）。</li>
+<li>将站点组件拆分为独立模块：<ul>
+<li><code>scripts/site/components/header.mjs</code></li>
+<li><code>scripts/site/components/sidebar.mjs</code></li>
+<li><code>scripts/site/components/footer.mjs</code></li>
+<li><code>scripts/site/components/content-home.mjs</code>
+并由 <code>scripts/site/components.mjs</code> 统一导出。</li>
+</ul>
+</li>
+<li>首页文案全部接入 <code>scripts/site/i18n.mjs</code>，移除页面内 <code>lang === &#39;en&#39; ? ... : ...</code> 的硬编码分支，确保 <code>zh/en</code> 都能生成一致结构的首页。</li>
 </ul>
 </article>
       </section>
@@ -129,7 +136,7 @@ js和css的cdn文件修改为cloudflare的cdn文件</p>
   
   <footer class="bg-light border-top text-center py-3">
     <div class="container">
-      <small class="text-muted">Online Free Tools · 学习项目 · 持续迭代</small>
+      <small class="text-muted">Online Free Tools · Learning project · Iterating</small>
     </div>
   </footer>
   

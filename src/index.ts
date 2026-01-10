@@ -74,7 +74,59 @@ const withLangPrefix = (lang: SiteLang, pathname: string) => {
 	return lang === "zh" ? safe : `/${lang}${safe}`;
 };
 
-app.use("*", async (c, next) => {
+const fetchAsset = async (c: any, assetPathname: string) => {
+	let assetUrl = new URL(c.req.url);
+	assetUrl.pathname = assetPathname;
+
+	let req = new Request(assetUrl.toString(), c.req.raw);
+	let res = await c.env.ASSETS.fetch(req);
+
+	// Some asset handlers canonicalize `index.html` → `/` with a redirect.
+	// Follow internally so users/bots stay on stable SEO URLs like `/` and `/en/`.
+	for (let i = 0; i < 3 && res.status >= 300 && res.status < 400; i++) {
+		const loc = res.headers.get("Location");
+		if (!loc) break;
+		assetUrl = new URL(loc, assetUrl);
+		req = new Request(assetUrl.toString(), c.req.raw);
+		res = await c.env.ASSETS.fetch(req);
+	}
+
+	return res;
+};
+
+// Home pages are served from assets at `/_pages/{lang}/index.html`.
+app.get("/", async (c) => {
+	const accept = c.req.header("accept") || "";
+	if (!accept.includes("text/html")) return c.notFound();
+
+	const enabled = getEnabledLangs(c.env);
+	const acceptLanguage = c.req.header("accept-language");
+	const defaultLang = enabled.includes("zh") ? ("zh" as SiteLang) : getFallbackLang(c.env);
+
+	if (acceptLanguage) {
+		const picked = pickLang(acceptLanguage, enabled, defaultLang);
+		if (picked !== defaultLang) {
+			const url = new URL(c.req.url);
+			url.pathname = withLangPrefix(picked, "/");
+			c.header("Vary", "Accept-Language, Accept");
+			return c.redirect(url.toString(), 302);
+		}
+	}
+
+	c.header("Vary", "Accept-Language, Accept");
+	const res = await fetchAsset(c, `/_pages/${defaultLang}/index.html`);
+	return res;
+});
+
+app.get("/en", (c) => c.redirect("/en/", 308));
+app.get("/en/", async (c) => {
+	const accept = c.req.header("accept") || "";
+	if (!accept.includes("text/html")) return c.notFound();
+	const res = await fetchAsset(c, "/_pages/en/index.html");
+	return res;
+});
+
+app.use("/*", async (c, next) => {
 	const url = new URL(c.req.url);
 	const pathname = url.pathname;
 
@@ -94,11 +146,15 @@ app.use("*", async (c, next) => {
 	const explicit = getExplicitLangFromPath(pathname, enabled);
 	if (explicit) return next();
 
-	const fallback = getFallbackLang(c.env);
-	const picked = pickLang(c.req.header("accept-language"), enabled, fallback);
-	if (picked === "zh") return next();
+	const acceptLanguage = c.req.header("accept-language");
+	if (!acceptLanguage) return next();
+
+	const defaultLang = enabled.includes("zh") ? ("zh" as SiteLang) : getFallbackLang(c.env);
+	const picked = pickLang(acceptLanguage, enabled, defaultLang);
+	if (picked === defaultLang) return next();
 
 	url.pathname = withLangPrefix(picked, pathname === "/" ? "/" : pathname);
+	c.header("Vary", "Accept-Language, Accept");
 	return c.redirect(url.toString(), 302);
 });
 
@@ -134,7 +190,7 @@ app.get("/:lang/tools/website-headers", (c) => {
 });
 
 // Catch-all (GET): perform language negotiation before falling back to static assets.
-app.get("*", (c) => {
+app.get("/*", (c) => {
 	const url = new URL(c.req.url);
 	const pathname = url.pathname;
 	const isStaticAsset = /\.(css|js|png|jpg|jpeg|gif|webp|avif|svg|ico|map|woff2?|ttf|eot|xml|txt|webmanifest)$/i.test(
@@ -151,10 +207,15 @@ app.get("*", (c) => {
 	const explicit = getExplicitLangFromPath(pathname, enabled);
 	if (explicit) return c.notFound();
 
-	const picked = pickLang(c.req.header("accept-language"), enabled, getFallbackLang(c.env));
-	if (picked === "zh") return c.notFound();
+	const acceptLanguage = c.req.header("accept-language");
+	if (!acceptLanguage) return c.notFound();
+
+	const defaultLang = enabled.includes("zh") ? ("zh" as SiteLang) : getFallbackLang(c.env);
+	const picked = pickLang(acceptLanguage, enabled, defaultLang);
+	if (picked === defaultLang) return c.notFound();
 
 	url.pathname = withLangPrefix(picked, pathname === "/" ? "/" : pathname);
+	c.header("Vary", "Accept-Language, Accept");
 	return c.redirect(url.toString(), 302);
 });
 

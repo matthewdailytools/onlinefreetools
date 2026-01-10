@@ -13,11 +13,12 @@
   <meta property="og:image" content="https://www.onlinefreetools.org/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="alternate" hreflang="zh" href="https://www.onlinefreetools.org/devlogs/2026-01-08-%E5%88%9D%E5%A7%8B%E5%8C%96Cloudflare%E9%A1%B9%E7%9B%AE.html" />
+  <link rel="alternate" hreflang="en" href="https://www.onlinefreetools.org/en/devlogs/2026-01-08-%E5%88%9D%E5%A7%8B%E5%8C%96Cloudflare%E9%A1%B9%E7%9B%AE.html" />
   
   <script>
     (function () {
       try {
-        var enabled = ["zh"];
+        var enabled = ["zh","en"];
         var fallback = 'en';
         var path = window.location.pathname || '/';
 
@@ -88,11 +89,12 @@
           <div class="d-flex align-items-center gap-2">
             
             
-      <div>
-        <button class="btn btn-outline-secondary btn-sm" type="button" disabled aria-label="Language">
-          中文
-        </button>
-      </div>
+    <div class="dropdown">
+      <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        中文
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end"><li><span class="dropdown-item active" aria-current="true">中文</span></li><li><a class="dropdown-item" href="/en/devlogs/2026-01-08-初始化Cloudflare项目.html">English</a></li></ul>
+    </div>
           </div>
         </div>
       </div>

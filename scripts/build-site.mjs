@@ -49,7 +49,7 @@ const langOutRoot = (lang) => {
 };
 
 export const buildHome = async (lang) => {
-  const outRoot = langOutRoot(lang);
+  const outRoot = path.join(publicDir, '_pages', lang);
   await ensureDir(outRoot);
 
   const model = getHomePageModel(lang);

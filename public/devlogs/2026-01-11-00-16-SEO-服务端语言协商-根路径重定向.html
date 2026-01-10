@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>切换CDN到Cloudflare | 开发日志</title>
-  <meta name="description" content="切换CDN到Cloudflare" />
-  <link rel="canonical" href="https://www.onlinefreetools.org/devlogs/2026-01-09-%E5%88%87%E6%8D%A2CDN%E5%88%B0Cloudflare.html" />
-  <meta property="og:title" content="切换CDN到Cloudflare | 开发日志" />
-  <meta property="og:description" content="切换CDN到Cloudflare" />
+  <title>为 SEO 采用服务端 Accept-Language 协商：根路径 `/` 临时重定向到 `/en/`，并避免静态 assets 抢占导致协商失效。 | 开发日志</title>
+  <meta name="description" content="为 SEO 采用服务端 Accept-Language 协商：根路径 `/` 临时重定向到 `/en/`，并避免静态 assets 抢占导致协商失效。" />
+  <link rel="canonical" href="https://www.onlinefreetools.org/devlogs/2026-01-11-00-16-SEO-%E6%9C%8D%E5%8A%A1%E7%AB%AF%E8%AF%AD%E8%A8%80%E5%8D%8F%E5%95%86-%E6%A0%B9%E8%B7%AF%E5%BE%84%E9%87%8D%E5%AE%9A%E5%90%91.html" />
+  <meta property="og:title" content="为 SEO 采用服务端 Accept-Language 协商：根路径 `/` 临时重定向到 `/en/`，并避免静态 assets 抢占导致协商失效。 | 开发日志" />
+  <meta property="og:description" content="为 SEO 采用服务端 Accept-Language 协商：根路径 `/` 临时重定向到 `/en/`，并避免静态 assets 抢占导致协商失效。" />
   <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://www.onlinefreetools.org/devlogs/2026-01-09-%E5%88%87%E6%8D%A2CDN%E5%88%B0Cloudflare.html" />
+  <meta property="og:url" content="https://www.onlinefreetools.org/devlogs/2026-01-11-00-16-SEO-%E6%9C%8D%E5%8A%A1%E7%AB%AF%E8%AF%AD%E8%A8%80%E5%8D%8F%E5%95%86-%E6%A0%B9%E8%B7%AF%E5%BE%84%E9%87%8D%E5%AE%9A%E5%90%91.html" />
   <meta property="og:image" content="https://www.onlinefreetools.org/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="alternate" hreflang="zh" href="https://www.onlinefreetools.org/devlogs/2026-01-09-%E5%88%87%E6%8D%A2CDN%E5%88%B0Cloudflare.html" />
-  <link rel="alternate" hreflang="en" href="https://www.onlinefreetools.org/en/devlogs/2026-01-09-%E5%88%87%E6%8D%A2CDN%E5%88%B0Cloudflare.html" />
+  <link rel="alternate" hreflang="zh" href="https://www.onlinefreetools.org/devlogs/2026-01-11-00-16-SEO-%E6%9C%8D%E5%8A%A1%E7%AB%AF%E8%AF%AD%E8%A8%80%E5%8D%8F%E5%95%86-%E6%A0%B9%E8%B7%AF%E5%BE%84%E9%87%8D%E5%AE%9A%E5%90%91.html" />
+  <link rel="alternate" hreflang="en" href="https://www.onlinefreetools.org/en/devlogs/2026-01-11-00-16-SEO-%E6%9C%8D%E5%8A%A1%E7%AB%AF%E8%AF%AD%E8%A8%80%E5%8D%8F%E5%95%86-%E6%A0%B9%E8%B7%AF%E5%BE%84%E9%87%8D%E5%AE%9A%E5%90%91.html" />
   
   <script>
     (function () {
@@ -93,7 +93,7 @@
       <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
         中文
       </button>
-      <ul class="dropdown-menu dropdown-menu-end"><li><span class="dropdown-item active" aria-current="true">中文</span></li><li><a class="dropdown-item" href="/en/devlogs/2026-01-09-切换CDN到Cloudflare.html">English</a></li></ul>
+      <ul class="dropdown-menu dropdown-menu-end"><li><span class="dropdown-item active" aria-current="true">中文</span></li><li><a class="dropdown-item" href="/en/devlogs/2026-01-11-00-16-SEO-服务端语言协商-根路径重定向.html">English</a></li></ul>
     </div>
           </div>
         </div>
@@ -109,18 +109,41 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">切换CDN到Cloudflare | 开发日志</h1>
+          <h1 class="h4 mb-0">为 SEO 采用服务端 Accept-Language 协商：根路径 `/` 临时重定向到 `/en/`，并避免静态 assets 抢占导致协商失效。 | 开发日志</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">返回日志清单</a>
         </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>日期：2026年1月9日
-摘要：切换CDN到Cloudflare</p>
-<p>【question】
-js和css的cdn文件修改为cloudflare的cdn文件</p>
-<p>【try to solve】
-已将 <code>public/index.html</code> 中的 Bootstrap 5.3.3 CSS/JS 由 jsdelivr 改为 Cloudflare cdnjs，并保留 SRI 与 <code>referrerpolicy=&quot;no-referrer&quot;</code>。</p>
-<p>【执行操作】</p>
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>日期：2026年1月11日0时16分
+摘要：为 SEO 采用服务端 Accept-Language 协商：根路径 <code>/</code> 临时重定向到 <code>/en/</code>，并避免静态 assets 抢占导致协商失效。
+【question】
+采用 curl -D - -H &#39;Accept: text/html&#39; -H &#39;Accept-Language: en&#39; <a href="http://127.0.0.1:8787/">http://127.0.0.1:8787/</a> 发现页面显示的是中文，而不是英文，按照符合seo的模式处理用户语言问题
+【try to solve】</p>
 <ul>
-<li>更新 <code>public/index.html</code></li>
+<li>根因：本地/线上静态 assets 在命中 <code>public/index.html</code> 时可能直接返回资源，导致 Worker 的语言协商逻辑无法对 <code>/</code> 生效。</li>
+<li>方案（SEO 友好）：<ul>
+<li>保持稳定 URL：中文默认 <code>/</code>，英文固定 <code>/en/</code>。</li>
+<li>对用户语言偏好只做“临时重定向”（302），不做永久跳转，避免搜索引擎把语言协商当成永久规则。</li>
+<li>对重定向响应增加 <code>Vary: Accept-Language, Accept</code>，避免缓存混淆。</li>
+</ul>
+</li>
+<li>实现方式：<ul>
+<li>构建阶段把首页 HTML 输出到 <code>public/_pages/{lang}/index.html</code>，避免 <code>/</code> 与 <code>/en/</code> 被静态 assets 直接命中。</li>
+<li>Worker 显式处理 <code>/</code> 与 <code>/en/</code>：<ul>
+<li><code>GET /</code> + <code>Accept: text/html</code>：若 <code>Accept-Language</code> 偏好英文则 302 到 <code>/en/</code>，否则返回中文首页。</li>
+<li><code>GET /en/</code>：返回英文首页。</li>
+<li>内部拉取 <code>env.ASSETS</code> 时若发生 <code>index.html → /</code> 的规范化跳转，Worker 在服务端跟随后返回最终 200，避免把内部 <code>/_pages/...</code> 暴露给客户端。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>验证：<ul>
+<li><code>curl -D - -H &#39;Accept: text/html&#39; -H &#39;Accept-Language: en&#39; http://127.0.0.1:8787/</code> 返回 <code>302 Location: /en/</code>。</li>
+<li><code>curl -L ...</code> 最终停留在 <code>/en/</code>。
+【执行操作】</li>
+</ul>
+</li>
+<li>修改：<code>src/index.ts</code>、<code>scripts/build-site.mjs</code></li>
+<li>生成：<code>public/_pages/zh/index.html</code>、<code>public/_pages/en/index.html</code></li>
+<li>删除：<code>public/index.html</code>、<code>public/en/index.html</code></li>
 </ul>
 </article>
       </section>
