@@ -7,7 +7,8 @@
     "dev": "wrangler dev",
     "start": "wrangler dev",
     "cf-typegen": "wrangler types",
-    "build:logs": "node scripts/build-logs.mjs"
+    "build:logs": "node scripts/build-logs.mjs",
+    "build:site": "node scripts/build-site.mjs"
   },
   "dependencies": {
     "chanfana": "^2.6.3",

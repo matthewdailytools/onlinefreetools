@@ -11,6 +11,20 @@
 - Local dev (Workers): `wrangler dev`
 - Deploy: `wrangler deploy`
 
+## Static Site Build / 静态站点构建
+
+### Default language
+
+- Default language (the language served at `/`):
+	- `SITE_DEFAULT_LANG=zh` (default)
+	- Example: `SITE_DEFAULT_LANG=en SITE_LANGS=zh,en npm run build:site`
+
+### Tracking Injection / 跟踪代码注入
+
+### i18n / 多语言
+- Enabled languages: `SITE_LANGS=zh,en npm run build:site`
+- Add a language: update `scripts/site/config.mjs` (languages + pathPrefix) and `scripts/site/i18n.mjs` (translations)
+
 ## Notes / 备注
 - 功能与在线工具会不定期更新，最新状态以线上域名为准。
 - 开发问答日志存放于 `dev-logs/`，按日期+摘要命名。

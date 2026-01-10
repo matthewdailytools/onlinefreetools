@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>更新不记录AI末尾提问规则 | Dev Logs</title>
+  <meta name="description" content="更新不记录AI末尾提问规则" />
+  <link rel="canonical" href="https://www.onlinefreetools.org/en/devlogs/2026-01-08-%E6%9B%B4%E6%96%B0%E4%B8%8D%E8%AE%B0%E5%BD%95AI%E6%9C%AB%E5%B0%BE%E6%8F%90%E9%97%AE%E8%A7%84%E5%88%99.html" />
+  <meta property="og:title" content="更新不记录AI末尾提问规则 | Dev Logs" />
+  <meta property="og:description" content="更新不记录AI末尾提问规则" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.onlinefreetools.org/en/devlogs/2026-01-08-%E6%9B%B4%E6%96%B0%E4%B8%8D%E8%AE%B0%E5%BD%95AI%E6%9C%AB%E5%B0%BE%E6%8F%90%E9%97%AE%E8%A7%84%E5%88%99.html" />
+  <meta property="og:image" content="https://www.onlinefreetools.org/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="alternate" hreflang="zh" href="https://www.onlinefreetools.org/devlogs/2026-01-08-%E6%9B%B4%E6%96%B0%E4%B8%8D%E8%AE%B0%E5%BD%95AI%E6%9C%AB%E5%B0%BE%E6%8F%90%E9%97%AE%E8%A7%84%E5%88%99.html" />
+  <link rel="alternate" hreflang="en" href="https://www.onlinefreetools.org/en/devlogs/2026-01-08-%E6%9B%B4%E6%96%B0%E4%B8%8D%E8%AE%B0%E5%BD%95AI%E6%9C%AB%E5%B0%BE%E6%8F%90%E9%97%AE%E8%A7%84%E5%88%99.html" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body { min-height: 100vh; }
+    .layout { display: flex; min-height: 100vh; }
+    #sidebar { width: 260px; transition: margin-left 0.2s ease; }
+    #content { flex: 1; transition: margin-left 0.2s ease; }
+    .sidebar-collapsed #sidebar { margin-left: -260px; }
+    .sidebar-collapsed #content { margin-left: 0; }
+    @media (max-width: 767.98px) {
+      #sidebar {
+        position: fixed;
+        z-index: 1040;
+        top: 56px;
+        bottom: 0;
+        overflow-y: auto;
+        background: #f8f9fa;
+        border-right: 1px solid #e5e7eb;
+      }
+      .sidebar-collapsed #sidebar { margin-left: -260px; }
+      #content { margin-left: 0; }
+      body { padding-top: 56px; }
+    }
+  </style>
+  
+  
+  
+</head>
+<body>
+  
+  
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom fixed-top">
+      <div class="container-fluid">
+        <button class="btn btn-outline-secondary me-2" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+        <a class="navbar-brand fw-semibold" href="/en/">Online Free Tools</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="topNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="/en/">Home</a></li><li class="nav-item"><a class="nav-link" href="/en/devlogs/">Dev Logs</a></li></ul>
+          <div class="d-flex align-items-center gap-2">
+            
+            
+    <div class="dropdown">
+      <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        English
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end"><li><a class="dropdown-item" href="/devlogs/2026-01-08-更新不记录AI末尾提问规则.html">中文</a></li><li><span class="dropdown-item active" aria-current="true">English</span></li></ul>
+    </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="layout sidebar-collapsed" id="layoutRoot">
+    
+    <aside id="sidebar" class="bg-light border-end p-3">
+      <h6 class="text-muted text-uppercase">Navigation</h6>
+      <div class="list-group list-group-flush small" id="navList"><a class="list-group-item list-group-item-action" href="/en/">Home</a><a class="list-group-item list-group-item-action" href="/en/devlogs/">Dev Logs</a></div>
+    </aside>
+    <main id="content" class="p-4">
+      <section class="mb-3">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h1 class="h4 mb-0">更新不记录AI末尾提问规则 | Dev Logs</h1>
+          <a class="btn btn-outline-secondary btn-sm" href="/en/devlogs/">Back to Logs</a>
+        </div>
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>日期：2026年1月8日
+摘要：更新不记录AI末尾提问规则</p>
+<p>【question】
+修改默认规则,增加规则：不要记录最后ai的提问这些没有意义的内容，并更新跟则</p>
+<p>【try to solve】
+已更新 <code>.github/copilot-instructions.md</code>：在默认代理行为中新增“Exclusions”规则，明确不记录 AI 尾部的提问/澄清性问题，仅记录用户问题与最终答案。</p>
+<p>【执行操作】</p>
+<ul>
+<li>更新 <code>.github/copilot-instructions.md</code></li>
+<li>创建 <code>dev-logs/2026-01-08-更新不记录AI末尾提问规则.md</code></li>
+</ul>
+</article>
+      </section>
+    </main>
+  </div>
+  
+  <footer class="bg-light border-top text-center py-3">
+    <div class="container">
+      <small class="text-muted">Online Free Tools · Learning project · Iterating</small>
+    </div>
+  </footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <script>
+    const layout = document.getElementById('layoutRoot');
+    const toggle = document.getElementById('sidebarToggle');
+    if (layout && toggle) {
+      toggle.addEventListener('click', () => layout.classList.toggle('sidebar-collapsed'));
+      
+    }
+  </script>
+</body>
+</html>

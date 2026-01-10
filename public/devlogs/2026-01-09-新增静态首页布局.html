@@ -12,15 +12,75 @@
   <meta property="og:url" content="https://www.onlinefreetools.org/devlogs/2026-01-09-%E6%96%B0%E5%A2%9E%E9%9D%99%E6%80%81%E9%A6%96%E9%A1%B5%E5%B8%83%E5%B1%80.html" />
   <meta property="og:image" content="https://www.onlinefreetools.org/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
+  <link rel="alternate" hreflang="zh" href="https://www.onlinefreetools.org/devlogs/2026-01-09-%E6%96%B0%E5%A2%9E%E9%9D%99%E6%80%81%E9%A6%96%E9%A1%B5%E5%B8%83%E5%B1%80.html" />
+  <link rel="alternate" hreflang="en" href="https://www.onlinefreetools.org/en/devlogs/2026-01-09-%E6%96%B0%E5%A2%9E%E9%9D%99%E6%80%81%E9%A6%96%E9%A1%B5%E5%B8%83%E5%B1%80.html" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body { min-height: 100vh; }
+    .layout { display: flex; min-height: 100vh; }
+    #sidebar { width: 260px; transition: margin-left 0.2s ease; }
+    #content { flex: 1; transition: margin-left 0.2s ease; }
+    .sidebar-collapsed #sidebar { margin-left: -260px; }
+    .sidebar-collapsed #content { margin-left: 0; }
+    @media (max-width: 767.98px) {
+      #sidebar {
+        position: fixed;
+        z-index: 1040;
+        top: 56px;
+        bottom: 0;
+        overflow-y: auto;
+        background: #f8f9fa;
+        border-right: 1px solid #e5e7eb;
+      }
+      .sidebar-collapsed #sidebar { margin-left: -260px; }
+      #content { margin-left: 0; }
+      body { padding-top: 56px; }
+    }
+  </style>
+  
+  
+  
 </head>
-<body class="bg-light">
-  <div class="container py-4">
-    <header class="d-flex justify-content-between align-items-center mb-3">
-      <h1 class="h4 mb-0">新增静态首页布局 | 开发日志</h1>
-      <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">返回日志清单</a>
-    </header>
-    <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>日期：2026年1月9日
+<body>
+  
+  
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom fixed-top">
+      <div class="container-fluid">
+        <button class="btn btn-outline-secondary me-2" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+        <a class="navbar-brand fw-semibold" href="/">Online Free Tools</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="topNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="/">首页</a></li><li class="nav-item"><a class="nav-link" href="/devlogs/">开发日志</a></li></ul>
+          <div class="d-flex align-items-center gap-2">
+            
+            
+    <div class="dropdown">
+      <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        中文
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end"><li><span class="dropdown-item active" aria-current="true">中文</span></li><li><a class="dropdown-item" href="/en/devlogs/2026-01-09-新增静态首页布局.html">English</a></li></ul>
+    </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="layout sidebar-collapsed" id="layoutRoot">
+    
+    <aside id="sidebar" class="bg-light border-end p-3">
+      <h6 class="text-muted text-uppercase">导航</h6>
+      <div class="list-group list-group-flush small" id="navList"><a class="list-group-item list-group-item-action" href="/">首页</a><a class="list-group-item list-group-item-action" href="/devlogs/">开发日志</a></div>
+    </aside>
+    <main id="content" class="p-4">
+      <section class="mb-3">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h1 class="h4 mb-0">新增静态首页布局 | 开发日志</h1>
+          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">返回日志清单</a>
+        </div>
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>日期：2026年1月9日
 摘要：新增静态首页布局</p>
 <p>【question】
 增加静态首页，以bootstrap+js+html作为技术栈，适配h5和pc，布局为导航，具备sidebar（可点击隐藏），顶部菜单，底部footer，内容区为工具分类成列卡片。分类类别名称在sidebar</p>
@@ -37,6 +97,25 @@
 <li>创建 <code>public/index.html</code></li>
 </ul>
 </article>
+      </section>
+    </main>
   </div>
+  
+  <footer class="bg-light border-top text-center py-3">
+    <div class="container">
+      <small class="text-muted">Online Free Tools · 学习项目 · 持续迭代</small>
+    </div>
+  </footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <script>
+    const layout = document.getElementById('layoutRoot');
+    const toggle = document.getElementById('sidebarToggle');
+    if (layout && toggle) {
+      toggle.addEventListener('click', () => layout.classList.toggle('sidebar-collapsed'));
+      
+    }
+  </script>
 </body>
 </html>

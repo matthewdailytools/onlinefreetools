@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dev Logs | Online Free Tools</title>
+  <meta name="description" content="Project dev logs and Q&A notes, organized by date." />
+  <link rel="canonical" href="https://www.onlinefreetools.org/en/devlogs/" />
+  <meta property="og:title" content="Dev Logs | Online Free Tools" />
+  <meta property="og:description" content="Project dev logs and Q&A notes, organized by date." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.onlinefreetools.org/en/devlogs/" />
+  <meta property="og:image" content="https://www.onlinefreetools.org/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="alternate" hreflang="zh" href="https://www.onlinefreetools.org/devlogs/" />
+  <link rel="alternate" hreflang="en" href="https://www.onlinefreetools.org/en/devlogs/" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body { min-height: 100vh; }
+    .layout { display: flex; min-height: 100vh; }
+    #sidebar { width: 260px; transition: margin-left 0.2s ease; }
+    #content { flex: 1; transition: margin-left 0.2s ease; }
+    .sidebar-collapsed #sidebar { margin-left: -260px; }
+    .sidebar-collapsed #content { margin-left: 0; }
+    @media (max-width: 767.98px) {
+      #sidebar {
+        position: fixed;
+        z-index: 1040;
+        top: 56px;
+        bottom: 0;
+        overflow-y: auto;
+        background: #f8f9fa;
+        border-right: 1px solid #e5e7eb;
+      }
+      .sidebar-collapsed #sidebar { margin-left: -260px; }
+      #content { margin-left: 0; }
+      body { padding-top: 56px; }
+    }
+  </style>
+  
+  
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Dev Logs","url":"https://www.onlinefreetools.org/en/devlogs/","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.onlinefreetools.org/en/"},{"@type":"ListItem","position":2,"name":"Dev Logs","item":"https://www.onlinefreetools.org/en/devlogs/"}]}}</script>
+</head>
+<body>
+  
+  
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom fixed-top">
+      <div class="container-fluid">
+        <button class="btn btn-outline-secondary me-2" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+        <a class="navbar-brand fw-semibold" href="/en/">Online Free Tools</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="topNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="/en/">Home</a></li><li class="nav-item"><a class="nav-link" href="/en/devlogs/">Dev Logs</a></li></ul>
+          <div class="d-flex align-items-center gap-2">
+            
+            
+    <div class="dropdown">
+      <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        English
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end"><li><a class="dropdown-item" href="/devlogs/">中文</a></li><li><span class="dropdown-item active" aria-current="true">English</span></li></ul>
+    </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="layout sidebar-collapsed" id="layoutRoot">
+    
+    <aside id="sidebar" class="bg-light border-end p-3">
+      <h6 class="text-muted text-uppercase">Navigation</h6>
+      <div class="list-group list-group-flush small" id="navList"><a class="list-group-item list-group-item-action" href="/en/">Home</a><a class="list-group-item list-group-item-action" href="/en/devlogs/">Dev Logs</a></div>
+    </aside>
+    <main id="content" class="p-4">
+    <section>
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <div>
+          <h1 class="h4 mb-1">Dev Logs</h1>
+          <p class="text-muted mb-0">Browse Q&A and implementation notes by date.</p>
+        </div>
+        <a class="btn btn-outline-secondary btn-sm" href="/en/">Back to Home</a>
+      </div>
+      <ul class="list-group shadow-sm">
+        
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a href="/en/devlogs/2026-01-10-20-36-顶部菜单语言选择与默认语言.html" class="text-decoration-none">顶部菜单语言选择与默认语言</a>
+            <span class="badge text-bg-secondary">2026年1月10日20时36分</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a href="/en/devlogs/2026-01-10-20-14-站点组件化与多语言跟踪注入.html" class="text-decoration-none">站点组件化与多语言跟踪注入</a>
+            <span class="badge text-bg-secondary">2026年1月10日20时14分</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a href="/en/devlogs/2026-01-10-14-32-会话历史摘要.html" class="text-decoration-none">会话历史摘要</a>
+            <span class="badge text-bg-secondary">2026年1月10日14时32分</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a href="/en/devlogs/2026-01-09-优化日志SEO方案.html" class="text-decoration-none">优化日志SEO方案</a>
+            <span class="badge text-bg-secondary">2026年1月9日</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a href="/en/devlogs/2026-01-09-修复CDN布局失效.html" class="text-decoration-none">修复CDN布局失效</a>
+            <span class="badge text-bg-secondary">2026年1月9日</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a href="/en/devlogs/2026-01-09-修复静态首页未展示.html" class="text-decoration-none">修复静态首页未展示</a>
+            <span class="badge text-bg-secondary">2026年1月9日</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a href="/en/devlogs/2026-01-09-新增Markdown查看器.html" class="text-decoration-none">新增Markdown查看器</a>
+            <span class="badge text-bg-secondary">2026年1月9日</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a href="/en/devlogs/2026-01-09-新增静态首页布局.html" class="text-decoration-none">新增静态首页布局</a>
+            <span class="badge text-bg-secondary">2026年1月9日</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a href="/en/devlogs/2026-01-09-生成日志索引页.html" class="text-decoration-none">生成日志索引页</a>
+            <span class="badge text-bg-secondary">2026年1月9日</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a href="/en/devlogs/2026-01-09-切换CDN到Cloudflare.html" class="text-decoration-none">切换CDN到Cloudflare</a>
+            <span class="badge text-bg-secondary">2026年1月9日</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a href="/en/devlogs/2026-01-09-迁移日志目录并添加入口.html" class="text-decoration-none">迁移日志目录并添加入口</a>
+            <span class="badge text-bg-secondary">2026年1月9日</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a href="/en/devlogs/2026-01-09-更新执行操作记录范围.html" class="text-decoration-none">更新执行操作记录范围</a>
+            <span class="badge text-bg-secondary">2026年1月9日</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a href="/en/devlogs/2026-01-09-创建Markdown转HTML工具.html" class="text-decoration-none">创建Markdown转HTML工具</a>
+            <span class="badge text-bg-secondary">2026年1月9日</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a href="/en/devlogs/2026-01-09-14-30-默认规则执行偏差说明.html" class="text-decoration-none">默认规则执行偏差说明</a>
+            <span class="badge text-bg-secondary">2026年1月9日14时30分</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a href="/en/devlogs/2026-01-08-问答可见性规则.html" class="text-decoration-none">问答可见性规则</a>
+            <span class="badge text-bg-secondary">2026年1月8日</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a href="/en/devlogs/2026-01-08-添加SEO默认规则.html" class="text-decoration-none">添加SEO默认规则</a>
+            <span class="badge text-bg-secondary">2026年1月8日</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a href="/en/devlogs/2026-01-08-删除历史中的文件夹.html" class="text-decoration-none">删除历史中的文件夹</a>
+            <span class="badge text-bg-secondary">2026年1月8日</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a href="/en/devlogs/2026-01-08-配置多账户git.html" class="text-decoration-none">配置多账户git</a>
+            <span class="badge text-bg-secondary">2026年1月8日</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a href="/en/devlogs/2026-01-08-更新README中英文.html" class="text-decoration-none">更新README中英文</a>
+            <span class="badge text-bg-secondary">2026年1月8日</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a href="/en/devlogs/2026-01-08-更新日志字段规则.html" class="text-decoration-none">更新日志字段规则</a>
+            <span class="badge text-bg-secondary">2026年1月8日</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a href="/en/devlogs/2026-01-08-更新不记录AI末尾提问规则.html" class="text-decoration-none">更新不记录AI末尾提问规则</a>
+            <span class="badge text-bg-secondary">2026年1月8日</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a href="/en/devlogs/2026-01-08-创建开发日志文件夹.html" class="text-decoration-none">创建开发日志文件夹</a>
+            <span class="badge text-bg-secondary">2026年1月8日</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a href="/en/devlogs/2026-01-08-初始化Cloudflare项目.html" class="text-decoration-none">初始化Cloudflare项目</a>
+            <span class="badge text-bg-secondary">2026年1月8日</span>
+          </li>
+      </ul>
+    </section>
+  </main>
+  </div>
+  
+  <footer class="bg-light border-top text-center py-3">
+    <div class="container">
+      <small class="text-muted">Online Free Tools · Learning project · Iterating</small>
+    </div>
+  </footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <script>
+    const layout = document.getElementById('layoutRoot');
+    const toggle = document.getElementById('sidebarToggle');
+    if (layout && toggle) {
+      toggle.addEventListener('click', () => layout.classList.toggle('sidebar-collapsed'));
+      
+    }
+  </script>
+</body>
+</html>

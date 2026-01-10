@@ -5,11 +5,15 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Online Free Tools | 学习项目首页</title>
   <meta name="description" content="Online Free Tools 学习项目，聚合多类在线小工具，支持移动与桌面访问。" />
-  <meta property="og:title" content="Online Free Tools" />
-  <meta property="og:description" content="在线工具学习项目，持续迭代，适配 H5 与 PC。" />
-  <meta property="og:url" content="https://www.onlinefreetools.org" />
+  <link rel="canonical" href="https://www.onlinefreetools.org/" />
+  <meta property="og:title" content="Online Free Tools | 学习项目首页" />
+  <meta property="og:description" content="Online Free Tools 学习项目，聚合多类在线小工具，支持移动与桌面访问。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.onlinefreetools.org/" />
   <meta property="og:image" content="https://www.onlinefreetools.org/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
+  <link rel="alternate" hreflang="zh" href="https://www.onlinefreetools.org/" />
+  <link rel="alternate" hreflang="en" href="https://www.onlinefreetools.org/en/" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     body { min-height: 100vh; }
@@ -33,245 +37,247 @@
       body { padding-top: 56px; }
     }
   </style>
+  
+  
+  
 </head>
 <body>
+  
+  
   <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom fixed-top">
       <div class="container-fluid">
         <button class="btn btn-outline-secondary me-2" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
-        <a class="navbar-brand fw-semibold" href="#">Online Free Tools</a>
+        <a class="navbar-brand fw-semibold" href="/">Online Free Tools</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="topNav">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item"><a class="nav-link" href="#featured">推荐</a></li>
-            <li class="nav-item"><a class="nav-link" href="#all-tools">全部工具</a></li>
-            <li class="nav-item"><a class="nav-link" href="/devlogs/">开发日志</a></li>
-          </ul>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="#featured">推荐</a></li><li class="nav-item"><a class="nav-link" href="#all-tools">全部工具</a></li><li class="nav-item"><a class="nav-link" href="/devlogs/">开发日志</a></li></ul>
+          <div class="d-flex align-items-center gap-2">
+            
           <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="搜索工具" aria-label="Search">
             <button class="btn btn-outline-primary" type="submit">搜索</button>
           </form>
+            
+    <div class="dropdown">
+      <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        中文
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end"><li><span class="dropdown-item active" aria-current="true">中文</span></li><li><a class="dropdown-item" href="/en/">English</a></li></ul>
+    </div>
+          </div>
         </div>
       </div>
     </nav>
   </header>
-
   <div class="layout sidebar-collapsed" id="layoutRoot">
+    
     <aside id="sidebar" class="bg-light border-end p-3">
       <h6 class="text-muted text-uppercase">分类</h6>
-      <div class="list-group list-group-flush small" id="categoryList">
-        <a class="list-group-item list-group-item-action" href="#cat-text">文本工具</a>
-        <a class="list-group-item list-group-item-action" href="#cat-image">图像工具</a>
-        <a class="list-group-item list-group-item-action" href="#cat-dev">开发者工具</a>
-        <a class="list-group-item list-group-item-action" href="#cat-convert">格式转换</a>
-        <a class="list-group-item list-group-item-action" href="#cat-misc">更多</a>
-      </div>
+      <div class="list-group list-group-flush small" id="categoryList"><a class="list-group-item list-group-item-action" href="#cat-text">文本工具</a><a class="list-group-item list-group-item-action" href="#cat-image">图像工具</a><a class="list-group-item list-group-item-action" href="#cat-dev">开发者工具</a><a class="list-group-item list-group-item-action" href="#cat-convert">格式转换</a><a class="list-group-item list-group-item-action" href="#cat-misc">更多</a></div>
     </aside>
-
     <main id="content" class="p-4">
-      <section id="featured" class="mb-4">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h2 class="h5 mb-0">推荐</h2>
-          <a class="btn btn-sm btn-outline-secondary" href="#all-tools">查看全部</a>
+    <section id="featured" class="mb-4">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="h5 mb-0">推荐</h2>
+        <a class="btn btn-sm btn-outline-secondary" href="#all-tools">查看全部</a>
+      </div>
+      <div class="row row-cols-1 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">JSON 格式化</h5>
+              <p class="card-text text-muted">快速美化与校验 JSON。</p>
+              <a href="#" class="btn btn-primary btn-sm">开始使用</a>
+            </div>
+          </div>
         </div>
-        <div class="row row-cols-1 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">图片压缩</h5>
+              <p class="card-text text-muted">在线压缩，保持清晰度与体积平衡。</p>
+              <a href="#" class="btn btn-primary btn-sm">开始使用</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">正则测试</h5>
+              <p class="card-text text-muted">实时匹配与高亮，便于调试表达式。</p>
+              <a href="#" class="btn btn-primary btn-sm">开始使用</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="all-tools">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="h5 mb-0">全部工具</h2>
+      </div>
+
+      <div class="mb-4" id="cat-text">
+        <div class="d-flex align-items-center mb-2">
+          <span class="badge text-bg-secondary me-2">文本工具</span>
+          <span class="text-muted small">格式化、对比、生成</span>
+        </div>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
           <div class="col">
-            <div class="card h-100 shadow-sm">
+            <div class="card h-100">
               <div class="card-body">
-                <h5 class="card-title">JSON 格式化</h5>
-                <p class="card-text text-muted">快速美化与校验 JSON。</p>
-                <a href="#" class="btn btn-primary btn-sm">开始使用</a>
+                <h6 class="card-title">Markdown 转 HTML</h6>
+                <p class="card-text small text-muted">将 Markdown 快速渲染为 HTML。</p>
+                <a href="/tools/markdown-to-html.html" class="btn btn-outline-primary btn-sm">打开</a>
               </div>
             </div>
           </div>
           <div class="col">
-            <div class="card h-100 shadow-sm">
+            <div class="card h-100">
               <div class="card-body">
-                <h5 class="card-title">图片压缩</h5>
-                <p class="card-text text-muted">在线压缩，保持清晰度与体积平衡。</p>
-                <a href="#" class="btn btn-primary btn-sm">开始使用</a>
+                <h6 class="card-title">文本去重</h6>
+                <p class="card-text small text-muted">去除重复行，保持唯一列表。</p>
+                <a href="#" class="btn btn-outline-primary btn-sm">打开</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-4" id="cat-image">
+        <div class="d-flex align-items-center mb-2">
+          <span class="badge text-bg-secondary me-2">图像工具</span>
+          <span class="text-muted small">压缩、裁剪、转换</span>
+        </div>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
+          <div class="col">
+            <div class="card h-100">
+              <div class="card-body">
+                <h6 class="card-title">图片裁剪</h6>
+                <p class="card-text small text-muted">按比例或自定义尺寸裁剪。</p>
+                <a href="#" class="btn btn-outline-primary btn-sm">打开</a>
               </div>
             </div>
           </div>
           <div class="col">
-            <div class="card h-100 shadow-sm">
+            <div class="card h-100">
               <div class="card-body">
-                <h5 class="card-title">正则测试</h5>
-                <p class="card-text text-muted">实时匹配与高亮，便于调试表达式。</p>
-                <a href="#" class="btn btn-primary btn-sm">开始使用</a>
+                <h6 class="card-title">格式转换</h6>
+                <p class="card-text small text-muted">JPG/PNG/WebP 互转。</p>
+                <a href="#" class="btn btn-outline-primary btn-sm">打开</a>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      <section id="all-tools">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h2 class="h5 mb-0">全部工具</h2>
+      <div class="mb-4" id="cat-dev">
+        <div class="d-flex align-items-center mb-2">
+          <span class="badge text-bg-secondary me-2">开发者工具</span>
+          <span class="text-muted small">调试、生成、校验</span>
         </div>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
+          <div class="col">
+            <div class="card h-100">
+              <div class="card-body">
+                <h6 class="card-title">UUID 生成</h6>
+                <p class="card-text small text-muted">一键生成多组 UUID。</p>
+                <a href="#" class="btn btn-outline-primary btn-sm">打开</a>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <div class="card-body">
+                <h6 class="card-title">Base64 编解码</h6>
+                <p class="card-text small text-muted">快速编解码文本或文件片段。</p>
+                <a href="#" class="btn btn-outline-primary btn-sm">打开</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-        <div class="mb-4" id="cat-text">
-          <div class="d-flex align-items-center mb-2">
-            <span class="badge text-bg-secondary me-2">文本工具</span>
-            <span class="text-muted small">格式化、对比、生成</span>
-          </div>
-          <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
-            <div class="col">
-              <div class="card h-100">
-                <div class="card-body">
-                  <h6 class="card-title">Markdown 转 HTML</h6>
-                  <p class="card-text small text-muted">将 Markdown 快速渲染为 HTML。</p>
-                  <a href="/tools/markdown-to-html.html" class="btn btn-outline-primary btn-sm">打开</a>
-                </div>
+      <div class="mb-4" id="cat-convert">
+        <div class="d-flex align-items-center mb-2">
+          <span class="badge text-bg-secondary me-2">格式转换</span>
+          <span class="text-muted small">文档、数据与媒体</span>
+        </div>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
+          <div class="col">
+            <div class="card h-100">
+              <div class="card-body">
+                <h6 class="card-title">CSV ↔ JSON</h6>
+                <p class="card-text small text-muted">数据表与 JSON 快速互转。</p>
+                <a href="#" class="btn btn-outline-primary btn-sm">打开</a>
               </div>
             </div>
-            <div class="col">
-              <div class="card h-100">
-                <div class="card-body">
-                  <h6 class="card-title">文本去重</h6>
-                  <p class="card-text small text-muted">去除重复行，保持唯一列表。</p>
-                  <a href="#" class="btn btn-outline-primary btn-sm">打开</a>
-                </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <div class="card-body">
+                <h6 class="card-title">单位换算</h6>
+                <p class="card-text small text-muted">长度、重量、温度常用换算。</p>
+                <a href="#" class="btn btn-outline-primary btn-sm">打开</a>
               </div>
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="mb-4" id="cat-image">
-          <div class="d-flex align-items-center mb-2">
-            <span class="badge text-bg-secondary me-2">图像工具</span>
-            <span class="text-muted small">压缩、裁剪、转换</span>
-          </div>
-          <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
-            <div class="col">
-              <div class="card h-100">
-                <div class="card-body">
-                  <h6 class="card-title">图片裁剪</h6>
-                  <p class="card-text small text-muted">按比例或自定义尺寸裁剪。</p>
-                  <a href="#" class="btn btn-outline-primary btn-sm">打开</a>
-                </div>
+      <div class="mb-4" id="cat-misc">
+        <div class="d-flex align-items-center mb-2">
+          <span class="badge text-bg-secondary me-2">更多</span>
+          <span class="text-muted small">杂项工具合集</span>
+        </div>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
+          <div class="col">
+            <div class="card h-100">
+              <div class="card-body">
+                <h6 class="card-title">倒计时/计时器</h6>
+                <p class="card-text small text-muted">轻量计时辅助。</p>
+                <a href="#" class="btn btn-outline-primary btn-sm">打开</a>
               </div>
             </div>
-            <div class="col">
-              <div class="card h-100">
-                <div class="card-body">
-                  <h6 class="card-title">格式转换</h6>
-                  <p class="card-text small text-muted">JPG/PNG/WebP 互转。</p>
-                  <a href="#" class="btn btn-outline-primary btn-sm">打开</a>
-                </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <div class="card-body">
+                <h6 class="card-title">随机数生成</h6>
+                <p class="card-text small text-muted">可设置范围与数量。</p>
+                <a href="#" class="btn btn-outline-primary btn-sm">打开</a>
               </div>
             </div>
           </div>
         </div>
-
-        <div class="mb-4" id="cat-dev">
-          <div class="d-flex align-items-center mb-2">
-            <span class="badge text-bg-secondary me-2">开发者工具</span>
-            <span class="text-muted small">调试、生成、校验</span>
-          </div>
-          <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
-            <div class="col">
-              <div class="card h-100">
-                <div class="card-body">
-                  <h6 class="card-title">UUID 生成</h6>
-                  <p class="card-text small text-muted">一键生成多组 UUID。</p>
-                  <a href="#" class="btn btn-outline-primary btn-sm">打开</a>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card h-100">
-                <div class="card-body">
-                  <h6 class="card-title">Base64 编解码</h6>
-                  <p class="card-text small text-muted">快速编解码文本或文件片段。</p>
-                  <a href="#" class="btn btn-outline-primary btn-sm">打开</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="mb-4" id="cat-convert">
-          <div class="d-flex align-items-center mb-2">
-            <span class="badge text-bg-secondary me-2">格式转换</span>
-            <span class="text-muted small">文档、数据与媒体</span>
-          </div>
-          <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
-            <div class="col">
-              <div class="card h-100">
-                <div class="card-body">
-                  <h6 class="card-title">CSV ↔ JSON</h6>
-                  <p class="card-text small text-muted">数据表与 JSON 快速互转。</p>
-                  <a href="#" class="btn btn-outline-primary btn-sm">打开</a>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card h-100">
-                <div class="card-body">
-                  <h6 class="card-title">单位换算</h6>
-                  <p class="card-text small text-muted">长度、重量、温度常用换算。</p>
-                  <a href="#" class="btn btn-outline-primary btn-sm">打开</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="mb-4" id="cat-misc">
-          <div class="d-flex align-items-center mb-2">
-            <span class="badge text-bg-secondary me-2">更多</span>
-            <span class="text-muted small">杂项工具合集</span>
-          </div>
-          <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
-            <div class="col">
-              <div class="card h-100">
-                <div class="card-body">
-                  <h6 class="card-title">倒计时/计时器</h6>
-                  <p class="card-text small text-muted">轻量计时辅助。</p>
-                  <a href="#" class="btn btn-outline-primary btn-sm">打开</a>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card h-100">
-                <div class="card-body">
-                  <h6 class="card-title">随机数生成</h6>
-                  <p class="card-text small text-muted">可设置范围与数量。</p>
-                  <a href="#" class="btn btn-outline-primary btn-sm">打开</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
+      </div>
+    </section>
+  </main>
   </div>
-
+  
   <footer class="bg-light border-top text-center py-3">
     <div class="container">
       <small class="text-muted">Online Free Tools · 学习项目 · 持续迭代</small>
     </div>
   </footer>
-
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
   <script>
     const layout = document.getElementById('layoutRoot');
     const toggle = document.getElementById('sidebarToggle');
-    toggle.addEventListener('click', () => {
-      layout.classList.toggle('sidebar-collapsed');
-    });
-
-    // Close sidebar on mobile when clicking a link
-    document.querySelectorAll('#categoryList a').forEach((link) => {
+    if (layout && toggle) {
+      toggle.addEventListener('click', () => layout.classList.toggle('sidebar-collapsed'));
+      
+    document.querySelectorAll("#categoryList a").forEach((link) => {
       link.addEventListener('click', () => {
-        if (window.innerWidth < 768) {
-          layout.classList.add('sidebar-collapsed');
-        }
+        if (window.innerWidth < 768) layout.classList.add('sidebar-collapsed');
       });
     });
+    }
   </script>
 </body>
 </html>
