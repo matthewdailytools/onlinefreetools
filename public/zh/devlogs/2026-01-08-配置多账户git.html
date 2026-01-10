@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>配置mac多GitHub账户fetch/push | 开发日志</title>
+  <meta name="description" content="配置mac多GitHub账户fetch/push" />
+  <link rel="canonical" href="https://www.onlinefreetools.org/zh/devlogs/2026-01-08-%E9%85%8D%E7%BD%AE%E5%A4%9A%E8%B4%A6%E6%88%B7git.html" />
+  <meta property="og:title" content="配置mac多GitHub账户fetch/push | 开发日志" />
+  <meta property="og:description" content="配置mac多GitHub账户fetch/push" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.onlinefreetools.org/zh/devlogs/2026-01-08-%E9%85%8D%E7%BD%AE%E5%A4%9A%E8%B4%A6%E6%88%B7git.html" />
+  <meta property="og:image" content="https://www.onlinefreetools.org/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="alternate" hreflang="zh" href="https://www.onlinefreetools.org/zh/devlogs/2026-01-08-%E9%85%8D%E7%BD%AE%E5%A4%9A%E8%B4%A6%E6%88%B7git.html" />
+  <link rel="alternate" hreflang="en" href="https://www.onlinefreetools.org/devlogs/2026-01-08-%E9%85%8D%E7%BD%AE%E5%A4%9A%E8%B4%A6%E6%88%B7git.html" />
+  
+  <script>
+    (function () {
+      try {
+        var enabled = ["zh","en"];
+        var defaultLang = "en";
+        var fallback = defaultLang;
+        var path = window.location.pathname || '/';
+
+        // If the URL already contains a language prefix (including defaultLang), respect it.
+        var hasPrefix = enabled.some(function (l) {
+          return l && (path === '/' + l || path.indexOf('/' + l + '/') === 0);
+        });
+        if (hasPrefix) return;
+
+        var langs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language])
+          .filter(Boolean)
+          .map(function (x) { return String(x).toLowerCase().split('-')[0]; });
+
+        var picked = null;
+        for (var i = 0; i < langs.length; i++) {
+          if (enabled.indexOf(langs[i]) !== -1) { picked = langs[i]; break; }
+        }
+        if (!picked) picked = enabled.indexOf(fallback) !== -1 ? fallback : (enabled[0] || fallback);
+
+        if (picked === "zh") return;
+        var targetPath = path;
+        if (picked !== defaultLang) {
+          targetPath = ('/' + picked + path).replace(/\/{2,}/g, '/');
+        }
+        window.location.replace(targetPath + window.location.search + window.location.hash);
+      } catch (e) {}
+    })();
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body { min-height: 100vh; }
+    .layout { display: flex; min-height: 100vh; }
+    #sidebar { width: 260px; transition: margin-left 0.2s ease; }
+    #content { flex: 1; transition: margin-left 0.2s ease; }
+    .sidebar-collapsed #sidebar { margin-left: -260px; }
+    .sidebar-collapsed #content { margin-left: 0; }
+    @media (max-width: 767.98px) {
+      #sidebar {
+        position: fixed;
+        z-index: 1040;
+        top: 56px;
+        bottom: 0;
+        overflow-y: auto;
+        background: #f8f9fa;
+        border-right: 1px solid #e5e7eb;
+      }
+      .sidebar-collapsed #sidebar { margin-left: -260px; }
+      #content { margin-left: 0; }
+      body { padding-top: 56px; }
+    }
+  </style>
+  
+  
+  
+</head>
+<body>
+  
+  
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom fixed-top">
+      <div class="container-fluid">
+        <button class="btn btn-outline-secondary me-2" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+        <a class="navbar-brand fw-semibold" href="/zh/">Online Free Tools</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="topNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="/zh/">首页</a></li><li class="nav-item"><a class="nav-link" href="/zh/devlogs/">开发日志</a></li></ul>
+          <div class="d-flex align-items-center gap-2">
+            
+            
+    <div class="dropdown">
+      <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        中文
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end"><li><span class="dropdown-item active" aria-current="true">中文</span></li><li><a class="dropdown-item" href="/en/devlogs/2026-01-08-配置多账户git.html">English</a></li></ul>
+    </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="layout sidebar-collapsed" id="layoutRoot">
+    
+    <aside id="sidebar" class="bg-light border-end p-3">
+      <h6 class="text-muted text-uppercase">导航</h6>
+      <div class="list-group list-group-flush small" id="navList"><a class="list-group-item list-group-item-action" href="/zh/">首页</a><a class="list-group-item list-group-item-action" href="/zh/devlogs/">开发日志</a></div>
+    </aside>
+    <main id="content" class="p-4">
+      <section class="mb-3">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h1 class="h4 mb-0">配置mac多GitHub账户fetch/push | 开发日志</h1>
+          <a class="btn btn-outline-secondary btn-sm" href="/zh/devlogs/">返回日志清单</a>
+        </div>
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>日期：2026年1月8日
+摘要：配置mac多GitHub账户fetch/push</p>
+<p>【用户提问】
+有多个github账户，在mac上怎么配置fetch和push不同的账户</p>
+<p>【Copilot回答】
+下面给出在 macOS 上为多个 GitHub 账户配置 fetch/push 的常用做法（SSH 方式最稳妥）：</p>
+<h3>方案：为每个账户生成独立 SSH key，并用 Host 区分</h3>
+<ol>
+<li>为每个账户生成 key（示例：work 和 personal）：</li>
+</ol>
+<pre><code class="language-zsh">ssh-keygen -t ed25519 -C &quot;work@example.com&quot; -f ~/.ssh/id_ed25519_work
+ssh-keygen -t ed25519 -C &quot;personal@example.com&quot; -f ~/.ssh/id_ed25519_personal
+</code></pre>
+<ol start="2">
+<li><p>将公钥添加到对应 GitHub 账号（Settings → SSH and GPG keys）。</p>
+</li>
+<li><p>配置 <code>~/.ssh/config</code>（使用不同 Host 名称指向不同 key）：</p>
+</li>
+</ol>
+<pre><code class="language-sshconfig">Host github-work
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_ed25519_work
+    AddKeysToAgent yes
+    UseKeychain yes
+
+Host github-personal
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_ed25519_personal
+    AddKeysToAgent yes
+    UseKeychain yes
+</code></pre>
+<ol start="4">
+<li>为仓库绑定对应 Host，确保 fetch/push 用对账号：</li>
+</ol>
+<pre><code class="language-zsh"># 工作仓库
+git remote set-url origin git@github-work:WorkOrg/repo.git
+
+# 个人仓库
+git remote set-url origin git@github-personal:PersonalUser/repo.git
+</code></pre>
+<p>以后 git fetch/push 会依据 Host（github-work / github-personal）自动选对 key。</p>
+<h3>可选：每个仓库设置签名邮箱</h3>
+<pre><code class="language-zsh">git config user.name &quot;Your Name&quot;
+git config user.email &quot;work@example.com&quot;   # 在工作仓库
+# 在个人仓库再设一次个人邮箱
+</code></pre>
+<h3>如果必须走 HTTPS（不推荐多账号场景）</h3>
+<ul>
+<li>使用 macOS Keychain 记住不同域别名：在远程 URL 中用不同“主机别名”通过自建 <code>.netrc</code> 或分开的 credential helper；实践中 SSH 更简单，推荐上面方案。</li>
+</ul>
+</article>
+      </section>
+    </main>
+  </div>
+  
+  <footer class="bg-light border-top text-center py-3">
+    <div class="container">
+      <small class="text-muted">Online Free Tools · 学习项目 · 持续迭代</small>
+    </div>
+  </footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <script>
+    const layout = document.getElementById('layoutRoot');
+    const toggle = document.getElementById('sidebarToggle');
+    if (layout && toggle) {
+      toggle.addEventListener('click', () => layout.classList.toggle('sidebar-collapsed'));
+      
+    }
+  </script>
+</body>
+</html>

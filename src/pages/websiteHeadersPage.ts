@@ -1,8 +1,8 @@
 import type { SiteLang } from '../site/i18n';
 import { t, supportedLangs } from '../site/i18n';
-const withLangPrefix = (lang: SiteLang, pathname: string) => {
+const withExplicitLangPrefix = (lang: SiteLang, pathname: string) => {
   const safe = pathname.startsWith('/') ? pathname : `/${pathname}`;
-  return lang === 'zh' ? safe : `/${lang}${safe}`;
+  return `/${lang}${safe}`.replace(/\/{2,}/g, '/');
 };
 
 const escapeHtml = (s: string) =>
@@ -19,7 +19,7 @@ export const renderWebsiteHeadersPage = (lang: SiteLang, defaultLang: SiteLang) 
 
   const otherLangLinks = supportedLangs
     .map((code) => {
-      const href = withLangPrefix(code, '/tools/website-headers');
+      const href = withExplicitLangPrefix(code, '/tools/website-headers');
       const label = code === 'zh' ? '中文' : 'English';
       if (code === lang) {
         return `<li><span class="dropdown-item active" aria-current="true">${label}</span></li>`;
@@ -40,14 +40,14 @@ export const renderWebsiteHeadersPage = (lang: SiteLang, defaultLang: SiteLang) 
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
     <div class="container">
-      <a class="navbar-brand fw-semibold" href="${withLangPrefix(lang, '/')}">${escapeHtml(t(lang, 'brand'))}</a>
+      <a class="navbar-brand fw-semibold" href="${withExplicitLangPrefix(lang, '/')}">${escapeHtml(t(lang, 'brand'))}</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="topNav">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link" href="${withLangPrefix(lang, '/')}">${escapeHtml(t(lang, 'nav_home'))}</a></li>
-          <li class="nav-item"><a class="nav-link" href="${withLangPrefix(lang, '/devlogs/')}">${escapeHtml(t(lang, 'nav_devlogs'))}</a></li>
+          <li class="nav-item"><a class="nav-link" href="${withExplicitLangPrefix(lang, '/')}">${escapeHtml(t(lang, 'nav_home'))}</a></li>
+          <li class="nav-item"><a class="nav-link" href="${withExplicitLangPrefix(lang, '/devlogs/')}">${escapeHtml(t(lang, 'nav_devlogs'))}</a></li>
         </ul>
         <div class="dropdown">
           <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">

@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>删除提交历史中的文件夹 | 开发日志</title>
+  <meta name="description" content="删除提交历史中的文件夹" />
+  <link rel="canonical" href="https://www.onlinefreetools.org/zh/devlogs/2026-01-08-%E5%88%A0%E9%99%A4%E5%8E%86%E5%8F%B2%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9.html" />
+  <meta property="og:title" content="删除提交历史中的文件夹 | 开发日志" />
+  <meta property="og:description" content="删除提交历史中的文件夹" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.onlinefreetools.org/zh/devlogs/2026-01-08-%E5%88%A0%E9%99%A4%E5%8E%86%E5%8F%B2%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9.html" />
+  <meta property="og:image" content="https://www.onlinefreetools.org/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="alternate" hreflang="zh" href="https://www.onlinefreetools.org/zh/devlogs/2026-01-08-%E5%88%A0%E9%99%A4%E5%8E%86%E5%8F%B2%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9.html" />
+  <link rel="alternate" hreflang="en" href="https://www.onlinefreetools.org/devlogs/2026-01-08-%E5%88%A0%E9%99%A4%E5%8E%86%E5%8F%B2%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9.html" />
+  
+  <script>
+    (function () {
+      try {
+        var enabled = ["zh","en"];
+        var defaultLang = "en";
+        var fallback = defaultLang;
+        var path = window.location.pathname || '/';
+
+        // If the URL already contains a language prefix (including defaultLang), respect it.
+        var hasPrefix = enabled.some(function (l) {
+          return l && (path === '/' + l || path.indexOf('/' + l + '/') === 0);
+        });
+        if (hasPrefix) return;
+
+        var langs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language])
+          .filter(Boolean)
+          .map(function (x) { return String(x).toLowerCase().split('-')[0]; });
+
+        var picked = null;
+        for (var i = 0; i < langs.length; i++) {
+          if (enabled.indexOf(langs[i]) !== -1) { picked = langs[i]; break; }
+        }
+        if (!picked) picked = enabled.indexOf(fallback) !== -1 ? fallback : (enabled[0] || fallback);
+
+        if (picked === "zh") return;
+        var targetPath = path;
+        if (picked !== defaultLang) {
+          targetPath = ('/' + picked + path).replace(/\/{2,}/g, '/');
+        }
+        window.location.replace(targetPath + window.location.search + window.location.hash);
+      } catch (e) {}
+    })();
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body { min-height: 100vh; }
+    .layout { display: flex; min-height: 100vh; }
+    #sidebar { width: 260px; transition: margin-left 0.2s ease; }
+    #content { flex: 1; transition: margin-left 0.2s ease; }
+    .sidebar-collapsed #sidebar { margin-left: -260px; }
+    .sidebar-collapsed #content { margin-left: 0; }
+    @media (max-width: 767.98px) {
+      #sidebar {
+        position: fixed;
+        z-index: 1040;
+        top: 56px;
+        bottom: 0;
+        overflow-y: auto;
+        background: #f8f9fa;
+        border-right: 1px solid #e5e7eb;
+      }
+      .sidebar-collapsed #sidebar { margin-left: -260px; }
+      #content { margin-left: 0; }
+      body { padding-top: 56px; }
+    }
+  </style>
+  
+  
+  
+</head>
+<body>
+  
+  
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom fixed-top">
+      <div class="container-fluid">
+        <button class="btn btn-outline-secondary me-2" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+        <a class="navbar-brand fw-semibold" href="/zh/">Online Free Tools</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="topNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="/zh/">首页</a></li><li class="nav-item"><a class="nav-link" href="/zh/devlogs/">开发日志</a></li></ul>
+          <div class="d-flex align-items-center gap-2">
+            
+            
+    <div class="dropdown">
+      <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        中文
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end"><li><span class="dropdown-item active" aria-current="true">中文</span></li><li><a class="dropdown-item" href="/en/devlogs/2026-01-08-删除历史中的文件夹.html">English</a></li></ul>
+    </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="layout sidebar-collapsed" id="layoutRoot">
+    
+    <aside id="sidebar" class="bg-light border-end p-3">
+      <h6 class="text-muted text-uppercase">导航</h6>
+      <div class="list-group list-group-flush small" id="navList"><a class="list-group-item list-group-item-action" href="/zh/">首页</a><a class="list-group-item list-group-item-action" href="/zh/devlogs/">开发日志</a></div>
+    </aside>
+    <main id="content" class="p-4">
+      <section class="mb-3">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h1 class="h4 mb-0">删除提交历史中的文件夹 | 开发日志</h1>
+          <a class="btn btn-outline-secondary btn-sm" href="/zh/devlogs/">返回日志清单</a>
+        </div>
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>日期：2026年1月8日
+摘要：删除提交历史中的文件夹</p>
+<p>【question】
+如何删除已经提交github的文件夹以及提交仓库中的历史</p>
+<p>【try to solve】
+下面给出删除已提交文件夹及其历史记录的常用做法：</p>
+<h3>1) 如果只想在后续版本移除（保留历史）：</h3>
+<ul>
+<li>本地删除文件夹：<code>rm -rf &lt;folder&gt;</code></li>
+<li>提交并推送：<code>git add -A &amp;&amp; git commit -m &quot;remove &lt;folder&gt;&quot; &amp;&amp; git push</code></li>
+<li>历史仍保留；仅当前与未来版本不再包含该目录。</li>
+</ul>
+<h3>2) 彻底从历史抹除（重写历史，需强推，团队先沟通）：</h3>
+<ul>
+<li>备份仓库，确认无未推送工作。</li>
+<li>安装 <code>git filter-repo</code>（推荐替代 BFG）：</li>
+</ul>
+<pre><code class="language-zsh">brew install git-filter-repo   # macOS
+</code></pre>
+<ul>
+<li>重写历史移除目录（示例移除 secret-folder）：</li>
+</ul>
+<pre><code class="language-zsh">git filter-repo --path secret-folder --invert-paths
+</code></pre>
+<ul>
+<li>多个目录可重复 <code>--path &lt;dir&gt;</code>。</li>
+<li>若需清理大文件，可用 <code>--strip-blobs-bigger-than 10M</code>。</li>
+<li>检查结果：<code>git log --stat | head</code>、确认目标目录消失。</li>
+<li>强制推送覆盖远端：</li>
+</ul>
+<pre><code class="language-zsh">git push --force --all
+git push --force --tags
+</code></pre>
+<ul>
+<li>如是公共仓库，提醒协作者重新克隆或 <code>git fetch --all &amp;&amp; git reset --hard origin/main</code>（会丢本地改动）。</li>
+</ul>
+<h3>3) GitHub UI 删除 release/attachements（可选）</h3>
+<ul>
+<li>若有 release 附带大文件，需到 GitHub Release 页面手动移除后再重推。</li>
+</ul>
+<h3>4) 防止再次提交</h3>
+<ul>
+<li>将目录加入 <code>.gitignore</code>：在 <code>.gitignore</code> 追加 <code>&lt;folder&gt;/</code>，再提交。</li>
+</ul>
+<p>风险与注意事项</p>
+<ul>
+<li>重写历史会改变提交哈希，已克隆的开发者必须重新同步；在多人协作时务必事先沟通。</li>
+<li>公共仓库如曾被 fork，fork 中的历史仍会保留；无法完全抹除公开副本。</li>
+</ul>
+<p>如需我直接在当前仓库清理指定目录，请告知目录名；若需仅删除最新版本不改历史，也请说明。</p>
+</article>
+      </section>
+    </main>
+  </div>
+  
+  <footer class="bg-light border-top text-center py-3">
+    <div class="container">
+      <small class="text-muted">Online Free Tools · 学习项目 · 持续迭代</small>
+    </div>
+  </footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <script>
+    const layout = document.getElementById('layoutRoot');
+    const toggle = document.getElementById('sidebarToggle');
+    if (layout && toggle) {
+      toggle.addEventListener('click', () => layout.classList.toggle('sidebar-collapsed'));
+      
+    }
+  </script>
+</body>
+</html>

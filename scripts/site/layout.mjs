@@ -1,4 +1,4 @@
-import { absoluteUrl } from './config.mjs';
+import { absoluteUrl, siteConfig } from './config.mjs';
 import { getTrackingSnippets } from './tracking.mjs';
 
 const bootstrapCss =
@@ -43,12 +43,13 @@ export const renderLayout = ({
     (function () {
       try {
         var enabled = ${JSON.stringify(enabledLangs)};
-        var fallback = 'en';
+        var defaultLang = ${JSON.stringify(siteConfig.defaultLang)};
+        var fallback = defaultLang;
         var path = window.location.pathname || '/';
 
-        // If the URL already contains a non-zh language prefix, respect it.
+        // If the URL already contains a language prefix (including defaultLang), respect it.
         var hasPrefix = enabled.some(function (l) {
-          return l && l !== 'zh' && (path === '/' + l || path.indexOf('/' + l + '/') === 0);
+          return l && (path === '/' + l || path.indexOf('/' + l + '/') === 0);
         });
         if (hasPrefix) return;
 
@@ -63,10 +64,11 @@ export const renderLayout = ({
         if (!picked) picked = enabled.indexOf(fallback) !== -1 ? fallback : (enabled[0] || fallback);
 
         if (picked === ${JSON.stringify(lang)}) return;
-        if (picked !== 'zh') {
-          var target = ('/' + picked + path).replace(/\/\/+/g, '/');
-          window.location.replace(target + window.location.search + window.location.hash);
+        var targetPath = path;
+        if (picked !== defaultLang) {
+          targetPath = ('/' + picked + path).replace(/\\/{2,}/g, '/');
         }
+        window.location.replace(targetPath + window.location.search + window.location.hash);
       } catch (e) {}
     })();
   </script>`;

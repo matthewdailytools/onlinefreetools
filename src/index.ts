@@ -28,12 +28,19 @@ const parseLangList = (raw: string | undefined) => {
 const getEnabledLangs = (env: Env): SiteLang[] => {
 	const list = parseLangList(env.SITE_LANGS);
 	const enabled = list.filter((x) => isSupportedLang(x)) as SiteLang[];
-	return enabled.length ? enabled : (["zh", "en"] as SiteLang[]);
+	const fallback = getFallbackLang(env);
+	const out = Array.from(new Set([...(enabled.length ? enabled : (["zh", "en"] as SiteLang[])), fallback]));
+	return out as SiteLang[];
 };
 
 const getFallbackLang = (env: Env): SiteLang => {
 	const raw = (env.SITE_DEFAULT_LANG || "en").trim();
 	return (isSupportedLang(raw) ? raw : "en") as SiteLang;
+};
+
+const getDefaultLang = (env: Env, enabled: SiteLang[]): SiteLang => {
+	const fallback = getFallbackLang(env);
+	return enabled.includes(fallback) ? fallback : (enabled[0] || fallback);
 };
 
 const parseAcceptLanguage = (value: string | null) => {
@@ -69,9 +76,9 @@ const getExplicitLangFromPath = (pathname: string, enabled: SiteLang[]) => {
 	return null;
 };
 
-const withLangPrefix = (lang: SiteLang, pathname: string) => {
+const withLangPrefix = (lang: SiteLang, pathname: string, defaultLang: SiteLang) => {
 	const safe = pathname.startsWith("/") ? pathname : `/${pathname}`;
-	return lang === "zh" ? safe : `/${lang}${safe}`;
+	return lang === defaultLang ? safe : `/${lang}${safe}`;
 };
 
 const fetchAsset = async (c: any, assetPathname: string) => {
@@ -101,13 +108,13 @@ app.get("/", async (c) => {
 
 	const enabled = getEnabledLangs(c.env);
 	const acceptLanguage = c.req.header("accept-language");
-	const defaultLang = enabled.includes("zh") ? ("zh" as SiteLang) : getFallbackLang(c.env);
+	const defaultLang = getDefaultLang(c.env, enabled);
 
 	if (acceptLanguage) {
 		const picked = pickLang(acceptLanguage, enabled, defaultLang);
 		if (picked !== defaultLang) {
 			const url = new URL(c.req.url);
-			url.pathname = withLangPrefix(picked, "/");
+			url.pathname = withLangPrefix(picked, "/", defaultLang);
 			c.header("Vary", "Accept-Language, Accept");
 			return c.redirect(url.toString(), 302);
 		}
@@ -123,6 +130,14 @@ app.get("/en/", async (c) => {
 	const accept = c.req.header("accept") || "";
 	if (!accept.includes("text/html")) return c.notFound();
 	const res = await fetchAsset(c, "/_pages/en/index.html");
+	return res;
+});
+
+app.get("/zh", (c) => c.redirect("/zh/", 308));
+app.get("/zh/", async (c) => {
+	const accept = c.req.header("accept") || "";
+	if (!accept.includes("text/html")) return c.notFound();
+	const res = await fetchAsset(c, "/_pages/zh/index.html");
 	return res;
 });
 
@@ -149,11 +164,11 @@ app.use("/*", async (c, next) => {
 	const acceptLanguage = c.req.header("accept-language");
 	if (!acceptLanguage) return next();
 
-	const defaultLang = enabled.includes("zh") ? ("zh" as SiteLang) : getFallbackLang(c.env);
+	const defaultLang = getDefaultLang(c.env, enabled);
 	const picked = pickLang(acceptLanguage, enabled, defaultLang);
 	if (picked === defaultLang) return next();
 
-	url.pathname = withLangPrefix(picked, pathname === "/" ? "/" : pathname);
+	url.pathname = withLangPrefix(picked, pathname === "/" ? "/" : pathname, defaultLang);
 	c.header("Vary", "Accept-Language, Accept");
 	return c.redirect(url.toString(), 302);
 });
@@ -173,19 +188,20 @@ app.get("/api/tools/website-headers", handleWebsiteHeadersApi);
 
 app.get("/tools/website-headers", (c) => {
 	const enabled = getEnabledLangs(c.env);
-	const lang = enabled.includes("zh") ? ("zh" as SiteLang) : getFallbackLang(c.env);
-	const html = renderWebsiteHeadersPage(lang, getFallbackLang(c.env));
+	const defaultLang = getDefaultLang(c.env, enabled);
+	const html = renderWebsiteHeadersPage(defaultLang, defaultLang);
 	return c.html(html);
 });
 
 app.get("/:lang/tools/website-headers", (c) => {
 	const langParam = c.req.param("lang");
-	if (!isSupportedLang(langParam)) {
-		return c.redirect(withLangPrefix(getFallbackLang(c.env), "/tools/website-headers"), 302);
-	}
 	const enabled = getEnabledLangs(c.env);
-	const lang = (enabled.includes(langParam as SiteLang) ? (langParam as SiteLang) : getFallbackLang(c.env)) as SiteLang;
-	const html = renderWebsiteHeadersPage(lang, getFallbackLang(c.env));
+	const defaultLang = getDefaultLang(c.env, enabled);
+	if (!isSupportedLang(langParam)) {
+		return c.redirect(withLangPrefix(defaultLang, "/tools/website-headers", defaultLang), 302);
+	}
+	const lang = (enabled.includes(langParam as SiteLang) ? (langParam as SiteLang) : defaultLang) as SiteLang;
+	const html = renderWebsiteHeadersPage(lang, defaultLang);
 	return c.html(html);
 });
 
@@ -210,11 +226,11 @@ app.get("/*", (c) => {
 	const acceptLanguage = c.req.header("accept-language");
 	if (!acceptLanguage) return c.notFound();
 
-	const defaultLang = enabled.includes("zh") ? ("zh" as SiteLang) : getFallbackLang(c.env);
+	const defaultLang = getDefaultLang(c.env, enabled);
 	const picked = pickLang(acceptLanguage, enabled, defaultLang);
 	if (picked === defaultLang) return c.notFound();
 
-	url.pathname = withLangPrefix(picked, pathname === "/" ? "/" : pathname);
+	url.pathname = withLangPrefix(picked, pathname === "/" ? "/" : pathname, defaultLang);
 	c.header("Vary", "Accept-Language, Accept");
 	return c.redirect(url.toString(), 302);
 });

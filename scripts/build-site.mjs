@@ -4,7 +4,7 @@ import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { createRequire } from 'node:module';
 
-import { siteConfig, getLangConfig, withLangPath } from './site/config.mjs';
+import { siteConfig, getLangConfig, withLangPath, withExplicitLangPath } from './site/config.mjs';
 import { t } from './site/i18n.mjs';
 import { renderLayout } from './site/layout.mjs';
 import { renderFooter, renderHeader, renderSidebar } from './site/components.mjs';
@@ -54,7 +54,7 @@ export const buildHome = async (lang) => {
 
   const model = getHomePageModel(lang);
   const langAlternates = Object.fromEntries(
-    (siteConfig.enabledLangs || []).map((code) => [code, withLangPath(code, '/')])
+    (siteConfig.enabledLangs || []).map((code) => [code, withExplicitLangPath(code, '/')])
   );
 
   const headerHtml = renderHeader({
@@ -126,10 +126,7 @@ export const buildDevLogs = async (lang) => {
     const canonicalPath = withLangPath(lang, `/devlogs/${encodeURIComponent(base)}.html`);
 
     const langAlternates = Object.fromEntries(
-      (siteConfig.enabledLangs || []).map((code) => [
-        code,
-        withLangPath(code, `/devlogs/${base}.html`),
-      ])
+      (siteConfig.enabledLangs || []).map((code) => [code, withExplicitLangPath(code, `/devlogs/${base}.html`)])
     );
 
     const headerHtml = renderHeader({
@@ -184,7 +181,7 @@ export const buildDevLogs = async (lang) => {
       : 'Online Free Tools 开发日志清单，按日期汇总所有问答记录。';
   const indexCanonicalPath = withLangPath(lang, '/devlogs/');
   const indexLangAlternates = Object.fromEntries(
-    (siteConfig.enabledLangs || []).map((code) => [code, withLangPath(code, '/devlogs/')])
+    (siteConfig.enabledLangs || []).map((code) => [code, withExplicitLangPath(code, '/devlogs/')])
   );
 
   const headerHtml = renderHeader({

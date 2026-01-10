@@ -1,5 +1,5 @@
 import { t } from '../i18n.mjs';
-import { withLangPath } from '../config.mjs';
+import { withExplicitLangPath } from '../config.mjs';
 
 const renderPrimaryCard = ({ title, desc, href, cta }) => `
   <div class="col">
@@ -24,8 +24,8 @@ const renderSecondaryCard = ({ title, desc, href, cta }) => `
   </div>`;
 
 export const renderHomeContent = ({ lang }) => {
-  const toolHeadersHref = withLangPath(lang, '/tools/website-headers');
-  const toolMdHref = withLangPath(lang, '/tools/markdown-to-html.html');
+  const toolHeadersHref = withExplicitLangPath(lang, '/tools/website-headers');
+  const toolMdHref = '/tools/markdown-to-html.html';
 
   const openCta = t(lang, 'home_open');
 

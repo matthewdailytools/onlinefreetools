@@ -1,4 +1,4 @@
-import { siteConfig, withLangPath } from '../config.mjs';
+import { siteConfig, withExplicitLangPath, withLangPath } from '../config.mjs';
 import { t } from '../i18n.mjs';
 
 const renderLangSwitcher = ({ lang, langAlternates }) => {
@@ -25,10 +25,7 @@ const renderLangSwitcher = ({ lang, langAlternates }) => {
   const links = enabled
     .map((code) => {
       const label = (siteConfig.languages.find((l) => l.code === code) || { label: code }).label;
-      const href =
-        code === current
-          ? null
-          : (langAlternates && langAlternates[code]) || withLangPath(code, '/');
+      const href = code === current ? null : (langAlternates && langAlternates[code]) || withExplicitLangPath(code, '/');
       return href
         ? `<li><a class=\"dropdown-item\" href=\"${href}\">${label}</a></li>`
         : `<li><span class=\"dropdown-item active\" aria-current=\"true\">${label}</span></li>`;

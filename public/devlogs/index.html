@@ -1,30 +1,31 @@
 <!doctype html>
-<html lang="zh">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>开发日志清单 | Online Free Tools</title>
-  <meta name="description" content="Online Free Tools 开发日志清单，按日期汇总所有问答记录。" />
+  <title>Dev Logs | Online Free Tools</title>
+  <meta name="description" content="Project dev logs and Q&A notes, organized by date." />
   <link rel="canonical" href="https://www.onlinefreetools.org/devlogs/" />
-  <meta property="og:title" content="开发日志清单 | Online Free Tools" />
-  <meta property="og:description" content="Online Free Tools 开发日志清单，按日期汇总所有问答记录。" />
+  <meta property="og:title" content="Dev Logs | Online Free Tools" />
+  <meta property="og:description" content="Project dev logs and Q&A notes, organized by date." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.onlinefreetools.org/devlogs/" />
   <meta property="og:image" content="https://www.onlinefreetools.org/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="alternate" hreflang="zh" href="https://www.onlinefreetools.org/devlogs/" />
-  <link rel="alternate" hreflang="en" href="https://www.onlinefreetools.org/en/devlogs/" />
+  <link rel="alternate" hreflang="zh" href="https://www.onlinefreetools.org/zh/devlogs/" />
+  <link rel="alternate" hreflang="en" href="https://www.onlinefreetools.org/devlogs/" />
   
   <script>
     (function () {
       try {
         var enabled = ["zh","en"];
-        var fallback = 'en';
+        var defaultLang = "en";
+        var fallback = defaultLang;
         var path = window.location.pathname || '/';
 
-        // If the URL already contains a non-zh language prefix, respect it.
+        // If the URL already contains a language prefix (including defaultLang), respect it.
         var hasPrefix = enabled.some(function (l) {
-          return l && l !== 'zh' && (path === '/' + l || path.indexOf('/' + l + '/') === 0);
+          return l && (path === '/' + l || path.indexOf('/' + l + '/') === 0);
         });
         if (hasPrefix) return;
 
@@ -38,11 +39,12 @@
         }
         if (!picked) picked = enabled.indexOf(fallback) !== -1 ? fallback : (enabled[0] || fallback);
 
-        if (picked === "zh") return;
-        if (picked !== 'zh') {
-          var target = ('/' + picked + path).replace(///+/g, '/');
-          window.location.replace(target + window.location.search + window.location.hash);
+        if (picked === "en") return;
+        var targetPath = path;
+        if (picked !== defaultLang) {
+          targetPath = ('/' + picked + path).replace(/\/{2,}/g, '/');
         }
+        window.location.replace(targetPath + window.location.search + window.location.hash);
       } catch (e) {}
     })();
   </script>
@@ -71,7 +73,7 @@
   </style>
   
   
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"开发日志清单","url":"https://www.onlinefreetools.org/devlogs/","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://www.onlinefreetools.org/"},{"@type":"ListItem","position":2,"name":"开发日志","item":"https://www.onlinefreetools.org/devlogs/"}]}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Dev Logs","url":"https://www.onlinefreetools.org/devlogs/","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.onlinefreetools.org/"},{"@type":"ListItem","position":2,"name":"Dev Logs","item":"https://www.onlinefreetools.org/devlogs/"}]}}</script>
 </head>
 <body>
   
@@ -85,15 +87,15 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="topNav">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="/">首页</a></li><li class="nav-item"><a class="nav-link" href="/devlogs/">开发日志</a></li></ul>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="/">Home</a></li><li class="nav-item"><a class="nav-link" href="/devlogs/">Dev Logs</a></li></ul>
           <div class="d-flex align-items-center gap-2">
             
             
     <div class="dropdown">
       <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-        中文
+        English
       </button>
-      <ul class="dropdown-menu dropdown-menu-end"><li><span class="dropdown-item active" aria-current="true">中文</span></li><li><a class="dropdown-item" href="/en/devlogs/">English</a></li></ul>
+      <ul class="dropdown-menu dropdown-menu-end"><li><a class="dropdown-item" href="/zh/devlogs/">中文</a></li><li><span class="dropdown-item active" aria-current="true">English</span></li></ul>
     </div>
           </div>
         </div>
@@ -103,20 +105,40 @@
   <div class="layout sidebar-collapsed" id="layoutRoot">
     
     <aside id="sidebar" class="bg-light border-end p-3">
-      <h6 class="text-muted text-uppercase">导航</h6>
-      <div class="list-group list-group-flush small" id="navList"><a class="list-group-item list-group-item-action" href="/">首页</a><a class="list-group-item list-group-item-action" href="/devlogs/">开发日志</a></div>
+      <h6 class="text-muted text-uppercase">Navigation</h6>
+      <div class="list-group list-group-flush small" id="navList"><a class="list-group-item list-group-item-action" href="/">Home</a><a class="list-group-item list-group-item-action" href="/devlogs/">Dev Logs</a></div>
     </aside>
     <main id="content" class="p-4">
     <section>
       <div class="d-flex justify-content-between align-items-center mb-3">
         <div>
-          <h1 class="h4 mb-1">开发日志清单</h1>
-          <p class="text-muted mb-0">按日期列出所有问答记录，点击打开查看详情。</p>
+          <h1 class="h4 mb-1">Dev Logs</h1>
+          <p class="text-muted mb-0">Browse Q&A and implementation notes by date.</p>
         </div>
-        <a class="btn btn-outline-secondary btn-sm" href="/">返回首页</a>
+        <a class="btn btn-outline-secondary btn-sm" href="/">Back to Home</a>
       </div>
       <ul class="list-group shadow-sm">
         
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a href="/devlogs/2026-01-11-02-11-首页语言切换英文工具链接未更新.html" class="text-decoration-none">首页语言切换英文工具链接未更新</a>
+            <span class="badge text-bg-secondary">2026年1月11日2时11分</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a href="/devlogs/2026-01-11-01-55-修复语言下拉切换英文不跳转.html" class="text-decoration-none">修复语言下拉切换英文不跳转</a>
+            <span class="badge text-bg-secondary">2026年01月11日01时55分</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a href="/devlogs/2026-01-11-01-21-修复siteconfig初始化tdz.html" class="text-decoration-none">修复siteconfig初始化tdz</a>
+            <span class="badge text-bg-secondary">2026年01月11日01时21分</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a href="/devlogs/2026-01-11-00-52-语言切换英文不生效修复.html" class="text-decoration-none">语言切换英文不生效修复</a>
+            <span class="badge text-bg-secondary">2026年1月11日0时52分</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a href="/devlogs/2026-01-11-00-41-默认英文展示修复.html" class="text-decoration-none">默认英文展示修复</a>
+            <span class="badge text-bg-secondary">2026年1月11日0时41分</span>
+          </li>
           <li class="list-group-item d-flex justify-content-between align-items-center">
             <a href="/devlogs/2026-01-11-00-16-SEO-服务端语言协商-根路径重定向.html" class="text-decoration-none">SEO-服务端语言协商-根路径重定向</a>
             <span class="badge text-bg-secondary">2026年1月11日0时16分</span>
@@ -236,7 +258,7 @@
   
   <footer class="bg-light border-top text-center py-3">
     <div class="container">
-      <small class="text-muted">Online Free Tools · 学习项目 · 持续迭代</small>
+      <small class="text-muted">Online Free Tools · Learning project · Iterating</small>
     </div>
   </footer>
   

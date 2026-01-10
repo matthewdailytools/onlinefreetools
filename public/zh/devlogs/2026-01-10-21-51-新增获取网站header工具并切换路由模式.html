@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>新增“获取网站响应 Header”工具（Worker 路由模式，含 API），提供中英文页面并保留语言配置扩展，同时清理首页未实现工具入口。 | 开发日志</title>
+  <meta name="description" content="新增“获取网站响应 Header”工具（Worker 路由模式，含 API），提供中英文页面并保留语言配置扩展，同时清理首页未实现工具入口。" />
+  <link rel="canonical" href="https://www.onlinefreetools.org/zh/devlogs/2026-01-10-21-51-%E6%96%B0%E5%A2%9E%E8%8E%B7%E5%8F%96%E7%BD%91%E7%AB%99header%E5%B7%A5%E5%85%B7%E5%B9%B6%E5%88%87%E6%8D%A2%E8%B7%AF%E7%94%B1%E6%A8%A1%E5%BC%8F.html" />
+  <meta property="og:title" content="新增“获取网站响应 Header”工具（Worker 路由模式，含 API），提供中英文页面并保留语言配置扩展，同时清理首页未实现工具入口。 | 开发日志" />
+  <meta property="og:description" content="新增“获取网站响应 Header”工具（Worker 路由模式，含 API），提供中英文页面并保留语言配置扩展，同时清理首页未实现工具入口。" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.onlinefreetools.org/zh/devlogs/2026-01-10-21-51-%E6%96%B0%E5%A2%9E%E8%8E%B7%E5%8F%96%E7%BD%91%E7%AB%99header%E5%B7%A5%E5%85%B7%E5%B9%B6%E5%88%87%E6%8D%A2%E8%B7%AF%E7%94%B1%E6%A8%A1%E5%BC%8F.html" />
+  <meta property="og:image" content="https://www.onlinefreetools.org/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="alternate" hreflang="zh" href="https://www.onlinefreetools.org/zh/devlogs/2026-01-10-21-51-%E6%96%B0%E5%A2%9E%E8%8E%B7%E5%8F%96%E7%BD%91%E7%AB%99header%E5%B7%A5%E5%85%B7%E5%B9%B6%E5%88%87%E6%8D%A2%E8%B7%AF%E7%94%B1%E6%A8%A1%E5%BC%8F.html" />
+  <link rel="alternate" hreflang="en" href="https://www.onlinefreetools.org/devlogs/2026-01-10-21-51-%E6%96%B0%E5%A2%9E%E8%8E%B7%E5%8F%96%E7%BD%91%E7%AB%99header%E5%B7%A5%E5%85%B7%E5%B9%B6%E5%88%87%E6%8D%A2%E8%B7%AF%E7%94%B1%E6%A8%A1%E5%BC%8F.html" />
+  
+  <script>
+    (function () {
+      try {
+        var enabled = ["zh","en"];
+        var defaultLang = "en";
+        var fallback = defaultLang;
+        var path = window.location.pathname || '/';
+
+        // If the URL already contains a language prefix (including defaultLang), respect it.
+        var hasPrefix = enabled.some(function (l) {
+          return l && (path === '/' + l || path.indexOf('/' + l + '/') === 0);
+        });
+        if (hasPrefix) return;
+
+        var langs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language])
+          .filter(Boolean)
+          .map(function (x) { return String(x).toLowerCase().split('-')[0]; });
+
+        var picked = null;
+        for (var i = 0; i < langs.length; i++) {
+          if (enabled.indexOf(langs[i]) !== -1) { picked = langs[i]; break; }
+        }
+        if (!picked) picked = enabled.indexOf(fallback) !== -1 ? fallback : (enabled[0] || fallback);
+
+        if (picked === "zh") return;
+        var targetPath = path;
+        if (picked !== defaultLang) {
+          targetPath = ('/' + picked + path).replace(/\/{2,}/g, '/');
+        }
+        window.location.replace(targetPath + window.location.search + window.location.hash);
+      } catch (e) {}
+    })();
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body { min-height: 100vh; }
+    .layout { display: flex; min-height: 100vh; }
+    #sidebar { width: 260px; transition: margin-left 0.2s ease; }
+    #content { flex: 1; transition: margin-left 0.2s ease; }
+    .sidebar-collapsed #sidebar { margin-left: -260px; }
+    .sidebar-collapsed #content { margin-left: 0; }
+    @media (max-width: 767.98px) {
+      #sidebar {
+        position: fixed;
+        z-index: 1040;
+        top: 56px;
+        bottom: 0;
+        overflow-y: auto;
+        background: #f8f9fa;
+        border-right: 1px solid #e5e7eb;
+      }
+      .sidebar-collapsed #sidebar { margin-left: -260px; }
+      #content { margin-left: 0; }
+      body { padding-top: 56px; }
+    }
+  </style>
+  
+  
+  
+</head>
+<body>
+  
+  
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom fixed-top">
+      <div class="container-fluid">
+        <button class="btn btn-outline-secondary me-2" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+        <a class="navbar-brand fw-semibold" href="/zh/">Online Free Tools</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="topNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="/zh/">首页</a></li><li class="nav-item"><a class="nav-link" href="/zh/devlogs/">开发日志</a></li></ul>
+          <div class="d-flex align-items-center gap-2">
+            
+            
+    <div class="dropdown">
+      <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        中文
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end"><li><span class="dropdown-item active" aria-current="true">中文</span></li><li><a class="dropdown-item" href="/en/devlogs/2026-01-10-21-51-新增获取网站header工具并切换路由模式.html">English</a></li></ul>
+    </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="layout sidebar-collapsed" id="layoutRoot">
+    
+    <aside id="sidebar" class="bg-light border-end p-3">
+      <h6 class="text-muted text-uppercase">导航</h6>
+      <div class="list-group list-group-flush small" id="navList"><a class="list-group-item list-group-item-action" href="/zh/">首页</a><a class="list-group-item list-group-item-action" href="/zh/devlogs/">开发日志</a></div>
+    </aside>
+    <main id="content" class="p-4">
+      <section class="mb-3">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h1 class="h4 mb-0">新增“获取网站响应 Header”工具（Worker 路由模式，含 API），提供中英文页面并保留语言配置扩展，同时清理首页未实现工具入口。 | 开发日志</h1>
+          <a class="btn btn-outline-secondary btn-sm" href="/zh/devlogs/">返回日志清单</a>
+        </div>
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>日期：2026年1月10日21时51分
+摘要：新增“获取网站响应 Header”工具（Worker 路由模式，含 API），提供中英文页面并保留语言配置扩展，同时清理首页未实现工具入口。</p>
+<p>【question】
+增加工具：怎么获取网站header信息。采用路由模式而不是静态页面， 提供中英文语言，保留语言配置拓展。清理目前没有实现的工具入口。</p>
+<p>【try to solve】
+新增一个“获取网站响应 Header”的工具，采用 Worker 路由返回 HTML（不再生成静态工具页），并提供后端 API 由服务器侧请求目标网址获取响应 Header：</p>
+<ul>
+<li>路由页面：<code>/tools/website-headers</code>（默认语言），以及 <code>/&lt;lang&gt;/tools/website-headers</code>（例如 <code>/en/tools/website-headers</code>）</li>
+<li>API：<code>/api/tools/website-headers?url=...</code>，返回 <code>status/finalUrl/headers</code> 等 JSON</li>
+<li>安全限制：仅允许 http/https；拦截 localhost/内网 IP（如 127.0.0.1、10.0.0.0/8、192.168.0.0/16、172.16.0.0/12、::1、fc00::/7、fe80::/10 等），减少 SSRF 风险</li>
+<li>i18n：页面提供中文/英文文案与语言切换入口，语言配置以可扩展列表形式组织</li>
+<li>默认语言配置：在 <code>wrangler.jsonc</code> 增加 <code>SITE_DEFAULT_LANG</code>（默认 <code>zh</code>）与 <code>SITE_LANGS</code>（默认 <code>zh,en</code>）以便后续扩展与环境配置</li>
+</ul>
+<p>同时清理首页未实现的工具入口：移除所有 <code>href=&quot;#&quot;</code> 的占位卡片，仅保留已存在的 <code>Markdown → HTML</code>，并新增新工具入口链接到 <code>/tools/website-headers</code>（英文页对应 <code>/en/tools/website-headers</code>）。</p>
+<p>【执行操作】</p>
+<ul>
+<li>新增：<code>src/site/i18n.ts</code>、<code>src/site/lang.ts</code></li>
+<li>新增：<code>src/pages/websiteHeadersPage.ts</code></li>
+<li>新增：<code>src/tools/websiteHeaders.ts</code></li>
+<li>更新：<code>src/index.ts</code>（新增工具路由与 API）</li>
+<li>更新：<code>scripts/site/pages/home.mjs</code>（清理未实现入口 + 新增工具入口）</li>
+<li>更新：<code>wrangler.jsonc</code>、<code>worker-configuration.d.ts</code>（新增 vars 并重新 typegen）</li>
+<li>生成：<code>public/index.html</code>、<code>public/en/index.html</code>（首页入口更新）</li>
+</ul>
+</article>
+      </section>
+    </main>
+  </div>
+  
+  <footer class="bg-light border-top text-center py-3">
+    <div class="container">
+      <small class="text-muted">Online Free Tools · 学习项目 · 持续迭代</small>
+    </div>
+  </footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <script>
+    const layout = document.getElementById('layoutRoot');
+    const toggle = document.getElementById('sidebarToggle');
+    if (layout && toggle) {
+      toggle.addEventListener('click', () => layout.classList.toggle('sidebar-collapsed'));
+      
+    }
+  </script>
+</body>
+</html>
