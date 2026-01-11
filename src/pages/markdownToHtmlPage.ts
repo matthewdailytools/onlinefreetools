@@ -1,5 +1,5 @@
 import type { SiteLang } from '../site/i18n';
-import { t } from '../site/i18n';
+import { t, supportedLangs } from '../site/i18n';
 import { renderFooter } from './site/footer';
 import { renderHeader } from './site/header';
 import { renderLayout, type HreflangAlternate, escapeHtml } from './site/layout';
@@ -25,22 +25,26 @@ export const renderMarkdownToHtmlPage = (opts: {
 		{ href: '/devlogs/', label: t(opts.lang, 'nav_devlogs') },
 	];
 
-	const langAlternates: Record<string, string> = Object.fromEntries(
-		(opts.enabledLangs || []).map((code) => [code, withLangPrefix(code, '/tools/markdown-to-html', opts.defaultLang)])
-	);
+  // Build language switcher links for all supported languages so users can
+  // switch between the full set (10 languages) regardless of `SITE_LANGS`.
+  const langAlternates: Record<string, string> = Object.fromEntries(
+    (supportedLangs || []).map((code) => [code, withLangPrefix(code, '/tools/markdown-to-html', opts.defaultLang)])
+  );
 
 	const alternates: HreflangAlternate[] = (opts.enabledLangs || []).map((code) => ({
 		lang: code,
 		href: `https://onlinefreetools.org${withLangPrefix(code, '/tools/markdown-to-html', opts.defaultLang)}`,
 	}));
 
-	const headerHtml = renderHeader({
-		lang: opts.lang,
-		brandHref: withLangPrefix(opts.lang, '/', opts.defaultLang),
-		navItems,
-		enabledLangs: opts.enabledLangs,
-		langAlternates,
-	});
+  // Pass the full supportedLangs to the header so the language switcher
+  // presents all available translations (10 langs).
+  const headerHtml = renderHeader({
+    lang: opts.lang,
+    brandHref: withLangPrefix(opts.lang, '/', opts.defaultLang),
+    navItems,
+    enabledLangs: supportedLangs,
+    langAlternates,
+  });
 
 	const sidebarHtml = renderSidebar({
 		title: t(opts.lang, 'nav_tools'),

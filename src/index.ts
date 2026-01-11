@@ -75,7 +75,11 @@ const pickLang = (acceptLanguage: string | null, enabled: SiteLang[], fallback: 
 
 const getExplicitLangFromPath = (pathname: string, enabled: SiteLang[]) => {
 	const seg = pathname.replace(/^\/+/, "").split("/")[0].toLowerCase();
-	if (isSupportedLang(seg) && enabled.includes(seg as SiteLang)) return seg as SiteLang;
+	// Treat any supported language code as an explicit prefix in the path.
+	// Do not require it to be enabled via `SITE_LANGS` here — middleware
+	// should not trigger language-negotiation redirects for explicit
+	// language-prefixed URLs even if that language isn't enabled.
+	if (isSupportedLang(seg)) return seg as SiteLang;
 	return null;
 };
 
@@ -202,7 +206,9 @@ app.get("/:lang/tools/website-headers", (c) => {
 	if (!isSupportedLang(langParam)) {
 		return c.redirect(withLangPrefix(defaultLang, "/tools/website-headers", defaultLang), 302);
 	}
-	const lang = (enabled.includes(langParam as SiteLang) ? (langParam as SiteLang) : defaultLang) as SiteLang;
+	// If the path explicitly includes a supported language code, use it
+	// for rendering even when it's not listed in `SITE_LANGS`.
+	const lang = (isSupportedLang(langParam) ? (langParam as SiteLang) : defaultLang) as SiteLang;
 	const html = renderWebsiteHeadersPage(lang, defaultLang);
 	return c.html(html);
 });
@@ -224,7 +230,8 @@ app.get("/:lang/tools/markdown-to-html", (c) => {
 	if (!isSupportedLang(langParam)) {
 		return c.redirect(withLangPrefix(defaultLang, "/tools/markdown-to-html", defaultLang), 302);
 	}
-	const lang = (enabled.includes(langParam as SiteLang) ? (langParam as SiteLang) : defaultLang) as SiteLang;
+	// Use the explicit language from path when it's a supported language.
+	const lang = (isSupportedLang(langParam) ? (langParam as SiteLang) : defaultLang) as SiteLang;
 	const html = renderMarkdownToHtmlPage({ lang, defaultLang, enabledLangs: enabled });
 	return c.html(html);
 });
