@@ -26,6 +26,7 @@ const renderSecondaryCard = ({ title, desc, href, cta }) => `
 export const renderHomeContent = ({ lang }) => {
   const toolHeadersHref = withExplicitLangPath(lang, '/tools/website-headers');
   const toolMdHref = withExplicitLangPath(lang, '/tools/markdown-to-html');
+  const toolIpHref = withExplicitLangPath(lang, '/tools/ip-address');
 
   const openCta = t(lang, 'home_open');
 
@@ -46,6 +47,12 @@ export const renderHomeContent = ({ lang }) => {
           title: t(lang, 'tool_markdown_to_html_title'),
           desc: t(lang, 'tool_markdown_to_html_desc'),
           href: toolMdHref,
+          cta: openCta,
+        })}
+        ${renderPrimaryCard({
+          title: t(lang, 'tool_ip_address_title'),
+          desc: t(lang, 'tool_ip_address_desc'),
+          href: toolIpHref,
           cta: openCta,
         })}
       </div>
@@ -81,6 +88,12 @@ export const renderHomeContent = ({ lang }) => {
             title: t(lang, 'tool_website_headers_title'),
             desc: t(lang, 'tool_website_headers_desc'),
             href: toolHeadersHref,
+            cta: openCta,
+          })}
+          ${renderSecondaryCard({
+            title: t(lang, 'tool_ip_address_title'),
+            desc: t(lang, 'tool_ip_address_desc'),
+            href: toolIpHref,
             cta: openCta,
           })}
         </div>

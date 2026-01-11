@@ -37,5 +37,13 @@ const en: SiteLangDict = {
     "# Title\n\nBasic Markdown supported: **bold**, lists, and code blocks.\n\n- Item 1\n- Item 2\n\n```js\nconsole.log('Hello Markdown');\n```",
   tool_markdown_export_title: 'Markdown to HTML Export',
   tool_markdown_export_description: 'Static HTML export generated from Markdown',
+  tool_ip_address_title: 'What Is My IP Address?',
+  tool_ip_address_description: 'Discover your public IP address with one click.',
+  tool_ip_address_article: 'What: Find your public IP address as seen by the internet. Your IP address identifies your device on the network and is used by websites to deliver content. Scenarios: remote access, network troubleshooting, firewall configuration, and geolocation services.',
+  ip_label: 'Your IP Address',
+  fetch_ip_button: 'Refresh IP',
+  fetching_message: 'Fetching your IP address...',
+  what_is_ip_title: 'What is an IP Address?',
+  what_is_ip_content: 'An Internet Protocol (IP) address is a numerical label assigned to each device connected to a computer network. It serves two primary functions: host or network interface identification and location addressing. There are two versions in use today: IPv4 and IPv6.',
 };
 export default en;

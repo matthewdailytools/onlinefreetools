@@ -19,8 +19,8 @@ export const renderWebsiteHeadersPage = (lang: SiteLang, defaultLang: SiteLang) 
   const article = t(lang, 'tool_headers_article');
 
   const navItems = [
-    { href: withLangPrefix(lang, '/', defaultLang), label: t(lang, 'nav_home') },
-    { href: withLangPrefix(lang, '/#all-tools', defaultLang), label: t(lang, 'nav_tools') },
+    { href: withLangPrefix(lang, '/'), label: t(lang, 'nav_home') },
+    { href: withLangPrefix(lang, '/#all-tools'), label: t(lang, 'nav_tools') },
     { href: '/devlogs/', label: t(lang, 'nav_devlogs') },
   ];
 
@@ -34,12 +34,12 @@ export const renderWebsiteHeadersPage = (lang: SiteLang, defaultLang: SiteLang) 
 
   const alternates: HreflangAlternate[] = (supportedLangs || []).map((code) => ({
     lang: code,
-    href: `https://onlinefreetools.org${withLangPrefix(code, '/tools/website-headers', defaultLang)}`,
+    href: `https://onlinefreetools.org${withLangPrefix(code, '/tools/website-headers')}`,
   }));
 
   const headerHtml = renderHeader({
     lang,
-    brandHref: withLangPrefix(lang, '/', defaultLang),
+    brandHref: withLangPrefix(lang, '/'),
     navItems,
     enabledLangs: supportedLangs,
     langAlternates,

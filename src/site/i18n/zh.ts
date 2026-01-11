@@ -35,5 +35,13 @@ const zh: SiteLangDict = {
     "# 标题\n\n支持基本 Markdown 语法，例如**加粗**、列表与代码块。\n\n- 列表项 1\n- 列表项 2\n\n```js\nconsole.log('Hello Markdown');\n```",
   tool_markdown_export_title: 'Markdown 转 HTML 导出',
   tool_markdown_export_description: '由 Markdown 转换的静态 HTML 导出文件',
+  tool_ip_address_title: '我的 IP 地址是什么？',
+  tool_ip_address_description: '一键发现您的公网 IP 地址。',
+  tool_ip_address_article: '是什么：查询您对外显示的公网 IP 地址。您的 IP 地址用于在网络中标识您的设备，网站通过它向您发送内容。适用场景：远程访问、网络故障排除、防火墙配置和地理位置服务。',
+  ip_label: '您的 IP 地址',
+  fetch_ip_button: '刷新 IP',
+  fetching_message: '正在获取您的 IP 地址...',
+  what_is_ip_title: '什么是 IP 地址？',
+  what_is_ip_content: '互联网协议（IP）地址是分配给连接到计算机网络的每个设备的数字标签。它有两个主要功能：主机或网络接口识别和位置寻址。目前有两个版本在使用：IPv4 和 IPv6。',
 };
 export default zh;

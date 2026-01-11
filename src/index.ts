@@ -17,8 +17,10 @@ import {
 } from "./site/lang";
 import { renderWebsiteHeadersPage } from "./pages/websiteHeadersPage";
 import { renderMarkdownToHtmlPage } from "./pages/markdownToHtmlPage";
+import { renderIpAddressPage } from "./pages/ipAddressPage";
 import { registerToolPage } from "./site/toolRegistrar";
 import { handleWebsiteHeadersApi } from "./tools/websiteHeaders";
+import { handleIpAddress } from "./endpoints/ipAddress";
 
 type Env = {
 	ASSETS: Fetcher;
@@ -134,9 +136,13 @@ openapi.get("/api/tasks/:taskSlug", TaskFetch);
 openapi.delete("/api/tasks/:taskSlug", TaskDelete);
 
 app.get("/api/tools/website-headers", handleWebsiteHeadersApi);
+app.get("/api/tools/ip-address", handleIpAddress);
 
 // Register website-headers page routes using centralized registrar
 registerToolPage(app as any, 'website-headers', (lang, defaultLang, enabled) => renderWebsiteHeadersPage(lang, defaultLang));
+
+// Register ip-address page routes using centralized registrar
+registerToolPage(app as any, 'ip-address', (lang, defaultLang, enabled) => renderIpAddressPage(lang, defaultLang));
 
 // Legacy static tool page: redirect to dynamic route.
 app.get("/tools/markdown-to-html.html", (c) => c.redirect("/tools/markdown-to-html", 301));

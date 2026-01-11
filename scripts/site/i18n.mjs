@@ -27,6 +27,8 @@ const translations = {
     tool_markdown_to_html_desc: 'Render Markdown into HTML.',
     tool_markdown_to_html_article:
       'Convert Markdown into sanitized HTML with preview and export options. Useful for preparing posts, documentation or shareable content. Scenarios: authoring, quick previews, and generating static HTML exports.',
+    tool_ip_address_title: 'What Is My IP Address?',
+    tool_ip_address_desc: 'Discover your public IP address with one click.',
     back_home: 'Back to Home',
     back_devlogs: 'Back to Logs',
     devlogs_title: 'Dev Logs',
@@ -59,6 +61,8 @@ const translations = {
     tool_markdown_to_html_title: 'Markdown 转 HTML',
     tool_markdown_to_html_desc: '将 Markdown 快速渲染为 HTML。',
     tool_markdown_to_html_article: '将 Markdown 转换为已净化的 HTML 并提供预览与导出，适用于博客、文档与快速预览。',
+    tool_ip_address_title: '我的 IP 地址是什么？',
+    tool_ip_address_desc: '一键发现您的公网 IP 地址。',
     back_home: '返回首页',
     back_devlogs: '返回日志清单',
     devlogs_title: '开发日志清单',
@@ -93,6 +97,8 @@ const translations = {
     tool_markdown_to_html_desc: 'Convierte Markdown a HTML.',
     tool_markdown_to_html_article:
       'Convertir Markdown en HTML limpio con vista previa y opciones de exportación. Útil para preparar publicaciones, documentación o contenido compartible. Escenarios: redacción, previsualización rápida y generación de HTML estático.',
+    tool_ip_address_title: '¿Cuál es mi dirección IP?',
+    tool_ip_address_desc: 'Descubre tu dirección IP pública con un clic.',
     back_home: 'Volver al inicio',
     back_devlogs: 'Volver a registros',
     devlogs_title: 'Registros',
@@ -127,6 +133,8 @@ const translations = {
     tool_markdown_to_html_desc: 'تحويل Markdown إلى HTML.',
     tool_markdown_to_html_article:
       'تحويل Markdown إلى HTML مُعقم مع معاينة وخيارات تصدير. مفيد لإعداد منشورات المدونات أو الوثائق أو المحتوى للمشاركة. سيناريوهات: التأليف، المعاينة السريعة وتوليد HTML ثابت.',
+    tool_ip_address_title: 'ما هو عنواني IP؟',
+    tool_ip_address_desc: 'اكتشف عنوان IP العام الخاص بك بنقرة واحدة.',
     back_home: 'العودة للرئيسية',
     back_devlogs: 'العودة للسجلات',
     devlogs_title: 'سجلات التطوير',
@@ -161,6 +169,8 @@ const translations = {
     tool_markdown_to_html_desc: 'Renderizar Markdown em HTML.',
     tool_markdown_to_html_article:
       'Converter Markdown em HTML com visualização e opções de exportação. Útil para preparar posts ou documentação. Cenários: redação, pré-visualização rápida e geração de HTML estático.',
+    tool_ip_address_title: 'Qual é o meu endereço IP?',
+    tool_ip_address_desc: 'Descubra seu endereço IP público com um clique.',
     back_home: 'Voltar para início',
     back_devlogs: 'Voltar para logs',
     devlogs_title: 'Logs',
@@ -195,6 +205,8 @@ const translations = {
     tool_markdown_to_html_desc: 'Ubah Markdown menjadi HTML.',
     tool_markdown_to_html_article:
       'Mengonversi Markdown ke HTML dengan pratinjau dan opsi ekspor. Berguna untuk menyiapkan posting, dokumentasi, atau konten yang dapat dibagikan. Skenario: penulisan, pratinjau cepat, dan pembuatan HTML statis.',
+    tool_ip_address_title: 'Apa alamat IP saya?',
+    tool_ip_address_desc: 'Temukan alamat IP publik Anda dengan satu klik.',
     back_home: 'Kembali ke Beranda',
     back_devlogs: 'Kembali ke Log',
     devlogs_title: 'Log Dev',
@@ -229,6 +241,8 @@ const translations = {
     tool_markdown_to_html_desc: 'Convertir Markdown en HTML.',
     tool_markdown_to_html_article:
       'Convertir Markdown en HTML nettoyé avec aperçu et options d\'export. Utile pour préparer billets, documentation ou contenu partageable. Scénarios: rédaction, prévisualisation rapide et génération de HTML statique.',
+    tool_ip_address_title: 'Quelle est mon adresse IP ?',
+    tool_ip_address_desc: 'Découvrez votre adresse IP publique en un seul clic.',
     back_home: "Retour à l'accueil",
     back_devlogs: 'Retour au journal',
     devlogs_title: 'Journal',
@@ -262,6 +276,8 @@ const translations = {
     tool_markdown_to_html_desc: 'Markdown を HTML に変換します。',
     tool_markdown_to_html_article:
       'Markdown をサニタイズされた HTML に変換し、プレビューとエクスポートを提供します。ブログやドキュメント作成、共有用の準備に適しています。',
+    tool_ip_address_title: '自分のIPアドレスは何ですか？',
+    tool_ip_address_desc: 'ワンクリックでパブリックIPアドレスを発見します。',
     back_home: 'ホームへ戻る',
     back_devlogs: 'ログ一覧へ戻る',
     devlogs_title: '開発ログ',
@@ -296,6 +312,8 @@ const translations = {
     tool_markdown_to_html_desc: 'Преобразовать Markdown в HTML.',
     tool_markdown_to_html_article:
       'Преобразовать Markdown в очищенный HTML с превью и возможностью экспорта. Полезно для подготовки постов, документации или контента для обмена.',
+    tool_ip_address_title: 'Какой у меня IP-адрес?',
+    tool_ip_address_desc: 'Узнайте свой публичный IP-адрес одним щелчком мыши.',
     back_home: 'Назад на главную',
     back_devlogs: 'Назад к логам',
     devlogs_title: 'Логи',
@@ -330,6 +348,8 @@ const translations = {
     tool_markdown_to_html_desc: 'Markdown in HTML umwandeln.',
     tool_markdown_to_html_article:
       'Markdown in bereinigtes HTML konvertieren mit Vorschau und Exportoptionen. Nützlich zur Vorbereitung von Blogposts, Dokumentation oder teilbarem Inhalt.',
+    tool_ip_address_title: 'Was ist meine IP-Adresse?',
+    tool_ip_address_desc: 'Erfahren Sie mit einem Klick Ihre öffentliche IP-Adresse.',
     back_home: 'Zurück zur Startseite',
     back_devlogs: 'Zurück zu den Logs',
     devlogs_title: 'Dev-Logs',
