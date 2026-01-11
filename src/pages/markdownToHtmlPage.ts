@@ -62,15 +62,17 @@ export const renderMarkdownToHtmlPage = (opts: {
 
 	const footerHtml = renderFooter({ lang: opts.lang });
 
-	const extraHeadHtml = `
+  const extraHeadHtml = `
   <style>
-    textarea { min-height: 320px; }
-    #preview { min-height: 320px; background: #fff; border: 1px solid #dee2e6; border-radius: .5rem; padding: 1rem; }
+    textarea { min-height: 320px; box-sizing: border-box; }
+    #preview { min-height: 320px; background: #fff; border: 1px solid #dee2e6; border-radius: .5rem; padding: 1rem; box-sizing: border-box; overflow: auto; }
     .tools-bar { gap: .5rem; }
-    /* Make input and preview match heights */
+    /* Make input and preview match heights using flex so they don't overlap the following article */
     .row.g-3 { align-items: stretch; }
-    #mdInput { min-height: 320px; height: 100%; resize: vertical; }
-    #preview { min-height: 320px; height: 100%; }
+    .row.g-3 > .col-12 { display: flex; flex-direction: column; }
+    .row.g-3 > .col-12 > label { margin-bottom: .5rem; }
+    #mdInput { min-height: 320px; height: auto; resize: vertical; flex: 1 1 auto; box-sizing: border-box; }
+    #preview { min-height: 320px; height: auto; flex: 1 1 auto; }
   </style>`;
 
 	const contentHtml = `

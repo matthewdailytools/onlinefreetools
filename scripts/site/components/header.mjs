@@ -54,14 +54,7 @@ export const renderHeader = ({
     .map((i) => `<li class="nav-item"><a class="nav-link" href="${i.href}">${i.label}</a></li>`)
     .join('');
 
-  const searchHtml =
-    showSearch
-      ? `
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="${t(lang, 'search_placeholder')}" aria-label="Search">
-            <button class="btn btn-outline-primary" type="submit">${t(lang, 'search_button')}</button>
-          </form>`
-      : '';
+  // Search form intentionally removed: site no longer exposes a top-level search input/button.
 
   return `
   <header>
@@ -79,7 +72,6 @@ export const renderHeader = ({
         <div class="collapse navbar-collapse" id="topNav">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">${navHtml}</ul>
           <div class="d-flex align-items-center gap-2">
-            ${searchHtml}
             ${showLangSwitcher ? renderLangSwitcher({ lang, langAlternates }) : ''}
           </div>
         </div>

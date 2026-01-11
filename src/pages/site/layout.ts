@@ -23,12 +23,24 @@ export const absoluteUrl = (pathnameOrUrl: string) => {
 };
 
 const sidebarCss = `
-  body { min-height: 100vh; }
-  .layout { display: flex; min-height: 100vh; }
+  body { min-height: 100vh; padding-top: 56px; box-sizing: border-box; }
+  .layout { display: flex; min-height: calc(100vh - 56px); }
   #sidebar { width: 260px; transition: margin-left 0.2s ease; }
   #content { flex: 1; transition: margin-left 0.2s ease; }
   .sidebar-collapsed #sidebar { margin-left: -260px; }
   .sidebar-collapsed #content { margin-left: 0; }
+
+  /* Desktop: keep navbar items on one line and prevent wrapping */
+  @media (min-width: 768px) {
+    .navbar { min-height: 56px; }
+    .navbar .container-fluid { align-items: center; }
+    .navbar .d-flex { align-items: center; gap: .5rem; flex-wrap: nowrap; }
+    .navbar .d-flex form.d-flex { display: flex; gap: .5rem; align-items: center; }
+    .navbar .d-flex form.d-flex .form-control { max-width: 200px; }
+    .navbar .d-flex form.d-flex .btn { white-space: nowrap; flex-shrink: 0; }
+    .navbar-brand { white-space: nowrap; }
+  }
+
   @media (max-width: 767.98px) {
     #sidebar {
       position: fixed;

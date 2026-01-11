@@ -7,7 +7,7 @@ Purpose: Make AI agents productive immediately in this repo. Keep changes minima
 - Target platform: Cloudflare (Pages + Workers). Use Wrangler for local/dev/deploy.
 
 ## Default Agent Behaviors
-- Log each Q&A: create one file per exchange in `dev-logs/` named `YYYY-MM-DD-HH-MM-<summary>.md`. Use ISO date + 24h time (local), short hyphenated summary (sanitize: spaces→`-`, remove `/\\:*?"<>|`).
+- Log each Q&A: create one file per exchange in `dev-logs/YYYY-MM-DD/` named `YYYY-MM-DD-HH-MM-<summary>.md`. Use ISO date + 24h time (local), short hyphenated summary (sanitize: spaces→`-`, remove `/\\:*?"<>|`).
 - Log in English format (applies to new logs only; do not rewrite past entries):
   - `Date: <YYYY-MM-DD HH:MM>`
   - `Summary: <one sentence>`
