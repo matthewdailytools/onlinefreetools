@@ -37,6 +37,8 @@ const parseMeta = (md) => {
   for (const line of lines) {
     if (!date && line.startsWith('日期：')) date = line.replace('日期：', '').trim();
     if (!summary && line.startsWith('摘要：')) summary = line.replace('摘要：', '').trim();
+    if (!date && line.startsWith('Date:')) date = line.replace('Date:', '').trim();
+    if (!summary && line.startsWith('Summary:')) summary = line.replace('Summary:', '').trim();
     if (date && summary) break;
   }
   return { date, summary };
@@ -95,17 +97,17 @@ export const buildHome = async (lang) => {
   await fs.writeFile(path.join(outRoot, 'index.html'), html, 'utf-8');
 };
 
-export const buildDevLogs = async (lang) => {
-  const outRoot = langOutRoot(lang);
-  const outDir = path.join(outRoot, 'devlogs');
+export const buildDevLogs = async () => {
+  const lang = siteConfig.defaultLang;
+  const outDir = path.join(publicDir, 'devlogs');
   await ensureDir(outDir);
 
   const files = (await fs.readdir(devLogsDir)).filter((f) => f.endsWith('.md'));
   files.sort((a, b) => b.localeCompare(a));
 
   const navItems = [
-    { href: withLangPath(lang, '/'), label: t(lang, 'nav_home') },
-    { href: withLangPath(lang, '/devlogs/'), label: t(lang, 'nav_devlogs') },
+    { href: '/', label: t(lang, 'nav_home') },
+    { href: '/devlogs/', label: t(lang, 'nav_devlogs') },
   ];
   const sidebarHtml = renderSidebar({
     title: lang === 'en' ? 'Navigation' : '导航',
@@ -123,19 +125,15 @@ export const buildDevLogs = async (lang) => {
 
     const pageTitle = summary ? `${summary} | ${t(lang, 'nav_devlogs')}` : base;
     const description = summary || `${siteConfig.brand} dev logs`;
-    const canonicalPath = withLangPath(lang, `/devlogs/${encodeURIComponent(base)}.html`);
-
-    const langAlternates = Object.fromEntries(
-      (siteConfig.enabledLangs || []).map((code) => [code, withExplicitLangPath(code, `/devlogs/${base}.html`)])
-    );
+    const canonicalPath = `/devlogs/${encodeURIComponent(base)}.html`;
 
     const headerHtml = renderHeader({
       lang,
-      brandHref: withLangPath(lang, '/'),
+      brandHref: '/',
       navItems,
       showSidebarToggle: true,
       showSearch: false,
-      langAlternates,
+      showLangSwitcher: false,
     });
 
     const contentHtml = `
@@ -155,10 +153,7 @@ export const buildDevLogs = async (lang) => {
       canonicalPath,
       ogImageUrl: siteConfig.ogImage,
       ogType: 'article',
-      alternates: (siteConfig.enabledLangs || []).map((code) => ({
-        lang: code,
-        href: toAbs(withLangPath(code, `/devlogs/${encodeURIComponent(base)}.html`)),
-      })),
+      alternates: [],
       headerHtml,
       sidebarHtml,
       contentHtml,
@@ -168,7 +163,7 @@ export const buildDevLogs = async (lang) => {
     await fs.writeFile(path.join(outDir, `${base}.html`), page, 'utf-8');
 
     items.push({
-      href: withLangPath(lang, `/devlogs/${base}.html`),
+      href: `/devlogs/${base}.html`,
       title: `${base.replace(/^[0-9-]+/, '').trim() || summary || base}`,
       date: (date || '').split(' ')[0] || date || '',
     });
@@ -179,18 +174,15 @@ export const buildDevLogs = async (lang) => {
     lang === 'en'
       ? 'Project dev logs and Q&A notes, organized by date.'
       : 'Online Free Tools 开发日志清单，按日期汇总所有问答记录。';
-  const indexCanonicalPath = withLangPath(lang, '/devlogs/');
-  const indexLangAlternates = Object.fromEntries(
-    (siteConfig.enabledLangs || []).map((code) => [code, withExplicitLangPath(code, '/devlogs/')])
-  );
+  const indexCanonicalPath = '/devlogs/';
 
   const headerHtml = renderHeader({
     lang,
-    brandHref: withLangPath(lang, '/'),
+    brandHref: '/',
     navItems,
     showSidebarToggle: true,
     showSearch: false,
-    langAlternates: indexLangAlternates,
+    showLangSwitcher: false,
   });
 
   const listHtml = `
@@ -200,7 +192,7 @@ export const buildDevLogs = async (lang) => {
           <h1 class="h4 mb-1">${t(lang, 'devlogs_title')}</h1>
           <p class="text-muted mb-0">${t(lang, 'devlogs_subtitle')}</p>
         </div>
-        <a class="btn btn-outline-secondary btn-sm" href="${withLangPath(lang, '/')}">${t(lang, 'back_home')}</a>
+        <a class="btn btn-outline-secondary btn-sm" href="/">${t(lang, 'back_home')}</a>
       </div>
       <ul class="list-group shadow-sm">
         ${items
@@ -228,7 +220,7 @@ export const buildDevLogs = async (lang) => {
           '@type': 'ListItem',
           position: 1,
           name: t(lang, 'nav_home'),
-          item: `${siteConfig.baseUrl.replace(/\/$/, '')}${withLangPath(lang, '/')}`,
+          item: `${siteConfig.baseUrl.replace(/\/$/, '')}/`,
         },
         {
           '@type': 'ListItem',
@@ -247,10 +239,7 @@ export const buildDevLogs = async (lang) => {
     canonicalPath: indexCanonicalPath,
     ogImageUrl: siteConfig.ogImage,
     ogType: 'website',
-    alternates: (siteConfig.enabledLangs || []).map((code) => ({
-      lang: code,
-      href: toAbs(withLangPath(code, '/devlogs/')),
-    })),
+    alternates: [],
     headJsonLd: indexJsonLd,
     headerHtml,
     sidebarHtml,
@@ -265,8 +254,8 @@ const main = async () => {
   const langs = siteConfig.enabledLangs || [siteConfig.defaultLang];
   for (const lang of langs) {
     await buildHome(lang);
-    await buildDevLogs(lang);
   }
+  await buildDevLogs();
   console.log(`Built site for langs: ${langs.join(', ')}`);
 };
 

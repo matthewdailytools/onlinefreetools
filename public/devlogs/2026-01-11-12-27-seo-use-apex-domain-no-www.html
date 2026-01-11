@@ -1,24 +1,23 @@
 <!doctype html>
-<html lang="zh">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>迁移日志目录并添加入口 | 开发日志</title>
-  <meta name="description" content="迁移日志目录并添加入口" />
-  <link rel="canonical" href="https://onlinefreetools.org/zh/devlogs/2026-01-09-%E8%BF%81%E7%A7%BB%E6%97%A5%E5%BF%97%E7%9B%AE%E5%BD%95%E5%B9%B6%E6%B7%BB%E5%8A%A0%E5%85%A5%E5%8F%A3.html" />
-  <meta property="og:title" content="迁移日志目录并添加入口 | 开发日志" />
-  <meta property="og:description" content="迁移日志目录并添加入口" />
+  <title>Updated SEO defaults and generated pages to use the apex (non-www) domain. | Dev Logs</title>
+  <meta name="description" content="Updated SEO defaults and generated pages to use the apex (non-www) domain." />
+  <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-01-11-12-27-seo-use-apex-domain-no-www.html" />
+  <meta property="og:title" content="Updated SEO defaults and generated pages to use the apex (non-www) domain. | Dev Logs" />
+  <meta property="og:description" content="Updated SEO defaults and generated pages to use the apex (non-www) domain." />
   <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://onlinefreetools.org/zh/devlogs/2026-01-09-%E8%BF%81%E7%A7%BB%E6%97%A5%E5%BF%97%E7%9B%AE%E5%BD%95%E5%B9%B6%E6%B7%BB%E5%8A%A0%E5%85%A5%E5%8F%A3.html" />
+  <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-01-11-12-27-seo-use-apex-domain-no-www.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/devlogs/2026-01-09-%E8%BF%81%E7%A7%BB%E6%97%A5%E5%BF%97%E7%9B%AE%E5%BD%95%E5%B9%B6%E6%B7%BB%E5%8A%A0%E5%85%A5%E5%8F%A3.html" />
-  <link rel="alternate" hreflang="en" href="https://onlinefreetools.org/devlogs/2026-01-09-%E8%BF%81%E7%A7%BB%E6%97%A5%E5%BF%97%E7%9B%AE%E5%BD%95%E5%B9%B6%E6%B7%BB%E5%8A%A0%E5%85%A5%E5%8F%A3.html" />
+  
   
   <script>
     (function () {
       try {
-        var enabled = ["zh","en"];
+        var enabled = [];
         var defaultLang = "en";
         var fallback = defaultLang;
         var path = window.location.pathname || '/';
@@ -39,7 +38,7 @@
         }
         if (!picked) picked = enabled.indexOf(fallback) !== -1 ? fallback : (enabled[0] || fallback);
 
-        if (picked === "zh") return;
+        if (picked === "en") return;
         var targetPath = path;
         if (picked !== defaultLang) {
           targetPath = ('/' + picked + path).replace(/\/{2,}/g, '/');
@@ -82,21 +81,15 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom fixed-top">
       <div class="container-fluid">
         <button class="btn btn-outline-secondary me-2" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
-        <a class="navbar-brand fw-semibold" href="/zh/">Online Free Tools</a>
+        <a class="navbar-brand fw-semibold" href="/">Online Free Tools</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="topNav">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="/zh/">首页</a></li><li class="nav-item"><a class="nav-link" href="/zh/devlogs/">开发日志</a></li></ul>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="/">Home</a></li><li class="nav-item"><a class="nav-link" href="/devlogs/">Dev Logs</a></li></ul>
           <div class="d-flex align-items-center gap-2">
             
             
-    <div class="dropdown">
-      <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-        中文
-      </button>
-      <ul class="dropdown-menu dropdown-menu-end"><li><span class="dropdown-item active" aria-current="true">中文</span></li><li><a class="dropdown-item" href="/en/devlogs/2026-01-09-迁移日志目录并添加入口.html">English</a></li></ul>
-    </div>
           </div>
         </div>
       </div>
@@ -105,30 +98,38 @@
   <div class="layout sidebar-collapsed" id="layoutRoot">
     
     <aside id="sidebar" class="bg-light border-end p-3">
-      <h6 class="text-muted text-uppercase">导航</h6>
-      <div class="list-group list-group-flush small" id="navList"><a class="list-group-item list-group-item-action" href="/zh/">首页</a><a class="list-group-item list-group-item-action" href="/zh/devlogs/">开发日志</a></div>
+      <h6 class="text-muted text-uppercase">Navigation</h6>
+      <div class="list-group list-group-flush small" id="navList"><a class="list-group-item list-group-item-action" href="/">Home</a><a class="list-group-item list-group-item-action" href="/devlogs/">Dev Logs</a></div>
     </aside>
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">迁移日志目录并添加入口 | 开发日志</h1>
-          <a class="btn btn-outline-secondary btn-sm" href="/zh/devlogs/">返回日志清单</a>
+          <h1 class="h4 mb-0">Updated SEO defaults and generated pages to use the apex (non-www) domain. | Dev Logs</h1>
+          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>日期：2026年1月9日
-摘要：迁移日志目录并添加入口</p>
-<p>【question】
-将开发日志文件夹移到public中，在菜单增加开发日志入口</p>
-<p>【try to solve】</p>
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-01-11 12:27
+Summary: Updated SEO defaults and generated pages to use the apex (non-www) domain.</p>
+<p>[question]
+更改seo和seo规则：不使用www域名</p>
+<p>[try to solve]</p>
 <ul>
-<li>已将日志目录移动到 <code>public/dev-logs/</code>。</li>
-<li>在首页导航新增“开发日志”入口指向 <code>/dev-logs/</code>。</li>
-<li>更新 <code>.github/copilot-instructions.md</code> 以反映新日志路径。</li>
+<li>Updated the repo SEO defaults to require apex (non-www) URLs for canonical, <code>og:url</code>, and sitemap entries.</li>
+<li>Switched the site generator defaults from <code>https://www.onlinefreetools.org</code> to <code>https://onlinefreetools.org</code> (including <code>og-image.png</code>).</li>
+<li>Updated the README live domain to the apex domain.</li>
+<li>Updated the static tool page <code>public/tools/markdown-to-html.html</code> so <code>canonical</code>, <code>og:url</code>, and <code>og:image</code> no longer use <code>www</code>.</li>
+<li>Removed legacy outputs that still contained <code>www</code> (<code>public/en/</code> and <code>public/dev-logs/index.html</code>).</li>
+<li>Rebuilt the site and confirmed no <code>www</code> remains in canonical/<code>og:url</code> tags under <code>public/**/*.html</code>.</li>
 </ul>
-<p>【执行操作】</p>
+<p>[actions]</p>
 <ul>
-<li>移动日志目录至 <code>public/dev-logs/</code></li>
-<li>更新 <code>public/index.html</code> 添加导航入口</li>
-<li>更新 <code>.github/copilot-instructions.md</code></li>
+<li>Updated: <code>.github/copilot-instructions.md</code></li>
+<li>Updated: <code>scripts/site/config.mjs</code></li>
+<li>Updated: <code>README.md</code></li>
+<li>Updated: <code>public/tools/markdown-to-html.html</code></li>
+<li>Removed: <code>public/en/</code></li>
+<li>Removed: <code>public/dev-logs/index.html</code></li>
+<li>Ran: <code>npm run build:logs</code></li>
+<li>Ran: <code>SITE_LANGS=zh,en SITE_DEFAULT_LANG=en npm run build:site</code></li>
 </ul>
 </article>
       </section>
@@ -137,7 +138,7 @@
   
   <footer class="bg-light border-top text-center py-3">
     <div class="container">
-      <small class="text-muted">Online Free Tools · 学习项目 · 持续迭代</small>
+      <small class="text-muted">Online Free Tools · Learning project · Iterating</small>
     </div>
   </footer>
   

@@ -3,7 +3,7 @@ import { siteConfig } from './site/config.mjs';
 import { buildDevLogs } from './build-site.mjs';
 
 const main = async () => {
-  await buildDevLogs(siteConfig.defaultLang);
+  await buildDevLogs();
 };
 
 main().catch((err) => {

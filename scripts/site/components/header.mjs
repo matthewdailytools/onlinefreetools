@@ -47,6 +47,7 @@ export const renderHeader = ({
   navItems = [],
   showSidebarToggle = true,
   showSearch = false,
+  showLangSwitcher = true,
   langAlternates,
 }) => {
   const navHtml = navItems
@@ -79,7 +80,7 @@ export const renderHeader = ({
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">${navHtml}</ul>
           <div class="d-flex align-items-center gap-2">
             ${searchHtml}
-            ${renderLangSwitcher({ lang, langAlternates })}
+            ${showLangSwitcher ? renderLangSwitcher({ lang, langAlternates }) : ''}
           </div>
         </div>
       </div>

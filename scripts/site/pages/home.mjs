@@ -6,7 +6,7 @@ export const getHomePageModel = (lang) => {
   const navItems = [
     { href: '#featured', label: t(lang, 'nav_featured') },
     { href: '#all-tools', label: t(lang, 'nav_all_tools') },
-    { href: withLangPath(lang, '/devlogs/'), label: t(lang, 'nav_devlogs') },
+    { href: '/devlogs/', label: t(lang, 'nav_devlogs') },
   ];
 
   const sidebarTitle = t(lang, 'sidebar_categories');

@@ -145,6 +145,10 @@ app.use("/*", async (c, next) => {
 	const url = new URL(c.req.url);
 	const pathname = url.pathname;
 
+	// Global (non-localized) pages.
+	if (pathname === "/devlogs" || pathname.startsWith("/devlogs/")) return next();
+	if (pathname === "/tools/markdown-to-html.html") return next();
+
 	// Do not interfere with APIs, docs, or obvious static assets.
 	const isStaticAsset = /\.(css|js|png|jpg|jpeg|gif|webp|avif|svg|ico|map|woff2?|ttf|eot|xml|txt|webmanifest)$/i.test(
 		pathname
@@ -209,6 +213,10 @@ app.get("/:lang/tools/website-headers", (c) => {
 app.get("/*", (c) => {
 	const url = new URL(c.req.url);
 	const pathname = url.pathname;
+
+	// Global (non-localized) pages.
+	if (pathname === "/devlogs" || pathname.startsWith("/devlogs/")) return c.notFound();
+	if (pathname === "/tools/markdown-to-html.html") return c.notFound();
 	const isStaticAsset = /\.(css|js|png|jpg|jpeg|gif|webp|avif|svg|ico|map|woff2?|ttf|eot|xml|txt|webmanifest)$/i.test(
 		pathname
 	);
