@@ -6,6 +6,7 @@ import { TaskFetch } from "./endpoints/taskFetch";
 import { TaskList } from "./endpoints/taskList";
 import { isSupportedLang, type SiteLang } from "./site/i18n";
 import { renderWebsiteHeadersPage } from "./pages/websiteHeadersPage";
+import { renderMarkdownToHtmlPage } from "./pages/markdownToHtmlPage";
 import { handleWebsiteHeadersApi } from "./tools/websiteHeaders";
 
 type Env = {
@@ -206,6 +207,28 @@ app.get("/:lang/tools/website-headers", (c) => {
 	}
 	const lang = (enabled.includes(langParam as SiteLang) ? (langParam as SiteLang) : defaultLang) as SiteLang;
 	const html = renderWebsiteHeadersPage(lang, defaultLang);
+	return c.html(html);
+});
+
+// Legacy static tool page: redirect to dynamic route.
+app.get("/tools/markdown-to-html.html", (c) => c.redirect("/tools/markdown-to-html", 301));
+
+app.get("/tools/markdown-to-html", (c) => {
+	const enabled = getEnabledLangs(c.env);
+	const defaultLang = getDefaultLang(c.env, enabled);
+	const html = renderMarkdownToHtmlPage({ lang: defaultLang, defaultLang, enabledLangs: enabled });
+	return c.html(html);
+});
+
+app.get("/:lang/tools/markdown-to-html", (c) => {
+	const langParam = c.req.param("lang");
+	const enabled = getEnabledLangs(c.env);
+	const defaultLang = getDefaultLang(c.env, enabled);
+	if (!isSupportedLang(langParam)) {
+		return c.redirect(withLangPrefix(defaultLang, "/tools/markdown-to-html", defaultLang), 302);
+	}
+	const lang = (enabled.includes(langParam as SiteLang) ? (langParam as SiteLang) : defaultLang) as SiteLang;
+	const html = renderMarkdownToHtmlPage({ lang, defaultLang, enabledLangs: enabled });
 	return c.html(html);
 });
 

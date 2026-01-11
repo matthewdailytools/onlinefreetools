@@ -25,7 +25,7 @@ const renderSecondaryCard = ({ title, desc, href, cta }) => `
 
 export const renderHomeContent = ({ lang }) => {
   const toolHeadersHref = withExplicitLangPath(lang, '/tools/website-headers');
-  const toolMdHref = '/tools/markdown-to-html.html';
+  const toolMdHref = withExplicitLangPath(lang, '/tools/markdown-to-html');
 
   const openCta = t(lang, 'home_open');
 

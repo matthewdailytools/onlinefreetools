@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Made devlogs global (no language split) and served from the root /devlogs/ path. | Dev Logs</title>
+  <meta name="description" content="Made devlogs global (no language split) and served from the root /devlogs/ path." />
+  <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-01-11-12-42-devlogs-no-lang-root-folder.html" />
+  <meta property="og:title" content="Made devlogs global (no language split) and served from the root /devlogs/ path. | Dev Logs" />
+  <meta property="og:description" content="Made devlogs global (no language split) and served from the root /devlogs/ path." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-01-11-12-42-devlogs-no-lang-root-folder.html" />
+  <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  
+  
+  <script>
+    (function () {
+      try {
+        var enabled = [];
+        var defaultLang = "en";
+        var fallback = defaultLang;
+        var path = window.location.pathname || '/';
+
+        // If the URL already contains a language prefix (including defaultLang), respect it.
+        var hasPrefix = enabled.some(function (l) {
+          return l && (path === '/' + l || path.indexOf('/' + l + '/') === 0);
+        });
+        if (hasPrefix) return;
+
+        var langs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language])
+          .filter(Boolean)
+          .map(function (x) { return String(x).toLowerCase().split('-')[0]; });
+
+        var picked = null;
+        for (var i = 0; i < langs.length; i++) {
+          if (enabled.indexOf(langs[i]) !== -1) { picked = langs[i]; break; }
+        }
+        if (!picked) picked = enabled.indexOf(fallback) !== -1 ? fallback : (enabled[0] || fallback);
+
+        if (picked === "en") return;
+        var targetPath = path;
+        if (picked !== defaultLang) {
+          targetPath = ('/' + picked + path).replace(/\/{2,}/g, '/');
+        }
+        window.location.replace(targetPath + window.location.search + window.location.hash);
+      } catch (e) {}
+    })();
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body { min-height: 100vh; }
+    .layout { display: flex; min-height: 100vh; }
+    #sidebar { width: 260px; transition: margin-left 0.2s ease; }
+    #content { flex: 1; transition: margin-left 0.2s ease; }
+    .sidebar-collapsed #sidebar { margin-left: -260px; }
+    .sidebar-collapsed #content { margin-left: 0; }
+    @media (max-width: 767.98px) {
+      #sidebar {
+        position: fixed;
+        z-index: 1040;
+        top: 56px;
+        bottom: 0;
+        overflow-y: auto;
+        background: #f8f9fa;
+        border-right: 1px solid #e5e7eb;
+      }
+      .sidebar-collapsed #sidebar { margin-left: -260px; }
+      #content { margin-left: 0; }
+      body { padding-top: 56px; }
+    }
+  </style>
+  
+  
+  
+</head>
+<body>
+  
+  
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom fixed-top">
+      <div class="container-fluid">
+        <button class="btn btn-outline-secondary me-2" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+        <a class="navbar-brand fw-semibold" href="/">Online Free Tools</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="topNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="/">Home</a></li><li class="nav-item"><a class="nav-link" href="/devlogs/">Dev Logs</a></li></ul>
+          <div class="d-flex align-items-center gap-2">
+            
+            
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="layout sidebar-collapsed" id="layoutRoot">
+    
+    <aside id="sidebar" class="bg-light border-end p-3">
+      <h6 class="text-muted text-uppercase">Navigation</h6>
+      <div class="list-group list-group-flush small" id="navList"><a class="list-group-item list-group-item-action" href="/">Home</a><a class="list-group-item list-group-item-action" href="/devlogs/">Dev Logs</a></div>
+    </aside>
+    <main id="content" class="p-4">
+      <section class="mb-3">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h1 class="h4 mb-0">Made devlogs global (no language split) and served from the root /devlogs/ path. | Dev Logs</h1>
+          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
+        </div>
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-01-11 12:42
+Summary: Made devlogs global (no language split) and served from the root /devlogs/ path.</p>
+<p>[question]
+devlogs不用区分语言，devlogs文件夹放在根目录下</p>
+<p>[try to solve]</p>
+<ul>
+<li>Updated the static site generator to build devlogs only once into <code>public/devlogs/</code> (no <code>/zh/devlogs</code> or <code>/en/devlogs</code>).</li>
+<li>Updated the home page nav to link to <code>/devlogs/</code> without any language prefix.</li>
+<li>Hid the language switcher on devlogs pages to avoid implying language-specific devlogs URLs.</li>
+<li>Updated Worker language negotiation to exclude <code>/devlogs/*</code> (and the static <code>/tools/markdown-to-html.html</code>) from redirects, preventing broken <code>/&lt;lang&gt;/devlogs</code> paths.</li>
+<li>Improved devlog front-matter parsing so both legacy CN (<code>日期/摘要</code>) and new EN (<code>Date/Summary</code>) log headers are recognized.</li>
+<li>Cleaned legacy generated outputs and rebuilt the site.</li>
+</ul>
+<p>[actions]</p>
+<ul>
+<li>Updated: <code>scripts/build-site.mjs</code></li>
+<li>Updated: <code>scripts/build-logs.mjs</code></li>
+<li>Updated: <code>scripts/site/pages/home.mjs</code></li>
+<li>Updated: <code>scripts/site/components/header.mjs</code></li>
+<li>Updated: <code>src/index.ts</code></li>
+<li>Removed: <code>public/zh/devlogs/</code></li>
+<li>Removed: <code>public/en/devlogs/</code></li>
+<li>Removed: <code>public/dev-logs/</code></li>
+<li>Ran: <code>npm run build:logs</code></li>
+<li>Ran: <code>SITE_LANGS=zh,en SITE_DEFAULT_LANG=en npm run build:site</code></li>
+</ul>
+</article>
+      </section>
+    </main>
+  </div>
+  
+  <footer class="bg-light border-top text-center py-3">
+    <div class="container">
+      <small class="text-muted">Online Free Tools · Learning project · Iterating</small>
+    </div>
+  </footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <script>
+    const layout = document.getElementById('layoutRoot');
+    const toggle = document.getElementById('sidebarToggle');
+    if (layout && toggle) {
+      toggle.addEventListener('click', () => layout.classList.toggle('sidebar-collapsed'));
+      
+    }
+  </script>
+</body>
+</html>
