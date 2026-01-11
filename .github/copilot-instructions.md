@@ -8,14 +8,14 @@ Purpose: Make AI agents productive immediately in this repo. Keep changes minima
 
 ## Default Agent Behaviors
 - Log each Q&A: create one file per exchange in `dev-logs/` named `YYYY-MM-DD-HH-MM-<summary>.md`. Use ISO date + 24h time (local), short hyphenated summary (sanitize: spaces→`-`, remove `/\\:*?"<>|`).
-- Log format:
-  - `日期：<YYYY年M月D日H时M分>`
-  - `摘要：<一句话>`
-  - `【question】` + original text
-  - `【try to solve】` + final answer
-  - Optionally append `【执行操作】` with file paths/commands changed.
-- Logging scope: do not log the act of creating the log file itself in `【执行操作】`; only list user-relevant file or config changes.
-- Exclusions: do not record the AI's trailing or clarifying prompts (e.g., the last AI question asking for confirmation). Only include the user's original question and the final, consolidated answer. 不要记录最后 AI 的提问/澄清性问题，只保留用户问题与最终答案。
+- Log in English format (applies to new logs only; do not rewrite past entries):
+  - `Date: <YYYY-MM-DD HH:MM>`
+  - `Summary: <one sentence>`
+  - `[question]` + original text
+  - `[try to solve]` + final answer
+  - Optionally append `[actions]` with file paths/commands changed.
+- Logging scope: do not log the act of creating the log file itself in `[actions]`; only list user-relevant file or config changes.
+- Exclusions: do not record the AI's trailing or clarifying prompts (e.g., the last AI question asking for confirmation). Only include the user's original question and the final, consolidated answer。
 - Visibility: keep full Q&A content visible in the chat; logging to `public/dev-logs/` is a backend record and should not reduce or hide the conversation shown to the user.
 - Keep edits surgical: modify only files directly relevant to the user request. Do not introduce frameworks or unrelated refactors without explicit instruction.
 - Do not save sensitive data: use environment variables or other secure methods.
