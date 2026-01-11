@@ -5,8 +5,19 @@ import { TaskDelete } from "./endpoints/taskDelete";
 import { TaskFetch } from "./endpoints/taskFetch";
 import { TaskList } from "./endpoints/taskList";
 import { isSupportedLang, type SiteLang } from "./site/i18n";
+import {
+	DEFAULT_LANGS,
+	getEnabledLangs,
+	getFallbackLang,
+	getDefaultLang,
+	parseAcceptLanguage,
+	pickLang,
+	getExplicitLangFromPath,
+	withLangPrefix,
+} from "./site/lang";
 import { renderWebsiteHeadersPage } from "./pages/websiteHeadersPage";
 import { renderMarkdownToHtmlPage } from "./pages/markdownToHtmlPage";
+import { registerToolPage } from "./site/toolRegistrar";
 import { handleWebsiteHeadersApi } from "./tools/websiteHeaders";
 
 type Env = {
@@ -18,75 +29,7 @@ type Env = {
 // Start a Hono app
 const app = new Hono<{ Bindings: Env }>();
 
-const DEFAULT_LANGS: SiteLang[] = ['en', 'zh', 'es', 'ar', 'pt', 'id', 'fr', 'ja', 'ru', 'de'];
-
-const parseLangList = (raw: string | undefined) => {
-	const items = String(raw || "")
-		.split(",")
-		.map((s) => s.trim())
-		.filter(Boolean);
-	return Array.from(new Set(items));
-};
-
-const getEnabledLangs = (env: Env): SiteLang[] => {
-	const list = parseLangList(env.SITE_LANGS);
-	const enabled = list.filter((x) => isSupportedLang(x)) as SiteLang[];
-	const fallback = getFallbackLang(env);
-	const out = Array.from(new Set([...(enabled.length ? enabled : DEFAULT_LANGS), fallback]));
-	return out as SiteLang[];
-};
-
-const getFallbackLang = (env: Env): SiteLang => {
-	const raw = (env.SITE_DEFAULT_LANG || "en").trim();
-	return (isSupportedLang(raw) ? raw : "en") as SiteLang;
-};
-
-const getDefaultLang = (env: Env, enabled: SiteLang[]): SiteLang => {
-	const fallback = getFallbackLang(env);
-	return enabled.includes(fallback) ? fallback : (enabled[0] || fallback);
-};
-
-const parseAcceptLanguage = (value: string | null) => {
-	if (!value) return [] as { tag: string; q: number }[];
-	return value
-		.split(",")
-		.map((part) => {
-			const [tagRaw, ...params] = part.trim().split(";");
-			let q = 1;
-			for (const p of params) {
-				const m = p.trim().match(/^q=(0(\.\d+)?|1(\.0+)?)$/);
-				if (m) q = Number(m[1]);
-			}
-			return { tag: tagRaw.trim().toLowerCase(), q };
-		})
-		.filter((x) => x.tag)
-		.sort((a, b) => b.q - a.q);
-};
-
-const pickLang = (acceptLanguage: string | null, enabled: SiteLang[], fallback: SiteLang): SiteLang => {
-	const candidates = parseAcceptLanguage(acceptLanguage);
-	for (const c of candidates) {
-		const primary = c.tag.split("-")[0];
-		if (isSupportedLang(primary) && enabled.includes(primary as SiteLang)) return primary as SiteLang;
-	}
-	if (enabled.includes(fallback)) return fallback;
-	return enabled[0] || fallback;
-};
-
-const getExplicitLangFromPath = (pathname: string, enabled: SiteLang[]) => {
-	const seg = pathname.replace(/^\/+/, "").split("/")[0].toLowerCase();
-	// Treat any supported language code as an explicit prefix in the path.
-	// Do not require it to be enabled via `SITE_LANGS` here — middleware
-	// should not trigger language-negotiation redirects for explicit
-	// language-prefixed URLs even if that language isn't enabled.
-	if (isSupportedLang(seg)) return seg as SiteLang;
-	return null;
-};
-
-const withLangPrefix = (lang: SiteLang, pathname: string, defaultLang: SiteLang) => {
-	const safe = pathname.startsWith("/") ? pathname : `/${pathname}`;
-	return lang === defaultLang ? safe : `/${lang}${safe}`;
-};
+// language helper functions moved to `src/site/lang.ts` for reuse
 
 const fetchAsset = async (c: any, assetPathname: string) => {
 	let assetUrl = new URL(c.req.url);
@@ -192,49 +135,19 @@ openapi.delete("/api/tasks/:taskSlug", TaskDelete);
 
 app.get("/api/tools/website-headers", handleWebsiteHeadersApi);
 
-app.get("/tools/website-headers", (c) => {
-	const enabled = getEnabledLangs(c.env);
-	const defaultLang = getDefaultLang(c.env, enabled);
-	const html = renderWebsiteHeadersPage(defaultLang, defaultLang);
-	return c.html(html);
-});
-
-app.get("/:lang/tools/website-headers", (c) => {
-	const langParam = c.req.param("lang");
-	const enabled = getEnabledLangs(c.env);
-	const defaultLang = getDefaultLang(c.env, enabled);
-	if (!isSupportedLang(langParam)) {
-		return c.redirect(withLangPrefix(defaultLang, "/tools/website-headers", defaultLang), 302);
-	}
-	// If the path explicitly includes a supported language code, use it
-	// for rendering even when it's not listed in `SITE_LANGS`.
-	const lang = (isSupportedLang(langParam) ? (langParam as SiteLang) : defaultLang) as SiteLang;
-	const html = renderWebsiteHeadersPage(lang, defaultLang);
-	return c.html(html);
-});
+// Register website-headers page routes using centralized registrar
+registerToolPage(app as any, 'website-headers', (lang, defaultLang, enabled) => renderWebsiteHeadersPage(lang, defaultLang));
 
 // Legacy static tool page: redirect to dynamic route.
 app.get("/tools/markdown-to-html.html", (c) => c.redirect("/tools/markdown-to-html", 301));
 
-app.get("/tools/markdown-to-html", (c) => {
-	const enabled = getEnabledLangs(c.env);
-	const defaultLang = getDefaultLang(c.env, enabled);
-	const html = renderMarkdownToHtmlPage({ lang: defaultLang, defaultLang, enabledLangs: enabled });
-	return c.html(html);
-});
+// Legacy static tool page: redirect to dynamic route.
+app.get("/tools/markdown-to-html.html", (c) => c.redirect("/tools/markdown-to-html", 301));
 
-app.get("/:lang/tools/markdown-to-html", (c) => {
-	const langParam = c.req.param("lang");
-	const enabled = getEnabledLangs(c.env);
-	const defaultLang = getDefaultLang(c.env, enabled);
-	if (!isSupportedLang(langParam)) {
-		return c.redirect(withLangPrefix(defaultLang, "/tools/markdown-to-html", defaultLang), 302);
-	}
-	// Use the explicit language from path when it's a supported language.
-	const lang = (isSupportedLang(langParam) ? (langParam as SiteLang) : defaultLang) as SiteLang;
-	const html = renderMarkdownToHtmlPage({ lang, defaultLang, enabledLangs: enabled });
-	return c.html(html);
-});
+// Register markdown-to-html page via registrar
+registerToolPage(app as any, 'markdown-to-html', (lang, defaultLang, enabled) =>
+	renderMarkdownToHtmlPage({ lang, defaultLang, enabledLangs: enabled })
+);
 
 // Catch-all (GET): perform language negotiation before falling back to static assets.
 app.get("/*", (c) => {
