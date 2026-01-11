@@ -8,6 +8,8 @@ const en: SiteLangDict = {
   tool_headers_title: 'Fetch Website Response Headers',
   tool_headers_description:
     'Enter a URL to fetch its HTTP response headers (server-side request).',
+  tool_headers_article:
+    'What: Fetch and inspect a website\'s HTTP response headers. Useful for debugging CORS, caching, redirects and verifying security or CDN headers. Scenarios: developer debugging, SEO checks, and verifying server configuration.',
   url_label: 'URL',
   url_placeholder: 'e.g. https://example.com',
   fetch_button: 'Fetch Headers',
@@ -22,6 +24,8 @@ const en: SiteLangDict = {
   tool_markdown_title: 'Markdown → HTML',
   tool_markdown_description:
     'Render Markdown into HTML with preview, copy, and full-document download.',
+  tool_markdown_article:
+    'What: Convert Markdown into sanitized HTML with preview and export options. Useful for preparing blog posts, documentation, or sharing rendered content. Scenarios: authoring, quick previews, and generating static HTML exports.',
   tool_markdown_copy: 'Copy HTML',
   tool_markdown_copy_done: 'Copied',
   tool_markdown_download: 'Download HTML',

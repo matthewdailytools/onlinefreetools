@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>统一语言处理并添加工具路由注册器 | Dev Logs</title>
+  <meta name="description" content="统一语言处理并添加工具路由注册器" />
+  <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-01-11-15-30-%E7%BB%9F%E4%B8%80%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E5%B9%B6%E6%B7%BB%E5%8A%A0%E5%B7%A5%E5%85%B7%E8%B7%AF%E7%94%B1%E6%B3%A8%E5%86%8C%E5%99%A8.html" />
+  <meta property="og:title" content="统一语言处理并添加工具路由注册器 | Dev Logs" />
+  <meta property="og:description" content="统一语言处理并添加工具路由注册器" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-01-11-15-30-%E7%BB%9F%E4%B8%80%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E5%B9%B6%E6%B7%BB%E5%8A%A0%E5%B7%A5%E5%85%B7%E8%B7%AF%E7%94%B1%E6%B3%A8%E5%86%8C%E5%99%A8.html" />
+  <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  
+  
+  <script>
+    (function () {
+      try {
+        var enabled = [];
+        var defaultLang = "en";
+        var fallback = defaultLang;
+        var path = window.location.pathname || '/';
+
+        // If the URL already contains a language prefix (including defaultLang), respect it.
+        var hasPrefix = enabled.some(function (l) {
+          return l && (path === '/' + l || path.indexOf('/' + l + '/') === 0);
+        });
+        if (hasPrefix) return;
+
+        var langs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language])
+          .filter(Boolean)
+          .map(function (x) { return String(x).toLowerCase().split('-')[0]; });
+
+        var picked = null;
+        for (var i = 0; i < langs.length; i++) {
+          if (enabled.indexOf(langs[i]) !== -1) { picked = langs[i]; break; }
+        }
+        if (!picked) picked = enabled.indexOf(fallback) !== -1 ? fallback : (enabled[0] || fallback);
+
+        if (picked === "en") return;
+        var targetPath = path;
+        if (picked !== defaultLang) {
+          targetPath = ('/' + picked + path).replace(/\/{2,}/g, '/');
+        }
+        window.location.replace(targetPath + window.location.search + window.location.hash);
+      } catch (e) {}
+    })();
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body { min-height: 100vh; }
+    .layout { display: flex; min-height: 100vh; }
+    #sidebar { width: 260px; transition: margin-left 0.2s ease; }
+    #content { flex: 1; transition: margin-left 0.2s ease; }
+    .sidebar-collapsed #sidebar { margin-left: -260px; }
+    .sidebar-collapsed #content { margin-left: 0; }
+    @media (max-width: 767.98px) {
+      #sidebar {
+        position: fixed;
+        z-index: 1040;
+        top: 56px;
+        bottom: 0;
+        overflow-y: auto;
+        background: #f8f9fa;
+        border-right: 1px solid #e5e7eb;
+      }
+      .sidebar-collapsed #sidebar { margin-left: -260px; }
+      #content { margin-left: 0; }
+      body { padding-top: 56px; }
+    }
+  </style>
+  
+  
+  
+</head>
+<body>
+  
+  
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom fixed-top">
+      <div class="container-fluid">
+        <button class="btn btn-outline-secondary me-2" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+        <a class="navbar-brand fw-semibold" href="/">Online Free Tools</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="topNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="/">Home</a></li><li class="nav-item"><a class="nav-link" href="/devlogs/">Dev Logs</a></li></ul>
+          <div class="d-flex align-items-center gap-2">
+            
+            
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="layout sidebar-collapsed" id="layoutRoot">
+    
+    <aside id="sidebar" class="bg-light border-end p-3">
+      <h6 class="text-muted text-uppercase">Navigation</h6>
+      <div class="list-group list-group-flush small" id="navList"><a class="list-group-item list-group-item-action" href="/">Home</a><a class="list-group-item list-group-item-action" href="/devlogs/">Dev Logs</a></div>
+    </aside>
+    <main id="content" class="p-4">
+      <section class="mb-3">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h1 class="h4 mb-0">统一语言处理并添加工具路由注册器 | Dev Logs</h1>
+          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
+        </div>
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-01-11 15:30
+Summary: 统一语言处理并添加工具路由注册器</p>
+<p>[question]</p>
+<ol>
+<li>访问 <code>http://localhost:8787/ja/</code> 下点击 <code>http://localhost:8787/ja/tools/website-headers</code> 会被重定向到 <code>http://localhost:8787/zh/ja/tools/website-headers</code> 并出现 404。</li>
+<li><code>http://localhost:8787/ja/tools/website-headers</code> 页面显示为英文而非日语。</li>
+<li><code>markdown to html</code> 工具没有支持目前的 10 国语言切换功能。</li>
+<li>是否可以将目前两个工具的语言控制合并，以便统一语言管理并便于后续扩展所有工具？</li>
+<li>要求实现“工具路由注册器”，把现有工具改用统一注册方式。</li>
+</ol>
+<p>[try to solve]
+问题分析：</p>
+<ul>
+<li>中间件在进行 Accept-Language 协商和重定向时，检测路径是否显式带语言前缀的逻辑同时依赖“受支持语言”与“SITE_LANGS（启用语言列表）”。当路径前缀是受支持但未列为 <code>SITE_LANGS</code> 时，系统误以为路径未显式带语言，从而在协商后把选出的语言前缀再一次追加到已带前缀的路径上，产生类似 <code>/zh/ja/...</code> 的重定向并导致 404。</li>
+</ul>
+<p>采取的修复与重构：</p>
+<ol>
+<li><p>修复显式语言前缀检测逻辑（避免错误重定向）</p>
+<ul>
+<li>修改 <code>src/index.ts</code> 中 <code>getExplicitLangFromPath</code> 的逻辑，使其只基于 <code>isSupportedLang(seg)</code> 判断路径是否显式带语言前缀（不再要求该语言在 <code>SITE_LANGS</code> 中）。</li>
+<li>结果：显式带语言前缀的 URL（如 <code>/ja/...</code>）不会再被协商中间件错误地重定向为 <code>/zh/ja/...</code>。</li>
+</ul>
+</li>
+<li><p>保证语言渲染优先使用路径显式前缀</p>
+<ul>
+<li>调整工具路由：当路径显式带受支持语言时，使用该语言进行页面渲染（即使该语言未列入 <code>SITE_LANGS</code>），避免页面显示为默认语言或英文。</li>
+</ul>
+</li>
+<li><p>统一语言工具函数</p>
+<ul>
+<li>将语言协商与辅助函数提取为中心模块 <code>src/site/lang.ts</code>，包含：<code>DEFAULT_LANGS</code>、<code>getEnabledLangs</code>、<code>getFallbackLang</code>、<code>getDefaultLang</code>、<code>parseAcceptLanguage</code>、<code>pickLang</code>、<code>getExplicitLangFromPath</code>、<code>withLangPrefix</code>、<code>getLangFromPath</code>、<code>stripLangPrefix</code>、<code>langAlternatesForPath</code>。</li>
+<li>目的是让不同路由/页面共享统一语言判断与行为。</li>
+</ul>
+</li>
+<li><p>支持 markdown 工具显示 10 种语言</p>
+<ul>
+<li>修改 <code>src/pages/markdownToHtmlPage.ts</code>，让语言下拉切换与备用链接基于 <code>supportedLangs</code>（完整 10 语言），从而在页面头部显示所有语言切换项。</li>
+</ul>
+</li>
+<li><p>实现并使用“工具路由注册器”</p>
+<ul>
+<li>新增 <code>src/site/toolRegistrar.ts</code>，导出 <code>registerToolPage(app, toolName, renderFn)</code>：该函数统一注册 <code>/tools/&lt;name&gt;</code> 与 <code>/:lang/tools/&lt;name&gt;</code> 路由，并使用集中语言逻辑来决定渲染语言或重定向。</li>
+<li>将 <code>website-headers</code> 与 <code>markdown-to-html</code> 的路由改为通过 <code>registerToolPage</code> 注册。这样新增工具时只需一处调用，可以保证语言处理的一致性。</li>
+</ul>
+</li>
+</ol>
+<p>验证步骤（本地）：</p>
+<ul>
+<li>启动开发服务器：</li>
+</ul>
+<pre><code class="language-bash">npm run dev
+# 或
+wrangler dev
+</code></pre>
+<ul>
+<li>验证场景：<ul>
+<li>访问 <code>http://localhost:8787/ja/tools/website-headers</code> 应直接以日语渲染（若 <code>src/site/i18n/ja.ts</code> 包含翻译条目）。</li>
+<li>访问 <code>http://localhost:8787/tools/website-headers</code> 将根据 <code>Accept-Language</code> 协商并可能重定向到合适语言前缀（预期行为）。</li>
+<li>打开 <code>http://localhost:8787/tools/markdown-to-html</code>，头部语言下拉应显示 10 种语言，并可切换到 <code>ja</code> 页面。</li>
+</ul>
+</li>
+</ul>
+<p>变更记录（代码变更）:</p>
+<ul>
+<li>修改：<code>src/index.ts</code>（语言显式检测、路由改用注册器）</li>
+<li>新增：<code>src/site/lang.ts</code>（集中语言工具函数）</li>
+<li>新增：<code>src/site/toolRegistrar.ts</code>（统一工具页面注册器）</li>
+<li>修改：<code>src/pages/markdownToHtmlPage.ts</code>（在头部语言下拉中显示 <code>supportedLangs</code>）</li>
+<li>新增/修改日志：<code>dev-logs/2026-01-11-fix-lang-redirect.md</code>（记录首次重定向问题与修复）</li>
+</ul>
+<p>后续建议：</p>
+<ul>
+<li>（推荐）将更多工具改为通过 <code>registerToolPage</code> 注册；这将使新增工具时语言行为一致。</li>
+<li>添加小型集成或端对端测试覆盖语言前缀、Accept-Language 重定向与语言切换菜单，防止回归。</li>
+<li>如果需要，我可以把当前改动整理成 commit（若尚未推送）并创建 PR，或立即把更多工具迁移到注册器。</li>
+</ul>
+<p>[actions]</p>
+<ul>
+<li>更新/新增文件：<ul>
+<li><code>src/index.ts</code></li>
+<li><code>src/site/lang.ts</code></li>
+<li><code>src/site/toolRegistrar.ts</code></li>
+<li><code>src/pages/markdownToHtmlPage.ts</code></li>
+<li><code>dev-logs/2026-01-11-fix-lang-redirect.md</code></li>
+</ul>
+</li>
+</ul>
+</article>
+      </section>
+    </main>
+  </div>
+  
+  <footer class="bg-light border-top text-center py-3">
+    <div class="container">
+      <small class="text-muted">Online Free Tools · Learning project · Iterating</small>
+    </div>
+  </footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <script>
+    const layout = document.getElementById('layoutRoot');
+    const toggle = document.getElementById('sidebarToggle');
+    if (layout && toggle) {
+      toggle.addEventListener('click', () => layout.classList.toggle('sidebar-collapsed'));
+      
+    }
+  </script>
+</body>
+</html>

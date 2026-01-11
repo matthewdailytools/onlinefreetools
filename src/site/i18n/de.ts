@@ -7,6 +7,8 @@ const de: SiteLangDict = {
   footer_text: 'Online Free Tools · Lernprojekt · Iteration',
   tool_headers_title: 'HTTP-Header abrufen',
   tool_headers_description: 'URL eingeben, um HTTP-Response-Header zu laden (Server-seitige Anfrage).',
+  tool_headers_article:
+    'Was ist das: HTTP‑Response‑Header einer URL abrufen und prüfen. Wozu nützlich: Debugging von CORS, Caching, Redirects sowie Prüfung von Sicherheits-/CDN‑Headern. Szenarien: Entwickler‑Debugging, SEO‑Checks und Verifikation der Serverkonfiguration.',
   url_label: 'URL',
   url_placeholder: 'z. B. https://example.com',
   fetch_button: 'Header abrufen',
@@ -20,6 +22,8 @@ const de: SiteLangDict = {
   note_2: 'Aus Sicherheitsgründen sind localhost/private Netzwerke blockiert.',
   tool_markdown_title: 'Markdown → HTML',
   tool_markdown_description: 'Markdown in HTML umwandeln mit Vorschau, Kopieren und Download.',
+  tool_markdown_article:
+    'Was ist das: Markdown in bereinigtes HTML konvertieren mit Vorschau und Exportoptionen. Wozu nützlich: Vorbereitung von Blogposts, Dokumentation oder teilbarem Inhalt. Szenarien: Verfassen von Texten, schnelle Vorschau und Generierung statischer HTML‑Exporte.',
   tool_markdown_copy: 'HTML kopieren',
   tool_markdown_copy_done: 'Kopiert',
   tool_markdown_download: 'HTML herunterladen',

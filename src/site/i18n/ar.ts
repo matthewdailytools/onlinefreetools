@@ -7,6 +7,8 @@ const ar: SiteLangDict = {
   footer_text: 'Online Free Tools · مشروع تعليمي · تطوير مستمر',
   tool_headers_title: 'ترويسات الاستجابة',
   tool_headers_description: 'أدخل رابطًا لجلب ترويسات استجابة HTTP (طلب من جهة الخادم).',
+  tool_headers_article:
+    'ما هو: جلب وعرض ترويسات استجابة HTTP لموقع ويب. ما فائدة: يساعد في تصحيح CORS، التخزين المؤقت، عمليات إعادة التوجيه والتحقق من ترويسات الأمان/CDN. سيناريوهات: تصحيح المطورين، فحوصات SEO، والتحقق من إعدادات الخادم.',
   url_label: 'الرابط',
   url_placeholder: 'مثال: https://example.com',
   fetch_button: 'جلب الترويسات',
@@ -20,6 +22,8 @@ const ar: SiteLangDict = {
   note_2: 'للأمان، يتم حظر localhost/الشبكات الخاصة.',
   tool_markdown_title: 'Markdown → HTML',
   tool_markdown_description: 'حوّل Markdown إلى HTML مع معاينة ونسخ وتنزيل ملف كامل.',
+  tool_markdown_article:
+    'ما هو: تحويل Markdown إلى HTML مُعقم مع معاينة وخيارات تصدير. ما فائدة: إعداد منشورات المدونات أو الوثائق أو المحتوى للمشاركة. سيناريوهات: التأليف، معاينة سريعة، وتوليد HTML ثابت.',
   tool_markdown_copy: 'نسخ HTML',
   tool_markdown_copy_done: 'تم النسخ',
   tool_markdown_download: 'تنزيل HTML',

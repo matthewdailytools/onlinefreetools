@@ -9,7 +9,7 @@ type App = InstanceType<typeof Hono>;
 export const registerToolPage = (
   app: App,
   toolName: string,
-  renderFn: (lang: SiteLang, defaultLang: SiteLang, enabledLangs: SiteLang[]) => string
+  renderFn: (lang: SiteLang, defaultLang: SiteLang, enabledLangs: SiteLang[]) => string | void
 ) => {
   // canonical tool page (no lang prefix)
   app.get(`/tools/${toolName}`, (c: any) => {

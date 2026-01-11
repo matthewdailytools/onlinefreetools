@@ -7,6 +7,8 @@ const es: SiteLangDict = {
   footer_text: 'Online Free Tools · Proyecto de aprendizaje · Iterando',
   tool_headers_title: 'Encabezados HTTP',
   tool_headers_description: 'Introduce una URL para obtener sus encabezados de respuesta HTTP (petición desde el servidor).',
+  tool_headers_article:
+    'Qué es: Obtener y revisar los encabezados HTTP de una URL. Para qué sirve: depurar CORS, caché, redirecciones y verificar encabezados de seguridad/CDN. Escenarios: depuración por desarrolladores, comprobaciones SEO y verificación de configuración del servidor.',
   url_label: 'URL',
   url_placeholder: 'p. ej. https://example.com',
   fetch_button: 'Obtener encabezados',
@@ -20,6 +22,8 @@ const es: SiteLangDict = {
   note_2: 'Por seguridad, se bloquean solicitudes a localhost/redes privadas.',
   tool_markdown_title: 'Markdown → HTML',
   tool_markdown_description: 'Convierte Markdown a HTML con vista previa, copiar y descargar documento completo.',
+  tool_markdown_article:
+    'Qué es: Convertir Markdown en HTML limpio con vista previa y opciones de exportación. Para qué sirve: preparar publicaciones, documentación o contenido compartible. Escenarios: redacción, previsualización rápida y generación de HTML estático.',
   tool_markdown_copy: 'Copiar HTML',
   tool_markdown_copy_done: 'Copiado',
   tool_markdown_download: 'Descargar HTML',

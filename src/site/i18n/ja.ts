@@ -7,6 +7,8 @@ const ja: SiteLangDict = {
   footer_text: 'Online Free Tools · 学習プロジェクト · 改善中',
   tool_headers_title: 'HTTPヘッダー取得',
   tool_headers_description: 'URL を入力して HTTP レスポンスヘッダーを取得します（サーバー側）。',
+  tool_headers_article:
+    '概要: 指定した URL の HTTP レスポンスヘッダーを取得して確認します。用途: CORS、キャッシュ、リダイレクトやセキュリティ/CDN ヘッダーの確認に便利です。利用シーン: 開発時のデバッグ、SEO チェック、サーバ設定の検証など。',
   url_label: 'URL',
   url_placeholder: '例: https://example.com',
   fetch_button: '取得',
@@ -20,6 +22,8 @@ const ja: SiteLangDict = {
   note_2: '安全のため localhost/プライベートネットワークはブロックします。',
   tool_markdown_title: 'Markdown → HTML',
   tool_markdown_description: 'Markdown を HTML に変換（プレビュー/コピー/全文書DL）。',
+  tool_markdown_article:
+    '概要: Markdown をサニタイズされた HTML に変換し、プレビューとエクスポートを提供します。用途: ブログやドキュメント、共有用のコンテンツ準備。利用シーン: 執筆、簡易プレビュー、静的 HTML の生成。',
   tool_markdown_copy: 'HTML をコピー',
   tool_markdown_copy_done: 'コピーしました',
   tool_markdown_download: 'HTML をダウンロード',

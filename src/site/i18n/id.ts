@@ -7,6 +7,8 @@ const id: SiteLangDict = {
   footer_text: 'Online Free Tools · Proyek pembelajaran · Iterasi',
   tool_headers_title: 'Header Respons Situs',
   tool_headers_description: 'Masukkan URL untuk mengambil header respons HTTP (permintaan sisi server).',
+  tool_headers_article:
+    'Apa itu: Mengambil dan memeriksa header respons HTTP dari sebuah URL. Untuk apa: membantu men-debug CORS, caching, redirect, dan memverifikasi header keamanan/CDN. Skenario: debug oleh pengembang, pemeriksaan SEO, dan verifikasi konfigurasi server.',
   url_label: 'URL',
   url_placeholder: 'mis. https://example.com',
   fetch_button: 'Ambil header',
@@ -20,6 +22,8 @@ const id: SiteLangDict = {
   note_2: 'Demi keamanan, localhost/jaringan privat diblokir.',
   tool_markdown_title: 'Markdown → HTML',
   tool_markdown_description: 'Ubah Markdown menjadi HTML dengan pratinjau, salin, dan unduh dokumen lengkap.',
+  tool_markdown_article:
+    'Apa itu: Mengonversi Markdown ke HTML yang telah disanitasi dengan pratinjau dan opsi ekspor. Untuk apa: menyiapkan posting blog, dokumentasi, atau konten yang dapat dibagikan. Skenario: penulisan konten, pratinjau cepat, dan menghasilkan HTML statis.',
   tool_markdown_copy: 'Salin HTML',
   tool_markdown_copy_done: 'Tersalin',
   tool_markdown_download: 'Unduh HTML',

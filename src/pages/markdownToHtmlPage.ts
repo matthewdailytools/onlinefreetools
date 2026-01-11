@@ -17,7 +17,8 @@ export const renderMarkdownToHtmlPage = (opts: {
 }) => {
 	const canonicalPath = withLangPrefix(opts.lang, '/tools/markdown-to-html', opts.defaultLang);
 	const title = `${t(opts.lang, 'tool_markdown_title')} | ${t(opts.lang, 'brand')}`;
-	const description = t(opts.lang, 'tool_markdown_description');
+  const description = t(opts.lang, 'tool_markdown_description');
+  const article = t(opts.lang, 'tool_markdown_article');
 
 	const navItems = [
 		{ href: withLangPrefix(opts.lang, '/', opts.defaultLang), label: t(opts.lang, 'nav_home') },
@@ -27,8 +28,15 @@ export const renderMarkdownToHtmlPage = (opts: {
 
   // Build language switcher links for all supported languages so users can
   // switch between the full set (10 languages) regardless of `SITE_LANGS`.
+  // Use explicit lang prefix for language-switch links so each language
+  // points to an explicit localized route (including the default language).
+  const withExplicitLangPrefix = (code: SiteLang, pathname: string) => {
+    const safe = pathname.startsWith('/') ? pathname : `/${pathname}`;
+    return `/${code}${safe}`.replace(/\/{2,}/g, '/');
+  };
+
   const langAlternates: Record<string, string> = Object.fromEntries(
-    (supportedLangs || []).map((code) => [code, withLangPrefix(code, '/tools/markdown-to-html', opts.defaultLang)])
+    (supportedLangs || []).map((code) => [code, withExplicitLangPrefix(code, '/tools/markdown-to-html')])
   );
 
 	const alternates: HreflangAlternate[] = (opts.enabledLangs || []).map((code) => ({
@@ -59,6 +67,10 @@ export const renderMarkdownToHtmlPage = (opts: {
     textarea { min-height: 320px; }
     #preview { min-height: 320px; background: #fff; border: 1px solid #dee2e6; border-radius: .5rem; padding: 1rem; }
     .tools-bar { gap: .5rem; }
+    /* Make input and preview match heights */
+    .row.g-3 { align-items: stretch; }
+    #mdInput { min-height: 320px; height: 100%; resize: vertical; }
+    #preview { min-height: 320px; height: 100%; }
   </style>`;
 
 	const contentHtml = `
@@ -86,6 +98,10 @@ export const renderMarkdownToHtmlPage = (opts: {
         <label class="form-label">${escapeHtml(t(opts.lang, 'tool_markdown_preview_label'))}</label>
         <div id="preview"></div>
       </div>
+    </div>
+
+    <div class="mt-4">
+      <p class="small text-muted mb-0">${escapeHtml(article)}</p>
     </div>`;
 
 	const extraBodyHtml = `

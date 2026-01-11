@@ -1,9 +1,6 @@
 import type { SiteLang } from '../site/i18n/types';
 import { getLangLabel, t, supportedLangs } from '../site/i18n';
-const withExplicitLangPrefix = (lang: SiteLang, pathname: string) => {
-  const safe = pathname.startsWith('/') ? pathname : `/${pathname}`;
-  return `/${lang}${safe}`.replace(/\/{2,}/g, '/');
-};
+// keep a simple prefixer local to the page so we can respect the default language
 
 const escapeHtml = (s: string) =>
   s
@@ -14,6 +11,10 @@ const escapeHtml = (s: string) =>
     .replaceAll("'", '&#39;');
 
 export const renderWebsiteHeadersPage = (lang: SiteLang, defaultLang: SiteLang) => {
+  const withExplicitLangPrefix = (code: SiteLang, pathname: string) => {
+    const safe = pathname.startsWith('/') ? pathname : `/${pathname}`;
+    return (code === defaultLang ? safe : `/${code}${safe}`).replace(/\/{2,}/g, '/');
+  };
   const title = t(lang, 'tool_headers_title');
   const description = t(lang, 'tool_headers_description');
 
@@ -91,6 +92,10 @@ export const renderWebsiteHeadersPage = (lang: SiteLang, defaultLang: SiteLang) 
         <li>${escapeHtml(t(lang, 'note_1'))}</li>
         <li>${escapeHtml(t(lang, 'note_2'))}</li>
       </ul>
+    </div>
+
+    <div class="mt-4">
+      <p class="small text-muted mb-0">${escapeHtml(t(lang, 'tool_headers_article'))}</p>
     </div>
   </main>
 

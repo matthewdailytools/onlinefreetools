@@ -21,8 +21,12 @@ const translations = {
     home_cat_dev_desc: 'debug, generate, validate',
     tool_website_headers_title: 'Website Headers',
     tool_website_headers_desc: 'Fetch and view HTTP response headers for a given URL.',
+    tool_website_headers_article:
+      'Fetch and inspect HTTP response headers for a URL. Useful for debugging CORS, caching, redirects and verifying security or CDN headers. Scenarios: developer debugging, SEO checks, and server verification.',
     tool_markdown_to_html_title: 'Markdown → HTML',
     tool_markdown_to_html_desc: 'Render Markdown into HTML.',
+    tool_markdown_to_html_article:
+      'Convert Markdown into sanitized HTML with preview and export options. Useful for preparing posts, documentation or shareable content. Scenarios: authoring, quick previews, and generating static HTML exports.',
     back_home: 'Back to Home',
     back_devlogs: 'Back to Logs',
     devlogs_title: 'Dev Logs',
@@ -50,8 +54,11 @@ const translations = {
     home_cat_dev_desc: '调试、生成、校验',
     tool_website_headers_title: '获取网站响应 Header',
     tool_website_headers_desc: '输入网址，查询该网站的 HTTP 响应 Header。',
+    tool_website_headers_article:
+      '获取并查看网站的 HTTP 响应 Header，用于排查 CORS、缓存、重定向以及验证安全/CDN 配置。典型场景：开发调试、SEO 检查和服务器响应验证。',
     tool_markdown_to_html_title: 'Markdown 转 HTML',
     tool_markdown_to_html_desc: '将 Markdown 快速渲染为 HTML。',
+    tool_markdown_to_html_article: '将 Markdown 转换为已净化的 HTML 并提供预览与导出，适用于博客、文档与快速预览。',
     back_home: '返回首页',
     back_devlogs: '返回日志清单',
     devlogs_title: '开发日志清单',
@@ -80,8 +87,12 @@ const translations = {
     home_cat_dev_desc: 'depurar, generar, validar',
     tool_website_headers_title: 'Encabezados HTTP',
     tool_website_headers_desc: 'Obtén y muestra los encabezados de respuesta HTTP de una URL.',
+    tool_website_headers_article:
+      'Obtener y revisar los encabezados HTTP de una URL. Útil para depurar CORS, caché, redirecciones y verificar encabezados de seguridad/CDN. Escenarios: depuración, comprobaciones SEO y verificación de servidor.',
     tool_markdown_to_html_title: 'Markdown → HTML',
     tool_markdown_to_html_desc: 'Convierte Markdown a HTML.',
+    tool_markdown_to_html_article:
+      'Convertir Markdown en HTML limpio con vista previa y opciones de exportación. Útil para preparar publicaciones, documentación o contenido compartible. Escenarios: redacción, previsualización rápida y generación de HTML estático.',
     back_home: 'Volver al inicio',
     back_devlogs: 'Volver a registros',
     devlogs_title: 'Registros',
@@ -110,8 +121,12 @@ const translations = {
     home_cat_dev_desc: 'تصحيح، توليد، تحقق',
     tool_website_headers_title: 'ترويسات الموقع',
     tool_website_headers_desc: 'جلب وعرض ترويسات استجابة HTTP لعنوان URL.',
+    tool_website_headers_article:
+      'جلب وعرض ترويسات HTTP لعنوان URL. مفيد لتصحيح CORS، التخزين المؤقت، عمليات إعادة التوجيه والتحقق من ترويسات الأمان/CDN. سيناريوهات: تصحيح المطورين، فحوصات SEO، والتحقق من إعدادات الخادم.',
     tool_markdown_to_html_title: 'Markdown → HTML',
     tool_markdown_to_html_desc: 'تحويل Markdown إلى HTML.',
+    tool_markdown_to_html_article:
+      'تحويل Markdown إلى HTML مُعقم مع معاينة وخيارات تصدير. مفيد لإعداد منشورات المدونات أو الوثائق أو المحتوى للمشاركة. سيناريوهات: التأليف، المعاينة السريعة وتوليد HTML ثابت.',
     back_home: 'العودة للرئيسية',
     back_devlogs: 'العودة للسجلات',
     devlogs_title: 'سجلات التطوير',
@@ -140,8 +155,12 @@ const translations = {
     home_cat_dev_desc: 'depurar, gerar, validar',
     tool_website_headers_title: 'Headers do Site',
     tool_website_headers_desc: 'Buscar e visualizar headers HTTP de uma URL.',
+    tool_website_headers_article:
+      'Buscar e inspecionar os headers HTTP de uma URL. Útil para depurar CORS, cachê, redireções e verificar headers de segurança/CDN. Cenários: depuração, revisões SEO e verificação do servidor.',
     tool_markdown_to_html_title: 'Markdown → HTML',
     tool_markdown_to_html_desc: 'Renderizar Markdown em HTML.',
+    tool_markdown_to_html_article:
+      'Converter Markdown em HTML com visualização e opções de exportação. Útil para preparar posts ou documentação. Cenários: redação, pré-visualização rápida e geração de HTML estático.',
     back_home: 'Voltar para início',
     back_devlogs: 'Voltar para logs',
     devlogs_title: 'Logs',
@@ -170,8 +189,12 @@ const translations = {
     home_cat_dev_desc: 'debug, buat, validasi',
     tool_website_headers_title: 'Header Situs',
     tool_website_headers_desc: 'Ambil dan lihat header respons HTTP dari sebuah URL.',
+    tool_website_headers_article:
+      'Mengambil dan memeriksa header respons HTTP dari URL. Berguna untuk debug CORS, cache, redirect dan verifikasi header keamanan/CDN. Skenario: debug pengembang, pengecekan SEO, verifikasi server.',
     tool_markdown_to_html_title: 'Markdown → HTML',
     tool_markdown_to_html_desc: 'Ubah Markdown menjadi HTML.',
+    tool_markdown_to_html_article:
+      'Mengonversi Markdown ke HTML dengan pratinjau dan opsi ekspor. Berguna untuk menyiapkan posting, dokumentasi, atau konten yang dapat dibagikan. Skenario: penulisan, pratinjau cepat, dan pembuatan HTML statis.',
     back_home: 'Kembali ke Beranda',
     back_devlogs: 'Kembali ke Log',
     devlogs_title: 'Log Dev',
@@ -200,8 +223,12 @@ const translations = {
     home_cat_dev_desc: 'déboguer, générer, valider',
     tool_website_headers_title: 'En-têtes HTTP',
     tool_website_headers_desc: 'Récupérer et afficher les en-têtes de réponse HTTP d’une URL.',
+    tool_website_headers_article:
+      'Récupérer et inspecter les en‑têtes HTTP d\'une URL. Utile pour déboguer CORS, cache, redirections et vérifier les en‑têtes de sécurité/CDN. Scénarios: débogage, vérifications SEO et validation serveur.',
     tool_markdown_to_html_title: 'Markdown → HTML',
     tool_markdown_to_html_desc: 'Convertir Markdown en HTML.',
+    tool_markdown_to_html_article:
+      'Convertir Markdown en HTML nettoyé avec aperçu et options d\'export. Utile pour préparer billets, documentation ou contenu partageable. Scénarios: rédaction, prévisualisation rapide et génération de HTML statique.',
     back_home: "Retour à l'accueil",
     back_devlogs: 'Retour au journal',
     devlogs_title: 'Journal',
@@ -229,8 +256,12 @@ const translations = {
     home_cat_dev_desc: 'デバッグ、生成、検証',
     tool_website_headers_title: 'HTTPヘッダー',
     tool_website_headers_desc: 'URL の HTTP レスポンスヘッダーを取得して表示します。',
+    tool_website_headers_article:
+      '指定した URL の HTTP レスポンスヘッダーを取得して確認します。CORS、キャッシュ、リダイレクトやセキュリティ/CDN ヘッダーの検証に便利です。利用シーン: 開発デバッグ、SEO チェック、設定確認。',
     tool_markdown_to_html_title: 'Markdown → HTML',
     tool_markdown_to_html_desc: 'Markdown を HTML に変換します。',
+    tool_markdown_to_html_article:
+      'Markdown をサニタイズされた HTML に変換し、プレビューとエクスポートを提供します。ブログやドキュメント作成、共有用の準備に適しています。',
     back_home: 'ホームへ戻る',
     back_devlogs: 'ログ一覧へ戻る',
     devlogs_title: '開発ログ',
@@ -259,8 +290,12 @@ const translations = {
     home_cat_dev_desc: 'отладка, генерация, проверка',
     tool_website_headers_title: 'HTTP заголовки',
     tool_website_headers_desc: 'Получить и показать HTTP заголовки ответа по URL.',
+    tool_website_headers_article:
+      'Получение и просмотр HTTP‑заголовков ответа для указанного URL. Помогает отлаживать CORS, кэширование, редиректы и проверять заголовки безопасности/CDN. Сценарии: отладка, SEO‑проверки, верификация сервера.',
     tool_markdown_to_html_title: 'Markdown → HTML',
     tool_markdown_to_html_desc: 'Преобразовать Markdown в HTML.',
+    tool_markdown_to_html_article:
+      'Преобразовать Markdown в очищенный HTML с превью и возможностью экспорта. Полезно для подготовки постов, документации или контента для обмена.',
     back_home: 'Назад на главную',
     back_devlogs: 'Назад к логам',
     devlogs_title: 'Логи',
@@ -289,8 +324,12 @@ const translations = {
     home_cat_dev_desc: 'debuggen, erzeugen, validieren',
     tool_website_headers_title: 'HTTP-Header',
     tool_website_headers_desc: 'HTTP-Response-Header für eine URL abrufen und anzeigen.',
+    tool_website_headers_article:
+      'HTTP‑Response‑Header einer URL abrufen und prüfen. Nützlich zum Debuggen von CORS, Caching, Redirects sowie zur Überprüfung von Sicherheits-/CDN‑Headern. Szenarien: Entwickler‑Debugging, SEO‑Checks, Server‑Verifikation.',
     tool_markdown_to_html_title: 'Markdown → HTML',
     tool_markdown_to_html_desc: 'Markdown in HTML umwandeln.',
+    tool_markdown_to_html_article:
+      'Markdown in bereinigtes HTML konvertieren mit Vorschau und Exportoptionen. Nützlich zur Vorbereitung von Blogposts, Dokumentation oder teilbarem Inhalt.',
     back_home: 'Zurück zur Startseite',
     back_devlogs: 'Zurück zu den Logs',
     devlogs_title: 'Dev-Logs',

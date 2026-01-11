@@ -7,6 +7,8 @@ const fr: SiteLangDict = {
   footer_text: "Online Free Tools · Projet d’apprentissage · Itération",
   tool_headers_title: 'En-têtes HTTP',
   tool_headers_description: 'Saisissez une URL pour récupérer les en-têtes de réponse HTTP (requête côté serveur).',
+  tool_headers_article:
+    'Quoi: Récupérer et inspecter les en‑têtes HTTP d\'une URL. À quoi ça sert: déboguer CORS, cache, redirections et vérifier les en‑têtes de sécurité/CDN. Scénarios: débogage développeur, vérifications SEO et validation de la configuration serveur.',
   url_label: 'URL',
   url_placeholder: 'ex. https://example.com',
   fetch_button: 'Récupérer',
@@ -20,6 +22,8 @@ const fr: SiteLangDict = {
   note_2: 'Par sécurité, localhost/réseaux privés sont bloqués.',
   tool_markdown_title: 'Markdown → HTML',
   tool_markdown_description: 'Convertissez Markdown en HTML avec aperçu, copie et téléchargement complet.',
+  tool_markdown_article:
+    'Quoi: Convertir Markdown en HTML nettoyé avec aperçu et options d\'export. À quoi ça sert: préparer billets de blog, documentation ou contenu partageable. Scénarios: rédaction, prévisualisation rapide et génération d\'export HTML statique.',
   tool_markdown_copy: 'Copier HTML',
   tool_markdown_copy_done: 'Copié',
   tool_markdown_download: 'Télécharger HTML',

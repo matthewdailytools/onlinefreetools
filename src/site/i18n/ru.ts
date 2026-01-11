@@ -7,6 +7,8 @@ const ru: SiteLangDict = {
   footer_text: 'Online Free Tools · Учебный проект · Итерации',
   tool_headers_title: 'HTTP заголовки сайта',
   tool_headers_description: 'Введите URL, чтобы получить заголовки HTTP-ответа (серверный запрос).',
+  tool_headers_article:
+    'Что это: получение и просмотр HTTP‑заголовков ответа для URL. Для чего: помогает отлаживать CORS, кэширование, редиректы и проверять заголовки безопасности/CDN. Сценарии: отладка, SEO‑проверки и верификация конфигурации сервера.',
   url_label: 'URL',
   url_placeholder: 'например, https://example.com',
   fetch_button: 'Получить',
@@ -20,6 +22,8 @@ const ru: SiteLangDict = {
   note_2: 'Для безопасности блокируем localhost/приватные сети.',
   tool_markdown_title: 'Markdown → HTML',
   tool_markdown_description: 'Преобразование Markdown в HTML с предпросмотром, копированием и скачиванием.',
+  tool_markdown_article:
+    'Что это: конвертация Markdown в очищенный HTML с превью и возможностью экспорта. Для чего: подготовка постов, документации или контента для обмена. Сценарии: написание контента, быстрый просмотр и генерация статического HTML.',
   tool_markdown_copy: 'Копировать HTML',
   tool_markdown_copy_done: 'Скопировано',
   tool_markdown_download: 'Скачать HTML',

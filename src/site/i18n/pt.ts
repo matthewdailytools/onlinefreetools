@@ -7,6 +7,8 @@ const pt: SiteLangDict = {
   footer_text: 'Online Free Tools · Projeto de aprendizado · Iterando',
   tool_headers_title: 'Headers do Site',
   tool_headers_description: 'Digite uma URL para buscar os headers de resposta HTTP (requisição no servidor).',
+  tool_headers_article:
+    'O que é: Buscar e inspecionar os headers HTTP de uma URL. Para que serve: depurar CORS, cache, redirecionamentos e verificar headers de segurança/CDN. Cenários: depuração de desenvolvedores, checagens de SEO e verificação de configuração do servidor.',
   url_label: 'URL',
   url_placeholder: 'ex.: https://example.com',
   fetch_button: 'Buscar headers',
@@ -20,6 +22,8 @@ const pt: SiteLangDict = {
   note_2: 'Por segurança, localhost/redes privadas são bloqueados.',
   tool_markdown_title: 'Markdown → HTML',
   tool_markdown_description: 'Renderize Markdown em HTML com preview, copiar e download do documento completo.',
+  tool_markdown_article:
+    'O que é: Converter Markdown em HTML sanitizado com preview e opções de exportação. Para que serve: preparar posts, documentação ou conteúdo compartilhável. Cenários: escrita de conteúdo, visualização rápida e geração de HTML estático.',
   tool_markdown_copy: 'Copiar HTML',
   tool_markdown_copy_done: 'Copiado',
   tool_markdown_download: 'Baixar HTML',

@@ -7,6 +7,8 @@ const zh: SiteLangDict = {
   footer_text: 'Online Free Tools · 学习项目 · 持续迭代',
   tool_headers_title: '获取网站响应 Header',
   tool_headers_description: '输入网址，查询该网站的 HTTP 响应 Header（由服务器侧请求获取）。',
+  tool_headers_article:
+    '是什么：获取并查看网站的 HTTP 响应 Header。用途：排查 CORS、缓存、重定向及安全/CDN 配置。适用场景：开发调试、SEO 检查与服务器响应验证。',
   url_label: '网址',
   url_placeholder: '例如：https://example.com',
   fetch_button: '获取 Header',
@@ -20,6 +22,8 @@ const zh: SiteLangDict = {
   note_2: '出于安全考虑，禁止请求内网/本机地址。',
   tool_markdown_title: 'Markdown 转 HTML',
   tool_markdown_description: '将 Markdown 快速渲染为 HTML，支持预览、复制、下载完整文档。',
+  tool_markdown_article:
+    '是什么：将 Markdown 转换为已净化的 HTML，并提供预览与导出。用途：为博客、文档或邮件准备渲染内容。适用场景：内容撰写、快速预览与生成静态 HTML 导出。',
   tool_markdown_copy: '复制 HTML',
   tool_markdown_copy_done: '已复制',
   tool_markdown_download: '下载 HTML',

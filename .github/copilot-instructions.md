@@ -45,8 +45,13 @@ Purpose: Make AI agents productive immediately in this repo. Keep changes minima
 - URLs: use the apex (non-www) domain for all canonical URLs, `og:url`, and sitemap entries; prefer kebab-case, stable slugs; avoid query-string only content; add canonical link if duplicates possible.
 - Semantics: use proper heading levels (h1 per page, ordered h2/h3), semantic tags (`header`, `main`, `nav`, `section`, `article`, `footer`), and descriptive link text.
 - Performance: ship optimized images (WebP/AVIF fallbacks), lazy-load non-critical media, set `loading="lazy"` on below-the-fold images.
-- Indexing: provide `robots.txt` allowing normal crawl; add `sitemap.xml` when pages list stabilizes; noindex gated/test pages via `meta robots="noindex"`.
-- Internationalization: if multiple languages emerge, add `lang` on `<html>` and `hreflang` links per locale.
+ - Indexing: provide `robots.txt` allowing normal crawl; add `sitemap.xml` when pages list stabilizes; noindex gated/test pages via `meta robots="noindex"`.
+ - Tools: for pages that list or document tools, include a short `description` field placed directly below each tool entry explaining:
+   - what the tool is,
+   - how to use it (brief usage notes), and
+   - the typical scenarios or use-cases where the tool applies.
+  This description should be concise (1–3 sentences), unique per tool, and include relevant keywords to help SEO and user clarity. Keep descriptions suitable for summary display (aim ~160 characters when used as a teaser).
+ - Internationalization: if multiple languages emerge, add `lang` on `<html>` and `hreflang` links per locale.
 
 ### Dev Logs SEO
 - Source Markdown lives in `dev-logs/`.
