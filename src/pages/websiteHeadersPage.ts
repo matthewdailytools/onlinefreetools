@@ -1,68 +1,61 @@
+
 import type { SiteLang } from '../site/i18n/types';
 import { getLangLabel, t, supportedLangs } from '../site/i18n';
-// keep a simple prefixer local to the page so we can respect the default language
+import { renderHeader } from './site/header';
+import { renderSidebar } from './site/sidebar';
+import { renderFooter } from './site/footer';
+import { renderLayout, type HreflangAlternate, escapeHtml } from './site/layout';
 
-const escapeHtml = (s: string) =>
-  s
-    .replaceAll('&', '&amp;')
-    .replaceAll('<', '&lt;')
-    .replaceAll('>', '&gt;')
-    .replaceAll('"', '&quot;')
-    .replaceAll("'", '&#39;');
 
 export const renderWebsiteHeadersPage = (lang: SiteLang, defaultLang: SiteLang) => {
+  const withLangPrefix = (code: SiteLang, pathname: string) => {
+    const safe = pathname.startsWith('/') ? pathname : `/${pathname}`;
+    return code === defaultLang ? safe : `/${code}${safe}`;
+  };
+
+  const canonicalPath = withLangPrefix(lang, '/tools/website-headers');
+  const title = `${t(lang, 'tool_headers_title')} | ${t(lang, 'brand')}`;
+  const description = t(lang, 'tool_headers_description');
+  const article = t(lang, 'tool_headers_article');
+
+  const navItems = [
+    { href: withLangPrefix(lang, '/', defaultLang), label: t(lang, 'nav_home') },
+    { href: withLangPrefix(lang, '/#all-tools', defaultLang), label: t(lang, 'nav_tools') },
+    { href: '/devlogs/', label: t(lang, 'nav_devlogs') },
+  ];
+
   const withExplicitLangPrefix = (code: SiteLang, pathname: string) => {
     const safe = pathname.startsWith('/') ? pathname : `/${pathname}`;
-    return (code === defaultLang ? safe : `/${code}${safe}`).replace(/\/{2,}/g, '/');
+    return `/${code}${safe}`.replace(/\/{2,}/g, '/');
   };
-  const title = t(lang, 'tool_headers_title');
-  const description = t(lang, 'tool_headers_description');
+  const langAlternates: Record<string, string> = Object.fromEntries(
+    (supportedLangs || []).map((code) => [code, withExplicitLangPrefix(code, '/tools/website-headers')])
+  );
 
-  const otherLangLinks = supportedLangs
-    .map((code) => {
-      const href = withExplicitLangPrefix(code, '/tools/website-headers');
-      const label = getLangLabel(code);
-      if (code === lang) {
-        return `<li><span class="dropdown-item active" aria-current="true">${label}</span></li>`;
-      }
-      return `<li><a class="dropdown-item" href="${href}">${label}</a></li>`;
-    })
-    .join('');
+  const alternates: HreflangAlternate[] = (supportedLangs || []).map((code) => ({
+    lang: code,
+    href: `https://onlinefreetools.org${withLangPrefix(code, '/tools/website-headers', defaultLang)}`,
+  }));
 
-  return `<!doctype html>
-<html lang="${lang}">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>${escapeHtml(title)} | ${escapeHtml(t(lang, 'brand'))}</title>
-  <meta name="description" content="${escapeHtml(description)}" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-<body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-    <div class="container">
-      <a class="navbar-brand fw-semibold" href="${withExplicitLangPrefix(lang, '/')}">${escapeHtml(t(lang, 'brand'))}</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="topNav">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link" href="${withExplicitLangPrefix(lang, '/')}">${escapeHtml(t(lang, 'nav_home'))}</a></li>
-          <li class="nav-item"><a class="nav-link" href="${withExplicitLangPrefix(lang, '/devlogs/')}">${escapeHtml(t(lang, 'nav_devlogs'))}</a></li>
-        </ul>
-        <div class="dropdown">
-          <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            ${escapeHtml(getLangLabel(lang))}
-          </button>
-          <ul class="dropdown-menu dropdown-menu-end">${otherLangLinks}</ul>
-        </div>
-      </div>
-    </div>
-  </nav>
+  const headerHtml = renderHeader({
+    lang,
+    brandHref: withLangPrefix(lang, '/', defaultLang),
+    navItems,
+    enabledLangs: supportedLangs,
+    langAlternates,
+  });
 
-  <main class="container py-4">
-    <div class="mb-3">
-      <h1 class="h4 mb-1">${escapeHtml(title)}</h1>
+  const sidebarHtml = renderSidebar({
+    title: t(lang, 'nav_tools'),
+    items: [{ href: '#website-headers', label: t(lang, 'tool_headers_title') }],
+    id: 'toolNav',
+  });
+
+  const footerHtml = renderFooter({ lang });
+
+  const contentHtml = `
+    <div id="website-headers" class="mb-3">
+      <h1 class="h4 mb-1">${escapeHtml(t(lang, 'tool_headers_title'))}</h1>
       <p class="text-muted mb-0">${escapeHtml(description)}</p>
     </div>
 
@@ -95,11 +88,10 @@ export const renderWebsiteHeadersPage = (lang: SiteLang, defaultLang: SiteLang) 
     </div>
 
     <div class="mt-4">
-      <p class="small text-muted mb-0">${escapeHtml(t(lang, 'tool_headers_article'))}</p>
-    </div>
-  </main>
+      <p class="small text-muted mb-0">${escapeHtml(article)}</p>
+    </div>`;
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  const extraBodyHtml = `
   <script>
     const form = document.getElementById('form');
     const statusEl = document.getElementById('status');
@@ -125,7 +117,22 @@ export const renderWebsiteHeadersPage = (lang: SiteLang, defaultLang: SiteLang) 
         statusEl.textContent = '${escapeHtml(t(lang, 'error_prefix'))}' + (err && err.message ? err.message : String(err));
       }
     });
-  </script>
-</body>
-</html>`;
+  </script>`;
+
+  return renderLayout({
+    lang,
+    title,
+    description,
+    canonicalPath,
+    ogImageUrl: 'https://onlinefreetools.org/og-image.png',
+    ogType: 'website',
+    alternates,
+    headerHtml,
+    sidebarHtml,
+    contentHtml,
+    footerHtml,
+    extraBodyHtml,
+    includeSidebarToggleScript: true,
+    sidebarAutoCloseSelector: '#toolNav a',
+  });
 };
