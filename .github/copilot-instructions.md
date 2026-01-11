@@ -42,7 +42,7 @@ Purpose: Make AI agents productive immediately in this repo. Keep changes minima
 ## SEO Defaults
 - HTML head: include unique `<title>`, `<meta name="description">` (120–160 chars), `<meta name="viewport" content="width=device-width,initial-scale=1">`.
 - Social cards: set Open Graph/Twitter tags (`og:title`, `og:description`, `og:url`, `og:image` minimal 1200x630, `twitter:card=summary_large_image`).
-- URLs: prefer kebab-case, stable slugs; avoid query-string only content; add canonical link if duplicates possible.
+- URLs: use the apex (non-www) domain for all canonical URLs, `og:url`, and sitemap entries; prefer kebab-case, stable slugs; avoid query-string only content; add canonical link if duplicates possible.
 - Semantics: use proper heading levels (h1 per page, ordered h2/h3), semantic tags (`header`, `main`, `nav`, `section`, `article`, `footer`), and descriptive link text.
 - Performance: ship optimized images (WebP/AVIF fallbacks), lazy-load non-critical media, set `loading="lazy"` on below-the-fold images.
 - Indexing: provide `robots.txt` allowing normal crawl; add `sitemap.xml` when pages list stabilizes; noindex gated/test pages via `meta robots="noindex"`.

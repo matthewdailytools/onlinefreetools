@@ -5,8 +5,8 @@ const languages = [
 
 export const siteConfig = {
   brand: 'Online Free Tools',
-  baseUrl: process.env.SITE_BASE_URL || 'https://www.onlinefreetools.org',
-  ogImage: process.env.SITE_OG_IMAGE || 'https://www.onlinefreetools.org/og-image.png',
+  baseUrl: process.env.SITE_BASE_URL || 'https://onlinefreetools.org',
+  ogImage: process.env.SITE_OG_IMAGE || 'https://onlinefreetools.org/og-image.png',
   defaultLang: (process.env.SITE_DEFAULT_LANG || 'en').trim(),
   languages,
   enabledLangs: (() => {

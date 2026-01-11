@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>迁移日志目录并添加入口 | 开发日志</title>
-  <meta name="description" content="迁移日志目录并添加入口" />
-  <link rel="canonical" href="https://onlinefreetools.org/zh/devlogs/2026-01-09-%E8%BF%81%E7%A7%BB%E6%97%A5%E5%BF%97%E7%9B%AE%E5%BD%95%E5%B9%B6%E6%B7%BB%E5%8A%A0%E5%85%A5%E5%8F%A3.html" />
-  <meta property="og:title" content="迁移日志目录并添加入口 | 开发日志" />
-  <meta property="og:description" content="迁移日志目录并添加入口" />
+  <title>在 Cloudflare 控制台配置将 www 域名 301 重定向到裸域（非 www）。 | 开发日志</title>
+  <meta name="description" content="在 Cloudflare 控制台配置将 www 域名 301 重定向到裸域（非 www）。" />
+  <link rel="canonical" href="https://onlinefreetools.org/zh/devlogs/2026-01-11-10-55-cloudflare-www-301-to-apex.html" />
+  <meta property="og:title" content="在 Cloudflare 控制台配置将 www 域名 301 重定向到裸域（非 www）。 | 开发日志" />
+  <meta property="og:description" content="在 Cloudflare 控制台配置将 www 域名 301 重定向到裸域（非 www）。" />
   <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://onlinefreetools.org/zh/devlogs/2026-01-09-%E8%BF%81%E7%A7%BB%E6%97%A5%E5%BF%97%E7%9B%AE%E5%BD%95%E5%B9%B6%E6%B7%BB%E5%8A%A0%E5%85%A5%E5%8F%A3.html" />
+  <meta property="og:url" content="https://onlinefreetools.org/zh/devlogs/2026-01-11-10-55-cloudflare-www-301-to-apex.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/devlogs/2026-01-09-%E8%BF%81%E7%A7%BB%E6%97%A5%E5%BF%97%E7%9B%AE%E5%BD%95%E5%B9%B6%E6%B7%BB%E5%8A%A0%E5%85%A5%E5%8F%A3.html" />
-  <link rel="alternate" hreflang="en" href="https://onlinefreetools.org/devlogs/2026-01-09-%E8%BF%81%E7%A7%BB%E6%97%A5%E5%BF%97%E7%9B%AE%E5%BD%95%E5%B9%B6%E6%B7%BB%E5%8A%A0%E5%85%A5%E5%8F%A3.html" />
+  <link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/devlogs/2026-01-11-10-55-cloudflare-www-301-to-apex.html" />
+  <link rel="alternate" hreflang="en" href="https://onlinefreetools.org/devlogs/2026-01-11-10-55-cloudflare-www-301-to-apex.html" />
   
   <script>
     (function () {
@@ -95,7 +95,7 @@
       <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
         中文
       </button>
-      <ul class="dropdown-menu dropdown-menu-end"><li><span class="dropdown-item active" aria-current="true">中文</span></li><li><a class="dropdown-item" href="/en/devlogs/2026-01-09-迁移日志目录并添加入口.html">English</a></li></ul>
+      <ul class="dropdown-menu dropdown-menu-end"><li><span class="dropdown-item active" aria-current="true">中文</span></li><li><a class="dropdown-item" href="/en/devlogs/2026-01-11-10-55-cloudflare-www-301-to-apex.html">English</a></li></ul>
     </div>
           </div>
         </div>
@@ -111,24 +111,48 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">迁移日志目录并添加入口 | 开发日志</h1>
+          <h1 class="h4 mb-0">在 Cloudflare 控制台配置将 www 域名 301 重定向到裸域（非 www）。 | 开发日志</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/zh/devlogs/">返回日志清单</a>
         </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>日期：2026年1月9日
-摘要：迁移日志目录并添加入口</p>
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>日期：2026年1月11日10时55分
+摘要：在 Cloudflare 控制台配置将 www 域名 301 重定向到裸域（非 www）。</p>
 <p>【question】
-将开发日志文件夹移到public中，在菜单增加开发日志入口</p>
-<p>【try to solve】</p>
+how cloudfare setting: www domain 301 redirect to none www domain</p>
+<p>【try to solve】
+推荐用 Cloudflare Redirect Rules（最直接），把 <code>www.example.com</code> 永久重定向到 <code>example.com</code>，并保留路径与查询参数。</p>
+<p>前置检查</p>
 <ul>
-<li>已将日志目录移动到 <code>public/dev-logs/</code>。</li>
-<li>在首页导航新增“开发日志”入口指向 <code>/dev-logs/</code>。</li>
-<li>更新 <code>.github/copilot-instructions.md</code> 以反映新日志路径。</li>
+<li>DNS：<code>www</code> 需要有记录（通常 <code>CNAME www -&gt; example.com</code> 或 <code>A/AAAA</code>），并且建议打开代理（橙云），这样重定向规则能生效。</li>
+<li>SSL/TLS：确保站点可用 HTTPS（Cloudflare 里通常选 Full 或 Full (strict)）。</li>
 </ul>
-<p>【执行操作】</p>
+<p>方案 A：Redirect Rules（推荐）
+1）进入 Cloudflare Dashboard -&gt; 选择你的站点 -&gt; Rules -&gt; Redirect Rules。
+2）Create rule。
+3）When incoming requests match...</p>
 <ul>
-<li>移动日志目录至 <code>public/dev-logs/</code></li>
-<li>更新 <code>public/index.html</code> 添加导航入口</li>
-<li>更新 <code>.github/copilot-instructions.md</code></li>
+<li>Field 选 <code>Hostname</code></li>
+<li>Operator 选 <code>equals</code></li>
+<li>Value 填 <code>www.example.com</code>
+4）Then...</li>
+<li>Action 选 <code>Static redirect</code></li>
+<li>URL 填 <code>https://example.com/$1</code></li>
+<li>Status code 选 <code>301</code></li>
+<li>打开 “Preserve query string”（或等价选项）</li>
+<li>如果有 “Preserve path”/“Dynamic” 选项：确保会把原始 path 拼到目标上（常见写法是用 <code>$1</code> 表示原 path；不同 UI 版本字段名略有差异，以“保留路径”为准）。
+5）保存并把规则放在较靠前的位置（优先于其它重写/重定向规则）。</li>
+</ul>
+<p>方案 B：Bulk Redirects（可选，适合多条映射）
+1）Rules -&gt; Bulk Redirects -&gt; Create。
+2）建一个 redirect list：</p>
+<ul>
+<li>Source：<code>http://www.example.com/*</code> 与 <code>https://www.example.com/*</code></li>
+<li>Target：<code>https://example.com/$1</code></li>
+<li>Status：301
+3）创建 Bulk Redirect rule 并启用。</li>
+</ul>
+<p>快速自测</p>
+<ul>
+<li>访问 <code>https://www.example.com/some/path?x=1</code> 应 301 到 <code>https://example.com/some/path?x=1</code>。</li>
 </ul>
 </article>
       </section>

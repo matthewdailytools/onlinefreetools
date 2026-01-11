@@ -2,7 +2,7 @@
 
 ## Overview / 项目简介
 - Learning project for building and iterating on online utilities; updates are irregular by design.
-- Live domain: https://www.onlinefreetools.org
+- Live domain: https://onlinefreetools.org
 - Runs on Cloudflare (Pages + Workers) with Wrangler for local dev and deploy.
 
 ## Getting Started / 快速开始
