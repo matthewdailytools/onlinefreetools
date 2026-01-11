@@ -1,5 +1,5 @@
 import type { SiteLang } from '../../site/i18n';
-import { t } from '../../site/i18n';
+import { getLangLabel, t } from '../../site/i18n';
 import { escapeHtml } from './layout';
 
 type NavItem = { href: string; label: string };
@@ -23,7 +23,7 @@ export const renderHeader = (opts: {
 		? enabled
 				.map((code) => {
 					const href = code === opts.lang ? null : opts.langAlternates[code];
-					const label = code === 'zh' ? '中文' : 'English';
+					const label = getLangLabel(code);
 					if (!href) {
 						return `<li><span class="dropdown-item active" aria-current="true">${escapeHtml(label)}</span></li>`;
 					}
@@ -32,7 +32,7 @@ export const renderHeader = (opts: {
 				.join('')
 		: '';
 
-	const currentLabel = opts.lang === 'zh' ? '中文' : 'English';
+	const currentLabel = getLangLabel(opts.lang);
 
 	return `
   <header>

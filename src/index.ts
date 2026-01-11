@@ -18,6 +18,8 @@ type Env = {
 // Start a Hono app
 const app = new Hono<{ Bindings: Env }>();
 
+const DEFAULT_LANGS: SiteLang[] = ['en', 'zh', 'es', 'ar', 'pt', 'id', 'fr', 'ja', 'ru', 'de'];
+
 const parseLangList = (raw: string | undefined) => {
 	const items = String(raw || "")
 		.split(",")
@@ -30,7 +32,7 @@ const getEnabledLangs = (env: Env): SiteLang[] => {
 	const list = parseLangList(env.SITE_LANGS);
 	const enabled = list.filter((x) => isSupportedLang(x)) as SiteLang[];
 	const fallback = getFallbackLang(env);
-	const out = Array.from(new Set([...(enabled.length ? enabled : (["zh", "en"] as SiteLang[])), fallback]));
+	const out = Array.from(new Set([...(enabled.length ? enabled : DEFAULT_LANGS), fallback]));
 	return out as SiteLang[];
 };
 
@@ -126,21 +128,16 @@ app.get("/", async (c) => {
 	return res;
 });
 
-app.get("/en", (c) => c.redirect("/en/", 308));
-app.get("/en/", async (c) => {
-	const accept = c.req.header("accept") || "";
-	if (!accept.includes("text/html")) return c.notFound();
-	const res = await fetchAsset(c, "/_pages/en/index.html");
-	return res;
-});
-
-app.get("/zh", (c) => c.redirect("/zh/", 308));
-app.get("/zh/", async (c) => {
-	const accept = c.req.header("accept") || "";
-	if (!accept.includes("text/html")) return c.notFound();
-	const res = await fetchAsset(c, "/_pages/zh/index.html");
-	return res;
-});
+// Localized home pages are served from assets at `/_pages/{lang}/index.html`.
+for (const code of DEFAULT_LANGS) {
+	app.get(`/${code}`, (c) => c.redirect(`/${code}/`, 308));
+	app.get(`/${code}/`, async (c) => {
+		const accept = c.req.header('accept') || '';
+		if (!accept.includes('text/html')) return c.notFound();
+		const res = await fetchAsset(c, `/_pages/${code}/index.html`);
+		return res;
+	});
+}
 
 app.use("/*", async (c, next) => {
 	const url = new URL(c.req.url);

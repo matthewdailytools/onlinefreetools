@@ -1,6 +1,14 @@
 const languages = [
-  { code: 'zh', label: '中文' },
   { code: 'en', label: 'English' },
+  { code: 'zh', label: '中文' },
+  { code: 'es', label: 'Español' },
+  { code: 'ar', label: 'العربية' },
+  { code: 'pt', label: 'Português' },
+  { code: 'id', label: 'Bahasa Indonesia' },
+  { code: 'fr', label: 'Français' },
+  { code: 'ja', label: '日本語' },
+  { code: 'ru', label: 'Русский' },
+  { code: 'de', label: 'Deutsch' },
 ];
 
 export const siteConfig = {

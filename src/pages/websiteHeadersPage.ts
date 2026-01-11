@@ -1,5 +1,5 @@
-import type { SiteLang } from '../site/i18n';
-import { t, supportedLangs } from '../site/i18n';
+import type { SiteLang } from '../site/i18n/types';
+import { getLangLabel, t, supportedLangs } from '../site/i18n';
 const withExplicitLangPrefix = (lang: SiteLang, pathname: string) => {
   const safe = pathname.startsWith('/') ? pathname : `/${pathname}`;
   return `/${lang}${safe}`.replace(/\/{2,}/g, '/');
@@ -20,7 +20,7 @@ export const renderWebsiteHeadersPage = (lang: SiteLang, defaultLang: SiteLang) 
   const otherLangLinks = supportedLangs
     .map((code) => {
       const href = withExplicitLangPrefix(code, '/tools/website-headers');
-      const label = code === 'zh' ? '中文' : 'English';
+      const label = getLangLabel(code);
       if (code === lang) {
         return `<li><span class="dropdown-item active" aria-current="true">${label}</span></li>`;
       }
@@ -51,7 +51,7 @@ export const renderWebsiteHeadersPage = (lang: SiteLang, defaultLang: SiteLang) 
         </ul>
         <div class="dropdown">
           <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            ${lang === 'zh' ? '中文' : 'English'}
+            ${escapeHtml(getLangLabel(lang))}
           </button>
           <ul class="dropdown-menu dropdown-menu-end">${otherLangLinks}</ul>
         </div>
