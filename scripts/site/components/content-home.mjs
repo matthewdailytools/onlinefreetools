@@ -27,6 +27,7 @@ export const renderHomeContent = ({ lang }) => {
   const toolHeadersHref = withExplicitLangPath(lang, '/tools/website-headers');
   const toolMdHref = withExplicitLangPath(lang, '/tools/markdown-to-html');
   const toolIpHref = withExplicitLangPath(lang, '/tools/ip-address');
+  const toolBmiHref = withExplicitLangPath(lang, '/tools/how-to-calculate-bmi');
 
   const openCta = t(lang, 'home_open');
 
@@ -36,7 +37,7 @@ export const renderHomeContent = ({ lang }) => {
         <h2 class="h5 mb-0">${t(lang, 'home_featured')}</h2>
         <a class="btn btn-sm btn-outline-secondary" href="#all-tools">${t(lang, 'home_view_all')}</a>
       </div>
-      <div class="row row-cols-1 row-cols-md-3 g-3">
+      <div class="row row-cols-1 row-cols-md-4 g-3">
         ${renderPrimaryCard({
           title: t(lang, 'tool_website_headers_title'),
           desc: t(lang, 'tool_website_headers_desc'),
@@ -53,6 +54,12 @@ export const renderHomeContent = ({ lang }) => {
           title: t(lang, 'tool_ip_address_title'),
           desc: t(lang, 'tool_ip_address_desc'),
           href: toolIpHref,
+          cta: openCta,
+        })}
+        ${renderPrimaryCard({
+          title: t(lang, 'tool_bmi_title'),
+          desc: t(lang, 'tool_bmi_description'),
+          href: toolBmiHref,
           cta: openCta,
         })}
       </div>
@@ -73,6 +80,12 @@ export const renderHomeContent = ({ lang }) => {
             title: t(lang, 'tool_markdown_to_html_title'),
             desc: t(lang, 'tool_markdown_to_html_desc'),
             href: toolMdHref,
+            cta: openCta,
+          })}
+          ${renderSecondaryCard({
+            title: t(lang, 'tool_bmi_title'),
+            desc: t(lang, 'tool_bmi_description'),
+            href: toolBmiHref,
             cta: openCta,
           })}
         </div>

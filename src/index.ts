@@ -18,6 +18,7 @@ import {
 import { renderWebsiteHeadersPage } from "./pages/websiteHeadersPage";
 import { renderMarkdownToHtmlPage } from "./pages/markdownToHtmlPage";
 import { renderIpAddressPage } from "./pages/ipAddressPage";
+import { renderHowToCalculateBmiPage } from "./pages/howToCalculateBmiPage";
 import { registerToolPage } from "./site/toolRegistrar";
 import { handleWebsiteHeadersApi } from "./tools/websiteHeaders";
 import { handleIpAddress } from "./endpoints/ipAddress";
@@ -153,6 +154,11 @@ app.get("/tools/markdown-to-html.html", (c) => c.redirect("/tools/markdown-to-ht
 // Register markdown-to-html page via registrar
 registerToolPage(app as any, 'markdown-to-html', (lang, defaultLang, enabled) =>
 	renderMarkdownToHtmlPage({ lang, defaultLang, enabledLangs: enabled })
+);
+
+// Register how-to-calculate-bmi page via registrar
+registerToolPage(app as any, 'how-to-calculate-bmi', (lang, defaultLang, enabled) =>
+	renderHowToCalculateBmiPage({ lang, defaultLang, enabledLangs: enabled })
 );
 
 // Catch-all (GET): perform language negotiation before falling back to static assets.
