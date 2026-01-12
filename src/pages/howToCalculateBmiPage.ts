@@ -172,6 +172,44 @@ export const renderHowToCalculateBmiPage = (opts: {
     .normal { background-color: #d1e7dd; color: #0f5132; }
     .overweight { background-color: #fff3cd; color: #856404; }
     .obese { background-color: #f8d7da; color: #721c24; }
+    
+    .unit-toggle {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    
+    .unit-toggle button {
+      background-color: #e9ecef;
+      border: 1px solid #ced4da;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+    
+    .unit-toggle button.active {
+      background-color: #0d6efd;
+      color: white;
+    }
+    
+    .unit-toggle button:first-child {
+      border-radius: 8px 0 0 8px;
+      border-right: none;
+    }
+    
+    .unit-toggle button:last-child {
+      border-radius: 0 8px 8px 0;
+    }
+    
+    .bmi-form-row {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+    
+    .bmi-form-col {
+      flex: 1;
+    }
   </style>`;
 
 	const contentHtml = `
@@ -181,29 +219,78 @@ export const renderHowToCalculateBmiPage = (opts: {
     </div>
     
     <div class="bmi-card">
+      <div class="unit-toggle">
+        <button id="metricBtn" class="active">${t(opts.lang, 'bmi_metric_units') || 'Metric Units'}</button>
+        <button id="imperialBtn">${t(opts.lang, 'bmi_imperial_units') || 'Imperial Units'}</button>
+      </div>
+      
       <form id="bmiInputForm" class="mb-3">
-        <div class="bmi-form-group">
-          <label for="bmiWeight" class="bmi-form-label">${escapeHtml(t(opts.lang, 'tool_bmi_weight_label'))}</label>
-          <input 
-            type="number" 
-            id="bmiWeight" 
-            class="bmi-input" 
-            min="1" 
-            step="any" 
-            required 
-            placeholder="${escapeHtml(t(opts.lang, 'tool_bmi_weight_placeholder'))}">
+        <div id="metricFields">
+          <div class="bmi-form-group">
+            <label for="bmiWeight" class="bmi-form-label">${escapeHtml(t(opts.lang, 'tool_bmi_weight_label'))}</label>
+            <input 
+              type="number" 
+              id="bmiWeight" 
+              class="bmi-input" 
+              min="1" 
+              step="any" 
+              required 
+              placeholder="${escapeHtml(t(opts.lang, 'tool_bmi_weight_placeholder'))}">
+          </div>
+          
+          <div class="bmi-form-group">
+            <label for="bmiHeight" class="bmi-form-label">${escapeHtml(t(opts.lang, 'tool_bmi_height_label'))}</label>
+            <input 
+              type="number" 
+              id="bmiHeight" 
+              class="bmi-input" 
+              min="1" 
+              step="any" 
+              required 
+              placeholder="${escapeHtml(t(opts.lang, 'tool_bmi_height_placeholder'))}">
+          </div>
         </div>
         
-        <div class="bmi-form-group">
-          <label for="bmiHeight" class="bmi-form-label">${escapeHtml(t(opts.lang, 'tool_bmi_height_label'))}</label>
-          <input 
-            type="number" 
-            id="bmiHeight" 
-            class="bmi-input" 
-            min="1" 
-            step="any" 
-            required 
-            placeholder="${escapeHtml(t(opts.lang, 'tool_bmi_height_placeholder'))}">
+        <div id="imperialFields" style="display: none;">
+          <div class="bmi-form-row">
+            <div class="bmi-form-col">
+              <label for="bmiWeightLbs" class="bmi-form-label">${t(opts.lang, 'bmi_weight_lbs') || 'Weight (lbs)'}</label>
+              <input 
+                type="number" 
+                id="bmiWeightLbs" 
+                class="bmi-input" 
+                min="1" 
+                step="any" 
+                required 
+                placeholder="${t(opts.lang, 'bmi_weight_lbs_placeholder') || 'Weight in lbs'}">
+            </div>
+            
+            <div class="bmi-form-col">
+              <label for="bmiHeightFt" class="bmi-form-label">${t(opts.lang, 'bmi_height_ft') || 'Height (ft)'}</label>
+              <input 
+                type="number" 
+                id="bmiHeightFt" 
+                class="bmi-input" 
+                min="0" 
+                max="9" 
+                step="0.1" 
+                required 
+                placeholder="${t(opts.lang, 'bmi_height_ft_placeholder') || 'Feet'}">
+            </div>
+          </div>
+          
+          <div class="bmi-form-group">
+            <label for="bmiHeightIn" class="bmi-form-label">${t(opts.lang, 'bmi_height_in') || 'Height (in)'}</label>
+            <input 
+              type="number" 
+              id="bmiHeightIn" 
+              class="bmi-input" 
+              min="0" 
+              max="11.99" 
+              step="0.1" 
+              required 
+              placeholder="${t(opts.lang, 'bmi_height_in_placeholder') || 'Inches'}">
+          </div>
         </div>
         
         <button type="submit" class="bmi-btn">${escapeHtml(t(opts.lang, 'tool_bmi_calculate'))}</button>
@@ -213,6 +300,7 @@ export const renderHowToCalculateBmiPage = (opts: {
         <div>Your BMI</div>
         <div id="bmiResultValue" class="bmi-result-value"></div>
         <div id="bmiResultCategory" class="bmi-result-category"></div>
+        <div id="bmiInterpretation" class="mt-2"></div>
       </div>
     </div>
     
@@ -243,47 +331,97 @@ export const renderHowToCalculateBmiPage = (opts: {
 
 	const extraBodyHtml = `
   <script>
+    const metricBtn = document.getElementById('metricBtn');
+    const imperialBtn = document.getElementById('imperialBtn');
+    const metricFields = document.getElementById('metricFields');
+    const imperialFields = document.getElementById('imperialFields');
     const bmiForm = document.getElementById('bmiInputForm');
     const bmiWeight = document.getElementById('bmiWeight');
     const bmiHeight = document.getElementById('bmiHeight');
+    const bmiWeightLbs = document.getElementById('bmiWeightLbs');
+    const bmiHeightFt = document.getElementById('bmiHeightFt');
+    const bmiHeightIn = document.getElementById('bmiHeightIn');
     const bmiResultContainer = document.getElementById('bmiResultContainer');
     const bmiResultValue = document.getElementById('bmiResultValue');
     const bmiResultCategory = document.getElementById('bmiResultCategory');
+    const bmiInterpretation = document.getElementById('bmiInterpretation');
+    
+    // Toggle between metric and imperial units
+    metricBtn.addEventListener('click', function() {
+      metricBtn.classList.add('active');
+      imperialBtn.classList.remove('active');
+      metricFields.style.display = 'block';
+      imperialFields.style.display = 'none';
+    });
+    
+    imperialBtn.addEventListener('click', function() {
+      imperialBtn.classList.add('active');
+      metricBtn.classList.remove('active');
+      metricFields.style.display = 'none';
+      imperialFields.style.display = 'block';
+    });
     
     bmiForm.addEventListener('submit', function(e) {
       e.preventDefault();
-      const weight = parseFloat(bmiWeight.value);
-      const height = parseFloat(bmiHeight.value) / 100; // convert cm to meters
       
-      if (!weight || !height) {
-        bmiResultContainer.style.display = 'none';
-        return;
+      let weight, height, bmi;
+      
+      if (metricBtn.classList.contains('active')) {
+        // Metric calculation
+        weight = parseFloat(bmiWeight.value);
+        height = parseFloat(bmiHeight.value) / 100; // convert cm to meters
+        
+        if (!weight || !height) {
+          bmiResultContainer.style.display = 'none';
+          return;
+        }
+        
+        bmi = weight / (height * height);
+      } else {
+        // Imperial calculation
+        weight = parseFloat(bmiWeightLbs.value);
+        const heightFt = parseFloat(bmiHeightFt.value);
+        const heightIn = parseFloat(bmiHeightIn.value);
+        
+        height = (heightFt * 12) + heightIn; // convert feet/inches to total inches
+        
+        if (!weight || !height) {
+          bmiResultContainer.style.display = 'none';
+          return;
+        }
+        
+        bmi = (weight * 703) / (height * height); // Imperial BMI formula
       }
       
-      const bmi = weight / (height * height);
-      const roundedBmi = bmi.toFixed(2);
+      const roundedBmi = bmi.toFixed(1);
       
-      // Determine BMI category
+      // Determine BMI category and interpretation
       let category = '';
       let categoryClass = '';
+      let interpretation = '';
       
       if (bmi < 18.5) {
         category = '${t(opts.lang, 'bmi_underweight') || 'Underweight'}';
         categoryClass = 'underweight';
+        interpretation = '${t(opts.lang, 'bmi_interpretation_underweight') || 'You may be underweight. Consider consulting with a healthcare professional.'}';
       } else if (bmi >= 18.5 && bmi <= 24.9) {
         category = '${t(opts.lang, 'bmi_normal') || 'Normal'}';
         categoryClass = 'normal';
+        interpretation = '${t(opts.lang, 'bmi_interpretation_normal') || 'Congratulations! Your weight appears to be within a healthy range.'}';
       } else if (bmi >= 25 && bmi <= 29.9) {
         category = '${t(opts.lang, 'bmi_overweight') || 'Overweight'}';
         categoryClass = 'overweight';
+        interpretation = '${t(opts.lang, 'bmi_interpretation_overweight') || 'You may be overweight. Consider consulting with a healthcare professional.'}';
       } else {
         category = '${t(opts.lang, 'bmi_obese') || 'Obese'}';
         categoryClass = 'obese';
+        interpretation = '${t(opts.lang, 'bmi_interpretation_obese') || 'You may be obese. Consider consulting with a healthcare professional.'}';
       }
       
       bmiResultValue.textContent = roundedBmi + ' (BMI)';
       bmiResultCategory.textContent = category;
       bmiResultCategory.className = 'bmi-result-category ' + categoryClass;
+      bmiInterpretation.textContent = interpretation;
       bmiResultContainer.style.display = 'block';
     });
   </script>`;
@@ -306,4 +444,3 @@ export const renderHowToCalculateBmiPage = (opts: {
     sidebarAutoCloseSelector: '#toolNav a',
   });
 };
-
