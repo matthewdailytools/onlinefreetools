@@ -3,22 +3,22 @@ import { withExplicitLangPath } from '../config.mjs';
 
 const renderPrimaryCard = ({ title, desc, href, cta }) => `
   <div class="col">
-    <div class="card h-100 shadow-sm">
-      <div class="card-body">
+    <div class="card h-100 shadow-sm d-flex flex-column">
+      <div class="card-body d-flex flex-column">
         <h5 class="card-title">${title}</h5>
-        <p class="card-text text-muted">${desc}</p>
-        <a href="${href}" class="btn btn-primary btn-sm">${cta}</a>
+        <p class="card-text text-muted flex-grow-1">${desc}</p>
+        <a href="${href}" class="mt-auto btn btn-primary btn-sm">${cta}</a>
       </div>
     </div>
   </div>`;
 
 const renderSecondaryCard = ({ title, desc, href, cta }) => `
   <div class="col">
-    <div class="card h-100">
-      <div class="card-body">
+    <div class="card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
         <h6 class="card-title">${title}</h6>
-        <p class="card-text small text-muted">${desc}</p>
-        <a href="${href}" class="btn btn-outline-primary btn-sm">${cta}</a>
+        <p class="card-text small text-muted flex-grow-1">${desc}</p>
+        <a href="${href}" class="mt-auto btn btn-outline-primary btn-sm">${cta}</a>
       </div>
     </div>
   </div>`;
