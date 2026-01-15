@@ -98,10 +98,13 @@ export const renderLayout = ({
     #content { flex: 1; transition: margin-left 0.2s ease; }
     .sidebar-collapsed #sidebar { margin-left: -260px; }
     .sidebar-collapsed #content { margin-left: 0; }
+    @media (min-width: 768px) {
+      .layout:not(.sidebar-collapsed) #content { margin-left: 260px; }
+    }
     @media (max-width: 767.98px) {
       #sidebar {
         position: fixed;
-        z-index: 1040;
+        z-index: 1020;
         top: 56px;
         bottom: 0;
         height: auto;
