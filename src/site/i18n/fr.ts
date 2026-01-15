@@ -85,5 +85,16 @@ const fr: SiteLangDict = {
   fetching_message: 'Récupération de votre adresse IP...',
   what_is_ip_title: 'Qu\'est-ce qu\'une adresse IP ?',
   what_is_ip_content: 'Une adresse de protocole Internet (IP) est une étiquette numérique attribuée à chaque appareil connecté à un réseau informatique. Elle remplit deux fonctions principales : l\'identification de l\'hôte ou de l\'interface réseau et l\'adressage de localisation. Il existe actuellement deux versions en usage : IPv4 et IPv6.',
+    tool_marginal_revenue_title: 'Comment calculer le revenu marginal',
+    tool_marginal_revenue_description:
+      'Calculez le revenu marginal (RM) à partir des variations du revenu total : RM = ΔRT / ΔQ. Processus : entrez deux paires de revenu total/quantité (ou un petit ΔQ), calculez le ratio et interprétez les résultats pour les décisions de tarification. Exemple : utilisez RT à Q et Q+1 pour estimer RM.',
+    tool_marginal_revenue_article:
+      'Quoi : Le revenu marginal est le revenu supplémentaire généré par la vente d\'une unité supplémentaire, calculé comme le changement dans le revenu total par rapport au changement dans la quantité. Utilisation : fournissez deux paires (Q, RT) ou des totaux successifs et cliquez sur calculer. Scénarios : analyse microéconomique, stratégie de tarification et maximisation des profits.',
+    tool_marginal_revenue_example:
+      'Exemple : Q1=100, RT1=2000; Q2=101, RT2=2015 → RM = (2015 - 2000) / (101 - 100) = 15.',
+    tool_marginal_revenue_quantity_label: 'Quantité',
+    tool_marginal_revenue_revenue_label: 'Revenu total',
+    tool_marginal_revenue_calculate: 'Calculer RM',
+    tool_marginal_revenue_result_label: 'Revenu marginal',
 };
 export default fr;

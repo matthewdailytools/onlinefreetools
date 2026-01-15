@@ -85,5 +85,16 @@ const pt: SiteLangDict = {
   fetching_message: 'Obtendo seu endereço IP...',
   what_is_ip_title: 'O que é um endereço IP?',
   what_is_ip_content: 'Um endereço de Protocolo da Internet (IP) é uma etiqueta numérica atribuída a cada dispositivo conectado a uma rede de computadores. Serve duas funções principais: identificação do host ou interface de rede e endereçamento de localização. Existem atualmente duas versões em uso: IPv4 e IPv6.',
+  tool_marginal_revenue_title: 'How to Calculate Marginal Revenue',
+  tool_marginal_revenue_description:
+    'Calculate marginal revenue (MR) from changes in total revenue: MR = ΔTR / ΔQ. Process: enter two total-revenue/quantity pairs (or a small ΔQ), compute the ratio, and interpret results for pricing decisions. Example: use TR at Q and Q+1 to estimate MR.',
+  tool_marginal_revenue_article:
+    'What: Marginal revenue is the additional revenue from selling one more unit, computed as the change in total revenue over the change in quantity. Usage: provide two (Q, TR) pairs or successive totals and click calculate. Scenarios: microeconomic analysis, pricing strategy, and profit-maximization.',
+  tool_marginal_revenue_example:
+    'Example: Q1=100, TR1=2000; Q2=101, TR2=2015 → MR = (2015 - 2000) / (101 - 100) = 15.',
+  tool_marginal_revenue_quantity_label: 'Quantity',
+  tool_marginal_revenue_revenue_label: 'Total Revenue',
+  tool_marginal_revenue_calculate: 'Calculate MR',
+  tool_marginal_revenue_result_label: 'Marginal Revenue',
 };
 export default pt;

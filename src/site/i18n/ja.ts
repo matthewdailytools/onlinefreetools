@@ -85,5 +85,15 @@ const ja: SiteLangDict = {
   fetching_message: 'IPアドレスを取得中...',
   what_is_ip_title: 'IPアドレスとは？',
   what_is_ip_content: 'インターネットプロトコル（IP）アドレスは、コンピューターネットワークに接続された各デバイスに割り当てられる数値ラベルです。主な機能は、ホストまたはネットワークインターフェースの識別と位置アドレス指定です。現在使われているバージョンはIPv4とIPv6の2つです。',
+  tool_marginal_revenue_title: '限界収入の計算方法',
+  tool_marginal_revenue_description:
+    '総収入の変化から限界収入（MR）を計算します：MR = ΔTR / ΔQ。手順：2つの総収入/数量のペア（または小さなΔQ）を入力し、比率を計算して価格決定に活用します。例：Q と Q+1 の TR を使って MR を推定します。',
+  tool_marginal_revenue_article:
+    '概要：限界収入は、1 単位を追加販売したときに得られる追加収入で、総収入の変化を数量の変化で割って求めます。使い方：2 つの (Q, TR) ペアまたは連続する総額を入力して「計算」をクリックします。適用例：ミクロ経済分析、価格戦略、利潤最大化。',
+  tool_marginal_revenue_example: '例：Q1=100, TR1=2000; Q2=101, TR2=2015 → MR = (2015 - 2000) / (101 - 100) = 15。',
+  tool_marginal_revenue_quantity_label: '数量',
+  tool_marginal_revenue_revenue_label: '総収入',
+  tool_marginal_revenue_calculate: 'MRを計算',
+  tool_marginal_revenue_result_label: '限界収入',
 };
 export default ja;

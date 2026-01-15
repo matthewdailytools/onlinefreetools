@@ -65,6 +65,17 @@ const id: SiteLangDict = {
   tool_ip_address_title: 'Apa alamat IP saya?',
   tool_ip_address_description: "Temukan IP publik dan metadata dasar. Proses: server mengembalikan IP peminta (IPv4/IPv6), opsional lookup geo/ISP. Contoh: tampilkan IP dan negara untuk troubleshooting.",
   tool_ip_address_article: 'Apa itu: Temukan alamat IP publik Anda sebagaimana terlihat oleh internet. Alamat IP Anda mengidentifikasi perangkat Anda di jaringan dan digunakan oleh situs web untuk mengirimkan konten. Skenario: akses jarak jauh, pemecahan masalah jaringan, konfigurasi firewall, dan layanan geolokasi.',
+    tool_marginal_revenue_title: 'Cara Menghitung Pendapatan Marginal',
+    tool_marginal_revenue_description:
+      'Hitung pendapatan marginal (MR) dari perubahan dalam total pendapatan: MR = ΔTR / ΔQ. Proses: masukkan dua pasangan total-pendapatan/jumlah (atau ΔQ kecil), hitung rasio, dan interpretasikan hasil untuk keputusan harga. Contoh: gunakan TR pada Q dan Q+1 untuk memperkirakan MR.',
+    tool_marginal_revenue_article:
+      'Apa: Pendapatan marginal adalah pendapatan tambahan dari menjual satu unit lagi, dihitung sebagai perubahan dalam total pendapatan atas perubahan dalam jumlah. Penggunaan: berikan dua pasangan (Q, TR) atau total berturut-turut dan klik hitung. Skenario: analisis mikroekonomi, strategi harga, dan maksimisasi keuntungan.',
+    tool_marginal_revenue_example:
+      'Contoh: Q1=100, TR1=2000; Q2=101, TR2=2015 → MR = (2015 - 2000) / (101 - 100) = 15.',
+    tool_marginal_revenue_quantity_label: 'Jumlah',
+    tool_marginal_revenue_revenue_label: 'Total Pendapatan',
+    tool_marginal_revenue_calculate: 'Hitung MR',
+    tool_marginal_revenue_result_label: 'Pendapatan Marginal',
     tool_squarefeet_title: 'Kalkulator Kaki Persegi — Cara Menghitung Square Feet',
     tool_squarefeet_description: "Hitung luas dalam kaki persegi dari panjang dan lebar. Proses: pilih unit (ft/m/in), konversi ke kaki, hitung luas (L × W), konversi ke sq ft bila perlu. Contoh: 3m × 4m = 12 m² ≈ 129.17 sq ft.",
     tool_squarefeet_article: 'Apa: Hitung luas (kaki persegi) dari panjang dan lebar. Penggunaan: masukkan dimensi dan pilih satuan. Skenario: memperkirakan lantai, countertop, ukuran ruangan, dan pengukuran properti.',

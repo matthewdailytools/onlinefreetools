@@ -70,6 +70,17 @@ const ar: SiteLangDict = {
   fetching_message: 'جارٍ جلب عنوان IP الخاص بك...',
   what_is_ip_title: 'ما هو عنوان IP؟',
   what_is_ip_content: 'عنوان بروتوكول الإنترنت (IP) هو تسمية رقمية تُعطى لكل جهاز متصل بشبكة كمبيوتر. وهو يؤدي وظيفتين أساسيتين: التعرف على المضيف أو واجهة الشبكة وعناوين الموقع. هناك نسختان قيد الاستخدام اليوم: IPv4 و IPv6.',
+  tool_marginal_revenue_title: 'How to Calculate Marginal Revenue',
+  tool_marginal_revenue_description:
+    'Calculate marginal revenue (MR) from changes in total revenue: MR = ΔTR / ΔQ. Process: enter two total-revenue/quantity pairs (or a small ΔQ), compute the ratio, and interpret results for pricing decisions. Example: use TR at Q and Q+1 to estimate MR.',
+  tool_marginal_revenue_article:
+    'What: Marginal revenue is the additional revenue from selling one more unit, computed as the change in total revenue over the change in quantity. Usage: provide two (Q, TR) pairs or successive totals and click calculate. Scenarios: microeconomic analysis, pricing strategy, and profit-maximization.',
+  tool_marginal_revenue_example:
+    'Example: Q1=100, TR1=2000; Q2=101, TR2=2015 → MR = (2015 - 2000) / (101 - 100) = 15.',
+  tool_marginal_revenue_quantity_label: 'Quantity',
+  tool_marginal_revenue_revenue_label: 'Total Revenue',
+  tool_marginal_revenue_calculate: 'Calculate MR',
+  tool_marginal_revenue_result_label: 'Marginal Revenue',
     tool_squarefeet_title: 'حسابة القدم المربعة — كيفية حساب المساحة بالقدم المربع',
     tool_squarefeet_description: "حساب المساحة بالقدم المربعة من الطول والعرض. العملية: اختيار الوحدة (قدم/متر/بوصة) وتحويلها إلى قدم، حساب المساحة (الطول × العرض)، والتحويل إلى قدم مربع عند الحاجة. مثال: 3m × 4m = 12 m² ≈ 129.17 قدم مربع.",
     tool_squarefeet_article: 'ما هذا: احسب المساحة (قدم مربع) من الطول والعرض. الاستخدام: أدخل الأبعاد واختر الوحدات. الحالات: تقدير الأرضيات، أسطح الطاولات، حجم الغرف، وقياسات العقارات.',

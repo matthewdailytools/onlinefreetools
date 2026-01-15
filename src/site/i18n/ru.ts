@@ -70,6 +70,17 @@ const ru: SiteLangDict = {
   fetching_message: 'Получение вашего IP-адреса...',
   what_is_ip_title: 'Что такое IP-адрес?',
   what_is_ip_content: 'IP-адрес (адрес протокола Интернет) — это числовая метка, присваиваемая каждому устройству, подключенному к компьютерной сети. Он выполняет две основные функции: идентификация хоста или сетевого интерфейса и адресация местоположения. В настоящее время используются две версии: IPv4 и IPv6.',
+  tool_marginal_revenue_title: 'How to Calculate Marginal Revenue',
+  tool_marginal_revenue_description:
+    'Calculate marginal revenue (MR) from changes in total revenue: MR = ΔTR / ΔQ. Process: enter two total-revenue/quantity pairs (or a small ΔQ), compute the ratio, and interpret results for pricing decisions. Example: use TR at Q and Q+1 to estimate MR.',
+  tool_marginal_revenue_article:
+    'What: Marginal revenue is the additional revenue from selling one more unit, computed as the change in total revenue over the change in quantity. Usage: provide two (Q, TR) pairs or successive totals and click calculate. Scenarios: microeconomic analysis, pricing strategy, and profit-maximization.',
+  tool_marginal_revenue_example:
+    'Example: Q1=100, TR1=2000; Q2=101, TR2=2015 → MR = (2015 - 2000) / (101 - 100) = 15.',
+  tool_marginal_revenue_quantity_label: 'Quantity',
+  tool_marginal_revenue_revenue_label: 'Total Revenue',
+  tool_marginal_revenue_calculate: 'Calculate MR',
+  tool_marginal_revenue_result_label: 'Marginal Revenue',
   tool_squarefeet_title: 'Калькулятор квадратных футов — как вычислить площадь',
   tool_squarefeet_description: "Вычислить площадь в квадратных футах по длине и ширине. Процесс: выбрать единицы (ft/m/in), преобразовать в футы, вычислить площадь (L × W), при необходимости сконвертировать в sq ft. Пример: 3m × 4m = 12 m² ≈ 129.17 sq ft.",
   tool_squarefeet_article: 'Что это: Рассчитайте площадь (кв. футы) по длине и ширине. Использование: введите размеры и выберите единицы. Сценарии: оценка напольного покрытия, столешниц, размера комнаты и измерений недвижимости.',

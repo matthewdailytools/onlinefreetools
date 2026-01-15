@@ -70,6 +70,17 @@ const es: SiteLangDict = {
   fetching_message: 'Obteniendo tu dirección IP...',
   what_is_ip_title: '¿Qué es una dirección IP?',
   what_is_ip_content: 'Una dirección de Protocolo de Internet (IP) es una etiqueta numérica asignada a cada dispositivo conectado a una red informática. Sirve dos funciones principales: identificación del host o interfaz de red y direccionamiento de ubicación. Actualmente hay dos versiones en uso: IPv4 y IPv6.',
+  tool_marginal_revenue_title: 'How to Calculate Marginal Revenue',
+  tool_marginal_revenue_description:
+    'Calculate marginal revenue (MR) from changes in total revenue: MR = ΔTR / ΔQ. Process: enter two total-revenue/quantity pairs (or a small ΔQ), compute the ratio, and interpret results for pricing decisions. Example: use TR at Q and Q+1 to estimate MR.',
+  tool_marginal_revenue_article:
+    'What: Marginal revenue is the additional revenue from selling one more unit, computed as the change in total revenue over the change in quantity. Usage: provide two (Q, TR) pairs or successive totals and click calculate. Scenarios: microeconomic analysis, pricing strategy, and profit-maximization.',
+  tool_marginal_revenue_example:
+    'Example: Q1=100, TR1=2000; Q2=101, TR2=2015 → MR = (2015 - 2000) / (101 - 100) = 15.',
+  tool_marginal_revenue_quantity_label: 'Quantity',
+  tool_marginal_revenue_revenue_label: 'Total Revenue',
+  tool_marginal_revenue_calculate: 'Calculate MR',
+  tool_marginal_revenue_result_label: 'Marginal Revenue',
     tool_squarefeet_title: 'Calculadora de pies cuadrados — Cómo calcular square feet',
     tool_squarefeet_description: "Calcular área en pies cuadrados a partir de largo y ancho. Proceso: seleccionar unidad (ft/m/in), convertir a pies, calcular área (largo × ancho) y convertir si es necesario. Ejemplo: 3m × 4m = 12 m² ≈ 129.17 sq ft.",
     tool_squarefeet_article: 'Qué es: Calcula el área (pies²) a partir del largo y ancho. Uso: ingresa las dimensiones y selecciona las unidades. Escenarios: estimar pisos, encimeras, tamaño de habitaciones y mediciones inmobiliarias.',

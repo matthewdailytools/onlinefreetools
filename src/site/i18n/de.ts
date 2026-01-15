@@ -70,6 +70,17 @@ const de: SiteLangDict = {
   fetching_message: 'Ihre IP-Adresse wird abgerufen...',
   what_is_ip_title: 'Was ist eine IP-Adresse?',
   what_is_ip_content: 'Eine Internetprotokoll-Adresse (IP-Adresse) ist eine numerische Kennung, die jedem Gerät in einem Computernetzwerk zugewiesen wird. Sie erfüllt zwei Hauptfunktionen: Host- oder Netzwerkschnittstellenidentifikation und Standortadressierung. Es gibt derzeit zwei Versionen: IPv4 und IPv6.',
+  tool_marginal_revenue_title: 'How to Calculate Marginal Revenue',
+  tool_marginal_revenue_description:
+    'Calculate marginal revenue (MR) from changes in total revenue: MR = ΔTR / ΔQ. Process: enter two total-revenue/quantity pairs (or a small ΔQ), compute the ratio, and interpret results for pricing decisions. Example: use TR at Q and Q+1 to estimate MR.',
+  tool_marginal_revenue_article:
+    'What: Marginal revenue is the additional revenue from selling one more unit, computed as the change in total revenue over the change in quantity. Usage: provide two (Q, TR) pairs or successive totals and click calculate. Scenarios: microeconomic analysis, pricing strategy, and profit-maximization.',
+  tool_marginal_revenue_example:
+    'Example: Q1=100, TR1=2000; Q2=101, TR2=2015 → MR = (2015 - 2000) / (101 - 100) = 15.',
+  tool_marginal_revenue_quantity_label: 'Quantity',
+  tool_marginal_revenue_revenue_label: 'Total Revenue',
+  tool_marginal_revenue_calculate: 'Calculate MR',
+  tool_marginal_revenue_result_label: 'Marginal Revenue',
     tool_squarefeet_title: 'Quadratfuß-Rechner — So berechnen Sie square feet',
     tool_squarefeet_description: "Fläche in Quadratfuß aus Länge und Breite berechnen. Ablauf: Einheit wählen (ft/m/in), in Fuß umrechnen, Fläche berechnen (L × W), ggf. in sq ft umrechnen. Beispiel: 3m × 4m = 12 m² ≈ 129,17 sq ft.",
     tool_squarefeet_article: 'Was: Berechnen Sie die Fläche (Quadratfuß) aus Länge und Breite. Verwendung: Maße eingeben und Einheit wählen. Szenarien: Schätzung von Bodenbelägen, Arbeitsplatten, Raumgrößen und Immobilienmessungen.',
