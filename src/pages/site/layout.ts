@@ -157,7 +157,7 @@ export const renderLayout = (opts: {
 </head>
 <body>
   ${opts.headerHtml}
-  <div class="layout sidebar-collapsed" id="layoutRoot">
+  <div class="layout" id="layoutRoot">
     ${opts.sidebarHtml}
     <main id="content" class="p-4">${opts.contentHtml}</main>
   </div>

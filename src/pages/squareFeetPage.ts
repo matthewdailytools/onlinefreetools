@@ -4,6 +4,7 @@ import { renderFooter } from './site/footer';
 import { renderHeader } from './site/header';
 import { renderLayout, type HreflangAlternate, escapeHtml } from './site/layout';
 import { renderSidebar } from './site/sidebar';
+import { TOOL_PAGES } from '../site/tools';
 
 const withLangPrefix = (lang: SiteLang, pathname: string, defaultLang: SiteLang) => {
   const safe = pathname.startsWith('/') ? pathname : `/${pathname}`;
@@ -48,9 +49,11 @@ export const renderSquareFeetPage = (opts: {
     langAlternates,
   });
 
+  const toolLinks = (TOOL_PAGES || []).map((p) => ({ href: withLangPrefix(opts.lang, p.path, opts.defaultLang), label: t(opts.lang, p.i18nKey) }));
+
   const sidebarHtml = renderSidebar({
     title: t(opts.lang, 'nav_tools'),
-    items: [{ href: '#calc', label: t(opts.lang, 'tool_squarefeet_title') }],
+    items: [{ href: '#calc', label: t(opts.lang, 'tool_squarefeet_title') }, ...toolLinks],
     id: 'toolNav',
   });
 

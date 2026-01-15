@@ -2,6 +2,7 @@ import type { SiteLang } from '../site/i18n/types';
 import { getLangLabel, t, supportedLangs } from '../site/i18n';
 import { renderHeader } from './site/header';
 import { renderSidebar } from './site/sidebar';
+import { TOOL_PAGES } from '../site/tools';
 import { renderFooter } from './site/footer';
 import { renderLayout, type HreflangAlternate, escapeHtml } from './site/layout';
 
@@ -43,9 +44,11 @@ export const renderIpAddressPage = (lang: SiteLang, defaultLang: SiteLang) => {
     langAlternates,
   });
 
+  const toolLinks = (TOOL_PAGES || []).map((p) => ({ href: withLangPrefix(lang, p.path), label: t(lang, p.i18nKey) }));
+
   const sidebarHtml = renderSidebar({
     title: t(lang, 'nav_tools'),
-    items: [{ href: '#ip-address', label: t(lang, 'tool_ip_address_title') }],
+    items: [{ href: '#ip-address', label: t(lang, 'tool_ip_address_title') }, ...toolLinks],
     id: 'toolNav',
   });
 

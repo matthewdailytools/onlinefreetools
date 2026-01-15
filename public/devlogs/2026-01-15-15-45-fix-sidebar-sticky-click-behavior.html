@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fix sidebar behavior and layout (sticky header overlap, content margin, click handling) | Dev Logs</title>
+  <meta name="description" content="Fix sidebar behavior and layout (sticky header overlap, content margin, click handling)" />
+  <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-01-15-15-45-fix-sidebar-sticky-click-behavior.html" />
+  <meta property="og:title" content="Fix sidebar behavior and layout (sticky header overlap, content margin, click handling) | Dev Logs" />
+  <meta property="og:description" content="Fix sidebar behavior and layout (sticky header overlap, content margin, click handling)" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-01-15-15-45-fix-sidebar-sticky-click-behavior.html" />
+  <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  
+  
+  <script>
+    (function () {
+      try {
+        var enabled = [];
+        var defaultLang = "en";
+        var fallback = defaultLang;
+        var path = window.location.pathname || '/';
+
+        // If the URL already contains a language prefix (including defaultLang), respect it.
+        var hasPrefix = enabled.some(function (l) {
+          return l && (path === '/' + l || path.indexOf('/' + l + '/') === 0);
+        });
+        if (hasPrefix) return;
+
+        var langs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language])
+          .filter(Boolean)
+          .map(function (x) { return String(x).toLowerCase().split('-')[0]; });
+
+        var picked = null;
+        for (var i = 0; i < langs.length; i++) {
+          if (enabled.indexOf(langs[i]) !== -1) { picked = langs[i]; break; }
+        }
+        if (!picked) picked = enabled.indexOf(fallback) !== -1 ? fallback : (enabled[0] || fallback);
+
+        if (picked === "en") return;
+        var targetPath = path;
+        if (picked !== defaultLang) {
+          targetPath = ('/' + picked + path).replace(/\/{2,}/g, '/');
+        }
+        window.location.replace(targetPath + window.location.search + window.location.hash);
+      } catch (e) {}
+    })();
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body { min-height: 100vh; padding-top: 56px; }
+    .layout { display: flex; min-height: 100vh; }
+    /* Sidebar: desktop - sticky under the fixed header */
+    #sidebar {
+      width: 260px;
+      transition: margin-left 0.2s ease;
+      position: sticky;
+      top: 56px;
+      height: calc(100vh - 56px);
+      overflow-y: auto;
+      background: #f8f9fa;
+      border-right: 1px solid #e5e7eb;
+      z-index: 1020;
+    }
+    #content { flex: 1; transition: margin-left 0.2s ease; }
+    .sidebar-collapsed #sidebar { margin-left: -260px; }
+    .sidebar-collapsed #content { margin-left: 0; }
+    @media (max-width: 767.98px) {
+      #sidebar {
+        position: fixed;
+        z-index: 1020;
+        top: 56px;
+        bottom: 0;
+        height: auto;
+      }
+      .sidebar-collapsed #sidebar { margin-left: -260px; }
+      #content { margin-left: 0; }
+      body { padding-top: 56px; }
+    }
+  </style>
+  
+  
+  
+</head>
+<body>
+  
+  
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom fixed-top">
+      <div class="container-fluid">
+        <button class="btn btn-outline-secondary me-2" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+        <a class="navbar-brand fw-semibold" href="/">Online Free Tools</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="topNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="/">Home</a></li><li class="nav-item"><a class="nav-link" href="/devlogs/">Dev Logs</a></li></ul>
+          <div class="d-flex align-items-center gap-2">
+            
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="layout sidebar-collapsed" id="layoutRoot">
+    
+    <aside id="sidebar" class="bg-light border-end p-3">
+      <h6 class="text-muted text-uppercase">Navigation</h6>
+      <div class="list-group list-group-flush small" id="navList"><a class="list-group-item list-group-item-action" href="/">Home</a><a class="list-group-item list-group-item-action" href="/devlogs/">Dev Logs</a></div>
+    </aside>
+    <main id="content" class="p-4">
+      <section class="mb-3">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h1 class="h4 mb-0">Fix sidebar behavior and layout (sticky header overlap, content margin, click handling) | Dev Logs</h1>
+          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
+        </div>
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-01-15 15:45
+Summary: Fix sidebar behavior and layout (sticky header overlap, content margin, click handling)</p>
+<p>[question]
+重新修正侧边sidebar，目前样式过于简陋，被顶部菜单挡住内容。</p>
+<p>工具页面，sidebar显示的时候，内容页的左边边距过大</p>
+<p>点击sidebar中的链接时候，sidebar自动往上移动，sidebar应该保持所在位置</p>
+<p>[try to solve]
+Performed a series of focused style and behavior fixes to the site&#39;s sidebar to prevent it from being hidden by the header, avoid excessive content shifting, and preserve sidebar scroll position when clicking links.</p>
+<p>Key changes made:</p>
+<ul>
+<li>Made desktop sidebar use <code>position: sticky</code> with <code>top: 56px</code> and <code>height: calc(100vh - 56px)</code> so it sits under the fixed header and scrolls independently.</li>
+<li>Kept mobile behavior as a fixed sliding drawer under the header (<code>position: fixed</code>) and adjusted <code>z-index</code> so the header remains on top.</li>
+<li>Removed an incorrect desktop <code>margin-left</code> rule that caused double-shifting of the content area.</li>
+<li>Implemented improved click handling for sidebar links:<ul>
+<li>Smooth-scroll in-page anchors while preventing default jump behavior so the sidebar does not jump.</li>
+<li>Preserve the sidebar&#39;s <code>scrollTop</code> across the click (restore after a short delay).</li>
+<li>Retain mobile auto-close behavior when appropriate.</li>
+</ul>
+</li>
+<li>Rebuilt the static site to apply changes.</li>
+</ul>
+<p>[actions]</p>
+<ul>
+<li>Modified <code>src/pages/site/layout.ts</code></li>
+<li>Modified <code>scripts/site/layout.mjs</code></li>
+<li>Ran <code>npm run build:site</code> to regenerate <code>public/_pages</code> with the updated CSS/JS</li>
+<li>Created local commits describing the sidebar fixes</li>
+</ul>
+<p>If you want, I can now:</p>
+<ul>
+<li>Capture screenshots of affected pages at key viewport widths and save them to <code>dev-logs/</code> for review, or</li>
+<li>Push the commits and open a PR (please provide the remote/branch preference).</li>
+</ul>
+</article>
+      </section>
+    </main>
+  </div>
+  
+  <footer class="bg-light border-top text-center py-3">
+    <div class="container">
+      <small class="text-muted">Online Free Tools · Learning project · Iterating</small>
+    </div>
+  </footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <script>
+    const layout = document.getElementById('layoutRoot');
+    const toggle = document.getElementById('sidebarToggle');
+    if (layout && toggle) {
+      toggle.addEventListener('click', () => layout.classList.toggle('sidebar-collapsed'));
+      
+    }
+  </script>
+</body>
+</html>
