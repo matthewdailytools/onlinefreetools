@@ -7,7 +7,7 @@ const fr: SiteLangDict = {
   footer_text: 'Online Free Tools · Projet d\'apprentissage · En cours d\'itération',
   tool_headers_title: 'Récupérer les en-têtes de réponse du site web',
   tool_headers_description:
-    "Récupérer les en-têtes HTTP d'une URL côté serveur (HEAD, fallback GET). Processus : envoyer HEAD, suivre les redirections, collecter les en-têtes et bloquer les hôtes privés. Exemple : vérifier CORS, Cache-Control et HSTS pour diagnostiquer les redirections et la configuration CDN.",
+    'Entrez une URL pour récupérer ses en-têtes de réponse HTTP (requête côté serveur).',
   tool_headers_article:
     'Quoi : Récupère et inspecte les en-têtes de réponse HTTP d\'un site web. Utile pour déboguer CORS, la mise en cache, les redirections et vérifier les en-têtes de sécurité ou CDN. Scénarios : débogage développeur, vérifications SEO et vérification de la configuration serveur.',
   url_label: 'URL',
@@ -23,7 +23,7 @@ const fr: SiteLangDict = {
   note_2: 'Pour des raisons de sécurité, les requêtes vers localhost/réseaux privés sont bloquées.',
   tool_markdown_title: 'Markdown → HTML',
   tool_markdown_description:
-    "Convertir Markdown en HTML assaini avec aperçu. Processus : parser CommonMark, assainir le HTML et rendre les blocs de code/listes/liens. Exemple : transformer un article de blog Markdown en HTML prêt à publier.",
+    'Transformez le Markdown en HTML avec aperçu, copie et téléchargement du document complet.',
   tool_markdown_article:
     'Quoi : Convertit le Markdown en HTML nettoyé avec aperçu et options d\'exportation. Utile pour préparer des articles de blog, de la documentation ou partager du contenu rendu. Scénarios : rédaction, aperçus rapides et génération d\'exportations HTML statiques.',
   tool_markdown_copy: 'Copier HTML',
@@ -36,9 +36,9 @@ const fr: SiteLangDict = {
   tool_markdown_placeholder:
     "# Titre\n\nMarkdown basique pris en charge : **gras**, listes et blocs de code.\n\n- Élément 1\n- Élément 2\n\n``js\nconsole.log('Bonjour Markdown');\n```",
   tool_markdown_export_title: 'Exportation Markdown vers HTML',
-  tool_markdown_export_description: "Générer un document HTML complet depuis Markdown, en l'encapsulant dans un template. Étapes : rendre le Markdown, injecter dans le template, ajouter meta/assets et proposer le téléchargement. Exemple : exporter un billet en fichier .html autonome.",
+  tool_markdown_export_description: 'Exportation HTML statique générée à partir de Markdown',
   tool_bmi_title: 'Comment calculer l\'IMC',
-  tool_bmi_description: "Calculer l'IMC : IMC = poids(kg) / (taille(m))^2. Processus : choisir unités, convertir si besoin, calculer IMC et déterminer la catégorie. Exemple : 70kg et 175cm → IMC 22,9 (Normal).",
+  tool_bmi_description: 'Calculez facilement votre Indice de Masse Corporelle (IMC). Saisissez votre poids et votre taille pour obtenir immédiatement votre IMC.',
   tool_bmi_article: 'Quoi : Calculez votre IMC (Indice de Masse Corporelle) pour évaluer si votre poids est santé. Utilisation : Saisissez votre poids et votre taille, cliquez sur calculer. Scénarios : bilans de santé, planification fitness, gestion du poids.',
   tool_bmi_weight_label: 'Poids (kg)',
   tool_bmi_weight_placeholder: 'Entrez votre poids en kilogrammes',
@@ -63,10 +63,10 @@ const fr: SiteLangDict = {
   bmi_interpretation_overweight: 'Vous pourriez être en surpoids. Envisagez de consulter un professionnel de la santé.',
   bmi_interpretation_obese: 'Vous pourriez être obèse. Envisagez de consulter un professionnel de la santé.',
   tool_ip_address_title: 'Quelle est mon adresse IP ?',
-  tool_ip_address_description: "Découvrir votre adresse IP publique et métadonnées. Processus : le serveur renvoie l'IP du client (IPv4/IPv6) et peut effectuer une recherche géo/ISP. Exemple : afficher l'IP et le pays pour le dépannage.",
+  tool_ip_address_description: 'Découvrez votre adresse IP publique en un seul clic.',
   tool_ip_address_article: 'Quoi : Trouvez votre adresse IP publique telle que vue par Internet. Votre adresse IP identifie votre appareil sur le réseau et est utilisée par les sites web pour vous livrer du contenu. Scénarios : accès distant, dépannage réseau, configuration du pare-feu et services de géolocalisation.',
     tool_squarefeet_title: 'Calculateur de pieds carrés — Comment calculer les square feet',
-    tool_squarefeet_description: "Calculer la surface en pieds carrés à partir de longueur et largeur. Processus : sélectionner l'unité (ft/m/in), convertir en pieds, calculer (L × W) et convertir en sq ft. Exemple : 3m × 4m = 12 m² ≈ 129,17 sq ft.",
+    tool_squarefeet_description: 'Calculez la surface en pieds carrés. Saisissez la longueur et la largeur et choisissez les unités.',
     tool_squarefeet_article: 'Quoi : Calculez la surface (pieds²) à partir de la longueur et de la largeur. Utilisation : saisissez les dimensions et sélectionnez les unités. Scénarios : estimation de revêtements de sol, plans de travail, dimensions de pièces et mesures immobilières.',
     tool_squarefeet_length_label: 'Longueur',
     tool_squarefeet_length_placeholder: 'Saisissez la longueur',

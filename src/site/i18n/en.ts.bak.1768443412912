@@ -7,7 +7,7 @@ const en: SiteLangDict = {
   footer_text: 'Online Free Tools · Learning project · Iterating',
   tool_headers_title: 'Fetch Website Response Headers',
   tool_headers_description:
-    "Fetch a URL's HTTP response headers server-side (use HEAD, fall back to GET). Process: send HEAD, follow redirects, collect headers, block private hosts. Example: inspect CORS, Cache-Control, and Strict-Transport-Security headers to debug redirects and CDN settings.",
+    'Enter a URL to fetch its HTTP response headers (server-side request).',
   tool_headers_article:
     'What: Fetch and inspect a website\'s HTTP response headers. Useful for debugging CORS, caching, redirects and verifying security or CDN headers. Scenarios: developer debugging, SEO checks, and verifying server configuration.',
   url_label: 'URL',
@@ -23,7 +23,7 @@ const en: SiteLangDict = {
   note_2: 'For safety, requests to localhost/private networks are blocked.',
   tool_markdown_title: 'Markdown → HTML',
   tool_markdown_description:
-    "Convert Markdown into sanitized HTML with preview. Process: parse CommonMark, sanitize output, and render code blocks/lists/links. Example: transform a blog post Markdown into safe HTML ready for publishing.",
+    'Render Markdown into HTML with preview, copy, and full-document download.',
   tool_markdown_article:
     'What: Convert Markdown into sanitized HTML with preview and export options. Useful for preparing blog posts, documentation, or sharing rendered content. Scenarios: authoring, quick previews, and generating static HTML exports.',
   tool_markdown_copy: 'Copy HTML',
@@ -36,9 +36,9 @@ const en: SiteLangDict = {
   tool_markdown_placeholder:
     "# Title\n\nBasic Markdown supported: **bold**, lists, and code blocks.\n\n- Item 1\n- Item 2\n\n```js\nconsole.log('Hello Markdown');\n```",
   tool_markdown_export_title: 'Markdown to HTML Export',
-  tool_markdown_export_description: "Generate a full HTML document from Markdown including sanitization and template wrapping. Steps: render Markdown, inject into HTML template, add meta and assets, provide download. Example: export a post as a standalone .html file.",
+  tool_markdown_export_description: 'Static HTML export generated from Markdown',
   tool_bmi_title: 'How to Calculate BMI',
-  tool_bmi_description: "Calculate Body Mass Index (BMI) = weight(kg) / (height(m))^2. Process: choose metric/imperial, convert units if needed, compute BMI, map to category. Example: 70kg & 175cm → BMI 22.9 (Normal).",
+  tool_bmi_description: 'Calculate your Body Mass Index (BMI) easily. Enter your weight and height to get your BMI instantly.',
   tool_bmi_article: 'What: Calculate your BMI (Body Mass Index) to assess if your weight is healthy. Usage: Enter your weight and height, click calculate. Scenarios: health checks, fitness planning, and weight management.',
   tool_bmi_weight_label: 'Weight (kg)',
   tool_bmi_weight_placeholder: 'Enter your weight in kilograms',
@@ -63,7 +63,7 @@ const en: SiteLangDict = {
   bmi_interpretation_overweight: 'You may be overweight. Consider consulting with a healthcare professional.',
   bmi_interpretation_obese: 'You may be obese. Consider consulting with a healthcare professional.',
   tool_squarefeet_title: 'Square Feet Calculator — How to Calculate Square Feet',
-  tool_squarefeet_description: "Calculate area in square feet from a length and width. Process: select units (ft/m/in), convert to feet, compute area (length × width), convert units as needed. Example: 3m × 4m = 12 m² ≈ 129.17 sq ft.",
+  tool_squarefeet_description: 'Calculate area in square feet. Enter length and width and choose units to get the result.',
   tool_squarefeet_article: 'What: Calculate the area (square feet) from a length and width. Usage: enter dimensions and select units. Scenarios: estimating flooring, countertops, room sizing, and real estate measurements.',
   tool_squarefeet_length_label: 'Length',
   tool_squarefeet_length_placeholder: 'Enter length',
@@ -78,7 +78,7 @@ const en: SiteLangDict = {
   tool_squarefeet_usage_title: 'Usage',
   tool_squarefeet_usage: 'Use this calculator to quickly estimate areas for flooring, paint, or furniture placement. Enter dimensions in the chosen unit and press Calculate.' ,
   tool_ip_address_title: 'What Is My IP Address?',
-  tool_ip_address_description: "Discover your public IP address and basic metadata. Process: server returns requester IP, optionally look up geolocation/ISP; include IPv4/IPv6 handling. Example: shows IP and country for troubleshooting remote access.",
+  tool_ip_address_description: 'Discover your public IP address with one click.',
   tool_ip_address_article: 'What: Find your public IP address as seen by the internet. Your IP address identifies your device on the network and is used by websites to deliver content. Scenarios: remote access, network troubleshooting, firewall configuration, and geolocation services.',
   ip_label: 'Your IP Address',
   fetch_ip_button: 'Refresh IP',

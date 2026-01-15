@@ -7,7 +7,7 @@ const pt: SiteLangDict = {
   footer_text: 'Online Free Tools · Projeto de aprendizagem · Em iteração',
   tool_headers_title: 'Obter cabeçalhos de resposta do site',
   tool_headers_description:
-    "Buscar headers HTTP de uma URL no servidor (usar HEAD, fallback para GET). Processo: enviar HEAD, seguir redirecionamentos, coletar headers e bloquear hosts privados. Exemplo: inspecionar CORS, Cache-Control e HSTS para depurar redirecionamentos e configuração de CDN.",
+    'Insira uma URL para obter seus cabeçalhos de resposta HTTP (solicitação do lado do servidor).',
   tool_headers_article:
     'O que é: Obtenha e inspecione os cabeçalhos de resposta HTTP de um site. Útil para depurar CORS, cache, redirecionamentos e verificar cabeçalhos de segurança ou CDN. Cenários: depuração de desenvolvedor, verificações de SEO e verificação da configuração do servidor.',
   url_label: 'URL',
@@ -23,7 +23,7 @@ const pt: SiteLangDict = {
   note_2: 'Por segurança, são bloqueadas solicitações para localhost/redes privadas.',
   tool_markdown_title: 'Markdown → HTML',
   tool_markdown_description:
-    "Converter Markdown em HTML sanitizado com pré-visualização. Processo: parsear CommonMark, sanitizar saída e renderizar blocos de código/listas/links. Exemplo: converter um post de blog em HTML pronto para publicação.",
+    'Converta Markdown em HTML com visualização, cópia e download de documento completo.',
   tool_markdown_article:
     'O que é: Converta Markdown em HTML limpo com visualização e opções de exportação. Útil para preparar postagens de blog, documentação ou compartilhar conteúdo renderizado. Cenários: criação de conteúdo, visualizações rápidas e geração de exportações HTML estáticas.',
   tool_markdown_copy: 'Copiar HTML',
@@ -36,9 +36,9 @@ const pt: SiteLangDict = {
   tool_markdown_placeholder:
     "# Título\n\nSuporte básico para Markdown: **negrito**, listas e blocos de código.\n\n- Item 1\n- Item 2\n\n```js\nconsole.log('Olá Markdown');\n```",
   tool_markdown_export_title: 'Exportação Markdown para HTML',
-  tool_markdown_export_description: "Gerar um documento HTML completo a partir do Markdown, incluindo template e metadados. Passos: renderizar, injetar no template, adicionar meta/assets e permitir download. Exemplo: exportar um artigo como .html independente.",
+  tool_markdown_export_description: 'Exportação HTML estática gerada a partir de Markdown',
   tool_bmi_title: 'Como calcular o IMC',
-  tool_bmi_description: "Calcular IMC: IMC = peso(kg) / (altura(m))^2. Processo: escolher unidades, converter se necessário, calcular e mapear para categoria. Exemplo: 70kg e 175cm → IMC 22.9 (Normal).",
+  tool_bmi_description: 'Calcule facilmente seu Índice de Massa Corporal (IMC). Digite seu peso e altura para obter seu IMC instantaneamente.',
   tool_bmi_article: 'O que é: Calcule seu IMC (Índice de Massa Corporal) para avaliar se seu peso está saudável. Uso: Digite seu peso e altura, clique em calcular. Cenários: exames de saúde, planejamento físico, controle de peso.',
   tool_bmi_weight_label: 'Peso (kg)',
   tool_bmi_weight_placeholder: 'Digite seu peso em quilogramas',
@@ -63,10 +63,10 @@ const pt: SiteLangDict = {
   bmi_interpretation_overweight: 'Você pode estar acima do peso. Considere consultar um profissional de saúde.',
   bmi_interpretation_obese: 'Você pode estar com obesidade. Considere consultar um profissional de saúde.',
   tool_ip_address_title: 'Qual é o meu endereço IP?',
-  tool_ip_address_description: "Descobrir o IP público e metadados básicos. Processo: o servidor retorna o IP do solicitante (IPv4/IPv6); opcionalmente buscar geo/ISP. Exemplo: mostrar IP e país para troubleshooting.",
+  tool_ip_address_description: 'Descubra seu endereço IP público com um clique.',
   tool_ip_address_article: 'O que é: Encontre seu endereço IP público conforme visto pela internet. Seu endereço IP identifica seu dispositivo na rede e é usado pelos sites para entregar conteúdo. Cenários: acesso remoto, solução de problemas de rede, configuração de firewall e serviços de geolocalização.',
     tool_squarefeet_title: 'Calculadora de Pés Quadrados — Como Calcular Square Feet',
-    tool_squarefeet_description: "Calcular área em pés quadrados a partir de comprimento e largura. Processo: selecionar unidade (ft/m/in), converter para pés, calcular área (L × W) e converter conforme necessário. Exemplo: 3m × 4m = 12 m² ≈ 129,17 sq ft.",
+    tool_squarefeet_description: 'Calcule a área em pés quadrados. Insira comprimento e largura e escolha as unidades.',
     tool_squarefeet_article: 'O que é: Calcule a área (pés²) a partir de comprimento e largura. Uso: insira as dimensões e selecione as unidades. Cenários: estimativa de piso, bancadas, tamanho de cômodos e medições imobiliárias.',
     tool_squarefeet_length_label: 'Comprimento',
     tool_squarefeet_length_placeholder: 'Insira o comprimento',

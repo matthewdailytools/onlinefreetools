@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>翻译修改建议清单，满足工具页面 SEO 规则（描述应包含计算过程与示例） | Dev Logs</title>
+  <meta name="description" content="翻译修改建议清单，满足工具页面 SEO 规则（描述应包含计算过程与示例）" />
+  <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-01-15-%E7%BF%BB%E8%AF%91%E4%BF%AE%E6%94%B9%E5%BB%BA%E8%AE%AE-SEO.html" />
+  <meta property="og:title" content="翻译修改建议清单，满足工具页面 SEO 规则（描述应包含计算过程与示例） | Dev Logs" />
+  <meta property="og:description" content="翻译修改建议清单，满足工具页面 SEO 规则（描述应包含计算过程与示例）" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-01-15-%E7%BF%BB%E8%AF%91%E4%BF%AE%E6%94%B9%E5%BB%BA%E8%AE%AE-SEO.html" />
+  <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  
+  
+  <script>
+    (function () {
+      try {
+        var enabled = [];
+        var defaultLang = "en";
+        var fallback = defaultLang;
+        var path = window.location.pathname || '/';
+
+        // If the URL already contains a language prefix (including defaultLang), respect it.
+        var hasPrefix = enabled.some(function (l) {
+          return l && (path === '/' + l || path.indexOf('/' + l + '/') === 0);
+        });
+        if (hasPrefix) return;
+
+        var langs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language])
+          .filter(Boolean)
+          .map(function (x) { return String(x).toLowerCase().split('-')[0]; });
+
+        var picked = null;
+        for (var i = 0; i < langs.length; i++) {
+          if (enabled.indexOf(langs[i]) !== -1) { picked = langs[i]; break; }
+        }
+        if (!picked) picked = enabled.indexOf(fallback) !== -1 ? fallback : (enabled[0] || fallback);
+
+        if (picked === "en") return;
+        var targetPath = path;
+        if (picked !== defaultLang) {
+          targetPath = ('/' + picked + path).replace(/\/{2,}/g, '/');
+        }
+        window.location.replace(targetPath + window.location.search + window.location.hash);
+      } catch (e) {}
+    })();
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body { min-height: 100vh; }
+    .layout { display: flex; min-height: 100vh; }
+    #sidebar { width: 260px; transition: margin-left 0.2s ease; }
+    #content { flex: 1; transition: margin-left 0.2s ease; }
+    .sidebar-collapsed #sidebar { margin-left: -260px; }
+    .sidebar-collapsed #content { margin-left: 0; }
+    @media (max-width: 767.98px) {
+      #sidebar {
+        position: fixed;
+        z-index: 1040;
+        top: 56px;
+        bottom: 0;
+        overflow-y: auto;
+        background: #f8f9fa;
+        border-right: 1px solid #e5e7eb;
+      }
+      .sidebar-collapsed #sidebar { margin-left: -260px; }
+      #content { margin-left: 0; }
+      body { padding-top: 56px; }
+    }
+  </style>
+  
+  
+  
+</head>
+<body>
+  
+  
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom fixed-top">
+      <div class="container-fluid">
+        <button class="btn btn-outline-secondary me-2" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+        <a class="navbar-brand fw-semibold" href="/">Online Free Tools</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="topNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="/">Home</a></li><li class="nav-item"><a class="nav-link" href="/devlogs/">Dev Logs</a></li></ul>
+          <div class="d-flex align-items-center gap-2">
+            
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="layout sidebar-collapsed" id="layoutRoot">
+    
+    <aside id="sidebar" class="bg-light border-end p-3">
+      <h6 class="text-muted text-uppercase">Navigation</h6>
+      <div class="list-group list-group-flush small" id="navList"><a class="list-group-item list-group-item-action" href="/">Home</a><a class="list-group-item list-group-item-action" href="/devlogs/">Dev Logs</a></div>
+    </aside>
+    <main id="content" class="p-4">
+      <section class="mb-3">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h1 class="h4 mb-0">翻译修改建议清单，满足工具页面 SEO 规则（描述应包含计算过程与示例） | Dev Logs</h1>
+          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
+        </div>
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-01-15 00:00
+Summary: 翻译修改建议清单，满足工具页面 SEO 规则（描述应包含计算过程与示例）</p>
+<p>[question]
+用户要求：默认规则修改：工具页面 SEO 要求，描述里面需要包含工具计算过程和逻辑案例。</p>
+<p>[try to solve]
+以下为针对仓库中多语言 <code>src/site/i18n/*.ts</code> 中常见 <code>tool_*_description</code> 条目的完整翻译修改建议列表。
+每条建议包含：目标键名、建议描述（含计算/处理步骤与示例）。请审阅并应用到对应语言文件。</p>
+<hr>
+<p>English (src/site/i18n/en.ts)</p>
+<ul>
+<li><p>tool_headers_description:
+&quot;Fetch a URL&#39;s HTTP response headers server-side (use HEAD, fall back to GET). Process: send HEAD, follow redirects, collect headers, block private hosts. Example: inspect CORS, Cache-Control, and Strict-Transport-Security headers to debug redirects and CDN settings.&quot;</p>
+</li>
+<li><p>tool_markdown_description:
+&quot;Convert Markdown into sanitized HTML with preview. Process: parse CommonMark, sanitize output, and render code blocks/lists/links. Example: transform a blog post Markdown into safe HTML ready for publishing.&quot;</p>
+</li>
+<li><p>tool_markdown_export_description:
+&quot;Generate a full HTML document from Markdown including sanitization and template wrapping. Steps: render Markdown, inject into HTML template, add meta and assets, provide download. Example: export a post as a standalone .html file.&quot;</p>
+</li>
+<li><p>tool_bmi_description:
+&quot;Calculate Body Mass Index (BMI) = weight(kg) / (height(m))^2. Process: choose metric/imperial, convert units if needed, compute BMI, map to category. Example: 70kg &amp; 175cm → BMI 22.9 (Normal).&quot;</p>
+</li>
+<li><p>tool_ip_address_description:
+&quot;Discover your public IP address and basic metadata. Process: server returns requester IP, optionally look up geolocation/ISP; include IPv4/IPv6 handling. Example: shows IP and country for troubleshooting remote access.&quot;</p>
+</li>
+<li><p>tool_squarefeet_description:
+&quot;Calculate area in square feet from a length and width. Process: select units (ft/m/in), convert to feet, compute area (length × width), convert units as needed. Example: 3m × 4m = 12 m² ≈ 129.17 sq ft.&quot;</p>
+</li>
+</ul>
+<hr>
+<p>中文 (src/site/i18n/zh.ts)</p>
+<ul>
+<li><p>tool_headers_description:
+&quot;通过服务器端请求获取网址的 HTTP 响应 Header（优先 HEAD，遇 405/501 回退到 GET）。流程：发送 HEAD、跟随重定向、收集头部、屏蔽内网主机。示例：检查 CORS、Cache-Control、Strict-Transport-Security 以排查重定向与 CDN 配置。&quot;</p>
+</li>
+<li><p>tool_markdown_description:
+&quot;将 Markdown 转换为已净化的 HTML 并预览。流程：解析 CommonMark、清理不安全标签、渲染代码块/列表/链接。示例：把博客文章 Markdown 转为可发布的安全 HTML。&quot;</p>
+</li>
+<li><p>tool_markdown_export_description:
+&quot;把 Markdown 导出为完整 HTML 文档并打包（含模板、meta 与资源）。步骤：渲染 Markdown、注入模板、添加 meta、提供下载。示例：导出为独立的 .html 博客文章。&quot;</p>
+</li>
+<li><p>tool_bmi_description:
+&quot;计算 BMI：BMI = 体重(kg) / (身高(m))^2。流程：选择公制/英制，必要时换算单位，计算数值并判定分类。示例：70kg 与 175cm → BMI 22.9（正常）。&quot;</p>
+</li>
+<li><p>tool_ip_address_description:
+&quot;查询公网 IP 及基础元信息。流程：服务器返回请求来源 IP，支持 IPv4/IPv6，并可做简单地理/ISP 查询。示例：显示 IP 与国家，便于远程访问与故障排查。&quot;</p>
+</li>
+<li><p>tool_squarefeet_description:
+&quot;根据长度与宽度计算平方英尺面积。流程：选择单位（英尺/米/英寸）、必要时换算为英尺、计算面积（长×宽）、并转换为平方英尺。示例：3m × 4m = 12 m² ≈ 129.17 平方英尺。&quot;</p>
+</li>
+</ul>
+<hr>
+<p>Español (src/site/i18n/es.ts)</p>
+<ul>
+<li><p>tool_headers_description:
+&quot;Obtener los encabezados HTTP de una URL desde el servidor (usar HEAD, fallback a GET). Proceso: enviar HEAD, seguir redirecciones, recopilar encabezados y bloquear hosts privados. Ejemplo: inspeccionar CORS, Cache-Control y HSTS para depurar redirecciones y configuración CDN.&quot;</p>
+</li>
+<li><p>tool_markdown_description:
+&quot;Convertir Markdown a HTML sanitizado con vista previa. Proceso: parsear CommonMark, sanitizar salida y renderizar bloques de código/listas/enlaces. Ejemplo: convertir un post de blog a HTML listo para publicar.&quot;</p>
+</li>
+<li><p>tool_markdown_export_description:
+&quot;Generar un documento HTML completo desde Markdown, con plantilla y metadatos. Pasos: renderizar Markdown, inyectar en plantilla HTML, añadir meta/recursos y permitir descarga. Ejemplo: exportar un artículo como archivo .html independiente.&quot;</p>
+</li>
+<li><p>tool_bmi_description:
+&quot;Calcular IMC: IMC = peso(kg) / (altura(m))^2. Proceso: elegir unidades, convertir si es necesario, calcular y mapear a categoría. Ejemplo: 70kg y 175cm → IMC 22.9 (Normal).&quot;</p>
+</li>
+<li><p>tool_ip_address_description:
+&quot;Descubrir tu IP pública y metadatos básicos. Proceso: el servidor devuelve la IP del solicitante, manejar IPv4/IPv6 y opcionalmente resolver geolocalización/ISP. Ejemplo: muestra IP y país para resolución de problemas.&quot;</p>
+</li>
+<li><p>tool_squarefeet_description:
+&quot;Calcular área en pies cuadrados a partir de largo y ancho. Proceso: seleccionar unidad (ft/m/in), convertir a pies, calcular área (largo × ancho) y convertir si es necesario. Ejemplo: 3m × 4m = 12 m² ≈ 129.17 sq ft.&quot;</p>
+</li>
+</ul>
+<hr>
+<p>Français (src/site/i18n/fr.ts)</p>
+<ul>
+<li><p>tool_headers_description:
+&quot;Récupérer les en-têtes HTTP d&#39;une URL côté serveur (HEAD, fallback GET). Processus : envoyer HEAD, suivre les redirections, collecter les en-têtes et bloquer les hôtes privés. Exemple : vérifier CORS, Cache-Control et HSTS pour diagnostiquer les redirections et la configuration CDN.&quot;</p>
+</li>
+<li><p>tool_markdown_description:
+&quot;Convertir Markdown en HTML assaini avec aperçu. Processus : parser CommonMark, assainir le HTML et rendre les blocs de code/listes/liens. Exemple : transformer un article de blog Markdown en HTML prêt à publier.&quot;</p>
+</li>
+<li><p>tool_markdown_export_description:
+&quot;Générer un document HTML complet depuis Markdown, en l&#39;encapsulant dans un template. Étapes : rendre le Markdown, injecter dans le template, ajouter meta/assets et proposer le téléchargement. Exemple : exporter un billet en fichier .html autonome.&quot;</p>
+</li>
+<li><p>tool_bmi_description:
+&quot;Calculer l&#39;IMC : IMC = poids(kg) / (taille(m))^2. Processus : choisir unités, convertir si besoin, calculer IMC et déterminer la catégorie. Exemple : 70kg et 175cm → IMC 22,9 (Normal).&quot;</p>
+</li>
+<li><p>tool_ip_address_description:
+&quot;Découvrir votre adresse IP publique et métadonnées. Processus : le serveur renvoie l&#39;IP du client (IPv4/IPv6) et peut effectuer une recherche géo/ISP. Exemple : afficher l&#39;IP et le pays pour le dépannage.&quot;</p>
+</li>
+<li><p>tool_squarefeet_description:
+&quot;Calculer la surface en pieds carrés à partir de longueur et largeur. Processus : sélectionner l&#39;unité (ft/m/in), convertir en pieds, calculer (L × W) et convertir en sq ft. Exemple : 3m × 4m = 12 m² ≈ 129,17 sq ft.&quot;</p>
+</li>
+</ul>
+<hr>
+<p>Deutsch (src/site/i18n/de.ts)</p>
+<ul>
+<li><p>tool_headers_description:
+&quot;HTTP-Response-Header einer URL serverseitig abrufen (HEAD, Fallback GET). Ablauf: HEAD senden, Redirects folgen, Header sammeln, private Hosts blockieren. Beispiel: CORS, Cache-Control, HSTS prüfen, um Redirects und CDN-Einstellungen zu debuggen.&quot;</p>
+</li>
+<li><p>tool_markdown_description:
+&quot;Markdown in bereinigtes HTML umwandeln mit Vorschau. Ablauf: CommonMark parsen, HTML sanitizen, Codeblöcke/Listen/Links rendern. Beispiel: Blog-Markdown in veröffentlichungsfähiges HTML konvertieren.&quot;</p>
+</li>
+<li><p>tool_markdown_export_description:
+&quot;Eine vollständige HTML-Datei aus Markdown erzeugen, inkl. Template und Metadaten. Schritte: rendern, in Template einfügen, meta/assets hinzufügen, Download bereitstellen. Beispiel: Beitrag als eigenständige .html exportieren.&quot;</p>
+</li>
+<li><p>tool_bmi_description:
+&quot;BMI berechnen: BMI = Gewicht(kg) / (Größe(m))^2. Ablauf: Einheit wählen, ggf. umrechnen, BMI berechnen und Kategorie bestimmen. Beispiel: 70kg und 175cm → BMI 22,9 (Normal).&quot;</p>
+</li>
+<li><p>tool_ip_address_description:
+&quot;Ihre öffentliche IP und Basis-Metadaten ermitteln. Ablauf: Server liefert anfragende IP (IPv4/IPv6), ggf. Geo/ISP-Abfrage. Beispiel: IP und Land anzeigen zur Fehlerbehebung.&quot;</p>
+</li>
+<li><p>tool_squarefeet_description:
+&quot;Fläche in Quadratfuß aus Länge und Breite berechnen. Ablauf: Einheit wählen (ft/m/in), in Fuß umrechnen, Fläche berechnen (L × W), ggf. in sq ft umrechnen. Beispiel: 3m × 4m = 12 m² ≈ 129,17 sq ft.&quot;</p>
+</li>
+</ul>
+<hr>
+<p>Русский (src/site/i18n/ru.ts)</p>
+<ul>
+<li><p>tool_headers_description:
+&quot;Получить HTTP-заголовки ответа для URL на сервере (HEAD, fallback на GET). Процесс: отправить HEAD, следовать редиректам, собрать заголовки, блокировать приватные хосты. Пример: проверить CORS, Cache-Control, HSTS для отладки редиректов и настроек CDN.&quot;</p>
+</li>
+<li><p>tool_markdown_description:
+&quot;Преобразовать Markdown в очищенный HTML с просмотром. Процесс: парсинг CommonMark, очистка HTML, рендеринг блоков кода/списков/ссылок. Пример: конвертировать статью в HTML для публикации.&quot;</p>
+</li>
+<li><p>tool_markdown_export_description:
+&quot;Сгенерировать полный HTML-документ из Markdown с шаблоном и метаданными. Шаги: рендер, вставка в шаблон, добавление meta/assets, скачивание. Пример: экспортировать пост как автономный .html.&quot;</p>
+</li>
+<li><p>tool_bmi_description:
+&quot;Рассчитать ИМТ: ИМТ = вес(кг) / (рост(м))^2. Процесс: выбрать единицы, при необходимости преобразовать, вычислить и отнести к категории. Пример: 70кг и 175см → ИМТ 22.9 (Нормально).&quot;</p>
+</li>
+<li><p>tool_ip_address_description:
+&quot;Определить публичный IP и базовую информацию. Процесс: сервер возвращает IP запроса (IPv4/IPv6), опционально гео/ISP. Пример: показать IP и страну для устранения неполадок.&quot;</p>
+</li>
+<li><p>tool_squarefeet_description:
+&quot;Вычислить площадь в квадратных футах по длине и ширине. Процесс: выбрать единицы (ft/m/in), преобразовать в футы, вычислить площадь (L × W), при необходимости сконвертировать в sq ft. Пример: 3m × 4m = 12 m² ≈ 129.17 sq ft.&quot;</p>
+</li>
+</ul>
+<hr>
+<p>Português (src/site/i18n/pt.ts)</p>
+<ul>
+<li><p>tool_headers_description:
+&quot;Buscar headers HTTP de uma URL no servidor (usar HEAD, fallback para GET). Processo: enviar HEAD, seguir redirecionamentos, coletar headers e bloquear hosts privados. Exemplo: inspecionar CORS, Cache-Control e HSTS para depurar redirecionamentos e configuração de CDN.&quot;</p>
+</li>
+<li><p>tool_markdown_description:
+&quot;Converter Markdown em HTML sanitizado com pré-visualização. Processo: parsear CommonMark, sanitizar saída e renderizar blocos de código/listas/links. Exemplo: converter um post de blog em HTML pronto para publicação.&quot;</p>
+</li>
+<li><p>tool_markdown_export_description:
+&quot;Gerar um documento HTML completo a partir do Markdown, incluindo template e metadados. Passos: renderizar, injetar no template, adicionar meta/assets e permitir download. Exemplo: exportar um artigo como .html independente.&quot;</p>
+</li>
+<li><p>tool_bmi_description:
+&quot;Calcular IMC: IMC = peso(kg) / (altura(m))^2. Processo: escolher unidades, converter se necessário, calcular e mapear para categoria. Exemplo: 70kg e 175cm → IMC 22.9 (Normal).&quot;</p>
+</li>
+<li><p>tool_ip_address_description:
+&quot;Descobrir o IP público e metadados básicos. Processo: o servidor retorna o IP do solicitante (IPv4/IPv6); opcionalmente buscar geo/ISP. Exemplo: mostrar IP e país para troubleshooting.&quot;</p>
+</li>
+<li><p>tool_squarefeet_description:
+&quot;Calcular área em pés quadrados a partir de comprimento e largura. Processo: selecionar unidade (ft/m/in), converter para pés, calcular área (L × W) e converter conforme necessário. Exemplo: 3m × 4m = 12 m² ≈ 129,17 sq ft.&quot;</p>
+</li>
+</ul>
+<hr>
+<p>日本語 (src/site/i18n/ja.ts)</p>
+<ul>
+<li><p>tool_headers_description:
+&quot;サーバー側で URL の HTTP レスポンスヘッダーを取得（HEAD、405/501 の場合は GET にフォールバック）。手順：HEAD を送信し、リダイレクトを追跡、ヘッダーを収集、プライベートホストをブロック。例：CORS、Cache-Control、HSTS を確認してリダイレクトや CDN 設定をデバッグ。&quot;</p>
+</li>
+<li><p>tool_markdown_description:
+&quot;Markdown をサニタイズされた HTML に変換してプレビュー表示。手順：CommonMark をパース、不要タグを除去、コードブロック/リスト/リンクをレンダリング。例：ブログ記事の Markdown を公開可能な HTML に変換。&quot;</p>
+</li>
+<li><p>tool_markdown_export_description:
+&quot;Markdown からテンプレートを適用した完全な HTML ドキュメントを生成。ステップ：レンダリング、テンプレート挿入、meta/assets 追加、ダウンロード提供。例：記事を単体の .html としてエクスポート。&quot;</p>
+</li>
+<li><p>tool_bmi_description:
+&quot;BMI 計算：BMI = 体重(kg) / (身長(m))^2。手順：単位を選択して換算、BMI を計算し分類を表示。例：70kg と 175cm → BMI 22.9（正常）。&quot;</p>
+</li>
+<li><p>tool_ip_address_description:
+&quot;公開 IP と基本メタデータを検出。手順：サーバーがリクエスト元 IP（IPv4/IPv6）を返し、任意で geo/ISP を引く。例：トラブルシューティング用に IP と国を表示。&quot;</p>
+</li>
+<li><p>tool_squarefeet_description:
+&quot;長さと幅から平方フィートで面積を計算。手順：単位（ft/m/in）を選択してフィートに換算、面積を計算（L × W）、必要なら sq ft に変換。例：3m × 4m = 12 m² ≈ 129.17 sq ft。&quot;</p>
+</li>
+</ul>
+<hr>
+<p>Bahasa Indonesia (src/site/i18n/id.ts)</p>
+<ul>
+<li><p>tool_headers_description:
+&quot;Ambil header HTTP sebuah URL di server (HEAD, fallback ke GET). Proses: kirim HEAD, ikuti redirect, kumpulkan header, blokir host privat. Contoh: periksa CORS, Cache-Control, HSTS untuk debug redirect dan pengaturan CDN.&quot;</p>
+</li>
+<li><p>tool_markdown_description:
+&quot;Ubah Markdown menjadi HTML yang telah disanitasi dengan pratinjau. Proses: parse CommonMark, sanitasi output, render blok kode/daftar/link. Contoh: konversi post blog menjadi HTML siap terbit.&quot;</p>
+</li>
+<li><p>tool_markdown_export_description:
+&quot;Hasilkan dokumen HTML penuh dari Markdown dengan template dan meta. Langkah: render Markdown, injek ke template, tambahkan meta/assets, sediakan opsi unduh. Contoh: ekspor artikel sebagai .html mandiri.&quot;</p>
+</li>
+<li><p>tool_bmi_description:
+&quot;Hitung BMI: BMI = berat(kg) / (tinggi(m))^2. Proses: pilih unit, konversi bila perlu, hitung dan tentukan kategori. Contoh: 70kg &amp; 175cm → BMI 22.9 (Normal).&quot;</p>
+</li>
+<li><p>tool_ip_address_description:
+&quot;Temukan IP publik dan metadata dasar. Proses: server mengembalikan IP peminta (IPv4/IPv6), opsional lookup geo/ISP. Contoh: tampilkan IP dan negara untuk troubleshooting.&quot;</p>
+</li>
+<li><p>tool_squarefeet_description:
+&quot;Hitung luas dalam kaki persegi dari panjang dan lebar. Proses: pilih unit (ft/m/in), konversi ke kaki, hitung luas (L × W), konversi ke sq ft bila perlu. Contoh: 3m × 4m = 12 m² ≈ 129.17 sq ft.&quot;</p>
+</li>
+</ul>
+<hr>
+<p>العربية (src/site/i18n/ar.ts)</p>
+<ul>
+<li><p>tool_headers_description:
+&quot;جلب رؤوس استجابة HTTP لعنوان URL على الخادم (HEAD، وإذا لزم fallback إلى GET). العملية: إرسال HEAD، اتباع إعادة التوجيه، جمع الرؤوس، حظر المضيفات الداخلية. مثال: فحص CORS وCache-Control وHSTS لتصحيح إعادة التوجيه وإعدادات CDN.&quot;</p>
+</li>
+<li><p>tool_markdown_description:
+&quot;تحويل Markdown إلى HTML مُعقَّم مع معاينة. العملية: تحليل CommonMark، تنقية HTML، عرض كتل الكود/القوائم/الروابط. مثال: تحويل منشور مدونة إلى HTML جاهز للنشر.&quot;</p>
+</li>
+<li><p>tool_markdown_export_description:
+&quot;توليد مستند HTML كامل من Markdown مع قالب وبيانات وصفية. الخطوات: تصيير Markdown، إدراجه في القالب، إضافة meta/assets، وتمكين التحميل. مثال: تصدير منشور كملف .html مستقل.&quot;</p>
+</li>
+<li><p>tool_bmi_description:
+&quot;حساب مؤشر كتلة الجسم: BMI = الوزن(kg) / (الطول(m))^2. العملية: اختيار الوحدات وتحويلها عند الحاجة، حساب المؤشر، وتحديد الفئة. مثال: 70kg و175cm → BMI 22.9 (طبيعي).&quot;</p>
+</li>
+<li><p>tool_ip_address_description:
+&quot;اكتشاف عنوان IP العام والبيانات الأساسية. العملية: يعيد الخادم IP المرسل (IPv4/IPv6) ويمكن إجراء بحث جغرافي/مزود خدمة اختياري. مثال: عرض IP والبلد لتشخيص المشكلات عن بُعد.&quot;</p>
+</li>
+<li><p>tool_squarefeet_description:
+&quot;حساب المساحة بالقدم المربعة من الطول والعرض. العملية: اختيار الوحدة (قدم/متر/بوصة) وتحويلها إلى قدم، حساب المساحة (الطول × العرض)، والتحويل إلى قدم مربع عند الحاجة. مثال: 3m × 4m = 12 m² ≈ 129.17 قدم مربع.&quot;</p>
+</li>
+</ul>
+<hr>
+<p>指出：上述为建议草稿，建议由语言所有者复核并微调以符合语感与项目风格。可按需我代为替换相应 <code>src/site/i18n/*.ts</code> 条目。</p>
+</article>
+      </section>
+    </main>
+  </div>
+  
+  <footer class="bg-light border-top text-center py-3">
+    <div class="container">
+      <small class="text-muted">Online Free Tools · Learning project · Iterating</small>
+    </div>
+  </footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <script>
+    const layout = document.getElementById('layoutRoot');
+    const toggle = document.getElementById('sidebarToggle');
+    if (layout && toggle) {
+      toggle.addEventListener('click', () => layout.classList.toggle('sidebar-collapsed'));
+      
+    }
+  </script>
+</body>
+</html>

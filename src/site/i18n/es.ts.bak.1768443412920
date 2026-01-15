@@ -7,7 +7,7 @@ const es: SiteLangDict = {
   footer_text: 'Online Free Tools · Proyecto de aprendizaje · Iterando',
   tool_headers_title: 'Obtener encabezados de respuesta del sitio web',
   tool_headers_description:
-    "Obtener los encabezados HTTP de una URL desde el servidor (usar HEAD, fallback a GET). Proceso: enviar HEAD, seguir redirecciones, recopilar encabezados y bloquear hosts privados. Ejemplo: inspeccionar CORS, Cache-Control y HSTS para depurar redirecciones y configuración CDN.",
+    'Ingrese una URL para obtener sus encabezados de respuesta HTTP (solicitud del lado del servidor).',
   tool_headers_article:
     'Qué: Obtenga e inspeccione los encabezados de respuesta HTTP de un sitio web. Útil para depurar CORS, caché, redirecciones y verificar encabezados de seguridad o CDN. Escenarios: depuración de desarrollador, verificaciones de SEO y verificación de configuración del servidor.',
   url_label: 'URL',
@@ -23,7 +23,7 @@ const es: SiteLangDict = {
   note_2: 'Por seguridad, se bloquean las solicitudes a localhost/redes privadas.',
   tool_markdown_title: 'Markdown → HTML',
   tool_markdown_description:
-    "Convertir Markdown a HTML sanitizado con vista previa. Proceso: parsear CommonMark, sanitizar salida y renderizar bloques de código/listas/enlaces. Ejemplo: convertir un post de blog a HTML listo para publicar.",
+    'Convierte Markdown en HTML con vista previa, copia y descarga de documento completo.',
   tool_markdown_article:
     'Qué: Convierte Markdown en HTML saneado con vista previa y opciones de exportación. Útil para preparar entradas de blog, documentación o compartir contenido renderizado. Escenarios: creación de contenido, vistas previas rápidas y generación de exportaciones HTML estáticas.',
   tool_markdown_copy: 'Copiar HTML',
@@ -36,9 +36,9 @@ const es: SiteLangDict = {
   tool_markdown_placeholder:
     "# Título\n\nMarkdown básico soportado: **negrita**, listas y bloques de código.\n\n- Artículo 1\n- Artículo 2\n\n```js\nconsole.log('Hola Markdown');\n```",
   tool_markdown_export_title: 'Exportación Markdown a HTML',
-  tool_markdown_export_description: "Generar un documento HTML completo desde Markdown, con plantilla y metadatos. Pasos: renderizar Markdown, inyectar en plantilla HTML, añadir meta/recursos y permitir descarga. Ejemplo: exportar un artículo como archivo .html independiente.",
+  tool_markdown_export_description: 'Exportación HTML estática generada desde Markdown',
   tool_bmi_title: 'Cómo calcular el BMI',
-  tool_bmi_description: "Calcular IMC: IMC = peso(kg) / (altura(m))^2. Proceso: elegir unidades, convertir si es necesario, calcular y mapear a categoría. Ejemplo: 70kg y 175cm → IMC 22.9 (Normal).",
+  tool_bmi_description: 'Calcule fácilmente su Índice de Masa Corporal (BMI). Ingrese su peso y altura para obtener su BMI instantáneamente.',
   tool_bmi_article: 'Qué es: Calcule su BMI (Índice de Masa Corporal) para evaluar si su peso es saludable. Uso: Ingrese su peso y altura, haga clic en calcular. Escenarios: controles de salud, planificación fitness y manejo de peso.',
   tool_bmi_weight_label: 'Peso (kg)',
   tool_bmi_weight_placeholder: 'Ingrese su peso en kilogramos',
@@ -63,7 +63,7 @@ const es: SiteLangDict = {
   bmi_interpretation_overweight: 'Es posible que estés sobrepeso. Considera consultar con un profesional de la salud.',
   bmi_interpretation_obese: 'Es posible que tengas obesidad. Considera consultar con un profesional de la salud.',
   tool_ip_address_title: '¿Cuál es mi dirección IP?',
-  tool_ip_address_description: "Descubrir tu IP pública y metadatos básicos. Proceso: el servidor devuelve la IP del solicitante, manejar IPv4/IPv6 y opcionalmente resolver geolocalización/ISP. Ejemplo: muestra IP y país para resolución de problemas.",
+  tool_ip_address_description: 'Descubre tu dirección IP pública con un clic.',
   tool_ip_address_article: 'Qué: Encuentra tu dirección IP pública tal como la ven en internet. Tu dirección IP identifica tu dispositivo en la red y es usada por sitios web para entregar contenido. Escenarios: acceso remoto, solución de problemas de red, configuración de firewall y servicios de geolocalización.',
   ip_label: 'Tu dirección IP',
   fetch_ip_button: 'Actualizar IP',
@@ -71,7 +71,7 @@ const es: SiteLangDict = {
   what_is_ip_title: '¿Qué es una dirección IP?',
   what_is_ip_content: 'Una dirección de Protocolo de Internet (IP) es una etiqueta numérica asignada a cada dispositivo conectado a una red informática. Sirve dos funciones principales: identificación del host o interfaz de red y direccionamiento de ubicación. Actualmente hay dos versiones en uso: IPv4 y IPv6.',
     tool_squarefeet_title: 'Calculadora de pies cuadrados — Cómo calcular square feet',
-    tool_squarefeet_description: "Calcular área en pies cuadrados a partir de largo y ancho. Proceso: seleccionar unidad (ft/m/in), convertir a pies, calcular área (largo × ancho) y convertir si es necesario. Ejemplo: 3m × 4m = 12 m² ≈ 129.17 sq ft.",
+    tool_squarefeet_description: 'Calcula el área en pies cuadrados. Ingresa largo y ancho y elige las unidades.',
     tool_squarefeet_article: 'Qué es: Calcula el área (pies²) a partir del largo y ancho. Uso: ingresa las dimensiones y selecciona las unidades. Escenarios: estimar pisos, encimeras, tamaño de habitaciones y mediciones inmobiliarias.',
     tool_squarefeet_length_label: 'Largo',
     tool_squarefeet_length_placeholder: 'Ingresa el largo',

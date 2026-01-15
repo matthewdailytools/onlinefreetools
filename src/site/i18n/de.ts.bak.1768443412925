@@ -7,7 +7,7 @@ const de: SiteLangDict = {
   footer_text: 'Online Free Tools · Lernprojekt · Iteriert fortlaufend',
   tool_headers_title: 'Website-Antwort-Header abrufen',
   tool_headers_description:
-    "HTTP-Response-Header einer URL serverseitig abrufen (HEAD, Fallback GET). Ablauf: HEAD senden, Redirects folgen, Header sammeln, private Hosts blockieren. Beispiel: CORS, Cache-Control, HSTS prüfen, um Redirects und CDN-Einstellungen zu debuggen.",
+    'Geben Sie eine URL ein, um deren HTTP-Antworthandler abzurufen (Server-seitige Anfrage).',
   tool_headers_article:
     'Was: Rufen Sie die HTTP-Antworthandler einer Website ab und untersuchen Sie sie. Nützlich zum Debuggen von CORS, Caching, Umleitungen und Überprüfen von Sicherheits- oder CDN-Headern. Szenarien: Entwickler-Debugging, SEO-Prüfungen und Überprüfung der Serverkonfiguration.',
   url_label: 'URL',
@@ -23,7 +23,7 @@ const de: SiteLangDict = {
   note_2: 'Aus Sicherheitsgründen werden Anfragen an localhost/private Netzwerke blockiert.',
   tool_markdown_title: 'Markdown → HTML',
   tool_markdown_description:
-    "Markdown in bereinigtes HTML umwandeln mit Vorschau. Ablauf: CommonMark parsen, HTML sanitizen, Codeblöcke/Listen/Links rendern. Beispiel: Blog-Markdown in veröffentlichungsfähiges HTML konvertieren.",
+    'Markdown in HTML mit Vorschau, Kopieren und vollständigem Dokument herunterladen konvertieren.',
   tool_markdown_article:
     'Was: Konvertieren Sie Markdown in bereinigtes HTML mit Vorschau und Exportoptionen. Nützlich für das Erstellen von Blog-Beiträgen, Dokumentation oder dem Teilen gerenderten Inhalts. Szenarien: Autorenerstellung, schnelle Vorschauen und Generierung von statischen HTML-Exporten.',
   tool_markdown_copy: 'HTML kopieren',
@@ -36,9 +36,9 @@ const de: SiteLangDict = {
   tool_markdown_placeholder:
     "# Titel\n\nGrundlegendes Markdown unterstützt: **fett**, Listen und Codeblöcke.\n\n- Artikel 1\n- Artikel 2\n\n``js\nconsole.log('Hallo Markdown');\n```",
   tool_markdown_export_title: 'Markdown zu HTML Export',
-  tool_markdown_export_description: "Eine vollständige HTML-Datei aus Markdown erzeugen, inkl. Template und Metadaten. Schritte: rendern, in Template einfügen, meta/assets hinzufügen, Download bereitstellen. Beispiel: Beitrag als eigenständige .html exportieren.",
+  tool_markdown_export_description: 'Statischer HTML-Export aus Markdown generiert',
   tool_bmi_title: 'Wie man den BMI berechnet',
-  tool_bmi_description: "BMI berechnen: BMI = Gewicht(kg) / (Größe(m))^2. Ablauf: Einheit wählen, ggf. umrechnen, BMI berechnen und Kategorie bestimmen. Beispiel: 70kg und 175cm → BMI 22,9 (Normal).",
+  tool_bmi_description: 'Berechnen Sie Ihren Body-Mass-Index (BMI) ganz einfach. Geben Sie Ihr Gewicht und Ihre Größe ein, um sofort Ihren BMI zu erhalten.',
   tool_bmi_article: 'Was ist das: Berechnen Sie Ihren BMI (Body-Mass-Index), um festzustellen, ob Ihr Gewicht gesund ist. Verwendung: Geben Sie Ihr Gewicht und Ihre Größe ein, klicken Sie auf Berechnen. Anwendungsbereiche: Gesundheitschecks, Fitnessplanung und Gewichtskontrolle.',
   tool_bmi_weight_label: 'Gewicht (kg)',
   tool_bmi_weight_placeholder: 'Geben Sie Ihr Gewicht in Kilogramm ein',
@@ -63,7 +63,7 @@ const de: SiteLangDict = {
   bmi_interpretation_overweight: 'Sie haben möglicherweise Übergewicht. Erwägen Sie einen Arztbesuch.',
   bmi_interpretation_obese: 'Sie haben möglicherweise Adipositas. Erwägen Sie einen Arztbesuch.',
   tool_ip_address_title: 'Was ist meine IP-Adresse?',
-  tool_ip_address_description: "Ihre öffentliche IP und Basis-Metadaten ermitteln. Ablauf: Server liefert anfragende IP (IPv4/IPv6), ggf. Geo/ISP-Abfrage. Beispiel: IP und Land anzeigen zur Fehlerbehebung.",
+  tool_ip_address_description: 'Erfahren Sie mit einem Klick Ihre öffentliche IP-Adresse.',
   tool_ip_address_article: 'Was: Ermitteln Sie Ihre öffentliche IP-Adresse, wie sie das Internet sieht. Ihre IP-Adresse identifiziert Ihr Gerät im Netzwerk und wird von Websites verwendet, um Ihnen Inhalte zu liefern. Szenarien: Fernzugriff, Netzwerk-Fehlersuche, Firewall-Konfiguration und Geostandortdienste.',
   ip_label: 'Ihre IP-Adresse',
   fetch_ip_button: 'IP aktualisieren',
@@ -71,7 +71,7 @@ const de: SiteLangDict = {
   what_is_ip_title: 'Was ist eine IP-Adresse?',
   what_is_ip_content: 'Eine Internetprotokoll-Adresse (IP-Adresse) ist eine numerische Kennung, die jedem Gerät in einem Computernetzwerk zugewiesen wird. Sie erfüllt zwei Hauptfunktionen: Host- oder Netzwerkschnittstellenidentifikation und Standortadressierung. Es gibt derzeit zwei Versionen: IPv4 und IPv6.',
     tool_squarefeet_title: 'Quadratfuß-Rechner — So berechnen Sie square feet',
-    tool_squarefeet_description: "Fläche in Quadratfuß aus Länge und Breite berechnen. Ablauf: Einheit wählen (ft/m/in), in Fuß umrechnen, Fläche berechnen (L × W), ggf. in sq ft umrechnen. Beispiel: 3m × 4m = 12 m² ≈ 129,17 sq ft.",
+    tool_squarefeet_description: 'Berechnen Sie die Fläche in Quadratfuß. Geben Sie Länge und Breite ein und wählen Sie die Einheit.',
     tool_squarefeet_article: 'Was: Berechnen Sie die Fläche (Quadratfuß) aus Länge und Breite. Verwendung: Maße eingeben und Einheit wählen. Szenarien: Schätzung von Bodenbelägen, Arbeitsplatten, Raumgrößen und Immobilienmessungen.',
     tool_squarefeet_length_label: 'Länge',
     tool_squarefeet_length_placeholder: 'Geben Sie die Länge ein',
