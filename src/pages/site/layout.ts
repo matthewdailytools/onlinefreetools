@@ -125,6 +125,7 @@ export const renderLayout = (opts: {
   <meta name="twitter:card" content="summary_large_image" />
   ${alternateLinks}
   <link href="${BOOTSTRAP_CSS}" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="/styles/omnicalc.css" rel="stylesheet" />
   <style>${sidebarCss}</style>
   ${opts.extraHeadHtml || ''}
 </head>

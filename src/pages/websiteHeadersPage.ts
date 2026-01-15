@@ -62,7 +62,7 @@ export const renderWebsiteHeadersPage = (lang: SiteLang, defaultLang: SiteLang) 
     <form id="form" class="row g-2 align-items-end mb-3">
       <div class="col-12 col-md-9">
         <label for="url" class="form-label">${escapeHtml(t(lang, 'url_label'))}</label>
-        <input id="url" name="url" class="form-control" placeholder="${escapeHtml(t(lang, 'url_placeholder'))}" required />
+        <input id="url" name="url" class="input-lg" placeholder="${escapeHtml(t(lang, 'url_placeholder'))}" required />
       </div>
       <div class="col-12 col-md-3">
         <button class="btn btn-primary w-100" type="submit">${escapeHtml(t(lang, 'fetch_button'))}</button>
@@ -75,7 +75,7 @@ export const renderWebsiteHeadersPage = (lang: SiteLang, defaultLang: SiteLang) 
         <div class="mb-2"><span class="text-muted">${escapeHtml(t(lang, 'status_label'))}：</span><span id="status">-</span></div>
         <div class="mb-3"><span class="text-muted">${escapeHtml(t(lang, 'final_url_label'))}：</span><span id="finalUrl">-</span></div>
         <div class="mb-2 text-muted">${escapeHtml(t(lang, 'headers_label'))}：</div>
-        <pre class="bg-light border rounded p-3 mb-0" style="white-space: pre-wrap;" id="headers">-</pre>
+        <pre id="headers">-</pre>
       </div>
     </div>
 

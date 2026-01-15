@@ -19,6 +19,7 @@ import { renderWebsiteHeadersPage } from "./pages/websiteHeadersPage";
 import { renderMarkdownToHtmlPage } from "./pages/markdownToHtmlPage";
 import { renderIpAddressPage } from "./pages/ipAddressPage";
 import { renderHowToCalculateBmiPage } from "./pages/howToCalculateBmiPage";
+import { renderMarginalRevenuePage } from "./pages/marginalRevenuePage";
 import { renderSquareFeetPage } from "./pages/squareFeetPage";
 import { registerToolPage } from "./site/toolRegistrar";
 import { handleWebsiteHeadersApi } from "./tools/websiteHeaders";
@@ -160,6 +161,11 @@ registerToolPage(app as any, 'markdown-to-html', (lang, defaultLang, enabled) =>
 // Register how-to-calculate-bmi page via registrar
 registerToolPage(app as any, 'how-to-calculate-bmi', (lang, defaultLang, enabled) =>
 	renderHowToCalculateBmiPage({ lang, defaultLang, enabledLangs: enabled })
+);
+
+// Register how-to-calculate-marginal-revenue page via registrar
+registerToolPage(app as any, 'how-to-calculate-marginal-revenue', (lang, defaultLang, enabled) =>
+  renderMarginalRevenuePage({ lang, defaultLang, enabledLangs: enabled })
 );
 
 // Register square-feet page via registrar

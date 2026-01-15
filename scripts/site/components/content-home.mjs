@@ -29,6 +29,7 @@ export const renderHomeContent = ({ lang }) => {
   const toolIpHref = withExplicitLangPath(lang, '/tools/ip-address');
   const toolSquareHref = withExplicitLangPath(lang, '/tools/square-feet');
   const toolBmiHref = withExplicitLangPath(lang, '/tools/how-to-calculate-bmi');
+  const toolMrHref = withExplicitLangPath(lang, '/tools/how-to-calculate-marginal-revenue');
 
   const openCta = t(lang, 'home_open');
 
@@ -64,6 +65,12 @@ export const renderHomeContent = ({ lang }) => {
           cta: openCta,
         })}
         ${renderPrimaryCard({
+          title: t(lang, 'tool_marginal_revenue_title'),
+          desc: t(lang, 'tool_marginal_revenue_description'),
+          href: toolMrHref,
+          cta: openCta,
+        })}
+        ${renderPrimaryCard({
           title: t(lang, 'tool_squarefeet_title'),
           desc: t(lang, 'tool_squarefeet_description'),
           href: toolSquareHref,
@@ -93,6 +100,12 @@ export const renderHomeContent = ({ lang }) => {
             title: t(lang, 'tool_bmi_title'),
             desc: t(lang, 'tool_bmi_description'),
             href: toolBmiHref,
+            cta: openCta,
+          })}
+          ${renderSecondaryCard({
+            title: t(lang, 'tool_marginal_revenue_title'),
+            desc: t(lang, 'tool_marginal_revenue_description'),
+            href: toolMrHref,
             cta: openCta,
           })}
           ${renderSecondaryCard({

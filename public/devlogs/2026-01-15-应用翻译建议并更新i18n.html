@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Applied translation suggestions to i18n files and created backups | Dev Logs</title>
+  <meta name="description" content="Applied translation suggestions to i18n files and created backups" />
+  <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-01-15-%E5%BA%94%E7%94%A8%E7%BF%BB%E8%AF%91%E5%BB%BA%E8%AE%AE%E5%B9%B6%E6%9B%B4%E6%96%B0i18n.html" />
+  <meta property="og:title" content="Applied translation suggestions to i18n files and created backups | Dev Logs" />
+  <meta property="og:description" content="Applied translation suggestions to i18n files and created backups" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-01-15-%E5%BA%94%E7%94%A8%E7%BF%BB%E8%AF%91%E5%BB%BA%E8%AE%AE%E5%B9%B6%E6%9B%B4%E6%96%B0i18n.html" />
+  <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  
+  
+  <script>
+    (function () {
+      try {
+        var enabled = [];
+        var defaultLang = "en";
+        var fallback = defaultLang;
+        var path = window.location.pathname || '/';
+
+        // If the URL already contains a language prefix (including defaultLang), respect it.
+        var hasPrefix = enabled.some(function (l) {
+          return l && (path === '/' + l || path.indexOf('/' + l + '/') === 0);
+        });
+        if (hasPrefix) return;
+
+        var langs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language])
+          .filter(Boolean)
+          .map(function (x) { return String(x).toLowerCase().split('-')[0]; });
+
+        var picked = null;
+        for (var i = 0; i < langs.length; i++) {
+          if (enabled.indexOf(langs[i]) !== -1) { picked = langs[i]; break; }
+        }
+        if (!picked) picked = enabled.indexOf(fallback) !== -1 ? fallback : (enabled[0] || fallback);
+
+        if (picked === "en") return;
+        var targetPath = path;
+        if (picked !== defaultLang) {
+          targetPath = ('/' + picked + path).replace(/\/{2,}/g, '/');
+        }
+        window.location.replace(targetPath + window.location.search + window.location.hash);
+      } catch (e) {}
+    })();
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body { min-height: 100vh; }
+    .layout { display: flex; min-height: 100vh; }
+    #sidebar { width: 260px; transition: margin-left 0.2s ease; }
+    #content { flex: 1; transition: margin-left 0.2s ease; }
+    .sidebar-collapsed #sidebar { margin-left: -260px; }
+    .sidebar-collapsed #content { margin-left: 0; }
+    @media (max-width: 767.98px) {
+      #sidebar {
+        position: fixed;
+        z-index: 1040;
+        top: 56px;
+        bottom: 0;
+        overflow-y: auto;
+        background: #f8f9fa;
+        border-right: 1px solid #e5e7eb;
+      }
+      .sidebar-collapsed #sidebar { margin-left: -260px; }
+      #content { margin-left: 0; }
+      body { padding-top: 56px; }
+    }
+  </style>
+  
+  
+  
+</head>
+<body>
+  
+  
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom fixed-top">
+      <div class="container-fluid">
+        <button class="btn btn-outline-secondary me-2" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+        <a class="navbar-brand fw-semibold" href="/">Online Free Tools</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="topNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="/">Home</a></li><li class="nav-item"><a class="nav-link" href="/devlogs/">Dev Logs</a></li></ul>
+          <div class="d-flex align-items-center gap-2">
+            
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="layout sidebar-collapsed" id="layoutRoot">
+    
+    <aside id="sidebar" class="bg-light border-end p-3">
+      <h6 class="text-muted text-uppercase">Navigation</h6>
+      <div class="list-group list-group-flush small" id="navList"><a class="list-group-item list-group-item-action" href="/">Home</a><a class="list-group-item list-group-item-action" href="/devlogs/">Dev Logs</a></div>
+    </aside>
+    <main id="content" class="p-4">
+      <section class="mb-3">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h1 class="h4 mb-0">Applied translation suggestions to i18n files and created backups | Dev Logs</h1>
+          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
+        </div>
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-01-15 00:00
+Summary: Applied translation suggestions to i18n files and created backups</p>
+<p>[question]
+User requested: 自动把翻译修改建议应用到对应的 <code>src/site/i18n/*.ts</code> 文件。</p>
+<p>[try to solve]
+Actions performed:</p>
+<ul>
+<li>Added a script <code>scripts/apply-i18n-updates.mjs</code> which contains the suggested <code>tool_*_description</code> updates for all supported languages and backup logic.</li>
+<li>Ran the script locally: it created timestamped backups for each modified i18n file and replaced/injected the suggested <code>tool_*_description</code> entries.</li>
+<li>Files updated (originals backed up as <code>.bak.&lt;timestamp&gt;</code>):<ul>
+<li><code>src/site/i18n/en.ts</code></li>
+<li><code>src/site/i18n/zh.ts</code></li>
+<li><code>src/site/i18n/es.ts</code></li>
+<li><code>src/site/i18n/fr.ts</code></li>
+<li><code>src/site/i18n/de.ts</code></li>
+<li><code>src/site/i18n/ru.ts</code></li>
+<li><code>src/site/i18n/pt.ts</code></li>
+<li><code>src/site/i18n/ja.ts</code></li>
+<li><code>src/site/i18n/id.ts</code></li>
+<li><code>src/site/i18n/ar.ts</code></li>
+</ul>
+</li>
+</ul>
+<p>Script added:</p>
+<ul>
+<li><code>scripts/apply-i18n-updates.mjs</code> — creates backups and updates i18n files with the recommended descriptions.</li>
+</ul>
+<p>Notes &amp; next steps:</p>
+<ul>
+<li>Please review the updated <code>src/site/i18n/*.ts</code> files for language nuance and style; the updates are drafted and should be verified by native speakers.</li>
+<li>Run the SEO validator to confirm warnings cleared:<ul>
+<li><code>npm run lint:seo</code></li>
+</ul>
+</li>
+<li>Rebuild the static site to regenerate pages with updated descriptions:<ul>
+<li><code>npm run build:site</code></li>
+</ul>
+</li>
+</ul>
+<p>[actions]</p>
+<ul>
+<li>Created <code>scripts/apply-i18n-updates.mjs</code></li>
+<li>Updated <code>src/site/i18n/*.ts</code> (10 files) and created backups <code>src/site/i18n/*.ts.bak.&lt;timestamp&gt;</code></li>
+<li>Added dev-log <code>dev-logs/2026-01-15-应用翻译建议并更新i18n.md</code></li>
+</ul>
+</article>
+      </section>
+    </main>
+  </div>
+  
+  <footer class="bg-light border-top text-center py-3">
+    <div class="container">
+      <small class="text-muted">Online Free Tools · Learning project · Iterating</small>
+    </div>
+  </footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <script>
+    const layout = document.getElementById('layoutRoot');
+    const toggle = document.getElementById('sidebarToggle');
+    if (layout && toggle) {
+      toggle.addEventListener('click', () => layout.classList.toggle('sidebar-collapsed'));
+      
+    }
+  </script>
+</body>
+</html>

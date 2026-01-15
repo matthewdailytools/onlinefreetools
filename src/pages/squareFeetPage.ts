@@ -58,10 +58,6 @@ export const renderSquareFeetPage = (opts: {
 
   const extraHeadHtml = `
   <style>
-    .sf-card { max-width: 640px; margin: 0 auto; background: #fff; padding: 1.25rem; border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.06);} 
-    .sf-input { width: 100%; padding: 0.75rem; border-radius: 8px; border: 1px solid #ced4da; }
-    .sf-btn { background:#0d6efd;color:#fff;border:none;padding:0.75rem 1rem;border-radius:8px;cursor:pointer;width:100%; }
-    .sf-result { text-align:center; padding:1rem; background:#f8f9fa;border-radius:8px;margin-top:1rem }
     .unit-toggle { display:flex; gap:0.5rem; margin-bottom:1rem; justify-content:center }
     .unit-toggle button { padding:0.5rem 0.75rem;border-radius:8px;border:1px solid #ced4da;background:#e9ecef;cursor:pointer }
     .unit-toggle button.active { background:#0d6efd;color:#fff }
@@ -73,7 +69,7 @@ export const renderSquareFeetPage = (opts: {
     <p class="text-muted">${escapeHtml(description)}</p>
   </div>
 
-  <div id="calc" class="sf-card">
+  <div id="calc" class="card" style="max-width:640px;margin:0 auto;padding:1.25rem;">
     <div class="unit-toggle">
       <button id="unitFeet" class="active">${t(opts.lang, 'unit_feet') || 'Feet'}</button>
       <button id="unitMeters">${t(opts.lang, 'unit_meters') || 'Meters'}</button>
@@ -83,16 +79,15 @@ export const renderSquareFeetPage = (opts: {
     <form id="sfForm">
       <div class="mb-3">
         <label class="form-label">${escapeHtml(t(opts.lang, 'tool_squarefeet_length_label'))}</label>
-        <input id="sfLength" class="sf-input" type="number" min="0" step="any" placeholder="${escapeHtml(t(opts.lang, 'tool_squarefeet_length_placeholder'))}" required />
+        <input id="sfLength" class="input-lg" type="number" min="0" step="any" placeholder="${escapeHtml(t(opts.lang, 'tool_squarefeet_length_placeholder'))}" required />
       </div>
       <div class="mb-3">
         <label class="form-label">${escapeHtml(t(opts.lang, 'tool_squarefeet_width_label'))}</label>
-        <input id="sfWidth" class="sf-input" type="number" min="0" step="any" placeholder="${escapeHtml(t(opts.lang, 'tool_squarefeet_width_placeholder'))}" required />
+        <input id="sfWidth" class="input-lg" type="number" min="0" step="any" placeholder="${escapeHtml(t(opts.lang, 'tool_squarefeet_width_placeholder'))}" required />
       </div>
-      <button type="submit" class="sf-btn">${escapeHtml(t(opts.lang, 'tool_squarefeet_calculate'))}</button>
+      <button type="submit" class="btn btn-primary">${escapeHtml(t(opts.lang, 'tool_squarefeet_calculate'))}</button>
     </form>
-
-    <div id="sfResult" class="sf-result" style="display:none">
+    <div id="sfResult" class="result" style="display:none">
       <div id="sfResultValue" class="h4"></div>
       <div id="sfResultNote" class="text-muted mt-2"></div>
     </div>

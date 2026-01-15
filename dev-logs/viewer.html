@@ -13,28 +13,24 @@
   <meta property="og:image" content="https://www.onlinefreetools.org/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <style>
-    .container-narrow { max-width: 860px; }
-    .log-meta { color: #6c757d; }
-    pre { background: #f8f9fa; padding: 1rem; border-radius: .5rem; }
-  </style>
+  <link href="/styles/omnicalc.css" rel="stylesheet" />
 </head>
-<body class="bg-light">
-  <div class="container container-narrow py-4">
-    <header class="d-flex justify-content-between align-items-center mb-3">
+<body>
+  <div class="container-narrow">
+    <header class="site-header">
       <div>
-        <h1 class="h4 mb-1" id="pageTitle">日志查看器</h1>
-        <p class="log-meta mb-0" id="pageMeta">从左上角返回索引或首页</p>
+        <div class="site-title" id="pageTitle">日志查看器</div>
+        <div class="site-sub log-meta" id="pageMeta">从左上角返回索引或首页</div>
       </div>
-      <div class="d-flex gap-2">
-        <a class="btn btn-outline-secondary btn-sm" href="/dev-logs/">返回日志索引</a>
-        <a class="btn btn-outline-secondary btn-sm" href="/">返回首页</a>
+      <div class="top-actions">
+        <a class="btn btn-outline-secondary" href="/dev-logs/">返回日志索引</a>
+        <a class="btn btn-outline-secondary" href="/">返回首页</a>
       </div>
     </header>
 
-    <article class="bg-white shadow-sm p-3 p-md-4 rounded">
-      <div id="viewer">正在加载日志内容…</div>
-    </article>
+    <main class="card">
+      <div id="viewer" class="calc-container">正在加载日志内容…</div>
+    </main>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/11.1.1/marked.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

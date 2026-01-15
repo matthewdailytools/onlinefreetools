@@ -94,11 +94,11 @@ export const renderMarkdownToHtmlPage = (opts: {
     <div class="row g-3">
       <div class="col-12 col-lg-6">
         <label for="mdInput" class="form-label">${escapeHtml(t(opts.lang, 'tool_markdown_input_label'))}</label>
-        <textarea id="mdInput" class="form-control" placeholder="${escapeHtml(t(opts.lang, 'tool_markdown_placeholder'))}"></textarea>
+        <textarea id="mdInput" class="input-lg" placeholder="${escapeHtml(t(opts.lang, 'tool_markdown_placeholder'))}"></textarea>
       </div>
       <div class="col-12 col-lg-6">
         <label class="form-label">${escapeHtml(t(opts.lang, 'tool_markdown_preview_label'))}</label>
-        <div id="preview"></div>
+        <div id="preview" class="result"></div>
       </div>
     </div>
 

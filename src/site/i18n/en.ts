@@ -78,6 +78,17 @@ const en: SiteLangDict = {
   tool_squarefeet_usage_title: 'Usage',
   tool_squarefeet_usage: 'Use this calculator to quickly estimate areas for flooring, paint, or furniture placement. Enter dimensions in the chosen unit and press Calculate.' ,
   tool_ip_address_title: 'What Is My IP Address?',
+  tool_marginal_revenue_title: 'How to Calculate Marginal Revenue',
+  tool_marginal_revenue_description:
+    'Calculate marginal revenue (MR) from changes in total revenue: MR = ΔTR / ΔQ. Process: enter two total-revenue/quantity pairs (or a small ΔQ), compute the ratio, and interpret results for pricing decisions. Example: use TR at Q and Q+1 to estimate MR.',
+  tool_marginal_revenue_article:
+    'What: Marginal revenue is the additional revenue from selling one more unit, computed as the change in total revenue over the change in quantity. Usage: provide two (Q, TR) pairs or successive totals and click calculate. Scenarios: microeconomic analysis, pricing strategy, and profit-maximization.',
+  tool_marginal_revenue_example:
+    'Example: Q1=100, TR1=2000; Q2=101, TR2=2015 → MR = (2015 - 2000) / (101 - 100) = 15.',
+  tool_marginal_revenue_quantity_label: 'Quantity',
+  tool_marginal_revenue_revenue_label: 'Total Revenue',
+  tool_marginal_revenue_calculate: 'Calculate MR',
+  tool_marginal_revenue_result_label: 'Marginal Revenue',
   tool_ip_address_description: "Discover your public IP address and basic metadata. Process: server returns requester IP, optionally look up geolocation/ISP; include IPv4/IPv6 handling. Example: shows IP and country for troubleshooting remote access.",
   tool_ip_address_article: 'What: Find your public IP address as seen by the internet. Your IP address identifies your device on the network and is used by websites to deliver content. Scenarios: remote access, network troubleshooting, firewall configuration, and geolocation services.',
   ip_label: 'Your IP Address',

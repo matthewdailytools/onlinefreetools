@@ -58,127 +58,64 @@ export const renderHowToCalculateBmiPage = (opts: {
 
   const extraHeadHtml = `
   <style>
-    .bmi-card {
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      padding: 1.5rem;
-      background-color: #fff;
-      max-width: 500px;
-      margin: 0 auto 2rem;
-    }
-    
-    .bmi-form-group {
-      margin-bottom: 1.25rem;
-    }
-    
-    .bmi-form-label {
-      display: block;
-      margin-bottom: 0.5rem;
-      font-weight: 500;
-      color: #495057;
-    }
-    
-    .bmi-input {
-      width: 100%;
-      padding: 0.75rem;
-      border: 1px solid #ced4da;
-      border-radius: 8px;
-      font-size: 1rem;
-      transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-      box-sizing: border-box;
-    }
-    
-    .bmi-input:focus {
-      border-color: #86b7fe;
-      outline: 0;
-      box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
-    }
-    
-    .bmi-btn {
-      background-color: #0d6efd;
-      border: none;
-      color: white;
-      padding: 0.75rem 1.5rem;
-      font-size: 1rem;
-      border-radius: 8px;
-      cursor: pointer;
-      width: 100%;
-      font-weight: 500;
-      transition: background-color 0.2s;
-    }
-    
-    .bmi-btn:hover {
-      background-color: #0b5ed7;
-    }
-    
-    .bmi-result-container {
-      text-align: center;
-      margin-top: 1.5rem;
-      padding: 1.5rem;
-      border-radius: 8px;
-      background-color: #f8f9fa;
-    }
-    
-    .bmi-result-value {
-      font-size: 1.8rem;
-      font-weight: bold;
-      margin: 0.5rem 0;
-    }
-    
-    .bmi-result-category {
-      font-size: 1.2rem;
-      font-weight: 500;
-      margin-top: 0.5rem;
-    }
-    
+    /* Retain a few BMI-specific helpers, but use global input/result/card styles */
+    .bmi-card { max-width: 540px; margin: 0 auto 2rem; }
+    .bmi-form-label { display:block; margin-bottom:.5rem; color:#495057; font-weight:500 }
+    .bmi-chart { display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:.5rem; margin-top:1rem }
+    .bmi-category { padding:.75rem; border-radius:6px; text-align:center; font-size:.85rem }
+    .underweight { background-color: #e7f1ff; color: #084298; }
+    .normal { background-color: #d1e7dd; color: #0f5132; }
+    .overweight { background-color: #fff3cd; color: #856404; }
+    .obese { background-color: #f8d7da; color: #721c24; }
+
     .bmi-info-section {
       background-color: #f8f9fa;
       border-radius: 8px;
       padding: 1.25rem;
       margin-top: 1.5rem;
     }
-    
+
     .bmi-intro {
       text-align: center;
       margin-bottom: 1.5rem;
     }
-    
+
     .bmi-intro h1 {
       color: #212529;
       font-size: 1.75rem;
       margin-bottom: 0.5rem;
     }
-    
+
     .bmi-intro p {
       color: #6c757d;
       margin-bottom: 0;
     }
-    
+
     .bmi-chart {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
       gap: 0.5rem;
       margin-top: 1rem;
     }
-    
+
     .bmi-category {
       padding: 0.75rem;
       border-radius: 6px;
       text-align: center;
       font-size: 0.85rem;
     }
-    
+
     .underweight { background-color: #e7f1ff; color: #084298; }
     .normal { background-color: #d1e7dd; color: #0f5132; }
     .overweight { background-color: #fff3cd; color: #856404; }
     .obese { background-color: #f8d7da; color: #721c24; }
-    
+
     .unit-toggle {
       display: flex;
       justify-content: center;
       margin-bottom: 1rem;
     }
-    
+
     .unit-toggle button {
       background-color: #e9ecef;
       border: 1px solid #ced4da;
@@ -218,7 +155,7 @@ export const renderHowToCalculateBmiPage = (opts: {
       <p class="text-muted">${escapeHtml(description)}</p>
     </div>
     
-    <div class="bmi-card">
+    <div class="card bmi-card">
       <div class="unit-toggle">
         <button id="metricBtn" class="active">${t(opts.lang, 'bmi_metric_units') || 'Metric Units'}</button>
         <button id="imperialBtn">${t(opts.lang, 'bmi_imperial_units') || 'Imperial Units'}</button>
@@ -231,7 +168,7 @@ export const renderHowToCalculateBmiPage = (opts: {
             <input 
               type="number" 
               id="bmiWeight" 
-              class="bmi-input" 
+              class="input-lg" 
               min="1" 
               step="any" 
               required 
@@ -243,7 +180,7 @@ export const renderHowToCalculateBmiPage = (opts: {
             <input 
               type="number" 
               id="bmiHeight" 
-              class="bmi-input" 
+              class="input-lg" 
               min="1" 
               step="any" 
               required 
@@ -258,7 +195,7 @@ export const renderHowToCalculateBmiPage = (opts: {
               <input 
                 type="number" 
                 id="bmiWeightLbs" 
-                class="bmi-input" 
+                class="input-lg" 
                 min="1" 
                 step="any" 
                 required 
@@ -270,7 +207,7 @@ export const renderHowToCalculateBmiPage = (opts: {
               <input 
                 type="number" 
                 id="bmiHeightFt" 
-                class="bmi-input" 
+                class="input-lg" 
                 min="0" 
                 max="9" 
                 step="0.1" 
@@ -284,7 +221,7 @@ export const renderHowToCalculateBmiPage = (opts: {
             <input 
               type="number" 
               id="bmiHeightIn" 
-              class="bmi-input" 
+              class="input-lg" 
               min="0" 
               max="11.99" 
               step="0.1" 
@@ -293,12 +230,12 @@ export const renderHowToCalculateBmiPage = (opts: {
           </div>
         </div>
         
-        <button type="submit" class="bmi-btn">${escapeHtml(t(opts.lang, 'tool_bmi_calculate'))}</button>
+        <button type="submit" class="btn btn-primary">${escapeHtml(t(opts.lang, 'tool_bmi_calculate'))}</button>
       </form>
       
-      <div id="bmiResultContainer" class="bmi-result-container" style="display: none;">
+      <div id="bmiResultContainer" class="result" style="display: none; text-align:center;">
         <div>Your BMI</div>
-        <div id="bmiResultValue" class="bmi-result-value"></div>
+        <div id="bmiResultValue" style="font-size:1.8rem;font-weight:700;margin:.5rem 0"></div>
         <div id="bmiResultCategory" class="bmi-result-category"></div>
         <div id="bmiInterpretation" class="mt-2"></div>
       </div>

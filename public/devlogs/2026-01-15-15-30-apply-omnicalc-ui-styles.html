@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Apply OmniCalculator-inspired UI and styles site-wide | Dev Logs</title>
+  <meta name="description" content="Apply OmniCalculator-inspired UI and styles site-wide" />
+  <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-01-15-15-30-apply-omnicalc-ui-styles.html" />
+  <meta property="og:title" content="Apply OmniCalculator-inspired UI and styles site-wide | Dev Logs" />
+  <meta property="og:description" content="Apply OmniCalculator-inspired UI and styles site-wide" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-01-15-15-30-apply-omnicalc-ui-styles.html" />
+  <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  
+  
+  <script>
+    (function () {
+      try {
+        var enabled = [];
+        var defaultLang = "en";
+        var fallback = defaultLang;
+        var path = window.location.pathname || '/';
+
+        // If the URL already contains a language prefix (including defaultLang), respect it.
+        var hasPrefix = enabled.some(function (l) {
+          return l && (path === '/' + l || path.indexOf('/' + l + '/') === 0);
+        });
+        if (hasPrefix) return;
+
+        var langs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language])
+          .filter(Boolean)
+          .map(function (x) { return String(x).toLowerCase().split('-')[0]; });
+
+        var picked = null;
+        for (var i = 0; i < langs.length; i++) {
+          if (enabled.indexOf(langs[i]) !== -1) { picked = langs[i]; break; }
+        }
+        if (!picked) picked = enabled.indexOf(fallback) !== -1 ? fallback : (enabled[0] || fallback);
+
+        if (picked === "en") return;
+        var targetPath = path;
+        if (picked !== defaultLang) {
+          targetPath = ('/' + picked + path).replace(/\/{2,}/g, '/');
+        }
+        window.location.replace(targetPath + window.location.search + window.location.hash);
+      } catch (e) {}
+    })();
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body { min-height: 100vh; }
+    .layout { display: flex; min-height: 100vh; }
+    #sidebar { width: 260px; transition: margin-left 0.2s ease; }
+    #content { flex: 1; transition: margin-left 0.2s ease; }
+    .sidebar-collapsed #sidebar { margin-left: -260px; }
+    .sidebar-collapsed #content { margin-left: 0; }
+    @media (max-width: 767.98px) {
+      #sidebar {
+        position: fixed;
+        z-index: 1040;
+        top: 56px;
+        bottom: 0;
+        overflow-y: auto;
+        background: #f8f9fa;
+        border-right: 1px solid #e5e7eb;
+      }
+      .sidebar-collapsed #sidebar { margin-left: -260px; }
+      #content { margin-left: 0; }
+      body { padding-top: 56px; }
+    }
+  </style>
+  
+  
+  
+</head>
+<body>
+  
+  
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom fixed-top">
+      <div class="container-fluid">
+        <button class="btn btn-outline-secondary me-2" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+        <a class="navbar-brand fw-semibold" href="/">Online Free Tools</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="topNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="/">Home</a></li><li class="nav-item"><a class="nav-link" href="/devlogs/">Dev Logs</a></li></ul>
+          <div class="d-flex align-items-center gap-2">
+            
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="layout sidebar-collapsed" id="layoutRoot">
+    
+    <aside id="sidebar" class="bg-light border-end p-3">
+      <h6 class="text-muted text-uppercase">Navigation</h6>
+      <div class="list-group list-group-flush small" id="navList"><a class="list-group-item list-group-item-action" href="/">Home</a><a class="list-group-item list-group-item-action" href="/devlogs/">Dev Logs</a></div>
+    </aside>
+    <main id="content" class="p-4">
+      <section class="mb-3">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h1 class="h4 mb-0">Apply OmniCalculator-inspired UI and styles site-wide | Dev Logs</h1>
+          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
+        </div>
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-01-15 15:30
+Summary: Apply OmniCalculator-inspired UI and styles site-wide</p>
+<p>[question]
+参考 ：<a href="https://www.omnicalculator.com/%E7%9A%84%E9%A1%B5%E9%9D%A2ui%E8%AE%BE%E8%AE%A1%E5%92%8C%E6%A0%B7%E5%BC%8F%EF%BC%8C%E4%BF%AE%E6%94%B9%E6%9C%AC%E9%A1%B9%E7%9B%AE%E7%9A%84ui%E5%92%8C%E6%A0%B7%E5%BC%8F">https://www.omnicalculator.com/的页面ui设计和样式，修改本项目的ui和样式</a></p>
+<p>[try to solve]
+Implemented an OmniCalculator-like visual update across the site:</p>
+<ul>
+<li>Added a global stylesheet <code>public/styles/omnicalc.css</code> with color tokens, card, button, input and result styles.</li>
+<li>Injected the stylesheet into server-rendered pages via <code>src/pages/site/layout.ts</code> so dynamic tool pages inherit the new look.</li>
+<li>Added stylesheet link to localized homepages (<code>public/_pages/*/index.html</code>) and to the logs viewer (<code>dev-logs/viewer.html</code>).</li>
+<li>Updated several tool pages to use unified classes: <code>input-lg</code> for inputs, <code>btn btn-primary</code> for primary actions, <code>card</code> for main containers, and <code>result</code> for result blocks. Specific pages adjusted: markdown-to-html, website-headers, marginal revenue, BMI, square-feet.</li>
+<li>Simplified and removed some duplicated inline styles in favor of the global stylesheet while keeping a few page-specific helpers where useful.</li>
+</ul>
+<p>[actions]</p>
+<ul>
+<li>Created: public/styles/omnicalc.css</li>
+<li>Edited: dev-logs/viewer.html</li>
+<li>Edited: public/_pages/en/index.html</li>
+<li>Edited: public/_pages/zh/index.html</li>
+<li>Edited: public/_pages/es/index.html</li>
+<li>Edited: public/_pages/fr/index.html</li>
+<li>Edited: public/_pages/id/index.html</li>
+<li>Edited: public/_pages/ja/index.html</li>
+<li>Edited: public/_pages/pt/index.html</li>
+<li>Edited: public/_pages/ru/index.html</li>
+<li>Edited: public/_pages/de/index.html</li>
+<li>Edited: public/_pages/ar/index.html</li>
+<li>Edited: src/pages/site/layout.ts</li>
+<li>Edited: src/pages/markdownToHtmlPage.ts</li>
+<li>Edited: src/pages/websiteHeadersPage.ts</li>
+<li>Edited: src/pages/marginalRevenuePage.ts</li>
+<li>Edited: src/pages/howToCalculateBmiPage.ts</li>
+<li>Edited: src/pages/squareFeetPage.ts</li>
+</ul>
+<p>Additional fix (2026-01-15 16:10):</p>
+<ul>
+<li>Observed build error: &quot;Unexpected &#39;.&#39;&quot; from <code>src/pages/howToCalculateBmiPage.ts</code> due to a broken template string where CSS was accidentally placed outside the template.</li>
+<li>Fix applied: merged the stray CSS back into the <code>extraHeadHtml</code> template string and cleaned duplicated rules.</li>
+<li>Edited: src/pages/howToCalculateBmiPage.ts</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>To preview locally, run the project&#39;s dev server (e.g. <code>npm run dev</code> or <code>wrangler dev</code>) and open an index or a tool page in the browser.</li>
+<li>I can continue refining tool card grid layout or update additional pages on request.</li>
+<li>After this fix, you can run <code>npm run build</code> or <code>wrangler dev</code> to verify the site builds cleanly.</li>
+</ul>
+</article>
+      </section>
+    </main>
+  </div>
+  
+  <footer class="bg-light border-top text-center py-3">
+    <div class="container">
+      <small class="text-muted">Online Free Tools · Learning project · Iterating</small>
+    </div>
+  </footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <script>
+    const layout = document.getElementById('layoutRoot');
+    const toggle = document.getElementById('sidebarToggle');
+    if (layout && toggle) {
+      toggle.addEventListener('click', () => layout.classList.toggle('sidebar-collapsed'));
+      
+    }
+  </script>
+</body>
+</html>

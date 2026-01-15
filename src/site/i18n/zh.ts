@@ -64,6 +64,17 @@ const zh: SiteLangDict = {
   tool_ip_address_description: "查询公网 IP 及基础元信息。流程：服务器返回请求来源 IP，支持 IPv4/IPv6，并可做简单地理/ISP 查询。示例：显示 IP 与国家，便于远程访问与故障排查。",
   tool_ip_address_article: '是什么：查询您对外显示的公网 IP 地址。您的 IP 地址用于在网络中标识您的设备，网站通过它向您发送内容。适用场景：远程访问、网络故障排除、防火墙配置和地理位置服务。',
   ip_label: '您的 IP 地址',
+  tool_marginal_revenue_title: '如何计算边际收益',
+  tool_marginal_revenue_description:
+    '通过总收益的变化计算边际收益（MR）：MR = ΔTR / ΔQ。流程：输入两组总收益/产量数据（或一个小的 ΔQ），计算收益变化与数量变化之比，用于定价与盈利分析。示例：使用 Q 与 Q+1 的 TR 估算 MR。',
+  tool_marginal_revenue_article:
+    '是什么：边际收益是多出售一单位商品带来的额外收益，等于总收益的变化除以产量的变化。用法：提供两组 (Q, TR) 数据或连续总收益，点击计算。适用场景：微观经济学分析、定价策略与利润最大化研究。',
+  tool_marginal_revenue_example:
+    '示例：Q1=100, TR1=2000；Q2=101, TR2=2015 → MR = (2015 - 2000) / (101 - 100) = 15。',
+  tool_marginal_revenue_quantity_label: '产量',
+  tool_marginal_revenue_revenue_label: '总收益',
+  tool_marginal_revenue_calculate: '计算 MR',
+  tool_marginal_revenue_result_label: '边际收益',
   fetch_ip_button: '刷新 IP',
   fetching_message: '正在获取您的 IP 地址...',
   what_is_ip_title: '什么是 IP 地址？',
