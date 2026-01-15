@@ -40,9 +40,6 @@ const sidebarCss = `
   #content { flex: 1; transition: margin-left 0.2s ease; }
   .sidebar-collapsed #sidebar { margin-left: -260px; }
   .sidebar-collapsed #content { margin-left: 0; }
-  @media (min-width: 768px) {
-    .layout:not(.sidebar-collapsed) #content { margin-left: 260px; }
-  }
 
   /* Desktop: keep navbar items on one line and prevent wrapping */
   @media (min-width: 768px) {
@@ -103,8 +100,24 @@ export const renderLayout = (opts: {
 	const sidebarAutoClose = opts.sidebarAutoCloseSelector
 		? `
     document.querySelectorAll(${JSON.stringify(opts.sidebarAutoCloseSelector)}).forEach((link) => {
-      link.addEventListener('click', () => {
-        if (window.innerWidth < 768) layout.classList.add('sidebar-collapsed');
+      link.addEventListener('click', (e) => {
+        try {
+          const sidebar = document.getElementById('sidebar');
+          const prevScroll = sidebar ? sidebar.scrollTop : 0;
+          const href = link.getAttribute('href') || '';
+          if (href.startsWith('#')) {
+            const target = document.querySelector(href);
+            if (target) {
+              e.preventDefault();
+              const headerOffset = 56;
+              const targetY = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+              window.scrollTo({ top: targetY, behavior: 'smooth' });
+            }
+          }
+          link.blur();
+          if (window.innerWidth < 768) layout.classList.add('sidebar-collapsed');
+          setTimeout(() => { if (sidebar) sidebar.scrollTop = prevScroll; }, 300);
+        } catch (err) {}
       });
     });`
 		: '';
