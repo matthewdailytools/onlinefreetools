@@ -25,7 +25,18 @@ export const absoluteUrl = (pathnameOrUrl: string) => {
 const sidebarCss = `
   body { min-height: 100vh; padding-top: 56px; box-sizing: border-box; }
   .layout { display: flex; min-height: calc(100vh - 56px); }
-  #sidebar { width: 260px; transition: margin-left 0.2s ease; }
+  /* Sidebar: desktop - sticky under the fixed header */
+  #sidebar {
+    width: 260px;
+    transition: margin-left 0.2s ease;
+    position: sticky;
+    top: 56px;
+    height: calc(100vh - 56px);
+    overflow-y: auto;
+    background: #f8f9fa;
+    border-right: 1px solid #e5e7eb;
+    z-index: 1020;
+  }
   #content { flex: 1; transition: margin-left 0.2s ease; }
   .sidebar-collapsed #sidebar { margin-left: -260px; }
   .sidebar-collapsed #content { margin-left: 0; }
@@ -41,15 +52,14 @@ const sidebarCss = `
     .navbar-brand { white-space: nowrap; }
   }
 
+  /* Mobile: fixed sliding drawer under the header */
   @media (max-width: 767.98px) {
     #sidebar {
       position: fixed;
       z-index: 1040;
       top: 56px;
       bottom: 0;
-      overflow-y: auto;
-      background: #f8f9fa;
-      border-right: 1px solid #e5e7eb;
+      height: auto;
     }
     .sidebar-collapsed #sidebar { margin-left: -260px; }
     #content { margin-left: 0; }

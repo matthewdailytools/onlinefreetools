@@ -81,9 +81,20 @@ export const renderLayout = ({
     : '';
 
   const sidebarCss = `
-    body { min-height: 100vh; }
+    body { min-height: 100vh; padding-top: 56px; }
     .layout { display: flex; min-height: 100vh; }
-    #sidebar { width: 260px; transition: margin-left 0.2s ease; }
+    /* Sidebar: desktop - sticky under the fixed header */
+    #sidebar {
+      width: 260px;
+      transition: margin-left 0.2s ease;
+      position: sticky;
+      top: 56px;
+      height: calc(100vh - 56px);
+      overflow-y: auto;
+      background: #f8f9fa;
+      border-right: 1px solid #e5e7eb;
+      z-index: 1020;
+    }
     #content { flex: 1; transition: margin-left 0.2s ease; }
     .sidebar-collapsed #sidebar { margin-left: -260px; }
     .sidebar-collapsed #content { margin-left: 0; }
@@ -93,9 +104,7 @@ export const renderLayout = ({
         z-index: 1040;
         top: 56px;
         bottom: 0;
-        overflow-y: auto;
-        background: #f8f9fa;
-        border-right: 1px solid #e5e7eb;
+        height: auto;
       }
       .sidebar-collapsed #sidebar { margin-left: -260px; }
       #content { margin-left: 0; }
