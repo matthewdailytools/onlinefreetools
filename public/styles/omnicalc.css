@@ -1,28 +1,52 @@
-/* OmniCalc-like global styles (简化版本) */
+/* Global site styles — Apple-like aesthetic */
 :root{
-  --accent:#0ea5a4; /* teal */
-  --accent-2:#7c3aed; /* purple accent */
-  --bg:#f6f8fb;
-  --card:#ffffff;
-  --muted:#6b7280;
+  --accent: #007aff; /* iOS blue */
+  --accent-2: #34c759; /* green accent */
+  --bg: rgba(242,244,247,1);
+  --surface: rgba(255,255,255,0.85);
+  --muted: #6b7280;
+  --glass: rgba(255,255,255,0.6);
+  --shadow: 0 8px 24px rgba(15,23,42,0.08);
 }
 *{box-sizing:border-box}
-html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;background:var(--bg);color:#0f172a}
-a{color:var(--accent)}
-.container-narrow{max-width:900px;margin:0 auto;padding:2rem}
+html,body{height:100%;margin:0;font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", system-ui; background:linear-gradient(180deg,var(--bg), #ffffff); color:#0f172a; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale}
+a{color:var(--accent); text-decoration:none}
+.container-narrow{max-width:980px;margin:0 auto;padding:2rem}
 .site-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem}
 .site-title{font-weight:600;font-size:1.25rem;color:#0f172a}
 .site-sub{color:var(--muted);font-size:.95rem}
 .top-actions{display:flex;gap:.5rem}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:.5rem .75rem;border-radius:.5rem;border:1px solid transparent;font-weight:600;cursor:pointer}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:.5rem .75rem;border-radius:12px;border:1px solid.transparent;font-weight:600;cursor:pointer}
 .btn-outline-secondary{background:transparent;border-color:rgba(15,23,42,.06);color:var(--muted)}
-.btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;border:none;box-shadow:0 6px 18px rgba(124,58,237,.12)}
-.card{background:var(--card);border-radius:12px;box-shadow:0 6px 18px rgba(15,23,42,.06);padding:1.25rem}
+.btn-primary{background:linear-gradient(180deg,var(--surface), #ffffff);color:var(--accent);border:none;border-radius:14px;box-shadow:var(--shadow);padding:.6rem .9rem}
+.btn-primary:active{transform:translateY(1px)}
+.card{background:var(--surface);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-radius:14px;box-shadow:var(--shadow);padding:1.25rem;border:1px solid rgba(15,23,42,0.04)}
 .log-meta{color:var(--muted)}
-pre{background:#0f172a;color:#e6eef6;padding:1rem;border-radius:.75rem;overflow:auto}
-/* 表单与内容样式 */
+pre{background:#0f172a;color:#e6eef6;padding:1rem;border-radius:12px;overflow:auto}
+/* Form and content */
 .calc-container{display:flex;flex-direction:column;gap:1rem}
-.input-lg{padding:.85rem 1rem;border-radius:.75rem;border:1px solid #e6eef6;background:#fbfdfe}
-.result{padding:1rem;border-radius:.75rem;background:linear-gradient(180deg,#fff,#fbfdff);border:1px solid rgba(15,23,42,.03)}
-/* 响应 */
-@media (max-width:640px){.container-narrow{padding:1rem}.site-title{font-size:1.05rem}}
+.input-lg{padding:.85rem 1rem;border-radius:12px;border:1px solid rgba(15,23,42,0.06);background:linear-gradient(180deg,#fff,#fbfdff)}
+.result{padding:1rem;border-radius:12px;background:linear-gradient(180deg,#ffffff, #fbfdff);border:1px solid rgba(15,23,42,0.03)}
+
+/* Navbar / header glass effect */
+.navbar{background:var(--glass) !important; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom:1px solid rgba(15,23,42,0.04)}
+.navbar .navbar-brand{font-weight:700}
+.navbar .btn-outline-secondary{border-radius:10px}
+
+/* Cards grid */
+.card .card-title{font-weight:600}
+
+/* Accessible focus */
+:focus{outline:2px solid rgba(0,122,255,0.14);outline-offset:3px}
+
+/* Responsive */
+@media (max-width:640px){
+  .container-narrow{padding:1rem}
+  .site-title{font-size:1.05rem}
+  .navbar .container-fluid { padding-left: .5rem; padding-right: .5rem }
+  .card{border-radius:12px}
+}
+
+@media (min-width:1200px){
+  .container-narrow{max-width:1100px}
+}
