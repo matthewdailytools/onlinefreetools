@@ -127,5 +127,12 @@ const pt: SiteLangDict = {
   tool_marginal_revenue_revenue_label: 'Total Revenue',
   tool_marginal_revenue_calculate: 'Calculate MR',
   tool_marginal_revenue_result_label: 'Marginal Revenue',
+  tool_gradient_title: 'Como calcular o gradiente',
+  tool_gradient_description:
+    'Calcule o gradiente de uma função escalar (o vetor de derivadas parciais, ∇f). Processo: calcule as derivadas parciais para cada variável, monte o vetor e avalie em um ponto. Exemplo: f(x,y)=x^2 y + 3y → ∇f=(2xy, x^2+3); em (1,2) → (4,4).',
+  tool_gradient_article:
+    'O que: O gradiente de uma função escalar é o vetor de suas derivadas parciais e aponta na direção do aumento mais rápido. Uso: insira uma função multivariável, calcule cada derivada parcial, forme o vetor gradiente e avalie num ponto específico. Cenários: otimização, derivadas direcionais, física e análise de campos.',
+  tool_gradient_example:
+    'Exemplo: f(x,y)=x^2 y + 3y. ∂f/∂x = 2xy, ∂f/∂y = x^2 + 3. Portanto ∇f = (2xy, x^2 + 3). Em (1,2): ∇f = (4,4).',
 };
 export default pt;

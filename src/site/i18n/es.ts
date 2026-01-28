@@ -127,5 +127,12 @@ const es: SiteLangDict = {
   tool_roi_interpret_positive: 'Retorno positivo',
   tool_roi_interpret_zero: 'Sin ganancia ni pérdida',
   tool_roi_interpret_negative: 'Retorno negativo (pérdida)',
+  tool_gradient_title: 'Cómo calcular el gradiente',
+  tool_gradient_description:
+    'Calcule el gradiente de una función escalar (el vector de derivadas parciales, ∇f). Proceso: tomar derivadas parciales respecto a cada variable, formar el vector y evaluarlo en un punto. Ejemplo: f(x,y)=x^2 y + 3y → ∇f=(2xy, x^2+3); en (1,2) → (4,4).',
+  tool_gradient_article:
+    'Qué: El gradiente de una función escalar es el vector de sus derivadas parciales y apunta en la dirección de mayor crecimiento. Uso: introducir una función multivariable, calcular cada derivada parcial, formar el vector gradiente y evaluarlo en un punto concreto. Escenarios: optimización, derivadas direccionales, física y análisis de campos.',
+  tool_gradient_example:
+    'Ejemplo: f(x,y)=x^2 y + 3y. ∂f/∂x = 2xy, ∂f/∂y = x^2 + 3. Por lo tanto ∇f = (2xy, x^2 + 3). En (1,2): ∇f = (4,4).',
 };
 export default es;

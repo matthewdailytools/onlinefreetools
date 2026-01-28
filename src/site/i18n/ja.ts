@@ -126,5 +126,12 @@ const ja: SiteLangDict = {
     tool_roi_interpret_positive: '利益が出ています',
     tool_roi_interpret_zero: '損益なし',
     tool_roi_interpret_negative: '損失（マイナスのリターン）',
+     tool_gradient_title: '勾配の計算方法',
+     tool_gradient_description:
+       'スカラー関数の勾配（偏導関数のベクトル、∇f）を計算します。手順：各変数について偏微分を取り、それらをベクトルとしてまとめ、特定の点で評価します。例：f(x,y)=x^2 y + 3y → ∇f=(2xy, x^2+3); (1,2) では (4,4)。',
+     tool_gradient_article:
+       '概要：スカラー関数の勾配は各変数に対する偏導のベクトルで、最も急な上昇方向を示します。使い方：多変数関数を入力し、各偏導を計算して勾配ベクトルを作り、指定点で評価します。用途例：最適化、方向微分、物理場の解析。',
+     tool_gradient_example:
+       '例：f(x,y)=x^2 y + 3y。∂f/∂x = 2xy、∂f/∂y = x^2 + 3。したがって ∇f = (2xy, x^2 + 3)。(1,2) における値は (4,4)。',
 };
 export default ja;

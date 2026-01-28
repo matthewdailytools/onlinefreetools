@@ -120,6 +120,13 @@ const en: SiteLangDict = {
   tool_roi_interpret_positive: 'Positive return',
   tool_roi_interpret_zero: 'No gain or loss',
   tool_roi_interpret_negative: 'Negative return (loss)',
+  tool_gradient_title: 'How to Calculate Gradient',
+  tool_gradient_description:
+    'Compute the gradient of a scalar function (the vector of partial derivatives, ∇f). Process: take partial derivatives with respect to each variable, assemble them into a vector, and evaluate at a point. Example: f(x,y)=x^2 y + 3y → ∇f=(2xy, x^2+3); at (1,2) → (4,4).',
+  tool_gradient_article:
+    'What: The gradient of a scalar function is the vector of its partial derivatives and points in the direction of steepest increase. Usage: enter a multivariable scalar function, compute each partial derivative, form the gradient vector, and evaluate at a specific point. Scenarios: optimization, directional derivatives, physics and field analysis.',
+  tool_gradient_example:
+    'Example: f(x,y)=x^2 y + 3y. ∂f/∂x = 2xy, ∂f/∂y = x^2 + 3. Therefore ∇f = (2xy, x^2 + 3). At (1,2): ∇f = (4,4).',
   tool_ip_address_description: "Discover your public IP address and basic metadata. Process: server returns requester IP, optionally look up geolocation/ISP; include IPv4/IPv6 handling. Example: shows IP and country for troubleshooting remote access.",
   tool_ip_address_article: 'What: Find your public IP address as seen by the internet. Your IP address identifies your device on the network and is used by websites to deliver content. Scenarios: remote access, network troubleshooting, firewall configuration, and geolocation services.',
   ip_label: 'Your IP Address',

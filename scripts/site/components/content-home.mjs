@@ -31,6 +31,7 @@ export const renderHomeContent = ({ lang }) => {
   const toolBmiHref = withExplicitLangPath(lang, '/tools/how-to-calculate-bmi');
   const toolMrHref = withExplicitLangPath(lang, '/tools/how-to-calculate-marginal-revenue');
   const toolRoiHref = withExplicitLangPath(lang, '/tools/how-to-calculate-roi');
+  const toolGradientHref = withExplicitLangPath(lang, '/tools/how-to-calculate-gradient');
 
   const openCta = t(lang, 'home_open');
 
@@ -83,6 +84,12 @@ export const renderHomeContent = ({ lang }) => {
           href: toolRoiHref,
           cta: openCta,
         })}
+        ${renderPrimaryCard({
+          title: t(lang, 'tool_gradient_title'),
+          desc: t(lang, 'tool_gradient_desc'),
+          href: toolGradientHref,
+          cta: openCta,
+        })}
       </div>
     </section>
 
@@ -125,6 +132,12 @@ export const renderHomeContent = ({ lang }) => {
             title: t(lang, 'tool_roi_title'),
             desc: t(lang, 'tool_roi_description'),
             href: toolRoiHref,
+            cta: openCta,
+          })}
+          ${renderSecondaryCard({
+            title: t(lang, 'tool_gradient_title'),
+            desc: t(lang, 'tool_gradient_desc'),
+            href: toolGradientHref,
             cta: openCta,
           })}
         </div>

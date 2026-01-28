@@ -7,6 +7,7 @@ export const TOOL_PAGES = [
   { slug: 'how-to-calculate-marginal-revenue', path: '/tools/how-to-calculate-marginal-revenue', i18nKey: 'tool_marginal_revenue_title' },
   { slug: 'square-feet', path: '/tools/square-feet', i18nKey: 'tool_squarefeet_title' },
   { slug: 'how-to-calculate-percentage-change', path: '/tools/how-to-calculate-percentage-change', i18nKey: 'tool_percentage_change_title' },
+  { slug: 'how-to-calculate-gradient', path: '/tools/how-to-calculate-gradient', i18nKey: 'tool_gradient_title' },
 ];
 
 export default TOOL_PAGES;

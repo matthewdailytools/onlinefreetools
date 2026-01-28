@@ -16,7 +16,7 @@
 	},
 	"vars": {
 		"SITE_DEFAULT_LANG": "en",
-		"SITE_LANGS": "zh,en"
+		"SITE_LANGS": "en,zh,es,ar,pt,id,fr,ja,ru,de"
 	}
 	/**
 	 * Smart Placement

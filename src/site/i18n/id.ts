@@ -127,5 +127,12 @@ const id: SiteLangDict = {
     tool_roi_interpret_positive: 'Imbal hasil positif',
     tool_roi_interpret_zero: 'Tidak ada untung atau rugi',
     tool_roi_interpret_negative: 'Imbal hasil negatif (rugi)',
+     tool_gradient_title: 'Cara menghitung gradien',
+     tool_gradient_description:
+       'Hitung gradien dari fungsi skalar (vektor turunan parsial, ∇f). Proses: ambil turunan parsial terhadap setiap variabel, susun sebagai vektor, lalu evaluasi pada sebuah titik. Contoh: f(x,y)=x^2 y + 3y → ∇f=(2xy, x^2+3); pada (1,2) → (4,4).',
+     tool_gradient_article:
+       'Apa: Gradien dari fungsi skalar adalah vektor turunan parsialnya dan menunjukkan arah kenaikan tercepat. Pemakaian: masukkan fungsi multivariabel, hitung turunan parsial, bentuk vektor gradien, dan evaluasi pada titik tertentu. Skenario: optimisasi, turunan arah, fisika dan analisis medan.',
+     tool_gradient_example:
+       'Contoh: f(x,y)=x^2 y + 3y. ∂f/∂x = 2xy, ∂f/∂y = x^2 + 3. Maka ∇f = (2xy, x^2 + 3). Pada (1,2): ∇f = (4,4).',
 };
 export default id;

@@ -123,5 +123,12 @@ const zh: SiteLangDict = {
   tool_roi_interpret_positive: '正收益',
   tool_roi_interpret_zero: '无盈亏',
   tool_roi_interpret_negative: '负收益（亏损）',
+  tool_gradient_title: '如何计算梯度',
+  tool_gradient_description:
+    '计算标量函数的梯度（∇f），即各变量的偏导数组成的向量。流程：对每个自变量求偏导，组合为向量，并在指定点处求值。示例：f(x,y)=x^2 y + 3y → ∇f=(2xy, x^2+3)，在 (1,2) 处为 (4,4)。',
+  tool_gradient_article:
+    '是什么：标量函数的梯度是由该函数对每个变量的偏导数组成的向量，指示函数增长最快的方向。用法：输入多元标量函数，计算各偏导，组成梯度向量并在某点求值。适用场景：优化、方向导数、物理场分析。',
+  tool_gradient_example:
+    '示例：f(x,y)=x^2 y + 3y。∂f/∂x = 2xy，∂f/∂y = x^2 + 3，故 ∇f = (2xy, x^2 + 3)。在 (1,2) 处：∇f = (4,4)。',
 };
 export default zh;

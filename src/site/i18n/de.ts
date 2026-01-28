@@ -127,5 +127,12 @@ const de: SiteLangDict = {
     tool_roi_interpret_positive: 'Positiver Ertrag',
     tool_roi_interpret_zero: 'Kein Gewinn oder Verlust',
     tool_roi_interpret_negative: 'Negativer Ertrag (Verlust)',
+    tool_gradient_title: 'Wie berechnet man den Gradienten',
+    tool_gradient_description:
+      'Berechnen Sie den Gradienten einer skalaren Funktion (der Vektor der partiellen Ableitungen, ∇f). Ablauf: partielle Ableitungen nach jeder Variablen bilden, als Vektor zusammenstellen und an einem Punkt auswerten. Beispiel: f(x,y)=x^2 y + 3y → ∇f=(2xy, x^2+3); bei (1,2) → (4,4).',
+    tool_gradient_article:
+      'Was: Der Gradient einer skalaren Funktion ist der Vektor ihrer partiellen Ableitungen und zeigt in Richtung des stärksten Anstiegs. Verwendung: Geben Sie eine mehrvariable Funktion ein, berechnen Sie jede partielle Ableitung, bilden Sie den Gradientenvektor und werten Sie ihn an einem Punkt aus. Szenarien: Optimierung, Richtungsableitungen, Physik und Feldanalyse.',
+    tool_gradient_example:
+      'Beispiel: f(x,y)=x^2 y + 3y. ∂f/∂x = 2xy, ∂f/∂y = x^2 + 3. Daher ∇f = (2xy, x^2 + 3). Bei (1,2): ∇f = (4,4).',
 };
 export default de;
