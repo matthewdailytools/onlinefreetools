@@ -110,5 +110,22 @@ const id: SiteLangDict = {
   tool_percentage_change_increase: 'kenaikan',
   tool_percentage_change_decrease: 'penurunan',
   tool_percentage_change_no_change: 'tidak ada perubahan',
+    tool_roi_title: 'Cara Menghitung ROI',
+    tool_roi_description:
+      'Hitung Return on Investment (ROI) = (Nilai Akhir - Investasi Awal) / Investasi Awal × 100%. Proses: masukkan investasi awal dan nilai akhir (atau keuntungan bersih), hitung persentase ROI, dan tafsirkan hasilnya.',
+    tool_roi_article:
+      'Apa: ROI menunjukkan persentase keuntungan atau kerugian relatif terhadap investasi awal. Penggunaan: masukkan biaya awal dan nilai akhir atau keuntungan bersih, lalu klik hitung. Skenario: keuangan, analisis kampanye pemasaran, perbandingan investasi.',
+    tool_roi_initial_label: 'Investasi Awal',
+    tool_roi_initial_placeholder: 'Masukkan jumlah investasi awal',
+    tool_roi_final_label: 'Nilai Akhir',
+    tool_roi_final_placeholder: 'Masukkan nilai akhir atau hasil penjualan',
+    tool_roi_gain_label: 'Keuntungan Bersih (opsional)',
+    tool_roi_gain_placeholder: 'Masukkan keuntungan bersih jika diketahui',
+    tool_roi_calculate: 'Hitung ROI',
+    tool_roi_result_label: 'ROI',
+    tool_roi_example: 'Contoh: Awal $1000, Akhir $1250 → ROI = ((1250 - 1000) / 1000) × 100 = 25%',
+    tool_roi_interpret_positive: 'Imbal hasil positif',
+    tool_roi_interpret_zero: 'Tidak ada untung atau rugi',
+    tool_roi_interpret_negative: 'Imbal hasil negatif (rugi)',
 };
 export default id;

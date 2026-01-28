@@ -70,6 +70,8 @@ const translations = {
     devlogs_title: 'Dev Logs',
     devlogs_subtitle: 'Browse Q&A and implementation notes by date.',
     footer_text: 'Online Free Tools · Learning project · Iterating',
+    tool_roi_title: 'How to Calculate ROI',
+    tool_roi_description: 'Calculate Return on Investment (ROI) = (Final Value - Initial Investment) / Initial Investment × 100%. Enter initial investment and final value (or net gain) to compute ROI percentage.',
   },
   zh: {
     brand: 'Online Free Tools',
@@ -143,6 +145,8 @@ const translations = {
     devlogs_title: '开发日志清单',
     devlogs_subtitle: '按日期列出所有问答记录，点击打开查看详情。',
     footer_text: 'Online Free Tools · 学习项目 · 持续迭代',
+    tool_roi_title: '如何计算 ROI',
+    tool_roi_description: '计算投资回报率（ROI）= (最终价值 - 初始投资) / 初始投资 × 100%。输入初始投资和最终价值（或净收益）来计算 ROI 百分比。',
   },
   es: {
     brand: 'Online Free Tools',
@@ -213,6 +217,8 @@ const translations = {
     devlogs_title: 'Registros',
     devlogs_subtitle: 'Notas y Q&A organizadas por fecha.',
     footer_text: 'Online Free Tools · Proyecto de aprendizaje · Iterando',
+    tool_roi_title: 'Cómo calcular el ROI',
+    tool_roi_description: 'Calcula el Retorno de la Inversión (ROI) = (Valor final - Inversión inicial) / Inversión inicial × 100%. Introduce inversión inicial y valor final (o ganancia neta) para obtener el ROI en porcentaje.',
   },
   ar: {
     brand: 'Online Free Tools',
@@ -283,6 +289,8 @@ const translations = {
     devlogs_title: 'سجلات التطوير',
     devlogs_subtitle: 'ملاحظات وأسئلة وأجوبة مرتبة حسب التاريخ.',
     footer_text: 'Online Free Tools · مشروع تعليمي · تطوير مستمر',
+    tool_roi_title: 'كيفية حساب عائد الاستثمار (ROI)',
+    tool_roi_description: 'حساب عائد الاستثمار (ROI) = (القيمة النهائية - الاستثمار الأولي) / الاستثمار الأولي × 100%. أدخل الاستثمار الأولي والقيمة النهائية (أو الربح الصافي) لحساب نسبة ROI.',
   },
   pt: {
     brand: 'Online Free Tools',
@@ -353,6 +361,8 @@ const translations = {
     devlogs_title: 'Logs',
     devlogs_subtitle: 'Notas e Q&A organizadas por data.',
     footer_text: 'Online Free Tools · Projeto de aprendizado · Iterando',
+    tool_roi_title: 'Como calcular o ROI',
+    tool_roi_description: 'Calcule o Retorno sobre Investimento (ROI) = (Valor final - Investimento inicial) / Investimento inicial × 100%. Insira o investimento inicial e o valor final (ou ganho líquido) para calcular o ROI em percentagem.',
   },
   id: {
     brand: 'Online Free Tools',
@@ -423,6 +433,8 @@ const translations = {
     devlogs_title: 'Log Dev',
     devlogs_subtitle: 'Catatan Q&A dan implementasi berdasarkan tanggal.',
     footer_text: 'Online Free Tools · Proyek pembelajaran · Iterasi',
+    tool_roi_title: 'Cara Menghitung ROI',
+    tool_roi_description: 'Hitung Return on Investment (ROI) = (Nilai Akhir - Investasi Awal) / Investasi Awal × 100%. Masukkan investasi awal dan nilai akhir (atau keuntungan bersih) untuk menghitung persentase ROI.',
   },
   fr: {
     brand: 'Online Free Tools',
@@ -493,6 +505,8 @@ const translations = {
     devlogs_title: 'Journal',
     devlogs_subtitle: 'Notes et Q&A classées par date.',
     footer_text: "Online Free Tools · Projet d’apprentissage · Itération",
+    tool_roi_title: 'Comment calculer le ROI',
+    tool_roi_description: 'Calculer le Retour sur Investissement (ROI) = (Valeur finale - Investissement initial) / Investissement initial × 100%. Saisissez l’investissement initial et la valeur finale (ou le gain net) pour calculer le ROI en pourcentage.',
   },
   ja: {
     brand: 'Online Free Tools',
@@ -562,6 +576,8 @@ const translations = {
     devlogs_title: '開発ログ',
     devlogs_subtitle: '日付順に Q&A と実装メモを閲覧できます。',
     footer_text: 'Online Free Tools · 学習プロジェクト · 改善中',
+    tool_roi_title: 'ROIの計算方法',
+    tool_roi_description: '投資利益率（ROI）= (最終価値 - 初期投資) / 初期投資 × 100%。初期投資と最終価値（または純利益）を入力して ROI を計算します。',
   },
   ru: {
     brand: 'Online Free Tools',
@@ -632,6 +648,8 @@ const translations = {
     devlogs_title: 'Логи',
     devlogs_subtitle: 'Заметки и Q&A по датам.',
     footer_text: 'Online Free Tools · Учебный проект · Итерации',
+    tool_roi_title: 'Как рассчитать ROI',
+    tool_roi_description: 'Вычислите доходность инвестиций (ROI) = (Конечная стоимость - Начальные вложения) / Начальные вложения × 100%. Введите начальные вложения и конечную стоимость (или чистую прибыль), чтобы получить ROI в процентах.',
   },
   de: {
     brand: 'Online Free Tools',
@@ -687,6 +705,8 @@ const translations = {
     devlogs_title: 'Dev-Logs',
     devlogs_subtitle: 'Q&A und Implementierungsnotizen nach Datum.',
     footer_text: 'Online Free Tools · Lernprojekt · Iteration',
+    tool_roi_title: 'Wie man ROI berechnet',
+    tool_roi_description: 'Berechnen Sie die Rendite (ROI) = (Endwert - Anfangsinvestition) / Anfangsinvestition × 100%. Geben Sie Anfangsinvestition und Endwert (oder Nettogewinn) ein, um die ROI‑Prozentzahl zu berechnen.',
   },
 };
 

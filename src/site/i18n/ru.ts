@@ -110,5 +110,22 @@ const ru: SiteLangDict = {
   tool_percentage_change_increase: 'увеличение',
   tool_percentage_change_decrease: 'уменьшение',
   tool_percentage_change_no_change: 'без изменений',
+    tool_roi_title: 'Как рассчитать ROI',
+    tool_roi_description:
+      'Вычислите доходность инвестиций (ROI) = (Конечная стоимость - Начальные вложения) / Начальные вложения × 100%. Процесс: введите начальные вложения и конечную стоимость (или чистую прибыль), вычислите процент ROI и интерпретируйте результат.',
+    tool_roi_article:
+      'Что это: ROI (Return on Investment) показывает процентную прибыль или убыток относительно начальных вложений. Использование: введите начальные затраты и конечную стоимость либо чистую прибыль, нажмите «Вычислить». Сценарии: финансы, анализ маркетинговых кампаний, сравнение инвестиций.',
+    tool_roi_initial_label: 'Начальные вложения',
+    tool_roi_initial_placeholder: 'Введите сумму начальных вложений',
+    tool_roi_final_label: 'Конечная стоимость',
+    tool_roi_final_placeholder: 'Введите конечную стоимость или выручку от продажи',
+    tool_roi_gain_label: 'Чистая прибыль (необязательно)',
+    tool_roi_gain_placeholder: 'Введите чистую прибыль, если она известна',
+    tool_roi_calculate: 'Вычислить ROI',
+    tool_roi_result_label: 'ROI',
+    tool_roi_example: 'Пример: Начальные 1000$, Конечные 1250$ → ROI = ((1250 - 1000) / 1000) × 100 = 25%',
+    tool_roi_interpret_positive: 'Положительная доходность',
+    tool_roi_interpret_zero: 'Нет прибыли или убытка',
+    tool_roi_interpret_negative: 'Отрицательная доходность (убыток)',
 };
 export default ru;

@@ -109,5 +109,22 @@ const ja: SiteLangDict = {
   tool_percentage_change_increase: '増加',
   tool_percentage_change_decrease: '減少',
   tool_percentage_change_no_change: '変化なし',
+    tool_roi_title: 'ROIの計算方法',
+    tool_roi_description:
+      '投資利益率（ROI）を計算します。ROI = (最終価値 - 初期投資) / 初期投資 × 100%。手順：初期投資と最終価値（または純利益）を入力し、ROIの割合を計算して解釈します。',
+    tool_roi_article:
+      '概要：ROIは初期投資に対する利益または損失の割合を示します。使い方：初期コストと最終価値または純利益を入力して「計算」をクリックします。用途：財務分析、マーケティング効果測定、投資比較など。',
+    tool_roi_initial_label: '初期投資',
+    tool_roi_initial_placeholder: '初期投資額を入力してください',
+    tool_roi_final_label: '最終価値',
+    tool_roi_final_placeholder: '最終価値または売却収入を入力してください',
+    tool_roi_gain_label: '純利益（任意）',
+    tool_roi_gain_placeholder: '既知の場合は純利益を入力してください',
+    tool_roi_calculate: 'ROIを計算',
+    tool_roi_result_label: 'ROI',
+    tool_roi_example: '例：初期 1000$, 最終 1250$ → ROI = ((1250 - 1000) / 1000) × 100 = 25%',
+    tool_roi_interpret_positive: '利益が出ています',
+    tool_roi_interpret_zero: '損益なし',
+    tool_roi_interpret_negative: '損失（マイナスのリターン）',
 };
 export default ja;

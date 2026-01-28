@@ -110,5 +110,22 @@ const ar: SiteLangDict = {
      tool_percentage_change_increase: 'زيادة',
      tool_percentage_change_decrease: 'نقصان',
      tool_percentage_change_no_change: 'بدون تغيير',
+    tool_roi_title: 'كيفية حساب عائد الاستثمار (ROI)',
+    tool_roi_description:
+      'حساب عائد الاستثمار (ROI) = (القيمة النهائية - الاستثمار الأولي) / الاستثمار الأولي × 100%. العملية: أدخل الاستثمار الأولي والقيمة النهائية (أو الربح الصافي)، احسب نسبة ROI وقم بتفسير النتيجة.',
+    tool_roi_article:
+      'ما هو: ROI يقيس نسبة الربح أو الخسارة بالمقارنة مع الاستثمار الأولي. الاستخدام: ادخل تكلفة البداية والقيمة النهائية أو الربح الصافي، ثم اضغط حساب. السيناريوهات: التمويل، تحليل حملات التسويق، ومقارنة الاستثمارات.',
+    tool_roi_initial_label: 'الاستثمار الأولي',
+    tool_roi_initial_placeholder: 'أدخل مبلغ الاستثمار الأولي',
+    tool_roi_final_label: 'القيمة النهائية',
+    tool_roi_final_placeholder: 'أدخل القيمة النهائية أو عائد البيع',
+    tool_roi_gain_label: 'الربح الصافي (اختياري)',
+    tool_roi_gain_placeholder: 'أدخل الربح الصافي إذا كان معروفًا',
+    tool_roi_calculate: 'احسب ROI',
+    tool_roi_result_label: 'ROI',
+    tool_roi_example: 'مثال: البداية 1000$، النهاية 1250$ → ROI = ((1250 - 1000) / 1000) × 100 = 25%',
+    tool_roi_interpret_positive: 'عائد إيجابي',
+    tool_roi_interpret_zero: 'لا ربح ولا خسارة',
+    tool_roi_interpret_negative: 'عائد سلبي (خسارة)',
 };
 export default ar;

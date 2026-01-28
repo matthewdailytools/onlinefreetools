@@ -20,6 +20,7 @@ import { renderMarkdownToHtmlPage } from "./pages/markdownToHtmlPage";
 import { renderIpAddressPage } from "./pages/ipAddressPage";
 import { renderHowToCalculateBmiPage } from "./pages/howToCalculateBmiPage";
 import { renderMarginalRevenuePage } from "./pages/marginalRevenuePage";
+import { renderHowToCalculateRoiPage } from "./pages/howToCalculateRoiPage";
 import { renderSquareFeetPage } from "./pages/squareFeetPage";
 import { renderHowToCalculatePercentageChangePage } from "./pages/howToCalculatePercentageChangePage";
 import { registerToolPage } from "./site/toolRegistrar";
@@ -177,6 +178,11 @@ registerToolPage(app as any, 'square-feet', (lang, defaultLang, enabled) =>
 // Register how-to-calculate-percentage-change page via registrar
 registerToolPage(app as any, 'how-to-calculate-percentage-change', (lang, defaultLang, enabled) =>
 	renderHowToCalculatePercentageChangePage({ lang, defaultLang, enabledLangs: enabled })
+);
+
+// Register how-to-calculate-roi page via registrar
+registerToolPage(app as any, 'how-to-calculate-roi', (lang, defaultLang, enabled) =>
+  renderHowToCalculateRoiPage({ lang, defaultLang, enabledLangs: enabled })
 );
 
 // Catch-all (GET): perform language negotiation before falling back to static assets.

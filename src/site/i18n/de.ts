@@ -110,5 +110,22 @@ const de: SiteLangDict = {
      tool_percentage_change_increase: 'Zunahme',
      tool_percentage_change_decrease: 'Abnahme',
      tool_percentage_change_no_change: 'keine Änderung',
+    tool_roi_title: 'Wie man ROI berechnet',
+    tool_roi_description:
+      'Berechnen Sie die Rendite (ROI) = (Endwert - Anfangsinvestition) / Anfangsinvestition × 100%. Vorgehen: Anfangsinvestition und Endwert (oder Netto-Gewinn) eingeben, ROI-Prozent berechnen und Ergebnis interpretieren.',
+    tool_roi_article:
+      'Was: ROI (Return on Investment) gibt die prozentuale Rendite oder den Verlust relativ zur Anfangsinvestition an. Verwendung: Anfangskosten und Endwert oder Netto-Gewinn eingeben und auf Berechnen klicken. Anwendungsfälle: Finanzen, Marketing-Auswertung, Investitionsvergleiche.',
+    tool_roi_initial_label: 'Anfangsinvestition',
+    tool_roi_initial_placeholder: 'Geben Sie den Anfangsinvestitionsbetrag ein',
+    tool_roi_final_label: 'Endwert',
+    tool_roi_final_placeholder: 'Geben Sie den Endwert oder Verkaufserlös ein',
+    tool_roi_gain_label: 'Netto-Gewinn (optional)',
+    tool_roi_gain_placeholder: 'Geben Sie den Netto-Gewinn ein, falls bekannt',
+    tool_roi_calculate: 'ROI berechnen',
+    tool_roi_result_label: 'ROI',
+    tool_roi_example: 'Beispiel: Anfang 1000$, Ende 1250$ → ROI = ((1250 - 1000) / 1000) × 100 = 25%',
+    tool_roi_interpret_positive: 'Positiver Ertrag',
+    tool_roi_interpret_zero: 'Kein Gewinn oder Verlust',
+    tool_roi_interpret_negative: 'Negativer Ertrag (Verlust)',
 };
 export default de;

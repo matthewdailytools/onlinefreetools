@@ -110,5 +110,22 @@ const es: SiteLangDict = {
   tool_percentage_change_increase: 'aumento',
   tool_percentage_change_decrease: 'disminución',
   tool_percentage_change_no_change: 'sin cambios',
+  tool_roi_title: 'Cómo calcular el ROI',
+  tool_roi_description:
+    'Calcula el Retorno de la Inversión (ROI) = (Valor final - Inversión inicial) / Inversión inicial × 100%. Proceso: introduce la inversión inicial y el valor final (o ganancia neta), calcula el porcentaje de ROI e interpreta el resultado.',
+  tool_roi_article:
+    'Qué: El ROI expresa el porcentaje de ganancia o pérdida respecto a la inversión inicial. Uso: proporciona el coste inicial y el valor final o la ganancia neta, luego haz clic en calcular. Escenarios: finanzas, análisis de campañas de marketing, comparaciones de inversión.',
+  tool_roi_initial_label: 'Inversión inicial',
+  tool_roi_initial_placeholder: 'Introduce el importe de la inversión inicial',
+  tool_roi_final_label: 'Valor final',
+  tool_roi_final_placeholder: 'Introduce el valor final o los ingresos de venta',
+  tool_roi_gain_label: 'Ganancia neta (opcional)',
+  tool_roi_gain_placeholder: 'Introduce la ganancia neta si la conoces',
+  tool_roi_calculate: 'Calcular ROI',
+  tool_roi_result_label: 'ROI',
+  tool_roi_example: 'Ejemplo: Inicial $1000, Final $1250 → ROI = ((1250 - 1000) / 1000) × 100 = 25%',
+  tool_roi_interpret_positive: 'Retorno positivo',
+  tool_roi_interpret_zero: 'Sin ganancia ni pérdida',
+  tool_roi_interpret_negative: 'Retorno negativo (pérdida)',
 };
 export default es;

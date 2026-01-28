@@ -37,8 +37,11 @@ Purpose: Make AI agents productive immediately in this repo. Keep changes minima
   - 11:ar,العربية 
   - 12:it,italiano
   - 默认支持前12种语言（按仓库中 i18n 目录的顺序）
+  - 新增多语言时工具，要在 content-home.mjs 中添加 ROI 工具的卡片（featured 和 all-tools 部分），让首页显示新工具入口.自动运行生成脚本/构建首页以刷新 index.html
   - 采用 npm run lint:seo  和 scripts/validate-tool-seo.mjs 检测多语言的 SEO，自行修复
-  - 工具的多个语言的链接保证首页有入口，点击能访问，例如/zh/tools/xxx, /en/tools/xxx等。
+  - 确保多语言工具链接能够存在且能访问，例如/zh/tools/xxx, /en/tools/xxx等。
+  - 确保显示的是对应国家的语言的内容，而不是占位符或其他国家语言的占位符或缺失文本。
+  - 确保每个工具页面具备上述12个国家的  hreflang 的seo元素，而不是只有其中1个或2个国家的 hreflang 元素。
 
 - **必须项**：每个工具页面在本地化 (`i18n`) 文件中应包含以下字段（按语言提供）：
   - `tool_*_title`：工具名称
