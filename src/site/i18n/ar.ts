@@ -72,7 +72,7 @@ const ar: SiteLangDict = {
   what_is_ip_content: 'عنوان بروتوكول الإنترنت (IP) هو تسمية رقمية تُعطى لكل جهاز متصل بشبكة كمبيوتر. وهو يؤدي وظيفتين أساسيتين: التعرف على المضيف أو واجهة الشبكة وعناوين الموقع. هناك نسختان قيد الاستخدام اليوم: IPv4 و IPv6.',
   tool_marginal_revenue_title: 'How to Calculate Marginal Revenue',
   tool_marginal_revenue_description:
-    'Calculate marginal revenue (MR) from changes in total revenue: MR = ΔTR / ΔQ. Process: enter two total-revenue/quantity pairs (or a small ΔQ), compute the ratio, and interpret results for pricing decisions. Example: use TR at Q and Q+1 to estimate MR.',
+    'حساب الإيراد الحدّي (MR) من التغير في الإيراد الكلي: MR = ΔTR / ΔQ. عملية: أدخل زوجي (Q, TR) أو قيمتين متتاليتين، احسب النسبة ΔTR/ΔQ وفسّرها لاتخاذ قرارات السعر. مثال: Q1=100, TR1=2000; Q2=101, TR2=2015 → MR = 15.',
   tool_marginal_revenue_article:
     'What: Marginal revenue is the additional revenue from selling one more unit, computed as the change in total revenue over the change in quantity. Usage: provide two (Q, TR) pairs or successive totals and click calculate. Scenarios: microeconomic analysis, pricing strategy, and profit-maximization.',
   tool_marginal_revenue_example:
@@ -96,5 +96,19 @@ const ar: SiteLangDict = {
     tool_squarefeet_result_note: 'النتيجة مقربة إلى خانتين عشريتين.',
     tool_squarefeet_usage_title: 'طريقة الاستخدام',
     tool_squarefeet_usage: 'استخدم هذه الحاسبة لتقدير المساحات بسرعة لتحديد الأرضيات أو الطلاء أو مواضع الأثاث.',
+     tool_percentage_change_title: 'كيفية حساب النسبة المئوية للزيادة/النقصان',
+     tool_percentage_change_description:
+       'احسب النسبة المئوية للزيادة أو النقصان بين قيمتين. العملية: أدخل القيمة الأصلية والقيمة الجديدة، احسب الفرق، اقسمه على القيمة الأصلية واضرب الناتج في 100 للحصول على النسبة المئوية. مفيد للتمويل، والخصومات، والتحليلات والتقارير.',
+     tool_percentage_change_article:
+       'ما هي: احسب التغير النسبي بين رقمين وحدد ما إذا كان زيادة أو نقصانًا. الاستخدام: أدخل القيمة الأصلية والقيمة الجديدة ثم اضغط حساب. العملية: Δ = الجديد − القديم؛ النسبة = (Δ / القديم) × 100. سيناريوهات: تغييرات الأسعار، نمو الإيرادات، الخصومات وتقارير مؤشرات الأداء.',
+     tool_percentage_change_original_label: 'القيمة الأصلية',
+     tool_percentage_change_new_label: 'القيمة الجديدة',
+     tool_percentage_change_calculate: 'حساب التغير المئوي',
+     tool_percentage_change_result_label: 'التغير المئوي',
+     tool_percentage_change_example: 'مثال: الأصل 50، الجديد 75 → ((75 - 50) / 50) × 100 = 50% زيادة.',
+     tool_percentage_change_result_invalid: 'يجب أن تكون القيمة الأصلية غير صفرية',
+     tool_percentage_change_increase: 'زيادة',
+     tool_percentage_change_decrease: 'نقصان',
+     tool_percentage_change_no_change: 'بدون تغيير',
 };
 export default ar;

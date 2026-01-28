@@ -94,5 +94,19 @@ const zh: SiteLangDict = {
   tool_squarefeet_result_note: '结果保留两位小数。',
   tool_squarefeet_usage_title: '用法',
   tool_squarefeet_usage: '此工具可快速估算地板、油漆或家具摆放所需的面积。选择单位后输入尺寸并点击计算。',
+  tool_percentage_change_title: '如何计算百分比增减',
+  tool_percentage_change_description:
+    '计算两个数值之间的百分比增减。流程：输入原始值与新值，求差值，除以原始值并乘以 100 得到百分比。适用于财务、折扣、增长分析与报告场景。',
+  tool_percentage_change_article:
+    '是什么：计算两个数值之间的百分比变化并判断是增幅还是降幅。用法：输入原值与新值，点击计算。过程：Δ = 新值 − 原值；百分比 = (Δ / 原值) × 100。场景：价格变动、收入增长、折扣和关键指标报告。',
+  tool_percentage_change_original_label: '原始值',
+  tool_percentage_change_new_label: '新值',
+  tool_percentage_change_calculate: '计算百分比变化',
+  tool_percentage_change_result_label: '百分比变化',
+  tool_percentage_change_example: '示例：原始 50， 新值 75 → ((75 - 50) / 50) × 100 = 50% 增加。',
+  tool_percentage_change_result_invalid: '原始值必须非零',
+  tool_percentage_change_increase: '增加',
+  tool_percentage_change_decrease: '减少',
+  tool_percentage_change_no_change: '无变化',
 };
 export default zh;

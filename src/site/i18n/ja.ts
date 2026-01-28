@@ -95,5 +95,19 @@ const ja: SiteLangDict = {
   tool_marginal_revenue_revenue_label: '総収入',
   tool_marginal_revenue_calculate: 'MRを計算',
   tool_marginal_revenue_result_label: '限界収入',
+  tool_percentage_change_title: '割合の増減の計算方法',
+  tool_percentage_change_description:
+    '2つの値の間の増加または減少の割合を計算します。手順：元の値と新しい値を入力し、差を元の値で割って100を掛けます。財務、割引、分析、レポートに役立ちます。',
+  tool_percentage_change_article:
+    '概要：2つの数値のパーセンテージ変化を計算し、増加か減少かを判断します。使用方法：元の値と新しい値を入力して計算を押してください。計算式：Δ = 新値 − 元値、% = (Δ / 元値) × 100。価格変動や収益分析に有用です。',
+  tool_percentage_change_original_label: '元の値',
+  tool_percentage_change_new_label: '新しい値',
+  tool_percentage_change_calculate: '割合を計算',
+  tool_percentage_change_result_label: '割合の変化',
+  tool_percentage_change_example: '例：元 50、新 75 → ((75 - 50) / 50) × 100 = 50% 増加。',
+  tool_percentage_change_result_invalid: '元の値はゼロ以外である必要があります',
+  tool_percentage_change_increase: '増加',
+  tool_percentage_change_decrease: '減少',
+  tool_percentage_change_no_change: '変化なし',
 };
 export default ja;

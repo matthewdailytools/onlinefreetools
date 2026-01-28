@@ -23,6 +23,23 @@ Purpose: Make AI agents productive immediately in this repo. Keep changes minima
 ### 工具创建规则（默认）
 
 - **目标**：为仓库中创建的“工具页面/工具条目”设定默认规则，确保工具支持多语言、易被检索且对用户友好。
+- **多国语言数量要求**：
+  - 1:zh,中文
+  - 2:en,English
+  - 3:fr,français
+  - 4:de,deutsch
+  - 5:es,español
+  - 6:pt,português
+  - 7:ru,русский
+  - 8:ja,日本語
+  - 9:ko,한국어
+  - 10:id,bahasa Indonesia
+  - 11:ar,العربية 
+  - 12:it,italiano
+  - 默认支持前12种语言（按仓库中 i18n 目录的顺序）
+  - 采用 npm run lint:seo  和 scripts/validate-tool-seo.mjs 检测多语言的 SEO，自行修复
+  - 工具的多个语言的链接保证首页有入口，点击能访问，例如/zh/tools/xxx, /en/tools/xxx等。
+
 - **必须项**：每个工具页面在本地化 (`i18n`) 文件中应包含以下字段（按语言提供）：
   - `tool_*_title`：工具名称
   - `tool_*_description`：简短 SEO 描述（建议 >= 80 字符），应显式包含“计算/步骤/公式/示例”类关键词（按语言本地化）
@@ -37,7 +54,7 @@ Purpose: Make AI agents productive immediately in this repo. Keep changes minima
 
 - **多语言支持**：展示为目标语言提供翻译；自动支持仓库中常见的 Top-N 语言（在 `i18n` 目录声明），并直接生成目标翻译语言。翻译作者需保证 `tool_*_description` 包含本地化关键词以通过启发式校验。
 
-- **首页与导航**：工具应在站点首页或工具索引中有入口（例如工具卡片或导航菜单），每个入口应链接到工具页面并展示简短描述与图标/配色提示，便于快速访问。侧边栏或顶部导航中也应包含工具链接。
+- **首页与导航**：工具必须站点首页或工具索引中有入口（例如工具卡片或导航菜单），每个入口应链接到工具页面并展示简短描述与图标/配色提示，便于快速访问。侧边栏或顶部导航中也应包含工具链接。
 
 - **排版与配色建议**：工具页面应采用层次化排版（标题、子标题、步骤列表、示例块），配色需保证可读性与可访问性（对比度参考 WCAG），并参考常见设计模式（卡片布局、单列响应式或左右栏布局）。
 
@@ -78,16 +95,6 @@ Purpose: Make AI agents productive immediately in this repo. Keep changes minima
    - the typical scenarios or use-cases where the tool applies.
   This description should be concise (1–3 sentences), unique per tool, and include relevant keywords to help SEO and user clarity. Keep descriptions suitable for summary display (aim ~160 characters when used as a teaser).
  - Internationalization: if multiple languages emerge, add `lang` on `<html>` and `hreflang` links per locale.
-
-### Dev Logs SEO
-- Source Markdown lives in `dev-logs/`.
-- Generated HTML lives in `public/devlogs/`. The index (`public/devlogs/index.html`) must include: unique `<title>`/`<meta description>`, `canonical` to `/devlogs/`, Open Graph/Twitter tags, and JSON-LD (`CollectionPage` + `BreadcrumbList`).
-- Per-log HTML pages should include unique `<title>`/`<meta description>`（从摘要派生）、`canonical`、OG/Twitter tags。
-- Maintain `public/robots.txt` with sitemap reference and keep `public/sitemap.xml` updated（至少包含 `/` 与 `/devlogs/`，可扩展各日志 HTML）。
-
-## When Uncertain
-- Prefer adding small, reversible scaffolding with clear paths to expand (e.g., create `wrangler.toml` and a minimal Worker).
-- Document assumptions in `dev-logs` for traceability.
 
 ## Examples
 - Create a new log for a Q&A about initializing Cloudflare: `dev-logs/2026-01-08-初始化cloudflare项目.md` with the sections above.

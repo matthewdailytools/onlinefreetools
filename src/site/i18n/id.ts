@@ -96,5 +96,19 @@ const id: SiteLangDict = {
   fetching_message: 'Mengambil alamat IP Anda...',
   what_is_ip_title: 'Apa itu alamat IP?',
   what_is_ip_content: 'Alamat Protokol Internet (IP) adalah label numerik yang ditetapkan ke setiap perangkat yang terhubung ke jaringan komputer. Ini berfungsi dua fungsi utama: identifikasi host atau antarmuka jaringan dan alamat lokasi. Saat ini ada dua versi yang digunakan: IPv4 dan IPv6.',
+  tool_percentage_change_title: 'Cara Menghitung Kenaikan/Penurunan Persentase',
+  tool_percentage_change_description:
+    'Hitung kenaikan atau penurunan persentase antara dua nilai. Proses: masukkan nilai awal dan nilai baru, hitung selisih, bagi dengan nilai awal lalu kalikan dengan 100 untuk mendapatkan persentase. Berguna untuk keuangan, diskon, analitik, dan pelaporan.',
+  tool_percentage_change_article:
+    'Apa: Hitung perubahan persentase antara dua angka dan tentukan apakah itu kenaikan atau penurunan. Penggunaan: masukkan nilai awal dan nilai baru lalu klik hitung. Proses: Δ = baru − awal; persen = (Δ / awal) × 100. Skenario: perubahan harga, pertumbuhan pendapatan, diskon, dan laporan KPI.',
+  tool_percentage_change_original_label: 'Nilai awal',
+  tool_percentage_change_new_label: 'Nilai baru',
+  tool_percentage_change_calculate: 'Hitung Perubahan Persentase',
+  tool_percentage_change_result_label: 'Perubahan persentase',
+  tool_percentage_change_example: 'Contoh: Awal 50, Baru 75 → ((75 - 50) / 50) × 100 = 50% kenaikan.',
+  tool_percentage_change_result_invalid: 'Nilai awal harus tidak nol',
+  tool_percentage_change_increase: 'kenaikan',
+  tool_percentage_change_decrease: 'penurunan',
+  tool_percentage_change_no_change: 'tidak ada perubahan',
 };
 export default id;

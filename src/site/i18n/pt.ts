@@ -80,6 +80,20 @@ const pt: SiteLangDict = {
     tool_squarefeet_result_note: 'Resultado arredondado para duas casas decimais.',
     tool_squarefeet_usage_title: 'Uso',
     tool_squarefeet_usage: 'Use esta calculadora para estimar rapidamente áreas para pisos, pintura ou posicionamento de móveis.',
+    tool_percentage_change_title: 'Como calcular aumento/queda percentual',
+    tool_percentage_change_description:
+      'Calcule o aumento ou a queda percentual entre dois valores. Processo: forneça um valor original e um valor novo, calcule a diferença, divida pelo valor original e multiplique por 100 para obter a porcentagem. Útil para finanças, descontos, análises e relatórios.',
+    tool_percentage_change_article:
+      'O que: Calcule a variação percentual entre dois números e interprete se é um aumento ou uma queda. Uso: insira os valores original e novo e clique em calcular. Processo: Δ = novo − original; porcentagem = (Δ / original) × 100. Cenários: alterações de preço, crescimento de receita, descontos e relatórios de KPIs.',
+    tool_percentage_change_original_label: 'Valor original',
+    tool_percentage_change_new_label: 'Valor novo',
+    tool_percentage_change_calculate: 'Calcular variação percentual',
+    tool_percentage_change_result_label: 'Variação percentual',
+    tool_percentage_change_example: 'Exemplo: Original 50, Novo 75 → ((75 - 50) / 50) × 100 = 50% de aumento.',
+    tool_percentage_change_result_invalid: 'O valor original deve ser diferente de zero',
+    tool_percentage_change_increase: 'aumento',
+    tool_percentage_change_decrease: 'queda',
+    tool_percentage_change_no_change: 'sem alteração',
   ip_label: 'Seu endereço IP',
   fetch_ip_button: 'Atualizar IP',
   fetching_message: 'Obtendo seu endereço IP...',
@@ -87,7 +101,7 @@ const pt: SiteLangDict = {
   what_is_ip_content: 'Um endereço de Protocolo da Internet (IP) é uma etiqueta numérica atribuída a cada dispositivo conectado a uma rede de computadores. Serve duas funções principais: identificação do host ou interface de rede e endereçamento de localização. Existem atualmente duas versões em uso: IPv4 e IPv6.',
   tool_marginal_revenue_title: 'How to Calculate Marginal Revenue',
   tool_marginal_revenue_description:
-    'Calculate marginal revenue (MR) from changes in total revenue: MR = ΔTR / ΔQ. Process: enter two total-revenue/quantity pairs (or a small ΔQ), compute the ratio, and interpret results for pricing decisions. Example: use TR at Q and Q+1 to estimate MR.',
+      'Calcule a receita marginal (MR) a partir de mudanças na receita total: MR = ΔTR / ΔQ. Processo: insira dois pares (quantidade Q, receita total TR) ou dois totais consecutivos, calcule ΔTR/ΔQ e interprete para decisões de precificação. Exemplo: Q1=100, TR1=2000; Q2=101, TR2=2015 → MR = 15.',
   tool_marginal_revenue_article:
     'What: Marginal revenue is the additional revenue from selling one more unit, computed as the change in total revenue over the change in quantity. Usage: provide two (Q, TR) pairs or successive totals and click calculate. Scenarios: microeconomic analysis, pricing strategy, and profit-maximization.',
   tool_marginal_revenue_example:

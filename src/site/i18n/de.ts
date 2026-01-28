@@ -72,7 +72,7 @@ const de: SiteLangDict = {
   what_is_ip_content: 'Eine Internetprotokoll-Adresse (IP-Adresse) ist eine numerische Kennung, die jedem Gerät in einem Computernetzwerk zugewiesen wird. Sie erfüllt zwei Hauptfunktionen: Host- oder Netzwerkschnittstellenidentifikation und Standortadressierung. Es gibt derzeit zwei Versionen: IPv4 und IPv6.',
   tool_marginal_revenue_title: 'How to Calculate Marginal Revenue',
   tool_marginal_revenue_description:
-    'Calculate marginal revenue (MR) from changes in total revenue: MR = ΔTR / ΔQ. Process: enter two total-revenue/quantity pairs (or a small ΔQ), compute the ratio, and interpret results for pricing decisions. Example: use TR at Q and Q+1 to estimate MR.',
+    'Berechnen Sie den Grenzerlös (MR) aus Änderungen des Gesamterlöses: MR = ΔTR / ΔQ. Process: Geben Sie zwei Paare (Menge Q, Gesamterlös TR) ein oder zwei aufeinanderfolgende Totaleingaben, berechnen Sie ΔTR/ΔQ und interpretieren Sie das Ergebnis für Preisentscheidungen. Example: Q1=100, TR1=2000; Q2=101, TR2=2015 → MR = 15.',
   tool_marginal_revenue_article:
     'What: Marginal revenue is the additional revenue from selling one more unit, computed as the change in total revenue over the change in quantity. Usage: provide two (Q, TR) pairs or successive totals and click calculate. Scenarios: microeconomic analysis, pricing strategy, and profit-maximization.',
   tool_marginal_revenue_example:
@@ -96,5 +96,19 @@ const de: SiteLangDict = {
     tool_squarefeet_result_note: 'Ergebnis auf zwei Dezimalstellen gerundet.',
     tool_squarefeet_usage_title: 'Verwendung',
     tool_squarefeet_usage: 'Verwenden Sie diesen Rechner, um Flächen für Böden, Anstrich oder Möbelplatzierung schnell abzuschätzen.',
+     tool_percentage_change_title: 'So berechnen Sie prozentuale Zunahme/Abnahme',
+     tool_percentage_change_description:
+       'Berechnen Sie die prozentuale Zunahme oder Abnahme zwischen zwei Werten. Prozess: geben Sie einen Ausgangswert und einen neuen Wert ein, berechnen Sie die Differenz, teilen Sie durch den Ausgangswert und multiplizieren Sie mit 100, um den Prozentsatz zu erhalten. Nützlich für Finanzen, Rabatte und Analysen.',
+     tool_percentage_change_article:
+       'Was: Berechnen Sie die prozentuale Veränderung zwischen zwei Zahlen und bestimmen Sie, ob es sich um eine Zunahme oder Abnahme handelt. Verwendung: Ausgangs- und neue Werte eingeben und auf Berechnen klicken. Prozess: Δ = neu − alt; Prozent = (Δ / alt) × 100. Szenarien: Preisänderungen, Umsatzwachstum, Rabatte und KPI-Berichte.',
+     tool_percentage_change_original_label: 'Ausgangswert',
+     tool_percentage_change_new_label: 'Neuer Wert',
+     tool_percentage_change_calculate: 'Prozentuale Änderung berechnen',
+     tool_percentage_change_result_label: 'Prozentuale Änderung',
+     tool_percentage_change_example: 'Beispiel: Ausgang 50, Neu 75 → ((75 - 50) / 50) × 100 = 50% Zunahme.',
+     tool_percentage_change_result_invalid: 'Der Ausgangswert darf nicht null sein',
+     tool_percentage_change_increase: 'Zunahme',
+     tool_percentage_change_decrease: 'Abnahme',
+     tool_percentage_change_no_change: 'keine Änderung',
 };
 export default de;

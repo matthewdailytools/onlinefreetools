@@ -21,6 +21,7 @@ import { renderIpAddressPage } from "./pages/ipAddressPage";
 import { renderHowToCalculateBmiPage } from "./pages/howToCalculateBmiPage";
 import { renderMarginalRevenuePage } from "./pages/marginalRevenuePage";
 import { renderSquareFeetPage } from "./pages/squareFeetPage";
+import { renderHowToCalculatePercentageChangePage } from "./pages/howToCalculatePercentageChangePage";
 import { registerToolPage } from "./site/toolRegistrar";
 import { handleWebsiteHeadersApi } from "./tools/websiteHeaders";
 import { handleIpAddress } from "./endpoints/ipAddress";
@@ -171,6 +172,11 @@ registerToolPage(app as any, 'how-to-calculate-marginal-revenue', (lang, default
 // Register square-feet page via registrar
 registerToolPage(app as any, 'square-feet', (lang, defaultLang, enabled) =>
   renderSquareFeetPage({ lang, defaultLang, enabledLangs: enabled })
+);
+
+// Register how-to-calculate-percentage-change page via registrar
+registerToolPage(app as any, 'how-to-calculate-percentage-change', (lang, defaultLang, enabled) =>
+	renderHowToCalculatePercentageChangePage({ lang, defaultLang, enabledLangs: enabled })
 );
 
 // Catch-all (GET): perform language negotiation before falling back to static assets.

@@ -72,7 +72,7 @@ const ru: SiteLangDict = {
   what_is_ip_content: 'IP-адрес (адрес протокола Интернет) — это числовая метка, присваиваемая каждому устройству, подключенному к компьютерной сети. Он выполняет две основные функции: идентификация хоста или сетевого интерфейса и адресация местоположения. В настоящее время используются две версии: IPv4 и IPv6.',
   tool_marginal_revenue_title: 'How to Calculate Marginal Revenue',
   tool_marginal_revenue_description:
-    'Calculate marginal revenue (MR) from changes in total revenue: MR = ΔTR / ΔQ. Process: enter two total-revenue/quantity pairs (or a small ΔQ), compute the ratio, and interpret results for pricing decisions. Example: use TR at Q and Q+1 to estimate MR.',
+    'Рассчитайте предельный доход (MR) по изменению общего дохода: MR = ΔTR / ΔQ. процесс: введите две пары (количество Q, общий доход TR) или два последовательных значения, вычислите ΔTR/ΔQ и интерпретируйте результат для ценовых решений. пример: Q1=100, TR1=2000; Q2=101, TR2=2015 → MR = 15.',
   tool_marginal_revenue_article:
     'What: Marginal revenue is the additional revenue from selling one more unit, computed as the change in total revenue over the change in quantity. Usage: provide two (Q, TR) pairs or successive totals and click calculate. Scenarios: microeconomic analysis, pricing strategy, and profit-maximization.',
   tool_marginal_revenue_example:
@@ -96,5 +96,19 @@ const ru: SiteLangDict = {
   tool_squarefeet_result_note: 'Результат округлён до двух знаков после запятой.',
   tool_squarefeet_usage_title: 'Использование',
   tool_squarefeet_usage: 'Используйте этот калькулятор для быстрой оценки площади при выборе напольных покрытий, покраске или расстановке мебели.',
+  tool_percentage_change_title: 'Как посчитать процентное изменение (увеличение/уменьшение)',
+  tool_percentage_change_description:
+    'Вычислите процентное увеличение или уменьшение между двумя значениями. Процесс: введите исходное и новое значение, найдите разницу, разделите на исходное и умножьте на 100. Полезно для финансов, скидок, аналитики и отчетности.',
+  tool_percentage_change_article:
+    'Что это: вычисление процентного изменения между двумя числами и определение, является ли это увеличением или уменьшением. Применение: введите исходное и новое значения и нажмите «Вычислить». Процесс: Δ = новое − исходное; процент = (Δ / исходное) × 100. Сценарии: изменение цены, рост доходов, скидки и отчеты KPI.',
+  tool_percentage_change_original_label: 'Исходное значение',
+  tool_percentage_change_new_label: 'Новое значение',
+  tool_percentage_change_calculate: 'Вычислить процентное изменение',
+  tool_percentage_change_result_label: 'Процентное изменение',
+  tool_percentage_change_example: 'Пример: исходное 50, новое 75 → ((75 - 50) / 50) × 100 = 50% увеличение.',
+  tool_percentage_change_result_invalid: 'Исходное значение не должно быть нулём',
+  tool_percentage_change_increase: 'увеличение',
+  tool_percentage_change_decrease: 'уменьшение',
+  tool_percentage_change_no_change: 'без изменений',
 };
 export default ru;

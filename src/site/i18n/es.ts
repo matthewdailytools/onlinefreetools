@@ -96,5 +96,19 @@ const es: SiteLangDict = {
     tool_squarefeet_result_note: 'Resultado redondeado a dos decimales.',
     tool_squarefeet_usage_title: 'Uso',
     tool_squarefeet_usage: 'Usa esta calculadora para estimar rápidamente áreas para pisos, pintura o disposición de muebles.',
+  tool_percentage_change_title: 'Cómo calcular el aumento/disminución porcentual',
+  tool_percentage_change_description:
+    'Calcule el aumento o la disminución porcentual entre dos valores. Proceso: proporcione un valor original y un valor nuevo, calcule la diferencia, divida por el valor original y multiplique por 100 para obtener el porcentaje. Útil para finanzas, descuentos, análisis y reportes.',
+  tool_percentage_change_article:
+    'Qué: Calcule el cambio porcentual entre dos números e interprete si es un aumento o una disminución. Uso: ingrese los valores original y nuevo y haga clic en calcular. Proceso: Δ = nuevo − original; porcentaje = (Δ / original) × 100. Escenarios: cambios de precio, crecimiento de ingresos, descuentos y KPIs.',
+  tool_percentage_change_original_label: 'Valor original',
+  tool_percentage_change_new_label: 'Valor nuevo',
+  tool_percentage_change_calculate: 'Calcular cambio porcentual',
+  tool_percentage_change_result_label: 'Cambio porcentual',
+  tool_percentage_change_example: 'Ejemplo: Original 50, Nuevo 75 → ((75 - 50) / 50) × 100 = 50% aumento.',
+  tool_percentage_change_result_invalid: 'El valor original debe ser distinto de cero',
+  tool_percentage_change_increase: 'aumento',
+  tool_percentage_change_decrease: 'disminución',
+  tool_percentage_change_no_change: 'sin cambios',
 };
 export default es;

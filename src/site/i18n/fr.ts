@@ -96,5 +96,19 @@ const fr: SiteLangDict = {
     tool_marginal_revenue_revenue_label: 'Revenu total',
     tool_marginal_revenue_calculate: 'Calculer RM',
     tool_marginal_revenue_result_label: 'Revenu marginal',
+  tool_percentage_change_title: 'Comment calculer l\'augmentation/la diminution en pourcentage',
+  tool_percentage_change_description:
+    'Calculez l\'augmentation ou la diminution en pourcentage entre deux valeurs. Processus : fournissez une valeur initiale et une nouvelle valeur, calculez la différence, divisez par la valeur initiale puis multipliez par 100. Utile pour la finance, les remises, l\'analyse et les rapports.',
+  tool_percentage_change_article:
+    'Quoi : Calculez la variation en pourcentage entre deux nombres et déterminez s\'il s\'agit d\'une augmentation ou d\'une diminution. Utilisation : saisissez la valeur initiale et la nouvelle valeur puis cliquez sur calculer. Processus : Δ = nouveau − initial ; pourcentage = (Δ / initial) × 100. Scénarios : changements de prix, croissance du chiffre d\'affaires, remises et reporting.',
+  tool_percentage_change_original_label: 'Valeur initiale',
+  tool_percentage_change_new_label: 'Nouvelle valeur',
+  tool_percentage_change_calculate: 'Calculer le pourcentage',
+  tool_percentage_change_result_label: 'Variation en pourcentage',
+  tool_percentage_change_example: 'Exemple : initial 50, nouveau 75 → ((75 - 50) / 50) × 100 = 50% d\'augmentation.',
+  tool_percentage_change_result_invalid: 'La valeur initiale doit être non nulle',
+  tool_percentage_change_increase: 'augmentation',
+  tool_percentage_change_decrease: 'diminution',
+  tool_percentage_change_no_change: 'aucun changement',
 };
 export default fr;
