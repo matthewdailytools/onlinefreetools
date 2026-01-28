@@ -36,7 +36,7 @@ export const renderSquareFeetPage = (opts: {
     (supportedLangs || []).map((code) => [code, withExplicitLangPrefix(code, '/tools/square-feet')])
   );
 
-  const alternates: HreflangAlternate[] = (opts.enabledLangs || []).map((code) => ({
+  const alternates: HreflangAlternate[] = (supportedLangs || []).map((code) => ({
     lang: code,
     href: `https://onlinefreetools.org${withLangPrefix(code, '/tools/square-feet', opts.defaultLang)}`,
   }));

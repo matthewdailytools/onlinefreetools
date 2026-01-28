@@ -97,6 +97,17 @@ export const buildHome = async (lang) => {
   await fs.writeFile(path.join(outRoot, 'index.html'), html, 'utf-8');
 };
 
+const removeStaticToolsDir = async (lang) => {
+  try {
+    const toolsDir = path.join(publicDir, '_pages', lang, 'tools');
+    // remove if exists
+    await fs.rm(toolsDir, { recursive: true, force: true });
+    console.log(`Removed static tools dir for ${lang} if it existed: ${toolsDir}`);
+  } catch (err) {
+    // non-fatal
+  }
+};
+
 export const buildDevLogs = async () => {
   const lang = siteConfig.defaultLang;
   const outDir = path.join(publicDir, 'devlogs');
@@ -253,6 +264,8 @@ export const buildDevLogs = async () => {
 const main = async () => {
   const langs = siteConfig.enabledLangs || [siteConfig.defaultLang];
   for (const lang of langs) {
+    // Ensure any stale static tool pages are removed before building
+    await removeStaticToolsDir(lang);
     await buildHome(lang);
   }
   await buildDevLogs();

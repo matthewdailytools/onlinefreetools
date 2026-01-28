@@ -40,10 +40,10 @@ export const renderMarkdownToHtmlPage = (opts: {
     (supportedLangs || []).map((code) => [code, withExplicitLangPrefix(code, '/tools/markdown-to-html')])
   );
 
-	const alternates: HreflangAlternate[] = (opts.enabledLangs || []).map((code) => ({
-		lang: code,
-		href: `https://onlinefreetools.org${withLangPrefix(code, '/tools/markdown-to-html', opts.defaultLang)}`,
-	}));
+  const alternates: HreflangAlternate[] = (supportedLangs || []).map((code) => ({
+    lang: code,
+    href: `https://onlinefreetools.org${withLangPrefix(code, '/tools/markdown-to-html', opts.defaultLang)}`,
+  }));
 
   // Pass the full supportedLangs to the header so the language switcher
   // presents all available translations (10 langs).

@@ -36,7 +36,7 @@ export const renderHowToCalculatePercentageChangePage = (opts: {
     (supportedLangs || []).map((code) => [code, withExplicitLangPrefix(code, '/tools/how-to-calculate-percentage-change')])
   );
 
-  const alternates: HreflangAlternate[] = (opts.enabledLangs || []).map((code) => ({
+  const alternates: HreflangAlternate[] = (supportedLangs || []).map((code) => ({
     lang: code,
     href: `https://onlinefreetools.org${withLangPrefix(code, '/tools/how-to-calculate-percentage-change', opts.defaultLang)}`,
   }));

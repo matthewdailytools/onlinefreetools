@@ -36,10 +36,10 @@ export const renderHowToCalculateBmiPage = (opts: {
     (supportedLangs || []).map((code) => [code, withExplicitLangPrefix(code, '/tools/how-to-calculate-bmi')])
   );
 
-	const alternates: HreflangAlternate[] = (opts.enabledLangs || []).map((code) => ({
-		lang: code,
-		href: `https://onlinefreetools.org${withLangPrefix(code, '/tools/how-to-calculate-bmi', opts.defaultLang)}`,
-	}));
+  const alternates: HreflangAlternate[] = (supportedLangs || []).map((code) => ({
+    lang: code,
+    href: `https://onlinefreetools.org${withLangPrefix(code, '/tools/how-to-calculate-bmi', opts.defaultLang)}`,
+  }));
 
   const headerHtml = renderHeader({
     lang: opts.lang,
