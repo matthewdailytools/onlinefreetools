@@ -1,6 +1,16 @@
 import type { SiteLang } from '../../site/i18n';
 
 const SITE_BASE_URL = 'https://onlinefreetools.org';
+
+const CLARITY_SCRIPT = `
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "xbc0iytpn7");
+</script>`;
+
 const BOOTSTRAP_CSS =
 	'https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css';
 const BOOTSTRAP_JS =
@@ -153,6 +163,7 @@ export const renderLayout = (opts: {
   <link href="${BOOTSTRAP_CSS}" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="/styles/omnicalc.css" rel="stylesheet" />
   <style>${sidebarCss}</style>
+  ${CLARITY_SCRIPT}
   ${opts.extraHeadHtml || ''}
 </head>
 <body>
