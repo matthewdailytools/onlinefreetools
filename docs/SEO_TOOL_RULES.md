@@ -13,3 +13,6 @@
 - **验证**：仓库已添加 `scripts/validate-tool-seo.mjs`，它会对 `src/site/i18n/*.ts` 中的 `tool_*_description` 进行启发式检查（多语言关键词匹配）。
 
 - **工作流建议**：在 CI 或构建前运行 `npm run lint:seo`（可选），若校验失败，应由翻译作者补充描述文本以满足规则。
+
+- **完整单页规范**：参见 [单工具页面 SEO 策略](./2026-07-09-single-tool-page-seo.md)。
+- **出站引用规范**：参见 [外链策略方案 §3](./2026-07-09-external-link-strategy.md#3-出站外链策略outbound-links)。

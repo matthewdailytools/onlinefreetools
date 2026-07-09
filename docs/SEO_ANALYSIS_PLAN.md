@@ -3,6 +3,8 @@
 > 基于 2026 年最新 Google 搜索质量评估指南与算法更新
 > 生成日期：2026-06-23
 > 目标站点：https://onlinefreetools.org
+> **关联**：[工具 SEO 战略](./2026-07-09-tool-seo-strategy.md)（工具选型优先级与关键词策略）  
+> **关联**：[外链策略方案](./2026-07-09-external-link-strategy.md)（入站/出站链接合规策略）
 
 ---
 
