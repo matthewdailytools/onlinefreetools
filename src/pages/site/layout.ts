@@ -102,10 +102,16 @@ export const renderLayout = (opts: {
 	const ogType = escapeHtml(opts.ogType || 'website');
 	const ogImageUrl = escapeHtml(opts.ogImageUrl);
 
-	const alternateLinks = (opts.alternates || [])
-		.filter((a) => a && a.lang && a.href)
-		.map((a) => `<link rel="alternate" hreflang="${escapeHtml(a.lang)}" href="${escapeHtml(a.href)}" />`)
-		.join('\n  ');
+	const alternateItems = (opts.alternates || []).filter((a) => a && a.lang && a.href);
+	const xDefaultHref =
+		alternateItems.find((a) => a.lang === 'en')?.href ||
+		absoluteUrl(opts.canonicalPath);
+	const alternateLinks = [
+		...alternateItems.map(
+			(a) => `<link rel="alternate" hreflang="${escapeHtml(a.lang)}" href="${escapeHtml(a.href)}" />`
+		),
+		`<link rel="alternate" hreflang="x-default" href="${escapeHtml(xDefaultHref)}" />`,
+	].join('\n  ');
 
 	const sidebarAutoClose = opts.sidebarAutoCloseSelector
 		? `
@@ -160,6 +166,9 @@ export const renderLayout = (opts: {
   <meta property="og:image" content="${ogImageUrl}" />
   <meta name="twitter:card" content="summary_large_image" />
   ${alternateLinks}
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link href="${BOOTSTRAP_CSS}" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="/styles/omnicalc.css" rel="stylesheet" />
   <style>${sidebarCss}</style>

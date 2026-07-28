@@ -84,15 +84,46 @@ app.get("/", async (c) => {
 });
 
 // Localized home pages are served from assets at `/_pages/{lang}/index.html`.
+// 默认语（en）带前缀访问 301 到规范无前缀 URL。
 for (const code of DEFAULT_LANGS) {
-	app.get(`/${code}`, (c) => c.redirect(`/${code}/`, 308));
+	app.get(`/${code}`, (c) => {
+		const enabled = getEnabledLangs(c.env);
+		const defaultLang = getDefaultLang(c.env, enabled);
+		if (code === defaultLang) return c.redirect('/', 301);
+		return c.redirect(`/${code}/`, 308);
+	});
 	app.get(`/${code}/`, async (c) => {
+		const enabled = getEnabledLangs(c.env);
+		const defaultLang = getDefaultLang(c.env, enabled);
+		if (code === defaultLang) return c.redirect('/', 301);
 		const accept = c.req.header('accept') || '';
 		if (!accept.includes('text/html')) return c.notFound();
 		const res = await fetchAsset(c, `/_pages/${code}/index.html`);
 		return res;
 	});
+	// About 静态页
+	app.get(`/${code}/about`, (c) => c.redirect(`/${code}/about/`, 308));
+	app.get(`/${code}/about/`, async (c) => {
+		const enabled = getEnabledLangs(c.env);
+		const defaultLang = getDefaultLang(c.env, enabled);
+		if (code === defaultLang) return c.redirect('/about', 301);
+		const accept = c.req.header('accept') || '';
+		if (!accept.includes('text/html')) return c.notFound();
+		const res = await fetchAsset(c, `/_pages/${code}/about.html`);
+		return res;
+	});
 }
+
+// 默认语 About（无前缀）
+app.get('/about', async (c) => {
+	const accept = c.req.header('accept') || '';
+	if (!accept.includes('text/html')) return c.notFound();
+	const enabled = getEnabledLangs(c.env);
+	const defaultLang = getDefaultLang(c.env, enabled);
+	const res = await fetchAsset(c, `/_pages/${defaultLang}/about.html`);
+	return res;
+});
+app.get('/about/', (c) => c.redirect('/about', 301));
 
 app.use("/*", async (c, next) => {
 	const url = new URL(c.req.url);
@@ -100,6 +131,7 @@ app.use("/*", async (c, next) => {
 
 	// Global (non-localized) pages.
 	if (pathname === "/devlogs" || pathname.startsWith("/devlogs/")) return next();
+	if (pathname === "/about" || pathname.startsWith("/about/")) return next();
 	if (pathname === "/tools/markdown-to-html.html") return next();
 
 	// Do not interfere with APIs, docs, or obvious static assets.

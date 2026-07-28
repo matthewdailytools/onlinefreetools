@@ -1,0 +1,110 @@
+[
+  {
+    "slug": "website-headers",
+    "path": "/tools/website-headers",
+    "category": "developer",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_headers_title",
+    "homeTitleKey": "tool_website_headers_title",
+    "homeDescKey": "tool_website_headers_desc",
+    "faqPrefix": "tool_headers",
+    "related": ["ip-address", "markdown-to-html"]
+  },
+  {
+    "slug": "ip-address",
+    "path": "/tools/ip-address",
+    "category": "developer",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_ip_address_title",
+    "homeTitleKey": "tool_ip_address_title",
+    "homeDescKey": "tool_ip_address_desc",
+    "faqPrefix": "tool_ip_address",
+    "related": ["website-headers", "markdown-to-html"]
+  },
+  {
+    "slug": "markdown-to-html",
+    "path": "/tools/markdown-to-html",
+    "category": "developer",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_markdown_title",
+    "homeTitleKey": "tool_markdown_to_html_title",
+    "homeDescKey": "tool_markdown_to_html_desc",
+    "faqPrefix": "tool_markdown",
+    "related": ["website-headers", "ip-address"]
+  },
+  {
+    "slug": "how-to-calculate-bmi",
+    "path": "/tools/how-to-calculate-bmi",
+    "category": "calculator",
+    "featured": true,
+    "ymyl": true,
+    "i18nKey": "tool_bmi_title",
+    "homeTitleKey": "tool_bmi_title",
+    "homeDescKey": "tool_bmi_description",
+    "faqPrefix": "tool_bmi",
+    "related": ["how-to-calculate-percentage-change", "square-feet"]
+  },
+  {
+    "slug": "how-to-calculate-roi",
+    "path": "/tools/how-to-calculate-roi",
+    "category": "calculator",
+    "featured": true,
+    "ymyl": true,
+    "i18nKey": "tool_roi_title",
+    "homeTitleKey": "tool_roi_title",
+    "homeDescKey": "tool_roi_description",
+    "faqPrefix": "tool_roi",
+    "related": ["how-to-calculate-marginal-revenue", "how-to-calculate-percentage-change"]
+  },
+  {
+    "slug": "how-to-calculate-marginal-revenue",
+    "path": "/tools/how-to-calculate-marginal-revenue",
+    "category": "calculator",
+    "featured": true,
+    "ymyl": true,
+    "i18nKey": "tool_marginal_revenue_title",
+    "homeTitleKey": "tool_marginal_revenue_title",
+    "homeDescKey": "tool_marginal_revenue_description",
+    "faqPrefix": "tool_marginal_revenue",
+    "related": ["how-to-calculate-roi", "how-to-calculate-percentage-change"]
+  },
+  {
+    "slug": "square-feet",
+    "path": "/tools/square-feet",
+    "category": "calculator",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_squarefeet_title",
+    "homeTitleKey": "tool_squarefeet_title",
+    "homeDescKey": "tool_squarefeet_description",
+    "faqPrefix": "tool_squarefeet",
+    "related": ["how-to-calculate-percentage-change", "how-to-calculate-bmi"]
+  },
+  {
+    "slug": "how-to-calculate-percentage-change",
+    "path": "/tools/how-to-calculate-percentage-change",
+    "category": "calculator",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_percentage_change_title",
+    "homeTitleKey": "tool_percentage_change_title",
+    "homeDescKey": "tool_percentage_change_description",
+    "faqPrefix": "tool_percentage_change",
+    "related": ["how-to-calculate-roi", "how-to-calculate-marginal-revenue"]
+  },
+  {
+    "slug": "how-to-calculate-gradient",
+    "path": "/tools/how-to-calculate-gradient",
+    "category": "calculator",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_gradient_title",
+    "homeTitleKey": "tool_gradient_title",
+    "homeDescKey": "tool_gradient_desc",
+    "faqPrefix": "tool_gradient",
+    "related": ["how-to-calculate-percentage-change", "how-to-calculate-roi"]
+  }
+]

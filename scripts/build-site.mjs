@@ -4,12 +4,13 @@ import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { createRequire } from 'node:module';
 
-import { siteConfig, getLangConfig, withLangPath, withExplicitLangPath } from './site/config.mjs';
+import { siteConfig, getLangConfig, withLangPath } from './site/config.mjs';
 import { t } from './site/i18n.mjs';
 import { renderLayout } from './site/layout.mjs';
 import { renderFooter, renderHeader, renderSidebar } from './site/components.mjs';
 import { getHomePageModel } from './site/pages/home.mjs';
-
+import { getAboutPageModel } from './site/pages/about.mjs';
+import { TOOL_CATALOG } from './site/tool-catalog.mjs';
 const require = createRequire(import.meta.url);
 let marked;
 try {
@@ -56,7 +57,7 @@ export const buildHome = async (lang) => {
 
   const model = getHomePageModel(lang);
   const langAlternates = Object.fromEntries(
-    (siteConfig.enabledLangs || []).map((code) => [code, withExplicitLangPath(code, '/')])
+    (siteConfig.enabledLangs || []).map((code) => [code, withLangPath(code, '/')])
   );
 
   const headerHtml = renderHeader({
@@ -259,6 +260,136 @@ export const buildDevLogs = async () => {
   });
 
   await fs.writeFile(path.join(outDir, 'index.html'), indexPage, 'utf-8');
+  return items;
+};
+
+/**
+ * 构建各语言 About 静态页（Who / How / Why 信任信号）。
+ * @param {string} lang
+ */
+export const buildAbout = async (lang) => {
+  const outRoot = path.join(publicDir, '_pages', lang);
+  await ensureDir(outRoot);
+
+  const model = getAboutPageModel(lang);
+  const langAlternates = Object.fromEntries(
+    (siteConfig.enabledLangs || []).map((code) => [code, withLangPath(code, '/about')])
+  );
+
+  const headerHtml = renderHeader({
+    lang,
+    brandHref: withLangPath(lang, '/'),
+    navItems: model.navItems,
+    showSidebarToggle: true,
+    showSearch: false,
+    langAlternates,
+  });
+
+  const sidebarHtml = renderSidebar({
+    title: model.sidebarTitle,
+    items: model.sidebarItems,
+    id: 'aboutNav',
+  });
+
+  const footerHtml = renderFooter({ lang });
+
+  const html = renderLayout({
+    lang,
+    title: model.title,
+    description: model.description,
+    canonicalPath: model.canonicalPath,
+    ogImageUrl: siteConfig.ogImage,
+    ogType: 'website',
+    alternates: (siteConfig.enabledLangs || []).map((code) => ({
+      lang: code,
+      href: toAbs(withLangPath(code, '/about')),
+    })),
+    headerHtml,
+    sidebarHtml,
+    contentHtml: model.contentHtml,
+    footerHtml,
+    headJsonLd: model.jsonLd,
+  });
+
+  await fs.writeFile(path.join(outRoot, 'about.html'), html, 'utf-8');
+};
+
+/**
+ * 转义 XML 文本节点 / 属性值。
+ * @param {string} s
+ */
+const escapeXml = (s) =>
+  String(s)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;');
+
+/**
+ * 生成一组 URL 的 xhtml hreflang 交替链接（含 x-default）。
+ * @param {string} pathname 规范路径（无语言前缀的基础路径，如 /tools/bmi）
+ * @param {string[]} langs
+ */
+const hreflangLinks = (pathname, langs) => {
+  const links = langs.map((code) => {
+    const href = toAbs(withLangPath(code, pathname));
+    return `    <xhtml:link rel="alternate" hreflang="${escapeXml(code)}" href="${escapeXml(href)}" />`;
+  });
+  const xDefault = toAbs(withLangPath(siteConfig.defaultLang, pathname));
+  links.push(
+    `    <xhtml:link rel="alternate" hreflang="x-default" href="${escapeXml(xDefault)}" />`
+  );
+  return links.join('\n');
+};
+
+/**
+ * 构建完整 sitemap：各语言首页、About、全部工具、devlogs。
+ * @param {{href:string}[]} [devlogItems]
+ */
+export const buildSitemap = async (devlogItems = []) => {
+  const langs = siteConfig.enabledLangs || [siteConfig.defaultLang];
+  const urls = [];
+
+  const pushLocalized = (pathname, priority = '0.8') => {
+    for (const lang of langs) {
+      const loc = toAbs(withLangPath(lang, pathname));
+      urls.push(`  <url>
+    <loc>${escapeXml(loc)}</loc>
+    <priority>${priority}</priority>
+${hreflangLinks(pathname, langs)}
+  </url>`);
+    }
+  };
+
+  pushLocalized('/', '1.0');
+  pushLocalized('/about', '0.7');
+
+  for (const tool of TOOL_CATALOG) {
+    pushLocalized(tool.path, '0.9');
+  }
+
+  urls.push(`  <url>
+    <loc>${escapeXml(toAbs('/devlogs/'))}</loc>
+    <priority>0.6</priority>
+  </url>`);
+
+  for (const item of devlogItems) {
+    if (!item?.href) continue;
+    urls.push(`  <url>
+    <loc>${escapeXml(toAbs(item.href))}</loc>
+    <priority>0.4</priority>
+  </url>`);
+  }
+
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+${urls.join('\n')}
+</urlset>
+`;
+
+  await fs.writeFile(path.join(publicDir, 'sitemap.xml'), xml, 'utf-8');
+  console.log(`Wrote sitemap with ${urls.length} URLs`);
 };
 
 const main = async () => {
@@ -267,8 +398,10 @@ const main = async () => {
     // Ensure any stale static tool pages are removed before building
     await removeStaticToolsDir(lang);
     await buildHome(lang);
+    await buildAbout(lang);
   }
-  await buildDevLogs();
+  const devlogItems = await buildDevLogs();
+  await buildSitemap(devlogItems || []);
   console.log(`Built site for langs: ${langs.join(', ')}`);
 };
 

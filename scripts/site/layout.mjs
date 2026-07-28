@@ -73,11 +73,20 @@ export const renderLayout = ({
     })();
   </script>`;
 
-  const alternateLinks = Array.isArray(alternates)
-    ? alternates
-        .filter((a) => a && a.lang && a.href)
-        .map((a) => `<link rel="alternate" hreflang="${a.lang}" href="${a.href}" />`)
-        .join('\n  ')
+  const alternateItems = Array.isArray(alternates)
+    ? alternates.filter((a) => a && a.lang && a.href)
+    : [];
+  const xDefaultHref =
+    (alternateItems.find((a) => a.lang === siteConfig.defaultLang) || {}).href ||
+    (alternateItems.find((a) => a.lang === 'en') || {}).href ||
+    canonical;
+  const alternateLinks = alternateItems.length
+    ? [
+        ...alternateItems.map(
+          (a) => `<link rel="alternate" hreflang="${a.lang}" href="${a.href}" />`
+        ),
+        `<link rel="alternate" hreflang="x-default" href="${xDefaultHref}" />`,
+      ].join('\n  ')
     : '';
 
   const sidebarCss = `
@@ -165,6 +174,9 @@ export const renderLayout = ({
   <meta property="og:image" content="${ogImageUrl}" />
   <meta name="twitter:card" content="summary_large_image" />
   ${alternateLinks}
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   ${clientLangRedirectScript}
   <link href="${bootstrapCss}" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>${sidebarCss}</style>

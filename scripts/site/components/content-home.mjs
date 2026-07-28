@@ -1,6 +1,14 @@
+/**
+ * 首页内容：由工具目录驱动，覆盖全部工具并使用规范语言路径。
+ */
 import { t } from '../i18n.mjs';
-import { withExplicitLangPath } from '../config.mjs';
+import { withLangPath } from '../config.mjs';
+import { TOOL_CATALOG, getToolsByCategory } from '../tool-catalog.mjs';
 
+/**
+ * 渲染 Featured 主卡片。
+ * @param {{title:string,desc:string,href:string,cta:string}} opts
+ */
 const renderPrimaryCard = ({ title, desc, href, cta }) => `
   <div class="col">
     <div class="card h-100 shadow-sm d-flex flex-column">
@@ -12,6 +20,10 @@ const renderPrimaryCard = ({ title, desc, href, cta }) => `
     </div>
   </div>`;
 
+/**
+ * 渲染分类区次级卡片。
+ * @param {{title:string,desc:string,href:string,cta:string}} opts
+ */
 const renderSecondaryCard = ({ title, desc, href, cta }) => `
   <div class="col">
     <div class="card h-100 d-flex flex-column">
@@ -23,17 +35,30 @@ const renderSecondaryCard = ({ title, desc, href, cta }) => `
     </div>
   </div>`;
 
-export const renderHomeContent = ({ lang }) => {
-  const toolHeadersHref = withExplicitLangPath(lang, '/tools/website-headers');
-  const toolMdHref = withExplicitLangPath(lang, '/tools/markdown-to-html');
-  const toolIpHref = withExplicitLangPath(lang, '/tools/ip-address');
-  const toolSquareHref = withExplicitLangPath(lang, '/tools/square-feet');
-  const toolBmiHref = withExplicitLangPath(lang, '/tools/how-to-calculate-bmi');
-  const toolMrHref = withExplicitLangPath(lang, '/tools/how-to-calculate-marginal-revenue');
-  const toolRoiHref = withExplicitLangPath(lang, '/tools/how-to-calculate-roi');
-  const toolGradientHref = withExplicitLangPath(lang, '/tools/how-to-calculate-gradient');
+/**
+ * 将目录条目渲染为卡片 HTML。
+ * @param {string} lang
+ * @param {object} tool
+ * @param {string} cta
+ * @param {(opts:object)=>string} renderer
+ */
+const renderToolCard = (lang, tool, cta, renderer) =>
+  renderer({
+    title: t(lang, tool.homeTitleKey),
+    desc: t(lang, tool.homeDescKey),
+    href: withLangPath(lang, tool.path),
+    cta,
+  });
 
+/**
+ * 渲染首页主体（Featured + Calculator + Developer）。
+ * @param {{lang:string}} opts
+ */
+export const renderHomeContent = ({ lang }) => {
   const openCta = t(lang, 'home_open');
+  const featured = TOOL_CATALOG.filter((p) => p.featured !== false);
+  const calculators = getToolsByCategory('calculator');
+  const developers = getToolsByCategory('developer');
 
   return `
     <section id="featured" class="mb-4">
@@ -41,55 +66,8 @@ export const renderHomeContent = ({ lang }) => {
         <h2 class="h5 mb-0">${t(lang, 'home_featured')}</h2>
         <a class="btn btn-sm btn-outline-secondary" href="#all-tools">${t(lang, 'home_view_all')}</a>
       </div>
-      <div class="row row-cols-1 row-cols-md-4 g-3">
-        ${renderPrimaryCard({
-          title: t(lang, 'tool_website_headers_title'),
-          desc: t(lang, 'tool_website_headers_desc'),
-          href: toolHeadersHref,
-          cta: openCta,
-        })}
-        ${renderPrimaryCard({
-          title: t(lang, 'tool_markdown_to_html_title'),
-          desc: t(lang, 'tool_markdown_to_html_desc'),
-          href: toolMdHref,
-          cta: openCta,
-        })}
-        ${renderPrimaryCard({
-          title: t(lang, 'tool_ip_address_title'),
-          desc: t(lang, 'tool_ip_address_desc'),
-          href: toolIpHref,
-          cta: openCta,
-        })}
-        ${renderPrimaryCard({
-          title: t(lang, 'tool_bmi_title'),
-          desc: t(lang, 'tool_bmi_description'),
-          href: toolBmiHref,
-          cta: openCta,
-        })}
-        ${renderPrimaryCard({
-          title: t(lang, 'tool_marginal_revenue_title'),
-          desc: t(lang, 'tool_marginal_revenue_description'),
-          href: toolMrHref,
-          cta: openCta,
-        })}
-        ${renderPrimaryCard({
-          title: t(lang, 'tool_squarefeet_title'),
-          desc: t(lang, 'tool_squarefeet_description'),
-          href: toolSquareHref,
-          cta: openCta,
-        })}
-        ${renderPrimaryCard({
-          title: t(lang, 'tool_roi_title'),
-          desc: t(lang, 'tool_roi_description'),
-          href: toolRoiHref,
-          cta: openCta,
-        })}
-        ${renderPrimaryCard({
-          title: t(lang, 'tool_gradient_title'),
-          desc: t(lang, 'tool_gradient_desc'),
-          href: toolGradientHref,
-          cta: openCta,
-        })}
+      <div class="row row-cols-1 row-cols-md-3 row-cols-xl-4 g-3">
+        ${featured.map((tool) => renderToolCard(lang, tool, openCta, renderPrimaryCard)).join('')}
       </div>
     </section>
 
@@ -98,75 +76,25 @@ export const renderHomeContent = ({ lang }) => {
         <h2 class="h5 mb-0">${t(lang, 'home_all_tools')}</h2>
       </div>
 
-      <div class="mb-4" id="cat-text">
-        <div class="d-flex align-items-center mb-2">
-          <span class="badge text-bg-secondary me-2">${t(lang, 'home_cat_text')}</span>
-          <span class="text-muted small">${t(lang, 'home_cat_text_desc')}</span>
+      <div class="mb-4" id="cat-calculator">
+        <div class="d-flex align-items-center mb-2 flex-wrap gap-2">
+          <span class="badge text-bg-secondary">${t(lang, 'home_cat_calculator')}</span>
+          <span class="text-muted small">${t(lang, 'home_cat_calculator_desc')}</span>
         </div>
+        <p class="small text-muted mb-3">${t(lang, 'home_cat_calculator_blurb')}</p>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
-          ${renderSecondaryCard({
-            title: t(lang, 'tool_markdown_to_html_title'),
-            desc: t(lang, 'tool_markdown_to_html_desc'),
-            href: toolMdHref,
-            cta: openCta,
-          })}
-          ${renderSecondaryCard({
-            title: t(lang, 'tool_bmi_title'),
-            desc: t(lang, 'tool_bmi_description'),
-            href: toolBmiHref,
-            cta: openCta,
-          })}
-          ${renderSecondaryCard({
-            title: t(lang, 'tool_marginal_revenue_title'),
-            desc: t(lang, 'tool_marginal_revenue_description'),
-            href: toolMrHref,
-            cta: openCta,
-          })}
-          ${renderSecondaryCard({
-            title: t(lang, 'tool_squarefeet_title'),
-            desc: t(lang, 'tool_squarefeet_description'),
-            href: toolSquareHref,
-            cta: openCta,
-          })}
-          ${renderSecondaryCard({
-            title: t(lang, 'tool_roi_title'),
-            desc: t(lang, 'tool_roi_description'),
-            href: toolRoiHref,
-            cta: openCta,
-          })}
-          ${renderSecondaryCard({
-            title: t(lang, 'tool_gradient_title'),
-            desc: t(lang, 'tool_gradient_desc'),
-            href: toolGradientHref,
-            cta: openCta,
-          })}
+          ${calculators.map((tool) => renderToolCard(lang, tool, openCta, renderSecondaryCard)).join('')}
         </div>
       </div>
 
       <div class="mb-4" id="cat-dev">
-        <div class="d-flex align-items-center mb-2">
-          <span class="badge text-bg-secondary me-2">${t(lang, 'home_cat_dev')}</span>
+        <div class="d-flex align-items-center mb-2 flex-wrap gap-2">
+          <span class="badge text-bg-secondary">${t(lang, 'home_cat_dev')}</span>
           <span class="text-muted small">${t(lang, 'home_cat_dev_desc')}</span>
         </div>
+        <p class="small text-muted mb-3">${t(lang, 'home_cat_dev_blurb')}</p>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
-          ${renderSecondaryCard({
-            title: t(lang, 'tool_website_headers_title'),
-            desc: t(lang, 'tool_website_headers_desc'),
-            href: toolHeadersHref,
-            cta: openCta,
-          })}
-          ${renderSecondaryCard({
-            title: t(lang, 'tool_ip_address_title'),
-            desc: t(lang, 'tool_ip_address_desc'),
-            href: toolIpHref,
-            cta: openCta,
-          })}
-          ${renderSecondaryCard({
-            title: t(lang, 'tool_squarefeet_title'),
-            desc: t(lang, 'tool_squarefeet_description'),
-            href: toolSquareHref,
-            cta: openCta,
-          })}
+          ${developers.map((tool) => renderToolCard(lang, tool, openCta, renderSecondaryCard)).join('')}
         </div>
       </div>
     </section>

@@ -3,7 +3,8 @@ import type { SiteLang } from '../site/i18n/types';
 import { getLangLabel, t, supportedLangs } from '../site/i18n';
 import { renderHeader } from './site/header';
 import { renderSidebar } from './site/sidebar';
-import { TOOL_PAGES } from '../site/tools';
+import { TOOL_PAGES, getToolBySlug } from '../site/tools';
+import { renderToolExtraSections, buildToolJsonLd } from './site/toolContent';
 import { renderFooter } from './site/footer';
 import { renderLayout, type HreflangAlternate, escapeHtml } from './site/layout';
 
@@ -122,7 +123,23 @@ export const renderWebsiteHeadersPage = (lang: SiteLang, defaultLang: SiteLang) 
     });
   </script>`;
 
-  return renderLayout({
+  
+  const toolMeta = getToolBySlug('website-headers');
+  const toolSeoHtml = toolMeta
+    ? renderToolExtraSections({ lang: lang, defaultLang: defaultLang, tool: toolMeta })
+    : '';
+  const toolJsonLd = toolMeta
+    ? buildToolJsonLd({
+        lang: lang,
+        defaultLang: defaultLang,
+        tool: toolMeta,
+        name: t(lang, toolMeta.i18nKey as any),
+        description,
+        canonicalPath,
+      })
+    : '';
+
+return renderLayout({
     lang,
     title,
     description,
@@ -132,7 +149,8 @@ export const renderWebsiteHeadersPage = (lang: SiteLang, defaultLang: SiteLang) 
     alternates,
     headerHtml,
     sidebarHtml,
-    contentHtml,
+    contentHtml: `${contentHtml}${toolSeoHtml}`,
+    extraHeadHtml: toolJsonLd,
     footerHtml,
     extraBodyHtml,
     includeSidebarToggleScript: true,

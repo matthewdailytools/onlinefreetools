@@ -4,7 +4,8 @@ import { renderFooter } from './site/footer';
 import { renderHeader } from './site/header';
 import { renderLayout, type HreflangAlternate, escapeHtml } from './site/layout';
 import { renderSidebar } from './site/sidebar';
-import { TOOL_PAGES } from '../site/tools';
+import { TOOL_PAGES, getToolBySlug } from '../site/tools';
+import { renderToolExtraSections, buildToolJsonLd } from './site/toolContent';
 
 const withLangPrefix = (lang: SiteLang, pathname: string, defaultLang: SiteLang) => {
   const safe = pathname.startsWith('/') ? pathname : `/${pathname}`;
@@ -100,7 +101,23 @@ At (1,2): ∇f = (4,4)</pre>
     // No interactive math parsing required here; static example provided.
   </script>`;
 
-  return renderLayout({
+  
+  const toolMeta = getToolBySlug('how-to-calculate-gradient');
+  const toolSeoHtml = toolMeta
+    ? renderToolExtraSections({ lang: opts.lang, defaultLang: opts.defaultLang, tool: toolMeta })
+    : '';
+  const toolJsonLd = toolMeta
+    ? buildToolJsonLd({
+        lang: opts.lang,
+        defaultLang: opts.defaultLang,
+        tool: toolMeta,
+        name: t(opts.lang, toolMeta.i18nKey as any),
+        description,
+        canonicalPath,
+      })
+    : '';
+
+return renderLayout({
     lang: opts.lang,
     title,
     description,
@@ -110,9 +127,9 @@ At (1,2): ∇f = (4,4)</pre>
     alternates,
     headerHtml,
     sidebarHtml,
-    contentHtml,
+    contentHtml: `${contentHtml}${toolSeoHtml}`,
     footerHtml,
-    extraHeadHtml,
+    extraHeadHtml: `${extraHeadHtml || ''}${toolJsonLd}`,
     extraBodyHtml,
     includeSidebarToggleScript: true,
     sidebarAutoCloseSelector: '#toolNav a',

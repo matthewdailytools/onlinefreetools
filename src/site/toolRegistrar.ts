@@ -27,8 +27,11 @@ export const registerToolPage = (
     if (!isSupportedLang(langParam)) {
       return c.redirect(withLangPrefix(defaultLang, `/tools/${toolName}`, defaultLang), 302);
     }
-    // Use explicit supported language even if not in enabled list
-    const lang = (isSupportedLang(langParam) ? (langParam as SiteLang) : defaultLang) as SiteLang;
+    const lang = langParam as SiteLang;
+    // 默认语显式前缀收敛到规范无前缀 URL
+    if (lang === defaultLang) {
+      return c.redirect(`/tools/${toolName}`, 301);
+    }
     const html = renderFn(lang, defaultLang, enabled);
     return c.html(html);
   });

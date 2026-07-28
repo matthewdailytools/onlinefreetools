@@ -4,7 +4,8 @@ import { renderFooter } from './site/footer';
 import { renderHeader } from './site/header';
 import { renderLayout, type HreflangAlternate, escapeHtml } from './site/layout';
 import { renderSidebar } from './site/sidebar';
-import { TOOL_PAGES } from '../site/tools';
+import { TOOL_PAGES, getToolBySlug } from '../site/tools';
+import { renderToolExtraSections, buildToolJsonLd } from './site/toolContent';
 
 const withLangPrefix = (lang: SiteLang, pathname: string, defaultLang: SiteLang) => {
 	const safe = pathname.startsWith('/') ? pathname : `/${pathname}`;
@@ -183,7 +184,23 @@ export const renderMarkdownToHtmlPage = (opts: {
     render();
   </script>`;
 
-	return renderLayout({
+	
+  const toolMeta = getToolBySlug('markdown-to-html');
+  const toolSeoHtml = toolMeta
+    ? renderToolExtraSections({ lang: opts.lang, defaultLang: opts.defaultLang, tool: toolMeta })
+    : '';
+  const toolJsonLd = toolMeta
+    ? buildToolJsonLd({
+        lang: opts.lang,
+        defaultLang: opts.defaultLang,
+        tool: toolMeta,
+        name: t(opts.lang, toolMeta.i18nKey as any),
+        description,
+        canonicalPath,
+      })
+    : '';
+
+return renderLayout({
 		lang: opts.lang,
 		title,
 		description,
@@ -193,9 +210,9 @@ export const renderMarkdownToHtmlPage = (opts: {
 		alternates,
 		headerHtml,
 		sidebarHtml,
-		contentHtml,
+		contentHtml: `${contentHtml}${toolSeoHtml}`,
 		footerHtml,
-		extraHeadHtml,
+		extraHeadHtml: `${extraHeadHtml || ''}${toolJsonLd}`,
 		extraBodyHtml,
 		includeSidebarToggleScript: true,
 		sidebarAutoCloseSelector: '#toolNav a',

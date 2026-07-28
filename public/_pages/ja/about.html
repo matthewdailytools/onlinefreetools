@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Online Free Tools について | Online Free Tools</title>
+  <meta name="description" content="私たちについて、ツールの作り方、重要な免責事項。" />
+  <link rel="canonical" href="https://onlinefreetools.org/ja/about" />
+  <meta property="og:title" content="Online Free Tools について | Online Free Tools" />
+  <meta property="og:description" content="私たちについて、ツールの作り方、重要な免責事項。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://onlinefreetools.org/ja/about" />
+  <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="alternate" hreflang="en" href="https://onlinefreetools.org/about" />
+  <link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/about" />
+  <link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/about" />
+  <link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/about" />
+  <link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/about" />
+  <link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/about" />
+  <link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/about" />
+  <link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/about" />
+  <link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/about" />
+  <link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/about" />
+  <link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/about" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  
+  <script>
+    (function () {
+      try {
+        var enabled = ["en","zh","es","ar","pt","id","fr","ja","ru","de"];
+        var defaultLang = "en";
+        var fallback = defaultLang;
+        var path = window.location.pathname || '/';
+
+        // If the URL already contains a language prefix (including defaultLang), respect it.
+        var hasPrefix = enabled.some(function (l) {
+          return l && (path === '/' + l || path.indexOf('/' + l + '/') === 0);
+        });
+        if (hasPrefix) return;
+
+        var langs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language])
+          .filter(Boolean)
+          .map(function (x) { return String(x).toLowerCase().split('-')[0]; });
+
+        var picked = null;
+        for (var i = 0; i < langs.length; i++) {
+          if (enabled.indexOf(langs[i]) !== -1) { picked = langs[i]; break; }
+        }
+        if (!picked) picked = enabled.indexOf(fallback) !== -1 ? fallback : (enabled[0] || fallback);
+
+        if (picked === "ja") return;
+        var targetPath = path;
+        if (picked !== defaultLang) {
+          targetPath = ('/' + picked + path).replace(/\/{2,}/g, '/');
+        }
+        window.location.replace(targetPath + window.location.search + window.location.hash);
+      } catch (e) {}
+    })();
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body { min-height: 100vh; padding-top: 56px; }
+    .layout { display: flex; min-height: 100vh; }
+    /* Sidebar: desktop - sticky under the fixed header */
+    #sidebar {
+      width: 260px;
+      transition: margin-left 0.2s ease;
+      position: sticky;
+      top: 56px;
+      height: calc(100vh - 56px);
+      overflow-y: auto;
+      background: #f8f9fa;
+      border-right: 1px solid #e5e7eb;
+      z-index: 1020;
+    }
+    #content { flex: 1; transition: margin-left 0.2s ease; }
+    .sidebar-collapsed #sidebar { margin-left: -260px; }
+    .sidebar-collapsed #content { margin-left: 0; }
+    @media (max-width: 767.98px) {
+      #sidebar {
+        position: fixed;
+        z-index: 1020;
+        top: 56px;
+        bottom: 0;
+        height: auto;
+      }
+      .sidebar-collapsed #sidebar { margin-left: -260px; }
+      #content { margin-left: 0; }
+      body { padding-top: 56px; }
+    }
+  </style>
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?39f18c089a03779cd05243e21b046589";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "xbc0iytpn7");
+</script>
+  
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"AboutPage","name":"Online Free Tools について","description":"私たちについて、ツールの作り方、重要な免責事項。","url":"https://onlinefreetools.org/ja/about","isPartOf":{"@type":"WebSite","name":"Online Free Tools","url":"https://onlinefreetools.org"}}</script>
+</head>
+<body>
+  
+  
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom fixed-top">
+      <div class="container-fluid">
+        <button class="btn btn-outline-secondary me-2" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+        <a class="navbar-brand fw-semibold" href="/ja/">Online Free Tools</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="topNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="/ja/">ホーム</a></li><li class="nav-item"><a class="nav-link" href="/ja/about">について</a></li><li class="nav-item"><a class="nav-link" href="/devlogs/">開発ログ</a></li></ul>
+          <div class="d-flex align-items-center gap-2">
+            
+    <div class="dropdown">
+      <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        日本語
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end"><li><a class="dropdown-item" href="/about">English</a></li><li><a class="dropdown-item" href="/zh/about">中文</a></li><li><a class="dropdown-item" href="/es/about">Español</a></li><li><a class="dropdown-item" href="/ar/about">العربية</a></li><li><a class="dropdown-item" href="/pt/about">Português</a></li><li><a class="dropdown-item" href="/id/about">Bahasa Indonesia</a></li><li><a class="dropdown-item" href="/fr/about">Français</a></li><li><span class="dropdown-item active" aria-current="true">日本語</span></li><li><a class="dropdown-item" href="/ru/about">Русский</a></li><li><a class="dropdown-item" href="/de/about">Deutsch</a></li></ul>
+    </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="layout sidebar-collapsed" id="layoutRoot">
+    
+    <aside id="sidebar" class="bg-light border-end p-3">
+      <h6 class="text-muted text-uppercase">について</h6>
+      <div class="list-group list-group-flush small" id="aboutNav"><a class="list-group-item list-group-item-action" href="#who">誰が</a><a class="list-group-item list-group-item-action" href="#how">どのように</a><a class="list-group-item list-group-item-action" href="#why">なぜ</a><a class="list-group-item list-group-item-action" href="#disclaimer">免責事項</a></div>
+    </aside>
+    <main id="content" class="p-4">
+    <article class="mb-4">
+      <h1 class="h3 mb-3">Online Free Tools について</h1>
+      <p class="lead text-muted">無料の小さなツールを公開する学習プロジェクトです。公式と手順を明示します。</p>
+
+      <section id="who" class="mb-4">
+        <h2 class="h5">誰が</h2>
+        <p>学習・改善を続けるプロジェクトとして運営しています。人のためのツールを優先します。</p>
+      </section>
+
+      <section id="how" class="mb-4">
+        <h2 class="h5">どのように</h2>
+        <p>Cloudflare Workers で SSR します。計算機は公式・手順・例を示します。</p>
+      </section>
+
+      <section id="why" class="mb-4">
+        <h2 class="h5">なぜ</h2>
+        <p>具体的な課題を解くために公開しており、検索向けの薄いページ量産はしません。</p>
+      </section>
+
+      <section id="disclaimer" class="mb-4">
+        <h2 class="h5">免責事項</h2>
+        <p>健康・金融ツールは学習用であり、医療・投資助言ではありません。</p>
+      </section>
+    </article>
+  </main>
+  </div>
+  
+  <footer class="bg-light border-top text-center py-3">
+    <div class="container">
+      <small class="text-muted">Online Free Tools · 学習プロジェクト · 改善中</small>
+      <span class="text-muted mx-2">·</span>
+      <a class="small text-decoration-none" href="/ja/about">について</a>
+    </div>
+  </footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <script>
+    const layout = document.getElementById('layoutRoot');
+    const toggle = document.getElementById('sidebarToggle');
+    if (layout && toggle) {
+      toggle.addEventListener('click', () => layout.classList.toggle('sidebar-collapsed'));
+      
+    }
+  </script>
+</body>
+</html>

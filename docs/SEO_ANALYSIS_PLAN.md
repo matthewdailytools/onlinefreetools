@@ -4,7 +4,10 @@
 > 生成日期：2026-06-23
 > 目标站点：https://onlinefreetools.org
 > **关联**：[工具 SEO 战略](./2026-07-09-tool-seo-strategy.md)（工具选型优先级与关键词策略）  
-> **关联**：[外链策略方案](./2026-07-09-external-link-strategy.md)（入站/出站链接合规策略）
+> **关联**：[外链策略方案](./2026-07-09-external-link-strategy.md)（入站/出站链接合规策略）  
+> **关联**：[发布清单](./SEO_PUBLISH_CHECKLIST.md) · [工具 SEO 规则](./SEO_TOOL_RULES.md)
+
+> **2026-07-28 落地进度**：已完成自动 sitemap（含 hreflang / x-default）、favicon/og 资产、首页目录驱动、`/en` 301 归一、About 页、工具页可见 FAQ / YMYL / 相关工具、BreadcrumbList+WebApplication JSON-LD、`tool-catalog.json` 单一数据源与 `lint:seo` 扩展。详见发布清单。
 
 ---
 
