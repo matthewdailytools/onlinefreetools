@@ -1,29 +1,27 @@
 /**
- * 工具页页脚：版权与 About 链接。
+ * 站点页脚：版权与 About 链接。
  */
 import type { SiteLang } from '../../site/i18n';
 import { t } from '../../site/i18n';
 import { escapeHtml } from './layout';
 
 /**
- * 为当前语言生成带语言前缀的路径（默认语无前缀）。
+ * 显式语言前缀路径（含默认语 /en），供站内导航保持用户所选语言。
  * @param lang 当前语言
  * @param pathname 路径
- * @param defaultLang 默认语言
  */
-const withLangPrefix = (lang: SiteLang, pathname: string, defaultLang: SiteLang) => {
+const withExplicitLangPrefix = (lang: SiteLang, pathname: string) => {
 	const safe = pathname.startsWith('/') ? pathname : `/${pathname}`;
-	return lang === defaultLang ? safe : `/${lang}${safe}`;
+	return `/${lang}${safe}`.replace(/\/{2,}/g, '/');
 };
 
 /**
  * 渲染站点页脚。
  * @param opts.lang 当前语言
- * @param opts.defaultLang 默认语言（可选，缺省视为 en）
+ * @param opts.defaultLang 默认语言（保留参数兼容调用方，导航统一用显式前缀）
  */
 export const renderFooter = (opts: { lang: SiteLang; defaultLang?: SiteLang }) => {
-	const defaultLang = opts.defaultLang || 'en';
-	const aboutHref = withLangPrefix(opts.lang, '/about', defaultLang);
+	const aboutHref = withExplicitLangPrefix(opts.lang, '/about');
 	return `
   <footer class="bg-light border-top text-center py-3">
     <div class="container">

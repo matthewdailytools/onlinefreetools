@@ -2,7 +2,7 @@
  * About 页模型：站点 Who / How / Why 与免责声明。
  */
 import { t } from '../i18n.mjs';
-import { siteConfig, withLangPath, absoluteUrl } from '../config.mjs';
+import { siteConfig, withExplicitLangPath, withLangPath, absoluteUrl } from '../config.mjs';
 
 /**
  * 生成指定语言的 About 页渲染模型。
@@ -10,8 +10,8 @@ import { siteConfig, withLangPath, absoluteUrl } from '../config.mjs';
  */
 export const getAboutPageModel = (lang) => {
   const navItems = [
-    { href: withLangPath(lang, '/'), label: t(lang, 'nav_home') },
-    { href: withLangPath(lang, '/about'), label: t(lang, 'nav_about') },
+    { href: withExplicitLangPath(lang, '/'), label: t(lang, 'nav_home') },
+    { href: withExplicitLangPath(lang, '/about'), label: t(lang, 'nav_about') },
     { href: '/devlogs/', label: t(lang, 'nav_devlogs') },
   ];
 

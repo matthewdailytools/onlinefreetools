@@ -4,7 +4,7 @@ import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { createRequire } from 'node:module';
 
-import { siteConfig, getLangConfig, withLangPath } from './site/config.mjs';
+import { siteConfig, getLangConfig, withLangPath, withExplicitLangPath } from './site/config.mjs';
 import { t } from './site/i18n.mjs';
 import { renderLayout } from './site/layout.mjs';
 import { renderFooter, renderHeader, renderSidebar } from './site/components.mjs';
@@ -57,12 +57,12 @@ export const buildHome = async (lang) => {
 
   const model = getHomePageModel(lang);
   const langAlternates = Object.fromEntries(
-    (siteConfig.enabledLangs || []).map((code) => [code, withLangPath(code, '/')])
+    (siteConfig.enabledLangs || []).map((code) => [code, withExplicitLangPath(code, '/')])
   );
 
   const headerHtml = renderHeader({
     lang,
-    brandHref: withLangPath(lang, '/'),
+    brandHref: withExplicitLangPath(lang, '/'),
     navItems: model.navItems,
     showSidebarToggle: true,
     showSearch: true,
@@ -273,12 +273,12 @@ export const buildAbout = async (lang) => {
 
   const model = getAboutPageModel(lang);
   const langAlternates = Object.fromEntries(
-    (siteConfig.enabledLangs || []).map((code) => [code, withLangPath(code, '/about')])
+    (siteConfig.enabledLangs || []).map((code) => [code, withExplicitLangPath(code, '/about')])
   );
 
   const headerHtml = renderHeader({
     lang,
-    brandHref: withLangPath(lang, '/'),
+    brandHref: withExplicitLangPath(lang, '/'),
     navItems: model.navItems,
     showSidebarToggle: true,
     showSearch: false,

@@ -84,29 +84,20 @@ app.get("/", async (c) => {
 });
 
 // Localized home pages are served from assets at `/_pages/{lang}/index.html`.
-// 默认语（en）带前缀访问 301 到规范无前缀 URL。
+// 注意：默认语也提供显式前缀 `/en/`（200），供语言切换器使用；
+// Accept-Language 协商只作用于无前缀 `/`，避免「点了 English 又被弹回中文」。
+// SEO canonical / sitemap 仍使用无前缀规范 URL。
 for (const code of DEFAULT_LANGS) {
-	app.get(`/${code}`, (c) => {
-		const enabled = getEnabledLangs(c.env);
-		const defaultLang = getDefaultLang(c.env, enabled);
-		if (code === defaultLang) return c.redirect('/', 301);
-		return c.redirect(`/${code}/`, 308);
-	});
+	app.get(`/${code}`, (c) => c.redirect(`/${code}/`, 308));
 	app.get(`/${code}/`, async (c) => {
-		const enabled = getEnabledLangs(c.env);
-		const defaultLang = getDefaultLang(c.env, enabled);
-		if (code === defaultLang) return c.redirect('/', 301);
 		const accept = c.req.header('accept') || '';
 		if (!accept.includes('text/html')) return c.notFound();
 		const res = await fetchAsset(c, `/_pages/${code}/index.html`);
 		return res;
 	});
-	// About 静态页
+	// About 静态页（含默认语显式前缀）
 	app.get(`/${code}/about`, (c) => c.redirect(`/${code}/about/`, 308));
 	app.get(`/${code}/about/`, async (c) => {
-		const enabled = getEnabledLangs(c.env);
-		const defaultLang = getDefaultLang(c.env, enabled);
-		if (code === defaultLang) return c.redirect('/about', 301);
 		const accept = c.req.header('accept') || '';
 		if (!accept.includes('text/html')) return c.notFound();
 		const res = await fetchAsset(c, `/_pages/${code}/about.html`);
@@ -114,7 +105,7 @@ for (const code of DEFAULT_LANGS) {
 	});
 }
 
-// 默认语 About（无前缀）
+// 默认语 About（无前缀规范 URL）
 app.get('/about', async (c) => {
 	const accept = c.req.header('accept') || '';
 	if (!accept.includes('text/html')) return c.notFound();

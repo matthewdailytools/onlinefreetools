@@ -19,7 +19,7 @@ export const registerToolPage = (
     return c.html(html);
   });
 
-  // localized tool page
+  // localized tool page（含默认语显式前缀，供语言切换；不 301 回无前缀）
   app.get(`/:lang/tools/${toolName}`, (c: any) => {
     const langParam = c.req.param('lang');
     const enabled = getEnabledLangs(c.env);
@@ -28,10 +28,6 @@ export const registerToolPage = (
       return c.redirect(withLangPrefix(defaultLang, `/tools/${toolName}`, defaultLang), 302);
     }
     const lang = langParam as SiteLang;
-    // 默认语显式前缀收敛到规范无前缀 URL
-    if (lang === defaultLang) {
-      return c.redirect(`/tools/${toolName}`, 301);
-    }
     const html = renderFn(lang, defaultLang, enabled);
     return c.html(html);
   });

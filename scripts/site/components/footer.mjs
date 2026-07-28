@@ -2,7 +2,7 @@
  * 站点页脚：版权与 About 链接。
  */
 import { t } from '../i18n.mjs';
-import { withLangPath } from '../config.mjs';
+import { withExplicitLangPath } from '../config.mjs';
 
 /**
  * 渲染页脚 HTML。
@@ -13,6 +13,6 @@ export const renderFooter = ({ lang }) => `
     <div class="container">
       <small class="text-muted">${t(lang, 'footer_text')}</small>
       <span class="text-muted mx-2">·</span>
-      <a class="small text-decoration-none" href="${withLangPath(lang, '/about')}">${t(lang, 'footer_about')}</a>
+      <a class="small text-decoration-none" href="${withExplicitLangPath(lang, '/about')}">${t(lang, 'footer_about')}</a>
     </div>
   </footer>`;

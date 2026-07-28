@@ -1,8 +1,9 @@
 /**
- * 首页内容：由工具目录驱动，覆盖全部工具并使用规范语言路径。
+ * 首页内容：由工具目录驱动，覆盖全部工具。
+ * 站内工具链接使用显式语言前缀（含 /en/），避免切到英文后再被 Accept-Language 打回。
  */
 import { t } from '../i18n.mjs';
-import { withLangPath } from '../config.mjs';
+import { withExplicitLangPath } from '../config.mjs';
 import { TOOL_CATALOG, getToolsByCategory } from '../tool-catalog.mjs';
 
 /**
@@ -46,7 +47,7 @@ const renderToolCard = (lang, tool, cta, renderer) =>
   renderer({
     title: t(lang, tool.homeTitleKey),
     desc: t(lang, tool.homeDescKey),
-    href: withLangPath(lang, tool.path),
+    href: withExplicitLangPath(lang, tool.path),
     cta,
   });
 
