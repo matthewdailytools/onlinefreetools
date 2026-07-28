@@ -1,6 +1,6 @@
 # SEO 发布与监控清单
 
-发版与上线后的检查项（对应 2026 SEO 修改方案）。
+发版与上线后的检查项。完整策略见 [Google SEO 策略与落地](./2026-07-28-google-seo-strategy-implementation.md)。
 
 ## 发版前
 
@@ -8,6 +8,7 @@
 2. `npm run lint:seo` — description / FAQ / YMYL 启发式校验
 3. 确认 `public/og-image.png`、`favicon.ico`、`favicon.svg`、`apple-touch-icon.png` 存在
 4. 抽查：默认语工具 URL 无 `/en` 前缀；`/en/tools/...` 应 301 到 `/tools/...`
+5. 新工具：Doc2 §8.2 Checklist + IG ≥ 3（见主文档）；卡片见 [每工具方案](./2026-07-28-per-tool-dev-seo-plans.md)
 
 `npm run deploy` 会通过 `predeploy` 自动执行 1–2。
 
@@ -28,3 +29,4 @@
 - 不为查询变体批量建空壳 URL
 - 不以 FAQ/HowTo 富结果为 KPI
 - 不依赖 llms.txt 等非官方「GEO hack」
+- 不按已归档的泛化超市清单盲目铺工具（见 [工具方向](./2026-07-28-tool-direction.md)）

@@ -1,0 +1,682 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tool page Google SEO and Information Gain strategy | Dev Logs</title>
+  <meta name="description" content="Tool page Google SEO and Information Gain strategy" />
+  <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-07-28-tool-page-seo-information-gain.html" />
+  <meta property="og:title" content="Tool page Google SEO and Information Gain strategy | Dev Logs" />
+  <meta property="og:description" content="Tool page Google SEO and Information Gain strategy" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-07-28-tool-page-seo-information-gain.html" />
+  <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  
+  <script>
+    (function () {
+      try {
+        var enabled = [];
+        var defaultLang = "en";
+        var fallback = defaultLang;
+        var path = window.location.pathname || '/';
+
+        // If the URL already contains a language prefix (including defaultLang), respect it.
+        var hasPrefix = enabled.some(function (l) {
+          return l && (path === '/' + l || path.indexOf('/' + l + '/') === 0);
+        });
+        if (hasPrefix) return;
+
+        var langs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language])
+          .filter(Boolean)
+          .map(function (x) { return String(x).toLowerCase().split('-')[0]; });
+
+        var picked = null;
+        for (var i = 0; i < langs.length; i++) {
+          if (enabled.indexOf(langs[i]) !== -1) { picked = langs[i]; break; }
+        }
+        if (!picked) picked = enabled.indexOf(fallback) !== -1 ? fallback : (enabled[0] || fallback);
+
+        if (picked === "en") return;
+        var targetPath = path;
+        if (picked !== defaultLang) {
+          targetPath = ('/' + picked + path).replace(/\/{2,}/g, '/');
+        }
+        window.location.replace(targetPath + window.location.search + window.location.hash);
+      } catch (e) {}
+    })();
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body { min-height: 100vh; padding-top: 56px; }
+    .layout { display: flex; min-height: 100vh; }
+    /* Sidebar: desktop - sticky under the fixed header */
+    #sidebar {
+      width: 260px;
+      transition: margin-left 0.2s ease;
+      position: sticky;
+      top: 56px;
+      height: calc(100vh - 56px);
+      overflow-y: auto;
+      background: #f8f9fa;
+      border-right: 1px solid #e5e7eb;
+      z-index: 1020;
+    }
+    #content { flex: 1; transition: margin-left 0.2s ease; }
+    .sidebar-collapsed #sidebar { margin-left: -260px; }
+    .sidebar-collapsed #content { margin-left: 0; }
+    @media (max-width: 767.98px) {
+      #sidebar {
+        position: fixed;
+        z-index: 1020;
+        top: 56px;
+        bottom: 0;
+        height: auto;
+      }
+      .sidebar-collapsed #sidebar { margin-left: -260px; }
+      #content { margin-left: 0; }
+      body { padding-top: 56px; }
+    }
+  </style>
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?39f18c089a03779cd05243e21b046589";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "xbc0iytpn7");
+</script>
+  
+  
+</head>
+<body>
+  
+  
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom fixed-top">
+      <div class="container-fluid">
+        <button class="btn btn-outline-secondary me-2" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+        <a class="navbar-brand fw-semibold" href="/">Online Free Tools</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="topNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="/">Home</a></li><li class="nav-item"><a class="nav-link" href="/devlogs/">Dev Logs</a></li></ul>
+          <div class="d-flex align-items-center gap-2">
+            
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="layout sidebar-collapsed" id="layoutRoot">
+    
+    <aside id="sidebar" class="bg-light border-end p-3">
+      <h6 class="text-muted text-uppercase">Navigation</h6>
+      <div class="list-group list-group-flush small" id="navList"><a class="list-group-item list-group-item-action" href="/">Home</a><a class="list-group-item list-group-item-action" href="/devlogs/">Dev Logs</a></div>
+    </aside>
+    <main id="content" class="p-4"><section class="mb-3"><div class="d-flex justify-content-between align-items-center mb-3"><h1 class="h4 mb-0">Tool page Google SEO and Information Gain strategy | Dev Logs</h1><a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a></div><article class="bg-white shadow-sm p-3 p-md-4 rounded"><h1>工具页 Google SEO 与 Information Gain</h1>
+<p><strong>日期</strong>: 2026-07-28<br><strong>标签</strong>: <code>SEO</code>, <code>Google</code>, <code>Information Gain</code>, <code>E-E-A-T</code>, <code>工具页</code><br><strong>目标站点</strong>: <a href="https://onlinefreetools.org">https://onlinefreetools.org</a></p>
+<p><strong>关联文档</strong>:</p>
+<ul>
+<li><a href="./2026-07-28-tool-direction.md">工具方向</a> — 做什么工具（AI 桥接 × 行业专属）</li>
+<li><a href="./SEO_TOOL_RULES.md">工具页面 SEO 规则</a> — description / FAQ / YMYL lint 硬规则</li>
+<li><a href="./SEO_ANALYSIS_PLAN.md">SEO 分析与优化方案</a> — Sitemap、Schema 注入、CWV 基建</li>
+<li><a href="./2026-07-09-external-link-strategy.md">外链策略</a> — 入站/出站合规</li>
+<li><a href="./2026-07-09-js-tool-packages-survey.md">JS 工具包调研</a> — 技术可行性（非 SEO 优先级）</li>
+</ul>
+<blockquote>
+<p><strong>本文职责</strong>：回答「工具页如何符合 Google 规则，以及如何用 Information Gain 胜过同类工具页」。</p>
+</blockquote>
+<hr>
+<h2>1. 核心命题</h2>
+<blockquote>
+<p><strong>合规（People-First / Spam / E-E-A-T）是底线；Information Gain 是相对竞品工具页的胜负手。</strong></p>
+</blockquote>
+<p>单页同时服务三方：</p>
+<table>
+<thead>
+<tr>
+<th>受众</th>
+<th>页面须回答</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>用户</strong></td>
+<td>做什么？怎么用？结果可信吗？和我的行业/AI 场景有何关系？</td>
+</tr>
+<tr>
+<td><strong>Google 爬虫</strong></td>
+<td>主题是什么？与哪些查询匹配？与站内其他页关系？</td>
+</tr>
+<tr>
+<td><strong>AI Overviews</strong></td>
+<td>能否提取清晰步骤、公式、示例、边界作为引用片段？</td>
+</tr>
+</tbody></table>
+<p><strong>不做</strong>：<code>llms.txt</code>、AI 专用 Schema、为 AI 阅读而刻意切块整站——Google <a href="https://developers.google.com/search/docs/appearance/ai-features">AI features and your website</a> 明确无额外技术要求。</p>
+<hr>
+<h2>2. Google 规则底线</h2>
+<h3>2.1 政策要点（工具站）</h3>
+<table>
+<thead>
+<tr>
+<th>来源</th>
+<th>结论</th>
+<th>对本站</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content">Creating helpful content</a></td>
+<td>奖励为人而写；批量操纵排名违反 spam</td>
+<td>每工具须真实可交互 + 公式/步骤/示例</td>
+</tr>
+<tr>
+<td><a href="https://developers.google.com/search/docs/appearance/ai-features">AI features and your website</a></td>
+<td>AI Overviews 无额外技术要求</td>
+<td>标准 SEO + 深度内容即可</td>
+</tr>
+<tr>
+<td>E-E-A-T</td>
+<td>Trust 对 YMYL 权重最高</td>
+<td>健康/财务：免责 + 权威引用</td>
+</tr>
+<tr>
+<td>Spam Policies</td>
+<td>未审核机翻、无实质改日期、跨主题薄页铺量</td>
+<td>控节奏；<code>dateModified</code> 仅实质更新</td>
+</tr>
+</tbody></table>
+<h3>2.2 禁止清单</h3>
+<ul>
+<li>创建 <code>llms.txt</code> 或「AI 专用」Schema.org 类型  </li>
+<li>伪造作者、虚假评论、虚假 <code>aggregateRating</code>  </li>
+<li>无实质功能差异的同类工具铺量  </li>
+<li>机器翻译后未经人工审核直接上线  </li>
+<li>健康/财务给出医疗或投资建议而无免责声明  </li>
+<li>仅对爬虫可见、对用户隐藏的 FAQ（cloaking）  </li>
+<li>Schema 文本与可见内容不一致或夸大</li>
+</ul>
+<h3>2.3 YMYL（健康 / 财务）</h3>
+<table>
+<thead>
+<tr>
+<th>元素</th>
+<th>健康</th>
+<th>财务</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>免责声明</td>
+<td>非医疗建议，咨询医生</td>
+<td>非财务/投资建议，咨询专业人士</td>
+</tr>
+<tr>
+<td>公式来源</td>
+<td>WHO、CDC 等</td>
+<td>Investopedia、公开会计准则等</td>
+</tr>
+<tr>
+<td>适用范围</td>
+<td>运动员/孕妇等局限</td>
+<td>利率假设、固定期限等</td>
+</tr>
+<tr>
+<td>字段</td>
+<td><code>tool_*_disclaimer</code> + 建议 <code>tool_*_references</code></td>
+<td>同左</td>
+</tr>
+</tbody></table>
+<p>硬规则见 <a href="./SEO_TOOL_RULES.md">SEO_TOOL_RULES.md</a>。</p>
+<hr>
+<h2>3. Information Gain 作战手册</h2>
+<p><strong>Information Gain（信息增益）</strong>：相对 SERP 上同类工具页，用户读完本页后多带走的、可验证的信息。Google 质量框架与 helpful content 均强调「是否带来新价值」，而非更长的同质文案。</p>
+<h3>3.1 必赢差异维度（相对多数工具站）</h3>
+<p>每个新工具上线前，从下表勾选 <strong>至少 3 项</strong>，并在页面上可核对：</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>增益维度</th>
+<th>本站做法</th>
+<th>多数竞品缺失</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td><strong>公式 / 规则推导</strong></td>
+<td>写出计算式、字段映射、算法步骤，而非只出结果</td>
+<td>仅输入框</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>边界与失败案例</strong></td>
+<td>非法输入、局限、常见坑 FAQ</td>
+<td>无错误解释</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>行业或 AI 语境</strong></td>
+<td>Use cases 绑定岗位/流水线（见工具方向文档）</td>
+<td>泛化「anyone can use」</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>对照表</strong></td>
+<td>模型价差、单位假设、引擎字符限制、标准版本差异</td>
+<td>无表</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>权威引用</strong></td>
+<td>IETF / WHO / NIST / Schema.org 等可点外链</td>
+<td>无 References</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>本地隐私</strong></td>
+<td>文件/粘贴内容浏览器处理；明确「不上传」</td>
+<td>强制上传</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>多语言术语</strong></td>
+<td>10 语言本地化 title/H1/关键（人工审核）</td>
+<td>仅英文</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>完整数值示例</strong></td>
+<td>≥1 组 Input → Output（最好含边界例）</td>
+<td>无具体数字</td>
+</tr>
+<tr>
+<td>9</td>
+<td><strong>主题内链</strong></td>
+<td>Related tools ≥ 2；同行业/同 AI 链路互链</td>
+<td>孤立页</td>
+</tr>
+</tbody></table>
+<h3>3.2 每工具 IG 最低配额（硬性）</h3>
+<p>上线 PR 必须满足：</p>
+<ol>
+<li><strong>≥ 3 项</strong> §3.1 增益，在 PR 描述或清单中逐条写明「页面哪一节体现」。  </li>
+<li>可见正文含 <strong>How it works + 至少 1 个完整 Example</strong>（计算/转换类另加 Formula/Rules）。  </li>
+<li>FAQ <strong>≥ 3</strong>（与 <a href="./SEO_TOOL_RULES.md">SEO_TOOL_RULES</a> 一致；YMYL 须含局限性/免责类问题）；答案不得整段抄竞品。  </li>
+<li>至少 <strong>1 条</strong> 可点击权威引用（YMYL 建议 ≥ 2），或明确说明「规范即页面内嵌规则表」。  </li>
+<li>文件/粘贴类工具必须有 <strong>本地处理</strong> FAQ 或声明。</li>
+</ol>
+<h3>3.3 反面模式（零增益）</h3>
+<table>
+<thead>
+<tr>
+<th>反面</th>
+<th>后果</th>
+<th>正确做法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>只有输入框</td>
+<td>薄内容；难被引用</td>
+<td>补 How / Example / FAQ</td>
+</tr>
+<tr>
+<td>FAQ 复制竞品</td>
+<td>无 IG</td>
+<td>加入本地处理、行业边界、本站独有对照</td>
+</tr>
+<tr>
+<td>空壳长尾变体页</td>
+<td>spam 风险</td>
+<td>合并为一带多场景的真工具</td>
+</tr>
+<tr>
+<td><code>dateModified</code> 无改内容却刷新</td>
+<td>信任下降</td>
+<td>仅实质更新时改</td>
+</tr>
+<tr>
+<td>title 堆砌同义词</td>
+<td>可能被视为 spam</td>
+<td>一个主关键词 + 品牌</td>
+</tr>
+<tr>
+<td>隐藏关键词文本</td>
+<td>违规</td>
+<td>全部可见</td>
+</tr>
+<tr>
+<td>WASM 首屏拉 5MB</td>
+<td>CWV 差</td>
+<td>点击后懒加载</td>
+</tr>
+</tbody></table>
+<h3>3.4 AI Overviews 友好写法（仍是标准 SEO）</h3>
+<ul>
+<li>步骤用有序列表，动词开头，与 UI 一致 → 易被抽成 HowTo 片段。  </li>
+<li>公式单独成段，符号与示例数值一致。  </li>
+<li>FAQ 一问一答、直接回答，避免「见上文」。  </li>
+<li><strong>不需要</strong> 额外 AI SEO 文件或特殊 Schema。</li>
+</ul>
+<h3>3.5 立项时的 IG 预审（与工具方向漏斗衔接）</h3>
+<p>工具方向文档的「行业或 AI 信息增益空间」维度，在写文案前再落成检查表：</p>
+<pre><code class="language-markdown">## IG 预审 — {Tool Name}
+- [ ] 竞品 SERP 前 5 缺失什么？（列 3 条）
+- [ ] 我们补哪 3 条增益？（对应 §3.1 编号）
+- [ ] 权威来源 URL：
+- [ ] 行业/AI Use case 文案草稿：
+- [ ] 边界/失败案例草稿：
+</code></pre>
+<hr>
+<h2>4. 单页结构模板</h2>
+<h3>4.1 自上而下</h3>
+<pre><code>Header
+├─ 面包屑（Home → Topics? → Tool）
+├─ H1 + 一句话摘要
+├─ 【工具交互区】← 首屏，满足即时意图
+├─ H2 How it works
+├─ H2 Formula / Rules / Algorithm（计算与转换类）
+├─ H2 Example
+├─ H2 Use cases（行业或 AI 场景，2–3 条）
+├─ H2 FAQ
+├─ H2 Related tools
+├─ H2 References
+└─ Disclaimer（YMYL 必备）
+Footer
+</code></pre>
+<p><strong>原则</strong>：仅一个 H1；交互区尽量首屏可见；Canvas/纯图结果须另附可索引文字示例。</p>
+<h3>4.2 与 i18n / 代码字段</h3>
+<table>
+<thead>
+<tr>
+<th>区块</th>
+<th>字段 / 实现</th>
+<th>状态目标</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>&lt;title&gt;</code></td>
+<td><code>tool_*_title</code> + brand</td>
+<td>主词靠前，约 50–60 英文字符</td>
+</tr>
+<tr>
+<td>description</td>
+<td><code>tool_*_description</code></td>
+<td>80–160 字符；步骤/公式 + 示例（lint:seo）</td>
+</tr>
+<tr>
+<td>正文</td>
+<td><code>tool_*_article</code> 或分节字段</td>
+<td>≥ 约 300 词等效可见说明</td>
+</tr>
+<tr>
+<td>How 步骤</td>
+<td><code>tool_*_how_stepN</code> 或 article 内 ol</td>
+<td>3–5 步</td>
+</tr>
+<tr>
+<td>FAQ</td>
+<td><code>tool_*_faq_qN</code> / <code>tool_*_faq_aN</code></td>
+<td>≥ 3（lint 硬规则）</td>
+</tr>
+<tr>
+<td>References</td>
+<td><code>tool_*_references</code></td>
+<td>YMYL 建议必有</td>
+</tr>
+<tr>
+<td>Disclaimer</td>
+<td><code>tool_*_disclaimer</code></td>
+<td><code>ymyl: true</code> 必有</td>
+</tr>
+<tr>
+<td>JSON-LD</td>
+<td>layout / schema 注入</td>
+<td>与可见文本一致</td>
+</tr>
+<tr>
+<td>hreflang</td>
+<td><code>renderLayout</code> alternates + <code>x-default</code></td>
+<td>与 sitemap URL 一致</td>
+</tr>
+</tbody></table>
+<h3>4.3 Meta 要点</h3>
+<p><strong>Title</strong>：<code>{Primary Keyword + Action} | {Brand}</code> — 不堆砌；各语言本地化。  </p>
+<p><strong>Description 三段式</strong>：<code>{一句话价值} + {Process/Formula} + {Example}</code>  </p>
+<p><strong>Canonical</strong>：apex <code>https://onlinefreetools.org</code>；默认语无前缀；其他 <code>/{lang}/tools/{slug}</code>。  </p>
+<p>细节与示例见历史单页文档已并入本节；硬校验以 <code>npm run lint:seo</code> 为准。</p>
+<hr>
+<h2>5. Schema 与结构化数据</h2>
+<blockquote>
+<p>实现细节见 <a href="./SEO_ANALYSIS_PLAN.md">SEO_ANALYSIS_PLAN.md</a>。FAQPage / HowTo <strong>富结果展示</strong>可能变化；问答仍须对用户可见，<strong>不要</strong>把富结果点击当 KPI（见 SEO_TOOL_RULES）。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>工具类型</th>
+<th>建议 Schema</th>
+<th>禁止</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>交互工具</td>
+<td><code>WebApplication</code> +（可选）步骤结构化</td>
+<td>虚假 <code>aggregateRating</code></td>
+</tr>
+<tr>
+<td>教程型 how-to-calculate-*</td>
+<td><code>Article</code> + 步骤说明</td>
+<td>夸大功效</td>
+</tr>
+<tr>
+<td>支柱/集合页</td>
+<td><code>CollectionPage</code> / <code>ItemList</code></td>
+<td>—</td>
+</tr>
+<tr>
+<td>全站导航</td>
+<td><code>BreadcrumbList</code></td>
+<td>—</td>
+</tr>
+</tbody></table>
+<p><strong>规则</strong>：JSON-LD 每句须能在页面上找到对应可见文案。</p>
+<hr>
+<h2>6. 主题权威（最小必要）</h2>
+<p>主题集群服务于 <strong>内链与 Information Gain</strong>，不是为了铺工具数量。</p>
+<table>
+<thead>
+<tr>
+<th>要求</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>支柱页（若做）</td>
+<td>主题简介、工具列表、<strong>对比表</strong>（场景差异 = IG）、hreflang</td>
+</tr>
+<tr>
+<td>子工具页</td>
+<td>Related tools ≥ 2；优先链向同行业或同一 AI 流水线上下游</td>
+</tr>
+<tr>
+<td>侧栏</td>
+<td>同主题过滤优于全站无序列表</td>
+</tr>
+</tbody></table>
+<p>工具「做哪些」不在本文展开，见 <a href="./2026-07-28-tool-direction.md">工具方向</a>。</p>
+<hr>
+<h2>7. 多语言 SEO</h2>
+<ul>
+<li>10 语言是资产：<code>title</code> / <code>h1</code> / <code>description</code> / FAQ 本地化；<code>slug</code> 保持英文 kebab-case。  </li>
+<li>工作流：英文母版（公式+步骤+示例）→ 人工翻译审核 → <code>lint:seo</code> → <code>build:site</code>（sitemap 含全语言 URL）。  </li>
+<li><strong>禁止</strong> GPT 批量翻译直出。</li>
+</ul>
+<hr>
+<h2>8. 技术 SEO 前置（阻塞）</h2>
+<p>新工具难收录时，优先修基建（详见 SEO_ANALYSIS_PLAN）：</p>
+<table>
+<thead>
+<tr>
+<th>优先级</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>P0</td>
+<td>Sitemap 收录全部工具 × 语言 URL</td>
+</tr>
+<tr>
+<td>P0</td>
+<td>工具页 JSON-LD 与可见内容一致</td>
+</tr>
+<tr>
+<td>P0</td>
+<td>Google Search Console</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>面包屑；CWV 基线（尤其 Tier 2 WASM）</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>9. 发布、Checklist 与度量</h2>
+<h3>9.1 发布节奏</h3>
+<ul>
+<li>先保证收录管道，再每周 1–2 个高质量工具（含 10 语）。  </li>
+<li>稳定期可放缓，把时间花在深化 IG（对照表、边界、引用），而非加薄页。</li>
+</ul>
+<h3>9.2 上线 Checklist（PR 合并前）</h3>
+<ul>
+<li><input disabled="" type="checkbox"> <code>tool-catalog.json</code> / 路由注册完成  </li>
+<li><input disabled="" type="checkbox"> 10 语言 title / description / article（或等价分节）齐全  </li>
+<li><input disabled="" type="checkbox"> <code>npm run lint:seo</code> 通过  </li>
+<li><input disabled="" type="checkbox"> <strong>IG ≥ 3 项</strong>（§3.1）已在 PR 写明  </li>
+<li><input disabled="" type="checkbox"> How + Example（+ Formula 如适用）可见  </li>
+<li><input disabled="" type="checkbox"> FAQ 数量达标；YMYL 有 disclaimer + references  </li>
+<li><input disabled="" type="checkbox"> Related tools ≥ 2（行业/AI 链路优先）  </li>
+<li><input disabled="" type="checkbox"> JSON-LD 与可见内容一致；无虚假评分  </li>
+<li><input disabled="" type="checkbox"> canonical / hreflang / <code>x-default</code> 正确  </li>
+<li><input disabled="" type="checkbox"> sitemap 构建后含本工具全语言 URL  </li>
+<li><input disabled="" type="checkbox"> 文件/粘贴类：本地处理声明  </li>
+<li><input disabled="" type="checkbox"> <code>datePublished</code> / <code>dateModified</code> 真实</li>
+</ul>
+<h3>9.3 30 天复盘模板</h3>
+<pre><code class="language-markdown">## {Tool Name} — 30 天 SEO 复盘
+- 索引状态：
+- Top 5 展示查询：
+- CTR / 平均排名：
+- IG 是否足够：是/否 — 缺哪条 §3.1
+- 下月动作：
+</code></pre>
+<h3>9.4 验证工具</h3>
+<table>
+<thead>
+<tr>
+<th>检查</th>
+<th>工具</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>描述与 FAQ</td>
+<td><code>npm run lint:seo</code></td>
+</tr>
+<tr>
+<td>结构化数据</td>
+<td><a href="https://search.google.com/test/rich-results">Rich Results Test</a></td>
+</tr>
+<tr>
+<td>CWV</td>
+<td>PageSpeed Insights</td>
+</tr>
+<tr>
+<td>索引与国际定向</td>
+<td>Google Search Console</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>10. 文档分工</h2>
+<table>
+<thead>
+<tr>
+<th>文档</th>
+<th>职责</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>本文</strong></td>
+<td>Google 合规、Information Gain、单页模板、Checklist</td>
+</tr>
+<tr>
+<td><a href="./SEO_TOOL_RULES.md">SEO_TOOL_RULES</a></td>
+<td>lint 硬规则（最短约束）</td>
+</tr>
+<tr>
+<td><a href="./SEO_ANALYSIS_PLAN.md">SEO_ANALYSIS_PLAN</a></td>
+<td>Sitemap / CWV / Schema 实现</td>
+</tr>
+<tr>
+<td><a href="./2026-07-28-tool-direction.md">工具方向</a></td>
+<td>立项与工具清单</td>
+</tr>
+<tr>
+<td><a href="./2026-07-09-external-link-strategy.md">外链策略</a></td>
+<td>入站/出站</td>
+</tr>
+</tbody></table>
+<p><strong>已合并（历史 stub）</strong>：</p>
+<ul>
+<li><del>工具 SEO 战略</del>（站点级选型 + 页面策略重复部分）  </li>
+<li><del>单工具页面 SEO 策略</del></li>
+</ul>
+<hr>
+<h2>11. 结论</h2>
+<blockquote>
+<p><strong>合规底线 + 每页 ≥3 条可验证 Information Gain + 行业/AI 语境 + 多语言教育式说明 = 可排名、可被引用的工具页。</strong></p>
+</blockquote>
+<p>近期执行：新工具严格走 §9.2 Checklist；存量页按 §3.1 补齐公式/示例/边界/引用，而不是再堆泛化变体 URL。</p>
+<hr>
+<h2>参考</h2>
+<ul>
+<li><a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content">Creating helpful, reliable, people-first content</a>  </li>
+<li><a href="https://developers.google.com/search/docs/appearance/ai-features">AI features and your website</a>  </li>
+<li><a href="https://static.googleusercontent.com/media/guidelines.raterhub.com/en//searchqualityevaluatorguidelines.pdf">Search quality rater guidelines</a>  </li>
+<li><a href="https://schema.org/WebApplication">Schema.org WebApplication</a></li>
+</ul>
+<hr>
+<p><em>维护：每月根据 GSC 抽检 3 个工具页的 IG 是否仍优于 SERP 竞品；政策变更时更新 §2。</em></p>
+</article></section></main>
+  </div>
+  
+  <footer class="bg-light border-top text-center py-3">
+    <div class="container">
+      <small class="text-muted">Online Free Tools · Learning project · Iterating</small>
+      <span class="text-muted mx-2">·</span>
+      <a class="small text-decoration-none" href="/en/about">About</a>
+    </div>
+  </footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <script>
+    const layout = document.getElementById('layoutRoot');
+    const toggle = document.getElementById('sidebarToggle');
+    if (layout && toggle) {
+      toggle.addEventListener('click', () => layout.classList.toggle('sidebar-collapsed'));
+      
+    }
+  </script>
+</body>
+</html>

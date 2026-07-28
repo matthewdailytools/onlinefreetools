@@ -2,13 +2,19 @@
 
 **日期**: 2026-07-09  
 **标签**: `技术调研`, `npm`, `浏览器端`, `Cloudflare Workers`, `工具规划`  
-**关联文档**: [音视频图片转换可行性](./2026-06-23-10-15-js-media-conversion-feasibility.md)
+**关联文档**:
+- [工具方向](./2026-07-28-tool-direction.md) — **产品优先级 / P0–P1 唯一权威**（本文仅包表，不定义排期）
+- [音视频图片转换可行性](./2026-06-23-10-15-js-media-conversion-feasibility.md)
+- [Google SEO 策略与落地](./2026-07-28-google-seo-strategy-implementation.md)
+- [每工具开发与 SEO 方案](./2026-07-28-per-tool-dev-seo-plans.md)
+
+> **职责边界**：本文 = 技术可行工具池（包枚举）。立项与排期只改工具方向文档；勿再按下文历史「泛化梯队」直接开工。
 
 ---
 
 ## 概述
 
-本文档系统枚举可用于构建 **onlinefreetools.org** 类在线工具站的 JavaScript / npm 包，覆盖「实用工具」（高搜索量、刚需）与「有趣工具」（差异化引流）两类方向。
+本文档系统枚举可用于构建 **onlinefreetools.org** 类在线工具站的 JavaScript / npm 包。对应工具方向文档的 **方向 A（浏览器 JS 能力）** 技术附录；方向 B（场景桥接）、方向 C（行业专属）为并列方向，见 [工具方向](./2026-07-28-tool-direction.md)。
 
 ### 调研范围
 
@@ -549,67 +555,18 @@
 | IP Address | Worker | 增加 CIDR / 子网计算 |
 | Gradient 计算 | 纯数学 | 增加可视化 CSS 输出 |
 
-### 20.2 推荐新增顺序（三梯队）
+### 20.2 产品排期（已迁出）
 
-#### 第一梯队 — 高性价比（零/轻依赖，SEO 强）
+历史「第一/二/三梯队泛化工具清单」与四象限优先级图 **已废弃**。  
+当前 P0/P1、场景链与行业垂直见 [工具方向 §7](./2026-07-28-tool-direction.md)；逐工具卡片见 [每工具方案](./2026-07-28-per-tool-dev-seo-plans.md)。
 
-| 优先级 | 工具 | 核心依赖 | 预估工时 |
-|---|---|---|---|
-| P0 | JSON 格式化/校验 | 零依赖或 `json5` | 0.5d |
-| P0 | Base64 / URL 编解码 | 零依赖 | 0.5d |
-| P0 | 哈希计算（MD5/SHA） | Web Crypto | 0.5d |
-| P0 | 二维码生成 | `qrcode` | 1d |
-| P1 | 图片压缩 | Canvas + `browser-image-compression` | 1–2d |
-| P1 | 单位换算大全 | `convert-units` | 1d |
-| P1 | Unix 时间戳转换 | `dayjs` | 0.5d |
-| P1 | 密码生成器 | 零依赖 | 0.5d |
-| P1 | PDF 合并/拆分 | `pdf-lib` | 2d |
-
-#### 第二梯队 — 差异化（WASM / 中等复杂度）
-
-| 优先级 | 工具 | 核心依赖 | 预估工时 |
-|---|---|---|---|
-| P2 | 视频格式转换 | `@ffmpeg/ffmpeg` | 3–5d |
-| P2 | OCR 文字识别 | `tesseract.js` | 2–3d |
-| P2 | 音频转 MP3 | `lamejs` | 2d |
-| P2 | 正则测试器 | 原生 + `highlight.js` | 1d |
-| P2 | Mermaid 编辑器 | `mermaid` + `DOMPurify` | 2d |
-| P2 | 文本 Diff | `diff` | 1d |
-| P2 | YAML/CSV 互转 | `js-yaml` + `papaparse` | 1d |
-
-#### 第三梯队 — 引流 / 长尾
-
-| 工具 | 核心依赖 |
-|---|---|
-| 图片主色提取 | `colorthief` |
-| 吉他调音器 | `pitchy` |
-| 简繁转换 | `opencc-js` |
-| 流程图 / 图表 | `mermaid` / `chart.js` |
-| ASCII 艺术字 | `figlet` |
-| 文字转语音 | Web Speech API |
+本文件其余章节的包表仍可作为 **技术选型参考**（在通过工具方向立项漏斗之后）。
 
 ---
 
-## 21. 优先级矩阵
+## 21. （已移除）产品优先级矩阵
 
-```
-                        搜索量 / 刚需高
-                              ↑
-         PDF 合并 ●            │            ● 图片压缩
-         JSON 格式化 ●          │            ● OCR 识别
-         二维码生成 ●            │            ● 视频转码
-         哈希/密码 ●            │            ● 正则测试
-         单位/日期换算 ●         │            ● YAML/CSV
-                              │
-    ──────────────────────────┼──────────────────────────→ 实现成本低
-                              │
-         色盲模拟 ○            │            ○ 调音器
-         ASCII 艺术 ○          │            ○ 文字转语音
-         粒子背景 ○            │            ○ 背景移除
-         宠物年龄 ○            │            ○ 3D 演示
-                              ↓
-                        搜索量 / 刚需低
-```
+见 [工具方向](./2026-07-28-tool-direction.md) 立项漏斗与 §7。
 
 ---
 
@@ -707,10 +664,8 @@ function formatJson(raw, indent = 2) { /* ... */ }
 | SEO / 站长 | ✅✅ | 自研 + `fast-xml-parser` | 与增长策略对齐 |
 | 趣味创意 | ✅ | `tone.js`, `chroma-js`, `mermaid` | 按需引流 |
 
-**总体建议**：优先完成第一梯队轻量工具，快速覆盖高搜索词；多媒体与 OCR 作为第二梯队，严格采用 WASM 懒加载；所有新工具须同步补齐 `i18n` 与 `SEO_TOOL_RULES` 要求的描述与示例。
-
-**SEO 落地**：参见 [工具 SEO 战略](./2026-07-09-tool-seo-strategy.md)。
+**总体建议**：按 [工具方向](./2026-07-28-tool-direction.md) 立项（场景桥接 × 行业专属）；从本文选包时遵守 Tier 0/1/2 懒加载；多媒体与 OCR 仅在绑定场景且 CWV 可控时排期；所有新工具补齐 `i18n` 与 `SEO_TOOL_RULES`，页面策略见 [Google SEO 落地](./2026-07-28-google-seo-strategy-implementation.md)。
 
 ---
 
-*文档维护：新增工具立项时，在对应章节补充「已上线」标记与实测数据。*
+*文档维护：包选型变更只改本文；产品优先级只改工具方向文档。*

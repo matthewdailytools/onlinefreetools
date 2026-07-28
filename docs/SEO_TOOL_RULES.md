@@ -1,5 +1,9 @@
 **工具页面 SEO 规则（默认）**
 
+> 完整策略见 [Google SEO 策略与落地](./2026-07-28-google-seo-strategy-implementation.md)。  
+> 工具选型见 [工具方向](./2026-07-28-tool-direction.md)。  
+> 逐工具卡片见 [每工具开发与 SEO 方案](./2026-07-28-per-tool-dev-seo-plans.md)。
+
 - **目标**：确保每个工具页面不仅能被发现，还对用户真正有用（people-first），并符合 Google Search 现行 spam / helpful 政策。
 
 - **meta 描述（`tool_*_description`）必须包含**：
@@ -19,6 +23,7 @@
 - **扩容红线（Scaled content / Doorway）**：
   - 禁止为每个查询变体批量建空壳页；禁止无增量机翻堆页。
   - 新工具必须是可交互、有增量说明的真工具，并写入 `src/site/tool-catalog.json`。
+  - 禁止无行业/场景语境的泛化铺量（见工具方向红线）。
 
 - **技术约定**：
   - 默认语（en）规范 URL **无**语言前缀；`x-default` 指向该规范 URL。

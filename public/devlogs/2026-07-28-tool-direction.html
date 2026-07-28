@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tool direction: JS capability × AI bridge × industry-specific tools | Dev Logs</title>
+  <meta name="description" content="Tool direction: JS capability × AI bridge × industry-specific tools" />
+  <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-07-28-tool-direction.html" />
+  <meta property="og:title" content="Tool direction: JS capability × AI bridge × industry-specific tools | Dev Logs" />
+  <meta property="og:description" content="Tool direction: JS capability × AI bridge × industry-specific tools" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-07-28-tool-direction.html" />
+  <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  
+  <script>
+    (function () {
+      try {
+        var enabled = [];
+        var defaultLang = "en";
+        var fallback = defaultLang;
+        var path = window.location.pathname || '/';
+
+        // If the URL already contains a language prefix (including defaultLang), respect it.
+        var hasPrefix = enabled.some(function (l) {
+          return l && (path === '/' + l || path.indexOf('/' + l + '/') === 0);
+        });
+        if (hasPrefix) return;
+
+        var langs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language])
+          .filter(Boolean)
+          .map(function (x) { return String(x).toLowerCase().split('-')[0]; });
+
+        var picked = null;
+        for (var i = 0; i < langs.length; i++) {
+          if (enabled.indexOf(langs[i]) !== -1) { picked = langs[i]; break; }
+        }
+        if (!picked) picked = enabled.indexOf(fallback) !== -1 ? fallback : (enabled[0] || fallback);
+
+        if (picked === "en") return;
+        var targetPath = path;
+        if (picked !== defaultLang) {
+          targetPath = ('/' + picked + path).replace(/\/{2,}/g, '/');
+        }
+        window.location.replace(targetPath + window.location.search + window.location.hash);
+      } catch (e) {}
+    })();
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body { min-height: 100vh; padding-top: 56px; }
+    .layout { display: flex; min-height: 100vh; }
+    /* Sidebar: desktop - sticky under the fixed header */
+    #sidebar {
+      width: 260px;
+      transition: margin-left 0.2s ease;
+      position: sticky;
+      top: 56px;
+      height: calc(100vh - 56px);
+      overflow-y: auto;
+      background: #f8f9fa;
+      border-right: 1px solid #e5e7eb;
+      z-index: 1020;
+    }
+    #content { flex: 1; transition: margin-left 0.2s ease; }
+    .sidebar-collapsed #sidebar { margin-left: -260px; }
+    .sidebar-collapsed #content { margin-left: 0; }
+    @media (max-width: 767.98px) {
+      #sidebar {
+        position: fixed;
+        z-index: 1020;
+        top: 56px;
+        bottom: 0;
+        height: auto;
+      }
+      .sidebar-collapsed #sidebar { margin-left: -260px; }
+      #content { margin-left: 0; }
+      body { padding-top: 56px; }
+    }
+  </style>
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?39f18c089a03779cd05243e21b046589";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "xbc0iytpn7");
+</script>
+  
+  
+</head>
+<body>
+  
+  
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom fixed-top">
+      <div class="container-fluid">
+        <button class="btn btn-outline-secondary me-2" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+        <a class="navbar-brand fw-semibold" href="/">Online Free Tools</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="topNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="/">Home</a></li><li class="nav-item"><a class="nav-link" href="/devlogs/">Dev Logs</a></li></ul>
+          <div class="d-flex align-items-center gap-2">
+            
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="layout sidebar-collapsed" id="layoutRoot">
+    
+    <aside id="sidebar" class="bg-light border-end p-3">
+      <h6 class="text-muted text-uppercase">Navigation</h6>
+      <div class="list-group list-group-flush small" id="navList"><a class="list-group-item list-group-item-action" href="/">Home</a><a class="list-group-item list-group-item-action" href="/devlogs/">Dev Logs</a></div>
+    </aside>
+    <main id="content" class="p-4"><section class="mb-3"><div class="d-flex justify-content-between align-items-center mb-3"><h1 class="h4 mb-0">Tool direction: JS capability × AI bridge × industry-specific tools | Dev Logs</h1><a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a></div><article class="bg-white shadow-sm p-3 p-md-4 rounded"><h1>工具方向 — JS 能力 × AI 桥接 × 行业专属</h1>
+<p><strong>日期</strong>: 2026-07-28<br><strong>标签</strong>: <code>产品规划</code>, <code>工具方向</code>, <code>AI桥接</code>, <code>行业工具</code><br><strong>目标站点</strong>: <a href="https://onlinefreetools.org">https://onlinefreetools.org</a></p>
+<p><strong>关联文档</strong>:</p>
+<ul>
+<li><a href="./2026-07-09-js-tool-packages-survey.md">JS 工具包调研</a> — npm/浏览器包选型附录（保留包表，不重复梯队优先级）</li>
+<li><a href="./2026-07-28-tool-page-seo-information-gain.md">工具页 SEO 与 Information Gain</a> — 页面怎么赢 Google</li>
+<li><a href="./SEO_TOOL_RULES.md">工具页面 SEO 规则</a> — description / FAQ 硬规则</li>
+<li><a href="./2026-06-23-10-15-js-media-conversion-feasibility.md">音视频可行性</a> — 多媒体 WASM 约束</li>
+<li>工具目录源：<code>src/site/tool-catalog.json</code></li>
+</ul>
+<blockquote>
+<p><strong>本文职责</strong>：回答「做什么工具、不做什么」。页面 SEO / Information Gain 见姊妹文档。</p>
+</blockquote>
+<hr>
+<h2>1. 核心定位</h2>
+<blockquote>
+<p><strong>不做泛化工具超市。</strong> 按 <strong>可落地 JS 能力</strong> × <strong>AI 生态桥接</strong> × <strong>行业场景</strong> 立项。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>要做</th>
+<th>不做</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>有明确行业任务或 AI 流水线环节的转换 / 校验 / 解释工具</td>
+<td>无行业语境的「又一个单位换算 / 又一个密码生成器」空壳</td>
+</tr>
+<tr>
+<td>浏览器本地或边缘可完成的格式桥接</td>
+<td>AI 写作付费墙、站群式工具超市</td>
+</tr>
+<tr>
+<td>能写出公式、规则、边界与权威出处的真工具</td>
+<td>仅为长尾词批量复制的变体页</td>
+</tr>
+</tbody></table>
+<p><strong>相对竞品启示（压缩）</strong>：竞品靠数量铺量；本站靠 <strong>多语言 + 教育式说明 + 本地隐私 + 行业/AI 语境</strong> 建立差异，而不是堆计算器变体。</p>
+<hr>
+<h2>2. 红线</h2>
+<ol>
+<li><strong>空壳变体页</strong> — 如 5 个仅 slug/title 不同的面积计算器；违反 spam / 信息增益红线。  </li>
+<li><strong>无增量机翻堆页</strong> — 10 语言须人工审核后再上线。  </li>
+<li><strong>纯为词而建的泛化工具</strong> — 搜索量高但无行业/AI 语境、无法写出增量说明 → 不立项。  </li>
+<li><strong>偏离定位的重后端能力</strong> — 抄袭检测、完整视频转码站、国家专属报税等（成本/合规/CWV 不匹配）。  </li>
+<li><strong>把「开发者底座」当超市入口</strong> — JSON / Base64 等仅在能服务 <strong>AI 流水线或行业数据交换</strong> 时立项，不作为铺量清单。</li>
+</ol>
+<hr>
+<h2>3. 能力底座（引用包调研）</h2>
+<p>技术可行性与包枚举以 <a href="./2026-07-09-js-tool-packages-survey.md">JS 工具包调研</a> 为准。产品侧只遵守：</p>
+<h3>3.1 选型优先级</h3>
+<ol>
+<li>零依赖 / 极小体积（原生 API 优先）  </li>
+<li>Tree-shakeable、同构可用（浏览器 + Workers）  </li>
+<li>WASM / 大模型 <strong>用户触发后再 <code>import()</code></strong>  </li>
+<li>可写出 SEO 可描述的输入 → 规则 → 输出  </li>
+<li>安全默认值（<code>DOMPurify</code>、演示级加密声明、本地处理声明）</li>
+</ol>
+<h3>3.2 加载分层</h3>
+<table>
+<thead>
+<tr>
+<th>层级</th>
+<th>体积</th>
+<th>时机</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Tier 0</td>
+<td>零依赖内联</td>
+<td>页面打开</td>
+<td>JSON 校验、Base64、Token 粗估、零宽字符清理</td>
+</tr>
+<tr>
+<td>Tier 1</td>
+<td>&lt; 200KB 动态 import</td>
+<td>打开或首次交互</td>
+<td><code>js-yaml</code>、<code>papaparse</code>、<code>qrcode</code>、<code>zod</code></td>
+</tr>
+<tr>
+<td>Tier 2</td>
+<td>&gt; 1MB WASM/模型</td>
+<td><strong>点击后再加载</strong></td>
+<td>FFmpeg、Tesseract、Transformers.js</td>
+</tr>
+</tbody></table>
+<p>音视频细节见 <a href="./2026-06-23-10-15-js-media-conversion-feasibility.md">音视频可行性</a>。</p>
+<hr>
+<h2>4. 方向一：AI 桥接转换工具</h2>
+<p><strong>定义</strong>：服务 LLM / Agent / 多模态流水线中的 <strong>格式、校验、转换、计量、安全粘贴</strong>，不做「替用户写文案」的生成产品。</p>
+<table>
+<thead>
+<tr>
+<th>工具方向</th>
+<th>用户任务</th>
+<th>推荐技术</th>
+<th>可写清的规则/公式</th>
+<th>建议 slug</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Token / 字符与成本估算</td>
+<td>粘贴 Prompt/对话，估 token 与费用</td>
+<td>字符启发式或轻量 tokenizer；价格表可配置</td>
+<td>估算公式、模型价差、局限说明</td>
+<td><code>ai-token-counter</code></td>
+</tr>
+<tr>
+<td>对话导出互转</td>
+<td>ChatGPT/Claude 导出 ↔ Markdown / JSON / CSV</td>
+<td>纯 JS 解析 + <code>papaparse</code></td>
+<td>字段映射表、丢失字段说明</td>
+<td><code>chat-export-converter</code></td>
+</tr>
+<tr>
+<td>Prompt 模板结构化</td>
+<td>自由文本 → 角色/任务/约束/输出格式</td>
+<td>规则拆分 + 可选 <code>zod</code></td>
+<td>模板字段定义与示例</td>
+<td><code>prompt-template-builder</code></td>
+</tr>
+<tr>
+<td>JSON Schema 校验</td>
+<td>校验模型输出是否符合 Schema</td>
+<td><code>zod</code> / Ajv 浏览器版</td>
+<td>Schema 规则 + 错误路径解释</td>
+<td><code>json-schema-validator</code></td>
+</tr>
+<tr>
+<td>Embedding 相似度演示</td>
+<td>两段向量余弦相似度 + 维度说明</td>
+<td>纯数学</td>
+<td>余弦公式、归一化注意</td>
+<td><code>embedding-cosine</code></td>
+</tr>
+<tr>
+<td>OCR → 结构化文本</td>
+<td>截图/扫描件 → 可复制文本</td>
+<td><code>tesseract.js</code>（Tier 2）</td>
+<td>语言包、准确率局限、本地处理</td>
+<td><code>ocr-to-text</code></td>
+</tr>
+<tr>
+<td>安全粘贴 / 隐藏指令清理</td>
+<td>去掉零宽字符、隐藏 prompt 注入痕迹</td>
+<td>纯 JS Unicode 过滤</td>
+<td>检测规则表 + 前后对比</td>
+<td><code>safe-paste-cleaner</code></td>
+</tr>
+<tr>
+<td>YAML/CSV ↔ JSON（AI 数据）</td>
+<td>训练/配置数据格式互转</td>
+<td><code>js-yaml</code>、<code>papaparse</code></td>
+<td>类型推断规则、示例文件</td>
+<td><code>yaml-json</code> / <code>csv-json</code></td>
+</tr>
+</tbody></table>
+<p><strong>边界</strong>：</p>
+<ul>
+<li>可做：解释「为什么校验失败」、对比 tokenizer 差异、本地 OCR。  </li>
+<li>不做：托管大模型推理付费墙、批量 AI 文章生成、伪装成「AI SEO 专用」的空壳页。</li>
+</ul>
+<hr>
+<h2>5. 方向二：行业专属工具（非泛化）</h2>
+<p>每个工具必须同时具备：<strong>行业痛点任务</strong> + <strong>领域术语</strong> + <strong>标准/规范引用</strong>（能写进 References）。禁止「通用计算器换皮」。</p>
+<h3>5.1 首批垂直（默认）</h3>
+<table>
+<thead>
+<tr>
+<th>行业</th>
+<th>痛点任务</th>
+<th>示例工具</th>
+<th>包/技术来源</th>
+<th>SEO 意图词（例）</th>
+<th>YMYL</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>开发者 / 数据交换</strong></td>
+<td>API 与配置格式互通、Headers 调试</td>
+<td>JSON Schema 校验、Markdown↔HTML、YAML↔JSON、Website Headers（已有）</td>
+<td><code>zod</code>、<code>marked</code>/<code>turndown</code>、<code>js-yaml</code></td>
+<td><code>json schema validator</code>, <code>yaml to json</code></td>
+<td>否</td>
+</tr>
+<tr>
+<td><strong>内容与 SEO 站长</strong></td>
+<td>上线前检查标题/描述/结构化数据</td>
+<td>Meta 长度与 SERP 预览、FAQ Schema 生成、hreflang 标签生成</td>
+<td>自研 + <code>fast-xml-parser</code></td>
+<td><code>meta description length</code>, <code>faq schema generator</code></td>
+<td>否</td>
+</tr>
+<tr>
+<td><strong>电商目录与价格</strong></td>
+<td>目录字段清洗、折扣与含税价说明</td>
+<td>折扣/含税价计算器（含税率假设表）、CSV 目录字段规范化</td>
+<td>纯公式 + <code>papaparse</code></td>
+<td><code>discount calculator tax included</code>, <code>csv product feed</code></td>
+<td>弱 YMYL（价格说明须免责）</td>
+</tr>
+<tr>
+<td><strong>财务运营</strong></td>
+<td>运营指标解释，非投资建议</td>
+<td>ROI（已有）、边际收益（已有）、复利/摊还（须公式+免责）</td>
+<td>纯公式</td>
+<td><code>compound interest formula</code>, <code>loan amortization</code></td>
+<td><strong>是</strong></td>
+</tr>
+<tr>
+<td><strong>健康教育计算</strong></td>
+<td>筛查向教育计算，非诊疗</td>
+<td>BMI（已有）、BMR/TDEE（须 WHO/CDC + 局限 FAQ）</td>
+<td>纯公式</td>
+<td><code>bmr calculator mifflin</code>, <code>bmi limitations</code></td>
+<td><strong>是</strong></td>
+</tr>
+</tbody></table>
+<h3>5.2 行业工具验收标准</h3>
+<p>立项前自问（任一「否」则暂缓）：</p>
+<ol>
+<li>能否用一句话说明 <strong>哪个岗位在什么场景</strong> 使用？  </li>
+<li>页面能否写出 <strong>该行业才有的对照表/边界/标准引用</strong>（相对泛化竞品的 Information Gain）？  </li>
+<li>是否落在包调研的可行技术内，且 Tier 分层不破坏 CWV？</li>
+</ol>
+<h3>5.3 明确降级或拒绝的「泛化清单」</h3>
+<p>以下曾出现在旧竞品路线图中，<strong>不再作为默认 P0</strong>（除非改写成 AI/行业语境）：</p>
+<table>
+<thead>
+<tr>
+<th>旧候选</th>
+<th>处理</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>独立 Unit Converter 超市页</td>
+<td>降级；仅当嵌入行业场景（如电商体积重、烹饪计量专页）</td>
+</tr>
+<tr>
+<td>独立 Password / QR / Word Counter 铺量</td>
+<td>降级；可并入「站长/开发者」场景工具或暂缓</td>
+</tr>
+<tr>
+<td>多个面积/百分比空壳变体</td>
+<td><strong>拒绝</strong></td>
+</tr>
+<tr>
+<td>AI 写作 / 付费墙工具超市</td>
+<td><strong>拒绝</strong></td>
+</tr>
+</tbody></table>
+<hr>
+<h2>6. 立项漏斗</h2>
+<p>每个候选工具打分（各 1–5，总分 ≥ 12 优先；9–11 须强化行业/AI 说明；≤ 8 暂缓）：</p>
+<pre><code>立项分 = 搜索意图明确度 × 行业或 AI 信息增益空间 × 包与工程可行性
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>高分信号</th>
+<th>低分信号</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>搜索意图明确度</strong></td>
+<td>单一动作词（validate / convert / count / estimate）</td>
+<td>「online tool」类泛词</td>
+</tr>
+<tr>
+<td><strong>行业或 AI 信息增益</strong></td>
+<td>能写公式、字段映射、标准引用、失败案例</td>
+<td>仅 UI 壳，与竞品同质</td>
+</tr>
+<tr>
+<td><strong>包与工程可行性</strong></td>
+<td>Tier 0/1；或 Tier 2 且可懒加载</td>
+<td>需重后端、大模型托管、CWV 不可控</td>
+</tr>
+</tbody></table>
+<p><strong>决策</strong>：优先「AI 桥接 + 一个行业深耕」并行，而不是跨主题每周堆 10 个薄页。</p>
+<p>页面内容与 Google 合规要求见 <a href="./2026-07-28-tool-page-seo-information-gain.md">工具页 SEO 与 Information Gain</a>。</p>
+<hr>
+<h2>7. 优先级（重写）</h2>
+<h3>7.1 本站现状（锚点）</h3>
+<p>已上线约 9 个工具（开发者 ×3、计算器 ×6）。缺口不再用「补齐竞品超市」来填，而用 §4 / §5 方向填。</p>
+<h3>7.2 P0（立即）— AI 桥接 + 开发者数据交换</h3>
+<table>
+<thead>
+<tr>
+<th>工具</th>
+<th>slug</th>
+<th>方向</th>
+<th>工程成本</th>
+<th>差异化要点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>JSON Schema Validator</td>
+<td><code>json-schema-validator</code></td>
+<td>AI + 开发者</td>
+<td>低</td>
+<td>错误路径解释 + 模型输出场景 FAQ</td>
+</tr>
+<tr>
+<td>AI Token / Cost Estimator</td>
+<td><code>ai-token-counter</code></td>
+<td>AI 桥接</td>
+<td>低</td>
+<td>多模型价表 + 估算局限</td>
+</tr>
+<tr>
+<td>Safe Paste Cleaner</td>
+<td><code>safe-paste-cleaner</code></td>
+<td>AI 安全</td>
+<td>极低</td>
+<td>零宽/隐藏字符对照表</td>
+</tr>
+<tr>
+<td>Chat Export Converter</td>
+<td><code>chat-export-converter</code></td>
+<td>AI 桥接</td>
+<td>中</td>
+<td>字段映射 + 示例导出文件</td>
+</tr>
+<tr>
+<td>YAML ↔ JSON</td>
+<td><code>yaml-json</code></td>
+<td>AI 数据 / 开发者</td>
+<td>低</td>
+<td>与 Schema 校验互链</td>
+</tr>
+<tr>
+<td>Meta Description Length / SERP Preview</td>
+<td><code>meta-serp-preview</code></td>
+<td>SEO 站长行业</td>
+<td>低</td>
+<td>像素/字符规则 + 各引擎差异说明</td>
+</tr>
+</tbody></table>
+<p><strong>P0 开工顺序建议</strong>：<code>json-schema-validator</code> → <code>ai-token-counter</code> → <code>safe-paste-cleaner</code> → <code>yaml-json</code> → <code>meta-serp-preview</code> → <code>chat-export-converter</code>。</p>
+<h3>7.3 P1 — 行业深耕 + 轻量 AI 扩展</h3>
+<table>
+<thead>
+<tr>
+<th>工具</th>
+<th>行业/方向</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Prompt Template Builder</td>
+<td>AI 桥接</td>
+<td>与 Token 计数、Schema 校验互链</td>
+</tr>
+<tr>
+<td>CSV ↔ JSON（目录/数据集）</td>
+<td>电商 / 数据</td>
+<td>示例用产品 feed 字段</td>
+</tr>
+<tr>
+<td>FAQ / HowTo Schema Generator</td>
+<td>SEO 站长</td>
+<td>Schema 与可见内容一致性说明</td>
+</tr>
+<tr>
+<td>BMR / TDEE（教育）</td>
+<td>健康 YMYL</td>
+<td>Mifflin-St Jeor + WHO/CDC；勿医疗建议</td>
+</tr>
+<tr>
+<td>Compound Interest / Loan EMI</td>
+<td>财务 YMYL</td>
+<td>摊还表 + 非投资建议免责</td>
+</tr>
+<tr>
+<td>OCR → Text（POC 后）</td>
+<td>AI 桥接</td>
+<td>Tier 2；强调本地不上传</td>
+</tr>
+</tbody></table>
+<h3>7.4 P2 / 暂缓</h3>
+<p>图片压缩、PDF 合并、完整 FFmpeg 转码、Transformers.js 摘要等：技术可行见包调研与音视频文档；<strong>仅在能绑定行业或 AI 流水线故事且 CWV 可控时</strong>再排期。</p>
+<h3>7.5 发布节奏</h3>
+<ul>
+<li>每周 1–2 个高质量工具（含 10 语审核），优于每周 10 个薄页。  </li>
+<li><code>dateModified</code> 仅在有实质更新时变更。  </li>
+<li>成功指标：GSC 出现行业/AI 长尾查询；工具页 Information Gain checklist 全勾选。</li>
+</ul>
+<hr>
+<h2>8. 工程接入模板</h2>
+<pre><code>src/site/tool-catalog.json          # 目录项（含 ymyl 等标记）
+src/index.ts                        # registerToolPage(...)
+src/pages/{tool}Page.ts             # SSR HTML + 交互区
+src/site/i18n/{lang}.ts × 10        # title / description / article / faq
+public/scripts/tools/{tool}.js      # 可选客户端脚本（Tier 分层）
+npm run lint:seo &amp;&amp; npm run build:site
+</code></pre>
+<p>内容区块与 Schema 最低标准见 <a href="./2026-07-28-tool-page-seo-information-gain.md">工具页 SEO 与 Information Gain</a> 与 <a href="./SEO_TOOL_RULES.md">SEO_TOOL_RULES</a>。</p>
+<hr>
+<h2>9. 文档分工</h2>
+<table>
+<thead>
+<tr>
+<th>文档</th>
+<th>职责</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>本文</strong></td>
+<td>做什么工具、行业/AI 方向、立项漏斗、P0/P1</td>
+</tr>
+<tr>
+<td><a href="./2026-07-09-js-tool-packages-survey.md">js-tool-packages-survey</a></td>
+<td>包枚举与技术可行性</td>
+</tr>
+<tr>
+<td><a href="./2026-07-28-tool-page-seo-information-gain.md">tool-page-seo-information-gain</a></td>
+<td>Google 合规与 Information Gain</td>
+</tr>
+<tr>
+<td><a href="./SEO_ANALYSIS_PLAN.md">SEO_ANALYSIS_PLAN</a></td>
+<td>Sitemap / CWV 等技术基建</td>
+</tr>
+<tr>
+<td><a href="./SEO_TOOL_RULES.md">SEO_TOOL_RULES</a></td>
+<td>lint 硬规则</td>
+</tr>
+</tbody></table>
+<p><strong>已合并（历史 stub）</strong>：</p>
+<ul>
+<li><del>竞品调研与开发路线图</del> → 见本文  </li>
+<li>旧「工具 SEO 战略」中的工具选型清单 → 见本文；页面策略 → 见 SEO/IG 文档</li>
+</ul>
+<hr>
+<h2>10. 下一步</h2>
+<ol>
+<li>按 §7.2 实现 <strong>JSON Schema Validator</strong>（验证「AI + 开发者」模板产能）。  </li>
+<li>紧接 <strong>AI Token Counter</strong>、<strong>Safe Paste Cleaner</strong>。  </li>
+<li>每个工具上线：更新 <code>tool-catalog.json</code>、本文件「已上线」标注、按 SEO/IG 文档勾选 Information Gain。  </li>
+<li>每季度用 GSC 复核 §4/§5 清单，淘汰无增量候选。</li>
+</ol>
+<hr>
+<p><em>维护：新工具立项时在 §4 或 §5 表标注状态；包选型变更只改包调研文档，产品优先级只改本文。</em></p>
+</article></section></main>
+  </div>
+  
+  <footer class="bg-light border-top text-center py-3">
+    <div class="container">
+      <small class="text-muted">Online Free Tools · Learning project · Iterating</small>
+      <span class="text-muted mx-2">·</span>
+      <a class="small text-decoration-none" href="/en/about">About</a>
+    </div>
+  </footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <script>
+    const layout = document.getElementById('layoutRoot');
+    const toggle = document.getElementById('sidebarToggle');
+    if (layout && toggle) {
+      toggle.addEventListener('click', () => layout.classList.toggle('sidebar-collapsed'));
+      
+    }
+  </script>
+</body>
+</html>

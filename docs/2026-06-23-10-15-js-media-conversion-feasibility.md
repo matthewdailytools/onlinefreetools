@@ -3,8 +3,9 @@
 **日期**: 2026-06-23  
 **标签**: `技术调研`, `前端`, `多媒体`, `Web API`  
 **关联文档**:
-- [工具 SEO 战略](./2026-07-09-tool-seo-strategy.md) — 关键词、集群、发布节奏
-- [SEO 分析与优化方案](./SEO_ANALYSIS_PLAN.md) — 技术 SEO 实现细节
+- [工具方向](./2026-07-28-tool-direction.md) — 产品是否立项多媒体工具（默认谨慎 / 绑定场景）
+- [JS 工具包调研](./2026-07-09-js-tool-packages-survey.md) — 包枚举与 Tier 加载
+- [Google SEO 策略与落地](./2026-07-28-google-seo-strategy-implementation.md) — CWV 与页面合规
 
 ## 概述
 
