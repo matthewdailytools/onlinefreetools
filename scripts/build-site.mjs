@@ -77,6 +77,11 @@ export const buildHome = async (lang) => {
 
   const footerHtml = renderFooter({ lang });
 
+  // Google Search Console：仅注入到各语言首页 <head>
+  const googleSiteVerificationMeta = siteConfig.googleSiteVerification
+    ? `<meta name="google-site-verification" content="${siteConfig.googleSiteVerification}" />`
+    : '';
+
   const html = renderLayout({
     lang,
     title: model.title,
@@ -92,6 +97,7 @@ export const buildHome = async (lang) => {
     sidebarHtml,
     contentHtml: model.contentHtml,
     footerHtml,
+    extraHeadHtml: googleSiteVerificationMeta,
     sidebarAutoCloseSelector: '#categoryList a',
   });
 

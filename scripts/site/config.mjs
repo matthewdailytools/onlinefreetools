@@ -15,6 +15,10 @@ export const siteConfig = {
   brand: 'Online Free Tools',
   baseUrl: process.env.SITE_BASE_URL || 'https://onlinefreetools.org',
   ogImage: process.env.SITE_OG_IMAGE || 'https://onlinefreetools.org/og-image.png',
+  /** Google Search Console 站点所有权验证码（meta 标签 content） */
+  googleSiteVerification:
+    process.env.SITE_GOOGLE_SITE_VERIFICATION ||
+    'DRJRq9AI8KKITkdiZbdd7zu4LxrIc38CPOd9OeK15FM',
   defaultLang: (process.env.SITE_DEFAULT_LANG || 'en').trim(),
   languages,
   enabledLangs: (() => {
