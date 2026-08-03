@@ -12,7 +12,14 @@
 	},
 	"assets": {
 		"directory": "./public/",
-		"binding": "ASSETS"
+		"binding": "ASSETS",
+		/**
+		 * 谷歌 HTML 验证要求 `/google….html` 精确 200、不能 307。
+		 * Assets 默认 html_handling 会去掉 .html；该路径优先进 Worker 直出，
+		 * 并关闭 html_handling 自动规范化作为双保险。
+		 */
+		"run_worker_first": ["/google2cb457f0956f79d9.html"],
+		"html_handling": "none"
 	},
 	"vars": {
 		"SITE_DEFAULT_LANG": "en",

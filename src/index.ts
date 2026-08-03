@@ -34,6 +34,24 @@ type Env = {
 	SITE_LANGS?: string;
 };
 
+/**
+ * Google Search Console HTML 文件验证路径（必须与 public/ 下文件名一致）。
+ * 谷歌会请求该精确 URL，要求 200 且正文含验证串，不能发生路径重定向。
+ */
+const GOOGLE_SITE_VERIFICATION_PATH = "/google2cb457f0956f79d9.html";
+
+/**
+ * 验证文件正文（与 public/google2cb457f0956f79d9.html / verification/ 备份一致）。
+ * Worker 直出该正文，避免 Assets 默认把 `*.html` 307 到无扩展名路径。
+ */
+const GOOGLE_SITE_VERIFICATION_BODY = "google-site-verification: google2cb457f0956f79d9.html";
+
+/**
+ * 判断路径是否为谷歌站点验证 HTML（需跳过语言协商与 Assets .html 规范化）。
+ * @param pathname 请求路径
+ */
+const isGoogleSiteVerificationPath = (pathname: string) => pathname === GOOGLE_SITE_VERIFICATION_PATH;
+
 // Start a Hono app
 const app = new Hono<{ Bindings: Env }>();
 
@@ -58,6 +76,19 @@ const fetchAsset = async (c: any, assetPathname: string) => {
 
 	return res;
 };
+
+/**
+ * 直出谷歌验证文件：绕过 Assets 默认把 `*.html` 307 到无扩展名的行为，保证验证 URL 本身返回 200。
+ */
+app.get(GOOGLE_SITE_VERIFICATION_PATH, () => {
+	return new Response(GOOGLE_SITE_VERIFICATION_BODY, {
+		status: 200,
+		headers: {
+			"Content-Type": "text/html; charset=utf-8",
+			"Cache-Control": "public, max-age=0, must-revalidate",
+		},
+	});
+});
 
 // Home pages are served from assets at `/_pages/{lang}/index.html`.
 app.get("/", async (c) => {
@@ -116,6 +147,15 @@ app.get('/about', async (c) => {
 });
 app.get('/about/', (c) => c.redirect('/about', 301));
 
+/**
+ * Devlogs 目录索引（Assets 默认也会映射；显式路由保证稳定性）。
+ */
+app.get("/devlogs", (c) => c.redirect("/devlogs/", 301));
+app.get("/devlogs/", async (c) => {
+	const res = await fetchAsset(c, "/devlogs/index.html");
+	return res;
+});
+
 app.use("/*", async (c, next) => {
 	const url = new URL(c.req.url);
 	const pathname = url.pathname;
@@ -124,6 +164,8 @@ app.use("/*", async (c, next) => {
 	if (pathname === "/devlogs" || pathname.startsWith("/devlogs/")) return next();
 	if (pathname === "/about" || pathname.startsWith("/about/")) return next();
 	if (pathname === "/tools/markdown-to-html.html") return next();
+	// 谷歌验证文件不得做语言前缀跳转。
+	if (isGoogleSiteVerificationPath(pathname)) return next();
 
 	// Do not interfere with APIs, docs, or obvious static assets.
 	const isStaticAsset = /\.(css|js|png|jpg|jpeg|gif|webp|avif|svg|ico|map|woff2?|ttf|eot|xml|txt|webmanifest)$/i.test(
@@ -222,6 +264,8 @@ app.get("/*", (c) => {
 	// Global (non-localized) pages.
 	if (pathname === "/devlogs" || pathname.startsWith("/devlogs/")) return c.notFound();
 	if (pathname === "/tools/markdown-to-html.html") return c.notFound();
+	// 回退到 Assets 前放行验证文件（正常应由上方显式路由处理）。
+	if (isGoogleSiteVerificationPath(pathname)) return c.notFound();
 	const isStaticAsset = /\.(css|js|png|jpg|jpeg|gif|webp|avif|svg|ico|map|woff2?|ttf|eot|xml|txt|webmanifest)$/i.test(
 		pathname
 	);
