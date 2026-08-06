@@ -15,6 +15,10 @@
     "build:site": "node scripts/build-site.mjs",
     "lint:seo": "node scripts/validate-tool-seo.mjs",
     "indexnow": "node scripts/submit-indexnow.mjs",
+    "indexnow:sitemap": "node scripts/submit-indexnow.mjs --sitemap",
+    "indexnow:remote-sitemap": "node scripts/submit-indexnow.mjs --remote-sitemap",
+    "indexnow:check": "node scripts/submit-indexnow.mjs --check-key",
+    "indexnow:help": "node scripts/submit-indexnow.mjs --help",
     "predeploy": "npm run build:site && npm run lint:seo"
   },
   "dependencies": {

@@ -122,18 +122,39 @@ IndexNow 用于在内容变更后主动通知 Bing 等参与引擎抓取。站�
 - key 配置：`scripts/site/config.mjs` 的 `indexNowKey`，或环境变量 `INDEXNOW_KEY`
 
 ```bash
-# 确认 key 已在生产可访问后：提交 sitemap 中全部 URL
-curl -sS -o /dev/null -w "%{http_code}\n" "https://onlinefreetools.org/<INDEXNOW_KEY>.txt"  # 期望 200
+# 检查线上 key（期望 HTTP 200 且正文 = key）
+npm run indexnow -- --check-key
+# 或：npm run indexnow:check
+
+# 按 sitemap 提交（本地 public/sitemap.xml）
 npm run indexnow
+npm run indexnow -- --sitemap
+npm run indexnow:sitemap
 
-# 仅提交若干 URL
-npm run indexnow -- --url https://onlinefreetools.org/tools/html-entity
+# 指定本地 / 远程 sitemap
+npm run indexnow -- --sitemap public/sitemap.xml
+npm run indexnow -- --sitemap https://onlinefreetools.org/sitemap.xml
+npm run indexnow -- --remote-sitemap
+npm run indexnow:remote-sitemap
 
-# 预览 payload（不发请求）
-npm run indexnow -- --dry-run
+# 仅 sitemap + 过滤
+npm run indexnow -- --sitemap-only --include /tools/ --exclude /zh/
 
-# 使用 Bing 直连端点
-npm run indexnow -- --endpoint bing
+# 新工具：提交该工具全部语言 URL
+npm run indexnow -- --tool html-entity
+npm run indexnow -- --tool html-entity,add-www-to-dns --lang zh,en
+
+# 路径 / 首页 / About / 文件列表
+npm run indexnow -- --path /tools/yaml-json
+npm run indexnow -- --home --about
+npm run indexnow -- --urls-file ./urls.txt
+
+# 预览、Bing 端点、提交前强制 key 可用
+npm run indexnow -- --sitemap --dry-run --verbose --limit 10
+npm run indexnow -- --endpoint bing --require-live-key
+
+# 完整参数说明
+npm run indexnow -- --help
 ```
 
 成功响应一般为 HTTP `200` 或 `202`（`202` 表示 key 校验仍在进行；确认 key 文件已上线即可）。可在 [Bing Webmaster Tools → IndexNow](https://www.bing.com/webmasters) 查看接收情况。

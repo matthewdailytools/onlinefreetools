@@ -23,10 +23,10 @@
 
 ## Bing IndexNow
 
-1. 确认验证文件可访问：`https://onlinefreetools.org/{INDEXNOW_KEY}.txt`（正文 = key）
-2. 部署后执行：`npm run indexnow`（读取 `public/sitemap.xml` 批量通知）
-3. 新工具/重要更新也可：`npm run indexnow -- --url https://onlinefreetools.org/tools/<slug>`
-4. 在 Bing Webmaster Tools 的 IndexNow 面板确认接收（HTTP 200/202 仅表示已收到）
+1. `npm run indexnow -- --check-key`（线上 `/{key}.txt` 须 HTTP 200 且正文 = key）
+2. 按 sitemap：`npm run indexnow` / `npm run indexnow:sitemap`；远程：`npm run indexnow:remote-sitemap`
+3. 新工具：`npm run indexnow -- --tool <slug>`；过滤：`--sitemap-only --include /tools/`
+4. 其他见 `npm run indexnow -- --help`；Bing Webmaster Tools 确认接收（200/202 仅表示已收到）
 
 ## 质量抽查（防 Scaled content）
 
