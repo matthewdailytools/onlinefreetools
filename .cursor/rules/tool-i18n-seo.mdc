@@ -62,7 +62,7 @@ alwaysApply: false
 ## FAQ 与 YMYL
 
 - 每工具 ≥ 3 组 `tool_*_faq_qN` / `tool_*_faq_aN`，**渲染在正文**（不对爬虫隐藏）
-- **不以** FAQPage / HowTo / Featured Snippet / PAA 展示为 KPI（问答仍为人服务）
+- **不以** FAQPage / HowTo / Featured Snippet / PAA 展示为 KPI（问答仍为人服务）。注意 FAQ 富结果已于 **2026-05-07 全站退役**、HowTo 2023-09 桌面弃用；`FAQPage`/`HowTo` schema 仍有效可保留（Google 用于理解页面）但不再产出富结果（见 `seo-google-policy.mdc` / `seo-html-defaults.mdc`）
 - `tool-catalog.json` 中 `ymyl: true`：必须 `tool_*_disclaimer`；建议 `tool_*_references`
 
 ## 验证

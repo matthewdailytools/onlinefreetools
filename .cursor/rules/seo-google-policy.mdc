@@ -12,21 +12,24 @@ alwaysApply: true
 ## 官方入口（优先查阅）
 
 - [Helpful, people-first content](https://developers.google.com/search/docs/fundamentals/creating-helpful-content)
-- [Spam policies](https://developers.google.com/search/docs/essentials/spam-policies)（含 **2026-05**：spam 适用于操纵 **generative AI responses**，含 AI Overviews / AI Mode）
+- [Spam policies](https://developers.google.com/search/docs/essentials/spam-policies)（现行含 **scaled content abuse / site reputation abuse / expired domain abuse**，2024-03 引入并持续执行；2025-01 澄清 site reputation abuse：无论是否有第一方监督均可违规；**2026-05** 澄清 spam 适用于操纵 **generative AI responses**，含 AI Overviews / AI Mode）
 - [AI features and your website](https://developers.google.com/search/docs/appearance/ai-features) — **无**额外技术要求；标准 SEO 即可
+- [Optimizing for generative AI features](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide) — Google 官方 AI 搜索优化指南（**2026-05** 发布）：AI Overviews / AI Mode 使用相同索引与排名系统；须页面已 **indexed 且 snippet-eligible**；明确可忽略 chunking / `llms.txt` / AI 专用改写 / AI 专用 schema / 刷不实提及（inauthentic mentions）
 - [Search Essentials](https://developers.google.com/search/docs/essentials) / E-E-A-T（YMYL 重 Trust）
 
 ## 对本站的硬约束
 
 - **People-first**：真实可交互工具 + 对人有用的说明；禁止主要为操纵排名而批量生产。
-- **Scaled content**：禁止无增量空壳/近义 URL 铺量；禁止未实质编辑的 AI/机翻堆页（须 brief + 检索向重写 + ≥3 轮，见 `tool-i18n-localization.mdc`）。
-- **禁操纵 AI 摘要**：不为进 AI Overview 而做 spam 伎俩；不做 `llms.txt`、AI 专用 Schema、为 AI 刻意切块整站。
+- **Scaled content abuse**：禁止无增量空壳/近义 URL 铺量；禁止未实质编辑的 AI/机翻堆页（须 brief + 检索向重写 + ≥3 轮，见 `tool-i18n-localization.mdc`）。政策**方法无关**——无论人工、自动或混合产出，只要主要为操纵排名即违规。
+- **Site reputation abuse（寄生 SEO）**：禁止在本站发布主要为借用本站排名信号的第三方页面（赞助/白标/代写目录等），无论是否有第一方监督。**本站现状**：无第三方寄生内容，属预防性合规；若未来接受投稿/赞助/广告页须逐一评估。
+- **Expired domain abuse**：禁止收购过期域名主要为利用其历史权重重定向/灌内容到本站。**本站现状**：不适用（单一自有域名）。
+- **禁操纵 AI 摘要**：不为进 AI Overview / AI Mode 而做 spam 伎俩；不做 `llms.txt`、AI 专用 Schema、为 AI 刻意切块（chunking）、AI 专用改写、或刷不实提及（inauthentic mentions）。要被 AI features 引用，页面须已 **indexed 且 snippet-eligible**（勿用 `nosnippet` 等阻断）。
 - **Cloaking**：禁止仅爬虫可见的 FAQ/内容。
-- **结构化数据**：须与可见文案一致；禁止虚假 `aggregateRating` 等。
+- **结构化数据**：须与可见文案一致；禁止虚假 `aggregateRating` 等。Google 支持的**富结果集合持续收窄**（2023 HowTo、2025-06 七类、2026-05 FAQ 相继退役）；勿为"上富结果"而堆无关 schema（详见 `seo-html-defaults.mdc`）。
 - **Doorway**：禁止仅换 title/H1 的变体页；长尾默认一带多场景（`tool-i18n-seo.mdc`）。
 - **YMYL**：健康/财务须 disclaimer + 建议权威引用（`ymyl: true`）。
 - **链接**：禁止买卖链、强制交换、PBN、灌链；出站以权威引用为主。
-- **FAQ/HowTo**：可见问答为人服务；**不以**富结果展示为 KPI。
+- **FAQ/HowTo**：可见问答为**人**服务。富结果已退役——**FAQ 富结果 2026-05-07 全站停止展示**（此前 2023-08 仅限政府/健康站；GSC 报告与 Rich Results Test 支持 2026-06 移除、GSC API 2026-08 移除）；**HowTo 富结果 2023-09 桌面端弃用**。`FAQPage` / `HowTo` 仍是**有效 Schema.org 类型**，Google 仍解析用于理解页面，**无需移除**，但**不再产生任何 SERP 富结果**，故**不以富结果展示/PAA/Featured Snippet 为 KPI**。
 
 ## Information Gain（站内策略）
 

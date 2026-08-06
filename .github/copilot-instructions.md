@@ -76,8 +76,8 @@ Purpose: Make AI agents productive immediately in this repo. Keep changes minima
 - URLs: apex domain `https://onlinefreetools.org` for canonical, `og:url`, sitemap; kebab-case slugs; en default has no lang prefix; `x-default` points to en URL.
 - Semantics: one `h1` per page; ordered `h2`/`h3`; semantic landmarks.
 - Performance: optimized images; lazy-load below-the-fold; defer heavy WASM until user action.
-- JSON-LD: `BreadcrumbList` / `WebApplication`; must match visible copy; no fake ratings.
-- Indexing: `robots.txt`; `sitemap.xml` via `build:site`; `noindex` for test/gated pages; no `llms.txt`.
+- JSON-LD: `BreadcrumbList` / `WebApplication`; must match visible copy; no fake ratings. Rich-result set keeps narrowing (HowTo 2023-09, seven types 2025-06, FAQ 2026-05-07 retired); `FAQPage`/`HowTo` stay valid Schema.org types Google still parses but no longer render rich results — don't chase them as a KPI.
+- Indexing: `robots.txt`; `sitemap.xml` via `build:site`; `noindex` for test/gated pages; no `llms.txt`. AI features (AI Overviews/AI Mode) need no special SEO — page must be indexed + snippet-eligible; ignore chunking / AI-specific schema / AI rewrites / inauthentic mentions (see `.cursor/rules/seo-google-policy.mdc`).
 - Tools list: unique 1–3 sentence description per tool (what / how / scenario).
 - i18n: `<html lang>` + full `hreflang` per locale. Full rules: `docs/SEO_TOOL_RULES.md` and `.cursor/rules/`.
 

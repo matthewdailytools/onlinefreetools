@@ -48,17 +48,20 @@
 | 来源 | 结论 | 对本站 |
 |---|---|---|
 | [Creating helpful content](https://developers.google.com/search/docs/fundamentals/creating-helpful-content) | 奖励为人而写；主要为操纵排名而批量生产违反 spam | 每工具须真实可交互 + 公式/步骤/示例 |
-| [AI features and your website](https://developers.google.com/search/docs/appearance/ai-features) | AI Overviews / AI Mode **无额外技术要求** | 标准 SEO + 深度内容即可 |
-| [Spam policies](https://developers.google.com/search/docs/essentials/spam-policies)（含 **2026-05** 澄清） | Spam 定义覆盖操纵 **generative AI responses**（含 AI Overviews / AI Mode）；Scaled content abuse 仍禁止无价值批量页（含未实质编辑的 AI 生成） | 控节奏；禁空壳铺量；禁操纵 AI 摘要的伎俩 |
+| [AI features and your website](https://developers.google.com/search/docs/appearance/ai-features) | AI Overviews / AI Mode **无额外技术要求**；须 indexed 且 snippet-eligible | 标准 SEO + 深度内容即可；勿 `nosnippet` 阻断 |
+| [Optimizing for generative AI features](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide)（**2026-05** 官方指南） | AI features 用相同索引与排名系统；明确可忽略 chunking / `llms.txt` / AI 专用改写 / AI 专用 schema / 刷不实提及 | 做扎实基础 SEO，不做 AEO/GEO hack |
+| [Spam policies](https://developers.google.com/search/docs/essentials/spam-policies)（含 **2026-05** 澄清） | 现行三新政（2024-03 起执行）：**scaled content abuse**（方法无关，禁无价值批量页含未实质编辑的 AI 生成）、**site reputation abuse**（禁借本站排名的第三方寄生页，2025-01 澄清不论是否有第一方监督）、**expired domain abuse**；spam 定义覆盖操纵 **generative AI responses** | 控节奏；禁空壳铺量；禁操纵 AI 摘要伎俩；第三方/赞助内容逐一评估 |
 | E-E-A-T | Trust 对 YMYL 权重最高 | 健康/财务：免责 + 权威引用 |
 | Core Web Vitals | LCP ≤ 2.5s、INP ≤ 200ms、CLS ≤ 0.1 | Tier 2 WASM 点击后加载 |
 | [Link spam](https://developers.google.com/search/docs/essentials/spam-policies#link-spam) | 买卖链、交换链、PBN、灌链等违规 | 出站权威引用 + 白帽获链；见 §7 |
 
 ### 2.2 禁止清单
 
-- 创建 `llms.txt` 或「AI 专用」Schema.org 类型  
+- 创建 `llms.txt` 或「AI 专用」Schema.org 类型；为 AI 刻意 chunking / AI 专用改写  
+- 刷不实提及（inauthentic mentions）以影响 AI 对本站/工具的描述  
 - 伪造作者、虚假评论、虚假 `aggregateRating`  
-- 无实质功能差异的同类工具铺量（doorway / scaled content）  
+- 无实质功能差异的同类工具铺量（doorway / scaled content abuse，方法无关）  
+- 第三方寄生页借本站排名信号（site reputation abuse）；利用过期域名历史权重（expired domain abuse）  
 - 禁止 `Translate to {lang}` 或机翻/AI 直出后未经实质编辑（须 locale brief + 检索向重写 + ≥3 轮；见 `tool-i18n-localization.mdc`）  
 - 健康/财务给出医疗或投资建议而无免责声明  
 - 仅对爬虫可见、对用户隐藏的 FAQ（cloaking）  
@@ -79,8 +82,9 @@
 
 ### 2.4 FAQ / HowTo 与富结果
 
-- **保留**可见 FAQ 与一致的 FAQPage（及可选 HowTo）JSON-LD。  
-- **不以** FAQ/HowTo 富结果展示或点击为 KPI（Google 已调整相关展示；问答仍为用户服务）。  
+- **现行事实（2026）**：FAQ 富结果已于 **2026-05-07 全站停止展示**（此前 2023-08 仅限政府/健康站；GSC 报告与 Rich Results Test 支持 2026-06 移除、GSC API 2026-08 移除）；HowTo 富结果 **2023-09** 桌面端弃用。  
+- **保留**可见 FAQ 与一致的 `FAQPage`（及可选 `HowTo`）JSON-LD：二者仍是有效 Schema.org 类型，Google 仍解析用于**理解页面**，无需移除，但**不再产出任何 SERP 富结果**。  
+- **不以** FAQ/HowTo 富结果展示或点击为 KPI（问答仍为用户服务）。  
 - 禁止仅爬虫可见的问答。
 
 ---
@@ -356,7 +360,7 @@ Footer
 | 检查 | 工具 |
 |---|---|
 | 描述与 FAQ | `npm run lint:seo` |
-| 结构化数据 | [Rich Results Test](https://search.google.com/test/rich-results) |
+| 结构化数据 | [Rich Results Test](https://search.google.com/test/rich-results)（仅测仍支持的类型如 `BreadcrumbList`；FAQ 支持 2026-06 已移除）；语法可用 [Schema.org Validator](https://validator.schema.org/) |
 | CWV | PageSpeed Insights |
 | 索引与国际定向 | Google Search Console |
 
