@@ -25,6 +25,7 @@ import { renderSquareFeetPage } from "./pages/squareFeetPage";
 import { renderHowToCalculatePercentageChangePage } from "./pages/howToCalculatePercentageChangePage";
 import { renderHowToCalculateGradientPage } from "./pages/howToCalculateGradientPage";
 import { renderTextDiffPage } from "./pages/textDiffPage";
+import { renderYamlJsonPage } from "./pages/yamlJsonPage";
 import { registerToolPage } from "./site/toolRegistrar";
 import { handleWebsiteHeadersApi } from "./tools/websiteHeaders";
 import { handleIpAddress } from "./endpoints/ipAddress";
@@ -260,6 +261,11 @@ registerToolPage(app as any, 'how-to-calculate-gradient', (lang, defaultLang, en
 // Register text-diff page via registrar（文本 Diff 对比器）
 registerToolPage(app as any, 'text-diff', (lang, defaultLang, enabled) =>
 	renderTextDiffPage({ lang, defaultLang, enabledLangs: enabled })
+);
+
+// Register yaml-json page via registrar（YAML ↔ JSON 双向转换）
+registerToolPage(app as any, 'yaml-json', (lang, defaultLang, enabled) =>
+	renderYamlJsonPage({ lang, defaultLang, enabledLangs: enabled })
 );
 
 // Catch-all (GET): perform language negotiation before falling back to static assets.

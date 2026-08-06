@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>More refined use cases help when they add workflow constraints and decisions; multiplying vague scene labels does not — deepen 2–3 scenarios, don’t flood the page. | Dev Logs</title>
+  <meta name="description" content="More refined use cases help when they add workflow constraints and decisions; multiplying vague scene labels does not — deepen 2–3 scenarios, don’t flood the page." />
+  <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-06-20-43-refine-use-cases-user-help.html" />
+  <meta property="og:title" content="More refined use cases help when they add workflow constraints and decisions; multiplying vague scene labels does not — deepen 2–3 scenarios, don’t flood the page. | Dev Logs" />
+  <meta property="og:description" content="More refined use cases help when they add workflow constraints and decisions; multiplying vague scene labels does not — deepen 2–3 scenarios, don’t flood the page." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-06-20-43-refine-use-cases-user-help.html" />
+  <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  
+  <script>
+    (function () {
+      try {
+        var enabled = [];
+        var defaultLang = "en";
+        var fallback = defaultLang;
+        var path = window.location.pathname || '/';
+
+        // If the URL already contains a language prefix (including defaultLang), respect it.
+        var hasPrefix = enabled.some(function (l) {
+          return l && (path === '/' + l || path.indexOf('/' + l + '/') === 0);
+        });
+        if (hasPrefix) return;
+
+        var langs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language])
+          .filter(Boolean)
+          .map(function (x) { return String(x).toLowerCase().split('-')[0]; });
+
+        var picked = null;
+        for (var i = 0; i < langs.length; i++) {
+          if (enabled.indexOf(langs[i]) !== -1) { picked = langs[i]; break; }
+        }
+        if (!picked) picked = enabled.indexOf(fallback) !== -1 ? fallback : (enabled[0] || fallback);
+
+        if (picked === "en") return;
+        var targetPath = path;
+        if (picked !== defaultLang) {
+          targetPath = ('/' + picked + path).replace(/\/{2,}/g, '/');
+        }
+        window.location.replace(targetPath + window.location.search + window.location.hash);
+      } catch (e) {}
+    })();
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body { min-height: 100vh; padding-top: 56px; }
+    .layout { display: flex; min-height: 100vh; }
+    /* Sidebar: desktop - sticky under the fixed header */
+    #sidebar {
+      width: 260px;
+      transition: margin-left 0.2s ease;
+      position: sticky;
+      top: 56px;
+      height: calc(100vh - 56px);
+      overflow-y: auto;
+      background: #f8f9fa;
+      border-right: 1px solid #e5e7eb;
+      z-index: 1020;
+    }
+    #content { flex: 1; transition: margin-left 0.2s ease; }
+    .sidebar-collapsed #sidebar { margin-left: -260px; }
+    .sidebar-collapsed #content { margin-left: 0; }
+    @media (max-width: 767.98px) {
+      #sidebar {
+        position: fixed;
+        z-index: 1020;
+        top: 56px;
+        bottom: 0;
+        height: auto;
+      }
+      .sidebar-collapsed #sidebar { margin-left: -260px; }
+      #content { margin-left: 0; }
+      body { padding-top: 56px; }
+    }
+  </style>
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?39f18c089a03779cd05243e21b046589";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "xbc0iytpn7");
+</script>
+  
+  
+</head>
+<body>
+  
+  
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom fixed-top">
+      <div class="container-fluid">
+        <button class="btn btn-outline-secondary me-2" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+        <a class="navbar-brand fw-semibold" href="/">Online Free Tools</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="topNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="/">Home</a></li><li class="nav-item"><a class="nav-link" href="/devlogs/">Dev Logs</a></li></ul>
+          <div class="d-flex align-items-center gap-2">
+            
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="layout sidebar-collapsed" id="layoutRoot">
+    
+    <aside id="sidebar" class="bg-light border-end p-3">
+      <h6 class="text-muted text-uppercase">Navigation</h6>
+      <div class="list-group list-group-flush small" id="navList"><a class="list-group-item list-group-item-action" href="/">Home</a><a class="list-group-item list-group-item-action" href="/devlogs/">Dev Logs</a></div>
+    </aside>
+    <main id="content" class="p-4">
+      <section class="mb-3">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h1 class="h4 mb-0">More refined use cases help when they add workflow constraints and decisions; multiplying vague scene labels does not — deepen 2–3 scenarios, don’t flood the page. | Dev Logs</h1>
+          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
+        </div>
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-06 20:43
+Summary: More refined use cases help when they add workflow constraints and decisions; multiplying vague scene labels does not — deepen 2–3 scenarios, don’t flood the page.</p>
+<p>[question]
+用户使用场景是否更细化，这样会对用户更有帮助么？</p>
+<p>[try to solve]
+<strong>会更有帮助——前提是「细化＝加上可执行约束/决策」，不是「多列几个行业名」。</strong></p>
+<h3>为何细化有用</h3>
+<p>策略把场景语境当作 IG（§3.1 ③），长尾默认「一带多场景」、慎拆页（§3.3）。用户真正需要的是：我这种情况该怎么设参数、会踩什么坑、结果能不能信。</p>
+<h3>何种细化有用 vs 无用</h3>
+<table>
+<thead>
+<tr>
+<th>有用的细化</th>
+<th>无用的「细化」</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>岗位 + 具体任务 + 约束</td>
+<td>「适合学生 / 开发者 / 所有人」</td>
+</tr>
+<tr>
+<td>参数建议或对照（按行 vs 按词；公制 vs 英制）</td>
+<td>同义场景堆砌凑长尾</td>
+</tr>
+<tr>
+<td>失败/不适用边界</td>
+<td>空壳拆 URL（doorway）</td>
+</tr>
+<tr>
+<td>一条带数字的迷你例</td>
+<td>只换 title 的变体页</td>
+</tr>
+</tbody></table>
+<h3>现状（en）已有好坏对照</h3>
+<ul>
+<li><strong>已较细、较有用</strong>：Headers（CORS / Cache-Control / CSP）；Markdown（CMS 导出、邮件 HTML→MD、剪贴板进 LLM）；百分比变化（GMV、DAU、价格且区分百分点）；Text Diff（.env、prompt 按词、校对）</li>
+<li><strong>仍偏浅</strong>：BMI「fitness onboarding」；ROI「coursework practice」——点到岗位但缺步骤/限制</li>
+</ul>
+<h3>建议写法（仍保持 2–3 条，加深不堆量）</h3>
+<p>每条尽量含：<strong>谁 + 任务 + 怎么用本工具 + 注意什么</strong>。<br>例（sqft 可从现有再深一层）：「美式 listing 850 sq ft ↔ 本地 m² 广告比对；本页只算矩形平面面积，不含套内/公摊定义。」</p>
+<p>数量：默认仍 <strong>2–3 条深场景</strong>；第四条仅当有独立约束/例。不要为 SEO 扩到 8–10 条空标签。</p>
+<p><strong>一句话</strong>：场景应该更细，细在「任务步骤与边界」；细成「行业标签清单」对用户帮助有限，还容易像堆内容。</p>
+<p>[actions]</p>
+<ul>
+<li>对照 §3.1/§3.3 与 en 十工具 usecase 文案；未改代码</li>
+</ul>
+</article>
+      </section>
+    </main>
+  </div>
+  
+  <footer class="bg-light border-top text-center py-3">
+    <div class="container">
+      <small class="text-muted">Online Free Tools · Learning project · Iterating</small>
+      <span class="text-muted mx-2">·</span>
+      <a class="small text-decoration-none" href="/en/about">About</a>
+    </div>
+  </footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <script>
+    const layout = document.getElementById('layoutRoot');
+    const toggle = document.getElementById('sidebarToggle');
+    if (layout && toggle) {
+      toggle.addEventListener('click', () => layout.classList.toggle('sidebar-collapsed'));
+      
+    }
+  </script>
+</body>
+</html>

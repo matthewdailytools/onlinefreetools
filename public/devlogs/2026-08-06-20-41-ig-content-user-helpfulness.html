@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Current IG content does help users on formulas, boundaries, and honesty limits; generic use cases and templated meta are weaker; overall people-first, not empty SEO. | Dev Logs</title>
+  <meta name="description" content="Current IG content does help users on formulas, boundaries, and honesty limits; generic use cases and templated meta are weaker; overall people-first, not empty SEO." />
+  <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-06-20-41-ig-content-user-helpfulness.html" />
+  <meta property="og:title" content="Current IG content does help users on formulas, boundaries, and honesty limits; generic use cases and templated meta are weaker; overall people-first, not empty SEO. | Dev Logs" />
+  <meta property="og:description" content="Current IG content does help users on formulas, boundaries, and honesty limits; generic use cases and templated meta are weaker; overall people-first, not empty SEO." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-06-20-41-ig-content-user-helpfulness.html" />
+  <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  
+  <script>
+    (function () {
+      try {
+        var enabled = [];
+        var defaultLang = "en";
+        var fallback = defaultLang;
+        var path = window.location.pathname || '/';
+
+        // If the URL already contains a language prefix (including defaultLang), respect it.
+        var hasPrefix = enabled.some(function (l) {
+          return l && (path === '/' + l || path.indexOf('/' + l + '/') === 0);
+        });
+        if (hasPrefix) return;
+
+        var langs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language])
+          .filter(Boolean)
+          .map(function (x) { return String(x).toLowerCase().split('-')[0]; });
+
+        var picked = null;
+        for (var i = 0; i < langs.length; i++) {
+          if (enabled.indexOf(langs[i]) !== -1) { picked = langs[i]; break; }
+        }
+        if (!picked) picked = enabled.indexOf(fallback) !== -1 ? fallback : (enabled[0] || fallback);
+
+        if (picked === "en") return;
+        var targetPath = path;
+        if (picked !== defaultLang) {
+          targetPath = ('/' + picked + path).replace(/\/{2,}/g, '/');
+        }
+        window.location.replace(targetPath + window.location.search + window.location.hash);
+      } catch (e) {}
+    })();
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body { min-height: 100vh; padding-top: 56px; }
+    .layout { display: flex; min-height: 100vh; }
+    /* Sidebar: desktop - sticky under the fixed header */
+    #sidebar {
+      width: 260px;
+      transition: margin-left 0.2s ease;
+      position: sticky;
+      top: 56px;
+      height: calc(100vh - 56px);
+      overflow-y: auto;
+      background: #f8f9fa;
+      border-right: 1px solid #e5e7eb;
+      z-index: 1020;
+    }
+    #content { flex: 1; transition: margin-left 0.2s ease; }
+    .sidebar-collapsed #sidebar { margin-left: -260px; }
+    .sidebar-collapsed #content { margin-left: 0; }
+    @media (max-width: 767.98px) {
+      #sidebar {
+        position: fixed;
+        z-index: 1020;
+        top: 56px;
+        bottom: 0;
+        height: auto;
+      }
+      .sidebar-collapsed #sidebar { margin-left: -260px; }
+      #content { margin-left: 0; }
+      body { padding-top: 56px; }
+    }
+  </style>
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?39f18c089a03779cd05243e21b046589";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "xbc0iytpn7");
+</script>
+  
+  
+</head>
+<body>
+  
+  
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom fixed-top">
+      <div class="container-fluid">
+        <button class="btn btn-outline-secondary me-2" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+        <a class="navbar-brand fw-semibold" href="/">Online Free Tools</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="topNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="/">Home</a></li><li class="nav-item"><a class="nav-link" href="/devlogs/">Dev Logs</a></li></ul>
+          <div class="d-flex align-items-center gap-2">
+            
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="layout sidebar-collapsed" id="layoutRoot">
+    
+    <aside id="sidebar" class="bg-light border-end p-3">
+      <h6 class="text-muted text-uppercase">Navigation</h6>
+      <div class="list-group list-group-flush small" id="navList"><a class="list-group-item list-group-item-action" href="/">Home</a><a class="list-group-item list-group-item-action" href="/devlogs/">Dev Logs</a></div>
+    </aside>
+    <main id="content" class="p-4">
+      <section class="mb-3">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h1 class="h4 mb-0">Current IG content does help users on formulas, boundaries, and honesty limits; generic use cases and templated meta are weaker; overall people-first, not empty SEO. | Dev Logs</h1>
+          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
+        </div>
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-06 20:41
+Summary: Current IG content does help users on formulas, boundaries, and honesty limits; generic use cases and templated meta are weaker; overall people-first, not empty SEO.</p>
+<p>[question]
+目前的增益内容是否对用户有所帮助</p>
+<p>[try to solve]
+<strong>有帮助，尤其是「公式可核对 + 边界/局限说明」；不是空壳 SEO。但并非每一段同等有用。</strong></p>
+<h3>对用户真正有用的部分（抽查 en）</h3>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>例子</th>
+<th>为何有用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>公式 + 数值例</td>
+<td>BMI 70kg/175cm→22.9；ft² NIST 因子；ROI 定义</td>
+<td>可手算核对，减少「黑盒」</td>
+</tr>
+<tr>
+<td>边界/失败</td>
+<td>ROI 成本为 0；百分比旧值为 0；ΔQ=0；MD 往返会丢样式</td>
+<td>避免误用工具结果</td>
+</tr>
+<tr>
+<td>诚实局限</td>
+<td>BMI≠诊断；ROI≠投资建议；sqft≠房价/套内定义；IP≠地理定位</td>
+<td>降低错误决策风险</td>
+</tr>
+<tr>
+<td>机制说明</td>
+<td>IP 看 egress 非局域网；Headers 可能与本机 DevTools 因 CDN 不同；Diff 换行标红整行</td>
+<td>解释「为什么和预期不一样」</td>
+</tr>
+<tr>
+<td>隐私边界</td>
+<td>粘贴不上传 vs CDN 只拉库</td>
+<td>回答真实顾虑，比「100% private」口号有用</td>
+</tr>
+</tbody></table>
+<h3>较弱、帮助有限的部分</h3>
+<ul>
+<li>部分 Use cases 偏泛（如健身登记打卡式一句）</li>
+<li>meta/description 里「Process:… Example:…」模板腔，对人不如 Rules/FAQ</li>
+<li>只想「算一下」的用户可能跳过长文——增益主要服务<strong>会踩坑的那批人</strong></li>
+<li>非英语若同构译腔，帮助会打折</li>
+</ul>
+<h3>总评</h3>
+<table>
+<thead>
+<tr>
+<th>问题</th>
+<th>判断</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>是给人用的还是给爬虫堆的？</td>
+<td><strong>主体是给人用的</strong>（边界、公式、免责）</td>
+</tr>
+<tr>
+<td>是否「所有增益都强」？</td>
+<td>否；<strong>Rules/FAQ/公式例 &gt; 泛化 Use cases</strong></td>
+</tr>
+<tr>
+<td>还缺什么会更有用？</td>
+<td>更具体的失败样例、对照表（如 yaml-json 类型推断）、少写空场景句</td>
+</tr>
+</tbody></table>
+<p><strong>一句话</strong>：当前增益对「算对/理解限制/别误用」有实质帮助；继续加码边界与可验证示例，压缩空泛场景句，比再堆同构段落更有用户价值。</p>
+<p>[actions]</p>
+<ul>
+<li>抽查 en：bmi / markdown / headers / ip / roi / squarefeet / text-diff 的 How/Rules/FAQ；未改代码</li>
+</ul>
+</article>
+      </section>
+    </main>
+  </div>
+  
+  <footer class="bg-light border-top text-center py-3">
+    <div class="container">
+      <small class="text-muted">Online Free Tools · Learning project · Iterating</small>
+      <span class="text-muted mx-2">·</span>
+      <a class="small text-decoration-none" href="/en/about">About</a>
+    </div>
+  </footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <script>
+    const layout = document.getElementById('layoutRoot');
+    const toggle = document.getElementById('sidebarToggle');
+    if (layout && toggle) {
+      toggle.addEventListener('click', () => layout.classList.toggle('sidebar-collapsed'));
+      
+    }
+  </script>
+</body>
+</html>

@@ -46,6 +46,8 @@ const translations = {
     tool_markdown_to_html_desc: 'Convert Markdown ↔ HTML with sanitize and preview.',
     tool_text_diff_title: 'Compare Two Texts Online',
     tool_text_diff_desc: 'See differences between two texts — by line, word, or character.',
+    tool_yaml_json_title: 'YAML ↔ JSON',
+    tool_yaml_json_desc: 'Convert YAML ↔ JSON with typing rules and multi-doc arrays.',
     tool_markdown_to_html_article:
       'Convert Markdown to sanitized HTML or HTML to Markdown in-browser. Preview, copy, or download. Paste stays local; libraries may load from a CDN.',
     tool_ip_address_title: 'What Is My IP Address — See Your Public IP',
@@ -142,6 +144,8 @@ const translations = {
     tool_markdown_to_html_desc: '浏览器内 Markdown 与 HTML 双向转换与预览。',
     tool_text_diff_title: '在线文本对比',
     tool_text_diff_desc: '按行、按词或按字符对比两段文字的差异。',
+    tool_yaml_json_title: 'YAML ↔ JSON',
+    tool_yaml_json_desc: '浏览器内 YAML 与 JSON 互转：类型规则与多文档。',
     tool_markdown_to_html_article: '同页双向：Markdown 转安全 HTML，或 HTML 收回 Markdown；粘贴不上传。',
     tool_ip_address_title: '查询我的公网 IP — 查看当前出口地址',
     tool_bmi_title: 'BMI 计算器 — 身体质量指数',
@@ -243,6 +247,8 @@ const translations = {
     tool_markdown_to_html_desc: 'Convierte Markdown ↔ HTML con vista previa segura.',
     tool_text_diff_title: 'Comparar textos online',
     tool_text_diff_desc: 'Mira las diferencias entre dos textos por línea, palabra o carácter.',
+    tool_yaml_json_title: 'YAML ↔ JSON',
+    tool_yaml_json_desc: 'Convierte YAML ↔ JSON con tipos y multi-documento.',
     tool_markdown_to_html_article:
       'Markdown ↔ HTML en el navegador: vista previa, copia y descarga. El pegado no se sube; librerías pueden cargar desde CDN.',
     tool_ip_address_title: 'Cuál es mi IP — Ver tu IP pública',
@@ -342,6 +348,8 @@ const translations = {
     tool_markdown_to_html_desc: 'تحويل Markdown ↔ HTML مع معاينة آمنة.',
     tool_text_diff_title: 'مقارنة نصين أونلاين',
     tool_text_diff_desc: 'اطّلع على فروقات نصين حسب السطر أو الكلمة أو الحرف.',
+    tool_yaml_json_title: 'YAML ↔ JSON',
+    tool_yaml_json_desc: 'تحويل YAML ↔ JSON مع قواعد الأنواع والمستندات المتعددة.',
     tool_markdown_to_html_article:
       'تحويل ثنائي Markdown ↔ HTML في المتصفح مع معاينة وتنظيف. اللصق لا يُرفع.',
     tool_ip_address_title: 'ما هو عنوان IP الخاص بي — اعرض IP العام',
@@ -442,6 +450,8 @@ const translations = {
     tool_markdown_to_html_desc: 'Converta Markdown ↔ HTML com pré-visualização segura.',
     tool_text_diff_title: 'Comparar textos online',
     tool_text_diff_desc: 'Veja diferenças entre dois textos por linha, palavra ou caractere.',
+    tool_yaml_json_title: 'YAML ↔ JSON',
+    tool_yaml_json_desc: 'Converta YAML ↔ JSON com tipos e multi-documento.',
     tool_markdown_to_html_article:
       'Markdown ↔ HTML no navegador: pré-visualização, cópia e download. O texto colado não é enviado.',
     tool_ip_address_title: 'Qual é o meu IP — Ver seu IP público',
@@ -541,6 +551,8 @@ const translations = {
     tool_markdown_to_html_desc: 'Konversi Markdown ↔ HTML dengan pratinjau aman.',
     tool_text_diff_title: 'Bandingkan teks online',
     tool_text_diff_desc: 'Lihat perbedaan dua teks per baris, kata, atau karakter.',
+    tool_yaml_json_title: 'YAML ↔ JSON',
+    tool_yaml_json_desc: 'Konversi YAML ↔ JSON dengan aturan tipe dan multi-dokumen.',
     tool_markdown_to_html_article:
       'Markdown ↔ HTML di browser: pratinjau, salin, unduh. Tempelan tidak diunggah.',
     tool_ip_address_title: 'Berapa IP saya — Lihat IP publik Anda',
@@ -640,6 +652,8 @@ const translations = {
     tool_markdown_to_html_desc: 'Convertir Markdown ↔ HTML avec aperçu assaini.',
     tool_text_diff_title: 'Comparer des textes en ligne',
     tool_text_diff_desc: 'Voyez les différences entre deux textes ligne, mot ou caractère.',
+    tool_yaml_json_title: 'YAML ↔ JSON',
+    tool_yaml_json_desc: 'Convertir YAML ↔ JSON avec types et multi-documents.',
     tool_markdown_to_html_article:
       'Markdown ↔ HTML dans le navigateur : aperçu, copie, téléchargement. Le collage n\'est pas envoyé.',
     tool_ip_address_title: 'Quelle est mon adresse IP — Voir votre IP publique',
@@ -738,6 +752,8 @@ const translations = {
     tool_markdown_to_html_desc: 'ブラウザで Markdown ↔ HTML を変換・プレビュー。',
     tool_text_diff_title: 'テキスト比較',
     tool_text_diff_desc: '2つの文章の差分を行・単語・文字で確認。',
+    tool_yaml_json_title: 'YAML ↔ JSON',
+    tool_yaml_json_desc: 'YAML と JSON を相互変換（型ルール・複数ドキュメント）。',
     tool_markdown_to_html_article:
       'ブラウザ内の双方向 Markdown ↔ HTML。プレビューと書き出し。貼り付けはアップロードされません。',
     tool_ip_address_title: '自分のIPアドレスを確認 — グローバルIPを表示',
@@ -838,6 +854,8 @@ const translations = {
     tool_markdown_to_html_desc: 'Преобразование Markdown ↔ HTML с безопасным предпросмотром.',
     tool_text_diff_title: 'Сравнить тексты онлайн',
     tool_text_diff_desc: 'Посмотрите различия двух текстов по строкам, словам или символам.',
+    tool_yaml_json_title: 'YAML ↔ JSON',
+    tool_yaml_json_desc: 'YAML ↔ JSON с правилами типов и multi-doc.',
     tool_markdown_to_html_article:
       'Двунаправленный Markdown ↔ HTML в браузере: предпросмотр и экспорт. Вставка не загружается на сервер.',
     tool_ip_address_title: 'Узнать свой IP — Показать публичный IP-адрес',
@@ -938,6 +956,8 @@ const translations = {
     tool_markdown_to_html_desc: 'Markdown ↔ HTML mit bereinigter Vorschau umwandeln.',
     tool_text_diff_title: 'Texte online vergleichen',
     tool_text_diff_desc: 'Unterschiede zweier Texte nach Zeile, Wort oder Zeichen sehen.',
+    tool_yaml_json_title: 'YAML ↔ JSON',
+    tool_yaml_json_desc: 'YAML ↔ JSON mit Typregeln und Multi-Doc.',
     tool_markdown_to_html_article:
       'Bidirektionales Markdown ↔ HTML im Browser: Vorschau und Export. Einfügen bleibt lokal.',
     tool_ip_address_title: 'Was ist meine IP-Adresse — Öffentliche IP anzeigen',

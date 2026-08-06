@@ -902,6 +902,156 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/text-diff" />
   </url>
   <url>
+    <loc>https://onlinefreetools.org/tools/yaml-json</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/yaml-json" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/zh/tools/yaml-json</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/yaml-json" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/es/tools/yaml-json</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/yaml-json" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/ar/tools/yaml-json</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/yaml-json" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/pt/tools/yaml-json</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/yaml-json" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/id/tools/yaml-json</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/yaml-json" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/fr/tools/yaml-json</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/yaml-json" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/ja/tools/yaml-json</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/yaml-json" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/ru/tools/yaml-json</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/yaml-json" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/de/tools/yaml-json</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/yaml-json" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/yaml-json" />
+  </url>
+  <url>
     <loc>https://onlinefreetools.org/tools/how-to-calculate-bmi</loc>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/how-to-calculate-bmi" />

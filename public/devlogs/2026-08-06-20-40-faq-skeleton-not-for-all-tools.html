@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FAQ as a page module (≥3) fits all tools; a universal question template does not — FAQs must be tool-type and locale specific. | Dev Logs</title>
+  <meta name="description" content="FAQ as a page module (≥3) fits all tools; a universal question template does not — FAQs must be tool-type and locale specific." />
+  <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-06-20-40-faq-skeleton-not-for-all-tools.html" />
+  <meta property="og:title" content="FAQ as a page module (≥3) fits all tools; a universal question template does not — FAQs must be tool-type and locale specific. | Dev Logs" />
+  <meta property="og:description" content="FAQ as a page module (≥3) fits all tools; a universal question template does not — FAQs must be tool-type and locale specific." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-06-20-40-faq-skeleton-not-for-all-tools.html" />
+  <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  
+  <script>
+    (function () {
+      try {
+        var enabled = [];
+        var defaultLang = "en";
+        var fallback = defaultLang;
+        var path = window.location.pathname || '/';
+
+        // If the URL already contains a language prefix (including defaultLang), respect it.
+        var hasPrefix = enabled.some(function (l) {
+          return l && (path === '/' + l || path.indexOf('/' + l + '/') === 0);
+        });
+        if (hasPrefix) return;
+
+        var langs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language])
+          .filter(Boolean)
+          .map(function (x) { return String(x).toLowerCase().split('-')[0]; });
+
+        var picked = null;
+        for (var i = 0; i < langs.length; i++) {
+          if (enabled.indexOf(langs[i]) !== -1) { picked = langs[i]; break; }
+        }
+        if (!picked) picked = enabled.indexOf(fallback) !== -1 ? fallback : (enabled[0] || fallback);
+
+        if (picked === "en") return;
+        var targetPath = path;
+        if (picked !== defaultLang) {
+          targetPath = ('/' + picked + path).replace(/\/{2,}/g, '/');
+        }
+        window.location.replace(targetPath + window.location.search + window.location.hash);
+      } catch (e) {}
+    })();
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body { min-height: 100vh; padding-top: 56px; }
+    .layout { display: flex; min-height: 100vh; }
+    /* Sidebar: desktop - sticky under the fixed header */
+    #sidebar {
+      width: 260px;
+      transition: margin-left 0.2s ease;
+      position: sticky;
+      top: 56px;
+      height: calc(100vh - 56px);
+      overflow-y: auto;
+      background: #f8f9fa;
+      border-right: 1px solid #e5e7eb;
+      z-index: 1020;
+    }
+    #content { flex: 1; transition: margin-left 0.2s ease; }
+    .sidebar-collapsed #sidebar { margin-left: -260px; }
+    .sidebar-collapsed #content { margin-left: 0; }
+    @media (max-width: 767.98px) {
+      #sidebar {
+        position: fixed;
+        z-index: 1020;
+        top: 56px;
+        bottom: 0;
+        height: auto;
+      }
+      .sidebar-collapsed #sidebar { margin-left: -260px; }
+      #content { margin-left: 0; }
+      body { padding-top: 56px; }
+    }
+  </style>
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?39f18c089a03779cd05243e21b046589";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "xbc0iytpn7");
+</script>
+  
+  
+</head>
+<body>
+  
+  
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom fixed-top">
+      <div class="container-fluid">
+        <button class="btn btn-outline-secondary me-2" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+        <a class="navbar-brand fw-semibold" href="/">Online Free Tools</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="topNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="/">Home</a></li><li class="nav-item"><a class="nav-link" href="/devlogs/">Dev Logs</a></li></ul>
+          <div class="d-flex align-items-center gap-2">
+            
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="layout sidebar-collapsed" id="layoutRoot">
+    
+    <aside id="sidebar" class="bg-light border-end p-3">
+      <h6 class="text-muted text-uppercase">Navigation</h6>
+      <div class="list-group list-group-flush small" id="navList"><a class="list-group-item list-group-item-action" href="/">Home</a><a class="list-group-item list-group-item-action" href="/devlogs/">Dev Logs</a></div>
+    </aside>
+    <main id="content" class="p-4">
+      <section class="mb-3">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h1 class="h4 mb-0">FAQ as a page module (≥3) fits all tools; a universal question template does not — FAQs must be tool-type and locale specific. | Dev Logs</h1>
+          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
+        </div>
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-06 20:40
+Summary: FAQ as a page module (≥3) fits all tools; a universal question template does not — FAQs must be tool-type and locale specific.</p>
+<p>[question]
+FAQ 骨架是否不适合所有工具</p>
+<p>[try to solve]
+<strong>要分清两种「骨架」：</strong></p>
+<table>
+<thead>
+<tr>
+<th>含义</th>
+<th>是否适合所有工具</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>页面模块</strong>：每工具有可见 FAQ，≥3 组</td>
+<td><strong>适合</strong>（硬性配额；服务真人，非富结果 KPI）</td>
+</tr>
+<tr>
+<td><strong>统一题库模板</strong>：各工具都问「是什么 / 怎么用 / 免费吗 / 安全吗」同一套</td>
+<td><strong>不适合</strong></td>
+</tr>
+<tr>
+<td><strong>跨语言同构</strong>：十语同一题序、同一连接词骨架</td>
+<td><strong>不适合</strong>（localization 明确禁止）</td>
+</tr>
+</tbody></table>
+<h3>规则实际要求</h3>
+<ul>
+<li>必有 FAQ ≥3；YMYL 须含局限/免责；粘贴/文件类须有本地处理类问答。</li>
+<li><strong>没有</strong>规定全站共用同一组问题。</li>
+<li>默认用 FAQ + Use cases 一带多场景，但问题内容应随工具任务变。</li>
+</ul>
+<h3>线上已按工具类型分化（en 抽查）</h3>
+<ul>
+<li>计算类：公式、分类、边界（运动员/儿童、ΔQ=0、旧值为 0）</li>
+<li>转换类：消毒、往返损失、语法覆盖、隐私</li>
+<li>网络类：VPN/局域网、不全量下载 body、localhost 拦截、是否记日志</li>
+<li>Diff：按行/按词、换行标红、能否比二进制</li>
+</ul>
+<p>说明「FAQ 区块」通用，「FAQ 题目骨架」已不该、也不应做成全站一套。</p>
+<h3>结论与写法</h3>
+<ol>
+<li><strong>保留</strong>每工具 FAQ 模块与 ≥3 配额。</li>
+<li><strong>不要</strong>维护跨工具万能题模板；按类型选题（公式/边界、映射损失、隐私与代理、YMYL 免责）。</li>
+<li><strong>跨语</strong>可变题序与切入点；禁止十语锁死同构。</li>
+<li>若某工具真实用户几乎不问某类事，宁可换成长尾/边界题，也不要硬套「通用骨架」凑数。</li>
+</ol>
+<p><strong>一句话</strong>：FAQ <strong>作为模块</strong>适合所有工具；<strong>作为统一问题骨架</strong>不适合——应按工具类型与当地检索意图各自命题。</p>
+<p>[actions]</p>
+<ul>
+<li>对照 rules（FAQ≥3、反同构）与 en 十工具 FAQ 题面；未改代码</li>
+</ul>
+</article>
+      </section>
+    </main>
+  </div>
+  
+  <footer class="bg-light border-top text-center py-3">
+    <div class="container">
+      <small class="text-muted">Online Free Tools · Learning project · Iterating</small>
+      <span class="text-muted mx-2">·</span>
+      <a class="small text-decoration-none" href="/en/about">About</a>
+    </div>
+  </footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <script>
+    const layout = document.getElementById('layoutRoot');
+    const toggle = document.getElementById('sidebarToggle');
+    if (layout && toggle) {
+      toggle.addEventListener('click', () => layout.classList.toggle('sidebar-collapsed'));
+      
+    }
+  </script>
+</body>
+</html>

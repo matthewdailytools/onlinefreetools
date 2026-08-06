@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Added all tool_yaml_json_* keys to zh/es/pt with independent locale rewrites and varied FAQ order. | Dev Logs</title>
+  <meta name="description" content="Added all tool_yaml_json_* keys to zh/es/pt with independent locale rewrites and varied FAQ order." />
+  <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-06-21-03-yaml-json-zh-es-pt-i18n-keys.html" />
+  <meta property="og:title" content="Added all tool_yaml_json_* keys to zh/es/pt with independent locale rewrites and varied FAQ order. | Dev Logs" />
+  <meta property="og:description" content="Added all tool_yaml_json_* keys to zh/es/pt with independent locale rewrites and varied FAQ order." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-06-21-03-yaml-json-zh-es-pt-i18n-keys.html" />
+  <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  
+  <script>
+    (function () {
+      try {
+        var enabled = [];
+        var defaultLang = "en";
+        var fallback = defaultLang;
+        var path = window.location.pathname || '/';
+
+        // If the URL already contains a language prefix (including defaultLang), respect it.
+        var hasPrefix = enabled.some(function (l) {
+          return l && (path === '/' + l || path.indexOf('/' + l + '/') === 0);
+        });
+        if (hasPrefix) return;
+
+        var langs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language])
+          .filter(Boolean)
+          .map(function (x) { return String(x).toLowerCase().split('-')[0]; });
+
+        var picked = null;
+        for (var i = 0; i < langs.length; i++) {
+          if (enabled.indexOf(langs[i]) !== -1) { picked = langs[i]; break; }
+        }
+        if (!picked) picked = enabled.indexOf(fallback) !== -1 ? fallback : (enabled[0] || fallback);
+
+        if (picked === "en") return;
+        var targetPath = path;
+        if (picked !== defaultLang) {
+          targetPath = ('/' + picked + path).replace(/\/{2,}/g, '/');
+        }
+        window.location.replace(targetPath + window.location.search + window.location.hash);
+      } catch (e) {}
+    })();
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body { min-height: 100vh; padding-top: 56px; }
+    .layout { display: flex; min-height: 100vh; }
+    /* Sidebar: desktop - sticky under the fixed header */
+    #sidebar {
+      width: 260px;
+      transition: margin-left 0.2s ease;
+      position: sticky;
+      top: 56px;
+      height: calc(100vh - 56px);
+      overflow-y: auto;
+      background: #f8f9fa;
+      border-right: 1px solid #e5e7eb;
+      z-index: 1020;
+    }
+    #content { flex: 1; transition: margin-left 0.2s ease; }
+    .sidebar-collapsed #sidebar { margin-left: -260px; }
+    .sidebar-collapsed #content { margin-left: 0; }
+    @media (max-width: 767.98px) {
+      #sidebar {
+        position: fixed;
+        z-index: 1020;
+        top: 56px;
+        bottom: 0;
+        height: auto;
+      }
+      .sidebar-collapsed #sidebar { margin-left: -260px; }
+      #content { margin-left: 0; }
+      body { padding-top: 56px; }
+    }
+  </style>
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?39f18c089a03779cd05243e21b046589";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "xbc0iytpn7");
+</script>
+  
+  
+</head>
+<body>
+  
+  
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom fixed-top">
+      <div class="container-fluid">
+        <button class="btn btn-outline-secondary me-2" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+        <a class="navbar-brand fw-semibold" href="/">Online Free Tools</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="topNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="/">Home</a></li><li class="nav-item"><a class="nav-link" href="/devlogs/">Dev Logs</a></li></ul>
+          <div class="d-flex align-items-center gap-2">
+            
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="layout sidebar-collapsed" id="layoutRoot">
+    
+    <aside id="sidebar" class="bg-light border-end p-3">
+      <h6 class="text-muted text-uppercase">Navigation</h6>
+      <div class="list-group list-group-flush small" id="navList"><a class="list-group-item list-group-item-action" href="/">Home</a><a class="list-group-item list-group-item-action" href="/devlogs/">Dev Logs</a></div>
+    </aside>
+    <main id="content" class="p-4">
+      <section class="mb-3">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h1 class="h4 mb-0">Added all tool_yaml_json_* keys to zh/es/pt with independent locale rewrites and varied FAQ order. | Dev Logs</h1>
+          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
+        </div>
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-06 21:03
+Summary: Added all tool_yaml_json_* keys to zh/es/pt with independent locale rewrites and varied FAQ order.</p>
+<p>[question]
+You are localizing the new yaml-json tool for the onlinefreetools repo at /Users/xuli/vscodeai/onlinefreetools.</p>
+<p>TASK: Add ALL <code>tool_yaml_json_*</code> keys to these locale files by editing them in place:</p>
+<ul>
+<li>src/site/i18n/zh.ts</li>
+<li>src/site/i18n/es.ts</li>
+<li>src/site/i18n/pt.ts</li>
+</ul>
+<p>RULES (critical — tool-i18n-localization.mdc):</p>
+<ul>
+<li>Do NOT translate English sentence-by-sentence into isomorphic skeletons.</li>
+<li>Rewrite independently for each language using the locale brief below.</li>
+<li>FAQ question ORDER and How/Rules openings should DIFFER across languages (not same q1/q2 topics in identical order as English if possible — at least vary openings and use-case cut-ins).</li>
+<li>Description MUST be ≥120 characters AND include at least one keyword from validate-tool-seo for that language:<ul>
+<li>zh: 计算|过程|步骤|示例|例子|公式</li>
+<li>es: calcula|calcular|proceso|pasos|ejemplo|fórmula</li>
+<li>pt: calcular|processo|exemplo|fórmula|passos</li>
+</ul>
+</li>
+<li>Keep technical tokens: YAML, JSON, js-yaml, Kubernetes, CDN, --- as appropriate.</li>
+<li>Sample YAML/JSON can keep structure; localize demo words where natural (zh: 名称/开关; es/pt: nombre/nome).</li>
+<li>Place keys near other tool blocks (after markdown keys is fine) AND FAQ keys near other FAQ blocks before closing <code>};</code>.</li>
+<li>Use the SAME key names as English (list below). Every key must exist.</li>
+</ul>
+<p>KEY NAMES (must all be present):
+tool_yaml_json_title, tool_yaml_json_description, tool_yaml_json_article,
+tool_yaml_json_dir_label, tool_yaml_json_tab_yaml_json, tool_yaml_json_tab_json_yaml,
+tool_yaml_json_convert, tool_yaml_json_copy_json, tool_yaml_json_copy_yaml, tool_yaml_json_copy_done,
+tool_yaml_json_download_json, tool_yaml_json_download_yaml, tool_yaml_json_sample, tool_yaml_json_clear,
+tool_yaml_json_json_safe, tool_yaml_json_indent_label, tool_yaml_json_indent_2, tool_yaml_json_indent_4, tool_yaml_json_indent_minify,
+tool_yaml_json_yaml_input_label, tool_yaml_json_json_output_label, tool_yaml_json_json_input_label, tool_yaml_json_yaml_output_label,
+tool_yaml_json_yaml_placeholder, tool_yaml_json_json_placeholder, tool_yaml_json_sample_yaml, tool_yaml_json_sample_json,
+tool_yaml_json_large_warn, tool_yaml_json_need_lib, tool_yaml_json_empty,
+tool_yaml_json_how_title, tool_yaml_json_how_body,
+tool_yaml_json_rules_title, tool_yaml_json_rules_body,
+tool_yaml_json_rules_item_1, tool_yaml_json_rules_item_2, tool_yaml_json_rules_item_3, tool_yaml_json_rules_item_4,
+tool_yaml_json_example_title, tool_yaml_json_example,
+tool_yaml_json_usecases_title, tool_yaml_json_usecase_1, tool_yaml_json_usecase_2, tool_yaml_json_usecase_3,
+tool_yaml_json_faq_q1..q5, tool_yaml_json_faq_a1..a5</p>
+<p>LOCALE BRIEFS:</p>
+<h3>zh</h3>
+<ul>
+<li>检索词：YAML 转 JSON；JSON 转 YAML；YAML JSON 互转；在线 YAML 转换；K8s YAML 转 JSON</li>
+<li>语气：口语工具站</li>
+<li>Title 方向：YAML ↔ JSON 互转 — 类型规则、多文档、本地处理</li>
+<li>按钮：转换；复制 JSON/YAML；下载；清空；安全类型；缩进</li>
+<li>额外：勿写「完全无损」；FAQ 可先问隐私或多文档，不要完全照抄英 FAQ 顺序</li>
+<li>禁词：无 granularity 类</li>
+</ul>
+<h3>es</h3>
+<ul>
+<li>检索词：yaml a json；json a yaml；convertir yaml；conversor yaml json</li>
+<li>Title：YAML a JSON (y al revés) — tipos, multi-doc, local</li>
+<li>按钮：Convertir；Copiar；Descargar；Limpiar；Tipos seguros JSON</li>
+<li>勿用 altas y bajas</li>
+</ul>
+<h3>pt</h3>
+<ul>
+<li>检索词：yaml para json；json para yaml；converter yaml</li>
+<li>Title：De YAML para JSON — e JSON de volta a YAML</li>
+<li>按钮：Converter；Copiar；Baixar；Limpar；Tipos seguros JSON</li>
+</ul>
+<p>CONTENT FACTS to encode (any order/phrasing):</p>
+<ul>
+<li>Bidirectional on one page; js-yaml; paste local; CDN loads library only</li>
+<li>DEFAULT schema: bare yes/no may become boolean; JSON-safe keeps strings</li>
+<li>Multi-doc --- → loadAll; 1 doc = value; 2+ = JSON array</li>
+<li>Round-trip loses comments; anchors expand</li>
+<li>Soft limit ~200k warning</li>
+<li>Use cases: K8s multi-resource; API JSON→YAML edit; AI/data pipeline bridge</li>
+<li>Example with name/demo style + flag: yes boundary</li>
+</ul>
+<p>ENGLISH REFERENCE (rewrite, do not clone structure):
+Title: YAML ↔ JSON Converter — Types, Multi-doc &amp; Local
+Description mentions Steps + Example + local paste + multi-doc array</p>
+<p>After editing, verify each file still exports default and has no syntax errors (balanced quotes). Prefer single-quoted strings with \n for newlines in samples.</p>
+<p>Return: confirmation of which keys were added per file + any FAQ order choices you made.</p>
+<p>[try to solve]
+已在 zh / es / pt 各写入全部 54 个 <code>tool_yaml_json_*</code> 键（经解析校验：缺键 0；description ≥120 且含 SEO 关键词；export default 正常）。</p>
+<p>FAQ 题序（相对 en 的 类型→多文档→隐私→往返→行号）：</p>
+<ul>
+<li>zh：隐私 → 多文档 → yes/no 类型 → 往返会丢什么 → 报错行号</li>
+<li>es：多文档 → 浏览器本地 → yes/no → 注释往返 → 行列号</li>
+<li>pt：往返丢失 → yes/no → 多文档 --- → 隐私 → 行列号</li>
+</ul>
+<p>How/场景切入也做了差异化：zh How「先选方向」+ 场景从 K8s 起；es How「Pegá…pestaña」+ 场景从 API JSON→YAML 起；pt How「Na mesma página」+ 场景从 pipelines 起。</p>
+<p>[actions]</p>
+<ul>
+<li>src/site/i18n/zh.ts — 新增全部 tool_yaml_json_*（工具块在 markdown 后；FAQ 在 markdown FAQ 后）</li>
+<li>src/site/i18n/es.ts — 同上（整块插在 markdown FAQ 与 BMI 之间，含 FAQ）</li>
+<li>src/site/i18n/pt.ts — 同上</li>
+<li>node 导入校验 54/54 keys、descLen/kw、banned 词扫描</li>
+</ul>
+</article>
+      </section>
+    </main>
+  </div>
+  
+  <footer class="bg-light border-top text-center py-3">
+    <div class="container">
+      <small class="text-muted">Online Free Tools · Learning project · Iterating</small>
+      <span class="text-muted mx-2">·</span>
+      <a class="small text-decoration-none" href="/en/about">About</a>
+    </div>
+  </footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <script>
+    const layout = document.getElementById('layoutRoot');
+    const toggle = document.getElementById('sidebarToggle');
+    if (layout && toggle) {
+      toggle.addEventListener('click', () => layout.classList.toggle('sidebar-collapsed'));
+      
+    }
+  </script>
+</body>
+</html>

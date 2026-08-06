@@ -33,7 +33,7 @@
     "homeTitleKey": "tool_markdown_to_html_title",
     "homeDescKey": "tool_markdown_to_html_desc",
     "faqPrefix": "tool_markdown",
-    "related": ["text-diff", "website-headers", "ip-address"]
+    "related": ["text-diff", "yaml-json", "website-headers"]
   },
   {
     "slug": "text-diff",
@@ -45,7 +45,19 @@
     "homeTitleKey": "tool_text_diff_title",
     "homeDescKey": "tool_text_diff_desc",
     "faqPrefix": "tool_text_diff",
-    "related": ["markdown-to-html", "website-headers"]
+    "related": ["markdown-to-html", "yaml-json", "website-headers"]
+  },
+  {
+    "slug": "yaml-json",
+    "path": "/tools/yaml-json",
+    "category": "developer",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_yaml_json_title",
+    "homeTitleKey": "tool_yaml_json_title",
+    "homeDescKey": "tool_yaml_json_desc",
+    "faqPrefix": "tool_yaml_json",
+    "related": ["markdown-to-html", "text-diff"]
   },
   {
     "slug": "how-to-calculate-bmi",

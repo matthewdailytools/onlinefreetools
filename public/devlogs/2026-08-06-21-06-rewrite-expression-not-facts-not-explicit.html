@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>“Rewrite expression, don’t invent new facts” is NOT an explicit rule line — only implied by one-master + rewrite-not-translate; fact-alignment across langs is unstated. | Dev Logs</title>
+  <meta name="description" content="“Rewrite expression, don’t invent new facts” is NOT an explicit rule line — only implied by one-master + rewrite-not-translate; fact-alignment across langs is unstated." />
+  <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-06-21-06-rewrite-expression-not-facts-not-explicit.html" />
+  <meta property="og:title" content="“Rewrite expression, don’t invent new facts” is NOT an explicit rule line — only implied by one-master + rewrite-not-translate; fact-alignment across langs is unstated. | Dev Logs" />
+  <meta property="og:description" content="“Rewrite expression, don’t invent new facts” is NOT an explicit rule line — only implied by one-master + rewrite-not-translate; fact-alignment across langs is unstated." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-06-21-06-rewrite-expression-not-facts-not-explicit.html" />
+  <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  
+  <script>
+    (function () {
+      try {
+        var enabled = [];
+        var defaultLang = "en";
+        var fallback = defaultLang;
+        var path = window.location.pathname || '/';
+
+        // If the URL already contains a language prefix (including defaultLang), respect it.
+        var hasPrefix = enabled.some(function (l) {
+          return l && (path === '/' + l || path.indexOf('/' + l + '/') === 0);
+        });
+        if (hasPrefix) return;
+
+        var langs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language])
+          .filter(Boolean)
+          .map(function (x) { return String(x).toLowerCase().split('-')[0]; });
+
+        var picked = null;
+        for (var i = 0; i < langs.length; i++) {
+          if (enabled.indexOf(langs[i]) !== -1) { picked = langs[i]; break; }
+        }
+        if (!picked) picked = enabled.indexOf(fallback) !== -1 ? fallback : (enabled[0] || fallback);
+
+        if (picked === "en") return;
+        var targetPath = path;
+        if (picked !== defaultLang) {
+          targetPath = ('/' + picked + path).replace(/\/{2,}/g, '/');
+        }
+        window.location.replace(targetPath + window.location.search + window.location.hash);
+      } catch (e) {}
+    })();
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body { min-height: 100vh; padding-top: 56px; }
+    .layout { display: flex; min-height: 100vh; }
+    /* Sidebar: desktop - sticky under the fixed header */
+    #sidebar {
+      width: 260px;
+      transition: margin-left 0.2s ease;
+      position: sticky;
+      top: 56px;
+      height: calc(100vh - 56px);
+      overflow-y: auto;
+      background: #f8f9fa;
+      border-right: 1px solid #e5e7eb;
+      z-index: 1020;
+    }
+    #content { flex: 1; transition: margin-left 0.2s ease; }
+    .sidebar-collapsed #sidebar { margin-left: -260px; }
+    .sidebar-collapsed #content { margin-left: 0; }
+    @media (max-width: 767.98px) {
+      #sidebar {
+        position: fixed;
+        z-index: 1020;
+        top: 56px;
+        bottom: 0;
+        height: auto;
+      }
+      .sidebar-collapsed #sidebar { margin-left: -260px; }
+      #content { margin-left: 0; }
+      body { padding-top: 56px; }
+    }
+  </style>
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?39f18c089a03779cd05243e21b046589";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "xbc0iytpn7");
+</script>
+  
+  
+</head>
+<body>
+  
+  
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom fixed-top">
+      <div class="container-fluid">
+        <button class="btn btn-outline-secondary me-2" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+        <a class="navbar-brand fw-semibold" href="/">Online Free Tools</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="topNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="/">Home</a></li><li class="nav-item"><a class="nav-link" href="/devlogs/">Dev Logs</a></li></ul>
+          <div class="d-flex align-items-center gap-2">
+            
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="layout sidebar-collapsed" id="layoutRoot">
+    
+    <aside id="sidebar" class="bg-light border-end p-3">
+      <h6 class="text-muted text-uppercase">Navigation</h6>
+      <div class="list-group list-group-flush small" id="navList"><a class="list-group-item list-group-item-action" href="/">Home</a><a class="list-group-item list-group-item-action" href="/devlogs/">Dev Logs</a></div>
+    </aside>
+    <main id="content" class="p-4">
+      <section class="mb-3">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h1 class="h4 mb-0">“Rewrite expression, don’t invent new facts” is NOT an explicit rule line — only implied by one-master + rewrite-not-translate; fact-alignment across langs is unstated. | Dev Logs</h1>
+          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
+        </div>
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-06 21:06
+Summary: “Rewrite expression, don’t invent new facts” is NOT an explicit rule line — only implied by one-master + rewrite-not-translate; fact-alignment across langs is unstated.</p>
+<p>[question]
+“重写表达、不另起事实”是否在规则里面</p>
+<p>[try to solve]
+<strong>没有这句明文。</strong> 规则里有「重写表达」侧，<strong>没有</strong>「不另起事实 / 各语事实须对齐母版」的硬约束。</p>
+<h3>规则里已有（表达侧）</h3>
+<ul>
+<li><code>tool-i18n-localization.mdc</code>：一种母版语 → 按 brief <strong>独立重写</strong>；重写非翻译；反同构（题序/开篇可变）</li>
+<li><code>tool-creation.mdc</code> / <code>tool-i18n-seo.mdc</code>：检索向重写；禁脚本同构灌语</li>
+</ul>
+<h3>规则里没有（事实侧）</h3>
+<p>全文检索无：「事实」「不得改公式」「不另起事实」「各语事实对齐」「免责不得漂移」等表述。<br>「一致」多指 JSON-LD↔可见文案、首页主词↔工具页，<strong>不是</strong>跨语公式/边界一致。</p>
+<h3>结论</h3>
+<table>
+<thead>
+<tr>
+<th>说法</th>
+<th>在不在 rules</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>重写表达（非直译、反同构）</td>
+<td><strong>在</strong></td>
+</tr>
+<tr>
+<td>不另起事实（公式/默认行为/免责对齐母版）</td>
+<td><strong>不在（仅隐含）</strong></td>
+</tr>
+</tbody></table>
+<p>若要变成可执行规则，需在 <code>tool-i18n-localization.mdc</code> 显式加一条，例如：他语可改检索词、题序、场景切入与示例用词；<strong>不得</strong>改公式、默认算法行为、隐私/YMYL 免责结论与固定 Example 数值（除非同步改母版与全语）。</p>
+<p>[actions]</p>
+<ul>
+<li>检索 <code>.cursor/rules</code> 与 docs SEO 相关措辞；未改文件</li>
+</ul>
+</article>
+      </section>
+    </main>
+  </div>
+  
+  <footer class="bg-light border-top text-center py-3">
+    <div class="container">
+      <small class="text-muted">Online Free Tools · Learning project · Iterating</small>
+      <span class="text-muted mx-2">·</span>
+      <a class="small text-decoration-none" href="/en/about">About</a>
+    </div>
+  </footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <script>
+    const layout = document.getElementById('layoutRoot');
+    const toggle = document.getElementById('sidebarToggle');
+    if (layout && toggle) {
+      toggle.addEventListener('click', () => layout.classList.toggle('sidebar-collapsed'));
+      
+    }
+  </script>
+</body>
+</html>

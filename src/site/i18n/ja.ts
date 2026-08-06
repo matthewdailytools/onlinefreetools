@@ -113,6 +113,78 @@ const ja: SiteLangDict = {
   tool_markdown_faq_q5: '対応記法と書き出しは？',
   tool_markdown_faq_a5:
     '見出し・リスト・リンク・強調・コードブロックなど。オフライン共有用の完全 HTML も選べます。',
+  tool_yaml_json_title: 'YAML と JSON を相互変換（型ルール・複数ドキュメント対応）',
+  tool_yaml_json_description:
+    'ブラウザ内で YAML と JSON を相互変換します。手順：向きを選び、設定を貼り付け、必要なら JSON安全な型を有効にしてからコピーまたはダウンロード。--- で区切った複数ドキュメントは JSON 配列になります。例：短いサービス定義をインデント付き JSON にして API クライアントへ — 貼り付けは端末内に留まります。',
+  tool_yaml_json_article:
+    '型ルールと複数ドキュメントの扱い、ローカル処理の限界を明示した YAML ↔ JSON の双方向ページ。設定の受け渡し向けで、薄い別 URL ではありません。',
+  tool_yaml_json_dir_label: '変換の向き',
+  tool_yaml_json_tab_yaml_json: 'YAML → JSON',
+  tool_yaml_json_tab_json_yaml: 'JSON → YAML',
+  tool_yaml_json_convert: '変換',
+  tool_yaml_json_copy_json: 'JSONをコピー',
+  tool_yaml_json_copy_yaml: 'YAMLをコピー',
+  tool_yaml_json_copy_done: 'コピー完了',
+  tool_yaml_json_download_json: 'JSONをダウンロード',
+  tool_yaml_json_download_yaml: 'YAMLをダウンロード',
+  tool_yaml_json_sample: 'サンプルを読み込む',
+  tool_yaml_json_clear: 'クリア',
+  tool_yaml_json_json_safe: 'JSON安全な型（裸の yes/no を文字列のまま）',
+  tool_yaml_json_indent_label: 'インデント',
+  tool_yaml_json_indent_2: 'スペース2',
+  tool_yaml_json_indent_4: 'スペース4',
+  tool_yaml_json_indent_minify: 'JSONを圧縮',
+  tool_yaml_json_yaml_input_label: 'YAML入力',
+  tool_yaml_json_json_output_label: 'JSON出力',
+  tool_yaml_json_json_input_label: 'JSON入力',
+  tool_yaml_json_yaml_output_label: 'YAML出力',
+  tool_yaml_json_yaml_placeholder: '名前: demo\n有効: true\n項目:\n  - a\n  - b',
+  tool_yaml_json_json_placeholder: '{\n  "title": "こんにちは",\n  "count": 2\n}',
+  tool_yaml_json_sample_yaml: '名前: demo\n有効: true\n項目:\n  - a\n  - b',
+  tool_yaml_json_sample_json: '{\n  "title": "こんにちは",\n  "count": 2\n}',
+  tool_yaml_json_large_warn:
+    '貼り付けが非常に大きいです（約20万文字超）。変換が遅くなることがあります — 短い断片を試してください。',
+  tool_yaml_json_need_lib: 'js-yaml を読み込めませんでした。接続を確認して再読み込みしてください。',
+  tool_yaml_json_empty: '先に入力を貼り付けてください。',
+  tool_yaml_json_how_title: '使い方',
+  tool_yaml_json_how_body:
+    'YAML → JSON か JSON → YAML を選びます。変換はこのタブ内の js-yaml で行います。--- 区切りの複数ドキュメントは JSON 配列になり、単一ドキュメントはそのまま1つの JSON 値です。YAML のエラーは、パーサが mark を返すとき行と列を示します。',
+  tool_yaml_json_rules_title: '押さえておくルール',
+  tool_yaml_json_rules_body:
+    '既定はクラシックな js-yaml の型付けです。JSON安全な型に切り替えると挙動が変わります。双方向を1ページにまとめ、「json to yaml」だけの doorway は作りません。',
+  tool_yaml_json_rules_item_1:
+    '型付け：DEFAULT スキーマでは、引用なしの yes/no/on/off や日付っぽいスカラーが boolean などになることがあります。JSON安全スキーマは、明示型がなければ引用なしスカラーを文字列のままにします。',
+  tool_yaml_json_rules_item_2:
+    '複数ドキュメント：loadAll — 1件ならその JSON 値、2件以上なら配列。先頭だけ残して残りを黙って捨てることはしません。',
+  tool_yaml_json_rules_item_3:
+    '往復で失うもの：コメントは消えます（JSON にコメントはない）。アンカー／エイリアスは展開されて値が重複します。dump 後はキー順やスタイルが変わることがあります。',
+  tool_yaml_json_rules_item_4:
+    'プライバシー：貼り付けはアップロードされません。CDN から js-yaml を取るのはライブラリコードの取得だけで、設定本文は送りません。',
+  tool_yaml_json_example_title: '例',
+  tool_yaml_json_example:
+    'YAML の `名前: demo` とリスト `項目: [a, b]` は JSON `{"名前":"demo","項目":["a","b"]}` になります。JSON `{"title":"こんにちは","count":2}` はインデント付き YAML に dump されます。境界：裸の `flag: yes` は DEFAULT では boolean true；JSON安全な型をオンにすると文字列 "yes" のままです。',
+  tool_yaml_json_usecases_title: 'こんなときに',
+  tool_yaml_json_usecase_1:
+    'DevOps：--- 区切りの Kubernetes 複数リソース YAML をスクリプト用の JSON 配列にする。',
+  tool_yaml_json_usecase_2:
+    '開発：API の JSON ペイロードを手編集しやすい YAML に直してから設定を直す。',
+  tool_yaml_json_usecase_3:
+    'データ／AI パイプライン：人が書いた YAML パラメータと、JSON しか受けないツールをつなぐ。',
+  tool_yaml_json_faq_q1: '貼り付けはブラウザの外へ出ますか？',
+  tool_yaml_json_faq_a1:
+    '変換はこのタブ内です。CDN が js-yaml を配信することがありますが、それはコードのダウンロードだけで、YAML／JSON 本文のアップロードではありません。',
+  tool_yaml_json_faq_q2: '引用なしの yes や no は boolean になりますか？',
+  tool_yaml_json_faq_a2:
+    '既定の js-yaml スキーマではよくなります。引用なしの yes/no/on/off が boolean になることがあります。「JSON安全な型」を入れると、明示型がない限り文字列のままです。',
+  tool_yaml_json_faq_q3: '往復で何も失わずに戻せますか？',
+  tool_yaml_json_faq_a3:
+    'いいえ。コメントは JSON 側に残りません。アンカーは繰り返し値に展開されます。JSON から YAML へ dump しても元のコメントやアンカー名は戻りません。',
+  tool_yaml_json_faq_q4: '複数ドキュメントの YAML はどう扱いますか？',
+  tool_yaml_json_faq_a4:
+    '--- で区切られた文書は loadAll で解析します。1件なら1つの JSON 値、2件以上なら配列です。先頭以降を捨てることはしません。',
+  tool_yaml_json_faq_q5: 'エラーの行番号はどこから？',
+  tool_yaml_json_faq_a5:
+    '不正な YAML は、利用可能ならパーサの mark（行・列）を出します。不正な JSON は JSON.parse の報告で、YAML 風の mark はありません。',
   tool_bmi_title: 'BMI計算ツール — 体格指数の求め方',
   tool_bmi_description:
     '成人向けの体格指数（BMI）を式で算出します。手順：メートル法かヤード・ポンド法を選び、体重と身長を入力して計算し、一般的な成人区分と照合。例：70 kg・175 cm → BMI 約22.9（標準）。学習・ざっくり確認用で、診断ではありません。',
