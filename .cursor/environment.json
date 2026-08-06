@@ -1,0 +1,30 @@
+{
+  // Cloud Agent 开发环境配置（onlinefreetools / Cloudflare Workers + Pages）。
+  // 使用 Cursor 默认镜像（已含 Node.js 22 与 git/curl），无需自定义 Dockerfile。
+
+  // 环境显示名。
+  "name": "onlinefreetools",
+
+  // 安装阶段：拉取代码后刷新依赖并生成静态站点（幂等，可重复运行）。
+  // - npm ci：按 package-lock.json 干净安装依赖（含本地 wrangler/workerd 运行时）。
+  // - npm run build:site：生成首页/About/devlogs/sitemap 等静态资源到 public/。
+  "install": "npm ci && npm run build:site",
+
+  // 需要对外暴露的端口：本地 wrangler dev 默认监听 8787。
+  "ports": [
+    {
+      "name": "wrangler-dev",
+      "port": 8787
+    }
+  ],
+
+  // 常驻终端：前台运行本地开发服务器，便于查看日志与热重载。
+  // 绑定 127.0.0.1:8787；关闭 wrangler 匿名指标上报以保证非交互启动。
+  "terminals": [
+    {
+      "name": "wrangler-dev",
+      "command": "WRANGLER_SEND_METRICS=false npx wrangler dev --ip 127.0.0.1 --port 8787",
+      "description": "本地 Cloudflare Worker 开发服务器（http://127.0.0.1:8787）。"
+    }
+  ]
+}
