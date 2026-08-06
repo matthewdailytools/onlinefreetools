@@ -200,7 +200,7 @@ const en: SiteLangDict = {
     'Choose CSV → JSON or JSON → CSV. Parsing and serialization run with Papa Parse in this tab. For CSV, pick a delimiter (or auto-detect), say whether the first row is a header, and optionally infer numeric/boolean types. For JSON, nested objects flatten to dot-path columns and the column set is the union of all record keys.',
   tool_csv_json_rules_title: 'Rules you should expect',
   tool_csv_json_rules_body:
-    'Defaults keep every cell as text so IDs survive. We keep both directions on one page so “json to csv” is not a doorway slug.',
+    'What to expect when you convert: how cell types are handled, which delimiters and quoting apply, and how nested JSON maps to columns.',
   tool_csv_json_rules_item_1:
     'Types: CSV cells are strings by default. Turn on “Infer types” to get numbers/booleans — but note 007 becomes 7 and long digit strings may lose precision, so keep it off for SKUs, ZIPs and phone numbers.',
   tool_csv_json_rules_item_2:

@@ -231,7 +231,7 @@ const pt: SiteLangDict = {
     'Escolha CSV → JSON ou JSON → CSV; a análise e a geração acontecem aqui com o Papa Parse. No CSV você escolhe o separador (ou detecção automática), se a primeira linha é cabeçalho e se infere números/booleanos. No JSON, objetos aninhados viram colunas com caminho por pontos e as colunas são a união de todas as chaves.',
   tool_csv_json_rules_title: 'Regras que você deve esperar',
   tool_csv_json_rules_body:
-    'Por padrão cada célula fica como texto para não estragar identificadores. Mantemos as duas direções em uma página para que «json para csv» não seja uma URL de entrada vazia.',
+    'O que esperar ao converter: como os tipos de célula são tratados, quais separadores e aspas se aplicam e como o JSON aninhado vira colunas.',
   tool_csv_json_rules_item_1:
     'Tipos: células CSV são texto por padrão. Ative «Inferir tipos» para números/booleanos, mas 007 vira 7 e números muito longos podem perder precisão; deixe desativado para SKU, CEP e telefones.',
   tool_csv_json_rules_item_2:

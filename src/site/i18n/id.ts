@@ -357,7 +357,7 @@ const id: SiteLangDict = {
     'Pilih CSV → JSON atau JSON → CSV; penguraian dan pembuatan berjalan di tab ini dengan Papa Parse. Untuk CSV, pilih pemisah (atau deteksi otomatis), apakah baris pertama header, dan apakah angka/boolean dideteksi. Untuk JSON, objek bersarang menjadi kolom jalur titik dan kolom adalah gabungan semua kunci.',
   tool_csv_json_rules_title: 'Aturan yang perlu diketahui',
   tool_csv_json_rules_body:
-    'Secara bawaan setiap sel diperlakukan sebagai teks agar ID tidak rusak. Kedua arah dalam satu halaman agar “json ke csv” bukan URL pintu.',
+    'Yang bisa diharapkan saat mengonversi: bagaimana tipe sel ditangani, pemisah dan aturan tanda kutip mana yang berlaku, dan bagaimana JSON bersarang dipetakan ke kolom.',
   tool_csv_json_rules_item_1:
     'Tipe: sel CSV bawaannya teks. Aktifkan “Deteksi tipe” untuk angka/boolean, tetapi 007 menjadi 7 dan deret angka panjang bisa kehilangan presisi; matikan untuk SKU, kode pos, dan nomor telepon.',
   tool_csv_json_rules_item_2:

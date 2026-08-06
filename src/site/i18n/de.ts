@@ -357,7 +357,7 @@ const de: SiteLangDict = {
     'Wählen Sie CSV → JSON oder JSON → CSV; Parsen und Erzeugen laufen hier mit Papa Parse. Bei CSV wählen Sie Trennzeichen (oder automatisch), ob die erste Zeile eine Kopfzeile ist und ob Zahlen/Booleans erkannt werden. Bei JSON werden verschachtelte Objekte über Punktpfade zu Spalten, und die Spalten sind die Vereinigung aller Schlüssel.',
   tool_csv_json_rules_title: 'Regeln, mit denen Sie rechnen sollten',
   tool_csv_json_rules_body:
-    'Standardmäßig bleibt jede Zelle Text, damit IDs erhalten bleiben. Beide Richtungen stehen auf einer Seite, damit „json zu csv“ keine Brücken-URL ist.',
+    'Was bei der Umwandlung zu erwarten ist: wie Zelltypen behandelt werden, welche Trennzeichen und Anführungsregeln gelten und wie verschachteltes JSON auf Spalten abgebildet wird.',
   tool_csv_json_rules_item_1:
     'Typen: CSV-Zellen sind standardmäßig Text. „Typen erkennen“ liefert Zahlen/Booleans, aber 007 wird zu 7 und lange Ziffernfolgen können an Genauigkeit verlieren; für SKU, Postleitzahlen und Telefonnummern besser aus lassen.',
   tool_csv_json_rules_item_2:

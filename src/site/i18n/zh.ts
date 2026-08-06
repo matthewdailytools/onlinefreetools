@@ -514,7 +514,7 @@ const zh: SiteLangDict = {
     '选择 CSV → JSON 或 JSON → CSV，解析与生成都在本页用 Papa Parse 完成。CSV 方向可选分隔符（或自动识别）、是否首行表头、是否推断数字/布尔类型；JSON 方向会把嵌套对象按点号路径拆成列，列取所有记录键的并集。',
   tool_csv_json_rules_title: '你应预期的规则',
   tool_csv_json_rules_body:
-    '默认所有单元格按文本处理，保证编号不失真。双向同页，避免把「json 转 csv」做成独立薄页。',
+    '转换时可以预期这些：单元格类型如何处理、支持哪些分隔符与引号规则，以及嵌套 JSON 如何对应到列。',
   tool_csv_json_rules_item_1:
     '类型：CSV 默认全是字符串。勾选「推断类型」才会转成数字/布尔，但 007 会变成 7、超长数字串可能丢精度，所以 SKU、邮编、电话建议不勾。',
   tool_csv_json_rules_item_2:
