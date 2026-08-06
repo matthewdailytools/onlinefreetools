@@ -940,6 +940,17 @@ tool_ip_address_title: 'Узнать свой IP — Показать публи
     'Калькулятор предназначен для изучения понятий микроэкономики. Это не бизнес-, ценовой или инвестиционный совет.',
   tool_marginal_revenue_references:
     'Статья Investopedia о предельной выручке; вводное изложение MR = ΔTR/ΔQ (напр. OpenStax).',
+  tool_share_title: 'Поделиться инструментом',
+  tool_share_hint: 'Поделитесь в соцсетях, скопируйте ссылку или используйте системный шаринг.',
+  tool_share_networks_label: 'Поделиться в',
+  tool_share_copy: 'Копировать ссылку',
+  tool_share_copied: 'Скопировано',
+  tool_share_native: 'Поделиться…',
+  tool_feedback_title: 'Вопросы и отзывы',
+  tool_feedback_body: 'Что-то неясно, сломано или отсутствует? Напишите нам — мы читаем каждое сообщение об этих инструментах.',
+  tool_feedback_email_label: 'Email',
+  tool_feedback_cta: 'Написать письмо',
+  tool_feedback_subject: 'Отзыв об инструменте'
 
 };
 export default ru;

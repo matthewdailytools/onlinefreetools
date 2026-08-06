@@ -940,6 +940,17 @@ tool_ip_address_title: '自分のIPアドレスを確認 — グローバルIP�
     'この計算ツールはミクロ経済学の概念学習用です。ビジネス・価格・投資の助言ではありません。',
   tool_marginal_revenue_references:
     'Investopediaの限界収入項目；MR = ΔTR/ΔQ の入門的扱い（例：OpenStax）。',
+  tool_share_title: 'このツールを共有',
+  tool_share_hint: 'SNSで共有、リンクをコピー、または端末の共有機能を使えます。',
+  tool_share_networks_label: '共有先',
+  tool_share_copy: 'リンクをコピー',
+  tool_share_copied: 'コピーしました',
+  tool_share_native: '共有…',
+  tool_feedback_title: 'お問い合わせ・フィードバック',
+  tool_feedback_body: '分かりにくい点、不具合、不足があればメールでお知らせください。ツールに関するメールはすべて確認します。',
+  tool_feedback_email_label: 'メール',
+  tool_feedback_cta: 'メールを書く',
+  tool_feedback_subject: 'ツールへのフィードバック'
 
 };
 export default ja;

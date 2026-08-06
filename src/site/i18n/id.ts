@@ -938,6 +938,17 @@ tool_ip_address_title: 'Berapa IP saya — Lihat IP publik Anda',
   tool_gradient_faq_a3: 'Objek matematikanya sama: ∇ dari loss skalar. Halaman ini mengajarkan definisi, bukan melatih model.',
   tool_gradient_faq_q4: 'Apakah ini kalkulator kemiringan dua titik?',
   tool_gradient_faq_a4: 'Bukan. Kemiringan rise/run alat lain; di sini ∇f adalah vektor parsial.',
+  tool_share_title: 'Bagikan alat ini',
+  tool_share_hint: 'Bagikan di jejaring sosial, salin tautan, atau gunakan berbagi perangkat.',
+  tool_share_networks_label: 'Bagikan ke',
+  tool_share_copy: 'Salin tautan',
+  tool_share_copied: 'Disalin',
+  tool_share_native: 'Bagikan…',
+  tool_feedback_title: 'Pertanyaan atau masukan',
+  tool_feedback_body: 'Ada yang kurang jelas, rusak, atau hilang? Kirim email — kami membaca setiap pesan tentang alat ini.',
+  tool_feedback_email_label: 'Email',
+  tool_feedback_cta: 'Tulis email',
+  tool_feedback_subject: 'Masukan alat'
 
 };
 export default id;

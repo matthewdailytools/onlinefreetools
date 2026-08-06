@@ -61,36 +61,11 @@
     })();
   </script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="/styles/site.css" rel="stylesheet" />
   <style>
-    body { min-height: 100vh; padding-top: 56px; }
-    .layout { display: flex; min-height: 100vh; }
-    /* Sidebar: desktop - sticky under the fixed header */
-    #sidebar {
-      width: 260px;
-      transition: margin-left 0.2s ease;
-      position: sticky;
-      top: 56px;
-      height: calc(100vh - 56px);
-      overflow-y: auto;
-      background: #f8f9fa;
-      border-right: 1px solid #e5e7eb;
-      z-index: 1020;
-    }
-    #content { flex: 1; transition: margin-left 0.2s ease; }
-    .sidebar-collapsed #sidebar { margin-left: -260px; }
-    .sidebar-collapsed #content { margin-left: 0; }
-    @media (max-width: 767.98px) {
-      #sidebar {
-        position: fixed;
-        z-index: 1020;
-        top: 56px;
-        bottom: 0;
-        height: auto;
-      }
-      .sidebar-collapsed #sidebar { margin-left: -260px; }
-      #content { margin-left: 0; }
-      body { padding-top: 56px; }
-    }
+    body { min-height: 100vh; padding-top: var(--header-h, 56px); }
+    .layout { display: flex; min-height: calc(100vh - var(--header-h, 56px)); }
   </style>
   
 <script>
@@ -112,14 +87,17 @@ var _hmt = _hmt || [];
   <meta name="google-site-verification" content="DRJRq9AI8KKITkdiZbdd7zu4LxrIc38CPOd9OeK15FM" />
   
 </head>
-<body>
+<body class="is-home-page">
   
   
   <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light site-navbar border-bottom fixed-top">
       <div class="container-fluid">
         <button class="btn btn-outline-secondary me-2" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
-        <a class="navbar-brand fw-semibold" href="/fr/">Online Free Tools</a>
+        <a class="navbar-brand" href="/fr/">
+          <img class="navbar-brand-logo" src="/brand-logo.svg" width="28" height="28" alt="" decoding="async" />
+          <span class="navbar-brand-text">Online Free Tools</span>
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -140,149 +118,222 @@ var _hmt = _hmt || [];
   </header>
   <div class="layout sidebar-collapsed" id="layoutRoot">
     
-    <aside id="sidebar" class="bg-light border-end p-3">
-      <h6 class="text-muted text-uppercase">Catégories</h6>
+    <aside id="sidebar" class="border-end">
+      <h2 class="sidebar-title h6">Catégories</h2>
       <div class="list-group list-group-flush small" id="categoryList"><a class="list-group-item list-group-item-action" href="#cat-calculator">Calculateurs</a><a class="list-group-item list-group-item-action" href="#cat-dev">Développeur</a></div>
     </aside>
     <main id="content" class="p-4">
-    <section id="featured" class="mb-4">
-      <div class="d-flex justify-content-between align-items-center mb-3">
-        <h2 class="h5 mb-0">À la une</h2>
+    <div class="home-wrap">
+    <section class="home-hero" aria-labelledby="home-hero-heading">
+      <div class="home-hero-inner">
+        <h1 class="home-hero-brand" id="home-hero-heading">Online Free Tools</h1>
+        <p class="home-hero-lead">Utilitaires gratuits pour le quotidien — calculateurs, convertisseurs et aides webmaster. Sans inscription.</p>
+        <div class="home-hero-actions">
+          <a class="btn btn-primary btn-lg" href="#all-tools">Parcourir les outils</a>
+          <a class="btn btn-outline-primary btn-lg" href="#featured">À la une</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="home-main">
+    <section class="home-why" aria-label="Pourquoi ces outils">
+      <div class="home-why-item">
+        <h3>Dans le navigateur</h3>
+        <p>La plupart traitent localement. Nous indiquons quand un Worker est requis.</p>
+      </div>
+      <div class="home-why-item">
+        <h3>Gratuit</h3>
+        <p>Sans compte. Ouvrez, utilisez, copiez le résultat.</p>
+      </div>
+      <div class="home-why-item">
+        <h3>Dix langues</h3>
+        <p>Interface et pages en dix langues avec hreflang.</p>
+      </div>
+    </section>
+
+    <section id="featured" class="mb-5">
+      <div class="home-section-head">
+        <h2>À la une</h2>
         <a class="btn btn-sm btn-outline-secondary" href="#all-tools">Voir tout</a>
       </div>
-      <div class="row row-cols-1 row-cols-md-3 row-cols-xl-4 g-3">
+      <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
         
   <div class="col">
-    <div class="card h-100 shadow-sm d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h5 class="card-title">En-têtes HTTP en ligne</h5>
-        <p class="card-text text-muted flex-grow-1">Vérifiez les en-têtes HTTP de réponse d'une URL : HEAD/GET, redirections et carte d'en-têtes depuis l'edge.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/website-headers.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">En-têtes HTTP en ligne</h3>
+        </div>
+        <p class="card-text flex-grow-1">Vérifiez les en-têtes HTTP de réponse d'une URL : HEAD/GET, redirections et carte d'en-têtes depuis l'edge.</p>
         <a href="/fr/tools/website-headers" class="mt-auto btn btn-primary btn-sm">Ouvrir</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 shadow-sm d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h5 class="card-title">Quelle est mon adresse IP — Voir votre IP publique</h5>
-        <p class="card-text text-muted flex-grow-1">Affichez l’IP publique vue par notre edge. Avec VPN : IP de sortie.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/ip-address.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">Quelle est mon adresse IP — Voir votre IP publique</h3>
+        </div>
+        <p class="card-text flex-grow-1">Affichez l’IP publique vue par notre edge. Avec VPN : IP de sortie.</p>
         <a href="/fr/tools/ip-address" class="mt-auto btn btn-primary btn-sm">Ouvrir</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 shadow-sm d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h5 class="card-title">Markdown ↔ HTML</h5>
-        <p class="card-text text-muted flex-grow-1">Convertir Markdown ↔ HTML avec aperçu assaini.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/markdown-to-html.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">Markdown ↔ HTML</h3>
+        </div>
+        <p class="card-text flex-grow-1">Convertir Markdown ↔ HTML avec aperçu assaini.</p>
         <a href="/fr/tools/markdown-to-html" class="mt-auto btn btn-primary btn-sm">Ouvrir</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 shadow-sm d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h5 class="card-title">Comparer des textes en ligne</h5>
-        <p class="card-text text-muted flex-grow-1">Voyez les différences entre deux textes ligne, mot ou caractère.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/text-diff.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">Comparer des textes en ligne</h3>
+        </div>
+        <p class="card-text flex-grow-1">Voyez les différences entre deux textes ligne, mot ou caractère.</p>
         <a href="/fr/tools/text-diff" class="mt-auto btn btn-primary btn-sm">Ouvrir</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 shadow-sm d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h5 class="card-title">YAML ↔ JSON</h5>
-        <p class="card-text text-muted flex-grow-1">Convertir YAML ↔ JSON avec types et multi-documents.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/yaml-json.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">YAML ↔ JSON</h3>
+        </div>
+        <p class="card-text flex-grow-1">Convertir YAML ↔ JSON avec types et multi-documents.</p>
         <a href="/fr/tools/yaml-json" class="mt-auto btn btn-primary btn-sm">Ouvrir</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 shadow-sm d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h5 class="card-title">CSV ↔ JSON</h5>
-        <p class="card-text text-muted flex-grow-1">Convertir CSV ↔ JSON avec séparateur, en-tête et types.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/csv-json.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">CSV ↔ JSON</h3>
+        </div>
+        <p class="card-text flex-grow-1">Convertir CSV ↔ JSON avec séparateur, en-tête et types.</p>
         <a href="/fr/tools/csv-json" class="mt-auto btn btn-primary btn-sm">Ouvrir</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 shadow-sm d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h5 class="card-title">Entités HTML</h5>
-        <p class="card-text text-muted flex-grow-1">Encoder/décoder les entités HTML avec portée et formes numériques — local.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/html-entity.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">Entités HTML</h3>
+        </div>
+        <p class="card-text flex-grow-1">Encoder/décoder les entités HTML avec portée et formes numériques — local.</p>
         <a href="/fr/tools/html-entity" class="mt-auto btn btn-primary btn-sm">Ouvrir</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 shadow-sm d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h5 class="card-title">Ajouter WWW au DNS</h5>
-        <p class="card-text text-muted flex-grow-1">Générer les enregistrements www, vérifier le DNS, guides Cloudflare/Vercel.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/add-www-to-dns.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">Ajouter WWW au DNS</h3>
+        </div>
+        <p class="card-text flex-grow-1">Générer les enregistrements www, vérifier le DNS, guides Cloudflare/Vercel.</p>
         <a href="/fr/tools/add-www-to-dns" class="mt-auto btn btn-primary btn-sm">Ouvrir</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 shadow-sm d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h5 class="card-title">IndexNow</h5>
-        <p class="card-text text-muted flex-grow-1">IndexNow : générer la clé, vérifier le .txt, envoyer des URL à Bing.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/indexnow.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">IndexNow</h3>
+        </div>
+        <p class="card-text flex-grow-1">IndexNow : générer la clé, vérifier le .txt, envoyer des URL à Bing.</p>
         <a href="/fr/tools/indexnow" class="mt-auto btn btn-primary btn-sm">Ouvrir</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 shadow-sm d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h5 class="card-title">Calculateur d'IMC — Comment calculer</h5>
-        <p class="card-text text-muted flex-grow-1">Calculez l'IMC avec la formule adulte : métrique ou impérial, poids et taille. Exemple 70 kg / 175 cm → 22,9. Dépistage éducatif uniquement.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-bmi.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">Calculateur d'IMC — Comment calculer</h3>
+        </div>
+        <p class="card-text flex-grow-1">Calculez l'IMC avec la formule adulte : métrique ou impérial, poids et taille. Exemple 70 kg / 175 cm → 22,9. Dépistage éducatif uniquement.</p>
         <a href="/fr/tools/how-to-calculate-bmi" class="mt-auto btn btn-primary btn-sm">Ouvrir</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 shadow-sm d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h5 class="card-title">Calculateur de ROI — Calculer le retour sur investissement</h5>
-        <p class="card-text text-muted flex-grow-1">ROI simple à partir du coût et de la valeur finale. Exemple : 1000→1300 = 30 %. Illustration éducative uniquement.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-roi.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">Calculateur de ROI — Calculer le retour sur investissement</h3>
+        </div>
+        <p class="card-text flex-grow-1">ROI simple à partir du coût et de la valeur finale. Exemple : 1000→1300 = 30 %. Illustration éducative uniquement.</p>
         <a href="/fr/tools/how-to-calculate-roi" class="mt-auto btn btn-primary btn-sm">Ouvrir</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 shadow-sm d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h5 class="card-title">Calculateur de revenu marginal — Formule ΔRT / ΔQ</h5>
-        <p class="card-text text-muted flex-grow-1">Calculez MR = ΔRT / ΔQ avec deux points quantité/revenu. Exemple : Q 10→11, RT 1000→1080 → MR 80. Usage éducatif uniquement.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-marginal-revenue.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">Calculateur de revenu marginal — Formule ΔRT / ΔQ</h3>
+        </div>
+        <p class="card-text flex-grow-1">Calculez MR = ΔRT / ΔQ avec deux points quantité/revenu. Exemple : Q 10→11, RT 1000→1080 → MR 80. Usage éducatif uniquement.</p>
         <a href="/fr/tools/how-to-calculate-marginal-revenue" class="mt-auto btn btn-primary btn-sm">Ouvrir</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 shadow-sm d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h5 class="card-title">Pieds carrés en m² — Conversion pour logement et rénovation</h5>
-        <p class="card-text text-muted flex-grow-1">Convertissez la surface d’une pièce entre pieds carrés et mètres carrés pour annonces et rénovation. Processus : choisissez ft/m/in, saisissez longueur × largeur, calculez l’aire, puis affichez ft² et m² avec le facteur NIST 1 ft² = 0.09290304 m². Exemple : appart. 850 sq ft ≈ 78,97 m².</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/square-feet.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">Pieds carrés en m² — Conversion pour logement et rénovation</h3>
+        </div>
+        <p class="card-text flex-grow-1">Convertissez la surface d’une pièce entre pieds carrés et mètres carrés pour annonces et rénovation. Processus : choisissez ft/m/in, saisissez longueur × largeur, calculez l’aire, puis affichez ft² et m² avec le facteur NIST 1 ft² = 0.09290304 m². Exemple : appart. 850 sq ft ≈ 78,97 m².</p>
         <a href="/fr/tools/square-feet" class="mt-auto btn btn-primary btn-sm">Ouvrir</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 shadow-sm d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h5 class="card-title">Calculateur de variation en % — De l’ancienne à la nouvelle valeur</h5>
-        <p class="card-text text-muted flex-grow-1">Calculez la hausse ou la baisse en pourcentage entre une ancienne et une nouvelle valeur. Processus : saisissez les deux, appliquez (nouveau − ancien) / ancien × 100, lisez le signe. Exemple : 80 → 100 = +25 %. Pensé pour CA MoM, DAU et prix — pas des points de pourcentage.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-percentage-change.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">Calculateur de variation en % — De l’ancienne à la nouvelle valeur</h3>
+        </div>
+        <p class="card-text flex-grow-1">Calculez la hausse ou la baisse en pourcentage entre une ancienne et une nouvelle valeur. Processus : saisissez les deux, appliquez (nouveau − ancien) / ancien × 100, lisez le signe. Exemple : 80 → 100 = +25 %. Pensé pour CA MoM, DAU et prix — pas des points de pourcentage.</p>
         <a href="/fr/tools/how-to-calculate-percentage-change" class="mt-auto btn btn-primary btn-sm">Ouvrir</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 shadow-sm d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h5 class="card-title">Calculateur de gradient — ∇f multivariable (dérivées partielles)</h5>
-        <p class="card-text text-muted flex-grow-1">Calculez le gradient ∇f d’un champ scalaire comme vecteur de dérivées partielles. Processus : dériver pour chaque variable, assembler ∇f, évaluer en un point. Démo f(x,y)=x²y+3y → ∇f=(2xy, x²+3) ; en (1,2) → (4,4). Utile en optimisation et descente de gradient ML.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-gradient.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">Calculateur de gradient — ∇f multivariable (dérivées partielles)</h3>
+        </div>
+        <p class="card-text flex-grow-1">Calculez le gradient ∇f d’un champ scalaire comme vecteur de dérivées partielles. Processus : dériver pour chaque variable, assembler ∇f, évaluer en un point. Démo f(x,y)=x²y+3y → ∇f=(2xy, x²+3) ; en (1,2) → (4,4). Utile en optimisation et descente de gradient ML.</p>
         <a href="/fr/tools/how-to-calculate-gradient" class="mt-auto btn btn-primary btn-sm">Ouvrir</a>
       </div>
     </div>
@@ -291,68 +342,84 @@ var _hmt = _hmt || [];
     </section>
 
     <section id="all-tools">
-      <div class="d-flex justify-content-between align-items-center mb-3">
-        <h2 class="h5 mb-0">Tous les outils</h2>
+      <div class="home-section-head">
+        <h2>Tous les outils</h2>
       </div>
 
-      <div class="mb-4" id="cat-calculator">
-        <div class="d-flex align-items-center mb-2 flex-wrap gap-2">
-          <span class="badge text-bg-secondary">Calculateurs</span>
-          <span class="text-muted small">formules, unités, comment calculer</span>
-        </div>
-        <p class="small text-muted mb-3">Calculateurs interactifs avec formules visibles et exemples.</p>
+      <div class="home-cat" id="cat-calculator">
+        <span class="home-cat-label">Calculateurs</span>
+        <h3>formules, unités, comment calculer</h3>
+        <p class="home-cat-blurb">Calculateurs interactifs avec formules visibles et exemples.</p>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
           
   <div class="col">
-    <div class="card h-100 d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h6 class="card-title">Calculateur d'IMC — Comment calculer</h6>
-        <p class="card-text small text-muted flex-grow-1">Calculez l'IMC avec la formule adulte : métrique ou impérial, poids et taille. Exemple 70 kg / 175 cm → 22,9. Dépistage éducatif uniquement.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-bmi.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">Calculateur d'IMC — Comment calculer</h3>
+        </div>
+        <p class="card-text small flex-grow-1">Calculez l'IMC avec la formule adulte : métrique ou impérial, poids et taille. Exemple 70 kg / 175 cm → 22,9. Dépistage éducatif uniquement.</p>
         <a href="/fr/tools/how-to-calculate-bmi" class="mt-auto btn btn-outline-primary btn-sm">Ouvrir</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h6 class="card-title">Calculateur de ROI — Calculer le retour sur investissement</h6>
-        <p class="card-text small text-muted flex-grow-1">ROI simple à partir du coût et de la valeur finale. Exemple : 1000→1300 = 30 %. Illustration éducative uniquement.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-roi.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">Calculateur de ROI — Calculer le retour sur investissement</h3>
+        </div>
+        <p class="card-text small flex-grow-1">ROI simple à partir du coût et de la valeur finale. Exemple : 1000→1300 = 30 %. Illustration éducative uniquement.</p>
         <a href="/fr/tools/how-to-calculate-roi" class="mt-auto btn btn-outline-primary btn-sm">Ouvrir</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h6 class="card-title">Calculateur de revenu marginal — Formule ΔRT / ΔQ</h6>
-        <p class="card-text small text-muted flex-grow-1">Calculez MR = ΔRT / ΔQ avec deux points quantité/revenu. Exemple : Q 10→11, RT 1000→1080 → MR 80. Usage éducatif uniquement.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-marginal-revenue.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">Calculateur de revenu marginal — Formule ΔRT / ΔQ</h3>
+        </div>
+        <p class="card-text small flex-grow-1">Calculez MR = ΔRT / ΔQ avec deux points quantité/revenu. Exemple : Q 10→11, RT 1000→1080 → MR 80. Usage éducatif uniquement.</p>
         <a href="/fr/tools/how-to-calculate-marginal-revenue" class="mt-auto btn btn-outline-primary btn-sm">Ouvrir</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h6 class="card-title">Pieds carrés en m² — Conversion pour logement et rénovation</h6>
-        <p class="card-text small text-muted flex-grow-1">Convertissez la surface d’une pièce entre pieds carrés et mètres carrés pour annonces et rénovation. Processus : choisissez ft/m/in, saisissez longueur × largeur, calculez l’aire, puis affichez ft² et m² avec le facteur NIST 1 ft² = 0.09290304 m². Exemple : appart. 850 sq ft ≈ 78,97 m².</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/square-feet.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">Pieds carrés en m² — Conversion pour logement et rénovation</h3>
+        </div>
+        <p class="card-text small flex-grow-1">Convertissez la surface d’une pièce entre pieds carrés et mètres carrés pour annonces et rénovation. Processus : choisissez ft/m/in, saisissez longueur × largeur, calculez l’aire, puis affichez ft² et m² avec le facteur NIST 1 ft² = 0.09290304 m². Exemple : appart. 850 sq ft ≈ 78,97 m².</p>
         <a href="/fr/tools/square-feet" class="mt-auto btn btn-outline-primary btn-sm">Ouvrir</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h6 class="card-title">Calculateur de variation en % — De l’ancienne à la nouvelle valeur</h6>
-        <p class="card-text small text-muted flex-grow-1">Calculez la hausse ou la baisse en pourcentage entre une ancienne et une nouvelle valeur. Processus : saisissez les deux, appliquez (nouveau − ancien) / ancien × 100, lisez le signe. Exemple : 80 → 100 = +25 %. Pensé pour CA MoM, DAU et prix — pas des points de pourcentage.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-percentage-change.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">Calculateur de variation en % — De l’ancienne à la nouvelle valeur</h3>
+        </div>
+        <p class="card-text small flex-grow-1">Calculez la hausse ou la baisse en pourcentage entre une ancienne et une nouvelle valeur. Processus : saisissez les deux, appliquez (nouveau − ancien) / ancien × 100, lisez le signe. Exemple : 80 → 100 = +25 %. Pensé pour CA MoM, DAU et prix — pas des points de pourcentage.</p>
         <a href="/fr/tools/how-to-calculate-percentage-change" class="mt-auto btn btn-outline-primary btn-sm">Ouvrir</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h6 class="card-title">Calculateur de gradient — ∇f multivariable (dérivées partielles)</h6>
-        <p class="card-text small text-muted flex-grow-1">Calculez le gradient ∇f d’un champ scalaire comme vecteur de dérivées partielles. Processus : dériver pour chaque variable, assembler ∇f, évaluer en un point. Démo f(x,y)=x²y+3y → ∇f=(2xy, x²+3) ; en (1,2) → (4,4). Utile en optimisation et descente de gradient ML.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-gradient.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">Calculateur de gradient — ∇f multivariable (dérivées partielles)</h3>
+        </div>
+        <p class="card-text small flex-grow-1">Calculez le gradient ∇f d’un champ scalaire comme vecteur de dérivées partielles. Processus : dériver pour chaque variable, assembler ∇f, évaluer en un point. Démo f(x,y)=x²y+3y → ∇f=(2xy, x²+3) ; en (1,2) → (4,4). Utile en optimisation et descente de gradient ML.</p>
         <a href="/fr/tools/how-to-calculate-gradient" class="mt-auto btn btn-outline-primary btn-sm">Ouvrir</a>
       </div>
     </div>
@@ -360,91 +427,116 @@ var _hmt = _hmt || [];
         </div>
       </div>
 
-      <div class="mb-4" id="cat-dev">
-        <div class="d-flex align-items-center mb-2 flex-wrap gap-2">
-          <span class="badge text-bg-secondary">Développeur</span>
-          <span class="text-muted small">déboguer, générer, valider</span>
-        </div>
-        <p class="small text-muted mb-3">Utilitaires développeur — sans inscription, résultats copiables.</p>
+      <div class="home-cat" id="cat-dev">
+        <span class="home-cat-label">Développeur</span>
+        <h3>déboguer, générer, valider</h3>
+        <p class="home-cat-blurb">Utilitaires développeur — sans inscription, résultats copiables.</p>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
           
   <div class="col">
-    <div class="card h-100 d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h6 class="card-title">En-têtes HTTP en ligne</h6>
-        <p class="card-text small text-muted flex-grow-1">Vérifiez les en-têtes HTTP de réponse d'une URL : HEAD/GET, redirections et carte d'en-têtes depuis l'edge.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/website-headers.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">En-têtes HTTP en ligne</h3>
+        </div>
+        <p class="card-text small flex-grow-1">Vérifiez les en-têtes HTTP de réponse d'une URL : HEAD/GET, redirections et carte d'en-têtes depuis l'edge.</p>
         <a href="/fr/tools/website-headers" class="mt-auto btn btn-outline-primary btn-sm">Ouvrir</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h6 class="card-title">Quelle est mon adresse IP — Voir votre IP publique</h6>
-        <p class="card-text small text-muted flex-grow-1">Affichez l’IP publique vue par notre edge. Avec VPN : IP de sortie.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/ip-address.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">Quelle est mon adresse IP — Voir votre IP publique</h3>
+        </div>
+        <p class="card-text small flex-grow-1">Affichez l’IP publique vue par notre edge. Avec VPN : IP de sortie.</p>
         <a href="/fr/tools/ip-address" class="mt-auto btn btn-outline-primary btn-sm">Ouvrir</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h6 class="card-title">Markdown ↔ HTML</h6>
-        <p class="card-text small text-muted flex-grow-1">Convertir Markdown ↔ HTML avec aperçu assaini.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/markdown-to-html.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">Markdown ↔ HTML</h3>
+        </div>
+        <p class="card-text small flex-grow-1">Convertir Markdown ↔ HTML avec aperçu assaini.</p>
         <a href="/fr/tools/markdown-to-html" class="mt-auto btn btn-outline-primary btn-sm">Ouvrir</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h6 class="card-title">Comparer des textes en ligne</h6>
-        <p class="card-text small text-muted flex-grow-1">Voyez les différences entre deux textes ligne, mot ou caractère.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/text-diff.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">Comparer des textes en ligne</h3>
+        </div>
+        <p class="card-text small flex-grow-1">Voyez les différences entre deux textes ligne, mot ou caractère.</p>
         <a href="/fr/tools/text-diff" class="mt-auto btn btn-outline-primary btn-sm">Ouvrir</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h6 class="card-title">YAML ↔ JSON</h6>
-        <p class="card-text small text-muted flex-grow-1">Convertir YAML ↔ JSON avec types et multi-documents.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/yaml-json.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">YAML ↔ JSON</h3>
+        </div>
+        <p class="card-text small flex-grow-1">Convertir YAML ↔ JSON avec types et multi-documents.</p>
         <a href="/fr/tools/yaml-json" class="mt-auto btn btn-outline-primary btn-sm">Ouvrir</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h6 class="card-title">CSV ↔ JSON</h6>
-        <p class="card-text small text-muted flex-grow-1">Convertir CSV ↔ JSON avec séparateur, en-tête et types.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/csv-json.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">CSV ↔ JSON</h3>
+        </div>
+        <p class="card-text small flex-grow-1">Convertir CSV ↔ JSON avec séparateur, en-tête et types.</p>
         <a href="/fr/tools/csv-json" class="mt-auto btn btn-outline-primary btn-sm">Ouvrir</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h6 class="card-title">Entités HTML</h6>
-        <p class="card-text small text-muted flex-grow-1">Encoder/décoder les entités HTML avec portée et formes numériques — local.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/html-entity.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">Entités HTML</h3>
+        </div>
+        <p class="card-text small flex-grow-1">Encoder/décoder les entités HTML avec portée et formes numériques — local.</p>
         <a href="/fr/tools/html-entity" class="mt-auto btn btn-outline-primary btn-sm">Ouvrir</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h6 class="card-title">Ajouter WWW au DNS</h6>
-        <p class="card-text small text-muted flex-grow-1">Générer les enregistrements www, vérifier le DNS, guides Cloudflare/Vercel.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/add-www-to-dns.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">Ajouter WWW au DNS</h3>
+        </div>
+        <p class="card-text small flex-grow-1">Générer les enregistrements www, vérifier le DNS, guides Cloudflare/Vercel.</p>
         <a href="/fr/tools/add-www-to-dns" class="mt-auto btn btn-outline-primary btn-sm">Ouvrir</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h6 class="card-title">IndexNow</h6>
-        <p class="card-text small text-muted flex-grow-1">IndexNow : générer la clé, vérifier le .txt, envoyer des URL à Bing.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/indexnow.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">IndexNow</h3>
+        </div>
+        <p class="card-text small flex-grow-1">IndexNow : générer la clé, vérifier le .txt, envoyer des URL à Bing.</p>
         <a href="/fr/tools/indexnow" class="mt-auto btn btn-outline-primary btn-sm">Ouvrir</a>
       </div>
     </div>
@@ -452,10 +544,12 @@ var _hmt = _hmt || [];
         </div>
       </div>
     </section>
+    </div>
+    </div>
   </main>
   </div>
   
-  <footer class="bg-light border-top text-center py-3">
+  <footer class="site-footer border-top text-center py-3">
     <div class="container">
       <small class="text-muted">Online Free Tools · Projet d’apprentissage · Itération</small>
       <span class="text-muted mx-2">·</span>

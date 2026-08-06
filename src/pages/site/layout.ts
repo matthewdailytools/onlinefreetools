@@ -32,50 +32,10 @@ export const absoluteUrl = (pathnameOrUrl: string) => {
 	}
 };
 
+/** 布局行为已迁入 /styles/site.css；此处仅保留极薄兜底 */
 const sidebarCss = `
-  body { min-height: 100vh; padding-top: 56px; box-sizing: border-box; }
-  .layout { display: flex; min-height: calc(100vh - 56px); }
-  /* Sidebar: desktop - sticky under the fixed header */
-  #sidebar {
-    width: 260px;
-    transition: margin-left 0.2s ease;
-    position: sticky;
-    top: 56px;
-    height: calc(100vh - 56px);
-    overflow-y: auto;
-    background: #f8f9fa;
-    border-right: 1px solid #e5e7eb;
-    z-index: 1020;
-  }
-  #content { flex: 1; transition: margin-left 0.2s ease; }
-  .sidebar-collapsed #sidebar { margin-left: -260px; }
-  .sidebar-collapsed #content { margin-left: 0; }
-
-  /* Desktop: keep navbar items on one line and prevent wrapping */
-  @media (min-width: 768px) {
-    .navbar { min-height: 56px; }
-    .navbar .container-fluid { align-items: center; }
-    .navbar .d-flex { align-items: center; gap: .5rem; flex-wrap: nowrap; }
-    .navbar .d-flex form.d-flex { display: flex; gap: .5rem; align-items: center; }
-    .navbar .d-flex form.d-flex .form-control { max-width: 200px; }
-    .navbar .d-flex form.d-flex .btn { white-space: nowrap; flex-shrink: 0; }
-    .navbar-brand { white-space: nowrap; }
-  }
-
-  /* Mobile: fixed sliding drawer under the header */
-  @media (max-width: 767.98px) {
-    #sidebar {
-      position: fixed;
-      z-index: 1020;
-      top: 56px;
-      bottom: 0;
-      height: auto;
-    }
-    .sidebar-collapsed #sidebar { margin-left: -260px; }
-    .sidebar-mobile-collapsed #sidebar { margin-left: -260px; }
-    #content { margin-left: 0; }
-    body { padding-top: 56px; }
-  }
+  body { min-height: 100vh; padding-top: var(--header-h, 56px); box-sizing: border-box; }
+  .layout { display: flex; min-height: calc(100vh - var(--header-h, 56px)); }
 `;
 
 export type HreflangAlternate = { lang: SiteLang; href: string };
@@ -184,12 +144,13 @@ export const renderLayout = (opts: {
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link href="${BOOTSTRAP_CSS}" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="/styles/omnicalc.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="/styles/site.css" rel="stylesheet" />
   <style>${sidebarCss}</style>
   ${CLARITY_SCRIPT}
   ${opts.extraHeadHtml || ''}
 </head>
-<body>
+<body class="is-tool-page">
   ${opts.headerHtml}
   <div class="layout sidebar-mobile-collapsed" id="layoutRoot">
     ${opts.sidebarHtml}

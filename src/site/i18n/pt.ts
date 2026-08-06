@@ -938,6 +938,17 @@ tool_ip_address_title: 'Qual é o meu IP — Ver seu IP público',
   tool_gradient_faq_a3: 'Sim, o mesmo objeto: ∇ de uma perda escalar. A página ensina a definição; não treina modelo.',
   tool_gradient_faq_q4: 'É uma calculadora de inclinação entre dois pontos?',
   tool_gradient_faq_a4: 'Não. Inclinação rise/run é outra ferramenta; aqui ∇f é o vetor de parciais.',
+  tool_share_title: 'Compartilhar esta ferramenta',
+  tool_share_hint: 'Compartilhe nas redes, copie o link ou use o compartilhamento do dispositivo.',
+  tool_share_networks_label: 'Compartilhar em',
+  tool_share_copy: 'Copiar link',
+  tool_share_copied: 'Copiado',
+  tool_share_native: 'Compartilhar…',
+  tool_feedback_title: 'Dúvidas ou feedback',
+  tool_feedback_body: 'Algo pouco claro, quebrado ou faltando? Envie um e-mail — lemos cada mensagem sobre estas ferramentas.',
+  tool_feedback_email_label: 'E-mail',
+  tool_feedback_cta: 'Escrever um e-mail',
+  tool_feedback_subject: 'Feedback da ferramenta'
 
 };
 export default pt;

@@ -9,7 +9,7 @@ import { withExplicitLangPath } from '../config.mjs';
  * @param {{lang:string}} opts
  */
 export const renderFooter = ({ lang }) => `
-  <footer class="bg-light border-top text-center py-3">
+  <footer class="site-footer border-top text-center py-3">
     <div class="container">
       <small class="text-muted">${t(lang, 'footer_text')}</small>
       <span class="text-muted mx-2">·</span>

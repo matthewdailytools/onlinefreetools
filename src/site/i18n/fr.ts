@@ -938,6 +938,17 @@ tool_ip_address_title: 'Quelle est mon adresse IP — Voir votre IP publique',
   tool_gradient_faq_a3: 'Oui, le même objet : ∇ d’une perte scalaire. La page enseigne la définition, elle n’entraîne pas un modèle.',
   tool_gradient_faq_q4: 'Est-ce un calculateur de pente entre deux points ?',
   tool_gradient_faq_a4: 'Non. La pente rise/run est un autre outil ; ici ∇f est le vecteur de partielles.',
+  tool_share_title: 'Partager cet outil',
+  tool_share_hint: 'Partagez sur les réseaux, copiez le lien ou utilisez le partage du système.',
+  tool_share_networks_label: 'Partager sur',
+  tool_share_copy: 'Copier le lien',
+  tool_share_copied: 'Copié',
+  tool_share_native: 'Partager…',
+  tool_feedback_title: 'Questions ou retours',
+  tool_feedback_body: 'Quelque chose n’est pas clair, cassé ou manquant ? Écrivez-nous — nous lisons chaque message sur ces outils.',
+  tool_feedback_email_label: 'E-mail',
+  tool_feedback_cta: 'Écrire un e-mail',
+  tool_feedback_subject: 'Retour sur l’outil'
 
 };
 export default fr;

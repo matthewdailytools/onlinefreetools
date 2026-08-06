@@ -9,7 +9,14 @@
     "homeTitleKey": "tool_website_headers_title",
     "homeDescKey": "tool_website_headers_desc",
     "faqPrefix": "tool_headers",
-    "related": ["ip-address", "add-www-to-dns", "indexnow", "markdown-to-html", "text-diff"]
+    "related": [
+      "ip-address",
+      "add-www-to-dns",
+      "indexnow",
+      "markdown-to-html",
+      "text-diff"
+    ],
+    "logo": "/icons/tools/website-headers.svg"
   },
   {
     "slug": "ip-address",
@@ -21,7 +28,12 @@
     "homeTitleKey": "tool_ip_address_title",
     "homeDescKey": "tool_ip_address_desc",
     "faqPrefix": "tool_ip_address",
-    "related": ["website-headers", "add-www-to-dns", "markdown-to-html"]
+    "related": [
+      "website-headers",
+      "add-www-to-dns",
+      "markdown-to-html"
+    ],
+    "logo": "/icons/tools/ip-address.svg"
   },
   {
     "slug": "markdown-to-html",
@@ -33,7 +45,13 @@
     "homeTitleKey": "tool_markdown_to_html_title",
     "homeDescKey": "tool_markdown_to_html_desc",
     "faqPrefix": "tool_markdown",
-    "related": ["text-diff", "yaml-json", "html-entity", "website-headers"]
+    "related": [
+      "text-diff",
+      "yaml-json",
+      "html-entity",
+      "website-headers"
+    ],
+    "logo": "/icons/tools/markdown-to-html.svg"
   },
   {
     "slug": "text-diff",
@@ -45,7 +63,13 @@
     "homeTitleKey": "tool_text_diff_title",
     "homeDescKey": "tool_text_diff_desc",
     "faqPrefix": "tool_text_diff",
-    "related": ["markdown-to-html", "yaml-json", "html-entity", "website-headers"]
+    "related": [
+      "markdown-to-html",
+      "yaml-json",
+      "html-entity",
+      "website-headers"
+    ],
+    "logo": "/icons/tools/text-diff.svg"
   },
   {
     "slug": "yaml-json",
@@ -57,7 +81,12 @@
     "homeTitleKey": "tool_yaml_json_title",
     "homeDescKey": "tool_yaml_json_desc",
     "faqPrefix": "tool_yaml_json",
-    "related": ["markdown-to-html", "text-diff", "csv-json"]
+    "related": [
+      "markdown-to-html",
+      "text-diff",
+      "csv-json"
+    ],
+    "logo": "/icons/tools/yaml-json.svg"
   },
   {
     "slug": "csv-json",
@@ -69,7 +98,11 @@
     "homeTitleKey": "tool_csv_json_title",
     "homeDescKey": "tool_csv_json_desc",
     "faqPrefix": "tool_csv_json",
-    "related": ["yaml-json", "text-diff"]
+    "related": [
+      "yaml-json",
+      "text-diff"
+    ],
+    "logo": "/icons/tools/csv-json.svg"
   },
   {
     "slug": "html-entity",
@@ -81,7 +114,11 @@
     "homeTitleKey": "tool_html_entity_title",
     "homeDescKey": "tool_html_entity_desc",
     "faqPrefix": "tool_html_entity",
-    "related": ["markdown-to-html", "text-diff"]
+    "related": [
+      "markdown-to-html",
+      "text-diff"
+    ],
+    "logo": "/icons/tools/html-entity.svg"
   },
   {
     "slug": "add-www-to-dns",
@@ -93,7 +130,12 @@
     "homeTitleKey": "tool_add_www_to_dns_title",
     "homeDescKey": "tool_add_www_to_dns_desc",
     "faqPrefix": "tool_add_www_to_dns",
-    "related": ["website-headers", "ip-address", "indexnow"]
+    "related": [
+      "website-headers",
+      "ip-address",
+      "indexnow"
+    ],
+    "logo": "/icons/tools/add-www-to-dns.svg"
   },
   {
     "slug": "indexnow",
@@ -105,9 +147,12 @@
     "homeTitleKey": "tool_indexnow_title",
     "homeDescKey": "tool_indexnow_desc",
     "faqPrefix": "tool_indexnow",
-    "related": ["website-headers", "add-www-to-dns"]
+    "related": [
+      "website-headers",
+      "add-www-to-dns"
+    ],
+    "logo": "/icons/tools/indexnow.svg"
   },
-
   {
     "slug": "how-to-calculate-bmi",
     "path": "/tools/how-to-calculate-bmi",
@@ -118,7 +163,11 @@
     "homeTitleKey": "tool_bmi_title",
     "homeDescKey": "tool_bmi_description",
     "faqPrefix": "tool_bmi",
-    "related": ["how-to-calculate-percentage-change", "square-feet"]
+    "related": [
+      "how-to-calculate-percentage-change",
+      "square-feet"
+    ],
+    "logo": "/icons/tools/how-to-calculate-bmi.svg"
   },
   {
     "slug": "how-to-calculate-roi",
@@ -130,7 +179,11 @@
     "homeTitleKey": "tool_roi_title",
     "homeDescKey": "tool_roi_description",
     "faqPrefix": "tool_roi",
-    "related": ["how-to-calculate-marginal-revenue", "how-to-calculate-percentage-change"]
+    "related": [
+      "how-to-calculate-marginal-revenue",
+      "how-to-calculate-percentage-change"
+    ],
+    "logo": "/icons/tools/how-to-calculate-roi.svg"
   },
   {
     "slug": "how-to-calculate-marginal-revenue",
@@ -142,7 +195,11 @@
     "homeTitleKey": "tool_marginal_revenue_title",
     "homeDescKey": "tool_marginal_revenue_description",
     "faqPrefix": "tool_marginal_revenue",
-    "related": ["how-to-calculate-roi", "how-to-calculate-percentage-change"]
+    "related": [
+      "how-to-calculate-roi",
+      "how-to-calculate-percentage-change"
+    ],
+    "logo": "/icons/tools/how-to-calculate-marginal-revenue.svg"
   },
   {
     "slug": "square-feet",
@@ -154,7 +211,11 @@
     "homeTitleKey": "tool_squarefeet_title",
     "homeDescKey": "tool_squarefeet_description",
     "faqPrefix": "tool_squarefeet",
-    "related": ["how-to-calculate-percentage-change", "how-to-calculate-bmi"]
+    "related": [
+      "how-to-calculate-percentage-change",
+      "how-to-calculate-bmi"
+    ],
+    "logo": "/icons/tools/square-feet.svg"
   },
   {
     "slug": "how-to-calculate-percentage-change",
@@ -166,7 +227,11 @@
     "homeTitleKey": "tool_percentage_change_title",
     "homeDescKey": "tool_percentage_change_description",
     "faqPrefix": "tool_percentage_change",
-    "related": ["how-to-calculate-roi", "how-to-calculate-marginal-revenue"]
+    "related": [
+      "how-to-calculate-roi",
+      "how-to-calculate-marginal-revenue"
+    ],
+    "logo": "/icons/tools/how-to-calculate-percentage-change.svg"
   },
   {
     "slug": "how-to-calculate-gradient",
@@ -178,6 +243,10 @@
     "homeTitleKey": "tool_gradient_title",
     "homeDescKey": "tool_gradient_desc",
     "faqPrefix": "tool_gradient",
-    "related": ["how-to-calculate-percentage-change", "how-to-calculate-roi"]
+    "related": [
+      "how-to-calculate-percentage-change",
+      "how-to-calculate-roi"
+    ],
+    "logo": "/icons/tools/how-to-calculate-gradient.svg"
   }
 ]

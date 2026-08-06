@@ -61,36 +61,11 @@
     })();
   </script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="/styles/site.css" rel="stylesheet" />
   <style>
-    body { min-height: 100vh; padding-top: 56px; }
-    .layout { display: flex; min-height: 100vh; }
-    /* Sidebar: desktop - sticky under the fixed header */
-    #sidebar {
-      width: 260px;
-      transition: margin-left 0.2s ease;
-      position: sticky;
-      top: 56px;
-      height: calc(100vh - 56px);
-      overflow-y: auto;
-      background: #f8f9fa;
-      border-right: 1px solid #e5e7eb;
-      z-index: 1020;
-    }
-    #content { flex: 1; transition: margin-left 0.2s ease; }
-    .sidebar-collapsed #sidebar { margin-left: -260px; }
-    .sidebar-collapsed #content { margin-left: 0; }
-    @media (max-width: 767.98px) {
-      #sidebar {
-        position: fixed;
-        z-index: 1020;
-        top: 56px;
-        bottom: 0;
-        height: auto;
-      }
-      .sidebar-collapsed #sidebar { margin-left: -260px; }
-      #content { margin-left: 0; }
-      body { padding-top: 56px; }
-    }
+    body { min-height: 100vh; padding-top: var(--header-h, 56px); }
+    .layout { display: flex; min-height: calc(100vh - var(--header-h, 56px)); }
   </style>
   
 <script>
@@ -112,14 +87,17 @@ var _hmt = _hmt || [];
   <meta name="google-site-verification" content="DRJRq9AI8KKITkdiZbdd7zu4LxrIc38CPOd9OeK15FM" />
   
 </head>
-<body>
+<body class="is-home-page">
   
   
   <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light site-navbar border-bottom fixed-top">
       <div class="container-fluid">
         <button class="btn btn-outline-secondary me-2" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
-        <a class="navbar-brand fw-semibold" href="/ru/">Online Free Tools</a>
+        <a class="navbar-brand" href="/ru/">
+          <img class="navbar-brand-logo" src="/brand-logo.svg" width="28" height="28" alt="" decoding="async" />
+          <span class="navbar-brand-text">Online Free Tools</span>
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -140,149 +118,222 @@ var _hmt = _hmt || [];
   </header>
   <div class="layout sidebar-collapsed" id="layoutRoot">
     
-    <aside id="sidebar" class="bg-light border-end p-3">
-      <h6 class="text-muted text-uppercase">Категории</h6>
+    <aside id="sidebar" class="border-end">
+      <h2 class="sidebar-title h6">Категории</h2>
       <div class="list-group list-group-flush small" id="categoryList"><a class="list-group-item list-group-item-action" href="#cat-calculator">Калькуляторы</a><a class="list-group-item list-group-item-action" href="#cat-dev">Для разработчиков</a></div>
     </aside>
     <main id="content" class="p-4">
-    <section id="featured" class="mb-4">
-      <div class="d-flex justify-content-between align-items-center mb-3">
-        <h2 class="h5 mb-0">Избранное</h2>
+    <div class="home-wrap">
+    <section class="home-hero" aria-labelledby="home-hero-heading">
+      <div class="home-hero-inner">
+        <h1 class="home-hero-brand" id="home-hero-heading">Online Free Tools</h1>
+        <p class="home-hero-lead">Бесплатные утилиты на каждый день — калькуляторы, конвертеры и помощники вебмастера. Без регистрации.</p>
+        <div class="home-hero-actions">
+          <a class="btn btn-primary btn-lg" href="#all-tools">Смотреть инструменты</a>
+          <a class="btn btn-outline-primary btn-lg" href="#featured">Избранное</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="home-main">
+    <section class="home-why" aria-label="Почему эти инструменты">
+      <div class="home-why-item">
+        <h3>В браузере</h3>
+        <p>Большинство работает во вкладке. Если нужен Worker — мы пишем об этом.</p>
+      </div>
+      <div class="home-why-item">
+        <h3>Бесплатно</h3>
+        <p>Без аккаунта. Откройте и скопируйте результат.</p>
+      </div>
+      <div class="home-why-item">
+        <h3>Десять языков</h3>
+        <p>Интерфейс и страницы на десяти языках с hreflang.</p>
+      </div>
+    </section>
+
+    <section id="featured" class="mb-5">
+      <div class="home-section-head">
+        <h2>Избранное</h2>
         <a class="btn btn-sm btn-outline-secondary" href="#all-tools">Смотреть все</a>
       </div>
-      <div class="row row-cols-1 row-cols-md-3 row-cols-xl-4 g-3">
+      <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
         
   <div class="col">
-    <div class="card h-100 shadow-sm d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h5 class="card-title">Проверка HTTP-заголовков</h5>
-        <p class="card-text text-muted flex-grow-1">Проверьте HTTP-заголовки ответа любого URL: HEAD/GET, редиректы и карта заголовков с edge.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/website-headers.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">Проверка HTTP-заголовков</h3>
+        </div>
+        <p class="card-text flex-grow-1">Проверьте HTTP-заголовки ответа любого URL: HEAD/GET, редиректы и карта заголовков с edge.</p>
         <a href="/ru/tools/website-headers" class="mt-auto btn btn-primary btn-sm">Открыть</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 shadow-sm d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h5 class="card-title">Узнать свой IP — Показать публичный IP-адрес</h5>
-        <p class="card-text text-muted flex-grow-1">Публичный IP с точки зрения edge. При VPN виден IP выхода.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/ip-address.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">Узнать свой IP — Показать публичный IP-адрес</h3>
+        </div>
+        <p class="card-text flex-grow-1">Публичный IP с точки зрения edge. При VPN виден IP выхода.</p>
         <a href="/ru/tools/ip-address" class="mt-auto btn btn-primary btn-sm">Открыть</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 shadow-sm d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h5 class="card-title">Markdown ↔ HTML</h5>
-        <p class="card-text text-muted flex-grow-1">Преобразование Markdown ↔ HTML с безопасным предпросмотром.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/markdown-to-html.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">Markdown ↔ HTML</h3>
+        </div>
+        <p class="card-text flex-grow-1">Преобразование Markdown ↔ HTML с безопасным предпросмотром.</p>
         <a href="/ru/tools/markdown-to-html" class="mt-auto btn btn-primary btn-sm">Открыть</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 shadow-sm d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h5 class="card-title">Сравнить тексты онлайн</h5>
-        <p class="card-text text-muted flex-grow-1">Посмотрите различия двух текстов по строкам, словам или символам.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/text-diff.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">Сравнить тексты онлайн</h3>
+        </div>
+        <p class="card-text flex-grow-1">Посмотрите различия двух текстов по строкам, словам или символам.</p>
         <a href="/ru/tools/text-diff" class="mt-auto btn btn-primary btn-sm">Открыть</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 shadow-sm d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h5 class="card-title">YAML ↔ JSON</h5>
-        <p class="card-text text-muted flex-grow-1">YAML ↔ JSON с правилами типов и multi-doc.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/yaml-json.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">YAML ↔ JSON</h3>
+        </div>
+        <p class="card-text flex-grow-1">YAML ↔ JSON с правилами типов и multi-doc.</p>
         <a href="/ru/tools/yaml-json" class="mt-auto btn btn-primary btn-sm">Открыть</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 shadow-sm d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h5 class="card-title">CSV ↔ JSON</h5>
-        <p class="card-text text-muted flex-grow-1">CSV ↔ JSON с разделителем, заголовком и типами.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/csv-json.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">CSV ↔ JSON</h3>
+        </div>
+        <p class="card-text flex-grow-1">CSV ↔ JSON с разделителем, заголовком и типами.</p>
         <a href="/ru/tools/csv-json" class="mt-auto btn btn-primary btn-sm">Открыть</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 shadow-sm d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h5 class="card-title">HTML-сущности</h5>
-        <p class="card-text text-muted flex-grow-1">Кодирование/декодирование HTML-сущностей с областью и числовыми формами — локально.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/html-entity.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">HTML-сущности</h3>
+        </div>
+        <p class="card-text flex-grow-1">Кодирование/декодирование HTML-сущностей с областью и числовыми формами — локально.</p>
         <a href="/ru/tools/html-entity" class="mt-auto btn btn-primary btn-sm">Открыть</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 shadow-sm d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h5 class="card-title">Добавить WWW в DNS</h5>
-        <p class="card-text text-muted flex-grow-1">Генерация записей www, проверка DNS, гайды Cloudflare/Vercel.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/add-www-to-dns.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">Добавить WWW в DNS</h3>
+        </div>
+        <p class="card-text flex-grow-1">Генерация записей www, проверка DNS, гайды Cloudflare/Vercel.</p>
         <a href="/ru/tools/add-www-to-dns" class="mt-auto btn btn-primary btn-sm">Открыть</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 shadow-sm d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h5 class="card-title">IndexNow</h5>
-        <p class="card-text text-muted flex-grow-1">IndexNow: ключ, проверка .txt, отправка URL в Bing.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/indexnow.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">IndexNow</h3>
+        </div>
+        <p class="card-text flex-grow-1">IndexNow: ключ, проверка .txt, отправка URL в Bing.</p>
         <a href="/ru/tools/indexnow" class="mt-auto btn btn-primary btn-sm">Открыть</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 shadow-sm d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h5 class="card-title">Калькулятор ИМТ</h5>
-        <p class="card-text text-muted flex-grow-1">Рассчитайте ИМТ для взрослых: метрическая или имперская система, вес и рост, затем категории. Пример: 70 кг и 175 см → ≈22,9. Только скрининг.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-bmi.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">Калькулятор ИМТ</h3>
+        </div>
+        <p class="card-text flex-grow-1">Рассчитайте ИМТ для взрослых: метрическая или имперская система, вес и рост, затем категории. Пример: 70 кг и 175 см → ≈22,9. Только скрининг.</p>
         <a href="/ru/tools/how-to-calculate-bmi" class="mt-auto btn btn-primary btn-sm">Открыть</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 shadow-sm d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h5 class="card-title">Калькулятор ROI — Как рассчитать рентабельность инвестиций</h5>
-        <p class="card-text text-muted flex-grow-1">Простой ROI по затратам и итогу. Пример: 1000→1300 = 30%. Только учёба — не инвестсовет.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-roi.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">Калькулятор ROI — Как рассчитать рентабельность инвестиций</h3>
+        </div>
+        <p class="card-text flex-grow-1">Простой ROI по затратам и итогу. Пример: 1000→1300 = 30%. Только учёба — не инвестсовет.</p>
         <a href="/ru/tools/how-to-calculate-roi" class="mt-auto btn btn-primary btn-sm">Открыть</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 shadow-sm d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h5 class="card-title">Калькулятор предельной выручки — Формула ΔTR / ΔQ</h5>
-        <p class="card-text text-muted flex-grow-1">MR = ΔTR / ΔQ по двум точкам количества и выручки. Пример: Q 10→11, TR 1000→1080 → MR 80. Только для учёбы.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-marginal-revenue.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">Калькулятор предельной выручки — Формула ΔTR / ΔQ</h3>
+        </div>
+        <p class="card-text flex-grow-1">MR = ΔTR / ΔQ по двум точкам количества и выручки. Пример: Q 10→11, TR 1000→1080 → MR 80. Только для учёбы.</p>
         <a href="/ru/tools/how-to-calculate-marginal-revenue" class="mt-auto btn btn-primary btn-sm">Открыть</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 shadow-sm d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h5 class="card-title">Квадратные футы в м² — Для жилья и ремонта</h5>
-        <p class="card-text text-muted flex-grow-1">Переведите площадь комнаты между квадратными футами и квадратными метрами для объявлений и ремонта. Шаги: выберите ft/m/in, введите длину × ширину, посчитайте площадь, покажите ft² и m² с фактором NIST 1 ft² = 0.09290304 m². Пример: квартира 850 sq ft ≈ 78,97 м².</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/square-feet.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">Квадратные футы в м² — Для жилья и ремонта</h3>
+        </div>
+        <p class="card-text flex-grow-1">Переведите площадь комнаты между квадратными футами и квадратными метрами для объявлений и ремонта. Шаги: выберите ft/m/in, введите длину × ширину, посчитайте площадь, покажите ft² и m² с фактором NIST 1 ft² = 0.09290304 m². Пример: квартира 850 sq ft ≈ 78,97 м².</p>
         <a href="/ru/tools/square-feet" class="mt-auto btn btn-primary btn-sm">Открыть</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 shadow-sm d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h5 class="card-title">Калькулятор процентного изменения — От старого значения к новому</h5>
-        <p class="card-text text-muted flex-grow-1">Посчитайте процентный рост или спад от старого значения к новому. Шаги: введите оба, примените (новое − старое) / старое × 100, смотрите знак. Пример: 80 → 100 = +25%. Для выручки MoM, DAU и цен — не процентные пункты.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-percentage-change.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">Калькулятор процентного изменения — От старого значения к новому</h3>
+        </div>
+        <p class="card-text flex-grow-1">Посчитайте процентный рост или спад от старого значения к новому. Шаги: введите оба, примените (новое − старое) / старое × 100, смотрите знак. Пример: 80 → 100 = +25%. Для выручки MoM, DAU и цен — не процентные пункты.</p>
         <a href="/ru/tools/how-to-calculate-percentage-change" class="mt-auto btn btn-primary btn-sm">Открыть</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 shadow-sm d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h5 class="card-title">Калькулятор градиента — многомерный ∇f (частные производные)</h5>
-        <p class="card-text text-muted flex-grow-1">Вычислите градиент ∇f скалярного поля как вектор частных производных. Шаги: дифференцируйте по каждой переменной, соберите ∇f, оцените в точке. Демо f(x,y)=x²y+3y → ∇f=(2xy, x²+3); в (1,2) → (4,4). Для оптимизации и объяснения градиентного спуска в ML.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-gradient.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">Калькулятор градиента — многомерный ∇f (частные производные)</h3>
+        </div>
+        <p class="card-text flex-grow-1">Вычислите градиент ∇f скалярного поля как вектор частных производных. Шаги: дифференцируйте по каждой переменной, соберите ∇f, оцените в точке. Демо f(x,y)=x²y+3y → ∇f=(2xy, x²+3); в (1,2) → (4,4). Для оптимизации и объяснения градиентного спуска в ML.</p>
         <a href="/ru/tools/how-to-calculate-gradient" class="mt-auto btn btn-primary btn-sm">Открыть</a>
       </div>
     </div>
@@ -291,68 +342,84 @@ var _hmt = _hmt || [];
     </section>
 
     <section id="all-tools">
-      <div class="d-flex justify-content-between align-items-center mb-3">
-        <h2 class="h5 mb-0">Все инструменты</h2>
+      <div class="home-section-head">
+        <h2>Все инструменты</h2>
       </div>
 
-      <div class="mb-4" id="cat-calculator">
-        <div class="d-flex align-items-center mb-2 flex-wrap gap-2">
-          <span class="badge text-bg-secondary">Калькуляторы</span>
-          <span class="text-muted small">формулы, единицы, как считать</span>
-        </div>
-        <p class="small text-muted mb-3">Интерактивные калькуляторы с видимыми формулами и примерами.</p>
+      <div class="home-cat" id="cat-calculator">
+        <span class="home-cat-label">Калькуляторы</span>
+        <h3>формулы, единицы, как считать</h3>
+        <p class="home-cat-blurb">Интерактивные калькуляторы с видимыми формулами и примерами.</p>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
           
   <div class="col">
-    <div class="card h-100 d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h6 class="card-title">Калькулятор ИМТ</h6>
-        <p class="card-text small text-muted flex-grow-1">Рассчитайте ИМТ для взрослых: метрическая или имперская система, вес и рост, затем категории. Пример: 70 кг и 175 см → ≈22,9. Только скрининг.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-bmi.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">Калькулятор ИМТ</h3>
+        </div>
+        <p class="card-text small flex-grow-1">Рассчитайте ИМТ для взрослых: метрическая или имперская система, вес и рост, затем категории. Пример: 70 кг и 175 см → ≈22,9. Только скрининг.</p>
         <a href="/ru/tools/how-to-calculate-bmi" class="mt-auto btn btn-outline-primary btn-sm">Открыть</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h6 class="card-title">Калькулятор ROI — Как рассчитать рентабельность инвестиций</h6>
-        <p class="card-text small text-muted flex-grow-1">Простой ROI по затратам и итогу. Пример: 1000→1300 = 30%. Только учёба — не инвестсовет.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-roi.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">Калькулятор ROI — Как рассчитать рентабельность инвестиций</h3>
+        </div>
+        <p class="card-text small flex-grow-1">Простой ROI по затратам и итогу. Пример: 1000→1300 = 30%. Только учёба — не инвестсовет.</p>
         <a href="/ru/tools/how-to-calculate-roi" class="mt-auto btn btn-outline-primary btn-sm">Открыть</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h6 class="card-title">Калькулятор предельной выручки — Формула ΔTR / ΔQ</h6>
-        <p class="card-text small text-muted flex-grow-1">MR = ΔTR / ΔQ по двум точкам количества и выручки. Пример: Q 10→11, TR 1000→1080 → MR 80. Только для учёбы.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-marginal-revenue.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">Калькулятор предельной выручки — Формула ΔTR / ΔQ</h3>
+        </div>
+        <p class="card-text small flex-grow-1">MR = ΔTR / ΔQ по двум точкам количества и выручки. Пример: Q 10→11, TR 1000→1080 → MR 80. Только для учёбы.</p>
         <a href="/ru/tools/how-to-calculate-marginal-revenue" class="mt-auto btn btn-outline-primary btn-sm">Открыть</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h6 class="card-title">Квадратные футы в м² — Для жилья и ремонта</h6>
-        <p class="card-text small text-muted flex-grow-1">Переведите площадь комнаты между квадратными футами и квадратными метрами для объявлений и ремонта. Шаги: выберите ft/m/in, введите длину × ширину, посчитайте площадь, покажите ft² и m² с фактором NIST 1 ft² = 0.09290304 m². Пример: квартира 850 sq ft ≈ 78,97 м².</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/square-feet.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">Квадратные футы в м² — Для жилья и ремонта</h3>
+        </div>
+        <p class="card-text small flex-grow-1">Переведите площадь комнаты между квадратными футами и квадратными метрами для объявлений и ремонта. Шаги: выберите ft/m/in, введите длину × ширину, посчитайте площадь, покажите ft² и m² с фактором NIST 1 ft² = 0.09290304 m². Пример: квартира 850 sq ft ≈ 78,97 м².</p>
         <a href="/ru/tools/square-feet" class="mt-auto btn btn-outline-primary btn-sm">Открыть</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h6 class="card-title">Калькулятор процентного изменения — От старого значения к новому</h6>
-        <p class="card-text small text-muted flex-grow-1">Посчитайте процентный рост или спад от старого значения к новому. Шаги: введите оба, примените (новое − старое) / старое × 100, смотрите знак. Пример: 80 → 100 = +25%. Для выручки MoM, DAU и цен — не процентные пункты.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-percentage-change.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">Калькулятор процентного изменения — От старого значения к новому</h3>
+        </div>
+        <p class="card-text small flex-grow-1">Посчитайте процентный рост или спад от старого значения к новому. Шаги: введите оба, примените (новое − старое) / старое × 100, смотрите знак. Пример: 80 → 100 = +25%. Для выручки MoM, DAU и цен — не процентные пункты.</p>
         <a href="/ru/tools/how-to-calculate-percentage-change" class="mt-auto btn btn-outline-primary btn-sm">Открыть</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h6 class="card-title">Калькулятор градиента — многомерный ∇f (частные производные)</h6>
-        <p class="card-text small text-muted flex-grow-1">Вычислите градиент ∇f скалярного поля как вектор частных производных. Шаги: дифференцируйте по каждой переменной, соберите ∇f, оцените в точке. Демо f(x,y)=x²y+3y → ∇f=(2xy, x²+3); в (1,2) → (4,4). Для оптимизации и объяснения градиентного спуска в ML.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-gradient.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">Калькулятор градиента — многомерный ∇f (частные производные)</h3>
+        </div>
+        <p class="card-text small flex-grow-1">Вычислите градиент ∇f скалярного поля как вектор частных производных. Шаги: дифференцируйте по каждой переменной, соберите ∇f, оцените в точке. Демо f(x,y)=x²y+3y → ∇f=(2xy, x²+3); в (1,2) → (4,4). Для оптимизации и объяснения градиентного спуска в ML.</p>
         <a href="/ru/tools/how-to-calculate-gradient" class="mt-auto btn btn-outline-primary btn-sm">Открыть</a>
       </div>
     </div>
@@ -360,91 +427,116 @@ var _hmt = _hmt || [];
         </div>
       </div>
 
-      <div class="mb-4" id="cat-dev">
-        <div class="d-flex align-items-center mb-2 flex-wrap gap-2">
-          <span class="badge text-bg-secondary">Для разработчиков</span>
-          <span class="text-muted small">отладка, генерация, проверка</span>
-        </div>
-        <p class="small text-muted mb-3">Утилиты для разработчиков — без регистрации, результаты можно копировать.</p>
+      <div class="home-cat" id="cat-dev">
+        <span class="home-cat-label">Для разработчиков</span>
+        <h3>отладка, генерация, проверка</h3>
+        <p class="home-cat-blurb">Утилиты для разработчиков — без регистрации, результаты можно копировать.</p>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
           
   <div class="col">
-    <div class="card h-100 d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h6 class="card-title">Проверка HTTP-заголовков</h6>
-        <p class="card-text small text-muted flex-grow-1">Проверьте HTTP-заголовки ответа любого URL: HEAD/GET, редиректы и карта заголовков с edge.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/website-headers.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">Проверка HTTP-заголовков</h3>
+        </div>
+        <p class="card-text small flex-grow-1">Проверьте HTTP-заголовки ответа любого URL: HEAD/GET, редиректы и карта заголовков с edge.</p>
         <a href="/ru/tools/website-headers" class="mt-auto btn btn-outline-primary btn-sm">Открыть</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h6 class="card-title">Узнать свой IP — Показать публичный IP-адрес</h6>
-        <p class="card-text small text-muted flex-grow-1">Публичный IP с точки зрения edge. При VPN виден IP выхода.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/ip-address.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">Узнать свой IP — Показать публичный IP-адрес</h3>
+        </div>
+        <p class="card-text small flex-grow-1">Публичный IP с точки зрения edge. При VPN виден IP выхода.</p>
         <a href="/ru/tools/ip-address" class="mt-auto btn btn-outline-primary btn-sm">Открыть</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h6 class="card-title">Markdown ↔ HTML</h6>
-        <p class="card-text small text-muted flex-grow-1">Преобразование Markdown ↔ HTML с безопасным предпросмотром.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/markdown-to-html.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">Markdown ↔ HTML</h3>
+        </div>
+        <p class="card-text small flex-grow-1">Преобразование Markdown ↔ HTML с безопасным предпросмотром.</p>
         <a href="/ru/tools/markdown-to-html" class="mt-auto btn btn-outline-primary btn-sm">Открыть</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h6 class="card-title">Сравнить тексты онлайн</h6>
-        <p class="card-text small text-muted flex-grow-1">Посмотрите различия двух текстов по строкам, словам или символам.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/text-diff.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">Сравнить тексты онлайн</h3>
+        </div>
+        <p class="card-text small flex-grow-1">Посмотрите различия двух текстов по строкам, словам или символам.</p>
         <a href="/ru/tools/text-diff" class="mt-auto btn btn-outline-primary btn-sm">Открыть</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h6 class="card-title">YAML ↔ JSON</h6>
-        <p class="card-text small text-muted flex-grow-1">YAML ↔ JSON с правилами типов и multi-doc.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/yaml-json.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">YAML ↔ JSON</h3>
+        </div>
+        <p class="card-text small flex-grow-1">YAML ↔ JSON с правилами типов и multi-doc.</p>
         <a href="/ru/tools/yaml-json" class="mt-auto btn btn-outline-primary btn-sm">Открыть</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h6 class="card-title">CSV ↔ JSON</h6>
-        <p class="card-text small text-muted flex-grow-1">CSV ↔ JSON с разделителем, заголовком и типами.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/csv-json.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">CSV ↔ JSON</h3>
+        </div>
+        <p class="card-text small flex-grow-1">CSV ↔ JSON с разделителем, заголовком и типами.</p>
         <a href="/ru/tools/csv-json" class="mt-auto btn btn-outline-primary btn-sm">Открыть</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h6 class="card-title">HTML-сущности</h6>
-        <p class="card-text small text-muted flex-grow-1">Кодирование/декодирование HTML-сущностей с областью и числовыми формами — локально.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/html-entity.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">HTML-сущности</h3>
+        </div>
+        <p class="card-text small flex-grow-1">Кодирование/декодирование HTML-сущностей с областью и числовыми формами — локально.</p>
         <a href="/ru/tools/html-entity" class="mt-auto btn btn-outline-primary btn-sm">Открыть</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h6 class="card-title">Добавить WWW в DNS</h6>
-        <p class="card-text small text-muted flex-grow-1">Генерация записей www, проверка DNS, гайды Cloudflare/Vercel.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/add-www-to-dns.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">Добавить WWW в DNS</h3>
+        </div>
+        <p class="card-text small flex-grow-1">Генерация записей www, проверка DNS, гайды Cloudflare/Vercel.</p>
         <a href="/ru/tools/add-www-to-dns" class="mt-auto btn btn-outline-primary btn-sm">Открыть</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h6 class="card-title">IndexNow</h6>
-        <p class="card-text small text-muted flex-grow-1">IndexNow: ключ, проверка .txt, отправка URL в Bing.</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/indexnow.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">IndexNow</h3>
+        </div>
+        <p class="card-text small flex-grow-1">IndexNow: ключ, проверка .txt, отправка URL в Bing.</p>
         <a href="/ru/tools/indexnow" class="mt-auto btn btn-outline-primary btn-sm">Открыть</a>
       </div>
     </div>
@@ -452,10 +544,12 @@ var _hmt = _hmt || [];
         </div>
       </div>
     </section>
+    </div>
+    </div>
   </main>
   </div>
   
-  <footer class="bg-light border-top text-center py-3">
+  <footer class="site-footer border-top text-center py-3">
     <div class="container">
       <small class="text-muted">Online Free Tools · Учебный проект · Итерации</small>
       <span class="text-muted mx-2">·</span>

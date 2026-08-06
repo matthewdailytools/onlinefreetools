@@ -7,8 +7,8 @@ import { t, supportedLangs } from '../site/i18n';
 import { renderFooter } from './site/footer';
 import { renderHeader } from './site/header';
 import { renderLayout, type HreflangAlternate, escapeHtml } from './site/layout';
-import { renderSidebar } from './site/sidebar';
-import { TOOL_PAGES, getToolBySlug } from '../site/tools';
+import { renderSidebar, buildToolSidebarItems } from './site/sidebar';
+import { getToolBySlug } from '../site/tools';
 import {
 	renderToolExtraSections,
 	renderToolIgSections,
@@ -72,14 +72,10 @@ export const renderIndexNowPage = (opts: {
 		langAlternates,
 	});
 
-	const toolLinks = (TOOL_PAGES || []).map((p) => ({
-		href: withLangPrefix(opts.lang, p.path, opts.defaultLang),
-		label: t(opts.lang, p.i18nKey),
-	}));
 
 	const sidebarHtml = renderSidebar({
 		title: t(opts.lang, 'nav_tools'),
-		items: [{ href: '#indexnow', label: t(opts.lang, 'tool_indexnow_title') }, ...toolLinks],
+		items: buildToolSidebarItems({ lang: opts.lang, defaultLang: opts.defaultLang, currentSlug: 'indexnow', currentAnchor: '#indexnow' }),
 		id: 'toolNav',
 	});
 
@@ -99,11 +95,12 @@ export const renderIndexNowPage = (opts: {
   </style>`;
 
 	const contentHtml = `
-    <div id="indexnow" class="mb-3">
-      <h1 class="h4 mb-1">${escapeHtml(t(opts.lang, 'tool_indexnow_title'))}</h1>
-      <p class="text-muted mb-0">${escapeHtml(description)}</p>
+    <div id="indexnow" class="tool-hero">
+      <h1 class="tool-title">${escapeHtml(t(opts.lang, 'tool_indexnow_title'))}</h1>
+      <p class="tool-lead">${escapeHtml(description)}</p>
     </div>
 
+    <div class="tool-panel">
     <div class="alert alert-warning py-2 small mb-3" role="note">
       ${escapeHtml(t(opts.lang, 'tool_indexnow_warn_banner'))}
     </div>
@@ -136,9 +133,9 @@ export const renderIndexNowPage = (opts: {
 
     <div class="d-flex align-items-center tools-bar mb-3 flex-wrap">
       <button type="button" id="btnDownload" class="btn btn-outline-primary btn-sm">${escapeHtml(t(opts.lang, 'tool_indexnow_download'))}</button>
-      <button type="button" id="btnCheck" class="btn btn-outline-primary btn-sm">${escapeHtml(t(opts.lang, 'tool_indexnow_check'))}</button>
+      <button type="button" id="btnCheck" class="btn btn-outline-primary">${escapeHtml(t(opts.lang, 'tool_indexnow_check'))}</button>
       <button type="button" id="btnPreview" class="btn btn-outline-secondary btn-sm">${escapeHtml(t(opts.lang, 'tool_indexnow_preview'))}</button>
-      <button type="button" id="btnSubmit" class="btn btn-primary btn-sm">${escapeHtml(t(opts.lang, 'tool_indexnow_submit'))}</button>
+      <button type="button" id="btnSubmit" class="btn btn-primary">${escapeHtml(t(opts.lang, 'tool_indexnow_submit'))}</button>
       <button type="button" id="btnSample" class="btn btn-outline-secondary btn-sm">${escapeHtml(t(opts.lang, 'tool_indexnow_sample'))}</button>
       <button type="button" id="btnClear" class="btn btn-outline-secondary btn-sm">${escapeHtml(t(opts.lang, 'tool_indexnow_clear'))}</button>
     </div>
@@ -153,9 +150,10 @@ export const renderIndexNowPage = (opts: {
     <div id="formWarn" class="alert alert-warning py-2 small mb-2" style="display:none" role="status"></div>
     <div id="formOk" class="alert alert-success py-2 small mb-2" style="display:none" role="status"></div>
 
-    <div class="mb-4">
+    <div>
       <label class="form-label" for="previewOut">${escapeHtml(t(opts.lang, 'tool_indexnow_preview_label'))}</label>
-      <pre id="previewOut" class="mb-0" tabindex="0"></pre>
+      <pre id="previewOut" class="result mb-0" tabindex="0"></pre>
+    </div>
     </div>`;
 
 	const igHtml = renderToolIgSections({

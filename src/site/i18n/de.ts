@@ -938,6 +938,17 @@ tool_ip_address_title: 'Was ist meine IP-Adresse — Öffentliche IP anzeigen',
   tool_gradient_faq_a3: 'Ja, dasselbe Objekt: ∇ einer skalaren Loss. Die Seite erklärt die Definition, trainiert kein Modell.',
   tool_gradient_faq_q4: 'Ist das ein Steigungsrechner für zwei Punkte?',
   tool_gradient_faq_a4: 'Nein. Rise/run ist ein anderes Werkzeug; hier ist ∇f der Partielle-Vektor.',
+  tool_share_title: 'Dieses Tool teilen',
+  tool_share_hint: 'In sozialen Netzwerken teilen, Link kopieren oder die Geräte-Teilen-Funktion nutzen.',
+  tool_share_networks_label: 'Teilen über',
+  tool_share_copy: 'Link kopieren',
+  tool_share_copied: 'Kopiert',
+  tool_share_native: 'Teilen…',
+  tool_feedback_title: 'Fragen oder Feedback',
+  tool_feedback_body: 'Unklar, kaputt oder etwas fehlt? Schreib uns — wir lesen jede Nachricht zu diesen Tools.',
+  tool_feedback_email_label: 'E-Mail',
+  tool_feedback_cta: 'E-Mail schreiben',
+  tool_feedback_subject: 'Tool-Feedback'
 
 };
 export default de;

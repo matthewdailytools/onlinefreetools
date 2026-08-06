@@ -7,8 +7,8 @@ import { t, supportedLangs } from '../site/i18n';
 import { renderFooter } from './site/footer';
 import { renderHeader } from './site/header';
 import { renderLayout, type HreflangAlternate, escapeHtml } from './site/layout';
-import { renderSidebar } from './site/sidebar';
-import { TOOL_PAGES, getToolBySlug } from '../site/tools';
+import { renderSidebar, buildToolSidebarItems } from './site/sidebar';
+import { getToolBySlug } from '../site/tools';
 import {
 	renderToolExtraSections,
 	renderToolIgSections,
@@ -72,14 +72,10 @@ export const renderHtmlEntityPage = (opts: {
 		langAlternates,
 	});
 
-	const toolLinks = (TOOL_PAGES || []).map((p) => ({
-		href: withLangPrefix(opts.lang, p.path, opts.defaultLang),
-		label: t(opts.lang, p.i18nKey),
-	}));
 
 	const sidebarHtml = renderSidebar({
 		title: t(opts.lang, 'nav_tools'),
-		items: [{ href: '#converter', label: t(opts.lang, 'tool_html_entity_title') }, ...toolLinks],
+		items: buildToolSidebarItems({ lang: opts.lang, defaultLang: opts.defaultLang, currentSlug: 'html-entity', currentAnchor: '#converter' }),
 		id: 'toolNav',
 	});
 
@@ -97,8 +93,7 @@ export const renderHtmlEntityPage = (opts: {
       font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .9rem;
     }
     #outText {
-      white-space: pre-wrap; word-break: break-word; color: #212529; background: #fff;
-      border: 1px solid #dee2e6; border-radius: .5rem; padding: 1rem; overflow: auto;
+      white-space: pre-wrap; word-break: break-word; overflow: auto;
     }
     #decodePreview {
       min-height: 4rem; white-space: pre-wrap; word-break: break-word;
@@ -109,11 +104,12 @@ export const renderHtmlEntityPage = (opts: {
   </style>`;
 
 	const contentHtml = `
-    <div id="converter" class="mb-3">
-      <h1 class="h4 mb-1">${escapeHtml(t(opts.lang, 'tool_html_entity_title'))}</h1>
-      <p class="text-muted mb-0">${escapeHtml(description)}</p>
+    <div id="converter" class="tool-hero">
+      <h1 class="tool-title">${escapeHtml(t(opts.lang, 'tool_html_entity_title'))}</h1>
+      <p class="tool-lead">${escapeHtml(description)}</p>
     </div>
 
+    <div class="tool-panel">
     <div class="d-flex align-items-center tools-bar mb-2 flex-wrap">
       <div class="btn-group" role="group" aria-label="${escapeHtml(t(opts.lang, 'tool_html_entity_dir_label'))}">
         <input type="radio" class="btn-check" name="heDir" id="dirEncode" value="encode" checked>
@@ -121,8 +117,8 @@ export const renderHtmlEntityPage = (opts: {
         <input type="radio" class="btn-check" name="heDir" id="dirDecode" value="decode">
         <label class="btn btn-outline-primary btn-sm" for="dirDecode">${escapeHtml(t(opts.lang, 'tool_html_entity_tab_decode'))}</label>
       </div>
-      <button type="button" id="btnConvert" class="btn btn-primary btn-sm">${escapeHtml(t(opts.lang, 'tool_html_entity_convert'))}</button>
-      <button type="button" id="btnCopy" class="btn btn-outline-primary btn-sm">${escapeHtml(t(opts.lang, 'tool_html_entity_copy'))}</button>
+      <button type="button" id="btnConvert" class="btn btn-primary">${escapeHtml(t(opts.lang, 'tool_html_entity_convert'))}</button>
+      <button type="button" id="btnCopy" class="btn btn-outline-primary">${escapeHtml(t(opts.lang, 'tool_html_entity_copy'))}</button>
       <button type="button" id="btnSample" class="btn btn-outline-secondary btn-sm">${escapeHtml(t(opts.lang, 'tool_html_entity_sample'))}</button>
       <button type="button" id="btnClear" class="btn btn-outline-secondary btn-sm">${escapeHtml(t(opts.lang, 'tool_html_entity_clear'))}</button>
     </div>
@@ -170,9 +166,10 @@ export const renderHtmlEntityPage = (opts: {
       </div>
     </div>
 
-    <div id="previewWrap" class="mb-4" hidden>
+    <div id="previewWrap" hidden>
       <label class="form-label" for="decodePreview">${escapeHtml(t(opts.lang, 'tool_html_entity_preview_label'))}</label>
       <div id="decodePreview" class="border rounded p-3 bg-light"></div>
+    </div>
     </div>`;
 
 	const igHtml = renderToolIgSections({

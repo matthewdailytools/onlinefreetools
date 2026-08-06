@@ -940,6 +940,17 @@ tool_ip_address_title: 'ما هو عنوان IP الخاص بي — اعرض IP 
     'هذه الحاسبة لتعلّم مفاهيم الاقتصاد الجزئي. ليست نصيحة أعمال أو تسعير أو استثمار.',
   tool_marginal_revenue_references:
     'مدخل Investopedia عن الإيراد الحدي؛ معالجة تمهيدية لـ MR = ΔTR/ΔQ (مثل OpenStax).',
+  tool_share_title: 'مشاركة هذه الأداة',
+  tool_share_hint: 'شارك عبر الشبكات الاجتماعية، أو انسخ الرابط، أو استخدم مشاركة الجهاز.',
+  tool_share_networks_label: 'مشاركة عبر',
+  tool_share_copy: 'نسخ الرابط',
+  tool_share_copied: 'تم النسخ',
+  tool_share_native: 'مشاركة…',
+  tool_feedback_title: 'استفسارات أو ملاحظات',
+  tool_feedback_body: 'هل هناك غموض أو خلل أو نقص؟ راسلنا — نقرأ كل رسالة عن هذه الأدوات.',
+  tool_feedback_email_label: 'البريد',
+  tool_feedback_cta: 'كتابة بريد',
+  tool_feedback_subject: 'ملاحظات حول الأداة'
 
 };
 export default ar;

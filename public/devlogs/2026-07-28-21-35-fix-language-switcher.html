@@ -51,36 +51,11 @@
     })();
   </script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="/styles/site.css" rel="stylesheet" />
   <style>
-    body { min-height: 100vh; padding-top: 56px; }
-    .layout { display: flex; min-height: 100vh; }
-    /* Sidebar: desktop - sticky under the fixed header */
-    #sidebar {
-      width: 260px;
-      transition: margin-left 0.2s ease;
-      position: sticky;
-      top: 56px;
-      height: calc(100vh - 56px);
-      overflow-y: auto;
-      background: #f8f9fa;
-      border-right: 1px solid #e5e7eb;
-      z-index: 1020;
-    }
-    #content { flex: 1; transition: margin-left 0.2s ease; }
-    .sidebar-collapsed #sidebar { margin-left: -260px; }
-    .sidebar-collapsed #content { margin-left: 0; }
-    @media (max-width: 767.98px) {
-      #sidebar {
-        position: fixed;
-        z-index: 1020;
-        top: 56px;
-        bottom: 0;
-        height: auto;
-      }
-      .sidebar-collapsed #sidebar { margin-left: -260px; }
-      #content { margin-left: 0; }
-      body { padding-top: 56px; }
-    }
+    body { min-height: 100vh; padding-top: var(--header-h, 56px); }
+    .layout { display: flex; min-height: calc(100vh - var(--header-h, 56px)); }
   </style>
   
 <script>
@@ -102,14 +77,17 @@ var _hmt = _hmt || [];
   
   
 </head>
-<body>
+<body class="is-home-page">
   
   
   <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light site-navbar border-bottom fixed-top">
       <div class="container-fluid">
         <button class="btn btn-outline-secondary me-2" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
-        <a class="navbar-brand fw-semibold" href="/">Online Free Tools</a>
+        <a class="navbar-brand" href="/">
+          <img class="navbar-brand-logo" src="/brand-logo.svg" width="28" height="28" alt="" decoding="async" />
+          <span class="navbar-brand-text">Online Free Tools</span>
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -124,8 +102,8 @@ var _hmt = _hmt || [];
   </header>
   <div class="layout sidebar-collapsed" id="layoutRoot">
     
-    <aside id="sidebar" class="bg-light border-end p-3">
-      <h6 class="text-muted text-uppercase">Navigation</h6>
+    <aside id="sidebar" class="border-end">
+      <h2 class="sidebar-title h6">Navigation</h2>
       <div class="list-group list-group-flush small" id="navList"><a class="list-group-item list-group-item-action" href="/">Home</a><a class="list-group-item list-group-item-action" href="/devlogs/">Dev Logs</a></div>
     </aside>
     <main id="content" class="p-4">
@@ -154,7 +132,7 @@ Summary: Fix language switcher broken by /en 301 and Accept-Language conflict</p
     </main>
   </div>
   
-  <footer class="bg-light border-top text-center py-3">
+  <footer class="site-footer border-top text-center py-3">
     <div class="container">
       <small class="text-muted">Online Free Tools · Learning project · Iterating</small>
       <span class="text-muted mx-2">·</span>

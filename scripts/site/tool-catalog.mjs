@@ -11,8 +11,15 @@ const catalogPath = path.resolve(
   '../../src/site/tool-catalog.json'
 );
 
-/** @type {Array<{slug:string,path:string,category:string,featured?:boolean,ymyl?:boolean,i18nKey:string,homeTitleKey:string,homeDescKey:string,faqPrefix:string,related?:string[]}>} */
+/** @type {Array<{slug:string,path:string,category:string,featured?:boolean,ymyl?:boolean,i18nKey:string,homeTitleKey:string,homeDescKey:string,faqPrefix:string,logo:string,related?:string[]}>} */
 export const TOOL_CATALOG = require(catalogPath);
+
+/**
+ * 解析工具 logo 公共路径。
+ * @param {{slug:string,logo?:string}} tool
+ */
+export const getToolLogoUrl = (tool) =>
+  tool.logo && String(tool.logo).trim() ? tool.logo : `/icons/tools/${tool.slug}.svg`;
 
 /**
  * 按 slug 查找工具。

@@ -89,36 +89,10 @@ export const renderLayout = ({
       ].join('\n  ')
     : '';
 
+  /** 布局行为已迁入 /styles/site.css；此处仅保留极薄兜底以防 CSS 未加载 */
   const sidebarCss = `
-    body { min-height: 100vh; padding-top: 56px; }
-    .layout { display: flex; min-height: 100vh; }
-    /* Sidebar: desktop - sticky under the fixed header */
-    #sidebar {
-      width: 260px;
-      transition: margin-left 0.2s ease;
-      position: sticky;
-      top: 56px;
-      height: calc(100vh - 56px);
-      overflow-y: auto;
-      background: #f8f9fa;
-      border-right: 1px solid #e5e7eb;
-      z-index: 1020;
-    }
-    #content { flex: 1; transition: margin-left 0.2s ease; }
-    .sidebar-collapsed #sidebar { margin-left: -260px; }
-    .sidebar-collapsed #content { margin-left: 0; }
-    @media (max-width: 767.98px) {
-      #sidebar {
-        position: fixed;
-        z-index: 1020;
-        top: 56px;
-        bottom: 0;
-        height: auto;
-      }
-      .sidebar-collapsed #sidebar { margin-left: -260px; }
-      #content { margin-left: 0; }
-      body { padding-top: 56px; }
-    }
+    body { min-height: 100vh; padding-top: var(--header-h, 56px); }
+    .layout { display: flex; min-height: calc(100vh - var(--header-h, 56px)); }
   `;
 
   const sidebarAutoClose = sidebarAutoCloseSelector
@@ -179,12 +153,14 @@ export const renderLayout = ({
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   ${clientLangRedirectScript}
   <link href="${bootstrapCss}" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="/styles/site.css" rel="stylesheet" />
   <style>${sidebarCss}</style>
   ${tracking.headHtml}
   ${extraHeadHtml}
   ${headJsonLd ? `<script type="application/ld+json">${headJsonLd}</script>` : ''}
 </head>
-<body>
+<body class="is-home-page">
   ${tracking.bodyHtml}
   ${headerHtml}
   <div class="layout sidebar-collapsed" id="layoutRoot">

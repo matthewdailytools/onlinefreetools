@@ -945,6 +945,17 @@ tool_ip_address_title: 'Cuál es mi IP — Ver tu IP pública',
   tool_gradient_faq_a3: 'Sí, el mismo objeto: ∇ de una pérdida escalar. El descenso camina en −∇loss. Esta página enseña la definición, no entrena un modelo.',
   tool_gradient_faq_q4: '¿Es una calculadora de pendiente entre dos puntos?',
   tool_gradient_faq_a4: 'No. La pendiente rise/run es otra herramienta; aquí ∇f es el vector de parciales.',
+  tool_share_title: 'Comparte esta herramienta',
+  tool_share_hint: 'Compártelo en redes, copia el enlace o usa el menú de compartir del dispositivo.',
+  tool_share_networks_label: 'Compartir en',
+  tool_share_copy: 'Copiar enlace',
+  tool_share_copied: 'Copiado',
+  tool_share_native: 'Compartir…',
+  tool_feedback_title: 'Consultas o comentarios',
+  tool_feedback_body: '¿Algo poco claro, roto o que falte? Escríbenos — leemos cada mensaje sobre estas herramientas.',
+  tool_feedback_email_label: 'Correo',
+  tool_feedback_cta: 'Escribir un correo',
+  tool_feedback_subject: 'Comentarios sobre la herramienta'
 
 };
 export default es;

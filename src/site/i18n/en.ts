@@ -489,6 +489,18 @@ const en: SiteLangDict = {
   tool_disclaimer_title: 'Important notice',
   tool_references_title: 'References',
   tool_related_title: 'Related tools',
+  tool_share_title: 'Share this tool',
+  tool_share_hint: 'Share on social networks, copy the page link, or use your device share sheet.',
+  tool_share_networks_label: 'Share on',
+  tool_share_copy: 'Copy link',
+  tool_share_copied: 'Copied',
+  tool_share_native: 'Share…',
+  tool_feedback_title: 'Questions or feedback',
+  tool_feedback_body:
+    'Something unclear, broken, or missing? Email us — we read every message about these tools.',
+  tool_feedback_email_label: 'Email',
+  tool_feedback_cta: 'Write an email',
+  tool_feedback_subject: 'Tool feedback',
   tool_category_calculator: 'Calculators',
   tool_category_developer: 'Developer tools',
 

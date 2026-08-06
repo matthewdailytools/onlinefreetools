@@ -58,14 +58,17 @@ export const renderHeader = ({
 
   return `
   <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light site-navbar border-bottom fixed-top">
       <div class="container-fluid">
         ${
           showSidebarToggle
             ? '<button class="btn btn-outline-secondary me-2" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>'
             : ''
         }
-        <a class="navbar-brand fw-semibold" href="${brandHref}">${t(lang, 'brand')}</a>
+        <a class="navbar-brand" href="${brandHref}">
+          <img class="navbar-brand-logo" src="/brand-logo.svg" width="28" height="28" alt="" decoding="async" />
+          <span class="navbar-brand-text">${t(lang, 'brand')}</span>
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>

@@ -8,8 +8,8 @@ import { t, supportedLangs } from '../site/i18n';
 import { renderFooter } from './site/footer';
 import { renderHeader } from './site/header';
 import { renderLayout, type HreflangAlternate, escapeHtml } from './site/layout';
-import { renderSidebar } from './site/sidebar';
-import { TOOL_PAGES, getToolBySlug } from '../site/tools';
+import { renderSidebar, buildToolSidebarItems } from './site/sidebar';
+import { getToolBySlug } from '../site/tools';
 import {
 	renderToolExtraSections,
 	renderToolIgSections,
@@ -68,14 +68,10 @@ export const renderYamlJsonPage = (opts: {
 		langAlternates,
 	});
 
-	const toolLinks = (TOOL_PAGES || []).map((p) => ({
-		href: withLangPrefix(opts.lang, p.path, opts.defaultLang),
-		label: t(opts.lang, p.i18nKey),
-	}));
 
 	const sidebarHtml = renderSidebar({
 		title: t(opts.lang, 'nav_tools'),
-		items: [{ href: '#converter', label: t(opts.lang, 'tool_yaml_json_title') }, ...toolLinks],
+		items: buildToolSidebarItems({ lang: opts.lang, defaultLang: opts.defaultLang, currentSlug: 'yaml-json', currentAnchor: '#converter' }),
 		id: 'toolNav',
 	});
 

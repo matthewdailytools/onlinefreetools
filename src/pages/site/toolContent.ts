@@ -1,11 +1,17 @@
 /**
- * 工具页共享内容块：文章、可见 FAQ、YMYL 免责、相关工具、JSON-LD。
+ * 工具页共享内容块：文章、可见 FAQ、YMYL 免责、相关工具、分享、邮件反馈、JSON-LD。
  * 不为 FAQ/HowTo 富结果优化；问答必须对用户可见。
  */
 import type { SiteLang } from '../../site/i18n';
 import { t } from '../../site/i18n';
 import { escapeHtml } from './layout';
-import { getToolBySlug, type ToolPageMeta } from '../../site/tools';
+import { getToolBySlug, getToolLogoUrl, type ToolPageMeta } from '../../site/tools';
+
+/** 站长咨询 / 反馈邮箱（公开联系方式） */
+const TOOL_CONTACT_EMAIL = 'dailyonetools@outlook.com';
+
+/** 站点绝对根 URL（分享链接用） */
+const SITE_ORIGIN = 'https://onlinefreetools.org';
 
 /**
  * 为当前语言生成规范路径（默认语无前缀）。
@@ -52,7 +58,7 @@ export const renderFaqSection = (lang: SiteLang, faqs: Array<{ question: string;
 		)
 		.join('');
 	return `
-    <section class="mt-4" id="faq" aria-labelledby="faq-heading">
+    <section class="mt-4 tool-section" id="faq" aria-labelledby="faq-heading">
       <h2 class="h5" id="faq-heading">${escapeHtml(t(lang, 'tool_faq_title'))}</h2>
       ${items}
     </section>`;
@@ -98,18 +104,166 @@ export const renderRelatedTools = (
 		.map((tool) => {
 			const href = withToolLangPrefix(lang, tool.path, defaultLang);
 			const label = t(lang, tool.i18nKey as keyof typeof import('../../site/i18n/en').default);
-			return `<li><a href="${escapeHtml(href)}">${escapeHtml(label)}</a></li>`;
+			const logo = getToolLogoUrl(tool);
+			return `<li class="tool-related-item"><a href="${escapeHtml(href)}"><img class="tool-related-logo" src="${escapeHtml(logo)}" width="18" height="18" alt="" decoding="async" /><span>${escapeHtml(label)}</span></a></li>`;
 		})
 		.join('');
 	return `
-    <section class="mt-4" id="related" aria-labelledby="related-heading">
+    <section class="mt-4 tool-section" id="related" aria-labelledby="related-heading">
       <h2 class="h5" id="related-heading">${escapeHtml(t(lang, 'tool_related_title'))}</h2>
-      <ul class="mb-0">${links}</ul>
+      <ul class="tool-related-list mb-0">${links}</ul>
     </section>`;
 };
 
 /**
- * 组装工具页底部说明区（文章后 FAQ / YMYL / 相关）。
+ * 构建常用社交平台分享外链（新窗口打开）。
+ * @param pageUrl 绝对页 URL
+ * @param toolName 工具名（写入文案）
+ */
+const buildSocialShareLinks = (pageUrl: string, toolName: string) => {
+	const u = encodeURIComponent(pageUrl);
+	const text = encodeURIComponent(toolName);
+	const waText = encodeURIComponent(`${toolName}\n${pageUrl}`);
+	/** 平台列表：品牌名通用，不随语言翻译 */
+	const networks: Array<{ id: string; label: string; href: string }> = [
+		{
+			id: 'x',
+			label: 'X',
+			href: `https://twitter.com/intent/tweet?url=${u}&text=${text}`,
+		},
+		{
+			id: 'facebook',
+			label: 'Facebook',
+			href: `https://www.facebook.com/sharer/sharer.php?u=${u}`,
+		},
+		{
+			id: 'linkedin',
+			label: 'LinkedIn',
+			href: `https://www.linkedin.com/sharing/share-offsite/?url=${u}`,
+		},
+		{
+			id: 'reddit',
+			label: 'Reddit',
+			href: `https://www.reddit.com/submit?url=${u}&title=${text}`,
+		},
+		{
+			id: 'whatsapp',
+			label: 'WhatsApp',
+			href: `https://wa.me/?text=${waText}`,
+		},
+		{
+			id: 'telegram',
+			label: 'Telegram',
+			href: `https://t.me/share/url?url=${u}&text=${text}`,
+		},
+	];
+	return networks
+		.map(
+			(n) =>
+				`<a class="tool-share-net tool-share-net--${escapeHtml(n.id)}" href="${escapeHtml(
+					n.href
+				)}" target="_blank" rel="noopener noreferrer">${escapeHtml(n.label)}</a>`
+		)
+		.join('');
+};
+
+/**
+ * 渲染「分享工具」模块：社交外链 + 复制链接 + 系统分享（若支持）。
+ * @param lang 当前语言
+ * @param pageUrl 本工具页绝对 URL
+ * @param toolName 工具显示名（供 Web Share / 社交文案）
+ */
+export const renderToolShareSection = (lang: SiteLang, pageUrl: string, toolName: string) => {
+	const copyLabel = t(lang, 'tool_share_copy');
+	const copiedLabel = t(lang, 'tool_share_copied');
+	const nativeLabel = t(lang, 'tool_share_native');
+	const socialHtml = buildSocialShareLinks(pageUrl, toolName);
+	return `
+    <section class="tool-module tool-share" id="share" aria-labelledby="share-heading"
+      data-share-url="${escapeHtml(pageUrl)}"
+      data-share-title="${escapeHtml(toolName)}"
+      data-label-copy="${escapeHtml(copyLabel)}"
+      data-label-copied="${escapeHtml(copiedLabel)}">
+      <h2 class="h5" id="share-heading">${escapeHtml(t(lang, 'tool_share_title'))}</h2>
+      <p class="text-muted small mb-3">${escapeHtml(t(lang, 'tool_share_hint'))}</p>
+      <div class="tool-share-networks" role="list" aria-label="${escapeHtml(t(lang, 'tool_share_networks_label'))}">
+        ${socialHtml}
+      </div>
+      <div class="tool-module-actions">
+        <button type="button" class="btn btn-outline-primary btn-sm" id="toolShareCopyBtn">${escapeHtml(copyLabel)}</button>
+        <button type="button" class="btn btn-primary btn-sm" id="toolShareNativeBtn" hidden>${escapeHtml(nativeLabel)}</button>
+      </div>
+      <p class="tool-share-url small text-muted mt-2 mb-0" id="toolShareUrlText">${escapeHtml(pageUrl)}</p>
+    </section>
+    <script>
+    (function () {
+      var root = document.getElementById('share');
+      if (!root || root.getAttribute('data-share-bound') === '1') return;
+      root.setAttribute('data-share-bound', '1');
+      var url = root.getAttribute('data-share-url') || window.location.href;
+      var title = root.getAttribute('data-share-title') || document.title;
+      var labelCopy = root.getAttribute('data-label-copy') || 'Copy link';
+      var labelCopied = root.getAttribute('data-label-copied') || 'Copied';
+      var copyBtn = document.getElementById('toolShareCopyBtn');
+      var nativeBtn = document.getElementById('toolShareNativeBtn');
+      if (nativeBtn && typeof navigator !== 'undefined' && typeof navigator.share === 'function') {
+        nativeBtn.hidden = false;
+        nativeBtn.addEventListener('click', function () {
+          navigator.share({ title: title, url: url }).catch(function () {});
+        });
+      }
+      if (copyBtn) {
+        copyBtn.addEventListener('click', async function () {
+          try {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              await navigator.clipboard.writeText(url);
+            } else {
+              var ta = document.createElement('textarea');
+              ta.value = url;
+              ta.setAttribute('readonly', '');
+              ta.style.position = 'fixed';
+              ta.style.left = '-9999px';
+              document.body.appendChild(ta);
+              ta.select();
+              document.execCommand('copy');
+              document.body.removeChild(ta);
+            }
+            copyBtn.textContent = labelCopied;
+            setTimeout(function () { copyBtn.textContent = labelCopy; }, 1600);
+          } catch (e) {}
+        });
+      }
+    })();
+    </script>`;
+};
+
+/**
+ * 渲染「邮件咨询 / 反馈」模块。
+ * @param lang 当前语言
+ * @param pageUrl 本工具页绝对 URL（写入邮件正文）
+ * @param toolName 工具显示名（写入邮件主题）
+ */
+export const renderToolFeedbackSection = (lang: SiteLang, pageUrl: string, toolName: string) => {
+	const subjectBase = t(lang, 'tool_feedback_subject');
+	const subject = `${subjectBase}: ${toolName}`;
+	const body = `${toolName}\n${pageUrl}\n\n`;
+	const mailto = `mailto:${TOOL_CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+	return `
+    <section class="tool-module tool-feedback" id="feedback" aria-labelledby="feedback-heading">
+      <h2 class="h5" id="feedback-heading">${escapeHtml(t(lang, 'tool_feedback_title'))}</h2>
+      <p class="text-muted small mb-3">${escapeHtml(t(lang, 'tool_feedback_body'))}</p>
+      <p class="mb-2 small">
+        <span class="text-muted">${escapeHtml(t(lang, 'tool_feedback_email_label'))}:</span>
+        <a href="mailto:${escapeHtml(TOOL_CONTACT_EMAIL)}">${escapeHtml(TOOL_CONTACT_EMAIL)}</a>
+      </p>
+      <div class="tool-module-actions">
+        <a class="btn btn-primary btn-sm" href="${escapeHtml(mailto)}">${escapeHtml(t(lang, 'tool_feedback_cta'))}</a>
+      </div>
+    </section>`;
+};
+
+/**
+ * 组装工具页底部说明区（FAQ / YMYL / 相关 / 分享 / 反馈）。
  */
 export const renderToolExtraSections = (opts: {
 	lang: SiteLang;
@@ -117,10 +271,17 @@ export const renderToolExtraSections = (opts: {
 	tool: ToolPageMeta;
 }) => {
 	const faqs = collectToolFaqs(opts.lang, opts.tool.faqPrefix);
+	const path = withToolLangPrefix(opts.lang, opts.tool.path, opts.defaultLang);
+	const pageUrl = `${SITE_ORIGIN}${path}`;
+	const toolName = t(opts.lang, opts.tool.i18nKey as keyof typeof import('../../site/i18n/en').default);
 	return [
 		renderFaqSection(opts.lang, faqs),
 		renderYmylSection(opts.lang, opts.tool.faqPrefix, opts.tool.ymyl),
 		renderRelatedTools(opts.lang, opts.defaultLang, opts.tool.related),
+		`<div class="tool-module-grid">
+      ${renderToolShareSection(opts.lang, pageUrl, toolName)}
+      ${renderToolFeedbackSection(opts.lang, pageUrl, toolName)}
+    </div>`,
 	].join('\n');
 };
 
@@ -169,7 +330,7 @@ export const renderToolIgSections = (opts: {
 	const howBody = tx(`${prefix}_how_body`);
 	if (howTitle && howBody) {
 		parts.push(`
-    <section class="mt-4" id="how" aria-labelledby="how-heading">
+    <section class="mt-4 tool-section" id="how" aria-labelledby="how-heading">
       <h2 class="h5" id="how-heading">${escapeHtml(howTitle)}</h2>
       <p class="text-muted mb-0">${escapeHtml(howBody)}</p>
     </section>`);
@@ -191,7 +352,7 @@ export const renderToolIgSections = (opts: {
 				: '';
 		const body = midBody ? `<p class="text-muted mb-2">${escapeHtml(midBody)}</p>` : '';
 		parts.push(`
-    <section class="mt-4" id="${mode}" aria-labelledby="${mode}-heading">
+    <section class="mt-4 tool-section" id="${mode}" aria-labelledby="${mode}-heading">
       <h2 class="h5" id="${mode}-heading">${escapeHtml(midTitle)}</h2>
       ${body}
       ${list}
@@ -202,7 +363,7 @@ export const renderToolIgSections = (opts: {
 	const exBody = tx(`${prefix}_example`);
 	if (exTitle && exBody) {
 		parts.push(`
-    <section class="mt-4" id="example" aria-labelledby="example-heading">
+    <section class="mt-4 tool-section" id="example" aria-labelledby="example-heading">
       <h2 class="h5" id="example-heading">${escapeHtml(exTitle)}</h2>
       <p class="text-muted mb-0">${escapeHtml(exBody)}</p>
     </section>`);
@@ -216,7 +377,7 @@ export const renderToolIgSections = (opts: {
 	}
 	if (ucTitle && ucItems.length) {
 		parts.push(`
-    <section class="mt-4" id="use-cases" aria-labelledby="usecases-heading">
+    <section class="mt-4 tool-section" id="use-cases" aria-labelledby="usecases-heading">
       <h2 class="h5" id="usecases-heading">${escapeHtml(ucTitle)}</h2>
       <ul class="text-muted mb-0">${ucItems.map((x) => `<li>${escapeHtml(x)}</li>`).join('')}</ul>
     </section>`);
@@ -242,7 +403,7 @@ export const renderToolReferencesSection = (opts: {
 		)
 		.join('');
 	return `
-    <section class="mt-4" id="references" aria-labelledby="refs-heading">
+    <section class="mt-4 tool-section" id="references" aria-labelledby="refs-heading">
       <h2 class="h5" id="refs-heading">${escapeHtml(t(opts.lang, 'tool_references_title'))}</h2>
       <ul class="mb-0">${items}</ul>
     </section>`;

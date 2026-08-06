@@ -61,36 +61,11 @@
     })();
   </script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="/styles/site.css" rel="stylesheet" />
   <style>
-    body { min-height: 100vh; padding-top: 56px; }
-    .layout { display: flex; min-height: 100vh; }
-    /* Sidebar: desktop - sticky under the fixed header */
-    #sidebar {
-      width: 260px;
-      transition: margin-left 0.2s ease;
-      position: sticky;
-      top: 56px;
-      height: calc(100vh - 56px);
-      overflow-y: auto;
-      background: #f8f9fa;
-      border-right: 1px solid #e5e7eb;
-      z-index: 1020;
-    }
-    #content { flex: 1; transition: margin-left 0.2s ease; }
-    .sidebar-collapsed #sidebar { margin-left: -260px; }
-    .sidebar-collapsed #content { margin-left: 0; }
-    @media (max-width: 767.98px) {
-      #sidebar {
-        position: fixed;
-        z-index: 1020;
-        top: 56px;
-        bottom: 0;
-        height: auto;
-      }
-      .sidebar-collapsed #sidebar { margin-left: -260px; }
-      #content { margin-left: 0; }
-      body { padding-top: 56px; }
-    }
+    body { min-height: 100vh; padding-top: var(--header-h, 56px); }
+    .layout { display: flex; min-height: calc(100vh - var(--header-h, 56px)); }
   </style>
   
 <script>
@@ -112,14 +87,17 @@ var _hmt = _hmt || [];
   <meta name="google-site-verification" content="DRJRq9AI8KKITkdiZbdd7zu4LxrIc38CPOd9OeK15FM" />
   
 </head>
-<body>
+<body class="is-home-page">
   
   
   <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light site-navbar border-bottom fixed-top">
       <div class="container-fluid">
         <button class="btn btn-outline-secondary me-2" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
-        <a class="navbar-brand fw-semibold" href="/ja/">Online Free Tools</a>
+        <a class="navbar-brand" href="/ja/">
+          <img class="navbar-brand-logo" src="/brand-logo.svg" width="28" height="28" alt="" decoding="async" />
+          <span class="navbar-brand-text">Online Free Tools</span>
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -140,149 +118,222 @@ var _hmt = _hmt || [];
   </header>
   <div class="layout sidebar-collapsed" id="layoutRoot">
     
-    <aside id="sidebar" class="bg-light border-end p-3">
-      <h6 class="text-muted text-uppercase">カテゴリ</h6>
+    <aside id="sidebar" class="border-end">
+      <h2 class="sidebar-title h6">カテゴリ</h2>
       <div class="list-group list-group-flush small" id="categoryList"><a class="list-group-item list-group-item-action" href="#cat-calculator">計算機</a><a class="list-group-item list-group-item-action" href="#cat-dev">開発者</a></div>
     </aside>
     <main id="content" class="p-4">
-    <section id="featured" class="mb-4">
-      <div class="d-flex justify-content-between align-items-center mb-3">
-        <h2 class="h5 mb-0">おすすめ</h2>
+    <div class="home-wrap">
+    <section class="home-hero" aria-labelledby="home-hero-heading">
+      <div class="home-hero-inner">
+        <h1 class="home-hero-brand" id="home-hero-heading">Online Free Tools</h1>
+        <p class="home-hero-lead">日常向けの無料ツール — 計算機、変換、ウェブマスター向けユーティリティ。登録不要。</p>
+        <div class="home-hero-actions">
+          <a class="btn btn-primary btn-lg" href="#all-tools">ツールを見る</a>
+          <a class="btn btn-outline-primary btn-lg" href="#featured">おすすめ</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="home-main">
+    <section class="home-why" aria-label="選ぶ理由">
+      <div class="home-why-item">
+        <h3>ブラウザで処理</h3>
+        <p>多くはタブ内で完結。Worker が必要な場合は明示します。</p>
+      </div>
+      <div class="home-why-item">
+        <h3>無料</h3>
+        <p>アカウント不要。開いて結果をコピー。</p>
+      </div>
+      <div class="home-why-item">
+        <h3>10 言語</h3>
+        <p>UI とページを 10 言語で提供し hreflang を設定。</p>
+      </div>
+    </section>
+
+    <section id="featured" class="mb-5">
+      <div class="home-section-head">
+        <h2>おすすめ</h2>
         <a class="btn btn-sm btn-outline-secondary" href="#all-tools">すべて表示</a>
       </div>
-      <div class="row row-cols-1 row-cols-md-3 row-cols-xl-4 g-3">
+      <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
         
   <div class="col">
-    <div class="card h-100 shadow-sm d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h5 class="card-title">HTTPヘッダ確認</h5>
-        <p class="card-text text-muted flex-grow-1">任意URLのHTTPレスポンスヘッダを確認：HEAD/GET、リダイレクト、エッジからのヘッダー一覧。</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/website-headers.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">HTTPヘッダ確認</h3>
+        </div>
+        <p class="card-text flex-grow-1">任意URLのHTTPレスポンスヘッダを確認：HEAD/GET、リダイレクト、エッジからのヘッダー一覧。</p>
         <a href="/ja/tools/website-headers" class="mt-auto btn btn-primary btn-sm">開く</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 shadow-sm d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h5 class="card-title">自分のIPアドレスを確認 — グローバルIPを表示</h5>
-        <p class="card-text text-muted flex-grow-1">エッジが見るグローバルIPを表示。VPN時は出口IPになります。</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/ip-address.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">自分のIPアドレスを確認 — グローバルIPを表示</h3>
+        </div>
+        <p class="card-text flex-grow-1">エッジが見るグローバルIPを表示。VPN時は出口IPになります。</p>
         <a href="/ja/tools/ip-address" class="mt-auto btn btn-primary btn-sm">開く</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 shadow-sm d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h5 class="card-title">Markdown ↔ HTML</h5>
-        <p class="card-text text-muted flex-grow-1">ブラウザで Markdown ↔ HTML を変換・プレビュー。</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/markdown-to-html.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">Markdown ↔ HTML</h3>
+        </div>
+        <p class="card-text flex-grow-1">ブラウザで Markdown ↔ HTML を変換・プレビュー。</p>
         <a href="/ja/tools/markdown-to-html" class="mt-auto btn btn-primary btn-sm">開く</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 shadow-sm d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h5 class="card-title">テキスト比較</h5>
-        <p class="card-text text-muted flex-grow-1">2つの文章の差分を行・単語・文字で確認。</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/text-diff.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">テキスト比較</h3>
+        </div>
+        <p class="card-text flex-grow-1">2つの文章の差分を行・単語・文字で確認。</p>
         <a href="/ja/tools/text-diff" class="mt-auto btn btn-primary btn-sm">開く</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 shadow-sm d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h5 class="card-title">YAML ↔ JSON</h5>
-        <p class="card-text text-muted flex-grow-1">YAML と JSON を相互変換（型ルール・複数ドキュメント）。</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/yaml-json.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">YAML ↔ JSON</h3>
+        </div>
+        <p class="card-text flex-grow-1">YAML と JSON を相互変換（型ルール・複数ドキュメント）。</p>
         <a href="/ja/tools/yaml-json" class="mt-auto btn btn-primary btn-sm">開く</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 shadow-sm d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h5 class="card-title">CSV ↔ JSON</h5>
-        <p class="card-text text-muted flex-grow-1">CSV と JSON を相互変換（区切り文字・ヘッダー・型）。</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/csv-json.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">CSV ↔ JSON</h3>
+        </div>
+        <p class="card-text flex-grow-1">CSV と JSON を相互変換（区切り文字・ヘッダー・型）。</p>
         <a href="/ja/tools/csv-json" class="mt-auto btn btn-primary btn-sm">開く</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 shadow-sm d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h5 class="card-title">HTML エンティティ</h5>
-        <p class="card-text text-muted flex-grow-1">HTML エンティティのエンコード/デコード（範囲・数値形式）— ローカル。</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/html-entity.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">HTML エンティティ</h3>
+        </div>
+        <p class="card-text flex-grow-1">HTML エンティティのエンコード/デコード（範囲・数値形式）— ローカル。</p>
         <a href="/ja/tools/html-entity" class="mt-auto btn btn-primary btn-sm">開く</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 shadow-sm d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h5 class="card-title">DNS に WWW を追加</h5>
-        <p class="card-text text-muted flex-grow-1">www の A/CNAME 生成、DNS 確認、Cloudflare/Vercel 手順。</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/add-www-to-dns.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">DNS に WWW を追加</h3>
+        </div>
+        <p class="card-text flex-grow-1">www の A/CNAME 生成、DNS 確認、Cloudflare/Vercel 手順。</p>
         <a href="/ja/tools/add-www-to-dns" class="mt-auto btn btn-primary btn-sm">開く</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 shadow-sm d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h5 class="card-title">IndexNow</h5>
-        <p class="card-text text-muted flex-grow-1">IndexNow：キー生成、txt 確認、Bing へ URL 送信。</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/indexnow.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">IndexNow</h3>
+        </div>
+        <p class="card-text flex-grow-1">IndexNow：キー生成、txt 確認、Bing へ URL 送信。</p>
         <a href="/ja/tools/indexnow" class="mt-auto btn btn-primary btn-sm">開く</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 shadow-sm d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h5 class="card-title">BMI計算ツール</h5>
-        <p class="card-text text-muted flex-grow-1">成人BMIを式で算出。メートル法/ヤード・ポンド法を選び体重・身長を入力。例：70 kg・175 cm → 約22.9。参考用で診断ではありません。</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-bmi.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">BMI計算ツール</h3>
+        </div>
+        <p class="card-text flex-grow-1">成人BMIを式で算出。メートル法/ヤード・ポンド法を選び体重・身長を入力。例：70 kg・175 cm → 約22.9。参考用で診断ではありません。</p>
         <a href="/ja/tools/how-to-calculate-bmi" class="mt-auto btn btn-primary btn-sm">開く</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 shadow-sm d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h5 class="card-title">ROI（投資利益率）計算ツール — 計算式と例</h5>
-        <p class="card-text text-muted flex-grow-1">費用と最終価値から単純ROIを計算。例：1000→1300 = 30%。学習用で投資助言ではありません。</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-roi.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">ROI（投資利益率）計算ツール — 計算式と例</h3>
+        </div>
+        <p class="card-text flex-grow-1">費用と最終価値から単純ROIを計算。例：1000→1300 = 30%。学習用で投資助言ではありません。</p>
         <a href="/ja/tools/how-to-calculate-roi" class="mt-auto btn btn-primary btn-sm">開く</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 shadow-sm d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h5 class="card-title">限界収入（MR）計算 — 公式 ΔTR / ΔQ</h5>
-        <p class="card-text text-muted flex-grow-1">2点の数量と総収入から MR = ΔTR / ΔQ。例：10→11、1000→1080 → MR 80。学習用です。</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-marginal-revenue.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">限界収入（MR）計算 — 公式 ΔTR / ΔQ</h3>
+        </div>
+        <p class="card-text flex-grow-1">2点の数量と総収入から MR = ΔTR / ΔQ。例：10→11、1000→1080 → MR 80。学習用です。</p>
         <a href="/ja/tools/how-to-calculate-marginal-revenue" class="mt-auto btn btn-primary btn-sm">開く</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 shadow-sm d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h5 class="card-title">平方フィート⇔平方メートル換算 — 物件・リフォーム向け</h5>
-        <p class="card-text text-muted flex-grow-1">部屋の面積を平方フィートと平方メートルのあいだで換算します（物件・リフォーム向け）。手順：ft/m/in を選び、縦×横を入力し、面積を求めたあと NIST 係数 1 ft² = 0.09290304 m² で m² も表示。例：850 sq ft の部屋 ≈ 78.97 m²。</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/square-feet.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">平方フィート⇔平方メートル換算 — 物件・リフォーム向け</h3>
+        </div>
+        <p class="card-text flex-grow-1">部屋の面積を平方フィートと平方メートルのあいだで換算します（物件・リフォーム向け）。手順：ft/m/in を選び、縦×横を入力し、面積を求めたあと NIST 係数 1 ft² = 0.09290304 m² で m² も表示。例：850 sq ft の部屋 ≈ 78.97 m²。</p>
         <a href="/ja/tools/square-feet" class="mt-auto btn btn-primary btn-sm">開く</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 shadow-sm d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h5 class="card-title">パーセント変化の計算 — 旧値から新値への増減率</h5>
-        <p class="card-text text-muted flex-grow-1">旧値と新値から増減率を計算します。手順：両方を入力し (新−旧)/旧×100 を適用して符号を読む。例：80→100 = +25%。売上の前月比や DAU・値付け向け。百分点（ポイント）とは別物です。</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-percentage-change.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">パーセント変化の計算 — 旧値から新値への増減率</h3>
+        </div>
+        <p class="card-text flex-grow-1">旧値と新値から増減率を計算します。手順：両方を入力し (新−旧)/旧×100 を適用して符号を読む。例：80→100 = +25%。売上の前月比や DAU・値付け向け。百分点（ポイント）とは別物です。</p>
         <a href="/ja/tools/how-to-calculate-percentage-change" class="mt-auto btn btn-primary btn-sm">開く</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 shadow-sm d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h5 class="card-title">多変数の勾配 ∇f を計算 — 偏導関数ベクトル</h5>
-        <p class="card-text text-muted flex-grow-1">スカラー場の勾配 ∇f（偏導関数のベクトル）を求めます。手順：各変数で偏微分し ∇f を組み立て、点で評価。デモ f(x,y)=x²y+3y → ∇f=(2xy, x²+3)；点 (1,2) で (4,4)。最適化や機械学習の勾配降下の説明に。</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-gradient.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">多変数の勾配 ∇f を計算 — 偏導関数ベクトル</h3>
+        </div>
+        <p class="card-text flex-grow-1">スカラー場の勾配 ∇f（偏導関数のベクトル）を求めます。手順：各変数で偏微分し ∇f を組み立て、点で評価。デモ f(x,y)=x²y+3y → ∇f=(2xy, x²+3)；点 (1,2) で (4,4)。最適化や機械学習の勾配降下の説明に。</p>
         <a href="/ja/tools/how-to-calculate-gradient" class="mt-auto btn btn-primary btn-sm">開く</a>
       </div>
     </div>
@@ -291,68 +342,84 @@ var _hmt = _hmt || [];
     </section>
 
     <section id="all-tools">
-      <div class="d-flex justify-content-between align-items-center mb-3">
-        <h2 class="h5 mb-0">すべてのツール</h2>
+      <div class="home-section-head">
+        <h2>すべてのツール</h2>
       </div>
 
-      <div class="mb-4" id="cat-calculator">
-        <div class="d-flex align-items-center mb-2 flex-wrap gap-2">
-          <span class="badge text-bg-secondary">計算機</span>
-          <span class="text-muted small">公式・単位・計算方法</span>
-        </div>
-        <p class="small text-muted mb-3">公式と例が見えるインタラクティブな計算機。</p>
+      <div class="home-cat" id="cat-calculator">
+        <span class="home-cat-label">計算機</span>
+        <h3>公式・単位・計算方法</h3>
+        <p class="home-cat-blurb">公式と例が見えるインタラクティブな計算機。</p>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
           
   <div class="col">
-    <div class="card h-100 d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h6 class="card-title">BMI計算ツール</h6>
-        <p class="card-text small text-muted flex-grow-1">成人BMIを式で算出。メートル法/ヤード・ポンド法を選び体重・身長を入力。例：70 kg・175 cm → 約22.9。参考用で診断ではありません。</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-bmi.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">BMI計算ツール</h3>
+        </div>
+        <p class="card-text small flex-grow-1">成人BMIを式で算出。メートル法/ヤード・ポンド法を選び体重・身長を入力。例：70 kg・175 cm → 約22.9。参考用で診断ではありません。</p>
         <a href="/ja/tools/how-to-calculate-bmi" class="mt-auto btn btn-outline-primary btn-sm">開く</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h6 class="card-title">ROI（投資利益率）計算ツール — 計算式と例</h6>
-        <p class="card-text small text-muted flex-grow-1">費用と最終価値から単純ROIを計算。例：1000→1300 = 30%。学習用で投資助言ではありません。</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-roi.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">ROI（投資利益率）計算ツール — 計算式と例</h3>
+        </div>
+        <p class="card-text small flex-grow-1">費用と最終価値から単純ROIを計算。例：1000→1300 = 30%。学習用で投資助言ではありません。</p>
         <a href="/ja/tools/how-to-calculate-roi" class="mt-auto btn btn-outline-primary btn-sm">開く</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h6 class="card-title">限界収入（MR）計算 — 公式 ΔTR / ΔQ</h6>
-        <p class="card-text small text-muted flex-grow-1">2点の数量と総収入から MR = ΔTR / ΔQ。例：10→11、1000→1080 → MR 80。学習用です。</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-marginal-revenue.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">限界収入（MR）計算 — 公式 ΔTR / ΔQ</h3>
+        </div>
+        <p class="card-text small flex-grow-1">2点の数量と総収入から MR = ΔTR / ΔQ。例：10→11、1000→1080 → MR 80。学習用です。</p>
         <a href="/ja/tools/how-to-calculate-marginal-revenue" class="mt-auto btn btn-outline-primary btn-sm">開く</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h6 class="card-title">平方フィート⇔平方メートル換算 — 物件・リフォーム向け</h6>
-        <p class="card-text small text-muted flex-grow-1">部屋の面積を平方フィートと平方メートルのあいだで換算します（物件・リフォーム向け）。手順：ft/m/in を選び、縦×横を入力し、面積を求めたあと NIST 係数 1 ft² = 0.09290304 m² で m² も表示。例：850 sq ft の部屋 ≈ 78.97 m²。</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/square-feet.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">平方フィート⇔平方メートル換算 — 物件・リフォーム向け</h3>
+        </div>
+        <p class="card-text small flex-grow-1">部屋の面積を平方フィートと平方メートルのあいだで換算します（物件・リフォーム向け）。手順：ft/m/in を選び、縦×横を入力し、面積を求めたあと NIST 係数 1 ft² = 0.09290304 m² で m² も表示。例：850 sq ft の部屋 ≈ 78.97 m²。</p>
         <a href="/ja/tools/square-feet" class="mt-auto btn btn-outline-primary btn-sm">開く</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h6 class="card-title">パーセント変化の計算 — 旧値から新値への増減率</h6>
-        <p class="card-text small text-muted flex-grow-1">旧値と新値から増減率を計算します。手順：両方を入力し (新−旧)/旧×100 を適用して符号を読む。例：80→100 = +25%。売上の前月比や DAU・値付け向け。百分点（ポイント）とは別物です。</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-percentage-change.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">パーセント変化の計算 — 旧値から新値への増減率</h3>
+        </div>
+        <p class="card-text small flex-grow-1">旧値と新値から増減率を計算します。手順：両方を入力し (新−旧)/旧×100 を適用して符号を読む。例：80→100 = +25%。売上の前月比や DAU・値付け向け。百分点（ポイント）とは別物です。</p>
         <a href="/ja/tools/how-to-calculate-percentage-change" class="mt-auto btn btn-outline-primary btn-sm">開く</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h6 class="card-title">多変数の勾配 ∇f を計算 — 偏導関数ベクトル</h6>
-        <p class="card-text small text-muted flex-grow-1">スカラー場の勾配 ∇f（偏導関数のベクトル）を求めます。手順：各変数で偏微分し ∇f を組み立て、点で評価。デモ f(x,y)=x²y+3y → ∇f=(2xy, x²+3)；点 (1,2) で (4,4)。最適化や機械学習の勾配降下の説明に。</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-gradient.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">多変数の勾配 ∇f を計算 — 偏導関数ベクトル</h3>
+        </div>
+        <p class="card-text small flex-grow-1">スカラー場の勾配 ∇f（偏導関数のベクトル）を求めます。手順：各変数で偏微分し ∇f を組み立て、点で評価。デモ f(x,y)=x²y+3y → ∇f=(2xy, x²+3)；点 (1,2) で (4,4)。最適化や機械学習の勾配降下の説明に。</p>
         <a href="/ja/tools/how-to-calculate-gradient" class="mt-auto btn btn-outline-primary btn-sm">開く</a>
       </div>
     </div>
@@ -360,91 +427,116 @@ var _hmt = _hmt || [];
         </div>
       </div>
 
-      <div class="mb-4" id="cat-dev">
-        <div class="d-flex align-items-center mb-2 flex-wrap gap-2">
-          <span class="badge text-bg-secondary">開発者</span>
-          <span class="text-muted small">デバッグ、生成、検証</span>
-        </div>
-        <p class="small text-muted mb-3">開発者向けユーティリティ — 登録不要、結果をコピー可能。</p>
+      <div class="home-cat" id="cat-dev">
+        <span class="home-cat-label">開発者</span>
+        <h3>デバッグ、生成、検証</h3>
+        <p class="home-cat-blurb">開発者向けユーティリティ — 登録不要、結果をコピー可能。</p>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
           
   <div class="col">
-    <div class="card h-100 d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h6 class="card-title">HTTPヘッダ確認</h6>
-        <p class="card-text small text-muted flex-grow-1">任意URLのHTTPレスポンスヘッダを確認：HEAD/GET、リダイレクト、エッジからのヘッダー一覧。</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/website-headers.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">HTTPヘッダ確認</h3>
+        </div>
+        <p class="card-text small flex-grow-1">任意URLのHTTPレスポンスヘッダを確認：HEAD/GET、リダイレクト、エッジからのヘッダー一覧。</p>
         <a href="/ja/tools/website-headers" class="mt-auto btn btn-outline-primary btn-sm">開く</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h6 class="card-title">自分のIPアドレスを確認 — グローバルIPを表示</h6>
-        <p class="card-text small text-muted flex-grow-1">エッジが見るグローバルIPを表示。VPN時は出口IPになります。</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/ip-address.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">自分のIPアドレスを確認 — グローバルIPを表示</h3>
+        </div>
+        <p class="card-text small flex-grow-1">エッジが見るグローバルIPを表示。VPN時は出口IPになります。</p>
         <a href="/ja/tools/ip-address" class="mt-auto btn btn-outline-primary btn-sm">開く</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h6 class="card-title">Markdown ↔ HTML</h6>
-        <p class="card-text small text-muted flex-grow-1">ブラウザで Markdown ↔ HTML を変換・プレビュー。</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/markdown-to-html.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">Markdown ↔ HTML</h3>
+        </div>
+        <p class="card-text small flex-grow-1">ブラウザで Markdown ↔ HTML を変換・プレビュー。</p>
         <a href="/ja/tools/markdown-to-html" class="mt-auto btn btn-outline-primary btn-sm">開く</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h6 class="card-title">テキスト比較</h6>
-        <p class="card-text small text-muted flex-grow-1">2つの文章の差分を行・単語・文字で確認。</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/text-diff.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">テキスト比較</h3>
+        </div>
+        <p class="card-text small flex-grow-1">2つの文章の差分を行・単語・文字で確認。</p>
         <a href="/ja/tools/text-diff" class="mt-auto btn btn-outline-primary btn-sm">開く</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h6 class="card-title">YAML ↔ JSON</h6>
-        <p class="card-text small text-muted flex-grow-1">YAML と JSON を相互変換（型ルール・複数ドキュメント）。</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/yaml-json.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">YAML ↔ JSON</h3>
+        </div>
+        <p class="card-text small flex-grow-1">YAML と JSON を相互変換（型ルール・複数ドキュメント）。</p>
         <a href="/ja/tools/yaml-json" class="mt-auto btn btn-outline-primary btn-sm">開く</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h6 class="card-title">CSV ↔ JSON</h6>
-        <p class="card-text small text-muted flex-grow-1">CSV と JSON を相互変換（区切り文字・ヘッダー・型）。</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/csv-json.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">CSV ↔ JSON</h3>
+        </div>
+        <p class="card-text small flex-grow-1">CSV と JSON を相互変換（区切り文字・ヘッダー・型）。</p>
         <a href="/ja/tools/csv-json" class="mt-auto btn btn-outline-primary btn-sm">開く</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h6 class="card-title">HTML エンティティ</h6>
-        <p class="card-text small text-muted flex-grow-1">HTML エンティティのエンコード/デコード（範囲・数値形式）— ローカル。</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/html-entity.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">HTML エンティティ</h3>
+        </div>
+        <p class="card-text small flex-grow-1">HTML エンティティのエンコード/デコード（範囲・数値形式）— ローカル。</p>
         <a href="/ja/tools/html-entity" class="mt-auto btn btn-outline-primary btn-sm">開く</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h6 class="card-title">DNS に WWW を追加</h6>
-        <p class="card-text small text-muted flex-grow-1">www の A/CNAME 生成、DNS 確認、Cloudflare/Vercel 手順。</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/add-www-to-dns.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">DNS に WWW を追加</h3>
+        </div>
+        <p class="card-text small flex-grow-1">www の A/CNAME 生成、DNS 確認、Cloudflare/Vercel 手順。</p>
         <a href="/ja/tools/add-www-to-dns" class="mt-auto btn btn-outline-primary btn-sm">開く</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card h-100 d-flex flex-column">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
-        <h6 class="card-title">IndexNow</h6>
-        <p class="card-text small text-muted flex-grow-1">IndexNow：キー生成、txt 確認、Bing へ URL 送信。</p>
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/indexnow.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">IndexNow</h3>
+        </div>
+        <p class="card-text small flex-grow-1">IndexNow：キー生成、txt 確認、Bing へ URL 送信。</p>
         <a href="/ja/tools/indexnow" class="mt-auto btn btn-outline-primary btn-sm">開く</a>
       </div>
     </div>
@@ -452,10 +544,12 @@ var _hmt = _hmt || [];
         </div>
       </div>
     </section>
+    </div>
+    </div>
   </main>
   </div>
   
-  <footer class="bg-light border-top text-center py-3">
+  <footer class="site-footer border-top text-center py-3">
     <div class="container">
       <small class="text-muted">Online Free Tools · 学習プロジェクト · 改善中</small>
       <span class="text-muted mx-2">·</span>

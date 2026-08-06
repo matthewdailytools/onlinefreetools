@@ -23,7 +23,7 @@ const withExplicitLangPrefix = (lang: SiteLang, pathname: string) => {
 export const renderFooter = (opts: { lang: SiteLang; defaultLang?: SiteLang }) => {
 	const aboutHref = withExplicitLangPrefix(opts.lang, '/about');
 	return `
-  <footer class="bg-light border-top text-center py-3">
+  <footer class="site-footer border-top text-center py-3">
     <div class="container">
       <small class="text-muted">${escapeHtml(t(opts.lang, 'footer_text'))}</small>
       <span class="text-muted mx-2">·</span>
