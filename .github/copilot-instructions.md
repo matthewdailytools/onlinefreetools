@@ -7,7 +7,7 @@ Purpose: Make AI agents productive immediately in this repo. Keep changes minima
 - Target platform: Cloudflare (Pages + Workers). Use Wrangler for local/dev/deploy.
 
 ## Default Agent Behaviors
-- Log each Q&A: create one file per exchange in `dev-logs/YYYY-MM-DD/` named `YYYY-MM-DD-HH-MM-<summary>.md`. Use ISO date + 24h time (local), short hyphenated summary (sanitize: spaces→`-`, remove `/\\:*?"<>|`).
+- Log each Q&A: create one file per exchange in `dev-logs/YYYY-MM/` named `YYYY-MM-DD-HH-MM-<summary>.md`. Use ISO date + 24h time (local), short hyphenated summary (sanitize: spaces→`-`, remove `/\\:*?"<>|`). Month folder matches `YYYY-MM` from the filename.
 - Log in English format (applies to new logs only; do not rewrite past entries):
   - `Date: <YYYY-MM-DD HH:MM>`
   - `Summary: <one sentence>`
@@ -80,5 +80,5 @@ Purpose: Make AI agents productive immediately in this repo. Keep changes minima
 - i18n: `<html lang>` + full `hreflang` per locale. Full rules: `docs/SEO_TOOL_RULES.md` and `.cursor/rules/`.
 
 ## Examples
-- Create a new log for a Q&A about initializing Cloudflare: `dev-logs/2026-01-08-初始化cloudflare项目.md` with the sections above.
+- Create a new log for a Q&A about initializing Cloudflare: `dev-logs/2026-01/2026-01-08-初始化cloudflare项目.md` with the sections above.
 - Minimal Worker entrypoint example path once created: `src/worker.ts` referenced by `wrangler.toml` (`main = "src/worker.ts"`).

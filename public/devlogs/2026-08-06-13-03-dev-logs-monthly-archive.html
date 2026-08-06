@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Serve Google HTML verification file at exact URL with 200 and no redirect | Dev Logs</title>
-  <meta name="description" content="Serve Google HTML verification file at exact URL with 200 and no redirect" />
-  <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-03-20-59-google-html-verification-no-redirect.html" />
-  <meta property="og:title" content="Serve Google HTML verification file at exact URL with 200 and no redirect | Dev Logs" />
-  <meta property="og:description" content="Serve Google HTML verification file at exact URL with 200 and no redirect" />
+  <title>Archived dev-log markdown into YYYY-MM folders and updated build to list by month. | Dev Logs</title>
+  <meta name="description" content="Archived dev-log markdown into YYYY-MM folders and updated build to list by month." />
+  <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-06-13-03-dev-logs-monthly-archive.html" />
+  <meta property="og:title" content="Archived dev-log markdown into YYYY-MM folders and updated build to list by month. | Dev Logs" />
+  <meta property="og:description" content="Archived dev-log markdown into YYYY-MM folders and updated build to list by month." />
   <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-03-20-59-google-html-verification-no-redirect.html" />
+  <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-06-13-03-dev-logs-monthly-archive.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
   
@@ -131,21 +131,33 @@ var _hmt = _hmt || [];
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Serve Google HTML verification file at exact URL with 200 and no redirect | Dev Logs</h1>
+          <h1 class="h4 mb-0">Archived dev-log markdown into YYYY-MM folders and updated build to list by month. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-03 20:59
-Summary: Serve Google HTML verification file at exact URL with 200 and no redirect</p>
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-06 13:03
+Summary: Archived dev-log markdown into YYYY-MM folders and updated build to list by month.</p>
 <p>[question]
-google2cb457f0956f79d9.html 这个页面放在public下面，需要可以直接访问<a href="http://Onlinefreetools.org/google2cb457f0956f79d9.html,%E4%B8%8D%E8%83%BD%E8%B7%B3%E8%BD%AC%EF%BC%8C%E4%BB%A5%E6%BB%A1%E8%B6%B3%E8%B0%B7%E6%AD%8C%E9%AA%8C%E8%AF%81%E7%9A%84%E8%A6%81%E6%B1%82">http://Onlinefreetools.org/google2cb457f0956f79d9.html,不能跳转，以满足谷歌验证的要求</a></p>
+将dev-log内容进行分月归档</p>
 <p>[try to solve]
-线上 <code>/google….html</code> 被 Cloudflare Workers Assets 默认 <code>html_handling</code> 307 到 <code>/google…</code>（无扩展名）。本地 <code>wrangler dev</code> 下通过 Worker 显式路由 + <code>html_handling: &quot;none&quot;</code> 可对精确 <code>.html</code> 返回 200；多次部署后生产仍 307（Assets 配置变更似乎未按预期落到该域名的静态命中路径）。首页已注入 meta 验证标签可作为备用。</p>
+已将 <code>dev-logs/</code> 下全部 Markdown 迁入分月目录：</p>
+<ul>
+<li><code>dev-logs/2026-01/</code>（57 篇）</li>
+<li><code>dev-logs/2026-06/</code>（1 篇）</li>
+<li><code>dev-logs/2026-07/</code>（2 篇）</li>
+<li><code>dev-logs/2026-08/</code>（5 篇）</li>
+</ul>
+<p><code>index.html</code>、<code>viewer.html</code> 仍留在 <code>dev-logs/</code> 根目录。公开 URL（<code>/devlogs/&lt;文件名&gt;.html</code>）不变。</p>
+<p><strong>构建</strong>：<code>scripts/build-site.mjs</code> 递归读取各月目录；索引页按 <code>YYYY-MM</code> 分组展示。</p>
+<p><strong>规则</strong>：<code>.cursor/rules/dev-logs.mdc</code>、<code>.github/copilot-instructions.md</code> 路径改为 <code>dev-logs/YYYY-MM/</code>。</p>
+<p>已运行 <code>npm run build:logs</code> 刷新 <code>public/devlogs/</code>。</p>
 <p>[actions]</p>
 <ul>
-<li>更新：<code>wrangler.jsonc</code>（<code>run_worker_first: [&quot;/google2cb457f0956f79d9.html&quot;]</code>，<code>html_handling: &quot;none&quot;</code>）</li>
-<li>更新：<code>src/index.ts</code>（验证路径 200 直出；跳过语言协商；<code>/devlogs/</code> 索引）</li>
-<li>保留：<code>public/google2cb457f0956f79d9.html</code> 与 <code>verification/</code> 备份</li>
-<li>本日志：<code>dev-logs/2026-08-03-20-59-google-html-verification-no-redirect.md</code></li>
+<li>dev-logs/2026-{01,06,07,08}/*.md（自根目录与日目录迁入）</li>
+<li>scripts/build-site.mjs</li>
+<li>scripts/site/i18n.mjs</li>
+<li>.cursor/rules/dev-logs.mdc</li>
+<li>.github/copilot-instructions.md</li>
+<li>public/devlogs/</li>
 </ul>
 </article>
       </section>

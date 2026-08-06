@@ -23,6 +23,35 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const publicDir = path.join(root, 'public');
 const devLogsDir = path.join(root, 'dev-logs');
 
+/**
+ * 递归收集 dev-logs 下所有 Markdown 源文件（支持 dev-logs/YYYY-MM/ 分月目录）。
+ * @param {string} dir
+ * @returns {Promise<{ fullPath: string, fileName: string }[]>}
+ */
+const collectDevLogMarkdownFiles = async (dir) => {
+  const entries = await fs.readdir(dir, { withFileTypes: true });
+  const files = [];
+  for (const entry of entries) {
+    const fullPath = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      files.push(...(await collectDevLogMarkdownFiles(fullPath)));
+    } else if (entry.isFile() && entry.name.endsWith('.md')) {
+      files.push({ fullPath, fileName: entry.name });
+    }
+  }
+  return files;
+};
+
+/**
+ * 从日志文件名提取 YYYY-MM 月份键（用于索引分组）。
+ * @param {string} fileName
+ * @returns {string}
+ */
+const devLogMonthKey = (fileName) => {
+  const m = fileName.match(/^(\d{4}-\d{2})/);
+  return m ? m[1] : 'other';
+};
+
 const ensureDir = async (dir) => {
   await fs.mkdir(dir, { recursive: true });
 };
@@ -120,8 +149,8 @@ export const buildDevLogs = async () => {
   const outDir = path.join(publicDir, 'devlogs');
   await ensureDir(outDir);
 
-  const files = (await fs.readdir(devLogsDir)).filter((f) => f.endsWith('.md'));
-  files.sort((a, b) => b.localeCompare(a));
+  const fileEntries = await collectDevLogMarkdownFiles(devLogsDir);
+  fileEntries.sort((a, b) => b.fileName.localeCompare(a.fileName));
 
   const navItems = [
     { href: '/', label: t(lang, 'nav_home') },
@@ -135,11 +164,11 @@ export const buildDevLogs = async () => {
   const footerHtml = renderFooter({ lang });
 
   const items = [];
-  for (const file of files) {
-    const md = await fs.readFile(path.join(devLogsDir, file), 'utf-8');
+  for (const { fullPath, fileName } of fileEntries) {
+    const md = await fs.readFile(fullPath, 'utf-8');
     const { date, summary } = parseMeta(md);
     const htmlBody = marked.parse(md);
-    const base = file.replace(/\.md$/, '');
+    const base = fileName.replace(/\.md$/, '');
 
     const pageTitle = summary ? `${summary} | ${t(lang, 'nav_devlogs')}` : base;
     const description = summary || `${siteConfig.brand} dev logs`;
@@ -184,14 +213,15 @@ export const buildDevLogs = async () => {
       href: `/devlogs/${base}.html`,
       title: `${base.replace(/^[0-9-]+/, '').trim() || summary || base}`,
       date: (date || '').split(' ')[0] || date || '',
+      month: devLogMonthKey(fileName),
     });
   }
 
   const indexTitle = `${t(lang, 'devlogs_title')} | ${siteConfig.brand}`;
   const indexDescription =
     lang === 'en'
-      ? 'Project dev logs and Q&A notes, organized by date.'
-      : 'Online Free Tools 开发日志清单，按日期汇总所有问答记录。';
+      ? 'Project dev logs and Q&A notes, organized by month.'
+      : 'Online Free Tools 开发日志清单，按月汇总所有问答记录。';
   const indexCanonicalPath = '/devlogs/';
 
   const headerHtml = renderHeader({
@@ -203,6 +233,7 @@ export const buildDevLogs = async () => {
     showLangSwitcher: false,
   });
 
+  const months = [...new Set(items.map((i) => i.month))].sort((a, b) => b.localeCompare(a));
   const listHtml = `
     <section>
       <div class="d-flex justify-content-between align-items-center mb-3">
@@ -212,17 +243,32 @@ export const buildDevLogs = async () => {
         </div>
         <a class="btn btn-outline-secondary btn-sm" href="/">${t(lang, 'back_home')}</a>
       </div>
-      <ul class="list-group shadow-sm">
-        ${items
-          .map(
-            (i) => `
+      ${months
+        .map((month) => {
+          const monthItems = items.filter((i) => i.month === month);
+          const monthLabel =
+            month === 'other'
+              ? lang === 'en'
+                ? 'Other'
+                : '其他'
+              : month;
+          return `
+      <div class="mb-4">
+        <h2 class="h5 text-muted mb-2">${monthLabel}</h2>
+        <ul class="list-group shadow-sm">
+          ${monthItems
+            .map(
+              (i) => `
           <li class="list-group-item d-flex justify-content-between align-items-center">
             <a href="${i.href}" class="text-decoration-none">${i.title}</a>
             <span class="badge text-bg-secondary">${i.date}</span>
           </li>`
-          )
-          .join('')}
-      </ul>
+            )
+            .join('')}
+        </ul>
+      </div>`;
+        })
+        .join('')}
     </section>
   `;
 

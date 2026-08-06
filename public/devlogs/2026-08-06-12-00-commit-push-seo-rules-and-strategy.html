@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Serve Google HTML verification file at exact URL with 200 and no redirect | Dev Logs</title>
-  <meta name="description" content="Serve Google HTML verification file at exact URL with 200 and no redirect" />
-  <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-03-20-59-google-html-verification-no-redirect.html" />
-  <meta property="og:title" content="Serve Google HTML verification file at exact URL with 200 and no redirect | Dev Logs" />
-  <meta property="og:description" content="Serve Google HTML verification file at exact URL with 200 and no redirect" />
+  <title>Committed and pushed SEO strategy, cursor rules, lint, and i18n updates to main. | Dev Logs</title>
+  <meta name="description" content="Committed and pushed SEO strategy, cursor rules, lint, and i18n updates to main." />
+  <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-06-12-00-commit-push-seo-rules-and-strategy.html" />
+  <meta property="og:title" content="Committed and pushed SEO strategy, cursor rules, lint, and i18n updates to main. | Dev Logs" />
+  <meta property="og:description" content="Committed and pushed SEO strategy, cursor rules, lint, and i18n updates to main." />
   <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-03-20-59-google-html-verification-no-redirect.html" />
+  <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-06-12-00-commit-push-seo-rules-and-strategy.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
   
@@ -131,21 +131,25 @@ var _hmt = _hmt || [];
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Serve Google HTML verification file at exact URL with 200 and no redirect | Dev Logs</h1>
+          <h1 class="h4 mb-0">Committed and pushed SEO strategy, cursor rules, lint, and i18n updates to main. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-03 20:59
-Summary: Serve Google HTML verification file at exact URL with 200 and no redirect</p>
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-06 12:00
+Summary: Committed and pushed SEO strategy, cursor rules, lint, and i18n updates to main.</p>
 <p>[question]
-google2cb457f0956f79d9.html 这个页面放在public下面，需要可以直接访问<a href="http://Onlinefreetools.org/google2cb457f0956f79d9.html,%E4%B8%8D%E8%83%BD%E8%B7%B3%E8%BD%AC%EF%BC%8C%E4%BB%A5%E6%BB%A1%E8%B6%B3%E8%B0%B7%E6%AD%8C%E9%AA%8C%E8%AF%81%E7%9A%84%E8%A6%81%E6%B1%82">http://Onlinefreetools.org/google2cb457f0956f79d9.html,不能跳转，以满足谷歌验证的要求</a></p>
+commit and push</p>
 <p>[try to solve]
-线上 <code>/google….html</code> 被 Cloudflare Workers Assets 默认 <code>html_handling</code> 307 到 <code>/google…</code>（无扩展名）。本地 <code>wrangler dev</code> 下通过 Worker 显式路由 + <code>html_handling: &quot;none&quot;</code> 可对精确 <code>.html</code> 返回 200；多次部署后生产仍 307（Assets 配置变更似乎未按预期落到该域名的静态命中路径）。首页已注入 meta 验证标签可作为备用。</p>
+已提交并推送至 <code>origin/main</code>：</p>
+<ul>
+<li><strong>Commit</strong>: <code>ec653dc</code> — <code>docs: align SEO strategy, cursor rules, and lint with Information Gain</code></li>
+<li><strong>13 files</strong>, +500 / −82</li>
+</ul>
+<p>包含：<code>.cursor/rules/*</code>、策略文档 IG 章节、<code>copilot-instructions.md</code>、<code>SEO_TOOL_RULES.md</code>、<code>validate-tool-seo.mjs</code>（description ≥120）、<code>ja.ts</code> / <code>zh.ts</code> meta 加长、dev-log。</p>
+<p>未纳入：<code>docs/2026-07-28-public-mirror-tool-discussion.md</code>（与本批 SEO 改动无关）。</p>
 <p>[actions]</p>
 <ul>
-<li>更新：<code>wrangler.jsonc</code>（<code>run_worker_first: [&quot;/google2cb457f0956f79d9.html&quot;]</code>，<code>html_handling: &quot;none&quot;</code>）</li>
-<li>更新：<code>src/index.ts</code>（验证路径 200 直出；跳过语言协商；<code>/devlogs/</code> 索引）</li>
-<li>保留：<code>public/google2cb457f0956f79d9.html</code> 与 <code>verification/</code> 备份</li>
-<li>本日志：<code>dev-logs/2026-08-03-20-59-google-html-verification-no-redirect.md</code></li>
+<li>git commit ec653dc</li>
+<li>git push origin main</li>
 </ul>
 </article>
       </section>

@@ -5,13 +5,13 @@ alwaysApply: true
 
 # 开发日志（dev-logs）
 
-每次 Q&A 结束后，在 `dev-logs/YYYY-MM-DD/` 新建一条日志。
+每次 Q&A 结束后，在 **`dev-logs/YYYY-MM/`** 新建一条日志（按文件名中的年月分月归档）。
 
-## 文件名
+## 路径与文件名
 
-`YYYY-MM-DD-HH-MM-<summary>.md`
-
-- 本地 24 小时制；summary 用短横线连接（空格→`-`，去掉 `/\\:*?"<>|`）。
+- **目录**：`dev-logs/YYYY-MM/`（例如 `dev-logs/2026-08/`）
+- **文件名**：`YYYY-MM-DD-HH-MM-<summary>.md`
+- 本地 24 小时制；summary 用短横线连接（空格→`-`，去掉 `/\\:*?"<>|`）
 
 ## 正文格式（新日志用英文模板）
 
@@ -33,8 +33,13 @@ Summary: <one sentence>
 
 - **只记**：用户原问 + 最终 consolidated 回答。
 - **不记**：AI 末尾追问/确认句；创建日志文件这一动作。
-- **聊天**：完整 Q&A 仍在对话中展示；`public/devlogs/` 是后台归档，不因此缩短对用户可见内容。
+- **聊天**：完整 Q&A 仍在对话中展示；`public/devlogs/` 是发布输出，不因此缩短对用户可见内容。
+- **历史**：只追加、不改写；旧日志随归档迁入对应月份目录，公开 URL（`/devlogs/<文件名>.html`）保持不变。
 
 ## 示例路径
 
-`dev-logs/2026-01-08-初始化cloudflare项目.md`
+`dev-logs/2026-08/2026-08-06-12-00-commit-push-seo-rules-and-strategy.md`
+
+## 构建
+
+`npm run build:logs` 递归读取各月目录下的 `.md`，生成 `public/devlogs/` 索引（按月分组）与各篇 HTML。
