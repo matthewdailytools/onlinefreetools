@@ -26,6 +26,7 @@ import { renderHowToCalculatePercentageChangePage } from "./pages/howToCalculate
 import { renderHowToCalculateGradientPage } from "./pages/howToCalculateGradientPage";
 import { renderTextDiffPage } from "./pages/textDiffPage";
 import { renderYamlJsonPage } from "./pages/yamlJsonPage";
+import { renderCsvJsonPage } from "./pages/csvJsonPage";
 import { registerToolPage } from "./site/toolRegistrar";
 import { handleWebsiteHeadersApi } from "./tools/websiteHeaders";
 import { handleIpAddress } from "./endpoints/ipAddress";
@@ -266,6 +267,11 @@ registerToolPage(app as any, 'text-diff', (lang, defaultLang, enabled) =>
 // Register yaml-json page via registrar（YAML ↔ JSON 双向转换）
 registerToolPage(app as any, 'yaml-json', (lang, defaultLang, enabled) =>
 	renderYamlJsonPage({ lang, defaultLang, enabledLangs: enabled })
+);
+
+// Register csv-json page via registrar（CSV ↔ JSON 双向转换）
+registerToolPage(app as any, 'csv-json', (lang, defaultLang, enabled) =>
+	renderCsvJsonPage({ lang, defaultLang, enabledLangs: enabled })
 );
 
 // Catch-all (GET): perform language negotiation before falling back to static assets.

@@ -48,6 +48,8 @@ const translations = {
     tool_text_diff_desc: 'See differences between two texts — by line, word, or character.',
     tool_yaml_json_title: 'YAML ↔ JSON',
     tool_yaml_json_desc: 'Convert YAML ↔ JSON with typing rules and multi-doc arrays.',
+    tool_csv_json_title: 'CSV ↔ JSON',
+    tool_csv_json_desc: 'Convert CSV ↔ JSON with delimiter, header and type rules.',
     tool_markdown_to_html_article:
       'Convert Markdown to sanitized HTML or HTML to Markdown in-browser. Preview, copy, or download. Paste stays local; libraries may load from a CDN.',
     tool_ip_address_title: 'What Is My IP Address — See Your Public IP',
@@ -146,6 +148,8 @@ const translations = {
     tool_text_diff_desc: '按行、按词或按字符对比两段文字的差异。',
     tool_yaml_json_title: 'YAML ↔ JSON',
     tool_yaml_json_desc: '浏览器内 YAML 与 JSON 互转：类型规则与多文档。',
+    tool_csv_json_title: 'CSV ↔ JSON',
+    tool_csv_json_desc: '浏览器内 CSV 与 JSON 互转：分隔符、表头与类型规则。',
     tool_markdown_to_html_article: '同页双向：Markdown 转安全 HTML，或 HTML 收回 Markdown；粘贴不上传。',
     tool_ip_address_title: '查询我的公网 IP — 查看当前出口地址',
     tool_bmi_title: 'BMI 计算器 — 身体质量指数',
@@ -249,6 +253,8 @@ const translations = {
     tool_text_diff_desc: 'Mira las diferencias entre dos textos por línea, palabra o carácter.',
     tool_yaml_json_title: 'YAML ↔ JSON',
     tool_yaml_json_desc: 'Convierte YAML ↔ JSON con tipos y multi-documento.',
+    tool_csv_json_title: 'CSV ↔ JSON',
+    tool_csv_json_desc: 'Convierte CSV ↔ JSON con separador, encabezado y tipos.',
     tool_markdown_to_html_article:
       'Markdown ↔ HTML en el navegador: vista previa, copia y descarga. El pegado no se sube; librerías pueden cargar desde CDN.',
     tool_ip_address_title: 'Cuál es mi IP — Ver tu IP pública',
@@ -350,6 +356,8 @@ const translations = {
     tool_text_diff_desc: 'اطّلع على فروقات نصين حسب السطر أو الكلمة أو الحرف.',
     tool_yaml_json_title: 'YAML ↔ JSON',
     tool_yaml_json_desc: 'تحويل YAML ↔ JSON مع قواعد الأنواع والمستندات المتعددة.',
+    tool_csv_json_title: 'CSV ↔ JSON',
+    tool_csv_json_desc: 'تحويل CSV ↔ JSON مع الفاصل وصف الرأس وقواعد الأنواع.',
     tool_markdown_to_html_article:
       'تحويل ثنائي Markdown ↔ HTML في المتصفح مع معاينة وتنظيف. اللصق لا يُرفع.',
     tool_ip_address_title: 'ما هو عنوان IP الخاص بي — اعرض IP العام',
@@ -452,6 +460,8 @@ const translations = {
     tool_text_diff_desc: 'Veja diferenças entre dois textos por linha, palavra ou caractere.',
     tool_yaml_json_title: 'YAML ↔ JSON',
     tool_yaml_json_desc: 'Converta YAML ↔ JSON com tipos e multi-documento.',
+    tool_csv_json_title: 'CSV ↔ JSON',
+    tool_csv_json_desc: 'Converta CSV ↔ JSON com separador, cabeçalho e tipos.',
     tool_markdown_to_html_article:
       'Markdown ↔ HTML no navegador: pré-visualização, cópia e download. O texto colado não é enviado.',
     tool_ip_address_title: 'Qual é o meu IP — Ver seu IP público',
@@ -553,6 +563,8 @@ const translations = {
     tool_text_diff_desc: 'Lihat perbedaan dua teks per baris, kata, atau karakter.',
     tool_yaml_json_title: 'YAML ↔ JSON',
     tool_yaml_json_desc: 'Konversi YAML ↔ JSON dengan aturan tipe dan multi-dokumen.',
+    tool_csv_json_title: 'CSV ↔ JSON',
+    tool_csv_json_desc: 'Konversi CSV ↔ JSON dengan pemisah, header, dan tipe.',
     tool_markdown_to_html_article:
       'Markdown ↔ HTML di browser: pratinjau, salin, unduh. Tempelan tidak diunggah.',
     tool_ip_address_title: 'Berapa IP saya — Lihat IP publik Anda',
@@ -654,6 +666,8 @@ const translations = {
     tool_text_diff_desc: 'Voyez les différences entre deux textes ligne, mot ou caractère.',
     tool_yaml_json_title: 'YAML ↔ JSON',
     tool_yaml_json_desc: 'Convertir YAML ↔ JSON avec types et multi-documents.',
+    tool_csv_json_title: 'CSV ↔ JSON',
+    tool_csv_json_desc: 'Convertir CSV ↔ JSON avec séparateur, en-tête et types.',
     tool_markdown_to_html_article:
       'Markdown ↔ HTML dans le navigateur : aperçu, copie, téléchargement. Le collage n\'est pas envoyé.',
     tool_ip_address_title: 'Quelle est mon adresse IP — Voir votre IP publique',
@@ -754,6 +768,8 @@ const translations = {
     tool_text_diff_desc: '2つの文章の差分を行・単語・文字で確認。',
     tool_yaml_json_title: 'YAML ↔ JSON',
     tool_yaml_json_desc: 'YAML と JSON を相互変換（型ルール・複数ドキュメント）。',
+    tool_csv_json_title: 'CSV ↔ JSON',
+    tool_csv_json_desc: 'CSV と JSON を相互変換（区切り文字・ヘッダー・型）。',
     tool_markdown_to_html_article:
       'ブラウザ内の双方向 Markdown ↔ HTML。プレビューと書き出し。貼り付けはアップロードされません。',
     tool_ip_address_title: '自分のIPアドレスを確認 — グローバルIPを表示',
@@ -856,6 +872,8 @@ const translations = {
     tool_text_diff_desc: 'Посмотрите различия двух текстов по строкам, словам или символам.',
     tool_yaml_json_title: 'YAML ↔ JSON',
     tool_yaml_json_desc: 'YAML ↔ JSON с правилами типов и multi-doc.',
+    tool_csv_json_title: 'CSV ↔ JSON',
+    tool_csv_json_desc: 'CSV ↔ JSON с разделителем, заголовком и типами.',
     tool_markdown_to_html_article:
       'Двунаправленный Markdown ↔ HTML в браузере: предпросмотр и экспорт. Вставка не загружается на сервер.',
     tool_ip_address_title: 'Узнать свой IP — Показать публичный IP-адрес',
@@ -958,6 +976,8 @@ const translations = {
     tool_text_diff_desc: 'Unterschiede zweier Texte nach Zeile, Wort oder Zeichen sehen.',
     tool_yaml_json_title: 'YAML ↔ JSON',
     tool_yaml_json_desc: 'YAML ↔ JSON mit Typregeln und Multi-Doc.',
+    tool_csv_json_title: 'CSV ↔ JSON',
+    tool_csv_json_desc: 'CSV ↔ JSON mit Trennzeichen, Kopfzeile und Typen.',
     tool_markdown_to_html_article:
       'Bidirektionales Markdown ↔ HTML im Browser: Vorschau und Export. Einfügen bleibt lokal.',
     tool_ip_address_title: 'Was ist meine IP-Adresse — Öffentliche IP anzeigen',

@@ -13,6 +13,7 @@
 - [Markdown ↔ HTML](https://onlinefreetools.org/zh/tools/markdown-to-html) - 浏览器内 Markdown 与 HTML 双向转换：预览、安全清理与导出
 - [在线文本对比](https://onlinefreetools.org/zh/tools/text-diff) - 并排对比两段文本，高亮增删改差异
 - [YAML ↔ JSON](https://onlinefreetools.org/zh/tools/yaml-json) - 浏览器内 YAML 与 JSON 双向转换：类型规则、多文档与本地处理
+- [CSV ↔ JSON](https://onlinefreetools.org/zh/tools/csv-json) - 浏览器内 CSV 与 JSON 双向转换：分隔符、表头、类型推断与嵌套扁平化
 - [BMI 计算器](https://onlinefreetools.org/zh/tools/how-to-calculate-bmi) - 按成人筛查公式计算身体质量指数（教育用途，非诊断）
 - [ROI 计算器](https://onlinefreetools.org/zh/tools/how-to-calculate-roi) - 计算投资回报率，含假设说明与非投资建议免责
 - [边际收益计算器](https://onlinefreetools.org/zh/tools/how-to-calculate-marginal-revenue) - 用 ΔTR/ΔQ 计算边际收益（教学用途）
@@ -27,6 +28,7 @@ Below are our available online tools with their links (English version):
 - [Markdown ↔ HTML](https://onlinefreetools.org/tools/markdown-to-html) - Convert Markdown ↔ HTML with sanitize, preview, and export
 - [Text Diff Checker](https://onlinefreetools.org/tools/text-diff) - Compare two texts side by side and highlight differences
 - [YAML ↔ JSON](https://onlinefreetools.org/tools/yaml-json) - Convert YAML ↔ JSON with typing rules, multi-doc arrays, and local paste
+- [CSV ↔ JSON](https://onlinefreetools.org/tools/csv-json) - Convert CSV ↔ JSON with delimiter, header, type inference, and nested flattening
 - [BMI Calculator](https://onlinefreetools.org/tools/how-to-calculate-bmi) - Adult BMI screening from weight and height (educational, not a diagnosis)
 - [ROI Calculator](https://onlinefreetools.org/tools/how-to-calculate-roi) - Calculate return on investment with assumptions and a non-advice disclaimer
 - [Marginal Revenue Calculator](https://onlinefreetools.org/tools/how-to-calculate-marginal-revenue) - Compute MR = ΔTR / ΔQ for learning microeconomics
