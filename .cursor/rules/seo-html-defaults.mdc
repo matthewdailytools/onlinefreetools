@@ -30,7 +30,7 @@ alwaysApply: false
 - 允许：`BreadcrumbList`、`WebApplication`（及支柱页 `CollectionPage` / `ItemList`）
 - **禁止**：虚假 `aggregateRating`、与可见文案不一致或夸大的 Schema
 - JSON-LD 每句须能在页面上找到对应可见文案
-- FAQ 可配 FAQPage，但**不以**富结果展示为 KPI
+- **富结果现状（2026）**：Google 支持的富结果集合持续收窄——`HowTo` 桌面端 2023-09 弃用；2025-06 退役七类（Book/Course/ClaimReview/EstimatedSalary/LearningVideo/SpecialAnnouncement/VehicleListing）；**`FAQPage` 富结果 2026-05-07 全站停止展示**。`FAQPage` / `HowTo` 仍是有效 Schema.org 类型、Google 仍解析用于内容理解，可保留（利于可访问性/语义），但**不再产生 SERP 富结果**，**不以富结果为 KPI**；勿为"上富结果"堆无关 schema。
 
 ## 索引
 

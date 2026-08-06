@@ -14,7 +14,7 @@
 
 - **页内可见 FAQ（不为富结果 KPI）**：
   - 每个工具至少 3 组 `tool_*_faq_qN` / `tool_*_faq_aN`（N=1…）。
-  - 问答必须渲染在页面正文中，用户可见；**不要**把 FAQPage / HowTo 富结果当作成功指标（Google 已停用相关富结果展示）。
+  - 问答必须渲染在页面正文中，用户可见；**不要**把 FAQPage / HowTo 富结果当作成功指标：FAQ 富结果 **2026-05-07** 全站退役、HowTo **2023-09** 桌面弃用；schema 仍有效可保留但不产出富结果（见 `.cursor/rules/seo-google-policy.mdc`）。
   - 禁止仅对爬虫可见、对用户隐藏的问答（cloaking）。
 
 - **YMYL 工具**（目录中 `ymyl: true`，如 BMI / ROI / 边际收益）：
