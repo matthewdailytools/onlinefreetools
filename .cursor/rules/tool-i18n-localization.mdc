@@ -37,6 +37,7 @@ Agent 提示应类似：`Write {lang} copy for users who search: …`（附该�
 - **UI 短词本地说**；示例可本地化；技术专名（CRLF、`.env`、Markdown、HTML）可保留。
 - **首页** `scripts/site/i18n.mjs` 主词与工具页一致。
 - **反同构**：FAQ 题序、How/Rules 开篇、Use cases 切入点应随语种变化；禁止十语同一「Process: … Example: …」骨架只换词。
+- **只写用户视角**：可见正文（description / how / rules / example / usecases / faq）只写「用户完成任务需要知道什么」。**禁止**把 SEO/工程理由（doorway、空壳页/薄页、thin URL、slug、「双向放同一地址」「不拆 URL」「不是又一个…页」等自我指涉/元叙述）或实现库名（js-yaml、papaparse…）当卖点写进用户文案；此类理由只属于 `work-tasks/` 与 `docs/`（或代码注释）。母版语（en/zh）也须遵守——母版若混入元叙述，会被逐语放大成译腔。
 
 ## 每语 brief（写 i18n 前必填）
 
@@ -87,6 +88,9 @@ Agent 提示应类似：`Write {lang} copy for users who search: …`（附该�
 | 同构机翻 | 十语同一句式 + 同一 Hello world 骨架且无本地主词 | 每语独立重写 title/FAQ |
 | 假本地化 | 仅 en/zh 有文案，其余靠 `t()` 回退英文 | 十语键齐全 |
 | 脚本灌语 | 无逐语 brief 审阅的「一键八语」补丁当交付 | 逐语/≤3 语一批；脚本仅落盘 |
+| 内部理由外泄 | 用户文案出现 doorway / 空壳页 / 薄页 / URL puerta / slug / 「只改标题」「不拆 URL」「为什么放一页」 | 删除；理由移到 `work-tasks` / `docs` |
+| 元叙述 / 直译腔 | 「跟…走」「类型行为」「这不是又一个薄页」「We keep both directions … so … doorway」 | 用该语自然说法，正文只描述工具行为 |
+| 库名当卖点 | 面向用户写「经典 js-yaml 行为」「用 papaparse」作主张 | 描述可观察行为（如「未加引号的值会被判定类型」）；库名留 References |
 
 技术词（diff、JSON、CRLF）在开发者工具中**可以**保留，但不可代替本地主 title。
 
@@ -106,6 +110,7 @@ Agent 提示应类似：`Write {lang} copy for users who search: …`（附该�
 - [ ] 无未清的「待母语抽查」勾选（或已在 `03` 多轮记录写明排期与责任人）
 - [ ] `lint:seo` 通过（≠本地化完成）
 - [ ] 未使用「英模 → 脚本灌其余语」作为唯一交付路径
+- [ ] 可见正文无 SEO/工程元叙述（doorway/空壳/薄页/slug/自述「单页/不拆 URL」）与库名卖点；理由仅在 `work-tasks`/`docs`
 
 ## 红线
 

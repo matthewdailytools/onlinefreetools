@@ -79,7 +79,7 @@ const es: SiteLangDict = {
     'Una pestaña por sentido. Escribes a la izquierda y ves el resultado a la derecha sin subir el texto. En HTML puedes llevarte un fragmento o un documento mínimo; en Markdown obtienes texto plano.',
   tool_markdown_rules_title: 'Reglas por sentido',
   tool_markdown_rules_intro:
-    'No abrimos otra página casi igual solo para la palabra “html a markdown”.',
+    'Lo que cubre la conversión: qué sintaxis de Markdown se admite, cómo se sanea el HTML y cómo se trata tu texto en local.',
   tool_markdown_rules_item_md_html:
     'Hacia HTML: marked interpreta el Markdown; DOMPurify quita scripts peligrosos antes de mostrar o guardar.',
   tool_markdown_rules_item_html_md:
@@ -151,7 +151,7 @@ const es: SiteLangDict = {
     'Pegá YAML o JSON y elegí la pestaña. js-yaml corre en esta pestaña. Varios bloques separados por --- pasan por loadAll: un documento → un valor JSON; dos o más → array. Si el parser YAML marca el error, verás línea y columna.',
   tool_yaml_json_rules_title: 'Reglas que conviene conocer',
   tool_yaml_json_rules_body:
-    'Sin la casilla de tipos seguros, el comportamiento es el clásico de js-yaml. Ambas direcciones viven aquí para que “json a yaml” no sea otra puerta vacía.',
+    'Qué esperar al convertir: cómo se tipan los valores sin comillas, cómo el YAML multidocumento se asigna a JSON y dónde una ida y vuelta puede perder comentarios o formato.',
   tool_yaml_json_rules_item_1:
     'Tipos: con el schema DEFAULT, yes/no/on/off sin comillas y algunos escalares con pinta de fecha pueden volverse booleanos u otros tipos. Tipos seguros JSON dejan esos escalares como string salvo tipado explícito.',
   tool_yaml_json_rules_item_2:

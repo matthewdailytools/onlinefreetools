@@ -79,7 +79,7 @@ const pt: SiteLangDict = {
     'Use as abas. Entrada à esquerda, resultado à direita. No sentido HTML dá para copiar trecho ou documento simples; no sentido Markdown sai texto para Git ou LLM.',
   tool_markdown_rules_title: 'O que cada aba faz',
   tool_markdown_rules_intro:
-    'Evita URL gêmea só para ranking de “html para markdown”.',
+    'O que a conversão cobre: qual sintaxe Markdown é suportada, como o HTML é sanitizado e como seu texto colado é tratado localmente.',
   tool_markdown_rules_item_md_html:
     'Para HTML: parse CommonMark + sanitização antes de mostrar.',
   tool_markdown_rules_item_html_md:
@@ -151,7 +151,7 @@ const pt: SiteLangDict = {
     'Na mesma página: escolha YAML → JSON ou o inverso. A conversão usa js-yaml nesta aba. Blocos separados por --- passam por loadAll — um documento vira um valor JSON; dois ou mais, um array. Erros de YAML podem trazer linha e coluna quando o parser marca o ponto.',
   tool_yaml_json_rules_title: 'O que esperar',
   tool_yaml_json_rules_body:
-    'Sem “tipos seguros”, o schema DEFAULT do js-yaml manda. Os dois sentidos ficam juntos para “json para yaml” não virar outra porta vazia.',
+    'O que esperar ao converter: como valores sem aspas recebem tipo, como o YAML multidocumento vira JSON e onde uma ida e volta pode perder comentários ou formatação.',
   tool_yaml_json_rules_item_1:
     'Tipos: no schema DEFAULT, yes/no/on/off sem aspas e alguns escalares com cara de data podem virar boolean ou outro tipo. Tipos seguros JSON mantêm escalares sem aspas como string, salvo tipagem explícita.',
   tool_yaml_json_rules_item_2:

@@ -79,7 +79,7 @@ const fr: SiteLangDict = {
     'Onglets = sens. Saisie à gauche, rendu local à droite. Côté HTML : fragment ou coquille minimale ; côté Markdown : texte pour dépôt ou LLM.',
   tool_markdown_rules_title: 'Règles selon le sens',
   tool_markdown_rules_intro:
-    'Pas de seconde page mince juste pour “html en markdown”.',
+    'Ce que couvre la conversion : quelle syntaxe Markdown est prise en charge, comment le HTML est nettoyé et comment votre texte collé est traité en local.',
   tool_markdown_rules_item_md_html:
     'Vers HTML : parse CommonMark puis DOMPurify avant affichage/export.',
   tool_markdown_rules_item_html_md:
@@ -151,7 +151,7 @@ const fr: SiteLangDict = {
     'js-yaml tourne dans cet onglet : basculez YAML → JSON ou l’inverse, collez, convertissez. Un flux multi-document découpé par --- devient un tableau JSON dès qu’il y a au moins deux documents ; un seul document reste une valeur JSON unique. Les erreurs YAML affichent ligne et colonne lorsque le parseur fournit un mark.',
   tool_yaml_json_rules_title: 'Règles à anticiper',
   tool_yaml_json_rules_body:
-    'Les deux directions vivent sur la même page pour éviter un slug porte d’entrée « json en yaml ». Sans case Types JSON sûrs, le typage suit le schéma DEFAULT classique de js-yaml.',
+    'À quoi s’attendre lors de la conversion : comment les valeurs sans guillemets sont typées, comment le YAML multidocument correspond au JSON, et où un aller-retour peut perdre commentaires ou mise en forme.',
   tool_yaml_json_rules_item_1:
     'Typage : avec le schéma DEFAULT, yes/no/on/off nus et certains scalaires date-like peuvent devenir booléens ou d’autres types. Le schéma JSON sûr garde les scalaires non cités en chaînes sauf typage explicite.',
   tool_yaml_json_rules_item_2:

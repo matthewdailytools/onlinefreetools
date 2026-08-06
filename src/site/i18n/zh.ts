@@ -76,7 +76,7 @@ const zh: SiteLangDict = {
   tool_markdown_how_body:
     '先选标签页。左边输入、右边浏览器内更新。转 HTML 时可复制片段或套一层简单整页；转 MD 得到纯文本，方便进 Git 或丢给大模型。加载 CDN 库 ≠ 上传你的粘贴。',
   tool_markdown_rules_title: '两边分别怎么转',
-  tool_markdown_rules_intro: '双向放同一地址，避免再开一个只改标题的「HTML 转 Markdown」空壳页。',
+  tool_markdown_rules_intro: '下面的规则说明：支持哪些 Markdown 语法、HTML 会如何被清理，以及粘贴的内容如何在本地处理。',
   tool_markdown_rules_item_md_html:
     '往 HTML：marked 读 CommonMark 风格，DOMPurify 去掉危险脚本和属性后再给你看或保存。',
   tool_markdown_rules_item_html_md:
@@ -130,7 +130,7 @@ const zh: SiteLangDict = {
     '先选 YAML → JSON 或反过来。本页用 js-yaml 在当前标签页转换。用 --- 隔开的多文档会进 loadAll：一篇变成单个 JSON 值，两篇及以上变成 JSON 数组。YAML 语法错时，解析器若带 mark 会给出行号列号。',
   tool_yaml_json_rules_title: '你该预期的规则',
   tool_yaml_json_rules_body:
-    '默认跟经典 js-yaml 类型行为走，除非勾选「安全类型」。双向放同一地址，避免再开一个只改标题的「JSON 转 YAML」空壳页。',
+    '转换时可以预期这些：未加引号的值如何判定类型、多文档 YAML 如何对应到 JSON，以及往返转换可能丢失注释或格式。',
   tool_yaml_json_rules_item_1:
     '类型：默认 schema 下，裸写的 yes/no/on/off 以及部分像日期的标量可能变成布尔或其他类型。勾选安全类型后，未加引号的标量一般保持字符串（除非写了显式类型）。',
   tool_yaml_json_rules_item_2:

@@ -79,7 +79,7 @@ const id: SiteLangDict = {
     'Tab menentukan arah. Kiri input, kanan hasil lokal. HTML bisa fragmen atau dokumen sederhana; Markdown siap untuk editor/LLM.',
   tool_markdown_rules_title: 'Aturan per arah',
   tool_markdown_rules_intro:
-    'Tidak membuat URL tipis kedua hanya demi kata kunci “html ke markdown”.',
+    'Yang dicakup konversi: sintaks Markdown apa yang didukung, bagaimana HTML dibersihkan, dan bagaimana teks yang Anda tempel diproses secara lokal.',
   tool_markdown_rules_item_md_html:
     'Ke HTML: parse lalu sanitasi sebelum tampil/unduh.',
   tool_markdown_rules_item_html_md:
@@ -151,7 +151,7 @@ const id: SiteLangDict = {
     'Konversi berjalan di tab ini lewat js-yaml. Pilih YAML → JSON atau sebaliknya, tempel teks, lalu salin atau unduh hasilnya. Aliran multi-dokumen dipisah ---: satu dokumen → satu nilai JSON; dua atau lebih → array JSON. Kesalahan YAML bisa menampilkan baris dan kolom jika parser memberi mark.',
   tool_yaml_json_rules_title: 'Aturan yang perlu Anda tahu',
   tool_yaml_json_rules_body:
-    'Sebelum mengandalkan hasil, pahami aturan tipe dan multi-dokumen. Default mengikuti skema klasik js-yaml; centang «Tipe aman JSON» agar yes/no tanpa tanda kutip tetap string. Kedua arah satu halaman — bukan doorway terpisah.',
+    'Yang bisa diharapkan saat mengonversi: bagaimana nilai tanpa tanda kutip ditentukan tipenya, bagaimana YAML multi-dokumen dipetakan ke JSON, dan di mana konversi bolak-balik bisa kehilangan komentar atau format.',
   tool_yaml_json_rules_item_1:
     'Tipe: dengan skema DEFAULT, yes/no/on/off telanjang dan beberapa skalar mirip tanggal bisa jadi boolean atau tipe lain. Skema aman JSON menjaga skalar tanpa kutip sebagai string kecuali ditipekan eksplisit.',
   tool_yaml_json_rules_item_2:

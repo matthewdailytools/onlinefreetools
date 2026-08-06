@@ -79,7 +79,7 @@ const ja: SiteLangDict = {
     'タブで向きを決め、左に入力すると右がローカル更新されます。HTML 側は断片または簡易な完全文書、Markdown 側は編集・LLM 向けのプレーンテキストです。',
   tool_markdown_rules_title: '向きごとのルール',
   tool_markdown_rules_intro:
-    '「HTML を Markdown に」だけの薄い別ページは作りません。',
+    '以下のルールで扱う範囲：対応する Markdown 記法、HTML のサニタイズ方法、貼り付けたテキストをローカルで処理する仕組み。',
   tool_markdown_rules_item_md_html:
     'HTML へ：CommonMark を解釈し、表示・保存前に DOMPurify。',
   tool_markdown_rules_item_html_md:
@@ -151,7 +151,7 @@ const ja: SiteLangDict = {
     'YAML → JSON か JSON → YAML を選びます。変換はこのタブ内の js-yaml で行います。--- 区切りの複数ドキュメントは JSON 配列になり、単一ドキュメントはそのまま1つの JSON 値です。YAML のエラーは、パーサが mark を返すとき行と列を示します。',
   tool_yaml_json_rules_title: '押さえておくルール',
   tool_yaml_json_rules_body:
-    '既定はクラシックな js-yaml の型付けです。JSON安全な型に切り替えると挙動が変わります。双方向を1ページにまとめ、「json to yaml」だけの doorway は作りません。',
+    '変換時に想定できること：引用符なしの値の型の決まり方、複数ドキュメント YAML が JSON にどう対応するか、往復変換でコメントや書式が失われる箇所。',
   tool_yaml_json_rules_item_1:
     '型付け：DEFAULT スキーマでは、引用なしの yes/no/on/off や日付っぽいスカラーが boolean などになることがあります。JSON安全スキーマは、明示型がなければ引用なしスカラーを文字列のままにします。',
   tool_yaml_json_rules_item_2:

@@ -79,7 +79,7 @@ const de: SiteLangDict = {
     'Tabs steuern die Richtung. Links Eingabe, rechts lokales Ergebnis. HTML: Fragment oder schlankes Gesamtdokument; Markdown: Klartext für Editor/LLM.',
   tool_markdown_rules_title: 'Regeln je Richtung',
   tool_markdown_rules_intro:
-    'Keine zweite dünne Seite nur für den Suchbegriff „html zu markdown“.',
+    'Was die Umwandlung abdeckt: welche Markdown-Syntax unterstützt wird, wie HTML bereinigt wird und wie Ihr eingefügter Text lokal verarbeitet wird.',
   tool_markdown_rules_item_md_html:
     'Nach HTML: CommonMark parsen, danach DOMPurify vor Anzeige/Export.',
   tool_markdown_rules_item_html_md:
@@ -151,7 +151,7 @@ const de: SiteLangDict = {
     'Die Umwandlung läuft mit js-yaml lokal in diesem Tab. Richtung wählen, Text einfügen, Ergebnis kopieren oder herunterladen. Mehrere mit --- getrennte Dokumente landen als JSON-Array, sobald es zwei oder mehr sind; ein einzelnes Dokument bleibt ein einzelner JSON-Wert. YAML-Fehler nennen Zeile und Spalte, wenn der Parser ein Mark liefert.',
   tool_yaml_json_rules_title: 'Feste Verhaltensregeln',
   tool_yaml_json_rules_body:
-    'Typen und Mehrfachdokumente folgen festen Regeln — spätere Docs werden nicht still verworfen. Standard ist das klassische DEFAULT-Schema von js-yaml; „JSON-sichere Typen“ hält unquoted Scalare eher als Strings.',
+    'Was bei der Umwandlung zu erwarten ist: wie Werte ohne Anführungszeichen typisiert werden, wie Multi-Dokument-YAML auf JSON abgebildet wird und wo ein Hin-und-zurück Kommentare oder Formatierung verlieren kann.',
   tool_yaml_json_rules_item_1:
     'Typen: Mit DEFAULT können nacktes yes/no/on/off und manche datumsähnliche Scalare zu Boolean oder anderen Typen werden. JSON-sicheres Schema lässt unquoted Scalare als Strings, außer sie sind explizit typisiert.',
   tool_yaml_json_rules_item_2:
