@@ -7,9 +7,10 @@
 **依据**:
 - [工具方向](./2026-07-28-tool-direction.md) — **三方向并列**（A 浏览器 JS / B 场景桥接 / C 行业专属），非交叉乘积  
 - [Google SEO 策略与落地](./2026-07-28-google-seo-strategy-implementation.md) — 合规与 IG  
-- [SEO_TOOL_RULES](./SEO_TOOL_RULES.md) · [发布清单](./SEO_PUBLISH_CHECKLIST.md)
+- [SEO_TOOL_RULES](./SEO_TOOL_RULES.md) · [发布清单](./SEO_PUBLISH_CHECKLIST.md)  
+- 本地化：`.cursor/rules/tool-i18n-localization.mdc` · `work-tasks/{slug}/03-locale-briefs.md`
 
-> **本文职责**：把工具方向中的候选与存量工具，落成「开发 + SEO」可执行卡片。上线前仍须勾选 Doc2 §8.2 Checklist。  
+> **本文职责**：把工具方向中的候选与存量工具，落成「开发 + SEO」可执行卡片。上线前仍须勾选 Doc2 §8.2 Checklist（含本地化 brief / ≥3 轮）。  
 > 每张卡片只标一个**主方向**（A/B/C）；不必同时满足三方向。
 
 **卡片字段约定**：
@@ -22,18 +23,19 @@
 | IG 配额 | 计划勾选的 §3.1 维度 |
 | Meta / Schema / YMYL | SEO 填空 |
 | 内链 | related 建议 |
-| 验收 | lint + 人工 |
-| 工期 | 粗估 |
+| 验收 | lint + 本地化 brief/禁词/≥3 轮 + 人工抽查 |
+| 工期 | 粗估（含十语检索向重写，非直译） |
 
 ---
 
 ## 0. 通用工程模板（所有新工具）
 
 ```
+work-tasks/{slug}/03-locale-briefs.md   # 每语 brief + 禁词（写 i18n 前）
 src/site/tool-catalog.json
 src/index.ts                    # registerToolPage
 src/pages/{tool}Page.ts
-src/site/i18n/{lang}.ts × 10
+src/site/i18n/{lang}.ts × 10    # 按 brief 重写，禁止 Translate 直出
 public/scripts/tools/{tool}.js  # 可选
 npm run lint:seo && npm run build:site
 ```

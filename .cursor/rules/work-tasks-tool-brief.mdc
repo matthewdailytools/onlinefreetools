@@ -1,0 +1,44 @@
+---
+description: 在 work-tasks/ 为新工具建子夹，对照工具方向讨论并生成 tool-info 与 locale briefs
+globs: work-tasks/**/*
+alwaysApply: false
+---
+
+# 新工具工作任务（work-tasks）
+
+用户要**立项 / 讨论 / 规划**新工具（尚未要求写页面代码）时，在 `work-tasks/` 落文档；**不要**跳过本文档直接改 `src/`。
+
+## 目录
+
+```
+work-tasks/{kebab-slug}/
+  00-request.md                 # 用户原话
+  01-direction-discussion.md    # 对照方向 A/B/C
+  02-tool-info.md               # IG 预审 + 开发/SEO 卡片（定稿）
+  03-locale-briefs.md           # 每语检索 brief + 禁词核查（写 i18n 前）
+  notes.md                      # 可选
+```
+
+新建时复制 `work-tasks/_template/`，子夹名 = 计划 slug。说明见 `work-tasks/README.md`。
+
+## 工作流
+
+1. 建夹并写 `00-request.md`（保留用户原问）。
+2. 读 `docs/2026-07-28-tool-direction.md`，写 `01-direction-discussion.md`：只选一个主方向；过红线与（若 C）立项三问。
+3. 按策略 §3.8 写满 `02-tool-info.md`（IG ≥3、related ≥2、交互规格）；状态 `draft` → 齐备后改 `ready`。
+4. 写十语前填 `03-locale-briefs.md`（每语检索词、title 方向、按钮说法；勾选禁词表）。
+5. 用户明确要求实现且 `02` 为 `ready` 后，按 `tool-creation.mdc` / `tool-i18n-seo.mdc` / `tool-i18n-localization.mdc` 实现：用 brief **重写**各语，禁止 `Translate to {lang}`；≥3 轮核查。
+
+## 写文档时必引用
+
+- 方向与红线：`docs/2026-07-28-tool-direction.md`
+- IG / 预审：`docs/2026-07-28-google-seo-strategy-implementation.md` §3.1、§3.8
+- 卡片字段：`docs/2026-07-28-per-tool-dev-seo-plans.md`
+- 本地化 brief / 禁词：`tool-i18n-localization.mdc`、本夹 `03-locale-briefs.md`
+
+## 禁止
+
+- 无 `02-tool-info.md`（或状态非 `ready`）就批量建页 / 拆近义长尾 URL
+- 无 `03-locale-briefs.md`（或 brief 空白）就批量直出十语 i18n
+- 把实现源码放进 `work-tasks/`
+- 主方向标成「A+B+C 全要」

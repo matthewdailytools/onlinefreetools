@@ -23,7 +23,7 @@ Purpose: Make AI agents productive immediately in this repo. Keep changes minima
 ### 工具创建规则（默认）
 
 - **目标**：工具页可交互、多语言、可检索、对用户有用（people-first），且相对 SERP 有 Information Gain。
-- **权威文档**：`docs/SEO_TOOL_RULES.md`；完整策略见 `docs/2026-07-28-google-seo-strategy-implementation.md`；Agent 规则见 `.cursor/rules/tool-creation.mdc` 与 `tool-i18n-seo.mdc`。
+- **权威序**：Google 官方（`.cursor/rules/seo-google-policy.mdc`）→ `lint:seo` / 代码 → `.cursor/rules/*`（`tool-creation` / `tool-i18n-seo` / `tool-i18n-localization`）→ `docs/*`（须对齐前三者）→ 本文件（从 rules 同步）。立项：`work-tasks/`。
 - **支持语言**：以 `src/site/i18n.ts` 的 `supportedLangs` 为准（当前 10 语：en, zh, es, ar, pt, id, fr, ja, ru, de）。新增语言需同步路由、hreflang、sitemap 与首页卡片。
 - **多语言链接验证**：
   - 首页增加新工具入口：在 `scripts/site/components/content-home.mjs` 添加卡片（featured 和 all-tools）；运行 `npm run build:site` 刷新静态页。
@@ -42,7 +42,7 @@ Purpose: Make AI agents productive immediately in this repo. Keep changes minima
   - Information Gain：上线前 §3.1 九维至少 3 项；长尾默认一带多场景，慎拆近义 URL
   - 文件/粘贴类：本地处理 FAQ 或声明
 
-- **多语言**：翻译须人工审核；禁止无增量机翻铺量。
+- **多语言本地化**：先填 `work-tasks/{slug}/03-locale-briefs.md`（每语检索词 / title 方向 / 按钮说法），再按 brief **重写**（禁止 `Translate to {lang}`）；对照禁词表；≥3 轮核查。`lint:seo` 通过 ≠ 本地化完成。细则：`tool-i18n-localization.mdc`。
 
 - **首页与导航**：新工具须在首页与工具导航有入口。
 
@@ -63,6 +63,8 @@ Purpose: Make AI agents productive immediately in this repo. Keep changes minima
 ## Conventions
 - Directory hints:
   - `dev-logs/` — immutable history of conversations. Do not rewrite past entries.
+  - `work-tasks/` — new-tool briefs (`00`–`03`); do not put implementation source here.
+  - `ops/` — local dev runbook and scripts.
   - App-specific dirs (when created): `apps/worker-*`, `apps/pages` if the monorepo pattern emerges. Until then, root is acceptable.
 - Naming:
   - Files/dirs: kebab-case; environment names: `dev`, `staging`, `prod`.

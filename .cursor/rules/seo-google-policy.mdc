@@ -1,0 +1,41 @@
+---
+description: Google Search 现行 SEO/Spam 政策镜像——仓库最高合规权威；落地细则见其它 rules
+alwaysApply: true
+---
+
+# Google SEO 政策（最高权威）
+
+**冲突时**：以 [Google Search Central](https://developers.google.com/search/docs) **现行官方文档**为准，高于本仓库一切 rules / docs / 习惯做法。  
+本文件是官方要点的**可执行镜像**；细节展开见 `docs/2026-07-28-google-seo-strategy-implementation.md` §2。  
+站内落地：`tool-creation` / `tool-i18n-seo` / `tool-i18n-localization` / `seo-html-defaults`。
+
+## 官方入口（优先查阅）
+
+- [Helpful, people-first content](https://developers.google.com/search/docs/fundamentals/creating-helpful-content)
+- [Spam policies](https://developers.google.com/search/docs/essentials/spam-policies)（含 **2026-05**：spam 适用于操纵 **generative AI responses**，含 AI Overviews / AI Mode）
+- [AI features and your website](https://developers.google.com/search/docs/appearance/ai-features) — **无**额外技术要求；标准 SEO 即可
+- [Search Essentials](https://developers.google.com/search/docs/essentials) / E-E-A-T（YMYL 重 Trust）
+
+## 对本站的硬约束
+
+- **People-first**：真实可交互工具 + 对人有用的说明；禁止主要为操纵排名而批量生产。
+- **Scaled content**：禁止无增量空壳/近义 URL 铺量；禁止未实质编辑的 AI/机翻堆页（须 brief + 检索向重写 + ≥3 轮，见 `tool-i18n-localization.mdc`）。
+- **禁操纵 AI 摘要**：不为进 AI Overview 而做 spam 伎俩；不做 `llms.txt`、AI 专用 Schema、为 AI 刻意切块整站。
+- **Cloaking**：禁止仅爬虫可见的 FAQ/内容。
+- **结构化数据**：须与可见文案一致；禁止虚假 `aggregateRating` 等。
+- **Doorway**：禁止仅换 title/H1 的变体页；长尾默认一带多场景（`tool-i18n-seo.mdc`）。
+- **YMYL**：健康/财务须 disclaimer + 建议权威引用（`ymyl: true`）。
+- **链接**：禁止买卖链、强制交换、PBN、灌链；出站以权威引用为主。
+- **FAQ/HowTo**：可见问答为人服务；**不以**富结果展示为 KPI。
+
+## Information Gain（站内策略）
+
+相对 SERP 的可验证增量（公式/边界/场景/示例等）——对齐 Helpful Content 的**内容原则**，**不是** Google 已确认的独立排名开关。见 `tool-i18n-seo.mdc`。
+
+## 权威序（仓库）
+
+1. **Google 官方现行文档（本文件所镜像）**  
+2. 运行代码（`lint:seo`、页面实现）  
+3. `.cursor/rules/*`  
+4. `docs/*`（须对齐 1–3）  
+5. `.github/copilot-instructions.md`（从 rules 同步）

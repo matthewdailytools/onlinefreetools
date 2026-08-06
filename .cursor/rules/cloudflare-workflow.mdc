@@ -11,6 +11,22 @@ alwaysApply: false
 - Node.js LTS
 - `npm i -g wrangler`（或使用项目 devDependency）
 
+## 本地开发（启停）
+
+详见 [`ops/README.md`](../../ops/README.md)。
+
+```bash
+npm run start:dev          # build:site + wrangler dev 后台（默认 http://127.0.0.1:8787）
+npm run start:dev -- --no-build   # 跳过构建，快速启动
+npm run stop:dev           # 停止后台 dev 进程
+npm run status:dev         # 端口与健康检查
+npm run restart:dev        # 停止后重新启动
+npm run dev                # 前台 wrangler dev（占用当前终端）
+```
+
+Windows：`.\ops\dev\start-dev.ps1` / `.\ops\dev\stop-dev.ps1`  
+日志与 PID：`.run/wrangler-dev.log`、`.run/wrangler-dev.pid`
+
 ## Workers
 
 ```bash
@@ -18,8 +34,8 @@ wrangler dev       # 本地开发
 wrangler deploy    # 部署
 ```
 
-- 入口由根目录 `wrangler.toml` 的 `main` 指定（当前 `src/index.ts`）。
-- 多环境用 `wrangler.toml` 的 `[env.*]` 区分 staging/prod。
+- 入口由根目录 `wrangler.jsonc` 的 `main` 指定（当前 `src/index.ts`）。
+- 多环境可在 `wrangler.jsonc` 增加 `[env.*]` 区分 staging/prod。
 
 ## Pages
 

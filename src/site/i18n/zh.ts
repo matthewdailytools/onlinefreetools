@@ -208,5 +208,52 @@ const zh: SiteLangDict = {
   tool_gradient_faq_q3: '梯度有哪些用途？',
   tool_gradient_faq_a3: '用于最优化、机器学习中的梯度下降、物理场以及方向导数等。',
 
+  tool_text_diff_title: '在线文本对比 — 文本差异对比工具',
+  tool_text_diff_description:
+    '在线对比两段文本，看清哪里改过。步骤：粘贴原文和修改后的文字，选择按行、按词或按字符对比，可忽略空格，也可把 Windows 换行（CRLF）当成普通换行（LF），在浏览器里标出新增和删除。示例：把「你好世界」改成「你好朋友」，按词对比会标出一处替换；全程不上传。',
+  tool_text_diff_article:
+    '免费在线文本对比工具，左右粘贴即可看差异。查配置、代码用按行；改文案、提示词用按词；揪错别字可用按字符。对比在本地完成，不会把内容传到服务器。',
+  tool_text_diff_example:
+    '示例（按词）：原文「Hello world」，修改后「Hello there」→ 只改了一处（world → there）。三行文字里只改中间一行时，按行对比会标红那一行。',
+  tool_text_diff_label_a: '原文',
+  tool_text_diff_label_b: '修改后',
+  tool_text_diff_placeholder_a: '粘贴原文…',
+  tool_text_diff_placeholder_b: '粘贴修改后的文字…',
+  tool_text_diff_mode_label: '对比方式',
+  tool_text_diff_mode_lines: '按行',
+  tool_text_diff_mode_words: '按词',
+  tool_text_diff_mode_chars: '按字符',
+  tool_text_diff_ignore_ws: '忽略空格',
+  tool_text_diff_normalize_eol: '忽略换行符差异（CRLF/LF）',
+  tool_text_diff_compare: '开始对比',
+  tool_text_diff_swap: '左右对调',
+  tool_text_diff_clear: '清空',
+  tool_text_diff_result_label: '差异结果',
+  tool_text_diff_summary: '新增 {added} 处，删除 {removed} 处',
+  tool_text_diff_no_diff: '没有差异，两段文字一致。',
+  tool_text_diff_empty_hint: '请在一侧或两侧粘贴文字后再对比。',
+  tool_text_diff_large_warn: '粘贴内容很大（超过约 10 万字），可能会卡住，建议先截一段再比。',
+  tool_text_diff_need_lib: '对比组件加载失败，请检查网络后刷新页面。',
+  tool_text_diff_how_title: '怎么用',
+  tool_text_diff_how_body:
+    '左边贴原文、右边贴改过的版本，选好按行 / 按词 / 按字符，点对比即可。绿色是新增，红色是删除。全部在浏览器里算完，我们不会上传或保存你的文字。',
+  tool_text_diff_rules_title: '对比规则说明',
+  tool_text_diff_rules_body:
+    '工具会找出把原文改成新稿所需的最少改动（常见 diff / Myers 思路，使用 jsdiff）。按行适合配置和代码；按词适合句子和提示词；按字符最细，但容易看着乱。勾选忽略空格，可略过只改了缩进的情况；勾选忽略换行符差异，可避免「其实只是换行符不同却整行标红」。',
+  tool_text_diff_example_title: '示例',
+  tool_text_diff_usecases_title: '适合什么场景',
+  tool_text_diff_usecase_1: '核对配置：两段 .env 或 YAML 用按行对比，一眼看出改了哪个键。',
+  tool_text_diff_usecase_2: '改提示词：用按词对比，看清加了哪些说法、删了哪些说法。',
+  tool_text_diff_usecase_3: '校对文案或译稿：确认只改了该改的句子。',
+  tool_text_diff_faq_q1: '按行对比和按词对比选哪个？',
+  tool_text_diff_faq_a1: '配置、代码用按行；邮件、文案、提示词用按词——按词只会标出变化的词，不会整行刷红。',
+  tool_text_diff_faq_q2: '我的文字会上传到服务器吗？',
+  tool_text_diff_faq_a2: '不会。对比在你自己的浏览器里完成，关掉标签页内容就没了，我们不保存。',
+  tool_text_diff_faq_q3: '为什么只改了换行，整行却变红？',
+  tool_text_diff_faq_a3: 'Windows 常用 CRLF，Mac/Linux 常用 LF，看起来一样其实字节不同。打开「忽略换行符差异」再比即可。',
+  tool_text_diff_faq_q4: '能对比图片或压缩包吗？',
+  tool_text_diff_faq_a4: '不能。这个工具只支持纯文本。',
+
+
 };
 export default zh;

@@ -17,10 +17,12 @@ src/site/tool-catalog.json      # slug / path / related ≥2 / FAQ / YMYL
 src/index.ts                    # registerToolPage
 src/pages/{tool}Page.ts
 src/pages/site/toolContent.ts   # JSON-LD（与可见文案一致）
-src/site/i18n/*.ts              # 各语言文案
+src/site/i18n/*.ts              # 各语言文案（先 work-tasks/.../03-locale-briefs.md）
 scripts/site/components/content-home.mjs  # 首页 featured + all-tools 卡片
 npm run build:site && npm run lint:seo
 ```
+
+多语言：**按 locale brief 重写**（见 `tool-i18n-localization.mdc`），禁止批量 Translate 直出。
 
 ## 支持语言
 
@@ -36,6 +38,7 @@ npm run build:site && npm run lint:seo
 - 各语言 URL 可访问，例如 `/zh/tools/xxx`、`/tools/xxx`（en 默认无前缀）
 - 页面展示目标语言全文，禁止占位符或错语言 fallback
 - 每个工具页需完整 `hreflang` + `x-default`（见 `src/pages/site/layout.ts`）
+- 文案本地化与 ≥3 轮核查见 `tool-i18n-localization.mdc`（勿英模直译后仅靠 lint）
 
 ## 页面结构（可见内容，自上而下）
 
@@ -62,12 +65,13 @@ Disclaimer（YMYL 必备）
 
 - [ ] `tool-catalog.json` 注册完成；`related` ≥ 2
 - [ ] 10 语言 title / description / article / example 齐全
+- [ ] 十语已按 `tool-i18n-localization.mdc` 做检索向本地化，并完成 ≥3 轮核查（非仅 lint 绿灯）
 - [ ] `npm run lint:seo` 通过
 - [ ] IG ≥ 3 项（§3.1），PR 写明对应章节
 - [ ] 长尾：写入 Use cases/FAQ，或满足拆页条件并附理由
 - [ ] 文件/粘贴类：本地处理 FAQ 或声明
-- [ ] JSON-LD 与可见内容一致；无虚假评分
+- [ ] JSON-LD 与可见文案一致；无虚假评分
 
 ## 详细 SEO
 
-见 `tool-i18n-seo.mdc`、`docs/SEO_TOOL_RULES.md`、`docs/2026-07-28-google-seo-strategy-implementation.md`。
+见 `seo-google-policy.mdc`、`tool-i18n-seo.mdc`、`tool-i18n-localization.mdc`、`docs/SEO_TOOL_RULES.md`、`docs/2026-07-28-google-seo-strategy-implementation.md`。

@@ -9,7 +9,7 @@
     "homeTitleKey": "tool_website_headers_title",
     "homeDescKey": "tool_website_headers_desc",
     "faqPrefix": "tool_headers",
-    "related": ["ip-address", "markdown-to-html"]
+    "related": ["ip-address", "markdown-to-html", "text-diff"]
   },
   {
     "slug": "ip-address",
@@ -33,7 +33,19 @@
     "homeTitleKey": "tool_markdown_to_html_title",
     "homeDescKey": "tool_markdown_to_html_desc",
     "faqPrefix": "tool_markdown",
-    "related": ["website-headers", "ip-address"]
+    "related": ["website-headers", "ip-address", "text-diff"]
+  },
+  {
+    "slug": "text-diff",
+    "path": "/tools/text-diff",
+    "category": "developer",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_text_diff_title",
+    "homeTitleKey": "tool_text_diff_title",
+    "homeDescKey": "tool_text_diff_desc",
+    "faqPrefix": "tool_text_diff",
+    "related": ["markdown-to-html", "website-headers"]
   },
   {
     "slug": "how-to-calculate-bmi",

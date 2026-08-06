@@ -27,8 +27,10 @@ Below are our available online tools with their links (English version):
 ## Getting Started / 快速开始
 - Install Node.js LTS and Wrangler: `npm install -g wrangler`
 - Install dependencies: `npm install`
-- Local dev (Workers): `wrangler dev`
-- Deploy: `wrangler deploy`
+- **Ops guide**: [`ops/README.md`](ops/README.md) — local start/stop, build, deploy
+- Local dev (background): `npm run start:dev` — see `ops/dev/`
+- Local dev (foreground): `npm run dev` or `wrangler dev`
+- Deploy: `npm run deploy`
 
 ## Static Site Build / 静态站点构建
 

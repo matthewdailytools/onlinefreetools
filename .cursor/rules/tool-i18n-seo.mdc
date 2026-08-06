@@ -6,10 +6,9 @@ alwaysApply: false
 
 # 工具 i18n 与 SEO
 
-**权威文档**（冲突时以代码 + 下列文档为准）：
+**权威序**（冲突时）：Google 官方（`seo-google-policy.mdc`）→ 运行代码 / `lint:seo` → 本目录 rules → `docs/*`。
 
-- `docs/SEO_TOOL_RULES.md` — lint 硬规则
-- `docs/2026-07-28-google-seo-strategy-implementation.md` — Google 合规、Information Gain（§3）、Checklist（§8）
+展开说明：`docs/2026-07-28-google-seo-strategy-implementation.md`；lint 摘要：`docs/SEO_TOOL_RULES.md`（二者须对齐 rules，不得反向覆盖）。
 
 **Information Gain（IG）定位**：相对 SERP 同类页的新增、可验证信息；是 **内容策略原则**（对齐 Helpful Content），**不是**已确认的独立排名因子。
 
@@ -40,7 +39,7 @@ alwaysApply: false
 | 4 | 对照表 | 单位假设、限制对照 |
 | 5 | 权威引用 | 可点击 References（YMYL 建议 ≥2） |
 | 6 | 本地隐私 | 文件/粘贴类：浏览器处理、不上传声明 |
-| 7 | 多语言 | 各语言人工审核，非机翻直出 |
+| 7 | 多语言 | 各语检索向重写 + brief/禁词/≥3 轮（见 `tool-i18n-localization.mdc`）；非英模直译 |
 | 8 | 数值示例 | ≥1 组 Input→Output（含边界例更佳） |
 | 9 | 主题内链 | `tool-catalog.json` → `related` ≥ 2 |
 
@@ -75,10 +74,12 @@ npm run build:site  # 发布前必须构建 sitemap
 
 校验失败时补文案/翻译后再合并，勿绕过检查。
 
+**本地化与多轮核查**（检索向、禁机翻、≥3 轮审核）见 `tool-i18n-localization.mdc`。`lint:seo` 通过 ≠ 翻译已本地化。
+
 ## 红线
 
 - 禁止空壳页、无增量机翻铺量、批量 query 变体 doorway 页
 - 禁止仅对爬虫可见的 FAQ（cloaking）
 - 禁止虚假 `aggregateRating`；JSON-LD 须与可见文案一致
 - 新工具必须写入 `tool-catalog.json` 且具备真实交互与增量说明
-- 翻译须人工审核，禁止 GPT 批量直出
+- 翻译须按当地检索与用语习惯本地化，并经多轮核查；禁止批量直出后不重写就上线（详见 `tool-i18n-localization.mdc`）

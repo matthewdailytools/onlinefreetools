@@ -44,6 +44,8 @@ const translations = {
       'Fetch and inspect HTTP response headers for a URL. Useful for debugging CORS, caching, redirects and verifying security or CDN headers. Scenarios: developer debugging, SEO checks, and server verification.',
     tool_markdown_to_html_title: 'Markdown → HTML',
     tool_markdown_to_html_desc: 'Render Markdown into HTML.',
+    tool_text_diff_title: 'Compare Two Texts Online',
+    tool_text_diff_desc: 'See differences between two texts — by line, word, or character.',
     tool_markdown_to_html_article:
       'Convert Markdown into sanitized HTML with preview and export options. Useful for preparing posts, documentation or shareable content. Scenarios: authoring, quick previews, and generating static HTML exports.',
     tool_ip_address_title: 'What Is My IP Address?',
@@ -138,6 +140,8 @@ const translations = {
       '获取并查看网站的 HTTP 响应 Header，用于排查 CORS、缓存、重定向以及验证安全/CDN 配置。典型场景：开发调试、SEO 检查和服务器响应验证。',
     tool_markdown_to_html_title: 'Markdown 转 HTML',
     tool_markdown_to_html_desc: '将 Markdown 快速渲染为 HTML。',
+    tool_text_diff_title: '在线文本对比',
+    tool_text_diff_desc: '按行、按词或按字符对比两段文字的差异。',
     tool_markdown_to_html_article: '将 Markdown 转换为已净化的 HTML 并提供预览与导出，适用于博客、文档与快速预览。',
     tool_ip_address_title: '我的 IP 地址是什么？',
     tool_bmi_title: '如何计算BMI',
@@ -236,6 +240,8 @@ const translations = {
       'Obtener y revisar los encabezados HTTP de una URL. Útil para depurar CORS, caché, redirecciones y verificar encabezados de seguridad/CDN. Escenarios: depuración, comprobaciones SEO y verificación de servidor.',
     tool_markdown_to_html_title: 'Markdown → HTML',
     tool_markdown_to_html_desc: 'Convierte Markdown a HTML.',
+    tool_text_diff_title: 'Comparar textos online',
+    tool_text_diff_desc: 'Mira las diferencias entre dos textos por línea, palabra o carácter.',
     tool_markdown_to_html_article:
       'Convertir Markdown en HTML limpio con vista previa y opciones de exportación. Útil para preparar publicaciones, documentación o contenido compartible. Escenarios: redacción, previsualización rápida y generación de HTML estático.',
     tool_ip_address_title: '¿Cuál es mi dirección IP?',
@@ -330,6 +336,8 @@ const translations = {
       'جلب وعرض ترويسات HTTP لعنوان URL. مفيد لتصحيح CORS، التخزين المؤقت، عمليات إعادة التوجيه والتحقق من ترويسات الأمان/CDN. سيناريوهات: تصحيح المطورين، فحوصات SEO، والتحقق من إعدادات الخادم.',
     tool_markdown_to_html_title: 'Markdown → HTML',
     tool_markdown_to_html_desc: 'تحويل Markdown إلى HTML.',
+    tool_text_diff_title: 'مقارنة نصين أونلاين',
+    tool_text_diff_desc: 'اطّلع على فروقات نصين حسب السطر أو الكلمة أو الحرف.',
     tool_markdown_to_html_article:
       'تحويل Markdown إلى HTML مُعقم مع معاينة وخيارات تصدير. مفيد لإعداد منشورات المدونات أو الوثائق أو المحتوى للمشاركة. سيناريوهات: التأليف، المعاينة السريعة وتوليد HTML ثابت.',
     tool_ip_address_title: 'ما هو عنواني IP؟',
@@ -424,6 +432,8 @@ const translations = {
       'Buscar e inspecionar os headers HTTP de uma URL. Útil para depurar CORS, cachê, redireções e verificar headers de segurança/CDN. Cenários: depuração, revisões SEO e verificação do servidor.',
     tool_markdown_to_html_title: 'Markdown → HTML',
     tool_markdown_to_html_desc: 'Renderizar Markdown em HTML.',
+    tool_text_diff_title: 'Comparar textos online',
+    tool_text_diff_desc: 'Veja diferenças entre dois textos por linha, palavra ou caractere.',
     tool_markdown_to_html_article:
       'Converter Markdown em HTML com visualização e opções de exportação. Útil para preparar posts ou documentação. Cenários: redação, pré-visualização rápida e geração de HTML estático.',
     tool_ip_address_title: 'Qual é o meu endereço IP?',
@@ -518,6 +528,8 @@ const translations = {
       'Mengambil dan memeriksa header respons HTTP dari URL. Berguna untuk debug CORS, cache, redirect dan verifikasi header keamanan/CDN. Skenario: debug pengembang, pengecekan SEO, verifikasi server.',
     tool_markdown_to_html_title: 'Markdown → HTML',
     tool_markdown_to_html_desc: 'Ubah Markdown menjadi HTML.',
+    tool_text_diff_title: 'Bandingkan teks online',
+    tool_text_diff_desc: 'Lihat perbedaan dua teks per baris, kata, atau karakter.',
     tool_markdown_to_html_article:
       'Mengonversi Markdown ke HTML dengan pratinjau dan opsi ekspor. Berguna untuk menyiapkan posting, dokumentasi, atau konten yang dapat dibagikan. Skenario: penulisan, pratinjau cepat, dan pembuatan HTML statis.',
     tool_ip_address_title: 'Apa alamat IP saya?',
@@ -612,6 +624,8 @@ const translations = {
       'Récupérer et inspecter les en‑têtes HTTP d\'une URL. Utile pour déboguer CORS, cache, redirections et vérifier les en‑têtes de sécurité/CDN. Scénarios: débogage, vérifications SEO et validation serveur.',
     tool_markdown_to_html_title: 'Markdown → HTML',
     tool_markdown_to_html_desc: 'Convertir Markdown en HTML.',
+    tool_text_diff_title: 'Comparer des textes en ligne',
+    tool_text_diff_desc: 'Voyez les différences entre deux textes ligne, mot ou caractère.',
     tool_markdown_to_html_article:
       'Convertir Markdown en HTML nettoyé avec aperçu et options d\'export. Utile pour préparer billets, documentation ou contenu partageable. Scénarios: rédaction, prévisualisation rapide et génération de HTML statique.',
     tool_ip_address_title: 'Quelle est mon adresse IP ?',
@@ -705,6 +719,8 @@ const translations = {
       '指定した URL の HTTP レスポンスヘッダーを取得して確認します。CORS、キャッシュ、リダイレクトやセキュリティ/CDN ヘッダーの検証に便利です。利用シーン: 開発デバッグ、SEO チェック、設定確認。',
     tool_markdown_to_html_title: 'Markdown → HTML',
     tool_markdown_to_html_desc: 'Markdown を HTML に変換します。',
+    tool_text_diff_title: 'テキスト比較',
+    tool_text_diff_desc: '2つの文章の差分を行・単語・文字で確認。',
     tool_markdown_to_html_article:
       'Markdown をサニタイズされた HTML に変換し、プレビューとエクスポートを提供します。ブログやドキュメント作成、共有用の準備に適しています。',
     tool_ip_address_title: '自分のIPアドレスは何ですか？',
@@ -799,6 +815,8 @@ const translations = {
       'Получение и просмотр HTTP‑заголовков ответа для указанного URL. Помогает отлаживать CORS, кэширование, редиректы и проверять заголовки безопасности/CDN. Сценарии: отладка, SEO‑проверки, верификация сервера.',
     tool_markdown_to_html_title: 'Markdown → HTML',
     tool_markdown_to_html_desc: 'Преобразовать Markdown в HTML.',
+    tool_text_diff_title: 'Сравнить тексты онлайн',
+    tool_text_diff_desc: 'Посмотрите различия двух текстов по строкам, словам или символам.',
     tool_markdown_to_html_article:
       'Преобразовать Markdown в очищенный HTML с превью и возможностью экспорта. Полезно для подготовки постов, документации или контента для обмена.',
     tool_ip_address_title: 'Какой у меня IP-адрес?',
@@ -893,6 +911,8 @@ const translations = {
       'HTTP‑Response‑Header einer URL abrufen und prüfen. Nützlich zum Debuggen von CORS, Caching, Redirects sowie zur Überprüfung von Sicherheits-/CDN‑Headern. Szenarien: Entwickler‑Debugging, SEO‑Checks, Server‑Verifikation.',
     tool_markdown_to_html_title: 'Markdown → HTML',
     tool_markdown_to_html_desc: 'Markdown in HTML umwandeln.',
+    tool_text_diff_title: 'Texte online vergleichen',
+    tool_text_diff_desc: 'Unterschiede zweier Texte nach Zeile, Wort oder Zeichen sehen.',
     tool_markdown_to_html_article:
       'Markdown in bereinigtes HTML konvertieren mit Vorschau und Exportoptionen. Nützlich zur Vorbereitung von Blogposts, Dokumentation oder teilbarem Inhalt.',
     tool_ip_address_title: 'Was ist meine IP-Adresse?',

@@ -24,6 +24,7 @@ import { renderHowToCalculateRoiPage } from "./pages/howToCalculateRoiPage";
 import { renderSquareFeetPage } from "./pages/squareFeetPage";
 import { renderHowToCalculatePercentageChangePage } from "./pages/howToCalculatePercentageChangePage";
 import { renderHowToCalculateGradientPage } from "./pages/howToCalculateGradientPage";
+import { renderTextDiffPage } from "./pages/textDiffPage";
 import { registerToolPage } from "./site/toolRegistrar";
 import { handleWebsiteHeadersApi } from "./tools/websiteHeaders";
 import { handleIpAddress } from "./endpoints/ipAddress";
@@ -254,6 +255,11 @@ registerToolPage(app as any, 'how-to-calculate-roi', (lang, defaultLang, enabled
 // Register how-to-calculate-gradient page via registrar
 registerToolPage(app as any, 'how-to-calculate-gradient', (lang, defaultLang, enabled) =>
 	renderHowToCalculateGradientPage({ lang, defaultLang, enabledLangs: enabled })
+);
+
+// Register text-diff page via registrar（文本 Diff 对比器）
+registerToolPage(app as any, 'text-diff', (lang, defaultLang, enabled) =>
+	renderTextDiffPage({ lang, defaultLang, enabledLangs: enabled })
 );
 
 // Catch-all (GET): perform language negotiation before falling back to static assets.

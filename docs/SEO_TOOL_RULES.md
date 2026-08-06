@@ -1,8 +1,9 @@
 **工具页面 SEO 规则（默认）**
 
-> 完整策略见 [Google SEO 策略与落地](./2026-07-28-google-seo-strategy-implementation.md)。  
-> 工具选型见 [工具方向](./2026-07-28-tool-direction.md)。  
-> 逐工具卡片见 [每工具开发与 SEO 方案](./2026-07-28-per-tool-dev-seo-plans.md)。
+> **权威序**：Google 官方（`.cursor/rules/seo-google-policy.mdc`）→ `lint:seo` / 运行代码 → `.cursor/rules/*` → 本文与其它 docs。  
+> 完整策略展开：[Google SEO 策略与落地](./2026-07-28-google-seo-strategy-implementation.md)。  
+> 工具选型：[工具方向](./2026-07-28-tool-direction.md)。  
+> 逐工具卡片：[每工具开发与 SEO 方案](./2026-07-28-per-tool-dev-seo-plans.md)。
 
 - **目标**：确保每个工具页面不仅能被发现，还对用户真正有用（people-first），并符合 Google Search 现行 spam / helpful 政策。
 
@@ -31,5 +32,5 @@
   - JSON-LD 仅使用与可见内容一致的 `BreadcrumbList` / `WebApplication` 等。
 
 - **验证**：`npm run lint:seo` → `scripts/validate-tool-seo.mjs`（description 关键词 + FAQ 成对 + YMYL disclaimer）。
-
+- **本地化**：各语言须按当地检索与用语习惯重写，禁止英模批量直译；生成后至少 3 轮核查再定稿（见 `.cursor/rules/tool-i18n-localization.mdc`）。`lint:seo` 通过不等于本地化完成。
 - **工作流**：改工具或翻译后先跑 `lint:seo`；发版前跑 `build:site && lint:seo`。

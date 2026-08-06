@@ -395,10 +395,9 @@ const hreflangLinks = (pathname, langs) => {
 };
 
 /**
- * 构建完整 sitemap：各语言首页、About、全部工具、devlogs。
- * @param {{href:string}[]} [devlogItems]
+ * 构建完整 sitemap：各语言首页、About、全部工具（不含 devlogs 内部日志页）。
  */
-export const buildSitemap = async (devlogItems = []) => {
+export const buildSitemap = async () => {
   const langs = siteConfig.enabledLangs || [siteConfig.defaultLang];
   const urls = [];
 
@@ -420,19 +419,6 @@ ${hreflangLinks(pathname, langs)}
     pushLocalized(tool.path, '0.9');
   }
 
-  urls.push(`  <url>
-    <loc>${escapeXml(toAbs('/devlogs/'))}</loc>
-    <priority>0.6</priority>
-  </url>`);
-
-  for (const item of devlogItems) {
-    if (!item?.href) continue;
-    urls.push(`  <url>
-    <loc>${escapeXml(toAbs(item.href))}</loc>
-    <priority>0.4</priority>
-  </url>`);
-  }
-
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
@@ -452,8 +438,8 @@ const main = async () => {
     await buildHome(lang);
     await buildAbout(lang);
   }
-  const devlogItems = await buildDevLogs();
-  await buildSitemap(devlogItems || []);
+  await buildDevLogs();
+  await buildSitemap();
   console.log(`Built site for langs: ${langs.join(', ')}`);
 };
 

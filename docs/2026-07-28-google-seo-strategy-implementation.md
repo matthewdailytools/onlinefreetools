@@ -10,7 +10,9 @@
 - [工具页面 SEO 规则](./SEO_TOOL_RULES.md) — description / FAQ / YMYL lint 硬规则
 - [SEO 发布清单](./SEO_PUBLISH_CHECKLIST.md) — 发版与 GSC 操作
 - [JS 工具包调研](./2026-07-09-js-tool-packages-survey.md) — 技术可行性（非 SEO 优先级）
+- Agent 镜像：`.cursor/rules/seo-google-policy.mdc`（最高合规）及 `tool-i18n-seo` / `tool-i18n-localization` / `tool-creation`
 
+> **权威序**：Google Search Central 现行文档 → 运行代码 / `lint:seo` → `.cursor/rules/*` → 本文（须对齐前三者）。  
 > **本文职责**：回答「工具页如何符合最新 Google 规则，以及如何用 Information Gain 胜过同类页并落地」。  
 > **IG 定位**：内容策略原则（对齐 Helpful Content），**不是**已确认的独立排名因子；长尾默认「一带多场景」，禁止空壳变体铺量（§3.0、§3.3）。  
 > **不做工具选型清单**（见工具方向文档）。
@@ -39,7 +41,7 @@
 
 ## 2. Google 2026 政策速查（单一权威）
 
-写作与上线时以官方文档为准；下表为工具站摘要。
+写作与上线时以 **Google Search Central 现行官方文档**为准（仓库镜像：`.cursor/rules/seo-google-policy.mdc`）。下表为工具站摘要。
 
 ### 2.1 政策要点
 
@@ -57,7 +59,7 @@
 - 创建 `llms.txt` 或「AI 专用」Schema.org 类型  
 - 伪造作者、虚假评论、虚假 `aggregateRating`  
 - 无实质功能差异的同类工具铺量（doorway / scaled content）  
-- 机器翻译后未经人工审核直接上线  
+- 禁止 `Translate to {lang}` 或机翻/AI 直出后未经实质编辑（须 locale brief + 检索向重写 + ≥3 轮；见 `tool-i18n-localization.mdc`）  
 - 健康/财务给出医疗或投资建议而无免责声明  
 - 仅对爬虫可见、对用户隐藏的 FAQ（cloaking）  
 - Schema 文本与可见内容不一致或夸大  
@@ -107,7 +109,7 @@
 | 4 | 对照表 | 模型价差、单位假设、引擎字符限制 | 无表 |
 | 5 | 权威引用 | IETF / WHO / NIST / Schema.org 等可点外链 | 无 References |
 | 6 | 本地隐私 | 浏览器处理；明确「不上传」 | 强制上传 |
-| 7 | 多语言术语 | 10 语言本地化（人工审核） | 仅英文 |
+| 7 | 多语言术语 | 10 语按当地检索习惯重写（locale brief + ≥3 轮；见 `tool-i18n-localization.mdc`）；禁止 Translate 直出 | 仅英文或未实质编辑的机翻 |
 | 8 | 完整数值示例 | ≥1 组 Input → Output（含边界例更佳） | 无具体数字 |
 | 9 | 主题内链 | Related tools ≥ 2；同场景链互链 | 孤立页 |
 
@@ -268,7 +270,7 @@ Footer
 | 区块 | 字段 / 实现 | 要求 |
 |---|---|---|
 | `<title>` | `tool_*_title` + brand | 主词靠前，约 50–60 英文字符 |
-| description | `tool_*_description` | 80–160 字符；步骤/公式 + 示例（`lint:seo`） |
+| description | `tool_*_description` | **≥ 120** 字符（建议 120–160）；步骤/公式 + 示例（`lint:seo`） |
 | 正文 | `tool_*_article` 或分节 | ≥ 约 300 词等效可见说明 |
 | How 步骤 | article 内 `ol` 或分字段 | 3–5 步 |
 | FAQ | `tool_*_faq_qN` / `tool_*_faq_aN` | ≥ 3 |
@@ -298,9 +300,10 @@ Footer
 
 ### 5.5 多语言 SEO
 
-- 10 语言是资产：`title` / `h1` / `description` / FAQ 本地化。  
-- 工作流：英文母版（公式+步骤+示例）→ **人工翻译审核** → `lint:seo` → `build:site`。  
-- 禁止 GPT 批量翻译直出。
+- 10 语言是资产：`title` / `h1` / `description` / FAQ **按当地检索习惯本地化（重写，非英→X 直译）**。  
+- 工作流：英文（或中文）母版（公式+步骤+示例）→ **每语 locale brief**（检索词 / title 方向 / 按钮说法）→ **按 brief 重写** → **≥3 轮核查**（母版+lint → 检索向重写+禁词 → 抽查再 lint）→ `build:site`。  
+- 禁止 GPT/模型批量「Translate to {lang}」直出；`lint:seo` 通过 ≠ 本地化完成。  
+- 落地细则与禁词表：`.cursor/rules/tool-i18n-localization.mdc`；立项填空：`work-tasks/{slug}/03-locale-briefs.md`。
 
 ### 5.6 三种工具类型差异（摘要）
 
@@ -400,6 +403,8 @@ Footer
 
 - [ ] `tool-catalog.json` / 路由注册完成  
 - [ ] 10 语言 title / description / article（或等价）齐全  
+- [ ] 每语 `03-locale-briefs`（或等价）已填；按 brief **重写**非直译；禁词表已勾选  
+- [ ] 本地化 ≥3 轮核查完成（见 `tool-i18n-localization.mdc`）；`lint:seo` 通过 ≠ 本地化完成  
 - [ ] `npm run lint:seo` 通过  
 - [ ] IG ≥ 3 项（§3.1）已在 PR 写明  
 - [ ] 长尾意图：已写入本页 Use cases/FAQ，或满足 §3.3 才拆页（附理由）  
@@ -443,11 +448,14 @@ Footer
 
 | 文档 | 职责 |
 |---|---|
-| **本文** | Google 合规、IG、单页模板、技术现状、链接摘要、Checklist |
-| `SEO_TOOL_RULES` | lint 硬规则（最短约束） |
+| **Google 官方** + `seo-google-policy.mdc` | 最高合规权威（镜像） |
+| **本文** | Google 合规展开、IG、单页模板、技术现状、链接摘要、Checklist（须对齐 rules） |
+| `SEO_TOOL_RULES` | lint 硬规则摘要（须对齐 `tool-i18n-seo` / lint 脚本） |
 | `SEO_PUBLISH_CHECKLIST` | 发版 / GSC / 质量抽查 |
 | 工具方向 | 立项与工具清单 |
 | 每工具方案 | 开发 + SEO 卡片 |
+| `.cursor/rules/*` | Agent 可执行落地（对齐 Google） |
+| `work-tasks/` + `tool-i18n-localization.mdc` | 立项、每语 brief、禁词、本地化多轮核查 |
 
 **已合并（历史文件已移至 [bak/](./bak/)）**：`tool-seo-strategy`、`single-tool-page-seo`、`SEO_ANALYSIS_PLAN`、`external-link-strategy`、`online-tools-competitor-roadmap`。
 
@@ -457,7 +465,7 @@ Footer
 
 合规底线 + 每页 ≥3 条可验证 Information Gain（内容原则，非确认排名开关）+ 行业/场景语境 + 多语言教育式说明 + **长尾默认一带多场景（§3.3）** = 可排名、可被引用的工具页。
 
-近期执行：新工具严格走 §8.2 与 §3.8 预审；存量页按 §3.1 补齐；慎拆近义长尾 URL；工具选型只看 [工具方向](./2026-07-28-tool-direction.md)。
+近期执行：新工具严格走 §8.2、§3.8 预审与本地化 brief/≥3 轮核查；存量页按 §3.1 补齐；慎拆近义长尾 URL；工具选型只看 [工具方向](./2026-07-28-tool-direction.md)。
 
 ### 参考（官方）
 

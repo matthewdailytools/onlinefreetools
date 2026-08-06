@@ -134,5 +134,52 @@ const es: SiteLangDict = {
     'Qué: El gradiente de una función escalar es el vector de sus derivadas parciales y apunta en la dirección de mayor crecimiento. Uso: introducir una función multivariable, calcular cada derivada parcial, formar el vector gradiente y evaluarlo en un punto concreto. Escenarios: optimización, derivadas direccionales, física y análisis de campos.',
   tool_gradient_example:
     'Ejemplo: f(x,y)=x^2 y + 3y. ∂f/∂x = 2xy, ∂f/∂y = x^2 + 3. Por lo tanto ∇f = (2xy, x^2 + 3). En (1,2): ∇f = (4,4).',
+
+  tool_text_diff_title: 'Comparar textos online — Ver diferencias entre dos textos',
+  tool_text_diff_description:
+    'Compara dos textos online y ve qué cambió. Proceso: pega el texto original y el revisado, elige comparar por línea, por palabra o por carácter, opcionalmente ignora espacios o unifica saltos Windows (CRLF→LF), y marca añadidos y eliminados en el navegador. Ejemplo: cambia "hola mundo" por "hola amigo" — en modo palabra verás un solo cambio.',
+  tool_text_diff_article:
+    'Herramienta gratis para comparar dos textos lado a lado. Usa modo línea para configs y código; modo palabra para redacción y prompts; modo carácter para erratas. Todo ocurre en tu navegador: no subimos tu texto.',
+  tool_text_diff_example:
+    'Ejemplo (modo palabra): A = "Hello world", B = "Hello there" → un cambio (world → there). Si solo cambia la línea del medio en un bloque de tres, el modo línea marca esa línea.',
+  tool_text_diff_label_a: 'Texto original',
+  tool_text_diff_label_b: 'Texto revisado',
+  tool_text_diff_placeholder_a: 'Pega el texto original…',
+  tool_text_diff_placeholder_b: 'Pega el texto revisado…',
+  tool_text_diff_mode_label: 'Comparar por',
+  tool_text_diff_mode_lines: 'Línea',
+  tool_text_diff_mode_words: 'Palabra',
+  tool_text_diff_mode_chars: 'Carácter',
+  tool_text_diff_ignore_ws: 'Ignorar espacios',
+  tool_text_diff_normalize_eol: 'Igualar CRLF y LF',
+  tool_text_diff_compare: 'Comparar',
+  tool_text_diff_swap: 'Intercambiar lados',
+  tool_text_diff_clear: 'Borrar',
+  tool_text_diff_result_label: 'Diferencias',
+  tool_text_diff_summary: '{added} añadidos, {removed} eliminados',
+  tool_text_diff_no_diff: 'Sin diferencias: los dos textos coinciden.',
+  tool_text_diff_empty_hint: 'Pega texto en uno o ambos lados y pulsa Comparar.',
+  tool_text_diff_large_warn: 'Pegado muy grande (>100k caracteres). Puede ir lento; prueba un trozo más corto.',
+  tool_text_diff_need_lib: 'No se pudo cargar el comparador. Revisa la conexión y recarga.',
+  tool_text_diff_how_title: 'Cómo usarlo',
+  tool_text_diff_how_body:
+    'Pega dos versiones, elige si quieres ver cambios por línea, palabra o carácter, y revisa en verde lo añadido y en rojo lo borrado. La comparación es local en el navegador; no guardamos tu texto.',
+  tool_text_diff_rules_title: 'Cómo se calculan las diferencias',
+  tool_text_diff_rules_body:
+    'La herramienta busca una lista corta de ediciones para pasar del texto A al B (diff clásico / estilo Myers con jsdiff). Modo línea: configs y código. Modo palabra: frases y prompts. Modo carácter: erratas finas, pero más ruido. Ignorar espacios oculta cambios solo de sangría. Igualar CRLF y LF evita que toda una línea se ponga roja solo por el tipo de salto.',
+  tool_text_diff_example_title: 'Ejemplo',
+  tool_text_diff_usecases_title: 'Para qué sirve',
+  tool_text_diff_usecase_1: 'Revisar configs: compara dos fragmentos .env o YAML línea a línea.',
+  tool_text_diff_usecase_2: 'Retocar un prompt: modo palabra para ver qué frases se añadieron o quitaron.',
+  tool_text_diff_usecase_3: 'Corregir textos o traducciones: comprueba que solo cambiaron las frases previstas.',
+  tool_text_diff_faq_q1: '¿Comparar por línea o por palabra?',
+  tool_text_diff_faq_a1: 'Línea para código y configs. Palabra para frases, correos y prompts: resalta palabras sueltas en lugar de toda la línea.',
+  tool_text_diff_faq_q2: '¿Se sube mi texto a un servidor?',
+  tool_text_diff_faq_a2: 'No. Todo ocurre en tu navegador. Al cerrar la pestaña se pierde el pegado; no lo almacenamos.',
+  tool_text_diff_faq_q3: '¿Por qué un cambio de salto de línea pone toda la línea en rojo?',
+  tool_text_diff_faq_a3: 'Windows usa CRLF y Unix/Mac suelen usar LF. Activa “Igualar CRLF y LF” antes de comparar.',
+  tool_text_diff_faq_q4: '¿Puedo comparar imágenes o archivos binarios?',
+  tool_text_diff_faq_a4: 'No. Solo texto plano.',
+
 };
 export default es;
