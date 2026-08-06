@@ -24,10 +24,10 @@ import fs from 'fs/promises';
 import path from 'path';
 import { createRequire } from 'module';
 import { fileURLToPath, pathToFileURL } from 'url';
-import { siteConfig, withLangPath } from './site/config.mjs';
+import { siteConfig, withLangPath } from '../../scripts/site/config.mjs';
 
-/** 仓库根目录（scripts/ 的上一级） */
-const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+/** 仓库根目录（ops/seo/ 的上两级） */
+const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 
 /** 用于同步读取 tool-catalog.json */
 const require = createRequire(import.meta.url);

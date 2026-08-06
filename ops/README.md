@@ -4,7 +4,7 @@
 **平台**：Cloudflare Workers + 静态资源（`public/`）  
 **配置**：根目录 `wrangler.jsonc`（入口 `src/index.ts`）
 
-> 构建与 SEO 脚本仍在 `scripts/`；本目录存放**日常启停、部署与运维**相关脚本与说明。
+> 站点构建脚本仍在 `scripts/`；本目录存放**日常启停、部署、SEO 运维**相关脚本与说明。
 
 ---
 
@@ -15,17 +15,19 @@ ops/
 ├── README.md              # 本文（运维总览）
 ├── lib/
 │   └── dev-process.mjs    # 本地 dev 进程：PID、端口、杀进程
-└── dev/
-    ├── start-dev.mjs      # 启动（Node，跨平台）
-    ├── stop-dev.mjs       # 停止
-    ├── start-dev.ps1      # Windows PowerShell
-    ├── stop-dev.ps1
-    ├── start-dev.sh       # macOS / Linux
-    └── stop-dev.sh
+├── dev/
+│   ├── start-dev.mjs      # 启动（Node，跨平台）
+│   ├── stop-dev.mjs       # 停止
+│   ├── start-dev.ps1      # Windows PowerShell
+│   ├── stop-dev.ps1
+│   ├── start-dev.sh       # macOS / Linux
+│   └── stop-dev.sh
+└── seo/
+    ├── submit-indexnow.mjs # Bing IndexNow 多场景提交（Node）
+    └── submit-indexnow.sh  # 同上（bash 包装，参数原样转发）
 
-# IndexNow 相关（在 scripts/，非 ops/）
-# scripts/submit-indexnow.mjs
-# public/{INDEXNOW_KEY}.txt   # 所有权验证公钥文件（须公开可访问）
+# IndexNow 验证公钥（须公开可访问）
+# public/{INDEXNOW_KEY}.txt
 ```
 
 **运行时状态**（不提交 Git）：
@@ -120,6 +122,14 @@ IndexNow 用于在内容变更后主动通知 Bing 等参与引擎抓取。站�
 - Worker 亦在 `src/index.ts` 对 `/{key}.txt` 直出（与谷歌 HTML 验证同类）
 - 线上：`https://onlinefreetools.org/{key}.txt` 必须 **HTTP 200**
 - key 配置：`scripts/site/config.mjs` 的 `indexNowKey`，或环境变量 `INDEXNOW_KEY`
+
+也可用 bash 包装（参数与 npm 相同，无需 `--`）：
+
+```bash
+./ops/seo/submit-indexnow.sh --help
+./ops/seo/submit-indexnow.sh --check-key
+./ops/seo/submit-indexnow.sh --tool html-entity --dry-run
+```
 
 ```bash
 # 检查线上 key（期望 HTTP 200 且正文 = key）
