@@ -43,4 +43,4 @@ work-tasks/
 3. 对照工具方向写完 `01-direction-discussion.md`
 4. 填满 `02-tool-info.md`，状态改为 `ready`
 5. 实现十语前填 `03-locale-briefs.md`（检索词 + title 方向 + 禁词勾选）
-6. 再请求实现工程（catalog / Page / i18n；按 brief **重写**非直译；`lint:seo` + 多轮核查）
+6. 再请求实现工程：按 `tool-i18n-localization.mdc` **稳妥常态**（母版一语 → 逐语/≤3 语独立重写 → ≥3 轮）；禁止脚本同构灌语；「待母语抽查」清掉后才可 `i18n-done`

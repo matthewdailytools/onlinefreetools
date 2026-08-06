@@ -1,5 +1,5 @@
 ---
-description: 工具多语言须按检索习惯本地化；每语 brief + 禁词表；生成后 ≥3 轮核查
+description: 工具多语言须按检索习惯本地化；稳妥常态工作流；禁止脚本批量同构机翻；≥3 轮核查
 globs: src/site/i18n/*.ts,scripts/site/i18n.mjs,work-tasks/**/*
 alwaysApply: false
 ---
@@ -8,11 +8,35 @@ alwaysApply: false
 
 **目标**：每语文案像当地人会搜、会读的工具站，不是英模直译。依据：策略 §5.5；字段/lint 见 `tool-i18n-seo.mdc`。立项填空：`work-tasks/_template/03-locale-briefs.md`。
 
+**权威**：本文件是 Agent 可执行落地；与 `seo-google-policy.mdc` / `lint:seo` 冲突时以上层为准。`lint:seo` 通过 **≠** 本地化完成。
+
+---
+
+## 稳妥常态工作流（默认必须）
+
+按顺序执行；**禁止跳步用脚本一次灌满十语上线**。
+
+| 步 | 做什么 | 产出 / 门禁 |
+|---|---|---|
+| 0 | 填 `work-tasks/{slug}/03-locale-briefs.md`（每语检索词、语气、title 方向、按钮说法、SERP 摘录） | 状态 `briefs-ready`；brief 空白则停 |
+| 1 | 写 **一种** 母版语（通常 en 或 zh）完整键：title / description / How / Rules / Example / Use cases / FAQ / UI | `lint:seo` 对该母版过；记轮次 1 |
+| 2 | **逐语**（或每批 ≤3 语）按该语 brief **独立重写**；同步 `scripts/site/i18n.mjs` 首页主词 | 禁止 `Translate to {lang}`；每语 title/FAQ 句式不得与英模锁死同构；记轮次 2 |
+| 3 | 禁词表全扫 + 抽查 **en + zh + 至少 2 个其他语**（优先含 ar/ja/ru 若已上线） | 再 `lint:seo`；记轮次 3；`03` 勾选轮次框 |
+| 4 | 定稿 | `03` 状态 → `i18n-done`；若仍有母语不确定项 → 保留「待母语抽查」且不得假装已清 |
+
+**允许**：脚本/补丁 **只做已定稿文案的落盘**（把审过的字符串写入 `.ts`）。  
+**禁止**：把「生成八语同构段落」的流水线脚本当作本地化步骤（见下节红线）。
+
+Agent 提示应类似：`Write {lang} copy for users who search: …`（附该语 brief），**不要** `Translate the following to {lang}`。
+
+---
+
 ## 写法
 
 - **重写非翻译**：先定该语 3–5 个搜索词，再写 title / H1 / description / 按钮。
-- **UI 短词本地说**；示例可本地化；技术专名（CRLF、`.env`）可保留。
+- **UI 短词本地说**；示例可本地化；技术专名（CRLF、`.env`、Markdown、HTML）可保留。
 - **首页** `scripts/site/i18n.mjs` 主词与工具页一致。
+- **反同构**：FAQ 题序、How/Rules 开篇、Use cases 切入点应随语种变化；禁止十语同一「Process: … Example: …」骨架只换词。
 
 ## 每语 brief（写 i18n 前必填）
 
@@ -28,9 +52,29 @@ alwaysApply: false
 - 可保留英文/符号：
 - 本工具额外禁用（可选）：
 - SERP 竞品 title 摘录（1–3）：
+- 轮次2已重写：[ ]  轮次3已抽查：[ ]
+- 待母语抽查：[ ]   # 仅 ar/ja/ru 或抽查存疑时勾选；清掉前须有实质重写或真人确认
 ```
 
-Agent 提示应类似：`Write {lang} copy for users who search: …`（附 brief），**不要** `Translate the following to {lang}`。
+---
+
+## 收紧合规（相对「先 en/zh 再脚本灌其余语」）
+
+以下视为 **不合规**（即使 `lint:seo` 绿）：
+
+1. **批量同构**：一次生成 ≥4 语，且 title/FAQ/How 与英模句式锁死平行（同问题顺序 + 同连接词骨架）。
+2. **跳过 brief**：`03` 空白或仅复制英检索词未写本地 title 方向就开始写 i18n。
+3. **假本地化**：非 en/zh 键缺失，靠 `t()` 回退英文上线。
+4. **用 lint 代替抽查**：未完成轮次 3 抽查就标 `i18n-done`。
+5. **空勾「待母语抽查」**：标了待抽查却无后续重写/确认记录，或未清标记却宣称定稿。
+
+**收紧后的通过标准**：
+
+- 每语能对照 brief 指出「检索主词落在 title/H1 的哪里」。
+- 任意抽两语 FAQ，读起来不像同一段英模换皮。
+- `03` 中「待母语抽查」：**有则必须处理**；处理方式为（a）按 brief 再重写该语关键段落后 **清掉勾选**，或（b）真人母语确认后清掉并在多轮记录注明。不得「带勾上线」。
+
+---
 
 ## 禁词 / 禁模式表
 
@@ -42,6 +86,7 @@ Agent 提示应类似：`Write {lang} copy for users who search: …`（附 brie
 | 目录腔标题 | ユースケース、Casos de uso 堆砌英文 Use cases | 「适合什么场景」「こんなときに」 |
 | 同构机翻 | 十语同一句式 + 同一 Hello world 骨架且无本地主词 | 每语独立重写 title/FAQ |
 | 假本地化 | 仅 en/zh 有文案，其余靠 `t()` 回退英文 | 十语键齐全 |
+| 脚本灌语 | 无逐语 brief 审阅的「一键八语」补丁当交付 | 逐语/≤3 语一批；脚本仅落盘 |
 
 技术词（diff、JSON、CRLF）在开发者工具中**可以**保留，但不可代替本地主 title。
 
@@ -50,19 +95,21 @@ Agent 提示应类似：`Write {lang} copy for users who search: …`（附 brie
 | 轮 | 做什么 | 通过 |
 |---|---|---|
 | 1 | 母版 + brief 草稿；`lint:seo` | ≥120、FAQ≥3、关键词 |
-| 2 | 按每语 brief **重写**；同步首页；对照禁词表 | title=检索向；无禁模式 |
-| 3 | 抽 en+zh+≥2 他语：title/按钮/FAQ/隐私；再 `lint:seo` | 无译腔/错义 |
-
-ar / ja / ru 存疑则在 `work-tasks/{slug}/03-locale-briefs.md` 标「待母语抽查」。
+| 2 | 按每语 brief **独立重写**（非批量同构）；同步首页；对照禁词表 | title=检索向；无禁模式 |
+| 3 | 抽 en+zh+≥2 他语：title/按钮/FAQ/隐私；句式是否同构；再 `lint:seo` | 无译腔/错义/同构；待母语抽查已清或已排期 |
 
 ## 定稿自检
 
 - [ ] 每语有 brief（检索词 + title 方向 + 按钮说法）
 - [ ] 对照禁词表扫过 title/按钮/FAQ
-- [ ] ≥3 轮且 2/3 轮有实质修改
+- [ ] ≥3 轮且 2/3 轮有实质修改（非只改标点）
+- [ ] 无未清的「待母语抽查」勾选（或已在 `03` 多轮记录写明排期与责任人）
 - [ ] `lint:seo` 通过（≠本地化完成）
+- [ ] 未使用「英模 → 脚本灌其余语」作为唯一交付路径
 
 ## 红线
 
-- 禁止批量直出十语不经 brief/重写/禁词核查即上线  
+- 禁止批量直出十语不经 brief/重写/禁词核查即上线
 - 禁止用英文回充冒充多语言完整
+- 禁止将「生成同构多语文案」的自动化脚本当作合规本地化
+- 禁止带着未处理的「待母语抽查」标记宣称 `i18n-done`

@@ -21,121 +21,78 @@ const ar: SiteLangDict = {
   note_title: 'ملاحظات',
   note_1: 'بعض المواقع لا تدعم HEAD ؛ سنعود إلى GET.',
   note_2: 'لحماية الأمان، يتم حظر الطلبات إلى localhost/الشبكات الخاصة.',
-  tool_markdown_title: 'نحو Markdown → HTML',
+  tool_markdown_title: 'من Markdown إلى HTML الآمن — وبالعكس',
   tool_markdown_description:
-    "تحويل Markdown إلى HTML مُعقَّم مع معاينة. العملية: تحليل CommonMark، تنقية HTML، عرض كتل الكود/القوائم/الروابط. مثال: تحويل منشور مدونة إلى HTML جاهز للنشر.",
+    'تحتاج HTMLًا نظيفًا من Markdown، أو Markdown من HTML لوحة التحكم؟ اختر الاتجاه؛ marked وTurndown وDOMPurify داخل المتصفح. مثال: README إلى .html، أو HTML المحرر إلى .md للمستودع.',
   tool_markdown_article:
-    'ما هو: تحويل Markdown إلى HTML تم تنقيته مع معاينة وخيارات التصدير. مفيد في إعداد منشورات المدونة أو الوثائق أو مشاركة المحتوى المعروض. سيناريوهات: التأليف، والمعاينات السريعة، وإنشاء عمليات تصدير HTML الثابتة.',
+    'اتجاهان في رابط واحد، مع حدود التنظيف والفقدان. اللصق محلي؛ CDN للمكتبات فقط.',
+  tool_markdown_dir_label: 'اتجاه التحويل',
+  tool_markdown_tab_md_html: 'Markdown → HTML',
+  tool_markdown_tab_html_md: 'HTML → Markdown',
   tool_markdown_copy: 'نسخ HTML',
+  tool_markdown_copy_md: 'نسخ Markdown',
   tool_markdown_copy_done: 'تم النسخ',
   tool_markdown_download: 'تنزيل HTML',
+  tool_markdown_download_md: 'تنزيل Markdown',
   tool_markdown_clear: 'مسح',
-  tool_markdown_full_doc: 'توليد مستند HTML كامل',
+  tool_markdown_full_doc: 'إنشاء مستند HTML كامل',
   tool_markdown_input_label: 'إدخال Markdown',
   tool_markdown_preview_label: 'معاينة HTML',
+  tool_markdown_html_input_label: 'إدخال HTML',
+  tool_markdown_md_output_label: 'مخرجات Markdown',
   tool_markdown_placeholder:
-    "# العنوان\n\nدعم Markdown الأساسي: **غامق**، وقوائم، وكتل التعليمات البرمجية.\n\n- البند 1\n- البند 2\n\n``js\nconsole.log('مرحبًا بـ Markdown');\n```",
+    "# العنوان\n\nMarkdown أساسي: **عريض**، قوائم، وكتل شيفرة.\n\n- بند 1\n- بند 2\n\n```js\nconsole.log('مرحبا Markdown');\n```",
+  tool_markdown_html_placeholder: '<h1>العنوان</h1>\n<p>مرحبا <strong>بالعالم</strong></p>',
+  tool_markdown_sample_md:
+    "# العنوان\n\nMarkdown أساسي: **عريض**، قوائم، وكتل شيفرة.\n\n- بند 1\n- بند 2\n\n```js\nconsole.log('مرحبا Markdown');\n```",
+  tool_markdown_sample_html: '<h1>العنوان</h1>\n<p>مرحبا <strong>بالعالم</strong></p>',
   tool_markdown_export_title: 'تصدير Markdown إلى HTML',
-  tool_markdown_export_description: "توليد مستند HTML كامل من Markdown مع قالب وبيانات وصفية. الخطوات: تصيير Markdown، إدراجه في القالب، إضافة meta/assets، وتمكين التحميل. مثال: تصدير منشور كملف .html مستقل.",
-  tool_bmi_title: 'كيفية حساب مؤشر كتلة الجسم',
-  tool_bmi_description: "حساب مؤشر كتلة الجسم: BMI = الوزن(kg) / (الطول(m))^2. العملية: اختيار الوحدات وتحويلها عند الحاجة، حساب المؤشر، وتحديد الفئة. مثال: 70kg و175cm → BMI 22.9 (طبيعي).",
-  tool_bmi_article: 'ما هو: احسب مؤشر كتلة الجسم (BMI) لتقييم ما إذا كان وزنك صحيًا. الاستخدام: أدخل وزنك وطولك، ثم انقر فوق حساب. سيناريوهات: فحوصات الصحة، والتخطيط للياقة البدنية، وإدارة الوزن.',
-  tool_bmi_weight_label: 'الوزن (كجم)',
-  tool_bmi_weight_placeholder: 'أدخل وزنك بالكيلوغرام',
-  tool_bmi_height_label: 'الطول (سم)',
-  tool_bmi_height_placeholder: 'أدخل طولك بالسنتيمترات',
-  tool_bmi_calculate: 'حساب مؤشر كتلة الجسم',
-  bmi_chart_title: 'فئات مؤشر كتلة الجسم',
-  bmi_underweight: 'نقص الوزن',
-  bmi_normal: 'طبيعي',
-  bmi_overweight: 'زيادة الوزن',
-  bmi_obese: 'سمنة',
-  bmi_metric_units: 'الوحدات المترية',
-  bmi_imperial_units: 'الوحدات الإمبراطورية',
-  bmi_weight_lbs: 'الوزن (رطل)',
-  bmi_weight_lbs_placeholder: 'الوزن بالرطل',
-  bmi_height_ft: 'الطول (قدم)',
-  bmi_height_ft_placeholder: 'قدم',
-  bmi_height_in: 'الطول (بوصة)',
-  bmi_height_in_placeholder: 'بوصة',
-  bmi_interpretation_underweight: 'قد يكون وزنك أقل من المعتاد. فكر في استشارة أخصائي الرعاية الصحية.',
-  bmi_interpretation_normal: 'تهانينا! يبدو أن وزنك ضمن النطاق الصحي.',
-  bmi_interpretation_overweight: 'قد يكون وزنك زائدًا. فكر في استشارة أخصائي الرعاية الصحية.',
-  bmi_interpretation_obese: 'قد تكون تعاني من السمنة. فكر في استشارة أخصائي الرعاية الصحية.',
-  tool_ip_address_title: 'ما هو عنواني IP؟',
-  tool_ip_address_description: "اكتشاف عنوان IP العام والبيانات الأساسية. العملية: يعيد الخادم IP المرسل (IPv4/IPv6) ويمكن إجراء بحث جغرافي/مزود خدمة اختياري. مثال: عرض IP والبلد لتشخيص المشكلات عن بُعد.",
-  tool_ip_address_article: 'ما هو: اكتشف عنوان IP العام الخاص بك كما يراه الإنترنت. يُعرف عنوان IP جهازك على الشبكة ويستخدمه مواقع الويب لتوصيل المحتوى. سيناريوهات: الوصول عن بعد، وحل مشكلات الشبكة، وتكوين جدار الحماية، وخدمات تحديد الموقع الجغرافي.',
-  ip_label: 'عنوان IP الخاص بك',
-  fetch_ip_button: 'تحديث IP',
-  fetching_message: 'جارٍ جلب عنوان IP الخاص بك...',
-  what_is_ip_title: 'ما هو عنوان IP؟',
-  what_is_ip_content: 'عنوان بروتوكول الإنترنت (IP) هو تسمية رقمية تُعطى لكل جهاز متصل بشبكة كمبيوتر. وهو يؤدي وظيفتين أساسيتين: التعرف على المضيف أو واجهة الشبكة وعناوين الموقع. هناك نسختان قيد الاستخدام اليوم: IPv4 و IPv6.',
-  tool_marginal_revenue_title: 'How to Calculate Marginal Revenue',
-  tool_marginal_revenue_description:
-    'حساب الإيراد الحدّي (MR) من التغير في الإيراد الكلي: MR = ΔTR / ΔQ. عملية: أدخل زوجي (Q, TR) أو قيمتين متتاليتين، احسب النسبة ΔTR/ΔQ وفسّرها لاتخاذ قرارات السعر. مثال: Q1=100, TR1=2000; Q2=101, TR2=2015 → MR = 15.',
-  tool_marginal_revenue_article:
-    'What: Marginal revenue is the additional revenue from selling one more unit, computed as the change in total revenue over the change in quantity. Usage: provide two (Q, TR) pairs or successive totals and click calculate. Scenarios: microeconomic analysis, pricing strategy, and profit-maximization.',
-  tool_marginal_revenue_example:
-    'Example: Q1=100, TR1=2000; Q2=101, TR2=2015 → MR = (2015 - 2000) / (101 - 100) = 15.',
-  tool_marginal_revenue_quantity_label: 'Quantity',
-  tool_marginal_revenue_revenue_label: 'Total Revenue',
-  tool_marginal_revenue_calculate: 'Calculate MR',
-  tool_marginal_revenue_result_label: 'Marginal Revenue',
-    tool_squarefeet_title: 'حسابة القدم المربعة — كيفية حساب المساحة بالقدم المربع',
-    tool_squarefeet_description: "حساب المساحة بالقدم المربعة من الطول والعرض. العملية: اختيار الوحدة (قدم/متر/بوصة) وتحويلها إلى قدم، حساب المساحة (الطول × العرض)، والتحويل إلى قدم مربع عند الحاجة. مثال: 3m × 4m = 12 m² ≈ 129.17 قدم مربع.",
-    tool_squarefeet_article: 'ما هذا: احسب المساحة (قدم مربع) من الطول والعرض. الاستخدام: أدخل الأبعاد واختر الوحدات. الحالات: تقدير الأرضيات، أسطح الطاولات، حجم الغرف، وقياسات العقارات.',
-    tool_squarefeet_length_label: 'الطول',
-    tool_squarefeet_length_placeholder: 'أدخل الطول',
-    tool_squarefeet_width_label: 'العرض',
-    tool_squarefeet_width_placeholder: 'أدخل العرض',
-    tool_squarefeet_calculate: 'احسب المساحة',
-    unit_feet: 'قدم',
-    unit_meters: 'متر',
-    unit_inches: 'بوصة',
-    sqft_unit: 'قدم مربع',
-    tool_squarefeet_result_note: 'النتيجة مقربة إلى خانتين عشريتين.',
-    tool_squarefeet_usage_title: 'طريقة الاستخدام',
-    tool_squarefeet_usage: 'استخدم هذه الحاسبة لتقدير المساحات بسرعة لتحديد الأرضيات أو الطلاء أو مواضع الأثاث.',
-     tool_percentage_change_title: 'كيفية حساب النسبة المئوية للزيادة/النقصان',
-     tool_percentage_change_description:
-       'احسب النسبة المئوية للزيادة أو النقصان بين قيمتين. العملية: أدخل القيمة الأصلية والقيمة الجديدة، احسب الفرق، اقسمه على القيمة الأصلية واضرب الناتج في 100 للحصول على النسبة المئوية. مفيد للتمويل، والخصومات، والتحليلات والتقارير.',
-     tool_percentage_change_article:
-       'ما هي: احسب التغير النسبي بين رقمين وحدد ما إذا كان زيادة أو نقصانًا. الاستخدام: أدخل القيمة الأصلية والقيمة الجديدة ثم اضغط حساب. العملية: Δ = الجديد − القديم؛ النسبة = (Δ / القديم) × 100. سيناريوهات: تغييرات الأسعار، نمو الإيرادات، الخصومات وتقارير مؤشرات الأداء.',
-     tool_percentage_change_original_label: 'القيمة الأصلية',
-     tool_percentage_change_new_label: 'القيمة الجديدة',
-     tool_percentage_change_calculate: 'حساب التغير المئوي',
-     tool_percentage_change_result_label: 'التغير المئوي',
-     tool_percentage_change_example: 'مثال: الأصل 50، الجديد 75 → ((75 - 50) / 50) × 100 = 50% زيادة.',
-     tool_percentage_change_result_invalid: 'يجب أن تكون القيمة الأصلية غير صفرية',
-     tool_percentage_change_increase: 'زيادة',
-     tool_percentage_change_decrease: 'نقصان',
-     tool_percentage_change_no_change: 'بدون تغيير',
-    tool_roi_title: 'كيفية حساب عائد الاستثمار (ROI)',
-    tool_roi_description:
-      'حساب عائد الاستثمار (ROI) = (القيمة النهائية - الاستثمار الأولي) / الاستثمار الأولي × 100%. العملية: أدخل الاستثمار الأولي والقيمة النهائية (أو الربح الصافي)، احسب نسبة ROI وقم بتفسير النتيجة.',
-    tool_roi_article:
-      'ما هو: ROI يقيس نسبة الربح أو الخسارة بالمقارنة مع الاستثمار الأولي. الاستخدام: ادخل تكلفة البداية والقيمة النهائية أو الربح الصافي، ثم اضغط حساب. السيناريوهات: التمويل، تحليل حملات التسويق، ومقارنة الاستثمارات.',
-    tool_roi_initial_label: 'الاستثمار الأولي',
-    tool_roi_initial_placeholder: 'أدخل مبلغ الاستثمار الأولي',
-    tool_roi_final_label: 'القيمة النهائية',
-    tool_roi_final_placeholder: 'أدخل القيمة النهائية أو عائد البيع',
-    tool_roi_gain_label: 'الربح الصافي (اختياري)',
-    tool_roi_gain_placeholder: 'أدخل الربح الصافي إذا كان معروفًا',
-    tool_roi_calculate: 'احسب ROI',
-    tool_roi_result_label: 'ROI',
-    tool_roi_example: 'مثال: البداية 1000$، النهاية 1250$ → ROI = ((1250 - 1000) / 1000) × 100 = 25%',
-    tool_roi_interpret_positive: 'عائد إيجابي',
-    tool_roi_interpret_zero: 'لا ربح ولا خسارة',
-    tool_roi_interpret_negative: 'عائد سلبي (خسارة)',
-    tool_gradient_title: 'كيفية حساب التدرج',
-    tool_gradient_description:
-      'احسب تدرج دالة قياسية (متجه المشتقات الجزئية، ∇f). العملية: خذ المشتقات الجزئية بالنسبة لكل متغير، اجمعها في متجه، ثم قيّم المتجه عند نقطة معينة. مثال: f(x,y)=x^2 y + 3y → ∇f=(2xy, x^2+3); عند (1,2) → (4,4).',
-    tool_gradient_article:
-      'ما هو: تدرج الدالة القياسية هو متجه مشتقاتها الجزئية ويشير إلى اتجاه أسرع زيادة. الاستخدام: أدخل دالة متعددة المتغيرات، احسب كل مشتقة جزئية، كوّن متجه التدرج، وقم بتقييمه عند نقطة محددة. السيناريوهات: تحسين، المشتقات الاتجاهية، الفيزياء وتحليل الحقول.',
-    tool_gradient_example:
-      'مثال: f(x,y)=x^2 y + 3y. ∂f/∂x = 2xy، ∂f/∂y = x^2 + 3. إذًا ∇f = (2xy, x^2 + 3). عند (1,2): ∇f = (4,4).',
-
-  tool_text_diff_title: 'مقارنة نصين أونلاين — اكتشف الفروقات',
+  tool_markdown_export_description:
+    'إنشاء مستند HTML كامل من Markdown مع قالب وبيانات وصفية. الخطوات: تصيير، إدراج في القالب، إضافة meta، تنزيل. مثال: تصدير مقال كملف .html مستقل.',
+  tool_markdown_large_warn:
+    'لصق كبير جدًا (أكثر من 200 ألف حرف). قد يبطئ التحويل — جرّب مقتطفًا أقصر.',
+  tool_markdown_need_lib: 'تعذّر تحميل مكتبة التحويل. تحقق من الاتصال ثم أعد التحميل.',
+  tool_markdown_loss_hint:
+    'قليل أو لا Markdown — ربما أُزيلت سكربتات أو وسوم فارغة أو ترميز غير مدعوم. راجع القواعد والأسئلة.',
+  tool_markdown_how_title: 'خطوات سريعة',
+  tool_markdown_how_body:
+    'التبويب يحدد الاتجاه. أدخل يسارًا والنتيجة يمينًا محليًا. HTML: جزء أو مستند بسيط؛ Markdown: نص للمحرر أو النموذج.',
+  tool_markdown_rules_title: 'قواعد حسب الاتجاه',
+  tool_markdown_rules_intro:
+    'لا صفحة رقيقة ثانية فقط لكلمة «HTML إلى Markdown».',
+  tool_markdown_rules_item_md_html:
+    'إلى HTML: تحليل ثم تنظيف قبل العرض/الحفظ.',
+  tool_markdown_rules_item_html_md:
+    'إلى Markdown: تنظيف ثم Turndown (عناوين ATX وكتل محاطة).',
+  tool_markdown_rules_item_loss:
+    'الأنماط والسكربتات والجداول المعقدة غالبًا تُبسَّط. الذهاب والإياب ≠ الأصل.',
+  tool_markdown_rules_privacy:
+    'النص يبقى في تبويبك؛ CDN لا يرفع مقالك.',
+  tool_markdown_example_title: 'مثال',
+  tool_markdown_example:
+    '`# العنوان` و `مرحبا **بالعالم**` ↔ HTML منظّف وMarkdown بخط عريض.',
+  tool_markdown_usecases_title: 'متى يفيد',
+  tool_markdown_usecase_1:
+    'تسليم HTML آمن لنظام المحتوى.',
+  tool_markdown_usecase_2:
+    'استعادة مسودة من HTML بريد أو لوحة.',
+  tool_markdown_usecase_3:
+    'تنظيف نص غني قبل المطالبة.',
+  tool_markdown_faq_q1: 'هل يُزال السكربت من HTML؟',
+  tool_markdown_faq_a1:
+    'في Markdown → HTML نعم؛ DOMPurify قبل المعاينة والتنزيل.',
+  tool_markdown_faq_q2: 'هل يبقى التنسيق في Markdown؟',
+  tool_markdown_faq_a2:
+    'نادرًا. اعتبره مسودة قابلة للتحرير.',
+  tool_markdown_faq_q3: 'هل يُرسل اللصق إلى خادم؟',
+  tool_markdown_faq_a3:
+    'التحويل محلي. CDN يوصل ملفات المكتبة فقط.',
+  tool_markdown_faq_q4: 'هل الذهاب والإياب بلا فرق؟',
+  tool_markdown_faq_a4:
+    'غير مضمون — قارن بـ Diff إن لزم.',
+  tool_markdown_faq_q5: 'ما الصيغ وخيارات التصدير؟',
+  tool_markdown_faq_a5:
+    'أساسيات CommonMark؛ ومستند HTML كامل اختياري للمشاركة دون اتصال.',
   tool_text_diff_description:
     'قارن نصين أونلاين واعرف ماذا تغيّر. العملية: الصق النص الأصلي والمعدَّل، اختر المقارنة حسب السطر أو الكلمة أو الحرف، ويمكن تجاهل المسافات أو توحيد أسطر Windows (CRLF→LF)، ثم أبرز الإضافات والحذف في المتصفح. مثال: غيّر «مرحبا بالعالم» إلى «مرحبا صديقي» — وضع الكلمات يُظهر استبدالاً واحداً.',
   tool_text_diff_article:

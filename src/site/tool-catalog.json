@@ -33,7 +33,7 @@
     "homeTitleKey": "tool_markdown_to_html_title",
     "homeDescKey": "tool_markdown_to_html_desc",
     "faqPrefix": "tool_markdown",
-    "related": ["website-headers", "ip-address", "text-diff"]
+    "related": ["text-diff", "website-headers", "ip-address"]
   },
   {
     "slug": "text-diff",

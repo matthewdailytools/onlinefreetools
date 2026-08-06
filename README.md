@@ -10,7 +10,7 @@
 
 - [获取网站响应 Header](https://onlinefreetools.org/zh/tools/website-headers) - 通过服务器端请求获取网址的 HTTP 响应 Header
 - [我的 IP 地址是什么？](https://onlinefreetools.org/zh/tools/ip-address) - 查询您对外显示的公网 IP 地址及基础元信息
-- [Markdown 转 HTML](https://onlinefreetools.org/zh/tools/markdown-to-html) - 将 Markdown 转换为已净化的 HTML 并预览
+- [Markdown ↔ HTML](https://onlinefreetools.org/zh/tools/markdown-to-html) - 浏览器内 Markdown 与 HTML 双向转换：预览、安全清理与导出
 - [在线文本对比](https://onlinefreetools.org/zh/tools/text-diff) - 并排对比两段文本，高亮增删改差异
 - [如何计算BMI](https://onlinefreetools.org/zh/tools/how-to-calculate-bmi) - 计算您的BMI（身体质量指数），评估体重是否健康
 - [如何计算 ROI](https://onlinefreetools.org/zh/tools/how-to-calculate-roi) - 计算投资回报率（ROI），用于评估投资与活动效果
@@ -23,7 +23,7 @@ Below are our available online tools with their links (English version):
 
 - [Fetch Website Response Headers](https://onlinefreetools.org/tools/website-headers) - Fetch a URL's HTTP response headers server-side
 - [What Is My IP Address?](https://onlinefreetools.org/tools/ip-address) - Find your public IP address as seen by the internet with basic metadata
-- [Markdown → HTML](https://onlinefreetools.org/tools/markdown-to-html) - Convert Markdown into sanitized HTML with preview
+- [Markdown ↔ HTML](https://onlinefreetools.org/tools/markdown-to-html) - Convert Markdown ↔ HTML with sanitize, preview, and export
 - [Text Diff Checker](https://onlinefreetools.org/tools/text-diff) - Compare two texts side by side and highlight differences
 - [How to Calculate BMI](https://onlinefreetools.org/tools/how-to-calculate-bmi) - Calculate your BMI (Body Mass Index) to assess if your weight is healthy
 - [How to Calculate ROI](https://onlinefreetools.org/tools/how-to-calculate-roi) - Calculate return on investment (ROI) for performance analysis

@@ -74,7 +74,7 @@ npm run build:site  # 发布前必须构建 sitemap
 
 校验失败时补文案/翻译后再合并，勿绕过检查。
 
-**本地化与多轮核查**（检索向、禁机翻、≥3 轮审核）见 `tool-i18n-localization.mdc`。`lint:seo` 通过 ≠ 翻译已本地化。
+**本地化与多轮核查**（检索向、禁机翻、稳妥常态、收紧合规、≥3 轮审核）见 `tool-i18n-localization.mdc`。`lint:seo` 通过 ≠ 翻译已本地化。禁止「母版 + 脚本灌其余语」的同构交付。
 
 ## 红线
 

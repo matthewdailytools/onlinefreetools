@@ -21,121 +21,78 @@ const es: SiteLangDict = {
   note_title: 'Notas',
   note_1: 'Algunos sitios no admiten HEAD; retrocederemos a GET.',
   note_2: 'Por seguridad, se bloquean las solicitudes a localhost/redes privadas.',
-  tool_markdown_title: 'Markdown → HTML',
+  tool_markdown_title: 'Markdown a HTML (y al revés) — vista previa segura',
   tool_markdown_description:
-    "Convertir Markdown a HTML sanitizado con vista previa. Proceso: parsear CommonMark, sanitizar salida y renderizar bloques de código/listas/enlaces. Ejemplo: convertir un post de blog a HTML listo para publicar.",
+    'Pegas Markdown y quieres HTML limpio, o copiaste HTML del CMS y necesitas Markdown. Elige el sentido, todo corre en el navegador: marked o Turndown + DOMPurify. Ejemplo práctico: publicar un borrador o recuperar texto para Git.',
   tool_markdown_article:
-    'Qué: Convierte Markdown en HTML saneado con vista previa y opciones de exportación. Útil para preparar entradas de blog, documentación o compartir contenido renderizado. Escenarios: creación de contenido, vistas previas rápidas y generación de exportaciones HTML estáticas.',
+    'Misma URL para los dos sentidos, con reglas claras de qué se limpia y qué se pierde. El pegado no viaja a un servidor nuestro; el CDN solo trae librerías.',
+  tool_markdown_dir_label: 'Dirección de conversión',
+  tool_markdown_tab_md_html: 'Markdown → HTML',
+  tool_markdown_tab_html_md: 'HTML → Markdown',
   tool_markdown_copy: 'Copiar HTML',
+  tool_markdown_copy_md: 'Copiar Markdown',
   tool_markdown_copy_done: 'Copiado',
   tool_markdown_download: 'Descargar HTML',
+  tool_markdown_download_md: 'Descargar Markdown',
   tool_markdown_clear: 'Limpiar',
   tool_markdown_full_doc: 'Generar documento HTML completo',
   tool_markdown_input_label: 'Entrada Markdown',
-  tool_markdown_preview_label: 'Vista Previa HTML',
+  tool_markdown_preview_label: 'Vista previa HTML',
+  tool_markdown_html_input_label: 'Entrada HTML',
+  tool_markdown_md_output_label: 'Salida Markdown',
   tool_markdown_placeholder:
-    "# Título\n\nMarkdown básico soportado: **negrita**, listas y bloques de código.\n\n- Artículo 1\n- Artículo 2\n\n```js\nconsole.log('Hola Markdown');\n```",
+    "# Título\n\nMarkdown básico: **negrita**, listas y bloques de código.\n\n- Ítem 1\n- Ítem 2\n\n```js\nconsole.log('Hola Markdown');\n```",
+  tool_markdown_html_placeholder: '<h1>Título</h1>\n<p>Hola <strong>mundo</strong></p>',
+  tool_markdown_sample_md:
+    "# Título\n\nMarkdown básico: **negrita**, listas y bloques de código.\n\n- Ítem 1\n- Ítem 2\n\n```js\nconsole.log('Hola Markdown');\n```",
+  tool_markdown_sample_html: '<h1>Título</h1>\n<p>Hola <strong>mundo</strong></p>',
   tool_markdown_export_title: 'Exportación Markdown a HTML',
-  tool_markdown_export_description: "Generar un documento HTML completo desde Markdown, con plantilla y metadatos. Pasos: renderizar Markdown, inyectar en plantilla HTML, añadir meta/recursos y permitir descarga. Ejemplo: exportar un artículo como archivo .html independiente.",
-  tool_bmi_title: 'Cómo calcular el BMI',
-  tool_bmi_description: "Calcular IMC: IMC = peso(kg) / (altura(m))^2. Proceso: elegir unidades, convertir si es necesario, calcular y mapear a categoría. Ejemplo: 70kg y 175cm → IMC 22.9 (Normal).",
-  tool_bmi_article: 'Qué es: Calcule su BMI (Índice de Masa Corporal) para evaluar si su peso es saludable. Uso: Ingrese su peso y altura, haga clic en calcular. Escenarios: controles de salud, planificación fitness y manejo de peso.',
-  tool_bmi_weight_label: 'Peso (kg)',
-  tool_bmi_weight_placeholder: 'Ingrese su peso en kilogramos',
-  tool_bmi_height_label: 'Altura (cm)',
-  tool_bmi_height_placeholder: 'Ingrese su altura en centímetros',
-  tool_bmi_calculate: 'Calcular BMI',
-  bmi_chart_title: 'Categorías de BMI',
-  bmi_underweight: 'Bajo peso',
-  bmi_normal: 'Normal',
-  bmi_overweight: 'Sobrepeso',
-  bmi_obese: 'Obeso',
-  bmi_metric_units: 'Unidades métricas',
-  bmi_imperial_units: 'Unidades imperiales',
-  bmi_weight_lbs: 'Peso (lbs)',
-  bmi_weight_lbs_placeholder: 'Peso en libras',
-  bmi_height_ft: 'Altura (ft)',
-  bmi_height_ft_placeholder: 'Pies',
-  bmi_height_in: 'Altura (in)',
-  bmi_height_in_placeholder: 'Pulgadas',
-  bmi_interpretation_underweight: 'Es posible que estés bajo de peso. Considera consultar con un profesional de la salud.',
-  bmi_interpretation_normal: '¡Felicitaciones! Tu peso parece estar dentro de un rango saludable.',
-  bmi_interpretation_overweight: 'Es posible que estés sobrepeso. Considera consultar con un profesional de la salud.',
-  bmi_interpretation_obese: 'Es posible que tengas obesidad. Considera consultar con un profesional de la salud.',
-  tool_ip_address_title: '¿Cuál es mi dirección IP?',
-  tool_ip_address_description: "Descubrir tu IP pública y metadatos básicos. Proceso: el servidor devuelve la IP del solicitante, manejar IPv4/IPv6 y opcionalmente resolver geolocalización/ISP. Ejemplo: muestra IP y país para resolución de problemas.",
-  tool_ip_address_article: 'Qué: Encuentra tu dirección IP pública tal como la ven en internet. Tu dirección IP identifica tu dispositivo en la red y es usada por sitios web para entregar contenido. Escenarios: acceso remoto, solución de problemas de red, configuración de firewall y servicios de geolocalización.',
-  ip_label: 'Tu dirección IP',
-  fetch_ip_button: 'Actualizar IP',
-  fetching_message: 'Obteniendo tu dirección IP...',
-  what_is_ip_title: '¿Qué es una dirección IP?',
-  what_is_ip_content: 'Una dirección de Protocolo de Internet (IP) es una etiqueta numérica asignada a cada dispositivo conectado a una red informática. Sirve dos funciones principales: identificación del host o interfaz de red y direccionamiento de ubicación. Actualmente hay dos versiones en uso: IPv4 y IPv6.',
-  tool_marginal_revenue_title: 'How to Calculate Marginal Revenue',
-  tool_marginal_revenue_description:
-    'Calculate marginal revenue (MR) from changes in total revenue: MR = ΔTR / ΔQ. Process: enter two total-revenue/quantity pairs (or a small ΔQ), compute the ratio, and interpret results for pricing decisions. Example: use TR at Q and Q+1 to estimate MR.',
-  tool_marginal_revenue_article:
-    'What: Marginal revenue is the additional revenue from selling one more unit, computed as the change in total revenue over the change in quantity. Usage: provide two (Q, TR) pairs or successive totals and click calculate. Scenarios: microeconomic analysis, pricing strategy, and profit-maximization.',
-  tool_marginal_revenue_example:
-    'Example: Q1=100, TR1=2000; Q2=101, TR2=2015 → MR = (2015 - 2000) / (101 - 100) = 15.',
-  tool_marginal_revenue_quantity_label: 'Quantity',
-  tool_marginal_revenue_revenue_label: 'Total Revenue',
-  tool_marginal_revenue_calculate: 'Calculate MR',
-  tool_marginal_revenue_result_label: 'Marginal Revenue',
-    tool_squarefeet_title: 'Calculadora de pies cuadrados — Cómo calcular square feet',
-    tool_squarefeet_description: "Calcular área en pies cuadrados a partir de largo y ancho. Proceso: seleccionar unidad (ft/m/in), convertir a pies, calcular área (largo × ancho) y convertir si es necesario. Ejemplo: 3m × 4m = 12 m² ≈ 129.17 sq ft.",
-    tool_squarefeet_article: 'Qué es: Calcula el área (pies²) a partir del largo y ancho. Uso: ingresa las dimensiones y selecciona las unidades. Escenarios: estimar pisos, encimeras, tamaño de habitaciones y mediciones inmobiliarias.',
-    tool_squarefeet_length_label: 'Largo',
-    tool_squarefeet_length_placeholder: 'Ingresa el largo',
-    tool_squarefeet_width_label: 'Ancho',
-    tool_squarefeet_width_placeholder: 'Ingresa el ancho',
-    tool_squarefeet_calculate: 'Calcular área',
-    unit_feet: 'Pies',
-    unit_meters: 'Metros',
-    unit_inches: 'Pulgadas',
-    sqft_unit: 'sq ft',
-    tool_squarefeet_result_note: 'Resultado redondeado a dos decimales.',
-    tool_squarefeet_usage_title: 'Uso',
-    tool_squarefeet_usage: 'Usa esta calculadora para estimar rápidamente áreas para pisos, pintura o disposición de muebles.',
-  tool_percentage_change_title: 'Cómo calcular el aumento/disminución porcentual',
-  tool_percentage_change_description:
-    'Calcule el aumento o la disminución porcentual entre dos valores. Proceso: proporcione un valor original y un valor nuevo, calcule la diferencia, divida por el valor original y multiplique por 100 para obtener el porcentaje. Útil para finanzas, descuentos, análisis y reportes.',
-  tool_percentage_change_article:
-    'Qué: Calcule el cambio porcentual entre dos números e interprete si es un aumento o una disminución. Uso: ingrese los valores original y nuevo y haga clic en calcular. Proceso: Δ = nuevo − original; porcentaje = (Δ / original) × 100. Escenarios: cambios de precio, crecimiento de ingresos, descuentos y KPIs.',
-  tool_percentage_change_original_label: 'Valor original',
-  tool_percentage_change_new_label: 'Valor nuevo',
-  tool_percentage_change_calculate: 'Calcular cambio porcentual',
-  tool_percentage_change_result_label: 'Cambio porcentual',
-  tool_percentage_change_example: 'Ejemplo: Original 50, Nuevo 75 → ((75 - 50) / 50) × 100 = 50% aumento.',
-  tool_percentage_change_result_invalid: 'El valor original debe ser distinto de cero',
-  tool_percentage_change_increase: 'aumento',
-  tool_percentage_change_decrease: 'disminución',
-  tool_percentage_change_no_change: 'sin cambios',
-  tool_roi_title: 'Cómo calcular el ROI',
-  tool_roi_description:
-    'Calcula el Retorno de la Inversión (ROI) = (Valor final - Inversión inicial) / Inversión inicial × 100%. Proceso: introduce la inversión inicial y el valor final (o ganancia neta), calcula el porcentaje de ROI e interpreta el resultado.',
-  tool_roi_article:
-    'Qué: El ROI expresa el porcentaje de ganancia o pérdida respecto a la inversión inicial. Uso: proporciona el coste inicial y el valor final o la ganancia neta, luego haz clic en calcular. Escenarios: finanzas, análisis de campañas de marketing, comparaciones de inversión.',
-  tool_roi_initial_label: 'Inversión inicial',
-  tool_roi_initial_placeholder: 'Introduce el importe de la inversión inicial',
-  tool_roi_final_label: 'Valor final',
-  tool_roi_final_placeholder: 'Introduce el valor final o los ingresos de venta',
-  tool_roi_gain_label: 'Ganancia neta (opcional)',
-  tool_roi_gain_placeholder: 'Introduce la ganancia neta si la conoces',
-  tool_roi_calculate: 'Calcular ROI',
-  tool_roi_result_label: 'ROI',
-  tool_roi_example: 'Ejemplo: Inicial $1000, Final $1250 → ROI = ((1250 - 1000) / 1000) × 100 = 25%',
-  tool_roi_interpret_positive: 'Retorno positivo',
-  tool_roi_interpret_zero: 'Sin ganancia ni pérdida',
-  tool_roi_interpret_negative: 'Retorno negativo (pérdida)',
-  tool_gradient_title: 'Cómo calcular el gradiente',
-  tool_gradient_description:
-    'Calcule el gradiente de una función escalar (el vector de derivadas parciales, ∇f). Proceso: tomar derivadas parciales respecto a cada variable, formar el vector y evaluarlo en un punto. Ejemplo: f(x,y)=x^2 y + 3y → ∇f=(2xy, x^2+3); en (1,2) → (4,4).',
-  tool_gradient_article:
-    'Qué: El gradiente de una función escalar es el vector de sus derivadas parciales y apunta en la dirección de mayor crecimiento. Uso: introducir una función multivariable, calcular cada derivada parcial, formar el vector gradiente y evaluarlo en un punto concreto. Escenarios: optimización, derivadas direccionales, física y análisis de campos.',
-  tool_gradient_example:
-    'Ejemplo: f(x,y)=x^2 y + 3y. ∂f/∂x = 2xy, ∂f/∂y = x^2 + 3. Por lo tanto ∇f = (2xy, x^2 + 3). En (1,2): ∇f = (4,4).',
-
-  tool_text_diff_title: 'Comparar textos online — Ver diferencias entre dos textos',
+  tool_markdown_export_description:
+    'Generar un documento HTML completo desde Markdown con plantilla y metadatos. Pasos: renderizar, inyectar en plantilla, añadir meta y descargar. Ejemplo: exportar un artículo como .html independiente.',
+  tool_markdown_large_warn:
+    'Pegado muy grande (>200k caracteres). La conversión puede ir lenta: prueba un fragmento más corto.',
+  tool_markdown_need_lib: 'No se pudo cargar una librería de conversión. Revisa la conexión y recarga.',
+  tool_markdown_loss_hint:
+    'Poco o ningún Markdown: scripts, etiquetas vacías o marcado no soportado pueden haberse eliminado. Ver Reglas y FAQ.',
+  tool_markdown_how_title: 'Pasos rápidos',
+  tool_markdown_how_body:
+    'Una pestaña por sentido. Escribes a la izquierda y ves el resultado a la derecha sin subir el texto. En HTML puedes llevarte un fragmento o un documento mínimo; en Markdown obtienes texto plano.',
+  tool_markdown_rules_title: 'Reglas por sentido',
+  tool_markdown_rules_intro:
+    'No abrimos otra página casi igual solo para la palabra “html a markdown”.',
+  tool_markdown_rules_item_md_html:
+    'Hacia HTML: marked interpreta el Markdown; DOMPurify quita scripts peligrosos antes de mostrar o guardar.',
+  tool_markdown_rules_item_html_md:
+    'Hacia Markdown: limpieza primero; Turndown con títulos `#` y código entre vallas, pensado para editar, no para clonar el diseño.',
+  tool_markdown_rules_item_loss:
+    'Hay pérdida: estilos, scripts y tablas enrevesadas suelen aplanarse. Ida y vuelta ≠ original.',
+  tool_markdown_rules_privacy:
+    'El contenido se queda en tu pestaña. Descargar librerías por CDN no envía tu pegado.',
+  tool_markdown_example_title: 'Ejemplo concreto',
+  tool_markdown_example:
+    '`# Título` + `Hola **mundo**` → HTML saneado. `<h1>Título</h1><p>Hola <strong>mundo</strong></p>` → Markdown con negrita.',
+  tool_markdown_usecases_title: 'Para qué sirve',
+  tool_markdown_usecase_1:
+    'Dejar un artículo listo en HTML para el CMS.',
+  tool_markdown_usecase_2:
+    'Sacar Markdown de un correo o del panel del sitio.',
+  tool_markdown_usecase_3:
+    'Limpiar texto enriquecido antes de un prompt.',
+  tool_markdown_faq_q1: '¿El HTML sale filtrado?',
+  tool_markdown_faq_a1:
+    'Sí, en Markdown → HTML pasa por DOMPurify antes de la vista previa y de copiar/descargar.',
+  tool_markdown_faq_q2: '¿Conserva tablas y CSS al pasar a Markdown?',
+  tool_markdown_faq_a2:
+    'Casi nunca del todo. Es un borrador legible: se prioriza el texto frente al diseño.',
+  tool_markdown_faq_q3: '¿Subís lo que pego?',
+  tool_markdown_faq_a3:
+    'No. La conversión es local. El CDN, si aparece, solo entrega código abierto.',
+  tool_markdown_faq_q4: '¿Puedo ir y volver sin diferencias?',
+  tool_markdown_faq_a4:
+    'No lo prometemos. Compará con un diff si necesitás igualdad exacta.',
+  tool_markdown_faq_q5: '¿Qué Markdown acepta y qué puedo exportar?',
+  tool_markdown_faq_a5:
+    'Lo habitual de CommonMark. Opcional: envolver un HTML completo para compartir offline.',
   tool_text_diff_description:
     'Compara dos textos online y ve qué cambió. Proceso: pega el texto original y el revisado, elige comparar por línea, por palabra o por carácter, opcionalmente ignora espacios o unifica saltos Windows (CRLF→LF), y marca añadidos y eliminados en el navegador. Ejemplo: cambia "hola mundo" por "hola amigo" — en modo palabra verás un solo cambio.',
   tool_text_diff_article:

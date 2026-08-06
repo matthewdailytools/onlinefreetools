@@ -67,7 +67,7 @@ Disclaimer（YMYL 必备）
 
 - [ ] `tool-catalog.json` 注册完成；`related` ≥ 2
 - [ ] 10 语言 title / description / article / example 齐全
-- [ ] 十语已按 `tool-i18n-localization.mdc` 做检索向本地化，并完成 ≥3 轮核查（非仅 lint 绿灯）
+- [ ] 十语已按 `tool-i18n-localization.mdc` **稳妥常态**做检索向独立重写（非脚本同构灌语），并完成 ≥3 轮核查；「待母语抽查」已清
 - [ ] `README.md` 工具清单已更新（中英各一条，与 catalog 一致）
 - [ ] `npm run lint:seo` 通过
 - [ ] IG ≥ 3 项（§3.1），PR 写明对应章节

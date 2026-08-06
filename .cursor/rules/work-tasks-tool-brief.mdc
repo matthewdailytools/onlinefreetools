@@ -27,7 +27,7 @@ work-tasks/{kebab-slug}/
 2. 读 `docs/2026-07-28-tool-direction.md`，写 `01-direction-discussion.md`：只选一个主方向；过红线与（若 C）立项三问。
 3. 按策略 §3.8 写满 `02-tool-info.md`（IG ≥3、related ≥2、交互规格）；状态 `draft` → 齐备后改 `ready`。
 4. 写十语前填 `03-locale-briefs.md`（每语检索词、title 方向、按钮说法；勾选禁词表）。
-5. 用户明确要求实现且 `02` 为 `ready` 后，按 `tool-creation.mdc` / `tool-i18n-seo.mdc` / `tool-i18n-localization.mdc` 实现：用 brief **重写**各语，禁止 `Translate to {lang}`；≥3 轮核查。
+5. 用户明确要求实现且 `02` 为 `ready` 后，按 `tool-creation.mdc` / `tool-i18n-seo.mdc` / **`tool-i18n-localization.mdc` 稳妥常态**：母版一语 → 逐语（或每批 ≤3 语）按 brief 独立重写 → ≥3 轮核查；**禁止**「en/zh 定稿后脚本一次灌其余语」的同构交付。脚本仅可落盘已审文案。
 
 ## 写文档时必引用
 
@@ -40,5 +40,7 @@ work-tasks/{kebab-slug}/
 
 - 无 `02-tool-info.md`（或状态非 `ready`）就批量建页 / 拆近义长尾 URL
 - 无 `03-locale-briefs.md`（或 brief 空白）就批量直出十语 i18n
+- 用脚本批量生成同构多语文案并当作本地化完成（见 `tool-i18n-localization.mdc` 收紧合规）
+- 带着未清的「待母语抽查」勾选就标 `i18n-done` / 合并上线
 - 把实现源码放进 `work-tasks/`
 - 主方向标成「A+B+C 全要」
