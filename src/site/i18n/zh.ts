@@ -21,7 +21,7 @@ const zh: SiteLangDict = {
   note_1: '部分站点不支持 HEAD 请求，会自动退回到 GET。',
   note_2: '出于安全考虑，禁止请求内网/本机地址。',
   tool_markdown_title: 'Markdown 转 HTML',
-  tool_markdown_description: "将 Markdown 转换为已净化的 HTML 并预览。流程：解析 CommonMark、清理不安全标签、渲染代码块/列表/链接。示例：把博客文章 Markdown 转为可发布的安全 HTML。",
+  tool_markdown_description: "将 Markdown 转换为已净化的 HTML 并实时预览。流程：解析 CommonMark、清理不安全标签、渲染代码块/列表/链接。示例：把博客文章 Markdown 转为可发布的安全 HTML，可直接复制到 CMS、邮件正文或下载保存。",
   tool_markdown_article:
     '是什么：将 Markdown 转换为已净化的 HTML，并提供预览与导出。用途：为博客、文档或邮件准备渲染内容。适用场景：内容撰写、快速预览与生成静态 HTML 导出。',
   tool_markdown_copy: '复制 HTML',
@@ -34,9 +34,9 @@ const zh: SiteLangDict = {
   tool_markdown_placeholder:
     "# 标题\n\n支持基本 Markdown 语法，例如**加粗**、列表与代码块。\n\n- 列表项 1\n- 列表项 2\n\n```js\nconsole.log('Hello Markdown');\n```",
   tool_markdown_export_title: 'Markdown 转 HTML 导出',
-  tool_markdown_export_description: "把 Markdown 导出为完整 HTML 文档并打包（含模板、meta 与资源）。步骤：渲染 Markdown、注入模板、添加 meta、提供下载。示例：导出为独立的 .html 博客文章。",
+  tool_markdown_export_description: "把 Markdown 导出为完整 HTML 文档并打包（含模板、meta 与资源）。步骤：渲染 Markdown、注入模板、添加 meta 与静态资源、提供下载。示例：导出为独立的 .html 博客文章，便于离线分享、邮件附件、归档与静态托管。",
   tool_bmi_title: '如何计算BMI',
-  tool_bmi_description: "计算 BMI：BMI = 体重(kg) / (身高(m))^2。流程：选择公制/英制，必要时换算单位，计算数值并判定分类。示例：70kg 与 175cm → BMI 22.9（正常）。",
+  tool_bmi_description: "计算 BMI：BMI = 体重(kg) / (身高(m))^2。流程：选择公制/英制，必要时换算单位，计算数值并判定分类（偏瘦/正常/超重/肥胖）。示例：70kg 与 175cm → BMI 22.9（正常）。适用于健康自查、健身规划与体重管理。",
   tool_bmi_article: '是什么：计算您的BMI（身体质量指数），评估体重是否健康。用法：输入体重和身高，点击计算。适用场景：健康自查、健身规划、体重管理。',
   tool_bmi_weight_label: '体重（公斤）',
   tool_bmi_weight_placeholder: '请输入您的体重（kg）',
@@ -61,12 +61,12 @@ const zh: SiteLangDict = {
   bmi_interpretation_overweight: '您的体重可能超重。建议咨询医疗专业人士。',
   bmi_interpretation_obese: '您的体重可能属于肥胖。建议咨询医疗专业人士。',
   tool_ip_address_title: '我的 IP 地址是什么？',
-  tool_ip_address_description: "查询公网 IP 及基础元信息。流程：服务器返回请求来源 IP，支持 IPv4/IPv6，并可做简单地理/ISP 查询。示例：显示 IP 与国家，便于远程访问与故障排查。",
+  tool_ip_address_description: "在线查询公网 IP 及基础元信息。流程：服务器返回请求来源 IP，支持 IPv4/IPv6，并可做简单地理/ISP 查询。示例：显示 IP 与国家/地区，便于远程访问、VPN 配置、防火墙规则、网络故障排查、安全审计与 CDN 调试等用途。",
   tool_ip_address_article: '是什么：查询您对外显示的公网 IP 地址。您的 IP 地址用于在网络中标识您的设备，网站通过它向您发送内容。适用场景：远程访问、网络故障排除、防火墙配置和地理位置服务。',
   ip_label: '您的 IP 地址',
   tool_marginal_revenue_title: '如何计算边际收益',
   tool_marginal_revenue_description:
-    '通过总收益的变化计算边际收益（MR）：MR = ΔTR / ΔQ。流程：输入两组总收益/产量数据（或一个小的 ΔQ），计算收益变化与数量变化之比，用于定价与盈利分析。示例：使用 Q 与 Q+1 的 TR 估算 MR。',
+    '通过总收益的变化计算边际收益（MR）：MR = ΔTR / ΔQ。流程：输入两组总收益/产量数据（或一个小的 ΔQ），计算收益变化与数量变化之比，用于定价与盈利分析。示例：Q1=100, TR1=2000；Q2=101, TR2=2015 → MR = 15。',
   tool_marginal_revenue_article:
     '是什么：边际收益是多出售一单位商品带来的额外收益，等于总收益的变化除以产量的变化。用法：提供两组 (Q, TR) 数据或连续总收益，点击计算。适用场景：微观经济学分析、定价策略与利润最大化研究。',
   tool_marginal_revenue_example:
@@ -80,7 +80,7 @@ const zh: SiteLangDict = {
   what_is_ip_title: '什么是 IP 地址？',
   what_is_ip_content: '互联网协议（IP）地址是分配给连接到计算机网络的每个设备的数字标签。它有两个主要功能：主机或网络接口识别和位置寻址。目前有两个版本在使用：IPv4 和 IPv6。',
   tool_squarefeet_title: '平方英尺计算器 — 如何计算平方英尺',
-  tool_squarefeet_description: "根据长度与宽度计算平方英尺面积。流程：选择单位（英尺/米/英寸）、必要时换算为英尺、计算面积（长×宽）、并转换为平方英尺。示例：3m × 4m = 12 m² ≈ 129.17 平方英尺。",
+  tool_squarefeet_description: "根据长度与宽度计算平方英尺面积。流程：选择单位（英尺/米/英寸）、必要时换算为英尺、计算面积（长×宽）、并转换为平方英尺。示例：3m × 4m = 12 m² ≈ 129.17 平方英尺。适用于地板、油漆、家具摆放、房间尺寸估算与房产测量。",
   tool_squarefeet_article: '是什么：根据长度和宽度计算面积（平方英尺）。用法：输入尺寸并选择单位。适用场景：估算地板、台面、房间大小与房产测量。',
   tool_squarefeet_length_label: '长度',
   tool_squarefeet_length_placeholder: '请输入长度',
@@ -96,7 +96,7 @@ const zh: SiteLangDict = {
   tool_squarefeet_usage: '此工具可快速估算地板、油漆或家具摆放所需的面积。选择单位后输入尺寸并点击计算。',
   tool_percentage_change_title: '如何计算百分比增减',
   tool_percentage_change_description:
-    '计算两个数值之间的百分比增减。流程：输入原始值与新值，求差值，除以原始值并乘以 100 得到百分比。适用于财务、折扣、增长分析与报告场景。',
+    '免费计算两个数值之间的百分比增减。公式：% = (新值 − 原值) / 原值 × 100。流程：输入原始值与新值，求差值，除以原值并乘以 100，显示增幅或降幅。示例：原值 50、新值 75 → 增加 50%。适用于财务、折扣、营收增长与 KPI 报告。',
   tool_percentage_change_article:
     '是什么：计算两个数值之间的百分比变化并判断是增幅还是降幅。用法：输入原值与新值，点击计算。过程：Δ = 新值 − 原值；百分比 = (Δ / 原值) × 100。场景：价格变动、收入增长、折扣和关键指标报告。',
   tool_percentage_change_original_label: '原始值',
@@ -109,7 +109,7 @@ const zh: SiteLangDict = {
   tool_percentage_change_decrease: '减少',
   tool_percentage_change_no_change: '无变化',
   tool_roi_title: '如何计算 ROI',
-  tool_roi_description: '计算投资回报率（ROI）= (最终价值 - 初始投资) / 初始投资 × 100%。流程：输入初始投资和最终价值（或净收益），计算 ROI 百分比并解读结果。示例：投入 $1000，最终 $1250 → ROI = 25%。',
+  tool_roi_description: '计算投资回报率（ROI）= (最终价值 - 初始投资) / 初始投资 × 100%。流程：输入初始投资和最终价值（或净收益），计算 ROI 百分比并解读结果。示例：投入 $1000，最终 $1250 → ROI = 25%。适用于营销活动效果评估。',
   tool_roi_article: '是什么：ROI（投资回报率）表示相对于初始投资的百分比收益或损失。用法：输入成本和最终价值或净收益并点击计算。适用场景：财务分析、营销活动效果评估、投资比较。',
   tool_roi_initial_label: '初始投资',
   tool_roi_initial_placeholder: '请输入初始投资金额',
@@ -125,7 +125,7 @@ const zh: SiteLangDict = {
   tool_roi_interpret_negative: '负收益（亏损）',
   tool_gradient_title: '如何计算梯度',
   tool_gradient_description:
-    '计算标量函数的梯度（∇f），即各变量的偏导数组成的向量。流程：对每个自变量求偏导，组合为向量，并在指定点处求值。示例：f(x,y)=x^2 y + 3y → ∇f=(2xy, x^2+3)，在 (1,2) 处为 (4,4)。',
+    '计算标量函数的梯度（∇f），即各变量的偏导数组成的向量。流程：对每个自变量求偏导，组合为梯度向量，并在指定点处求值。示例：f(x,y)=x^2 y + 3y → ∇f=(2xy, x^2+3)，在 (1,2) 处为 (4,4)。适用于优化与机器学习。',
   tool_gradient_article:
     '是什么：标量函数的梯度是由该函数对每个变量的偏导数组成的向量，指示函数增长最快的方向。用法：输入多元标量函数，计算各偏导，组成梯度向量并在某点求值。适用场景：优化、方向导数、物理场分析。',
   tool_gradient_example:

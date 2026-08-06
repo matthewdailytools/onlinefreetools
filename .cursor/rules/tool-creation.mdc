@@ -1,0 +1,73 @@
+---
+description: 新建/修改工具页面的工程步骤、页面结构与 Information Gain 要求
+globs: src/pages/**/*Page.ts,src/site/tool-catalog.json,src/index.ts,scripts/site/**/*
+alwaysApply: false
+---
+
+# 工具创建规则
+
+## 目标
+
+工具页可交互、多语言、可检索、对用户有用（people-first），且相对 SERP 同类页有 **Information Gain**（见 `tool-i18n-seo.mdc` 与策略文档 §3）。
+
+## 工程清单
+
+```
+src/site/tool-catalog.json      # slug / path / related ≥2 / FAQ / YMYL
+src/index.ts                    # registerToolPage
+src/pages/{tool}Page.ts
+src/pages/site/toolContent.ts   # JSON-LD（与可见文案一致）
+src/site/i18n/*.ts              # 各语言文案
+scripts/site/components/content-home.mjs  # 首页 featured + all-tools 卡片
+npm run build:site && npm run lint:seo
+```
+
+## 支持语言
+
+以 `src/site/i18n/` 与 `src/site/i18n.ts` 的 `supportedLangs` 为准（当前 10 语：en, zh, es, ar, pt, id, fr, ja, ru, de）。新增语言需同步路由、hreflang、sitemap 与首页卡片。
+
+## 首页与导航
+
+- 新工具必须在首页（featured / all-tools）和工具导航中有入口
+- 改完 `content-home.mjs` 后运行 `npm run build:site` 刷新 `public/_pages/*/index.html`
+
+## 多语言链接
+
+- 各语言 URL 可访问，例如 `/zh/tools/xxx`、`/tools/xxx`（en 默认无前缀）
+- 页面展示目标语言全文，禁止占位符或错语言 fallback
+- 每个工具页需完整 `hreflang` + `x-default`（见 `src/pages/site/layout.ts`）
+
+## 页面结构（可见内容，自上而下）
+
+与策略文档 §5.1 对齐：
+
+```
+H1 + 一句话摘要
+【工具交互区】← 首屏
+H2 How it works
+H2 Formula / Rules / Algorithm（计算与转换类）
+H2 Example（固定 Input→Output；动态结果也须在此有稳定文案）
+H2 Use cases（2–3 条场景；长尾意图优先写此，慎拆 URL）
+H2 FAQ（≥3）
+H2 Related tools（catalog related ≥2）
+H2 References（≥1 可点击权威链，YMYL 建议 ≥2）
+Disclaimer（YMYL 必备）
+```
+
+**文案深度**（相对「三步怎么用」）：为何遇到该问题、输入类型差异、失败边界、参数选择、与竞品/其他方法差异。
+
+**Tier 2 / WASM**：首屏不拉大块 WASM；点击后懒加载（CWV）。
+
+## 上线前 Checklist（PR 合并前）
+
+- [ ] `tool-catalog.json` 注册完成；`related` ≥ 2
+- [ ] 10 语言 title / description / article / example 齐全
+- [ ] `npm run lint:seo` 通过
+- [ ] IG ≥ 3 项（§3.1），PR 写明对应章节
+- [ ] 长尾：写入 Use cases/FAQ，或满足拆页条件并附理由
+- [ ] 文件/粘贴类：本地处理 FAQ 或声明
+- [ ] JSON-LD 与可见内容一致；无虚假评分
+
+## 详细 SEO
+
+见 `tool-i18n-seo.mdc`、`docs/SEO_TOOL_RULES.md`、`docs/2026-07-28-google-seo-strategy-implementation.md`。

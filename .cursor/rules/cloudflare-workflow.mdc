@@ -1,0 +1,35 @@
+---
+description: Cloudflare Workers/Pages 本地开发与部署命令
+globs: wrangler.toml,src/index.ts,package.json
+alwaysApply: false
+---
+
+# Cloudflare 工作流
+
+## 前置
+
+- Node.js LTS
+- `npm i -g wrangler`（或使用项目 devDependency）
+
+## Workers
+
+```bash
+wrangler dev       # 本地开发
+wrangler deploy    # 部署
+```
+
+- 入口由根目录 `wrangler.toml` 的 `main` 指定（当前 `src/index.ts`）。
+- 多环境用 `wrangler.toml` 的 `[env.*]` 区分 staging/prod。
+
+## Pages
+
+- 静态资源在 `public/`；构建产物由 `npm run build:site` 生成。
+- Pages 设置中配置 build command 与 output 目录（若用框架则遵循框架约定）。
+
+## 发版前
+
+```bash
+npm run build:site && npm run lint:seo
+```
+
+确保 sitemap、静态页与 SEO 校验通过后再部署。新工具另须满足 `tool-creation.mdc` 中的 IG Checklist。

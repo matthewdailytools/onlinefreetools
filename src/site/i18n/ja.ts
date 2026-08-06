@@ -36,9 +36,9 @@ const ja: SiteLangDict = {
   tool_markdown_placeholder:
     "# タイトル\n\n基本的なMarkdownがサポートされています：**太字**、リスト、コードブロックなど。\n\n- アイテム 1\n- アイテム 2\n\n``js\nconsole.log('Hello Markdown');\n```",
   tool_markdown_export_title: 'MarkdownからHTMLへのエクスポート',
-  tool_markdown_export_description: "Markdown からテンプレートを適用した完全な HTML ドキュメントを生成。ステップ：レンダリング、テンプレート挿入、meta/assets 追加、ダウンロード提供。例：記事を単体の .html としてエクスポート。",
+  tool_markdown_export_description: "Markdown からテンプレートを適用した完全な HTML ドキュメントを生成。ステップ：レンダリング、サニタイズ、テンプレート挿入、meta/assets 追加、ダウンロード提供。例：ブログ記事を単体の .html としてエクスポートし、オフライン共有にも使えます。",
   tool_bmi_title: 'BMIの計算方法',
-  tool_bmi_description: "BMI 計算：BMI = 体重(kg) / (身長(m))^2。手順：単位を選択して換算、BMI を計算し分類を表示。例：70kg と 175cm → BMI 22.9（正常）。",
+  tool_bmi_description: "BMI 計算：BMI = 体重(kg) / (身長(m))^2。手順：メートル法/ヤード・ポンド法を選択し、必要なら単位を換算して BMI を計算し、分類（低体重/標準/肥満など）を表示します。例：70kg と 175cm → BMI 22.9（正常）。",
   tool_bmi_article: '何ですか：あなたのBMI（ボディマス指数）を計算して、体重が健康かどうか評価します。使い方：体重と身長を入力して、「計算」をクリックしてください。利用シーン：健康診断、フィットネス計画、体重管理。',
   tool_bmi_weight_label: '体重（kg）',
   tool_bmi_weight_placeholder: '体重をキログラムで入力してください',
@@ -64,7 +64,7 @@ const ja: SiteLangDict = {
   bmi_interpretation_obese: '肥満である可能性があります。医療専門家に相談することを検討してください。',
   tool_ip_address_title: '自分のIPアドレスは何ですか？',
     tool_squarefeet_title: '平方フィート計算機 — 平方フィートの計算方法',
-    tool_squarefeet_description: "長さと幅から平方フィートで面積を計算。手順：単位（ft/m/in）を選択してフィートに換算、面積を計算（L × W）、必要なら sq ft に変換。例：3m × 4m = 12 m² ≈ 129.17 sq ft。",
+    tool_squarefeet_description: "長さと幅から平方フィートで面積を計算。手順：単位（ft/m/in）を選択してフィートに換算、面積を計算（L × W）、必要なら sq ft に変換します。例：3m × 4m = 12 m² ≈ 129.17 sq ft。床材・塗装・不動産の見積もりに使えます。",
     tool_squarefeet_article: '概要：長さと幅から面積（平方フィート）を計算します。使い方：寸法を入力して単位を選択します。用途例：床材、カウンタートップ、部屋のサイズ、物件の測定。',
     tool_squarefeet_length_label: '長さ',
     tool_squarefeet_length_placeholder: '長さを入力',
@@ -78,7 +78,7 @@ const ja: SiteLangDict = {
     tool_squarefeet_result_note: '結果は小数点以下2桁に丸められます。',
     tool_squarefeet_usage_title: '使用方法',
     tool_squarefeet_usage: '床材や塗装、家具配置のための面積を素早く見積もるのに使用します。',
-  tool_ip_address_description: "公開 IP と基本メタデータを検出。手順：サーバーがリクエスト元 IP（IPv4/IPv6）を返し、任意で geo/ISP を引く。例：トラブルシューティング用に IP と国を表示。",
+  tool_ip_address_description: "公開 IP アドレスと基本メタデータを検出します。手順：サーバーがリクエスト元 IP（IPv4/IPv6）を返し、任意で geo/ISP を参照します。例：リモートアクセスや VPN 設定のトラブルシューティング用に IP と国/地域を表示します。",
   tool_ip_address_article: '何ですか：インターネットから見たあなたのパブリックIPアドレスを検索します。IPアドレスはネットワーク上のデバイスを識別し、ウェブサイトがコンテンツを配信するために使用されます。利用シーン：リモートアクセス、ネットワークトラブルシューティング、ファイアウォール構成、ジオロケーションサービス。',
   ip_label: 'あなたのIPアドレス',
   fetch_ip_button: 'IPを更新',
@@ -87,7 +87,7 @@ const ja: SiteLangDict = {
   what_is_ip_content: 'インターネットプロトコル（IP）アドレスは、コンピューターネットワークに接続された各デバイスに割り当てられる数値ラベルです。主な機能は、ホストまたはネットワークインターフェースの識別と位置アドレス指定です。現在使われているバージョンはIPv4とIPv6の2つです。',
   tool_marginal_revenue_title: '限界収入の計算方法',
   tool_marginal_revenue_description:
-    '総収入の変化から限界収入（MR）を計算します：MR = ΔTR / ΔQ。手順：2つの総収入/数量のペア（または小さなΔQ）を入力し、比率を計算して価格決定に活用します。例：Q と Q+1 の TR を使って MR を推定します。',
+    '総収入の変化から限界収入（MR）を計算します：MR = ΔTR / ΔQ。手順：2つの総収入/数量のペア（または小さな ΔQ）を入力し、比率を計算して価格決定に活用します。例：Q1=100, TR1=2000; Q2=101, TR2=2015 → MR = 15。',
   tool_marginal_revenue_article:
     '概要：限界収入は、1 単位を追加販売したときに得られる追加収入で、総収入の変化を数量の変化で割って求めます。使い方：2 つの (Q, TR) ペアまたは連続する総額を入力して「計算」をクリックします。適用例：ミクロ経済分析、価格戦略、利潤最大化。',
   tool_marginal_revenue_example: '例：Q1=100, TR1=2000; Q2=101, TR2=2015 → MR = (2015 - 2000) / (101 - 100) = 15。',
@@ -97,7 +97,7 @@ const ja: SiteLangDict = {
   tool_marginal_revenue_result_label: '限界収入',
   tool_percentage_change_title: '割合の増減の計算方法',
   tool_percentage_change_description:
-    '2つの値の間の増加または減少の割合を計算します。手順：元の値と新しい値を入力し、差を元の値で割って100を掛けます。財務、割引、分析、レポートに役立ちます。',
+    '2つの値の間の増加または減少の割合を無料で計算します。公式：% = (新値 − 元値) / 元値 × 100。手順：元の値と新しい値を入力し、差を元の値で割って100を掛け、増加か減少かを表示します。例：元 50、新 75 → 50% 増加。財務、割引、売上分析、KPI レポートに役立ちます。',
   tool_percentage_change_article:
     '概要：2つの数値のパーセンテージ変化を計算し、増加か減少かを判断します。使用方法：元の値と新しい値を入力して計算を押してください。計算式：Δ = 新値 − 元値、% = (Δ / 元値) × 100。価格変動や収益分析に有用です。',
   tool_percentage_change_original_label: '元の値',
@@ -111,7 +111,7 @@ const ja: SiteLangDict = {
   tool_percentage_change_no_change: '変化なし',
     tool_roi_title: 'ROIの計算方法',
     tool_roi_description:
-      '投資利益率（ROI）を計算します。ROI = (最終価値 - 初期投資) / 初期投資 × 100%。手順：初期投資と最終価値（または純利益）を入力し、ROIの割合を計算して解釈します。',
+      '投資利益率（ROI）を計算します。ROI = (最終価値 - 初期投資) / 初期投資 × 100%。手順：初期投資と最終価値（または純利益）を入力し、ROI の割合を計算して解釈します。例：初期 1000$、最終 1250$ → ROI = 25%。マーケティング効果測定にも使えます。',
     tool_roi_article:
       '概要：ROIは初期投資に対する利益または損失の割合を示します。使い方：初期コストと最終価値または純利益を入力して「計算」をクリックします。用途：財務分析、マーケティング効果測定、投資比較など。',
     tool_roi_initial_label: '初期投資',

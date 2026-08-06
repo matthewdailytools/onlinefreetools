@@ -1,0 +1,31 @@
+---
+description: 仓库核心约定——最小改动、命名、提交与安全
+alwaysApply: true
+---
+
+# 项目核心约定
+
+- **平台**：Cloudflare Pages + Workers；本地/部署用 Wrangler。
+- **结构**：根目录即项目根；对话日志在 `dev-logs/`（只追加，不改写历史）。
+- **改动原则**：只改与请求直接相关的文件；不擅自引入框架或无关重构。
+- **安全**：密钥/凭证走环境变量，不写入仓库。
+
+## 命名与目录
+
+- 文件/目录：`kebab-case`；环境名：`dev` / `staging` / `prod`。
+- 站点源码：`src/`；静态输出：`public/`；i18n：`src/site/i18n/`。
+- 未来若拆 monorepo，可用 `apps/worker-*`、`apps/pages`；当前根目录布局即可。
+
+## 提交信息
+
+- 祈使句、简短主题；注明影响路径，例如 `worker: add hello route`。
+
+## SEO 与文档优先级
+
+冲突时以**仓库实际代码**为准，其次：
+
+1. `docs/SEO_TOOL_RULES.md` — lint 硬规则
+2. `docs/2026-07-28-google-seo-strategy-implementation.md` — Google 合规与 Information Gain
+3. `.cursor/rules/tool-i18n-seo.mdc` / `tool-creation.mdc` — Agent 落地规则
+
+`.github/copilot-instructions.md` 由本目录规则同步；若与上列文档不一致，以上列为准。

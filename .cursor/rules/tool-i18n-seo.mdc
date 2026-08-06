@@ -1,0 +1,84 @@
+---
+description: 工具 i18n 必填字段、Information Gain、FAQ 与 meta description 校验
+globs: src/site/i18n/*.ts,scripts/validate-tool-seo.mjs,docs/SEO*.md
+alwaysApply: false
+---
+
+# 工具 i18n 与 SEO
+
+**权威文档**（冲突时以代码 + 下列文档为准）：
+
+- `docs/SEO_TOOL_RULES.md` — lint 硬规则
+- `docs/2026-07-28-google-seo-strategy-implementation.md` — Google 合规、Information Gain（§3）、Checklist（§8）
+
+**Information Gain（IG）定位**：相对 SERP 同类页的新增、可验证信息；是 **内容策略原则**（对齐 Helpful Content），**不是**已确认的独立排名因子。
+
+## 每语言必填字段
+
+| 键 | 用途 |
+|---|---|
+| `tool_*_title` | 工具名称 |
+| `tool_*_description` | meta / OG 描述 |
+| `tool_*_article` | 页内详细说明（How / Use cases / 边界等） |
+| `tool_*_example` | 简短输入→输出示例 |
+
+`tool_*_description` 必须包含（按语言本地化）：
+
+- 计算/处理**步骤或公式**
+- 至少一个**示例或应用场景**
+- 长度 **≥ 120 字符**（Bing 等会标记过短 meta；HTML head 建议 120–160）
+
+## Information Gain 最低配额（上线硬性）
+
+上线前至少满足 **§3.1 九维中的 3 项**，并在 PR 写明「页面哪一节体现」：
+
+| # | 维度 | 要求摘要 |
+|---|---|---|
+| 1 | 公式/规则 | 计算式、字段映射、算法步骤 |
+| 2 | 边界/失败 | 非法输入、局限、常见坑 FAQ |
+| 3 | 场景语境 | Use cases 绑定岗位/流水线 |
+| 4 | 对照表 | 单位假设、限制对照 |
+| 5 | 权威引用 | 可点击 References（YMYL 建议 ≥2） |
+| 6 | 本地隐私 | 文件/粘贴类：浏览器处理、不上传声明 |
+| 7 | 多语言 | 各语言人工审核，非机翻直出 |
+| 8 | 数值示例 | ≥1 组 Input→Output（含边界例更佳） |
+| 9 | 主题内链 | `tool-catalog.json` → `related` ≥ 2 |
+
+另须：
+
+- 可见 **How it works** + 至少 **1** 个完整 Example（计算/转换类加 Formula/Rules）
+- **FAQ ≥ 3**（YMYL 须含局限性/免责类问题）
+- 动态工具结果的关键解读须落到可索引 **Example / FAQ**（勿仅依赖交互态文案）
+
+**禁止零增益**：仅写 `Upload → Click → Download` 或「快、安全、免费」口号。
+
+## 长尾与拆页
+
+- **默认**：同一工具页用 Use cases + FAQ 覆盖多场景（一带多场景）
+- **可拆独立 URL**：功能、参数、算法或正文有实质差异，且独立满足 IG 配额
+- **禁止**：仅 title/H1 换词的空壳长尾变体（doorway / scaled content）
+
+拆页前自检：去掉 title 后正文是否仍明显不同？是否有独立 Example/边界？会否形成 doorway？
+
+## FAQ 与 YMYL
+
+- 每工具 ≥ 3 组 `tool_*_faq_qN` / `tool_*_faq_aN`，**渲染在正文**（不对爬虫隐藏）
+- **不以** FAQPage / HowTo / Featured Snippet / PAA 展示为 KPI（问答仍为人服务）
+- `tool-catalog.json` 中 `ymyl: true`：必须 `tool_*_disclaimer`；建议 `tool_*_references`
+
+## 验证
+
+```bash
+npm run lint:seo    # scripts/validate-tool-seo.mjs
+npm run build:site  # 发布前必须构建 sitemap
+```
+
+校验失败时补文案/翻译后再合并，勿绕过检查。
+
+## 红线
+
+- 禁止空壳页、无增量机翻铺量、批量 query 变体 doorway 页
+- 禁止仅对爬虫可见的 FAQ（cloaking）
+- 禁止虚假 `aggregateRating`；JSON-LD 须与可见文案一致
+- 新工具必须写入 `tool-catalog.json` 且具备真实交互与增量说明
+- 翻译须人工审核，禁止 GPT 批量直出

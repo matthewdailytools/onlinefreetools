@@ -1,0 +1,48 @@
+---
+description: 页面 HTML head、canonical、OG、Schema 与国际化 SEO 默认值
+globs: src/pages/**/*.ts,public/**/*.html
+alwaysApply: false
+---
+
+# 页面 SEO 默认值
+
+## HTML head
+
+- 唯一 `<title>`、`<meta name="description">`（**120–160 字符**）、viewport
+- Open Graph / Twitter：`og:title`、`og:description`、`og:url`、`og:image`（≥1200×630）、`twitter:card=summary_large_image`
+- Title 格式：`{Primary Keyword + Action} | {Brand}` — 不堆砌同义词
+
+## URL 与 canonical
+
+- 规范域：**https://onlinefreetools.org**（apex，非 www）
+- slug 用 kebab-case；跨语言 slug 稳定；避免仅 query-string 的内容页
+- 默认语（en）URL **无**语言前缀；`x-default` 指向该规范 URL
+
+## 语义与性能
+
+- 每页一个 `h1`；有序 `h2`/`h3`；使用 `header`/`main`/`nav`/`section`/`article`/`footer`
+- 图片优化（WebP/AVIF）；首屏外 `loading="lazy"`
+- 工具页交互区尽量首屏可见；大块 WASM/资源点击后加载
+
+## 结构化数据（JSON-LD）
+
+- 实现见 `src/pages/site/toolContent.ts`
+- 允许：`BreadcrumbList`、`WebApplication`（及支柱页 `CollectionPage` / `ItemList`）
+- **禁止**：虚假 `aggregateRating`、与可见文案不一致或夸大的 Schema
+- JSON-LD 每句须能在页面上找到对应可见文案
+- FAQ 可配 FAQPage，但**不以**富结果展示为 KPI
+
+## 索引
+
+- `robots.txt` 允许正常抓取；`sitemap.xml` 由 `npm run build:site` 生成
+- 测试/门禁页用 `meta name="robots" content="noindex"`
+- 禁止 `llms.txt` 或「AI 专用」Schema 类型
+
+## 国际化
+
+- `<html lang="...">` 与每 locale 的 `hreflang` + `x-default`
+- 与 sitemap 中的 hreflang 一致
+
+## 工具列表描述
+
+工具条目下方附 1–3 句说明：是什么、怎么用、典型场景；每工具唯一，约 160 字符内可作摘要。

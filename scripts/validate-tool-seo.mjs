@@ -1,5 +1,5 @@
 /**
- * SEO 校验：description 关键词、FAQ 成对、YMYL disclaimer。
+ * SEO 校验：description 关键词、长度、FAQ 成对、YMYL disclaimer。
  * 启发式检查，失败时以非零退出码提示 CI。
  */
 import fs from 'fs';
@@ -11,6 +11,9 @@ const require = createRequire(import.meta.url);
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const i18nDir = path.join(root, 'src/site/i18n');
 const catalog = require(path.join(root, 'src/site/tool-catalog.json'));
+
+/** Bing 等搜索引擎建议 meta description 至少约 120 字符 */
+const MIN_DESCRIPTION_LENGTH = 120;
 
 const keywords = {
   en: ['calculate', 'calculate the', 'formula', 'steps', 'process', 'example'],
@@ -40,19 +43,36 @@ const extractKey = (code, key) => {
   return m ? m[1] : null;
 };
 
+/**
+ * 提取 tool_*_description 文案（支持单/双引号与换行缩进）。
+ * @param {string} code
+ * @returns {{ key: string, desc: string }[]}
+ */
+const extractDescriptions = (code) => {
+  const out = [];
+  const re = /(tool_[a-z0-9_-]+_description):\s*(?:\n\s*)?(?:"([^"]*)"|'((?:\\'|[^'])*)')/gi;
+  let m;
+  while ((m = re.exec(code))) {
+    out.push({ key: m[1], desc: (m[2] ?? m[3] ?? '').replace(/\\'/g, "'") });
+  }
+  return out;
+};
+
 for (const file of files) {
   const code = fs.readFileSync(path.join(i18nDir, file), 'utf8');
   const lang = path.basename(file, '.ts');
 
-  const re = /tool_[a-z0-9_-]+_description:\s*'([^']*)'/gi;
-  let m;
-  while ((m = re.exec(code))) {
-    const desc = m[1];
-    const key = m[0].split(':')[0];
+  for (const { key, desc } of extractDescriptions(code)) {
     const kwList = keywords[lang] || keywords.en;
     const found = kwList.some((k) => desc.toLowerCase().includes(k.toLowerCase()));
     if (!found) {
       console.warn(`[SEO-WARN] ${file}: ${key} missing calculation/process/example keywords`);
+      exitCode = 2;
+    }
+    if (desc.length < MIN_DESCRIPTION_LENGTH) {
+      console.warn(
+        `[SEO-WARN] ${file}: ${key} too short (${desc.length} chars, need ≥${MIN_DESCRIPTION_LENGTH})`
+      );
       exitCode = 2;
     }
   }

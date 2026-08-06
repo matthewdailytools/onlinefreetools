@@ -1,0 +1,40 @@
+---
+description: 每次 Q&A 写入 dev-logs 的格式与范围
+alwaysApply: true
+---
+
+# 开发日志（dev-logs）
+
+每次 Q&A 结束后，在 `dev-logs/YYYY-MM-DD/` 新建一条日志。
+
+## 文件名
+
+`YYYY-MM-DD-HH-MM-<summary>.md`
+
+- 本地 24 小时制；summary 用短横线连接（空格→`-`，去掉 `/\\:*?"<>|`）。
+
+## 正文格式（新日志用英文模板）
+
+```markdown
+Date: <YYYY-MM-DD HH:MM>
+Summary: <one sentence>
+
+[question]
+<用户原问>
+
+[try to solve]
+<最终完整回答>
+
+[actions]
+- <可选：改动的文件或命令，不含创建日志本身>
+```
+
+## 范围与可见性
+
+- **只记**：用户原问 + 最终 consolidated 回答。
+- **不记**：AI 末尾追问/确认句；创建日志文件这一动作。
+- **聊天**：完整 Q&A 仍在对话中展示；`public/devlogs/` 是后台归档，不因此缩短对用户可见内容。
+
+## 示例路径
+
+`dev-logs/2026-01-08-初始化cloudflare项目.md`
