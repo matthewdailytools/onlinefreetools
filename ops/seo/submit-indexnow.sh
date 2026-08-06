@@ -5,6 +5,9 @@
 #   ./ops/seo/submit-indexnow.sh
 #   ./ops/seo/submit-indexnow.sh --check-key
 #   ./ops/seo/submit-indexnow.sh --sitemap --dry-run --limit 10
+#   ./ops/seo/submit-indexnow.sh --remote-sitemap
+#   ./ops/seo/submit-indexnow.sh --sitemap https://onlinefreetools.org/sitemap.xml
+#   ./ops/seo/submit-indexnow.sh --sitemap-only --include /tools/
 #   ./ops/seo/submit-indexnow.sh --tool html-entity --lang zh,en
 #   ./ops/seo/submit-indexnow.sh --help
 #

@@ -29,10 +29,12 @@ import { renderYamlJsonPage } from "./pages/yamlJsonPage";
 import { renderCsvJsonPage } from "./pages/csvJsonPage";
 import { renderHtmlEntityPage } from "./pages/htmlEntityPage";
 import { renderAddWwwToDnsPage } from "./pages/addWwwToDnsPage";
+import { renderIndexNowPage } from "./pages/indexNowPage";
 import { registerToolPage } from "./site/toolRegistrar";
 import { handleWebsiteHeadersApi } from "./tools/websiteHeaders";
 import { handleIpAddress } from "./endpoints/ipAddress";
 import { handleDnsLookup } from "./endpoints/dnsLookup";
+import { handleIndexnowCheckKey, handleIndexnowSubmit } from "./endpoints/indexnow";
 
 type Env = {
 	ASSETS: Fetcher;
@@ -247,6 +249,8 @@ openapi.delete("/api/tasks/:taskSlug", TaskDelete);
 app.get("/api/tools/website-headers", handleWebsiteHeadersApi);
 app.get("/api/tools/ip-address", handleIpAddress);
 app.get("/api/tools/dns-lookup", handleDnsLookup);
+app.get("/api/tools/indexnow/check-key", handleIndexnowCheckKey);
+app.post("/api/tools/indexnow/submit", handleIndexnowSubmit);
 
 // Register website-headers page routes using centralized registrar
 registerToolPage(app as any, 'website-headers', (lang, defaultLang, enabled) => renderWebsiteHeadersPage(lang, defaultLang));
@@ -318,6 +322,11 @@ registerToolPage(app as any, 'html-entity', (lang, defaultLang, enabled) =>
 // Register add-www-to-dns page via registrar（给域名加 www DNS）
 registerToolPage(app as any, 'add-www-to-dns', (lang, defaultLang, enabled) =>
 	renderAddWwwToDnsPage({ lang, defaultLang, enabledLangs: enabled })
+);
+
+// Register indexnow page via registrar（Bing IndexNow 提交与密钥检查）
+registerToolPage(app as any, 'indexnow', (lang, defaultLang, enabled) =>
+	renderIndexNowPage({ lang, defaultLang, enabledLangs: enabled })
 );
 
 // Catch-all (GET): perform language negotiation before falling back to static assets.

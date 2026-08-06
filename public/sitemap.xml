@@ -1502,6 +1502,156 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/add-www-to-dns" />
   </url>
   <url>
+    <loc>https://onlinefreetools.org/tools/indexnow</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/indexnow" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/zh/tools/indexnow</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/indexnow" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/es/tools/indexnow</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/indexnow" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/ar/tools/indexnow</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/indexnow" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/pt/tools/indexnow</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/indexnow" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/id/tools/indexnow</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/indexnow" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/fr/tools/indexnow</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/indexnow" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/ja/tools/indexnow</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/indexnow" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/ru/tools/indexnow</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/indexnow" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/de/tools/indexnow</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/indexnow" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/indexnow" />
+  </url>
+  <url>
     <loc>https://onlinefreetools.org/tools/how-to-calculate-bmi</loc>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/how-to-calculate-bmi" />

@@ -596,16 +596,13 @@ const filterUrls = (urls, include, exclude) =>
   });
 
 /**
- * 规范化绝对 URL（去掉非根路径尾斜杠）。
+ * 规范化绝对 URL（保留 sitemap 中的尾斜杠形态，避免 /zh/ 被改成 /zh）。
  * @param {string} absolute 绝对 URL
  * @returns {string}
  */
 const canonicalizeUrl = (absolute) => {
-  const u = new URL(absolute);
-  if (u.pathname !== '/' && u.pathname.endsWith('/')) {
-    u.pathname = u.pathname.replace(/\/+$/, '');
-  }
-  return u.toString();
+  // 仅做 URL 合法性解析；不改写 pathname，以保持与 sitemap/线上一致
+  return new URL(absolute).toString();
 };
 
 /**

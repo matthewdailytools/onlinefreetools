@@ -16,6 +16,7 @@
 - [CSV ↔ JSON](https://onlinefreetools.org/zh/tools/csv-json) - 浏览器内 CSV 与 JSON 双向转换：分隔符、表头、类型推断与嵌套扁平化
 - [HTML 实体编解码](https://onlinefreetools.org/zh/tools/html-entity) - 浏览器内 HTML 实体编码与解码：范围、命名/数字形式、严格解码
 - [给域名添加 www DNS](https://onlinefreetools.org/zh/tools/add-www-to-dns) - 生成 www 的 A/CNAME 记录，查询现网，并提供 Cloudflare/Vercel/阿里云等操作教程
+- [IndexNow / Bing URL 提交](https://onlinefreetools.org/zh/tools/indexnow) - 生成密钥、检查验证文件、提交变更 URL，并说明 200/202 状态码
 - [BMI 计算器](https://onlinefreetools.org/zh/tools/how-to-calculate-bmi) - 按成人筛查公式计算身体质量指数（教育用途，非诊断）
 - [ROI 计算器](https://onlinefreetools.org/zh/tools/how-to-calculate-roi) - 计算投资回报率，含假设说明与非投资建议免责
 - [边际收益计算器](https://onlinefreetools.org/zh/tools/how-to-calculate-marginal-revenue) - 用 ΔTR/ΔQ 计算边际收益（教学用途）
@@ -33,6 +34,7 @@ Below are our available online tools with their links (English version):
 - [CSV ↔ JSON](https://onlinefreetools.org/tools/csv-json) - Convert CSV ↔ JSON with delimiter, header, type inference, and nested flattening
 - [HTML Entity Encoder & Decoder](https://onlinefreetools.org/tools/html-entity) - Encode and decode HTML entities with scope, named/decimal/hex output, and strict decode — all in-browser
 - [Add WWW to DNS](https://onlinefreetools.org/tools/add-www-to-dns) - Generate www A/CNAME records, check live DNS, and follow Cloudflare/Vercel/Route 53 guides
+- [IndexNow — Bing URL Submit](https://onlinefreetools.org/tools/indexnow) - Generate a key, check the verification file, submit changed URLs, and read 200/202 status codes
 - [BMI Calculator](https://onlinefreetools.org/tools/how-to-calculate-bmi) - Adult BMI screening from weight and height (educational, not a diagnosis)
 - [ROI Calculator](https://onlinefreetools.org/tools/how-to-calculate-roi) - Calculate return on investment with assumptions and a non-advice disclaimer
 - [Marginal Revenue Calculator](https://onlinefreetools.org/tools/how-to-calculate-marginal-revenue) - Compute MR = ΔTR / ΔQ for learning microeconomics

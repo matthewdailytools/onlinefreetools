@@ -54,6 +54,8 @@ const translations = {
     tool_html_entity_desc: 'Encode/decode HTML entities with scope, named/decimal/hex, strict decode — in-browser.',
     tool_add_www_to_dns_title: 'Add WWW to DNS',
     tool_add_www_to_dns_desc: 'Generate www A/CNAME records, check live DNS, follow Cloudflare/Vercel guides.',
+    tool_indexnow_title: 'IndexNow',
+    tool_indexnow_desc: 'Submit URLs via IndexNow: generate key, check .txt, explain 200/202.',
     tool_markdown_to_html_article:
       'Convert Markdown to sanitized HTML or HTML to Markdown in-browser. Preview, copy, or download. Paste stays local; libraries may load from a CDN.',
     tool_ip_address_title: 'What Is My IP Address — See Your Public IP',
@@ -158,6 +160,8 @@ const translations = {
     tool_html_entity_desc: '浏览器内 HTML 实体编码/解码：范围、命名/数字形式、严格解码。',
     tool_add_www_to_dns_title: '给域名添加 www DNS',
     tool_add_www_to_dns_desc: '生成 www 的 A/CNAME，查询现网，含 Cloudflare/Vercel/阿里云教程。',
+    tool_indexnow_title: 'IndexNow',
+    tool_indexnow_desc: 'IndexNow 提交 URL：生成密钥、检查 txt、说明 200/202。',
     tool_markdown_to_html_article: '同页双向：Markdown 转安全 HTML，或 HTML 收回 Markdown；粘贴不上传。',
     tool_ip_address_title: '查询我的公网 IP — 查看当前出口地址',
     tool_bmi_title: 'BMI 计算器 — 身体质量指数',
@@ -267,6 +271,8 @@ const translations = {
     tool_html_entity_desc: 'Codifica/decodifica entidades HTML con alcance y formas numéricas — en el navegador.',
     tool_add_www_to_dns_title: 'Añadir WWW al DNS',
     tool_add_www_to_dns_desc: 'Genera registros www, consulta DNS y guías Cloudflare/Vercel.',
+    tool_indexnow_title: 'IndexNow',
+    tool_indexnow_desc: 'IndexNow: generar clave, comprobar .txt y enviar URLs a Bing.',
     tool_markdown_to_html_article:
       'Markdown ↔ HTML en el navegador: vista previa, copia y descarga. El pegado no se sube; librerías pueden cargar desde CDN.',
     tool_ip_address_title: 'Cuál es mi IP — Ver tu IP pública',
@@ -374,6 +380,8 @@ const translations = {
     tool_html_entity_desc: 'ترميز وفك ترميز كيانات HTML مع نطاق وصيغ رقمية — محليًا.',
     tool_add_www_to_dns_title: 'إضافة WWW إلى DNS',
     tool_add_www_to_dns_desc: 'إنشاء سجلات www وفحص DNS مع أدلة Cloudflare/Vercel.',
+    tool_indexnow_title: 'IndexNow',
+    tool_indexnow_desc: 'IndexNow: إنشاء مفتاح وفحص txt وإرسال روابط إلى Bing.',
     tool_markdown_to_html_article:
       'تحويل ثنائي Markdown ↔ HTML في المتصفح مع معاينة وتنظيف. اللصق لا يُرفع.',
     tool_ip_address_title: 'ما هو عنوان IP الخاص بي — اعرض IP العام',
@@ -482,6 +490,8 @@ const translations = {
     tool_html_entity_desc: 'Codifique/decodifique entidades HTML com escopo e formas numéricas — no navegador.',
     tool_add_www_to_dns_title: 'Adicionar WWW ao DNS',
     tool_add_www_to_dns_desc: 'Gere registros www, consulte DNS e guias Cloudflare/Vercel.',
+    tool_indexnow_title: 'IndexNow',
+    tool_indexnow_desc: 'IndexNow: gerar chave, checar .txt e enviar URLs ao Bing.',
     tool_markdown_to_html_article:
       'Markdown ↔ HTML no navegador: pré-visualização, cópia e download. O texto colado não é enviado.',
     tool_ip_address_title: 'Qual é o meu IP — Ver seu IP público',
@@ -589,6 +599,8 @@ const translations = {
     tool_html_entity_desc: 'Encode/decode entity HTML dengan cakupan dan format angka — di browser.',
     tool_add_www_to_dns_title: 'Tambah WWW ke DNS',
     tool_add_www_to_dns_desc: 'Generate record www, cek DNS, panduan Cloudflare/Vercel.',
+    tool_indexnow_title: 'IndexNow',
+    tool_indexnow_desc: 'IndexNow: buat kunci, cek .txt, kirim URL ke Bing.',
     tool_markdown_to_html_article:
       'Markdown ↔ HTML di browser: pratinjau, salin, unduh. Tempelan tidak diunggah.',
     tool_ip_address_title: 'Berapa IP saya — Lihat IP publik Anda',
@@ -696,6 +708,8 @@ const translations = {
     tool_html_entity_desc: 'Encoder/décoder les entités HTML avec portée et formes numériques — local.',
     tool_add_www_to_dns_title: 'Ajouter WWW au DNS',
     tool_add_www_to_dns_desc: 'Générer les enregistrements www, vérifier le DNS, guides Cloudflare/Vercel.',
+    tool_indexnow_title: 'IndexNow',
+    tool_indexnow_desc: 'IndexNow : générer la clé, vérifier le .txt, envoyer des URL à Bing.',
     tool_markdown_to_html_article:
       'Markdown ↔ HTML dans le navigateur : aperçu, copie, téléchargement. Le collage n\'est pas envoyé.',
     tool_ip_address_title: 'Quelle est mon adresse IP — Voir votre IP publique',
@@ -802,6 +816,8 @@ const translations = {
     tool_html_entity_desc: 'HTML エンティティのエンコード/デコード（範囲・数値形式）— ローカル。',
     tool_add_www_to_dns_title: 'DNS に WWW を追加',
     tool_add_www_to_dns_desc: 'www の A/CNAME 生成、DNS 確認、Cloudflare/Vercel 手順。',
+    tool_indexnow_title: 'IndexNow',
+    tool_indexnow_desc: 'IndexNow：キー生成、txt 確認、Bing へ URL 送信。',
     tool_markdown_to_html_article:
       'ブラウザ内の双方向 Markdown ↔ HTML。プレビューと書き出し。貼り付けはアップロードされません。',
     tool_ip_address_title: '自分のIPアドレスを確認 — グローバルIPを表示',
@@ -910,6 +926,8 @@ const translations = {
     tool_html_entity_desc: 'Кодирование/декодирование HTML-сущностей с областью и числовыми формами — локально.',
     tool_add_www_to_dns_title: 'Добавить WWW в DNS',
     tool_add_www_to_dns_desc: 'Генерация записей www, проверка DNS, гайды Cloudflare/Vercel.',
+    tool_indexnow_title: 'IndexNow',
+    tool_indexnow_desc: 'IndexNow: ключ, проверка .txt, отправка URL в Bing.',
     tool_markdown_to_html_article:
       'Двунаправленный Markdown ↔ HTML в браузере: предпросмотр и экспорт. Вставка не загружается на сервер.',
     tool_ip_address_title: 'Узнать свой IP — Показать публичный IP-адрес',
@@ -1018,6 +1036,8 @@ const translations = {
     tool_html_entity_desc: 'HTML-Entitäten kodieren/dekodieren mit Umfang und Zahlenformen — lokal.',
     tool_add_www_to_dns_title: 'WWW zu DNS hinzufügen',
     tool_add_www_to_dns_desc: 'WWW-Records erzeugen, DNS prüfen, Cloudflare/Vercel-Guides.',
+    tool_indexnow_title: 'IndexNow',
+    tool_indexnow_desc: 'IndexNow: Schlüssel erzeugen, .txt prüfen, URLs an Bing senden.',
     tool_markdown_to_html_article:
       'Bidirektionales Markdown ↔ HTML im Browser: Vorschau und Export. Einfügen bleibt lokal.',
     tool_ip_address_title: 'Was ist meine IP-Adresse — Öffentliche IP anzeigen',

@@ -9,7 +9,7 @@
     "homeTitleKey": "tool_website_headers_title",
     "homeDescKey": "tool_website_headers_desc",
     "faqPrefix": "tool_headers",
-    "related": ["ip-address", "add-www-to-dns", "markdown-to-html", "text-diff"]
+    "related": ["ip-address", "add-www-to-dns", "indexnow", "markdown-to-html", "text-diff"]
   },
   {
     "slug": "ip-address",
@@ -93,8 +93,21 @@
     "homeTitleKey": "tool_add_www_to_dns_title",
     "homeDescKey": "tool_add_www_to_dns_desc",
     "faqPrefix": "tool_add_www_to_dns",
-    "related": ["website-headers", "ip-address"]
+    "related": ["website-headers", "ip-address", "indexnow"]
   },
+  {
+    "slug": "indexnow",
+    "path": "/tools/indexnow",
+    "category": "developer",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_indexnow_title",
+    "homeTitleKey": "tool_indexnow_title",
+    "homeDescKey": "tool_indexnow_desc",
+    "faqPrefix": "tool_indexnow",
+    "related": ["website-headers", "add-www-to-dns"]
+  },
+
   {
     "slug": "how-to-calculate-bmi",
     "path": "/tools/how-to-calculate-bmi",
