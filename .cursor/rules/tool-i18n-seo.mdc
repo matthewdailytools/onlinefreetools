@@ -83,3 +83,4 @@ npm run build:site  # 发布前必须构建 sitemap
 - 禁止虚假 `aggregateRating`；JSON-LD 须与可见文案一致
 - 新工具必须写入 `tool-catalog.json` 且具备真实交互与增量说明
 - 翻译须按当地检索与用语习惯本地化，并经多轮核查；禁止批量直出后不重写就上线（详见 `tool-i18n-localization.mdc`）
+- **可见文案边界**：面向用户的正文（description/how/rules/example/usecases/faq）只写用户任务相关的规则与边界；**禁止**写 SEO/工程理由（doorway/空壳/薄页/thin URL/slug/「不拆 URL」「为什么单页」自述）或把实现库名当卖点。这类理由留 `work-tasks`/`docs`。详见 `tool-i18n-localization.mdc`。

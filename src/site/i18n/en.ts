@@ -79,7 +79,7 @@ const en: SiteLangDict = {
     'Pick a tab. Left side is input; right side updates in the browser. Markdown → HTML can copy a fragment or wrap a minimal full document. HTML → Markdown yields plain text for editors and LLMs. CDN loads ≠ uploading your paste.',
   tool_markdown_rules_title: 'What each direction does',
   tool_markdown_rules_intro:
-    'Keeping both converters here avoids a thin second URL that only renames “html to markdown”.',
+    'What the conversion covers: which Markdown syntax is supported, how HTML is sanitized, and how your pasted text is handled locally.',
   tool_markdown_rules_item_md_html:
     'Outbound: marked reads CommonMark-style Markdown; DOMPurify strips risky scripts/attributes before you see or save HTML.',
   tool_markdown_rules_item_html_md:
@@ -136,7 +136,7 @@ const en: SiteLangDict = {
     'Choose YAML → JSON or JSON → YAML. Conversion runs with js-yaml in this tab. Multi-document streams separated by --- become a JSON array; a single document stays a single JSON value. Errors from YAML include line and column when the parser provides a mark.',
   tool_yaml_json_rules_title: 'Rules you should expect',
   tool_yaml_json_rules_body:
-    'Defaults match classic js-yaml typing unless you tick JSON-safe types. We keep both directions on one page so “json to yaml” is not a doorway slug.',
+    'What to expect when you convert: how unquoted values are typed, how multi-document YAML maps to JSON, and where a round-trip can lose comments or formatting.',
   tool_yaml_json_rules_item_1:
     'Typing: with DEFAULT schema, bare yes/no/on/off and some date-like scalars may become booleans or other types. JSON-safe schema keeps unquoted scalars as strings unless explicitly typed.',
   tool_yaml_json_rules_item_2:

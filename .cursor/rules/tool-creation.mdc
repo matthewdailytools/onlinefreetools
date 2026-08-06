@@ -61,6 +61,8 @@ Disclaimer（YMYL 必备）
 
 **文案深度**（相对「三步怎么用」）：为何遇到该问题、输入类型差异、失败边界、参数选择、与竞品/其他方法差异。
 
+**可见文案边界**：以上各区只写「用户完成任务需要知道什么」。禁止把 SEO/工程理由（doorway/空壳/薄页/slug/「双向放一页」「不拆 URL」自述）或实现库名当卖点写进正文；理由留 `work-tasks`/`docs`。见 `tool-i18n-localization.mdc` / `tool-i18n-seo.mdc`。
+
 **Tier 2 / WASM**：首屏不拉大块 WASM；点击后懒加载（CWV）。
 
 ## 上线前 Checklist（PR 合并前）
