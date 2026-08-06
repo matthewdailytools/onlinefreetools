@@ -9,7 +9,8 @@
 3. 确认 `public/og-image.png`、`favicon.ico`、`favicon.svg`、`apple-touch-icon.png` 存在
 4. 抽查：默认语工具 URL 无 `/en` 前缀；`/en/tools/...` 应 301 到 `/tools/...`
 5. 新工具：Doc2 §8.2 Checklist + IG ≥ 3（见主文档）；卡片见 [每工具方案](./2026-07-28-per-tool-dev-seo-plans.md)
-6. 新工具/大改 i18n：`work-tasks/{slug}/03-locale-briefs.md` 已填；按 brief 重写非直译；本地化 ≥3 轮与禁词核查完成（见 `.cursor/rules/tool-i18n-localization.mdc`）。`lint:seo` 绿 ≠ 本地化完成。
+6. 新工具：根目录 `README.md`「工具清单 / Tools List」中英已更新（与 `tool-catalog.json` 一致）
+7. 新工具/大改 i18n：`work-tasks/{slug}/03-locale-briefs.md` 已填；按 brief 重写非直译；本地化 ≥3 轮与禁词核查完成（见 `.cursor/rules/tool-i18n-localization.mdc`）。`lint:seo` 绿 ≠ 本地化完成。
 
 `npm run deploy` 会通过 `predeploy` 自动执行 1–2。
 

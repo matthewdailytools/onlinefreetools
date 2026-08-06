@@ -128,6 +128,7 @@ export const renderTextDiffPage = (opts: {
 
     <p id="diffSummary" class="small text-muted mb-2" aria-live="polite"></p>
     <p id="diffWarn" class="small text-warning mb-2" style="display:none;"></p>
+    <p class="small text-muted mb-1">${escapeHtml(t(opts.lang, 'tool_text_diff_legend'))}</p>
     <div id="diffOut" class="mb-4" aria-label="${escapeHtml(t(opts.lang, 'tool_text_diff_result_label'))}"></div>
 
     <section class="mt-4" id="how-it-works" aria-labelledby="how-heading">
@@ -137,7 +138,13 @@ export const renderTextDiffPage = (opts: {
 
     <section class="mt-4" id="rules" aria-labelledby="rules-heading">
       <h2 class="h5" id="rules-heading">${escapeHtml(t(opts.lang, 'tool_text_diff_rules_title'))}</h2>
-      <p class="text-muted">${escapeHtml(t(opts.lang, 'tool_text_diff_rules_body'))}</p>
+      <p class="text-muted">${escapeHtml(t(opts.lang, 'tool_text_diff_rules_intro'))}</p>
+      <ul class="text-muted">
+        <li>${escapeHtml(t(opts.lang, 'tool_text_diff_rules_item_lines'))}</li>
+        <li>${escapeHtml(t(opts.lang, 'tool_text_diff_rules_item_words'))}</li>
+        <li>${escapeHtml(t(opts.lang, 'tool_text_diff_rules_item_chars'))}</li>
+      </ul>
+      <p class="text-muted mb-0">${escapeHtml(t(opts.lang, 'tool_text_diff_rules_options'))}</p>
     </section>
 
     <section class="mt-4" id="example" aria-labelledby="example-heading">
@@ -152,8 +159,10 @@ export const renderTextDiffPage = (opts: {
         <li>${escapeHtml(t(opts.lang, 'tool_text_diff_usecase_2'))}</li>
         <li>${escapeHtml(t(opts.lang, 'tool_text_diff_usecase_3'))}</li>
       </ul>
-    </section>
+    </section>`;
 
+	/** References 放在 FAQ / Related 之后，符合 tool-creation 模块顺序。 */
+	const referencesHtml = `
     <section class="mt-4" id="references" aria-labelledby="refs-heading">
       <h2 class="h5" id="refs-heading">${escapeHtml(t(opts.lang, 'tool_references_title'))}</h2>
       <ul class="mb-0">
@@ -161,7 +170,6 @@ export const renderTextDiffPage = (opts: {
         <li><a href="https://en.wikipedia.org/wiki/Diff" rel="noopener noreferrer" target="_blank">Wikipedia: Diff</a></li>
       </ul>
     </section>`;
-
 	/** 客户端：加载 jsdiff，本地计算增删高亮与摘要。 */
 	const extraBodyHtml = `
   <script src="https://cdn.jsdelivr.net/npm/diff@5.2.0/dist/diff.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -288,9 +296,9 @@ export const renderTextDiffPage = (opts: {
         el.addEventListener('change', runDiff);
       });
 
-      // 预填 Example 中的短文本，便于首屏即见 Diff
-      textA.value = 'Hello world\\nline two\\nline three';
-      textB.value = 'Hello there\\nline two\\nline three';
+      // 预填各语本地化样例，便于首屏即见 Diff（与 Example 同语种）
+      textA.value = ${JSON.stringify(t(opts.lang, 'tool_text_diff_sample_a'))};
+      textB.value = ${JSON.stringify(t(opts.lang, 'tool_text_diff_sample_b'))};
       runDiff();
     })();
   </script>`;
@@ -320,7 +328,7 @@ export const renderTextDiffPage = (opts: {
 		alternates,
 		headerHtml,
 		sidebarHtml,
-		contentHtml: `${contentHtml}${toolSeoHtml}`,
+		contentHtml: `${contentHtml}${toolSeoHtml}${referencesHtml}`,
 		footerHtml,
 		extraHeadHtml: `${extraHeadHtml}${toolJsonLd}`,
 		extraBodyHtml,

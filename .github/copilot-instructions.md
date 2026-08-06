@@ -44,7 +44,7 @@ Purpose: Make AI agents productive immediately in this repo. Keep changes minima
 
 - **多语言本地化**：先填 `work-tasks/{slug}/03-locale-briefs.md`（每语检索词 / title 方向 / 按钮说法），再按 brief **重写**（禁止 `Translate to {lang}`）；对照禁词表；≥3 轮核查。`lint:seo` 通过 ≠ 本地化完成。细则：`tool-i18n-localization.mdc`。
 
-- **首页与导航**：新工具须在首页与工具导航有入口。
+- **首页、导航与 README**：新工具须在首页与工具导航有入口；并更新根目录 `README.md`「工具清单 / Tools List」（中英各一条，与 `tool-catalog.json` 一致）。
 
 - **SEO 验证**：`npm run lint:seo`；发版前 `npm run build:site && npm run lint:seo`。FAQ/富结果展示不作 KPI。
 

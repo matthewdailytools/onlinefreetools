@@ -43,7 +43,7 @@
 
 ## 结论
 
-- 继续立项：是
+- 继续立项：是（已实现）
 - 建议 slug：`text-diff`
-- 与已上线工具关系：**新建**；Related → `markdown-to-html`、`website-headers`
-- 进入 `02-tool-info.md` 前仍缺的信息：无阻塞项；SERP 缺口已按常见在线 Diff 页归纳进 `02`
+- 与已上线工具关系：**已上线**；Related → `markdown-to-html`、`website-headers`
+- 落地文档：`02-tool-info.md` + `03-locale-briefs.md`（检索向 + ≥3 轮）

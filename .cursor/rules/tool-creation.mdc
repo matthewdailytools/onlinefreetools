@@ -1,6 +1,6 @@
 ---
 description: 新建/修改工具页面的工程步骤、页面结构与 Information Gain 要求
-globs: src/pages/**/*Page.ts,src/site/tool-catalog.json,src/index.ts,scripts/site/**/*
+globs: src/pages/**/*Page.ts,src/site/tool-catalog.json,src/index.ts,scripts/site/**/*,README.md
 alwaysApply: false
 ---
 
@@ -19,6 +19,7 @@ src/pages/{tool}Page.ts
 src/pages/site/toolContent.ts   # JSON-LD（与可见文案一致）
 src/site/i18n/*.ts              # 各语言文案（先 work-tasks/.../03-locale-briefs.md）
 scripts/site/components/content-home.mjs  # 首页 featured + all-tools 卡片
+README.md                               # 「工具清单 / Tools List」中英条目
 npm run build:site && npm run lint:seo
 ```
 
@@ -28,10 +29,11 @@ npm run build:site && npm run lint:seo
 
 以 `src/site/i18n/` 与 `src/site/i18n.ts` 的 `supportedLangs` 为准（当前 10 语：en, zh, es, ar, pt, id, fr, ja, ru, de）。新增语言需同步路由、hreflang、sitemap 与首页卡片。
 
-## 首页与导航
+## 首页、导航与 README
 
 - 新工具必须在首页（featured / all-tools）和工具导航中有入口
 - 改完 `content-home.mjs` 后运行 `npm run build:site` 刷新 `public/_pages/*/index.html`
+- **同步更新根目录 `README.md` 的「工具清单 / Tools List」**：中英文各增一条（短标题 + 一句话说明 + 线上链接）；清单须与 `tool-catalog.json` 已上线工具一致，勿漏更
 
 ## 多语言链接
 
@@ -66,6 +68,7 @@ Disclaimer（YMYL 必备）
 - [ ] `tool-catalog.json` 注册完成；`related` ≥ 2
 - [ ] 10 语言 title / description / article / example 齐全
 - [ ] 十语已按 `tool-i18n-localization.mdc` 做检索向本地化，并完成 ≥3 轮核查（非仅 lint 绿灯）
+- [ ] `README.md` 工具清单已更新（中英各一条，与 catalog 一致）
 - [ ] `npm run lint:seo` 通过
 - [ ] IG ≥ 3 项（§3.1），PR 写明对应章节
 - [ ] 长尾：写入 Use cases/FAQ，或满足拆页条件并附理由
