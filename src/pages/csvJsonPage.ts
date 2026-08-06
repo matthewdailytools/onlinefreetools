@@ -97,7 +97,7 @@ export const renderCsvJsonPage = (opts: {
       min-height: 320px; height: auto; resize: vertical; flex: 1 1 auto; box-sizing: border-box;
       font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .9rem;
     }
-    #csvOutput, #jsonOutput { white-space: pre-wrap; word-break: break-word; background: #fff; border: 1px solid #dee2e6; border-radius: .5rem; padding: 1rem; overflow: auto; }
+    #csvOutput, #jsonOutput { white-space: pre-wrap; word-break: break-word; color: #212529; background: #fff; border: 1px solid #dee2e6; border-radius: .5rem; padding: 1rem; overflow: auto; }
     .dir-pane[hidden] { display: none !important; }
     .opt-group { gap: .75rem; }
   </style>`;
