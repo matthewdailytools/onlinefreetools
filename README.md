@@ -8,29 +8,29 @@
 ## 工具清单 / Tools List
 以下是我们提供的在线工具及其链接（中文版）：
 
-- [获取网站响应 Header](https://onlinefreetools.org/zh/tools/website-headers) - 通过服务器端请求获取网址的 HTTP 响应 Header
-- [我的 IP 地址是什么？](https://onlinefreetools.org/zh/tools/ip-address) - 查询您对外显示的公网 IP 地址及基础元信息
+- [在线查看 HTTP 响应头](https://onlinefreetools.org/zh/tools/website-headers) - 从边缘检查公开网址的 HTTP 响应头（缓存/CORS/安全头）
+- [我的 IP 地址是什么？](https://onlinefreetools.org/zh/tools/ip-address) - 查看边缘节点看到的公网 IP，并说明代理/VPN 局限
 - [Markdown ↔ HTML](https://onlinefreetools.org/zh/tools/markdown-to-html) - 浏览器内 Markdown 与 HTML 双向转换：预览、安全清理与导出
 - [在线文本对比](https://onlinefreetools.org/zh/tools/text-diff) - 并排对比两段文本，高亮增删改差异
-- [如何计算BMI](https://onlinefreetools.org/zh/tools/how-to-calculate-bmi) - 计算您的BMI（身体质量指数），评估体重是否健康
-- [如何计算 ROI](https://onlinefreetools.org/zh/tools/how-to-calculate-roi) - 计算投资回报率（ROI），用于评估投资与活动效果
-- [如何计算边际收益](https://onlinefreetools.org/zh/tools/how-to-calculate-marginal-revenue) - 计算边际收益，用于定价与盈利分析
-- [平方英尺计算器](https://onlinefreetools.org/zh/tools/square-feet) - 根据长度和宽度计算面积（平方英尺）
-- [如何计算百分比增减](https://onlinefreetools.org/zh/tools/how-to-calculate-percentage-change) - 计算两个数值之间的百分比涨跌
-- [如何计算梯度](https://onlinefreetools.org/zh/tools/how-to-calculate-gradient) - 根据两点坐标计算斜率 / 梯度
+- [BMI 计算器](https://onlinefreetools.org/zh/tools/how-to-calculate-bmi) - 按成人筛查公式计算身体质量指数（教育用途，非诊断）
+- [ROI 计算器](https://onlinefreetools.org/zh/tools/how-to-calculate-roi) - 计算投资回报率，含假设说明与非投资建议免责
+- [边际收益计算器](https://onlinefreetools.org/zh/tools/how-to-calculate-marginal-revenue) - 用 ΔTR/ΔQ 计算边际收益（教学用途）
+- [平方英尺计算器](https://onlinefreetools.org/zh/tools/square-feet) - 按长宽与单位估算面积（房产/装修场景）
+- [百分比变化计算器](https://onlinefreetools.org/zh/tools/how-to-calculate-percentage-change) - 计算两个数值之间的涨跌幅（含百分点对照）
+- [梯度计算器](https://onlinefreetools.org/zh/tools/how-to-calculate-gradient) - 计算多元标量函数的梯度 ∇f（偏导向量）
 
 Below are our available online tools with their links (English version):
 
-- [Fetch Website Response Headers](https://onlinefreetools.org/tools/website-headers) - Fetch a URL's HTTP response headers server-side
-- [What Is My IP Address?](https://onlinefreetools.org/tools/ip-address) - Find your public IP address as seen by the internet with basic metadata
+- [Check HTTP Response Headers](https://onlinefreetools.org/tools/website-headers) - Inspect response headers from the edge (caching, CORS, security)
+- [What Is My IP Address?](https://onlinefreetools.org/tools/ip-address) - See the public IP our edge observes, with proxy/VPN limits explained
 - [Markdown ↔ HTML](https://onlinefreetools.org/tools/markdown-to-html) - Convert Markdown ↔ HTML with sanitize, preview, and export
 - [Text Diff Checker](https://onlinefreetools.org/tools/text-diff) - Compare two texts side by side and highlight differences
-- [How to Calculate BMI](https://onlinefreetools.org/tools/how-to-calculate-bmi) - Calculate your BMI (Body Mass Index) to assess if your weight is healthy
-- [How to Calculate ROI](https://onlinefreetools.org/tools/how-to-calculate-roi) - Calculate return on investment (ROI) for performance analysis
-- [How to Calculate Marginal Revenue](https://onlinefreetools.org/tools/how-to-calculate-marginal-revenue) - Calculate marginal revenue for pricing and profitability analysis
-- [Square Feet Calculator](https://onlinefreetools.org/tools/square-feet) - Calculate area in square feet from length and width
-- [How to Calculate Percentage Change](https://onlinefreetools.org/tools/how-to-calculate-percentage-change) - Calculate the percentage increase or decrease between two values
-- [How to Calculate Gradient](https://onlinefreetools.org/tools/how-to-calculate-gradient) - Calculate gradient/slope from two coordinate points
+- [BMI Calculator](https://onlinefreetools.org/tools/how-to-calculate-bmi) - Adult BMI screening from weight and height (educational, not a diagnosis)
+- [ROI Calculator](https://onlinefreetools.org/tools/how-to-calculate-roi) - Calculate return on investment with assumptions and a non-advice disclaimer
+- [Marginal Revenue Calculator](https://onlinefreetools.org/tools/how-to-calculate-marginal-revenue) - Compute MR = ΔTR / ΔQ for learning microeconomics
+- [Square Feet Calculator](https://onlinefreetools.org/tools/square-feet) - Estimate area from length × width for flooring and real estate
+- [Percentage Change Calculator](https://onlinefreetools.org/tools/how-to-calculate-percentage-change) - Calculate percent increase/decrease between two values
+- [Gradient Calculator](https://onlinefreetools.org/tools/how-to-calculate-gradient) - Compute the multivariable gradient ∇f (vector of partial derivatives)
 
 ## Getting Started / 快速开始
 - Install Node.js LTS and Wrangler: `npm install -g wrangler`

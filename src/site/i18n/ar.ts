@@ -5,22 +5,42 @@ const ar: SiteLangDict = {
   nav_devlogs: 'سجلات التطوير',
   nav_tools: 'الأدوات',
   footer_text: 'Online Free Tools · مشروع تعليمي · قيد التحديث',
-  tool_headers_title: 'الحصول على رؤوس استجابة الموقع',
+  tool_headers_title: 'فحص ترويسات HTTP للموقع — عرض رؤوس الاستجابة',
   tool_headers_description:
-    "جلب رؤوس استجابة HTTP لعنوان URL على الخادم (HEAD، وإذا لزم fallback إلى GET). العملية: إرسال HEAD، اتباع إعادة التوجيه، جمع الرؤوس، حظر المضيفات الداخلية. مثال: فحص CORS وCache-Control وHSTS لتصحيح إعادة التوجيه وإعدادات CDN.",
+    'افحص ترويسات HTTP لاستجابة أي رابط من حافة شبكتنا. الخطوات: الصق https، أرسل HEAD (GET عند الحاجة)، اتبع إعادة التوجيه، اعرض الحالة وخريطة الرؤوس؛ احظر المضيفات الداخلية. مثال: اقرأ Cache-Control وCORS وHSTS أثناء تصحيح CDN أو إعادة التوجيه.',
   tool_headers_article:
-    'ما هو: احصل على فحص رؤوس استجابة HTTP لموقع ويب. مفيد في تصحيح أخطاء CORS، والتخزين المؤقت، وإعادة التوجيه، والتحقق من رؤوس الأمان أو CDN. سيناريوهات: تصحيح المطورين، والتحقق من تحسين محركات البحث، والتحقق من تكوين الخادم.',
+    'اطّلع على الرؤوس التي يستقبلها الـ edge لرابط عام — مفيد للتخزين المؤقت وCORS وإعادة التوجيه ورؤوس الأمان. الطلب يمر عبر وكيل؛ لا نحفظ محتوى الصفحة.',
   url_label: 'الرابط',
   url_placeholder: 'مثال: https://example.com',
-  fetch_button: 'جلب الرؤوس',
+  fetch_button: 'فحص',
   result_title: 'النتيجة',
   status_label: 'الحالة',
   final_url_label: 'الرابط النهائي',
   headers_label: 'الرؤوس',
   error_prefix: 'خطأ: ',
   note_title: 'ملاحظات',
-  note_1: 'بعض المواقع لا تدعم HEAD ؛ سنعود إلى GET.',
-  note_2: 'لحماية الأمان، يتم حظر الطلبات إلى localhost/الشبكات الخاصة.',
+  note_1: 'إذا رفض الموقع HEAD نستخدم GET. الهدف الرؤوس وليس تنزيل HTML كاملًا.',
+  note_2: 'يُحظر localhost والشبكات الخاصة حتى لا يُستخدم الـ worker لمسح المضيفات الداخلية.',
+  tool_headers_how_title: 'كيف يعمل',
+  tool_headers_how_body:
+    'الصق رابط http(s) عامًا ثم اضغط فحص. يرسل worker على الـ edge طلب HEAD (GET عند الحاجة)، يتبع إعادة التوجيه، ويعيد الحالة والرابط النهائي والرؤوس المرصودة. الأهداف الخاصة مرفوضة. هذه رؤية من الـ edge وقد تختلف عن متصفحك بسبب CDN أو التوجيه الجغرافي.',
+  tool_headers_rules_title: 'ما الذي يفعله الفاحص',
+  tool_headers_rules_body:
+    'وكيل قصير العمر لفحص الرؤوس فقط؛ لا يخزّن محتوى الصفحة. أسماء الرؤوس تتبع دلالات HTTP (انظر المراجع).',
+  tool_headers_rules_item_1: 'HEAD أولًا؛ GET إذا لم يدعم المصدر HEAD.',
+  tool_headers_rules_item_2: 'يتبع إعادة التوجيه ويعرض الرابط النهائي.',
+  tool_headers_rules_item_3: 'يحظر localhost وعناوين IP للشبكة الخاصة.',
+  tool_headers_rules_item_4: 'يبرز رؤوس شائعة: Cache-Control وCORS وCSP وغيرها.',
+  tool_headers_example_title: 'مثال',
+  tool_headers_example:
+    'example.com → حالة 200، الرابط النهائي دون تغيير؛ رؤوس تتضمن content-type: text/html وربما cache-control أو رؤوس أمان حسب المصدر.',
+  tool_headers_usecases_title: 'متى يفيد',
+  tool_headers_usecase_1: 'قبل الإطلاق، تأكد من Cache-Control أو تخزين CDN.',
+  tool_headers_usecase_2: 'تصحيح preflight لـ CORS بقراءة Access-Control-* في الاستجابة.',
+  tool_headers_usecase_3: 'تحقق أن CSP وHSTS ورؤوس الأمان تُرسل فعلًا من الخادم.',
+  tool_headers_ref_rfc9110_label: 'RFC 9110 — دلالات HTTP',
+  tool_headers_ref_mdn_label: 'MDN — رؤوس HTTP',
+  tool_headers_ref_rfc9111_label: 'RFC 9111 — التخزين المؤقت HTTP',
   tool_markdown_title: 'من Markdown إلى HTML الآمن — وبالعكس',
   tool_markdown_description:
     'تحتاج HTMLًا نظيفًا من Markdown، أو Markdown من HTML لوحة التحكم؟ اختر الاتجاه؛ marked وTurndown وDOMPurify داخل المتصفح. مثال: README إلى .html، أو HTML المحرر إلى .md للمستودع.',
@@ -93,6 +113,59 @@ const ar: SiteLangDict = {
   tool_markdown_faq_q5: 'ما الصيغ وخيارات التصدير؟',
   tool_markdown_faq_a5:
     'أساسيات CommonMark؛ ومستند HTML كامل اختياري للمشاركة دون اتصال.',
+  tool_bmi_title: 'حاسبة مؤشر كتلة الجسم — طريقة الحساب',
+  tool_bmi_description:
+    'احسب مؤشر كتلة الجسم (BMI) بمعادلة الفحص للبالغين. الخطوات: اختر الوحدات المترية أو الإمبراطورية، أدخل الوزن والطول، ثم احسب BMI وقارنه بالفئات الشائعة. مثال: 70 كغ و175 سم → BMI ≈ 22.9 (طبيعي). للتعليم والفحص فقط — ليس تشخيصاً.',
+  tool_bmi_article:
+    'توضح هذه الحاسبة المجانية كيف يُحسب BMI للبالغين من الوزن والطول، مع صيغ المترية والإمبراطورية ونقاط الفئات وحدود الاستخدام (الرياضيون، الأطفال). النتائج تبقى في متصفحك ولا تُرفع.',
+  tool_bmi_weight_label: 'الوزن (كغ)',
+  tool_bmi_weight_placeholder: 'أدخل الوزن بالكيلوغرام',
+  tool_bmi_height_label: 'الطول (سم)',
+  tool_bmi_height_placeholder: 'أدخل الطول بالسنتيمتر',
+  tool_bmi_calculate: 'احسب BMI',
+  tool_bmi_how_title: 'كيف تعمل',
+  tool_bmi_how_body:
+    'اختر الوحدات المترية أو الإمبراطورية، أدخل الوزن والطول، ثم اضغط احسب. تطبق الأداة معادلة BMI للبالغين، تعرض رقماً بمنزلة عشرية واحدة، وتربط القيمة بفئات الفحص الشائعة. الحساب محلي في متصفحك ولا يُرفع.',
+  tool_bmi_formula_title: 'معادلة BMI وفئات البالغين',
+  tool_bmi_formula_body:
+    'مترية: BMI = الوزن (كغ) ÷ الطول (م)². إمبراطورية: BMI = 703 × الوزن (رطل) ÷ الطول (بوصة)². نقاط الفئات هنا تتبع نطاقات الفحص المنشورة على نطاق واسع.',
+  tool_bmi_formula_item_1: 'نقص الوزن: BMI < 18.5',
+  tool_bmi_formula_item_2: 'طبيعي: BMI 18.5–24.9',
+  tool_bmi_formula_item_3: 'زيادة الوزن: BMI 25–29.9',
+  tool_bmi_formula_item_4: 'سمنة: BMI ≥ 30',
+  tool_bmi_example_title: 'مثال',
+  tool_bmi_example:
+    'مثال (مترية): وزن 70 كغ، طول 175 سم → الطول = 1.75 م → BMI = 70 / (1.75²) ≈ 22.9 → نطاق طبيعي للفحص.',
+  tool_bmi_usecases_title: 'متى يفيد',
+  tool_bmi_usecase_1: 'فحص ذاتي سريع للبالغين قبل زيارة صحية روتينية (للاسترشاد فقط).',
+  tool_bmi_usecase_2: 'تسجيل BMI أساسي عند بدء برنامج لياقة مع مؤشرات أخرى.',
+  tool_bmi_usecase_3: 'التحقق من نفس القياس بين الوحدات المترية والإمبراطورية.',
+  tool_bmi_ref_who_label: 'WHO — ورقة حقائق عن السمنة وزيادة الوزن',
+  tool_bmi_ref_cdc_label: 'CDC — فئات BMI للبالغين',
+  bmi_chart_title: 'فئات BMI للبالغين (فحص)',
+  bmi_underweight: 'نقص الوزن',
+  bmi_normal: 'طبيعي',
+  bmi_overweight: 'زيادة الوزن',
+  bmi_obese: 'سمنة',
+  bmi_metric_units: 'متري',
+  bmi_imperial_units: 'إمبراطوري',
+  bmi_unit_group_label: 'نظام الوحدات',
+  bmi_result_label: 'BMI الخاص بك',
+  bmi_invalid_input: 'أدخل قيم وزن وطول موجبة للحساب.',
+  bmi_weight_lbs: 'الوزن (رطل)',
+  bmi_weight_lbs_placeholder: 'الوزن بالرطل',
+  bmi_height_ft: 'الطول (قدم)',
+  bmi_height_ft_placeholder: 'قدم',
+  bmi_height_in: 'الطول (بوصة)',
+  bmi_height_in_placeholder: 'بوصة',
+  bmi_interpretation_underweight:
+    'نتيجة الفحص: نطاق نقص الوزن. BMI ليس تشخيصاً — ناقش النتائج مع مختص مؤهل عند الحاجة.',
+  bmi_interpretation_normal:
+    'نتيجة الفحص: النطاق الطبيعي للبالغين. BMI لا يقيس دهون الجسم أو اللياقة بمفرده.',
+  bmi_interpretation_overweight:
+    'نتيجة الفحص: نطاق زيادة الوزن. BMI ليس تشخيصاً — ناقش النتائج مع مختص مؤهل عند الحاجة.',
+  bmi_interpretation_obese:
+    'نتيجة الفحص: نطاق السمنة. BMI ليس تشخيصاً — ناقش النتائج مع مختص مؤهل عند الحاجة.',
   tool_text_diff_description:
     'قارن نصين أونلاين واعرف ماذا تغيّر. العملية: الصق النص الأصلي والمعدَّل، اختر المقارنة حسب السطر أو الكلمة أو الحرف، ويمكن تجاهل المسافات أو توحيد أسطر Windows (CRLF→LF)، ثم أبرز الإضافات والحذف في المتصفح. مثال: غيّر «مرحبا بالعالم» إلى «مرحبا صديقي» — وضع الكلمات يُظهر استبدالاً واحداً.',
   tool_text_diff_article:
@@ -151,6 +224,314 @@ const ar: SiteLangDict = {
   tool_text_diff_faq_a3: 'Windows غالباً CRLF و Mac/Linux غالباً LF. فعّل «اعتبار CRLF و LF متساويين» ثم قارن مجدداً.',
   tool_text_diff_faq_q4: 'هل أقارن صوراً أو ملفات ثنائية؟',
   tool_text_diff_faq_a4: 'لا. النص العادي فقط.',
+
+  tool_headers_faq_q1: 'ماذا تُظهر ترويسات استجابة HTTP؟',
+  tool_headers_faq_a1:
+    'بيانات وصفية من الخادم: نوع المحتوى، قواعد التخزين المؤقت، إعادة التوجيه، وسياسات مثل HSTS وCSP وCORS.',
+  tool_headers_faq_q2: 'هل تُحمّل الأداة محتوى الصفحة كاملًا؟',
+  tool_headers_faq_a2:
+    'تفضّل HEAD وتنتقل إلى GET عند الحاجة. الهدف فحص الرؤوس وليس حفظ أو كشط body الصفحة.',
+  tool_headers_faq_q3: 'لماذا يُحظر localhost والشبكات الخاصة؟',
+  tool_headers_faq_a3:
+    'لمنع استخدام الـ worker كأداة مسح للمضيفات الداخلية.',
+  tool_headers_faq_q4: 'هل النتيجة مثل DevTools في المتصفح؟',
+  tool_headers_faq_a4:
+    'ليس دائمًا. ترى الاستجابة من الـ edge لدينا؛ CDN أو التوجيه الجغرافي أو فلاتر البوت قد تختلف عن جهازك.',
+  tool_headers_faq_q5: 'هل تحفظون سجلًا للروابط التي أفحصها؟',
+  tool_headers_faq_a5:
+    'طلب edge قصير بدون منتج سجل روابط. تجنّب لصق أسرار في query string.',
+  tool_bmi_faq_q1: 'ما معادلة BMI؟',
+  tool_bmi_faq_a1:
+    'مترية: BMI = الوزن(كغ) / الطول(م)². إمبراطورية: BMI = 703 × الوزن(رطل) / الطول(بوصة)².',
+  tool_bmi_faq_q2: 'ماذا تعني فئات BMI؟',
+  tool_bmi_faq_a2:
+    'نقاط الفحص الشائعة للبالغين: نقص الوزن <18.5، طبيعي 18.5–24.9، زيادة الوزن 25–29.9، سمنة ≥30. هذه فئات استرشادية وليست تشخيصاً.',
+  tool_bmi_faq_q3: 'هل BMI دقيق للرياضيين؟',
+  tool_bmi_faq_a3:
+    'لا يُضمن. BMI لا يفرّق بين العضلات والدهون. قد يظهر الرياضيون في نطاق مرتفع مع دهون منخفضة — اطلب تقييماً شخصياً من مختص.',
+  tool_bmi_faq_q4: 'هل يناسب الأطفال أو الحمل؟',
+  tool_bmi_faq_a4:
+    'نقاط البالغين هنا لا تناسب الأطفال أو المراهقين أو الحمل. استخدم مخططات حسب العمر واتبع الإرشاد السريري.',
+  tool_bmi_disclaimer:
+    'حاسبة BMI هذه للفحص التعليمي للبالغين فقط. ليست نصيحة طبية، لا تشخّص مرضاً، ولا تغني عن رعاية مختص صحي مؤهل.',
+  tool_bmi_references:
+    'ورقة WHO عن السمنة وزيادة الوزن؛ إرشاد CDC لفئات BMI للبالغين؛ صيغ BMI المترية والإمبراطورية القياسية.',
+
+  tool_squarefeet_title: 'تحويل القدم المربع إلى متر مربع — للمنازل والتشطيب',
+  tool_squarefeet_description:
+    'حوّل مساحة الغرفة بين القدم المربع والمتر المربع للإعلانات والتشطيب. الخطوات: اختر قدم/متر/بوصة، أدخل الطول × العرض، احسب المساحة، ثم اعرض ft² و m² بعامل NIST 1 ft² = 0.09290304 m². مثال: شقة 850 قدمًا مربعًا ≈ 78.97 م².',
+  tool_squarefeet_article:
+    'قدّر مساحة مستطيلة من الطول والعرض وحوّل بين القدم المربع والمتر المربع. مناسب لمقارنة الإعلانات وتقدير الأرضيات والطلاء — وليس تقييم عقار.',
+  tool_squarefeet_length_label: 'الطول',
+  tool_squarefeet_length_placeholder: 'أدخل الطول',
+  tool_squarefeet_width_label: 'العرض',
+  tool_squarefeet_width_placeholder: 'أدخل العرض',
+  tool_squarefeet_calculate: 'حوّل المساحة',
+  tool_squarefeet_unit_group_label: 'وحدات الإدخال',
+  unit_feet: 'أقدام',
+  unit_meters: 'أمتار',
+  unit_inches: 'بوصات',
+  sqft_unit: 'قدم مربع',
+  tool_squarefeet_result_note: 'تقريب إلى منزلتين. العامل: 1 ft² = 0.09290304 m².',
+  tool_squarefeet_result_sqm: '≈ {sqm} م²',
+  tool_squarefeet_invalid_input: 'أدخل طولًا وعرضًا موجبين.',
+  tool_squarefeet_usage_title: 'الاستخدام',
+  tool_squarefeet_usage: 'اختر الوحدة ثم أدخل الطول والعرض للحصول على القدم المربع وما يعادله بالمتر المربع.',
+  tool_squarefeet_how_title: 'كيف يعمل',
+  tool_squarefeet_how_body:
+    'اختر وحدة القياس، اضرب الطول × العرض بعد التحويل إلى أقدام، ثم حوّل إلى م² بالعامل الدقيق. تُرفض القيم الفارغة أو السالبة.',
+  tool_squarefeet_formula_title: 'صيغة المساحة وعامل التحويل',
+  tool_squarefeet_formula_body:
+    'المساحة (ft²) = الطول (ft) × العرض (ft). بالمتر: ft² = (L×W) ÷ 0.09290304. بالبوصة: اقسم كل ضلع على 12. العامل: 1 ft² = 0.09290304 m².',
+  tool_squarefeet_formula_item_1: 'إدخال بالأقدام: المساحة_ft² = L × W',
+  tool_squarefeet_formula_item_2: 'إدخال بالمتر: المساحة_ft² = (L × W) / 0.09290304',
+  tool_squarefeet_formula_item_3: 'إدخال بالبوصة: المساحة_ft² = (L/12) × (W/12)',
+  tool_squarefeet_formula_item_4: 'm² = المساحة_ft² × 0.09290304 (NIST / SI)',
+  tool_squarefeet_example_title: 'مثال',
+  tool_squarefeet_example:
+    'إعلان: شقة 850 قدمًا مربعًا → 850 × 0.09290304 ≈ 78.97 م². غرفة: 10 ft × 12 ft = 120 sq ft ≈ 11.15 م².',
+  tool_squarefeet_usecases_title: 'متى يفيدك',
+  tool_squarefeet_usecase_1: 'مقارنة إعلان أمريكي بالقدم المربع مع إعلانات محلية بالمتر المربع.',
+  tool_squarefeet_usecase_2: 'تقدير أرضيات غرفة مستطيلة قبل طلب المواد.',
+  tool_squarefeet_usecase_3: 'تقدير تقريبي للطلاء عند اختلاط الوحدات في المخطط.',
+  tool_squarefeet_ref_nist_label: 'NIST SP 811 — دليل نظام الوحدات الدولي (SI)',
+  tool_squarefeet_faq_q1: 'ما عامل التحويل بين ft² و m²؟',
+  tool_squarefeet_faq_a1: 'بالضبط 1 ft² = 0.09290304 m² (إرشاد SI / NIST).',
+  tool_squarefeet_faq_q2: 'هل تميّز المساحة الصافية عن الإجمالية؟',
+  tool_squarefeet_faq_a2: 'لا. الأداة تحوّل مساحة مستطيل مستوية فقط.',
+  tool_squarefeet_faq_q3: 'هل تقدّر سعر العقار؟',
+  tool_squarefeet_faq_a3: 'لا. تحويل المساحة ليس تقييمًا.',
+  tool_squarefeet_faq_q4: 'ماذا عن الغرف على شكل L؟',
+  tool_squarefeet_faq_a4: 'قسّمها إلى مستطيلات، حوّل كلًا منها ثم اجمع.',
+  tool_percentage_change_title: 'حاسبة التغير بالنسبة المئوية — من قيمة قديمة إلى جديدة',
+  tool_percentage_change_description:
+    'احسب نسبة الزيادة أو النقصان من قيمة قديمة إلى جديدة. الخطوات: أدخل القيمتين، طبّق (الجديد − القديم) / القديم × 100، ثم اقرأ الإشارة. مثال: 80 → 100 = +25%. مناسب لإيرادات شهرية وDAU والأسعار — وليس نقاط مئوية.',
+  tool_percentage_change_article:
+    'التغير النسبي يجيب: كم تحرّك المؤشر مقارنة بقاعدته؟ أدخل القيمة القديمة والجديدة. للتقارير التشغيلية، وليس بديلًا عن عائد الاستثمار.',
+  tool_percentage_change_original_label: 'القيمة القديمة',
+  tool_percentage_change_new_label: 'القيمة الجديدة',
+  tool_percentage_change_calculate: 'احسب',
+  tool_percentage_change_result_label: 'التغير بالنسبة المئوية',
+  tool_percentage_change_example:
+    'مثال كامل: قديم 80، جديد 100 → Δ=20 → (20/80)×100 = زيادة 25%. هبوط: 100→80 = −20%.',
+  tool_percentage_change_result_invalid: 'يجب أن تكون القيمة القديمة رقمًا غير صفري.',
+  tool_percentage_change_increase: 'زيادة',
+  tool_percentage_change_decrease: 'نقصان',
+  tool_percentage_change_no_change: 'بدون تغيير',
+  tool_percentage_change_abs_note: 'التغير المطلق: {delta}',
+  tool_percentage_change_how_title: 'كيف يعمل',
+  tool_percentage_change_how_body:
+    'أدخل الأساس (القديم) ثم القيمة اللاحقة. نطرح ونقسم على القديم ونضرب في 100. الموجب زيادة والسالب نقصان.',
+  tool_percentage_change_formula_title: 'صيغة التغير النسبي',
+  tool_percentage_change_formula_body:
+    'نسبة التغير = (الجديد − القديم) / القديم × 100. نستخدم القديم بإشارته في المقام.',
+  tool_percentage_change_formula_item_1: 'Δ = الجديد − القديم',
+  tool_percentage_change_formula_item_2: 'النسبة = (Δ / القديم) × 100',
+  tool_percentage_change_formula_item_3: 'القديم = 0 → غير معرّف (خطأ)',
+  tool_percentage_change_example_title: 'مثال',
+  tool_percentage_change_usecases_title: 'سيناريوهات أعمال وبيانات',
+  tool_percentage_change_usecase_1: 'إيراد شهري: GMV 80 الشهر الماضي مقابل 100 هذا الشهر → +25%.',
+  tool_percentage_change_usecase_2: 'تحليل المنتج: المستخدمون اليوميون من 50 ألف إلى 55 ألف → +10%.',
+  tool_percentage_change_usecase_3: 'تسعير: من 40 إلى 34 → −15% (وليس «6 نقاط مئوية»).',
+  tool_percentage_change_ref_wiki_label: 'ويكيبيديا — Relative change',
+  tool_percentage_change_faq_q1: 'ما صيغة التغير بالنسبة المئوية؟',
+  tool_percentage_change_faq_a1: 'نسبة التغير = (الجديد − القديم) / القديم × 100.',
+  tool_percentage_change_faq_q2: 'لماذا لا يجوز أن تكون القيمة القديمة صفرًا؟',
+  tool_percentage_change_faq_a2: 'القسمة على صفر غير معرّفة.',
+  tool_percentage_change_faq_q3: 'هل هي نفسها النقاط المئوية؟',
+  tool_percentage_change_faq_a3: 'لا. من 10% إلى 12% ارتفاع بنقطتين، لكن زيادة نسبية 20%.',
+  tool_percentage_change_faq_q4: 'ما الفرق عن عائد الاستثمار ROI؟',
+  tool_percentage_change_faq_a4: 'ROI يقارن الربح بتكلفة الاستثمار؛ التغير النسبي يقارن أي قيمة جديدة بقاعدة قديمة.',
+  tool_gradient_title: 'حاسبة التدرج — ∇f متعدد المتغيرات (مشتقات جزئية)',
+  tool_gradient_description:
+    'احسب تدرج ∇f لحقل قياسي كمتجه المشتقات الجزئية. الخطوات: اشتق لكل متغير، شكّل ∇f، ثم قيّم عند نقطة. دالة العرض f(x,y)=x²y+3y → ∇f=(2xy, x²+3)؛ عند (1,2) → (4,4). يُستخدم في التحسين وتفسير الانحدار التدرجي في التعلم الآلي.',
+  tool_gradient_desc:
+    'احسب تدرج ∇f لحقل قياسي كمتجه المشتقات الجزئية. الخطوات: اشتق لكل متغير، شكّل ∇f، ثم قيّم عند نقطة. دالة العرض f(x,y)=x²y+3y → ∇f=(2xy, x²+3)؛ عند (1,2) → (4,4). يُستخدم في التحسين وتفسير الانحدار التدرجي في التعلم الآلي.',
+  tool_gradient_article:
+    'تدرج دالة قياسية متعددة المتغيرات هو متجه مشتقاتها الجزئية من الرتبة الأولى. هذه الصفحة ليست حاسبة ميل بين نقطتين.',
+  tool_gradient_fn_hint: 'دالة العرض (ثابتة في الصندوق التفاعلي):',
+  tool_gradient_x_label: 'x',
+  tool_gradient_x_placeholder: 'مثل 1',
+  tool_gradient_y_label: 'y',
+  tool_gradient_y_placeholder: 'مثل 2',
+  tool_gradient_calculate: 'احسب ∇f',
+  tool_gradient_result_label: 'التدرج عند نقطتك',
+  tool_gradient_result_note: 'تم تقييم f(x,y)=x²y+3y عند ({x}, {y}).',
+  tool_gradient_invalid_input: 'أدخل قيمًا عددية منتهية لـ x و y.',
+  tool_gradient_how_title: 'كيف يعمل',
+  tool_gradient_how_body:
+    'لدالة قياسية f، احسب كل مشتقة جزئية مع تثبيت الباقي، رتبها في ∇f، ثم عوّض الإحداثيات.',
+  tool_gradient_formula_title: 'صيغة التدرج متعدد المتغيرات',
+  tool_gradient_formula_body:
+    '∇f = (∂f/∂x₁, …, ∂f/∂xₙ). لمتغيرين: ∇f(x,y)=(∂f/∂x, ∂f/∂y).',
+  tool_gradient_formula_item_1: 'احسب ∂f/∂xᵢ لكل متغير',
+  tool_gradient_formula_item_2: 'شكّل المتجه ∇f',
+  tool_gradient_formula_item_3: 'قيّم المكونات عند النقطة',
+  tool_gradient_formula_item_4: 'عرض: f=x²y+3y → ∇f=(2xy, x²+3)',
+  tool_gradient_example_title: 'مثال',
+  tool_gradient_example:
+    'f(x,y)=x²y+3y. الجزئيات: ∂f/∂x=2xy، ∂f/∂y=x²+3. عند (1,2): ∇f=(4,4).',
+  tool_gradient_usecases_title: 'تحسين وتعلم آلي',
+  tool_gradient_usecase_1: 'التحقق من مشتقات الواجب قبل خطوة التحسين.',
+  tool_gradient_usecase_2: 'شرح الانحدار التدرجي: كل خطوة عكس ∇loss.',
+  tool_gradient_usecase_3: 'حدس فيزيائي: ∇f يشير حيث يزداد الحقل القياسي بأسرع ما يمكن.',
+  tool_gradient_ref_wiki_label: 'ويكيبيديا — Gradient',
+  tool_gradient_ref_khan_label: 'Khan Academy — التدرج',
+  tool_gradient_faq_q1: 'ما التدرج في التفاضل متعدد المتغيرات؟',
+  tool_gradient_faq_a1: '∇f متجه المشتقات الجزئية ويشير إلى أسرع ارتفاع محلي.',
+  tool_gradient_faq_q2: 'كيف أحسبه يدويًا؟',
+  tool_gradient_faq_a2: 'اشتق لكل متغير مع تثبيت الباقي، شكّل المتجه، ثم عوّض عند نقطة.',
+  tool_gradient_faq_q3: 'هل هو نفسه «التدرج» في تعلم الآلة؟',
+  tool_gradient_faq_a3: 'نعم كائن رياضي واحد: ∇ لخسارة قياسية. الصفحة تشرح التعريف ولا تدرّب نموذجًا.',
+  tool_gradient_faq_q4: 'هل هذه حاسبة ميل بين نقطتين؟',
+  tool_gradient_faq_a4: 'لا. ميل الخط أداة أخرى؛ هنا ∇f متجه مشتقات جزئية.',
+
+  /* --- IG: ip / roi / mr --- */
+tool_ip_address_title: 'ما هو عنوان IP الخاص بي — اعرض IP العام',
+  tool_ip_address_description:
+    'اعرض عنوان IP العام الذي يراه طرفنا الطرفي لاتصالك. العملية: افتح الصفحة أو اضغط تحديث؛ يقرأ العامل عنوان العميل الموثوق. مثال: قد يظهر 203.0.113.10. مع VPN أو بروكسي يظهر IP الخروج لا عنوان الشبكة المحلية.',
+  tool_ip_address_article:
+    'تعرض هذه الصفحة عنوان الخروج العام كما يراه الطرف الطرفي — مفيدة للتحقق من VPN أو إبلاغ الدعم أو ضبط قوائم السماح. ليست أداة تحديد موقع جغرافي أو مزود خدمة.',
+  tool_ip_address_how_title: 'كيف يعمل',
+  tool_ip_address_how_body:
+    'يستدعي المتصفح واجهة الطرف الطرفي. يعيد العامل عنوان IP المرتبط بالاتصال (وليس رأسًا قابلاً للتزوير وحده). حدّث متى شئت؛ بلا حساب.',
+  tool_ip_address_rules_title: 'ماذا يعني هذا العنوان',
+  tool_ip_address_rules_body:
+    'القيمة هي العنوان العام المرتبط باتصال TCP/TLS لديك على الطرف الطرفي — هوية الخروج التي تراها المواقع عادة. حدود مهمة:',
+  tool_ip_address_rules_item_1: 'مع VPN أو بروكسي HTTP ترى عنوان خروج المزود لا عنوان الشبكة المنزلية.',
+  tool_ip_address_rules_item_2: 'خلف NAT تتشارك أجهزة متعددة عنوانًا عامًا واحدًا؛ 192.168.x.x لا يظهر هنا.',
+  tool_ip_address_rules_item_3: 'نعتمد عنوان عميل الطرف الطرفي قبل الاعتماد على X-Forwarded-For وحده (قابل للتزوير).',
+  tool_ip_address_rules_item_4: 'قد يظهر IPv4 أو IPv6 حسب المسار؛ في الشبكات المزدوجة قد يتبدل بعد إعادة الاتصال.',
+  tool_ip_address_example_title: 'مثال',
+  tool_ip_address_example:
+    'مثال توثيقي: يرى الطرف 203.0.113.10 (عنوان محجوز TEST-NET-3). نتيجتك الحية ستكون عنوان خروجك العام الفعلي.',
+  tool_ip_address_usecases_title: 'متى تستخدمه',
+  tool_ip_address_usecase_1: 'التأكد من أن VPN/البروكسي يغيّر فعلاً عنوانك العام.',
+  tool_ip_address_usecase_2: 'إخبار الدعم أو الجدار الناري بالعنوان العام المطلوب للسماح.',
+  tool_ip_address_usecase_3: 'تحقق سريع أثناء ضبط الوصول عن بُعد أو قوائم API.',
+  tool_ip_address_ref_mdn_label: 'MDN — ترويسة X-Forwarded-For (مخاطر التزوير)',
+  tool_ip_address_ref_cloudflare_label: 'Cloudflare Learning — ما هو عنوان IP؟',
+  ip_label: 'عنوانك العام',
+  fetch_ip_button: 'تحديث',
+  fetching_message: 'جاري الجلب…',
+  tool_ip_address_faq_q1: 'هل تحفظون عنواني؟',
+  tool_ip_address_faq_a1:
+    'الاستعلام طلب قصير على الطرف الطرفي. لا نقدّم سجل عناوين؛ اعتبر النتيجة عرضًا مؤقتًا.',
+  tool_ip_address_faq_q2: 'كيف تحصل الصفحة على عنواني؟',
+  tool_ip_address_faq_a2:
+    'يطلب المتصفح واجهة الطرف الطرفي؛ يعيد العامل عنوان العميل الموثوق لهذا الاتصال.',
+  tool_ip_address_faq_q3: 'ماذا لو استخدمت VPN أو بروكسي؟',
+  tool_ip_address_faq_a3:
+    'عادة ترى عنوان خروج VPN/البروكسي. هذا متوقع: المواقع ترى نفس هوية الخروج.',
+  tool_ip_address_faq_q4: 'لماذا يختلف عن عنوان الشبكة المحلية؟',
+  tool_ip_address_faq_a4:
+    'العناوين الخاصة مثل 192.168.x.x تبقى داخل الشبكة عبر NAT. هنا يظهر العنوان العام فقط.',
+
+  tool_roi_title: 'حاسبة العائد على الاستثمار (ROI) — طريقة الحساب',
+  tool_roi_description:
+    'احسب عائد الاستثمار البسيط بالمعادلة (العائد − التكلفة) / التكلفة × 100٪، أو (القيمة النهائية − الأولية) / الأولية × 100٪. العملية: أدخل التكلفة والقيمة النهائية (أو صافي الربح) وراجع افتراضات الضرائب والرسوم والزمن. مثال: تكلفة 1000 ونهاية 1300 → ROI 30٪. للتوضيح التعليمي فقط — ليست نصيحة استثمار.',
+  tool_roi_article:
+    'يُعبّر ROI البسيط عن صافي الربح نسبةً إلى التكلفة. مناسب لمراجعات تقريبية للحملات أو المشاريع؛ لا يحسب IRR/NPV متعدد الفترات.',
+  tool_roi_initial_label: 'الاستثمار الأولي (التكلفة)',
+  tool_roi_initial_placeholder: 'مثل 1000',
+  tool_roi_final_label: 'القيمة النهائية',
+  tool_roi_final_placeholder: 'مثل 1300',
+  tool_roi_gain_label: 'صافي الربح (اختياري)',
+  tool_roi_gain_placeholder: 'إن عُلم يستبدل النهائية − الأولية',
+  tool_roi_calculate: 'احسب',
+  tool_roi_result_label: 'ROI',
+  tool_roi_how_title: 'كيف يعمل',
+  tool_roi_how_body:
+    'أدخل التكلفة والقيمة النهائية أو صافي ربح معروف. ROI = الصافي / التكلفة × 100٪. إن تُرك الصافي فارغًا: الصافي = النهائية − الأولية. التكلفة صفر مرفوضة.',
+  tool_roi_formula_title: 'المعادلة والافتراضات',
+  tool_roi_formula_body:
+    'ROI = (القيمة النهائية − الاستثمار الأولي) / الاستثمار الأولي × 100٪، أو صافي الربح / التكلفة × 100٪. انتبه إلى:',
+  tool_roi_formula_item_1: 'الضرائب: لا تُقدَّر هنا — أدخل مبالغ بعد الضريبة إن لزم.',
+  tool_roi_formula_item_2: 'الزمن: ROI البسيط يتجاهل مدة الاحتفاظ؛ ليس عائدًا سنويًا.',
+  tool_roi_formula_item_3: 'الرسوم: أدرج العمولات ورسوم المنصة في التكلفة أو القيمة النهائية بنفسك.',
+  tool_roi_formula_item_4: 'التدفقات متعددة الفترات وIRR/NPV خارج نطاق هذه النسبة لفترة واحدة.',
+  tool_roi_example_title: 'مثال',
+  tool_roi_example:
+    'مثال: تكلفة 1000، قيمة نهائية 1300 → ربح 300 → ROI = 300 / 1000 × 100٪ = 30٪.',
+  tool_roi_usecases_title: 'متى تستخدمه',
+  tool_roi_usecase_1: 'التسويق: تقدير تقريبي لـ ROI حملة بعد معرفة الإنفاق والإيراد المنسوب.',
+  tool_roi_usecase_2: 'الواجبات الدراسية: التدرّب على نسبة ROI الأساسية بأرقام ثابتة.',
+  tool_roi_usecase_3: 'مراجعة مشروع: تلخيص مبادرة مكتملة كزوج تكلفة/عائد (تقدير فقط).',
+  tool_roi_ref_investopedia_label: 'Investopedia — العائد على الاستثمار (ROI)',
+  tool_roi_ref_guide_label: 'Investopedia — دليل حساب ROI',
+  tool_roi_interpret_positive: 'ROI موجب (ربح بالنسبة للتكلفة) — للتوضيح التعليمي فقط.',
+  tool_roi_interpret_zero: 'ROI صفر — لا ربح ولا خسارة بهذه المدخلات.',
+  tool_roi_interpret_negative: 'ROI سالب (خسارة بالنسبة للتكلفة) — للتوضيح التعليمي فقط.',
+  tool_roi_zero_cost: 'يجب أن يكون الاستثمار الأولي أكبر من صفر.',
+  tool_roi_faq_q1: 'ما المعادلة المستخدمة؟',
+  tool_roi_faq_a1:
+    'ROI = (النهائية − الأولية) / الأولية × 100٪، أو صافي الربح / التكلفة × 100٪ عند إدخال الصافي.',
+  tool_roi_faq_q2: 'هل هذه نصيحة استثمار؟',
+  tool_roi_faq_a2: 'لا. النتائج للتوضيح التعليمي فقط وليست نصيحة استثمار أو ضرائب أو مالية.',
+  tool_roi_faq_q3: 'ماذا عن الضرائب والرسوم والزمن؟',
+  tool_roi_faq_a3:
+    'لا نقدّر الضرائب أو الرسوم — أدرجها أنت. ROI البسيط لا يحوّل الفترة إلى عائد سنوي.',
+  tool_roi_faq_q4: 'ماذا لو كانت التكلفة صفرًا؟',
+  tool_roi_faq_a4: 'ROI غير معرّف (قسمة على صفر). أدخل تكلفة موجبة.',
+  tool_roi_disclaimer:
+    'نتائج ROI للتوضيح التعليمي فقط وليست نصيحة استثمار أو ضرائب أو مالية. العوائد السابقة أو الافتراضية لا تضمن نتائج مستقبلية.',
+  tool_roi_references:
+    'تعريفات وأدلة Investopedia حول ROI؛ ROI البسيط = صافي الربح / التكلفة.',
+
+  tool_marginal_revenue_title: 'حاسبة الإيراد الحدي — الصيغة ΔTR / ΔQ',
+  tool_marginal_revenue_description:
+    'احسب الإيراد الحدي بالمعادلة MR = ΔTR / ΔQ. العملية: أدخل الكمية والإيراد الكلي عند نقطتين، احسب ΔTR وΔQ ثم اقسم. مثال: الكمية 10→11 والإيراد 1000→1080 → MR = 80. للتعليم فقط — ليست نصيحة تسعير.',
+  tool_marginal_revenue_article:
+    'الإيراد الحدي هو تغيّر الإيراد الكلي عند تغيّر الكمية. تعرض هذه الحاسبة الاشتقاق المتقطع بين نقطتين.',
+  tool_marginal_revenue_how_title: 'كيف يعمل',
+  tool_marginal_revenue_how_body:
+    'أدخل الكمية والإيراد الكلي للمستوى 1 ثم المستوى 2. تُحسب ΔTR = TR2 − TR1 وΔQ = Q2 − Q1 ثم MR = ΔTR / ΔQ في المتصفح.',
+  tool_marginal_revenue_formula_title: 'اشتقاق الصيغة',
+  tool_marginal_revenue_formula_body:
+    'حسب التعريف يقيس الإيراد الحدي تغيّر الإيراد الكلي عند تغيّر الكمية. لنقطتين ملاحظتين:',
+  tool_marginal_revenue_formula_item_1: 'ΔTR = TR₂ − TR₁ (تغيّر الإيراد الكلي)',
+  tool_marginal_revenue_formula_item_2: 'ΔQ = Q₂ − Q₁ (تغيّر الكمية)',
+  tool_marginal_revenue_formula_item_3: 'MR = ΔTR / ΔQ عندما ΔQ ≠ 0',
+  tool_marginal_revenue_formula_item_4:
+    'الخطوة المتقطعة تقارب متوسط MR على الفترة؛ النماذج المستمرة تستخدم dTR/dQ. MR السالب يعني انخفاض الإيراد مع ارتفاع الكمية.',
+  tool_marginal_revenue_example_title: 'مثال',
+  tool_marginal_revenue_example:
+    'مثال: Q₁ = 10، TR₁ = 1000؛ Q₂ = 11، TR₂ = 1080 → ΔTR = 80، ΔQ = 1 → MR = 80.',
+  tool_marginal_revenue_usecases_title: 'متى تستخدمه',
+  tool_marginal_revenue_usecase_1: 'واجبات الاقتصاد: التحقق من جدول كمية/إيراد بمستويين.',
+  tool_marginal_revenue_usecase_2: 'تقدير تقريبي: تغيّر الإيراد عند زيادة الإنتاج وحدة واحدة.',
+  tool_marginal_revenue_usecase_3: 'مقارنة الإيراد الحدي بالمتوسط في الاقتصاد الجزئي التمهيدي.',
+  tool_marginal_revenue_ref_investopedia_label: 'Investopedia — الإيراد الحدي (MR)',
+  tool_marginal_revenue_ref_openstax_label: 'OpenStax — مبادئ الاقتصاد الجزئي (المنافسة)',
+  tool_marginal_revenue_q1_label: 'الكمية (Q₁)',
+  tool_marginal_revenue_q1_placeholder: 'مثل 10',
+  tool_marginal_revenue_tr1_label: 'الإيراد الكلي (TR₁)',
+  tool_marginal_revenue_tr1_placeholder: 'مثل 1000',
+  tool_marginal_revenue_q2_label: 'الكمية (Q₂)',
+  tool_marginal_revenue_q2_placeholder: 'مثل 11',
+  tool_marginal_revenue_tr2_label: 'الإيراد الكلي (TR₂)',
+  tool_marginal_revenue_tr2_placeholder: 'مثل 1080',
+  tool_marginal_revenue_quantity_label: 'الكمية',
+  tool_marginal_revenue_revenue_label: 'الإيراد الكلي',
+  tool_marginal_revenue_calculate: 'احسب MR',
+  tool_marginal_revenue_result_label: 'الإيراد الحدي',
+  tool_marginal_revenue_zero_dq: 'ΔQ = 0 — يجب أن تختلف الكمية بين النقطتين.',
+  tool_marginal_revenue_detail_tpl: 'ΔTR = {dTR}، ΔQ = {dQ} → MR = {mr}',
+  tool_marginal_revenue_faq_q1: 'هل MR الموجب يعني زيادة الإنتاج؟',
+  tool_marginal_revenue_faq_a1:
+    'لا. هذه الأداة لا تقدّم نصيحة تسعير أو إنتاج؛ يلزم أيضًا التكلفة الحدية وقيود أخرى.',
+  tool_marginal_revenue_faq_q2: 'كيف يُشتق الإيراد الحدي هنا؟',
+  tool_marginal_revenue_faq_a2:
+    'MR = ΔTR / ΔQ حيث ΔTR = TR₂ − TR₁ وΔQ = Q₂ − Q₁. اشتقاق متقطع وليس مشتقة مستمرة.',
+  tool_marginal_revenue_faq_q3: 'ماذا لو كانت ΔQ صفرًا؟',
+  tool_marginal_revenue_faq_a3: 'MR غير معرّف إن لم تتغير الكمية. اختر كميتين مختلفتين.',
+  tool_marginal_revenue_faq_q4: 'ما الفرق عن الإيراد المتوسط؟',
+  tool_marginal_revenue_faq_a4:
+    'الإيراد المتوسط هو TR / Q عند مستوى إنتاج. الحدي هو تغيّر TR عند تغيّر Q؛ يتطابقان في حالات خاصة فقط.',
+  tool_marginal_revenue_disclaimer:
+    'هذه الحاسبة لتعلّم مفاهيم الاقتصاد الجزئي. ليست نصيحة أعمال أو تسعير أو استثمار.',
+  tool_marginal_revenue_references:
+    'مدخل Investopedia عن الإيراد الحدي؛ معالجة تمهيدية لـ MR = ΔTR/ΔQ (مثل OpenStax).',
 
 };
 export default ar;

@@ -1,3 +1,7 @@
+/**
+ * 百分比变化计算器页：旧值→新值涨跌幅、商业/数据场景 IG、百分点对照 FAQ。
+ * slug: how-to-calculate-percentage-change；主方向 A（见 work-tasks/how-to-calculate-percentage-change/02-tool-info.md）。
+ */
 import type { SiteLang } from '../site/i18n';
 import { t, supportedLangs } from '../site/i18n';
 import { renderFooter } from './site/footer';
@@ -5,150 +9,192 @@ import { renderHeader } from './site/header';
 import { renderLayout, type HreflangAlternate, escapeHtml } from './site/layout';
 import { renderSidebar } from './site/sidebar';
 import { TOOL_PAGES, getToolBySlug } from '../site/tools';
-import { renderToolExtraSections, buildToolJsonLd } from './site/toolContent';
+import {
+	renderToolExtraSections,
+	buildToolJsonLd,
+	renderToolIgSections,
+	renderToolReferencesSection,
+} from './site/toolContent';
 
+/** 为路径加上语言前缀（默认语无前缀）。 */
 const withLangPrefix = (lang: SiteLang, pathname: string, defaultLang: SiteLang) => {
-  const safe = pathname.startsWith('/') ? pathname : `/${pathname}`;
-  return lang === defaultLang ? safe : `/${lang}${safe}`;
+	const safe = pathname.startsWith('/') ? pathname : `/${pathname}`;
+	return lang === defaultLang ? safe : `/${lang}${safe}`;
 };
 
+/**
+ * 渲染百分比变化计算器工具页 HTML。
+ * @param opts.lang 当前语言
+ * @param opts.defaultLang 站点默认语言
+ * @param opts.enabledLangs 启用语言列表
+ */
 export const renderHowToCalculatePercentageChangePage = (opts: {
-  lang: SiteLang;
-  defaultLang: SiteLang;
-  enabledLangs: SiteLang[];
+	lang: SiteLang;
+	defaultLang: SiteLang;
+	enabledLangs: SiteLang[];
 }) => {
-  const canonicalPath = withLangPrefix(opts.lang, '/tools/how-to-calculate-percentage-change', opts.defaultLang);
-  const title = `${t(opts.lang, 'tool_percentage_change_title')} | ${t(opts.lang, 'brand')}`;
-  const description = t(opts.lang, 'tool_percentage_change_description');
-  const article = t(opts.lang, 'tool_percentage_change_article');
+	const toolPath = '/tools/how-to-calculate-percentage-change';
+	const canonicalPath = withLangPrefix(opts.lang, toolPath, opts.defaultLang);
+	const title = `${t(opts.lang, 'tool_percentage_change_title')} | ${t(opts.lang, 'brand')}`;
+	const description = t(opts.lang, 'tool_percentage_change_description');
 
-  const navItems = [
-    { href: withLangPrefix(opts.lang, '/', opts.defaultLang), label: t(opts.lang, 'nav_home') },
-    { href: withLangPrefix(opts.lang, '/#all-tools', opts.defaultLang), label: t(opts.lang, 'nav_tools') },
-    { href: '/devlogs/', label: t(opts.lang, 'nav_devlogs') },
-  ];
+	const navItems = [
+		{ href: withLangPrefix(opts.lang, '/', opts.defaultLang), label: t(opts.lang, 'nav_home') },
+		{ href: withLangPrefix(opts.lang, '/#all-tools', opts.defaultLang), label: t(opts.lang, 'nav_tools') },
+		{ href: '/devlogs/', label: t(opts.lang, 'nav_devlogs') },
+	];
 
-  const withExplicitLangPrefix = (code: SiteLang, pathname: string) => {
-    const safe = pathname.startsWith('/') ? pathname : `/${pathname}`;
-    return `/${code}${safe}`.replace(/\/\/{2,}/g, '/');
-  };
+	/** 语言切换链接始终带显式语言前缀（含默认语）。 */
+	const withExplicitLangPrefix = (code: SiteLang, pathname: string) => {
+		const safe = pathname.startsWith('/') ? pathname : `/${pathname}`;
+		return `/${code}${safe}`.replace(/\/{2,}/g, '/');
+	};
 
-  const langAlternates: Record<string, string> = Object.fromEntries(
-    (supportedLangs || []).map((code) => [code, withExplicitLangPrefix(code, '/tools/how-to-calculate-percentage-change')])
-  );
+	const langAlternates: Record<string, string> = Object.fromEntries(
+		(supportedLangs || []).map((code) => [code, withExplicitLangPrefix(code, toolPath)])
+	);
 
-  const alternates: HreflangAlternate[] = (supportedLangs || []).map((code) => ({
-    lang: code,
-    href: `https://onlinefreetools.org${withLangPrefix(code, '/tools/how-to-calculate-percentage-change', opts.defaultLang)}`,
-  }));
+	const alternates: HreflangAlternate[] = (supportedLangs || []).map((code) => ({
+		lang: code,
+		href: `https://onlinefreetools.org${withLangPrefix(code, toolPath, opts.defaultLang)}`,
+	}));
 
-  const headerHtml = renderHeader({
-    lang: opts.lang,
-    brandHref: withLangPrefix(opts.lang, '/', opts.defaultLang),
-    navItems,
-    enabledLangs: supportedLangs,
-    langAlternates,
-  });
+	const headerHtml = renderHeader({
+		lang: opts.lang,
+		brandHref: withLangPrefix(opts.lang, '/', opts.defaultLang),
+		navItems,
+		enabledLangs: supportedLangs,
+		langAlternates,
+	});
 
-  const toolLinks = (TOOL_PAGES || []).map((p) => ({ href: withLangPrefix(opts.lang, p.path, opts.defaultLang), label: t(opts.lang, p.i18nKey) }));
+	const toolLinks = (TOOL_PAGES || []).map((p) => ({
+		href: withLangPrefix(opts.lang, p.path, opts.defaultLang),
+		label: t(opts.lang, p.i18nKey),
+	}));
 
-  const sidebarHtml = renderSidebar({
-    title: t(opts.lang, 'nav_tools'),
-    items: [{ href: '#percentage-change', label: t(opts.lang, 'tool_percentage_change_title') }, ...toolLinks],
-    id: 'toolNav',
-  });
+	const sidebarHtml = renderSidebar({
+		title: t(opts.lang, 'nav_tools'),
+		items: [
+			{ href: '#percentage-change', label: t(opts.lang, 'tool_percentage_change_title') },
+			...toolLinks,
+		],
+		id: 'toolNav',
+	});
 
-  const footerHtml = renderFooter({ lang: opts.lang });
+	const footerHtml = renderFooter({ lang: opts.lang });
 
-  const contentHtml = `
-    <div class="intro">
-      <h1>${escapeHtml(t(opts.lang, 'tool_percentage_change_title'))}</h1>
-      <p class="text-muted">${escapeHtml(description)}</p>
+	/** 计算器卡片宽度样式。 */
+	const extraHeadHtml = `
+  <style>
+    .pct-card { max-width: 600px; margin: 0 auto 1.5rem; }
+  </style>`;
+
+	const contentHtml = `
+    <div id="percentage-change" class="mb-3">
+      <h1 class="h4 mb-1">${escapeHtml(t(opts.lang, 'tool_percentage_change_title'))}</h1>
+      <p class="text-muted mb-0">${escapeHtml(description)}</p>
     </div>
 
-    <div class="card" style="max-width:600px;margin:0 auto;padding:1rem;">
-      <form id="pctForm">
-        <div class="mb-3">
-          <label class="form-label">${escapeHtml(t(opts.lang, 'tool_percentage_change_original_label') || 'Original value')}</label>
-          <input id="origVal" class="input-lg" type="number" step="any" required />
-        </div>
-        <div class="mb-3">
-          <label class="form-label">${escapeHtml(t(opts.lang, 'tool_percentage_change_new_label') || 'New value')}</label>
-          <input id="newVal" class="input-lg" type="number" step="any" required />
-        </div>
-        <button type="submit" class="btn btn-primary">${escapeHtml(t(opts.lang, 'tool_percentage_change_calculate') || 'Calculate')}</button>
-      </form>
+    <div class="card pct-card">
+      <div class="card-body">
+        <form id="pctForm">
+          <div class="mb-3">
+            <label class="form-label" for="origVal">${escapeHtml(t(opts.lang, 'tool_percentage_change_original_label'))}</label>
+            <input id="origVal" class="input-lg" type="number" step="any" required />
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="newVal">${escapeHtml(t(opts.lang, 'tool_percentage_change_new_label'))}</label>
+            <input id="newVal" class="input-lg" type="number" step="any" required />
+          </div>
+          <button type="submit" class="btn btn-primary">${escapeHtml(t(opts.lang, 'tool_percentage_change_calculate'))}</button>
+        </form>
 
-      <div id="pctResult" class="result mt-3" style="display:none;">
-        <h4>${escapeHtml(t(opts.lang, 'tool_percentage_change_result_label') || 'Percentage change')}</h4>
-        <div id="pctValue" style="font-weight:700;font-size:1.4rem"></div>
-        <div id="pctNote" class="text-muted"></div>
+        <div id="pctResult" class="result mt-3" style="display:none;">
+          <div class="text-muted">${escapeHtml(t(opts.lang, 'tool_percentage_change_result_label'))}</div>
+          <div id="pctValue" style="font-weight:700;font-size:1.4rem"></div>
+          <div id="pctNote" class="text-muted small mt-1"></div>
+        </div>
       </div>
     </div>
 
-    <div class="mt-4" style="max-width:700px;margin:0 auto">${escapeHtml(article)}</div>
-  `;
+    ${renderToolIgSections({ lang: opts.lang, prefix: 'tool_percentage_change', mode: 'formula' })}`;
 
-  const extraBodyHtml = `
+	const referencesHtml = renderToolReferencesSection({
+		lang: opts.lang,
+		links: [
+			{
+				label: t(opts.lang, 'tool_percentage_change_ref_wiki_label'),
+				href: 'https://en.wikipedia.org/wiki/Relative_change',
+			},
+		],
+	});
+
+	const extraBodyHtml = `
   <script>
-    const form = document.getElementById('pctForm');
-    const orig = document.getElementById('origVal');
-    const neu = document.getElementById('newVal');
-    const res = document.getElementById('pctResult');
-    const valEl = document.getElementById('pctValue');
-    const noteEl = document.getElementById('pctNote');
+    (function () {
+      var form = document.getElementById('pctForm');
+      var orig = document.getElementById('origVal');
+      var neu = document.getElementById('newVal');
+      var res = document.getElementById('pctResult');
+      var valEl = document.getElementById('pctValue');
+      var noteEl = document.getElementById('pctNote');
 
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const a = parseFloat(orig.value);
-      const b = parseFloat(neu.value);
-      if (!isFinite(a) || a === 0) {
-        valEl.textContent = '';
-        noteEl.textContent = '${escapeHtml(t(opts.lang, 'tool_percentage_change_result_invalid') || 'Original value must be non-zero') }';
+      var msgInvalid = ${JSON.stringify(t(opts.lang, 'tool_percentage_change_result_invalid'))};
+      var labelInc = ${JSON.stringify(t(opts.lang, 'tool_percentage_change_increase'))};
+      var labelDec = ${JSON.stringify(t(opts.lang, 'tool_percentage_change_decrease'))};
+      var labelFlat = ${JSON.stringify(t(opts.lang, 'tool_percentage_change_no_change'))};
+      var absNote = ${JSON.stringify(t(opts.lang, 'tool_percentage_change_abs_note'))};
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var a = parseFloat(orig.value);
+        var b = parseFloat(neu.value);
+        if (!isFinite(a) || !isFinite(b) || a === 0) {
+          valEl.textContent = '—';
+          noteEl.textContent = msgInvalid;
+          res.style.display = 'block';
+          return;
+        }
+        var delta = b - a;
+        var pct = (delta / a) * 100;
+        var rounded = Math.round(pct * 100) / 100;
+        var sign = pct > 0 ? labelInc : (pct < 0 ? labelDec : labelFlat);
+        var display = (rounded >= 0 ? rounded : Math.abs(rounded)) + '% (' + sign + ')';
+        valEl.textContent = display;
+        noteEl.textContent = absNote.replace('{delta}', String(Math.round(delta * 100) / 100));
         res.style.display = 'block';
-        return;
-      }
-      const delta = b - a;
-      const pct = (delta / a) * 100;
-      const rounded = Math.round(pct * 100) / 100;
-      const sign = pct > 0 ? '${escapeHtml(t(opts.lang, 'tool_percentage_change_increase') || 'increase')}' : (pct < 0 ? '${escapeHtml(t(opts.lang, 'tool_percentage_change_decrease') || 'decrease')}' : '${escapeHtml(t(opts.lang, 'tool_percentage_change_no_change') || 'no change')}');
-      valEl.textContent = (rounded >= 0 ? rounded : Math.abs(rounded)) + '% (' + sign + ')';
-      noteEl.textContent = '${escapeHtml(t(opts.lang, 'tool_percentage_change_example') || '')}';
-      res.style.display = 'block';
-    });
+      });
+    })();
   </script>`;
 
-  
-  const toolMeta = getToolBySlug('how-to-calculate-percentage-change');
-  const toolSeoHtml = toolMeta
-    ? renderToolExtraSections({ lang: opts.lang, defaultLang: opts.defaultLang, tool: toolMeta })
-    : '';
-  const toolJsonLd = toolMeta
-    ? buildToolJsonLd({
-        lang: opts.lang,
-        defaultLang: opts.defaultLang,
-        tool: toolMeta,
-        name: t(opts.lang, toolMeta.i18nKey as any),
-        description,
-        canonicalPath,
-      })
-    : '';
+	const toolMeta = getToolBySlug('how-to-calculate-percentage-change');
+	const toolSeoHtml = toolMeta
+		? renderToolExtraSections({ lang: opts.lang, defaultLang: opts.defaultLang, tool: toolMeta })
+		: '';
+	const toolJsonLd = toolMeta
+		? buildToolJsonLd({
+				lang: opts.lang,
+				defaultLang: opts.defaultLang,
+				tool: toolMeta,
+				name: t(opts.lang, toolMeta.i18nKey as keyof typeof import('../site/i18n/en').default),
+				description,
+				canonicalPath,
+			})
+		: '';
 
-return renderLayout({
-    lang: opts.lang,
-    title,
-    description,
-    canonicalPath,
-    ogImageUrl: 'https://onlinefreetools.org/og-image.png',
-    ogType: 'website',
-    alternates,
-    headerHtml,
-    sidebarHtml,
-    contentHtml: `${contentHtml}${toolSeoHtml}`,
-    extraHeadHtml: toolJsonLd,
-    footerHtml,
-    extraBodyHtml,
-    includeSidebarToggleScript: true,
-    sidebarAutoCloseSelector: '#toolNav a',
-  });
+	return renderLayout({
+		lang: opts.lang,
+		title,
+		description,
+		canonicalPath,
+		ogImageUrl: 'https://onlinefreetools.org/og-image.png',
+		ogType: 'website',
+		alternates,
+		headerHtml,
+		sidebarHtml,
+		contentHtml: `${contentHtml}${toolSeoHtml}${referencesHtml}`,
+		footerHtml,
+		extraHeadHtml: `${extraHeadHtml}${toolJsonLd}`,
+		extraBodyHtml,
+	});
 };

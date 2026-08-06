@@ -5,22 +5,42 @@ const de: SiteLangDict = {
   nav_devlogs: 'Entwicklungsprotokolle',
   nav_tools: 'Werkzeuge',
   footer_text: 'Online Free Tools · Lernprojekt · Iteriert fortlaufend',
-  tool_headers_title: 'Website-Antwort-Header abrufen',
+  tool_headers_title: 'HTTP-Header einer Website prüfen — Response-Header anzeigen',
   tool_headers_description:
-    "HTTP-Response-Header einer URL serverseitig abrufen (HEAD, Fallback GET). Ablauf: HEAD senden, Redirects folgen, Header sammeln, private Hosts blockieren. Beispiel: CORS, Cache-Control, HSTS prüfen, um Redirects und CDN-Einstellungen zu debuggen.",
+    'HTTP-Response-Header einer URL online vom Edge prüfen. Ablauf: https einfügen, HEAD senden (GET bei Bedarf), Redirects folgen, Status und Header-Map anzeigen; private Hosts blockieren. Beispiel: Cache-Control, CORS und HSTS beim CDN- oder Redirect-Debug lesen.',
   tool_headers_article:
-    'Was: Rufen Sie die HTTP-Antworthandler einer Website ab und untersuchen Sie sie. Nützlich zum Debuggen von CORS, Caching, Umleitungen und Überprüfen von Sicherheits- oder CDN-Headern. Szenarien: Entwickler-Debugging, SEO-Prüfungen und Überprüfung der Serverkonfiguration.',
+    'Sehen Sie, welche Header unser Edge für eine öffentliche URL erhält — nützlich für Caching, CORS, Redirects und Security-Header. Anfrage wird proxyt; Seiteninhalt speichern wir nicht.',
   url_label: 'URL',
   url_placeholder: 'z.B. https://beispiel.de',
-  fetch_button: 'Header abrufen',
+  fetch_button: 'Prüfen',
   result_title: 'Ergebnis',
   status_label: 'Status',
   final_url_label: 'Endgültige URL',
   headers_label: 'Header',
   error_prefix: 'Fehler: ',
   note_title: 'Hinweise',
-  note_1: 'Einige Websites unterstützen kein HEAD; wir greifen auf GET zurück.',
-  note_2: 'Aus Sicherheitsgründen werden Anfragen an localhost/private Netzwerke blockiert.',
+  note_1: 'Lehnt ein Host HEAD ab, weichen wir auf GET aus. Ziel sind Header, nicht der HTML-Download.',
+  note_2: 'localhost und private Netze sind gesperrt, damit der Worker keine internen Hosts scannen kann.',
+  tool_headers_how_title: 'So funktioniert es',
+  tool_headers_how_body:
+    'Öffentliche http(s)-URL einfügen und prüfen. Der Edge-Worker sendet HEAD (ggf. GET), folgt Redirects und liefert Status, finale URL und beobachtete Header. Private Ziele werden abgewiesen. Edge-Sicht — kann von lokalem Browser abweichen, wenn CDN regional routet.',
+  tool_headers_rules_title: 'Was der Checker macht',
+  tool_headers_rules_body:
+    'Kurzlebiger Proxy nur zur Header-Inspektion; speichert keinen Seiteninhalt. Namen folgen HTTP-Semantik (siehe Referenzen).',
+  tool_headers_rules_item_1: 'HEAD bevorzugen; GET, wenn HEAD nicht unterstützt wird.',
+  tool_headers_rules_item_2: 'Redirects folgen und finale URL melden.',
+  tool_headers_rules_item_3: 'localhost und private IPs blockieren.',
+  tool_headers_rules_item_4: 'Häufige Header hervorheben: Cache-Control, CORS, CSP usw.',
+  tool_headers_example_title: 'Beispiel',
+  tool_headers_example:
+    'beispiel.de → Status 200, finale URL unverändert; Header mit content-type: text/html und je nach Origin cache-control oder Security-Header.',
+  tool_headers_usecases_title: 'Typische Einsätze',
+  tool_headers_usecase_1: 'Vor dem Release Cache-Control oder CDN-Cache bestätigen.',
+  tool_headers_usecase_2: 'CORS-Preflight debuggen, indem Access-Control-* gelesen wird.',
+  tool_headers_usecase_3: 'Prüfen, ob CSP, HSTS und andere Security-Header wirklich ausgeliefert werden.',
+  tool_headers_ref_rfc9110_label: 'RFC 9110 — HTTP-Semantik',
+  tool_headers_ref_mdn_label: 'MDN — HTTP-Header',
+  tool_headers_ref_rfc9111_label: 'RFC 9111 — HTTP-Caching',
   tool_markdown_title: 'Markdown zu HTML bereinigen — und zurück zu Markdown',
   tool_markdown_description:
     'Aus Markdown sicheres HTML machen, oder aus CMS-/Mail-HTML wieder Markdown holen: Richtung wählen, lokal einfügen. marked/Turndown plus DOMPurify. Beispiel: README als .html, oder Admin-HTML als .md für Git.',
@@ -93,6 +113,59 @@ const de: SiteLangDict = {
   tool_markdown_faq_q5: 'Welche Syntax und Exporte?',
   tool_markdown_faq_a5:
     'CommonMark-Basis; optional vollständiges HTML zum Offline-Teilen.',
+  tool_bmi_title: 'BMI-Rechner — Body-Mass-Index berechnen',
+  tool_bmi_description:
+    'Body-Mass-Index (BMI) mit der Erwachsenen-Screening-Formel berechnen. Ablauf: metrische oder imperiale Einheiten wählen, Gewicht und Größe eingeben, BMI ermitteln und gängigen Kategorien zuordnen. Beispiel: 70 kg und 175 cm → BMI 22,9 (Normal). Nur Bildungs-Screening, keine Diagnose.',
+  tool_bmi_article:
+    'Kostenloser Rechner: wie der BMI Erwachsener aus Gewicht und Größe entsteht — metrische/imperiale Formeln, Grenzwerte, Einschränkungen (Sportler, Kinder). Berechnung im Browser, keine Datenübertragung.',
+  tool_bmi_weight_label: 'Gewicht (kg)',
+  tool_bmi_weight_placeholder: 'Gewicht in Kilogramm eingeben',
+  tool_bmi_height_label: 'Größe (cm)',
+  tool_bmi_height_placeholder: 'Größe in Zentimetern eingeben',
+  tool_bmi_calculate: 'BMI berechnen',
+  tool_bmi_how_title: 'So funktioniert es',
+  tool_bmi_how_body:
+    'Metrisch oder imperial wählen, Gewicht und Größe eintragen, berechnen. Standardformel für Erwachsene, eine Dezimalstelle, Zuordnung zu üblichen Screening-Bändern. Alles lokal im Browser — Ihre Maße werden nicht hochgeladen.',
+  tool_bmi_formula_title: 'BMI-Formel und Erwachsenen-Kategorien',
+  tool_bmi_formula_body:
+    'Metrisch: BMI = Gewicht (kg) ÷ Größe (m)². Imperial: BMI = 703 × Gewicht (lb) ÷ Größe (in)². Grenzwerte folgen weit verbreiteten Screening-Bändern.',
+  tool_bmi_formula_item_1: 'Untergewicht: BMI < 18,5',
+  tool_bmi_formula_item_2: 'Normalgewicht: BMI 18,5–24,9',
+  tool_bmi_formula_item_3: 'Übergewicht: BMI 25–29,9',
+  tool_bmi_formula_item_4: 'Adipositas: BMI ≥ 30',
+  tool_bmi_example_title: 'Beispiel',
+  tool_bmi_example:
+    'Beispiel (metrisch): 70 kg, 175 cm → Größe = 1,75 m → BMI = 70 / (1,75²) ≈ 22,9 → normales Screening-Band.',
+  tool_bmi_usecases_title: 'Typische Einsätze',
+  tool_bmi_usecase_1: 'Kurzer Selbstcheck vor dem Routine-Termin (nur Screening).',
+  tool_bmi_usecase_2: 'Ausgangsbmi beim Fitness-Start neben anderen Werten notieren.',
+  tool_bmi_usecase_3: 'Dieselbe Messung in metrischen und imperialen Einheiten prüfen.',
+  tool_bmi_ref_who_label: 'WHO — Informationsblatt zu Adipositas und Übergewicht',
+  tool_bmi_ref_cdc_label: 'CDC — BMI-Kategorien für Erwachsene',
+  bmi_chart_title: 'BMI-Kategorien Erwachsene (Screening)',
+  bmi_underweight: 'Untergewicht',
+  bmi_normal: 'Normalgewicht',
+  bmi_overweight: 'Übergewicht',
+  bmi_obese: 'Adipositas',
+  bmi_metric_units: 'Metrisch',
+  bmi_imperial_units: 'Imperial',
+  bmi_unit_group_label: 'Einheitensystem',
+  bmi_result_label: 'Ihr BMI',
+  bmi_invalid_input: 'Positive Werte für Gewicht und Größe eingeben.',
+  bmi_weight_lbs: 'Gewicht (lb)',
+  bmi_weight_lbs_placeholder: 'Gewicht in Pfund',
+  bmi_height_ft: 'Größe (ft)',
+  bmi_height_ft_placeholder: 'Fuß',
+  bmi_height_in: 'Größe (in)',
+  bmi_height_in_placeholder: 'Zoll',
+  bmi_interpretation_underweight:
+    'Screening-Ergebnis: Untergewicht-Band. BMI ist keine Diagnose — bei Bedarf Fachpersonal konsultieren.',
+  bmi_interpretation_normal:
+    'Screening-Ergebnis: Normalband für Erwachsene. BMI misst allein weder Körperfett noch Fitness.',
+  bmi_interpretation_overweight:
+    'Screening-Ergebnis: Übergewicht-Band. BMI ist keine Diagnose — bei Bedarf Fachpersonal konsultieren.',
+  bmi_interpretation_obese:
+    'Screening-Ergebnis: Adipositas-Band. BMI ist keine Diagnose — bei Bedarf Fachpersonal konsultieren.',
   tool_text_diff_description:
     'Zwei Texte online vergleichen und sehen, was sich geändert hat. Ablauf: Original und Überarbeitung einfügen, nach Zeile, Wort oder Zeichen vergleichen, optional Leerzeichen ignorieren oder Windows-Zeilenumbrüche (CRLF→LF) angleichen, dann Ergänzungen und Löschungen im Browser markieren. Beispiel: „Hallo Welt“ zu „Hallo Freund“ — im Wortmodus erscheint eine Ersetzung.',
   tool_text_diff_article:
@@ -151,6 +224,312 @@ const de: SiteLangDict = {
   tool_text_diff_faq_a3: 'Windows nutzt oft CRLF, macOS/Linux LF. „CRLF und LF gleich behandeln“ einschalten, dann erneut vergleichen.',
   tool_text_diff_faq_q4: 'Kann ich Bilder oder Binärdateien vergleichen?',
   tool_text_diff_faq_a4: 'Nein. Nur Klartext.',
+  tool_headers_faq_q1: 'Was zeigen HTTP-Response-Header?',
+  tool_headers_faq_a1:
+    'Metadaten der Antwort: Content-Type, Cache-Regeln, Redirects sowie Richtlinien wie HSTS, CSP oder CORS.',
+  tool_headers_faq_q2: 'Lädt das Tool den kompletten HTML-Body herunter?',
+  tool_headers_faq_a2:
+    'HEAD bevorzugt, GET nur bei Bedarf. Ziel ist Header-Inspektion, kein Scraping oder Speichern des Bodys.',
+  tool_headers_faq_q3: 'Warum sind localhost und private IPs gesperrt?',
+  tool_headers_faq_a3:
+    'Private Netze werden blockiert, damit der Worker nicht als Sonde für interne Hosts missbraucht wird.',
+  tool_headers_faq_q4: 'Entspricht das den Browser-DevTools?',
+  tool_headers_faq_a4:
+    'Nicht zwingend. Sie sehen die Edge-Antwort; CDN, Geo-Routing oder Bot-Filter können vom lokalen Browser abweichen.',
+  tool_headers_faq_q5: 'Speichert ihr die geprüften URLs?',
+  tool_headers_faq_a5:
+    'Kurze Edge-Anfrage ohne URL-Verlauf. Keine Geheimnisse in Query-Strings einfügen.',
+  tool_bmi_faq_q1: 'Wie lautet die BMI-Formel?',
+  tool_bmi_faq_a1: 'Metrisch: BMI = Gewicht(kg) / Größe(m)². Imperial: BMI = 703 × Gewicht(lb) / Größe(in)².',
+  tool_bmi_faq_q2: 'Was bedeuten die BMI-Kategorien?',
+  tool_bmi_faq_a2:
+    'Gängige Grenzen: Untergewicht <18,5; Normal 18,5–24,9; Übergewicht 25–29,9; Adipositas ≥30. Das sind Screening-Hilfen, keine Diagnose.',
+  tool_bmi_faq_q3: 'Ist der BMI für Sportler aussagekräftig?',
+  tool_bmi_faq_a3:
+    'Nicht immer. BMI unterscheidet Muskel und Fett nicht. Sportler können trotz wenig Fett im hohen Band liegen — persönliche Einschätzung beim Arzt.',
+  tool_bmi_faq_q4: 'Für Kinder oder Schwangerschaft geeignet?',
+  tool_bmi_faq_a4:
+    'Diese Erwachsenen-Grenzen gelten nicht für Kinder, Jugendliche oder Schwangerschaft. Altersbezogene Kurven und klinische Beratung nutzen.',
+  tool_bmi_disclaimer:
+    'Dieser BMI-Rechner dient nur der bildenden Screening-Orientierung für Erwachsene. Kein medizinischer Rat, keine Krankheitsdiagnose, kein Ersatz für qualifizierte Gesundheitsfachkräfte.',
+  tool_bmi_references:
+    'WHO-Informationsblatt zu Adipositas; CDC-Leitlinie zu BMI-Kategorien Erwachsene; standard metrische und imperiale BMI-Formeln.',
+
+  /* --- IG: ip / roi / mr --- */
+tool_ip_address_title: 'Was ist meine IP-Adresse — Öffentliche IP anzeigen',
+  tool_ip_address_description:
+    'Sehen Sie die öffentliche IP, die unser Edge für Ihre Verbindung beobachtet. Prozess: Seite öffnen oder Aktualisieren tippen; der Worker liest die vertrauenswürdige Client-Adresse. Beispiel: kann 203.0.113.10 zeigen. Mit VPN/Proxy sehen Sie die Exit-IP, nicht die LAN-Adresse.',
+  tool_ip_address_article:
+    'Diese Seite zeigt Ihre öffentliche Exit-IP laut unserem Edge — nützlich für VPN-Checks, Support-Tickets und Allowlist-Debugging. Kein Geolocation- oder ISP-Lookup.',
+  tool_ip_address_how_title: 'So funktioniert es',
+  tool_ip_address_how_body:
+    'Der Browser ruft unsere Edge-API auf. Der Worker liefert die Client-IP der Verbindung (nicht nur einen fälschbaren Header). Beliebig aktualisieren; kein Konto nötig.',
+  tool_ip_address_rules_title: 'Was diese IP bedeutet',
+  tool_ip_address_rules_body:
+    'Der Wert ist die öffentliche Adresse, die unser Edge Ihrer TCP/TLS-Verbindung zuordnet — die Exit-Identität, die Websites meist sehen. Grenzen:',
+  tool_ip_address_rules_item_1: 'Mit VPN oder HTTP-Proxy sehen Sie die Exit-IP des Anbieters, nicht die Heim-LAN-Adresse.',
+  tool_ip_address_rules_item_2: 'Hinter NAT teilen sich Geräte eine öffentliche IP; 192.168.x.x erscheint hier nicht.',
+  tool_ip_address_rules_item_3: 'Wir bevorzugen die Edge-Client-IP gegenüber alleinigem X-Forwarded-For (fälschbar).',
+  tool_ip_address_rules_item_4: 'IPv4 oder IPv6 je nach Pfad; Dual-Stack kann nach Reconnect wechseln.',
+  tool_ip_address_example_title: 'Beispiel',
+  tool_ip_address_example:
+    'Dokumentationsbeispiel: Edge sieht 203.0.113.10 (TEST-NET-3). Ihr Live-Ergebnis ist Ihre echte öffentliche Exit-IP.',
+  tool_ip_address_usecases_title: 'Wann sinnvoll',
+  tool_ip_address_usecase_1: 'Prüfen, ob VPN/Proxy die öffentliche IP wirklich ändert.',
+  tool_ip_address_usecase_2: 'Support oder Firewall die freizugebende öffentliche IP nennen.',
+  tool_ip_address_usecase_3: 'Schneller Check beim Debug von Remote-Zugriff oder API-Allowlists.',
+  tool_ip_address_ref_mdn_label: 'MDN — X-Forwarded-For-Header (Spoofing-Hinweise)',
+  tool_ip_address_ref_cloudflare_label: 'Cloudflare Learning — Was ist eine IP-Adresse?',
+  ip_label: 'Ihre öffentliche IP',
+  fetch_ip_button: 'Aktualisieren',
+  fetching_message: 'Wird geladen…',
+  tool_ip_address_faq_q1: 'Warum unterscheidet sie sich von meiner LAN-IP?',
+  tool_ip_address_faq_a1:
+    'Private Adressen (z. B. 192.168.x.x) bleiben per NAT im lokalen Netz. Hier erscheint nur die öffentliche Internet-Adresse.',
+  tool_ip_address_faq_q2: 'Speichern Sie meine IP?',
+  tool_ip_address_faq_a2:
+    'Die Abfrage ist eine kurze Edge-Anfrage. Es gibt kein IP-Verlaufsprodukt.',
+  tool_ip_address_faq_q3: 'Wie erhält die Seite meine IP?',
+  tool_ip_address_faq_a3:
+    'Der Browser ruft die Edge-API auf; der Worker liefert die vertrauenswürdige Client-IP dieser Verbindung.',
+  tool_ip_address_faq_q4: 'Was bei VPN oder Proxy?',
+  tool_ip_address_faq_a4:
+    'Meist sehen Sie die Exit-IP von VPN/Proxy. Das ist erwartet: Websites sehen dieselbe Exit-Identität.',
+
+  tool_roi_title: 'ROI-Rechner — Return on Investment berechnen',
+  tool_roi_description:
+    'Berechnen Sie den einfachen ROI mit (Ertrag − Kosten) / Kosten × 100 % oder (Endwert − Anfang) / Anfang × 100 %. Prozess: Kosten und Endwert (oder Nettogewinn) eingeben und Annahmen zu Steuern, Gebühren und Zeit prüfen. Beispiel: Kosten 1000, Ende 1300 → ROI 30 %. Nur Bildungsillustration — keine Anlageberatung.',
+  tool_roi_article:
+    'Einfacher ROI stellt Nettogewinn zum Kostenbetrag in Prozent dar. Geeignet für grobe Kampagnen-/Projekt-Recaps; kein Mehrperioden-IRR/NPV.',
+  tool_roi_initial_label: 'Anfangsinvestition (Kosten)',
+  tool_roi_initial_placeholder: 'z. B. 1000',
+  tool_roi_final_label: 'Endwert',
+  tool_roi_final_placeholder: 'z. B. 1300',
+  tool_roi_gain_label: 'Nettogewinn (optional)',
+  tool_roi_gain_placeholder: 'Falls bekannt, ersetzt Ende − Anfang',
+  tool_roi_calculate: 'Berechnen',
+  tool_roi_result_label: 'ROI',
+  tool_roi_how_title: 'So funktioniert es',
+  tool_roi_how_body:
+    'Geben Sie Kosten und Endwert oder einen bekannten Nettogewinn ein. ROI = Netto / Kosten × 100 %. Ohne Gewinn: Netto = Ende − Anfang. Kosten 0 werden abgelehnt.',
+  tool_roi_formula_title: 'Formel und Annahmen',
+  tool_roi_formula_body:
+    'ROI = (Endwert − Anfangsinvestition) / Anfangsinvestition × 100 %, oder Nettogewinn / Kosten × 100 %. Beachten Sie:',
+  tool_roi_formula_item_1: 'Steuern: werden nicht geschätzt — ggf. Nachsteuerwerte selbst eintragen.',
+  tool_roi_formula_item_2: 'Zeit: einfacher ROI ignoriert die Haltedauer; keine annualisierte Rendite.',
+  tool_roi_formula_item_3: 'Gebühren: Provisionen und Plattformkosten selbst in Kosten oder Endwert einrechnen.',
+  tool_roi_formula_item_4: 'Mehrperioden-Cashflows und IRR/NPV liegen außerhalb dieses Einperioden-Prozentsatzes.',
+  tool_roi_example_title: 'Beispiel',
+  tool_roi_example:
+    'Beispiel: Kosten 1000, Endwert 1300 → Gewinn 300 → ROI = 300 / 1000 × 100 % = 30 %.',
+  tool_roi_usecases_title: 'Wann sinnvoll',
+  tool_roi_usecase_1: 'Marketing: grober Kampagnen-ROI bei bekannten Ausgaben und attribuierter Einnahme.',
+  tool_roi_usecase_2: 'Unterricht: Basis-ROI-Prozentsatz mit festen Zahlen üben.',
+  tool_roi_usecase_3: 'Projektabschluss: eine Initiative als Kosten/Gewinn-Paar zusammenfassen (nur Schätzung).',
+  tool_roi_ref_investopedia_label: 'Investopedia — Return on Investment (ROI)',
+  tool_roi_ref_guide_label: 'Investopedia — Leitfaden zur ROI-Berechnung',
+  tool_roi_interpret_positive: 'Positiver ROI (Gewinn relativ zu den Kosten) — nur Bildungsillustration.',
+  tool_roi_interpret_zero: 'Null-ROI — weder Gewinn noch Verlust bei diesen Eingaben.',
+  tool_roi_interpret_negative: 'Negativer ROI (Verlust relativ zu den Kosten) — nur Bildungsillustration.',
+  tool_roi_zero_cost: 'Die Anfangsinvestition muss größer als null sein.',
+  tool_roi_faq_q1: 'Ist das Anlageberatung?',
+  tool_roi_faq_a1: 'Nein. Ergebnisse sind nur Bildungsillustrationen, keine Anlage-, Steuer- oder Finanzberatung.',
+  tool_roi_faq_q2: 'Welche Formel nutzt der Rechner?',
+  tool_roi_faq_a2:
+    'ROI = (Ende − Anfang) / Anfang × 100 %, oder Nettogewinn / Kosten × 100 %, wenn Sie den Gewinn eingeben.',
+  tool_roi_faq_q3: 'Was ist mit Steuern, Gebühren und Zeit?',
+  tool_roi_faq_a3:
+    'Steuern und Gebühren werden nicht geschätzt — rechnen Sie sie selbst ein. Einfacher ROI annualisiert auch nicht.',
+  tool_roi_faq_q4: 'Was bei Kosten null?',
+  tool_roi_faq_a4: 'ROI ist undefiniert (Division durch null). Geben Sie positive Kosten ein.',
+  tool_roi_disclaimer:
+    'ROI-Ergebnisse sind nur Bildungsillustrationen und keine Anlage-, Steuer- oder Finanzberatung. Vergangene oder hypothetische Renditen garantieren keine zukünftigen Ergebnisse.',
+  tool_roi_references:
+    'Investopedia-Definitionen und Leitfäden zu ROI; einfacher ROI = Nettogewinn / Kosten.',
+
+  tool_marginal_revenue_title: 'Grenzerlös-Rechner — Formel ΔTR / ΔQ',
+  tool_marginal_revenue_description:
+    'Berechnen Sie den Grenzerlös mit MR = ΔTR / ΔQ. Prozess: Menge und Gesamterlös an zwei Punkten eingeben, ΔTR und ΔQ bilden, dann teilen. Beispiel: Menge 10→11, Erlös 1000→1080 → MR = 80. Nur Bildungszweck — keine Preisberatung.',
+  tool_marginal_revenue_article:
+    'Grenzerlös ist die Änderung des Gesamterlöses bei Mengenänderung. Dieser Rechner zeigt die diskrete Ableitung zwischen zwei Punkten.',
+  tool_marginal_revenue_how_title: 'So funktioniert es',
+  tool_marginal_revenue_how_body:
+    'Geben Sie Menge und Gesamterlös für Stufe 1 und Stufe 2 ein. Es wird ΔTR = TR2 − TR1, ΔQ = Q2 − Q1 und MR = ΔTR / ΔQ im Browser berechnet.',
+  tool_marginal_revenue_formula_title: 'Formelableitung',
+  tool_marginal_revenue_formula_body:
+    'Per Definition misst der Grenzerlös, wie sich der Gesamterlös ändert, wenn sich die Menge ändert. Mit zwei Punkten:',
+  tool_marginal_revenue_formula_item_1: 'ΔTR = TR₂ − TR₁ (Änderung des Gesamterlöses)',
+  tool_marginal_revenue_formula_item_2: 'ΔQ = Q₂ − Q₁ (Mengenänderung)',
+  tool_marginal_revenue_formula_item_3: 'MR = ΔTR / ΔQ wenn ΔQ ≠ 0',
+  tool_marginal_revenue_formula_item_4:
+    'Ein diskreter Schritt approximiert den mittleren MR im Intervall; kontinuierliche Modelle nutzen dTR/dQ. Negativer MR heißt: Erlös sinkt bei steigender Menge.',
+  tool_marginal_revenue_example_title: 'Beispiel',
+  tool_marginal_revenue_example:
+    'Beispiel: Q₁ = 10, TR₁ = 1000; Q₂ = 11, TR₂ = 1080 → ΔTR = 80, ΔQ = 1 → MR = 80.',
+  tool_marginal_revenue_usecases_title: 'Wann sinnvoll',
+  tool_marginal_revenue_usecase_1: 'Hausaufgabe: zweistufige Mengen-/Erlöstabelle prüfen.',
+  tool_marginal_revenue_usecase_2: 'Grobe Schätzung: Erlöswirkung bei einer zusätzlichen Einheit.',
+  tool_marginal_revenue_usecase_3: 'Grenzerlös und Durchschnittserlös in der Einführungsmikroökonomie vergleichen.',
+  tool_marginal_revenue_ref_investopedia_label: 'Investopedia — Marginal Revenue (MR)',
+  tool_marginal_revenue_ref_openstax_label: 'OpenStax — Principles of Microeconomics (Wettbewerb)',
+  tool_marginal_revenue_q1_label: 'Menge (Q₁)',
+  tool_marginal_revenue_q1_placeholder: 'z. B. 10',
+  tool_marginal_revenue_tr1_label: 'Gesamterlös (TR₁)',
+  tool_marginal_revenue_tr1_placeholder: 'z. B. 1000',
+  tool_marginal_revenue_q2_label: 'Menge (Q₂)',
+  tool_marginal_revenue_q2_placeholder: 'z. B. 11',
+  tool_marginal_revenue_tr2_label: 'Gesamterlös (TR₂)',
+  tool_marginal_revenue_tr2_placeholder: 'z. B. 1080',
+  tool_marginal_revenue_quantity_label: 'Menge',
+  tool_marginal_revenue_revenue_label: 'Gesamterlös',
+  tool_marginal_revenue_calculate: 'MR berechnen',
+  tool_marginal_revenue_result_label: 'Grenzerlös',
+  tool_marginal_revenue_zero_dq: 'ΔQ ist 0 — die Menge muss sich zwischen den Punkten ändern.',
+  tool_marginal_revenue_detail_tpl: 'ΔTR = {dTR}, ΔQ = {dQ} → MR = {mr}',
+  tool_marginal_revenue_faq_q1: 'Was, wenn ΔQ null ist?',
+  tool_marginal_revenue_faq_a1: 'MR ist undefiniert, wenn sich die Menge nicht ändert. Wählen Sie zwei unterschiedliche Mengen.',
+  tool_marginal_revenue_faq_q2: 'Wie wird der Grenzerlös hier abgeleitet?',
+  tool_marginal_revenue_faq_a2:
+    'MR = ΔTR / ΔQ mit ΔTR = TR₂ − TR₁ und ΔQ = Q₂ − Q₁. Diskrete Ableitung, keine kontinuierliche Ableitung.',
+  tool_marginal_revenue_faq_q3: 'Unterschied zum Durchschnittserlös?',
+  tool_marginal_revenue_faq_a3:
+    'Durchschnittserlös ist TR / Q auf einem Niveau. Grenzerlös ist die TR-Änderung bei Mengenänderung; sie fallen nur in Sonderfällen zusammen.',
+  tool_marginal_revenue_faq_q4: 'Positiver MR heißt mehr produzieren?',
+  tool_marginal_revenue_faq_a4:
+    'Nein. Dieses Tool gibt keine Preis- oder Produktionsberatung; Grenzkosten und andere Restriktionen zählen ebenso.',
+  tool_marginal_revenue_disclaimer:
+    'Dieser Rechner dient dem Lernen mikroökonomischer Konzepte. Keine Geschäfts-, Preis- oder Anlageberatung.',
+  tool_marginal_revenue_references:
+    'Investopedia-Eintrag zu Marginal Revenue; einführende Behandlung von MR = ΔTR/ΔQ (z. B. OpenStax).',
+
+  tool_squarefeet_title: 'Quadratfuß in m² umrechnen — Für Wohnung & Renovierung',
+  tool_squarefeet_description:
+    'Fläche zwischen Quadratfuß und Quadratmetern für Inserate und Renovierung umrechnen. Ablauf: ft/m/in wählen, Länge × Breite eingeben, Fläche berechnen, dann ft² und m² mit NIST-Faktor 1 ft² = 0.09290304 m² anzeigen. Beispiel: Wohnung 850 sq ft ≈ 78,97 m².',
+  tool_squarefeet_article:
+    'Rechteckfläche aus Länge und Breite schätzen und zwischen Quadratfuß und Quadratmetern umrechnen. Für Inserate, Boden und Farbe — keine Immobilienbewertung und keine Trennung von Wohn-/Bruttofläche.',
+  tool_squarefeet_length_label: 'Länge',
+  tool_squarefeet_length_placeholder: 'Länge eingeben',
+  tool_squarefeet_width_label: 'Breite',
+  tool_squarefeet_width_placeholder: 'Breite eingeben',
+  tool_squarefeet_calculate: 'Fläche umrechnen',
+  tool_squarefeet_unit_group_label: 'Eingabeeinheiten',
+  unit_feet: 'Fuß',
+  unit_meters: 'Meter',
+  unit_inches: 'Zoll',
+  sqft_unit: 'sq ft',
+  tool_squarefeet_result_note: 'Auf zwei Dezimalstellen gerundet. Faktor: 1 ft² = 0.09290304 m².',
+  tool_squarefeet_result_sqm: '≈ {sqm} m²',
+  tool_squarefeet_invalid_input: 'Positive Länge und Breite eingeben.',
+  tool_squarefeet_usage_title: 'Nutzung',
+  tool_squarefeet_usage: 'Einheit wählen, Länge und Breite eingeben — Ergebnis in sq ft plus m²-Äquivalent.',
+  tool_squarefeet_how_title: 'So funktioniert’s',
+  tool_squarefeet_how_body:
+    'Wählen Sie Fuß, Meter oder Zoll. Multiplizieren Sie Länge × Breite nach Umrechnung in Fuß und wandeln Sie mit dem SI-Faktor in m² um. Leere oder negative Werte werden abgelehnt.',
+  tool_squarefeet_formula_title: 'Flächenformel und Umrechnungsfaktor',
+  tool_squarefeet_formula_body:
+    'Fläche (ft²) = Länge (ft) × Breite (ft). In Metern: ft² = (L×W) ÷ 0.09290304. In Zoll: jede Seite ÷ 12. Faktor: 1 ft² = 0.09290304 m².',
+  tool_squarefeet_formula_item_1: 'Eingabe Fuß: Fläche_ft² = L × W',
+  tool_squarefeet_formula_item_2: 'Eingabe Meter: Fläche_ft² = (L × W) / 0.09290304',
+  tool_squarefeet_formula_item_3: 'Eingabe Zoll: Fläche_ft² = (L/12) × (W/12)',
+  tool_squarefeet_formula_item_4: 'm² = Fläche_ft² × 0.09290304 (NIST / SI)',
+  tool_squarefeet_example_title: 'Beispiel',
+  tool_squarefeet_example:
+    'Inserat: Wohnung 850 sq ft → 850 × 0.09290304 ≈ 78,97 m². Raum: 10 ft × 12 ft = 120 sq ft ≈ 11,15 m².',
+  tool_squarefeet_usecases_title: 'Wann es hilft',
+  tool_squarefeet_usecase_1: 'US-Inserat in sq ft mit lokalen m²-Anzeigen vergleichen.',
+  tool_squarefeet_usecase_2: 'Boden/Teppich für einen Rechteckraum vor der Bestellung schätzen.',
+  tool_squarefeet_usecase_3: 'Grobe Farb-/Renovierungsmenge bei gemischten Einheiten im Plan.',
+  tool_squarefeet_ref_nist_label: 'NIST SP 811 — Leitfaden zum Internationalen Einheitensystem (SI)',
+  tool_squarefeet_faq_q1: 'Welchen Faktor ft² ↔ m² nutzt ihr?',
+  tool_squarefeet_faq_a1: 'Genau 1 ft² = 0.09290304 m² (SI / NIST). Anzeige mit zwei Dezimalstellen.',
+  tool_squarefeet_faq_q2: 'Unterscheidet ihr Wohn- und Bruttofläche?',
+  tool_squarefeet_faq_a2: 'Nein. Nur die ebene Rechteckfläche wird umgerechnet.',
+  tool_squarefeet_faq_q3: 'Kann man damit Immobilienpreise schätzen?',
+  tool_squarefeet_faq_a3: 'Nein. Flächenumrechnung ist keine Bewertung und kein Preismodell.',
+  tool_squarefeet_faq_q4: 'Und L-förmige Räume?',
+  tool_squarefeet_faq_a4: 'In Rechtecke teilen, je umrechnen und addieren.',
+  tool_percentage_change_title: 'Prozentuale Änderung berechnen — Von Alt- zu Neuwert',
+  tool_percentage_change_description:
+    'Berechnen Sie prozentuale Zu- oder Abnahme vom alten zum neuen Wert. Ablauf: beide Werte eingeben, (neu − alt) / alt × 100 anwenden, Vorzeichen lesen. Beispiel: 80 → 100 = +25 %. Für Umsatz MoM, DAU und Preise — nicht Prozentpunkte.',
+  tool_percentage_change_article:
+    'Relative prozentuale Änderung beantwortet, wie stark eine Kennzahl zur Basis bewegt. Alt- und Neuwert eingeben; Formel (neu − alt) / alt × 100. Für KPIs, kein ROI-Ersatz.',
+  tool_percentage_change_original_label: 'Alter Wert',
+  tool_percentage_change_new_label: 'Neuer Wert',
+  tool_percentage_change_calculate: 'Berechnen',
+  tool_percentage_change_result_label: 'Prozentuale Änderung',
+  tool_percentage_change_example:
+    'Vollbeispiel: alt 80, neu 100 → Δ = 20 → (20 / 80) × 100 = +25 %. Rückgang: 100 → 80 = −20 %.',
+  tool_percentage_change_result_invalid: 'Alter Wert muss eine Zahl ungleich null sein.',
+  tool_percentage_change_increase: 'Zunahme',
+  tool_percentage_change_decrease: 'Abnahme',
+  tool_percentage_change_no_change: 'keine Änderung',
+  tool_percentage_change_abs_note: 'Absolute Änderung: {delta}',
+  tool_percentage_change_how_title: 'So funktioniert’s',
+  tool_percentage_change_how_body:
+    'Basis (alt) und späteren Wert eingeben. Subtrahieren, durch alt teilen, ×100. Positiv = Plus; negativ = Minus. Bei alt = 0 ist relative Änderung undefiniert.',
+  tool_percentage_change_formula_title: 'Formel der prozentualen Änderung',
+  tool_percentage_change_formula_body:
+    'Änderung % = (neu − alt) / alt × 100. Nenner mit vorzeichenbehaftetem Alt-Wert (nicht |alt|).',
+  tool_percentage_change_formula_item_1: 'Δ = neu − alt',
+  tool_percentage_change_formula_item_2: 'Prozent = (Δ / alt) × 100',
+  tool_percentage_change_formula_item_3: 'alt = 0 → undefiniert (Fehler)',
+  tool_percentage_change_example_title: 'Beispiel',
+  tool_percentage_change_usecases_title: 'Business- & Datenfälle',
+  tool_percentage_change_usecase_1: 'Monatsumsatz: GMV 80 letzter Monat vs. 100 dieser → +25 %.',
+  tool_percentage_change_usecase_2: 'Produkt: DAU von 50k auf 55k → +10 % relativ.',
+  tool_percentage_change_usecase_3: 'Preis: von 40 auf 34 → −15 % (nicht „6 Prozentpunkte“).',
+  tool_percentage_change_ref_wiki_label: 'Wikipedia — Relative change and difference',
+  tool_percentage_change_faq_q1: 'Wie lautet die Formel?',
+  tool_percentage_change_faq_a1: 'Änderung % = (neu − alt) / alt × 100. Positiv = Zunahme; negativ = Abnahme.',
+  tool_percentage_change_faq_q2: 'Warum darf der alte Wert nicht null sein?',
+  tool_percentage_change_faq_a2: 'Division durch null ist undefiniert. Ohne Basis keine relative Änderung.',
+  tool_percentage_change_faq_q3: 'Dasselbe wie Prozentpunkte?',
+  tool_percentage_change_faq_a3: 'Nein. Von 10 % auf 12 % sind +2 Punkte, aber +20 % relativ.',
+  tool_percentage_change_faq_q4: 'Unterschied zu ROI?',
+  tool_percentage_change_faq_a4: 'ROI vergleicht Gewinn mit Investitionskosten. Prozentuale Änderung vergleicht jeden Neuwert mit einer alten Basis.',
+  tool_gradient_title: 'Gradient berechnen — Multivariables ∇f (partielle Ableitungen)',
+  tool_gradient_description:
+    'Berechnen Sie den Gradienten ∇f eines Skalarfeldes als Vektor partieller Ableitungen. Ablauf: nach jeder Variablen ableiten, ∇f bilden, an einem Punkt auswerten. Demo f(x,y)=x²y+3y → ∇f=(2xy, x²+3); bei (1,2) → (4,4). Für Optimierung und ML-Gradientenabstieg.',
+  tool_gradient_desc:
+    'Berechnen Sie den Gradienten ∇f eines Skalarfeldes als Vektor partieller Ableitungen. Ablauf: nach jeder Variablen ableiten, ∇f bilden, an einem Punkt auswerten. Demo f(x,y)=x²y+3y → ∇f=(2xy, x²+3); bei (1,2) → (4,4). Für Optimierung und ML-Gradientenabstieg.',
+  tool_gradient_article:
+    'Der Gradient einer multivariablen skalaren Funktion ist der Vektor ihrer ersten partiellen Ableitungen. Er zeigt steilsten lokalen Anstieg. Keine Steigungsrechner für zwei Punkte.',
+  tool_gradient_fn_hint: 'Demo-Funktion (fest im interaktiven Kasten):',
+  tool_gradient_x_label: 'x',
+  tool_gradient_x_placeholder: 'z. B. 1',
+  tool_gradient_y_label: 'y',
+  tool_gradient_y_placeholder: 'z. B. 2',
+  tool_gradient_calculate: '∇f auswerten',
+  tool_gradient_result_label: 'Gradient an Ihrem Punkt',
+  tool_gradient_result_note: 'Ausgewertet f(x,y)=x²y+3y bei ({x}, {y}).',
+  tool_gradient_invalid_input: 'Endliche Zahlenwerte für x und y eingeben.',
+  tool_gradient_how_title: 'So funktioniert’s',
+  tool_gradient_how_body:
+    'Für ein Skalar f jede partielle ∂f/∂xᵢ bei festen übrigen Variablen bilden, zu ∇f stapeln, Koordinaten einsetzen. Der Kasten nutzt f(x,y)=x²y+3y zum Nachrechnen.',
+  tool_gradient_formula_title: 'Formel des multivariablen Gradienten',
+  tool_gradient_formula_body:
+    '∇f = (∂f/∂x₁, …, ∂f/∂xₙ). Zwei Variablen: ∇f(x,y)=(∂f/∂x, ∂f/∂y). ∇f = steilster Anstieg; −∇f im Gradientenabstieg.',
+  tool_gradient_formula_item_1: '∂f/∂xᵢ für jede Variable bilden',
+  tool_gradient_formula_item_2: 'Vektor ∇f zusammensetzen',
+  tool_gradient_formula_item_3: 'Komponenten am Punkt auswerten',
+  tool_gradient_formula_item_4: 'Demo: f=x²y+3y → ∇f=(2xy, x²+3)',
+  tool_gradient_example_title: 'Beispiel',
+  tool_gradient_example:
+    'f(x,y)=x²y+3y. Partiellen: ∂f/∂x=2xy, ∂f/∂y=x²+3. Bei (1,2): ∇f=(4,4).',
+  tool_gradient_usecases_title: 'Optimierung & Machine Learning',
+  tool_gradient_usecase_1: 'Hausaufgaben-Partiellen vor dem Optimierungsschritt prüfen.',
+  tool_gradient_usecase_2: 'Gradientenabstieg erklären: Schritt entgegen ∇loss.',
+  tool_gradient_usecase_3: 'Physik-Intuition: ∇f zeigt, wo das Skalarfeld am schnellsten wächst.',
+  tool_gradient_ref_wiki_label: 'Wikipedia — Gradient',
+  tool_gradient_ref_khan_label: 'Khan Academy — The gradient',
+  tool_gradient_faq_q1: 'Was ist ein Gradient in der Mehrvariablen-Analysis?',
+  tool_gradient_faq_a1: '∇f ist der Vektor der partiellen Ableitungen und zeigt steilsten lokalen Anstieg.',
+  tool_gradient_faq_q2: 'Wie berechnet man ihn von Hand?',
+  tool_gradient_faq_a2: 'Nach jeder Variablen ableiten (andere fest), Vektor bilden, am Punkt auswerten.',
+  tool_gradient_faq_q3: 'Gleicher „Gradient“ wie im ML-Gradientenabstieg?',
+  tool_gradient_faq_a3: 'Ja, dasselbe Objekt: ∇ einer skalaren Loss. Die Seite erklärt die Definition, trainiert kein Modell.',
+  tool_gradient_faq_q4: 'Ist das ein Steigungsrechner für zwei Punkte?',
+  tool_gradient_faq_a4: 'Nein. Rise/run ist ein anderes Werkzeug; hier ist ∇f der Partielle-Vektor.',
 
 };
 export default de;

@@ -125,6 +125,130 @@ export const renderToolExtraSections = (opts: {
 };
 
 /**
+ * 可点击权威引用条目。
+ */
+export type ToolReferenceLink = {
+	/** 可见锚文本 */
+	label: string;
+	/** 绝对 URL */
+	href: string;
+};
+
+/**
+ * 渲染 How / Formula|Rules / Example / Use cases 结构化 IG 区块。
+ * 键约定：`{prefix}_how_title`、`_how_body`、`_formula_title` 或 `_rules_title`、
+ * `_formula_body` 或 `_rules_body`、可选 `_formula_item_1…n` / `_rules_item_1…n`、
+ * `_example_title`、`_example`、`_usecases_title`、`_usecase_1…n`。
+ * 缺失键则跳过对应小节（不回退成 key 字符串）。
+ */
+export const renderToolIgSections = (opts: {
+	lang: SiteLang;
+	/** 如 tool_bmi */
+	prefix: string;
+	/** 使用 formula_* 还是 rules_* 标题键 */
+	mode?: 'formula' | 'rules';
+	/** Use case 条数上限（默认 3） */
+	usecaseCount?: number;
+	/** 公式/规则列表项上限（默认 4） */
+	ruleItemCount?: number;
+}) => {
+	const { lang, prefix } = opts;
+	const mode = opts.mode ?? 'formula';
+	const usecaseCount = opts.usecaseCount ?? 3;
+	const ruleItemCount = opts.ruleItemCount ?? 4;
+	const parts: string[] = [];
+
+	/** 读取 i18n；若等于 key 本身则视为未配置。 */
+	const tx = (key: string) => {
+		const val = t(lang, key as keyof typeof import('../../site/i18n/en').default);
+		if (!val || val === key) return '';
+		return val;
+	};
+
+	const howTitle = tx(`${prefix}_how_title`);
+	const howBody = tx(`${prefix}_how_body`);
+	if (howTitle && howBody) {
+		parts.push(`
+    <section class="mt-4" id="how" aria-labelledby="how-heading">
+      <h2 class="h5" id="how-heading">${escapeHtml(howTitle)}</h2>
+      <p class="text-muted mb-0">${escapeHtml(howBody)}</p>
+    </section>`);
+	}
+
+	const midTitle = tx(`${prefix}_${mode}_title`);
+	const midBody = tx(`${prefix}_${mode}_body`);
+	const midItems: string[] = [];
+	for (let i = 1; i <= ruleItemCount; i++) {
+		const item = tx(`${prefix}_${mode}_item_${i}`);
+		if (item) midItems.push(item);
+	}
+	if (midTitle && (midBody || midItems.length)) {
+		const list =
+			midItems.length > 0
+				? `<ul class="text-muted mb-2">${midItems
+						.map((x) => `<li>${escapeHtml(x)}</li>`)
+						.join('')}</ul>`
+				: '';
+		const body = midBody ? `<p class="text-muted mb-2">${escapeHtml(midBody)}</p>` : '';
+		parts.push(`
+    <section class="mt-4" id="${mode}" aria-labelledby="${mode}-heading">
+      <h2 class="h5" id="${mode}-heading">${escapeHtml(midTitle)}</h2>
+      ${body}
+      ${list}
+    </section>`);
+	}
+
+	const exTitle = tx(`${prefix}_example_title`);
+	const exBody = tx(`${prefix}_example`);
+	if (exTitle && exBody) {
+		parts.push(`
+    <section class="mt-4" id="example" aria-labelledby="example-heading">
+      <h2 class="h5" id="example-heading">${escapeHtml(exTitle)}</h2>
+      <p class="text-muted mb-0">${escapeHtml(exBody)}</p>
+    </section>`);
+	}
+
+	const ucTitle = tx(`${prefix}_usecases_title`);
+	const ucItems: string[] = [];
+	for (let i = 1; i <= usecaseCount; i++) {
+		const item = tx(`${prefix}_usecase_${i}`);
+		if (item) ucItems.push(item);
+	}
+	if (ucTitle && ucItems.length) {
+		parts.push(`
+    <section class="mt-4" id="use-cases" aria-labelledby="usecases-heading">
+      <h2 class="h5" id="usecases-heading">${escapeHtml(ucTitle)}</h2>
+      <ul class="text-muted mb-0">${ucItems.map((x) => `<li>${escapeHtml(x)}</li>`).join('')}</ul>
+    </section>`);
+	}
+
+	return parts.join('\n');
+};
+
+/**
+ * 渲染可点击 References 列表（权威出站链）。
+ */
+export const renderToolReferencesSection = (opts: {
+	lang: SiteLang;
+	links: ToolReferenceLink[];
+}) => {
+	if (!opts.links.length) return '';
+	const items = opts.links
+		.map(
+			(l) =>
+				`<li><a href="${escapeHtml(l.href)}" rel="noopener noreferrer" target="_blank">${escapeHtml(
+					l.label
+				)}</a></li>`
+		)
+		.join('');
+	return `
+    <section class="mt-4" id="references" aria-labelledby="refs-heading">
+      <h2 class="h5" id="refs-heading">${escapeHtml(t(opts.lang, 'tool_references_title'))}</h2>
+      <ul class="mb-0">${items}</ul>
+    </section>`;
+};
+
+/**
  * 生成 BreadcrumbList + WebApplication JSON-LD（与可见内容一致）。
  */
 export const buildToolJsonLd = (opts: {

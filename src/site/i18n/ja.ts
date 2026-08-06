@@ -5,22 +5,42 @@ const ja: SiteLangDict = {
   nav_devlogs: '開発ログ',
   nav_tools: 'ツール',
   footer_text: 'Online Free Tools · 学習プロジェクト · 継続的にイテレーション',
-  tool_headers_title: 'Webサイトレスポンスヘッダーを取得',
+  tool_headers_title: 'サイトのHTTPヘッダを確認 — レスポンスヘッダ検査',
   tool_headers_description:
-    "サーバー側で URL の HTTP レスポンスヘッダーを取得（HEAD、405/501 の場合は GET にフォールバック）。手順：HEAD を送信し、リダイレクトを追跡、ヘッダーを収集、プライベートホストをブロック。例：CORS、Cache-Control、HSTS を確認してリダイレクトや CDN 設定をデバッグ。",
+    'URLのHTTPレスポンスヘッダをエッジからオンライン確認。手順：httpsを貼り付け、HEAD送信（必要ならGET）、リダイレクト追跡、ステータスとヘッダー一覧を表示、プライベートホストを拒否。例：CDNやリダイレクト調査でCache-Control・CORS・HSTSを読む。',
   tool_headers_article:
-    '何ですか：WebサイトのHTTPレスポンスヘッダーを取得・検査します。CORS、キャッシュ、リダイレクト、セキュリティやCDNヘッダーのデバッグに役立ちます。利用シーン：開発者によるデバッグ、SEOチェック、サーバー構成確認。',
+    '公開URLについてエッジが受け取ったレスポンスヘッダを確認できます。キャッシュ、CORS、リダイレクト、セキュリティヘッダの点検に使えます。リクエストはプロキシ経由で、ページ本文は保存しません。',
   url_label: 'URL',
   url_placeholder: '例：https://example.com',
-  fetch_button: 'ヘッダーを取得',
+  fetch_button: '確認する',
   result_title: '結果',
   status_label: 'ステータス',
   final_url_label: '最終URL',
   headers_label: 'ヘッダー',
   error_prefix: 'エラー：',
   note_title: '注意',
-  note_1: '一部のサイトではHEADがサポートされていないため、GETにフォールバックします。',
-  note_2: 'セキュリティ上、ローカルホスト/プライベートネットワークへのリクエストはブロックされています。',
+  note_1: 'HEADを拒否するサイトはGETに切り替えます。目的はヘッダー確認であり、HTML全体の取得ではありません。',
+  note_2: 'localhostとプライベートネットワークはブロックされ、内部ホストのスキャンに使えません。',
+  tool_headers_how_title: '使い方',
+  tool_headers_how_body:
+    '公開のhttp(s) URLを貼って確認。エッジWorkerがHEAD（必要ならGET）を送り、リダイレクトを追い、観測したステータス・最終URL・ヘッダーを返します。内部宛ては拒否。エッジ視点のため、CDNの地域振り分けでローカルブラウザと異なる場合があります。',
+  tool_headers_rules_title: 'チェッカーの動作',
+  tool_headers_rules_body:
+    'ヘッダー確認用の短命プロキシです。ページ本文は製品機能として保持しません。名称はHTTPセマンティクスに従います（参考リンク参照）。',
+  tool_headers_rules_item_1: 'HEAD優先。未対応ならGET。',
+  tool_headers_rules_item_2: 'リダイレクトを追い、最終URLを表示。',
+  tool_headers_rules_item_3: 'localhostとプライベートIPを拒否。',
+  tool_headers_rules_item_4: 'Cache-Control、CORS、CSPなど主要ヘッダーを表示。',
+  tool_headers_example_title: '例',
+  tool_headers_example:
+    'example.com → ステータス200、最終URL変更なし。content-type: text/html などに加え、オリジン次第でcache-controlやセキュリティヘッダー。',
+  tool_headers_usecases_title: 'こんなときに',
+  tool_headers_usecase_1: 'リリース前にCache-ControlやCDNキャッシュを確認。',
+  tool_headers_usecase_2: 'Access-Control-* を読んでCORS preflightを切り分け。',
+  tool_headers_usecase_3: 'CSPやHSTSなどセキュリティヘッダが本当に返るか spot check。',
+  tool_headers_ref_rfc9110_label: 'RFC 9110 — HTTPセマンティクス',
+  tool_headers_ref_mdn_label: 'MDN — HTTPヘッダー',
+  tool_headers_ref_rfc9111_label: 'RFC 9111 — HTTPキャッシュ',
   tool_markdown_title: 'Markdown と HTML を相互変換（プレビュー付き）',
   tool_markdown_description:
     'Markdown を安全な HTML にしたい、または CMS の HTML を Markdown に戻したいときに。向きを選び、ブラウザ内で marked / Turndown と DOMPurify を使います。例：README を .html 化、管理画面の HTML をリポジトリ用 .md に。',
@@ -93,6 +113,59 @@ const ja: SiteLangDict = {
   tool_markdown_faq_q5: '対応記法と書き出しは？',
   tool_markdown_faq_a5:
     '見出し・リスト・リンク・強調・コードブロックなど。オフライン共有用の完全 HTML も選べます。',
+  tool_bmi_title: 'BMI計算ツール — 体格指数の求め方',
+  tool_bmi_description:
+    '成人向けの体格指数（BMI）を式で算出します。手順：メートル法かヤード・ポンド法を選び、体重と身長を入力して計算し、一般的な成人区分と照合。例：70 kg・175 cm → BMI 約22.9（標準）。学習・ざっくり確認用で、診断ではありません。',
+  tool_bmi_article:
+    '体重と身長から成人のBMIをどう求めるか、メートル法・ヤード・ポンド法の式、区分の目安、アスリート・子どもなどの限界を説明します。計算はブラウザ内で完結し、データは送信しません。',
+  tool_bmi_weight_label: '体重（kg）',
+  tool_bmi_weight_placeholder: '体重をキログラムで入力',
+  tool_bmi_height_label: '身長（cm）',
+  tool_bmi_height_placeholder: '身長をセンチメートルで入力',
+  tool_bmi_calculate: 'BMIを計算',
+  tool_bmi_how_title: '使い方',
+  tool_bmi_how_body:
+    'メートル法かヤード・ポンド法を選び、体重と身長を入力して計算します。成人向けBMI式で小数第1位まで表示し、一般的な区分に当てはめます。数値は端末内で処理され、アップロードされません。',
+  tool_bmi_formula_title: 'BMIの式と成人区分',
+  tool_bmi_formula_body:
+    'メートル法：BMI = 体重(kg) ÷ 身長(m)²。ヤード・ポンド法：BMI = 703 × 体重(lb) ÷ 身長(in)²。ここでは広く使われる成人向け区分を採用しています。',
+  tool_bmi_formula_item_1: '低体重：BMI < 18.5',
+  tool_bmi_formula_item_2: '標準：BMI 18.5–24.9',
+  tool_bmi_formula_item_3: '過体重：BMI 25–29.9',
+  tool_bmi_formula_item_4: '肥満：BMI ≥ 30',
+  tool_bmi_example_title: '例',
+  tool_bmi_example:
+    '例（メートル法）：体重 70 kg、身長 175 cm → 身長 = 1.75 m → BMI = 70 / (1.75²) ≈ 22.9 → 標準の区分。',
+  tool_bmi_usecases_title: 'こんなときに',
+  tool_bmi_usecase_1: '定期健診の前に、成人としてざっくり自己確認（参考値のみ）。',
+  tool_bmi_usecase_2: 'フィットネス開始時に、他の指標と一緒に基準BMIを記録する。',
+  tool_bmi_usecase_3: '同じ測定値をメートル法とヤード・ポンド法で突き合わせる。',
+  tool_bmi_ref_who_label: 'WHO — 肥満と過体重の概要',
+  tool_bmi_ref_cdc_label: 'CDC — 成人BMI区分',
+  bmi_chart_title: '成人BMI区分（参考）',
+  bmi_underweight: '低体重',
+  bmi_normal: '標準',
+  bmi_overweight: '過体重',
+  bmi_obese: '肥満',
+  bmi_metric_units: 'メートル法',
+  bmi_imperial_units: 'ヤード・ポンド法',
+  bmi_unit_group_label: '単位',
+  bmi_result_label: 'あなたのBMI',
+  bmi_invalid_input: '体重と身長に正の数を入力してください。',
+  bmi_weight_lbs: '体重（lb）',
+  bmi_weight_lbs_placeholder: '体重（ポンド）',
+  bmi_height_ft: '身長（ft）',
+  bmi_height_ft_placeholder: 'フィート',
+  bmi_height_in: '身長（in）',
+  bmi_height_in_placeholder: 'インチ',
+  bmi_interpretation_underweight:
+    '参考結果：低体重の区分です。BMIは診断ではありません。必要なら医療専門家に相談してください。',
+  bmi_interpretation_normal:
+    '参考結果：成人の標準区分です。BMI単体では体脂肪や体力は測れません。',
+  bmi_interpretation_overweight:
+    '参考結果：過体重の区分です。BMIは診断ではありません。必要なら医療専門家に相談してください。',
+  bmi_interpretation_obese:
+    '参考結果：肥満の区分です。BMIは診断ではありません。必要なら医療専門家に相談してください。',
   tool_text_diff_description:
     '2つのテキストをオンラインで比較し、どこが変わったか確認できます。手順: 原文と修正後を貼り付け、行・単語・文字のどれで比べるか選び、必要なら空白を無視したり Windows の改行（CRLF→LF）を揃えたりして、ブラウザ内で追加と削除を色分け表示。例: 「こんにちは世界」を「こんにちは友人」に変えると、単語モードでは1か所の置換だけが分かります。',
   tool_text_diff_article:
@@ -151,6 +224,314 @@ const ja: SiteLangDict = {
   tool_text_diff_faq_a3: 'Windows は CRLF、Mac/Linux は LF が多いためです。「CRLF と LF を同じに扱う」をオンにしてから比較してください。',
   tool_text_diff_faq_q4: '画像やバイナリも比較できますか？',
   tool_text_diff_faq_a4: 'いいえ。プレーンテキスト専用です。',
+
+  tool_headers_faq_q1: 'HTTPレスポンスヘッダーには何が載る？',
+  tool_headers_faq_a1:
+    'サーバー応答のメタデータです。Content-Type、キャッシュ、リダイレクト、HSTS・CSP・CORSなどのポリシーが含まれます。',
+  tool_headers_faq_q2: 'ページ本文まるごと取得しますか？',
+  tool_headers_faq_a2:
+    'HEADを優先し、必要ならGET。目的はヘッダー確認であり、本文のスクレイピングや保存ではありません。',
+  tool_headers_faq_q3: 'localhostやプライベートIPはなぜ不可？',
+  tool_headers_faq_a3:
+    '内部ホストのスキャンに使われないよう、プライベートネットワーク宛てを拒否しています。',
+  tool_headers_faq_q4: 'ブラウザのDevToolsと同じ結果？',
+  tool_headers_faq_a4:
+    '必ずしも同じではありません。当社エッジからの応答であり、CDNの地域振り分けやボット対策でローカルと差が出ることがあります。',
+  tool_headers_faq_q5: '確認したURLは保存されますか？',
+  tool_headers_faq_a5:
+    '短命なエッジリクエストで、URL履歴機能はありません。クエリに秘密情報を入れないでください。',
+  tool_bmi_faq_q1: 'BMIの計算式は？',
+  tool_bmi_faq_a1:
+    'メートル法：BMI = 体重(kg) / 身長(m)²。ヤード・ポンド法：BMI = 703 × 体重(lb) / 身長(in)²。',
+  tool_bmi_faq_q2: '区分の意味は？',
+  tool_bmi_faq_a2:
+    '成人向けの目安：低体重 <18.5、標準 18.5–24.9、過体重 25–29.9、肥満 ≥30。参考区分であり診断ではありません。',
+  tool_bmi_faq_q3: 'アスリートにも当てはまりますか？',
+  tool_bmi_faq_a3:
+    '必ずしも当てはまりません。BMIは筋肉と脂肪を区別しません。筋肉量が多い人は高い区分でも体脂肪は低いことがあります。個別評価は専門家へ。',
+  tool_bmi_faq_q4: '子どもや妊娠中にも使えますか？',
+  tool_bmi_faq_a4:
+    'このページの成人区分は、子ども・思春期・妊娠には向きません。年齢別チャートと医療の指示に従ってください。',
+  tool_bmi_disclaimer:
+    '本BMI計算は成人向けの学習・参考用です。医療アドバイスではなく、診断や資格を持つ医療者の判断に代わるものではありません。',
+  tool_bmi_references:
+    'WHO 肥満・過体重の概要；CDC 成人BMI区分；メートル法・ヤード・ポンド法の標準BMI式。',
+
+  tool_squarefeet_title: '平方フィート⇔平方メートル換算 — 物件・リフォーム向け',
+  tool_squarefeet_description:
+    '部屋の面積を平方フィートと平方メートルのあいだで換算します（物件・リフォーム向け）。手順：ft/m/in を選び、縦×横を入力し、面積を求めたあと NIST 係数 1 ft² = 0.09290304 m² で m² も表示。例：850 sq ft の部屋 ≈ 78.97 m²。',
+  tool_squarefeet_article:
+    '長さと幅から長方形の面積を求め、平方フィートと平方メートルを相互換算します。物件比較や床材・塗装の目安向け。査定ではなく、専有／延床の定義も扱いません。',
+  tool_squarefeet_length_label: '長さ',
+  tool_squarefeet_length_placeholder: '長さを入力',
+  tool_squarefeet_width_label: '幅',
+  tool_squarefeet_width_placeholder: '幅を入力',
+  tool_squarefeet_calculate: '換算する',
+  tool_squarefeet_unit_group_label: '入力単位',
+  unit_feet: 'フィート',
+  unit_meters: 'メートル',
+  unit_inches: 'インチ',
+  sqft_unit: 'sq ft',
+  tool_squarefeet_result_note: '小数第2位まで。係数：1 ft² = 0.09290304 m²。',
+  tool_squarefeet_result_sqm: '≈ {sqm} m²',
+  tool_squarefeet_invalid_input: '正の長さと幅を入力してください。',
+  tool_squarefeet_usage_title: '使い方',
+  tool_squarefeet_usage: '単位を選び、縦横を入れると sq ft と相当 m² が得られます。',
+  tool_squarefeet_how_title: '使い方の流れ',
+  tool_squarefeet_how_body:
+    'フィート・メートル・インチを選び、両辺をフィートに揃えて縦×横。そのあと SI 係数で m² に変換します。空欄や負の値はエラーです。',
+  tool_squarefeet_formula_title: '面積の式と換算係数',
+  tool_squarefeet_formula_body:
+    '面積 (ft²) = 長さ(ft) × 幅(ft)。メートル入力：ft² = (L×W) ÷ 0.09290304。インチ入力：各辺を ÷12。係数：1 ft² = 0.09290304 m²。',
+  tool_squarefeet_formula_item_1: 'フィート入力：面積_ft² = L × W',
+  tool_squarefeet_formula_item_2: 'メートル入力：面積_ft² = (L × W) / 0.09290304',
+  tool_squarefeet_formula_item_3: 'インチ入力：面積_ft² = (L/12) × (W/12)',
+  tool_squarefeet_formula_item_4: 'm² = 面積_ft² × 0.09290304（NIST / SI）',
+  tool_squarefeet_example_title: '例',
+  tool_squarefeet_example:
+    '物件例：850 sq ft → 850 × 0.09290304 ≈ 78.97 m²。部屋例：10 ft × 12 ft = 120 sq ft ≈ 11.15 m²。',
+  tool_squarefeet_usecases_title: 'こんなときに',
+  tool_squarefeet_usecase_1: '米系物件の sq ft を、地元の m² 表記と並べて比較する。',
+  tool_squarefeet_usecase_2: '長方形の部屋の床材・カーペット量を発注前に概算する。',
+  tool_squarefeet_usecase_3: '図面の単位が混在しているときの塗装・リフォームのざっくり見積もり。',
+  tool_squarefeet_ref_nist_label: 'NIST SP 811 — 国際単位系（SI）利用ガイド',
+  tool_squarefeet_faq_q1: 'ft² と m² の換算係数は？',
+  tool_squarefeet_faq_a1: '厳密に 1 ft² = 0.09290304 m²（SI / NIST）。表示は小数第2位。',
+  tool_squarefeet_faq_q2: '専有面積と延床を区別しますか？',
+  tool_squarefeet_faq_a2: 'しません。長方形の平面積の単位換算のみです。',
+  tool_squarefeet_faq_q3: '物件価格の査定に使えますか？',
+  tool_squarefeet_faq_a3: 'いいえ。面積換算は評価でも価格モデルでもありません。',
+  tool_squarefeet_faq_q4: 'L 字の部屋は？',
+  tool_squarefeet_faq_a4: '長方形に分けてそれぞれ換算し、足し合わせてください。',
+  tool_percentage_change_title: 'パーセント変化の計算 — 旧値から新値への増減率',
+  tool_percentage_change_description:
+    '旧値と新値から増減率を計算します。手順：両方を入力し (新−旧)/旧×100 を適用して符号を読む。例：80→100 = +25%。売上の前月比や DAU・値付け向け。百分点（ポイント）とは別物で、ROI（投資対効果）の代替でもありません。',
+  tool_percentage_change_article:
+    '相対パーセント変化は「基準に対してどれだけ動いたか」を答えます。旧値と新値を入れ、(新−旧)/旧×100。KPI 向けで、ROI の代替ではありません。',
+  tool_percentage_change_original_label: '旧値',
+  tool_percentage_change_new_label: '新値',
+  tool_percentage_change_calculate: '計算する',
+  tool_percentage_change_result_label: 'パーセント変化',
+  tool_percentage_change_example:
+    '完全な例：旧 80、新 100 → Δ=20 → (20/80)×100 = 25% 増加。下落：100→80 = −20%。',
+  tool_percentage_change_result_invalid: '旧値は 0 以外の数値である必要があります。',
+  tool_percentage_change_increase: '増加',
+  tool_percentage_change_decrease: '減少',
+  tool_percentage_change_no_change: '変化なし',
+  tool_percentage_change_abs_note: '絶対変化量：{delta}',
+  tool_percentage_change_how_title: '使い方の流れ',
+  tool_percentage_change_how_body:
+    '基準（旧値）とあとの値を入力。差を取り、旧値で割って×100。正は増加、負は減少。旧値=0 は定義できません。',
+  tool_percentage_change_formula_title: 'パーセント変化の式',
+  tool_percentage_change_formula_body:
+    '変化率 = (新 − 旧) / 旧 × 100。分母は符号付きの旧値（|旧| ではありません）。',
+  tool_percentage_change_formula_item_1: 'Δ = 新 − 旧',
+  tool_percentage_change_formula_item_2: 'パーセント = (Δ / 旧) × 100',
+  tool_percentage_change_formula_item_3: '旧 = 0 → 未定義（エラー）',
+  tool_percentage_change_example_title: '例',
+  tool_percentage_change_usecases_title: 'ビジネス・データでの使い方',
+  tool_percentage_change_usecase_1: '月次売上：先月 GMV 80、今月 100 → +25%。',
+  tool_percentage_change_usecase_2: 'プロダクト：DAU が 5万→5.5万 → 相対 +10%。',
+  tool_percentage_change_usecase_3: '値付け：40→34 → −15%（「6ポイント」ではない）。',
+  tool_percentage_change_ref_wiki_label: 'Wikipedia — Relative change',
+  tool_percentage_change_faq_q1: 'パーセント変化の式は？',
+  tool_percentage_change_faq_a1: '変化率 = (新 − 旧) / 旧 × 100。正は増加、負は減少。',
+  tool_percentage_change_faq_q2: 'なぜ旧値が 0 だとだめ？',
+  tool_percentage_change_faq_a2: 'ゼロ除算は定義されません。基準が無いと相対変化は計算できません。',
+  tool_percentage_change_faq_q3: '百分点（ポイント）と同じ？',
+  tool_percentage_change_faq_a3: '違います。10%→12% は +2 ポイントですが、相対では +20%。',
+  tool_percentage_change_faq_q4: 'ROI との違いは？',
+  tool_percentage_change_faq_a4: 'ROI は投資コストに対する利得。パーセント変化は任意の新値と旧基準の相対比較です。',
+  tool_gradient_title: '多変数の勾配 ∇f を計算 — 偏導関数ベクトル',
+  tool_gradient_description:
+    'スカラー場の勾配 ∇f（偏導関数のベクトル）を求めます。手順：各変数で偏微分し ∇f を組み立て、点で評価。デモ f(x,y)=x²y+3y → ∇f=(2xy, x²+3)；点 (1,2) で (4,4)。最適化や機械学習の勾配降下の説明に。',
+  tool_gradient_desc:
+    'スカラー場の勾配 ∇f（偏導関数のベクトル）を求めます。手順：各変数で偏微分し ∇f を組み立て、点で評価。デモ f(x,y)=x²y+3y → ∇f=(2xy, x²+3)；点 (1,2) で (4,4)。最適化や機械学習の勾配降下の説明に。',
+  tool_gradient_article:
+    '多変数スカラー関数の勾配は一階偏導関数のベクトルで、局所的に最も急な上昇方向を指します。2点間の傾き（rise/run）計算機ではありません。',
+  tool_gradient_fn_hint: 'デモ関数（対話ボックス固定）：',
+  tool_gradient_x_label: 'x',
+  tool_gradient_x_placeholder: '例：1',
+  tool_gradient_y_label: 'y',
+  tool_gradient_y_placeholder: '例：2',
+  tool_gradient_calculate: '∇f を求める',
+  tool_gradient_result_label: '指定点での勾配',
+  tool_gradient_result_note: '({x}, {y}) で f(x,y)=x²y+3y を評価しました。',
+  tool_gradient_invalid_input: '有限の数値 x, y を入力してください。',
+  tool_gradient_how_title: '使い方の流れ',
+  tool_gradient_how_body:
+    'スカラー f について他変数を固定して各偏導を求め、∇f に並べ、座標を代入。ボックスは f(x,y)=x²y+3y で手計算チェック用です。',
+  tool_gradient_formula_title: '多変数勾配の式',
+  tool_gradient_formula_body:
+    '∇f = (∂f/∂x₁, …, ∂f/∂xₙ)。2変数：∇f(x,y)=(∂f/∂x, ∂f/∂y)。∇f は最急上昇、勾配降下は −∇f。',
+  tool_gradient_formula_item_1: '各変数で ∂f/∂xᵢ を取る',
+  tool_gradient_formula_item_2: 'ベクトル ∇f を組む',
+  tool_gradient_formula_item_3: '点で各成分を評価',
+  tool_gradient_formula_item_4: 'デモ：f=x²y+3y → ∇f=(2xy, x²+3)',
+  tool_gradient_example_title: '例',
+  tool_gradient_example:
+    'f(x,y)=x²y+3y。偏導：∂f/∂x=2xy、∂f/∂y=x²+3。(1,2) で ∇f=(4,4)。',
+  tool_gradient_usecases_title: '最適化・機械学習の場面',
+  tool_gradient_usecase_1: '課題の偏導を確認してから最適化ステップへ。',
+  tool_gradient_usecase_2: '勾配降下の説明：各ステップは −∇loss 方向。',
+  tool_gradient_usecase_3: '物理の直感：∇f はスカラー場が最も速く増える向き。',
+  tool_gradient_ref_wiki_label: 'Wikipedia — 勾配',
+  tool_gradient_ref_khan_label: 'Khan Academy — The gradient',
+  tool_gradient_faq_q1: '多変数微積分の勾配とは？',
+  tool_gradient_faq_a1: '∇f は偏導関数のベクトルで、局所的に最も急な上昇方向を指します。',
+  tool_gradient_faq_q2: '手計算の手順は？',
+  tool_gradient_faq_a2: '他を固定して各変数で偏微分し、ベクトルにして点で評価。',
+  tool_gradient_faq_q3: '機械学習の「勾配」と同じ？',
+  tool_gradient_faq_a3: '数学的には同じ：スカラー損失の ∇。このページは定義の説明で、モデル学習はしません。',
+  tool_gradient_faq_q4: '2点の傾き計算機ですか？',
+  tool_gradient_faq_a4: 'いいえ。傾き（rise/run）は別ツール。ここは偏導ベクトル ∇f です。',
+
+  /* --- IG: ip / roi / mr --- */
+tool_ip_address_title: '自分のIPアドレスを確認 — グローバルIPを表示',
+  tool_ip_address_description:
+    'エッジが見ているあなたのグローバル（公衆）IPを表示します。手順：ページを開くか「更新」を押すと、ワーカーが信頼できるクライアントアドレスを読み取ります。例：203.0.113.10 のように表示されることがあります。VPN/プロキシ利用時は出口IPになり、LANアドレスではありません。',
+  tool_ip_address_article:
+    'このページはエッジから見た公衆出口IPを示します。VPN確認、サポートへの連絡、許可リストの確認に便利です。位置情報やISP照会の製品ではありません。',
+  tool_ip_address_how_title: '使い方',
+  tool_ip_address_how_body:
+    'ブラウザがエッジAPIを呼び出します。ワーカーはその接続に紐づくクライアントIP（偽造しやすいヘッダーだけではありません）を返します。いつでも更新でき、アカウント不要です。',
+  tool_ip_address_rules_title: 'このIPの意味',
+  tool_ip_address_rules_body:
+    '表示値は、エッジがあなたのTCP/TLS接続に関連付けた公衆アドレスです。サイトが通常見る出口識別子として扱ってください。注意点：',
+  tool_ip_address_rules_item_1: 'VPNやHTTPプロキシ利用時は、自宅LANではなく提供者の出口IPが見えます。',
+  tool_ip_address_rules_item_2: 'NAT配下では複数端末が1つの公衆IPを共有します。192.168.x.x はここには出ません。',
+  tool_ip_address_rules_item_3: '改ざん可能な X-Forwarded-For 単独より、エッジの信頼できるクライアントIPを優先します。',
+  tool_ip_address_rules_item_4: '経路によって IPv4 / IPv6 のどちらかが出ます。デュアルスタックでは再接続後に切り替わることがあります。',
+  tool_ip_address_example_title: '例',
+  tool_ip_address_example:
+    '説明用の例：エッジが見る 203.0.113.10（TEST-NET-3 の予約アドレス）。実際の結果はあなたの本物の公衆出口IPです。',
+  tool_ip_address_usecases_title: 'こんなときに',
+  tool_ip_address_usecase_1: 'VPN/プロキシが本当に公衆IPを変えているか確認する。',
+  tool_ip_address_usecase_2: 'サポートやファイアウォール担当に許可すべき公衆IPを伝える。',
+  tool_ip_address_usecase_3: 'リモートアクセスやAPI許可リストの軽いデバッグ。',
+  tool_ip_address_ref_mdn_label: 'MDN — X-Forwarded-For（なりすまし注意）',
+  tool_ip_address_ref_cloudflare_label: 'Cloudflare Learning — IPアドレスとは',
+  ip_label: 'あなたのグローバルIP',
+  fetch_ip_button: '更新',
+  fetching_message: '取得中…',
+  tool_ip_address_faq_q1: 'どうやってIPを取得していますか？',
+  tool_ip_address_faq_a1:
+    'ブラウザがエッジAPIに問い合わせ、ワーカーがその接続の信頼できるクライアントIPを返します。',
+  tool_ip_address_faq_q2: 'VPNやプロキシを使うとどうなりますか？',
+  tool_ip_address_faq_a2:
+    '多くの場合、VPN/プロキシの出口IPが表示されます。サイトが見るのも同じ出口です。',
+  tool_ip_address_faq_q3: 'LANのIPと違うのはなぜ？',
+  tool_ip_address_faq_a3:
+    '192.168.x.x などのプライベートアドレスはNATで内網に留まります。ここには公衆側だけが出ます。',
+  tool_ip_address_faq_q4: 'IPは保存されますか？',
+  tool_ip_address_faq_a4:
+    '照会は短時間のエッジリクエストです。IP履歴機能はありません。一時表示として扱ってください。',
+
+  tool_roi_title: 'ROI（投資利益率）計算ツール — 計算式と例',
+  tool_roi_description:
+    '単純ROIを (利益 − 費用) / 費用 × 100%、または (最終価値 − 初期) / 初期 × 100% で計算します。手順：費用と最終価値（または純利益）を入力し、税・手数料・期間の前提を確認します。例：費用1000、最終1300 → ROI 30%。学習用の例示のみで、投資助言ではありません。',
+  tool_roi_article:
+    '単純ROIは純利益を費用に対する％で表します。キャンペーンやプロジェクトの粗い振り返り向けで、複数期間のIRR/NPVは扱いません。',
+  tool_roi_initial_label: '初期投資（費用）',
+  tool_roi_initial_placeholder: '例：1000',
+  tool_roi_final_label: '最終価値',
+  tool_roi_final_placeholder: '例：1300',
+  tool_roi_gain_label: '純利益（任意）',
+  tool_roi_gain_placeholder: '分かっている場合は最終−初期の代わりに使用',
+  tool_roi_calculate: '計算する',
+  tool_roi_result_label: 'ROI',
+  tool_roi_how_title: '使い方',
+  tool_roi_how_body:
+    '費用と最終価値、または既知の純利益を入力します。ROI = 純利益 / 費用 × 100%。純利益が空なら純利益 = 最終 − 初期。費用0は拒否されます。',
+  tool_roi_formula_title: '計算式と前提',
+  tool_roi_formula_body:
+    'ROI = (最終価値 − 初期投資) / 初期投資 × 100%、または 純利益 / 費用 × 100%。次を前提にしてください：',
+  tool_roi_formula_item_1: '税：自動計算しません。税後の数字が欲しければ自分で入力してください。',
+  tool_roi_formula_item_2: '時間：単純ROIは保有期間を無視します。年率換算ではありません。',
+  tool_roi_formula_item_3: '手数料：手数料やプラットフォーム料は費用か最終価値に自分で織り込んでください。',
+  tool_roi_formula_item_4: '複数期間キャッシュフローやIRR/NPVはこの単期％の対象外です。',
+  tool_roi_example_title: '例',
+  tool_roi_example:
+    '例：費用1000、最終価値1300 → 純利益300 → ROI = 300 / 1000 × 100% = 30%。',
+  tool_roi_usecases_title: 'こんなときに',
+  tool_roi_usecase_1: 'マーケ：支出と帰属収益が分かったあとのキャンペーンROIの粗い確認。',
+  tool_roi_usecase_2: '授業課題：固定数字で基本のROI％を練習する。',
+  tool_roi_usecase_3: 'プロジェクト振り返り：完了案件を費用/利益の1組にまとめる（見積もりのみ）。',
+  tool_roi_ref_investopedia_label: 'Investopedia — Return on Investment（ROI）',
+  tool_roi_ref_guide_label: 'Investopedia — ROIの計算ガイド',
+  tool_roi_interpret_positive: '正のROI（費用に対して利益）— 学習用の例示のみ。',
+  tool_roi_interpret_zero: 'ROIゼロ — この入力では損益なし。',
+  tool_roi_interpret_negative: '負のROI（費用に対して損失）— 学習用の例示のみ。',
+  tool_roi_zero_cost: '初期投資は0より大きくしてください。',
+  tool_roi_faq_q1: '費用が0のときは？',
+  tool_roi_faq_a1: 'ゼロ除算のためROIは定義できません。正の費用を入力してください。',
+  tool_roi_faq_q2: 'どの計算式ですか？',
+  tool_roi_faq_a2:
+    'ROI = (最終 − 初期) / 初期 × 100%、または純利益を入れた場合は 純利益 / 費用 × 100%。',
+  tool_roi_faq_q3: '税・手数料・期間はどう扱いますか？',
+  tool_roi_faq_a3:
+    '税や手数料は推計しません。自分で織り込んでください。単純ROIは年率化もしません。',
+  tool_roi_faq_q4: '投資助言ですか？',
+  tool_roi_faq_a4: 'いいえ。結果は学習用の例示であり、投資・税務・財務の助言ではありません。',
+  tool_roi_disclaimer:
+    'ROIの結果は学習用の例示であり、投資・税務・財務の助言ではありません。過去や仮想のリターンは将来を保証しません。',
+  tool_roi_references:
+    'InvestopediaのROI定義と計算ガイド；単純ROI = 純利益 / 費用。',
+
+  tool_marginal_revenue_title: '限界収入（MR）計算 — 公式 ΔTR / ΔQ',
+  tool_marginal_revenue_description:
+    '限界収入を MR = ΔTR / ΔQ で計算します。手順：2点の数量と総収入を入力し、ΔTR と ΔQ を求めて割ります。例：数量10→11、売上1000→1080 → MR = 80。学習用の例示であり、価格設定や投資の助言ではありません。',
+  tool_marginal_revenue_article:
+    '限界収入は数量が変わったときの総収入の変化です。このツールは2点間の離散的な導出を示します。',
+  tool_marginal_revenue_how_title: '使い方',
+  tool_marginal_revenue_how_body:
+    '第1段階と第2段階の数量・総収入を入力します。ΔTR = TR2 − TR1、ΔQ = Q2 − Q1、MR = ΔTR / ΔQ をブラウザ内で計算します。',
+  tool_marginal_revenue_formula_title: '公式の導出',
+  tool_marginal_revenue_formula_body:
+    '定義上、限界収入は数量変化に伴う総収入の変化です。観測点が2つあるとき：',
+  tool_marginal_revenue_formula_item_1: 'ΔTR = TR₂ − TR₁（総収入の変化）',
+  tool_marginal_revenue_formula_item_2: 'ΔQ = Q₂ − Q₁（数量の変化）',
+  tool_marginal_revenue_formula_item_3: 'ΔQ ≠ 0 のとき MR = ΔTR / ΔQ',
+  tool_marginal_revenue_formula_item_4:
+    '離散ステップは区間の平均MRの近似です。連続モデルは dTR/dQ。負のMRは数量増でも収入減を意味します。',
+  tool_marginal_revenue_example_title: '例',
+  tool_marginal_revenue_example:
+    '例：Q₁ = 10、TR₁ = 1000；Q₂ = 11、TR₂ = 1080 → ΔTR = 80、ΔQ = 1 → MR = 80。',
+  tool_marginal_revenue_usecases_title: 'こんなときに',
+  tool_marginal_revenue_usecase_1: '課題：教科書の2段階の数量/収入表を確認する。',
+  tool_marginal_revenue_usecase_2: '粗い見積もり：生産を1単位増やしたときの収入変化。',
+  tool_marginal_revenue_usecase_3: '入門ミクロで限界収入と平均収入の用語を比べる。',
+  tool_marginal_revenue_ref_investopedia_label: 'Investopedia — Marginal Revenue（MR）',
+  tool_marginal_revenue_ref_openstax_label: 'OpenStax — ミクロ経済学の原理（競争）',
+  tool_marginal_revenue_q1_label: '数量（Q₁）',
+  tool_marginal_revenue_q1_placeholder: '例：10',
+  tool_marginal_revenue_tr1_label: '総収入（TR₁）',
+  tool_marginal_revenue_tr1_placeholder: '例：1000',
+  tool_marginal_revenue_q2_label: '数量（Q₂）',
+  tool_marginal_revenue_q2_placeholder: '例：11',
+  tool_marginal_revenue_tr2_label: '総収入（TR₂）',
+  tool_marginal_revenue_tr2_placeholder: '例：1080',
+  tool_marginal_revenue_quantity_label: '数量',
+  tool_marginal_revenue_revenue_label: '総収入',
+  tool_marginal_revenue_calculate: 'MRを計算',
+  tool_marginal_revenue_result_label: '限界収入',
+  tool_marginal_revenue_zero_dq: 'ΔQ が 0 です — 2点の数量は異なる必要があります。',
+  tool_marginal_revenue_detail_tpl: 'ΔTR = {dTR}、ΔQ = {dQ} → MR = {mr}',
+  tool_marginal_revenue_faq_q1: 'ここでの限界収入の導出は？',
+  tool_marginal_revenue_faq_a1:
+    'MR = ΔTR / ΔQ（ΔTR = TR₂ − TR₁、ΔQ = Q₂ − Q₁）。離散導出であり連続微分ではありません。',
+  tool_marginal_revenue_faq_q2: 'ΔQ が0のときは？',
+  tool_marginal_revenue_faq_a2: '数量が変わらないとMRは定義できません。異なる数量を選んでください。',
+  tool_marginal_revenue_faq_q3: '平均収入との違いは？',
+  tool_marginal_revenue_faq_a3:
+    '平均収入はある水準での TR / Q。限界収入は数量変化時のTR変化で、特別な場合にのみ一致します。',
+  tool_marginal_revenue_faq_q4: 'MRが正なら増産すべき？',
+  tool_marginal_revenue_faq_a4:
+    'いいえ。価格・生産の助言はしません。限界費用などの制約も必要です。',
+  tool_marginal_revenue_disclaimer:
+    'この計算ツールはミクロ経済学の概念学習用です。ビジネス・価格・投資の助言ではありません。',
+  tool_marginal_revenue_references:
+    'Investopediaの限界収入項目；MR = ΔTR/ΔQ の入門的扱い（例：OpenStax）。',
 
 };
 export default ja;

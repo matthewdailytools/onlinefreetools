@@ -1,3 +1,7 @@
+/**
+ * ROI 计算器工具页：投资回报率公式、假设表、YMYL 免责与 Investopedia 引用。
+ * slug: how-to-calculate-roi；主方向 C（见 work-tasks/how-to-calculate-roi/02-tool-info.md）。
+ */
 import type { SiteLang } from '../site/i18n';
 import { t, supportedLangs } from '../site/i18n';
 import { renderFooter } from './site/footer';
@@ -5,22 +9,34 @@ import { renderHeader } from './site/header';
 import { renderLayout, type HreflangAlternate, escapeHtml } from './site/layout';
 import { renderSidebar } from './site/sidebar';
 import { TOOL_PAGES, getToolBySlug } from '../site/tools';
-import { renderToolExtraSections, buildToolJsonLd } from './site/toolContent';
+import {
+	renderToolExtraSections,
+	buildToolJsonLd,
+	renderToolIgSections,
+	renderToolReferencesSection,
+} from './site/toolContent';
 
+/** 为路径加上语言前缀（默认语无前缀）。 */
 const withLangPrefix = (lang: SiteLang, pathname: string, defaultLang: SiteLang) => {
 	const safe = pathname.startsWith('/') ? pathname : `/${pathname}`;
 	return lang === defaultLang ? safe : `/${lang}${safe}`;
 };
 
+/**
+ * 渲染 ROI 计算器工具页 HTML。
+ * @param opts.lang 当前语言
+ * @param opts.defaultLang 站点默认语言
+ * @param opts.enabledLangs 启用语言列表（保留与其他计算器页一致的签名）
+ */
 export const renderHowToCalculateRoiPage = (opts: {
 	lang: SiteLang;
 	defaultLang: SiteLang;
 	enabledLangs: SiteLang[];
 }) => {
-	const canonicalPath = withLangPrefix(opts.lang, '/tools/how-to-calculate-roi', opts.defaultLang);
+	const toolPath = '/tools/how-to-calculate-roi';
+	const canonicalPath = withLangPrefix(opts.lang, toolPath, opts.defaultLang);
 	const title = `${t(opts.lang, 'tool_roi_title')} | ${t(opts.lang, 'brand')}`;
 	const description = t(opts.lang, 'tool_roi_description');
-	const article = t(opts.lang, 'tool_roi_article');
 
 	const navItems = [
 		{ href: withLangPrefix(opts.lang, '/', opts.defaultLang), label: t(opts.lang, 'nav_home') },
@@ -28,156 +44,187 @@ export const renderHowToCalculateRoiPage = (opts: {
 		{ href: '/devlogs/', label: t(opts.lang, 'nav_devlogs') },
 	];
 
-  const withExplicitLangPrefix = (code: SiteLang, pathname: string) => {
-    const safe = pathname.startsWith('/') ? pathname : `/${pathname}`;
-    return `/${code}${safe}`.replace(/\/\/{2,}/g, '/');
-  };
+	/** 语言切换链接始终带显式语言前缀。 */
+	const withExplicitLangPrefix = (code: SiteLang, pathname: string) => {
+		const safe = pathname.startsWith('/') ? pathname : `/${pathname}`;
+		return `/${code}${safe}`.replace(/\/{2,}/g, '/');
+	};
 
-  const langAlternates: Record<string, string> = Object.fromEntries(
-    (supportedLangs || []).map((code) => [code, withExplicitLangPrefix(code, '/tools/how-to-calculate-roi')])
-  );
+	const langAlternates: Record<string, string> = Object.fromEntries(
+		(supportedLangs || []).map((code) => [code, withExplicitLangPrefix(code, toolPath)])
+	);
 
-  const alternates: HreflangAlternate[] = (supportedLangs || []).map((code) => ({
-    lang: code,
-    href: `https://onlinefreetools.org${withLangPrefix(code, '/tools/how-to-calculate-roi', opts.defaultLang)}`,
-  }));
+	const alternates: HreflangAlternate[] = (supportedLangs || []).map((code) => ({
+		lang: code,
+		href: `https://onlinefreetools.org${withLangPrefix(code, toolPath, opts.defaultLang)}`,
+	}));
 
-  const headerHtml = renderHeader({
-    lang: opts.lang,
-    brandHref: withLangPrefix(opts.lang, '/', opts.defaultLang),
-    navItems,
-    enabledLangs: supportedLangs,
-    langAlternates,
-  });
+	const headerHtml = renderHeader({
+		lang: opts.lang,
+		brandHref: withLangPrefix(opts.lang, '/', opts.defaultLang),
+		navItems,
+		enabledLangs: supportedLangs,
+		langAlternates,
+	});
 
-  const toolLinks = (TOOL_PAGES || []).map((p) => ({ href: withLangPrefix(opts.lang, p.path, opts.defaultLang), label: t(opts.lang, p.i18nKey) }));
+	const toolLinks = (TOOL_PAGES || []).map((p) => ({
+		href: withLangPrefix(opts.lang, p.path, opts.defaultLang),
+		label: t(opts.lang, p.i18nKey),
+	}));
 
-  const sidebarHtml = renderSidebar({
-    title: t(opts.lang, 'nav_tools'),
-    items: [{ href: '#roi', label: t(opts.lang, 'tool_roi_title') }, ...toolLinks],
-    id: 'toolNav',
-  });
+	const sidebarHtml = renderSidebar({
+		title: t(opts.lang, 'nav_tools'),
+		items: [{ href: '#roi', label: t(opts.lang, 'tool_roi_title') }, ...toolLinks],
+		id: 'toolNav',
+	});
 
-  const footerHtml = renderFooter({ lang: opts.lang });
+	const footerHtml = renderFooter({ lang: opts.lang });
 
-  const extraHeadHtml = `
+	/** ROI 表单与结果区样式。 */
+	const extraHeadHtml = `
   <style>
-    .tool-card { max-width: 640px; margin: 0 auto 2rem; }
+    .tool-card { max-width: 640px; margin: 0 auto 1.5rem; }
     .form-label { display:block; margin-bottom:.5rem; color:#495057; font-weight:500 }
+    .form-group { margin-bottom:1rem; }
     .result { background:#f8f9fa; padding:1rem; border-radius:8px; margin-top:1rem; text-align:center }
   </style>`;
 
-  const contentHtml = `
-    <div id="roi-intro">
-      <h1>${escapeHtml(t(opts.lang, 'tool_roi_title'))}</h1>
-      <p class="text-muted">${escapeHtml(description)}</p>
+	const contentHtml = `
+    <div id="roi" class="mb-3">
+      <h1 class="h4 mb-1">${escapeHtml(t(opts.lang, 'tool_roi_title'))}</h1>
+      <p class="text-muted mb-0">${escapeHtml(description)}</p>
     </div>
 
     <div class="card tool-card">
-      <form id="roiForm">
-        <div class="form-group">
-          <label class="form-label" for="initial">${escapeHtml(t(opts.lang, 'tool_roi_initial_label') || 'Initial Investment')}</label>
-          <input id="initial" class="input-lg" type="number" min="0" step="any" placeholder="${escapeHtml(t(opts.lang, 'tool_roi_initial_placeholder') || '')}" required>
+      <div class="card-body">
+        <form id="roiForm">
+          <div class="form-group">
+            <label class="form-label" for="initial">${escapeHtml(t(opts.lang, 'tool_roi_initial_label'))}</label>
+            <input id="initial" class="input-lg" type="number" min="0" step="any"
+              placeholder="${escapeHtml(t(opts.lang, 'tool_roi_initial_placeholder'))}" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="final">${escapeHtml(t(opts.lang, 'tool_roi_final_label'))}</label>
+            <input id="final" class="input-lg" type="number" min="0" step="any"
+              placeholder="${escapeHtml(t(opts.lang, 'tool_roi_final_placeholder'))}" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="gain">${escapeHtml(t(opts.lang, 'tool_roi_gain_label'))}</label>
+            <input id="gain" class="input-lg" type="number" step="any"
+              placeholder="${escapeHtml(t(opts.lang, 'tool_roi_gain_placeholder'))}">
+          </div>
+
+          <button type="submit" class="btn btn-primary">${escapeHtml(t(opts.lang, 'tool_roi_calculate'))}</button>
+        </form>
+
+        <div id="roiResult" class="result" style="display:none">
+          <div><strong>${escapeHtml(t(opts.lang, 'tool_roi_result_label'))}:</strong> <span id="roiValue"></span></div>
+          <div id="roiInterpretation" class="mt-2 text-muted small"></div>
         </div>
-
-        <div class="form-group">
-          <label class="form-label" for="final">${escapeHtml(t(opts.lang, 'tool_roi_final_label') || 'Final Value')}</label>
-          <input id="final" class="input-lg" type="number" min="0" step="any" placeholder="${escapeHtml(t(opts.lang, 'tool_roi_final_placeholder') || '')}" required>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="gain">${escapeHtml(t(opts.lang, 'tool_roi_gain_label') || 'Net Gain (optional)')}</label>
-          <input id="gain" class="input-lg" type="number" step="any" placeholder="${escapeHtml(t(opts.lang, 'tool_roi_gain_placeholder') || '')}">
-        </div>
-
-        <button type="submit" class="btn btn-primary">${escapeHtml(t(opts.lang, 'tool_roi_calculate'))}</button>
-      </form>
-
-      <div id="roiResult" class="result" style="display:none">
-        <div><strong>${escapeHtml(t(opts.lang, 'tool_roi_result_label') || 'ROI')}:</strong> <span id="roiValue"></span></div>
-        <div id="roiInterpretation" class="mt-2"></div>
       </div>
     </div>
 
-    <div class="info-section">
-      <h3>${escapeHtml(t(opts.lang, 'tool_roi_title'))}</h3>
-      <p>${escapeHtml(article)}</p>
-      <h4>${escapeHtml(t(opts.lang, 'tool_roi_example') || 'Example')}</h4>
-      <pre style="background:#f1f3f5;padding:.75rem;border-radius:6px">${escapeHtml(t(opts.lang, 'tool_roi_example') || '')}</pre>
-    </div>
-  `;
+    ${renderToolIgSections({ lang: opts.lang, prefix: 'tool_roi', mode: 'formula' })}`;
 
-  const extraBodyHtml = `
+	const referencesHtml = renderToolReferencesSection({
+		lang: opts.lang,
+		links: [
+			{
+				label: t(opts.lang, 'tool_roi_ref_investopedia_label'),
+				href: 'https://www.investopedia.com/terms/r/returnoninvestment.asp',
+			},
+			{
+				label: t(opts.lang, 'tool_roi_ref_guide_label'),
+				href: 'https://www.investopedia.com/articles/basics/10/guide-to-calculating-roi.asp',
+			},
+		],
+	});
+
+	const extraBodyHtml = `
   <script>
-    const form = document.getElementById('roiForm');
-    const initial = document.getElementById('initial');
-    const finalV = document.getElementById('final');
-    const gain = document.getElementById('gain');
-    const result = document.getElementById('roiResult');
-    const roiValue = document.getElementById('roiValue');
-    const roiInterpretation = document.getElementById('roiInterpretation');
+    (function () {
+      var form = document.getElementById('roiForm');
+      var initial = document.getElementById('initial');
+      var finalV = document.getElementById('final');
+      var gain = document.getElementById('gain');
+      var result = document.getElementById('roiResult');
+      var roiValue = document.getElementById('roiValue');
+      var roiInterpretation = document.getElementById('roiInterpretation');
+      var msgPositive = ${JSON.stringify(t(opts.lang, 'tool_roi_interpret_positive'))};
+      var msgZero = ${JSON.stringify(t(opts.lang, 'tool_roi_interpret_zero'))};
+      var msgNegative = ${JSON.stringify(t(opts.lang, 'tool_roi_interpret_negative'))};
+      var msgZeroCost = ${JSON.stringify(t(opts.lang, 'tool_roi_zero_cost'))};
 
-    function formatPercent(n) {
-      return Number.isFinite(n) ? n.toFixed(2) + '%' : '—';
-    }
-
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const a = parseFloat(initial.value);
-      const b = parseFloat(finalV.value);
-      const g = parseFloat(gain.value);
-
-      if (!a || (!b && !g)) {
-        result.style.display = 'none';
-        return;
+      /** 将数值格式化为带两位小数的百分比字符串。 */
+      function formatPercent(n) {
+        return Number.isFinite(n) ? n.toFixed(2) + '%' : '—';
       }
 
-      // If net gain provided, use it; otherwise compute from final - initial
-      const net = Number.isFinite(g) ? g : (b - a);
-      const roi = (net / a) * 100;
-      roiValue.textContent = formatPercent(roi);
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var a = parseFloat(initial.value);
+        var b = parseFloat(finalV.value);
+        var g = parseFloat(gain.value);
 
-      let interp = '';
-      if (roi > 0) interp = '${t(opts.lang, 'tool_roi_interpret_positive') || 'Positive return'}';
-      else if (roi === 0) interp = '${t(opts.lang, 'tool_roi_interpret_zero') || 'No gain or loss'}';
-      else interp = '${t(opts.lang, 'tool_roi_interpret_negative') || 'Negative return (loss)'}';
+        if (!(a > 0)) {
+          result.style.display = 'block';
+          roiValue.textContent = '—';
+          roiInterpretation.textContent = msgZeroCost;
+          return;
+        }
 
-      roiInterpretation.textContent = interp;
-      result.style.display = 'block';
-    });
+        if (!Number.isFinite(b) && !Number.isFinite(g)) {
+          result.style.display = 'none';
+          return;
+        }
+
+        var net = Number.isFinite(g) ? g : b - a;
+        var roi = (net / a) * 100;
+        roiValue.textContent = formatPercent(roi);
+
+        var interp = '';
+        if (roi > 0) interp = msgPositive;
+        else if (roi === 0) interp = msgZero;
+        else interp = msgNegative;
+
+        roiInterpretation.textContent = interp;
+        result.style.display = 'block';
+      });
+    })();
   </script>`;
 
-  
-  const toolMeta = getToolBySlug('how-to-calculate-roi');
-  const toolSeoHtml = toolMeta
-    ? renderToolExtraSections({ lang: opts.lang, defaultLang: opts.defaultLang, tool: toolMeta })
-    : '';
-  const toolJsonLd = toolMeta
-    ? buildToolJsonLd({
-        lang: opts.lang,
-        defaultLang: opts.defaultLang,
-        tool: toolMeta,
-        name: t(opts.lang, toolMeta.i18nKey as any),
-        description,
-        canonicalPath,
-      })
-    : '';
+	const toolMeta = getToolBySlug('how-to-calculate-roi');
+	const toolSeoHtml = toolMeta
+		? renderToolExtraSections({ lang: opts.lang, defaultLang: opts.defaultLang, tool: toolMeta })
+		: '';
+	const toolJsonLd = toolMeta
+		? buildToolJsonLd({
+				lang: opts.lang,
+				defaultLang: opts.defaultLang,
+				tool: toolMeta,
+				name: t(opts.lang, toolMeta.i18nKey as keyof typeof import('../site/i18n/en').default),
+				description,
+				canonicalPath,
+			})
+		: '';
 
-return renderLayout({
-    lang: opts.lang,
-    title,
-    description,
-    canonicalPath,
-    ogImageUrl: 'https://onlinefreetools.org/og-image.png',
-    ogType: 'website',
-    alternates,
-    headerHtml,
-    sidebarHtml,
-    contentHtml: `${contentHtml}${toolSeoHtml}`,
-    footerHtml,
-    extraHeadHtml: `${extraHeadHtml || ''}${toolJsonLd}`,
-    extraBodyHtml,
-    includeSidebarToggleScript: true,
-    sidebarAutoCloseSelector: '#toolNav a',
-  });
+	return renderLayout({
+		lang: opts.lang,
+		title,
+		description,
+		canonicalPath,
+		ogImageUrl: 'https://onlinefreetools.org/og-image.png',
+		ogType: 'website',
+		alternates,
+		headerHtml,
+		sidebarHtml,
+		contentHtml: `${contentHtml}${toolSeoHtml}${referencesHtml}`,
+		footerHtml,
+		extraHeadHtml: `${extraHeadHtml}${toolJsonLd}`,
+		extraBodyHtml,
+		includeSidebarToggleScript: true,
+		sidebarAutoCloseSelector: '#toolNav a',
+	});
 };

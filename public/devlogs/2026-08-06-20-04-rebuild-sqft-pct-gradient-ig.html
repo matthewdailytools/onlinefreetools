@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rebuilt square-feet, percentage-change, and gradient pages to BMI-style IG pattern with ten-locale copy. | Dev Logs</title>
+  <meta name="description" content="Rebuilt square-feet, percentage-change, and gradient pages to BMI-style IG pattern with ten-locale copy." />
+  <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-06-20-04-rebuild-sqft-pct-gradient-ig.html" />
+  <meta property="og:title" content="Rebuilt square-feet, percentage-change, and gradient pages to BMI-style IG pattern with ten-locale copy. | Dev Logs" />
+  <meta property="og:description" content="Rebuilt square-feet, percentage-change, and gradient pages to BMI-style IG pattern with ten-locale copy." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-06-20-04-rebuild-sqft-pct-gradient-ig.html" />
+  <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  
+  <script>
+    (function () {
+      try {
+        var enabled = [];
+        var defaultLang = "en";
+        var fallback = defaultLang;
+        var path = window.location.pathname || '/';
+
+        // If the URL already contains a language prefix (including defaultLang), respect it.
+        var hasPrefix = enabled.some(function (l) {
+          return l && (path === '/' + l || path.indexOf('/' + l + '/') === 0);
+        });
+        if (hasPrefix) return;
+
+        var langs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language])
+          .filter(Boolean)
+          .map(function (x) { return String(x).toLowerCase().split('-')[0]; });
+
+        var picked = null;
+        for (var i = 0; i < langs.length; i++) {
+          if (enabled.indexOf(langs[i]) !== -1) { picked = langs[i]; break; }
+        }
+        if (!picked) picked = enabled.indexOf(fallback) !== -1 ? fallback : (enabled[0] || fallback);
+
+        if (picked === "en") return;
+        var targetPath = path;
+        if (picked !== defaultLang) {
+          targetPath = ('/' + picked + path).replace(/\/{2,}/g, '/');
+        }
+        window.location.replace(targetPath + window.location.search + window.location.hash);
+      } catch (e) {}
+    })();
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body { min-height: 100vh; padding-top: 56px; }
+    .layout { display: flex; min-height: 100vh; }
+    /* Sidebar: desktop - sticky under the fixed header */
+    #sidebar {
+      width: 260px;
+      transition: margin-left 0.2s ease;
+      position: sticky;
+      top: 56px;
+      height: calc(100vh - 56px);
+      overflow-y: auto;
+      background: #f8f9fa;
+      border-right: 1px solid #e5e7eb;
+      z-index: 1020;
+    }
+    #content { flex: 1; transition: margin-left 0.2s ease; }
+    .sidebar-collapsed #sidebar { margin-left: -260px; }
+    .sidebar-collapsed #content { margin-left: 0; }
+    @media (max-width: 767.98px) {
+      #sidebar {
+        position: fixed;
+        z-index: 1020;
+        top: 56px;
+        bottom: 0;
+        height: auto;
+      }
+      .sidebar-collapsed #sidebar { margin-left: -260px; }
+      #content { margin-left: 0; }
+      body { padding-top: 56px; }
+    }
+  </style>
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?39f18c089a03779cd05243e21b046589";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "xbc0iytpn7");
+</script>
+  
+  
+</head>
+<body>
+  
+  
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom fixed-top">
+      <div class="container-fluid">
+        <button class="btn btn-outline-secondary me-2" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+        <a class="navbar-brand fw-semibold" href="/">Online Free Tools</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="topNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="/">Home</a></li><li class="nav-item"><a class="nav-link" href="/devlogs/">Dev Logs</a></li></ul>
+          <div class="d-flex align-items-center gap-2">
+            
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="layout sidebar-collapsed" id="layoutRoot">
+    
+    <aside id="sidebar" class="bg-light border-end p-3">
+      <h6 class="text-muted text-uppercase">Navigation</h6>
+      <div class="list-group list-group-flush small" id="navList"><a class="list-group-item list-group-item-action" href="/">Home</a><a class="list-group-item list-group-item-action" href="/devlogs/">Dev Logs</a></div>
+    </aside>
+    <main id="content" class="p-4">
+      <section class="mb-3">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h1 class="h4 mb-0">Rebuilt square-feet, percentage-change, and gradient pages to BMI-style IG pattern with ten-locale copy. | Dev Logs</h1>
+          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
+        </div>
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-06 20:04
+Summary: Rebuilt square-feet, percentage-change, and gradient pages to BMI-style IG pattern with ten-locale copy.</p>
+<p>[question]
+In /Users/xuli/vscodeai/onlinefreetools, rebuild these EXISTING calculator pages to match IG pattern in howToCalculateBmiPage.ts (helpers: renderToolIgSections, renderToolReferencesSection from src/pages/site/toolContent.ts).</p>
+<h2>Tools</h2>
+<ol>
+<li>square-feet — src/pages/squareFeetPage.ts + tool_squarefeet_*</li>
+<li>how-to-calculate-percentage-change — src/pages/howToCalculatePercentageChangePage.ts + tool_percentage_change_*</li>
+<li>how-to-calculate-gradient — src/pages/howToCalculateGradientPage.ts + tool_gradient_*</li>
+</ol>
+<h2>Specs</h2>
+<p>Read work-tasks/{slug}/02-tool-info.md and 03-locale-briefs.md.</p>
+<h3>square-feet</h3>
+<ul>
+<li>Keep unit conversion calculator UI</li>
+<li>How + Formula + Example + Use cases (real estate / flooring / renovation — not generic unit converter fluff)</li>
+<li>References: NIST or other unit conversion authority (≥1)</li>
+<li>All 10 langs independently</li>
+</ul>
+<h3>percentage-change</h3>
+<ul>
+<li>Keep calculator</li>
+<li>Full numeric example + business/data use cases</li>
+<li>Formula visible; FAQ on percentage points vs percent</li>
+<li>References optional but good (e.g. educational math source)</li>
+<li>All 10 langs</li>
+</ul>
+<h3>gradient</h3>
+<ul>
+<li>Keep calculator if present</li>
+<li>Clear multivariable gradient formula</li>
+<li>Use cases optimization/ML</li>
+<li>References: math education sources</li>
+<li>related stays percentage-change, roi per catalog</li>
+<li>All 10 langs</li>
+</ul>
+<h2>Rules</h2>
+<ul>
+<li>Full function comments in page TS</li>
+<li>description ≥120</li>
+<li>Update scripts/site/i18n.mjs home cards when titles change</li>
+<li>NOT isomorphic ten-lang paste</li>
+<li>Do not modify BMI, headers, text-diff, markdown pages</li>
+<li>Run npm run lint:seo and fix your failures</li>
+</ul>
+<p>Return files changed + gaps.</p>
+<p>[try to solve]
+三页已按 BMI 的 IG 模式重建：<code>renderToolIgSections</code>（How / Formula / Example / Use cases）+ <code>renderToolReferencesSection</code>；保留计算器交互。</p>
+<ul>
+<li><strong>square-feet</strong>：长×宽单位切换保留；结果同时显示 sq ft 与 m²（NIST 因子 0.09290304）；房产/装修场景；NIST SP 811 引用；FAQ 含套内/建筑口径与非估价。</li>
+<li><strong>percentage-change</strong>：公式 (new−old)/old×100；示例 80→100=+25%；商业/数据 Use cases；百分点 FAQ；Relative change 引用。</li>
+<li><strong>gradient</strong>：按用户要求保持<strong>多元 ∇f</strong>（非两点斜率）；演示函数求值交互；优化/ML Use cases；Wikipedia Gradient + Khan Academy；related 仍为 percentage-change、roi。</li>
+</ul>
+<p>十语独立文案已写入 <code>src/site/i18n/*.ts</code>；首页卡片 title/desc 已同步 <code>scripts/site/i18n.mjs</code>。<code>npm run lint:seo</code> 通过。</p>
+<p><strong>Gaps</strong>：① work-tasks gradient <code>02</code>/<code>03</code> 偏向两点斜率，实现按用户指令保留多元微积分；② ar/ja/ru 仍建议母语抽查；③ <code>03</code> 轮次勾选未改（未要求）；④ square-feet 仍是 L×W 面积工具（非纯面积数值双向换算框）。</p>
+<p>[actions]</p>
+<ul>
+<li>src/pages/squareFeetPage.ts</li>
+<li>src/pages/howToCalculatePercentageChangePage.ts</li>
+<li>src/pages/howToCalculateGradientPage.ts</li>
+<li>src/site/i18n/en.ts</li>
+<li>src/site/i18n/zh.ts</li>
+<li>src/site/i18n/es.ts</li>
+<li>src/site/i18n/ar.ts</li>
+<li>src/site/i18n/pt.ts</li>
+<li>src/site/i18n/id.ts</li>
+<li>src/site/i18n/fr.ts</li>
+<li>src/site/i18n/ja.ts</li>
+<li>src/site/i18n/ru.ts</li>
+<li>src/site/i18n/de.ts</li>
+<li>scripts/site/i18n.mjs</li>
+<li>npm run lint:seo</li>
+</ul>
+</article>
+      </section>
+    </main>
+  </div>
+  
+  <footer class="bg-light border-top text-center py-3">
+    <div class="container">
+      <small class="text-muted">Online Free Tools · Learning project · Iterating</small>
+      <span class="text-muted mx-2">·</span>
+      <a class="small text-decoration-none" href="/en/about">About</a>
+    </div>
+  </footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <script>
+    const layout = document.getElementById('layoutRoot');
+    const toggle = document.getElementById('sidebarToggle');
+    if (layout && toggle) {
+      toggle.addEventListener('click', () => layout.classList.toggle('sidebar-collapsed'));
+      
+    }
+  </script>
+</body>
+</html>

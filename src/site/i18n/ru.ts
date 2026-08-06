@@ -5,22 +5,42 @@ const ru: SiteLangDict = {
   nav_devlogs: 'Журналы разработки',
   nav_tools: 'Инструменты',
   footer_text: 'Online Free Tools · Учебный проект · Постоянное обновление',
-  tool_headers_title: 'Получить заголовки ответов веб-сайта',
+  tool_headers_title: 'Проверить HTTP-заголовки сайта — Посмотреть response headers',
   tool_headers_description:
-    "Получить HTTP-заголовки ответа для URL на сервере (HEAD, fallback на GET). Процесс: отправить HEAD, следовать редиректам, собрать заголовки, блокировать приватные хосты. Пример: проверить CORS, Cache-Control, HSTS для отладки редиректов и настроек CDN.",
+    'Проверьте HTTP-заголовки ответа URL онлайн с нашего edge. Шаги: вставьте https, отправьте HEAD (GET при необходимости), следуйте редиректам, покажите статус и карту заголовков; блокируйте частные хосты. Пример: читайте Cache-Control, CORS и HSTS при отладке CDN или редиректов.',
   tool_headers_article:
-    'Что это: Получите и проверьте заголовки HTTP-ответа веб-сайта. Полезно для отладки CORS, кэширования, перенаправлений и проверки заголовков безопасности или CDN. Сценарии: отладка разработчиком, проверки SEO и проверка конфигурации сервера.',
+    'Смотрите заголовки, которые edge получает для публичного URL — кэш, CORS, редиректы и security-заголовки. Запрос проксируется; тело страницы мы не храним.',
   url_label: 'URL',
   url_placeholder: 'например https://example.com',
-  fetch_button: 'Получить заголовки',
+  fetch_button: 'Проверить',
   result_title: 'Результат',
   status_label: 'Статус',
   final_url_label: 'Конечный URL',
   headers_label: 'Заголовки',
   error_prefix: 'Ошибка: ',
   note_title: 'Примечания',
-  note_1: 'Некоторые сайты не поддерживают HEAD; мы вернемся к GET.',
-  note_2: 'В целях безопасности запросы к локальному хосту/частным сетям блокируются.',
+  note_1: 'Если сайт отклоняет HEAD, пробуем GET. Цель — заголовки, а не скачивание HTML.',
+  note_2: 'localhost и частные сети заблокированы, чтобы worker не сканировал внутренние хосты.',
+  tool_headers_how_title: 'Как это работает',
+  tool_headers_how_body:
+    'Вставьте публичный http(s) URL и нажмите проверить. Edge-worker шлёт HEAD (GET при нужде), следует редиректам и возвращает статус, финальный URL и увиденные заголовки. Частные цели отклоняются. Это взгляд с edge — может отличаться от локального браузера из‑за CDN или гео-маршрутизации.',
+  tool_headers_rules_title: 'Что делает проверка',
+  tool_headers_rules_body:
+    'Краткоживущий прокси только для инспекции заголовков; содержимое страницы не сохраняется. Имена следуют семантике HTTP (см. Ссылки).',
+  tool_headers_rules_item_1: 'Сначала HEAD; GET, если origin не поддерживает HEAD.',
+  tool_headers_rules_item_2: 'Следует редиректам и сообщает финальный URL.',
+  tool_headers_rules_item_3: 'Блокирует localhost и IP частных сетей.',
+  tool_headers_rules_item_4: 'Показывает частые заголовки: Cache-Control, CORS, CSP и др.',
+  tool_headers_example_title: 'Пример',
+  tool_headers_example:
+    'example.com → статус 200, финальный URL без изменений; заголовки с content-type: text/html и, по origin, cache-control или security-заголовки.',
+  tool_headers_usecases_title: 'Когда пригодится',
+  tool_headers_usecase_1: 'Перед релизом проверить Cache-Control или кэш CDN.',
+  tool_headers_usecase_2: 'Разобрать CORS preflight по Access-Control-* в ответе.',
+  tool_headers_usecase_3: 'Убедиться, что CSP, HSTS и другие security-заголовки реально отдаются.',
+  tool_headers_ref_rfc9110_label: 'RFC 9110 — Семантика HTTP',
+  tool_headers_ref_mdn_label: 'MDN — HTTP-заголовки',
+  tool_headers_ref_rfc9111_label: 'RFC 9111 — HTTP-кэширование',
   tool_markdown_title: 'Markdown в HTML и обратно — с очисткой',
   tool_markdown_description:
     'Нужен безопасный HTML из Markdown или Markdown из HTML админки? Выберите направление: marked/Turndown и DOMPurify в браузере. Пример: README → .html или HTML из CMS → .md для Git.',
@@ -93,6 +113,59 @@ const ru: SiteLangDict = {
   tool_markdown_faq_q5: 'Какой Markdown и какие экспорты?',
   tool_markdown_faq_a5:
     'Базовый CommonMark; опционально полный HTML для офлайн-передачи.',
+  tool_bmi_title: 'Калькулятор ИМТ — как рассчитать индекс массы тела',
+  tool_bmi_description:
+    'Рассчитайте индекс массы тела (ИМТ) по формуле для взрослых. Шаги: выберите метрическую или имперскую систему, введите вес и рост, получите ИМТ и сопоставьте с распространёнными категориями. Пример: 70 кг и 175 см → ИМТ ≈ 22,9 (норма). Только для обучения и скрининга, не диагноз.',
+  tool_bmi_article:
+    'Бесплатный калькулятор показывает, как для взрослых считается ИМТ по весу и росту: метрическая и имперская формулы, пороги категорий и ограничения (спортсмены, дети). Расчёт в браузере, данные не загружаются.',
+  tool_bmi_weight_label: 'Вес (кг)',
+  tool_bmi_weight_placeholder: 'Введите вес в килограммах',
+  tool_bmi_height_label: 'Рост (см)',
+  tool_bmi_height_placeholder: 'Введите рост в сантиметрах',
+  tool_bmi_calculate: 'Рассчитать ИМТ',
+  tool_bmi_how_title: 'Как пользоваться',
+  tool_bmi_how_body:
+    'Выберите метрическую или имперскую систему, введите вес и рост и нажмите «Рассчитать». Инструмент применяет стандартную формулу ИМТ для взрослых, показывает одну десятичную и относит значение к распространённым категориям скрининга. Числа считаются локально и не отправляются.',
+  tool_bmi_formula_title: 'Формула ИМТ и категории для взрослых',
+  tool_bmi_formula_body:
+    'Метрическая: ИМТ = вес (кг) ÷ рост (м)². Имперская: ИМТ = 703 × вес (фунт) ÷ рост (дюйм)². Пороги здесь соответствуют широко публикуемым диапазонам скрининга.',
+  tool_bmi_formula_item_1: 'Недостаточный вес: ИМТ < 18,5',
+  tool_bmi_formula_item_2: 'Норма: ИМТ 18,5–24,9',
+  tool_bmi_formula_item_3: 'Избыточный вес: ИМТ 25–29,9',
+  tool_bmi_formula_item_4: 'Ожирение: ИМТ ≥ 30',
+  tool_bmi_example_title: 'Пример',
+  tool_bmi_example:
+    'Пример (метрическая система): вес 70 кг, рост 175 см → рост = 1,75 м → ИМТ = 70 / (1,75²) ≈ 22,9 → нормальный диапазон скрининга.',
+  tool_bmi_usecases_title: 'Когда пригодится',
+  tool_bmi_usecase_1: 'Быстрая самопроверка взрослого перед плановым визитом к врачу (только скрининг).',
+  tool_bmi_usecase_2: 'Записать базовый ИМТ при старте фитнес-программы вместе с другими показателями.',
+  tool_bmi_usecase_3: 'Сверить одно измерение в метрической и имперской системах.',
+  tool_bmi_ref_who_label: 'ВОЗ — справка о ожирении и избыточном весе',
+  tool_bmi_ref_cdc_label: 'CDC — категории ИМТ для взрослых',
+  bmi_chart_title: 'Категории ИМТ для взрослых (скрининг)',
+  bmi_underweight: 'Недостаточный вес',
+  bmi_normal: 'Норма',
+  bmi_overweight: 'Избыточный вес',
+  bmi_obese: 'Ожирение',
+  bmi_metric_units: 'Метрическая',
+  bmi_imperial_units: 'Имперская',
+  bmi_unit_group_label: 'Система единиц',
+  bmi_result_label: 'Ваш ИМТ',
+  bmi_invalid_input: 'Введите положительные значения веса и роста для расчёта.',
+  bmi_weight_lbs: 'Вес (фунт)',
+  bmi_weight_lbs_placeholder: 'Вес в фунтах',
+  bmi_height_ft: 'Рост (фут)',
+  bmi_height_ft_placeholder: 'Футы',
+  bmi_height_in: 'Рост (дюйм)',
+  bmi_height_in_placeholder: 'Дюймы',
+  bmi_interpretation_underweight:
+    'Результат скрининга: диапазон недостаточного веса. ИМТ не является диагнозом — при необходимости обсудите с врачом.',
+  bmi_interpretation_normal:
+    'Результат скрининга: нормальный диапазон для взрослых. ИМТ сам по себе не измеряет жир или физическую форму.',
+  bmi_interpretation_overweight:
+    'Результат скрининга: диапазон избыточного веса. ИМТ не является диагнозом — при необходимости обсудите с врачом.',
+  bmi_interpretation_obese:
+    'Результат скрининга: диапазон ожирения. ИМТ не является диагнозом — при необходимости обсудите с врачом.',
   tool_text_diff_description:
     'Сравните два текста онлайн и посмотрите, что изменилось. Процесс: вставьте исходный и исправленный текст, выберите сравнение по строкам, словам или символам, при желании игнорируйте пробелы или уравняйте переносы Windows (CRLF→LF), затем подсветите добавления и удаления в браузере. Пример: замените «привет мир» на «привет друг» — в режиме слов будет одна замена.',
   tool_text_diff_article:
@@ -151,6 +224,314 @@ const ru: SiteLangDict = {
   tool_text_diff_faq_a3: 'В Windows часто CRLF, в Mac/Linux — LF. Включите «Считать CRLF и LF одинаковыми» и сравните снова.',
   tool_text_diff_faq_q4: 'Можно ли сравнивать картинки или бинарные файлы?',
   tool_text_diff_faq_a4: 'Нет. Только обычный текст.',
+
+  tool_headers_faq_q1: 'Что показывают HTTP-заголовки ответа?',
+  tool_headers_faq_a1:
+    'Метаданные ответа сервера: тип контента, правила кэша, редиректы и политики вроде HSTS, CSP или CORS.',
+  tool_headers_faq_q2: 'Скачивается ли весь HTML страницы?',
+  tool_headers_faq_a2:
+    'Сначала HEAD, GET при необходимости. Цель — заголовки, а не scraping или хранение body.',
+  tool_headers_faq_q3: 'Почему localhost и частные IP запрещены?',
+  tool_headers_faq_a3:
+    'Частные сети блокируются, чтобы worker нельзя было использовать для сканирования внутренних хостов.',
+  tool_headers_faq_q4: 'Это то же самое, что DevTools браузера?',
+  tool_headers_faq_a4:
+    'Не всегда. Вы видите ответ с нашего edge; CDN, гео-маршрутизация или anti-bot могут отличаться от локального браузера.',
+  tool_headers_faq_q5: 'Сохраняете ли вы проверенные URL?',
+  tool_headers_faq_a5:
+    'Короткий edge-запрос без истории URL. Не вставляйте секреты в query string.',
+  tool_bmi_faq_q1: 'Какая формула ИМТ?',
+  tool_bmi_faq_a1:
+    'Метрическая: ИМТ = вес(кг) / рост(м)². Имперская: ИМТ = 703 × вес(фунт) / рост(дюйм)².',
+  tool_bmi_faq_q2: 'Что означают категории ИМТ?',
+  tool_bmi_faq_a2:
+    'Распространённые пороги для взрослых: недостаточный вес <18,5, норма 18,5–24,9, избыточный 25–29,9, ожирение ≥30. Это ориентиры скрининга, а не диагноз.',
+  tool_bmi_faq_q3: 'Подходит ли ИМТ спортсменам?',
+  tool_bmi_faq_a3:
+    'Не всегда. ИМТ не отличает мышцы от жира. У спортсменов может быть высокий ИМТ при низком проценте жира — нужна индивидуальная оценка у врача.',
+  tool_bmi_faq_q4: 'Можно ли для детей или беременности?',
+  tool_bmi_faq_a4:
+    'Пороги для взрослых не подходят детям, подросткам и беременным. Используйте возрастные таблицы и клинические рекомендации.',
+  tool_bmi_disclaimer:
+    'Калькулятор ИМТ предназначен только для обучающего скрининга взрослых. Это не медицинский совет, не ставит диагноз и не заменяет помощь квалифицированного специалиста.',
+  tool_bmi_references:
+    'Справка ВОЗ об ожирении и избыточном весе; руководство CDC по категориям ИМТ для взрослых; стандартные метрическая и имперская формулы ИМТ.',
+
+  tool_squarefeet_title: 'Квадратные футы в м² — Для жилья и ремонта',
+  tool_squarefeet_description:
+    'Переведите площадь комнаты между квадратными футами и квадратными метрами для объявлений и ремонта. Шаги: выберите ft/m/in, введите длину × ширину, посчитайте площадь, покажите ft² и m² с фактором NIST 1 ft² = 0.09290304 m². Пример: квартира 850 sq ft ≈ 78,97 м².',
+  tool_squarefeet_article:
+    'Оцените прямоугольную площадь по длине и ширине и переведите между квадратными футами и метрами. Для объявлений, пола и покраски — не оценка стоимости и не разделение жилой/общей площади.',
+  tool_squarefeet_length_label: 'Длина',
+  tool_squarefeet_length_placeholder: 'Введите длину',
+  tool_squarefeet_width_label: 'Ширина',
+  tool_squarefeet_width_placeholder: 'Введите ширину',
+  tool_squarefeet_calculate: 'Перевести площадь',
+  tool_squarefeet_unit_group_label: 'Единицы ввода',
+  unit_feet: 'Футы',
+  unit_meters: 'Метры',
+  unit_inches: 'Дюймы',
+  sqft_unit: 'sq ft',
+  tool_squarefeet_result_note: 'Округление до двух знаков. Фактор: 1 ft² = 0.09290304 m².',
+  tool_squarefeet_result_sqm: '≈ {sqm} м²',
+  tool_squarefeet_invalid_input: 'Введите положительные длину и ширину.',
+  tool_squarefeet_usage_title: 'Как пользоваться',
+  tool_squarefeet_usage: 'Выберите единицу, введите длину и ширину — получите sq ft и эквивалент в м².',
+  tool_squarefeet_how_title: 'Как это работает',
+  tool_squarefeet_how_body:
+    'Выберите футы, метры или дюймы. Умножьте длину × ширину после перевода в футы, затем в м² точным SI-фактором. Пустые и отрицательные значения отклоняются.',
+  tool_squarefeet_formula_title: 'Формула площади и коэффициент',
+  tool_squarefeet_formula_body:
+    'Площадь (ft²) = длина (ft) × ширина (ft). В метрах: ft² = (L×W) ÷ 0.09290304. В дюймах: каждую сторону ÷ 12. Фактор: 1 ft² = 0.09290304 m².',
+  tool_squarefeet_formula_item_1: 'Ввод в футах: площадь_ft² = L × W',
+  tool_squarefeet_formula_item_2: 'Ввод в метрах: площадь_ft² = (L × W) / 0.09290304',
+  tool_squarefeet_formula_item_3: 'Ввод в дюймах: площадь_ft² = (L/12) × (W/12)',
+  tool_squarefeet_formula_item_4: 'м² = площадь_ft² × 0.09290304 (NIST / SI)',
+  tool_squarefeet_example_title: 'Пример',
+  tool_squarefeet_example:
+    'Объявление: квартира 850 sq ft → 850 × 0.09290304 ≈ 78,97 м². Комната: 10 ft × 12 ft = 120 sq ft ≈ 11,15 м².',
+  tool_squarefeet_usecases_title: 'Когда пригодится',
+  tool_squarefeet_usecase_1: 'Сравнить американское объявление в sq ft с местными в м².',
+  tool_squarefeet_usecase_2: 'Оценить пол/ковёр прямоугольной комнаты до заказа материалов.',
+  tool_squarefeet_usecase_3: 'Грубая оценка краски/ремонта при смешанных единицах на чертеже.',
+  tool_squarefeet_ref_nist_label: 'NIST SP 811 — Руководство по Международной системе единиц (SI)',
+  tool_squarefeet_faq_q1: 'Какой коэффициент ft² ↔ м²?',
+  tool_squarefeet_faq_a1: 'Ровно 1 ft² = 0.09290304 m² (SI / NIST). Два знака после запятой.',
+  tool_squarefeet_faq_q2: 'Отличаете жилую площадь от общей?',
+  tool_squarefeet_faq_a2: 'Нет. Только перевод плоской площади прямоугольника.',
+  tool_squarefeet_faq_q3: 'Можно ли оценить цену жилья?',
+  tool_squarefeet_faq_a3: 'Нет. Перевод площади — не оценка и не ценовая модель.',
+  tool_squarefeet_faq_q4: 'А комнаты в форме L?',
+  tool_squarefeet_faq_a4: 'Разбейте на прямоугольники, переведите каждый и сложите.',
+  tool_percentage_change_title: 'Калькулятор процентного изменения — От старого значения к новому',
+  tool_percentage_change_description:
+    'Посчитайте процентный рост или спад от старого значения к новому. Шаги: введите оба, примените (новое − старое) / старое × 100, смотрите знак. Пример: 80 → 100 = +25%. Для выручки MoM, DAU и цен — не процентные пункты.',
+  tool_percentage_change_article:
+    'Относительное процентное изменение отвечает, насколько метрика сдвинулась относительно базы. Введите старое и новое; формула (новое − старое) / старое × 100. Для KPI, не замена ROI.',
+  tool_percentage_change_original_label: 'Старое значение',
+  tool_percentage_change_new_label: 'Новое значение',
+  tool_percentage_change_calculate: 'Рассчитать',
+  tool_percentage_change_result_label: 'Процентное изменение',
+  tool_percentage_change_example:
+    'Полный пример: старое 80, новое 100 → Δ = 20 → (20 / 80) × 100 = +25%. Спад: 100 → 80 = −20%.',
+  tool_percentage_change_result_invalid: 'Старое значение должно быть ненулевым числом.',
+  tool_percentage_change_increase: 'рост',
+  tool_percentage_change_decrease: 'снижение',
+  tool_percentage_change_no_change: 'без изменений',
+  tool_percentage_change_abs_note: 'Абсолютное изменение: {delta}',
+  tool_percentage_change_how_title: 'Как это работает',
+  tool_percentage_change_how_body:
+    'Введите базу (старое) и последующее значение. Вычитаем, делим на старое, ×100. Плюс — рост, минус — спад. При старом = 0 относительное изменение не определено.',
+  tool_percentage_change_formula_title: 'Формула процентного изменения',
+  tool_percentage_change_formula_body:
+    'Изменение % = (новое − старое) / старое × 100. В знаменателе знаковое старое (не |старое|).',
+  tool_percentage_change_formula_item_1: 'Δ = новое − старое',
+  tool_percentage_change_formula_item_2: 'процент = (Δ / старое) × 100',
+  tool_percentage_change_formula_item_3: 'старое = 0 → не определено (ошибка)',
+  tool_percentage_change_example_title: 'Пример',
+  tool_percentage_change_usecases_title: 'Бизнес и данные',
+  tool_percentage_change_usecase_1: 'Выручка месяц к месяцу: GMV 80 прошлый месяц vs 100 этот → +25%.',
+  tool_percentage_change_usecase_2: 'Продукт: DAU с 50k до 55k → +10% относительно.',
+  tool_percentage_change_usecase_3: 'Цена: с 40 до 34 → −15% (не «6 процентных пунктов»).',
+  tool_percentage_change_ref_wiki_label: 'Wikipedia — Relative change and difference',
+  tool_percentage_change_faq_q1: 'Какова формула процентного изменения?',
+  tool_percentage_change_faq_a1: 'Изменение % = (новое − старое) / старое × 100. Плюс — рост, минус — спад.',
+  tool_percentage_change_faq_q2: 'Почему старое значение не может быть нулём?',
+  tool_percentage_change_faq_a2: 'Деление на ноль не определено. Без базы нет относительного изменения.',
+  tool_percentage_change_faq_q3: 'Это то же, что процентные пункты?',
+  tool_percentage_change_faq_a3: 'Нет. С 10% до 12% — +2 пункта, но относительный рост 20%.',
+  tool_percentage_change_faq_q4: 'Чем отличается от ROI?',
+  tool_percentage_change_faq_a4: 'ROI сравнивает прибыль с затратами инвестиций. Процентное изменение — любой новый показатель к старой базе.',
+  tool_gradient_title: 'Калькулятор градиента — многомерный ∇f (частные производные)',
+  tool_gradient_description:
+    'Вычислите градиент ∇f скалярного поля как вектор частных производных. Шаги: дифференцируйте по каждой переменной, соберите ∇f, оцените в точке. Демо f(x,y)=x²y+3y → ∇f=(2xy, x²+3); в (1,2) → (4,4). Для оптимизации и объяснения градиентного спуска в ML.',
+  tool_gradient_desc:
+    'Вычислите градиент ∇f скалярного поля как вектор частных производных. Шаги: дифференцируйте по каждой переменной, соберите ∇f, оцените в точке. Демо f(x,y)=x²y+3y → ∇f=(2xy, x²+3); в (1,2) → (4,4). Для оптимизации и объяснения градиентного спуска в ML.',
+  tool_gradient_article:
+    'Градиент многомерной скалярной функции — вектор её первых частных производных. Указывает направление наискорейшего локального роста. Это не калькулятор наклона по двум точкам.',
+  tool_gradient_fn_hint: 'Демо-функция (фиксирована в интерактивном блоке):',
+  tool_gradient_x_label: 'x',
+  tool_gradient_x_placeholder: 'напр. 1',
+  tool_gradient_y_label: 'y',
+  tool_gradient_y_placeholder: 'напр. 2',
+  tool_gradient_calculate: 'Вычислить ∇f',
+  tool_gradient_result_label: 'Градиент в вашей точке',
+  tool_gradient_result_note: 'Вычислено f(x,y)=x²y+3y в ({x}, {y}).',
+  tool_gradient_invalid_input: 'Введите конечные числовые x и y.',
+  tool_gradient_how_title: 'Как это работает',
+  tool_gradient_how_body:
+    'Для скаляра f вычислите каждую частную ∂f/∂xᵢ, зафиксировав остальные, соберите ∇f и подставьте координаты. Блок использует f(x,y)=x²y+3y для проверки вручную.',
+  tool_gradient_formula_title: 'Формула многомерного градиента',
+  tool_gradient_formula_body:
+    '∇f = (∂f/∂x₁, …, ∂f/∂xₙ). Для двух переменных: ∇f(x,y)=(∂f/∂x, ∂f/∂y). ∇f — наискорейший подъём; −∇f — в градиентном спуске.',
+  tool_gradient_formula_item_1: 'Возьмите ∂f/∂xᵢ по каждой переменной',
+  tool_gradient_formula_item_2: 'Соберите вектор ∇f',
+  tool_gradient_formula_item_3: 'Оцените компоненты в точке',
+  tool_gradient_formula_item_4: 'Демо: f=x²y+3y → ∇f=(2xy, x²+3)',
+  tool_gradient_example_title: 'Пример',
+  tool_gradient_example:
+    'f(x,y)=x²y+3y. Частные: ∂f/∂x=2xy, ∂f/∂y=x²+3. В (1,2): ∇f=(4,4).',
+  tool_gradient_usecases_title: 'Оптимизация и машинное обучение',
+  tool_gradient_usecase_1: 'Проверить частные производные перед шагом оптимизации.',
+  tool_gradient_usecase_2: 'Объяснить градиентный спуск: шаг против ∇loss.',
+  tool_gradient_usecase_3: 'Физическая интуиция: ∇f указывает, где скалярное поле растёт быстрее всего.',
+  tool_gradient_ref_wiki_label: 'Wikipedia — Gradient',
+  tool_gradient_ref_khan_label: 'Khan Academy — The gradient',
+  tool_gradient_faq_q1: 'Что такое градиент в многомерном анализе?',
+  tool_gradient_faq_a1: '∇f — вектор частных производных, указывающий наискорейший локальный рост.',
+  tool_gradient_faq_q2: 'Как считать вручную?',
+  tool_gradient_faq_a2: 'Дифференцируйте по каждой переменной при фиксированных остальных, соберите вектор, оцените в точке.',
+  tool_gradient_faq_q3: 'Тот же «градиент», что в ML?',
+  tool_gradient_faq_a3: 'Да, тот же объект: ∇ скалярной функции потерь. Страница объясняет определение, не обучает модель.',
+  tool_gradient_faq_q4: 'Это калькулятор наклона по двум точкам?',
+  tool_gradient_faq_a4: 'Нет. Наклон rise/run — другой инструмент; здесь ∇f — вектор частных.',
+
+  /* --- IG: ip / roi / mr --- */
+tool_ip_address_title: 'Узнать свой IP — Показать публичный IP-адрес',
+  tool_ip_address_description:
+    'Посмотрите публичный IP, который наш edge видит для вашего соединения. Процесс: откройте страницу или нажмите «Обновить»; worker читает доверенный адрес клиента. Пример: может показать 203.0.113.10. При VPN/прокси виден IP выхода, а не LAN.',
+  tool_ip_address_article:
+    'Страница показывает публичный исходящий IP с точки зрения нашего edge — удобно проверить VPN, сообщить адрес в поддержку или отладить allowlist. Это не геолокация и не поиск провайдера.',
+  tool_ip_address_how_title: 'Как это работает',
+  tool_ip_address_how_body:
+    'Браузер вызывает наш edge API. Worker возвращает IP клиента, привязанный к соединению (не только подделываемый заголовок). Обновляйте когда угодно; аккаунт не нужен.',
+  tool_ip_address_rules_title: 'Что означает этот IP',
+  tool_ip_address_rules_body:
+    'Значение — публичный адрес, который edge связывает с вашим TCP/TLS-соединением. Обычно так сайты видят вашу исходящую личность. Ограничения:',
+  tool_ip_address_rules_item_1: 'При VPN или HTTP-прокси виден IP выхода провайдера, а не домашний LAN.',
+  tool_ip_address_rules_item_2: 'За NAT несколько устройств делят один публичный IP; 192.168.x.x здесь не появляется.',
+  tool_ip_address_rules_item_3: 'Мы предпочитаем доверенный IP клиента edge, а не только X-Forwarded-For (его можно подделать).',
+  tool_ip_address_rules_item_4: 'Может быть IPv4 или IPv6 в зависимости от пути; в dual-stack после переподключения может смениться.',
+  tool_ip_address_example_title: 'Пример',
+  tool_ip_address_example:
+    'Документационный пример: edge видит 203.0.113.10 (зарезервированный TEST-NET-3). Живой результат — ваш реальный публичный исходящий IP.',
+  tool_ip_address_usecases_title: 'Когда пригодится',
+  tool_ip_address_usecase_1: 'Проверить, меняет ли VPN/прокси публичный IP на самом деле.',
+  tool_ip_address_usecase_2: 'Сообщить в поддержку или firewall, какой публичный IP добавить в список.',
+  tool_ip_address_usecase_3: 'Быстрая проверка при отладке удалённого доступа или API allowlist.',
+  tool_ip_address_ref_mdn_label: 'MDN — заголовок X-Forwarded-For (риски подделки)',
+  tool_ip_address_ref_cloudflare_label: 'Cloudflare Learning — что такое IP-адрес?',
+  ip_label: 'Ваш публичный IP',
+  fetch_ip_button: 'Обновить',
+  fetching_message: 'Загрузка…',
+  tool_ip_address_faq_q1: 'Почему он отличается от LAN IP?',
+  tool_ip_address_faq_a1:
+    'Частные адреса вроде 192.168.x.x остаются во внутренней сети через NAT. Здесь только публичный адрес со стороны интернета.',
+  tool_ip_address_faq_q2: 'Как страница получает мой IP?',
+  tool_ip_address_faq_a2:
+    'Браузер запрашивает edge API; worker возвращает доверенный IP клиента этого соединения.',
+  tool_ip_address_faq_q3: 'Храните ли вы мой IP?',
+  tool_ip_address_faq_a3:
+    'Запрос короткий и выполняется на edge. Истории IP нет; считайте результат временным отображением.',
+  tool_ip_address_faq_q4: 'Что если включён VPN или прокси?',
+  tool_ip_address_faq_a4:
+    'Обычно виден IP выхода VPN/прокси. Так и должно быть: сайты видят ту же исходящую личность.',
+
+  tool_roi_title: 'Калькулятор ROI — Как рассчитать рентабельность инвестиций',
+  tool_roi_description:
+    'Рассчитайте простой ROI по формуле (Доход − Затраты) / Затраты × 100% или (Итог − Начало) / Начало × 100%. Процесс: введите затраты и конечную стоимость (или чистую прибыль) и проверьте допущения о налогах, комиссиях и времени. Пример: затраты 1000, итог 1300 → ROI 30%. Только учебная иллюстрация — не инвестиционный совет.',
+  tool_roi_article:
+    'Простой ROI выражает чистую прибыль относительно затрат в процентах. Подходит для грубых итогов кампаний/проектов; не считает многопериодный IRR/NPV.',
+  tool_roi_initial_label: 'Начальные вложения (затраты)',
+  tool_roi_initial_placeholder: 'напр. 1000',
+  tool_roi_final_label: 'Конечная стоимость',
+  tool_roi_final_placeholder: 'напр. 1300',
+  tool_roi_gain_label: 'Чистая прибыль (необязательно)',
+  tool_roi_gain_placeholder: 'Если известна, заменяет итог − начало',
+  tool_roi_calculate: 'Рассчитать',
+  tool_roi_result_label: 'ROI',
+  tool_roi_how_title: 'Как это работает',
+  tool_roi_how_body:
+    'Введите затраты и конечную стоимость либо известную чистую прибыль. ROI = прибыль / затраты × 100%. Если прибыль пуста, прибыль = итог − начало. Нулевые затраты отклоняются.',
+  tool_roi_formula_title: 'Формула и допущения',
+  tool_roi_formula_body:
+    'ROI = (Конечная стоимость − Начальные вложения) / Начальные вложения × 100%, либо Чистая прибыль / Затраты × 100%. Учтите:',
+  tool_roi_formula_item_1: 'Налоги: не оцениваем — при необходимости вводите суммы после налогов.',
+  tool_roi_formula_item_2: 'Время: простой ROI игнорирует срок владения; это не годовая доходность.',
+  tool_roi_formula_item_3: 'Комиссии: включите комиссии и платёжные сборы в затраты или итог самостоятельно.',
+  tool_roi_formula_item_4: 'Многопериодные потоки и IRR/NPV вне рамок этого однопериодного процента.',
+  tool_roi_example_title: 'Пример',
+  tool_roi_example:
+    'Пример: затраты 1000, конечная стоимость 1300 → прибыль 300 → ROI = 300 / 1000 × 100% = 30%.',
+  tool_roi_usecases_title: 'Когда пригодится',
+  tool_roi_usecase_1: 'Маркетинг: грубый ROI кампании, когда известны расходы и атрибутированная выручка.',
+  tool_roi_usecase_2: 'Учёба: потренировать базовый процент ROI на фиксированных числах.',
+  tool_roi_usecase_3: 'Итог проекта: свести завершённую инициативу к паре затраты/прибыль (только оценка).',
+  tool_roi_ref_investopedia_label: 'Investopedia — рентабельность инвестиций (ROI)',
+  tool_roi_ref_guide_label: 'Investopedia — руководство по расчёту ROI',
+  tool_roi_interpret_positive: 'Положительный ROI (прибыль относительно затрат) — только учебная иллюстрация.',
+  tool_roi_interpret_zero: 'Нулевой ROI — нет прибыли и убытка на этих данных.',
+  tool_roi_interpret_negative: 'Отрицательный ROI (убыток относительно затрат) — только учебная иллюстрация.',
+  tool_roi_zero_cost: 'Начальные вложения должны быть больше нуля.',
+  tool_roi_faq_q1: 'Какая формула используется?',
+  tool_roi_faq_a1:
+    'ROI = (Итог − Начало) / Начало × 100%, либо Чистая прибыль / Затраты × 100%, если прибыль введена.',
+  tool_roi_faq_q2: 'Это инвестиционный совет?',
+  tool_roi_faq_a2: 'Нет. Результаты — учебные иллюстрации, а не инвестиционный, налоговый или финансовый совет.',
+  tool_roi_faq_q3: 'Что с налогами, комиссиями и временем?',
+  tool_roi_faq_a3:
+    'Налоги и комиссии не оцениваем — учтите сами. Простой ROI также не считает годовую доходность.',
+  tool_roi_faq_q4: 'Если затраты равны нулю?',
+  tool_roi_faq_a4: 'ROI не определён (деление на ноль). Введите положительные затраты.',
+  tool_roi_disclaimer:
+    'Результаты ROI — только учебные иллюстрации и не являются инвестиционным, налоговым или финансовым советом. Прошлые или гипотетические доходности не гарантируют будущих результатов.',
+  tool_roi_references:
+    'Определения и руководства Investopedia по ROI; простой ROI = чистая прибыль / затраты.',
+
+  tool_marginal_revenue_title: 'Калькулятор предельной выручки — Формула ΔTR / ΔQ',
+  tool_marginal_revenue_description:
+    'Рассчитайте предельную выручку по формуле MR = ΔTR / ΔQ. Процесс: введите количество и общую выручку в двух точках, получите ΔTR и ΔQ, затем разделите. Пример: Q 10→11, TR 1000→1080 → MR = 80. Только для обучения — не совет по ценообразованию.',
+  tool_marginal_revenue_article:
+    'Предельная выручка — изменение общей выручки при изменении количества. Калькулятор показывает дискретное выведение между двумя точками.',
+  tool_marginal_revenue_how_title: 'Как это работает',
+  tool_marginal_revenue_how_body:
+    'Введите количество и общую выручку для уровня 1 и уровня 2. Считаем ΔTR = TR2 − TR1, ΔQ = Q2 − Q1 и MR = ΔTR / ΔQ в браузере.',
+  tool_marginal_revenue_formula_title: 'Выведение формулы',
+  tool_marginal_revenue_formula_body:
+    'По определению предельная выручка измеряет, как меняется общая выручка при изменении количества. Для двух точек:',
+  tool_marginal_revenue_formula_item_1: 'ΔTR = TR₂ − TR₁ (изменение общей выручки)',
+  tool_marginal_revenue_formula_item_2: 'ΔQ = Q₂ − Q₁ (изменение количества)',
+  tool_marginal_revenue_formula_item_3: 'MR = ΔTR / ΔQ при ΔQ ≠ 0',
+  tool_marginal_revenue_formula_item_4:
+    'Дискретный шаг приближает средний MR на интервале; непрерывные модели используют dTR/dQ. Отрицательный MR значит: выручка упала при росте количества.',
+  tool_marginal_revenue_example_title: 'Пример',
+  tool_marginal_revenue_example:
+    'Пример: Q₁ = 10, TR₁ = 1000; Q₂ = 11, TR₂ = 1080 → ΔTR = 80, ΔQ = 1 → MR = 80.',
+  tool_marginal_revenue_usecases_title: 'Когда пригодится',
+  tool_marginal_revenue_usecase_1: 'Домашнее задание: проверить таблицу количество/выручка на двух уровнях.',
+  tool_marginal_revenue_usecase_2: 'Грубая оценка: как меняется выручка при росте выпуска на единицу.',
+  tool_marginal_revenue_usecase_3: 'Сравнить предельную и среднюю выручку во вводной микроэкономике.',
+  tool_marginal_revenue_ref_investopedia_label: 'Investopedia — предельная выручка (MR)',
+  tool_marginal_revenue_ref_openstax_label: 'OpenStax — Principles of Microeconomics (конкуренция)',
+  tool_marginal_revenue_q1_label: 'Количество (Q₁)',
+  tool_marginal_revenue_q1_placeholder: 'напр. 10',
+  tool_marginal_revenue_tr1_label: 'Общая выручка (TR₁)',
+  tool_marginal_revenue_tr1_placeholder: 'напр. 1000',
+  tool_marginal_revenue_q2_label: 'Количество (Q₂)',
+  tool_marginal_revenue_q2_placeholder: 'напр. 11',
+  tool_marginal_revenue_tr2_label: 'Общая выручка (TR₂)',
+  tool_marginal_revenue_tr2_placeholder: 'напр. 1080',
+  tool_marginal_revenue_quantity_label: 'Количество',
+  tool_marginal_revenue_revenue_label: 'Общая выручка',
+  tool_marginal_revenue_calculate: 'Рассчитать MR',
+  tool_marginal_revenue_result_label: 'Предельная выручка',
+  tool_marginal_revenue_zero_dq: 'ΔQ = 0 — количество должно отличаться между точками.',
+  tool_marginal_revenue_detail_tpl: 'ΔTR = {dTR}, ΔQ = {dQ} → MR = {mr}',
+  tool_marginal_revenue_faq_q1: 'Как здесь выводится предельная выручка?',
+  tool_marginal_revenue_faq_a1:
+    'MR = ΔTR / ΔQ, где ΔTR = TR₂ − TR₁ и ΔQ = Q₂ − Q₁. Это дискретное выведение, не непрерывная производная.',
+  tool_marginal_revenue_faq_q2: 'Что если ΔQ равна нулю?',
+  tool_marginal_revenue_faq_a2: 'MR не определён, если количество не меняется. Выберите две разные точки.',
+  tool_marginal_revenue_faq_q3: 'Чем отличается от средней выручки?',
+  tool_marginal_revenue_faq_a3:
+    'Средняя выручка — TR / Q на уровне выпуска. Предельная — изменение TR при изменении Q; совпадают лишь в особых случаях.',
+  tool_marginal_revenue_faq_q4: 'Положительный MR значит увеличивать выпуск?',
+  tool_marginal_revenue_faq_a4:
+    'Нет. Инструмент не даёт советов по цене или производству; нужны также предельные издержки и другие ограничения.',
+  tool_marginal_revenue_disclaimer:
+    'Калькулятор предназначен для изучения понятий микроэкономики. Это не бизнес-, ценовой или инвестиционный совет.',
+  tool_marginal_revenue_references:
+    'Статья Investopedia о предельной выручке; вводное изложение MR = ΔTR/ΔQ (напр. OpenStax).',
 
 };
 export default ru;
