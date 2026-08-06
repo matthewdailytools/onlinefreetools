@@ -470,6 +470,85 @@ const zh: SiteLangDict = {
   tool_yaml_json_faq_a5:
     '非法 YAML 时，解析器若提供 mark，会带上行号和列号。非法 JSON 由 JSON.parse 报错，没有 YAML 那种 mark。',
 
+  tool_csv_json_title: 'CSV ↔ JSON 互转 — 类型、分隔符、本地处理',
+  tool_csv_json_description:
+    '在浏览器里把 CSV 转 JSON，或把 JSON 转 CSV。步骤：选方向、粘贴或上传、设定分隔符与表头，再复制或下载。逗号、分号、制表符都能处理，字段内含逗号或换行会按规则加引号；JSON 转 CSV 时嵌套对象按点号路径拆成列。示例：把商品表（编号、名称、价格）转成 JSON 数组，数据全程留在本地。',
+  tool_csv_json_article:
+    'CSV 与 JSON 双向互转，讲清类型推断、分隔符与引号规则，以及嵌套 JSON 如何拆成表格列。面向表格与 API 之间的数据互通，而非再堆一个薄页。',
+  tool_csv_json_dir_label: '转换方向',
+  tool_csv_json_tab_csv_json: 'CSV → JSON',
+  tool_csv_json_tab_json_csv: 'JSON → CSV',
+  tool_csv_json_convert: '转换',
+  tool_csv_json_copy_json: '复制 JSON',
+  tool_csv_json_copy_csv: '复制 CSV',
+  tool_csv_json_copy_done: '已复制',
+  tool_csv_json_download_json: '下载 JSON',
+  tool_csv_json_download_csv: '下载 CSV',
+  tool_csv_json_sample: '载入示例',
+  tool_csv_json_clear: '清空',
+  tool_csv_json_delimiter_label: '分隔符',
+  tool_csv_json_delimiter_auto: '自动识别',
+  tool_csv_json_delimiter_comma: '逗号 ,',
+  tool_csv_json_delimiter_semicolon: '分号 ;',
+  tool_csv_json_delimiter_tab: '制表符',
+  tool_csv_json_header: '首行为表头',
+  tool_csv_json_typing: '推断类型（数字/布尔）',
+  tool_csv_json_indent_label: '缩进',
+  tool_csv_json_indent_2: '2 空格',
+  tool_csv_json_indent_4: '4 空格',
+  tool_csv_json_indent_minify: '压缩 JSON',
+  tool_csv_json_csv_input_label: 'CSV 输入',
+  tool_csv_json_json_output_label: 'JSON 输出',
+  tool_csv_json_json_input_label: 'JSON 输入',
+  tool_csv_json_csv_output_label: 'CSV 输出',
+  tool_csv_json_csv_placeholder: 'sku,title,price\nA-001,"Chair, oak",129.9\nA-002,Desk,89',
+  tool_csv_json_json_placeholder: '[\n  {"sku":"A-001","title":"Chair, oak","price":129.9}\n]',
+  tool_csv_json_sample_csv: 'sku,title,price\nA-001,"Chair, oak",129.9\nA-002,Desk,89',
+  tool_csv_json_sample_json:
+    '[\n  {"sku":"A-001","title":"Chair, oak","price":129.9},\n  {"sku":"A-002","title":"Desk","price":89}\n]',
+  tool_csv_json_large_warn: '输入很大（超过 200 万字符），转换可能变慢，建议换更小的文件。',
+  tool_csv_json_need_lib: '无法加载 Papa Parse，请检查网络后刷新。',
+  tool_csv_json_empty: '请先粘贴内容。',
+  tool_csv_json_how_title: '工作原理',
+  tool_csv_json_how_body:
+    '选择 CSV → JSON 或 JSON → CSV，解析与生成都在本页用 Papa Parse 完成。CSV 方向可选分隔符（或自动识别）、是否首行表头、是否推断数字/布尔类型；JSON 方向会把嵌套对象按点号路径拆成列，列取所有记录键的并集。',
+  tool_csv_json_rules_title: '你应预期的规则',
+  tool_csv_json_rules_body:
+    '默认所有单元格按文本处理，保证编号不失真。双向同页，避免把「json 转 csv」做成独立薄页。',
+  tool_csv_json_rules_item_1:
+    '类型：CSV 默认全是字符串。勾选「推断类型」才会转成数字/布尔，但 007 会变成 7、超长数字串可能丢精度，所以 SKU、邮编、电话建议不勾。',
+  tool_csv_json_rules_item_2:
+    '分隔符：支持逗号、分号（欧洲 Excel 常见）、制表符（TSV），自动识别会依文本猜测。字段内含分隔符、引号或换行时，按 RFC 4180 用双引号包裹。',
+  tool_csv_json_rules_item_3:
+    'JSON → CSV：对象按点号路径拆列（dim.w、dim.h）；数组整体写成一个单元格的 JSON 字符串；列取所有键的并集，缺失留空。',
+  tool_csv_json_rules_item_4:
+    '隐私：粘贴与文件不会上传。从 CDN 取 Papa Parse 只下载库代码，不会上传你的数据。',
+  tool_csv_json_example_title: '示例',
+  tool_csv_json_example:
+    'CSV `sku,title,price` 一行 `A-001,"Chair, oak",129.9` 得到 JSON `{"sku":"A-001","title":"Chair, oak","price":"129.9"}`（不勾类型时 price 保留为文本；勾选后得到数字 129.9）。反向：`[{"sku":"A-001","dim":{"w":40,"h":90}}]` 生成表头 `sku,dim.w,dim.h`，数据行 `A-001,40,90`。',
+  tool_csv_json_usecases_title: '适合场景',
+  tool_csv_json_usecase_1:
+    '电商：把导出的商品表（编号、名称、价格）转成 JSON 数组，喂给店铺或平台 API。',
+  tool_csv_json_usecase_2:
+    '开发者：把接口或工具输出的 JSON 转成 CSV，方便在表格里筛选、对账、交付。',
+  tool_csv_json_usecase_3:
+    '数据/运营：把报表或埋点 CSV（逗号、分号或 TSV）转成 JSON 进流水线，逗号与换行安全转义。',
+  tool_csv_json_faq_q1: 'CSV 里的分号或制表符也能识别吗？',
+  tool_csv_json_faq_a1:
+    '能。可以选逗号、分号或制表符，或保持自动识别让 Papa Parse 依文本猜。分号常见于欧洲 Excel 导出，制表符就是 TSV。',
+  tool_csv_json_faq_q2: '数字、前导零和编号会保持原样吗？',
+  tool_csv_json_faq_a2:
+    '默认每个单元格都按文本处理，所以 007 和长编号不会变。勾选「推断类型」后数字样式的值会变成数字——007 变成 7，超长数字可能丢精度，SKU、邮编、电话请不要勾。',
+  tool_csv_json_faq_q3: '字段里含逗号、引号或换行怎么办？',
+  tool_csv_json_faq_a3:
+    '会按 RFC 4180 用双引号包裹，内部引号翻倍。所以像「Chair, oak」这样的标题会留在一个字段里，不会被拆成两列。',
+  tool_csv_json_faq_q4: '嵌套 JSON 怎么变成 CSV 列？',
+  tool_csv_json_faq_a4:
+    '对象按点号路径拆成列（dim.w、dim.h），数组整体写成一个单元格里的 JSON 字符串。列取所有记录键的并集，缺该键的记录留空。',
+  tool_csv_json_faq_q5: '数据会离开浏览器吗？',
+  tool_csv_json_faq_a5:
+    '不会。解析都在本页完成，选择的文件也在本地读取。CDN 可能提供 Papa Parse，但那只是下载库代码，不会上传你的 CSV 或 JSON。',
+
   tool_bmi_faq_q1: 'BMI 公式是什么？',
   tool_bmi_faq_a1: '公制：BMI = 体重(kg) / 身高(m)²；英制：BMI = 703 × 体重(lb) / 身高(in)²。',
   tool_bmi_faq_q2: 'BMI 分类代表什么？',

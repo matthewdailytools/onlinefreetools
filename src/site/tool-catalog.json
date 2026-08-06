@@ -57,7 +57,19 @@
     "homeTitleKey": "tool_yaml_json_title",
     "homeDescKey": "tool_yaml_json_desc",
     "faqPrefix": "tool_yaml_json",
-    "related": ["markdown-to-html", "text-diff"]
+    "related": ["markdown-to-html", "text-diff", "csv-json"]
+  },
+  {
+    "slug": "csv-json",
+    "path": "/tools/csv-json",
+    "category": "developer",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_csv_json_title",
+    "homeTitleKey": "tool_csv_json_title",
+    "homeDescKey": "tool_csv_json_desc",
+    "faqPrefix": "tool_csv_json",
+    "related": ["yaml-json", "text-diff"]
   },
   {
     "slug": "how-to-calculate-bmi",
