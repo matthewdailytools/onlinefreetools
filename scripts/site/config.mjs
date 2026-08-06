@@ -19,6 +19,13 @@ export const siteConfig = {
   googleSiteVerification:
     process.env.SITE_GOOGLE_SITE_VERIFICATION ||
     'DRJRq9AI8KKITkdiZbdd7zu4LxrIc38CPOd9OeK15FM',
+  /**
+   * Bing IndexNow 所有权 key（须与 public/{key}.txt 正文一致，且可公开访问）。
+   * IndexNow key 是协议要求的验证公钥，不是私密 API Token。
+   * 可用环境变量 INDEXNOW_KEY 覆盖。
+   */
+  indexNowKey:
+    process.env.INDEXNOW_KEY || '8212779ba7e9451aa4faed4cfd20ded4',
   defaultLang: (process.env.SITE_DEFAULT_LANG || 'en').trim(),
   languages,
   enabledLangs: (() => {

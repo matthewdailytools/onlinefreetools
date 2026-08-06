@@ -27,9 +27,12 @@ import { renderHowToCalculateGradientPage } from "./pages/howToCalculateGradient
 import { renderTextDiffPage } from "./pages/textDiffPage";
 import { renderYamlJsonPage } from "./pages/yamlJsonPage";
 import { renderCsvJsonPage } from "./pages/csvJsonPage";
+import { renderHtmlEntityPage } from "./pages/htmlEntityPage";
+import { renderAddWwwToDnsPage } from "./pages/addWwwToDnsPage";
 import { registerToolPage } from "./site/toolRegistrar";
 import { handleWebsiteHeadersApi } from "./tools/websiteHeaders";
 import { handleIpAddress } from "./endpoints/ipAddress";
+import { handleDnsLookup } from "./endpoints/dnsLookup";
 
 type Env = {
 	ASSETS: Fetcher;
@@ -50,10 +53,27 @@ const GOOGLE_SITE_VERIFICATION_PATH = "/google2cb457f0956f79d9.html";
 const GOOGLE_SITE_VERIFICATION_BODY = "google-site-verification: google2cb457f0956f79d9.html";
 
 /**
+ * Bing IndexNow 所有权 key（须与 public/{key}.txt 及 scripts/site/config.mjs 一致）。
+ * IndexNow 协议要求根路径托管 UTF-8 文本文件，正文仅为 key 本身。
+ */
+const INDEXNOW_KEY = "8212779ba7e9451aa4faed4cfd20ded4";
+
+/**
+ * IndexNow 验证文件路径：`/{key}.txt`（Option 1：站点根目录托管）。
+ */
+const INDEXNOW_KEY_PATH = `/${INDEXNOW_KEY}.txt`;
+
+/**
  * 判断路径是否为谷歌站点验证 HTML（需跳过语言协商与 Assets .html 规范化）。
  * @param pathname 请求路径
  */
 const isGoogleSiteVerificationPath = (pathname: string) => pathname === GOOGLE_SITE_VERIFICATION_PATH;
+
+/**
+ * 判断路径是否为 IndexNow 验证文件（需跳过语言协商，保证精确 200）。
+ * @param pathname 请求路径
+ */
+const isIndexNowKeyPath = (pathname: string) => pathname === INDEXNOW_KEY_PATH;
 
 // Start a Hono app
 const app = new Hono<{ Bindings: Env }>();
@@ -88,6 +108,19 @@ app.get(GOOGLE_SITE_VERIFICATION_PATH, () => {
 		status: 200,
 		headers: {
 			"Content-Type": "text/html; charset=utf-8",
+			"Cache-Control": "public, max-age=0, must-revalidate",
+		},
+	});
+});
+
+/**
+ * 直出 IndexNow 验证 key 文件：保证 `/{key}.txt` 精确 200，供 Bing 等引擎校验所有权。
+ */
+app.get(INDEXNOW_KEY_PATH, () => {
+	return new Response(`${INDEXNOW_KEY}\n`, {
+		status: 200,
+		headers: {
+			"Content-Type": "text/plain; charset=utf-8",
 			"Cache-Control": "public, max-age=0, must-revalidate",
 		},
 	});
@@ -169,6 +202,8 @@ app.use("/*", async (c, next) => {
 	if (pathname === "/tools/markdown-to-html.html") return next();
 	// 谷歌验证文件不得做语言前缀跳转。
 	if (isGoogleSiteVerificationPath(pathname)) return next();
+	// IndexNow 验证文件不得做语言前缀跳转。
+	if (isIndexNowKeyPath(pathname)) return next();
 
 	// Do not interfere with APIs, docs, or obvious static assets.
 	const isStaticAsset = /\.(css|js|png|jpg|jpeg|gif|webp|avif|svg|ico|map|woff2?|ttf|eot|xml|txt|webmanifest)$/i.test(
@@ -211,6 +246,7 @@ openapi.delete("/api/tasks/:taskSlug", TaskDelete);
 
 app.get("/api/tools/website-headers", handleWebsiteHeadersApi);
 app.get("/api/tools/ip-address", handleIpAddress);
+app.get("/api/tools/dns-lookup", handleDnsLookup);
 
 // Register website-headers page routes using centralized registrar
 registerToolPage(app as any, 'website-headers', (lang, defaultLang, enabled) => renderWebsiteHeadersPage(lang, defaultLang));
@@ -274,6 +310,16 @@ registerToolPage(app as any, 'csv-json', (lang, defaultLang, enabled) =>
 	renderCsvJsonPage({ lang, defaultLang, enabledLangs: enabled })
 );
 
+// Register html-entity page via registrar（HTML 实体编解码）
+registerToolPage(app as any, 'html-entity', (lang, defaultLang, enabled) =>
+	renderHtmlEntityPage({ lang, defaultLang, enabledLangs: enabled })
+);
+
+// Register add-www-to-dns page via registrar（给域名加 www DNS）
+registerToolPage(app as any, 'add-www-to-dns', (lang, defaultLang, enabled) =>
+	renderAddWwwToDnsPage({ lang, defaultLang, enabledLangs: enabled })
+);
+
 // Catch-all (GET): perform language negotiation before falling back to static assets.
 app.get("/*", (c) => {
 	const url = new URL(c.req.url);
@@ -284,6 +330,7 @@ app.get("/*", (c) => {
 	if (pathname === "/tools/markdown-to-html.html") return c.notFound();
 	// 回退到 Assets 前放行验证文件（正常应由上方显式路由处理）。
 	if (isGoogleSiteVerificationPath(pathname)) return c.notFound();
+	if (isIndexNowKeyPath(pathname)) return c.notFound();
 	const isStaticAsset = /\.(css|js|png|jpg|jpeg|gif|webp|avif|svg|ico|map|woff2?|ttf|eot|xml|txt|webmanifest)$/i.test(
 		pathname
 	);
@@ -316,6 +363,28 @@ app.get("/*", (c) => {
 // Export the Hono app
 export default {
 	async fetch(request: Request, env: Env, ctx: ExecutionContext) {
+		const url = new URL(request.url);
+
+		// IndexNow / 谷歌验证：在进入 Hono 前直出，避免路由匹配或 Assets 404 影响所有权校验。
+		if (request.method === "GET" && isIndexNowKeyPath(url.pathname)) {
+			return new Response(`${INDEXNOW_KEY}\n`, {
+				status: 200,
+				headers: {
+					"Content-Type": "text/plain; charset=utf-8",
+					"Cache-Control": "public, max-age=0, must-revalidate",
+				},
+			});
+		}
+		if (request.method === "GET" && isGoogleSiteVerificationPath(url.pathname)) {
+			return new Response(GOOGLE_SITE_VERIFICATION_BODY, {
+				status: 200,
+				headers: {
+					"Content-Type": "text/html; charset=utf-8",
+					"Cache-Control": "public, max-age=0, must-revalidate",
+				},
+			});
+		}
+
 		const response = await app.fetch(request, env, ctx);
 		if (response.status === 404) {
 			return env.ASSETS.fetch(request);

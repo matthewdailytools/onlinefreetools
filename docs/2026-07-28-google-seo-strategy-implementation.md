@@ -336,6 +336,7 @@ Footer
 | BreadcrumbList + WebApplication JSON-LD | ✅ |
 | `tool-catalog.json` + `lint:seo` | ✅ |
 | Google Search Console | ⚠️ 需确认属性验证与 sitemap 提交 |
+| Bing IndexNow | ✅ `public/{key}.txt` + `npm run indexnow`（`scripts/submit-indexnow.mjs`） |
 | 主题支柱页 `/topics/*` | ❌ 未做（非阻塞新工具） |
 | Core Web Vitals 基线测量 | ⚠️ 待系统测量 |
 | GA4 | 可选 P2 |

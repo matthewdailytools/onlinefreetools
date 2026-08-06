@@ -22,6 +22,10 @@ ops/
     ├── stop-dev.ps1
     ├── start-dev.sh       # macOS / Linux
     └── stop-dev.sh
+
+# IndexNow 相关（在 scripts/，非 ops/）
+# scripts/submit-indexnow.mjs
+# public/{INDEXNOW_KEY}.txt   # 所有权验证公钥文件（须公开可访问）
 ```
 
 **运行时状态**（不提交 Git）：
@@ -72,7 +76,11 @@ npm run restart:dev               # 重启
 ```bash
 chmod +x ops/dev/*.sh   # 首次可选
 ./ops/dev/start-dev.sh
-./ops/dev/stop-dev.sh
+./ops/dev/start-dev.sh --no-build
+./ops/dev/start-dev.sh --port 8788      # 或 -p 8788 / 8788
+./ops/dev/start-dev.sh --no-build -p 8788
+./ops/dev/status-dev.sh -p 8788
+./ops/dev/stop-dev.sh --port 8788
 ```
 
 ### 3.2 前台开发（占用当前终端）
@@ -94,6 +102,7 @@ npx wrangler dev
 | `npm run build:site` | 生成首页/About/devlogs/sitemap 等到 `public/` |
 | `npm run build:logs` | 仅重建 `public/devlogs/` |
 | `npm run lint:seo` | SEO 文案校验（description / FAQ / YMYL） |
+| `npm run indexnow` | 将 sitemap（或指定 URL）提交到 Bing IndexNow |
 
 **发版前最低要求**：
 
@@ -102,6 +111,36 @@ npm run build:site && npm run lint:seo
 ```
 
 详细清单见 [`docs/SEO_PUBLISH_CHECKLIST.md`](../docs/SEO_PUBLISH_CHECKLIST.md) 与 [`docs/2026-07-28-google-seo-strategy-implementation.md`](../docs/2026-07-28-google-seo-strategy-implementation.md) §8.2。
+
+### 4.1 Bing IndexNow
+
+IndexNow 用于在内容变更后主动通知 Bing 等参与引擎抓取。站点根路径须托管验证文件：
+
+- 文件：`public/{key}.txt`（正文 = key）
+- Worker 亦在 `src/index.ts` 对 `/{key}.txt` 直出（与谷歌 HTML 验证同类）
+- 线上：`https://onlinefreetools.org/{key}.txt` 必须 **HTTP 200**
+- key 配置：`scripts/site/config.mjs` 的 `indexNowKey`，或环境变量 `INDEXNOW_KEY`
+
+```bash
+# 确认 key 已在生产可访问后：提交 sitemap 中全部 URL
+curl -sS -o /dev/null -w "%{http_code}\n" "https://onlinefreetools.org/<INDEXNOW_KEY>.txt"  # 期望 200
+npm run indexnow
+
+# 仅提交若干 URL
+npm run indexnow -- --url https://onlinefreetools.org/tools/html-entity
+
+# 预览 payload（不发请求）
+npm run indexnow -- --dry-run
+
+# 使用 Bing 直连端点
+npm run indexnow -- --endpoint bing
+```
+
+成功响应一般为 HTTP `200` 或 `202`（`202` 表示 key 校验仍在进行；确认 key 文件已上线即可）。可在 [Bing Webmaster Tools → IndexNow](https://www.bing.com/webmasters) 查看接收情况。
+
+> IndexNow key 是协议要求的**公开验证文件**，不是 Cloudflare/OAuth 类私密密钥；但仍勿与其他真正的 API Token 混用或误提交到无关位置。
+
+**部署注意**：`npm run deploy` / `wrangler deploy` 必须实际更新服务 `onlinefreetools.org` 的那套 Worker。若自定义域 zone 不在当前 Wrangler 账号下，部署只会更新 `*.workers.dev`，生产 key 文件会继续 404，IndexNow 校验失败。需先在拥有该 zone 的 Cloudflare 账号中把域名绑到本 Worker（Custom Domain），或在实际服务该域的项目中同步 key 文件后再跑 `npm run indexnow`。
 
 ---
 
@@ -126,6 +165,7 @@ npx wrangler deploy
 1. 打开生产首页与 1–2 个工具页抽检
 2. Google Search Console 确认 `https://onlinefreetools.org/sitemap.xml` 可访问（sitemap **不含** devlogs）
 3. 新工具确认各语言 URL 与 hreflang
+4. 确认 IndexNow key 可访问：`https://onlinefreetools.org/{key}.txt`，然后 `npm run indexnow`
 
 ---
 

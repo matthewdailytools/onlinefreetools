@@ -12,13 +12,15 @@
  * 等价 npm：npm run start:dev
  */
 import { spawn, execSync } from 'node:child_process';
-import { openSync, truncateSync } from 'node:fs';
+import { openSync, ftruncateSync } from 'node:fs';
 import path from 'node:path';
 import {
   cleanupDevServer,
   defaultDevHost,
   defaultDevPort,
   devServerOrigin,
+  describePortBlocker,
+  ensurePortFree,
   ensureRunDir,
   findPidByPort,
   hasNoBuildFlag,
@@ -26,6 +28,7 @@ import {
   logFilePath,
   parsePortArg,
   projectRoot,
+  readDevLogFatalError,
   waitForDevReady,
   writePid,
 } from '../lib/dev-process.mjs';
@@ -69,8 +72,9 @@ const runBuildSite = () => {
  */
 const spawnWrangler = async () => {
   await ensureRunDir();
-  truncateSync(logFilePath, 0);
+  /** 先 open 创建文件（若不存在），再按 fd 截断，避免 truncateSync(path) 在 ENOENT 时失败 */
   const logFd = openSync(logFilePath, 'a');
+  ftruncateSync(logFd, 0);
 
   const wranglerBin = path.join(projectRoot, 'node_modules', 'wrangler', 'bin', 'wrangler.js');
   const args = ['dev', '--port', String(port), '--ip', defaultDevHost];
@@ -97,13 +101,34 @@ const main = async () => {
     console.log('Skipping build:site (--no-build).');
   }
 
+  /** build 后再清端口，避免 stale listener 占用导致 wrangler bind 失败 */
+  const portStatus = await ensurePortFree(port);
+  if (!portStatus.ok) {
+    if (portStatus.foreign) {
+      const blocker = describePortBlocker(port);
+      console.error(`Port ${port} is already used by another app (PID ${portStatus.pid ?? 'unknown'}).`);
+      if (blocker?.cmd) console.error(`  ${blocker.cmd}`);
+      console.error(`Use another port for this project: npm run start:dev -- --port 8788`);
+    } else {
+      console.error(`Port ${port} is still in use (PID ${portStatus.pid ?? 'unknown'}).`);
+      console.error('Try: npm run stop:dev');
+      if (portStatus.pid) console.error(`Or: kill ${portStatus.pid}`);
+    }
+    process.exit(1);
+  }
+
   const childPid = await spawnWrangler();
   console.log(`Starting wrangler dev (PID ${childPid}), waiting for ready ...`);
 
   const ready = await waitForDevReady(port);
   if (!ready) {
-    console.error(`Dev server failed to become ready within timeout.`);
+    const fatal = await readDevLogFatalError();
+    console.error(`Dev server failed to become ready${fatal ? ` (${fatal})` : ' within timeout'}.`);
     console.error(`  Check log: ${logFilePath}`);
+    if (fatal?.includes('Address already in use')) {
+      const blocker = findPidByPort(port);
+      console.error(`  Port ${port} may be blocked by PID ${blocker ?? 'unknown'}. Run: npm run stop:dev`);
+    }
     await cleanupDevServer(port);
     process.exit(1);
   }

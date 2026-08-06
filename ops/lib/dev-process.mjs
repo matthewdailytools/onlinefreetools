@@ -107,8 +107,19 @@ export const killProcessTree = (pid) => {
   try {
     if (process.platform === 'win32') {
       execSync(`taskkill /PID ${pid} /T /F`, { stdio: 'ignore' });
-    } else {
+      return true;
+    }
+
+    /** 先向进程本身发信号（listener 常非进程组组长，-pid 会 ESRCH） */
+    try {
+      process.kill(pid, 'SIGTERM');
+    } catch {
+      // 已退出或无权限
+    }
+    try {
       process.kill(-pid, 'SIGTERM');
+    } catch {
+      // 非组长或已退出
     }
     return true;
   } catch {
@@ -170,6 +181,99 @@ export const healthCheck = async (port = defaultDevPort, host = defaultDevHost) 
 };
 
 /**
+ * 读取进程命令行（Unix: ps；Windows: wmic）。
+ * @param {number} pid
+ * @returns {string}
+ */
+export const getProcessCommandLine = (pid) => {
+  try {
+    if (process.platform === 'win32') {
+      const out = execSync(`wmic process where processid=${pid} get commandline /format:list`, {
+        encoding: 'utf-8',
+        stdio: ['ignore', 'pipe', 'ignore'],
+      });
+      const line = out.split('\n').find((l) => l.startsWith('CommandLine='));
+      return line ? line.slice('CommandLine='.length).trim() : '';
+    }
+    return execSync(`ps -p ${pid} -o command=`, {
+      encoding: 'utf-8',
+      stdio: ['ignore', 'pipe', 'ignore'],
+    }).trim();
+  } catch {
+    return '';
+  }
+};
+
+/**
+ * 判断占用端口的进程是否为本仓库 wrangler dev（避免误杀其他项目）。
+ * @param {number} pid
+ * @returns {boolean}
+ */
+export const isProjectDevProcess = (pid) => {
+  const cmd = getProcessCommandLine(pid);
+  if (!cmd) return false;
+  const wranglerNeedle = path.join(projectRoot, 'node_modules', 'wrangler');
+  return cmd.includes(projectRoot) || cmd.includes(wranglerNeedle);
+};
+
+/**
+ * 描述当前占用端口的进程。
+ * @param {number} [port]
+ * @returns {{ pid: number, cmd: string, ours: boolean } | null}
+ */
+export const describePortBlocker = (port = defaultDevPort) => {
+  const pid = findPidByPort(port);
+  if (!pid) return null;
+  const cmd = getProcessCommandLine(pid);
+  return { pid, cmd, ours: isProjectDevProcess(pid) };
+};
+
+/**
+ * 释放本项目的 dev 端口；若为其他项目占用则不杀进程。
+ * @param {number} [port]
+ * @param {{ maxWaitMs?: number, pollMs?: number }} [opts]
+ * @returns {Promise<{ ok: boolean, pid: number|null, foreign: boolean }>}
+ */
+export const ensurePortFree = async (port = defaultDevPort, opts = {}) => {
+  const { maxWaitMs = 12_000, pollMs = 250 } = opts;
+  const deadline = Date.now() + maxWaitMs;
+
+  while (Date.now() < deadline) {
+    const blocker = describePortBlocker(port);
+    if (!blocker) return { ok: true, pid: null, foreign: false };
+    if (!blocker.ours) {
+      return { ok: false, pid: blocker.pid, foreign: true };
+    }
+    killProcessTree(blocker.pid);
+    await new Promise((resolve) => setTimeout(resolve, pollMs));
+  }
+
+  const remaining = describePortBlocker(port);
+  if (!remaining) return { ok: true, pid: null, foreign: false };
+  return { ok: false, pid: remaining.pid, foreign: !remaining.ours };
+};
+
+/** wrangler 日志中的致命错误片段（出现则不必等满超时） */
+const DEV_LOG_FATAL_NEEDLES = [
+  'Address already in use',
+  'failed: ::bind(sockfd',
+  'Specify a different port with --port',
+];
+
+/**
+ * 读取 dev 日志是否含致命错误。
+ * @returns {Promise<string|null>} 匹配到的片段，无则 null
+ */
+export const readDevLogFatalError = async () => {
+  try {
+    const log = await fs.readFile(logFilePath, 'utf-8');
+    return DEV_LOG_FATAL_NEEDLES.find((needle) => log.includes(needle)) ?? null;
+  } catch {
+    return null;
+  }
+};
+
+/**
  * 等待 wrangler 日志出现 Ready 且 HTTP 可访问。
  * @param {number} port
  * @param {{ timeoutMs?: number, pollMs?: number, host?: string }} [opts]
@@ -181,6 +285,9 @@ export const waitForDevReady = async (port = defaultDevPort, opts = {}) => {
   const readyNeedle = `Ready on http://${host}:${port}`;
 
   while (Date.now() < deadline) {
+    const fatal = await readDevLogFatalError();
+    if (fatal) return false;
+
     try {
       const log = await fs.readFile(logFilePath, 'utf-8');
       if (log.includes(readyNeedle) && (await healthCheck(port, host))) {
@@ -230,9 +337,10 @@ export const wranglerExecutable = () => {
  */
 export const cleanupDevServer = async (port = defaultDevPort) => {
   const filePid = await readPid();
-  const portPid = findPidByPort(port);
+  const portBlocker = describePortBlocker(port);
+  const portPid = portBlocker?.pid ?? null;
 
-  if (portPid) killProcessTree(portPid);
+  if (portPid && portBlocker?.ours) killProcessTree(portPid);
   if (filePid && filePid !== portPid) killProcessTree(filePid);
 
   await clearPid();

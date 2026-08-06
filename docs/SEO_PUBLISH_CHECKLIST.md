@@ -21,6 +21,13 @@
 3. 观察「网页索引」覆盖是否包含工具与多语言 URL
 4. 有数据后查看 Generative AI 效果报告（若账户已开放）
 
+## Bing IndexNow
+
+1. 确认验证文件可访问：`https://onlinefreetools.org/{INDEXNOW_KEY}.txt`（正文 = key）
+2. 部署后执行：`npm run indexnow`（读取 `public/sitemap.xml` 批量通知）
+3. 新工具/重要更新也可：`npm run indexnow -- --url https://onlinefreetools.org/tools/<slug>`
+4. 在 Bing Webmaster Tools 的 IndexNow 面板确认接收（HTTP 200/202 仅表示已收到）
+
 ## 质量抽查（防 Scaled content）
 
 - 随机抽 2 种非英语语言 × 2 个工具：标题/FAQ/示例是否像给人看的**本地检索向**内容（非英模同构译文）

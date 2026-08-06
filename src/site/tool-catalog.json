@@ -9,7 +9,7 @@
     "homeTitleKey": "tool_website_headers_title",
     "homeDescKey": "tool_website_headers_desc",
     "faqPrefix": "tool_headers",
-    "related": ["ip-address", "markdown-to-html", "text-diff"]
+    "related": ["ip-address", "add-www-to-dns", "markdown-to-html", "text-diff"]
   },
   {
     "slug": "ip-address",
@@ -21,7 +21,7 @@
     "homeTitleKey": "tool_ip_address_title",
     "homeDescKey": "tool_ip_address_desc",
     "faqPrefix": "tool_ip_address",
-    "related": ["website-headers", "markdown-to-html"]
+    "related": ["website-headers", "add-www-to-dns", "markdown-to-html"]
   },
   {
     "slug": "markdown-to-html",
@@ -33,7 +33,7 @@
     "homeTitleKey": "tool_markdown_to_html_title",
     "homeDescKey": "tool_markdown_to_html_desc",
     "faqPrefix": "tool_markdown",
-    "related": ["text-diff", "yaml-json", "website-headers"]
+    "related": ["text-diff", "yaml-json", "html-entity", "website-headers"]
   },
   {
     "slug": "text-diff",
@@ -45,7 +45,7 @@
     "homeTitleKey": "tool_text_diff_title",
     "homeDescKey": "tool_text_diff_desc",
     "faqPrefix": "tool_text_diff",
-    "related": ["markdown-to-html", "yaml-json", "website-headers"]
+    "related": ["markdown-to-html", "yaml-json", "html-entity", "website-headers"]
   },
   {
     "slug": "yaml-json",
@@ -70,6 +70,30 @@
     "homeDescKey": "tool_csv_json_desc",
     "faqPrefix": "tool_csv_json",
     "related": ["yaml-json", "text-diff"]
+  },
+  {
+    "slug": "html-entity",
+    "path": "/tools/html-entity",
+    "category": "developer",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_html_entity_title",
+    "homeTitleKey": "tool_html_entity_title",
+    "homeDescKey": "tool_html_entity_desc",
+    "faqPrefix": "tool_html_entity",
+    "related": ["markdown-to-html", "text-diff"]
+  },
+  {
+    "slug": "add-www-to-dns",
+    "path": "/tools/add-www-to-dns",
+    "category": "developer",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_add_www_to_dns_title",
+    "homeTitleKey": "tool_add_www_to_dns_title",
+    "homeDescKey": "tool_add_www_to_dns_desc",
+    "faqPrefix": "tool_add_www_to_dns",
+    "related": ["website-headers", "ip-address"]
   },
   {
     "slug": "how-to-calculate-bmi",
