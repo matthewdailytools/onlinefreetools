@@ -72,6 +72,7 @@ const sidebarCss = `
       height: auto;
     }
     .sidebar-collapsed #sidebar { margin-left: -260px; }
+    .sidebar-mobile-collapsed #sidebar { margin-left: -260px; }
     #content { margin-left: 0; }
     body { padding-top: 56px; }
   }
@@ -131,7 +132,11 @@ export const renderLayout = (opts: {
             }
           }
           link.blur();
-          if (window.innerWidth < 768) layout.classList.add('sidebar-collapsed');
+          if (window.innerWidth < 768) {
+            // Close the mobile drawer after navigating to a section.
+            layout.classList.remove('sidebar-collapsed');
+            layout.classList.add('sidebar-mobile-collapsed');
+          }
           setTimeout(() => { if (sidebar) sidebar.scrollTop = prevScroll; }, 300);
         } catch (err) {}
       });
@@ -145,7 +150,16 @@ export const renderLayout = (opts: {
     const layout = document.getElementById('layoutRoot');
     const toggle = document.getElementById('sidebarToggle');
     if (layout && toggle) {
-      toggle.addEventListener('click', () => layout.classList.toggle('sidebar-collapsed'));
+      toggle.addEventListener('click', () => {
+        // Keep independent desktop and mobile states so the drawer opens correctly after resizing.
+        if (window.innerWidth < 768) {
+          layout.classList.remove('sidebar-collapsed');
+          layout.classList.toggle('sidebar-mobile-collapsed');
+        } else {
+          layout.classList.remove('sidebar-mobile-collapsed');
+          layout.classList.toggle('sidebar-collapsed');
+        }
+      });
       ${sidebarAutoClose}
     }
   </script>`
@@ -177,7 +191,7 @@ export const renderLayout = (opts: {
 </head>
 <body>
   ${opts.headerHtml}
-  <div class="layout" id="layoutRoot">
+  <div class="layout sidebar-mobile-collapsed" id="layoutRoot">
     ${opts.sidebarHtml}
     <main id="content" class="p-4">${opts.contentHtml}</main>
   </div>
