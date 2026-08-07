@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Implement image-format-converter (PNG/JPEG/WebP/AVIF) with ten-locale copy | Dev Logs</title>
+  <meta name="description" content="Implement image-format-converter (PNG/JPEG/WebP/AVIF) with ten-locale copy" />
+  <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-07-11-38-implement-image-format-converter.html" />
+  <meta property="og:title" content="Implement image-format-converter (PNG/JPEG/WebP/AVIF) with ten-locale copy | Dev Logs" />
+  <meta property="og:description" content="Implement image-format-converter (PNG/JPEG/WebP/AVIF) with ten-locale copy" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-07-11-38-implement-image-format-converter.html" />
+  <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  
+  <script>
+    (function () {
+      try {
+        var enabled = [];
+        var defaultLang = "en";
+        var fallback = defaultLang;
+        var path = window.location.pathname || '/';
+
+        // If the URL already contains a language prefix (including defaultLang), respect it.
+        var hasPrefix = enabled.some(function (l) {
+          return l && (path === '/' + l || path.indexOf('/' + l + '/') === 0);
+        });
+        if (hasPrefix) return;
+
+        var langs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language])
+          .filter(Boolean)
+          .map(function (x) { return String(x).toLowerCase().split('-')[0]; });
+
+        var picked = null;
+        for (var i = 0; i < langs.length; i++) {
+          if (enabled.indexOf(langs[i]) !== -1) { picked = langs[i]; break; }
+        }
+        if (!picked) picked = enabled.indexOf(fallback) !== -1 ? fallback : (enabled[0] || fallback);
+
+        if (picked === "en") return;
+        var targetPath = path;
+        if (picked !== defaultLang) {
+          targetPath = ('/' + picked + path).replace(/\/{2,}/g, '/');
+        }
+        window.location.replace(targetPath + window.location.search + window.location.hash);
+      } catch (e) {}
+    })();
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="/styles/site.css" rel="stylesheet" />
+  <style>
+    body { min-height: 100vh; padding-top: var(--header-h, 56px); }
+    .layout { display: flex; min-height: calc(100vh - var(--header-h, 56px)); }
+  </style>
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?39f18c089a03779cd05243e21b046589";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "xbc0iytpn7");
+</script>
+  
+  
+</head>
+<body class="is-home-page">
+  
+  
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light site-navbar border-bottom fixed-top">
+      <div class="container-fluid">
+        <button class="btn btn-outline-secondary me-2" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+        <a class="navbar-brand" href="/">
+          <img class="navbar-brand-logo" src="/brand-logo.svg" width="28" height="28" alt="" decoding="async" />
+          <span class="navbar-brand-text">OnlineFreeTools.org</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="topNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="/">Home</a></li><li class="nav-item"><a class="nav-link" href="/devlogs/">Dev Logs</a></li></ul>
+          <div class="d-flex align-items-center gap-2">
+            
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="layout sidebar-collapsed" id="layoutRoot">
+    
+    <aside id="sidebar" class="border-end">
+      <h2 class="sidebar-title h6">Navigation</h2>
+      <div class="list-group list-group-flush small" id="navList"><a class="list-group-item list-group-item-action" href="/">Home</a><a class="list-group-item list-group-item-action" href="/devlogs/">Dev Logs</a></div>
+    </aside>
+    <main id="content" class="p-4">
+      <section class="mb-3">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h1 class="h4 mb-0">Implement image-format-converter (PNG/JPEG/WebP/AVIF) with ten-locale copy | Dev Logs</h1>
+          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
+        </div>
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-07 11:38
+Summary: Implement image-format-converter (PNG/JPEG/WebP/AVIF) with ten-locale copy</p>
+<p>[question]
+按brief实现</p>
+<p>[try to solve]
+已按 <code>work-tasks/image-format-converter/</code> brief 落地工具页（尚未要求 commit）。</p>
+<p><strong>路径</strong>：<code>/tools/image-format-converter</code><br><strong>技术</strong>：Tier 0 Canvas <code>toBlob</code>；本地不上传；探测 WebP/AVIF 编码；校验 <code>blob.type</code>；JPEG 可选底色；单文件 + 透明样例。</p>
+<p><strong>工程</strong>：<code>imageFormatConverterPage.ts</code>、catalog、<code>index.ts</code> 注册、十语 i18n、首页 <code>i18n.mjs</code>、图标、README；<code>lint:seo</code> 与 <code>build:site</code> 通过。</p>
+<p><strong>IG</strong>：Rules 对照表、透明→JPEG、编码回退检测、隐私 FAQ、Related（占位 markdown-to-html / yaml-json）。<br><code>02</code> → <code>implemented</code>；<code>03</code> → <code>i18n-done</code>（≥3 轮）。</p>
+<p>本地可开 <code>npm run start:dev</code> 访问 <code>/tools/image-format-converter</code>。</p>
+<p>[actions]</p>
+<ul>
+<li>Added src/pages/imageFormatConverterPage.ts</li>
+<li>Added public/icons/tools/image-format-converter.svg</li>
+<li>Updated src/site/tool-catalog.json, src/index.ts, README.md</li>
+<li>Updated src/site/i18n/*.ts (10 langs) + scripts/site/i18n.mjs</li>
+<li>Updated work-tasks/image-format-converter/02-tool-info.md, 03-locale-briefs.md</li>
+<li>Ran npm run lint:seo &amp;&amp; npm run build:site</li>
+</ul>
+</article>
+      </section>
+    </main>
+  </div>
+  
+  <footer class="site-footer border-top text-center py-3">
+    <div class="container">
+      <small class="text-muted">OnlineFreeTools.org · Learning project · Iterating</small>
+      <span class="text-muted mx-2">·</span>
+      <a class="small text-decoration-none" href="/en/about">About</a>
+    </div>
+  </footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <script>
+    const layout = document.getElementById('layoutRoot');
+    const toggle = document.getElementById('sidebarToggle');
+    if (layout && toggle) {
+      toggle.addEventListener('click', () => layout.classList.toggle('sidebar-collapsed'));
+      
+    }
+  </script>
+</body>
+</html>

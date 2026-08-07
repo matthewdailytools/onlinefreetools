@@ -221,7 +221,7 @@ export const buildDevLogs = async () => {
   const indexDescription =
     lang === 'en'
       ? 'Project dev logs and Q&A notes, organized by month.'
-      : 'Online Free Tools 开发日志清单，按月汇总所有问答记录。';
+      : 'OnlineFreeTools.org 开发日志清单，按月汇总所有问答记录。';
   const indexCanonicalPath = '/devlogs/';
 
   const headerHtml = renderHeader({

@@ -15,6 +15,8 @@
 - [YAML ↔ JSON](https://onlinefreetools.org/zh/tools/yaml-json) - 浏览器内 YAML 与 JSON 双向转换：类型规则、多文档与本地处理
 - [CSV ↔ JSON](https://onlinefreetools.org/zh/tools/csv-json) - 浏览器内 CSV 与 JSON 双向转换：分隔符、表头、类型推断与嵌套扁平化
 - [HTML 实体编解码](https://onlinefreetools.org/zh/tools/html-entity) - 浏览器内 HTML 实体编码与解码：范围、命名/数字形式、严格解码
+- [图片格式转换](https://onlinefreetools.org/zh/tools/image-format-converter) - 浏览器内 PNG / JPEG / WebP / AVIF 互转：质量、透明底色与本地处理
+- [图片 EXIF 查看与清除](https://onlinefreetools.org/zh/tools/image-exif) - 本地查看 GPS/相机等元数据，并重编码清除后下载
 - [给域名添加 www DNS](https://onlinefreetools.org/zh/tools/add-www-to-dns) - 生成 www 的 A/CNAME 记录，查询现网，并提供 Cloudflare/Vercel/阿里云等操作教程
 - [IndexNow / Bing URL 提交](https://onlinefreetools.org/zh/tools/indexnow) - 生成密钥、检查验证文件、提交变更 URL，并说明 200/202 状态码
 - [BMI 计算器](https://onlinefreetools.org/zh/tools/how-to-calculate-bmi) - 按成人筛查公式计算身体质量指数（教育用途，非诊断）
@@ -33,6 +35,8 @@ Below are our available online tools with their links (English version):
 - [YAML ↔ JSON](https://onlinefreetools.org/tools/yaml-json) - Convert YAML ↔ JSON with typing rules, multi-doc arrays, and local paste
 - [CSV ↔ JSON](https://onlinefreetools.org/tools/csv-json) - Convert CSV ↔ JSON with delimiter, header, type inference, and nested flattening
 - [HTML Entity Encoder & Decoder](https://onlinefreetools.org/tools/html-entity) - Encode and decode HTML entities with scope, named/decimal/hex output, and strict decode — all in-browser
+- [Image Format Converter](https://onlinefreetools.org/tools/image-format-converter) - Convert PNG, JPEG, WebP, and AVIF locally with quality, JPEG matte, and MIME checks
+- [EXIF Viewer & Remover](https://onlinefreetools.org/tools/image-exif) - View GPS/camera metadata locally and download a stripped re-encoded copy
 - [Add WWW to DNS](https://onlinefreetools.org/tools/add-www-to-dns) - Generate www A/CNAME records, check live DNS, and follow Cloudflare/Vercel/Route 53 guides
 - [IndexNow — Bing URL Submit](https://onlinefreetools.org/tools/indexnow) - Generate a key, check the verification file, submit changed URLs, and read 200/202 status codes
 - [BMI Calculator](https://onlinefreetools.org/tools/how-to-calculate-bmi) - Adult BMI screening from weight and height (educational, not a diagnosis)

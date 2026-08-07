@@ -29,7 +29,7 @@ export const getToolBySlug = (slug) => TOOL_CATALOG.find((p) => p.slug === slug)
 
 /**
  * 按分类筛选工具。
- * @param {'calculator'|'developer'} category
+ * @param {'calculator'|'developer'|'image'} category
  */
 export const getToolsByCategory = (category) =>
   TOOL_CATALOG.filter((p) => p.category === category);

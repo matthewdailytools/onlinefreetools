@@ -121,6 +121,38 @@
     "logo": "/icons/tools/html-entity.svg"
   },
   {
+    "slug": "image-format-converter",
+    "path": "/tools/image-format-converter",
+    "category": "image",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_image_format_converter_title",
+    "homeTitleKey": "tool_image_format_converter_title",
+    "homeDescKey": "tool_image_format_converter_desc",
+    "faqPrefix": "tool_image_format_converter",
+    "related": [
+      "image-exif",
+      "markdown-to-html"
+    ],
+    "logo": "/icons/tools/image-format-converter.svg"
+  },
+  {
+    "slug": "image-exif",
+    "path": "/tools/image-exif",
+    "category": "image",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_image_exif_title",
+    "homeTitleKey": "tool_image_exif_title",
+    "homeDescKey": "tool_image_exif_desc",
+    "faqPrefix": "tool_image_exif",
+    "related": [
+      "image-format-converter",
+      "markdown-to-html"
+    ],
+    "logo": "/icons/tools/image-exif.svg"
+  },
+  {
     "slug": "add-www-to-dns",
     "path": "/tools/add-www-to-dns",
     "category": "developer",

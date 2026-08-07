@@ -21,6 +21,7 @@ export const getHomePageModel = (lang) => {
   const sidebarItems = [
     { href: '#cat-calculator', label: t(lang, 'home_cat_calculator') },
     { href: '#cat-dev', label: t(lang, 'home_cat_dev') },
+    { href: '#cat-image', label: t(lang, 'home_cat_image') },
   ];
 
   const title = t(lang, 'home_title');

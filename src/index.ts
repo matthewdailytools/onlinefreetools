@@ -27,6 +27,8 @@ import { renderHowToCalculateGradientPage } from "./pages/howToCalculateGradient
 import { renderTextDiffPage } from "./pages/textDiffPage";
 import { renderYamlJsonPage } from "./pages/yamlJsonPage";
 import { renderCsvJsonPage } from "./pages/csvJsonPage";
+import { renderImageFormatConverterPage } from "./pages/imageFormatConverterPage";
+import { renderImageExifPage } from "./pages/imageExifPage";
 import { renderHtmlEntityPage } from "./pages/htmlEntityPage";
 import { renderAddWwwToDnsPage } from "./pages/addWwwToDnsPage";
 import { renderIndexNowPage } from "./pages/indexNowPage";
@@ -312,6 +314,16 @@ registerToolPage(app as any, 'yaml-json', (lang, defaultLang, enabled) =>
 // Register csv-json page via registrar（CSV ↔ JSON 双向转换）
 registerToolPage(app as any, 'csv-json', (lang, defaultLang, enabled) =>
 	renderCsvJsonPage({ lang, defaultLang, enabledLangs: enabled })
+);
+
+// Register image-format-converter page via registrar
+registerToolPage(app as any, 'image-format-converter', (lang, defaultLang, enabled) =>
+	renderImageFormatConverterPage({ lang, defaultLang, enabledLangs: enabled })
+);
+
+// Register image-exif page via registrar
+registerToolPage(app as any, 'image-exif', (lang, defaultLang, enabled) =>
+	renderImageExifPage({ lang, defaultLang, enabledLangs: enabled })
 );
 
 // Register html-entity page via registrar（HTML 实体编解码）

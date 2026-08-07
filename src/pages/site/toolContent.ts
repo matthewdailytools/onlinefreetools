@@ -460,10 +460,25 @@ export const buildToolJsonLd = (opts: {
 	const base = 'https://onlinefreetools.org';
 	const pageUrl = `${base}${opts.canonicalPath}`;
 	const homePath = withToolLangPrefix(opts.lang, '/', opts.defaultLang);
-	const categoryLabel =
+	const categoryLabelKey =
 		opts.tool.category === 'calculator'
-			? t(opts.lang, 'tool_category_calculator' as keyof typeof import('../../site/i18n/en').default)
-			: t(opts.lang, 'tool_category_developer' as keyof typeof import('../../site/i18n/en').default);
+			? 'tool_category_calculator'
+			: opts.tool.category === 'image'
+				? 'tool_category_image'
+				: 'tool_category_developer';
+	const categoryLabel = t(opts.lang, categoryLabelKey as keyof typeof import('../../site/i18n/en').default);
+	const categoryAnchor =
+		opts.tool.category === 'calculator'
+			? 'cat-calculator'
+			: opts.tool.category === 'image'
+				? 'cat-image'
+				: 'cat-dev';
+	const applicationCategory =
+		opts.tool.category === 'developer'
+			? 'DeveloperApplication'
+			: opts.tool.category === 'image'
+				? 'MultimediaApplication'
+				: 'UtilitiesApplication';
 	const data = {
 		'@context': 'https://schema.org',
 		'@graph': [
@@ -480,9 +495,7 @@ export const buildToolJsonLd = (opts: {
 						'@type': 'ListItem',
 						position: 2,
 						name: categoryLabel,
-						item: `${base}${homePath === '/' ? '/' : homePath}#${
-							opts.tool.category === 'calculator' ? 'cat-calculator' : 'cat-dev'
-						}`,
+						item: `${base}${homePath === '/' ? '/' : homePath}#${categoryAnchor}`,
 					},
 					{
 						'@type': 'ListItem',
@@ -497,8 +510,7 @@ export const buildToolJsonLd = (opts: {
 				name: opts.name,
 				url: pageUrl,
 				description: opts.description,
-				applicationCategory:
-					opts.tool.category === 'developer' ? 'DeveloperApplication' : 'UtilitiesApplication',
+				applicationCategory,
 				operatingSystem: 'Any',
 				inLanguage: opts.lang,
 				offers: {

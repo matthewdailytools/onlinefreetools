@@ -1,10 +1,10 @@
 import type { SiteLangDict } from './types';
 const en: SiteLangDict = {
-  brand: 'Online Free Tools',
+  brand: 'OnlineFreeTools.org',
   nav_home: 'Home',
   nav_devlogs: 'Dev Logs',
   nav_tools: 'Tools',
-  footer_text: 'Online Free Tools · Learning project · Iterating',
+  footer_text: 'OnlineFreeTools.org · Learning project · Iterating',
   tool_headers_title: 'Check HTTP Response Headers Online',
   tool_headers_description:
     'Inspect a URL\'s HTTP response headers from the edge. Process: submit https URL, send HEAD (fall back to GET), follow redirects, show status and header map, block private hosts. Example: read Cache-Control, CORS, and Strict-Transport-Security while debugging CDN or redirects.',
@@ -476,8 +476,6 @@ const en: SiteLangDict = {
   tool_gradient_usecase_3: 'Physics / field intuition: ∇f points where the scalar field increases fastest.',
   tool_gradient_ref_wiki_label: 'Wikipedia — Gradient',
   tool_gradient_ref_khan_label: 'Khan Academy — The gradient',
-  tool_ip_address_description: "See the public IP address our edge observes for your connection. Process: open the page or tap Refresh; the worker reads the trusted client address from the request. Example: edge may show 203.0.113.10. VPN or proxy shows the exit IP, not your LAN address.",
-  tool_ip_address_article: 'This page shows your public egress IP as seen by our edge — useful for VPN checks, support tickets, and light network debugging. It is not a geolocation or ISP lookup product.',
   ip_label: 'Your public IP',
   fetch_ip_button: 'Refresh',
   fetching_message: 'Fetching…',
@@ -507,6 +505,7 @@ const en: SiteLangDict = {
   tool_feedback_subject: 'Tool feedback',
   tool_category_calculator: 'Calculators',
   tool_category_developer: 'Developer tools',
+  tool_category_image: 'Image tools',
 
   tool_headers_faq_q1: 'What do HTTP response headers show?',
   tool_headers_faq_a1:
@@ -664,6 +663,159 @@ const en: SiteLangDict = {
   tool_html_entity_faq_a5:
     'No. Conversion runs locally with built-in browser APIs only — no CDN library fetch and no upload of your paste.',
 
+  tool_image_format_converter_title: 'Image Format Converter — PNG, JPEG, WebP, AVIF Local',
+  tool_image_format_converter_description:
+    'Convert images between PNG, JPEG, WebP, and AVIF in your browser. Steps: choose a file, pick the target format, set quality (and a JPEG background if needed), then download. Example: turn a transparent PNG screenshot into WebP for a faster page — files stay on your device.',
+  tool_image_format_converter_article:
+    'Local image format conversion with clear rules for quality, transparency, and browser encode support. Built for everyday PNG/JPEG/WebP/AVIF tasks.',
+  tool_image_format_converter_convert: 'Convert',
+  tool_image_format_converter_download: 'Download',
+  tool_image_format_converter_sample: 'Load sample',
+  tool_image_format_converter_clear: 'Clear',
+  tool_image_format_converter_choose_file: 'Choose an image',
+  tool_image_format_converter_drop_hint: 'Or drop a PNG, JPEG, WebP, AVIF, GIF, or BMP here. Conversion stays in this tab.',
+  tool_image_format_converter_target_label: 'Target format',
+  tool_image_format_converter_format_png: 'PNG',
+  tool_image_format_converter_format_jpeg: 'JPEG',
+  tool_image_format_converter_format_webp: 'WebP',
+  tool_image_format_converter_format_avif: 'AVIF',
+  tool_image_format_converter_quality_label: 'Quality',
+  tool_image_format_converter_quality_hint_png: 'PNG is lossless — quality is ignored.',
+  tool_image_format_converter_quality_hint_webp_lossless: 'WebP at 1.0 may encode as lossless.',
+  tool_image_format_converter_jpeg_bg_label: 'JPEG background',
+  tool_image_format_converter_jpeg_bg_white: 'White',
+  tool_image_format_converter_jpeg_bg_black: 'Black',
+  tool_image_format_converter_jpeg_bg_custom: 'Custom',
+  tool_image_format_converter_preview_in: 'Original',
+  tool_image_format_converter_preview_out: 'Converted',
+  tool_image_format_converter_stats_tpl: '{mime} · {w}×{h} · {bytes}',
+  tool_image_format_converter_empty: 'Choose an image first.',
+  tool_image_format_converter_err_decode: 'This browser could not decode that file. Try PNG, JPEG, or WebP.',
+  tool_image_format_converter_err_encode: 'Encoding failed. Try another format or a smaller image.',
+  tool_image_format_converter_err_mime_mismatch:
+    'The browser did not return the format you asked for (silent fallback). Pick another target or use a Chromium-based browser for AVIF.',
+  tool_image_format_converter_warn_large: 'Large file (>25 MB) — conversion may be slow or run out of memory.',
+  tool_image_format_converter_warn_edge: 'Very large dimensions (>8192 px on a side) — expect slowdowns.',
+  tool_image_format_converter_warn_animation: 'Animated files: only the first frame is converted.',
+  tool_image_format_converter_avif_unsupported: 'This browser cannot encode AVIF. Choose WebP, JPEG, or PNG instead.',
+  tool_image_format_converter_status_converting: 'Converting…',
+  tool_image_format_converter_status_done: 'Done — check MIME and size below, then download.',
+  tool_image_format_converter_how_title: 'How it works',
+  tool_image_format_converter_how_body:
+    'Pick an image and a target format. The page decodes pixels in this tab, draws them on a canvas, then calls the browser encoder (toBlob). For JPEG it can fill a solid background first so transparency does not become an unpredictable color. Output MIME is checked so a silent fallback is not treated as success.',
+  tool_image_format_converter_rules_title: 'Rules you should expect',
+  tool_image_format_converter_rules_body:
+    'Formats are not just MIME labels — transparency, lossy quality, and encode support differ. Use this table of expectations before you pick a target.',
+  tool_image_format_converter_rules_item_1:
+    'Pipeline: decode → optional JPEG background fill → canvas draw → toBlob(mime, quality). PNG ignores quality (always lossless). WebP at quality 1.0 may switch to lossless mode.',
+  tool_image_format_converter_rules_item_2:
+    'Transparency: PNG, WebP, and AVIF can keep alpha. JPEG has no alpha — choose white, black, or a custom fill before encode.',
+  tool_image_format_converter_rules_item_3:
+    'Encode support: decode support ≠ encode support. AVIF encode is mainly Chromium today; some browsers may quietly fall back to another type — we verify blob.type and warn.',
+  tool_image_format_converter_rules_item_4:
+    'Privacy: your image bytes are not uploaded. Everything runs with built-in browser APIs in this tab.',
+  tool_image_format_converter_example_title: 'Example',
+  tool_image_format_converter_example:
+    'Input: a 240×160 PNG icon with a transparent background. Target JPEG + white fill → output image/jpeg with no alpha and a white matte. Same icon to WebP at quality 0.85 → often a smaller file at the same pixel size. Use “Load sample” to try both paths.',
+  tool_image_format_converter_usecases_title: 'Good fits',
+  tool_image_format_converter_usecase_1:
+    'Web delivery: convert PNG screenshots or photos to WebP/AVIF before uploading to a CMS or CDN.',
+  tool_image_format_converter_usecase_2:
+    'Design handoff: flatten a transparent UI icon to JPEG with a chosen background for tools that reject alpha.',
+  tool_image_format_converter_usecase_3:
+    'Compatibility: turn an AVIF or WebP download into JPEG for older office or print software.',
+  tool_image_format_converter_faq_q1: 'Does my image leave the browser?',
+  tool_image_format_converter_faq_a1:
+    'No. Decoding and encoding run locally. You can confirm in DevTools Network that the image file is not POSTed to a server.',
+  tool_image_format_converter_faq_q2: 'Why is AVIF sometimes unavailable?',
+  tool_image_format_converter_faq_a2:
+    'Many browsers can display AVIF, but only some can encode it (often Chromium). If encode is missing, the option is disabled or conversion fails with a clear message — we do not pretend success.',
+  tool_image_format_converter_faq_q3: 'What happens to transparent pixels in JPEG?',
+  tool_image_format_converter_faq_a3:
+    'JPEG has no alpha channel. Pick a white, black, or custom background so the result is predictable instead of browser-dependent black or white fill.',
+  tool_image_format_converter_faq_q4: 'Does the quality slider affect PNG?',
+  tool_image_format_converter_faq_a4:
+    'No. PNG output is lossless and the quality control is ignored. For JPEG, WebP, and AVIF, quality maps to the encoder’s lossy setting (WebP at 1.0 may be lossless).',
+  tool_image_format_converter_faq_q5: 'How do I know the file really became WebP or AVIF?',
+  tool_image_format_converter_faq_a5:
+    'After convert, check the output stats line for the MIME type, and download the file. If the browser silently fell back, we show an error instead of a fake success.',
+  tool_image_format_converter_faq_q6: 'Do animated GIFs stay animated?',
+  tool_image_format_converter_faq_a6:
+    'No. Canvas conversion uses a single frame (usually the first). Export still images only.',
+
+
+  tool_image_exif_title: 'Photo EXIF Viewer & Remover — GPS, Camera & Local Strip',
+  tool_image_exif_description:
+    'View and remove EXIF metadata from photos in your browser. Steps: choose an image, review GPS/camera/datetime tags, then strip and download a re-encoded copy. Example: clear location from a phone JPEG before posting — files stay on your device.',
+  tool_image_exif_article:
+    'Local EXIF viewer and stripper with privacy-risk highlighting, honest re-encode notes, and post-strip verification.',
+  tool_image_exif_analyze: 'Analyze',
+  tool_image_exif_strip: 'Strip & download',
+  tool_image_exif_sample: 'Load sample',
+  tool_image_exif_clear: 'Clear',
+  tool_image_exif_choose_file: 'Choose an image',
+  tool_image_exif_drop_hint: 'Or drop a JPEG, PNG, WebP, or other photo here. Reading and stripping stay in this tab.',
+  tool_image_exif_preview_label: 'Preview',
+  tool_image_exif_empty: 'Choose an image first.',
+  tool_image_exif_need_lib: 'Could not load the metadata library. Check your connection and refresh.',
+  tool_image_exif_no_meta: 'No EXIF / GPS tags found in this file.',
+  tool_image_exif_err_parse: 'Could not read metadata from this file.',
+  tool_image_exif_err_decode: 'This browser cannot decode the pixels, so stripping is unavailable. Try JPEG or PNG.',
+  tool_image_exif_err_strip: 'Stripping failed. Try another format or a smaller image.',
+  tool_image_exif_err_verify: 'GPS still appeared after strip — download aborted. Try JPEG export or another browser.',
+  tool_image_exif_warn_large: 'Large file (>25 MB) — analysis or strip may be slow.',
+  tool_image_exif_warn_edge: 'Very large dimensions (>8192 px) — expect slowdowns when stripping.',
+  tool_image_exif_status_analyzing: 'Reading metadata…',
+  tool_image_exif_status_analyzed: 'Metadata ready — review tags below.',
+  tool_image_exif_status_stripping: 'Stripping via re-encode…',
+  tool_image_exif_status_stripped: 'Done — cleaned file downloaded; re-check shows no GPS.',
+  tool_image_exif_group_gps: 'GPS / location',
+  tool_image_exif_group_camera: 'Camera',
+  tool_image_exif_group_datetime: 'Date & time',
+  tool_image_exif_group_other: 'Other tags',
+  tool_image_exif_risk_badge: 'Privacy',
+  tool_image_exif_after_strip: 'Stripped copy downloaded. Tags below reflect the cleaned file (empty if strip succeeded). JPEG strip re-encodes pixels — not bit-identical.',
+  tool_image_exif_col_tag: 'Tag',
+  tool_image_exif_col_value: 'Value',
+  tool_image_exif_how_title: 'How it works',
+  tool_image_exif_how_body:
+    'Pick a photo. The page reads EXIF/GPS and related tags in this tab, groups them, and highlights privacy-sensitive fields. Strip redraws pixels on a canvas (honoring orientation when available) and exports a new file without those tags, then checks that GPS is gone.',
+  tool_image_exif_rules_title: 'Rules you should expect',
+  tool_image_exif_rules_body:
+    'Reading and stripping are different pipelines. Reading inspects metadata; stripping re-encodes pixels so the container no longer carries EXIF.',
+  tool_image_exif_rules_item_1:
+    'Read: parse IFD0/EXIF/GPS (and related) tags; GPS is shown as decimal latitude/longitude when available.',
+  tool_image_exif_rules_item_2:
+    'Strip: decode → optional orientation fix → canvas toBlob. This removes EXIF by rewriting the image, not by editing bytes in place.',
+  tool_image_exif_rules_item_3:
+    'JPEG strip uses a high quality setting but is still a re-encode — not bit-perfect. Prefer strip when privacy matters more than byte identity.',
+  tool_image_exif_rules_item_4:
+    'Privacy: your file is not uploaded. A CDN may load the open-source parser; that request is library code only.',
+  tool_image_exif_example_title: 'Example',
+  tool_image_exif_example:
+    'A phone JPEG with GPSLatitude/GPSLongitude and Make shows under GPS and Camera. After Strip & download, re-reading the cleaned file shows no GPS tags. The built-in sample has no EXIF on purpose — use your own photo to see real location fields.',
+  tool_image_exif_usecases_title: 'Good fits',
+  tool_image_exif_usecase_1: 'Social posts: remove GPS before sharing vacation or home photos.',
+  tool_image_exif_usecase_2: 'Marketplaces: strip camera and location tags from listing images.',
+  tool_image_exif_usecase_3: 'Troubleshooting: confirm whether Make, Model, and DateTimeOriginal were written.',
+  tool_image_exif_faq_q1: 'Does my photo leave the browser?',
+  tool_image_exif_faq_a1:
+    'No. Parsing and stripping run locally. You can confirm in DevTools Network that the image is not POSTed to a server.',
+  tool_image_exif_faq_q2: 'Is stripping lossless?',
+  tool_image_exif_faq_a2:
+    'Not bit-perfect. We re-encode through a canvas. JPEG uses a high quality factor; pixels may change slightly. That trade-off is how browsers reliably drop EXIF.',
+  tool_image_exif_faq_q3: 'How do I know GPS is gone?',
+  tool_image_exif_faq_a3:
+    'After strip we re-parse the output. If GPS remains, we show an error and do not treat it as success. You can also re-open the downloaded file here.',
+  tool_image_exif_faq_q4: 'Which formats work?',
+  tool_image_exif_faq_a4:
+    'JPEG is the common case for rich EXIF. Many PNG/WebP files have little or no EXIF. Some HEIC files can be read but not stripped if the browser cannot decode pixels.',
+  tool_image_exif_faq_q5: 'What counts as a privacy risk tag?',
+  tool_image_exif_faq_a5:
+    'We highlight GPS-related fields and serial/owner-style tags. Always review the full table before sharing.',
+  tool_image_exif_faq_q6: 'Why is the sample empty?',
+  tool_image_exif_faq_a6:
+    'The sample is a canvas-made JPEG without EXIF, so you can see the empty state. Use a real camera/phone photo to exercise GPS rows.',
 
   tool_add_www_to_dns_title: 'Add WWW to DNS — A/CNAME, Apex Rules & Provider Guides',
   tool_add_www_to_dns_description:

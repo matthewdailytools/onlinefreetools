@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>日志查看器 | Online Free Tools</title>
-  <meta name="description" content="查看 Online Free Tools 的单篇开发日志内容。" />
+  <title>日志查看器 | OnlineFreeTools.org</title>
+  <meta name="description" content="查看 OnlineFreeTools.org 的单篇开发日志内容。" />
   <link rel="canonical" href="https://www.onlinefreetools.org/dev-logs/viewer.html" />
-  <meta property="og:title" content="日志查看器 | Online Free Tools" />
+  <meta property="og:title" content="日志查看器 | OnlineFreeTools.org" />
   <meta property="og:description" content="查看单篇开发日志内容与细节。" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://www.onlinefreetools.org/dev-logs/viewer.html" />
@@ -56,7 +56,7 @@
           if (date && summary) break;
         }
         const title = summary ? `${summary} | 开发日志` : `开发日志 | ${file}`;
-        const desc = summary || 'Online Free Tools 单篇开发日志详情。';
+        const desc = summary || 'OnlineFreeTools.org 单篇开发日志详情。';
         // 注入文档标题与 meta
         document.title = title;
         const descMeta = document.querySelector('meta[name="description"]');
@@ -71,7 +71,7 @@
         if (ogUrl) ogUrl.setAttribute('content', `${location.origin}/dev-logs/viewer.html?file=${encodeURIComponent(file)}`);
         // 页面标题与 meta展示
         document.getElementById('pageTitle').textContent = summary || '开发日志';
-        document.getElementById('pageMeta').textContent = date ? `日期：${date}` : 'Online Free Tools';
+        document.getElementById('pageMeta').textContent = date ? `日期：${date}` : 'OnlineFreeTools.org';
         // 渲染 Markdown
         const html = marked.parse(text);
         document.getElementById('viewer').innerHTML = html;

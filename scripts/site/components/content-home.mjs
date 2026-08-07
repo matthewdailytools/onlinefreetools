@@ -74,6 +74,7 @@ export const renderHomeContent = ({ lang }) => {
   const featured = TOOL_CATALOG.filter((p) => p.featured !== false);
   const calculators = getToolsByCategory('calculator');
   const developers = getToolsByCategory('developer');
+  const imageTools = getToolsByCategory('image');
 
   return `
     <div class="home-wrap">
@@ -134,6 +135,15 @@ export const renderHomeContent = ({ lang }) => {
         <p class="home-cat-blurb">${t(lang, 'home_cat_dev_blurb')}</p>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
           ${developers.map((tool) => renderToolCard(lang, tool, openCta, renderSecondaryCard)).join('')}
+        </div>
+      </div>
+
+      <div class="home-cat" id="cat-image">
+        <span class="home-cat-label">${t(lang, 'home_cat_image')}</span>
+        <h3>${t(lang, 'home_cat_image_desc')}</h3>
+        <p class="home-cat-blurb">${t(lang, 'home_cat_image_blurb')}</p>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
+          ${imageTools.map((tool) => renderToolCard(lang, tool, openCta, renderSecondaryCard)).join('')}
         </div>
       </div>
     </section>

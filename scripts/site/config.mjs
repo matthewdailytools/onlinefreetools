@@ -12,7 +12,7 @@ const languages = [
 ];
 
 export const siteConfig = {
-  brand: 'Online Free Tools',
+  brand: 'OnlineFreeTools.org',
   baseUrl: process.env.SITE_BASE_URL || 'https://onlinefreetools.org',
   ogImage: process.env.SITE_OG_IMAGE || 'https://onlinefreetools.org/og-image.png',
   /** Google Search Console 站点所有权验证码（meta 标签 content） */

@@ -3,8 +3,8 @@
  */
 import catalog from './tool-catalog.json';
 
-/** 工具分类：计算器或开发者工具。 */
-export type ToolCategory = 'calculator' | 'developer';
+/** 工具分类：计算器、开发者工具、图片处理工具。 */
+export type ToolCategory = 'calculator' | 'developer' | 'image';
 
 /** 单个工具的目录元数据。 */
 export type ToolPageMeta = {
