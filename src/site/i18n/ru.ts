@@ -947,9 +947,13 @@ tool_ip_address_title: 'Узнать свой IP — Показать публи
   tool_share_copied: 'Скопировано',
   tool_share_native: 'Поделиться…',
   tool_feedback_title: 'Вопросы и отзывы',
-  tool_feedback_body: 'Что-то неясно, сломано или отсутствует? Напишите нам — мы читаем каждое сообщение об этих инструментах.',
+  tool_feedback_body: 'Что-то неясно, сломано или отсутствует? Напишите сообщение ниже — мы читаем каждую заметку об этих инструментах.',
   tool_feedback_email_label: 'Email',
-  tool_feedback_cta: 'Написать письмо',
+  tool_feedback_to_label: 'Кому',
+  tool_feedback_subject_label: 'Тема',
+  tool_feedback_message_label: 'Сообщение',
+  tool_feedback_message_placeholder: 'Опишите проблему или предложение…',
+  tool_feedback_cta: 'Открыть в почтовом приложении',
   tool_feedback_subject: 'Отзыв об инструменте'
 
 };

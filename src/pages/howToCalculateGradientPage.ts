@@ -81,7 +81,7 @@ export const renderHowToCalculateGradientPage = (opts: {
 	/** 公式预格式与卡片样式。 */
 	const extraHeadHtml = `
   <style>
-    .grad-card { max-width: 640px; margin: 0 auto 1.5rem; }
+    .grad-card { max-width: var(--content-max); width: 100%; margin: 0 0 1.5rem; }
     .grad-fn { background:#f8f9fa;padding:.75rem;border-radius:6px;font-family:ui-monospace,monospace;overflow:auto }
   </style>`;
 

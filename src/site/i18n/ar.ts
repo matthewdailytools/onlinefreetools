@@ -947,9 +947,13 @@ tool_ip_address_title: 'ما هو عنوان IP الخاص بي — اعرض IP 
   tool_share_copied: 'تم النسخ',
   tool_share_native: 'مشاركة…',
   tool_feedback_title: 'استفسارات أو ملاحظات',
-  tool_feedback_body: 'هل هناك غموض أو خلل أو نقص؟ راسلنا — نقرأ كل رسالة عن هذه الأدوات.',
+  tool_feedback_body: 'هل هناك غموض أو خلل أو نقص؟ اكتب رسالة أدناه — نقرأ كل ملاحظة عن هذه الأدوات.',
   tool_feedback_email_label: 'البريد',
-  tool_feedback_cta: 'كتابة بريد',
+  tool_feedback_to_label: 'إلى',
+  tool_feedback_subject_label: 'الموضوع',
+  tool_feedback_message_label: 'الرسالة',
+  tool_feedback_message_placeholder: 'صف المشكلة أو الاقتراح…',
+  tool_feedback_cta: 'فتح في تطبيق البريد',
   tool_feedback_subject: 'ملاحظات حول الأداة'
 
 };

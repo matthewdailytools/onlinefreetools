@@ -79,7 +79,7 @@ export const renderHowToCalculateBmiPage = (opts: {
 	/** BMI 表单与分类色块样式。 */
 	const extraHeadHtml = `
   <style>
-    .bmi-card { max-width: 540px; margin: 0 auto 1.5rem; }
+    .bmi-card { max-width: var(--content-max); width: 100%; margin: 0 0 1.5rem; }
     .bmi-form-label { display:block; margin-bottom:.5rem; color:#495057; font-weight:500 }
     .bmi-chart { display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:.5rem; margin-top:1rem }
     .bmi-category { padding:.75rem; border-radius:6px; text-align:center; font-size:.85rem }

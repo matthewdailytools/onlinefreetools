@@ -79,7 +79,7 @@ export const renderHowToCalculateRoiPage = (opts: {
 	/** ROI 表单与结果区样式。 */
 	const extraHeadHtml = `
   <style>
-    .tool-card { max-width: 640px; margin: 0 auto 1.5rem; }
+    .tool-card { max-width: var(--content-max); width: 100%; margin: 0 0 1.5rem; }
     .form-label { display:block; margin-bottom:.5rem; color:#495057; font-weight:500 }
     .form-group { margin-bottom:1rem; }
     .result { background:#f8f9fa; padding:1rem; border-radius:8px; margin-top:1rem; text-align:center }

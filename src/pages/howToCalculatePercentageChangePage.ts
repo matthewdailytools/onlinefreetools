@@ -83,7 +83,7 @@ export const renderHowToCalculatePercentageChangePage = (opts: {
 	/** 计算器卡片宽度样式。 */
 	const extraHeadHtml = `
   <style>
-    .pct-card { max-width: 600px; margin: 0 auto 1.5rem; }
+    .pct-card { max-width: var(--content-max); width: 100%; margin: 0 0 1.5rem; }
   </style>`;
 
 	const contentHtml = `

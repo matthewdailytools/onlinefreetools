@@ -945,9 +945,13 @@ tool_ip_address_title: 'Was ist meine IP-Adresse — Öffentliche IP anzeigen',
   tool_share_copied: 'Kopiert',
   tool_share_native: 'Teilen…',
   tool_feedback_title: 'Fragen oder Feedback',
-  tool_feedback_body: 'Unklar, kaputt oder etwas fehlt? Schreib uns — wir lesen jede Nachricht zu diesen Tools.',
+  tool_feedback_body: 'Unklar, kaputt oder etwas fehlt? Schreib unten eine Nachricht — wir lesen jede Notiz zu diesen Tools.',
   tool_feedback_email_label: 'E-Mail',
-  tool_feedback_cta: 'E-Mail schreiben',
+  tool_feedback_to_label: 'An',
+  tool_feedback_subject_label: 'Betreff',
+  tool_feedback_message_label: 'Nachricht',
+  tool_feedback_message_placeholder: 'Beschreibe das Problem oder den Vorschlag…',
+  tool_feedback_cta: 'In E-Mail-App öffnen',
   tool_feedback_subject: 'Tool-Feedback'
 
 };

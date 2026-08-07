@@ -201,7 +201,7 @@ body.is-tool-page #content > div:first-child > h1.h4 {
 }
 body.is-tool-page #content > div:first-child > p.text-muted {
   font-size: 1.05rem;
-  max-width: 40rem;
+  max-width: var(--content-max);
   line-height: 1.6;
   color: var(--muted) !important;
 }
@@ -656,7 +656,7 @@ footer.bg-light {
   line-height: 1.12;
   margin: 0 0 0.65rem;
   color: var(--text);
-  max-width: 22ch;
+  max-width: var(--content-max);
   text-wrap: balance;
 }
 
@@ -664,7 +664,7 @@ footer.bg-light {
   font-size: 1.08rem;
   color: var(--muted);
   margin: 0;
-  max-width: 38rem;
+  max-width: var(--content-max);
   line-height: 1.6;
   font-weight: 400;
 }
@@ -677,6 +677,8 @@ footer.bg-light {
   padding: 1.5rem 1.5rem 1.6rem;
   box-shadow: var(--shadow-sm);
   margin-bottom: 2.5rem;
+  max-width: var(--content-max);
+  width: 100%;
 }
 
 .tool-panel .tools-bar {
@@ -724,7 +726,8 @@ footer.bg-light {
 #content section.tool-section {
   margin-top: 2.5rem !important;
   padding-top: 0.25rem;
-  max-width: 40rem;
+  max-width: var(--content-max);
+  width: 100%;
 }
 
 #content section.tool-section p,
@@ -733,17 +736,31 @@ footer.bg-light {
   line-height: 1.65;
 }
 
-/* 分享 + 邮件反馈：双栏模块（窄屏单列） */
+/* 分享 / 反馈：上下单列堆叠，与工具正文同宽 */
 .tool-module-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 1.25rem;
   margin-top: 2.5rem;
-  max-width: 44rem;
+  max-width: var(--content-max);
+  width: 100%;
+}
+
+/* 各计算器页内联卡片：统一正文宽度 */
+body.is-tool-page .tool-card,
+body.is-tool-page .bmi-card,
+body.is-tool-page .pct-card,
+body.is-tool-page .grad-card,
+body.is-tool-page .mr-card,
+body.is-tool-page .sf-card {
+  max-width: var(--content-max);
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .tool-module {
-  padding: 1.15rem 1.2rem;
+  padding: 1.25rem 1.3rem;
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   background: #f8fafc;
@@ -799,9 +816,67 @@ footer.bg-light {
   font-size: 0.78rem;
 }
 
-@media (max-width: 720px) {
-  .tool-module-grid {
+/* 仿写信界面 */
+.tool-mail-compose {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  padding: 0.85rem 0.95rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: #fff;
+}
+
+.tool-mail-row {
+  display: grid;
+  grid-template-columns: 4.5rem minmax(0, 1fr);
+  gap: 0.55rem;
+  align-items: center;
+}
+
+.tool-mail-row--body {
+  align-items: start;
+}
+
+.tool-mail-label {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 650;
+  color: #64748b;
+  padding-top: 0.35rem;
+}
+
+.tool-mail-input,
+.tool-mail-body {
+  border-color: var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.tool-mail-input[readonly] {
+  background: #f1f5f9;
+  color: #334155;
+}
+
+.tool-mail-body {
+  min-height: 9rem;
+  resize: vertical;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.tool-mail-actions {
+  margin-top: 0.25rem;
+  padding-top: 0.65rem;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 520px) {
+  .tool-mail-row {
     grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+  .tool-mail-label {
+    padding-top: 0;
   }
 }
 
@@ -821,7 +896,8 @@ footer.bg-light {
 }
 
 .tool-card {
-  max-width: 640px;
+  max-width: var(--content-max);
+  width: 100%;
 }
 
 pre,

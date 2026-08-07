@@ -947,9 +947,13 @@ tool_ip_address_title: '自分のIPアドレスを確認 — グローバルIP�
   tool_share_copied: 'コピーしました',
   tool_share_native: '共有…',
   tool_feedback_title: 'お問い合わせ・フィードバック',
-  tool_feedback_body: '分かりにくい点、不具合、不足があればメールでお知らせください。ツールに関するメールはすべて確認します。',
+  tool_feedback_body: '分かりにくい点、不具合、不足があれば下にメッセージを書いてください。ツールに関する内容はすべて確認します。',
   tool_feedback_email_label: 'メール',
-  tool_feedback_cta: 'メールを書く',
+  tool_feedback_to_label: '宛先',
+  tool_feedback_subject_label: '件名',
+  tool_feedback_message_label: '本文',
+  tool_feedback_message_placeholder: '問題や提案を書いてください…',
+  tool_feedback_cta: 'メールアプリで開く',
   tool_feedback_subject: 'ツールへのフィードバック'
 
 };

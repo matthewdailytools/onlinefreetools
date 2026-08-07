@@ -952,9 +952,13 @@ tool_ip_address_title: 'Cuál es mi IP — Ver tu IP pública',
   tool_share_copied: 'Copiado',
   tool_share_native: 'Compartir…',
   tool_feedback_title: 'Consultas o comentarios',
-  tool_feedback_body: '¿Algo poco claro, roto o que falte? Escríbenos — leemos cada mensaje sobre estas herramientas.',
+  tool_feedback_body: '¿Algo poco claro, roto o que falte? Redacta un mensaje abajo — leemos cada nota sobre estas herramientas.',
   tool_feedback_email_label: 'Correo',
-  tool_feedback_cta: 'Escribir un correo',
+  tool_feedback_to_label: 'Para',
+  tool_feedback_subject_label: 'Asunto',
+  tool_feedback_message_label: 'Mensaje',
+  tool_feedback_message_placeholder: 'Describe el problema o la sugerencia…',
+  tool_feedback_cta: 'Abrir en la app de correo',
   tool_feedback_subject: 'Comentarios sobre la herramienta'
 
 };

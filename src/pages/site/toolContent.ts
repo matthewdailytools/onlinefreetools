@@ -238,28 +238,65 @@ export const renderToolShareSection = (lang: SiteLang, pageUrl: string, toolName
 };
 
 /**
- * 渲染「邮件咨询 / 反馈」模块。
+ * 渲染「邮件咨询 / 反馈」模块：仿写信界面（To / Subject / Message），提交时打开 mailto。
  * @param lang 当前语言
- * @param pageUrl 本工具页绝对 URL（写入邮件正文）
- * @param toolName 工具显示名（写入邮件主题）
+ * @param pageUrl 本工具页绝对 URL（预填正文）
+ * @param toolName 工具显示名（预填主题）
  */
 export const renderToolFeedbackSection = (lang: SiteLang, pageUrl: string, toolName: string) => {
 	const subjectBase = t(lang, 'tool_feedback_subject');
-	const subject = `${subjectBase}: ${toolName}`;
-	const body = `${toolName}\n${pageUrl}\n\n`;
-	const mailto = `mailto:${TOOL_CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+	const subjectDefault = `${subjectBase}: ${toolName}`;
+	const bodyDefault = `${toolName}\n${pageUrl}\n\n`;
 	return `
-    <section class="tool-module tool-feedback" id="feedback" aria-labelledby="feedback-heading">
+    <section class="tool-module tool-feedback" id="feedback" aria-labelledby="feedback-heading"
+      data-feedback-to="${escapeHtml(TOOL_CONTACT_EMAIL)}">
       <h2 class="h5" id="feedback-heading">${escapeHtml(t(lang, 'tool_feedback_title'))}</h2>
       <p class="text-muted small mb-3">${escapeHtml(t(lang, 'tool_feedback_body'))}</p>
-      <p class="mb-2 small">
-        <span class="text-muted">${escapeHtml(t(lang, 'tool_feedback_email_label'))}:</span>
-        <a href="mailto:${escapeHtml(TOOL_CONTACT_EMAIL)}">${escapeHtml(TOOL_CONTACT_EMAIL)}</a>
-      </p>
-      <div class="tool-module-actions">
-        <a class="btn btn-primary btn-sm" href="${escapeHtml(mailto)}">${escapeHtml(t(lang, 'tool_feedback_cta'))}</a>
-      </div>
-    </section>`;
+      <form class="tool-mail-compose" id="toolFeedbackForm" novalidate>
+        <div class="tool-mail-row">
+          <label class="tool-mail-label" for="toolFeedbackTo">${escapeHtml(t(lang, 'tool_feedback_to_label'))}</label>
+          <input class="form-control form-control-sm tool-mail-input" id="toolFeedbackTo" type="email"
+            value="${escapeHtml(TOOL_CONTACT_EMAIL)}" readonly />
+        </div>
+        <div class="tool-mail-row">
+          <label class="tool-mail-label" for="toolFeedbackSubject">${escapeHtml(t(lang, 'tool_feedback_subject_label'))}</label>
+          <input class="form-control form-control-sm tool-mail-input" id="toolFeedbackSubject" type="text"
+            value="${escapeHtml(subjectDefault)}" required maxlength="200" />
+        </div>
+        <div class="tool-mail-row tool-mail-row--body">
+          <label class="tool-mail-label" for="toolFeedbackMessage">${escapeHtml(t(lang, 'tool_feedback_message_label'))}</label>
+          <textarea class="form-control form-control-sm tool-mail-body" id="toolFeedbackMessage" rows="6"
+            required maxlength="4000" placeholder="${escapeHtml(t(lang, 'tool_feedback_message_placeholder'))}">${escapeHtml(bodyDefault)}</textarea>
+        </div>
+        <div class="tool-module-actions tool-mail-actions">
+          <button type="submit" class="btn btn-primary btn-sm" id="toolFeedbackSendBtn">${escapeHtml(t(lang, 'tool_feedback_cta'))}</button>
+          <a class="btn btn-outline-secondary btn-sm" href="mailto:${escapeHtml(TOOL_CONTACT_EMAIL)}">${escapeHtml(t(lang, 'tool_feedback_email_label'))}: ${escapeHtml(TOOL_CONTACT_EMAIL)}</a>
+        </div>
+      </form>
+    </section>
+    <script>
+    (function () {
+      var form = document.getElementById('toolFeedbackForm');
+      if (!form || form.getAttribute('data-feedback-bound') === '1') return;
+      form.setAttribute('data-feedback-bound', '1');
+      var root = document.getElementById('feedback');
+      var toDefault = (root && root.getAttribute('data-feedback-to')) || '${TOOL_CONTACT_EMAIL}';
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var toEl = document.getElementById('toolFeedbackTo');
+        var subjectEl = document.getElementById('toolFeedbackSubject');
+        var messageEl = document.getElementById('toolFeedbackMessage');
+        var to = (toEl && toEl.value ? toEl.value : toDefault).trim();
+        var subject = subjectEl && subjectEl.value ? subjectEl.value.trim() : '';
+        var body = messageEl && messageEl.value ? messageEl.value : '';
+        if (!to || !subject || !body.trim()) return;
+        var href = 'mailto:' + to
+          + '?subject=' + encodeURIComponent(subject)
+          + '&body=' + encodeURIComponent(body);
+        window.location.href = href;
+      });
+    })();
+    </script>`;
 };
 
 /**

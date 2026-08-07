@@ -945,9 +945,13 @@ tool_ip_address_title: 'Quelle est mon adresse IP — Voir votre IP publique',
   tool_share_copied: 'Copié',
   tool_share_native: 'Partager…',
   tool_feedback_title: 'Questions ou retours',
-  tool_feedback_body: 'Quelque chose n’est pas clair, cassé ou manquant ? Écrivez-nous — nous lisons chaque message sur ces outils.',
+  tool_feedback_body: 'Quelque chose n’est pas clair, cassé ou manquant ? Rédigez un message ci-dessous — nous lisons chaque note.',
   tool_feedback_email_label: 'E-mail',
-  tool_feedback_cta: 'Écrire un e-mail',
+  tool_feedback_to_label: 'À',
+  tool_feedback_subject_label: 'Objet',
+  tool_feedback_message_label: 'Message',
+  tool_feedback_message_placeholder: 'Décrivez le problème ou la suggestion…',
+  tool_feedback_cta: 'Ouvrir dans l’app e-mail',
   tool_feedback_subject: 'Retour sur l’outil'
 
 };

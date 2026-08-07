@@ -945,9 +945,13 @@ tool_ip_address_title: 'Berapa IP saya — Lihat IP publik Anda',
   tool_share_copied: 'Disalin',
   tool_share_native: 'Bagikan…',
   tool_feedback_title: 'Pertanyaan atau masukan',
-  tool_feedback_body: 'Ada yang kurang jelas, rusak, atau hilang? Kirim email — kami membaca setiap pesan tentang alat ini.',
+  tool_feedback_body: 'Ada yang kurang jelas, rusak, atau hilang? Tulis pesan di bawah — kami membaca setiap catatan tentang alat ini.',
   tool_feedback_email_label: 'Email',
-  tool_feedback_cta: 'Tulis email',
+  tool_feedback_to_label: 'Kepada',
+  tool_feedback_subject_label: 'Subjek',
+  tool_feedback_message_label: 'Pesan',
+  tool_feedback_message_placeholder: 'Jelaskan masalah atau saran…',
+  tool_feedback_cta: 'Buka di aplikasi email',
   tool_feedback_subject: 'Masukan alat'
 
 };

@@ -79,7 +79,7 @@ export const renderSquareFeetPage = (opts: {
 	/** 单位切换按钮样式。 */
 	const extraHeadHtml = `
   <style>
-    .sf-card { max-width: 640px; margin: 0 auto 1.5rem; }
+    .sf-card { max-width: var(--content-max); width: 100%; margin: 0 0 1.5rem; }
     .unit-toggle { display:flex; gap:0.5rem; margin-bottom:1rem; justify-content:center; flex-wrap:wrap }
     .unit-toggle button { padding:0.5rem 0.75rem;border-radius:8px;border:1px solid #ced4da;background:#e9ecef;cursor:pointer }
     .unit-toggle button.active { background:#0d6efd;color:#fff }
