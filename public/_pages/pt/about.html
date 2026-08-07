@@ -102,7 +102,16 @@ var _hmt = _hmt || [];
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="topNav">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="/pt/">Início</a></li><li class="nav-item"><a class="nav-link" href="/pt/about">Sobre</a></li><li class="nav-item"><a class="nav-link" href="/devlogs/">Logs</a></li></ul>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="/pt/">Início</a></li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Ferramentas de imagem</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/pt/tools/image-format-converter">Converter imagem</a></li><li><a class="dropdown-item" href="/pt/tools/image-exif">Ver e remover EXIF de fotos</a></li><li><a class="dropdown-item" href="/pt/tools/image-compress">Comprimir imagem</a></li><li><a class="dropdown-item" href="/pt/tools/image-optimizer">Otimizar imagem</a></li><li><a class="dropdown-item" href="/pt/tools/image-crop">Cortar e redimensionar</a></li></ul>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Desenvolvedor</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/pt/tools/website-headers">Verificar cabeçalhos HTTP</a></li><li><a class="dropdown-item" href="/pt/tools/ip-address">Qual é o meu IP — Ver seu IP público</a></li><li><a class="dropdown-item" href="/pt/tools/markdown-to-html">Markdown ↔ HTML</a></li><li><a class="dropdown-item" href="/pt/tools/text-diff">Comparar textos online</a></li><li><a class="dropdown-item" href="/pt/tools/yaml-json">YAML ↔ JSON</a></li><li><a class="dropdown-item" href="/pt/tools/csv-json">CSV ↔ JSON</a></li><li><a class="dropdown-item" href="/pt/tools/html-entity">Entidades HTML</a></li><li><a class="dropdown-item" href="/pt/tools/add-www-to-dns">Adicionar WWW ao DNS</a></li><li><a class="dropdown-item" href="/pt/tools/indexnow">IndexNow</a></li></ul>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Calculadoras</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/pt/tools/how-to-calculate-bmi">Calculadora de IMC — Como calcular</a></li><li><a class="dropdown-item" href="/pt/tools/how-to-calculate-roi">Calculadora de ROI — Como calcular o retorno sobre investimento</a></li><li><a class="dropdown-item" href="/pt/tools/how-to-calculate-marginal-revenue">Calculadora de receita marginal — Fórmula ΔRT / ΔQ</a></li><li><a class="dropdown-item" href="/pt/tools/square-feet">Pés quadrados para m² — Conversão para imóveis e reformas</a></li><li><a class="dropdown-item" href="/pt/tools/how-to-calculate-percentage-change">Calculadora de variação percentual — Do valor antigo ao novo</a></li><li><a class="dropdown-item" href="/pt/tools/how-to-calculate-gradient">Calculadora de gradiente — ∇f multivariable (derivadas parciais)</a></li></ul>
+        </li></ul>
           <div class="d-flex align-items-center gap-2">
             
     <div class="dropdown">
@@ -150,12 +159,21 @@ var _hmt = _hmt || [];
   </main>
   </div>
   
+
   <footer class="site-footer border-top text-center py-3">
+
     <div class="container">
-      <small class="text-muted">OnlineFreeTools.org · Projeto de aprendizado · Iterando</small>
-      <span class="text-muted mx-2">·</span>
-      <a class="small text-decoration-none" href="/pt/about">Sobre</a>
+
+      <div class="mb-1"><small class="text-muted">OnlineFreeTools.org · Projeto de aprendizado · Iterando</small></div>
+
+      <nav class="d-inline" aria-label="Ligações do site">
+
+        <a class="small text-decoration-none" href="/pt/about">Sobre</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/devlogs/">Logs</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/pt/privacy">Privacidade</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/pt/terms">Termos</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/pt/contact">Contacto</a>
+
+      </nav>
+
     </div>
+
   </footer>
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

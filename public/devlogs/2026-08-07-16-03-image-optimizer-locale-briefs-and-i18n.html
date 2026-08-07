@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Created image-optimizer locale briefs (briefs-ready) and inserted ten-locale i18n keys after image-compress. | Dev Logs</title>
+  <meta name="description" content="Created image-optimizer locale briefs (briefs-ready) and inserted ten-locale i18n keys after image-compress." />
+  <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-07-16-03-image-optimizer-locale-briefs-and-i18n.html" />
+  <meta property="og:title" content="Created image-optimizer locale briefs (briefs-ready) and inserted ten-locale i18n keys after image-compress. | Dev Logs" />
+  <meta property="og:description" content="Created image-optimizer locale briefs (briefs-ready) and inserted ten-locale i18n keys after image-compress." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-07-16-03-image-optimizer-locale-briefs-and-i18n.html" />
+  <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  
+  <script>
+    (function () {
+      try {
+        var enabled = [];
+        var defaultLang = "en";
+        var fallback = defaultLang;
+        var path = window.location.pathname || '/';
+
+        // If the URL already contains a language prefix (including defaultLang), respect it.
+        var hasPrefix = enabled.some(function (l) {
+          return l && (path === '/' + l || path.indexOf('/' + l + '/') === 0);
+        });
+        if (hasPrefix) return;
+
+        var langs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language])
+          .filter(Boolean)
+          .map(function (x) { return String(x).toLowerCase().split('-')[0]; });
+
+        var picked = null;
+        for (var i = 0; i < langs.length; i++) {
+          if (enabled.indexOf(langs[i]) !== -1) { picked = langs[i]; break; }
+        }
+        if (!picked) picked = enabled.indexOf(fallback) !== -1 ? fallback : (enabled[0] || fallback);
+
+        if (picked === "en") return;
+        var targetPath = path;
+        if (picked !== defaultLang) {
+          targetPath = ('/' + picked + path).replace(/\/{2,}/g, '/');
+        }
+        window.location.replace(targetPath + window.location.search + window.location.hash);
+      } catch (e) {}
+    })();
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="/styles/site.css" rel="stylesheet" />
+  <style>
+    body { min-height: 100vh; padding-top: var(--header-h, 56px); }
+    .layout { display: flex; min-height: calc(100vh - var(--header-h, 56px)); }
+  </style>
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?39f18c089a03779cd05243e21b046589";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "xbc0iytpn7");
+</script>
+  
+  
+</head>
+<body class="is-home-page">
+  
+  
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light site-navbar border-bottom fixed-top">
+      <div class="container-fluid">
+        <button class="btn btn-outline-secondary me-2" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+        <a class="navbar-brand" href="/">
+          <img class="navbar-brand-logo" src="/brand-logo.svg" width="28" height="28" alt="" decoding="async" />
+          <span class="navbar-brand-text">OnlineFreeTools.org</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="topNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="/en/">Home</a></li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Image editing tools</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/en/tools/image-format-converter">Image Format Converter</a></li><li><a class="dropdown-item" href="/en/tools/image-exif">Photo EXIF Viewer & Remover</a></li><li><a class="dropdown-item" href="/en/tools/image-compress">Image Compressor</a></li><li><a class="dropdown-item" href="/en/tools/image-optimizer">Image Optimizer</a></li><li><a class="dropdown-item" href="/en/tools/image-crop">Crop & Resize Image</a></li></ul>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Developer</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/en/tools/website-headers">Check HTTP Response Headers</a></li><li><a class="dropdown-item" href="/en/tools/ip-address">What Is My IP Address — See Your Public IP</a></li><li><a class="dropdown-item" href="/en/tools/markdown-to-html">Markdown ↔ HTML</a></li><li><a class="dropdown-item" href="/en/tools/text-diff">Compare Two Texts Online</a></li><li><a class="dropdown-item" href="/en/tools/yaml-json">YAML ↔ JSON</a></li><li><a class="dropdown-item" href="/en/tools/csv-json">CSV ↔ JSON</a></li><li><a class="dropdown-item" href="/en/tools/html-entity">HTML Entity Encoder & Decoder</a></li><li><a class="dropdown-item" href="/en/tools/add-www-to-dns">Add WWW to DNS</a></li><li><a class="dropdown-item" href="/en/tools/indexnow">IndexNow</a></li></ul>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Calculators</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/en/tools/how-to-calculate-bmi">BMI Calculator — Body Mass Index</a></li><li><a class="dropdown-item" href="/en/tools/how-to-calculate-roi">ROI Calculator — How to Calculate Return on Investment</a></li><li><a class="dropdown-item" href="/en/tools/how-to-calculate-marginal-revenue">Marginal Revenue Calculator — MR = ΔTR / ΔQ</a></li><li><a class="dropdown-item" href="/en/tools/square-feet">Square Feet to Square Meters — Area Converter for Homes & Renovation</a></li><li><a class="dropdown-item" href="/en/tools/how-to-calculate-percentage-change">Percentage Change Calculator — From Old Value to New</a></li><li><a class="dropdown-item" href="/en/tools/how-to-calculate-gradient">Gradient Calculator — Multivariable ∇f (Partial Derivatives)</a></li></ul>
+        </li></ul>
+          <div class="d-flex align-items-center gap-2">
+            
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="layout sidebar-collapsed" id="layoutRoot">
+    
+    <aside id="sidebar" class="border-end">
+      <h2 class="sidebar-title h6">Navigation</h2>
+      <div class="list-group list-group-flush small" id="navList"><a class="list-group-item list-group-item-action" href="/">Home</a></div>
+    </aside>
+    <main id="content" class="p-4">
+      <section class="mb-3">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h1 class="h4 mb-0">Created image-optimizer locale briefs (briefs-ready) and inserted ten-locale i18n keys after image-compress. | Dev Logs</h1>
+          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
+        </div>
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-07 16:03
+Summary: Created image-optimizer locale briefs (briefs-ready) and inserted ten-locale i18n keys after image-compress.</p>
+<p>[question]
+You are helping implement the image-optimizer tool for onlinefreetools (Cloudflare Pages site).</p>
+<p>Create TWO files by writing their full contents:</p>
+<h2>1) <code>work-tasks/image-optimizer/03-locale-briefs.md</code></h2>
+<p>Status: <code>briefs-ready</code>. Slug: <code>image-optimizer</code>. Mother tongue: en.
+Fill briefs for: en, zh, es, ar, pt, id, fr, ja, ru, de.
+Search intent (NOT &quot;advanced codec&quot;): image optimizer / 图片优化; differentiate from image-compress.
+Include shared ban-word checklist (unchecked), per-locale fields, round checkboxes unchecked.</p>
+<h2>2) Provide FULL en + 9 locale TypeScript property blocks with prefix <code>tool_image_optimizer_</code>, preferring direct write into <code>src/site/i18n/{lang}.ts</code> after image-compress / before image-crop.</h2>
+<p>[try to solve]
+已写入 <code>work-tasks/image-optimizer/03-locale-briefs.md</code>（状态 <code>briefs-ready</code>），十语 brief 含检索词、结果向 Title/H1、按钮短词、SERP 摘录；共用禁词表与轮次框未勾选。</p>
+<p>已在十个 <code>src/site/i18n/{lang}.ts</code> 于 <code>tool_image_compress_faq_a6</code> 与 <code>tool_image_crop_*</code> 之间插入完整 <code>tool_image_optimizer_*</code> 键（每语约 64 键）：title/description/article、引擎与编解码 UI、对照/统计/警告错误态、How/Rules/Example/Use cases、FAQ×6（题序按语种变化）。EN title：<code>Image Optimizer — WebP, AVIF &amp; MozJPEG Local</code>；ZH title：<code>图片优化 — 更小体积，可调编码器，本地完成</code>。正文区分 Canvas 压缩页与本页 WASM 优化，未把 jsquash 等包名当卖点。同步更新了 <code>02-tool-info.md</code> 中 Locale briefs 状态勾选。首页 <code>scripts/site/i18n.mjs</code> 短描述尚未加（实现 catalog 时再同步）。</p>
+<p>[actions]</p>
+<ul>
+<li>Created <code>work-tasks/image-optimizer/03-locale-briefs.md</code></li>
+<li>Updated <code>work-tasks/image-optimizer/02-tool-info.md</code> (briefs status)</li>
+<li>Appended <code>tool_image_optimizer_*</code> keys in <code>src/site/i18n/en.ts</code>, <code>zh.ts</code>, <code>es.ts</code>, <code>ar.ts</code>, <code>pt.ts</code>, <code>id.ts</code>, <code>fr.ts</code>, <code>ja.ts</code>, <code>ru.ts</code>, <code>de.ts</code></li>
+</ul>
+</article>
+      </section>
+    </main>
+  </div>
+  
+
+  <footer class="site-footer border-top text-center py-3">
+
+    <div class="container">
+
+      <div class="mb-1"><small class="text-muted">OnlineFreeTools.org · Learning project · Iterating</small></div>
+
+      <nav class="d-inline" aria-label="Site links">
+
+        <a class="small text-decoration-none" href="/en/about">About</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/devlogs/">Dev Logs</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/en/privacy">Privacy</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/en/terms">Terms</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/en/contact">Contact</a>
+
+      </nav>
+
+    </div>
+
+  </footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <script>
+    const layout = document.getElementById('layoutRoot');
+    const toggle = document.getElementById('sidebarToggle');
+    if (layout && toggle) {
+      toggle.addEventListener('click', () => layout.classList.toggle('sidebar-collapsed'));
+      
+    }
+  </script>
+</body>
+</html>

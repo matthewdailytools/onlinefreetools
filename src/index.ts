@@ -30,6 +30,7 @@ import { renderCsvJsonPage } from "./pages/csvJsonPage";
 import { renderImageFormatConverterPage } from "./pages/imageFormatConverterPage";
 import { renderImageExifPage } from "./pages/imageExifPage";
 import { renderImageCompressPage } from "./pages/imageCompressPage";
+import { renderImageOptimizerPage } from "./pages/imageOptimizerPage";
 import { renderImageCropPage } from "./pages/imageCropPage";
 import { renderHtmlEntityPage } from "./pages/htmlEntityPage";
 import { renderAddWwwToDnsPage } from "./pages/addWwwToDnsPage";
@@ -168,26 +169,30 @@ for (const code of DEFAULT_LANGS) {
 		const res = await fetchAsset(c, `/_pages/${code}/index.html`);
 		return res;
 	});
-	// About 静态页（含默认语显式前缀）
-	app.get(`/${code}/about`, (c) => c.redirect(`/${code}/about/`, 308));
-	app.get(`/${code}/about/`, async (c) => {
-		const accept = c.req.header('accept') || '';
-		if (!accept.includes('text/html')) return c.notFound();
-		const res = await fetchAsset(c, `/_pages/${code}/about.html`);
-		return res;
-	});
+	// 静态信息页（含默认语显式前缀）：about / privacy / terms / contact
+	for (const page of ['about', 'privacy', 'terms', 'contact'] as const) {
+		app.get(`/${code}/${page}`, (c) => c.redirect(`/${code}/${page}/`, 308));
+		app.get(`/${code}/${page}/`, async (c) => {
+			const accept = c.req.header('accept') || '';
+			if (!accept.includes('text/html')) return c.notFound();
+			const res = await fetchAsset(c, `/_pages/${code}/${page}.html`);
+			return res;
+		});
+	}
 }
 
-// 默认语 About（无前缀规范 URL）
-app.get('/about', async (c) => {
-	const accept = c.req.header('accept') || '';
-	if (!accept.includes('text/html')) return c.notFound();
-	const enabled = getEnabledLangs(c.env);
-	const defaultLang = getDefaultLang(c.env, enabled);
-	const res = await fetchAsset(c, `/_pages/${defaultLang}/about.html`);
-	return res;
-});
-app.get('/about/', (c) => c.redirect('/about', 301));
+// 默认语信息页（无前缀规范 URL）
+for (const page of ['about', 'privacy', 'terms', 'contact'] as const) {
+	app.get(`/${page}`, async (c) => {
+		const accept = c.req.header('accept') || '';
+		if (!accept.includes('text/html')) return c.notFound();
+		const enabled = getEnabledLangs(c.env);
+		const defaultLang = getDefaultLang(c.env, enabled);
+		const res = await fetchAsset(c, `/_pages/${defaultLang}/${page}.html`);
+		return res;
+	});
+	app.get(`/${page}/`, (c) => c.redirect(`/${page}`, 301));
+}
 
 /**
  * Devlogs 目录索引（Assets 默认也会映射；显式路由保证稳定性）。
@@ -204,7 +209,19 @@ app.use("/*", async (c, next) => {
 
 	// Global (non-localized) pages.
 	if (pathname === "/devlogs" || pathname.startsWith("/devlogs/")) return next();
-	if (pathname === "/about" || pathname.startsWith("/about/")) return next();
+	// 无语言前缀的静态信息页（默认语规范 URL）不做 Accept-Language 跳转。
+	if (
+		pathname === '/about' ||
+		pathname.startsWith('/about/') ||
+		pathname === '/privacy' ||
+		pathname.startsWith('/privacy/') ||
+		pathname === '/terms' ||
+		pathname.startsWith('/terms/') ||
+		pathname === '/contact' ||
+		pathname.startsWith('/contact/')
+	) {
+		return next();
+	}
 	if (pathname === "/tools/markdown-to-html.html") return next();
 	// 谷歌验证文件不得做语言前缀跳转。
 	if (isGoogleSiteVerificationPath(pathname)) return next();
@@ -331,6 +348,11 @@ registerToolPage(app as any, 'image-exif', (lang, defaultLang, enabled) =>
 // Register image-compress page via registrar（图片压缩）
 registerToolPage(app as any, 'image-compress', (lang, defaultLang, enabled) =>
 	renderImageCompressPage({ lang, defaultLang, enabledLangs: enabled })
+);
+
+// Register image-optimizer page via registrar（图片优化 · Tier 2 WASM）
+registerToolPage(app as any, 'image-optimizer', (lang, defaultLang, enabled) =>
+	renderImageOptimizerPage({ lang, defaultLang, enabledLangs: enabled })
 );
 
 // Register image-crop page via registrar（图片裁剪与改尺寸）

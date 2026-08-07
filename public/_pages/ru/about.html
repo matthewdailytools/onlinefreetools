@@ -102,7 +102,16 @@ var _hmt = _hmt || [];
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="topNav">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="/ru/">Главная</a></li><li class="nav-item"><a class="nav-link" href="/ru/about">О сайте</a></li><li class="nav-item"><a class="nav-link" href="/devlogs/">Логи</a></li></ul>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="/ru/">Главная</a></li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Инструменты для изображений</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ru/tools/image-format-converter">Конвертер изображений</a></li><li><a class="dropdown-item" href="/ru/tools/image-exif">Просмотр и удаление EXIF с фото</a></li><li><a class="dropdown-item" href="/ru/tools/image-compress">Сжатие изображений</a></li><li><a class="dropdown-item" href="/ru/tools/image-optimizer">Оптимизация изображений</a></li><li><a class="dropdown-item" href="/ru/tools/image-crop">Обрезка и изменение размера</a></li></ul>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Для разработчиков</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ru/tools/website-headers">Проверка HTTP-заголовков</a></li><li><a class="dropdown-item" href="/ru/tools/ip-address">Узнать свой IP — Показать публичный IP-адрес</a></li><li><a class="dropdown-item" href="/ru/tools/markdown-to-html">Markdown ↔ HTML</a></li><li><a class="dropdown-item" href="/ru/tools/text-diff">Сравнить тексты онлайн</a></li><li><a class="dropdown-item" href="/ru/tools/yaml-json">YAML ↔ JSON</a></li><li><a class="dropdown-item" href="/ru/tools/csv-json">CSV ↔ JSON</a></li><li><a class="dropdown-item" href="/ru/tools/html-entity">HTML-сущности</a></li><li><a class="dropdown-item" href="/ru/tools/add-www-to-dns">Добавить WWW в DNS</a></li><li><a class="dropdown-item" href="/ru/tools/indexnow">IndexNow</a></li></ul>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Калькуляторы</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-bmi">Калькулятор ИМТ</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-roi">Калькулятор ROI — Как рассчитать рентабельность инвестиций</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-marginal-revenue">Калькулятор предельной выручки — Формула ΔTR / ΔQ</a></li><li><a class="dropdown-item" href="/ru/tools/square-feet">Квадратные футы в м² — Для жилья и ремонта</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-percentage-change">Калькулятор процентного изменения — От старого значения к новому</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-gradient">Калькулятор градиента — многомерный ∇f (частные производные)</a></li></ul>
+        </li></ul>
           <div class="d-flex align-items-center gap-2">
             
     <div class="dropdown">
@@ -150,12 +159,21 @@ var _hmt = _hmt || [];
   </main>
   </div>
   
+
   <footer class="site-footer border-top text-center py-3">
+
     <div class="container">
-      <small class="text-muted">OnlineFreeTools.org · Учебный проект · Итерации</small>
-      <span class="text-muted mx-2">·</span>
-      <a class="small text-decoration-none" href="/ru/about">О сайте</a>
+
+      <div class="mb-1"><small class="text-muted">OnlineFreeTools.org · Учебный проект · Итерации</small></div>
+
+      <nav class="d-inline" aria-label="Ссылки сайта">
+
+        <a class="small text-decoration-none" href="/ru/about">О сайте</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/devlogs/">Логи</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/ru/privacy">Конфиденциальность</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/ru/terms">Условия</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/ru/contact">Контакты</a>
+
+      </nav>
+
     </div>
+
   </footer>
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

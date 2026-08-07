@@ -133,7 +133,8 @@
     "related": [
       "image-exif",
       "image-compress",
-      "image-crop"
+      "image-crop",
+      "image-optimizer"
     ],
     "logo": "/icons/tools/image-format-converter.svg"
   },
@@ -149,7 +150,8 @@
     "faqPrefix": "tool_image_exif",
     "related": [
       "image-format-converter",
-      "image-compress"
+      "image-compress",
+      "image-optimizer"
     ],
     "logo": "/icons/tools/image-exif.svg"
   },
@@ -165,9 +167,27 @@
     "faqPrefix": "tool_image_compress",
     "related": [
       "image-format-converter",
-      "image-crop"
+      "image-crop",
+      "image-optimizer"
     ],
     "logo": "/icons/tools/image-compress.svg"
+  },
+  {
+    "slug": "image-optimizer",
+    "path": "/tools/image-optimizer",
+    "category": "image",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_image_optimizer_title",
+    "homeTitleKey": "tool_image_optimizer_title",
+    "homeDescKey": "tool_image_optimizer_desc",
+    "faqPrefix": "tool_image_optimizer",
+    "related": [
+      "image-compress",
+      "image-format-converter",
+      "image-exif"
+    ],
+    "logo": "/icons/tools/image-optimizer.svg"
   },
   {
     "slug": "image-crop",
@@ -181,7 +201,8 @@
     "faqPrefix": "tool_image_crop",
     "related": [
       "image-compress",
-      "image-format-converter"
+      "image-format-converter",
+      "image-optimizer"
     ],
     "logo": "/icons/tools/image-crop.svg"
   },

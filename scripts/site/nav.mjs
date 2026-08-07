@@ -21,14 +21,20 @@ export const buildCategoryNavDropdowns = (lang) =>
   }));
 
 /**
- * 首页顶栏：推荐、各分类工具下拉、全部工具、关于、开发日志。
+ * 工具页 / 信息页顶栏：首页 + 各分类工具下拉（关于、开发日志在页脚）。
  * @param {string} lang
- * @param {string} aboutHref
  */
-export const buildHomeNavItems = (lang, aboutHref) => [
+export const buildToolPageNavItems = (lang) => [
+  { href: withExplicitLangPath(lang, '/'), label: t(lang, 'nav_home') },
+  ...buildCategoryNavDropdowns(lang),
+];
+
+/**
+ * 首页顶栏：推荐、各分类工具下拉、全部工具。
+ * @param {string} lang
+ */
+export const buildHomeNavItems = (lang) => [
   { href: '#featured', label: t(lang, 'nav_featured') },
   ...buildCategoryNavDropdowns(lang),
   { href: '#all-tools', label: t(lang, 'nav_all_tools') },
-  { href: aboutHref, label: t(lang, 'nav_about') },
-  { href: '/devlogs/', label: t(lang, 'nav_devlogs') },
 ];

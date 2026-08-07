@@ -104,14 +104,14 @@ var _hmt = _hmt || [];
         <div class="collapse navbar-collapse" id="topNav">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="#featured">おすすめ</a></li><li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">画像ツール</a>
-          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ja/tools/image-format-converter">画像形式変換</a></li><li><a class="dropdown-item" href="/ja/tools/image-exif">写真の EXIF 表示と削除</a></li><li><a class="dropdown-item" href="/ja/tools/image-compress">画像圧縮</a></li><li><a class="dropdown-item" href="/ja/tools/image-crop">画像の切り抜きとサイズ変更</a></li></ul>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ja/tools/image-format-converter">画像形式変換</a></li><li><a class="dropdown-item" href="/ja/tools/image-exif">写真の EXIF 表示と削除</a></li><li><a class="dropdown-item" href="/ja/tools/image-compress">画像圧縮</a></li><li><a class="dropdown-item" href="/ja/tools/image-optimizer">画像最適化</a></li><li><a class="dropdown-item" href="/ja/tools/image-crop">画像の切り抜きとサイズ変更</a></li></ul>
         </li><li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">開発者</a>
           <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ja/tools/website-headers">HTTPヘッダ確認</a></li><li><a class="dropdown-item" href="/ja/tools/ip-address">自分のIPアドレスを確認 — グローバルIPを表示</a></li><li><a class="dropdown-item" href="/ja/tools/markdown-to-html">Markdown ↔ HTML</a></li><li><a class="dropdown-item" href="/ja/tools/text-diff">テキスト比較</a></li><li><a class="dropdown-item" href="/ja/tools/yaml-json">YAML ↔ JSON</a></li><li><a class="dropdown-item" href="/ja/tools/csv-json">CSV ↔ JSON</a></li><li><a class="dropdown-item" href="/ja/tools/html-entity">HTML エンティティ</a></li><li><a class="dropdown-item" href="/ja/tools/add-www-to-dns">DNS に WWW を追加</a></li><li><a class="dropdown-item" href="/ja/tools/indexnow">IndexNow</a></li></ul>
         </li><li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">計算機</a>
           <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ja/tools/how-to-calculate-bmi">BMI計算ツール</a></li><li><a class="dropdown-item" href="/ja/tools/how-to-calculate-roi">ROI（投資利益率）計算ツール — 計算式と例</a></li><li><a class="dropdown-item" href="/ja/tools/how-to-calculate-marginal-revenue">限界収入（MR）計算 — 公式 ΔTR / ΔQ</a></li><li><a class="dropdown-item" href="/ja/tools/square-feet">平方フィート⇔平方メートル換算 — 物件・リフォーム向け</a></li><li><a class="dropdown-item" href="/ja/tools/how-to-calculate-percentage-change">パーセント変化の計算 — 旧値から新値への増減率</a></li><li><a class="dropdown-item" href="/ja/tools/how-to-calculate-gradient">多変数の勾配 ∇f を計算 — 偏導関数ベクトル</a></li></ul>
-        </li><li class="nav-item"><a class="nav-link" href="#all-tools">ツール</a></li><li class="nav-item"><a class="nav-link" href="/ja/about">について</a></li><li class="nav-item"><a class="nav-link" href="/devlogs/">開発ログ</a></li></ul>
+        </li><li class="nav-item"><a class="nav-link" href="#all-tools">ツール</a></li></ul>
           <div class="d-flex align-items-center gap-2">
             
     <div class="dropdown">
@@ -291,6 +291,18 @@ var _hmt = _hmt || [];
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/image-optimizer.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">画像最適化</h3>
+        </div>
+        <p class="card-text flex-grow-1">MozJPEG / WebP / AVIF / OxiPNGを端末内で。スライダーで比較。</p>
+        <a href="/ja/tools/image-optimizer" class="mt-auto btn btn-primary btn-sm">開く</a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/image-crop.svg" width="36" height="36" alt="" decoding="async" />
           <h3 class="card-title h5 mb-0">画像の切り抜きとサイズ変更</h3>
         </div>
@@ -443,6 +455,18 @@ var _hmt = _hmt || [];
         </div>
         <p class="card-text small flex-grow-1">長辺・画質・目標サイズで端末内圧縮。</p>
         <a href="/ja/tools/image-compress" class="mt-auto btn btn-outline-primary btn-sm">開く</a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/image-optimizer.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">画像最適化</h3>
+        </div>
+        <p class="card-text small flex-grow-1">MozJPEG / WebP / AVIF / OxiPNGを端末内で。スライダーで比較。</p>
+        <a href="/ja/tools/image-optimizer" class="mt-auto btn btn-outline-primary btn-sm">開く</a>
       </div>
     </div>
   </div>
@@ -662,12 +686,21 @@ var _hmt = _hmt || [];
   </main>
   </div>
   
+
   <footer class="site-footer border-top text-center py-3">
+
     <div class="container">
-      <small class="text-muted">OnlineFreeTools.org · 学習プロジェクト · 改善中</small>
-      <span class="text-muted mx-2">·</span>
-      <a class="small text-decoration-none" href="/ja/about">について</a>
+
+      <div class="mb-1"><small class="text-muted">OnlineFreeTools.org · 学習プロジェクト · 改善中</small></div>
+
+      <nav class="d-inline" aria-label="サイトリンク">
+
+        <a class="small text-decoration-none" href="/ja/about">について</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/devlogs/">開発ログ</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/ja/privacy">プライバシー</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/ja/terms">利用規約</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/ja/contact">お問い合わせ</a>
+
+      </nav>
+
     </div>
+
   </footer>
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

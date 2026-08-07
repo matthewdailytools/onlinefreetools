@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>隐私政策 | OnlineFreeTools.org</title>
+  <meta name="description" content="OnlineFreeTools.org 如何处理数据：多数工具在浏览器本地运行；边缘工具仅处理短请求；页面分析脚本说明，以及隐私相关联系方式。" />
+  <link rel="canonical" href="https://onlinefreetools.org/zh/privacy" />
+  <meta property="og:title" content="隐私政策 | OnlineFreeTools.org" />
+  <meta property="og:description" content="OnlineFreeTools.org 如何处理数据：多数工具在浏览器本地运行；边缘工具仅处理短请求；页面分析脚本说明，以及隐私相关联系方式。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://onlinefreetools.org/zh/privacy" />
+  <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="alternate" hreflang="en" href="https://onlinefreetools.org/privacy" />
+  <link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/privacy" />
+  <link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/privacy" />
+  <link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/privacy" />
+  <link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/privacy" />
+  <link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/privacy" />
+  <link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/privacy" />
+  <link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/privacy" />
+  <link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/privacy" />
+  <link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/privacy" />
+  <link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/privacy" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  
+  <script>
+    (function () {
+      try {
+        var enabled = ["en","zh","es","ar","pt","id","fr","ja","ru","de"];
+        var defaultLang = "en";
+        var fallback = defaultLang;
+        var path = window.location.pathname || '/';
+
+        // If the URL already contains a language prefix (including defaultLang), respect it.
+        var hasPrefix = enabled.some(function (l) {
+          return l && (path === '/' + l || path.indexOf('/' + l + '/') === 0);
+        });
+        if (hasPrefix) return;
+
+        var langs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language])
+          .filter(Boolean)
+          .map(function (x) { return String(x).toLowerCase().split('-')[0]; });
+
+        var picked = null;
+        for (var i = 0; i < langs.length; i++) {
+          if (enabled.indexOf(langs[i]) !== -1) { picked = langs[i]; break; }
+        }
+        if (!picked) picked = enabled.indexOf(fallback) !== -1 ? fallback : (enabled[0] || fallback);
+
+        if (picked === "zh") return;
+        var targetPath = path;
+        if (picked !== defaultLang) {
+          targetPath = ('/' + picked + path).replace(/\/{2,}/g, '/');
+        }
+        window.location.replace(targetPath + window.location.search + window.location.hash);
+      } catch (e) {}
+    })();
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="/styles/site.css" rel="stylesheet" />
+  <style>
+    body { min-height: 100vh; padding-top: var(--header-h, 56px); }
+    .layout { display: flex; min-height: calc(100vh - var(--header-h, 56px)); }
+  </style>
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?39f18c089a03779cd05243e21b046589";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "xbc0iytpn7");
+</script>
+  
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"隐私政策","description":"OnlineFreeTools.org 如何处理数据：多数工具在浏览器本地运行；边缘工具仅处理短请求；页面分析脚本说明，以及隐私相关联系方式。","url":"https://onlinefreetools.org/zh/privacy","isPartOf":{"@type":"WebSite","name":"OnlineFreeTools.org","url":"https://onlinefreetools.org"}}</script>
+</head>
+<body class="is-home-page">
+  
+  
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light site-navbar border-bottom fixed-top">
+      <div class="container-fluid">
+        <button class="btn btn-outline-secondary me-2" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+        <a class="navbar-brand" href="/zh/">
+          <img class="navbar-brand-logo" src="/brand-logo.svg" width="28" height="28" alt="" decoding="async" />
+          <span class="navbar-brand-text">OnlineFreeTools.org</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="topNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="/zh/">首页</a></li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">图片编辑工具</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/zh/tools/image-format-converter">图片格式转换</a></li><li><a class="dropdown-item" href="/zh/tools/image-exif">图片 EXIF 查看与清除</a></li><li><a class="dropdown-item" href="/zh/tools/image-compress">图片压缩</a></li><li><a class="dropdown-item" href="/zh/tools/image-optimizer">图片优化</a></li><li><a class="dropdown-item" href="/zh/tools/image-crop">图片裁剪与改尺寸</a></li></ul>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">开发者工具</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/zh/tools/website-headers">在线查看 HTTP 响应头</a></li><li><a class="dropdown-item" href="/zh/tools/ip-address">查询我的公网 IP — 查看当前出口地址</a></li><li><a class="dropdown-item" href="/zh/tools/markdown-to-html">Markdown ↔ HTML</a></li><li><a class="dropdown-item" href="/zh/tools/text-diff">在线文本对比</a></li><li><a class="dropdown-item" href="/zh/tools/yaml-json">YAML ↔ JSON</a></li><li><a class="dropdown-item" href="/zh/tools/csv-json">CSV ↔ JSON</a></li><li><a class="dropdown-item" href="/zh/tools/html-entity">HTML 实体编解码</a></li><li><a class="dropdown-item" href="/zh/tools/add-www-to-dns">给域名添加 www DNS</a></li><li><a class="dropdown-item" href="/zh/tools/indexnow">IndexNow</a></li></ul>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">计算器</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-bmi">如何计算BMI</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-roi">投资回报率（ROI）计算 — 公式与示例</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-marginal-revenue">边际收益计算 — 公式 MR = ΔTR / ΔQ</a></li><li><a class="dropdown-item" href="/zh/tools/square-feet">平方英尺转平方米 — 看房与装修面积换算</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-percentage-change">百分比变化计算 — 旧值到新值的涨跌幅</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-gradient">多元函数梯度计算 — ∇f 偏导向量</a></li></ul>
+        </li></ul>
+          <div class="d-flex align-items-center gap-2">
+            
+    <div class="dropdown">
+      <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        中文
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end"><li><a class="dropdown-item" href="/en/privacy">English</a></li><li><span class="dropdown-item active" aria-current="true">中文</span></li><li><a class="dropdown-item" href="/es/privacy">Español</a></li><li><a class="dropdown-item" href="/ar/privacy">العربية</a></li><li><a class="dropdown-item" href="/pt/privacy">Português</a></li><li><a class="dropdown-item" href="/id/privacy">Bahasa Indonesia</a></li><li><a class="dropdown-item" href="/fr/privacy">Français</a></li><li><a class="dropdown-item" href="/ja/privacy">日本語</a></li><li><a class="dropdown-item" href="/ru/privacy">Русский</a></li><li><a class="dropdown-item" href="/de/privacy">Deutsch</a></li></ul>
+    </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="layout sidebar-collapsed" id="layoutRoot">
+    
+    <aside id="sidebar" class="border-end">
+      <h2 class="sidebar-title h6">隐私政策</h2>
+      <div class="list-group list-group-flush small" id="privacyNav"><a class="list-group-item list-group-item-action" href="#local">本地处理</a><a class="list-group-item list-group-item-action" href="#edge">何时会离开本机</a><a class="list-group-item list-group-item-action" href="#analytics">访问分析</a><a class="list-group-item list-group-item-action" href="#retention">账号与留存</a><a class="list-group-item list-group-item-action" href="#contact">隐私相关问询</a></div>
+    </aside>
+    <main id="content" class="p-4">
+    <article class="mb-4">
+      <h1 class="h3 mb-3">隐私政策</h1>
+      <p class="lead text-muted">本政策说明哪些内容只留在你的设备上、何时会向我们的 Cloudflare Worker 发出短请求，以及页面会加载哪些分析脚本。</p>
+      
+      <section id="local" class="mb-4">
+        <h2 class="h5">本地处理</h2>
+        <p>许多工具（文本转换、图片编辑、多数计算器）只在当前标签页处理你粘贴或上传的内容，不会作为产品功能上传到我们的服务器。页面仍可能从 CDN 加载开源库，该请求是库代码，不是你的内容。</p>
+      </section>
+      <section id="edge" class="mb-4">
+        <h2 class="h5">何时会离开本机</h2>
+        <p>少数工具需要边缘 Worker，例如读取公开 HTTP 响应头、查询 DNS、查看边缘所见的公网 IP，或提交 IndexNow URL 列表。请求只携带完成该操作所需的数据，我们不会将其作为内容库长期保存。适用工具页会写明这一点。</p>
+      </section>
+      <section id="analytics" class="mb-4">
+        <h2 class="h5">访问分析</h2>
+        <p>页面可能加载 Microsoft Clarity 与百度统计，用于了解汇总流量与可用性。上述第三方可能按其政策设置 Cookie 或类似标识。我们不出售个人数据。</p>
+      </section>
+      <section id="retention" class="mb-4">
+        <h2 class="h5">账号与留存</h2>
+        <p>本站无需注册。我们不提供用于保存工具输入的用户内容库。Cloudflare 基础设施上的运维日志遵循该平台的留存实践，不会用来重建你粘贴的内容。</p>
+      </section>
+      <section id="contact" class="mb-4">
+        <h2 class="h5">隐私相关问询</h2>
+        <p>隐私相关问题请发邮件至 <a href="mailto:dailyonetools@outlook.com">dailyonetools@outlook.com</a>。我们会阅读与本站及工具有关的来信。</p>
+      </section>
+    </article>
+  </main>
+  </div>
+  
+
+  <footer class="site-footer border-top text-center py-3">
+
+    <div class="container">
+
+      <div class="mb-1"><small class="text-muted">OnlineFreeTools.org · 学习项目 · 持续迭代</small></div>
+
+      <nav class="d-inline" aria-label="站点链接">
+
+        <a class="small text-decoration-none" href="/zh/about">关于</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/devlogs/">开发日志</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/zh/privacy">隐私</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/zh/terms">条款</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/zh/contact">联系</a>
+
+      </nav>
+
+    </div>
+
+  </footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <script>
+    const layout = document.getElementById('layoutRoot');
+    const toggle = document.getElementById('sidebarToggle');
+    if (layout && toggle) {
+      toggle.addEventListener('click', () => layout.classList.toggle('sidebar-collapsed'));
+      
+    }
+  </script>
+</body>
+</html>

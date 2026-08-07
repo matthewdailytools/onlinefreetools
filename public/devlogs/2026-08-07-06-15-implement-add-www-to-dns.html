@@ -92,7 +92,16 @@ var _hmt = _hmt || [];
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="topNav">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="/">Home</a></li><li class="nav-item"><a class="nav-link" href="/devlogs/">Dev Logs</a></li></ul>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="/en/">Home</a></li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Image editing tools</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/en/tools/image-format-converter">Image Format Converter</a></li><li><a class="dropdown-item" href="/en/tools/image-exif">Photo EXIF Viewer & Remover</a></li><li><a class="dropdown-item" href="/en/tools/image-compress">Image Compressor</a></li><li><a class="dropdown-item" href="/en/tools/image-optimizer">Image Optimizer</a></li><li><a class="dropdown-item" href="/en/tools/image-crop">Crop & Resize Image</a></li></ul>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Developer</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/en/tools/website-headers">Check HTTP Response Headers</a></li><li><a class="dropdown-item" href="/en/tools/ip-address">What Is My IP Address — See Your Public IP</a></li><li><a class="dropdown-item" href="/en/tools/markdown-to-html">Markdown ↔ HTML</a></li><li><a class="dropdown-item" href="/en/tools/text-diff">Compare Two Texts Online</a></li><li><a class="dropdown-item" href="/en/tools/yaml-json">YAML ↔ JSON</a></li><li><a class="dropdown-item" href="/en/tools/csv-json">CSV ↔ JSON</a></li><li><a class="dropdown-item" href="/en/tools/html-entity">HTML Entity Encoder & Decoder</a></li><li><a class="dropdown-item" href="/en/tools/add-www-to-dns">Add WWW to DNS</a></li><li><a class="dropdown-item" href="/en/tools/indexnow">IndexNow</a></li></ul>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Calculators</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/en/tools/how-to-calculate-bmi">BMI Calculator — Body Mass Index</a></li><li><a class="dropdown-item" href="/en/tools/how-to-calculate-roi">ROI Calculator — How to Calculate Return on Investment</a></li><li><a class="dropdown-item" href="/en/tools/how-to-calculate-marginal-revenue">Marginal Revenue Calculator — MR = ΔTR / ΔQ</a></li><li><a class="dropdown-item" href="/en/tools/square-feet">Square Feet to Square Meters — Area Converter for Homes & Renovation</a></li><li><a class="dropdown-item" href="/en/tools/how-to-calculate-percentage-change">Percentage Change Calculator — From Old Value to New</a></li><li><a class="dropdown-item" href="/en/tools/how-to-calculate-gradient">Gradient Calculator — Multivariable ∇f (Partial Derivatives)</a></li></ul>
+        </li></ul>
           <div class="d-flex align-items-center gap-2">
             
           </div>
@@ -104,7 +113,7 @@ var _hmt = _hmt || [];
     
     <aside id="sidebar" class="border-end">
       <h2 class="sidebar-title h6">Navigation</h2>
-      <div class="list-group list-group-flush small" id="navList"><a class="list-group-item list-group-item-action" href="/">Home</a><a class="list-group-item list-group-item-action" href="/devlogs/">Dev Logs</a></div>
+      <div class="list-group list-group-flush small" id="navList"><a class="list-group-item list-group-item-action" href="/">Home</a></div>
     </aside>
     <main id="content" class="p-4">
       <section class="mb-3">
@@ -141,12 +150,21 @@ Summary: Implemented add-www-to-dns tool with record generator, DoH lookup, and 
     </main>
   </div>
   
+
   <footer class="site-footer border-top text-center py-3">
+
     <div class="container">
-      <small class="text-muted">OnlineFreeTools.org · Learning project · Iterating</small>
-      <span class="text-muted mx-2">·</span>
-      <a class="small text-decoration-none" href="/en/about">About</a>
+
+      <div class="mb-1"><small class="text-muted">OnlineFreeTools.org · Learning project · Iterating</small></div>
+
+      <nav class="d-inline" aria-label="Site links">
+
+        <a class="small text-decoration-none" href="/en/about">About</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/devlogs/">Dev Logs</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/en/privacy">Privacy</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/en/terms">Terms</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/en/contact">Contact</a>
+
+      </nav>
+
     </div>
+
   </footer>
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

@@ -55,7 +55,7 @@ export const buildCategoryNavDropdowns = (
 	}));
 
 /**
- * 工具页顶栏：首页 + 各分类工具下拉 + 开发日志。
+ * 工具页顶栏：首页 + 各分类工具下拉（关于、开发日志在页脚）。
  * @param lang 当前语言
  * @param defaultLang 站点默认语言
  */
@@ -64,5 +64,4 @@ export const buildToolPageNavItems = (lang: SiteLang, defaultLang: SiteLang): Na
 	...buildCategoryNavDropdowns(lang, defaultLang, (toolPath) =>
 		withLangPrefix(lang, toolPath, defaultLang)
 	),
-	{ href: '/devlogs/', label: t(lang, 'nav_devlogs') },
 ];

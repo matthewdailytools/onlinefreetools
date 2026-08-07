@@ -13,6 +13,7 @@
     "cf-typegen": "wrangler types",
     "build:logs": "node scripts/build-logs.mjs",
     "build:site": "node scripts/build-site.mjs",
+    "vendor:image-optimizer": "node scripts/copy-image-optimizer-vendor.mjs",
     "lint:seo": "node scripts/validate-tool-seo.mjs",
     "indexnow": "node ops/seo/submit-indexnow.mjs",
     "indexnow:sitemap": "node ops/seo/submit-indexnow.mjs --sitemap",
@@ -22,6 +23,10 @@
     "predeploy": "npm run build:site && npm run lint:seo"
   },
   "dependencies": {
+    "@jsquash/avif": "^2.1.1",
+    "@jsquash/jpeg": "^1.6.0",
+    "@jsquash/oxipng": "^2.3.0",
+    "@jsquash/webp": "^1.5.0",
     "chanfana": "^2.6.3",
     "hono": "^4.6.20",
     "zod": "^3.24.1"
@@ -29,7 +34,7 @@
   "devDependencies": {
     "@types/node": "22.13.0",
     "@types/service-worker-mock": "^2.0.4",
-    "wrangler": "^4.58.0",
-    "marked": "^11.1.1"
+    "marked": "^11.1.1",
+    "wrangler": "^4.58.0"
   }
 }

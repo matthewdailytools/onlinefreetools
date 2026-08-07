@@ -12,7 +12,7 @@ import { TOOL_CATEGORY_ORDER, getCategoryAnchor, getCategoryHomeLabelKey } from 
  * @param {string} lang
  */
 export const getHomePageModel = (lang) => {
-  const navItems = buildHomeNavItems(lang, withExplicitLangPath(lang, '/about'));
+  const navItems = buildHomeNavItems(lang);
 
   const sidebarTitle = t(lang, 'sidebar_categories');
   const sidebarItems = TOOL_CATEGORY_ORDER.map((category) => ({

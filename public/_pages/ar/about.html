@@ -102,7 +102,16 @@ var _hmt = _hmt || [];
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="topNav">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="/ar/">الرئيسية</a></li><li class="nav-item"><a class="nav-link" href="/ar/about">حول</a></li><li class="nav-item"><a class="nav-link" href="/devlogs/">سجلات التطوير</a></li></ul>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="/ar/">الرئيسية</a></li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">أدوات الصور</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ar/tools/image-format-converter">محول صيغ الصور</a></li><li><a class="dropdown-item" href="/ar/tools/image-exif">عرض وحذف EXIF من الصور</a></li><li><a class="dropdown-item" href="/ar/tools/image-compress">ضغط الصور</a></li><li><a class="dropdown-item" href="/ar/tools/image-optimizer">تحسين الصور</a></li><li><a class="dropdown-item" href="/ar/tools/image-crop">قص الصورة وتغيير الحجم</a></li></ul>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">للمطورين</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ar/tools/website-headers">فحص ترويسات HTTP</a></li><li><a class="dropdown-item" href="/ar/tools/ip-address">ما هو عنوان IP الخاص بي — اعرض IP العام</a></li><li><a class="dropdown-item" href="/ar/tools/markdown-to-html">Markdown ↔ HTML</a></li><li><a class="dropdown-item" href="/ar/tools/text-diff">مقارنة نصين أونلاين</a></li><li><a class="dropdown-item" href="/ar/tools/yaml-json">YAML ↔ JSON</a></li><li><a class="dropdown-item" href="/ar/tools/csv-json">CSV ↔ JSON</a></li><li><a class="dropdown-item" href="/ar/tools/html-entity">كيانات HTML</a></li><li><a class="dropdown-item" href="/ar/tools/add-www-to-dns">إضافة WWW إلى DNS</a></li><li><a class="dropdown-item" href="/ar/tools/indexnow">IndexNow</a></li></ul>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">حاسبات</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-bmi">حاسبة مؤشر كتلة الجسم</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-roi">حاسبة العائد على الاستثمار (ROI) — طريقة الحساب</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-marginal-revenue">حاسبة الإيراد الحدي — الصيغة ΔTR / ΔQ</a></li><li><a class="dropdown-item" href="/ar/tools/square-feet">تحويل القدم المربع إلى متر مربع — للمنازل والتشطيب</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-percentage-change">حاسبة التغير بالنسبة المئوية — من قيمة قديمة إلى جديدة</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-gradient">حاسبة التدرج — ∇f متعدد المتغيرات (مشتقات جزئية)</a></li></ul>
+        </li></ul>
           <div class="d-flex align-items-center gap-2">
             
     <div class="dropdown">
@@ -150,12 +159,21 @@ var _hmt = _hmt || [];
   </main>
   </div>
   
+
   <footer class="site-footer border-top text-center py-3">
+
     <div class="container">
-      <small class="text-muted">OnlineFreeTools.org · مشروع تعليمي · تطوير مستمر</small>
-      <span class="text-muted mx-2">·</span>
-      <a class="small text-decoration-none" href="/ar/about">حول</a>
+
+      <div class="mb-1"><small class="text-muted">OnlineFreeTools.org · مشروع تعليمي · تطوير مستمر</small></div>
+
+      <nav class="d-inline" aria-label="روابط الموقع">
+
+        <a class="small text-decoration-none" href="/ar/about">حول</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/devlogs/">سجلات التطوير</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/ar/privacy">الخصوصية</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/ar/terms">الشروط</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/ar/contact">اتصل</a>
+
+      </nav>
+
     </div>
+
   </footer>
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

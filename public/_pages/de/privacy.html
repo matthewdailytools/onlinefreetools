@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Datenschutzerklärung | OnlineFreeTools.org</title>
+  <meta name="description" content="Wie OnlineFreeTools.org mit Daten umgeht: die meisten Tools laufen im Browser; Edge-Tools verarbeiten kurze Anfragen; Analytics und Kontakt zum Datenschutz." />
+  <link rel="canonical" href="https://onlinefreetools.org/de/privacy" />
+  <meta property="og:title" content="Datenschutzerklärung | OnlineFreeTools.org" />
+  <meta property="og:description" content="Wie OnlineFreeTools.org mit Daten umgeht: die meisten Tools laufen im Browser; Edge-Tools verarbeiten kurze Anfragen; Analytics und Kontakt zum Datenschutz." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://onlinefreetools.org/de/privacy" />
+  <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="alternate" hreflang="en" href="https://onlinefreetools.org/privacy" />
+  <link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/privacy" />
+  <link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/privacy" />
+  <link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/privacy" />
+  <link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/privacy" />
+  <link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/privacy" />
+  <link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/privacy" />
+  <link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/privacy" />
+  <link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/privacy" />
+  <link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/privacy" />
+  <link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/privacy" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  
+  <script>
+    (function () {
+      try {
+        var enabled = ["en","zh","es","ar","pt","id","fr","ja","ru","de"];
+        var defaultLang = "en";
+        var fallback = defaultLang;
+        var path = window.location.pathname || '/';
+
+        // If the URL already contains a language prefix (including defaultLang), respect it.
+        var hasPrefix = enabled.some(function (l) {
+          return l && (path === '/' + l || path.indexOf('/' + l + '/') === 0);
+        });
+        if (hasPrefix) return;
+
+        var langs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language])
+          .filter(Boolean)
+          .map(function (x) { return String(x).toLowerCase().split('-')[0]; });
+
+        var picked = null;
+        for (var i = 0; i < langs.length; i++) {
+          if (enabled.indexOf(langs[i]) !== -1) { picked = langs[i]; break; }
+        }
+        if (!picked) picked = enabled.indexOf(fallback) !== -1 ? fallback : (enabled[0] || fallback);
+
+        if (picked === "de") return;
+        var targetPath = path;
+        if (picked !== defaultLang) {
+          targetPath = ('/' + picked + path).replace(/\/{2,}/g, '/');
+        }
+        window.location.replace(targetPath + window.location.search + window.location.hash);
+      } catch (e) {}
+    })();
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="/styles/site.css" rel="stylesheet" />
+  <style>
+    body { min-height: 100vh; padding-top: var(--header-h, 56px); }
+    .layout { display: flex; min-height: calc(100vh - var(--header-h, 56px)); }
+  </style>
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?39f18c089a03779cd05243e21b046589";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "xbc0iytpn7");
+</script>
+  
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Datenschutzerklärung","description":"Wie OnlineFreeTools.org mit Daten umgeht: die meisten Tools laufen im Browser; Edge-Tools verarbeiten kurze Anfragen; Analytics und Kontakt zum Datenschutz.","url":"https://onlinefreetools.org/de/privacy","isPartOf":{"@type":"WebSite","name":"OnlineFreeTools.org","url":"https://onlinefreetools.org"}}</script>
+</head>
+<body class="is-home-page">
+  
+  
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light site-navbar border-bottom fixed-top">
+      <div class="container-fluid">
+        <button class="btn btn-outline-secondary me-2" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+        <a class="navbar-brand" href="/de/">
+          <img class="navbar-brand-logo" src="/brand-logo.svg" width="28" height="28" alt="" decoding="async" />
+          <span class="navbar-brand-text">OnlineFreeTools.org</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="topNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="/de/">Start</a></li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Bildwerkzeuge</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/de/tools/image-format-converter">Bildformat konvertieren</a></li><li><a class="dropdown-item" href="/de/tools/image-exif">EXIF von Fotos anzeigen & entfernen</a></li><li><a class="dropdown-item" href="/de/tools/image-compress">Bild komprimieren</a></li><li><a class="dropdown-item" href="/de/tools/image-optimizer">Bild optimieren</a></li><li><a class="dropdown-item" href="/de/tools/image-crop">Bild zuschneiden & Größe ändern</a></li></ul>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Entwickler</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/de/tools/website-headers">HTTP-Header prüfen</a></li><li><a class="dropdown-item" href="/de/tools/ip-address">Was ist meine IP-Adresse — Öffentliche IP anzeigen</a></li><li><a class="dropdown-item" href="/de/tools/markdown-to-html">Markdown ↔ HTML</a></li><li><a class="dropdown-item" href="/de/tools/text-diff">Texte online vergleichen</a></li><li><a class="dropdown-item" href="/de/tools/yaml-json">YAML ↔ JSON</a></li><li><a class="dropdown-item" href="/de/tools/csv-json">CSV ↔ JSON</a></li><li><a class="dropdown-item" href="/de/tools/html-entity">HTML-Entitäten</a></li><li><a class="dropdown-item" href="/de/tools/add-www-to-dns">WWW zu DNS hinzufügen</a></li><li><a class="dropdown-item" href="/de/tools/indexnow">IndexNow</a></li></ul>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Rechner</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/de/tools/how-to-calculate-bmi">BMI-Rechner — Body-Mass-Index berechnen</a></li><li><a class="dropdown-item" href="/de/tools/how-to-calculate-roi">ROI-Rechner — Return on Investment berechnen</a></li><li><a class="dropdown-item" href="/de/tools/how-to-calculate-marginal-revenue">Grenzerlös-Rechner — Formel ΔTR / ΔQ</a></li><li><a class="dropdown-item" href="/de/tools/square-feet">Quadratfuß in m² umrechnen — Für Wohnung & Renovierung</a></li><li><a class="dropdown-item" href="/de/tools/how-to-calculate-percentage-change">Prozentuale Änderung berechnen — Von Alt- zu Neuwert</a></li><li><a class="dropdown-item" href="/de/tools/how-to-calculate-gradient">Gradient berechnen — Multivariables ∇f (partielle Ableitungen)</a></li></ul>
+        </li></ul>
+          <div class="d-flex align-items-center gap-2">
+            
+    <div class="dropdown">
+      <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Deutsch
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end"><li><a class="dropdown-item" href="/en/privacy">English</a></li><li><a class="dropdown-item" href="/zh/privacy">中文</a></li><li><a class="dropdown-item" href="/es/privacy">Español</a></li><li><a class="dropdown-item" href="/ar/privacy">العربية</a></li><li><a class="dropdown-item" href="/pt/privacy">Português</a></li><li><a class="dropdown-item" href="/id/privacy">Bahasa Indonesia</a></li><li><a class="dropdown-item" href="/fr/privacy">Français</a></li><li><a class="dropdown-item" href="/ja/privacy">日本語</a></li><li><a class="dropdown-item" href="/ru/privacy">Русский</a></li><li><span class="dropdown-item active" aria-current="true">Deutsch</span></li></ul>
+    </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="layout sidebar-collapsed" id="layoutRoot">
+    
+    <aside id="sidebar" class="border-end">
+      <h2 class="sidebar-title h6">Datenschutzerklärung</h2>
+      <div class="list-group list-group-flush small" id="privacyNav"><a class="list-group-item list-group-item-action" href="#local">Lokale Verarbeitung</a><a class="list-group-item list-group-item-action" href="#edge">Wenn eine Anfrage das Gerät verlässt</a><a class="list-group-item list-group-item-action" href="#analytics">Analytics</a><a class="list-group-item list-group-item-action" href="#retention">Konten und Aufbewahrung</a><a class="list-group-item list-group-item-action" href="#contact">Datenschutzfragen</a></div>
+    </aside>
+    <main id="content" class="p-4">
+    <article class="mb-4">
+      <h1 class="h3 mb-3">Datenschutzerklärung</h1>
+      <p class="lead text-muted">Diese Erklärung beschreibt, was auf Ihrem Gerät bleibt, wann eine kurze Anfrage unseren Cloudflare Worker erreichen kann und welche Analytics-Skripte Seiten laden.</p>
+      
+      <section id="local" class="mb-4">
+        <h2 class="h5">Lokale Verarbeitung</h2>
+        <p>Viele Tools verarbeiten Einfügungen oder Dateien nur in diesem Tab. Diese Bytes werden nicht als Produktfunktion auf unsere Server hochgeladen. Die Seite kann Open-Source-Bibliotheken von einem CDN laden — das ist Bibliothekscode, nicht Ihr Inhalt.</p>
+      </section>
+      <section id="edge" class="mb-4">
+        <h2 class="h5">Wenn eine Anfrage das Gerät verlässt</h2>
+        <p>Einige Tools brauchen den Worker (öffentliche HTTP-Header, DNS, öffentliche IP aus Edge-Sicht oder IndexNow-URL-Listen). Es wird nur das Nötige gesendet; wir speichern es nicht in einer Inhaltsdatenbank.</p>
+      </section>
+      <section id="analytics" class="mb-4">
+        <h2 class="h5">Analytics</h2>
+        <p>Seiten können Microsoft Clarity und Baidu Analytics für aggregierten Traffic und Nutzbarkeit laden. Dritte können Cookies nach ihren Richtlinien setzen. Wir verkaufen keine personenbezogenen Daten.</p>
+      </section>
+      <section id="retention" class="mb-4">
+        <h2 class="h5">Konten und Aufbewahrung</h2>
+        <p>Keine Registrierung nötig; kein Tresor für Tool-Eingaben. Betriebslogs auf Cloudflare folgen den Praktiken dieser Plattform.</p>
+      </section>
+      <section id="contact" class="mb-4">
+        <h2 class="h5">Datenschutzfragen</h2>
+        <p>Schreiben Sie an <a href="mailto:dailyonetools@outlook.com">dailyonetools@outlook.com</a> bei Datenschutzfragen. Wir lesen Nachrichten zu dieser Website und ihren Tools.</p>
+      </section>
+    </article>
+  </main>
+  </div>
+  
+
+  <footer class="site-footer border-top text-center py-3">
+
+    <div class="container">
+
+      <div class="mb-1"><small class="text-muted">OnlineFreeTools.org · Lernprojekt · Iteration</small></div>
+
+      <nav class="d-inline" aria-label="Seitenlinks">
+
+        <a class="small text-decoration-none" href="/de/about">Über uns</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/devlogs/">Dev-Logs</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/de/privacy">Datenschutz</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/de/terms">Nutzungsbedingungen</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/de/contact">Kontakt</a>
+
+      </nav>
+
+    </div>
+
+  </footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <script>
+    const layout = document.getElementById('layoutRoot');
+    const toggle = document.getElementById('sidebarToggle');
+    if (layout && toggle) {
+      toggle.addEventListener('click', () => layout.classList.toggle('sidebar-collapsed'));
+      
+    }
+  </script>
+</body>
+</html>

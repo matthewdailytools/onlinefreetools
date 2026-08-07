@@ -10,6 +10,10 @@ import { renderLayout } from './site/layout.mjs';
 import { renderFooter, renderHeader, renderSidebar } from './site/components.mjs';
 import { getHomePageModel } from './site/pages/home.mjs';
 import { getAboutPageModel } from './site/pages/about.mjs';
+import { getPrivacyPageModel } from './site/pages/privacy.mjs';
+import { getTermsPageModel } from './site/pages/terms.mjs';
+import { getContactPageModel } from './site/pages/contact.mjs';
+import { buildToolPageNavItems } from './site/nav.mjs';
 import { TOOL_CATALOG } from './site/tool-catalog.mjs';
 const require = createRequire(import.meta.url);
 let marked;
@@ -22,6 +26,13 @@ try {
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const publicDir = path.join(root, 'public');
 const devLogsDir = path.join(root, 'dev-logs');
+
+/** 构建前复制图片优化页所需的 @jsquash WASM vendor（不入库，约 10MB）。 */
+try {
+  await import('./copy-image-optimizer-vendor.mjs');
+} catch (err) {
+  console.warn('[build-site] copy-image-optimizer-vendor skipped:', err?.message || err);
+}
 
 /**
  * 递归收集 dev-logs 下所有 Markdown 源文件（支持 dev-logs/YYYY-MM/ 分月目录）。
@@ -152,13 +163,11 @@ export const buildDevLogs = async () => {
   const fileEntries = await collectDevLogMarkdownFiles(devLogsDir);
   fileEntries.sort((a, b) => b.fileName.localeCompare(a.fileName));
 
-  const navItems = [
-    { href: '/', label: t(lang, 'nav_home') },
-    { href: '/devlogs/', label: t(lang, 'nav_devlogs') },
-  ];
+  const headerNavItems = buildToolPageNavItems(lang);
+  const sidebarItems = [{ href: '/', label: t(lang, 'nav_home') }];
   const sidebarHtml = renderSidebar({
     title: lang === 'en' ? 'Navigation' : '导航',
-    items: navItems,
+    items: sidebarItems,
     id: 'navList',
   });
   const footerHtml = renderFooter({ lang });
@@ -177,7 +186,7 @@ export const buildDevLogs = async () => {
     const headerHtml = renderHeader({
       lang,
       brandHref: '/',
-      navItems,
+      navItems: headerNavItems,
       showSidebarToggle: true,
       showSearch: false,
       showLangSwitcher: false,
@@ -227,7 +236,7 @@ export const buildDevLogs = async () => {
   const headerHtml = renderHeader({
     lang,
     brandHref: '/',
-    navItems,
+    navItems: headerNavItems,
     showSidebarToggle: true,
     showSearch: false,
     showLangSwitcher: false,
@@ -316,16 +325,21 @@ export const buildDevLogs = async () => {
 };
 
 /**
- * 构建各语言 About 静态页（Who / How / Why 信任信号）。
- * @param {string} lang
+ * 构建各语言静态信息页（About / Privacy / Terms / Contact）。
+ * @param {string} lang 语言代码
+ * @param {object} opts
+ * @param {() => object} opts.getModel 返回与 About 同形的页面模型
+ * @param {string} opts.path 规范路径，如 `/privacy`
+ * @param {string} opts.outFile 输出文件名，如 `privacy.html`
+ * @param {string} [opts.sidebarId] 侧栏 id（模型未带时回退）
  */
-export const buildAbout = async (lang) => {
+export const buildInfoPage = async (lang, { getModel, path: pagePath, outFile, sidebarId }) => {
   const outRoot = path.join(publicDir, '_pages', lang);
   await ensureDir(outRoot);
 
-  const model = getAboutPageModel(lang);
+  const model = getModel(lang);
   const langAlternates = Object.fromEntries(
-    (siteConfig.enabledLangs || []).map((code) => [code, withExplicitLangPath(code, '/about')])
+    (siteConfig.enabledLangs || []).map((code) => [code, withExplicitLangPath(code, pagePath)])
   );
 
   const headerHtml = renderHeader({
@@ -340,7 +354,7 @@ export const buildAbout = async (lang) => {
   const sidebarHtml = renderSidebar({
     title: model.sidebarTitle,
     items: model.sidebarItems,
-    id: 'aboutNav',
+    id: model.sidebarId || sidebarId || 'infoNav',
   });
 
   const footerHtml = renderFooter({ lang });
@@ -354,7 +368,7 @@ export const buildAbout = async (lang) => {
     ogType: 'website',
     alternates: (siteConfig.enabledLangs || []).map((code) => ({
       lang: code,
-      href: toAbs(withLangPath(code, '/about')),
+      href: toAbs(withLangPath(code, pagePath)),
     })),
     headerHtml,
     sidebarHtml,
@@ -363,8 +377,56 @@ export const buildAbout = async (lang) => {
     headJsonLd: model.jsonLd,
   });
 
-  await fs.writeFile(path.join(outRoot, 'about.html'), html, 'utf-8');
+  await fs.writeFile(path.join(outRoot, outFile), html, 'utf-8');
 };
+
+/**
+ * 构建各语言 About 静态页（Who / How / Why 信任信号）。
+ * @param {string} lang
+ */
+export const buildAbout = async (lang) =>
+  buildInfoPage(lang, {
+    getModel: getAboutPageModel,
+    path: '/about',
+    outFile: 'about.html',
+    sidebarId: 'aboutNav',
+  });
+
+/**
+ * 构建 Privacy Policy 静态页。
+ * @param {string} lang
+ */
+export const buildPrivacy = async (lang) =>
+  buildInfoPage(lang, {
+    getModel: getPrivacyPageModel,
+    path: '/privacy',
+    outFile: 'privacy.html',
+    sidebarId: 'privacyNav',
+  });
+
+/**
+ * 构建 Terms of Use 静态页。
+ * @param {string} lang
+ */
+export const buildTerms = async (lang) =>
+  buildInfoPage(lang, {
+    getModel: getTermsPageModel,
+    path: '/terms',
+    outFile: 'terms.html',
+    sidebarId: 'termsNav',
+  });
+
+/**
+ * 构建 Contact 静态页。
+ * @param {string} lang
+ */
+export const buildContact = async (lang) =>
+  buildInfoPage(lang, {
+    getModel: getContactPageModel,
+    path: '/contact',
+    outFile: 'contact.html',
+    sidebarId: 'contactNav',
+  });
 
 /**
  * 转义 XML 文本节点 / 属性值。
@@ -395,7 +457,7 @@ const hreflangLinks = (pathname, langs) => {
 };
 
 /**
- * 构建完整 sitemap：各语言首页、About、全部工具（不含 devlogs 内部日志页）。
+ * 构建完整 sitemap：各语言首页、信息页、全部工具（不含 devlogs 内部日志页）。
  */
 export const buildSitemap = async () => {
   const langs = siteConfig.enabledLangs || [siteConfig.defaultLang];
@@ -414,6 +476,9 @@ ${hreflangLinks(pathname, langs)}
 
   pushLocalized('/', '1.0');
   pushLocalized('/about', '0.7');
+  pushLocalized('/privacy', '0.6');
+  pushLocalized('/terms', '0.6');
+  pushLocalized('/contact', '0.6');
 
   for (const tool of TOOL_CATALOG) {
     pushLocalized(tool.path, '0.9');
@@ -437,6 +502,9 @@ const main = async () => {
     await removeStaticToolsDir(lang);
     await buildHome(lang);
     await buildAbout(lang);
+    await buildPrivacy(lang);
+    await buildTerms(lang);
+    await buildContact(lang);
   }
   await buildDevLogs();
   await buildSitemap();

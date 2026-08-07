@@ -2,18 +2,15 @@
  * About 页模型：站点 Who / How / Why 与免责声明。
  */
 import { t } from '../i18n.mjs';
-import { siteConfig, withExplicitLangPath, withLangPath, absoluteUrl } from '../config.mjs';
+import { siteConfig, withLangPath, absoluteUrl } from '../config.mjs';
+import { buildInfoPageNavItems } from './info-page.mjs';
 
 /**
  * 生成指定语言的 About 页渲染模型。
- * @param {string} lang
+ * @param {string} lang 语言代码
  */
 export const getAboutPageModel = (lang) => {
-  const navItems = [
-    { href: withExplicitLangPath(lang, '/'), label: t(lang, 'nav_home') },
-    { href: withExplicitLangPath(lang, '/about'), label: t(lang, 'nav_about') },
-    { href: '/devlogs/', label: t(lang, 'nav_devlogs') },
-  ];
+  const navItems = buildInfoPageNavItems(lang);
 
   const sidebarTitle = t(lang, 'nav_about');
   const sidebarItems = [

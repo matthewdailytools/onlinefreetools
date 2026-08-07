@@ -1,11 +1,13 @@
 /**
- * SEO 校验：description 关键词、长度、FAQ 成对、YMYL disclaimer。
+ * SEO 校验：description 关键词、长度、FAQ 成对、YMYL disclaimer；
+ * 并校验工具图标 SVG（禁止 XML 非法控制字符）。
  * 启发式检查，失败时以非零退出码提示 CI。
  */
 import fs from 'fs';
 import path from 'path';
 import { createRequire } from 'module';
 import { fileURLToPath } from 'url';
+import { validateToolIcons } from './validate-tool-icons.mjs';
 
 const require = createRequire(import.meta.url);
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -108,6 +110,14 @@ if (exitCode === 0) {
   console.log('SEO validator: OK — descriptions, FAQ pairs, and YMYL disclaimers look good');
 } else {
   console.log('SEO validator: WARNINGS detected. Please update translations / FAQ / YMYL copy.');
+}
+
+const iconFails = validateToolIcons();
+if (iconFails === 0) {
+  console.log('Icon validator: OK — tool SVGs look clean');
+} else {
+  console.log(`Icon validator: ${iconFails} file(s) failed (illegal XML chars or malformed SVG).`);
+  exitCode = exitCode || 2;
 }
 
 process.exit(exitCode);

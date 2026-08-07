@@ -31,7 +31,7 @@ export const collectToolFaqs = (
 	faqPrefix: string
 ): Array<{ question: string; answer: string }> => {
 	const faqs: Array<{ question: string; answer: string }> = [];
-	for (let i = 1; i <= 5; i++) {
+	for (let i = 1; i <= 6; i++) {
 		const qKey = `${faqPrefix}_faq_q${i}` as keyof typeof import('../../site/i18n/en').default;
 		const aKey = `${faqPrefix}_faq_a${i}` as keyof typeof import('../../site/i18n/en').default;
 		const question = t(lang, qKey);

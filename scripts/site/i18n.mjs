@@ -1,3 +1,5 @@
+import { sitePageTranslations } from './i18n-site-pages.mjs';
+
 const translations = {
   en: {
     brand: 'OnlineFreeTools.org',
@@ -72,6 +74,8 @@ const translations = {
     tool_image_exif_desc: 'View GPS/camera EXIF on photos locally and download a stripped copy.',
     tool_image_compress_title: "Image Compressor",
     tool_image_compress_desc: "Resize, quality, and target KB locally — download WebP or JPEG.",
+    tool_image_optimizer_title: 'Image Optimizer',
+    tool_image_optimizer_desc: 'MozJPEG, WebP, AVIF, OxiPNG locally — compare with a slider.',
     tool_image_crop_title: "Crop & Resize Image",
     tool_image_crop_desc: "Local crop with aspect presets and common output sizes.",
     tool_add_www_to_dns_title: 'Add WWW to DNS',
@@ -200,6 +204,8 @@ const translations = {
     tool_image_exif_desc: '本地查看 GPS/相机元数据，并清除后下载。',
     tool_image_compress_title: "图片压缩",
     tool_image_compress_desc: "本地按最长边、质量与目标体积压缩，下载 WebP 或 JPEG。",
+    tool_image_optimizer_title: '图片优化',
+    tool_image_optimizer_desc: '本地 MozJPEG / WebP / AVIF / OxiPNG，滑动对照体积与画质。',
     tool_image_crop_title: "图片裁剪与改尺寸",
     tool_image_crop_desc: "本地裁剪，常用比例与输出像素预设。",
     tool_add_www_to_dns_title: '给域名添加 www DNS',
@@ -333,6 +339,8 @@ const translations = {
     tool_image_exif_desc: 'Consulta GPS/cámara en fotos en local y descarga una copia limpia.',
     tool_image_compress_title: "Comprimir imagen",
     tool_image_compress_desc: "Reduce tamaño con lado máximo, calidad y KB objetivo en local.",
+    tool_image_optimizer_title: 'Optimizar imagen',
+    tool_image_optimizer_desc: 'MozJPEG, WebP, AVIF u OxiPNG en local — compara con el control deslizante.',
     tool_image_crop_title: "Recortar y redimensionar",
     tool_image_crop_desc: "Recorte local con proporciones y tamaños habituales.",
     tool_add_www_to_dns_title: 'Añadir WWW al DNS',
@@ -464,6 +472,8 @@ const translations = {
     tool_image_exif_desc: 'اعرض GPS/الكاميرا من الصور محليًا ونزّل نسخة منظّفة.',
     tool_image_compress_title: "ضغط الصور",
     tool_image_compress_desc: "تصغير محلي بالضلع الأطول والجودة والحجم المستهدف.",
+    tool_image_optimizer_title: 'تحسين الصور',
+    tool_image_optimizer_desc: 'MozJPEG وWebP وAVIF وOxiPNG محليًا مع مقارنة منزلقة.',
     tool_image_crop_title: "قص الصورة وتغيير الحجم",
     tool_image_crop_desc: "قص محلي بنسب وأحجام شائعة.",
     tool_add_www_to_dns_title: 'إضافة WWW إلى DNS',
@@ -596,6 +606,8 @@ const translations = {
     tool_image_exif_desc: 'Veja GPS/câmera em fotos localmente e baixe uma cópia limpa.',
     tool_image_compress_title: "Comprimir imagem",
     tool_image_compress_desc: "Reduza com lado máximo, qualidade e KB alvo — local.",
+    tool_image_optimizer_title: 'Otimizar imagem',
+    tool_image_optimizer_desc: 'MozJPEG, WebP, AVIF ou OxiPNG no aparelho — compare no slider.',
     tool_image_crop_title: "Cortar e redimensionar",
     tool_image_crop_desc: "Corte local com proporções e tamanhos comuns.",
     tool_add_www_to_dns_title: 'Adicionar WWW ao DNS',
@@ -727,6 +739,8 @@ const translations = {
     tool_image_exif_desc: 'Lihat GPS/kamera pada foto secara lokal dan unduh salinan bersih.',
     tool_image_compress_title: "Kompres gambar",
     tool_image_compress_desc: "Perkecil lokal dengan sisi maks, kualitas, dan KB target.",
+    tool_image_optimizer_title: 'Optimasi gambar',
+    tool_image_optimizer_desc: 'MozJPEG, WebP, AVIF, OxiPNG lokal — bandingkan dengan slider.',
     tool_image_crop_title: "Potong & ubah ukuran",
     tool_image_crop_desc: "Crop lokal dengan rasio dan ukuran umum.",
     tool_add_www_to_dns_title: 'Tambah WWW ke DNS',
@@ -858,6 +872,8 @@ const translations = {
     tool_image_exif_desc: 'Lire GPS/appareil sur des photos en local et télécharger une copie nettoyée.',
     tool_image_compress_title: "Compresser une image",
     tool_image_compress_desc: "Réduire en local : côté max, qualité et taille cible.",
+    tool_image_optimizer_title: 'Optimiser une image',
+    tool_image_optimizer_desc: 'MozJPEG, WebP, AVIF ou OxiPNG en local — comparez au curseur.',
     tool_image_crop_title: "Recadrer et redimensionner",
     tool_image_crop_desc: "Recadrage local avec ratios et tailles courantes.",
     tool_add_www_to_dns_title: 'Ajouter WWW au DNS',
@@ -988,6 +1004,8 @@ const translations = {
     tool_image_exif_desc: '写真の GPS/カメラ情報を端末内で確認し、削除してダウンロード。',
     tool_image_compress_title: "画像圧縮",
     tool_image_compress_desc: "長辺・画質・目標サイズで端末内圧縮。",
+    tool_image_optimizer_title: '画像最適化',
+    tool_image_optimizer_desc: 'MozJPEG / WebP / AVIF / OxiPNGを端末内で。スライダーで比較。',
     tool_image_crop_title: "画像の切り抜きとサイズ変更",
     tool_image_crop_desc: "端末内で比率・よく使うサイズを指定して切り抜き。",
     tool_add_www_to_dns_title: 'DNS に WWW を追加',
@@ -1120,6 +1138,8 @@ const translations = {
     tool_image_exif_desc: 'Смотрите GPS/камеру на фото локально и скачайте очищенную копию.',
     tool_image_compress_title: "Сжатие изображений",
     tool_image_compress_desc: "Локально: сторона, качество и целевой размер.",
+    tool_image_optimizer_title: 'Оптимизация изображений',
+    tool_image_optimizer_desc: 'MozJPEG, WebP, AVIF или OxiPNG локально — сравнение ползунком.',
     tool_image_crop_title: "Обрезка и изменение размера",
     tool_image_crop_desc: "Локальная обрезка с пропорциями и частыми размерами.",
     tool_add_www_to_dns_title: 'Добавить WWW в DNS',
@@ -1252,6 +1272,8 @@ const translations = {
     tool_image_exif_desc: 'GPS/Kamera auf Fotos lokal prüfen und bereinigte Kopie laden.',
     tool_image_compress_title: "Bild komprimieren",
     tool_image_compress_desc: "Lokal mit max. Seite, Qualität und Zielgröße.",
+    tool_image_optimizer_title: 'Bild optimieren',
+    tool_image_optimizer_desc: 'MozJPEG, WebP, AVIF oder OxiPNG lokal — Vergleich per Schieberegler.',
     tool_image_crop_title: "Bild zuschneiden & Größe ändern",
     tool_image_crop_desc: "Lokal zuschneiden mit Seitenverhältnissen und gängigen Größen.",
     tool_add_www_to_dns_title: 'WWW zu DNS hinzufügen',
@@ -1298,9 +1320,24 @@ const translations = {
   },
 };
 
+/**
+ * 查文案：主表 → 站点信息页表 → en/zh 回退 → 返回 key。
+ * @param {string} lang 语言代码
+ * @param {string} key 文案键
+ * @returns {string}
+ */
 export const t = (lang, key) => {
   const table = translations[lang] || translations.en || translations.zh;
-  return table[key] || (translations.en && translations.en[key]) || translations.zh[key] || key;
+  const siteTable = sitePageTranslations[lang] || sitePageTranslations.en || {};
+  return (
+    table[key] ||
+    siteTable[key] ||
+    (translations.en && translations.en[key]) ||
+    (sitePageTranslations.en && sitePageTranslations.en[key]) ||
+    translations.zh[key] ||
+    (sitePageTranslations.zh && sitePageTranslations.zh[key]) ||
+    key
+  );
 };
 
 export const hasLang = (lang) => Boolean(translations[lang]);

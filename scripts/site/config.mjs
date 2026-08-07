@@ -15,6 +15,12 @@ export const siteConfig = {
   brand: 'OnlineFreeTools.org',
   baseUrl: process.env.SITE_BASE_URL || 'https://onlinefreetools.org',
   ogImage: process.env.SITE_OG_IMAGE || 'https://onlinefreetools.org/og-image.png',
+  /**
+   * 公开联系邮箱（Privacy / Contact / 工具页反馈共用）。
+   * 可用环境变量 SITE_CONTACT_EMAIL 覆盖。
+   */
+  contactEmail:
+    process.env.SITE_CONTACT_EMAIL || 'dailyonetools@outlook.com',
   /** Google Search Console 站点所有权验证码（meta 标签 content） */
   googleSiteVerification:
     process.env.SITE_GOOGLE_SITE_VERIFICATION ||
