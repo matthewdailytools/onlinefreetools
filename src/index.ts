@@ -30,6 +30,7 @@ import { renderCsvJsonPage } from "./pages/csvJsonPage";
 import { renderImageFormatConverterPage } from "./pages/imageFormatConverterPage";
 import { renderImageExifPage } from "./pages/imageExifPage";
 import { renderImageCompressPage } from "./pages/imageCompressPage";
+import { renderImageCropPage } from "./pages/imageCropPage";
 import { renderHtmlEntityPage } from "./pages/htmlEntityPage";
 import { renderAddWwwToDnsPage } from "./pages/addWwwToDnsPage";
 import { renderIndexNowPage } from "./pages/indexNowPage";
@@ -330,6 +331,11 @@ registerToolPage(app as any, 'image-exif', (lang, defaultLang, enabled) =>
 // Register image-compress page via registrar（图片压缩）
 registerToolPage(app as any, 'image-compress', (lang, defaultLang, enabled) =>
 	renderImageCompressPage({ lang, defaultLang, enabledLangs: enabled })
+);
+
+// Register image-crop page via registrar（图片裁剪与改尺寸）
+registerToolPage(app as any, 'image-crop', (lang, defaultLang, enabled) =>
+	renderImageCropPage({ lang, defaultLang, enabledLangs: enabled })
 );
 
 // Register html-entity page via registrar（HTML 实体编解码）

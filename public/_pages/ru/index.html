@@ -102,7 +102,16 @@ var _hmt = _hmt || [];
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="topNav">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="#featured">Избранное</a></li><li class="nav-item"><a class="nav-link" href="#all-tools">Инструменты</a></li><li class="nav-item"><a class="nav-link" href="/ru/about">О сайте</a></li><li class="nav-item"><a class="nav-link" href="/devlogs/">Логи</a></li></ul>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="#featured">Избранное</a></li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Инструменты для изображений</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ru/tools/image-format-converter">Конвертер изображений</a></li><li><a class="dropdown-item" href="/ru/tools/image-exif">Просмотр и удаление EXIF с фото</a></li><li><a class="dropdown-item" href="/ru/tools/image-compress">Сжатие изображений</a></li><li><a class="dropdown-item" href="/ru/tools/image-crop">Обрезка и изменение размера</a></li></ul>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Для разработчиков</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ru/tools/website-headers">Проверка HTTP-заголовков</a></li><li><a class="dropdown-item" href="/ru/tools/ip-address">Узнать свой IP — Показать публичный IP-адрес</a></li><li><a class="dropdown-item" href="/ru/tools/markdown-to-html">Markdown ↔ HTML</a></li><li><a class="dropdown-item" href="/ru/tools/text-diff">Сравнить тексты онлайн</a></li><li><a class="dropdown-item" href="/ru/tools/yaml-json">YAML ↔ JSON</a></li><li><a class="dropdown-item" href="/ru/tools/csv-json">CSV ↔ JSON</a></li><li><a class="dropdown-item" href="/ru/tools/html-entity">HTML-сущности</a></li><li><a class="dropdown-item" href="/ru/tools/add-www-to-dns">Добавить WWW в DNS</a></li><li><a class="dropdown-item" href="/ru/tools/indexnow">IndexNow</a></li></ul>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Калькуляторы</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-bmi">Калькулятор ИМТ</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-roi">Калькулятор ROI — Как рассчитать рентабельность инвестиций</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-marginal-revenue">Калькулятор предельной выручки — Формула ΔTR / ΔQ</a></li><li><a class="dropdown-item" href="/ru/tools/square-feet">Квадратные футы в м² — Для жилья и ремонта</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-percentage-change">Калькулятор процентного изменения — От старого значения к новому</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-gradient">Калькулятор градиента — многомерный ∇f (частные производные)</a></li></ul>
+        </li><li class="nav-item"><a class="nav-link" href="#all-tools">Инструменты</a></li><li class="nav-item"><a class="nav-link" href="/ru/about">О сайте</a></li><li class="nav-item"><a class="nav-link" href="/devlogs/">Логи</a></li></ul>
           <div class="d-flex align-items-center gap-2">
             
     <div class="dropdown">
@@ -120,7 +129,7 @@ var _hmt = _hmt || [];
     
     <aside id="sidebar" class="border-end">
       <h2 class="sidebar-title h6">Категории</h2>
-      <div class="list-group list-group-flush small" id="categoryList"><a class="list-group-item list-group-item-action" href="#cat-calculator">Калькуляторы</a><a class="list-group-item list-group-item-action" href="#cat-dev">Для разработчиков</a><a class="list-group-item list-group-item-action" href="#cat-image">Инструменты для изображений</a></div>
+      <div class="list-group list-group-flush small" id="categoryList"><a class="list-group-item list-group-item-action" href="#cat-image">Инструменты для изображений</a><a class="list-group-item list-group-item-action" href="#cat-dev">Для разработчиков</a><a class="list-group-item list-group-item-action" href="#cat-calculator">Калькуляторы</a></div>
     </aside>
     <main id="content" class="p-4">
     <div class="home-wrap">
@@ -282,6 +291,18 @@ var _hmt = _hmt || [];
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/image-crop.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">Обрезка и изменение размера</h3>
+        </div>
+        <p class="card-text flex-grow-1">Локальная обрезка с пропорциями и частыми размерами.</p>
+        <a href="/ru/tools/image-crop" class="mt-auto btn btn-primary btn-sm">Открыть</a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/add-www-to-dns.svg" width="36" height="36" alt="" decoding="async" />
           <h3 class="card-title h5 mb-0">Добавить WWW в DNS</h3>
         </div>
@@ -382,21 +403,22 @@ var _hmt = _hmt || [];
         <h2>Все инструменты</h2>
       </div>
 
-      <div class="home-cat" id="cat-calculator">
-        <span class="home-cat-label">Калькуляторы</span>
-        <h3>формулы, единицы, как считать</h3>
-        <p class="home-cat-blurb">Интерактивные калькуляторы с видимыми формулами и примерами.</p>
+      
+      <div class="home-cat" id="cat-image">
+        <span class="home-cat-label">Инструменты для изображений</span>
+        <h3>конвертация, сжатие, подготовка</h3>
+        <p class="home-cat-blurb">Локальные утилиты для изображений — без загрузки на сервер.</p>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
           
   <div class="col">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-bmi.svg" width="32" height="32" alt="" decoding="async" />
-          <h3 class="card-title h6 mb-0">Калькулятор ИМТ</h3>
+          <img class="tool-card-logo" src="/icons/tools/image-format-converter.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">Конвертер изображений</h3>
         </div>
-        <p class="card-text small flex-grow-1">Рассчитайте ИМТ для взрослых: метрическая или имперская система, вес и рост, затем категории. Пример: 70 кг и 175 см → ≈22,9. Только скрининг.</p>
-        <a href="/ru/tools/how-to-calculate-bmi" class="mt-auto btn btn-outline-primary btn-sm">Открыть</a>
+        <p class="card-text small flex-grow-1">PNG, JPEG, WebP, AVIF локально — качество и проверка MIME.</p>
+        <a href="/ru/tools/image-format-converter" class="mt-auto btn btn-outline-primary btn-sm">Открыть</a>
       </div>
     </div>
   </div>
@@ -404,11 +426,11 @@ var _hmt = _hmt || [];
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-roi.svg" width="32" height="32" alt="" decoding="async" />
-          <h3 class="card-title h6 mb-0">Калькулятор ROI — Как рассчитать рентабельность инвестиций</h3>
+          <img class="tool-card-logo" src="/icons/tools/image-exif.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">Просмотр и удаление EXIF с фото</h3>
         </div>
-        <p class="card-text small flex-grow-1">Простой ROI по затратам и итогу. Пример: 1000→1300 = 30%. Только учёба — не инвестсовет.</p>
-        <a href="/ru/tools/how-to-calculate-roi" class="mt-auto btn btn-outline-primary btn-sm">Открыть</a>
+        <p class="card-text small flex-grow-1">Смотрите GPS/камеру на фото локально и скачайте очищенную копию.</p>
+        <a href="/ru/tools/image-exif" class="mt-auto btn btn-outline-primary btn-sm">Открыть</a>
       </div>
     </div>
   </div>
@@ -416,11 +438,11 @@ var _hmt = _hmt || [];
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-marginal-revenue.svg" width="32" height="32" alt="" decoding="async" />
-          <h3 class="card-title h6 mb-0">Калькулятор предельной выручки — Формула ΔTR / ΔQ</h3>
+          <img class="tool-card-logo" src="/icons/tools/image-compress.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">Сжатие изображений</h3>
         </div>
-        <p class="card-text small flex-grow-1">MR = ΔTR / ΔQ по двум точкам количества и выручки. Пример: Q 10→11, TR 1000→1080 → MR 80. Только для учёбы.</p>
-        <a href="/ru/tools/how-to-calculate-marginal-revenue" class="mt-auto btn btn-outline-primary btn-sm">Открыть</a>
+        <p class="card-text small flex-grow-1">Локально: сторона, качество и целевой размер.</p>
+        <a href="/ru/tools/image-compress" class="mt-auto btn btn-outline-primary btn-sm">Открыть</a>
       </div>
     </div>
   </div>
@@ -428,41 +450,16 @@ var _hmt = _hmt || [];
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/square-feet.svg" width="32" height="32" alt="" decoding="async" />
-          <h3 class="card-title h6 mb-0">Квадратные футы в м² — Для жилья и ремонта</h3>
+          <img class="tool-card-logo" src="/icons/tools/image-crop.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">Обрезка и изменение размера</h3>
         </div>
-        <p class="card-text small flex-grow-1">Переведите площадь комнаты между квадратными футами и квадратными метрами для объявлений и ремонта. Шаги: выберите ft/m/in, введите длину × ширину, посчитайте площадь, покажите ft² и m² с фактором NIST 1 ft² = 0.09290304 m². Пример: квартира 850 sq ft ≈ 78,97 м².</p>
-        <a href="/ru/tools/square-feet" class="mt-auto btn btn-outline-primary btn-sm">Открыть</a>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card tool-entry-card h-100 d-flex flex-column">
-      <div class="card-body d-flex flex-column">
-        <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-percentage-change.svg" width="32" height="32" alt="" decoding="async" />
-          <h3 class="card-title h6 mb-0">Калькулятор процентного изменения — От старого значения к новому</h3>
-        </div>
-        <p class="card-text small flex-grow-1">Посчитайте процентный рост или спад от старого значения к новому. Шаги: введите оба, примените (новое − старое) / старое × 100, смотрите знак. Пример: 80 → 100 = +25%. Для выручки MoM, DAU и цен — не процентные пункты.</p>
-        <a href="/ru/tools/how-to-calculate-percentage-change" class="mt-auto btn btn-outline-primary btn-sm">Открыть</a>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card tool-entry-card h-100 d-flex flex-column">
-      <div class="card-body d-flex flex-column">
-        <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-gradient.svg" width="32" height="32" alt="" decoding="async" />
-          <h3 class="card-title h6 mb-0">Калькулятор градиента — многомерный ∇f (частные производные)</h3>
-        </div>
-        <p class="card-text small flex-grow-1">Вычислите градиент ∇f скалярного поля как вектор частных производных. Шаги: дифференцируйте по каждой переменной, соберите ∇f, оцените в точке. Демо f(x,y)=x²y+3y → ∇f=(2xy, x²+3); в (1,2) → (4,4). Для оптимизации и объяснения градиентного спуска в ML.</p>
-        <a href="/ru/tools/how-to-calculate-gradient" class="mt-auto btn btn-outline-primary btn-sm">Открыть</a>
+        <p class="card-text small flex-grow-1">Локальная обрезка с пропорциями и частыми размерами.</p>
+        <a href="/ru/tools/image-crop" class="mt-auto btn btn-outline-primary btn-sm">Открыть</a>
       </div>
     </div>
   </div>
         </div>
       </div>
-
       <div class="home-cat" id="cat-dev">
         <span class="home-cat-label">Для разработчиков</span>
         <h3>отладка, генерация, проверка</h3>
@@ -579,22 +576,21 @@ var _hmt = _hmt || [];
   </div>
         </div>
       </div>
-
-      <div class="home-cat" id="cat-image">
-        <span class="home-cat-label">Инструменты для изображений</span>
-        <h3>конвертация, сжатие, подготовка</h3>
-        <p class="home-cat-blurb">Локальные утилиты для изображений — без загрузки на сервер.</p>
+      <div class="home-cat" id="cat-calculator">
+        <span class="home-cat-label">Калькуляторы</span>
+        <h3>формулы, единицы, как считать</h3>
+        <p class="home-cat-blurb">Интерактивные калькуляторы с видимыми формулами и примерами.</p>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
           
   <div class="col">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/image-format-converter.svg" width="32" height="32" alt="" decoding="async" />
-          <h3 class="card-title h6 mb-0">Конвертер изображений</h3>
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-bmi.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">Калькулятор ИМТ</h3>
         </div>
-        <p class="card-text small flex-grow-1">PNG, JPEG, WebP, AVIF локально — качество и проверка MIME.</p>
-        <a href="/ru/tools/image-format-converter" class="mt-auto btn btn-outline-primary btn-sm">Открыть</a>
+        <p class="card-text small flex-grow-1">Рассчитайте ИМТ для взрослых: метрическая или имперская система, вес и рост, затем категории. Пример: 70 кг и 175 см → ≈22,9. Только скрининг.</p>
+        <a href="/ru/tools/how-to-calculate-bmi" class="mt-auto btn btn-outline-primary btn-sm">Открыть</a>
       </div>
     </div>
   </div>
@@ -602,11 +598,11 @@ var _hmt = _hmt || [];
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/image-exif.svg" width="32" height="32" alt="" decoding="async" />
-          <h3 class="card-title h6 mb-0">Просмотр и удаление EXIF с фото</h3>
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-roi.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">Калькулятор ROI — Как рассчитать рентабельность инвестиций</h3>
         </div>
-        <p class="card-text small flex-grow-1">Смотрите GPS/камеру на фото локально и скачайте очищенную копию.</p>
-        <a href="/ru/tools/image-exif" class="mt-auto btn btn-outline-primary btn-sm">Открыть</a>
+        <p class="card-text small flex-grow-1">Простой ROI по затратам и итогу. Пример: 1000→1300 = 30%. Только учёба — не инвестсовет.</p>
+        <a href="/ru/tools/how-to-calculate-roi" class="mt-auto btn btn-outline-primary btn-sm">Открыть</a>
       </div>
     </div>
   </div>
@@ -614,11 +610,47 @@ var _hmt = _hmt || [];
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/image-compress.svg" width="32" height="32" alt="" decoding="async" />
-          <h3 class="card-title h6 mb-0">Сжатие изображений</h3>
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-marginal-revenue.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">Калькулятор предельной выручки — Формула ΔTR / ΔQ</h3>
         </div>
-        <p class="card-text small flex-grow-1">Локально: сторона, качество и целевой размер.</p>
-        <a href="/ru/tools/image-compress" class="mt-auto btn btn-outline-primary btn-sm">Открыть</a>
+        <p class="card-text small flex-grow-1">MR = ΔTR / ΔQ по двум точкам количества и выручки. Пример: Q 10→11, TR 1000→1080 → MR 80. Только для учёбы.</p>
+        <a href="/ru/tools/how-to-calculate-marginal-revenue" class="mt-auto btn btn-outline-primary btn-sm">Открыть</a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/square-feet.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">Квадратные футы в м² — Для жилья и ремонта</h3>
+        </div>
+        <p class="card-text small flex-grow-1">Переведите площадь комнаты между квадратными футами и квадратными метрами для объявлений и ремонта. Шаги: выберите ft/m/in, введите длину × ширину, посчитайте площадь, покажите ft² и m² с фактором NIST 1 ft² = 0.09290304 m². Пример: квартира 850 sq ft ≈ 78,97 м².</p>
+        <a href="/ru/tools/square-feet" class="mt-auto btn btn-outline-primary btn-sm">Открыть</a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-percentage-change.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">Калькулятор процентного изменения — От старого значения к новому</h3>
+        </div>
+        <p class="card-text small flex-grow-1">Посчитайте процентный рост или спад от старого значения к новому. Шаги: введите оба, примените (новое − старое) / старое × 100, смотрите знак. Пример: 80 → 100 = +25%. Для выручки MoM, DAU и цен — не процентные пункты.</p>
+        <a href="/ru/tools/how-to-calculate-percentage-change" class="mt-auto btn btn-outline-primary btn-sm">Открыть</a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-gradient.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">Калькулятор градиента — многомерный ∇f (частные производные)</h3>
+        </div>
+        <p class="card-text small flex-grow-1">Вычислите градиент ∇f скалярного поля как вектор частных производных. Шаги: дифференцируйте по каждой переменной, соберите ∇f, оцените в точке. Демо f(x,y)=x²y+3y → ∇f=(2xy, x²+3); в (1,2) → (4,4). Для оптимизации и объяснения градиентного спуска в ML.</p>
+        <a href="/ru/tools/how-to-calculate-gradient" class="mt-auto btn btn-outline-primary btn-sm">Открыть</a>
       </div>
     </div>
   </div>

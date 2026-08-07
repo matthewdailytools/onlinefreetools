@@ -5,6 +5,7 @@
 import type { SiteLang } from '../site/i18n/types';
 import { t, supportedLangs } from '../site/i18n';
 import { renderHeader } from './site/header';
+import { buildToolPageNavItems } from './site/nav';
 import { renderSidebar, buildToolSidebarItems } from './site/sidebar';
 import { getToolBySlug } from '../site/tools';
 import {
@@ -33,11 +34,7 @@ export const renderWebsiteHeadersPage = (lang: SiteLang, defaultLang: SiteLang) 
 	const title = `${t(lang, 'tool_headers_title')} | ${t(lang, 'brand')}`;
 	const description = t(lang, 'tool_headers_description');
 
-	const navItems = [
-		{ href: withLangPrefix(lang, '/'), label: t(lang, 'nav_home') },
-		{ href: withLangPrefix(lang, '/#all-tools'), label: t(lang, 'nav_tools') },
-		{ href: '/devlogs/', label: t(lang, 'nav_devlogs') },
-	];
+	const navItems = buildToolPageNavItems(lang, defaultLang);
 
 	/** 语言切换链接始终带显式语言前缀。 */
 	const withExplicitLangPrefix = (code: SiteLang, pathname: string) => {

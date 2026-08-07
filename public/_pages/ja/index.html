@@ -102,7 +102,16 @@ var _hmt = _hmt || [];
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="topNav">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="#featured">おすすめ</a></li><li class="nav-item"><a class="nav-link" href="#all-tools">ツール</a></li><li class="nav-item"><a class="nav-link" href="/ja/about">について</a></li><li class="nav-item"><a class="nav-link" href="/devlogs/">開発ログ</a></li></ul>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="#featured">おすすめ</a></li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">画像ツール</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ja/tools/image-format-converter">画像形式変換</a></li><li><a class="dropdown-item" href="/ja/tools/image-exif">写真の EXIF 表示と削除</a></li><li><a class="dropdown-item" href="/ja/tools/image-compress">画像圧縮</a></li><li><a class="dropdown-item" href="/ja/tools/image-crop">画像の切り抜きとサイズ変更</a></li></ul>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">開発者</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ja/tools/website-headers">HTTPヘッダ確認</a></li><li><a class="dropdown-item" href="/ja/tools/ip-address">自分のIPアドレスを確認 — グローバルIPを表示</a></li><li><a class="dropdown-item" href="/ja/tools/markdown-to-html">Markdown ↔ HTML</a></li><li><a class="dropdown-item" href="/ja/tools/text-diff">テキスト比較</a></li><li><a class="dropdown-item" href="/ja/tools/yaml-json">YAML ↔ JSON</a></li><li><a class="dropdown-item" href="/ja/tools/csv-json">CSV ↔ JSON</a></li><li><a class="dropdown-item" href="/ja/tools/html-entity">HTML エンティティ</a></li><li><a class="dropdown-item" href="/ja/tools/add-www-to-dns">DNS に WWW を追加</a></li><li><a class="dropdown-item" href="/ja/tools/indexnow">IndexNow</a></li></ul>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">計算機</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ja/tools/how-to-calculate-bmi">BMI計算ツール</a></li><li><a class="dropdown-item" href="/ja/tools/how-to-calculate-roi">ROI（投資利益率）計算ツール — 計算式と例</a></li><li><a class="dropdown-item" href="/ja/tools/how-to-calculate-marginal-revenue">限界収入（MR）計算 — 公式 ΔTR / ΔQ</a></li><li><a class="dropdown-item" href="/ja/tools/square-feet">平方フィート⇔平方メートル換算 — 物件・リフォーム向け</a></li><li><a class="dropdown-item" href="/ja/tools/how-to-calculate-percentage-change">パーセント変化の計算 — 旧値から新値への増減率</a></li><li><a class="dropdown-item" href="/ja/tools/how-to-calculate-gradient">多変数の勾配 ∇f を計算 — 偏導関数ベクトル</a></li></ul>
+        </li><li class="nav-item"><a class="nav-link" href="#all-tools">ツール</a></li><li class="nav-item"><a class="nav-link" href="/ja/about">について</a></li><li class="nav-item"><a class="nav-link" href="/devlogs/">開発ログ</a></li></ul>
           <div class="d-flex align-items-center gap-2">
             
     <div class="dropdown">
@@ -120,7 +129,7 @@ var _hmt = _hmt || [];
     
     <aside id="sidebar" class="border-end">
       <h2 class="sidebar-title h6">カテゴリ</h2>
-      <div class="list-group list-group-flush small" id="categoryList"><a class="list-group-item list-group-item-action" href="#cat-calculator">計算機</a><a class="list-group-item list-group-item-action" href="#cat-dev">開発者</a><a class="list-group-item list-group-item-action" href="#cat-image">画像ツール</a></div>
+      <div class="list-group list-group-flush small" id="categoryList"><a class="list-group-item list-group-item-action" href="#cat-image">画像ツール</a><a class="list-group-item list-group-item-action" href="#cat-dev">開発者</a><a class="list-group-item list-group-item-action" href="#cat-calculator">計算機</a></div>
     </aside>
     <main id="content" class="p-4">
     <div class="home-wrap">
@@ -282,6 +291,18 @@ var _hmt = _hmt || [];
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/image-crop.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">画像の切り抜きとサイズ変更</h3>
+        </div>
+        <p class="card-text flex-grow-1">端末内で比率・よく使うサイズを指定して切り抜き。</p>
+        <a href="/ja/tools/image-crop" class="mt-auto btn btn-primary btn-sm">開く</a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/add-www-to-dns.svg" width="36" height="36" alt="" decoding="async" />
           <h3 class="card-title h5 mb-0">DNS に WWW を追加</h3>
         </div>
@@ -382,21 +403,22 @@ var _hmt = _hmt || [];
         <h2>すべてのツール</h2>
       </div>
 
-      <div class="home-cat" id="cat-calculator">
-        <span class="home-cat-label">計算機</span>
-        <h3>公式・単位・計算方法</h3>
-        <p class="home-cat-blurb">公式と例が見えるインタラクティブな計算機。</p>
+      
+      <div class="home-cat" id="cat-image">
+        <span class="home-cat-label">画像ツール</span>
+        <h3>変換・圧縮・書き出し</h3>
+        <p class="home-cat-blurb">ブラウザ内の画像ユーティリティ — アップロード不要。</p>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
           
   <div class="col">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-bmi.svg" width="32" height="32" alt="" decoding="async" />
-          <h3 class="card-title h6 mb-0">BMI計算ツール</h3>
+          <img class="tool-card-logo" src="/icons/tools/image-format-converter.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">画像形式変換</h3>
         </div>
-        <p class="card-text small flex-grow-1">成人BMIを式で算出。メートル法/ヤード・ポンド法を選び体重・身長を入力。例：70 kg・175 cm → 約22.9。参考用で診断ではありません。</p>
-        <a href="/ja/tools/how-to-calculate-bmi" class="mt-auto btn btn-outline-primary btn-sm">開く</a>
+        <p class="card-text small flex-grow-1">PNG / JPEG / WebP / AVIF を端末内で変換（画質・MIME 確認）。</p>
+        <a href="/ja/tools/image-format-converter" class="mt-auto btn btn-outline-primary btn-sm">開く</a>
       </div>
     </div>
   </div>
@@ -404,11 +426,11 @@ var _hmt = _hmt || [];
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-roi.svg" width="32" height="32" alt="" decoding="async" />
-          <h3 class="card-title h6 mb-0">ROI（投資利益率）計算ツール — 計算式と例</h3>
+          <img class="tool-card-logo" src="/icons/tools/image-exif.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">写真の EXIF 表示と削除</h3>
         </div>
-        <p class="card-text small flex-grow-1">費用と最終価値から単純ROIを計算。例：1000→1300 = 30%。学習用で投資助言ではありません。</p>
-        <a href="/ja/tools/how-to-calculate-roi" class="mt-auto btn btn-outline-primary btn-sm">開く</a>
+        <p class="card-text small flex-grow-1">写真の GPS/カメラ情報を端末内で確認し、削除してダウンロード。</p>
+        <a href="/ja/tools/image-exif" class="mt-auto btn btn-outline-primary btn-sm">開く</a>
       </div>
     </div>
   </div>
@@ -416,11 +438,11 @@ var _hmt = _hmt || [];
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-marginal-revenue.svg" width="32" height="32" alt="" decoding="async" />
-          <h3 class="card-title h6 mb-0">限界収入（MR）計算 — 公式 ΔTR / ΔQ</h3>
+          <img class="tool-card-logo" src="/icons/tools/image-compress.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">画像圧縮</h3>
         </div>
-        <p class="card-text small flex-grow-1">2点の数量と総収入から MR = ΔTR / ΔQ。例：10→11、1000→1080 → MR 80。学習用です。</p>
-        <a href="/ja/tools/how-to-calculate-marginal-revenue" class="mt-auto btn btn-outline-primary btn-sm">開く</a>
+        <p class="card-text small flex-grow-1">長辺・画質・目標サイズで端末内圧縮。</p>
+        <a href="/ja/tools/image-compress" class="mt-auto btn btn-outline-primary btn-sm">開く</a>
       </div>
     </div>
   </div>
@@ -428,41 +450,16 @@ var _hmt = _hmt || [];
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/square-feet.svg" width="32" height="32" alt="" decoding="async" />
-          <h3 class="card-title h6 mb-0">平方フィート⇔平方メートル換算 — 物件・リフォーム向け</h3>
+          <img class="tool-card-logo" src="/icons/tools/image-crop.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">画像の切り抜きとサイズ変更</h3>
         </div>
-        <p class="card-text small flex-grow-1">部屋の面積を平方フィートと平方メートルのあいだで換算します（物件・リフォーム向け）。手順：ft/m/in を選び、縦×横を入力し、面積を求めたあと NIST 係数 1 ft² = 0.09290304 m² で m² も表示。例：850 sq ft の部屋 ≈ 78.97 m²。</p>
-        <a href="/ja/tools/square-feet" class="mt-auto btn btn-outline-primary btn-sm">開く</a>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card tool-entry-card h-100 d-flex flex-column">
-      <div class="card-body d-flex flex-column">
-        <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-percentage-change.svg" width="32" height="32" alt="" decoding="async" />
-          <h3 class="card-title h6 mb-0">パーセント変化の計算 — 旧値から新値への増減率</h3>
-        </div>
-        <p class="card-text small flex-grow-1">旧値と新値から増減率を計算します。手順：両方を入力し (新−旧)/旧×100 を適用して符号を読む。例：80→100 = +25%。売上の前月比や DAU・値付け向け。百分点（ポイント）とは別物です。</p>
-        <a href="/ja/tools/how-to-calculate-percentage-change" class="mt-auto btn btn-outline-primary btn-sm">開く</a>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card tool-entry-card h-100 d-flex flex-column">
-      <div class="card-body d-flex flex-column">
-        <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-gradient.svg" width="32" height="32" alt="" decoding="async" />
-          <h3 class="card-title h6 mb-0">多変数の勾配 ∇f を計算 — 偏導関数ベクトル</h3>
-        </div>
-        <p class="card-text small flex-grow-1">スカラー場の勾配 ∇f（偏導関数のベクトル）を求めます。手順：各変数で偏微分し ∇f を組み立て、点で評価。デモ f(x,y)=x²y+3y → ∇f=(2xy, x²+3)；点 (1,2) で (4,4)。最適化や機械学習の勾配降下の説明に。</p>
-        <a href="/ja/tools/how-to-calculate-gradient" class="mt-auto btn btn-outline-primary btn-sm">開く</a>
+        <p class="card-text small flex-grow-1">端末内で比率・よく使うサイズを指定して切り抜き。</p>
+        <a href="/ja/tools/image-crop" class="mt-auto btn btn-outline-primary btn-sm">開く</a>
       </div>
     </div>
   </div>
         </div>
       </div>
-
       <div class="home-cat" id="cat-dev">
         <span class="home-cat-label">開発者</span>
         <h3>デバッグ、生成、検証</h3>
@@ -579,22 +576,21 @@ var _hmt = _hmt || [];
   </div>
         </div>
       </div>
-
-      <div class="home-cat" id="cat-image">
-        <span class="home-cat-label">画像ツール</span>
-        <h3>変換・圧縮・書き出し</h3>
-        <p class="home-cat-blurb">ブラウザ内の画像ユーティリティ — アップロード不要。</p>
+      <div class="home-cat" id="cat-calculator">
+        <span class="home-cat-label">計算機</span>
+        <h3>公式・単位・計算方法</h3>
+        <p class="home-cat-blurb">公式と例が見えるインタラクティブな計算機。</p>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
           
   <div class="col">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/image-format-converter.svg" width="32" height="32" alt="" decoding="async" />
-          <h3 class="card-title h6 mb-0">画像形式変換</h3>
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-bmi.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">BMI計算ツール</h3>
         </div>
-        <p class="card-text small flex-grow-1">PNG / JPEG / WebP / AVIF を端末内で変換（画質・MIME 確認）。</p>
-        <a href="/ja/tools/image-format-converter" class="mt-auto btn btn-outline-primary btn-sm">開く</a>
+        <p class="card-text small flex-grow-1">成人BMIを式で算出。メートル法/ヤード・ポンド法を選び体重・身長を入力。例：70 kg・175 cm → 約22.9。参考用で診断ではありません。</p>
+        <a href="/ja/tools/how-to-calculate-bmi" class="mt-auto btn btn-outline-primary btn-sm">開く</a>
       </div>
     </div>
   </div>
@@ -602,11 +598,11 @@ var _hmt = _hmt || [];
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/image-exif.svg" width="32" height="32" alt="" decoding="async" />
-          <h3 class="card-title h6 mb-0">写真の EXIF 表示と削除</h3>
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-roi.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">ROI（投資利益率）計算ツール — 計算式と例</h3>
         </div>
-        <p class="card-text small flex-grow-1">写真の GPS/カメラ情報を端末内で確認し、削除してダウンロード。</p>
-        <a href="/ja/tools/image-exif" class="mt-auto btn btn-outline-primary btn-sm">開く</a>
+        <p class="card-text small flex-grow-1">費用と最終価値から単純ROIを計算。例：1000→1300 = 30%。学習用で投資助言ではありません。</p>
+        <a href="/ja/tools/how-to-calculate-roi" class="mt-auto btn btn-outline-primary btn-sm">開く</a>
       </div>
     </div>
   </div>
@@ -614,11 +610,47 @@ var _hmt = _hmt || [];
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/image-compress.svg" width="32" height="32" alt="" decoding="async" />
-          <h3 class="card-title h6 mb-0">画像圧縮</h3>
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-marginal-revenue.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">限界収入（MR）計算 — 公式 ΔTR / ΔQ</h3>
         </div>
-        <p class="card-text small flex-grow-1">長辺・画質・目標サイズで端末内圧縮。</p>
-        <a href="/ja/tools/image-compress" class="mt-auto btn btn-outline-primary btn-sm">開く</a>
+        <p class="card-text small flex-grow-1">2点の数量と総収入から MR = ΔTR / ΔQ。例：10→11、1000→1080 → MR 80。学習用です。</p>
+        <a href="/ja/tools/how-to-calculate-marginal-revenue" class="mt-auto btn btn-outline-primary btn-sm">開く</a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/square-feet.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">平方フィート⇔平方メートル換算 — 物件・リフォーム向け</h3>
+        </div>
+        <p class="card-text small flex-grow-1">部屋の面積を平方フィートと平方メートルのあいだで換算します（物件・リフォーム向け）。手順：ft/m/in を選び、縦×横を入力し、面積を求めたあと NIST 係数 1 ft² = 0.09290304 m² で m² も表示。例：850 sq ft の部屋 ≈ 78.97 m²。</p>
+        <a href="/ja/tools/square-feet" class="mt-auto btn btn-outline-primary btn-sm">開く</a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-percentage-change.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">パーセント変化の計算 — 旧値から新値への増減率</h3>
+        </div>
+        <p class="card-text small flex-grow-1">旧値と新値から増減率を計算します。手順：両方を入力し (新−旧)/旧×100 を適用して符号を読む。例：80→100 = +25%。売上の前月比や DAU・値付け向け。百分点（ポイント）とは別物です。</p>
+        <a href="/ja/tools/how-to-calculate-percentage-change" class="mt-auto btn btn-outline-primary btn-sm">開く</a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-gradient.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">多変数の勾配 ∇f を計算 — 偏導関数ベクトル</h3>
+        </div>
+        <p class="card-text small flex-grow-1">スカラー場の勾配 ∇f（偏導関数のベクトル）を求めます。手順：各変数で偏微分し ∇f を組み立て、点で評価。デモ f(x,y)=x²y+3y → ∇f=(2xy, x²+3)；点 (1,2) で (4,4)。最適化や機械学習の勾配降下の説明に。</p>
+        <a href="/ja/tools/how-to-calculate-gradient" class="mt-auto btn btn-outline-primary btn-sm">開く</a>
       </div>
     </div>
   </div>

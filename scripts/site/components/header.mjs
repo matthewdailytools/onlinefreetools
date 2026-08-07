@@ -51,7 +51,18 @@ export const renderHeader = ({
   langAlternates,
 }) => {
   const navHtml = navItems
-    .map((i) => `<li class="nav-item"><a class="nav-link" href="${i.href}">${i.label}</a></li>`)
+    .map((item) => {
+      if (item.type === 'dropdown') {
+        const menu = (item.items || [])
+          .map((sub) => `<li><a class="dropdown-item" href="${sub.href}">${sub.label}</a></li>`)
+          .join('');
+        return `<li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">${item.label}</a>
+          <ul class="dropdown-menu">${menu}</ul>
+        </li>`;
+      }
+      return `<li class="nav-item"><a class="nav-link" href="${item.href}">${item.label}</a></li>`;
+    })
     .join('');
 
   // Search form intentionally removed: site no longer exposes a top-level search input/button.

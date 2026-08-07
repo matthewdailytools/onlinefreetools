@@ -102,7 +102,16 @@ var _hmt = _hmt || [];
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="topNav">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="#featured">مميز</a></li><li class="nav-item"><a class="nav-link" href="#all-tools">كل الأدوات</a></li><li class="nav-item"><a class="nav-link" href="/ar/about">حول</a></li><li class="nav-item"><a class="nav-link" href="/devlogs/">سجلات التطوير</a></li></ul>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="#featured">مميز</a></li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">أدوات الصور</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ar/tools/image-format-converter">محول صيغ الصور</a></li><li><a class="dropdown-item" href="/ar/tools/image-exif">عرض وحذف EXIF من الصور</a></li><li><a class="dropdown-item" href="/ar/tools/image-compress">ضغط الصور</a></li><li><a class="dropdown-item" href="/ar/tools/image-crop">قص الصورة وتغيير الحجم</a></li></ul>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">للمطورين</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ar/tools/website-headers">فحص ترويسات HTTP</a></li><li><a class="dropdown-item" href="/ar/tools/ip-address">ما هو عنوان IP الخاص بي — اعرض IP العام</a></li><li><a class="dropdown-item" href="/ar/tools/markdown-to-html">Markdown ↔ HTML</a></li><li><a class="dropdown-item" href="/ar/tools/text-diff">مقارنة نصين أونلاين</a></li><li><a class="dropdown-item" href="/ar/tools/yaml-json">YAML ↔ JSON</a></li><li><a class="dropdown-item" href="/ar/tools/csv-json">CSV ↔ JSON</a></li><li><a class="dropdown-item" href="/ar/tools/html-entity">كيانات HTML</a></li><li><a class="dropdown-item" href="/ar/tools/add-www-to-dns">إضافة WWW إلى DNS</a></li><li><a class="dropdown-item" href="/ar/tools/indexnow">IndexNow</a></li></ul>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">حاسبات</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-bmi">حاسبة مؤشر كتلة الجسم</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-roi">حاسبة العائد على الاستثمار (ROI) — طريقة الحساب</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-marginal-revenue">حاسبة الإيراد الحدي — الصيغة ΔTR / ΔQ</a></li><li><a class="dropdown-item" href="/ar/tools/square-feet">تحويل القدم المربع إلى متر مربع — للمنازل والتشطيب</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-percentage-change">حاسبة التغير بالنسبة المئوية — من قيمة قديمة إلى جديدة</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-gradient">حاسبة التدرج — ∇f متعدد المتغيرات (مشتقات جزئية)</a></li></ul>
+        </li><li class="nav-item"><a class="nav-link" href="#all-tools">كل الأدوات</a></li><li class="nav-item"><a class="nav-link" href="/ar/about">حول</a></li><li class="nav-item"><a class="nav-link" href="/devlogs/">سجلات التطوير</a></li></ul>
           <div class="d-flex align-items-center gap-2">
             
     <div class="dropdown">
@@ -120,7 +129,7 @@ var _hmt = _hmt || [];
     
     <aside id="sidebar" class="border-end">
       <h2 class="sidebar-title h6">التصنيفات</h2>
-      <div class="list-group list-group-flush small" id="categoryList"><a class="list-group-item list-group-item-action" href="#cat-calculator">حاسبات</a><a class="list-group-item list-group-item-action" href="#cat-dev">للمطورين</a><a class="list-group-item list-group-item-action" href="#cat-image">أدوات الصور</a></div>
+      <div class="list-group list-group-flush small" id="categoryList"><a class="list-group-item list-group-item-action" href="#cat-image">أدوات الصور</a><a class="list-group-item list-group-item-action" href="#cat-dev">للمطورين</a><a class="list-group-item list-group-item-action" href="#cat-calculator">حاسبات</a></div>
     </aside>
     <main id="content" class="p-4">
     <div class="home-wrap">
@@ -282,6 +291,18 @@ var _hmt = _hmt || [];
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/image-crop.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">قص الصورة وتغيير الحجم</h3>
+        </div>
+        <p class="card-text flex-grow-1">قص محلي بنسب وأحجام شائعة.</p>
+        <a href="/ar/tools/image-crop" class="mt-auto btn btn-primary btn-sm">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/add-www-to-dns.svg" width="36" height="36" alt="" decoding="async" />
           <h3 class="card-title h5 mb-0">إضافة WWW إلى DNS</h3>
         </div>
@@ -382,21 +403,22 @@ var _hmt = _hmt || [];
         <h2>كل الأدوات</h2>
       </div>
 
-      <div class="home-cat" id="cat-calculator">
-        <span class="home-cat-label">حاسبات</span>
-        <h3>صيغ، وحدات، كيف تحسب</h3>
-        <p class="home-cat-blurb">حاسبات تفاعلية بصيغ واضحة وأمثلة.</p>
+      
+      <div class="home-cat" id="cat-image">
+        <span class="home-cat-label">أدوات الصور</span>
+        <h3>تحويل، ضغط، تجهيز</h3>
+        <p class="home-cat-blurb">أدوات صور محلية في المتصفح — بدون رفع.</p>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
           
   <div class="col">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-bmi.svg" width="32" height="32" alt="" decoding="async" />
-          <h3 class="card-title h6 mb-0">حاسبة مؤشر كتلة الجسم</h3>
+          <img class="tool-card-logo" src="/icons/tools/image-format-converter.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">محول صيغ الصور</h3>
         </div>
-        <p class="card-text small flex-grow-1">احسب BMI للبالغين: اختر متري/إمبراطوري، أدخل الوزن والطول، ثم قارن بالفئات. مثال: 70 كغ و175 سم → ≈22.9. للفحص التعليمي فقط.</p>
-        <a href="/ar/tools/how-to-calculate-bmi" class="mt-auto btn btn-outline-primary btn-sm">فتح</a>
+        <p class="card-text small flex-grow-1">حوّل PNG وJPEG وWebP وAVIF محليًا مع الجودة والتحقق من النوع.</p>
+        <a href="/ar/tools/image-format-converter" class="mt-auto btn btn-outline-primary btn-sm">فتح</a>
       </div>
     </div>
   </div>
@@ -404,11 +426,11 @@ var _hmt = _hmt || [];
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-roi.svg" width="32" height="32" alt="" decoding="async" />
-          <h3 class="card-title h6 mb-0">حاسبة العائد على الاستثمار (ROI) — طريقة الحساب</h3>
+          <img class="tool-card-logo" src="/icons/tools/image-exif.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">عرض وحذف EXIF من الصور</h3>
         </div>
-        <p class="card-text small flex-grow-1">احسب ROI البسيط من التكلفة والقيمة النهائية. مثال: 1000→1300 = 30٪. للتوضيح فقط، ليست نصيحة استثمار.</p>
-        <a href="/ar/tools/how-to-calculate-roi" class="mt-auto btn btn-outline-primary btn-sm">فتح</a>
+        <p class="card-text small flex-grow-1">اعرض GPS/الكاميرا من الصور محليًا ونزّل نسخة منظّفة.</p>
+        <a href="/ar/tools/image-exif" class="mt-auto btn btn-outline-primary btn-sm">فتح</a>
       </div>
     </div>
   </div>
@@ -416,11 +438,11 @@ var _hmt = _hmt || [];
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-marginal-revenue.svg" width="32" height="32" alt="" decoding="async" />
-          <h3 class="card-title h6 mb-0">حاسبة الإيراد الحدي — الصيغة ΔTR / ΔQ</h3>
+          <img class="tool-card-logo" src="/icons/tools/image-compress.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">ضغط الصور</h3>
         </div>
-        <p class="card-text small flex-grow-1">احسب MR = ΔTR / ΔQ من نقطتي كمية وإيراد. مثال: 10→11 و1000→1080 → MR 80. للتعليم فقط.</p>
-        <a href="/ar/tools/how-to-calculate-marginal-revenue" class="mt-auto btn btn-outline-primary btn-sm">فتح</a>
+        <p class="card-text small flex-grow-1">تصغير محلي بالضلع الأطول والجودة والحجم المستهدف.</p>
+        <a href="/ar/tools/image-compress" class="mt-auto btn btn-outline-primary btn-sm">فتح</a>
       </div>
     </div>
   </div>
@@ -428,41 +450,16 @@ var _hmt = _hmt || [];
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/square-feet.svg" width="32" height="32" alt="" decoding="async" />
-          <h3 class="card-title h6 mb-0">تحويل القدم المربع إلى متر مربع — للمنازل والتشطيب</h3>
+          <img class="tool-card-logo" src="/icons/tools/image-crop.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">قص الصورة وتغيير الحجم</h3>
         </div>
-        <p class="card-text small flex-grow-1">حوّل مساحة الغرفة بين القدم المربع والمتر المربع للإعلانات والتشطيب. الخطوات: اختر قدم/متر/بوصة، أدخل الطول × العرض، احسب المساحة، ثم اعرض ft² و m² بعامل NIST 1 ft² = 0.09290304 m². مثال: شقة 850 قدمًا مربعًا ≈ 78.97 م².</p>
-        <a href="/ar/tools/square-feet" class="mt-auto btn btn-outline-primary btn-sm">فتح</a>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card tool-entry-card h-100 d-flex flex-column">
-      <div class="card-body d-flex flex-column">
-        <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-percentage-change.svg" width="32" height="32" alt="" decoding="async" />
-          <h3 class="card-title h6 mb-0">حاسبة التغير بالنسبة المئوية — من قيمة قديمة إلى جديدة</h3>
-        </div>
-        <p class="card-text small flex-grow-1">احسب نسبة الزيادة أو النقصان من قيمة قديمة إلى جديدة. الخطوات: أدخل القيمتين، طبّق (الجديد − القديم) / القديم × 100، ثم اقرأ الإشارة. مثال: 80 → 100 = +25%. مناسب لإيرادات شهرية وDAU والأسعار — وليس نقاط مئوية.</p>
-        <a href="/ar/tools/how-to-calculate-percentage-change" class="mt-auto btn btn-outline-primary btn-sm">فتح</a>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card tool-entry-card h-100 d-flex flex-column">
-      <div class="card-body d-flex flex-column">
-        <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-gradient.svg" width="32" height="32" alt="" decoding="async" />
-          <h3 class="card-title h6 mb-0">حاسبة التدرج — ∇f متعدد المتغيرات (مشتقات جزئية)</h3>
-        </div>
-        <p class="card-text small flex-grow-1">احسب تدرج ∇f لحقل قياسي كمتجه المشتقات الجزئية. الخطوات: اشتق لكل متغير، شكّل ∇f، ثم قيّم عند نقطة. دالة العرض f(x,y)=x²y+3y → ∇f=(2xy, x²+3)؛ عند (1,2) → (4,4). يُستخدم في التحسين وتفسير الانحدار التدرجي في التعلم الآلي.</p>
-        <a href="/ar/tools/how-to-calculate-gradient" class="mt-auto btn btn-outline-primary btn-sm">فتح</a>
+        <p class="card-text small flex-grow-1">قص محلي بنسب وأحجام شائعة.</p>
+        <a href="/ar/tools/image-crop" class="mt-auto btn btn-outline-primary btn-sm">فتح</a>
       </div>
     </div>
   </div>
         </div>
       </div>
-
       <div class="home-cat" id="cat-dev">
         <span class="home-cat-label">للمطورين</span>
         <h3>تصحيح، توليد، تحقق</h3>
@@ -579,22 +576,21 @@ var _hmt = _hmt || [];
   </div>
         </div>
       </div>
-
-      <div class="home-cat" id="cat-image">
-        <span class="home-cat-label">أدوات الصور</span>
-        <h3>تحويل، ضغط، تجهيز</h3>
-        <p class="home-cat-blurb">أدوات صور محلية في المتصفح — بدون رفع.</p>
+      <div class="home-cat" id="cat-calculator">
+        <span class="home-cat-label">حاسبات</span>
+        <h3>صيغ، وحدات، كيف تحسب</h3>
+        <p class="home-cat-blurb">حاسبات تفاعلية بصيغ واضحة وأمثلة.</p>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
           
   <div class="col">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/image-format-converter.svg" width="32" height="32" alt="" decoding="async" />
-          <h3 class="card-title h6 mb-0">محول صيغ الصور</h3>
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-bmi.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">حاسبة مؤشر كتلة الجسم</h3>
         </div>
-        <p class="card-text small flex-grow-1">حوّل PNG وJPEG وWebP وAVIF محليًا مع الجودة والتحقق من النوع.</p>
-        <a href="/ar/tools/image-format-converter" class="mt-auto btn btn-outline-primary btn-sm">فتح</a>
+        <p class="card-text small flex-grow-1">احسب BMI للبالغين: اختر متري/إمبراطوري، أدخل الوزن والطول، ثم قارن بالفئات. مثال: 70 كغ و175 سم → ≈22.9. للفحص التعليمي فقط.</p>
+        <a href="/ar/tools/how-to-calculate-bmi" class="mt-auto btn btn-outline-primary btn-sm">فتح</a>
       </div>
     </div>
   </div>
@@ -602,11 +598,11 @@ var _hmt = _hmt || [];
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/image-exif.svg" width="32" height="32" alt="" decoding="async" />
-          <h3 class="card-title h6 mb-0">عرض وحذف EXIF من الصور</h3>
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-roi.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">حاسبة العائد على الاستثمار (ROI) — طريقة الحساب</h3>
         </div>
-        <p class="card-text small flex-grow-1">اعرض GPS/الكاميرا من الصور محليًا ونزّل نسخة منظّفة.</p>
-        <a href="/ar/tools/image-exif" class="mt-auto btn btn-outline-primary btn-sm">فتح</a>
+        <p class="card-text small flex-grow-1">احسب ROI البسيط من التكلفة والقيمة النهائية. مثال: 1000→1300 = 30٪. للتوضيح فقط، ليست نصيحة استثمار.</p>
+        <a href="/ar/tools/how-to-calculate-roi" class="mt-auto btn btn-outline-primary btn-sm">فتح</a>
       </div>
     </div>
   </div>
@@ -614,11 +610,47 @@ var _hmt = _hmt || [];
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/image-compress.svg" width="32" height="32" alt="" decoding="async" />
-          <h3 class="card-title h6 mb-0">ضغط الصور</h3>
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-marginal-revenue.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">حاسبة الإيراد الحدي — الصيغة ΔTR / ΔQ</h3>
         </div>
-        <p class="card-text small flex-grow-1">تصغير محلي بالضلع الأطول والجودة والحجم المستهدف.</p>
-        <a href="/ar/tools/image-compress" class="mt-auto btn btn-outline-primary btn-sm">فتح</a>
+        <p class="card-text small flex-grow-1">احسب MR = ΔTR / ΔQ من نقطتي كمية وإيراد. مثال: 10→11 و1000→1080 → MR 80. للتعليم فقط.</p>
+        <a href="/ar/tools/how-to-calculate-marginal-revenue" class="mt-auto btn btn-outline-primary btn-sm">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/square-feet.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">تحويل القدم المربع إلى متر مربع — للمنازل والتشطيب</h3>
+        </div>
+        <p class="card-text small flex-grow-1">حوّل مساحة الغرفة بين القدم المربع والمتر المربع للإعلانات والتشطيب. الخطوات: اختر قدم/متر/بوصة، أدخل الطول × العرض، احسب المساحة، ثم اعرض ft² و m² بعامل NIST 1 ft² = 0.09290304 m². مثال: شقة 850 قدمًا مربعًا ≈ 78.97 م².</p>
+        <a href="/ar/tools/square-feet" class="mt-auto btn btn-outline-primary btn-sm">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-percentage-change.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">حاسبة التغير بالنسبة المئوية — من قيمة قديمة إلى جديدة</h3>
+        </div>
+        <p class="card-text small flex-grow-1">احسب نسبة الزيادة أو النقصان من قيمة قديمة إلى جديدة. الخطوات: أدخل القيمتين، طبّق (الجديد − القديم) / القديم × 100، ثم اقرأ الإشارة. مثال: 80 → 100 = +25%. مناسب لإيرادات شهرية وDAU والأسعار — وليس نقاط مئوية.</p>
+        <a href="/ar/tools/how-to-calculate-percentage-change" class="mt-auto btn btn-outline-primary btn-sm">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-gradient.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">حاسبة التدرج — ∇f متعدد المتغيرات (مشتقات جزئية)</h3>
+        </div>
+        <p class="card-text small flex-grow-1">احسب تدرج ∇f لحقل قياسي كمتجه المشتقات الجزئية. الخطوات: اشتق لكل متغير، شكّل ∇f، ثم قيّم عند نقطة. دالة العرض f(x,y)=x²y+3y → ∇f=(2xy, x²+3)؛ عند (1,2) → (4,4). يُستخدم في التحسين وتفسير الانحدار التدرجي في التعلم الآلي.</p>
+        <a href="/ar/tools/how-to-calculate-gradient" class="mt-auto btn btn-outline-primary btn-sm">فتح</a>
       </div>
     </div>
   </div>

@@ -7,6 +7,7 @@ import type { SiteLang } from '../site/i18n';
 import { t, supportedLangs } from '../site/i18n';
 import { renderFooter } from './site/footer';
 import { renderHeader } from './site/header';
+import { buildToolPageNavItems } from './site/nav';
 import { renderLayout, type HreflangAlternate, escapeHtml } from './site/layout';
 import { renderSidebar, buildToolSidebarItems } from './site/sidebar';
 import { getToolBySlug } from '../site/tools';
@@ -39,11 +40,7 @@ export const renderYamlJsonPage = (opts: {
 	const title = `${t(opts.lang, 'tool_yaml_json_title')} | ${t(opts.lang, 'brand')}`;
 	const description = t(opts.lang, 'tool_yaml_json_description');
 
-	const navItems = [
-		{ href: withLangPrefix(opts.lang, '/', opts.defaultLang), label: t(opts.lang, 'nav_home') },
-		{ href: withLangPrefix(opts.lang, '/#all-tools', opts.defaultLang), label: t(opts.lang, 'nav_tools') },
-		{ href: '/devlogs/', label: t(opts.lang, 'nav_devlogs') },
-	];
+	const navItems = buildToolPageNavItems(opts.lang, opts.defaultLang);
 
 	/** 语言切换链接始终带显式语言前缀（含默认语）。 */
 	const withExplicitLangPrefix = (code: SiteLang, pathname: string) => {

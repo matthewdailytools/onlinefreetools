@@ -102,7 +102,16 @@ var _hmt = _hmt || [];
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="topNav">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="#featured">推荐</a></li><li class="nav-item"><a class="nav-link" href="#all-tools">全部工具</a></li><li class="nav-item"><a class="nav-link" href="/zh/about">关于</a></li><li class="nav-item"><a class="nav-link" href="/devlogs/">开发日志</a></li></ul>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="#featured">推荐</a></li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">图片编辑工具</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/zh/tools/image-format-converter">图片格式转换</a></li><li><a class="dropdown-item" href="/zh/tools/image-exif">图片 EXIF 查看与清除</a></li><li><a class="dropdown-item" href="/zh/tools/image-compress">图片压缩</a></li><li><a class="dropdown-item" href="/zh/tools/image-crop">图片裁剪与改尺寸</a></li></ul>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">开发者工具</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/zh/tools/website-headers">在线查看 HTTP 响应头</a></li><li><a class="dropdown-item" href="/zh/tools/ip-address">查询我的公网 IP — 查看当前出口地址</a></li><li><a class="dropdown-item" href="/zh/tools/markdown-to-html">Markdown ↔ HTML</a></li><li><a class="dropdown-item" href="/zh/tools/text-diff">在线文本对比</a></li><li><a class="dropdown-item" href="/zh/tools/yaml-json">YAML ↔ JSON</a></li><li><a class="dropdown-item" href="/zh/tools/csv-json">CSV ↔ JSON</a></li><li><a class="dropdown-item" href="/zh/tools/html-entity">HTML 实体编解码</a></li><li><a class="dropdown-item" href="/zh/tools/add-www-to-dns">给域名添加 www DNS</a></li><li><a class="dropdown-item" href="/zh/tools/indexnow">IndexNow</a></li></ul>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">计算器</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-bmi">如何计算BMI</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-roi">投资回报率（ROI）计算 — 公式与示例</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-marginal-revenue">边际收益计算 — 公式 MR = ΔTR / ΔQ</a></li><li><a class="dropdown-item" href="/zh/tools/square-feet">平方英尺转平方米 — 看房与装修面积换算</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-percentage-change">百分比变化计算 — 旧值到新值的涨跌幅</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-gradient">多元函数梯度计算 — ∇f 偏导向量</a></li></ul>
+        </li><li class="nav-item"><a class="nav-link" href="#all-tools">全部工具</a></li><li class="nav-item"><a class="nav-link" href="/zh/about">关于</a></li><li class="nav-item"><a class="nav-link" href="/devlogs/">开发日志</a></li></ul>
           <div class="d-flex align-items-center gap-2">
             
     <div class="dropdown">
@@ -120,7 +129,7 @@ var _hmt = _hmt || [];
     
     <aside id="sidebar" class="border-end">
       <h2 class="sidebar-title h6">分类</h2>
-      <div class="list-group list-group-flush small" id="categoryList"><a class="list-group-item list-group-item-action" href="#cat-calculator">计算器</a><a class="list-group-item list-group-item-action" href="#cat-dev">开发者工具</a><a class="list-group-item list-group-item-action" href="#cat-image">图片处理工具</a></div>
+      <div class="list-group list-group-flush small" id="categoryList"><a class="list-group-item list-group-item-action" href="#cat-image">图片编辑工具</a><a class="list-group-item list-group-item-action" href="#cat-dev">开发者工具</a><a class="list-group-item list-group-item-action" href="#cat-calculator">计算器</a></div>
     </aside>
     <main id="content" class="p-4">
     <div class="home-wrap">
@@ -282,6 +291,18 @@ var _hmt = _hmt || [];
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/image-crop.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">图片裁剪与改尺寸</h3>
+        </div>
+        <p class="card-text flex-grow-1">本地裁剪，常用比例与输出像素预设。</p>
+        <a href="/zh/tools/image-crop" class="mt-auto btn btn-primary btn-sm">打开</a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/add-www-to-dns.svg" width="36" height="36" alt="" decoding="async" />
           <h3 class="card-title h5 mb-0">给域名添加 www DNS</h3>
         </div>
@@ -382,21 +403,22 @@ var _hmt = _hmt || [];
         <h2>全部工具</h2>
       </div>
 
-      <div class="home-cat" id="cat-calculator">
-        <span class="home-cat-label">计算器</span>
-        <h3>公式、单位、How-to</h3>
-        <p class="home-cat-blurb">可交互的计算器：公式可见，并附带计算示例。</p>
+      
+      <div class="home-cat" id="cat-image">
+        <span class="home-cat-label">图片编辑工具</span>
+        <h3>转换、压缩、导出</h3>
+        <p class="home-cat-blurb">浏览器本地图片工具 —— 格式转换等，文件不上传。</p>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
           
   <div class="col">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-bmi.svg" width="32" height="32" alt="" decoding="async" />
-          <h3 class="card-title h6 mb-0">如何计算BMI</h3>
+          <img class="tool-card-logo" src="/icons/tools/image-format-converter.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">图片格式转换</h3>
         </div>
-        <p class="card-text small flex-grow-1">轻松计算您的身体质量指数（BMI）。输入体重和身高即可获得BMI结果。</p>
-        <a href="/zh/tools/how-to-calculate-bmi" class="mt-auto btn btn-outline-primary btn-sm">打开</a>
+        <p class="card-text small flex-grow-1">浏览器内 PNG / JPEG / WebP / AVIF 互转：质量、透明底色与本地处理。</p>
+        <a href="/zh/tools/image-format-converter" class="mt-auto btn btn-outline-primary btn-sm">打开</a>
       </div>
     </div>
   </div>
@@ -404,11 +426,11 @@ var _hmt = _hmt || [];
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-roi.svg" width="32" height="32" alt="" decoding="async" />
-          <h3 class="card-title h6 mb-0">投资回报率（ROI）计算 — 公式与示例</h3>
+          <img class="tool-card-logo" src="/icons/tools/image-exif.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">图片 EXIF 查看与清除</h3>
         </div>
-        <p class="card-text small flex-grow-1">按成本与最终价值（或净收益）算简单 ROI。示例：1000→1300 = 30%。仅供学习，非投资建议。</p>
-        <a href="/zh/tools/how-to-calculate-roi" class="mt-auto btn btn-outline-primary btn-sm">打开</a>
+        <p class="card-text small flex-grow-1">本地查看 GPS/相机元数据，并清除后下载。</p>
+        <a href="/zh/tools/image-exif" class="mt-auto btn btn-outline-primary btn-sm">打开</a>
       </div>
     </div>
   </div>
@@ -416,11 +438,11 @@ var _hmt = _hmt || [];
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-marginal-revenue.svg" width="32" height="32" alt="" decoding="async" />
-          <h3 class="card-title h6 mb-0">边际收益计算 — 公式 MR = ΔTR / ΔQ</h3>
+          <img class="tool-card-logo" src="/icons/tools/image-compress.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">图片压缩</h3>
         </div>
-        <p class="card-text small flex-grow-1">用两档产量与总收入计算 MR = ΔTR / ΔQ。示例：10→11，1000→1080 → MR 80。仅供教学。</p>
-        <a href="/zh/tools/how-to-calculate-marginal-revenue" class="mt-auto btn btn-outline-primary btn-sm">打开</a>
+        <p class="card-text small flex-grow-1">本地按最长边、质量与目标体积压缩，下载 WebP 或 JPEG。</p>
+        <a href="/zh/tools/image-compress" class="mt-auto btn btn-outline-primary btn-sm">打开</a>
       </div>
     </div>
   </div>
@@ -428,41 +450,16 @@ var _hmt = _hmt || [];
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/square-feet.svg" width="32" height="32" alt="" decoding="async" />
-          <h3 class="card-title h6 mb-0">平方英尺转平方米 — 看房与装修面积换算</h3>
+          <img class="tool-card-logo" src="/icons/tools/image-crop.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">图片裁剪与改尺寸</h3>
         </div>
-        <p class="card-text small flex-grow-1">把房源或图纸上的平方英尺换成平方米（或反过来），方便看房与装修估料。流程：选英尺/米/英寸，输入长×宽，算出面积，再按 1 ft² = 0.09290304 m² 给出 m²。示例：850 平方英尺公寓 ≈ 78.97 m²。</p>
-        <a href="/zh/tools/square-feet" class="mt-auto btn btn-outline-primary btn-sm">打开</a>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card tool-entry-card h-100 d-flex flex-column">
-      <div class="card-body d-flex flex-column">
-        <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-percentage-change.svg" width="32" height="32" alt="" decoding="async" />
-          <h3 class="card-title h6 mb-0">百分比变化计算 — 旧值到新值的涨跌幅</h3>
-        </div>
-        <p class="card-text small flex-grow-1">根据旧值与新值计算涨跌幅。公式：(新值 − 旧值) / 旧值 × 100。流程：输入旧值、新值，求差后除以旧值再×100，显示增减。示例：80→100 = +25%。适合月营收环比、日活、调价；注意：不是「百分点」。</p>
-        <a href="/zh/tools/how-to-calculate-percentage-change" class="mt-auto btn btn-outline-primary btn-sm">打开</a>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card tool-entry-card h-100 d-flex flex-column">
-      <div class="card-body d-flex flex-column">
-        <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-gradient.svg" width="32" height="32" alt="" decoding="async" />
-          <h3 class="card-title h6 mb-0">多元函数梯度计算 — ∇f 偏导向量</h3>
-        </div>
-        <p class="card-text small flex-grow-1">计算标量场的梯度 ∇f（各偏导数组成的向量）。流程：对每个变量求偏导，组成 ∇f，再代入坐标求值。演示函数 f(x,y)=x²y+3y → ∇f=(2xy, x²+3)；在 (1,2) 得 (4,4)。用于最优化与机器学习梯度下降讲解。</p>
-        <a href="/zh/tools/how-to-calculate-gradient" class="mt-auto btn btn-outline-primary btn-sm">打开</a>
+        <p class="card-text small flex-grow-1">本地裁剪，常用比例与输出像素预设。</p>
+        <a href="/zh/tools/image-crop" class="mt-auto btn btn-outline-primary btn-sm">打开</a>
       </div>
     </div>
   </div>
         </div>
       </div>
-
       <div class="home-cat" id="cat-dev">
         <span class="home-cat-label">开发者工具</span>
         <h3>调试、生成、校验</h3>
@@ -579,22 +576,21 @@ var _hmt = _hmt || [];
   </div>
         </div>
       </div>
-
-      <div class="home-cat" id="cat-image">
-        <span class="home-cat-label">图片处理工具</span>
-        <h3>转换、压缩、导出</h3>
-        <p class="home-cat-blurb">浏览器本地图片工具 —— 格式转换等，文件不上传。</p>
+      <div class="home-cat" id="cat-calculator">
+        <span class="home-cat-label">计算器</span>
+        <h3>公式、单位、How-to</h3>
+        <p class="home-cat-blurb">可交互的计算器：公式可见，并附带计算示例。</p>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
           
   <div class="col">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/image-format-converter.svg" width="32" height="32" alt="" decoding="async" />
-          <h3 class="card-title h6 mb-0">图片格式转换</h3>
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-bmi.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">如何计算BMI</h3>
         </div>
-        <p class="card-text small flex-grow-1">浏览器内 PNG / JPEG / WebP / AVIF 互转：质量、透明底色与本地处理。</p>
-        <a href="/zh/tools/image-format-converter" class="mt-auto btn btn-outline-primary btn-sm">打开</a>
+        <p class="card-text small flex-grow-1">轻松计算您的身体质量指数（BMI）。输入体重和身高即可获得BMI结果。</p>
+        <a href="/zh/tools/how-to-calculate-bmi" class="mt-auto btn btn-outline-primary btn-sm">打开</a>
       </div>
     </div>
   </div>
@@ -602,11 +598,11 @@ var _hmt = _hmt || [];
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/image-exif.svg" width="32" height="32" alt="" decoding="async" />
-          <h3 class="card-title h6 mb-0">图片 EXIF 查看与清除</h3>
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-roi.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">投资回报率（ROI）计算 — 公式与示例</h3>
         </div>
-        <p class="card-text small flex-grow-1">本地查看 GPS/相机元数据，并清除后下载。</p>
-        <a href="/zh/tools/image-exif" class="mt-auto btn btn-outline-primary btn-sm">打开</a>
+        <p class="card-text small flex-grow-1">按成本与最终价值（或净收益）算简单 ROI。示例：1000→1300 = 30%。仅供学习，非投资建议。</p>
+        <a href="/zh/tools/how-to-calculate-roi" class="mt-auto btn btn-outline-primary btn-sm">打开</a>
       </div>
     </div>
   </div>
@@ -614,11 +610,47 @@ var _hmt = _hmt || [];
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/image-compress.svg" width="32" height="32" alt="" decoding="async" />
-          <h3 class="card-title h6 mb-0">图片压缩</h3>
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-marginal-revenue.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">边际收益计算 — 公式 MR = ΔTR / ΔQ</h3>
         </div>
-        <p class="card-text small flex-grow-1">本地按最长边、质量与目标体积压缩，下载 WebP 或 JPEG。</p>
-        <a href="/zh/tools/image-compress" class="mt-auto btn btn-outline-primary btn-sm">打开</a>
+        <p class="card-text small flex-grow-1">用两档产量与总收入计算 MR = ΔTR / ΔQ。示例：10→11，1000→1080 → MR 80。仅供教学。</p>
+        <a href="/zh/tools/how-to-calculate-marginal-revenue" class="mt-auto btn btn-outline-primary btn-sm">打开</a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/square-feet.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">平方英尺转平方米 — 看房与装修面积换算</h3>
+        </div>
+        <p class="card-text small flex-grow-1">把房源或图纸上的平方英尺换成平方米（或反过来），方便看房与装修估料。流程：选英尺/米/英寸，输入长×宽，算出面积，再按 1 ft² = 0.09290304 m² 给出 m²。示例：850 平方英尺公寓 ≈ 78.97 m²。</p>
+        <a href="/zh/tools/square-feet" class="mt-auto btn btn-outline-primary btn-sm">打开</a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-percentage-change.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">百分比变化计算 — 旧值到新值的涨跌幅</h3>
+        </div>
+        <p class="card-text small flex-grow-1">根据旧值与新值计算涨跌幅。公式：(新值 − 旧值) / 旧值 × 100。流程：输入旧值、新值，求差后除以旧值再×100，显示增减。示例：80→100 = +25%。适合月营收环比、日活、调价；注意：不是「百分点」。</p>
+        <a href="/zh/tools/how-to-calculate-percentage-change" class="mt-auto btn btn-outline-primary btn-sm">打开</a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-gradient.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">多元函数梯度计算 — ∇f 偏导向量</h3>
+        </div>
+        <p class="card-text small flex-grow-1">计算标量场的梯度 ∇f（各偏导数组成的向量）。流程：对每个变量求偏导，组成 ∇f，再代入坐标求值。演示函数 f(x,y)=x²y+3y → ∇f=(2xy, x²+3)；在 (1,2) 得 (4,4)。用于最优化与机器学习梯度下降讲解。</p>
+        <a href="/zh/tools/how-to-calculate-gradient" class="mt-auto btn btn-outline-primary btn-sm">打开</a>
       </div>
     </div>
   </div>

@@ -7,6 +7,7 @@ import type { SiteLang } from '../site/i18n';
 import { t, supportedLangs } from '../site/i18n';
 import { renderFooter } from './site/footer';
 import { renderHeader } from './site/header';
+import { buildToolPageNavItems } from './site/nav';
 import { renderLayout, type HreflangAlternate, escapeHtml } from './site/layout';
 import { renderSidebar, buildToolSidebarItems } from './site/sidebar';
 import { getToolBySlug } from '../site/tools';
@@ -39,11 +40,7 @@ export const renderImageCompressPage = (opts: {
 	const title = `${t(opts.lang, 'tool_image_compress_title')} | ${t(opts.lang, 'brand')}`;
 	const description = t(opts.lang, 'tool_image_compress_description');
 
-	const navItems = [
-		{ href: withLangPrefix(opts.lang, '/', opts.defaultLang), label: t(opts.lang, 'nav_home') },
-		{ href: withLangPrefix(opts.lang, '/#all-tools', opts.defaultLang), label: t(opts.lang, 'nav_tools') },
-		{ href: '/devlogs/', label: t(opts.lang, 'nav_devlogs') },
-	];
+	const navItems = buildToolPageNavItems(opts.lang, opts.defaultLang);
 
 	/** 语言切换链接始终带显式语言前缀（含默认语）。 */
 	const withExplicitLangPrefix = (code: SiteLang, pathname: string) => {
@@ -117,6 +114,38 @@ export const renderImageCompressPage = (opts: {
       <button type="button" id="icBtnDownload" class="btn btn-outline-primary btn-sm" disabled>${escapeHtml(t(opts.lang, 'tool_image_compress_download'))}</button>
       <button type="button" id="icBtnSample" class="btn btn-outline-secondary btn-sm">${escapeHtml(t(opts.lang, 'tool_image_compress_sample'))}</button>
       <button type="button" id="icBtnClear" class="btn btn-outline-secondary btn-sm">${escapeHtml(t(opts.lang, 'tool_image_compress_clear'))}</button>
+    </div>
+
+    <div class="d-flex align-items-center opt-group mb-2 flex-wrap">
+      <label class="form-label mb-0" for="icPreset">${escapeHtml(t(opts.lang, 'tool_image_compress_preset_label'))}</label>
+      <select id="icPreset" class="form-select form-select-sm" style="width:auto;max-width:18rem;">
+        <option value="">${escapeHtml(t(opts.lang, 'tool_image_compress_preset_custom'))}</option>
+        <optgroup label="${escapeHtml(t(opts.lang, 'tool_image_compress_preset_group_combo'))}">
+          <option value="combo:1920:0:80">${escapeHtml(t(opts.lang, 'tool_image_compress_preset_web_hd'))}</option>
+          <option value="combo:1280:200:80">${escapeHtml(t(opts.lang, 'tool_image_compress_preset_web_light'))}</option>
+          <option value="combo:1280:100:75">${escapeHtml(t(opts.lang, 'tool_image_compress_preset_email'))}</option>
+          <option value="combo:1080:150:80">${escapeHtml(t(opts.lang, 'tool_image_compress_preset_social'))}</option>
+          <option value="combo:1600:300:80">${escapeHtml(t(opts.lang, 'tool_image_compress_preset_form'))}</option>
+          <option value="combo:800:50:75">${escapeHtml(t(opts.lang, 'tool_image_compress_preset_thumb'))}</option>
+          <option value="combo:512:30:70">${escapeHtml(t(opts.lang, 'tool_image_compress_preset_tiny'))}</option>
+        </optgroup>
+        <optgroup label="${escapeHtml(t(opts.lang, 'tool_image_compress_preset_group_edge'))}">
+          <option value="edge:1920">1920 px</option>
+          <option value="edge:1280">1280 px</option>
+          <option value="edge:1200">1200 px</option>
+          <option value="edge:1080">1080 px</option>
+          <option value="edge:800">800 px</option>
+          <option value="edge:640">640 px</option>
+        </optgroup>
+        <optgroup label="${escapeHtml(t(opts.lang, 'tool_image_compress_preset_group_kb'))}">
+          <option value="kb:500">500 KB</option>
+          <option value="kb:200">200 KB</option>
+          <option value="kb:100">100 KB</option>
+          <option value="kb:50">50 KB</option>
+          <option value="kb:30">30 KB</option>
+        </optgroup>
+      </select>
+      <span class="small text-muted">${escapeHtml(t(opts.lang, 'tool_image_compress_preset_hint'))}</span>
     </div>
 
     <div class="d-flex align-items-center opt-group mb-2 flex-wrap">
@@ -226,6 +255,7 @@ export const renderImageCompressPage = (opts: {
       var drop = document.getElementById('icDrop');
       var fileInput = document.getElementById('icFile');
       var fileNameEl = document.getElementById('icFileName');
+      var presetEl = document.getElementById('icPreset');
       var outputSel = document.getElementById('icOutput');
       var resizeOn = document.getElementById('icResizeOn');
       var maxEdgeEl = document.getElementById('icMaxEdge');
@@ -656,6 +686,51 @@ export const renderImageCompressPage = (opts: {
         });
       }
 
+      /**
+       * 应用常用预设：写入最长边 / 目标 KB / 质量；有源图时自动再压缩。
+       * @param {string} val select value（edge:N | kb:N | combo:edge:kb:q）
+       */
+      function applyPreset(val) {
+        if (!val) return;
+        if (val.indexOf('edge:') === 0) {
+          var edge = Math.max(64, Math.min(SOFT_EDGE, Number(val.slice(5)) || 1920));
+          resizeOn.checked = true;
+          maxEdgeEl.value = String(edge);
+        } else if (val.indexOf('kb:') === 0) {
+          var kb = Math.max(10, Math.min(10240, Number(val.slice(3)) || 200));
+          targetOn.checked = true;
+          targetKbEl.value = String(kb);
+          /* 目标体积对 PNG 意义不大：若当前为 PNG 则改 WebP/JPEG */
+          if (outputSel.value === 'image/png') {
+            outputSel.value = encodeSupport['image/webp'] === false ? 'image/jpeg' : 'image/webp';
+          }
+        } else if (val.indexOf('combo:') === 0) {
+          var parts = val.split(':');
+          var e = Math.max(64, Math.min(SOFT_EDGE, Number(parts[1]) || 1920));
+          var tKb = Number(parts[2]) || 0;
+          var qPct = Math.max(50, Math.min(100, Number(parts[3]) || 80));
+          resizeOn.checked = true;
+          maxEdgeEl.value = String(e);
+          qualityEl.value = String(qPct);
+          if (tKb > 0) {
+            targetOn.checked = true;
+            targetKbEl.value = String(tKb);
+            if (outputSel.value === 'image/png') {
+              outputSel.value = encodeSupport['image/webp'] === false ? 'image/jpeg' : 'image/webp';
+            }
+          } else {
+            targetOn.checked = false;
+          }
+        }
+        syncOptionsUi();
+        if (sourceFile) compress();
+      }
+
+      /** 手动改参数时清空预设下拉，避免显示与实际不一致。 */
+      function clearPresetSelect() {
+        if (presetEl) presetEl.value = '';
+      }
+
       drop.addEventListener('dragover', function (e) {
         e.preventDefault(); drop.classList.add('dragover');
       });
@@ -669,10 +744,15 @@ export const renderImageCompressPage = (opts: {
         var f = fileInput.files && fileInput.files[0];
         if (f) loadFile(f);
       });
-      outputSel.addEventListener('change', syncOptionsUi);
-      qualityEl.addEventListener('input', syncOptionsUi);
-      resizeOn.addEventListener('change', syncOptionsUi);
-      targetOn.addEventListener('change', syncOptionsUi);
+      if (presetEl) {
+        presetEl.addEventListener('change', function () { applyPreset(presetEl.value); });
+      }
+      outputSel.addEventListener('change', function () { clearPresetSelect(); syncOptionsUi(); });
+      qualityEl.addEventListener('input', function () { clearPresetSelect(); syncOptionsUi(); });
+      resizeOn.addEventListener('change', function () { clearPresetSelect(); syncOptionsUi(); });
+      maxEdgeEl.addEventListener('input', clearPresetSelect);
+      targetOn.addEventListener('change', function () { clearPresetSelect(); syncOptionsUi(); });
+      targetKbEl.addEventListener('input', clearPresetSelect);
       btnCompress.addEventListener('click', function () { compress(); });
       btnDownload.addEventListener('click', download);
       btnSample.addEventListener('click', function () { loadSample(); });

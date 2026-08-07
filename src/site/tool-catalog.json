@@ -132,7 +132,8 @@
     "faqPrefix": "tool_image_format_converter",
     "related": [
       "image-exif",
-      "image-compress"
+      "image-compress",
+      "image-crop"
     ],
     "logo": "/icons/tools/image-format-converter.svg"
   },
@@ -164,9 +165,25 @@
     "faqPrefix": "tool_image_compress",
     "related": [
       "image-format-converter",
-      "image-exif"
+      "image-crop"
     ],
     "logo": "/icons/tools/image-compress.svg"
+  },
+  {
+    "slug": "image-crop",
+    "path": "/tools/image-crop",
+    "category": "image",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_image_crop_title",
+    "homeTitleKey": "tool_image_crop_title",
+    "homeDescKey": "tool_image_crop_desc",
+    "faqPrefix": "tool_image_crop",
+    "related": [
+      "image-compress",
+      "image-format-converter"
+    ],
+    "logo": "/icons/tools/image-crop.svg"
   },
   {
     "slug": "add-www-to-dns",

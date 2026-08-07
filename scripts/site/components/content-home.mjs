@@ -5,6 +5,11 @@
 import { t } from '../i18n.mjs';
 import { withExplicitLangPath } from '../config.mjs';
 import { TOOL_CATALOG, getToolsByCategory } from '../tool-catalog.mjs';
+import {
+  TOOL_CATEGORY_ORDER,
+  getCategoryAnchor,
+  CATEGORY_HOME_SECTION_KEYS,
+} from '../categories.mjs';
 
 /**
  * 解析工具 logo 路径。
@@ -72,9 +77,20 @@ const renderToolCard = (lang, tool, cta, renderer) =>
 export const renderHomeContent = ({ lang }) => {
   const openCta = t(lang, 'home_open');
   const featured = TOOL_CATALOG.filter((p) => p.featured !== false);
-  const calculators = getToolsByCategory('calculator');
-  const developers = getToolsByCategory('developer');
-  const imageTools = getToolsByCategory('image');
+
+  const categorySections = TOOL_CATEGORY_ORDER.map((category) => {
+    const meta = CATEGORY_HOME_SECTION_KEYS[category];
+    const tools = getToolsByCategory(category);
+    return `
+      <div class="home-cat" id="${getCategoryAnchor(category)}">
+        <span class="home-cat-label">${t(lang, meta.labelKey)}</span>
+        <h3>${t(lang, meta.descKey)}</h3>
+        <p class="home-cat-blurb">${t(lang, meta.blurbKey)}</p>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
+          ${tools.map((tool) => renderToolCard(lang, tool, openCta, renderSecondaryCard)).join('')}
+        </div>
+      </div>`;
+  }).join('');
 
   return `
     <div class="home-wrap">
@@ -120,32 +136,7 @@ export const renderHomeContent = ({ lang }) => {
         <h2>${t(lang, 'home_all_tools')}</h2>
       </div>
 
-      <div class="home-cat" id="cat-calculator">
-        <span class="home-cat-label">${t(lang, 'home_cat_calculator')}</span>
-        <h3>${t(lang, 'home_cat_calculator_desc')}</h3>
-        <p class="home-cat-blurb">${t(lang, 'home_cat_calculator_blurb')}</p>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
-          ${calculators.map((tool) => renderToolCard(lang, tool, openCta, renderSecondaryCard)).join('')}
-        </div>
-      </div>
-
-      <div class="home-cat" id="cat-dev">
-        <span class="home-cat-label">${t(lang, 'home_cat_dev')}</span>
-        <h3>${t(lang, 'home_cat_dev_desc')}</h3>
-        <p class="home-cat-blurb">${t(lang, 'home_cat_dev_blurb')}</p>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
-          ${developers.map((tool) => renderToolCard(lang, tool, openCta, renderSecondaryCard)).join('')}
-        </div>
-      </div>
-
-      <div class="home-cat" id="cat-image">
-        <span class="home-cat-label">${t(lang, 'home_cat_image')}</span>
-        <h3>${t(lang, 'home_cat_image_desc')}</h3>
-        <p class="home-cat-blurb">${t(lang, 'home_cat_image_blurb')}</p>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
-          ${imageTools.map((tool) => renderToolCard(lang, tool, openCta, renderSecondaryCard)).join('')}
-        </div>
-      </div>
+      ${categorySections}
     </section>
     </div>
     </div>

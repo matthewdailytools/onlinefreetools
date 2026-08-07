@@ -4,25 +4,21 @@
 import { t } from '../i18n.mjs';
 import { withExplicitLangPath, withLangPath } from '../config.mjs';
 import { renderHomeContent } from '../components.mjs';
+import { buildHomeNavItems } from '../nav.mjs';
+import { TOOL_CATEGORY_ORDER, getCategoryAnchor, getCategoryHomeLabelKey } from '../categories.mjs';
 
 /**
  * 生成指定语言的首页模型。
  * @param {string} lang
  */
 export const getHomePageModel = (lang) => {
-  const navItems = [
-    { href: '#featured', label: t(lang, 'nav_featured') },
-    { href: '#all-tools', label: t(lang, 'nav_all_tools') },
-    { href: withExplicitLangPath(lang, '/about'), label: t(lang, 'nav_about') },
-    { href: '/devlogs/', label: t(lang, 'nav_devlogs') },
-  ];
+  const navItems = buildHomeNavItems(lang, withExplicitLangPath(lang, '/about'));
 
   const sidebarTitle = t(lang, 'sidebar_categories');
-  const sidebarItems = [
-    { href: '#cat-calculator', label: t(lang, 'home_cat_calculator') },
-    { href: '#cat-dev', label: t(lang, 'home_cat_dev') },
-    { href: '#cat-image', label: t(lang, 'home_cat_image') },
-  ];
+  const sidebarItems = TOOL_CATEGORY_ORDER.map((category) => ({
+    href: `#${getCategoryAnchor(category)}`,
+    label: t(lang, getCategoryHomeLabelKey(category)),
+  }));
 
   const title = t(lang, 'home_title');
   const description = t(lang, 'home_description');

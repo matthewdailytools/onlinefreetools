@@ -102,7 +102,16 @@ var _hmt = _hmt || [];
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="topNav">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="#featured">Destacados</a></li><li class="nav-item"><a class="nav-link" href="#all-tools">Herramientas</a></li><li class="nav-item"><a class="nav-link" href="/es/about">Acerca de</a></li><li class="nav-item"><a class="nav-link" href="/devlogs/">Registros</a></li></ul>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="#featured">Destacados</a></li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Herramientas de imagen</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/es/tools/image-format-converter">Convertir imagen</a></li><li><a class="dropdown-item" href="/es/tools/image-exif">Ver y quitar EXIF de fotos</a></li><li><a class="dropdown-item" href="/es/tools/image-compress">Comprimir imagen</a></li><li><a class="dropdown-item" href="/es/tools/image-crop">Recortar y redimensionar</a></li></ul>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Desarrollador</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/es/tools/website-headers">Cabeceras HTTP online</a></li><li><a class="dropdown-item" href="/es/tools/ip-address">Cuál es mi IP — Ver tu IP pública</a></li><li><a class="dropdown-item" href="/es/tools/markdown-to-html">Markdown ↔ HTML</a></li><li><a class="dropdown-item" href="/es/tools/text-diff">Comparar textos online</a></li><li><a class="dropdown-item" href="/es/tools/yaml-json">YAML ↔ JSON</a></li><li><a class="dropdown-item" href="/es/tools/csv-json">CSV ↔ JSON</a></li><li><a class="dropdown-item" href="/es/tools/html-entity">Entidades HTML</a></li><li><a class="dropdown-item" href="/es/tools/add-www-to-dns">Añadir WWW al DNS</a></li><li><a class="dropdown-item" href="/es/tools/indexnow">IndexNow</a></li></ul>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Calculadoras</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/es/tools/how-to-calculate-bmi">Calculadora de IMC — Cómo calcular</a></li><li><a class="dropdown-item" href="/es/tools/how-to-calculate-roi">Calculadora de ROI — Cómo calcular el retorno de la inversión</a></li><li><a class="dropdown-item" href="/es/tools/how-to-calculate-marginal-revenue">Calculadora de ingreso marginal — Fórmula ΔIT / ΔQ</a></li><li><a class="dropdown-item" href="/es/tools/square-feet">Pies cuadrados a metros cuadrados — Para viviendas y reformas</a></li><li><a class="dropdown-item" href="/es/tools/how-to-calculate-percentage-change">Calculadora de cambio porcentual — De valor antiguo a nuevo</a></li><li><a class="dropdown-item" href="/es/tools/how-to-calculate-gradient">Calculadora de gradiente — ∇f multivariable (derivadas parciales)</a></li></ul>
+        </li><li class="nav-item"><a class="nav-link" href="#all-tools">Herramientas</a></li><li class="nav-item"><a class="nav-link" href="/es/about">Acerca de</a></li><li class="nav-item"><a class="nav-link" href="/devlogs/">Registros</a></li></ul>
           <div class="d-flex align-items-center gap-2">
             
     <div class="dropdown">
@@ -120,7 +129,7 @@ var _hmt = _hmt || [];
     
     <aside id="sidebar" class="border-end">
       <h2 class="sidebar-title h6">Categorías</h2>
-      <div class="list-group list-group-flush small" id="categoryList"><a class="list-group-item list-group-item-action" href="#cat-calculator">Calculadoras</a><a class="list-group-item list-group-item-action" href="#cat-dev">Desarrollador</a><a class="list-group-item list-group-item-action" href="#cat-image">Herramientas de imagen</a></div>
+      <div class="list-group list-group-flush small" id="categoryList"><a class="list-group-item list-group-item-action" href="#cat-image">Herramientas de imagen</a><a class="list-group-item list-group-item-action" href="#cat-dev">Desarrollador</a><a class="list-group-item list-group-item-action" href="#cat-calculator">Calculadoras</a></div>
     </aside>
     <main id="content" class="p-4">
     <div class="home-wrap">
@@ -282,6 +291,18 @@ var _hmt = _hmt || [];
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/image-crop.svg" width="36" height="36" alt="" decoding="async" />
+          <h3 class="card-title h5 mb-0">Recortar y redimensionar</h3>
+        </div>
+        <p class="card-text flex-grow-1">Recorte local con proporciones y tamaños habituales.</p>
+        <a href="/es/tools/image-crop" class="mt-auto btn btn-primary btn-sm">Abrir</a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/add-www-to-dns.svg" width="36" height="36" alt="" decoding="async" />
           <h3 class="card-title h5 mb-0">Añadir WWW al DNS</h3>
         </div>
@@ -382,21 +403,22 @@ var _hmt = _hmt || [];
         <h2>Todas las herramientas</h2>
       </div>
 
-      <div class="home-cat" id="cat-calculator">
-        <span class="home-cat-label">Calculadoras</span>
-        <h3>fórmulas, unidades, cómo calcular</h3>
-        <p class="home-cat-blurb">Calculadoras interactivas con fórmulas visibles y ejemplos.</p>
+      
+      <div class="home-cat" id="cat-image">
+        <span class="home-cat-label">Herramientas de imagen</span>
+        <h3>convertir, comprimir, preparar</h3>
+        <p class="home-cat-blurb">Utilidades de imagen en el navegador — sin subir archivos.</p>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
           
   <div class="col">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-bmi.svg" width="32" height="32" alt="" decoding="async" />
-          <h3 class="card-title h6 mb-0">Calculadora de IMC — Cómo calcular</h3>
+          <img class="tool-card-logo" src="/icons/tools/image-format-converter.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">Convertir imagen</h3>
         </div>
-        <p class="card-text small flex-grow-1">Calcula el IMC con la fórmula adulta: elige métrico o imperial, introduce peso y altura. Ejemplo 70 kg / 175 cm → 22,9. Solo cribado educativo.</p>
-        <a href="/es/tools/how-to-calculate-bmi" class="mt-auto btn btn-outline-primary btn-sm">Abrir</a>
+        <p class="card-text small flex-grow-1">Convierte PNG, JPEG, WebP y AVIF en local con calidad y comprobación MIME.</p>
+        <a href="/es/tools/image-format-converter" class="mt-auto btn btn-outline-primary btn-sm">Abrir</a>
       </div>
     </div>
   </div>
@@ -404,11 +426,11 @@ var _hmt = _hmt || [];
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-roi.svg" width="32" height="32" alt="" decoding="async" />
-          <h3 class="card-title h6 mb-0">Calculadora de ROI — Cómo calcular el retorno de la inversión</h3>
+          <img class="tool-card-logo" src="/icons/tools/image-exif.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">Ver y quitar EXIF de fotos</h3>
         </div>
-        <p class="card-text small flex-grow-1">ROI simple con coste y valor final (o ganancia). Ejemplo: 1000→1300 = 30%. Solo educativo, no consejo de inversión.</p>
-        <a href="/es/tools/how-to-calculate-roi" class="mt-auto btn btn-outline-primary btn-sm">Abrir</a>
+        <p class="card-text small flex-grow-1">Consulta GPS/cámara en fotos en local y descarga una copia limpia.</p>
+        <a href="/es/tools/image-exif" class="mt-auto btn btn-outline-primary btn-sm">Abrir</a>
       </div>
     </div>
   </div>
@@ -416,11 +438,11 @@ var _hmt = _hmt || [];
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-marginal-revenue.svg" width="32" height="32" alt="" decoding="async" />
-          <h3 class="card-title h6 mb-0">Calculadora de ingreso marginal — Fórmula ΔIT / ΔQ</h3>
+          <img class="tool-card-logo" src="/icons/tools/image-compress.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">Comprimir imagen</h3>
         </div>
-        <p class="card-text small flex-grow-1">Calcula MR = ΔIT / ΔQ con dos puntos de cantidad e ingreso. Ejemplo: Q 10→11, IT 1000→1080 → MR 80. Solo educativo.</p>
-        <a href="/es/tools/how-to-calculate-marginal-revenue" class="mt-auto btn btn-outline-primary btn-sm">Abrir</a>
+        <p class="card-text small flex-grow-1">Reduce tamaño con lado máximo, calidad y KB objetivo en local.</p>
+        <a href="/es/tools/image-compress" class="mt-auto btn btn-outline-primary btn-sm">Abrir</a>
       </div>
     </div>
   </div>
@@ -428,41 +450,16 @@ var _hmt = _hmt || [];
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/square-feet.svg" width="32" height="32" alt="" decoding="async" />
-          <h3 class="card-title h6 mb-0">Pies cuadrados a metros cuadrados — Para viviendas y reformas</h3>
+          <img class="tool-card-logo" src="/icons/tools/image-crop.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">Recortar y redimensionar</h3>
         </div>
-        <p class="card-text small flex-grow-1">Convierte el área de una habitación entre pies cuadrados y metros cuadrados para anuncios y reformas. Proceso: elige ft/m/in, introduce largo × ancho, calcula el área y muestra ft² y m² con el factor NIST 1 ft² = 0.09290304 m². Ejemplo: piso de 850 sq ft ≈ 78,97 m².</p>
-        <a href="/es/tools/square-feet" class="mt-auto btn btn-outline-primary btn-sm">Abrir</a>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card tool-entry-card h-100 d-flex flex-column">
-      <div class="card-body d-flex flex-column">
-        <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-percentage-change.svg" width="32" height="32" alt="" decoding="async" />
-          <h3 class="card-title h6 mb-0">Calculadora de cambio porcentual — De valor antiguo a nuevo</h3>
-        </div>
-        <p class="card-text small flex-grow-1">Calcula el aumento o la bajada porcentual entre un valor antiguo y uno nuevo. Proceso: introduce ambos, aplica (nuevo − antiguo) / antiguo × 100 y lee el signo. Ejemplo: 80 → 100 = +25%. Pensado para ingresos MoM, DAU y precios — no son puntos porcentuales.</p>
-        <a href="/es/tools/how-to-calculate-percentage-change" class="mt-auto btn btn-outline-primary btn-sm">Abrir</a>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card tool-entry-card h-100 d-flex flex-column">
-      <div class="card-body d-flex flex-column">
-        <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-gradient.svg" width="32" height="32" alt="" decoding="async" />
-          <h3 class="card-title h6 mb-0">Calculadora de gradiente — ∇f multivariable (derivadas parciales)</h3>
-        </div>
-        <p class="card-text small flex-grow-1">Calcula el gradiente ∇f de un campo escalar como vector de derivadas parciales. Proceso: deriva respecto a cada variable, forma ∇f y evalúa en un punto. Demo f(x,y)=x²y+3y → ∇f=(2xy, x²+3); en (1,2) → (4,4). Útil en optimización y descenso por gradiente en ML.</p>
-        <a href="/es/tools/how-to-calculate-gradient" class="mt-auto btn btn-outline-primary btn-sm">Abrir</a>
+        <p class="card-text small flex-grow-1">Recorte local con proporciones y tamaños habituales.</p>
+        <a href="/es/tools/image-crop" class="mt-auto btn btn-outline-primary btn-sm">Abrir</a>
       </div>
     </div>
   </div>
         </div>
       </div>
-
       <div class="home-cat" id="cat-dev">
         <span class="home-cat-label">Desarrollador</span>
         <h3>depurar, generar, validar</h3>
@@ -579,22 +576,21 @@ var _hmt = _hmt || [];
   </div>
         </div>
       </div>
-
-      <div class="home-cat" id="cat-image">
-        <span class="home-cat-label">Herramientas de imagen</span>
-        <h3>convertir, comprimir, preparar</h3>
-        <p class="home-cat-blurb">Utilidades de imagen en el navegador — sin subir archivos.</p>
+      <div class="home-cat" id="cat-calculator">
+        <span class="home-cat-label">Calculadoras</span>
+        <h3>fórmulas, unidades, cómo calcular</h3>
+        <p class="home-cat-blurb">Calculadoras interactivas con fórmulas visibles y ejemplos.</p>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
           
   <div class="col">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/image-format-converter.svg" width="32" height="32" alt="" decoding="async" />
-          <h3 class="card-title h6 mb-0">Convertir imagen</h3>
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-bmi.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">Calculadora de IMC — Cómo calcular</h3>
         </div>
-        <p class="card-text small flex-grow-1">Convierte PNG, JPEG, WebP y AVIF en local con calidad y comprobación MIME.</p>
-        <a href="/es/tools/image-format-converter" class="mt-auto btn btn-outline-primary btn-sm">Abrir</a>
+        <p class="card-text small flex-grow-1">Calcula el IMC con la fórmula adulta: elige métrico o imperial, introduce peso y altura. Ejemplo 70 kg / 175 cm → 22,9. Solo cribado educativo.</p>
+        <a href="/es/tools/how-to-calculate-bmi" class="mt-auto btn btn-outline-primary btn-sm">Abrir</a>
       </div>
     </div>
   </div>
@@ -602,11 +598,11 @@ var _hmt = _hmt || [];
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/image-exif.svg" width="32" height="32" alt="" decoding="async" />
-          <h3 class="card-title h6 mb-0">Ver y quitar EXIF de fotos</h3>
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-roi.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">Calculadora de ROI — Cómo calcular el retorno de la inversión</h3>
         </div>
-        <p class="card-text small flex-grow-1">Consulta GPS/cámara en fotos en local y descarga una copia limpia.</p>
-        <a href="/es/tools/image-exif" class="mt-auto btn btn-outline-primary btn-sm">Abrir</a>
+        <p class="card-text small flex-grow-1">ROI simple con coste y valor final (o ganancia). Ejemplo: 1000→1300 = 30%. Solo educativo, no consejo de inversión.</p>
+        <a href="/es/tools/how-to-calculate-roi" class="mt-auto btn btn-outline-primary btn-sm">Abrir</a>
       </div>
     </div>
   </div>
@@ -614,11 +610,47 @@ var _hmt = _hmt || [];
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/image-compress.svg" width="32" height="32" alt="" decoding="async" />
-          <h3 class="card-title h6 mb-0">Comprimir imagen</h3>
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-marginal-revenue.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">Calculadora de ingreso marginal — Fórmula ΔIT / ΔQ</h3>
         </div>
-        <p class="card-text small flex-grow-1">Reduce tamaño con lado máximo, calidad y KB objetivo en local.</p>
-        <a href="/es/tools/image-compress" class="mt-auto btn btn-outline-primary btn-sm">Abrir</a>
+        <p class="card-text small flex-grow-1">Calcula MR = ΔIT / ΔQ con dos puntos de cantidad e ingreso. Ejemplo: Q 10→11, IT 1000→1080 → MR 80. Solo educativo.</p>
+        <a href="/es/tools/how-to-calculate-marginal-revenue" class="mt-auto btn btn-outline-primary btn-sm">Abrir</a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/square-feet.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">Pies cuadrados a metros cuadrados — Para viviendas y reformas</h3>
+        </div>
+        <p class="card-text small flex-grow-1">Convierte el área de una habitación entre pies cuadrados y metros cuadrados para anuncios y reformas. Proceso: elige ft/m/in, introduce largo × ancho, calcula el área y muestra ft² y m² con el factor NIST 1 ft² = 0.09290304 m². Ejemplo: piso de 850 sq ft ≈ 78,97 m².</p>
+        <a href="/es/tools/square-feet" class="mt-auto btn btn-outline-primary btn-sm">Abrir</a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-percentage-change.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">Calculadora de cambio porcentual — De valor antiguo a nuevo</h3>
+        </div>
+        <p class="card-text small flex-grow-1">Calcula el aumento o la bajada porcentual entre un valor antiguo y uno nuevo. Proceso: introduce ambos, aplica (nuevo − antiguo) / antiguo × 100 y lee el signo. Ejemplo: 80 → 100 = +25%. Pensado para ingresos MoM, DAU y precios — no son puntos porcentuales.</p>
+        <a href="/es/tools/how-to-calculate-percentage-change" class="mt-auto btn btn-outline-primary btn-sm">Abrir</a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-gradient.svg" width="32" height="32" alt="" decoding="async" />
+          <h3 class="card-title h6 mb-0">Calculadora de gradiente — ∇f multivariable (derivadas parciales)</h3>
+        </div>
+        <p class="card-text small flex-grow-1">Calcula el gradiente ∇f de un campo escalar como vector de derivadas parciales. Proceso: deriva respecto a cada variable, forma ∇f y evalúa en un punto. Demo f(x,y)=x²y+3y → ∇f=(2xy, x²+3); en (1,2) → (4,4). Útil en optimización y descenso por gradiente en ML.</p>
+        <a href="/es/tools/how-to-calculate-gradient" class="mt-auto btn btn-outline-primary btn-sm">Abrir</a>
       </div>
     </div>
   </div>

@@ -1,9 +1,34 @@
 import type { SiteLang } from '../../site/i18n';
 import { getLangLabel, t } from '../../site/i18n';
 import { escapeHtml } from './layout';
+import type { NavItem } from './nav';
 
-type NavItem = { href: string; label: string };
+/**
+ * 将顶栏导航项渲染为 Bootstrap navbar HTML（支持分类下拉）。
+ * @param items 链接或下拉菜单项
+ */
+const renderNavItems = (items: NavItem[]): string =>
+	items
+		.map((item) => {
+			if (item.type === 'dropdown') {
+				const menu = item.items
+					.map(
+						(sub) =>
+							`<li><a class="dropdown-item" href="${escapeHtml(sub.href)}">${escapeHtml(sub.label)}</a></li>`
+					)
+					.join('');
+				return `<li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">${escapeHtml(item.label)}</a>
+          <ul class="dropdown-menu">${menu}</ul>
+        </li>`;
+			}
+			return `<li class="nav-item"><a class="nav-link" href="${escapeHtml(item.href)}">${escapeHtml(item.label)}</a></li>`;
+		})
+		.join('');
 
+/**
+ * 渲染全站顶栏（品牌、导航、语言切换、可选侧栏开关）。
+ */
 export const renderHeader = (opts: {
 	lang: SiteLang;
 	brandHref: string;
@@ -12,9 +37,7 @@ export const renderHeader = (opts: {
 	langAlternates: Record<string, string>;
 	showSidebarToggle?: boolean;
 }) => {
-	const navHtml = (opts.navItems || [])
-		.map((i) => `<li class="nav-item"><a class="nav-link" href="${escapeHtml(i.href)}">${escapeHtml(i.label)}</a></li>`)
-		.join('');
+	const navHtml = renderNavItems(opts.navItems || []);
 
 	const enabled = (opts.enabledLangs || []).length ? opts.enabledLangs : ([opts.lang] as SiteLang[]);
 	const showLangSwitcher = enabled.length > 1;

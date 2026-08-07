@@ -1,6 +1,6 @@
 # 工具方向 — 三个并列开发方向
 
-**日期**: 2026-07-28（修订：三方向并列；补充「单输入→多规格交付」针对性工具挖掘）  
+**日期**: 2026-07-28（修订：三方向并列；补充「单输入→多规格交付」针对性工具挖掘；**2026-08-07** 补充 [Merge Images](https://mergeimages.co/) 竞品图片能力对照与 N→1 合成场景）  
 **标签**: `产品规划`, `工具方向`, `浏览器JS`, `场景桥接`, `行业工具`, `多规格交付`  
 **目标站点**: https://onlinefreetools.org
 
@@ -115,12 +115,49 @@
 | 高级编解码 | `@squoosh/lib` WASM | Tier 2，体积大 |
 | EXIF 读/清 | `exifr` | 隐私场景强 |
 | 主色提取 | `colorthief` | 设计引流 |
+| **多图拼接（N→1）** | Canvas 计算总画布 + 逐张 `drawImage` | 横排 / 竖排 / 网格；间距、背景色、对齐 |
+| **图层叠加** | Canvas + `globalAlpha` / `globalCompositeOperation` | 底图 + 叠图；透明度、混合模式、拖拽定位（UI 可选 Tier 1） |
+| **翻转 / 镜像** | Canvas `scale(-1,1)` 或 `scale(1,-1)` | Tier 0，无损变换 |
+| **灰度** | Canvas `getImageData` 加权灰度，或导出前 `filter: grayscale(100%)` | Tier 0 |
+| **描边 / 边框** | Canvas 扩边后 `strokeRect` / 外描边 | Tier 0 |
+| **文字 / 图片水印** | Canvas `fillText` / 叠 PNG Logo | 字号、颜色、透明度、旋转、九宫格位置 |
+| **多图 → PDF** | `pdf-lib` 嵌入 JPEG/PNG 页 | 见 A.5；与「拼接成一张图」不同 |
 
-**推荐架构**：图片 → Canvas 直接处理 ✅（零依赖）；大图用 OffscreenCanvas + Worker。
+**推荐架构**：图片 → Canvas 直接处理 ✅（零依赖）；大图用 OffscreenCanvas + Worker；**N→1 合成**优先单页多模式（横/竖/网格），勿拆 `merge-horizontal` / `merge-vertical` 等近义薄页。
 
-**可落地工具**：图片压缩、格式互转、尺寸裁剪、EXIF 清除、图片↔Base64、水印。
+**可落地工具（单图）**：图片压缩、格式互转、尺寸裁剪、EXIF 清除、图片↔Base64、翻转、灰度、边框、文字水印。
+
+**可落地工具（多图 / 跨品类）**：多图合并（`image-merge`）、图层叠加（`image-overlay`）、多图转 PDF（`images-to-pdf`，主挂 A.5 / B13）。
 
 **结论**：技术无阻塞；方向 A 可排期。是否与方向 B/C 结合由产品另选，**不强制**。
+
+#### A.2.1 竞品对照 — [Merge Images](https://mergeimages.co/)（2026-08 快照）
+
+> 该站以 **浏览器本地处理**、**免费无水印** 为主卖点；工具链偏 **N→1 合成 / 图层 / 导出**，与本文 B.9 等 **1→N 平台尺寸包** 形成互补（方向相反，勿混为一页）。
+
+| Merge Images 功能 | 用户任务摘要 | 本站文档原覆盖 | 建议归属 | 建议 slug / 备注 |
+|---|---|---|---|---|
+| [Merge Images](https://mergeimages.co/) | 2+ 图横/竖/网格拼成 **一张**；可调间距与背景 | ❌ 未列 | A + **B13** | `image-merge`；单页三布局 + Rules 表 |
+| [Overlay Images](https://mergeimages.co/overlay-images) | 底图 + 叠图；透明度、混合、拖拽/缩放/旋转 | ⚠️ 仅泛提「水印」 | A | `image-overlay`；与水印页互链 |
+| [Image to PDF](https://mergeimages.co/image-to-pdf) | 多图各成 PDF 一页；页面方向与 fit | ⚠️ A.5 有 PDF↔图，未写多图工作流 | A.5 + B13 | `images-to-pdf` |
+| [Instagram Post Maker](https://mergeimages.co/instagram-post-maker) | 多图拼贴 → **1080×1080** 方图 | ❌ B9 为 1→N 封面，非 N→1 拼贴 | **B13** | `instagram-post-collage` 或 `image-merge` 内预设 |
+| [Facebook Post Maker](https://mergeimages.co/facebook-post-maker) | 多图拼贴 → **1200×630** 横图 | ❌ 同上 | **B13** | `facebook-post-collage` 或预设 |
+| [Add Watermark](https://mergeimages.co/add-watermark) | 文字水印：字号/颜色/透明度/旋转/位置 | ✅ A.2 已列「水印」 | A | `add-watermark`（与 overlay 分工：单图文字 vs 双图层） |
+| [Flip Image](https://mergeimages.co/flip-image) | 水平 / 垂直镜像 | ❌ 未列 | A | `flip-image`；P2，可并入裁剪页「变换」区或独立 |
+| Add Border / Grayscale / PNG→SVG / Color Picker | 站脚有入口，部分 URL 404 或弱实现 | 灰度/边框可 Canvas；PNG→SVG 需矢量化策略 | A | 灰度/边框 P2；**PNG→SVG 默认不做**（易薄页 + 真矢量化需专用库） |
+| AI Image Combiner（互推） | 「智能」多图合成 | — | **不做** | 无本地可验证规则则违反 people-first / 须声明误差 |
+
+**可借鉴（对齐本站红线）**：
+
+- 本地处理声明、拖拽上传、Before/After 与教程竖拼等 **Use cases 叙事**  
+- 平台发帖器绑定 **具名尺寸 + 官方引用**（Instagram 1080×1080、Facebook 1200×630）——写法同 B.9，但模式是 **N→1**  
+- Focus Mode / 预览区等信息架构
+
+**应避免**：
+
+- 为每个布局方向单独开 slug（doorway）  
+- 「AI Combiner」类无法写清规则的黑盒页  
+- 与 `social-share-image-pack`（1→N）混标题或互抢 intent
 
 ---
 
@@ -463,6 +500,33 @@
 | 1 张人像 | 分国家证件照像素预设 → **必须免责「非正式受理」** |
 | 1 张设计稿 | 名片/传单常见 bleed（教育向） |
 
+#### 场景 B13：多图合成与平台拼贴 — **N→1**（对照 [Merge Images](https://mergeimages.co/)）
+
+| 项 | 内容 |
+|---|---|
+| **岗位** | 社媒运营、电商美工、教程作者、健身/装修 Before-After 博主 |
+| **触发点** | 要把 2+ 张图合成一张再发帖/上架；或导出多页 PDF 归档 |
+| **痛点** | 竞品常强制上传；布局（间距/背景/网格列数）讲不清；与「单图改尺寸」工具混淆 |
+| **替代方案** | Canva、Photoshop、Merge Images 类在线站、手机拼图 App |
+| **与 B9 区别** | **B9**：1 张主视觉 → 多平台封面尺寸（1→N）；**B13**：多张源图 → **1 张**成品（N→1）或 **1 份 PDF** |
+
+**工具设想**（首发宜合并，平台预设作可选 Tab，不拆薄页）：
+
+| 输入 | 输出（N→1） | 规范 / 规则要点（页内可见） |
+|---|---|---|
+| 2+ 张 JPG/PNG/WebP/GIF | 横排 / 竖排 / 网格单图 | 间距 px、背景色、对齐、输出格式与质量；GIF 动图默认静帧或拒收须 FAQ |
+| 同上 + 选「Instagram 发帖」 | 1080×1080 PNG/JPEG | Meta/Instagram 现行推荐尺寸引用 + 更新日期 |
+| 同上 + 选「Facebook 发帖」 | 1200×630 | Facebook 分享图推荐比例引用 |
+| 2 张（底 + 叠） | 带透明通道的合成图 | 透明度、混合模式、叠图 bbox；链 `add-watermark` |
+| 多图序列 | 多页 PDF | 页面尺寸（竖/横/方）、每页 fit（contain/cover）；链 A.5 |
+
+**Use cases（页内必写）**：Before/After 对比、教程步骤竖拼、电商多角度拼图、社媒九宫格故事板。
+
+**技术**：Canvas ✅✅✅；PDF 用 `pdf-lib`；大图批处理可 Worker。
+
+**建议 slug**：`image-merge`（主入口）；平台预设内置；`image-overlay`、`images-to-pdf` 可 Related 互链。  
+**边界**：不做 AI「智能合成」；PNG→SVG 非本场景默认范围。
+
 ### B.3 「单输入 → 多规格交付」挖掘清单
 
 > **原则**：不做「通用图片压缩器换皮」。每一页绑定**具名平台 + 可见规格表 + 官方引用 + ZIP 目录说明**。
@@ -500,6 +564,20 @@
 | PDF 页 → 多尺寸图 | `pdf-page-to-image-sizes` | 1 页 PDF | 再套平台尺寸 | pdf.js + Canvas | P2 |
 | 产品表 → 多平台 feed | `product-feed-template-pack` | 1 份 CSV | Amazon/Google Merchant 列映射（1→N 文件） | papaparse | P1 |
 | 一文案 → 多 Meta 检测 | `meta-copy-length-pack` | 1 段文案 | 多引擎标题/描述长度套装 | Tier 0 | P1 |
+
+#### N→1 合成与导出（对照 Merge Images；与上表 1→N **方向相反**）
+
+| 渠道 / 场景 | 建议 slug | 输入 | 输出摘要 | 技术 | 优先级 |
+|---|---|---|---|---|---|
+| 通用多图合并 | `image-merge` | 2+ 张图 | 横/竖/网格 + 间距/背景 | Canvas | **P1** |
+| Instagram 发帖拼贴 | （`image-merge` 预设） | 2+ 张图 | 1080×1080 方图 | Canvas | P1 |
+| Facebook 发帖拼贴 | （`image-merge` 预设） | 2+ 张图 | 1200×630 横图 | Canvas | P1 |
+| 图层叠加 | `image-overlay` | 底图 + 叠图 | 透明度/位置/混合 | Canvas | P2 |
+| 多图转 PDF | `images-to-pdf` | 多图 | 多页 PDF + 页面 fit | pdf-lib | P1 |
+| 文字水印 | `add-watermark` | 1 图 + 文本 | 水印图 | Canvas | P1 |
+| 翻转镜像 | `flip-image` | 1 张图 | 水平/垂直 | Canvas | P2 |
+
+> **立项注意**：N→1 页须写清布局公式（画布宽高、间距、单元格尺寸）；平台预设须 References；**禁止**与 B.9 `social-share-image-pack` 共用同一 H1 intent。
 
 #### 非图片类同构（同样 1→N）
 
@@ -551,11 +629,16 @@ H1 具名渠道 + 动作（如 Amazon Product Image Resizer）
 | `product-feed-template-pack` | B4 | 1→N | Tier 1 | P1 |
 | `ocr-to-text` | B2 | 1→1 | Tier 2 | P1（POC 后） |
 | HTML↔Markdown 增强 | B5 | 1→1 | Tier 1 | P1 |
+| `image-merge` | B13 | **N→1** | Tier 0/1 | P1 |
+| `images-to-pdf` | B13 | **N→1** | Tier 1 | P1 |
+| `add-watermark` | B13 / A.2 | 1→1 | Tier 0 | P1 |
+| `image-overlay` | B13 | N→1 | Tier 0/1 | P2 |
+| `flip-image` | A.2 | 1→1 | Tier 0 | P2 |
 | 其余 B.3 表 P2 项 | B8–B12 等 | 1→N | 见上 | P2 |
 
 ### B.6 方向 B 独立验收
 
-1. 能指出归属的 **主场景编号**（B1–B12）或 B.3 渠道行。  
+1. 能指出归属的 **主场景编号**（B1–B13）或 B.3 渠道行。  
 2. 页面有 **字段映射或规格对照表**（不只输入框）。  
 3. 文件/粘贴类有 **本地处理** 说明。  
 4. **1→N** 必须有：权威 References、规格更新日期、ZIP 或清晰多文件下载、Example 清单。  
@@ -761,17 +844,18 @@ H1 具名渠道 + 动作（如 Amazon Product Image Resizer）
 
 ## 本站现状与分方向优先级
 
-### 已上线（9）
+### 已上线与图片集群（catalog 为准，随发布更新）
 
 | 分类 | 工具 | 更贴近 |
 |---|---|---|
-| Headers / IP / Markdown→HTML | 开发者三件 | A + 可增强为 C-V1 / B5 |
-| BMI / ROI / 边际收益 | 计算 | C-V5 / C-V4 |
-| Square Feet / Percentage / Gradient | 计算 | 可增强为 C 场景叙事，或保持 A |
+| Headers / IP / Markdown→HTML / Diff / YAML / CSV / HTML 实体 / DNS / IndexNow | 开发者与数据交换 | A + B5 |
+| **图片** | `image-format-converter`、`image-exif`、`image-compress`、`image-crop` | **A.2**（单图管线；见 A.2.1 待补 N→1） |
+| BMI / ROI / 边际收益 / Square Feet / Percentage / Gradient | 计算 | C-V5 / C-V4 / A |
 
 ### 方向 A 建议优先（技术成熟、独立可上）
 
-文本互转增强、图片压缩、哈希/Base64、PDF 合并、时间戳、颜色/对比度 — 按 A.13 成熟度表排，**不必**先写场景链。
+文本互转增强、**图片单图管线（已部分上线）**、哈希/Base64、PDF 合并、时间戳、颜色/对比度 — 按 A.13 成熟度表排，**不必**先写场景链。  
+**图片下一批（A.2 / A.2.1）**：`add-watermark` → `image-merge`（含 IG/FB 预设）→ `images-to-pdf`；`flip-image` / `image-overlay` 为 P2。
 
 ### 方向 B 建议优先（场景桥 + 1→N）
 
@@ -842,7 +926,19 @@ npm run lint:seo && npm run build:site
 | calculator.net | 公式深度 | 盲目铺量 |
 | TinyWow | 任务闭环 | 强制上传与付费墙 |
 | SmallSEOTools | 分类导航 | 薄内容与广告堆叠 |
+| **[Merge Images](https://mergeimages.co/)** | 浏览器本地 N→1 合成；横/竖/网格 + 间距背景；平台发帖预设（IG 1080²、FB 1200×630）；Overlay/水印/Flip/PDF 工具链互推；Before-After 等 use cases | 按布局拆多 slug；AI Combiner 黑盒；站脚链到 404 的薄工具（PNG→SVG 等）；与 1→N 封面工具混 intent |
+
+**Merge Images vs 本站图片规划（速查）**：
+
+| 维度 | Merge Images | 本站（本文） |
+|---|---|---|
+| 单图：压缩/格式/裁剪/EXIF | 弱或分散 | **A.2 已上线/在研**（四件套） |
+| 多图 → 一张 | **核心** | **A.2.1 / B13 新增**（`image-merge`） |
+| 单图 → 多平台尺寸 | 弱 | **B.3 1→N**（Amazon / App Store / OG…） |
+| 多图 → PDF | 有 | `images-to-pdf`（P1） |
+| 图层 / 水印 | 有 | `image-overlay` / `add-watermark` |
+| 本地处理叙事 | 强 | 对齐本站隐私默认 |
 
 ---
 
-*维护：方向 A 改成熟度/包结论时同步包调研或音视频文档；方向 B 增场景卡；方向 C 增垂直调研。产品主方向字段只改本文与 tool-catalog。*
+*维护：方向 A 改成熟度/包结论时同步包调研或音视频文档；方向 B 增场景卡（含 B13 N→1）；方向 C 增垂直调研；竞品快照见 A.2.1 / 附录。产品主方向字段只改本文与 tool-catalog。*
