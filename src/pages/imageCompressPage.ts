@@ -1,7 +1,7 @@
 /**
- * 图片压缩工具页：最长边缩放 + 质量 + 可选目标体积（Canvas toBlob 迭代）。
- * slug: image-compress；不拆 compress-jpg / reduce-image-size 等近义 URL。
- * 见 work-tasks/image-compress/02-tool-info.md。
+ * ????????????? + ?? + ???????Canvas toBlob ?????
+ * slug: image-compress????compress-jpg / reduce-image-size ????URL??
+ * ??work-tasks/image-compress/02-tool-info.md??
  */
 import type { SiteLang } from '../site/i18n';
 import { t, supportedLangs } from '../site/i18n';
@@ -18,17 +18,17 @@ import {
 	buildToolJsonLd,
 } from './site/toolContent';
 
-/** 为路径加上语言前缀（默认语无前缀）。 */
+/** ???????????????????*/
 const withLangPrefix = (lang: SiteLang, pathname: string, defaultLang: SiteLang) => {
 	const safe = pathname.startsWith('/') ? pathname : `/${pathname}`;
 	return lang === defaultLang ? safe : `/${lang}${safe}`;
 };
 
 /**
- * 渲染图片压缩工具页。
- * @param opts.lang 当前语言
- * @param opts.defaultLang 站点默认语言
- * @param opts.enabledLangs 启用语言列表（语言切换器用全量 supportedLangs）
+ * ???????????
+ * @param opts.lang ????
+ * @param opts.defaultLang ??????
+ * @param opts.enabledLangs ??????????????? supportedLangs??
  */
 export const renderImageCompressPage = (opts: {
 	lang: SiteLang;
@@ -42,7 +42,7 @@ export const renderImageCompressPage = (opts: {
 
 	const navItems = buildToolPageNavItems(opts.lang, opts.defaultLang);
 
-	/** 语言切换链接始终带显式语言前缀（含默认语）。 */
+	/** ???????????????????????*/
 	const withExplicitLangPrefix = (code: SiteLang, pathname: string) => {
 		const safe = pathname.startsWith('/') ? pathname : `/${pathname}`;
 		return `/${code}${safe}`.replace(/\/{2,}/g, '/');
@@ -78,17 +78,11 @@ export const renderImageCompressPage = (opts: {
 
 	const footerHtml = renderFooter({ lang: opts.lang });
 
-	/** 页内样式：拖放区、预览、目标体积与 JPEG 底色行。 */
+	/** ????????????????? JPEG ?????*/
 	const extraHeadHtml = `
   <style>
     .tools-bar { gap: .5rem; }
     .opt-group { gap: .75rem; align-items: center; }
-    .ic-drop {
-      border: 2px dashed #adb5bd; border-radius: .5rem; padding: 1.25rem; text-align: center;
-      background: #f8f9fa; cursor: pointer; transition: border-color .15s, background .15s;
-    }
-    .ic-drop.dragover { border-color: #0a6ebd; background: #e7f1f8; }
-    .ic-drop input[type=file] { display: none; }
     #icPreviewIn, #icPreviewOut {
       max-width: 100%; max-height: 280px; object-fit: contain; background:
         linear-gradient(45deg, #eee 25%, transparent 25%),
@@ -104,10 +98,16 @@ export const renderImageCompressPage = (opts: {
   </style>`;
 
 	const contentHtml = `
-    <div id="compressor" class="mb-3">
-      <h1 class="h4 mb-1">${escapeHtml(t(opts.lang, 'tool_image_compress_title'))}</h1>
-      <p class="text-muted mb-0">${escapeHtml(description)}</p>
+    <div id="compressor" class="tool-page-heading mb-3">
+      <h1 class="h4 mb-0">${escapeHtml(t(opts.lang, 'tool_image_compress_title'))}</h1>
     </div>
+
+    <label class="tool-dropzone ic-drop mb-3" id="icDrop" for="icFile">
+      <input type="file" id="icFile" accept="image/png,image/jpeg,image/webp,image/gif,image/bmp,image/*">
+      <span class="tool-dropzone-title">${escapeHtml(t(opts.lang, 'tool_image_compress_choose_file'))}</span>
+      <span class="tool-dropzone-hint">${escapeHtml(t(opts.lang, 'tool_image_compress_drop_hint'))}</span>
+      <span id="icFileName" class="tool-dropzone-file"></span>
+    </label>
 
     <div class="d-flex align-items-center tools-bar mb-2 flex-wrap">
       <button type="button" id="icBtnCompress" class="btn btn-primary btn-sm">${escapeHtml(t(opts.lang, 'tool_image_compress_compress'))}</button>
@@ -196,13 +196,6 @@ export const renderImageCompressPage = (opts: {
       <input type="color" id="icBgColor" value="#ffffff" title="${escapeHtml(t(opts.lang, 'tool_image_compress_jpeg_bg_custom'))}" style="width:2.25rem;height:1.75rem;padding:0;border:1px solid #ced4da;">
     </div>
 
-    <label class="ic-drop d-block mb-3" id="icDrop" for="icFile">
-      <input type="file" id="icFile" accept="image/png,image/jpeg,image/webp,image/gif,image/bmp,image/*">
-      <strong>${escapeHtml(t(opts.lang, 'tool_image_compress_choose_file'))}</strong>
-      <div class="small text-muted mt-1">${escapeHtml(t(opts.lang, 'tool_image_compress_drop_hint'))}</div>
-      <div id="icFileName" class="small mt-2 mb-0"></div>
-    </label>
-
     <p id="icWarn" class="small text-warning mb-2" style="display:none;" role="status"></p>
     <p id="icError" class="small text-danger mb-2" style="display:none;" role="alert"></p>
     <p id="icStatus" class="small text-muted mb-2" role="status"></p>
@@ -219,7 +212,9 @@ export const renderImageCompressPage = (opts: {
         <p id="icStatsOut" class="small text-muted mt-2 mb-0"></p>
         <p id="icRatio" class="small fw-semibold mt-1 mb-0"></p>
       </div>
-    </div>`;
+    </div>
+
+    <p class="tool-lead mb-4">${escapeHtml(description)}</p>`;
 
 	const igHtml = renderToolIgSections({
 		lang: opts.lang,
@@ -232,24 +227,24 @@ export const renderImageCompressPage = (opts: {
 	const referencesHtml = renderToolReferencesSection({
 		lang: opts.lang,
 		links: [
-			{ label: 'MDN — HTMLCanvasElement.toBlob()', href: 'https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob' },
-			{ label: 'WebP — Google Developers', href: 'https://developers.google.com/speed/webp' },
-			{ label: 'MDN — HTMLCanvasElement.toDataURL()', href: 'https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toDataURL' },
+			{ label: 'MDN ??HTMLCanvasElement.toBlob()', href: 'https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob' },
+			{ label: 'WebP ??Google Developers', href: 'https://developers.google.com/speed/webp' },
+			{ label: 'MDN ??HTMLCanvasElement.toDataURL()', href: 'https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toDataURL' },
 		],
 	});
 
 	/**
-	 * 客户端逻辑：解码 → 可选等比缩小 → Canvas toBlob；可选质量二分逼近目标 KB。
-	 * 全部在浏览器内完成，不上传文件。
+	 * ????????????????????Canvas toBlob??????????? KB??
+	 * ?????????????????
 	 */
 	const extraBodyHtml = `
   <script>
     (function () {
-      /** 单文件软上限（字节） */
+      /** ?????????? */
       var SOFT_BYTES = 25 * 1024 * 1024;
-      /** 单边像素软上限 */
+      /** ????????*/
       var SOFT_EDGE = 8192;
-      /** 目标体积迭代时质量下限 */
+      /** ????????????*/
       var QUALITY_FLOOR = 0.5;
 
       var drop = document.getElementById('icDrop');
@@ -327,7 +322,7 @@ export const renderImageCompressPage = (opts: {
 
       function formatStats(mime, w, h, bytes) {
         return msg.statsTpl
-          .replace('{mime}', mime || '—')
+          .replace('{mime}', mime || '??)
           .replace('{w}', String(w))
           .replace('{h}', String(h))
           .replace('{bytes}', formatBytes(bytes));
@@ -367,7 +362,7 @@ export const renderImageCompressPage = (opts: {
         maxEdgeEl.disabled = !resizeOn.checked;
         targetRow.hidden = !targetOn.checked;
         if (isPng && targetOn.checked) {
-          /* PNG 目标体积通常无效，仍允许尝试但提示 */
+          /* PNG ??????????????????*/
         }
         qualityVal.textContent = quality01().toFixed(2);
         qualityHint.textContent = isPng ? msg.qualityPng : '';
@@ -445,7 +440,7 @@ export const renderImageCompressPage = (opts: {
       }
 
       /**
-       * 按最长边等比缩小（不放大）。
+       * ???????????????
        * @returns {{w:number,h:number}}
        */
       function scaledSize(srcW, srcH) {
@@ -458,7 +453,7 @@ export const renderImageCompressPage = (opts: {
       }
 
       /**
-       * 绘制到 canvas 并按给定质量编码一次。
+       * ????canvas ????????????
        */
       function encodeOnce(bitmap, srcW, srcH, mime, q, bg) {
         var size = scaledSize(srcW, srcH);
@@ -478,8 +473,8 @@ export const renderImageCompressPage = (opts: {
       }
 
       /**
-       * 在 [QUALITY_FLOOR, startQ] 上二分质量，尽量不超过 targetBytes。
-       * 命中则取不超过目标的最高质量；始终超限则取体积最小的候选并标记未命中。
+       * ??[QUALITY_FLOOR, startQ] ????????????targetBytes??
+       * ????????????????????????????????????
        */
       function encodeToTarget(bitmap, srcW, srcH, mime, startQ, bg, targetBytes) {
         var attempts = [];
@@ -508,7 +503,7 @@ export const renderImageCompressPage = (opts: {
       }
 
       /**
-       * 装载源文件：预览、统计、软上限警告。
+       * ???????????????????
        * @param {File} file
        * @returns {Promise<void>}
        */
@@ -577,7 +572,7 @@ export const renderImageCompressPage = (opts: {
       }
 
       /**
-       * 执行压缩；返回 Promise，便于示例加载后自动跑通左右预览。
+       * ????????Promise??????????????????
        * @returns {Promise<void>}
        */
       function compress() {
@@ -653,7 +648,7 @@ export const renderImageCompressPage = (opts: {
       }
 
       /**
-       * 生成渐变 JPEG 样例，装载后立刻压缩，使左右预览同时显示。
+       * ???? JPEG ??????????????????????
        * @returns {Promise<void>}
        */
       function loadSample() {
@@ -687,8 +682,8 @@ export const renderImageCompressPage = (opts: {
       }
 
       /**
-       * 应用常用预设：写入最长边 / 目标 KB / 质量；有源图时自动再压缩。
-       * @param {string} val select value（edge:N | kb:N | combo:edge:kb:q）
+       * ???????????? / ?? KB / ??????????????
+       * @param {string} val select value?edge:N | kb:N | combo:edge:kb:q??
        */
       function applyPreset(val) {
         if (!val) return;
@@ -700,7 +695,7 @@ export const renderImageCompressPage = (opts: {
           var kb = Math.max(10, Math.min(10240, Number(val.slice(3)) || 200));
           targetOn.checked = true;
           targetKbEl.value = String(kb);
-          /* 目标体积对 PNG 意义不大：若当前为 PNG 则改 WebP/JPEG */
+          /* ??????PNG ??????????PNG ?? WebP/JPEG */
           if (outputSel.value === 'image/png') {
             outputSel.value = encodeSupport['image/webp'] === false ? 'image/jpeg' : 'image/webp';
           }
@@ -726,7 +721,7 @@ export const renderImageCompressPage = (opts: {
         if (sourceFile) compress();
       }
 
-      /** 手动改参数时清空预设下拉，避免显示与实际不一致。 */
+      /** ?????????????????????????*/
       function clearPresetSelect() {
         if (presetEl) presetEl.value = '';
       }
@@ -758,7 +753,7 @@ export const renderImageCompressPage = (opts: {
       btnSample.addEventListener('click', function () { loadSample(); });
       btnClear.addEventListener('click', clearAll);
 
-      /** 探测编码后立刻加载示例并压缩，首屏直接展示原图与压缩结果。 */
+      /** ??????????????????????????????*/
       probeAll().then(function () {
         syncOptionsUi();
         return loadSample();

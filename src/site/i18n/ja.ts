@@ -337,24 +337,32 @@ const ja: SiteLangDict = {
   tool_html_entity_faq_a5: 'いいえ。CDN も外部ライブラリも使いません。',
 
 
-  tool_image_format_converter_title: '画像形式を変換 — PNG / JPEG / WebP / AVIF（端末内）',
-  tool_image_format_converter_description:
-    'ブラウザだけで PNG・JPEG・WebP・AVIF を相互変換します。手順：ファイルを選び、出力形式と画質（JPEG なら背景色）を決めてダウンロード。例：透過 PNG のスクリーンショットを WebP にして軽量化 — 画像は端末から出ません。',
-  tool_image_format_converter_article: '画質・透過・ブラウザのエンコード可否を明示したローカル変換。',
+  tool_image_format_converter_title: '画像フォーマット変換 — PNG JPEG WebP AVIF BMP GIF ICO SVG ローカル',
+  tool_image_format_converter_description: 
+    'ブラウザで PNG・JPEG・WebP・AVIF・BMP・GIF・ICO・SVG に変換します。手順：画像を選ぶ → 形式を選ぶ → 必要なら画質を調整 → ダウンロード。例：PNG アイコンを WebP や ICO に。ファイルは端末内で処理します。',
+  tool_image_format_converter_article: 
+    '品質・透過・ブラウザ対応を明示したローカル変換。BMP/GIF/ICO/SVG も出力できます。',
   tool_image_format_converter_convert: '変換',
   tool_image_format_converter_download: 'ダウンロード',
   tool_image_format_converter_sample: 'サンプルを読み込む',
   tool_image_format_converter_clear: 'クリア',
   tool_image_format_converter_choose_file: '画像を選択',
-  tool_image_format_converter_drop_hint: 'PNG / JPEG / WebP / AVIF / GIF / BMP をドロップしても可。',
+  tool_image_format_converter_drop_hint: 'または PNG / JPEG / WebP / AVIF / GIF / BMP / ICO / SVG をここにドロップ。変換はこのタブ内で完結します。',
   tool_image_format_converter_target_label: '出力形式',
   tool_image_format_converter_format_png: 'PNG',
   tool_image_format_converter_format_jpeg: 'JPEG',
   tool_image_format_converter_format_webp: 'WebP',
   tool_image_format_converter_format_avif: 'AVIF',
+  tool_image_format_converter_format_bmp: 'BMP',
+  tool_image_format_converter_format_gif: 'GIF',
+  tool_image_format_converter_format_ico: 'ICO',
+  tool_image_format_converter_format_svg: 'SVG',
+  tool_image_format_converter_group_web: 'Web向け',
+  tool_image_format_converter_group_extra: 'その他の形式',
   tool_image_format_converter_quality_label: '画質',
   tool_image_format_converter_quality_hint_png: 'PNG はロスレスのため画質は無視されます。',
   tool_image_format_converter_quality_hint_webp_lossless: 'WebP の 1.0 はロスレスになることがあります。',
+  tool_image_format_converter_quality_hint_extra: 'BMP / GIF / ICO / SVG は品質スライダーを使いません。',
   tool_image_format_converter_jpeg_bg_label: 'JPEG の背景',
   tool_image_format_converter_jpeg_bg_white: '白',
   tool_image_format_converter_jpeg_bg_black: '黒',
@@ -374,14 +382,17 @@ const ja: SiteLangDict = {
   tool_image_format_converter_status_converting: '変換中…',
   tool_image_format_converter_status_done: '完了 — MIME とサイズを確認してダウンロード。',
   tool_image_format_converter_how_title: '使い方',
-  tool_image_format_converter_how_body:
-    '画像と出力形式を選びます。このタブで復号し canvas に描画してからブラウザのエンコーダを呼びます。JPEG では先に背景を敷けます。出力 MIME を検証し、黙って別形式になる場合は成功扱いしません。',
+  tool_image_format_converter_how_body: 
+    '画像と形式を選びます。このタブで復号しキャンバスに描画し、toBlob またはローカルエンコーダ（BMP/GIF/ICO/SVG）で出力します。JPEG では背景色を敷けます。出力 MIME を検証します。',
   tool_image_format_converter_rules_title: '押さえておきたいルール',
   tool_image_format_converter_rules_body: '透過・画質・エンコード可否は形式ごとに違います。',
-  tool_image_format_converter_rules_item_1: '流れ：復号 →（JPEG）背景塗り → 描画 → toBlob。PNG は画質無視。',
+  tool_image_format_converter_rules_item_1: 
+    '流れ：復号 → 任意の背景塗り → 描画 → 符号化。PNG/JPEG/WebP/AVIF は toBlob、BMP/GIF/ICO/SVG はローカル。PNG と追加形式は品質スライダーを無視します。',
   tool_image_format_converter_rules_item_2: '透過：PNG/WebP/AVIF は alpha 可。JPEG は不可のため背景色を選ぶ。',
   tool_image_format_converter_rules_item_3: '表示できる≠書き出せる。AVIF 書き出しは主に Chromium。blob.type を確認。',
   tool_image_format_converter_rules_item_4: 'プライバシー：画像はアップロードしません。組み込み API のみ。',
+  tool_image_format_converter_rules_item_5: 
+    '追加形式：BMP は 24bit、GIF は量子化した1フレーム、ICO は PNG 内包、SVG は PNG を埋め込み（パスの再トレースではありません）。',
   tool_image_format_converter_example_title: '例',
   tool_image_format_converter_example:
     '240×160 の透過 PNG アイコンを白背景 JPEG にすると alpha なし。同じ画像を WebP 0.85 にするとピクセルはそのままファイルが小さくなりがち。「サンプルを読み込む」で試せます。',
@@ -401,6 +412,9 @@ const ja: SiteLangDict = {
   tool_image_format_converter_faq_a5: '結果の MIME を見てダウンロードで確認。黙ったフォールバックはエラーにします。',
   tool_image_format_converter_faq_q6: 'GIF アニメはそのまま動きますか？',
   tool_image_format_converter_faq_a6: '動きません。通常は先頭の1フレームのみです。',
+  tool_image_format_converter_faq_q7: 'BMP・GIF・ICO・SVG はどうなりますか？',
+  tool_image_format_converter_faq_a7: 
+    'すべてこのタブでローカル符号化します。GIF は1フレーム＋縮小パレット、ICO は PNG 内包、SVG は PNG ビットマップの包みです。Web 配信は WebP/AVIF を推奨します。',
 
 
   tool_image_exif_title: '写真の EXIF 表示と削除（GPS・カメラ情報・端末内）',

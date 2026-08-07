@@ -22,7 +22,7 @@ export const withToolLangPrefix = (lang: SiteLang, pathname: string, defaultLang
 };
 
 /**
- * 从 i18n 收集某工具的 FAQ 条目（q1/a1 … q5/a5）。
+ * 从 i18n 收集某工具的 FAQ 条目（q1/a1 … 最多 q8/a8）。
  * @param lang 语言
  * @param faqPrefix 如 tool_bmi
  */
@@ -31,7 +31,7 @@ export const collectToolFaqs = (
 	faqPrefix: string
 ): Array<{ question: string; answer: string }> => {
 	const faqs: Array<{ question: string; answer: string }> = [];
-	for (let i = 1; i <= 6; i++) {
+	for (let i = 1; i <= 8; i++) {
 		const qKey = `${faqPrefix}_faq_q${i}` as keyof typeof import('../../site/i18n/en').default;
 		const aKey = `${faqPrefix}_faq_a${i}` as keyof typeof import('../../site/i18n/en').default;
 		const question = t(lang, qKey);

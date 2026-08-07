@@ -337,24 +337,32 @@ const ar: SiteLangDict = {
   tool_html_entity_faq_a5: 'لا. كل شيء محليًا بدون CDN.',
 
 
-  tool_image_format_converter_title: 'محول صيغ الصور — PNG وJPEG وWebP وAVIF (محليًا)',
-  tool_image_format_converter_description:
-    'حوّل الصور بين PNG وJPEG وWebP وAVIF في المتصفح. الخطوات: اختر ملفًا، حدّد الصيغة الهدف، اضبط الجودة (ولون خلفية عند JPEG)، ثم نزّل. مثال: حوّل لقطة PNG شفافة إلى WebP للويب — الملفات تبقى على جهازك.',
-  tool_image_format_converter_article: 'تحويل محلي لصيغ الصور مع قواعد الجودة والشفافية ودعم الترميز.',
+  tool_image_format_converter_title: 'محول تنسيق الصور — PNG JPEG WebP AVIF BMP GIF ICO SVG محليا',
+  tool_image_format_converter_description: 
+    'حوّل الصور بين PNG وJPEG وWebP وAVIF وBMP وGIF وICO وSVG في المتصفح. الخطوات: اختر ملفا، اختر التنسيق، اضبط الجودة عند الحاجة، ثم نزّل. مثال: حول أيقونة PNG إلى WebP أو ICO — تبقى الملفات على جهازك.',
+  tool_image_format_converter_article: 
+    'تحويل محلي للتنسيقات مع قواعد واضحة وتصدير BMP/GIF/ICO/SVG.',
   tool_image_format_converter_convert: 'تحويل',
   tool_image_format_converter_download: 'تنزيل',
   tool_image_format_converter_sample: 'تحميل مثال',
   tool_image_format_converter_clear: 'مسح',
   tool_image_format_converter_choose_file: 'اختر صورة',
-  tool_image_format_converter_drop_hint: 'أو أفلت PNG أو JPEG أو WebP أو AVIF أو GIF أو BMP هنا.',
+  tool_image_format_converter_drop_hint: 'أو أفلت PNG أو JPEG أو WebP أو AVIF أو GIF أو BMP أو ICO أو SVG هنا. التحويل يبقى في هذا التبويب.',
   tool_image_format_converter_target_label: 'الصيغة الهدف',
   tool_image_format_converter_format_png: 'PNG',
   tool_image_format_converter_format_jpeg: 'JPEG',
   tool_image_format_converter_format_webp: 'WebP',
   tool_image_format_converter_format_avif: 'AVIF',
+  tool_image_format_converter_format_bmp: 'BMP',
+  tool_image_format_converter_format_gif: 'GIF',
+  tool_image_format_converter_format_ico: 'ICO',
+  tool_image_format_converter_format_svg: 'SVG',
+  tool_image_format_converter_group_web: 'تنسيقات الويب',
+  tool_image_format_converter_group_extra: 'تنسيقات إضافية',
   tool_image_format_converter_quality_label: 'الجودة',
   tool_image_format_converter_quality_hint_png: 'PNG بلا فقدان — الجودة لا تُستخدم.',
   tool_image_format_converter_quality_hint_webp_lossless: 'WebP عند 1.0 قد يكون بلا فقدان.',
+  tool_image_format_converter_quality_hint_extra: 'BMP وGIF وICO وSVG تتجاهل شريط الجودة.',
   tool_image_format_converter_jpeg_bg_label: 'خلفية JPEG',
   tool_image_format_converter_jpeg_bg_white: 'أبيض',
   tool_image_format_converter_jpeg_bg_black: 'أسود',
@@ -374,14 +382,17 @@ const ar: SiteLangDict = {
   tool_image_format_converter_status_converting: 'جارٍ التحويل…',
   tool_image_format_converter_status_done: 'تم — راجع النوع والحجم ثم نزّل.',
   tool_image_format_converter_how_title: 'كيف يعمل',
-  tool_image_format_converter_how_body:
-    'تختار صورة وصيغة. تُفكّك البكسلات محليًا وتُرسم على لوحة ثم تُرمَّز عبر المتصفح. لـ JPEG يمكن ملء خلفية أولًا. نتحقق من نوع المخرجات.',
+  tool_image_format_converter_how_body: 
+    'اختر صورة وتنسيقا. تُفك الشفرة هنا وتُرسم على لوحة ثم تُرمّز عبر toBlob أو مرمّزات محلية (BMP/GIF/ICO/SVG). لـ JPEG يمكن ملء خلفية. يُتحقق من نوع MIME الناتج.',
   tool_image_format_converter_rules_title: 'قواعد متوقعة',
   tool_image_format_converter_rules_body: 'الصيغ تختلف في الشفافية والجودة ودعم الترميز.',
-  tool_image_format_converter_rules_item_1: 'المسار: فك ترميز → خلفية اختيارية → رسم → toBlob. PNG يتجاهل الجودة.',
+  tool_image_format_converter_rules_item_1: 
+    'المسار: فك → خلفية اختيارية → لوحة → ترميز. PNG/JPEG/WebP/AVIF عبر toBlob؛ BMP/GIF/ICO/SVG محليا. PNG والإضافات تتجاهل الجودة.',
   tool_image_format_converter_rules_item_2: 'الشفافية: PNG/WebP/AVIF قد تحتفظ بألفا؛ JPEG لا — اختر لون خلفية.',
   tool_image_format_converter_rules_item_3: 'الترميز غير العرض. AVIF غالبًا على Chromium؛ نتحقق من blob.type.',
   tool_image_format_converter_rules_item_4: 'الخصوصية: لا رفع للملفات؛ كل شيء في هذه الصفحة.',
+  tool_image_format_converter_rules_item_5: 
+    'إضافات: BMP بـ 24 بت؛ GIF إطار واحد مكمّم؛ ICO يغلّف PNG؛ SVG يضمّن PNG — مفيد للأيقونات وليس إعادة رسم متجهة.',
   tool_image_format_converter_example_title: 'مثال',
   tool_image_format_converter_example:
     'أيقونة PNG شفافة 240×160 إلى JPEG بخلفية بيضاء → بلا ألفا. ونفسها إلى WebP بجودة 0.85 غالبًا أصغر حجمًا.',
@@ -401,6 +412,9 @@ const ar: SiteLangDict = {
   tool_image_format_converter_faq_a5: 'انظر نوع MIME في الإحصاءات ثم نزّل الملف. عند الرجوع الصامت نُظهر خطأ.',
   tool_image_format_converter_faq_q6: 'هل تبقى صور GIF متحركة؟',
   tool_image_format_converter_faq_a6: 'لا. إطار واحد فقط عادة الأول.',
+  tool_image_format_converter_faq_q7: 'ماذا عن BMP وGIF وICO وSVG؟',
+  tool_image_format_converter_faq_a7: 
+    'تُرمّز محليا. GIF يحتفظ بإطار واحد مع لوحة ألوان مخفّضة؛ ICO يضمّن PNG؛ SVG يغلف صورة نقطية PNG. للويب فضّل WebP/AVIF.',
 
 
   tool_image_exif_title: 'عرض وحذف EXIF من الصور — الموقع والكاميرا محليًا',

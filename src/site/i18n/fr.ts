@@ -463,25 +463,32 @@ const fr: SiteLangDict = {
   tool_html_entity_faq_a5: 'Non. Tout reste local, sans CDN.',
 
 
-  tool_image_format_converter_title: 'Convertir une image — PNG, JPEG, WebP, AVIF (en local)',
-  tool_image_format_converter_description:
-    'Convertissez des images entre PNG, JPEG, WebP et AVIF dans le navigateur. Étapes : choisissez un fichier, le format cible, réglez la qualité (et un fond pour le JPEG), puis téléchargez. Exemple : passez une capture PNG transparente en WebP pour le web — le fichier reste sur l’appareil.',
-  tool_image_format_converter_article:
-    'Conversion locale avec règles de qualité, transparence et capacité d’encodage du navigateur.',
+  tool_image_format_converter_title: 'Convertisseur de formats d\'image — PNG JPEG WebP AVIF BMP GIF ICO SVG',
+  tool_image_format_converter_description: 
+    'Convertissez des images entre PNG, JPEG, WebP, AVIF, BMP, GIF, ICO et SVG dans le navigateur. Etapes : choisir un fichier, choisir le format, regler la qualite si besoin, puis telecharger. Exemple : PNG vers WebP ou ICO — les fichiers restent sur votre appareil.',
+  tool_image_format_converter_article: 
+    'Conversion locale de formats avec regles claires et export BMP/GIF/ICO/SVG.',
   tool_image_format_converter_convert: 'Convertir',
   tool_image_format_converter_download: 'Télécharger',
   tool_image_format_converter_sample: 'Charger un exemple',
   tool_image_format_converter_clear: 'Effacer',
   tool_image_format_converter_choose_file: 'Choisir une image',
-  tool_image_format_converter_drop_hint: 'Ou déposez PNG, JPEG, WebP, AVIF, GIF ou BMP ici.',
+  tool_image_format_converter_drop_hint: 'Ou deposez PNG, JPEG, WebP, AVIF, GIF, BMP, ICO ou SVG ici. La conversion reste dans cet onglet.',
   tool_image_format_converter_target_label: 'Format cible',
   tool_image_format_converter_format_png: 'PNG',
   tool_image_format_converter_format_jpeg: 'JPEG',
   tool_image_format_converter_format_webp: 'WebP',
   tool_image_format_converter_format_avif: 'AVIF',
+  tool_image_format_converter_format_bmp: 'BMP',
+  tool_image_format_converter_format_gif: 'GIF',
+  tool_image_format_converter_format_ico: 'ICO',
+  tool_image_format_converter_format_svg: 'SVG',
+  tool_image_format_converter_group_web: 'Formats web',
+  tool_image_format_converter_group_extra: 'Plus de formats',
   tool_image_format_converter_quality_label: 'Qualité',
   tool_image_format_converter_quality_hint_png: 'PNG sans perte — la qualité est ignorée.',
   tool_image_format_converter_quality_hint_webp_lossless: 'WebP à 1.0 peut être sans perte.',
+  tool_image_format_converter_quality_hint_extra: 'BMP, GIF, ICO et SVG ignorent le curseur de qualite.',
   tool_image_format_converter_jpeg_bg_label: 'Fond JPEG',
   tool_image_format_converter_jpeg_bg_white: 'Blanc',
   tool_image_format_converter_jpeg_bg_black: 'Noir',
@@ -501,14 +508,17 @@ const fr: SiteLangDict = {
   tool_image_format_converter_status_converting: 'Conversion…',
   tool_image_format_converter_status_done: 'Terminé — vérifiez le MIME et la taille, puis téléchargez.',
   tool_image_format_converter_how_title: 'Comment ça marche',
-  tool_image_format_converter_how_body:
-    'Vous choisissez l’image et le format. La page décode les pixels, dessine sur un canvas, puis appelle l’encodeur du navigateur. Pour le JPEG, un fond uni peut être appliqué. Le MIME de sortie est vérifié.',
+  tool_image_format_converter_how_body: 
+    'Choisissez une image et un format. La page decode ici, dessine sur un canvas, puis encode via toBlob ou des encodeurs locaux (BMP/GIF/ICO/SVG). Pour JPEG, un fond peut etre rempli. Le MIME de sortie est verifie.',
   tool_image_format_converter_rules_title: 'Règles à connaître',
   tool_image_format_converter_rules_body: 'Les formats diffèrent sur la transparence, la qualité et l’encodage.',
-  tool_image_format_converter_rules_item_1: 'Pipeline : décode → fond optionnel → draw → toBlob. Le PNG ignore la qualité.',
+  tool_image_format_converter_rules_item_1: 
+    'Pipeline : decoder → fond optionnel → canvas → encoder. PNG/JPEG/WebP/AVIF via toBlob ; BMP/GIF/ICO/SVG via encodeurs locaux. PNG et extras ignorent la qualite.',
   tool_image_format_converter_rules_item_2: 'Transparence : PNG/WebP/AVIF peuvent garder l’alpha ; le JPEG exige un fond.',
   tool_image_format_converter_rules_item_3: 'Encoder ≠ afficher. L’AVIF est surtout Chromium ; nous vérifions blob.type.',
   tool_image_format_converter_rules_item_4: 'Confidentialité : aucun envoi ; tout reste dans cet onglet.',
+  tool_image_format_converter_rules_item_5: 
+    'Extras : BMP 24 bits ; GIF une seule image quantifiee ; ICO encapsule un PNG ; SVG embarque un PNG — utile pour les icones, pas un redessin vectoriel.',
   tool_image_format_converter_example_title: 'Exemple',
   tool_image_format_converter_example:
     'Icône PNG 240×160 transparente → JPEG fond blanc. La même en WebP 0,85 est souvent plus légère. Utilisez « Charger un exemple ».',
@@ -528,6 +538,9 @@ const fr: SiteLangDict = {
   tool_image_format_converter_faq_a5: 'Regardez le MIME dans les stats et téléchargez. Un repli silencieux provoque une erreur.',
   tool_image_format_converter_faq_q6: 'Les GIF restent-ils animés ?',
   tool_image_format_converter_faq_a6: 'Non. Une seule image (souvent la première).',
+  tool_image_format_converter_faq_q7: 'Et pour BMP, GIF, ICO et SVG ?',
+  tool_image_format_converter_faq_a7: 
+    'Encodage local. GIF garde une seule image avec palette reduite ; ICO embarque un PNG ; SVG enveloppe un bitmap PNG. Pour le web, preferez WebP/AVIF.',
 
 
   tool_image_exif_title: 'Voir et supprimer l’EXIF des photos — GPS, appareil, en local',

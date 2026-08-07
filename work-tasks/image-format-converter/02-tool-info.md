@@ -95,8 +95,8 @@
 
 - 输入：
   - 文件选择 / 拖放：接受浏览器能解码的常见位图（至少 PNG、JPEG、WebP；AVIF 视浏览器解码能力；GIF/BMP 可接受但 FAQ 说明动画仅首帧）
-  - **目标格式**：PNG | JPEG | WebP | AVIF（单选；默认 WebP 或 PNG——实现时默认 **WebP**，对齐常见「上站减小体积」主意图）
-  - **质量**滑条（0.5–1.0，默认 0.85）：仅对 JPEG / WebP / AVIF 生效；选 PNG 时禁用或标注「无损，忽略质量」
+  - **目标格式**：PNG | JPEG | WebP | AVIF | BMP | GIF | ICO | SVG（单选；默认 **WebP**；后四项为同页本地额外编码器，不拆 URL）
+  - **质量**滑条（0.5–1.0，默认 0.85）：仅对 JPEG / WebP / AVIF 生效；PNG / BMP / GIF / ICO / SVG 禁用或标注忽略质量
   - **JPEG 底色**（仅目标为 JPEG 且源可能含透明时显示）：白 / 黑 / 自定义色；先铺底再 `drawImage`
   - 操作：Convert（可选自动在选文件后转换）/ Download / Clear；可选「再转一批」多文件队列（v1 至少单文件；多文件为同页增强，不另开 URL）
 - 输出：

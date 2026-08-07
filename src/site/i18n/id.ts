@@ -463,24 +463,32 @@ const id: SiteLangDict = {
   tool_html_entity_faq_a5: 'Tidak. Semua lokal tanpa CDN.',
 
 
-  tool_image_format_converter_title: 'Konversi format gambar — PNG, JPEG, WebP, AVIF (lokal)',
-  tool_image_format_converter_description:
-    'Ubah gambar antara PNG, JPEG, WebP, dan AVIF di browser. Langkah: pilih berkas, pilih format tujuan, atur kualitas (dan latar JPEG bila perlu), lalu unduh. Contoh: ubah tangkapan PNG transparan jadi WebP untuk situs — berkas tidak diunggah.',
-  tool_image_format_converter_article: 'Konversi lokal dengan aturan kualitas, transparansi, dan dukungan encode browser.',
+  tool_image_format_converter_title: 'Konverter Format Gambar — PNG JPEG WebP AVIF BMP GIF ICO SVG',
+  tool_image_format_converter_description: 
+    'Ubah gambar antara PNG, JPEG, WebP, AVIF, BMP, GIF, ICO, dan SVG di browser. Langkah: pilih berkas, pilih format target, atur kualitas bila perlu, lalu unduh. Contoh: PNG ke WebP atau ICO — berkas tetap di perangkat Anda.',
+  tool_image_format_converter_article: 
+    'Konversi format lokal dengan aturan jelas plus ekspor BMP/GIF/ICO/SVG.',
   tool_image_format_converter_convert: 'Konversi',
   tool_image_format_converter_download: 'Unduh',
   tool_image_format_converter_sample: 'Muat contoh',
   tool_image_format_converter_clear: 'Hapus',
   tool_image_format_converter_choose_file: 'Pilih gambar',
-  tool_image_format_converter_drop_hint: 'Atau jatuhkan PNG, JPEG, WebP, AVIF, GIF, atau BMP di sini.',
+  tool_image_format_converter_drop_hint: 'Atau jatuhkan PNG, JPEG, WebP, AVIF, GIF, BMP, ICO, atau SVG di sini. Konversi tetap di tab ini.',
   tool_image_format_converter_target_label: 'Format tujuan',
   tool_image_format_converter_format_png: 'PNG',
   tool_image_format_converter_format_jpeg: 'JPEG',
   tool_image_format_converter_format_webp: 'WebP',
   tool_image_format_converter_format_avif: 'AVIF',
+  tool_image_format_converter_format_bmp: 'BMP',
+  tool_image_format_converter_format_gif: 'GIF',
+  tool_image_format_converter_format_ico: 'ICO',
+  tool_image_format_converter_format_svg: 'SVG',
+  tool_image_format_converter_group_web: 'Format web',
+  tool_image_format_converter_group_extra: 'Format lainnya',
   tool_image_format_converter_quality_label: 'Kualitas',
   tool_image_format_converter_quality_hint_png: 'PNG lossless — kualitas diabaikan.',
   tool_image_format_converter_quality_hint_webp_lossless: 'WebP 1.0 mungkin lossless.',
+  tool_image_format_converter_quality_hint_extra: 'BMP, GIF, ICO, dan SVG mengabaikan penggeser kualitas.',
   tool_image_format_converter_jpeg_bg_label: 'Latar JPEG',
   tool_image_format_converter_jpeg_bg_white: 'Putih',
   tool_image_format_converter_jpeg_bg_black: 'Hitam',
@@ -500,14 +508,17 @@ const id: SiteLangDict = {
   tool_image_format_converter_status_converting: 'Mengonversi…',
   tool_image_format_converter_status_done: 'Selesai — cek MIME & ukuran lalu unduh.',
   tool_image_format_converter_how_title: 'Cara kerja',
-  tool_image_format_converter_how_body:
-    'Pilih gambar dan format. Halaman mendekode piksel, menggambar ke canvas, lalu memanggil encoder browser. Untuk JPEG bisa mengisi latar dulu. Kami memeriksa MIME keluaran.',
+  tool_image_format_converter_how_body: 
+    'Pilih gambar dan format. Halaman mendekode di tab ini, menggambar ke canvas, lalu mengode dengan toBlob atau encoder lokal (BMP/GIF/ICO/SVG). Untuk JPEG bisa mengisi latar. MIME keluaran diperiksa.',
   tool_image_format_converter_rules_title: 'Aturan yang perlu diketahui',
   tool_image_format_converter_rules_body: 'Format beda di transparansi, kualitas lossy, dan kemampuan encode.',
-  tool_image_format_converter_rules_item_1: 'Alur: decode → latar opsional → draw → toBlob. PNG mengabaikan kualitas.',
+  tool_image_format_converter_rules_item_1: 
+    'Alur: dekode → latar opsional → canvas → encode. PNG/JPEG/WebP/AVIF memakai toBlob; BMP/GIF/ICO/SVG encoder lokal. PNG dan ekstra mengabaikan kualitas.',
   tool_image_format_converter_rules_item_2: 'Transparansi: PNG/WebP/AVIF bisa jaga alpha; JPEG butuh warna latar.',
   tool_image_format_converter_rules_item_3: 'Encode ≠ decode. AVIF sering hanya Chromium; kami cek blob.type.',
   tool_image_format_converter_rules_item_4: 'Privasi: byte tidak diunggah; semua di tab ini.',
+  tool_image_format_converter_rules_item_5: 
+    'Ekstra: BMP 24-bit; GIF satu bingkai terkuantisasi; ICO membungkus PNG; SVG menyematkan PNG — cocok untuk ikon, bukan gambar ulang vektor.',
   tool_image_format_converter_example_title: 'Contoh',
   tool_image_format_converter_example:
     'Ikon PNG 240×160 transparan → JPEG berlatar putih. Ikon yang sama ke WebP 0.85 sering lebih kecil. Pakai «Muat contoh».',
@@ -527,6 +538,9 @@ const id: SiteLangDict = {
   tool_image_format_converter_faq_a5: 'Lihat MIME di statistik lalu unduh. Fallback diam memicu error.',
   tool_image_format_converter_faq_q6: 'GIF animasi tetap bergerak?',
   tool_image_format_converter_faq_a6: 'Tidak. Hanya satu frame (biasanya pertama).',
+  tool_image_format_converter_faq_q7: 'Bagaimana dengan BMP, GIF, ICO, dan SVG?',
+  tool_image_format_converter_faq_a7: 
+    'Dikode secara lokal. GIF menyimpan satu bingkai dengan palet terkurangi; ICO menyematkan PNG; SVG membungkus bitmap PNG. Untuk web, utamakan WebP/AVIF.',
 
 
   tool_image_exif_title: 'Lihat & hapus EXIF foto — GPS, kamera, lokal',

@@ -1,7 +1,7 @@
 /**
- * 图片 EXIF 查看与清除工具页（浏览器内 exifr + Canvas 重编码剥离）。
- * slug: image-exif；查看与清除同页，不拆 remove-exif 等近义 URL。
- * 见 work-tasks/image-exif/02-tool-info.md。
+ * ?? EXIF ??????????????exifr + Canvas ????????
+ * slug: image-exif????????????remove-exif ????URL??
+ * ??work-tasks/image-exif/02-tool-info.md??
  */
 import type { SiteLang } from '../site/i18n';
 import { t, supportedLangs } from '../site/i18n';
@@ -18,17 +18,17 @@ import {
 	buildToolJsonLd,
 } from './site/toolContent';
 
-/** 为路径加上语言前缀（默认语无前缀）。 */
+/** ???????????????????*/
 const withLangPrefix = (lang: SiteLang, pathname: string, defaultLang: SiteLang) => {
 	const safe = pathname.startsWith('/') ? pathname : `/${pathname}`;
 	return lang === defaultLang ? safe : `/${lang}${safe}`;
 };
 
 /**
- * 渲染图片 EXIF 查看/清除工具页。
- * @param opts.lang 当前语言
- * @param opts.defaultLang 站点默认语言
- * @param opts.enabledLangs 启用语言列表（语言切换器用全量 supportedLangs）
+ * ???? EXIF ??/???????
+ * @param opts.lang ????
+ * @param opts.defaultLang ??????
+ * @param opts.enabledLangs ??????????????? supportedLangs??
  */
 export const renderImageExifPage = (opts: {
 	lang: SiteLang;
@@ -42,7 +42,7 @@ export const renderImageExifPage = (opts: {
 
 	const navItems = buildToolPageNavItems(opts.lang, opts.defaultLang);
 
-	/** 语言切换链接始终带显式语言前缀（含默认语）。 */
+	/** ???????????????????????*/
 	const withExplicitLangPrefix = (code: SiteLang, pathname: string) => {
 		const safe = pathname.startsWith('/') ? pathname : `/${pathname}`;
 		return `/${code}${safe}`.replace(/\/{2,}/g, '/');
@@ -78,16 +78,10 @@ export const renderImageExifPage = (opts: {
 
 	const footerHtml = renderFooter({ lang: opts.lang });
 
-	/** 页内样式：拖放区、元数据表、隐私高亮行。 */
+	/** ?????????????????????*/
 	const extraHeadHtml = `
   <style>
     .tools-bar { gap: .5rem; }
-    .iex-drop {
-      border: 2px dashed #adb5bd; border-radius: .5rem; padding: 1.25rem; text-align: center;
-      background: #f8f9fa; cursor: pointer; transition: border-color .15s, background .15s;
-    }
-    .iex-drop.dragover { border-color: #0a6ebd; background: #e7f1f8; }
-    .iex-drop input[type=file] { display: none; }
     #iexPreview {
       max-width: 100%; max-height: 220px; object-fit: contain;
       border: 1px solid #dee2e6; border-radius: .5rem; background: #fff;
@@ -100,10 +94,16 @@ export const renderImageExifPage = (opts: {
   </style>`;
 
 	const contentHtml = `
-    <div id="converter" class="mb-3">
-      <h1 class="h4 mb-1">${escapeHtml(t(opts.lang, 'tool_image_exif_title'))}</h1>
-      <p class="text-muted mb-0">${escapeHtml(description)}</p>
+    <div id="converter" class="tool-page-heading mb-3">
+      <h1 class="h4 mb-0">${escapeHtml(t(opts.lang, 'tool_image_exif_title'))}</h1>
     </div>
+
+    <label class="tool-dropzone iex-drop mb-3" id="iexDrop" for="iexFile">
+      <input type="file" id="iexFile" accept="image/jpeg,image/png,image/webp,image/heic,image/heif,image/tiff,image/*">
+      <span class="tool-dropzone-title">${escapeHtml(t(opts.lang, 'tool_image_exif_choose_file'))}</span>
+      <span class="tool-dropzone-hint">${escapeHtml(t(opts.lang, 'tool_image_exif_drop_hint'))}</span>
+      <span id="iexFileName" class="tool-dropzone-file"></span>
+    </label>
 
     <div class="d-flex align-items-center tools-bar mb-2 flex-wrap">
       <button type="button" id="iexBtnAnalyze" class="btn btn-primary btn-sm">${escapeHtml(t(opts.lang, 'tool_image_exif_analyze'))}</button>
@@ -111,13 +111,6 @@ export const renderImageExifPage = (opts: {
       <button type="button" id="iexBtnSample" class="btn btn-outline-secondary btn-sm">${escapeHtml(t(opts.lang, 'tool_image_exif_sample'))}</button>
       <button type="button" id="iexBtnClear" class="btn btn-outline-secondary btn-sm">${escapeHtml(t(opts.lang, 'tool_image_exif_clear'))}</button>
     </div>
-
-    <label class="iex-drop d-block mb-3" id="iexDrop" for="iexFile">
-      <input type="file" id="iexFile" accept="image/jpeg,image/png,image/webp,image/heic,image/heif,image/tiff,image/*">
-      <strong>${escapeHtml(t(opts.lang, 'tool_image_exif_choose_file'))}</strong>
-      <div class="small text-muted mt-1">${escapeHtml(t(opts.lang, 'tool_image_exif_drop_hint'))}</div>
-      <div id="iexFileName" class="small mt-2 mb-0"></div>
-    </label>
 
     <p id="iexWarn" class="small text-warning mb-2" style="display:none;" role="status"></p>
     <p id="iexError" class="small text-danger mb-2" style="display:none;" role="alert"></p>
@@ -132,7 +125,9 @@ export const renderImageExifPage = (opts: {
         <div id="iexMetaHost"></div>
         <div id="iexStripResult" class="small text-success mt-2" style="display:none;" role="status"></div>
       </div>
-    </div>`;
+    </div>
+
+    <p class="tool-lead mb-4">${escapeHtml(description)}</p>`;
 
 	const igHtml = renderToolIgSections({
 		lang: opts.lang,
@@ -145,25 +140,25 @@ export const renderImageExifPage = (opts: {
 	const referencesHtml = renderToolReferencesSection({
 		lang: opts.lang,
 		links: [
-			{ label: 'CIPA DC-008 — Exif (English translation)', href: 'https://www.cipa.jp/std/documents/e/DC-008-Translation-2019-E.pdf' },
+			{ label: 'CIPA DC-008 ??Exif (English translation)', href: 'https://www.cipa.jp/std/documents/e/DC-008-Translation-2019-E.pdf' },
 			{ label: 'exifr (GitHub)', href: 'https://github.com/MikeKovarik/exifr' },
-			{ label: 'MDN — HTMLCanvasElement.toBlob()', href: 'https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob' },
-			{ label: 'ExifTool Tag Names — EXIF', href: 'https://exiftool.org/TagNames/EXIF.html' },
+			{ label: 'MDN ??HTMLCanvasElement.toBlob()', href: 'https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob' },
+			{ label: 'ExifTool Tag Names ??EXIF', href: 'https://exiftool.org/TagNames/EXIF.html' },
 		],
 	});
 
 	/**
-	 * 客户端：CDN 加载 exifr；解析分组展示；Canvas 摆正后重编码清除；复读验证。
+	 * ????CDN ?? exifr????????Canvas ???????????????
 	 */
 	const extraBodyHtml = `
   <script src="https://cdn.jsdelivr.net/npm/exifr@7.1.3/dist/full.umd.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     (function () {
-      /** 单文件软上限（字节） */
+      /** ?????????? */
       var SOFT_BYTES = 25 * 1024 * 1024;
-      /** 单边像素软上限 */
+      /** ????????*/
       var SOFT_EDGE = 8192;
-      /** JPEG 清除时的默认质量（诚实有损，非字节无损） */
+      /** JPEG ???????????????????? */
       var JPEG_QUALITY = 0.92;
 
       var drop = document.getElementById('iexDrop');
@@ -204,12 +199,12 @@ export const renderImageExifPage = (opts: {
         colValue: ${JSON.stringify(t(opts.lang, 'tool_image_exif_col_value'))}
       };
 
-      /** @type {File|null} 当前源文件 */
+      /** @type {File|null} ??????*/
       var sourceFile = null;
-      /** @type {string|null} 预览 object URL */
+      /** @type {string|null} ?? object URL */
       var previewUrl = null;
 
-      /** GPS / 隐私高风险键名（大小写不敏感匹配） */
+      /** GPS / ??????????????????*/
       var RISK_KEYS = {
         latitude: 1, longitude: 1, gpslatitude: 1, gpslongitude: 1, gpsaltitude: 1,
         gpslatituderef: 1, gpslongituderef: 1, gpstimestamp: 1, gpsdatestamp: 1,
@@ -217,49 +212,49 @@ export const renderImageExifPage = (opts: {
         ownername: 1, uniquecameraamodel: 1
       };
 
-      /** 相机相关键 */
+      /** ??????*/
       var CAMERA_KEYS = {
         make: 1, model: 1, lensmodel: 1, lensmake: 1, software: 1, fnumber: 1,
         exposuretime: 1, iso: 1, isospeedratings: 1, focallength: 1, flash: 1,
         whitebalance: 1, exposureprogram: 1, meteringmode: 1, aperturevalue: 1
       };
 
-      /** 时间相关键 */
+      /** ??????*/
       var DATE_KEYS = {
         datetimeoriginal: 1, createdate: 1, modifydate: 1, datetime: 1,
         datetimedigitized: 1, offsetoffsetoriginal: 1, subsectimeoriginal: 1
       };
 
-      /** 显示或隐藏警告。 */
+      /** ?????????*/
       function setWarn(text) {
         if (!text) { warnEl.style.display = 'none'; warnEl.textContent = ''; return; }
         warnEl.textContent = text;
         warnEl.style.display = '';
       }
 
-      /** 显示或隐藏错误。 */
+      /** ?????????*/
       function setError(text) {
         if (!text) { errEl.style.display = 'none'; errEl.textContent = ''; return; }
         errEl.textContent = text;
         errEl.style.display = '';
       }
 
-      /** 设置状态行。 */
+      /** ???????*/
       function setStatus(text) {
         statusEl.textContent = text || '';
       }
 
-      /** 取 exifr 全局对象。 */
+      /** ??exifr ??????*/
       function getExifr() {
         return typeof exifr !== 'undefined' ? exifr : null;
       }
 
       /**
-       * 将任意值格式化为可读字符串。
+       * ???????????????
        * @param {*} v
        */
       function formatVal(v) {
-        if (v == null) return '—';
+        if (v == null) return '??;
         if (v instanceof Date) return v.toISOString();
         if (typeof v === 'object') {
           try { return JSON.stringify(v); } catch (e) { return String(v); }
@@ -268,7 +263,7 @@ export const renderImageExifPage = (opts: {
       }
 
       /**
-       * 判断键是否高风险。
+       * ??????????
        * @param {string} key
        */
       function isRisk(key) {
@@ -276,7 +271,7 @@ export const renderImageExifPage = (opts: {
       }
 
       /**
-       * 把 parse 结果分到四组。
+       * ??parse ????????
        * @param {object} data
        * @param {{latitude?:number,longitude?:number}|null} gps
        */
@@ -307,7 +302,7 @@ export const renderImageExifPage = (opts: {
       }
 
       /**
-       * 渲染一组字段表。
+       * ?????????
        * @param {string} title
        * @param {Array<{key:string,value:*,risk?:boolean}>} rows
        */
@@ -326,7 +321,7 @@ export const renderImageExifPage = (opts: {
         );
       }
 
-      /** 简易 HTML 转义（客户端）。 */
+      /** ???HTML ?????????*/
       function escapeHtml(s) {
         return String(s)
           .replace(/&/g, '&amp;')
@@ -336,7 +331,7 @@ export const renderImageExifPage = (opts: {
       }
 
       /**
-       * 渲染元数据主机区域。
+       * ???????????
        * @param {object|null} data
        * @param {object|null} gps
        */
@@ -355,7 +350,7 @@ export const renderImageExifPage = (opts: {
       }
 
       /**
-       * 装载文件并预览。
+       * ?????????
        * @param {File} file
        */
       function loadFile(file) {
@@ -374,7 +369,7 @@ export const renderImageExifPage = (opts: {
         analyze();
       }
 
-      /** 解析元数据。 */
+      /** ???????*/
       function analyze() {
         setError('');
         stripResult.style.display = 'none';
@@ -417,7 +412,7 @@ export const renderImageExifPage = (opts: {
       }
 
       /**
-       * 按 orientation 信息把图画到 canvas（摆正）。
+       * ??orientation ?????? canvas??????
        * @param {CanvasRenderingContext2D} ctx
        * @param {HTMLImageElement|ImageBitmap} img
        * @param {number} w
@@ -446,7 +441,7 @@ export const renderImageExifPage = (opts: {
       }
 
       /**
-       * 解码为 Image / ImageBitmap。
+       * ????Image / ImageBitmap??
        * @param {Blob} blob
        */
       function decodeImage(blob) {
@@ -470,7 +465,7 @@ export const renderImageExifPage = (opts: {
         });
       }
 
-      /** 清除元数据并下载；复读验证。 */
+      /** ???????????????*/
       function stripAndDownload() {
         setError('');
         if (!sourceFile) {
@@ -513,7 +508,7 @@ export const renderImageExifPage = (opts: {
               return res;
             }).catch(function (e) {
               if (e && e.message === 'verify') throw e;
-              // parse 空/失败通常表示已无 EXIF，可接受
+              // parse ?????????? EXIF????
               return res;
             });
           })
@@ -531,7 +526,7 @@ export const renderImageExifPage = (opts: {
             stripResult.textContent = msg.afterStrip;
             stripResult.style.display = '';
             setStatus(msg.stripped);
-            // 对输出再展示「清除后」空态提示
+            // ????????????????
             renderMeta(null, null);
           })
           .catch(function (e) {
@@ -546,13 +541,13 @@ export const renderImageExifPage = (opts: {
           });
       }
 
-      /** 生成无 EXIF 的样例 JPEG（演示空态；真实 GPS 请用本机照片）。 */
+      /** ????EXIF ????JPEG???????? GPS ?????????*/
       function loadSample() {
         var c = document.createElement('canvas');
         c.width = 320;
         c.height = 200;
         var ctx = c.getContext('2d');
-        ctx.fillStyle = '#0a6ebd';
+        ctx.fillStyle = '#1c83a8';
         ctx.fillRect(0, 0, 320, 200);
         ctx.fillStyle = '#fff';
         ctx.font = '16px sans-serif';
@@ -563,7 +558,7 @@ export const renderImageExifPage = (opts: {
         }, 'image/jpeg', 0.92);
       }
 
-      /** 清空。 */
+      /** ????*/
       function clearAll() {
         sourceFile = null;
         fileInput.value = '';

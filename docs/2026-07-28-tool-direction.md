@@ -1,7 +1,7 @@
 # 工具方向 — 三个并列开发方向
 
-**日期**: 2026-07-28（修订：三方向并列；补充「单输入→多规格交付」针对性工具挖掘；**2026-08-07** 补充 [Merge Images](https://mergeimages.co/) 竞品图片能力对照与 N→1 合成场景）  
-**标签**: `产品规划`, `工具方向`, `浏览器JS`, `场景桥接`, `行业工具`, `多规格交付`  
+**日期**: 2026-07-28（修订：三方向并列；补充「单输入→多规格交付」针对性工具挖掘；**2026-08-07** 补充 [Merge Images](https://mergeimages.co/) 竞品图片能力对照与 N→1 合成场景；**同日** 增补专题「设计师工具」候选 slug / 优先级 / 竞品对照）  
+**标签**: `产品规划`, `工具方向`, `浏览器JS`, `场景桥接`, `行业工具`, `多规格交付`, `设计师工具`  
 **目标站点**: https://onlinefreetools.org
 
 **关联文档**:
@@ -795,7 +795,8 @@ H1 具名渠道 + 动作（如 Amazon Product Image Resizer）
 | 教育 | GPA 地区差异表 | 明确地区 |
 | 法律文书 | 字数估算 | 司法区免责 |
 | 内容创作者 | `youtube-channel-art-pack`、`podcast-cover-art-pack` | 平台规范表 |
-| 站长品牌 | `favicon-and-pwa-icon-pack`、`social-share-image-pack` | 与 V2 协同 |
+| 站长品牌 | `favicon-and-pwa-icon-pack`、`social-share-image-pack` | 与 V2 协同；**排期与竞品见「专题：设计师工具」** |
+| UI / 品牌设计（桥工具） | 对比度、色 token、SVG 优化、拼图 | 非完整设计套件；见专题 D 节 |
 
 ### C.9 方向 C 明确拒绝 / 降级
 
@@ -818,7 +819,7 @@ H1 具名渠道 + 动作（如 Amazon Product Image Resizer）
 | C05 开发者 | `/topics/developer-tools` | V1、V6 |
 | C06 文件 | `/topics/file-tools` | V3 主图、V6 素材 |
 | C07 日期 | `/topics/date-time-tools` | 行业排班/时效再议 |
-| C08 设计 SEO | `/topics/design-seo-tools` | V2、Favicon/社交图 |
+| C08 设计 SEO | `/topics/design-seo-tools` | V2、Favicon/社交图；**详表见「专题：设计师工具」** |
 
 ### C.11 方向 C 独立验收
 
@@ -839,6 +840,126 @@ H1 具名渠道 + 动作（如 Amazon Product Image Resizer）
 | 只想补工作流桥（如 Safe Paste） | 走方向 B |
 | 只想做行业计算器（如 BMR） | 走方向 C |
 | 技术来自 A、产品叙事是 B 或 C | 主方向 = B 或 C；实现约束仍看 A 成熟度表 |
+| 设计师日常桥工具（配色 / 交付包 / 拼图） | **主方向仍标 A 或 B**；产品叙事与排期见下方专题 |
+
+---
+
+## 专题：设计师工具（跨 A / B，服务设计交付）
+
+> **调研日期**：2026-08-07  
+> **定位**：设计师进 Figma / Canva / PS **之前与之后**需要的桥工具——配色与无障碍、资产优化、1→N 规格交付、N→1 合成——**不是**协作设计套件或模板编辑器。  
+> **归属规则**：每个 slug 仍只标一个主方向（A 或 B）；本专题只做**岗位视角的排期与竞品对照**，避免与 B.3 / A.2 / A.9 重复立项。  
+> **集群**：支柱页若做 → `/topics/design-seo-tools`（C08）；Related 优先互链同簇工具。
+
+### D.0 岗位、痛点与边界
+
+| 项 | 内容 |
+|---|---|
+| **岗位** | UI/UX、品牌/平面、电商美工、独立站站长兼设计、社媒视觉 |
+| **触发点** | 定品牌色、过无障碍审查、导出多平台尺寸、压缩上线、拼 Before/After、生成 Favicon/OG |
+| **痛点** | 规格表散落官方文档；竞品强制上传；配色「好看」却过不了 WCAG；1→N 与 N→1 工具 intent 混用 |
+| **本站差异化** | 浏览器本地处理 + 多语言教育式 Rules + 具名平台 References + 禁止近义薄页 |
+| **明确不做** | 完整 Figma/Canva 替代；AI 文生图/智能合成黑盒；PNG→SVG 真矢量化（默认）；无平台名的「万能尺寸工具」 |
+
+```
+设计师工作流（本站只做「桥」）
+  灵感/主稿（Figma·Canva·PS）
+       ↓
+  【本站】配色 token / 对比度 / 压缩·格式 / Favicon·OG 包 / 拼图
+       ↓
+  上架 / 发帖 / 部署 / 交付 ZIP
+```
+
+### D.1 候选 slug 总表（优先级 + 主方向）
+
+> **状态**：`已上线` 以 `tool-catalog.json` 为准；其余为候选。  
+> **优先级**：P0 本专题建议优先排期；P1 紧随；P2 产能允许再上。与 B.5 / A.2 冲突时以**本表「主方向」列为准挂靠**，不重复开两页。
+
+| 建议 slug | 一句话任务 | 主方向 | 关联章节 | 优先级 | 状态 / 备注 |
+|---|---|---|---|---|---|
+| `how-to-calculate-gradient` | CSS 渐变生成与说明 | A | A.9 | — | **已上线**（设计侧引流） |
+| `image-compress` / `image-crop` / `image-format-converter` / `image-exif` / `image-optimizer` | 单图管线：压缩·裁切·格式·EXIF·优化 | A | A.2 | — | **已上线 / 在研** |
+| `wcag-contrast-checker` | 前景/背景对比度 → AA/AAA 判定 + 建议配对色 | A | A.9 | **P0** | 新建；Rules 表须写清 WCAG 2.x 比率 |
+| `brand-color-token-pack` | 1 主色 → HEX/RGB/HSL/OKLCH + 色阶（如 50–950）+ 对比度配对 | A + 1→N | A.9 / B.3 非图片同构 | **P0** | 可与对比度页 Related；勿拆「仅 HEX 转换」薄页 |
+| `favicon-and-pwa-icon-pack` | 1 方 Logo → favicon / apple-touch / PWA 尺寸 + manifest 示例 | B | B8 | **P0** | 设计师交付站标高频 |
+| `social-share-image-pack` | 1 主视觉 → OG / X / LinkedIn / YouTube 等封面 ZIP | B | B9 | **P0** | 与 `image-merge` 平台拼贴 **intent 分离** |
+| `image-merge` | 2+ 图 → 横/竖/网格一张；可选 IG 1080² / FB 1200×630 预设 | B | B13 / A.2.1 | **P1** | N→1；布局公式页内可见 |
+| `add-watermark` | 单图文字水印（位置/透明度/旋转） | A | A.2 / B13 | **P1** | 与 overlay 分工：文字 vs 双图层 |
+| `images-to-pdf` | 多图 → 多页 PDF | A/B | A.5 / B13 | **P1** | 归档/交付 |
+| `svg-optimizer` | SVG 粘贴/上传 → SVGO 选项可视化 + 体积对比 | A | A（矢量） | **P1** | 对标 SVGOMG 交互；本地处理 |
+| `color-from-image` | 图 → 主色板（可导入 token 页） | A | A.2 colorthief | **P1** | 可并入 `brand-color-token-pack` Tab，避免双薄页 |
+| `type-scale-token-pack` | 1 基准字号 → 模块化字阶表（可导出 CSS 变量） | A + 1→N | B.3 非图片同构 | **P2** | 不做完整字体库/Google Fonts 托管 |
+| `css-shadow-generator` | 可视化 box/text-shadow → 可复制 CSS | A | A.9 扩展 | **P2** | 生成器类；须有参数→CSS 规则说明 |
+| `image-overlay` | 底图 + 叠图（透明度/混合/位置） | A/B | B13 | **P2** | |
+| `flip-image` | 水平/垂直镜像 | A | A.2.1 | **P2** | 可并入 crop「变换」区 |
+| `app-icon-generator-pack` | 1 Logo → App 图标全套倍率 | B | B6 | **P1**（渠道向） | 偏开发者交付，设计师常供源图 |
+| `local-bg-removal` | 浏览器端抠图 → 透明 PNG | A | A.11 | **P2** | Tier 2 WASM；须误差声明；不做付费墙级 SaaS |
+
+**建议排期（设计师簇产能线）**：
+
+```
+P0：wcag-contrast-checker → brand-color-token-pack（含取色 Tab 可选）
+    → favicon-and-pwa-icon-pack → social-share-image-pack
+P1：image-merge → add-watermark → svg-optimizer → images-to-pdf
+P2：type-scale / css-shadow / overlay / flip / local-bg-removal
+```
+
+### D.2 竞品对照表（可学习对象）
+
+> **分层**：完整设计套件（Figma / Canva / Adobe Express）影响用户心智，但**不是**本站竞品；下表聚焦**轻量工具站**与可抄的交互/信息架构。快照日期 2026-08。
+
+#### D.2.1 直接对标（学功能与闭环）
+
+| 竞品 | URL | 强项（可学） | 本站对应 / 差距 | 应避免 |
+|---|---|---|---|---|
+| **Coolors** | https://coolors.co/ | Space 刷色板、导出多格式、对比度/取色工具链互推 | `brand-color-token-pack` + `wcag-contrast-checker`；缺「百万灵感库」用教育式色相规则补 IG | 空壳「又一个 palette」无规则表 |
+| **Realtime Colors** | https://www.realtimecolors.com/ | 配色实时打在落地页 mock；亮暗切换 | 色板页可加**轻量** UI 预览块（非整站模板编辑） | 做成迷你网站构建器 |
+| **uicolors.app** | https://uicolors.app/ | 单色 → Tailwind 50–950 + 可访问提示 | 并入 token pack 的「色阶」输出 | 仅 Tailwind 一词堆 SEO |
+| **Squoosh** | https://squoosh.app/ | 本地压缩、前后对比、编解码参数透明 | 已有 compress/optimizer；对齐隐私叙事与对比 UI | 复制 WASM 体积拖垮 CWV（须 Tier 2 懒加载） |
+| **SVGOMG** | https://jakearchibald.github.io/svgomg/ | SVGO 选项可视化、体积即时反馈 | `svg-optimizer` | 无说明的选项堆砌 |
+| **ILoveIMG** | https://www.iloveimg.com/ | 工具簇导航、批量、任务完成闭环 | 图片四件套 + 后续 merge/watermark | 强制上传、付费墙、近义薄页 |
+| **Merge Images** | https://mergeimages.co/ | N→1 布局、平台发帖尺寸、工具互链 | `image-merge` 等（见 A.2.1） | 与 1→N OG 包混 H1；AI Combiner；404 薄链 |
+| **Super Designer** | https://superdesigner.co/ | 30+ 生成器、无账号、PNG/SVG/CSS 导出 | Gradient 已有；shadow / 后续生成器 | 为数量而拆无增量页 |
+| **jarvisbox Design** | https://tools.jarvisbox.app/design/ | 对比度+色盲+字体+SVG+Favicon 一站式本地工具 | 本专题全簇组织方式可参考 | 功能清单页无深度内容 |
+| **webtoolkit Design** | https://www.webtoolkit.tech/tools/design | 「浏览器本地」文案与工具清单组织 | 隐私默认对齐 | 机翻堆工具描述 |
+| **Remove.bg** | https://www.remove.bg/ | 单任务极致转化 | `local-bg-removal`（P2） | 服务端依赖与付费限额叙事；黑盒无误差声明 |
+| **配色宝** | https://peisebao.com/ | 中文市场：配色+对比度+色盲组合 | 10 语本地化时对照中文意图词 | 趋势堆砌无公式 |
+
+#### D.2.2 垂直灵感（学单点，不整站对标）
+
+| 竞品 | 学什么 | 本站落点 |
+|---|---|---|
+| [Haikei](https://haikei.app/) | SVG 背景参数化（blob/wave/grid） | 可选 P2 生成器；勿与 `svg-optimizer` 混 intent |
+| [Adobe Color](https://color.adobe.com/) | 色相环 / 和谐规则教育 | token pack FAQ + Rules |
+| [Color Hunt](https://colorhunt.co/) | 调色板浏览体验 | 不做社区库；Related 链自有工具即可 |
+| [Photopea](https://www.photopea.com/) | 浏览器重编辑**上限**（划边界用） | **不抄**；本站停在单任务工具 |
+
+#### D.2.3 非竞品（心智锚点，正面不抢）
+
+| 产品 | 用户用它做什么 | 本站关系 |
+|---|---|---|
+| Figma / Penpot | 协作 UI、组件、原型 | 上游；本站做导出后规格与 token |
+| Canva / VistaCreate / Adobe Express | 模板营销图、社媒排版 | 上游；本站做压缩、多规格、拼图、Favicon |
+| TinyWow 等万能工具超市 | 杂项文件任务 | 学闭环，避铺量与上传墙（见附录） |
+
+### D.3 本专题验收与红线
+
+1. 每个上线页能指出 **主方向 A 或 B** + 本表 slug 行。  
+2. 配色/对比度页：可见 **WCAG 比率表** + 色空间说明（非仅色块好看）。  
+3. 1→N 交付页：规格表 + References + 更新日期 + ZIP/多文件说明（同 B.6）。  
+4. N→1 合成页：布局公式可见；**不得**与 `social-share-image-pack` 共用同一 H1 intent。  
+5. 文件类默认 **本地处理** 声明；Tier 2（抠图等）须用户触发加载 + 误差声明。  
+6. **禁止**：仅改 title 的「设计师版」图片压缩换皮；无增量 AI 配色灌页。
+
+### D.4 与现有章节索引
+
+| 需要细节时读 | 内容 |
+|---|---|
+| A.2 / A.2.1 | 图片单图与 Merge Images 对照 |
+| A.9 / A.11 | 颜色/QR；OCR/抠图成熟度 |
+| B8–B13 / B.3 / B.5 | Favicon、社交图、N→1、总优先级表 |
+| C08 / C.8 站长品牌 | 集群与第二梯队入口 |
+| 附录竞品启示 | TinyWow / Merge Images 压缩表 |
 
 ---
 
@@ -855,7 +976,8 @@ H1 具名渠道 + 动作（如 Amazon Product Image Resizer）
 ### 方向 A 建议优先（技术成熟、独立可上）
 
 文本互转增强、**图片单图管线（已部分上线）**、哈希/Base64、PDF 合并、时间戳、颜色/对比度 — 按 A.13 成熟度表排，**不必**先写场景链。  
-**图片下一批（A.2 / A.2.1）**：`add-watermark` → `image-merge`（含 IG/FB 预设）→ `images-to-pdf`；`flip-image` / `image-overlay` 为 P2。
+**图片下一批（A.2 / A.2.1）**：`add-watermark` → `image-merge`（含 IG/FB 预设）→ `images-to-pdf`；`flip-image` / `image-overlay` 为 P2。  
+**设计师簇（A 侧）**：`wcag-contrast-checker` → `brand-color-token-pack` → `svg-optimizer`（详见专题 D.1）。
 
 ### 方向 B 建议优先（场景桥 + 1→N）
 
@@ -867,6 +989,8 @@ H1 具名渠道 + 动作（如 Amazon Product Image Resizer）
 2. `app-icon-generator-pack`（Logo → 全套倍率，实现面干净）  
 3. `ios-app-screenshot-resizer`（规格表较长，需维护 `asset-specs` JSON）  
 4. 随后：`favicon-and-pwa-icon-pack`、`social-share-image-pack`、`google-play-asset-pack`
+
+**设计师交付产能线（可与电商/App 1→N 并行择一）**：`favicon-and-pwa-icon-pack` → `social-share-image-pack` → `image-merge`（见专题 D.1）。
 
 逐工具卡片见 [每工具方案](./2026-07-28-per-tool-dev-seo-plans.md)。
 
@@ -914,8 +1038,9 @@ npm run lint:seo && npm run build:site
 1. **方向 B · 1→N**：落地 `amazon-image-resizer` 或 `app-icon-generator-pack`（验证规格 JSON + ZIP 模板产能）。  
 2. **方向 B · 1→1**：按每工具方案继续 Schema Validator 等桥工具。  
 3. **方向 A**：文本/图片/编码成熟度 ✅✅✅ 的独立工具。  
-4. **方向 C**：存量 YMYL References；V6/V3 与 1→N 工具选主方向挂靠。  
-5. 每季度分方向复盘；核对 Apple/Amazon/Google 规格是否过期。
+4. **专题 · 设计师工具**：P0 立项 `wcag-contrast-checker` 或 `brand-color-token-pack`；并行评估 `favicon-and-pwa-icon-pack`（见 D.1）。  
+5. **方向 C**：存量 YMYL References；V6/V3 与 1→N 工具选主方向挂靠。  
+6. 每季度分方向复盘；核对 Apple/Amazon/Google 规格是否过期；设计师簇对照 Coolors / Squoosh / Merge Images 是否需更新 D.2。
 
 ---
 
@@ -927,6 +1052,7 @@ npm run lint:seo && npm run build:site
 | TinyWow | 任务闭环 | 强制上传与付费墙 |
 | SmallSEOTools | 分类导航 | 薄内容与广告堆叠 |
 | **[Merge Images](https://mergeimages.co/)** | 浏览器本地 N→1 合成；横/竖/网格 + 间距背景；平台发帖预设（IG 1080²、FB 1200×630）；Overlay/水印/Flip/PDF 工具链互推；Before-After 等 use cases | 按布局拆多 slug；AI Combiner 黑盒；站脚链到 404 的薄工具（PNG→SVG 等）；与 1→N 封面工具混 intent |
+| **Coolors / Realtime Colors / SVGOMG 等** | 配色闭环、实境预览、SVG 选项可视化（**详表见专题 D.2**） | 灵感库堆量、迷你建站器、无规则薄页 |
 
 **Merge Images vs 本站图片规划（速查）**：
 
@@ -941,4 +1067,4 @@ npm run lint:seo && npm run build:site
 
 ---
 
-*维护：方向 A 改成熟度/包结论时同步包调研或音视频文档；方向 B 增场景卡（含 B13 N→1）；方向 C 增垂直调研；竞品快照见 A.2.1 / 附录。产品主方向字段只改本文与 tool-catalog。*
+*维护：方向 A 改成熟度/包结论时同步包调研或音视频文档；方向 B 增场景卡（含 B13 N→1）；方向 C 增垂直调研；**设计师工具**改候选/优先级/竞品时同步专题 D 节；竞品快照见 A.2.1 / 专题 D.2 / 附录。产品主方向字段只改本文与 tool-catalog。*

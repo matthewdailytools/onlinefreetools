@@ -1,7 +1,7 @@
 /**
- * 图片优化工具页（Tier 2）：MozJPEG / WebP / AVIF / OxiPNG，首屏不拉 WASM。
- * slug: image-optimizer；点击「加载优化引擎」后再动态 import engine.mjs。
- * 见 work-tasks/image-optimizer/02-tool-info.md。
+ * ????????Tier 2??MozJPEG / WebP / AVIF / OxiPNG??????WASM??
+ * slug: image-optimizer????????????????import engine.mjs??
+ * ??work-tasks/image-optimizer/02-tool-info.md??
  */
 import type { SiteLang } from '../site/i18n';
 import { t, supportedLangs } from '../site/i18n';
@@ -18,17 +18,17 @@ import {
 	buildToolJsonLd,
 } from './site/toolContent';
 
-/** 为路径加上语言前缀（默认语无前缀）。 */
+/** ???????????????????*/
 const withLangPrefix = (lang: SiteLang, pathname: string, defaultLang: SiteLang) => {
 	const safe = pathname.startsWith('/') ? pathname : `/${pathname}`;
 	return lang === defaultLang ? safe : `/${lang}${safe}`;
 };
 
 /**
- * 渲染图片优化工具页（编码器选择 + 滑动对照 + Tier 2 引擎懒加载）。
- * @param opts.lang 当前语言
- * @param opts.defaultLang 站点默认语言
- * @param opts.enabledLangs 启用语言列表（语言切换器用全量 supportedLangs）
+ * ??????????????? + ???? + Tier 2 ????????
+ * @param opts.lang ????
+ * @param opts.defaultLang ??????
+ * @param opts.enabledLangs ??????????????? supportedLangs??
  */
 export const renderImageOptimizerPage = (opts: {
 	lang: SiteLang;
@@ -42,7 +42,7 @@ export const renderImageOptimizerPage = (opts: {
 
 	const navItems = buildToolPageNavItems(opts.lang, opts.defaultLang);
 
-	/** 语言切换链接始终带显式语言前缀（含默认语）。 */
+	/** ???????????????????????*/
 	const withExplicitLangPrefix = (code: SiteLang, pathname: string) => {
 		const safe = pathname.startsWith('/') ? pathname : `/${pathname}`;
 		return `/${code}${safe}`.replace(/\/{2,}/g, '/');
@@ -79,19 +79,13 @@ export const renderImageOptimizerPage = (opts: {
 	const footerHtml = renderFooter({ lang: opts.lang });
 
 	/**
-	 * 页内样式：拖放区、对照滑条；以及 wasm-feature-detect 的 import map
-	 *（供 engine / jsquash 依赖解析，首屏仍不加载 WASM）。
+	 * ???????????????? wasm-feature-detect ??import map
+	 *?? engine / jsquash ????????????WASM???
 	 */
 	const extraHeadHtml = `
   <style>
     .tools-bar { gap: .5rem; }
     .opt-group { gap: .75rem; align-items: center; }
-    .io-drop {
-      border: 2px dashed #adb5bd; border-radius: .5rem; padding: 1.25rem; text-align: center;
-      background: #f8f9fa; cursor: pointer; transition: border-color .15s, background .15s;
-    }
-    .io-drop.dragover { border-color: #0a6ebd; background: #e7f1f8; }
-    .io-drop input[type=file] { display: none; }
     .io-compare {
       position: relative; width: 100%; max-width: 720px; margin: 0 auto;
       aspect-ratio: 16 / 10; background:
@@ -102,7 +96,7 @@ export const renderImageOptimizerPage = (opts: {
       background-size: 16px 16px; background-position: 0 0, 0 8px, 8px -8px, -8px 0;
       border: 1px solid #dee2e6; border-radius: .5rem; overflow: hidden; user-select: none;
     }
-    /* after 铺满对照框；before 层绝对裁切，图宽与整框一致以对齐 */
+    /* after ??????before ???????????????? */
     .io-compare > #ioAfter {
       position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%;
       object-fit: contain; pointer-events: none; display: block;
@@ -132,10 +126,16 @@ export const renderImageOptimizerPage = (opts: {
   </script>`;
 
 	const contentHtml = `
-    <div id="optimizer" class="mb-3">
-      <h1 class="h4 mb-1">${escapeHtml(t(opts.lang, 'tool_image_optimizer_title'))}</h1>
-      <p class="text-muted mb-0">${escapeHtml(description)}</p>
+    <div id="optimizer" class="tool-page-heading mb-3">
+      <h1 class="h4 mb-0">${escapeHtml(t(opts.lang, 'tool_image_optimizer_title'))}</h1>
     </div>
+
+    <label class="tool-dropzone io-drop mb-3" id="ioDrop" for="ioFile">
+      <input type="file" id="ioFile" accept="image/png,image/jpeg,image/webp,image/gif,image/bmp,image/avif,image/*">
+      <span class="tool-dropzone-title">${escapeHtml(t(opts.lang, 'tool_image_optimizer_choose_file'))}</span>
+      <span class="tool-dropzone-hint">${escapeHtml(t(opts.lang, 'tool_image_optimizer_drop_hint'))}</span>
+      <span id="ioFileName" class="tool-dropzone-file"></span>
+    </label>
 
     <div class="d-flex align-items-center tools-bar mb-2 flex-wrap">
       <button type="button" id="ioBtnLoad" class="btn btn-primary btn-sm">${escapeHtml(t(opts.lang, 'tool_image_optimizer_load_engine'))}</button>
@@ -172,13 +172,6 @@ export const renderImageOptimizerPage = (opts: {
       <span id="ioEffortVal" class="small text-muted">5</span>
     </div>
 
-    <label class="io-drop d-block mb-3" id="ioDrop" for="ioFile">
-      <input type="file" id="ioFile" accept="image/png,image/jpeg,image/webp,image/gif,image/bmp,image/avif,image/*">
-      <strong>${escapeHtml(t(opts.lang, 'tool_image_optimizer_choose_file'))}</strong>
-      <div class="small text-muted mt-1">${escapeHtml(t(opts.lang, 'tool_image_optimizer_drop_hint'))}</div>
-      <div id="ioFileName" class="small mt-2 mb-0"></div>
-    </label>
-
     <p id="ioWarn" class="small text-warning mb-2" style="display:none;" role="status"></p>
     <p id="ioError" class="small text-danger mb-2" style="display:none;" role="alert"></p>
     <p id="ioStatus" class="small text-muted mb-2" role="status"></p>
@@ -193,7 +186,8 @@ export const renderImageOptimizerPage = (opts: {
       <input type="range" id="ioSlider" min="0" max="100" value="50" aria-label="${escapeHtml(t(opts.lang, 'tool_image_optimizer_preview_before'))} / ${escapeHtml(t(opts.lang, 'tool_image_optimizer_preview_after'))}">
     </div>
     <p id="ioStats" class="small text-muted mb-1"></p>
-    <p id="ioRatio" class="small fw-semibold mb-4"></p>`;
+    <p id="ioRatio" class="small fw-semibold mb-3"></p>
+    <p class="tool-lead mb-4">${escapeHtml(description)}</p>`;
 
 	const igHtml = renderToolIgSections({
 		lang: opts.lang,
@@ -208,24 +202,24 @@ export const renderImageOptimizerPage = (opts: {
 		links: [
 			{ label: 'jSquash', href: 'https://github.com/jamsinclair/jSquash' },
 			{ label: 'MozJPEG', href: 'https://github.com/mozilla/mozjpeg' },
-			{ label: 'WebP — Google Developers', href: 'https://developers.google.com/speed/webp' },
+			{ label: 'WebP ??Google Developers', href: 'https://developers.google.com/speed/webp' },
 			{ label: 'AV1 Image File Format (AVIF)', href: 'https://aomediacodec.github.io/av1-avif/' },
 		],
 	});
 
 	/**
-	 * 客户端逻辑：解码 → ImageData →（可选缩放）→ 懒加载 engine.encodeImage → 滑动对照。
-	 * Tier 2：首屏不 import WASM；用户点击「加载优化引擎」后再拉。
-	 * 全部在浏览器内完成，不上传文件。
+	 * ???????????ImageData ?????????????engine.encodeImage ????????
+	 * Tier 2???? import WASM??????????????????
+	 * ?????????????????
 	 */
 	const extraBodyHtml = `
   <script>
     (function () {
-      /** 单文件软上限（字节） */
+      /** ?????????? */
       var SOFT_BYTES = 25 * 1024 * 1024;
-      /** 单边像素软上限 */
+      /** ????????*/
       var SOFT_EDGE = 8192;
-      /** 引擎模块路径（相对站点根） */
+      /** ??????????????*/
       var ENGINE_URL = '/tools/image-optimizer/engine.mjs';
 
       var drop = document.getElementById('ioDrop');
@@ -275,30 +269,30 @@ export const renderImageOptimizerPage = (opts: {
         ratioTpl: ${JSON.stringify(t(opts.lang, 'tool_image_optimizer_ratio_tpl'))}
       };
 
-      /** @type {File|null} 源文件 */
+      /** @type {File|null} ????*/
       var sourceFile = null;
-      /** @type {ImageData|null} 解码后的像素（原始尺寸） */
+      /** @type {ImageData|null} ???????????? */
       var sourceImageData = null;
-      /** @type {string|null} before 预览 object URL */
+      /** @type {string|null} before ?? object URL */
       var beforeUrl = null;
-      /** @type {Blob|null} 编码结果 */
+      /** @type {Blob|null} ???? */
       var outputBlob = null;
-      /** @type {string|null} after 预览 object URL */
+      /** @type {string|null} after ?? object URL */
       var afterUrl = null;
       var outputName = 'optimized.jpg';
-      /** 引擎是否已 warm */
+      /** ??????warm */
       var engineReady = false;
       /** @type {null|{ encodeImage: Function, warmEngine: Function }} */
       var engineMod = null;
-      /** 编码进行中 */
+      /** ??????*/
       var optimizing = false;
-      /** 用户取消标记（best-effort：忽略迟到结果） */
+      /** ???????best-effort???????? */
       var cancelled = false;
-      /** 代数令牌：每次新编码自增，迟到回调对照后丢弃 */
+      /** ?????????????????????? */
       var encodeGen = 0;
 
       /**
-       * 显示或清空警告文案。
+       * ???????????
        * @param {string} [text]
        */
       function setWarn(text) {
@@ -308,7 +302,7 @@ export const renderImageOptimizerPage = (opts: {
       }
 
       /**
-       * 显示或清空错误文案。
+       * ???????????
        * @param {string} [text]
        */
       function setError(text) {
@@ -321,7 +315,7 @@ export const renderImageOptimizerPage = (opts: {
       function setStatus(text) { statusEl.textContent = text || ''; }
 
       /**
-       * 人类可读体积。
+       * ????????
        * @param {number} n
        * @returns {string}
        */
@@ -332,7 +326,7 @@ export const renderImageOptimizerPage = (opts: {
       }
 
       /**
-       * 按模板填充结果统计行。
+       * ????????????
        * @param {string} codec
        * @param {number} w
        * @param {number} h
@@ -342,7 +336,7 @@ export const renderImageOptimizerPage = (opts: {
        */
       function formatStats(codec, w, h, bytes, ms) {
         return msg.statsTpl
-          .replace('{codec}', codec || '—')
+          .replace('{codec}', codec || '??)
           .replace('{w}', String(w))
           .replace('{h}', String(h))
           .replace('{bytes}', formatBytes(bytes))
@@ -350,7 +344,7 @@ export const renderImageOptimizerPage = (opts: {
       }
 
       /**
-       * 同步质量/缩放控件可用性（OxiPNG 不用 quality）。
+       * ????/????????OxiPNG ?? quality???
        */
       function syncOptionsUi() {
         var isOxipng = codecSel.value === 'oxipng';
@@ -365,7 +359,7 @@ export const renderImageOptimizerPage = (opts: {
       }
 
       /**
-       * 按滑条百分比裁切 before 层宽度。
+       * ???????? before ?????
        */
       function syncCompareSlider() {
         var pct = Math.max(0, Math.min(100, Number(slider.value) || 50));
@@ -376,7 +370,7 @@ export const renderImageOptimizerPage = (opts: {
       }
 
       /**
-       * 解码 Blob 为 ImageBitmap 或 HTMLImageElement。
+       * ?? Blob ??ImageBitmap ??HTMLImageElement??
        * @param {Blob} blob
        * @returns {Promise<{bitmap: ImageBitmap|HTMLImageElement, w: number, h: number}>}
        */
@@ -402,7 +396,7 @@ export const renderImageOptimizerPage = (opts: {
       }
 
       /**
-       * 将 bitmap 画到 canvas 并取出 ImageData（可选最长边缩放，不放大）。
+       * ??bitmap ?? canvas ????ImageData???????????????
        * @param {ImageBitmap|HTMLImageElement} bitmap
        * @param {number} srcW
        * @param {number} srcH
@@ -431,7 +425,7 @@ export const renderImageOptimizerPage = (opts: {
       }
 
       /**
-       * 装载源文件：解码为 ImageData，更新 before 对照层与软上限警告。
+       * ??????????ImageData????before ???????????
        * @param {File} file
        * @returns {Promise<void>}
        */
@@ -458,14 +452,14 @@ export const renderImageOptimizerPage = (opts: {
             if (dec.w > SOFT_EDGE || dec.h > SOFT_EDGE) {
               setWarn((warnEl.textContent ? warnEl.textContent + ' ' : '') + msg.edge);
             }
-            /* 原始尺寸 ImageData，缩放留给编码时 */
+            /* ???? ImageData???????? */
             sourceImageData = bitmapToImageData(dec.bitmap, dec.w, dec.h, false);
             if (dec.bitmap && typeof dec.bitmap.close === 'function') dec.bitmap.close();
 
             if (beforeUrl) URL.revokeObjectURL(beforeUrl);
             beforeUrl = URL.createObjectURL(file);
             imgBefore.src = beforeUrl;
-            imgAfter.src = beforeUrl; /* 尚无结果时 after 暂同 before，滑条仍可用 */
+            imgAfter.src = beforeUrl; /* ??????after ?? before?????? */
             compareEl.hidden = false;
             requestAnimationFrame(syncCompareSlider);
             syncOptionsUi();
@@ -479,7 +473,7 @@ export const renderImageOptimizerPage = (opts: {
       }
 
       /**
-       * 动态 import 引擎并 warmEngine（Tier 2 入口）。
+       * ???import ????warmEngine?Tier 2 ?????
        * @returns {Promise<void>}
        */
       function loadEngine() {
@@ -507,7 +501,7 @@ export const renderImageOptimizerPage = (opts: {
       }
 
       /**
-       * 展示编码结果：更新 after 图、统计、体积比、下载。
+       * ??????????after ?????????????
        * @param {{ buffer: ArrayBuffer, mime: string, ext: string, codec: string }} enc
        * @param {number} w
        * @param {number} h
@@ -537,7 +531,7 @@ export const renderImageOptimizerPage = (opts: {
       }
 
       /**
-       * 执行优化：可选缩放 → encodeImage；AVIF 显示慢提示并可取消（代令牌）。
+       * ????????????encodeImage?AVIF ????????????????
        * @returns {Promise<void>}
        */
       function optimize() {
@@ -566,8 +560,8 @@ export const renderImageOptimizerPage = (opts: {
         var t0 = (typeof performance !== 'undefined' && performance.now) ? performance.now() : Date.now();
 
         /**
-         * 从当前 sourceImageData / 源文件再解码后按需缩放。
-         * 优先用已有 ImageData 画布缩放，避免重复读盘。
+         * ????sourceImageData / ?????????????
+         * ??????ImageData ?????????????
          */
         var workDataPromise;
         if (resizeOn.checked) {
@@ -590,7 +584,7 @@ export const renderImageOptimizerPage = (opts: {
           })
           .then(function (pack) {
             var t1 = (typeof performance !== 'undefined' && performance.now) ? performance.now() : Date.now();
-            /* 取消后忽略迟到结果 */
+            /* ??????????*/
             if (cancelled || myGen !== encodeGen) {
               setStatus(msg.cancelled);
               return;
@@ -617,7 +611,7 @@ export const renderImageOptimizerPage = (opts: {
           });
       }
 
-      /** 请求取消当前编码（best-effort）。 */
+      /** ?????????best-effort???*/
       function cancelOptimize() {
         if (!optimizing) return;
         cancelled = true;
@@ -627,7 +621,7 @@ export const renderImageOptimizerPage = (opts: {
         syncOptionsUi();
       }
 
-      /** 触发结果 Blob 下载。 */
+      /** ???? Blob ????*/
       function download() {
         if (!outputBlob) return;
         var a = document.createElement('a');
@@ -640,7 +634,7 @@ export const renderImageOptimizerPage = (opts: {
         setTimeout(function () { URL.revokeObjectURL(url); }, 2000);
       }
 
-      /** 清空源图、结果与状态。 */
+      /** ????????????*/
       function clearAll() {
         cancelled = true;
         encodeGen += 1;
@@ -663,7 +657,7 @@ export const renderImageOptimizerPage = (opts: {
       }
 
       /**
-       * 生成渐变 JPEG 样例并装载为 before（不自动编码，因引擎可能未加载）。
+       * ???? JPEG ?????? before??????????????????
        * @returns {Promise<void>}
        */
       function loadSample() {
@@ -720,7 +714,7 @@ export const renderImageOptimizerPage = (opts: {
       btnClear.addEventListener('click', clearAll);
 
       syncOptionsUi();
-      /* 首屏仅加载样例预览，不拉 WASM */
+      /* ???????????? WASM */
       loadSample();
     })();
   </script>`;

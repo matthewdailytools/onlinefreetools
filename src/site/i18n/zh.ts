@@ -642,25 +642,32 @@ const zh: SiteLangDict = {
   tool_html_entity_faq_a5: '不会。转换在本地完成，不加载外部库，也不上传粘贴内容。',
 
 
-  tool_image_format_converter_title: '图片格式转换 — PNG / JPEG / WebP / AVIF（本地）',
-  tool_image_format_converter_description:
-    '在浏览器内把图片在 PNG、JPEG、WebP、AVIF 之间转换。步骤：选择文件、选定目标格式、调节质量（转 JPEG 时可设底色），再下载。示例：透明 PNG 截图转成 WebP 方便上站；也可把 AVIF 转成 JPEG 给旧软件打开——文件不离开本机。',
-  tool_image_format_converter_article:
-    '本地图片格式互转：讲清质量含义、透明通道与浏览器编码能力差异。',
+  tool_image_format_converter_title: '图片格式转换 — PNG JPEG WebP AVIF BMP GIF ICO SVG 本地完成',
+  tool_image_format_converter_description: 
+    '在浏览器里把图片转成 PNG、JPEG、WebP、AVIF、BMP、GIF、ICO 或 SVG。步骤：选图 → 选目标格式 → 需要时调质量 → 下载。例如把透明 PNG 图标转成 WebP 上站，或导出 ICO 做站点图标——文件不离开本机。',
+  tool_image_format_converter_article: 
+    '本地图片格式转换：说明质量、透明、浏览器编码差异，并支持 BMP/GIF/ICO/SVG 扩展导出。',
   tool_image_format_converter_convert: '转换',
   tool_image_format_converter_download: '下载',
   tool_image_format_converter_sample: '加载示例',
   tool_image_format_converter_clear: '清空',
   tool_image_format_converter_choose_file: '选择图片',
-  tool_image_format_converter_drop_hint: '也可拖放 PNG、JPEG、WebP、AVIF、GIF、BMP。转换在本页完成。',
+  tool_image_format_converter_drop_hint: '或把 PNG、JPEG、WebP、AVIF、GIF、BMP、ICO、SVG 拖到这里。转换在本标签页完成。',
   tool_image_format_converter_target_label: '目标格式',
   tool_image_format_converter_format_png: 'PNG',
   tool_image_format_converter_format_jpeg: 'JPEG',
   tool_image_format_converter_format_webp: 'WebP',
   tool_image_format_converter_format_avif: 'AVIF',
+  tool_image_format_converter_format_bmp: 'BMP',
+  tool_image_format_converter_format_gif: 'GIF',
+  tool_image_format_converter_format_ico: 'ICO',
+  tool_image_format_converter_format_svg: 'SVG',
+  tool_image_format_converter_group_web: '网页格式',
+  tool_image_format_converter_group_extra: '更多格式',
   tool_image_format_converter_quality_label: '质量',
   tool_image_format_converter_quality_hint_png: 'PNG 为无损，质量滑条无效。',
   tool_image_format_converter_quality_hint_webp_lossless: 'WebP 质量 1.0 可能按无损编码。',
+  tool_image_format_converter_quality_hint_extra: 'BMP、GIF、ICO、SVG 忽略质量滑条。',
   tool_image_format_converter_jpeg_bg_label: 'JPEG 背景',
   tool_image_format_converter_jpeg_bg_white: '白',
   tool_image_format_converter_jpeg_bg_black: '黑',
@@ -680,19 +687,21 @@ const zh: SiteLangDict = {
   tool_image_format_converter_status_converting: '转换中…',
   tool_image_format_converter_status_done: '完成——请核对下方 MIME 与体积后再下载。',
   tool_image_format_converter_how_title: '怎么用',
-  tool_image_format_converter_how_body:
-    '选好图片和目标格式后，页面在本地解码像素、画到画布，再调用浏览器编码器。转 JPEG 时可先铺底色，避免透明变成不可预期的颜色。输出会核对 MIME，防止静默回退被当成成功。',
+  tool_image_format_converter_how_body: 
+    '选择图片和目标格式后，页面在本标签页解码像素、画到画布，再用浏览器编码器（toBlob）或本地编码器（BMP/GIF/ICO/SVG）导出。转到 JPEG 时可先铺底色。会校验输出 MIME，避免静默回退被当成成功。',
   tool_image_format_converter_rules_title: '需要知道的规则',
   tool_image_format_converter_rules_body:
     '四种格式在透明、有损质量和编码支持上并不相同。选目标前先看清这些差异。',
-  tool_image_format_converter_rules_item_1:
-    '流程：解码 →（JPEG）铺底色 → 绘制 → toBlob。PNG 忽略质量（始终无损）；WebP 质量 1.0 可能走无损。',
+  tool_image_format_converter_rules_item_1: 
+    '流水线：解码 → 可选铺底 → 画布绘制 → 编码。PNG/JPEG/WebP/AVIF 走浏览器 toBlob；BMP/GIF/ICO/SVG 走本地编码器。PNG 与扩展格式忽略质量滑条。',
   tool_image_format_converter_rules_item_2:
     '透明：PNG / WebP / AVIF 可保留 alpha；JPEG 没有透明通道，需选白、黑或自定义底色。',
   tool_image_format_converter_rules_item_3:
     '编码：能解码不等于能编码。AVIF 编码多见于 Chromium；若浏览器回退到其他类型，本页会校验并提示。',
   tool_image_format_converter_rules_item_4:
     '隐私：图片字节不上传，全程用浏览器内置 API 在本页处理。',
+  tool_image_format_converter_rules_item_5: 
+    '扩展格式：BMP 为 24 位；GIF 为单帧量化图（动画只取一帧）；ICO 内嵌 PNG；SVG 嵌入 PNG 数据 URL——适合图标交接，不是矢量重绘。',
   tool_image_format_converter_example_title: '示例',
   tool_image_format_converter_example:
     '输入：240×160 带透明背景的 PNG 图标。目标 JPEG + 白底 → 得到无 alpha 的 JPEG。同一图标转 WebP（质量 0.85）→ 像素尺寸不变，体积常明显变小。可点「加载示例」试这两种路径。',
@@ -713,6 +722,9 @@ const zh: SiteLangDict = {
   tool_image_format_converter_faq_a5: '看结果区的 MIME，再下载文件核对。若浏览器静默回退，本页会报错而不是假装成功。',
   tool_image_format_converter_faq_q6: 'GIF 动图还能动吗？',
   tool_image_format_converter_faq_a6: '不能。画布转换只取一帧（通常是第一帧），只适合导出静态图。',
+  tool_image_format_converter_faq_q7: 'BMP、GIF、ICO、SVG 怎么处理？',
+  tool_image_format_converter_faq_a7: 
+    '都在本标签页本地编码。GIF 保留一帧并缩减调色板；ICO 内嵌 PNG；SVG 是位图 PNG 的包装（不是路径矢量重绘）。上站体积优先仍建议 WebP/AVIF。',
 
 
   tool_image_exif_title: '图片 EXIF 查看与清除 — GPS、相机信息、本地处理',

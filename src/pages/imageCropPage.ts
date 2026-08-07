@@ -1,7 +1,7 @@
 /**
- * 图片裁剪与改尺寸工具页：本地选区 + 比例/像素预设 + Canvas drawImage/toBlob。
- * slug: image-crop；不拆 crop-image / resize-image / crop-to-square 等近义 URL。
- * 见 work-tasks/image-crop/02-tool-info.md。
+ * ???????????????? + ??/???? + Canvas drawImage/toBlob??
+ * slug: image-crop????crop-image / resize-image / crop-to-square ????URL??
+ * ??work-tasks/image-crop/02-tool-info.md??
  */
 import type { SiteLang } from '../site/i18n';
 import { t, supportedLangs } from '../site/i18n';
@@ -18,17 +18,17 @@ import {
 	buildToolJsonLd,
 } from './site/toolContent';
 
-/** 为路径加上语言前缀（默认语无前缀）。 */
+/** ???????????????????*/
 const withLangPrefix = (lang: SiteLang, pathname: string, defaultLang: SiteLang) => {
 	const safe = pathname.startsWith('/') ? pathname : `/${pathname}`;
 	return lang === defaultLang ? safe : `/${lang}${safe}`;
 };
 
 /**
- * 渲染图片裁剪 / 改尺寸工具页。
- * @param opts.lang 当前语言
- * @param opts.defaultLang 站点默认语言
- * @param opts.enabledLangs 启用语言列表（语言切换器用全量 supportedLangs）
+ * ?????? / ????????
+ * @param opts.lang ????
+ * @param opts.defaultLang ??????
+ * @param opts.enabledLangs ??????????????? supportedLangs??
  */
 export const renderImageCropPage = (opts: {
 	lang: SiteLang;
@@ -42,7 +42,7 @@ export const renderImageCropPage = (opts: {
 
 	const navItems = buildToolPageNavItems(opts.lang, opts.defaultLang);
 
-	/** 语言切换链接始终带显式语言前缀（含默认语）。 */
+	/** ???????????????????????*/
 	const withExplicitLangPrefix = (code: SiteLang, pathname: string) => {
 		const safe = pathname.startsWith('/') ? pathname : `/${pathname}`;
 		return `/${code}${safe}`.replace(/\/{2,}/g, '/');
@@ -78,17 +78,11 @@ export const renderImageCropPage = (opts: {
 
 	const footerHtml = renderFooter({ lang: opts.lang });
 
-	/** 页内样式：拖放区、选区舞台、预览与 JPEG 底色行。 */
+	/** ????????????????? JPEG ?????*/
 	const extraHeadHtml = `
   <style>
     .tools-bar { gap: .5rem; }
     .opt-group { gap: .75rem; align-items: center; }
-    .icr-drop {
-      border: 2px dashed #adb5bd; border-radius: .5rem; padding: 1.25rem; text-align: center;
-      background: #f8f9fa; cursor: pointer; transition: border-color .15s, background .15s;
-    }
-    .icr-drop.dragover { border-color: #0a6ebd; background: #e7f1f8; }
-    .icr-drop input[type=file] { display: none; }
     .icr-stage-wrap {
       position: relative; width: 100%; max-width: 100%; background: #1a1a1a;
       border: 1px solid #dee2e6; border-radius: .5rem; overflow: hidden;
@@ -111,10 +105,16 @@ export const renderImageCropPage = (opts: {
   </style>`;
 
 	const contentHtml = `
-    <div id="cropper" class="mb-3">
-      <h1 class="h4 mb-1">${escapeHtml(t(opts.lang, 'tool_image_crop_title'))}</h1>
-      <p class="text-muted mb-0">${escapeHtml(description)}</p>
+    <div id="cropper" class="tool-page-heading mb-3">
+      <h1 class="h4 mb-0">${escapeHtml(t(opts.lang, 'tool_image_crop_title'))}</h1>
     </div>
+
+    <label class="tool-dropzone icr-drop mb-3" id="icrDrop" for="icrFile">
+      <input type="file" id="icrFile" accept="image/png,image/jpeg,image/webp,image/gif,image/bmp,image/*">
+      <span class="tool-dropzone-title">${escapeHtml(t(opts.lang, 'tool_image_crop_choose_file'))}</span>
+      <span class="tool-dropzone-hint">${escapeHtml(t(opts.lang, 'tool_image_crop_drop_hint'))}</span>
+      <span id="icrFileName" class="tool-dropzone-file"></span>
+    </label>
 
     <div class="d-flex align-items-center tools-bar mb-2 flex-wrap">
       <button type="button" id="icrBtnApply" class="btn btn-primary btn-sm">${escapeHtml(t(opts.lang, 'tool_image_crop_apply'))}</button>
@@ -161,28 +161,28 @@ export const renderImageCropPage = (opts: {
       <select id="icrPreset" class="form-select form-select-sm" style="width:auto;max-width:16rem;">
         <option value="">${escapeHtml(t(opts.lang, 'tool_image_crop_preset_custom'))}</option>
         <optgroup label="${escapeHtml(t(opts.lang, 'tool_image_crop_preset_group_avatar'))}">
-          <option value="512x512" selected>512×512</option>
-          <option value="400x400">400×400</option>
-          <option value="256x256">256×256</option>
-          <option value="128x128">128×128</option>
-          <option value="800x800">800×800</option>
-          <option value="1000x1000">1000×1000</option>
+          <option value="512x512" selected>512?512</option>
+          <option value="400x400">400?400</option>
+          <option value="256x256">256?256</option>
+          <option value="128x128">128?128</option>
+          <option value="800x800">800?800</option>
+          <option value="1000x1000">1000?1000</option>
         </optgroup>
         <optgroup label="${escapeHtml(t(opts.lang, 'tool_image_crop_preset_group_thumb'))}">
-          <option value="150x150">150×150</option>
-          <option value="300x300">300×300</option>
+          <option value="150x150">150?150</option>
+          <option value="300x300">300?300</option>
         </optgroup>
         <optgroup label="${escapeHtml(t(opts.lang, 'tool_image_crop_preset_group_cover'))}">
-          <option value="1920x1080">1920×1080</option>
-          <option value="1280x720">1280×720</option>
-          <option value="1600x900">1600×900</option>
-          <option value="1200x675">1200×675</option>
-          <option value="1200x630">1200×630</option>
-          <option value="1920x600">1920×600</option>
+          <option value="1920x1080">1920?1080</option>
+          <option value="1280x720">1280?720</option>
+          <option value="1600x900">1600?900</option>
+          <option value="1200x675">1200?675</option>
+          <option value="1200x630">1200?630</option>
+          <option value="1920x600">1920?600</option>
         </optgroup>
         <optgroup label="${escapeHtml(t(opts.lang, 'tool_image_crop_preset_group_portrait'))}">
-          <option value="1080x1920">1080×1920</option>
-          <option value="1080x1350">1080×1350</option>
+          <option value="1080x1920">1080?1920</option>
+          <option value="1080x1350">1080?1350</option>
         </optgroup>
         <optgroup label="${escapeHtml(t(opts.lang, 'tool_image_crop_preset_group_web'))}">
           <option value="max1200">${escapeHtml(t(opts.lang, 'tool_image_crop_preset_max1200'))}</option>
@@ -191,7 +191,7 @@ export const renderImageCropPage = (opts: {
       </select>
       <label class="form-label mb-0" for="icrOutW">${escapeHtml(t(opts.lang, 'tool_image_crop_output_size'))}</label>
       <input type="number" id="icrOutW" class="form-control form-control-sm" min="1" max="8192" value="512" style="width:5.5rem;" aria-label="output width">
-      <span class="small">×</span>
+      <span class="small">?</span>
       <input type="number" id="icrOutH" class="form-control form-control-sm" min="1" max="8192" value="512" style="width:5.5rem;" aria-label="output height">
       <span class="small text-muted">px</span>
       <button type="button" id="icrBtnSame" class="btn btn-outline-secondary btn-sm">${escapeHtml(t(opts.lang, 'tool_image_crop_same_as_selection'))}</button>
@@ -223,13 +223,6 @@ export const renderImageCropPage = (opts: {
       <input type="color" id="icrBgColor" value="#ffffff" title="${escapeHtml(t(opts.lang, 'tool_image_crop_jpeg_bg_custom'))}" style="width:2.25rem;height:1.75rem;padding:0;border:1px solid #ced4da;">
     </div>
 
-    <label class="icr-drop d-block mb-3" id="icrDrop" for="icrFile">
-      <input type="file" id="icrFile" accept="image/png,image/jpeg,image/webp,image/gif,image/bmp,image/*">
-      <strong>${escapeHtml(t(opts.lang, 'tool_image_crop_choose_file'))}</strong>
-      <div class="small text-muted mt-1">${escapeHtml(t(opts.lang, 'tool_image_crop_drop_hint'))}</div>
-      <div id="icrFileName" class="small mt-2 mb-0"></div>
-    </label>
-
     <p id="icrWarn" class="small text-warning mb-2" style="display:none;" role="status"></p>
     <p id="icrError" class="small text-danger mb-2" style="display:none;" role="alert"></p>
     <p id="icrStatus" class="small text-muted mb-2" role="status"></p>
@@ -249,7 +242,9 @@ export const renderImageCropPage = (opts: {
         <p id="icrStatsOut" class="small text-muted mt-2 mb-0"></p>
         <p id="icrMapMeta" class="small fw-semibold mt-1 mb-0"></p>
       </div>
-    </div>`;
+    </div>
+
+    <p class="tool-lead mb-4">${escapeHtml(description)}</p>`;
 
 	const igHtml = renderToolIgSections({
 		lang: opts.lang,
@@ -262,25 +257,25 @@ export const renderImageCropPage = (opts: {
 	const referencesHtml = renderToolReferencesSection({
 		lang: opts.lang,
 		links: [
-			{ label: 'MDN — CanvasRenderingContext2D.drawImage()', href: 'https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage' },
-			{ label: 'MDN — HTMLCanvasElement.toBlob()', href: 'https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob' },
+			{ label: 'MDN ??CanvasRenderingContext2D.drawImage()', href: 'https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage' },
+			{ label: 'MDN ??HTMLCanvasElement.toBlob()', href: 'https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob' },
 		],
 	});
 
 	/**
-	 * 客户端逻辑：预览舞台选区（源像素坐标）→ 映射输出画布 → toBlob。
-	 * v1 默认不放大超过选区像素；全部在浏览器内完成。
+	 * ???????????????????? ?????? ??toBlob??
+	 * v1 ???????????????????????
 	 */
 	const extraBodyHtml = `
   <script>
     (function () {
-      /** 单文件软上限（字节） */
+      /** ?????????? */
       var SOFT_BYTES = 25 * 1024 * 1024;
-      /** 单边像素软上限 */
+      /** ????????*/
       var SOFT_EDGE = 8192;
-      /** 舞台最大显示高度（CSS 像素） */
+      /** ?????????CSS ????*/
       var STAGE_MAX_H = 420;
-      /** 选区手柄命中半径（画布 CSS 像素） */
+      /** ????????????CSS ????*/
       var HANDLE = 10;
 
       var drop = document.getElementById('icrDrop');
@@ -337,23 +332,23 @@ export const renderImageCropPage = (opts: {
         mapTpl: ${JSON.stringify(t(opts.lang, 'tool_image_crop_map_tpl'))}
       };
 
-      /** @type {File|null} 当前源文件 */
+      /** @type {File|null} ??????*/
       var sourceFile = null;
-      /** @type {HTMLImageElement|ImageBitmap|null} 已解码位图 */
+      /** @type {HTMLImageElement|ImageBitmap|null} ??????*/
       var sourceBmp = null;
-      /** 源图宽高（像素） */
+      /** ???????? */
       var srcW = 0;
       var srcH = 0;
-      /** 选区：相对源图像素 */
+      /** ??????????*/
       var sel = { x: 0, y: 0, w: 0, h: 0 };
-      /** 舞台上图像显示矩形（画布像素） */
+      /** ????????????????*/
       var view = { x: 0, y: 0, w: 0, h: 0, scale: 1 };
-      /** @type {Blob|null} 导出结果 */
+      /** @type {Blob|null} ???? */
       var outputBlob = null;
       var outputName = 'cropped.jpg';
-      /** @type {Record<string, boolean>} 编码支持探测 */
+      /** @type {Record<string, boolean>} ?????? */
       var encodeSupport = {};
-      /** 拖拽状态 */
+      /** ?????*/
       var drag = null;
 
       function setWarn(text) {
@@ -368,23 +363,23 @@ export const renderImageCropPage = (opts: {
       }
       function setStatus(text) { statusEl.textContent = text || ''; }
 
-      /** 格式化字节数为可读字符串。 */
+      /** ??????????????*/
       function formatBytes(n) {
         if (n < 1024) return n + ' B';
         if (n < 1024 * 1024) return (n / 1024).toFixed(1) + ' KB';
         return (n / (1024 * 1024)).toFixed(2) + ' MB';
       }
 
-      /** 用模板填充 MIME / 宽高 / 体积。 */
+      /** ??????MIME / ?? / ????*/
       function formatStats(mime, w, h, bytes) {
         return msg.statsTpl
-          .replace('{mime}', mime || '—')
+          .replace('{mime}', mime || '??)
           .replace('{w}', String(w))
           .replace('{h}', String(h))
           .replace('{bytes}', formatBytes(bytes));
       }
 
-      /** 归一化 MIME（jpg → jpeg）。 */
+      /** ????MIME?jpg ??jpeg???*/
       function normalizeMime(mime) {
         if (!mime) return '';
         var m = String(mime).toLowerCase();
@@ -392,7 +387,7 @@ export const renderImageCropPage = (opts: {
         return m;
       }
 
-      /** 由 MIME 得到下载扩展名。 */
+      /** ??MIME ?????????*/
       function extFor(mime) {
         mime = normalizeMime(mime);
         if (mime === 'image/jpeg') return 'jpg';
@@ -401,12 +396,12 @@ export const renderImageCropPage = (opts: {
         return 'bin';
       }
 
-      /** 质量滑块 → 0–1。 */
+      /** ???? ??0????*/
       function quality01() {
         return Math.max(0.5, Math.min(1, Number(qualityEl.value) / 100));
       }
 
-      /** 读取 JPEG 底色。 */
+      /** ?? JPEG ????*/
       function jpegBg() {
         var picked = document.querySelector('input[name="icrJpegBg"]:checked');
         var v = picked ? picked.value : '#ffffff';
@@ -414,7 +409,7 @@ export const renderImageCropPage = (opts: {
         return v;
       }
 
-      /** 解析当前锁定宽高比；自由模式返回 null。 */
+      /** ???????????????? null??*/
       function aspectRatio() {
         var v = aspectEl.value;
         if (v === 'free') return null;
@@ -427,7 +422,7 @@ export const renderImageCropPage = (opts: {
         return (Number(parts[0]) || 1) / (Number(parts[1]) || 1);
       }
 
-      /** 同步选项控件可见性与禁用态。 */
+      /** ???????????????*/
       function syncOptionsUi() {
         var mime = outputSel.value;
         var isPng = mime === 'image/png';
@@ -449,7 +444,7 @@ export const renderImageCropPage = (opts: {
         updateSelMeta();
       }
 
-      /** 探测浏览器是否能按指定 MIME 编码。 */
+      /** ????????????MIME ????*/
       function probeEncode(mime) {
         return new Promise(function (resolve) {
           try {
@@ -465,7 +460,7 @@ export const renderImageCropPage = (opts: {
         });
       }
 
-      /** 并行探测 WebP/JPEG/PNG 编码支持。 */
+      /** ???? WebP/JPEG/PNG ??????*/
       function probeAll() {
         return Promise.all([
           probeEncode('image/webp').then(function (ok) { encodeSupport['image/webp'] = ok; }),
@@ -481,7 +476,7 @@ export const renderImageCropPage = (opts: {
         });
       }
 
-      /** 解码 Blob 为位图（优先 createImageBitmap）。 */
+      /** ?? Blob ?????? createImageBitmap???*/
       function decodeImage(blob) {
         if (typeof createImageBitmap === 'function') {
           return createImageBitmap(blob).then(function (bmp) {
@@ -503,7 +498,7 @@ export const renderImageCropPage = (opts: {
         });
       }
 
-      /** canvas.toBlob Promise 封装，并校验返回 MIME。 */
+      /** canvas.toBlob Promise ???????? MIME??*/
       function canvasToBlob(canvas, mime, q) {
         return new Promise(function (resolve, reject) {
           try {
@@ -518,7 +513,7 @@ export const renderImageCropPage = (opts: {
         });
       }
 
-      /** 关闭旧位图并释放。 */
+      /** ??????????*/
       function closeBmp() {
         if (sourceBmp && typeof sourceBmp.close === 'function') {
           try { sourceBmp.close(); } catch (e) {}
@@ -527,8 +522,8 @@ export const renderImageCropPage = (opts: {
       }
 
       /**
-       * 在源图内按比例放置最大居中选区。
-       * @param {number|null} ratio 宽/高；null 则整图
+       * ?????????????????
+       * @param {number|null} ratio ????null ????
        */
       function maxCenteredSel(ratio) {
         if (!srcW || !srcH) return { x: 0, y: 0, w: 0, h: 0 };
@@ -552,7 +547,7 @@ export const renderImageCropPage = (opts: {
         };
       }
 
-      /** 将选区钳制到源图边界。 */
+      /** ????????????*/
       function clampSel(s) {
         var w = Math.max(1, Math.min(srcW, Math.round(s.w)));
         var h = Math.max(1, Math.min(srcH, Math.round(s.h)));
@@ -561,14 +556,14 @@ export const renderImageCropPage = (opts: {
         return { x: x, y: y, w: w, h: h };
       }
 
-      /** 按当前比例重算选区（尽量保持中心）。 */
+      /** ???????????????????*/
       function applyAspectToSel() {
         var r = aspectRatio();
         if (r == null) return;
         var cx = sel.x + sel.w / 2;
         var cy = sel.y + sel.h / 2;
         var next = maxCenteredSel(r);
-        /* 用当前选区面积近似，再钳制 */
+        /* ????????????? */
         var area = Math.max(sel.w * sel.h, 1);
         var h = Math.sqrt(area / r);
         var w = h * r;
@@ -578,7 +573,7 @@ export const renderImageCropPage = (opts: {
         if (sel.w < 1 || sel.h < 1) sel = next;
       }
 
-      /** 更新选区元信息文案。 */
+      /** ???????????*/
       function updateSelMeta() {
         if (!srcW) { selMeta.textContent = ''; return; }
         if (modeEl.value === 'resize') {
@@ -595,8 +590,8 @@ export const renderImageCropPage = (opts: {
       }
 
       /**
-       * 计算舞台画布尺寸与图像 fit 矩形。
-       * 画布 CSS 宽度取父容器；内部缓冲按 devicePixelRatio。
+       * ????????????fit ????
+       * ?? CSS ???????????? devicePixelRatio??
        */
       function layoutStage() {
         if (!sourceBmp || !srcW) return;
@@ -614,7 +609,7 @@ export const renderImageCropPage = (opts: {
         redrawStage();
       }
 
-      /** 将源像素矩形映射到舞台画布坐标。 */
+      /** ?????????????????*/
       function selToCanvas(s) {
         return {
           x: view.x + s.x * view.scale,
@@ -624,7 +619,7 @@ export const renderImageCropPage = (opts: {
         };
       }
 
-      /** 舞台事件坐标 → 源像素。 */
+      /** ?????? ???????*/
       function eventToSrc(e) {
         var rect = stage.getBoundingClientRect();
         var cssX = e.clientX - rect.left;
@@ -637,7 +632,7 @@ export const renderImageCropPage = (opts: {
         };
       }
 
-      /** 绘制源图 + 暗角遮罩 + 选区框与手柄。 */
+      /** ???? + ???? + ????????*/
       function redrawStage() {
         var ctx = stage.getContext('2d');
         if (!ctx || !sourceBmp) return;
@@ -658,7 +653,7 @@ export const renderImageCropPage = (opts: {
         ctx.strokeStyle = '#fff';
         ctx.lineWidth = Math.max(2, view.scale * 0.5);
         ctx.strokeRect(r.x + 0.5, r.y + 0.5, r.w - 1, r.h - 1);
-        ctx.fillStyle = '#0a6ebd';
+        ctx.fillStyle = '#1c83a8';
         var hs = [
           [r.x, r.y], [r.x + r.w / 2, r.y], [r.x + r.w, r.y],
           [r.x, r.y + r.h / 2], [r.x + r.w, r.y + r.h / 2],
@@ -672,7 +667,7 @@ export const renderImageCropPage = (opts: {
       }
 
       /**
-       * 命中测试：返回 'move' | 'nw'|'n'|'ne'|'w'|'e'|'sw'|'s'|'se' | null
+       * ????????'move' | 'nw'|'n'|'ne'|'w'|'e'|'sw'|'s'|'se' | null
        */
       function hitTest(srcPt) {
         var r = sel;
@@ -695,7 +690,7 @@ export const renderImageCropPage = (opts: {
         return null;
       }
 
-      /** 按手柄与宽高比约束调整选区。 */
+      /** ???????????????*/
       function resizeByHandle(mode, pt, startSel, ratio) {
         var s = { x: startSel.x, y: startSel.y, w: startSel.w, h: startSel.h };
         var right = startSel.x + startSel.w;
@@ -712,7 +707,7 @@ export const renderImageCropPage = (opts: {
         if (s.w < 1) s.w = 1;
         if (s.h < 1) s.h = 1;
         if (ratio) {
-          /* 以对角/边变化为主轴锁定比例 */
+          /* ?????????????? */
           if (mode === 'e' || mode === 'w') s.h = s.w / ratio;
           else if (mode === 'n' || mode === 's') s.w = s.h * ratio;
           else {
@@ -725,7 +720,7 @@ export const renderImageCropPage = (opts: {
         return clampSel(s);
       }
 
-      /** 指针按下：开始拖移或缩放选区。 */
+      /** ????????????????*/
       function onPointerDown(e) {
         if (!sourceBmp || modeEl.value === 'resize') return;
         e.preventDefault();
@@ -733,7 +728,7 @@ export const renderImageCropPage = (opts: {
         var pt = eventToSrc(e);
         var hit = hitTest(pt);
         if (!hit) {
-          /* 在空白处拖出新选区 */
+          /* ????????? */
           drag = { mode: 'new', x0: pt.x, y0: pt.y, start: null };
           sel = clampSel({ x: pt.x, y: pt.y, w: 1, h: 1 });
           redrawStage();
@@ -747,7 +742,7 @@ export const renderImageCropPage = (opts: {
         };
       }
 
-      /** 指针移动：更新选区。 */
+      /** ???????????*/
       function onPointerMove(e) {
         if (!drag || !sourceBmp) return;
         e.preventDefault();
@@ -773,7 +768,7 @@ export const renderImageCropPage = (opts: {
         redrawStage();
       }
 
-      /** 指针抬起：结束拖拽。 */
+      /** ???????????*/
       function onPointerUp(e) {
         if (!drag) return;
         drag = null;
@@ -782,7 +777,7 @@ export const renderImageCropPage = (opts: {
       }
 
       /**
-       * 应用像素预设：填入输出宽高，并尽量对齐比例锁。
+       * ????????????????????????
        * @param {string} val select value
        */
       function applyPreset(val) {
@@ -814,7 +809,7 @@ export const renderImageCropPage = (opts: {
         var oh = Number(m[2]);
         outWEl.value = String(ow);
         outHEl.value = String(oh);
-        /* 尝试匹配已知比例 */
+        /* ???????? */
         var g = gcd(ow, oh);
         var rw = ow / g;
         var rh = oh / g;
@@ -834,14 +829,14 @@ export const renderImageCropPage = (opts: {
         syncOptionsUi();
       }
 
-      /** 最大公约数（像素预设对齐比例用）。 */
+      /** ??????????????????*/
       function gcd(a, b) {
         a = Math.abs(a); b = Math.abs(b);
         while (b) { var t = b; b = a % b; a = t; }
         return a || 1;
       }
 
-      /** 「与选区同尺寸」：输出 = 当前选区宽高。 */
+      /** ??????????? = ????????*/
       function sameAsSelection() {
         if (!srcW) return;
         if (modeEl.value === 'resize') {
@@ -855,7 +850,7 @@ export const renderImageCropPage = (opts: {
       }
 
       /**
-       * 计算实际导出宽高：不超过源选区（v1 不放大）。
+       * ????????????????v1 ??????
        * @returns {{dw:number,dh:number,clamped:boolean,sx:number,sy:number,sw:number,sh:number}}
        */
       function resolveExportGeom() {
@@ -866,7 +861,7 @@ export const renderImageCropPage = (opts: {
         if (modeEl.value === 'resize') {
           var fit = fitEl.value;
           if (fit === 'contain') {
-            /* 整图缩进目标画布，scale 上限 1（不放大） */
+            /* ?????????scale ?? 1??????*/
             var needSc = Math.min(wantW / srcW, wantH / srcH);
             var sc = Math.min(1, needSc);
             var dw = Math.max(1, Math.round(srcW * sc));
@@ -876,7 +871,7 @@ export const renderImageCropPage = (opts: {
               clamped: needSc > 1, sx: 0, sy: 0, sw: srcW, sh: srcH
             };
           }
-          /* cover：先按目标比例裁源，再填满画布；源不够大则缩小画布 */
+          /* cover??????????????????????????*/
           var tr = wantW / wantH;
           var ir = srcW / srcH;
           var sx = 0, sy = 0, sw = srcW, sh = srcH;
@@ -901,7 +896,7 @@ export const renderImageCropPage = (opts: {
           return { dw: dw, dh: dh, canvasW: dw, canvasH: dh, fit: 'cover', clamped: clamped, sx: sx, sy: sy, sw: sw, sh: sh };
         }
 
-        /* crop 模式 */
+        /* crop ?? */
         if (sel.w < 1 || sel.h < 1) throw new Error('invalidSel');
         var sx2 = sel.x, sy2 = sel.y, sw2 = sel.w, sh2 = sel.h;
         var dw2 = wantW, dh2 = wantH;
@@ -916,7 +911,7 @@ export const renderImageCropPage = (opts: {
       }
 
       /**
-       * 执行裁剪/缩放并编码。
+       * ????/???????
        * @returns {Promise<void>}
        */
       function apply() {
@@ -997,7 +992,7 @@ export const renderImageCropPage = (opts: {
           .then(function () { btnApply.disabled = false; });
       }
 
-      /** 下载导出 Blob。 */
+      /** ???? Blob??*/
       function download() {
         if (!outputBlob) return;
         var a = document.createElement('a');
@@ -1011,7 +1006,7 @@ export const renderImageCropPage = (opts: {
       }
 
       /**
-       * 装载源文件并初始化默认 1:1 选区。
+       * ????????????1:1 ????
        * @param {File} file
        * @returns {Promise<void>}
        */
@@ -1054,7 +1049,7 @@ export const renderImageCropPage = (opts: {
           });
       }
 
-      /** 清空全部状态。 */
+      /** ????????*/
       function clearAll() {
         closeBmp();
         sourceFile = null;
@@ -1074,7 +1069,7 @@ export const renderImageCropPage = (opts: {
       }
 
       /**
-       * 生成样例图：装载后 Apply，左右同时有内容。
+       * ??????????Apply??????????
        * @returns {Promise<void>}
        */
       function loadSample() {
@@ -1094,7 +1089,7 @@ export const renderImageCropPage = (opts: {
         ctx.font = 'bold 56px sans-serif';
         ctx.fillText('Sample crop', 160, 160);
         ctx.font = '28px sans-serif';
-        ctx.fillText('1600 × 1000', 160, 210);
+        ctx.fillText('1600 ? 1000', 160, 210);
         return new Promise(function (resolve) {
           c.toBlob(function (blob) {
             if (!blob) { resolve(); return; }
@@ -1159,7 +1154,7 @@ export const renderImageCropPage = (opts: {
         if (sourceBmp) layoutStage();
       });
 
-      /** 探测编码后加载示例并 Apply，首屏展示选区与结果。 */
+      /** ?????????? Apply????????????*/
       probeAll().then(function () {
         syncOptionsUi();
         return loadSample();

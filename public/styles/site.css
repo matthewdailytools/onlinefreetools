@@ -1,22 +1,32 @@
 /**
  * 全站共享视觉：大气首页 + 清爽工具页。
  * 浅色编辑工具站；禁止紫渐变；token 驱动 chrome / 卡片 / 工具壳。
+ *
+ * 配色参考 iLoveIMG（克制吸收，非多色图标墙）：
+ * - 页底淡紫灰 #f5f5fa；正文近黑 #1d1d1b
+ * - 主色青绿 #1c83a8 / 亮青 #3cb6e2（单强调色，不做每工具一色）
  */
 :root {
-  --bg: #eef1f5;
-  --bg-hero: #0c1222;
-  --bg-hero-mid: #152238;
+  /* 页面与表面 */
+  --bg: #f5f5fa;
+  --bg-hero: #0b1a24;
+  --bg-hero-mid: #123044;
   --bg-elevated: #ffffff;
+  --tool-page-bg: #f8f8fc;
   --surface: #ffffff;
-  --surface-muted: #f7f8fa;
-  --border: #e6e8ee;
-  --border-strong: #d1d5db;
-  --text: #0b1220;
-  --muted: #5b6577;
-  --accent: #0a6ebd;
-  --accent-hover: #085a9b;
-  --accent-soft: rgba(10, 110, 189, 0.1);
-  --accent-on-dark: #7ec8ff;
+  --surface-muted: #f3f3f8;
+  --border: #e2e2ea;
+  --border-strong: #c8c8d4;
+  /* 文字 */
+  --text: #1d1d1b;
+  --muted: #5c5c66;
+  /* 强调色（iLoveIMG 青绿系） */
+  --accent: #1c83a8;
+  --accent-hover: #166d8c;
+  --accent-rgb: 28, 131, 168;
+  --accent-soft: rgba(var(--accent-rgb), 0.1);
+  --accent-on-dark: #3cb6e2;
+  /* 布局与字体 */
   --radius: 16px;
   --radius-sm: 10px;
   --shadow: 0 12px 40px rgba(15, 23, 42, 0.08);
@@ -55,7 +65,7 @@ a:hover {
 }
 
 :focus-visible {
-  outline: 2px solid rgba(10, 110, 189, 0.4);
+  outline: 2px solid rgba(var(--accent-rgb), 0.4);
   outline-offset: 3px;
 }
 
@@ -66,9 +76,9 @@ body {
   box-sizing: border-box;
 }
 
-/* 工具页：整页更白、更干净 */
+/* 工具页：略浅于首页底，保持干净阅读面 */
 body.is-tool-page {
-  background: #fafbfc;
+  background: var(--tool-page-bg);
 }
 
 .layout {
@@ -141,7 +151,7 @@ body.is-tool-page {
   border-radius: var(--radius-sm);
   margin-bottom: 1px;
   padding: 0.55rem 0.7rem;
-  color: #334155;
+  color: #33333b;
   background: transparent;
   font-size: 0.9rem;
   font-weight: 500;
@@ -191,19 +201,66 @@ body.is-tool-page #content.p-4 {
   padding: 2rem 1.75rem 3.5rem !important;
 }
 
-/* 未改 markup 的工具页：抬高首屏 H1 / 摘要 */
-body.is-tool-page #content > div:first-child > h1.h4 {
+/* 工具页：抬高首屏 H1；说明文案可用 .tool-lead 后置 */
+body.is-tool-page #content > div:first-child > h1.h4,
+body.is-tool-page .tool-page-heading h1.h4 {
   font-size: clamp(1.65rem, 3vw, 2.15rem);
   font-weight: 700;
   letter-spacing: -0.035em;
   line-height: 1.15;
   margin-bottom: 0.55rem;
 }
-body.is-tool-page #content > div:first-child > p.text-muted {
+body.is-tool-page #content > div:first-child > p.text-muted,
+body.is-tool-page .tool-lead {
   font-size: 1.05rem;
   max-width: var(--content-max);
   line-height: 1.6;
   color: var(--muted) !important;
+}
+
+/**
+ * 大拖放/选择区：首屏任务优先（学竞品上传区体量，保持本站单色 token）。
+ * 各图片工具在既有 *-drop 类上叠加 .tool-dropzone。
+ */
+.tool-dropzone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  min-height: clamp(200px, 28vh, 300px);
+  padding: 2rem 1.5rem;
+  border: 2px dashed var(--border-strong);
+  border-radius: var(--radius);
+  background: var(--surface-muted);
+  cursor: pointer;
+  text-align: center;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.tool-dropzone:hover,
+.tool-dropzone.dragover {
+  border-color: var(--accent);
+  background: rgba(var(--accent-rgb), 0.08);
+}
+.tool-dropzone input[type='file'] {
+  display: none;
+}
+.tool-dropzone-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+.tool-dropzone-hint {
+  font-size: 0.95rem;
+  color: var(--muted);
+  max-width: 36rem;
+}
+.tool-dropzone-file {
+  margin-top: 0.35rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--accent);
 }
 
 .sidebar-collapsed #sidebar {
@@ -295,7 +352,7 @@ body.is-tool-page #content > div:first-child > p.text-muted {
   border-color: transparent;
   color: #475569;
   border-radius: 999px;
-  background: #f1f5f9;
+  background: var(--surface-muted);
   padding-inline: 0.85rem;
 }
 .navbar .btn-outline-secondary:hover {
@@ -320,7 +377,7 @@ body.is-tool-page #content > div:first-child > p.text-muted {
   background: var(--accent) !important;
   border-color: var(--accent) !important;
   color: #fff !important;
-  box-shadow: 0 6px 20px rgba(10, 110, 189, 0.28);
+  box-shadow: 0 6px 20px rgba(var(--accent-rgb), 0.28);
   padding-inline: 1.25rem;
 }
 .btn-primary:hover,
@@ -328,12 +385,12 @@ body.is-tool-page #content > div:first-child > p.text-muted {
   background: var(--accent-hover) !important;
   border-color: var(--accent-hover) !important;
   color: #fff !important;
-  box-shadow: 0 8px 24px rgba(10, 110, 189, 0.34);
+  box-shadow: 0 8px 24px rgba(var(--accent-rgb), 0.34);
 }
 
 .btn-outline-primary {
   color: var(--accent) !important;
-  border-color: rgba(10, 110, 189, 0.28) !important;
+  border-color: rgba(var(--accent-rgb), 0.28) !important;
   background: transparent !important;
   padding-inline: 1.15rem;
 }
@@ -361,7 +418,7 @@ body.is-tool-page #content > div:first-child > p.text-muted {
   transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 .card.tool-entry-card:hover {
-  border-color: rgba(10, 110, 189, 0.28);
+  border-color: rgba(var(--accent-rgb), 0.28);
   box-shadow: var(--shadow);
   transform: translateY(-2px);
 }
@@ -440,10 +497,11 @@ footer.bg-light {
   position: relative;
   overflow: hidden;
   color: #f8fafc;
+  /* 大气层光晕对齐青绿主色；次光点用极淡绿（iLoveIMG 绿系）作气氛，非紫渐变 */
   background:
-    radial-gradient(ellipse 80% 70% at 15% 20%, rgba(56, 140, 200, 0.35), transparent 55%),
-    radial-gradient(ellipse 60% 50% at 90% 10%, rgba(45, 180, 160, 0.18), transparent 50%),
-    linear-gradient(160deg, var(--bg-hero) 0%, var(--bg-hero-mid) 55%, #1a2740 100%);
+    radial-gradient(ellipse 80% 70% at 15% 20%, rgba(60, 182, 226, 0.32), transparent 55%),
+    radial-gradient(ellipse 60% 50% at 90% 10%, rgba(143, 188, 93, 0.14), transparent 50%),
+    linear-gradient(160deg, var(--bg-hero) 0%, var(--bg-hero-mid) 55%, #1a3a4a 100%);
   padding: clamp(3.5rem, 9vw, 7rem) clamp(1.25rem, 4vw, 2.5rem) clamp(3rem, 7vw, 5.5rem);
   margin-bottom: 0;
   border-bottom: 0;
@@ -502,7 +560,7 @@ footer.bg-light {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
 .home-hero-actions .btn-primary:hover {
-  background: #f1f5f9 !important;
+  background: #f0f0f5 !important;
   color: var(--bg-hero) !important;
 }
 
@@ -763,7 +821,7 @@ body.is-tool-page .sf-card {
   padding: 1.25rem 1.3rem;
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
-  background: #f8fafc;
+  background: var(--surface-muted);
 }
 
 .tool-module > h2 {
@@ -805,7 +863,7 @@ body.is-tool-page .sf-card {
 }
 
 .tool-share-net:hover {
-  border-color: rgba(10, 110, 189, 0.35);
+  border-color: rgba(var(--accent-rgb), 0.35);
   background: var(--accent-soft);
   color: var(--accent) !important;
 }
@@ -853,7 +911,7 @@ body.is-tool-page .sf-card {
 }
 
 .tool-mail-input[readonly] {
-  background: #f1f5f9;
+  background: var(--surface-muted);
   color: #334155;
 }
 
@@ -891,7 +949,7 @@ body.is-tool-page .sf-card {
 .result {
   padding: 1.1rem 1.15rem;
   border-radius: var(--radius-sm);
-  background: #f8fafc;
+  background: var(--surface-muted);
   border: 1px solid var(--border);
 }
 
@@ -915,8 +973,8 @@ textarea.form-control,
 }
 .form-control:focus,
 .form-select:focus {
-  border-color: rgba(10, 110, 189, 0.45);
-  box-shadow: 0 0 0 0.2rem rgba(10, 110, 189, 0.1);
+  border-color: rgba(var(--accent-rgb), 0.45);
+  box-shadow: 0 0 0 0.2rem rgba(var(--accent-rgb), 0.1);
 }
 
 .badge.text-bg-secondary {

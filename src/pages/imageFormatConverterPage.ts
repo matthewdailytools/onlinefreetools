@@ -1,7 +1,8 @@
 /**
- * 图片格式转换工具页：PNG / JPEG / WebP / AVIF（浏览器 Canvas toBlob）。
- * slug: image-format-converter；同页目标格式选择，不拆 png-to-webp 等近义 URL。
- * 见 work-tasks/image-format-converter/02-tool-info.md。
+ * Image format converter page: PNG/JPEG/WebP/AVIF via Canvas toBlob,
+ * plus BMP/GIF/ICO/SVG via local encoders in extra-formats.js.
+ * slug: image-format-converter -- one page, no near-duplicate URLs.
+ * See work-tasks/image-format-converter/02-tool-info.md.
  */
 import type { SiteLang } from '../site/i18n';
 import { t, supportedLangs } from '../site/i18n';
@@ -18,17 +19,22 @@ import {
 	buildToolJsonLd,
 } from './site/toolContent';
 
-/** 为路径加上语言前缀（默认语无前缀）。 */
+/**
+ * Prefix pathname with language (default lang has no prefix).
+ * @param lang Target language
+ * @param pathname Site path
+ * @param defaultLang Site default language
+ */
 const withLangPrefix = (lang: SiteLang, pathname: string, defaultLang: SiteLang) => {
 	const safe = pathname.startsWith('/') ? pathname : `/${pathname}`;
 	return lang === defaultLang ? safe : `/${lang}${safe}`;
 };
 
 /**
- * 渲染图片格式转换工具页。
- * @param opts.lang 当前语言
- * @param opts.defaultLang 站点默认语言
- * @param opts.enabledLangs 启用语言列表（语言切换器用全量 supportedLangs）
+ * Render the image format converter tool page.
+ * @param opts.lang Current language
+ * @param opts.defaultLang Site default language
+ * @param opts.enabledLangs Enabled languages (switcher uses supportedLangs)
  */
 export const renderImageFormatConverterPage = (opts: {
 	lang: SiteLang;
@@ -42,7 +48,7 @@ export const renderImageFormatConverterPage = (opts: {
 
 	const navItems = buildToolPageNavItems(opts.lang, opts.defaultLang);
 
-	/** 语言切换链接始终带显式语言前缀（含默认语）。 */
+	/** Language switcher links always include an explicit lang prefix. */
 	const withExplicitLangPrefix = (code: SiteLang, pathname: string) => {
 		const safe = pathname.startsWith('/') ? pathname : `/${pathname}`;
 		return `/${code}${safe}`.replace(/\/{2,}/g, '/');
@@ -78,17 +84,11 @@ export const renderImageFormatConverterPage = (opts: {
 
 	const footerHtml = renderFooter({ lang: opts.lang });
 
-	/** 页内样式：拖放区、预览双栏、质量滑条与 JPEG 底色行。 */
+	/** Page styles; large drop uses site .tool-dropzone. */
 	const extraHeadHtml = `
   <style>
     .tools-bar { gap: .5rem; }
     .opt-group { gap: .75rem; align-items: center; }
-    .ifc-drop {
-      border: 2px dashed #adb5bd; border-radius: .5rem; padding: 1.25rem; text-align: center;
-      background: #f8f9fa; cursor: pointer; transition: border-color .15s, background .15s;
-    }
-    .ifc-drop.dragover { border-color: #0a6ebd; background: #e7f1f8; }
-    .ifc-drop input[type=file] { display: none; }
     #ifcPreviewIn, #ifcPreviewOut {
       max-width: 100%; max-height: 280px; object-fit: contain; background:
         linear-gradient(45deg, #eee 25%, transparent 25%),
@@ -96,18 +96,25 @@ export const renderImageFormatConverterPage = (opts: {
         linear-gradient(45deg, transparent 75%, #eee 75%),
         linear-gradient(-45deg, transparent 75%, #eee 75%);
       background-size: 16px 16px; background-position: 0 0, 0 8px, 8px -8px, -8px 0;
-      border: 1px solid #dee2e6; border-radius: .5rem;
+      border: 1px solid var(--border, #dee2e6); border-radius: .5rem;
     }
     .ifc-preview-wrap { min-height: 120px; display: flex; align-items: center; justify-content: center; }
     #ifcQuality[disabled] { opacity: .5; }
     #ifcJpegBgRow[hidden] { display: none !important; }
   </style>`;
 
+	/** First screen: H1 -> large drop -> actions/options -> preview; lead copy below. */
 	const contentHtml = `
-    <div id="converter" class="mb-3">
-      <h1 class="h4 mb-1">${escapeHtml(t(opts.lang, 'tool_image_format_converter_title'))}</h1>
-      <p class="text-muted mb-0">${escapeHtml(description)}</p>
+    <div id="converter" class="tool-page-heading mb-3">
+      <h1 class="h4 mb-0">${escapeHtml(t(opts.lang, 'tool_image_format_converter_title'))}</h1>
     </div>
+
+    <label class="tool-dropzone ifc-drop mb-3" id="ifcDrop" for="ifcFile">
+      <input type="file" id="ifcFile" accept="image/png,image/jpeg,image/webp,image/avif,image/gif,image/bmp,image/x-icon,image/vnd.microsoft.icon,image/svg+xml,image/*">
+      <span class="tool-dropzone-title">${escapeHtml(t(opts.lang, 'tool_image_format_converter_choose_file'))}</span>
+      <span class="tool-dropzone-hint">${escapeHtml(t(opts.lang, 'tool_image_format_converter_drop_hint'))}</span>
+      <span id="ifcFileName" class="tool-dropzone-file"></span>
+    </label>
 
     <div class="d-flex align-items-center tools-bar mb-2 flex-wrap">
       <button type="button" id="ifcBtnConvert" class="btn btn-primary btn-sm">${escapeHtml(t(opts.lang, 'tool_image_format_converter_convert'))}</button>
@@ -119,10 +126,18 @@ export const renderImageFormatConverterPage = (opts: {
     <div class="d-flex align-items-center opt-group mb-3 flex-wrap">
       <label class="form-label mb-0" for="ifcTarget">${escapeHtml(t(opts.lang, 'tool_image_format_converter_target_label'))}</label>
       <select id="ifcTarget" class="form-select form-select-sm" style="width:auto;">
-        <option value="image/webp" selected>${escapeHtml(t(opts.lang, 'tool_image_format_converter_format_webp'))}</option>
-        <option value="image/png">${escapeHtml(t(opts.lang, 'tool_image_format_converter_format_png'))}</option>
-        <option value="image/jpeg">${escapeHtml(t(opts.lang, 'tool_image_format_converter_format_jpeg'))}</option>
-        <option value="image/avif">${escapeHtml(t(opts.lang, 'tool_image_format_converter_format_avif'))}</option>
+        <optgroup label="${escapeHtml(t(opts.lang, 'tool_image_format_converter_group_web'))}">
+          <option value="image/webp" selected>${escapeHtml(t(opts.lang, 'tool_image_format_converter_format_webp'))}</option>
+          <option value="image/png">${escapeHtml(t(opts.lang, 'tool_image_format_converter_format_png'))}</option>
+          <option value="image/jpeg">${escapeHtml(t(opts.lang, 'tool_image_format_converter_format_jpeg'))}</option>
+          <option value="image/avif">${escapeHtml(t(opts.lang, 'tool_image_format_converter_format_avif'))}</option>
+        </optgroup>
+        <optgroup label="${escapeHtml(t(opts.lang, 'tool_image_format_converter_group_extra'))}">
+          <option value="image/bmp">${escapeHtml(t(opts.lang, 'tool_image_format_converter_format_bmp'))}</option>
+          <option value="image/gif">${escapeHtml(t(opts.lang, 'tool_image_format_converter_format_gif'))}</option>
+          <option value="image/x-icon">${escapeHtml(t(opts.lang, 'tool_image_format_converter_format_ico'))}</option>
+          <option value="image/svg+xml">${escapeHtml(t(opts.lang, 'tool_image_format_converter_format_svg'))}</option>
+        </optgroup>
       </select>
       <label class="form-label mb-0" for="ifcQuality">${escapeHtml(t(opts.lang, 'tool_image_format_converter_quality_label'))}</label>
       <input type="range" id="ifcQuality" min="50" max="100" value="85" step="1" style="width:140px;">
@@ -143,18 +158,11 @@ export const renderImageFormatConverterPage = (opts: {
       <input type="color" id="ifcBgColor" value="#ffffff" title="${escapeHtml(t(opts.lang, 'tool_image_format_converter_jpeg_bg_custom'))}" style="width:2.25rem;height:1.75rem;padding:0;border:1px solid #ced4da;">
     </div>
 
-    <label class="ifc-drop d-block mb-3" id="ifcDrop" for="ifcFile">
-      <input type="file" id="ifcFile" accept="image/png,image/jpeg,image/webp,image/avif,image/gif,image/bmp,image/*">
-      <strong>${escapeHtml(t(opts.lang, 'tool_image_format_converter_choose_file'))}</strong>
-      <div class="small text-muted mt-1">${escapeHtml(t(opts.lang, 'tool_image_format_converter_drop_hint'))}</div>
-      <div id="ifcFileName" class="small mt-2 mb-0"></div>
-    </label>
-
     <p id="ifcWarn" class="small text-warning mb-2" style="display:none;" role="status"></p>
     <p id="ifcError" class="small text-danger mb-2" style="display:none;" role="alert"></p>
     <p id="ifcStatus" class="small text-muted mb-2" role="status"></p>
 
-    <div class="row g-3 mb-4">
+    <div class="row g-3 mb-3">
       <div class="col-12 col-lg-6">
         <label class="form-label">${escapeHtml(t(opts.lang, 'tool_image_format_converter_preview_in'))}</label>
         <div class="ifc-preview-wrap"><img id="ifcPreviewIn" alt="" hidden></div>
@@ -165,37 +173,44 @@ export const renderImageFormatConverterPage = (opts: {
         <div class="ifc-preview-wrap"><img id="ifcPreviewOut" alt="" hidden></div>
         <p id="ifcStatsOut" class="small text-muted mt-2 mb-0"></p>
       </div>
-    </div>`;
+    </div>
+
+    <p class="tool-lead mb-4">${escapeHtml(description)}</p>`;
 
 	const igHtml = renderToolIgSections({
 		lang: opts.lang,
 		prefix: 'tool_image_format_converter',
 		mode: 'rules',
 		usecaseCount: 3,
-		ruleItemCount: 4,
+		ruleItemCount: 5,
 	});
 
 	const referencesHtml = renderToolReferencesSection({
 		lang: opts.lang,
 		links: [
-			{ label: 'MDN — HTMLCanvasElement.toBlob()', href: 'https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob' },
-			{ label: 'WebP — Google Developers', href: 'https://developers.google.com/speed/webp' },
+			{ label: 'MDN ? HTMLCanvasElement.toBlob()', href: 'https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob' },
+			{ label: 'WebP ? Google Developers', href: 'https://developers.google.com/speed/webp' },
 			{ label: 'AV1 Image File Format (AVIF)', href: 'https://aomediacodec.github.io/av1-avif/' },
 			{ label: 'Portable Network Graphics (PNG)', href: 'https://www.w3.org/TR/png-3/' },
 		],
 	});
 
 	/**
-	 * 客户端逻辑：本地解码 → Canvas → toBlob；校验 blob.type；JPEG 底色；探测编码支持。
-	 * 全部在浏览器内完成，不上传文件。
+	 * Client logic: decode locally -> Canvas -> toBlob or extra encoder; verify blob.type; JPEG matte.
+	 * All processing stays in the browser; files are not uploaded.
 	 */
 	const extraBodyHtml = `
+  <script src="/tools/image-format-converter/extra-formats.js"></script>
   <script>
     (function () {
-      /** 单文件软上限（字节），超出仍可试但提示卡顿/内存风险 */
+      /** Soft size limit in bytes; oversize still allowed with a warning. */
       var SOFT_BYTES = 25 * 1024 * 1024;
-      /** 单边像素软上限 */
+      /** Soft max edge length in pixels. */
       var SOFT_EDGE = 8192;
+      /** MIME types handled by OFT_IFC_EXTRA (not browser toBlob). */
+      var EXTRA_MIMES = (window.OFT_IFC_EXTRA && window.OFT_IFC_EXTRA.mimes) || [
+        'image/bmp', 'image/gif', 'image/x-icon', 'image/svg+xml'
+      ];
 
       var drop = document.getElementById('ifcDrop');
       var fileInput = document.getElementById('ifcFile');
@@ -228,42 +243,52 @@ export const renderImageFormatConverterPage = (opts: {
         anim: ${JSON.stringify(t(opts.lang, 'tool_image_format_converter_warn_animation'))},
         qualityPng: ${JSON.stringify(t(opts.lang, 'tool_image_format_converter_quality_hint_png'))},
         qualityLossless: ${JSON.stringify(t(opts.lang, 'tool_image_format_converter_quality_hint_webp_lossless'))},
+        qualityExtra: ${JSON.stringify(t(opts.lang, 'tool_image_format_converter_quality_hint_extra'))},
         avifOff: ${JSON.stringify(t(opts.lang, 'tool_image_format_converter_avif_unsupported'))},
         converting: ${JSON.stringify(t(opts.lang, 'tool_image_format_converter_status_converting'))},
         done: ${JSON.stringify(t(opts.lang, 'tool_image_format_converter_status_done'))},
         statsTpl: ${JSON.stringify(t(opts.lang, 'tool_image_format_converter_stats_tpl'))}
       };
 
-      /** @type {File|null} 当前源文件 */
+      /** @type {File|null} Current source file. */
       var sourceFile = null;
-      /** @type {Blob|null} 最近一次成功输出 */
+      /** @type {Blob|null} Latest successful output. */
       var outputBlob = null;
-      /** @type {string} 输出建议文件名 */
+      /** Suggested download filename. */
       var outputName = 'converted.webp';
-      /** @type {Record<string, boolean>} 编码探测缓存 */
+      /** @type {Record<string, boolean>} Encode probe cache. */
       var encodeSupport = {};
 
-      /** 显示或隐藏警告文案。 */
+      /** True when MIME uses the local extra encoder. */
+      function isExtraMime(mime) {
+        mime = normalizeMime(mime);
+        for (var i = 0; i < EXTRA_MIMES.length; i++) {
+          if (normalizeMime(EXTRA_MIMES[i]) === mime) return true;
+        }
+        return false;
+      }
+
+      /** Show or hide warning text. */
       function setWarn(text) {
         if (!text) { warnEl.style.display = 'none'; warnEl.textContent = ''; return; }
         warnEl.textContent = text;
         warnEl.style.display = '';
       }
 
-      /** 显示或隐藏错误文案。 */
+      /** Show or hide error text. */
       function setError(text) {
         if (!text) { errEl.style.display = 'none'; errEl.textContent = ''; return; }
         errEl.textContent = text;
         errEl.style.display = '';
       }
 
-      /** 设置状态行。 */
+      /** Set status line text. */
       function setStatus(text) {
         statusEl.textContent = text || '';
       }
 
       /**
-       * 把字节数格式化为可读字符串。
+       * ??????????????
        * @param {number} n
        */
       function formatBytes(n) {
@@ -273,7 +298,7 @@ export const renderImageFormatConverterPage = (opts: {
       }
 
       /**
-       * 用模板填充统计行：{mime} {w} {h} {bytes}
+       * ?????????{mime} {w} {h} {bytes}
        * @param {string} mime
        * @param {number} w
        * @param {number} h
@@ -281,25 +306,26 @@ export const renderImageFormatConverterPage = (opts: {
        */
       function formatStats(mime, w, h, bytes) {
         return msg.statsTpl
-          .replace('{mime}', mime || '—')
+          .replace('{mime}', mime || '?')
           .replace('{w}', String(w))
           .replace('{h}', String(h))
           .replace('{bytes}', formatBytes(bytes));
       }
 
       /**
-       * 规范化 MIME：部分环境返回 image/jpg。
+       * ?? MIME??????? image/jpg?
        * @param {string} mime
        */
       function normalizeMime(mime) {
         if (!mime) return '';
         var m = String(mime).toLowerCase();
         if (m === 'image/jpg') return 'image/jpeg';
+        if (m === 'image/vnd.microsoft.icon') return 'image/x-icon';
         return m;
       }
 
       /**
-       * 目标 MIME 对应扩展名。
+       * ?? MIME ??????
        * @param {string} mime
        */
       function extFor(mime) {
@@ -308,15 +334,19 @@ export const renderImageFormatConverterPage = (opts: {
         if (mime === 'image/png') return 'png';
         if (mime === 'image/webp') return 'webp';
         if (mime === 'image/avif') return 'avif';
+        if (mime === 'image/bmp') return 'bmp';
+        if (mime === 'image/gif') return 'gif';
+        if (mime === 'image/x-icon') return 'ico';
+        if (mime === 'image/svg+xml') return 'svg';
         return 'bin';
       }
 
-      /** 当前质量 0–1。 */
+      /** Current quality in 0..1. */
       function quality01() {
         return Math.max(0.5, Math.min(1, Number(qualityEl.value) / 100));
       }
 
-      /** 当前 JPEG 底色（#rrggbb）。 */
+      /** Current JPEG matte color (#rrggbb). */
       function jpegBg() {
         var picked = document.querySelector('input[name="ifcJpegBg"]:checked');
         var v = picked ? picked.value : '#ffffff';
@@ -324,14 +354,18 @@ export const renderImageFormatConverterPage = (opts: {
         return v;
       }
 
-      /** 按目标格式更新质量提示、JPEG 底色行、禁用态。 */
+      /** Refresh quality hint, JPEG matte row, and disabled state. */
       function syncOptionsUi() {
-        var mime = targetSel.value;
+        var mime = normalizeMime(targetSel.value);
         var isPng = mime === 'image/png';
         var isJpeg = mime === 'image/jpeg';
-        qualityEl.disabled = isPng;
+        var isExtra = isExtraMime(mime);
+        var lossless = isPng || isExtra;
+        qualityEl.disabled = lossless;
         qualityVal.textContent = quality01().toFixed(2);
-        if (isPng) {
+        if (isExtra) {
+          qualityHint.textContent = msg.qualityExtra;
+        } else if (isPng) {
           qualityHint.textContent = msg.qualityPng;
         } else if (mime === 'image/webp' && Number(qualityEl.value) >= 100) {
           qualityHint.textContent = msg.qualityLossless;
@@ -347,7 +381,7 @@ export const renderImageFormatConverterPage = (opts: {
       }
 
       /**
-       * 探测浏览器是否能用 toBlob 编码指定 MIME（校验返回 type）。
+       * ????????? toBlob ???? MIME????? type??
        * @param {string} mime
        * @returns {Promise<boolean>}
        */
@@ -375,7 +409,7 @@ export const renderImageFormatConverterPage = (opts: {
         });
       }
 
-      /** 启动时探测 WebP / AVIF 编码能力。 */
+      /** Probe WebP / AVIF / JPEG / PNG encode support at startup. */
       function probeAll() {
         return Promise.all([
           probeEncode('image/webp').then(function (ok) { encodeSupport['image/webp'] = ok; }),
@@ -383,6 +417,7 @@ export const renderImageFormatConverterPage = (opts: {
           probeEncode('image/jpeg').then(function (ok) { encodeSupport['image/jpeg'] = ok; }),
           probeEncode('image/png').then(function (ok) { encodeSupport['image/png'] = ok; })
         ]).then(function () {
+          EXTRA_MIMES.forEach(function (m) { encodeSupport[normalizeMime(m)] = true; });
           syncOptionsUi();
           if (encodeSupport['image/avif'] === false && targetSel.value === 'image/avif') {
             targetSel.value = 'image/webp';
@@ -393,7 +428,7 @@ export const renderImageFormatConverterPage = (opts: {
       }
 
       /**
-       * 从 File/Blob 解码为 ImageBitmap（优先）或 HTMLImageElement。
+       * ? File/Blob ??? ImageBitmap????? HTMLImageElement?
        * @param {Blob} blob
        * @returns {Promise<{bitmap: ImageBitmap|HTMLImageElement, w: number, h: number}>}
        */
@@ -419,7 +454,7 @@ export const renderImageFormatConverterPage = (opts: {
       }
 
       /**
-       * Canvas toBlob 封装为 Promise，并校验 MIME。
+       * Canvas toBlob ??? Promise???? MIME?
        * @param {HTMLCanvasElement} canvas
        * @param {string} mime
        * @param {number} q
@@ -448,7 +483,7 @@ export const renderImageFormatConverterPage = (opts: {
       }
 
       /**
-       * 装载源文件：预览、统计、软上限警告。
+       * ??????????????????
        * @param {File} file
        */
       function loadFile(file) {
@@ -491,16 +526,20 @@ export const renderImageFormatConverterPage = (opts: {
           });
       }
 
-      /** 执行转换。 */
+      /** Run conversion for the current source file. */
       function convert() {
         setError('');
         if (!sourceFile) {
           setError(msg.empty);
           return;
         }
-        var mime = targetSel.value;
-        if (encodeSupport[mime] === false) {
+        var mime = normalizeMime(targetSel.value);
+        if (!isExtraMime(mime) && encodeSupport[mime] === false) {
           setError(mime === 'image/avif' ? msg.avifOff : msg.encode);
+          return;
+        }
+        if (isExtraMime(mime) && !(window.OFT_IFC_EXTRA && window.OFT_IFC_EXTRA.encodeExtra)) {
+          setError(msg.encode);
           return;
         }
         setStatus(msg.converting);
@@ -515,13 +554,18 @@ export const renderImageFormatConverterPage = (opts: {
             canvas.height = dec.h;
             var ctx = canvas.getContext('2d');
             if (!ctx) throw new Error('encode');
-            if (mime === 'image/jpeg') {
-              ctx.fillStyle = bg;
+            if (mime === 'image/jpeg' || mime === 'image/bmp') {
+              ctx.fillStyle = mime === 'image/jpeg' ? bg : '#ffffff';
               ctx.fillRect(0, 0, dec.w, dec.h);
             }
             ctx.drawImage(dec.bitmap, 0, 0);
             if (dec.bitmap && typeof dec.bitmap.close === 'function') dec.bitmap.close();
-            return canvasToBlob(canvas, mime, q).then(function (blob) {
+
+            var blobPromise = isExtraMime(mime)
+              ? window.OFT_IFC_EXTRA.encodeExtra(canvas, mime)
+              : canvasToBlob(canvas, mime, q);
+
+            return blobPromise.then(function (blob) {
               return { blob: blob, w: dec.w, h: dec.h };
             });
           })
@@ -531,7 +575,6 @@ export const renderImageFormatConverterPage = (opts: {
             outputName = base + '.' + extFor(mime);
             btnDownload.disabled = false;
             var outUrl = URL.createObjectURL(res.blob);
-            previewOut.onload = function () { /* keep url until next convert */ };
             if (previewOut.dataset.url) URL.revokeObjectURL(previewOut.dataset.url);
             previewOut.dataset.url = outUrl;
             previewOut.src = outUrl;
@@ -553,7 +596,7 @@ export const renderImageFormatConverterPage = (opts: {
           });
       }
 
-      /** 下载最近输出。 */
+      /** Download the latest output blob. */
       function downloadOut() {
         if (!outputBlob) return;
         var url = URL.createObjectURL(outputBlob);
@@ -566,15 +609,14 @@ export const renderImageFormatConverterPage = (opts: {
         URL.revokeObjectURL(url);
       }
 
-      /** 生成带透明棋盘色块的样例 PNG 并装载。 */
+      /** Build a transparent sample PNG and load it. */
       function loadSample() {
         var c = document.createElement('canvas');
         c.width = 240;
         c.height = 160;
         var ctx = c.getContext('2d');
-        // 透明底 + 半透明蓝圆 + 不透明橙条，便于演示 JPEG 铺底
         ctx.clearRect(0, 0, 240, 160);
-        ctx.fillStyle = 'rgba(10, 110, 189, 0.85)';
+        ctx.fillStyle = 'rgba(28, 131, 168, 0.85)';
         ctx.beginPath();
         ctx.arc(90, 80, 55, 0, Math.PI * 2);
         ctx.fill();
@@ -584,12 +626,11 @@ export const renderImageFormatConverterPage = (opts: {
           if (!blob) return;
           var file = new File([blob], 'sample-transparent.png', { type: 'image/png' });
           loadFile(file);
-          // 默认演示：若当前是 JPEG 则马上转；否则转 WebP
           setTimeout(convert, 50);
         }, 'image/png');
       }
 
-      /** 清空输入输出。 */
+      /** Clear input and output state. */
       function clearAll() {
         sourceFile = null;
         outputBlob = null;

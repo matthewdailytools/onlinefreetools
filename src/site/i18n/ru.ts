@@ -337,24 +337,32 @@ const ru: SiteLangDict = {
   tool_html_entity_faq_a5: 'Нет. Всё локально.',
 
 
-  tool_image_format_converter_title: 'Конвертер форматов изображений — PNG, JPEG, WebP, AVIF (локально)',
-  tool_image_format_converter_description:
-    'Конвертируйте изображения между PNG, JPEG, WebP и AVIF в браузере. Шаги: выберите файл, целевой формат, качество (и фон для JPEG), затем скачайте. Пример: прозрачный PNG-скриншот в WebP для сайта — файл не уходит на сервер.',
-  tool_image_format_converter_article: 'Локальная конвертация с правилами качества, прозрачности и поддержки кодирования.',
+  tool_image_format_converter_title: 'Конвертер форматов изображений — PNG JPEG WebP AVIF BMP GIF ICO SVG',
+  tool_image_format_converter_description: 
+    'Конвертируйте изображения между PNG, JPEG, WebP, AVIF, BMP, GIF, ICO и SVG в браузере. Шаги: выберите файл, формат, при необходимости качество и скачайте. Пример: PNG в WebP или ICO — файлы остаются на устройстве.',
+  tool_image_format_converter_article: 
+    'Локальная конвертация форматов с понятными правилами и экспортом BMP/GIF/ICO/SVG.',
   tool_image_format_converter_convert: 'Конвертировать',
   tool_image_format_converter_download: 'Скачать',
   tool_image_format_converter_sample: 'Загрузить пример',
   tool_image_format_converter_clear: 'Очистить',
   tool_image_format_converter_choose_file: 'Выбрать файл',
-  tool_image_format_converter_drop_hint: 'Или перетащите PNG, JPEG, WebP, AVIF, GIF или BMP сюда.',
+  tool_image_format_converter_drop_hint: 'Или перетащите PNG, JPEG, WebP, AVIF, GIF, BMP, ICO или SVG сюда. Конвертация остаётся во вкладке.',
   tool_image_format_converter_target_label: 'Целевой формат',
   tool_image_format_converter_format_png: 'PNG',
   tool_image_format_converter_format_jpeg: 'JPEG',
   tool_image_format_converter_format_webp: 'WebP',
   tool_image_format_converter_format_avif: 'AVIF',
+  tool_image_format_converter_format_bmp: 'BMP',
+  tool_image_format_converter_format_gif: 'GIF',
+  tool_image_format_converter_format_ico: 'ICO',
+  tool_image_format_converter_format_svg: 'SVG',
+  tool_image_format_converter_group_web: 'Веб-форматы',
+  tool_image_format_converter_group_extra: 'Другие форматы',
   tool_image_format_converter_quality_label: 'Качество',
   tool_image_format_converter_quality_hint_png: 'PNG без потерь — качество не используется.',
   tool_image_format_converter_quality_hint_webp_lossless: 'WebP при 1.0 может быть без потерь.',
+  tool_image_format_converter_quality_hint_extra: 'BMP, GIF, ICO и SVG игнорируют ползунок качества.',
   tool_image_format_converter_jpeg_bg_label: 'Фон JPEG',
   tool_image_format_converter_jpeg_bg_white: 'Белый',
   tool_image_format_converter_jpeg_bg_black: 'Чёрный',
@@ -374,14 +382,17 @@ const ru: SiteLangDict = {
   tool_image_format_converter_status_converting: 'Конвертация…',
   tool_image_format_converter_status_done: 'Готово — проверьте MIME и размер, затем скачайте.',
   tool_image_format_converter_how_title: 'Как это работает',
-  tool_image_format_converter_how_body:
-    'Вы выбираете файл и формат. Страница декодирует пиксели, рисует на canvas и вызывает энкодер браузера. Для JPEG можно залить фон. MIME результата проверяется.',
+  tool_image_format_converter_how_body: 
+    'Выберите изображение и формат. Страница декодирует здесь, рисует на canvas и кодирует через toBlob или локальные кодеры (BMP/GIF/ICO/SVG). Для JPEG можно залить фон. MIME выхода проверяется.',
   tool_image_format_converter_rules_title: 'Ожидаемые правила',
   tool_image_format_converter_rules_body: 'Форматы различаются прозрачностью, качеством и поддержкой кодирования.',
-  tool_image_format_converter_rules_item_1: 'Цепочка: decode → опциональный фон → draw → toBlob. PNG игнорирует качество.',
+  tool_image_format_converter_rules_item_1: 
+    'Конвейер: декод → опциональный фон → canvas → код. PNG/JPEG/WebP/AVIF через toBlob; BMP/GIF/ICO/SVG локально. PNG и доп. форматы игнорируют качество.',
   tool_image_format_converter_rules_item_2: 'Прозрачность: PNG/WebP/AVIF могут сохранить альфу; JPEG — нет, нужен фон.',
   tool_image_format_converter_rules_item_3: 'Показ ≠ кодирование. AVIF чаще в Chromium; сверяем blob.type.',
   tool_image_format_converter_rules_item_4: 'Приватность: байты не загружаются на сервер.',
+  tool_image_format_converter_rules_item_5: 
+    'Дополнительно: BMP 24-bit; GIF один квантованный кадр; ICO с PNG; SVG со встроенным PNG — для иконок, не векторный перерисовка.',
   tool_image_format_converter_example_title: 'Пример',
   tool_image_format_converter_example:
     'Прозрачная PNG-иконка 240×160 → JPEG с белым фоном. Та же иконка в WebP 0.85 часто легче. Кнопка «Загрузить пример».',
@@ -401,6 +412,9 @@ const ru: SiteLangDict = {
   tool_image_format_converter_faq_a5: 'Смотрите MIME в статистике и скачайте файл. Тихий fallback даёт ошибку.',
   tool_image_format_converter_faq_q6: 'Анимированный GIF останется анимированным?',
   tool_image_format_converter_faq_a6: 'Нет. Обычно только первый кадр.',
+  tool_image_format_converter_faq_q7: 'Что с BMP, GIF, ICO и SVG?',
+  tool_image_format_converter_faq_a7: 
+    'Кодируются локально. GIF сохраняет один кадр с урезанной палитрой; ICO встраивает PNG; SVG оборачивает PNG-битмап. Для веба лучше WebP/AVIF.',
 
 
   tool_image_exif_title: 'Просмотр и удаление EXIF с фото — GPS, камера, локально',
