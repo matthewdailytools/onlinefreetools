@@ -1,5 +1,5 @@
 ---
-description: 工具多语言须按检索习惯本地化；稳妥常态工作流；禁止脚本批量同构机翻；≥3 轮核查
+description: 工具多语言须按检索习惯本地化；Title 禁参数枚举目录腔；稳妥常态工作流；禁止脚本批量同构机翻；≥3 轮核查
 globs: src/site/i18n/*.ts,scripts/site/i18n.mjs,work-tasks/**/*
 alwaysApply: false
 ---
@@ -34,10 +34,15 @@ Agent 提示应类似：`Write {lang} copy for users who search: …`（附该�
 ## 写法
 
 - **重写非翻译**：先定该语 3–5 个搜索词，再写 title / H1 / description / 按钮。
+- **Title / H1 自然口语（强制）**：主标题写「用户要办的事 + 结果/场景」，**不要**把控件参数名用顿号/逗号串成副标题。控件名（边长、画质、目标 KB、质量滑条等）放 **UI 标签** 或 How/Rules，不堆进 H1。
+  - **反例（机械）**：`图片压缩 — 最长边、质量与目标体积（本地处理）`；`Image Compressor — Max Edge, Quality & Target Size Local`
+  - **正例（自然）**：`图片压缩 — 缩小尺寸与文件体积，本地完成`；`Image Compressor — Shrink photos locally (size & quality)`
+  - 自检：删掉副标题后，主词是否仍是当地人会搜的说法？副标题读起来像不像产品说明书目录？
 - **UI 短词本地说**；示例可本地化；技术专名（CRLF、`.env`、Markdown、HTML）可保留。
 - **首页** `scripts/site/i18n.mjs` 主词与工具页一致。
 - **反同构**：FAQ 题序、How/Rules 开篇、Use cases 切入点应随语种变化；禁止十语同一「Process: … Example: …」骨架只换词。
 - **只写用户视角**：可见正文（description / how / rules / example / usecases / faq）只写「用户完成任务需要知道什么」。**禁止**把 SEO/工程理由（doorway、空壳页/薄页、thin URL、slug、「双向放同一地址」「不拆 URL」「不是又一个…页」等自我指涉/元叙述）或实现库名（js-yaml、papaparse…）当卖点写进用户文案；此类理由只属于 `work-tasks/` 与 `docs/`（或代码注释）。母版语（en/zh）也须遵守——母版若混入元叙述，会被逐语放大成译腔。
+- **忌说明书腔**：How/Rules 少写实现术语（`toBlob`、质量二分、Canvas 流水线）当面向用户的主句；改成「缩小、重画、再导出」「逐步降低画质去逼近」等可观察说法。库名/API 名最多进 References。
 
 ## 每语 brief（写 i18n 前必填）
 
@@ -47,7 +52,7 @@ Agent 提示应类似：`Write {lang} copy for users who search: …`（附该�
 ## Locale brief — {lang}
 - 该语检索词（3–5）：
 - 语气：口语工具站 / 偏正式开发者（择一）
-- Title / H1 方向（本地说法，非英译）：
+- Title / H1 方向（本地说法，非英译；**结果/场景向**，勿「参数A、参数B、参数C」目录腔）：
 - 按钮短词（Compare/Clear/按行… 的本地说法）：
 - 本地示例用词（可选）：
 - 可保留英文/符号：
@@ -68,6 +73,7 @@ Agent 提示应类似：`Write {lang} copy for users who search: …`（附该�
 3. **假本地化**：非 en/zh 键缺失，靠 `t()` 回退英文上线。
 4. **用 lint 代替抽查**：未完成轮次 3 抽查就标 `i18n-done`。
 5. **空勾「待母语抽查」**：标了待抽查却无后续重写/确认记录，或未清标记却宣称定稿。
+6. **参数枚举式 title**：H1/title 用顿号/逗号罗列控件名或工程参数（「最长边、质量与目标体积」「Max Edge, Quality & Target Size」），读起来像设置面板目录而非检索向口语。
 
 **收紧后的通过标准**：
 
@@ -85,6 +91,8 @@ Agent 提示应类似：`Write {lang} copy for users who search: …`（附该�
 | 错义借译 | es `altas y bajas`=增删；乱造 `*hunk*` 德语词 | 当地「新增/删除」 |
 | 未写完缩写 | `Cars.` | Character / Carácter / 字符 |
 | 目录腔标题 | ユースケース、Casos de uso 堆砌英文 Use cases | 「适合什么场景」「こんなときに」 |
+| **参数枚举 title** | `… — 最长边、质量与目标体积（本地处理）`；`… — Max Edge, Quality & Target Size` | 结果/场景向：`… — 缩小尺寸与文件体积，本地完成`；参数名留给 UI |
+| 说明书腔正文 | How 主句堆 `toBlob` / 质量二分 / Canvas 流水线 | 「缩小、重画、再导出」；API 名进 References |
 | 同构机翻 | 十语同一句式 + 同一 Hello world 骨架且无本地主词 | 每语独立重写 title/FAQ |
 | 假本地化 | 仅 en/zh 有文案，其余靠 `t()` 回退英文 | 十语键齐全 |
 | 脚本灌语 | 无逐语 brief 审阅的「一键八语」补丁当交付 | 逐语/≤3 语一批；脚本仅落盘 |
@@ -99,18 +107,20 @@ Agent 提示应类似：`Write {lang} copy for users who search: …`（附该�
 | 轮 | 做什么 | 通过 |
 |---|---|---|
 | 1 | 母版 + brief 草稿；`lint:seo` | ≥120、FAQ≥3、关键词 |
-| 2 | 按每语 brief **独立重写**（非批量同构）；同步首页；对照禁词表 | title=检索向；无禁模式 |
-| 3 | 抽 en+zh+≥2 他语：title/按钮/FAQ/隐私；句式是否同构；再 `lint:seo` | 无译腔/错义/同构；待母语抽查已清或已排期 |
+| 2 | 按每语 brief **独立重写**（非批量同构）；同步首页；对照禁词表 | title=检索向且非参数枚举；无禁模式 |
+| 3 | 抽 en+zh+≥2 他语：title/按钮/FAQ/隐私；句式是否同构；title 是否目录腔；再 `lint:seo` | 无译腔/错义/同构/参数枚举 title；待母语抽查已清或已排期 |
 
 ## 定稿自检
 
 - [ ] 每语有 brief（检索词 + title 方向 + 按钮说法）
+- [ ] title/H1 为结果或场景向口语，**非**「参数A、参数B、参数C」目录腔（见写法 · Title 自然口语）
 - [ ] 对照禁词表扫过 title/按钮/FAQ
 - [ ] ≥3 轮且 2/3 轮有实质修改（非只改标点）
 - [ ] 无未清的「待母语抽查」勾选（或已在 `03` 多轮记录写明排期与责任人）
 - [ ] `lint:seo` 通过（≠本地化完成）
 - [ ] 未使用「英模 → 脚本灌其余语」作为唯一交付路径
 - [ ] 可见正文无 SEO/工程元叙述（doorway/空壳/薄页/slug/自述「单页/不拆 URL」）与库名卖点；理由仅在 `work-tasks`/`docs`
+- [ ] How/Rules 无把实现 API/`toBlob`/算法名当用户主句的说明书腔
 
 ## 红线
 
