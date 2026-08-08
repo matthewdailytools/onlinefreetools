@@ -62,6 +62,7 @@
 - [IndexNow / Bing URL 提交](https://onlinefreetools.org/zh/tools/indexnow) - 生成密钥、检查验证文件、提交变更 URL，并说明 200/202 状态码
 - [BMI 计算器](https://onlinefreetools.org/zh/tools/how-to-calculate-bmi) - 按成人筛查公式计算身体质量指数（教育用途，非诊断）
 - [ROI 计算器](https://onlinefreetools.org/zh/tools/how-to-calculate-roi) - 计算投资回报率，含假设说明与非投资建议免责
+- [复利计算器](https://onlinefreetools.org/zh/tools/how-to-calculate-compound-interest) - 按本金、年利率、年数与复利频率计算终值；可对照单利；非投资建议
 - [边际收益计算器](https://onlinefreetools.org/zh/tools/how-to-calculate-marginal-revenue) - 用 ΔTR/ΔQ 计算边际收益（教学用途）
 - [平方英尺计算器](https://onlinefreetools.org/zh/tools/square-feet) - 按长宽与单位估算面积（房产/装修场景）
 - [百分比变化计算器](https://onlinefreetools.org/zh/tools/how-to-calculate-percentage-change) - 计算两个数值之间的涨跌幅（含百分点对照）
@@ -123,6 +124,7 @@ Below are our available online tools with their links (English version):
 - [IndexNow — Bing URL Submit](https://onlinefreetools.org/tools/indexnow) - Generate a key, check the verification file, submit changed URLs, and read 200/202 status codes
 - [BMI Calculator](https://onlinefreetools.org/tools/how-to-calculate-bmi) - Adult BMI screening from weight and height (educational, not a diagnosis)
 - [ROI Calculator](https://onlinefreetools.org/tools/how-to-calculate-roi) - Calculate return on investment with assumptions and a non-advice disclaimer
+- [Compound Interest Calculator](https://onlinefreetools.org/tools/how-to-calculate-compound-interest) - Future value from principal, rate, years, and compounding; optional simple interest; educational only
 - [Marginal Revenue Calculator](https://onlinefreetools.org/tools/how-to-calculate-marginal-revenue) - Compute MR = ΔTR / ΔQ for learning microeconomics
 - [Square Feet Calculator](https://onlinefreetools.org/tools/square-feet) - Estimate area from length × width for flooring and real estate
 - [Percentage Change Calculator](https://onlinefreetools.org/tools/how-to-calculate-percentage-change) - Calculate percent increase/decrease between two values

@@ -16,6 +16,7 @@ import { renderDomainLookupPage } from '../pages/domainLookupPage';
 import { renderFileHashPage } from '../pages/fileHashPage';
 import { renderFlipImagePage } from '../pages/flipImagePage';
 import { renderHowToCalculateBmiPage } from '../pages/howToCalculateBmiPage';
+import { renderHowToCalculateCompoundInterestPage } from '../pages/howToCalculateCompoundInterestPage';
 import { renderHowToCalculateGradientPage } from '../pages/howToCalculateGradientPage';
 import { renderMarginalRevenuePage } from '../pages/marginalRevenuePage';
 import { renderHowToCalculatePercentageChangePage } from '../pages/howToCalculatePercentageChangePage';
@@ -83,6 +84,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'file-hash': (lang, defaultLang, enabled) => renderFileHashPage({ lang, defaultLang, enabledLangs: enabled }),
 	'flip-image': (lang, defaultLang, enabled) => renderFlipImagePage({ lang, defaultLang, enabledLangs: enabled }),
 	'how-to-calculate-bmi': (lang, defaultLang, enabled) => renderHowToCalculateBmiPage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-compound-interest': (lang, defaultLang, enabled) => renderHowToCalculateCompoundInterestPage({ lang, defaultLang, enabledLangs: enabled }),
 	'how-to-calculate-gradient': (lang, defaultLang, enabled) => renderHowToCalculateGradientPage({ lang, defaultLang, enabledLangs: enabled }),
 	'how-to-calculate-marginal-revenue': (lang, defaultLang, enabled) => renderMarginalRevenuePage({ lang, defaultLang, enabledLangs: enabled }),
 	'how-to-calculate-percentage-change': (lang, defaultLang, enabled) => renderHowToCalculatePercentageChangePage({ lang, defaultLang, enabledLangs: enabled }),

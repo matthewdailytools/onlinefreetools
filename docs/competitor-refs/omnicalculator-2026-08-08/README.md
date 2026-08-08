@@ -35,7 +35,8 @@
 | 文件 | 说明 |
 |---|---|
 | `omnicalculator-en-tools.tsv` | 全量 en：`category \t slug \t url_en` |
-| `omnicalculator-formula-ref-shortlist.tsv` | **与本站方向对齐的精选公式对照表**（优先用这个） |
+| `omnicalculator-intent-merge-howto.tsv` | **意图合并 → 本站 `how-to-calculate-*`**（清单 §9 源表） |
+| `omnicalculator-formula-ref-shortlist.tsv` | 与合并后意图对齐的公式对照（每意图一行主 Omni URL） |
 | `lists/{category}.md` | 分品类完整 slug + en URL 表 |
 | `sitemaps/sitemap-en-tools.xml` | **精简** en 工具 URL 列表（自 sitemap-main 解析，无 hreflang） |
 | `sitemaps/sitemap-content-pages.xml` | 内容/说明页备份（非计算器工具） |
@@ -55,4 +56,8 @@
 1. **禁止**按 Omni 规模拆男女 BMI、各州销售税、90/95/99 置信区间、16:9/4:3 宽高比等近义 URL。  
 2. 公式对照以 **en 页**为主（变量命名与公式区块更完整）。  
 3. Omni 强项是**公式讲解深度与可引用叙事**（接近 calculator.net）；本站照搬的是「公式可见 + 边界 + References」，不是页数。  
-4. 立项仍须本站 IG；链接仅作竞品对照，**不**写入用户可见「抄自 Omni Calculator」。
+4. 立项仍须本站 IG；链接仅作竞品对照，**不**写入用户可见「抄自 Omni Calculator」。  
+
+**流量策略全文**（四层打法、一页吃长尾、how-to 命名、同意图抢份额、Google/Bing 红线）：[docs/2026-08-08-omnicalculator-seo-traffic-strategy.md](../../2026-08-08-omnicalculator-seo-traffic-strategy.md)  
+
+**清单落地**：意图合并后的产品行见 [docs/2026-08-08-tool-inventory-table.md](../../2026-08-08-tool-inventory-table.md) §9（62 行）+ 本目录 `omnicalculator-intent-merge-howto.tsv`。

@@ -14,6 +14,7 @@
 - [工具清单总表](./2026-08-08-tool-inventory-table.md) — 名称 / 场景·渠道 / slug / 功能 / 分类 / 角色 / 输入 / 输出（自本文提炼）
 - [ToolDone 计算器快照](./competitor-refs/tooldone-2026-08-08/README.md) — 全量 en/zh 链接归档 + 公式对照精选（2026-08-08）
 - [Omni Calculator 快照](./competitor-refs/omnicalculator-2026-08-08/README.md) — 全量 en 链接归档 + 公式对照精选（~3867；2026-08-08）
+- [Omni Calculator SEO 流量策略](./2026-08-08-omnicalculator-seo-traffic-strategy.md) — 对标打法、一页吃长尾、how-to 命名、Google/Bing 红线（2026-08-08）
 - [iLovePDF 工具快照](./competitor-refs/ilovepdf-2026-08-08/README.md) — PDF 全家桶 URL + 本站可做/不做决策（2026-08-08）
 
 > **本文职责**：分别定义三条**独立**的工具开发方向（做什么、技术怎么落地、成熟度、候选清单）。  
@@ -1287,7 +1288,7 @@ npm run lint:seo && npm run build:site
 | **[Merge Images](https://mergeimages.co/)** | 浏览器本地 N→1 合成；横/竖/网格 + 间距背景；平台发帖预设（IG 1080²、FB 1200×630）；Overlay/水印/Flip/PDF 工具链互推；Before-After 等 use cases | 按布局拆多 slug；AI Combiner 黑盒；站脚链到 404 的薄工具（PNG→SVG 等）；与 1→N 封面工具混 intent |
 | **[ezyZip](https://www.ezyzip.com/zh-hans.html)** | 本地 WASM 解压/打包叙事；Worker + 大文件直写思路；包内搜索/预览/文件夹树；压缩级与密码包说明（**详表见 A.5.1 / B14**） | 按格式与「ZIP→某后缀」拆海量近义 URL；伪转换矩阵；密码破解/修复承诺；用格式数量竞赛代替 Information Gain |
 | **[ToolDone](https://tooldone.com/zh/)** | 计算器公式与变量呈现可作**实现对照**；品类覆盖金融/健康/换算/数理统计/建筑（快照见 [competitor-refs/tooldone-2026-08-08](./competitor-refs/tooldone-2026-08-08/README.md)） | **~2800+ 页铺量**与近义拆页（男女 BMI、州税等）；无增量机翻风险面；本站禁止跟风数量竞赛 |
-| **[Omni Calculator](https://www.omnicalculator.com/)** | 公式讲解深度与可引用叙事强；热门统计/数学（p-value、sig-fig、百分比、斜率等）可作对照（快照见 [competitor-refs/omnicalculator-2026-08-08](./competitor-refs/omnicalculator-2026-08-08/README.md)，~3867 en） | 同样的长尾拆页矩阵（州税、BMI 分群、90/95/99 CI、宽高比预设 URL）；**无 zh**；禁止用页数竞赛代替 Information Gain |
+| **[Omni Calculator](https://www.omnicalculator.com/)** | 公式讲解深度与可引用叙事强；热门统计/数学（p-value、sig-fig、百分比、斜率等）可作对照（快照见 [competitor-refs/omnicalculator-2026-08-08](./competitor-refs/omnicalculator-2026-08-08/README.md)，~3867 en） | 同样的长尾拆页矩阵（州税、BMI 分群、90/95/99 CI、宽高比预设 URL）；**无 zh**；禁止用页数竞赛代替 Information Gain；**流量策略**见 [2026-08-08-omnicalculator-seo-traffic-strategy.md](./2026-08-08-omnicalculator-seo-traffic-strategy.md) |
 | **[iLovePDF](https://www.ilovepdf.com/)** | Merge/Split/Compress 任务闭环；压缩前后对比；工具互链（**详表见 A.5.2** / [快照](./competitor-refs/ilovepdf-2026-08-08/README.md)） | 上传墙唯一路径；Office 全矩阵与 AI 摘要/翻译灌页；电子签/修复虚假承诺；与本站「本地处理」定位对立时勿跟风 |
 | **Coolors / Realtime Colors / SVGOMG 等** | 配色闭环、实境预览、SVG 选项可视化（**详表见专题 D.2**） | 灵感库堆量、迷你建站器、无规则薄页 |
 
@@ -1310,7 +1311,7 @@ npm run lint:seo && npm run build:site
 | 财务 / 健康 | 海量拆页 | 海量拆页 + 州税矩阵 | C-V4 / C-V5：公式+免责+References；对照存 competitor-refs |
 | 单位换算 | 300+ 转换页 | conversion ≈326 | **单页** `unit-converter` 多类别 Tab |
 | 公式复核 | en/zh 配对 shortlist | en shortlist（清单 §12） | 打开 en URL；**两家交叉核对**（清单 §11 + §12） |
-| SEO 结构 | 长尾 URL 矩阵 | 长尾 URL 矩阵 | 一带多场景；禁 doorway |
+| SEO 结构 | 长尾 URL 矩阵 | 长尾 URL 矩阵 | 一带多场景；禁 doorway（展开：[Omni SEO 流量策略](./2026-08-08-omnicalculator-seo-traffic-strategy.md)） |
 
 **Merge Images vs 本站图片规划（速查）**：
 

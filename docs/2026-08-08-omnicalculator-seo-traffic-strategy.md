@@ -9,7 +9,8 @@
 - 竞品快照：[competitor-refs/omnicalculator-2026-08-08/README.md](./competitor-refs/omnicalculator-2026-08-08/README.md)
 - 公式精选：[omnicalculator-formula-ref-shortlist.tsv](./competitor-refs/omnicalculator-2026-08-08/omnicalculator-formula-ref-shortlist.tsv)
 - 工具方向：[2026-07-28-tool-direction.md](./2026-07-28-tool-direction.md)（A.7 / C-V4·V5 / 附录）
-- 清单总表：[2026-08-08-tool-inventory-table.md](./2026-08-08-tool-inventory-table.md) §9 / §12
+- 清单总表：[2026-08-08-tool-inventory-table.md](./2026-08-08-tool-inventory-table.md) §9（Omni 意图合并 · `how-to-calculate-*`，62 行）/ §12
+- 意图合并 TSV：[omnicalculator-intent-merge-howto.tsv](./competitor-refs/omnicalculator-2026-08-08/omnicalculator-intent-merge-howto.tsv)
 - GSC 现行策略：[seo/2026-08-08/02-next-strategy.md](./seo/2026-08-08/02-next-strategy.md)
 - Google 落地：[2026-07-28-google-seo-strategy-implementation.md](./2026-07-28-google-seo-strategy-implementation.md)
 
@@ -108,10 +109,12 @@ flowchart LR
 
 | 优先级 | slug | 对标 Omni（对照公式，不拆变体） |
 |---|---|---|
-| P1 | `compound-interest` | `/finance/compound-interest` |
-| P1 | `loan-emi`（含摊还） | `/finance/emi` + `amortization` **同页** |
-| P1 | `bmr-tdee`（含 calorie 场景） | `/health/bmr` + `tdee` **同页** |
-| P1 | `break-even` / `gross-margin` | 对应 finance URL |
+| P1 | `how-to-calculate-compound-interest` | `/finance/compound-interest`（+ simple-interest 同页） |
+| P1 | `how-to-calculate-emi` | `/finance/emi` + amortization + mortgage **同页** |
+| P1 | `how-to-calculate-bmr-tdee` | `/health/bmr` + `tdee` + calorie **同页** |
+| P1 | `how-to-calculate-break-even` / `how-to-calculate-gross-margin` | 对应 finance URL |
+
+完整合并清单见清单 §9 与 `omnicalculator-intent-merge-howto.tsv`（62 意图）。
 
 硬门槛：可交互 + 公式表 + Example + 边界 + YMYL disclaimer + References；en/zh 满 IG；L2 brief 检索词进 title/H1/首段；上线后 IndexNow；`lint:seo` 通过。节奏：每周 1–2 个含十语审核（方向文档红线）。
 

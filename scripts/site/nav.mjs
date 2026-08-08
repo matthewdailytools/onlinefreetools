@@ -32,10 +32,7 @@ export const buildToolPageNavItems = (lang) => [
 ];
 
 /**
- * 首页顶栏：推荐 + 各分类工具下拉（不再提供「全部工具」锚点项）。
+ * 首页顶栏：各分类工具下拉（无「推荐」锚点项）。
  * @param {string} lang
  */
-export const buildHomeNavItems = (lang) => [
-  { href: '#featured', label: t(lang, 'nav_featured') },
-  ...buildCategoryNavDropdowns(lang),
-];
+export const buildHomeNavItems = (lang) => [...buildCategoryNavDropdowns(lang)];

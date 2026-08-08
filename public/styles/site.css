@@ -1002,6 +1002,15 @@ footer.bg-light {
   animation: homeFadeUp 0.75s 0.12s ease both;
 }
 
+/** Hero 工具数量：非链接，仅展示 catalog 规模 */
+.home-hero-tool-count {
+  margin: 0;
+  font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+}
+
 .home-main {
   max-width: var(--home-max);
   margin: 0 auto;
@@ -1009,7 +1018,7 @@ footer.bg-light {
   width: 100%;
 }
 
-/** 顶区内主栏：与氛围底衔接，底部留给推荐区呼吸 */
+/** 顶区内主栏：与氛围底衔接（Why 区） */
 .home-main--top {
   position: relative;
   z-index: 1;
@@ -1301,10 +1310,11 @@ footer.bg-light {
 
 .home-section-head {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: baseline;
   gap: 1rem;
   margin-bottom: 1.25rem;
+  text-align: center;
 }
 
 .home-section-head h2 {
@@ -1313,6 +1323,7 @@ footer.bg-light {
   letter-spacing: -0.03em;
   margin: 0;
   color: var(--text-strong);
+  text-align: center;
 }
 
 .home-cat {

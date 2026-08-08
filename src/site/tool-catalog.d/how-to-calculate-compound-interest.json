@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-compound-interest",
+  "path": "/tools/how-to-calculate-compound-interest",
+  "category": "calculator",
+  "featured": true,
+  "ymyl": true,
+  "i18nKey": "tool_compound_interest_title",
+  "homeTitleKey": "tool_compound_interest_title",
+  "homeDescKey": "tool_compound_interest_description",
+  "faqPrefix": "tool_compound_interest",
+  "related": [
+    "how-to-calculate-roi",
+    "how-to-calculate-percentage-change"
+  ],
+  "logo": "/icons/tools/how-to-calculate-compound-interest.svg",
+  "page": {
+    "module": "../pages/howToCalculateCompoundInterestPage",
+    "export": "renderHowToCalculateCompoundInterestPage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}
