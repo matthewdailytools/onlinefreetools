@@ -161,11 +161,10 @@ dist
 .pnp.\*
 
 # 同域 vendor（由 copy-*-vendor.mjs / build:site 生成，勿手改）
+# bootstrap/fonts 纳入仓库：全站 chrome 依赖，缺了会导致样式错位
 public/vendor/jsquash/
 public/vendor/wasm-feature-detect/
 public/vendor/gifenc/
-public/vendor/bootstrap/
-public/vendor/fonts/
 
 # wrangler project
 

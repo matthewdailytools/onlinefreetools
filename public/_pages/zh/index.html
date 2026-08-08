@@ -113,6 +113,9 @@
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">图片编辑工具</a>
           <ul class="dropdown-menu"><li><a class="dropdown-item" href="/zh/tools/add-watermark">图片文字水印 — 浏览器内本地标注</a></li><li><a class="dropdown-item" href="/zh/tools/color-from-image">图片主色提取 — 色板与点击取色</a></li><li><a class="dropdown-item" href="/zh/tools/flip-image">图片翻转 — 水平或垂直镜像</a></li><li><a class="dropdown-item" href="/zh/tools/image-border">图片加边框 — 选颜色与宽度</a></li><li><a class="dropdown-item" href="/zh/tools/image-compress">图片压缩 — 缩小尺寸与文件体积，本地完成</a></li><li><a class="dropdown-item" href="/zh/tools/image-crop">图片裁剪与改尺寸 — 本地完成</a></li><li><a class="dropdown-item" href="/zh/tools/image-exif">图片 EXIF 查看与清除 — GPS、相机信息、本地处理</a></li><li><a class="dropdown-item" href="/zh/tools/image-format-converter">图片格式转换 — PNG JPEG WebP AVIF BMP GIF ICO SVG 本地完成</a></li><li><a class="dropdown-item" href="/zh/tools/image-grayscale">图片转灰度 — 本地黑白转换</a></li><li><a class="dropdown-item" href="/zh/tools/image-merge">多图拼接 — 合成一张拼图，本地完成</a></li><li><a class="dropdown-item" href="/zh/tools/image-optimizer">图片优化 — 更小体积，可调编码器，本地完成</a></li><li><a class="dropdown-item" href="/zh/tools/image-overlay">图片叠加 Logo — 透明定位，本地完成</a></li><li><a class="dropdown-item" href="/zh/tools/image-to-base64">图片与 Base64 互转 — 本地编码解码</a></li><li><a class="dropdown-item" href="/zh/tools/images-to-gif">多图转 GIF — 本地合成短动画</a></li><li><a class="dropdown-item" href="/zh/tools/images-to-pdf">多图转 PDF — 每图一页本地合并</a></li><li><a class="dropdown-item" href="/zh/tools/images-to-ppt">多图转 PPT — 每图一张幻灯片</a></li><li><a class="dropdown-item" href="/zh/tools/images-to-word">多图转 Word — 本地生成 DOCX</a></li></ul>
         </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">设计工具</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/zh/tools/brand-color-token-pack">品牌色 Token 包 — HEX/HSL/OKLCH 色阶</a></li><li><a class="dropdown-item" href="/zh/tools/wcag-contrast-checker">WCAG 对比度检测 — AA/AAA 比率在线算</a></li></ul>
+        </li><li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">开发者工具</a>
           <ul class="dropdown-menu"><li><a class="dropdown-item" href="/zh/tools/add-www-to-dns">给域名添加 www DNS — 记录生成与各平台教程</a></li><li><a class="dropdown-item" href="/zh/tools/csv-json">CSV ↔ JSON 互转 — 类型、分隔符、本地处理</a></li><li><a class="dropdown-item" href="/zh/tools/html-entity">HTML 实体编解码 — 转义、反转义、本地处理</a></li><li><a class="dropdown-item" href="/zh/tools/indexnow">IndexNow — Bing URL 提交、密钥检查与状态码</a></li><li><a class="dropdown-item" href="/zh/tools/ip-address">IP 地址查询 — 查看我的公网 IP（IPv4/IPv6）</a></li><li><a class="dropdown-item" href="/zh/tools/json-schema-validator">JSON Schema 校验器 — 路径错误与本地处理</a></li><li><a class="dropdown-item" href="/zh/tools/markdown-to-html">Markdown ↔ HTML</a></li><li><a class="dropdown-item" href="/zh/tools/text-diff">在线文本对比 — 文本差异对比工具</a></li><li><a class="dropdown-item" href="/zh/tools/website-headers">在线查看 HTTP 响应头</a></li><li><a class="dropdown-item" href="/zh/tools/yaml-json">YAML ↔ JSON 互转 — 类型规则、多文档、本地处理</a></li></ul>
         </li><li class="nav-item dropdown">
@@ -136,7 +139,7 @@
     
     <aside id="sidebar" class="border-end">
       <h2 class="sidebar-title h6">分类</h2>
-      <div class="list-group list-group-flush small" id="categoryList"><a class="list-group-item list-group-item-action" href="#cat-image">图片编辑工具</a><a class="list-group-item list-group-item-action" href="#cat-dev">开发者工具</a><a class="list-group-item list-group-item-action" href="#cat-calculator">计算器</a></div>
+      <div class="list-group list-group-flush small" id="categoryList"><a class="list-group-item list-group-item-action" href="#cat-image">图片编辑工具</a><a class="list-group-item list-group-item-action" href="#cat-design">设计工具</a><a class="list-group-item list-group-item-action" href="#cat-dev">开发者工具</a><a class="list-group-item list-group-item-action" href="#cat-calculator">计算器</a></div>
     </aside>
     <main id="content" class="p-4">
     <div class="home-wrap">
@@ -194,6 +197,18 @@
         </div>
         <p class="card-text flex-grow-1">生成 www 的 A/CNAME 记录，查询现网 DNS，并提供 Cloudflare/Vercel/阿里云等操作步骤。</p>
         <a href="/zh/tools/add-www-to-dns" class="mt-auto btn btn-primary btn-sm">打开</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/brand-color-token-pack.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
+          <h3 class="card-title h5 mb-0">品牌色 Token 包 — HEX/HSL/OKLCH 色阶</h3>
+        </div>
+        <p class="card-text flex-grow-1">一个主色 → HEX/RGB/HSL/OKLCH、50–950 色阶、对比配对、CSS 变量，本地处理。</p>
+        <a href="/zh/tools/brand-color-token-pack" class="mt-auto btn btn-primary btn-sm">打开</a>
       </div>
     </div>
   </div>
@@ -549,6 +564,18 @@
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/wcag-contrast-checker.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
+          <h3 class="card-title h5 mb-0">WCAG 对比度检测 — AA/AAA 比率在线算</h3>
+        </div>
+        <p class="card-text flex-grow-1">检测前景/背景对比度比率与 AA/AAA 是否达标，全程在浏览器本地完成。</p>
+        <a href="/zh/tools/wcag-contrast-checker" class="mt-auto btn btn-primary btn-sm">打开</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/website-headers.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
           <h3 class="card-title h5 mb-0">在线查看 HTTP 响应头</h3>
         </div>
@@ -785,6 +812,38 @@
         </div>
         <p class="card-text small flex-grow-1">本地多图导出为 DOCX。</p>
         <a href="/zh/tools/images-to-word" class="mt-auto btn btn-primary btn-sm">打开</a>
+      </div>
+    </div>
+  </div>
+        </div>
+      </div>
+      <div class="home-cat" id="cat-design">
+        <span class="home-cat-label">设计工具</span>
+        <h3>配色、对比度、品牌色</h3>
+        <p class="home-cat-blurb">浏览器本地设计工具 — 对比度与品牌色 token，文件不上传。</p>
+        <div class="home-card-grid">
+          
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/brand-color-token-pack.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <h3 class="card-title h6 mb-0">品牌色 Token 包 — HEX/HSL/OKLCH 色阶</h3>
+        </div>
+        <p class="card-text small flex-grow-1">一个主色 → HEX/RGB/HSL/OKLCH、50–950 色阶、对比配对、CSS 变量，本地处理。</p>
+        <a href="/zh/tools/brand-color-token-pack" class="mt-auto btn btn-primary btn-sm">打开</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/wcag-contrast-checker.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <h3 class="card-title h6 mb-0">WCAG 对比度检测 — AA/AAA 比率在线算</h3>
+        </div>
+        <p class="card-text small flex-grow-1">检测前景/背景对比度比率与 AA/AAA 是否达标，全程在浏览器本地完成。</p>
+        <a href="/zh/tools/wcag-contrast-checker" class="mt-auto btn btn-primary btn-sm">打开</a>
       </div>
     </div>
   </div>
