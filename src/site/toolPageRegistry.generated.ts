@@ -16,8 +16,13 @@ import { renderDomainLookupPage } from '../pages/domainLookupPage';
 import { renderFileHashPage } from '../pages/fileHashPage';
 import { renderFlipImagePage } from '../pages/flipImagePage';
 import { renderHowToCalculateBmiPage } from '../pages/howToCalculateBmiPage';
+import { renderHowToCalculateBmrTdeePage } from '../pages/howToCalculateBmrTdeePage';
+import { renderHowToCalculateBodyFatPage } from '../pages/howToCalculateBodyFatPage';
+import { renderHowToCalculateBreakEvenPage } from '../pages/howToCalculateBreakEvenPage';
 import { renderHowToCalculateCompoundInterestPage } from '../pages/howToCalculateCompoundInterestPage';
+import { renderHowToCalculateEmiPage } from '../pages/howToCalculateEmiPage';
 import { renderHowToCalculateGradientPage } from '../pages/howToCalculateGradientPage';
+import { renderHowToCalculateGrossMarginPage } from '../pages/howToCalculateGrossMarginPage';
 import { renderMarginalRevenuePage } from '../pages/marginalRevenuePage';
 import { renderHowToCalculatePercentageChangePage } from '../pages/howToCalculatePercentageChangePage';
 import { renderHowToCalculateRoiPage } from '../pages/howToCalculateRoiPage';
@@ -56,6 +61,7 @@ import { renderSplitPdfPage } from '../pages/splitPdfPage';
 import { renderSquareFeetPage } from '../pages/squareFeetPage';
 import { renderTextDiffPage } from '../pages/textDiffPage';
 import { renderTimezoneConverterPage } from '../pages/timezoneConverterPage';
+import { renderUnitConverterPage } from '../pages/unitConverterPage';
 import { renderUnixTimestampPage } from '../pages/unixTimestampPage';
 import { renderUnlockPdfPage } from '../pages/unlockPdfPage';
 import { renderUuidGeneratorPage } from '../pages/uuidGeneratorPage';
@@ -84,8 +90,13 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'file-hash': (lang, defaultLang, enabled) => renderFileHashPage({ lang, defaultLang, enabledLangs: enabled }),
 	'flip-image': (lang, defaultLang, enabled) => renderFlipImagePage({ lang, defaultLang, enabledLangs: enabled }),
 	'how-to-calculate-bmi': (lang, defaultLang, enabled) => renderHowToCalculateBmiPage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-bmr-tdee': (lang, defaultLang, enabled) => renderHowToCalculateBmrTdeePage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-body-fat': (lang, defaultLang, enabled) => renderHowToCalculateBodyFatPage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-break-even': (lang, defaultLang, enabled) => renderHowToCalculateBreakEvenPage({ lang, defaultLang, enabledLangs: enabled }),
 	'how-to-calculate-compound-interest': (lang, defaultLang, enabled) => renderHowToCalculateCompoundInterestPage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-emi': (lang, defaultLang, enabled) => renderHowToCalculateEmiPage({ lang, defaultLang, enabledLangs: enabled }),
 	'how-to-calculate-gradient': (lang, defaultLang, enabled) => renderHowToCalculateGradientPage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-gross-margin': (lang, defaultLang, enabled) => renderHowToCalculateGrossMarginPage({ lang, defaultLang, enabledLangs: enabled }),
 	'how-to-calculate-marginal-revenue': (lang, defaultLang, enabled) => renderMarginalRevenuePage({ lang, defaultLang, enabledLangs: enabled }),
 	'how-to-calculate-percentage-change': (lang, defaultLang, enabled) => renderHowToCalculatePercentageChangePage({ lang, defaultLang, enabledLangs: enabled }),
 	'how-to-calculate-roi': (lang, defaultLang, enabled) => renderHowToCalculateRoiPage({ lang, defaultLang, enabledLangs: enabled }),
@@ -124,6 +135,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'square-feet': (lang, defaultLang, enabled) => renderSquareFeetPage({ lang, defaultLang, enabledLangs: enabled }),
 	'text-diff': (lang, defaultLang, enabled) => renderTextDiffPage({ lang, defaultLang, enabledLangs: enabled }),
 	'timezone-converter': (lang, defaultLang, enabled) => renderTimezoneConverterPage({ lang, defaultLang, enabledLangs: enabled }),
+	'unit-converter': (lang, defaultLang, enabled) => renderUnitConverterPage({ lang, defaultLang, enabledLangs: enabled }),
 	'unix-timestamp': (lang, defaultLang, enabled) => renderUnixTimestampPage({ lang, defaultLang, enabledLangs: enabled }),
 	'unlock-pdf': (lang, defaultLang, enabled) => renderUnlockPdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'uuid-generator': (lang, defaultLang, enabled) => renderUuidGeneratorPage({ lang, defaultLang, enabledLangs: enabled }),

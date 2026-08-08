@@ -63,8 +63,14 @@
 - [BMI 计算器](https://onlinefreetools.org/zh/tools/how-to-calculate-bmi) - 按成人筛查公式计算身体质量指数（教育用途，非诊断）
 - [ROI 计算器](https://onlinefreetools.org/zh/tools/how-to-calculate-roi) - 计算投资回报率，含假设说明与非投资建议免责
 - [复利计算器](https://onlinefreetools.org/zh/tools/how-to-calculate-compound-interest) - 按本金、年利率、年数与复利频率计算终值；可对照单利；非投资建议
+- [EMI / 等额月供计算器](https://onlinefreetools.org/zh/tools/how-to-calculate-emi) - 按本金、年利率与年限算等额本息月供与摊还；非贷款建议
+- [BMR / TDEE / 卡路里](https://onlinefreetools.org/zh/tools/how-to-calculate-bmr-tdee) - 用 Mifflin、Harris-Benedict 或 Katch-McArdle 估算基础代谢率（BMR），再乘活动系…
+- [体脂率计算器](https://onlinefreetools.org/zh/tools/how-to-calculate-body-fat) - 用海军/陆军围度法估算体脂%；非医疗建议
+- [盈亏平衡计算器](https://onlinefreetools.org/zh/tools/how-to-calculate-break-even) - 用固定成本、单价与变动成本算保本销量；非经营建议
+- [毛利率计算器](https://onlinefreetools.org/zh/tools/how-to-calculate-gross-margin) - 用收入与销货成本算毛利与毛利率；非经营建议
 - [边际收益计算器](https://onlinefreetools.org/zh/tools/how-to-calculate-marginal-revenue) - 用 ΔTR/ΔQ 计算边际收益（教学用途）
 - [平方英尺计算器](https://onlinefreetools.org/zh/tools/square-feet) - 按长宽与单位估算面积（房产/装修场景）
+- [单位换算器](https://onlinefreetools.org/zh/tools/unit-converter) - 长度/质量/温度/面积/体积/速度同页换算；不拆单位对薄页
 - [百分比变化计算器](https://onlinefreetools.org/zh/tools/how-to-calculate-percentage-change) - 计算两个数值之间的涨跌幅（含百分点对照）
 - [梯度计算器](https://onlinefreetools.org/zh/tools/how-to-calculate-gradient) - 计算多元标量函数的梯度 ∇f（偏导向量）
 
@@ -125,8 +131,14 @@ Below are our available online tools with their links (English version):
 - [BMI Calculator](https://onlinefreetools.org/tools/how-to-calculate-bmi) - Adult BMI screening from weight and height (educational, not a diagnosis)
 - [ROI Calculator](https://onlinefreetools.org/tools/how-to-calculate-roi) - Calculate return on investment with assumptions and a non-advice disclaimer
 - [Compound Interest Calculator](https://onlinefreetools.org/tools/how-to-calculate-compound-interest) - Future value from principal, rate, years, and compounding; optional simple interest; educational only
+- [EMI Calculator](https://onlinefreetools.org/tools/how-to-calculate-emi) - Equated installment payments and amortization from principal, rate, and tenure; educational only
+- [Break-Even Calculator](https://onlinefreetools.org/tools/how-to-calculate-break-even) - Break-even units and revenue from fixed costs, price, and variable cost; educational only
+- [Gross Margin Calculator](https://onlinefreetools.org/tools/how-to-calculate-gross-margin) - Gross profit and margin % from revenue and COGS; educational only
+- [BMR & TDEE Calculator](https://onlinefreetools.org/tools/how-to-calculate-bmr-tdee) - Estimate basal metabolic rate (BMR) with Mifflin-St Jeor, Harris-Benedict, or Ka…
+- [Body Fat Calculator](https://onlinefreetools.org/tools/how-to-calculate-body-fat) - Estimate body fat % with Navy/Army circumference methods; educational only
 - [Marginal Revenue Calculator](https://onlinefreetools.org/tools/how-to-calculate-marginal-revenue) - Compute MR = ΔTR / ΔQ for learning microeconomics
 - [Square Feet Calculator](https://onlinefreetools.org/tools/square-feet) - Estimate area from length × width for flooring and real estate
+- [Unit Converter](https://onlinefreetools.org/tools/unit-converter) - Length, mass, temperature, area, volume, and speed on one hub page
 - [Percentage Change Calculator](https://onlinefreetools.org/tools/how-to-calculate-percentage-change) - Calculate percent increase/decrease between two values
 - [Gradient Calculator](https://onlinefreetools.org/tools/how-to-calculate-gradient) - Compute the multivariable gradient ∇f (vector of partial derivatives)
 

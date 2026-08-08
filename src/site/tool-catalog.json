@@ -228,6 +228,56 @@
     "localProcessing": true
   },
   {
+    "slug": "how-to-calculate-bmr-tdee",
+    "path": "/tools/how-to-calculate-bmr-tdee",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": true,
+    "i18nKey": "tool_bmr_tdee_title",
+    "homeTitleKey": "tool_bmr_tdee_title",
+    "homeDescKey": "tool_bmr_tdee_description",
+    "faqPrefix": "tool_bmr_tdee",
+    "related": [
+      "how-to-calculate-bmi"
+    ],
+    "logo": "/icons/tools/how-to-calculate-bmr-tdee.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "how-to-calculate-body-fat",
+    "path": "/tools/how-to-calculate-body-fat",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": true,
+    "i18nKey": "tool_body_fat_title",
+    "homeTitleKey": "tool_body_fat_title",
+    "homeDescKey": "tool_body_fat_description",
+    "faqPrefix": "tool_body_fat",
+    "related": [
+      "how-to-calculate-bmi",
+      "how-to-calculate-bmr-tdee"
+    ],
+    "logo": "/icons/tools/how-to-calculate-body-fat.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "how-to-calculate-break-even",
+    "path": "/tools/how-to-calculate-break-even",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": true,
+    "i18nKey": "tool_break_even_title",
+    "homeTitleKey": "tool_break_even_title",
+    "homeDescKey": "tool_break_even_description",
+    "faqPrefix": "tool_break_even",
+    "related": [
+      "how-to-calculate-roi",
+      "how-to-calculate-marginal-revenue"
+    ],
+    "logo": "/icons/tools/how-to-calculate-break-even.svg",
+    "localProcessing": true
+  },
+  {
     "slug": "how-to-calculate-compound-interest",
     "path": "/tools/how-to-calculate-compound-interest",
     "category": "calculator",
@@ -239,9 +289,27 @@
     "faqPrefix": "tool_compound_interest",
     "related": [
       "how-to-calculate-roi",
-      "how-to-calculate-percentage-change"
+      "how-to-calculate-percentage-change",
+      "how-to-calculate-emi"
     ],
     "logo": "/icons/tools/how-to-calculate-compound-interest.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "how-to-calculate-emi",
+    "path": "/tools/how-to-calculate-emi",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": true,
+    "i18nKey": "tool_emi_title",
+    "homeTitleKey": "tool_emi_title",
+    "homeDescKey": "tool_emi_description",
+    "faqPrefix": "tool_emi",
+    "related": [
+      "how-to-calculate-compound-interest",
+      "how-to-calculate-roi"
+    ],
+    "logo": "/icons/tools/how-to-calculate-emi.svg",
     "localProcessing": true
   },
   {
@@ -259,6 +327,23 @@
       "how-to-calculate-roi"
     ],
     "logo": "/icons/tools/how-to-calculate-gradient.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "how-to-calculate-gross-margin",
+    "path": "/tools/how-to-calculate-gross-margin",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": true,
+    "i18nKey": "tool_gross_margin_title",
+    "homeTitleKey": "tool_gross_margin_title",
+    "homeDescKey": "tool_gross_margin_description",
+    "faqPrefix": "tool_gross_margin",
+    "related": [
+      "how-to-calculate-break-even",
+      "how-to-calculate-roi"
+    ],
+    "logo": "/icons/tools/how-to-calculate-gross-margin.svg",
     "localProcessing": true
   },
   {
@@ -929,6 +1014,23 @@
       "ip-address"
     ],
     "logo": "/icons/tools/timezone-converter.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "unit-converter",
+    "path": "/tools/unit-converter",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_unit_converter_title",
+    "homeTitleKey": "tool_unit_converter_title",
+    "homeDescKey": "tool_unit_converter_description",
+    "faqPrefix": "tool_unit_converter",
+    "related": [
+      "square-feet",
+      "how-to-calculate-percentage-change"
+    ],
+    "logo": "/icons/tools/unit-converter.svg",
     "localProcessing": true
   },
   {

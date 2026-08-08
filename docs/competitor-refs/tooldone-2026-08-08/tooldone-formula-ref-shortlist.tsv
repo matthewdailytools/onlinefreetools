@@ -2,19 +2,19 @@ our_slug	name_zh	td_category	td_slug	url_en	url_zh	progress_hint	note
 how-to-calculate-bmi	BMI	health	bmi-calculator-body-mass-index	https://tooldone.com/health/bmi-calculator-body-mass-index/	https://tooldone.com/zh/jiankang/shenti-zhiliang-zhishu-jisuanqi/	已上线对照	WHO BMI；勿跟男女拆页
 bmr-tdee	BMR (Mifflin-St Jeor)	health	bmr-calculator-basal-metabolic-rate-mifflin-st-jeor-equation	https://tooldone.com/health/bmr-calculator-basal-metabolic-rate-mifflin-st-jeor-equation/	https://tooldone.com/zh/jiankang/jichu-daixielv-jisuanqi-mifulin-shengqiao-gongshi/	未开始 · P1	公式对照
 bmr-tdee	TDEE / 卡路里	health	calorie-calculator	https://tooldone.com/health/calorie-calculator/	https://tooldone.com/zh/jiankang/kaluli-jisuanqi/	未开始 · P1	与 BMR 同页或 Related
-body-fat-navy	体脂率（海军公式）	health	navy-body-fat-calculator	https://tooldone.com/health/navy-body-fat-calculator/	https://tooldone.com/zh/jiankang/haijun-tizhi-jisuanqi/	未开始 · P2	C-V5 已提候选
+body-fat-navy	体脂率（海军公式）	health	navy-body-fat-calculator	https://tooldone.com/health/navy-body-fat-calculator/	https://tooldone.com/zh/jiankang/haijun-tizhi-jisuanqi/	已上线	C-V5 已提候选
 ideal-weight	理想体重	health	ideal-weight-calculator	https://tooldone.com/health/ideal-weight-calculator/	https://tooldone.com/zh/jiankang/lixiang-tizhong-jisuanqi/	未开始 · P2	须免责
 how-to-calculate-roi	ROI	finance	roi-calculator-return-on-investment	https://tooldone.com/finance/roi-calculator-return-on-investment/	https://tooldone.com/zh/jinrong/roi-jisuanqi-touzi-huibao/	已上线对照	核对口径；勿用 GMROI
 compound-interest	复利	finance	compound-interest-calculator	https://tooldone.com/finance/compound-interest-calculator/	https://tooldone.com/zh/jinrong/fuli-jisuanqi/	未开始 · P1	公式对照
 loan-emi	EMI 等额本息	finance	emi-calculator-equated-monthly-installment	https://tooldone.com/finance/emi-calculator-equated-monthly-installment/	https://tooldone.com/zh/jinrong/deng-e-yue-fu-kuan-ji-suan-qi/	未开始 · P1	公式对照
 loan-emi	摊还表	finance	amortization-calculator	https://tooldone.com/finance/amortization-calculator/	https://tooldone.com/zh/jinrong/zhejiu-jisuanqi/	未开始 · P1	可并入 EMI 页
-break-even	盈亏平衡	finance	break-even-calculator	https://tooldone.com/finance/break-even-calculator/	https://tooldone.com/zh/jinrong/break-even-jisuanqi/	未开始 · P1	C-V4
-gross-margin	毛利率	finance	gross-margin-calculator	https://tooldone.com/finance/gross-margin-calculator/	https://tooldone.com/zh/jinrong/maoli-lv-jisuanqi/	未开始 · P1	C-V4
+break-even	盈亏平衡	finance	break-even-calculator	https://tooldone.com/finance/break-even-calculator/	https://tooldone.com/zh/jinrong/break-even-jisuanqi/	已上线	C-V4
+gross-margin	毛利率	finance	gross-margin-calculator	https://tooldone.com/finance/gross-margin-calculator/	https://tooldone.com/zh/jinrong/maoli-lv-jisuanqi/	已上线	C-V4
 how-to-calculate-marginal-revenue	边际收益	finance	marginal-revenue-calculator	https://tooldone.com/finance/marginal-revenue-calculator/	https://tooldone.com/zh/jinrong/bianjingshouru-jisuanqi/	已上线对照	若 TD 无此 slug 则搜近义
 how-to-calculate-percentage-change	百分比变化	math	percentage-change-calculator	https://tooldone.com/math/percentage-change-calculator/	https://tooldone.com/zh/shuxue/baifenbi-bianhua-jisuanqi/	已上线对照	
 how-to-calculate-gradient	多元梯度	math	gradient-calculator	https://tooldone.com/math/gradient-calculator/	https://tooldone.com/zh/shuxue/tiliang-jisuanqi/	已上线对照	数学 ∇f，非 CSS
 square-feet	平方英尺	conversion	square-feet-converter	https://tooldone.com/conversion/square-feet-converter/	https://tooldone.com/zh/zhuanhuan/pingfang-yingchi-zhuanhuanqi/	已上线对照	主对照 square-feet-converter
-unit-converter	通用单位换算	conversion	conversion-calculator	https://tooldone.com/conversion/conversion-calculator/	https://tooldone.com/zh/zhuanhuan/dan-wei-zhuan-huan-ji-suan-qi/	未开始 · P2	主入口；忌拆海量单位页
+unit-converter	通用单位换算	conversion	conversion-calculator	https://tooldone.com/conversion/conversion-calculator/	https://tooldone.com/zh/zhuanhuan/dan-wei-zhuan-huan-ji-suan-qi/	已上线	主入口；忌拆海量单位页
 mortgage-calculator	房贷	finance	mortgage-calculator	https://tooldone.com/finance/mortgage-calculator/	https://tooldone.com/zh/jinrong/diyakuan-jisuanqi/	未开始 · P2	YMYL；可与 EMI 合并评估
 cagr-calculator	CAGR	finance	cagr-calculator	https://tooldone.com/finance/cagr-calculator-compound-annual-growth-rate/	https://tooldone.com/zh/jinrong/cagr-jisuanqi-fuhe-nianzengzhanglu/	未开始 · P2	C-V4
 npv-calculator	NPV	finance	npv-calculator	https://tooldone.com/finance/npv-calculator-net-present-value/	https://tooldone.com/zh/jinrong/npv-jisuanqi-jingxianzhi/	未开始 · P2	C-V4

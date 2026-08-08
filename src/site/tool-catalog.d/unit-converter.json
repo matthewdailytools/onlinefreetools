@@ -1,0 +1,22 @@
+{
+  "slug": "unit-converter",
+  "path": "/tools/unit-converter",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_unit_converter_title",
+  "homeTitleKey": "tool_unit_converter_title",
+  "homeDescKey": "tool_unit_converter_description",
+  "faqPrefix": "tool_unit_converter",
+  "related": [
+    "square-feet",
+    "how-to-calculate-percentage-change"
+  ],
+  "logo": "/icons/tools/unit-converter.svg",
+  "page": {
+    "module": "../pages/unitConverterPage",
+    "export": "renderUnitConverterPage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

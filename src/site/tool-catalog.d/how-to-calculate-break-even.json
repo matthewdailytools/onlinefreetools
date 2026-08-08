@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-break-even",
+  "path": "/tools/how-to-calculate-break-even",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": true,
+  "i18nKey": "tool_break_even_title",
+  "homeTitleKey": "tool_break_even_title",
+  "homeDescKey": "tool_break_even_description",
+  "faqPrefix": "tool_break_even",
+  "related": [
+    "how-to-calculate-roi",
+    "how-to-calculate-marginal-revenue"
+  ],
+  "logo": "/icons/tools/how-to-calculate-break-even.svg",
+  "page": {
+    "module": "../pages/howToCalculateBreakEvenPage",
+    "export": "renderHowToCalculateBreakEvenPage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

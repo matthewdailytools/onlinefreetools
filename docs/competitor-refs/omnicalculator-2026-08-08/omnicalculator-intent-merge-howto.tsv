@@ -5,13 +5,13 @@ how-to-calculate-marginal-revenue	边际收益	finance	marginal-revenue	marginal
 square-feet	平方英尺换算	conversion	square-feet-converter	square-feet-converter|square-footage|wall-square-footage|square-feet-of-rectangle|square-feet-triangle	https://www.omnicalculator.com/conversion/square-feet-converter	已上线	已上线 slug 锁定；检索可覆盖 how to calculate square feet；slug 已上线锁定
 how-to-calculate-percentage-change	百分比变化	math	percentage-change	percentage-change|percentage-increase|percentage-decrease|percentage-difference|percent-error	https://www.omnicalculator.com/math/percentage-change	已上线	A.7；一带涨跌与误差百分比；slug 已上线锁定
 how-to-calculate-gradient	多元函数梯度 ∇f	math	gradient	gradient	https://www.omnicalculator.com/math/gradient	已上线	A.7；非 CSS 渐变；slug 已上线锁定
-how-to-calculate-compound-interest	复利 / 单利	finance	compound-interest	compound-interest|simple-interest|compound-interest-rate	https://www.omnicalculator.com/finance/compound-interest	进行中 · brief ready	A.7；C-V4；单利作模式非拆页；work-tasks/how-to-calculate-compound-interest
-how-to-calculate-emi	贷款 EMI / 摊还 / 房贷月供	finance	emi	emi|amortization|bike-emi|home-loan-emi|personal-loan-emi|mortgage|mortgage-payoff|mortgage-amortization|biweekly-mortgage|home-mortgage	https://www.omnicalculator.com/finance/emi	未开始 · P1	合并原 loan-emi + mortgage；禁车/房/车贷拆页
-how-to-calculate-bmr-tdee	BMR / TDEE / 卡路里	health	bmr	bmr|tdee|calorie|calorie-deficit|maintenance-calorie|bmr-harris-benedict-equation|bmr-katch-mcardle	https://www.omnicalculator.com/health/bmr	未开始 · P1	C-V5；禁拆 harris/katch 独立 URL
-how-to-calculate-break-even	盈亏平衡	finance	break-even	break-even	https://www.omnicalculator.com/finance/break-even	未开始 · P1	C-V4
-how-to-calculate-gross-margin	毛利率	finance	gross-margin	gross-margin	https://www.omnicalculator.com/finance/gross-margin	未开始 · P1	C-V4
-unit-converter	单位换算（通用）	conversion	conversion-calculator	conversion-calculator	https://www.omnicalculator.com/conversion/conversion-calculator	未开始 · P2	换算枢纽非 how-to-calculate；禁按单位对拆页（Omni conversion≈326）
-how-to-calculate-body-fat	体脂率	health	navy-body-fat	navy-body-fat|body-fat|army-body-fat|skinfold-body-fat	https://www.omnicalculator.com/health/navy-body-fat	未开始 · P2	C-V5；合并原 body-fat-navy
+how-to-calculate-compound-interest	复利 / 单利	finance	compound-interest	compound-interest|simple-interest|compound-interest-rate	https://www.omnicalculator.com/finance/compound-interest	已上线	A.7；C-V4；单利作模式非拆页；slug 已上线锁定
+how-to-calculate-emi	贷款 EMI / 摊还 / 房贷月供	finance	emi	emi|amortization|bike-emi|home-loan-emi|personal-loan-emi|mortgage|mortgage-payoff|mortgage-amortization|biweekly-mortgage|home-mortgage	https://www.omnicalculator.com/finance/emi	已上线	合并原 loan-emi + mortgage；禁车/房/车贷拆页；slug 已上线锁定
+how-to-calculate-bmr-tdee	BMR / TDEE / 卡路里	health	bmr	bmr|tdee|calorie|calorie-deficit|maintenance-calorie|bmr-harris-benedict-equation|bmr-katch-mcardle	https://www.omnicalculator.com/health/bmr	已上线	C-V5；禁拆 harris/katch 独立 URL
+how-to-calculate-break-even	盈亏平衡	finance	break-even	break-even	https://www.omnicalculator.com/finance/break-even	已上线	C-V4
+how-to-calculate-gross-margin	毛利率	finance	gross-margin	gross-margin	https://www.omnicalculator.com/finance/gross-margin	已上线	C-V4
+unit-converter	单位换算（通用）	conversion	conversion-calculator	conversion-calculator	https://www.omnicalculator.com/conversion/conversion-calculator	已上线	换算枢纽非 how-to-calculate；禁按单位对拆页（Omni conversion≈326）
+how-to-calculate-body-fat	体脂率	health	navy-body-fat	navy-body-fat|body-fat|army-body-fat|skinfold-body-fat	https://www.omnicalculator.com/health/navy-body-fat	已上线	C-V5；合并原 body-fat-navy
 how-to-calculate-ideal-weight	理想体重区间	health	ideal-weight	ideal-weight	https://www.omnicalculator.com/health/ideal-weight	未开始 · P2	C-V5
 how-to-calculate-cagr	CAGR	finance	cagr	cagr	https://www.omnicalculator.com/finance/cagr	未开始 · P2	C-V4
 how-to-calculate-npv	NPV	finance	net-present-value	net-present-value	https://www.omnicalculator.com/finance/net-present-value	未开始 · P2	C-V4；与 PV/FV 分意图

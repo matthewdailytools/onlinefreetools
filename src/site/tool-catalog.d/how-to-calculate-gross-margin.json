@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-gross-margin",
+  "path": "/tools/how-to-calculate-gross-margin",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": true,
+  "i18nKey": "tool_gross_margin_title",
+  "homeTitleKey": "tool_gross_margin_title",
+  "homeDescKey": "tool_gross_margin_description",
+  "faqPrefix": "tool_gross_margin",
+  "related": [
+    "how-to-calculate-break-even",
+    "how-to-calculate-roi"
+  ],
+  "logo": "/icons/tools/how-to-calculate-gross-margin.svg",
+  "page": {
+    "module": "../pages/howToCalculateGrossMarginPage",
+    "export": "renderHowToCalculateGrossMarginPage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

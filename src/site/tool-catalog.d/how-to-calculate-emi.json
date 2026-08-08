@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-emi",
+  "path": "/tools/how-to-calculate-emi",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": true,
+  "i18nKey": "tool_emi_title",
+  "homeTitleKey": "tool_emi_title",
+  "homeDescKey": "tool_emi_description",
+  "faqPrefix": "tool_emi",
+  "related": [
+    "how-to-calculate-compound-interest",
+    "how-to-calculate-roi"
+  ],
+  "logo": "/icons/tools/how-to-calculate-emi.svg",
+  "page": {
+    "module": "../pages/howToCalculateEmiPage",
+    "export": "renderHowToCalculateEmiPage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

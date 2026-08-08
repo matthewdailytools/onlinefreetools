@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-body-fat",
+  "path": "/tools/how-to-calculate-body-fat",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": true,
+  "i18nKey": "tool_body_fat_title",
+  "homeTitleKey": "tool_body_fat_title",
+  "homeDescKey": "tool_body_fat_description",
+  "faqPrefix": "tool_body_fat",
+  "related": [
+    "how-to-calculate-bmi",
+    "how-to-calculate-bmr-tdee"
+  ],
+  "logo": "/icons/tools/how-to-calculate-body-fat.svg",
+  "page": {
+    "module": "../pages/howToCalculateBodyFatPage",
+    "export": "renderHowToCalculateBodyFatPage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

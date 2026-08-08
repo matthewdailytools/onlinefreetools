@@ -208,12 +208,12 @@
 | 97 | 百分比变化 | Omni math；合并 Omni: percentage-change/percentage-increase/percentage-decrease/percentage-difference/percent-error；A.7；一带涨跌与误差百分比 | `how-to-calculate-percentage-change` | 旧值新值 → 涨跌幅（含 increase/decrease） | calculator | 运营、分析、学生 | 旧值、新值 | 百分比变化 | 已上线 |
 | 98 | 多元函数梯度 ∇f | Omni math；Omni `gradient`；A.7；非 CSS 渐变 | `how-to-calculate-gradient` | 演示函数在给定点求偏导梯度向量 | calculator | 学生、ML/优化入门读者 | 坐标 x、y（演示函数固定） | ∇f 分量与公式说明 | 已上线 |
 | 99 | 复利 / 单利 | Omni finance；合并 Omni: compound-interest/simple-interest/compound-interest-rate；A.7；C-V4；单利作模式非拆页 | `how-to-calculate-compound-interest` | 本金利率期数 → 复利（可选单利对照） | calculator | 财务教育读者 | 本金、利率、期数、复利频率 | 终值/利息表 + 免责 | 已上线 |
-| 100 | 贷款 EMI / 摊还 / 房贷月供 | Omni finance；合并 Omni: emi/amortization/bike-emi/home-loan-emi/personal-loan-emi/mortgage…；合并原 loan-emi + mortgage；禁车/房/车贷拆页 | `how-to-calculate-emi` | 贷款参数 → 等额月供与摊还（含房贷场景） | calculator | 借款人教育、财务助理 | 本金/房价、利率、期数、可选首付 | EMI/月供 + 摊还明细 + 免责 | 未开始 · P1 |
-| 101 | BMR / TDEE / 卡路里 | Omni health；合并 Omni: bmr/tdee/calorie/calorie-deficit/maintenance-calorie/bmr-harris-benedict-equation…；C-V5；禁拆 harris/katch 独立 URL | `how-to-calculate-bmr-tdee` | Mifflin 等 BMR + 活动量 TDEE（公式作选项） | calculator | 健康教育读者 | 性别、体重、身高、年龄、活动量 | BMR/TDEE + 免责 | 未开始 · P1 |
-| 102 | 盈亏平衡 | Omni finance；Omni `break-even`；C-V4 | `how-to-calculate-break-even` | 固定/变动成本与单价 → 盈亏平衡量 | calculator | 运营、财务教育 | 成本、价格、销量假设 | 平衡点 + 免责 | 未开始 · P1 |
-| 103 | 毛利率 | Omni finance；Omni `gross-margin`；C-V4 | `how-to-calculate-gross-margin` | 收入与成本 → 毛利/毛利率 | calculator | 运营、财务教育 | 收入、成本 | 毛利与比率 + 免责 | 未开始 · P1 |
-| 104 | 单位换算（通用） | Omni conversion；Omni `conversion-calculator`；换算枢纽非 how-to-calculate；禁按单位对拆页（Omni conversion≈326） | `unit-converter` | 长度/重量等通用换算（单页多类别 Tab） | calculator | 学生、工程辅助 | 数值 + 单位对 | 换算结果 | 未开始 · P2 |
-| 105 | 体脂率 | Omni health；合并 Omni: navy-body-fat/body-fat/army-body-fat/skinfold-body-fat；C-V5；合并原 body-fat-navy | `how-to-calculate-body-fat` | 海军等围度法估算体脂%（公式作选项） | calculator | 健康教育读者 | 颈/腰/臀等围度或皮褶 | 体脂% + 免责 | 未开始 · P2 |
+| 100 | 贷款 EMI / 摊还 / 房贷月供 | Omni finance；合并 Omni: emi/amortization/bike-emi/home-loan-emi/personal-loan-emi/mortgage…；合并原 loan-emi + mortgage；禁车/房/车贷拆页 | `how-to-calculate-emi` | 贷款参数 → 等额月供与摊还（含房贷场景） | calculator | 借款人教育、财务助理 | 本金/房价、利率、期数、可选首付 | EMI/月供 + 摊还明细 + 免责 | 已上线 |
+| 101 | BMR / TDEE / 卡路里 | Omni health；合并 Omni: bmr/tdee/calorie/calorie-deficit/maintenance-calorie/bmr-harris-benedict-equation…；C-V5；禁拆 harris/katch 独立 URL | `how-to-calculate-bmr-tdee` | Mifflin 等 BMR + 活动量 TDEE（公式作选项） | calculator | 健康教育读者 | 性别、体重、身高、年龄、活动量 | BMR/TDEE + 免责 | 已上线 |
+| 102 | 盈亏平衡 | Omni finance；Omni `break-even`；C-V4 | `how-to-calculate-break-even` | 固定/变动成本与单价 → 盈亏平衡量 | calculator | 运营、财务教育 | 成本、价格、销量假设 | 平衡点 + 免责 | 已上线 |
+| 103 | 毛利率 | Omni finance；Omni `gross-margin`；C-V4 | `how-to-calculate-gross-margin` | 收入与成本 → 毛利/毛利率 | calculator | 运营、财务教育 | 收入、成本 | 毛利与比率 + 免责 | 已上线 |
+| 104 | 单位换算（通用） | Omni conversion；Omni `conversion-calculator`；换算枢纽非 how-to-calculate；禁按单位对拆页（Omni conversion≈326） | `unit-converter` | 长度/重量等通用换算（单页多类别 Tab） | calculator | 学生、工程辅助 | 数值 + 单位对 | 换算结果 | 已上线 |
+| 105 | 体脂率 | Omni health；合并 Omni: navy-body-fat/body-fat/army-body-fat/skinfold-body-fat；C-V5；合并原 body-fat-navy | `how-to-calculate-body-fat` | 海军等围度法估算体脂%（公式作选项） | calculator | 健康教育读者 | 颈/腰/臀等围度或皮褶 | 体脂% + 免责 | 已上线 |
 | 106 | 理想体重区间 | Omni health；Omni `ideal-weight`；C-V5 | `how-to-calculate-ideal-weight` | 常见公式区间估算 | calculator | 健康教育读者 | 身高、性别等 | 体重区间 + 免责 | 未开始 · P2 |
 | 107 | CAGR | Omni finance；Omni `cagr`；C-V4 | `how-to-calculate-cagr` | 期初/期末/年数 → 复合年增长率 | calculator | 财务教育、分析 | 起止价值、年数 | CAGR% + 免责 | 未开始 · P2 |
 | 108 | NPV | Omni finance；Omni `net-present-value`；C-V4；与 PV/FV 分意图 | `how-to-calculate-npv` | 现金流折现 → 净现值 | calculator | 财务教育 | 折现率、现金流序列 | NPV + 免责 | 未开始 · P2 |
@@ -285,23 +285,23 @@
 | # | 本站 slug | 名称 | ToolDone URL (en) | ToolDone URL (zh) | 进度提示 |
 |---|---|---|---|---|---|
 | 1 | `how-to-calculate-bmi` | BMI | https://tooldone.com/health/bmi-calculator-body-mass-index/ | https://tooldone.com/zh/jiankang/shenti-zhiliang-zhishu-jisuanqi/ | 已上线对照 |
-| 2 | `how-to-calculate-bmr-tdee` | BMR (Mifflin-St Jeor) | https://tooldone.com/health/bmr-calculator-basal-metabolic-rate-mifflin-st-jeor-equation/ | https://tooldone.com/zh/jiankang/jichu-daixielv-jisuanqi-mifulin-shengqiao-gongshi/ | 未开始 · P1 |
-| 3 | `how-to-calculate-bmr-tdee` | 卡路里 / TDEE | https://tooldone.com/health/calorie-calculator/ | https://tooldone.com/zh/jiankang/kaluli-jisuanqi/ | 未开始 · P1 |
-| 4 | `how-to-calculate-body-fat` | 海军体脂 | https://tooldone.com/health/navy-body-fat-calculator/ | https://tooldone.com/zh/jiankang/haijun-tizhi-jisuanqi/ | 未开始 · P2 |
+| 2 | `how-to-calculate-bmr-tdee` | BMR (Mifflin-St Jeor) | https://tooldone.com/health/bmr-calculator-basal-metabolic-rate-mifflin-st-jeor-equation/ | https://tooldone.com/zh/jiankang/jichu-daixielv-jisuanqi-mifulin-shengqiao-gongshi/ | 已上线 |
+| 3 | `how-to-calculate-bmr-tdee` | 卡路里 / TDEE | https://tooldone.com/health/calorie-calculator/ | https://tooldone.com/zh/jiankang/kaluli-jisuanqi/ | 已上线 |
+| 4 | `how-to-calculate-body-fat` | 海军体脂 | https://tooldone.com/health/navy-body-fat-calculator/ | https://tooldone.com/zh/jiankang/haijun-tizhi-jisuanqi/ | 已上线 |
 | 5 | `how-to-calculate-ideal-weight` | 理想体重 | https://tooldone.com/health/ideal-weight-calculator/ | https://tooldone.com/zh/jiankang/lixiang-tizhong-jisuanqi/ | 未开始 · P2 |
 | 6 | `how-to-calculate-roi` | ROI | https://tooldone.com/finance/roi-calculator-return-on-investment/ | https://tooldone.com/zh/jinrong/roi-jisuanqi-touzi-huibao/ | 已上线对照 |
 | 7 | `how-to-calculate-marginal-revenue` | 边际收益 | https://tooldone.com/finance/marginal-revenue-calculator/ | https://tooldone.com/zh/jinrong/bianjingshouru-jisuanqi/ | 已上线对照 |
 | 8 | `how-to-calculate-compound-interest` | 复利 | https://tooldone.com/finance/compound-interest-calculator/ | https://tooldone.com/zh/jinrong/fuli-jisuanqi/ | 未开始 · P1 |
-| 9 | `how-to-calculate-emi` | EMI | https://tooldone.com/finance/emi-calculator-equated-monthly-installment/ | https://tooldone.com/zh/jinrong/deng-e-yue-fu-kuan-ji-suan-qi/ | 未开始 · P1 |
-| 10 | `how-to-calculate-emi` | 摊还 | https://tooldone.com/finance/amortization-calculator/ | https://tooldone.com/zh/jinrong/zhejiu-jisuanqi/ | 未开始 · P1（核对 zh 文案是否误译） |
-| 11 | `how-to-calculate-break-even` | 盈亏平衡 | https://tooldone.com/finance/break-even-calculator/ | https://tooldone.com/zh/jinrong/break-even-jisuanqi/ | 未开始 · P1 |
-| 12 | `how-to-calculate-gross-margin` | 毛利率 | https://tooldone.com/finance/gross-margin-calculator/ | https://tooldone.com/zh/jinrong/maoli-lv-jisuanqi/ | 未开始 · P1 |
+| 9 | `how-to-calculate-emi` | EMI | https://tooldone.com/finance/emi-calculator-equated-monthly-installment/ | https://tooldone.com/zh/jinrong/deng-e-yue-fu-kuan-ji-suan-qi/ | 已上线 |
+| 10 | `how-to-calculate-emi` | 摊还 | https://tooldone.com/finance/amortization-calculator/ | https://tooldone.com/zh/jinrong/zhejiu-jisuanqi/ | 已上线（核对 zh 文案是否误译） |
+| 11 | `how-to-calculate-break-even` | 盈亏平衡 | https://tooldone.com/finance/break-even-calculator/ | https://tooldone.com/zh/jinrong/break-even-jisuanqi/ | 已上线 |
+| 12 | `how-to-calculate-gross-margin` | 毛利率 | https://tooldone.com/finance/gross-margin-calculator/ | https://tooldone.com/zh/jinrong/maoli-lv-jisuanqi/ | 已上线 |
 | 13 | `how-to-calculate-cagr` | CAGR | https://tooldone.com/finance/cagr-calculator-compound-annual-growth-rate/ | https://tooldone.com/zh/jinrong/cagr-jisuanqi-fuhe-nianzengzhanglu/ | 未开始 · P2 |
 | 14 | `how-to-calculate-npv` | NPV | https://tooldone.com/finance/npv-calculator-net-present-value/ | https://tooldone.com/zh/jinrong/npv-jisuanqi-jingxianzhi/ | 未开始 · P2 |
 | 15 | `how-to-calculate-percentage-change` | 百分比变化 | https://tooldone.com/math/percentage-change-calculator/ | https://tooldone.com/zh/shuxue/baifenbi-bianhua-jisuanqi/ | 已上线对照 |
 | 16 | `how-to-calculate-gradient` | 梯度 ∇f | https://tooldone.com/math/gradient-calculator/ | https://tooldone.com/zh/shuxue/tiliang-jisuanqi/ | 已上线对照 |
 | 17 | `square-feet` | 平方英尺 | https://tooldone.com/conversion/square-feet-converter/ | https://tooldone.com/zh/zhuanhuan/pingfang-yingchi-zhuanhuanqi/ | 已上线对照 |
-| 18 | `unit-converter` | 单位换算 | https://tooldone.com/conversion/conversion-calculator/ | https://tooldone.com/zh/zhuanhuan/dan-wei-zhuan-huan-ji-suan-qi/ | 未开始 · P2 |
+| 18 | `unit-converter` | 单位换算 | https://tooldone.com/conversion/conversion-calculator/ | https://tooldone.com/zh/zhuanhuan/dan-wei-zhuan-huan-ji-suan-qi/ | 已上线 |
 | 19 | `how-to-calculate-standard-deviation` | 标准差 | https://tooldone.com/statistic/standard-deviation-calculator/ | https://tooldone.com/zh/tongji/biaozhun-cha-jisuanqi/ | 未开始 · P2 |
 | 20 | `how-to-calculate-concrete` | 混凝土 | https://tooldone.com/construction/concrete-calculator/ | https://tooldone.com/zh/jianzhu/hunningtu-jisuanqi/ | 未开始 · P2 |
 | 21 | `how-to-calculate-tile` | 瓷砖 | https://tooldone.com/construction/tile-calculator/ | https://tooldone.com/zh/jianzhu/cizhuan-jisuanqi/ | 未开始 · P2 |
@@ -326,12 +326,12 @@
 | 5 | `how-to-calculate-percentage-change` | 百分比变化 | https://www.omnicalculator.com/math/percentage-change | 已上线；合并 5 个 Omni slug |
 | 6 | `how-to-calculate-gradient` | 多元函数梯度 ∇f | https://www.omnicalculator.com/math/gradient | 已上线 |
 | 7 | `how-to-calculate-compound-interest` | 复利 / 单利 | https://www.omnicalculator.com/finance/compound-interest | 已上线；合并 3 个 Omni slug |
-| 8 | `how-to-calculate-emi` | 贷款 EMI / 摊还 / 房贷月供 | https://www.omnicalculator.com/finance/emi | 未开始 · P1；合并 10 个 Omni slug |
-| 9 | `how-to-calculate-bmr-tdee` | BMR / TDEE / 卡路里 | https://www.omnicalculator.com/health/bmr | 未开始 · P1；合并 7 个 Omni slug |
-| 10 | `how-to-calculate-break-even` | 盈亏平衡 | https://www.omnicalculator.com/finance/break-even | 未开始 · P1 |
-| 11 | `how-to-calculate-gross-margin` | 毛利率 | https://www.omnicalculator.com/finance/gross-margin | 未开始 · P1 |
-| 12 | `unit-converter` | 单位换算（通用） | https://www.omnicalculator.com/conversion/conversion-calculator | 未开始 · P2 |
-| 13 | `how-to-calculate-body-fat` | 体脂率 | https://www.omnicalculator.com/health/navy-body-fat | 未开始 · P2；合并 4 个 Omni slug |
+| 8 | `how-to-calculate-emi` | 贷款 EMI / 摊还 / 房贷月供 | https://www.omnicalculator.com/finance/emi | 已上线；合并 10 个 Omni slug |
+| 9 | `how-to-calculate-bmr-tdee` | BMR / TDEE / 卡路里 | https://www.omnicalculator.com/health/bmr | 已上线；合并 7 个 Omni slug |
+| 10 | `how-to-calculate-break-even` | 盈亏平衡 | https://www.omnicalculator.com/finance/break-even | 已上线 |
+| 11 | `how-to-calculate-gross-margin` | 毛利率 | https://www.omnicalculator.com/finance/gross-margin | 已上线 |
+| 12 | `unit-converter` | 单位换算（通用） | https://www.omnicalculator.com/conversion/conversion-calculator | 已上线 |
+| 13 | `how-to-calculate-body-fat` | 体脂率 | https://www.omnicalculator.com/health/navy-body-fat | 已上线；合并 4 个 Omni slug |
 | 14 | `how-to-calculate-ideal-weight` | 理想体重区间 | https://www.omnicalculator.com/health/ideal-weight | 未开始 · P2 |
 | 15 | `how-to-calculate-cagr` | CAGR | https://www.omnicalculator.com/finance/cagr | 未开始 · P2 |
 | 16 | `how-to-calculate-npv` | NPV | https://www.omnicalculator.com/finance/net-present-value | 未开始 · P2 |
