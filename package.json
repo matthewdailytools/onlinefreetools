@@ -16,6 +16,7 @@
     "merge:tools": "node scripts/tool-modules/merge-all.mjs",
     "build:site": "npm run merge:tools && node scripts/build-site.mjs",
     "vendor:image-optimizer": "node scripts/copy-image-optimizer-vendor.mjs",
+    "vendor:site-chrome": "node scripts/copy-site-chrome-vendor.mjs",
     "lint:seo": "node scripts/validate-tool-seo.mjs",
     "lint:tool-isolation": "node scripts/check-tool-isolation.mjs",
     "indexnow": "node ops/seo/submit-indexnow.mjs",
@@ -26,11 +27,14 @@
     "predeploy": "npm run build:site && npm run lint:seo"
   },
   "dependencies": {
+    "@fontsource/plus-jakarta-sans": "^5.3.0",
     "@jsquash/avif": "^2.1.1",
     "@jsquash/jpeg": "^1.6.0",
     "@jsquash/oxipng": "^2.3.0",
     "@jsquash/webp": "^1.5.0",
+    "bootstrap": "^5.3.3",
     "chanfana": "^2.6.3",
+    "gifenc": "^1.0.3",
     "hono": "^4.6.20",
     "zod": "^3.24.1"
   },

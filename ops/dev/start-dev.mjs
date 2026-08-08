@@ -99,8 +99,11 @@ const main = async () => {
     runBuildSite();
   } else {
     /** Registry/i18n merge must still run so wrangler sees toolPageRegistry.generated.ts */
-    console.log('Skipping full build:site (--no-build); running merge:tools only.');
+    console.log('Skipping full build:site (--no-build); running merge:tools + site chrome vendor.');
     execSync('npm run merge:tools', { cwd: projectRoot, stdio: 'inherit' });
+    /** 确保本地 Bootstrap/字体存在，避免 --no-build 时仍打外网 CDN */
+    execSync('node scripts/copy-site-chrome-vendor.mjs', { cwd: projectRoot, stdio: 'inherit' });
+    execSync('node scripts/copy-image-optimizer-vendor.mjs', { cwd: projectRoot, stdio: 'inherit' });
   }
 
   /** build 后再清端口，避免 stale listener 占用导致 wrangler bind 失败 */

@@ -61,8 +61,10 @@
       } catch (e) {}
     })();
   </script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="preload" href="/vendor/bootstrap/bootstrap.min.css" as="style" />
+  <link rel="preload" href="/vendor/fonts/plus-jakarta-sans.css" as="style" />
+  <link href="/vendor/bootstrap/bootstrap.min.css" rel="stylesheet" />
+  <link href="/vendor/fonts/plus-jakarta-sans.css" rel="stylesheet" />
   <link href="/styles/site.css" rel="stylesheet" />
   <style>
     body { min-height: 100vh; padding-top: var(--header-h, 56px); }
@@ -70,20 +72,24 @@
   </style>
   
 <script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?39f18c089a03779cd05243e21b046589";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
+(function () {
+  function run() {
+    try {
+
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xbc0iytpn7");
+    } catch (e) {}
+  }
+  function schedule() {
+    if (typeof requestIdleCallback === 'function') requestIdleCallback(run, { timeout: 4000 });
+    else setTimeout(run, 2000);
+  }
+  if (document.readyState === 'complete') schedule();
+  else window.addEventListener('load', schedule, { once: true });
 })();
-</script>
-<script type="text/javascript">
-(function(c,l,a,r,i,t,y){
-  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-})(window, document, "clarity", "script", "xbc0iytpn7");
 </script>
   
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"AboutPage","name":"Über OnlineFreeTools.org","description":"Wer wir sind, wie Tools entstehen und wichtige Hinweise.","url":"https://onlinefreetools.org/de/about","isPartOf":{"@type":"WebSite","name":"OnlineFreeTools.org","url":"https://onlinefreetools.org"}}</script>
@@ -105,13 +111,13 @@ var _hmt = _hmt || [];
         <div class="collapse navbar-collapse" id="topNav">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="/de/">Start</a></li><li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Bildwerkzeuge</a>
-          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/de/tools/image-format-converter">Bildformat konvertieren</a></li><li><a class="dropdown-item" href="/de/tools/image-exif">EXIF von Fotos anzeigen & entfernen</a></li><li><a class="dropdown-item" href="/de/tools/image-compress">Bild komprimieren</a></li><li><a class="dropdown-item" href="/de/tools/image-optimizer">Bild optimieren</a></li><li><a class="dropdown-item" href="/de/tools/image-crop">Bild zuschneiden & Größe ändern</a></li><li><a class="dropdown-item" href="/de/tools/color-from-image">Farben aus Bild extrahieren</a></li><li><a class="dropdown-item" href="/de/tools/image-merge">Bilder zusammenfügen</a></li><li><a class="dropdown-item" href="/de/tools/image-overlay">Bilder überlagern</a></li></ul>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/de/tools/add-watermark">Text-Wasserzeichen — lokal im Browser</a></li><li><a class="dropdown-item" href="/de/tools/color-from-image">Farben aus Bild — Palette & Klick-Pipette</a></li><li><a class="dropdown-item" href="/de/tools/flip-image">Bild spiegeln — horizontal oder vertikal</a></li><li><a class="dropdown-item" href="/de/tools/image-border">Bildrand — Farbe und Breite wählen</a></li><li><a class="dropdown-item" href="/de/tools/image-compress">Bild komprimieren — längste Seite, Qualität & Zielgröße (lokal)</a></li><li><a class="dropdown-item" href="/de/tools/image-crop">Bild zuschneiden & Größe ändern — lokal</a></li><li><a class="dropdown-item" href="/de/tools/image-exif">EXIF von Fotos anzeigen & entfernen — GPS, Kamera, lokal</a></li><li><a class="dropdown-item" href="/de/tools/image-format-converter">Bildformat-Konverter — PNG JPEG WebP AVIF BMP GIF ICO SVG lokal</a></li><li><a class="dropdown-item" href="/de/tools/image-grayscale">Graustufen — Foto lokal umwandeln</a></li><li><a class="dropdown-item" href="/de/tools/image-merge">Bilder zusammenfügen — Fotos zu einer Collage</a></li><li><a class="dropdown-item" href="/de/tools/image-optimizer">Bild optimieren — WebP, AVIF & MozJPEG lokal</a></li><li><a class="dropdown-item" href="/de/tools/image-overlay">Logo auf Foto legen — Bilder lokal überlagern</a></li><li><a class="dropdown-item" href="/de/tools/image-to-base64">Bild ↔ Base64 — lokal kodieren & dekodieren</a></li><li><a class="dropdown-item" href="/de/tools/images-to-gif">Bilder zu GIF — kurze Animation</a></li><li><a class="dropdown-item" href="/de/tools/images-to-pdf">Bilder zu PDF — eine Seite pro Foto</a></li><li><a class="dropdown-item" href="/de/tools/images-to-ppt">Bilder zu PowerPoint — eine Folie pro Foto</a></li><li><a class="dropdown-item" href="/de/tools/images-to-word">Bilder zu Word — DOCX lokal</a></li></ul>
         </li><li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Entwickler</a>
-          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/de/tools/website-headers">HTTP-Header prüfen</a></li><li><a class="dropdown-item" href="/de/tools/ip-address">Was ist meine IP-Adresse? — IPv4/IPv6 sofort anzeigen</a></li><li><a class="dropdown-item" href="/de/tools/markdown-to-html">Markdown ↔ HTML</a></li><li><a class="dropdown-item" href="/de/tools/text-diff">Texte online vergleichen</a></li><li><a class="dropdown-item" href="/de/tools/yaml-json">YAML ↔ JSON</a></li><li><a class="dropdown-item" href="/de/tools/csv-json">CSV ↔ JSON</a></li><li><a class="dropdown-item" href="/de/tools/html-entity">HTML-Entitäten</a></li><li><a class="dropdown-item" href="/de/tools/add-www-to-dns">WWW zu DNS hinzufügen</a></li><li><a class="dropdown-item" href="/de/tools/indexnow">IndexNow</a></li></ul>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/de/tools/add-www-to-dns">WWW zu DNS hinzufügen — A/CNAME & Anbieter-Guides</a></li><li><a class="dropdown-item" href="/de/tools/csv-json">CSV ↔ JSON Konverter — Typen, Trennzeichen, lokal</a></li><li><a class="dropdown-item" href="/de/tools/html-entity">HTML-Entitäten kodieren & dekodieren — lokal</a></li><li><a class="dropdown-item" href="/de/tools/indexnow">IndexNow — Bing-URL-Submit, Schlüsselprüfung & Statuscodes</a></li><li><a class="dropdown-item" href="/de/tools/ip-address">Was ist meine IP-Adresse? — IPv4/IPv6 sofort anzeigen</a></li><li><a class="dropdown-item" href="/de/tools/json-schema-validator">JSON-Schema-Validator — draft-07-Pfade, lokal</a></li><li><a class="dropdown-item" href="/de/tools/markdown-to-html">Markdown ↔ HTML</a></li><li><a class="dropdown-item" href="/de/tools/text-diff">Texte online vergleichen</a></li><li><a class="dropdown-item" href="/de/tools/website-headers">HTTP-Header prüfen</a></li><li><a class="dropdown-item" href="/de/tools/yaml-json">YAML zu JSON — und zurück zu YAML (Typen, Multi-Doc)</a></li></ul>
         </li><li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Rechner</a>
-          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/de/tools/how-to-calculate-bmi">BMI-Rechner — Body-Mass-Index berechnen</a></li><li><a class="dropdown-item" href="/de/tools/how-to-calculate-roi">ROI-Rechner — Return on Investment berechnen</a></li><li><a class="dropdown-item" href="/de/tools/how-to-calculate-marginal-revenue">Grenzerlös-Rechner — Formel ΔTR / ΔQ</a></li><li><a class="dropdown-item" href="/de/tools/square-feet">Quadratfuß in m² umrechnen — Für Wohnung & Renovierung</a></li><li><a class="dropdown-item" href="/de/tools/how-to-calculate-percentage-change">Prozentuale Änderung berechnen — Von Alt- zu Neuwert</a></li><li><a class="dropdown-item" href="/de/tools/how-to-calculate-gradient">Gradient berechnen — Multivariables ∇f (partielle Ableitungen)</a></li></ul>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/de/tools/how-to-calculate-bmi">BMI-Rechner — Body-Mass-Index berechnen</a></li><li><a class="dropdown-item" href="/de/tools/how-to-calculate-gradient">Gradient berechnen — Multivariables ∇f (partielle Ableitungen)</a></li><li><a class="dropdown-item" href="/de/tools/how-to-calculate-marginal-revenue">Grenzerlös-Rechner — Formel ΔTR / ΔQ</a></li><li><a class="dropdown-item" href="/de/tools/how-to-calculate-percentage-change">Prozentuale Änderung berechnen — Von Alt- zu Neuwert</a></li><li><a class="dropdown-item" href="/de/tools/how-to-calculate-roi">ROI-Rechner — Return on Investment berechnen</a></li><li><a class="dropdown-item" href="/de/tools/square-feet">Quadratfuß in m² umrechnen — Für Wohnung & Renovierung</a></li></ul>
         </li></ul>
           <div class="d-flex align-items-center gap-2">
             
@@ -177,7 +183,7 @@ var _hmt = _hmt || [];
 
   </footer>
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/vendor/bootstrap/bootstrap.bundle.min.js" defer></script>
   
   <script>
     const layout = document.getElementById('layoutRoot');

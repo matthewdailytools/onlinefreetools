@@ -1,10 +1,10 @@
 import { absoluteUrl, siteConfig } from './config.mjs';
 import { getTrackingSnippets } from './tracking.mjs';
 
-const bootstrapCss =
-  'https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css';
-const bootstrapJs =
-  'https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js';
+/** 同域 Bootstrap / 字体（scripts/copy-site-chrome-vendor.mjs）。 */
+const bootstrapCss = '/vendor/bootstrap/bootstrap.min.css';
+const bootstrapJs = '/vendor/bootstrap/bootstrap.bundle.min.js';
+const fontCss = '/vendor/fonts/plus-jakarta-sans.css';
 
 /**
  * 渲染站点静态页 HTML 外壳（head、布局、侧栏脚本等）。
@@ -159,8 +159,10 @@ export const renderLayout = ({
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   ${clientLangRedirectScript}
-  <link href="${bootstrapCss}" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="preload" href="${bootstrapCss}" as="style" />
+  <link rel="preload" href="${fontCss}" as="style" />
+  <link href="${bootstrapCss}" rel="stylesheet" />
+  <link href="${fontCss}" rel="stylesheet" />
   <link href="/styles/site.css" rel="stylesheet" />
   <style>${sidebarCss}</style>
   ${tracking.headHtml}
@@ -176,7 +178,7 @@ export const renderLayout = ({
   </div>
   ${footerHtml}
   ${extraBodyHtml}
-  <script src="${bootstrapJs}" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="${bootstrapJs}" defer></script>
   ${sidebarScript}
 </body>
 </html>`;

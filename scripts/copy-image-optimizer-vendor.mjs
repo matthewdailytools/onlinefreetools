@@ -1,6 +1,7 @@
 /**
- * 将 @jsquash 编解码包与 wasm-feature-detect 复制到 public/vendor，
- * 供图片优化页点击后以 ESM 懒加载（相对路径解析 .wasm）。
+ * 将图片相关第三方包复制到 public/vendor，供工具页 ESM 懒加载：
+ * - @jsquash + wasm-feature-detect（图片优化；相对路径解析 .wasm）
+ * - gifenc（images-to-gif；避免进页依赖 jsDelivr）
  * 用法：node scripts/copy-image-optimizer-vendor.mjs
  */
 import fs from 'node:fs';
@@ -27,7 +28,7 @@ function copyDir(src, dest) {
 	}
 }
 
-/** 需要 vendoring 的包 → 输出相对 public/vendor 的路径 */
+/** 需要整包 vendoring 的目录 → 输出相对 public/vendor 的路径 */
 const packages = [
 	{ from: path.join(nm, '@jsquash', 'jpeg'), to: path.join(outRoot, 'jsquash', 'jpeg') },
 	{ from: path.join(nm, '@jsquash', 'webp'), to: path.join(outRoot, 'jsquash', 'webp') },
@@ -46,4 +47,18 @@ for (const p of packages) {
 	console.log('Copied', path.relative(root, p.from), '→', path.relative(root, p.to));
 }
 
-console.log('Done. Serve ESM from /vendor/jsquash/* with import map for wasm-feature-detect.');
+/**
+ * 仅复制 gifenc ESM 构建产物（约 9KB），供 /tools/images-to-gif 同域懒加载。
+ */
+const gifencEsm = path.join(nm, 'gifenc', 'dist', 'gifenc.esm.js');
+const gifencOutDir = path.join(outRoot, 'gifenc');
+const gifencOut = path.join(gifencOutDir, 'gifenc.esm.js');
+if (!fs.existsSync(gifencEsm)) {
+	console.error('Missing dependency:', gifencEsm);
+	process.exit(1);
+}
+fs.mkdirSync(gifencOutDir, { recursive: true });
+fs.copyFileSync(gifencEsm, gifencOut);
+console.log('Copied', path.relative(root, gifencEsm), '→', path.relative(root, gifencOut));
+
+console.log('Done. Serve ESM from /vendor/jsquash/* and /vendor/gifenc/*.');

@@ -61,8 +61,10 @@
       } catch (e) {}
     })();
   </script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="preload" href="/vendor/bootstrap/bootstrap.min.css" as="style" />
+  <link rel="preload" href="/vendor/fonts/plus-jakarta-sans.css" as="style" />
+  <link href="/vendor/bootstrap/bootstrap.min.css" rel="stylesheet" />
+  <link href="/vendor/fonts/plus-jakarta-sans.css" rel="stylesheet" />
   <link href="/styles/site.css" rel="stylesheet" />
   <style>
     body { min-height: 100vh; padding-top: var(--header-h, 56px); }
@@ -70,20 +72,24 @@
   </style>
   
 <script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?39f18c089a03779cd05243e21b046589";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
+(function () {
+  function run() {
+    try {
+
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xbc0iytpn7");
+    } catch (e) {}
+  }
+  function schedule() {
+    if (typeof requestIdleCallback === 'function') requestIdleCallback(run, { timeout: 4000 });
+    else setTimeout(run, 2000);
+  }
+  if (document.readyState === 'complete') schedule();
+  else window.addEventListener('load', schedule, { once: true });
 })();
-</script>
-<script type="text/javascript">
-(function(c,l,a,r,i,t,y){
-  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-})(window, document, "clarity", "script", "xbc0iytpn7");
 </script>
   
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"ContactPage","name":"اتصل بنا","description":"تواصل مع OnlineFreeTools.org بالبريد لملاحظات الأدوات أو الأخطاء أو أسئلة الموقع. العنوان العام وما يُتوقع عند الكتابة.","url":"https://onlinefreetools.org/ar/contact","isPartOf":{"@type":"WebSite","name":"OnlineFreeTools.org","url":"https://onlinefreetools.org"}}</script>
@@ -105,13 +111,13 @@ var _hmt = _hmt || [];
         <div class="collapse navbar-collapse" id="topNav">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="/ar/">الرئيسية</a></li><li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">أدوات الصور</a>
-          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ar/tools/image-format-converter">محول صيغ الصور</a></li><li><a class="dropdown-item" href="/ar/tools/image-exif">عرض وحذف EXIF من الصور</a></li><li><a class="dropdown-item" href="/ar/tools/image-compress">ضغط الصور</a></li><li><a class="dropdown-item" href="/ar/tools/image-optimizer">تحسين الصور</a></li><li><a class="dropdown-item" href="/ar/tools/image-crop">قص الصورة وتغيير الحجم</a></li><li><a class="dropdown-item" href="/ar/tools/color-from-image">استخراج ألوان الصورة</a></li><li><a class="dropdown-item" href="/ar/tools/image-merge">دمج الصور</a></li><li><a class="dropdown-item" href="/ar/tools/image-overlay">تراكب الصور</a></li></ul>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ar/tools/add-watermark">علامة مائية نصية — في المتصفح</a></li><li><a class="dropdown-item" href="/ar/tools/color-from-image">استخراج ألوان الصورة — لوحة واختيار بالنقر</a></li><li><a class="dropdown-item" href="/ar/tools/flip-image">قلب الصورة — أفقي أو عمودي</a></li><li><a class="dropdown-item" href="/ar/tools/image-border">إطار صورة — لون وعرض</a></li><li><a class="dropdown-item" href="/ar/tools/image-compress">ضغط الصور — البعد الأطول والجودة والحجم المستهدف (محليًا)</a></li><li><a class="dropdown-item" href="/ar/tools/image-crop">قص الصورة وتغيير الحجم — محليًا</a></li><li><a class="dropdown-item" href="/ar/tools/image-exif">عرض وحذف EXIF من الصور — الموقع والكاميرا محليًا</a></li><li><a class="dropdown-item" href="/ar/tools/image-format-converter">محول تنسيق الصور — PNG JPEG WebP AVIF BMP GIF ICO SVG محليا</a></li><li><a class="dropdown-item" href="/ar/tools/image-grayscale">تحويل الصورة إلى رمادي</a></li><li><a class="dropdown-item" href="/ar/tools/image-merge">دمج الصور — اجمع صورًا في كولاج واحد</a></li><li><a class="dropdown-item" href="/ar/tools/image-optimizer">تحسين الصور — WebP وAVIF وMozJPEG محليًا</a></li><li><a class="dropdown-item" href="/ar/tools/image-overlay">تراكب الصور — ضع شعارًا على صورة</a></li><li><a class="dropdown-item" href="/ar/tools/image-to-base64">صورة ↔ Base64 — ترميز وفك</a></li><li><a class="dropdown-item" href="/ar/tools/images-to-gif">صور إلى GIF — رسوم قصيرة</a></li><li><a class="dropdown-item" href="/ar/tools/images-to-pdf">صور إلى PDF — صفحة لكل صورة</a></li><li><a class="dropdown-item" href="/ar/tools/images-to-ppt">صور إلى PowerPoint — شريحة لكل صورة</a></li><li><a class="dropdown-item" href="/ar/tools/images-to-word">صور إلى Word — DOCX محلي</a></li></ul>
         </li><li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">للمطورين</a>
-          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ar/tools/website-headers">فحص ترويسات HTTP</a></li><li><a class="dropdown-item" href="/ar/tools/ip-address">ما هو عنوان IP الخاص بي — IP عام (IPv4/IPv6)</a></li><li><a class="dropdown-item" href="/ar/tools/markdown-to-html">Markdown ↔ HTML</a></li><li><a class="dropdown-item" href="/ar/tools/text-diff">مقارنة نصين أونلاين</a></li><li><a class="dropdown-item" href="/ar/tools/yaml-json">YAML ↔ JSON</a></li><li><a class="dropdown-item" href="/ar/tools/csv-json">CSV ↔ JSON</a></li><li><a class="dropdown-item" href="/ar/tools/html-entity">كيانات HTML</a></li><li><a class="dropdown-item" href="/ar/tools/add-www-to-dns">إضافة WWW إلى DNS</a></li><li><a class="dropdown-item" href="/ar/tools/indexnow">IndexNow</a></li></ul>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ar/tools/add-www-to-dns">إضافة WWW إلى DNS — سجلات A/CNAME وأدلة المنصات</a></li><li><a class="dropdown-item" href="/ar/tools/csv-json">محول CSV ↔ JSON — الأنواع والفواصل ومحليًا</a></li><li><a class="dropdown-item" href="/ar/tools/html-entity">ترميز وفك ترميز كيانات HTML — محليًا</a></li><li><a class="dropdown-item" href="/ar/tools/indexnow">IndexNow — إرسال روابط Bing وفحص المفتاح ورموز الحالة</a></li><li><a class="dropdown-item" href="/ar/tools/ip-address">ما هو عنوان IP الخاص بي — IP عام (IPv4/IPv6)</a></li><li><a class="dropdown-item" href="/ar/tools/json-schema-validator">مدقق JSON Schema — مسارات draft-07 ومحليًا</a></li><li><a class="dropdown-item" href="/ar/tools/markdown-to-html">Markdown ↔ HTML</a></li><li><a class="dropdown-item" href="/ar/tools/text-diff">مقارنة نصين أونلاين</a></li><li><a class="dropdown-item" href="/ar/tools/website-headers">فحص ترويسات HTTP</a></li><li><a class="dropdown-item" href="/ar/tools/yaml-json">من YAML إلى JSON وبالعكس — قواعد الأنواع ومحليًا</a></li></ul>
         </li><li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">حاسبات</a>
-          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-bmi">حاسبة مؤشر كتلة الجسم</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-roi">حاسبة العائد على الاستثمار (ROI) — طريقة الحساب</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-marginal-revenue">حاسبة الإيراد الحدي — الصيغة ΔTR / ΔQ</a></li><li><a class="dropdown-item" href="/ar/tools/square-feet">تحويل القدم المربع إلى متر مربع — للمنازل والتشطيب</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-percentage-change">حاسبة التغير بالنسبة المئوية — من قيمة قديمة إلى جديدة</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-gradient">حاسبة التدرج — ∇f متعدد المتغيرات (مشتقات جزئية)</a></li></ul>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-bmi">حاسبة مؤشر كتلة الجسم — طريقة الحساب</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-gradient">حاسبة التدرج — ∇f متعدد المتغيرات (مشتقات جزئية)</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-marginal-revenue">حاسبة الإيراد الحدي — الصيغة ΔTR / ΔQ</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-percentage-change">حاسبة التغير بالنسبة المئوية — من قيمة قديمة إلى جديدة</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-roi">حاسبة العائد على الاستثمار (ROI) — طريقة الحساب</a></li><li><a class="dropdown-item" href="/ar/tools/square-feet">تحويل القدم المربع إلى متر مربع — للمنازل والتشطيب</a></li></ul>
         </li></ul>
           <div class="d-flex align-items-center gap-2">
             
@@ -170,7 +176,7 @@ var _hmt = _hmt || [];
 
   </footer>
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/vendor/bootstrap/bootstrap.bundle.min.js" defer></script>
   
   <script>
     const layout = document.getElementById('layoutRoot');

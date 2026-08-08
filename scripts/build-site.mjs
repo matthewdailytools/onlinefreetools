@@ -27,7 +27,12 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const publicDir = path.join(root, 'public');
 const devLogsDir = path.join(root, 'dev-logs');
 
-/** 构建前复制图片优化页所需的 @jsquash WASM vendor（不入库，约 10MB）。 */
+/** 构建前复制同域 chrome / 图片工具 vendor（避免外网 CDN 阻塞首屏）。 */
+try {
+  await import('./copy-site-chrome-vendor.mjs');
+} catch (err) {
+  console.warn('[build-site] copy-site-chrome-vendor skipped:', err?.message || err);
+}
 try {
   await import('./copy-image-optimizer-vendor.mjs');
 } catch (err) {

@@ -1,42 +1,66 @@
 /**
- * 全站共享视觉：大气首页 + 清爽工具页。
- * 浅色编辑工具站；禁止紫渐变；token 驱动 chrome / 卡片 / 工具壳。
+ * 全站共享视觉：浅色工具站首页 + 清爽工具页。
+ * token 驱动 chrome / 卡片 / 按钮 / 工具壳。
  *
- * 配色参考 iLoveIMG（克制吸收，非多色图标墙）：
- * - 页底淡紫灰 #f5f5fa；正文近黑 #1d1d1b
- * - 主色青绿 #1c83a8 / 亮青 #3cb6e2（单强调色，不做每工具一色）
+ * 视觉参考 iLovePDF（https://www.ilovepdf.com/，克制吸收）：
+ * - 页底淡紫灰 #f5f5fa；正文 #33333b / 次要 #47474f
+ * - 主色红 #e5322d / 悬停 #bd060a（单强调色）
+ * - 卡片边框 #d6d6df、圆角 16px；按钮圆角 8px
+ * - 字体：Graphik 的开源近似 Plus Jakarta Sans（不热链对方私有字体）
  */
 :root {
-  /* 页面与表面 */
+  /* 页面与表面（对齐 iLovePDF .home / .header） */
   --bg: #f5f5fa;
-  --bg-hero: #0b1a24;
-  --bg-hero-mid: #123044;
+  --bg-hero: #f5f5fa;
+  --bg-hero-mid: #ffffff;
   --bg-elevated: #ffffff;
-  --tool-page-bg: #f8f8fc;
+  --tool-page-bg: #f5f5fa;
   --surface: #ffffff;
-  --surface-muted: #f3f3f8;
-  --border: #e2e2ea;
-  --border-strong: #c8c8d4;
+  --surface-muted: #f5f5fa;
+  --border: #d6d6df;
+  --border-strong: #c2c2cc;
   /* 文字 */
-  --text: #1d1d1b;
-  --muted: #5c5c66;
-  /* 强调色（iLoveIMG 青绿系） */
-  --accent: #1c83a8;
-  --accent-hover: #166d8c;
-  --accent-rgb: 28, 131, 168;
-  --accent-soft: rgba(var(--accent-rgb), 0.1);
-  --accent-on-dark: #3cb6e2;
+  --text: #33333b;
+  --text-strong: #161616;
+  --muted: #47474f;
+  /* 强调色（iLovePDF 红） */
+  --accent: #e5322d;
+  --accent-hover: #bd060a;
+  --accent-rgb: 229, 50, 45;
+  --accent-soft: rgba(var(--accent-rgb), 0.08);
+  --accent-on-dark: #e5322d;
   /* 布局与字体 */
   --radius: 16px;
-  --radius-sm: 10px;
-  --shadow: 0 12px 40px rgba(15, 23, 42, 0.08);
-  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
+  --radius-sm: 8px;
+  /* 对齐 iLovePDF .tag（Workflows 筛选按钮）：全圆角 pill */
+  --radius-btn: 9999px;
+  --shadow: none;
+  --shadow-sm: none;
   --header-h: 60px;
   --sidebar-w: 248px;
-  --content-max: 880px;
-  --home-max: 1120px;
-  --font: "Outfit", "IBM Plex Sans", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  /* 首页 / 工具页正文共用上限；工具页内宽用 100% 随主栏伸缩 */
+  --home-max: 1370px;
+  --content-max: 100%;
+  /* 卡片网格最小列宽：随屏宽 auto-fill 增减列数 */
+  --home-card-min: 240px;
+  --home-card-min-featured: 260px;
+  /* 正文左右边距：对齐 iLovePDF .tools 的 48 → 32 → 24 */
+  --page-pad-x: 48px;
+  --font: "Plus Jakarta Sans", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+/* 大屏以下收紧水平边距（90em≈1440px） */
+@media (max-width: 1440px) {
+  :root {
+    --page-pad-x: 32px;
+  }
+}
+
+@media (max-width: 960px) {
+  :root {
+    --page-pad-x: 24px;
+  }
 }
 
 *,
@@ -138,7 +162,7 @@ body.is-tool-page {
   font-size: 0.68rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #94a3b8;
+  color: var(--muted);
   font-weight: 600;
   margin: 0 0 0.75rem 0.5rem;
 }
@@ -192,13 +216,18 @@ body.is-home-page #content.p-4 {
   max-width: none;
 }
 
+/**
+ * 工具页正文：占满主栏可用宽度，左右 gutter 用 --page-pad-x 随屏变化；
+ * 总宽上限对齐首页 --home-max，避免超宽屏一行过长。
+ */
 body.is-tool-page #content {
-  max-width: calc(var(--content-max) + 4rem);
+  max-width: calc(var(--home-max) + 2 * var(--page-pad-x));
   margin-inline: auto;
+  width: 100%;
 }
 
 body.is-tool-page #content.p-4 {
-  padding: 2rem 1.75rem 3.5rem !important;
+  padding: 2rem var(--page-pad-x) 3.5rem !important;
 }
 
 /* 工具页：抬高首屏 H1；说明文案可用 .tool-lead 后置 */
@@ -213,7 +242,8 @@ body.is-tool-page .tool-page-heading h1.h4 {
 body.is-tool-page #content > div:first-child > p.text-muted,
 body.is-tool-page .tool-lead {
   font-size: 1.05rem;
-  max-width: var(--content-max);
+  max-width: none;
+  width: 100%;
   line-height: 1.6;
   color: var(--muted) !important;
 }
@@ -286,7 +316,7 @@ body.is-tool-page .tool-lead {
     margin-left: 0;
   }
   body.is-tool-page #content.p-4 {
-    padding: 1.25rem 1rem 2.5rem !important;
+    padding: 1.25rem var(--page-pad-x) 2.5rem !important;
   }
 }
 
@@ -307,13 +337,13 @@ body.is-tool-page .tool-lead {
   }
 }
 
-/* —— Navbar：更轻 —— */
+/* —— Navbar：对齐 iLovePDF 白底 + 细边框 —— */
 .navbar.site-navbar,
 .navbar.navbar-light {
-  background: rgba(255, 255, 255, 0.86) !important;
-  backdrop-filter: blur(14px) saturate(1.2);
-  -webkit-backdrop-filter: blur(14px) saturate(1.2);
-  border-bottom: 1px solid rgba(15, 23, 42, 0.06) !important;
+  background: #ffffff !important;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom: 1px solid var(--border) !important;
   box-shadow: none;
 }
 
@@ -321,8 +351,8 @@ body.is-tool-page .tool-lead {
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
-  font-weight: 700;
-  letter-spacing: -0.03em;
+  font-weight: 600;
+  letter-spacing: -0.02em;
   font-size: 1.1rem;
   color: var(--text) !important;
 }
@@ -339,92 +369,127 @@ body.is-tool-page .tool-lead {
 }
 
 .navbar .nav-link {
-  color: #64748b !important;
+  color: var(--muted) !important;
   font-weight: 500;
   font-size: 0.925rem;
   padding-inline: 0.85rem !important;
 }
 .navbar .nav-link:hover {
-  color: var(--text) !important;
+  color: var(--text-strong) !important;
 }
 
 .navbar .btn-outline-secondary {
-  border-color: transparent;
-  color: #475569;
-  border-radius: 999px;
-  background: var(--surface-muted);
-  padding-inline: 0.85rem;
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: var(--radius-btn);
+  background: #ffffff;
+  padding: 4px 16px;
+  font-weight: 500;
+  outline: none;
 }
 .navbar .btn-outline-secondary:hover {
-  background: #e2e8f0;
-  color: var(--text);
+  background: #ffffff;
+  border-color: #292931;
+  color: var(--text-strong);
 }
 
-/* —— Buttons —— */
+/* —— Buttons（对齐 iLovePDF .tag / Workflows 筛选按钮） —— */
 .btn {
-  border-radius: 999px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
+  border-radius: var(--radius-btn);
+  font-weight: 500;
+  letter-spacing: 0;
+  box-shadow: none;
+  transition: all 0.2s ease-in-out;
 }
 
-/* 按钮组保持方圆角，避免 pill 挤在一组里难看 */
+/* 按钮组保持小圆角，避免 pill 挤在一组里难看 */
 .btn-group > .btn,
 .btn-group > .btn-check + .btn {
   border-radius: var(--radius-sm) !important;
 }
 
 .btn-primary {
-  background: var(--accent) !important;
-  border-color: var(--accent) !important;
-  color: #fff !important;
-  box-shadow: 0 6px 20px rgba(var(--accent-rgb), 0.28);
-  padding-inline: 1.25rem;
+  color: var(--text) !important;
+  background: #ffffff !important;
+  border: 1px solid var(--border) !important;
+  outline: none !important;
+  box-shadow: none !important;
+  padding: 4px 16px;
+  min-height: 34px;
+  line-height: 26px;
+  font-size: 1rem;
 }
 .btn-primary:hover,
 .btn-primary:focus {
-  background: var(--accent-hover) !important;
-  border-color: var(--accent-hover) !important;
-  color: #fff !important;
-  box-shadow: 0 8px 24px rgba(var(--accent-rgb), 0.34);
+  color: var(--text-strong) !important;
+  background: #ffffff !important;
+  border-color: #292931 !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+.btn-primary:active,
+.btn-primary.active {
+  color: #ffffff !important;
+  background: #292931 !important;
+  border-color: #292931 !important;
 }
 
-.btn-outline-primary {
-  color: var(--accent) !important;
-  border-color: rgba(var(--accent-rgb), 0.28) !important;
-  background: transparent !important;
-  padding-inline: 1.15rem;
+.btn-outline-primary,
+.btn-outline-secondary {
+  color: var(--text) !important;
+  background: #ffffff !important;
+  border: 1px solid var(--border) !important;
+  outline: none !important;
+  box-shadow: none !important;
+  padding: 4px 16px;
+  min-height: 34px;
+  line-height: 26px;
+  font-weight: 500;
 }
-.btn-outline-primary:hover {
-  background: var(--accent-soft) !important;
-  color: var(--accent-hover) !important;
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-secondary:hover,
+.btn-outline-secondary:focus {
+  color: var(--text-strong) !important;
+  background: #ffffff !important;
+  border-color: #292931 !important;
+}
+.btn-outline-primary:active,
+.btn-outline-secondary:active {
+  color: #ffffff !important;
+  background: #292931 !important;
+  border-color: #292931 !important;
 }
 
 .btn-lg,
 .home-hero-actions .btn {
-  padding: 0.75rem 1.45rem;
-  font-size: 1.02rem;
+  padding: 6px 20px;
+  min-height: 38px;
+  font-size: 1rem;
 }
 
-/* —— Cards —— */
+/* —— Cards（对齐 iLovePDF .tools__item） —— */
 .card.tool-entry-card,
 .card {
   background: var(--surface);
-  border: 1px solid rgba(15, 23, 42, 0.06);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
-  box-shadow: var(--shadow-sm);
+  box-shadow: none;
 }
 
 .card.tool-entry-card {
-  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color 0.4s ease-in-out;
+  overflow: hidden;
 }
 .card.tool-entry-card:hover {
-  border-color: rgba(var(--accent-rgb), 0.28);
-  box-shadow: var(--shadow);
-  transform: translateY(-2px);
+  border-color: #292931;
+  box-shadow: none;
+  transform: none;
+  z-index: 2;
 }
 
 .card.tool-entry-card .card-body {
-  padding: 1.35rem 1.35rem 1.25rem;
+  padding: 1.5rem 1.5rem 1.35rem;
 }
 
 .tool-card-head {
@@ -468,15 +533,22 @@ body.is-tool-page .tool-lead {
 }
 
 .card .card-title {
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-weight: 500;
+  letter-spacing: 0;
   color: var(--text);
-  margin-bottom: 0.55rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.125rem;
+  line-height: 1.4;
+}
+
+.card.tool-entry-card:hover .card-title {
+  color: var(--text-strong);
 }
 
 .card .card-text {
   color: var(--muted);
   line-height: 1.5;
+  font-weight: 400;
 }
 
 /* —— Footer —— */
@@ -496,25 +568,18 @@ footer.bg-light {
 .home-hero {
   position: relative;
   overflow: hidden;
-  color: #f8fafc;
-  /* 大气层光晕对齐青绿主色；次光点用极淡绿（iLoveIMG 绿系）作气氛，非紫渐变 */
-  background:
-    radial-gradient(ellipse 80% 70% at 15% 20%, rgba(60, 182, 226, 0.32), transparent 55%),
-    radial-gradient(ellipse 60% 50% at 90% 10%, rgba(143, 188, 93, 0.14), transparent 50%),
-    linear-gradient(160deg, var(--bg-hero) 0%, var(--bg-hero-mid) 55%, #1a3a4a 100%);
-  padding: clamp(3.5rem, 9vw, 7rem) clamp(1.25rem, 4vw, 2.5rem) clamp(3rem, 7vw, 5.5rem);
+  color: var(--text);
+  /* 浅色首屏，对齐 iLovePDF 首页标题区（无暗色渐变） */
+  background: var(--bg-hero);
+  padding: clamp(2.5rem, 6vw, 4.5rem) var(--page-pad-x) clamp(2rem, 5vw, 3.5rem);
   margin-bottom: 0;
   border-bottom: 0;
   animation: homeHeroIn 0.7s ease both;
+  text-align: center;
 }
 
 .home-hero::after {
-  content: '';
-  position: absolute;
-  inset: auto 0 0 0;
-  height: 72px;
-  background: linear-gradient(to bottom, transparent, var(--bg));
-  pointer-events: none;
+  display: none;
 }
 
 .home-hero-inner {
@@ -525,23 +590,23 @@ footer.bg-light {
 }
 
 .home-hero-brand {
-  font-size: clamp(2.6rem, 7vw, 4.5rem);
-  font-weight: 750;
-  letter-spacing: -0.045em;
-  line-height: 1.02;
-  margin: 0 0 1.75rem;
-  color: #ffffff;
-  max-width: 14ch;
+  font-size: clamp(1.75rem, 4.5vw, 2.625rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.24;
+  margin: 0 auto 1rem;
+  color: var(--text);
+  max-width: 22ch;
   text-wrap: balance;
   animation: homeFadeUp 0.75s 0.08s ease both;
 }
 
 .home-hero-lead {
-  font-size: clamp(1.1rem, 2vw, 1.3rem);
-  color: rgba(226, 232, 240, 0.88);
-  max-width: 34rem;
-  margin: 0 0 1.75rem;
-  line-height: 1.55;
+  font-size: clamp(1rem, 1.8vw, 1.375rem);
+  color: var(--muted);
+  max-width: 40rem;
+  margin: 0 auto 1.5rem;
+  line-height: 1.45;
   font-weight: 400;
   animation: homeFadeUp 0.75s 0.16s ease both;
 }
@@ -550,47 +615,24 @@ footer.bg-light {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
+  justify-content: center;
   animation: homeFadeUp 0.75s 0.12s ease both;
 }
 
-.home-hero-actions .btn-primary {
-  background: #ffffff !important;
-  border-color: #ffffff !important;
-  color: var(--bg-hero) !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-}
-.home-hero-actions .btn-primary:hover {
-  background: #f0f0f5 !important;
-  border-color: #f0f0f5 !important;
-  color: var(--bg-hero) !important;
-}
-
-/* 首页内容区：白色实心按钮为主（浅底卡片/区块） */
-.home-wrap .home-main .btn-primary {
-  background: #ffffff !important;
-  border-color: rgba(15, 23, 42, 0.1) !important;
-  color: var(--text) !important;
-  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
-}
-.home-wrap .home-main .btn-primary:hover,
-.home-wrap .home-main .btn-primary:focus {
-  background: #f8fafc !important;
-  border-color: rgba(15, 23, 42, 0.16) !important;
-  color: var(--text) !important;
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.1);
-}
+/* 首页主按钮沿用全局朱红实心，不再覆写成白底 */
 
 .home-main {
   max-width: var(--home-max);
   margin: 0 auto;
-  padding: 0.5rem clamp(1.25rem, 4vw, 2.5rem) 4rem;
+  padding: 0.5rem var(--page-pad-x) 4rem;
+  width: 100%;
 }
 
 .home-why {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
-  margin: -1.5rem 0 2.75rem;
+  margin: 0 0 2.75rem;
   position: relative;
   z-index: 2;
 }
@@ -605,9 +647,13 @@ footer.bg-light {
 .home-why-item {
   padding: 1.35rem 1.4rem;
   border-radius: var(--radius);
-  border: 1px solid rgba(15, 23, 42, 0.06);
+  border: 1px solid var(--border);
   background: var(--surface);
-  box-shadow: var(--shadow);
+  box-shadow: none;
+  transition: border-color 0.4s ease-in-out;
+}
+.home-why-item:hover {
+  border-color: #292931;
 }
 
 .home-why-item h3 {
@@ -643,22 +689,54 @@ footer.bg-light {
 .home-cat {
   margin-bottom: 2.25rem;
   padding: 1.6rem 1.5rem 1.7rem;
-  border-radius: calc(var(--radius) + 4px);
-  border: 1px solid rgba(15, 23, 42, 0.06);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
   background: var(--surface);
-  box-shadow: var(--shadow-sm);
+  box-shadow: none;
+}
+
+/**
+ * 首页工具卡片网格：列数随可用宽度自动变化（对齐 iLovePDF tools 响应式列数）。
+ * 窄屏 1 列 → 加宽逐步 2/3/4/5…，无需写死 Bootstrap row-cols 断点。
+ */
+.home-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, var(--home-card-min)), 1fr));
+  gap: 1rem;
+  width: 100%;
+}
+
+.home-card-grid--featured {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, var(--home-card-min-featured)), 1fr));
+  gap: 1.15rem;
+}
+
+.home-card-grid > .home-card-item {
+  min-width: 0;
+  display: flex;
+}
+
+.home-card-grid .card.tool-entry-card {
+  width: 100%;
+}
+
+@media (max-width: 440px) {
+  .home-card-grid,
+  .home-card-grid--featured {
+    grid-template-columns: 1fr;
+  }
 }
 
 .home-cat-label {
   display: inline-block;
   font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.07em;
+  font-weight: 600;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--accent);
   background: var(--accent-soft);
-  border-radius: 999px;
-  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-btn);
+  padding: 0.3rem 0.65rem;
   margin-bottom: 0.55rem;
 }
 
@@ -720,7 +798,8 @@ footer.bg-light {
   line-height: 1.12;
   margin: 0 0 0.65rem;
   color: var(--text);
-  max-width: var(--content-max);
+  max-width: none;
+  width: 100%;
   text-wrap: balance;
 }
 
@@ -728,20 +807,21 @@ footer.bg-light {
   font-size: 1.08rem;
   color: var(--muted);
   margin: 0;
-  max-width: var(--content-max);
+  max-width: none;
+  width: 100%;
   line-height: 1.6;
   font-weight: 400;
 }
 
-/* 轻面板：少边框，多留白 — 接近对标站「标题+输入+主按钮」 */
+/* 轻面板：白底 + iLovePDF 式细边框卡片；宽度随主栏伸缩 */
 .tool-panel {
   background: #ffffff;
-  border: 1px solid rgba(15, 23, 42, 0.06);
-  border-radius: calc(var(--radius) + 2px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
   padding: 1.5rem 1.5rem 1.6rem;
-  box-shadow: var(--shadow-sm);
+  box-shadow: none;
   margin-bottom: 2.5rem;
-  max-width: var(--content-max);
+  max-width: none;
   width: 100%;
 }
 
@@ -757,7 +837,7 @@ footer.bg-light {
 .tool-panel .form-label {
   font-weight: 600;
   font-size: 0.9rem;
-  color: #334155;
+  color: var(--text);
   margin-bottom: 0.4rem;
 }
 
@@ -790,7 +870,7 @@ footer.bg-light {
 #content section.tool-section {
   margin-top: 2.5rem !important;
   padding-top: 0.25rem;
-  max-width: var(--content-max);
+  max-width: none;
   width: 100%;
 }
 
@@ -806,18 +886,18 @@ footer.bg-light {
   flex-direction: column;
   gap: 1.25rem;
   margin-top: 2.5rem;
-  max-width: var(--content-max);
+  max-width: none;
   width: 100%;
 }
 
-/* 各计算器页内联卡片：统一正文宽度 */
+/* 各计算器页内联卡片：与工具正文同宽随屏伸缩 */
 body.is-tool-page .tool-card,
 body.is-tool-page .bmi-card,
 body.is-tool-page .pct-card,
 body.is-tool-page .grad-card,
 body.is-tool-page .mr-card,
 body.is-tool-page .sf-card {
-  max-width: var(--content-max);
+  max-width: none;
   width: 100%;
   margin-left: 0;
   margin-right: 0;
@@ -857,10 +937,10 @@ body.is-tool-page .sf-card {
   justify-content: center;
   min-height: 2rem;
   padding: 0.3rem 0.7rem;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-btn);
   border: 1px solid var(--border);
   background: #fff;
-  color: #334155 !important;
+  color: var(--text) !important;
   font-size: 0.8rem;
   font-weight: 600;
   line-height: 1.2;
@@ -906,7 +986,7 @@ body.is-tool-page .sf-card {
   margin: 0;
   font-size: 0.8rem;
   font-weight: 650;
-  color: #64748b;
+  color: var(--muted);
   padding-top: 0.35rem;
 }
 
@@ -918,7 +998,7 @@ body.is-tool-page .sf-card {
 
 .tool-mail-input[readonly] {
   background: var(--surface-muted);
-  color: #334155;
+  color: var(--text);
 }
 
 .tool-mail-body {
@@ -960,7 +1040,7 @@ body.is-tool-page .sf-card {
 }
 
 .tool-card {
-  max-width: var(--content-max);
+  max-width: none;
   width: 100%;
 }
 

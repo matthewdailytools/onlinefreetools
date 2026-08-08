@@ -160,9 +160,12 @@ dist
 .yarn/install-state.gz
 .pnp.\*
 
-# 图片优化 Tier 2 WASM vendor（由 scripts/copy-image-optimizer-vendor.mjs / build:site 生成）
+# 同域 vendor（由 copy-*-vendor.mjs / build:site 生成，勿手改）
 public/vendor/jsquash/
 public/vendor/wasm-feature-detect/
+public/vendor/gifenc/
+public/vendor/bootstrap/
+public/vendor/fonts/
 
 # wrangler project
 

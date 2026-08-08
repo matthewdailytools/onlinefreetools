@@ -24,7 +24,7 @@ export const sitePageTranslations = {
       'A few tools need our edge Worker—for example fetching public HTTP headers, checking DNS, reading your public IP as seen by the edge, or submitting IndexNow URL lists. Those requests carry only what the tool needs for that action, and we do not keep them in a content database as a product feature. Tool pages state this clearly where it applies.',
     privacy_analytics_title: 'Analytics',
     privacy_analytics_body:
-      'Pages may load Microsoft Clarity and Baidu Analytics to understand aggregate traffic and usability. These third parties may set cookies or similar identifiers under their own policies. We do not sell personal data.',
+      'Pages may load Microsoft Clarity (clarity.ms) to understand aggregate traffic and usability. This third party may set cookies or similar identifiers under its own policies. We do not sell personal data.',
     privacy_retention_title: 'Accounts and retention',
     privacy_retention_body:
       'We do not require signup. We do not operate a user-content vault for tool inputs. Operational logs on Cloudflare infrastructure follow that platform’s retention practices and are not used to rebuild your pasted content.',
@@ -81,7 +81,7 @@ export const sitePageTranslations = {
       '少数工具需要边缘 Worker，例如读取公开 HTTP 响应头、查询 DNS、查看边缘所见的公网 IP，或提交 IndexNow URL 列表。请求只携带完成该操作所需的数据，我们不会将其作为内容库长期保存。适用工具页会写明这一点。',
     privacy_analytics_title: '访问分析',
     privacy_analytics_body:
-      '页面可能加载 Microsoft Clarity 与百度统计，用于了解汇总流量与可用性。上述第三方可能按其政策设置 Cookie 或类似标识。我们不出售个人数据。',
+      '页面可能加载 Microsoft Clarity（clarity.ms），用于了解汇总流量与可用性。该第三方可能按其政策设置 Cookie 或类似标识。我们不出售个人数据。',
     privacy_retention_title: '账号与留存',
     privacy_retention_body:
       '本站无需注册。我们不提供用于保存工具输入的用户内容库。Cloudflare 基础设施上的运维日志遵循该平台的留存实践，不会用来重建你粘贴的内容。',
@@ -136,7 +136,7 @@ export const sitePageTranslations = {
       'Algunas herramientas necesitan el Worker (cabeceras HTTP públicas, DNS, IP pública vista desde el edge o listas IndexNow). Solo se envía lo necesario y no lo guardamos en una base de contenidos. Las páginas lo indican cuando aplica.',
     privacy_analytics_title: 'Analítica',
     privacy_analytics_body:
-      'Las páginas pueden cargar Microsoft Clarity y Baidu Analytics para tráfico agregado y usabilidad. Estos terceros pueden usar cookies según sus políticas. No vendemos datos personales.',
+      'Las páginas pueden cargar Microsoft Clarity (clarity.ms) para tráfico agregado y usabilidad. Este tercero puede usar cookies según su política. No vendemos datos personales.',
     privacy_retention_title: 'Cuentas y retención',
     privacy_retention_body:
       'No pedimos registro ni operamos un almacén de entradas de herramientas. Los registros operativos en Cloudflare siguen las prácticas de esa plataforma.',
@@ -193,7 +193,7 @@ export const sitePageTranslations = {
       'بعض الأدوات تحتاج Worker (ترويسات HTTP عامة، DNS، IP العامة كما يراها الحافة، أو قوائم IndexNow). نرسل ما يلزم فقط ولا نخزّنها في قاعدة محتوى. الصفحات توضح ذلك عند الحاجة.',
     privacy_analytics_title: 'التحليلات',
     privacy_analytics_body:
-      'قد تُحمَّل Microsoft Clarity وBaidu Analytics لفهم الزيارات المجمّعة وسهولة الاستخدام. قد تضع أطراف ثالثة ملفات تعريف وفق سياساتها. لا نبيع البيانات الشخصية.',
+      'قد تُحمَّل Microsoft Clarity (clarity.ms) لفهم الزيارات المجمّعة وسهولة الاستخدام. قد يضع هذا الطرف الثالث ملفات تعريف وفق سياسته. لا نبيع البيانات الشخصية.',
     privacy_retention_title: 'الحسابات والاحتفاظ',
     privacy_retention_body:
       'لا نطلب تسجيلًا ولا نشغّل مخزنًا لمدخلات الأدوات. سجلات التشغيل على Cloudflare تتبع ممارسات تلك المنصة.',
@@ -249,7 +249,7 @@ export const sitePageTranslations = {
       'Algumas ferramentas precisam do Worker (cabeçalhos HTTP públicos, DNS, IP público visto na edge ou listas IndexNow). Enviamos só o necessário e não guardamos numa base de conteúdos.',
     privacy_analytics_title: 'Analytics',
     privacy_analytics_body:
-      'As páginas podem carregar Microsoft Clarity e Baidu Analytics para tráfego agregado e usabilidade. Terceiros podem usar cookies segundo as suas políticas. Não vendemos dados pessoais.',
+      'As páginas podem carregar Microsoft Clarity (clarity.ms) para tráfego agregado e usabilidade. Esse terceiro pode usar cookies segundo a sua política. Não vendemos dados pessoais.',
     privacy_retention_title: 'Contas e retenção',
     privacy_retention_body:
       'Não exigimos registo nem operamos um cofre de entradas das ferramentas. Registos operacionais na Cloudflare seguem as práticas dessa plataforma.',
@@ -306,7 +306,7 @@ export const sitePageTranslations = {
       'Beberapa alat membutuhkan Worker (header HTTP publik, DNS, IP publik dari edge, atau daftar IndexNow). Hanya data yang diperlukan dikirim; kami tidak menyimpannya di basis konten.',
     privacy_analytics_title: 'Analitik',
     privacy_analytics_body:
-      'Halaman dapat memuat Microsoft Clarity dan Baidu Analytics untuk lalu lintas agregat dan kegunaan. Pihak ketiga dapat memakai cookie sesuai kebijakannya. Kami tidak menjual data pribadi.',
+      'Halaman dapat memuat Microsoft Clarity (clarity.ms) untuk lalu lintas agregat dan kegunaan. Pihak ketiga ini dapat memakai cookie sesuai kebijakannya. Kami tidak menjual data pribadi.',
     privacy_retention_title: 'Akun dan retensi',
     privacy_retention_body:
       'Kami tidak mewajibkan daftar akun dan tidak menyimpan brankas input alat. Log operasional di Cloudflare mengikuti praktik platform tersebut.',
@@ -363,7 +363,7 @@ export const sitePageTranslations = {
       'Certains outils ont besoin du Worker (en-têtes HTTP publics, DNS, IP publique vue depuis l’edge ou listes IndexNow). Seul le nécessaire est envoyé ; nous ne les stockons pas dans une base de contenus.',
     privacy_analytics_title: 'Analytique',
     privacy_analytics_body:
-      'Les pages peuvent charger Microsoft Clarity et Baidu Analytics pour le trafic agrégé et l’utilisabilité. Ces tiers peuvent utiliser des cookies selon leurs politiques. Nous ne vendons pas de données personnelles.',
+      'Les pages peuvent charger Microsoft Clarity (clarity.ms) pour le trafic agrégé et l’utilisabilité. Ce tiers peut utiliser des cookies selon sa politique. Nous ne vendons pas de données personnelles.',
     privacy_retention_title: 'Comptes et conservation',
     privacy_retention_body:
       'Pas d’inscription requise, pas de coffre d’entrées d’outils. Les journaux opérationnels sur Cloudflare suivent les pratiques de cette plateforme.',
@@ -420,7 +420,7 @@ export const sitePageTranslations = {
       '一部ツールは Worker が必要です（公開 HTTP ヘッダー、DNS、エッジから見た公開 IP、IndexNow の URL 一覧など）。必要なデータだけを送り、コンテンツ DB としては保持しません。該当ページに明記します。',
     privacy_analytics_title: 'アクセス解析',
     privacy_analytics_body:
-      '集計トラフィックと使いやすさの把握のため、Microsoft Clarity と百度統計を読み込む場合があります。第三者は各ポリシーに基づき Cookie 等を使うことがあります。個人データを販売しません。',
+      '集計トラフィックと使いやすさの把握のため、Microsoft Clarity（clarity.ms）を読み込む場合があります。当該第三者は自社ポリシーに基づき Cookie 等を使うことがあります。個人データを販売しません。',
     privacy_retention_title: 'アカウントと保持',
     privacy_retention_body:
       '登録は不要で、ツール入力の保管庫もありません。Cloudflare 上の運用ログはそのプラットフォームの慣行に従います。',
@@ -477,7 +477,7 @@ export const sitePageTranslations = {
       'Некоторым инструментам нужен Worker (публичные HTTP-заголовки, DNS, публичный IP с края сети или списки IndexNow). Передаётся только необходимое; мы не храним это в контентной базе.',
     privacy_analytics_title: 'Аналитика',
     privacy_analytics_body:
-      'Страницы могут загружать Microsoft Clarity и Baidu Analytics для агрегированного трафика и удобства. Третьи стороны могут ставить cookie по своим политикам. Мы не продаём персональные данные.',
+      'Страницы могут загружать Microsoft Clarity (clarity.ms) для агрегированного трафика и удобства. Этот сторонний сервис может ставить cookie по своей политике. Мы не продаём персональные данные.',
     privacy_retention_title: 'Аккаунты и хранение',
     privacy_retention_body:
       'Регистрация не требуется; хранилища вводов инструментов нет. Операционные журналы на Cloudflare следуют практике этой платформы.',
@@ -534,7 +534,7 @@ export const sitePageTranslations = {
       'Einige Tools brauchen den Worker (öffentliche HTTP-Header, DNS, öffentliche IP aus Edge-Sicht oder IndexNow-URL-Listen). Es wird nur das Nötige gesendet; wir speichern es nicht in einer Inhaltsdatenbank.',
     privacy_analytics_title: 'Analytics',
     privacy_analytics_body:
-      'Seiten können Microsoft Clarity und Baidu Analytics für aggregierten Traffic und Nutzbarkeit laden. Dritte können Cookies nach ihren Richtlinien setzen. Wir verkaufen keine personenbezogenen Daten.',
+      'Seiten können Microsoft Clarity (clarity.ms) für aggregierten Traffic und Nutzbarkeit laden. Dieser Drittanbieter kann Cookies nach seinen Richtlinien setzen. Wir verkaufen keine personenbezogenen Daten.',
     privacy_retention_title: 'Konten und Aufbewahrung',
     privacy_retention_body:
       'Keine Registrierung nötig; kein Tresor für Tool-Eingaben. Betriebslogs auf Cloudflare folgen den Praktiken dieser Plattform.',

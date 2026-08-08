@@ -61,8 +61,10 @@
       } catch (e) {}
     })();
   </script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="preload" href="/vendor/bootstrap/bootstrap.min.css" as="style" />
+  <link rel="preload" href="/vendor/fonts/plus-jakarta-sans.css" as="style" />
+  <link href="/vendor/bootstrap/bootstrap.min.css" rel="stylesheet" />
+  <link href="/vendor/fonts/plus-jakarta-sans.css" rel="stylesheet" />
   <link href="/styles/site.css" rel="stylesheet" />
   <style>
     body { min-height: 100vh; padding-top: var(--header-h, 56px); }
@@ -70,20 +72,24 @@
   </style>
   
 <script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?39f18c089a03779cd05243e21b046589";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
+(function () {
+  function run() {
+    try {
+
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xbc0iytpn7");
+    } catch (e) {}
+  }
+  function schedule() {
+    if (typeof requestIdleCallback === 'function') requestIdleCallback(run, { timeout: 4000 });
+    else setTimeout(run, 2000);
+  }
+  if (document.readyState === 'complete') schedule();
+  else window.addEventListener('load', schedule, { once: true });
 })();
-</script>
-<script type="text/javascript">
-(function(c,l,a,r,i,t,y){
-  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-})(window, document, "clarity", "script", "xbc0iytpn7");
 </script>
   
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Kebijakan privasi","description":"Cara OnlineFreeTools.org menangani data: sebagian besar alat berjalan di browser; alat edge memproses permintaan singkat; analitik dan kontak privasi.","url":"https://onlinefreetools.org/id/privacy","isPartOf":{"@type":"WebSite","name":"OnlineFreeTools.org","url":"https://onlinefreetools.org"}}</script>
@@ -105,13 +111,13 @@ var _hmt = _hmt || [];
         <div class="collapse navbar-collapse" id="topNav">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="/id/">Beranda</a></li><li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Alat gambar</a>
-          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/id/tools/image-format-converter">Konversi format gambar</a></li><li><a class="dropdown-item" href="/id/tools/image-exif">Lihat & hapus EXIF foto</a></li><li><a class="dropdown-item" href="/id/tools/image-compress">Kompres gambar</a></li><li><a class="dropdown-item" href="/id/tools/image-optimizer">Optimasi gambar</a></li><li><a class="dropdown-item" href="/id/tools/image-crop">Potong & ubah ukuran</a></li><li><a class="dropdown-item" href="/id/tools/color-from-image">Ekstrak warna dari gambar</a></li><li><a class="dropdown-item" href="/id/tools/image-merge">Gabung gambar</a></li><li><a class="dropdown-item" href="/id/tools/image-overlay">Timpa gambar</a></li></ul>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/id/tools/add-watermark">Watermark teks — di browser</a></li><li><a class="dropdown-item" href="/id/tools/color-from-image">Ekstrak warna gambar — palet & klik ambil</a></li><li><a class="dropdown-item" href="/id/tools/flip-image">Balik gambar — cermin H/V</a></li><li><a class="dropdown-item" href="/id/tools/image-border">Border gambar — warna & lebar</a></li><li><a class="dropdown-item" href="/id/tools/image-compress">Kompres gambar — sisi terpanjang, kualitas & ukuran target (lokal)</a></li><li><a class="dropdown-item" href="/id/tools/image-crop">Potong & ubah ukuran gambar — lokal</a></li><li><a class="dropdown-item" href="/id/tools/image-exif">Lihat & hapus EXIF foto — GPS, kamera, lokal</a></li><li><a class="dropdown-item" href="/id/tools/image-format-converter">Konverter Format Gambar — PNG JPEG WebP AVIF BMP GIF ICO SVG</a></li><li><a class="dropdown-item" href="/id/tools/image-grayscale">Grayscale gambar — hitam putih</a></li><li><a class="dropdown-item" href="/id/tools/image-merge">Gabung gambar — satukan foto jadi kolase</a></li><li><a class="dropdown-item" href="/id/tools/image-optimizer">Optimasi gambar — WebP, AVIF & MozJPEG di perangkat</a></li><li><a class="dropdown-item" href="/id/tools/image-overlay">Timpa gambar — taruh logo di foto</a></li><li><a class="dropdown-item" href="/id/tools/image-to-base64">Gambar ↔ Base64 — encode & decode</a></li><li><a class="dropdown-item" href="/id/tools/images-to-gif">Gambar ke GIF — animasi singkat</a></li><li><a class="dropdown-item" href="/id/tools/images-to-pdf">Gambar ke PDF — satu halaman per foto</a></li><li><a class="dropdown-item" href="/id/tools/images-to-ppt">Gambar ke PowerPoint — satu slide per foto</a></li><li><a class="dropdown-item" href="/id/tools/images-to-word">Gambar ke Word — DOCX lokal</a></li></ul>
         </li><li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Developer</a>
-          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/id/tools/website-headers">Cek header HTTP website</a></li><li><a class="dropdown-item" href="/id/tools/ip-address">Cek IP saya — Alamat IP publik (IPv4/IPv6)</a></li><li><a class="dropdown-item" href="/id/tools/markdown-to-html">Markdown ↔ HTML</a></li><li><a class="dropdown-item" href="/id/tools/text-diff">Bandingkan teks online</a></li><li><a class="dropdown-item" href="/id/tools/yaml-json">YAML ↔ JSON</a></li><li><a class="dropdown-item" href="/id/tools/csv-json">CSV ↔ JSON</a></li><li><a class="dropdown-item" href="/id/tools/html-entity">HTML Entity</a></li><li><a class="dropdown-item" href="/id/tools/add-www-to-dns">Tambah WWW ke DNS</a></li><li><a class="dropdown-item" href="/id/tools/indexnow">IndexNow</a></li></ul>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/id/tools/add-www-to-dns">Tambah WWW ke DNS — A/CNAME & panduan provider</a></li><li><a class="dropdown-item" href="/id/tools/csv-json">Konverter CSV ↔ JSON — tipe, pemisah, lokal</a></li><li><a class="dropdown-item" href="/id/tools/html-entity">Encode & Decode HTML Entity — lokal di browser</a></li><li><a class="dropdown-item" href="/id/tools/indexnow">IndexNow — kirim URL Bing, cek kunci & kode status</a></li><li><a class="dropdown-item" href="/id/tools/ip-address">Cek IP saya — Alamat IP publik (IPv4/IPv6)</a></li><li><a class="dropdown-item" href="/id/tools/json-schema-validator">Validator JSON Schema — Path draft-07 & lokal</a></li><li><a class="dropdown-item" href="/id/tools/markdown-to-html">Markdown ↔ HTML</a></li><li><a class="dropdown-item" href="/id/tools/text-diff">Bandingkan teks online</a></li><li><a class="dropdown-item" href="/id/tools/website-headers">Cek header HTTP website</a></li><li><a class="dropdown-item" href="/id/tools/yaml-json">YAML ke JSON & sebaliknya — aturan tipe, multi-dokumen</a></li></ul>
         </li><li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Kalkulator</a>
-          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/id/tools/how-to-calculate-bmi">Kalkulator BMI — Cara Menghitung</a></li><li><a class="dropdown-item" href="/id/tools/how-to-calculate-roi">Kalkulator ROI — Cara menghitung return on investment</a></li><li><a class="dropdown-item" href="/id/tools/how-to-calculate-marginal-revenue">Kalkulator pendapatan marjinal — Rumus ΔTR / ΔQ</a></li><li><a class="dropdown-item" href="/id/tools/square-feet">Konversi square feet ke m² — Untuk rumah & renovasi</a></li><li><a class="dropdown-item" href="/id/tools/how-to-calculate-percentage-change">Kalkulator perubahan persentase — Dari nilai lama ke baru</a></li><li><a class="dropdown-item" href="/id/tools/how-to-calculate-gradient">Kalkulator gradien — ∇f multivariabel (turunan parsial)</a></li></ul>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/id/tools/how-to-calculate-bmi">Kalkulator BMI — Cara menghitung indeks massa tubuh</a></li><li><a class="dropdown-item" href="/id/tools/how-to-calculate-gradient">Kalkulator gradien — ∇f multivariabel (turunan parsial)</a></li><li><a class="dropdown-item" href="/id/tools/how-to-calculate-marginal-revenue">Kalkulator pendapatan marjinal — Rumus ΔTR / ΔQ</a></li><li><a class="dropdown-item" href="/id/tools/how-to-calculate-percentage-change">Kalkulator perubahan persentase — Dari nilai lama ke baru</a></li><li><a class="dropdown-item" href="/id/tools/how-to-calculate-roi">Kalkulator ROI — Cara menghitung return on investment</a></li><li><a class="dropdown-item" href="/id/tools/square-feet">Konversi square feet ke m² — Untuk rumah & renovasi</a></li></ul>
         </li></ul>
           <div class="d-flex align-items-center gap-2">
             
@@ -147,7 +153,7 @@ var _hmt = _hmt || [];
       </section>
       <section id="analytics" class="mb-4">
         <h2 class="h5">Analitik</h2>
-        <p>Halaman dapat memuat Microsoft Clarity dan Baidu Analytics untuk lalu lintas agregat dan kegunaan. Pihak ketiga dapat memakai cookie sesuai kebijakannya. Kami tidak menjual data pribadi.</p>
+        <p>Halaman dapat memuat Microsoft Clarity (clarity.ms) untuk lalu lintas agregat dan kegunaan. Pihak ketiga ini dapat memakai cookie sesuai kebijakannya. Kami tidak menjual data pribadi.</p>
       </section>
       <section id="retention" class="mb-4">
         <h2 class="h5">Akun dan retensi</h2>
@@ -178,7 +184,7 @@ var _hmt = _hmt || [];
 
   </footer>
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/vendor/bootstrap/bootstrap.bundle.min.js" defer></script>
   
   <script>
     const layout = document.getElementById('layoutRoot');

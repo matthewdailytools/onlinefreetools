@@ -61,8 +61,10 @@
       } catch (e) {}
     })();
   </script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="preload" href="/vendor/bootstrap/bootstrap.min.css" as="style" />
+  <link rel="preload" href="/vendor/fonts/plus-jakarta-sans.css" as="style" />
+  <link href="/vendor/bootstrap/bootstrap.min.css" rel="stylesheet" />
+  <link href="/vendor/fonts/plus-jakarta-sans.css" rel="stylesheet" />
   <link href="/styles/site.css" rel="stylesheet" />
   <style>
     body { min-height: 100vh; padding-top: var(--header-h, 56px); }
@@ -70,20 +72,24 @@
   </style>
   
 <script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?39f18c089a03779cd05243e21b046589";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
+(function () {
+  function run() {
+    try {
+
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xbc0iytpn7");
+    } catch (e) {}
+  }
+  function schedule() {
+    if (typeof requestIdleCallback === 'function') requestIdleCallback(run, { timeout: 4000 });
+    else setTimeout(run, 2000);
+  }
+  if (document.readyState === 'complete') schedule();
+  else window.addEventListener('load', schedule, { once: true });
 })();
-</script>
-<script type="text/javascript">
-(function(c,l,a,r,i,t,y){
-  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-})(window, document, "clarity", "script", "xbc0iytpn7");
 </script>
   
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"AboutPage","name":"关于 OnlineFreeTools.org","description":"我们是谁、工具如何制作，以及健康/财务类计算器的免责说明。","url":"https://onlinefreetools.org/zh/about","isPartOf":{"@type":"WebSite","name":"OnlineFreeTools.org","url":"https://onlinefreetools.org"}}</script>
@@ -105,13 +111,13 @@ var _hmt = _hmt || [];
         <div class="collapse navbar-collapse" id="topNav">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="/zh/">首页</a></li><li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">图片编辑工具</a>
-          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/zh/tools/image-format-converter">图片格式转换</a></li><li><a class="dropdown-item" href="/zh/tools/image-exif">图片 EXIF 查看与清除</a></li><li><a class="dropdown-item" href="/zh/tools/image-compress">图片压缩</a></li><li><a class="dropdown-item" href="/zh/tools/image-optimizer">图片优化</a></li><li><a class="dropdown-item" href="/zh/tools/image-crop">图片裁剪与改尺寸</a></li><li><a class="dropdown-item" href="/zh/tools/color-from-image">图片主色提取</a></li><li><a class="dropdown-item" href="/zh/tools/image-merge">多图拼接</a></li><li><a class="dropdown-item" href="/zh/tools/image-overlay">图层叠加</a></li></ul>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/zh/tools/add-watermark">图片文字水印 — 浏览器内本地标注</a></li><li><a class="dropdown-item" href="/zh/tools/color-from-image">图片主色提取 — 色板与点击取色</a></li><li><a class="dropdown-item" href="/zh/tools/flip-image">图片翻转 — 水平或垂直镜像</a></li><li><a class="dropdown-item" href="/zh/tools/image-border">图片加边框 — 选颜色与宽度</a></li><li><a class="dropdown-item" href="/zh/tools/image-compress">图片压缩 — 缩小尺寸与文件体积，本地完成</a></li><li><a class="dropdown-item" href="/zh/tools/image-crop">图片裁剪与改尺寸 — 本地完成</a></li><li><a class="dropdown-item" href="/zh/tools/image-exif">图片 EXIF 查看与清除 — GPS、相机信息、本地处理</a></li><li><a class="dropdown-item" href="/zh/tools/image-format-converter">图片格式转换 — PNG JPEG WebP AVIF BMP GIF ICO SVG 本地完成</a></li><li><a class="dropdown-item" href="/zh/tools/image-grayscale">图片转灰度 — 本地黑白转换</a></li><li><a class="dropdown-item" href="/zh/tools/image-merge">多图拼接 — 合成一张拼图，本地完成</a></li><li><a class="dropdown-item" href="/zh/tools/image-optimizer">图片优化 — 更小体积，可调编码器，本地完成</a></li><li><a class="dropdown-item" href="/zh/tools/image-overlay">图片叠加 Logo — 透明定位，本地完成</a></li><li><a class="dropdown-item" href="/zh/tools/image-to-base64">图片与 Base64 互转 — 本地编码解码</a></li><li><a class="dropdown-item" href="/zh/tools/images-to-gif">多图转 GIF — 本地合成短动画</a></li><li><a class="dropdown-item" href="/zh/tools/images-to-pdf">多图转 PDF — 每图一页本地合并</a></li><li><a class="dropdown-item" href="/zh/tools/images-to-ppt">多图转 PPT — 每图一张幻灯片</a></li><li><a class="dropdown-item" href="/zh/tools/images-to-word">多图转 Word — 本地生成 DOCX</a></li></ul>
         </li><li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">开发者工具</a>
-          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/zh/tools/website-headers">在线查看 HTTP 响应头</a></li><li><a class="dropdown-item" href="/zh/tools/ip-address">IP 地址查询 — 查看我的公网 IP（IPv4/IPv6）</a></li><li><a class="dropdown-item" href="/zh/tools/markdown-to-html">Markdown ↔ HTML</a></li><li><a class="dropdown-item" href="/zh/tools/text-diff">在线文本对比</a></li><li><a class="dropdown-item" href="/zh/tools/yaml-json">YAML ↔ JSON</a></li><li><a class="dropdown-item" href="/zh/tools/csv-json">CSV ↔ JSON</a></li><li><a class="dropdown-item" href="/zh/tools/html-entity">HTML 实体编解码</a></li><li><a class="dropdown-item" href="/zh/tools/add-www-to-dns">给域名添加 www DNS</a></li><li><a class="dropdown-item" href="/zh/tools/indexnow">IndexNow</a></li></ul>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/zh/tools/add-www-to-dns">给域名添加 www DNS — 记录生成与各平台教程</a></li><li><a class="dropdown-item" href="/zh/tools/csv-json">CSV ↔ JSON 互转 — 类型、分隔符、本地处理</a></li><li><a class="dropdown-item" href="/zh/tools/html-entity">HTML 实体编解码 — 转义、反转义、本地处理</a></li><li><a class="dropdown-item" href="/zh/tools/indexnow">IndexNow — Bing URL 提交、密钥检查与状态码</a></li><li><a class="dropdown-item" href="/zh/tools/ip-address">IP 地址查询 — 查看我的公网 IP（IPv4/IPv6）</a></li><li><a class="dropdown-item" href="/zh/tools/json-schema-validator">JSON Schema 校验器 — 路径错误与本地处理</a></li><li><a class="dropdown-item" href="/zh/tools/markdown-to-html">Markdown ↔ HTML</a></li><li><a class="dropdown-item" href="/zh/tools/text-diff">在线文本对比 — 文本差异对比工具</a></li><li><a class="dropdown-item" href="/zh/tools/website-headers">在线查看 HTTP 响应头</a></li><li><a class="dropdown-item" href="/zh/tools/yaml-json">YAML ↔ JSON 互转 — 类型规则、多文档、本地处理</a></li></ul>
         </li><li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">计算器</a>
-          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-bmi">如何计算BMI</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-roi">投资回报率（ROI）计算 — 公式与示例</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-marginal-revenue">边际收益计算 — 公式 MR = ΔTR / ΔQ</a></li><li><a class="dropdown-item" href="/zh/tools/square-feet">平方英尺转平方米 — 看房与装修面积换算</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-percentage-change">百分比变化计算 — 旧值到新值的涨跌幅</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-gradient">多元函数梯度计算 — ∇f 偏导向量</a></li></ul>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-bmi">BMI 计算器 — 如何计算身体质量指数</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-gradient">多元函数梯度计算 — ∇f 偏导向量</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-marginal-revenue">边际收益计算 — 公式 MR = ΔTR / ΔQ</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-percentage-change">百分比变化计算 — 旧值到新值的涨跌幅</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-roi">投资回报率（ROI）计算 — 公式与示例</a></li><li><a class="dropdown-item" href="/zh/tools/square-feet">平方英尺转平方米 — 看房与装修面积换算</a></li></ul>
         </li></ul>
           <div class="d-flex align-items-center gap-2">
             
@@ -177,7 +183,7 @@ var _hmt = _hmt || [];
 
   </footer>
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/vendor/bootstrap/bootstrap.bundle.min.js" defer></script>
   
   <script>
     const layout = document.getElementById('layoutRoot');

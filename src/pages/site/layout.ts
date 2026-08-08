@@ -2,19 +2,33 @@ import type { SiteLang } from '../../site/i18n';
 
 const SITE_BASE_URL = 'https://onlinefreetools.org';
 
+/**
+ * Clarity：load 后再空闲注入，避免与首屏同域资源抢连接（外网不可达时也不拖慢页面）。
+ */
 const CLARITY_SCRIPT = `
-<script type="text/javascript">
-(function(c,l,a,r,i,t,y){
-  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-})(window, document, "clarity", "script", "xbc0iytpn7");
+<script>
+(function () {
+  function injectClarity() {
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xbc0iytpn7");
+  }
+  function schedule() {
+    if (typeof requestIdleCallback === 'function') requestIdleCallback(injectClarity, { timeout: 4000 });
+    else setTimeout(injectClarity, 2000);
+  }
+  if (document.readyState === 'complete') schedule();
+  else window.addEventListener('load', schedule, { once: true });
+})();
 </script>`;
 
-const BOOTSTRAP_CSS =
-	'https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css';
-const BOOTSTRAP_JS =
-	'https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js';
+/** 同域 Bootstrap（由 scripts/copy-site-chrome-vendor.mjs 复制）。 */
+const BOOTSTRAP_CSS = '/vendor/bootstrap/bootstrap.min.css';
+const BOOTSTRAP_JS = '/vendor/bootstrap/bootstrap.bundle.min.js';
+/** 同域 Plus Jakarta Sans @font-face。 */
+const FONT_CSS = '/vendor/fonts/plus-jakarta-sans.css';
 
 export const escapeHtml = (s: string) =>
 	s
@@ -143,8 +157,10 @@ export const renderLayout = (opts: {
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link href="${BOOTSTRAP_CSS}" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="preload" href="${BOOTSTRAP_CSS}" as="style" />
+  <link rel="preload" href="${FONT_CSS}" as="style" />
+  <link href="${BOOTSTRAP_CSS}" rel="stylesheet" />
+  <link href="${FONT_CSS}" rel="stylesheet" />
   <link href="/styles/site.css" rel="stylesheet" />
   <style>${sidebarCss}</style>
   ${CLARITY_SCRIPT}
@@ -158,7 +174,7 @@ export const renderLayout = (opts: {
   </div>
   ${opts.footerHtml}
   ${opts.extraBodyHtml || ''}
-  <script src="${BOOTSTRAP_JS}" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="${BOOTSTRAP_JS}" defer></script>
   ${sidebarScript}
 </body>
 </html>`;

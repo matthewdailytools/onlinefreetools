@@ -61,8 +61,10 @@
       } catch (e) {}
     })();
   </script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="preload" href="/vendor/bootstrap/bootstrap.min.css" as="style" />
+  <link rel="preload" href="/vendor/fonts/plus-jakarta-sans.css" as="style" />
+  <link href="/vendor/bootstrap/bootstrap.min.css" rel="stylesheet" />
+  <link href="/vendor/fonts/plus-jakarta-sans.css" rel="stylesheet" />
   <link href="/styles/site.css" rel="stylesheet" />
   <style>
     body { min-height: 100vh; padding-top: var(--header-h, 56px); }
@@ -70,20 +72,24 @@
   </style>
   
 <script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?39f18c089a03779cd05243e21b046589";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
+(function () {
+  function run() {
+    try {
+
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xbc0iytpn7");
+    } catch (e) {}
+  }
+  function schedule() {
+    if (typeof requestIdleCallback === 'function') requestIdleCallback(run, { timeout: 4000 });
+    else setTimeout(run, 2000);
+  }
+  if (document.readyState === 'complete') schedule();
+  else window.addEventListener('load', schedule, { once: true });
 })();
-</script>
-<script type="text/javascript">
-(function(c,l,a,r,i,t,y){
-  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-})(window, document, "clarity", "script", "xbc0iytpn7");
 </script>
   <meta name="google-site-verification" content="DRJRq9AI8KKITkdiZbdd7zu4LxrIc38CPOd9OeK15FM" />
   
@@ -108,7 +114,7 @@ var _hmt = _hmt || [];
           <ul class="dropdown-menu"><li><a class="dropdown-item" href="/zh/tools/add-watermark">图片文字水印 — 浏览器内本地标注</a></li><li><a class="dropdown-item" href="/zh/tools/color-from-image">图片主色提取 — 色板与点击取色</a></li><li><a class="dropdown-item" href="/zh/tools/flip-image">图片翻转 — 水平或垂直镜像</a></li><li><a class="dropdown-item" href="/zh/tools/image-border">图片加边框 — 选颜色与宽度</a></li><li><a class="dropdown-item" href="/zh/tools/image-compress">图片压缩 — 缩小尺寸与文件体积，本地完成</a></li><li><a class="dropdown-item" href="/zh/tools/image-crop">图片裁剪与改尺寸 — 本地完成</a></li><li><a class="dropdown-item" href="/zh/tools/image-exif">图片 EXIF 查看与清除 — GPS、相机信息、本地处理</a></li><li><a class="dropdown-item" href="/zh/tools/image-format-converter">图片格式转换 — PNG JPEG WebP AVIF BMP GIF ICO SVG 本地完成</a></li><li><a class="dropdown-item" href="/zh/tools/image-grayscale">图片转灰度 — 本地黑白转换</a></li><li><a class="dropdown-item" href="/zh/tools/image-merge">多图拼接 — 合成一张拼图，本地完成</a></li><li><a class="dropdown-item" href="/zh/tools/image-optimizer">图片优化 — 更小体积，可调编码器，本地完成</a></li><li><a class="dropdown-item" href="/zh/tools/image-overlay">图片叠加 Logo — 透明定位，本地完成</a></li><li><a class="dropdown-item" href="/zh/tools/image-to-base64">图片与 Base64 互转 — 本地编码解码</a></li><li><a class="dropdown-item" href="/zh/tools/images-to-gif">多图转 GIF — 本地合成短动画</a></li><li><a class="dropdown-item" href="/zh/tools/images-to-pdf">多图转 PDF — 每图一页本地合并</a></li><li><a class="dropdown-item" href="/zh/tools/images-to-ppt">多图转 PPT — 每图一张幻灯片</a></li><li><a class="dropdown-item" href="/zh/tools/images-to-word">多图转 Word — 本地生成 DOCX</a></li></ul>
         </li><li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">开发者工具</a>
-          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/zh/tools/add-www-to-dns">给域名添加 www DNS — 记录生成与各平台教程</a></li><li><a class="dropdown-item" href="/zh/tools/csv-json">CSV ↔ JSON 互转 — 类型、分隔符、本地处理</a></li><li><a class="dropdown-item" href="/zh/tools/html-entity">HTML 实体编解码 — 转义、反转义、本地处理</a></li><li><a class="dropdown-item" href="/zh/tools/indexnow">IndexNow — Bing URL 提交、密钥检查与状态码</a></li><li><a class="dropdown-item" href="/zh/tools/ip-address">IP 地址查询 — 查看我的公网 IP（IPv4/IPv6）</a></li><li><a class="dropdown-item" href="/zh/tools/markdown-to-html">Markdown ↔ HTML</a></li><li><a class="dropdown-item" href="/zh/tools/text-diff">在线文本对比 — 文本差异对比工具</a></li><li><a class="dropdown-item" href="/zh/tools/website-headers">在线查看 HTTP 响应头</a></li><li><a class="dropdown-item" href="/zh/tools/yaml-json">YAML ↔ JSON 互转 — 类型规则、多文档、本地处理</a></li></ul>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/zh/tools/add-www-to-dns">给域名添加 www DNS — 记录生成与各平台教程</a></li><li><a class="dropdown-item" href="/zh/tools/csv-json">CSV ↔ JSON 互转 — 类型、分隔符、本地处理</a></li><li><a class="dropdown-item" href="/zh/tools/html-entity">HTML 实体编解码 — 转义、反转义、本地处理</a></li><li><a class="dropdown-item" href="/zh/tools/indexnow">IndexNow — Bing URL 提交、密钥检查与状态码</a></li><li><a class="dropdown-item" href="/zh/tools/ip-address">IP 地址查询 — 查看我的公网 IP（IPv4/IPv6）</a></li><li><a class="dropdown-item" href="/zh/tools/json-schema-validator">JSON Schema 校验器 — 路径错误与本地处理</a></li><li><a class="dropdown-item" href="/zh/tools/markdown-to-html">Markdown ↔ HTML</a></li><li><a class="dropdown-item" href="/zh/tools/text-diff">在线文本对比 — 文本差异对比工具</a></li><li><a class="dropdown-item" href="/zh/tools/website-headers">在线查看 HTTP 响应头</a></li><li><a class="dropdown-item" href="/zh/tools/yaml-json">YAML ↔ JSON 互转 — 类型规则、多文档、本地处理</a></li></ul>
         </li><li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">计算器</a>
           <ul class="dropdown-menu"><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-bmi">BMI 计算器 — 如何计算身体质量指数</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-gradient">多元函数梯度计算 — ∇f 偏导向量</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-marginal-revenue">边际收益计算 — 公式 MR = ΔTR / ΔQ</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-percentage-change">百分比变化计算 — 旧值到新值的涨跌幅</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-roi">投资回报率（ROI）计算 — 公式与示例</a></li><li><a class="dropdown-item" href="/zh/tools/square-feet">平方英尺转平方米 — 看房与装修面积换算</a></li></ul>
@@ -165,13 +171,13 @@ var _hmt = _hmt || [];
         <h2>推荐</h2>
         <a class="btn btn-sm btn-primary" href="#all-tools">查看全部</a>
       </div>
-      <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
+      <div class="home-card-grid home-card-grid--featured">
         
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/add-watermark.svg" width="36" height="36" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/add-watermark.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
           <h3 class="card-title h5 mb-0">图片文字水印 — 浏览器内本地标注</h3>
         </div>
         <p class="card-text flex-grow-1">本地文字水印：位置、透明度、旋转。</p>
@@ -179,11 +185,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/add-www-to-dns.svg" width="36" height="36" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/add-www-to-dns.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
           <h3 class="card-title h5 mb-0">给域名添加 www DNS — 记录生成与各平台教程</h3>
         </div>
         <p class="card-text flex-grow-1">生成 www 的 A/CNAME 记录，查询现网 DNS，并提供 Cloudflare/Vercel/阿里云等操作步骤。</p>
@@ -191,11 +197,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/color-from-image.svg" width="36" height="36" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/color-from-image.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
           <h3 class="card-title h5 mb-0">图片主色提取 — 色板与点击取色</h3>
         </div>
         <p class="card-text flex-grow-1">本地色板与点击取色：选图提取主色，或点击图片取区域色，复制 HEX/RGB/HSL。</p>
@@ -203,11 +209,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/csv-json.svg" width="36" height="36" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/csv-json.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
           <h3 class="card-title h5 mb-0">CSV ↔ JSON 互转 — 类型、分隔符、本地处理</h3>
         </div>
         <p class="card-text flex-grow-1">浏览器内 CSV 与 JSON 互转：分隔符、表头与类型规则。</p>
@@ -215,11 +221,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/flip-image.svg" width="36" height="36" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/flip-image.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
           <h3 class="card-title h5 mb-0">图片翻转 — 水平或垂直镜像</h3>
         </div>
         <p class="card-text flex-grow-1">本地水平/垂直镜像照片，下载 JPEG/WebP/PNG。</p>
@@ -227,11 +233,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-bmi.svg" width="36" height="36" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-bmi.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
           <h3 class="card-title h5 mb-0">BMI 计算器 — 如何计算身体质量指数</h3>
         </div>
         <p class="card-text flex-grow-1">用成人筛查公式在线计算身体质量指数（BMI）。流程：选择公制或英制单位，输入体重与身高，按公式算出 BMI，再对照偏瘦/正常/超重/肥胖等常见成人分类。示例：70 公斤、175 厘米 → BMI 约 22.9（正常）。本工具仅供学习与筛查参考，不能替代医疗诊断。</p>
@@ -239,11 +245,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-gradient.svg" width="36" height="36" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-gradient.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
           <h3 class="card-title h5 mb-0">多元函数梯度计算 — ∇f 偏导向量</h3>
         </div>
         <p class="card-text flex-grow-1">计算标量场的梯度 ∇f（各偏导数组成的向量）。流程：对每个变量求偏导，组成 ∇f，再代入坐标求值。演示函数 f(x,y)=x²y+3y → ∇f=(2xy, x²+3)；在 (1,2) 得 (4,4)。用于最优化与机器学习梯度下降讲解，非两点斜率工具。</p>
@@ -251,11 +257,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-marginal-revenue.svg" width="36" height="36" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-marginal-revenue.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
           <h3 class="card-title h5 mb-0">边际收益计算 — 公式 MR = ΔTR / ΔQ</h3>
         </div>
         <p class="card-text flex-grow-1">用离散公式 MR = ΔTR / ΔQ 计算边际收益。流程：输入两档产量与总收入，分别求 ΔTR 与 ΔQ 再相除得到结果。示例：销量 10→11，收入 1000→1080 → MR = 80。仅供教学演示，不构成定价、经营或投资建议。适合微观经济作业核对。</p>
@@ -263,11 +269,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-percentage-change.svg" width="36" height="36" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-percentage-change.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
           <h3 class="card-title h5 mb-0">百分比变化计算 — 旧值到新值的涨跌幅</h3>
         </div>
         <p class="card-text flex-grow-1">根据旧值与新值计算涨跌幅。公式：(新值 − 旧值) / 旧值 × 100。流程：输入旧值、新值，求差后除以旧值再×100，显示增减。示例：80→100 = +25%。适合月营收环比、日活、调价；注意不是「百分点」，也不同于 ROI 投资回报率。</p>
@@ -275,11 +281,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-roi.svg" width="36" height="36" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-roi.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
           <h3 class="card-title h5 mb-0">投资回报率（ROI）计算 — 公式与示例</h3>
         </div>
         <p class="card-text flex-grow-1">用公式（收益 − 成本）/ 成本 × 100%，或（最终价值 − 初始投入）/ 初始投入 × 100% 计算简单 ROI。流程：输入成本与最终价值（或净收益），并对照税、费用与时间等假设。示例：投入 1000，收回 1300 → ROI 30%。仅供学习演示，不构成投资建议。</p>
@@ -287,11 +293,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/html-entity.svg" width="36" height="36" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/html-entity.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
           <h3 class="card-title h5 mb-0">HTML 实体编解码 — 转义、反转义、本地处理</h3>
         </div>
         <p class="card-text flex-grow-1">HTML 实体编解码：范围、命名/数字形式、严格解码，全在浏览器本地完成。</p>
@@ -299,11 +305,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/image-border.svg" width="36" height="36" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/image-border.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
           <h3 class="card-title h5 mb-0">图片加边框 — 选颜色与宽度</h3>
         </div>
         <p class="card-text flex-grow-1">本地加彩色外边框并下载。</p>
@@ -311,11 +317,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/image-compress.svg" width="36" height="36" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/image-compress.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
           <h3 class="card-title h5 mb-0">图片压缩 — 缩小尺寸与文件体积，本地完成</h3>
         </div>
         <p class="card-text flex-grow-1">本地按最长边、质量与目标体积压缩，下载 WebP 或 JPEG。</p>
@@ -323,11 +329,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/image-crop.svg" width="36" height="36" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/image-crop.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
           <h3 class="card-title h5 mb-0">图片裁剪与改尺寸 — 本地完成</h3>
         </div>
         <p class="card-text flex-grow-1">本地裁剪，常用比例与输出像素预设。</p>
@@ -335,11 +341,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/image-exif.svg" width="36" height="36" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/image-exif.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
           <h3 class="card-title h5 mb-0">图片 EXIF 查看与清除 — GPS、相机信息、本地处理</h3>
         </div>
         <p class="card-text flex-grow-1">本地查看 GPS/相机元数据，并清除后下载。</p>
@@ -347,11 +353,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/image-format-converter.svg" width="36" height="36" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/image-format-converter.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
           <h3 class="card-title h5 mb-0">图片格式转换 — PNG JPEG WebP AVIF BMP GIF ICO SVG 本地完成</h3>
         </div>
         <p class="card-text flex-grow-1">浏览器内 PNG / JPEG / WebP / AVIF 互转：质量、透明底色与本地处理。</p>
@@ -359,11 +365,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/image-grayscale.svg" width="36" height="36" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/image-grayscale.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
           <h3 class="card-title h5 mb-0">图片转灰度 — 本地黑白转换</h3>
         </div>
         <p class="card-text flex-grow-1">本地按公式转黑白并下载。</p>
@@ -371,11 +377,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/image-merge.svg" width="36" height="36" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/image-merge.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
           <h3 class="card-title h5 mb-0">多图拼接 — 合成一张拼图，本地完成</h3>
         </div>
         <p class="card-text flex-grow-1">本地合成拼图：多张照片拼成一张，横排/竖排/网格、间距与背景，导出 JPEG/WebP/PNG。</p>
@@ -383,11 +389,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/image-optimizer.svg" width="36" height="36" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/image-optimizer.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
           <h3 class="card-title h5 mb-0">图片优化 — 更小体积，可调编码器，本地完成</h3>
         </div>
         <p class="card-text flex-grow-1">本地 MozJPEG / WebP / AVIF / OxiPNG，滑动对照体积与画质。</p>
@@ -395,11 +401,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/image-overlay.svg" width="36" height="36" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/image-overlay.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
           <h3 class="card-title h5 mb-0">图片叠加 Logo — 透明定位，本地完成</h3>
         </div>
         <p class="card-text flex-grow-1">本地把 Logo 或透明 PNG 叠到照片上：透明度、位置、缩放与混合，导出 JPEG/WebP/PNG。</p>
@@ -407,11 +413,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/image-to-base64.svg" width="36" height="36" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/image-to-base64.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
           <h3 class="card-title h5 mb-0">图片与 Base64 互转 — 本地编码解码</h3>
         </div>
         <p class="card-text flex-grow-1">本地图片↔Base64/data URL 互转。</p>
@@ -419,11 +425,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/images-to-gif.svg" width="36" height="36" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/images-to-gif.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
           <h3 class="card-title h5 mb-0">多图转 GIF — 本地合成短动画</h3>
         </div>
         <p class="card-text flex-grow-1">本地多帧合成动画 GIF。</p>
@@ -431,11 +437,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/images-to-pdf.svg" width="36" height="36" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/images-to-pdf.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
           <h3 class="card-title h5 mb-0">多图转 PDF — 每图一页本地合并</h3>
         </div>
         <p class="card-text flex-grow-1">本地多图生成多页 PDF。</p>
@@ -443,11 +449,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/images-to-ppt.svg" width="36" height="36" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/images-to-ppt.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
           <h3 class="card-title h5 mb-0">多图转 PPT — 每图一张幻灯片</h3>
         </div>
         <p class="card-text flex-grow-1">本地多图导出为 PPTX。</p>
@@ -455,11 +461,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/images-to-word.svg" width="36" height="36" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/images-to-word.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
           <h3 class="card-title h5 mb-0">多图转 Word — 本地生成 DOCX</h3>
         </div>
         <p class="card-text flex-grow-1">本地多图导出为 DOCX。</p>
@@ -467,11 +473,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/indexnow.svg" width="36" height="36" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/indexnow.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
           <h3 class="card-title h5 mb-0">IndexNow — Bing URL 提交、密钥检查与状态码</h3>
         </div>
         <p class="card-text flex-grow-1">IndexNow 提交 URL：生成密钥、检查 txt、说明 200/202。</p>
@@ -479,11 +485,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/ip-address.svg" width="36" height="36" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/ip-address.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
           <h3 class="card-title h5 mb-0">IP 地址查询 — 查看我的公网 IP（IPv4/IPv6）</h3>
         </div>
         <p class="card-text flex-grow-1">在线查公网/外网 IP（IPv4 或 IPv6），打开即显；VPN 下为出口地址。</p>
@@ -491,11 +497,23 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/markdown-to-html.svg" width="36" height="36" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/json-schema-validator.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
+          <h3 class="card-title h5 mb-0">JSON Schema 校验器 — 路径错误与本地处理</h3>
+        </div>
+        <p class="card-text flex-grow-1">用 Schema 校验 JSON，定位 JSON Pointer 错误——本地 draft-07。</p>
+        <a href="/zh/tools/json-schema-validator" class="mt-auto btn btn-primary btn-sm">打开</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/markdown-to-html.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
           <h3 class="card-title h5 mb-0">Markdown ↔ HTML</h3>
         </div>
         <p class="card-text flex-grow-1">浏览器内 Markdown 与 HTML 双向转换与预览。</p>
@@ -503,11 +521,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/square-feet.svg" width="36" height="36" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/square-feet.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
           <h3 class="card-title h5 mb-0">平方英尺转平方米 — 看房与装修面积换算</h3>
         </div>
         <p class="card-text flex-grow-1">把房源或图纸上的平方英尺换成平方米（或反过来），方便看房与装修估料。流程：选英尺/米/英寸，输入长×宽，算出面积，再按 1 ft² = 0.09290304 m² 给出平方米。示例：850 平方英尺公寓 ≈ 78.97 m²，便于对照本地挂牌。</p>
@@ -515,11 +533,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/text-diff.svg" width="36" height="36" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/text-diff.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
           <h3 class="card-title h5 mb-0">在线文本对比 — 文本差异对比工具</h3>
         </div>
         <p class="card-text flex-grow-1">按行、按词或按字符对比两段文字的差异。</p>
@@ -527,11 +545,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/website-headers.svg" width="36" height="36" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/website-headers.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
           <h3 class="card-title h5 mb-0">在线查看 HTTP 响应头</h3>
         </div>
         <p class="card-text flex-grow-1">从边缘检查 Cache-Control、CORS 与安全相关响应头。</p>
@@ -539,11 +557,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/yaml-json.svg" width="36" height="36" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/yaml-json.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
           <h3 class="card-title h5 mb-0">YAML ↔ JSON 互转 — 类型规则、多文档、本地处理</h3>
         </div>
         <p class="card-text flex-grow-1">浏览器内 YAML 与 JSON 互转：类型规则与多文档。</p>
@@ -564,13 +582,13 @@ var _hmt = _hmt || [];
         <span class="home-cat-label">图片编辑工具</span>
         <h3>转换、压缩、导出</h3>
         <p class="home-cat-blurb">浏览器本地图片工具 —— 格式转换等，文件不上传。</p>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
+        <div class="home-card-grid">
           
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/add-watermark.svg" width="32" height="32" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/add-watermark.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <h3 class="card-title h6 mb-0">图片文字水印 — 浏览器内本地标注</h3>
         </div>
         <p class="card-text small flex-grow-1">本地文字水印：位置、透明度、旋转。</p>
@@ -578,11 +596,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/color-from-image.svg" width="32" height="32" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/color-from-image.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <h3 class="card-title h6 mb-0">图片主色提取 — 色板与点击取色</h3>
         </div>
         <p class="card-text small flex-grow-1">本地色板与点击取色：选图提取主色，或点击图片取区域色，复制 HEX/RGB/HSL。</p>
@@ -590,11 +608,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/flip-image.svg" width="32" height="32" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/flip-image.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <h3 class="card-title h6 mb-0">图片翻转 — 水平或垂直镜像</h3>
         </div>
         <p class="card-text small flex-grow-1">本地水平/垂直镜像照片，下载 JPEG/WebP/PNG。</p>
@@ -602,11 +620,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/image-border.svg" width="32" height="32" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/image-border.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <h3 class="card-title h6 mb-0">图片加边框 — 选颜色与宽度</h3>
         </div>
         <p class="card-text small flex-grow-1">本地加彩色外边框并下载。</p>
@@ -614,11 +632,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/image-compress.svg" width="32" height="32" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/image-compress.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <h3 class="card-title h6 mb-0">图片压缩 — 缩小尺寸与文件体积，本地完成</h3>
         </div>
         <p class="card-text small flex-grow-1">本地按最长边、质量与目标体积压缩，下载 WebP 或 JPEG。</p>
@@ -626,11 +644,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/image-crop.svg" width="32" height="32" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/image-crop.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <h3 class="card-title h6 mb-0">图片裁剪与改尺寸 — 本地完成</h3>
         </div>
         <p class="card-text small flex-grow-1">本地裁剪，常用比例与输出像素预设。</p>
@@ -638,11 +656,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/image-exif.svg" width="32" height="32" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/image-exif.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <h3 class="card-title h6 mb-0">图片 EXIF 查看与清除 — GPS、相机信息、本地处理</h3>
         </div>
         <p class="card-text small flex-grow-1">本地查看 GPS/相机元数据，并清除后下载。</p>
@@ -650,11 +668,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/image-format-converter.svg" width="32" height="32" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/image-format-converter.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <h3 class="card-title h6 mb-0">图片格式转换 — PNG JPEG WebP AVIF BMP GIF ICO SVG 本地完成</h3>
         </div>
         <p class="card-text small flex-grow-1">浏览器内 PNG / JPEG / WebP / AVIF 互转：质量、透明底色与本地处理。</p>
@@ -662,11 +680,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/image-grayscale.svg" width="32" height="32" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/image-grayscale.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <h3 class="card-title h6 mb-0">图片转灰度 — 本地黑白转换</h3>
         </div>
         <p class="card-text small flex-grow-1">本地按公式转黑白并下载。</p>
@@ -674,11 +692,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/image-merge.svg" width="32" height="32" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/image-merge.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <h3 class="card-title h6 mb-0">多图拼接 — 合成一张拼图，本地完成</h3>
         </div>
         <p class="card-text small flex-grow-1">本地合成拼图：多张照片拼成一张，横排/竖排/网格、间距与背景，导出 JPEG/WebP/PNG。</p>
@@ -686,11 +704,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/image-optimizer.svg" width="32" height="32" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/image-optimizer.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <h3 class="card-title h6 mb-0">图片优化 — 更小体积，可调编码器，本地完成</h3>
         </div>
         <p class="card-text small flex-grow-1">本地 MozJPEG / WebP / AVIF / OxiPNG，滑动对照体积与画质。</p>
@@ -698,11 +716,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/image-overlay.svg" width="32" height="32" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/image-overlay.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <h3 class="card-title h6 mb-0">图片叠加 Logo — 透明定位，本地完成</h3>
         </div>
         <p class="card-text small flex-grow-1">本地把 Logo 或透明 PNG 叠到照片上：透明度、位置、缩放与混合，导出 JPEG/WebP/PNG。</p>
@@ -710,11 +728,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/image-to-base64.svg" width="32" height="32" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/image-to-base64.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <h3 class="card-title h6 mb-0">图片与 Base64 互转 — 本地编码解码</h3>
         </div>
         <p class="card-text small flex-grow-1">本地图片↔Base64/data URL 互转。</p>
@@ -722,11 +740,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/images-to-gif.svg" width="32" height="32" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/images-to-gif.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <h3 class="card-title h6 mb-0">多图转 GIF — 本地合成短动画</h3>
         </div>
         <p class="card-text small flex-grow-1">本地多帧合成动画 GIF。</p>
@@ -734,11 +752,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/images-to-pdf.svg" width="32" height="32" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/images-to-pdf.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <h3 class="card-title h6 mb-0">多图转 PDF — 每图一页本地合并</h3>
         </div>
         <p class="card-text small flex-grow-1">本地多图生成多页 PDF。</p>
@@ -746,11 +764,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/images-to-ppt.svg" width="32" height="32" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/images-to-ppt.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <h3 class="card-title h6 mb-0">多图转 PPT — 每图一张幻灯片</h3>
         </div>
         <p class="card-text small flex-grow-1">本地多图导出为 PPTX。</p>
@@ -758,11 +776,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/images-to-word.svg" width="32" height="32" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/images-to-word.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <h3 class="card-title h6 mb-0">多图转 Word — 本地生成 DOCX</h3>
         </div>
         <p class="card-text small flex-grow-1">本地多图导出为 DOCX。</p>
@@ -776,13 +794,13 @@ var _hmt = _hmt || [];
         <span class="home-cat-label">开发者工具</span>
         <h3>调试、生成、校验</h3>
         <p class="home-cat-blurb">即时开发者工具 —— 无需登录，结果可复制。</p>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
+        <div class="home-card-grid">
           
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/add-www-to-dns.svg" width="32" height="32" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/add-www-to-dns.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <h3 class="card-title h6 mb-0">给域名添加 www DNS — 记录生成与各平台教程</h3>
         </div>
         <p class="card-text small flex-grow-1">生成 www 的 A/CNAME 记录，查询现网 DNS，并提供 Cloudflare/Vercel/阿里云等操作步骤。</p>
@@ -790,11 +808,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/csv-json.svg" width="32" height="32" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/csv-json.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <h3 class="card-title h6 mb-0">CSV ↔ JSON 互转 — 类型、分隔符、本地处理</h3>
         </div>
         <p class="card-text small flex-grow-1">浏览器内 CSV 与 JSON 互转：分隔符、表头与类型规则。</p>
@@ -802,11 +820,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/html-entity.svg" width="32" height="32" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/html-entity.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <h3 class="card-title h6 mb-0">HTML 实体编解码 — 转义、反转义、本地处理</h3>
         </div>
         <p class="card-text small flex-grow-1">HTML 实体编解码：范围、命名/数字形式、严格解码，全在浏览器本地完成。</p>
@@ -814,11 +832,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/indexnow.svg" width="32" height="32" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/indexnow.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <h3 class="card-title h6 mb-0">IndexNow — Bing URL 提交、密钥检查与状态码</h3>
         </div>
         <p class="card-text small flex-grow-1">IndexNow 提交 URL：生成密钥、检查 txt、说明 200/202。</p>
@@ -826,11 +844,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/ip-address.svg" width="32" height="32" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/ip-address.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <h3 class="card-title h6 mb-0">IP 地址查询 — 查看我的公网 IP（IPv4/IPv6）</h3>
         </div>
         <p class="card-text small flex-grow-1">在线查公网/外网 IP（IPv4 或 IPv6），打开即显；VPN 下为出口地址。</p>
@@ -838,11 +856,23 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/markdown-to-html.svg" width="32" height="32" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/json-schema-validator.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <h3 class="card-title h6 mb-0">JSON Schema 校验器 — 路径错误与本地处理</h3>
+        </div>
+        <p class="card-text small flex-grow-1">用 Schema 校验 JSON，定位 JSON Pointer 错误——本地 draft-07。</p>
+        <a href="/zh/tools/json-schema-validator" class="mt-auto btn btn-primary btn-sm">打开</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/markdown-to-html.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <h3 class="card-title h6 mb-0">Markdown ↔ HTML</h3>
         </div>
         <p class="card-text small flex-grow-1">浏览器内 Markdown 与 HTML 双向转换与预览。</p>
@@ -850,11 +880,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/text-diff.svg" width="32" height="32" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/text-diff.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <h3 class="card-title h6 mb-0">在线文本对比 — 文本差异对比工具</h3>
         </div>
         <p class="card-text small flex-grow-1">按行、按词或按字符对比两段文字的差异。</p>
@@ -862,11 +892,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/website-headers.svg" width="32" height="32" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/website-headers.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <h3 class="card-title h6 mb-0">在线查看 HTTP 响应头</h3>
         </div>
         <p class="card-text small flex-grow-1">从边缘检查 Cache-Control、CORS 与安全相关响应头。</p>
@@ -874,11 +904,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/yaml-json.svg" width="32" height="32" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/yaml-json.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <h3 class="card-title h6 mb-0">YAML ↔ JSON 互转 — 类型规则、多文档、本地处理</h3>
         </div>
         <p class="card-text small flex-grow-1">浏览器内 YAML 与 JSON 互转：类型规则与多文档。</p>
@@ -892,13 +922,13 @@ var _hmt = _hmt || [];
         <span class="home-cat-label">计算器</span>
         <h3>公式、单位、How-to</h3>
         <p class="home-cat-blurb">可交互的计算器：公式可见，并附带计算示例。</p>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
+        <div class="home-card-grid">
           
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-bmi.svg" width="32" height="32" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-bmi.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <h3 class="card-title h6 mb-0">BMI 计算器 — 如何计算身体质量指数</h3>
         </div>
         <p class="card-text small flex-grow-1">用成人筛查公式在线计算身体质量指数（BMI）。流程：选择公制或英制单位，输入体重与身高，按公式算出 BMI，再对照偏瘦/正常/超重/肥胖等常见成人分类。示例：70 公斤、175 厘米 → BMI 约 22.9（正常）。本工具仅供学习与筛查参考，不能替代医疗诊断。</p>
@@ -906,11 +936,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-gradient.svg" width="32" height="32" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-gradient.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <h3 class="card-title h6 mb-0">多元函数梯度计算 — ∇f 偏导向量</h3>
         </div>
         <p class="card-text small flex-grow-1">计算标量场的梯度 ∇f（各偏导数组成的向量）。流程：对每个变量求偏导，组成 ∇f，再代入坐标求值。演示函数 f(x,y)=x²y+3y → ∇f=(2xy, x²+3)；在 (1,2) 得 (4,4)。用于最优化与机器学习梯度下降讲解，非两点斜率工具。</p>
@@ -918,11 +948,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-marginal-revenue.svg" width="32" height="32" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-marginal-revenue.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <h3 class="card-title h6 mb-0">边际收益计算 — 公式 MR = ΔTR / ΔQ</h3>
         </div>
         <p class="card-text small flex-grow-1">用离散公式 MR = ΔTR / ΔQ 计算边际收益。流程：输入两档产量与总收入，分别求 ΔTR 与 ΔQ 再相除得到结果。示例：销量 10→11，收入 1000→1080 → MR = 80。仅供教学演示，不构成定价、经营或投资建议。适合微观经济作业核对。</p>
@@ -930,11 +960,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-percentage-change.svg" width="32" height="32" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-percentage-change.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <h3 class="card-title h6 mb-0">百分比变化计算 — 旧值到新值的涨跌幅</h3>
         </div>
         <p class="card-text small flex-grow-1">根据旧值与新值计算涨跌幅。公式：(新值 − 旧值) / 旧值 × 100。流程：输入旧值、新值，求差后除以旧值再×100，显示增减。示例：80→100 = +25%。适合月营收环比、日活、调价；注意不是「百分点」，也不同于 ROI 投资回报率。</p>
@@ -942,11 +972,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-roi.svg" width="32" height="32" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-roi.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <h3 class="card-title h6 mb-0">投资回报率（ROI）计算 — 公式与示例</h3>
         </div>
         <p class="card-text small flex-grow-1">用公式（收益 − 成本）/ 成本 × 100%，或（最终价值 − 初始投入）/ 初始投入 × 100% 计算简单 ROI。流程：输入成本与最终价值（或净收益），并对照税、费用与时间等假设。示例：投入 1000，收回 1300 → ROI 30%。仅供学习演示，不构成投资建议。</p>
@@ -954,11 +984,11 @@ var _hmt = _hmt || [];
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/square-feet.svg" width="32" height="32" alt="" decoding="async" />
+          <img class="tool-card-logo" src="/icons/tools/square-feet.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <h3 class="card-title h6 mb-0">平方英尺转平方米 — 看房与装修面积换算</h3>
         </div>
         <p class="card-text small flex-grow-1">把房源或图纸上的平方英尺换成平方米（或反过来），方便看房与装修估料。流程：选英尺/米/英寸，输入长×宽，算出面积，再按 1 ft² = 0.09290304 m² 给出平方米。示例：850 平方英尺公寓 ≈ 78.97 m²，便于对照本地挂牌。</p>
@@ -991,7 +1021,7 @@ var _hmt = _hmt || [];
 
   </footer>
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/vendor/bootstrap/bootstrap.bundle.min.js" defer></script>
   
   <script>
     const layout = document.getElementById('layoutRoot');

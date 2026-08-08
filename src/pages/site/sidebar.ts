@@ -66,7 +66,7 @@ export const renderSidebar = (opts: { title: string; items: SidebarItem[]; id?: 
 			const currentAttr = i.current ? ' aria-current="page"' : '';
 			const activeClass = i.current ? ' active' : '';
 			const icon = i.logo
-				? `<img class="sidebar-tool-logo" src="${escapeHtml(i.logo)}" width="20" height="20" alt="" decoding="async" />`
+				? `<img class="sidebar-tool-logo" src="${escapeHtml(i.logo)}" width="20" height="20" alt="" decoding="async" loading="lazy" />`
 				: '';
 			return `<a class="list-group-item list-group-item-action${activeClass}" href="${escapeHtml(i.href)}"${currentAttr}>${icon}<span class="sidebar-tool-label">${escapeHtml(i.label)}</span></a>`;
 		})

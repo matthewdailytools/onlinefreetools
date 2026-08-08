@@ -23,11 +23,11 @@ const toolLogoUrl = (tool) =>
  * @param {{title:string,desc:string,href:string,cta:string,logo:string}} opts
  */
 const renderPrimaryCard = ({ title, desc, href, cta, logo }) => `
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="${logo}" width="36" height="36" alt="" decoding="async" />
+          <img class="tool-card-logo" src="${logo}" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
           <h3 class="card-title h5 mb-0">${title}</h3>
         </div>
         <p class="card-text flex-grow-1">${desc}</p>
@@ -41,11 +41,11 @@ const renderPrimaryCard = ({ title, desc, href, cta, logo }) => `
  * @param {{title:string,desc:string,href:string,cta:string,logo:string}} opts
  */
 const renderSecondaryCard = ({ title, desc, href, cta, logo }) => `
-  <div class="col">
+  <div class="home-card-item">
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="${logo}" width="32" height="32" alt="" decoding="async" />
+          <img class="tool-card-logo" src="${logo}" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <h3 class="card-title h6 mb-0">${title}</h3>
         </div>
         <p class="card-text small flex-grow-1">${desc}</p>
@@ -86,7 +86,7 @@ export const renderHomeContent = ({ lang }) => {
         <span class="home-cat-label">${t(lang, meta.labelKey)}</span>
         <h3>${t(lang, meta.descKey)}</h3>
         <p class="home-cat-blurb">${t(lang, meta.blurbKey)}</p>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
+        <div class="home-card-grid">
           ${tools.map((tool) => renderToolCard(lang, tool, openCta, renderSecondaryCard)).join('')}
         </div>
       </div>`;
@@ -125,7 +125,7 @@ export const renderHomeContent = ({ lang }) => {
         <h2>${t(lang, 'home_featured')}</h2>
         <a class="btn btn-sm btn-primary" href="#all-tools">${t(lang, 'home_view_all')}</a>
       </div>
-      <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
+      <div class="home-card-grid home-card-grid--featured">
         ${featured.map((tool) => renderToolCard(lang, tool, openCta, renderPrimaryCard)).join('')}
       </div>
     </section>

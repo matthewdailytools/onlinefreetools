@@ -61,8 +61,10 @@
       } catch (e) {}
     })();
   </script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="preload" href="/vendor/bootstrap/bootstrap.min.css" as="style" />
+  <link rel="preload" href="/vendor/fonts/plus-jakarta-sans.css" as="style" />
+  <link href="/vendor/bootstrap/bootstrap.min.css" rel="stylesheet" />
+  <link href="/vendor/fonts/plus-jakarta-sans.css" rel="stylesheet" />
   <link href="/styles/site.css" rel="stylesheet" />
   <style>
     body { min-height: 100vh; padding-top: var(--header-h, 56px); }
@@ -70,20 +72,24 @@
   </style>
   
 <script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?39f18c089a03779cd05243e21b046589";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
+(function () {
+  function run() {
+    try {
+
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xbc0iytpn7");
+    } catch (e) {}
+  }
+  function schedule() {
+    if (typeof requestIdleCallback === 'function') requestIdleCallback(run, { timeout: 4000 });
+    else setTimeout(run, 2000);
+  }
+  if (document.readyState === 'complete') schedule();
+  else window.addEventListener('load', schedule, { once: true });
 })();
-</script>
-<script type="text/javascript">
-(function(c,l,a,r,i,t,y){
-  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-})(window, document, "clarity", "script", "xbc0iytpn7");
 </script>
   
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Politique de confidentialité","description":"Comment OnlineFreeTools.org traite les données : la plupart des outils s’exécutent dans le navigateur ; les outils edge traitent de courtes requêtes ; analytique et contact confidentialité.","url":"https://onlinefreetools.org/fr/privacy","isPartOf":{"@type":"WebSite","name":"OnlineFreeTools.org","url":"https://onlinefreetools.org"}}</script>
@@ -105,13 +111,13 @@ var _hmt = _hmt || [];
         <div class="collapse navbar-collapse" id="topNav">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="/fr/">Accueil</a></li><li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Outils image</a>
-          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/fr/tools/image-format-converter">Convertir une image</a></li><li><a class="dropdown-item" href="/fr/tools/image-exif">Voir et supprimer EXIF des photos</a></li><li><a class="dropdown-item" href="/fr/tools/image-compress">Compresser une image</a></li><li><a class="dropdown-item" href="/fr/tools/image-optimizer">Optimiser une image</a></li><li><a class="dropdown-item" href="/fr/tools/image-crop">Recadrer et redimensionner</a></li><li><a class="dropdown-item" href="/fr/tools/color-from-image">Extraire couleurs d’une image</a></li><li><a class="dropdown-item" href="/fr/tools/image-merge">Fusionner des images</a></li><li><a class="dropdown-item" href="/fr/tools/image-overlay">Superposer des images</a></li></ul>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/fr/tools/add-watermark">Filigrane texte — dans le navigateur</a></li><li><a class="dropdown-item" href="/fr/tools/color-from-image">Extraire les couleurs — palette et pipette au clic</a></li><li><a class="dropdown-item" href="/fr/tools/flip-image">Retourner une image — miroir H/V</a></li><li><a class="dropdown-item" href="/fr/tools/image-border">Bordure d’image — couleur et épaisseur</a></li><li><a class="dropdown-item" href="/fr/tools/image-compress">Compresser une image — côté max, qualité et taille cible (local)</a></li><li><a class="dropdown-item" href="/fr/tools/image-crop">Recadrer et redimensionner une image — en local</a></li><li><a class="dropdown-item" href="/fr/tools/image-exif">Voir et supprimer l’EXIF des photos — GPS, appareil, en local</a></li><li><a class="dropdown-item" href="/fr/tools/image-format-converter">Convertisseur de formats d'image — PNG JPEG WebP AVIF BMP GIF ICO SVG</a></li><li><a class="dropdown-item" href="/fr/tools/image-grayscale">Niveaux de gris — conversion locale</a></li><li><a class="dropdown-item" href="/fr/tools/image-merge">Fusionner des images — créez un collage en une photo</a></li><li><a class="dropdown-item" href="/fr/tools/image-optimizer">Optimiser une image — WebP, AVIF et MozJPEG en local</a></li><li><a class="dropdown-item" href="/fr/tools/image-overlay">Superposer des images — placez un logo sur une photo</a></li><li><a class="dropdown-item" href="/fr/tools/image-to-base64">Image ↔ Base64 — encoder et décoder</a></li><li><a class="dropdown-item" href="/fr/tools/images-to-gif">Images en GIF — courte animation</a></li><li><a class="dropdown-item" href="/fr/tools/images-to-pdf">Images en PDF — une page par photo</a></li><li><a class="dropdown-item" href="/fr/tools/images-to-ppt">Images vers PowerPoint — une diapo par photo</a></li><li><a class="dropdown-item" href="/fr/tools/images-to-word">Images vers Word — DOCX local</a></li></ul>
         </li><li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Développeur</a>
-          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/fr/tools/website-headers">En-têtes HTTP en ligne</a></li><li><a class="dropdown-item" href="/fr/tools/ip-address">Quelle est mon adresse IP — IP publique (IPv4/IPv6)</a></li><li><a class="dropdown-item" href="/fr/tools/markdown-to-html">Markdown ↔ HTML</a></li><li><a class="dropdown-item" href="/fr/tools/text-diff">Comparer des textes en ligne</a></li><li><a class="dropdown-item" href="/fr/tools/yaml-json">YAML ↔ JSON</a></li><li><a class="dropdown-item" href="/fr/tools/csv-json">CSV ↔ JSON</a></li><li><a class="dropdown-item" href="/fr/tools/html-entity">Entités HTML</a></li><li><a class="dropdown-item" href="/fr/tools/add-www-to-dns">Ajouter WWW au DNS</a></li><li><a class="dropdown-item" href="/fr/tools/indexnow">IndexNow</a></li></ul>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/fr/tools/add-www-to-dns">Ajouter WWW au DNS — A/CNAME et guides</a></li><li><a class="dropdown-item" href="/fr/tools/csv-json">Convertisseur CSV ↔ JSON — types, séparateur, local</a></li><li><a class="dropdown-item" href="/fr/tools/html-entity">Encoder et décoder les entités HTML — local</a></li><li><a class="dropdown-item" href="/fr/tools/indexnow">IndexNow — soumettre des URL à Bing, vérifier la clé et les codes</a></li><li><a class="dropdown-item" href="/fr/tools/ip-address">Quelle est mon adresse IP — IP publique (IPv4/IPv6)</a></li><li><a class="dropdown-item" href="/fr/tools/json-schema-validator">Validateur JSON Schema — Chemins draft-07 et local</a></li><li><a class="dropdown-item" href="/fr/tools/markdown-to-html">Markdown ↔ HTML</a></li><li><a class="dropdown-item" href="/fr/tools/text-diff">Comparer des textes en ligne</a></li><li><a class="dropdown-item" href="/fr/tools/website-headers">En-têtes HTTP en ligne</a></li><li><a class="dropdown-item" href="/fr/tools/yaml-json">YAML vers JSON — et retour YAML (types, multi-doc)</a></li></ul>
         </li><li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Calculateurs</a>
-          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/fr/tools/how-to-calculate-bmi">Calculateur d'IMC — Comment calculer</a></li><li><a class="dropdown-item" href="/fr/tools/how-to-calculate-roi">Calculateur de ROI — Calculer le retour sur investissement</a></li><li><a class="dropdown-item" href="/fr/tools/how-to-calculate-marginal-revenue">Calculateur de revenu marginal — Formule ΔRT / ΔQ</a></li><li><a class="dropdown-item" href="/fr/tools/square-feet">Pieds carrés en m² — Conversion pour logement et rénovation</a></li><li><a class="dropdown-item" href="/fr/tools/how-to-calculate-percentage-change">Calculateur de variation en % — De l’ancienne à la nouvelle valeur</a></li><li><a class="dropdown-item" href="/fr/tools/how-to-calculate-gradient">Calculateur de gradient — ∇f multivariable (dérivées partielles)</a></li></ul>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/fr/tools/how-to-calculate-bmi">Calculateur d'IMC — Comment calculer l'indice de masse corporelle</a></li><li><a class="dropdown-item" href="/fr/tools/how-to-calculate-gradient">Calculateur de gradient — ∇f multivariable (dérivées partielles)</a></li><li><a class="dropdown-item" href="/fr/tools/how-to-calculate-marginal-revenue">Calculateur de revenu marginal — Formule ΔRT / ΔQ</a></li><li><a class="dropdown-item" href="/fr/tools/how-to-calculate-percentage-change">Calculateur de variation en % — De l’ancienne à la nouvelle valeur</a></li><li><a class="dropdown-item" href="/fr/tools/how-to-calculate-roi">Calculateur de ROI — Calculer le retour sur investissement</a></li><li><a class="dropdown-item" href="/fr/tools/square-feet">Pieds carrés en m² — Conversion pour logement et rénovation</a></li></ul>
         </li></ul>
           <div class="d-flex align-items-center gap-2">
             
@@ -147,7 +153,7 @@ var _hmt = _hmt || [];
       </section>
       <section id="analytics" class="mb-4">
         <h2 class="h5">Analytique</h2>
-        <p>Les pages peuvent charger Microsoft Clarity et Baidu Analytics pour le trafic agrégé et l’utilisabilité. Ces tiers peuvent utiliser des cookies selon leurs politiques. Nous ne vendons pas de données personnelles.</p>
+        <p>Les pages peuvent charger Microsoft Clarity (clarity.ms) pour le trafic agrégé et l’utilisabilité. Ce tiers peut utiliser des cookies selon sa politique. Nous ne vendons pas de données personnelles.</p>
       </section>
       <section id="retention" class="mb-4">
         <h2 class="h5">Comptes et conservation</h2>
@@ -178,7 +184,7 @@ var _hmt = _hmt || [];
 
   </footer>
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/vendor/bootstrap/bootstrap.bundle.min.js" defer></script>
   
   <script>
     const layout = document.getElementById('layoutRoot');

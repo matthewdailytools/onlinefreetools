@@ -97,7 +97,8 @@ export const renderImagesToGifPage = (opts: {
     }
     .img-gif-file-name { flex: 1; font-size: .85rem; word-break: break-all; }
     .img-gif-file-actions { display: flex; gap: .25rem; flex-shrink: 0; }
-  </style>`;
+  </style>
+  <link rel="modulepreload" href="/vendor/gifenc/gifenc.esm.js" />`;
 
 	const contentHtml = `
     <div id="converter" class="tool-page-heading mb-3">
@@ -176,8 +177,8 @@ export const renderImagesToGifPage = (opts: {
       var SOFT_EDGE = 8192;
       /** Soft warn when frame count exceeds this. */
       var SOFT_MAX_FRAMES = 50;
-      /** CDN ESM URL for gifenc. */
-      var GIFENC_URL = 'https://cdn.jsdelivr.net/npm/gifenc@1.0.3/+esm';
+      /** Same-origin ESM for gifenc (vendored; avoids jsDelivr latency/blocks on enter). */
+      var GIFENC_URL = '/vendor/gifenc/gifenc.esm.js';
 
       var drop = document.getElementById('imgGifDrop');
       var fileInput = document.getElementById('imgGifFiles');
@@ -228,7 +229,7 @@ export const renderImagesToGifPage = (opts: {
       /** Cached gifenc module promise. */
       var gifencPromise = null;
 
-      /** Lazy-load gifenc ESM from CDN. */
+      /** Lazy-load gifenc ESM from same-origin vendor. */
       function loadGifenc() {
         if (!gifencPromise) {
           gifencPromise = import(GIFENC_URL).catch(function () {
@@ -434,19 +435,21 @@ export const renderImagesToGifPage = (opts: {
           var delay = Math.max(20, Math.min(10000, parseInt(delayEl.value, 10) || 500));
           var loop = Math.max(0, Math.min(65535, parseInt(loopEl.value, 10) || 0));
           var gif = GIFEncoder();
-          if (typeof gif.setRepeat === 'function') gif.setRepeat(loop);
-          else if (typeof gif.setLoop === 'function') gif.setLoop(loop);
-          items.forEach(function (item) {
+          items.forEach(function (item, frameIdx) {
             var canvas = document.createElement('canvas');
             canvas.width = size.w;
             canvas.height = size.h;
-            var ctx = canvas.getContext('2d');
+            var ctx = canvas.getContext('2d', { willReadFrequently: true });
             if (!ctx) throw new Error('encode');
             drawContain(ctx, item.bitmap, size.w, size.h, item.w, item.h);
             var imageData = ctx.getImageData(0, 0, size.w, size.h);
             var palette = quantize(imageData.data, 256);
             var index = applyPalette(imageData.data, palette);
-            gif.writeFrame(index, size.w, size.h, { palette: palette, delay: delay });
+            /** First frame carries Netscape loop count via gifenc writeFrame.repeat. */
+            var opts = frameIdx === 0
+              ? { palette: palette, delay: delay, repeat: loop }
+              : { palette: palette, delay: delay };
+            gif.writeFrame(index, size.w, size.h, opts);
           });
           gif.finish();
           return gif.bytes();
@@ -512,10 +515,11 @@ export const renderImagesToGifPage = (opts: {
        */
       function loadSample() {
         clearAll(false);
+        /** Compact solid frames: enough for demo, cheaper to quantize on enter. */
         var specs = [
-          { w: 400, h: 300, color: '#7c3aed', name: 'frame-1.png' },
-          { w: 400, h: 300, color: '#ea580c', name: 'frame-2.png' },
-          { w: 400, h: 300, color: '#0891b2', name: 'frame-3.png' }
+          { w: 240, h: 180, color: '#7c3aed', name: 'frame-1.png' },
+          { w: 240, h: 180, color: '#ea580c', name: 'frame-2.png' },
+          { w: 240, h: 180, color: '#0891b2', name: 'frame-3.png' }
         ];
         var filePromises = specs.map(function (spec) {
           return new Promise(function (resolve) {
@@ -613,8 +617,20 @@ export const renderImagesToGifPage = (opts: {
       btnSample.addEventListener('click', function () { loadSample(); });
       btnClear.addEventListener('click', function () { clearAll(true); });
 
-      /** On enter: auto-run sample build so preview/download show a real result. */
-      loadSample();
+      /**
+       * On enter: auto-run sample after first paint so HTML/CSS are interactive first.
+       * Encoder loads from same-origin /vendor (not CDN).
+       */
+      function runEnterSample() {
+        loadSample();
+      }
+      if (typeof requestAnimationFrame === 'function') {
+        requestAnimationFrame(function () {
+          setTimeout(runEnterSample, 0);
+        });
+      } else {
+        setTimeout(runEnterSample, 0);
+      }
     })();
   </script>`;
 

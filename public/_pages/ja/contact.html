@@ -61,8 +61,10 @@
       } catch (e) {}
     })();
   </script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="preload" href="/vendor/bootstrap/bootstrap.min.css" as="style" />
+  <link rel="preload" href="/vendor/fonts/plus-jakarta-sans.css" as="style" />
+  <link href="/vendor/bootstrap/bootstrap.min.css" rel="stylesheet" />
+  <link href="/vendor/fonts/plus-jakarta-sans.css" rel="stylesheet" />
   <link href="/styles/site.css" rel="stylesheet" />
   <style>
     body { min-height: 100vh; padding-top: var(--header-h, 56px); }
@@ -70,20 +72,24 @@
   </style>
   
 <script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?39f18c089a03779cd05243e21b046589";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
+(function () {
+  function run() {
+    try {
+
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xbc0iytpn7");
+    } catch (e) {}
+  }
+  function schedule() {
+    if (typeof requestIdleCallback === 'function') requestIdleCallback(run, { timeout: 4000 });
+    else setTimeout(run, 2000);
+  }
+  if (document.readyState === 'complete') schedule();
+  else window.addEventListener('load', schedule, { once: true });
 })();
-</script>
-<script type="text/javascript">
-(function(c,l,a,r,i,t,y){
-  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-})(window, document, "clarity", "script", "xbc0iytpn7");
 </script>
   
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"ContactPage","name":"お問い合わせ","description":"OnlineFreeTools.org へのメール連絡：ツールへのフィードバック、不具合報告、サイトに関する質問。公開アドレスと返信の目安。","url":"https://onlinefreetools.org/ja/contact","isPartOf":{"@type":"WebSite","name":"OnlineFreeTools.org","url":"https://onlinefreetools.org"}}</script>
@@ -105,13 +111,13 @@ var _hmt = _hmt || [];
         <div class="collapse navbar-collapse" id="topNav">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="/ja/">ホーム</a></li><li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">画像ツール</a>
-          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ja/tools/image-format-converter">画像形式変換</a></li><li><a class="dropdown-item" href="/ja/tools/image-exif">写真の EXIF 表示と削除</a></li><li><a class="dropdown-item" href="/ja/tools/image-compress">画像圧縮</a></li><li><a class="dropdown-item" href="/ja/tools/image-optimizer">画像最適化</a></li><li><a class="dropdown-item" href="/ja/tools/image-crop">画像の切り抜きとサイズ変更</a></li><li><a class="dropdown-item" href="/ja/tools/color-from-image">画像からメインカラー抽出</a></li><li><a class="dropdown-item" href="/ja/tools/image-merge">画像を結合</a></li><li><a class="dropdown-item" href="/ja/tools/image-overlay">画像を重ねる</a></li></ul>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ja/tools/add-watermark">文字透かしを追加 — ブラウザ完結</a></li><li><a class="dropdown-item" href="/ja/tools/color-from-image">画像から色を抽出 — パレットとクリック取色</a></li><li><a class="dropdown-item" href="/ja/tools/flip-image">画像を反転 — 左右・上下</a></li><li><a class="dropdown-item" href="/ja/tools/image-border">画像に枠を追加 — 色と幅</a></li><li><a class="dropdown-item" href="/ja/tools/image-compress">画像圧縮 — 長辺・画質・目標サイズ（端末内）</a></li><li><a class="dropdown-item" href="/ja/tools/image-crop">画像の切り抜きとサイズ変更（端末内）</a></li><li><a class="dropdown-item" href="/ja/tools/image-exif">写真の EXIF 表示と削除（GPS・カメラ情報・端末内）</a></li><li><a class="dropdown-item" href="/ja/tools/image-format-converter">画像フォーマット変換 — PNG JPEG WebP AVIF BMP GIF ICO SVG ローカル</a></li><li><a class="dropdown-item" href="/ja/tools/image-grayscale">グレースケール変換 — ローカルで白黒に</a></li><li><a class="dropdown-item" href="/ja/tools/image-merge">画像結合 — 複数写真を1枚のコラージュに</a></li><li><a class="dropdown-item" href="/ja/tools/image-optimizer">画像最適化 — WebP / AVIF / MozJPEG（端末内）</a></li><li><a class="dropdown-item" href="/ja/tools/image-overlay">画像に重ねる — 写真へロゴを配置</a></li><li><a class="dropdown-item" href="/ja/tools/image-to-base64">画像↔Base64 — ブラウザで変換</a></li><li><a class="dropdown-item" href="/ja/tools/images-to-gif">画像からGIF — 短いアニメ</a></li><li><a class="dropdown-item" href="/ja/tools/images-to-pdf">画像をPDFに — 1枚1ページ</a></li><li><a class="dropdown-item" href="/ja/tools/images-to-ppt">画像をPowerPointに — 1枚1スライド</a></li><li><a class="dropdown-item" href="/ja/tools/images-to-word">画像をWordに — ローカルDOCX</a></li></ul>
         </li><li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">開発者</a>
-          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ja/tools/website-headers">HTTPヘッダ確認</a></li><li><a class="dropdown-item" href="/ja/tools/ip-address">自分のIPアドレス確認 — グローバルIP表示（IPv4/IPv6）</a></li><li><a class="dropdown-item" href="/ja/tools/markdown-to-html">Markdown ↔ HTML</a></li><li><a class="dropdown-item" href="/ja/tools/text-diff">テキスト比較</a></li><li><a class="dropdown-item" href="/ja/tools/yaml-json">YAML ↔ JSON</a></li><li><a class="dropdown-item" href="/ja/tools/csv-json">CSV ↔ JSON</a></li><li><a class="dropdown-item" href="/ja/tools/html-entity">HTML エンティティ</a></li><li><a class="dropdown-item" href="/ja/tools/add-www-to-dns">DNS に WWW を追加</a></li><li><a class="dropdown-item" href="/ja/tools/indexnow">IndexNow</a></li></ul>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ja/tools/add-www-to-dns">DNS に WWW を追加 — A/CNAME と各社ガイド</a></li><li><a class="dropdown-item" href="/ja/tools/csv-json">CSV と JSON を相互変換 — 型・区切り文字・ローカル</a></li><li><a class="dropdown-item" href="/ja/tools/html-entity">HTML エンティティ エンコード／デコード — ローカル処理</a></li><li><a class="dropdown-item" href="/ja/tools/indexnow">IndexNow — Bing URL 送信・キー確認・ステータスコード</a></li><li><a class="dropdown-item" href="/ja/tools/ip-address">自分のIPアドレス確認 — グローバルIP表示（IPv4/IPv6）</a></li><li><a class="dropdown-item" href="/ja/tools/json-schema-validator">JSON Schema バリデータ — draft-07 のパス、ローカル</a></li><li><a class="dropdown-item" href="/ja/tools/markdown-to-html">Markdown ↔ HTML</a></li><li><a class="dropdown-item" href="/ja/tools/text-diff">テキスト比較</a></li><li><a class="dropdown-item" href="/ja/tools/website-headers">HTTPヘッダ確認</a></li><li><a class="dropdown-item" href="/ja/tools/yaml-json">YAML と JSON を相互変換（型ルール・複数ドキュメント対応）</a></li></ul>
         </li><li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">計算機</a>
-          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ja/tools/how-to-calculate-bmi">BMI計算ツール</a></li><li><a class="dropdown-item" href="/ja/tools/how-to-calculate-roi">ROI（投資利益率）計算ツール — 計算式と例</a></li><li><a class="dropdown-item" href="/ja/tools/how-to-calculate-marginal-revenue">限界収入の求め方 — MR計算ツール（公式 ΔTR / ΔQ）</a></li><li><a class="dropdown-item" href="/ja/tools/square-feet">平方フィート⇔平方メートル換算 — 物件・リフォーム向け</a></li><li><a class="dropdown-item" href="/ja/tools/how-to-calculate-percentage-change">パーセント変化の計算 — 旧値から新値への増減率</a></li><li><a class="dropdown-item" href="/ja/tools/how-to-calculate-gradient">多変数の勾配 ∇f を計算 — 偏導関数ベクトル</a></li></ul>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ja/tools/how-to-calculate-bmi">BMI計算ツール — 体格指数の求め方</a></li><li><a class="dropdown-item" href="/ja/tools/how-to-calculate-gradient">多変数の勾配 ∇f を計算 — 偏導関数ベクトル</a></li><li><a class="dropdown-item" href="/ja/tools/how-to-calculate-marginal-revenue">限界収入の求め方 — MR計算ツール（公式 ΔTR / ΔQ）</a></li><li><a class="dropdown-item" href="/ja/tools/how-to-calculate-percentage-change">パーセント変化の計算 — 旧値から新値への増減率</a></li><li><a class="dropdown-item" href="/ja/tools/how-to-calculate-roi">ROI（投資利益率）計算ツール — 計算式と例</a></li><li><a class="dropdown-item" href="/ja/tools/square-feet">平方フィート⇔平方メートル換算 — 物件・リフォーム向け</a></li></ul>
         </li></ul>
           <div class="d-flex align-items-center gap-2">
             
@@ -170,7 +176,7 @@ var _hmt = _hmt || [];
 
   </footer>
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/vendor/bootstrap/bootstrap.bundle.min.js" defer></script>
   
   <script>
     const layout = document.getElementById('layoutRoot');
