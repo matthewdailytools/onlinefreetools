@@ -18,13 +18,14 @@
     "vendor:image-optimizer": "node scripts/copy-image-optimizer-vendor.mjs",
     "vendor:site-chrome": "node scripts/copy-site-chrome-vendor.mjs",
     "lint:seo": "node scripts/validate-tool-seo.mjs",
+    "lint:vendor": "node scripts/validate-vendor-tracked.mjs",
     "lint:tool-isolation": "node scripts/check-tool-isolation.mjs",
     "indexnow": "node ops/seo/submit-indexnow.mjs",
     "indexnow:sitemap": "node ops/seo/submit-indexnow.mjs --sitemap",
     "indexnow:remote-sitemap": "node ops/seo/submit-indexnow.mjs --remote-sitemap",
     "indexnow:check": "node ops/seo/submit-indexnow.mjs --check-key",
     "indexnow:help": "node ops/seo/submit-indexnow.mjs --help",
-    "predeploy": "npm run build:site && npm run lint:seo"
+    "predeploy": "npm run build:site && npm run lint:seo && npm run lint:vendor"
   },
   "dependencies": {
     "@fontsource/plus-jakarta-sans": "^5.3.0",

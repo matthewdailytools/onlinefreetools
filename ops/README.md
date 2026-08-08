@@ -181,19 +181,22 @@ npm run indexnow -- --help
 npm run deploy
 ```
 
-等价于 `predeploy` 钩子自动执行 `build:site` + `lint:seo` 后 `wrangler deploy`。
+等价于 `predeploy` 钩子自动执行 `build:site` + `lint:seo` + `lint:vendor` 后 `wrangler deploy`。
+
+**Git 自动部署（Cloudflare 拉 GitHub）**：远端通常**不跑**本地 `predeploy`。`public/vendor/`（Bootstrap、字体、jsquash、gifenc、wasm-feature-detect）必须已提交；勿再写入 `.gitignore`。升级相关 npm 包后执行 `npm run vendor:site-chrome` / `npm run vendor:image-optimizer`（或 `build:site`），再 `git add public/vendor && commit`。门禁：`npm run lint:vendor`。
 
 **手动分步**：
 
 ```bash
 npm run build:site
 npm run lint:seo
+npm run lint:vendor
 npx wrangler deploy
 ```
 
 **部署后建议**：
 
-1. 打开生产首页与 1–2 个工具页抽检
+1. 打开生产首页与 1–2 个工具页抽检；确认 `/vendor/bootstrap/bootstrap.min.css` 与 `/vendor/fonts/plus-jakarta-sans.css` 为 **200**
 2. Google Search Console 确认 `https://onlinefreetools.org/sitemap.xml` 可访问（sitemap **不含** devlogs）
 3. 新工具确认各语言 URL 与 hreflang
 4. 确认 IndexNow key 可访问：`https://onlinefreetools.org/{key}.txt`，然后 `npm run indexnow`

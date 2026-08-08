@@ -13,3 +13,5 @@ Same-origin copies used by the site chrome and image tools:
 Also runs at the start of `npm run build:site` / `predeploy`.
 
 **Tracked in git** so Cloudflare Git-connected deploys ship these assets without relying on a remote build step. After upgrading `bootstrap` / `@fontsource/plus-jakarta-sans` / `@jsquash/*` / `gifenc` / `wasm-feature-detect`, re-run the vendor scripts and commit the refreshed files.
+
+Do **not** add `public/vendor/*` back to `.gitignore`. Gate: `npm run lint:vendor` (also in `predeploy`).

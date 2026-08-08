@@ -1,6 +1,6 @@
 ---
-description: Cloudflare Workers/Pages 本地开发与部署命令
-globs: wrangler.toml,src/index.ts,package.json
+description: Cloudflare Workers/Pages 本地开发与部署命令；Git 自动部署须入库 public/vendor
+globs: wrangler.toml,wrangler.jsonc,src/index.ts,package.json,.gitignore,public/vendor/**/*
 alwaysApply: false
 ---
 
@@ -37,15 +37,18 @@ wrangler deploy    # 部署
 - 入口由根目录 `wrangler.jsonc` 的 `main` 指定（当前 `src/index.ts`）。
 - 多环境可在 `wrangler.jsonc` 增加 `[env.*]` 区分 staging/prod。
 
-## Pages
+## Pages / Git 自动部署
 
 - 静态资源在 `public/`；构建产物由 `npm run build:site` 生成。
-- Pages 设置中配置 build command 与 output 目录（若用框架则遵循框架约定）。
+- **生产当前多为 Cloudflare 拉 GitHub**：远端**不会**跑本地 `predeploy`。凡页面引用的 `/vendor/*` 必须**已提交进仓库**，否则线上 404（曾导致全站 Bootstrap 样式错位）。
+- `public/vendor/`（bootstrap、fonts、jsquash、gifenc、wasm-feature-detect）**禁止再写入 `.gitignore`**；由 `vendor:site-chrome` / `vendor:image-optimizer`（含在 `build:site`）生成后 **commit**。
+- 发版前跑 `npm run lint:vendor`（`predeploy` 已包含）：校验关键路径落盘、被 git 跟踪、且未被 ignore。
+- 若 CF 控制台配置了 Build command，可用 `npm ci && npm run build:site` 作双保险，但仍以「vendor 入库」为准。
 
 ## 发版前
 
 ```bash
-npm run build:site && npm run lint:seo
+npm run build:site && npm run lint:seo && npm run lint:vendor
 ```
 
-确保 sitemap、静态页与 SEO 校验通过后再部署。新工具另须满足 `tool-creation.mdc` 中的 IG Checklist。
+确保 sitemap、静态页、SEO 与 vendor 门禁通过后再部署。新工具另须满足 `tool-creation.mdc` 中的 IG Checklist。
