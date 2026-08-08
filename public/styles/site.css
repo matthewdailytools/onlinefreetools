@@ -399,8 +399,7 @@ body.is-tool-page .tool-lead {
   color: var(--accent-hover) !important;
 }
 
-.btn-lg,
-.home-hero-actions .btn {
+.btn-lg {
   padding: 0.75rem 1.45rem;
   font-size: 1.02rem;
 }
@@ -553,17 +552,21 @@ footer.bg-light {
   animation: homeFadeUp 0.75s 0.12s ease both;
 }
 
-.home-hero-actions .btn {
+/** Hero CTA：深色背景上的同款白底实心按钮（不用 .btn-primary，避免被全站青绿主色覆盖） */
+.home-hero-btn {
   background: #ffffff !important;
-  border-color: #ffffff !important;
+  border: 1px solid #ffffff !important;
   color: var(--bg-hero) !important;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
-.home-hero-actions .btn:hover,
-.home-hero-actions .btn:focus {
+.home-hero-btn:hover,
+.home-hero-btn:focus,
+.home-hero-btn:focus-visible,
+.home-hero-btn:active {
   background: #f0f0f5 !important;
   border-color: #f0f0f5 !important;
   color: var(--bg-hero) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
 }
 
 .home-main {

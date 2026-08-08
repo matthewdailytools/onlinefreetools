@@ -98,8 +98,8 @@ export const renderHomeContent = ({ lang }) => {
       <div class="home-hero-inner">
         <h1 class="home-hero-brand" id="home-hero-heading">${t(lang, 'brand')}</h1>
         <div class="home-hero-actions">
-          <a class="btn btn-primary btn-lg" href="#all-tools">${t(lang, 'home_cta_browse')}</a>
-          <a class="btn btn-primary btn-lg" href="#featured">${t(lang, 'home_cta_featured')}</a>
+          <a class="btn btn-lg home-hero-btn" href="#all-tools">${t(lang, 'home_cta_browse')}</a>
+          <a class="btn btn-lg home-hero-btn" href="#featured">${t(lang, 'home_cta_featured')}</a>
         </div>
       </div>
     </section>
