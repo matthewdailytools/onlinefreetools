@@ -107,7 +107,8 @@ out
 # Nuxt.js build / generate output
 
 .nuxt
-dist
+# 仅忽略仓库根目录 dist；勿匹配 public/vendor/**/dist（运行时 ESM 需要）
+/dist
 
 # Gatsby files
 
