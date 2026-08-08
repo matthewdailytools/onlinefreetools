@@ -17,5 +17,6 @@
     "module": "../pages/wcagContrastCheckerPage",
     "export": "renderWcagContrastCheckerPage",
     "style": "opts"
-  }
+  },
+  "localProcessing": true
 }

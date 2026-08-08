@@ -18,6 +18,11 @@ export type ToolPageMeta = {
 	featured?: boolean;
 	/** 是否属于 YMYL（需免责与出处） */
 	ymyl?: boolean;
+	/**
+	 * 是否纯本地处理用户内容（首页卡片显示「不上传」标签）。
+	 * 缺省视为 true；边缘请求类工具须显式 false（如 website-headers / ip-address / indexnow）。
+	 */
+	localProcessing?: boolean;
 	/** 运行时 i18n 标题 key */
 	i18nKey: string;
 	/** 构建侧首页标题 key */

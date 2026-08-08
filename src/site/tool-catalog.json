@@ -14,7 +14,8 @@
       "image-exif",
       "image-border"
     ],
-    "logo": "/icons/tools/add-watermark.svg"
+    "logo": "/icons/tools/add-watermark.svg",
+    "localProcessing": true
   },
   {
     "slug": "add-www-to-dns",
@@ -31,7 +32,8 @@
       "ip-address",
       "indexnow"
     ],
-    "logo": "/icons/tools/add-www-to-dns.svg"
+    "logo": "/icons/tools/add-www-to-dns.svg",
+    "localProcessing": true
   },
   {
     "slug": "base64",
@@ -48,7 +50,8 @@
       "jwt-decoder",
       "html-entity"
     ],
-    "logo": "/icons/tools/base64.svg"
+    "logo": "/icons/tools/base64.svg",
+    "localProcessing": true
   },
   {
     "slug": "brand-color-token-pack",
@@ -64,7 +67,8 @@
       "smart-website-color-scheme",
       "wcag-contrast-checker"
     ],
-    "logo": "/icons/tools/brand-color-token-pack.svg"
+    "logo": "/icons/tools/brand-color-token-pack.svg",
+    "localProcessing": true
   },
   {
     "slug": "brand-style-guide",
@@ -81,7 +85,8 @@
       "smart-website-color-scheme",
       "wcag-contrast-checker"
     ],
-    "logo": "/icons/tools/brand-style-guide.svg"
+    "logo": "/icons/tools/brand-style-guide.svg",
+    "localProcessing": true
   },
   {
     "slug": "color-from-image",
@@ -97,7 +102,42 @@
       "brand-color-token-pack",
       "wcag-contrast-checker"
     ],
-    "logo": "/icons/tools/color-from-image.svg"
+    "logo": "/icons/tools/color-from-image.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "compress-pdf",
+    "path": "/tools/compress-pdf",
+    "category": "pdf",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_compress_pdf_title",
+    "homeTitleKey": "tool_compress_pdf_title",
+    "homeDescKey": "tool_compress_pdf_desc",
+    "faqPrefix": "tool_compress_pdf",
+    "related": [
+      "organize-pdf",
+      "merge-pdf"
+    ],
+    "logo": "/icons/tools/compress-pdf.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "crop-pdf",
+    "path": "/tools/crop-pdf",
+    "category": "pdf",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_crop_pdf_title",
+    "homeTitleKey": "tool_crop_pdf_title",
+    "homeDescKey": "tool_crop_pdf_desc",
+    "faqPrefix": "tool_crop_pdf",
+    "related": [
+      "organize-pdf",
+      "rotate-pdf"
+    ],
+    "logo": "/icons/tools/crop-pdf.svg",
+    "localProcessing": true
   },
   {
     "slug": "csv-json",
@@ -114,7 +154,26 @@
       "text-diff",
       "json-schema-validator"
     ],
-    "logo": "/icons/tools/csv-json.svg"
+    "logo": "/icons/tools/csv-json.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "domain-lookup",
+    "path": "/tools/domain-lookup",
+    "category": "developer",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_domain_lookup_title",
+    "homeTitleKey": "tool_domain_lookup_title",
+    "homeDescKey": "tool_domain_lookup_desc",
+    "faqPrefix": "tool_domain_lookup",
+    "related": [
+      "add-www-to-dns",
+      "website-headers",
+      "ip-address"
+    ],
+    "logo": "/icons/tools/domain-lookup.svg",
+    "localProcessing": false
   },
   {
     "slug": "file-hash",
@@ -130,7 +189,8 @@
       "base64",
       "text-diff"
     ],
-    "logo": "/icons/tools/file-hash.svg"
+    "logo": "/icons/tools/file-hash.svg",
+    "localProcessing": true
   },
   {
     "slug": "flip-image",
@@ -147,7 +207,8 @@
       "image-border",
       "image-crop"
     ],
-    "logo": "/icons/tools/flip-image.svg"
+    "logo": "/icons/tools/flip-image.svg",
+    "localProcessing": true
   },
   {
     "slug": "how-to-calculate-bmi",
@@ -163,7 +224,8 @@
       "how-to-calculate-percentage-change",
       "square-feet"
     ],
-    "logo": "/icons/tools/how-to-calculate-bmi.svg"
+    "logo": "/icons/tools/how-to-calculate-bmi.svg",
+    "localProcessing": true
   },
   {
     "slug": "how-to-calculate-gradient",
@@ -179,7 +241,8 @@
       "how-to-calculate-percentage-change",
       "how-to-calculate-roi"
     ],
-    "logo": "/icons/tools/how-to-calculate-gradient.svg"
+    "logo": "/icons/tools/how-to-calculate-gradient.svg",
+    "localProcessing": true
   },
   {
     "slug": "how-to-calculate-marginal-revenue",
@@ -195,7 +258,8 @@
       "how-to-calculate-roi",
       "how-to-calculate-percentage-change"
     ],
-    "logo": "/icons/tools/how-to-calculate-marginal-revenue.svg"
+    "logo": "/icons/tools/how-to-calculate-marginal-revenue.svg",
+    "localProcessing": true
   },
   {
     "slug": "how-to-calculate-percentage-change",
@@ -211,7 +275,8 @@
       "how-to-calculate-roi",
       "how-to-calculate-marginal-revenue"
     ],
-    "logo": "/icons/tools/how-to-calculate-percentage-change.svg"
+    "logo": "/icons/tools/how-to-calculate-percentage-change.svg",
+    "localProcessing": true
   },
   {
     "slug": "how-to-calculate-roi",
@@ -227,7 +292,8 @@
       "how-to-calculate-marginal-revenue",
       "how-to-calculate-percentage-change"
     ],
-    "logo": "/icons/tools/how-to-calculate-roi.svg"
+    "logo": "/icons/tools/how-to-calculate-roi.svg",
+    "localProcessing": true
   },
   {
     "slug": "html-entity",
@@ -243,7 +309,8 @@
       "markdown-to-html",
       "text-diff"
     ],
-    "logo": "/icons/tools/html-entity.svg"
+    "logo": "/icons/tools/html-entity.svg",
+    "localProcessing": true
   },
   {
     "slug": "image-border",
@@ -260,7 +327,8 @@
       "flip-image",
       "add-watermark"
     ],
-    "logo": "/icons/tools/image-border.svg"
+    "logo": "/icons/tools/image-border.svg",
+    "localProcessing": true
   },
   {
     "slug": "image-compress",
@@ -277,7 +345,8 @@
       "image-crop",
       "image-optimizer"
     ],
-    "logo": "/icons/tools/image-compress.svg"
+    "logo": "/icons/tools/image-compress.svg",
+    "localProcessing": true
   },
   {
     "slug": "image-crop",
@@ -294,7 +363,8 @@
       "image-format-converter",
       "image-optimizer"
     ],
-    "logo": "/icons/tools/image-crop.svg"
+    "logo": "/icons/tools/image-crop.svg",
+    "localProcessing": true
   },
   {
     "slug": "image-exif",
@@ -311,7 +381,8 @@
       "image-compress",
       "image-optimizer"
     ],
-    "logo": "/icons/tools/image-exif.svg"
+    "logo": "/icons/tools/image-exif.svg",
+    "localProcessing": true
   },
   {
     "slug": "image-format-converter",
@@ -329,7 +400,8 @@
       "image-crop",
       "image-optimizer"
     ],
-    "logo": "/icons/tools/image-format-converter.svg"
+    "logo": "/icons/tools/image-format-converter.svg",
+    "localProcessing": true
   },
   {
     "slug": "image-grayscale",
@@ -346,7 +418,8 @@
       "image-border",
       "image-crop"
     ],
-    "logo": "/icons/tools/image-grayscale.svg"
+    "logo": "/icons/tools/image-grayscale.svg",
+    "localProcessing": true
   },
   {
     "slug": "image-merge",
@@ -365,7 +438,8 @@
       "images-to-pdf",
       "images-to-gif"
     ],
-    "logo": "/icons/tools/image-merge.svg"
+    "logo": "/icons/tools/image-merge.svg",
+    "localProcessing": true
   },
   {
     "slug": "image-optimizer",
@@ -382,7 +456,8 @@
       "image-format-converter",
       "image-exif"
     ],
-    "logo": "/icons/tools/image-optimizer.svg"
+    "logo": "/icons/tools/image-optimizer.svg",
+    "localProcessing": true
   },
   {
     "slug": "image-overlay",
@@ -399,7 +474,8 @@
       "add-watermark",
       "image-crop"
     ],
-    "logo": "/icons/tools/image-overlay.svg"
+    "logo": "/icons/tools/image-overlay.svg",
+    "localProcessing": true
   },
   {
     "slug": "image-to-base64",
@@ -415,7 +491,8 @@
       "image-format-converter",
       "image-compress"
     ],
-    "logo": "/icons/tools/image-to-base64.svg"
+    "logo": "/icons/tools/image-to-base64.svg",
+    "localProcessing": true
   },
   {
     "slug": "images-to-gif",
@@ -432,7 +509,8 @@
       "image-merge",
       "image-format-converter"
     ],
-    "logo": "/icons/tools/images-to-gif.svg"
+    "logo": "/icons/tools/images-to-gif.svg",
+    "localProcessing": true
   },
   {
     "slug": "images-to-pdf",
@@ -450,7 +528,8 @@
       "images-to-ppt",
       "images-to-gif"
     ],
-    "logo": "/icons/tools/images-to-pdf.svg"
+    "logo": "/icons/tools/images-to-pdf.svg",
+    "localProcessing": true
   },
   {
     "slug": "images-to-ppt",
@@ -467,7 +546,8 @@
       "images-to-word",
       "image-merge"
     ],
-    "logo": "/icons/tools/images-to-ppt.svg"
+    "logo": "/icons/tools/images-to-ppt.svg",
+    "localProcessing": true
   },
   {
     "slug": "images-to-word",
@@ -484,7 +564,8 @@
       "images-to-ppt",
       "image-merge"
     ],
-    "logo": "/icons/tools/images-to-word.svg"
+    "logo": "/icons/tools/images-to-word.svg",
+    "localProcessing": true
   },
   {
     "slug": "indexnow",
@@ -500,7 +581,8 @@
       "website-headers",
       "add-www-to-dns"
     ],
-    "logo": "/icons/tools/indexnow.svg"
+    "logo": "/icons/tools/indexnow.svg",
+    "localProcessing": false
   },
   {
     "slug": "ip-address",
@@ -517,7 +599,8 @@
       "add-www-to-dns",
       "markdown-to-html"
     ],
-    "logo": "/icons/tools/ip-address.svg"
+    "logo": "/icons/tools/ip-address.svg",
+    "localProcessing": false
   },
   {
     "slug": "json-schema-validator",
@@ -533,7 +616,8 @@
       "yaml-json",
       "csv-json"
     ],
-    "logo": "/icons/tools/json-schema-validator.svg"
+    "logo": "/icons/tools/json-schema-validator.svg",
+    "localProcessing": true
   },
   {
     "slug": "jwt-decoder",
@@ -549,7 +633,8 @@
       "base64",
       "unix-timestamp"
     ],
-    "logo": "/icons/tools/jwt-decoder.svg"
+    "logo": "/icons/tools/jwt-decoder.svg",
+    "localProcessing": true
   },
   {
     "slug": "markdown-to-html",
@@ -567,7 +652,8 @@
       "html-entity",
       "website-headers"
     ],
-    "logo": "/icons/tools/markdown-to-html.svg"
+    "logo": "/icons/tools/markdown-to-html.svg",
+    "localProcessing": true
   },
   {
     "slug": "merge-pdf",
@@ -581,9 +667,28 @@
     "faqPrefix": "tool_merge_pdf",
     "related": [
       "split-pdf",
+      "organize-pdf",
       "images-to-pdf"
     ],
-    "logo": "/icons/tools/merge-pdf.svg"
+    "logo": "/icons/tools/merge-pdf.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "organize-pdf",
+    "path": "/tools/organize-pdf",
+    "category": "pdf",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_organize_pdf_title",
+    "homeTitleKey": "tool_organize_pdf_title",
+    "homeDescKey": "tool_organize_pdf_desc",
+    "faqPrefix": "tool_organize_pdf",
+    "related": [
+      "merge-pdf",
+      "split-pdf"
+    ],
+    "logo": "/icons/tools/organize-pdf.svg",
+    "localProcessing": true
   },
   {
     "slug": "password-generator",
@@ -599,7 +704,127 @@
       "uuid-generator",
       "file-hash"
     ],
-    "logo": "/icons/tools/password-generator.svg"
+    "logo": "/icons/tools/password-generator.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "pdf-page-numbers",
+    "path": "/tools/pdf-page-numbers",
+    "category": "pdf",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_pdf_page_numbers_title",
+    "homeTitleKey": "tool_pdf_page_numbers_title",
+    "homeDescKey": "tool_pdf_page_numbers_desc",
+    "faqPrefix": "tool_pdf_page_numbers",
+    "related": [
+      "pdf-watermark",
+      "organize-pdf"
+    ],
+    "logo": "/icons/tools/pdf-page-numbers.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "pdf-page-to-image-sizes",
+    "path": "/tools/pdf-page-to-image-sizes",
+    "category": "image",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_pdf_page_to_image_sizes_title",
+    "homeTitleKey": "tool_pdf_page_to_image_sizes_title",
+    "homeDescKey": "tool_pdf_page_to_image_sizes_desc",
+    "faqPrefix": "tool_pdf_page_to_image_sizes",
+    "related": [
+      "pdf-to-jpg",
+      "images-to-pdf"
+    ],
+    "logo": "/icons/tools/pdf-page-to-image-sizes.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "pdf-to-jpg",
+    "path": "/tools/pdf-to-jpg",
+    "category": "image",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_pdf_to_jpg_title",
+    "homeTitleKey": "tool_pdf_to_jpg_title",
+    "homeDescKey": "tool_pdf_to_jpg_desc",
+    "faqPrefix": "tool_pdf_to_jpg",
+    "related": [
+      "images-to-pdf",
+      "image-format-converter"
+    ],
+    "logo": "/icons/tools/pdf-to-jpg.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "pdf-to-markdown",
+    "path": "/tools/pdf-to-markdown",
+    "category": "pdf",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_pdf_to_markdown_title",
+    "homeTitleKey": "tool_pdf_to_markdown_title",
+    "homeDescKey": "tool_pdf_to_markdown_desc",
+    "faqPrefix": "tool_pdf_to_markdown",
+    "related": [
+      "markdown-to-html",
+      "pdf-to-jpg"
+    ],
+    "logo": "/icons/tools/pdf-to-markdown.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "pdf-watermark",
+    "path": "/tools/pdf-watermark",
+    "category": "pdf",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_pdf_watermark_title",
+    "homeTitleKey": "tool_pdf_watermark_title",
+    "homeDescKey": "tool_pdf_watermark_desc",
+    "faqPrefix": "tool_pdf_watermark",
+    "related": [
+      "add-watermark",
+      "pdf-page-numbers"
+    ],
+    "logo": "/icons/tools/pdf-watermark.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "protect-pdf",
+    "path": "/tools/protect-pdf",
+    "category": "pdf",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_protect_pdf_title",
+    "homeTitleKey": "tool_protect_pdf_title",
+    "homeDescKey": "tool_protect_pdf_desc",
+    "faqPrefix": "tool_protect_pdf",
+    "related": [
+      "unlock-pdf",
+      "merge-pdf"
+    ],
+    "logo": "/icons/tools/protect-pdf.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "rotate-pdf",
+    "path": "/tools/rotate-pdf",
+    "category": "pdf",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_rotate_pdf_title",
+    "homeTitleKey": "tool_rotate_pdf_title",
+    "homeDescKey": "tool_rotate_pdf_desc",
+    "faqPrefix": "tool_rotate_pdf",
+    "related": [
+      "organize-pdf",
+      "split-pdf"
+    ],
+    "logo": "/icons/tools/rotate-pdf.svg",
+    "localProcessing": true
   },
   {
     "slug": "smart-website-color-scheme",
@@ -615,7 +840,8 @@
       "brand-color-token-pack",
       "wcag-contrast-checker"
     ],
-    "logo": "/icons/tools/smart-website-color-scheme.svg"
+    "logo": "/icons/tools/smart-website-color-scheme.svg",
+    "localProcessing": true
   },
   {
     "slug": "split-pdf",
@@ -629,9 +855,11 @@
     "faqPrefix": "tool_split_pdf",
     "related": [
       "merge-pdf",
+      "organize-pdf",
       "images-to-pdf"
     ],
-    "logo": "/icons/tools/split-pdf.svg"
+    "logo": "/icons/tools/split-pdf.svg",
+    "localProcessing": true
   },
   {
     "slug": "square-feet",
@@ -647,7 +875,8 @@
       "how-to-calculate-percentage-change",
       "how-to-calculate-bmi"
     ],
-    "logo": "/icons/tools/square-feet.svg"
+    "logo": "/icons/tools/square-feet.svg",
+    "localProcessing": true
   },
   {
     "slug": "text-diff",
@@ -665,7 +894,8 @@
       "html-entity",
       "website-headers"
     ],
-    "logo": "/icons/tools/text-diff.svg"
+    "logo": "/icons/tools/text-diff.svg",
+    "localProcessing": true
   },
   {
     "slug": "timezone-converter",
@@ -681,7 +911,8 @@
       "unix-timestamp",
       "ip-address"
     ],
-    "logo": "/icons/tools/timezone-converter.svg"
+    "logo": "/icons/tools/timezone-converter.svg",
+    "localProcessing": true
   },
   {
     "slug": "unix-timestamp",
@@ -697,7 +928,25 @@
       "timezone-converter",
       "jwt-decoder"
     ],
-    "logo": "/icons/tools/unix-timestamp.svg"
+    "logo": "/icons/tools/unix-timestamp.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "unlock-pdf",
+    "path": "/tools/unlock-pdf",
+    "category": "pdf",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_unlock_pdf_title",
+    "homeTitleKey": "tool_unlock_pdf_title",
+    "homeDescKey": "tool_unlock_pdf_desc",
+    "faqPrefix": "tool_unlock_pdf",
+    "related": [
+      "protect-pdf",
+      "merge-pdf"
+    ],
+    "logo": "/icons/tools/unlock-pdf.svg",
+    "localProcessing": true
   },
   {
     "slug": "uuid-generator",
@@ -713,7 +962,8 @@
       "password-generator",
       "file-hash"
     ],
-    "logo": "/icons/tools/uuid-generator.svg"
+    "logo": "/icons/tools/uuid-generator.svg",
+    "localProcessing": true
   },
   {
     "slug": "wcag-contrast-checker",
@@ -729,7 +979,8 @@
       "smart-website-color-scheme",
       "brand-color-token-pack"
     ],
-    "logo": "/icons/tools/wcag-contrast-checker.svg"
+    "logo": "/icons/tools/wcag-contrast-checker.svg",
+    "localProcessing": true
   },
   {
     "slug": "website-headers",
@@ -748,7 +999,8 @@
       "markdown-to-html",
       "text-diff"
     ],
-    "logo": "/icons/tools/website-headers.svg"
+    "logo": "/icons/tools/website-headers.svg",
+    "localProcessing": false
   },
   {
     "slug": "yaml-json",
@@ -766,6 +1018,7 @@
       "csv-json",
       "json-schema-validator"
     ],
-    "logo": "/icons/tools/yaml-json.svg"
+    "logo": "/icons/tools/yaml-json.svg",
+    "localProcessing": true
   }
 ]

@@ -18,5 +18,6 @@
     "module": "../pages/base64Page",
     "export": "renderBase64Page",
     "style": "opts"
-  }
+  },
+  "localProcessing": true
 }

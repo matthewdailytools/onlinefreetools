@@ -17,5 +17,6 @@
     "module": "../pages/smartWebsiteColorSchemePage",
     "export": "renderSmartWebsiteColorSchemePage",
     "style": "opts"
-  }
+  },
+  "localProcessing": true
 }

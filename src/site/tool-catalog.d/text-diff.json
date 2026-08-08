@@ -19,5 +19,6 @@
     "module": "../pages/textDiffPage",
     "export": "renderTextDiffPage",
     "style": "opts"
-  }
+  },
+  "localProcessing": true
 }

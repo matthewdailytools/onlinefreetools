@@ -19,5 +19,6 @@
     "module": "../pages/yamlJsonPage",
     "export": "renderYamlJsonPage",
     "style": "opts"
-  }
+  },
+  "localProcessing": true
 }

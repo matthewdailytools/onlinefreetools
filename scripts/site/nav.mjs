@@ -17,6 +17,8 @@ export const buildCategoryNavDropdowns = (lang) =>
     items: getToolsByCategory(category).map((tool) => ({
       href: withExplicitLangPath(lang, tool.path),
       label: t(lang, tool.homeTitleKey),
+      /** 工具页在新标签打开，保留当前首页/工具页上下文 */
+      openInNewTab: true,
     })),
   }));
 
@@ -30,11 +32,10 @@ export const buildToolPageNavItems = (lang) => [
 ];
 
 /**
- * 首页顶栏：推荐、各分类工具下拉、全部工具。
+ * 首页顶栏：推荐 + 各分类工具下拉（不再提供「全部工具」锚点项）。
  * @param {string} lang
  */
 export const buildHomeNavItems = (lang) => [
   { href: '#featured', label: t(lang, 'nav_featured') },
   ...buildCategoryNavDropdowns(lang),
-  { href: '#all-tools', label: t(lang, 'nav_all_tools') },
 ];

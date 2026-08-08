@@ -17,5 +17,6 @@
     "module": "../pages/howToCalculateRoiPage",
     "export": "renderHowToCalculateRoiPage",
     "style": "opts"
-  }
+  },
+  "localProcessing": true
 }

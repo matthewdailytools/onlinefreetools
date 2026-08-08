@@ -1,0 +1,22 @@
+{
+  "slug": "pdf-watermark",
+  "path": "/tools/pdf-watermark",
+  "category": "pdf",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_pdf_watermark_title",
+  "homeTitleKey": "tool_pdf_watermark_title",
+  "homeDescKey": "tool_pdf_watermark_desc",
+  "faqPrefix": "tool_pdf_watermark",
+  "related": [
+    "add-watermark",
+    "pdf-page-numbers"
+  ],
+  "logo": "/icons/tools/pdf-watermark.svg",
+  "page": {
+    "module": "../pages/pdfWatermarkPage",
+    "export": "renderPdfWatermarkPage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

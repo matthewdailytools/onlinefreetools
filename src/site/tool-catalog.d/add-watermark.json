@@ -18,5 +18,6 @@
     "module": "../pages/addWatermarkPage",
     "export": "renderAddWatermarkPage",
     "style": "opts"
-  }
+  },
+  "localProcessing": true
 }

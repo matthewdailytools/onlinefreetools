@@ -1,0 +1,22 @@
+{
+  "slug": "protect-pdf",
+  "path": "/tools/protect-pdf",
+  "category": "pdf",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_protect_pdf_title",
+  "homeTitleKey": "tool_protect_pdf_title",
+  "homeDescKey": "tool_protect_pdf_desc",
+  "faqPrefix": "tool_protect_pdf",
+  "related": [
+    "unlock-pdf",
+    "merge-pdf"
+  ],
+  "logo": "/icons/tools/protect-pdf.svg",
+  "page": {
+    "module": "../pages/protectPdfPage",
+    "export": "renderProtectPdfPage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

@@ -18,5 +18,6 @@
     "module": "../pages/imagesToGifPage",
     "export": "renderImagesToGifPage",
     "style": "opts"
-  }
+  },
+  "localProcessing": true
 }

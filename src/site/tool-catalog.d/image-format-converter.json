@@ -19,5 +19,6 @@
     "module": "../pages/imageFormatConverterPage",
     "export": "renderImageFormatConverterPage",
     "style": "opts"
-  }
+  },
+  "localProcessing": true
 }

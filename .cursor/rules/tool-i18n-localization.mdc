@@ -136,6 +136,20 @@ Agent 提示应类似：`Write {lang} copy for users who search: …`（附该�
 **诚实边界**：库脚本可从 CDN 加载时，FAQ 可一句说明「库可能从 CDN 加载，**你的文件**仍不上传」——勿用「100% offline」等虚假承诺。  
 **自检**：把「local/本地」划掉后，读者是否仍能判断「会上服务器吗？」不能 → 须改写。
 
+### 首页工具卡片「不上传」标签（强制）
+
+纯本地处理用户内容的工具，在首页 Featured / 分类工具卡片标题下显示短标签（中文 **「不上传」**；他语见 `home_tag_no_upload`），并**链接**到该语隐私政策本地处理节：`/{lang}/privacy#local`（默认语路径无前缀时仍用显式语言前缀）。
+
+| 项 | 约定 |
+|---|---|
+| Catalog | `localProcessing: true`（缺省亦视为 true）；边缘请求类工具须 **`localProcessing: false`**（当前：`website-headers`、`ip-address`、`indexnow`） |
+| 渲染 | [`scripts/site/components/content-home.mjs`](../../scripts/site/components/content-home.mjs) → `.tool-no-upload-tag` |
+| 文案键 | `home_tag_no_upload`（短标签）+ `home_tag_no_upload_title`（`title` 提示：设备 + 不上服务器 + 说明入口） |
+| 样式 | `public/styles/site.css` `.tool-no-upload-tag` |
+| 交付 | 新工具默认本地 → 卡片自动出标签；若会把用户内容发到 Worker/第三方，须在分片写 `localProcessing: false` 且页内诚实说明 |
+
+**禁止**：边缘工具误挂「不上传」标签；标签文案只写含糊 `local` 而无 `title`/链接触达「不上服务器」说明。
+
 ## 每语 brief（写 i18n 前必填）
 
 每个目标语一份（可复制 `03-locale-briefs.md`）。禁止只喂英文全文要求「translate to X」。

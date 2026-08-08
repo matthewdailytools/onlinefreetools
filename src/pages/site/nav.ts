@@ -11,13 +11,15 @@ export type NavLinkItem = {
 	type?: 'link';
 	href: string;
 	label: string;
+	/** 为 true 时在新标签打开（工具页入口） */
+	openInNewTab?: boolean;
 };
 
 /** 顶栏分类下拉：标签为分类名，子项为工具名 + 链接。 */
 export type NavDropdownItem = {
 	type: 'dropdown';
 	label: string;
-	items: { href: string; label: string }[];
+	items: { href: string; label: string; openInNewTab?: boolean }[];
 };
 
 /** 顶栏导航项：链接或下拉。 */
@@ -51,6 +53,8 @@ export const buildCategoryNavDropdowns = (
 		items: getToolsByCategory(category).map((tool) => ({
 			href: resolveToolHref(tool.path),
 			label: t(lang, tool.i18nKey as keyof typeof import('../../site/i18n/en').default),
+			/** 工具页在新标签打开，保留当前页上下文 */
+			openInNewTab: true,
 		})),
 	}));
 

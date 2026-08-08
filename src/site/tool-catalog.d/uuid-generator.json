@@ -17,5 +17,6 @@
     "module": "../pages/uuidGeneratorPage",
     "export": "renderUuidGeneratorPage",
     "style": "opts"
-  }
+  },
+  "localProcessing": true
 }

@@ -18,5 +18,6 @@
     "module": "../pages/imageCropPage",
     "export": "renderImageCropPage",
     "style": "opts"
-  }
+  },
+  "localProcessing": true
 }

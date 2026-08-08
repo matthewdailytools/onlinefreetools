@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="none" aria-hidden="true">
+  <!-- 无需注册：开门通行，单色供 CSS mask 染色 -->
+  <path d="M36 28h52c8 0 14 6 14 14v76c0 8-6 14-14 14H36" stroke="#000" stroke-width="8" stroke-linecap="round"/>
+  <path d="M56 28v104" stroke="#000" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="74" cy="80" r="5" fill="#000"/>
+  <path d="M108 52l28 28-28 28" stroke="#000" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M136 80H88" stroke="#000" stroke-width="8" stroke-linecap="round"/>
+</svg>

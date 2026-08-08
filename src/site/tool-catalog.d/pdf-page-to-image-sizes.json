@@ -1,0 +1,22 @@
+{
+  "slug": "pdf-page-to-image-sizes",
+  "path": "/tools/pdf-page-to-image-sizes",
+  "category": "image",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_pdf_page_to_image_sizes_title",
+  "homeTitleKey": "tool_pdf_page_to_image_sizes_title",
+  "homeDescKey": "tool_pdf_page_to_image_sizes_desc",
+  "faqPrefix": "tool_pdf_page_to_image_sizes",
+  "related": [
+    "pdf-to-jpg",
+    "images-to-pdf"
+  ],
+  "logo": "/icons/tools/pdf-page-to-image-sizes.svg",
+  "page": {
+    "module": "../pages/pdfPageToImageSizesPage",
+    "export": "renderPdfPageToImageSizesPage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

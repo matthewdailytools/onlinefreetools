@@ -16,9 +16,9 @@ export const sitePageTranslations = {
       'How OnlineFreeTools.org handles data: most tools run locally in your browser; edge tools process short requests; analytics and how to contact us about privacy.',
     privacy_intro:
       'This policy explains what stays on your device, when a short request may hit our Cloudflare Worker, and which analytics scripts load on pages.',
-    privacy_local_title: 'Local processing',
+    privacy_local_title: 'Local processing (no upload to a server)',
     privacy_local_body:
-      'Many tools (text converters, image editors, most calculators) process your paste or files only in this browser tab. Those bytes are not uploaded to our servers as a product feature. A page may still load open-source libraries from a CDN; that request is library code, not your content.',
+      'Many tools (text converters, image editors, PDF tools, most calculators) process your paste or chosen files only in this browser tab. Those bytes are not uploaded to our servers as a product feature. The “No upload” badge on home tool cards marks these tools. A page may still load open-source libraries from a CDN; that request is library code, not your content. A few tools (headers, IP, IndexNow) send short edge requests—those pages say so and do not show the badge.',
     privacy_edge_title: 'When a request leaves your device',
     privacy_edge_body:
       'A few tools need our edge Worker—for example fetching public HTTP headers, checking DNS, reading your public IP as seen by the edge, or submitting IndexNow URL lists. Those requests carry only what the tool needs for that action, and we do not keep them in a content database as a product feature. Tool pages state this clearly where it applies.',
@@ -73,9 +73,9 @@ export const sitePageTranslations = {
     privacy_description:
       'OnlineFreeTools.org 如何处理数据：多数工具在浏览器本地运行；边缘工具仅处理短请求；页面分析脚本说明，以及隐私相关联系方式。',
     privacy_intro: '本政策说明哪些内容只留在你的设备上、何时会向我们的 Cloudflare Worker 发出短请求，以及页面会加载哪些分析脚本。',
-    privacy_local_title: '本地处理',
+    privacy_local_title: '本地处理（不上传服务器）',
     privacy_local_body:
-      '许多工具（文本转换、图片编辑、多数计算器）只在当前标签页处理你粘贴或上传的内容，不会作为产品功能上传到我们的服务器。页面仍可能从 CDN 加载开源库，该请求是库代码，不是你的内容。',
+      '许多工具（文本转换、图片编辑、PDF、多数计算器）只在当前标签页处理你粘贴或选择的内容，不会作为产品功能上传到我们的服务器。首页卡片上的「不上传」标签即指这类工具。页面仍可能从 CDN 加载开源库，该请求是库代码，不是你的内容。少数查 Headers / IP / IndexNow 的工具会发短请求，页内会说明，且不挂该标签。',
     privacy_edge_title: '何时会离开本机',
     privacy_edge_body:
       '少数工具需要边缘 Worker，例如读取公开 HTTP 响应头、查询 DNS、查看边缘所见的公网 IP，或提交 IndexNow URL 列表。请求只携带完成该操作所需的数据，我们不会将其作为内容库长期保存。适用工具页会写明这一点。',

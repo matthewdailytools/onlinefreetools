@@ -20,5 +20,6 @@
     "module": "../pages/imageMergePage",
     "export": "renderImageMergePage",
     "style": "opts"
-  }
+  },
+  "localProcessing": true
 }

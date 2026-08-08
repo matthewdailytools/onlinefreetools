@@ -18,5 +18,6 @@
     "module": "../pages/imageOverlayPage",
     "export": "renderImageOverlayPage",
     "style": "opts"
-  }
+  },
+  "localProcessing": true
 }

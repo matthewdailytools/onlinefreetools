@@ -17,5 +17,6 @@
     "module": "../pages/howToCalculateGradientPage",
     "export": "renderHowToCalculateGradientPage",
     "style": "opts"
-  }
+  },
+  "localProcessing": true
 }

@@ -18,5 +18,6 @@
     "module": "../pages/ipAddressPage",
     "export": "renderIpAddressPage",
     "style": "pair"
-  }
+  },
+  "localProcessing": false
 }

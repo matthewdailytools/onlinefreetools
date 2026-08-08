@@ -42,11 +42,23 @@
 - [文字水印](https://onlinefreetools.org/zh/tools/add-watermark) - 本地文字水印（透明度/旋转/位置）
 - [合并 PDF](https://onlinefreetools.org/zh/tools/merge-pdf) - 浏览器内按顺序合并多个 PDF，不上传
 - [拆分 PDF](https://onlinefreetools.org/zh/tools/split-pdf) - 浏览器内按页或范围拆分 PDF，多文件时打包 ZIP
+- [整理 PDF](https://onlinefreetools.org/zh/tools/organize-pdf) - 浏览器内删页或重排，不上传
+- [PDF 水印](https://onlinefreetools.org/zh/tools/pdf-watermark) - 浏览器内给每一页盖文字/可选图章水印，不上传
+- [PDF 页码](https://onlinefreetools.org/zh/tools/pdf-page-numbers) - 浏览器内给每一页加页码，可选位置与起始数字，不上传
+- [旋转 PDF](https://onlinefreetools.org/zh/tools/rotate-pdf) - 浏览器内把页面转正，全部页或指定范围，不上传
+- [裁切 PDF](https://onlinefreetools.org/zh/tools/crop-pdf) - 浏览器内按 pt 裁切页边距，非拖拽像素编辑，不上传
+- [压缩 PDF](https://onlinefreetools.org/zh/tools/compress-pdf) - 浏览器内缩小 PDF 体积，不上传
+- [保护 PDF](https://onlinefreetools.org/zh/tools/protect-pdf) - 浏览器内给 PDF 加打开密码，不上传
+- [解锁 PDF](https://onlinefreetools.org/zh/tools/unlock-pdf) - 用已知密码去掉 PDF 保护，非破解，不上传
+- [PDF 页多尺寸导出](https://onlinefreetools.org/zh/tools/pdf-page-to-image-sizes) - 浏览器内把 PDF 一页导出为多平台 JPEG 尺寸包（ZIP），不上传
+- [PDF 转 JPG](https://onlinefreetools.org/zh/tools/pdf-to-jpg) - 浏览器内把 PDF 每页导出为 JPG，多页 ZIP
+- [PDF 转 Markdown](https://onlinefreetools.org/zh/tools/pdf-to-markdown) - 浏览器内从 PDF 文本层导出 Markdown，无 OCR，不上传
 - [多图转 PDF](https://onlinefreetools.org/zh/tools/images-to-pdf) - 本地多图合成多页 PDF
 - [多图转 Word](https://onlinefreetools.org/zh/tools/images-to-word) - 本地多图导出 DOCX
 - [多图转 GIF](https://onlinefreetools.org/zh/tools/images-to-gif) - 本地多帧合成动画 GIF
 - [多图转 PPT](https://onlinefreetools.org/zh/tools/images-to-ppt) - 本地多图导出 PPTX
 - [给域名添加 www DNS](https://onlinefreetools.org/zh/tools/add-www-to-dns) - 生成 www 的 A/CNAME 记录，查询现网，并提供 Cloudflare/Vercel/阿里云等操作教程
+- [域名查询](https://onlinefreetools.org/zh/tools/domain-lookup) - 查看 DNS 解析与注册信息（RDAP/WHOIS 风格），经边缘并行查询
 - [IndexNow / Bing URL 提交](https://onlinefreetools.org/zh/tools/indexnow) - 生成密钥、检查验证文件、提交变更 URL，并说明 200/202 状态码
 - [BMI 计算器](https://onlinefreetools.org/zh/tools/how-to-calculate-bmi) - 按成人筛查公式计算身体质量指数（教育用途，非诊断）
 - [ROI 计算器](https://onlinefreetools.org/zh/tools/how-to-calculate-roi) - 计算投资回报率，含假设说明与非投资建议免责
@@ -91,11 +103,23 @@ Below are our available online tools with their links (English version):
 - [Text Watermark](https://onlinefreetools.org/tools/add-watermark) - Stamp typed text watermarks locally
 - [Merge PDF](https://onlinefreetools.org/tools/merge-pdf) - Combine multiple PDFs in order in your browser — no upload
 - [Split PDF](https://onlinefreetools.org/tools/split-pdf) - Extract pages locally; ZIP when there are multiple outputs
+- [Organize PDF](https://onlinefreetools.org/tools/organize-pdf) - Reorder or remove pages in your browser — no upload
+- [PDF Watermark](https://onlinefreetools.org/tools/pdf-watermark) - Stamp text on every PDF page locally — optional logo, no upload
+- [Add Page Numbers to PDF](https://onlinefreetools.org/tools/pdf-page-numbers) - Stamp page numbers on every page locally — position and start number, no upload
+- [Rotate PDF](https://onlinefreetools.org/tools/rotate-pdf) - Fix page orientation locally — all pages or ranges, no upload
+- [Crop PDF](https://onlinefreetools.org/tools/crop-pdf) - Trim page margins in points locally — not a drag pixel editor, no upload
+- [Compress PDF](https://onlinefreetools.org/tools/compress-pdf) - Shrink PDF file size in your browser — no upload
+- [Protect PDF](https://onlinefreetools.org/tools/protect-pdf) - Password-protect a PDF locally in your browser — no upload
+- [Unlock PDF](https://onlinefreetools.org/tools/unlock-pdf) - Remove PDF open password you already know — not cracking, no upload
+- [PDF Page to Image Sizes](https://onlinefreetools.org/tools/pdf-page-to-image-sizes) - Export one PDF page as a multi-size JPEG pack locally — ZIP, no upload
+- [PDF to JPG](https://onlinefreetools.org/tools/pdf-to-jpg) - Export PDF pages as JPG images locally; ZIP for multi-page
+- [PDF to Markdown](https://onlinefreetools.org/tools/pdf-to-markdown) - Extract PDF text layer to Markdown locally — no OCR, no upload
 - [Images to PDF](https://onlinefreetools.org/tools/images-to-pdf) - Combine photos into a multi-page PDF locally
 - [Images to Word](https://onlinefreetools.org/tools/images-to-word) - Export photos to a DOCX locally
 - [Images to GIF](https://onlinefreetools.org/tools/images-to-gif) - Build an animated GIF from frames locally
 - [Images to PowerPoint](https://onlinefreetools.org/tools/images-to-ppt) - Export photos to a PPTX locally
 - [Add WWW to DNS](https://onlinefreetools.org/tools/add-www-to-dns) - Generate www A/CNAME records, check live DNS, and follow Cloudflare/Vercel/Route 53 guides
+- [Domain Lookup](https://onlinefreetools.org/tools/domain-lookup) - Check DNS records and registration data (RDAP/WHOIS-style) via the edge
 - [IndexNow — Bing URL Submit](https://onlinefreetools.org/tools/indexnow) - Generate a key, check the verification file, submit changed URLs, and read 200/202 status codes
 - [BMI Calculator](https://onlinefreetools.org/tools/how-to-calculate-bmi) - Adult BMI screening from weight and height (educational, not a diagnosis)
 - [ROI Calculator](https://onlinefreetools.org/tools/how-to-calculate-roi) - Calculate return on investment with assumptions and a non-advice disclaimer

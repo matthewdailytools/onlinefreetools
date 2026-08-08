@@ -1,0 +1,22 @@
+{
+  "slug": "crop-pdf",
+  "path": "/tools/crop-pdf",
+  "category": "pdf",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_crop_pdf_title",
+  "homeTitleKey": "tool_crop_pdf_title",
+  "homeDescKey": "tool_crop_pdf_desc",
+  "faqPrefix": "tool_crop_pdf",
+  "related": [
+    "organize-pdf",
+    "rotate-pdf"
+  ],
+  "logo": "/icons/tools/crop-pdf.svg",
+  "page": {
+    "module": "../pages/cropPdfPage",
+    "export": "renderCropPdfPage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

@@ -422,14 +422,49 @@ body.is-tool-page .tool-lead {
   }
 }
 
-/* —— Navbar：对齐 iLovePDF 白底 + 细边框 —— */
+/**
+ * Navbar：主题浅染底 + 品牌底边高光，随 data-theme 的 --brand* 变化。
+ */
 .navbar.site-navbar,
 .navbar.navbar-light {
-  background: var(--surface) !important;
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--brand) 6%, var(--surface)) 0%,
+      var(--surface) 100%
+    ) !important;
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
-  border-bottom: 1px solid var(--border) !important;
-  box-shadow: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--brand) 18%, var(--border)) !important;
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--brand) 8%, transparent);
+}
+
+.navbar.site-navbar::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    color-mix(in srgb, var(--brand) 55%, transparent) 35%,
+    var(--brand) 50%,
+    color-mix(in srgb, var(--brand) 55%, transparent) 65%,
+    transparent 100%
+  );
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+.navbar.site-navbar {
+  position: relative;
+}
+
+/* fixed-top 仍需 absolute 伪元素相对 navbar 定位 */
+.navbar.site-navbar.fixed-top {
+  position: fixed;
 }
 
 .navbar .navbar-brand {
@@ -668,6 +703,15 @@ body.is-tool-page .tool-lead {
   margin-bottom: 0.65rem;
 }
 
+.tool-card-head-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  min-width: 0;
+  flex: 1;
+}
+
 .tool-card-logo {
   width: 36px;
   height: 36px;
@@ -677,6 +721,31 @@ body.is-tool-page .tool-lead {
 
 .card.tool-entry-card .tool-card-head .card-title {
   line-height: 1.3;
+}
+
+/** 首页工具卡片「不上传」标签：链到隐私政策 #local */
+.tool-no-upload-tag {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  padding: 0.18rem 0.45rem;
+  border-radius: 4px;
+  border: 1px solid color-mix(in srgb, var(--brand, #1c83a8) 35%, transparent);
+  color: var(--brand, #1c83a8);
+  background: color-mix(in srgb, var(--brand, #1c83a8) 8%, transparent);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.tool-no-upload-tag:hover,
+.tool-no-upload-tag:focus-visible {
+  color: var(--text-strong, #111);
+  border-color: var(--brand, #1c83a8);
+  background: color-mix(in srgb, var(--brand, #1c83a8) 14%, transparent);
+  text-decoration: none;
 }
 
 .tool-related-list {
@@ -734,6 +803,19 @@ body.is-tool-page .tool-lead {
   font-size: var(--fs-subtitle);
 }
 
+/** 可点击标题：继承标题色，悬停强调，无下划线 */
+.home-card-title-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.home-card-title-link:hover,
+.home-card-title-link:focus-visible {
+  color: var(--text-strong);
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+
 .home-card-desc {
   font-size: var(--fs-body);
   color: var(--muted);
@@ -759,21 +841,97 @@ footer.bg-light {
   width: 100%;
 }
 
+/**
+ * 首页顶区（Hero → Why → 推荐）：连续主题氛围底，
+ * 仅用 --brand / --brand-tint / --surface，切换主题时整带变色。
+ */
+.home-top {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      120% 80% at 12% -10%,
+      color-mix(in srgb, var(--brand) 16%, transparent) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      90% 70% at 92% 8%,
+      color-mix(in srgb, var(--brand) 12%, transparent) 0%,
+      transparent 50%
+    ),
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--brand) 9%, var(--brand-tint)) 0%,
+      var(--brand-tint) 42%,
+      color-mix(in srgb, var(--brand-tint) 55%, var(--bg)) 78%,
+      var(--bg) 100%
+    );
+}
+
+.home-top::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(
+      circle at 1px 1px,
+      color-mix(in srgb, var(--brand) 14%, transparent) 1px,
+      transparent 0
+    );
+  background-size: 22px 22px;
+  opacity: 0.35;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, transparent 72%);
+  pointer-events: none;
+  z-index: 0;
+}
+
 .home-hero {
   position: relative;
   overflow: hidden;
   color: var(--text);
-  /* 浅色首屏，对齐 iLovePDF 首页标题区（无暗色渐变） */
-  background: var(--bg-hero);
-  padding: clamp(2.5rem, 6vw, 4.5rem) var(--page-pad-x) clamp(2rem, 5vw, 3.5rem);
+  background: transparent;
+  padding: clamp(2.75rem, 6.5vw, 4.75rem) var(--page-pad-x) clamp(1.75rem, 4vw, 2.75rem);
   margin-bottom: 0;
   border-bottom: 0;
   animation: homeHeroIn 0.7s ease both;
   text-align: center;
+  z-index: 1;
+}
+
+/** Hero 光晕层：品牌色柔光，随主题变 */
+.home-hero::before {
+  content: '';
+  position: absolute;
+  width: min(42rem, 90vw);
+  height: min(42rem, 90vw);
+  left: 50%;
+  top: 35%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--brand) 22%, transparent) 0%,
+    color-mix(in srgb, var(--brand) 8%, transparent) 42%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
 }
 
 .home-hero::after {
-  display: none;
+  content: '';
+  position: absolute;
+  width: 18rem;
+  height: 18rem;
+  right: max(-4rem, -8vw);
+  top: -3rem;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--brand) 18%, transparent) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
 }
 
 .home-hero-inner {
@@ -785,14 +943,30 @@ footer.bg-light {
 
 .home-hero-brand {
   font-size: var(--fs-hero);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  line-height: 1.24;
-  margin: 0 auto 1rem;
-  color: var(--text);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  margin: 0 auto 1.15rem;
+  color: var(--text-strong);
   max-width: 22ch;
   text-wrap: balance;
   animation: homeFadeUp 0.75s 0.08s ease both;
+  background: linear-gradient(
+    120deg,
+    var(--text-strong) 0%,
+    var(--text-strong) 38%,
+    var(--brand) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@supports not ((-webkit-background-clip: text) or (background-clip: text)) {
+  .home-hero-brand {
+    color: var(--text-strong);
+    background: none;
+  }
 }
 
 .home-hero-lead {
@@ -813,8 +987,6 @@ footer.bg-light {
   animation: homeFadeUp 0.75s 0.12s ease both;
 }
 
-/* 首页主按钮沿用全局朱红实心，不再覆写成白底 */
-
 .home-main {
   max-width: var(--home-max);
   margin: 0 auto;
@@ -822,10 +994,39 @@ footer.bg-light {
   width: 100%;
 }
 
+/** 顶区内主栏：与氛围底衔接，底部留给推荐区呼吸 */
+.home-main--top {
+  position: relative;
+  z-index: 1;
+  padding-top: 0.25rem;
+  padding-bottom: 2.5rem;
+}
+
+/** 推荐区：标题左侧品牌色条，与顶区视觉收束 */
+.home-featured .home-section-head h2 {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.home-featured .home-section-head h2::before {
+  content: '';
+  display: inline-block;
+  width: 0.28rem;
+  height: 1.05em;
+  border-radius: 999px;
+  background: linear-gradient(
+    180deg,
+    var(--brand) 0%,
+    color-mix(in srgb, var(--brand) 45%, var(--brand-tint)) 100%
+  );
+  flex-shrink: 0;
+}
+
 .home-why {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
+  gap: 1.15rem;
   margin: 0 0 2.75rem;
   position: relative;
   z-index: 2;
@@ -834,35 +1035,242 @@ footer.bg-light {
 @media (min-width: 768px) {
   .home-why {
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.15rem;
+    gap: 1.35rem;
+    align-items: stretch;
   }
 }
 
+/**
+ * Why 三卡：异形圆角 + 序号徽章 + 主题光斑；
+ * 形状随卡片略有差异，颜色全部跟 --brand*。
+ */
 .home-why-item {
-  padding: 1.35rem 1.4rem;
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-  background: var(--surface);
-  box-shadow: none;
-  transition: border-color 0.4s ease-in-out;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+  min-height: 11.5rem;
+  padding: 1.35rem 1.4rem 1.45rem;
+  overflow: hidden;
+  isolation: isolate;
+  text-align: center;
+  border: 1px solid color-mix(in srgb, var(--brand) 24%, var(--border));
+  background:
+    linear-gradient(
+      155deg,
+      color-mix(in srgb, var(--brand) 10%, var(--surface)) 0%,
+      var(--surface) 48%,
+      color-mix(in srgb, var(--brand-tint) 70%, var(--surface)) 100%
+    );
+  box-shadow: 0 10px 28px color-mix(in srgb, var(--brand) 7%, transparent);
+  transition:
+    border-color 0.28s ease,
+    background 0.28s ease,
+    box-shadow 0.28s ease,
+    transform 0.28s ease;
 }
+
+/** 三卡不同圆角剪裁，打破整齐矩形 */
+.home-why-item--local {
+  border-radius: 1.85rem 0.85rem 1.85rem 1.25rem;
+}
+
+.home-why-item--signup {
+  border-radius: 0.85rem 1.85rem 1.25rem 1.85rem;
+}
+
+.home-why-item--process {
+  border-radius: 1.45rem 1.45rem 0.75rem 1.85rem;
+}
+
+/**
+ * 背景插画：单色 SVG + mask，用 --brand 染色，随主题变色；
+ * 右下角大图水印，不抢正文。
+ */
+.home-why-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-color: var(--brand);
+  opacity: 0.11;
+  transition: opacity 0.28s ease;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: right -8% bottom -6%;
+  mask-position: right -8% bottom -6%;
+  -webkit-mask-size: 58% auto;
+  mask-size: 58% auto;
+}
+
+.home-why-item--local .home-why-bg {
+  -webkit-mask-image: url('/icons/home/why-local.svg');
+  mask-image: url('/icons/home/why-local.svg');
+}
+
+.home-why-item--signup .home-why-bg {
+  -webkit-mask-image: url('/icons/home/why-signup.svg');
+  mask-image: url('/icons/home/why-signup.svg');
+  -webkit-mask-position: left -6% top -4%;
+  mask-position: left -6% top -4%;
+  -webkit-mask-size: 54% auto;
+  mask-size: 54% auto;
+}
+
+.home-why-item--process .home-why-bg {
+  -webkit-mask-image: url('/icons/home/why-process.svg');
+  mask-image: url('/icons/home/why-process.svg');
+  -webkit-mask-position: right -4% bottom -10%;
+  mask-position: right -4% bottom -10%;
+  -webkit-mask-size: 62% auto;
+  mask-size: 62% auto;
+}
+
+/** 角落品牌光斑（衬在插画下） */
+.home-why-item::after {
+  content: '';
+  position: absolute;
+  width: 8.5rem;
+  height: 8.5rem;
+  right: -2.4rem;
+  bottom: -2.8rem;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--brand) 22%, transparent) 0%,
+    transparent 68%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.home-why-item--signup::after {
+  right: auto;
+  left: -2.6rem;
+  bottom: auto;
+  top: -2.4rem;
+}
+
+.home-why-item--process::after {
+  right: 30%;
+  bottom: -3.2rem;
+  width: 10rem;
+  height: 10rem;
+}
+
+/** 顶缘品牌细带 */
+.home-why-item::before {
+  content: '';
+  position: absolute;
+  left: 1.15rem;
+  right: 1.15rem;
+  top: 0;
+  height: 3px;
+  border-radius: 0 0 999px 999px;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--brand) 30%, transparent),
+    var(--brand),
+    color-mix(in srgb, var(--brand) 30%, transparent)
+  );
+  z-index: 1;
+}
+
 .home-why-item:hover {
-  border-color: #292931;
+  border-color: color-mix(in srgb, var(--brand) 48%, var(--border));
+  transform: translateY(-3px);
+  box-shadow: 0 14px 34px color-mix(in srgb, var(--brand) 12%, transparent);
+  background:
+    linear-gradient(
+      155deg,
+      color-mix(in srgb, var(--brand) 14%, var(--surface)) 0%,
+      var(--surface) 45%,
+      color-mix(in srgb, var(--brand-tint) 85%, var(--surface)) 100%
+    );
+}
+
+.home-why-item:hover .home-why-bg {
+  opacity: 0.16;
+}
+
+/** 序号徽章：跟主题色 */
+.home-why-index {
+  position: relative;
+  z-index: 1;
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.15rem;
+  height: 1.7rem;
+  padding: 0 0.55rem;
+  border-radius: 999px 999px 999px 0.45rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  color: var(--brand);
+  background: color-mix(in srgb, var(--brand) 12%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--brand) 28%, transparent);
+}
+
+.home-why-item--signup .home-why-index {
+  border-radius: 999px 0.45rem 999px 999px;
+}
+
+.home-why-item--process .home-why-index {
+  border-radius: 0.45rem 999px 999px 999px;
+}
+
+.home-why-body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  flex: 1;
+  width: 100%;
+  text-align: center;
 }
 
 .home-why-item h3 {
-  font-size: var(--fs-subtitle);
+  font-size: clamp(1.1rem, 1.5vw, 1.25rem);
   font-weight: 700;
-  letter-spacing: -0.02em;
-  margin: 0 0 0.45rem;
-  color: var(--text);
+  letter-spacing: -0.03em;
+  line-height: 1.28;
+  margin: 0;
+  color: var(--text-strong);
 }
 
-.home-why-item p {
+.home-why-body > p:not(.home-why-tag-demo) {
   margin: 0;
-  font-size: var(--fs-body);
-  color: var(--muted);
-  line-height: 1.5;
+  font-size: var(--fs-muted);
+  color: var(--text-muted);
+  line-height: 1.55;
+  max-width: 34em;
+  text-align: center;
+}
+
+/** 「本地优先」卡片内展示不上传标签样例（居中） */
+.home-why-item .home-why-tag-demo {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0.05rem 0 0.1rem;
+}
+
+.home-why-item .home-why-tag-demo .tool-no-upload-tag {
+  pointer-events: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-why-item,
+  .home-why-item:hover {
+    transition: none;
+    transform: none;
+  }
 }
 
 .home-section-head {

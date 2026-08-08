@@ -10,6 +10,7 @@
   "faqPrefix": "tool_split_pdf",
   "related": [
     "merge-pdf",
+    "organize-pdf",
     "images-to-pdf"
   ],
   "logo": "/icons/tools/split-pdf.svg",
@@ -17,5 +18,6 @@
     "module": "../pages/splitPdfPage",
     "export": "renderSplitPdfPage",
     "style": "opts"
-  }
+  },
+  "localProcessing": true
 }

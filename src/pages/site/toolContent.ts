@@ -105,7 +105,7 @@ export const renderRelatedTools = (
 			const href = withToolLangPrefix(lang, tool.path, defaultLang);
 			const label = t(lang, tool.i18nKey as keyof typeof import('../../site/i18n/en').default);
 			const logo = getToolLogoUrl(tool);
-			return `<li class="tool-related-item"><a href="${escapeHtml(href)}"><img class="tool-related-logo" src="${escapeHtml(logo)}" width="18" height="18" alt="" decoding="async" /><span>${escapeHtml(label)}</span></a></li>`;
+			return `<li class="tool-related-item"><a href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer"><img class="tool-related-logo" src="${escapeHtml(logo)}" width="18" height="18" alt="" decoding="async" /><span>${escapeHtml(label)}</span></a></li>`;
 		})
 		.join('');
 	return `

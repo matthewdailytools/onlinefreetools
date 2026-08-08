@@ -1,0 +1,22 @@
+{
+  "slug": "organize-pdf",
+  "path": "/tools/organize-pdf",
+  "category": "pdf",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_organize_pdf_title",
+  "homeTitleKey": "tool_organize_pdf_title",
+  "homeDescKey": "tool_organize_pdf_desc",
+  "faqPrefix": "tool_organize_pdf",
+  "related": [
+    "merge-pdf",
+    "split-pdf"
+  ],
+  "logo": "/icons/tools/organize-pdf.svg",
+  "page": {
+    "module": "../pages/organizePdfPage",
+    "export": "renderOrganizePdfPage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

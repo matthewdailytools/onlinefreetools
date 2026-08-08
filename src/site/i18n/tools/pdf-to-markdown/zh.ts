@@ -1,0 +1,57 @@
+/**
+ * i18n 工具分片（pdf-to-markdown / zh）。按中文检索习惯独立重写。
+ */
+import type { SiteLangDict } from '../../../types';
+const zh: SiteLangDict = {
+  tool_pdf_to_markdown_article:
+    '在浏览器读取 PDF 文本层并导出 Markdown，文件不出本机、不上传服务器。无 OCR：纯扫描件会明确失败。',
+  tool_pdf_to_markdown_choose_file: '选择 PDF',
+  tool_pdf_to_markdown_clear: '清空',
+  tool_pdf_to_markdown_convert: '转换',
+  tool_pdf_to_markdown_desc: '在浏览器里把 PDF 文本导出为 Markdown 做笔记或粘贴给 AI——文件留在本机，不上传服务器。',
+  tool_pdf_to_markdown_description:
+    '在浏览器把 PDF 文本导出为 Markdown，方便做笔记或粘贴给 LLM——文件留在本机，不上传服务器。步骤：选择带文本层的 PDF，点「转换」，预览结果，再「下载 .md」。示例：单页样例会生成含「Hello PDF to Markdown sample.」的 .md。纯扫描图片 PDF 无 OCR 会失败。加密或损坏文件会给出明确错误。',
+  tool_pdf_to_markdown_download: '下载 .md',
+  tool_pdf_to_markdown_drop_hint: '也可把一份 PDF 拖到这里。处理都在当前标签页完成。',
+  tool_pdf_to_markdown_empty: '请先选择一份 PDF。',
+  tool_pdf_to_markdown_err_convert: '转换失败。请检查文件后重试。',
+  tool_pdf_to_markdown_err_encrypted: '这份 PDF 似乎带密码。请先解锁后再转换。',
+  tool_pdf_to_markdown_err_load: '无法读取 PDF（损坏或格式不受支持）。请换一份再试。',
+  tool_pdf_to_markdown_err_notext:
+    '未找到可复制文本。本工具只读 PDF 文本层，不做 OCR。请换电子版 PDF，或需要图片页时用「PDF 转 JPG」。',
+  tool_pdf_to_markdown_err_pdfjs: 'PDF 渲染库加载失败。请检查网络后重试。',
+  tool_pdf_to_markdown_example: '样例生成一页 Helvetica 文本 PDF，转换后在预览区显示该句，并可下载 .md。',
+  tool_pdf_to_markdown_example_title: '示例',
+  tool_pdf_to_markdown_faq_a1: '不会。页面渲染组件在当前标签页运行（脚本可能从 CDN 加载），PDF 不会上传到我们的服务器。',
+  tool_pdf_to_markdown_faq_a2: '扫描件通常是整页图片，没有文本层。本工具不做 OCR，提取为空时会明确报错。',
+  tool_pdf_to_markdown_faq_a3: '不会。只导出文本层里的字，按位置拼成行；标题、列表、表格不会自动还原成 Markdown 结构。',
+  tool_pdf_to_markdown_faq_a4: '「Markdown 转 HTML」把 Markdown 语法渲染成网页预览；本工具从 PDF 抽出纯文本存成 .md 供编辑或粘贴。',
+  tool_pdf_to_markdown_faq_a5: '「PDF 转 JPG」把每页渲染成图片；需要可编辑文字时用本工具，需要页面截图时用 JPG。',
+  tool_pdf_to_markdown_faq_q1: 'PDF 会上传吗？',
+  tool_pdf_to_markdown_faq_q2: '为什么扫描 PDF 会失败？',
+  tool_pdf_to_markdown_faq_q3: '会保留标题或表格吗？',
+  tool_pdf_to_markdown_faq_q4: '和「Markdown 转 HTML」有什么区别？',
+  tool_pdf_to_markdown_faq_q5: '什么时候该用「PDF 转 JPG」？',
+  tool_pdf_to_markdown_how_body: '选择 PDF，点「转换」，看预览，再「下载 .md」。按纵向位置拼行，页与页之间用 --- 分隔。组件加载后全程在当前标签页完成，不上传服务器。',
+  tool_pdf_to_markdown_how_title: '怎么用',
+  tool_pdf_to_markdown_pages_label: '页数',
+  tool_pdf_to_markdown_preview_label: 'Markdown 预览',
+  tool_pdf_to_markdown_rules_body: '文本层提取、分页分隔、无 OCR、隐私与失败边界。',
+  tool_pdf_to_markdown_rules_item_1: '引擎：页面渲染组件逐页 getTextContent；y 坐标接近的字符合并为一行，行内用空格连接。',
+  tool_pdf_to_markdown_rules_item_2: '分页：页与页之间插入空行 + --- + 空行。',
+  tool_pdf_to_markdown_rules_item_3: '无 OCR：trim 后为空则硬失败并提示——扫描件需换其他流程。',
+  tool_pdf_to_markdown_rules_item_4: '隐私与限制：字节留在标签页；加密/损坏明确报错；超过约 25 MB 可能变慢。',
+  tool_pdf_to_markdown_rules_title: '规则说明',
+  tool_pdf_to_markdown_sample: '加载样例',
+  tool_pdf_to_markdown_stats_tpl: '{n} 页 · {chars} 个字符',
+  tool_pdf_to_markdown_status_converting: '正在提取文本…',
+  tool_pdf_to_markdown_status_done: '完成 — 点击下载 .md 保存。',
+  tool_pdf_to_markdown_title: 'PDF 转 Markdown — 在浏览器里抽出文本做笔记',
+  tool_pdf_to_markdown_usecase_1: '办公：把合同条款拷进笔记或 Wiki，免手打。',
+  tool_pdf_to_markdown_usecase_2: '写作者 / AI 用户：把报告正文导出成 Markdown 再编辑或喂给模型。',
+  tool_pdf_to_markdown_usecase_3: '学生：从有文本层的课件 PDF 抽文字进复习笔记。',
+  tool_pdf_to_markdown_usecases_title: '适合这些场景',
+  tool_pdf_to_markdown_warn_large: '文件超过约 25 MB — 提取可能变慢或在部分浏览器失败。',
+  tool_pdf_to_markdown_warn_pdflib: 'PDF 处理组件加载失败。请检查网络后重试。',
+};
+export default zh;

@@ -17,5 +17,6 @@
     "module": "../pages/jwtDecoderPage",
     "export": "renderJwtDecoderPage",
     "style": "opts"
-  }
+  },
+  "localProcessing": true
 }

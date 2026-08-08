@@ -20,6 +20,7 @@ import { TOOL_PAGE_RENDERERS } from "./site/toolPageRegistry.generated";
 import { handleWebsiteHeadersApi } from "./tools/websiteHeaders";
 import { handleIpAddress } from "./endpoints/ipAddress";
 import { handleDnsLookup } from "./endpoints/dnsLookup";
+import { handleDomainLookup } from "./endpoints/domainLookup";
 import { handleIndexnowCheckKey, handleIndexnowSubmit } from "./endpoints/indexnow";
 
 type Env = {
@@ -251,6 +252,7 @@ openapi.delete("/api/tasks/:taskSlug", TaskDelete);
 app.get("/api/tools/website-headers", handleWebsiteHeadersApi);
 app.get("/api/tools/ip-address", handleIpAddress);
 app.get("/api/tools/dns-lookup", handleDnsLookup);
+app.get("/api/tools/domain-lookup", handleDomainLookup);
 app.get("/api/tools/indexnow/check-key", handleIndexnowCheckKey);
 app.post("/api/tools/indexnow/submit", handleIndexnowSubmit);
 

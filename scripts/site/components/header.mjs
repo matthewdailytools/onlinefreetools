@@ -50,18 +50,25 @@ export const renderHeader = ({
   showLangSwitcher = true,
   langAlternates,
 }) => {
+  /** 外链/工具链接：新标签打开时附带安全 rel */
+  const linkAttrs = (item) =>
+    item.openInNewTab ? ' target="_blank" rel="noopener noreferrer"' : '';
+
   const navHtml = navItems
     .map((item) => {
       if (item.type === 'dropdown') {
         const menu = (item.items || [])
-          .map((sub) => `<li><a class="dropdown-item" href="${sub.href}">${sub.label}</a></li>`)
+          .map(
+            (sub) =>
+              `<li><a class="dropdown-item" href="${sub.href}"${linkAttrs(sub)}>${sub.label}</a></li>`,
+          )
           .join('');
         return `<li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">${item.label}</a>
           <ul class="dropdown-menu">${menu}</ul>
         </li>`;
       }
-      return `<li class="nav-item"><a class="nav-link" href="${item.href}">${item.label}</a></li>`;
+      return `<li class="nav-item"><a class="nav-link" href="${item.href}"${linkAttrs(item)}>${item.label}</a></li>`;
     })
     .join('');
 

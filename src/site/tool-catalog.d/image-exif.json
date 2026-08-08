@@ -18,5 +18,6 @@
     "module": "../pages/imageExifPage",
     "export": "renderImageExifPage",
     "style": "opts"
-  }
+  },
+  "localProcessing": true
 }

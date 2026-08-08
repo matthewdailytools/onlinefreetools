@@ -18,5 +18,6 @@
     "module": "../pages/imagesToWordPage",
     "export": "renderImagesToWordPage",
     "style": "opts"
-  }
+  },
+  "localProcessing": true
 }

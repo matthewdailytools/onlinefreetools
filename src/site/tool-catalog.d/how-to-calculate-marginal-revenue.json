@@ -17,5 +17,6 @@
     "module": "../pages/marginalRevenuePage",
     "export": "renderMarginalRevenuePage",
     "style": "opts"
-  }
+  },
+  "localProcessing": true
 }

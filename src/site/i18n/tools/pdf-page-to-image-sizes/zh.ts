@@ -1,0 +1,58 @@
+/**
+ * i18n 工具分片（pdf-page-to-image-sizes / zh）。按中文检索习惯独立重写。
+ */
+import type { SiteLangDict } from '../../../types';
+const zh: SiteLangDict = {
+  tool_pdf_page_to_image_sizes_article:
+    '选定 PDF 一页，一次导出社媒常用 JPEG 尺寸包——1080 方图、1200×630 链接预览、1280×720 横屏、1080×1920 竖屏。页面渲染组件只渲染一次，Canvas 按 contain 居中 fit 到各预设。',
+  tool_pdf_page_to_image_sizes_choose_file: '选择 PDF',
+  tool_pdf_page_to_image_sizes_clear: '清空',
+  tool_pdf_page_to_image_sizes_desc: '把 PDF 一页导出为多尺寸 JPEG 包——ZIP 下载；文件不上传服务器。',
+  tool_pdf_page_to_image_sizes_description:
+    '在浏览器把 PDF 指定页导出为多尺寸 JPEG 包——文件留在本机，不上传服务器。选择 PDF，填写页码（默认 1），点「导出」，再「下载」得到含 page-N-WxH.jpg 的 ZIP。示例：样例封面页会导出四个预设（1080²、1200×630、1280×720、1080×1920）。加密或损坏的 PDF 会给出明确错误。',
+  tool_pdf_page_to_image_sizes_download: '下载',
+  tool_pdf_page_to_image_sizes_drop_hint: '也可把一份 PDF 拖到这里。处理都在当前标签页完成。',
+  tool_pdf_page_to_image_sizes_empty: '请先选择一份 PDF。',
+  tool_pdf_page_to_image_sizes_err_bad_page: '页码超出范围。请核对总页数后重试。',
+  tool_pdf_page_to_image_sizes_err_encrypted: '这份 PDF 似乎带密码。请先解锁后再导出。',
+  tool_pdf_page_to_image_sizes_err_export: '导出失败。请检查文件与页码后重试。',
+  tool_pdf_page_to_image_sizes_err_fflate: 'ZIP 组件加载失败。请检查网络后重试。',
+  tool_pdf_page_to_image_sizes_err_load: '无法读取 PDF（损坏或格式不受支持）。请换一份再试。',
+  tool_pdf_page_to_image_sizes_err_pdfjs: 'PDF 渲染库加载失败。请检查网络后重试。',
+  tool_pdf_page_to_image_sizes_example:
+    '样例会生成单页 PDF，导出第 1 页到四个 JPEG 预设，并启用下载 page-1-sizes.zip（含 page-1-1080x1080.jpg 至 page-1-1080x1920.jpg）。',
+  tool_pdf_page_to_image_sizes_example_title: '示例',
+  tool_pdf_page_to_image_sizes_export: '导出',
+  tool_pdf_page_to_image_sizes_faq_a1: '不会。处理在当前标签页内完成（组件脚本可能从 CDN 加载），PDF 不会上传到我们的服务器。',
+  tool_pdf_page_to_image_sizes_faq_a2: '「PDF 转 JPG」把每一页按原始比例导出。「本工具」只选一页，并 fit 到固定平台尺寸（contain 居中，必要时白边）。',
+  tool_pdf_page_to_image_sizes_faq_a3: '1080×1080（Instagram 方图）、1200×630（Open Graph / Facebook 链接预览）、1280×720（HD 横屏）、1080×1920（竖屏故事/信息流）。',
+  tool_pdf_page_to_image_sizes_faq_a4: '页面会缩放以完整放进每个框内，不裁切。空白区域填白色，保证 JPEG 输出干净。',
+  tool_pdf_page_to_image_sizes_faq_a5: '超过约 25 MB 的文件可能变慢或在部分浏览器失败。复杂页面渲染时占更多内存。',
+  tool_pdf_page_to_image_sizes_faq_q1: 'PDF 会上传吗？',
+  tool_pdf_page_to_image_sizes_faq_q2: '和「PDF 转 JPG」有什么区别？',
+  tool_pdf_page_to_image_sizes_faq_q3: '包含哪些尺寸？',
+  tool_pdf_page_to_image_sizes_faq_q4: '为什么图片周围有白边？',
+  tool_pdf_page_to_image_sizes_faq_q5: '有文件大小限制吗？',
+  tool_pdf_page_to_image_sizes_how_body: '选择 PDF，输入页码（从 1 起），点「导出」再「下载」。一页只渲染一次，再 fit 到各预设 canvas 并打成 ZIP。',
+  tool_pdf_page_to_image_sizes_how_title: '怎么用',
+  tool_pdf_page_to_image_sizes_page_label: '页码',
+  tool_pdf_page_to_image_sizes_pages_label: '页数',
+  tool_pdf_page_to_image_sizes_rules_body: '预设尺寸、contain 行为、JPEG 输出、ZIP 命名、隐私与失败边界。',
+  tool_pdf_page_to_image_sizes_rules_item_1: '预设：1080×1080（instagram-square）、1200×630（og-facebook）、1280×720（hd-landscape）、1080×1920（story-portrait）。',
+  tool_pdf_page_to_image_sizes_rules_item_2: '选定页按 2 倍缩放渲染一次，再 drawImage contain 居中到各目标 canvas；JPEG 质量 0.9。',
+  tool_pdf_page_to_image_sizes_rules_item_3: 'ZIP 内文件名：page-{N}-{W}x{H}.jpg（例：page-1-1200x630.jpg）。压缩包：page-{N}-sizes.zip。',
+  tool_pdf_page_to_image_sizes_rules_item_4: '隐私与限制：字节留在标签页；加密/损坏明确报错；超过约 25 MB 可能变慢。',
+  tool_pdf_page_to_image_sizes_rules_title: '规则说明',
+  tool_pdf_page_to_image_sizes_sample: '加载样例',
+  tool_pdf_page_to_image_sizes_stats_tpl: '第 {page} 页 · {n} 个尺寸 · {bytes}',
+  tool_pdf_page_to_image_sizes_status_done: '完成 — 点击下载保存 ZIP。',
+  tool_pdf_page_to_image_sizes_status_exporting: '正在渲染页面并生成尺寸包…',
+  tool_pdf_page_to_image_sizes_title: 'PDF 页多尺寸导出 — 一次打包多平台图片',
+  tool_pdf_page_to_image_sizes_usecase_1: '社媒运营：把海报 PDF 一页同时导出 IG 方图、OG 与竖屏素材，一个 ZIP 搞定。',
+  tool_pdf_page_to_image_sizes_usecase_2: '站长：把封面幻灯导出为 1200×630 链接预览图，不用手裁。',
+  tool_pdf_page_to_image_sizes_usecase_3: '学生：把课件某一页存成手机友好尺寸，放进笔记应用。',
+  tool_pdf_page_to_image_sizes_usecases_title: '适合这些场景',
+  tool_pdf_page_to_image_sizes_warn_large: '文件超过约 25 MB — 导出可能变慢或在部分浏览器失败。',
+  tool_pdf_page_to_image_sizes_warn_pdflib: 'PDF 处理组件加载失败。请检查网络后重试。',
+};
+export default zh;

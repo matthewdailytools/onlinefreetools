@@ -20,5 +20,6 @@
     "module": "../pages/websiteHeadersPage",
     "export": "renderWebsiteHeadersPage",
     "style": "pair"
-  }
+  },
+  "localProcessing": false
 }

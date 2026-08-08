@@ -1,0 +1,97 @@
+# 02 — 工具信息定稿
+
+**状态**：`ready`  
+**slug**：`pdf-to-markdown`  
+**路径**：`/tools/pdf-to-markdown`  
+**主方向**：A（A.5.2 PDF · 本地优先）  
+**YMYL**：否  
+**Locale briefs**：见同夹 `03-locale-briefs.md`（状态 `briefs-ready`）
+
+---
+
+## IG 预审
+
+- 目标主词 / 长尾意图（1–5）：
+  1. pdf to markdown
+  2. convert pdf to md
+  3. extract text from pdf markdown
+  4. pdf to md for llm
+  5. pdf to markdown online local
+- 用户真实任务：把可复制文本的 PDF 转成笔记/LLM 粘贴用 MD。
+- [x] 竞品：iLovePDF 等上传型同类能力；本站强调浏览器本地
+- [x] 缺口：不上传边界；加密/损坏失败；与邻近工具分工；固定 Example；有限能力诚实声明
+- [x] 增益：Rules；边界 FAQ；Use cases；References；十语；Example；Related
+- [x] 长尾：**合并**进本页模块，不拆近义 URL
+- [x] 权威来源：https://pdf-lib.js.org/ ；https://mozilla.github.io/pdf.js/
+- [x] Use cases：办公 / 运营 / 学生或站长（见卡片）
+- [x] 边界：加密 PDF；损坏；能力局限（见 FAQ）
+- [x] Example：与进页样例一致
+- [x] Related：`markdown-to-html`, `pdf-to-jpg`
+
+### 计划勾选的 §3.1 维度
+
+| # | 维度 | 本页如何体现 |
+|---|---|---|
+| 1 | 公式/规则 | Rules |
+| 2 | 边界/失败 | FAQ + UI |
+| 3 | 场景语境 | Use cases ×3 |
+| 5 | 权威引用 | References |
+| 6 | 本地隐私 | How/FAQ（设备 + 不上服务器） |
+| 7 | 多语言 | `03` |
+| 8 | 数值示例 | Example |
+| 9 | 主题内链 | related |
+
+---
+
+## 开发 / SEO 卡片
+
+| 字段 | 内容 |
+|---|---|
+| 集群 / 优先级 | A.5.2 · P1 · 清单 #58 · `pdf` |
+| 场景与行业 | 办公、运营、学生/站长 |
+| 技术 | pdfjs-dist 文本层 getTextContent 按 y 分行；下载 .md；无 OCR。 |
+| Title (en) | `PDF to Markdown — Extract Text for Notes Locally \| {Brand}` |
+| Description 要点 | ≥120；主任务 + 设备本地不上服务器 + 样例 + 边界 |
+| Schema | WebApplication + BreadcrumbList |
+| FAQ ≥3 | 是否上传；扫描件为何失败；无 OCR；格式粗糙说明 |
+| related | `markdown-to-html`, `pdf-to-jpg` |
+| 验收 | coverage:gate all；lint:seo；进页样例可下载 |
+| 工期粗估 | ~0.5–1d |
+| 本地化核查 | `03-locale-briefs.md` |
+
+## 清单前检索覆盖优化（生成页面模块清单前必做）
+
+| 项 | 结论 / 落点 |
+|---|---|
+| 日期 | 2026-08-08 |
+| slug 结论 | 保留 `pdf-to-markdown`（清单与 A.5.2 一致；不拆近义薄页） |
+| 主检索词 → title/H1 | pdf to markdown → H1「PDF to Markdown — Extract Text for Notes Locally」 |
+| 次要关键词 → desc / FAQ / Use cases | extract text from pdf→desc；no OCR→FAQ；scanned pdf fails→FAQ；local→FAQ |
+| 用户搜索习惯判断 | 用户搜 pdf to markdown 要可编辑文本；H1 写 extract text，不承诺 OCR。 |
+| 优化摘要 | 去掉 OCR Optional 误导；明确文本层；扫描失败落 FAQ。 |
+| [x] 已回写上方 SEO 卡片 Title / Description 与建议 slug | |
+
+> 验收：`npm run coverage:gate -- --slug=pdf-to-markdown --phase=0b`
+
+## 交互规格（给实现用）
+
+- 输入：1 PDF（需文本层）
+- 输出：Markdown
+- 核心规则：pdfjs-dist 文本层 getTextContent 按 y 分行；下载 .md；无 OCR。
+- 失败：加密/损坏可读错误；能力局限见 FAQ；~25MB 软警告
+- 示例：含 Helvetica 文本的 1 页样例 → .md 可下载且含可见句子
+- **进页样例**：`loadSample()` — 含 Helvetica 文本的 1 页样例 → .md 可下载且含可见句子
+
+## 页面模块清单（与 tool-creation 对齐）
+
+- [x] H1 + 一句话摘要
+- [x] 首屏工具交互区（含进页自动样例结果）
+- [x] How it works
+- [x] Formula / Rules
+- [x] Example
+- [x] Use cases（2–3）
+- [x] FAQ ≥3
+- [x] Related tools ≥2
+- [x] References ≥1
+- [ ] Disclaimer（非 YMYL）
+- [x] `03-locale-briefs.md` 已填

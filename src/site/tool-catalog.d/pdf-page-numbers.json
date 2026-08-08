@@ -1,0 +1,22 @@
+{
+  "slug": "pdf-page-numbers",
+  "path": "/tools/pdf-page-numbers",
+  "category": "pdf",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_pdf_page_numbers_title",
+  "homeTitleKey": "tool_pdf_page_numbers_title",
+  "homeDescKey": "tool_pdf_page_numbers_desc",
+  "faqPrefix": "tool_pdf_page_numbers",
+  "related": [
+    "pdf-watermark",
+    "organize-pdf"
+  ],
+  "logo": "/icons/tools/pdf-page-numbers.svg",
+  "page": {
+    "module": "../pages/pdfPageNumbersPage",
+    "export": "renderPdfPageNumbersPage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

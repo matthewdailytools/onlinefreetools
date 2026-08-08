@@ -18,5 +18,6 @@
     "module": "../pages/addWwwToDnsPage",
     "export": "renderAddWwwToDnsPage",
     "style": "opts"
-  }
+  },
+  "localProcessing": true
 }

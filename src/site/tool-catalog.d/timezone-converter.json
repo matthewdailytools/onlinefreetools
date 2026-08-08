@@ -17,5 +17,6 @@
     "module": "../pages/timezoneConverterPage",
     "export": "renderTimezoneConverterPage",
     "style": "opts"
-  }
+  },
+  "localProcessing": true
 }

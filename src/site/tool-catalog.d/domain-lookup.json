@@ -1,0 +1,23 @@
+{
+  "slug": "domain-lookup",
+  "path": "/tools/domain-lookup",
+  "category": "developer",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_domain_lookup_title",
+  "homeTitleKey": "tool_domain_lookup_title",
+  "homeDescKey": "tool_domain_lookup_desc",
+  "faqPrefix": "tool_domain_lookup",
+  "related": [
+    "add-www-to-dns",
+    "website-headers",
+    "ip-address"
+  ],
+  "logo": "/icons/tools/domain-lookup.svg",
+  "page": {
+    "module": "../pages/domainLookupPage",
+    "export": "renderDomainLookupPage",
+    "style": "pair"
+  },
+  "localProcessing": false
+}

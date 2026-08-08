@@ -9,7 +9,10 @@ import { renderBase64Page } from '../pages/base64Page';
 import { renderBrandColorTokenPackPage } from '../pages/brandColorTokenPackPage';
 import { renderBrandStyleGuidePage } from '../pages/brandStyleGuidePage';
 import { renderColorFromImagePage } from '../pages/colorFromImagePage';
+import { renderCompressPdfPage } from '../pages/compressPdfPage';
+import { renderCropPdfPage } from '../pages/cropPdfPage';
 import { renderCsvJsonPage } from '../pages/csvJsonPage';
+import { renderDomainLookupPage } from '../pages/domainLookupPage';
 import { renderFileHashPage } from '../pages/fileHashPage';
 import { renderFlipImagePage } from '../pages/flipImagePage';
 import { renderHowToCalculateBmiPage } from '../pages/howToCalculateBmiPage';
@@ -38,13 +41,22 @@ import { renderJsonSchemaValidatorPage } from '../pages/jsonSchemaValidatorPage'
 import { renderJwtDecoderPage } from '../pages/jwtDecoderPage';
 import { renderMarkdownToHtmlPage } from '../pages/markdownToHtmlPage';
 import { renderMergePdfPage } from '../pages/mergePdfPage';
+import { renderOrganizePdfPage } from '../pages/organizePdfPage';
 import { renderPasswordGeneratorPage } from '../pages/passwordGeneratorPage';
+import { renderPdfPageNumbersPage } from '../pages/pdfPageNumbersPage';
+import { renderPdfPageToImageSizesPage } from '../pages/pdfPageToImageSizesPage';
+import { renderPdfToJpgPage } from '../pages/pdfToJpgPage';
+import { renderPdfToMarkdownPage } from '../pages/pdfToMarkdownPage';
+import { renderPdfWatermarkPage } from '../pages/pdfWatermarkPage';
+import { renderProtectPdfPage } from '../pages/protectPdfPage';
+import { renderRotatePdfPage } from '../pages/rotatePdfPage';
 import { renderSmartWebsiteColorSchemePage } from '../pages/smartWebsiteColorSchemePage';
 import { renderSplitPdfPage } from '../pages/splitPdfPage';
 import { renderSquareFeetPage } from '../pages/squareFeetPage';
 import { renderTextDiffPage } from '../pages/textDiffPage';
 import { renderTimezoneConverterPage } from '../pages/timezoneConverterPage';
 import { renderUnixTimestampPage } from '../pages/unixTimestampPage';
+import { renderUnlockPdfPage } from '../pages/unlockPdfPage';
 import { renderUuidGeneratorPage } from '../pages/uuidGeneratorPage';
 import { renderWcagContrastCheckerPage } from '../pages/wcagContrastCheckerPage';
 import { renderWebsiteHeadersPage } from '../pages/websiteHeadersPage';
@@ -64,7 +76,10 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'brand-color-token-pack': (lang, defaultLang, enabled) => renderBrandColorTokenPackPage({ lang, defaultLang, enabledLangs: enabled }),
 	'brand-style-guide': (lang, defaultLang, enabled) => renderBrandStyleGuidePage({ lang, defaultLang, enabledLangs: enabled }),
 	'color-from-image': (lang, defaultLang, enabled) => renderColorFromImagePage({ lang, defaultLang, enabledLangs: enabled }),
+	'compress-pdf': (lang, defaultLang, enabled) => renderCompressPdfPage({ lang, defaultLang, enabledLangs: enabled }),
+	'crop-pdf': (lang, defaultLang, enabled) => renderCropPdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'csv-json': (lang, defaultLang, enabled) => renderCsvJsonPage({ lang, defaultLang, enabledLangs: enabled }),
+	'domain-lookup': (lang, defaultLang, _enabled) => renderDomainLookupPage(lang, defaultLang),
 	'file-hash': (lang, defaultLang, enabled) => renderFileHashPage({ lang, defaultLang, enabledLangs: enabled }),
 	'flip-image': (lang, defaultLang, enabled) => renderFlipImagePage({ lang, defaultLang, enabledLangs: enabled }),
 	'how-to-calculate-bmi': (lang, defaultLang, enabled) => renderHowToCalculateBmiPage({ lang, defaultLang, enabledLangs: enabled }),
@@ -93,13 +108,22 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'jwt-decoder': (lang, defaultLang, enabled) => renderJwtDecoderPage({ lang, defaultLang, enabledLangs: enabled }),
 	'markdown-to-html': (lang, defaultLang, enabled) => renderMarkdownToHtmlPage({ lang, defaultLang, enabledLangs: enabled }),
 	'merge-pdf': (lang, defaultLang, enabled) => renderMergePdfPage({ lang, defaultLang, enabledLangs: enabled }),
+	'organize-pdf': (lang, defaultLang, enabled) => renderOrganizePdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'password-generator': (lang, defaultLang, enabled) => renderPasswordGeneratorPage({ lang, defaultLang, enabledLangs: enabled }),
+	'pdf-page-numbers': (lang, defaultLang, enabled) => renderPdfPageNumbersPage({ lang, defaultLang, enabledLangs: enabled }),
+	'pdf-page-to-image-sizes': (lang, defaultLang, enabled) => renderPdfPageToImageSizesPage({ lang, defaultLang, enabledLangs: enabled }),
+	'pdf-to-jpg': (lang, defaultLang, enabled) => renderPdfToJpgPage({ lang, defaultLang, enabledLangs: enabled }),
+	'pdf-to-markdown': (lang, defaultLang, enabled) => renderPdfToMarkdownPage({ lang, defaultLang, enabledLangs: enabled }),
+	'pdf-watermark': (lang, defaultLang, enabled) => renderPdfWatermarkPage({ lang, defaultLang, enabledLangs: enabled }),
+	'protect-pdf': (lang, defaultLang, enabled) => renderProtectPdfPage({ lang, defaultLang, enabledLangs: enabled }),
+	'rotate-pdf': (lang, defaultLang, enabled) => renderRotatePdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'smart-website-color-scheme': (lang, defaultLang, enabled) => renderSmartWebsiteColorSchemePage({ lang, defaultLang, enabledLangs: enabled }),
 	'split-pdf': (lang, defaultLang, enabled) => renderSplitPdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'square-feet': (lang, defaultLang, enabled) => renderSquareFeetPage({ lang, defaultLang, enabledLangs: enabled }),
 	'text-diff': (lang, defaultLang, enabled) => renderTextDiffPage({ lang, defaultLang, enabledLangs: enabled }),
 	'timezone-converter': (lang, defaultLang, enabled) => renderTimezoneConverterPage({ lang, defaultLang, enabledLangs: enabled }),
 	'unix-timestamp': (lang, defaultLang, enabled) => renderUnixTimestampPage({ lang, defaultLang, enabledLangs: enabled }),
+	'unlock-pdf': (lang, defaultLang, enabled) => renderUnlockPdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'uuid-generator': (lang, defaultLang, enabled) => renderUuidGeneratorPage({ lang, defaultLang, enabledLangs: enabled }),
 	'wcag-contrast-checker': (lang, defaultLang, enabled) => renderWcagContrastCheckerPage({ lang, defaultLang, enabledLangs: enabled }),
 	'website-headers': (lang, defaultLang, _enabled) => renderWebsiteHeadersPage(lang, defaultLang),

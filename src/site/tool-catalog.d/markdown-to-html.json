@@ -19,5 +19,6 @@
     "module": "../pages/markdownToHtmlPage",
     "export": "renderMarkdownToHtmlPage",
     "style": "opts"
-  }
+  },
+  "localProcessing": true
 }

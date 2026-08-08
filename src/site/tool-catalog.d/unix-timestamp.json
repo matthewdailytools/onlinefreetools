@@ -17,5 +17,6 @@
     "module": "../pages/unixTimestampPage",
     "export": "renderUnixTimestampPage",
     "style": "opts"
-  }
+  },
+  "localProcessing": true
 }

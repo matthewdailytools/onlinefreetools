@@ -17,5 +17,6 @@
     "module": "../pages/brandColorTokenPackPage",
     "export": "renderBrandColorTokenPackPage",
     "style": "opts"
-  }
+  },
+  "localProcessing": true
 }

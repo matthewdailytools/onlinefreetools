@@ -18,5 +18,6 @@
     "module": "../pages/brandStyleGuidePage",
     "export": "renderBrandStyleGuidePage",
     "style": "opts"
-  }
+  },
+  "localProcessing": true
 }

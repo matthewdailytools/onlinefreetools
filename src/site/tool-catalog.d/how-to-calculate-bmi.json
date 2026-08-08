@@ -17,5 +17,6 @@
     "module": "../pages/howToCalculateBmiPage",
     "export": "renderHowToCalculateBmiPage",
     "style": "opts"
-  }
+  },
+  "localProcessing": true
 }

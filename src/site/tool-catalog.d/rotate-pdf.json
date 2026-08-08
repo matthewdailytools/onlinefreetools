@@ -1,0 +1,22 @@
+{
+  "slug": "rotate-pdf",
+  "path": "/tools/rotate-pdf",
+  "category": "pdf",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_rotate_pdf_title",
+  "homeTitleKey": "tool_rotate_pdf_title",
+  "homeDescKey": "tool_rotate_pdf_desc",
+  "faqPrefix": "tool_rotate_pdf",
+  "related": [
+    "organize-pdf",
+    "split-pdf"
+  ],
+  "logo": "/icons/tools/rotate-pdf.svg",
+  "page": {
+    "module": "../pages/rotatePdfPage",
+    "export": "renderRotatePdfPage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

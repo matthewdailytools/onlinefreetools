@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Created work-tasks brief for domain-lookup (ready + 0b gate green); updated inventory row #9. | Dev Logs</title>
+  <meta name="description" content="Created work-tasks brief for domain-lookup (ready + 0b gate green); updated inventory row #9." />
+  <meta name="robots" content="noindex" />
+  <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-20-51-brief-domain-lookup.html" />
+  <meta property="og:title" content="Created work-tasks brief for domain-lookup (ready + 0b gate green); updated inventory row #9. | Dev Logs" />
+  <meta property="og:description" content="Created work-tasks brief for domain-lookup (ready + 0b gate green); updated inventory row #9." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-08-20-51-brief-domain-lookup.html" />
+  <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  
+  <script>
+    (function () {
+      try {
+        var enabled = [];
+        var defaultLang = "en";
+        var fallback = defaultLang;
+        var path = window.location.pathname || '/';
+
+        // If the URL already contains a language prefix (including defaultLang), respect it.
+        var hasPrefix = enabled.some(function (l) {
+          return l && (path === '/' + l || path.indexOf('/' + l + '/') === 0);
+        });
+        if (hasPrefix) return;
+
+        var langs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language])
+          .filter(Boolean)
+          .map(function (x) { return String(x).toLowerCase().split('-')[0]; });
+
+        var picked = null;
+        for (var i = 0; i < langs.length; i++) {
+          if (enabled.indexOf(langs[i]) !== -1) { picked = langs[i]; break; }
+        }
+        if (!picked) picked = enabled.indexOf(fallback) !== -1 ? fallback : (enabled[0] || fallback);
+
+        if (picked === "en") return;
+        var targetPath = path;
+        if (picked !== defaultLang) {
+          targetPath = ('/' + picked + path).replace(/\/{2,}/g, '/');
+        }
+        window.location.replace(targetPath + window.location.search + window.location.hash);
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="preload" href="/vendor/bootstrap/bootstrap.min.css" as="style" />
+  <link rel="preload" href="/vendor/fonts/plus-jakarta-sans.css" as="style" />
+  <link href="/vendor/bootstrap/bootstrap.min.css" rel="stylesheet" />
+  <link href="/vendor/fonts/plus-jakarta-sans.css" rel="stylesheet" />
+  <link href="/styles/site.css" rel="stylesheet" />
+  <style>
+    body { min-height: 100vh; padding-top: var(--header-h, 56px); }
+    .layout { display: flex; min-height: calc(100vh - var(--header-h, 56px)); }
+  </style>
+  
+<script>
+(function () {
+  function run() {
+    try {
+
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xbc0iytpn7");
+    } catch (e) {}
+  }
+  function schedule() {
+    if (typeof requestIdleCallback === 'function') requestIdleCallback(run, { timeout: 4000 });
+    else setTimeout(run, 2000);
+  }
+  if (document.readyState === 'complete') schedule();
+  else window.addEventListener('load', schedule, { once: true });
+})();
+</script>
+  
+  
+</head>
+<body class="is-home-page">
+  
+  
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light site-navbar border-bottom fixed-top">
+      <div class="container-fluid">
+        <button class="btn btn-outline-secondary me-2" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+        <a class="navbar-brand" href="/">
+          <img class="navbar-brand-logo" src="/brand-logo.svg" width="28" height="28" alt="" decoding="async" />
+          <span class="navbar-brand-text">OnlineFreeTools.org</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="topNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="/en/">Home</a></li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Image editing tools</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/en/tools/add-watermark" target="_blank" rel="noopener noreferrer">Add Text Watermark to Photo — Local Browser Tool</a></li><li><a class="dropdown-item" href="/en/tools/color-from-image" target="_blank" rel="noopener noreferrer">Extract Colors from Image — Palette & Click Pick</a></li><li><a class="dropdown-item" href="/en/tools/flip-image" target="_blank" rel="noopener noreferrer">Flip Image — Mirror Horizontally or Vertically</a></li><li><a class="dropdown-item" href="/en/tools/image-border" target="_blank" rel="noopener noreferrer">Add Border to Image — Color & Width Online</a></li><li><a class="dropdown-item" href="/en/tools/image-compress" target="_blank" rel="noopener noreferrer">Image Compressor — Resize, Quality & Target Size Local</a></li><li><a class="dropdown-item" href="/en/tools/image-crop" target="_blank" rel="noopener noreferrer">Crop & Resize Image — Local Aspect Presets</a></li><li><a class="dropdown-item" href="/en/tools/image-exif" target="_blank" rel="noopener noreferrer">Photo EXIF Viewer & Remover — GPS, Camera & Local Strip</a></li><li><a class="dropdown-item" href="/en/tools/image-format-converter" target="_blank" rel="noopener noreferrer">Image Format Converter — PNG JPEG WebP AVIF BMP GIF ICO SVG</a></li><li><a class="dropdown-item" href="/en/tools/image-grayscale" target="_blank" rel="noopener noreferrer">Convert Image to Grayscale — Black & White Online</a></li><li><a class="dropdown-item" href="/en/tools/image-merge" target="_blank" rel="noopener noreferrer">Merge Images — Combine Photos into One Collage</a></li><li><a class="dropdown-item" href="/en/tools/image-optimizer" target="_blank" rel="noopener noreferrer">Image Optimizer — WebP, AVIF & MozJPEG Local</a></li><li><a class="dropdown-item" href="/en/tools/image-overlay" target="_blank" rel="noopener noreferrer">Overlay Images — Put a Logo on a Photo</a></li><li><a class="dropdown-item" href="/en/tools/image-to-base64" target="_blank" rel="noopener noreferrer">Image to Base64 Converter — Encode & Decode Locally</a></li><li><a class="dropdown-item" href="/en/tools/images-to-gif" target="_blank" rel="noopener noreferrer">Images to GIF — Make an Animated GIF Locally</a></li><li><a class="dropdown-item" href="/en/tools/images-to-pdf" target="_blank" rel="noopener noreferrer">Images to PDF — Combine Photos into One File</a></li><li><a class="dropdown-item" href="/en/tools/images-to-ppt" target="_blank" rel="noopener noreferrer">Images to PowerPoint — Photos to PPTX Slides</a></li><li><a class="dropdown-item" href="/en/tools/images-to-word" target="_blank" rel="noopener noreferrer">Images to Word — Build a DOCX from Photos</a></li><li><a class="dropdown-item" href="/en/tools/pdf-page-to-image-sizes" target="_blank" rel="noopener noreferrer">PDF Page to Image Sizes — Multi-Size Export Pack</a></li><li><a class="dropdown-item" href="/en/tools/pdf-to-jpg" target="_blank" rel="noopener noreferrer">PDF to JPG — Convert Pages to Images in Your Browser</a></li></ul>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Design tools</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/en/tools/brand-color-token-pack" target="_blank" rel="noopener noreferrer">Generate Brand Color Scale — 50–950 Palette & CSS Tokens</a></li><li><a class="dropdown-item" href="/en/tools/brand-style-guide" target="_blank" rel="noopener noreferrer">Brand Style Guide — Generate a Modular Draft You Can Edit</a></li><li><a class="dropdown-item" href="/en/tools/smart-website-color-scheme" target="_blank" rel="noopener noreferrer">Smart Website Color Scheme — Semantic CSS Tokens</a></li><li><a class="dropdown-item" href="/en/tools/wcag-contrast-checker" target="_blank" rel="noopener noreferrer">WCAG Contrast Checker — AA/AAA Ratio Online</a></li></ul>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">PDF tools</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/en/tools/compress-pdf" target="_blank" rel="noopener noreferrer">Compress PDF — Shrink File Size in Your Browser</a></li><li><a class="dropdown-item" href="/en/tools/crop-pdf" target="_blank" rel="noopener noreferrer">Crop PDF — Trim Page Margins in Your Browser</a></li><li><a class="dropdown-item" href="/en/tools/merge-pdf" target="_blank" rel="noopener noreferrer">Merge PDF — Combine Files in Your Browser</a></li><li><a class="dropdown-item" href="/en/tools/organize-pdf" target="_blank" rel="noopener noreferrer">Organize PDF — Reorder or Remove Pages in Your Browser</a></li><li><a class="dropdown-item" href="/en/tools/pdf-page-numbers" target="_blank" rel="noopener noreferrer">Add Page Numbers to PDF — In Your Browser</a></li><li><a class="dropdown-item" href="/en/tools/pdf-to-markdown" target="_blank" rel="noopener noreferrer">PDF to Markdown — Extract Text for Notes in Your Browser</a></li><li><a class="dropdown-item" href="/en/tools/pdf-watermark" target="_blank" rel="noopener noreferrer">PDF Watermark — Stamp Text on Every Page in Your Browser</a></li><li><a class="dropdown-item" href="/en/tools/protect-pdf" target="_blank" rel="noopener noreferrer">Protect PDF — Password-Encrypt in Your Browser</a></li><li><a class="dropdown-item" href="/en/tools/rotate-pdf" target="_blank" rel="noopener noreferrer">Rotate PDF — Fix Page Orientation in Your Browser</a></li><li><a class="dropdown-item" href="/en/tools/split-pdf" target="_blank" rel="noopener noreferrer">Split PDF — Extract Pages Locally</a></li><li><a class="dropdown-item" href="/en/tools/unlock-pdf" target="_blank" rel="noopener noreferrer">Unlock PDF — Remove Password You Already Know</a></li></ul>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Developer</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/en/tools/add-www-to-dns" target="_blank" rel="noopener noreferrer">Add WWW to DNS — A/CNAME, Apex Rules & Provider Guides</a></li><li><a class="dropdown-item" href="/en/tools/base64" target="_blank" rel="noopener noreferrer">Base64 Encode & Decode — Convert Text in Your Browser</a></li><li><a class="dropdown-item" href="/en/tools/csv-json" target="_blank" rel="noopener noreferrer">CSV ↔ JSON Converter — Types, Delimiters & Local</a></li><li><a class="dropdown-item" href="/en/tools/domain-lookup" target="_blank" rel="noopener noreferrer">Domain Lookup — Check DNS Records & Registration Online</a></li><li><a class="dropdown-item" href="/en/tools/file-hash" target="_blank" rel="noopener noreferrer">File Hash Checker — Verify Digests in Your Browser</a></li><li><a class="dropdown-item" href="/en/tools/html-entity" target="_blank" rel="noopener noreferrer">HTML Entity Encoder & Decoder — Escape, Unescape & Local</a></li><li><a class="dropdown-item" href="/en/tools/indexnow" target="_blank" rel="noopener noreferrer">IndexNow — Bing URL Submit, Key Check & Status Codes</a></li><li><a class="dropdown-item" href="/en/tools/ip-address" target="_blank" rel="noopener noreferrer">What Is My IP Address — See Your Public IP (IPv4 or IPv6)</a></li><li><a class="dropdown-item" href="/en/tools/json-schema-validator" target="_blank" rel="noopener noreferrer">JSON Schema Validator — Draft-07 Paths & Local</a></li><li><a class="dropdown-item" href="/en/tools/jwt-decoder" target="_blank" rel="noopener noreferrer">JWT Decoder — Read Header & Payload Locally (No Verify)</a></li><li><a class="dropdown-item" href="/en/tools/markdown-to-html" target="_blank" rel="noopener noreferrer">Markdown ↔ HTML</a></li><li><a class="dropdown-item" href="/en/tools/password-generator" target="_blank" rel="noopener noreferrer">Random Password Generator — Create Passwords Locally</a></li><li><a class="dropdown-item" href="/en/tools/text-diff" target="_blank" rel="noopener noreferrer">Compare Two Texts Online — Text Diff Checker</a></li><li><a class="dropdown-item" href="/en/tools/timezone-converter" target="_blank" rel="noopener noreferrer">Time Zone Converter — Compare One Moment Worldwide</a></li><li><a class="dropdown-item" href="/en/tools/unix-timestamp" target="_blank" rel="noopener noreferrer">Unix Timestamp Converter — Epoch ↔ Readable Time</a></li><li><a class="dropdown-item" href="/en/tools/uuid-generator" target="_blank" rel="noopener noreferrer">UUID & ULID Generator — Create IDs in Your Browser</a></li><li><a class="dropdown-item" href="/en/tools/website-headers" target="_blank" rel="noopener noreferrer">Check HTTP Response Headers</a></li><li><a class="dropdown-item" href="/en/tools/yaml-json" target="_blank" rel="noopener noreferrer">YAML ↔ JSON Converter — Types, Multi-doc & Local</a></li></ul>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Calculators</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/en/tools/how-to-calculate-bmi" target="_blank" rel="noopener noreferrer">BMI Calculator — How to Calculate Body Mass Index</a></li><li><a class="dropdown-item" href="/en/tools/how-to-calculate-gradient" target="_blank" rel="noopener noreferrer">Gradient Calculator — Multivariable ∇f (Partial Derivatives)</a></li><li><a class="dropdown-item" href="/en/tools/how-to-calculate-marginal-revenue" target="_blank" rel="noopener noreferrer">How to Calculate Marginal Revenue — MR Calculator (ΔTR / ΔQ)</a></li><li><a class="dropdown-item" href="/en/tools/how-to-calculate-percentage-change" target="_blank" rel="noopener noreferrer">Percentage Change Calculator — From Old Value to New</a></li><li><a class="dropdown-item" href="/en/tools/how-to-calculate-roi" target="_blank" rel="noopener noreferrer">ROI Calculator — How to Calculate Return on Investment</a></li><li><a class="dropdown-item" href="/en/tools/square-feet" target="_blank" rel="noopener noreferrer">Square Feet to Square Meters — Area Converter for Homes & Renovation</a></li></ul>
+        </li></ul>
+          <div class="d-flex align-items-center gap-2">
+            
+            <div class="dropdown theme-switcher">
+              <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Theme">
+                <span class="theme-swatch" data-theme-swatch aria-hidden="true"></span>
+                <span class="d-none d-md-inline">Theme</span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><button type="button" class="dropdown-item theme-option" data-theme-set="teal"><span class="theme-swatch theme-swatch--teal" aria-hidden="true"></span>Slate blue</button></li>
+                <li><button type="button" class="dropdown-item theme-option" data-theme-set="green"><span class="theme-swatch theme-swatch--green" aria-hidden="true"></span>Forest</button></li>
+                <li><button type="button" class="dropdown-item theme-option" data-theme-set="amber"><span class="theme-swatch theme-swatch--amber" aria-hidden="true"></span>Amber</button></li>
+                <li><button type="button" class="dropdown-item theme-option" data-theme-set="navy"><span class="theme-swatch theme-swatch--navy" aria-hidden="true"></span>Ink navy</button></li>
+              </ul>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="layout sidebar-collapsed" id="layoutRoot">
+    
+    <aside id="sidebar" class="border-end">
+      <h2 class="sidebar-title h6">Navigation</h2>
+      <div class="list-group list-group-flush small" id="navList"><a class="list-group-item list-group-item-action" href="/">Home</a></div>
+    </aside>
+    <main id="content" class="p-4">
+      <section class="mb-3">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h1 class="h4 mb-0">Created work-tasks brief for domain-lookup (ready + 0b gate green); updated inventory row #9. | Dev Logs</h1>
+          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
+        </div>
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-08 20:51
+Summary: Created work-tasks brief for domain-lookup (ready + 0b gate green); updated inventory row #9.</p>
+<p>[question]
+立项：domain-lookup</p>
+<p>[try to solve]
+已完成 <code>domain-lookup</code> 立项 brief，并通过 <code>coverage:gate --phase=0b</code>。</p>
+<p><strong>产物</strong>（<code>work-tasks/domain-lookup/</code>）</p>
+<ul>
+<li><code>00-request.md</code>：用户原问（域名查询实现 + 立项）</li>
+<li><code>01-direction-discussion.md</code>：主方向 A.10；不拆 whois/dns/rdap 薄页</li>
+<li><code>02-tool-info.md</code>：状态 <code>ready</code>；MVP = DoH（扩 MX/NS/TXT/SOA）+ RDAP 分区；进页样例 <code>example.com</code>；related：<code>add-www-to-dns</code> / <code>website-headers</code> / <code>ip-address</code></li>
+<li><code>03-locale-briefs.md</code>：十语 brief + 行 <code>0b</code>；状态 <code>briefs-ready</code></li>
+</ul>
+<p><strong>SEO 0b</strong></p>
+<ul>
+<li>H1 方向：<code>Domain Lookup — Check DNS Records &amp; Registration Online</code></li>
+<li>去掉参数枚举腔；whois/dns/expiry 落 desc/FAQ</li>
+<li><code>npm run coverage:gate -- --slug=domain-lookup --phase=0b</code> → OK</li>
+</ul>
+<p><strong>清单表</strong></p>
+<ul>
+<li><code>docs/2026-08-08-tool-inventory-table.md</code> 序号 9：<code>domain-lookup</code>，进度「进行中」；全表 1–116</li>
+</ul>
+<p>下一步：用户明确要求实现后再按 <code>tool-creation</code> + coverage 步 2/4 写页面与 i18n。</p>
+<p>[actions]</p>
+<ul>
+<li>新建 <code>work-tasks/domain-lookup/{00,01,02,03}.md</code></li>
+<li>更新 <code>docs/2026-08-08-tool-inventory-table.md</code></li>
+<li><code>npm run coverage:gate -- --slug=domain-lookup --phase=0b</code></li>
+</ul>
+</article>
+      </section>
+    </main>
+  </div>
+  
+
+  <footer class="site-footer border-top text-center py-3">
+
+    <div class="container">
+
+      <div class="mb-1"><small class="text-muted">OnlineFreeTools.org · Learning project · Iterating</small></div>
+
+      <nav class="d-inline" aria-label="Site links">
+
+        <a class="small text-decoration-none" href="/en/about">About</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/devlogs/">Dev Logs</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/en/privacy">Privacy</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/en/terms">Terms</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/en/contact">Contact</a>
+
+      </nav>
+
+    </div>
+
+  </footer>
+  
+  <script src="/vendor/bootstrap/bootstrap.bundle.min.js" defer></script>
+  <script src="/js/theme.js" defer></script>
+  
+  <script>
+    const layout = document.getElementById('layoutRoot');
+    const toggle = document.getElementById('sidebarToggle');
+    if (layout && toggle) {
+      toggle.addEventListener('click', () => layout.classList.toggle('sidebar-collapsed'));
+      
+    }
+  </script>
+</body>
+</html>

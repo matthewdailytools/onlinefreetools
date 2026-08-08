@@ -17,5 +17,6 @@
     "module": "../pages/squareFeetPage",
     "export": "renderSquareFeetPage",
     "style": "opts"
-  }
+  },
+  "localProcessing": true
 }

@@ -1,0 +1,22 @@
+{
+  "slug": "pdf-to-markdown",
+  "path": "/tools/pdf-to-markdown",
+  "category": "pdf",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_pdf_to_markdown_title",
+  "homeTitleKey": "tool_pdf_to_markdown_title",
+  "homeDescKey": "tool_pdf_to_markdown_desc",
+  "faqPrefix": "tool_pdf_to_markdown",
+  "related": [
+    "markdown-to-html",
+    "pdf-to-jpg"
+  ],
+  "logo": "/icons/tools/pdf-to-markdown.svg",
+  "page": {
+    "module": "../pages/pdfToMarkdownPage",
+    "export": "renderPdfToMarkdownPage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

@@ -17,5 +17,6 @@
     "module": "../pages/imageToBase64Page",
     "export": "renderImageToBase64Page",
     "style": "opts"
-  }
+  },
+  "localProcessing": true
 }

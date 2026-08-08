@@ -17,5 +17,6 @@
     "module": "../pages/fileHashPage",
     "export": "renderFileHashPage",
     "style": "opts"
-  }
+  },
+  "localProcessing": true
 }

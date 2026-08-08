@@ -1,0 +1,22 @@
+{
+  "slug": "compress-pdf",
+  "path": "/tools/compress-pdf",
+  "category": "pdf",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_compress_pdf_title",
+  "homeTitleKey": "tool_compress_pdf_title",
+  "homeDescKey": "tool_compress_pdf_desc",
+  "faqPrefix": "tool_compress_pdf",
+  "related": [
+    "organize-pdf",
+    "merge-pdf"
+  ],
+  "logo": "/icons/tools/compress-pdf.svg",
+  "page": {
+    "module": "../pages/compressPdfPage",
+    "export": "renderCompressPdfPage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

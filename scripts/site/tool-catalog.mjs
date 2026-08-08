@@ -11,7 +11,7 @@ const catalogPath = path.resolve(
   '../../src/site/tool-catalog.json'
 );
 
-/** @type {Array<{slug:string,path:string,category:string,featured?:boolean,ymyl?:boolean,i18nKey:string,homeTitleKey:string,homeDescKey:string,faqPrefix:string,logo:string,related?:string[]}>} */
+/** @type {Array<{slug:string,path:string,category:string,featured?:boolean,ymyl?:boolean,localProcessing?:boolean,i18nKey:string,homeTitleKey:string,homeDescKey:string,faqPrefix:string,logo:string,related?:string[]}>} */
 export const TOOL_CATALOG = require(catalogPath);
 
 /**

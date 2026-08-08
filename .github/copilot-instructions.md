@@ -42,6 +42,7 @@ Purpose: Make AI agents productive immediately in this repo. Keep changes minima
   - **进页样例**：须配置并可运行；初始化后自动跑出与主流程一致的真实结果（非空态占位）；与 H2 Example 对齐；例外写 `02`（见 `tool-creation.mdc`）
   - Information Gain：上线前 §3.1 九维至少 3 项；长尾默认一带多场景，慎拆近义 URL
   - 文件/粘贴类：隐私 FAQ/声明须该语说清「留在设备」+「不上服务器」（见 `tool-i18n-localization.mdc`）
+  - 首页工具卡片：纯本地工具显示「不上传」标签（链到 `/{lang}/privacy#local`）；catalog `localProcessing: false` 的边缘工具不挂标签
 
 - **多语言本地化（稳妥常态）**：先填 `work-tasks/{slug}/03-locale-briefs.md` → 母版一语 → **Title/描述/检索词覆盖优化（母版）** → **逐语或每批 ≤3 语**按 brief 独立重写 → **再优化抽查语覆盖**（禁止 `Translate to {lang}`；禁止 en/zh 后脚本灌其余语的同构交付）→ 禁词表 + ≥3 轮抽查；「待母语抽查」须重写/确认后清掉才可 `i18n-done`。Title/H1 须结果或场景向口语，**禁止**「参数A、参数B、参数C」目录腔；次要意图进 description/FAQ，勿拆近义 URL。文件/粘贴类隐私句：按语种写清「留在设备」+「不上服务器」（zh≈不上传服务器；禁只写含糊 `local`/`ohne Upload`/`sans envoi`）。`lint:seo` ≠ 本地化完成。细则：`tool-i18n-localization.mdc`「隐私本地处理表述」。
 

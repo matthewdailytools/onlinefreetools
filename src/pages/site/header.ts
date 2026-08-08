@@ -3,6 +3,10 @@ import { getLangLabel, t } from '../../site/i18n';
 import { escapeHtml } from './layout';
 import type { NavItem } from './nav';
 
+/** 工具等入口：新标签打开时附带安全 rel */
+const newTabAttrs = (openInNewTab?: boolean) =>
+	openInNewTab ? ' target="_blank" rel="noopener noreferrer"' : '';
+
 /**
  * 将顶栏导航项渲染为 Bootstrap navbar HTML（支持分类下拉）。
  * @param items 链接或下拉菜单项
@@ -14,7 +18,7 @@ const renderNavItems = (items: NavItem[]): string =>
 				const menu = item.items
 					.map(
 						(sub) =>
-							`<li><a class="dropdown-item" href="${escapeHtml(sub.href)}">${escapeHtml(sub.label)}</a></li>`
+							`<li><a class="dropdown-item" href="${escapeHtml(sub.href)}"${newTabAttrs(sub.openInNewTab)}>${escapeHtml(sub.label)}</a></li>`
 					)
 					.join('');
 				return `<li class="nav-item dropdown">
@@ -22,7 +26,7 @@ const renderNavItems = (items: NavItem[]): string =>
           <ul class="dropdown-menu">${menu}</ul>
         </li>`;
 			}
-			return `<li class="nav-item"><a class="nav-link" href="${escapeHtml(item.href)}">${escapeHtml(item.label)}</a></li>`;
+			return `<li class="nav-item"><a class="nav-link" href="${escapeHtml(item.href)}"${newTabAttrs(item.openInNewTab)}>${escapeHtml(item.label)}</a></li>`;
 		})
 		.join('');
 

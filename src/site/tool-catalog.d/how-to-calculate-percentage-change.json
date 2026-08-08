@@ -17,5 +17,6 @@
     "module": "../pages/howToCalculatePercentageChangePage",
     "export": "renderHowToCalculatePercentageChangePage",
     "style": "opts"
-  }
+  },
+  "localProcessing": true
 }

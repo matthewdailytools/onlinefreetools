@@ -18,5 +18,6 @@
     "module": "../pages/csvJsonPage",
     "export": "renderCsvJsonPage",
     "style": "opts"
-  }
+  },
+  "localProcessing": true
 }

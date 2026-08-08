@@ -43,7 +43,7 @@ alwaysApply: false
 ```
 work-tasks/{slug}/              # 00–03 brief（含清单前覆盖表 + 03-locale-briefs）
 npm run coverage:gate -- --slug={slug} --phase=0b   # 标 ready / 勾模块清单前
-src/site/tool-catalog.d/{slug}.json   # slug / path / related ≥2 / FAQ / YMYL / page.*
+src/site/tool-catalog.d/{slug}.json   # slug / path / related ≥2 / FAQ / YMYL / localProcessing / page.*
 src/pages/{camel}Page.ts
 src/site/i18n/tools/{slug}/{lang}.ts  # 母版 → coverage:gate --phase=2；他语 → --phase=4
 public/icons/tools/{slug}.svg   # 工具图标（注释优先 ASCII；见下方「图标 SVG」）
@@ -127,7 +127,7 @@ Disclaimer（YMYL 必备）
 ## 上线前 Checklist（PR 合并前）
 
 - [ ] **清单前检索覆盖优化已做**（slug/title/关键词/desc；`02`/`notes` 有覆盖表；见 `tool-i18n-localization.mdc` 步 0b）——**勾本 Checklist 之前必须已完成**
-- [ ] `src/site/tool-catalog.d/{slug}.json` 完成；`related` ≥ 2
+- [ ] `src/site/tool-catalog.d/{slug}.json` 完成；`related` ≥ 2；纯本地处理默认 `localProcessing: true`（边缘请求工具须 `false`，首页不显示「不上传」标签）
 - [ ] `npm run coverage:gate -- --slug={slug} --phase=all` 通过（0b + 步2/1b + 步4/2b）
 - [ ] 已 `npm run build:site`（含 merge；`public/_pages/*/index.html` 与 sitemap 已含本工具；勿只跑 `merge:tools`）
 - [ ] title 非参数枚举目录腔；`02` 覆盖表填满且 `03` 勾选清单前覆盖与「检索覆盖已优化」

@@ -17,5 +17,6 @@
     "module": "../pages/colorFromImagePage",
     "export": "renderColorFromImagePage",
     "style": "opts"
-  }
+  },
+  "localProcessing": true
 }
