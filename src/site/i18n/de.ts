@@ -550,6 +550,7 @@ const de: SiteLangDict = {
   tool_brand_style_guide_warn_contrast:
     'Warnung: Primärfarbe auf Weiß unter 3:1 — Farbe vertiefen vor großem Text oder Logo auf hellem Grund.',
   tool_category_design: 'Design-Tools',
+  tool_category_pdf: 'PDF-Tools',
   tool_color_from_image_article: 'Lokale Dominantfarben-Palette plus Regionalmittel per Klick, mit kopierbaren HEX/RGB/HSL.',
   tool_color_from_image_choose_file: 'Bild wählen',
   tool_color_from_image_clear: 'Löschen',
@@ -2235,6 +2236,64 @@ const de: SiteLangDict = {
   tool_markdown_usecase_2: 'Dokumentation aus HTML-Export retten.',
   tool_markdown_usecase_3: 'Rich-Text vor einem Prompt glätten.',
   tool_markdown_usecases_title: 'Typische Einsätze',
+  tool_merge_pdf_article:
+    'Mehrere PDFs in Listenreihenfolge mit clientseitigem pdf-lib zusammenfügen — ohne Server-Upload; Dateien bleiben auf dem Gerät. Neu ordnen, verschlüsselte Fehler klar melden, eine Datei herunterladen.',
+  tool_merge_pdf_choose_files: 'PDFs wählen',
+  tool_merge_pdf_clear: 'Leeren',
+  tool_merge_pdf_desc:
+    'Mehrere PDFs im Browser zu einer Datei kombinieren — ohne Server-Upload; Dateien bleiben auf Ihrem Gerät.',
+  tool_merge_pdf_description:
+    'PDFs im Browser zusammenfügen und eine kombinierte Datei herunterladen — ohne Server-Upload. Schritte: mindestens zwei PDFs hinzufügen, Liste neu ordnen, zusammenfügen, dann herunterladen. Beispiel: zwei einseitige Beispiele werden zu einem zweiseitigen PDF. Verschlüsselte oder beschädigte Dateien scheitern mit klarer Meldung. Anders als Bilder zu PDF, das von Fotos startet.',
+  tool_merge_pdf_download: 'Download',
+  tool_merge_pdf_drop_hint: 'Oder PDFs hier ablegen. Die Verarbeitung bleibt in diesem Tab.',
+  tool_merge_pdf_empty: 'Fügen Sie mindestens zwei PDFs zum Zusammenfügen hinzu.',
+  tool_merge_pdf_err_encrypted: 'Eine Datei scheint passwortgeschützt. Entsperren Sie sie und versuchen Sie es erneut.',
+  tool_merge_pdf_err_load: 'Ein PDF konnte nicht gelesen werden (beschädigt oder nicht unterstützt). Andere Datei versuchen.',
+  tool_merge_pdf_err_merge: 'Zusammenfügen fehlgeschlagen. Dateien prüfen und erneut versuchen.',
+  tool_merge_pdf_example:
+    'Das Beispiel lädt zwei einseitige PDFs (A und B), fügt sie in Listenreihenfolge zusammen und aktiviert Download für ein zweiseitiges merged.pdf.',
+  tool_merge_pdf_example_title: 'Beispiel',
+  tool_merge_pdf_faq_a1:
+    'Nein. pdf-lib läuft in Ihrem Tab (die Bibliothek kann von einem CDN kommen). PDFs werden nicht auf unsere Server hochgeladen.',
+  tool_merge_pdf_faq_a2:
+    'Bilder zu PDF erstellt ein PDF aus Fotos. Dieses Tool fügt vorhandene PDF-Dateien zu einem Dokument zusammen.',
+  tool_merge_pdf_faq_a3: 'Ja — mit Hoch/Runter pro Zeile. Die Listenreihenfolge von oben nach unten ist die Seitenreihenfolge.',
+  tool_merge_pdf_faq_a4:
+    'Passwortgeschützte PDFs lassen sich hier oft nicht öffnen. Passwort mit einem vertrauenswürdigen Tool entfernen, dann zusammenfügen.',
+  tool_merge_pdf_faq_a5: 'Die meisten Desktop- und Mobil-PDF-Reader öffnen das Ergebnis.',
+  tool_merge_pdf_faq_q1: 'Werden meine PDFs hochgeladen?',
+  tool_merge_pdf_faq_q2: 'Unterschied zu Bilder zu PDF?',
+  tool_merge_pdf_faq_q3: 'Kann ich die Reihenfolge ändern?',
+  tool_merge_pdf_faq_q4: 'Was ist mit verschlüsselten PDFs?',
+  tool_merge_pdf_faq_q5: 'Öffnet sich das Ergebnis in Acrobat oder Vorschau?',
+  tool_merge_pdf_how_body:
+    'Mindestens zwei PDFs hinzufügen, bei Bedarf neu ordnen, Zusammenfügen, dann Download. Seitenreihenfolge folgt der Liste. Nach dem Laden der Bibliothek alles auf dem Gerät (kein Server-Upload).',
+  tool_merge_pdf_how_title: 'So funktioniert’s',
+  tool_merge_pdf_merge: 'Zusammenfügen',
+  tool_merge_pdf_move_down: 'Runter',
+  tool_merge_pdf_move_up: 'Hoch',
+  tool_merge_pdf_remove: 'Entfernen',
+  tool_merge_pdf_rules_body: 'Listenreihenfolge, copyPages, Datenschutz und Fehlerfälle beim lokalen Zusammenfügen.',
+  tool_merge_pdf_rules_item_1:
+    'Reihenfolge: Seiten werden nach der Liste kopiert (oberste Datei zuerst). Vor dem Zusammenfügen neu ordnen.',
+  tool_merge_pdf_rules_item_2:
+    'Engine: pdf-lib lädt jedes PDF und nutzt copyPages in ein neues Dokument — ohne Server-Upload Ihrer Dateien.',
+  tool_merge_pdf_rules_item_3: 'Datenschutz: Bytes bleiben im Tab. Das Bibliotheksskript kann von einem CDN kommen.',
+  tool_merge_pdf_rules_item_4:
+    'Grenzen: ≥2 Dateien nötig; verschlüsselte/korrupte PDFs scheitern lesbar; sehr große Mengen können im Speicher langsam sein.',
+  tool_merge_pdf_rules_title: 'Regeln, die Sie erwarten sollten',
+  tool_merge_pdf_sample: 'Beispiel laden',
+  tool_merge_pdf_stats_tpl: '{n} Dateien → {pages} Seiten · {bytes}',
+  tool_merge_pdf_status_done: 'Fertig — Download speichert merged.pdf.',
+  tool_merge_pdf_status_merging: 'PDFs werden zusammengefügt…',
+  tool_merge_pdf_title: 'PDF zusammenfügen — Dateien im Browser kombinieren',
+  tool_merge_pdf_usecase_1: 'Büro: Unterschriften und Anhänge zu einem Paket bündeln.',
+  tool_merge_pdf_usecase_2: 'Studium: Kapitel einer Arbeit vor Abgabe zusammenfügen.',
+  tool_merge_pdf_usecase_3: 'Ops: Briefings und Specs als ein PDF übergeben.',
+  tool_merge_pdf_usecases_title: 'Gut geeignet für',
+  tool_merge_pdf_warn_large:
+    'Eine Datei ist größer als ~25 MB — Zusammenfügen kann langsam sein oder in manchen Browsern scheitern.',
+  tool_merge_pdf_warn_pdflib: 'PDF-Bibliothek konnte nicht geladen werden. Netzwerk prüfen und erneut versuchen.',
   tool_password_generator_article:
     'Erstelle Zufallspasswörter aus gewählten Zeichensätzen mit crypto.getRandomValues — für schnelle Demos, Wegwerf-Konten oder zum Testen von Länge/Charset-Regeln. Kein Passwort-Manager und keine Stärke-Garantie.',
   tool_password_generator_charset_label: 'Zeichensätze',
@@ -2475,6 +2534,68 @@ const de: SiteLangDict = {
   tool_smart_website_color_scheme_usecases_title: 'Gut geeignet für',
   tool_smart_website_color_scheme_warn_contrast:
     'Warnung: Text auf der Action-Farbe liegt unter 4,5:1 — Marke verdunkeln oder --on-action anpassen, bevor solide Buttons live gehen.',
+  tool_split_pdf_article:
+    'Teilen Sie ein PDF seitenweise oder nach Bereichen mit clientseitigem pdf-lib. Mehrere Ausgaben als ZIP über fflate — ohne Server-Upload; Dateien bleiben auf dem Gerät.',
+  tool_split_pdf_choose_file: 'PDF wählen',
+  tool_split_pdf_clear: 'Leeren',
+  tool_split_pdf_desc:
+    'Seiten auf Ihrem Gerät aus einem PDF extrahieren — jede Seite oder Bereiche; bei Bedarf ZIP; ohne Server-Upload.',
+  tool_split_pdf_description:
+    'Teilen Sie ein PDF im Browser und laden Sie Seiten oder Bereiche separat herunter — ohne Server-Upload. Schritte: PDF wählen, jede Seite oder Bereiche wie 1-3,5 angeben, teilen, dann herunterladen. Beispiel: ein dreiseitiges Beispiel wird zu einem ZIP mit page-1.pdf bis page-3.pdf. Eine einzelne Ausgabe lädt als PDF. Verschlüsselte Dateien scheitern mit klarer Meldung.',
+  tool_split_pdf_download: 'Download',
+  tool_split_pdf_drop_hint: 'Oder ein PDF hier ablegen. Die Verarbeitung bleibt in diesem Tab.',
+  tool_split_pdf_empty: 'Wählen Sie zuerst eine PDF-Datei.',
+  tool_split_pdf_err_encrypted: 'Dieses PDF scheint passwortgeschützt. Entsperren Sie es und versuchen Sie es erneut.',
+  tool_split_pdf_err_fflate: 'ZIP-Bibliothek konnte nicht geladen werden. Netzwerk prüfen und erneut versuchen.',
+  tool_split_pdf_err_load: 'PDF konnte nicht gelesen werden (beschädigt oder nicht unterstützt). Andere Datei versuchen.',
+  tool_split_pdf_err_range: 'Ungültige oder außerhalb liegende Seiten. Bereiche ab 1, z. B. 1-3,5.',
+  tool_split_pdf_err_split: 'Teilen fehlgeschlagen. Datei und Bereiche prüfen und erneut versuchen.',
+  tool_split_pdf_example:
+    'Das Beispiel erzeugt ein dreiseitiges PDF, teilt jede Seite und aktiviert Download für ein ZIP mit page-1.pdf, page-2.pdf und page-3.pdf.',
+  tool_split_pdf_example_title: 'Beispiel',
+  tool_split_pdf_faq_a1:
+    'Nein. pdf-lib und fflate laufen in Ihrem Tab (Skripte können von einem CDN kommen). Ihr PDF wird nicht hochgeladen.',
+  tool_split_pdf_faq_a2:
+    'Seiten ab 1: 1-3,5 bedeutet Seiten 1–3 und 5. Leerzeichen optional. Leere oder ungültige Werte scheitern.',
+  tool_split_pdf_faq_a3: 'Mehr als eine Datei → ZIP. Genau eine Ausgabe → PDF-Download.',
+  tool_split_pdf_faq_a4:
+    'Passwortgeschützte PDFs lassen sich hier oft nicht öffnen. Passwort mit einem vertrauenswürdigen Tool entfernen, dann teilen.',
+  tool_split_pdf_faq_a5:
+    'PDF zusammenfügen verbindet mehrere PDFs. Dieses Tool extrahiert Seiten aus einem PDF in separate Dateien.',
+  tool_split_pdf_faq_q1: 'Wird mein PDF hochgeladen?',
+  tool_split_pdf_faq_q2: 'Wie funktionieren Seitenbereiche?',
+  tool_split_pdf_faq_q3: 'Wann ZIP und wann PDF?',
+  tool_split_pdf_faq_q4: 'Was ist mit verschlüsselten PDFs?',
+  tool_split_pdf_faq_q5: 'Unterschied zu PDF zusammenfügen?',
+  tool_split_pdf_how_body:
+    'Ein PDF wählen, jede Seite oder Bereiche wählen, Teilen, dann Download. Mehrere Ausgaben → ZIP; eine → PDF. Nach dem Laden der Bibliotheken alles lokal.',
+  tool_split_pdf_how_title: 'So funktioniert’s',
+  tool_split_pdf_mode_every: 'Jede Seite (eine Datei pro Seite)',
+  tool_split_pdf_mode_label: 'Teilungsmodus',
+  tool_split_pdf_mode_ranges: 'Eigene Seitenbereiche',
+  tool_split_pdf_pages_label: 'Seiten in der Datei',
+  tool_split_pdf_ranges_hint: 'Beispiel: 1-3,5 (ab 1)',
+  tool_split_pdf_ranges_label: 'Seitenbereiche',
+  tool_split_pdf_rules_body: 'Bereiche ab 1, Dateinamen, ZIP vs PDF, Datenschutz und Fehlerfälle lokal.',
+  tool_split_pdf_rules_item_1:
+    'Modi: jede Seite → ein PDF pro Seite; Bereiche → ein PDF pro kommagetrenntem Segment (z. B. 1-3 und 5).',
+  tool_split_pdf_rules_item_2: 'Namen: page-N.pdf für eine Seite; pages-A-B.pdf für einen zusammenhängenden Bereich.',
+  tool_split_pdf_rules_item_3: 'Ausgabe: mehr als eine Datei → ZIP mit fflate; genau eine → dieses PDF herunterladen.',
+  tool_split_pdf_rules_item_4:
+    'Datenschutz & Grenzen: Bytes bleiben im Tab; verschlüsselte/korrupte PDFs scheitern klar; sehr große Dateien können langsam sein.',
+  tool_split_pdf_rules_title: 'Regeln, die Sie erwarten sollten',
+  tool_split_pdf_sample: 'Beispiel laden',
+  tool_split_pdf_split: 'Teilen',
+  tool_split_pdf_stats_tpl: '{n} Datei(en) · {bytes}',
+  tool_split_pdf_status_done: 'Fertig — Download speichert das Ergebnis.',
+  tool_split_pdf_status_splitting: 'PDF wird geteilt…',
+  tool_split_pdf_title: 'PDF teilen — Seiten lokal extrahieren',
+  tool_split_pdf_usecase_1: 'Büro: eine unterschriebene Seite aus einem langen Vertrag holen.',
+  tool_split_pdf_usecase_2: 'Lehre: Folien-PDF in Seiten-Handouts zerlegen.',
+  tool_split_pdf_usecase_3: 'Ops: jede gescannte Seite als eigene Datei ablegen.',
+  tool_split_pdf_usecases_title: 'Gut geeignet für',
+  tool_split_pdf_warn_large: 'Datei größer als ~25 MB — Teilen kann langsam sein oder in manchen Browsern scheitern.',
+  tool_split_pdf_warn_pdflib: 'PDF-Bibliothek konnte nicht geladen werden. Netzwerk prüfen und erneut versuchen.',
   tool_squarefeet_article:
     'Rechteckfläche aus Länge und Breite schätzen und zwischen Quadratfuß und Quadratmetern umrechnen. Für Inserate, Boden und Farbe — keine Immobilienbewertung und keine Trennung von Wohn-/Bruttofläche.',
   tool_squarefeet_calculate: 'Fläche umrechnen',

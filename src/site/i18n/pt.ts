@@ -550,6 +550,7 @@ const pt: SiteLangDict = {
   tool_brand_style_guide_warn_contrast:
     'Aviso: primária sobre branco abaixo de 3:1 — escureça a cor antes de textos grandes ou logos em fundos claros.',
   tool_category_design: 'Ferramentas de design',
+  tool_category_pdf: 'Ferramentas PDF',
   tool_color_from_image_article: 'Paleta de cores dominantes local com média regional ao clicar e HEX/RGB/HSL copiáveis.',
   tool_color_from_image_choose_file: 'Escolher imagem',
   tool_color_from_image_clear: 'Limpar',
@@ -2234,6 +2235,61 @@ const pt: SiteLangDict = {
   tool_markdown_usecase_2: 'Recuperar docs a partir de HTML exportado.',
   tool_markdown_usecase_3: 'Preparar colagem rica para um modelo de linguagem.',
   tool_markdown_usecases_title: 'Quando ajuda',
+  tool_merge_pdf_article:
+    'Junte vários PDF na ordem da lista com pdf-lib no cliente, sem envio. Reordene, trate falhas de criptografia e baixe um único documento.',
+  tool_merge_pdf_choose_files: 'Escolher PDFs',
+  tool_merge_pdf_clear: 'Limpar',
+  tool_merge_pdf_desc:
+    'Combine vários PDFs num só ficheiro no navegador — sem enviar ao servidor; os ficheiros ficam no dispositivo.',
+  tool_merge_pdf_description:
+    'Junte ficheiros PDF no navegador e descarregue um único documento — sem enviar ao servidor. Passos: adicione dois ou mais PDFs, reordene a lista, junte e descarregue. Exemplo: duas amostras de uma página tornam-se um PDF de duas páginas. PDFs encriptados ou danificados falham com mensagem clara. Diferente de Imagens para PDF, que parte de fotos.',
+  tool_merge_pdf_download: 'Descarregar',
+  tool_merge_pdf_drop_hint: 'Ou largue PDFs aqui. O processamento fica neste separador.',
+  tool_merge_pdf_empty: 'Adicione pelo menos dois PDFs para juntar.',
+  tool_merge_pdf_err_encrypted: 'Um ficheiro parece protegido por palavra-passe. Desbloqueie e tente de novo.',
+  tool_merge_pdf_err_load: 'Não foi possível ler um PDF (danificado ou incompatível). Tente outro ficheiro.',
+  tool_merge_pdf_err_merge: 'A junção falhou. Verifique os ficheiros e tente novamente.',
+  tool_merge_pdf_example:
+    'O exemplo carrega dois PDFs de uma página (A e B), junta na ordem da lista e ativa Descarregar para um merged.pdf de duas páginas.',
+  tool_merge_pdf_example_title: 'Exemplo',
+  tool_merge_pdf_faq_a1:
+    'Não. O pdf-lib corre no seu separador (a biblioteca pode vir de um CDN). Os PDFs não são enviados para os nossos servidores.',
+  tool_merge_pdf_faq_a2:
+    'Imagens para PDF cria um PDF a partir de fotos. Esta ferramenta junta PDFs já existentes num só documento.',
+  tool_merge_pdf_faq_a3: 'Sim — use Subir/Descer em cada linha. A ordem da lista (de cima para baixo) é a ordem das páginas.',
+  tool_merge_pdf_faq_a4:
+    'PDFs com palavra-passe costumam falhar aqui. Remova a palavra-passe com uma ferramenta de confiança e depois junte.',
+  tool_merge_pdf_faq_a5: 'A maioria dos leitores de PDF em computador e telemóvel abre o resultado.',
+  tool_merge_pdf_faq_q1: 'Os meus PDFs são enviados?',
+  tool_merge_pdf_faq_q2: 'Qual a diferença para Imagens para PDF?',
+  tool_merge_pdf_faq_q3: 'Posso alterar a ordem?',
+  tool_merge_pdf_faq_q4: 'E PDFs encriptados?',
+  tool_merge_pdf_faq_q5: 'Abre no Acrobat ou no Pré-visualizador?',
+  tool_merge_pdf_how_body:
+    'Adicione dois ou mais PDFs, reordene se precisar, clique em Juntar e depois Descarregar. A ordem das páginas segue a lista. Tudo corre localmente após carregar a biblioteca.',
+  tool_merge_pdf_how_title: 'Como funciona',
+  tool_merge_pdf_merge: 'Juntar',
+  tool_merge_pdf_move_down: 'Descer',
+  tool_merge_pdf_move_up: 'Subir',
+  tool_merge_pdf_remove: 'Remover',
+  tool_merge_pdf_rules_body: 'Ordem da lista, copyPages, privacidade e falhas ao juntar PDFs localmente.',
+  tool_merge_pdf_rules_item_1: 'Ordem: as páginas são copiadas pela lista (ficheiro de cima primeiro). Reordene antes de Juntar.',
+  tool_merge_pdf_rules_item_2: 'Motor: o pdf-lib carrega cada PDF e usa copyPages num documento novo — sem envio dos seus ficheiros.',
+  tool_merge_pdf_rules_item_3: 'Privacidade: os bytes ficam no separador. O script da biblioteca pode carregar de um CDN.',
+  tool_merge_pdf_rules_item_4:
+    'Limites: precisa de ≥2 ficheiros; PDFs encriptados ou corruptos falham com erro legível; conjuntos muito grandes podem ser lentos.',
+  tool_merge_pdf_rules_title: 'Regras a esperar',
+  tool_merge_pdf_sample: 'Carregar exemplo',
+  tool_merge_pdf_stats_tpl: '{n} ficheiros → {pages} páginas · {bytes}',
+  tool_merge_pdf_status_done: 'Concluído — clique em Descarregar para guardar merged.pdf.',
+  tool_merge_pdf_status_merging: 'A juntar PDFs…',
+  tool_merge_pdf_title: 'Juntar PDF — combine arquivos no navegador',
+  tool_merge_pdf_usecase_1: 'Escritório: juntar assinaturas e anexos num só pacote.',
+  tool_merge_pdf_usecase_2: 'Estudos: unir capítulos de um trabalho antes de entregar.',
+  tool_merge_pdf_usecase_3: 'Operações: empacotar briefs e especificações num PDF.',
+  tool_merge_pdf_usecases_title: 'Bons encaixes',
+  tool_merge_pdf_warn_large: 'Um ficheiro tem mais de ~25 MB — a junção pode ser lenta ou falhar em alguns navegadores.',
+  tool_merge_pdf_warn_pdflib: 'Falha ao carregar a biblioteca PDF. Verifique a rede e tente de novo.',
   tool_password_generator_article:
     'Crie senhas aleatórias com os conjuntos de caracteres escolhidos usando crypto.getRandomValues — para demos rápidas, contas descartáveis ou testar regras de comprimento/charset. Não é gerenciador de senhas nem garantia de força.',
   tool_password_generator_charset_label: 'Conjuntos de caracteres',
@@ -2476,6 +2532,68 @@ const pt: SiteLangDict = {
   tool_smart_website_color_scheme_usecases_title: 'Bom encaixe',
   tool_smart_website_color_scheme_warn_contrast:
     'Aviso: o texto sobre a cor de ação está abaixo de 4,5:1 — escureça a marca ou ajuste --on-action antes de publicar botões sólidos.',
+  tool_split_pdf_article:
+    'Separe um PDF em ficheiros por página ou intervalos com pdf-lib no cliente. Várias saídas saem em ZIP via fflate — sem enviar ao servidor; os ficheiros ficam no dispositivo.',
+  tool_split_pdf_choose_file: 'Escolher um PDF',
+  tool_split_pdf_clear: 'Limpar',
+  tool_split_pdf_desc:
+    'Extraia páginas de um PDF no dispositivo — cada página ou intervalos; ZIP quando preciso; sem enviar ao servidor.',
+  tool_split_pdf_description:
+    'Separe um PDF no navegador e descarregue páginas ou intervalos — sem enviar ao servidor. Passos: escolha um PDF, marque cada página ou escreva intervalos como 1-3,5, separe e descarregue. Exemplo: uma amostra de três páginas torna-se um ZIP com page-1.pdf a page-3.pdf. Um único ficheiro de saída descarrega como PDF. Ficheiros encriptados falham com mensagem clara.',
+  tool_split_pdf_download: 'Descarregar',
+  tool_split_pdf_drop_hint: 'Ou largue um PDF aqui. O processamento fica neste separador.',
+  tool_split_pdf_empty: 'Escolha um ficheiro PDF primeiro.',
+  tool_split_pdf_err_encrypted: 'Este PDF parece protegido por palavra-passe. Desbloqueie e tente de novo.',
+  tool_split_pdf_err_fflate: 'Falha ao carregar a biblioteca ZIP. Verifique a rede e tente de novo.',
+  tool_split_pdf_err_load: 'Não foi possível ler o PDF (danificado ou incompatível). Tente outro ficheiro.',
+  tool_split_pdf_err_range: 'Páginas inválidas ou fora do intervalo. Use intervalos a partir de 1, p.ex. 1-3,5.',
+  tool_split_pdf_err_split: 'A separação falhou. Verifique o ficheiro e os intervalos e tente novamente.',
+  tool_split_pdf_example:
+    'O exemplo cria um PDF de três páginas, separa cada página e ativa Descarregar para um ZIP com page-1.pdf, page-2.pdf e page-3.pdf.',
+  tool_split_pdf_example_title: 'Exemplo',
+  tool_split_pdf_faq_a1:
+    'Não. pdf-lib e fflate correm no seu separador (os scripts podem vir de um CDN). O PDF não é enviado para os nossos servidores.',
+  tool_split_pdf_faq_a2:
+    'Páginas a partir de 1: 1-3,5 significa as páginas 1–3 e a 5. Espaços são opcionais. Valores vazios ou fora do intervalo falham.',
+  tool_split_pdf_faq_a3: 'Se houver mais de um ficheiro, descarrega um ZIP. Um único ficheiro de saída descarrega como PDF.',
+  tool_split_pdf_faq_a4:
+    'PDFs com palavra-passe costumam falhar aqui. Remova a palavra-passe com uma ferramenta de confiança e depois separe.',
+  tool_split_pdf_faq_a5:
+    'Juntar PDF une vários PDFs num só. Esta ferramenta extrai páginas de um único PDF para ficheiros separados.',
+  tool_split_pdf_faq_q1: 'O meu PDF é enviado?',
+  tool_split_pdf_faq_q2: 'Como funcionam os intervalos?',
+  tool_split_pdf_faq_q3: 'Quando é ZIP e quando é PDF?',
+  tool_split_pdf_faq_q4: 'E PDFs encriptados?',
+  tool_split_pdf_faq_q5: 'Qual a diferença para Juntar PDF?',
+  tool_split_pdf_how_body:
+    'Escolha um PDF, selecione cada página ou intervalos, clique Separar e depois Descarregar. Várias saídas vão num ZIP; uma só é PDF. Tudo local após carregar as bibliotecas.',
+  tool_split_pdf_how_title: 'Como funciona',
+  tool_split_pdf_mode_every: 'Cada página (um ficheiro por página)',
+  tool_split_pdf_mode_label: 'Modo de separação',
+  tool_split_pdf_mode_ranges: 'Intervalos de páginas personalizados',
+  tool_split_pdf_pages_label: 'Páginas no ficheiro',
+  tool_split_pdf_ranges_hint: 'Exemplo: 1-3,5 (a partir de 1)',
+  tool_split_pdf_ranges_label: 'Intervalos de páginas',
+  tool_split_pdf_rules_body: 'Intervalos a partir de 1, nomes, ZIP vs PDF, privacidade e falhas na separação local.',
+  tool_split_pdf_rules_item_1:
+    'Modos: cada página → um PDF por página; intervalos → um PDF por segmento separado por vírgulas (p.ex. 1-3 e 5).',
+  tool_split_pdf_rules_item_2: 'Nomes: page-N.pdf para uma página; pages-A-B.pdf para um intervalo contínuo.',
+  tool_split_pdf_rules_item_3: 'Saída: mais de um ficheiro → ZIP com fflate; exatamente um → descarrega esse PDF.',
+  tool_split_pdf_rules_item_4:
+    'Privacidade e limites: bytes ficam no separador; PDFs encriptados/corruptos falham com clareza; ficheiros enormes podem ser lentos.',
+  tool_split_pdf_rules_title: 'Regras a esperar',
+  tool_split_pdf_sample: 'Carregar exemplo',
+  tool_split_pdf_split: 'Separar',
+  tool_split_pdf_stats_tpl: '{n} ficheiro(s) · {bytes}',
+  tool_split_pdf_status_done: 'Concluído — clique em Descarregar para guardar.',
+  tool_split_pdf_status_splitting: 'A separar PDF…',
+  tool_split_pdf_title: 'Separar PDF — extraia páginas no navegador',
+  tool_split_pdf_usecase_1: 'Escritório: retirar uma página assinada de um contrato longo.',
+  tool_split_pdf_usecase_2: 'Ensino: dividir um PDF de slides em folhetos por página.',
+  tool_split_pdf_usecase_3: 'Ops: arquivar cada página digitalizada como ficheiro próprio.',
+  tool_split_pdf_usecases_title: 'Bons encaixes',
+  tool_split_pdf_warn_large: 'Ficheiro maior que ~25 MB — a separação pode ser lenta ou falhar em alguns navegadores.',
+  tool_split_pdf_warn_pdflib: 'Falha ao carregar a biblioteca PDF. Verifique a rede e tente de novo.',
   tool_squarefeet_article:
     'Estime a área retangular a partir do comprimento e da largura e converta entre pés quadrados e metros quadrados. Feito para anúncios, piso e pintura — não é avaliação imobiliária nem distingue área útil e construída.',
   tool_squarefeet_calculate: 'Converter área',

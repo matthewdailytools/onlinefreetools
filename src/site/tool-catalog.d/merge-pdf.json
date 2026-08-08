@@ -1,0 +1,21 @@
+{
+  "slug": "merge-pdf",
+  "path": "/tools/merge-pdf",
+  "category": "pdf",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_merge_pdf_title",
+  "homeTitleKey": "tool_merge_pdf_title",
+  "homeDescKey": "tool_merge_pdf_desc",
+  "faqPrefix": "tool_merge_pdf",
+  "related": [
+    "split-pdf",
+    "images-to-pdf"
+  ],
+  "logo": "/icons/tools/merge-pdf.svg",
+  "page": {
+    "module": "../pages/mergePdfPage",
+    "export": "renderMergePdfPage",
+    "style": "opts"
+  }
+}

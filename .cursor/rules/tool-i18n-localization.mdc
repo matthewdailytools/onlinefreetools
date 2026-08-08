@@ -99,13 +99,42 @@ Agent 提示应类似：`Write {lang} copy for users who search: …`（附该�
 - **重写非翻译**：先定该语 3–5 个搜索词，再写 title / H1 / description / 按钮。
 - **Title / H1 自然口语（强制）**：主标题写「用户要办的事 + 结果/场景」，**不要**把控件参数名用顿号/逗号串成副标题。控件名（边长、画质、目标 KB、质量滑条等）放 **UI 标签** 或 How/Rules，不堆进 H1。
   - **反例（机械）**：`图片压缩 — 最长边、质量与目标体积（本地处理）`；`Image Compressor — Max Edge, Quality & Target Size Local`
-  - **正例（自然）**：`图片压缩 — 缩小尺寸与文件体积，本地完成`；`Image Compressor — Shrink photos locally (size & quality)`
+  - **正例（自然）**：`图片压缩 — 缩小尺寸与文件体积，不上传服务器`；`Image Compressor — Shrink photos on your device`
   - 自检：删掉副标题后，主词是否仍是当地人会搜的说法？副标题读起来像不像产品说明书目录？
+- **「本地处理 / 不上传」隐私表述（强制）**：凡声明浏览器内处理的工具（文件、粘贴、PDF、图片等），**desc / FAQ / `home_cat_*_blurb` / 首页 `_desc`** 须用该语用户能立刻听懂的说法，说清「文件留在设备/浏览器」且「不上服务器」。详见下节。
 - **UI 短词本地说**；示例可本地化；技术专名（CRLF、`.env`、Markdown、HTML）可保留。
 - **首页** `scripts/site/i18n.mjs` 主词与工具页一致。
 - **反同构**：FAQ 题序、How/Rules 开篇、Use cases 切入点应随语种变化；禁止十语同一「Process: … Example: …」骨架只换词。
 - **只写用户视角**：可见正文（description / how / rules / example / usecases / faq）只写「用户完成任务需要知道什么」。**禁止**把 SEO/工程理由（doorway、空壳页/薄页、thin URL、slug、「双向放同一地址」「不拆 URL」「不是又一个…页」等自我指涉/元叙述）或实现库名（js-yaml、papaparse…）当卖点写进用户文案；此类理由只属于 `work-tasks/` 与 `docs/`（或代码注释）。母版语（en/zh）也须遵守——母版若混入元叙述，会被逐语放大成译腔。
 - **忌说明书腔**：How/Rules 少写实现术语（`toBlob`、质量二分、Canvas 流水线）当面向用户的主句；改成「缩小、重画、再导出」「逐步降低画质去逼近」等可观察说法。库名/API 名最多进 References。
+
+## 隐私本地处理表述（强制）
+
+中文用户常搜/常读 **「不上传服务器」**；其他语言**不能**只写含糊的 `local` / `lokal` / `en local` / `محلياً` / 半截 `no upload` / `sans envoi` / `sem upload` / `ohne Upload`——当地人未必理解为「文件不上你们的服务器」。
+
+**须同时表达两层（至少一层用该语完整说清，另一层可紧挨同句）**：
+
+1. **位置**：文件留在设备 / 浏览器标签页（on your device / en el dispositivo / auf dem Gerät / 端末内 …）  
+2. **边界**：不上传到服务器（not uploaded to a server / sin subir al servidor / ohne Server-Upload / サーバーにアップロードしない …）
+
+**十语默认说法（可按语气微调，禁止整语只留「local」一词）**：
+
+| 语 | 推荐表述 |
+|---|---|
+| zh | 不上传服务器；文件不出本机 / 浏览器内处理 |
+| en | files stay on your device; not uploaded to a server / never leave your device |
+| es | sin subir al servidor; no salen del dispositivo |
+| ar | دون رفع إلى خادم؛ تبقى على جهازك |
+| pt | sem enviar ao servidor; ficam no dispositivo |
+| id | tanpa unggah ke server; tetap di perangkat |
+| fr | sans envoi au serveur; restent sur l’appareil |
+| ja | サーバーにアップロードしない；端末内で処理 |
+| ru | без загрузки на сервер; остаются на устройстве |
+| de | ohne Server-Upload; Dateien bleiben auf Ihrem Gerät |
+
+**适用键**：工具 `*_desc` / `*_description` / FAQ「是否上传」；分类导语 `home_cat_*_blurb` / `home_cat_*_desc`；页面 How/Rules 隐私句。  
+**诚实边界**：库脚本可从 CDN 加载时，FAQ 可一句说明「库可能从 CDN 加载，**你的文件**仍不上传」——勿用「100% offline」等虚假承诺。  
+**自检**：把「local/本地」划掉后，读者是否仍能判断「会上服务器吗？」不能 → 须改写。
 
 ## 每语 brief（写 i18n 前必填）
 
@@ -138,6 +167,7 @@ Agent 提示应类似：`Write {lang} copy for users who search: …`（附该�
 5. **空勾「待母语抽查」**：标了待抽查却无后续重写/确认记录，或未清标记却宣称定稿。
 6. **参数枚举式 title**：H1/title 用顿号/逗号罗列控件名或工程参数（「最长边、质量与目标体积」「Max Edge, Quality & Target Size」），读起来像设置面板目录而非检索向口语。
 7. **跳过检索覆盖优化**：未做「清单前」slug/title/关键词/desc 分析（步 0b），或 title/description 已生成却未执行步 2 / 步 4，就勾工程/上线清单或标 `i18n-done`。
+8. **含糊本地/隐私表述**：文件类工具用 `local` / `本地处理` / 半截 `no upload` 等，未按「隐私本地处理表述」说清设备与服务器边界。
 
 **收紧后的通过标准**：
 
@@ -156,7 +186,8 @@ Agent 提示应类似：`Write {lang} copy for users who search: …`（附该�
 | 错义借译 | es `altas y bajas`=增删；乱造 `*hunk*` 德语词 | 当地「新增/删除」 |
 | 未写完缩写 | `Cars.` | Character / Carácter / 字符 |
 | 目录腔标题 | ユースケース、Casos de uso 堆砌英文 Use cases | 「适合什么场景」「こんなときに」 |
-| **参数枚举 title** | `… — 最长边、质量与目标体积（本地处理）`；`… — Max Edge, Quality & Target Size` | 结果/场景向：`… — 缩小尺寸与文件体积，本地完成`；参数名留给 UI |
+| **参数枚举 title** | `… — 最长边、质量与目标体积（本地处理）`；`… — Max Edge, Quality & Target Size` | 结果/场景向：`… — 缩小尺寸与文件体积，不上传服务器`；参数名留给 UI |
+| **含糊「本地」隐私句** | 仅写 `local` / `lokal` / `en local` / `本地处理` / `ohne Upload` / `sans envoi` / `sem upload` / `tanpa unggah` 且不提设备或服务器 | 该语完整说清「留在设备」+「不上服务器」（见上节十语表） |
 | 说明书腔正文 | How 主句堆 `toBlob` / 质量二分 / Canvas 流水线 | 「缩小、重画、再导出」；API 名进 References |
 | 同构机翻 | 十语同一句式 + 同一 Hello world 骨架且无本地主词 | 每语独立重写 title/FAQ |
 | 假本地化 | 仅 en/zh 有文案，其余靠 `t()` 回退英文 | 十语键齐全 |
@@ -182,6 +213,7 @@ Agent 提示应类似：`Write {lang} copy for users who search: …`（附该�
 - [ ] **已做清单前检索覆盖优化**（步 0b：slug/title/关键词/desc；`02`/`notes` 有覆盖表）
 - [ ] **已做文案生成后覆盖优化**（母版步 2 + 抽查语步 4）；`03` 多轮记录有摘要
 - [ ] 对照禁词表扫过 title/按钮/FAQ
+- [ ] 文件/粘贴类：隐私句已按「隐私本地处理表述」写清设备 + 不上服务器（非含糊 local）
 - [ ] ≥3 轮且 2/3 轮有实质修改（非只改标点）
 - [ ] 无未清的「待母语抽查」勾选（或已在 `03` 多轮记录写明排期与责任人）
 - [ ] `lint:seo` 通过（≠本地化完成）
@@ -197,3 +229,4 @@ Agent 提示应类似：`Write {lang} copy for users who search: …`（附该�
 - 禁止带着未处理的「待母语抽查」标记宣称 `i18n-done`
 - 禁止跳过「清单前检索覆盖优化」（步 0b）就勾页面/工程/上线清单或标 `02`=`ready`
 - 禁止跳过「Title / 描述 / 检索词覆盖优化」（母版步 2、抽查语步 4）就标 `i18n-done`
+- 禁止文件类工具只用含糊 `local` / `本地处理` / 半截 `no upload` 等冒充隐私说明（须对齐「隐私本地处理表述」）

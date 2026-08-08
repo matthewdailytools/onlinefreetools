@@ -1,0 +1,56 @@
+/**
+ * i18n 工具分片（merge-pdf / zh）。按中文检索习惯独立重写，非英译骨架。
+ */
+import type { SiteLangDict } from '../../../types';
+const zh: SiteLangDict = {
+  tool_merge_pdf_article:
+    '用客户端 pdf-lib 按列表顺序合并多份 PDF，不上传。可调整顺序，加密或损坏文件会给出明确提示，最后下载一份合成文档。',
+  tool_merge_pdf_choose_files: '选择 PDF',
+  tool_merge_pdf_clear: '清空',
+  tool_merge_pdf_desc: '在浏览器里把多个 PDF 合成一份，文件不上传服务器。',
+  tool_merge_pdf_description:
+    '在浏览器合并多个 PDF 并下载一份文件——不上传服务器。步骤：添加至少两份 PDF，按需调整顺序，点击合并，再下载。示例：两份单页样例会合成两页 PDF。加密或损坏文件会提示失败。与「多图转 PDF」不同：本工具处理的是已有 PDF，不是照片。',
+  tool_merge_pdf_download: '下载',
+  tool_merge_pdf_drop_hint: '也可把 PDF 拖到这里。处理都在当前标签页完成。',
+  tool_merge_pdf_empty: '请至少添加两份 PDF 再合并。',
+  tool_merge_pdf_err_encrypted: '有文件似乎带密码。请先解锁后再合并。',
+  tool_merge_pdf_err_load: '无法读取某个 PDF（损坏或格式不受支持）。请换一份再试。',
+  tool_merge_pdf_err_merge: '合并失败。请检查文件后重试。',
+  tool_merge_pdf_example: '样例会加载两份单页 PDF（A 与 B），按列表顺序合并，并启用下载得到两页的 merged.pdf。',
+  tool_merge_pdf_example_title: '示例',
+  tool_merge_pdf_faq_a1: '不会。pdf-lib 在本地运行（库可能从 CDN 加载），PDF 不会上传到我们的服务器。',
+  tool_merge_pdf_faq_a2: '「多图转 PDF」从图片生成 PDF；本工具是把已有的多份 PDF 合成一份。',
+  tool_merge_pdf_faq_a3: '可以。用上移/下移调整列表，合并时从上到下就是页序。',
+  tool_merge_pdf_faq_a4: '带密码的 PDF 通常无法在此打开。请用可信方式去掉密码后再合并。',
+  tool_merge_pdf_faq_a5: '常见桌面与手机 PDF 阅读器都能打开合并结果。',
+  tool_merge_pdf_faq_q1: 'PDF 会上传吗？',
+  tool_merge_pdf_faq_q2: '和「多图转 PDF」有什么区别？',
+  tool_merge_pdf_faq_q3: '能改合并顺序吗？',
+  tool_merge_pdf_faq_q4: '加密 PDF 怎么办？',
+  tool_merge_pdf_faq_q5: '结果能用 Acrobat 或预览打开吗？',
+  tool_merge_pdf_how_body:
+    '添加至少两份 PDF，必要时用上移/下移排序，点「合并」，再「下载」。页序跟列表一致。库加载后全程本地处理。',
+  tool_merge_pdf_how_title: '怎么用',
+  tool_merge_pdf_merge: '合并',
+  tool_merge_pdf_move_down: '下移',
+  tool_merge_pdf_move_up: '上移',
+  tool_merge_pdf_remove: '移除',
+  tool_merge_pdf_rules_body: '本地合并时的列表顺序、copyPages、隐私与失败边界。',
+  tool_merge_pdf_rules_item_1: '顺序：按列表从上到下复制页面；合并前可重排。',
+  tool_merge_pdf_rules_item_2: '引擎：pdf-lib 加载各 PDF 并用 copyPages 写入新文档，文件不经服务器。',
+  tool_merge_pdf_rules_item_3: '隐私：字节留在浏览器标签页；库脚本可能从 CDN 加载。',
+  tool_merge_pdf_rules_item_4: '限制：至少 2 份；加密或损坏会报错；超大集合可能占内存变慢。',
+  tool_merge_pdf_rules_title: '规则说明',
+  tool_merge_pdf_sample: '加载样例',
+  tool_merge_pdf_stats_tpl: '{n} 个文件 → {pages} 页 · {bytes}',
+  tool_merge_pdf_status_done: '完成 — 点击下载保存 merged.pdf。',
+  tool_merge_pdf_status_merging: '正在合并 PDF…',
+  tool_merge_pdf_title: '合并 PDF — 浏览器里把多个文件合成一份',
+  tool_merge_pdf_usecase_1: '办公：把签字页与附件合成一包发送。',
+  tool_merge_pdf_usecase_2: '学生：作业章节合订后再交。',
+  tool_merge_pdf_usecase_3: '运营：品牌资料与规格打成一份交付。',
+  tool_merge_pdf_usecases_title: '适合这些场景',
+  tool_merge_pdf_warn_large: '有文件超过约 25 MB — 合并可能变慢或在部分浏览器失败。',
+  tool_merge_pdf_warn_pdflib: 'PDF 库加载失败。请检查网络后重试。',
+};
+export default zh;

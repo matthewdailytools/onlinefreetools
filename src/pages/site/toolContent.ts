@@ -460,6 +460,7 @@ export const buildToolJsonLd = (opts: {
 	const base = 'https://onlinefreetools.org';
 	const pageUrl = `${base}${opts.canonicalPath}`;
 	const homePath = withToolLangPrefix(opts.lang, '/', opts.defaultLang);
+	/** 面包屑分类文案 i18n 键（与顶栏/首页分类一致）。 */
 	const categoryLabelKey =
 		opts.tool.category === 'calculator'
 			? 'tool_category_calculator'
@@ -467,8 +468,11 @@ export const buildToolJsonLd = (opts: {
 				? 'tool_category_image'
 				: opts.tool.category === 'design'
 					? 'tool_category_design'
-					: 'tool_category_developer';
+					: opts.tool.category === 'pdf'
+						? 'tool_category_pdf'
+						: 'tool_category_developer';
 	const categoryLabel = t(opts.lang, categoryLabelKey as keyof typeof import('../../site/i18n/en').default);
+	/** 首页分类锚点（breadcrumb 第二级链到首页分区）。 */
 	const categoryAnchor =
 		opts.tool.category === 'calculator'
 			? 'cat-calculator'
@@ -476,7 +480,10 @@ export const buildToolJsonLd = (opts: {
 				? 'cat-image'
 				: opts.tool.category === 'design'
 					? 'cat-design'
-					: 'cat-dev';
+					: opts.tool.category === 'pdf'
+						? 'cat-pdf'
+						: 'cat-dev';
+	/** Schema.org applicationCategory：与可见分类语义对齐。 */
 	const applicationCategory =
 		opts.tool.category === 'developer'
 			? 'DeveloperApplication'

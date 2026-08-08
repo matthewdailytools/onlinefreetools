@@ -63,6 +63,7 @@ const zh: SiteLangDict = {
   status_label: '状态码',
   tool_category_calculator: '计算器',
   tool_category_design: '设计工具',
+  tool_category_pdf: 'PDF 工具',
   tool_category_developer: '开发者工具',
   tool_category_image: '图片编辑工具',
   tool_disclaimer_title: '重要说明',

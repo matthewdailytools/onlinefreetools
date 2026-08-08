@@ -117,6 +117,9 @@
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">أدوات التصميم</a>
           <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ar/tools/brand-color-token-pack">توليد مقياس ألوان العلامة — لوحة 50–950 ورموز CSS</a></li><li><a class="dropdown-item" href="/ar/tools/brand-style-guide">دليل أسلوب العلامة — مسودة وحدات قابلة للتعديل</a></li><li><a class="dropdown-item" href="/ar/tools/smart-website-color-scheme">نظام ألوان الموقع — رموز CSS دلالية</a></li><li><a class="dropdown-item" href="/ar/tools/wcag-contrast-checker">مدقق تباين WCAG — نسبة AA/AAA</a></li></ul>
         </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">أدوات PDF</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ar/tools/merge-pdf">دمج PDF — اجمع الملفات في المتصفح</a></li><li><a class="dropdown-item" href="/ar/tools/split-pdf">تقسيم PDF — استخرج الصفحات محلياً</a></li></ul>
+        </li><li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">للمطورين</a>
           <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ar/tools/add-www-to-dns">إضافة WWW إلى DNS — سجلات A/CNAME وأدلة المنصات</a></li><li><a class="dropdown-item" href="/ar/tools/base64">ترميز وفك Base64 — تحويل النص في المتصفح</a></li><li><a class="dropdown-item" href="/ar/tools/csv-json">محول CSV ↔ JSON — الأنواع والفواصل ومحليًا</a></li><li><a class="dropdown-item" href="/ar/tools/file-hash">مدقق تجزئة الملف — التحقق من الملخصات في المتصفح</a></li><li><a class="dropdown-item" href="/ar/tools/html-entity">ترميز وفك ترميز كيانات HTML — محليًا</a></li><li><a class="dropdown-item" href="/ar/tools/indexnow">IndexNow — إرسال روابط Bing وفحص المفتاح ورموز الحالة</a></li><li><a class="dropdown-item" href="/ar/tools/ip-address">ما هو عنوان IP الخاص بي — IP عام (IPv4/IPv6)</a></li><li><a class="dropdown-item" href="/ar/tools/json-schema-validator">مدقق JSON Schema — مسارات draft-07 ومحليًا</a></li><li><a class="dropdown-item" href="/ar/tools/jwt-decoder">فك ترميز JWT — قراءة Header و Payload محليًا (بدون تحقق)</a></li><li><a class="dropdown-item" href="/ar/tools/markdown-to-html">Markdown ↔ HTML</a></li><li><a class="dropdown-item" href="/ar/tools/password-generator">مولّد كلمات مرور عشوائية — إنشاء كلمات مرور محليًا</a></li><li><a class="dropdown-item" href="/ar/tools/text-diff">مقارنة نصين أونلاين</a></li><li><a class="dropdown-item" href="/ar/tools/timezone-converter">محول المناطق الزمنية — مقارنة لحظة واحدة عالميًا</a></li><li><a class="dropdown-item" href="/ar/tools/unix-timestamp">محول Unix timestamp — وقت العصر ↔ وقت مقروء</a></li><li><a class="dropdown-item" href="/ar/tools/uuid-generator">مولّد UUID و ULID — إنشاء معرّفات في المتصفح</a></li><li><a class="dropdown-item" href="/ar/tools/website-headers">فحص ترويسات HTTP</a></li><li><a class="dropdown-item" href="/ar/tools/yaml-json">من YAML إلى JSON وبالعكس — قواعد الأنواع ومحليًا</a></li></ul>
         </li><li class="nav-item dropdown">
@@ -153,7 +156,7 @@
     
     <aside id="sidebar" class="border-end">
       <h2 class="sidebar-title h6">التصنيفات</h2>
-      <div class="list-group list-group-flush small" id="categoryList"><a class="list-group-item list-group-item-action" href="#cat-image">أدوات الصور</a><a class="list-group-item list-group-item-action" href="#cat-design">أدوات التصميم</a><a class="list-group-item list-group-item-action" href="#cat-dev">للمطورين</a><a class="list-group-item list-group-item-action" href="#cat-calculator">حاسبات</a></div>
+      <div class="list-group list-group-flush small" id="categoryList"><a class="list-group-item list-group-item-action" href="#cat-image">أدوات الصور</a><a class="list-group-item list-group-item-action" href="#cat-design">أدوات التصميم</a><a class="list-group-item list-group-item-action" href="#cat-pdf">أدوات PDF</a><a class="list-group-item list-group-item-action" href="#cat-dev">للمطورين</a><a class="list-group-item list-group-item-action" href="#cat-calculator">حاسبات</a></div>
     </aside>
     <main id="content" class="p-4">
     <div class="home-wrap">
@@ -602,6 +605,18 @@
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/merge-pdf.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">دمج PDF — اجمع الملفات في المتصفح</h3>
+        </div>
+        <p class="card-text home-card-desc flex-grow-1">اجمع عدة ملفات PDF في ملف واحد داخل المتصفح — دون رفع إلى خادم؛ تبقى الملفات على جهازك.</p>
+        <a href="/ar/tools/merge-pdf" class="mt-auto btn btn-primary btn-sm">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/password-generator.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
           <h3 class="card-title home-card-title home-card-title--featured mb-0">مولّد كلمات مرور عشوائية — إنشاء كلمات مرور محليًا</h3>
         </div>
@@ -619,6 +634,18 @@
         </div>
         <p class="card-text home-card-desc flex-grow-1">نظام ألوان الموقع: محايدات + رموز CSS دلالية، روابط محايدة وحالات ثابتة — محليًا.</p>
         <a href="/ar/tools/smart-website-color-scheme" class="mt-auto btn btn-primary btn-sm">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/split-pdf.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">تقسيم PDF — استخرج الصفحات محلياً</h3>
+        </div>
+        <p class="card-text home-card-desc flex-grow-1">استخرج صفحات من PDF على جهازك — كل صفحة أو نطاقات؛ ZIP عند الحاجة؛ دون رفع إلى خادم.</p>
+        <a href="/ar/tools/split-pdf" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
   </div>
@@ -730,7 +757,7 @@
       <div class="home-cat" id="cat-image">
         <span class="home-cat-label">أدوات الصور</span>
         <h3>تحويل، ضغط، تجهيز</h3>
-        <p class="home-cat-blurb">أدوات صور محلية في المتصفح — بدون رفع.</p>
+        <p class="home-cat-blurb">أدوات صور في المتصفح — بدون رفع إلى خادم؛ الملفات تبقى على جهازك.</p>
         <div class="home-card-grid">
           
   <div class="home-card-item">
@@ -942,7 +969,7 @@
       <div class="home-cat" id="cat-design">
         <span class="home-cat-label">أدوات التصميم</span>
         <h3>لون، تباين، علامة</h3>
-        <p class="home-cat-blurb">أدوات تصميم محلية في المتصفح — تباين ورموز العلامة، بدون رفع.</p>
+        <p class="home-cat-blurb">أدوات تصميم في المتصفح — تباين ورموز العلامة؛ بدون رفع إلى خادم.</p>
         <div class="home-card-grid">
           
   <div class="home-card-item">
@@ -990,6 +1017,38 @@
         </div>
         <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">تحقق من نسبة التباين ومعايير AA/AAA — دون رفع الألوان.</p>
         <a href="/ar/tools/wcag-contrast-checker" class="mt-auto btn btn-primary btn-sm">فتح</a>
+      </div>
+    </div>
+  </div>
+        </div>
+      </div>
+      <div class="home-cat" id="cat-pdf">
+        <span class="home-cat-label">أدوات PDF</span>
+        <h3>دمج وتقسيم — دون رفع إلى خادم</h3>
+        <p class="home-cat-blurb">ادمج وقسّم PDF في المتصفح — الملفات لا تُرفع إلى خادم وتبقى على جهازك.</p>
+        <div class="home-card-grid">
+          
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/merge-pdf.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <h3 class="card-title home-card-title mb-0">دمج PDF — اجمع الملفات في المتصفح</h3>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">اجمع عدة ملفات PDF في ملف واحد داخل المتصفح — دون رفع إلى خادم؛ تبقى الملفات على جهازك.</p>
+        <a href="/ar/tools/merge-pdf" class="mt-auto btn btn-primary btn-sm">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/split-pdf.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <h3 class="card-title home-card-title mb-0">تقسيم PDF — استخرج الصفحات محلياً</h3>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">استخرج صفحات من PDF على جهازك — كل صفحة أو نطاقات؛ ZIP عند الحاجة؛ دون رفع إلى خادم.</p>
+        <a href="/ar/tools/split-pdf" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
   </div>

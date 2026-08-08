@@ -117,6 +117,9 @@
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Инструменты дизайна</a>
           <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ru/tools/brand-color-token-pack">Сгенерировать шкалу цвета бренда — палитра 50–950 и CSS‑токены</a></li><li><a class="dropdown-item" href="/ru/tools/brand-style-guide">Гайд по стилю бренда — модульный черновик, который можно править</a></li><li><a class="dropdown-item" href="/ru/tools/smart-website-color-scheme">Цветовая схема сайта — семантические CSS-токены</a></li><li><a class="dropdown-item" href="/ru/tools/wcag-contrast-checker">Проверка контраста WCAG — коэффициент AA/AAA</a></li></ul>
         </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">PDF-инструменты</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ru/tools/merge-pdf">Объединить PDF — склейте файлы в браузере</a></li><li><a class="dropdown-item" href="/ru/tools/split-pdf">Разделить PDF — извлеките страницы локально</a></li></ul>
+        </li><li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Для разработчиков</a>
           <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ru/tools/add-www-to-dns">Добавить WWW в DNS — A/CNAME и гайды</a></li><li><a class="dropdown-item" href="/ru/tools/base64">Base64 кодирование и декодирование — преобразовать текст в браузере</a></li><li><a class="dropdown-item" href="/ru/tools/csv-json">Конвертер CSV ↔ JSON — типы, разделитель, локально</a></li><li><a class="dropdown-item" href="/ru/tools/file-hash">Проверка хеша файла — сверка дайджестов в браузере</a></li><li><a class="dropdown-item" href="/ru/tools/html-entity">Кодирование и декодирование HTML-сущностей — локально</a></li><li><a class="dropdown-item" href="/ru/tools/indexnow">IndexNow — отправка URL в Bing, проверка ключа и коды</a></li><li><a class="dropdown-item" href="/ru/tools/ip-address">Узнать свой IP — Публичный адрес (IPv4/IPv6)</a></li><li><a class="dropdown-item" href="/ru/tools/json-schema-validator">Валидатор JSON Schema — пути draft-07, локально</a></li><li><a class="dropdown-item" href="/ru/tools/jwt-decoder">JWT декодер — читать header и payload локально (без проверки подписи)</a></li><li><a class="dropdown-item" href="/ru/tools/markdown-to-html">Markdown ↔ HTML</a></li><li><a class="dropdown-item" href="/ru/tools/password-generator">Генератор случайных паролей — создавать пароли локально</a></li><li><a class="dropdown-item" href="/ru/tools/text-diff">Сравнить тексты онлайн</a></li><li><a class="dropdown-item" href="/ru/tools/timezone-converter">Конвертер часовых поясов — сравнить один момент по миру</a></li><li><a class="dropdown-item" href="/ru/tools/unix-timestamp">Конвертер Unix timestamp — эпоха ↔ читаемое время</a></li><li><a class="dropdown-item" href="/ru/tools/uuid-generator">Генератор UUID и ULID — создавать ID в браузере</a></li><li><a class="dropdown-item" href="/ru/tools/website-headers">Проверка HTTP-заголовков</a></li><li><a class="dropdown-item" href="/ru/tools/yaml-json">YAML в JSON и обратно — типы, multi-doc, локально</a></li></ul>
         </li><li class="nav-item dropdown">
@@ -153,7 +156,7 @@
     
     <aside id="sidebar" class="border-end">
       <h2 class="sidebar-title h6">Категории</h2>
-      <div class="list-group list-group-flush small" id="categoryList"><a class="list-group-item list-group-item-action" href="#cat-image">Инструменты для изображений</a><a class="list-group-item list-group-item-action" href="#cat-design">Инструменты дизайна</a><a class="list-group-item list-group-item-action" href="#cat-dev">Для разработчиков</a><a class="list-group-item list-group-item-action" href="#cat-calculator">Калькуляторы</a></div>
+      <div class="list-group list-group-flush small" id="categoryList"><a class="list-group-item list-group-item-action" href="#cat-image">Инструменты для изображений</a><a class="list-group-item list-group-item-action" href="#cat-design">Инструменты дизайна</a><a class="list-group-item list-group-item-action" href="#cat-pdf">PDF-инструменты</a><a class="list-group-item list-group-item-action" href="#cat-dev">Для разработчиков</a><a class="list-group-item list-group-item-action" href="#cat-calculator">Калькуляторы</a></div>
     </aside>
     <main id="content" class="p-4">
     <div class="home-wrap">
@@ -602,6 +605,18 @@
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/merge-pdf.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">Объединить PDF — склейте файлы в браузере</h3>
+        </div>
+        <p class="card-text home-card-desc flex-grow-1">Склейте несколько PDF в один файл в браузере — без загрузки на сервер; файлы остаются на устройстве.</p>
+        <a href="/ru/tools/merge-pdf" class="mt-auto btn btn-primary btn-sm">Открыть</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/password-generator.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
           <h3 class="card-title home-card-title home-card-title--featured mb-0">Генератор случайных паролей — создавать пароли локально</h3>
         </div>
@@ -619,6 +634,18 @@
         </div>
         <p class="card-text home-card-desc flex-grow-1">Схема сайта: нейтрали + семантические CSS-токены, нейтральные ссылки и фиксированные статусы — локально.</p>
         <a href="/ru/tools/smart-website-color-scheme" class="mt-auto btn btn-primary btn-sm">Открыть</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/split-pdf.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">Разделить PDF — извлеките страницы локально</h3>
+        </div>
+        <p class="card-text home-card-desc flex-grow-1">Извлекайте страницы из PDF на устройстве — каждую страницу или диапазоны; ZIP при необходимости; без загрузки на сервер.</p>
+        <a href="/ru/tools/split-pdf" class="mt-auto btn btn-primary btn-sm">Открыть</a>
       </div>
     </div>
   </div>
@@ -730,7 +757,7 @@
       <div class="home-cat" id="cat-image">
         <span class="home-cat-label">Инструменты для изображений</span>
         <h3>конвертация, сжатие, подготовка</h3>
-        <p class="home-cat-blurb">Локальные утилиты для изображений — без загрузки на сервер.</p>
+        <p class="home-cat-blurb">Инструменты для изображений в браузере — без загрузки на сервер; файлы остаются на устройстве.</p>
         <div class="home-card-grid">
           
   <div class="home-card-item">
@@ -942,7 +969,7 @@
       <div class="home-cat" id="cat-design">
         <span class="home-cat-label">Инструменты дизайна</span>
         <h3>цвет, контраст, бренд</h3>
-        <p class="home-cat-blurb">Локальные утилиты дизайна — контраст и токены бренда, без загрузки.</p>
+        <p class="home-cat-blurb">Инструменты дизайна в браузере — контраст и токены бренда; без загрузки на сервер.</p>
         <div class="home-card-grid">
           
   <div class="home-card-item">
@@ -990,6 +1017,38 @@
         </div>
         <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">Проверьте коэффициент контраста и соответствие AA/AAA — цвета не отправляются на сервер.</p>
         <a href="/ru/tools/wcag-contrast-checker" class="mt-auto btn btn-primary btn-sm">Открыть</a>
+      </div>
+    </div>
+  </div>
+        </div>
+      </div>
+      <div class="home-cat" id="cat-pdf">
+        <span class="home-cat-label">PDF-инструменты</span>
+        <h3>объединить, разделить — без загрузки на сервер</h3>
+        <p class="home-cat-blurb">Объединяйте и разделяйте PDF в браузере — файлы не загружаются на сервер и остаются на устройстве.</p>
+        <div class="home-card-grid">
+          
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/merge-pdf.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <h3 class="card-title home-card-title mb-0">Объединить PDF — склейте файлы в браузере</h3>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">Склейте несколько PDF в один файл в браузере — без загрузки на сервер; файлы остаются на устройстве.</p>
+        <a href="/ru/tools/merge-pdf" class="mt-auto btn btn-primary btn-sm">Открыть</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/split-pdf.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <h3 class="card-title home-card-title mb-0">Разделить PDF — извлеките страницы локально</h3>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">Извлекайте страницы из PDF на устройстве — каждую страницу или диапазоны; ZIP при необходимости; без загрузки на сервер.</p>
+        <a href="/ru/tools/split-pdf" class="mt-auto btn btn-primary btn-sm">Открыть</a>
       </div>
     </div>
   </div>

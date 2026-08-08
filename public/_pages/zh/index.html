@@ -117,6 +117,9 @@
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">设计工具</a>
           <ul class="dropdown-menu"><li><a class="dropdown-item" href="/zh/tools/brand-color-token-pack">品牌色色阶生成 — 一主色出 50–950 色板与 CSS 变量</a></li><li><a class="dropdown-item" href="/zh/tools/brand-style-guide">品牌手册 — 智能预填的设计规范，可手动改</a></li><li><a class="dropdown-item" href="/zh/tools/smart-website-color-scheme">智能配色 — 网站颜色搭配方案与 CSS 变量</a></li><li><a class="dropdown-item" href="/zh/tools/wcag-contrast-checker">WCAG 对比度检测 — AA/AAA 比率在线算</a></li></ul>
         </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">PDF 工具</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/zh/tools/merge-pdf">合并 PDF — 浏览器里把多个文件合成一份</a></li><li><a class="dropdown-item" href="/zh/tools/split-pdf">拆分 PDF — 本地按页提取文件</a></li></ul>
+        </li><li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">开发者工具</a>
           <ul class="dropdown-menu"><li><a class="dropdown-item" href="/zh/tools/add-www-to-dns">给域名添加 www DNS — 记录生成与各平台教程</a></li><li><a class="dropdown-item" href="/zh/tools/base64">Base64 编解码 — 在浏览器内转换文本</a></li><li><a class="dropdown-item" href="/zh/tools/csv-json">CSV ↔ JSON 互转 — 类型、分隔符、本地处理</a></li><li><a class="dropdown-item" href="/zh/tools/file-hash">文件哈希校验 — 在浏览器内查看摘要</a></li><li><a class="dropdown-item" href="/zh/tools/html-entity">HTML 实体编解码 — 转义、反转义、本地处理</a></li><li><a class="dropdown-item" href="/zh/tools/indexnow">IndexNow — Bing URL 提交、密钥检查与状态码</a></li><li><a class="dropdown-item" href="/zh/tools/ip-address">IP 地址查询 — 查看我的公网 IP（IPv4/IPv6）</a></li><li><a class="dropdown-item" href="/zh/tools/json-schema-validator">JSON Schema 校验器 — 路径错误与本地处理</a></li><li><a class="dropdown-item" href="/zh/tools/jwt-decoder">JWT 解码 — 本地查看 Header 与 Payload（不验签）</a></li><li><a class="dropdown-item" href="/zh/tools/markdown-to-html">Markdown ↔ HTML</a></li><li><a class="dropdown-item" href="/zh/tools/password-generator">随机密码生成 — 在浏览器内创建密码</a></li><li><a class="dropdown-item" href="/zh/tools/text-diff">在线文本对比 — 文本差异对比工具</a></li><li><a class="dropdown-item" href="/zh/tools/timezone-converter">时区转换 — 同一时刻多地对照</a></li><li><a class="dropdown-item" href="/zh/tools/unix-timestamp">Unix 时间戳转换 — 纪元时间与可读时间互转</a></li><li><a class="dropdown-item" href="/zh/tools/uuid-generator">UUID / ULID 生成 — 在浏览器内创建标识符</a></li><li><a class="dropdown-item" href="/zh/tools/website-headers">在线查看 HTTP 响应头</a></li><li><a class="dropdown-item" href="/zh/tools/yaml-json">YAML ↔ JSON 互转 — 类型规则、多文档、本地处理</a></li></ul>
         </li><li class="nav-item dropdown">
@@ -153,7 +156,7 @@
     
     <aside id="sidebar" class="border-end">
       <h2 class="sidebar-title h6">分类</h2>
-      <div class="list-group list-group-flush small" id="categoryList"><a class="list-group-item list-group-item-action" href="#cat-image">图片编辑工具</a><a class="list-group-item list-group-item-action" href="#cat-design">设计工具</a><a class="list-group-item list-group-item-action" href="#cat-dev">开发者工具</a><a class="list-group-item list-group-item-action" href="#cat-calculator">计算器</a></div>
+      <div class="list-group list-group-flush small" id="categoryList"><a class="list-group-item list-group-item-action" href="#cat-image">图片编辑工具</a><a class="list-group-item list-group-item-action" href="#cat-design">设计工具</a><a class="list-group-item list-group-item-action" href="#cat-pdf">PDF 工具</a><a class="list-group-item list-group-item-action" href="#cat-dev">开发者工具</a><a class="list-group-item list-group-item-action" href="#cat-calculator">计算器</a></div>
     </aside>
     <main id="content" class="p-4">
     <div class="home-wrap">
@@ -602,6 +605,18 @@
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/merge-pdf.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">合并 PDF — 浏览器里把多个文件合成一份</h3>
+        </div>
+        <p class="card-text home-card-desc flex-grow-1">在浏览器里把多个 PDF 合成一份，文件不上传服务器。</p>
+        <a href="/zh/tools/merge-pdf" class="mt-auto btn btn-primary btn-sm">打开</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/password-generator.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
           <h3 class="card-title home-card-title home-card-title--featured mb-0">随机密码生成 — 在浏览器内创建密码</h3>
         </div>
@@ -619,6 +634,18 @@
         </div>
         <p class="card-text home-card-desc flex-grow-1">智能配色：中性色 + 语义 CSS 变量，中性链接与独立状态色，本地生成。</p>
         <a href="/zh/tools/smart-website-color-scheme" class="mt-auto btn btn-primary btn-sm">打开</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/split-pdf.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">拆分 PDF — 本地按页提取文件</h3>
+        </div>
+        <p class="card-text home-card-desc flex-grow-1">在浏览器内从 PDF 提取页面——整本按页拆或按范围拆，需要时下载 ZIP；文件不上传服务器。</p>
+        <a href="/zh/tools/split-pdf" class="mt-auto btn btn-primary btn-sm">打开</a>
       </div>
     </div>
   </div>
@@ -730,7 +757,7 @@
       <div class="home-cat" id="cat-image">
         <span class="home-cat-label">图片编辑工具</span>
         <h3>转换、压缩、导出</h3>
-        <p class="home-cat-blurb">浏览器本地图片工具 —— 格式转换等，文件不上传。</p>
+        <p class="home-cat-blurb">浏览器内图片工具 — 格式转换等，文件不上传服务器。</p>
         <div class="home-card-grid">
           
   <div class="home-card-item">
@@ -942,7 +969,7 @@
       <div class="home-cat" id="cat-design">
         <span class="home-cat-label">设计工具</span>
         <h3>配色、对比度、品牌色</h3>
-        <p class="home-cat-blurb">浏览器本地设计工具 — 对比度与品牌色 token，文件不上传。</p>
+        <p class="home-cat-blurb">浏览器内设计工具 — 对比度与品牌色 token，文件不上传服务器。</p>
         <div class="home-card-grid">
           
   <div class="home-card-item">
@@ -990,6 +1017,38 @@
         </div>
         <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">检测前景/背景对比度比率与 AA/AAA 是否达标，全程在浏览器本地完成。</p>
         <a href="/zh/tools/wcag-contrast-checker" class="mt-auto btn btn-primary btn-sm">打开</a>
+      </div>
+    </div>
+  </div>
+        </div>
+      </div>
+      <div class="home-cat" id="cat-pdf">
+        <span class="home-cat-label">PDF 工具</span>
+        <h3>合并、拆分，不上传服务器</h3>
+        <p class="home-cat-blurb">浏览器内合并与拆分 PDF — 文件不上传服务器。</p>
+        <div class="home-card-grid">
+          
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/merge-pdf.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <h3 class="card-title home-card-title mb-0">合并 PDF — 浏览器里把多个文件合成一份</h3>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">在浏览器里把多个 PDF 合成一份，文件不上传服务器。</p>
+        <a href="/zh/tools/merge-pdf" class="mt-auto btn btn-primary btn-sm">打开</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/split-pdf.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <h3 class="card-title home-card-title mb-0">拆分 PDF — 本地按页提取文件</h3>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">在浏览器内从 PDF 提取页面——整本按页拆或按范围拆，需要时下载 ZIP；文件不上传服务器。</p>
+        <a href="/zh/tools/split-pdf" class="mt-auto btn btn-primary btn-sm">打开</a>
       </div>
     </div>
   </div>

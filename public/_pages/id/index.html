@@ -117,6 +117,9 @@
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Alat desain</a>
           <ul class="dropdown-menu"><li><a class="dropdown-item" href="/id/tools/brand-color-token-pack">Buat skala warna merek — palet 50–950 & token CSS</a></li><li><a class="dropdown-item" href="/id/tools/brand-style-guide">Panduan gaya merek — draf modular yang bisa diedit</a></li><li><a class="dropdown-item" href="/id/tools/smart-website-color-scheme">Skema warna website — token CSS semantik</a></li><li><a class="dropdown-item" href="/id/tools/wcag-contrast-checker">Pemeriksa Kontras WCAG — Rasio AA/AAA</a></li></ul>
         </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Alat PDF</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/id/tools/merge-pdf">Gabung PDF — satukan file di browser</a></li><li><a class="dropdown-item" href="/id/tools/split-pdf">Pisah PDF — ekstrak halaman di browser</a></li></ul>
+        </li><li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Developer</a>
           <ul class="dropdown-menu"><li><a class="dropdown-item" href="/id/tools/add-www-to-dns">Tambah WWW ke DNS — A/CNAME & panduan provider</a></li><li><a class="dropdown-item" href="/id/tools/base64">Encode & Decode Base64 — ubah teks di browser</a></li><li><a class="dropdown-item" href="/id/tools/csv-json">Konverter CSV ↔ JSON — tipe, pemisah, lokal</a></li><li><a class="dropdown-item" href="/id/tools/file-hash">Pemeriksa Hash File — verifikasi ringkasan di browser</a></li><li><a class="dropdown-item" href="/id/tools/html-entity">Encode & Decode HTML Entity — lokal di browser</a></li><li><a class="dropdown-item" href="/id/tools/indexnow">IndexNow — kirim URL Bing, cek kunci & kode status</a></li><li><a class="dropdown-item" href="/id/tools/ip-address">Cek IP saya — Alamat IP publik (IPv4/IPv6)</a></li><li><a class="dropdown-item" href="/id/tools/json-schema-validator">Validator JSON Schema — Path draft-07 & lokal</a></li><li><a class="dropdown-item" href="/id/tools/jwt-decoder">JWT Decoder — baca header & payload di browser (tanpa verifikasi)</a></li><li><a class="dropdown-item" href="/id/tools/markdown-to-html">Markdown ↔ HTML</a></li><li><a class="dropdown-item" href="/id/tools/password-generator">Generator Password Acak — buat sandi di browser</a></li><li><a class="dropdown-item" href="/id/tools/text-diff">Bandingkan teks online</a></li><li><a class="dropdown-item" href="/id/tools/timezone-converter">Konverter Zona Waktu — bandingkan satu momen di seluruh dunia</a></li><li><a class="dropdown-item" href="/id/tools/unix-timestamp">Konverter Unix Timestamp — epoch ↔ waktu terbaca</a></li><li><a class="dropdown-item" href="/id/tools/uuid-generator">Generator UUID & ULID — buat ID di browser</a></li><li><a class="dropdown-item" href="/id/tools/website-headers">Cek header HTTP website</a></li><li><a class="dropdown-item" href="/id/tools/yaml-json">YAML ke JSON & sebaliknya — aturan tipe, multi-dokumen</a></li></ul>
         </li><li class="nav-item dropdown">
@@ -153,7 +156,7 @@
     
     <aside id="sidebar" class="border-end">
       <h2 class="sidebar-title h6">Kategori</h2>
-      <div class="list-group list-group-flush small" id="categoryList"><a class="list-group-item list-group-item-action" href="#cat-image">Alat gambar</a><a class="list-group-item list-group-item-action" href="#cat-design">Alat desain</a><a class="list-group-item list-group-item-action" href="#cat-dev">Developer</a><a class="list-group-item list-group-item-action" href="#cat-calculator">Kalkulator</a></div>
+      <div class="list-group list-group-flush small" id="categoryList"><a class="list-group-item list-group-item-action" href="#cat-image">Alat gambar</a><a class="list-group-item list-group-item-action" href="#cat-design">Alat desain</a><a class="list-group-item list-group-item-action" href="#cat-pdf">Alat PDF</a><a class="list-group-item list-group-item-action" href="#cat-dev">Developer</a><a class="list-group-item list-group-item-action" href="#cat-calculator">Kalkulator</a></div>
     </aside>
     <main id="content" class="p-4">
     <div class="home-wrap">
@@ -602,6 +605,18 @@
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/merge-pdf.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">Gabung PDF — satukan file di browser</h3>
+        </div>
+        <p class="card-text home-card-desc flex-grow-1">Satukan beberapa PDF menjadi satu di browser—tanpa unggah ke server; file tetap di perangkat Anda.</p>
+        <a href="/id/tools/merge-pdf" class="mt-auto btn btn-primary btn-sm">Buka</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/password-generator.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
           <h3 class="card-title home-card-title home-card-title--featured mb-0">Generator Password Acak — buat sandi di browser</h3>
         </div>
@@ -619,6 +634,18 @@
         </div>
         <p class="card-text home-card-desc flex-grow-1">Skema website: netral + token CSS semantik, tautan netral & status tetap — lokal.</p>
         <a href="/id/tools/smart-website-color-scheme" class="mt-auto btn btn-primary btn-sm">Buka</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/split-pdf.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">Pisah PDF — ekstrak halaman di browser</h3>
+        </div>
+        <p class="card-text home-card-desc flex-grow-1">Ekstrak halaman dari PDF di perangkat Anda—setiap halaman atau rentang; ZIP bila perlu; tanpa unggah ke server.</p>
+        <a href="/id/tools/split-pdf" class="mt-auto btn btn-primary btn-sm">Buka</a>
       </div>
     </div>
   </div>
@@ -730,7 +757,7 @@
       <div class="home-cat" id="cat-image">
         <span class="home-cat-label">Alat gambar</span>
         <h3>konversi, kompres, siapkan</h3>
-        <p class="home-cat-blurb">Utilitas gambar di browser — tanpa unggah.</p>
+        <p class="home-cat-blurb">Alat gambar di browser — tanpa unggah ke server; file tetap di perangkat.</p>
         <div class="home-card-grid">
           
   <div class="home-card-item">
@@ -942,7 +969,7 @@
       <div class="home-cat" id="cat-design">
         <span class="home-cat-label">Alat desain</span>
         <h3>warna, kontras, merek</h3>
-        <p class="home-cat-blurb">Utilitas desain di browser — kontras dan token merek, tanpa unggah.</p>
+        <p class="home-cat-blurb">Alat desain di browser — kontras dan token merek; tanpa unggah ke server.</p>
         <div class="home-card-grid">
           
   <div class="home-card-item">
@@ -990,6 +1017,38 @@
         </div>
         <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">Cek rasio kontras dan lolos AA/AAA — warna tidak diunggah ke server.</p>
         <a href="/id/tools/wcag-contrast-checker" class="mt-auto btn btn-primary btn-sm">Buka</a>
+      </div>
+    </div>
+  </div>
+        </div>
+      </div>
+      <div class="home-cat" id="cat-pdf">
+        <span class="home-cat-label">Alat PDF</span>
+        <h3>gabung, pisah — tanpa unggah ke server</h3>
+        <p class="home-cat-blurb">Gabung dan pisah PDF di browser — file tidak diunggah ke server, tetap di perangkat Anda.</p>
+        <div class="home-card-grid">
+          
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/merge-pdf.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <h3 class="card-title home-card-title mb-0">Gabung PDF — satukan file di browser</h3>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">Satukan beberapa PDF menjadi satu di browser—tanpa unggah ke server; file tetap di perangkat Anda.</p>
+        <a href="/id/tools/merge-pdf" class="mt-auto btn btn-primary btn-sm">Buka</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/split-pdf.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <h3 class="card-title home-card-title mb-0">Pisah PDF — ekstrak halaman di browser</h3>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">Ekstrak halaman dari PDF di perangkat Anda—setiap halaman atau rentang; ZIP bila perlu; tanpa unggah ke server.</p>
+        <a href="/id/tools/split-pdf" class="mt-auto btn btn-primary btn-sm">Buka</a>
       </div>
     </div>
   </div>

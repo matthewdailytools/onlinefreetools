@@ -40,6 +40,8 @@
 - [图片加边框](https://onlinefreetools.org/zh/tools/image-border) - 本地外扩彩色边框
 - [图片 ↔ Base64](https://onlinefreetools.org/zh/tools/image-to-base64) - 本地图片与 Base64 互转
 - [文字水印](https://onlinefreetools.org/zh/tools/add-watermark) - 本地文字水印（透明度/旋转/位置）
+- [合并 PDF](https://onlinefreetools.org/zh/tools/merge-pdf) - 浏览器内按顺序合并多个 PDF，不上传
+- [拆分 PDF](https://onlinefreetools.org/zh/tools/split-pdf) - 浏览器内按页或范围拆分 PDF，多文件时打包 ZIP
 - [多图转 PDF](https://onlinefreetools.org/zh/tools/images-to-pdf) - 本地多图合成多页 PDF
 - [多图转 Word](https://onlinefreetools.org/zh/tools/images-to-word) - 本地多图导出 DOCX
 - [多图转 GIF](https://onlinefreetools.org/zh/tools/images-to-gif) - 本地多帧合成动画 GIF
@@ -87,6 +89,8 @@ Below are our available online tools with their links (English version):
 - [Image Border](https://onlinefreetools.org/tools/image-border) - Add a colored outer border locally
 - [Image ↔ Base64](https://onlinefreetools.org/tools/image-to-base64) - Encode/decode images and Base64 locally
 - [Text Watermark](https://onlinefreetools.org/tools/add-watermark) - Stamp typed text watermarks locally
+- [Merge PDF](https://onlinefreetools.org/tools/merge-pdf) - Combine multiple PDFs in order in your browser — no upload
+- [Split PDF](https://onlinefreetools.org/tools/split-pdf) - Extract pages locally; ZIP when there are multiple outputs
 - [Images to PDF](https://onlinefreetools.org/tools/images-to-pdf) - Combine photos into a multi-page PDF locally
 - [Images to Word](https://onlinefreetools.org/tools/images-to-word) - Export photos to a DOCX locally
 - [Images to GIF](https://onlinefreetools.org/tools/images-to-gif) - Build an animated GIF from frames locally

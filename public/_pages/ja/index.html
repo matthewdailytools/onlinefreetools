@@ -117,6 +117,9 @@
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">デザインツール</a>
           <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ja/tools/brand-color-token-pack">ブランド色スケールを生成 — 50–950パレットとCSSトークン</a></li><li><a class="dropdown-item" href="/ja/tools/brand-style-guide">ブランドスタイルガイド — 自動下書きを手直しできる</a></li><li><a class="dropdown-item" href="/ja/tools/smart-website-color-scheme">サイト配色方案 — 貼れるセマンティック CSS トークン</a></li><li><a class="dropdown-item" href="/ja/tools/wcag-contrast-checker">WCAGコントラストチェッカー — AA/AAA比率</a></li></ul>
         </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">PDFツール</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ja/tools/merge-pdf">PDF結合 — ブラウザで複数ファイルを1つに</a></li><li><a class="dropdown-item" href="/ja/tools/split-pdf">PDF分割 — ページを端末内で取り出す</a></li></ul>
+        </li><li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">開発者</a>
           <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ja/tools/add-www-to-dns">DNS に WWW を追加 — A/CNAME と各社ガイド</a></li><li><a class="dropdown-item" href="/ja/tools/base64">Base64 エンコード/デコード — ブラウザでテキストを変換</a></li><li><a class="dropdown-item" href="/ja/tools/csv-json">CSV と JSON を相互変換 — 型・区切り文字・ローカル</a></li><li><a class="dropdown-item" href="/ja/tools/file-hash">ファイルハッシュチェッカー — ブラウザでダイジェストを確認</a></li><li><a class="dropdown-item" href="/ja/tools/html-entity">HTML エンティティ エンコード／デコード — ローカル処理</a></li><li><a class="dropdown-item" href="/ja/tools/indexnow">IndexNow — Bing URL 送信・キー確認・ステータスコード</a></li><li><a class="dropdown-item" href="/ja/tools/ip-address">自分のIPアドレス確認 — グローバルIP表示（IPv4/IPv6）</a></li><li><a class="dropdown-item" href="/ja/tools/json-schema-validator">JSON Schema バリデータ — draft-07 のパス、ローカル</a></li><li><a class="dropdown-item" href="/ja/tools/jwt-decoder">JWT デコーダー — Header/Payload をブラウザで表示（署名検証なし）</a></li><li><a class="dropdown-item" href="/ja/tools/markdown-to-html">Markdown ↔ HTML</a></li><li><a class="dropdown-item" href="/ja/tools/password-generator">ランダムパスワード生成 — ブラウザでパスワードを作成</a></li><li><a class="dropdown-item" href="/ja/tools/text-diff">テキスト比較</a></li><li><a class="dropdown-item" href="/ja/tools/timezone-converter">タイムゾーン変換 — 同一時刻を世界で対照</a></li><li><a class="dropdown-item" href="/ja/tools/unix-timestamp">Unix タイムスタンプ変換 — エポック ↔ 読みやすい時刻</a></li><li><a class="dropdown-item" href="/ja/tools/uuid-generator">UUID/ULID ジェネレーター — ブラウザで ID を作成</a></li><li><a class="dropdown-item" href="/ja/tools/website-headers">HTTPヘッダ確認</a></li><li><a class="dropdown-item" href="/ja/tools/yaml-json">YAML と JSON を相互変換（型ルール・複数ドキュメント対応）</a></li></ul>
         </li><li class="nav-item dropdown">
@@ -153,7 +156,7 @@
     
     <aside id="sidebar" class="border-end">
       <h2 class="sidebar-title h6">カテゴリ</h2>
-      <div class="list-group list-group-flush small" id="categoryList"><a class="list-group-item list-group-item-action" href="#cat-image">画像ツール</a><a class="list-group-item list-group-item-action" href="#cat-design">デザインツール</a><a class="list-group-item list-group-item-action" href="#cat-dev">開発者</a><a class="list-group-item list-group-item-action" href="#cat-calculator">計算機</a></div>
+      <div class="list-group list-group-flush small" id="categoryList"><a class="list-group-item list-group-item-action" href="#cat-image">画像ツール</a><a class="list-group-item list-group-item-action" href="#cat-design">デザインツール</a><a class="list-group-item list-group-item-action" href="#cat-pdf">PDFツール</a><a class="list-group-item list-group-item-action" href="#cat-dev">開発者</a><a class="list-group-item list-group-item-action" href="#cat-calculator">計算機</a></div>
     </aside>
     <main id="content" class="p-4">
     <div class="home-wrap">
@@ -602,6 +605,18 @@
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/merge-pdf.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">PDF結合 — ブラウザで複数ファイルを1つに</h3>
+        </div>
+        <p class="card-text home-card-desc flex-grow-1">ブラウザで複数のPDFを1つにまとめます。サーバーにはアップロードせず、端末内で処理します。</p>
+        <a href="/ja/tools/merge-pdf" class="mt-auto btn btn-primary btn-sm">開く</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/password-generator.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
           <h3 class="card-title home-card-title home-card-title--featured mb-0">ランダムパスワード生成 — ブラウザでパスワードを作成</h3>
         </div>
@@ -619,6 +634,18 @@
         </div>
         <p class="card-text home-card-desc flex-grow-1">サイト配色：ニュートラル＋セマンティック CSS トークン。中立リンクと固定ステータス——ローカル。</p>
         <a href="/ja/tools/smart-website-color-scheme" class="mt-auto btn btn-primary btn-sm">開く</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/split-pdf.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">PDF分割 — ページを端末内で取り出す</h3>
+        </div>
+        <p class="card-text home-card-desc flex-grow-1">端末内でPDFからページを取り出します（サーバーにアップロードしません）。全ページまたは範囲指定。必要ならZIP。</p>
+        <a href="/ja/tools/split-pdf" class="mt-auto btn btn-primary btn-sm">開く</a>
       </div>
     </div>
   </div>
@@ -730,7 +757,7 @@
       <div class="home-cat" id="cat-image">
         <span class="home-cat-label">画像ツール</span>
         <h3>変換・圧縮・書き出し</h3>
-        <p class="home-cat-blurb">ブラウザ内の画像ユーティリティ — アップロード不要。</p>
+        <p class="home-cat-blurb">ブラウザ内の画像ツール — ファイルはサーバーにアップロードせず、端末内で処理。</p>
         <div class="home-card-grid">
           
   <div class="home-card-item">
@@ -942,7 +969,7 @@
       <div class="home-cat" id="cat-design">
         <span class="home-cat-label">デザインツール</span>
         <h3>色・コントラスト・ブランド</h3>
-        <p class="home-cat-blurb">ブラウザ内のデザインユーティリティ — コントラストとブランドトークン、アップロード不要。</p>
+        <p class="home-cat-blurb">ブラウザ内のデザインツール — コントラストとブランドトークン；サーバーにアップロードしません。</p>
         <div class="home-card-grid">
           
   <div class="home-card-item">
@@ -990,6 +1017,38 @@
         </div>
         <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">前景/背景のコントラスト比と AA/AAA の合否を、ブラウザ内だけで確認。</p>
         <a href="/ja/tools/wcag-contrast-checker" class="mt-auto btn btn-primary btn-sm">開く</a>
+      </div>
+    </div>
+  </div>
+        </div>
+      </div>
+      <div class="home-cat" id="cat-pdf">
+        <span class="home-cat-label">PDFツール</span>
+        <h3>結合・分割 — サーバーに送らない</h3>
+        <p class="home-cat-blurb">ブラウザ内でPDFを結合・分割 — ファイルはサーバーにアップロードせず、端末内で処理します。</p>
+        <div class="home-card-grid">
+          
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/merge-pdf.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <h3 class="card-title home-card-title mb-0">PDF結合 — ブラウザで複数ファイルを1つに</h3>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">ブラウザで複数のPDFを1つにまとめます。サーバーにはアップロードせず、端末内で処理します。</p>
+        <a href="/ja/tools/merge-pdf" class="mt-auto btn btn-primary btn-sm">開く</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/split-pdf.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <h3 class="card-title home-card-title mb-0">PDF分割 — ページを端末内で取り出す</h3>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">端末内でPDFからページを取り出します（サーバーにアップロードしません）。全ページまたは範囲指定。必要ならZIP。</p>
+        <a href="/ja/tools/split-pdf" class="mt-auto btn btn-primary btn-sm">開く</a>
       </div>
     </div>
   </div>

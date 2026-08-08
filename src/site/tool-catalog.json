@@ -570,6 +570,22 @@
     "logo": "/icons/tools/markdown-to-html.svg"
   },
   {
+    "slug": "merge-pdf",
+    "path": "/tools/merge-pdf",
+    "category": "pdf",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_merge_pdf_title",
+    "homeTitleKey": "tool_merge_pdf_title",
+    "homeDescKey": "tool_merge_pdf_desc",
+    "faqPrefix": "tool_merge_pdf",
+    "related": [
+      "split-pdf",
+      "images-to-pdf"
+    ],
+    "logo": "/icons/tools/merge-pdf.svg"
+  },
+  {
     "slug": "password-generator",
     "path": "/tools/password-generator",
     "category": "developer",
@@ -600,6 +616,22 @@
       "wcag-contrast-checker"
     ],
     "logo": "/icons/tools/smart-website-color-scheme.svg"
+  },
+  {
+    "slug": "split-pdf",
+    "path": "/tools/split-pdf",
+    "category": "pdf",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_split_pdf_title",
+    "homeTitleKey": "tool_split_pdf_title",
+    "homeDescKey": "tool_split_pdf_desc",
+    "faqPrefix": "tool_split_pdf",
+    "related": [
+      "merge-pdf",
+      "images-to-pdf"
+    ],
+    "logo": "/icons/tools/split-pdf.svg"
   },
   {
     "slug": "square-feet",

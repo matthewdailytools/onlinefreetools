@@ -37,8 +37,10 @@ import { renderIpAddressPage } from '../pages/ipAddressPage';
 import { renderJsonSchemaValidatorPage } from '../pages/jsonSchemaValidatorPage';
 import { renderJwtDecoderPage } from '../pages/jwtDecoderPage';
 import { renderMarkdownToHtmlPage } from '../pages/markdownToHtmlPage';
+import { renderMergePdfPage } from '../pages/mergePdfPage';
 import { renderPasswordGeneratorPage } from '../pages/passwordGeneratorPage';
 import { renderSmartWebsiteColorSchemePage } from '../pages/smartWebsiteColorSchemePage';
+import { renderSplitPdfPage } from '../pages/splitPdfPage';
 import { renderSquareFeetPage } from '../pages/squareFeetPage';
 import { renderTextDiffPage } from '../pages/textDiffPage';
 import { renderTimezoneConverterPage } from '../pages/timezoneConverterPage';
@@ -90,8 +92,10 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'json-schema-validator': (lang, defaultLang, enabled) => renderJsonSchemaValidatorPage({ lang, defaultLang, enabledLangs: enabled }),
 	'jwt-decoder': (lang, defaultLang, enabled) => renderJwtDecoderPage({ lang, defaultLang, enabledLangs: enabled }),
 	'markdown-to-html': (lang, defaultLang, enabled) => renderMarkdownToHtmlPage({ lang, defaultLang, enabledLangs: enabled }),
+	'merge-pdf': (lang, defaultLang, enabled) => renderMergePdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'password-generator': (lang, defaultLang, enabled) => renderPasswordGeneratorPage({ lang, defaultLang, enabledLangs: enabled }),
 	'smart-website-color-scheme': (lang, defaultLang, enabled) => renderSmartWebsiteColorSchemePage({ lang, defaultLang, enabledLangs: enabled }),
+	'split-pdf': (lang, defaultLang, enabled) => renderSplitPdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'square-feet': (lang, defaultLang, enabled) => renderSquareFeetPage({ lang, defaultLang, enabledLangs: enabled }),
 	'text-diff': (lang, defaultLang, enabled) => renderTextDiffPage({ lang, defaultLang, enabledLangs: enabled }),
 	'timezone-converter': (lang, defaultLang, enabled) => renderTimezoneConverterPage({ lang, defaultLang, enabledLangs: enabled }),

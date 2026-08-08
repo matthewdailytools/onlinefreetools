@@ -66,6 +66,7 @@ const es: SiteLangDict = {
   sqft_unit: 'sq ft',
   status_label: 'Estado',
   tool_category_design: 'Herramientas de diseño',
+  tool_category_pdf: 'Herramientas PDF',
   tool_feedback_body:
     '¿Algo poco claro, roto o que falte? Redacta un mensaje abajo — leemos cada nota sobre estas herramientas.',
   tool_feedback_cta: 'Abrir en la app de correo',

@@ -21,7 +21,7 @@
 | **工具场景/渠道** | 方向 B 场景号、渠道名，或方向 A/C 品类锚点 |
 | **工具 slug** | URL / catalog 用 kebab-case；未立项为建议值 |
 | **工具功能** | 一句话能力 |
-| **工具分类** | 站内品类（对齐/扩展 catalog：`developer` / `image` / `calculator` / `archive` / `design` / `seo` / `audio` 等） |
+| **工具分类** | 站内品类（对齐/扩展 catalog：`developer` / `image` / `calculator` / `pdf` / `archive` / `design` / `seo` / `audio` 等） |
 | **工具用户角色** | 主要岗位 |
 | **工具输入** | 用户提供什么 |
 | **工具输出** | 用户得到什么 |
@@ -117,18 +117,18 @@
 
 | 序号 | 工具名称 | 工具场景/渠道 | 工具 slug | 工具功能 | 工具分类 | 工具用户角色 | 工具输入 | 工具输出 | 开发进度 |
 |---|---|---|---|---|---|---|---|---|---|
-| 50 | 合并 PDF | A.5.2；[ilovepdf merge](https://www.ilovepdf.com/merge_pdf) | `merge-pdf` | 多 PDF 按序合并 | developer | 办公、运营、学生 | 2+ PDF | 单个 PDF | 未开始 · P0 |
-| 51 | 拆分 PDF | A.5.2；[split](https://www.ilovepdf.com/split_pdf) | `split-pdf` | 按页/范围拆成多文件或 ZIP | developer | 办公、运营 | 1 PDF + 范围 | 多 PDF / ZIP | 未开始 · P0 |
-| 52 | 整理 PDF | A.5.2；[organize](https://www.ilovepdf.com/organize-pdf) | `organize-pdf` | 删页 / 重排 / 抽页 | developer | 办公 | 1 PDF | 整理后 PDF | 未开始 · P1 |
-| 53 | 压缩 PDF | A.5.2；[compress](https://www.ilovepdf.com/compress_pdf) | `compress-pdf` | 有限减小体积（声明非云端级） | developer | 办公、站长 | 1 PDF | 压缩 PDF + 体积对比 | 未开始 · P1 |
+| 50 | 合并 PDF | A.5.2；[ilovepdf merge](https://www.ilovepdf.com/merge_pdf) | `merge-pdf` | 多 PDF 按序合并 | pdf | 办公、运营、学生 | 2+ PDF | 单个 PDF | 已上线 |
+| 51 | 拆分 PDF | A.5.2；[split](https://www.ilovepdf.com/split_pdf) | `split-pdf` | 按页/范围拆成多文件或 ZIP | pdf | 办公、运营 | 1 PDF + 范围 | 多 PDF / ZIP | 已上线 |
+| 52 | 整理 PDF | A.5.2；[organize](https://www.ilovepdf.com/organize-pdf) | `organize-pdf` | 删页 / 重排 / 抽页 | pdf | 办公 | 1 PDF | 整理后 PDF | 未开始 · P1 |
+| 53 | 压缩 PDF | A.5.2；[compress](https://www.ilovepdf.com/compress_pdf) | `compress-pdf` | 有限减小体积（声明非云端级） | pdf | 办公、站长 | 1 PDF | 压缩 PDF + 体积对比 | 未开始 · P1 |
 | 54 | PDF → JPG | A.5.2；[pdf_to_jpg](https://www.ilovepdf.com/pdf_to_jpg) | `pdf-to-jpg` | 每页渲染为图片 | image | 运营、设计师 | 1 PDF | 多张 JPG/PNG（可 ZIP） | 未开始 · P1 |
-| 55 | 旋转 PDF | A.5.2；[rotate](https://www.ilovepdf.com/rotate_pdf) | `rotate-pdf` | 按页旋转 90° | developer | 办公、扫描用户 | 1 PDF | 旋转后 PDF | 未开始 · P1 |
-| 56 | PDF 水印 | A.5.2；[watermark](https://www.ilovepdf.com/pdf_add_watermark) | `pdf-watermark` | 文字/图片水印 | developer | 法务辅助、运营 | 1 PDF + 水印参数 | 带水印 PDF | 未开始 · P1 |
-| 57 | PDF 页码 | A.5.2；[page numbers](https://www.ilovepdf.com/add_pdf_page_number) | `pdf-page-numbers` | 添加页码 | developer | 办公 | 1 PDF + 样式位置 | 带页码 PDF | 未开始 · P1 |
-| 58 | PDF → Markdown | A.5.2；[pdf-to-markdown](https://www.ilovepdf.com/pdf-to-markdown) | `pdf-to-markdown` | 文本层导出 MD | developer | 写作者、AI 用户 | 1 PDF（需文本层） | Markdown | 未开始 · P1 |
-| 59 | 保护 PDF | A.5.2；[protect](https://www.ilovepdf.com/protect-pdf) | `protect-pdf` | 用户密码加密 | developer | 隐私敏感用户 | 1 PDF + 密码 | 加密 PDF | 未开始 · P2 |
-| 60 | 解锁 PDF | A.5.2；[unlock](https://www.ilovepdf.com/unlock_pdf) | `unlock-pdf` | 用**已知密码**解密（非破解） | developer | 文件所有者 | 加密 PDF + 密码 | 解密 PDF | 未开始 · P2 |
-| 61 | 裁切 PDF | A.5.2；[crop](https://www.ilovepdf.com/crop-pdf) | `crop-pdf` | 裁切页边距 | developer | 办公、扫描用户 | 1 PDF + 边距 | 裁切后 PDF | 未开始 · P2 |
+| 55 | 旋转 PDF | A.5.2；[rotate](https://www.ilovepdf.com/rotate_pdf) | `rotate-pdf` | 按页旋转 90° | pdf | 办公、扫描用户 | 1 PDF | 旋转后 PDF | 未开始 · P1 |
+| 56 | PDF 水印 | A.5.2；[watermark](https://www.ilovepdf.com/pdf_add_watermark) | `pdf-watermark` | 文字/图片水印 | pdf | 法务辅助、运营 | 1 PDF + 水印参数 | 带水印 PDF | 未开始 · P1 |
+| 57 | PDF 页码 | A.5.2；[page numbers](https://www.ilovepdf.com/add_pdf_page_number) | `pdf-page-numbers` | 添加页码 | pdf | 办公 | 1 PDF + 样式位置 | 带页码 PDF | 未开始 · P1 |
+| 58 | PDF → Markdown | A.5.2；[pdf-to-markdown](https://www.ilovepdf.com/pdf-to-markdown) | `pdf-to-markdown` | 文本层导出 MD | pdf | 写作者、AI 用户 | 1 PDF（需文本层） | Markdown | 未开始 · P1 |
+| 59 | 保护 PDF | A.5.2；[protect](https://www.ilovepdf.com/protect-pdf) | `protect-pdf` | 用户密码加密 | pdf | 隐私敏感用户 | 1 PDF + 密码 | 加密 PDF | 未开始 · P2 |
+| 60 | 解锁 PDF | A.5.2；[unlock](https://www.ilovepdf.com/unlock_pdf) | `unlock-pdf` | 用**已知密码**解密（非破解） | pdf | 文件所有者 | 加密 PDF + 密码 | 解密 PDF | 未开始 · P2 |
+| 61 | 裁切 PDF | A.5.2；[crop](https://www.ilovepdf.com/crop-pdf) | `crop-pdf` | 裁切页边距 | pdf | 办公、扫描用户 | 1 PDF + 边距 | 裁切后 PDF | 未开始 · P2 |
 | 62 | PDF 页多尺寸导出 | B.3 P2 | `pdf-page-to-image-sizes` | 单页 → 多平台尺寸包 | image | 运营、站长 | 1 页 PDF | 多尺寸图片（可 ZIP） | 未开始 · P2 |
 
 ---
@@ -271,13 +271,13 @@
 | 序号范围 | **1–115**（全表产品行） |
 | ToolDone 公式对照精选 | 22 行（§11） |
 | ToolDone 全量归档 | ~2826 en / ~2835 zh |
-| 已上线 | 39 |
-| 未开始 · P0 | 16（含 `merge-pdf` / `split-pdf`） |
+| 已上线 | 41 |
+| 未开始 · P0 | 14 |
 | 未开始 · P1 | ~21 |
 | 未开始 · P2 | ~22 |
 | 待 POC | 3（`local-bg-removal`、`ocr-to-text`、`audio-wav-mp3`） |
 
-**P0 未开始速查**：`merge-pdf`、`split-pdf`、`create-zip-file`、`unzip-file`、`safe-paste-cleaner`、`ai-token-counter`、`chat-export-converter`、`meta-serp-preview`、`ios-app-screenshot-resizer`、`app-icon-generator-pack`、`amazon-image-resizer`、`favicon-and-pwa-icon-pack`、`social-share-image-pack`。
+**P0 未开始速查**：`create-zip-file`、`unzip-file`、`safe-paste-cleaner`、`ai-token-counter`、`chat-export-converter`、`meta-serp-preview`、`ios-app-screenshot-resizer`、`app-icon-generator-pack`、`amazon-image-resizer`、`favicon-and-pwa-icon-pack`、`social-share-image-pack`。
 
 ---
 

@@ -1,0 +1,21 @@
+{
+  "slug": "split-pdf",
+  "path": "/tools/split-pdf",
+  "category": "pdf",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_split_pdf_title",
+  "homeTitleKey": "tool_split_pdf_title",
+  "homeDescKey": "tool_split_pdf_desc",
+  "faqPrefix": "tool_split_pdf",
+  "related": [
+    "merge-pdf",
+    "images-to-pdf"
+  ],
+  "logo": "/icons/tools/split-pdf.svg",
+  "page": {
+    "module": "../pages/splitPdfPage",
+    "export": "renderSplitPdfPage",
+    "style": "opts"
+  }
+}

@@ -3,13 +3,14 @@
  */
 import type { ToolCategory } from './tools';
 
-/** 分类在首页与导航中的展示顺序（图片编辑工具优先，设计工具次之）。 */
-export const TOOL_CATEGORY_ORDER: ToolCategory[] = ['image', 'design', 'developer', 'calculator'];
+/** 分类在首页与导航中的展示顺序（图片 → 设计 → PDF → 开发者 → 计算器）。 */
+export const TOOL_CATEGORY_ORDER: ToolCategory[] = ['image', 'design', 'pdf', 'developer', 'calculator'];
 
 /** 各分类在首页 `#all-tools` 下的锚点 id。 */
 export const CATEGORY_ANCHORS: Record<ToolCategory, string> = {
 	image: 'cat-image',
 	design: 'cat-design',
+	pdf: 'cat-pdf',
 	developer: 'cat-dev',
 	calculator: 'cat-calculator',
 };
@@ -20,19 +21,30 @@ export const CATEGORY_ANCHORS: Record<ToolCategory, string> = {
  */
 export const getCategoryAnchor = (category: ToolCategory): string => CATEGORY_ANCHORS[category];
 
+/** 运行时顶栏分类下拉使用的 i18n 键。 */
+type CategoryRuntimeLabelKey =
+	| 'tool_category_image'
+	| 'tool_category_design'
+	| 'tool_category_pdf'
+	| 'tool_category_developer'
+	| 'tool_category_calculator';
+
+/** 静态首页构建使用的分类标题 i18n 键。 */
+type CategoryHomeLabelKey =
+	| 'home_cat_image'
+	| 'home_cat_design'
+	| 'home_cat_pdf'
+	| 'home_cat_dev'
+	| 'home_cat_calculator';
+
 /**
  * 运行时工具页顶栏下拉使用的 i18n 键（见各语 `tool_category_*`）。
  * @param category 工具分类
  */
-export const getCategoryRuntimeLabelKey = (
-	category: ToolCategory
-):
-	| 'tool_category_image'
-	| 'tool_category_design'
-	| 'tool_category_developer'
-	| 'tool_category_calculator' => {
+export const getCategoryRuntimeLabelKey = (category: ToolCategory): CategoryRuntimeLabelKey => {
 	if (category === 'image') return 'tool_category_image';
 	if (category === 'design') return 'tool_category_design';
+	if (category === 'pdf') return 'tool_category_pdf';
 	if (category === 'calculator') return 'tool_category_calculator';
 	return 'tool_category_developer';
 };
@@ -41,11 +53,10 @@ export const getCategoryRuntimeLabelKey = (
  * 静态首页构建使用的 i18n 键（见 `scripts/site/i18n.mjs` 的 `home_cat_*`）。
  * @param category 工具分类
  */
-export const getCategoryHomeLabelKey = (
-	category: ToolCategory
-): 'home_cat_image' | 'home_cat_design' | 'home_cat_dev' | 'home_cat_calculator' => {
+export const getCategoryHomeLabelKey = (category: ToolCategory): CategoryHomeLabelKey => {
 	if (category === 'image') return 'home_cat_image';
 	if (category === 'design') return 'home_cat_design';
+	if (category === 'pdf') return 'home_cat_pdf';
 	if (category === 'calculator') return 'home_cat_calculator';
 	return 'home_cat_dev';
 };
@@ -54,7 +65,7 @@ export const getCategoryHomeLabelKey = (
 export const CATEGORY_HOME_SECTION_KEYS: Record<
 	ToolCategory,
 	{
-		labelKey: 'home_cat_image' | 'home_cat_design' | 'home_cat_dev' | 'home_cat_calculator';
+		labelKey: CategoryHomeLabelKey;
 		descKey: string;
 		blurbKey: string;
 	}
@@ -68,6 +79,11 @@ export const CATEGORY_HOME_SECTION_KEYS: Record<
 		labelKey: 'home_cat_design',
 		descKey: 'home_cat_design_desc',
 		blurbKey: 'home_cat_design_blurb',
+	},
+	pdf: {
+		labelKey: 'home_cat_pdf',
+		descKey: 'home_cat_pdf_desc',
+		blurbKey: 'home_cat_pdf_blurb',
 	},
 	developer: {
 		labelKey: 'home_cat_dev',

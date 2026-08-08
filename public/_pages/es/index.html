@@ -117,6 +117,9 @@
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Herramientas de diseño</a>
           <ul class="dropdown-menu"><li><a class="dropdown-item" href="/es/tools/brand-color-token-pack">Generar escala de color de marca — paleta 50–950 y tokens CSS</a></li><li><a class="dropdown-item" href="/es/tools/brand-style-guide">Guía de estilo de marca — borrador modular que puedes editar</a></li><li><a class="dropdown-item" href="/es/tools/smart-website-color-scheme">Esquema de colores web — tokens CSS semánticos</a></li><li><a class="dropdown-item" href="/es/tools/wcag-contrast-checker">Comprobador de contraste WCAG — ratio AA/AAA</a></li></ul>
         </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Herramientas PDF</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/es/tools/merge-pdf">Unir PDF — combina varios archivos en el navegador</a></li><li><a class="dropdown-item" href="/es/tools/split-pdf">Dividir PDF — extrae páginas en tu dispositivo</a></li></ul>
+        </li><li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Desarrollador</a>
           <ul class="dropdown-menu"><li><a class="dropdown-item" href="/es/tools/add-www-to-dns">Añadir WWW al DNS — registros A/CNAME y guías</a></li><li><a class="dropdown-item" href="/es/tools/base64">Codificar y decodificar Base64 — convertir texto en el navegador</a></li><li><a class="dropdown-item" href="/es/tools/csv-json">Conversor CSV ↔ JSON — tipos, separador y local</a></li><li><a class="dropdown-item" href="/es/tools/file-hash">Comprobador de hash — verificar resúmenes en el navegador</a></li><li><a class="dropdown-item" href="/es/tools/html-entity">Codificar y decodificar entidades HTML — escape local</a></li><li><a class="dropdown-item" href="/es/tools/indexnow">IndexNow — enviar URLs a Bing, comprobar clave y códigos</a></li><li><a class="dropdown-item" href="/es/tools/ip-address">Cuál es mi IP — Consulta tu IP pública (IPv4/IPv6)</a></li><li><a class="dropdown-item" href="/es/tools/json-schema-validator">Validador JSON Schema — Rutas draft-07 y local</a></li><li><a class="dropdown-item" href="/es/tools/jwt-decoder">Decodificador JWT — leer header y payload en el navegador (sin verificar)</a></li><li><a class="dropdown-item" href="/es/tools/markdown-to-html">Markdown ↔ HTML</a></li><li><a class="dropdown-item" href="/es/tools/password-generator">Generador de contraseñas aleatorias — crear claves en el navegador</a></li><li><a class="dropdown-item" href="/es/tools/text-diff">Comparar textos online</a></li><li><a class="dropdown-item" href="/es/tools/timezone-converter">Convertidor de zona horaria — comparar un momento en todo el mundo</a></li><li><a class="dropdown-item" href="/es/tools/unix-timestamp">Conversor Unix timestamp — época ↔ hora legible</a></li><li><a class="dropdown-item" href="/es/tools/uuid-generator">Generador UUID y ULID — crear identificadores en el navegador</a></li><li><a class="dropdown-item" href="/es/tools/website-headers">Cabeceras HTTP online</a></li><li><a class="dropdown-item" href="/es/tools/yaml-json">YAML a JSON (y al revés) — tipos, multi-doc, local</a></li></ul>
         </li><li class="nav-item dropdown">
@@ -153,7 +156,7 @@
     
     <aside id="sidebar" class="border-end">
       <h2 class="sidebar-title h6">Categorías</h2>
-      <div class="list-group list-group-flush small" id="categoryList"><a class="list-group-item list-group-item-action" href="#cat-image">Herramientas de imagen</a><a class="list-group-item list-group-item-action" href="#cat-design">Herramientas de diseño</a><a class="list-group-item list-group-item-action" href="#cat-dev">Desarrollador</a><a class="list-group-item list-group-item-action" href="#cat-calculator">Calculadoras</a></div>
+      <div class="list-group list-group-flush small" id="categoryList"><a class="list-group-item list-group-item-action" href="#cat-image">Herramientas de imagen</a><a class="list-group-item list-group-item-action" href="#cat-design">Herramientas de diseño</a><a class="list-group-item list-group-item-action" href="#cat-pdf">Herramientas PDF</a><a class="list-group-item list-group-item-action" href="#cat-dev">Desarrollador</a><a class="list-group-item list-group-item-action" href="#cat-calculator">Calculadoras</a></div>
     </aside>
     <main id="content" class="p-4">
     <div class="home-wrap">
@@ -602,6 +605,18 @@
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/merge-pdf.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">Unir PDF — combina varios archivos en el navegador</h3>
+        </div>
+        <p class="card-text home-card-desc flex-grow-1">Combina varios PDF en uno solo en el navegador; no se suben a un servidor.</p>
+        <a href="/es/tools/merge-pdf" class="mt-auto btn btn-primary btn-sm">Abrir</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/password-generator.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
           <h3 class="card-title home-card-title home-card-title--featured mb-0">Generador de contraseñas aleatorias — crear claves en el navegador</h3>
         </div>
@@ -619,6 +634,18 @@
         </div>
         <p class="card-text home-card-desc flex-grow-1">Esquema web: neutros + tokens CSS semánticos, enlaces neutros y estados fijos — local.</p>
         <a href="/es/tools/smart-website-color-scheme" class="mt-auto btn btn-primary btn-sm">Abrir</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/split-pdf.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">Dividir PDF — extrae páginas en tu dispositivo</h3>
+        </div>
+        <p class="card-text home-card-desc flex-grow-1">Extrae páginas de un PDF en tu dispositivo: cada página o rangos; ZIP si hace falta. No se sube a un servidor.</p>
+        <a href="/es/tools/split-pdf" class="mt-auto btn btn-primary btn-sm">Abrir</a>
       </div>
     </div>
   </div>
@@ -730,7 +757,7 @@
       <div class="home-cat" id="cat-image">
         <span class="home-cat-label">Herramientas de imagen</span>
         <h3>convertir, comprimir, preparar</h3>
-        <p class="home-cat-blurb">Utilidades de imagen en el navegador — sin subir archivos.</p>
+        <p class="home-cat-blurb">Herramientas de imagen en el navegador — sin subir archivos a un servidor.</p>
         <div class="home-card-grid">
           
   <div class="home-card-item">
@@ -942,7 +969,7 @@
       <div class="home-cat" id="cat-design">
         <span class="home-cat-label">Herramientas de diseño</span>
         <h3>color, contraste, marca</h3>
-        <p class="home-cat-blurb">Utilidades de diseño en el navegador — contraste y tokens de marca, sin subir archivos.</p>
+        <p class="home-cat-blurb">Herramientas de diseño en el navegador — contraste y tokens de marca; sin subir archivos a un servidor.</p>
         <div class="home-card-grid">
           
   <div class="home-card-item">
@@ -990,6 +1017,38 @@
         </div>
         <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">Comprueba el ratio de contraste y si cumple AA/AAA — sin subir colores al servidor.</p>
         <a href="/es/tools/wcag-contrast-checker" class="mt-auto btn btn-primary btn-sm">Abrir</a>
+      </div>
+    </div>
+  </div>
+        </div>
+      </div>
+      <div class="home-cat" id="cat-pdf">
+        <span class="home-cat-label">Herramientas PDF</span>
+        <h3>unir, dividir — sin subir al servidor</h3>
+        <p class="home-cat-blurb">Une y divide PDF en el navegador — tus archivos no salen del dispositivo ni se suben a un servidor.</p>
+        <div class="home-card-grid">
+          
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/merge-pdf.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <h3 class="card-title home-card-title mb-0">Unir PDF — combina varios archivos en el navegador</h3>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">Combina varios PDF en uno solo en el navegador; no se suben a un servidor.</p>
+        <a href="/es/tools/merge-pdf" class="mt-auto btn btn-primary btn-sm">Abrir</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/split-pdf.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <h3 class="card-title home-card-title mb-0">Dividir PDF — extrae páginas en tu dispositivo</h3>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">Extrae páginas de un PDF en tu dispositivo: cada página o rangos; ZIP si hace falta. No se sube a un servidor.</p>
+        <a href="/es/tools/split-pdf" class="mt-auto btn btn-primary btn-sm">Abrir</a>
       </div>
     </div>
   </div>
