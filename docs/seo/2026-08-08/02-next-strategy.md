@@ -20,7 +20,7 @@
 ### P0：索引管道
 
 - 保持 sitemap 仅工具/站点页（无 devlogs）
-- 新工具/大改 i18n 后 **IndexNow 提交**
+- 新工具/大改 i18n 后 **IndexNow 增量提交**（`--since-git` 或 `indexnow:incremental`；勿每次全站 10 语重推）
 - 21 页「已发现未编入」：**不加量**，用首页/Related tools 内链自然引爬
 
 ### P1：误收录治理

@@ -9,6 +9,9 @@
 #   ./ops/seo/submit-indexnow.sh --sitemap https://onlinefreetools.org/sitemap.xml
 #   ./ops/seo/submit-indexnow.sh --sitemap-only --include /tools/
 #   ./ops/seo/submit-indexnow.sh --tool html-entity --lang zh,en
+#   ./ops/seo/submit-indexnow.sh --incremental --remote-sitemap
+#   ./ops/seo/submit-indexnow.sh --baseline --remote-sitemap
+#   ./ops/seo/submit-indexnow.sh --since-git HEAD~1
 #   ./ops/seo/submit-indexnow.sh --help
 #
 # 等价 npm：npm run indexnow -- [options...]

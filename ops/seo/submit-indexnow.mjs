@@ -19,9 +19,14 @@
  *   npm run indexnow -- --check-key / --require-live-key
  *   npm run indexnow -- --dry-run --limit 10 --verbose
  *   npm run indexnow -- --endpoint bing
+ *   npm run indexnow -- --incremental                        # 仅推尚未成功提交过的 URL
+ *   npm run indexnow -- --baseline                           # 把当前 URL 集写入状态，不提交
+ *   npm run indexnow -- --since-git HEAD~1                   # 按 git 变更映射工具/页面 URL
+ *   npm run indexnow -- --incremental --since-git origin/main
  */
 import fs from 'fs/promises';
 import path from 'path';
+import { execFileSync } from 'node:child_process';
 import { createRequire } from 'module';
 import { fileURLToPath, pathToFileURL } from 'url';
 import { siteConfig, withLangPath } from '../../scripts/site/config.mjs';
@@ -37,6 +42,12 @@ const TOOL_CATALOG = require(path.join(rootDir, 'src/site/tool-catalog.json'));
 
 /** 默认 sitemap 路径（由 npm run build:site 生成） */
 const defaultSitemapPath = path.join(rootDir, 'public', 'sitemap.xml');
+
+/** 增量推送默认状态文件（.run/ 已 gitignore） */
+const defaultStatePath = path.join(rootDir, '.run', 'indexnow-state.json');
+
+/** 状态文件 schema 版本 */
+const STATE_VERSION = 1;
 
 /** IndexNow 官方聚合端点（一次提交会共享给参与引擎） */
 const ENDPOINT_INDEXNOW = 'https://api.indexnow.org/indexnow';
@@ -147,6 +158,18 @@ const parseArgs = (argv) => {
   let home = false;
   /** 是否提交各语言 About */
   let about = false;
+  /** 是否启用增量推送（对照本地状态文件，跳过已成功提交的 URL） */
+  let incremental = false;
+  /** 是否只写入 baseline 状态、不真正 POST */
+  let baseline = false;
+  /** 是否删除状态文件后退出（可与提交流程分开用） */
+  let resetState = false;
+  /** 成功提交后是否跳过写回状态 */
+  let noSaveState = false;
+  /** 自定义状态文件路径 */
+  let stateFile = '';
+  /** git 起始引用（与 HEAD 比较，映射变更文件 → URL） */
+  let sinceGit = '';
 
   for (let i = 0; i < argv.length; i += 1) {
     /** 当前参数 */
@@ -314,6 +337,31 @@ const parseArgs = (argv) => {
       about = true;
       continue;
     }
+    if (arg === '--incremental') {
+      incremental = true;
+      continue;
+    }
+    if (arg === '--baseline') {
+      baseline = true;
+      continue;
+    }
+    if (arg === '--reset-state') {
+      resetState = true;
+      continue;
+    }
+    if (arg === '--no-save-state') {
+      noSaveState = true;
+      continue;
+    }
+    if (arg === '--state-file') {
+      stateFile = path.resolve(takeValue('--state-file'));
+      continue;
+    }
+    if (arg === '--since-git') {
+      sinceGit = String(takeValue('--since-git')).trim();
+      if (!sinceGit) throw new Error('--since-git requires a git ref (e.g. HEAD~1, origin/main)');
+      continue;
+    }
     if (arg.startsWith('-')) {
       throw new Error(`Unknown argument: ${arg}. Use --help.`);
     }
@@ -353,6 +401,12 @@ const parseArgs = (argv) => {
     exclude,
     home,
     about,
+    incremental,
+    baseline,
+    resetState,
+    noSaveState,
+    stateFile,
+    sinceGit,
   };
 };
 
@@ -379,6 +433,15 @@ Other selectors:
   --urls-file <file>             One URL/path per line (# comments ok)
   positional args                Absolute URL or site path
 
+Incremental:
+  --incremental                  Skip URLs already recorded in state (after success)
+  --since-git <ref>              Map git changes since <ref> → tool/page URLs
+                                 (alone: only those URLs; with sitemap: union)
+  --baseline                     Write collected URLs to state; do not POST
+  --reset-state                  Delete state file (alone: exit; with other flags: continue)
+  --state-file <path>            Default: .run/indexnow-state.json
+  --no-save-state                Do not update state after a successful POST
+
 Common flags:
   --check-key / --require-live-key
   --dry-run / --endpoint <name|url> / --lang <codes>
@@ -400,6 +463,10 @@ Examples:
   npm run indexnow -- --sitemap-only --exclude /zh/
   npm run indexnow -- --tool html-entity --lang zh
   npm run indexnow -- --check-key
+  npm run indexnow -- --baseline --remote-sitemap
+  npm run indexnow -- --incremental --remote-sitemap
+  npm run indexnow -- --since-git HEAD~1 --lang zh,en
+  npm run indexnow -- --incremental --since-git origin/main --require-live-key
 `);
 };
 
@@ -706,9 +773,10 @@ const submitBatch = async ({ endpoint, host, key, keyLocation, urlList, dryRun }
  * @param {object} args parseArgs 结果
  * @param {string} baseUrl 站点根
  * @param {boolean} hasSelectors 是否存在非 sitemap 选择器
+ * @param {boolean} gitOnly 是否仅按 git 变更收集（跳过默认全量 sitemap）
  * @returns {string[]}
  */
-const resolveSitemapSources = (args, baseUrl, hasSelectors) => {
+const resolveSitemapSources = (args, baseUrl, hasSelectors, gitOnly) => {
   /** 来源列表 */
   const sources = args.sitemapSources.slice();
 
@@ -716,8 +784,14 @@ const resolveSitemapSources = (args, baseUrl, hasSelectors) => {
     sources.push(`${baseUrl}/sitemap.xml`);
   }
 
-  // 默认模式（无选择器且未显式指定来源）→ 本地 sitemap
-  if (!hasSelectors && !args.useSitemap && !args.remoteSitemap && sources.length === 0) {
+  // 默认模式（无选择器、非 git-only、且未显式指定来源）→ 本地 sitemap
+  if (
+    !gitOnly &&
+    !hasSelectors &&
+    !args.useSitemap &&
+    !args.remoteSitemap &&
+    sources.length === 0
+  ) {
     sources.push(defaultSitemapPath);
   }
 
@@ -731,7 +805,340 @@ const resolveSitemapSources = (args, baseUrl, hasSelectors) => {
 };
 
 /**
- * 根据 CLI 选项收集待提交 URL。
+ * 解析增量状态文件绝对路径。
+ * @param {object} args parseArgs 结果
+ * @returns {string}
+ */
+const resolveStatePath = (args) => args.stateFile || defaultStatePath;
+
+/**
+ * 读取增量状态；文件不存在时返回空状态。
+ * @param {string} statePath 状态文件路径
+ * @param {string} host 期望 host（不一致时忽略旧 URL）
+ * @returns {Promise<{ version: number, host: string, updatedAt: string, urls: Record<string, { submittedAt: string, endpoint?: string }> }>}
+ */
+const loadState = async (statePath, host) => {
+  /** 空状态模板 */
+  const empty = { version: STATE_VERSION, host, updatedAt: '', urls: {} };
+  try {
+    const raw = await fs.readFile(statePath, 'utf8');
+    /** 解析后的 JSON */
+    const parsed = JSON.parse(raw);
+    if (!parsed || typeof parsed !== 'object') return empty;
+    /** 历史 URL 表 */
+    const urls =
+      parsed.urls && typeof parsed.urls === 'object' && !Array.isArray(parsed.urls)
+        ? parsed.urls
+        : {};
+    if (parsed.host && parsed.host !== host) {
+      console.warn(
+        `IndexNow state host mismatch (state=${parsed.host}, now=${host}); ignoring prior URLs.`
+      );
+      return empty;
+    }
+    return {
+      version: Number(parsed.version) || STATE_VERSION,
+      host,
+      updatedAt: String(parsed.updatedAt || ''),
+      urls,
+    };
+  } catch (err) {
+    if (err && err.code === 'ENOENT') return empty;
+    throw err;
+  }
+};
+
+/**
+ * 将状态原子写入磁盘（先写临时文件再 rename）。
+ * @param {string} statePath 状态文件路径
+ * @param {{ version: number, host: string, updatedAt: string, urls: Record<string, object> }} state 状态对象
+ * @returns {Promise<void>}
+ */
+const saveState = async (statePath, state) => {
+  await fs.mkdir(path.dirname(statePath), { recursive: true });
+  /** 临时文件路径 */
+  const tmpPath = `${statePath}.${process.pid}.tmp`;
+  await fs.writeFile(tmpPath, `${JSON.stringify(state, null, 2)}\n`, 'utf8');
+  await fs.rename(tmpPath, statePath);
+};
+
+/**
+ * 删除增量状态文件（不存在则忽略）。
+ * @param {string} statePath 状态文件路径
+ * @returns {Promise<boolean>} 是否实际删除了文件
+ */
+const deleteState = async (statePath) => {
+  try {
+    await fs.unlink(statePath);
+    return true;
+  } catch (err) {
+    if (err && err.code === 'ENOENT') return false;
+    throw err;
+  }
+};
+
+/**
+ * 列出 git 引用相对 HEAD 的变更文件（name-only）。
+ * @param {string} gitRef 起始引用（如 HEAD~1、origin/main）
+ * @returns {string[]} 相对仓库根的路径列表
+ */
+const listChangedFilesSince = (gitRef) => {
+  try {
+    /** git diff 输出 */
+    const out = execFileSync('git', ['diff', '--name-only', `${gitRef}...HEAD`], {
+      cwd: rootDir,
+      encoding: 'utf8',
+    });
+    return out
+      .split(/\r?\n/)
+      .map((line) => line.trim())
+      .filter(Boolean);
+  } catch (err) {
+    /** 错误信息 */
+    const detail = err && err.stderr ? String(err.stderr).trim() : String(err?.message || err);
+    throw new Error(`git diff failed for --since-git ${gitRef}: ${detail}`);
+  }
+};
+
+/**
+ * 从 catalog 构建「页面模块文件名 → slug」映射。
+ * @returns {Map<string, string>} 如 indexNowPage.ts → indexnow
+ */
+const buildPageFileToSlugMap = () => {
+  /** 映射表 */
+  const map = new Map();
+  for (const tool of TOOL_CATALOG) {
+    /** page.module 如 ../pages/indexNowPage */
+    const mod = tool?.page?.module;
+    if (!mod || !tool.slug) continue;
+    /** 模块 basename（无扩展名） */
+    const base = path.basename(String(mod));
+    map.set(base, tool.slug);
+    map.set(`${base}.ts`, tool.slug);
+    map.set(`${base}.js`, tool.slug);
+  }
+  return map;
+};
+
+/**
+ * 将仓库相对路径映射为 IndexNow 选择器（tools / site paths / home）。
+ * @param {string[]} files git 变更文件列表
+ * @returns {{ tools: string[], paths: string[], home: boolean, about: boolean, unmatched: string[] }}
+ */
+const mapChangedFilesToSelectors = (files) => {
+  /** 工具 slug 集合 */
+  const tools = new Set();
+  /** 站点路径集合（无语言前缀） */
+  const paths = new Set();
+  /** 是否包含首页 */
+  let home = false;
+  /** 是否包含 About */
+  let about = false;
+  /** 未能映射的文件（供 verbose 日志） */
+  const unmatched = [];
+  /** 页面文件 → slug */
+  const pageToSlug = buildPageFileToSlugMap();
+
+  for (const file of files) {
+    /** i18n 工具分片 */
+    let match = file.match(/^src\/site\/i18n\/tools\/([^/]+)\//);
+    if (match) {
+      tools.add(match[1]);
+      continue;
+    }
+    /** catalog 分片 */
+    match = file.match(/^src\/site\/tool-catalog\.d\/([^/]+)\.json$/);
+    if (match) {
+      tools.add(match[1]);
+      continue;
+    }
+    /** 工具图标 */
+    match = file.match(/^public\/icons\/tools\/([^/]+)\.svg$/);
+    if (match) {
+      tools.add(match[1]);
+      continue;
+    }
+    /** 工具页面实现 */
+    if (file.startsWith('src/pages/') && /\.(ts|js)$/.test(file)) {
+      /** 文件名（含扩展名） */
+      const baseWithExt = path.basename(file);
+      /** 无扩展名 */
+      const base = path.basename(file, path.extname(file));
+      /** 匹配到的 slug */
+      const slug = pageToSlug.get(baseWithExt) || pageToSlug.get(base);
+      if (slug) {
+        tools.add(slug);
+        continue;
+      }
+      if (/^about/i.test(base)) {
+        about = true;
+        continue;
+      }
+      if (/privacy/i.test(base)) {
+        paths.add('/privacy');
+        continue;
+      }
+      if (/terms/i.test(base)) {
+        paths.add('/terms');
+        continue;
+      }
+      if (/contact/i.test(base)) {
+        paths.add('/contact');
+        continue;
+      }
+    }
+    if (
+      file === 'scripts/site/content-home.mjs' ||
+      file === 'src/site/tool-catalog.json' ||
+      /home/i.test(path.basename(file))
+    ) {
+      home = true;
+      continue;
+    }
+    if (/about/i.test(file) && (file.startsWith('scripts/') || file.startsWith('src/pages/'))) {
+      about = true;
+      continue;
+    }
+    unmatched.push(file);
+  }
+
+  return {
+    tools: [...tools].sort(),
+    paths: [...paths].sort(),
+    home,
+    about,
+    unmatched,
+  };
+};
+
+/**
+ * 按 git 变更展开为绝对 URL 列表。
+ * @param {string} gitRef 起始引用
+ * @param {string[]} langs 语言列表
+ * @param {string} baseUrl 站点根
+ * @param {{ verbose?: boolean, quiet?: boolean }} log 日志选项
+ * @returns {string[]}
+ */
+const collectUrlsFromGitSince = (gitRef, langs, baseUrl, log = {}) => {
+  /** 变更文件 */
+  const files = listChangedFilesSince(gitRef);
+  /** 映射结果 */
+  const mapped = mapChangedFilesToSelectors(files);
+  if (!log.quiet) {
+    console.log(
+      `IndexNow --since-git ${gitRef}: ${files.length} file(s) → tools=[${mapped.tools.join(', ') || '-'}] paths=[${mapped.paths.join(', ') || '-'}] home=${mapped.home} about=${mapped.about}`
+    );
+    if (log.verbose && mapped.unmatched.length) {
+      console.log(`IndexNow --since-git unmatched files (${mapped.unmatched.length}):`);
+      for (const f of mapped.unmatched.slice(0, 40)) console.log(`  ${f}`);
+      if (mapped.unmatched.length > 40) {
+        console.log(`  ... +${mapped.unmatched.length - 40} more`);
+      }
+    }
+  }
+
+  /** 展开后的 URL */
+  const urls = [];
+  if (mapped.home) urls.push(...expandPathForLangs('/', langs, baseUrl));
+  if (mapped.about) urls.push(...expandPathForLangs('/about', langs, baseUrl));
+  for (const slug of mapped.tools) {
+    try {
+      urls.push(...expandToolUrls(slug, langs, baseUrl));
+    } catch (err) {
+      if (!log.quiet) {
+        console.warn(`IndexNow --since-git skip unknown tool "${slug}": ${err.message || err}`);
+      }
+    }
+  }
+  for (const p of mapped.paths) {
+    urls.push(...expandPathForLangs(p, langs, baseUrl));
+  }
+  return uniquePreserveOrder(urls);
+};
+
+/**
+ * 从候选列表中剔除已在状态中的 URL（增量）。
+ * @param {string[]} urls 候选 URL
+ * @param {Record<string, object>} stateUrls 状态中的 URL 表
+ * @returns {{ pending: string[], skipped: number }}
+ */
+const filterIncrementalUrls = (urls, stateUrls) => {
+  /** 待提交 */
+  const pending = [];
+  /** 跳过计数 */
+  let skipped = 0;
+  for (const url of urls) {
+    if (stateUrls[url]) {
+      skipped += 1;
+      continue;
+    }
+    pending.push(url);
+  }
+  return { pending, skipped };
+};
+
+/**
+ * 把成功提交的 URL 合并进状态。
+ * @param {object} state 当前状态
+ * @param {string[]} submittedUrls 成功批次中的 URL
+ * @param {string} endpoint 端点 URL
+ * @param {string} host 站点 host
+ * @returns {object} 更新后的状态
+ */
+const mergeSubmittedIntoState = (state, submittedUrls, endpoint, host) => {
+  /** ISO 时间戳 */
+  const submittedAt = new Date().toISOString();
+  /** 新 URL 表（浅拷贝） */
+  const urls = { ...(state.urls || {}) };
+  for (const url of submittedUrls) {
+    urls[url] = { submittedAt, endpoint };
+  }
+  return {
+    version: STATE_VERSION,
+    host,
+    updatedAt: submittedAt,
+    urls,
+  };
+};
+
+/**
+ * 用完整 URL 列表覆盖式写入 baseline 状态。
+ * @param {string[]} urlList URL 列表
+ * @param {string} host 站点 host
+ * @param {string} [note] 备注（写入每条记录）
+ * @returns {object}
+ */
+const buildBaselineState = (urlList, host, note = 'baseline') => {
+  /** ISO 时间戳 */
+  const submittedAt = new Date().toISOString();
+  /** URL 表 */
+  const urls = {};
+  for (const url of urlList) {
+    urls[url] = { submittedAt, note };
+  }
+  return {
+    version: STATE_VERSION,
+    host,
+    updatedAt: submittedAt,
+    urls,
+  };
+};
+
+/**
+ * 判断 CLI 是否带有显式非 sitemap 选择器。
+ * @param {object} args parseArgs 结果
+ * @returns {boolean}
+ */
+const hasExplicitSelectors = (args) =>
+  args.tools.length > 0 ||
+  args.paths.length > 0 ||
+  args.urls.length > 0 ||
+  args.urlsFiles.length > 0 ||
+  args.home ||
+  args.about;
+
+/**
+ * 根据 CLI 选项收集待提交 URL（不含 --limit；limit 在增量过滤后应用）。
  * @param {object} args parseArgs 结果
  * @param {string} host 站点 host
  * @param {string} baseUrl 站点根
@@ -744,13 +1151,14 @@ const collectUrls = async (args, host, baseUrl) => {
   const collected = [];
 
   /** 是否存在显式非 sitemap 选择器 */
-  const hasSelectors =
-    args.tools.length > 0 ||
-    args.paths.length > 0 ||
-    args.urls.length > 0 ||
-    args.urlsFiles.length > 0 ||
-    args.home ||
-    args.about;
+  const hasSelectors = hasExplicitSelectors(args);
+  /** 仅 --since-git、无其它选择器/sitemap → 不拉全量 sitemap */
+  const gitOnly =
+    Boolean(args.sinceGit) &&
+    !hasSelectors &&
+    !args.useSitemap &&
+    !args.remoteSitemap &&
+    !args.sitemapOnly;
 
   if (args.sitemapOnly && hasSelectors) {
     throw new Error(
@@ -793,13 +1201,25 @@ const collectUrls = async (args, host, baseUrl) => {
         }
       }
     }
+
+    if (args.sinceGit) {
+      collected.push(
+        ...collectUrlsFromGitSince(args.sinceGit, langs, baseUrl, {
+          verbose: args.verbose,
+          quiet: args.quiet,
+        })
+      );
+    }
   }
 
   /** 应读取的 sitemap 来源 */
-  const sitemapSources = resolveSitemapSources(args, baseUrl, hasSelectors);
-  /** 无选择器 / 显式要求 sitemap / sitemap-only → 读取 sitemap */
+  const sitemapSources = resolveSitemapSources(args, baseUrl, hasSelectors, gitOnly);
+  /** 无选择器 / 显式要求 sitemap / sitemap-only → 读取 sitemap（git-only 除外） */
   const shouldReadSitemap =
-    args.sitemapOnly || args.useSitemap || args.remoteSitemap || !hasSelectors;
+    args.sitemapOnly ||
+    args.useSitemap ||
+    args.remoteSitemap ||
+    (!hasSelectors && !gitOnly);
 
   if (shouldReadSitemap) {
     if (sitemapSources.length === 0) {
@@ -824,21 +1244,39 @@ const collectUrls = async (args, host, baseUrl) => {
     urlList = filterUrls(urlList, args.include, args.exclude);
   }
 
-  if (args.limit > 0) {
-    urlList = urlList.slice(0, args.limit);
-  }
-
   return urlList;
 };
 
 /**
- * 主流程：解析参数 → 校验 key → 收集 URL → 分批提交。
+ * 主流程：解析参数 → 校验 key → 收集 URL → 增量过滤 → 分批提交 → 写状态。
  */
 const main = async () => {
   const args = parseArgs(process.argv.slice(2));
   if (args.help) {
     printHelp();
     return;
+  }
+
+  /** 增量状态文件路径 */
+  const statePath = resolveStatePath(args);
+
+  if (args.resetState) {
+    /** 是否删除成功 */
+    const removed = await deleteState(statePath);
+    if (!args.quiet) {
+      console.log(removed ? `Removed state: ${statePath}` : `No state file: ${statePath}`);
+    }
+    // 单独 --reset-state 时直接结束；若同时带 baseline/提交参数则继续
+    const onlyReset =
+      !args.baseline &&
+      !args.incremental &&
+      !args.sinceGit &&
+      !args.checkKey &&
+      !hasExplicitSelectors(args) &&
+      !args.useSitemap &&
+      !args.remoteSitemap &&
+      !args.sitemapOnly;
+    if (onlyReset) return;
   }
 
   /** IndexNow key */
@@ -894,9 +1332,53 @@ const main = async () => {
   }
 
   // --check-key 已在上方 return；此处继续提交流程
-  /** 待提交 URL 列表 */
-  const urlList = await collectUrls(args, host, baseUrl);
+  /** 收集到的候选 URL（增量过滤前） */
+  let urlList = await collectUrls(args, host, baseUrl);
+
+  /** 当前增量状态 */
+  let state = await loadState(statePath, host);
+
+  if (args.incremental) {
+    /** 过滤结果 */
+    const { pending, skipped } = filterIncrementalUrls(urlList, state.urls || {});
+    if (!args.quiet) {
+      console.log(
+        `IndexNow incremental: candidates=${urlList.length}, skip_known=${skipped}, pending=${pending.length}`
+      );
+      console.log(`IndexNow state: ${statePath} (${Object.keys(state.urls || {}).length} known URL(s))`);
+    }
+    urlList = pending;
+  }
+
+  if (args.limit > 0) {
+    urlList = urlList.slice(0, args.limit);
+  }
+
+  if (args.baseline) {
+    if (urlList.length === 0) {
+      throw new Error('No URLs to baseline. See --help for scenarios.');
+    }
+    /** baseline 状态 */
+    const next = buildBaselineState(urlList, host);
+    if (args.dryRun) {
+      if (!args.quiet) {
+        console.log(`[dry-run] would write baseline ${urlList.length} URL(s) → ${statePath}`);
+        if (args.verbose) for (const u of urlList) console.log(`  ${u}`);
+      }
+      return;
+    }
+    await saveState(statePath, next);
+    if (!args.quiet) {
+      console.log(`Wrote baseline ${urlList.length} URL(s) → ${statePath}`);
+    }
+    return;
+  }
+
   if (urlList.length === 0) {
+    if (args.incremental) {
+      if (!args.quiet) console.log('IndexNow incremental: nothing new to submit.');
+      return;
+    }
     throw new Error('No URLs to submit. See --help for scenarios.');
   }
 
@@ -914,6 +1396,8 @@ const main = async () => {
   const batches = chunkUrls(urlList, args.batchSize);
   /** 是否出现失败批次 */
   let failed = false;
+  /** 本轮成功提交的 URL（用于写状态） */
+  const succeededUrls = [];
 
   for (let i = 0; i < batches.length; i += 1) {
     const batch = batches[i];
@@ -929,6 +1413,7 @@ const main = async () => {
     if (args.dryRun) continue;
 
     if (status === 200 || status === 202) {
+      succeededUrls.push(...batch);
       if (!args.quiet) {
         console.log(`Batch ${i + 1}/${batches.length}: HTTP ${status} OK (${batch.length} URLs)`);
       }
@@ -939,6 +1424,18 @@ const main = async () => {
       failed = true;
       console.error(`Batch ${i + 1}/${batches.length}: HTTP ${status}`);
       if (body) console.error(body);
+    }
+  }
+
+  // 成功批次默认写回状态，供后续 --incremental 跳过；可用 --no-save-state 关闭
+  if (!args.dryRun && !args.noSaveState && succeededUrls.length > 0) {
+    /** 合并成功 URL 后的状态 */
+    state = mergeSubmittedIntoState(state, succeededUrls, endpoint, host);
+    await saveState(statePath, state);
+    if (!args.quiet) {
+      console.log(
+        `Updated state ${statePath} (+${succeededUrls.length}, total ${Object.keys(state.urls).length})`
+      );
     }
   }
 

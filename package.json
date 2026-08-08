@@ -23,6 +23,9 @@
     "indexnow": "node ops/seo/submit-indexnow.mjs",
     "indexnow:sitemap": "node ops/seo/submit-indexnow.mjs --sitemap",
     "indexnow:remote-sitemap": "node ops/seo/submit-indexnow.mjs --remote-sitemap",
+    "indexnow:incremental": "node ops/seo/submit-indexnow.mjs --incremental --remote-sitemap",
+    "indexnow:since-git": "node ops/seo/submit-indexnow.mjs --since-git",
+    "indexnow:baseline": "node ops/seo/submit-indexnow.mjs --baseline --remote-sitemap",
     "indexnow:check": "node ops/seo/submit-indexnow.mjs --check-key",
     "indexnow:help": "node ops/seo/submit-indexnow.mjs --help",
     "predeploy": "npm run build:site && npm run lint:seo && npm run lint:vendor"

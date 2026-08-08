@@ -23,7 +23,7 @@
 ## 待办 — 发布与提交（P0）
 
 - [ ] `npm run build:site` + 部署（含 devlogs noindex 与 i18n 变更）
-- [ ] `npm run indexnow:sitemap`（或 `--include` 限定变更工具路径）
+- [ ] IndexNow：日常 `npm run indexnow -- --since-git origin/main --require-live-key` 或 `npm run indexnow:incremental`；全量仅冷启动 / 换 key 后（见 `ops/README.md` §4.1）
 - [ ] GSC 确认 `https://onlinefreetools.org/sitemap.xml` 已提交且无报错
 - [ ] GSC URL 检查：抽 3 条已改 URL（ja MR、es sqft、de IP）请求编入索引
 

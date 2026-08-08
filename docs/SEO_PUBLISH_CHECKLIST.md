@@ -24,10 +24,13 @@
 
 ## Bing IndexNow
 
-1. `npm run indexnow -- --check-key`（线上 `/{key}.txt` 须 HTTP 200 且正文 = key）
-2. 按 sitemap：`npm run indexnow` / `npm run indexnow:sitemap`；远程：`npm run indexnow:remote-sitemap`
-3. 新工具：`npm run indexnow -- --tool <slug>`；过滤：`--sitemap-only --include /tools/`
-4. 其他见 `npm run indexnow -- --help`；Bing Webmaster Tools 确认接收（200/202 仅表示已收到）
+1. `npm run indexnow -- --check-key`（线上裸域 `/{key}.txt` 须 HTTP 200 且正文 = key；勿用 www）
+2. **日常增量**（推荐）：
+   - 内容/工具有改：`npm run indexnow -- --since-git origin/main --require-live-key`
+   - 仅 sitemap 新增 URL：`npm run indexnow:incremental`（远程 sitemap − `.run/indexnow-state.json`）
+3. 冷启动 / 换 key 后：全量一次（`npm run indexnow:remote-sitemap`），或 `npm run indexnow:baseline` 写入状态后再用增量
+4. 新工具也可：`npm run indexnow -- --tool <slug>`；过滤：`--sitemap-only --include /tools/`
+5. 逻辑与命令表见 [`ops/README.md`](../ops/README.md) §4.1；Bing Webmaster → IndexNow 核对接收（200/202 仅表示已收到）
 
 ## 质量抽查（防 Scaled content）
 

@@ -104,7 +104,11 @@ npx wrangler dev
 | `npm run build:site` | 生成首页/About/devlogs/sitemap 等到 `public/` |
 | `npm run build:logs` | 仅重建 `public/devlogs/` |
 | `npm run lint:seo` | SEO 文案校验（description / FAQ / YMYL） |
-| `npm run indexnow` | 将 sitemap（或指定 URL）提交到 Bing IndexNow |
+| `npm run indexnow` | IndexNow 提交（默认本地 sitemap；见 §4.1） |
+| `npm run indexnow:check` | 检查线上 `/{key}.txt` |
+| `npm run indexnow:baseline` | 远程 sitemap → 写入增量状态，不 POST |
+| `npm run indexnow:incremental` | 远程 sitemap − 状态中已有 URL → POST |
+| `npm run indexnow:since-git` | 需再传 ref，如 `npm run indexnow:since-git -- HEAD~1` |
 
 **发版前最低要求**：
 
@@ -163,9 +167,35 @@ npm run indexnow -- --urls-file ./urls.txt
 npm run indexnow -- --sitemap --dry-run --verbose --limit 10
 npm run indexnow -- --endpoint bing --require-live-key
 
+# 增量推送（状态文件默认 .run/indexnow-state.json，已 gitignore）
+npm run indexnow -- --baseline --remote-sitemap          # 把当前全量 URL 记为已推，不 POST
+# 或：npm run indexnow:baseline
+npm run indexnow -- --incremental --remote-sitemap       # 只推状态里没有的新 URL
+# 或：npm run indexnow:incremental
+npm run indexnow -- --since-git HEAD~1                   # 按相对 HEAD 的 git 变更映射工具/页面
+npm run indexnow -- --incremental --since-git origin/main --require-live-key
+npm run indexnow -- --reset-state                        # 清空本地增量状态
+
 # 完整参数说明
 npm run indexnow -- --help
 ```
+
+**增量逻辑**（`npm run indexnow:incremental` = `--incremental --remote-sitemap`）：
+
+1. 拉取生产 `https://onlinefreetools.org/sitemap.xml` 全部 `<loc>`
+2. 读取本地状态 `.run/indexnow-state.json`（已 gitignore）
+3. `pending = 候选 − 状态中已有 URL`（不看页面内容 / 无 sitemap `lastmod`）
+4. `pending` 为空则结束；否则 POST（默认 `api.indexnow.org`）
+5. 仅 HTTP `200`/`202` 的批次合并回状态；失败批次下次仍会重试
+
+| 场景 | 推荐命令 |
+|---|---|
+| 冷启动 / 刚全量推完 / 换 key | `npm run indexnow:baseline` 或全量 `npm run indexnow:remote-sitemap` |
+| sitemap 出现新 URL（新工具/新语） | `npm run indexnow:incremental` |
+| 已有 URL 正文有改动 | `npm run indexnow -- --since-git origin/main --require-live-key` 或 `--tool <slug>` |
+| 清空本地记忆 | `npm run indexnow -- --reset-state` |
+
+`--dry-run` 不写状态；`--no-save-state` 可禁止成功后写回。`keyLocation` 使用裸域 `https://onlinefreetools.org/{key}.txt`（勿用 www）。
 
 成功响应一般为 HTTP `200` 或 `202`（`202` 表示 key 校验仍在进行；确认 key 文件已上线即可）。可在 [Bing Webmaster Tools → IndexNow](https://www.bing.com/webmasters) 查看接收情况。
 
@@ -199,7 +229,7 @@ npx wrangler deploy
 1. 打开生产首页与 1–2 个工具页抽检；确认 `/vendor/bootstrap/bootstrap.min.css` 与 `/vendor/fonts/plus-jakarta-sans.css` 为 **200**
 2. Google Search Console 确认 `https://onlinefreetools.org/sitemap.xml` 可访问（sitemap **不含** devlogs）
 3. 新工具确认各语言 URL 与 hreflang
-4. 确认 IndexNow key 可访问：`https://onlinefreetools.org/{key}.txt`，然后 `npm run indexnow`
+4. 确认 IndexNow key 可访问：`https://onlinefreetools.org/{key}.txt`；日常用 `npm run indexnow -- --since-git origin/main --require-live-key` 或 `npm run indexnow:incremental`（见 §4.1）
 
 ---
 
