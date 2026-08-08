@@ -1084,9 +1084,9 @@ tool_ip_address_title: 'Qual é o meu IP — Ver seu IP público',
   tool_ip_address_faq_a4:
     'Endereços privados (ex.: 192.168.x.x) ficam na rede local via NAT. Aqui só aparece o IP público.',
 
-  tool_roi_title: 'Calculadora de ROI — Como calcular o retorno sobre investimento',
+  tool_roi_title: 'Como calcular o ROI — Calculadora com fórmula e exemplo',
   tool_roi_description:
-    'Calcule o ROI simples com (Retorno − Custo) / Custo × 100%, ou (Valor final − Inicial) / Inicial × 100%. Processo: informe custo e valor final (ou ganho líquido) e revise hipóteses de impostos, taxas e tempo. Exemplo: custo 1000, final 1300 → ROI 30%. Apenas ilustração educativa — não é conselho de investimento.',
+    'Aprenda como calcular o ROI (retorno sobre investimento) com (Retorno − Custo) / Custo × 100% ou (Valor final − Inicial) / Inicial × 100%. Processo: informe custo e valor final (ou ganho líquido). Exemplo: custo 1000, final 1300 → ROI 30%. Apenas ilustração educativa — não é conselho de investimento.',
   tool_roi_article:
     'O ROI simples compara o ganho líquido ao custo em percentual. Use para recaps aproximados de campanhas ou projetos; não calcula IRR/VPL multiperíodo.',
   tool_roi_initial_label: 'Investimento inicial (custo)',

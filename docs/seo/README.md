@@ -1,0 +1,56 @@
+# Google Search Console 数据归档
+
+按 **导出日期** 存放 GSC 原始 CSV 与同批 **分析 / 策略 / Todo** 文档，便于对比趋势与驱动 SEO 优化。
+
+## 目录约定
+
+```
+docs/seo/
+  README.md
+  YYYY-MM-DD/
+    01-analysis-review.md      # 分析复盘（数据、结论、基准线）
+    02-next-strategy.md        # 下一步策略（优先级、不做清单、决策门）
+    03-todo.md                 # 可执行 Todo（勾选状态）
+    https___onlinefreetools.org_-Performance-on-Search-YYYY-MM-DD/
+      查询数.csv
+      网页.csv
+      国家_地区.csv
+      设备.csv
+      图表.csv
+      ...
+    https___onlinefreetools.org_-Coverage-YYYY-MM-DD/
+      图表.csv
+      严重问题.csv
+      非严重问题.csv
+      ...
+```
+
+**原则**：
+
+- 原始 CSV 与当次文档 **同日期文件夹**，不拆到 `docs/seo/` 根目录
+- 三文档职责分离：**复盘只写事实与结论**；**策略写方向与决策门**；**todo 写可勾选任务**
+- 已执行改动写在 `03-todo.md` 的「已完成」；`01` 仅摘要并链到 todo
+
+## 导出步骤（GSC）
+
+1. **效果** → 日期范围（建议 ≥28 天；早期可先用已有区间）→ 导出
+2. **网页索引** → 导出覆盖报告
+3. 解压后放入 `docs/seo/YYYY-MM-DD/`（保持 GSC 默认子目录名）
+4. 新建 `01-analysis-review.md`、`02-next-strategy.md`、`03-todo.md`
+
+## 分析节奏
+
+| 频率 | 动作 |
+|---|---|
+| 每次导入后 | 在 **日期文件夹** 内完成三文档 |
+| 有展示无点击 | 优先改 **title / meta description**（对齐检索词，≥120 字）→ 记入 todo |
+| 有展示排名 >30 | 策略文档定 IG / 内链 / IndexNow；todo 排期 |
+| 索引异常 | 复盘文档对照 Coverage CSV；devlogs 仅站内链、noindex + robots Disallow |
+
+## 示例
+
+- [`2026-08-08/01-analysis-review.md`](./2026-08-08/01-analysis-review.md)
+- [`2026-08-08/02-next-strategy.md`](./2026-08-08/02-next-strategy.md)
+- [`2026-08-08/03-todo.md`](./2026-08-08/03-todo.md)
+
+权威策略：`.cursor/rules/seo-google-policy.mdc` · `docs/2026-07-28-google-seo-strategy-implementation.md`

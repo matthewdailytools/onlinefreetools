@@ -1044,9 +1044,9 @@ const de: SiteLangDict = {
     'WHO-Informationsblatt zu Adipositas; CDC-Leitlinie zu BMI-Kategorien Erwachsene; standard metrische und imperiale BMI-Formeln.',
 
   /* --- IG: ip / roi / mr --- */
-tool_ip_address_title: 'Was ist meine IP-Adresse — Öffentliche IP anzeigen',
+tool_ip_address_title: 'Was ist meine IP-Adresse? — IPv4/IPv6 sofort anzeigen',
   tool_ip_address_description:
-    'Sehen Sie die öffentliche IP, die unser Edge für Ihre Verbindung beobachtet. Prozess: Seite öffnen oder Aktualisieren tippen; der Worker liest die vertrauenswürdige Client-Adresse. Beispiel: kann 203.0.113.10 zeigen. Mit VPN/Proxy sehen Sie die Exit-IP, nicht die LAN-Adresse.',
+    'Was ist meine IP-Adresse? Sehen Sie Ihre öffentliche IPv4 oder IPv6, wie unser Edge sie für Ihre Verbindung sieht. Ablauf: Seite öffnen oder Aktualisieren — der Worker liest die vertrauenswürdige Client-IP. Beispiel: kann 203.0.113.10 zeigen. Mit VPN/Proxy sehen Sie die Exit-IP, nicht die Heim-LAN-Adresse.',
   tool_ip_address_article:
     'Diese Seite zeigt Ihre öffentliche Exit-IP laut unserem Edge — nützlich für VPN-Checks, Support-Tickets und Allowlist-Debugging. Kein Geolocation- oder ISP-Lookup.',
   tool_ip_address_how_title: 'So funktioniert es',

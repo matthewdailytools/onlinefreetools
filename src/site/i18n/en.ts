@@ -341,9 +341,9 @@ const en: SiteLangDict = {
   tool_ip_address_usecase_3: 'Quick check during remote-access or API allowlist debugging.',
   tool_ip_address_ref_mdn_label: 'MDN — X-Forwarded-For header (spoofing caveats)',
   tool_ip_address_ref_cloudflare_label: 'Cloudflare Learning — What is an IP address?',
-  tool_marginal_revenue_title: 'Marginal Revenue Calculator — Formula MR = ΔTR / ΔQ',
+  tool_marginal_revenue_title: 'How to Calculate Marginal Revenue — MR Calculator (ΔTR / ΔQ)',
   tool_marginal_revenue_description:
-    'Calculate marginal revenue with the discrete formula MR = ΔTR / ΔQ. Process: enter quantity and total revenue at two points, subtract to get ΔTR and ΔQ, then divide. Example: Q 10→11, TR 1000→1080 → MR = 80. Educational only — not pricing advice.',
+    'Learn how to calculate marginal revenue with MR = ΔTR / ΔQ. Process: enter quantity and total revenue at two points, subtract for ΔTR and ΔQ, then divide. Example: Q 10→11, TR 1000→1080 → MR = 80. Educational only — not pricing advice.',
   tool_marginal_revenue_article:
     'Marginal revenue is the change in total revenue from a change in quantity sold. This calculator shows the discrete two-point derivation step by step for coursework and rough product checks.',
   tool_marginal_revenue_how_title: 'How it works',

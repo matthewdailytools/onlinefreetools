@@ -19,7 +19,8 @@
 1. 验证站点属性（若尚未验证）
 2. 提交 `https://onlinefreetools.org/sitemap.xml`
 3. 观察「网页索引」覆盖是否包含工具与多语言 URL
-4. 有数据后查看 Generative AI 效果报告（若账户已开放）
+4. 定期从 GSC 导出 CSV 至 `docs/seo/YYYY-MM-DD/`（见 [`docs/seo/README.md`](./seo/README.md)），并在同目录撰写 `01-analysis-review.md`、`02-next-strategy.md`、`03-todo.md`
+5. 有数据后查看 Generative AI 效果报告（若账户已开放）
 
 ## Bing IndexNow
 

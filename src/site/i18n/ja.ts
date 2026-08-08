@@ -1266,9 +1266,9 @@ tool_ip_address_title: '自分のIPアドレスを確認 — グローバルIP�
   tool_roi_references:
     'InvestopediaのROI定義と計算ガイド；単純ROI = 純利益 / 費用。',
 
-  tool_marginal_revenue_title: '限界収入（MR）計算 — 公式 ΔTR / ΔQ',
+  tool_marginal_revenue_title: '限界収入の求め方 — MR計算ツール（公式 ΔTR / ΔQ）',
   tool_marginal_revenue_description:
-    '限界収入を MR = ΔTR / ΔQ で計算します。手順：2点の数量と総収入を入力し、ΔTR と ΔQ を求めて割ります。例：数量10→11、売上1000→1080 → MR = 80。学習用の例示であり、価格設定や投資の助言ではありません。',
+    '限界収入の求め方：2点の数量と総収入から MR = ΔTR / ΔQ で計算します。手順：第1・第2段階の数量と売上を入力→ΔTR と ΔQ を求めて割る。例：数量10→11、売上1000→1080 → MR = 80。授業・復習向けの例示で、価格設定や投資の助言ではありません。',
   tool_marginal_revenue_article:
     '限界収入は数量が変わったときの総収入の変化です。このツールは2点間の離散的な導出を示します。',
   tool_marginal_revenue_how_title: '使い方',

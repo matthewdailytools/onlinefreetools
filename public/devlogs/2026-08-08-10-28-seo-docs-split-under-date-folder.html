@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Split GSC SEO docs into analysis, strategy, and todo under docs/seo/YYYY-MM-DD/. | Dev Logs</title>
+  <meta name="description" content="Split GSC SEO docs into analysis, strategy, and todo under docs/seo/YYYY-MM-DD/." />
+  <meta name="robots" content="noindex" />
+  <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-10-28-seo-docs-split-under-date-folder.html" />
+  <meta property="og:title" content="Split GSC SEO docs into analysis, strategy, and todo under docs/seo/YYYY-MM-DD/. | Dev Logs" />
+  <meta property="og:description" content="Split GSC SEO docs into analysis, strategy, and todo under docs/seo/YYYY-MM-DD/." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-08-10-28-seo-docs-split-under-date-folder.html" />
+  <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  
+  <script>
+    (function () {
+      try {
+        var enabled = [];
+        var defaultLang = "en";
+        var fallback = defaultLang;
+        var path = window.location.pathname || '/';
+
+        // If the URL already contains a language prefix (including defaultLang), respect it.
+        var hasPrefix = enabled.some(function (l) {
+          return l && (path === '/' + l || path.indexOf('/' + l + '/') === 0);
+        });
+        if (hasPrefix) return;
+
+        var langs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language])
+          .filter(Boolean)
+          .map(function (x) { return String(x).toLowerCase().split('-')[0]; });
+
+        var picked = null;
+        for (var i = 0; i < langs.length; i++) {
+          if (enabled.indexOf(langs[i]) !== -1) { picked = langs[i]; break; }
+        }
+        if (!picked) picked = enabled.indexOf(fallback) !== -1 ? fallback : (enabled[0] || fallback);
+
+        if (picked === "en") return;
+        var targetPath = path;
+        if (picked !== defaultLang) {
+          targetPath = ('/' + picked + path).replace(/\/{2,}/g, '/');
+        }
+        window.location.replace(targetPath + window.location.search + window.location.hash);
+      } catch (e) {}
+    })();
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="/styles/site.css" rel="stylesheet" />
+  <style>
+    body { min-height: 100vh; padding-top: var(--header-h, 56px); }
+    .layout { display: flex; min-height: calc(100vh - var(--header-h, 56px)); }
+  </style>
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?39f18c089a03779cd05243e21b046589";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "xbc0iytpn7");
+</script>
+  
+  
+</head>
+<body class="is-home-page">
+  
+  
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light site-navbar border-bottom fixed-top">
+      <div class="container-fluid">
+        <button class="btn btn-outline-secondary me-2" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+        <a class="navbar-brand" href="/">
+          <img class="navbar-brand-logo" src="/brand-logo.svg" width="28" height="28" alt="" decoding="async" />
+          <span class="navbar-brand-text">OnlineFreeTools.org</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="topNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="/en/">Home</a></li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Image editing tools</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/en/tools/image-format-converter">Image Format Converter</a></li><li><a class="dropdown-item" href="/en/tools/image-exif">Photo EXIF Viewer & Remover</a></li><li><a class="dropdown-item" href="/en/tools/image-compress">Image Compressor</a></li><li><a class="dropdown-item" href="/en/tools/image-optimizer">Image Optimizer</a></li><li><a class="dropdown-item" href="/en/tools/image-crop">Crop & Resize Image</a></li></ul>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Developer</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/en/tools/website-headers">Check HTTP Response Headers</a></li><li><a class="dropdown-item" href="/en/tools/ip-address">What Is My IP Address — See Your Public IP</a></li><li><a class="dropdown-item" href="/en/tools/markdown-to-html">Markdown ↔ HTML</a></li><li><a class="dropdown-item" href="/en/tools/text-diff">Compare Two Texts Online</a></li><li><a class="dropdown-item" href="/en/tools/yaml-json">YAML ↔ JSON</a></li><li><a class="dropdown-item" href="/en/tools/csv-json">CSV ↔ JSON</a></li><li><a class="dropdown-item" href="/en/tools/html-entity">HTML Entity Encoder & Decoder</a></li><li><a class="dropdown-item" href="/en/tools/add-www-to-dns">Add WWW to DNS</a></li><li><a class="dropdown-item" href="/en/tools/indexnow">IndexNow</a></li></ul>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Calculators</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/en/tools/how-to-calculate-bmi">BMI Calculator — Body Mass Index</a></li><li><a class="dropdown-item" href="/en/tools/how-to-calculate-roi">ROI Calculator — How to Calculate Return on Investment</a></li><li><a class="dropdown-item" href="/en/tools/how-to-calculate-marginal-revenue">How to Calculate Marginal Revenue — MR Calculator (ΔTR / ΔQ)</a></li><li><a class="dropdown-item" href="/en/tools/square-feet">Square Feet to Square Meters — Area Converter for Homes & Renovation</a></li><li><a class="dropdown-item" href="/en/tools/how-to-calculate-percentage-change">Percentage Change Calculator — From Old Value to New</a></li><li><a class="dropdown-item" href="/en/tools/how-to-calculate-gradient">Gradient Calculator — Multivariable ∇f (Partial Derivatives)</a></li></ul>
+        </li></ul>
+          <div class="d-flex align-items-center gap-2">
+            
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="layout sidebar-collapsed" id="layoutRoot">
+    
+    <aside id="sidebar" class="border-end">
+      <h2 class="sidebar-title h6">Navigation</h2>
+      <div class="list-group list-group-flush small" id="navList"><a class="list-group-item list-group-item-action" href="/">Home</a></div>
+    </aside>
+    <main id="content" class="p-4">
+      <section class="mb-3">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h1 class="h4 mb-0">Split GSC SEO docs into analysis, strategy, and todo under docs/seo/YYYY-MM-DD/. | Dev Logs</h1>
+          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
+        </div>
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-08 10:28
+Summary: Split GSC SEO docs into analysis, strategy, and todo under docs/seo/YYYY-MM-DD/.</p>
+<p>[question]
+优化分析文档放在日期文件夹下，应该分分析复盘文档，下一步策略和todo文档</p>
+<p>[try to solve]
+已按日期文件夹重组 SEO 文档结构：</p>
+<pre><code>docs/seo/YYYY-MM-DD/
+  01-analysis-review.md   # 分析复盘
+  02-next-strategy.md     # 下一步策略
+  03-todo.md              # 可执行 Todo
+  …GSC CSV 子目录…
+</code></pre>
+<ul>
+<li>将原 <code>docs/seo/2026-08-08-gsc-analysis-and-actions.md</code> 拆为三份并移入 <code>docs/seo/2026-08-08/</code></li>
+<li>更新 <code>docs/seo/README.md</code> 目录约定与示例链接</li>
+<li>更新 <code>docs/SEO_PUBLISH_CHECKLIST.md</code> 引用</li>
+<li>删除根目录下的合并版 <code>2026-08-08-gsc-analysis-and-actions.md</code></li>
+</ul>
+<p>[actions]</p>
+<ul>
+<li>docs/seo/2026-08-08/{01-analysis-review,02-next-strategy,03-todo}.md</li>
+<li>docs/seo/README.md</li>
+<li>docs/SEO_PUBLISH_CHECKLIST.md</li>
+<li>deleted docs/seo/2026-08-08-gsc-analysis-and-actions.md</li>
+</ul>
+</article>
+      </section>
+    </main>
+  </div>
+  
+
+  <footer class="site-footer border-top text-center py-3">
+
+    <div class="container">
+
+      <div class="mb-1"><small class="text-muted">OnlineFreeTools.org · Learning project · Iterating</small></div>
+
+      <nav class="d-inline" aria-label="Site links">
+
+        <a class="small text-decoration-none" href="/en/about">About</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/devlogs/">Dev Logs</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/en/privacy">Privacy</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/en/terms">Terms</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/en/contact">Contact</a>
+
+      </nav>
+
+    </div>
+
+  </footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <script>
+    const layout = document.getElementById('layoutRoot');
+    const toggle = document.getElementById('sidebarToggle');
+    if (layout && toggle) {
+      toggle.addEventListener('click', () => layout.classList.toggle('sidebar-collapsed'));
+      
+    }
+  </script>
+</body>
+</html>

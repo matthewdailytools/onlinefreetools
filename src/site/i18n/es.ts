@@ -1097,9 +1097,9 @@ tool_ip_address_title: 'Cuál es mi IP — Ver tu IP pública',
   tool_ip_address_faq_a4:
     'La consulta es una petición corta en el edge. No hay historial de IP; trátalo como visualización temporal.',
 
-  tool_roi_title: 'Calculadora de ROI — Cómo calcular el retorno de la inversión',
+  tool_roi_title: 'Cómo calcular el ROI — Calculadora con fórmula y ejemplo',
   tool_roi_description:
-    'Calcula el ROI simple con (Ganancia − Coste) / Coste × 100%, o (Valor final − Inicial) / Inicial × 100%. Proceso: introduce coste y valor final (o ganancia neta) y revisa supuestos de impuestos, comisiones y tiempo. Ejemplo: coste 1000, final 1300 → ROI 30%. Solo ilustración educativa, no es consejo de inversión.',
+    'Aprende cómo calcular el ROI (retorno de la inversión) con la fórmula (Ganancia − Coste) / Coste × 100% o (Final − Inicial) / Inicial × 100%. Proceso: introduce coste y valor final (o ganancia neta). Ejemplo: coste 1000, final 1300 → ROI 30%. Solo ilustración educativa, no es consejo de inversión.',
   tool_roi_article:
     'El ROI simple expresa la ganancia neta frente al coste en porcentaje. Úsalo para recaps aproximados de campañas o proyectos; no calcula IRR/VAN multiperiodo.',
   tool_roi_initial_label: 'Inversión inicial (coste)',
@@ -1203,9 +1203,9 @@ tool_ip_address_title: 'Cuál es mi IP — Ver tu IP pública',
   tool_marginal_revenue_references:
     'Entrada de Investopedia sobre ingreso marginal; tratamiento introductorio de MR = ΔIT/ΔQ (p. ej. OpenStax).',
 
-  tool_squarefeet_title: 'Pies cuadrados a metros cuadrados — Para viviendas y reformas',
+  tool_squarefeet_title: 'Calculadora de pies cuadrados — sq ft a m² (conversor de área)',
   tool_squarefeet_description:
-    'Convierte el área de una habitación entre pies cuadrados y metros cuadrados para anuncios y reformas. Proceso: elige ft/m/in, introduce largo × ancho, calcula el área y muestra ft² y m² con el factor NIST 1 ft² = 0.09290304 m². Ejemplo: piso de 850 sq ft ≈ 78,97 m².',
+    'Calculadora de pies cuadrados (sq ft): convierte el área entre pies cuadrados y metros cuadrados para anuncios y reformas. Proceso: elige ft/m/in, introduce largo × ancho y obtén ft² y m² con el factor NIST 1 ft² = 0.09290304 m². Ejemplo: piso de 850 sq ft ≈ 78,97 m².',
   tool_squarefeet_article:
     'Estima el área rectangular a partir del largo y el ancho y convierte entre pies cuadrados y metros cuadrados. Pensado para anuncios, suelo y pintura — no es una tasación ni distingue superficie útil y construida.',
   tool_squarefeet_length_label: 'Largo',
