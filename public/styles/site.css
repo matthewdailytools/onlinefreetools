@@ -1,53 +1,136 @@
 /**
  * 全站共享视觉：浅色工具站首页 + 清爽工具页。
- * token 驱动 chrome / 卡片 / 按钮 / 工具壳。
- *
- * 视觉参考 iLovePDF（https://www.ilovepdf.com/，克制吸收）：
- * - 页底淡紫灰 #f5f5fa；正文 #33333b / 次要 #47474f
- * - 主色红 #e5322d / 悬停 #bd060a（单强调色）
- * - 卡片边框 #d6d6df、圆角 16px；按钮圆角 8px
- * - 字体：Graphik 的开源近似 Plus Jakarta Sans（不热链对方私有字体）
+ * 颜色体系：原始中性色阶 → 语义角色 → 组件引用；四套品牌主题只覆盖品牌衍生与氛围底。
+ * 文档：docs/2026-08-08-site-color-system.md
+ * 原则：link ≠ action；danger/success 等状态色与品牌解耦。
  */
 :root {
-  /* 页面与表面（对齐 iLovePDF .home / .header） */
-  --bg: #f5f5fa;
-  --bg-hero: #f5f5fa;
-  --bg-hero-mid: #ffffff;
-  --bg-elevated: #ffffff;
-  --tool-page-bg: #f5f5fa;
-  --surface: #ffffff;
-  --surface-muted: #f5f5fa;
-  --border: #d6d6df;
-  --border-strong: #c2c2cc;
-  /* 文字 */
-  --text: #33333b;
-  --text-strong: #161616;
-  --muted: #47474f;
-  /* 强调色（iLovePDF 红） */
-  --accent: #e5322d;
-  --accent-hover: #bd060a;
-  --accent-rgb: 229, 50, 45;
-  --accent-soft: rgba(var(--accent-rgb), 0.08);
-  --accent-on-dark: #e5322d;
+  /* —— Primitives：中性色阶（跨主题固定） —— */
+  --neutral-0: #ffffff;
+  --neutral-50: #f5f5fa;
+  --neutral-100: #ececf2;
+  --neutral-200: #d6d6df;
+  --neutral-300: #c2c2cc;
+  --neutral-600: #47474f;
+  --neutral-800: #33333b;
+  --neutral-950: #161616;
+  --neutral-ink: #292931; /* 描边按钮悬停/激活边 */
+
+  /* —— Primitives：状态色（跨主题固定，≠ 品牌色） —— */
+  --status-success: #0f7a5a;
+  --status-success-rgb: 15, 122, 90;
+  --status-warning: #b45309;
+  --status-warning-rgb: 180, 83, 9;
+  --status-danger: #c62828;
+  --status-danger-rgb: 198, 40, 40;
+  --status-info: #1f4e79;
+  --status-info-rgb: 31, 78, 121;
+
+  /* —— Brand primitives（默认 teal；主题块覆盖） —— */
+  --brand: #0f6e8c;
+  --brand-hover: #0a5570;
+  --brand-rgb: 15, 110, 140;
+  --brand-soft: rgba(var(--brand-rgb), 0.1);
+  --brand-tint: #f3f7f9;
+
+  /* —— Semantics：表面 / 文字 / 边框 —— */
+  --bg: var(--brand-tint);
+  --bg-hero: var(--brand-tint);
+  --bg-hero-mid: var(--neutral-0);
+  --bg-elevated: var(--neutral-0);
+  --tool-page-bg: var(--brand-tint);
+  --surface: var(--neutral-0);
+  --surface-muted: var(--brand-tint);
+  --border: var(--neutral-200);
+  --border-strong: var(--neutral-300);
+  --text: var(--neutral-800);
+  --text-strong: var(--neutral-950);
+  --text-muted: var(--neutral-600);
+  --muted: var(--text-muted);
+
+  /* —— Semantics：链接（中性） —— */
+  --link: var(--text);
+  --link-hover: var(--text-strong);
+
+  /* —— Semantics：行动 / 焦点 / 选中 —— */
+  --action: var(--brand);
+  --action-hover: var(--brand-hover);
+  --action-soft: var(--brand-soft);
+  --action-on: var(--neutral-0);
+  --focus-ring: rgba(var(--brand-rgb), 0.4);
+  --nav-active: var(--text-strong);
+
+  /* —— 兼容旧 --accent* —— */
+  --accent: var(--action);
+  --accent-hover: var(--action-hover);
+  --accent-rgb: var(--brand-rgb);
+  --accent-soft: var(--action-soft);
+  --accent-on-dark: var(--action);
+
+  /* —— Semantics：状态 —— */
+  --danger: var(--status-danger);
+  --success: var(--status-success);
+  --warning: var(--status-warning);
+  --info: var(--status-info);
+
   /* 布局与字体 */
   --radius: 16px;
   --radius-sm: 8px;
-  /* 对齐 iLovePDF .tag（Workflows 筛选按钮）：全圆角 pill */
   --radius-btn: 9999px;
   --shadow: none;
   --shadow-sm: none;
   --header-h: 60px;
   --sidebar-w: 248px;
-  /* 首页 / 工具页正文共用上限；工具页内宽用 100% 随主栏伸缩 */
   --home-max: 1370px;
   --content-max: 100%;
-  /* 卡片网格最小列宽：随屏宽 auto-fill 增减列数 */
   --home-card-min: 240px;
   --home-card-min-featured: 260px;
-  /* 正文左右边距：对齐 iLovePDF .tools 的 48 → 32 → 24 */
   --page-pad-x: 48px;
   --font: "Plus Jakarta Sans", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --fs-hero: clamp(1.875rem, 4vw, 2.25rem);
+  --fs-section: clamp(1.375rem, 2.2vw, 1.5rem);
+  --fs-cat: 1.25rem;
+  --fs-subtitle: 1.0625rem;
+  --fs-card-title: 1rem;
+  --fs-body: 0.9375rem;
+  --fs-muted: 0.875rem;
+  --fs-label: 0.75rem;
+  --fs-nav: 0.9375rem;
+  --fs-brand-nav: 1.0625rem;
+  --fs-cta: 1.0625rem;
+}
+
+html[data-theme='teal'] {
+  --brand: #0f6e8c;
+  --brand-hover: #0a5570;
+  --brand-rgb: 15, 110, 140;
+  --brand-soft: rgba(var(--brand-rgb), 0.1);
+  --brand-tint: #f3f7f9;
+}
+
+html[data-theme='green'] {
+  --brand: #0f7a5a;
+  --brand-hover: #0b5e45;
+  --brand-rgb: 15, 122, 90;
+  --brand-soft: rgba(var(--brand-rgb), 0.1);
+  --brand-tint: #f3f8f6;
+}
+
+html[data-theme='amber'] {
+  --brand: #c45c26;
+  --brand-hover: #9a4519;
+  --brand-rgb: 196, 92, 38;
+  --brand-soft: rgba(var(--brand-rgb), 0.1);
+  --brand-tint: #faf6f3;
+}
+
+html[data-theme='navy'] {
+  --brand: #1f4e79;
+  --brand-hover: #163a5c;
+  --brand-rgb: 31, 78, 121;
+  --brand-soft: rgba(var(--brand-rgb), 0.1);
+  --brand-tint: #f3f5f8;
 }
 
 /* 大屏以下收紧水平边距（90em≈1440px） */
@@ -74,6 +157,8 @@ body {
   height: 100%;
   margin: 0;
   font-family: var(--font);
+  font-size: 1rem;
+  line-height: 1.5;
   color: var(--text);
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
@@ -81,15 +166,15 @@ body {
 }
 
 a {
-  color: var(--accent);
+  color: var(--link);
   text-decoration: none;
 }
 a:hover {
-  color: var(--accent-hover);
+  color: var(--link-hover);
 }
 
 :focus-visible {
-  outline: 2px solid rgba(var(--accent-rgb), 0.4);
+  outline: 2px solid var(--focus-ring);
   outline-offset: 3px;
 }
 
@@ -118,7 +203,7 @@ body.is-tool-page {
   height: calc(100vh - var(--header-h));
   overflow-x: hidden;
   overflow-y: auto;
-  background: #ffffff;
+  background: var(--surface);
   border-right: 1px solid var(--border);
   z-index: 1020;
   padding: 1.15rem 0.75rem !important;
@@ -154,12 +239,12 @@ body.is-tool-page {
 
 #sidebar.bg-light,
 #sidebar.border-end {
-  background: #ffffff !important;
+  background: var(--surface) !important;
   border-color: var(--border) !important;
 }
 
 #sidebar .sidebar-title {
-  font-size: 0.68rem;
+  font-size: var(--fs-label);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);
@@ -175,9 +260,9 @@ body.is-tool-page {
   border-radius: var(--radius-sm);
   margin-bottom: 1px;
   padding: 0.55rem 0.7rem;
-  color: #33333b;
+  color: var(--text);
   background: transparent;
-  font-size: 0.9rem;
+  font-size: var(--fs-muted);
   font-weight: 500;
 }
 
@@ -195,14 +280,15 @@ body.is-tool-page {
 
 #sidebar .list-group-item:hover {
   background: var(--accent-soft);
-  color: var(--accent);
+  color: var(--nav-active);
 }
 
 #sidebar .list-group-item.active,
 #sidebar .list-group-item[aria-current='true'] {
   background: var(--accent-soft);
-  color: var(--accent);
-  font-weight: 650;
+  color: var(--nav-active);
+  font-weight: 600;
+  box-shadow: inset 3px 0 0 var(--accent);
 }
 
 #content {
@@ -233,7 +319,7 @@ body.is-tool-page #content.p-4 {
 /* 工具页：抬高首屏 H1；说明文案可用 .tool-lead 后置 */
 body.is-tool-page #content > div:first-child > h1.h4,
 body.is-tool-page .tool-page-heading h1.h4 {
-  font-size: clamp(1.65rem, 3vw, 2.15rem);
+  font-size: var(--fs-hero);
   font-weight: 700;
   letter-spacing: -0.035em;
   line-height: 1.15;
@@ -241,7 +327,7 @@ body.is-tool-page .tool-page-heading h1.h4 {
 }
 body.is-tool-page #content > div:first-child > p.text-muted,
 body.is-tool-page .tool-lead {
-  font-size: 1.05rem;
+  font-size: var(--fs-body);
   max-width: none;
   width: 100%;
   line-height: 1.6;
@@ -270,7 +356,7 @@ body.is-tool-page .tool-lead {
 .tool-dropzone:hover,
 .tool-dropzone.dragover {
   border-color: var(--accent);
-  background: rgba(var(--accent-rgb), 0.08);
+  background: var(--action-soft);
 }
 .tool-dropzone input[type='file'] {
   display: none;
@@ -340,7 +426,7 @@ body.is-tool-page .tool-lead {
 /* —— Navbar：对齐 iLovePDF 白底 + 细边框 —— */
 .navbar.site-navbar,
 .navbar.navbar-light {
-  background: #ffffff !important;
+  background: var(--surface) !important;
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
   border-bottom: 1px solid var(--border) !important;
@@ -353,7 +439,7 @@ body.is-tool-page .tool-lead {
   gap: 0.55rem;
   font-weight: 600;
   letter-spacing: -0.02em;
-  font-size: 1.1rem;
+  font-size: var(--fs-brand-nav);
   color: var(--text) !important;
 }
 
@@ -371,11 +457,45 @@ body.is-tool-page .tool-lead {
 .navbar .nav-link {
   color: var(--muted) !important;
   font-weight: 500;
-  font-size: 0.925rem;
+  font-size: var(--fs-nav);
   padding-inline: 0.85rem !important;
 }
 .navbar .nav-link:hover {
   color: var(--text-strong) !important;
+}
+
+/**
+ * 下拉项不得大于顶栏菜单字号（Bootstrap .dropdown-item 默认 1rem，会压过 .nav-link）。
+ * 与菜单同阶或略小，保持触发器 > 或 = 菜单项的视觉层级。
+ */
+.navbar .dropdown-menu {
+  font-size: var(--fs-nav);
+  border-color: var(--border);
+  border-radius: var(--radius-sm);
+  box-shadow: none;
+  padding: 0.35rem;
+}
+
+.navbar .dropdown-item {
+  font-size: var(--fs-muted);
+  font-weight: 500;
+  color: var(--text);
+  border-radius: 6px;
+  padding: 0.4rem 0.75rem;
+  line-height: 1.35;
+}
+
+.navbar .dropdown-item:hover,
+.navbar .dropdown-item:focus {
+  background: var(--accent-soft);
+  color: var(--nav-active);
+}
+
+.navbar .dropdown-item.active,
+.navbar .dropdown-item:active {
+  background: var(--accent-soft);
+  color: var(--nav-active);
+  font-weight: 600;
 }
 
 .navbar .btn-outline-secondary {
@@ -385,12 +505,61 @@ body.is-tool-page .tool-lead {
   background: #ffffff;
   padding: 4px 16px;
   font-weight: 500;
+  font-size: var(--fs-nav);
   outline: none;
 }
 .navbar .btn-outline-secondary:hover {
   background: #ffffff;
   border-color: #292931;
   color: var(--text-strong);
+}
+
+/** 主题切换：色点 + 下拉项 */
+.theme-swatch {
+  display: inline-block;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 9999px;
+  background: var(--accent);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  vertical-align: -0.05em;
+  flex-shrink: 0;
+}
+
+.theme-swatch--teal {
+  background: #0f6e8c;
+}
+.theme-swatch--green {
+  background: #0f7a5a;
+}
+.theme-swatch--amber {
+  background: #c45c26;
+}
+.theme-swatch--navy {
+  background: #1f4e79;
+}
+
+.navbar .theme-switcher .dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.navbar .theme-option {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.navbar .theme-option[aria-current='true'] {
+  background: var(--accent-soft);
+  color: var(--nav-active);
+  font-weight: 600;
 }
 
 /* —— Buttons（对齐 iLovePDF .tag / Workflows 筛选按钮） —— */
@@ -463,9 +632,10 @@ body.is-tool-page .tool-lead {
 
 .btn-lg,
 .home-hero-actions .btn {
-  padding: 6px 20px;
-  min-height: 38px;
-  font-size: 1rem;
+  padding: 8px 22px;
+  min-height: 42px;
+  font-size: var(--fs-cta);
+  line-height: 1.25;
 }
 
 /* —— Cards（对齐 iLovePDF .tools__item） —— */
@@ -533,12 +703,12 @@ body.is-tool-page .tool-lead {
 }
 
 .card .card-title {
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0;
   color: var(--text);
   margin-bottom: 0.5rem;
-  font-size: 1.125rem;
-  line-height: 1.4;
+  font-size: var(--fs-card-title);
+  line-height: 1.35;
 }
 
 .card.tool-entry-card:hover .card-title {
@@ -549,6 +719,31 @@ body.is-tool-page .tool-lead {
   color: var(--muted);
   line-height: 1.5;
   font-weight: 400;
+  font-size: var(--fs-body);
+}
+
+/** 首页工具卡标题：自有 class，避免 Bootstrap .h5/.h6 抢尺寸 */
+.home-card-title {
+  font-size: var(--fs-card-title);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+  color: var(--text);
+}
+
+.home-card-title--featured {
+  font-size: var(--fs-subtitle);
+}
+
+.home-card-desc {
+  font-size: var(--fs-body);
+  color: var(--muted);
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.home-card-desc--sm {
+  font-size: var(--fs-muted);
 }
 
 /* —— Footer —— */
@@ -590,7 +785,7 @@ footer.bg-light {
 }
 
 .home-hero-brand {
-  font-size: clamp(1.75rem, 4.5vw, 2.625rem);
+  font-size: var(--fs-hero);
   font-weight: 600;
   letter-spacing: -0.02em;
   line-height: 1.24;
@@ -602,11 +797,11 @@ footer.bg-light {
 }
 
 .home-hero-lead {
-  font-size: clamp(1rem, 1.8vw, 1.375rem);
+  font-size: var(--fs-body);
   color: var(--muted);
   max-width: 40rem;
   margin: 0 auto 1.5rem;
-  line-height: 1.45;
+  line-height: 1.5;
   font-weight: 400;
   animation: homeFadeUp 0.75s 0.16s ease both;
 }
@@ -657,7 +852,7 @@ footer.bg-light {
 }
 
 .home-why-item h3 {
-  font-size: 1.05rem;
+  font-size: var(--fs-subtitle);
   font-weight: 700;
   letter-spacing: -0.02em;
   margin: 0 0 0.45rem;
@@ -666,7 +861,7 @@ footer.bg-light {
 
 .home-why-item p {
   margin: 0;
-  font-size: 0.95rem;
+  font-size: var(--fs-body);
   color: var(--muted);
   line-height: 1.5;
 }
@@ -680,10 +875,11 @@ footer.bg-light {
 }
 
 .home-section-head h2 {
-  font-size: clamp(1.35rem, 2.5vw, 1.65rem);
-  font-weight: 750;
+  font-size: var(--fs-section);
+  font-weight: 700;
   letter-spacing: -0.03em;
   margin: 0;
+  color: var(--text-strong);
 }
 
 .home-cat {
@@ -729,7 +925,7 @@ footer.bg-light {
 
 .home-cat-label {
   display: inline-block;
-  font-size: 0.72rem;
+  font-size: var(--fs-label);
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -741,17 +937,19 @@ footer.bg-light {
 }
 
 .home-cat h3 {
-  font-size: 1.2rem;
+  font-size: var(--fs-cat);
   font-weight: 700;
   letter-spacing: -0.02em;
   margin: 0 0 0.4rem;
+  color: var(--text-strong);
 }
 
 .home-cat .home-cat-blurb {
-  font-size: 0.95rem;
+  font-size: var(--fs-body);
   color: var(--muted);
   margin: 0 0 1.25rem;
   max-width: 40rem;
+  line-height: 1.5;
 }
 
 @keyframes homeHeroIn {
@@ -792,8 +990,8 @@ footer.bg-light {
 }
 
 .tool-title {
-  font-size: clamp(1.75rem, 3.2vw, 2.35rem);
-  font-weight: 750;
+  font-size: var(--fs-hero);
+  font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 1.12;
   margin: 0 0 0.65rem;
@@ -804,7 +1002,7 @@ footer.bg-light {
 }
 
 .tool-lead {
-  font-size: 1.08rem;
+  font-size: var(--fs-body);
   color: var(--muted);
   margin: 0;
   max-width: none;
@@ -836,7 +1034,7 @@ footer.bg-light {
 
 .tool-panel .form-label {
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: var(--fs-muted);
   color: var(--text);
   margin-bottom: 0.4rem;
 }
@@ -859,7 +1057,7 @@ footer.bg-light {
 #content #related h2,
 #content #share h2,
 #content #feedback h2 {
-  font-size: 1.2rem;
+  font-size: var(--fs-cat);
   font-weight: 700;
   letter-spacing: -0.025em;
   color: var(--text);
@@ -985,7 +1183,7 @@ body.is-tool-page .sf-card {
 .tool-mail-label {
   margin: 0;
   font-size: 0.8rem;
-  font-weight: 650;
+  font-weight: 600;
   color: var(--muted);
   padding-top: 0.35rem;
 }
@@ -1066,7 +1264,7 @@ textarea.form-control,
 .badge.text-bg-secondary {
   background: var(--accent-soft) !important;
   color: var(--accent) !important;
-  font-weight: 650;
+  font-weight: 600;
 }
 
 @media (max-width: 640px) {

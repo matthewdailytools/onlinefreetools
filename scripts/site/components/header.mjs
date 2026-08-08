@@ -67,6 +67,21 @@ export const renderHeader = ({
 
   // Search form intentionally removed: site no longer exposes a top-level search input/button.
 
+  /** 四套品牌主题切换器（色点 + 本地化名称）。 */
+  const themeSwitcher = `
+            <div class="dropdown theme-switcher">
+              <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="${t(lang, 'theme_label')}">
+                <span class="theme-swatch" data-theme-swatch aria-hidden="true"></span>
+                <span class="d-none d-md-inline">${t(lang, 'theme_label')}</span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><button type="button" class="dropdown-item theme-option" data-theme-set="teal"><span class="theme-swatch theme-swatch--teal" aria-hidden="true"></span>${t(lang, 'theme_teal')}</button></li>
+                <li><button type="button" class="dropdown-item theme-option" data-theme-set="green"><span class="theme-swatch theme-swatch--green" aria-hidden="true"></span>${t(lang, 'theme_green')}</button></li>
+                <li><button type="button" class="dropdown-item theme-option" data-theme-set="amber"><span class="theme-swatch theme-swatch--amber" aria-hidden="true"></span>${t(lang, 'theme_amber')}</button></li>
+                <li><button type="button" class="dropdown-item theme-option" data-theme-set="navy"><span class="theme-swatch theme-swatch--navy" aria-hidden="true"></span>${t(lang, 'theme_navy')}</button></li>
+              </ul>
+            </div>`;
+
   return `
   <header>
     <nav class="navbar navbar-expand-lg navbar-light site-navbar border-bottom fixed-top">
@@ -86,6 +101,7 @@ export const renderHeader = ({
         <div class="collapse navbar-collapse" id="topNav">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">${navHtml}</ul>
           <div class="d-flex align-items-center gap-2">
+            ${themeSwitcher}
             ${showLangSwitcher ? renderLangSwitcher({ lang, langAlternates }) : ''}
           </div>
         </div>

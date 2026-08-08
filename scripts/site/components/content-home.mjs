@@ -20,7 +20,8 @@ const toolLogoUrl = (tool) =>
 
 /**
  * 渲染 Featured 主卡片（可交互入口）。
- * @param {{title:string,desc:string,href:string,cta:string,logo:string}} opts
+ * @param {{title:string,desc:string,href:string,cta:string,logo:string}} opts 卡片文案与链接
+ * @returns {string} 推荐区卡片 HTML（标题用 --featured，描述用正文阶）
  */
 const renderPrimaryCard = ({ title, desc, href, cta, logo }) => `
   <div class="home-card-item">
@@ -28,9 +29,9 @@ const renderPrimaryCard = ({ title, desc, href, cta, logo }) => `
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="${logo}" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
-          <h3 class="card-title h5 mb-0">${title}</h3>
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">${title}</h3>
         </div>
-        <p class="card-text flex-grow-1">${desc}</p>
+        <p class="card-text home-card-desc flex-grow-1">${desc}</p>
         <a href="${href}" class="mt-auto btn btn-primary btn-sm">${cta}</a>
       </div>
     </div>
@@ -38,7 +39,8 @@ const renderPrimaryCard = ({ title, desc, href, cta, logo }) => `
 
 /**
  * 渲染分类区次级卡片。
- * @param {{title:string,desc:string,href:string,cta:string,logo:string}} opts
+ * @param {{title:string,desc:string,href:string,cta:string,logo:string}} opts 卡片文案与链接
+ * @returns {string} 分类区卡片 HTML（标题/描述各降一阶，不用 Bootstrap h6/small）
  */
 const renderSecondaryCard = ({ title, desc, href, cta, logo }) => `
   <div class="home-card-item">
@@ -46,9 +48,9 @@ const renderSecondaryCard = ({ title, desc, href, cta, logo }) => `
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="${logo}" width="32" height="32" alt="" decoding="async" loading="lazy" />
-          <h3 class="card-title h6 mb-0">${title}</h3>
+          <h3 class="card-title home-card-title mb-0">${title}</h3>
         </div>
-        <p class="card-text small flex-grow-1">${desc}</p>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">${desc}</p>
         <a href="${href}" class="mt-auto btn btn-primary btn-sm">${cta}</a>
       </div>
     </div>

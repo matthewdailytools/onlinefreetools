@@ -2,6 +2,7 @@
 <html lang="zh">
 <head>
   <meta charset="utf-8" />
+  <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>隐私政策 | OnlineFreeTools.org</title>
   <meta name="description" content="OnlineFreeTools.org 如何处理数据：多数工具在浏览器本地运行；边缘工具仅处理短请求；页面分析脚本说明，以及隐私相关联系方式。" />
@@ -124,6 +125,19 @@
         </li></ul>
           <div class="d-flex align-items-center gap-2">
             
+            <div class="dropdown theme-switcher">
+              <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="主题">
+                <span class="theme-swatch" data-theme-swatch aria-hidden="true"></span>
+                <span class="d-none d-md-inline">主题</span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><button type="button" class="dropdown-item theme-option" data-theme-set="teal"><span class="theme-swatch theme-swatch--teal" aria-hidden="true"></span>青石蓝</button></li>
+                <li><button type="button" class="dropdown-item theme-option" data-theme-set="green"><span class="theme-swatch theme-swatch--green" aria-hidden="true"></span>森绿</button></li>
+                <li><button type="button" class="dropdown-item theme-option" data-theme-set="amber"><span class="theme-swatch theme-swatch--amber" aria-hidden="true"></span>琥珀橙</button></li>
+                <li><button type="button" class="dropdown-item theme-option" data-theme-set="navy"><span class="theme-swatch theme-swatch--navy" aria-hidden="true"></span>墨青</button></li>
+              </ul>
+            </div>
+            
     <div class="dropdown">
       <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
         中文
@@ -188,6 +202,7 @@
   </footer>
   
   <script src="/vendor/bootstrap/bootstrap.bundle.min.js" defer></script>
+  <script src="/js/theme.js" defer></script>
   
   <script>
     const layout = document.getElementById('layoutRoot');

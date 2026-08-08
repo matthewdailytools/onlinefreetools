@@ -7,6 +7,12 @@ const bootstrapJs = '/vendor/bootstrap/bootstrap.bundle.min.js';
 const fontCss = '/vendor/fonts/plus-jakarta-sans.css';
 
 /**
+ * 首屏前读取 localStorage 主题，避免 FOUC。
+ * 合法值：teal | green | amber | navy；默认 teal。
+ */
+const themeBootScript = `<script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>`;
+
+/**
  * 渲染站点静态页 HTML 外壳（head、布局、侧栏脚本等）。
  * @param {object} opts
  * @param {boolean} [opts.robotsNoindex=false] 为 true 时输出 `<meta name="robots" content="noindex">`（devlogs、测试页等）
@@ -143,6 +149,7 @@ export const renderLayout = ({
 <html lang="${lang}">
 <head>
   <meta charset="utf-8" />
+  ${themeBootScript}
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>${title}</title>
   <meta name="description" content="${description}" />
@@ -179,6 +186,7 @@ export const renderLayout = ({
   ${footerHtml}
   ${extraBodyHtml}
   <script src="${bootstrapJs}" defer></script>
+  <script src="/js/theme.js" defer></script>
   ${sidebarScript}
 </body>
 </html>`;

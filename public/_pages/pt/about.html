@@ -2,6 +2,7 @@
 <html lang="pt">
 <head>
   <meta charset="utf-8" />
+  <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Sobre o OnlineFreeTools.org | OnlineFreeTools.org</title>
   <meta name="description" content="Quem somos, como as ferramentas são feitas e avisos importantes." />
@@ -124,6 +125,19 @@
         </li></ul>
           <div class="d-flex align-items-center gap-2">
             
+            <div class="dropdown theme-switcher">
+              <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Tema">
+                <span class="theme-swatch" data-theme-swatch aria-hidden="true"></span>
+                <span class="d-none d-md-inline">Tema</span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><button type="button" class="dropdown-item theme-option" data-theme-set="teal"><span class="theme-swatch theme-swatch--teal" aria-hidden="true"></span>Azul ardósia</button></li>
+                <li><button type="button" class="dropdown-item theme-option" data-theme-set="green"><span class="theme-swatch theme-swatch--green" aria-hidden="true"></span>Verde floresta</button></li>
+                <li><button type="button" class="dropdown-item theme-option" data-theme-set="amber"><span class="theme-swatch theme-swatch--amber" aria-hidden="true"></span>Âmbar</button></li>
+                <li><button type="button" class="dropdown-item theme-option" data-theme-set="navy"><span class="theme-swatch theme-swatch--navy" aria-hidden="true"></span>Azul-tinta</button></li>
+              </ul>
+            </div>
+            
     <div class="dropdown">
       <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
         Português
@@ -187,6 +201,7 @@
   </footer>
   
   <script src="/vendor/bootstrap/bootstrap.bundle.min.js" defer></script>
+  <script src="/js/theme.js" defer></script>
   
   <script>
     const layout = document.getElementById('layoutRoot');

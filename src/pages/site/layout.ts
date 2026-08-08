@@ -30,6 +30,12 @@ const BOOTSTRAP_JS = '/vendor/bootstrap/bootstrap.bundle.min.js';
 /** 同域 Plus Jakarta Sans @font-face。 */
 const FONT_CSS = '/vendor/fonts/plus-jakarta-sans.css';
 
+/**
+ * 首屏前读取 localStorage 主题，避免 FOUC。
+ * 合法值：teal | green | amber | navy；默认 teal。
+ */
+const THEME_BOOT_SCRIPT = `<script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>`;
+
 export const escapeHtml = (s: string) =>
 	s
 		.replaceAll('&', '&amp;')
@@ -143,6 +149,7 @@ export const renderLayout = (opts: {
 <html lang="${escapeHtml(opts.lang)}">
 <head>
   <meta charset="utf-8" />
+  ${THEME_BOOT_SCRIPT}
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>${title}</title>
   <meta name="description" content="${description}" />
@@ -175,6 +182,7 @@ export const renderLayout = (opts: {
   ${opts.footerHtml}
   ${opts.extraBodyHtml || ''}
   <script src="${BOOTSTRAP_JS}" defer></script>
+  <script src="/js/theme.js" defer></script>
   ${sidebarScript}
 </body>
 </html>`;

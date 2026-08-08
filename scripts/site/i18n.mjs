@@ -4,6 +4,12 @@ import { toolHomeTranslations } from './i18n-tools.generated.mjs';
 const translations = {
   en: {
     brand: 'OnlineFreeTools.org',
+    theme_label: 'Theme',
+    theme_teal: 'Slate blue',
+    theme_green: 'Forest',
+    theme_amber: 'Amber',
+    theme_navy: 'Ink navy',
+
     home_title: 'OnlineFreeTools.org | Home',
     home_description:
       'OnlineFreeTools.org learning project: a collection of small online utilities for mobile and desktop.',
@@ -161,6 +167,12 @@ const translations = {
   },
   zh: {
     brand: 'OnlineFreeTools.org',
+    theme_label: '主题',
+    theme_teal: '青石蓝',
+    theme_green: '森绿',
+    theme_amber: '琥珀橙',
+    theme_navy: '墨青',
+
     home_title: 'OnlineFreeTools.org | 学习项目首页',
     home_description: 'OnlineFreeTools.org 学习项目，聚合多类在线小工具，支持移动与桌面访问。',
     nav_home: '首页',
@@ -319,6 +331,12 @@ const translations = {
   },
   es: {
     brand: 'OnlineFreeTools.org',
+    theme_label: 'Tema',
+    theme_teal: 'Azul pizarra',
+    theme_green: 'Verde bosque',
+    theme_amber: 'Ámbar',
+    theme_navy: 'Azul tinta',
+
     home_title: 'OnlineFreeTools.org | Inicio',
     home_description:
       'Proyecto de aprendizaje de OnlineFreeTools.org: una colección de pequeñas utilidades en línea para móvil y escritorio.',
@@ -478,6 +496,12 @@ const translations = {
   },
   ar: {
     brand: 'OnlineFreeTools.org',
+    theme_label: 'المظهر',
+    theme_teal: 'أزرق حجري',
+    theme_green: 'أخضر غابة',
+    theme_amber: 'كهرماني',
+    theme_navy: 'أزرق حبري',
+
     home_title: 'OnlineFreeTools.org | الصفحة الرئيسية',
     home_description:
       'مشروع تعليمي: مجموعة أدوات صغيرة عبر الإنترنت للهواتف والكمبيوتر.',
@@ -638,6 +662,12 @@ const translations = {
   },
   pt: {
     brand: 'OnlineFreeTools.org',
+    theme_label: 'Tema',
+    theme_teal: 'Azul ardósia',
+    theme_green: 'Verde floresta',
+    theme_amber: 'Âmbar',
+    theme_navy: 'Azul-tinta',
+
     home_title: 'OnlineFreeTools.org | Início',
     home_description:
       'Projeto de aprendizado: uma coleção de pequenas utilidades online para mobile e desktop.',
@@ -797,6 +827,12 @@ const translations = {
   },
   id: {
     brand: 'OnlineFreeTools.org',
+    theme_label: 'Tema',
+    theme_teal: 'Biru batu',
+    theme_green: 'Hijau hutan',
+    theme_amber: 'Ambar',
+    theme_navy: 'Biru tinta',
+
     home_title: 'OnlineFreeTools.org | Beranda',
     home_description:
       'Proyek pembelajaran: kumpulan utilitas online kecil untuk mobile dan desktop.',
@@ -956,6 +992,12 @@ const translations = {
   },
   fr: {
     brand: 'OnlineFreeTools.org',
+    theme_label: 'Thème',
+    theme_teal: 'Bleu ardoise',
+    theme_green: 'Vert forêt',
+    theme_amber: 'Ambre',
+    theme_navy: 'Bleu encre',
+
     home_title: 'OnlineFreeTools.org | Accueil',
     home_description:
       'Projet d’apprentissage : une collection de petits outils en ligne pour mobile et ordinateur.',
@@ -1115,6 +1157,12 @@ const translations = {
   },
   ja: {
     brand: 'OnlineFreeTools.org',
+    theme_label: 'テーマ',
+    theme_teal: 'スレートブルー',
+    theme_green: 'フォレスト',
+    theme_amber: 'アンバー',
+    theme_navy: 'インクネイビー',
+
     home_title: 'OnlineFreeTools.org | ホーム',
     home_description: '学習プロジェクト：モバイルとデスクトップ向けの小さなオンラインツール集。',
     nav_home: 'ホーム',
@@ -1274,6 +1322,12 @@ const translations = {
   },
   ru: {
     brand: 'OnlineFreeTools.org',
+    theme_label: 'Тема',
+    theme_teal: 'Сланцевый синий',
+    theme_green: 'Лесной зелёный',
+    theme_amber: 'Янтарный',
+    theme_navy: 'Чернильный',
+
     home_title: 'OnlineFreeTools.org | Главная',
     home_description:
       'Учебный проект: набор небольших онлайн‑инструментов для мобильных и настольных устройств.',
@@ -1434,6 +1488,12 @@ const translations = {
   },
   de: {
     brand: 'OnlineFreeTools.org',
+    theme_label: 'Theme',
+    theme_teal: 'Schieferblau',
+    theme_green: 'Waldgrün',
+    theme_amber: 'Bernstein',
+    theme_navy: 'Tintenblau',
+
     home_title: 'OnlineFreeTools.org | Start',
     home_description:
       'Lernprojekt: eine Sammlung kleiner Online‑Tools für Mobilgeräte und Desktop.',

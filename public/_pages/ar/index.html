@@ -2,6 +2,7 @@
 <html lang="ar">
 <head>
   <meta charset="utf-8" />
+  <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>OnlineFreeTools.org | الصفحة الرئيسية</title>
   <meta name="description" content="مشروع تعليمي: مجموعة أدوات صغيرة عبر الإنترنت للهواتف والكمبيوتر." />
@@ -124,6 +125,19 @@
         </li><li class="nav-item"><a class="nav-link" href="#all-tools">كل الأدوات</a></li></ul>
           <div class="d-flex align-items-center gap-2">
             
+            <div class="dropdown theme-switcher">
+              <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="المظهر">
+                <span class="theme-swatch" data-theme-swatch aria-hidden="true"></span>
+                <span class="d-none d-md-inline">المظهر</span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><button type="button" class="dropdown-item theme-option" data-theme-set="teal"><span class="theme-swatch theme-swatch--teal" aria-hidden="true"></span>أزرق حجري</button></li>
+                <li><button type="button" class="dropdown-item theme-option" data-theme-set="green"><span class="theme-swatch theme-swatch--green" aria-hidden="true"></span>أخضر غابة</button></li>
+                <li><button type="button" class="dropdown-item theme-option" data-theme-set="amber"><span class="theme-swatch theme-swatch--amber" aria-hidden="true"></span>كهرماني</button></li>
+                <li><button type="button" class="dropdown-item theme-option" data-theme-set="navy"><span class="theme-swatch theme-swatch--navy" aria-hidden="true"></span>أزرق حبري</button></li>
+              </ul>
+            </div>
+            
     <div class="dropdown">
       <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
         العربية
@@ -181,9 +195,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/add-watermark.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
-          <h3 class="card-title h5 mb-0">علامة مائية نصية — في المتصفح</h3>
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">علامة مائية نصية — في المتصفح</h3>
         </div>
-        <p class="card-text flex-grow-1">علامة مائية نصية — في المتصفح — local, no upload.</p>
+        <p class="card-text home-card-desc flex-grow-1">علامة مائية نصية — في المتصفح — local, no upload.</p>
         <a href="/ar/tools/add-watermark" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -193,9 +207,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/add-www-to-dns.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
-          <h3 class="card-title h5 mb-0">إضافة WWW إلى DNS — سجلات A/CNAME وأدلة المنصات</h3>
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">إضافة WWW إلى DNS — سجلات A/CNAME وأدلة المنصات</h3>
         </div>
-        <p class="card-text flex-grow-1">إنشاء سجلات www وفحص DNS مع أدلة Cloudflare/Vercel.</p>
+        <p class="card-text home-card-desc flex-grow-1">إنشاء سجلات www وفحص DNS مع أدلة Cloudflare/Vercel.</p>
         <a href="/ar/tools/add-www-to-dns" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -205,9 +219,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/brand-color-token-pack.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
-          <h3 class="card-title h5 mb-0">حزمة رموز ألوان العلامة — مقياس HEX HSL OKLCH</h3>
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">حزمة رموز ألوان العلامة — مقياس HEX HSL OKLCH</h3>
         </div>
-        <p class="card-text flex-grow-1">لون أساس واحد → HEX/RGB/HSL/OKLCH، مقياس 50–950، أزواج تباين، متغيرات CSS — محلي.</p>
+        <p class="card-text home-card-desc flex-grow-1">لون أساس واحد → HEX/RGB/HSL/OKLCH، مقياس 50–950، أزواج تباين، متغيرات CSS — محلي.</p>
         <a href="/ar/tools/brand-color-token-pack" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -217,9 +231,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/color-from-image.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
-          <h3 class="card-title h5 mb-0">استخراج ألوان الصورة — لوحة واختيار بالنقر</h3>
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">استخراج ألوان الصورة — لوحة واختيار بالنقر</h3>
         </div>
-        <p class="card-text flex-grow-1">لوحة ألوان سائدة واختيار بالنقر محليًا — استخرج عينات، انسخ HEX/RGB/HSL.</p>
+        <p class="card-text home-card-desc flex-grow-1">لوحة ألوان سائدة واختيار بالنقر محليًا — استخرج عينات، انسخ HEX/RGB/HSL.</p>
         <a href="/ar/tools/color-from-image" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -229,9 +243,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/csv-json.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
-          <h3 class="card-title h5 mb-0">محول CSV ↔ JSON — الأنواع والفواصل ومحليًا</h3>
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">محول CSV ↔ JSON — الأنواع والفواصل ومحليًا</h3>
         </div>
-        <p class="card-text flex-grow-1">تحويل CSV ↔ JSON مع الفاصل وصف الرأس وقواعد الأنواع.</p>
+        <p class="card-text home-card-desc flex-grow-1">تحويل CSV ↔ JSON مع الفاصل وصف الرأس وقواعد الأنواع.</p>
         <a href="/ar/tools/csv-json" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -241,9 +255,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/flip-image.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
-          <h3 class="card-title h5 mb-0">قلب الصورة — أفقي أو عمودي</h3>
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">قلب الصورة — أفقي أو عمودي</h3>
         </div>
-        <p class="card-text flex-grow-1">قلب الصورة — أفقي أو عمودي — local, no upload.</p>
+        <p class="card-text home-card-desc flex-grow-1">قلب الصورة — أفقي أو عمودي — local, no upload.</p>
         <a href="/ar/tools/flip-image" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -253,9 +267,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/how-to-calculate-bmi.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
-          <h3 class="card-title h5 mb-0">حاسبة مؤشر كتلة الجسم — طريقة الحساب</h3>
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">حاسبة مؤشر كتلة الجسم — طريقة الحساب</h3>
         </div>
-        <p class="card-text flex-grow-1">احسب مؤشر كتلة الجسم (BMI) بمعادلة الفحص للبالغين. الخطوات: اختر الوحدات المترية أو الإمبراطورية، أدخل الوزن والطول، ثم احسب BMI وقارنه بالفئات الشائعة. مثال: 70 كغ و175 سم → BMI ≈ 22.9 (طبيعي). للتعليم والفحص فقط — ليس تشخيصاً.</p>
+        <p class="card-text home-card-desc flex-grow-1">احسب مؤشر كتلة الجسم (BMI) بمعادلة الفحص للبالغين. الخطوات: اختر الوحدات المترية أو الإمبراطورية، أدخل الوزن والطول، ثم احسب BMI وقارنه بالفئات الشائعة. مثال: 70 كغ و175 سم → BMI ≈ 22.9 (طبيعي). للتعليم والفحص فقط — ليس تشخيصاً.</p>
         <a href="/ar/tools/how-to-calculate-bmi" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -265,9 +279,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/how-to-calculate-gradient.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
-          <h3 class="card-title h5 mb-0">حاسبة التدرج — ∇f متعدد المتغيرات (مشتقات جزئية)</h3>
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">حاسبة التدرج — ∇f متعدد المتغيرات (مشتقات جزئية)</h3>
         </div>
-        <p class="card-text flex-grow-1">احسب تدرج ∇f لحقل قياسي كمتجه المشتقات الجزئية. الخطوات: اشتق لكل متغير، شكّل ∇f، ثم قيّم عند نقطة. دالة العرض f(x,y)=x²y+3y → ∇f=(2xy, x²+3)؛ عند (1,2) → (4,4). يُستخدم في التحسين وتفسير الانحدار التدرجي في التعلم الآلي.</p>
+        <p class="card-text home-card-desc flex-grow-1">احسب تدرج ∇f لحقل قياسي كمتجه المشتقات الجزئية. الخطوات: اشتق لكل متغير، شكّل ∇f، ثم قيّم عند نقطة. دالة العرض f(x,y)=x²y+3y → ∇f=(2xy, x²+3)؛ عند (1,2) → (4,4). يُستخدم في التحسين وتفسير الانحدار التدرجي في التعلم الآلي.</p>
         <a href="/ar/tools/how-to-calculate-gradient" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -277,9 +291,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/how-to-calculate-marginal-revenue.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
-          <h3 class="card-title h5 mb-0">حاسبة الإيراد الحدي — الصيغة ΔTR / ΔQ</h3>
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">حاسبة الإيراد الحدي — الصيغة ΔTR / ΔQ</h3>
         </div>
-        <p class="card-text flex-grow-1">احسب الإيراد الحدي بالمعادلة MR = ΔTR / ΔQ. العملية: أدخل الكمية والإيراد الكلي عند نقطتين، احسب ΔTR وΔQ ثم اقسم. مثال: الكمية 10→11 والإيراد 1000→1080 → MR = 80. للتعليم فقط — ليست نصيحة تسعير.</p>
+        <p class="card-text home-card-desc flex-grow-1">احسب الإيراد الحدي بالمعادلة MR = ΔTR / ΔQ. العملية: أدخل الكمية والإيراد الكلي عند نقطتين، احسب ΔTR وΔQ ثم اقسم. مثال: الكمية 10→11 والإيراد 1000→1080 → MR = 80. للتعليم فقط — ليست نصيحة تسعير.</p>
         <a href="/ar/tools/how-to-calculate-marginal-revenue" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -289,9 +303,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/how-to-calculate-percentage-change.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
-          <h3 class="card-title h5 mb-0">حاسبة التغير بالنسبة المئوية — من قيمة قديمة إلى جديدة</h3>
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">حاسبة التغير بالنسبة المئوية — من قيمة قديمة إلى جديدة</h3>
         </div>
-        <p class="card-text flex-grow-1">احسب نسبة الزيادة أو النقصان من قيمة قديمة إلى جديدة. الخطوات: أدخل القيمتين، طبّق (الجديد − القديم) / القديم × 100، ثم اقرأ الإشارة. مثال: 80 → 100 = +25%. مناسب لإيرادات شهرية وDAU والأسعار — وليس نقاط مئوية.</p>
+        <p class="card-text home-card-desc flex-grow-1">احسب نسبة الزيادة أو النقصان من قيمة قديمة إلى جديدة. الخطوات: أدخل القيمتين، طبّق (الجديد − القديم) / القديم × 100، ثم اقرأ الإشارة. مثال: 80 → 100 = +25%. مناسب لإيرادات شهرية وDAU والأسعار — وليس نقاط مئوية.</p>
         <a href="/ar/tools/how-to-calculate-percentage-change" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -301,9 +315,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/how-to-calculate-roi.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
-          <h3 class="card-title h5 mb-0">حاسبة العائد على الاستثمار (ROI) — طريقة الحساب</h3>
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">حاسبة العائد على الاستثمار (ROI) — طريقة الحساب</h3>
         </div>
-        <p class="card-text flex-grow-1">احسب عائد الاستثمار البسيط بالمعادلة (العائد − التكلفة) / التكلفة × 100٪، أو (القيمة النهائية − الأولية) / الأولية × 100٪. العملية: أدخل التكلفة والقيمة النهائية (أو صافي الربح) وراجع افتراضات الضرائب والرسوم والزمن. مثال: تكلفة 1000 ونهاية 1300 → ROI 30٪. للتوضيح التعليمي فقط — ليست نصيحة استثمار.</p>
+        <p class="card-text home-card-desc flex-grow-1">احسب عائد الاستثمار البسيط بالمعادلة (العائد − التكلفة) / التكلفة × 100٪، أو (القيمة النهائية − الأولية) / الأولية × 100٪. العملية: أدخل التكلفة والقيمة النهائية (أو صافي الربح) وراجع افتراضات الضرائب والرسوم والزمن. مثال: تكلفة 1000 ونهاية 1300 → ROI 30٪. للتوضيح التعليمي فقط — ليست نصيحة استثمار.</p>
         <a href="/ar/tools/how-to-calculate-roi" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -313,9 +327,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/html-entity.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
-          <h3 class="card-title h5 mb-0">ترميز وفك ترميز كيانات HTML — محليًا</h3>
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">ترميز وفك ترميز كيانات HTML — محليًا</h3>
         </div>
-        <p class="card-text flex-grow-1">كيانات HTML: نطاق، صيغة اسم/رقم، وفك ترميز صارم — كل ذلك محليًا.</p>
+        <p class="card-text home-card-desc flex-grow-1">كيانات HTML: نطاق، صيغة اسم/رقم، وفك ترميز صارم — كل ذلك محليًا.</p>
         <a href="/ar/tools/html-entity" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -325,9 +339,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/image-border.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
-          <h3 class="card-title h5 mb-0">إطار صورة — لون وعرض</h3>
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">إطار صورة — لون وعرض</h3>
         </div>
-        <p class="card-text flex-grow-1">إطار صورة — لون وعرض — local, no upload.</p>
+        <p class="card-text home-card-desc flex-grow-1">إطار صورة — لون وعرض — local, no upload.</p>
         <a href="/ar/tools/image-border" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -337,9 +351,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/image-compress.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
-          <h3 class="card-title h5 mb-0">ضغط الصور — البعد الأطول والجودة والحجم المستهدف (محليًا)</h3>
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">ضغط الصور — البعد الأطول والجودة والحجم المستهدف (محليًا)</h3>
         </div>
-        <p class="card-text flex-grow-1">تصغير محلي بالضلع الأطول والجودة والحجم المستهدف.</p>
+        <p class="card-text home-card-desc flex-grow-1">تصغير محلي بالضلع الأطول والجودة والحجم المستهدف.</p>
         <a href="/ar/tools/image-compress" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -349,9 +363,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/image-crop.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
-          <h3 class="card-title h5 mb-0">قص الصورة وتغيير الحجم — محليًا</h3>
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">قص الصورة وتغيير الحجم — محليًا</h3>
         </div>
-        <p class="card-text flex-grow-1">قص محلي بنسب وأحجام شائعة.</p>
+        <p class="card-text home-card-desc flex-grow-1">قص محلي بنسب وأحجام شائعة.</p>
         <a href="/ar/tools/image-crop" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -361,9 +375,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/image-exif.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
-          <h3 class="card-title h5 mb-0">عرض وحذف EXIF من الصور — الموقع والكاميرا محليًا</h3>
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">عرض وحذف EXIF من الصور — الموقع والكاميرا محليًا</h3>
         </div>
-        <p class="card-text flex-grow-1">اعرض GPS/الكاميرا من الصور محليًا ونزّل نسخة منظّفة.</p>
+        <p class="card-text home-card-desc flex-grow-1">اعرض GPS/الكاميرا من الصور محليًا ونزّل نسخة منظّفة.</p>
         <a href="/ar/tools/image-exif" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -373,9 +387,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/image-format-converter.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
-          <h3 class="card-title h5 mb-0">محول تنسيق الصور — PNG JPEG WebP AVIF BMP GIF ICO SVG محليا</h3>
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">محول تنسيق الصور — PNG JPEG WebP AVIF BMP GIF ICO SVG محليا</h3>
         </div>
-        <p class="card-text flex-grow-1">حوّل PNG وJPEG وWebP وAVIF محليًا مع الجودة والتحقق من النوع.</p>
+        <p class="card-text home-card-desc flex-grow-1">حوّل PNG وJPEG وWebP وAVIF محليًا مع الجودة والتحقق من النوع.</p>
         <a href="/ar/tools/image-format-converter" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -385,9 +399,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/image-grayscale.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
-          <h3 class="card-title h5 mb-0">تحويل الصورة إلى رمادي</h3>
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">تحويل الصورة إلى رمادي</h3>
         </div>
-        <p class="card-text flex-grow-1">تحويل الصورة إلى رمادي — local, no upload.</p>
+        <p class="card-text home-card-desc flex-grow-1">تحويل الصورة إلى رمادي — local, no upload.</p>
         <a href="/ar/tools/image-grayscale" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -397,9 +411,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/image-merge.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
-          <h3 class="card-title h5 mb-0">دمج الصور — اجمع صورًا في كولاج واحد</h3>
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">دمج الصور — اجمع صورًا في كولاج واحد</h3>
         </div>
-        <p class="card-text flex-grow-1">اجمع الصور في كولاج واحد محليًا — أفقي أو عمودي أو شبكة، فراغ وخلفية، تنزيل JPEG/WebP/PNG.</p>
+        <p class="card-text home-card-desc flex-grow-1">اجمع الصور في كولاج واحد محليًا — أفقي أو عمودي أو شبكة، فراغ وخلفية، تنزيل JPEG/WebP/PNG.</p>
         <a href="/ar/tools/image-merge" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -409,9 +423,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/image-optimizer.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
-          <h3 class="card-title h5 mb-0">تحسين الصور — WebP وAVIF وMozJPEG محليًا</h3>
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">تحسين الصور — WebP وAVIF وMozJPEG محليًا</h3>
         </div>
-        <p class="card-text flex-grow-1">MozJPEG وWebP وAVIF وOxiPNG محليًا مع مقارنة منزلقة.</p>
+        <p class="card-text home-card-desc flex-grow-1">MozJPEG وWebP وAVIF وOxiPNG محليًا مع مقارنة منزلقة.</p>
         <a href="/ar/tools/image-optimizer" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -421,9 +435,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/image-overlay.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
-          <h3 class="card-title h5 mb-0">تراكب الصور — ضع شعارًا على صورة</h3>
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">تراكب الصور — ضع شعارًا على صورة</h3>
         </div>
-        <p class="card-text flex-grow-1">ضع شعارًا أو علامة PNG على صورة محليًا — شفافية وموضع وحجم ومزج، تنزيل JPEG/WebP/PNG.</p>
+        <p class="card-text home-card-desc flex-grow-1">ضع شعارًا أو علامة PNG على صورة محليًا — شفافية وموضع وحجم ومزج، تنزيل JPEG/WebP/PNG.</p>
         <a href="/ar/tools/image-overlay" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -433,9 +447,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/image-to-base64.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
-          <h3 class="card-title h5 mb-0">صورة ↔ Base64 — ترميز وفك</h3>
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">صورة ↔ Base64 — ترميز وفك</h3>
         </div>
-        <p class="card-text flex-grow-1">صورة ↔ Base64 — ترميز وفك — local, no upload.</p>
+        <p class="card-text home-card-desc flex-grow-1">صورة ↔ Base64 — ترميز وفك — local, no upload.</p>
         <a href="/ar/tools/image-to-base64" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -445,9 +459,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/images-to-gif.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
-          <h3 class="card-title h5 mb-0">صور إلى GIF — رسوم قصيرة</h3>
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">صور إلى GIF — رسوم قصيرة</h3>
         </div>
-        <p class="card-text flex-grow-1">صور إلى GIF — رسوم قصيرة — local, no upload.</p>
+        <p class="card-text home-card-desc flex-grow-1">صور إلى GIF — رسوم قصيرة — local, no upload.</p>
         <a href="/ar/tools/images-to-gif" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -457,9 +471,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/images-to-pdf.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
-          <h3 class="card-title h5 mb-0">صور إلى PDF — صفحة لكل صورة</h3>
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">صور إلى PDF — صفحة لكل صورة</h3>
         </div>
-        <p class="card-text flex-grow-1">صور إلى PDF — صفحة لكل صورة — local, no upload.</p>
+        <p class="card-text home-card-desc flex-grow-1">صور إلى PDF — صفحة لكل صورة — local, no upload.</p>
         <a href="/ar/tools/images-to-pdf" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -469,9 +483,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/images-to-ppt.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
-          <h3 class="card-title h5 mb-0">صور إلى PowerPoint — شريحة لكل صورة</h3>
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">صور إلى PowerPoint — شريحة لكل صورة</h3>
         </div>
-        <p class="card-text flex-grow-1">صور إلى PowerPoint — شريحة لكل صورة — local, no upload.</p>
+        <p class="card-text home-card-desc flex-grow-1">صور إلى PowerPoint — شريحة لكل صورة — local, no upload.</p>
         <a href="/ar/tools/images-to-ppt" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -481,9 +495,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/images-to-word.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
-          <h3 class="card-title h5 mb-0">صور إلى Word — DOCX محلي</h3>
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">صور إلى Word — DOCX محلي</h3>
         </div>
-        <p class="card-text flex-grow-1">صور إلى Word — DOCX محلي — local, no upload.</p>
+        <p class="card-text home-card-desc flex-grow-1">صور إلى Word — DOCX محلي — local, no upload.</p>
         <a href="/ar/tools/images-to-word" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -493,9 +507,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/indexnow.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
-          <h3 class="card-title h5 mb-0">IndexNow — إرسال روابط Bing وفحص المفتاح ورموز الحالة</h3>
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">IndexNow — إرسال روابط Bing وفحص المفتاح ورموز الحالة</h3>
         </div>
-        <p class="card-text flex-grow-1">IndexNow: إنشاء مفتاح وفحص txt وإرسال روابط إلى Bing.</p>
+        <p class="card-text home-card-desc flex-grow-1">IndexNow: إنشاء مفتاح وفحص txt وإرسال روابط إلى Bing.</p>
         <a href="/ar/tools/indexnow" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -505,9 +519,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/ip-address.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
-          <h3 class="card-title h5 mb-0">ما هو عنوان IP الخاص بي — IP عام (IPv4/IPv6)</h3>
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">ما هو عنوان IP الخاص بي — IP عام (IPv4/IPv6)</h3>
         </div>
-        <p class="card-text flex-grow-1">IPv4 أو IPv6 حسب المسار؛ مع VPN يظهر عنوان الخروج.</p>
+        <p class="card-text home-card-desc flex-grow-1">IPv4 أو IPv6 حسب المسار؛ مع VPN يظهر عنوان الخروج.</p>
         <a href="/ar/tools/ip-address" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -517,9 +531,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/json-schema-validator.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
-          <h3 class="card-title h5 mb-0">مدقق JSON Schema — مسارات draft-07 ومحليًا</h3>
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">مدقق JSON Schema — مسارات draft-07 ومحليًا</h3>
         </div>
-        <p class="card-text flex-grow-1">تحقق من JSON مقابل Schema مع أخطاء JSON Pointer — draft-07 محليًا.</p>
+        <p class="card-text home-card-desc flex-grow-1">تحقق من JSON مقابل Schema مع أخطاء JSON Pointer — draft-07 محليًا.</p>
         <a href="/ar/tools/json-schema-validator" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -529,9 +543,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/markdown-to-html.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
-          <h3 class="card-title h5 mb-0">Markdown ↔ HTML</h3>
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">Markdown ↔ HTML</h3>
         </div>
-        <p class="card-text flex-grow-1">تحويل Markdown ↔ HTML مع معاينة آمنة.</p>
+        <p class="card-text home-card-desc flex-grow-1">تحويل Markdown ↔ HTML مع معاينة آمنة.</p>
         <a href="/ar/tools/markdown-to-html" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -541,9 +555,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/square-feet.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
-          <h3 class="card-title h5 mb-0">تحويل القدم المربع إلى متر مربع — للمنازل والتشطيب</h3>
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">تحويل القدم المربع إلى متر مربع — للمنازل والتشطيب</h3>
         </div>
-        <p class="card-text flex-grow-1">حوّل مساحة الغرفة بين القدم المربع والمتر المربع للإعلانات والتشطيب. الخطوات: اختر قدم/متر/بوصة، أدخل الطول × العرض، احسب المساحة، ثم اعرض ft² و m² بعامل NIST 1 ft² = 0.09290304 m². مثال: شقة 850 قدمًا مربعًا ≈ 78.97 م².</p>
+        <p class="card-text home-card-desc flex-grow-1">حوّل مساحة الغرفة بين القدم المربع والمتر المربع للإعلانات والتشطيب. الخطوات: اختر قدم/متر/بوصة، أدخل الطول × العرض، احسب المساحة، ثم اعرض ft² و m² بعامل NIST 1 ft² = 0.09290304 m². مثال: شقة 850 قدمًا مربعًا ≈ 78.97 م².</p>
         <a href="/ar/tools/square-feet" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -553,9 +567,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/text-diff.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
-          <h3 class="card-title h5 mb-0">مقارنة نصين أونلاين</h3>
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">مقارنة نصين أونلاين</h3>
         </div>
-        <p class="card-text flex-grow-1">اطّلع على فروقات نصين حسب السطر أو الكلمة أو الحرف.</p>
+        <p class="card-text home-card-desc flex-grow-1">اطّلع على فروقات نصين حسب السطر أو الكلمة أو الحرف.</p>
         <a href="/ar/tools/text-diff" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -565,9 +579,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/wcag-contrast-checker.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
-          <h3 class="card-title h5 mb-0">مدقق تباين WCAG — نسبة AA/AAA</h3>
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">مدقق تباين WCAG — نسبة AA/AAA</h3>
         </div>
-        <p class="card-text flex-grow-1">تحقق من نسبة التباين ومعايير AA/AAA — دون رفع الألوان.</p>
+        <p class="card-text home-card-desc flex-grow-1">تحقق من نسبة التباين ومعايير AA/AAA — دون رفع الألوان.</p>
         <a href="/ar/tools/wcag-contrast-checker" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -577,9 +591,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/website-headers.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
-          <h3 class="card-title h5 mb-0">فحص ترويسات HTTP</h3>
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">فحص ترويسات HTTP</h3>
         </div>
-        <p class="card-text flex-grow-1">افحص ترويسات HTTP لأي رابط: HEAD/GET، إعادة التوجيه وخريطة الرؤوس من الـ edge.</p>
+        <p class="card-text home-card-desc flex-grow-1">افحص ترويسات HTTP لأي رابط: HEAD/GET، إعادة التوجيه وخريطة الرؤوس من الـ edge.</p>
         <a href="/ar/tools/website-headers" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -589,9 +603,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/yaml-json.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
-          <h3 class="card-title h5 mb-0">من YAML إلى JSON وبالعكس — قواعد الأنواع ومحليًا</h3>
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">من YAML إلى JSON وبالعكس — قواعد الأنواع ومحليًا</h3>
         </div>
-        <p class="card-text flex-grow-1">تحويل YAML ↔ JSON مع قواعد الأنواع والمستندات المتعددة.</p>
+        <p class="card-text home-card-desc flex-grow-1">تحويل YAML ↔ JSON مع قواعد الأنواع والمستندات المتعددة.</p>
         <a href="/ar/tools/yaml-json" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -616,9 +630,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/add-watermark.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
-          <h3 class="card-title h6 mb-0">علامة مائية نصية — في المتصفح</h3>
+          <h3 class="card-title home-card-title mb-0">علامة مائية نصية — في المتصفح</h3>
         </div>
-        <p class="card-text small flex-grow-1">علامة مائية نصية — في المتصفح — local, no upload.</p>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">علامة مائية نصية — في المتصفح — local, no upload.</p>
         <a href="/ar/tools/add-watermark" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -628,9 +642,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/color-from-image.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
-          <h3 class="card-title h6 mb-0">استخراج ألوان الصورة — لوحة واختيار بالنقر</h3>
+          <h3 class="card-title home-card-title mb-0">استخراج ألوان الصورة — لوحة واختيار بالنقر</h3>
         </div>
-        <p class="card-text small flex-grow-1">لوحة ألوان سائدة واختيار بالنقر محليًا — استخرج عينات، انسخ HEX/RGB/HSL.</p>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">لوحة ألوان سائدة واختيار بالنقر محليًا — استخرج عينات، انسخ HEX/RGB/HSL.</p>
         <a href="/ar/tools/color-from-image" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -640,9 +654,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/flip-image.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
-          <h3 class="card-title h6 mb-0">قلب الصورة — أفقي أو عمودي</h3>
+          <h3 class="card-title home-card-title mb-0">قلب الصورة — أفقي أو عمودي</h3>
         </div>
-        <p class="card-text small flex-grow-1">قلب الصورة — أفقي أو عمودي — local, no upload.</p>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">قلب الصورة — أفقي أو عمودي — local, no upload.</p>
         <a href="/ar/tools/flip-image" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -652,9 +666,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/image-border.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
-          <h3 class="card-title h6 mb-0">إطار صورة — لون وعرض</h3>
+          <h3 class="card-title home-card-title mb-0">إطار صورة — لون وعرض</h3>
         </div>
-        <p class="card-text small flex-grow-1">إطار صورة — لون وعرض — local, no upload.</p>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">إطار صورة — لون وعرض — local, no upload.</p>
         <a href="/ar/tools/image-border" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -664,9 +678,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/image-compress.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
-          <h3 class="card-title h6 mb-0">ضغط الصور — البعد الأطول والجودة والحجم المستهدف (محليًا)</h3>
+          <h3 class="card-title home-card-title mb-0">ضغط الصور — البعد الأطول والجودة والحجم المستهدف (محليًا)</h3>
         </div>
-        <p class="card-text small flex-grow-1">تصغير محلي بالضلع الأطول والجودة والحجم المستهدف.</p>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">تصغير محلي بالضلع الأطول والجودة والحجم المستهدف.</p>
         <a href="/ar/tools/image-compress" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -676,9 +690,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/image-crop.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
-          <h3 class="card-title h6 mb-0">قص الصورة وتغيير الحجم — محليًا</h3>
+          <h3 class="card-title home-card-title mb-0">قص الصورة وتغيير الحجم — محليًا</h3>
         </div>
-        <p class="card-text small flex-grow-1">قص محلي بنسب وأحجام شائعة.</p>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">قص محلي بنسب وأحجام شائعة.</p>
         <a href="/ar/tools/image-crop" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -688,9 +702,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/image-exif.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
-          <h3 class="card-title h6 mb-0">عرض وحذف EXIF من الصور — الموقع والكاميرا محليًا</h3>
+          <h3 class="card-title home-card-title mb-0">عرض وحذف EXIF من الصور — الموقع والكاميرا محليًا</h3>
         </div>
-        <p class="card-text small flex-grow-1">اعرض GPS/الكاميرا من الصور محليًا ونزّل نسخة منظّفة.</p>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">اعرض GPS/الكاميرا من الصور محليًا ونزّل نسخة منظّفة.</p>
         <a href="/ar/tools/image-exif" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -700,9 +714,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/image-format-converter.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
-          <h3 class="card-title h6 mb-0">محول تنسيق الصور — PNG JPEG WebP AVIF BMP GIF ICO SVG محليا</h3>
+          <h3 class="card-title home-card-title mb-0">محول تنسيق الصور — PNG JPEG WebP AVIF BMP GIF ICO SVG محليا</h3>
         </div>
-        <p class="card-text small flex-grow-1">حوّل PNG وJPEG وWebP وAVIF محليًا مع الجودة والتحقق من النوع.</p>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">حوّل PNG وJPEG وWebP وAVIF محليًا مع الجودة والتحقق من النوع.</p>
         <a href="/ar/tools/image-format-converter" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -712,9 +726,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/image-grayscale.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
-          <h3 class="card-title h6 mb-0">تحويل الصورة إلى رمادي</h3>
+          <h3 class="card-title home-card-title mb-0">تحويل الصورة إلى رمادي</h3>
         </div>
-        <p class="card-text small flex-grow-1">تحويل الصورة إلى رمادي — local, no upload.</p>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">تحويل الصورة إلى رمادي — local, no upload.</p>
         <a href="/ar/tools/image-grayscale" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -724,9 +738,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/image-merge.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
-          <h3 class="card-title h6 mb-0">دمج الصور — اجمع صورًا في كولاج واحد</h3>
+          <h3 class="card-title home-card-title mb-0">دمج الصور — اجمع صورًا في كولاج واحد</h3>
         </div>
-        <p class="card-text small flex-grow-1">اجمع الصور في كولاج واحد محليًا — أفقي أو عمودي أو شبكة، فراغ وخلفية، تنزيل JPEG/WebP/PNG.</p>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">اجمع الصور في كولاج واحد محليًا — أفقي أو عمودي أو شبكة، فراغ وخلفية، تنزيل JPEG/WebP/PNG.</p>
         <a href="/ar/tools/image-merge" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -736,9 +750,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/image-optimizer.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
-          <h3 class="card-title h6 mb-0">تحسين الصور — WebP وAVIF وMozJPEG محليًا</h3>
+          <h3 class="card-title home-card-title mb-0">تحسين الصور — WebP وAVIF وMozJPEG محليًا</h3>
         </div>
-        <p class="card-text small flex-grow-1">MozJPEG وWebP وAVIF وOxiPNG محليًا مع مقارنة منزلقة.</p>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">MozJPEG وWebP وAVIF وOxiPNG محليًا مع مقارنة منزلقة.</p>
         <a href="/ar/tools/image-optimizer" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -748,9 +762,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/image-overlay.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
-          <h3 class="card-title h6 mb-0">تراكب الصور — ضع شعارًا على صورة</h3>
+          <h3 class="card-title home-card-title mb-0">تراكب الصور — ضع شعارًا على صورة</h3>
         </div>
-        <p class="card-text small flex-grow-1">ضع شعارًا أو علامة PNG على صورة محليًا — شفافية وموضع وحجم ومزج، تنزيل JPEG/WebP/PNG.</p>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">ضع شعارًا أو علامة PNG على صورة محليًا — شفافية وموضع وحجم ومزج، تنزيل JPEG/WebP/PNG.</p>
         <a href="/ar/tools/image-overlay" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -760,9 +774,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/image-to-base64.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
-          <h3 class="card-title h6 mb-0">صورة ↔ Base64 — ترميز وفك</h3>
+          <h3 class="card-title home-card-title mb-0">صورة ↔ Base64 — ترميز وفك</h3>
         </div>
-        <p class="card-text small flex-grow-1">صورة ↔ Base64 — ترميز وفك — local, no upload.</p>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">صورة ↔ Base64 — ترميز وفك — local, no upload.</p>
         <a href="/ar/tools/image-to-base64" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -772,9 +786,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/images-to-gif.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
-          <h3 class="card-title h6 mb-0">صور إلى GIF — رسوم قصيرة</h3>
+          <h3 class="card-title home-card-title mb-0">صور إلى GIF — رسوم قصيرة</h3>
         </div>
-        <p class="card-text small flex-grow-1">صور إلى GIF — رسوم قصيرة — local, no upload.</p>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">صور إلى GIF — رسوم قصيرة — local, no upload.</p>
         <a href="/ar/tools/images-to-gif" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -784,9 +798,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/images-to-pdf.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
-          <h3 class="card-title h6 mb-0">صور إلى PDF — صفحة لكل صورة</h3>
+          <h3 class="card-title home-card-title mb-0">صور إلى PDF — صفحة لكل صورة</h3>
         </div>
-        <p class="card-text small flex-grow-1">صور إلى PDF — صفحة لكل صورة — local, no upload.</p>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">صور إلى PDF — صفحة لكل صورة — local, no upload.</p>
         <a href="/ar/tools/images-to-pdf" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -796,9 +810,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/images-to-ppt.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
-          <h3 class="card-title h6 mb-0">صور إلى PowerPoint — شريحة لكل صورة</h3>
+          <h3 class="card-title home-card-title mb-0">صور إلى PowerPoint — شريحة لكل صورة</h3>
         </div>
-        <p class="card-text small flex-grow-1">صور إلى PowerPoint — شريحة لكل صورة — local, no upload.</p>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">صور إلى PowerPoint — شريحة لكل صورة — local, no upload.</p>
         <a href="/ar/tools/images-to-ppt" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -808,9 +822,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/images-to-word.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
-          <h3 class="card-title h6 mb-0">صور إلى Word — DOCX محلي</h3>
+          <h3 class="card-title home-card-title mb-0">صور إلى Word — DOCX محلي</h3>
         </div>
-        <p class="card-text small flex-grow-1">صور إلى Word — DOCX محلي — local, no upload.</p>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">صور إلى Word — DOCX محلي — local, no upload.</p>
         <a href="/ar/tools/images-to-word" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -828,9 +842,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/brand-color-token-pack.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
-          <h3 class="card-title h6 mb-0">حزمة رموز ألوان العلامة — مقياس HEX HSL OKLCH</h3>
+          <h3 class="card-title home-card-title mb-0">حزمة رموز ألوان العلامة — مقياس HEX HSL OKLCH</h3>
         </div>
-        <p class="card-text small flex-grow-1">لون أساس واحد → HEX/RGB/HSL/OKLCH، مقياس 50–950، أزواج تباين، متغيرات CSS — محلي.</p>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">لون أساس واحد → HEX/RGB/HSL/OKLCH، مقياس 50–950، أزواج تباين، متغيرات CSS — محلي.</p>
         <a href="/ar/tools/brand-color-token-pack" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -840,9 +854,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/wcag-contrast-checker.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
-          <h3 class="card-title h6 mb-0">مدقق تباين WCAG — نسبة AA/AAA</h3>
+          <h3 class="card-title home-card-title mb-0">مدقق تباين WCAG — نسبة AA/AAA</h3>
         </div>
-        <p class="card-text small flex-grow-1">تحقق من نسبة التباين ومعايير AA/AAA — دون رفع الألوان.</p>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">تحقق من نسبة التباين ومعايير AA/AAA — دون رفع الألوان.</p>
         <a href="/ar/tools/wcag-contrast-checker" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -860,9 +874,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/add-www-to-dns.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
-          <h3 class="card-title h6 mb-0">إضافة WWW إلى DNS — سجلات A/CNAME وأدلة المنصات</h3>
+          <h3 class="card-title home-card-title mb-0">إضافة WWW إلى DNS — سجلات A/CNAME وأدلة المنصات</h3>
         </div>
-        <p class="card-text small flex-grow-1">إنشاء سجلات www وفحص DNS مع أدلة Cloudflare/Vercel.</p>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">إنشاء سجلات www وفحص DNS مع أدلة Cloudflare/Vercel.</p>
         <a href="/ar/tools/add-www-to-dns" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -872,9 +886,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/csv-json.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
-          <h3 class="card-title h6 mb-0">محول CSV ↔ JSON — الأنواع والفواصل ومحليًا</h3>
+          <h3 class="card-title home-card-title mb-0">محول CSV ↔ JSON — الأنواع والفواصل ومحليًا</h3>
         </div>
-        <p class="card-text small flex-grow-1">تحويل CSV ↔ JSON مع الفاصل وصف الرأس وقواعد الأنواع.</p>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">تحويل CSV ↔ JSON مع الفاصل وصف الرأس وقواعد الأنواع.</p>
         <a href="/ar/tools/csv-json" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -884,9 +898,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/html-entity.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
-          <h3 class="card-title h6 mb-0">ترميز وفك ترميز كيانات HTML — محليًا</h3>
+          <h3 class="card-title home-card-title mb-0">ترميز وفك ترميز كيانات HTML — محليًا</h3>
         </div>
-        <p class="card-text small flex-grow-1">كيانات HTML: نطاق، صيغة اسم/رقم، وفك ترميز صارم — كل ذلك محليًا.</p>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">كيانات HTML: نطاق، صيغة اسم/رقم، وفك ترميز صارم — كل ذلك محليًا.</p>
         <a href="/ar/tools/html-entity" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -896,9 +910,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/indexnow.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
-          <h3 class="card-title h6 mb-0">IndexNow — إرسال روابط Bing وفحص المفتاح ورموز الحالة</h3>
+          <h3 class="card-title home-card-title mb-0">IndexNow — إرسال روابط Bing وفحص المفتاح ورموز الحالة</h3>
         </div>
-        <p class="card-text small flex-grow-1">IndexNow: إنشاء مفتاح وفحص txt وإرسال روابط إلى Bing.</p>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">IndexNow: إنشاء مفتاح وفحص txt وإرسال روابط إلى Bing.</p>
         <a href="/ar/tools/indexnow" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -908,9 +922,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/ip-address.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
-          <h3 class="card-title h6 mb-0">ما هو عنوان IP الخاص بي — IP عام (IPv4/IPv6)</h3>
+          <h3 class="card-title home-card-title mb-0">ما هو عنوان IP الخاص بي — IP عام (IPv4/IPv6)</h3>
         </div>
-        <p class="card-text small flex-grow-1">IPv4 أو IPv6 حسب المسار؛ مع VPN يظهر عنوان الخروج.</p>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">IPv4 أو IPv6 حسب المسار؛ مع VPN يظهر عنوان الخروج.</p>
         <a href="/ar/tools/ip-address" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -920,9 +934,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/json-schema-validator.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
-          <h3 class="card-title h6 mb-0">مدقق JSON Schema — مسارات draft-07 ومحليًا</h3>
+          <h3 class="card-title home-card-title mb-0">مدقق JSON Schema — مسارات draft-07 ومحليًا</h3>
         </div>
-        <p class="card-text small flex-grow-1">تحقق من JSON مقابل Schema مع أخطاء JSON Pointer — draft-07 محليًا.</p>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">تحقق من JSON مقابل Schema مع أخطاء JSON Pointer — draft-07 محليًا.</p>
         <a href="/ar/tools/json-schema-validator" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -932,9 +946,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/markdown-to-html.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
-          <h3 class="card-title h6 mb-0">Markdown ↔ HTML</h3>
+          <h3 class="card-title home-card-title mb-0">Markdown ↔ HTML</h3>
         </div>
-        <p class="card-text small flex-grow-1">تحويل Markdown ↔ HTML مع معاينة آمنة.</p>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">تحويل Markdown ↔ HTML مع معاينة آمنة.</p>
         <a href="/ar/tools/markdown-to-html" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -944,9 +958,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/text-diff.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
-          <h3 class="card-title h6 mb-0">مقارنة نصين أونلاين</h3>
+          <h3 class="card-title home-card-title mb-0">مقارنة نصين أونلاين</h3>
         </div>
-        <p class="card-text small flex-grow-1">اطّلع على فروقات نصين حسب السطر أو الكلمة أو الحرف.</p>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">اطّلع على فروقات نصين حسب السطر أو الكلمة أو الحرف.</p>
         <a href="/ar/tools/text-diff" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -956,9 +970,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/website-headers.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
-          <h3 class="card-title h6 mb-0">فحص ترويسات HTTP</h3>
+          <h3 class="card-title home-card-title mb-0">فحص ترويسات HTTP</h3>
         </div>
-        <p class="card-text small flex-grow-1">افحص ترويسات HTTP لأي رابط: HEAD/GET، إعادة التوجيه وخريطة الرؤوس من الـ edge.</p>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">افحص ترويسات HTTP لأي رابط: HEAD/GET، إعادة التوجيه وخريطة الرؤوس من الـ edge.</p>
         <a href="/ar/tools/website-headers" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -968,9 +982,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/yaml-json.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
-          <h3 class="card-title h6 mb-0">من YAML إلى JSON وبالعكس — قواعد الأنواع ومحليًا</h3>
+          <h3 class="card-title home-card-title mb-0">من YAML إلى JSON وبالعكس — قواعد الأنواع ومحليًا</h3>
         </div>
-        <p class="card-text small flex-grow-1">تحويل YAML ↔ JSON مع قواعد الأنواع والمستندات المتعددة.</p>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">تحويل YAML ↔ JSON مع قواعد الأنواع والمستندات المتعددة.</p>
         <a href="/ar/tools/yaml-json" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -988,9 +1002,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/how-to-calculate-bmi.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
-          <h3 class="card-title h6 mb-0">حاسبة مؤشر كتلة الجسم — طريقة الحساب</h3>
+          <h3 class="card-title home-card-title mb-0">حاسبة مؤشر كتلة الجسم — طريقة الحساب</h3>
         </div>
-        <p class="card-text small flex-grow-1">احسب مؤشر كتلة الجسم (BMI) بمعادلة الفحص للبالغين. الخطوات: اختر الوحدات المترية أو الإمبراطورية، أدخل الوزن والطول، ثم احسب BMI وقارنه بالفئات الشائعة. مثال: 70 كغ و175 سم → BMI ≈ 22.9 (طبيعي). للتعليم والفحص فقط — ليس تشخيصاً.</p>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">احسب مؤشر كتلة الجسم (BMI) بمعادلة الفحص للبالغين. الخطوات: اختر الوحدات المترية أو الإمبراطورية، أدخل الوزن والطول، ثم احسب BMI وقارنه بالفئات الشائعة. مثال: 70 كغ و175 سم → BMI ≈ 22.9 (طبيعي). للتعليم والفحص فقط — ليس تشخيصاً.</p>
         <a href="/ar/tools/how-to-calculate-bmi" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -1000,9 +1014,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/how-to-calculate-gradient.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
-          <h3 class="card-title h6 mb-0">حاسبة التدرج — ∇f متعدد المتغيرات (مشتقات جزئية)</h3>
+          <h3 class="card-title home-card-title mb-0">حاسبة التدرج — ∇f متعدد المتغيرات (مشتقات جزئية)</h3>
         </div>
-        <p class="card-text small flex-grow-1">احسب تدرج ∇f لحقل قياسي كمتجه المشتقات الجزئية. الخطوات: اشتق لكل متغير، شكّل ∇f، ثم قيّم عند نقطة. دالة العرض f(x,y)=x²y+3y → ∇f=(2xy, x²+3)؛ عند (1,2) → (4,4). يُستخدم في التحسين وتفسير الانحدار التدرجي في التعلم الآلي.</p>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">احسب تدرج ∇f لحقل قياسي كمتجه المشتقات الجزئية. الخطوات: اشتق لكل متغير، شكّل ∇f، ثم قيّم عند نقطة. دالة العرض f(x,y)=x²y+3y → ∇f=(2xy, x²+3)؛ عند (1,2) → (4,4). يُستخدم في التحسين وتفسير الانحدار التدرجي في التعلم الآلي.</p>
         <a href="/ar/tools/how-to-calculate-gradient" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -1012,9 +1026,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/how-to-calculate-marginal-revenue.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
-          <h3 class="card-title h6 mb-0">حاسبة الإيراد الحدي — الصيغة ΔTR / ΔQ</h3>
+          <h3 class="card-title home-card-title mb-0">حاسبة الإيراد الحدي — الصيغة ΔTR / ΔQ</h3>
         </div>
-        <p class="card-text small flex-grow-1">احسب الإيراد الحدي بالمعادلة MR = ΔTR / ΔQ. العملية: أدخل الكمية والإيراد الكلي عند نقطتين، احسب ΔTR وΔQ ثم اقسم. مثال: الكمية 10→11 والإيراد 1000→1080 → MR = 80. للتعليم فقط — ليست نصيحة تسعير.</p>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">احسب الإيراد الحدي بالمعادلة MR = ΔTR / ΔQ. العملية: أدخل الكمية والإيراد الكلي عند نقطتين، احسب ΔTR وΔQ ثم اقسم. مثال: الكمية 10→11 والإيراد 1000→1080 → MR = 80. للتعليم فقط — ليست نصيحة تسعير.</p>
         <a href="/ar/tools/how-to-calculate-marginal-revenue" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -1024,9 +1038,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/how-to-calculate-percentage-change.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
-          <h3 class="card-title h6 mb-0">حاسبة التغير بالنسبة المئوية — من قيمة قديمة إلى جديدة</h3>
+          <h3 class="card-title home-card-title mb-0">حاسبة التغير بالنسبة المئوية — من قيمة قديمة إلى جديدة</h3>
         </div>
-        <p class="card-text small flex-grow-1">احسب نسبة الزيادة أو النقصان من قيمة قديمة إلى جديدة. الخطوات: أدخل القيمتين، طبّق (الجديد − القديم) / القديم × 100، ثم اقرأ الإشارة. مثال: 80 → 100 = +25%. مناسب لإيرادات شهرية وDAU والأسعار — وليس نقاط مئوية.</p>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">احسب نسبة الزيادة أو النقصان من قيمة قديمة إلى جديدة. الخطوات: أدخل القيمتين، طبّق (الجديد − القديم) / القديم × 100، ثم اقرأ الإشارة. مثال: 80 → 100 = +25%. مناسب لإيرادات شهرية وDAU والأسعار — وليس نقاط مئوية.</p>
         <a href="/ar/tools/how-to-calculate-percentage-change" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -1036,9 +1050,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/how-to-calculate-roi.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
-          <h3 class="card-title h6 mb-0">حاسبة العائد على الاستثمار (ROI) — طريقة الحساب</h3>
+          <h3 class="card-title home-card-title mb-0">حاسبة العائد على الاستثمار (ROI) — طريقة الحساب</h3>
         </div>
-        <p class="card-text small flex-grow-1">احسب عائد الاستثمار البسيط بالمعادلة (العائد − التكلفة) / التكلفة × 100٪، أو (القيمة النهائية − الأولية) / الأولية × 100٪. العملية: أدخل التكلفة والقيمة النهائية (أو صافي الربح) وراجع افتراضات الضرائب والرسوم والزمن. مثال: تكلفة 1000 ونهاية 1300 → ROI 30٪. للتوضيح التعليمي فقط — ليست نصيحة استثمار.</p>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">احسب عائد الاستثمار البسيط بالمعادلة (العائد − التكلفة) / التكلفة × 100٪، أو (القيمة النهائية − الأولية) / الأولية × 100٪. العملية: أدخل التكلفة والقيمة النهائية (أو صافي الربح) وراجع افتراضات الضرائب والرسوم والزمن. مثال: تكلفة 1000 ونهاية 1300 → ROI 30٪. للتوضيح التعليمي فقط — ليست نصيحة استثمار.</p>
         <a href="/ar/tools/how-to-calculate-roi" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -1048,9 +1062,9 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/square-feet.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
-          <h3 class="card-title h6 mb-0">تحويل القدم المربع إلى متر مربع — للمنازل والتشطيب</h3>
+          <h3 class="card-title home-card-title mb-0">تحويل القدم المربع إلى متر مربع — للمنازل والتشطيب</h3>
         </div>
-        <p class="card-text small flex-grow-1">حوّل مساحة الغرفة بين القدم المربع والمتر المربع للإعلانات والتشطيب. الخطوات: اختر قدم/متر/بوصة، أدخل الطول × العرض، احسب المساحة، ثم اعرض ft² و m² بعامل NIST 1 ft² = 0.09290304 m². مثال: شقة 850 قدمًا مربعًا ≈ 78.97 م².</p>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">حوّل مساحة الغرفة بين القدم المربع والمتر المربع للإعلانات والتشطيب. الخطوات: اختر قدم/متر/بوصة، أدخل الطول × العرض، احسب المساحة، ثم اعرض ft² و m² بعامل NIST 1 ft² = 0.09290304 m². مثال: شقة 850 قدمًا مربعًا ≈ 78.97 م².</p>
         <a href="/ar/tools/square-feet" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
@@ -1081,6 +1095,7 @@
   </footer>
   
   <script src="/vendor/bootstrap/bootstrap.bundle.min.js" defer></script>
+  <script src="/js/theme.js" defer></script>
   
   <script>
     const layout = document.getElementById('layoutRoot');
