@@ -1,0 +1,22 @@
+{
+  "slug": "brand-style-guide",
+  "path": "/tools/brand-style-guide",
+  "category": "design",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_brand_style_guide_title",
+  "homeTitleKey": "tool_brand_style_guide_title",
+  "homeDescKey": "tool_brand_style_guide_desc",
+  "faqPrefix": "tool_brand_style_guide",
+  "related": [
+    "brand-color-token-pack",
+    "smart-website-color-scheme",
+    "wcag-contrast-checker"
+  ],
+  "logo": "/icons/tools/brand-style-guide.svg",
+  "page": {
+    "module": "../pages/brandStyleGuidePage",
+    "export": "renderBrandStyleGuidePage",
+    "style": "opts"
+  }
+}

@@ -25,6 +25,7 @@
 - [WCAG 对比度检测](https://onlinefreetools.org/zh/tools/wcag-contrast-checker) - 前景/背景对比度比率与 AA/AAA 判定，浏览器本地计算
 - [品牌色色阶生成](https://onlinefreetools.org/zh/tools/brand-color-token-pack) - 一主色生成 HEX/HSL/OKLCH、50–950 色阶与对比配对，可复制 CSS 变量
 - [智能配色](https://onlinefreetools.org/zh/tools/smart-website-color-scheme) - 品牌主色生成网站语义配色（中性链接、独立状态色）与可复制 CSS 变量
+- [品牌手册](https://onlinefreetools.org/zh/tools/brand-style-guide) - 智能预填可编辑的品牌设计规范（Logo/色/字/Do-Don’t），导出 Markdown
 - [多图拼接](https://onlinefreetools.org/zh/tools/image-merge) - 本地把多张照片合成一张拼图，再下载
 - [图片叠加 Logo](https://onlinefreetools.org/zh/tools/image-overlay) - 本地把 Logo 或 PNG 叠到底图上，再下载
 - [图片翻转](https://onlinefreetools.org/zh/tools/flip-image) - 本地水平/垂直镜像照片
@@ -64,6 +65,7 @@ Below are our available online tools with their links (English version):
 - [WCAG Contrast Checker](https://onlinefreetools.org/tools/wcag-contrast-checker) - Foreground/background contrast ratio with AA/AAA badges — local in the browser
 - [Generate Brand Color Scale](https://onlinefreetools.org/tools/brand-color-token-pack) - One base color → HEX/HSL/OKLCH, 50–950 scale, contrast pairs, CSS variables
 - [Smart Website Color Scheme](https://onlinefreetools.org/tools/smart-website-color-scheme) - Brand color → semantic site tokens (neutral links, fixed status) + copyable CSS
+- [Brand Style Guide](https://onlinefreetools.org/tools/brand-style-guide) - Modular brand guidelines draft (logo/color/type/Do-Don’t) you can edit and export as Markdown
 - [Merge Images](https://onlinefreetools.org/tools/image-merge) - Combine photos into one collage locally, then download
 - [Overlay Images](https://onlinefreetools.org/tools/image-overlay) - Put a logo or PNG on a photo locally, then download
 - [Flip Image](https://onlinefreetools.org/tools/flip-image) - Mirror a photo horizontally or vertically locally

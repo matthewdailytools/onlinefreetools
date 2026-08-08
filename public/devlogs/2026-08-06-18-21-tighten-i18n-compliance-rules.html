@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+  <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Tightened i18n compliance rules (stable workflow, anti-batch isomorphic) and rewrote all ten markdown locales; cleared pending-native-review. | Dev Logs</title>
   <meta name="description" content="Tightened i18n compliance rules (stable workflow, anti-batch isomorphic) and rewrote all ten markdown locales; cleared pending-native-review." />
@@ -103,6 +104,9 @@
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Image editing tools</a>
           <ul class="dropdown-menu"><li><a class="dropdown-item" href="/en/tools/add-watermark">Add Text Watermark to Photo — Local Browser Tool</a></li><li><a class="dropdown-item" href="/en/tools/color-from-image">Extract Colors from Image — Palette & Click Pick</a></li><li><a class="dropdown-item" href="/en/tools/flip-image">Flip Image — Mirror Horizontally or Vertically</a></li><li><a class="dropdown-item" href="/en/tools/image-border">Add Border to Image — Color & Width Online</a></li><li><a class="dropdown-item" href="/en/tools/image-compress">Image Compressor — Resize, Quality & Target Size Local</a></li><li><a class="dropdown-item" href="/en/tools/image-crop">Crop & Resize Image — Local Aspect Presets</a></li><li><a class="dropdown-item" href="/en/tools/image-exif">Photo EXIF Viewer & Remover — GPS, Camera & Local Strip</a></li><li><a class="dropdown-item" href="/en/tools/image-format-converter">Image Format Converter — PNG JPEG WebP AVIF BMP GIF ICO SVG</a></li><li><a class="dropdown-item" href="/en/tools/image-grayscale">Convert Image to Grayscale — Black & White Online</a></li><li><a class="dropdown-item" href="/en/tools/image-merge">Merge Images — Combine Photos into One Collage</a></li><li><a class="dropdown-item" href="/en/tools/image-optimizer">Image Optimizer — WebP, AVIF & MozJPEG Local</a></li><li><a class="dropdown-item" href="/en/tools/image-overlay">Overlay Images — Put a Logo on a Photo</a></li><li><a class="dropdown-item" href="/en/tools/image-to-base64">Image to Base64 Converter — Encode & Decode Locally</a></li><li><a class="dropdown-item" href="/en/tools/images-to-gif">Images to GIF — Make an Animated GIF Locally</a></li><li><a class="dropdown-item" href="/en/tools/images-to-pdf">Images to PDF — Combine Photos into One File</a></li><li><a class="dropdown-item" href="/en/tools/images-to-ppt">Images to PowerPoint — Photos to PPTX Slides</a></li><li><a class="dropdown-item" href="/en/tools/images-to-word">Images to Word — Build a DOCX from Photos</a></li></ul>
         </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Design tools</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/en/tools/brand-color-token-pack">Generate Brand Color Scale — 50–950 Palette & CSS Tokens</a></li><li><a class="dropdown-item" href="/en/tools/brand-style-guide">Brand Style Guide — Generate a Modular Draft You Can Edit</a></li><li><a class="dropdown-item" href="/en/tools/smart-website-color-scheme">Smart Website Color Scheme — Semantic CSS Tokens</a></li><li><a class="dropdown-item" href="/en/tools/wcag-contrast-checker">WCAG Contrast Checker — AA/AAA Ratio Online</a></li></ul>
+        </li><li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Developer</a>
           <ul class="dropdown-menu"><li><a class="dropdown-item" href="/en/tools/add-www-to-dns">Add WWW to DNS — A/CNAME, Apex Rules & Provider Guides</a></li><li><a class="dropdown-item" href="/en/tools/csv-json">CSV ↔ JSON Converter — Types, Delimiters & Local</a></li><li><a class="dropdown-item" href="/en/tools/html-entity">HTML Entity Encoder & Decoder — Escape, Unescape & Local</a></li><li><a class="dropdown-item" href="/en/tools/indexnow">IndexNow — Bing URL Submit, Key Check & Status Codes</a></li><li><a class="dropdown-item" href="/en/tools/ip-address">What Is My IP Address — See Your Public IP (IPv4 or IPv6)</a></li><li><a class="dropdown-item" href="/en/tools/json-schema-validator">JSON Schema Validator — Draft-07 Paths & Local</a></li><li><a class="dropdown-item" href="/en/tools/markdown-to-html">Markdown ↔ HTML</a></li><li><a class="dropdown-item" href="/en/tools/text-diff">Compare Two Texts Online — Text Diff Checker</a></li><li><a class="dropdown-item" href="/en/tools/website-headers">Check HTTP Response Headers</a></li><li><a class="dropdown-item" href="/en/tools/yaml-json">YAML ↔ JSON Converter — Types, Multi-doc & Local</a></li></ul>
         </li><li class="nav-item dropdown">
@@ -110,6 +114,19 @@
           <ul class="dropdown-menu"><li><a class="dropdown-item" href="/en/tools/how-to-calculate-bmi">BMI Calculator — How to Calculate Body Mass Index</a></li><li><a class="dropdown-item" href="/en/tools/how-to-calculate-gradient">Gradient Calculator — Multivariable ∇f (Partial Derivatives)</a></li><li><a class="dropdown-item" href="/en/tools/how-to-calculate-marginal-revenue">How to Calculate Marginal Revenue — MR Calculator (ΔTR / ΔQ)</a></li><li><a class="dropdown-item" href="/en/tools/how-to-calculate-percentage-change">Percentage Change Calculator — From Old Value to New</a></li><li><a class="dropdown-item" href="/en/tools/how-to-calculate-roi">ROI Calculator — How to Calculate Return on Investment</a></li><li><a class="dropdown-item" href="/en/tools/square-feet">Square Feet to Square Meters — Area Converter for Homes & Renovation</a></li></ul>
         </li></ul>
           <div class="d-flex align-items-center gap-2">
+            
+            <div class="dropdown theme-switcher">
+              <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Theme">
+                <span class="theme-swatch" data-theme-swatch aria-hidden="true"></span>
+                <span class="d-none d-md-inline">Theme</span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><button type="button" class="dropdown-item theme-option" data-theme-set="teal"><span class="theme-swatch theme-swatch--teal" aria-hidden="true"></span>Slate blue</button></li>
+                <li><button type="button" class="dropdown-item theme-option" data-theme-set="green"><span class="theme-swatch theme-swatch--green" aria-hidden="true"></span>Forest</button></li>
+                <li><button type="button" class="dropdown-item theme-option" data-theme-set="amber"><span class="theme-swatch theme-swatch--amber" aria-hidden="true"></span>Amber</button></li>
+                <li><button type="button" class="dropdown-item theme-option" data-theme-set="navy"><span class="theme-swatch theme-swatch--navy" aria-hidden="true"></span>Ink navy</button></li>
+              </ul>
+            </div>
             
           </div>
         </div>
@@ -174,6 +191,7 @@ Summary: Tightened i18n compliance rules (stable workflow, anti-batch isomorphic
   </footer>
   
   <script src="/vendor/bootstrap/bootstrap.bundle.min.js" defer></script>
+  <script src="/js/theme.js" defer></script>
   
   <script>
     const layout = document.getElementById('layoutRoot');
