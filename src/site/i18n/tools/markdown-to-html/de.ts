@@ -34,7 +34,7 @@ const de: SiteLangDict = {
     'Tabs steuern die Richtung. Links Eingabe, rechts lokales Ergebnis. HTML: Fragment oder schlankes Gesamtdokument; Markdown: Klartext für Editor/LLM.',
   tool_markdown_how_title: 'Ablauf',
   tool_markdown_html_input_label: 'HTML-Eingabe',
-  tool_markdown_html_placeholder: '<h1>Titel</h1>\\n<p>Hallo <strong>Welt</strong></p>',
+  tool_markdown_html_placeholder: '<h1>Titel</h1>\n<p>Hallo <strong>Welt</strong></p>',
   tool_markdown_input_label: 'Markdown-Eingabe',
   tool_markdown_large_warn: 'Sehr großer Text (>200k Zeichen). Die Umwandlung kann langsam sein — kürzeren Ausschnitt versuchen.',
   tool_markdown_loss_hint:
@@ -42,7 +42,7 @@ const de: SiteLangDict = {
   tool_markdown_md_output_label: 'Markdown-Ausgabe',
   tool_markdown_need_lib: 'Konvertierungsbibliothek konnte nicht geladen werden. Verbindung prüfen und neu laden.',
   tool_markdown_placeholder:
-    '# Titel\\n\\nBasis-Markdown: **fett**, Listen und Codeblöcke.\\n\\n- Punkt 1\\n- Punkt 2\\n\\n```js\\nconsole.log(\'Hallo Markdown\');\\n```',
+    '# Titel\n\nBasis-Markdown: **fett**, Listen und Codeblöcke.\n\n- Punkt 1\n- Punkt 2\n\n```js\nconsole.log(\'Hallo Markdown\');\n```',
   tool_markdown_preview_label: 'HTML-Vorschau',
   tool_markdown_rules_intro:
     'Was die Umwandlung abdeckt: welche Markdown-Syntax unterstützt wird, wie HTML bereinigt wird und wie Ihr eingefügter Text lokal verarbeitet wird.',
@@ -51,9 +51,9 @@ const de: SiteLangDict = {
   tool_markdown_rules_item_md_html: 'Nach HTML: CommonMark parsen, danach DOMPurify vor Anzeige/Export.',
   tool_markdown_rules_privacy: 'Eingefügter Text bleibt clientseitig. CDN-Download ist kein Upload Ihres Dokuments.',
   tool_markdown_rules_title: 'Regeln je Richtung',
-  tool_markdown_sample_html: '<h1>Titel</h1>\\n<p>Hallo <strong>Welt</strong></p>',
+  tool_markdown_sample_html: '<h1>Titel</h1>\n<p>Hallo <strong>Welt</strong></p>',
   tool_markdown_sample_md:
-    '# Titel\\n\\nBasis-Markdown: **fett**, Listen und Codeblöcke.\\n\\n- Punkt 1\\n- Punkt 2\\n\\n```js\\nconsole.log(\'Hallo Markdown\');\\n```',
+    '# Titel\n\nBasis-Markdown: **fett**, Listen und Codeblöcke.\n\n- Punkt 1\n- Punkt 2\n\n```js\nconsole.log(\'Hallo Markdown\');\n```',
   tool_markdown_tab_html_md: 'HTML → Markdown',
   tool_markdown_tab_md_html: 'Markdown → HTML',
   tool_markdown_title: 'Markdown zu HTML bereinigen — und zurück zu Markdown',

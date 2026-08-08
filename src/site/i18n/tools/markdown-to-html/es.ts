@@ -35,7 +35,7 @@ const es: SiteLangDict = {
     'Una pestaña por sentido. Escribes a la izquierda y ves el resultado a la derecha sin subir el texto. En HTML puedes llevarte un fragmento o un documento mínimo; en Markdown obtienes texto plano.',
   tool_markdown_how_title: 'Pasos rápidos',
   tool_markdown_html_input_label: 'Entrada HTML',
-  tool_markdown_html_placeholder: '<h1>Título</h1>\\n<p>Hola <strong>mundo</strong></p>',
+  tool_markdown_html_placeholder: '<h1>Título</h1>\n<p>Hola <strong>mundo</strong></p>',
   tool_markdown_input_label: 'Entrada Markdown',
   tool_markdown_large_warn: 'Pegado muy grande (>200k caracteres). La conversión puede ir lenta: prueba un fragmento más corto.',
   tool_markdown_loss_hint:
@@ -43,7 +43,7 @@ const es: SiteLangDict = {
   tool_markdown_md_output_label: 'Salida Markdown',
   tool_markdown_need_lib: 'No se pudo cargar una librería de conversión. Revisa la conexión y recarga.',
   tool_markdown_placeholder:
-    '# Título\\n\\nMarkdown básico: **negrita**, listas y bloques de código.\\n\\n- Ítem 1\\n- Ítem 2\\n\\n```js\\nconsole.log(\'Hola Markdown\');\\n```',
+    '# Título\n\nMarkdown básico: **negrita**, listas y bloques de código.\n\n- Ítem 1\n- Ítem 2\n\n```js\nconsole.log(\'Hola Markdown\');\n```',
   tool_markdown_preview_label: 'Vista previa HTML',
   tool_markdown_rules_intro:
     'Lo que cubre la conversión: qué sintaxis de Markdown se admite, cómo se sanea el HTML y cómo se trata tu texto en local.',
@@ -54,9 +54,9 @@ const es: SiteLangDict = {
     'Hacia HTML: marked interpreta el Markdown; DOMPurify quita scripts peligrosos antes de mostrar o guardar.',
   tool_markdown_rules_privacy: 'El contenido se queda en tu pestaña. Descargar librerías por CDN no envía tu pegado.',
   tool_markdown_rules_title: 'Reglas por sentido',
-  tool_markdown_sample_html: '<h1>Título</h1>\\n<p>Hola <strong>mundo</strong></p>',
+  tool_markdown_sample_html: '<h1>Título</h1>\n<p>Hola <strong>mundo</strong></p>',
   tool_markdown_sample_md:
-    '# Título\\n\\nMarkdown básico: **negrita**, listas y bloques de código.\\n\\n- Ítem 1\\n- Ítem 2\\n\\n```js\\nconsole.log(\'Hola Markdown\');\\n```',
+    '# Título\n\nMarkdown básico: **negrita**, listas y bloques de código.\n\n- Ítem 1\n- Ítem 2\n\n```js\nconsole.log(\'Hola Markdown\');\n```',
   tool_markdown_tab_html_md: 'HTML → Markdown',
   tool_markdown_tab_md_html: 'Markdown → HTML',
   tool_markdown_title: 'Markdown a HTML (y al revés) — vista previa segura',

@@ -39,7 +39,7 @@ const id: SiteLangDict = {
     'Tempel Schema di kiri dan instance di kanan. Ajv (draft-07) mengompilasi, memvalidasi, dan mencantumkan setiap error dengan JSON Pointer. Ada contoh gagal dan valid; halaman membuka contoh gagal agar path langsung terlihat.',
   tool_json_schema_validator_how_title: 'Cara kerja',
   tool_json_schema_validator_instance_label: 'JSON instance',
-  tool_json_schema_validator_instance_placeholder: '{\\n  "sku": "A-1",\\n  "price": 9.5\\n}',
+  tool_json_schema_validator_instance_placeholder: '{ "sku": "A-1", "price": 9.5 }',
   tool_json_schema_validator_large_warn:
     'Tempelan sangat besar (>200k karakter gabungan). Bisa lambat — coba cuplikan lebih pendek.',
   tool_json_schema_validator_need_lib: 'Gagal memuat Ajv. Periksa koneksi lalu muat ulang.',
@@ -57,11 +57,11 @@ const id: SiteLangDict = {
     'Privasi: tempelan tetap di tab. CDN hanya memuat kode Ajv.',
   tool_json_schema_validator_rules_title: 'Aturan yang perlu diingat',
   tool_json_schema_validator_sample_fail: 'Contoh gagal',
-  tool_json_schema_validator_sample_instance_fail: '{\\n  "sku": "A-1"\\n}',
-  tool_json_schema_validator_sample_instance_ok: '{\\n  "sku": "A-1",\\n  "price": 9.5\\n}',
+  tool_json_schema_validator_sample_instance_fail: '{"sku":"A-1"}',
+  tool_json_schema_validator_sample_instance_ok: '{"sku":"A-1","price":9.5}',
   tool_json_schema_validator_sample_ok: 'Contoh valid',
   tool_json_schema_validator_sample_schema:
-    '{\\n  "$schema": "http://json-schema.org/draft-07/schema#",\\n  "type": "object",\\n  "required": ["sku", "price"],\\n  "properties": {\\n    "sku": { "type": "string", "minLength": 1 },\\n    "price": { "type": "number", "minimum": 0 }\\n  },\\n  "additionalProperties": false\\n}',
+    '{"$schema":"http://json-schema.org/draft-07/schema#","type":"object","required":["sku","price"],"properties":{"sku":{"type":"string","minLength":1},"price":{"type":"number","minimum":0}},"additionalProperties":false}',
   tool_json_schema_validator_schema_label: 'JSON Schema',
   tool_json_schema_validator_schema_placeholder: '{ "type": "object", "required": ["sku"] }',
   tool_json_schema_validator_title: 'Validator JSON Schema — Path draft-07 & lokal',

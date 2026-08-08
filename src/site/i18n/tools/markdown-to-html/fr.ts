@@ -34,7 +34,7 @@ const fr: SiteLangDict = {
     'Onglets = sens. Saisie à gauche, rendu local à droite. Côté HTML : fragment ou coquille minimale ; côté Markdown : texte pour dépôt ou LLM.',
   tool_markdown_how_title: 'En pratique',
   tool_markdown_html_input_label: 'Entrée HTML',
-  tool_markdown_html_placeholder: '<h1>Titre</h1>\\n<p>Bonjour <strong>le monde</strong></p>',
+  tool_markdown_html_placeholder: '<h1>Titre</h1>\n<p>Bonjour <strong>le monde</strong></p>',
   tool_markdown_input_label: 'Entrée Markdown',
   tool_markdown_large_warn:
     'Collage très volumineux (>200k caractères). La conversion peut être lente — essayez un extrait plus court.',
@@ -43,7 +43,7 @@ const fr: SiteLangDict = {
   tool_markdown_md_output_label: 'Sortie Markdown',
   tool_markdown_need_lib: 'Impossible de charger une bibliothèque de conversion. Vérifiez la connexion et rechargez.',
   tool_markdown_placeholder:
-    '# Titre\\n\\nMarkdown de base : **gras**, listes et blocs de code.\\n\\n- Élément 1\\n- Élément 2\\n\\n```js\\nconsole.log(\'Bonjour Markdown\');\\n```',
+    '# Titre\n\nMarkdown de base : **gras**, listes et blocs de code.\n\n- Élément 1\n- Élément 2\n\n```js\nconsole.log(\'Bonjour Markdown\');\n```',
   tool_markdown_preview_label: 'Aperçu HTML',
   tool_markdown_rules_intro:
     'Ce que couvre la conversion : quelle syntaxe Markdown est prise en charge, comment le HTML est nettoyé et comment votre texte collé est traité en local.',
@@ -52,9 +52,9 @@ const fr: SiteLangDict = {
   tool_markdown_rules_item_md_html: 'Vers HTML : parse CommonMark puis DOMPurify avant affichage/export.',
   tool_markdown_rules_privacy: 'Le texte collé reste ici. Charger une lib via CDN n’envoie pas votre article.',
   tool_markdown_rules_title: 'Règles selon le sens',
-  tool_markdown_sample_html: '<h1>Titre</h1>\\n<p>Bonjour <strong>le monde</strong></p>',
+  tool_markdown_sample_html: '<h1>Titre</h1>\n<p>Bonjour <strong>le monde</strong></p>',
   tool_markdown_sample_md:
-    '# Titre\\n\\nMarkdown de base : **gras**, listes et blocs de code.\\n\\n- Élément 1\\n- Élément 2\\n\\n```js\\nconsole.log(\'Bonjour Markdown\');\\n```',
+    '# Titre\n\nMarkdown de base : **gras**, listes et blocs de code.\n\n- Élément 1\n- Élément 2\n\n```js\nconsole.log(\'Bonjour Markdown\');\n```',
   tool_markdown_tab_html_md: 'HTML → Markdown',
   tool_markdown_tab_md_html: 'Markdown → HTML',
   tool_markdown_title: 'Markdown vers HTML assaini — et retour Markdown',

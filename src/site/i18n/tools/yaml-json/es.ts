@@ -43,7 +43,7 @@ const es: SiteLangDict = {
   tool_yaml_json_indent_minify: 'Minificar JSON',
   tool_yaml_json_json_input_label: 'Entrada JSON',
   tool_yaml_json_json_output_label: 'Salida JSON',
-  tool_yaml_json_json_placeholder: '{\\n  "titulo": "Hola",\\n  "count": 2\\n}',
+  tool_yaml_json_json_placeholder: '{\n  "titulo": "Hola",\n  "count": 2\n}',
   tool_yaml_json_json_safe: 'Tipos seguros JSON (yes/no sueltos como texto)',
   tool_yaml_json_large_warn: 'Pegado muy grande (>200k caracteres). Puede ir lento; prueba un trozo más corto.',
   tool_yaml_json_need_lib: 'No se pudo cargar js-yaml. Revisa la conexión y recarga.',
@@ -59,8 +59,8 @@ const es: SiteLangDict = {
     'Privacidad: tu pegado no se sube. El CDN, si carga js-yaml, solo trae código de la librería, no tu texto de config.',
   tool_yaml_json_rules_title: 'Reglas que conviene conocer',
   tool_yaml_json_sample: 'Cargar ejemplo',
-  tool_yaml_json_sample_json: '{\\n  "titulo": "Hola",\\n  "count": 2\\n}',
-  tool_yaml_json_sample_yaml: 'nombre: demo\\nactivo: true\\nlista:\\n  - a\\n  - b',
+  tool_yaml_json_sample_json: '{\n  "titulo": "Hola",\n  "count": 2\n}',
+  tool_yaml_json_sample_yaml: 'nombre: demo\nactivo: true\nlista:\n  - a\n  - b',
   tool_yaml_json_tab_json_yaml: 'JSON → YAML',
   tool_yaml_json_tab_yaml_json: 'YAML → JSON',
   tool_yaml_json_title: 'YAML a JSON (y al revés) — tipos, multi-doc, local',
@@ -70,6 +70,6 @@ const es: SiteLangDict = {
   tool_yaml_json_usecases_title: 'Para qué sirve',
   tool_yaml_json_yaml_input_label: 'Entrada YAML',
   tool_yaml_json_yaml_output_label: 'Salida YAML',
-  tool_yaml_json_yaml_placeholder: 'nombre: demo\\nactivo: true\\nlista:\\n  - a\\n  - b',
+  tool_yaml_json_yaml_placeholder: 'nombre: demo\nactivo: true\nlista:\n  - a\n  - b',
 };
 export default es;

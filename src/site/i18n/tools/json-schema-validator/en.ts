@@ -39,7 +39,7 @@ const en: SiteLangDict = {
     'Paste a JSON Schema on the left and an instance on the right. Validation compiles the Schema with Ajv (draft-07), runs the instance, and lists every error with a JSON Pointer into the instance. Failing and valid samples are one click away; the page loads a failing sample on entry so you see real paths immediately.',
   tool_json_schema_validator_how_title: 'How it works',
   tool_json_schema_validator_instance_label: 'Instance JSON',
-  tool_json_schema_validator_instance_placeholder: '{\\n  "sku": "A-1",\\n  "price": 9.5\\n}',
+  tool_json_schema_validator_instance_placeholder: '{ "sku": "A-1", "price": 9.5 }',
   tool_json_schema_validator_large_warn:
     'Very large paste (>200k characters combined). Validation may feel slow — try a shorter excerpt.',
   tool_json_schema_validator_need_lib: 'Could not load Ajv. Check your connection and refresh.',
@@ -57,11 +57,11 @@ const en: SiteLangDict = {
     'Privacy: paste stays in the tab. CDN fetch loads Ajv code only — it is not an upload of your Schema or instance.',
   tool_json_schema_validator_rules_title: 'Rules you should expect',
   tool_json_schema_validator_sample_fail: 'Failing sample',
-  tool_json_schema_validator_sample_instance_fail: '{\\n  "sku": "A-1"\\n}',
-  tool_json_schema_validator_sample_instance_ok: '{\\n  "sku": "A-1",\\n  "price": 9.5\\n}',
+  tool_json_schema_validator_sample_instance_fail: '{"sku":"A-1"}',
+  tool_json_schema_validator_sample_instance_ok: '{"sku":"A-1","price":9.5}',
   tool_json_schema_validator_sample_ok: 'Valid sample',
   tool_json_schema_validator_sample_schema:
-    '{\\n  "$schema": "http://json-schema.org/draft-07/schema#",\\n  "type": "object",\\n  "required": ["sku", "price"],\\n  "properties": {\\n    "sku": { "type": "string", "minLength": 1 },\\n    "price": { "type": "number", "minimum": 0 }\\n  },\\n  "additionalProperties": false\\n}',
+    '{"$schema":"http://json-schema.org/draft-07/schema#","type":"object","required":["sku","price"],"properties":{"sku":{"type":"string","minLength":1},"price":{"type":"number","minimum":0}},"additionalProperties":false}',
   tool_json_schema_validator_schema_label: 'JSON Schema',
   tool_json_schema_validator_schema_placeholder: '{ "type": "object", "required": ["sku"] }',
   tool_json_schema_validator_title: 'JSON Schema Validator — Draft-07 Paths & Local',

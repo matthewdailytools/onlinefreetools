@@ -54,8 +54,8 @@ const en: SiteLangDict = {
   tool_text_diff_rules_options:
     'Ignore spaces hides indent-only edits. Treat CRLF and LF the same stops whole lines lighting up when only the newline style (Windows vs Unix) changed.',
   tool_text_diff_rules_title: 'How the comparison works',
-  tool_text_diff_sample_a: 'Hello world\\nline two\\nline three',
-  tool_text_diff_sample_b: 'Hello there\\nline two\\nline three',
+  tool_text_diff_sample_a: 'Hello world\nline two\nline three',
+  tool_text_diff_sample_b: 'Hello there\nline two\nline three',
   tool_text_diff_summary: '{added} added, {removed} removed',
   tool_text_diff_swap: 'Swap sides',
   tool_text_diff_title: 'Compare Two Texts Online — Text Diff Checker',

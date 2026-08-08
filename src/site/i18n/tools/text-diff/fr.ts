@@ -54,8 +54,8 @@ const fr: SiteLangDict = {
   tool_text_diff_rules_options:
     'Ignorer les espaces masque les seuls changements d’indentation. Traiter CRLF et LF pareil évite qu’une ligne entière rougisse pour un simple saut de ligne (Windows vs Unix).',
   tool_text_diff_rules_title: 'Comment les différences sont calculées',
-  tool_text_diff_sample_a: 'Bonjour monde\\nligne deux\\nligne trois',
-  tool_text_diff_sample_b: 'Bonjour ami\\nligne deux\\nligne trois',
+  tool_text_diff_sample_a: 'Bonjour monde\nligne deux\nligne trois',
+  tool_text_diff_sample_b: 'Bonjour ami\nligne deux\nligne trois',
   tool_text_diff_summary: '{added} ajoutés, {removed} supprimés',
   tool_text_diff_swap: 'Inverser les côtés',
   tool_text_diff_usecase_1: 'Vérifier une config : comparez deux extraits .env ou YAML ligne par ligne.',

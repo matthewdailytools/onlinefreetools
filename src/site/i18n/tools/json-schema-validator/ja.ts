@@ -39,7 +39,7 @@ const ja: SiteLangDict = {
     '左に Schema、右にインスタンスを貼ります。Ajv（draft-07）がコンパイルと検証を行い、各エラーを JSON Pointer 付きで一覧します。失敗／成功サンプルがあり、入場時は失敗サンプルで実パスをすぐ見せます。',
   tool_json_schema_validator_how_title: '使い方',
   tool_json_schema_validator_instance_label: 'インスタンス JSON',
-  tool_json_schema_validator_instance_placeholder: '{\\n  "sku": "A-1",\\n  "price": 9.5\\n}',
+  tool_json_schema_validator_instance_placeholder: '{ "sku": "A-1", "price": 9.5 }',
   tool_json_schema_validator_large_warn:
     '貼り付け合計が約 20 万文字を超えると遅くなることがあります。短い抜粋で試してください。',
   tool_json_schema_validator_need_lib: 'Ajv を読み込めません。接続を確認して再読み込みしてください。',
@@ -57,11 +57,11 @@ const ja: SiteLangDict = {
     'プライバシー：貼り付けはタブ内。CDN は Ajv コードのみ取得します。',
   tool_json_schema_validator_rules_title: '想定されるルール',
   tool_json_schema_validator_sample_fail: '失敗サンプル',
-  tool_json_schema_validator_sample_instance_fail: '{\\n  "sku": "A-1"\\n}',
-  tool_json_schema_validator_sample_instance_ok: '{\\n  "sku": "A-1",\\n  "price": 9.5\\n}',
+  tool_json_schema_validator_sample_instance_fail: '{"sku":"A-1"}',
+  tool_json_schema_validator_sample_instance_ok: '{"sku":"A-1","price":9.5}',
   tool_json_schema_validator_sample_ok: '成功サンプル',
   tool_json_schema_validator_sample_schema:
-    '{\\n  "$schema": "http://json-schema.org/draft-07/schema#",\\n  "type": "object",\\n  "required": ["sku", "price"],\\n  "properties": {\\n    "sku": { "type": "string", "minLength": 1 },\\n    "price": { "type": "number", "minimum": 0 }\\n  },\\n  "additionalProperties": false\\n}',
+    '{"$schema":"http://json-schema.org/draft-07/schema#","type":"object","required":["sku","price"],"properties":{"sku":{"type":"string","minLength":1},"price":{"type":"number","minimum":0}},"additionalProperties":false}',
   tool_json_schema_validator_schema_label: 'JSON Schema',
   tool_json_schema_validator_schema_placeholder: '{ "type": "object", "required": ["sku"] }',
   tool_json_schema_validator_title: 'JSON Schema バリデータ — draft-07 のパス、ローカル',

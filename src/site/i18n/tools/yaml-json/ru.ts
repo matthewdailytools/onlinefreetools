@@ -43,7 +43,7 @@ const ru: SiteLangDict = {
   tool_yaml_json_indent_minify: 'Сжать JSON',
   tool_yaml_json_json_input_label: 'Ввод JSON',
   tool_yaml_json_json_output_label: 'Вывод JSON',
-  tool_yaml_json_json_placeholder: '{\\n  "title": "Привет",\\n  "count": 2\\n}',
+  tool_yaml_json_json_placeholder: '{\n  "title": "Привет",\n  "count": 2\n}',
   tool_yaml_json_json_safe: 'Безопасные типы JSON (оставить yes/no строками)',
   tool_yaml_json_large_warn:
     'Очень большая вставка (более ~200 тыс. символов). Преобразование может тормозить — попробуйте короткий фрагмент.',
@@ -60,8 +60,8 @@ const ru: SiteLangDict = {
     'Приватность: вставка не загружается на сервер. Запрос js-yaml с CDN скачивает только код библиотеки, не текст вашего конфига.',
   tool_yaml_json_rules_title: 'Правила, которые стоит ждать',
   tool_yaml_json_sample: 'Загрузить пример',
-  tool_yaml_json_sample_json: '{\\n  "title": "Привет",\\n  "count": 2\\n}',
-  tool_yaml_json_sample_yaml: 'имя: demo\\nвключено: true\\nэлементы:\\n  - a\\n  - b',
+  tool_yaml_json_sample_json: '{\n  "title": "Привет",\n  "count": 2\n}',
+  tool_yaml_json_sample_yaml: 'имя: demo\nвключено: true\nэлементы:\n  - a\n  - b',
   tool_yaml_json_tab_json_yaml: 'JSON → YAML',
   tool_yaml_json_tab_yaml_json: 'YAML → JSON',
   tool_yaml_json_title: 'YAML в JSON и обратно — типы, multi-doc, локально',
@@ -71,6 +71,6 @@ const ru: SiteLangDict = {
   tool_yaml_json_usecases_title: 'Когда полезно',
   tool_yaml_json_yaml_input_label: 'Ввод YAML',
   tool_yaml_json_yaml_output_label: 'Вывод YAML',
-  tool_yaml_json_yaml_placeholder: 'имя: demo\\nвключено: true\\nэлементы:\\n  - a\\n  - b',
+  tool_yaml_json_yaml_placeholder: 'имя: demo\nвключено: true\nэлементы:\n  - a\n  - b',
 };
 export default ru;

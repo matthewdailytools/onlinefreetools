@@ -34,7 +34,7 @@ const id: SiteLangDict = {
     'Tab menentukan arah. Kiri input, kanan hasil lokal. HTML bisa fragmen atau dokumen sederhana; Markdown siap untuk editor/LLM.',
   tool_markdown_how_title: 'Alur singkat',
   tool_markdown_html_input_label: 'Input HTML',
-  tool_markdown_html_placeholder: '<h1>Judul</h1>\\n<p>Halo <strong>dunia</strong></p>',
+  tool_markdown_html_placeholder: '<h1>Judul</h1>\n<p>Halo <strong>dunia</strong></p>',
   tool_markdown_input_label: 'Input Markdown',
   tool_markdown_large_warn: 'Tempelan sangat besar (>200k karakter). Konversi bisa lambat — coba cuplikan lebih pendek.',
   tool_markdown_loss_hint:
@@ -42,7 +42,7 @@ const id: SiteLangDict = {
   tool_markdown_md_output_label: 'Output Markdown',
   tool_markdown_need_lib: 'Pustaka konversi gagal dimuat. Periksa koneksi lalu muat ulang.',
   tool_markdown_placeholder:
-    '# Judul\\n\\nMarkdown dasar: **tebal**, daftar, dan blok kode.\\n\\n- Item 1\\n- Item 2\\n\\n```js\\nconsole.log(\'Halo Markdown\');\\n```',
+    '# Judul\n\nMarkdown dasar: **tebal**, daftar, dan blok kode.\n\n- Item 1\n- Item 2\n\n```js\nconsole.log(\'Halo Markdown\');\n```',
   tool_markdown_preview_label: 'Pratinjau HTML',
   tool_markdown_rules_intro:
     'Yang dicakup konversi: sintaks Markdown apa yang didukung, bagaimana HTML dibersihkan, dan bagaimana teks yang Anda tempel diproses secara lokal.',
@@ -51,9 +51,9 @@ const id: SiteLangDict = {
   tool_markdown_rules_item_md_html: 'Ke HTML: parse lalu sanitasi sebelum tampil/unduh.',
   tool_markdown_rules_privacy: 'Teks tetap di tab Anda; unduh CDN bukan unggah konten.',
   tool_markdown_rules_title: 'Aturan per arah',
-  tool_markdown_sample_html: '<h1>Judul</h1>\\n<p>Halo <strong>dunia</strong></p>',
+  tool_markdown_sample_html: '<h1>Judul</h1>\n<p>Halo <strong>dunia</strong></p>',
   tool_markdown_sample_md:
-    '# Judul\\n\\nMarkdown dasar: **tebal**, daftar, dan blok kode.\\n\\n- Item 1\\n- Item 2\\n\\n```js\\nconsole.log(\'Halo Markdown\');\\n```',
+    '# Judul\n\nMarkdown dasar: **tebal**, daftar, dan blok kode.\n\n- Item 1\n- Item 2\n\n```js\nconsole.log(\'Halo Markdown\');\n```',
   tool_markdown_tab_html_md: 'HTML → Markdown',
   tool_markdown_tab_md_html: 'Markdown → HTML',
   tool_markdown_title: 'Markdown ke HTML & sebaliknya — pratinjau aman',

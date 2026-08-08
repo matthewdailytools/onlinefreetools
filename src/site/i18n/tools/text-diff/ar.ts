@@ -52,8 +52,8 @@ const ar: SiteLangDict = {
   tool_text_diff_rules_options:
     'تجاهل المسافات يخفي تغييرات المسافة البادئة فقط. معاملة CRLF وLF بالمثل تمنع احمرار سطر كامل بسبب أسلوب السطر الجديد فقط (ويندوز مقابل يونكس).',
   tool_text_diff_rules_title: 'كيف تُحسب الفروقات',
-  tool_text_diff_sample_a: 'مرحبا بالعالم\\nالسطر الثاني\\nالسطر الثالث',
-  tool_text_diff_sample_b: 'مرحبا صديقي\\nالسطر الثاني\\nالسطر الثالث',
+  tool_text_diff_sample_a: 'مرحبا بالعالم\nالسطر الثاني\nالسطر الثالث',
+  tool_text_diff_sample_b: 'مرحبا صديقي\nالسطر الثاني\nالسطر الثالث',
   tool_text_diff_summary: 'أُضيف {added}، حُذف {removed}',
   tool_text_diff_swap: 'تبديل الجانبين',
   tool_text_diff_usecase_1: 'مراجعة إعدادات: قارن مقطعي .env أو YAML سطراً بسطر.',

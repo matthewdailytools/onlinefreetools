@@ -39,7 +39,7 @@ const fr: SiteLangDict = {
     'Collez le Schema à gauche et l’instance à droite. Ajv (draft-07) compile, valide et liste chaque erreur avec un JSON Pointer. Des exemples en échec et valides sont disponibles ; la page charge l’exemple en échec à l’ouverture.',
   tool_json_schema_validator_how_title: 'Fonctionnement',
   tool_json_schema_validator_instance_label: 'JSON d’instance',
-  tool_json_schema_validator_instance_placeholder: '{\\n  "sku": "A-1",\\n  "price": 9.5\\n}',
+  tool_json_schema_validator_instance_placeholder: '{ "sku": "A-1", "price": 9.5 }',
   tool_json_schema_validator_large_warn:
     'Collage très volumineux (>200k caractères au total). Peut être lent — essayez un extrait plus court.',
   tool_json_schema_validator_need_lib: 'Impossible de charger Ajv. Vérifiez la connexion et actualisez.',
@@ -57,11 +57,11 @@ const fr: SiteLangDict = {
     'Confidentialité : le collage reste dans l’onglet. Le CDN ne charge que le code Ajv.',
   tool_json_schema_validator_rules_title: 'Règles à prévoir',
   tool_json_schema_validator_sample_fail: 'Exemple en échec',
-  tool_json_schema_validator_sample_instance_fail: '{\\n  "sku": "A-1"\\n}',
-  tool_json_schema_validator_sample_instance_ok: '{\\n  "sku": "A-1",\\n  "price": 9.5\\n}',
+  tool_json_schema_validator_sample_instance_fail: '{"sku":"A-1"}',
+  tool_json_schema_validator_sample_instance_ok: '{"sku":"A-1","price":9.5}',
   tool_json_schema_validator_sample_ok: 'Exemple valide',
   tool_json_schema_validator_sample_schema:
-    '{\\n  "$schema": "http://json-schema.org/draft-07/schema#",\\n  "type": "object",\\n  "required": ["sku", "price"],\\n  "properties": {\\n    "sku": { "type": "string", "minLength": 1 },\\n    "price": { "type": "number", "minimum": 0 }\\n  },\\n  "additionalProperties": false\\n}',
+    '{"$schema":"http://json-schema.org/draft-07/schema#","type":"object","required":["sku","price"],"properties":{"sku":{"type":"string","minLength":1},"price":{"type":"number","minimum":0}},"additionalProperties":false}',
   tool_json_schema_validator_schema_label: 'JSON Schema',
   tool_json_schema_validator_schema_placeholder: '{ "type": "object", "required": ["sku"] }',
   tool_json_schema_validator_title: 'Validateur JSON Schema — Chemins draft-07 et local',

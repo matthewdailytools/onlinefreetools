@@ -43,7 +43,7 @@ const en: SiteLangDict = {
   tool_yaml_json_indent_minify: 'Minify JSON',
   tool_yaml_json_json_input_label: 'JSON input',
   tool_yaml_json_json_output_label: 'JSON output',
-  tool_yaml_json_json_placeholder: '{\\n  "title": "Hello",\\n  "count": 2\\n}',
+  tool_yaml_json_json_placeholder: '{\n  "title": "Hello",\n  "count": 2\n}',
   tool_yaml_json_json_safe: 'JSON-safe types (keep bare yes/no as strings)',
   tool_yaml_json_large_warn: 'Very large paste (>200k characters). Conversion may feel slow — try a shorter excerpt.',
   tool_yaml_json_need_lib: 'Could not load js-yaml. Check your connection and refresh.',
@@ -59,8 +59,8 @@ const en: SiteLangDict = {
     'Privacy: your paste is not uploaded. Fetching js-yaml from a CDN only downloads library code, not your config text.',
   tool_yaml_json_rules_title: 'Rules you should expect',
   tool_yaml_json_sample: 'Load sample',
-  tool_yaml_json_sample_json: '{\\n  "title": "Hello",\\n  "count": 2\\n}',
-  tool_yaml_json_sample_yaml: 'name: demo\\nenabled: true\\nitems:\\n  - a\\n  - b',
+  tool_yaml_json_sample_json: '{\n  "title": "Hello",\n  "count": 2\n}',
+  tool_yaml_json_sample_yaml: 'name: demo\nenabled: true\nitems:\n  - a\n  - b',
   tool_yaml_json_tab_json_yaml: 'JSON → YAML',
   tool_yaml_json_tab_yaml_json: 'YAML → JSON',
   tool_yaml_json_title: 'YAML ↔ JSON Converter — Types, Multi-doc & Local',
@@ -70,6 +70,6 @@ const en: SiteLangDict = {
   tool_yaml_json_usecases_title: 'Good fits',
   tool_yaml_json_yaml_input_label: 'YAML input',
   tool_yaml_json_yaml_output_label: 'YAML output',
-  tool_yaml_json_yaml_placeholder: 'name: demo\\nenabled: true\\nitems:\\n  - a\\n  - b',
+  tool_yaml_json_yaml_placeholder: 'name: demo\nenabled: true\nitems:\n  - a\n  - b',
 };
 export default en;

@@ -52,8 +52,8 @@ const ru: SiteLangDict = {
   tool_text_diff_rules_options:
     'Игнор пробелов скрывает правки только отступов. Считать CRLF и LF одинаковыми не даёт всей строке краснеть из‑за стиля перевода строки (Windows vs Unix).',
   tool_text_diff_rules_title: 'Как считаются различия',
-  tool_text_diff_sample_a: 'Привет мир\\nстрока два\\nстрока три',
-  tool_text_diff_sample_b: 'Привет друг\\nстрока два\\nстрока три',
+  tool_text_diff_sample_a: 'Привет мир\nстрока два\nстрока три',
+  tool_text_diff_sample_b: 'Привет друг\nстрока два\nстрока три',
   tool_text_diff_summary: 'Добавлено {added}, удалено {removed}',
   tool_text_diff_swap: 'Поменять стороны',
   tool_text_diff_usecase_1: 'Проверить конфиг: сравните фрагменты .env или YAML построчно.',

@@ -40,7 +40,7 @@ const en: SiteLangDict = {
     'Pick a tab. Left side is input; right side updates in the browser. Markdown → HTML can copy a fragment or wrap a minimal full document. HTML → Markdown yields plain text for editors and LLMs. CDN loads ≠ uploading your paste.',
   tool_markdown_how_title: 'How it works',
   tool_markdown_html_input_label: 'HTML input',
-  tool_markdown_html_placeholder: '<h1>Title</h1>\\n<p>Hello <strong>world</strong></p>',
+  tool_markdown_html_placeholder: '<h1>Title</h1>\n<p>Hello <strong>world</strong></p>',
   tool_markdown_input_label: 'Markdown input',
   tool_markdown_large_warn: 'Very large paste (>200k characters). Conversion may feel slow — try a shorter excerpt.',
   tool_markdown_loss_hint:
@@ -48,7 +48,7 @@ const en: SiteLangDict = {
   tool_markdown_md_output_label: 'Markdown output',
   tool_markdown_need_lib: 'Could not load a conversion library. Check your connection and refresh.',
   tool_markdown_placeholder:
-    '# Title\\n\\nBasic Markdown supported: **bold**, lists, and code blocks.\\n\\n- Item 1\\n- Item 2\\n\\n```js\\nconsole.log(\'Hello Markdown\');\\n```',
+    '# Title\n\nBasic Markdown supported: **bold**, lists, and code blocks.\n\n- Item 1\n- Item 2\n\n```js\nconsole.log(\'Hello Markdown\');\n```',
   tool_markdown_preview_label: 'HTML preview',
   tool_markdown_rules_intro:
     'What the conversion covers: which Markdown syntax is supported, how HTML is sanitized, and how your pasted text is handled locally.',
@@ -61,9 +61,9 @@ const en: SiteLangDict = {
   tool_markdown_rules_privacy:
     'Your paste stays client-side. Fetching marked / DOMPurify / Turndown from a CDN only delivers code, not your document.',
   tool_markdown_rules_title: 'What each direction does',
-  tool_markdown_sample_html: '<h1>Title</h1>\\n<p>Hello <strong>world</strong></p>',
+  tool_markdown_sample_html: '<h1>Title</h1>\n<p>Hello <strong>world</strong></p>',
   tool_markdown_sample_md:
-    '# Title\\n\\nBasic Markdown supported: **bold**, lists, and code blocks.\\n\\n- Item 1\\n- Item 2\\n\\n```js\\nconsole.log(\'Hello Markdown\');\\n```',
+    '# Title\n\nBasic Markdown supported: **bold**, lists, and code blocks.\n\n- Item 1\n- Item 2\n\n```js\nconsole.log(\'Hello Markdown\');\n```',
   tool_markdown_tab_html_md: 'HTML → Markdown',
   tool_markdown_tab_md_html: 'Markdown → HTML',
   tool_markdown_title: 'Markdown ↔ HTML Converter — Sanitize & Preview',

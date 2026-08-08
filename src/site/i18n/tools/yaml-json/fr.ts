@@ -43,7 +43,7 @@ const fr: SiteLangDict = {
   tool_yaml_json_indent_minify: 'Minifier le JSON',
   tool_yaml_json_json_input_label: 'Entrée JSON',
   tool_yaml_json_json_output_label: 'Sortie JSON',
-  tool_yaml_json_json_placeholder: '{\\n  "titre": "Bonjour",\\n  "compte": 2\\n}',
+  tool_yaml_json_json_placeholder: '{\n  "titre": "Bonjour",\n  "compte": 2\n}',
   tool_yaml_json_json_safe: 'Types JSON sûrs (garder yes/no nus en chaînes)',
   tool_yaml_json_large_warn:
     'Collage très volumineux (>200k caractères). La conversion peut ralentir — essayez un extrait plus court.',
@@ -60,8 +60,8 @@ const fr: SiteLangDict = {
     'Confidentialité : votre collage n’est pas envoyé. Charger js-yaml via un CDN ne télécharge que le code de la bibliothèque, pas le texte de config.',
   tool_yaml_json_rules_title: 'Règles à anticiper',
   tool_yaml_json_sample: 'Charger un exemple',
-  tool_yaml_json_sample_json: '{\\n  "titre": "Bonjour",\\n  "compte": 2\\n}',
-  tool_yaml_json_sample_yaml: 'nom: demo\\nactif: true\\néléments:\\n  - a\\n  - b',
+  tool_yaml_json_sample_json: '{\n  "titre": "Bonjour",\n  "compte": 2\n}',
+  tool_yaml_json_sample_yaml: 'nom: demo\nactif: true\néléments:\n  - a\n  - b',
   tool_yaml_json_tab_json_yaml: 'JSON → YAML',
   tool_yaml_json_tab_yaml_json: 'YAML → JSON',
   tool_yaml_json_title: 'YAML vers JSON — et retour YAML (types, multi-doc)',
@@ -73,6 +73,6 @@ const fr: SiteLangDict = {
   tool_yaml_json_usecases_title: 'Situations concrètes',
   tool_yaml_json_yaml_input_label: 'Entrée YAML',
   tool_yaml_json_yaml_output_label: 'Sortie YAML',
-  tool_yaml_json_yaml_placeholder: 'nom: demo\\nactif: true\\néléments:\\n  - a\\n  - b',
+  tool_yaml_json_yaml_placeholder: 'nom: demo\nactif: true\néléments:\n  - a\n  - b',
 };
 export default fr;

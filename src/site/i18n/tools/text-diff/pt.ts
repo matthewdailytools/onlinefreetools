@@ -52,8 +52,8 @@ const pt: SiteLangDict = {
   tool_text_diff_rules_options:
     'Ignorar espaços esconde mudanças só de indentação. Tratar CRLF e LF iguais evita que uma linha inteira fique vermelha só pelo tipo de quebra (Windows vs Unix).',
   tool_text_diff_rules_title: 'Como as diferenças são calculadas',
-  tool_text_diff_sample_a: 'Olá mundo\\nsegunda linha\\nterceira linha',
-  tool_text_diff_sample_b: 'Olá amigo\\nsegunda linha\\nterceira linha',
+  tool_text_diff_sample_a: 'Olá mundo\nsegunda linha\nterceira linha',
+  tool_text_diff_sample_b: 'Olá amigo\nsegunda linha\nterceira linha',
   tool_text_diff_summary: '{added} adicionados, {removed} removidos',
   tool_text_diff_swap: 'Trocar lados',
   tool_text_diff_usecase_1: 'Conferir config: compare trechos .env ou YAML linha a linha.',

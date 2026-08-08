@@ -37,7 +37,7 @@ const ja: SiteLangDict = {
   tool_yaml_json_indent_minify: 'JSONを圧縮',
   tool_yaml_json_json_input_label: 'JSON入力',
   tool_yaml_json_json_output_label: 'JSON出力',
-  tool_yaml_json_json_placeholder: '{\\n  "title": "こんにちは",\\n  "count": 2\\n}',
+  tool_yaml_json_json_placeholder: '{\n  "title": "こんにちは",\n  "count": 2\n}',
   tool_yaml_json_json_safe: 'JSON安全な型（裸の yes/no を文字列のまま）',
   tool_yaml_json_large_warn: '貼り付けが非常に大きいです（約20万文字超）。変換が遅くなることがあります — 短い断片を試してください。',
   tool_yaml_json_need_lib: 'js-yaml を読み込めませんでした。接続を確認して再読み込みしてください。',
@@ -49,8 +49,8 @@ const ja: SiteLangDict = {
   tool_yaml_json_rules_item_4: 'プライバシー：貼り付けはアップロードされません。CDN から js-yaml を取るのはライブラリコードの取得だけで、設定本文は送りません。',
   tool_yaml_json_rules_title: '押さえておくルール',
   tool_yaml_json_sample: 'サンプルを読み込む',
-  tool_yaml_json_sample_json: '{\\n  "title": "こんにちは",\\n  "count": 2\\n}',
-  tool_yaml_json_sample_yaml: '名前: demo\\n有効: true\\n項目:\\n  - a\\n  - b',
+  tool_yaml_json_sample_json: '{\n  "title": "こんにちは",\n  "count": 2\n}',
+  tool_yaml_json_sample_yaml: '名前: demo\n有効: true\n項目:\n  - a\n  - b',
   tool_yaml_json_tab_json_yaml: 'JSON → YAML',
   tool_yaml_json_tab_yaml_json: 'YAML → JSON',
   tool_yaml_json_title: 'YAML と JSON を相互変換（型ルール・複数ドキュメント対応）',
@@ -60,6 +60,6 @@ const ja: SiteLangDict = {
   tool_yaml_json_usecases_title: 'こんなときに',
   tool_yaml_json_yaml_input_label: 'YAML入力',
   tool_yaml_json_yaml_output_label: 'YAML出力',
-  tool_yaml_json_yaml_placeholder: '名前: demo\\n有効: true\\n項目:\\n  - a\\n  - b',
+  tool_yaml_json_yaml_placeholder: '名前: demo\n有効: true\n項目:\n  - a\n  - b',
 };
 export default ja;

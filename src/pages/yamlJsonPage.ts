@@ -365,7 +365,7 @@ export const renderYamlJsonPage = (opts: {
         URL.revokeObjectURL(url);
       }
 
-      /** 载入样例并转换 */
+      /** 载入样例并转换（样例已是真换行；勿在此写 /\\n/——会落在 TS 模板字符串里被提前转义） */
       function loadSample() {
         if (isYamlJson()) {
           yamlInput.value = sampleYaml;

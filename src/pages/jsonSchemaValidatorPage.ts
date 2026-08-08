@@ -312,17 +312,30 @@ export const renderJsonSchemaValidatorPage = (opts: {
         }
       }
 
+      /**
+       * 将紧凑 JSON 样例格式化为缩进文本（避免 i18n 里误用字面 \\n）。
+       * @param {string} raw 合法 JSON 字符串
+       * @returns {string}
+       */
+      function prettyJson(raw) {
+        try {
+          return JSON.stringify(JSON.parse(raw), null, 2);
+        } catch (e) {
+          return raw || '';
+        }
+      }
+
       /** 载入失败样例并校验（进页默认路径） */
       async function loadSampleFail() {
-        schemaInput.value = sampleSchema;
-        instanceInput.value = sampleFail;
+        schemaInput.value = prettyJson(sampleSchema);
+        instanceInput.value = prettyJson(sampleFail);
         await validate();
       }
 
       /** 载入合法样例并校验 */
       async function loadSampleOk() {
-        schemaInput.value = sampleSchema;
-        instanceInput.value = sampleOk;
+        schemaInput.value = prettyJson(sampleSchema);
+        instanceInput.value = prettyJson(sampleOk);
         await validate();
       }
 

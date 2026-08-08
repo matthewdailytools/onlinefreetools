@@ -34,7 +34,7 @@ const ru: SiteLangDict = {
     'Вкладки задают направление. Слева ввод, справа локальный результат. HTML — фрагмент или простой документ; Markdown — текст для репозитория или LLM.',
   tool_markdown_how_title: 'Как пользоваться',
   tool_markdown_html_input_label: 'Ввод HTML',
-  tool_markdown_html_placeholder: '<h1>Заголовок</h1>\\n<p>Привет <strong>мир</strong></p>',
+  tool_markdown_html_placeholder: '<h1>Заголовок</h1>\n<p>Привет <strong>мир</strong></p>',
   tool_markdown_input_label: 'Ввод Markdown',
   tool_markdown_large_warn:
     'Очень большой фрагмент (>200k символов). Преобразование может быть медленным — попробуйте короткий отрывок.',
@@ -43,7 +43,7 @@ const ru: SiteLangDict = {
   tool_markdown_md_output_label: 'Вывод Markdown',
   tool_markdown_need_lib: 'Не удалось загрузить библиотеку преобразования. Проверьте сеть и обновите страницу.',
   tool_markdown_placeholder:
-    '# Заголовок\\n\\nБазовый Markdown: **жирный**, списки и блоки кода.\\n\\n- Пункт 1\\n- Пункт 2\\n\\n```js\\nconsole.log(\'Привет Markdown\');\\n```',
+    '# Заголовок\n\nБазовый Markdown: **жирный**, списки и блоки кода.\n\n- Пункт 1\n- Пункт 2\n\n```js\nconsole.log(\'Привет Markdown\');\n```',
   tool_markdown_preview_label: 'Предпросмотр HTML',
   tool_markdown_rules_intro:
     'Что охватывают правила ниже: какой синтаксис Markdown поддерживается, как очищается HTML и как ваш вставленный текст обрабатывается локально.',
@@ -52,9 +52,9 @@ const ru: SiteLangDict = {
   tool_markdown_rules_item_md_html: 'В HTML: разбор CommonMark, затем DOMPurify до показа/сохранения.',
   tool_markdown_rules_privacy: 'Текст остаётся во вкладке. CDN не означает загрузку вашего документа на наш сервер.',
   tool_markdown_rules_title: 'Правила по направлениям',
-  tool_markdown_sample_html: '<h1>Заголовок</h1>\\n<p>Привет <strong>мир</strong></p>',
+  tool_markdown_sample_html: '<h1>Заголовок</h1>\n<p>Привет <strong>мир</strong></p>',
   tool_markdown_sample_md:
-    '# Заголовок\\n\\nБазовый Markdown: **жирный**, списки и блоки кода.\\n\\n- Пункт 1\\n- Пункт 2\\n\\n```js\\nconsole.log(\'Привет Markdown\');\\n```',
+    '# Заголовок\n\nБазовый Markdown: **жирный**, списки и блоки кода.\n\n- Пункт 1\n- Пункт 2\n\n```js\nconsole.log(\'Привет Markdown\');\n```',
   tool_markdown_tab_html_md: 'HTML → Markdown',
   tool_markdown_tab_md_html: 'Markdown → HTML',
   tool_markdown_title: 'Markdown в HTML и обратно — с очисткой',

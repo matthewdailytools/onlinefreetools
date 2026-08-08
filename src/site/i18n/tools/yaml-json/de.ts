@@ -43,7 +43,7 @@ const de: SiteLangDict = {
   tool_yaml_json_indent_minify: 'JSON minifizieren',
   tool_yaml_json_json_input_label: 'JSON-Eingabe',
   tool_yaml_json_json_output_label: 'JSON-Ausgabe',
-  tool_yaml_json_json_placeholder: '{\\n  "titel": "Hallo",\\n  "anzahl": 2\\n}',
+  tool_yaml_json_json_placeholder: '{\n  "titel": "Hallo",\n  "anzahl": 2\n}',
   tool_yaml_json_json_safe: 'JSON-sichere Typen (nacktes yes/no als String behalten)',
   tool_yaml_json_large_warn:
     'Sehr großer Paste (>200k Zeichen). Die Umwandlung kann langsam wirken — kürzeren Ausschnitt versuchen.',
@@ -60,8 +60,8 @@ const de: SiteLangDict = {
     'Privatsphäre: Ihr Paste wird nicht hochgeladen. js-yaml vom CDN lädt nur Bibliothekscode, nicht Ihren Config-Text.',
   tool_yaml_json_rules_title: 'Feste Verhaltensregeln',
   tool_yaml_json_sample: 'Beispiel laden',
-  tool_yaml_json_sample_json: '{\\n  "titel": "Hallo",\\n  "anzahl": 2\\n}',
-  tool_yaml_json_sample_yaml: 'Name: demo\\naktiv: true\\nEinträge:\\n  - a\\n  - b',
+  tool_yaml_json_sample_json: '{\n  "titel": "Hallo",\n  "anzahl": 2\n}',
+  tool_yaml_json_sample_yaml: 'Name: demo\naktiv: true\nEinträge:\n  - a\n  - b',
   tool_yaml_json_tab_json_yaml: 'JSON → YAML',
   tool_yaml_json_tab_yaml_json: 'YAML → JSON',
   tool_yaml_json_title: 'YAML zu JSON — und zurück zu YAML (Typen, Multi-Doc)',
@@ -71,6 +71,6 @@ const de: SiteLangDict = {
   tool_yaml_json_usecases_title: 'Wofür geeignet',
   tool_yaml_json_yaml_input_label: 'YAML-Eingabe',
   tool_yaml_json_yaml_output_label: 'YAML-Ausgabe',
-  tool_yaml_json_yaml_placeholder: 'Name: demo\\naktiv: true\\nEinträge:\\n  - a\\n  - b',
+  tool_yaml_json_yaml_placeholder: 'Name: demo\naktiv: true\nEinträge:\n  - a\n  - b',
 };
 export default de;

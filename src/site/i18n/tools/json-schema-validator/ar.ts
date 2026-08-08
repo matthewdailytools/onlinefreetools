@@ -39,7 +39,7 @@ const ar: SiteLangDict = {
     'الصق Schema يسارًا والمثيل يمينًا. يجمع Ajv (draft-07) الـ Schema ويتحقق ويعرض كل خطأ بـ JSON Pointer. تتوفر عينة فاشلة وصالحة؛ تُحمَّل العينة الفاشلة عند الدخول لترى مسارات حقيقية فورًا.',
   tool_json_schema_validator_how_title: 'كيف يعمل',
   tool_json_schema_validator_instance_label: 'JSON المثيل',
-  tool_json_schema_validator_instance_placeholder: '{\\n  "sku": "A-1",\\n  "price": 9.5\\n}',
+  tool_json_schema_validator_instance_placeholder: '{ "sku": "A-1", "price": 9.5 }',
   tool_json_schema_validator_large_warn:
     'لصق كبير جدًا (>200 ألف حرف معًا). قد يبطئ — جرّب مقتطفًا أقصر.',
   tool_json_schema_validator_need_lib: 'تعذّر تحميل Ajv. تحقق من الاتصال ثم حدّث الصفحة.',
@@ -57,11 +57,11 @@ const ar: SiteLangDict = {
     'الخصوصية: اللصق يبقى في التبويب. CDN يحمّل كود Ajv فقط.',
   tool_json_schema_validator_rules_title: 'قواعد متوقعة',
   tool_json_schema_validator_sample_fail: 'عينة فاشلة',
-  tool_json_schema_validator_sample_instance_fail: '{\\n  "sku": "A-1"\\n}',
-  tool_json_schema_validator_sample_instance_ok: '{\\n  "sku": "A-1",\\n  "price": 9.5\\n}',
+  tool_json_schema_validator_sample_instance_fail: '{"sku":"A-1"}',
+  tool_json_schema_validator_sample_instance_ok: '{"sku":"A-1","price":9.5}',
   tool_json_schema_validator_sample_ok: 'عينة صحيحة',
   tool_json_schema_validator_sample_schema:
-    '{\\n  "$schema": "http://json-schema.org/draft-07/schema#",\\n  "type": "object",\\n  "required": ["sku", "price"],\\n  "properties": {\\n    "sku": { "type": "string", "minLength": 1 },\\n    "price": { "type": "number", "minimum": 0 }\\n  },\\n  "additionalProperties": false\\n}',
+    '{"$schema":"http://json-schema.org/draft-07/schema#","type":"object","required":["sku","price"],"properties":{"sku":{"type":"string","minLength":1},"price":{"type":"number","minimum":0}},"additionalProperties":false}',
   tool_json_schema_validator_schema_label: 'JSON Schema',
   tool_json_schema_validator_schema_placeholder: '{ "type": "object", "required": ["sku"] }',
   tool_json_schema_validator_title: 'مدقق JSON Schema — مسارات draft-07 ومحليًا',

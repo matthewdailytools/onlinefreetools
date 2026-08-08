@@ -53,8 +53,8 @@ const es: SiteLangDict = {
   tool_text_diff_rules_options:
     'Ignorar espacios oculta cambios solo de sangría. Igualar CRLF y LF evita que toda una línea se ponga roja solo por el tipo de salto (Windows vs Unix).',
   tool_text_diff_rules_title: 'Cómo se calculan las diferencias',
-  tool_text_diff_sample_a: 'Hola mundo\\nsegunda línea\\ntercera línea',
-  tool_text_diff_sample_b: 'Hola amigo\\nsegunda línea\\ntercera línea',
+  tool_text_diff_sample_a: 'Hola mundo\nsegunda línea\ntercera línea',
+  tool_text_diff_sample_b: 'Hola amigo\nsegunda línea\ntercera línea',
   tool_text_diff_summary: '{added} añadidos, {removed} eliminados',
   tool_text_diff_swap: 'Intercambiar lados',
   tool_text_diff_usecase_1: 'Revisar configs: compara dos fragmentos .env o YAML línea a línea.',

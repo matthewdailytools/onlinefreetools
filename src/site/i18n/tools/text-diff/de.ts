@@ -54,8 +54,8 @@ const de: SiteLangDict = {
   tool_text_diff_rules_options:
     'Leerzeichen ignorieren blendet reine Einrückung aus. CRLF und LF gleich behandeln verhindert, dass ganze Zeilen rot werden, obwohl nur der Zeilenumbruch (Windows vs Unix) anders ist.',
   tool_text_diff_rules_title: 'Wie der Vergleich rechnet',
-  tool_text_diff_sample_a: 'Hallo Welt\\nZeile zwei\\nZeile drei',
-  tool_text_diff_sample_b: 'Hallo Freund\\nZeile zwei\\nZeile drei',
+  tool_text_diff_sample_a: 'Hallo Welt\nZeile zwei\nZeile drei',
+  tool_text_diff_sample_b: 'Hallo Freund\nZeile zwei\nZeile drei',
   tool_text_diff_summary: '{added} hinzugefügt, {removed} entfernt',
   tool_text_diff_swap: 'Seiten tauschen',
   tool_text_diff_usecase_1: 'Config prüfen: zwei .env- oder YAML-Ausschnitte zeilenweise vergleichen.',

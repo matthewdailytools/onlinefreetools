@@ -54,8 +54,8 @@ const id: SiteLangDict = {
   tool_text_diff_rules_options:
     'Abaikan spasi menyembunyikan perubahan indentasi saja. Samakan CRLF dan LF agar baris utuh tidak merah hanya karena gaya baris baru (Windows vs Unix).',
   tool_text_diff_rules_title: 'Cara perbedaan dihitung',
-  tool_text_diff_sample_a: 'Halo dunia\\nbaris dua\\nbaris tiga',
-  tool_text_diff_sample_b: 'Halo teman\\nbaris dua\\nbaris tiga',
+  tool_text_diff_sample_a: 'Halo dunia\nbaris dua\nbaris tiga',
+  tool_text_diff_sample_b: 'Halo teman\nbaris dua\nbaris tiga',
   tool_text_diff_summary: '{added} ditambah, {removed} dihapus',
   tool_text_diff_swap: 'Tukar sisi',
   tool_text_diff_usecase_1: 'Cek config: bandingkan cuplikan .env atau YAML baris demi baris.',

@@ -33,14 +33,14 @@ const ar: SiteLangDict = {
     'التبويب يحدد الاتجاه. أدخل يسارًا والنتيجة يمينًا محليًا. HTML: جزء أو مستند بسيط؛ Markdown: نص للمحرر أو النموذج.',
   tool_markdown_how_title: 'خطوات سريعة',
   tool_markdown_html_input_label: 'إدخال HTML',
-  tool_markdown_html_placeholder: '<h1>العنوان</h1>\\n<p>مرحبا <strong>بالعالم</strong></p>',
+  tool_markdown_html_placeholder: '<h1>العنوان</h1>\n<p>مرحبا <strong>بالعالم</strong></p>',
   tool_markdown_input_label: 'إدخال Markdown',
   tool_markdown_large_warn: 'لصق كبير جدًا (أكثر من 200 ألف حرف). قد يبطئ التحويل — جرّب مقتطفًا أقصر.',
   tool_markdown_loss_hint: 'قليل أو لا Markdown — ربما أُزيلت سكربتات أو وسوم فارغة أو ترميز غير مدعوم. راجع القواعد والأسئلة.',
   tool_markdown_md_output_label: 'مخرجات Markdown',
   tool_markdown_need_lib: 'تعذّر تحميل مكتبة التحويل. تحقق من الاتصال ثم أعد التحميل.',
   tool_markdown_placeholder:
-    '# العنوان\\n\\nMarkdown أساسي: **عريض**، قوائم، وكتل شيفرة.\\n\\n- بند 1\\n- بند 2\\n\\n```js\\nconsole.log(\'مرحبا Markdown\');\\n```',
+    '# العنوان\n\nMarkdown أساسي: **عريض**، قوائم، وكتل شيفرة.\n\n- بند 1\n- بند 2\n\n```js\nconsole.log(\'مرحبا Markdown\');\n```',
   tool_markdown_preview_label: 'معاينة HTML',
   tool_markdown_rules_intro:
     'ما تغطيه القواعد التالية: أي صيغ Markdown مدعومة، وكيف يُنظَّف HTML، وكيف يُعالَج النص الملصوق محليًا.',
@@ -49,9 +49,9 @@ const ar: SiteLangDict = {
   tool_markdown_rules_item_md_html: 'إلى HTML: تحليل ثم تنظيف قبل العرض/الحفظ.',
   tool_markdown_rules_privacy: 'النص يبقى في تبويبك؛ CDN لا يرفع مقالك.',
   tool_markdown_rules_title: 'قواعد حسب الاتجاه',
-  tool_markdown_sample_html: '<h1>العنوان</h1>\\n<p>مرحبا <strong>بالعالم</strong></p>',
+  tool_markdown_sample_html: '<h1>العنوان</h1>\n<p>مرحبا <strong>بالعالم</strong></p>',
   tool_markdown_sample_md:
-    '# العنوان\\n\\nMarkdown أساسي: **عريض**، قوائم، وكتل شيفرة.\\n\\n- بند 1\\n- بند 2\\n\\n```js\\nconsole.log(\'مرحبا Markdown\');\\n```',
+    '# العنوان\n\nMarkdown أساسي: **عريض**، قوائم، وكتل شيفرة.\n\n- بند 1\n- بند 2\n\n```js\nconsole.log(\'مرحبا Markdown\');\n```',
   tool_markdown_tab_html_md: 'HTML → Markdown',
   tool_markdown_tab_md_html: 'Markdown → HTML',
   tool_markdown_title: 'من Markdown إلى HTML الآمن — وبالعكس',

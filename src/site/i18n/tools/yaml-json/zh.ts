@@ -37,7 +37,7 @@ const zh: SiteLangDict = {
   tool_yaml_json_indent_minify: '压缩 JSON',
   tool_yaml_json_json_input_label: 'JSON 输入',
   tool_yaml_json_json_output_label: 'JSON 输出',
-  tool_yaml_json_json_placeholder: '{\\n  "标题": "你好",\\n  "数量": 2\\n}',
+  tool_yaml_json_json_placeholder: '{\n  "标题": "你好",\n  "数量": 2\n}',
   tool_yaml_json_json_safe: '安全类型（裸写 yes/no 保持字符串）',
   tool_yaml_json_large_warn: '粘贴过大（超过约 20 万字符），转换可能变慢，建议先截取片段。',
   tool_yaml_json_need_lib: 'js-yaml 加载失败，请检查网络后刷新页面。',
@@ -48,8 +48,8 @@ const zh: SiteLangDict = {
   tool_yaml_json_rules_item_4: '隐私：粘贴不会上传。若从 CDN 拉取 js-yaml，那只是下载库代码，不会把你的配置正文送出去。',
   tool_yaml_json_rules_title: '你该预期的规则',
   tool_yaml_json_sample: '载入示例',
-  tool_yaml_json_sample_json: '{\\n  "标题": "你好",\\n  "数量": 2\\n}',
-  tool_yaml_json_sample_yaml: '名称: 演示\\n开关: true\\n列表:\\n  - a\\n  - b',
+  tool_yaml_json_sample_json: '{\n  "标题": "你好",\n  "数量": 2\n}',
+  tool_yaml_json_sample_yaml: '名称: 演示\n开关: true\n列表:\n  - a\n  - b',
   tool_yaml_json_tab_json_yaml: 'JSON → YAML',
   tool_yaml_json_tab_yaml_json: 'YAML → JSON',
   tool_yaml_json_title: 'YAML ↔ JSON 互转 — 类型规则、多文档、本地处理',
@@ -59,6 +59,6 @@ const zh: SiteLangDict = {
   tool_yaml_json_usecases_title: '适合什么场景',
   tool_yaml_json_yaml_input_label: 'YAML 输入',
   tool_yaml_json_yaml_output_label: 'YAML 输出',
-  tool_yaml_json_yaml_placeholder: '名称: 演示\\n开关: true\\n列表:\\n  - a\\n  - b',
+  tool_yaml_json_yaml_placeholder: '名称: 演示\n开关: true\n列表:\n  - a\n  - b',
 };
 export default zh;

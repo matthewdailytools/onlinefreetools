@@ -39,7 +39,7 @@ const de: SiteLangDict = {
     'Links Schema, rechts Instanz einfügen. Ajv (draft-07) kompiliert, prüft und listet jeden Fehler mit JSON Pointer. Es gibt Fehler- und gültige Beispiele; beim Öffnen läuft das Fehlerbeispiel, damit echte Pfade sofort sichtbar sind.',
   tool_json_schema_validator_how_title: 'So funktioniert’s',
   tool_json_schema_validator_instance_label: 'Instanz-JSON',
-  tool_json_schema_validator_instance_placeholder: '{\\n  "sku": "A-1",\\n  "price": 9.5\\n}',
+  tool_json_schema_validator_instance_placeholder: '{ "sku": "A-1", "price": 9.5 }',
   tool_json_schema_validator_large_warn:
     'Sehr großer Paste (>200k Zeichen zusammen). Kann langsam sein — kürzeren Ausschnitt versuchen.',
   tool_json_schema_validator_need_lib: 'Ajv konnte nicht geladen werden. Verbindung prüfen und neu laden.',
@@ -57,11 +57,11 @@ const de: SiteLangDict = {
     'Privatsphäre: Paste bleibt im Tab. CDN lädt nur Ajv-Code.',
   tool_json_schema_validator_rules_title: 'Erwartete Regeln',
   tool_json_schema_validator_sample_fail: 'Fehlerbeispiel',
-  tool_json_schema_validator_sample_instance_fail: '{\\n  "sku": "A-1"\\n}',
-  tool_json_schema_validator_sample_instance_ok: '{\\n  "sku": "A-1",\\n  "price": 9.5\\n}',
+  tool_json_schema_validator_sample_instance_fail: '{"sku":"A-1"}',
+  tool_json_schema_validator_sample_instance_ok: '{"sku":"A-1","price":9.5}',
   tool_json_schema_validator_sample_ok: 'Gültiges Beispiel',
   tool_json_schema_validator_sample_schema:
-    '{\\n  "$schema": "http://json-schema.org/draft-07/schema#",\\n  "type": "object",\\n  "required": ["sku", "price"],\\n  "properties": {\\n    "sku": { "type": "string", "minLength": 1 },\\n    "price": { "type": "number", "minimum": 0 }\\n  },\\n  "additionalProperties": false\\n}',
+    '{"$schema":"http://json-schema.org/draft-07/schema#","type":"object","required":["sku","price"],"properties":{"sku":{"type":"string","minLength":1},"price":{"type":"number","minimum":0}},"additionalProperties":false}',
   tool_json_schema_validator_schema_label: 'JSON Schema',
   tool_json_schema_validator_schema_placeholder: '{ "type": "object", "required": ["sku"] }',
   tool_json_schema_validator_title: 'JSON-Schema-Validator — draft-07-Pfade, lokal',

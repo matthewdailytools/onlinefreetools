@@ -43,7 +43,7 @@ const id: SiteLangDict = {
   tool_yaml_json_indent_minify: 'Minifikasi JSON',
   tool_yaml_json_json_input_label: 'Input JSON',
   tool_yaml_json_json_output_label: 'Output JSON',
-  tool_yaml_json_json_placeholder: '{\\n  "judul": "Halo",\\n  "jumlah": 2\\n}',
+  tool_yaml_json_json_placeholder: '{\n  "judul": "Halo",\n  "jumlah": 2\n}',
   tool_yaml_json_json_safe: 'Tipe aman JSON (yes/no telanjang tetap string)',
   tool_yaml_json_large_warn: 'Tempelan sangat besar (>200k karakter). Konversi bisa terasa lambat — coba cuplikan lebih pendek.',
   tool_yaml_json_need_lib: 'Gagal memuat js-yaml. Periksa koneksi lalu muat ulang halaman.',
@@ -59,8 +59,8 @@ const id: SiteLangDict = {
     'Privasi: tempelan tidak diunggah. Mengambil js-yaml dari CDN hanya mengunduh kode pustaka, bukan teks config Anda.',
   tool_yaml_json_rules_title: 'Aturan yang perlu Anda tahu',
   tool_yaml_json_sample: 'Muat contoh',
-  tool_yaml_json_sample_json: '{\\n  "judul": "Halo",\\n  "jumlah": 2\\n}',
-  tool_yaml_json_sample_yaml: 'nama: demo\\naktif: true\\ndaftar:\\n  - a\\n  - b',
+  tool_yaml_json_sample_json: '{\n  "judul": "Halo",\n  "jumlah": 2\n}',
+  tool_yaml_json_sample_yaml: 'nama: demo\naktif: true\ndaftar:\n  - a\n  - b',
   tool_yaml_json_tab_json_yaml: 'JSON → YAML',
   tool_yaml_json_tab_yaml_json: 'YAML → JSON',
   tool_yaml_json_title: 'YAML ke JSON & sebaliknya — aturan tipe, multi-dokumen',
@@ -71,6 +71,6 @@ const id: SiteLangDict = {
   tool_yaml_json_usecases_title: 'Kapan dipakai',
   tool_yaml_json_yaml_input_label: 'Input YAML',
   tool_yaml_json_yaml_output_label: 'Output YAML',
-  tool_yaml_json_yaml_placeholder: 'nama: demo\\naktif: true\\ndaftar:\\n  - a\\n  - b',
+  tool_yaml_json_yaml_placeholder: 'nama: demo\naktif: true\ndaftar:\n  - a\n  - b',
 };
 export default id;

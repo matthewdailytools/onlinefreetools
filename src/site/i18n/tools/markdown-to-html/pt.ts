@@ -34,7 +34,7 @@ const pt: SiteLangDict = {
     'Use as abas. Entrada à esquerda, resultado à direita. No sentido HTML dá para copiar trecho ou documento simples; no sentido Markdown sai texto para Git ou LLM.',
   tool_markdown_how_title: 'Fluxo',
   tool_markdown_html_input_label: 'Entrada HTML',
-  tool_markdown_html_placeholder: '<h1>Título</h1>\\n<p>Olá <strong>mundo</strong></p>',
+  tool_markdown_html_placeholder: '<h1>Título</h1>\n<p>Olá <strong>mundo</strong></p>',
   tool_markdown_input_label: 'Entrada Markdown',
   tool_markdown_large_warn: 'Texto muito grande (>200k caracteres). A conversão pode ficar lenta — tente um trecho menor.',
   tool_markdown_loss_hint:
@@ -42,7 +42,7 @@ const pt: SiteLangDict = {
   tool_markdown_md_output_label: 'Saída Markdown',
   tool_markdown_need_lib: 'Não foi possível carregar a biblioteca de conversão. Verifique a conexão e atualize.',
   tool_markdown_placeholder:
-    '# Título\\n\\nMarkdown básico: **negrito**, listas e blocos de código.\\n\\n- Item 1\\n- Item 2\\n\\n```js\\nconsole.log(\'Olá Markdown\');\\n```',
+    '# Título\n\nMarkdown básico: **negrito**, listas e blocos de código.\n\n- Item 1\n- Item 2\n\n```js\nconsole.log(\'Olá Markdown\');\n```',
   tool_markdown_preview_label: 'Pré-visualização HTML',
   tool_markdown_rules_intro:
     'O que a conversão cobre: qual sintaxe Markdown é suportada, como o HTML é sanitizado e como seu texto colado é tratado localmente.',
@@ -51,9 +51,9 @@ const pt: SiteLangDict = {
   tool_markdown_rules_item_md_html: 'Para HTML: parse CommonMark + sanitização antes de mostrar.',
   tool_markdown_rules_privacy: 'Texto colado não sobe para o nosso servidor; CDN ≠ upload do conteúdo.',
   tool_markdown_rules_title: 'O que cada aba faz',
-  tool_markdown_sample_html: '<h1>Título</h1>\\n<p>Olá <strong>mundo</strong></p>',
+  tool_markdown_sample_html: '<h1>Título</h1>\n<p>Olá <strong>mundo</strong></p>',
   tool_markdown_sample_md:
-    '# Título\\n\\nMarkdown básico: **negrito**, listas e blocos de código.\\n\\n- Item 1\\n- Item 2\\n\\n```js\\nconsole.log(\'Olá Markdown\');\\n```',
+    '# Título\n\nMarkdown básico: **negrito**, listas e blocos de código.\n\n- Item 1\n- Item 2\n\n```js\nconsole.log(\'Olá Markdown\');\n```',
   tool_markdown_tab_html_md: 'HTML → Markdown',
   tool_markdown_tab_md_html: 'Markdown → HTML',
   tool_markdown_title: 'De Markdown para HTML — e HTML de volta a Markdown',

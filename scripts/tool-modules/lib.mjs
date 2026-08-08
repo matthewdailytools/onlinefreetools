@@ -130,7 +130,15 @@ export function parseLocaleDict(source) {
 		while (i < n) {
 			const ch = body[i];
 			if (ch === '\\') {
-				value += ch + (body[i + 1] || '');
+				const next = body[i + 1] || '';
+				/** 解析 JS 单引号字符串转义（\\n → 真换行，避免双重转义残留字面 \\n） */
+				if (next === 'n') value += '\n';
+				else if (next === 'r') value += '\r';
+				else if (next === 't') value += '\t';
+				else if (next === '\\') value += '\\';
+				else if (next === "'") value += "'";
+				else if (next === '"') value += '"';
+				else value += next;
 				i += 2;
 				continue;
 			}
@@ -141,7 +149,7 @@ export function parseLocaleDict(source) {
 			value += ch;
 			i += 1;
 		}
-		out[key] = value.replace(/\\'/g, "'").replace(/\\"/g, '"').replace(/\\\\/g, '\\');
+		out[key] = value;
 		skipWs();
 		if (body[i] === ',') i += 1;
 	}
@@ -149,11 +157,16 @@ export function parseLocaleDict(source) {
 }
 
 /**
- * Escape a string for a single-quoted TS/JS literal.
+ * Escape a string for a single-quoted TS/JS literal（含换行 → \\n）。
  * @param {string} s
  */
 export function escapeSingleQuoted(s) {
-	return s.replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+	return s
+		.replace(/\\/g, '\\\\')
+		.replace(/'/g, "\\'")
+		.replace(/\r/g, '\\r')
+		.replace(/\n/g, '\\n')
+		.replace(/\t/g, '\\t');
 }
 
 /**

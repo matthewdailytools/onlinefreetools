@@ -42,7 +42,7 @@ const ar: SiteLangDict = {
   tool_yaml_json_indent_minify: 'ضغط JSON',
   tool_yaml_json_json_input_label: 'إدخال JSON',
   tool_yaml_json_json_output_label: 'مخرجات JSON',
-  tool_yaml_json_json_placeholder: '{\\n  "title": "مرحبا",\\n  "count": 2\\n}',
+  tool_yaml_json_json_placeholder: '{\n  "title": "مرحبا",\n  "count": 2\n}',
   tool_yaml_json_json_safe: 'أنواع آمنة لـ JSON (إبقاء yes/no كنصوص)',
   tool_yaml_json_large_warn: 'لصق كبير جدًا (أكثر من نحو 200 ألف حرف). قد يبطؤ التحويل — جرّب مقتطفًا أقصر.',
   tool_yaml_json_need_lib: 'تعذّر تحميل js-yaml. تحقق من الاتصال ثم أعد التحميل.',
@@ -57,8 +57,8 @@ const ar: SiteLangDict = {
   tool_yaml_json_rules_item_4: 'الخصوصية: اللصق لا يُرفع. جلب js-yaml من CDN يحمّل كود المكتبة فقط، لا نص إعدادك.',
   tool_yaml_json_rules_title: 'ما تتوقعه من القواعد',
   tool_yaml_json_sample: 'تحميل مثال',
-  tool_yaml_json_sample_json: '{\\n  "title": "مرحبا",\\n  "count": 2\\n}',
-  tool_yaml_json_sample_yaml: 'الاسم: تجريبي\\nمفعّل: true\\nعناصر:\\n  - a\\n  - b',
+  tool_yaml_json_sample_json: '{\n  "title": "مرحبا",\n  "count": 2\n}',
+  tool_yaml_json_sample_yaml: 'الاسم: تجريبي\nمفعّل: true\nعناصر:\n  - a\n  - b',
   tool_yaml_json_tab_json_yaml: 'JSON → YAML',
   tool_yaml_json_tab_yaml_json: 'YAML → JSON',
   tool_yaml_json_title: 'من YAML إلى JSON وبالعكس — قواعد الأنواع ومحليًا',
@@ -68,6 +68,6 @@ const ar: SiteLangDict = {
   tool_yaml_json_usecases_title: 'متى يفيد',
   tool_yaml_json_yaml_input_label: 'إدخال YAML',
   tool_yaml_json_yaml_output_label: 'مخرجات YAML',
-  tool_yaml_json_yaml_placeholder: 'الاسم: تجريبي\\nمفعّل: true\\nعناصر:\\n  - a\\n  - b',
+  tool_yaml_json_yaml_placeholder: 'الاسم: تجريبي\nمفعّل: true\nعناصر:\n  - a\n  - b',
 };
 export default ar;
