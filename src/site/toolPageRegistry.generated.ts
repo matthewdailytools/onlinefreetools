@@ -5,6 +5,7 @@
 import type { SiteLang } from './i18n';
 import { renderAddWatermarkPage } from '../pages/addWatermarkPage';
 import { renderAddWwwToDnsPage } from '../pages/addWwwToDnsPage';
+import { renderBrandColorTokenPackPage } from '../pages/brandColorTokenPackPage';
 import { renderColorFromImagePage } from '../pages/colorFromImagePage';
 import { renderCsvJsonPage } from '../pages/csvJsonPage';
 import { renderFlipImagePage } from '../pages/flipImagePage';
@@ -34,6 +35,7 @@ import { renderJsonSchemaValidatorPage } from '../pages/jsonSchemaValidatorPage'
 import { renderMarkdownToHtmlPage } from '../pages/markdownToHtmlPage';
 import { renderSquareFeetPage } from '../pages/squareFeetPage';
 import { renderTextDiffPage } from '../pages/textDiffPage';
+import { renderWcagContrastCheckerPage } from '../pages/wcagContrastCheckerPage';
 import { renderWebsiteHeadersPage } from '../pages/websiteHeadersPage';
 import { renderYamlJsonPage } from '../pages/yamlJsonPage';
 
@@ -47,6 +49,7 @@ export type ToolPageRenderFn = (
 export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'add-watermark': (lang, defaultLang, enabled) => renderAddWatermarkPage({ lang, defaultLang, enabledLangs: enabled }),
 	'add-www-to-dns': (lang, defaultLang, enabled) => renderAddWwwToDnsPage({ lang, defaultLang, enabledLangs: enabled }),
+	'brand-color-token-pack': (lang, defaultLang, enabled) => renderBrandColorTokenPackPage({ lang, defaultLang, enabledLangs: enabled }),
 	'color-from-image': (lang, defaultLang, enabled) => renderColorFromImagePage({ lang, defaultLang, enabledLangs: enabled }),
 	'csv-json': (lang, defaultLang, enabled) => renderCsvJsonPage({ lang, defaultLang, enabledLangs: enabled }),
 	'flip-image': (lang, defaultLang, enabled) => renderFlipImagePage({ lang, defaultLang, enabledLangs: enabled }),
@@ -76,6 +79,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'markdown-to-html': (lang, defaultLang, enabled) => renderMarkdownToHtmlPage({ lang, defaultLang, enabledLangs: enabled }),
 	'square-feet': (lang, defaultLang, enabled) => renderSquareFeetPage({ lang, defaultLang, enabledLangs: enabled }),
 	'text-diff': (lang, defaultLang, enabled) => renderTextDiffPage({ lang, defaultLang, enabledLangs: enabled }),
+	'wcag-contrast-checker': (lang, defaultLang, enabled) => renderWcagContrastCheckerPage({ lang, defaultLang, enabledLangs: enabled }),
 	'website-headers': (lang, defaultLang, _enabled) => renderWebsiteHeadersPage(lang, defaultLang),
 	'yaml-json': (lang, defaultLang, enabled) => renderYamlJsonPage({ lang, defaultLang, enabledLangs: enabled }),
 };

@@ -465,20 +465,26 @@ export const buildToolJsonLd = (opts: {
 			? 'tool_category_calculator'
 			: opts.tool.category === 'image'
 				? 'tool_category_image'
-				: 'tool_category_developer';
+				: opts.tool.category === 'design'
+					? 'tool_category_design'
+					: 'tool_category_developer';
 	const categoryLabel = t(opts.lang, categoryLabelKey as keyof typeof import('../../site/i18n/en').default);
 	const categoryAnchor =
 		opts.tool.category === 'calculator'
 			? 'cat-calculator'
 			: opts.tool.category === 'image'
 				? 'cat-image'
-				: 'cat-dev';
+				: opts.tool.category === 'design'
+					? 'cat-design'
+					: 'cat-dev';
 	const applicationCategory =
 		opts.tool.category === 'developer'
 			? 'DeveloperApplication'
 			: opts.tool.category === 'image'
 				? 'MultimediaApplication'
-				: 'UtilitiesApplication';
+				: opts.tool.category === 'design'
+					? 'DesignApplication'
+					: 'UtilitiesApplication';
 	const data = {
 		'@context': 'https://schema.org',
 		'@graph': [

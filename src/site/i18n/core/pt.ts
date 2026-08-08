@@ -56,6 +56,7 @@ const pt: SiteLangDict = {
   result_title: 'Resultado',
   sqft_unit: 'sq ft',
   status_label: 'Status',
+  tool_category_design: 'Ferramentas de design',
   tool_feedback_body:
     'Algo pouco claro, quebrado ou faltando? Escreva abaixo — lemos cada mensagem sobre estas ferramentas.',
   tool_feedback_cta: 'Abrir no app de e-mail',

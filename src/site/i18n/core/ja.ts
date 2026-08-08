@@ -55,6 +55,7 @@ const ja: SiteLangDict = {
   result_title: '結果',
   sqft_unit: 'sq ft',
   status_label: 'ステータス',
+  tool_category_design: 'デザインツール',
   tool_feedback_body: '分かりにくい点、不具合、不足があれば下にメッセージを書いてください。ツールに関する内容はすべて確認します。',
   tool_feedback_cta: 'メールアプリで開く',
   tool_feedback_email_label: 'メール',

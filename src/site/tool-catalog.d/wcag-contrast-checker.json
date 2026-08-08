@@ -1,0 +1,21 @@
+{
+  "slug": "wcag-contrast-checker",
+  "path": "/tools/wcag-contrast-checker",
+  "category": "design",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_wcag_contrast_checker_title",
+  "homeTitleKey": "tool_wcag_contrast_checker_title",
+  "homeDescKey": "tool_wcag_contrast_checker_desc",
+  "faqPrefix": "tool_wcag_contrast_checker",
+  "related": [
+    "brand-color-token-pack",
+    "color-from-image"
+  ],
+  "logo": "/icons/tools/wcag-contrast-checker.svg",
+  "page": {
+    "module": "../pages/wcagContrastCheckerPage",
+    "export": "renderWcagContrastCheckerPage",
+    "style": "opts"
+  }
+}

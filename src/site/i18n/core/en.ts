@@ -61,6 +61,7 @@ const en: SiteLangDict = {
   sqft_unit: 'sq ft',
   status_label: 'Status',
   tool_category_calculator: 'Calculators',
+  tool_category_design: 'Design tools',
   tool_category_developer: 'Developer tools',
   tool_category_image: 'Image editing tools',
   tool_disclaimer_title: 'Important notice',

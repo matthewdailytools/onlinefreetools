@@ -9,8 +9,8 @@
   "homeDescKey": "tool_color_from_image_desc",
   "faqPrefix": "tool_color_from_image",
   "related": [
-    "how-to-calculate-gradient",
-    "image-crop"
+    "brand-color-token-pack",
+    "wcag-contrast-checker"
   ],
   "logo": "/icons/tools/color-from-image.svg",
   "page": {

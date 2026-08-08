@@ -276,6 +276,65 @@ const pt: SiteLangDict = {
   tool_bmi_usecases_title: 'Quando ajuda',
   tool_bmi_weight_label: 'Peso (kg)',
   tool_bmi_weight_placeholder: 'Digite o peso em quilogramas',
+  tool_brand_color_token_pack_article:
+    'Uma cor base da marca vira um pacote completo: HEX, RGB, HSL, OKLCH, escala 50–950, pares de texto preto/branco por degrau e variáveis CSS ou JSON copiáveis — tudo no navegador.',
+  tool_brand_color_token_pack_bad_hex: 'Digite um HEX válido de 3 ou 6 dígitos (ex.: #2563EB).',
+  tool_brand_color_token_pack_base_label: 'Cor base',
+  tool_brand_color_token_pack_clear: 'Limpar',
+  tool_brand_color_token_pack_contrast_col: 'Texto',
+  tool_brand_color_token_pack_copy_css: 'Copiar CSS',
+  tool_brand_color_token_pack_copy_done: 'Copiado',
+  tool_brand_color_token_pack_copy_json: 'Copiar JSON',
+  tool_brand_color_token_pack_desc: 'Uma cor base → HEX/RGB/HSL/OKLCH, escala 50–950, pares de contraste, variáveis CSS — local.',
+  tool_brand_color_token_pack_description:
+    'Monte um pacote de tokens de cor da marca a partir de uma base no navegador. Passos: escolha a base (HEX ou seletor), veja HEX/RGB/HSL/OKLCH, gere a escala 50–950 com pares preto/branco em cada degrau e copie variáveis CSS ou JSON. Ao abrir, carrega o azul de exemplo #2563eb — nada é enviado.',
+  tool_brand_color_token_pack_empty: 'Gere os tokens primeiro e depois copie CSS ou JSON.',
+  tool_brand_color_token_pack_example:
+    'Carregue a amostra (#2563EB). O bloco de espaços mostra HEX, RGB, HSL e OKLCH da base; a grade lista 50–950 com texto preto ou branco recomendado e razão de contraste. Copiar CSS retorna :root { --color-50: …; … --color-950: …; } pronto para sua folha de estilo.',
+  tool_brand_color_token_pack_example_title: 'Exemplo',
+  tool_brand_color_token_pack_faq_a1: 'Não. Cálculo e exportação rodam nesta aba — suas cores não vão para servidor.',
+  tool_brand_color_token_pack_faq_a2:
+    'O degrau 500 é sua cor base. Degraus mais claros (50–400) misturam com branco; mais escuros (600–950) com preto. A mistura é linear em sRGB para manter o matiz estável.',
+  tool_brand_color_token_pack_faq_a3:
+    'Cada amostra compara texto preto e branco sobre aquele fundo e escolhe o de maior contraste WCAG. Os rótulos mostram a razão e se texto normal provavelmente atinge AA (4,5:1) ou AA grande (3:1).',
+  tool_brand_color_token_pack_faq_a4:
+    'Copiar CSS gera propriedades :root (--color-50 a --color-950). Copiar JSON entrega a mesma escala mais os espaços da base em dados estruturados para tokens de design.',
+  tool_brand_color_token_pack_faq_a5:
+    'São sugestões rápidas preto/branco por degrau. Para pares personalizados ou níveis WCAG exatos, abra o verificador de contraste WCAG e cole o HEX de qualquer amostra.',
+  tool_brand_color_token_pack_faq_q1: 'Minha cor sai do navegador?',
+  tool_brand_color_token_pack_faq_q2: 'Como a escala 50–950 é construída?',
+  tool_brand_color_token_pack_faq_q3: 'O que significam as colunas de contraste?',
+  tool_brand_color_token_pack_faq_q4: 'O que Copiar CSS e Copiar JSON incluem?',
+  tool_brand_color_token_pack_faq_q5: 'Quando usar o verificador de contraste?',
+  tool_brand_color_token_pack_generate: 'Gerar',
+  tool_brand_color_token_pack_how_body:
+    'Digite ou escolha uma cor base da marca. A página mostra HEX, RGB, HSL e OKLCH, gera escala de 11 degraus (50–950) com prévia de UI e recomenda texto preto ou branco com razão em cada amostra. Copie variáveis CSS ou JSON quando a rampa servir — tudo local.',
+  tool_brand_color_token_pack_how_title: 'Como funciona',
+  tool_brand_color_token_pack_preview_label: 'Prévia de UI',
+  tool_brand_color_token_pack_rules_body: 'O que esperar da escala, espaços de cor, dicas de contraste e privacidade.',
+  tool_brand_color_token_pack_rules_item_1:
+    'Degrau 500 é sua base. Abaixo clareia misturando com branco; acima escurece com preto (mistura linear em sRGB).',
+  tool_brand_color_token_pack_rules_item_2:
+    'O bloco base lista HEX, RGB, HSL e OKLCH da mesma cor. OKLCH usa conversão sRGB → linear → OKLab para alinhar com CSS moderno.',
+  tool_brand_color_token_pack_rules_item_3:
+    'Cada amostra recomenda texto preto ou branco — o que der maior contraste naquele fundo. Razões seguem luminância relativa WCAG; rótulos AA são orientativos.',
+  tool_brand_color_token_pack_rules_item_4: 'Privacidade: geração, prévia e cópia ocorrem localmente nesta aba — sem upload das cores da marca.',
+  tool_brand_color_token_pack_rules_title: 'Regras que você deve saber',
+  tool_brand_color_token_pack_sample: 'Amostra',
+  tool_brand_color_token_pack_scale_label: 'Escala de cor (50–950)',
+  tool_brand_color_token_pack_spaces_label: 'Espaços de cor (base)',
+  tool_brand_color_token_pack_text_on: 'Texto sobre base',
+  tool_brand_color_token_pack_title: 'Pacote de tokens de cor da marca — escala HEX HSL OKLCH',
+  tool_brand_color_token_pack_ui_body: 'Corpo de prévia sobre sua cor base com texto sugerido.',
+  tool_brand_color_token_pack_ui_btn: 'Ação principal',
+  tool_brand_color_token_pack_ui_title: 'Título de prévia',
+  tool_brand_color_token_pack_usecase_1:
+    'Design systems: parta de um HEX de marca e entregue rampa 50–950 coerente com variáveis CSS para componentes.',
+  tool_brand_color_token_pack_usecase_2:
+    'Modo escuro: use tons claros (50–300) em superfícies e tons profundos (700–950) para texto sobre a marca.',
+  tool_brand_color_token_pack_usecase_3: 'Handoff para dev: copie tokens JSON ou propriedades CSS em vez de redigitar HEX de um print.',
+  tool_brand_color_token_pack_usecases_title: 'Bons casos',
+  tool_category_design: 'Ferramentas de design',
   tool_color_from_image_article: 'Paleta de cores dominantes local com média regional ao clicar e HEX/RGB/HSL copiáveis.',
   tool_color_from_image_choose_file: 'Escolher imagem',
   tool_color_from_image_clear: 'Limpar',
@@ -2026,6 +2085,71 @@ const pt: SiteLangDict = {
   tool_text_diff_usecase_2: 'Ajustar um prompt: modo palavra para ver o que entrou ou saiu.',
   tool_text_diff_usecase_3: 'Revisar texto ou tradução: confirme que só as frases previstas mudaram.',
   tool_text_diff_usecases_title: 'Quando usar',
+  tool_wcag_contrast_checker_aa_large: 'AA texto grande',
+  tool_wcag_contrast_checker_aa_normal: 'AA texto normal',
+  tool_wcag_contrast_checker_aaa_large: 'AAA texto grande',
+  tool_wcag_contrast_checker_aaa_normal: 'AAA texto normal',
+  tool_wcag_contrast_checker_article:
+    'Verificador de contraste WCAG com luminância relativa, selos AA/AAA, pré-visualização e sugestões de cor acessíveis — tudo no navegador.',
+  tool_wcag_contrast_checker_bad_hex: 'Informe cores HEX válidas (#RGB ou #RRGGBB).',
+  tool_wcag_contrast_checker_bg_label: 'Fundo',
+  tool_wcag_contrast_checker_check: 'Verificar',
+  tool_wcag_contrast_checker_clear: 'Limpar',
+  tool_wcag_contrast_checker_copy: 'Copiar resumo',
+  tool_wcag_contrast_checker_copy_done: 'Copiado',
+  tool_wcag_contrast_checker_desc: 'Confira a razão de contraste e o cumprimento AA/AAA — sem enviar cores ao servidor.',
+  tool_wcag_contrast_checker_description:
+    'Escolha cor de texto e fundo para ver a razão WCAG e o resultado AA/AAA em texto normal e grande. Passos: selecione ou digite HEX, clique Verificar, leia a razão e os selos, troque ou teste sugestões. Exemplo: #767676 sobre #ffffff ≈ 4,54:1 — passa AA em texto normal, não atinge AAA em texto normal. As cores ficam no navegador.',
+  tool_wcag_contrast_checker_empty: 'Faça uma verificação antes de copiar.',
+  tool_wcag_contrast_checker_example:
+    'Carregue o exemplo: primeiro plano #767676 sobre fundo #ffffff dá cerca de 4,54:1. AA texto normal aprova (≥4,5:1), AA texto grande aprova (≥3:1), AAA texto normal reprova (≥7:1), AAA texto grande aprova (≥4,5:1). Troque as cores para ver a razão mudar.',
+  tool_wcag_contrast_checker_example_title: 'Exemplo',
+  tool_wcag_contrast_checker_fail: 'Reprovado',
+  tool_wcag_contrast_checker_faq_a1:
+    'AA texto normal exige pelo menos 4,5:1; AA texto grande (18 pt regular ou 14 pt negrito) 3:1; AAA texto normal 7:1; AAA texto grande 4,5:1. Esta página mostra os quatro selos de uma vez.',
+  tool_wcag_contrast_checker_faq_a2:
+    'Texto grande tolera menos contraste por ser mais legível. WCAG considera grande quando ≥18 pt regular ou ≥14 pt em negrito. A pré-visualização traz linha grande e normal para comparar.',
+  tool_wcag_contrast_checker_faq_a3: 'Não. O cálculo roda no navegador. Confira a aba Rede — os valores de cor não são enviados.',
+  tool_wcag_contrast_checker_faq_a4:
+    'Abaixo de 4,5:1, a ferramenta pode sugerir um primeiro plano ou fundo mais claro/escuro que atinja AA em texto normal. São pontos de partida misturando com branco ou preto, não paletas finais de marca.',
+  tool_wcag_contrast_checker_faq_a5:
+    'Use esta página para validar qualquer par texto/fundo. Para paleta de marca com tokens semânticos, abra a ferramenta de tokens de cor; também dá para amostrar cores de uma foto com a extração de cores.',
+  tool_wcag_contrast_checker_faq_q1: 'Quais são os limites de contraste WCAG?',
+  tool_wcag_contrast_checker_faq_q2: 'O que conta como texto grande?',
+  tool_wcag_contrast_checker_faq_q3: 'Minhas cores saem do navegador?',
+  tool_wcag_contrast_checker_faq_q4: 'Como usar as sugestões de cor?',
+  tool_wcag_contrast_checker_faq_q5: 'Qual a relação com tokens de marca?',
+  tool_wcag_contrast_checker_fg_label: 'Primeiro plano',
+  tool_wcag_contrast_checker_how_body:
+    'Defina texto e fundo com o seletor ou digitando HEX. A página converte sRGB em luminância relativa, calcula a razão e exibe Aprovado/Reprovado para AA e AAA (texto normal e grande). Troque o par, copie um resumo ou aplique uma sugestão quando o contraste for baixo.',
+  tool_wcag_contrast_checker_how_title: 'Como funciona',
+  tool_wcag_contrast_checker_pass: 'Aprovado',
+  tool_wcag_contrast_checker_preview_label: 'Pré-visualização',
+  tool_wcag_contrast_checker_preview_large: 'Amostra de texto grande',
+  tool_wcag_contrast_checker_preview_normal: 'Amostra de texto normal',
+  tool_wcag_contrast_checker_ratio_label: 'Razão de contraste',
+  tool_wcag_contrast_checker_rules_body:
+    'O contraste WCAG usa luminância relativa — não só o matiz. Consulte estas regras se a razão parecer estranha.',
+  tool_wcag_contrast_checker_rules_item_1:
+    'A luminância relativa L vem dos canais sRGB após a curva de linearização WCAG. Razão = (Lclaro + 0,05) / (Lescuro + 0,05).',
+  tool_wcag_contrast_checker_rules_item_2:
+    'Limites: AA texto normal 4,5:1, AA texto grande 3:1, AAA texto normal 7:1, AAA texto grande 4,5:1. Uma razão alimenta os quatro selos.',
+  tool_wcag_contrast_checker_rules_item_3:
+    'Somente HEX sRGB opaco (#RGB ou #RRGGBB). HEX inválido gera erro; primeiro plano e fundo iguais dão 1:1 e reprovam todos os níveis.',
+  tool_wcag_contrast_checker_rules_item_4: 'Privacidade: as cores são processadas localmente nesta aba — nada vai ao servidor.',
+  tool_wcag_contrast_checker_rules_title: 'Regras esperadas',
+  tool_wcag_contrast_checker_sample: 'Exemplo',
+  tool_wcag_contrast_checker_suggest_bg: 'Teste fundo {hex} com este primeiro plano para AA texto normal.',
+  tool_wcag_contrast_checker_suggest_fg: 'Teste primeiro plano {hex} neste fundo para AA texto normal.',
+  tool_wcag_contrast_checker_suggest_label: 'Sugestões',
+  tool_wcag_contrast_checker_suggest_none: 'Já atende AA em texto normal (4,5:1).',
+  tool_wcag_contrast_checker_swap: 'Trocar',
+  tool_wcag_contrast_checker_title: 'Verificador de contraste WCAG — razão AA/AAA',
+  tool_wcag_contrast_checker_usecase_1: 'UI: valide corpo de texto e rótulos sobre o fundo da marca antes da entrega.',
+  tool_wcag_contrast_checker_usecase_2: 'Botões e chips: confira branco sobre cor ou o inverso para AA normal ou grande.',
+  tool_wcag_contrast_checker_usecase_3:
+    'Modo escuro: troque superfícies claras/escuras e garanta que texto secundário mantenha 4,5:1 ou 3:1 no grande.',
+  tool_wcag_contrast_checker_usecases_title: 'Bons momentos',
   tool_yaml_json_article:
     'YAML ↔ JSON nos dois sentidos, com regras de tipo claras, política multi-documento e notas honestas de processamento local. Feito para trocar configs, não para outra URL rasa.',
   tool_yaml_json_clear: 'Limpar',

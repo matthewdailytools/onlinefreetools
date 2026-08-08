@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img">
+  <!-- WCAG contrast: split circle AA -->
+  <rect width="32" height="32" rx="8" fill="#1e3a5f"/>
+  <path d="M16 6a10 10 0 1 0 0 20" fill="#f4f7fb"/>
+  <path d="M16 6a10 10 0 0 1 0 20" fill="#243447"/>
+  <text x="16" y="19" text-anchor="middle" font-size="7" font-family="ui-sans-serif,system-ui,sans-serif" font-weight="700" fill="#7dd3fc">AA</text>
+</svg>

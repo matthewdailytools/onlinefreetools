@@ -3,12 +3,13 @@
  */
 import type { ToolCategory } from './tools';
 
-/** 分类在首页与导航中的展示顺序（图片编辑工具优先）。 */
-export const TOOL_CATEGORY_ORDER: ToolCategory[] = ['image', 'developer', 'calculator'];
+/** 分类在首页与导航中的展示顺序（图片编辑工具优先，设计工具次之）。 */
+export const TOOL_CATEGORY_ORDER: ToolCategory[] = ['image', 'design', 'developer', 'calculator'];
 
 /** 各分类在首页 `#all-tools` 下的锚点 id。 */
 export const CATEGORY_ANCHORS: Record<ToolCategory, string> = {
 	image: 'cat-image',
+	design: 'cat-design',
 	developer: 'cat-dev',
 	calculator: 'cat-calculator',
 };
@@ -25,8 +26,13 @@ export const getCategoryAnchor = (category: ToolCategory): string => CATEGORY_AN
  */
 export const getCategoryRuntimeLabelKey = (
 	category: ToolCategory
-): 'tool_category_image' | 'tool_category_developer' | 'tool_category_calculator' => {
+):
+	| 'tool_category_image'
+	| 'tool_category_design'
+	| 'tool_category_developer'
+	| 'tool_category_calculator' => {
 	if (category === 'image') return 'tool_category_image';
+	if (category === 'design') return 'tool_category_design';
 	if (category === 'calculator') return 'tool_category_calculator';
 	return 'tool_category_developer';
 };
@@ -37,8 +43,9 @@ export const getCategoryRuntimeLabelKey = (
  */
 export const getCategoryHomeLabelKey = (
 	category: ToolCategory
-): 'home_cat_image' | 'home_cat_dev' | 'home_cat_calculator' => {
+): 'home_cat_image' | 'home_cat_design' | 'home_cat_dev' | 'home_cat_calculator' => {
 	if (category === 'image') return 'home_cat_image';
+	if (category === 'design') return 'home_cat_design';
 	if (category === 'calculator') return 'home_cat_calculator';
 	return 'home_cat_dev';
 };
@@ -46,12 +53,21 @@ export const getCategoryHomeLabelKey = (
 /** 首页各分类区块的标题/描述/导语 i18n 键。 */
 export const CATEGORY_HOME_SECTION_KEYS: Record<
 	ToolCategory,
-	{ labelKey: 'home_cat_image' | 'home_cat_dev' | 'home_cat_calculator'; descKey: string; blurbKey: string }
+	{
+		labelKey: 'home_cat_image' | 'home_cat_design' | 'home_cat_dev' | 'home_cat_calculator';
+		descKey: string;
+		blurbKey: string;
+	}
 > = {
 	image: {
 		labelKey: 'home_cat_image',
 		descKey: 'home_cat_image_desc',
 		blurbKey: 'home_cat_image_blurb',
+	},
+	design: {
+		labelKey: 'home_cat_design',
+		descKey: 'home_cat_design_desc',
+		blurbKey: 'home_cat_design_blurb',
 	},
 	developer: {
 		labelKey: 'home_cat_dev',

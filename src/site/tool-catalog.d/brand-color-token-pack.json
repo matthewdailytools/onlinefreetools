@@ -1,0 +1,21 @@
+{
+  "slug": "brand-color-token-pack",
+  "path": "/tools/brand-color-token-pack",
+  "category": "design",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_brand_color_token_pack_title",
+  "homeTitleKey": "tool_brand_color_token_pack_title",
+  "homeDescKey": "tool_brand_color_token_pack_desc",
+  "faqPrefix": "tool_brand_color_token_pack",
+  "related": [
+    "wcag-contrast-checker",
+    "color-from-image"
+  ],
+  "logo": "/icons/tools/brand-color-token-pack.svg",
+  "page": {
+    "module": "../pages/brandColorTokenPackPage",
+    "export": "renderBrandColorTokenPackPage",
+    "style": "opts"
+  }
+}

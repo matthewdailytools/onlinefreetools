@@ -302,7 +302,68 @@ const en: SiteLangDict = {
   tool_bmi_usecases_title: 'When to use it',
   tool_bmi_weight_label: 'Weight (kg)',
   tool_bmi_weight_placeholder: 'Enter weight in kilograms',
+  tool_brand_color_token_pack_article:
+    'One brand base color becomes a full token pack: HEX, RGB, HSL, OKLCH, a 50–950 scale, per-step black/white text pairs, and copyable CSS variables or JSON — all in your browser.',
+  tool_brand_color_token_pack_bad_hex: 'Enter a valid 3- or 6-digit HEX color (e.g. #2563EB).',
+  tool_brand_color_token_pack_base_label: 'Base color',
+  tool_brand_color_token_pack_clear: 'Clear',
+  tool_brand_color_token_pack_contrast_col: 'Text',
+  tool_brand_color_token_pack_copy_css: 'Copy CSS',
+  tool_brand_color_token_pack_copy_done: 'Copied',
+  tool_brand_color_token_pack_copy_json: 'Copy JSON',
+  tool_brand_color_token_pack_desc: 'One base color → HEX/RGB/HSL/OKLCH, 50–950 scale, contrast pairs, CSS variables — local.',
+  tool_brand_color_token_pack_description:
+    'Build a brand color token pack from one base in your browser. Steps: pick a base (HEX or color picker), read HEX/RGB/HSL/OKLCH, generate a 50–950 scale with black/white text pairs on each step, then copy CSS variables or JSON. Sample blue #2563eb loads on open — nothing uploads.',
+  tool_brand_color_token_pack_empty: 'Generate tokens first, then copy CSS or JSON.',
+  tool_brand_color_token_pack_example:
+    'Load the sample (#2563EB). The spaces block shows HEX, RGB, HSL, and OKLCH for the base; the scale grid lists 50–950 swatches with recommended black or white text and a contrast ratio. Copy CSS gives :root { --color-50: …; … --color-950: …; } ready for your stylesheet.',
+  tool_brand_color_token_pack_example_title: 'Example',
+  tool_brand_color_token_pack_faq_a1: 'No. Color math and exports run entirely in this tab — your picks are not sent to a server.',
+  tool_brand_color_token_pack_faq_a2:
+    'Step 500 is your base color. Lighter steps (50–400) mix toward white; darker steps (600–950) mix toward black. The mix is linear in sRGB, which keeps hue stable for quick design-system ramps.',
+  tool_brand_color_token_pack_faq_a3:
+    'Each swatch compares black and white text on that background and picks whichever gives the higher WCAG contrast ratio. Labels show the ratio and whether normal text likely meets AA (4.5:1) or large text AA (3:1).',
+  tool_brand_color_token_pack_faq_a4:
+    'Copy CSS outputs :root custom properties (--color-50 through --color-950). Copy JSON gives the same scale plus base spaces as structured data for design tokens or build scripts.',
+  tool_brand_color_token_pack_faq_a5:
+    'These are quick black/white suggestions per step. For custom foreground/background pairs or exact WCAG levels, open the WCAG contrast checker and paste any swatch HEX.',
+  tool_brand_color_token_pack_faq_q1: 'Does my color leave the browser?',
+  tool_brand_color_token_pack_faq_q2: 'How is the 50–950 scale built?',
+  tool_brand_color_token_pack_faq_q3: 'What do the contrast columns mean?',
+  tool_brand_color_token_pack_faq_q4: 'What do Copy CSS and Copy JSON include?',
+  tool_brand_color_token_pack_faq_q5: 'When should I use the contrast checker instead?',
+  tool_brand_color_token_pack_generate: 'Generate',
+  tool_brand_color_token_pack_how_body:
+    'Enter or pick one brand base color. The page shows that color in HEX, RGB, HSL, and OKLCH, then builds an 11-step scale (50–950) with a live UI preview. Each swatch lists a recommended black or white text color and contrast ratio. Copy CSS variables or JSON when the ramp looks right — all processing stays local.',
+  tool_brand_color_token_pack_how_title: 'How it works',
+  tool_brand_color_token_pack_preview_label: 'UI preview',
+  tool_brand_color_token_pack_rules_body: 'What to expect from the scale, color spaces, contrast hints, and privacy.',
+  tool_brand_color_token_pack_rules_item_1:
+    'Scale step 500 matches your base. Steps below 500 lighten by mixing toward white; steps above 500 darken by mixing toward black (linear sRGB blend).',
+  tool_brand_color_token_pack_rules_item_2:
+    'The base block lists HEX, RGB, HSL, and OKLCH for the same color. OKLCH uses sRGB → linear → OKLab conversion so you can compare with modern CSS color syntax.',
+  tool_brand_color_token_pack_rules_item_3:
+    'Each scale swatch recommends black or white text — whichever yields the higher contrast ratio on that background. Ratios follow WCAG relative luminance; AA labels are hints, not a full audit.',
+  tool_brand_color_token_pack_rules_item_4:
+    'Privacy: generation, preview, and clipboard copy all run locally in this tab. No upload of your brand colors.',
+  tool_brand_color_token_pack_rules_title: 'Rules you should expect',
+  tool_brand_color_token_pack_sample: 'Sample',
+  tool_brand_color_token_pack_scale_label: 'Color scale (50–950)',
+  tool_brand_color_token_pack_spaces_label: 'Color spaces (base)',
+  tool_brand_color_token_pack_text_on: 'Text on base',
+  tool_brand_color_token_pack_title: 'Brand Color Token Pack — HEX HSL OKLCH Scale',
+  tool_brand_color_token_pack_ui_body: 'Preview body on your brand base with suggested text color.',
+  tool_brand_color_token_pack_ui_btn: 'Primary action',
+  tool_brand_color_token_pack_ui_title: 'Preview heading',
+  tool_brand_color_token_pack_usecase_1:
+    'Design systems: start from one brand HEX and ship a consistent 50–950 ramp plus CSS variables for components.',
+  tool_brand_color_token_pack_usecase_2:
+    'Dark mode planning: scan lighter tints (50–300) for surfaces and deeper shades (700–950) for text-on-brand decisions.',
+  tool_brand_color_token_pack_usecase_3:
+    'Handoff to dev: copy JSON tokens or CSS custom properties instead of retyping HEX values from a screenshot.',
+  tool_brand_color_token_pack_usecases_title: 'Good fits',
   tool_category_calculator: 'Calculators',
+  tool_category_design: 'Design tools',
   tool_category_developer: 'Developer tools',
   tool_category_image: 'Image editing tools',
   tool_color_from_image_article: 'Local dominant-color palette plus click-to-pick region average with copyable HEX/RGB/HSL.',
@@ -2145,6 +2206,72 @@ const en: SiteLangDict = {
   tool_text_diff_usecase_2: 'Review prompt edits: use word mode to see which wording was added or removed.',
   tool_text_diff_usecase_3: 'Proofread copy or translations: confirm only the intended sentences changed.',
   tool_text_diff_usecases_title: 'When to use it',
+  tool_wcag_contrast_checker_aa_large: 'AA large text',
+  tool_wcag_contrast_checker_aa_normal: 'AA normal text',
+  tool_wcag_contrast_checker_aaa_large: 'AAA large text',
+  tool_wcag_contrast_checker_aaa_normal: 'AAA normal text',
+  tool_wcag_contrast_checker_article:
+    'WCAG contrast ratio checker with relative luminance math, AA/AAA badges for normal and large text, live preview, and accessible color suggestions — all local.',
+  tool_wcag_contrast_checker_bad_hex: 'Enter valid #RGB or #RRGGBB hex colors.',
+  tool_wcag_contrast_checker_bg_label: 'Background',
+  tool_wcag_contrast_checker_check: 'Check',
+  tool_wcag_contrast_checker_clear: 'Clear',
+  tool_wcag_contrast_checker_copy: 'Copy summary',
+  tool_wcag_contrast_checker_copy_done: 'Copied',
+  tool_wcag_contrast_checker_desc: 'Check foreground/background contrast ratio and AA/AAA pass/fail — all in your browser.',
+  tool_wcag_contrast_checker_description:
+    'Pick foreground and background colors to see the WCAG contrast ratio and AA/AAA pass/fail for normal and large text. Steps: choose or type HEX, click Check, read the ratio and badges, swap or try suggestions. Example: #767676 on #ffffff ≈ 4.54:1 — passes AA for normal text, fails AAA for normal text. Colors stay in your browser.',
+  tool_wcag_contrast_checker_empty: 'Run a check first, then copy.',
+  tool_wcag_contrast_checker_example:
+    'Load the sample: foreground #767676 on background #ffffff gives about 4.54:1. AA normal text passes (needs 4.5:1), AA large text passes (needs 3:1), AAA normal text fails (needs 7:1), AAA large text passes (needs 4.5:1). Swap colors to see how the ratio flips.',
+  tool_wcag_contrast_checker_example_title: 'Example',
+  tool_wcag_contrast_checker_fail: 'Fail',
+  tool_wcag_contrast_checker_faq_a1:
+    'AA normal text needs at least 4.5:1. AA large text (18 pt regular or 14 pt bold and up) needs 3:1. AAA normal text needs 7:1; AAA large text needs 4.5:1. This page shows all four badges from one ratio.',
+  tool_wcag_contrast_checker_faq_a2:
+    'Large text is easier to read at lower contrast. WCAG treats text as large when it is at least 18 pt (24 px) regular, or 14 pt (18.66 px) bold. The preview shows both a large and a normal line so you can judge both thresholds.',
+  tool_wcag_contrast_checker_faq_a3:
+    'No. Contrast math runs entirely in your browser. Check the Network panel — your color values are not uploaded.',
+  tool_wcag_contrast_checker_faq_a4:
+    'When the pair falls below 4.5:1, the tool may suggest a darker or lighter foreground or background that reaches AA for normal text. Suggestions mix toward black or white on the side that failed — starting points, not brand-perfect palettes.',
+  tool_wcag_contrast_checker_faq_a5:
+    'Use this page to validate any foreground/background pair. For a full brand palette with semantic tokens, open the brand color token pack tool; you can also sample colors from a photo with the color-from-image tool first.',
+  tool_wcag_contrast_checker_faq_q1: 'What are the WCAG contrast thresholds?',
+  tool_wcag_contrast_checker_faq_q2: 'What counts as large text?',
+  tool_wcag_contrast_checker_faq_q3: 'Do my colors leave the browser?',
+  tool_wcag_contrast_checker_faq_q4: 'How should I use the color suggestions?',
+  tool_wcag_contrast_checker_faq_q5: 'How does this relate to brand color tokens?',
+  tool_wcag_contrast_checker_fg_label: 'Foreground',
+  tool_wcag_contrast_checker_how_body:
+    'Pick a foreground and background with the color picker or type a HEX code. The page converts sRGB to relative luminance, computes the contrast ratio, and shows Pass/Fail badges for AA and AAA (normal and large text). Swap to reverse the pair, copy a text summary, or apply a suggested tweak when contrast is too low.',
+  tool_wcag_contrast_checker_how_title: 'How it works',
+  tool_wcag_contrast_checker_pass: 'Pass',
+  tool_wcag_contrast_checker_preview_label: 'Live preview',
+  tool_wcag_contrast_checker_preview_large: 'Large text sample',
+  tool_wcag_contrast_checker_preview_normal: 'Normal text sample',
+  tool_wcag_contrast_checker_ratio_label: 'Contrast ratio',
+  tool_wcag_contrast_checker_rules_body:
+    'WCAG contrast is based on relative luminance — not hue alone. Use this checklist when a ratio looks surprising.',
+  tool_wcag_contrast_checker_rules_item_1:
+    'Relative luminance L comes from sRGB channels after the WCAG linearization curve. Contrast ratio = (Llighter + 0.05) / (Ldarker + 0.05).',
+  tool_wcag_contrast_checker_rules_item_2:
+    'Thresholds: AA normal text 4.5:1, AA large text 3:1, AAA normal text 7:1, AAA large text 4.5:1. One ratio drives all four badges on this page.',
+  tool_wcag_contrast_checker_rules_item_3:
+    'Only opaque sRGB HEX (#RGB or #RRGGBB) is supported here. Invalid HEX shows an error; identical foreground and background give 1:1 and fail every level.',
+  tool_wcag_contrast_checker_rules_item_4: 'Privacy: color values are processed locally in this tab — nothing is sent to a server.',
+  tool_wcag_contrast_checker_rules_title: 'Rules you should expect',
+  tool_wcag_contrast_checker_sample: 'Sample',
+  tool_wcag_contrast_checker_suggest_bg: 'Try background {hex} with this foreground for AA normal text.',
+  tool_wcag_contrast_checker_suggest_fg: 'Try foreground {hex} on this background for AA normal text.',
+  tool_wcag_contrast_checker_suggest_label: 'Suggestions',
+  tool_wcag_contrast_checker_suggest_none: 'Already meets AA for normal text (4.5:1).',
+  tool_wcag_contrast_checker_swap: 'Swap',
+  tool_wcag_contrast_checker_title: 'WCAG Contrast Checker — AA/AAA Ratio Online',
+  tool_wcag_contrast_checker_usecase_1: 'UI design: verify body copy and labels against a brand background before handoff.',
+  tool_wcag_contrast_checker_usecase_2: 'Buttons and chips: check white-on-color or color-on-white pairs for AA normal or large text.',
+  tool_wcag_contrast_checker_usecase_3:
+    'Dark mode: swap light/dark surfaces and confirm secondary text still clears 4.5:1 or 3:1 for large type.',
+  tool_wcag_contrast_checker_usecases_title: 'Good fits',
   tool_yaml_json_article:
     'Bidirectional YAML ↔ JSON with explicit typing rules, multi-document policy, and honest local-processing notes. Built for config interchange, not a second thin URL.',
   tool_yaml_json_clear: 'Clear',

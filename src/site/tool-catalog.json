@@ -34,6 +34,22 @@
     "logo": "/icons/tools/add-www-to-dns.svg"
   },
   {
+    "slug": "brand-color-token-pack",
+    "path": "/tools/brand-color-token-pack",
+    "category": "design",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_brand_color_token_pack_title",
+    "homeTitleKey": "tool_brand_color_token_pack_title",
+    "homeDescKey": "tool_brand_color_token_pack_desc",
+    "faqPrefix": "tool_brand_color_token_pack",
+    "related": [
+      "wcag-contrast-checker",
+      "color-from-image"
+    ],
+    "logo": "/icons/tools/brand-color-token-pack.svg"
+  },
+  {
     "slug": "color-from-image",
     "path": "/tools/color-from-image",
     "category": "image",
@@ -44,8 +60,8 @@
     "homeDescKey": "tool_color_from_image_desc",
     "faqPrefix": "tool_color_from_image",
     "related": [
-      "how-to-calculate-gradient",
-      "image-crop"
+      "brand-color-token-pack",
+      "wcag-contrast-checker"
     ],
     "logo": "/icons/tools/color-from-image.svg"
   },
@@ -520,6 +536,22 @@
       "website-headers"
     ],
     "logo": "/icons/tools/text-diff.svg"
+  },
+  {
+    "slug": "wcag-contrast-checker",
+    "path": "/tools/wcag-contrast-checker",
+    "category": "design",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_wcag_contrast_checker_title",
+    "homeTitleKey": "tool_wcag_contrast_checker_title",
+    "homeDescKey": "tool_wcag_contrast_checker_desc",
+    "faqPrefix": "tool_wcag_contrast_checker",
+    "related": [
+      "brand-color-token-pack",
+      "color-from-image"
+    ],
+    "logo": "/icons/tools/wcag-contrast-checker.svg"
   },
   {
     "slug": "website-headers",

@@ -22,6 +22,8 @@
 - [图片优化](https://onlinefreetools.org/zh/tools/image-optimizer) - 本地 MozJPEG / WebP / AVIF / OxiPNG 编码器优化，滑动对照后下载
 - [图片裁剪与改尺寸](https://onlinefreetools.org/zh/tools/image-crop) - 本地框选裁剪、比例与常用像素预设，导出 JPEG/WebP/PNG
 - [图片主色提取](https://onlinefreetools.org/zh/tools/color-from-image) - 本地提取主色板，也可点击预览取区域色，复制 HEX/RGB/HSL
+- [WCAG 对比度检测](https://onlinefreetools.org/zh/tools/wcag-contrast-checker) - 前景/背景对比度比率与 AA/AAA 判定，浏览器本地计算
+- [品牌色 Token 包](https://onlinefreetools.org/zh/tools/brand-color-token-pack) - 一主色生成 HEX/HSL/OKLCH、50–950 色阶与对比配对，可复制 CSS 变量
 - [多图拼接](https://onlinefreetools.org/zh/tools/image-merge) - 本地把多张照片合成一张拼图，再下载
 - [图片叠加 Logo](https://onlinefreetools.org/zh/tools/image-overlay) - 本地把 Logo 或 PNG 叠到底图上，再下载
 - [图片翻转](https://onlinefreetools.org/zh/tools/flip-image) - 本地水平/垂直镜像照片
@@ -58,6 +60,8 @@ Below are our available online tools with their links (English version):
 - [Image Optimizer](https://onlinefreetools.org/tools/image-optimizer) - Optimize with MozJPEG, WebP, AVIF, or OxiPNG locally — compare with a slider, then download
 - [Crop & Resize Image](https://onlinefreetools.org/tools/image-crop) - Crop with aspect presets and common output sizes — runs locally in your browser
 - [Extract Colors from Image](https://onlinefreetools.org/tools/color-from-image) - Local palette and click-to-pick colors — copy HEX, RGB, or HSL
+- [WCAG Contrast Checker](https://onlinefreetools.org/tools/wcag-contrast-checker) - Foreground/background contrast ratio with AA/AAA badges — local in the browser
+- [Brand Color Token Pack](https://onlinefreetools.org/tools/brand-color-token-pack) - One base color → HEX/HSL/OKLCH, 50–950 scale, contrast pairs, CSS variables
 - [Merge Images](https://onlinefreetools.org/tools/image-merge) - Combine photos into one collage locally, then download
 - [Overlay Images](https://onlinefreetools.org/tools/image-overlay) - Put a logo or PNG on a photo locally, then download
 - [Flip Image](https://onlinefreetools.org/tools/flip-image) - Mirror a photo horizontally or vertically locally

@@ -60,6 +60,7 @@ const ru: SiteLangDict = {
   result_title: 'Результат',
   sqft_unit: 'sq ft',
   status_label: 'Статус',
+  tool_category_design: 'Инструменты дизайна',
   tool_feedback_body:
     'Что-то неясно, сломано или отсутствует? Напишите сообщение ниже — мы читаем каждую заметку об этих инструментах.',
   tool_feedback_cta: 'Открыть в почтовом приложении',

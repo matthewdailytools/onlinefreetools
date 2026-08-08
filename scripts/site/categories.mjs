@@ -2,26 +2,28 @@
  * 构建侧工具分类顺序与首页锚点（与 src/site/categories.ts 保持同步）。
  */
 
-/** @type {Array<'image'|'developer'|'calculator'>} */
-export const TOOL_CATEGORY_ORDER = ['image', 'developer', 'calculator'];
+/** @type {Array<'image'|'design'|'developer'|'calculator'>} */
+export const TOOL_CATEGORY_ORDER = ['image', 'design', 'developer', 'calculator'];
 
 /** @type {Record<string, string>} */
 export const CATEGORY_ANCHORS = {
   image: 'cat-image',
+  design: 'cat-design',
   developer: 'cat-dev',
   calculator: 'cat-calculator',
 };
 
 /**
- * @param {'image'|'developer'|'calculator'} category
+ * @param {'image'|'design'|'developer'|'calculator'} category
  */
 export const getCategoryAnchor = (category) => CATEGORY_ANCHORS[category];
 
 /**
- * @param {'image'|'developer'|'calculator'} category
+ * @param {'image'|'design'|'developer'|'calculator'} category
  */
 export const getCategoryHomeLabelKey = (category) => {
   if (category === 'image') return 'home_cat_image';
+  if (category === 'design') return 'home_cat_design';
   if (category === 'calculator') return 'home_cat_calculator';
   return 'home_cat_dev';
 };
@@ -32,6 +34,11 @@ export const CATEGORY_HOME_SECTION_KEYS = {
     labelKey: 'home_cat_image',
     descKey: 'home_cat_image_desc',
     blurbKey: 'home_cat_image_blurb',
+  },
+  design: {
+    labelKey: 'home_cat_design',
+    descKey: 'home_cat_design_desc',
+    blurbKey: 'home_cat_design_blurb',
   },
   developer: {
     labelKey: 'home_cat_dev',

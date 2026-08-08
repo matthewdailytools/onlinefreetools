@@ -56,6 +56,7 @@ const ar: SiteLangDict = {
   result_title: 'النتيجة',
   sqft_unit: 'قدم مربع',
   status_label: 'الحالة',
+  tool_category_design: 'أدوات التصميم',
   tool_feedback_body: 'هل هناك غموض أو خلل أو نقص؟ اكتب رسالة أدناه — نقرأ كل ملاحظة عن هذه الأدوات.',
   tool_feedback_cta: 'فتح في تطبيق البريد',
   tool_feedback_email_label: 'البريد',
