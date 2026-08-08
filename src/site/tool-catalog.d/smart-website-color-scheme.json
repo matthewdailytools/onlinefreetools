@@ -1,0 +1,21 @@
+{
+  "slug": "smart-website-color-scheme",
+  "path": "/tools/smart-website-color-scheme",
+  "category": "design",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_smart_website_color_scheme_title",
+  "homeTitleKey": "tool_smart_website_color_scheme_title",
+  "homeDescKey": "tool_smart_website_color_scheme_desc",
+  "faqPrefix": "tool_smart_website_color_scheme",
+  "related": [
+    "brand-color-token-pack",
+    "wcag-contrast-checker"
+  ],
+  "logo": "/icons/tools/smart-website-color-scheme.svg",
+  "page": {
+    "module": "../pages/smartWebsiteColorSchemePage",
+    "export": "renderSmartWebsiteColorSchemePage",
+    "style": "opts"
+  }
+}

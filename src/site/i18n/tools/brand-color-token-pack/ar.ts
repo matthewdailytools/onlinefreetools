@@ -52,7 +52,7 @@ const ar: SiteLangDict = {
   tool_brand_color_token_pack_scale_label: 'مقياس اللون (50–950)',
   tool_brand_color_token_pack_spaces_label: 'مساحات اللون (الأساس)',
   tool_brand_color_token_pack_text_on: 'نص على الأساس',
-  tool_brand_color_token_pack_title: 'حزمة رموز ألوان العلامة — مقياس HEX HSL OKLCH',
+  tool_brand_color_token_pack_title: 'توليد مقياس ألوان العلامة — لوحة 50–950 ورموز CSS',
   tool_brand_color_token_pack_ui_body: 'نص معاينة على لون العلامة الأساسي مع لون نص مقترح.',
   tool_brand_color_token_pack_ui_btn: 'إجراء رئيسي',
   tool_brand_color_token_pack_ui_title: 'عنوان المعاينة',

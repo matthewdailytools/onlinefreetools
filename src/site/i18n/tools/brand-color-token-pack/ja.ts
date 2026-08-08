@@ -54,7 +54,7 @@ const ja: SiteLangDict = {
   tool_brand_color_token_pack_scale_label: 'カラースケール（50–950）',
   tool_brand_color_token_pack_spaces_label: '色彩空間（基準色）',
   tool_brand_color_token_pack_text_on: '基準色上の文字',
-  tool_brand_color_token_pack_title: 'ブランドカラートークン — HEX/HSL/OKLCHスケール',
+  tool_brand_color_token_pack_title: 'ブランド色スケールを生成 — 50–950パレットとCSSトークン',
   tool_brand_color_token_pack_ui_body: '基準色背景での本文プレビューと推奨文字色。',
   tool_brand_color_token_pack_ui_btn: '主要ボタン',
   tool_brand_color_token_pack_ui_title: 'プレビュー見出し',

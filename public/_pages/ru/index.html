@@ -115,7 +115,7 @@
           <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ru/tools/add-watermark">Текстовый водяной знак — в браузере</a></li><li><a class="dropdown-item" href="/ru/tools/color-from-image">Извлечь цвета из фото — палитра и выбор кликом</a></li><li><a class="dropdown-item" href="/ru/tools/flip-image">Отразить изображение — горизонт./верт.</a></li><li><a class="dropdown-item" href="/ru/tools/image-border">Рамка для фото — цвет и толщина</a></li><li><a class="dropdown-item" href="/ru/tools/image-compress">Сжатие изображений — длинная сторона, качество и целевой размер (локально)</a></li><li><a class="dropdown-item" href="/ru/tools/image-crop">Обрезка и изменение размера — локально</a></li><li><a class="dropdown-item" href="/ru/tools/image-exif">Просмотр и удаление EXIF с фото — GPS, камера, локально</a></li><li><a class="dropdown-item" href="/ru/tools/image-format-converter">Конвертер форматов изображений — PNG JPEG WebP AVIF BMP GIF ICO SVG</a></li><li><a class="dropdown-item" href="/ru/tools/image-grayscale">Оттенки серого — локально</a></li><li><a class="dropdown-item" href="/ru/tools/image-merge">Объединить фото — собрать коллаж из нескольких снимков</a></li><li><a class="dropdown-item" href="/ru/tools/image-optimizer">Оптимизация изображений — WebP, AVIF и MozJPEG локально</a></li><li><a class="dropdown-item" href="/ru/tools/image-overlay">Наложить лого — на фото в браузере</a></li><li><a class="dropdown-item" href="/ru/tools/image-to-base64">Изображение ↔ Base64</a></li><li><a class="dropdown-item" href="/ru/tools/images-to-gif">Изображения в GIF — короткая анимация</a></li><li><a class="dropdown-item" href="/ru/tools/images-to-pdf">Изображения в PDF — по странице на фото</a></li><li><a class="dropdown-item" href="/ru/tools/images-to-ppt">Изображения в PowerPoint — слайд на фото</a></li><li><a class="dropdown-item" href="/ru/tools/images-to-word">Изображения в Word — локальный DOCX</a></li></ul>
         </li><li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Инструменты дизайна</a>
-          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ru/tools/brand-color-token-pack">Пакет цветовых токенов бренда — шкала HEX HSL OKLCH</a></li><li><a class="dropdown-item" href="/ru/tools/wcag-contrast-checker">Проверка контраста WCAG — коэффициент AA/AAA</a></li></ul>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ru/tools/brand-color-token-pack">Сгенерировать шкалу цвета бренда — палитра 50–950 и CSS‑токены</a></li><li><a class="dropdown-item" href="/ru/tools/smart-website-color-scheme">Цветовая схема сайта — семантические CSS-токены</a></li><li><a class="dropdown-item" href="/ru/tools/wcag-contrast-checker">Проверка контраста WCAG — коэффициент AA/AAA</a></li></ul>
         </li><li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Для разработчиков</a>
           <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ru/tools/add-www-to-dns">Добавить WWW в DNS — A/CNAME и гайды</a></li><li><a class="dropdown-item" href="/ru/tools/csv-json">Конвертер CSV ↔ JSON — типы, разделитель, локально</a></li><li><a class="dropdown-item" href="/ru/tools/html-entity">Кодирование и декодирование HTML-сущностей — локально</a></li><li><a class="dropdown-item" href="/ru/tools/indexnow">IndexNow — отправка URL в Bing, проверка ключа и коды</a></li><li><a class="dropdown-item" href="/ru/tools/ip-address">Узнать свой IP — Публичный адрес (IPv4/IPv6)</a></li><li><a class="dropdown-item" href="/ru/tools/json-schema-validator">Валидатор JSON Schema — пути draft-07, локально</a></li><li><a class="dropdown-item" href="/ru/tools/markdown-to-html">Markdown ↔ HTML</a></li><li><a class="dropdown-item" href="/ru/tools/text-diff">Сравнить тексты онлайн</a></li><li><a class="dropdown-item" href="/ru/tools/website-headers">Проверка HTTP-заголовков</a></li><li><a class="dropdown-item" href="/ru/tools/yaml-json">YAML в JSON и обратно — типы, multi-doc, локально</a></li></ul>
@@ -219,7 +219,7 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/brand-color-token-pack.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
-          <h3 class="card-title home-card-title home-card-title--featured mb-0">Пакет цветовых токенов бренда — шкала HEX HSL OKLCH</h3>
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">Сгенерировать шкалу цвета бренда — палитра 50–950 и CSS‑токены</h3>
         </div>
         <p class="card-text home-card-desc flex-grow-1">Один базовый → HEX/RGB/HSL/OKLCH, шкала 50–950, пары контраста, CSS‑переменные — локально.</p>
         <a href="/ru/tools/brand-color-token-pack" class="mt-auto btn btn-primary btn-sm">Открыть</a>
@@ -554,6 +554,18 @@
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/smart-website-color-scheme.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">Цветовая схема сайта — семантические CSS-токены</h3>
+        </div>
+        <p class="card-text home-card-desc flex-grow-1">Схема сайта: нейтрали + семантические CSS-токены, нейтральные ссылки и фиксированные статусы — локально.</p>
+        <a href="/ru/tools/smart-website-color-scheme" class="mt-auto btn btn-primary btn-sm">Открыть</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/square-feet.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
           <h3 class="card-title home-card-title home-card-title--featured mb-0">Квадратные футы в м² — Для жилья и ремонта</h3>
         </div>
@@ -842,10 +854,22 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/brand-color-token-pack.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
-          <h3 class="card-title home-card-title mb-0">Пакет цветовых токенов бренда — шкала HEX HSL OKLCH</h3>
+          <h3 class="card-title home-card-title mb-0">Сгенерировать шкалу цвета бренда — палитра 50–950 и CSS‑токены</h3>
         </div>
         <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">Один базовый → HEX/RGB/HSL/OKLCH, шкала 50–950, пары контраста, CSS‑переменные — локально.</p>
         <a href="/ru/tools/brand-color-token-pack" class="mt-auto btn btn-primary btn-sm">Открыть</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/smart-website-color-scheme.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <h3 class="card-title home-card-title mb-0">Цветовая схема сайта — семантические CSS-токены</h3>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">Схема сайта: нейтрали + семантические CSS-токены, нейтральные ссылки и фиксированные статусы — локально.</p>
+        <a href="/ru/tools/smart-website-color-scheme" class="mt-auto btn btn-primary btn-sm">Открыть</a>
       </div>
     </div>
   </div>

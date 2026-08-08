@@ -6,39 +6,47 @@
 ## 共用禁词
 
 - [x] 清单前检索覆盖已做
-- [x] title 非参数枚举腔（写 brand tokens / scale / 多空间）
+- [x] title 非参数枚举腔（写动作 + 色阶/色板结果；HEX/HSL/OKLCH 不进 H1）
 - [x] 不拆仅 HEX 转换意图进 title
+- [x] title 为动作向（Generate / 生成 / Extraer 同簇写法）
 
 ### en
-- 检索词：brand color tokens, color scale 50-950, hex hsl oklch, palette generator
-- Title：Brand Color Token Pack — HEX HSL OKLCH Scale
+- 检索词：brand color scale generator, color palette generator, 50-950 palette, css color tokens
+- Title：Generate Brand Color Scale — 50–950 Palette & CSS Tokens
 - 按钮：Generate / Sample / Copy CSS / Copy JSON / Clear
 
 ### zh
-- 检索词：品牌色 token, 色阶, HEX HSL OKLCH, 配色导出
-- Title：品牌色 Token 包 — HEX/HSL/OKLCH 色阶
+- 检索词：品牌色色阶生成, 色板生成, 调色板生成器, 50-950 色阶, CSS 变量
+- Title：品牌色色阶生成 — 一主色出 50–950 色板与 CSS 变量
 - 按钮：生成 / 样例 / 复制 CSS / 复制 JSON / 清空
 
 ### es
-- Title：Pack de tokens de color de marca — escala HEX HSL OKLCH
+- 检索词：generar escala de color, paleta de marca, tokens CSS
+- Title：Generar escala de color de marca — paleta 50–950 y tokens CSS
 
 ### ar
-- Title：حزمة رموز ألوان العلامة — مقياس HEX HSL OKLCH
+- Title：توليد مقياس ألوان العلامة — لوحة 50–950 ورموز CSS
 
 ### pt
-- Title：Pacote de tokens de cor da marca — escala HEX HSL OKLCH
+- Title：Gerar escala de cor da marca — paleta 50–950 e tokens CSS
 
 ### id
-- Title：Paket Token Warna Merek — Skala HEX HSL OKLCH
+- Title：Buat skala warna merek — palet 50–950 & token CSS
 
 ### fr
-- Title：Pack de jetons couleur de marque — échelle HEX HSL OKLCH
+- Title：Générer l’échelle de couleur de marque — palette 50–950 et tokens CSS
 
 ### ja
-- Title：ブランドカラートークン — HEX/HSL/OKLCHスケール
+- Title：ブランド色スケールを生成 — 50–950パレットとCSSトークン
 
 ### ru
-- Title：Пакет цветовых токенов бренда — шкала HEX HSL OKLCH
+- Title：Сгенерировать шкалу цвета бренда — палитра 50–950 и CSS‑токены
 
 ### de
-- Title：Markenfarben-Token-Pack — HEX/HSL/OKLCH-Skala
+- Title：Markenfarben-Skala erzeugen — 50–950-Palette & CSS-Tokens
+
+## 多轮记录
+
+| 日期 | 摘要 |
+|---|---|
+| 2026-08-08 | Title 从名词「Token Pack / Token 包 + HEX/HSL/OKLCH 枚举」改为动作+检索主词（Generate / 色阶生成）；次词 HEX 空间落 desc/色彩空间区 |

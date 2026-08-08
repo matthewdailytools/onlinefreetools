@@ -138,7 +138,7 @@
 | 序号 | 工具名称 | 工具场景/渠道 | 工具 slug | 工具功能 | 工具分类 | 工具用户角色 | 工具输入 | 工具输出 | 开发进度 |
 |---|---|---|---|---|---|---|---|---|---|
 | 63 | WCAG 对比度检测 | A.9；D P0 | `wcag-contrast-checker` | 前景/背景对比度 → AA/AAA | design | UI 设计师、前端、无障碍 | 前景色 + 背景色 | 比率、等级、建议配对色 | 已上线 · P0 |
-| 64 | 品牌色 Token 包 | A.9；B.3 1→N；D P0 | `brand-color-token-pack` | 1 主色 → 多色空间 + 色阶 + 对比配对 | design | 品牌设计、前端 | 1 个主色 | HEX/RGB/HSL/OKLCH、色阶、配对 | 已上线 · P0 |
+| 64 | 品牌色色阶生成 | A.9；B.3 1→N；D P0 | `brand-color-token-pack` | 1 主色 → 多色空间 + 色阶 + 对比配对 | design | 品牌设计、前端 | 1 个主色 | HEX/RGB/HSL/OKLCH、色阶、配对 | 已上线 · P0 |
 | 65 | 字阶 Token 包 | B.3；D P2 | `type-scale-token-pack` | 基准字号 → 模块化字阶表 | design | UI 设计师、前端 | 基准字号/比例 | 字阶表 + 可选 CSS 变量 | 未开始 · P2 |
 | 66 | SVG 优化 | D；对标 SVGOMG | `svg-optimizer` | SVGO 选项可视化压缩 | design | 前端、设计师 | SVG 文本/文件 | 优化 SVG + 体积对比 | 未开始 · P1 |
 | 67 | CSS 阴影生成 | A.9；D P2 | `css-shadow-generator` | 可视化生成 box/text-shadow | design | 前端、设计师 | 阴影参数 | 可复制 CSS | 未开始 · P2 |

@@ -115,7 +115,7 @@
           <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ar/tools/add-watermark">علامة مائية نصية — في المتصفح</a></li><li><a class="dropdown-item" href="/ar/tools/color-from-image">استخراج ألوان الصورة — لوحة واختيار بالنقر</a></li><li><a class="dropdown-item" href="/ar/tools/flip-image">قلب الصورة — أفقي أو عمودي</a></li><li><a class="dropdown-item" href="/ar/tools/image-border">إطار صورة — لون وعرض</a></li><li><a class="dropdown-item" href="/ar/tools/image-compress">ضغط الصور — البعد الأطول والجودة والحجم المستهدف (محليًا)</a></li><li><a class="dropdown-item" href="/ar/tools/image-crop">قص الصورة وتغيير الحجم — محليًا</a></li><li><a class="dropdown-item" href="/ar/tools/image-exif">عرض وحذف EXIF من الصور — الموقع والكاميرا محليًا</a></li><li><a class="dropdown-item" href="/ar/tools/image-format-converter">محول تنسيق الصور — PNG JPEG WebP AVIF BMP GIF ICO SVG محليا</a></li><li><a class="dropdown-item" href="/ar/tools/image-grayscale">تحويل الصورة إلى رمادي</a></li><li><a class="dropdown-item" href="/ar/tools/image-merge">دمج الصور — اجمع صورًا في كولاج واحد</a></li><li><a class="dropdown-item" href="/ar/tools/image-optimizer">تحسين الصور — WebP وAVIF وMozJPEG محليًا</a></li><li><a class="dropdown-item" href="/ar/tools/image-overlay">تراكب الصور — ضع شعارًا على صورة</a></li><li><a class="dropdown-item" href="/ar/tools/image-to-base64">صورة ↔ Base64 — ترميز وفك</a></li><li><a class="dropdown-item" href="/ar/tools/images-to-gif">صور إلى GIF — رسوم قصيرة</a></li><li><a class="dropdown-item" href="/ar/tools/images-to-pdf">صور إلى PDF — صفحة لكل صورة</a></li><li><a class="dropdown-item" href="/ar/tools/images-to-ppt">صور إلى PowerPoint — شريحة لكل صورة</a></li><li><a class="dropdown-item" href="/ar/tools/images-to-word">صور إلى Word — DOCX محلي</a></li></ul>
         </li><li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">أدوات التصميم</a>
-          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ar/tools/brand-color-token-pack">حزمة رموز ألوان العلامة — مقياس HEX HSL OKLCH</a></li><li><a class="dropdown-item" href="/ar/tools/wcag-contrast-checker">مدقق تباين WCAG — نسبة AA/AAA</a></li></ul>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ar/tools/brand-color-token-pack">توليد مقياس ألوان العلامة — لوحة 50–950 ورموز CSS</a></li><li><a class="dropdown-item" href="/ar/tools/smart-website-color-scheme">نظام ألوان الموقع — رموز CSS دلالية</a></li><li><a class="dropdown-item" href="/ar/tools/wcag-contrast-checker">مدقق تباين WCAG — نسبة AA/AAA</a></li></ul>
         </li><li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">للمطورين</a>
           <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ar/tools/add-www-to-dns">إضافة WWW إلى DNS — سجلات A/CNAME وأدلة المنصات</a></li><li><a class="dropdown-item" href="/ar/tools/csv-json">محول CSV ↔ JSON — الأنواع والفواصل ومحليًا</a></li><li><a class="dropdown-item" href="/ar/tools/html-entity">ترميز وفك ترميز كيانات HTML — محليًا</a></li><li><a class="dropdown-item" href="/ar/tools/indexnow">IndexNow — إرسال روابط Bing وفحص المفتاح ورموز الحالة</a></li><li><a class="dropdown-item" href="/ar/tools/ip-address">ما هو عنوان IP الخاص بي — IP عام (IPv4/IPv6)</a></li><li><a class="dropdown-item" href="/ar/tools/json-schema-validator">مدقق JSON Schema — مسارات draft-07 ومحليًا</a></li><li><a class="dropdown-item" href="/ar/tools/markdown-to-html">Markdown ↔ HTML</a></li><li><a class="dropdown-item" href="/ar/tools/text-diff">مقارنة نصين أونلاين</a></li><li><a class="dropdown-item" href="/ar/tools/website-headers">فحص ترويسات HTTP</a></li><li><a class="dropdown-item" href="/ar/tools/yaml-json">من YAML إلى JSON وبالعكس — قواعد الأنواع ومحليًا</a></li></ul>
@@ -219,7 +219,7 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/brand-color-token-pack.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
-          <h3 class="card-title home-card-title home-card-title--featured mb-0">حزمة رموز ألوان العلامة — مقياس HEX HSL OKLCH</h3>
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">توليد مقياس ألوان العلامة — لوحة 50–950 ورموز CSS</h3>
         </div>
         <p class="card-text home-card-desc flex-grow-1">لون أساس واحد → HEX/RGB/HSL/OKLCH، مقياس 50–950، أزواج تباين، متغيرات CSS — محلي.</p>
         <a href="/ar/tools/brand-color-token-pack" class="mt-auto btn btn-primary btn-sm">فتح</a>
@@ -554,6 +554,18 @@
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/smart-website-color-scheme.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">نظام ألوان الموقع — رموز CSS دلالية</h3>
+        </div>
+        <p class="card-text home-card-desc flex-grow-1">نظام ألوان الموقع: محايدات + رموز CSS دلالية، روابط محايدة وحالات ثابتة — محليًا.</p>
+        <a href="/ar/tools/smart-website-color-scheme" class="mt-auto btn btn-primary btn-sm">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/square-feet.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
           <h3 class="card-title home-card-title home-card-title--featured mb-0">تحويل القدم المربع إلى متر مربع — للمنازل والتشطيب</h3>
         </div>
@@ -842,10 +854,22 @@
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/brand-color-token-pack.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
-          <h3 class="card-title home-card-title mb-0">حزمة رموز ألوان العلامة — مقياس HEX HSL OKLCH</h3>
+          <h3 class="card-title home-card-title mb-0">توليد مقياس ألوان العلامة — لوحة 50–950 ورموز CSS</h3>
         </div>
         <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">لون أساس واحد → HEX/RGB/HSL/OKLCH، مقياس 50–950، أزواج تباين، متغيرات CSS — محلي.</p>
         <a href="/ar/tools/brand-color-token-pack" class="mt-auto btn btn-primary btn-sm">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/smart-website-color-scheme.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <h3 class="card-title home-card-title mb-0">نظام ألوان الموقع — رموز CSS دلالية</h3>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">نظام ألوان الموقع: محايدات + رموز CSS دلالية، روابط محايدة وحالات ثابتة — محليًا.</p>
+        <a href="/ar/tools/smart-website-color-scheme" class="mt-auto btn btn-primary btn-sm">فتح</a>
       </div>
     </div>
   </div>

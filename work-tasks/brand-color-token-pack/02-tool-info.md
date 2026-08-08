@@ -36,7 +36,7 @@
 | 集群 | C08 · P0 |
 | 场景 | 品牌主色 → token 包（多空间 + 色阶 + 对比） |
 | 技术 | Tier 0；纯 JS；OKLCH 自实现 sRGB→OKLab |
-| Title (en) | `Brand Color Token Pack — HEX HSL OKLCH Scale \| {Brand}` |
+| Title (en) | `Generate Brand Color Scale — 50–950 Palette & CSS Tokens \| {Brand}` |
 | Description | one base → spaces + 50–950 + contrast pairs + CSS vars；sample blue；local |
 | related | wcag-contrast-checker, color-from-image |
 | category | design |
@@ -45,12 +45,12 @@
 
 | 项 | 结论 / 落点 |
 |---|---|
-| 日期 | 2026-08-08 |
+| 日期 | 2026-08-08（修订：title 改动作+检索主词） |
 | slug 结论 | 保留 `brand-color-token-pack`（方向文档定稿；覆盖 brand/token/pack 意图，避免 `color-converter` 薄意图） |
-| 主检索词 → title | Brand Color Token Pack / HEX HSL OKLCH Scale |
-| 次要 | palette/scale → 色阶；accessible → 对比列；css variables → 导出按钮/FAQ |
-| 用户习惯 | 英文 “color palette generator / tailwind colors from hex”；中文「品牌色色板 / 色阶」 |
-| 优化摘要 | Title 含多空间+Scale；避免「参数枚举」；desc 写 1→N 步骤与样例 |
+| 主检索词 → title | EN：Generate Brand Color Scale / 50–950 Palette；ZH：品牌色色阶生成 / 色板 |
+| 次要 | HEX/HSL/OKLCH → description 与色彩空间区（勿堆进 H1）；accessible → 对比列；css variables → 副标题与导出 |
+| 用户习惯 | EN：color palette/scale generator；ZH：色阶生成、调色板生成器、品牌色色板（非「Token 包」名词） |
+| 优化摘要 | Title 改为动作词（Generate / 生成）+ 色阶/色板主词；去掉 HEX/HSL/OKLCH 参数枚举；与「智能配色」语义方案页边界仍靠 Related |
 | [x] 已回写 | |
 
 ## 交互规格

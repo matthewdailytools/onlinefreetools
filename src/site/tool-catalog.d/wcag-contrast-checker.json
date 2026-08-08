@@ -9,8 +9,8 @@
   "homeDescKey": "tool_wcag_contrast_checker_desc",
   "faqPrefix": "tool_wcag_contrast_checker",
   "related": [
-    "brand-color-token-pack",
-    "color-from-image"
+    "smart-website-color-scheme",
+    "brand-color-token-pack"
   ],
   "logo": "/icons/tools/wcag-contrast-checker.svg",
   "page": {

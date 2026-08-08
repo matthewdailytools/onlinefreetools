@@ -1,5 +1,5 @@
 /**
- * 品牌色 Token 包工具页：1 主色 → HEX/RGB/HSL/OKLCH + 50–950 色阶 + 黑白文字对比建议。
+ * 品牌色色阶生成工具页：1 主色 → HEX/RGB/HSL/OKLCH + 50–950 色阶 + 黑白文字对比建议。
  * slug: brand-color-token-pack
  * 见 work-tasks/brand-color-token-pack/02-tool-info.md。
  */
@@ -25,7 +25,7 @@ const withLangPrefix = (lang: SiteLang, pathname: string, defaultLang: SiteLang)
 };
 
 /**
- * 渲染品牌色 Token 包页面。
+ * 渲染品牌色色阶生成页面。
  * @param opts.lang 当前语言
  * @param opts.defaultLang 站点默认语言
  * @param opts.enabledLangs 启用语言列表

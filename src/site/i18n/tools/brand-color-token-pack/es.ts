@@ -55,7 +55,7 @@ const es: SiteLangDict = {
   tool_brand_color_token_pack_scale_label: 'Escala de color (50–950)',
   tool_brand_color_token_pack_spaces_label: 'Espacios de color (base)',
   tool_brand_color_token_pack_text_on: 'Texto sobre base',
-  tool_brand_color_token_pack_title: 'Pack de tokens de color de marca — escala HEX HSL OKLCH',
+  tool_brand_color_token_pack_title: 'Generar escala de color de marca — paleta 50–950 y tokens CSS',
   tool_brand_color_token_pack_ui_body: 'Cuerpo de vista previa sobre tu color base con texto sugerido.',
   tool_brand_color_token_pack_ui_btn: 'Acción principal',
   tool_brand_color_token_pack_ui_title: 'Título de vista previa',

@@ -55,7 +55,7 @@ const id: SiteLangDict = {
   tool_brand_color_token_pack_scale_label: 'Skala warna (50–950)',
   tool_brand_color_token_pack_spaces_label: 'Ruang warna (dasar)',
   tool_brand_color_token_pack_text_on: 'Teks di dasar',
-  tool_brand_color_token_pack_title: 'Paket Token Warna Merek — Skala HEX HSL OKLCH',
+  tool_brand_color_token_pack_title: 'Buat skala warna merek — palet 50–950 & token CSS',
   tool_brand_color_token_pack_ui_body: 'Isi pratinjau di warna dasar merek dengan teks yang disarankan.',
   tool_brand_color_token_pack_ui_btn: 'Aksi utama',
   tool_brand_color_token_pack_ui_title: 'Judul pratinjau',

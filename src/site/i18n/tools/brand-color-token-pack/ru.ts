@@ -55,7 +55,7 @@ const ru: SiteLangDict = {
   tool_brand_color_token_pack_scale_label: 'Цветовая шкала (50–950)',
   tool_brand_color_token_pack_spaces_label: 'Цветовые пространства (база)',
   tool_brand_color_token_pack_text_on: 'Текст на базе',
-  tool_brand_color_token_pack_title: 'Пакет цветовых токенов бренда — шкала HEX HSL OKLCH',
+  tool_brand_color_token_pack_title: 'Сгенерировать шкалу цвета бренда — палитра 50–950 и CSS‑токены',
   tool_brand_color_token_pack_ui_body: 'Текст превью на базовом цвете с рекомендуемым цветом текста.',
   tool_brand_color_token_pack_ui_btn: 'Основное действие',
   tool_brand_color_token_pack_ui_title: 'Заголовок превью',

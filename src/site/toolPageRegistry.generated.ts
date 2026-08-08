@@ -33,6 +33,7 @@ import { renderIndexNowPage } from '../pages/indexNowPage';
 import { renderIpAddressPage } from '../pages/ipAddressPage';
 import { renderJsonSchemaValidatorPage } from '../pages/jsonSchemaValidatorPage';
 import { renderMarkdownToHtmlPage } from '../pages/markdownToHtmlPage';
+import { renderSmartWebsiteColorSchemePage } from '../pages/smartWebsiteColorSchemePage';
 import { renderSquareFeetPage } from '../pages/squareFeetPage';
 import { renderTextDiffPage } from '../pages/textDiffPage';
 import { renderWcagContrastCheckerPage } from '../pages/wcagContrastCheckerPage';
@@ -77,6 +78,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'ip-address': (lang, defaultLang, _enabled) => renderIpAddressPage(lang, defaultLang),
 	'json-schema-validator': (lang, defaultLang, enabled) => renderJsonSchemaValidatorPage({ lang, defaultLang, enabledLangs: enabled }),
 	'markdown-to-html': (lang, defaultLang, enabled) => renderMarkdownToHtmlPage({ lang, defaultLang, enabledLangs: enabled }),
+	'smart-website-color-scheme': (lang, defaultLang, enabled) => renderSmartWebsiteColorSchemePage({ lang, defaultLang, enabledLangs: enabled }),
 	'square-feet': (lang, defaultLang, enabled) => renderSquareFeetPage({ lang, defaultLang, enabledLangs: enabled }),
 	'text-diff': (lang, defaultLang, enabled) => renderTextDiffPage({ lang, defaultLang, enabledLangs: enabled }),
 	'wcag-contrast-checker': (lang, defaultLang, enabled) => renderWcagContrastCheckerPage({ lang, defaultLang, enabledLangs: enabled }),

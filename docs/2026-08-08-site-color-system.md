@@ -47,7 +47,7 @@ Scope: OnlineFreeTools.org 浅色工具站 + 四套可切换品牌主色
 |------|------|----------|
 | 页底 | `body` / 工具页底 | `--bg` |
 | 顶栏 | 背景、底边、品牌字、导航字、下拉 | `--surface` / `--border` / `--text` / `--text-muted` |
-| 侧栏 | 背景、项默认/悬停/选中、分组标题 | `--surface` / `--action-soft` / `--border-focus`（左边线） |
+| 侧栏 | 背景、项默认/悬停/选中、分组标题 | `--surface` / `--action-soft`（选中浅底，无左侧品牌色条） |
 | 页脚 | 说明字、关于等链接 | `--text-muted` / `--link` |
 | 主题切换器 | 色点预览 | 各主题 `--brand` |
 
@@ -95,7 +95,7 @@ Scope: OnlineFreeTools.org 浅色工具站 + 四套可切换品牌主色
 5. **状态色独立**  
    success/warning/danger/info 跨主题共享。
 6. **对比与无障碍**  
-   选中态用「浅底 + 深字 + 品牌边线」，避免浅底+同色浅字。
+   选中态用「浅底 + 深字」，避免依赖左侧品牌色条或浅底+同色浅字。
 7. **与竞品差异**  
    不再默认跟 iLovePDF 朱红；四套主色拉开辨识，中性骨架可借鉴其灰底可读性。
 
@@ -144,7 +144,7 @@ Scope: OnlineFreeTools.org 浅色工具站 + 四套可切换品牌主色
 | `--border` / `--border-strong` | neutral-200/300 |
 | `--link` / `--link-hover` | text / text-strong（中性） |
 | `--action*` | 当前主题品牌 |
-| `--nav-active` | text-strong + action-soft 底 + action 左边线 |
+| `--nav-active` | text-strong + action-soft 底（无左边线） |
 | `--danger` 等 | 固定状态色 |
 
 ### 5.4 本站按钮策略（与 iLovePDF 白底描边一致）
@@ -170,7 +170,7 @@ Scope: OnlineFreeTools.org 浅色工具站 + 四套可切换品牌主色
 
 ## 7. 验收清单
 
-- [ ] 换主题后：侧栏选中边线、分类 pill、焦点环、dropzone 悬停随品牌变  
+- [ ] 换主题后：侧栏选中浅底、分类 pill、焦点环、dropzone 悬停随品牌变（选中无左侧品牌色条）  
 - [ ] 换主题后：正文、页脚链接、相关工具仍为中性字色（非品牌色刷屏）  
 - [ ] 错误提示仍为 `--danger`，琥珀主题下也不改成「品牌橙当错误」  
 - [ ] 顶栏/卡片白面在四主题下对比度正常  

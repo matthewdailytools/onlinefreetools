@@ -288,7 +288,6 @@ body.is-tool-page {
   background: var(--accent-soft);
   color: var(--nav-active);
   font-weight: 600;
-  box-shadow: inset 3px 0 0 var(--accent);
 }
 
 #content {

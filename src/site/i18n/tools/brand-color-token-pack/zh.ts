@@ -52,7 +52,7 @@ const zh: SiteLangDict = {
   tool_brand_color_token_pack_scale_label: '色阶（50–950）',
   tool_brand_color_token_pack_spaces_label: '色彩空间（主色）',
   tool_brand_color_token_pack_text_on: '主色上的文字',
-  tool_brand_color_token_pack_title: '品牌色 Token 包 — HEX/HSL/OKLCH 色阶',
+  tool_brand_color_token_pack_title: '品牌色色阶生成 — 一主色出 50–950 色板与 CSS 变量',
   tool_brand_color_token_pack_ui_body: '在主色背景上预览正文与建议文字色。',
   tool_brand_color_token_pack_ui_btn: '主要按钮',
   tool_brand_color_token_pack_ui_title: '预览标题',

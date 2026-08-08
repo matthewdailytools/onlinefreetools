@@ -55,7 +55,7 @@ const fr: SiteLangDict = {
   tool_brand_color_token_pack_scale_label: 'Échelle de couleur (50–950)',
   tool_brand_color_token_pack_spaces_label: 'Espaces colorimétriques (base)',
   tool_brand_color_token_pack_text_on: 'Texte sur base',
-  tool_brand_color_token_pack_title: 'Pack de jetons couleur de marque — échelle HEX HSL OKLCH',
+  tool_brand_color_token_pack_title: 'Générer l’échelle de couleur de marque — palette 50–950 et tokens CSS',
   tool_brand_color_token_pack_ui_body: 'Corps d\'aperçu sur votre couleur de base avec texte suggéré.',
   tool_brand_color_token_pack_ui_btn: 'Action principale',
   tool_brand_color_token_pack_ui_title: 'Titre d\'aperçu',
