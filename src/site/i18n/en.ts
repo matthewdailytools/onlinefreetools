@@ -319,12 +319,12 @@ const en: SiteLangDict = {
   tool_squarefeet_ref_nist_label: 'NIST SP 811 — Guide for the Use of the International System of Units (SI)',
   tool_ip_address_title: 'What Is My IP Address — See Your Public IP (IPv4 or IPv6)',
   tool_ip_address_description:
-    'Look up your public IP address as our edge sees it for this connection—IPv4 or IPv6 depending on your path. Process: open the page or tap Refresh; the worker reads the trusted client address. Example: may show 203.0.113.10. With VPN/proxy you see the exit IP, not your router’s 192.168 LAN address. Useful for allowlists, remote access, and VPN checks.',
+    'Look up your public IP and rough location as our edge sees them for this connection—IPv4 or IPv6 depending on your path. Process: open the page or tap Refresh; the worker reads the trusted client IP plus Cloudflare geo metadata (no third-party API). Example: may show 203.0.113.10 with country and ISP hints. With VPN/proxy you see the exit, not your router’s 192.168 address.',
   tool_ip_address_article:
-    'Shows your public egress IP instantly—no install or signup. Use it to confirm VPN exit changes, tell support or a firewall admin which address to allow, or debug cloud security groups and API allowlists. Not geolocation, ISP lookup, or “find someone else’s IP”.',
+    'Shows your public egress IP plus approximate region and network name from our edge (Cloudflare request metadata only—no external geo API). Use it to confirm VPN exit changes, report an IP to support, or debug allowlists. Not precision geolocation, carrier billing lookup, or “find someone else’s IP”.',
   tool_ip_address_how_title: 'How it works',
   tool_ip_address_how_body:
-    'The page auto-calls our edge API on load; tap Refresh to fetch again. The worker returns the trusted client IP for this TCP/TLS connection (not a forgeable browser header alone). You see one address per request—IPv4 or IPv6, whichever path you used.',
+    'The page auto-calls our edge API on load; tap Refresh to fetch again. The worker returns the trusted client IP for this TCP/TLS connection and optional country/region/city/timezone plus ASN organization from request.cf. You see one address per request—IPv4 or IPv6, whichever path you used.',
   tool_ip_address_rules_title: 'What this IP means',
   tool_ip_address_rules_body:
     'This is the public address websites usually see on the internet side—not the 192.168 address on your router admin page. Limits:',
@@ -332,9 +332,10 @@ const en: SiteLangDict = {
   tool_ip_address_rules_item_2: 'Behind NAT many devices share one public IP; 192.168.x.x never appears here.',
   tool_ip_address_rules_item_3: 'We prefer the edge-trusted client address over client-supplied X-Forwarded-For alone (spoofable).',
   tool_ip_address_rules_item_4: 'Dual-stack networks may show IPv4 or IPv6; reconnecting or switching Wi‑Fi/cellular can change the result.',
+  tool_ip_address_rules_item_5: 'Location and ISP come from edge IP metadata—often city-level, can be wrong on mobile/CGNAT; VPN shows the exit node.',
   tool_ip_address_example_title: 'Example',
   tool_ip_address_example:
-    'Documentation example: edge sees 203.0.113.10 (TEST-NET-3). Your live result is your real public egress IP, labeled IPv4 or IPv6 when detected.',
+    'Documentation example: edge sees 203.0.113.10 (TEST-NET-3) with country/ISP hints when metadata is available. Your live result is your real public egress IP, labeled IPv4 or IPv6 when detected.',
   tool_ip_address_usecases_title: 'When to use it',
   tool_ip_address_usecase_1: 'Remote desktop, NAS, or gaming: report your current public IP for firewall or port allowlists.',
   tool_ip_address_usecase_2: 'Toggle VPN/proxy and refresh to confirm the exit IP actually changed.',
@@ -485,6 +486,13 @@ const en: SiteLangDict = {
   ip_label: 'Your public IP',
   ip_version_ipv4: 'IPv4',
   ip_version_ipv6: 'IPv6',
+  ip_location_label: 'Approx. location',
+  ip_timezone_label: 'Timezone',
+  ip_isp_label: 'Network / ISP',
+  ip_geo_unknown: 'Unknown',
+  ip_isp_unknown: 'Unknown',
+  ip_geo_note:
+    'Region and ISP come from Cloudflare edge metadata for this IP—approximate only. VPN/proxy shows the exit node; we do not call third-party geo APIs or store your data.',
   fetch_ip_button: 'Refresh',
   fetching_message: 'Fetching…',
   what_is_ip_title: 'What is an IP Address?',
@@ -546,6 +554,9 @@ const en: SiteLangDict = {
   tool_ip_address_faq_q5: 'Do you store my IP?',
   tool_ip_address_faq_a5:
     'The lookup is a short-lived edge request. We do not offer IP history; treat the result as ephemeral display, not a log archive.',
+  tool_ip_address_faq_q6: 'How accurate are location and ISP?',
+  tool_ip_address_faq_a6:
+    'They come from Cloudflare edge metadata tied to this IP—often country/region/city and the ASN owner name. VPN/proxy shows the exit; mobile or CGNAT can be wrong. We do not use external geo databases.',
 
   tool_markdown_faq_q1: 'Do you sanitize the HTML output?',
   tool_markdown_faq_a1:

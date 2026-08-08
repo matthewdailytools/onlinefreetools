@@ -1046,12 +1046,12 @@ const fr: SiteLangDict = {
   /* --- IG: ip / roi / mr --- */
 tool_ip_address_title: 'Quelle est mon adresse IP — IP publique (IPv4/IPv6)',
   tool_ip_address_description:
-    'Consultez votre adresse IP publique telle que notre edge la voit sur cette connexion — IPv4 ou IPv6 selon le chemin. Processus : ouvrez la page ou cliquez Actualiser ; le worker lit l’adresse client de confiance. Exemple : peut afficher 203.0.113.10. Avec VPN/proxy, IP de sortie, pas le 192.168 du routeur. Utile pour allowlist, accès distant et VPN.',
+    'Consultez IP publique et région approximative vues par notre edge (métadonnées Cloudflare request.cf uniquement, sans API tierce). Processus : ouvrez ou Actualiser ; le worker lit l’IP de confiance et la geo. Exemple : 203.0.113.10 avec pays/ISP si disponible. VPN/proxy = IP de sortie, pas le 192.168 du routeur.',
   tool_ip_address_article:
-    'Cette page montre votre IP de sortie publique vue depuis notre edge — utile pour vérifier un VPN, donner l’IP au support ou déboguer des listes d’autorisation. Ce n’est pas un outil de géolocalisation ou d’ISP.',
+    'Affiche l’IP de sortie publique plus région approximative et nom réseau depuis l’edge (pas de geo externe). Utile pour VPN, support et allowlists. Pas de géolocalisation précise, pas de facturation opérateur, pas de « trouver l’IP d’un autre ».',
   tool_ip_address_how_title: 'Fonctionnement',
   tool_ip_address_how_body:
-    'Le navigateur appelle notre API edge. Le worker renvoie l’IP client liée à la connexion (pas seulement un en-tête falsifiable). Actualisez à tout moment ; aucun compte requis.',
+    'Le navigateur appelle l’API edge. Le worker renvoie l’IP client de confiance et, si présents, pays/région/ville/fuseau plus organisation ASN depuis request.cf. Une adresse par requête — IPv4 ou IPv6.',
   tool_ip_address_rules_title: 'Ce que signifie cette IP',
   tool_ip_address_rules_body:
     'C’est l’adresse publique associée à votre connexion TCP/TLS sur l’edge — l’identité de sortie que voient souvent les sites. Limites :',
@@ -1059,9 +1059,10 @@ tool_ip_address_title: 'Quelle est mon adresse IP — IP publique (IPv4/IPv6)',
   tool_ip_address_rules_item_2: 'Derrière le NAT, plusieurs appareils partagent une IP publique ; 192.168.x.x n’apparaît pas ici.',
   tool_ip_address_rules_item_3: 'Nous privilégions l’IP client de l’edge plutôt que X-Forwarded-For seul (falsifiable).',
   tool_ip_address_rules_item_4: 'IPv4 ou IPv6 selon le chemin ; en dual-stack, cela peut changer après reconnexion.',
+  tool_ip_address_rules_item_5: 'Lieu et ISP viennent des métadonnées IP edge — souvent niveau ville ; mobile/CGNAT peut fausser ; VPN montre le nœud de sortie.',
   tool_ip_address_example_title: 'Exemple',
   tool_ip_address_example:
-    'Exemple documentaire : l’edge voit 203.0.113.10 (adresse réservée TEST-NET-3). Votre résultat réel sera votre IP publique de sortie.',
+    'Exemple : l’edge voit 203.0.113.10 (TEST-NET-3) avec indices pays/ISP si métadonnées disponibles. Votre résultat réel est votre IP publique de sortie, étiquetée IPv4 ou IPv6.',
   tool_ip_address_usecases_title: 'Cas d’usage',
   tool_ip_address_usecase_1: 'Bureau à distance, NAS ou jeux en ligne : indiquer l’IP publique actuelle pour pare-feu ou ports.',
   tool_ip_address_usecase_2: 'Activez/désactivez VPN/proxy et actualisez pour voir si l’IP de sortie change.',
@@ -1071,6 +1072,13 @@ tool_ip_address_title: 'Quelle est mon adresse IP — IP publique (IPv4/IPv6)',
   ip_label: 'Votre IP publique',
   ip_version_ipv4: 'IPv4',
   ip_version_ipv6: 'IPv6',
+  ip_location_label: 'Région approx.',
+  ip_timezone_label: 'Fuseau horaire',
+  ip_isp_label: 'Réseau / FAI',
+  ip_geo_unknown: 'Inconnu',
+  ip_isp_unknown: 'Inconnu',
+  ip_geo_note:
+    'Région et FAI proviennent des métadonnées Cloudflare edge pour cette IP — approximatif. VPN/proxy = sortie ; pas d’API geo tierces ni stockage.',
   fetch_ip_button: 'Actualiser',
   fetching_message: 'Récupération…',
   tool_ip_address_faq_q1: 'Pourquoi différente de l’IP du routeur ?',
@@ -1088,6 +1096,9 @@ tool_ip_address_title: 'Quelle est mon adresse IP — IP publique (IPv4/IPv6)',
   tool_ip_address_faq_q5: 'Stockez-vous mon IP ?',
   tool_ip_address_faq_a5:
     'La requête est courte sur l’edge. Pas d’historique d’IP ; considérez le résultat comme affichage temporaire.',
+  tool_ip_address_faq_q6: 'Quelle précision pour lieu et FAI ?',
+  tool_ip_address_faq_a6:
+    'Issus des métadonnées Cloudflare liées à cette IP — souvent pays/région/ville et titulaire ASN. VPN/proxy = sortie ; mobile ou CGNAT peut fausser. Pas de bases geo externes.',
 
   tool_roi_title: 'Calculateur de ROI — Calculer le retour sur investissement',
   tool_roi_description:

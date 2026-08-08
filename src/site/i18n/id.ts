@@ -1046,12 +1046,12 @@ const id: SiteLangDict = {
   /* --- IG: ip / roi / mr --- */
 tool_ip_address_title: 'Cek IP saya — Alamat IP publik (IPv4/IPv6)',
   tool_ip_address_description:
-    'Lihat alamat IP publik menurut edge kami untuk koneksi ini — IPv4 atau IPv6 tergantung jalur. Proses: buka halaman atau ketuk Muat ulang; worker membaca IP klien tepercaya. Contoh: bisa 203.0.113.10. VPN/proxy menampilkan IP keluar, bukan 192.168 router. Berguna untuk allowlist, akses jarak jauh, dan cek VPN.',
+    'Lihat IP publik dan perkiraan wilayah menurut edge (hanya metadatos Cloudflare request.cf, tanpa API pihak ketiga). Proses: buka halaman atau Muat ulang; worker membaca IP tepercaya dan geo. Contoh: 203.0.113.10 dengan petunjuk negara/ISP jika ada. VPN/proxy menampilkan keluar, bukan 192.168 router.',
   tool_ip_address_article:
-    'Halaman ini menampilkan IP egress publik menurut edge kami — berguna untuk cek VPN, lapor ke support, atau debug allowlist. Bukan produk geolokasi atau ISP.',
+    'Menampilkan IP egress publik plus perkiraan wilayah dan nama jaringan dari edge (tanpa geo eksternal). Berguna untuk VPN, support, dan allowlist. Bukan geolokasi presisi, cek tagihan operator, atau «cari IP orang lain».',
   tool_ip_address_how_title: 'Cara kerja',
   tool_ip_address_how_body:
-    'Browser memanggil API edge kami. Worker mengembalikan IP klien yang terikat pada koneksi (bukan hanya header yang bisa dipalsukan). Muat ulang kapan saja; tanpa akun.',
+    'Browser memanggil API edge. Worker mengembalikan IP klien tepercaya dan, jika ada, negara/wilayah/kota/zona waktu plus organisasi ASN dari request.cf. Satu alamat per permintaan — IPv4 atau IPv6.',
   tool_ip_address_rules_title: 'Arti IP ini',
   tool_ip_address_rules_body:
     'Nilainya adalah alamat publik yang dikaitkan edge dengan koneksi TCP/TLS Anda — identitas egress yang biasanya dilihat situs. Batasan:',
@@ -1059,9 +1059,10 @@ tool_ip_address_title: 'Cek IP saya — Alamat IP publik (IPv4/IPv6)',
   tool_ip_address_rules_item_2: 'Di balik NAT, banyak perangkat berbagi satu IP publik; 192.168.x.x tidak muncul di sini.',
   tool_ip_address_rules_item_3: 'Kami mengutamakan IP klien edge, bukan X-Forwarded-For saja (bisa dipalsukan).',
   tool_ip_address_rules_item_4: 'IPv4 atau IPv6 bisa muncul tergantung jalur; dual-stack bisa berganti setelah reconnect.',
+  tool_ip_address_rules_item_5: 'Wilayah dan ISP dari metadatos IP edge — sering tingkat kota; mobile/CGNAT bisa salah; VPN menampilkan node keluar.',
   tool_ip_address_example_title: 'Contoh',
   tool_ip_address_example:
-    'Contoh dokumentasi: edge melihat 203.0.113.10 (alamat cadangan TEST-NET-3). Hasil langsung Anda adalah IP publik egress nyata.',
+    'Contoh: edge melihat 203.0.113.10 (TEST-NET-3) dengan petunjuk negara/ISP jika metadatos ada. Hasil langsung adalah IP egress publik nyata, berlabel IPv4 atau IPv6.',
   tool_ip_address_usecases_title: 'Kapan dipakai',
   tool_ip_address_usecase_1: 'Remote desktop, NAS, atau game: laporkan IP publik saat ini untuk firewall atau port.',
   tool_ip_address_usecase_2: 'Nyalakan/matikan VPN/proxy lalu muat ulang untuk lihat apakah IP keluar berubah.',
@@ -1071,6 +1072,13 @@ tool_ip_address_title: 'Cek IP saya — Alamat IP publik (IPv4/IPv6)',
   ip_label: 'IP publik Anda',
   ip_version_ipv4: 'IPv4',
   ip_version_ipv6: 'IPv6',
+  ip_location_label: 'Perkiraan wilayah',
+  ip_timezone_label: 'Zona waktu',
+  ip_isp_label: 'Jaringan / ISP',
+  ip_geo_unknown: 'Tidak diketahui',
+  ip_isp_unknown: 'Tidak diketahui',
+  ip_geo_note:
+    'Wilayah dan ISP dari metadatos Cloudflare edge untuk IP ini — perkiraan. VPN/proxy menampilkan keluar; tanpa API geo pihak ketiga dan tanpa penyimpanan.',
   fetch_ip_button: 'Muat ulang',
   fetching_message: 'Mengambil…',
   tool_ip_address_faq_q1: 'Kenapa beda dengan IP di router?',
@@ -1088,6 +1096,9 @@ tool_ip_address_title: 'Cek IP saya — Alamat IP publik (IPv4/IPv6)',
   tool_ip_address_faq_q5: 'Apakah IP saya disimpan?',
   tool_ip_address_faq_a5:
     'Pencarian adalah permintaan singkat di edge. Tidak ada riwayat IP; anggap hasil sebagai tampilan sementara.',
+  tool_ip_address_faq_q6: 'Seberapa akurat wilayah dan ISP?',
+  tool_ip_address_faq_a6:
+    'Dari metadatos Cloudflare terkait IP ini — sering negara/wilayah/kota dan pemilik ASN. VPN/proxy menampilkan keluar; mobile atau CGNAT bisa meleset. Tanpa database geo eksternal.',
 
   tool_roi_title: 'Kalkulator ROI — Cara menghitung return on investment',
   tool_roi_description:

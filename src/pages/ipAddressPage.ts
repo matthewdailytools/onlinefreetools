@@ -78,13 +78,17 @@ export const renderIpAddressPage = (lang: SiteLang, defaultLang: SiteLang) => {
       <div class="card-header">${escapeHtml(t(lang, 'result_title'))}</div>
       <div class="card-body">
         <div class="mb-2"><span class="text-muted">${escapeHtml(t(lang, 'ip_label'))}: </span><span id="ipAddress">-</span><span id="ipVersion" class="badge text-bg-secondary ms-2 d-none"></span></div>
-        <div class="mt-3">
+        <div class="mb-2"><span class="text-muted">${escapeHtml(t(lang, 'ip_location_label'))}: </span><span id="ipLocation">-</span></div>
+        <div class="mb-2"><span class="text-muted">${escapeHtml(t(lang, 'ip_timezone_label'))}: </span><span id="ipTimezone">-</span></div>
+        <div class="mb-2"><span class="text-muted">${escapeHtml(t(lang, 'ip_isp_label'))}: </span><span id="ipIsp">-</span></div>
+        <p class="small text-muted mb-3">${escapeHtml(t(lang, 'ip_geo_note'))}</p>
+        <div class="mt-1">
           <button type="button" id="fetchButton" class="btn btn-primary">${escapeHtml(t(lang, 'fetch_ip_button'))}</button>
         </div>
       </div>
     </div>
 
-    ${renderToolIgSections({ lang, prefix: 'tool_ip_address', mode: 'rules' })}`;
+    ${renderToolIgSections({ lang, prefix: 'tool_ip_address', mode: 'rules', ruleItemCount: 5 })}`;
 
 	const referencesHtml = renderToolReferencesSection({
 		lang,
@@ -105,11 +109,38 @@ export const renderIpAddressPage = (lang: SiteLang, defaultLang: SiteLang) => {
     (function () {
       var ipAddressEl = document.getElementById('ipAddress');
       var ipVersionEl = document.getElementById('ipVersion');
+      var ipLocationEl = document.getElementById('ipLocation');
+      var ipTimezoneEl = document.getElementById('ipTimezone');
+      var ipIspEl = document.getElementById('ipIsp');
       var fetchButton = document.getElementById('fetchButton');
       var fetchingMsg = ${JSON.stringify(t(lang, 'fetching_message'))};
       var errPrefix = ${JSON.stringify(t(lang, 'error_prefix'))};
       var labelV4 = ${JSON.stringify(t(lang, 'ip_version_ipv4'))};
       var labelV6 = ${JSON.stringify(t(lang, 'ip_version_ipv6'))};
+      var geoUnknown = ${JSON.stringify(t(lang, 'ip_geo_unknown'))};
+      var ispUnknown = ${JSON.stringify(t(lang, 'ip_isp_unknown'))};
+
+      /** 将 geo 对象格式化为「城市, 省/州, 国家」可读串。 */
+      function formatLocation(geo) {
+        if (!geo) return geoUnknown;
+        var parts = [];
+        if (geo.city) parts.push(geo.city);
+        if (geo.region) parts.push(geo.region);
+        else if (geo.regionCode) parts.push(geo.regionCode);
+        if (geo.country) parts.push(geo.country);
+        return parts.length ? parts.join(', ') : geoUnknown;
+      }
+
+      /** 将 isp 对象格式化为「组织 (ASnnnnn)」可读串。 */
+      function formatIsp(isp) {
+        if (!isp) return ispUnknown;
+        if (isp.organization && isp.asn != null) {
+          return isp.organization + ' (AS' + isp.asn + ')';
+        }
+        if (isp.organization) return isp.organization;
+        if (isp.asn != null) return 'AS' + isp.asn;
+        return ispUnknown;
+      }
 
       /** 渲染 IP 与版本角标（version 为本次连接所见 4 或 6，非双栈并列）。 */
       function renderIpResult(ip, version) {
@@ -127,19 +158,38 @@ export const renderIpAddressPage = (lang: SiteLang, defaultLang: SiteLang) => {
         }
       }
 
-      /** 向边缘 API 请求当前连接的公网出口 IP。 */
+      /** 渲染 Cloudflare 边缘附带的粗略地区、时区与运营商。 */
+      function renderGeoIsp(geo, isp) {
+        if (ipLocationEl) ipLocationEl.textContent = formatLocation(geo);
+        if (ipTimezoneEl) {
+          ipTimezoneEl.textContent = geo && geo.timezone ? geo.timezone : geoUnknown;
+        }
+        if (ipIspEl) ipIspEl.textContent = formatIsp(isp);
+      }
+
+      /** 加载中重置结果区。 */
+      function setLoading() {
+        ipAddressEl.textContent = fetchingMsg;
+        if (ipVersionEl) ipVersionEl.classList.add('d-none');
+        if (ipLocationEl) ipLocationEl.textContent = fetchingMsg;
+        if (ipTimezoneEl) ipTimezoneEl.textContent = fetchingMsg;
+        if (ipIspEl) ipIspEl.textContent = fetchingMsg;
+      }
+
+      /** 向边缘 API 请求当前连接的公网出口 IP 及 cf 元数据。 */
       async function fetchIpAddress() {
         try {
-          ipAddressEl.textContent = fetchingMsg;
-          if (ipVersionEl) ipVersionEl.classList.add('d-none');
+          setLoading();
           var res = await fetch('/api/tools/ip-address');
           var data = await res.json();
           if (!res.ok) {
             throw new Error(data && data.error ? data.error : 'Request failed');
           }
           renderIpResult(data.ip, data.version);
+          renderGeoIsp(data.geo || null, data.isp || null);
         } catch (err) {
           renderIpResult(errPrefix + (err && err.message ? err.message : String(err)), null);
+          renderGeoIsp(null, null);
         }
       }
 

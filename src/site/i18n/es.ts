@@ -1059,12 +1059,12 @@ const es: SiteLangDict = {
   /* --- IG: ip / roi / mr --- */
 tool_ip_address_title: 'Cuál es mi IP — Consulta tu IP pública (IPv4/IPv6)',
   tool_ip_address_description:
-    'Consulta tu dirección IP pública como la ve nuestro edge en esta conexión—IPv4 o IPv6 según tu ruta. Proceso: abre la página o pulsa Actualizar; el worker lee la IP de cliente de confianza. Ejemplo: puede mostrar 203.0.113.10. Con VPN/proxy verás la IP de salida, no la 192.168 del router. Sirve para allowlists, acceso remoto y comprobar VPN.',
+    'Consulta tu IP pública y ubicación aproximada como las ve nuestro edge (solo metadatos Cloudflare request.cf, sin API de terceros). Proceso: abre la página o pulsa Actualizar; el worker lee IP de confianza y geo. Ejemplo: 203.0.113.10 con país e ISP si hay datos. Con VPN/proxy verás la salida, no la 192.168 del router.',
   tool_ip_address_article:
-    'Esta página muestra tu IP de salida pública según nuestro edge. Sirve para comprobar VPN, dar la IP al soporte o depurar allowlists. No es un buscador de geolocalización ni de ISP.',
+    'Muestra IP de salida pública más región aproximada y nombre de red del edge (sin geo externa). Sirve para VPN, soporte y allowlists. No es geolocalización precisa, consulta de facturación del operador ni «buscar la IP de otro».',
   tool_ip_address_how_title: 'Cómo funciona',
   tool_ip_address_how_body:
-    'El navegador llama a nuestra API en el edge. El worker toma la IP de cliente asociada a la conexión (no solo una cabecera falsificable) y la devuelve. Puedes actualizar cuando quieras; no hace falta cuenta.',
+    'El navegador llama a la API del edge. El worker devuelve la IP de cliente de confianza y, si existen, país/región/ciudad/zona horaria y organización ASN desde request.cf. Una dirección por consulta — IPv4 o IPv6.',
   tool_ip_address_rules_title: 'Qué significa esta IP',
   tool_ip_address_rules_body:
     'Es la dirección pública ligada a tu conexión TCP/TLS en el edge — la identidad de salida que suelen ver los sitios. Límites importantes:',
@@ -1072,9 +1072,10 @@ tool_ip_address_title: 'Cuál es mi IP — Consulta tu IP pública (IPv4/IPv6)',
   tool_ip_address_rules_item_2: 'Tras NAT, varios dispositivos comparten una IP pública; 192.168.x.x no aparece aquí.',
   tool_ip_address_rules_item_3: 'Priorizamos la IP de cliente del edge frente a X-Forwarded-For solo (esa cabecera se puede falsificar).',
   tool_ip_address_rules_item_4: 'Puede salir IPv4 o IPv6 según la ruta; en dual-stack puede cambiar al reconectar.',
+  tool_ip_address_rules_item_5: 'Ubicación e ISP vienen de metadatos IP del edge — a menudo a nivel ciudad; móvil/CGNAT puede fallar; VPN muestra el nodo de salida.',
   tool_ip_address_example_title: 'Ejemplo',
   tool_ip_address_example:
-    'Ejemplo de documentación: el edge ve 203.0.113.10 (dirección reservada TEST-NET-3). Tu resultado real será tu IP pública de salida.',
+    'Ejemplo: el edge ve 203.0.113.10 (TEST-NET-3) con pistas de país/ISP si hay metadatos. Tu resultado real es tu IP pública de salida, con etiqueta IPv4 o IPv6.',
   tool_ip_address_usecases_title: 'Para qué sirve',
   tool_ip_address_usecase_1: 'Escritorio remoto, NAS o juegos online: informar la IP pública actual para firewall o puertos.',
   tool_ip_address_usecase_2: 'Activa o desactiva VPN/proxy y actualiza para ver si cambió la IP de salida.',
@@ -1084,6 +1085,13 @@ tool_ip_address_title: 'Cuál es mi IP — Consulta tu IP pública (IPv4/IPv6)',
   ip_label: 'Tu IP pública',
   ip_version_ipv4: 'IPv4',
   ip_version_ipv6: 'IPv6',
+  ip_location_label: 'Ubicación aprox.',
+  ip_timezone_label: 'Zona horaria',
+  ip_isp_label: 'Red / ISP',
+  ip_geo_unknown: 'Desconocido',
+  ip_isp_unknown: 'Desconocido',
+  ip_geo_note:
+    'Región e ISP provienen de metadatos Cloudflare del edge para esta IP — aproximados. VPN/proxy muestra la salida; no llamamos APIs geo de terceros ni guardamos datos.',
   fetch_ip_button: 'Actualizar',
   fetching_message: 'Obteniendo…',
   tool_ip_address_faq_q1: '¿Por qué no coincide con la IP de mi router?',
@@ -1101,6 +1109,9 @@ tool_ip_address_title: 'Cuál es mi IP — Consulta tu IP pública (IPv4/IPv6)',
   tool_ip_address_faq_q5: '¿Guardáis mi IP?',
   tool_ip_address_faq_a5:
     'La consulta es una petición corta en el edge. No hay historial de IP; trátalo como visualización temporal.',
+  tool_ip_address_faq_q6: '¿Qué tan exactos son ubicación e ISP?',
+  tool_ip_address_faq_a6:
+    'Vienen de metadatos Cloudflare ligados a esta IP — a menudo país/región/ciudad y titular ASN. VPN/proxy muestra la salida; móvil o CGNAT puede equivocarse. No usamos bases geo externas.',
 
   tool_roi_title: 'Cómo calcular el ROI — Calculadora con fórmula y ejemplo',
   tool_roi_description:
