@@ -161,10 +161,7 @@ dist
 .pnp.\*
 
 # 同域 vendor（由 copy-*-vendor.mjs / build:site 生成，勿手改）
-# bootstrap/fonts 纳入仓库：全站 chrome 依赖，缺了会导致样式错位
-public/vendor/jsquash/
-public/vendor/wasm-feature-detect/
-public/vendor/gifenc/
+# 全部纳入仓库：Cloudflare 拉 GitHub 部署时无本地 predeploy，缺文件会 404
 
 # wrangler project
 
