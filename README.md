@@ -23,6 +23,15 @@
 - [图片主色提取](https://onlinefreetools.org/zh/tools/color-from-image) - 本地提取主色板，也可点击预览取区域色，复制 HEX/RGB/HSL
 - [多图拼接](https://onlinefreetools.org/zh/tools/image-merge) - 本地把多张照片合成一张拼图，再下载
 - [图片叠加 Logo](https://onlinefreetools.org/zh/tools/image-overlay) - 本地把 Logo 或 PNG 叠到底图上，再下载
+- [图片翻转](https://onlinefreetools.org/zh/tools/flip-image) - 本地水平/垂直镜像照片
+- [图片转灰度](https://onlinefreetools.org/zh/tools/image-grayscale) - 本地 Rec.601 灰度转换
+- [图片加边框](https://onlinefreetools.org/zh/tools/image-border) - 本地外扩彩色边框
+- [图片 ↔ Base64](https://onlinefreetools.org/zh/tools/image-to-base64) - 本地图片与 Base64 互转
+- [文字水印](https://onlinefreetools.org/zh/tools/add-watermark) - 本地文字水印（透明度/旋转/位置）
+- [多图转 PDF](https://onlinefreetools.org/zh/tools/images-to-pdf) - 本地多图合成多页 PDF
+- [多图转 Word](https://onlinefreetools.org/zh/tools/images-to-word) - 本地多图导出 DOCX
+- [多图转 GIF](https://onlinefreetools.org/zh/tools/images-to-gif) - 本地多帧合成动画 GIF
+- [多图转 PPT](https://onlinefreetools.org/zh/tools/images-to-ppt) - 本地多图导出 PPTX
 - [给域名添加 www DNS](https://onlinefreetools.org/zh/tools/add-www-to-dns) - 生成 www 的 A/CNAME 记录，查询现网，并提供 Cloudflare/Vercel/阿里云等操作教程
 - [IndexNow / Bing URL 提交](https://onlinefreetools.org/zh/tools/indexnow) - 生成密钥、检查验证文件、提交变更 URL，并说明 200/202 状态码
 - [BMI 计算器](https://onlinefreetools.org/zh/tools/how-to-calculate-bmi) - 按成人筛查公式计算身体质量指数（教育用途，非诊断）
@@ -49,6 +58,15 @@ Below are our available online tools with their links (English version):
 - [Extract Colors from Image](https://onlinefreetools.org/tools/color-from-image) - Local palette and click-to-pick colors — copy HEX, RGB, or HSL
 - [Merge Images](https://onlinefreetools.org/tools/image-merge) - Combine photos into one collage locally, then download
 - [Overlay Images](https://onlinefreetools.org/tools/image-overlay) - Put a logo or PNG on a photo locally, then download
+- [Flip Image](https://onlinefreetools.org/tools/flip-image) - Mirror a photo horizontally or vertically locally
+- [Image Grayscale](https://onlinefreetools.org/tools/image-grayscale) - Convert photos to black and white locally
+- [Image Border](https://onlinefreetools.org/tools/image-border) - Add a colored outer border locally
+- [Image ↔ Base64](https://onlinefreetools.org/tools/image-to-base64) - Encode/decode images and Base64 locally
+- [Text Watermark](https://onlinefreetools.org/tools/add-watermark) - Stamp typed text watermarks locally
+- [Images to PDF](https://onlinefreetools.org/tools/images-to-pdf) - Combine photos into a multi-page PDF locally
+- [Images to Word](https://onlinefreetools.org/tools/images-to-word) - Export photos to a DOCX locally
+- [Images to GIF](https://onlinefreetools.org/tools/images-to-gif) - Build an animated GIF from frames locally
+- [Images to PowerPoint](https://onlinefreetools.org/tools/images-to-ppt) - Export photos to a PPTX locally
 - [Add WWW to DNS](https://onlinefreetools.org/tools/add-www-to-dns) - Generate www A/CNAME records, check live DNS, and follow Cloudflare/Vercel/Route 53 guides
 - [IndexNow — Bing URL Submit](https://onlinefreetools.org/tools/indexnow) - Generate a key, check the verification file, submit changed URLs, and read 200/202 status codes
 - [BMI Calculator](https://onlinefreetools.org/tools/how-to-calculate-bmi) - Adult BMI screening from weight and height (educational, not a diagnosis)

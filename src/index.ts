@@ -35,6 +35,15 @@ import { renderImageCropPage } from "./pages/imageCropPage";
 import { renderColorFromImagePage } from "./pages/colorFromImagePage";
 import { renderImageMergePage } from "./pages/imageMergePage";
 import { renderImageOverlayPage } from "./pages/imageOverlayPage";
+import { renderFlipImagePage } from "./pages/flipImagePage";
+import { renderImageGrayscalePage } from "./pages/imageGrayscalePage";
+import { renderImageBorderPage } from "./pages/imageBorderPage";
+import { renderImageToBase64Page } from "./pages/imageToBase64Page";
+import { renderAddWatermarkPage } from "./pages/addWatermarkPage";
+import { renderImagesToPdfPage } from "./pages/imagesToPdfPage";
+import { renderImagesToGifPage } from "./pages/imagesToGifPage";
+import { renderImagesToWordPage } from "./pages/imagesToWordPage";
+import { renderImagesToPptPage } from "./pages/imagesToPptPage";
 import { renderHtmlEntityPage } from "./pages/htmlEntityPage";
 import { renderAddWwwToDnsPage } from "./pages/addWwwToDnsPage";
 import { renderIndexNowPage } from "./pages/indexNowPage";
@@ -376,6 +385,43 @@ registerToolPage(app as any, 'image-merge', (lang, defaultLang, enabled) =>
 // Register image-overlay page via registrar（图层叠加）
 registerToolPage(app as any, 'image-overlay', (lang, defaultLang, enabled) =>
 	renderImageOverlayPage({ lang, defaultLang, enabledLangs: enabled })
+);
+
+// Register flip-image page via registrar
+registerToolPage(app as any, 'flip-image', (lang, defaultLang, enabled) =>
+	renderFlipImagePage({ lang, defaultLang, enabledLangs: enabled })
+);
+
+registerToolPage(app as any, 'image-grayscale', (lang, defaultLang, enabled) =>
+	renderImageGrayscalePage({ lang, defaultLang, enabledLangs: enabled })
+);
+
+registerToolPage(app as any, 'image-border', (lang, defaultLang, enabled) =>
+	renderImageBorderPage({ lang, defaultLang, enabledLangs: enabled })
+);
+
+registerToolPage(app as any, 'image-to-base64', (lang, defaultLang, enabled) =>
+	renderImageToBase64Page({ lang, defaultLang, enabledLangs: enabled })
+);
+
+registerToolPage(app as any, 'add-watermark', (lang, defaultLang, enabled) =>
+	renderAddWatermarkPage({ lang, defaultLang, enabledLangs: enabled })
+);
+
+registerToolPage(app as any, 'images-to-pdf', (lang, defaultLang, enabled) =>
+	renderImagesToPdfPage({ lang, defaultLang, enabledLangs: enabled })
+);
+
+registerToolPage(app as any, 'images-to-gif', (lang, defaultLang, enabled) =>
+	renderImagesToGifPage({ lang, defaultLang, enabledLangs: enabled })
+);
+
+registerToolPage(app as any, 'images-to-word', (lang, defaultLang, enabled) =>
+	renderImagesToWordPage({ lang, defaultLang, enabledLangs: enabled })
+);
+
+registerToolPage(app as any, 'images-to-ppt', (lang, defaultLang, enabled) =>
+	renderImagesToPptPage({ lang, defaultLang, enabledLangs: enabled })
 );
 
 // Register html-entity page via registrar（HTML 实体编解码）

@@ -235,7 +235,9 @@
     "related": [
       "image-overlay",
       "image-crop",
-      "image-compress"
+      "image-compress",
+      "images-to-pdf",
+      "images-to-gif"
     ],
     "logo": "/icons/tools/image-merge.svg"
   },
@@ -251,9 +253,163 @@
     "faqPrefix": "tool_image_overlay",
     "related": [
       "image-merge",
+      "add-watermark",
       "image-crop"
     ],
     "logo": "/icons/tools/image-overlay.svg"
+  },
+  {
+    "slug": "flip-image",
+    "path": "/tools/flip-image",
+    "category": "image",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_flip_image_title",
+    "homeTitleKey": "tool_flip_image_title",
+    "homeDescKey": "tool_flip_image_desc",
+    "faqPrefix": "tool_flip_image",
+    "related": [
+      "image-grayscale",
+      "image-border",
+      "image-crop"
+    ],
+    "logo": "/icons/tools/flip-image.svg"
+  },
+  {
+    "slug": "image-grayscale",
+    "path": "/tools/image-grayscale",
+    "category": "image",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_image_grayscale_title",
+    "homeTitleKey": "tool_image_grayscale_title",
+    "homeDescKey": "tool_image_grayscale_desc",
+    "faqPrefix": "tool_image_grayscale",
+    "related": [
+      "flip-image",
+      "image-border",
+      "image-crop"
+    ],
+    "logo": "/icons/tools/image-grayscale.svg"
+  },
+  {
+    "slug": "image-border",
+    "path": "/tools/image-border",
+    "category": "image",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_image_border_title",
+    "homeTitleKey": "tool_image_border_title",
+    "homeDescKey": "tool_image_border_desc",
+    "faqPrefix": "tool_image_border",
+    "related": [
+      "image-grayscale",
+      "flip-image",
+      "add-watermark"
+    ],
+    "logo": "/icons/tools/image-border.svg"
+  },
+  {
+    "slug": "image-to-base64",
+    "path": "/tools/image-to-base64",
+    "category": "image",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_image_to_base64_title",
+    "homeTitleKey": "tool_image_to_base64_title",
+    "homeDescKey": "tool_image_to_base64_desc",
+    "faqPrefix": "tool_image_to_base64",
+    "related": [
+      "image-format-converter",
+      "image-compress"
+    ],
+    "logo": "/icons/tools/image-to-base64.svg"
+  },
+  {
+    "slug": "add-watermark",
+    "path": "/tools/add-watermark",
+    "category": "image",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_add_watermark_title",
+    "homeTitleKey": "tool_add_watermark_title",
+    "homeDescKey": "tool_add_watermark_desc",
+    "faqPrefix": "tool_add_watermark",
+    "related": [
+      "image-overlay",
+      "image-exif",
+      "image-border"
+    ],
+    "logo": "/icons/tools/add-watermark.svg"
+  },
+  {
+    "slug": "images-to-pdf",
+    "path": "/tools/images-to-pdf",
+    "category": "image",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_images_to_pdf_title",
+    "homeTitleKey": "tool_images_to_pdf_title",
+    "homeDescKey": "tool_images_to_pdf_desc",
+    "faqPrefix": "tool_images_to_pdf",
+    "related": [
+      "image-merge",
+      "images-to-word",
+      "images-to-ppt",
+      "images-to-gif"
+    ],
+    "logo": "/icons/tools/images-to-pdf.svg"
+  },
+  {
+    "slug": "images-to-word",
+    "path": "/tools/images-to-word",
+    "category": "image",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_images_to_word_title",
+    "homeTitleKey": "tool_images_to_word_title",
+    "homeDescKey": "tool_images_to_word_desc",
+    "faqPrefix": "tool_images_to_word",
+    "related": [
+      "images-to-pdf",
+      "images-to-ppt",
+      "image-merge"
+    ],
+    "logo": "/icons/tools/images-to-word.svg"
+  },
+  {
+    "slug": "images-to-gif",
+    "path": "/tools/images-to-gif",
+    "category": "image",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_images_to_gif_title",
+    "homeTitleKey": "tool_images_to_gif_title",
+    "homeDescKey": "tool_images_to_gif_desc",
+    "faqPrefix": "tool_images_to_gif",
+    "related": [
+      "images-to-pdf",
+      "image-merge",
+      "image-format-converter"
+    ],
+    "logo": "/icons/tools/images-to-gif.svg"
+  },
+  {
+    "slug": "images-to-ppt",
+    "path": "/tools/images-to-ppt",
+    "category": "image",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_images_to_ppt_title",
+    "homeTitleKey": "tool_images_to_ppt_title",
+    "homeDescKey": "tool_images_to_ppt_desc",
+    "faqPrefix": "tool_images_to_ppt",
+    "related": [
+      "images-to-pdf",
+      "images-to-word",
+      "image-merge"
+    ],
+    "logo": "/icons/tools/images-to-ppt.svg"
   },
   {
     "slug": "add-www-to-dns",
