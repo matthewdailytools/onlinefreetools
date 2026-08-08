@@ -84,8 +84,8 @@ const translations = {
     tool_indexnow_desc: 'Submit URLs via IndexNow: generate key, check .txt, explain 200/202.',
     tool_markdown_to_html_article:
       'Convert Markdown to sanitized HTML or HTML to Markdown in-browser. Preview, copy, or download. Paste stays local; libraries may load from a CDN.',
-    tool_ip_address_title: 'What Is My IP Address — See Your Public IP',
-    tool_ip_address_desc: 'See the public IP our edge observes. Refresh anytime; VPN shows exit IP.',
+    tool_ip_address_title: 'What Is My IP Address — See Your Public IP (IPv4 or IPv6)',
+    tool_ip_address_desc: 'Public IPv4 or IPv6 for this connection. Refresh anytime; VPN shows exit IP.',
     tool_bmi_title: 'BMI Calculator — Body Mass Index',
     tool_bmi_description: 'Adult BMI screening from weight and height. Example: 70 kg, 175 cm → 22.9. Not a diagnosis.',
     tool_marginal_revenue_title: 'How to Calculate Marginal Revenue — MR Calculator (ΔTR / ΔQ)',
@@ -213,7 +213,7 @@ const translations = {
     tool_indexnow_title: 'IndexNow',
     tool_indexnow_desc: 'IndexNow 提交 URL：生成密钥、检查 txt、说明 200/202。',
     tool_markdown_to_html_article: '同页双向：Markdown 转安全 HTML，或 HTML 收回 Markdown；粘贴不上传。',
-    tool_ip_address_title: '查询我的公网 IP — 查看当前出口地址',
+    tool_ip_address_title: 'IP 地址查询 — 查看我的公网 IP（IPv4/IPv6）',
     tool_bmi_title: 'BMI 计算器 — 身体质量指数',
     tool_bmi_description: '按成人筛查公式计算 BMI。示例：70 公斤、175 厘米 → 约 22.9。不是诊断。',
     tool_marginal_revenue_title: '边际收益计算 — 公式 MR = ΔTR / ΔQ',
@@ -252,8 +252,8 @@ const translations = {
     tool_squarefeet_result_note: '结果保留两位小数。',
     tool_squarefeet_usage_title: '用法',
     tool_squarefeet_usage: '此工具可快速估算地板、油漆或家具摆放所需的面积。',
-    tool_ip_address_title: '查询我的公网 IP — 查看当前出口地址',
-    tool_ip_address_desc: '查看边缘所见公网出口 IP；VPN 显示出口地址。',
+    tool_ip_address_title: 'IP 地址查询 — 查看我的公网 IP（IPv4/IPv6）',
+    tool_ip_address_desc: '在线查公网/外网 IP（IPv4 或 IPv6），打开即显；VPN 下为出口地址。',
     tool_bmi_title: '如何计算BMI',
     tool_bmi_description: '轻松计算您的身体质量指数（BMI）。输入体重和身高即可获得BMI结果。',
     back_home: '返回首页',
@@ -349,8 +349,8 @@ const translations = {
     tool_indexnow_desc: 'IndexNow: generar clave, comprobar .txt y enviar URLs a Bing.',
     tool_markdown_to_html_article:
       'Markdown ↔ HTML en el navegador: vista previa, copia y descarga. El pegado no se sube; librerías pueden cargar desde CDN.',
-    tool_ip_address_title: 'Cuál es mi IP — Ver tu IP pública',
-    tool_ip_address_desc: 'Consulta la IP pública que ve nuestro edge. Con VPN verás la de salida.',
+    tool_ip_address_title: 'Cuál es mi IP — Consulta tu IP pública (IPv4/IPv6)',
+    tool_ip_address_desc: 'IPv4 o IPv6 según tu ruta. Actualiza cuando quieras; con VPN verás la de salida.',
     tool_bmi_title: 'Calculadora de IMC — Cómo calcular',
     tool_bmi_description: 'Calcula el IMC con la fórmula adulta: elige métrico o imperial, introduce peso y altura. Ejemplo 70 kg / 175 cm → 22,9. Solo cribado educativo.',
     tool_gradient_title: 'Calculadora de gradiente — ∇f multivariable (derivadas parciales)',
@@ -482,8 +482,8 @@ const translations = {
     tool_indexnow_desc: 'IndexNow: إنشاء مفتاح وفحص txt وإرسال روابط إلى Bing.',
     tool_markdown_to_html_article:
       'تحويل ثنائي Markdown ↔ HTML في المتصفح مع معاينة وتنظيف. اللصق لا يُرفع.',
-    tool_ip_address_title: 'ما هو عنوان IP الخاص بي — اعرض IP العام',
-    tool_ip_address_desc: 'اعرض IP العام الذي يراه الطرف الطرفي؛ مع VPN يظهر عنوان الخروج.',
+    tool_ip_address_title: 'ما هو عنوان IP الخاص بي — IP عام (IPv4/IPv6)',
+    tool_ip_address_desc: 'IPv4 أو IPv6 حسب المسار؛ مع VPN يظهر عنوان الخروج.',
     tool_bmi_title: 'حاسبة مؤشر كتلة الجسم',
     tool_bmi_description:
       'احسب BMI للبالغين: اختر متري/إمبراطوري، أدخل الوزن والطول، ثم قارن بالفئات. مثال: 70 كغ و175 سم → ≈22.9. للفحص التعليمي فقط.',
@@ -616,8 +616,8 @@ const translations = {
     tool_indexnow_desc: 'IndexNow: gerar chave, checar .txt e enviar URLs ao Bing.',
     tool_markdown_to_html_article:
       'Markdown ↔ HTML no navegador: pré-visualização, cópia e download. O texto colado não é enviado.',
-    tool_ip_address_title: 'Qual é o meu IP — Ver seu IP público',
-    tool_ip_address_desc: 'Veja o IP público observado pelo edge. Com VPN aparece o IP de saída.',
+    tool_ip_address_title: 'Qual é o meu IP — Consulta IP pública (IPv4/IPv6)',
+    tool_ip_address_desc: 'IPv4 ou IPv6 nesta conexão. Atualize a qualquer momento; VPN mostra IP de saída.',
     tool_bmi_title: 'Calculadora de IMC — Como calcular',
     tool_bmi_description: 'Calcule o IMC com a fórmula adulta: escolha métrico ou imperial, informe peso e altura. Exemplo 70 kg / 175 cm → 22,9. Triagem educativa.',
     tool_gradient_title: 'Calculadora de gradiente — ∇f multivariable (derivadas parciais)',
@@ -749,8 +749,8 @@ const translations = {
     tool_indexnow_desc: 'IndexNow: buat kunci, cek .txt, kirim URL ke Bing.',
     tool_markdown_to_html_article:
       'Markdown ↔ HTML di browser: pratinjau, salin, unduh. Tempelan tidak diunggah.',
-    tool_ip_address_title: 'Berapa IP saya — Lihat IP publik Anda',
-    tool_ip_address_desc: 'Lihat IP publik yang diamati edge. VPN menampilkan IP keluar.',
+    tool_ip_address_title: 'Cek IP saya — Alamat IP publik (IPv4/IPv6)',
+    tool_ip_address_desc: 'IPv4 atau IPv6 sesuai jalur. Muat ulang kapan saja; VPN menampilkan IP keluar.',
     tool_bmi_title: 'Kalkulator BMI — Cara Menghitung',
     tool_bmi_description: 'Hitung BMI dengan rumus dewasa: pilih satuan metrik/imperial, masukkan berat dan tinggi. Contoh 70 kg / 175 cm → 22,9. Skrining edukatif saja.',
     tool_gradient_title: 'Kalkulator gradien — ∇f multivariabel (turunan parsial)',
@@ -882,8 +882,8 @@ const translations = {
     tool_indexnow_desc: 'IndexNow : générer la clé, vérifier le .txt, envoyer des URL à Bing.',
     tool_markdown_to_html_article:
       'Markdown ↔ HTML dans le navigateur : aperçu, copie, téléchargement. Le collage n\'est pas envoyé.',
-    tool_ip_address_title: 'Quelle est mon adresse IP — Voir votre IP publique',
-    tool_ip_address_desc: 'Affichez l’IP publique vue par notre edge. Avec VPN : IP de sortie.',
+    tool_ip_address_title: 'Quelle est mon adresse IP — IP publique (IPv4/IPv6)',
+    tool_ip_address_desc: 'IPv4 ou IPv6 selon la connexion. Actualisez à tout moment ; VPN = IP de sortie.',
     tool_bmi_title: 'Calculateur d\'IMC — Comment calculer',
     tool_bmi_description: 'Calculez l\'IMC avec la formule adulte : métrique ou impérial, poids et taille. Exemple 70 kg / 175 cm → 22,9. Dépistage éducatif uniquement.',
     tool_gradient_title: 'Calculateur de gradient — ∇f multivariable (dérivées partielles)',
@@ -1014,8 +1014,8 @@ const translations = {
     tool_indexnow_desc: 'IndexNow：キー生成、txt 確認、Bing へ URL 送信。',
     tool_markdown_to_html_article:
       'ブラウザ内の双方向 Markdown ↔ HTML。プレビューと書き出し。貼り付けはアップロードされません。',
-    tool_ip_address_title: '自分のIPアドレスを確認 — グローバルIPを表示',
-    tool_ip_address_desc: 'エッジが見るグローバルIPを表示。VPN時は出口IPになります。',
+    tool_ip_address_title: '自分のIPアドレス確認 — グローバルIP表示（IPv4/IPv6）',
+    tool_ip_address_desc: '接続経路に応じ IPv4 または IPv6。更新可；VPN 時は出口 IP。',
     tool_bmi_title: 'BMI計算ツール',
     tool_bmi_description:
       '成人BMIを式で算出。メートル法/ヤード・ポンド法を選び体重・身長を入力。例：70 kg・175 cm → 約22.9。参考用で診断ではありません。',
@@ -1148,8 +1148,8 @@ const translations = {
     tool_indexnow_desc: 'IndexNow: ключ, проверка .txt, отправка URL в Bing.',
     tool_markdown_to_html_article:
       'Двунаправленный Markdown ↔ HTML в браузере: предпросмотр и экспорт. Вставка не загружается на сервер.',
-    tool_ip_address_title: 'Узнать свой IP — Показать публичный IP-адрес',
-    tool_ip_address_desc: 'Публичный IP с точки зрения edge. При VPN виден IP выхода.',
+    tool_ip_address_title: 'Узнать свой IP — Публичный адрес (IPv4/IPv6)',
+    tool_ip_address_desc: 'IPv4 или IPv6 для этого соединения. Обновите в любой момент; при VPN — IP выхода.',
     tool_bmi_title: 'Калькулятор ИМТ',
     tool_bmi_description:
       'Рассчитайте ИМТ для взрослых: метрическая или имперская система, вес и рост, затем категории. Пример: 70 кг и 175 см → ≈22,9. Только скрининг.',
@@ -1283,7 +1283,7 @@ const translations = {
     tool_markdown_to_html_article:
       'Bidirektionales Markdown ↔ HTML im Browser: Vorschau und Export. Einfügen bleibt lokal.',
     tool_ip_address_title: 'Was ist meine IP-Adresse? — IPv4/IPv6 sofort anzeigen',
-    tool_ip_address_desc: 'Öffentliche IP laut unserem Edge. Mit VPN sehen Sie die Exit-IP.',
+    tool_ip_address_desc: 'Öffentliche IPv4 oder IPv6 je nach Verbindung. Mit VPN sehen Sie die Exit-IP.',
     tool_bmi_title: 'BMI-Rechner — Body-Mass-Index berechnen',
     tool_bmi_description: 'BMI mit Erwachsenen-Formel berechnen: metrisch oder imperial, Gewicht und Größe eingeben. Beispiel 70 kg / 175 cm → 22,9. Nur Bildungs-Screening.',
     tool_gradient_title: 'Gradient berechnen — Multivariables ∇f (partielle Ableitungen)',

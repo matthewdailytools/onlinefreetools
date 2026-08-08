@@ -1044,9 +1044,9 @@ const fr: SiteLangDict = {
     'Fiche OMS sur l\'obésité et le surpoids ; guide CDC sur les catégories d\'IMC adulte ; formules métriques et impériales standard.',
 
   /* --- IG: ip / roi / mr --- */
-tool_ip_address_title: 'Quelle est mon adresse IP — Voir votre IP publique',
+tool_ip_address_title: 'Quelle est mon adresse IP — IP publique (IPv4/IPv6)',
   tool_ip_address_description:
-    'Affichez l’IP publique observée par notre edge pour votre connexion. Processus : ouvrez la page ou cliquez sur Actualiser ; le worker lit l’adresse client de confiance. Exemple : peut afficher 203.0.113.10. Avec un VPN/proxy, vous voyez l’IP de sortie, pas celle du LAN.',
+    'Consultez votre adresse IP publique telle que notre edge la voit sur cette connexion — IPv4 ou IPv6 selon le chemin. Processus : ouvrez la page ou cliquez Actualiser ; le worker lit l’adresse client de confiance. Exemple : peut afficher 203.0.113.10. Avec VPN/proxy, IP de sortie, pas le 192.168 du routeur. Utile pour allowlist, accès distant et VPN.',
   tool_ip_address_article:
     'Cette page montre votre IP de sortie publique vue depuis notre edge — utile pour vérifier un VPN, donner l’IP au support ou déboguer des listes d’autorisation. Ce n’est pas un outil de géolocalisation ou d’ISP.',
   tool_ip_address_how_title: 'Fonctionnement',
@@ -1063,26 +1063,31 @@ tool_ip_address_title: 'Quelle est mon adresse IP — Voir votre IP publique',
   tool_ip_address_example:
     'Exemple documentaire : l’edge voit 203.0.113.10 (adresse réservée TEST-NET-3). Votre résultat réel sera votre IP publique de sortie.',
   tool_ip_address_usecases_title: 'Cas d’usage',
-  tool_ip_address_usecase_1: 'Vérifier qu’un VPN/proxy change bien l’IP publique.',
-  tool_ip_address_usecase_2: 'Indiquer au support ou au pare-feu l’IP publique à autoriser.',
-  tool_ip_address_usecase_3: 'Contrôle rapide lors du débogage d’accès distant ou d’allowlist d’API.',
+  tool_ip_address_usecase_1: 'Bureau à distance, NAS ou jeux en ligne : indiquer l’IP publique actuelle pour pare-feu ou ports.',
+  tool_ip_address_usecase_2: 'Activez/désactivez VPN/proxy et actualisez pour voir si l’IP de sortie change.',
+  tool_ip_address_usecase_3: 'Avant groupes de sécurité cloud, pare-feu d’entreprise ou allowlist d’API.',
   tool_ip_address_ref_mdn_label: 'MDN — En-tête X-Forwarded-For (risques d’usurpation)',
   tool_ip_address_ref_cloudflare_label: 'Cloudflare Learning — Qu’est-ce qu’une adresse IP ?',
   ip_label: 'Votre IP publique',
+  ip_version_ipv4: 'IPv4',
+  ip_version_ipv6: 'IPv6',
   fetch_ip_button: 'Actualiser',
   fetching_message: 'Récupération…',
-  tool_ip_address_faq_q1: 'Que se passe-t-il avec un VPN ou un proxy ?',
+  tool_ip_address_faq_q1: 'Pourquoi différente de l’IP du routeur ?',
   tool_ip_address_faq_a1:
-    'Vous voyez en général l’IP de sortie du VPN/proxy. C’est attendu : les sites voient la même identité.',
-  tool_ip_address_faq_q2: 'Comment la page obtient-elle mon IP ?',
+    'Sur le routeur on voit souvent 192.168.x.x — adresse privée du LAN. Ici c’est l’IP publique de sortie sur Internet, celle que voient la plupart des sites.',
+  tool_ip_address_faq_q2: 'Que se passe-t-il avec un VPN ou un proxy ?',
   tool_ip_address_faq_a2:
-    'Le navigateur interroge l’API edge ; le worker renvoie l’IP client de confiance de cette connexion.',
-  tool_ip_address_faq_q3: 'Pourquoi différente de mon IP LAN ?',
+    'Vous voyez en général l’IP de sortie du VPN/proxy, pas celle de la box. Actualisez après changement pour vérifier.',
+  tool_ip_address_faq_q3: 'Ai-je IPv4 et IPv6 en même temps ?',
   tool_ip_address_faq_a3:
-    'Les adresses privées (ex. 192.168.x.x) restent sur le réseau local via le NAT. Ici seule l’IP publique apparaît.',
-  tool_ip_address_faq_q4: 'Stockez-vous mon IP ?',
+    'Non. Chaque requête renvoie une adresse — IPv4 ou IPv6 selon le chemin utilisé. En dual-stack, cela peut changer après reconnexion.',
+  tool_ip_address_faq_q4: 'Comment la page obtient-elle mon IP ?',
   tool_ip_address_faq_a4:
-    'La requête est courte sur l’edge. Nous ne proposons pas d’historique d’IP.',
+    'Le navigateur interroge l’API edge ; le worker renvoie l’IP client de confiance de cette connexion.',
+  tool_ip_address_faq_q5: 'Stockez-vous mon IP ?',
+  tool_ip_address_faq_a5:
+    'La requête est courte sur l’edge. Pas d’historique d’IP ; considérez le résultat comme affichage temporaire.',
 
   tool_roi_title: 'Calculateur de ROI — Calculer le retour sur investissement',
   tool_roi_description:

@@ -77,7 +77,7 @@ export const renderIpAddressPage = (lang: SiteLang, defaultLang: SiteLang) => {
     <div class="card mb-3">
       <div class="card-header">${escapeHtml(t(lang, 'result_title'))}</div>
       <div class="card-body">
-        <div class="mb-2"><span class="text-muted">${escapeHtml(t(lang, 'ip_label'))}: </span><span id="ipAddress">-</span></div>
+        <div class="mb-2"><span class="text-muted">${escapeHtml(t(lang, 'ip_label'))}: </span><span id="ipAddress">-</span><span id="ipVersion" class="badge text-bg-secondary ms-2 d-none"></span></div>
         <div class="mt-3">
           <button type="button" id="fetchButton" class="btn btn-primary">${escapeHtml(t(lang, 'fetch_ip_button'))}</button>
         </div>
@@ -104,22 +104,42 @@ export const renderIpAddressPage = (lang: SiteLang, defaultLang: SiteLang) => {
   <script>
     (function () {
       var ipAddressEl = document.getElementById('ipAddress');
+      var ipVersionEl = document.getElementById('ipVersion');
       var fetchButton = document.getElementById('fetchButton');
       var fetchingMsg = ${JSON.stringify(t(lang, 'fetching_message'))};
       var errPrefix = ${JSON.stringify(t(lang, 'error_prefix'))};
+      var labelV4 = ${JSON.stringify(t(lang, 'ip_version_ipv4'))};
+      var labelV6 = ${JSON.stringify(t(lang, 'ip_version_ipv6'))};
+
+      /** 渲染 IP 与版本角标（version 为本次连接所见 4 或 6，非双栈并列）。 */
+      function renderIpResult(ip, version) {
+        ipAddressEl.textContent = ip || '-';
+        if (!ipVersionEl) return;
+        if (version === '4') {
+          ipVersionEl.textContent = labelV4;
+          ipVersionEl.classList.remove('d-none');
+        } else if (version === '6') {
+          ipVersionEl.textContent = labelV6;
+          ipVersionEl.classList.remove('d-none');
+        } else {
+          ipVersionEl.textContent = '';
+          ipVersionEl.classList.add('d-none');
+        }
+      }
 
       /** 向边缘 API 请求当前连接的公网出口 IP。 */
       async function fetchIpAddress() {
         try {
           ipAddressEl.textContent = fetchingMsg;
+          if (ipVersionEl) ipVersionEl.classList.add('d-none');
           var res = await fetch('/api/tools/ip-address');
           var data = await res.json();
           if (!res.ok) {
             throw new Error(data && data.error ? data.error : 'Request failed');
           }
-          ipAddressEl.textContent = data.ip || '-';
+          renderIpResult(data.ip, data.version);
         } catch (err) {
-          ipAddressEl.textContent = errPrefix + (err && err.message ? err.message : String(err));
+          renderIpResult(errPrefix + (err && err.message ? err.message : String(err)), null);
         }
       }
 

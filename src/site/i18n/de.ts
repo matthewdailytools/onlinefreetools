@@ -1063,26 +1063,31 @@ tool_ip_address_title: 'Was ist meine IP-Adresse? — IPv4/IPv6 sofort anzeigen'
   tool_ip_address_example:
     'Dokumentationsbeispiel: Edge sieht 203.0.113.10 (TEST-NET-3). Ihr Live-Ergebnis ist Ihre echte öffentliche Exit-IP.',
   tool_ip_address_usecases_title: 'Wann sinnvoll',
-  tool_ip_address_usecase_1: 'Prüfen, ob VPN/Proxy die öffentliche IP wirklich ändert.',
-  tool_ip_address_usecase_2: 'Support oder Firewall die freizugebende öffentliche IP nennen.',
-  tool_ip_address_usecase_3: 'Schneller Check beim Debug von Remote-Zugriff oder API-Allowlists.',
+  tool_ip_address_usecase_1: 'Remote-Desktop, NAS oder Gaming: aktuelle öffentliche IP fürs Firewall-Whitelist melden.',
+  tool_ip_address_usecase_2: 'VPN/Proxy ein- oder ausschalten und aktualisieren, ob sich die Exit-IP ändert.',
+  tool_ip_address_usecase_3: 'Vor Cloud-Security-Groups, Firmen-Firewall oder API-Allowlist — schneller Quell-IP-Check.',
   tool_ip_address_ref_mdn_label: 'MDN — X-Forwarded-For-Header (Spoofing-Hinweise)',
   tool_ip_address_ref_cloudflare_label: 'Cloudflare Learning — Was ist eine IP-Adresse?',
   ip_label: 'Ihre öffentliche IP',
+  ip_version_ipv4: 'IPv4',
+  ip_version_ipv6: 'IPv6',
   fetch_ip_button: 'Aktualisieren',
   fetching_message: 'Wird geladen…',
-  tool_ip_address_faq_q1: 'Warum unterscheidet sie sich von meiner LAN-IP?',
+  tool_ip_address_faq_q1: 'Warum unterscheidet sie sich von der Router-IP?',
   tool_ip_address_faq_a1:
-    'Private Adressen (z. B. 192.168.x.x) bleiben per NAT im lokalen Netz. Hier erscheint nur die öffentliche Internet-Adresse.',
-  tool_ip_address_faq_q2: 'Speichern Sie meine IP?',
+    'In der Router-Oberfläche steht oft 192.168.x.x — das ist die private LAN-Adresse. Hier sehen Sie die öffentliche Exit-IP im Internet, die die meisten Dienste sehen.',
+  tool_ip_address_faq_q2: 'Was bei VPN oder Proxy?',
   tool_ip_address_faq_a2:
-    'Die Abfrage ist eine kurze Edge-Anfrage. Es gibt kein IP-Verlaufsprodukt.',
-  tool_ip_address_faq_q3: 'Wie erhält die Seite meine IP?',
+    'Meist sehen Sie die Exit-IP von VPN/Proxy, nicht die Heim-Breitband-Adresse. Nach dem Umschalten aktualisieren, um die Änderung zu prüfen.',
+  tool_ip_address_faq_q3: 'Bekomme ich IPv4 und IPv6 gleichzeitig?',
   tool_ip_address_faq_a3:
-    'Der Browser ruft die Edge-API auf; der Worker liefert die vertrauenswürdige Client-IP dieser Verbindung.',
-  tool_ip_address_faq_q4: 'Was bei VPN oder Proxy?',
+    'Nein. Pro Anfrage eine Adresse — IPv4 oder IPv6, je nach Verbindungsweg. Bei Dual-Stack kann sich die Version nach Reconnect oder Netzwechsel ändern.',
+  tool_ip_address_faq_q4: 'Wie erhält die Seite meine IP?',
   tool_ip_address_faq_a4:
-    'Meist sehen Sie die Exit-IP von VPN/Proxy. Das ist erwartet: Websites sehen dieselbe Exit-Identität.',
+    'Der Browser ruft die Edge-API auf; der Worker liefert die vertrauenswürdige Client-IP dieser Verbindung.',
+  tool_ip_address_faq_q5: 'Speichern Sie meine IP?',
+  tool_ip_address_faq_a5:
+    'Die Abfrage ist eine kurze Edge-Anfrage. Es gibt kein IP-Verlaufsprodukt; behandeln Sie das Ergebnis als temporäre Anzeige.',
 
   tool_roi_title: 'ROI-Rechner — Return on Investment berechnen',
   tool_roi_description:

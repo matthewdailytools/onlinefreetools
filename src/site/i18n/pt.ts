@@ -1044,9 +1044,9 @@ const pt: SiteLangDict = {
     'Folha informativa da OMS sobre obesidade; orientação do CDC sobre categorias de IMC adulto; fórmulas métricas e imperiais padrão.',
 
   /* --- IG: ip / roi / mr --- */
-tool_ip_address_title: 'Qual é o meu IP — Ver seu IP público',
+tool_ip_address_title: 'Qual é o meu IP — Consulta IP pública (IPv4/IPv6)',
   tool_ip_address_description:
-    'Veja o IP público que nosso edge observa na sua conexão. Processo: abra a página ou toque em Atualizar; o worker lê o endereço de cliente confiável. Exemplo: pode mostrar 203.0.113.10. Com VPN ou proxy aparece o IP de saída, não o da LAN.',
+    'Consulte seu endereço IP público como nosso edge vê nesta conexão—IPv4 ou IPv6 conforme o caminho. Processo: abra a página ou toque em Atualizar; o worker lê o IP de cliente confiável. Exemplo: pode mostrar 203.0.113.10. Com VPN/proxy aparece o IP de saída, não o 192.168 do roteador. Útil para allowlist, acesso remoto e checar VPN.',
   tool_ip_address_article:
     'Esta página mostra o IP de saída público visto pelo nosso edge — útil para checar VPN, informar suporte ou depurar allowlists. Não é geolocalização nem consulta de ISP.',
   tool_ip_address_how_title: 'Como funciona',
@@ -1063,26 +1063,31 @@ tool_ip_address_title: 'Qual é o meu IP — Ver seu IP público',
   tool_ip_address_example:
     'Exemplo de documentação: o edge vê 203.0.113.10 (endereço reservado TEST-NET-3). Seu resultado real será o IP público de saída.',
   tool_ip_address_usecases_title: 'Quando usar',
-  tool_ip_address_usecase_1: 'Confirmar se a VPN/proxy realmente mudou o IP público.',
-  tool_ip_address_usecase_2: 'Informar ao suporte ou firewall qual IP público liberar.',
-  tool_ip_address_usecase_3: 'Checagem rápida ao depurar acesso remoto ou allowlist de API.',
+  tool_ip_address_usecase_1: 'Desktop remoto, NAS ou jogos: informar o IP público atual para firewall ou portas.',
+  tool_ip_address_usecase_2: 'Ligue/desligue VPN/proxy e atualize para ver se o IP de saída mudou.',
+  tool_ip_address_usecase_3: 'Antes de security groups na nuvem, firewall corporativo ou allowlist de API.',
   tool_ip_address_ref_mdn_label: 'MDN — Cabeçalho X-Forwarded-For (riscos de spoofing)',
   tool_ip_address_ref_cloudflare_label: 'Cloudflare Learning — O que é um endereço IP?',
   ip_label: 'Seu IP público',
+  ip_version_ipv4: 'IPv4',
+  ip_version_ipv6: 'IPv6',
   fetch_ip_button: 'Atualizar',
   fetching_message: 'Buscando…',
-  tool_ip_address_faq_q1: 'Vocês armazenam meu IP?',
+  tool_ip_address_faq_q1: 'Por que difere do IP do roteador?',
   tool_ip_address_faq_a1:
-    'A consulta é um pedido curto no edge. Não há histórico de IP; trate o resultado como exibição temporária.',
-  tool_ip_address_faq_q2: 'Como a página obtém meu IP?',
+    'No roteador costuma aparecer 192.168.x.x — é o IP privado da LAN. Aqui você vê o IP público de saída na Internet, o que a maioria dos sites enxerga.',
+  tool_ip_address_faq_q2: 'E se eu usar VPN ou proxy?',
   tool_ip_address_faq_a2:
-    'O navegador chama a API no edge; o worker devolve o IP de cliente confiável dessa conexão.',
-  tool_ip_address_faq_q3: 'E se eu usar VPN ou proxy?',
+    'Em geral você vê o IP de saída do VPN/proxy, não o da banda larga. Atualize após mudar VPN para confirmar.',
+  tool_ip_address_faq_q3: 'Recebo IPv4 e IPv6 ao mesmo tempo?',
   tool_ip_address_faq_a3:
-    'Em geral você vê o IP de saída do VPN/proxy. É esperado: sites veem a mesma identidade.',
-  tool_ip_address_faq_q4: 'Por que difere do IP da LAN?',
+    'Não. Cada consulta retorna um endereço — IPv4 ou IPv6 conforme a rota usada. Em dual-stack pode mudar ao reconectar ou trocar de rede.',
+  tool_ip_address_faq_q4: 'Como a página obtém meu IP?',
   tool_ip_address_faq_a4:
-    'Endereços privados (ex.: 192.168.x.x) ficam na rede local via NAT. Aqui só aparece o IP público.',
+    'O navegador chama a API no edge; o worker devolve o IP de cliente confiável dessa conexão.',
+  tool_ip_address_faq_q5: 'Vocês armazenam meu IP?',
+  tool_ip_address_faq_a5:
+    'A consulta é um pedido curto no edge. Não há histórico de IP; trate o resultado como exibição temporária.',
 
   tool_roi_title: 'Como calcular o ROI — Calculadora com fórmula e exemplo',
   tool_roi_description:

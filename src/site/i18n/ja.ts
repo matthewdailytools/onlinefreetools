@@ -1175,9 +1175,9 @@ const ja: SiteLangDict = {
   tool_gradient_faq_a4: 'いいえ。傾き（rise/run）は別ツール。ここは偏導ベクトル ∇f です。',
 
   /* --- IG: ip / roi / mr --- */
-tool_ip_address_title: '自分のIPアドレスを確認 — グローバルIPを表示',
+tool_ip_address_title: '自分のIPアドレス確認 — グローバルIP表示（IPv4/IPv6）',
   tool_ip_address_description:
-    'エッジが見ているあなたのグローバル（公衆）IPを表示します。手順：ページを開くか「更新」を押すと、ワーカーが信頼できるクライアントアドレスを読み取ります。例：203.0.113.10 のように表示されることがあります。VPN/プロキシ利用時は出口IPになり、LANアドレスではありません。',
+    'この接続でエッジが見ているグローバル（公衆）IPを表示します—IPv4 か IPv6 は経路次第。手順：ページを開くか「更新」を押すと、ワーカーが信頼できるクライアントIPを返します。例：203.0.113.10 のように表示されることがあります。VPN/プロキシ時は出口IPで、ルーターの 192.168 ではありません。allowlist・リモート接続・VPN確認に。',
   tool_ip_address_article:
     'このページはエッジから見た公衆出口IPを示します。VPN確認、サポートへの連絡、許可リストの確認に便利です。位置情報やISP照会の製品ではありません。',
   tool_ip_address_how_title: '使い方',
@@ -1194,25 +1194,30 @@ tool_ip_address_title: '自分のIPアドレスを確認 — グローバルIP�
   tool_ip_address_example:
     '説明用の例：エッジが見る 203.0.113.10（TEST-NET-3 の予約アドレス）。実際の結果はあなたの本物の公衆出口IPです。',
   tool_ip_address_usecases_title: 'こんなときに',
-  tool_ip_address_usecase_1: 'VPN/プロキシが本当に公衆IPを変えているか確認する。',
-  tool_ip_address_usecase_2: 'サポートやファイアウォール担当に許可すべき公衆IPを伝える。',
-  tool_ip_address_usecase_3: 'リモートアクセスやAPI許可リストの軽いデバッグ。',
+  tool_ip_address_usecase_1: 'リモートデスクトップ・NAS・オンラインゲーム：ファイアウォール許可用の公衆IPを確認。',
+  tool_ip_address_usecase_2: 'VPN/プロキシのオンオフ後に更新し、出口IPが変わったか確認。',
+  tool_ip_address_usecase_3: 'クラウドのセキュリティグループ、社内FW、API allowlist 設定前の確認。',
   tool_ip_address_ref_mdn_label: 'MDN — X-Forwarded-For（なりすまし注意）',
   tool_ip_address_ref_cloudflare_label: 'Cloudflare Learning — IPアドレスとは',
   ip_label: 'あなたのグローバルIP',
+  ip_version_ipv4: 'IPv4',
+  ip_version_ipv6: 'IPv6',
   fetch_ip_button: '更新',
   fetching_message: '取得中…',
-  tool_ip_address_faq_q1: 'どうやってIPを取得していますか？',
+  tool_ip_address_faq_q1: 'ルーターに表示されるIPと違うのはなぜ？',
   tool_ip_address_faq_a1:
-    'ブラウザがエッジAPIに問い合わせ、ワーカーがその接続の信頼できるクライアントIPを返します。',
+    'ルーター画面の 192.168.x.x はLAN内のプライベートIPです。ここではインternet側の公衆出口IP—サイトが通常見るアドレス—を表示します。',
   tool_ip_address_faq_q2: 'VPNやプロキシを使うとどうなりますか？',
   tool_ip_address_faq_a2:
-    '多くの場合、VPN/プロキシの出口IPが表示されます。サイトが見るのも同じ出口です。',
-  tool_ip_address_faq_q3: 'LANのIPと違うのはなぜ？',
+    '多くの場合、VPN/プロキシの出口IPが表示されます。切り替え後に更新して変化を確認してください。',
+  tool_ip_address_faq_q3: 'IPv4 と IPv6 を同時に取得できますか？',
   tool_ip_address_faq_a3:
-    '192.168.x.x などのプライベートアドレスはNATで内網に留まります。ここには公衆側だけが出ます。',
-  tool_ip_address_faq_q4: 'IPは保存されますか？',
+    'いいえ。1回のリクエストで1つ—接続経路が IPv4 か IPv6 か—だけ返します。デュアルスタックでは再接続やネット変更で切り替わることがあります。',
+  tool_ip_address_faq_q4: 'どうやってIPを取得していますか？',
   tool_ip_address_faq_a4:
+    'ブラウザがエッジAPIに問い合わせ、ワーカーがその接続の信頼できるクライアントIPを返します。',
+  tool_ip_address_faq_q5: 'IPは保存されますか？',
+  tool_ip_address_faq_a5:
     '照会は短時間のエッジリクエストです。IP履歴機能はありません。一時表示として扱ってください。',
 
   tool_roi_title: 'ROI（投資利益率）計算ツール — 計算式と例',

@@ -1044,9 +1044,9 @@ const id: SiteLangDict = {
     'Lembar fakta WHO tentang obesitas; panduan CDC kategori BMI dewasa; rumus metrik dan imperial standar.',
 
   /* --- IG: ip / roi / mr --- */
-tool_ip_address_title: 'Berapa IP saya — Lihat IP publik Anda',
+tool_ip_address_title: 'Cek IP saya — Alamat IP publik (IPv4/IPv6)',
   tool_ip_address_description:
-    'Lihat IP publik yang diamati edge kami untuk koneksi Anda. Proses: buka halaman atau ketuk Muat ulang; worker membaca alamat klien tepercaya. Contoh: bisa menampilkan 203.0.113.10. VPN/proxy menampilkan IP keluar, bukan IP LAN.',
+    'Lihat alamat IP publik menurut edge kami untuk koneksi ini — IPv4 atau IPv6 tergantung jalur. Proses: buka halaman atau ketuk Muat ulang; worker membaca IP klien tepercaya. Contoh: bisa 203.0.113.10. VPN/proxy menampilkan IP keluar, bukan 192.168 router. Berguna untuk allowlist, akses jarak jauh, dan cek VPN.',
   tool_ip_address_article:
     'Halaman ini menampilkan IP egress publik menurut edge kami — berguna untuk cek VPN, lapor ke support, atau debug allowlist. Bukan produk geolokasi atau ISP.',
   tool_ip_address_how_title: 'Cara kerja',
@@ -1063,26 +1063,31 @@ tool_ip_address_title: 'Berapa IP saya — Lihat IP publik Anda',
   tool_ip_address_example:
     'Contoh dokumentasi: edge melihat 203.0.113.10 (alamat cadangan TEST-NET-3). Hasil langsung Anda adalah IP publik egress nyata.',
   tool_ip_address_usecases_title: 'Kapan dipakai',
-  tool_ip_address_usecase_1: 'Pastikan VPN/proxy benar-benar mengubah IP publik.',
-  tool_ip_address_usecase_2: 'Beritahu support atau firewall IP publik yang perlu di-allowlist.',
-  tool_ip_address_usecase_3: 'Cek cepat saat debug akses jarak jauh atau allowlist API.',
+  tool_ip_address_usecase_1: 'Remote desktop, NAS, atau game: laporkan IP publik saat ini untuk firewall atau port.',
+  tool_ip_address_usecase_2: 'Nyalakan/matikan VPN/proxy lalu muat ulang untuk lihat apakah IP keluar berubah.',
+  tool_ip_address_usecase_3: 'Sebelum security group cloud, firewall kantor, atau allowlist API.',
   tool_ip_address_ref_mdn_label: 'MDN — Header X-Forwarded-For (risiko spoofing)',
   tool_ip_address_ref_cloudflare_label: 'Cloudflare Learning — Apa itu alamat IP?',
   ip_label: 'IP publik Anda',
+  ip_version_ipv4: 'IPv4',
+  ip_version_ipv6: 'IPv6',
   fetch_ip_button: 'Muat ulang',
   fetching_message: 'Mengambil…',
-  tool_ip_address_faq_q1: 'Bagaimana halaman ini mendapatkan IP saya?',
+  tool_ip_address_faq_q1: 'Kenapa beda dengan IP di router?',
   tool_ip_address_faq_a1:
-    'Browser meminta API edge; worker mengembalikan IP klien tepercaya untuk koneksi itu.',
-  tool_ip_address_faq_q2: 'Kenapa beda dengan IP LAN?',
+    'Di router sering 192.168.x.x — IP privat LAN. Di sini IP keluar publik di internet yang dilihat kebanyakan situs.',
+  tool_ip_address_faq_q2: 'Bagaimana jika saya pakai VPN/proxy?',
   tool_ip_address_faq_a2:
-    'Alamat privat (mis. 192.168.x.x) tetap di jaringan lokal lewat NAT. Di sini hanya IP publik.',
-  tool_ip_address_faq_q3: 'Bagaimana jika saya pakai VPN/proxy?',
+    'Umumnya Anda melihat IP keluar VPN/proxy, bukan broadband rumah. Muat ulang setelah ganti VPN untuk memastikan.',
+  tool_ip_address_faq_q3: 'Apakah IPv4 dan IPv6 sekaligus?',
   tool_ip_address_faq_a3:
-    'Umumnya Anda melihat IP keluar VPN/proxy. Itu wajar: situs melihat identitas egress yang sama.',
-  tool_ip_address_faq_q4: 'Apakah IP saya disimpan?',
+    'Tidak. Satu permintaan mengembalikan satu alamat — IPv4 atau IPv6 sesuai jalur. Dual-stack bisa berubah setelah reconnect.',
+  tool_ip_address_faq_q4: 'Bagaimana halaman ini mendapatkan IP saya?',
   tool_ip_address_faq_a4:
-    'Pencarian adalah permintaan singkat di edge. Kami tidak menyediakan riwayat IP.',
+    'Browser meminta API edge; worker mengembalikan IP klien tepercaya untuk koneksi itu.',
+  tool_ip_address_faq_q5: 'Apakah IP saya disimpan?',
+  tool_ip_address_faq_a5:
+    'Pencarian adalah permintaan singkat di edge. Tidak ada riwayat IP; anggap hasil sebagai tampilan sementara.',
 
   tool_roi_title: 'Kalkulator ROI — Cara menghitung return on investment',
   tool_roi_description:
