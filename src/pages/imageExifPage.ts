@@ -254,7 +254,7 @@ export const renderImageExifPage = (opts: {
        * @param {*} v
        */
       function formatVal(v) {
-        if (v == null) return '??;
+        if (v == null) return '—';
         if (v instanceof Date) return v.toISOString();
         if (typeof v === 'object') {
           try { return JSON.stringify(v); } catch (e) { return String(v); }

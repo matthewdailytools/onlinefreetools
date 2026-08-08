@@ -336,7 +336,7 @@ export const renderImageOptimizerPage = (opts: {
        */
       function formatStats(codec, w, h, bytes, ms) {
         return msg.statsTpl
-          .replace('{codec}', codec || '??)
+          .replace('{codec}', codec || '—')
           .replace('{w}', String(w))
           .replace('{h}', String(h))
           .replace('{bytes}', formatBytes(bytes))

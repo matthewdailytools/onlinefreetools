@@ -322,7 +322,7 @@ export const renderImageCompressPage = (opts: {
 
       function formatStats(mime, w, h, bytes) {
         return msg.statsTpl
-          .replace('{mime}', mime || '??)
+          .replace('{mime}', mime || '—')
           .replace('{w}', String(w))
           .replace('{h}', String(h))
           .replace('{bytes}', formatBytes(bytes));
