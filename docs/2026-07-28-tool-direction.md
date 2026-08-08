@@ -396,7 +396,11 @@
 
 **说明**：方向 A 允许「技术上成熟的通用计算器」；若要做**行业话术与标准引用**，改归方向 C，不要求同一工具两边都挂名。
 
-**公式对照**：实现/复核时可打开 [ToolDone](https://tooldone.com/zh/) 与 [Omni Calculator](https://www.omnicalculator.com/) 对应 **en** 页，交叉核对变量/边界（归档：[tooldone-2026-08-08](./competitor-refs/tooldone-2026-08-08/README.md)、[omnicalculator-2026-08-08](./competitor-refs/omnicalculator-2026-08-08/README.md)）。Omni 强项是公式讲解深度（近 [calculator.net](https://www.calculator.net/)）；规模约 **3867** en 页——**禁止**复制铺量结构。单位换算坚持单页多类别，不按单位对拆 URL。
+**公式对照**：实现/复核时可打开 [ToolDone](https://tooldone.com/zh/) 与 [Omni Calculator](https://www.omnicalculator.com/) 对应 **en** 页，交叉核对变量/边界。
+
+- 归档：[ToolDone 快照](./competitor-refs/tooldone-2026-08-08/README.md)、[Omni 快照](./competitor-refs/omnicalculator-2026-08-08/README.md)
+- Omni 强项是公式讲解深度（近 calculator.net）；规模约 **3867** en 页——**禁止**复制铺量结构
+- 单位换算坚持单页多类别，不按单位对拆 URL
 
 ---
 
@@ -937,8 +941,24 @@ H1 具名渠道 + 动作（如 Amazon Product Image Resizer）
 | **YMYL** | **是** — disclaimer + references 必备 |
 | **意图词例** | `compound interest formula`, `loan amortization schedule` |
 | **集群** | C02 |
-| **公式对照（ToolDone）** | 见 [tooldone-formula-ref-shortlist.tsv](./competitor-refs/tooldone-2026-08-08/tooldone-formula-ref-shortlist.tsv)：`compound-interest-calculator`、`emi-calculator-equated-monthly-installment`、`amortization-calculator`、`break-even-calculator`、`gross-margin-calculator`、`roi-calculator-return-on-investment`、`marginal-revenue-calculator`、`cagr-calculator-*`、`npv-calculator-*` |
-| **公式对照（Omni）** | 见 [omnicalculator-formula-ref-shortlist.tsv](./competitor-refs/omnicalculator-2026-08-08/omnicalculator-formula-ref-shortlist.tsv)：[compound-interest](https://www.omnicalculator.com/finance/compound-interest) · [emi](https://www.omnicalculator.com/finance/emi) · [amortization](https://www.omnicalculator.com/finance/amortization) · [mortgage](https://www.omnicalculator.com/finance/mortgage) · [break-even](https://www.omnicalculator.com/finance/break-even) · [gross-margin](https://www.omnicalculator.com/finance/gross-margin) · [roi](https://www.omnicalculator.com/finance/roi) · [marginal-revenue](https://www.omnicalculator.com/finance/marginal-revenue) · [cagr](https://www.omnicalculator.com/finance/cagr) · [net-present-value](https://www.omnicalculator.com/finance/net-present-value) · [salary-to-hourly](https://www.omnicalculator.com/finance/salary-to-hourly) |
+| **公式对照** | ToolDone + Omni shortlist（链接见下，勿塞进表内） |
+
+**公式对照链接（研发用，不写入用户可见「来源」）**：
+
+- ToolDone 精选：[tooldone-formula-ref-shortlist.tsv](./competitor-refs/tooldone-2026-08-08/tooldone-formula-ref-shortlist.tsv)
+- Omni 精选：[omnicalculator-formula-ref-shortlist.tsv](./competitor-refs/omnicalculator-2026-08-08/omnicalculator-formula-ref-shortlist.tsv)
+- Omni 直链：
+  - [compound-interest](https://www.omnicalculator.com/finance/compound-interest)
+  - [emi](https://www.omnicalculator.com/finance/emi)
+  - [amortization](https://www.omnicalculator.com/finance/amortization)
+  - [mortgage](https://www.omnicalculator.com/finance/mortgage)
+  - [break-even](https://www.omnicalculator.com/finance/break-even)
+  - [gross-margin](https://www.omnicalculator.com/finance/gross-margin)
+  - [roi](https://www.omnicalculator.com/finance/roi)
+  - [marginal-revenue](https://www.omnicalculator.com/finance/marginal-revenue)
+  - [cagr](https://www.omnicalculator.com/finance/cagr)
+  - [net-present-value](https://www.omnicalculator.com/finance/net-present-value)
+  - [salary-to-hourly](https://www.omnicalculator.com/finance/salary-to-hourly)
 
 **合规**：禁止投资建议口吻；假设（利率、期数）必须可见。  
 **竞品边界**：ToolDone finance ≈ **560** 页、Omni finance ≈ **604** 页（含各州税、近义拆页）——本站**只做公式清晰的少而精**，禁止州税/贷款品牌矩阵铺量。
@@ -957,8 +977,22 @@ H1 具名渠道 + 动作（如 Amazon Product Image Resizer）
 | **YMYL** | **是** — 非医疗建议免责必备 |
 | **意图词例** | `bmr calculator mifflin`, `bmi limitations` |
 | **集群** | C01 |
-| **公式对照（ToolDone）** | [bmi-calculator-body-mass-index](https://tooldone.com/health/bmi-calculator-body-mass-index/) · [bmr-calculator-…-mifflin-st-jeor…](https://tooldone.com/health/bmr-calculator-basal-metabolic-rate-mifflin-st-jeor-equation/) · [calorie-calculator](https://tooldone.com/health/calorie-calculator/) · [navy-body-fat-calculator](https://tooldone.com/health/navy-body-fat-calculator/) · [ideal-weight-calculator](https://tooldone.com/health/ideal-weight-calculator/)（zh 配对见 shortlist TSV） |
-| **公式对照（Omni）** | [bmi](https://www.omnicalculator.com/health/bmi) · [bmr](https://www.omnicalculator.com/health/bmr) · [tdee](https://www.omnicalculator.com/health/tdee) · [navy-body-fat](https://www.omnicalculator.com/health/navy-body-fat) · [ideal-weight](https://www.omnicalculator.com/health/ideal-weight)（见 [Omni shortlist](./competitor-refs/omnicalculator-2026-08-08/omnicalculator-formula-ref-shortlist.tsv)） |
+| **公式对照** | ToolDone + Omni shortlist（链接见下） |
+
+**公式对照链接（研发用）**：
+
+- ToolDone（zh 配对见 [shortlist TSV](./competitor-refs/tooldone-2026-08-08/tooldone-formula-ref-shortlist.tsv)）：
+  - [bmi](https://tooldone.com/health/bmi-calculator-body-mass-index/)
+  - [bmr-mifflin](https://tooldone.com/health/bmr-calculator-basal-metabolic-rate-mifflin-st-jeor-equation/)
+  - [calorie](https://tooldone.com/health/calorie-calculator/)
+  - [navy-body-fat](https://tooldone.com/health/navy-body-fat-calculator/)
+  - [ideal-weight](https://tooldone.com/health/ideal-weight-calculator/)
+- Omni（[shortlist](./competitor-refs/omnicalculator-2026-08-08/omnicalculator-formula-ref-shortlist.tsv)）：
+  - [bmi](https://www.omnicalculator.com/health/bmi)
+  - [bmr](https://www.omnicalculator.com/health/bmr)
+  - [tdee](https://www.omnicalculator.com/health/tdee)
+  - [navy-body-fat](https://www.omnicalculator.com/health/navy-body-fat)
+  - [ideal-weight](https://www.omnicalculator.com/health/ideal-weight)
 
 **竞品边界**：ToolDone / Omni 均将 BMI 拆男女/青少年等多 URL——本站**单页 + Use cases**，禁止 doorway。
 
@@ -987,8 +1021,8 @@ H1 具名渠道 + 动作（如 Amazon Product Image Resizer）
 |---|---|---|
 | 图书 / 电子书 | ISBN 校验；`ebook-cover-size-pack` | 标准引用 + 岗位 |
 | 烹饪 | 杯↔克专页 | 非通用换算超市 |
-| 工程装修 | 瓷砖/油漆/混凝土方量（对照 ToolDone construction；Omni：[tile](https://www.omnicalculator.com/construction/tile) / [paint](https://www.omnicalculator.com/construction/paint) / [concrete-slab](https://www.omnicalculator.com/construction/concrete-slab)） | 公式 + 权威教材；**禁止**材料品牌矩阵铺量 |
-| 教育 | GPA 地区差异表（对照 ToolDone `gpa-calculator`；Omni：[gpa](https://www.omnicalculator.com/other/gpa)） | 明确地区 |
+| 工程装修 | 瓷砖/油漆/混凝土方量（对照 ToolDone construction；Omni `tile` / `paint` / `concrete-slab`，见 shortlist） | 公式 + 权威教材；**禁止**材料品牌矩阵铺量 |
+| 教育 | GPA 地区差异表（对照 ToolDone `gpa-calculator`；Omni `gpa`） | 明确地区 |
 | 法律文书 | 字数估算 | 司法区免责 |
 | 内容创作者 | `youtube-channel-art-pack`、`podcast-cover-art-pack` | 平台规范表 |
 | 站长品牌 | `favicon-and-pwa-icon-pack`、`social-share-image-pack` | 与 V2 协同；**排期与竞品见「专题：设计师工具」** |
