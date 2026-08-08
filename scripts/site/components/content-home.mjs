@@ -143,7 +143,7 @@ export const renderHomeContent = ({ lang }) => {
     <section class="home-why" aria-label="${t(lang, 'home_why_label')}">
       <article class="home-why-item home-why-item--local">
         <span class="home-why-bg" aria-hidden="true"></span>
-        <span class="home-why-index" aria-hidden="true">01</span>
+        <span class="home-why-index" aria-hidden="true">I</span>
         <div class="home-why-body">
           <h3>${t(lang, 'home_why_1_title')}</h3>
           <p class="home-why-tag-demo">${renderNoUploadTag(lang)}</p>
@@ -152,7 +152,7 @@ export const renderHomeContent = ({ lang }) => {
       </article>
       <article class="home-why-item home-why-item--signup">
         <span class="home-why-bg" aria-hidden="true"></span>
-        <span class="home-why-index" aria-hidden="true">02</span>
+        <span class="home-why-index" aria-hidden="true">II</span>
         <div class="home-why-body">
           <h3>${t(lang, 'home_why_2_title')}</h3>
           <p>${t(lang, 'home_why_2_body')}</p>
@@ -160,7 +160,7 @@ export const renderHomeContent = ({ lang }) => {
       </article>
       <article class="home-why-item home-why-item--process">
         <span class="home-why-bg" aria-hidden="true"></span>
-        <span class="home-why-index" aria-hidden="true">03</span>
+        <span class="home-why-index" aria-hidden="true">III</span>
         <div class="home-why-body">
           <h3>${t(lang, 'home_why_3_title')}</h3>
           <p>${t(lang, 'home_why_3_body')}</p>

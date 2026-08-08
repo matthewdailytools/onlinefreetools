@@ -816,6 +816,7 @@ const de: SiteLangDict = {
   tool_csv_json_usecases_title: 'Passt gut für',
   tool_domain_lookup_article:
     'DNS-Einträge und Registrierungsdaten eines Domainnamens an einem Ort prüfen. Anfragen laufen über unser Edge zu DNS-over-HTTPS und RDAP; Kontaktdaten sind oft geschwärzt, Ergebnisse können vom lokalen Resolver abweichen.',
+  tool_domain_lookup_captcha_label: 'Sicherheitsprüfung',
   tool_domain_lookup_clear: 'Leeren',
   tool_domain_lookup_col_data: 'Daten',
   tool_domain_lookup_col_name: 'Name',
@@ -831,8 +832,13 @@ const de: SiteLangDict = {
   tool_domain_lookup_dns_fail: 'DNS-Abfrage fehlgeschlagen.',
   tool_domain_lookup_dns_heading: 'DNS-Einträge',
   tool_domain_lookup_domain_label: 'Domain',
+  tool_domain_lookup_domain_normalized: 'Normalisiert zu {domain}.',
   tool_domain_lookup_domain_placeholder: 'example.com',
+  tool_domain_lookup_err_captcha: 'Schließe die Sicherheitsprüfung ab, bevor du suchst.',
+  tool_domain_lookup_err_captcha_fail: 'Sicherheitsprüfung fehlgeschlagen. Bitte erneut versuchen.',
   tool_domain_lookup_err_empty: 'Domainnamen eingeben.',
+  tool_domain_lookup_err_format:
+    'Das sieht nicht wie ein gültiger Domainname aus. Nutze einen Host wie example.com (URLs werden automatisch korrigiert).',
   tool_domain_lookup_err_need_one: 'DNS, Registrierung oder beides wählen.',
   tool_domain_lookup_events: 'Ereignisse',
   tool_domain_lookup_example:

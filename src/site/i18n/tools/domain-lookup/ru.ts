@@ -22,7 +22,12 @@ const ru: SiteLangDict = {
 	tool_domain_lookup_dns_fail: 'DNS-запрос не удался.',
 	tool_domain_lookup_dns_heading: 'DNS-записи',
 	tool_domain_lookup_err_empty: 'Введите имя домена.',
+	tool_domain_lookup_domain_normalized: 'Приведено к {domain}.',
+	tool_domain_lookup_err_format: 'Это не похоже на допустимое доменное имя. Укажите хост вроде example.com (URL исправляются автоматически).',
 	tool_domain_lookup_err_need_one: 'Выберите DNS, регистрацию или оба.',
+	tool_domain_lookup_captcha_label: 'Проверка безопасности',
+	tool_domain_lookup_err_captcha: 'Пройдите проверку безопасности перед запросом.',
+	tool_domain_lookup_err_captcha_fail: 'Проверка безопасности не пройдена. Попробуйте снова.',
 	tool_domain_lookup_events: 'События',
 	tool_domain_lookup_example:
 		'Пример: проверьте example.com → в DNS могут быть публичные A/AAAA/NS через DoH; в регистрации — регистратор, коды статуса и события истечения/регистрации из RDAP (поля могут быть скрыты).',

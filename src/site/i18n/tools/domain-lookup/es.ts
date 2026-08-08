@@ -22,7 +22,12 @@ const es: SiteLangDict = {
 	tool_domain_lookup_dns_fail: 'Falló la consulta DNS.',
 	tool_domain_lookup_dns_heading: 'Registros DNS',
 	tool_domain_lookup_err_empty: 'Introduce un nombre de dominio.',
+	tool_domain_lookup_domain_normalized: 'Normalizado a {domain}.',
+	tool_domain_lookup_err_format: 'Eso no parece un nombre de dominio válido. Usa un host como example.com (las URL se corrigen automáticamente).',
 	tool_domain_lookup_err_need_one: 'Marca DNS, registro o ambos.',
+	tool_domain_lookup_captcha_label: 'Comprobación de seguridad',
+	tool_domain_lookup_err_captcha: 'Completa la comprobación de seguridad antes de consultar.',
+	tool_domain_lookup_err_captcha_fail: 'La comprobación de seguridad falló. Inténtalo de nuevo.',
 	tool_domain_lookup_events: 'Eventos',
 	tool_domain_lookup_example:
 		'Ejemplo: consulta example.com → DNS puede mostrar A/AAAA/NS públicos vía DoH; Registro puede listar registrador, códigos de estado y eventos de caducidad/alta desde RDAP (campos ocultos posibles).',

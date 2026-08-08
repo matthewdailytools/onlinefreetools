@@ -21,7 +21,12 @@ const zh: SiteLangDict = {
 	tool_domain_lookup_dns_fail: 'DNS 查询失败。',
 	tool_domain_lookup_dns_heading: 'DNS 记录',
 	tool_domain_lookup_err_empty: '请输入域名。',
+	tool_domain_lookup_domain_normalized: '已校准为 {domain}。',
+	tool_domain_lookup_err_format: '域名格式无效。请使用类似 example.com 的主机名（粘贴完整 URL 会自动校准）。',
 	tool_domain_lookup_err_need_one: '请至少勾选 DNS 或注册信息。',
+	tool_domain_lookup_captcha_label: '安全验证',
+	tool_domain_lookup_err_captcha: '请先完成安全验证再查询。',
+	tool_domain_lookup_err_captcha_fail: '安全验证失败，请重试。',
 	tool_domain_lookup_events: '事件',
 	tool_domain_lookup_example:
 		'示例：查询 example.com → DNS 区可能看到公开 A/AAAA/NS；注册信息区可能列出注册商、状态与到期/注册事件（字段可能脱敏）。',

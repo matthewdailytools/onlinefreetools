@@ -1,13 +1,14 @@
 # 工具清单总表（自工具方向文档提炼）
 
-**日期**: 2026-08-08（修订：…；ToolDone；**iLovePDF PDF 工具补充**）  
-**来源**: [2026-07-28-tool-direction.md](./2026-07-28-tool-direction.md) + `tool-catalog.json` + [ToolDone](./competitor-refs/tooldone-2026-08-08/README.md) + [iLovePDF](./competitor-refs/ilovepdf-2026-08-08/README.md)  
+**日期**: 2026-08-08（修订：…；ToolDone；iLovePDF；**Omni Calculator 公式对照补充**）  
+**来源**: [2026-07-28-tool-direction.md](./2026-07-28-tool-direction.md) + `tool-catalog.json` + [ToolDone](./competitor-refs/tooldone-2026-08-08/README.md) + [iLovePDF](./competitor-refs/ilovepdf-2026-08-08/README.md) + [Omni Calculator](./competitor-refs/omnicalculator-2026-08-08/README.md)  
 **目标站点**: https://onlinefreetools.org  
 
 > **用途**：产品排期与立项对照用的扁平清单；**不是** SEO 文案源。细则、红线、成熟度仍以工具方向文档为准。  
 > **去重**：同一能力只保留一个主 slug；竞品拆页 / 预设 Tab（如 IG 拼贴）不单独成行。明确标注「默认不做」的项不收录。  
-> **序号**：全表连续编号（1–116），跨分节递增；增删行后须重排后续序号。  
+> **序号**：全表连续编号（1–126），跨分节递增；增删行后须重排后续序号。  
 > **ToolDone**：计算器公式对照见 §11 / `competitor-refs/tooldone-*`；**禁止**铺量拆页。  
+> **Omni Calculator**：公式对照见 §12 / `competitor-refs/omnicalculator-*`（~3867 en）；与 ToolDone **交叉核对**；禁跟风州税 / 男女 BMI / 置信区间分档拆页。  
 > **iLovePDF**：PDF 全家桶对照见 §4 与 `competitor-refs/ilovepdf-*`；默认**本地** `pdf-lib`，不做 Office 高保真 / AI / 电子签。
 
 ---
@@ -193,30 +194,43 @@
 
 ## 9. 计算器 / 行业教育
 
-> 公式对照链接见 **§11**（ToolDone en/zh）。立项时打开对照页核对变量与边界，**勿**按性别/州税/单位对拆薄页。
+> 公式对照链接见 **§11**（ToolDone en/zh）与 **§12**（Omni Calculator en）。立项时打开对照页核对变量与边界，**勿**按性别/州税/单位对/置信区间分档拆薄页。
 
 | 序号 | 工具名称 | 工具场景/渠道 | 工具 slug | 工具功能 | 工具分类 | 工具用户角色 | 工具输入 | 工具输出 | 开发进度 |
 |---|---|---|---|---|---|---|---|---|---|
-| 93 | BMI 计算 | A.7；C-V5；ToolDone health | `how-to-calculate-bmi` | 身高体重 → BMI 与分类说明 | calculator | 健康教育读者 | 身高、体重 | BMI 值 + 分类 + 免责 | 已上线 |
-| 94 | ROI 计算 | A.7；C-V4；ToolDone finance | `how-to-calculate-roi` | 投入产出 → ROI | calculator | 运营、财务助理 | 成本、收益 | ROI% + 公式说明 | 已上线 |
-| 95 | 边际收益 | A.7；C-V4；ToolDone finance | `how-to-calculate-marginal-revenue` | 销量变化 → 边际收益 | calculator | 运营、分析 | 收益/销量相关量 | 边际收益 + 说明 | 已上线 |
-| 96 | 平方英尺换算 | A.7；ToolDone conversion | `square-feet` | 面积单位换算（含 sq ft） | calculator | 房产、装修、留学 | 面积数值 + 单位 | 目标单位结果 | 已上线 |
-| 97 | 百分比变化 | A.7；ToolDone math | `how-to-calculate-percentage-change` | 旧值新值 → 涨跌幅 | calculator | 运营、分析、学生 | 旧值、新值 | 百分比变化 | 已上线 |
-| 98 | 多元函数梯度 ∇f | A.7；ToolDone math；**非** CSS 渐变 | `how-to-calculate-gradient` | 演示函数在给定点求偏导梯度向量 | calculator | 学生、ML/优化入门读者 | 坐标 x、y（演示函数固定） | ∇f 分量与公式说明 | 已上线 |
-| 99 | 复利计算 | A.7；C-V4；ToolDone finance | `compound-interest` | 本金利率期数 → 复利终值 | calculator | 财务教育读者 | 本金、利率、期数 | 终值/利息表 + 免责 | 未开始 · P1 |
-| 100 | 贷款 EMI / 摊还 | A.7；C-V4；ToolDone finance | `loan-emi` | 贷款参数 → EMI 与摊还表 | calculator | 借款人教育、财务助理 | 本金、利率、期数 | EMI + 摊还明细 | 未开始 · P1 |
-| 101 | BMR / TDEE | A.7；C-V5；ToolDone health | `bmr-tdee` | Mifflin-St Jeor BMR + 活动量 TDEE | calculator | 健康教育读者 | 性别、体重、身高、年龄、活动量 | BMR/TDEE + 免责 | 未开始 · P1 |
-| 102 | 盈亏平衡 | C-V4；ToolDone finance | `break-even` | 固定/变动成本与单价 → 盈亏平衡量 | calculator | 运营、财务教育 | 成本、价格、销量假设 | 平衡点 + 免责 | 未开始 · P1 |
-| 103 | 毛利率 | C-V4；ToolDone finance | `gross-margin` | 收入与成本 → 毛利/毛利率 | calculator | 运营、财务教育 | 收入、成本 | 毛利与比率 + 免责 | 未开始 · P1 |
-| 104 | 单位换算（通用） | A.7；ToolDone conversion | `unit-converter` | 长度/重量等通用换算（单页多类别） | calculator | 学生、工程辅助 | 数值 + 单位对 | 换算结果 | 未开始 · P2 |
-| 105 | 体脂率（海军公式） | C-V5；ToolDone health | `body-fat-navy` | 围度法估算体脂% | calculator | 健康教育读者 | 颈/腰/臀等围度 | 体脂% + 免责 | 未开始 · P2 |
-| 106 | 理想体重区间 | C-V5；ToolDone health | `ideal-weight` | 常见公式区间估算 | calculator | 健康教育读者 | 身高、性别等 | 体重区间 + 免责 | 未开始 · P2 |
-| 107 | CAGR | C-V4；ToolDone finance | `cagr-calculator` | 期初/期末/年数 → 复合年增长率 | calculator | 财务教育、分析 | 起止价值、年数 | CAGR% + 免责 | 未开始 · P2 |
-| 108 | NPV | C-V4；ToolDone finance | `npv-calculator` | 现金流折现 → 净现值 | calculator | 财务教育 | 折现率、现金流序列 | NPV + 免责 | 未开始 · P2 |
-| 109 | 标准差 | A.7；ToolDone statistic | `standard-deviation` | 样本/总体标准差 | calculator | 学生、分析 | 数值列表 | σ/s + 公式说明 | 未开始 · P2 |
-| 110 | 混凝土方量 | C 工程装修；ToolDone construction | `concrete-calculator` | 尺寸 → 混凝土体积估算 | calculator | 装修、施工辅助 | 长宽厚等 | 体积/袋数估算 | 未开始 · P2 |
-| 111 | 瓷砖估算 | C 工程装修；ToolDone construction | `tile-calculator` | 面积与单片规格 → 用量 | calculator | 装修辅助 | 面积、瓷砖尺寸、损耗 | 片数估算 | 未开始 · P2 |
-| 112 | 宽高比 | A.9/其他；ToolDone other | `aspect-ratio-calculator` | 分辨率/边长 → 比例与缩放 | calculator | 视频、设计、前端 | 宽、高 | 比例与目标尺寸 | 未开始 · P2 |
+| 93 | BMI 计算 | A.7；C-V5；ToolDone/Omni health | `how-to-calculate-bmi` | 身高体重 → BMI 与分类说明 | calculator | 健康教育读者 | 身高、体重 | BMI 值 + 分类 + 免责 | 已上线 |
+| 94 | ROI 计算 | A.7；C-V4；ToolDone/Omni finance | `how-to-calculate-roi` | 投入产出 → ROI | calculator | 运营、财务助理 | 成本、收益 | ROI% + 公式说明 | 已上线 |
+| 95 | 边际收益 | A.7；C-V4；ToolDone/Omni finance | `how-to-calculate-marginal-revenue` | 销量变化 → 边际收益 | calculator | 运营、分析 | 收益/销量相关量 | 边际收益 + 说明 | 已上线 |
+| 96 | 平方英尺换算 | A.7；ToolDone/Omni conversion | `square-feet` | 面积单位换算（含 sq ft） | calculator | 房产、装修、留学 | 面积数值 + 单位 | 目标单位结果 | 已上线 |
+| 97 | 百分比变化 | A.7；ToolDone/Omni math | `how-to-calculate-percentage-change` | 旧值新值 → 涨跌幅 | calculator | 运营、分析、学生 | 旧值、新值 | 百分比变化 | 已上线 |
+| 98 | 多元函数梯度 ∇f | A.7；ToolDone/Omni math；**非** CSS 渐变 | `how-to-calculate-gradient` | 演示函数在给定点求偏导梯度向量 | calculator | 学生、ML/优化入门读者 | 坐标 x、y（演示函数固定） | ∇f 分量与公式说明 | 已上线 |
+| 99 | 复利计算 | A.7；C-V4；ToolDone/Omni finance | `compound-interest` | 本金利率期数 → 复利终值 | calculator | 财务教育读者 | 本金、利率、期数 | 终值/利息表 + 免责 | 未开始 · P1 |
+| 100 | 贷款 EMI / 摊还 | A.7；C-V4；ToolDone/Omni finance | `loan-emi` | 贷款参数 → EMI 与摊还表 | calculator | 借款人教育、财务助理 | 本金、利率、期数 | EMI + 摊还明细 | 未开始 · P1 |
+| 101 | BMR / TDEE | A.7；C-V5；ToolDone/Omni health | `bmr-tdee` | Mifflin-St Jeor BMR + 活动量 TDEE | calculator | 健康教育读者 | 性别、体重、身高、年龄、活动量 | BMR/TDEE + 免责 | 未开始 · P1 |
+| 102 | 盈亏平衡 | C-V4；ToolDone/Omni finance | `break-even` | 固定/变动成本与单价 → 盈亏平衡量 | calculator | 运营、财务教育 | 成本、价格、销量假设 | 平衡点 + 免责 | 未开始 · P1 |
+| 103 | 毛利率 | C-V4；ToolDone/Omni finance | `gross-margin` | 收入与成本 → 毛利/毛利率 | calculator | 运营、财务教育 | 收入、成本 | 毛利与比率 + 免责 | 未开始 · P1 |
+| 104 | 单位换算（通用） | A.7；ToolDone/Omni conversion | `unit-converter` | 长度/重量等通用换算（单页多类别） | calculator | 学生、工程辅助 | 数值 + 单位对 | 换算结果 | 未开始 · P2 |
+| 105 | 体脂率（海军公式） | C-V5；ToolDone/Omni health | `body-fat-navy` | 围度法估算体脂% | calculator | 健康教育读者 | 颈/腰/臀等围度 | 体脂% + 免责 | 未开始 · P2 |
+| 106 | 理想体重区间 | C-V5；ToolDone/Omni health | `ideal-weight` | 常见公式区间估算 | calculator | 健康教育读者 | 身高、性别等 | 体重区间 + 免责 | 未开始 · P2 |
+| 107 | CAGR | C-V4；ToolDone/Omni finance | `cagr-calculator` | 期初/期末/年数 → 复合年增长率 | calculator | 财务教育、分析 | 起止价值、年数 | CAGR% + 免责 | 未开始 · P2 |
+| 108 | NPV | C-V4；ToolDone/Omni finance | `npv-calculator` | 现金流折现 → 净现值 | calculator | 财务教育 | 折现率、现金流序列 | NPV + 免责 | 未开始 · P2 |
+| 109 | 标准差 | A.7；ToolDone/Omni statistics | `standard-deviation` | 样本/总体标准差 | calculator | 学生、分析 | 数值列表 | σ/s + 公式说明 | 未开始 · P2 |
+| 110 | 混凝土方量 | C 工程装修；ToolDone/Omni construction | `concrete-calculator` | 尺寸 → 混凝土体积估算 | calculator | 装修、施工辅助 | 长宽厚等 | 体积/袋数估算 | 未开始 · P2 |
+| 111 | 瓷砖估算 | C 工程装修；ToolDone/Omni construction | `tile-calculator` | 面积与单片规格 → 用量 | calculator | 装修辅助 | 面积、瓷砖尺寸、损耗 | 片数估算 | 未开始 · P2 |
+| 112 | 宽高比 | A.9/其他；ToolDone/Omni other | `aspect-ratio-calculator` | 分辨率/边长 → 比例与缩放 | calculator | 视频、设计、前端 | 宽、高 | 比例与目标尺寸 | 未开始 · P2 |
+| 113 | 油漆估算 | C 工程装修；Omni/ToolDone construction | `paint-calculator` | 墙面面积 → 油漆用量估算 | calculator | 装修辅助 | 面积、涂层数、覆盖率 | 升/罐数估算 | 未开始 · P2 |
+| 114 | 房贷计算 | C-V4；Omni finance | `mortgage-calculator` | 房价/首付/利率 → 月供（可与 `loan-emi` 合并评估） | calculator | 借款人教育 | 房价、首付、利率、期数 | 月供 + 免责 | 未开始 · P2 |
+| 115 | 年薪 ↔ 时薪 | A.7；Omni finance 热门 | `salary-to-hourly` | 年/月/周薪 ↔ 时薪 | calculator | 求职者、人事助理 | 薪资与工作时长假设 | 时薪/年薪对照 + 免责 | 未开始 · P2 |
+| 116 | p 值 | A.7；Omni statistics 热门 | `p-value` | 检验统计量 → p 值（须写清假设） | calculator | 学生、分析 | 分布/统计量/尾型 | p 值 + 公式说明 | 未开始 · P2 |
+| 117 | 置信区间 | A.7；Omni statistics | `confidence-interval` | 样本 → 置信区间（单页多置信水平） | calculator | 学生、分析 | 均值、σ、n、置信水平 | 区间端点 + 说明 | 未开始 · P2 |
+| 118 | Z 分数 | A.7；ToolDone/Omni statistics | `z-score` | 原始分 → 标准分 | calculator | 学生、分析 | x、μ、σ | z + 说明 | 未开始 · P2 |
+| 119 | 样本量 | A.7；ToolDone/Omni statistics | `sample-size` | 误差/置信 → 所需样本量估算 | calculator | 调研、学生 | 误差、置信、比例假设 | n 估算 | 未开始 · P2 |
+| 120 | 有效数字 | A.7；Omni math 热门 | `significant-figures` | 计数/运算有效数字 | calculator | 学生、实验报告 | 数值或表达式 | 有效数字结果 | 未开始 · P2 |
+| 121 | 科学计数法 | A.7；Omni math | `scientific-notation` | 十进制 ↔ 科学计数法 | calculator | 学生 | 数值 | 科学计数法互转 | 未开始 · P2 |
+| 122 | 对数计算 | A.7；Omni math | `log-calculator` | 任意底对数（含 ln） | calculator | 学生 | 真数、底数 | log 值 + 公式 | 未开始 · P2 |
+| 123 | 勾股定理 | A.7；Omni math | `pythagorean-theorem` | 直角三角形缺边求解 | calculator | 学生 | 两边长 | 第三边 + 公式 | 未开始 · P2 |
+| 124 | 斜率 | A.7；Omni math | `slope-calculator` | 两点 → 直线斜率 | calculator | 学生 | 两点坐标 | 斜率 + 说明 | 未开始 · P2 |
+| 125 | GPA | C 教育；ToolDone/Omni other | `gpa-calculator` | 成绩点加权平均（须标地区量表） | calculator | 学生 | 课程成绩与学分 | GPA + 地区说明 | 未开始 · P2 |
 
 ---
 
@@ -224,10 +238,10 @@
 
 | 序号 | 工具名称 | 工具场景/渠道 | 工具 slug | 工具功能 | 工具分类 | 工具用户角色 | 工具输入 | 工具输出 | 开发进度 |
 |---|---|---|---|---|---|---|---|---|---|
-| 113 | OCR 转文字 | B2；A.11 Tier 2 | `ocr-to-text` | 图片/扫描件 → 文本 | developer | 数据准备、办公 | 图片 | 识别文本（须准确率声明） | 待 POC |
-| 114 | 在线录音机 | A.3 P2 | `audio-recorder` | 浏览器录音并下载 | audio | 创作者、会议记录 | 麦克风流 | 音频文件（如 WebM/WAV） | 未开始 · P2 |
-| 115 | 音频裁剪 | A.3 | `audio-trim` | 截取音频片段 | audio | 播客、创作者 | 音频文件 + 起止点 | 裁剪后音频 | 未开始 · P2 |
-| 116 | WAV ↔ MP3 | A.3 | `audio-wav-mp3` | 音频格式互转（WASM） | audio | 创作者 | WAV 或 MP3 | 另一格式文件 | 待 POC |
+| 126 | OCR 转文字 | B2；A.11 Tier 2 | `ocr-to-text` | 图片/扫描件 → 文本 | developer | 数据准备、办公 | 图片 | 识别文本（须准确率声明） | 待 POC |
+| 127 | 在线录音机 | A.3 P2 | `audio-recorder` | 浏览器录音并下载 | audio | 创作者、会议记录 | 麦克风流 | 音频文件（如 WebM/WAV） | 未开始 · P2 |
+| 128 | 音频裁剪 | A.3 | `audio-trim` | 截取音频片段 | audio | 播客、创作者 | 音频文件 + 起止点 | 裁剪后音频 | 未开始 · P2 |
+| 129 | WAV ↔ MP3 | A.3 | `audio-wav-mp3` | 音频格式互转（WASM） | audio | 创作者 | WAV 或 MP3 | 另一格式文件 | 待 POC |
 
 ---
 
@@ -265,17 +279,68 @@
 
 ---
 
+## 12. Omni Calculator 公式对照链接（精选）
+
+> 全量枚举：[competitor-refs/omnicalculator-2026-08-08](./competitor-refs/omnicalculator-2026-08-08/README.md)（**~3867** en 工具页；sitemap **无 zh**）。  
+> 下表仅列与本站方向重叠、或 Omni 热门且适合本站「少而精」补充的项；**链接供研发对照公式逻辑，不写入用户可见正文「来源」**。  
+> 可与 §11 ToolDone **交叉核对**同一公式的两家变量命名与边界说明。
+
+| # | 本站 slug | 名称 | Omni URL (en) | 进度提示 |
+|---|---|---|---|---|
+| 1 | `how-to-calculate-bmi` | BMI | https://www.omnicalculator.com/health/bmi | 已上线对照；勿跟 men/women/kids 拆页 |
+| 2 | `bmr-tdee` | BMR | https://www.omnicalculator.com/health/bmr | 未开始 · P1 |
+| 3 | `bmr-tdee` | TDEE | https://www.omnicalculator.com/health/tdee | 未开始 · P1 |
+| 4 | `body-fat-navy` | 海军体脂 | https://www.omnicalculator.com/health/navy-body-fat | 未开始 · P2 |
+| 5 | `ideal-weight` | 理想体重 | https://www.omnicalculator.com/health/ideal-weight | 未开始 · P2 |
+| 6 | `how-to-calculate-roi` | ROI | https://www.omnicalculator.com/finance/roi | 已上线对照 |
+| 7 | `how-to-calculate-marginal-revenue` | 边际收益 | https://www.omnicalculator.com/finance/marginal-revenue | 已上线对照 |
+| 8 | `compound-interest` | 复利 | https://www.omnicalculator.com/finance/compound-interest | 未开始 · P1 |
+| 9 | `loan-emi` | EMI | https://www.omnicalculator.com/finance/emi | 未开始 · P1 |
+| 10 | `loan-emi` | 摊还 | https://www.omnicalculator.com/finance/amortization | 未开始 · P1 |
+| 11 | `mortgage-calculator` | 房贷 | https://www.omnicalculator.com/finance/mortgage | 未开始 · P2；可与 EMI 合并 |
+| 12 | `break-even` | 盈亏平衡 | https://www.omnicalculator.com/finance/break-even | 未开始 · P1 |
+| 13 | `gross-margin` | 毛利率 | https://www.omnicalculator.com/finance/gross-margin | 未开始 · P1 |
+| 14 | `cagr-calculator` | CAGR | https://www.omnicalculator.com/finance/cagr | 未开始 · P2 |
+| 15 | `npv-calculator` | NPV | https://www.omnicalculator.com/finance/net-present-value | 未开始 · P2（Omni slug 非 `npv`） |
+| 16 | `salary-to-hourly` | 年薪↔时薪 | https://www.omnicalculator.com/finance/salary-to-hourly | 未开始 · P2 |
+| 17 | `how-to-calculate-percentage-change` | 百分比变化 | https://www.omnicalculator.com/math/percentage-change | 已上线对照 |
+| 18 | `how-to-calculate-gradient` | 梯度 ∇f | https://www.omnicalculator.com/math/gradient | 已上线对照 |
+| 19 | `log-calculator` | 对数 | https://www.omnicalculator.com/math/log | 未开始 · P2 |
+| 20 | `significant-figures` | 有效数字 | https://www.omnicalculator.com/math/sig-fig | 未开始 · P2 |
+| 21 | `scientific-notation` | 科学计数法 | https://www.omnicalculator.com/math/scientific-notation | 未开始 · P2 |
+| 22 | `pythagorean-theorem` | 勾股定理 | https://www.omnicalculator.com/math/pythagorean-theorem | 未开始 · P2 |
+| 23 | `slope-calculator` | 斜率 | https://www.omnicalculator.com/math/slope | 未开始 · P2 |
+| 24 | `square-feet` | 平方英尺 | https://www.omnicalculator.com/conversion/square-feet-converter | 已上线对照 |
+| 25 | `unit-converter` | 单位换算 | https://www.omnicalculator.com/conversion/conversion-calculator | 未开始 · P2 |
+| 26 | `standard-deviation` | 标准差 | https://www.omnicalculator.com/statistics/standard-deviation | 未开始 · P2 |
+| 27 | `p-value` | p 值 | https://www.omnicalculator.com/statistics/p-value | 未开始 · P2 |
+| 28 | `confidence-interval` | 置信区间 | https://www.omnicalculator.com/statistics/confidence-interval | 未开始 · P2；禁拆 90/95/99 URL |
+| 29 | `z-score` | Z 分数 | https://www.omnicalculator.com/statistics/z-score | 未开始 · P2 |
+| 30 | `sample-size` | 样本量 | https://www.omnicalculator.com/statistics/sample-size | 未开始 · P2 |
+| 31 | `concrete-calculator` | 混凝土（板） | https://www.omnicalculator.com/construction/concrete-slab | 未开始 · P2 |
+| 32 | `tile-calculator` | 瓷砖 | https://www.omnicalculator.com/construction/tile | 未开始 · P2 |
+| 33 | `paint-calculator` | 油漆 | https://www.omnicalculator.com/construction/paint | 未开始 · P2 |
+| 34 | `aspect-ratio-calculator` | 宽高比 | https://www.omnicalculator.com/other/aspect-ratio | 未开始 · P2 |
+| 35 | `gpa-calculator` | GPA | https://www.omnicalculator.com/other/gpa | 未开始 · P2 |
+
+完整 shortlist TSV：`competitor-refs/omnicalculator-2026-08-08/omnicalculator-formula-ref-shortlist.tsv`。  
+分品类全量 slug 表：`competitor-refs/omnicalculator-2026-08-08/lists/*.md`。
+
+---
+
 ## 统计（本表）
 
 | 项 | 约计 |
 |---|---|
-| 序号范围 | **1–116**（全表产品行） |
+| 序号范围 | **1–129**（全表产品行） |
 | ToolDone 公式对照精选 | 22 行（§11） |
 | ToolDone 全量归档 | ~2826 en / ~2835 zh |
+| Omni 公式对照精选 | 35 行（§12） |
+| Omni 全量归档 | ~3867 en（无 zh） |
 | 已上线 | 41 |
 | 未开始 · P0 | 14 |
 | 未开始 · P1 | ~21 |
-| 未开始 · P2 | ~22 |
+| 未开始 · P2 | ~35 |
 | 待 POC | 3（`local-bg-removal`、`ocr-to-text`、`audio-wav-mp3`） |
 
 **P0 未开始速查**：`create-zip-file`、`unzip-file`、`safe-paste-cleaner`、`ai-token-counter`、`chat-export-converter`、`meta-serp-preview`、`ios-app-screenshot-resizer`、`app-icon-generator-pack`、`amazon-image-resizer`、`favicon-and-pwa-icon-pack`、`social-share-image-pack`。
@@ -287,5 +352,5 @@
 - 方向文档增删场景/slug 时，同步更新本表对应行，并**重排全表序号**保持连续。  
 - 开工：`开发进度` → **进行中**（可选注明 `work-tasks/{slug}/`）。  
 - 上线：`开发进度` → **已上线**，并与 `tool-catalog.json` / README 工具清单一致。  
-- 计算器公式复核：打开 §11 或 `competitor-refs/tooldone-2026-08-08/tooldone-formula-ref-shortlist.tsv` 的 en 链接；季度可重拉 sitemap 更新快照。  
+- 计算器公式复核：打开 §11（ToolDone）或 §12（Omni）或对应 `*-formula-ref-shortlist.tsv` 的 en 链接；可两家交叉核对；季度可重拉 sitemap 更新快照。  
 - 冲突裁决：以 [工具方向](./2026-07-28-tool-direction.md) 与 Google SEO 政策为准；本表只做扁平索引。

@@ -754,6 +754,7 @@ const ja: SiteLangDict = {
   tool_csv_json_usecases_title: 'こんなときに',
   tool_domain_lookup_article:
     'ドメインのライブ DNS レコードと登録情報を一画面で確認できます。クエリは当サイトのエッジ経由で DNS-over-HTTPS と RDAP に送られます。連絡先は多くの場合非表示で、結果はローカルリゾルバと異なることがあります。',
+  tool_domain_lookup_captcha_label: 'セキュリティ確認',
   tool_domain_lookup_clear: 'クリア',
   tool_domain_lookup_col_data: 'データ',
   tool_domain_lookup_col_name: '名前',
@@ -768,8 +769,12 @@ const ja: SiteLangDict = {
   tool_domain_lookup_dns_fail: 'DNS 照会に失敗しました。',
   tool_domain_lookup_dns_heading: 'DNS レコード',
   tool_domain_lookup_domain_label: 'ドメイン',
+  tool_domain_lookup_domain_normalized: '{domain} に正規化しました。',
   tool_domain_lookup_domain_placeholder: 'example.com',
+  tool_domain_lookup_err_captcha: '照会の前にセキュリティ確認を完了してください。',
+  tool_domain_lookup_err_captcha_fail: 'セキュリティ確認に失敗しました。もう一度お試しください。',
   tool_domain_lookup_err_empty: 'ドメイン名を入力してください。',
+  tool_domain_lookup_err_format: '有効なドメイン名の形式ではありません。example.com のようなホスト名を入力してください（URL は自動補正されます）。',
   tool_domain_lookup_err_need_one: 'DNS、登録情報、または両方を選択してください。',
   tool_domain_lookup_events: 'イベント',
   tool_domain_lookup_example:

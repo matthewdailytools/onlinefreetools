@@ -22,7 +22,12 @@ const ar: SiteLangDict = {
 	tool_domain_lookup_dns_fail: 'فشل استعلام DNS.',
 	tool_domain_lookup_dns_heading: 'سجلات DNS',
 	tool_domain_lookup_err_empty: 'أدخل اسم نطاق.',
+	tool_domain_lookup_domain_normalized: 'تم التصحيح إلى {domain}.',
+	tool_domain_lookup_err_format: 'هذا لا يبدو اسم نطاق صالحًا. استخدم مضيفًا مثل example.com (يتم تصحيح عناوين URL تلقائيًا).',
 	tool_domain_lookup_err_need_one: 'اختر DNS أو التسجيل أو كليهما.',
+	tool_domain_lookup_captcha_label: 'التحقق الأمني',
+	tool_domain_lookup_err_captcha: 'أكمل التحقق الأمني قبل البحث.',
+	tool_domain_lookup_err_captcha_fail: 'فشل التحقق الأمني. حاول مرة أخرى.',
 	tool_domain_lookup_events: 'الأحداث',
 	tool_domain_lookup_example:
 		'مثال: ابحث عن example.com → قد يظهر DNS إجابات A/AAAA/NS العامة عبر DoH؛ قد يعرض التسجيل المسجّل ورموز الحالة وأحداث الانتهاء/التسجيل من RDAP (قد تُخفى حقول).',

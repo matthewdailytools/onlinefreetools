@@ -819,6 +819,7 @@ const pt: SiteLangDict = {
   tool_csv_json_usecases_title: 'Bons usos',
   tool_domain_lookup_article:
     'Veja num só lugar os registros DNS ao vivo e os dados de registro de um domínio. As consultas passam pelo nosso edge para DNS-over-HTTPS e RDAP; contactos costumam estar ocultos e o resultado pode diferir do seu resolver local.',
+  tool_domain_lookup_captcha_label: 'Verificação de segurança',
   tool_domain_lookup_clear: 'Limpar',
   tool_domain_lookup_col_data: 'Dados',
   tool_domain_lookup_col_name: 'Nome',
@@ -834,8 +835,13 @@ const pt: SiteLangDict = {
   tool_domain_lookup_dns_fail: 'Falha na consulta DNS.',
   tool_domain_lookup_dns_heading: 'Registros DNS',
   tool_domain_lookup_domain_label: 'Domínio',
+  tool_domain_lookup_domain_normalized: 'Normalizado para {domain}.',
   tool_domain_lookup_domain_placeholder: 'example.com',
+  tool_domain_lookup_err_captcha: 'Conclua a verificação de segurança antes de consultar.',
+  tool_domain_lookup_err_captcha_fail: 'A verificação de segurança falhou. Tente novamente.',
   tool_domain_lookup_err_empty: 'Introduza um nome de domínio.',
+  tool_domain_lookup_err_format:
+    'Isso não parece um nome de domínio válido. Use um host como example.com (URLs são corrigidas automaticamente).',
   tool_domain_lookup_err_need_one: 'Selecione DNS, registro ou ambos.',
   tool_domain_lookup_events: 'Eventos',
   tool_domain_lookup_example:

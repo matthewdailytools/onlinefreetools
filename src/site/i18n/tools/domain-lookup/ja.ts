@@ -22,7 +22,12 @@ const ja: SiteLangDict = {
 	tool_domain_lookup_dns_fail: 'DNS 照会に失敗しました。',
 	tool_domain_lookup_dns_heading: 'DNS レコード',
 	tool_domain_lookup_err_empty: 'ドメイン名を入力してください。',
+	tool_domain_lookup_domain_normalized: '{domain} に正規化しました。',
+	tool_domain_lookup_err_format: '有効なドメイン名の形式ではありません。example.com のようなホスト名を入力してください（URL は自動補正されます）。',
 	tool_domain_lookup_err_need_one: 'DNS、登録情報、または両方を選択してください。',
+	tool_domain_lookup_captcha_label: 'セキュリティ確認',
+	tool_domain_lookup_err_captcha: '照会の前にセキュリティ確認を完了してください。',
+	tool_domain_lookup_err_captcha_fail: 'セキュリティ確認に失敗しました。もう一度お試しください。',
 	tool_domain_lookup_events: 'イベント',
 	tool_domain_lookup_example:
 		'例：example.com を照会 → DNS では DoH 経由の公開 A/AAAA/NS が表示される場合があります。登録情報では RDAP からレジストラ、ステータス、期限/登録イベントが出ます（フィールドは非表示のことがあります）。',

@@ -386,6 +386,8 @@ export const buildInfoPage = async (lang, { getModel, path: pagePath, outFile, s
     contentHtml: model.contentHtml,
     footerHtml,
     headJsonLd: model.jsonLd,
+    /** 与首页一致使用 --page-pad-x，勿套用首页的 content padding:0 */
+    bodyClass: 'is-info-page',
   });
 
   await fs.writeFile(path.join(outRoot, outFile), html, 'utf-8');

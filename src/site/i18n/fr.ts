@@ -831,6 +831,7 @@ const fr: SiteLangDict = {
   tool_csv_json_usecases_title: 'Bons cas',
   tool_domain_lookup_article:
     'Consultez en un seul endroit les enregistrements DNS en direct et les données d’enregistrement d’un domaine. Les requêtes passent par notre edge vers DNS-over-HTTPS et RDAP ; les contacts sont souvent masqués et le résultat peut différer de votre résolveur local.',
+  tool_domain_lookup_captcha_label: 'Vérification de sécurité',
   tool_domain_lookup_clear: 'Effacer',
   tool_domain_lookup_col_data: 'Données',
   tool_domain_lookup_col_name: 'Nom',
@@ -846,8 +847,13 @@ const fr: SiteLangDict = {
   tool_domain_lookup_dns_fail: 'Échec de la recherche DNS.',
   tool_domain_lookup_dns_heading: 'Enregistrements DNS',
   tool_domain_lookup_domain_label: 'Domaine',
+  tool_domain_lookup_domain_normalized: 'Normalisé en {domain}.',
   tool_domain_lookup_domain_placeholder: 'example.com',
+  tool_domain_lookup_err_captcha: 'Terminez la vérification de sécurité avant de lancer la recherche.',
+  tool_domain_lookup_err_captcha_fail: 'Échec de la vérification de sécurité. Réessayez.',
   tool_domain_lookup_err_empty: 'Saisissez un nom de domaine.',
+  tool_domain_lookup_err_format:
+    'Cela ne ressemble pas à un nom de domaine valide. Utilisez un hôte comme example.com (les URL sont corrigées automatiquement).',
   tool_domain_lookup_err_need_one: 'Sélectionnez DNS, enregistrement ou les deux.',
   tool_domain_lookup_events: 'Événements',
   tool_domain_lookup_example:

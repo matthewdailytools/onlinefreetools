@@ -816,6 +816,7 @@ const ru: SiteLangDict = {
   tool_csv_json_usecases_title: 'Подходит для',
   tool_domain_lookup_article:
     'Посмотрите живые DNS-записи и данные регистрации домена в одном месте. Запросы идут через наш edge к DNS-over-HTTPS и RDAP; контакты часто скрыты, результат может отличаться от локального резолвера.',
+  tool_domain_lookup_captcha_label: 'Проверка безопасности',
   tool_domain_lookup_clear: 'Очистить',
   tool_domain_lookup_col_data: 'Данные',
   tool_domain_lookup_col_name: 'Имя',
@@ -830,8 +831,13 @@ const ru: SiteLangDict = {
   tool_domain_lookup_dns_fail: 'DNS-запрос не удался.',
   tool_domain_lookup_dns_heading: 'DNS-записи',
   tool_domain_lookup_domain_label: 'Домен',
+  tool_domain_lookup_domain_normalized: 'Приведено к {domain}.',
   tool_domain_lookup_domain_placeholder: 'example.com',
+  tool_domain_lookup_err_captcha: 'Пройдите проверку безопасности перед запросом.',
+  tool_domain_lookup_err_captcha_fail: 'Проверка безопасности не пройдена. Попробуйте снова.',
   tool_domain_lookup_err_empty: 'Введите имя домена.',
+  tool_domain_lookup_err_format:
+    'Это не похоже на допустимое доменное имя. Укажите хост вроде example.com (URL исправляются автоматически).',
   tool_domain_lookup_err_need_one: 'Выберите DNS, регистрацию или оба.',
   tool_domain_lookup_events: 'События',
   tool_domain_lookup_example:

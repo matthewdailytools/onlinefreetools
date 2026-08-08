@@ -861,6 +861,7 @@ const en: SiteLangDict = {
   tool_disclaimer_title: 'Important notice',
   tool_domain_lookup_article:
     'Look up a domain’s live DNS records and registration data in one place. Queries run through our edge to DNS-over-HTTPS and RDAP; results may be privacy-redacted and can differ from your local resolver.',
+  tool_domain_lookup_captcha_label: 'Security check',
   tool_domain_lookup_clear: 'Clear',
   tool_domain_lookup_col_data: 'Data',
   tool_domain_lookup_col_name: 'Name',
@@ -876,8 +877,12 @@ const en: SiteLangDict = {
   tool_domain_lookup_dns_fail: 'DNS lookup failed.',
   tool_domain_lookup_dns_heading: 'DNS records',
   tool_domain_lookup_domain_label: 'Domain',
+  tool_domain_lookup_domain_normalized: 'Normalized to {domain}.',
   tool_domain_lookup_domain_placeholder: 'example.com',
+  tool_domain_lookup_err_captcha: 'Complete the security check before looking up.',
+  tool_domain_lookup_err_captcha_fail: 'Security check failed. Please try again.',
   tool_domain_lookup_err_empty: 'Enter a domain name.',
+  tool_domain_lookup_err_format: 'That does not look like a valid domain name. Use a host like example.com (URLs are auto-corrected).',
   tool_domain_lookup_err_need_one: 'Select DNS, registration, or both.',
   tool_domain_lookup_events: 'Events',
   tool_domain_lookup_example:

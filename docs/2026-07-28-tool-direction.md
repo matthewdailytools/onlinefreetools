@@ -1,6 +1,6 @@
 # 工具方向 — 三个并列开发方向
 
-**日期**: 2026-07-28（修订：三方向并列；…；**2026-08-08** ezyZip / ToolDone；**同日** 补充 [iLovePDF](https://www.ilovepdf.com/) PDF 工具对照 A.5.2）  
+**日期**: 2026-07-28（修订：三方向并列；…；**2026-08-08** ezyZip / ToolDone / iLovePDF；**同日** 补充 [Omni Calculator](https://www.omnicalculator.com/) 公式对照）  
 **标签**: `产品规划`, `工具方向`, `浏览器JS`, `场景桥接`, `行业工具`, `多规格交付`, `设计师工具`, `压缩包`  
 **目标站点**: https://onlinefreetools.org
 
@@ -13,6 +13,7 @@
 - 工具目录源：`src/site/tool-catalog.json`
 - [工具清单总表](./2026-08-08-tool-inventory-table.md) — 名称 / 场景·渠道 / slug / 功能 / 分类 / 角色 / 输入 / 输出（自本文提炼）
 - [ToolDone 计算器快照](./competitor-refs/tooldone-2026-08-08/README.md) — 全量 en/zh 链接归档 + 公式对照精选（2026-08-08）
+- [Omni Calculator 快照](./competitor-refs/omnicalculator-2026-08-08/README.md) — 全量 en 链接归档 + 公式对照精选（~3867；2026-08-08）
 - [iLovePDF 工具快照](./competitor-refs/ilovepdf-2026-08-08/README.md) — PDF 全家桶 URL + 本站可做/不做决策（2026-08-08）
 
 > **本文职责**：分别定义三条**独立**的工具开发方向（做什么、技术怎么落地、成熟度、候选清单）。  
@@ -391,11 +392,11 @@
 | 金融高精度 | `decimal.js` |
 | 统计 | `simple-statistics` |
 
-**可落地工具**：复利、贷款 EMI、BMR/TDEE、标准差、单位换算（方向 A 可做通用换算；方向 C 再做行业专页）。
+**可落地工具**：复利、贷款 EMI、BMR/TDEE、标准差、单位换算；统计补充（p 值 / 置信区间 / Z 分数，单页多参数）；数学热门（有效数字、对数、勾股、斜率）（方向 A 可做通用换算；方向 C 再做行业专页）。清单与 Omni/ToolDone 对照见工具清单 §9–§12。
 
 **说明**：方向 A 允许「技术上成熟的通用计算器」；若要做**行业话术与标准引用**，改归方向 C，不要求同一工具两边都挂名。
 
-**公式对照**：实现/复核时可打开 [ToolDone](https://tooldone.com/zh/) 对应 en 页（链接归档于 [competitor-refs/tooldone-2026-08-08](./competitor-refs/tooldone-2026-08-08/README.md)）。**禁止**复制其 ~2800 页铺量结构；单位换算坚持单页多类别，不按单位对拆 URL。
+**公式对照**：实现/复核时可打开 [ToolDone](https://tooldone.com/zh/) 与 [Omni Calculator](https://www.omnicalculator.com/) 对应 **en** 页，交叉核对变量/边界（归档：[tooldone-2026-08-08](./competitor-refs/tooldone-2026-08-08/README.md)、[omnicalculator-2026-08-08](./competitor-refs/omnicalculator-2026-08-08/README.md)）。Omni 强项是公式讲解深度（近 [calculator.net](https://www.calculator.net/)）；规模约 **3867** en 页——**禁止**复制铺量结构。单位换算坚持单页多类别，不按单位对拆 URL。
 
 ---
 
@@ -937,9 +938,10 @@ H1 具名渠道 + 动作（如 Amazon Product Image Resizer）
 | **意图词例** | `compound interest formula`, `loan amortization schedule` |
 | **集群** | C02 |
 | **公式对照（ToolDone）** | 见 [tooldone-formula-ref-shortlist.tsv](./competitor-refs/tooldone-2026-08-08/tooldone-formula-ref-shortlist.tsv)：`compound-interest-calculator`、`emi-calculator-equated-monthly-installment`、`amortization-calculator`、`break-even-calculator`、`gross-margin-calculator`、`roi-calculator-return-on-investment`、`marginal-revenue-calculator`、`cagr-calculator-*`、`npv-calculator-*` |
+| **公式对照（Omni）** | 见 [omnicalculator-formula-ref-shortlist.tsv](./competitor-refs/omnicalculator-2026-08-08/omnicalculator-formula-ref-shortlist.tsv)：[compound-interest](https://www.omnicalculator.com/finance/compound-interest) · [emi](https://www.omnicalculator.com/finance/emi) · [amortization](https://www.omnicalculator.com/finance/amortization) · [mortgage](https://www.omnicalculator.com/finance/mortgage) · [break-even](https://www.omnicalculator.com/finance/break-even) · [gross-margin](https://www.omnicalculator.com/finance/gross-margin) · [roi](https://www.omnicalculator.com/finance/roi) · [marginal-revenue](https://www.omnicalculator.com/finance/marginal-revenue) · [cagr](https://www.omnicalculator.com/finance/cagr) · [net-present-value](https://www.omnicalculator.com/finance/net-present-value) · [salary-to-hourly](https://www.omnicalculator.com/finance/salary-to-hourly) |
 
 **合规**：禁止投资建议口吻；假设（利率、期数）必须可见。  
-**竞品边界**：ToolDone finance 有 **560** 页（含各州税、近义拆页）——本站**只做公式清晰的少而精**，禁止州税/贷款品牌矩阵铺量。
+**竞品边界**：ToolDone finance ≈ **560** 页、Omni finance ≈ **604** 页（含各州税、近义拆页）——本站**只做公式清晰的少而精**，禁止州税/贷款品牌矩阵铺量。
 
 ---
 
@@ -956,8 +958,9 @@ H1 具名渠道 + 动作（如 Amazon Product Image Resizer）
 | **意图词例** | `bmr calculator mifflin`, `bmi limitations` |
 | **集群** | C01 |
 | **公式对照（ToolDone）** | [bmi-calculator-body-mass-index](https://tooldone.com/health/bmi-calculator-body-mass-index/) · [bmr-calculator-…-mifflin-st-jeor…](https://tooldone.com/health/bmr-calculator-basal-metabolic-rate-mifflin-st-jeor-equation/) · [calorie-calculator](https://tooldone.com/health/calorie-calculator/) · [navy-body-fat-calculator](https://tooldone.com/health/navy-body-fat-calculator/) · [ideal-weight-calculator](https://tooldone.com/health/ideal-weight-calculator/)（zh 配对见 shortlist TSV） |
+| **公式对照（Omni）** | [bmi](https://www.omnicalculator.com/health/bmi) · [bmr](https://www.omnicalculator.com/health/bmr) · [tdee](https://www.omnicalculator.com/health/tdee) · [navy-body-fat](https://www.omnicalculator.com/health/navy-body-fat) · [ideal-weight](https://www.omnicalculator.com/health/ideal-weight)（见 [Omni shortlist](./competitor-refs/omnicalculator-2026-08-08/omnicalculator-formula-ref-shortlist.tsv)） |
 
-**竞品边界**：ToolDone 将 BMI 拆男女/青少年等多 URL——本站**单页 + Use cases**，禁止 doorway。
+**竞品边界**：ToolDone / Omni 均将 BMI 拆男女/青少年等多 URL——本站**单页 + Use cases**，禁止 doorway。
 
 ---
 
@@ -984,8 +987,8 @@ H1 具名渠道 + 动作（如 Amazon Product Image Resizer）
 |---|---|---|
 | 图书 / 电子书 | ISBN 校验；`ebook-cover-size-pack` | 标准引用 + 岗位 |
 | 烹饪 | 杯↔克专页 | 非通用换算超市 |
-| 工程装修 | 瓷砖/油漆/混凝土方量（对照 [ToolDone construction](https://tooldone.com/construction/)：`tile-calculator` / `paint-calculator` / `concrete-calculator`） | 公式 + 权威教材；**禁止**材料品牌矩阵铺量 |
-| 教育 | GPA 地区差异表（对照 [gpa-calculator](https://tooldone.com/other/gpa-calculator/)） | 明确地区 |
+| 工程装修 | 瓷砖/油漆/混凝土方量（对照 ToolDone construction；Omni：[tile](https://www.omnicalculator.com/construction/tile) / [paint](https://www.omnicalculator.com/construction/paint) / [concrete-slab](https://www.omnicalculator.com/construction/concrete-slab)） | 公式 + 权威教材；**禁止**材料品牌矩阵铺量 |
+| 教育 | GPA 地区差异表（对照 ToolDone `gpa-calculator`；Omni：[gpa](https://www.omnicalculator.com/other/gpa)） | 明确地区 |
 | 法律文书 | 字数估算 | 司法区免责 |
 | 内容创作者 | `youtube-channel-art-pack`、`podcast-cover-art-pack` | 平台规范表 |
 | 站长品牌 | `favicon-and-pwa-icon-pack`、`social-share-image-pack` | 与 V2 协同；**排期与竞品见「专题：设计师工具」** |
@@ -1236,7 +1239,7 @@ npm run lint:seo && npm run build:site
 5. **方向 A**：文本/图片/编码成熟度 ✅✅✅ 的独立工具。  
 6. **专题 · 设计师工具**：P0 立项 `wcag-contrast-checker` 或 `brand-color-token-pack`；并行评估 `favicon-and-pwa-icon-pack`（见 D.1）。  
 7. **方向 C**：存量 YMYL References；V6/V3 与 1→N 工具选主方向挂靠。  
-8. 每季度分方向复盘；核对 Apple/Amazon/Google 规格；对照 Coolors / Squoosh / Merge Images / ezyZip / ToolDone / **iLovePDF（A.5.2）**。
+8. 每季度分方向复盘；核对 Apple/Amazon/Google 规格；对照 Coolors / Squoosh / Merge Images / ezyZip / ToolDone / **Omni Calculator** / **iLovePDF（A.5.2）**。
 
 ---
 
@@ -1250,6 +1253,7 @@ npm run lint:seo && npm run build:site
 | **[Merge Images](https://mergeimages.co/)** | 浏览器本地 N→1 合成；横/竖/网格 + 间距背景；平台发帖预设（IG 1080²、FB 1200×630）；Overlay/水印/Flip/PDF 工具链互推；Before-After 等 use cases | 按布局拆多 slug；AI Combiner 黑盒；站脚链到 404 的薄工具（PNG→SVG 等）；与 1→N 封面工具混 intent |
 | **[ezyZip](https://www.ezyzip.com/zh-hans.html)** | 本地 WASM 解压/打包叙事；Worker + 大文件直写思路；包内搜索/预览/文件夹树；压缩级与密码包说明（**详表见 A.5.1 / B14**） | 按格式与「ZIP→某后缀」拆海量近义 URL；伪转换矩阵；密码破解/修复承诺；用格式数量竞赛代替 Information Gain |
 | **[ToolDone](https://tooldone.com/zh/)** | 计算器公式与变量呈现可作**实现对照**；品类覆盖金融/健康/换算/数理统计/建筑（快照见 [competitor-refs/tooldone-2026-08-08](./competitor-refs/tooldone-2026-08-08/README.md)） | **~2800+ 页铺量**与近义拆页（男女 BMI、州税等）；无增量机翻风险面；本站禁止跟风数量竞赛 |
+| **[Omni Calculator](https://www.omnicalculator.com/)** | 公式讲解深度与可引用叙事强；热门统计/数学（p-value、sig-fig、百分比、斜率等）可作对照（快照见 [competitor-refs/omnicalculator-2026-08-08](./competitor-refs/omnicalculator-2026-08-08/README.md)，~3867 en） | 同样的长尾拆页矩阵（州税、BMI 分群、90/95/99 CI、宽高比预设 URL）；**无 zh**；禁止用页数竞赛代替 Information Gain |
 | **[iLovePDF](https://www.ilovepdf.com/)** | Merge/Split/Compress 任务闭环；压缩前后对比；工具互链（**详表见 A.5.2** / [快照](./competitor-refs/ilovepdf-2026-08-08/README.md)） | 上传墙唯一路径；Office 全矩阵与 AI 摘要/翻译灌页；电子签/修复虚假承诺；与本站「本地处理」定位对立时勿跟风 |
 | **Coolors / Realtime Colors / SVGOMG 等** | 配色闭环、实境预览、SVG 选项可视化（**详表见专题 D.2**） | 灵感库堆量、迷你建站器、无规则薄页 |
 
@@ -1264,15 +1268,15 @@ npm run lint:seo && npm run build:site
 | AI / 电子签 | 有 | **不做** |
 | SEO | 多工具独立 URL | 检索向 slug；禁无增量拆页 |
 
-**ToolDone vs 本站计算器规划（速查）**：
+**ToolDone / Omni vs 本站计算器规划（速查）**：
 
-| 维度 | ToolDone | 本站（本文） |
-|---|---|---|
-| 规模 | ~2826 en 工具页（10 品类） | 少而精；每周 1–2 高质量 |
-| 财务 / 健康 | 海量拆页 | C-V4 / C-V5：公式+免责+References；对照链接存 competitor-refs |
-| 单位换算 | 300+ 转换页 | **单页** `unit-converter` 多类别 Tab |
-| 公式复核 | — | 打开 en URL 对照变量/边界（清单 §11） |
-| SEO 结构 | 长尾 URL 矩阵 | 一带多场景；禁 doorway |
+| 维度 | ToolDone | Omni Calculator | 本站（本文） |
+|---|---|---|---|
+| 规模 | ~2826 en（+zh） | ~3867 en（**无 zh**） | 少而精；每周 1–2 高质量 |
+| 财务 / 健康 | 海量拆页 | 海量拆页 + 州税矩阵 | C-V4 / C-V5：公式+免责+References；对照存 competitor-refs |
+| 单位换算 | 300+ 转换页 | conversion ≈326 | **单页** `unit-converter` 多类别 Tab |
+| 公式复核 | en/zh 配对 shortlist | en shortlist（清单 §12） | 打开 en URL；**两家交叉核对**（清单 §11 + §12） |
+| SEO 结构 | 长尾 URL 矩阵 | 长尾 URL 矩阵 | 一带多场景；禁 doorway |
 
 **Merge Images vs 本站图片规划（速查）**：
 
@@ -1297,4 +1301,4 @@ npm run lint:seo && npm run build:site
 
 ---
 
-*维护：方向 A 改成熟度/包结论时同步包调研或音视频文档；方向 B 增场景卡（含 B13 N→1、**B14 归档**）；方向 C 增垂直调研；**设计师工具**改候选/优先级/竞品时同步专题 D 节；竞品快照见 A.2.1 / **A.5.1** / **A.5.2 iLovePDF** / **ToolDone competitor-refs** / 专题 D.2 / 附录。产品主方向字段只改本文与 tool-catalog。*
+*维护：方向 A 改成熟度/包结论时同步包调研或音视频文档；方向 B 增场景卡（含 B13 N→1、**B14 归档**）；方向 C 增垂直调研；**设计师工具**改候选/优先级/竞品时同步专题 D 节；竞品快照见 A.2.1 / **A.5.1** / **A.5.2 iLovePDF** / **ToolDone** / **Omni Calculator competitor-refs** / 专题 D.2 / 附录。产品主方向字段只改本文与 tool-catalog。*

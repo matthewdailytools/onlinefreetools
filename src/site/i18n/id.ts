@@ -809,6 +809,7 @@ const id: SiteLangDict = {
   tool_csv_json_usecases_title: 'Cocok untuk',
   tool_domain_lookup_article:
     'Lihat catatan DNS live dan data registrasi domain dalam satu halaman. Permintaan lewat edge kami ke DNS-over-HTTPS dan RDAP; kontak sering disembunyikan dan hasil bisa beda dari resolver lokal Anda.',
+  tool_domain_lookup_captcha_label: 'Pemeriksaan keamanan',
   tool_domain_lookup_clear: 'Hapus',
   tool_domain_lookup_col_data: 'Data',
   tool_domain_lookup_col_name: 'Nama',
@@ -824,8 +825,13 @@ const id: SiteLangDict = {
   tool_domain_lookup_dns_fail: 'Lookup DNS gagal.',
   tool_domain_lookup_dns_heading: 'Catatan DNS',
   tool_domain_lookup_domain_label: 'Domain',
+  tool_domain_lookup_domain_normalized: 'Dinormalisasi menjadi {domain}.',
   tool_domain_lookup_domain_placeholder: 'example.com',
+  tool_domain_lookup_err_captcha: 'Selesaikan pemeriksaan keamanan sebelum mencari.',
+  tool_domain_lookup_err_captcha_fail: 'Pemeriksaan keamanan gagal. Coba lagi.',
   tool_domain_lookup_err_empty: 'Masukkan nama domain.',
+  tool_domain_lookup_err_format:
+    'Itu tidak terlihat seperti nama domain yang valid. Gunakan host seperti example.com (URL dikoreksi otomatis).',
   tool_domain_lookup_err_need_one: 'Pilih DNS, registrasi, atau keduanya.',
   tool_domain_lookup_events: 'Event',
   tool_domain_lookup_example:

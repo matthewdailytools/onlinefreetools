@@ -22,7 +22,12 @@ const en: SiteLangDict = {
 	tool_domain_lookup_dns_fail: 'DNS lookup failed.',
 	tool_domain_lookup_dns_heading: 'DNS records',
 	tool_domain_lookup_err_empty: 'Enter a domain name.',
+	tool_domain_lookup_domain_normalized: 'Normalized to {domain}.',
+	tool_domain_lookup_err_format: 'That does not look like a valid domain name. Use a host like example.com (URLs are auto-corrected).',
 	tool_domain_lookup_err_need_one: 'Select DNS, registration, or both.',
+	tool_domain_lookup_captcha_label: 'Security check',
+	tool_domain_lookup_err_captcha: 'Complete the security check before looking up.',
+	tool_domain_lookup_err_captcha_fail: 'Security check failed. Please try again.',
 	tool_domain_lookup_events: 'Events',
 	tool_domain_lookup_example:
 		'Example: look up example.com → DNS may show public A/AAAA/NS answers from DoH; Registration may list registrar, status codes, and expiration/registration events from RDAP (fields can be redacted).',

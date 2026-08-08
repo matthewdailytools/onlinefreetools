@@ -27,6 +27,8 @@ type Env = {
 	ASSETS: Fetcher;
 	SITE_DEFAULT_LANG?: string;
 	SITE_LANGS?: string;
+	/** Turnstile siteverify 密钥（wrangler secret，勿入库） */
+	TURNSTILE_SECRET_KEY?: string;
 };
 
 /**

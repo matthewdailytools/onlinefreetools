@@ -22,7 +22,12 @@ const id: SiteLangDict = {
 	tool_domain_lookup_dns_fail: 'Lookup DNS gagal.',
 	tool_domain_lookup_dns_heading: 'Catatan DNS',
 	tool_domain_lookup_err_empty: 'Masukkan nama domain.',
+	tool_domain_lookup_domain_normalized: 'Dinormalisasi menjadi {domain}.',
+	tool_domain_lookup_err_format: 'Itu tidak terlihat seperti nama domain yang valid. Gunakan host seperti example.com (URL dikoreksi otomatis).',
 	tool_domain_lookup_err_need_one: 'Pilih DNS, registrasi, atau keduanya.',
+	tool_domain_lookup_captcha_label: 'Pemeriksaan keamanan',
+	tool_domain_lookup_err_captcha: 'Selesaikan pemeriksaan keamanan sebelum mencari.',
+	tool_domain_lookup_err_captcha_fail: 'Pemeriksaan keamanan gagal. Coba lagi.',
 	tool_domain_lookup_events: 'Event',
 	tool_domain_lookup_example:
 		'Contoh: cek example.com → DNS bisa menampilkan A/AAAA/NS publik via DoH; Registrasi bisa menampilkan registrar, kode status, dan event kedaluwarsa/pendaftaran dari RDAP (field bisa disembunyikan).',

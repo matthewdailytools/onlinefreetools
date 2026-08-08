@@ -1,0 +1,40 @@
+our_slug	name_zh	omni_category	omni_slug	url_en	progress_hint	note
+how-to-calculate-bmi	BMI	health	bmi	https://www.omnicalculator.com/health/bmi	已上线对照	主对照；勿跟 bmi-men/women/kids 拆页
+bmr-tdee	BMR	health	bmr	https://www.omnicalculator.com/health/bmr	未开始 · P1	对照 Mifflin 等公式说明；另有 harris-benedict / katch-mcardle 变体页勿拆
+bmr-tdee	TDEE	health	tdee	https://www.omnicalculator.com/health/tdee	未开始 · P1	与 BMR 同页或 Related
+bmr-tdee	卡路里	health	calorie	https://www.omnicalculator.com/health/calorie	未开始 · P1	可选对照
+body-fat-navy	海军体脂	health	navy-body-fat	https://www.omnicalculator.com/health/navy-body-fat	未开始 · P2	C-V5
+ideal-weight	理想体重	health	ideal-weight	https://www.omnicalculator.com/health/ideal-weight	未开始 · P2	须免责
+how-to-calculate-roi	ROI	finance	roi	https://www.omnicalculator.com/finance/roi	已上线对照	勿用 gmroi/roic 混意图
+how-to-calculate-marginal-revenue	边际收益	finance	marginal-revenue	https://www.omnicalculator.com/finance/marginal-revenue	已上线对照	
+compound-interest	复利	finance	compound-interest	https://www.omnicalculator.com/finance/compound-interest	未开始 · P1	
+loan-emi	EMI	finance	emi	https://www.omnicalculator.com/finance/emi	未开始 · P1	另有 car/home/bike-emi 拆页——本站单页
+loan-emi	摊还	finance	amortization	https://www.omnicalculator.com/finance/amortization	未开始 · P1	可并入 EMI 页
+mortgage-calculator	房贷	finance	mortgage	https://www.omnicalculator.com/finance/mortgage	未开始 · P2	YMYL；可与 EMI 合并评估；禁州税矩阵
+break-even	盈亏平衡	finance	break-even	https://www.omnicalculator.com/finance/break-even	未开始 · P1	
+gross-margin	毛利率	finance	gross-margin	https://www.omnicalculator.com/finance/gross-margin	未开始 · P1	
+cagr-calculator	CAGR	finance	cagr	https://www.omnicalculator.com/finance/cagr	未开始 · P2	
+npv-calculator	NPV	finance	net-present-value	https://www.omnicalculator.com/finance/net-present-value	未开始 · P2	Omni slug 为 net-present-value
+salary-to-hourly	年薪↔时薪	finance	salary-to-hourly	https://www.omnicalculator.com/finance/salary-to-hourly	未开始 · P2	Omni 热门；教育向
+how-to-calculate-percentage-change	百分比变化	math	percentage-change	https://www.omnicalculator.com/math/percentage-change	已上线对照	另有 percentage-increase/decrease——本站一带多场景
+how-to-calculate-percentage-change	百分比增加	math	percentage-increase	https://www.omnicalculator.com/math/percentage-increase	已上线对照	Related 对照，不拆独立 slug
+how-to-calculate-gradient	多元梯度 ∇f	math	gradient	https://www.omnicalculator.com/math/gradient	已上线对照	数学梯度；非 CSS
+log-calculator	对数	math	log	https://www.omnicalculator.com/math/log	未开始 · P2	任意底；另有 natural-log
+significant-figures	有效数字	math	sig-fig	https://www.omnicalculator.com/math/sig-fig	未开始 · P2	Omni 热门
+scientific-notation	科学计数法	math	scientific-notation	https://www.omnicalculator.com/math/scientific-notation	未开始 · P2	
+pythagorean-theorem	勾股定理	math	pythagorean-theorem	https://www.omnicalculator.com/math/pythagorean-theorem	未开始 · P2	
+slope-calculator	斜率	math	slope	https://www.omnicalculator.com/math/slope	未开始 · P2	
+exponent-calculator	指数幂	math	exponent	https://www.omnicalculator.com/math/exponent	未开始 · P2	
+square-feet	平方英尺换算	conversion	square-feet-converter	https://www.omnicalculator.com/conversion/square-feet-converter	已上线对照	
+square-feet	面积（建筑）	construction	square-footage	https://www.omnicalculator.com/construction/square-footage	已上线对照	可选对照
+unit-converter	单位换算入口	conversion	conversion-calculator	https://www.omnicalculator.com/conversion/conversion-calculator	未开始 · P2	禁按单位对拆页（Omni conversion≈326）
+standard-deviation	标准差	statistics	standard-deviation	https://www.omnicalculator.com/statistics/standard-deviation	未开始 · P2	
+z-score	Z 分数	statistics	z-score	https://www.omnicalculator.com/statistics/z-score	未开始 · P2	
+sample-size	样本量	statistics	sample-size	https://www.omnicalculator.com/statistics/sample-size	未开始 · P2	
+p-value	p 值	statistics	p-value	https://www.omnicalculator.com/statistics/p-value	未开始 · P2	Omni 热门
+confidence-interval	置信区间	statistics	confidence-interval	https://www.omnicalculator.com/statistics/confidence-interval	未开始 · P2	禁拆 90/95/99 独立 doorway
+concrete-calculator	混凝土（板）	construction	concrete-slab	https://www.omnicalculator.com/construction/concrete-slab	未开始 · P2	Omni 无单一 concrete hub；以 slab 为主对照
+tile-calculator	瓷砖	construction	tile	https://www.omnicalculator.com/construction/tile	未开始 · P2	
+paint-calculator	油漆	construction	paint	https://www.omnicalculator.com/construction/paint	未开始 · P2	
+aspect-ratio-calculator	宽高比	other	aspect-ratio	https://www.omnicalculator.com/other/aspect-ratio	未开始 · P2	禁按 16:9/4:3 拆多 URL
+gpa-calculator	GPA	other	gpa	https://www.omnicalculator.com/other/gpa	未开始 · P2	须标地区；勿拆 college/high-school 薄页

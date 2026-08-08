@@ -1,6 +1,7 @@
 /**
  * 域名综合查询 API：并行 DNS（DoH 多类型）+ RDAP 注册信息。
- * 路由：`GET /api/tools/domain-lookup?name=&dns=1&rdap=1`
+ * 路由：`GET /api/tools/domain-lookup?name=&dns=1&rdap=1&turnstile=<token>`
+ * 须通过 Turnstile（`TURNSTILE_SECRET_KEY`）后方可查上游。
  */
 import type { Context } from 'hono';
 import {
@@ -10,6 +11,7 @@ import {
 	type AllowedDnsType,
 	type DohResourceRecord,
 } from './dnsDoh';
+import { verifyTurnstileToken } from './turnstileSiteverify';
 
 /** 单次 RDAP 上游请求超时（毫秒） */
 const RDAP_FETCH_TIMEOUT_MS = 10_000;
@@ -390,7 +392,37 @@ const parseEnabledFlag = (raw: string | undefined): boolean => {
  * @returns JSON 响应
  */
 export const handleDomainLookup = async (c: Context) => {
-	const hostnameResult = normalizeAndValidateHostname(c.req.query('name') || '');
+	/** Worker 环境（含 Turnstile secret） */
+	const env = c.env as { TURNSTILE_SECRET_KEY?: string };
+	/** 浏览器 token：优先 query，其次 header */
+	const turnstileToken =
+		(c.req.query('turnstile') || '').trim() ||
+		(c.req.header('cf-turnstile-response') || '').trim() ||
+		(c.req.header('x-turnstile-token') || '').trim();
+	/** 客户端 IP（供 siteverify 可选字段） */
+	const remoteip =
+		c.req.header('cf-connecting-ip') ||
+		c.req.header('x-forwarded-for')?.split(',')[0]?.trim() ||
+		undefined;
+
+	const captcha = await verifyTurnstileToken(
+		env.TURNSTILE_SECRET_KEY || '',
+		turnstileToken,
+		remoteip,
+	);
+	if (!captcha.ok) {
+		return c.json(
+			{
+				error: captcha.error,
+				codes: captcha.codes,
+			},
+			captcha.error === 'Turnstile is not configured' ? 503 : 403,
+		);
+	}
+
+	const hostnameResult = normalizeAndValidateHostname(c.req.query('name') || '', {
+		requireDot: true,
+	});
 	if ('error' in hostnameResult) {
 		return c.json({ error: hostnameResult.error }, 400);
 	}

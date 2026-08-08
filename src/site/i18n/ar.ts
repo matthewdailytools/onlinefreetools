@@ -791,6 +791,7 @@ const ar: SiteLangDict = {
   tool_csv_json_usecases_title: 'استخدامات مناسبة',
   tool_domain_lookup_article:
     'اعرض سجلات DNS الحية وبيانات تسجيل النطاق في مكان واحد. تمر الاستعلامات عبر حافة موقعنا إلى DNS-over-HTTPS وRDAP؛ جهات الاتصال غالباً مخفية وقد يختلف الناتج عن محلّل DNS المحلي.',
+  tool_domain_lookup_captcha_label: 'التحقق الأمني',
   tool_domain_lookup_clear: 'مسح',
   tool_domain_lookup_col_data: 'البيانات',
   tool_domain_lookup_col_name: 'الاسم',
@@ -805,8 +806,12 @@ const ar: SiteLangDict = {
   tool_domain_lookup_dns_fail: 'فشل استعلام DNS.',
   tool_domain_lookup_dns_heading: 'سجلات DNS',
   tool_domain_lookup_domain_label: 'النطاق',
+  tool_domain_lookup_domain_normalized: 'تم التصحيح إلى {domain}.',
   tool_domain_lookup_domain_placeholder: 'example.com',
+  tool_domain_lookup_err_captcha: 'أكمل التحقق الأمني قبل البحث.',
+  tool_domain_lookup_err_captcha_fail: 'فشل التحقق الأمني. حاول مرة أخرى.',
   tool_domain_lookup_err_empty: 'أدخل اسم نطاق.',
+  tool_domain_lookup_err_format: 'هذا لا يبدو اسم نطاق صالحًا. استخدم مضيفًا مثل example.com (يتم تصحيح عناوين URL تلقائيًا).',
   tool_domain_lookup_err_need_one: 'اختر DNS أو التسجيل أو كليهما.',
   tool_domain_lookup_events: 'الأحداث',
   tool_domain_lookup_example:

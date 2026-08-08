@@ -15,6 +15,7 @@ const themeBootScript = `<script>(function(){try{var k='oft-theme',v=localStorag
 /**
  * 渲染站点静态页 HTML 外壳（head、布局、侧栏脚本等）。
  * @param {object} opts
+ * @param {string} [opts.bodyClass='is-home-page'] body 类名（首页 / 信息页等布局差异）
  * @param {boolean} [opts.robotsNoindex=false] 为 true 时输出 `<meta name="robots" content="noindex">`（devlogs、测试页等）
  */
 export const renderLayout = ({
@@ -35,6 +36,7 @@ export const renderLayout = ({
   includeSidebarToggleScript = true,
   sidebarAutoCloseSelector,
   robotsNoindex = false,
+  bodyClass = 'is-home-page',
 }) => {
   const canonical = absoluteUrl(canonicalPath);
   const tracking = getTrackingSnippets();
@@ -176,7 +178,7 @@ export const renderLayout = ({
   ${extraHeadHtml}
   ${headJsonLd ? `<script type="application/ld+json">${headJsonLd}</script>` : ''}
 </head>
-<body class="is-home-page">
+<body class="${bodyClass}">
   ${tracking.bodyHtml}
   ${headerHtml}
   <div class="layout sidebar-collapsed" id="layoutRoot">

@@ -65,31 +65,71 @@ export const isValidHostnameLabel = (label: string): boolean => {
 	return /^[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/.test(label);
 };
 
+/** {@link normalizeAndValidateHostname} 的可选约束 */
+export interface NormalizeHostnameOptions {
+	/**
+	 * 为 true 时要求主机名至少含一个点（域名形态，供 domain-lookup 使用）。
+	 * 默认 false，以兼容 dns-lookup 的单标签主机名。
+	 */
+	requireDot?: boolean;
+}
+
 /**
  * 规范化并校验用户传入的主机名（`name` 查询参数）。
- * 流程：trim → 小写 → 去掉协议/路径 → 去掉末尾根点 → 按标签校验。
+ * 流程：trim → 去引号 → 小写 → 剥 URL/端口/路径/查询 → 去尾根点 → 按标签校验。
+ * 与 domain-lookup 页客户端校准逻辑保持一致。
  *
  * @param raw - 原始查询字符串
+ * @param options - 可选额外约束
  * @returns 校验通过时返回规范化主机名；失败时返回 `{ error }` 供 400 响应使用
  */
 export const normalizeAndValidateHostname = (
 	raw: string,
+	options?: NormalizeHostnameOptions,
 ): { name: string } | { error: string } => {
-	let name = raw.trim().toLowerCase();
+	let name = raw.trim();
 
-	/** 用户误贴完整 URL 时剥协议与路径 */
-	if (name.includes('://')) {
+	/** 去掉成对引号或尖括号（粘贴痕迹） */
+	if (
+		(name.startsWith('"') && name.endsWith('"')) ||
+		(name.startsWith("'") && name.endsWith("'")) ||
+		(name.startsWith('<') && name.endsWith('>'))
+	) {
+		name = name.slice(1, -1).trim();
+	}
+
+	name = name.toLowerCase();
+
+	/**
+	 * 误贴完整 URL、带端口、路径或查询串时，用 URL 解析取 hostname
+	 *（含 IDN → punycode）。
+	 */
+	const looksLikeUrl =
+		name.includes('://') ||
+		name.includes('/') ||
+		name.includes('?') ||
+		name.includes('#') ||
+		/@/.test(name) ||
+		/^[a-z0-9.-]+:\d+/i.test(name);
+
+	if (looksLikeUrl) {
 		try {
-			const u = new URL(name.includes('://') ? name : `https://${name}`);
-			name = u.hostname.toLowerCase();
+			const withProto = name.includes('://') ? name : `https://${name}`;
+			name = new URL(withProto).hostname.toLowerCase();
 		} catch {
 			return { error: 'Invalid hostname' };
 		}
-	} else if (name.includes('/')) {
-		name = name.split('/')[0] || '';
+	} else if (/[^\x00-\x7f]/.test(name)) {
+		/** 裸 IDN：经 URL 解析转为 punycode（xn--） */
+		try {
+			name = new URL(`https://${name}`).hostname.toLowerCase();
+		} catch {
+			return { error: 'Invalid hostname' };
+		}
 	}
 
-	if (name.endsWith('.')) {
+	/** 连续去尾根点 */
+	while (name.endsWith('.')) {
 		name = name.slice(0, -1);
 	}
 
@@ -97,12 +137,17 @@ export const normalizeAndValidateHostname = (
 		return { error: 'Hostname is required' };
 	}
 
-	if (name.includes(' ') || name.includes(':')) {
+	if (name.includes(' ') || name.includes(':') || name.includes('[') || name.includes(']')) {
 		return { error: 'Invalid hostname' };
 	}
 
 	if (name.length > 253) {
 		return { error: 'Hostname exceeds 253 characters' };
+	}
+
+	/** domain-lookup：要求可注册域名形态（至少一处点号） */
+	if (options?.requireDot && !name.includes('.')) {
+		return { error: 'Invalid hostname' };
 	}
 
 	const labels = name.split('.');
@@ -113,9 +158,7 @@ export const normalizeAndValidateHostname = (
 	}
 
 	return { name };
-};
-
-/**
+};/**
  * 解析并校验 DNS 记录类型查询参数。
  * 未传时默认为 `A`；仅允许 {@link ALLOWED_DNS_TYPES} 中的类型。
  *
