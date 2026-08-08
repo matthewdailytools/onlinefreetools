@@ -35,7 +35,7 @@ alwaysApply: false
 ## 索引
 
 - `robots.txt` 允许正常抓取；`Disallow: /devlogs/`（开发日志不收录）；`sitemap.xml` 由 `npm run build:site` 生成（不含 devlogs）
-- 测试/门禁页用 `meta name="robots" content="noindex"`
+- 开发日志（`public/devlogs/`）与测试/门禁页：`meta name="robots" content="noindex"`（`buildDevLogs` → `renderLayout` 的 `robotsNoindex: true`）
 - 禁止 `llms.txt` 或「AI 专用」Schema 类型
 
 ## 国际化

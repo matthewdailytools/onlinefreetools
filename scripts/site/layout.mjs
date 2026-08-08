@@ -6,6 +6,11 @@ const bootstrapCss =
 const bootstrapJs =
   'https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js';
 
+/**
+ * 渲染站点静态页 HTML 外壳（head、布局、侧栏脚本等）。
+ * @param {object} opts
+ * @param {boolean} [opts.robotsNoindex=false] 为 true 时输出 `<meta name="robots" content="noindex">`（devlogs、测试页等）
+ */
 export const renderLayout = ({
   lang,
   title,
@@ -23,6 +28,7 @@ export const renderLayout = ({
   extraBodyHtml = '',
   includeSidebarToggleScript = true,
   sidebarAutoCloseSelector,
+  robotsNoindex = false,
 }) => {
   const canonical = absoluteUrl(canonicalPath);
   const tracking = getTrackingSnippets();
@@ -140,6 +146,7 @@ export const renderLayout = ({
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>${title}</title>
   <meta name="description" content="${description}" />
+  ${robotsNoindex ? '<meta name="robots" content="noindex" />' : ''}
   <link rel="canonical" href="${canonical}" />
   <meta property="og:title" content="${title}" />
   <meta property="og:description" content="${description}" />

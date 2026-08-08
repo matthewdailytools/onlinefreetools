@@ -155,6 +155,10 @@ const removeStaticToolsDir = async (lang) => {
   }
 };
 
+/**
+ * 从 dev-logs/*.md 生成 public/devlogs/ 索引与各篇 HTML。
+ * 开发日志不参与 sitemap，且 head 含 robots noindex（与 robots.txt Disallow 双保险）。
+ */
 export const buildDevLogs = async () => {
   const lang = siteConfig.defaultLang;
   const outDir = path.join(publicDir, 'devlogs');
@@ -210,6 +214,7 @@ export const buildDevLogs = async () => {
       ogImageUrl: siteConfig.ogImage,
       ogType: 'article',
       alternates: [],
+      robotsNoindex: true,
       headerHtml,
       sidebarHtml,
       contentHtml,
@@ -313,6 +318,7 @@ export const buildDevLogs = async () => {
     ogImageUrl: siteConfig.ogImage,
     ogType: 'website',
     alternates: [],
+    robotsNoindex: true,
     headJsonLd: indexJsonLd,
     headerHtml,
     sidebarHtml,
