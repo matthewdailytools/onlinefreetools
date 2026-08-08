@@ -26,7 +26,7 @@ Purpose: Make AI agents productive immediately in this repo. Keep changes minima
 - **权威序**：Google 官方（`.cursor/rules/seo-google-policy.mdc`）→ `lint:seo` / 代码 → `.cursor/rules/*`（`tool-creation` / `tool-i18n-seo` / `tool-i18n-localization`）→ `docs/*`（须对齐前三者）→ 本文件（从 rules 同步）。立项：`work-tasks/`。
 - **支持语言**：以 `src/site/i18n.ts` 的 `supportedLangs` 为准（当前 10 语：en, zh, es, ar, pt, id, fr, ja, ru, de）。新增语言需同步路由、hreflang、sitemap 与首页卡片。
 - **多语言链接验证**：
-  - 首页增加新工具入口：在 `scripts/site/components/content-home.mjs` 添加卡片（featured 和 all-tools）；运行 `npm run build:site` 刷新静态页。
+  - 新工具入库后必须 `npm run build:site`（含 merge）：刷新 `public/_pages/*/index.html` 与 sitemap；**禁止只跑 `merge:tools`**（否则 `/`、`/zh/` 静态首页看不到新卡片）。一般不必手改 `content-home.mjs`。
   - 确保各语言 URL 可访问，例如 `/zh/tools/xxx`、`/tools/xxx`（en 无前缀）。
   - 展示目标语言全文，禁止占位符或错语言 fallback。
   - 每个工具页具备完整 `hreflang` + `x-default`（见 `src/pages/site/layout.ts`）。
@@ -45,9 +45,11 @@ Purpose: Make AI agents productive immediately in this repo. Keep changes minima
 
 - **多语言本地化（稳妥常态）**：先填 `work-tasks/{slug}/03-locale-briefs.md` → 母版一语 → **Title/描述/检索词覆盖优化（母版）** → **逐语或每批 ≤3 语**按 brief 独立重写 → **再优化抽查语覆盖**（禁止 `Translate to {lang}`；禁止 en/zh 后脚本灌其余语的同构交付）→ 禁词表 + ≥3 轮抽查；「待母语抽查」须重写/确认后清掉才可 `i18n-done`。Title/H1 须结果或场景向口语，**禁止**「参数A、参数B、参数C」目录腔；次要意图进 description/FAQ，勿拆近义 URL。`lint:seo` ≠ 本地化完成。细则：`tool-i18n-localization.mdc`。
 
-- **首页、导航与 README**：新工具须在首页与工具导航有入口；并更新根目录 `README.md`「工具清单 / Tools List」（中英各一条，与 `tool-catalog.json` 一致）。
+- **首页、导航与 README**：新工具须在首页与工具导航有入口；实现收尾跑 `npm run build:site` 后本地核对 `/`、`/zh/`；并更新根目录 `README.md`「工具清单 / Tools List」（中英各一条，与 `tool-catalog.json` 一致）。
 
-- **SEO 验证**：`npm run lint:seo`；发版前 `npm run build:site && npm run lint:seo`。FAQ/富结果展示不作 KPI。
+- **检索覆盖（0b / 步2 / 步4）**：按 `.cursor/skills/tool-coverage-pass/SKILL.md`；`npm run coverage:gate -- --slug=… --phase=0b|2|4|all`。多工具 Plan 须每 slug 分阶段 todos，禁止「一次实现全部」。`lint:seo` 对有清单前覆盖专节的工具强制多轮行。
+
+- **SEO 验证**：`coverage:gate --phase=all` → `npm run build:site && npm run lint:seo`（新工具/发版前均须；`build:site` 不可省略）。FAQ/富结果展示不作 KPI。
 
 
 ## Cloudflare Workflows

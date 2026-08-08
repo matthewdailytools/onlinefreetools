@@ -62,13 +62,13 @@
 | 15 | SQL 格式化 | A.1 | `sql-formatter` | SQL 美化/缩进 | developer | 后端、数据分析 | SQL 文本 | 格式化 SQL | 未开始 · P2 |
 | 16 | cURL → fetch | A.10；B5 | `curl-to-fetch` | 把 cURL 命令转为 fetch 代码 | developer | 前端、全栈 | cURL 字符串 | JavaScript fetch 片段 | 未开始 · P1 |
 | 17 | CIDR 计算器 | A.10；C-V1 | `cidr-calculator` | 网段、掩码、主机范围计算 | developer | 运维、网络工程 | CIDR / IP+掩码 | 网络范围与主机数 | 未开始 · P1 |
-| 18 | JWT 解码 | A.6；C-V1 | `jwt-decoder` | Base64url 解码 JWT（不验签） | developer | 后端、安全调试 | JWT 字符串 | Header/Payload JSON + 免责声明 | 未开始 · P1 |
-| 19 | 文件/文本哈希 | A.6 | `file-hash` | 计算 MD5/SHA 等摘要 | developer | 开发者、发布校验 | 文件或文本 | 哈希十六进制 | 未开始 · P1 |
-| 20 | Base64 编解码 | A.6 | `base64` | Base64 编码/解码 | developer | 开发者 | 文本或文件字节 | Base64 或还原内容 | 未开始 · P1 |
-| 21 | UUID / ULID 生成 | A.6 | `uuid-generator` | 生成 UUID/ULID | developer | 后端、全栈 | 类型选项 | ID 字符串 | 未开始 · P2 |
-| 22 | 随机密码生成 | A.6 | `password-generator` | 按规则生成随机密码 | developer | 全体用户 | 长度/字符集 | 密码字符串 | 未开始 · P2 |
-| 23 | Unix 时间戳转换 | A.8 | `unix-timestamp` | 时间戳 ↔ 可读时间 | developer | 开发者、运维 | 时间戳或日期时间 | 互转结果 | 未开始 · P1 |
-| 24 | 时区转换 | A.8 | `timezone-converter` | 跨时区时间对照 | developer | 远程协作、运维 | 时间点 + 源/目标时区 | 各时区时间 | 未开始 · P1 |
+| 18 | JWT 解码 | A.6；C-V1 | `jwt-decoder` | Base64url 解码 JWT（不验签） | developer | 后端、安全调试 | JWT 字符串 | Header/Payload JSON + 免责声明 | 已上线 |
+| 19 | 文件/文本哈希 | A.6 | `file-hash` | 计算 MD5/SHA 等摘要 | developer | 开发者、发布校验 | 文件或文本 | 哈希十六进制 | 已上线 |
+| 20 | Base64 编解码 | A.6 | `base64` | Base64 编码/解码 | developer | 开发者 | 文本或文件字节 | Base64 或还原内容 | 已上线 |
+| 21 | UUID / ULID 生成 | A.6 | `uuid-generator` | 生成 UUID/ULID | developer | 后端、全栈 | 类型选项 | ID 字符串 | 已上线 |
+| 22 | 随机密码生成 | A.6 | `password-generator` | 按规则生成随机密码 | developer | 全体用户 | 长度/字符集 | 密码字符串 | 已上线 |
+| 23 | Unix 时间戳转换 | A.8 | `unix-timestamp` | 时间戳 ↔ 可读时间 | developer | 开发者、运维 | 时间戳或日期时间 | 互转结果 | 已上线 |
+| 24 | 时区转换 | A.8 | `timezone-converter` | 跨时区时间对照 | developer | 远程协作、运维 | 时间点 + 源/目标时区 | 各时区时间 | 已上线 |
 | 25 | Cron 解释器 | A.8 | `cron-explainer` | 把 Cron 表达式译成人话 | developer | 运维、后端 | Cron 表达式 | 自然语言说明 + 下次触发示例 | 未开始 · P2 |
 | 26 | 会议多时区包 | B.3 非图片 1→N | `meeting-timezone-pack` | 单时间点 → 团队多时区对照表 | developer | 远程团队、PM | 一个时间点 + 时区列表 | 多时区对照导出 | 未开始 · P2 |
 | 27 | 证书指纹包 | B.3 非图片 1→N | `cert-fingerprint-pack` | PEM → 多算法指纹与字段 | developer | 运维、安全 | PEM 证书 | 指纹表 + 有效期等字段 | 未开始 · P2 |
@@ -271,10 +271,10 @@
 | 序号范围 | **1–115**（全表产品行） |
 | ToolDone 公式对照精选 | 22 行（§11） |
 | ToolDone 全量归档 | ~2826 en / ~2835 zh |
-| 已上线 | 32 |
+| 已上线 | 39 |
 | 未开始 · P0 | 16（含 `merge-pdf` / `split-pdf`） |
-| 未开始 · P1 | ~26 |
-| 未开始 · P2 | ~24 |
+| 未开始 · P1 | ~21 |
+| 未开始 · P2 | ~22 |
 | 待 POC | 3（`local-bg-removal`、`ocr-to-text`、`audio-wav-mp3`） |
 
 **P0 未开始速查**：`merge-pdf`、`split-pdf`、`create-zip-file`、`unzip-file`、`safe-paste-cleaner`、`ai-token-counter`、`chat-export-converter`、`meta-serp-preview`、`ios-app-screenshot-resizer`、`app-icon-generator-pack`、`amazon-image-resizer`、`favicon-and-pwa-icon-pack`、`social-share-image-pack`。

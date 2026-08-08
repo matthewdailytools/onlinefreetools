@@ -72,6 +72,8 @@
 | 优化摘要 | （相对初稿改了什么） |
 | [ ] 已回写上方 SEO 卡片 Title / Description 与建议 slug | |
 
+> 填完后验收：`npm run coverage:gate -- --slug={tool-slug} --phase=0b`（须绿才可标 `ready` / 勾下方页面模块清单）。
+
 ## 交互规格（给实现用）
 
 - 输入：

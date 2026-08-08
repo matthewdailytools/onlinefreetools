@@ -34,6 +34,23 @@
     "logo": "/icons/tools/add-www-to-dns.svg"
   },
   {
+    "slug": "base64",
+    "path": "/tools/base64",
+    "category": "developer",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_base64_title",
+    "homeTitleKey": "tool_base64_title",
+    "homeDescKey": "tool_base64_desc",
+    "faqPrefix": "tool_base64",
+    "related": [
+      "image-to-base64",
+      "jwt-decoder",
+      "html-entity"
+    ],
+    "logo": "/icons/tools/base64.svg"
+  },
+  {
     "slug": "brand-color-token-pack",
     "path": "/tools/brand-color-token-pack",
     "category": "design",
@@ -98,6 +115,22 @@
       "json-schema-validator"
     ],
     "logo": "/icons/tools/csv-json.svg"
+  },
+  {
+    "slug": "file-hash",
+    "path": "/tools/file-hash",
+    "category": "developer",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_file_hash_title",
+    "homeTitleKey": "tool_file_hash_title",
+    "homeDescKey": "tool_file_hash_desc",
+    "faqPrefix": "tool_file_hash",
+    "related": [
+      "base64",
+      "text-diff"
+    ],
+    "logo": "/icons/tools/file-hash.svg"
   },
   {
     "slug": "flip-image",
@@ -503,6 +536,22 @@
     "logo": "/icons/tools/json-schema-validator.svg"
   },
   {
+    "slug": "jwt-decoder",
+    "path": "/tools/jwt-decoder",
+    "category": "developer",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_jwt_decoder_title",
+    "homeTitleKey": "tool_jwt_decoder_title",
+    "homeDescKey": "tool_jwt_decoder_desc",
+    "faqPrefix": "tool_jwt_decoder",
+    "related": [
+      "base64",
+      "unix-timestamp"
+    ],
+    "logo": "/icons/tools/jwt-decoder.svg"
+  },
+  {
     "slug": "markdown-to-html",
     "path": "/tools/markdown-to-html",
     "category": "developer",
@@ -519,6 +568,22 @@
       "website-headers"
     ],
     "logo": "/icons/tools/markdown-to-html.svg"
+  },
+  {
+    "slug": "password-generator",
+    "path": "/tools/password-generator",
+    "category": "developer",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_password_generator_title",
+    "homeTitleKey": "tool_password_generator_title",
+    "homeDescKey": "tool_password_generator_desc",
+    "faqPrefix": "tool_password_generator",
+    "related": [
+      "uuid-generator",
+      "file-hash"
+    ],
+    "logo": "/icons/tools/password-generator.svg"
   },
   {
     "slug": "smart-website-color-scheme",
@@ -569,6 +634,54 @@
       "website-headers"
     ],
     "logo": "/icons/tools/text-diff.svg"
+  },
+  {
+    "slug": "timezone-converter",
+    "path": "/tools/timezone-converter",
+    "category": "developer",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_timezone_converter_title",
+    "homeTitleKey": "tool_timezone_converter_title",
+    "homeDescKey": "tool_timezone_converter_desc",
+    "faqPrefix": "tool_timezone_converter",
+    "related": [
+      "unix-timestamp",
+      "ip-address"
+    ],
+    "logo": "/icons/tools/timezone-converter.svg"
+  },
+  {
+    "slug": "unix-timestamp",
+    "path": "/tools/unix-timestamp",
+    "category": "developer",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_unix_timestamp_title",
+    "homeTitleKey": "tool_unix_timestamp_title",
+    "homeDescKey": "tool_unix_timestamp_desc",
+    "faqPrefix": "tool_unix_timestamp",
+    "related": [
+      "timezone-converter",
+      "jwt-decoder"
+    ],
+    "logo": "/icons/tools/unix-timestamp.svg"
+  },
+  {
+    "slug": "uuid-generator",
+    "path": "/tools/uuid-generator",
+    "category": "developer",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_uuid_generator_title",
+    "homeTitleKey": "tool_uuid_generator_title",
+    "homeDescKey": "tool_uuid_generator_desc",
+    "faqPrefix": "tool_uuid_generator",
+    "related": [
+      "password-generator",
+      "file-hash"
+    ],
+    "logo": "/icons/tools/uuid-generator.svg"
   },
   {
     "slug": "wcag-contrast-checker",

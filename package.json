@@ -18,6 +18,7 @@
     "vendor:image-optimizer": "node scripts/copy-image-optimizer-vendor.mjs",
     "vendor:site-chrome": "node scripts/copy-site-chrome-vendor.mjs",
     "lint:seo": "node scripts/validate-tool-seo.mjs",
+    "coverage:gate": "node scripts/validate-tool-coverage-rounds.mjs",
     "lint:vendor": "node scripts/validate-vendor-tracked.mjs",
     "lint:tool-isolation": "node scripts/check-tool-isolation.mjs",
     "indexnow": "node ops/seo/submit-indexnow.mjs",

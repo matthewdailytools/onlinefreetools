@@ -1,0 +1,21 @@
+{
+  "slug": "timezone-converter",
+  "path": "/tools/timezone-converter",
+  "category": "developer",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_timezone_converter_title",
+  "homeTitleKey": "tool_timezone_converter_title",
+  "homeDescKey": "tool_timezone_converter_desc",
+  "faqPrefix": "tool_timezone_converter",
+  "related": [
+    "unix-timestamp",
+    "ip-address"
+  ],
+  "logo": "/icons/tools/timezone-converter.svg",
+  "page": {
+    "module": "../pages/timezoneConverterPage",
+    "export": "renderTimezoneConverterPage",
+    "style": "opts"
+  }
+}

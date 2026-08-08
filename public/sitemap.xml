@@ -1052,6 +1052,156 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/add-www-to-dns" />
   </url>
   <url>
+    <loc>https://onlinefreetools.org/tools/base64</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/base64" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/zh/tools/base64</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/base64" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/es/tools/base64</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/base64" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/ar/tools/base64</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/base64" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/pt/tools/base64</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/base64" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/id/tools/base64</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/base64" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/fr/tools/base64</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/base64" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/ja/tools/base64</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/base64" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/ru/tools/base64</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/base64" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/de/tools/base64</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/base64" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/base64" />
+  </url>
+  <url>
     <loc>https://onlinefreetools.org/tools/brand-color-token-pack</loc>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/brand-color-token-pack" />
@@ -1650,6 +1800,156 @@
     <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/csv-json" />
     <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/csv-json" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/csv-json" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/tools/file-hash</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/file-hash" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/zh/tools/file-hash</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/file-hash" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/es/tools/file-hash</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/file-hash" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/ar/tools/file-hash</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/file-hash" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/pt/tools/file-hash</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/file-hash" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/id/tools/file-hash</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/file-hash" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/fr/tools/file-hash</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/file-hash" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/ja/tools/file-hash</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/file-hash" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/ru/tools/file-hash</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/file-hash" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/de/tools/file-hash</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/file-hash" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/file-hash" />
   </url>
   <url>
     <loc>https://onlinefreetools.org/tools/flip-image</loc>
@@ -5252,6 +5552,156 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/json-schema-validator" />
   </url>
   <url>
+    <loc>https://onlinefreetools.org/tools/jwt-decoder</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/jwt-decoder" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/zh/tools/jwt-decoder</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/jwt-decoder" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/es/tools/jwt-decoder</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/jwt-decoder" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/ar/tools/jwt-decoder</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/jwt-decoder" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/pt/tools/jwt-decoder</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/jwt-decoder" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/id/tools/jwt-decoder</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/jwt-decoder" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/fr/tools/jwt-decoder</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/jwt-decoder" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/ja/tools/jwt-decoder</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/jwt-decoder" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/ru/tools/jwt-decoder</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/jwt-decoder" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/de/tools/jwt-decoder</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/jwt-decoder" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/jwt-decoder" />
+  </url>
+  <url>
     <loc>https://onlinefreetools.org/tools/markdown-to-html</loc>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/markdown-to-html" />
@@ -5400,6 +5850,156 @@
     <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/markdown-to-html" />
     <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/markdown-to-html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/markdown-to-html" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/tools/password-generator</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/password-generator" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/zh/tools/password-generator</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/password-generator" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/es/tools/password-generator</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/password-generator" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/ar/tools/password-generator</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/password-generator" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/pt/tools/password-generator</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/password-generator" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/id/tools/password-generator</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/password-generator" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/fr/tools/password-generator</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/password-generator" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/ja/tools/password-generator</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/password-generator" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/ru/tools/password-generator</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/password-generator" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/de/tools/password-generator</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/password-generator" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/password-generator" />
   </url>
   <url>
     <loc>https://onlinefreetools.org/tools/smart-website-color-scheme</loc>
@@ -5850,6 +6450,456 @@
     <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/text-diff" />
     <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/text-diff" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/text-diff" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/tools/timezone-converter</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/timezone-converter" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/zh/tools/timezone-converter</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/timezone-converter" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/es/tools/timezone-converter</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/timezone-converter" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/ar/tools/timezone-converter</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/timezone-converter" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/pt/tools/timezone-converter</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/timezone-converter" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/id/tools/timezone-converter</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/timezone-converter" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/fr/tools/timezone-converter</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/timezone-converter" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/ja/tools/timezone-converter</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/timezone-converter" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/ru/tools/timezone-converter</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/timezone-converter" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/de/tools/timezone-converter</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/timezone-converter" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/timezone-converter" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/tools/unix-timestamp</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/unix-timestamp" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/zh/tools/unix-timestamp</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/unix-timestamp" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/es/tools/unix-timestamp</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/unix-timestamp" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/ar/tools/unix-timestamp</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/unix-timestamp" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/pt/tools/unix-timestamp</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/unix-timestamp" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/id/tools/unix-timestamp</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/unix-timestamp" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/fr/tools/unix-timestamp</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/unix-timestamp" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/ja/tools/unix-timestamp</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/unix-timestamp" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/ru/tools/unix-timestamp</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/unix-timestamp" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/de/tools/unix-timestamp</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/unix-timestamp" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/unix-timestamp" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/tools/uuid-generator</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/uuid-generator" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/zh/tools/uuid-generator</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/uuid-generator" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/es/tools/uuid-generator</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/uuid-generator" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/ar/tools/uuid-generator</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/uuid-generator" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/pt/tools/uuid-generator</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/uuid-generator" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/id/tools/uuid-generator</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/uuid-generator" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/fr/tools/uuid-generator</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/uuid-generator" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/ja/tools/uuid-generator</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/uuid-generator" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/ru/tools/uuid-generator</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/uuid-generator" />
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/de/tools/uuid-generator</loc>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/tools/uuid-generator" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/tools/uuid-generator" />
   </url>
   <url>
     <loc>https://onlinefreetools.org/tools/wcag-contrast-checker</loc>

@@ -15,7 +15,7 @@ alwaysApply: true
 - 文件/目录：`kebab-case`；环境名：`dev` / `staging` / `prod`。
 - 站点源码：`src/`；静态输出：`public/`；i18n：`src/site/i18n/`；运维脚本与手册：`ops/`。
 - **同域 vendor**：`public/vendor/`（bootstrap/fonts/jsquash/gifenc/wasm-feature-detect）须**入库**；Cloudflare 拉 GitHub 部署时无本地 `predeploy`。禁止再 gitignore 整树；改完跑 `npm run lint:vendor`（见 `cloudflare-workflow.mdc`）。
-- 新工具立项讨论：`work-tasks/{slug}/`（含 `03-locale-briefs.md`；见 `work-tasks-tool-brief.mdc` / `tool-i18n-localization.mdc`）；**勾工程/页面/上线清单前**须完成 slug/title/关键词/desc 检索覆盖优化；实现仍走 `tool-creation.mdc`（catalog/i18n 分片经 `merge:tools` 生成）。
+- 新工具立项讨论：`work-tasks/{slug}/`（含 `03-locale-briefs.md`；见 `work-tasks-tool-brief.mdc` / `tool-i18n-localization.mdc`）；**勾工程/页面/上线清单前**须完成 slug/title/关键词/desc 检索覆盖优化；实现仍走 `tool-creation.mdc`（catalog/i18n 分片经 `merge:tools` 生成；**交付前须 `npm run build:site`** 刷新 `public/_pages/*/index.html`，仅 merge 首页不会出现新工具）。
 - 未来若拆 monorepo，可用 `apps/worker-*`、`apps/pages`；当前根目录布局即可。
 
 ## 提交信息

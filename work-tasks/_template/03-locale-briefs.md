@@ -172,11 +172,14 @@ Title 方向须为当地口语检索向，见 `.cursor/rules/tool-i18n-localizat
 
 ## 多轮记录（摘要）
 
+> 行首 ID（`0b` / `1b` / `2b`）供 `npm run coverage:gate` 解析；**日期列填 YYYY-MM-DD**；「做了什么/结果」合计 ≥20 字，禁止只写「完成」。  
+> 验收：`coverage:gate --phase=0b`（标 ready 前）→ `--phase=2`（母版 i18n 后）→ `--phase=4`（抽查语后，须在结果中写出 `en,zh,es,ja`）。
+
 | 轮次 | 日期 | 做了什么 | 结果 |
 |---|---|---|---|
-| 0b 清单前检索覆盖 | | slug/title/关键词/desc；覆盖表在 `02`/`notes` | |
+| 0b 清单前检索覆盖 | | slug/title/关键词/desc；覆盖表在 `02`；主词落点 | |
 | 1 母版+lint | | | |
-| 1b 母版检索覆盖优化 | | title/desc/首页 vs brief 检索词；去参数枚举；次词落点 | |
+| 1b 母版检索覆盖优化 | | 母版 title/desc 相对初稿改动；主词是否在 H1；去参数枚举 | |
 | 2 按 brief 重写 | | | |
-| 2b 抽查语检索覆盖优化 | | en+zh+≥2 他语再过覆盖清单 | |
+| 2b 抽查语检索覆盖优化 | | 抽查语 en,zh,es,ja；各语 title/desc 是否再优化 | |
 | 3 抽查+禁词+lint | | | |

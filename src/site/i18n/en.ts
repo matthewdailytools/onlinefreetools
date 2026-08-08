@@ -263,6 +263,68 @@ const en: SiteLangDict = {
   tool_add_www_to_dns_usecase_3: 'SEO cleanup: make both hostnames resolve, then choose one canonical with a 301.',
   tool_add_www_to_dns_usecases_title: 'Good fits',
   tool_add_www_to_dns_warn_301: 'DNS only makes both names resolve. Pick www or apex as canonical with an HTTP 301 at your host/CDN.',
+  tool_base64_article:
+    'Encode and decode UTF-8 text or raw bytes to Base64 and Base64url in one tabbed page. Built for API payloads, JWT segments, and config strings — distinct from our image-only Base64 tool.',
+  tool_base64_clear: 'Clear',
+  tool_base64_convert: 'Convert',
+  tool_base64_copy: 'Copy output',
+  tool_base64_copy_done: 'Copied',
+  tool_base64_desc: 'Encode or decode Base64 for text and file bytes — all local in your browser.',
+  tool_base64_description:
+    'Convert text or file bytes to Base64 and back in your browser. Steps: pick Encode or Decode, paste text or choose a file, toggle Base64url if needed, then copy. Example: Hello 世界 → SGVsbG8g5LiW55WM. Handles Unicode via UTF-8; nothing is uploaded.',
+  tool_base64_dir_label: 'Mode',
+  tool_base64_empty: 'Paste some input first.',
+  tool_base64_error_invalid: 'Invalid Base64 characters or padding.',
+  tool_base64_example:
+    'Encode (standard): Hello 世界 → SGVsbG8g5LiW55WM. Encode (Base64url): same bytes → SGVsbG8g5LiW55WM (no +/=). Decode reverses either form back to Hello 世界.',
+  tool_base64_example_title: 'Example',
+  tool_base64_faq_a1:
+    'Standard Base64 uses A–Z, a–z, 0–9, +, /, and = padding. Base64url (RFC 4648 §5) replaces + with - and / with _ and usually drops padding — common in JWT and URL-safe tokens.',
+  tool_base64_faq_a2:
+    'Yes. Text is encoded as UTF-8 bytes first, then Base64. Decoding produces the original Unicode string. If you see mojibake, the input may not be valid Base64 or was encoded with a different charset.',
+  tool_base64_faq_a3:
+    'This page handles general text and raw bytes plus Base64url. Image ↔ Base64 focuses on photos — preview, MIME type, and download — not arbitrary UTF-8 strings.',
+  tool_base64_faq_a4:
+    'No. Conversion runs entirely in your browser with TextEncoder, btoa/atob, and FileReader. Your paste and files never leave the device.',
+  tool_base64_faq_a5:
+    'Whitespace is ignored when decoding. Invalid characters, bad padding, or truncated strings throw an error. Very large pastes (>1M chars) may feel slow — try a shorter excerpt.',
+  tool_base64_faq_q1: 'What is the difference between Base64 and Base64url?',
+  tool_base64_faq_q2: 'Does this support Unicode / UTF-8?',
+  tool_base64_faq_q3: 'How is this different from Image ↔ Base64?',
+  tool_base64_faq_q4: 'Does my text or file leave the browser?',
+  tool_base64_faq_q5: 'What happens with invalid Base64 input?',
+  tool_base64_file_label: 'Or encode a file',
+  tool_base64_file_large_warn: 'Large file (>5 MB). Encoding may take a moment.',
+  tool_base64_file_loaded: 'Encoded file: {name} ({size} bytes). Output shows Base64 only.',
+  tool_base64_how_body:
+    'Choose Encode to turn UTF-8 text or file bytes into Base64, or Decode to reverse it. Unicode is handled via UTF-8 bytes before btoa. Enable Base64url for JWT-style output (- and _ instead of + and /, no padding). File input reads bytes locally — no upload.',
+  tool_base64_how_title: 'How it works',
+  tool_base64_input_label: 'Input',
+  tool_base64_input_placeholder: 'Paste plain text or Base64 string…',
+  tool_base64_large_warn: 'Very large paste (>1M characters). Conversion may feel slow — try a shorter excerpt.',
+  tool_base64_output_label: 'Output',
+  tool_base64_rules_body:
+    'What to expect when encoding or decoding: alphabet variants, UTF-8 handling, padding, and file vs text input.',
+  tool_base64_rules_item_1:
+    'Standard Base64 alphabet: A–Z, a–z, 0–9, +, /. Output length is a multiple of 4 with = padding as needed. Base64url swaps +→- and /→_ and often omits =.',
+  tool_base64_rules_item_2:
+    'Text is always UTF-8 encoded before Base64. One Unicode character may become several Base64 characters (e.g. 世界). Decoding restores the original string when input is valid.',
+  tool_base64_rules_item_3:
+    'File encode reads raw bytes — useful for checksums, attachments, or binary blobs. Text encode and file encode share the same output panel; file mode clears the text area and shows a file info banner.',
+  tool_base64_rules_item_4:
+    'Privacy: no server upload. This tool uses zero external libraries — conversion stays entirely in the browser per RFC 4648.',
+  tool_base64_rules_title: 'Rules you should expect',
+  tool_base64_sample: 'Load sample',
+  tool_base64_sample_decode: 'SGVsbG8g5LiW55WM',
+  tool_base64_sample_encode: 'Hello 世界',
+  tool_base64_tab_decode: 'Decode',
+  tool_base64_tab_encode: 'Encode',
+  tool_base64_title: 'Base64 Encode & Decode — Convert Text in Your Browser',
+  tool_base64_url_label: 'Base64url (-_ instead of +/, no padding)',
+  tool_base64_usecase_1: 'Developers: encode JSON or UTF-8 strings for API bodies, data URLs, or test fixtures.',
+  tool_base64_usecase_2: 'JWT / OAuth: produce or inspect Base64url segments before pasting into a JWT decoder.',
+  tool_base64_usecase_3: 'Config / DevOps: embed small binary blobs or secrets as Base64 in YAML, env files, or CI variables.',
+  tool_base64_usecases_title: 'Good fits',
   tool_bmi_article:
     'This free BMI calculator shows how adult Body Mass Index is computed from weight and height, including metric and imperial formulas, category cutoffs, and clear limits (athletes, children). Results stay in your browser.',
   tool_bmi_calculate: 'Calculate BMI',
@@ -682,6 +744,69 @@ const en: SiteLangDict = {
   tool_feedback_subject_label: 'Subject',
   tool_feedback_title: 'Questions or feedback',
   tool_feedback_to_label: 'To',
+  tool_file_hash_algo_label: 'Algorithms',
+  tool_file_hash_article:
+    'Compute MD5 and SHA hex digests for pasted text or a local file. Compare release checksums, fingerprint configs, or verify downloads — hashing stays in your browser except a one-time CDN fetch when you pick MD5.',
+  tool_file_hash_clear: 'Clear',
+  tool_file_hash_copy: 'Copy all',
+  tool_file_hash_copy_done: 'Copied',
+  tool_file_hash_desc: 'Verify text or file digests locally in your browser — MD5 and SHA hex output.',
+  tool_file_hash_description:
+    'Hash pasted text or a local file in your browser. Steps: pick Text or File, tick MD5/SHA algorithms, click Hash, copy lowercase hex. Example: text `hello` → SHA-256 `2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b0184`. Files are read locally; MD5 loads crypto-js from CDN only when selected.',
+  tool_file_hash_empty: 'Paste text or choose a file first.',
+  tool_file_hash_example:
+    'Text input `hello` with SHA-256 selected → `2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b0184`. MD5 of the same string → `5d41402abc4b2a76b9719d911017c592`. Text uses UTF-8 bytes; files use raw bytes.',
+  tool_file_hash_example_title: 'Example',
+  tool_file_hash_faq_a1:
+    'MD5 is fast and still used for legacy checksums (older Linux `md5sum` lists, some CDN ETags). For security (signatures, passwords, tamper evidence) prefer SHA-256 or SHA-512. SHA-1 is deprecated for certificates but may appear in old artifacts.',
+  tool_file_hash_faq_a2:
+    'Large files are read in chunks with a progress bar. Files over ~100 MB show a warning but we still try. Very large files may be slow or run out of memory — split or use a desktop hasher for multi-GB archives.',
+  tool_file_hash_faq_a3:
+    'Text is hashed as UTF-8 encoded bytes. A file is hashed as its raw byte stream. The same letters in a `.txt` file can differ from pasted text if encoding or line endings differ.',
+  tool_file_hash_faq_a4:
+    'No upload. Text and files stay on your device. SHA-* uses the browser Web Crypto API. MD5 alone triggers a lazy load of crypto-js from jsDelivr — your content is not sent to the CDN.',
+  tool_file_hash_faq_a5:
+    'We output lowercase hex without a `0x` prefix, one line per algorithm. This matches common `md5sum` / `sha256sum` tools on Linux and macOS.',
+  tool_file_hash_faq_q1: 'When should I use MD5 vs SHA-256?',
+  tool_file_hash_faq_q2: 'How are large files handled?',
+  tool_file_hash_faq_q3: 'Does pasted text hash the same as a file?',
+  tool_file_hash_faq_q4: 'Is my file or text uploaded?',
+  tool_file_hash_faq_q5: 'What hex format do you output?',
+  tool_file_hash_file_bytes: 'bytes',
+  tool_file_hash_file_label: 'Choose file',
+  tool_file_hash_hash: 'Hash',
+  tool_file_hash_how_body:
+    'Pick Text to hash a paste (UTF-8 bytes) or File to hash a local file (raw bytes). Select one or more algorithms, then Hash. SHA family digests use Web Crypto; MD5 loads a small library on first use. Results appear as lowercase hex, one row per algorithm.',
+  tool_file_hash_how_title: 'How it works',
+  tool_file_hash_input_mode_label: 'Input mode',
+  tool_file_hash_large_warn:
+    'File is over 100 MB. Hashing may be slow or use a lot of memory — consider a desktop tool for very large archives.',
+  tool_file_hash_md5_fail: 'Could not load the MD5 library from CDN. Try SHA-256 or check your network.',
+  tool_file_hash_no_algo: 'Select at least one algorithm.',
+  tool_file_hash_output_label: 'Hex digests',
+  tool_file_hash_progress_label: 'Reading file…',
+  tool_file_hash_rules_body:
+    'Algorithm choice, byte semantics, and output format — what to expect before you compare a digest elsewhere.',
+  tool_file_hash_rules_item_1:
+    'MD5 → 32 hex chars (128 bits). SHA-1 → 40 hex. SHA-256 → 64 hex. SHA-384 → 96 hex. SHA-512 → 128 hex. All lowercase, no prefix.',
+  tool_file_hash_rules_item_2:
+    'Text mode: `TextEncoder` UTF-8. File mode: entire file byte stream. A UTF-8 BOM or CRLF in a file changes the digest vs plain paste.',
+  tool_file_hash_rules_item_3:
+    'Empty text or zero-byte file yields the standard empty-input digest for each algorithm (still valid hex).',
+  tool_file_hash_rules_item_4:
+    'Privacy: no upload. MD5 is the only path that fetches crypto-js from CDN; SHA-* uses built-in Web Crypto only.',
+  tool_file_hash_rules_title: 'Rules you should expect',
+  tool_file_hash_sample: 'Load sample',
+  tool_file_hash_sample_text: 'hello',
+  tool_file_hash_tab_file: 'File',
+  tool_file_hash_tab_text: 'Text',
+  tool_file_hash_text_label: 'Text input',
+  tool_file_hash_text_placeholder: 'Paste text to hash as UTF-8…',
+  tool_file_hash_title: 'File Hash Checker — Verify Digests in Your Browser',
+  tool_file_hash_usecase_1: 'Release engineering: compare an installer SHA-256 with the value published on a download page.',
+  tool_file_hash_usecase_2: 'Config drift: fingerprint a JSON or `.env` snippet before and after a deploy.',
+  tool_file_hash_usecase_3: 'Legacy QA: verify an old MD5 manifest still matches a rebuilt artifact.',
+  tool_file_hash_usecases_title: 'Good fits',
   tool_flip_image_apply: 'Apply',
   tool_flip_image_article: 'Local canvas flip with horizontal and vertical mirrors; pixels are redrawn, not only CSS-flipped.',
   tool_flip_image_choose_file: 'Choose image',
@@ -2048,6 +2173,72 @@ const en: SiteLangDict = {
   tool_json_schema_validator_usecase_3: 'API debugging: paste a request/response body against a Schema fragment extracted from your contract.',
   tool_json_schema_validator_usecases_title: 'Good fits',
   tool_json_schema_validator_validate: 'Validate',
+  tool_jwt_decoder_article:
+    'Decode JWT header and payload locally with Base64url rules, registered-claim time hints, and a clear no-verify boundary. Built for OAuth debugging and API token inspection without uploading secrets.',
+  tool_jwt_decoder_claims_local: 'Local',
+  tool_jwt_decoder_claims_title: 'Registered claim times',
+  tool_jwt_decoder_claims_utc: 'UTC',
+  tool_jwt_decoder_clear: 'Clear',
+  tool_jwt_decoder_copy_done: 'Copied',
+  tool_jwt_decoder_copy_header: 'Copy header',
+  tool_jwt_decoder_copy_payload: 'Copy payload',
+  tool_jwt_decoder_decode: 'Decode',
+  tool_jwt_decoder_desc: 'Decode JWT header and payload locally — no signature verification, paste stays in the browser.',
+  tool_jwt_decoder_description:
+    'Paste a JWT to read its header and payload JSON in your browser — no signature verification. Steps: paste the token, decode, then copy header or payload. Example: the sample token shows alg HS256 and iat 1516239022 with UTC and local time. Tokens are not uploaded.',
+  tool_jwt_decoder_disclaimer:
+    'Not verified — this tool decodes Base64url only. It does not validate signatures and must not be used for authorization decisions.',
+  tool_jwt_decoder_empty: 'Nothing to copy yet — decode a JWT first.',
+  tool_jwt_decoder_error_base64_header: 'Header is not valid Base64url.',
+  tool_jwt_decoder_error_base64_payload: 'Payload is not valid Base64url.',
+  tool_jwt_decoder_error_json_header: 'Header is not valid JSON after decoding.',
+  tool_jwt_decoder_error_json_payload: 'Payload is not valid JSON after decoding.',
+  tool_jwt_decoder_error_segments: 'A JWT must have exactly three dot-separated segments (header.payload.signature).',
+  tool_jwt_decoder_example:
+    'Input: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9eIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c → Header: {"alg":"HS256","typ":"JWT"}. Payload: {"sub":"1234567890","name":"John Doe","iat":1516239022} with iat shown in UTC and local time. Signature is shown raw — not verified.',
+  tool_jwt_decoder_example_title: 'Example',
+  tool_jwt_decoder_faq_a1:
+    'No. Decoding only reverses Base64url on the header and payload. Anyone can read those parts; signature verification needs the issuer secret or public key and is intentionally not implemented here.',
+  tool_jwt_decoder_faq_a2:
+    'Check that you pasted the full token with two dots separating three segments. Extra dots, truncated paste, or non-JWS strings (plain Base64 blobs) will fail.',
+  tool_jwt_decoder_faq_a3:
+    'JWT uses Base64url: - instead of +, _ instead of /, and padding = is often omitted. Standard Base64 tools may mishandle URL-safe tokens — use this page or our Base64 tool with url-safe mode.',
+  tool_jwt_decoder_faq_a4:
+    'exp, iat, and nbf are Unix seconds (UTC). This page converts them to readable UTC and your local timezone. Compare exp to now for expiry; pair with our Unix Timestamp tool for other formats.',
+  tool_jwt_decoder_faq_a5:
+    'No. Splitting, Base64url decode, and JSON parsing run entirely in your browser tab. Do not paste production secrets on shared machines.',
+  tool_jwt_decoder_faq_q1: 'Does this page verify the JWT signature?',
+  tool_jwt_decoder_faq_q2: 'Why does my token fail with a segment error?',
+  tool_jwt_decoder_faq_q3: 'How is JWT Base64url different from normal Base64?',
+  tool_jwt_decoder_faq_q4: 'How do I read exp, iat, or nbf?',
+  tool_jwt_decoder_faq_q5: 'Is my token uploaded to a server?',
+  tool_jwt_decoder_header_label: 'Header (JSON)',
+  tool_jwt_decoder_how_body:
+    'Paste a complete JWT string (header.payload.signature). The page splits on dots, Base64url-decodes the first two segments, and pretty-prints JSON. exp, iat, and nbf numeric claims also show UTC and local times. The signature segment is shown as raw text only — we never verify it.',
+  tool_jwt_decoder_how_title: 'How it works',
+  tool_jwt_decoder_input_label: 'JWT input',
+  tool_jwt_decoder_input_placeholder: 'Paste access token or ID token…',
+  tool_jwt_decoder_large_warn: 'Large token (>8 KB). Decoding may feel slow — avoid pasting huge JWE blobs here.',
+  tool_jwt_decoder_payload_label: 'Payload (JSON)',
+  tool_jwt_decoder_rules_body:
+    'What this decoder does and does not do: structure, Base64url steps, registered claims, and the no-verify boundary.',
+  tool_jwt_decoder_rules_item_1:
+    'Structure: a signed JWT (JWS compact form) has three Base64url segments — header (alg, typ), payload (claims), signature (bytes, not JSON).',
+  tool_jwt_decoder_rules_item_2:
+    'Base64url decode: replace -→+, _→/, pad to length % 4, then atob and JSON.parse. Malformed segments fail with a specific header/payload error.',
+  tool_jwt_decoder_rules_item_3:
+    'Registered claims: exp (expiry), iat (issued at), nbf (not before) are numeric Unix seconds in UTC. Decoding them does not prove the token is trustworthy.',
+  tool_jwt_decoder_rules_item_4:
+    'Privacy & limits: paste stays local; no HMAC/RSA verification. Do not use decoded JSON alone to grant access in production.',
+  tool_jwt_decoder_rules_title: 'Rules you should expect',
+  tool_jwt_decoder_sample: 'Load sample',
+  tool_jwt_decoder_signature_label: 'Signature (raw, not verified)',
+  tool_jwt_decoder_title: 'JWT Decoder — Read Header & Payload Locally (No Verify)',
+  tool_jwt_decoder_usecase_1:
+    'Full-stack debugging: inspect OAuth access token sub, scope, and exp before wiring an API gateway rule.',
+  tool_jwt_decoder_usecase_2: 'API contracts: confirm iss and aud in an ID token match your service documentation.',
+  tool_jwt_decoder_usecase_3: 'Learning: see how header alg/typ and payload claims map to the three JWS segments.',
+  tool_jwt_decoder_usecases_title: 'Good fits',
   tool_marginal_revenue_article:
     'Marginal revenue is the change in total revenue from a change in quantity sold. This calculator shows the discrete two-point derivation step by step for coursework and rough product checks.',
   tool_marginal_revenue_calculate: 'Calculate MR',
@@ -2169,6 +2360,61 @@ const en: SiteLangDict = {
   tool_markdown_usecase_2: 'Strip email/CMS HTML down to Markdown before committing to a docs repo.',
   tool_markdown_usecase_3: 'Normalize rich-text clipboard junk before an LLM prompt.',
   tool_markdown_usecases_title: 'Good fits',
+  tool_password_generator_article:
+    'Build random passwords from chosen character sets using crypto.getRandomValues — for quick demos, throwaway accounts, or brainstorming length/charset rules. Not a password manager and not a strength guarantee.',
+  tool_password_generator_charset_label: 'Character sets',
+  tool_password_generator_clear: 'Clear',
+  tool_password_generator_copy: 'Copy',
+  tool_password_generator_copy_done: 'Copied',
+  tool_password_generator_count_label: 'Count (1–100)',
+  tool_password_generator_desc: 'Create random passwords locally in your browser with crypto.getRandomValues.',
+  tool_password_generator_description:
+    'Generate random passwords in your browser. Steps: set length (8–128), tick uppercase/lowercase/digits/symbols, optional exclude ambiguous chars, click Generate, copy. Example: 16 chars mixing cases, digits, and symbols. Uses crypto.getRandomValues only — not stored or uploaded.',
+  tool_password_generator_digits: 'Digits',
+  tool_password_generator_disclaimer:
+    'Demo-grade generator for convenience — not a password vault. For banking or primary accounts, use a dedicated password manager and its generator. Passwords are created locally and not saved on our servers.',
+  tool_password_generator_empty_charset: 'Enable at least one character set (after exclusions).',
+  tool_password_generator_example:
+    'Length 16 with all sets enabled might look like `Xk9#mP2$vL4@nQ8!` — mixed case, digits, and symbols. Each click produces a new random string; Load sample uses length 16 and all sets.',
+  tool_password_generator_example_title: 'Example',
+  tool_password_generator_exclude_ambiguous: 'Exclude ambiguous (0 O I l 1)',
+  tool_password_generator_faq_a1:
+    'No. Generation runs entirely in your browser. We do not log, store, or transmit passwords you create here.',
+  tool_password_generator_faq_a2:
+    'Randomness comes from crypto.getRandomValues (CSPRNG), not Math.random. Longer passwords with more character classes generally resist guessing, but no browser tab can promise “unbreakable” — follow your org’s policy and use a manager for production secrets.',
+  tool_password_generator_faq_a3:
+    'No. This page only creates new random strings. It cannot audit, crack, or recover existing passwords.',
+  tool_password_generator_faq_a4:
+    'They remove visually similar characters (0/O, 1/l/I) so passwords are easier to read aloud or type — at the cost of a slightly smaller charset.',
+  tool_password_generator_faq_a5: 'Up to 100 passwords per click, one per line in the output. Generate again for another batch.',
+  tool_password_generator_faq_q1: 'Are passwords stored or sent to a server?',
+  tool_password_generator_faq_q2: 'How strong are these passwords?',
+  tool_password_generator_faq_q3: 'Can this tool crack my existing password?',
+  tool_password_generator_faq_q4: 'What does “exclude ambiguous” do?',
+  tool_password_generator_faq_q5: 'How many passwords can I generate at once?',
+  tool_password_generator_generate: 'Generate',
+  tool_password_generator_how_body:
+    'Slide length, pick character classes, optionally exclude ambiguous glyphs, set count, then Generate. Each character is picked with crypto.getRandomValues from the combined pool. Copy the list — nothing is persisted after you leave the page.',
+  tool_password_generator_how_title: 'How it works',
+  tool_password_generator_length_label: 'Length',
+  tool_password_generator_lower: 'Lowercase',
+  tool_password_generator_output_label: 'Passwords',
+  tool_password_generator_rules_body: 'Charset rules, randomness source, and honest limits — read before using output on a real account.',
+  tool_password_generator_rules_item_1:
+    'Pools: A–Z, a–z, 0–9, and a default symbol set. At least one pool must remain after toggles and ambiguous exclusion.',
+  tool_password_generator_rules_item_2: 'Random index uses crypto.getRandomValues bytes — never Math.random.',
+  tool_password_generator_rules_item_3:
+    'This is not NIST-certified composition enforcement (no forced “one of each class” rule). Enable the sets you need manually.',
+  tool_password_generator_rules_item_4: 'Privacy: local-only generation; clear the output when done on shared machines.',
+  tool_password_generator_rules_title: 'Rules you should expect',
+  tool_password_generator_sample: 'Load sample',
+  tool_password_generator_symbols: 'Symbols',
+  tool_password_generator_title: 'Random Password Generator — Create Passwords Locally',
+  tool_password_generator_upper: 'Uppercase',
+  tool_password_generator_usecase_1: 'Spin up a one-time credential for a staging login you will rotate soon.',
+  tool_password_generator_usecase_2: 'Prototype signup forms that need sample strong passwords in QA scripts.',
+  tool_password_generator_usecase_3: 'Compare how length and symbol sets change readability before updating team policy.',
+  tool_password_generator_usecases_title: 'Good fits',
   tool_percentage_change_abs_note: 'Absolute change: {delta}',
   tool_percentage_change_article:
     'Relative percentage change answers “how much did this metric move versus its baseline?” Enter the old value and the new value; the tool uses (new − old) / old × 100 and labels increase vs decrease. Use it for KPI reporting, not as a substitute for ROI.',
@@ -2463,6 +2709,170 @@ const en: SiteLangDict = {
   tool_text_diff_usecase_2: 'Review prompt edits: use word mode to see which wording was added or removed.',
   tool_text_diff_usecase_3: 'Proofread copy or translations: confirm only the intended sentences changed.',
   tool_text_diff_usecases_title: 'When to use it',
+  tool_timezone_converter_article:
+    'Pick a wall-clock moment and source IANA zone, then read the same instant across UTC, New York, London, Tokyo, and other curated zones. Built for remote standups, log correlation, and quick world-clock checks — all in-browser with Intl, no uploads.',
+  tool_timezone_converter_clear: 'Clear',
+  tool_timezone_converter_col_local: 'Local date & time',
+  tool_timezone_converter_col_offset: 'UTC offset',
+  tool_timezone_converter_col_zone: 'Time zone',
+  tool_timezone_converter_compare_zones: 'Compare in these zones',
+  tool_timezone_converter_convert: 'Convert',
+  tool_timezone_converter_desc: 'Compare one moment across IANA time zones with DST notes — runs locally in your browser.',
+  tool_timezone_converter_description:
+    'Convert a date and time from one IANA zone to many others in your browser. Process: enter a local datetime, choose the source zone, tick comparison zones, then Convert. Example: 2026-06-15 14:30 in Los Angeles → New York, London, Tokyo, and UTC rows with offsets. Explains DST gaps; not a meeting export pack.',
+  tool_timezone_converter_error_dst_gap: 'That local time does not exist in the source zone (DST spring-forward gap). Pick an adjacent hour.',
+  tool_timezone_converter_error_empty: 'Enter a datetime and select at least one comparison zone.',
+  tool_timezone_converter_error_invalid: 'Invalid datetime format. Use the picker or YYYY-MM-DDTHH:MM.',
+  tool_timezone_converter_example:
+    'Fixed sample on load: 2026-06-15 14:30 in America/Los_Angeles → UTC, America/New_York, Europe/London, Asia/Tokyo with local clocks and short UTC offsets. Offsets follow IANA rules for that calendar date.',
+  tool_timezone_converter_example_title: 'Example',
+  tool_timezone_converter_faq_a1:
+    'We use IANA identifiers such as America/New_York or Asia/Tokyo — the same names browsers and servers use. Abbreviations like EST or JST are ambiguous (standard vs daylight); always prefer the full IANA zone when scheduling.',
+  tool_timezone_converter_faq_a2:
+    'On DST start days some local hours are skipped — the converter shows an error instead of guessing. On fall-back overlap nights the same local time can occur twice; Intl picks one offset — verify critical meetings manually on those dates.',
+  tool_timezone_converter_faq_a3:
+    'Unix timestamp tools turn epoch seconds ↔ calendar clocks, often in UTC. This page keeps a named source zone and shows several target zones side by side for the same instant — better for “what time is it for them?”',
+  tool_timezone_converter_faq_a4:
+    'No. This is an instant multi-zone table for your own reference. It does not build a shareable meeting pack, attendee list, or ICS export — those would be a separate workflow.',
+  tool_timezone_converter_faq_a5:
+    'Yes. Conversion uses built-in Intl.DateTimeFormat only — your datetime never leaves the browser and nothing is uploaded.',
+  tool_timezone_converter_faq_q1: 'Why IANA names instead of EST, PST, or GMT?',
+  tool_timezone_converter_faq_q2: 'What happens on daylight saving change days?',
+  tool_timezone_converter_faq_q3: 'How is this different from a Unix timestamp converter?',
+  tool_timezone_converter_faq_q4: 'Can I export a team meeting timezone pack here?',
+  tool_timezone_converter_faq_q5: 'Does my datetime get sent to a server?',
+  tool_timezone_converter_how_body:
+    'Enter a local datetime and pick its IANA source zone. Tick one or more comparison zones, then Convert. The table shows each zone’s local clock and UTC offset for that same instant, computed with Intl in your browser.',
+  tool_timezone_converter_how_title: 'How it works',
+  tool_timezone_converter_local_tz: 'your browser',
+  tool_timezone_converter_now: 'Now',
+  tool_timezone_converter_rules_body: 'Expect IANA zone rules, DST behavior, and how this differs from epoch or meeting-export tools.',
+  tool_timezone_converter_rules_item_1:
+    'Zones follow the IANA Time Zone Database (tzdata). Offsets change when regions change DST — the table reflects rules for the date you enter, not a fixed GMT offset.',
+  tool_timezone_converter_rules_item_2:
+    'Spring-forward gaps: if a wall-clock hour was skipped, conversion fails with a clear message. Fall-back overlaps: duplicate local times may map to one offset — double-check edge cases.',
+  tool_timezone_converter_rules_item_3:
+    'Abbreviations (CST, IST, etc.) can mean different zones. Use full IANA names in APIs, cron, and calendar invites.',
+  tool_timezone_converter_rules_item_4:
+    'Privacy: no upload. This page is read-only comparison — not a meeting scheduler, not an IP geolocation lookup.',
+  tool_timezone_converter_rules_title: 'Rules you should expect',
+  tool_timezone_converter_sample: 'Load sample',
+  tool_timezone_converter_source_time: 'Source date & time',
+  tool_timezone_converter_source_tz: 'Source time zone',
+  tool_timezone_converter_title: 'Time Zone Converter — Compare One Moment Worldwide',
+  tool_timezone_converter_usecase_1:
+    'Remote teams: someone says “3:30 PM Pacific” — see New York, London, and Tokyo on one row set before you join.',
+  tool_timezone_converter_usecase_2:
+    'Ops / logs: a timestamp was logged in Chicago local time — compare UTC and your own zone without mental math.',
+  tool_timezone_converter_usecase_3:
+    'Travel planning: anchor a flight arrival in Dubai and read Sydney and Los Angeles side by side for handoff calls.',
+  tool_timezone_converter_usecases_title: 'Good fits',
+  tool_unix_timestamp_article:
+    'Convert Unix epoch timestamps to human-readable UTC and local datetimes, or the reverse. Handles seconds vs milliseconds with auto-detection — built for logs, APIs, and JWT exp claims.',
+  tool_unix_timestamp_clear: 'Clear',
+  tool_unix_timestamp_convert: 'Convert',
+  tool_unix_timestamp_copy: 'Copy output',
+  tool_unix_timestamp_copy_done: 'Copied',
+  tool_unix_timestamp_desc: 'Convert Unix epoch timestamps to readable time — locally in your browser.',
+  tool_unix_timestamp_description:
+    'Convert Unix timestamps to UTC and local datetimes, or pick a local datetime to get epoch seconds or milliseconds. Steps: paste a timestamp or choose a date, pick seconds or milliseconds, then copy. Example: 1516239022 → 2018-01-18T01:30:22.000Z plus your local equivalent. Nothing is uploaded.',
+  tool_unix_timestamp_dir_label: 'Mode',
+  tool_unix_timestamp_dt_input_label: 'Local date & time',
+  tool_unix_timestamp_error_invalid: 'Invalid timestamp or datetime.',
+  tool_unix_timestamp_error_range: 'Timestamp is outside the range JavaScript Date can represent.',
+  tool_unix_timestamp_example:
+    'Timestamp → Date (seconds): 1516239022 → UTC 2018-01-18T01:30:22.000Z and your browser local time. Date → Timestamp: pick 2018-01-18 09:30 local → seconds or ms per unit toggle.',
+  tool_unix_timestamp_example_title: 'Example',
+  tool_unix_timestamp_faq_a1:
+    'Unix time is usually seconds since 1970-01-01 UTC. JavaScript and many APIs use milliseconds (13 digits). Ten-digit values are treated as seconds; thirteen-digit (or >1e12) values auto-switch to milliseconds.',
+  tool_unix_timestamp_faq_a2:
+    'UTC is the same instant worldwide (ISO 8601 with Z). Local uses your browser timezone and locale formatting — handy when logs show UTC but you think in local time.',
+  tool_unix_timestamp_faq_a3:
+    'Now fills the current epoch value (seconds or ms per your unit toggle) or the current local datetime, then converts immediately.',
+  tool_unix_timestamp_faq_a4:
+    'JavaScript Date supports roughly ±100 million years in milliseconds. Values outside that range show an error instead of a wrong date.',
+  tool_unix_timestamp_faq_q1: 'Seconds or milliseconds?',
+  tool_unix_timestamp_faq_q2: 'What is the difference between UTC and local?',
+  tool_unix_timestamp_faq_q3: 'What does the Now button do?',
+  tool_unix_timestamp_faq_q4: 'Are there range limits?',
+  tool_unix_timestamp_how_body:
+    'Timestamp → Date: paste a numeric epoch; we detect seconds vs milliseconds when possible and show UTC ISO time plus a local formatted string. Date → Timestamp: pick a datetime-local value (interpreted in your browser timezone) and output seconds or milliseconds. All conversion stays local.',
+  tool_unix_timestamp_how_title: 'How it works',
+  tool_unix_timestamp_local_label: 'Local (your browser timezone)',
+  tool_unix_timestamp_now: 'Now',
+  tool_unix_timestamp_rules_body: 'Rules for epoch values, unit detection, timezone interpretation, and safe numeric limits.',
+  tool_unix_timestamp_rules_item_1:
+    'Epoch zero is 1970-01-01T00:00:00.000Z. Negative timestamps are before 1970. Seconds fit in ~10 digits; milliseconds need ~13.',
+  tool_unix_timestamp_rules_item_2:
+    'Auto-detect: ≥13 digits or absolute value >1e12 → milliseconds; ≤10 digits → seconds. You can override with the unit toggle.',
+  tool_unix_timestamp_rules_item_3:
+    'datetime-local input has no timezone suffix — the browser treats it as local wall time. UTC output always uses ISO 8601 with Z.',
+  tool_unix_timestamp_rules_item_4:
+    'Privacy: no upload. Uses native Date and Intl only. For named time zones beyond local, see the timezone converter in Related tools when available.',
+  tool_unix_timestamp_rules_title: 'Rules you should expect',
+  tool_unix_timestamp_sample: 'Load sample',
+  tool_unix_timestamp_sample_ts: '1516239022',
+  tool_unix_timestamp_tab_date_to_ts: 'Date → Timestamp',
+  tool_unix_timestamp_tab_ts_to_date: 'Timestamp → Date',
+  tool_unix_timestamp_title: 'Unix Timestamp Converter — Epoch ↔ Readable Time',
+  tool_unix_timestamp_ts_input_label: 'Unix timestamp',
+  tool_unix_timestamp_ts_input_placeholder: 'e.g. 1516239022 or 1516239022000',
+  tool_unix_timestamp_ts_output_label: 'Timestamp output',
+  tool_unix_timestamp_unit_label: 'Unit',
+  tool_unix_timestamp_unit_milliseconds: 'Milliseconds',
+  tool_unix_timestamp_unit_seconds: 'Seconds',
+  tool_unix_timestamp_usecase_1: 'Developers: decode epoch values from API responses, webhooks, or server logs.',
+  tool_unix_timestamp_usecase_2: 'JWT debugging: convert exp / iat numeric claims to readable dates (pair with JWT decoder).',
+  tool_unix_timestamp_usecase_3: 'Ops / analytics: quickly check whether a 10- or 13-digit field is seconds or milliseconds.',
+  tool_unix_timestamp_usecases_title: 'Good fits',
+  tool_unix_timestamp_utc_label: 'UTC (ISO 8601)',
+  tool_uuid_generator_article:
+    'Generate UUID v4 or ULID identifiers locally with cryptographically strong randomness. Batch copy for test data, trace IDs, or schema stubs — nothing is uploaded.',
+  tool_uuid_generator_clear: 'Clear',
+  tool_uuid_generator_copy_all: 'Copy all',
+  tool_uuid_generator_copy_done: 'Copied',
+  tool_uuid_generator_count_label: 'Count (1–100)',
+  tool_uuid_generator_desc: 'Generate UUID v4 and ULID IDs locally — batch up to 100, copy in one click.',
+  tool_uuid_generator_description:
+    'Generate UUID v4 or ULID strings in your browser. Steps: pick type, set count (1–100), click Generate, copy all. Example: three RFC-style UUID v4 lines like `550e8400-e29b-41d4-a716-446655440000`. Uses crypto.getRandomValues — paste and IDs stay local.',
+  tool_uuid_generator_example:
+    'UUID v4 (lowercase, hyphenated): `550e8400-e29b-41d4-a716-446655440000`. ULID (26 Crockford Base32 chars, time-sortable prefix): `01ARZ3NDEKTSV4RRFFQ69G5FAV`. Load sample fills three fixed v4 examples for format checks.',
+  tool_uuid_generator_example_title: 'Example',
+  tool_uuid_generator_faq_a1:
+    'UUID v4 is 128 random bits (with version nibble fixed), good for opaque IDs. ULID adds a millisecond timestamp prefix and sorts lexicographically by creation time — handy for logs and databases that want time-ordered keys without exposing a sequential integer.',
+  tool_uuid_generator_faq_a2:
+    'No. IDs use crypto.getRandomValues (or randomUUID when available). They are unpredictable to practical attackers but not a guarantee of global uniqueness — your app should still handle collisions if the domain requires it.',
+  tool_uuid_generator_faq_a3: 'Count is capped at 100 per click to keep the page responsive. Run Generate again for more batches.',
+  tool_uuid_generator_faq_a4: 'No upload and no server-side generation. Everything runs in your browser tab.',
+  tool_uuid_generator_faq_a5:
+    'UUID v4: 36 chars with hyphens, lowercase hex. ULID: 26 uppercase Crockford Base32 characters, no hyphens.',
+  tool_uuid_generator_faq_q1: 'UUID v4 vs ULID — when to pick which?',
+  tool_uuid_generator_faq_q2: 'Are generated IDs cryptographically secure?',
+  tool_uuid_generator_faq_q3: 'Why is batch limited to 100?',
+  tool_uuid_generator_faq_q4: 'Do IDs leave my browser?',
+  tool_uuid_generator_faq_q5: 'What format do you output?',
+  tool_uuid_generator_generate: 'Generate',
+  tool_uuid_generator_how_body:
+    'Choose UUID v4 for standard random UUIDs, or ULID for time-sortable 26-character IDs. Set how many you need (1–100) and Generate. Copy all puts one ID per line on the clipboard. Random bytes come from the browser CSPRNG.',
+  tool_uuid_generator_how_title: 'How it works',
+  tool_uuid_generator_output_label: 'Generated IDs',
+  tool_uuid_generator_rules_body: 'Format differences and practical limits when you paste IDs into code or a database.',
+  tool_uuid_generator_rules_item_1:
+    'UUID v4 follows RFC 4122 layout: `xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx` with variant bits set; we output lowercase hex.',
+  tool_uuid_generator_rules_item_2: 'ULID packs 48-bit Unix ms timestamp + 80 random bits into 26 Crockford Base32 chars (no I/L/O/U).',
+  tool_uuid_generator_rules_item_3:
+    'This tool does not guarantee uniqueness across machines or time — treat output as strong random samples, not a distributed ID service.',
+  tool_uuid_generator_rules_item_4: 'Privacy: no network call for generation; IDs never leave your device unless you copy them elsewhere.',
+  tool_uuid_generator_rules_title: 'Rules you should expect',
+  tool_uuid_generator_sample: 'Load sample',
+  tool_uuid_generator_title: 'UUID & ULID Generator — Create IDs in Your Browser',
+  tool_uuid_generator_type_label: 'ID type',
+  tool_uuid_generator_type_ulid: 'ULID',
+  tool_uuid_generator_type_v4: 'UUID v4',
+  tool_uuid_generator_usecase_1: 'Seed a dev database with opaque primary keys before importing fixtures.',
+  tool_uuid_generator_usecase_2: 'Create a batch of trace or correlation IDs for integration tests.',
+  tool_uuid_generator_usecase_3: 'Prototype APIs that accept ULID-style sortable identifiers in request bodies.',
+  tool_uuid_generator_usecases_title: 'Good fits',
   tool_wcag_contrast_checker_aa_large: 'AA large text',
   tool_wcag_contrast_checker_aa_normal: 'AA normal text',
   tool_wcag_contrast_checker_aaa_large: 'AAA large text',

@@ -16,6 +16,13 @@
 - [CSV ↔ JSON](https://onlinefreetools.org/zh/tools/csv-json) - 浏览器内 CSV 与 JSON 双向转换：分隔符、表头、类型推断与嵌套扁平化
 - [JSON Schema 校验器](https://onlinefreetools.org/zh/tools/json-schema-validator) - 浏览器内用 draft-07 Schema 校验 JSON，并以 JSON Pointer 定位错误
 - [HTML 实体编解码](https://onlinefreetools.org/zh/tools/html-entity) - 浏览器内 HTML 实体编码与解码：范围、命名/数字形式、严格解码
+- [文件哈希校验](https://onlinefreetools.org/zh/tools/file-hash) - 在浏览器内校验文本或文件的 MD5、SHA 等十六进制摘要
+- [UUID / ULID 生成](https://onlinefreetools.org/zh/tools/uuid-generator) - 在浏览器内创建 UUID v4 与 ULID 标识符，一键复制
+- [随机密码生成](https://onlinefreetools.org/zh/tools/password-generator) - 在浏览器内本地生成随机密码（crypto.getRandomValues）
+- [Base64 编解码](https://onlinefreetools.org/zh/tools/base64) - 在浏览器内转换文本或文件字节的 Base64 / Base64url
+- [Unix 时间戳转换](https://onlinefreetools.org/zh/tools/unix-timestamp) - 纪元时间与可读日期时间互转，浏览器本地完成
+- [时区转换](https://onlinefreetools.org/zh/tools/timezone-converter) - 同一时刻在 IANA 多时区对照（含夏令时说明），浏览器本地运行
+- [JWT 解码](https://onlinefreetools.org/zh/tools/jwt-decoder) - 本地查看 JWT Header 与 Payload，不验证签名
 - [图片格式转换](https://onlinefreetools.org/zh/tools/image-format-converter) - 浏览器内 PNG / JPEG / WebP / AVIF 互转：质量、透明底色与本地处理
 - [图片 EXIF 查看与清除](https://onlinefreetools.org/zh/tools/image-exif) - 本地查看 GPS/相机等元数据，并重编码清除后下载
 - [图片压缩](https://onlinefreetools.org/zh/tools/image-compress) - 本地按最长边、质量与目标体积压缩图片（JPEG/WebP/PNG）
@@ -56,6 +63,13 @@ Below are our available online tools with their links (English version):
 - [CSV ↔ JSON](https://onlinefreetools.org/tools/csv-json) - Convert CSV ↔ JSON with delimiter, header, type inference, and nested flattening
 - [JSON Schema Validator](https://onlinefreetools.org/tools/json-schema-validator) - Validate JSON against draft-07 Schema with JSON Pointer error paths — local in the browser
 - [HTML Entity Encoder & Decoder](https://onlinefreetools.org/tools/html-entity) - Encode and decode HTML entities with scope, named/decimal/hex output, and strict decode — all in-browser
+- [File Hash Checker](https://onlinefreetools.org/tools/file-hash) - Verify MD5 and SHA hex digests for pasted text or local files in your browser
+- [UUID & ULID Generator](https://onlinefreetools.org/tools/uuid-generator) - Create UUID v4 and ULID IDs in your browser with one-click copy
+- [Random Password Generator](https://onlinefreetools.org/tools/password-generator) - Create random passwords locally with crypto.getRandomValues — demo-grade
+- [Base64 Encode & Decode](https://onlinefreetools.org/tools/base64) - Convert text or file bytes to Base64 and back — local in the browser
+- [Unix Timestamp Converter](https://onlinefreetools.org/tools/unix-timestamp) - Convert epoch timestamps ↔ readable datetimes — local in the browser
+- [Time Zone Converter](https://onlinefreetools.org/tools/timezone-converter) - Compare one moment across IANA time zones with DST notes — local in the browser
+- [JWT Decoder](https://onlinefreetools.org/tools/jwt-decoder) - Read JWT header and payload locally — no signature verification
 - [Image Format Converter](https://onlinefreetools.org/tools/image-format-converter) - Convert PNG, JPEG, WebP, and AVIF locally with quality, JPEG matte, and MIME checks
 - [EXIF Viewer & Remover](https://onlinefreetools.org/tools/image-exif) - View GPS/camera metadata locally and download a stripped re-encoded copy
 - [Image Compressor](https://onlinefreetools.org/tools/image-compress) - Resize, set quality or a target file size, and download — runs locally in your browser

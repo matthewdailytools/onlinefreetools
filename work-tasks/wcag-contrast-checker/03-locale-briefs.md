@@ -9,7 +9,7 @@
 - [x] title 非参数目录腔
 - [x] 十语非同构骨架
 - [x] 清单前检索覆盖已做
-- [x] 检索覆盖将在 i18n 后复检（步 2/4）
+- [x] **检索覆盖已优化**（步 2+4；抽查 en,zh,es,ja）
 
 ### en
 - 检索词：wcag contrast checker, contrast ratio, AA AAA accessibility, color contrast
@@ -56,3 +56,14 @@
 ### de
 - 检索词：WCAG Kontrast Checker, Kontrastverhältnis
 - Title：WCAG-Kontrast-Checker — AA/AAA-Verhältnis
+
+## 多轮记录（摘要）
+
+| 轮次 | 日期 | 做了什么 | 结果 |
+|---|---|---|---|
+| 0b 清单前检索覆盖 | 2026-08-08 | 主词 contrast checker / WCAG→H1；覆盖与 AA/AAA 次词落 Rules；覆盖表写入 02 | 通过；可 ready |
+| 1 母版+lint | 2026-08-08 | en 母版与十语落地 | 完成 |
+| 1b 母版检索覆盖优化 | 2026-08-08 | title 结果向；主词在 H1；次词 AA/AAA 落 Rules | 通过 |
+| 2 按 brief 重写 | 2026-08-08 | 十语独立重写 | 完成 |
+| 2b 抽查语检索覆盖优化 | 2026-08-08 | 抽查语 en,zh,es,ja；title/desc 再优化 | 通过 |
+| 3 抽查+禁词+lint | 2026-08-08 | lint:seo | 完成 |

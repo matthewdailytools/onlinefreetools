@@ -1,0 +1,21 @@
+{
+  "slug": "jwt-decoder",
+  "path": "/tools/jwt-decoder",
+  "category": "developer",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_jwt_decoder_title",
+  "homeTitleKey": "tool_jwt_decoder_title",
+  "homeDescKey": "tool_jwt_decoder_desc",
+  "faqPrefix": "tool_jwt_decoder",
+  "related": [
+    "base64",
+    "unix-timestamp"
+  ],
+  "logo": "/icons/tools/jwt-decoder.svg",
+  "page": {
+    "module": "../pages/jwtDecoderPage",
+    "export": "renderJwtDecoderPage",
+    "style": "opts"
+  }
+}

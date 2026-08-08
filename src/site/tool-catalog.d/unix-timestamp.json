@@ -1,0 +1,21 @@
+{
+  "slug": "unix-timestamp",
+  "path": "/tools/unix-timestamp",
+  "category": "developer",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_unix_timestamp_title",
+  "homeTitleKey": "tool_unix_timestamp_title",
+  "homeDescKey": "tool_unix_timestamp_desc",
+  "faqPrefix": "tool_unix_timestamp",
+  "related": [
+    "timezone-converter",
+    "jwt-decoder"
+  ],
+  "logo": "/icons/tools/unix-timestamp.svg",
+  "page": {
+    "module": "../pages/unixTimestampPage",
+    "export": "renderUnixTimestampPage",
+    "style": "opts"
+  }
+}

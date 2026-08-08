@@ -1,13 +1,16 @@
 /**
  * SEO 校验：description 关键词、长度、FAQ 成对、YMYL disclaimer；
- * 并校验工具图标 SVG（禁止 XML 非法控制字符）。
+ * 工具图标 SVG；title 参数枚举启发式 + work-tasks 清单前覆盖表门禁。
  * 启发式检查，失败时以非零退出码提示 CI。
+ * 注意：本脚本通过 ≠ 本地化步 2/4 实质检索判断已完成（见 tool-i18n-localization.mdc）。
  */
 import fs from 'fs';
 import path from 'path';
 import { createRequire } from 'module';
 import { fileURLToPath } from 'url';
 import { validateToolIcons } from './validate-tool-icons.mjs';
+import { validateToolTitleCoverage } from './validate-tool-title-coverage.mjs';
+import { validateAllToolsWithCoverageSection } from './validate-tool-coverage-rounds.mjs';
 
 const require = createRequire(import.meta.url);
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -117,6 +120,28 @@ if (iconFails === 0) {
   console.log('Icon validator: OK — tool SVGs look clean');
 } else {
   console.log(`Icon validator: ${iconFails} file(s) failed (illegal XML chars or malformed SVG).`);
+  exitCode = exitCode || 2;
+}
+
+const coverFails = validateToolTitleCoverage();
+if (coverFails === 0) {
+  console.log('Title/coverage validator: OK — no param-enum titles; work-tasks coverage tables look filled');
+} else {
+  console.log(
+    `Title/coverage validator: ${coverFails} issue(s). Fix titles (result/scenario-oriented) or complete 02 覆盖表 / 03 勾选.`
+  );
+  exitCode = exitCode || 2;
+}
+
+/** 有「清单前检索覆盖」专节且 ready/implemented 的工具：强制 0b+步2+步4 多轮行 */
+const roundErrs = validateAllToolsWithCoverageSection();
+if (roundErrs.length === 0) {
+  console.log('Coverage rounds validator: OK — 0b/1b/2b rows present for tools with coverage section');
+} else {
+  for (const e of roundErrs) console.warn(`[COVER-FAIL] ${e}`);
+  console.log(
+    `Coverage rounds validator: ${roundErrs.length} issue(s). Run: npm run coverage:gate -- --slug=<slug> --phase=all`
+  );
   exitCode = exitCode || 2;
 }
 

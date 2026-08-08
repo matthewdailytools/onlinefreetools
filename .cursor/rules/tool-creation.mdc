@@ -26,30 +26,40 @@ alwaysApply: false
 流程：
 
 1. 只改本工具分片 + 本工具 `*Page.ts` + icon + brief（及 README 清单条目）。
-2. `npm run merge:tools`（`build:site` / `start:dev` 会自动跑）。
-3. **不要**为新工具改 `src/index.ts`（由 `TOOL_PAGE_RENDERERS` 循环注册）。
-4. 勿改其他工具的 `tool-catalog.d/`、`i18n/tools/`、`*Page.ts`。
-5. 若必须改 related 反向链接或共用 chrome：显式 `CROSS_TOOL_UPDATE=1`，并在 PR 说明。
-6. 隔离检查：`TOOL_SLUG={slug} npm run lint:tool-isolation`。
+2. `npm run merge:tools`（合并 catalog / i18n / registry；**不够**刷新首页）。
+3. **`npm run build:site`（硬性）**：在 `merge:tools` 之上重建 `public/_pages/*/index.html`、sitemap、vendor chrome。缺这一步则 `/`、`/zh/` 等静态首页**不会出现**新工具卡片（工具页路由可能已可用，首页仍是旧 HTML）。`start:dev` 默认会跑 `build:site`；若用了 `--no-build` 或只手动 `merge:tools`，交付前必须再跑一遍 `build:site`。
+4. **不要**为新工具改 `src/index.ts`（由 `TOOL_PAGE_RENDERERS` 循环注册）。
+5. 勿改其他工具的 `tool-catalog.d/`、`i18n/tools/`、`*Page.ts`。
+6. 若必须改 related 反向链接或共用 chrome：显式 `CROSS_TOOL_UPDATE=1`，并在 PR 说明。
+7. 隔离检查：`TOOL_SLUG={slug} npm run lint:tool-isolation`。
 
-一次性拆分（仅迁移/重建分片时）：`npm run split:tools` → `npm run merge:tools`。日常开发只编辑分片后 merge。
+一次性拆分（仅迁移/重建分片时）：`npm run split:tools` → `npm run merge:tools`。日常开发：编辑分片 → `merge:tools` → **`build:site`**（或直接 `build:site`，其内含 merge）。
 
 ## 工程清单
 
-> **生成本清单之前**：必须已完成「清单前检索覆盖优化」——对 **slug、title、关键词、desc** 分析用户搜索习惯与关键词覆盖并回写（覆盖表在 `02`/`notes`；见 `tool-i18n-localization.mdc` 步 0b）。未完成不得按下表开工。
+> **生成本清单之前**：必须已完成「清单前检索覆盖优化」——对 **slug、title、关键词、desc** 分析用户搜索习惯与关键词覆盖并回写（覆盖表在 `02`/`notes`；见 `tool-i18n-localization.mdc` 步 0b）。未完成不得按下表开工。  
+> **检索覆盖 Skill**：多工具 / 新工具实现时先读并执行 [`.cursor/skills/tool-coverage-pass/SKILL.md`](../skills/tool-coverage-pass/SKILL.md)；分阶段跑 `npm run coverage:gate`。
 
 ```
 work-tasks/{slug}/              # 00–03 brief（含清单前覆盖表 + 03-locale-briefs）
+npm run coverage:gate -- --slug={slug} --phase=0b   # 标 ready / 勾模块清单前
 src/site/tool-catalog.d/{slug}.json   # slug / path / related ≥2 / FAQ / YMYL / page.*
 src/pages/{camel}Page.ts
-src/site/i18n/tools/{slug}/{lang}.ts  # 各语言文案（先 locale brief）
+src/site/i18n/tools/{slug}/{lang}.ts  # 母版 → coverage:gate --phase=2；他语 → --phase=4
 public/icons/tools/{slug}.svg   # 工具图标（注释优先 ASCII；见下方「图标 SVG」）
 README.md                       # 「工具清单 / Tools List」中英条目（写入前须已过清单前覆盖）
-npm run merge:tools && npm run lint:seo
+npm run coverage:gate -- --slug={slug} --phase=all
+npm run build:site              # 含 merge:tools；刷新首页 _pages + sitemap（勿只 merge）
+npm run lint:seo
 TOOL_SLUG={slug} npm run lint:tool-isolation
+# 本地验收：带 Accept: text/html 打开 / 与 /zh/，确认新工具出现在 featured/all-tools
 ```
 
-`src/index.ts` **无需**再 `registerToolPage`；`content-home.mjs` 读合并后的 catalog，一般不必为单工具手改。
+### Plan 多工具 todos（强制）
+
+创建含 ≥2 个新工具的 Plan 时，**每个 slug** 须展开为：`brief-0b` → `i18n-master` → `cover-step2` → `i18n-locales` → `cover-step4` → `ship`（含 `build:site`）。禁止单一 todo「实现全部工具」。实现串行过 `coverage:gate`；可并行写各 slug 的 0b brief。
+
+`src/index.ts` **无需**再 `registerToolPage`；首页卡片由 `build:site` 读合并后的 catalog 生成进 `public/_pages/*/index.html`，一般不必手改 `content-home.mjs`。
 
 多语言：**按 locale brief 重写**（见 `tool-i18n-localization.mdc`），禁止批量 Translate 直出。  
 文案顺序：① **清单前**优化 slug/title/关键词/desc → ② 写母版 title/description → ③ **生成后再**跑覆盖优化（步 2）→ ④ 逐语重写 → ⑤ 抽查语再优化（步 4）；勿首稿过 lint 即标完成。
@@ -68,7 +78,8 @@ TOOL_SLUG={slug} npm run lint:tool-isolation
 ## 首页、导航与 README
 
 - 新工具必须在首页（featured / all-tools）和工具导航中有入口
-- 改完 `content-home.mjs` 后运行 `npm run build:site` 刷新 `public/_pages/*/index.html`
+- **凡新增/改 catalog 或首页文案后必须 `npm run build:site`**，刷新 `public/_pages/*/index.html` 与 sitemap；**禁止**以为 `merge:tools` 已更新首页（本地 `/zh/`「没有显示」新工具，多半缺此步）
+- 仅当改了首页布局逻辑时才需动 `scripts/site/components/content-home.mjs`，改完同样要 `build:site`
 - **同步更新根目录 `README.md` 的「工具清单 / Tools List」**：中英文各增一条（短标题 + 一句话说明 + 线上链接）；清单须与 `tool-catalog.json` 已上线工具一致，勿漏更
 
 ## 多语言链接
@@ -116,7 +127,10 @@ Disclaimer（YMYL 必备）
 ## 上线前 Checklist（PR 合并前）
 
 - [ ] **清单前检索覆盖优化已做**（slug/title/关键词/desc；`02`/`notes` 有覆盖表；见 `tool-i18n-localization.mdc` 步 0b）——**勾本 Checklist 之前必须已完成**
-- [ ] `src/site/tool-catalog.d/{slug}.json` 完成；`related` ≥ 2；已 `merge:tools`
+- [ ] `src/site/tool-catalog.d/{slug}.json` 完成；`related` ≥ 2
+- [ ] `npm run coverage:gate -- --slug={slug} --phase=all` 通过（0b + 步2/1b + 步4/2b）
+- [ ] 已 `npm run build:site`（含 merge；`public/_pages/*/index.html` 与 sitemap 已含本工具；勿只跑 `merge:tools`）
+- [ ] title 非参数枚举目录腔；`02` 覆盖表填满且 `03` 勾选清单前覆盖与「检索覆盖已优化」
 - [ ] 未手改生成物（catalog.json / `i18n/{lang}.ts` / registry / i18n-tools.generated）
 - [ ] 未改其他工具分片或 `src/index.ts`（除非 `CROSS_TOOL_UPDATE=1`）
 - [ ] `TOOL_SLUG={slug} npm run lint:tool-isolation` 通过
@@ -125,6 +139,7 @@ Disclaimer（YMYL 必备）
 - [ ] 十语已按 `tool-i18n-localization.mdc` **稳妥常态**做检索向独立重写（非脚本同构灌语），并完成 ≥3 轮核查；「待母语抽查」已清
 - [ ] **文案生成后覆盖优化已做**（母版步 2 + 抽查语步 4）；无参数枚举 H1；次要意图有落点
 - [ ] `README.md` 工具清单已更新（中英各一条，与 catalog 一致；写入前已过清单前覆盖）
+- [ ] 本地打开 `/` 与 `/zh/`（或目标语首页），featured/all-tools 可见本工具入口
 - [ ] **进页自动跑样例并显示真实结果**（Load sample 与自动路径一致；见上节）；例外已在 `02` 注明
 - [ ] `npm run lint:seo` 通过
 - [ ] IG ≥ 3 项（§3.1），PR 写明对应章节

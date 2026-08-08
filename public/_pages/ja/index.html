@@ -118,7 +118,7 @@
           <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ja/tools/brand-color-token-pack">ブランド色スケールを生成 — 50–950パレットとCSSトークン</a></li><li><a class="dropdown-item" href="/ja/tools/brand-style-guide">ブランドスタイルガイド — 自動下書きを手直しできる</a></li><li><a class="dropdown-item" href="/ja/tools/smart-website-color-scheme">サイト配色方案 — 貼れるセマンティック CSS トークン</a></li><li><a class="dropdown-item" href="/ja/tools/wcag-contrast-checker">WCAGコントラストチェッカー — AA/AAA比率</a></li></ul>
         </li><li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">開発者</a>
-          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ja/tools/add-www-to-dns">DNS に WWW を追加 — A/CNAME と各社ガイド</a></li><li><a class="dropdown-item" href="/ja/tools/csv-json">CSV と JSON を相互変換 — 型・区切り文字・ローカル</a></li><li><a class="dropdown-item" href="/ja/tools/html-entity">HTML エンティティ エンコード／デコード — ローカル処理</a></li><li><a class="dropdown-item" href="/ja/tools/indexnow">IndexNow — Bing URL 送信・キー確認・ステータスコード</a></li><li><a class="dropdown-item" href="/ja/tools/ip-address">自分のIPアドレス確認 — グローバルIP表示（IPv4/IPv6）</a></li><li><a class="dropdown-item" href="/ja/tools/json-schema-validator">JSON Schema バリデータ — draft-07 のパス、ローカル</a></li><li><a class="dropdown-item" href="/ja/tools/markdown-to-html">Markdown ↔ HTML</a></li><li><a class="dropdown-item" href="/ja/tools/text-diff">テキスト比較</a></li><li><a class="dropdown-item" href="/ja/tools/website-headers">HTTPヘッダ確認</a></li><li><a class="dropdown-item" href="/ja/tools/yaml-json">YAML と JSON を相互変換（型ルール・複数ドキュメント対応）</a></li></ul>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ja/tools/add-www-to-dns">DNS に WWW を追加 — A/CNAME と各社ガイド</a></li><li><a class="dropdown-item" href="/ja/tools/base64">Base64 エンコード/デコード — ブラウザでテキストを変換</a></li><li><a class="dropdown-item" href="/ja/tools/csv-json">CSV と JSON を相互変換 — 型・区切り文字・ローカル</a></li><li><a class="dropdown-item" href="/ja/tools/file-hash">ファイルハッシュチェッカー — ブラウザでダイジェストを確認</a></li><li><a class="dropdown-item" href="/ja/tools/html-entity">HTML エンティティ エンコード／デコード — ローカル処理</a></li><li><a class="dropdown-item" href="/ja/tools/indexnow">IndexNow — Bing URL 送信・キー確認・ステータスコード</a></li><li><a class="dropdown-item" href="/ja/tools/ip-address">自分のIPアドレス確認 — グローバルIP表示（IPv4/IPv6）</a></li><li><a class="dropdown-item" href="/ja/tools/json-schema-validator">JSON Schema バリデータ — draft-07 のパス、ローカル</a></li><li><a class="dropdown-item" href="/ja/tools/jwt-decoder">JWT デコーダー — Header/Payload をブラウザで表示（署名検証なし）</a></li><li><a class="dropdown-item" href="/ja/tools/markdown-to-html">Markdown ↔ HTML</a></li><li><a class="dropdown-item" href="/ja/tools/password-generator">ランダムパスワード生成 — ブラウザでパスワードを作成</a></li><li><a class="dropdown-item" href="/ja/tools/text-diff">テキスト比較</a></li><li><a class="dropdown-item" href="/ja/tools/timezone-converter">タイムゾーン変換 — 同一時刻を世界で対照</a></li><li><a class="dropdown-item" href="/ja/tools/unix-timestamp">Unix タイムスタンプ変換 — エポック ↔ 読みやすい時刻</a></li><li><a class="dropdown-item" href="/ja/tools/uuid-generator">UUID/ULID ジェネレーター — ブラウザで ID を作成</a></li><li><a class="dropdown-item" href="/ja/tools/website-headers">HTTPヘッダ確認</a></li><li><a class="dropdown-item" href="/ja/tools/yaml-json">YAML と JSON を相互変換（型ルール・複数ドキュメント対応）</a></li></ul>
         </li><li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">計算機</a>
           <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ja/tools/how-to-calculate-bmi">BMI計算ツール — 体格指数の求め方</a></li><li><a class="dropdown-item" href="/ja/tools/how-to-calculate-gradient">多変数の勾配 ∇f を計算 — 偏導関数ベクトル</a></li><li><a class="dropdown-item" href="/ja/tools/how-to-calculate-marginal-revenue">限界収入の求め方 — MR計算ツール（公式 ΔTR / ΔQ）</a></li><li><a class="dropdown-item" href="/ja/tools/how-to-calculate-percentage-change">パーセント変化の計算 — 旧値から新値への増減率</a></li><li><a class="dropdown-item" href="/ja/tools/how-to-calculate-roi">ROI（投資利益率）計算ツール — 計算式と例</a></li><li><a class="dropdown-item" href="/ja/tools/square-feet">平方フィート⇔平方メートル換算 — 物件・リフォーム向け</a></li></ul>
@@ -218,6 +218,18 @@
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/base64.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">Base64 エンコード/デコード — ブラウザでテキストを変換</h3>
+        </div>
+        <p class="card-text home-card-desc flex-grow-1">UTF-8 テキストとファイルの Base64 / Base64url — ブラウザ内で完結。</p>
+        <a href="/ja/tools/base64" class="mt-auto btn btn-primary btn-sm">開く</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/brand-color-token-pack.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
           <h3 class="card-title home-card-title home-card-title--featured mb-0">ブランド色スケールを生成 — 50–950パレットとCSSトークン</h3>
         </div>
@@ -259,6 +271,18 @@
         </div>
         <p class="card-text home-card-desc flex-grow-1">CSV と JSON を相互変換（区切り文字・ヘッダー・型）。</p>
         <a href="/ja/tools/csv-json" class="mt-auto btn btn-primary btn-sm">開く</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/file-hash.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">ファイルハッシュチェッカー — ブラウザでダイジェストを確認</h3>
+        </div>
+        <p class="card-text home-card-desc flex-grow-1">テキストやファイルをローカルでハッシュ — MD5、SHA-1、SHA-256 などの 16進ダイジェスト。</p>
+        <a href="/ja/tools/file-hash" class="mt-auto btn btn-primary btn-sm">開く</a>
       </div>
     </div>
   </div>
@@ -554,11 +578,35 @@
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/jwt-decoder.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">JWT デコーダー — Header/Payload をブラウザで表示（署名検証なし）</h3>
+        </div>
+        <p class="card-text home-card-desc flex-grow-1">JWT の Header/Payload をローカルでデコード — 署名は検証せず、貼り付けはブラウザ内に留まります。</p>
+        <a href="/ja/tools/jwt-decoder" class="mt-auto btn btn-primary btn-sm">開く</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/markdown-to-html.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
           <h3 class="card-title home-card-title home-card-title--featured mb-0">Markdown ↔ HTML</h3>
         </div>
         <p class="card-text home-card-desc flex-grow-1">ブラウザで Markdown ↔ HTML を変換・プレビュー。</p>
         <a href="/ja/tools/markdown-to-html" class="mt-auto btn btn-primary btn-sm">開く</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/password-generator.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">ランダムパスワード生成 — ブラウザでパスワードを作成</h3>
+        </div>
+        <p class="card-text home-card-desc flex-grow-1">長さと文字種を選べるランダムパスワード — crypto.getRandomValues でローカル生成。</p>
+        <a href="/ja/tools/password-generator" class="mt-auto btn btn-primary btn-sm">開く</a>
       </div>
     </div>
   </div>
@@ -595,6 +643,42 @@
         </div>
         <p class="card-text home-card-desc flex-grow-1">2つの文章の差分を行・単語・文字で確認。</p>
         <a href="/ja/tools/text-diff" class="mt-auto btn btn-primary btn-sm">開く</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/timezone-converter.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">タイムゾーン変換 — 同一時刻を世界で対照</h3>
+        </div>
+        <p class="card-text home-card-desc flex-grow-1">IANA タイムゾーン間で同一瞬間を対照。DST の注意付き、ブラウザ内ローカル処理。</p>
+        <a href="/ja/tools/timezone-converter" class="mt-auto btn btn-primary btn-sm">開く</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/unix-timestamp.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">Unix タイムスタンプ変換 — エポック ↔ 読みやすい時刻</h3>
+        </div>
+        <p class="card-text home-card-desc flex-grow-1">Unix タイムスタンプ ↔ 日時、秒/ミリ秒、UTC/ローカル — ブラウザ内。</p>
+        <a href="/ja/tools/unix-timestamp" class="mt-auto btn btn-primary btn-sm">開く</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/uuid-generator.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">UUID/ULID ジェネレーター — ブラウザで ID を作成</h3>
+        </div>
+        <p class="card-text home-card-desc flex-grow-1">UUID v4 と ULID をローカル生成 — 最大 100 件、ワンクリックコピー。</p>
+        <a href="/ja/tools/uuid-generator" class="mt-auto btn btn-primary btn-sm">開く</a>
       </div>
     </div>
   </div>
@@ -933,11 +1017,35 @@
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/base64.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <h3 class="card-title home-card-title mb-0">Base64 エンコード/デコード — ブラウザでテキストを変換</h3>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">UTF-8 テキストとファイルの Base64 / Base64url — ブラウザ内で完結。</p>
+        <a href="/ja/tools/base64" class="mt-auto btn btn-primary btn-sm">開く</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/csv-json.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <h3 class="card-title home-card-title mb-0">CSV と JSON を相互変換 — 型・区切り文字・ローカル</h3>
         </div>
         <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">CSV と JSON を相互変換（区切り文字・ヘッダー・型）。</p>
         <a href="/ja/tools/csv-json" class="mt-auto btn btn-primary btn-sm">開く</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/file-hash.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <h3 class="card-title home-card-title mb-0">ファイルハッシュチェッカー — ブラウザでダイジェストを確認</h3>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">テキストやファイルをローカルでハッシュ — MD5、SHA-1、SHA-256 などの 16進ダイジェスト。</p>
+        <a href="/ja/tools/file-hash" class="mt-auto btn btn-primary btn-sm">開く</a>
       </div>
     </div>
   </div>
@@ -993,6 +1101,18 @@
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/jwt-decoder.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <h3 class="card-title home-card-title mb-0">JWT デコーダー — Header/Payload をブラウザで表示（署名検証なし）</h3>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">JWT の Header/Payload をローカルでデコード — 署名は検証せず、貼り付けはブラウザ内に留まります。</p>
+        <a href="/ja/tools/jwt-decoder" class="mt-auto btn btn-primary btn-sm">開く</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/markdown-to-html.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <h3 class="card-title home-card-title mb-0">Markdown ↔ HTML</h3>
         </div>
@@ -1005,11 +1125,59 @@
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/password-generator.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <h3 class="card-title home-card-title mb-0">ランダムパスワード生成 — ブラウザでパスワードを作成</h3>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">長さと文字種を選べるランダムパスワード — crypto.getRandomValues でローカル生成。</p>
+        <a href="/ja/tools/password-generator" class="mt-auto btn btn-primary btn-sm">開く</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/text-diff.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <h3 class="card-title home-card-title mb-0">テキスト比較</h3>
         </div>
         <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">2つの文章の差分を行・単語・文字で確認。</p>
         <a href="/ja/tools/text-diff" class="mt-auto btn btn-primary btn-sm">開く</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/timezone-converter.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <h3 class="card-title home-card-title mb-0">タイムゾーン変換 — 同一時刻を世界で対照</h3>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">IANA タイムゾーン間で同一瞬間を対照。DST の注意付き、ブラウザ内ローカル処理。</p>
+        <a href="/ja/tools/timezone-converter" class="mt-auto btn btn-primary btn-sm">開く</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/unix-timestamp.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <h3 class="card-title home-card-title mb-0">Unix タイムスタンプ変換 — エポック ↔ 読みやすい時刻</h3>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">Unix タイムスタンプ ↔ 日時、秒/ミリ秒、UTC/ローカル — ブラウザ内。</p>
+        <a href="/ja/tools/unix-timestamp" class="mt-auto btn btn-primary btn-sm">開く</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/uuid-generator.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <h3 class="card-title home-card-title mb-0">UUID/ULID ジェネレーター — ブラウザで ID を作成</h3>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">UUID v4 と ULID をローカル生成 — 最大 100 件、ワンクリックコピー。</p>
+        <a href="/ja/tools/uuid-generator" class="mt-auto btn btn-primary btn-sm">開く</a>
       </div>
     </div>
   </div>

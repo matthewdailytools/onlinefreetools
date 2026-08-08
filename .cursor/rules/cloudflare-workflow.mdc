@@ -17,7 +17,8 @@ alwaysApply: false
 
 ```bash
 npm run start:dev          # build:site + wrangler dev 后台（默认 http://127.0.0.1:8787）
-npm run start:dev -- --no-build   # 跳过构建，快速启动
+npm run start:dev -- --no-build   # 跳过构建，快速启动（新增工具后勿长期使用；须另跑 build:site 才刷新首页）
+npm run build:site         # merge:tools + 重建 public/_pages 首页/sitemap/vendor（新工具交付硬性步骤）
 npm run stop:dev           # 停止后台 dev 进程
 npm run status:dev         # 端口与健康检查
 npm run restart:dev        # 停止后重新启动

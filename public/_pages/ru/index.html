@@ -118,7 +118,7 @@
           <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ru/tools/brand-color-token-pack">Сгенерировать шкалу цвета бренда — палитра 50–950 и CSS‑токены</a></li><li><a class="dropdown-item" href="/ru/tools/brand-style-guide">Гайд по стилю бренда — модульный черновик, который можно править</a></li><li><a class="dropdown-item" href="/ru/tools/smart-website-color-scheme">Цветовая схема сайта — семантические CSS-токены</a></li><li><a class="dropdown-item" href="/ru/tools/wcag-contrast-checker">Проверка контраста WCAG — коэффициент AA/AAA</a></li></ul>
         </li><li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Для разработчиков</a>
-          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ru/tools/add-www-to-dns">Добавить WWW в DNS — A/CNAME и гайды</a></li><li><a class="dropdown-item" href="/ru/tools/csv-json">Конвертер CSV ↔ JSON — типы, разделитель, локально</a></li><li><a class="dropdown-item" href="/ru/tools/html-entity">Кодирование и декодирование HTML-сущностей — локально</a></li><li><a class="dropdown-item" href="/ru/tools/indexnow">IndexNow — отправка URL в Bing, проверка ключа и коды</a></li><li><a class="dropdown-item" href="/ru/tools/ip-address">Узнать свой IP — Публичный адрес (IPv4/IPv6)</a></li><li><a class="dropdown-item" href="/ru/tools/json-schema-validator">Валидатор JSON Schema — пути draft-07, локально</a></li><li><a class="dropdown-item" href="/ru/tools/markdown-to-html">Markdown ↔ HTML</a></li><li><a class="dropdown-item" href="/ru/tools/text-diff">Сравнить тексты онлайн</a></li><li><a class="dropdown-item" href="/ru/tools/website-headers">Проверка HTTP-заголовков</a></li><li><a class="dropdown-item" href="/ru/tools/yaml-json">YAML в JSON и обратно — типы, multi-doc, локально</a></li></ul>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ru/tools/add-www-to-dns">Добавить WWW в DNS — A/CNAME и гайды</a></li><li><a class="dropdown-item" href="/ru/tools/base64">Base64 кодирование и декодирование — преобразовать текст в браузере</a></li><li><a class="dropdown-item" href="/ru/tools/csv-json">Конвертер CSV ↔ JSON — типы, разделитель, локально</a></li><li><a class="dropdown-item" href="/ru/tools/file-hash">Проверка хеша файла — сверка дайджестов в браузере</a></li><li><a class="dropdown-item" href="/ru/tools/html-entity">Кодирование и декодирование HTML-сущностей — локально</a></li><li><a class="dropdown-item" href="/ru/tools/indexnow">IndexNow — отправка URL в Bing, проверка ключа и коды</a></li><li><a class="dropdown-item" href="/ru/tools/ip-address">Узнать свой IP — Публичный адрес (IPv4/IPv6)</a></li><li><a class="dropdown-item" href="/ru/tools/json-schema-validator">Валидатор JSON Schema — пути draft-07, локально</a></li><li><a class="dropdown-item" href="/ru/tools/jwt-decoder">JWT декодер — читать header и payload локально (без проверки подписи)</a></li><li><a class="dropdown-item" href="/ru/tools/markdown-to-html">Markdown ↔ HTML</a></li><li><a class="dropdown-item" href="/ru/tools/password-generator">Генератор случайных паролей — создавать пароли локально</a></li><li><a class="dropdown-item" href="/ru/tools/text-diff">Сравнить тексты онлайн</a></li><li><a class="dropdown-item" href="/ru/tools/timezone-converter">Конвертер часовых поясов — сравнить один момент по миру</a></li><li><a class="dropdown-item" href="/ru/tools/unix-timestamp">Конвертер Unix timestamp — эпоха ↔ читаемое время</a></li><li><a class="dropdown-item" href="/ru/tools/uuid-generator">Генератор UUID и ULID — создавать ID в браузере</a></li><li><a class="dropdown-item" href="/ru/tools/website-headers">Проверка HTTP-заголовков</a></li><li><a class="dropdown-item" href="/ru/tools/yaml-json">YAML в JSON и обратно — типы, multi-doc, локально</a></li></ul>
         </li><li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Калькуляторы</a>
           <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-bmi">Калькулятор ИМТ — как рассчитать индекс массы тела</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-gradient">Калькулятор градиента — многомерный ∇f (частные производные)</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-marginal-revenue">Калькулятор предельной выручки — Формула ΔTR / ΔQ</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-percentage-change">Калькулятор процентного изменения — От старого значения к новому</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-roi">Калькулятор ROI — Как рассчитать рентабельность инвестиций</a></li><li><a class="dropdown-item" href="/ru/tools/square-feet">Квадратные футы в м² — Для жилья и ремонта</a></li></ul>
@@ -218,6 +218,18 @@
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/base64.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">Base64 кодирование и декодирование — преобразовать текст в браузере</h3>
+        </div>
+        <p class="card-text home-card-desc flex-grow-1">Base64 для UTF-8 текста и файлов, с Base64url — локально в браузере.</p>
+        <a href="/ru/tools/base64" class="mt-auto btn btn-primary btn-sm">Открыть</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/brand-color-token-pack.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
           <h3 class="card-title home-card-title home-card-title--featured mb-0">Сгенерировать шкалу цвета бренда — палитра 50–950 и CSS‑токены</h3>
         </div>
@@ -259,6 +271,18 @@
         </div>
         <p class="card-text home-card-desc flex-grow-1">CSV ↔ JSON с разделителем, заголовком и типами.</p>
         <a href="/ru/tools/csv-json" class="mt-auto btn btn-primary btn-sm">Открыть</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/file-hash.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">Проверка хеша файла — сверка дайджестов в браузере</h3>
+        </div>
+        <p class="card-text home-card-desc flex-grow-1">Хеш текста или файлов локально — hex-дайджесты MD5, SHA-1, SHA-256, SHA-384, SHA-512.</p>
+        <a href="/ru/tools/file-hash" class="mt-auto btn btn-primary btn-sm">Открыть</a>
       </div>
     </div>
   </div>
@@ -554,11 +578,35 @@
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/jwt-decoder.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">JWT декодер — читать header и payload локально (без проверки подписи)</h3>
+        </div>
+        <p class="card-text home-card-desc flex-grow-1">Декодирование header и payload JWT локально — без проверки подписи; вставка остаётся в браузере.</p>
+        <a href="/ru/tools/jwt-decoder" class="mt-auto btn btn-primary btn-sm">Открыть</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/markdown-to-html.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
           <h3 class="card-title home-card-title home-card-title--featured mb-0">Markdown ↔ HTML</h3>
         </div>
         <p class="card-text home-card-desc flex-grow-1">Преобразование Markdown ↔ HTML с безопасным предпросмотром.</p>
         <a href="/ru/tools/markdown-to-html" class="mt-auto btn btn-primary btn-sm">Открыть</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/password-generator.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">Генератор случайных паролей — создавать пароли локально</h3>
+        </div>
+        <p class="card-text home-card-desc flex-grow-1">Случайные пароли с настройкой длины и charset — локально через crypto.getRandomValues.</p>
+        <a href="/ru/tools/password-generator" class="mt-auto btn btn-primary btn-sm">Открыть</a>
       </div>
     </div>
   </div>
@@ -595,6 +643,42 @@
         </div>
         <p class="card-text home-card-desc flex-grow-1">Посмотрите различия двух текстов по строкам, словам или символам.</p>
         <a href="/ru/tools/text-diff" class="mt-auto btn btn-primary btn-sm">Открыть</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/timezone-converter.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">Конвертер часовых поясов — сравнить один момент по миру</h3>
+        </div>
+        <p class="card-text home-card-desc flex-grow-1">Сравнение одного момента между поясами IANA с пояснениями DST — локально в браузере.</p>
+        <a href="/ru/tools/timezone-converter" class="mt-auto btn btn-primary btn-sm">Открыть</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/unix-timestamp.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">Конвертер Unix timestamp — эпоха ↔ читаемое время</h3>
+        </div>
+        <p class="card-text home-card-desc flex-grow-1">Unix timestamp ↔ дата, сек/мс, UTC и локально — в браузере.</p>
+        <a href="/ru/tools/unix-timestamp" class="mt-auto btn btn-primary btn-sm">Открыть</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/uuid-generator.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">Генератор UUID и ULID — создавать ID в браузере</h3>
+        </div>
+        <p class="card-text home-card-desc flex-grow-1">UUID v4 и ULID локально — до 100 штук, копирование в один клик.</p>
+        <a href="/ru/tools/uuid-generator" class="mt-auto btn btn-primary btn-sm">Открыть</a>
       </div>
     </div>
   </div>
@@ -933,11 +1017,35 @@
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/base64.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <h3 class="card-title home-card-title mb-0">Base64 кодирование и декодирование — преобразовать текст в браузере</h3>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">Base64 для UTF-8 текста и файлов, с Base64url — локально в браузере.</p>
+        <a href="/ru/tools/base64" class="mt-auto btn btn-primary btn-sm">Открыть</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/csv-json.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <h3 class="card-title home-card-title mb-0">Конвертер CSV ↔ JSON — типы, разделитель, локально</h3>
         </div>
         <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">CSV ↔ JSON с разделителем, заголовком и типами.</p>
         <a href="/ru/tools/csv-json" class="mt-auto btn btn-primary btn-sm">Открыть</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/file-hash.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <h3 class="card-title home-card-title mb-0">Проверка хеша файла — сверка дайджестов в браузере</h3>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">Хеш текста или файлов локально — hex-дайджесты MD5, SHA-1, SHA-256, SHA-384, SHA-512.</p>
+        <a href="/ru/tools/file-hash" class="mt-auto btn btn-primary btn-sm">Открыть</a>
       </div>
     </div>
   </div>
@@ -993,6 +1101,18 @@
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/jwt-decoder.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <h3 class="card-title home-card-title mb-0">JWT декодер — читать header и payload локально (без проверки подписи)</h3>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">Декодирование header и payload JWT локально — без проверки подписи; вставка остаётся в браузере.</p>
+        <a href="/ru/tools/jwt-decoder" class="mt-auto btn btn-primary btn-sm">Открыть</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/markdown-to-html.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <h3 class="card-title home-card-title mb-0">Markdown ↔ HTML</h3>
         </div>
@@ -1005,11 +1125,59 @@
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/password-generator.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <h3 class="card-title home-card-title mb-0">Генератор случайных паролей — создавать пароли локально</h3>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">Случайные пароли с настройкой длины и charset — локально через crypto.getRandomValues.</p>
+        <a href="/ru/tools/password-generator" class="mt-auto btn btn-primary btn-sm">Открыть</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/text-diff.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <h3 class="card-title home-card-title mb-0">Сравнить тексты онлайн</h3>
         </div>
         <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">Посмотрите различия двух текстов по строкам, словам или символам.</p>
         <a href="/ru/tools/text-diff" class="mt-auto btn btn-primary btn-sm">Открыть</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/timezone-converter.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <h3 class="card-title home-card-title mb-0">Конвертер часовых поясов — сравнить один момент по миру</h3>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">Сравнение одного момента между поясами IANA с пояснениями DST — локально в браузере.</p>
+        <a href="/ru/tools/timezone-converter" class="mt-auto btn btn-primary btn-sm">Открыть</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/unix-timestamp.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <h3 class="card-title home-card-title mb-0">Конвертер Unix timestamp — эпоха ↔ читаемое время</h3>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">Unix timestamp ↔ дата, сек/мс, UTC и локально — в браузере.</p>
+        <a href="/ru/tools/unix-timestamp" class="mt-auto btn btn-primary btn-sm">Открыть</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/uuid-generator.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <h3 class="card-title home-card-title mb-0">Генератор UUID и ULID — создавать ID в браузере</h3>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">UUID v4 и ULID локально — до 100 штук, копирование в один клик.</p>
+        <a href="/ru/tools/uuid-generator" class="mt-auto btn btn-primary btn-sm">Открыть</a>
       </div>
     </div>
   </div>

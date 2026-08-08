@@ -1,0 +1,21 @@
+{
+  "slug": "file-hash",
+  "path": "/tools/file-hash",
+  "category": "developer",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_file_hash_title",
+  "homeTitleKey": "tool_file_hash_title",
+  "homeDescKey": "tool_file_hash_desc",
+  "faqPrefix": "tool_file_hash",
+  "related": [
+    "base64",
+    "text-diff"
+  ],
+  "logo": "/icons/tools/file-hash.svg",
+  "page": {
+    "module": "../pages/fileHashPage",
+    "export": "renderFileHashPage",
+    "style": "opts"
+  }
+}

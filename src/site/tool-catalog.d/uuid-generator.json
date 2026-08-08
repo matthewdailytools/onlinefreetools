@@ -1,0 +1,21 @@
+{
+  "slug": "uuid-generator",
+  "path": "/tools/uuid-generator",
+  "category": "developer",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_uuid_generator_title",
+  "homeTitleKey": "tool_uuid_generator_title",
+  "homeDescKey": "tool_uuid_generator_desc",
+  "faqPrefix": "tool_uuid_generator",
+  "related": [
+    "password-generator",
+    "file-hash"
+  ],
+  "logo": "/icons/tools/uuid-generator.svg",
+  "page": {
+    "module": "../pages/uuidGeneratorPage",
+    "export": "renderUuidGeneratorPage",
+    "style": "opts"
+  }
+}

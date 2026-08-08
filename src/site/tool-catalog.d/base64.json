@@ -1,0 +1,22 @@
+{
+  "slug": "base64",
+  "path": "/tools/base64",
+  "category": "developer",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_base64_title",
+  "homeTitleKey": "tool_base64_title",
+  "homeDescKey": "tool_base64_desc",
+  "faqPrefix": "tool_base64",
+  "related": [
+    "image-to-base64",
+    "jwt-decoder",
+    "html-entity"
+  ],
+  "logo": "/icons/tools/base64.svg",
+  "page": {
+    "module": "../pages/base64Page",
+    "export": "renderBase64Page",
+    "style": "opts"
+  }
+}

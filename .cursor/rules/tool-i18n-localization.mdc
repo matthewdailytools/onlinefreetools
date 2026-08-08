@@ -10,6 +10,14 @@ alwaysApply: false
 
 **权威**：本文件是 Agent 可执行落地；与 `seo-google-policy.mdc` / `lint:seo` 冲突时以上层为准。`lint:seo` 通过 **≠** 本地化完成。
 
+**机器门禁（辅助，不能替代本文件的实质分析）**：
+
+- `npm run coverage:gate -- --slug={slug} --phase=0b|2|4|all`（`scripts/validate-tool-coverage-rounds.mjs`）——验收 `02` 覆盖表与 `03` 多轮行 `0b` / `1b` / `2b`（日期 + ≥20 字摘要；步 4 须列出 en,zh,es,ja）。
+- `npm run lint:seo` 另含 title 参数枚举启发式，并对**已写「清单前检索覆盖」专节且 ready/implemented** 的工具跑 `phase=all`。旧工具无专节的目录腔 title 仅 WARN。
+- Agent 执行顺序见 [`.cursor/skills/tool-coverage-pass/SKILL.md`](../skills/tool-coverage-pass/SKILL.md)。
+
+通过门禁仍须完成步 0b / 2 / 4 的**实质**检索判断与文案回写（禁止只勾选）。
+
 ---
 
 ## 稳妥常态工作流（默认必须）
@@ -19,13 +27,13 @@ alwaysApply: false
 | 步 | 做什么 | 产出 / 门禁 |
 |---|---|---|
 | 0 | 填 `work-tasks/{slug}/03-locale-briefs.md`（每语检索词、语气、title 方向、按钮说法、SERP 摘录）草稿 | brief 空白则停 |
-| **0b** | **清单前检索覆盖优化（硬门禁）** — 见下节「清单前…」 | 覆盖表写入 `02`/`notes`；未完成 → **禁止**勾任何工程/页面/上线清单、禁止 `02`→`ready` |
+| **0b** | **清单前检索覆盖优化（硬门禁）** — 见下节「清单前…」 | 覆盖表写入 `02`；`03` 行 `0b`；`coverage:gate --phase=0b` 绿 → 才可勾工程清单 / `02`→`ready` |
 | 1 | 写 **一种** 母版语（通常 en 或 zh）完整键：title / description / How / Rules / Example / Use cases / FAQ / UI | `lint:seo` 对该母版过；记轮次 1 |
-| 2 | **Title / 描述 / 检索词覆盖优化（母版 · 生成后）** — 须在步 1 生成之后再跑一遍 | 母版 title/description/首页 `_desc` 与 brief 检索词对齐；无参数枚举 H1；缺口有落点；记入 `03` |
+| 2 | **Title / 描述 / 检索词覆盖优化（母版 · 生成后）** — 须在步 1 生成之后再跑一遍 | 改母版 title/desc；`03` 行 `1b`；`coverage:gate --phase=2` 绿 |
 | 3 | **逐语**（或每批 ≤3 语）按该语 brief **独立重写**；同步首页主词（生成分片） | 禁止 `Translate to {lang}`；每语 title/FAQ 句式不得与英模锁死同构；记轮次 2 |
-| 4 | **Title / 描述 / 检索词覆盖优化（抽查语 · 生成后）** — 对 en + zh + ≥2 他语再跑一遍 | 次要意图未挤进 H1；与 related intent 不撞；`03` 勾选「检索覆盖已优化」 |
+| 4 | **Title / 描述 / 检索词覆盖优化（抽查语 · 生成后）** — 对 en + zh + ≥2 他语再跑一遍 | `03` 行 `2b`（须含 `en,zh,es,ja`）；勾选「检索覆盖已优化」；`coverage:gate --phase=4` 绿 |
 | 5 | 禁词表全扫 + 抽查 **en + zh + 至少 2 个其他语**（优先含 ar/ja/ru 若已上线） | 再 `lint:seo`；记轮次 3；`03` 勾选轮次框 |
-| 6 | 定稿 | `03` 状态 → `i18n-done`；若仍有母语不确定项 → 保留「待母语抽查」且不得假装已清 |
+| 6 | 定稿 | `03` 状态 → `i18n-done`；`coverage:gate --phase=all`；若仍有母语不确定项 → 保留「待母语抽查」且不得假装已清 |
 
 **允许**：脚本/补丁 **只做已定稿文案的落盘**（把审过的字符串写入 `.ts`）。  
 **禁止**：把「生成八语同构段落」的流水线脚本当作本地化步骤（见下节红线）。  

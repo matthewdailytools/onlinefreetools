@@ -118,7 +118,7 @@
           <ul class="dropdown-menu"><li><a class="dropdown-item" href="/zh/tools/brand-color-token-pack">品牌色色阶生成 — 一主色出 50–950 色板与 CSS 变量</a></li><li><a class="dropdown-item" href="/zh/tools/brand-style-guide">品牌手册 — 智能预填的设计规范，可手动改</a></li><li><a class="dropdown-item" href="/zh/tools/smart-website-color-scheme">智能配色 — 网站颜色搭配方案与 CSS 变量</a></li><li><a class="dropdown-item" href="/zh/tools/wcag-contrast-checker">WCAG 对比度检测 — AA/AAA 比率在线算</a></li></ul>
         </li><li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">开发者工具</a>
-          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/zh/tools/add-www-to-dns">给域名添加 www DNS — 记录生成与各平台教程</a></li><li><a class="dropdown-item" href="/zh/tools/csv-json">CSV ↔ JSON 互转 — 类型、分隔符、本地处理</a></li><li><a class="dropdown-item" href="/zh/tools/html-entity">HTML 实体编解码 — 转义、反转义、本地处理</a></li><li><a class="dropdown-item" href="/zh/tools/indexnow">IndexNow — Bing URL 提交、密钥检查与状态码</a></li><li><a class="dropdown-item" href="/zh/tools/ip-address">IP 地址查询 — 查看我的公网 IP（IPv4/IPv6）</a></li><li><a class="dropdown-item" href="/zh/tools/json-schema-validator">JSON Schema 校验器 — 路径错误与本地处理</a></li><li><a class="dropdown-item" href="/zh/tools/markdown-to-html">Markdown ↔ HTML</a></li><li><a class="dropdown-item" href="/zh/tools/text-diff">在线文本对比 — 文本差异对比工具</a></li><li><a class="dropdown-item" href="/zh/tools/website-headers">在线查看 HTTP 响应头</a></li><li><a class="dropdown-item" href="/zh/tools/yaml-json">YAML ↔ JSON 互转 — 类型规则、多文档、本地处理</a></li></ul>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/zh/tools/add-www-to-dns">给域名添加 www DNS — 记录生成与各平台教程</a></li><li><a class="dropdown-item" href="/zh/tools/base64">Base64 编解码 — 在浏览器内转换文本</a></li><li><a class="dropdown-item" href="/zh/tools/csv-json">CSV ↔ JSON 互转 — 类型、分隔符、本地处理</a></li><li><a class="dropdown-item" href="/zh/tools/file-hash">文件哈希校验 — 在浏览器内查看摘要</a></li><li><a class="dropdown-item" href="/zh/tools/html-entity">HTML 实体编解码 — 转义、反转义、本地处理</a></li><li><a class="dropdown-item" href="/zh/tools/indexnow">IndexNow — Bing URL 提交、密钥检查与状态码</a></li><li><a class="dropdown-item" href="/zh/tools/ip-address">IP 地址查询 — 查看我的公网 IP（IPv4/IPv6）</a></li><li><a class="dropdown-item" href="/zh/tools/json-schema-validator">JSON Schema 校验器 — 路径错误与本地处理</a></li><li><a class="dropdown-item" href="/zh/tools/jwt-decoder">JWT 解码 — 本地查看 Header 与 Payload（不验签）</a></li><li><a class="dropdown-item" href="/zh/tools/markdown-to-html">Markdown ↔ HTML</a></li><li><a class="dropdown-item" href="/zh/tools/password-generator">随机密码生成 — 在浏览器内创建密码</a></li><li><a class="dropdown-item" href="/zh/tools/text-diff">在线文本对比 — 文本差异对比工具</a></li><li><a class="dropdown-item" href="/zh/tools/timezone-converter">时区转换 — 同一时刻多地对照</a></li><li><a class="dropdown-item" href="/zh/tools/unix-timestamp">Unix 时间戳转换 — 纪元时间与可读时间互转</a></li><li><a class="dropdown-item" href="/zh/tools/uuid-generator">UUID / ULID 生成 — 在浏览器内创建标识符</a></li><li><a class="dropdown-item" href="/zh/tools/website-headers">在线查看 HTTP 响应头</a></li><li><a class="dropdown-item" href="/zh/tools/yaml-json">YAML ↔ JSON 互转 — 类型规则、多文档、本地处理</a></li></ul>
         </li><li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">计算器</a>
           <ul class="dropdown-menu"><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-bmi">BMI 计算器 — 如何计算身体质量指数</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-gradient">多元函数梯度计算 — ∇f 偏导向量</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-marginal-revenue">边际收益计算 — 公式 MR = ΔTR / ΔQ</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-percentage-change">百分比变化计算 — 旧值到新值的涨跌幅</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-roi">投资回报率（ROI）计算 — 公式与示例</a></li><li><a class="dropdown-item" href="/zh/tools/square-feet">平方英尺转平方米 — 看房与装修面积换算</a></li></ul>
@@ -218,6 +218,18 @@
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/base64.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">Base64 编解码 — 在浏览器内转换文本</h3>
+        </div>
+        <p class="card-text home-card-desc flex-grow-1">在浏览器内对文本或文件字节做 Base64 编解码，本地完成。</p>
+        <a href="/zh/tools/base64" class="mt-auto btn btn-primary btn-sm">打开</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/brand-color-token-pack.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
           <h3 class="card-title home-card-title home-card-title--featured mb-0">品牌色色阶生成 — 一主色出 50–950 色板与 CSS 变量</h3>
         </div>
@@ -259,6 +271,18 @@
         </div>
         <p class="card-text home-card-desc flex-grow-1">浏览器内 CSV 与 JSON 互转：分隔符、表头与类型规则。</p>
         <a href="/zh/tools/csv-json" class="mt-auto btn btn-primary btn-sm">打开</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/file-hash.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">文件哈希校验 — 在浏览器内查看摘要</h3>
+        </div>
+        <p class="card-text home-card-desc flex-grow-1">在浏览器内校验文本或文件的哈希摘要，本地完成。</p>
+        <a href="/zh/tools/file-hash" class="mt-auto btn btn-primary btn-sm">打开</a>
       </div>
     </div>
   </div>
@@ -554,11 +578,35 @@
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/jwt-decoder.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">JWT 解码 — 本地查看 Header 与 Payload（不验签）</h3>
+        </div>
+        <p class="card-text home-card-desc flex-grow-1">本地解码 JWT 的 Header 与 Payload，不验证签名，粘贴内容留在浏览器。</p>
+        <a href="/zh/tools/jwt-decoder" class="mt-auto btn btn-primary btn-sm">打开</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/markdown-to-html.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
           <h3 class="card-title home-card-title home-card-title--featured mb-0">Markdown ↔ HTML</h3>
         </div>
         <p class="card-text home-card-desc flex-grow-1">浏览器内 Markdown 与 HTML 双向转换与预览。</p>
         <a href="/zh/tools/markdown-to-html" class="mt-auto btn btn-primary btn-sm">打开</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/password-generator.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">随机密码生成 — 在浏览器内创建密码</h3>
+        </div>
+        <p class="card-text home-card-desc flex-grow-1">在浏览器内本地生成随机密码。</p>
+        <a href="/zh/tools/password-generator" class="mt-auto btn btn-primary btn-sm">打开</a>
       </div>
     </div>
   </div>
@@ -595,6 +643,42 @@
         </div>
         <p class="card-text home-card-desc flex-grow-1">按行、按词或按字符对比两段文字的差异。</p>
         <a href="/zh/tools/text-diff" class="mt-auto btn btn-primary btn-sm">打开</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/timezone-converter.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">时区转换 — 同一时刻多地对照</h3>
+        </div>
+        <p class="card-text home-card-desc flex-grow-1">IANA 多时区时间对照，含夏令时说明，浏览器本地运行。</p>
+        <a href="/zh/tools/timezone-converter" class="mt-auto btn btn-primary btn-sm">打开</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/unix-timestamp.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">Unix 时间戳转换 — 纪元时间与可读时间互转</h3>
+        </div>
+        <p class="card-text home-card-desc flex-grow-1">Unix 时间戳与可读日期时间互转，浏览器本地完成。</p>
+        <a href="/zh/tools/unix-timestamp" class="mt-auto btn btn-primary btn-sm">打开</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/uuid-generator.svg" width="36" height="36" alt="" decoding="async" fetchpriority="high" />
+          <h3 class="card-title home-card-title home-card-title--featured mb-0">UUID / ULID 生成 — 在浏览器内创建标识符</h3>
+        </div>
+        <p class="card-text home-card-desc flex-grow-1">本地生成 UUID v4 与 ULID — 最多 100 条，一键复制。</p>
+        <a href="/zh/tools/uuid-generator" class="mt-auto btn btn-primary btn-sm">打开</a>
       </div>
     </div>
   </div>
@@ -933,11 +1017,35 @@
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/base64.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <h3 class="card-title home-card-title mb-0">Base64 编解码 — 在浏览器内转换文本</h3>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">在浏览器内对文本或文件字节做 Base64 编解码，本地完成。</p>
+        <a href="/zh/tools/base64" class="mt-auto btn btn-primary btn-sm">打开</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/csv-json.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <h3 class="card-title home-card-title mb-0">CSV ↔ JSON 互转 — 类型、分隔符、本地处理</h3>
         </div>
         <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">浏览器内 CSV 与 JSON 互转：分隔符、表头与类型规则。</p>
         <a href="/zh/tools/csv-json" class="mt-auto btn btn-primary btn-sm">打开</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/file-hash.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <h3 class="card-title home-card-title mb-0">文件哈希校验 — 在浏览器内查看摘要</h3>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">在浏览器内校验文本或文件的哈希摘要，本地完成。</p>
+        <a href="/zh/tools/file-hash" class="mt-auto btn btn-primary btn-sm">打开</a>
       </div>
     </div>
   </div>
@@ -993,6 +1101,18 @@
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/jwt-decoder.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <h3 class="card-title home-card-title mb-0">JWT 解码 — 本地查看 Header 与 Payload（不验签）</h3>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">本地解码 JWT 的 Header 与 Payload，不验证签名，粘贴内容留在浏览器。</p>
+        <a href="/zh/tools/jwt-decoder" class="mt-auto btn btn-primary btn-sm">打开</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/markdown-to-html.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <h3 class="card-title home-card-title mb-0">Markdown ↔ HTML</h3>
         </div>
@@ -1005,11 +1125,59 @@
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/password-generator.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <h3 class="card-title home-card-title mb-0">随机密码生成 — 在浏览器内创建密码</h3>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">在浏览器内本地生成随机密码。</p>
+        <a href="/zh/tools/password-generator" class="mt-auto btn btn-primary btn-sm">打开</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
           <img class="tool-card-logo" src="/icons/tools/text-diff.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <h3 class="card-title home-card-title mb-0">在线文本对比 — 文本差异对比工具</h3>
         </div>
         <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">按行、按词或按字符对比两段文字的差异。</p>
         <a href="/zh/tools/text-diff" class="mt-auto btn btn-primary btn-sm">打开</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/timezone-converter.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <h3 class="card-title home-card-title mb-0">时区转换 — 同一时刻多地对照</h3>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">IANA 多时区时间对照，含夏令时说明，浏览器本地运行。</p>
+        <a href="/zh/tools/timezone-converter" class="mt-auto btn btn-primary btn-sm">打开</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/unix-timestamp.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <h3 class="card-title home-card-title mb-0">Unix 时间戳转换 — 纪元时间与可读时间互转</h3>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">Unix 时间戳与可读日期时间互转，浏览器本地完成。</p>
+        <a href="/zh/tools/unix-timestamp" class="mt-auto btn btn-primary btn-sm">打开</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/uuid-generator.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <h3 class="card-title home-card-title mb-0">UUID / ULID 生成 — 在浏览器内创建标识符</h3>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">本地生成 UUID v4 与 ULID — 最多 100 条，一键复制。</p>
+        <a href="/zh/tools/uuid-generator" class="mt-auto btn btn-primary btn-sm">打开</a>
       </div>
     </div>
   </div>
