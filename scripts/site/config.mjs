@@ -31,7 +31,7 @@ export const siteConfig = {
    * 可用环境变量 INDEXNOW_KEY 覆盖。
    */
   indexNowKey:
-    process.env.INDEXNOW_KEY || '8212779ba7e9451aa4faed4cfd20ded4',
+    process.env.INDEXNOW_KEY || '2f01147b65c24c4194c4f785eacafef9',
   defaultLang: (process.env.SITE_DEFAULT_LANG || 'en').trim(),
   languages,
   enabledLangs: (() => {

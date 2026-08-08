@@ -44,7 +44,7 @@ const GOOGLE_SITE_VERIFICATION_BODY = "google-site-verification: google2cb457f09
  * Bing IndexNow 所有权 key（须与 public/{key}.txt 及 scripts/site/config.mjs 一致）。
  * IndexNow 协议要求根路径托管 UTF-8 文本文件，正文仅为 key 本身。
  */
-const INDEXNOW_KEY = "8212779ba7e9451aa4faed4cfd20ded4";
+const INDEXNOW_KEY = "2f01147b65c24c4194c4f785eacafef9";
 
 /**
  * IndexNow 验证文件路径：`/{key}.txt`（Option 1：站点根目录托管）。
