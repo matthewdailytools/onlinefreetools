@@ -207,6 +207,55 @@
     "logo": "/icons/tools/image-crop.svg"
   },
   {
+    "slug": "color-from-image",
+    "path": "/tools/color-from-image",
+    "category": "image",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_color_from_image_title",
+    "homeTitleKey": "tool_color_from_image_title",
+    "homeDescKey": "tool_color_from_image_desc",
+    "faqPrefix": "tool_color_from_image",
+    "related": [
+      "how-to-calculate-gradient",
+      "image-crop"
+    ],
+    "logo": "/icons/tools/color-from-image.svg"
+  },
+  {
+    "slug": "image-merge",
+    "path": "/tools/image-merge",
+    "category": "image",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_image_merge_title",
+    "homeTitleKey": "tool_image_merge_title",
+    "homeDescKey": "tool_image_merge_desc",
+    "faqPrefix": "tool_image_merge",
+    "related": [
+      "image-overlay",
+      "image-crop",
+      "image-compress"
+    ],
+    "logo": "/icons/tools/image-merge.svg"
+  },
+  {
+    "slug": "image-overlay",
+    "path": "/tools/image-overlay",
+    "category": "image",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_image_overlay_title",
+    "homeTitleKey": "tool_image_overlay_title",
+    "homeDescKey": "tool_image_overlay_desc",
+    "faqPrefix": "tool_image_overlay",
+    "related": [
+      "image-merge",
+      "image-crop"
+    ],
+    "logo": "/icons/tools/image-overlay.svg"
+  },
+  {
     "slug": "add-www-to-dns",
     "path": "/tools/add-www-to-dns",
     "category": "developer",

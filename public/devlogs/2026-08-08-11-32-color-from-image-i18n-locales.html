@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Added complete tool_color_from_image_* i18n keys to 9 locale files and home keys to i18n.mjs for all 10 languages. | Dev Logs</title>
+  <meta name="description" content="Added complete tool_color_from_image_* i18n keys to 9 locale files and home keys to i18n.mjs for all 10 languages." />
+  <meta name="robots" content="noindex" />
+  <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-11-32-color-from-image-i18n-locales.html" />
+  <meta property="og:title" content="Added complete tool_color_from_image_* i18n keys to 9 locale files and home keys to i18n.mjs for all 10 languages. | Dev Logs" />
+  <meta property="og:description" content="Added complete tool_color_from_image_* i18n keys to 9 locale files and home keys to i18n.mjs for all 10 languages." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-08-11-32-color-from-image-i18n-locales.html" />
+  <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  
+  <script>
+    (function () {
+      try {
+        var enabled = [];
+        var defaultLang = "en";
+        var fallback = defaultLang;
+        var path = window.location.pathname || '/';
+
+        // If the URL already contains a language prefix (including defaultLang), respect it.
+        var hasPrefix = enabled.some(function (l) {
+          return l && (path === '/' + l || path.indexOf('/' + l + '/') === 0);
+        });
+        if (hasPrefix) return;
+
+        var langs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language])
+          .filter(Boolean)
+          .map(function (x) { return String(x).toLowerCase().split('-')[0]; });
+
+        var picked = null;
+        for (var i = 0; i < langs.length; i++) {
+          if (enabled.indexOf(langs[i]) !== -1) { picked = langs[i]; break; }
+        }
+        if (!picked) picked = enabled.indexOf(fallback) !== -1 ? fallback : (enabled[0] || fallback);
+
+        if (picked === "en") return;
+        var targetPath = path;
+        if (picked !== defaultLang) {
+          targetPath = ('/' + picked + path).replace(/\/{2,}/g, '/');
+        }
+        window.location.replace(targetPath + window.location.search + window.location.hash);
+      } catch (e) {}
+    })();
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="/styles/site.css" rel="stylesheet" />
+  <style>
+    body { min-height: 100vh; padding-top: var(--header-h, 56px); }
+    .layout { display: flex; min-height: calc(100vh - var(--header-h, 56px)); }
+  </style>
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?39f18c089a03779cd05243e21b046589";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "xbc0iytpn7");
+</script>
+  
+  
+</head>
+<body class="is-home-page">
+  
+  
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light site-navbar border-bottom fixed-top">
+      <div class="container-fluid">
+        <button class="btn btn-outline-secondary me-2" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+        <a class="navbar-brand" href="/">
+          <img class="navbar-brand-logo" src="/brand-logo.svg" width="28" height="28" alt="" decoding="async" />
+          <span class="navbar-brand-text">OnlineFreeTools.org</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="topNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="/en/">Home</a></li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Image editing tools</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/en/tools/image-format-converter">Image Format Converter</a></li><li><a class="dropdown-item" href="/en/tools/image-exif">Photo EXIF Viewer & Remover</a></li><li><a class="dropdown-item" href="/en/tools/image-compress">Image Compressor</a></li><li><a class="dropdown-item" href="/en/tools/image-optimizer">Image Optimizer</a></li><li><a class="dropdown-item" href="/en/tools/image-crop">Crop & Resize Image</a></li><li><a class="dropdown-item" href="/en/tools/color-from-image">Extract Colors from Image</a></li><li><a class="dropdown-item" href="/en/tools/image-merge">Merge Images</a></li><li><a class="dropdown-item" href="/en/tools/image-overlay">Overlay Images</a></li></ul>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Developer</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/en/tools/website-headers">Check HTTP Response Headers</a></li><li><a class="dropdown-item" href="/en/tools/ip-address">What Is My IP Address — See Your Public IP (IPv4 or IPv6)</a></li><li><a class="dropdown-item" href="/en/tools/markdown-to-html">Markdown ↔ HTML</a></li><li><a class="dropdown-item" href="/en/tools/text-diff">Compare Two Texts Online</a></li><li><a class="dropdown-item" href="/en/tools/yaml-json">YAML ↔ JSON</a></li><li><a class="dropdown-item" href="/en/tools/csv-json">CSV ↔ JSON</a></li><li><a class="dropdown-item" href="/en/tools/html-entity">HTML Entity Encoder & Decoder</a></li><li><a class="dropdown-item" href="/en/tools/add-www-to-dns">Add WWW to DNS</a></li><li><a class="dropdown-item" href="/en/tools/indexnow">IndexNow</a></li></ul>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Calculators</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/en/tools/how-to-calculate-bmi">BMI Calculator — Body Mass Index</a></li><li><a class="dropdown-item" href="/en/tools/how-to-calculate-roi">ROI Calculator — How to Calculate Return on Investment</a></li><li><a class="dropdown-item" href="/en/tools/how-to-calculate-marginal-revenue">How to Calculate Marginal Revenue — MR Calculator (ΔTR / ΔQ)</a></li><li><a class="dropdown-item" href="/en/tools/square-feet">Square Feet to Square Meters — Area Converter for Homes & Renovation</a></li><li><a class="dropdown-item" href="/en/tools/how-to-calculate-percentage-change">Percentage Change Calculator — From Old Value to New</a></li><li><a class="dropdown-item" href="/en/tools/how-to-calculate-gradient">Gradient Calculator — Multivariable ∇f (Partial Derivatives)</a></li></ul>
+        </li></ul>
+          <div class="d-flex align-items-center gap-2">
+            
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="layout sidebar-collapsed" id="layoutRoot">
+    
+    <aside id="sidebar" class="border-end">
+      <h2 class="sidebar-title h6">Navigation</h2>
+      <div class="list-group list-group-flush small" id="navList"><a class="list-group-item list-group-item-action" href="/">Home</a></div>
+    </aside>
+    <main id="content" class="p-4">
+      <section class="mb-3">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h1 class="h4 mb-0">Added complete tool_color_from_image_* i18n keys to 9 locale files and home keys to i18n.mjs for all 10 languages. | Dev Logs</h1>
+          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
+        </div>
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-08 11:32
+Summary: Added complete tool_color_from_image_* i18n keys to 9 locale files and home keys to i18n.mjs for all 10 languages.</p>
+<p>[question]
+Add complete <code>tool_color_from_image_*</code> i18n keys to zh/es/ar/pt/id/fr/ja/ru/de matching en key set; add home title/desc to scripts/site/i18n.mjs for all 10 langs after tool_image_crop_desc.</p>
+<p>[try to solve]
+已为 9 个 locale 文件各插入 44 个 <code>tool_color_from_image_*</code> 键（与 en 完全一致），位置在 <code>tool_add_www_to_dns_title</code> 之前；并在 <code>scripts/site/i18n.mjs</code> 的 10 语首页块加入 <code>tool_color_from_image_title</code> / <code>tool_color_from_image_desc</code>（位于 <code>tool_image_crop_desc</code> 之后）。文案按 brief 独立重写：场景向 title、description ≥120 字含步骤与示例、FAQ 题序各语差异化；<code>npm run lint:seo</code> 已通过。</p>
+<p>[actions]</p>
+<ul>
+<li>src/site/i18n/zh.ts, es.ts, ar.ts, pt.ts, id.ts, fr.ts, ja.ts, ru.ts, de.ts</li>
+<li>scripts/site/i18n.mjs</li>
+</ul>
+</article>
+      </section>
+    </main>
+  </div>
+  
+
+  <footer class="site-footer border-top text-center py-3">
+
+    <div class="container">
+
+      <div class="mb-1"><small class="text-muted">OnlineFreeTools.org · Learning project · Iterating</small></div>
+
+      <nav class="d-inline" aria-label="Site links">
+
+        <a class="small text-decoration-none" href="/en/about">About</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/devlogs/">Dev Logs</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/en/privacy">Privacy</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/en/terms">Terms</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/en/contact">Contact</a>
+
+      </nav>
+
+    </div>
+
+  </footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <script>
+    const layout = document.getElementById('layoutRoot');
+    const toggle = document.getElementById('sidebarToggle');
+    if (layout && toggle) {
+      toggle.addEventListener('click', () => layout.classList.toggle('sidebar-collapsed'));
+      
+    }
+  </script>
+</body>
+</html>

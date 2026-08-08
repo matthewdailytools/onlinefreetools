@@ -65,14 +65,15 @@
 - 核心规则 / 算法：
 - 失败与边界行为：
 - 示例 Input → Output：
+- **进页样例（必填）**：默认样例数据是什么；进页是否 `loadSample()` 自动跑出真实结果；与 H2 Example 如何对齐；若不能自动执行写操作，例外理由与安全演示路径（见 `.cursor/rules/tool-creation.mdc`「进页样例须实际跑出结果」）
 
 ## 页面模块清单（与 tool-creation 对齐）
 
 - [ ] H1 + 一句话摘要
-- [ ] 首屏工具交互区
+- [ ] 首屏工具交互区（含进页自动样例结果）
 - [ ] How it works
 - [ ] Formula / Rules（计算与转换类）
-- [ ] Example（固定文案）
+- [ ] Example（固定文案，与默认样例一致）
 - [ ] Use cases（2–3）
 - [ ] FAQ ≥3
 - [ ] Related tools ≥2

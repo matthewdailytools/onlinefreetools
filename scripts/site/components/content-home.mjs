@@ -98,8 +98,8 @@ export const renderHomeContent = ({ lang }) => {
       <div class="home-hero-inner">
         <h1 class="home-hero-brand" id="home-hero-heading">${t(lang, 'brand')}</h1>
         <div class="home-hero-actions">
-          <a class="btn btn-lg home-hero-btn" href="#all-tools">${t(lang, 'home_cta_browse')}</a>
-          <a class="btn btn-lg home-hero-btn" href="#featured">${t(lang, 'home_cta_featured')}</a>
+          <a class="btn btn-primary btn-lg" href="#all-tools">${t(lang, 'home_cta_browse')}</a>
+          <a class="btn btn-primary btn-lg" href="#featured">${t(lang, 'home_cta_featured')}</a>
         </div>
       </div>
     </section>
@@ -123,7 +123,7 @@ export const renderHomeContent = ({ lang }) => {
     <section id="featured" class="mb-5">
       <div class="home-section-head">
         <h2>${t(lang, 'home_featured')}</h2>
-        <a class="btn btn-outline-primary btn-sm" href="#all-tools">${t(lang, 'home_view_all')}</a>
+        <a class="btn btn-sm btn-primary" href="#all-tools">${t(lang, 'home_view_all')}</a>
       </div>
       <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
         ${featured.map((tool) => renderToolCard(lang, tool, openCta, renderPrimaryCard)).join('')}

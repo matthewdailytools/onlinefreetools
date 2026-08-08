@@ -20,6 +20,9 @@
 - [图片压缩](https://onlinefreetools.org/zh/tools/image-compress) - 本地按最长边、质量与目标体积压缩图片（JPEG/WebP/PNG）
 - [图片优化](https://onlinefreetools.org/zh/tools/image-optimizer) - 本地 MozJPEG / WebP / AVIF / OxiPNG 编码器优化，滑动对照后下载
 - [图片裁剪与改尺寸](https://onlinefreetools.org/zh/tools/image-crop) - 本地框选裁剪、比例与常用像素预设，导出 JPEG/WebP/PNG
+- [图片主色提取](https://onlinefreetools.org/zh/tools/color-from-image) - 本地提取主色板，也可点击预览取区域色，复制 HEX/RGB/HSL
+- [多图拼接](https://onlinefreetools.org/zh/tools/image-merge) - 本地把多张照片合成一张拼图，再下载
+- [图片叠加 Logo](https://onlinefreetools.org/zh/tools/image-overlay) - 本地把 Logo 或 PNG 叠到底图上，再下载
 - [给域名添加 www DNS](https://onlinefreetools.org/zh/tools/add-www-to-dns) - 生成 www 的 A/CNAME 记录，查询现网，并提供 Cloudflare/Vercel/阿里云等操作教程
 - [IndexNow / Bing URL 提交](https://onlinefreetools.org/zh/tools/indexnow) - 生成密钥、检查验证文件、提交变更 URL，并说明 200/202 状态码
 - [BMI 计算器](https://onlinefreetools.org/zh/tools/how-to-calculate-bmi) - 按成人筛查公式计算身体质量指数（教育用途，非诊断）
@@ -43,6 +46,9 @@ Below are our available online tools with their links (English version):
 - [Image Compressor](https://onlinefreetools.org/tools/image-compress) - Resize, set quality or a target file size, and download — runs locally in your browser
 - [Image Optimizer](https://onlinefreetools.org/tools/image-optimizer) - Optimize with MozJPEG, WebP, AVIF, or OxiPNG locally — compare with a slider, then download
 - [Crop & Resize Image](https://onlinefreetools.org/tools/image-crop) - Crop with aspect presets and common output sizes — runs locally in your browser
+- [Extract Colors from Image](https://onlinefreetools.org/tools/color-from-image) - Local palette and click-to-pick colors — copy HEX, RGB, or HSL
+- [Merge Images](https://onlinefreetools.org/tools/image-merge) - Combine photos into one collage locally, then download
+- [Overlay Images](https://onlinefreetools.org/tools/image-overlay) - Put a logo or PNG on a photo locally, then download
 - [Add WWW to DNS](https://onlinefreetools.org/tools/add-www-to-dns) - Generate www A/CNAME records, check live DNS, and follow Cloudflare/Vercel/Route 53 guides
 - [IndexNow — Bing URL Submit](https://onlinefreetools.org/tools/indexnow) - Generate a key, check the verification file, submit changed URLs, and read 200/202 status codes
 - [BMI Calculator](https://onlinefreetools.org/tools/how-to-calculate-bmi) - Adult BMI screening from weight and height (educational, not a diagnosis)

@@ -39,10 +39,11 @@ Purpose: Make AI agents productive immediately in this repo. Keep changes minima
 
 - **页面内容**（可见正文）：
   - How it works、Use cases、Formula/Rules（如适用）、Example、FAQ（≥3）、Related tools（≥2）、References（≥1；YMYL 建议 ≥2）
+  - **进页样例**：须配置并可运行；初始化后自动跑出与主流程一致的真实结果（非空态占位）；与 H2 Example 对齐；例外写 `02`（见 `tool-creation.mdc`）
   - Information Gain：上线前 §3.1 九维至少 3 项；长尾默认一带多场景，慎拆近义 URL
   - 文件/粘贴类：本地处理 FAQ 或声明
 
-- **多语言本地化（稳妥常态）**：先填 `work-tasks/{slug}/03-locale-briefs.md` → 母版一语 → **逐语或每批 ≤3 语**按 brief 独立重写（禁止 `Translate to {lang}`；禁止 en/zh 后脚本灌其余语的同构交付）→ 禁词表 + ≥3 轮抽查；「待母语抽查」须重写/确认后清掉才可 `i18n-done`。Title/H1 须结果或场景向口语，**禁止**「参数A、参数B、参数C」目录腔。`lint:seo` ≠ 本地化完成。细则：`tool-i18n-localization.mdc`。
+- **多语言本地化（稳妥常态）**：先填 `work-tasks/{slug}/03-locale-briefs.md` → 母版一语 → **Title/描述/检索词覆盖优化（母版）** → **逐语或每批 ≤3 语**按 brief 独立重写 → **再优化抽查语覆盖**（禁止 `Translate to {lang}`；禁止 en/zh 后脚本灌其余语的同构交付）→ 禁词表 + ≥3 轮抽查；「待母语抽查」须重写/确认后清掉才可 `i18n-done`。Title/H1 须结果或场景向口语，**禁止**「参数A、参数B、参数C」目录腔；次要意图进 description/FAQ，勿拆近义 URL。`lint:seo` ≠ 本地化完成。细则：`tool-i18n-localization.mdc`。
 
 - **首页、导航与 README**：新工具须在首页与工具导航有入口；并更新根目录 `README.md`「工具清单 / Tools List」（中英各一条，与 `tool-catalog.json` 一致）。
 

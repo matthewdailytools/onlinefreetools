@@ -399,7 +399,8 @@ body.is-tool-page .tool-lead {
   color: var(--accent-hover) !important;
 }
 
-.btn-lg {
+.btn-lg,
+.home-hero-actions .btn {
   padding: 0.75rem 1.45rem;
   font-size: 1.02rem;
 }
@@ -552,21 +553,31 @@ footer.bg-light {
   animation: homeFadeUp 0.75s 0.12s ease both;
 }
 
-/** Hero CTA：深色背景上的同款白底实心按钮（不用 .btn-primary，避免被全站青绿主色覆盖） */
-.home-hero-btn {
+.home-hero-actions .btn-primary {
   background: #ffffff !important;
-  border: 1px solid #ffffff !important;
+  border-color: #ffffff !important;
   color: var(--bg-hero) !important;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
-.home-hero-btn:hover,
-.home-hero-btn:focus,
-.home-hero-btn:focus-visible,
-.home-hero-btn:active {
+.home-hero-actions .btn-primary:hover {
   background: #f0f0f5 !important;
   border-color: #f0f0f5 !important;
   color: var(--bg-hero) !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
+}
+
+/* 首页内容区：白色实心按钮为主（浅底卡片/区块） */
+.home-wrap .home-main .btn-primary {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.1) !important;
+  color: var(--text) !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+}
+.home-wrap .home-main .btn-primary:hover,
+.home-wrap .home-main .btn-primary:focus {
+  background: #f8fafc !important;
+  border-color: rgba(15, 23, 42, 0.16) !important;
+  color: var(--text) !important;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.1);
 }
 
 .home-main {
@@ -612,13 +623,6 @@ footer.bg-light {
   font-size: 0.95rem;
   color: var(--muted);
   line-height: 1.5;
-}
-
-/* 首页工具卡片与区块操作按钮统一尺寸 */
-.home-main .btn-sm {
-  padding: 0.45rem 1.1rem;
-  font-size: 0.875rem;
-  font-weight: 600;
 }
 
 .home-section-head {

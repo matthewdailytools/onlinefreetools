@@ -24,7 +24,8 @@ README.md                               # 「工具清单 / Tools List」中英�
 npm run build:site && npm run lint:seo
 ```
 
-多语言：**按 locale brief 重写**（见 `tool-i18n-localization.mdc`），禁止批量 Translate 直出。
+多语言：**按 locale brief 重写**（见 `tool-i18n-localization.mdc`），禁止批量 Translate 直出。  
+文案顺序：先写出 title / description / brief 检索词 → **再跑「Title / 描述 / 检索词覆盖优化」**（同文件稳妥常态步 2、步 4）→ 再逐语与定稿；勿首稿过 lint 即标完成。
 
 ## 图标 SVG（易踩坑）
 
@@ -56,10 +57,10 @@ npm run build:site && npm run lint:seo
 
 ```
 H1 + 一句话摘要
-【工具交互区】← 首屏
+【工具交互区】← 首屏（进页须自动跑样例并显示真实结果，见下节）
 H2 How it works
 H2 Formula / Rules / Algorithm（计算与转换类）
-H2 Example（固定 Input→Output；动态结果也须在此有稳定文案）
+H2 Example（固定 Input→Output；须与默认样例行为一致）
 H2 Use cases（2–3 条场景；长尾意图优先写此，慎拆 URL）
 H2 FAQ（≥3）
 H2 Related tools（catalog related ≥2）
@@ -73,13 +74,27 @@ Disclaimer（YMYL 必备）
 
 **Tier 2 / WASM**：首屏不拉大块 WASM；点击后懒加载（CWV）。
 
+## 进页样例须实际跑出结果（硬性）
+
+交互工具页除静态 H2 Example 文案外，**必须配置并可运行的样例**，且首屏进入后看到**真实处理结果**（对齐 `image-compress` / `image-crop`）：
+
+1. **有 Load sample（或等价）按钮**：用合成/内置样例数据填充输入，并触发与主按钮相同的处理流水线。
+2. **进页自动跑一遍**：脚本初始化结束后调用与 Load sample 相同的路径（`loadSample()` → 解码/计算 → 更新预览/结果区）；勿只塞占位文案或空态。
+3. **结果区可见**：预览、数值、色板、转换输出等与用户手动操作后一致；失败时有明确错误，不得静默空结果。
+4. **与 Example 文案一致**：可索引 Example 描述的 Input→Output 须与默认样例行为对得上（尺寸/色数/布局等默认值写进 `02-tool-info` 交互规格）。
+5. **例外（须在 `02` 写明理由）**：依赖用户密钥/实时外网且无法安全造样例、或会误触发付费/破坏性 API 的工具——仍须提供「安全演示」路径（只读 mock / 不提交），并说明为何不自动执行写操作。
+
+参考实现：`src/pages/imageCompressPage.ts`、`src/pages/imageCropPage.ts`（初始化末尾 `loadSample()`）。
+
 ## 上线前 Checklist（PR 合并前）
 
 - [ ] `tool-catalog.json` 注册完成；`related` ≥ 2
 - [ ] `public/icons/tools/{slug}.svg` 可在浏览器打开（无 xmlParseComment）；注释 ASCII
 - [ ] 10 语言 title / description / article / example 齐全
 - [ ] 十语已按 `tool-i18n-localization.mdc` **稳妥常态**做检索向独立重写（非脚本同构灌语），并完成 ≥3 轮核查；「待母语抽查」已清
+- [ ] **Title / 描述 / 检索词覆盖优化已做**（生成之后；母版 + 抽查语；见 `tool-i18n-localization.mdc`）；无参数枚举 H1；次要意图有落点
 - [ ] `README.md` 工具清单已更新（中英各一条，与 catalog 一致）
+- [ ] **进页自动跑样例并显示真实结果**（Load sample 与自动路径一致；见上节）；例外已在 `02` 注明
 - [ ] `npm run lint:seo` 通过
 - [ ] IG ≥ 3 项（§3.1），PR 写明对应章节
 - [ ] 长尾：写入 Use cases/FAQ，或满足拆页条件并附理由

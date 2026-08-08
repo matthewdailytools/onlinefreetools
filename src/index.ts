@@ -32,6 +32,9 @@ import { renderImageExifPage } from "./pages/imageExifPage";
 import { renderImageCompressPage } from "./pages/imageCompressPage";
 import { renderImageOptimizerPage } from "./pages/imageOptimizerPage";
 import { renderImageCropPage } from "./pages/imageCropPage";
+import { renderColorFromImagePage } from "./pages/colorFromImagePage";
+import { renderImageMergePage } from "./pages/imageMergePage";
+import { renderImageOverlayPage } from "./pages/imageOverlayPage";
 import { renderHtmlEntityPage } from "./pages/htmlEntityPage";
 import { renderAddWwwToDnsPage } from "./pages/addWwwToDnsPage";
 import { renderIndexNowPage } from "./pages/indexNowPage";
@@ -358,6 +361,21 @@ registerToolPage(app as any, 'image-optimizer', (lang, defaultLang, enabled) =>
 // Register image-crop page via registrar（图片裁剪与改尺寸）
 registerToolPage(app as any, 'image-crop', (lang, defaultLang, enabled) =>
 	renderImageCropPage({ lang, defaultLang, enabledLangs: enabled })
+);
+
+// Register color-from-image page via registrar（图片主色提取）
+registerToolPage(app as any, 'color-from-image', (lang, defaultLang, enabled) =>
+	renderColorFromImagePage({ lang, defaultLang, enabledLangs: enabled })
+);
+
+// Register image-merge page via registrar（多图拼接）
+registerToolPage(app as any, 'image-merge', (lang, defaultLang, enabled) =>
+	renderImageMergePage({ lang, defaultLang, enabledLangs: enabled })
+);
+
+// Register image-overlay page via registrar（图层叠加）
+registerToolPage(app as any, 'image-overlay', (lang, defaultLang, enabled) =>
+	renderImageOverlayPage({ lang, defaultLang, enabledLangs: enabled })
 );
 
 // Register html-entity page via registrar（HTML 实体编解码）
