@@ -529,7 +529,7 @@ footer.bg-light {
   font-weight: 750;
   letter-spacing: -0.045em;
   line-height: 1.02;
-  margin: 0 0 1.1rem;
+  margin: 0 0 1.75rem;
   color: #ffffff;
   max-width: 14ch;
   text-wrap: balance;
@@ -550,28 +550,20 @@ footer.bg-light {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  animation: homeFadeUp 0.75s 0.24s ease both;
+  animation: homeFadeUp 0.75s 0.12s ease both;
 }
 
-.home-hero-actions .btn-primary {
+.home-hero-actions .btn {
   background: #ffffff !important;
   border-color: #ffffff !important;
   color: var(--bg-hero) !important;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
-.home-hero-actions .btn-primary:hover {
+.home-hero-actions .btn:hover,
+.home-hero-actions .btn:focus {
   background: #f0f0f5 !important;
+  border-color: #f0f0f5 !important;
   color: var(--bg-hero) !important;
-}
-
-.home-hero-actions .btn-outline-primary {
-  color: #ffffff !important;
-  border-color: rgba(255, 255, 255, 0.35) !important;
-  background: rgba(255, 255, 255, 0.06) !important;
-}
-.home-hero-actions .btn-outline-primary:hover {
-  background: rgba(255, 255, 255, 0.14) !important;
-  color: #ffffff !important;
 }
 
 .home-main {
@@ -617,6 +609,13 @@ footer.bg-light {
   font-size: 0.95rem;
   color: var(--muted);
   line-height: 1.5;
+}
+
+/* 首页工具卡片与区块操作按钮统一尺寸 */
+.home-main .btn-sm {
+  padding: 0.45rem 1.1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
 }
 
 .home-section-head {

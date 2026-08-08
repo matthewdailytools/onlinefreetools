@@ -49,7 +49,7 @@ const renderSecondaryCard = ({ title, desc, href, cta, logo }) => `
           <h3 class="card-title h6 mb-0">${title}</h3>
         </div>
         <p class="card-text small flex-grow-1">${desc}</p>
-        <a href="${href}" class="mt-auto btn btn-outline-primary btn-sm">${cta}</a>
+        <a href="${href}" class="mt-auto btn btn-primary btn-sm">${cta}</a>
       </div>
     </div>
   </div>`;
@@ -97,10 +97,9 @@ export const renderHomeContent = ({ lang }) => {
     <section class="home-hero" aria-labelledby="home-hero-heading">
       <div class="home-hero-inner">
         <h1 class="home-hero-brand" id="home-hero-heading">${t(lang, 'brand')}</h1>
-        <p class="home-hero-lead">${t(lang, 'home_hero_lead')}</p>
         <div class="home-hero-actions">
           <a class="btn btn-primary btn-lg" href="#all-tools">${t(lang, 'home_cta_browse')}</a>
-          <a class="btn btn-outline-primary btn-lg" href="#featured">${t(lang, 'home_cta_featured')}</a>
+          <a class="btn btn-primary btn-lg" href="#featured">${t(lang, 'home_cta_featured')}</a>
         </div>
       </div>
     </section>
@@ -124,7 +123,7 @@ export const renderHomeContent = ({ lang }) => {
     <section id="featured" class="mb-5">
       <div class="home-section-head">
         <h2>${t(lang, 'home_featured')}</h2>
-        <a class="btn btn-sm btn-outline-secondary" href="#all-tools">${t(lang, 'home_view_all')}</a>
+        <a class="btn btn-outline-primary btn-sm" href="#all-tools">${t(lang, 'home_view_all')}</a>
       </div>
       <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
         ${featured.map((tool) => renderToolCard(lang, tool, openCta, renderPrimaryCard)).join('')}
