@@ -1,7 +1,7 @@
 # 工具方向 — 三个并列开发方向
 
-**日期**: 2026-07-28（修订：三方向并列；补充「单输入→多规格交付」针对性工具挖掘；**2026-08-07** 补充 [Merge Images](https://mergeimages.co/) 竞品图片能力对照与 N→1 合成场景；**同日** 增补专题「设计师工具」候选 slug / 优先级 / 竞品对照）  
-**标签**: `产品规划`, `工具方向`, `浏览器JS`, `场景桥接`, `行业工具`, `多规格交付`, `设计师工具`  
+**日期**: 2026-07-28（修订：三方向并列；…；**2026-08-08** ezyZip / ToolDone；**同日** 补充 [iLovePDF](https://www.ilovepdf.com/) PDF 工具对照 A.5.2）  
+**标签**: `产品规划`, `工具方向`, `浏览器JS`, `场景桥接`, `行业工具`, `多规格交付`, `设计师工具`, `压缩包`  
 **目标站点**: https://onlinefreetools.org
 
 **关联文档**:
@@ -11,6 +11,9 @@
 - [每工具开发与 SEO 方案](./2026-07-28-per-tool-dev-seo-plans.md)
 - [工具页面 SEO 规则](./SEO_TOOL_RULES.md)
 - 工具目录源：`src/site/tool-catalog.json`
+- [工具清单总表](./2026-08-08-tool-inventory-table.md) — 名称 / 场景·渠道 / slug / 功能 / 分类 / 角色 / 输入 / 输出（自本文提炼）
+- [ToolDone 计算器快照](./competitor-refs/tooldone-2026-08-08/README.md) — 全量 en/zh 链接归档 + 公式对照精选（2026-08-08）
+- [iLovePDF 工具快照](./competitor-refs/ilovepdf-2026-08-08/README.md) — PDF 全家桶 URL + 本站可做/不做决策（2026-08-08）
 
 > **本文职责**：分别定义三条**独立**的工具开发方向（做什么、技术怎么落地、成熟度、候选清单）。  
 > **不是**要求每个工具同时满足「JS × 场景 × 行业」三维交叉；一个工具归入**其中一个**主方向即可立项。
@@ -198,17 +201,168 @@
 
 ---
 
-### A.5 PDF 与压缩包 — ✅✅✅ / ✅✅
+### A.5 PDF 与压缩包 — ✅✅✅ / ✅✅（分层）
 
-| 功能 | 实现方式 | 备注 |
+> PDF 与 **ZIP 核心路径** 非常成熟；**多格式归档（RAR/7Z/ISO…）** 浏览器端可读但引擎重，须 Tier 2 懒加载。  
+> 归档竞品：**A.5.1** [ezyZip](https://www.ezyzip.com/zh-hans.html)。PDF 竞品：**A.5.2** [iLovePDF](https://www.ilovepdf.com/)（快照 [competitor-refs/ilovepdf-2026-08-08](./competitor-refs/ilovepdf-2026-08-08/README.md)）。
+
+#### A.5.0 能力与成熟度
+
+| 功能 | 成熟度 | 实现方式 | 备注 |
+|---|---|---|---|
+| PDF 合并 / 拆分 / 删页 / 重排 | ✅✅✅ | `pdf-lib` | 纯 JS；可单页「整理」多模式 |
+| PDF 旋转 / 页码 / 文字·图片水印 | ✅✅✅ | `pdf-lib` | Tier 1 |
+| PDF 裁切页边距 | ✅✅ | `pdf-lib` 裁 box / 内容重绘 | 声明非像素级编辑器 |
+| PDF ↔ 图片（页渲染 / 图嵌 PDF） | ✅✅✅ | `pdfjs-dist` + Canvas / `pdf-lib` | 多图→PDF **已有** `images-to-pdf` |
+| PDF 抽文本 / → Markdown | ✅✅ | `pdfjs-dist` 文本层 | 扫描件无文本层则失败须说明 |
+| PDF 压缩（有限） | ✅✅ | 降采样嵌入图 + 重写 | **须声明**非云端重编码级；Tier 1/2 |
+| PDF 密码保护 / 用户密码解锁 | ✅✅ | `pdf-lib` 加密 API | 解锁=用户提供密码；**非破解** |
+| PDF 预览 | ✅✅✅ | `pdfjs-dist` | 首屏勿全量预加载 worker |
+| PDF 比对（可视化） | ⚠️✅ | 双页 Canvas 叠加/翻页 | P2；非法律级 diff |
+| PDF 涂黑（红action） | ⚠️✅ | 不透明矩形覆盖 + 扁平化 | 须警告「真删除需专业流程」 |
+| OCR 扫描 PDF | ⚠️✅ | `tesseract.js` Tier 2 | 与 A.11 同；默认 P2 POC |
+| PDF ↔ Word/PPT/Excel 高保真 | ⚠️ | 无稳定纯浏览器方案 | **默认不做**（易虚假承诺） |
+| 电子签 / AI 摘要·翻译 | — | 重后端或黑盒 AI | **不做** |
+| 修复损坏 PDF | ⚠️ | 启发式 | **默认不做** |
+| **创建 ZIP**（多文件/文件夹结构） | ✅✅✅ | `fflate`（首选）/ `jszip` | Tier 1；压缩级别可暴露；目录树用 `webkitRelativePath` / File System Access |
+| **解压 ZIP**（列表 / 单文件 / 全部） | ✅✅✅ | `fflate` / `jszip` | Tier 1；支持预览常见 MIME（图/文本） |
+| Gzip / Deflate 文本或单文件 | ✅✅✅ | `fflate` / `CompressionStream` | Tier 0/1 |
+| **TAR / TAR.GZ** 打包与解包 | ✅✅ | `fflate` + 轻量 tar 编解码，或 `libarchive-wasm` 只读 | Unix/源码包场景；可与 ZIP 同页「输出格式」Tab |
+| **解压 7Z / RAR / ISO 等** | ✅✅ | `libarchive-wasm` / `libarchive.js` / 同类 WASM | **Tier 2**；只读为主；RAR 创建一般不可用（专有） |
+| **创建 7Z** | ⚠️✅ | 专用 WASM 编码器（生态弱于解压） | 默认 **不做独立卖点**；压缩比优势不足以抵体积与维护成本 |
+| ZIP 密码（AES / ZipCrypto） | ✅✅ | 视库支持（如 `fflate` 扩展或专用 AES ZIP 包） | 须写清算法与兼容性；非「破解」工具 |
+| 分卷 ZIP / 多卷合并 | ⚠️ | 自研分片协议 + 标准分卷语义 | 边缘场景；易与竞品薄页撞车，**默认 P2 / 不做** |
+| 「修复」损坏 ZIP | ⚠️ | 启发式重写中央目录 | 成功率不可保证；**默认不做**（易虚假承诺） |
+| 归档格式互转（RAR→ZIP 等） | ✅✅ | **解压 → 再打 ZIP**（同一引擎） | 产品上应是**一种能力的模式**，不是每对格式一页 |
+
+**瓶颈**：
+
+- >100MB PDF / 超大 ZIP：须 Web Worker +（可选）File System Access 流式写出；移动 Safari 内存 POC。  
+- 多格式 WASM（libarchive 类）体积常 **数百 KB～数 MB**，必须「加载引擎」后再拉。  
+- 路径穿越（`../`）、符号链接、超大单文件：解压须安全校验与上限提示。
+
+**可落地工具（方向 A，优先）**：
+
+| 建议 slug | 能力摘要 | Tier | 优先级 | 检索语序依据（en 主意图） |
+|---|---|---|---|---|
+| `create-zip-file` | 多文件/文件夹 → ZIP；可选压缩级 | 1 | **P0** | *create zip file* / *zip file online*（动词在前；**不用**工程向 `zip-create`） |
+| `unzip-file` | ZIP → 列表 / 预览 / 单文件或全部下载 | 1 | **P0** | *unzip file* / *unzip online* / *extract zip*（口语 *unzip* 优先于 `zip-extract`） |
+| `gzip-file`（或并入文本工具） | 文本/单文件 Gzip | 0/1 | P1 | *gzip file* / *compress gzip* |
+| `extract-archive` | ZIP + TAR(.GZ) +（懒加载）7Z/RAR 等只读解压 | 1→2 | P1（在 ZIP 页稳定后） | *extract archive*；格式差异写进页内表，不拆 `unzip-rar` 等 |
+| `convert-archive-to-zip` | 任意已支持归档 → 标准 ZIP（内部＝解压+打包） | 1→2 | P2（可作 `extract-archive` 导出模式） | *convert rar to zip* 等长尾用 Use cases 覆盖，不按源格式拆页 |
+| `merge-pdf` | 多 PDF → 一个（可调序） | 1 | **P0** | *merge pdf* / *combine pdf* |
+| `split-pdf` | 按页/范围拆成多文件或 ZIP | 1 | **P0** | *split pdf* |
+| `organize-pdf` | 删页 / 重排 / 抽页（可与 merge/split 互链或首发合并） | 1 | P1 | *organize pdf* / *remove pdf pages* |
+| `compress-pdf` | 有限压缩 + 体积前后对比 | 1→2 | P1 | *compress pdf*；声明局限 |
+| `rotate-pdf` | 90° 旋转页 | 1 | P1 | *rotate pdf* |
+| `pdf-watermark` | 文字/图片水印 | 1 | P1 | *pdf watermark*；与图片水印 `add-watermark` 互链 |
+| `pdf-page-numbers` | 添加页码 | 1 | P1 | *add page numbers to pdf* |
+| `pdf-to-jpg` / `jpg-to-pdf` | 页→图；图→PDF（后者对齐已有 `images-to-pdf`） | 1 | P1 | *pdf to jpg* / *jpg to pdf*；**忌**再拆 png/webp 薄页 |
+| `pdf-to-markdown` | 文本层 → MD | 1 | P1 | *pdf to markdown* |
+| `protect-pdf` / `unlock-pdf` | 设密 / 用户密码解密 | 1 | P2 | *protect pdf* / *unlock pdf*；解锁须有密码，非破解 |
+| `crop-pdf` | 裁切页边距 | 1 | P2 | *crop pdf* |
+| `pdf-page-to-image-sizes` | 单页 → 多平台尺寸（B.3） | 1 | P2 | 见 B.3 |
+
+**Slug 命名原则（归档簇 / PDF 簇）**：优先 **用户检索语序**（动词/任务词在前，如 create / unzip / merge pdf），避免 `名词-动词` 的 API 风格（`zip-create`、`pdf-merge` 可接受因检索亦常见 *merge pdf* → 统一用 **`merge-pdf`**）。多语言检索词落在 title/H1/FAQ，**不**为每种 Office 后缀再开 slug。
+
+**架构建议**：
+
+```
+打开工具页（Tier 0 UI）
+  ├─ ZIP 路径：首次交互动态 import fflate（Tier 1）
+  ├─ 非 ZIP 归档：按钮「加载多格式引擎」→ libarchive-wasm（Tier 2）
+  └─ Web Worker 解压/打包 → Blob 下载或 File System Access 直写
+```
+
+**结论**：ZIP 创建/解压应尽快立项（与本站 1→N「下载 ZIP」叙事一致）；**禁止**用「每格式一 URL」追赶 ezyZip 的页面数量。
+
+#### A.5.1 竞品对照 — [ezyZip](https://www.ezyzip.com/zh-hans.html)（2026-08 快照）
+
+> 中文入口：[zh-hans.html](https://www.ezyzip.com/zh-hans.html)。核心卖点：**浏览器本地 WASM**、无需上传、无注册、强调大文件与隐私；变现靠广告 + [ezyZip Pro](https://ezyzip.pro/) 桌面端。  
+> 与本站红线的关键冲突点：**按格式/转换方向拆出大量近义 URL**（解压 ZIP / RAR / 7Z / JAR / APK…；RAR→ZIP、7Z→ZIP…；ZIP→PDF / MP3 / PNG…），属于规模化内容风险面——本站**只借鉴能力与 UX，不复制铺量结构**。
+
+##### 功能地图（压缩 / 解压相关）
+
+| ezyZip 品类 | 代表 URL / 能力 | 用户真实任务 | 本站建议 |
+|---|---|---|---|
+| **创建 ZIP** | [/cn.html](https://www.ezyzip.com/cn.html)：多文件、压缩级、文件夹、拖放 | 打包发送 / 备份 | ✅ `create-zip-file`（P0） |
+| **创建 7Z / TAR / TAR.GZ** | 独立页：create-7z、create-tar、create-tar-gz | Unix 归档或更高压缩比 | ⚠️ TAR(.GZ) 可作 ZIP 页输出格式；**独立 7Z 创建默认不做** |
+| **压缩文件夹** | [/cn-f.html](https://www.ezyzip.com/cn-f.html) | 整夹打包 | ✅ 并入 `create-zip-file`（文件夹选择器），**不拆第二 slug** |
+| **分卷 ZIP** | split-zip | 邮件/网盘分片上传 | ❌ 默认不做（边缘 + 易薄页） |
+| **解压 ZIP** | [/cn-unzip.html](https://www.ezyzip.com/cn-unzip.html)：列表、搜索、预览、密码、全部保存到文件夹、Dropbox | Chromebook / 无本机解压软件 | ✅ `unzip-file`（P0）；File System Access「全部保存」作增强 |
+| **解压 RAR / 7Z / ZIPX / ISO / TAR…** | 每格式一页（rar、7z、iso、tar、jar、apk…） | 收到非 ZIP 包 | ✅ **单页** `extract-archive` + 格式说明表；❌ 不按扩展名拆页 |
+| **归档 → ZIP** | RAR/7Z/TAR/JAR/APK→ZIP 各一页 | 「别人发了 RAR，我只要 ZIP」 | ✅ 导出模式；❌ 不按「源格式→ZIP」拆 URL |
+| **ZIP → PDF/MP4/MP3/PNG/TTF…** | zip-pdf、zip-mp4、zip-mp3… | 多数是「从包里取出该类型文件」或误导性「转换」 | ❌ **不做**独立工具（doorway / 意图不清）；预览+按类型筛选即可 |
+| **修复 ZIP** | repair-zip | 损坏包抢救 | ❌ 默认不做（成功率声明难） |
+| **密码 ZIP / 恢复密码** | 创建加密 ZIP；「密码恢复」 | 加密分享 vs 破解 | ✅ 可选「创建加密 ZIP」；❌ **不做密码破解/恢复** |
+| **图像/音视频压缩与转换** | compress-images、媒体转换器 | 媒体体积 | 归 A.2 / A.3 / A.4，**不挂在归档工具簇** |
+| **P2P 传文件** | share-files | 点对点传输 | ❌ 偏离工具站定位 |
+
+##### UX / 技术可借鉴（对齐本站隐私默认）
+
+| 点 | ezyZip 做法 | 本站落地建议 |
 |---|---|---|
-| PDF 合并/拆分/旋转/水印 | `pdf-lib` | 纯 JS，浏览器/Worker |
-| PDF 预览/抽文本 | `pdfjs-dist` | Mozilla |
-| ZIP / gzip | `fflate` / `jszip` | `fflate` 极快零依赖 |
+| 本地处理叙事 | 反复强调「不上传、可断网仍能完成」 | 页首 + FAQ 写清；与 TinyWow 上传型竞品差异化 |
+| 流式 / 大文件 | File System Access、`FileSystemWritableFileStream`、Worker、宣称 Memory64 WASM | ZIP 路径先做好 Worker；大文件直写作 Chrome/Edge 增强，Safari 降级 Blob |
+| 包内浏览 | 文件夹树 / 平铺列表、搜索文件名、单文件预览 | `unzip-file` MVP 必含：目录列表 + 可选预览 |
+| 教育内容 | How-to、密码包、子文件夹提取、OS/浏览器支持 | 本站用 Information Gain：ZIP vs 7Z vs RAR 差异表、路径安全、压缩级 vs 速度 |
+| 扩展生态 | 浏览器扩展「从链接解压」、Dropbox | **首期不做**；降低权限与合规面 |
 
-**瓶颈**：>100MB PDF 需 POC；首屏勿预加载 pdf.js worker 全量。
+##### 必须避免（对照本站红线 / Google spam）
 
-**可落地工具**：PDF 合并拆分、PDF↔图片、ZIP 解压、Gzip 文本压缩。
+1. **按扩展名 / 转换对拆薄页**（`unzip-rar`、`unzip-7z`、`rar-to-zip`、`zip-to-mp3`…）— 违反「空壳变体 / doorway」共用红线。  
+2. **宣称「250+ 格式」却无规则可讲** — 对本站 SEO 是负担不是资产；格式支持用**一页内表格**说明即可。  
+3. **ZIP→「任意文件类型」转换矩阵** — 多为取出/误标转换；无增量。  
+4. **密码恢复 / 修复** 类易触 YMYL 或虚假功效的承诺。  
+5. 用广告墙 + Pro 桌面端作为主商业模式时，仍可保持免费核心路径诚实——本站继续免费本地、无强制注册。
+
+##### ezyZip vs 本站归档规划（速查）
+
+| 维度 | ezyZip | 本站（本文） |
+|---|---|---|
+| 处理位置 | 浏览器 WASM 本地（强叙事） | **对齐**（隐私默认） |
+| ZIP 创建 / 解压 | 深（含文件夹、密码、大文件） | **P0 核心**（`create-zip-file` / `unzip-file`） |
+| 多格式解压 | 250+、每格式多 URL | **单页多格式** + Tier 2 引擎；格式表教育 |
+| 归档互转 | 大量 X→ZIP / ZIP→Y 页 | **模式而非页面矩阵** |
+| 媒体压缩 | 挂在同一品牌下 | **归图片/音视频品类**，不混归档 IA |
+| SEO 结构 | 长尾 URL 海量 | **一带多场景**；禁 doorway |
+| 变现 | 广告 + Pro 桌面 | 免费工具 + 多语言教育式 IG |
+
+**相对竞品策略一句话**：ezyZip 赢在「格式覆盖 × URL 矩阵 × 本地大文件工程」；本站赢在「ZIP 核心闭环讲清楚 + 10 语检索向内容 + 与 1→N 素材 ZIP 交付互链」，**不拼格式数量**。
+
+#### A.5.2 竞品对照 — [iLovePDF](https://www.ilovepdf.com/)（2026-08 快照）
+
+> 入口：[ilovepdf.com](https://www.ilovepdf.com/) · [zh-cn](https://www.ilovepdf.com/zh-cn)。产品形态：上传型在线 PDF 全家桶 + Desktop/Mobile/Premium/Workflows；姊妹站 [iLoveIMG](https://www.iloveimg.com/)。  
+> 全量 URL 表：[competitor-refs/ilovepdf-2026-08-08](./competitor-refs/ilovepdf-2026-08-08/README.md)。
+
+##### 功能地图 → 本站决策
+
+| iLovePDF 工具 | 用户任务 | 本站建议 | 建议 slug / 备注 |
+|---|---|---|---|
+| [Merge](https://www.ilovepdf.com/merge_pdf) / [Split](https://www.ilovepdf.com/split_pdf) | 合并、按页拆分 | ✅ P0 | `merge-pdf` / `split-pdf` |
+| [Organize](https://www.ilovepdf.com/organize-pdf) / [Remove pages](https://www.ilovepdf.com/remove-pages) | 重排、删页 | ✅ P1 | `organize-pdf`（可含删/抽页） |
+| [Compress](https://www.ilovepdf.com/compress_pdf) | 减小体积 | ✅ P1（声明有限） | `compress-pdf` |
+| [PDF↔JPG](https://www.ilovepdf.com/pdf_to_jpg) / [JPG→PDF](https://www.ilovepdf.com/jpg_to_pdf) | 页出图、图入 PDF | ✅；图→PDF **已有** | `pdf-to-jpg`；`images-to-pdf` / `jpg-to-pdf` 勿双薄页 |
+| [Rotate](https://www.ilovepdf.com/rotate_pdf) / [Watermark](https://www.ilovepdf.com/pdf_add_watermark) / [Page numbers](https://www.ilovepdf.com/add_pdf_page_number) / [Crop](https://www.ilovepdf.com/crop-pdf) | 轻编辑 | ✅ | `rotate-pdf` / `pdf-watermark` / `pdf-page-numbers` / `crop-pdf` |
+| [Protect](https://www.ilovepdf.com/protect-pdf) / [Unlock](https://www.ilovepdf.com/unlock_pdf) | 加密 / 解密 | ✅ P2；解锁须用户密码 | `protect-pdf` / `unlock-pdf` |
+| [PDF to Markdown](https://www.ilovepdf.com/pdf-to-markdown) | 给笔记/LLM | ✅ P1 | `pdf-to-markdown` |
+| [Compare](https://www.ilovepdf.com/compare-pdf) / [Redact](https://www.ilovepdf.com/redact-pdf) | 对照、涂黑 | ⚠️ P2 | 须声明局限 |
+| [OCR](https://www.ilovepdf.com/ocr-pdf) | 扫描件可检索 | ⚠️ Tier 2 POC | 挂 A.11；勿承诺云端级 |
+| Word/PPT/Excel ↔ PDF | 办公互转 | ❌ 默认不做 | 高保真依赖服务端；已有 `images-to-word`/`ppt` 是**图片嵌入**，勿标「PDF 转换」 |
+| [Edit](https://www.ilovepdf.com/edit-pdf) / Forms / Sign | 富编辑、表单、电子签 | ❌ / 远期 | 超出单任务工具定位 |
+| [AI Summarizer](https://www.ilovepdf.com/pdf-summarize) / [Translate](https://www.ilovepdf.com/translate-pdf) | AI | ❌ | 无本地可验证规则 / 易 spam |
+| [Repair](https://www.ilovepdf.com/repair-pdf) / [PDF/A](https://www.ilovepdf.com/convert-pdf-to-pdfa) / [HTML→PDF](https://www.ilovepdf.com/html-to-pdf) / Scan | 修复、归档标准、网页转 PDF、手机扫描 | ❌ 或边缘 | 修复不可保证；PDF/A/HTML/Scan 默认不做 |
+| Workflows / Premium | 自动化订阅 | ❌ | 偏离 |
+
+##### 可借鉴 vs 必须避免
+
+| 可借鉴 | 必须避免 |
+|---|---|
+| 任务闭环文案（Merge/Split/Compress 三件套心智）；页内前后体积对比（压缩） | 上传墙作为唯一路径；Office 全矩阵薄页；AI 工具灌流量 |
+| 工具互链（Organize ↔ Merge） | 「修复 / 电子签 / 云 OCR」虚假或不可验证承诺 |
+| 多语言覆盖 | 为每种扩展名再拆 slug |
+
+**相对竞品策略一句话**：iLovePDF 赢在「上传型全家桶 + 品牌心智」；本站赢在「**本地隐私** + 可讲清的 pdf-lib 规则 + 与已有图片→PDF/Word 工具互链」，只做 P0–P1 真能力，不拼工具个数。
 
 ---
 
@@ -240,6 +394,8 @@
 **可落地工具**：复利、贷款 EMI、BMR/TDEE、标准差、单位换算（方向 A 可做通用换算；方向 C 再做行业专页）。
 
 **说明**：方向 A 允许「技术上成熟的通用计算器」；若要做**行业话术与标准引用**，改归方向 C，不要求同一工具两边都挂名。
+
+**公式对照**：实现/复核时可打开 [ToolDone](https://tooldone.com/zh/) 对应 en 页（链接归档于 [competitor-refs/tooldone-2026-08-08](./competitor-refs/tooldone-2026-08-08/README.md)）。**禁止**复制其 ~2800 页铺量结构；单位换算坚持单页多类别，不按单位对拆 URL。
 
 ---
 
@@ -311,7 +467,9 @@
 |---|---|---|
 | 文本/YAML/CSV/JSON | ✅✅✅ | **优先** |
 | 图片 | ✅✅✅ | 优先 |
-| PDF / ZIP | ✅✅✅ | 优先～次优先 |
+| PDF（合并/拆分/旋转/水印等） | ✅✅✅ | **优先**（见 A.5 / A.5.2 iLovePDF） |
+| **ZIP 创建·解压** | ✅✅✅ | **优先**（见 A.5 / A.5.1） |
+| 多格式归档（RAR/7Z 只读等） | ✅✅ | 次优先；Tier 2；单页勿铺量 |
 | 编码/哈希/JWT | ✅✅✅ | 优先 |
 | 日期 / 颜色 / QR | ✅✅✅ | 次优先 |
 | 开发者 Schema/正则 | ✅✅✅ | 优先 |
@@ -527,6 +685,32 @@
 **建议 slug**：`image-merge`（主入口）；平台预设内置；`image-overlay`、`images-to-pdf` 可 Related 互链。  
 **边界**：不做 AI「智能合成」；PNG→SVG 非本场景默认范围。
 
+#### 场景 B14：压缩包打包 / 解压与格式桥 — **归档工作流**（对照 [ezyZip](https://www.ezyzip.com/zh-hans.html)）
+
+| 项 | 内容 |
+|---|---|
+| **岗位** | 任意需要发附件的知识工作者、学生、Chromebook/平板用户、前端/运维收源码包、运营收素材 ZIP |
+| **触发点** | 「把几份文件打成一个包发出去」；「别人发了 ZIP/RAR，本机没软件或不想安装」；「只要包里某一张图/某一个 PDF」 |
+| **痛点** | 上传型在线站有隐私与体积限制；桌面 WinRAR/7-Zip 需安装；竞品用海量格式页稀释信任 |
+| **替代方案** | 系统自带解压、7-Zip、ezyZip/同类浏览器工具、网盘在线预览 |
+| **与 A.5 / 1→N 关系** | **技术零件在 A.5**；B14 描述**用户旅程**。方向 B 的 1→N 工具「下载 ZIP」是**产出侧**；B14 是**通用打包/打开侧**，Related 互链即可，勿做成「Amazon 图包解压器」换皮 |
+
+**工具设想**（首发合并，禁格式薄页）：
+
+| 输入 | 输出 | 规则 / 页内必写 |
+|---|---|---|
+| 多文件或文件夹 | `.zip`（可选压缩级） | 目录是否保留、空文件夹策略、建议体积上限提示 |
+| `.zip` | 文件树 + 单文件下载 / 全部下载（可选再打 ZIP） | 路径穿越防护说明；密码包算法与失败提示 |
+| `.zip` / `.tar.gz` /（引擎加载后）`.7z` / `.rar` | 同上列表与导出 | **一张支持格式表** + 更新说明；非「每格式一页」 |
+| 非 ZIP 归档 | 「导出为 ZIP」 | 说明＝解压后重打包；固体压缩/加密限制写清 |
+
+**Use cases（页内必写）**：邮件附件打包、从素材包抽单图、打开同学发来的作业 ZIP、查看 `node_modules` 外的源码 tar.gz 结构（教育向）、Chromebook 临时解压。
+
+**技术**：`fflate` ✅✅✅；多格式 `libarchive-wasm` Tier 2；大文件 Worker +（可选）File System Access。详表见 A.5 / A.5.1。
+
+**建议 slug**：`create-zip-file`、`unzip-file`（可同目录互链）；进阶合并为 `extract-archive`（含导出 ZIP）。  
+**边界**：不做 ZIP→MP3/PDF 等「伪转换」矩阵；不做密码破解/修复；不做 P2P；不做 250+ 格式覆盖竞赛。
+
 ### B.3 「单输入 → 多规格交付」挖掘清单
 
 > **原则**：不做「通用图片压缩器换皮」。每一页绑定**具名平台 + 可见规格表 + 官方引用 + ZIP 目录说明**。
@@ -634,15 +818,19 @@ H1 具名渠道 + 动作（如 Amazon Product Image Resizer）
 | `add-watermark` | B13 / A.2 | 1→1 | Tier 0 | P1 |
 | `image-overlay` | B13 | N→1 | Tier 0/1 | P2 |
 | `flip-image` | A.2 | 1→1 | Tier 0 | P2 |
+| `create-zip-file` | B14 / A.5 | N→1（多文件→一包） | Tier 1 | **P0** |
+| `unzip-file` | B14 / A.5 | 1→N（一包→多文件） | Tier 1 | **P0** |
+| `extract-archive` | B14 / A.5 | 1→N + 可选再打包 ZIP | Tier 1→2 | P1 |
 | 其余 B.3 表 P2 项 | B8–B12 等 | 1→N | 见上 | P2 |
 
 ### B.6 方向 B 独立验收
 
-1. 能指出归属的 **主场景编号**（B1–B13）或 B.3 渠道行。  
+1. 能指出归属的 **主场景编号**（B1–B14）或 B.3 渠道行。  
 2. 页面有 **字段映射或规格对照表**（不只输入框）。  
 3. 文件/粘贴类有 **本地处理** 说明。  
 4. **1→N** 必须有：权威 References、规格更新日期、ZIP 或清晰多文件下载、Example 清单。  
-5. Related tools 优先同场景上下游（可选）。
+5. Related tools 优先同场景上下游（可选）。  
+6. **B14 归档类**：须有支持格式表 + 路径安全说明；**禁止**按扩展名/「ZIP→某后缀」拆近义 URL（见 A.5.1）。
 
 **不要求**同时满足方向 C 的行业三要素。
 
@@ -742,14 +930,16 @@ H1 具名渠道 + 动作（如 Amazon Product Image Resizer）
 |---|---|
 | **岗位** | 运营、财务助理（教育向，非持牌顾问） |
 | **痛点** | 指标口算易错；缺假设透明度 |
-| **候选工具** | ROI（已有）、边际收益（已有）、复利、贷款 EMI/摊还、毛利率/加价率、盈亏平衡 |
+| **候选工具** | ROI（已有）、边际收益（已有）、复利、贷款 EMI/摊还、毛利率/加价率、盈亏平衡；进阶 CAGR/NPV（单页讲清假设） |
 | **术语** | ROI、EMI、amortization、CAGR、NPV、margin |
 | **References** | Investopedia 公式页、公开会计准则说明 |
 | **YMYL** | **是** — disclaimer + references 必备 |
 | **意图词例** | `compound interest formula`, `loan amortization schedule` |
 | **集群** | C02 |
+| **公式对照（ToolDone）** | 见 [tooldone-formula-ref-shortlist.tsv](./competitor-refs/tooldone-2026-08-08/tooldone-formula-ref-shortlist.tsv)：`compound-interest-calculator`、`emi-calculator-equated-monthly-installment`、`amortization-calculator`、`break-even-calculator`、`gross-margin-calculator`、`roi-calculator-return-on-investment`、`marginal-revenue-calculator`、`cagr-calculator-*`、`npv-calculator-*` |
 
-**合规**：禁止投资建议口吻；假设（利率、期数）必须可见。
+**合规**：禁止投资建议口吻；假设（利率、期数）必须可见。  
+**竞品边界**：ToolDone finance 有 **560** 页（含各州税、近义拆页）——本站**只做公式清晰的少而精**，禁止州税/贷款品牌矩阵铺量。
 
 ---
 
@@ -765,6 +955,9 @@ H1 具名渠道 + 动作（如 Amazon Product Image Resizer）
 | **YMYL** | **是** — 非医疗建议免责必备 |
 | **意图词例** | `bmr calculator mifflin`, `bmi limitations` |
 | **集群** | C01 |
+| **公式对照（ToolDone）** | [bmi-calculator-body-mass-index](https://tooldone.com/health/bmi-calculator-body-mass-index/) · [bmr-calculator-…-mifflin-st-jeor…](https://tooldone.com/health/bmr-calculator-basal-metabolic-rate-mifflin-st-jeor-equation/) · [calorie-calculator](https://tooldone.com/health/calorie-calculator/) · [navy-body-fat-calculator](https://tooldone.com/health/navy-body-fat-calculator/) · [ideal-weight-calculator](https://tooldone.com/health/ideal-weight-calculator/)（zh 配对见 shortlist TSV） |
+
+**竞品边界**：ToolDone 将 BMI 拆男女/青少年等多 URL——本站**单页 + Use cases**，禁止 doorway。
 
 ---
 
@@ -791,8 +984,8 @@ H1 具名渠道 + 动作（如 Amazon Product Image Resizer）
 |---|---|---|
 | 图书 / 电子书 | ISBN 校验；`ebook-cover-size-pack` | 标准引用 + 岗位 |
 | 烹饪 | 杯↔克专页 | 非通用换算超市 |
-| 工程装修 | 瓷砖/油漆/混凝土方量 | 公式 + 权威教材 |
-| 教育 | GPA 地区差异表 | 明确地区 |
+| 工程装修 | 瓷砖/油漆/混凝土方量（对照 [ToolDone construction](https://tooldone.com/construction/)：`tile-calculator` / `paint-calculator` / `concrete-calculator`） | 公式 + 权威教材；**禁止**材料品牌矩阵铺量 |
+| 教育 | GPA 地区差异表（对照 [gpa-calculator](https://tooldone.com/other/gpa-calculator/)） | 明确地区 |
 | 法律文书 | 字数估算 | 司法区免责 |
 | 内容创作者 | `youtube-channel-art-pack`、`podcast-cover-art-pack` | 平台规范表 |
 | 站长品牌 | `favicon-and-pwa-icon-pack`、`social-share-image-pack` | 与 V2 协同；**排期与竞品见「专题：设计师工具」** |
@@ -877,7 +1070,8 @@ H1 具名渠道 + 动作（如 Amazon Product Image Resizer）
 
 | 建议 slug | 一句话任务 | 主方向 | 关联章节 | 优先级 | 状态 / 备注 |
 |---|---|---|---|---|---|
-| `how-to-calculate-gradient` | CSS 渐变生成与说明 | A | A.9 | — | **已上线**（设计侧引流） |
+| `how-to-calculate-gradient` | 多元函数梯度 ∇f（偏导向量；**不是** CSS/图片渐变） | A | A.7 | — | **已上线**（`calculator`）；CSS 渐变另立项 `css-gradient-generator` |
+| `css-gradient-generator` | 颜色停靠点 → CSS linear/radial-gradient | A | A.9 / D | **P2** | 候选；勿与数学梯度页混 slug / intent |
 | `image-compress` / `image-crop` / `image-format-converter` / `image-exif` / `image-optimizer` | 单图管线：压缩·裁切·格式·EXIF·优化 | A | A.2 | — | **已上线 / 在研** |
 | `wcag-contrast-checker` | 前景/背景对比度 → AA/AAA 判定 + 建议配对色 | A | A.9 | **P0** | 新建；Rules 表须写清 WCAG 2.x 比率 |
 | `brand-color-token-pack` | 1 主色 → HEX/RGB/HSL/OKLCH + 色阶（如 50–950）+ 对比度配对 | A + 1→N | A.9 / B.3 非图片同构 | **P0** | 可与对比度页 Related；勿拆「仅 HEX 转换」薄页 |
@@ -1037,10 +1231,12 @@ npm run lint:seo && npm run build:site
 
 1. **方向 B · 1→N**：落地 `amazon-image-resizer` 或 `app-icon-generator-pack`（验证规格 JSON + ZIP 模板产能）。  
 2. **方向 B · 1→1**：按每工具方案继续 Schema Validator 等桥工具。  
-3. **方向 A**：文本/图片/编码成熟度 ✅✅✅ 的独立工具。  
-4. **专题 · 设计师工具**：P0 立项 `wcag-contrast-checker` 或 `brand-color-token-pack`；并行评估 `favicon-and-pwa-icon-pack`（见 D.1）。  
-5. **方向 C**：存量 YMYL References；V6/V3 与 1→N 工具选主方向挂靠。  
-6. 每季度分方向复盘；核对 Apple/Amazon/Google 规格是否过期；设计师簇对照 Coolors / Squoosh / Merge Images 是否需更新 D.2。
+3. **方向 A / B14**：立项 `create-zip-file` + `unzip-file`（`fflate`、本地处理、目录列表）；再评估 `extract-archive` Tier 2。  
+4. **方向 A / PDF（A.5.2）**：立项 `merge-pdf` + `split-pdf`（`pdf-lib`、本地）；再排 `compress-pdf` / `pdf-to-jpg` / `rotate-pdf`。  
+5. **方向 A**：文本/图片/编码成熟度 ✅✅✅ 的独立工具。  
+6. **专题 · 设计师工具**：P0 立项 `wcag-contrast-checker` 或 `brand-color-token-pack`；并行评估 `favicon-and-pwa-icon-pack`（见 D.1）。  
+7. **方向 C**：存量 YMYL References；V6/V3 与 1→N 工具选主方向挂靠。  
+8. 每季度分方向复盘；核对 Apple/Amazon/Google 规格；对照 Coolors / Squoosh / Merge Images / ezyZip / ToolDone / **iLovePDF（A.5.2）**。
 
 ---
 
@@ -1052,7 +1248,31 @@ npm run lint:seo && npm run build:site
 | TinyWow | 任务闭环 | 强制上传与付费墙 |
 | SmallSEOTools | 分类导航 | 薄内容与广告堆叠 |
 | **[Merge Images](https://mergeimages.co/)** | 浏览器本地 N→1 合成；横/竖/网格 + 间距背景；平台发帖预设（IG 1080²、FB 1200×630）；Overlay/水印/Flip/PDF 工具链互推；Before-After 等 use cases | 按布局拆多 slug；AI Combiner 黑盒；站脚链到 404 的薄工具（PNG→SVG 等）；与 1→N 封面工具混 intent |
+| **[ezyZip](https://www.ezyzip.com/zh-hans.html)** | 本地 WASM 解压/打包叙事；Worker + 大文件直写思路；包内搜索/预览/文件夹树；压缩级与密码包说明（**详表见 A.5.1 / B14**） | 按格式与「ZIP→某后缀」拆海量近义 URL；伪转换矩阵；密码破解/修复承诺；用格式数量竞赛代替 Information Gain |
+| **[ToolDone](https://tooldone.com/zh/)** | 计算器公式与变量呈现可作**实现对照**；品类覆盖金融/健康/换算/数理统计/建筑（快照见 [competitor-refs/tooldone-2026-08-08](./competitor-refs/tooldone-2026-08-08/README.md)） | **~2800+ 页铺量**与近义拆页（男女 BMI、州税等）；无增量机翻风险面；本站禁止跟风数量竞赛 |
+| **[iLovePDF](https://www.ilovepdf.com/)** | Merge/Split/Compress 任务闭环；压缩前后对比；工具互链（**详表见 A.5.2** / [快照](./competitor-refs/ilovepdf-2026-08-08/README.md)） | 上传墙唯一路径；Office 全矩阵与 AI 摘要/翻译灌页；电子签/修复虚假承诺；与本站「本地处理」定位对立时勿跟风 |
 | **Coolors / Realtime Colors / SVGOMG 等** | 配色闭环、实境预览、SVG 选项可视化（**详表见专题 D.2**） | 灵感库堆量、迷你建站器、无规则薄页 |
+
+**iLovePDF vs 本站 PDF 规划（速查）**：
+
+| 维度 | iLovePDF | 本站（本文） |
+|---|---|---|
+| 处理位置 | 上传服务器为主 | **浏览器本地**（`pdf-lib` / `pdfjs`） |
+| 合并 / 拆分 / 压缩 / 旋转 / 水印 | 深 | **P0–P1**（见 A.5.2） |
+| 图 ↔ PDF | 有 | `images-to-pdf` **已上线** + `pdf-to-jpg` |
+| Office ↔ PDF | 全家桶 | **默认不做**高保真互转 |
+| AI / 电子签 | 有 | **不做** |
+| SEO | 多工具独立 URL | 检索向 slug；禁无增量拆页 |
+
+**ToolDone vs 本站计算器规划（速查）**：
+
+| 维度 | ToolDone | 本站（本文） |
+|---|---|---|
+| 规模 | ~2826 en 工具页（10 品类） | 少而精；每周 1–2 高质量 |
+| 财务 / 健康 | 海量拆页 | C-V4 / C-V5：公式+免责+References；对照链接存 competitor-refs |
+| 单位换算 | 300+ 转换页 | **单页** `unit-converter` 多类别 Tab |
+| 公式复核 | — | 打开 en URL 对照变量/边界（清单 §11） |
+| SEO 结构 | 长尾 URL 矩阵 | 一带多场景；禁 doorway |
 
 **Merge Images vs 本站图片规划（速查）**：
 
@@ -1065,6 +1285,16 @@ npm run lint:seo && npm run build:site
 | 图层 / 水印 | 有 | `image-overlay` / `add-watermark` |
 | 本地处理叙事 | 强 | 对齐本站隐私默认 |
 
+**ezyZip vs 本站归档规划（速查）**：
+
+| 维度 | ezyZip | 本站（本文） |
+|---|---|---|
+| ZIP 创建 / 解压 | 深、多附属页 | **A.5 / B14 P0**：`create-zip-file` / `unzip-file` |
+| RAR/7Z/ISO… | 每格式多 URL + 宣称 250+ | **单页** `extract-archive` + 格式表；Tier 2 |
+| 归档「转换」 | RAR→ZIP、ZIP→PDF/MP3… 矩阵 | **导出模式 / 预览筛选**；禁 doorway |
+| 本地隐私叙事 | 强（与上传型站对立） | **对齐** |
+| 与素材交付 | 弱关联 | 与 1→N「下载 ZIP」**Related 互链** |
+
 ---
 
-*维护：方向 A 改成熟度/包结论时同步包调研或音视频文档；方向 B 增场景卡（含 B13 N→1）；方向 C 增垂直调研；**设计师工具**改候选/优先级/竞品时同步专题 D 节；竞品快照见 A.2.1 / 专题 D.2 / 附录。产品主方向字段只改本文与 tool-catalog。*
+*维护：方向 A 改成熟度/包结论时同步包调研或音视频文档；方向 B 增场景卡（含 B13 N→1、**B14 归档**）；方向 C 增垂直调研；**设计师工具**改候选/优先级/竞品时同步专题 D 节；竞品快照见 A.2.1 / **A.5.1** / **A.5.2 iLovePDF** / **ToolDone competitor-refs** / 专题 D.2 / 附录。产品主方向字段只改本文与 tool-catalog。*
