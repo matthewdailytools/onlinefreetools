@@ -1,0 +1,21 @@
+{
+  "slug": "square-feet",
+  "path": "/tools/square-feet",
+  "category": "calculator",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_squarefeet_title",
+  "homeTitleKey": "tool_squarefeet_title",
+  "homeDescKey": "tool_squarefeet_description",
+  "faqPrefix": "tool_squarefeet",
+  "related": [
+    "how-to-calculate-percentage-change",
+    "how-to-calculate-bmi"
+  ],
+  "logo": "/icons/tools/square-feet.svg",
+  "page": {
+    "module": "../pages/squareFeetPage",
+    "export": "renderSquareFeetPage",
+    "style": "opts"
+  }
+}

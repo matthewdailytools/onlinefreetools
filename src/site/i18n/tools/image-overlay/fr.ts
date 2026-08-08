@@ -1,0 +1,87 @@
+/**
+ * i18n tool shard (image-overlay / fr). Edit only this tool's keys.
+ */
+import type { SiteLangDict } from '../../../types';
+const fr: SiteLangDict = {
+  tool_image_overlay_article:
+    'Composition locale à deux calques : opacité, ancrage haut-gauche, échelle, modes de fusion, fond JPEG pour aplatir la transparence.',
+  tool_image_overlay_blend_darken: 'Obscurcir',
+  tool_image_overlay_blend_label: 'Fusion',
+  tool_image_overlay_blend_lighten: 'Éclaircir',
+  tool_image_overlay_blend_multiply: 'Produit',
+  tool_image_overlay_blend_overlay: 'Superposition',
+  tool_image_overlay_blend_screen: 'Écran',
+  tool_image_overlay_blend_source_over: 'Normal (source-over)',
+  tool_image_overlay_choose_base: 'Image de base',
+  tool_image_overlay_choose_overlay: 'Calque',
+  tool_image_overlay_clear: 'Effacer',
+  tool_image_overlay_description:
+    'Placez un logo ou filigrane PNG sur une photo de base dans le navigateur — pas de texte tapé, pas d’assembler plusieurs photos comme un collage. Étapes : choisissez base + calque, réglez opacité et échelle, positionnez en glissant ou avec x/y, choisissez un mode de fusion, superposez et téléchargez JPEG/WebP/PNG. Exemple : photo d’exemple + LOGO semi-transparent en bas à droite à 75 % → PNG — tout reste sur l’appareil.',
+  tool_image_overlay_download: 'Télécharger',
+  tool_image_overlay_drop_hint_base: 'Ou déposez une base JPEG, PNG ou WebP ici. Le traitement reste dans cet onglet.',
+  tool_image_overlay_drop_hint_overlay: 'Ou déposez le calque (un PNG transparent convient bien).',
+  tool_image_overlay_empty_base: 'Choisissez d’abord une image de base.',
+  tool_image_overlay_empty_overlay: 'Choisissez d’abord un calque.',
+  tool_image_overlay_err_decode: 'Le navigateur n’a pas pu décoder un fichier. Essayez JPEG, PNG ou WebP.',
+  tool_image_overlay_err_encode: 'Export impossible. Essayez une base plus petite ou un autre format.',
+  tool_image_overlay_example:
+    'Chargez l’exemple : base dégradée + LOGO semi-transparent en bas à droite à 75 %, fusion Normal. Superposez, gardez PNG, téléchargez. Glissez sur l’aperçu ; testez Produit sur un logo clair.',
+  tool_image_overlay_example_title: 'Exemple',
+  tool_image_overlay_faq_a1: 'Non. Décodage, composition et export dans le navigateur. Onglet Réseau : pas de POST.',
+  tool_image_overlay_faq_a2:
+    'Fusionner assemble plusieurs photos en horizontal, vertical ou grille. Superposer garde une base et peint une couche avec opacité, position et fusion.',
+  tool_image_overlay_faq_a3:
+    'Règles Canvas : Normal empile ; Produit assombrit ; Écran éclaircit ; Superposition renforce le contraste ; Obscurcir/Éclaircir prennent min/max par canal.',
+  tool_image_overlay_faq_a4: 'Le JPEG n’a pas de transparence. Avant export, le canevas est rempli pour éviter des zones noires.',
+  tool_image_overlay_faq_a5: 'Cette page superpose uniquement des fichiers image. Pour du texte, utilisez l’outil filigrane texte.',
+  tool_image_overlay_faq_q1: 'Mes images sont-elles envoyées ?',
+  tool_image_overlay_faq_q2: 'Différence avec fusionner des images ?',
+  tool_image_overlay_faq_q3: 'Que font les modes de fusion ?',
+  tool_image_overlay_faq_q4: 'Pourquoi une couleur de fond JPEG ?',
+  tool_image_overlay_faq_q5: 'Texte filigrane ici ?',
+  tool_image_overlay_format_jpeg: 'JPEG',
+  tool_image_overlay_format_label: 'Format de sortie',
+  tool_image_overlay_format_png: 'PNG',
+  tool_image_overlay_format_webp: 'WebP',
+  tool_image_overlay_how_body:
+    'Ajoutez une photo de base et une seconde image (logo, badge ou PNG transparent). Réglez opacité, échelle et position — glissez sur l’aperçu ou saisissez x/y en pixels de la base. Choisissez fusion, format et fond JPEG, superposez et téléchargez. Tout en local.',
+  tool_image_overlay_how_title: 'Comment ça marche',
+  tool_image_overlay_jpeg_bg_label: 'Fond JPEG',
+  tool_image_overlay_opacity_label: 'Opacité (%)',
+  tool_image_overlay_overlay: 'Superposer',
+  tool_image_overlay_pos_bc: 'Bas centre',
+  tool_image_overlay_pos_bl: 'Bas gauche',
+  tool_image_overlay_pos_br: 'Bas droite',
+  tool_image_overlay_pos_mc: 'Centre',
+  tool_image_overlay_pos_ml: 'Milieu gauche',
+  tool_image_overlay_pos_mr: 'Milieu droite',
+  tool_image_overlay_pos_tc: 'Haut centre',
+  tool_image_overlay_pos_tl: 'Haut gauche',
+  tool_image_overlay_pos_tr: 'Haut droite',
+  tool_image_overlay_position_label: 'Position rapide',
+  tool_image_overlay_preview_label: 'Aperçu (glisser le calque)',
+  tool_image_overlay_quality_label: 'Qualité',
+  tool_image_overlay_rules_body:
+    'Le canevas de sortie correspond aux pixels naturels de la base. Le calque est dessiné avec ancrage haut-gauche en (x, y) après mise à l’échelle.',
+  tool_image_overlay_rules_item_1: 'Largeur × hauteur du canevas = dimensions naturelles de la base ; la base est dessinée en (0, 0).',
+  tool_image_overlay_rules_item_2:
+    'Taille du calque = largeur × hauteur naturelle × (échelle% ÷ 100) ; position en pixels base, ancrage haut-gauche.',
+  tool_image_overlay_rules_item_3:
+    'globalAlpha = opacité ÷ 100 ; globalCompositeOperation = fusion choisie ; réinitialisation après le calque.',
+  tool_image_overlay_rules_item_4: 'JPEG : remplissage du fond choisi avant base et calque. PNG/WebP conservent l’alpha là où il existe.',
+  tool_image_overlay_rules_title: 'Règles de dessin',
+  tool_image_overlay_sample: 'Charger un exemple',
+  tool_image_overlay_scale_label: 'Échelle (%)',
+  tool_image_overlay_status_done: 'Terminé — cliquez Télécharger pour enregistrer.',
+  tool_image_overlay_status_working: 'Composition…',
+  tool_image_overlay_title: 'Superposer des images — placez un logo sur une photo',
+  tool_image_overlay_usecase_1: 'Marque : logo sur photos produit ou bannières sociales sans ouvrir un logiciel lourd.',
+  tool_image_overlay_usecase_2: 'Badges de coin : étiquette « NOUVEAU » avec opacité et grille neuf cases.',
+  tool_image_overlay_usecase_3: 'Textures : calque niveaux de gris avec Produit ou Écran pour teinter ou adoucir le fond.',
+  tool_image_overlay_usecases_title: 'Cas d’usage',
+  tool_image_overlay_warn_edge: 'La base dépasse ~8192 px — certains navigateurs peuvent échouer.',
+  tool_image_overlay_warn_large: 'Fichier volumineux (>25 Mo) — décodage peut être lent.',
+  tool_image_overlay_x_label: 'X (px)',
+  tool_image_overlay_y_label: 'Y (px)',
+};
+export default fr;

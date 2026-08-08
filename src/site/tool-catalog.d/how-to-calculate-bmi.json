@@ -1,0 +1,21 @@
+{
+  "slug": "how-to-calculate-bmi",
+  "path": "/tools/how-to-calculate-bmi",
+  "category": "calculator",
+  "featured": true,
+  "ymyl": true,
+  "i18nKey": "tool_bmi_title",
+  "homeTitleKey": "tool_bmi_title",
+  "homeDescKey": "tool_bmi_description",
+  "faqPrefix": "tool_bmi",
+  "related": [
+    "how-to-calculate-percentage-change",
+    "square-feet"
+  ],
+  "logo": "/icons/tools/how-to-calculate-bmi.svg",
+  "page": {
+    "module": "../pages/howToCalculateBmiPage",
+    "export": "renderHowToCalculateBmiPage",
+    "style": "opts"
+  }
+}

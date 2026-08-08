@@ -1,6 +1,6 @@
 ---
 description: 新建/修改工具页面的工程步骤、页面结构与 Information Gain 要求
-globs: src/pages/**/*Page.ts,src/site/tool-catalog.json,src/index.ts,scripts/site/**/*,README.md
+globs: src/pages/**/*Page.ts,src/site/tool-catalog.d/**/*,src/site/i18n/tools/**/*,src/site/tool-catalog.json,src/site/toolPageRegistry.generated.ts,scripts/tool-modules/**/*,scripts/site/**/*,README.md
 alwaysApply: false
 ---
 
@@ -10,22 +10,49 @@ alwaysApply: false
 
 工具页可交互、多语言、可检索、对用户有用（people-first），且相对 SERP 同类页有 **Information Gain**（见 `tool-i18n-seo.mdc` 与策略文档 §3）。
 
+## 结构层隔离（必须）
+
+每个工具的**可编辑真相源**按 slug 分片；合并产物由脚本生成，**禁止手改**。
+
+| 角色 | 路径 |
+|------|------|
+| Catalog 分片 | `src/site/tool-catalog.d/{slug}.json`（含 `page.module` / `page.export` / `page.style`） |
+| i18n 分片 | `src/site/i18n/tools/{slug}/{lang}.ts` |
+| 站点共用文案 | `src/site/i18n/core/{lang}.ts`（非单工具改动勿动） |
+| 页面实现 | `src/pages/{camel}Page.ts` |
+| 立项 brief | `work-tasks/{slug}/` |
+| **生成勿手改** | `src/site/tool-catalog.json`、`src/site/i18n/{lang}.ts`、`src/site/toolPageRegistry.generated.ts`、`scripts/site/i18n-tools.generated.mjs` |
+
+流程：
+
+1. 只改本工具分片 + 本工具 `*Page.ts` + icon + brief（及 README 清单条目）。
+2. `npm run merge:tools`（`build:site` / `start:dev` 会自动跑）。
+3. **不要**为新工具改 `src/index.ts`（由 `TOOL_PAGE_RENDERERS` 循环注册）。
+4. 勿改其他工具的 `tool-catalog.d/`、`i18n/tools/`、`*Page.ts`。
+5. 若必须改 related 反向链接或共用 chrome：显式 `CROSS_TOOL_UPDATE=1`，并在 PR 说明。
+6. 隔离检查：`TOOL_SLUG={slug} npm run lint:tool-isolation`。
+
+一次性拆分（仅迁移/重建分片时）：`npm run split:tools` → `npm run merge:tools`。日常开发只编辑分片后 merge。
+
 ## 工程清单
 
+> **生成本清单之前**：必须已完成「清单前检索覆盖优化」——对 **slug、title、关键词、desc** 分析用户搜索习惯与关键词覆盖并回写（覆盖表在 `02`/`notes`；见 `tool-i18n-localization.mdc` 步 0b）。未完成不得按下表开工。
+
 ```
-src/site/tool-catalog.json      # slug / path / related ≥2 / FAQ / YMYL
-src/index.ts                    # registerToolPage
-src/pages/{tool}Page.ts
-src/pages/site/toolContent.ts   # JSON-LD（与可见文案一致）
-src/site/i18n/*.ts              # 各语言文案（先 work-tasks/.../03-locale-briefs.md）
+work-tasks/{slug}/              # 00–03 brief（含清单前覆盖表 + 03-locale-briefs）
+src/site/tool-catalog.d/{slug}.json   # slug / path / related ≥2 / FAQ / YMYL / page.*
+src/pages/{camel}Page.ts
+src/site/i18n/tools/{slug}/{lang}.ts  # 各语言文案（先 locale brief）
 public/icons/tools/{slug}.svg   # 工具图标（注释优先 ASCII；见下方「图标 SVG」）
-scripts/site/components/content-home.mjs  # 首页 featured + all-tools 卡片
-README.md                               # 「工具清单 / Tools List」中英条目
-npm run build:site && npm run lint:seo
+README.md                       # 「工具清单 / Tools List」中英条目（写入前须已过清单前覆盖）
+npm run merge:tools && npm run lint:seo
+TOOL_SLUG={slug} npm run lint:tool-isolation
 ```
 
+`src/index.ts` **无需**再 `registerToolPage`；`content-home.mjs` 读合并后的 catalog，一般不必为单工具手改。
+
 多语言：**按 locale brief 重写**（见 `tool-i18n-localization.mdc`），禁止批量 Translate 直出。  
-文案顺序：先写出 title / description / brief 检索词 → **再跑「Title / 描述 / 检索词覆盖优化」**（同文件稳妥常态步 2、步 4）→ 再逐语与定稿；勿首稿过 lint 即标完成。
+文案顺序：① **清单前**优化 slug/title/关键词/desc → ② 写母版 title/description → ③ **生成后再**跑覆盖优化（步 2）→ ④ 逐语重写 → ⑤ 抽查语再优化（步 4）；勿首稿过 lint 即标完成。
 
 ## 图标 SVG（易踩坑）
 
@@ -88,12 +115,16 @@ Disclaimer（YMYL 必备）
 
 ## 上线前 Checklist（PR 合并前）
 
-- [ ] `tool-catalog.json` 注册完成；`related` ≥ 2
+- [ ] **清单前检索覆盖优化已做**（slug/title/关键词/desc；`02`/`notes` 有覆盖表；见 `tool-i18n-localization.mdc` 步 0b）——**勾本 Checklist 之前必须已完成**
+- [ ] `src/site/tool-catalog.d/{slug}.json` 完成；`related` ≥ 2；已 `merge:tools`
+- [ ] 未手改生成物（catalog.json / `i18n/{lang}.ts` / registry / i18n-tools.generated）
+- [ ] 未改其他工具分片或 `src/index.ts`（除非 `CROSS_TOOL_UPDATE=1`）
+- [ ] `TOOL_SLUG={slug} npm run lint:tool-isolation` 通过
 - [ ] `public/icons/tools/{slug}.svg` 可在浏览器打开（无 xmlParseComment）；注释 ASCII
-- [ ] 10 语言 title / description / article / example 齐全
+- [ ] 10 语言 title / description / article / example 齐全（写在 `i18n/tools/{slug}/`）
 - [ ] 十语已按 `tool-i18n-localization.mdc` **稳妥常态**做检索向独立重写（非脚本同构灌语），并完成 ≥3 轮核查；「待母语抽查」已清
-- [ ] **Title / 描述 / 检索词覆盖优化已做**（生成之后；母版 + 抽查语；见 `tool-i18n-localization.mdc`）；无参数枚举 H1；次要意图有落点
-- [ ] `README.md` 工具清单已更新（中英各一条，与 catalog 一致）
+- [ ] **文案生成后覆盖优化已做**（母版步 2 + 抽查语步 4）；无参数枚举 H1；次要意图有落点
+- [ ] `README.md` 工具清单已更新（中英各一条，与 catalog 一致；写入前已过清单前覆盖）
 - [ ] **进页自动跑样例并显示真实结果**（Load sample 与自动路径一致；见上节）；例外已在 `02` 注明
 - [ ] `npm run lint:seo` 通过
 - [ ] IG ≥ 3 项（§3.1），PR 写明对应章节

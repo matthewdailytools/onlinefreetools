@@ -1,0 +1,87 @@
+/**
+ * i18n tool shard (image-overlay / de). Edit only this tool's keys.
+ */
+import type { SiteLangDict } from '../../../types';
+const de: SiteLangDict = {
+  tool_image_overlay_article:
+    'Lokale Zwei-Ebenen-Komposition: Deckkraft, Anker oben links, Skalierung, Blend-Modi, JPEG-Hintergrund beim Abflachen.',
+  tool_image_overlay_blend_darken: 'Abdunkeln',
+  tool_image_overlay_blend_label: 'Blend-Modus',
+  tool_image_overlay_blend_lighten: 'Aufhellen',
+  tool_image_overlay_blend_multiply: 'Multiplizieren',
+  tool_image_overlay_blend_overlay: 'Overlay',
+  tool_image_overlay_blend_screen: 'Negativ multiplizieren',
+  tool_image_overlay_blend_source_over: 'Normal (source-over)',
+  tool_image_overlay_choose_base: 'Basisbild',
+  tool_image_overlay_choose_overlay: 'Ebene',
+  tool_image_overlay_clear: 'Löschen',
+  tool_image_overlay_description:
+    'Legen Sie ein Logo oder transparentes PNG-Wasserzeichen auf ein Basisbild im Browser — kein Text-Wasserzeichen und kein Zusammenfügen vieler Fotos wie bei Collage. Schritte: Basis + Ebene wählen, Deckkraft und Skalierung setzen, per Drag oder x/y positionieren, Blend-Modus wählen, überlagern und JPEG/WebP/PNG laden. Beispiel: Beispielfoto + halbtransparentes LOGO unten rechts bei 75 % → PNG — alles lokal.',
+  tool_image_overlay_download: 'Download',
+  tool_image_overlay_drop_hint_base: 'Oder JPEG-, PNG- oder WebP-Basis hier ablegen. Verarbeitung bleibt in diesem Tab.',
+  tool_image_overlay_drop_hint_overlay: 'Oder Ebenenbild ablegen (PNG mit Transparenz eignet sich gut).',
+  tool_image_overlay_empty_base: 'Zuerst ein Basisbild wählen.',
+  tool_image_overlay_empty_overlay: 'Zuerst eine Ebene wählen.',
+  tool_image_overlay_err_decode: 'Der Browser konnte eine Datei nicht dekodieren. JPEG, PNG oder WebP versuchen.',
+  tool_image_overlay_err_encode: 'Export fehlgeschlagen. Kleinere Basis oder anderes Format versuchen.',
+  tool_image_overlay_example:
+    'Beispiel laden: Verlaufsbasis + halbtransparentes LOGO unten rechts bei 75 %, Normal-Blend. Überlagern, PNG behalten, laden. In der Vorschau ziehen; Multiplizieren auf hellem Logo testen.',
+  tool_image_overlay_example_title: 'Beispiel',
+  tool_image_overlay_faq_a1: 'Nein. Dekodieren, Komponieren und Export laufen im Browser. Netzwerk-Tab prüfen — kein POST.',
+  tool_image_overlay_faq_a2:
+    'Zusammenfügen reiht mehrere Fotos horizontal, vertikal oder im Raster. Überlagern behält eine Basis und malt eine Ebene mit Deckkraft, Position und Blend darüber.',
+  tool_image_overlay_faq_a3:
+    'Canvas-Regeln: Normal stapelt; Multiplizieren dunkelt; Screen hellt; Overlay erhöht Kontrast; Abdunkeln/Aufhellen wählen Kanal-Min/Max.',
+  tool_image_overlay_faq_a4:
+    'JPEG hat keine Transparenz. Vor dem Export füllt das Tool die Leinwand, damit transparente PNG-Bereiche nicht schwarz werden.',
+  tool_image_overlay_faq_a5: 'Diese Seite überlagert nur Bilddateien. Für Text nutzen Sie das Text-Wasserzeichen-Tool.',
+  tool_image_overlay_faq_q1: 'Werden Bilder hochgeladen?',
+  tool_image_overlay_faq_q2: 'Unterschied zum Zusammenfügen?',
+  tool_image_overlay_faq_q3: 'Was machen die Blend-Modi?',
+  tool_image_overlay_faq_q4: 'Warum JPEG-Hintergrundfarbe?',
+  tool_image_overlay_faq_q5: 'Text-Wasserzeichen hier tippen?',
+  tool_image_overlay_format_jpeg: 'JPEG',
+  tool_image_overlay_format_label: 'Ausgabeformat',
+  tool_image_overlay_format_png: 'PNG',
+  tool_image_overlay_format_webp: 'WebP',
+  tool_image_overlay_how_body:
+    'Basisfoto und zweites Bild (Logo, Badge oder transparentes PNG) hinzufügen. Deckkraft, Skalierung und Position anpassen — in der Vorschau ziehen oder x/y in Basis-Pixeln eingeben. Blend, Format und JPEG-Hintergrund wählen, überlagern, herunterladen. Alles lokal.',
+  tool_image_overlay_how_title: 'So funktioniert es',
+  tool_image_overlay_jpeg_bg_label: 'JPEG-Hintergrund',
+  tool_image_overlay_opacity_label: 'Deckkraft (%)',
+  tool_image_overlay_overlay: 'Überlagern',
+  tool_image_overlay_pos_bc: 'Unten Mitte',
+  tool_image_overlay_pos_bl: 'Unten links',
+  tool_image_overlay_pos_br: 'Unten rechts',
+  tool_image_overlay_pos_mc: 'Mitte',
+  tool_image_overlay_pos_ml: 'Mitte links',
+  tool_image_overlay_pos_mr: 'Mitte rechts',
+  tool_image_overlay_pos_tc: 'Oben Mitte',
+  tool_image_overlay_pos_tl: 'Oben links',
+  tool_image_overlay_pos_tr: 'Oben rechts',
+  tool_image_overlay_position_label: 'Schnellposition',
+  tool_image_overlay_preview_label: 'Vorschau (Ebene ziehen)',
+  tool_image_overlay_quality_label: 'Qualität',
+  tool_image_overlay_rules_body:
+    'Ausgabe-Leinwand = natürliche Pixelgröße der Basis. Ebene wird skaliert mit Anker oben links bei (x, y) gezeichnet.',
+  tool_image_overlay_rules_item_1: 'Leinwand Breite × Höhe = natürliche Basismaße; Basis bei (0, 0).',
+  tool_image_overlay_rules_item_2:
+    'Ebenengröße = natürliche Breite × Höhe × (Skalierung% ÷ 100); Position in Basis-Pixeln, Anker oben links.',
+  tool_image_overlay_rules_item_3: 'globalAlpha = Deckkraft ÷ 100; globalCompositeOperation = gewählter Blend; danach zurücksetzen.',
+  tool_image_overlay_rules_item_4: 'JPEG: zuerst Hintergrundfarbe füllen, dann Basis und Ebene. PNG/WebP behalten Alpha wo vorhanden.',
+  tool_image_overlay_rules_title: 'Zeichenregeln',
+  tool_image_overlay_sample: 'Beispiel laden',
+  tool_image_overlay_scale_label: 'Skalierung (%)',
+  tool_image_overlay_status_done: 'Fertig — Download klicken zum Speichern.',
+  tool_image_overlay_status_working: 'Komponiere…',
+  tool_image_overlay_title: 'Logo auf Foto legen — Bilder lokal überlagern',
+  tool_image_overlay_usecase_1: 'Markenzeichen: Logo auf Produktfotos oder Social-Header legen, ohne Desktop-Editor.',
+  tool_image_overlay_usecase_2: 'Eck-Badges: „NEU“-Sticker mit Deckkraft und 9-Feld-Raster platzieren.',
+  tool_image_overlay_usecase_3: 'Texturen: Graustufen-Ebene mit Multiplizieren oder Screen zum Tönen oder Weichzeichnen.',
+  tool_image_overlay_usecases_title: 'Typische Einsätze',
+  tool_image_overlay_warn_edge: 'Basis-Kante über ~8192 px — manche Browser scheitern oder laufen aus dem Speicher.',
+  tool_image_overlay_warn_large: 'Große Datei (>25 MB) — Dekodierung kann dauern.',
+  tool_image_overlay_x_label: 'X (px)',
+  tool_image_overlay_y_label: 'Y (px)',
+};
+export default de;

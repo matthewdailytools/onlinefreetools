@@ -1,0 +1,24 @@
+{
+  "slug": "website-headers",
+  "path": "/tools/website-headers",
+  "category": "developer",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_headers_title",
+  "homeTitleKey": "tool_website_headers_title",
+  "homeDescKey": "tool_website_headers_desc",
+  "faqPrefix": "tool_headers",
+  "related": [
+    "ip-address",
+    "add-www-to-dns",
+    "indexnow",
+    "markdown-to-html",
+    "text-diff"
+  ],
+  "logo": "/icons/tools/website-headers.svg",
+  "page": {
+    "module": "../pages/websiteHeadersPage",
+    "export": "renderWebsiteHeadersPage",
+    "style": "pair"
+  }
+}

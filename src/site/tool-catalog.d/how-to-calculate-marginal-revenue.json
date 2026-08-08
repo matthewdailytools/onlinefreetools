@@ -1,0 +1,21 @@
+{
+  "slug": "how-to-calculate-marginal-revenue",
+  "path": "/tools/how-to-calculate-marginal-revenue",
+  "category": "calculator",
+  "featured": true,
+  "ymyl": true,
+  "i18nKey": "tool_marginal_revenue_title",
+  "homeTitleKey": "tool_marginal_revenue_title",
+  "homeDescKey": "tool_marginal_revenue_description",
+  "faqPrefix": "tool_marginal_revenue",
+  "related": [
+    "how-to-calculate-roi",
+    "how-to-calculate-percentage-change"
+  ],
+  "logo": "/icons/tools/how-to-calculate-marginal-revenue.svg",
+  "page": {
+    "module": "../pages/marginalRevenuePage",
+    "export": "renderMarginalRevenuePage",
+    "style": "opts"
+  }
+}

@@ -1,0 +1,45 @@
+/**
+ * i18n tool shard (square-feet / ja). Edit only this tool's keys.
+ */
+import type { SiteLangDict } from '../../../types';
+const ja: SiteLangDict = {
+  tool_squarefeet_article: '長さと幅から長方形の面積を求め、平方フィートと平方メートルを相互換算します。物件比較や床材・塗装の目安向け。査定ではなく、専有／延床の定義も扱いません。',
+  tool_squarefeet_calculate: '換算する',
+  tool_squarefeet_description:
+    '部屋の面積を平方フィートと平方メートルのあいだで換算します（物件・リフォーム向け）。手順：ft/m/in を選び、縦×横を入力し、面積を求めたあと NIST 係数 1 ft² = 0.09290304 m² で m² も表示。例：850 sq ft の部屋 ≈ 78.97 m²。',
+  tool_squarefeet_example: '物件例：850 sq ft → 850 × 0.09290304 ≈ 78.97 m²。部屋例：10 ft × 12 ft = 120 sq ft ≈ 11.15 m²。',
+  tool_squarefeet_example_title: '例',
+  tool_squarefeet_faq_a1: '厳密に 1 ft² = 0.09290304 m²（SI / NIST）。表示は小数第2位。',
+  tool_squarefeet_faq_a2: 'しません。長方形の平面積の単位換算のみです。',
+  tool_squarefeet_faq_a3: 'いいえ。面積換算は評価でも価格モデルでもありません。',
+  tool_squarefeet_faq_a4: '長方形に分けてそれぞれ換算し、足し合わせてください。',
+  tool_squarefeet_faq_q1: 'ft² と m² の換算係数は？',
+  tool_squarefeet_faq_q2: '専有面積と延床を区別しますか？',
+  tool_squarefeet_faq_q3: '物件価格の査定に使えますか？',
+  tool_squarefeet_faq_q4: 'L 字の部屋は？',
+  tool_squarefeet_formula_body: '面積 (ft²) = 長さ(ft) × 幅(ft)。メートル入力：ft² = (L×W) ÷ 0.09290304。インチ入力：各辺を ÷12。係数：1 ft² = 0.09290304 m²。',
+  tool_squarefeet_formula_item_1: 'フィート入力：面積_ft² = L × W',
+  tool_squarefeet_formula_item_2: 'メートル入力：面積_ft² = (L × W) / 0.09290304',
+  tool_squarefeet_formula_item_3: 'インチ入力：面積_ft² = (L/12) × (W/12)',
+  tool_squarefeet_formula_item_4: 'm² = 面積_ft² × 0.09290304（NIST / SI）',
+  tool_squarefeet_formula_title: '面積の式と換算係数',
+  tool_squarefeet_how_body: 'フィート・メートル・インチを選び、両辺をフィートに揃えて縦×横。そのあと SI 係数で m² に変換します。空欄や負の値はエラーです。',
+  tool_squarefeet_how_title: '使い方の流れ',
+  tool_squarefeet_invalid_input: '正の長さと幅を入力してください。',
+  tool_squarefeet_length_label: '長さ',
+  tool_squarefeet_length_placeholder: '長さを入力',
+  tool_squarefeet_ref_nist_label: 'NIST SP 811 — 国際単位系（SI）利用ガイド',
+  tool_squarefeet_result_note: '小数第2位まで。係数：1 ft² = 0.09290304 m²。',
+  tool_squarefeet_result_sqm: '≈ {sqm} m²',
+  tool_squarefeet_title: '平方フィート⇔平方メートル換算 — 物件・リフォーム向け',
+  tool_squarefeet_unit_group_label: '入力単位',
+  tool_squarefeet_usage: '単位を選び、縦横を入れると sq ft と相当 m² が得られます。',
+  tool_squarefeet_usage_title: '使い方',
+  tool_squarefeet_usecase_1: '米系物件の sq ft を、地元の m² 表記と並べて比較する。',
+  tool_squarefeet_usecase_2: '長方形の部屋の床材・カーペット量を発注前に概算する。',
+  tool_squarefeet_usecase_3: '図面の単位が混在しているときの塗装・リフォームのざっくり見積もり。',
+  tool_squarefeet_usecases_title: 'こんなときに',
+  tool_squarefeet_width_label: '幅',
+  tool_squarefeet_width_placeholder: '幅を入力',
+};
+export default ja;

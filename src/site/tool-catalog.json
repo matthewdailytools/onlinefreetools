@@ -1,92 +1,53 @@
 [
   {
-    "slug": "website-headers",
-    "path": "/tools/website-headers",
-    "category": "developer",
+    "slug": "add-watermark",
+    "path": "/tools/add-watermark",
+    "category": "image",
     "featured": true,
     "ymyl": false,
-    "i18nKey": "tool_headers_title",
-    "homeTitleKey": "tool_website_headers_title",
-    "homeDescKey": "tool_website_headers_desc",
-    "faqPrefix": "tool_headers",
+    "i18nKey": "tool_add_watermark_title",
+    "homeTitleKey": "tool_add_watermark_title",
+    "homeDescKey": "tool_add_watermark_desc",
+    "faqPrefix": "tool_add_watermark",
     "related": [
-      "ip-address",
-      "add-www-to-dns",
-      "indexnow",
-      "markdown-to-html",
-      "text-diff"
+      "image-overlay",
+      "image-exif",
+      "image-border"
     ],
-    "logo": "/icons/tools/website-headers.svg"
+    "logo": "/icons/tools/add-watermark.svg"
   },
   {
-    "slug": "ip-address",
-    "path": "/tools/ip-address",
+    "slug": "add-www-to-dns",
+    "path": "/tools/add-www-to-dns",
     "category": "developer",
     "featured": true,
     "ymyl": false,
-    "i18nKey": "tool_ip_address_title",
-    "homeTitleKey": "tool_ip_address_title",
-    "homeDescKey": "tool_ip_address_desc",
-    "faqPrefix": "tool_ip_address",
+    "i18nKey": "tool_add_www_to_dns_title",
+    "homeTitleKey": "tool_add_www_to_dns_title",
+    "homeDescKey": "tool_add_www_to_dns_desc",
+    "faqPrefix": "tool_add_www_to_dns",
     "related": [
       "website-headers",
-      "add-www-to-dns",
-      "markdown-to-html"
+      "ip-address",
+      "indexnow"
     ],
-    "logo": "/icons/tools/ip-address.svg"
+    "logo": "/icons/tools/add-www-to-dns.svg"
   },
   {
-    "slug": "markdown-to-html",
-    "path": "/tools/markdown-to-html",
-    "category": "developer",
+    "slug": "color-from-image",
+    "path": "/tools/color-from-image",
+    "category": "image",
     "featured": true,
     "ymyl": false,
-    "i18nKey": "tool_markdown_title",
-    "homeTitleKey": "tool_markdown_to_html_title",
-    "homeDescKey": "tool_markdown_to_html_desc",
-    "faqPrefix": "tool_markdown",
+    "i18nKey": "tool_color_from_image_title",
+    "homeTitleKey": "tool_color_from_image_title",
+    "homeDescKey": "tool_color_from_image_desc",
+    "faqPrefix": "tool_color_from_image",
     "related": [
-      "text-diff",
-      "yaml-json",
-      "html-entity",
-      "website-headers"
+      "how-to-calculate-gradient",
+      "image-crop"
     ],
-    "logo": "/icons/tools/markdown-to-html.svg"
-  },
-  {
-    "slug": "text-diff",
-    "path": "/tools/text-diff",
-    "category": "developer",
-    "featured": true,
-    "ymyl": false,
-    "i18nKey": "tool_text_diff_title",
-    "homeTitleKey": "tool_text_diff_title",
-    "homeDescKey": "tool_text_diff_desc",
-    "faqPrefix": "tool_text_diff",
-    "related": [
-      "markdown-to-html",
-      "yaml-json",
-      "html-entity",
-      "website-headers"
-    ],
-    "logo": "/icons/tools/text-diff.svg"
-  },
-  {
-    "slug": "yaml-json",
-    "path": "/tools/yaml-json",
-    "category": "developer",
-    "featured": true,
-    "ymyl": false,
-    "i18nKey": "tool_yaml_json_title",
-    "homeTitleKey": "tool_yaml_json_title",
-    "homeDescKey": "tool_yaml_json_desc",
-    "faqPrefix": "tool_yaml_json",
-    "related": [
-      "markdown-to-html",
-      "text-diff",
-      "csv-json"
-    ],
-    "logo": "/icons/tools/yaml-json.svg"
+    "logo": "/icons/tools/color-from-image.svg"
   },
   {
     "slug": "csv-json",
@@ -100,9 +61,107 @@
     "faqPrefix": "tool_csv_json",
     "related": [
       "yaml-json",
-      "text-diff"
+      "text-diff",
+      "json-schema-validator"
     ],
     "logo": "/icons/tools/csv-json.svg"
+  },
+  {
+    "slug": "flip-image",
+    "path": "/tools/flip-image",
+    "category": "image",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_flip_image_title",
+    "homeTitleKey": "tool_flip_image_title",
+    "homeDescKey": "tool_flip_image_desc",
+    "faqPrefix": "tool_flip_image",
+    "related": [
+      "image-grayscale",
+      "image-border",
+      "image-crop"
+    ],
+    "logo": "/icons/tools/flip-image.svg"
+  },
+  {
+    "slug": "how-to-calculate-bmi",
+    "path": "/tools/how-to-calculate-bmi",
+    "category": "calculator",
+    "featured": true,
+    "ymyl": true,
+    "i18nKey": "tool_bmi_title",
+    "homeTitleKey": "tool_bmi_title",
+    "homeDescKey": "tool_bmi_description",
+    "faqPrefix": "tool_bmi",
+    "related": [
+      "how-to-calculate-percentage-change",
+      "square-feet"
+    ],
+    "logo": "/icons/tools/how-to-calculate-bmi.svg"
+  },
+  {
+    "slug": "how-to-calculate-gradient",
+    "path": "/tools/how-to-calculate-gradient",
+    "category": "calculator",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_gradient_title",
+    "homeTitleKey": "tool_gradient_title",
+    "homeDescKey": "tool_gradient_desc",
+    "faqPrefix": "tool_gradient",
+    "related": [
+      "how-to-calculate-percentage-change",
+      "how-to-calculate-roi"
+    ],
+    "logo": "/icons/tools/how-to-calculate-gradient.svg"
+  },
+  {
+    "slug": "how-to-calculate-marginal-revenue",
+    "path": "/tools/how-to-calculate-marginal-revenue",
+    "category": "calculator",
+    "featured": true,
+    "ymyl": true,
+    "i18nKey": "tool_marginal_revenue_title",
+    "homeTitleKey": "tool_marginal_revenue_title",
+    "homeDescKey": "tool_marginal_revenue_description",
+    "faqPrefix": "tool_marginal_revenue",
+    "related": [
+      "how-to-calculate-roi",
+      "how-to-calculate-percentage-change"
+    ],
+    "logo": "/icons/tools/how-to-calculate-marginal-revenue.svg"
+  },
+  {
+    "slug": "how-to-calculate-percentage-change",
+    "path": "/tools/how-to-calculate-percentage-change",
+    "category": "calculator",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_percentage_change_title",
+    "homeTitleKey": "tool_percentage_change_title",
+    "homeDescKey": "tool_percentage_change_description",
+    "faqPrefix": "tool_percentage_change",
+    "related": [
+      "how-to-calculate-roi",
+      "how-to-calculate-marginal-revenue"
+    ],
+    "logo": "/icons/tools/how-to-calculate-percentage-change.svg"
+  },
+  {
+    "slug": "how-to-calculate-roi",
+    "path": "/tools/how-to-calculate-roi",
+    "category": "calculator",
+    "featured": true,
+    "ymyl": true,
+    "i18nKey": "tool_roi_title",
+    "homeTitleKey": "tool_roi_title",
+    "homeDescKey": "tool_roi_description",
+    "faqPrefix": "tool_roi",
+    "related": [
+      "how-to-calculate-marginal-revenue",
+      "how-to-calculate-percentage-change"
+    ],
+    "logo": "/icons/tools/how-to-calculate-roi.svg"
   },
   {
     "slug": "html-entity",
@@ -119,6 +178,74 @@
       "text-diff"
     ],
     "logo": "/icons/tools/html-entity.svg"
+  },
+  {
+    "slug": "image-border",
+    "path": "/tools/image-border",
+    "category": "image",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_image_border_title",
+    "homeTitleKey": "tool_image_border_title",
+    "homeDescKey": "tool_image_border_desc",
+    "faqPrefix": "tool_image_border",
+    "related": [
+      "image-grayscale",
+      "flip-image",
+      "add-watermark"
+    ],
+    "logo": "/icons/tools/image-border.svg"
+  },
+  {
+    "slug": "image-compress",
+    "path": "/tools/image-compress",
+    "category": "image",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_image_compress_title",
+    "homeTitleKey": "tool_image_compress_title",
+    "homeDescKey": "tool_image_compress_desc",
+    "faqPrefix": "tool_image_compress",
+    "related": [
+      "image-format-converter",
+      "image-crop",
+      "image-optimizer"
+    ],
+    "logo": "/icons/tools/image-compress.svg"
+  },
+  {
+    "slug": "image-crop",
+    "path": "/tools/image-crop",
+    "category": "image",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_image_crop_title",
+    "homeTitleKey": "tool_image_crop_title",
+    "homeDescKey": "tool_image_crop_desc",
+    "faqPrefix": "tool_image_crop",
+    "related": [
+      "image-compress",
+      "image-format-converter",
+      "image-optimizer"
+    ],
+    "logo": "/icons/tools/image-crop.svg"
+  },
+  {
+    "slug": "image-exif",
+    "path": "/tools/image-exif",
+    "category": "image",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_image_exif_title",
+    "homeTitleKey": "tool_image_exif_title",
+    "homeDescKey": "tool_image_exif_desc",
+    "faqPrefix": "tool_image_exif",
+    "related": [
+      "image-format-converter",
+      "image-compress",
+      "image-optimizer"
+    ],
+    "logo": "/icons/tools/image-exif.svg"
   },
   {
     "slug": "image-format-converter",
@@ -139,88 +266,21 @@
     "logo": "/icons/tools/image-format-converter.svg"
   },
   {
-    "slug": "image-exif",
-    "path": "/tools/image-exif",
+    "slug": "image-grayscale",
+    "path": "/tools/image-grayscale",
     "category": "image",
     "featured": true,
     "ymyl": false,
-    "i18nKey": "tool_image_exif_title",
-    "homeTitleKey": "tool_image_exif_title",
-    "homeDescKey": "tool_image_exif_desc",
-    "faqPrefix": "tool_image_exif",
+    "i18nKey": "tool_image_grayscale_title",
+    "homeTitleKey": "tool_image_grayscale_title",
+    "homeDescKey": "tool_image_grayscale_desc",
+    "faqPrefix": "tool_image_grayscale",
     "related": [
-      "image-format-converter",
-      "image-compress",
-      "image-optimizer"
-    ],
-    "logo": "/icons/tools/image-exif.svg"
-  },
-  {
-    "slug": "image-compress",
-    "path": "/tools/image-compress",
-    "category": "image",
-    "featured": true,
-    "ymyl": false,
-    "i18nKey": "tool_image_compress_title",
-    "homeTitleKey": "tool_image_compress_title",
-    "homeDescKey": "tool_image_compress_desc",
-    "faqPrefix": "tool_image_compress",
-    "related": [
-      "image-format-converter",
-      "image-crop",
-      "image-optimizer"
-    ],
-    "logo": "/icons/tools/image-compress.svg"
-  },
-  {
-    "slug": "image-optimizer",
-    "path": "/tools/image-optimizer",
-    "category": "image",
-    "featured": true,
-    "ymyl": false,
-    "i18nKey": "tool_image_optimizer_title",
-    "homeTitleKey": "tool_image_optimizer_title",
-    "homeDescKey": "tool_image_optimizer_desc",
-    "faqPrefix": "tool_image_optimizer",
-    "related": [
-      "image-compress",
-      "image-format-converter",
-      "image-exif"
-    ],
-    "logo": "/icons/tools/image-optimizer.svg"
-  },
-  {
-    "slug": "image-crop",
-    "path": "/tools/image-crop",
-    "category": "image",
-    "featured": true,
-    "ymyl": false,
-    "i18nKey": "tool_image_crop_title",
-    "homeTitleKey": "tool_image_crop_title",
-    "homeDescKey": "tool_image_crop_desc",
-    "faqPrefix": "tool_image_crop",
-    "related": [
-      "image-compress",
-      "image-format-converter",
-      "image-optimizer"
-    ],
-    "logo": "/icons/tools/image-crop.svg"
-  },
-  {
-    "slug": "color-from-image",
-    "path": "/tools/color-from-image",
-    "category": "image",
-    "featured": true,
-    "ymyl": false,
-    "i18nKey": "tool_color_from_image_title",
-    "homeTitleKey": "tool_color_from_image_title",
-    "homeDescKey": "tool_color_from_image_desc",
-    "faqPrefix": "tool_color_from_image",
-    "related": [
-      "how-to-calculate-gradient",
+      "flip-image",
+      "image-border",
       "image-crop"
     ],
-    "logo": "/icons/tools/color-from-image.svg"
+    "logo": "/icons/tools/image-grayscale.svg"
   },
   {
     "slug": "image-merge",
@@ -242,6 +302,23 @@
     "logo": "/icons/tools/image-merge.svg"
   },
   {
+    "slug": "image-optimizer",
+    "path": "/tools/image-optimizer",
+    "category": "image",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_image_optimizer_title",
+    "homeTitleKey": "tool_image_optimizer_title",
+    "homeDescKey": "tool_image_optimizer_desc",
+    "faqPrefix": "tool_image_optimizer",
+    "related": [
+      "image-compress",
+      "image-format-converter",
+      "image-exif"
+    ],
+    "logo": "/icons/tools/image-optimizer.svg"
+  },
+  {
     "slug": "image-overlay",
     "path": "/tools/image-overlay",
     "category": "image",
@@ -257,57 +334,6 @@
       "image-crop"
     ],
     "logo": "/icons/tools/image-overlay.svg"
-  },
-  {
-    "slug": "flip-image",
-    "path": "/tools/flip-image",
-    "category": "image",
-    "featured": true,
-    "ymyl": false,
-    "i18nKey": "tool_flip_image_title",
-    "homeTitleKey": "tool_flip_image_title",
-    "homeDescKey": "tool_flip_image_desc",
-    "faqPrefix": "tool_flip_image",
-    "related": [
-      "image-grayscale",
-      "image-border",
-      "image-crop"
-    ],
-    "logo": "/icons/tools/flip-image.svg"
-  },
-  {
-    "slug": "image-grayscale",
-    "path": "/tools/image-grayscale",
-    "category": "image",
-    "featured": true,
-    "ymyl": false,
-    "i18nKey": "tool_image_grayscale_title",
-    "homeTitleKey": "tool_image_grayscale_title",
-    "homeDescKey": "tool_image_grayscale_desc",
-    "faqPrefix": "tool_image_grayscale",
-    "related": [
-      "flip-image",
-      "image-border",
-      "image-crop"
-    ],
-    "logo": "/icons/tools/image-grayscale.svg"
-  },
-  {
-    "slug": "image-border",
-    "path": "/tools/image-border",
-    "category": "image",
-    "featured": true,
-    "ymyl": false,
-    "i18nKey": "tool_image_border_title",
-    "homeTitleKey": "tool_image_border_title",
-    "homeDescKey": "tool_image_border_desc",
-    "faqPrefix": "tool_image_border",
-    "related": [
-      "image-grayscale",
-      "flip-image",
-      "add-watermark"
-    ],
-    "logo": "/icons/tools/image-border.svg"
   },
   {
     "slug": "image-to-base64",
@@ -326,21 +352,21 @@
     "logo": "/icons/tools/image-to-base64.svg"
   },
   {
-    "slug": "add-watermark",
-    "path": "/tools/add-watermark",
+    "slug": "images-to-gif",
+    "path": "/tools/images-to-gif",
     "category": "image",
     "featured": true,
     "ymyl": false,
-    "i18nKey": "tool_add_watermark_title",
-    "homeTitleKey": "tool_add_watermark_title",
-    "homeDescKey": "tool_add_watermark_desc",
-    "faqPrefix": "tool_add_watermark",
+    "i18nKey": "tool_images_to_gif_title",
+    "homeTitleKey": "tool_images_to_gif_title",
+    "homeDescKey": "tool_images_to_gif_desc",
+    "faqPrefix": "tool_images_to_gif",
     "related": [
-      "image-overlay",
-      "image-exif",
-      "image-border"
+      "images-to-pdf",
+      "image-merge",
+      "image-format-converter"
     ],
-    "logo": "/icons/tools/add-watermark.svg"
+    "logo": "/icons/tools/images-to-gif.svg"
   },
   {
     "slug": "images-to-pdf",
@@ -361,40 +387,6 @@
     "logo": "/icons/tools/images-to-pdf.svg"
   },
   {
-    "slug": "images-to-word",
-    "path": "/tools/images-to-word",
-    "category": "image",
-    "featured": true,
-    "ymyl": false,
-    "i18nKey": "tool_images_to_word_title",
-    "homeTitleKey": "tool_images_to_word_title",
-    "homeDescKey": "tool_images_to_word_desc",
-    "faqPrefix": "tool_images_to_word",
-    "related": [
-      "images-to-pdf",
-      "images-to-ppt",
-      "image-merge"
-    ],
-    "logo": "/icons/tools/images-to-word.svg"
-  },
-  {
-    "slug": "images-to-gif",
-    "path": "/tools/images-to-gif",
-    "category": "image",
-    "featured": true,
-    "ymyl": false,
-    "i18nKey": "tool_images_to_gif_title",
-    "homeTitleKey": "tool_images_to_gif_title",
-    "homeDescKey": "tool_images_to_gif_desc",
-    "faqPrefix": "tool_images_to_gif",
-    "related": [
-      "images-to-pdf",
-      "image-merge",
-      "image-format-converter"
-    ],
-    "logo": "/icons/tools/images-to-gif.svg"
-  },
-  {
     "slug": "images-to-ppt",
     "path": "/tools/images-to-ppt",
     "category": "image",
@@ -412,21 +404,21 @@
     "logo": "/icons/tools/images-to-ppt.svg"
   },
   {
-    "slug": "add-www-to-dns",
-    "path": "/tools/add-www-to-dns",
-    "category": "developer",
+    "slug": "images-to-word",
+    "path": "/tools/images-to-word",
+    "category": "image",
     "featured": true,
     "ymyl": false,
-    "i18nKey": "tool_add_www_to_dns_title",
-    "homeTitleKey": "tool_add_www_to_dns_title",
-    "homeDescKey": "tool_add_www_to_dns_desc",
-    "faqPrefix": "tool_add_www_to_dns",
+    "i18nKey": "tool_images_to_word_title",
+    "homeTitleKey": "tool_images_to_word_title",
+    "homeDescKey": "tool_images_to_word_desc",
+    "faqPrefix": "tool_images_to_word",
     "related": [
-      "website-headers",
-      "ip-address",
-      "indexnow"
+      "images-to-pdf",
+      "images-to-ppt",
+      "image-merge"
     ],
-    "logo": "/icons/tools/add-www-to-dns.svg"
+    "logo": "/icons/tools/images-to-word.svg"
   },
   {
     "slug": "indexnow",
@@ -445,52 +437,55 @@
     "logo": "/icons/tools/indexnow.svg"
   },
   {
-    "slug": "how-to-calculate-bmi",
-    "path": "/tools/how-to-calculate-bmi",
-    "category": "calculator",
+    "slug": "ip-address",
+    "path": "/tools/ip-address",
+    "category": "developer",
     "featured": true,
-    "ymyl": true,
-    "i18nKey": "tool_bmi_title",
-    "homeTitleKey": "tool_bmi_title",
-    "homeDescKey": "tool_bmi_description",
-    "faqPrefix": "tool_bmi",
+    "ymyl": false,
+    "i18nKey": "tool_ip_address_title",
+    "homeTitleKey": "tool_ip_address_title",
+    "homeDescKey": "tool_ip_address_desc",
+    "faqPrefix": "tool_ip_address",
     "related": [
-      "how-to-calculate-percentage-change",
-      "square-feet"
+      "website-headers",
+      "add-www-to-dns",
+      "markdown-to-html"
     ],
-    "logo": "/icons/tools/how-to-calculate-bmi.svg"
+    "logo": "/icons/tools/ip-address.svg"
   },
   {
-    "slug": "how-to-calculate-roi",
-    "path": "/tools/how-to-calculate-roi",
-    "category": "calculator",
+    "slug": "json-schema-validator",
+    "path": "/tools/json-schema-validator",
+    "category": "developer",
     "featured": true,
-    "ymyl": true,
-    "i18nKey": "tool_roi_title",
-    "homeTitleKey": "tool_roi_title",
-    "homeDescKey": "tool_roi_description",
-    "faqPrefix": "tool_roi",
+    "ymyl": false,
+    "i18nKey": "tool_json_schema_validator_title",
+    "homeTitleKey": "tool_json_schema_validator_title",
+    "homeDescKey": "tool_json_schema_validator_desc",
+    "faqPrefix": "tool_json_schema_validator",
     "related": [
-      "how-to-calculate-marginal-revenue",
-      "how-to-calculate-percentage-change"
+      "yaml-json",
+      "csv-json"
     ],
-    "logo": "/icons/tools/how-to-calculate-roi.svg"
+    "logo": "/icons/tools/json-schema-validator.svg"
   },
   {
-    "slug": "how-to-calculate-marginal-revenue",
-    "path": "/tools/how-to-calculate-marginal-revenue",
-    "category": "calculator",
+    "slug": "markdown-to-html",
+    "path": "/tools/markdown-to-html",
+    "category": "developer",
     "featured": true,
-    "ymyl": true,
-    "i18nKey": "tool_marginal_revenue_title",
-    "homeTitleKey": "tool_marginal_revenue_title",
-    "homeDescKey": "tool_marginal_revenue_description",
-    "faqPrefix": "tool_marginal_revenue",
+    "ymyl": false,
+    "i18nKey": "tool_markdown_title",
+    "homeTitleKey": "tool_markdown_to_html_title",
+    "homeDescKey": "tool_markdown_to_html_desc",
+    "faqPrefix": "tool_markdown",
     "related": [
-      "how-to-calculate-roi",
-      "how-to-calculate-percentage-change"
+      "text-diff",
+      "yaml-json",
+      "html-entity",
+      "website-headers"
     ],
-    "logo": "/icons/tools/how-to-calculate-marginal-revenue.svg"
+    "logo": "/icons/tools/markdown-to-html.svg"
   },
   {
     "slug": "square-feet",
@@ -509,35 +504,58 @@
     "logo": "/icons/tools/square-feet.svg"
   },
   {
-    "slug": "how-to-calculate-percentage-change",
-    "path": "/tools/how-to-calculate-percentage-change",
-    "category": "calculator",
+    "slug": "text-diff",
+    "path": "/tools/text-diff",
+    "category": "developer",
     "featured": true,
     "ymyl": false,
-    "i18nKey": "tool_percentage_change_title",
-    "homeTitleKey": "tool_percentage_change_title",
-    "homeDescKey": "tool_percentage_change_description",
-    "faqPrefix": "tool_percentage_change",
+    "i18nKey": "tool_text_diff_title",
+    "homeTitleKey": "tool_text_diff_title",
+    "homeDescKey": "tool_text_diff_desc",
+    "faqPrefix": "tool_text_diff",
     "related": [
-      "how-to-calculate-roi",
-      "how-to-calculate-marginal-revenue"
+      "markdown-to-html",
+      "yaml-json",
+      "html-entity",
+      "website-headers"
     ],
-    "logo": "/icons/tools/how-to-calculate-percentage-change.svg"
+    "logo": "/icons/tools/text-diff.svg"
   },
   {
-    "slug": "how-to-calculate-gradient",
-    "path": "/tools/how-to-calculate-gradient",
-    "category": "calculator",
+    "slug": "website-headers",
+    "path": "/tools/website-headers",
+    "category": "developer",
     "featured": true,
     "ymyl": false,
-    "i18nKey": "tool_gradient_title",
-    "homeTitleKey": "tool_gradient_title",
-    "homeDescKey": "tool_gradient_desc",
-    "faqPrefix": "tool_gradient",
+    "i18nKey": "tool_headers_title",
+    "homeTitleKey": "tool_website_headers_title",
+    "homeDescKey": "tool_website_headers_desc",
+    "faqPrefix": "tool_headers",
     "related": [
-      "how-to-calculate-percentage-change",
-      "how-to-calculate-roi"
+      "ip-address",
+      "add-www-to-dns",
+      "indexnow",
+      "markdown-to-html",
+      "text-diff"
     ],
-    "logo": "/icons/tools/how-to-calculate-gradient.svg"
+    "logo": "/icons/tools/website-headers.svg"
+  },
+  {
+    "slug": "yaml-json",
+    "path": "/tools/yaml-json",
+    "category": "developer",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_yaml_json_title",
+    "homeTitleKey": "tool_yaml_json_title",
+    "homeDescKey": "tool_yaml_json_desc",
+    "faqPrefix": "tool_yaml_json",
+    "related": [
+      "markdown-to-html",
+      "text-diff",
+      "csv-json",
+      "json-schema-validator"
+    ],
+    "logo": "/icons/tools/yaml-json.svg"
   }
 ]

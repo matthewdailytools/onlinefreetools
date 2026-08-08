@@ -1,0 +1,22 @@
+{
+  "slug": "image-grayscale",
+  "path": "/tools/image-grayscale",
+  "category": "image",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_image_grayscale_title",
+  "homeTitleKey": "tool_image_grayscale_title",
+  "homeDescKey": "tool_image_grayscale_desc",
+  "faqPrefix": "tool_image_grayscale",
+  "related": [
+    "flip-image",
+    "image-border",
+    "image-crop"
+  ],
+  "logo": "/icons/tools/image-grayscale.svg",
+  "page": {
+    "module": "../pages/imageGrayscalePage",
+    "export": "renderImageGrayscalePage",
+    "style": "opts"
+  }
+}

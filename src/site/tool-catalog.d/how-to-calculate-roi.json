@@ -1,0 +1,21 @@
+{
+  "slug": "how-to-calculate-roi",
+  "path": "/tools/how-to-calculate-roi",
+  "category": "calculator",
+  "featured": true,
+  "ymyl": true,
+  "i18nKey": "tool_roi_title",
+  "homeTitleKey": "tool_roi_title",
+  "homeDescKey": "tool_roi_description",
+  "faqPrefix": "tool_roi",
+  "related": [
+    "how-to-calculate-marginal-revenue",
+    "how-to-calculate-percentage-change"
+  ],
+  "logo": "/icons/tools/how-to-calculate-roi.svg",
+  "page": {
+    "module": "../pages/howToCalculateRoiPage",
+    "export": "renderHowToCalculateRoiPage",
+    "style": "opts"
+  }
+}

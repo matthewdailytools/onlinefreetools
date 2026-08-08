@@ -1,0 +1,22 @@
+{
+  "slug": "image-compress",
+  "path": "/tools/image-compress",
+  "category": "image",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_image_compress_title",
+  "homeTitleKey": "tool_image_compress_title",
+  "homeDescKey": "tool_image_compress_desc",
+  "faqPrefix": "tool_image_compress",
+  "related": [
+    "image-format-converter",
+    "image-crop",
+    "image-optimizer"
+  ],
+  "logo": "/icons/tools/image-compress.svg",
+  "page": {
+    "module": "../pages/imageCompressPage",
+    "export": "renderImageCompressPage",
+    "style": "opts"
+  }
+}

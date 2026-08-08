@@ -1,0 +1,24 @@
+{
+  "slug": "image-merge",
+  "path": "/tools/image-merge",
+  "category": "image",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_image_merge_title",
+  "homeTitleKey": "tool_image_merge_title",
+  "homeDescKey": "tool_image_merge_desc",
+  "faqPrefix": "tool_image_merge",
+  "related": [
+    "image-overlay",
+    "image-crop",
+    "image-compress",
+    "images-to-pdf",
+    "images-to-gif"
+  ],
+  "logo": "/icons/tools/image-merge.svg",
+  "page": {
+    "module": "../pages/imageMergePage",
+    "export": "renderImageMergePage",
+    "style": "opts"
+  }
+}

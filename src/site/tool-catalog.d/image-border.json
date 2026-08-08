@@ -1,0 +1,22 @@
+{
+  "slug": "image-border",
+  "path": "/tools/image-border",
+  "category": "image",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_image_border_title",
+  "homeTitleKey": "tool_image_border_title",
+  "homeDescKey": "tool_image_border_desc",
+  "faqPrefix": "tool_image_border",
+  "related": [
+    "image-grayscale",
+    "flip-image",
+    "add-watermark"
+  ],
+  "logo": "/icons/tools/image-border.svg",
+  "page": {
+    "module": "../pages/imageBorderPage",
+    "export": "renderImageBorderPage",
+    "style": "opts"
+  }
+}

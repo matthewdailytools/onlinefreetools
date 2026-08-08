@@ -1,0 +1,22 @@
+{
+  "slug": "images-to-word",
+  "path": "/tools/images-to-word",
+  "category": "image",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_images_to_word_title",
+  "homeTitleKey": "tool_images_to_word_title",
+  "homeDescKey": "tool_images_to_word_desc",
+  "faqPrefix": "tool_images_to_word",
+  "related": [
+    "images-to-pdf",
+    "images-to-ppt",
+    "image-merge"
+  ],
+  "logo": "/icons/tools/images-to-word.svg",
+  "page": {
+    "module": "../pages/imagesToWordPage",
+    "export": "renderImagesToWordPage",
+    "style": "opts"
+  }
+}

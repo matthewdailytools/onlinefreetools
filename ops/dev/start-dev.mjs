@@ -98,7 +98,9 @@ const main = async () => {
   if (!skipBuild) {
     runBuildSite();
   } else {
-    console.log('Skipping build:site (--no-build).');
+    /** Registry/i18n merge must still run so wrangler sees toolPageRegistry.generated.ts */
+    console.log('Skipping full build:site (--no-build); running merge:tools only.');
+    execSync('npm run merge:tools', { cwd: projectRoot, stdio: 'inherit' });
   }
 
   /** build 后再清端口，避免 stale listener 占用导致 wrangler bind 失败 */

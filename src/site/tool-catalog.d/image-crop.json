@@ -1,0 +1,22 @@
+{
+  "slug": "image-crop",
+  "path": "/tools/image-crop",
+  "category": "image",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_image_crop_title",
+  "homeTitleKey": "tool_image_crop_title",
+  "homeDescKey": "tool_image_crop_desc",
+  "faqPrefix": "tool_image_crop",
+  "related": [
+    "image-compress",
+    "image-format-converter",
+    "image-optimizer"
+  ],
+  "logo": "/icons/tools/image-crop.svg",
+  "page": {
+    "module": "../pages/imageCropPage",
+    "export": "renderImageCropPage",
+    "style": "opts"
+  }
+}

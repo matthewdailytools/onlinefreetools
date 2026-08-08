@@ -15,39 +15,8 @@ import {
 	getExplicitLangFromPath,
 	withLangPrefix,
 } from "./site/lang";
-import { renderWebsiteHeadersPage } from "./pages/websiteHeadersPage";
-import { renderMarkdownToHtmlPage } from "./pages/markdownToHtmlPage";
-import { renderIpAddressPage } from "./pages/ipAddressPage";
-import { renderHowToCalculateBmiPage } from "./pages/howToCalculateBmiPage";
-import { renderMarginalRevenuePage } from "./pages/marginalRevenuePage";
-import { renderHowToCalculateRoiPage } from "./pages/howToCalculateRoiPage";
-import { renderSquareFeetPage } from "./pages/squareFeetPage";
-import { renderHowToCalculatePercentageChangePage } from "./pages/howToCalculatePercentageChangePage";
-import { renderHowToCalculateGradientPage } from "./pages/howToCalculateGradientPage";
-import { renderTextDiffPage } from "./pages/textDiffPage";
-import { renderYamlJsonPage } from "./pages/yamlJsonPage";
-import { renderCsvJsonPage } from "./pages/csvJsonPage";
-import { renderImageFormatConverterPage } from "./pages/imageFormatConverterPage";
-import { renderImageExifPage } from "./pages/imageExifPage";
-import { renderImageCompressPage } from "./pages/imageCompressPage";
-import { renderImageOptimizerPage } from "./pages/imageOptimizerPage";
-import { renderImageCropPage } from "./pages/imageCropPage";
-import { renderColorFromImagePage } from "./pages/colorFromImagePage";
-import { renderImageMergePage } from "./pages/imageMergePage";
-import { renderImageOverlayPage } from "./pages/imageOverlayPage";
-import { renderFlipImagePage } from "./pages/flipImagePage";
-import { renderImageGrayscalePage } from "./pages/imageGrayscalePage";
-import { renderImageBorderPage } from "./pages/imageBorderPage";
-import { renderImageToBase64Page } from "./pages/imageToBase64Page";
-import { renderAddWatermarkPage } from "./pages/addWatermarkPage";
-import { renderImagesToPdfPage } from "./pages/imagesToPdfPage";
-import { renderImagesToGifPage } from "./pages/imagesToGifPage";
-import { renderImagesToWordPage } from "./pages/imagesToWordPage";
-import { renderImagesToPptPage } from "./pages/imagesToPptPage";
-import { renderHtmlEntityPage } from "./pages/htmlEntityPage";
-import { renderAddWwwToDnsPage } from "./pages/addWwwToDnsPage";
-import { renderIndexNowPage } from "./pages/indexNowPage";
 import { registerToolPage } from "./site/toolRegistrar";
+import { TOOL_PAGE_RENDERERS } from "./site/toolPageRegistry.generated";
 import { handleWebsiteHeadersApi } from "./tools/websiteHeaders";
 import { handleIpAddress } from "./endpoints/ipAddress";
 import { handleDnsLookup } from "./endpoints/dnsLookup";
@@ -285,159 +254,13 @@ app.get("/api/tools/dns-lookup", handleDnsLookup);
 app.get("/api/tools/indexnow/check-key", handleIndexnowCheckKey);
 app.post("/api/tools/indexnow/submit", handleIndexnowSubmit);
 
-// Register website-headers page routes using centralized registrar
-registerToolPage(app as any, 'website-headers', (lang, defaultLang, enabled) => renderWebsiteHeadersPage(lang, defaultLang));
-
-// Register ip-address page routes using centralized registrar
-registerToolPage(app as any, 'ip-address', (lang, defaultLang, enabled) => renderIpAddressPage(lang, defaultLang));
-
 // Legacy static tool page: redirect to dynamic route.
 app.get("/tools/markdown-to-html.html", (c) => c.redirect("/tools/markdown-to-html", 301));
 
-// Legacy static tool page: redirect to dynamic route.
-app.get("/tools/markdown-to-html.html", (c) => c.redirect("/tools/markdown-to-html", 301));
-
-// Register markdown-to-html page via registrar
-registerToolPage(app as any, 'markdown-to-html', (lang, defaultLang, enabled) =>
-	renderMarkdownToHtmlPage({ lang, defaultLang, enabledLangs: enabled })
-);
-
-// Register how-to-calculate-bmi page via registrar
-registerToolPage(app as any, 'how-to-calculate-bmi', (lang, defaultLang, enabled) =>
-	renderHowToCalculateBmiPage({ lang, defaultLang, enabledLangs: enabled })
-);
-
-// Register how-to-calculate-marginal-revenue page via registrar
-registerToolPage(app as any, 'how-to-calculate-marginal-revenue', (lang, defaultLang, enabled) =>
-  renderMarginalRevenuePage({ lang, defaultLang, enabledLangs: enabled })
-);
-
-// Register square-feet page via registrar
-registerToolPage(app as any, 'square-feet', (lang, defaultLang, enabled) =>
-  renderSquareFeetPage({ lang, defaultLang, enabledLangs: enabled })
-);
-
-// Register how-to-calculate-percentage-change page via registrar
-registerToolPage(app as any, 'how-to-calculate-percentage-change', (lang, defaultLang, enabled) =>
-	renderHowToCalculatePercentageChangePage({ lang, defaultLang, enabledLangs: enabled })
-);
-
-// Register how-to-calculate-roi page via registrar
-registerToolPage(app as any, 'how-to-calculate-roi', (lang, defaultLang, enabled) =>
-  renderHowToCalculateRoiPage({ lang, defaultLang, enabledLangs: enabled })
-);
-
-// Register how-to-calculate-gradient page via registrar
-registerToolPage(app as any, 'how-to-calculate-gradient', (lang, defaultLang, enabled) =>
-	renderHowToCalculateGradientPage({ lang, defaultLang, enabledLangs: enabled })
-);
-
-// Register text-diff page via registrar（文本 Diff 对比器）
-registerToolPage(app as any, 'text-diff', (lang, defaultLang, enabled) =>
-	renderTextDiffPage({ lang, defaultLang, enabledLangs: enabled })
-);
-
-// Register yaml-json page via registrar（YAML ↔ JSON 双向转换）
-registerToolPage(app as any, 'yaml-json', (lang, defaultLang, enabled) =>
-	renderYamlJsonPage({ lang, defaultLang, enabledLangs: enabled })
-);
-
-// Register csv-json page via registrar（CSV ↔ JSON 双向转换）
-registerToolPage(app as any, 'csv-json', (lang, defaultLang, enabled) =>
-	renderCsvJsonPage({ lang, defaultLang, enabledLangs: enabled })
-);
-
-// Register image-format-converter page via registrar
-registerToolPage(app as any, 'image-format-converter', (lang, defaultLang, enabled) =>
-	renderImageFormatConverterPage({ lang, defaultLang, enabledLangs: enabled })
-);
-
-// Register image-exif page via registrar
-registerToolPage(app as any, 'image-exif', (lang, defaultLang, enabled) =>
-	renderImageExifPage({ lang, defaultLang, enabledLangs: enabled })
-);
-
-// Register image-compress page via registrar（图片压缩）
-registerToolPage(app as any, 'image-compress', (lang, defaultLang, enabled) =>
-	renderImageCompressPage({ lang, defaultLang, enabledLangs: enabled })
-);
-
-// Register image-optimizer page via registrar（图片优化 · Tier 2 WASM）
-registerToolPage(app as any, 'image-optimizer', (lang, defaultLang, enabled) =>
-	renderImageOptimizerPage({ lang, defaultLang, enabledLangs: enabled })
-);
-
-// Register image-crop page via registrar（图片裁剪与改尺寸）
-registerToolPage(app as any, 'image-crop', (lang, defaultLang, enabled) =>
-	renderImageCropPage({ lang, defaultLang, enabledLangs: enabled })
-);
-
-// Register color-from-image page via registrar（图片主色提取）
-registerToolPage(app as any, 'color-from-image', (lang, defaultLang, enabled) =>
-	renderColorFromImagePage({ lang, defaultLang, enabledLangs: enabled })
-);
-
-// Register image-merge page via registrar（多图拼接）
-registerToolPage(app as any, 'image-merge', (lang, defaultLang, enabled) =>
-	renderImageMergePage({ lang, defaultLang, enabledLangs: enabled })
-);
-
-// Register image-overlay page via registrar（图层叠加）
-registerToolPage(app as any, 'image-overlay', (lang, defaultLang, enabled) =>
-	renderImageOverlayPage({ lang, defaultLang, enabledLangs: enabled })
-);
-
-// Register flip-image page via registrar
-registerToolPage(app as any, 'flip-image', (lang, defaultLang, enabled) =>
-	renderFlipImagePage({ lang, defaultLang, enabledLangs: enabled })
-);
-
-registerToolPage(app as any, 'image-grayscale', (lang, defaultLang, enabled) =>
-	renderImageGrayscalePage({ lang, defaultLang, enabledLangs: enabled })
-);
-
-registerToolPage(app as any, 'image-border', (lang, defaultLang, enabled) =>
-	renderImageBorderPage({ lang, defaultLang, enabledLangs: enabled })
-);
-
-registerToolPage(app as any, 'image-to-base64', (lang, defaultLang, enabled) =>
-	renderImageToBase64Page({ lang, defaultLang, enabledLangs: enabled })
-);
-
-registerToolPage(app as any, 'add-watermark', (lang, defaultLang, enabled) =>
-	renderAddWatermarkPage({ lang, defaultLang, enabledLangs: enabled })
-);
-
-registerToolPage(app as any, 'images-to-pdf', (lang, defaultLang, enabled) =>
-	renderImagesToPdfPage({ lang, defaultLang, enabledLangs: enabled })
-);
-
-registerToolPage(app as any, 'images-to-gif', (lang, defaultLang, enabled) =>
-	renderImagesToGifPage({ lang, defaultLang, enabledLangs: enabled })
-);
-
-registerToolPage(app as any, 'images-to-word', (lang, defaultLang, enabled) =>
-	renderImagesToWordPage({ lang, defaultLang, enabledLangs: enabled })
-);
-
-registerToolPage(app as any, 'images-to-ppt', (lang, defaultLang, enabled) =>
-	renderImagesToPptPage({ lang, defaultLang, enabledLangs: enabled })
-);
-
-// Register html-entity page via registrar（HTML 实体编解码）
-registerToolPage(app as any, 'html-entity', (lang, defaultLang, enabled) =>
-	renderHtmlEntityPage({ lang, defaultLang, enabledLangs: enabled })
-);
-
-// Register add-www-to-dns page via registrar（给域名加 www DNS）
-registerToolPage(app as any, 'add-www-to-dns', (lang, defaultLang, enabled) =>
-	renderAddWwwToDnsPage({ lang, defaultLang, enabledLangs: enabled })
-);
-
-// Register indexnow page via registrar（Bing IndexNow 提交与密钥检查）
-registerToolPage(app as any, 'indexnow', (lang, defaultLang, enabled) =>
-	renderIndexNowPage({ lang, defaultLang, enabledLangs: enabled })
-);
+// Register all tool pages from generated registry (src/site/tool-catalog.d + merge:tools)
+for (const [slug, render] of Object.entries(TOOL_PAGE_RENDERERS)) {
+	registerToolPage(app as any, slug, render);
+}
 
 // Catch-all (GET): perform language negotiation before falling back to static assets.
 app.get("/*", (c) => {

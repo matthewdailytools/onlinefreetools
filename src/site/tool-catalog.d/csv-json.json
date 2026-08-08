@@ -1,0 +1,22 @@
+{
+  "slug": "csv-json",
+  "path": "/tools/csv-json",
+  "category": "developer",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_csv_json_title",
+  "homeTitleKey": "tool_csv_json_title",
+  "homeDescKey": "tool_csv_json_desc",
+  "faqPrefix": "tool_csv_json",
+  "related": [
+    "yaml-json",
+    "text-diff",
+    "json-schema-validator"
+  ],
+  "logo": "/icons/tools/csv-json.svg",
+  "page": {
+    "module": "../pages/csvJsonPage",
+    "export": "renderCsvJsonPage",
+    "style": "opts"
+  }
+}

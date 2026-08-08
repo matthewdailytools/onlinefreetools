@@ -1,0 +1,87 @@
+/**
+ * i18n tool shard (image-overlay / pt). Edit only this tool's keys.
+ */
+import type { SiteLangDict } from '../../../types';
+const pt: SiteLangDict = {
+  tool_image_overlay_article:
+    'Composição local de duas camadas: opacidade, canto superior esquerdo, escala, modos de mistura e fundo JPEG ao achatar transparência.',
+  tool_image_overlay_blend_darken: 'Escurecer',
+  tool_image_overlay_blend_label: 'Mistura',
+  tool_image_overlay_blend_lighten: 'Clarear',
+  tool_image_overlay_blend_multiply: 'Multiplicar',
+  tool_image_overlay_blend_overlay: 'Sobrepor',
+  tool_image_overlay_blend_screen: 'Tela',
+  tool_image_overlay_blend_source_over: 'Normal (source-over)',
+  tool_image_overlay_choose_base: 'Imagem base',
+  tool_image_overlay_choose_overlay: 'Camada',
+  tool_image_overlay_clear: 'Limpar',
+  tool_image_overlay_description:
+    'Coloque um logo ou marca d’água PNG sobre uma foto base no navegador — não texto digitado nem juntar várias fotos como collage. Passos: escolha base + camada, ajuste opacidade e escala, posicione com x/y ou arrastando, escolha mistura, sobreponha e baixe JPEG/WebP/PNG. Exemplo: foto de amostra + LOGO semitransparente no canto inferior direito a 75 % → PNG — tudo no seu dispositivo.',
+  tool_image_overlay_download: 'Baixar',
+  tool_image_overlay_drop_hint_base: 'Ou solte aqui uma base JPEG, PNG ou WebP. O processamento fica nesta aba.',
+  tool_image_overlay_drop_hint_overlay: 'Ou solte a camada (PNG com transparência funciona bem).',
+  tool_image_overlay_empty_base: 'Escolha primeiro uma imagem base.',
+  tool_image_overlay_empty_overlay: 'Escolha primeiro uma camada.',
+  tool_image_overlay_err_decode: 'O navegador não decodificou um arquivo. Tente JPEG, PNG ou WebP.',
+  tool_image_overlay_err_encode: 'Não foi possível exportar. Tente uma base menor ou outro formato.',
+  tool_image_overlay_example:
+    'Carregue o exemplo: base em degradê + LOGO semitransparente canto inferior direito a 75 %, mistura Normal. Sobreponha, mantenha PNG, baixe. Arraste na pré-visualização; teste Multiplicar em logo claro.',
+  tool_image_overlay_example_title: 'Exemplo',
+  tool_image_overlay_faq_a1: 'Não. Decodificar, compor e exportar ocorre no navegador. Aba Rede: sem POST.',
+  tool_image_overlay_faq_a2:
+    'Unir concatena várias fotos em horizontal, vertical ou grade. Sobrepor mantém uma base e pinta uma camada com opacidade, posição e mistura.',
+  tool_image_overlay_faq_a3:
+    'Regras Canvas: Normal empilha; Multiplicar escurece; Tela clareia; Sobrepor aumenta contraste; Escurecer/Clarear escolhem min/máx por canal.',
+  tool_image_overlay_faq_a4: 'JPEG não tem transparência. Antes de exportar a tela é preenchida para áreas PNG não virarem pretas.',
+  tool_image_overlay_faq_a5: 'Esta página só sobrepõe arquivos de imagem. Para texto, use a ferramenta de marca d’água.',
+  tool_image_overlay_faq_q1: 'Minhas imagens são enviadas?',
+  tool_image_overlay_faq_q2: 'Diferença de unir imagens?',
+  tool_image_overlay_faq_q3: 'O que fazem os modos de mistura?',
+  tool_image_overlay_faq_q4: 'Por que cor de fundo JPEG?',
+  tool_image_overlay_faq_q5: 'Marca d’água de texto aqui?',
+  tool_image_overlay_format_jpeg: 'JPEG',
+  tool_image_overlay_format_label: 'Formato de saída',
+  tool_image_overlay_format_png: 'PNG',
+  tool_image_overlay_format_webp: 'WebP',
+  tool_image_overlay_how_body:
+    'Adicione foto base e segunda imagem (logo, selo ou PNG transparente). Ajuste opacidade, escala e posição — arraste na pré-visualização ou digite x/y em pixels da base. Escolha mistura, formato e fundo JPEG, sobreponha e baixe. Tudo local.',
+  tool_image_overlay_how_title: 'Como funciona',
+  tool_image_overlay_jpeg_bg_label: 'Fundo JPEG',
+  tool_image_overlay_opacity_label: 'Opacidade (%)',
+  tool_image_overlay_overlay: 'Sobrepor',
+  tool_image_overlay_pos_bc: 'Inferior centro',
+  tool_image_overlay_pos_bl: 'Inferior esquerdo',
+  tool_image_overlay_pos_br: 'Inferior direito',
+  tool_image_overlay_pos_mc: 'Centro',
+  tool_image_overlay_pos_ml: 'Meio esquerdo',
+  tool_image_overlay_pos_mr: 'Meio direito',
+  tool_image_overlay_pos_tc: 'Superior centro',
+  tool_image_overlay_pos_tl: 'Superior esquerdo',
+  tool_image_overlay_pos_tr: 'Superior direito',
+  tool_image_overlay_position_label: 'Posição rápida',
+  tool_image_overlay_preview_label: 'Pré-visualização (arraste a camada)',
+  tool_image_overlay_quality_label: 'Qualidade',
+  tool_image_overlay_rules_body:
+    'A tela de saída iguala os pixels naturais da base. A camada desenha-se com âncora superior esquerda em (x, y) após escala.',
+  tool_image_overlay_rules_item_1: 'Largura × altura da tela = dimensões naturais da base; base desenhada em (0, 0).',
+  tool_image_overlay_rules_item_2:
+    'Tamanho da camada = largura × altura natural × (escala% ÷ 100); posição em pixels da base, âncora superior esquerda.',
+  tool_image_overlay_rules_item_3:
+    'globalAlpha = opacidade ÷ 100; globalCompositeOperation = mistura escolhida; reset após desenhar a camada.',
+  tool_image_overlay_rules_item_4: 'JPEG: preenche fundo escolhido antes de base e camada. PNG/WebP mantêm alpha onde existir.',
+  tool_image_overlay_rules_title: 'Regras de desenho',
+  tool_image_overlay_sample: 'Carregar exemplo',
+  tool_image_overlay_scale_label: 'Escala (%)',
+  tool_image_overlay_status_done: 'Pronto — clique Baixar para salvar.',
+  tool_image_overlay_status_working: 'Compondo…',
+  tool_image_overlay_title: 'Sobrepor imagens — coloque um logo na foto',
+  tool_image_overlay_usecase_1: 'Marca: logo em fotos de produto ou capas sociais sem editor de desktop.',
+  tool_image_overlay_usecase_2: 'Selos de canto: etiqueta “NOVO” com opacidade e grade de nove posições.',
+  tool_image_overlay_usecase_3: 'Texturas: camada em tons de cinza com Multiplicar ou Tela para tingir ou suavizar o fundo.',
+  tool_image_overlay_usecases_title: 'Boas situações',
+  tool_image_overlay_warn_edge: 'A base passa de ~8192 px — alguns navegadores podem falhar.',
+  tool_image_overlay_warn_large: 'Arquivo grande (>25 MB) — decodificação pode demorar.',
+  tool_image_overlay_x_label: 'X (px)',
+  tool_image_overlay_y_label: 'Y (px)',
+};
+export default pt;

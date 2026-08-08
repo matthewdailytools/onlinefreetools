@@ -1,0 +1,22 @@
+{
+  "slug": "ip-address",
+  "path": "/tools/ip-address",
+  "category": "developer",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_ip_address_title",
+  "homeTitleKey": "tool_ip_address_title",
+  "homeDescKey": "tool_ip_address_desc",
+  "faqPrefix": "tool_ip_address",
+  "related": [
+    "website-headers",
+    "add-www-to-dns",
+    "markdown-to-html"
+  ],
+  "logo": "/icons/tools/ip-address.svg",
+  "page": {
+    "module": "../pages/ipAddressPage",
+    "export": "renderIpAddressPage",
+    "style": "pair"
+  }
+}

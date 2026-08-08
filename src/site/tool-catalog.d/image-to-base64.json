@@ -1,0 +1,21 @@
+{
+  "slug": "image-to-base64",
+  "path": "/tools/image-to-base64",
+  "category": "image",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_image_to_base64_title",
+  "homeTitleKey": "tool_image_to_base64_title",
+  "homeDescKey": "tool_image_to_base64_desc",
+  "faqPrefix": "tool_image_to_base64",
+  "related": [
+    "image-format-converter",
+    "image-compress"
+  ],
+  "logo": "/icons/tools/image-to-base64.svg",
+  "page": {
+    "module": "../pages/imageToBase64Page",
+    "export": "renderImageToBase64Page",
+    "style": "opts"
+  }
+}

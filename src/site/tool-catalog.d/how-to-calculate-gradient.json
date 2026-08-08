@@ -1,0 +1,21 @@
+{
+  "slug": "how-to-calculate-gradient",
+  "path": "/tools/how-to-calculate-gradient",
+  "category": "calculator",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_gradient_title",
+  "homeTitleKey": "tool_gradient_title",
+  "homeDescKey": "tool_gradient_desc",
+  "faqPrefix": "tool_gradient",
+  "related": [
+    "how-to-calculate-percentage-change",
+    "how-to-calculate-roi"
+  ],
+  "logo": "/icons/tools/how-to-calculate-gradient.svg",
+  "page": {
+    "module": "../pages/howToCalculateGradientPage",
+    "export": "renderHowToCalculateGradientPage",
+    "style": "opts"
+  }
+}

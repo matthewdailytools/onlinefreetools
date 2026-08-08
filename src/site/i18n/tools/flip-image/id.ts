@@ -1,0 +1,63 @@
+/**
+ * i18n tool shard (flip-image / id). Edit only this tool's keys.
+ */
+import type { SiteLangDict } from '../../../types';
+const id: SiteLangDict = {
+  tool_flip_image_apply: 'Terapkan',
+  tool_flip_image_article: 'Local canvas flip with horizontal and vertical mirrors; pixels are redrawn, not only CSS-flipped.',
+  tool_flip_image_choose_file: 'Pilih gambar',
+  tool_flip_image_clear: 'Bersihkan',
+  tool_flip_image_desc: 'Balik gambar — cermin H/V — local, no upload.',
+  tool_flip_image_description:
+    'Langkah: choose files, adjust options, export. contoh: sample color blocks demo. proses: local in browser, no upload. Tool: flip/mirror photo H or V, download JPEG/WebP/PNG. Soft limits ~25MB / 8192px apply.',
+  tool_flip_image_download: 'Unduh',
+  tool_flip_image_drop_hint: 'Or drop JPEG, PNG, or WebP here. Processing stays in this tab.',
+  tool_flip_image_empty: 'Choose an image first.',
+  tool_flip_image_err_decode: 'Could not decode the image. Try JPEG, PNG, or WebP.',
+  tool_flip_image_err_encode: 'Could not export. Try a smaller image or another format.',
+  tool_flip_image_example:
+    'Load sample shows asymmetric color blocks with a mark; horizontal flip is applied so the mark moves to the other side.',
+  tool_flip_image_example_title: 'Contoh',
+  tool_flip_image_faq_a1: 'No. Decode, flip, and export run in your browser.',
+  tool_flip_image_faq_a2: 'Flip itself is lossless in pixel order; saving as JPEG/WebP re-encodes and may change bytes.',
+  tool_flip_image_faq_a3: 'Flip mirrors; rotate turns by angles. This page only mirrors.',
+  tool_flip_image_faq_a4: 'Yes—tick both boxes to flip horizontally and vertically together.',
+  tool_flip_image_faq_a5: 'Only the first frame is decoded and flipped.',
+  tool_flip_image_faq_q1: 'Are images uploaded?',
+  tool_flip_image_faq_q2: 'Is quality lost?',
+  tool_flip_image_faq_q3: 'Flip vs rotate?',
+  tool_flip_image_faq_q4: 'Can I flip both ways?',
+  tool_flip_image_faq_q5: 'What about animated GIFs?',
+  tool_flip_image_flip_h: 'Flip horizontal',
+  tool_flip_image_flip_v: 'Flip vertical',
+  tool_flip_image_format_jpeg: 'JPEG',
+  tool_flip_image_format_label: 'Output format',
+  tool_flip_image_format_png: 'PNG',
+  tool_flip_image_format_webp: 'WebP',
+  tool_flip_image_how_body:
+    'Choose a photo, pick horizontal and/or vertical flip, apply, then download. Everything runs in this tab.',
+  tool_flip_image_how_title: 'Cara kerja',
+  tool_flip_image_jpeg_bg_label: 'JPEG background',
+  tool_flip_image_no_flip: 'Select horizontal and/or vertical flip.',
+  tool_flip_image_preview_label: 'Preview',
+  tool_flip_image_quality_label: 'Quality',
+  tool_flip_image_rules_body:
+    'The canvas matches the source size. Horizontal flip uses scale(-1,1); vertical uses scale(1,-1); both can combine. Export re-encodes pixels.',
+  tool_flip_image_rules_item_1: 'Horizontal: reflect across the vertical axis (left↔right).',
+  tool_flip_image_rules_item_2: 'Vertical: reflect across the horizontal axis (top↔bottom).',
+  tool_flip_image_rules_item_3: 'Both checked = 180° rotation equivalent for rectangular images.',
+  tool_flip_image_rules_item_4: 'Animated GIF uses the first frame only; transparency is kept for PNG/WebP.',
+  tool_flip_image_rules_title: 'Aturan',
+  tool_flip_image_sample: 'Muat contoh',
+  tool_flip_image_status_done: 'Done — click Download to save.',
+  tool_flip_image_status_working: 'Working…',
+  tool_flip_image_title: 'Balik gambar — cermin H/V',
+  tool_flip_image_usecase_1: 'Fix mirrored selfies before posting.',
+  tool_flip_image_usecase_2: 'Swap left/right for layouts or mockups.',
+  tool_flip_image_usecase_3: 'Flip scanned pages that were upside-down (with vertical).',
+  tool_flip_image_usecases_title: 'Cocok untuk',
+  tool_flip_image_warn_animation: 'Animated GIF: only the first frame is used.',
+  tool_flip_image_warn_edge: 'Edge exceeds ~8192 px — some browsers may fail.',
+  tool_flip_image_warn_large: 'Large file (>25 MB) — may be slow.',
+};
+export default id;

@@ -1,0 +1,21 @@
+{
+  "slug": "how-to-calculate-percentage-change",
+  "path": "/tools/how-to-calculate-percentage-change",
+  "category": "calculator",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_percentage_change_title",
+  "homeTitleKey": "tool_percentage_change_title",
+  "homeDescKey": "tool_percentage_change_description",
+  "faqPrefix": "tool_percentage_change",
+  "related": [
+    "how-to-calculate-roi",
+    "how-to-calculate-marginal-revenue"
+  ],
+  "logo": "/icons/tools/how-to-calculate-percentage-change.svg",
+  "page": {
+    "module": "../pages/howToCalculatePercentageChangePage",
+    "export": "renderHowToCalculatePercentageChangePage",
+    "style": "opts"
+  }
+}

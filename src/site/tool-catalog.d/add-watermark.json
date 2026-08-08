@@ -1,0 +1,22 @@
+{
+  "slug": "add-watermark",
+  "path": "/tools/add-watermark",
+  "category": "image",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_add_watermark_title",
+  "homeTitleKey": "tool_add_watermark_title",
+  "homeDescKey": "tool_add_watermark_desc",
+  "faqPrefix": "tool_add_watermark",
+  "related": [
+    "image-overlay",
+    "image-exif",
+    "image-border"
+  ],
+  "logo": "/icons/tools/add-watermark.svg",
+  "page": {
+    "module": "../pages/addWatermarkPage",
+    "export": "renderAddWatermarkPage",
+    "style": "opts"
+  }
+}

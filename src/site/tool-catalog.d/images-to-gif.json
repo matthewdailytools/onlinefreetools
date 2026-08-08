@@ -1,0 +1,22 @@
+{
+  "slug": "images-to-gif",
+  "path": "/tools/images-to-gif",
+  "category": "image",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_images_to_gif_title",
+  "homeTitleKey": "tool_images_to_gif_title",
+  "homeDescKey": "tool_images_to_gif_desc",
+  "faqPrefix": "tool_images_to_gif",
+  "related": [
+    "images-to-pdf",
+    "image-merge",
+    "image-format-converter"
+  ],
+  "logo": "/icons/tools/images-to-gif.svg",
+  "page": {
+    "module": "../pages/imagesToGifPage",
+    "export": "renderImagesToGifPage",
+    "style": "opts"
+  }
+}

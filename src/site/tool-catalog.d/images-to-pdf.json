@@ -1,0 +1,23 @@
+{
+  "slug": "images-to-pdf",
+  "path": "/tools/images-to-pdf",
+  "category": "image",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_images_to_pdf_title",
+  "homeTitleKey": "tool_images_to_pdf_title",
+  "homeDescKey": "tool_images_to_pdf_desc",
+  "faqPrefix": "tool_images_to_pdf",
+  "related": [
+    "image-merge",
+    "images-to-word",
+    "images-to-ppt",
+    "images-to-gif"
+  ],
+  "logo": "/icons/tools/images-to-pdf.svg",
+  "page": {
+    "module": "../pages/imagesToPdfPage",
+    "export": "renderImagesToPdfPage",
+    "style": "opts"
+  }
+}

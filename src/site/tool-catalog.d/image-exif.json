@@ -1,0 +1,22 @@
+{
+  "slug": "image-exif",
+  "path": "/tools/image-exif",
+  "category": "image",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_image_exif_title",
+  "homeTitleKey": "tool_image_exif_title",
+  "homeDescKey": "tool_image_exif_desc",
+  "faqPrefix": "tool_image_exif",
+  "related": [
+    "image-format-converter",
+    "image-compress",
+    "image-optimizer"
+  ],
+  "logo": "/icons/tools/image-exif.svg",
+  "page": {
+    "module": "../pages/imageExifPage",
+    "export": "renderImageExifPage",
+    "style": "opts"
+  }
+}

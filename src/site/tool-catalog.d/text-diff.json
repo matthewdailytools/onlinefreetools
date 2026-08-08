@@ -1,0 +1,23 @@
+{
+  "slug": "text-diff",
+  "path": "/tools/text-diff",
+  "category": "developer",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_text_diff_title",
+  "homeTitleKey": "tool_text_diff_title",
+  "homeDescKey": "tool_text_diff_desc",
+  "faqPrefix": "tool_text_diff",
+  "related": [
+    "markdown-to-html",
+    "yaml-json",
+    "html-entity",
+    "website-headers"
+  ],
+  "logo": "/icons/tools/text-diff.svg",
+  "page": {
+    "module": "../pages/textDiffPage",
+    "export": "renderTextDiffPage",
+    "style": "opts"
+  }
+}

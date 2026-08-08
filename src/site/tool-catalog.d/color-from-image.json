@@ -1,0 +1,21 @@
+{
+  "slug": "color-from-image",
+  "path": "/tools/color-from-image",
+  "category": "image",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_color_from_image_title",
+  "homeTitleKey": "tool_color_from_image_title",
+  "homeDescKey": "tool_color_from_image_desc",
+  "faqPrefix": "tool_color_from_image",
+  "related": [
+    "how-to-calculate-gradient",
+    "image-crop"
+  ],
+  "logo": "/icons/tools/color-from-image.svg",
+  "page": {
+    "module": "../pages/colorFromImagePage",
+    "export": "renderColorFromImagePage",
+    "style": "opts"
+  }
+}

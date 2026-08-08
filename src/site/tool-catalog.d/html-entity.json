@@ -1,0 +1,21 @@
+{
+  "slug": "html-entity",
+  "path": "/tools/html-entity",
+  "category": "developer",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_html_entity_title",
+  "homeTitleKey": "tool_html_entity_title",
+  "homeDescKey": "tool_html_entity_desc",
+  "faqPrefix": "tool_html_entity",
+  "related": [
+    "markdown-to-html",
+    "text-diff"
+  ],
+  "logo": "/icons/tools/html-entity.svg",
+  "page": {
+    "module": "../pages/htmlEntityPage",
+    "export": "renderHtmlEntityPage",
+    "style": "opts"
+  }
+}

@@ -21,7 +21,8 @@
 - [ ] 十语非同一句式骨架；title 含该语检索说法
 - [ ] 未依赖 `t()` 英文回退冒充缺语种
 - [ ] 未使用「脚本批量同构灌语」作为唯一交付；待母语抽查已清或已排期
-- [ ] **检索覆盖已优化**（title/description/首页 desc 在初稿之后按 `tool-i18n-localization.mdc` 步 2+4 过一遍；多轮记录有摘要）
+- [ ] **清单前检索覆盖已做**（slug/title/关键词/desc；`02`/`notes` 有覆盖表；见 localization 步 0b）——勾工程/页面/上线清单前必做
+- [ ] **检索覆盖已优化**（i18n 初稿之后按 `tool-i18n-localization.mdc` 步 2+4 再过一遍；多轮记录有摘要）
 
 技术专名（CRLF、`.env`、JSON、diff 作副标）可保留，**不可**替代本地主 title。  
 Title 方向须为当地口语检索向，见 `.cursor/rules/tool-i18n-localization.mdc`「Title / H1 自然口语」。
@@ -173,6 +174,7 @@ Title 方向须为当地口语检索向，见 `.cursor/rules/tool-i18n-localizat
 
 | 轮次 | 日期 | 做了什么 | 结果 |
 |---|---|---|---|
+| 0b 清单前检索覆盖 | | slug/title/关键词/desc；覆盖表在 `02`/`notes` | |
 | 1 母版+lint | | | |
 | 1b 母版检索覆盖优化 | | title/desc/首页 vs brief 检索词；去参数枚举；次词落点 | |
 | 2 按 brief 重写 | | | |

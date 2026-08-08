@@ -1,0 +1,81 @@
+/**
+ * i18n tool shard (image-merge / ar). Edit only this tool's keys.
+ */
+import type { SiteLangDict } from '../../../types';
+const ar: SiteLangDict = {
+  tool_image_merge_article: 'كولاج محلي لعدة صور مع تخطيط وفراغ وخلفية وملاءمة شبكية وتنسيق وم presets للحجم.',
+  tool_image_merge_bg_label: 'الخلفية',
+  tool_image_merge_choose_files: 'إضافة صور',
+  tool_image_merge_clear: 'مسح',
+  tool_image_merge_cols_label: 'الأعمدة',
+  tool_image_merge_description:
+    'اجمع الصور في كولاج أو صورة واحدة متصلة داخل المتصفح. الخطوات: أضف الصور، اختر تخطيطًا أفقيًا/عموديًا/شبكيًا، اضبط الفراغ والخلفية، ادمج، ثم نزّل JPEG/WebP/PNG. مثال: ثلاث عينات أفقيًا بخلفية بيضاء وفراغ 8 px → WebP واحد — الملفات لا تغادر جهازك؛ أحجام اختيارية للمنشورات الشائعة.',
+  tool_image_merge_download: 'تنزيل',
+  tool_image_merge_drop_hint: 'أو أفلت ملفين JPEG أو PNG أو WebP أو أكثر هنا. الدمج يتم في هذا التبويب.',
+  tool_image_merge_empty: 'أضف صورة واحدة على الأقل أولًا.',
+  tool_image_merge_err_decode: 'تعذّر على المتصفح فك أحد الملفات. جرّب JPEG أو PNG أو WebP.',
+  tool_image_merge_err_encode: 'تعذّر تصدير الصورة المدمجة. جرّب تخطيطًا أصغر أو تنسيقًا آخر.',
+  tool_image_merge_example:
+    'حمّل عينة الألوان الثلاثة، أفقي، فراغ 8 px، خلفية بيضاء، WebP 0.90، بدون preset، وادمج. ينبغي أن تحصل على شريط ~728×180 px. جرّب شبكة 3 أعمدة لصف واحد من خلايا متساوية.',
+  tool_image_merge_example_title: 'مثال',
+  tool_image_merge_faq_a1: 'لا. فك الترميز والتخطيط والتصدير محلي. راجع Network — لا POST للصور.',
+  tool_image_merge_faq_a2:
+    'الأفقي يوحّد الارتفاع ويمتد بالعرض؛ العمودي يوحّد العرض ويمتد بالارتفاع. الشبكة خلايا ثابتة مع احتواء أو تغطية.',
+  tool_image_merge_faq_a3: 'لا. أحجام إخراج شائعة فقط. قواعد المنصات تتغير؛ راجع التطبيق الذي تنشر فيه.',
+  tool_image_merge_faq_a4: 'يُفك ويُرسم الإطار الأول فقط. الحركة لا تُحفظ في المخرجات.',
+  tool_image_merge_faq_a5:
+    'حواف لوحة فوق ~8192 px أو مصادر ضخمة قد تتجاوز ذاكرة المتصفح. قلّل العدد أو الأعمدة أو قصّ المصدر أولًا.',
+  tool_image_merge_faq_q1: 'هل تُرفَع صوري؟',
+  tool_image_merge_faq_q2: 'ما الفرق بين أفقي وعمودي؟',
+  tool_image_merge_faq_q3: 'هل presets 1080 أو 1200 تضمن موافقة Instagram/Facebook؟',
+  tool_image_merge_faq_q4: 'ماذا عن GIF المتحرك؟',
+  tool_image_merge_faq_q5: 'لماذا يفشل كولاج ضخم؟',
+  tool_image_merge_fit_contain: 'احتواء',
+  tool_image_merge_fit_cover: 'تغطية',
+  tool_image_merge_fit_label: 'ملاءمة الخلية',
+  tool_image_merge_format_jpeg: 'JPEG',
+  tool_image_merge_format_label: 'تنسيق الإخراج',
+  tool_image_merge_format_png: 'PNG',
+  tool_image_merge_format_webp: 'WebP',
+  tool_image_merge_gap_label: 'الفراغ (px)',
+  tool_image_merge_how_body:
+    'أضف صورتين أو أكثر، رتّبها إن لزم، اختر التخطيط والفراغ والخلفية، ثم ادمج. الصفحة تبني لوحة محليًا، ترسم كل صورة بالترتيب، وقد تصغّر النتيجة إلى أحجام مربعة أو معاينة رابط شائعة، ثم تتيح التنزيل — دون رفع.',
+  tool_image_merge_how_title: 'كيف يعمل',
+  tool_image_merge_layout_grid: 'شبكة',
+  tool_image_merge_layout_horizontal: 'أفقي',
+  tool_image_merge_layout_label: 'التخطيط',
+  tool_image_merge_layout_vertical: 'عمودي',
+  tool_image_merge_merge: 'دمج',
+  tool_image_merge_move_down: 'تحريك لأسفل',
+  tool_image_merge_move_up: 'تحريك لأعلى',
+  tool_image_merge_need_two: 'يلزم صورتان على الأقل للدمج.',
+  tool_image_merge_preset_fb: '1200×630 (معاينة رابط شائعة)',
+  tool_image_merge_preset_ig: '1080×1080 (مربع شائع)',
+  tool_image_merge_preset_label: 'حجم جاهز',
+  tool_image_merge_preset_none: 'بدون',
+  tool_image_merge_preview_label: 'معاينة مدمجة',
+  tool_image_merge_quality_label: 'الجودة',
+  tool_image_merge_remove: 'إزالة',
+  tool_image_merge_rules_body:
+    'حجم اللوحة يتبع الصيغ أدناه. في الشبكة الخلايا بعرض وارتفاع موحّد؛ الاحتواء يترك هامشًا والتغطية تقص.',
+  tool_image_merge_rules_item_1: 'أفقي: الارتفاع = أقصى ارتفاع للمصادر؛ كل صورة تُقاس له؛ العرض = مجموع العروض المقاسة + (n−1)×فراغ.',
+  tool_image_merge_rules_item_2: 'عمودي: العرض = أقصى عرض للمصادر؛ كل صورة تُقاس له؛ الارتفاع = مجموع الارتفاعات المقاسة + (n−1)×فراغ.',
+  tool_image_merge_rules_item_3:
+    'شبكة: 2–4 أعمدة؛ صفوف = ceil(n/أعمدة); خلية = أقصى عرض × أقصى ارتفاع؛ فراغ بين الخلايا؛ احتواء أو تغطية داخل كل خلية.',
+  tool_image_merge_rules_item_4:
+    'الأحجام الجاهزة تصغّر الكولاج إلى 1080×1080 أو 1200×630 بخلفيتك (أحجام شائعة وليست ضمان موافقة منصة). تُملأ الخلفية قبل الرسم.',
+  tool_image_merge_rules_title: 'قواعد التخطيط',
+  tool_image_merge_sample: 'تحميل عينة',
+  tool_image_merge_stats_tpl: '{w}×{h} · {mime} · {bytes}',
+  tool_image_merge_status_done: 'تم — المعاينة أدناه؛ انقر تنزيل للحفظ.',
+  tool_image_merge_status_merging: 'جاري دمج الصور…',
+  tool_image_merge_title: 'دمج الصور — اجمع صورًا في كولاج واحد',
+  tool_image_merge_usecase_1: 'قبل/بعد: صورتان جنبًا إلى جنب للمراجعات أو تتبع اللياقة.',
+  tool_image_merge_usecase_2: 'خطوات تعليمية: رصّ لقطات الشاشة عموديًا في صورة طويلة واحدة.',
+  tool_image_merge_usecase_3: 'زوايا منتج أو storyboard: شبكة ثم ضغط إن كان الملف ثقيلًا.',
+  tool_image_merge_usecases_title: 'حالات مناسبة',
+  tool_image_merge_warn_animation: 'GIF متحرك: يُدمج الإطار الأول فقط.',
+  tool_image_merge_warn_edge: 'حافة اللوحة تتجاوز ~8192 px — قد يفشل بعض المتصفحات أو ينفد الذاكرة.',
+  tool_image_merge_warn_large: 'ملف كبير (>25 MB) — قد يكون فك الترميز بطيئًا.',
+};
+export default ar;

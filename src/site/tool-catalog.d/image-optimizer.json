@@ -1,0 +1,22 @@
+{
+  "slug": "image-optimizer",
+  "path": "/tools/image-optimizer",
+  "category": "image",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_image_optimizer_title",
+  "homeTitleKey": "tool_image_optimizer_title",
+  "homeDescKey": "tool_image_optimizer_desc",
+  "faqPrefix": "tool_image_optimizer",
+  "related": [
+    "image-compress",
+    "image-format-converter",
+    "image-exif"
+  ],
+  "logo": "/icons/tools/image-optimizer.svg",
+  "page": {
+    "module": "../pages/imageOptimizerPage",
+    "export": "renderImageOptimizerPage",
+    "style": "opts"
+  }
+}

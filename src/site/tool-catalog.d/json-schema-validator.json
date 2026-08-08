@@ -1,0 +1,21 @@
+{
+  "slug": "json-schema-validator",
+  "path": "/tools/json-schema-validator",
+  "category": "developer",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_json_schema_validator_title",
+  "homeTitleKey": "tool_json_schema_validator_title",
+  "homeDescKey": "tool_json_schema_validator_desc",
+  "faqPrefix": "tool_json_schema_validator",
+  "related": [
+    "yaml-json",
+    "csv-json"
+  ],
+  "logo": "/icons/tools/json-schema-validator.svg",
+  "page": {
+    "module": "../pages/jsonSchemaValidatorPage",
+    "export": "renderJsonSchemaValidatorPage",
+    "style": "opts"
+  }
+}

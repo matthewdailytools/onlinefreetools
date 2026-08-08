@@ -1,0 +1,22 @@
+{
+  "slug": "images-to-ppt",
+  "path": "/tools/images-to-ppt",
+  "category": "image",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_images_to_ppt_title",
+  "homeTitleKey": "tool_images_to_ppt_title",
+  "homeDescKey": "tool_images_to_ppt_desc",
+  "faqPrefix": "tool_images_to_ppt",
+  "related": [
+    "images-to-pdf",
+    "images-to-word",
+    "image-merge"
+  ],
+  "logo": "/icons/tools/images-to-ppt.svg",
+  "page": {
+    "module": "../pages/imagesToPptPage",
+    "export": "renderImagesToPptPage",
+    "style": "opts"
+  }
+}

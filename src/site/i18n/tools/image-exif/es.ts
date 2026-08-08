@@ -1,0 +1,70 @@
+/**
+ * i18n tool shard (image-exif / es). Edit only this tool's keys.
+ */
+import type { SiteLangDict } from '../../../types';
+const es: SiteLangDict = {
+  tool_image_exif_after_strip:
+    'Copia limpia descargada. La tabla refleja el archivo limpio. JPEG se re-codifica (no es idéntico al byte).',
+  tool_image_exif_analyze: 'Analizar',
+  tool_image_exif_article: 'Visor y eliminador EXIF local con resaltado de privacidad y re-codificación honesta.',
+  tool_image_exif_choose_file: 'Elegir imagen',
+  tool_image_exif_clear: 'Limpiar',
+  tool_image_exif_col_tag: 'Etiqueta',
+  tool_image_exif_col_value: 'Valor',
+  tool_image_exif_description:
+    'Consulta y elimina metadatos EXIF de fotos en el navegador. Pasos: elige la imagen, revisa GPS/cámara/fecha y descarga una copia sin etiquetas. Ejemplo: quita la ubicación de un JPEG del móvil antes de publicar — el archivo no se sube.',
+  tool_image_exif_drop_hint: 'O suelta JPEG, PNG o WebP aquí. Todo ocurre en esta pestaña.',
+  tool_image_exif_empty: 'Elige una imagen primero.',
+  tool_image_exif_err_decode: 'Este navegador no puede decodificar píxeles; no se puede limpiar. Prueba JPEG o PNG.',
+  tool_image_exif_err_parse: 'No se pudieron leer los metadatos.',
+  tool_image_exif_err_strip: 'Falló la limpieza. Prueba otro formato o una imagen más pequeña.',
+  tool_image_exif_err_verify: 'Aún había GPS tras limpiar — descarga cancelada.',
+  tool_image_exif_example:
+    'Un JPEG con GPSLatitude y Make aparece en GPS y Cámara. Tras limpiar, la relectura no muestra GPS. El ejemplo integrado no tiene EXIF a propósito.',
+  tool_image_exif_example_title: 'Ejemplo',
+  tool_image_exif_faq_a1: 'No. Todo es local; en Network no deberías ver un POST del archivo.',
+  tool_image_exif_faq_a2: 'No a nivel de bytes. Re-codificamos por canvas; el JPEG usa calidad alta pero puede variar píxeles.',
+  tool_image_exif_faq_a3:
+    'Tras limpiar re-analizamos la salida. Si queda GPS, mostramos error. También puedes volver a abrir el archivo descargado.',
+  tool_image_exif_faq_a4:
+    'JPEG es el caso habitual. Muchos PNG/WebP casi no tienen EXIF. Algunos HEIC se leen pero no se limpian si no hay decodificación.',
+  tool_image_exif_faq_a5: 'Resaltamos GPS y números de serie/propietario. Revisa la tabla completa antes de compartir.',
+  tool_image_exif_faq_a6: 'Es un JPEG de canvas sin EXIF para mostrar el estado vacío. Usa una foto real para ver GPS.',
+  tool_image_exif_faq_q1: '¿Se sube mi foto?',
+  tool_image_exif_faq_q2: '¿La limpieza es sin pérdida?',
+  tool_image_exif_faq_q3: '¿Cómo sé que el GPS se fue?',
+  tool_image_exif_faq_q4: '¿Qué formatos funcionan?',
+  tool_image_exif_faq_q5: '¿Qué etiquetas son sensibles?',
+  tool_image_exif_faq_q6: '¿Por qué el ejemplo está vacío?',
+  tool_image_exif_group_camera: 'Cámara',
+  tool_image_exif_group_datetime: 'Fecha y hora',
+  tool_image_exif_group_gps: 'GPS / ubicación',
+  tool_image_exif_group_other: 'Otras etiquetas',
+  tool_image_exif_how_body:
+    'Eliges una foto. La página lee EXIF/GPS aquí, agrupa campos y marca riesgos. Al limpiar, respeta la orientación, dibuja en canvas y exporta sin esas etiquetas; luego comprueba que el GPS desapareció.',
+  tool_image_exif_how_title: 'Cómo funciona',
+  tool_image_exif_need_lib: 'No se pudo cargar la biblioteca de metadatos. Recarga la página.',
+  tool_image_exif_no_meta: 'No se encontraron etiquetas EXIF / GPS.',
+  tool_image_exif_preview_label: 'Vista previa',
+  tool_image_exif_risk_badge: 'Privacidad',
+  tool_image_exif_rules_body: 'Leer y limpiar son procesos distintos: leer inspecciona; limpiar re-codifica.',
+  tool_image_exif_rules_item_1: 'Lectura: IFD0/EXIF/GPS; GPS en grados decimales si existe.',
+  tool_image_exif_rules_item_2: 'Limpieza: decodificar → orientar → toBlob. No edita bytes in situ.',
+  tool_image_exif_rules_item_3: 'JPEG usa calidad alta pero sigue siendo re-encode, no bit-perfect.',
+  tool_image_exif_rules_item_4: 'Privacidad: el archivo no se sube; el CDN solo puede servir la librería.',
+  tool_image_exif_rules_title: 'Reglas a tener en cuenta',
+  tool_image_exif_sample: 'Cargar ejemplo',
+  tool_image_exif_status_analyzed: 'Listo — revisa las etiquetas abajo.',
+  tool_image_exif_status_analyzing: 'Leyendo metadatos…',
+  tool_image_exif_status_stripped: 'Hecho — archivo limpio descargado.',
+  tool_image_exif_status_stripping: 'Limpiando por re-codificación…',
+  tool_image_exif_strip: 'Quitar y descargar',
+  tool_image_exif_title: 'Ver y quitar EXIF de fotos — GPS, cámara, en tu dispositivo',
+  tool_image_exif_usecase_1: 'Redes: quita GPS antes de publicar fotos personales.',
+  tool_image_exif_usecase_2: 'Anuncios: limpia cámara y ubicación de fotos de producto.',
+  tool_image_exif_usecase_3: 'Diagnóstico: comprueba Make, Model y fecha de captura.',
+  tool_image_exif_usecases_title: 'Para qué sirve',
+  tool_image_exif_warn_edge: 'Dimensiones >8192 px: espera lentitud al limpiar.',
+  tool_image_exif_warn_large: 'Archivo grande (>25 MB): puede ir lento.',
+};
+export default es;

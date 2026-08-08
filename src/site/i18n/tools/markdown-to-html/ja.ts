@@ -1,0 +1,61 @@
+/**
+ * i18n tool shard (markdown-to-html / ja). Edit only this tool's keys.
+ */
+import type { SiteLangDict } from '../../../types';
+const ja: SiteLangDict = {
+  tool_markdown_article: '双方向を同一 URL にまとめ、除去内容と変換損失を明示。貼り付けは送信せず、CDN はライブラリ取得用です。',
+  tool_markdown_clear: 'クリア',
+  tool_markdown_copy: 'HTMLをコピー',
+  tool_markdown_copy_done: 'コピー完了',
+  tool_markdown_copy_md: 'Markdownをコピー',
+  tool_markdown_description:
+    'Markdown を安全な HTML にしたい、または CMS の HTML を Markdown に戻したいときに。向きを選び、ブラウザ内で marked / Turndown と DOMPurify を使います。例：README を .html 化、管理画面の HTML をリポジトリ用 .md に。',
+  tool_markdown_dir_label: '変換の向き',
+  tool_markdown_download: 'HTMLをダウンロード',
+  tool_markdown_download_md: 'Markdownをダウンロード',
+  tool_markdown_example: '`# 見出し` と `こんにちは **世界**` ↔ 安全な HTML と太字の Markdown。',
+  tool_markdown_example_title: '例',
+  tool_markdown_export_description:
+    'Markdown からテンプレートと meta 付きの完全な HTML 文書を生成します。手順：レンダリング、テンプレートへの挿入、meta 追加、ダウンロード提供。例：ブログ記事を単体の .html として書き出し、オフライン共有や静的ホスティングに使えます。',
+  tool_markdown_export_title: 'MarkdownからHTMLへのエクスポート',
+  tool_markdown_faq_a1: 'Markdown → HTML では、プレビューやダウンロード前に DOMPurify が入ります。',
+  tool_markdown_faq_a2: '多くは残りません。編集しやすい下書きと考えてください。',
+  tool_markdown_faq_a3: '変換は端末内です。CDN はライブラリの取得だけです。',
+  tool_markdown_faq_a4: '保証しません。必要なら外部で Diff してください。',
+  tool_markdown_faq_a5: '見出し・リスト・リンク・強調・コードブロックなど。オフライン共有用の完全 HTML も選べます。',
+  tool_markdown_faq_q1: 'HTML から危険なスクリプトは除かれますか？',
+  tool_markdown_faq_q2: 'レイアウトは Markdown に残りますか？',
+  tool_markdown_faq_q3: '貼り付けはサーバーへ送られますか？',
+  tool_markdown_faq_q4: '往復で同一になりますか？',
+  tool_markdown_faq_q5: '対応記法と書き出しは？',
+  tool_markdown_full_doc: '完全なHTML文書を生成',
+  tool_markdown_how_body: 'タブで向きを決め、左に入力すると右がローカル更新されます。HTML 側は断片または簡易な完全文書、Markdown 側は編集・LLM 向けのプレーンテキストです。',
+  tool_markdown_how_title: '使い方',
+  tool_markdown_html_input_label: 'HTML入力',
+  tool_markdown_html_placeholder: '<h1>見出し</h1>\\n<p>こんにちは <strong>世界</strong></p>',
+  tool_markdown_input_label: 'Markdown入力',
+  tool_markdown_large_warn: '貼り付けが非常に大きい（20万文字超）。変換が遅くなることがあります。短い抜粋を試してください。',
+  tool_markdown_loss_hint: 'Markdown がほとんど出ませんでした。スクリプト、空タグ、未対応マークアップが除かれた可能性があります。ルールと FAQ を参照。',
+  tool_markdown_md_output_label: 'Markdown出力',
+  tool_markdown_need_lib: '変換ライブラリを読み込めませんでした。接続を確認して再読み込みしてください。',
+  tool_markdown_placeholder:
+    '# 見出し\\n\\n基本 Markdown：**太字**、リスト、コードブロック。\\n\\n- 項目1\\n- 項目2\\n\\n```js\\nconsole.log(\'Hello Markdown\');\\n```',
+  tool_markdown_preview_label: 'HTMLプレビュー',
+  tool_markdown_rules_intro: '以下のルールで扱う範囲：対応する Markdown 記法、HTML のサニタイズ方法、貼り付けたテキストをローカルで処理する仕組み。',
+  tool_markdown_rules_item_html_md: 'Markdown へ：先に整理し、Turndown（ATX・フェンス付きコード）。',
+  tool_markdown_rules_item_loss: 'スタイルやスクリプト、複雑な表は残りにくい。往復一致は保証しません。',
+  tool_markdown_rules_item_md_html: 'HTML へ：CommonMark を解釈し、表示・保存前に DOMPurify。',
+  tool_markdown_rules_privacy: '本文はタブ内。CDN はライブラリ配信でありアップロードではありません。',
+  tool_markdown_rules_title: '向きごとのルール',
+  tool_markdown_sample_html: '<h1>見出し</h1>\\n<p>こんにちは <strong>世界</strong></p>',
+  tool_markdown_sample_md:
+    '# 見出し\\n\\n基本 Markdown：**太字**、リスト、コードブロック。\\n\\n- 項目1\\n- 項目2\\n\\n```js\\nconsole.log(\'Hello Markdown\');\\n```',
+  tool_markdown_tab_html_md: 'HTML → Markdown',
+  tool_markdown_tab_md_html: 'Markdown → HTML',
+  tool_markdown_title: 'Markdown と HTML を相互変換（プレビュー付き）',
+  tool_markdown_usecase_1: 'CMS 向けに安全な HTML を渡す。',
+  tool_markdown_usecase_2: 'メールや管理画面の HTML から原稿を取り戻す。',
+  tool_markdown_usecase_3: 'リッチテキストを整えてからモデルに渡す。',
+  tool_markdown_usecases_title: 'こんなときに',
+};
+export default ja;

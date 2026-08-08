@@ -1,4 +1,5 @@
 import { sitePageTranslations } from './i18n-site-pages.mjs';
+import { toolHomeTranslations } from './i18n-tools.generated.mjs';
 
 const translations = {
   en: {
@@ -1559,11 +1560,16 @@ const translations = {
 export const t = (lang, key) => {
   const table = translations[lang] || translations.en || translations.zh;
   const siteTable = sitePageTranslations[lang] || sitePageTranslations.en || {};
+  /** Prefer generated tool-home shards over legacy duplicates in `translations`. */
+  const toolHome = toolHomeTranslations[lang] || toolHomeTranslations.en || {};
   return (
+    toolHome[key] ||
     table[key] ||
     siteTable[key] ||
+    (toolHomeTranslations.en && toolHomeTranslations.en[key]) ||
     (translations.en && translations.en[key]) ||
     (sitePageTranslations.en && sitePageTranslations.en[key]) ||
+    (toolHomeTranslations.zh && toolHomeTranslations.zh[key]) ||
     translations.zh[key] ||
     (sitePageTranslations.zh && sitePageTranslations.zh[key]) ||
     key

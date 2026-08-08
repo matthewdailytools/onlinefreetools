@@ -1,0 +1,21 @@
+{
+  "slug": "indexnow",
+  "path": "/tools/indexnow",
+  "category": "developer",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_indexnow_title",
+  "homeTitleKey": "tool_indexnow_title",
+  "homeDescKey": "tool_indexnow_desc",
+  "faqPrefix": "tool_indexnow",
+  "related": [
+    "website-headers",
+    "add-www-to-dns"
+  ],
+  "logo": "/icons/tools/indexnow.svg",
+  "page": {
+    "module": "../pages/indexNowPage",
+    "export": "renderIndexNowPage",
+    "style": "opts"
+  }
+}

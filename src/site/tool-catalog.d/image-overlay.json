@@ -1,0 +1,22 @@
+{
+  "slug": "image-overlay",
+  "path": "/tools/image-overlay",
+  "category": "image",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_image_overlay_title",
+  "homeTitleKey": "tool_image_overlay_title",
+  "homeDescKey": "tool_image_overlay_desc",
+  "faqPrefix": "tool_image_overlay",
+  "related": [
+    "image-merge",
+    "add-watermark",
+    "image-crop"
+  ],
+  "logo": "/icons/tools/image-overlay.svg",
+  "page": {
+    "module": "../pages/imageOverlayPage",
+    "export": "renderImageOverlayPage",
+    "style": "opts"
+  }
+}

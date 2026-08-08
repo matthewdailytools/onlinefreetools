@@ -1,0 +1,22 @@
+{
+  "slug": "flip-image",
+  "path": "/tools/flip-image",
+  "category": "image",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_flip_image_title",
+  "homeTitleKey": "tool_flip_image_title",
+  "homeDescKey": "tool_flip_image_desc",
+  "faqPrefix": "tool_flip_image",
+  "related": [
+    "image-grayscale",
+    "image-border",
+    "image-crop"
+  ],
+  "logo": "/icons/tools/flip-image.svg",
+  "page": {
+    "module": "../pages/flipImagePage",
+    "export": "renderFlipImagePage",
+    "style": "opts"
+  }
+}
