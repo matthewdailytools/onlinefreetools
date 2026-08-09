@@ -269,11 +269,17 @@
         <div class="card">
           <h2>输出</h2>
           <div class="row">
-            <label class="check"
-              ><input type="checkbox" id="overwriteMain" /> 覆盖主文件
-              <code>public/sitemap.xml</code>（筛选时默认写 filtered）</label
-            >
+            <label class="check">
+              <input type="checkbox" id="overwriteMain" name="overwriteMain" />
+              覆盖主文件 <code>public/sitemap.xml</code>
+            </label>
           </div>
+          <p class="warn-note" id="outHint">
+            筛选时默认写入 <code>public/sitemap.filtered.xml</code>；勾选上方选项后改为覆盖主文件。
+          </p>
+          <p class="sub" style="margin: 8px 0 0">
+            当前目标：<code id="outTarget">public/sitemap.xml</code>
+          </p>
           <div class="actions">
             <button type="button" id="btnPreview">预览统计（不写盘）</button>
             <button type="button" id="btnGenerate">生成并写入</button>
@@ -331,6 +337,57 @@
         }
       }
 
+      /** @type {null|{enabledLangs:string[],categories:string[],scenarios:string[],subjects:string[],infoPages:{id:string}[]}>} */
+      let metaCache = null;
+
+      /** 是否已绑定「当前目标」刷新监听（避免重复登录重复绑定）。 */
+      let outTargetBound = false;
+
+      /**
+       * 与服务端 bodyIsFiltered 对齐：当前勾选是否为筛选内容。
+       * @param {object} opts collectOptions() 结果
+       * @returns {boolean}
+       */
+      function isFilteredClient(opts) {
+        if (!metaCache) return false;
+        if (opts.langs.length && opts.langs.length < metaCache.enabledLangs.length) return true;
+        if (opts.infoPages.length !== metaCache.infoPages.length) return true;
+        if (!opts.includeHome || !opts.includeTools) return true;
+        if (!opts.includeScenarioHub || !opts.includeSubjectHub) return true;
+        if (!opts.includeScenarioLeaves || !opts.includeSubjectLeaves) return true;
+        if (opts.categories.length && opts.categories.length < metaCache.categories.length)
+          return true;
+        if (opts.scenarios.length < metaCache.scenarios.length) return true;
+        if (opts.subjects.length < metaCache.subjects.length) return true;
+        return false;
+      }
+
+      /**
+       * 根据勾选刷新「当前目标」路径提示。
+       */
+      function refreshOutTarget() {
+        const opts = collectOptions();
+        const filtered = isFilteredClient(opts);
+        const target =
+          filtered && !opts.overwriteMain
+            ? 'public/sitemap.filtered.xml'
+            : 'public/sitemap.xml';
+        const el = document.getElementById('outTarget');
+        if (el) el.textContent = target;
+        const hint = document.getElementById('outHint');
+        if (hint) {
+          if (!filtered) {
+            hint.textContent = '当前为全量内容，将写入 public/sitemap.xml（覆盖主文件选项不影响全量）。';
+          } else if (opts.overwriteMain) {
+            hint.textContent =
+              '已勾选覆盖主文件：筛选内容将写入 public/sitemap.xml（会覆盖生产全量 sitemap）。';
+          } else {
+            hint.textContent =
+              '筛选时默认写入 public/sitemap.filtered.xml；勾选「覆盖主文件」后改为写入 public/sitemap.xml。';
+          }
+        }
+      }
+
       /**
        * 收集表单选项。
        * @returns {object}
@@ -348,7 +405,8 @@
           scenarios: readGroup('scenarios'),
           subjects: readGroup('subjects'),
           categories: readGroup('categories'),
-          overwriteMain: document.getElementById('overwriteMain').checked,
+          /** 必须为严格布尔，供服务端 resolveOutFile 识别。 */
+          overwriteMain: Boolean(document.getElementById('overwriteMain').checked),
         };
       }
 
@@ -387,6 +445,7 @@
         document.getElementById('gate').classList.remove('show');
         document.getElementById('app').classList.add('show');
         const meta = await api('/api/meta');
+        metaCache = meta;
         renderChecks(
           'langs',
           meta.languages.filter((l) => meta.enabledLangs.includes(l.code)).map((l) => ({
@@ -409,11 +468,17 @@
         );
         document.getElementById('scenarioHubPath').textContent = meta.scenarioHubPath;
         document.getElementById('subjectHubPath').textContent = meta.subjectHubPath;
+        if (!outTargetBound) {
+          document.getElementById('app').addEventListener('change', refreshOutTarget);
+          outTargetBound = true;
+        }
+        refreshOutTarget();
       }
 
       document.querySelectorAll('[data-select]').forEach((btn) => {
         btn.addEventListener('click', () => {
           setGroup(btn.getAttribute('data-select'), btn.getAttribute('data-mode') === 'all');
+          refreshOutTarget();
         });
       });
 
@@ -445,6 +510,7 @@
         setGroup('info', true);
         setGroup('scenarios', true);
         setGroup('subjects', true);
+        /** 分类全不选 = 不按 category 限制（与「全部工具」一致）。 */
         setGroup('categories', false);
         document.getElementById('includeHome').checked = true;
         document.getElementById('includeScenarioHub').checked = true;
@@ -452,7 +518,9 @@
         document.getElementById('includeScenarioLeaves').checked = true;
         document.getElementById('includeSubjectLeaves').checked = true;
         document.getElementById('includeTools').checked = true;
-        document.getElementById('overwriteMain').checked = true;
+        /** 全量本身写主文件；勿把覆盖勾选粘成 true，以免后续改筛选时误覆盖。 */
+        document.getElementById('overwriteMain').checked = false;
+        refreshOutTarget();
       });
 
       /**
@@ -466,16 +534,18 @@
           showResult(
             'ok',
             [
-              dryRun ? '预览（未写盘）' : '已写入',
+              dryRun ? '预览（未写盘）' : data.wrote ? '已写入' : '完成',
+              '内容=' + (data.filtered ? '筛选' : '全量'),
+              '目标=' + (data.outFile || '(未知)'),
+              data.overwriteMain ? '覆盖主文件=是' : '覆盖主文件=否',
               'entryCount=' + data.entryCount,
               'urlCount=' + data.urlCount,
               'langs=' + (data.langs || []).join(','),
-              data.outFile ? 'out=' + data.outFile : '',
-              data.filtered ? 'mode=filtered' : 'mode=full',
-            ]
-              .filter(Boolean)
-              .join('\n')
+            ].join('\n')
           );
+          if (data.outFile) {
+            document.getElementById('outTarget').textContent = data.outFile;
+          }
         } catch (err) {
           showResult('err', err.message || String(err));
         }

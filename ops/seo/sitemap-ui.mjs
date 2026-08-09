@@ -210,6 +210,26 @@ const bodyIsFiltered = (body) => {
 };
 
 /**
+ * 解析最终写入路径。
+ * 筛选默认写 filtered；勾选覆盖主文件（或全量）时写 sitemap.xml。
+ * @param {object} body 请求体
+ * @param {boolean} filtered 是否筛选内容
+ * @returns {{ outFile: string, overwriteMain: boolean }}
+ */
+const resolveOutFile = (body, filtered) => {
+  /** 显式布尔：避免非严格 JSON 里的异常真值干扰。 */
+  const overwriteMain = body.overwriteMain === true || body.overwriteMain === 'true';
+  if (body.outFile) {
+    const raw = String(body.outFile);
+    const outFile = path.isAbsolute(raw) ? raw : path.join(process.cwd(), raw);
+    return { outFile, overwriteMain };
+  }
+  const outFile =
+    filtered && !overwriteMain ? DEFAULT_FILTERED_SITEMAP_PATH : DEFAULT_SITEMAP_PATH;
+  return { outFile, overwriteMain };
+};
+
+/**
  * HTTP 请求处理。
  * @param {http.IncomingMessage} req
  * @param {http.ServerResponse} res
@@ -278,13 +298,9 @@ const handler = async (req, res) => {
       const body = await readJson(req);
       const dryRun = Boolean(body.dryRun);
       const filtered = bodyIsFiltered(body);
-      let outFile = body.outFile;
-      if (!outFile) {
-        outFile =
-          filtered && !body.overwriteMain
-            ? DEFAULT_FILTERED_SITEMAP_PATH
-            : DEFAULT_SITEMAP_PATH;
-      }
+      const { outFile, overwriteMain } = resolveOutFile(body, filtered);
+      /** 相对仓库 cwd 的展示路径（预览与实写都返回，便于确认覆盖主文件是否生效）。 */
+      const outFileRel = path.relative(process.cwd(), outFile);
 
       const result = await buildSitemapXml({
         ...bodyToBuildOptions(body),
@@ -296,14 +312,13 @@ const handler = async (req, res) => {
         ok: true,
         filtered,
         dryRun,
+        overwriteMain,
         entryCount: result.entryCount,
         urlCount: result.urlCount,
         langs: result.langs,
-        outFile: result.outFile
-          ? path.relative(process.cwd(), result.outFile)
-          : dryRun
-            ? null
-            : path.relative(process.cwd(), outFile),
+        /** 始终返回解析后的目标路径（dry-run 也会带上）。 */
+        outFile: outFileRel,
+        wrote: Boolean(result.outFile),
       });
       return;
     }
