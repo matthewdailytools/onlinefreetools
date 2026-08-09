@@ -570,6 +570,26 @@ const extractLocTexts = (xml) => {
 const isSitemapIndex = (xml) => /<sitemapindex[\s>]/i.test(xml);
 
 /**
+ * 判断绝对 URL 是否像 sitemap 资源（不应作为 IndexNow 页面 URL 提交）。
+ * @param {string} raw 绝对 URL
+ * @returns {boolean}
+ */
+const looksLikeSitemapUrl = (raw) => {
+  try {
+    /** 解析后的 URL */
+    const u = new URL(String(raw || '').trim());
+    /** 小写 pathname */
+    const path = u.pathname.toLowerCase();
+    if (path.endsWith('.xml') || path.endsWith('.xml.gz')) {
+      return path.includes('sitemap');
+    }
+    return /\/sitemap(?:[_-]|$|index)/i.test(path);
+  } catch {
+    return false;
+  }
+};
+
+/**
  * 读取本地或远程 sitemap 文本。
  * @param {string} source 本地路径或 http(s) URL
  * @returns {Promise<{ source: string, xml: string }>}
@@ -626,7 +646,17 @@ const loadUrlsFromSitemapSource = async (source, depth = 0, visited = new Set())
     return nested;
   }
 
-  return locs;
+  // urlset：若某 <loc> 仍像子 sitemap，继续展开；绝不把 sitemap 地址当作页面 URL
+  /** 页面 URL 累积 */
+  const pages = [];
+  for (const loc of locs) {
+    if (looksLikeSitemapUrl(loc)) {
+      pages.push(...(await loadUrlsFromSitemapSource(loc, depth + 1, visited)));
+      continue;
+    }
+    pages.push(loc);
+  }
+  return pages;
 };
 
 /**
@@ -1242,6 +1272,21 @@ const collectUrls = async (args, host, baseUrl) => {
 
   if (args.include.length || args.exclude.length) {
     urlList = filterUrls(urlList, args.include, args.exclude);
+  }
+
+  // 防御：IndexNow 提交的是页面列表，过滤掉误入的 sitemap URL
+  /** 被剔除的 sitemap 形态 URL */
+  const droppedSitemap = urlList.filter((u) => looksLikeSitemapUrl(u));
+  if (droppedSitemap.length) {
+    urlList = urlList.filter((u) => !looksLikeSitemapUrl(u));
+    if (!args.quiet) {
+      console.warn(
+        `IndexNow: dropped ${droppedSitemap.length} sitemap URL(s) from submit list (submit page <loc>s, not the sitemap itself).`
+      );
+      if (args.verbose) {
+        for (const u of droppedSitemap.slice(0, 20)) console.warn(`  drop ${u}`);
+      }
+    }
   }
 
   return urlList;

@@ -180,6 +180,8 @@ npm run indexnow -- --reset-state                        # 清空本地增量状
 npm run indexnow -- --help
 ```
 
+**Sitemap → IndexNow**：协议只接受**页面** `urlList`。CLI / 工具页都会先解析 sitemap 的 `<loc>`（含 sitemapindex 递归）再提交，**不会**把 `sitemap.xml` 地址本身当作变更页 POST。工具页可用同 host 的 sitemap URL 或粘贴 XML；Worker 提供 `POST /api/tools/indexnow/resolve-urls`，提交时也会再展开一次。
+
 **增量逻辑**（`npm run indexnow:incremental` = `--incremental --remote-sitemap`）：
 
 1. 拉取生产 `https://onlinefreetools.org/sitemap.xml` 全部 `<loc>`

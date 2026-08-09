@@ -25,11 +25,20 @@ const ENDPOINT_MAP: Record<string, string> = {
 /** 每分钟每 IP 的 Check 上限 */
 const CHECK_RATE_LIMIT = 30;
 
+/** 每分钟每 IP 的 Resolve（解析 sitemap）上限 */
+const RESOLVE_RATE_LIMIT = 20;
+
 /** 每分钟每 IP 的 Submit 上限 */
 const SUBMIT_RATE_LIMIT = 12;
 
 /** 滑动窗口时长（毫秒） */
 const RATE_WINDOW_MS = 60_000;
+
+/** sitemapindex 最大递归深度 */
+const MAX_SITEMAP_DEPTH = 3;
+
+/** 单次解析最多拉取的子 sitemap 数（防滥用） */
+const MAX_SITEMAP_FETCHES = 40;
 
 /**
  * 简易内存限流条目（Worker isolate 内尽力而为，非全局强一致）。
@@ -43,6 +52,9 @@ interface RateBucket {
 
 /** Check-key 限流表：clientIp → bucket */
 const checkBuckets = new Map<string, RateBucket>();
+
+/** Resolve-urls 限流表：clientIp → bucket */
+const resolveBuckets = new Map<string, RateBucket>();
 
 /** Submit 限流表：clientIp → bucket */
 const submitBuckets = new Map<string, RateBucket>();
@@ -198,6 +210,251 @@ const fetchWithTimeout = async (input: string, init: RequestInit = {}): Promise<
 };
 
 /**
+ * 从 sitemap / sitemapindex XML 中提取全部 `<loc>` 文本。
+ * @param xml XML 正文
+ * @returns loc URL 列表（可能含重复）
+ */
+const extractLocTexts = (xml: string): string[] => {
+  /** 匹配到的 loc 列表 */
+  const list: string[] = [];
+  const re = /<loc>\s*([^<\s]+)\s*<\/loc>/gi;
+  let match = re.exec(xml);
+  while (match) {
+    const url = match[1].trim();
+    if (url) list.push(url);
+    match = re.exec(xml);
+  }
+  return list;
+};
+
+/**
+ * 判断 XML 是否为 sitemap index（子项是 sitemap，不是页面）。
+ * @param xml XML 正文
+ */
+const isSitemapIndexXml = (xml: string): boolean => /<sitemapindex[\s>]/i.test(xml);
+
+/**
+ * 判断文本是否像 sitemap / sitemapindex XML。
+ * @param text 用户粘贴内容
+ */
+const looksLikeSitemapXml = (text: string): boolean =>
+  /<urlset[\s>]/i.test(text) || /<sitemapindex[\s>]/i.test(text);
+
+/**
+ * 判断绝对 URL 是否像 sitemap 资源（应解析展开，而非当作页面提交）。
+ * @param raw 绝对 URL
+ */
+const looksLikeSitemapUrl = (raw: string): boolean => {
+  let u: URL;
+  try {
+    u = new URL(raw.trim());
+  } catch {
+    return false;
+  }
+  /** 小写 pathname */
+  const path = u.pathname.toLowerCase();
+  if (path.endsWith('.xml') || path.endsWith('.xml.gz')) {
+    return path.includes('sitemap');
+  }
+  return /\/sitemap(?:[_-]|$|index)/i.test(path);
+};
+
+/**
+ * 去重并保持首次出现顺序。
+ * @param list URL 列表
+ */
+const uniquePreserveOrder = (list: string[]): string[] => {
+  /** 已见集合 */
+  const seen = new Set<string>();
+  /** 输出 */
+  const out: string[] = [];
+  for (const item of list) {
+    if (!item || seen.has(item)) continue;
+    seen.add(item);
+    out.push(item);
+  }
+  return out;
+};
+
+/**
+ * 从多行文本或粘贴的 sitemap XML 提取候选 URL（可能仍含子 sitemap URL）。
+ * @param raw 文本框原文
+ */
+const extractCandidateUrlsFromText = (raw: string): string[] => {
+  /** 原文 */
+  const text = raw || '';
+  if (looksLikeSitemapXml(text)) {
+    return uniquePreserveOrder(extractLocTexts(text));
+  }
+  /** 按行解析的 https URL */
+  const urls: string[] = [];
+  for (const line of text.split(/\r?\n/)) {
+    const s = line.replace(/#.*$/, '').trim();
+    if (!s) continue;
+    if (/^https?:\/\//i.test(s)) urls.push(s);
+  }
+  return uniquePreserveOrder(urls);
+};
+
+/**
+ * 拉取单个 sitemap 并展开为页面 URL；sitemapindex 则递归子 sitemap。
+ * IndexNow 协议只接受页面 urlList，不能把 sitemap 地址本身当作变更页提交。
+ *
+ * @param source sitemap 绝对 URL
+ * @param expectedHost 规范化 host（仅接受同 host）
+ * @param depth 当前递归深度
+ * @param visited 已访问来源（防环）
+ * @param fetchCount 可变计数器：已 fetch 次数
+ * @returns 页面绝对 URL 列表
+ */
+const loadPageUrlsFromSitemapSource = async (
+  source: string,
+  expectedHost: string,
+  depth: number,
+  visited: Set<string>,
+  fetchCount: { n: number },
+): Promise<string[]> => {
+  if (depth > MAX_SITEMAP_DEPTH) {
+    throw new Error(`Sitemap index nesting too deep (>${MAX_SITEMAP_DEPTH}): ${source}`);
+  }
+  if (visited.has(source)) return [];
+  visited.add(source);
+
+  const parsedSource = parseUrlForHost(source, expectedHost);
+  if ('error' in parsedSource) {
+    throw new Error(parsedSource.error);
+  }
+
+  if (fetchCount.n >= MAX_SITEMAP_FETCHES) {
+    throw new Error(`Too many sitemap fetches (max ${MAX_SITEMAP_FETCHES})`);
+  }
+  fetchCount.n += 1;
+
+  let res: Response;
+  try {
+    res = await fetchWithTimeout(parsedSource.url, {
+      method: 'GET',
+      redirect: 'follow',
+      headers: {
+        Accept: 'application/xml,text/xml,*/*',
+        'User-Agent': 'onlinefreetools/indexnow-resolve-sitemap',
+      },
+    });
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : 'Sitemap fetch failed';
+    throw new Error(`${message}: ${source}`);
+  }
+  if (!res.ok) {
+    throw new Error(`Failed to fetch sitemap ${source}: HTTP ${res.status}`);
+  }
+
+  /** 最终落地 URL（跟随重定向后）须仍同 host */
+  const finalUrl = res.url || parsedSource.url;
+  let finalHost = '';
+  try {
+    finalHost = new URL(finalUrl).hostname.toLowerCase();
+  } catch {
+    finalHost = '';
+  }
+  if (!finalHost || finalHost !== expectedHost) {
+    throw new Error(`Sitemap redirected to a different host: ${source} → ${finalUrl}`);
+  }
+
+  /** sitemap XML 正文 */
+  const xml = await res.text();
+  /** 全部 loc */
+  const locs = extractLocTexts(xml);
+  if (locs.length === 0) {
+    throw new Error(`No <loc> found in sitemap: ${source}`);
+  }
+
+  if (isSitemapIndexXml(xml)) {
+    /** 子 sitemap 展开后的页面 URL */
+    const nested: string[] = [];
+    for (const child of locs) {
+      nested.push(
+        ...(await loadPageUrlsFromSitemapSource(
+          child,
+          expectedHost,
+          depth + 1,
+          visited,
+          fetchCount,
+        )),
+      );
+    }
+    return nested;
+  }
+
+  // urlset：只保留同 host 的页面 URL；若 loc 仍像子 sitemap 则再展开
+  /** 页面 URL 累积 */
+  const pages: string[] = [];
+  for (const loc of locs) {
+    const parsed = parseUrlForHost(loc, expectedHost);
+    if ('error' in parsed) continue;
+    if (looksLikeSitemapUrl(parsed.url)) {
+      pages.push(
+        ...(await loadPageUrlsFromSitemapSource(
+          parsed.url,
+          expectedHost,
+          depth + 1,
+          visited,
+          fetchCount,
+        )),
+      );
+      continue;
+    }
+    pages.push(parsed.url);
+  }
+  return pages;
+};
+
+/**
+ * 把候选 URL（页面或 sitemap）展开为最终应提交的页面 urlList。
+ * @param candidates 候选绝对 URL
+ * @param expectedHost 规范化 host
+ */
+const expandCandidatesToPageUrls = async (
+  candidates: string[],
+  expectedHost: string,
+): Promise<{ urlList: string[]; sitemapSources: string[]; fetchCount: number }> => {
+  /** 最终页面 URL */
+  const pages: string[] = [];
+  /** 被当作 sitemap 展开的来源 */
+  const sitemapSources: string[] = [];
+  /** 已访问 sitemap（防环） */
+  const visited = new Set<string>();
+  /** fetch 计数 */
+  const fetchCount = { n: 0 };
+
+  for (const raw of candidates) {
+    const parsed = parseUrlForHost(raw, expectedHost);
+    if ('error' in parsed) {
+      throw new Error(parsed.error);
+    }
+    if (looksLikeSitemapUrl(parsed.url)) {
+      sitemapSources.push(parsed.url);
+      pages.push(
+        ...(await loadPageUrlsFromSitemapSource(
+          parsed.url,
+          expectedHost,
+          0,
+          visited,
+          fetchCount,
+        )),
+      );
+      continue;
+    }
+    pages.push(parsed.url);
+  }
+
+  return {
+    urlList: uniquePreserveOrder(pages),
+    sitemapSources: uniquePreserveOrder(sitemapSources),
+    fetchCount: fetchCount.n,
+  };
+};
+
+/**
  * GET /api/tools/indexnow/check-key?url=&key=
  * 代抓 key 文件并比对正文（trim）是否等于 key；拒绝跨域重定向。
  *
@@ -279,9 +536,86 @@ export const handleIndexnowCheckKey = async (c: Context) => {
 };
 
 /**
+ * POST /api/tools/indexnow/resolve-urls
+ * body: { host, text? } 或 { host, urlList? }
+ * 解析粘贴的 sitemap XML / sitemap URL，展开为页面 urlList（绝不把 sitemap 本身当页面提交）。
+ *
+ * @param c Hono 上下文
+ */
+export const handleIndexnowResolveUrls = async (c: Context) => {
+  if (!allowRate(resolveBuckets, clientIp(c), RESOLVE_RATE_LIMIT)) {
+    return c.json({ error: 'Too many resolve-urls requests; try again shortly' }, 429);
+  }
+
+  let body: unknown;
+  try {
+    body = await c.req.json();
+  } catch {
+    return c.json({ error: 'Invalid JSON body' }, 400);
+  }
+  if (!body || typeof body !== 'object') {
+    return c.json({ error: 'Invalid JSON body' }, 400);
+  }
+
+  const b = body as Record<string, unknown>;
+  const hostResult = normalizeHost(String(b.host ?? ''));
+  if ('error' in hostResult) return c.json({ error: hostResult.error }, 400);
+
+  /** 候选 URL（可能含 sitemap） */
+  let candidates: string[] = [];
+  if (typeof b.text === 'string' && b.text.trim()) {
+    candidates = extractCandidateUrlsFromText(b.text);
+  } else if (Array.isArray(b.urlList)) {
+    candidates = uniquePreserveOrder(
+      b.urlList.map((item) => String(item ?? '').trim()).filter(Boolean),
+    );
+  }
+
+  if (candidates.length === 0) {
+    return c.json(
+      { error: 'Add at least one URL, a sitemap URL, or sitemap XML with <loc>' },
+      400,
+    );
+  }
+  if (candidates.length > MAX_URLS_PER_REQUEST) {
+    return c.json(
+      { error: `Input exceeds limit of ${MAX_URLS_PER_REQUEST} URLs/locs per request` },
+      400,
+    );
+  }
+
+  try {
+    const expanded = await expandCandidatesToPageUrls(candidates, hostResult.host);
+    /** 截断到工具上限（与 submit 一致） */
+    const truncated = expanded.urlList.length > MAX_URLS_PER_REQUEST;
+    const urlList = expanded.urlList.slice(0, MAX_URLS_PER_REQUEST);
+    if (urlList.length === 0) {
+      return c.json({ error: 'No page URLs after expanding sitemap(s)' }, 400);
+    }
+    return c.json({
+      ok: true,
+      host: hostResult.host,
+      urlList,
+      urlCount: urlList.length,
+      totalBeforeCap: expanded.urlList.length,
+      truncated,
+      sitemapSources: expanded.sitemapSources,
+      sitemapFetchCount: expanded.fetchCount,
+      note:
+        expanded.sitemapSources.length > 0
+          ? 'Sitemap URL(s) were fetched and expanded to page <loc> URLs; the sitemap itself is not submitted to IndexNow.'
+          : undefined,
+    });
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : 'Failed to resolve URLs';
+    return c.json({ error: message }, 400);
+  }
+};
+
+/**
  * POST /api/tools/indexnow/submit
  * body: { host, key, keyLocation?, urlList, endpoint? }
- * 校验后转发至 IndexNow / Bing。
+ * 校验后：若 urlList 含 sitemap URL 则先展开为页面列表，再转发至 IndexNow / Bing。
  *
  * @param c Hono 上下文
  */
@@ -339,22 +673,34 @@ export const handleIndexnowSubmit = async (c: Context) => {
     );
   }
 
-  /** 去重后的合法 URL */
-  const urlList: string[] = [];
-  const seen = new Set<string>();
-  for (const item of b.urlList) {
-    const raw = String(item ?? '').trim();
-    if (!raw) continue;
-    const parsed = parseUrlForHost(raw, hostResult.host);
-    if ('error' in parsed) {
-      return c.json({ error: parsed.error }, 400);
-    }
-    if (seen.has(parsed.url)) continue;
-    seen.add(parsed.url);
-    urlList.push(parsed.url);
+  /** 输入候选（可能含 sitemap URL） */
+  const candidates = uniquePreserveOrder(
+    b.urlList.map((item) => String(item ?? '').trim()).filter(Boolean),
+  );
+
+  /** 展开后的页面 URL（IndexNow 只提交页面，不提交 sitemap 地址） */
+  let urlList: string[] = [];
+  /** 被展开的 sitemap 来源 */
+  let sitemapSources: string[] = [];
+  try {
+    const expanded = await expandCandidatesToPageUrls(candidates, hostResult.host);
+    sitemapSources = expanded.sitemapSources;
+    urlList = expanded.urlList;
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : 'Failed to expand sitemap URLs';
+    return c.json({ error: message }, 400);
   }
+
   if (urlList.length === 0) {
-    return c.json({ error: 'No valid URLs after filtering' }, 400);
+    return c.json({ error: 'No valid page URLs after expanding sitemap(s)' }, 400);
+  }
+  if (urlList.length > MAX_URLS_PER_REQUEST) {
+    return c.json(
+      {
+        error: `Expanded urlList exceeds limit of ${MAX_URLS_PER_REQUEST} URLs (got ${urlList.length}). Narrow the sitemap or submit in batches.`,
+      },
+      400,
+    );
   }
 
   /** IndexNow POST JSON */
@@ -388,6 +734,7 @@ export const handleIndexnowSubmit = async (c: Context) => {
     host: hostResult.host,
     keyLocation,
     urlCount: urlList.length,
+    sitemapSources,
     bodyPreview: responseBody.slice(0, 500),
   });
 };

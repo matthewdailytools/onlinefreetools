@@ -23,7 +23,10 @@ const fr: SiteLangDict = {
   tool_indexnow_err_key: 'Key must be 8–128 characters of [A-Za-z0-9-].',
   tool_indexnow_err_limit: 'Too many URLs (max 500 per request here).',
   tool_indexnow_err_submit: 'Submit failed or returned a non-success status.',
-  tool_indexnow_err_urls: 'Add at least one URL (or sitemap XML with <loc>).',
+  tool_indexnow_err_sitemap:
+    'Could not fetch or parse the sitemap. Use a same-host sitemap URL or paste XML with <loc>.',
+  tool_indexnow_err_urls:
+    'Add at least one page URL, a same-host sitemap URL, or sitemap XML with <loc>.',
   tool_indexnow_example:
     'Host www.example.com, key indexnowdemokey01, URL https://www.example.com/page → POST JSON with host, key, keyLocation https://www.example.com/indexnowdemokey01.txt, and urlList. After hosting the .txt, Check key should report HTTP 200 and bodyMatch true before Submit.',
   tool_indexnow_example_title: 'Exemple',
@@ -47,7 +50,7 @@ const fr: SiteLangDict = {
   tool_indexnow_host_label: 'Host (must match your URLs)',
   tool_indexnow_host_placeholder: 'www.example.com',
   tool_indexnow_how_body:
-    '1) Generate a key and download {key}.txt. 2) Host it at your site root (or another path on the same host). 3) Check key so this Worker can fetch and match the body. 4) Paste changed URLs (or sitemap XML), preview the JSON, then Submit. Confirm receipts in Bing Webmaster → IndexNow.',
+    '1) Generate a key and download {key}.txt. 2) Host it at your site root (or another path on the same host). 3) Check key so this Worker can fetch and match the body. 4) Paste changed page URLs, a same-host sitemap URL, or sitemap XML — we expand <loc> into the IndexNow urlList (we never submit the sitemap URL itself). Preview JSON, then Submit. Confirm receipts in Bing Webmaster → IndexNow.',
   tool_indexnow_how_title: 'Fonctionnement',
   tool_indexnow_key_label: 'IndexNow key',
   tool_indexnow_key_placeholder: '8–128 chars: A–Z a–z 0–9 -',
@@ -66,7 +69,7 @@ const fr: SiteLangDict = {
   tool_indexnow_rules_item_3:
     '200 = received; 202 = accepted with key validation often still pending (Bing/global). A green 202 is not proof the key file works — use Check key.',
   tool_indexnow_rules_item_4:
-    'Protocol allows up to 10,000 URLs per POST; this page caps at 500 to reduce abuse. Prefer submitting only changed URLs.',
+    'Protocol allows up to 10,000 URLs per POST; this page caps at 500 to reduce abuse. Prefer submitting only changed page URLs. A sitemap URL is fetched and expanded to its <loc> list — IndexNow is notified about those pages, not the sitemap file.',
   tool_indexnow_rules_item_5:
     'Privacy: URL lists are sent through this site’s Worker to the IndexNow endpoint you choose, then discarded from our side — we do not store them in a content database.',
   tool_indexnow_rules_title: 'Règles à connaître',
@@ -90,10 +93,13 @@ const fr: SiteLangDict = {
   tool_indexnow_status_title: 'Codes HTTP',
   tool_indexnow_submit: 'Envoyer les URL',
   tool_indexnow_title: 'IndexNow — soumettre des URL à Bing, vérifier la clé et les codes',
-  tool_indexnow_urls_hint: 'All URLs must use the same host. Max 500 URLs per submit in this tool.',
-  tool_indexnow_urls_label: 'URL list or sitemap XML',
-  tool_indexnow_urls_placeholder: 'One https URL per line, or paste sitemap <loc>…</loc> XML',
-  tool_indexnow_usecase_1: 'New site or tool launch: deploy the key file, check it, then submit the new URLs from your sitemap.',
+  tool_indexnow_urls_hint:
+    'Same host only. Paste page URLs, a sitemap URL (we fetch and expand <loc>), or sitemap XML. Max 500 page URLs per submit.',
+  tool_indexnow_urls_label: 'URL list, sitemap URL, or sitemap XML',
+  tool_indexnow_urls_placeholder:
+    'One https page URL per line, or https://example.com/sitemap.xml, or paste sitemap <loc>…</loc> XML',
+  tool_indexnow_usecase_1:
+    'New site or tool launch: deploy the key file, check it, then submit page URLs parsed from your sitemap (not the sitemap URL itself).',
   tool_indexnow_usecase_2: 'Content update: submit only the pages you changed instead of the whole site every time.',
   tool_indexnow_usecase_3: 'Removed pages: submit URLs that now return 404/410 so engines can recrawl sooner.',
   tool_indexnow_usecases_title: 'Bons cas d’usage',

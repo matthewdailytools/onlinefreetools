@@ -21,7 +21,11 @@ import { handleWebsiteHeadersApi } from "./tools/websiteHeaders";
 import { handleIpAddress } from "./endpoints/ipAddress";
 import { handleDnsLookup } from "./endpoints/dnsLookup";
 import { handleDomainLookup } from "./endpoints/domainLookup";
-import { handleIndexnowCheckKey, handleIndexnowSubmit } from "./endpoints/indexnow";
+import {
+	handleIndexnowCheckKey,
+	handleIndexnowResolveUrls,
+	handleIndexnowSubmit,
+} from "./endpoints/indexnow";
 
 type Env = {
 	ASSETS: Fetcher;
@@ -256,6 +260,7 @@ app.get("/api/tools/ip-address", handleIpAddress);
 app.get("/api/tools/dns-lookup", handleDnsLookup);
 app.get("/api/tools/domain-lookup", handleDomainLookup);
 app.get("/api/tools/indexnow/check-key", handleIndexnowCheckKey);
+app.post("/api/tools/indexnow/resolve-urls", handleIndexnowResolveUrls);
 app.post("/api/tools/indexnow/submit", handleIndexnowSubmit);
 
 // Legacy static tool page: redirect to dynamic route.

@@ -236,6 +236,7 @@ export const renderIndexNowPage = (opts: {
   var msgForceConfirm = ${JSON.stringify(t(opts.lang, 'tool_indexnow_force_confirm'))};
   var msgUncheckedWarn = ${JSON.stringify(t(opts.lang, 'tool_indexnow_warn_unchecked'))};
   var msgLimit = ${JSON.stringify(t(opts.lang, 'tool_indexnow_err_limit'))};
+  var msgSitemap = ${JSON.stringify(t(opts.lang, 'tool_indexnow_err_sitemap'))};
   var lastKeyOk = false;
 
   /**
@@ -301,20 +302,40 @@ export const renderIndexNowPage = (opts: {
   }
 
   /**
-   * 从多行文本或 sitemap XML 提取 URL。
+   * 判断绝对 URL 是否像 sitemap（应交给 Worker 展开，不能直接当页面提交）。
+   * @param {string} raw
+   * @returns {boolean}
+   */
+  function looksLikeSitemapUrl(raw) {
+    try {
+      var u = new URL(String(raw || '').trim());
+      var path = u.pathname.toLowerCase();
+      if (path.slice(-4) === '.xml' || path.slice(-7) === '.xml.gz') {
+        return path.indexOf('sitemap') >= 0;
+      }
+      return /\\/sitemap(?:[_-]|$|index)/i.test(path);
+    } catch (e) {
+      return false;
+    }
+  }
+
+  /**
+   * 从多行文本或 sitemap XML 提取候选 URL（可能仍含子 sitemap URL）。
    * @param {string} raw
    * @returns {string[]}
    */
-  function extractUrls(raw) {
+  function extractCandidateUrls(raw) {
     var text = raw || '';
     var urls = [];
-    var locRe = /<loc>\\s*([^<\\s]+)\\s*<\\/loc>/gi;
-    var m;
-    while ((m = locRe.exec(text))) urls.push(m[1].trim());
-    if (urls.length === 0) {
+    var isXml = /<urlset[\\s>]/i.test(text) || /<sitemapindex[\\s>]/i.test(text);
+    if (isXml) {
+      var locRe = /<loc>\\s*([^<\\s]+)\\s*<\\/loc>/gi;
+      var m;
+      while ((m = locRe.exec(text))) urls.push(m[1].trim());
+    } else {
       text.split(/\\r?\\n/).forEach(function (line) {
-        var s = line.trim();
-        if (!s || s.charAt(0) === '#') return;
+        var s = line.replace(/#.*$/, '').trim();
+        if (!s) return;
         if (/^https?:\\/\\//i.test(s)) urls.push(s);
       });
     }
@@ -329,10 +350,11 @@ export const renderIndexNowPage = (opts: {
   }
 
   /**
-   * 收集并校验表单，返回 payload 或 null。
+   * 收集并校验表单基础字段；URL 展开由 resolveUrlsAsync 完成。
    * @param {{ requireUrls?: boolean }} opts
+   * @returns {{ host: string, key: string, keyLocation: string, endpoint: string, rawText: string, candidates: string[] }|null}
    */
-  function collect(opts) {
+  function collectBase(opts) {
     opts = opts || {};
     setBanner('', '');
     var host = normalizeHost(hostInput.value);
@@ -356,35 +378,109 @@ export const renderIndexNowPage = (opts: {
       setBanner('error', msgMismatch);
       return null;
     }
-    var urls = extractUrls(urlListEl.value);
+    var rawText = urlListEl.value || '';
+    var candidates = extractCandidateUrls(rawText);
     if (opts.requireUrls !== false) {
-      if (urls.length === 0) {
+      if (candidates.length === 0) {
         setBanner('error', msgEmptyUrls);
         return null;
       }
-      if (urls.length > 500) {
+      if (candidates.length > 500) {
         setBanner('error', msgLimit);
         return null;
-      }
-      for (var i = 0; i < urls.length; i++) {
-        try {
-          var u = new URL(urls[i]);
-          if (u.hostname.toLowerCase() !== host) {
-            setBanner('error', msgMismatch + ' ' + urls[i]);
-            return null;
-          }
-        } catch (e2) {
-          setBanner('error', msgMismatch + ' ' + urls[i]);
-          return null;
-        }
       }
     }
     return {
       host: host,
       key: key,
       keyLocation: keyLocation,
+      endpoint: endpointSelect.value || 'indexnow',
+      rawText: rawText,
+      candidates: candidates
+    };
+  }
+
+  /**
+   * 经 Worker 把 sitemap URL / sitemapindex 展开为页面 urlList。
+   * IndexNow 只提交页面列表，绝不把 sitemap 地址本身当作变更页。
+   * @param {{ host: string, rawText: string, candidates: string[] }} base
+   * @returns {Promise<string[]|null>}
+   */
+  async function resolveUrlsAsync(base) {
+    var needsResolve = false;
+    var i;
+    for (i = 0; i < base.candidates.length; i++) {
+      if (looksLikeSitemapUrl(base.candidates[i])) {
+        needsResolve = true;
+        break;
+      }
+    }
+    if (/<sitemapindex[\\s>]/i.test(base.rawText)) needsResolve = true;
+
+    if (!needsResolve) {
+      for (i = 0; i < base.candidates.length; i++) {
+        try {
+          var u = new URL(base.candidates[i]);
+          if (u.hostname.toLowerCase() !== base.host) {
+            setBanner('error', msgMismatch + ' ' + base.candidates[i]);
+            return null;
+          }
+        } catch (e2) {
+          setBanner('error', msgMismatch + ' ' + base.candidates[i]);
+          return null;
+        }
+      }
+      return base.candidates.slice();
+    }
+
+    try {
+      var res = await fetch('/api/tools/indexnow/resolve-urls', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ host: base.host, text: base.rawText })
+      });
+      var json = await res.json();
+      if (!res.ok || !json || !json.ok || !Array.isArray(json.urlList) || json.urlList.length === 0) {
+        setBanner('error', (json && json.error) || msgSitemap);
+        previewOut.textContent = json ? JSON.stringify(json, null, 2) : '';
+        return null;
+      }
+      if (json.urlList.length > 500) {
+        setBanner('error', msgLimit);
+        return null;
+      }
+      return json.urlList;
+    } catch (e3) {
+      setBanner('error', msgSitemap);
+      return null;
+    }
+  }
+
+  /**
+   * 收集完整提交载荷（含已展开的页面 urlList）。
+   * @param {{ requireUrls?: boolean }} opts
+   * @returns {Promise<{ host: string, key: string, keyLocation: string, urlList: string[], endpoint: string }|null>}
+   */
+  async function collectAsync(opts) {
+    var base = collectBase(opts);
+    if (!base) return null;
+    if (opts && opts.requireUrls === false) {
+      return {
+        host: base.host,
+        key: base.key,
+        keyLocation: base.keyLocation,
+        urlList: [],
+        endpoint: base.endpoint
+      };
+    }
+    var urls = await resolveUrlsAsync(base);
+    if (!urls) return null;
+    return {
+      host: base.host,
+      key: base.key,
+      keyLocation: base.keyLocation,
       urlList: urls,
-      endpoint: endpointSelect.value || 'indexnow'
+      endpoint: base.endpoint
     };
   }
 
@@ -402,8 +498,8 @@ export const renderIndexNowPage = (opts: {
   }
 
   /** 下载 {key}.txt */
-  function onDownload() {
-    var data = collect({ requireUrls: false });
+  async function onDownload() {
+    var data = await collectAsync({ requireUrls: false });
     if (!data) return;
     var blob = new Blob([data.key], { type: 'text/plain;charset=utf-8' });
     var a = document.createElement('a');
@@ -415,10 +511,14 @@ export const renderIndexNowPage = (opts: {
     URL.revokeObjectURL(a.href);
   }
 
-  /** 预览 POST JSON */
-  function onPreview() {
-    var data = collect({ requireUrls: true });
-    if (!data) return;
+  /** 预览 POST JSON（若输入为 sitemap URL，先展开为页面列表） */
+  async function onPreview() {
+    previewOut.textContent = '...';
+    var data = await collectAsync({ requireUrls: true });
+    if (!data) {
+      if (previewOut.textContent === '...') previewOut.textContent = '';
+      return;
+    }
     previewOut.textContent = JSON.stringify({
       host: data.host,
       key: data.key,
@@ -429,7 +529,7 @@ export const renderIndexNowPage = (opts: {
 
   /** Check key via Worker */
   async function onCheck() {
-    var data = collect({ requireUrls: false });
+    var data = await collectAsync({ requireUrls: false });
     if (!data) return;
     previewOut.textContent = '...';
     lastKeyOk = false;
@@ -452,17 +552,21 @@ export const renderIndexNowPage = (opts: {
     }
   }
 
-  /** Submit via Worker */
+  /** Submit via Worker（服务端也会再展开 sitemap，双保险） */
   async function onSubmit() {
-    var data = collect({ requireUrls: true });
-    if (!data) return;
+    previewOut.textContent = '...';
+    var data = await collectAsync({ requireUrls: true });
+    if (!data) {
+      if (previewOut.textContent === '...') previewOut.textContent = '';
+      return;
+    }
     if (!lastKeyOk) {
       if (!window.confirm(msgForceConfirm)) {
         setBanner('warn', msgUncheckedWarn);
+        previewOut.textContent = '';
         return;
       }
     }
-    previewOut.textContent = '...';
     try {
       var res = await fetch('/api/tools/indexnow/submit', {
         method: 'POST',
@@ -475,7 +579,7 @@ export const renderIndexNowPage = (opts: {
         setBanner('error', (json && json.error) || msgSubmitFail);
         return;
       }
-      if (json.ok) setBanner('ok', msgSubmitOk + ' HTTP ' + json.status);
+      if (json.ok) setBanner('ok', msgSubmitOk + ' HTTP ' + json.status + ' (' + (json.urlCount || data.urlList.length) + ' URLs)');
       else setBanner('warn', msgSubmitFail + ' HTTP ' + json.status);
     } catch (e) {
       setBanner('error', msgSubmitFail);

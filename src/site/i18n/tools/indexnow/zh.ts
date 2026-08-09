@@ -21,7 +21,8 @@ const zh: SiteLangDict = {
   tool_indexnow_err_key: '密钥须为 8–128 位 [A-Za-z0-9-]。',
   tool_indexnow_err_limit: 'URL 过多（此处单次最多 500）。',
   tool_indexnow_err_submit: '提交失败或返回非成功状态。',
-  tool_indexnow_err_urls: '请至少添加一条 URL（或含 <loc> 的 sitemap）。',
+  tool_indexnow_err_sitemap: '无法拉取或解析 sitemap。请使用同 host 的 sitemap 地址，或粘贴含 <loc> 的 XML。',
+  tool_indexnow_err_urls: '请至少添加一条页面 URL、同 host 的 sitemap 地址，或含 <loc> 的 sitemap XML。',
   tool_indexnow_example:
     'Host 为 www.example.com，密钥 indexnowdemokey01，URL https://www.example.com/page → 生成含 host/key/keyLocation/urlList 的 JSON。托管 txt 后，「检查密钥」应显示 HTTP 200 且 bodyMatch=true，再提交。',
   tool_indexnow_example_title: '示例',
@@ -40,7 +41,7 @@ const zh: SiteLangDict = {
   tool_indexnow_host_label: 'Host（须与 URL 一致）',
   tool_indexnow_host_placeholder: 'www.example.com',
   tool_indexnow_how_body:
-    '1）生成密钥并下载 {key}.txt。2）放到站点根路径（或同 host 其他路径）。3）点「检查密钥」由本站 Worker 拉取比对。4）粘贴变更 URL 或 sitemap，预览 JSON 后提交。再到 Bing Webmaster → IndexNow 查看接收记录。',
+    '1）生成密钥并下载 {key}.txt。2）放到站点根路径（或同 host 其他路径）。3）点「检查密钥」由本站 Worker 拉取比对。4）粘贴变更页面 URL、同 host 的 sitemap 地址或 sitemap XML——我们会解析 <loc> 生成 IndexNow 的 urlList（不会把 sitemap 地址本身当页面提交）。预览 JSON 后提交。再到 Bing Webmaster → IndexNow 查看接收记录。',
   tool_indexnow_how_title: '如何使用',
   tool_indexnow_key_label: 'IndexNow 密钥',
   tool_indexnow_key_placeholder: '8–128 chars: A–Z a–z 0–9 -',
@@ -55,7 +56,8 @@ const zh: SiteLangDict = {
   tool_indexnow_rules_item_1: '密钥：8–128 位 [A-Za-z0-9-]。推荐 Option 1：https://{host}/{key}.txt，正文仅密钥。',
   tool_indexnow_rules_item_2: 'JSON 的 host 须与每条 URL、keyLocation 的主机名一致。www 与裸域不同。',
   tool_indexnow_rules_item_3: '200=已接收；202=已接受且密钥校验可能仍在进行。不要仅凭 202 认定成功——请先检查密钥。',
-  tool_indexnow_rules_item_4: '协议单次最多 1 万 URL；本页限制 500。优先只提交有变更的页面。',
+  tool_indexnow_rules_item_4:
+    '协议单次最多 1 万 URL；本页限制 500。优先只提交有变更的页面。若填写 sitemap 地址，会先拉取并展开其中的 <loc>——通知的是页面列表，不是 sitemap 文件本身。',
   tool_indexnow_rules_item_5: '隐私：URL 列表经本站 Worker 转发到你选择的 IndexNow 端点，我们不写入内容库。',
   tool_indexnow_rules_title: '规则与边界',
   tool_indexnow_sample: '载入示例',
@@ -78,10 +80,12 @@ const zh: SiteLangDict = {
   tool_indexnow_status_title: 'HTTP 状态码',
   tool_indexnow_submit: '提交 URL',
   tool_indexnow_title: 'IndexNow — Bing URL 提交、密钥检查与状态码',
-  tool_indexnow_urls_hint: '所有 URL 须同一 host。本工具单次最多 500 条。',
-  tool_indexnow_urls_label: 'URL 列表或 sitemap XML',
-  tool_indexnow_urls_placeholder: '每行一个 https URL，或粘贴含 <loc> 的 sitemap',
-  tool_indexnow_usecase_1: '新站或新工具上线：部署密钥文件并检查，再提交 sitemap 中的新 URL。',
+  tool_indexnow_urls_hint:
+    '须同一 host。可粘贴页面 URL、sitemap 地址（自动拉取展开 <loc>）或 sitemap XML。单次最多 500 条页面 URL。',
+  tool_indexnow_urls_label: 'URL 列表、sitemap 地址或 sitemap XML',
+  tool_indexnow_urls_placeholder:
+    '每行一个 https 页面 URL，或 https://example.com/sitemap.xml，或粘贴含 <loc> 的 sitemap',
+  tool_indexnow_usecase_1: '新站或新工具上线：部署密钥文件并检查，再提交从 sitemap 解析出的页面 URL（不是 sitemap 地址本身）。',
   tool_indexnow_usecase_2: '内容更新：只提交改过的页面，避免反复刷全站。',
   tool_indexnow_usecase_3: '删页：提交已 404/410 的 URL，便于引擎尽快再抓取。',
   tool_indexnow_usecases_title: '适用场景',
