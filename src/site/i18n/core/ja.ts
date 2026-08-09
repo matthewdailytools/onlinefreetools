@@ -53,7 +53,7 @@ const ja: SiteLangDict = {
   nav_categories: 'カテゴリ',
   nav_devlogs: '開発ログ',
   nav_home: 'ホーム',
-  nav_use_cases: "利用シーン",
+  nav_use_cases: "どこで使う",
   nav_tool_type: "ツールタイプ",
     nav_tools: 'ツール',
   note_1: 'HEADを拒否するサイトはGETに切り替えます。目的はヘッダー確認であり、HTML全体の取得ではありません。',

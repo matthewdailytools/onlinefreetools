@@ -52,7 +52,7 @@ const id: SiteLangDict = {
   nav_home: 'Beranda',
   nav_tool_type: 'Jenis alat',
   nav_tools: 'Alat',
-  nav_use_cases: 'Kasus penggunaan',
+  nav_use_cases: 'Dipakai di mana',
   note_1: 'Situs yang menolak HEAD akan dicoba dengan GET. Tujuannya header, bukan unduh HTML penuh.',
   note_2: 'localhost dan jaringan privat diblokir agar worker tidak bisa memindai host internal.',
   note_title: 'Catatan',

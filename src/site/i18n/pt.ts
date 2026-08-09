@@ -52,7 +52,7 @@ const pt: SiteLangDict = {
   nav_home: 'Início',
   nav_tool_type: 'Tipos de ferramenta',
   nav_tools: 'Ferramentas',
-  nav_use_cases: 'Casos de uso',
+  nav_use_cases: 'Onde usar',
   note_1: 'Sites que rejeitam HEAD recebem GET. O foco são os headers, não baixar o HTML inteiro.',
   note_2: 'localhost e redes privadas ficam bloqueados para impedir sondagem interna pelo worker.',
   note_title: 'Notas',

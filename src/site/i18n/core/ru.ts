@@ -58,7 +58,7 @@ const ru: SiteLangDict = {
   nav_categories: 'Категории',
   nav_devlogs: 'Журналы разработки',
   nav_home: 'Главная',
-  nav_use_cases: "Сценарии",
+  nav_use_cases: "Где применять",
   nav_tool_type: "Типы инструментов",
     nav_tools: 'Инструменты',
   note_1: 'Если сайт отклоняет HEAD, пробуем GET. Цель — заголовки, а не скачивание HTML.',

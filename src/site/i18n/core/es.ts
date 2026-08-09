@@ -58,7 +58,7 @@ const es: SiteLangDict = {
   nav_categories: 'Categorías',
   nav_devlogs: 'Registros de Desarrollo',
   nav_home: 'Inicio',
-  nav_use_cases: "Casos de uso",
+  nav_use_cases: "Dónde usar",
   nav_tool_type: "Tipos de herramienta",
     nav_tools: 'Herramientas',
   note_1: 'Si el sitio rechaza HEAD, probamos con GET. Buscamos cabeceras, no descargar el HTML entero.',

@@ -56,7 +56,7 @@ const fr: SiteLangDict = {
   nav_home: 'Accueil',
   nav_tool_type: 'Types d’outil',
   nav_tools: 'Outils',
-  nav_use_cases: 'Cas d’usage',
+  nav_use_cases: 'Où utiliser',
   note_1:
     'Si HEAD est refusé, nous passons en GET. L\'objectif est les en-têtes, pas le téléchargement du HTML.',
   note_2: 'localhost et réseaux privés sont bloqués pour empêcher le worker de sonder des hôtes internes.',

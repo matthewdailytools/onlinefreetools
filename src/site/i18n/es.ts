@@ -56,7 +56,7 @@ const es: SiteLangDict = {
   nav_home: 'Inicio',
   nav_tool_type: 'Tipos de herramienta',
   nav_tools: 'Herramientas',
-  nav_use_cases: 'Casos de uso',
+  nav_use_cases: 'Dónde usar',
   note_1: 'Si el sitio rechaza HEAD, probamos con GET. Buscamos cabeceras, no descargar el HTML entero.',
   note_2: 'localhost y redes privadas quedan bloqueados para que el worker no pueda sondear hosts internos.',
   note_title: 'Notas',

@@ -54,7 +54,7 @@ const id: SiteLangDict = {
   nav_categories: 'Kategori',
   nav_devlogs: 'Log Pengembangan',
   nav_home: 'Beranda',
-  nav_use_cases: "Kasus penggunaan",
+  nav_use_cases: "Dipakai di mana",
   nav_tool_type: "Jenis alat",
     nav_tools: 'Alat',
   note_1: 'Situs yang menolak HEAD akan dicoba dengan GET. Tujuannya header, bukan unduh HTML penuh.',

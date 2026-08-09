@@ -55,7 +55,7 @@ const de: SiteLangDict = {
   nav_categories: 'Kategorien',
   nav_devlogs: 'Entwicklungsprotokolle',
   nav_home: 'Startseite',
-  nav_use_cases: "Anwendungsfälle",
+  nav_use_cases: "Wofür nutzen",
   nav_tool_type: "Tool-Typen",
     nav_tools: 'Werkzeuge',
   note_1: 'Lehnt ein Host HEAD ab, weichen wir auf GET aus. Ziel sind Header, nicht der HTML-Download.',

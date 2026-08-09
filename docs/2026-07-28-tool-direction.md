@@ -1,6 +1,6 @@
 # 工具方向 — 三个并列开发方向
 
-**日期**: 2026-07-28（修订：三方向并列；…；**2026-08-08** ezyZip / ToolDone / iLovePDF；**同日** 补充 [Omni Calculator](https://www.omnicalculator.com/) 公式对照）  
+**日期**: 2026-07-28（修订：三方向并列；…；**2026-08-08** ezyZip / ToolDone / iLovePDF；**同日** 补充 [Omni Calculator](https://www.omnicalculator.com/) 公式对照；**2026-08-09** [Aconvert](https://www.aconvert.com/) 全格式转换对照）  
 **标签**: `产品规划`, `工具方向`, `浏览器JS`, `场景桥接`, `行业工具`, `多规格交付`, `设计师工具`, `压缩包`  
 **目标站点**: https://onlinefreetools.org
 
@@ -16,6 +16,7 @@
 - [Omni Calculator 快照](./competitor-refs/omnicalculator-2026-08-08/README.md) — 全量 en 链接归档 + 公式对照精选（~3867；2026-08-08）
 - [Omni Calculator SEO 流量策略](./2026-08-08-omnicalculator-seo-traffic-strategy.md) — 对标打法、一页吃长尾、how-to 命名、Google/Bing 红线（2026-08-08）
 - [iLovePDF 工具快照](./competitor-refs/ilovepdf-2026-08-08/README.md) — PDF 全家桶 URL + 本站可做/不做决策（2026-08-08）
+- [Aconvert 工具快照](./competitor-refs/aconvert-2026-08-09/README.md) — 全格式云端转换 IA + 格式矩阵红线 + 本站可做/不做（2026-08-09）
 
 > **本文职责**：分别定义三条**独立**的工具开发方向（做什么、技术怎么落地、成熟度、候选清单）。  
 > **不是**要求每个工具同时满足「JS × 场景 × 行业」三维交叉；一个工具归入**其中一个**主方向即可立项。
@@ -1274,7 +1275,7 @@ npm run lint:seo && npm run build:site
 5. **方向 A**：文本/图片/编码成熟度 ✅✅✅ 的独立工具。  
 6. **专题 · 设计师工具**：P0 立项 `wcag-contrast-checker` 或 `brand-color-token-pack`；并行评估 `favicon-and-pwa-icon-pack`（见 D.1）。  
 7. **方向 C**：存量 YMYL References；V6/V3 与 1→N 工具选主方向挂靠。  
-8. 每季度分方向复盘；核对 Apple/Amazon/Google 规格；对照 Coolors / Squoosh / Merge Images / ezyZip / ToolDone / **Omni Calculator** / **iLovePDF（A.5.2）**。
+8. 每季度分方向复盘；核对 Apple/Amazon/Google 规格；对照 Coolors / Squoosh / Merge Images / ezyZip / ToolDone / **Omni Calculator** / **iLovePDF（A.5.2）** / **Aconvert（附录）**。
 
 ---
 
@@ -1290,6 +1291,7 @@ npm run lint:seo && npm run build:site
 | **[ToolDone](https://tooldone.com/zh/)** | 计算器公式与变量呈现可作**实现对照**；品类覆盖金融/健康/换算/数理统计/建筑（快照见 [competitor-refs/tooldone-2026-08-08](./competitor-refs/tooldone-2026-08-08/README.md)） | **~2800+ 页铺量**与近义拆页（男女 BMI、州税等）；无增量机翻风险面；本站禁止跟风数量竞赛 |
 | **[Omni Calculator](https://www.omnicalculator.com/)** | 公式讲解深度与可引用叙事强；热门统计/数学（p-value、sig-fig、百分比、斜率等）可作对照（快照见 [competitor-refs/omnicalculator-2026-08-08](./competitor-refs/omnicalculator-2026-08-08/README.md)，~3867 en） | 同样的长尾拆页矩阵（州税、BMI 分群、90/95/99 CI、宽高比预设 URL）；**无 zh**；禁止用页数竞赛代替 Information Gain；**流量策略**见 [2026-08-08-omnicalculator-seo-traffic-strategy.md](./2026-08-08-omnicalculator-seo-traffic-strategy.md) |
 | **[iLovePDF](https://www.ilovepdf.com/)** | Merge/Split/Compress 任务闭环；压缩前后对比；工具互链（**详表见 A.5.2** / [快照](./competitor-refs/ilovepdf-2026-08-08/README.md)） | 上传墙唯一路径；Office 全矩阵与 AI 摘要/翻译灌页；电子签/修复虚假承诺；与本站「本地处理」定位对立时勿跟风 |
+| **[Aconvert](https://www.aconvert.com/)** | 品类 Hub 任务闭环；File Analyzer 元数据意图；图片/PDF/归档真能力可吸收（**详表见** [快照](./competitor-refs/aconvert-2026-08-09/README.md)） | **`/format/{ext}/` + 格式对 URL 矩阵**（doorway / scaled content）；完整音视频/Ebook/Office 云端转码站；ZIP→任意后缀伪转换；机翻多语薄站 |
 | **Coolors / Realtime Colors / SVGOMG 等** | 配色闭环、实境预览、SVG 选项可视化（**详表见专题 D.2**） | 灵感库堆量、迷你建站器、无规则薄页 |
 
 **iLovePDF vs 本站 PDF 规划（速查）**：
@@ -1334,6 +1336,19 @@ npm run lint:seo && npm run build:site
 | 本地隐私叙事 | 强（与上传型站对立） | **对齐** |
 | 与素材交付 | 弱关联 | 与 1→N「下载 ZIP」**Related 互链** |
 
+**Aconvert vs 本站全格式转换规划（速查）**：
+
+| 维度 | Aconvert | 本站（本文） |
+|---|---|---|
+| 处理位置 | 上传多服务器 | **浏览器本地** |
+| SEO 结构 | 品类 Hub + `/format/*` + **格式对矩阵** | taxonomy + **一带多场景**；禁 doorway |
+| 图片 / PDF 整理 | 深（云端） | **做深已有** slug；对齐 A.2 / A.5.2 |
+| Office / Ebook | 全家桶 | **默认不做**高保真 |
+| 音视频转码站 | 全家桶 | **不做站**；窄本地工具可议（截帧 / WAV↔MP3） |
+| 归档 | Archive Hub + 格式页 | **A.5 / B14**；禁伪转换矩阵 |
+| 元数据 | File Analyzer | P1 候选 `file-metadata-analyzer` |
+| 详表 | — | [competitor-refs/aconvert-2026-08-09](./competitor-refs/aconvert-2026-08-09/README.md) |
+
 ---
 
-*维护：方向 A 改成熟度/包结论时同步包调研或音视频文档；方向 B 增场景卡（含 B13 N→1、**B14 归档**）；方向 C 增垂直调研；**设计师工具**改候选/优先级/竞品时同步专题 D 节；竞品快照见 A.2.1 / **A.5.1** / **A.5.2 iLovePDF** / **ToolDone** / **Omni Calculator competitor-refs** / 专题 D.2 / 附录。产品主方向字段只改本文与 tool-catalog。*
+*维护：方向 A 改成熟度/包结论时同步包调研或音视频文档；方向 B 增场景卡（含 B13 N→1、**B14 归档**）；方向 C 增垂直调研；**设计师工具**改候选/优先级/竞品时同步专题 D 节；竞品快照见 A.2.1 / **A.5.1** / **A.5.2 iLovePDF** / **Aconvert** / **ToolDone** / **Omni Calculator competitor-refs** / 专题 D.2 / 附录。产品主方向字段只改本文与 tool-catalog。*

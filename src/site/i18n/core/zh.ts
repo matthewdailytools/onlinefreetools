@@ -54,7 +54,7 @@ const zh: SiteLangDict = {
   nav_categories: '分类',
   nav_devlogs: '开发日志',
   nav_home: '首页',
-  nav_use_cases: "应用场景",
+  nav_use_cases: "用在哪",
   nav_tool_type: "工具类型",
     nav_tools: '工具',
   note_1: '部分站点拒绝 HEAD，会自动改用 GET；目的是看头信息，不是抓取正文。',

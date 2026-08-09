@@ -58,7 +58,7 @@ const en: SiteLangDict = {
   nav_categories: 'Categories',
   nav_devlogs: 'Dev Logs',
   nav_home: 'Home',
-  nav_use_cases: "Use cases",
+  nav_use_cases: "where2use",
   nav_tool_type: "Tool types",
     nav_tools: 'Tools',
   note_1: 'Some sites reject HEAD; we fall back to GET. The goal is headers, not scraping the body.',

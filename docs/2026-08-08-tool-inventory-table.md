@@ -1,7 +1,7 @@
 # 工具清单总表（自工具方向文档提炼）
 
-**日期**: 2026-08-08（修订：…；ToolDone；iLovePDF；Omni 公式对照；**Omni 意图合并 → how-to-calculate-* 补充 §9**）  
-**来源**: [2026-07-28-tool-direction.md](./2026-07-28-tool-direction.md) + `tool-catalog.json` + [ToolDone](./competitor-refs/tooldone-2026-08-08/README.md) + [iLovePDF](./competitor-refs/ilovepdf-2026-08-08/README.md) + [Omni Calculator](./competitor-refs/omnicalculator-2026-08-08/README.md)  
+**日期**: 2026-08-08（修订：…；ToolDone；iLovePDF；Omni 公式对照；**Omni 意图合并 → how-to-calculate-* 补充 §9**；**2026-08-09 Aconvert 全格式转换对照**）  
+**来源**: [2026-07-28-tool-direction.md](./2026-07-28-tool-direction.md) + `tool-catalog.json` + [ToolDone](./competitor-refs/tooldone-2026-08-08/README.md) + [iLovePDF](./competitor-refs/ilovepdf-2026-08-08/README.md) + [Omni Calculator](./competitor-refs/omnicalculator-2026-08-08/README.md) + [Aconvert](./competitor-refs/aconvert-2026-08-09/README.md)  
 **目标站点**: https://onlinefreetools.org  
 
 > **用途**：产品排期与立项对照用的扁平清单；**不是** SEO 文案源。细则、红线、成熟度仍以工具方向文档为准。  
@@ -9,7 +9,8 @@
 > **序号**：全表连续编号（1–158），跨分节递增；增删行后须重排后续序号。  
 > **ToolDone**：计算器公式对照见 §11 / `competitor-refs/tooldone-*`；**禁止**铺量拆页。  
 > **Omni Calculator**：§9 为意图合并后的 `how-to-calculate-*` 清单；合并明细见 [`omnicalculator-intent-merge-howto.tsv`](./competitor-refs/omnicalculator-2026-08-08/omnicalculator-intent-merge-howto.tsv)；公式对照 §12；SEO 策略：[2026-08-08-omnicalculator-seo-traffic-strategy.md](./2026-08-08-omnicalculator-seo-traffic-strategy.md)。禁州税/男女 BMI/CI 分档/宽高比预设拆页。  
-> **iLovePDF**：PDF 全家桶对照见 §4 与 `competitor-refs/ilovepdf-*`；默认**本地** `pdf-lib`，不做 Office 高保真 / AI / 电子签。
+> **iLovePDF**：PDF 全家桶对照见 §4 与 `competitor-refs/ilovepdf-*`；默认**本地** `pdf-lib`，不做 Office 高保真 / AI / 电子签。  
+> **Aconvert**：全格式云端转换 + `/format/*` 矩阵对照见 [competitor-refs/aconvert-2026-08-09](./competitor-refs/aconvert-2026-08-09/README.md)；**禁止**格式对薄页 / 完整音视频转码站；做深已有图片·PDF slug；归档走既有 P0；P1 可议 `file-metadata-analyzer`（不插队现有 P0）。
 
 ---
 

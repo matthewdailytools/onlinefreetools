@@ -52,7 +52,7 @@ const ar: SiteLangDict = {
   nav_home: 'الرئيسية',
   nav_tool_type: 'أنواع الأدوات',
   nav_tools: 'الأدوات',
-  nav_use_cases: 'حالات الاستخدام',
+  nav_use_cases: 'أين تستخدم',
   note_1: 'إذا رفض الموقع HEAD نستخدم GET. الهدف الرؤوس وليس تنزيل HTML كاملًا.',
   note_2: 'يُحظر localhost والشبكات الخاصة حتى لا يُستخدم الـ worker لمسح المضيفات الداخلية.',
   note_title: 'ملاحظات',

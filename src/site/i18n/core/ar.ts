@@ -54,7 +54,7 @@ const ar: SiteLangDict = {
   nav_categories: 'التصنيفات',
   nav_devlogs: 'سجلات التطوير',
   nav_home: 'الرئيسية',
-  nav_use_cases: "حالات الاستخدام",
+  nav_use_cases: "أين تستخدم",
   nav_tool_type: "أنواع الأدوات",
     nav_tools: 'الأدوات',
   note_1: 'إذا رفض الموقع HEAD نستخدم GET. الهدف الرؤوس وليس تنزيل HTML كاملًا.',

@@ -53,7 +53,7 @@ const de: SiteLangDict = {
   nav_home: 'Startseite',
   nav_tool_type: 'Tool-Typen',
   nav_tools: 'Werkzeuge',
-  nav_use_cases: 'Anwendungsfälle',
+  nav_use_cases: 'Wofür nutzen',
   note_1: 'Lehnt ein Host HEAD ab, weichen wir auf GET aus. Ziel sind Header, nicht der HTML-Download.',
   note_2: 'localhost und private Netze sind gesperrt, damit der Worker keine internen Hosts scannen kann.',
   note_title: 'Hinweise',

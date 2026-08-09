@@ -6,6 +6,7 @@
 - [工具方向](./2026-07-28-tool-direction.md) — 产品是否立项多媒体工具（默认谨慎 / 绑定场景）
 - [JS 工具包调研](./2026-07-09-js-tool-packages-survey.md) — 包枚举与 Tier 加载
 - [Google SEO 策略与落地](./2026-07-28-google-seo-strategy-implementation.md) — CWV 与页面合规
+- **[音视频客户端续研 2026-08-09](./2026-08-09-browser-av-client-solutions.md)** — Mediabunny / lamejs / gifenc / mediainfo / FFmpeg 分层（本文 §3「视频几乎只靠 FFmpeg」已过时，以续研为准）
 
 ## 概述
 

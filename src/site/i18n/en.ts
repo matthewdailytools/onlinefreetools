@@ -56,7 +56,7 @@ const en: SiteLangDict = {
   nav_home: 'Home',
   nav_tool_type: 'Tool types',
   nav_tools: 'Tools',
-  nav_use_cases: 'Use cases',
+  nav_use_cases: 'where2use',
   note_1: 'Some sites reject HEAD; we fall back to GET. The goal is headers, not scraping the body.',
   note_2: 'Localhost and private network targets are blocked so the worker cannot probe internal hosts.',
   note_title: 'Notes',
