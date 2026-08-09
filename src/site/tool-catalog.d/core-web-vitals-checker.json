@@ -1,0 +1,25 @@
+{
+  "slug": "core-web-vitals-checker",
+  "path": "/tools/core-web-vitals-checker",
+  "category": "developer",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_cwv_title",
+  "homeTitleKey": "tool_cwv_home_title",
+  "homeDescKey": "tool_cwv_home_desc",
+  "faqPrefix": "tool_cwv",
+  "related": [
+    "image-compress",
+    "image-optimizer",
+    "website-headers"
+  ],
+  "logo": "/icons/tools/core-web-vitals-checker.svg",
+  "page": {
+    "module": "../pages/coreWebVitalsCheckerPage",
+    "export": "renderCoreWebVitalsCheckerPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "seo",
+  "subject": "number"
+}

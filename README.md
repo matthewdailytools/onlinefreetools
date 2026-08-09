@@ -8,7 +8,7 @@
 ## 工具清单 / Tools List
 以下是我们提供的在线工具及其链接（中文版）：
 
-- [在线查看 HTTP 响应头](https://onlinefreetools.org/zh/tools/website-headers) - 从边缘检查公开网址的 HTTP 响应头（缓存/CORS/安全头）
+- [在线查看 HTTP 响应头](https://onlinefreetools.org/zh/tools/website-headers) - 从边缘检查公开网址的 HTTP 响应头，含 Cache-Control / X-Robots-Tag / 重定向链的人话解读
 - [我的 IP 地址是什么？](https://onlinefreetools.org/zh/tools/ip-address) - 查看边缘节点看到的公网 IP，并说明代理/VPN 局限
 - [Markdown ↔ HTML](https://onlinefreetools.org/zh/tools/markdown-to-html) - 浏览器内 Markdown 与 HTML 双向转换：预览、安全清理与导出
 - [在线文本对比](https://onlinefreetools.org/zh/tools/text-diff) - 并排对比两段文本，高亮增删改差异
@@ -60,6 +60,11 @@
 - [给域名添加 www DNS](https://onlinefreetools.org/zh/tools/add-www-to-dns) - 生成 www 的 A/CNAME 记录，查询现网，并提供 Cloudflare/Vercel/阿里云等操作教程
 - [域名查询](https://onlinefreetools.org/zh/tools/domain-lookup) - 查看 DNS 解析与注册信息（RDAP/WHOIS 风格），经边缘并行查询
 - [IndexNow / Bing URL 提交](https://onlinefreetools.org/zh/tools/indexnow) - 生成密钥、检查验证文件、提交变更 URL，并说明 200/202 状态码
+- [Core Web Vitals 检测](https://onlinefreetools.org/zh/tools/core-web-vitals-checker) - 粘贴 LCP/INP/CLS，按公开阈值评级并给出与 Clarity 对齐的成因与改进
+- [Meta SERP 预览](https://onlinefreetools.org/zh/tools/meta-serp-preview) - 预估 title/description 字符与像素截断，预览桌面/移动 SERP 外观
+- [Schema JSON-LD 生成](https://onlinefreetools.org/zh/tools/schema-jsonld-generator) - 生成 FAQ/Article/Breadcrumb/Organization 的 JSON-LD（与可见内容一致）
+- [robots.txt 生成](https://onlinefreetools.org/zh/tools/robots-txt-generator) - 生成 robots.txt，含 AI 爬虫（GPTBot 等）User-agent 规则
+- [XML Sitemap 生成](https://onlinefreetools.org/zh/tools/sitemap-xml-generator) - 从 URL 列表生成 sitemap.xml（lastmod/changefreq/priority）
 - [BMI 计算器](https://onlinefreetools.org/zh/tools/how-to-calculate-bmi) - 按成人筛查公式计算身体质量指数（教育用途，非诊断）
 - [ROI 计算器](https://onlinefreetools.org/zh/tools/how-to-calculate-roi) - 计算投资回报率，含假设说明与非投资建议免责
 - [复利计算器](https://onlinefreetools.org/zh/tools/how-to-calculate-compound-interest) - 按本金、年利率、年数与复利频率计算终值；可对照单利；非投资建议
@@ -125,7 +130,7 @@
 
 Below are our available online tools with their links (English version):
 
-- [Check HTTP Response Headers](https://onlinefreetools.org/tools/website-headers) - Inspect response headers from the edge (caching, CORS, security)
+- [Check HTTP Response Headers](https://onlinefreetools.org/tools/website-headers) - Inspect response headers from the edge, with plain-language reads of Cache-Control, X-Robots-Tag and redirect chains
 - [What Is My IP Address?](https://onlinefreetools.org/tools/ip-address) - See the public IP our edge observes, with proxy/VPN limits explained
 - [Markdown ↔ HTML](https://onlinefreetools.org/tools/markdown-to-html) - Convert Markdown ↔ HTML with sanitize, preview, and export
 - [Text Diff Checker](https://onlinefreetools.org/tools/text-diff) - Compare two texts side by side and highlight differences
@@ -177,6 +182,11 @@ Below are our available online tools with their links (English version):
 - [Add WWW to DNS](https://onlinefreetools.org/tools/add-www-to-dns) - Generate www A/CNAME records, check live DNS, and follow Cloudflare/Vercel/Route 53 guides
 - [Domain Lookup](https://onlinefreetools.org/tools/domain-lookup) - Check DNS records and registration data (RDAP/WHOIS-style) via the edge
 - [IndexNow — Bing URL Submit](https://onlinefreetools.org/tools/indexnow) - Generate a key, check the verification file, submit changed URLs, and read 200/202 status codes
+- [Core Web Vitals Checker](https://onlinefreetools.org/tools/core-web-vitals-checker) - Grade pasted LCP/INP/CLS against public thresholds with Clarity-aligned causes and fixes
+- [Meta SERP Preview](https://onlinefreetools.org/tools/meta-serp-preview) - Estimate title/description character and pixel truncation with desktop/mobile SERP preview
+- [Schema JSON-LD Generator](https://onlinefreetools.org/tools/schema-jsonld-generator) - Generate FAQ/Article/Breadcrumb/Organization JSON-LD matching visible content
+- [Robots.txt Generator](https://onlinefreetools.org/tools/robots-txt-generator) - Build robots.txt with AI crawler user-agents (GPTBot and more)
+- [XML Sitemap Generator](https://onlinefreetools.org/tools/sitemap-xml-generator) - Turn a URL list into sitemap.xml with lastmod/changefreq/priority
 - [BMI Calculator](https://onlinefreetools.org/tools/how-to-calculate-bmi) - Adult BMI screening from weight and height (educational, not a diagnosis)
 - [ROI Calculator](https://onlinefreetools.org/tools/how-to-calculate-roi) - Calculate return on investment with assumptions and a non-advice disclaimer
 - [Compound Interest Calculator](https://onlinefreetools.org/tools/how-to-calculate-compound-interest) - Future value from principal, rate, years, and compounding; optional simple interest; educational only

@@ -183,18 +183,18 @@ export const renderHowToCalculateSignificantFiguresPage = (opts: {
         function countSigFigs(raw) {
           var s = String(raw).trim().replace(/,/g, '');
           if (!s) return null;
-          var em = s.match(/^([+-]?(?:\d+\.?\d*|\.\d+))[eE]([+-]?\d+)$/);
+          var em = s.match(/^([+-]?(?:\\d+\\.?\\d*|\\.\\d+))[eE]([+-]?\\d+)$/);
           if (em) s = em[1];
           s = s.replace(/^[+-]/, '');
-          if (!/^\d*\.?\d+$/.test(s)) return null;
-          if (/^0*\.?0*$/.test(s)) return 1;
+          if (!/^\\d*\\.?\\d+$/.test(s)) return null;
+          if (/^0*\\.?0*$/.test(s)) return 1;
           var t = s.replace(/^0+/, '');
           if (t.charAt(0) === '.') {
-            t = t.replace(/^\.0*/, '');
-            return t.replace(/\./g, '').length;
+            t = t.replace(/^\\.0*/, '');
+            return t.replace(/\\./g, '').length;
           }
           if (t.indexOf('.') >= 0) {
-            return t.replace(/\./g, '').length;
+            return t.replace(/\\./g, '').length;
           }
           return t.replace(/0+$/, '').length || 1;
         }

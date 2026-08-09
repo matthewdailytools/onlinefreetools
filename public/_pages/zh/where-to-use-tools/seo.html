@@ -1,0 +1,568 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8" />
+  <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SEO / 站长工具（分模块） | OnlineFreeTools.org</title>
+  <meta name="description" content="按模块系统讲解 SEO：抓取与索引、技术检查、页面 Meta/SERP、结构化数据、性能、活动追踪与多语、社交预览，并对应本站可用工具。" />
+  
+  <link rel="canonical" href="https://onlinefreetools.org/zh/where-to-use-tools/seo" />
+  <meta property="og:title" content="SEO / 站长工具（分模块） | OnlineFreeTools.org" />
+  <meta property="og:description" content="按模块系统讲解 SEO：抓取与索引、技术检查、页面 Meta/SERP、结构化数据、性能、活动追踪与多语、社交预览，并对应本站可用工具。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://onlinefreetools.org/zh/where-to-use-tools/seo" />
+  <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="alternate" hreflang="en" href="https://onlinefreetools.org/where-to-use-tools/seo" />
+  <link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/where-to-use-tools/seo" />
+  <link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/where-to-use-tools/seo" />
+  <link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/where-to-use-tools/seo" />
+  <link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/where-to-use-tools/seo" />
+  <link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/where-to-use-tools/seo" />
+  <link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/where-to-use-tools/seo" />
+  <link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/where-to-use-tools/seo" />
+  <link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/where-to-use-tools/seo" />
+  <link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/where-to-use-tools/seo" />
+  <link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/where-to-use-tools/seo" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  
+  <script>
+    (function () {
+      try {
+        var enabled = ["en","zh","es","ar","pt","id","fr","ja","ru","de"];
+        var defaultLang = "en";
+        var fallback = defaultLang;
+        var path = window.location.pathname || '/';
+
+        // If the URL already contains a language prefix (including defaultLang), respect it.
+        var hasPrefix = enabled.some(function (l) {
+          return l && (path === '/' + l || path.indexOf('/' + l + '/') === 0);
+        });
+        if (hasPrefix) return;
+
+        var langs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language])
+          .filter(Boolean)
+          .map(function (x) { return String(x).toLowerCase().split('-')[0]; });
+
+        var picked = null;
+        for (var i = 0; i < langs.length; i++) {
+          if (enabled.indexOf(langs[i]) !== -1) { picked = langs[i]; break; }
+        }
+        if (!picked) picked = enabled.indexOf(fallback) !== -1 ? fallback : (enabled[0] || fallback);
+
+        if (picked === "zh") return;
+        var targetPath = path;
+        if (picked !== defaultLang) {
+          targetPath = ('/' + picked + path).replace(/\/{2,}/g, '/');
+        }
+        window.location.replace(targetPath + window.location.search + window.location.hash);
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="preload" href="/vendor/bootstrap/bootstrap.min.css" as="style" />
+  <link rel="preload" href="/vendor/fonts/plus-jakarta-sans.css" as="style" />
+  <link href="/vendor/bootstrap/bootstrap.min.css" rel="stylesheet" />
+  <link href="/vendor/fonts/plus-jakarta-sans.css" rel="stylesheet" />
+  <link href="/styles/site.css" rel="stylesheet" />
+  <style>
+    body { min-height: 100vh; padding-top: var(--header-h, 56px); }
+    .layout { display: flex; min-height: calc(100vh - var(--header-h, 56px)); }
+  </style>
+  
+<script>
+(function () {
+  function run() {
+    try {
+
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xbc0iytpn7");
+    } catch (e) {}
+  }
+  function schedule() {
+    if (typeof requestIdleCallback === 'function') requestIdleCallback(run, { timeout: 4000 });
+    else setTimeout(run, 2000);
+  }
+  if (document.readyState === 'complete') schedule();
+  else window.addEventListener('load', schedule, { once: true });
+})();
+</script>
+  
+  <script type="application/ld+json">[{"@context":"https://schema.org","@type":"CollectionPage","name":"SEO / 站长工具（分模块）","description":"按模块系统讲解 SEO：抓取与索引、技术检查、页面 Meta/SERP、结构化数据、性能、活动追踪与多语、社交预览，并对应本站可用工具。","url":"https://onlinefreetools.org/zh/where-to-use-tools/seo","isPartOf":{"@type":"WebSite","name":"OnlineFreeTools.org","url":"https://onlinefreetools.org"},"mainEntity":{"@type":"ItemList","numberOfItems":9,"itemListElement":[{"@type":"ListItem","position":1,"name":"给域名添加 www DNS — 记录生成与各平台教程","url":"https://onlinefreetools.org/zh/tools/add-www-to-dns"},{"@type":"ListItem","position":2,"name":"Core Web Vitals 检测","url":"https://onlinefreetools.org/zh/tools/core-web-vitals-checker"},{"@type":"ListItem","position":3,"name":"域名查询 — 查看 DNS 解析与注册信息","url":"https://onlinefreetools.org/zh/tools/domain-lookup"},{"@type":"ListItem","position":4,"name":"IndexNow — Bing URL 提交、密钥检查与状态码","url":"https://onlinefreetools.org/zh/tools/indexnow"},{"@type":"ListItem","position":5,"name":"Google 搜索结果预览","url":"https://onlinefreetools.org/zh/tools/meta-serp-preview"},{"@type":"ListItem","position":6,"name":"Robots.txt 生成器","url":"https://onlinefreetools.org/zh/tools/robots-txt-generator"},{"@type":"ListItem","position":7,"name":"JSON-LD 生成器","url":"https://onlinefreetools.org/zh/tools/schema-jsonld-generator"},{"@type":"ListItem","position":8,"name":"XML Sitemap 生成器","url":"https://onlinefreetools.org/zh/tools/sitemap-xml-generator"},{"@type":"ListItem","position":9,"name":"在线查看 HTTP 响应头","url":"https://onlinefreetools.org/zh/tools/website-headers"}]}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://onlinefreetools.org/zh/"},{"@type":"ListItem","position":2,"name":"用在哪","item":"https://onlinefreetools.org/zh/where-to-use-tools"},{"@type":"ListItem","position":3,"name":"SEO 与站长","item":"https://onlinefreetools.org/zh/where-to-use-tools/seo"}]}]</script>
+</head>
+<body class="is-home-page">
+  
+  
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light site-navbar border-bottom fixed-top">
+      <div class="container-fluid">
+        <button class="btn btn-outline-secondary me-2" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+        <a class="navbar-brand" href="/zh/">
+          <img class="navbar-brand-logo" src="/brand-logo.svg" width="28" height="28" alt="" decoding="async" />
+          <span class="navbar-brand-text">OnlineFreeTools.org</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="topNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="/zh/">首页</a></li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">图片编辑工具</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/zh/tools/add-watermark" target="_blank" rel="noopener noreferrer">图片文字水印 — 浏览器内本地标注</a></li><li><a class="dropdown-item" href="/zh/tools/color-from-image" target="_blank" rel="noopener noreferrer">图片主色提取 — 色板与点击取色</a></li><li><a class="dropdown-item" href="/zh/tools/flip-image" target="_blank" rel="noopener noreferrer">图片翻转 — 水平或垂直镜像</a></li><li><a class="dropdown-item" href="/zh/tools/image-border" target="_blank" rel="noopener noreferrer">图片加边框 — 选颜色与宽度</a></li><li><a class="dropdown-item" href="/zh/tools/image-compress" target="_blank" rel="noopener noreferrer">图片压缩 — 缩小尺寸与文件体积，本地完成</a></li><li><a class="dropdown-item" href="/zh/tools/image-crop" target="_blank" rel="noopener noreferrer">图片裁剪与改尺寸 — 本地完成</a></li><li><a class="dropdown-item" href="/zh/tools/image-exif" target="_blank" rel="noopener noreferrer">图片 EXIF 查看与清除 — GPS、相机信息、本地处理</a></li><li><a class="dropdown-item" href="/zh/tools/image-format-converter" target="_blank" rel="noopener noreferrer">图片格式转换 — PNG JPEG WebP AVIF BMP GIF ICO SVG 本地完成</a></li><li><a class="dropdown-item" href="/zh/tools/image-grayscale" target="_blank" rel="noopener noreferrer">图片转灰度 — 本地黑白转换</a></li><li><a class="dropdown-item" href="/zh/tools/image-merge" target="_blank" rel="noopener noreferrer">多图拼接 — 合成一张拼图，本地完成</a></li><li><a class="dropdown-item" href="/zh/tools/image-optimizer" target="_blank" rel="noopener noreferrer">图片优化 — 更小体积，可调编码器，本地完成</a></li><li><a class="dropdown-item" href="/zh/tools/image-overlay" target="_blank" rel="noopener noreferrer">图片叠加 Logo — 透明定位，本地完成</a></li><li><a class="dropdown-item" href="/zh/tools/image-to-base64" target="_blank" rel="noopener noreferrer">图片与 Base64 互转 — 本地编码解码</a></li><li><a class="dropdown-item" href="/zh/tools/images-to-gif" target="_blank" rel="noopener noreferrer">多图转 GIF — 本地合成短动画</a></li><li><a class="dropdown-item" href="/zh/tools/images-to-pdf" target="_blank" rel="noopener noreferrer">多图转 PDF — 每图一页本地合并</a></li><li><a class="dropdown-item" href="/zh/tools/images-to-ppt" target="_blank" rel="noopener noreferrer">多图转 PPT — 每图一张幻灯片</a></li><li><a class="dropdown-item" href="/zh/tools/images-to-word" target="_blank" rel="noopener noreferrer">多图转 Word — 本地生成 DOCX</a></li><li><a class="dropdown-item" href="/zh/tools/pdf-page-to-image-sizes" target="_blank" rel="noopener noreferrer">PDF 页多尺寸导出 — 一次打包多平台图片</a></li><li><a class="dropdown-item" href="/zh/tools/pdf-to-jpg" target="_blank" rel="noopener noreferrer">PDF 转 JPG — 在浏览器里把每一页变成图片</a></li></ul>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">设计工具</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/zh/tools/brand-color-token-pack" target="_blank" rel="noopener noreferrer">品牌色色阶生成 — 一主色出 50–950 色板与 CSS 变量</a></li><li><a class="dropdown-item" href="/zh/tools/brand-style-guide" target="_blank" rel="noopener noreferrer">品牌手册 — 智能预填的设计规范，可手动改</a></li><li><a class="dropdown-item" href="/zh/tools/smart-website-color-scheme" target="_blank" rel="noopener noreferrer">智能配色 — 网站颜色搭配方案与 CSS 变量</a></li><li><a class="dropdown-item" href="/zh/tools/wcag-contrast-checker" target="_blank" rel="noopener noreferrer">WCAG 对比度检测 — AA/AAA 比率在线算</a></li></ul>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">PDF 工具</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/zh/tools/compress-pdf" target="_blank" rel="noopener noreferrer">压缩 PDF — 在浏览器里缩小文件</a></li><li><a class="dropdown-item" href="/zh/tools/crop-pdf" target="_blank" rel="noopener noreferrer">裁切 PDF — 在浏览器里修剪页边距</a></li><li><a class="dropdown-item" href="/zh/tools/merge-pdf" target="_blank" rel="noopener noreferrer">合并 PDF — 浏览器里把多个文件合成一份</a></li><li><a class="dropdown-item" href="/zh/tools/organize-pdf" target="_blank" rel="noopener noreferrer">整理 PDF — 在浏览器里删页或重排</a></li><li><a class="dropdown-item" href="/zh/tools/pdf-page-numbers" target="_blank" rel="noopener noreferrer">给 PDF 加页码 — 在浏览器里完成</a></li><li><a class="dropdown-item" href="/zh/tools/pdf-to-markdown" target="_blank" rel="noopener noreferrer">PDF 转 Markdown — 在浏览器里抽出文本做笔记</a></li><li><a class="dropdown-item" href="/zh/tools/pdf-watermark" target="_blank" rel="noopener noreferrer">PDF 水印 — 在浏览器里给每一页盖上文字</a></li><li><a class="dropdown-item" href="/zh/tools/protect-pdf" target="_blank" rel="noopener noreferrer">保护 PDF — 在浏览器里用密码加密</a></li><li><a class="dropdown-item" href="/zh/tools/rotate-pdf" target="_blank" rel="noopener noreferrer">旋转 PDF — 在浏览器里把页面转正</a></li><li><a class="dropdown-item" href="/zh/tools/split-pdf" target="_blank" rel="noopener noreferrer">拆分 PDF — 本地按页提取文件</a></li><li><a class="dropdown-item" href="/zh/tools/unlock-pdf" target="_blank" rel="noopener noreferrer">解锁 PDF — 用你已知的密码去掉保护</a></li></ul>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">开发者工具</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/zh/tools/add-www-to-dns" target="_blank" rel="noopener noreferrer">给域名添加 www DNS — 记录生成与各平台教程</a></li><li><a class="dropdown-item" href="/zh/tools/base64" target="_blank" rel="noopener noreferrer">Base64 编解码 — 在浏览器内转换文本</a></li><li><a class="dropdown-item" href="/zh/tools/core-web-vitals-checker" target="_blank" rel="noopener noreferrer">Core Web Vitals 检测</a></li><li><a class="dropdown-item" href="/zh/tools/csv-json" target="_blank" rel="noopener noreferrer">CSV ↔ JSON 互转 — 类型、分隔符、本地处理</a></li><li><a class="dropdown-item" href="/zh/tools/domain-lookup" target="_blank" rel="noopener noreferrer">域名查询 — 查看 DNS 解析与注册信息</a></li><li><a class="dropdown-item" href="/zh/tools/file-hash" target="_blank" rel="noopener noreferrer">文件哈希校验 — 在浏览器内查看摘要</a></li><li><a class="dropdown-item" href="/zh/tools/html-entity" target="_blank" rel="noopener noreferrer">HTML 实体编解码 — 转义、反转义、本地处理</a></li><li><a class="dropdown-item" href="/zh/tools/indexnow" target="_blank" rel="noopener noreferrer">IndexNow — Bing URL 提交、密钥检查与状态码</a></li><li><a class="dropdown-item" href="/zh/tools/ip-address" target="_blank" rel="noopener noreferrer">IP 地址查询 — 查看我的公网 IP（IPv4/IPv6）</a></li><li><a class="dropdown-item" href="/zh/tools/json-schema-validator" target="_blank" rel="noopener noreferrer">JSON Schema 校验器 — 路径错误与本地处理</a></li><li><a class="dropdown-item" href="/zh/tools/jwt-decoder" target="_blank" rel="noopener noreferrer">JWT 解码 — 本地查看 Header 与 Payload（不验签）</a></li><li><a class="dropdown-item" href="/zh/tools/markdown-to-html" target="_blank" rel="noopener noreferrer">Markdown ↔ HTML</a></li><li><a class="dropdown-item" href="/zh/tools/meta-serp-preview" target="_blank" rel="noopener noreferrer">Google 搜索结果预览</a></li><li><a class="dropdown-item" href="/zh/tools/password-generator" target="_blank" rel="noopener noreferrer">随机密码生成 — 在浏览器内创建密码</a></li><li><a class="dropdown-item" href="/zh/tools/robots-txt-generator" target="_blank" rel="noopener noreferrer">Robots.txt 生成器</a></li><li><a class="dropdown-item" href="/zh/tools/schema-jsonld-generator" target="_blank" rel="noopener noreferrer">JSON-LD 生成器</a></li><li><a class="dropdown-item" href="/zh/tools/sitemap-xml-generator" target="_blank" rel="noopener noreferrer">XML Sitemap 生成器</a></li><li><a class="dropdown-item" href="/zh/tools/text-diff" target="_blank" rel="noopener noreferrer">在线文本对比 — 文本差异对比工具</a></li><li><a class="dropdown-item" href="/zh/tools/timezone-converter" target="_blank" rel="noopener noreferrer">时区转换 — 同一时刻多地对照</a></li><li><a class="dropdown-item" href="/zh/tools/unix-timestamp" target="_blank" rel="noopener noreferrer">Unix 时间戳转换 — 纪元时间与可读时间互转</a></li><li><a class="dropdown-item" href="/zh/tools/uuid-generator" target="_blank" rel="noopener noreferrer">UUID / ULID 生成 — 在浏览器内创建标识符</a></li><li><a class="dropdown-item" href="/zh/tools/website-headers" target="_blank" rel="noopener noreferrer">在线查看 HTTP 响应头</a></li><li><a class="dropdown-item" href="/zh/tools/yaml-json" target="_blank" rel="noopener noreferrer">YAML ↔ JSON 互转 — 类型规则、多文档、本地处理</a></li></ul>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">计算器</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-acceleration" target="_blank" rel="noopener noreferrer">加速度计算器 — 速度变化</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-age" target="_blank" rel="noopener noreferrer">年龄计算器 — 由出生日期算周岁</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-aspect-ratio" target="_blank" rel="noopener noreferrer">宽高比计算器 — 如何计算与缩放比例</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-bmi" target="_blank" rel="noopener noreferrer">BMI 计算器 — 如何计算身体质量指数</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-bmr-tdee" target="_blank" rel="noopener noreferrer">BMR / TDEE 计算器 — 如何估算基础代谢与每日消耗</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-body-fat" target="_blank" rel="noopener noreferrer">体脂率计算器 — 如何用围度估算体脂率</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-break-even" target="_blank" rel="noopener noreferrer">盈亏平衡计算器 — 如何计算保本销量</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-cagr" target="_blank" rel="noopener noreferrer">CAGR 计算器 — 如何计算复合年增长率</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-circle" target="_blank" rel="noopener noreferrer">圆计算器 — 面积与周长</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-compound-interest" target="_blank" rel="noopener noreferrer">复利计算器 — 如何计算复利终值与利息</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-concrete" target="_blank" rel="noopener noreferrer">混凝土计算器 — 如何估算混凝土方量</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-confidence-interval" target="_blank" rel="noopener noreferrer">置信区间计算器 — 如何计算置信区间</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-contribution-margin" target="_blank" rel="noopener noreferrer">边际贡献计算器 — 单价减变动成本</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-date-difference" target="_blank" rel="noopener noreferrer">日期间隔计算器 — 天数与周数</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-debt-payoff" target="_blank" rel="noopener noreferrer">债务还清计算器 — 多久还清余额</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-density" target="_blank" rel="noopener noreferrer">密度计算器 — 质量÷体积</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-discount" target="_blank" rel="noopener noreferrer">折扣计算器 — 如何算出优惠价</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-emi" target="_blank" rel="noopener noreferrer">EMI / 等额月供计算器 — 如何计算贷款月供与利息</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-exponent" target="_blank" rel="noopener noreferrer">指数幂计算器 — 如何计算 a 的 b 次方</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-gpa" target="_blank" rel="noopener noreferrer">GPA 计算器 — 如何计算加权平均绩点</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-gradient" target="_blank" rel="noopener noreferrer">多元函数梯度计算 — ∇f 偏导向量</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-gross-margin" target="_blank" rel="noopener noreferrer">毛利率计算器 — 如何计算毛利与毛利率</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-heart-rate" target="_blank" rel="noopener noreferrer">心率区间计算器</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-ideal-weight" target="_blank" rel="noopener noreferrer">理想体重计算器 — 如何估算理想体重区间</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-inflation" target="_blank" rel="noopener noreferrer">通胀计算器 — 未来购买力粗算</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-irr" target="_blank" rel="noopener noreferrer">IRR 计算器 — 内部收益率</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-logarithm" target="_blank" rel="noopener noreferrer">对数计算器 — 如何计算对数</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-macros" target="_blank" rel="noopener noreferrer">宏量营养素计算器 — 热量分配到克数</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-marginal-revenue" target="_blank" rel="noopener noreferrer">边际收益计算 — 公式 MR = ΔTR / ΔQ</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-markup" target="_blank" rel="noopener noreferrer">加价率计算器 — 如何计算 Markup</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-mean" target="_blank" rel="noopener noreferrer">平均数计算器 — 列表均值</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-median" target="_blank" rel="noopener noreferrer">中位数与众数计算器</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-npv" target="_blank" rel="noopener noreferrer">NPV 计算器 — 如何计算净现值</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-ohms-law" target="_blank" rel="noopener noreferrer">欧姆定律计算器 — 电阻与功率</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-one-rep-max" target="_blank" rel="noopener noreferrer">一次最大重量计算器（Epley）</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-p-value" target="_blank" rel="noopener noreferrer">p 值计算器 — 如何计算 p 值</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-pace" target="_blank" rel="noopener noreferrer">配速计算器 — 分/公里与时速</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-paint" target="_blank" rel="noopener noreferrer">油漆计算器 — 如何估算用漆量</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-payback-period" target="_blank" rel="noopener noreferrer">回收期计算器 — 多久收回投资</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-percentage-change" target="_blank" rel="noopener noreferrer">百分比变化计算 — 旧值到新值的涨跌幅</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-permutation-combination" target="_blank" rel="noopener noreferrer">排列组合计算器 — P 与 C</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-present-value" target="_blank" rel="noopener noreferrer">现值计算器 — 现值与终值互算</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-profit-margin" target="_blank" rel="noopener noreferrer">利润率计算器 — 净利率与营业利润率</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-pythagorean-theorem" target="_blank" rel="noopener noreferrer">勾股定理计算器 — 如何求直角三角形缺边</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-quadratic-equation" target="_blank" rel="noopener noreferrer">一元二次方程计算器 — 根与判别式</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-roi" target="_blank" rel="noopener noreferrer">投资回报率（ROI）计算 — 公式与示例</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-rule-of-72" target="_blank" rel="noopener noreferrer">72 法则计算器 — 多久翻倍</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-salary-hourly" target="_blank" rel="noopener noreferrer">年薪时薪计算器 — 如何换算薪资与时薪</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-sample-size" target="_blank" rel="noopener noreferrer">样本量计算器 — 如何估算所需样本量</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-scientific-notation" target="_blank" rel="noopener noreferrer">科学计数法计算器 — 如何互转科学计数法</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-significant-figures" target="_blank" rel="noopener noreferrer">有效数字计算器 — 如何计数与修约有效数字</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-slope" target="_blank" rel="noopener noreferrer">斜率计算器 — 如何计算两点斜率</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-standard-deviation" target="_blank" rel="noopener noreferrer">标准差计算器 — 如何计算标准差与方差</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-tile" target="_blank" rel="noopener noreferrer">瓷砖计算器 — 如何估算瓷砖用量</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-tip" target="_blank" rel="noopener noreferrer">小费计算器 — 小费与分摊</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-triangle-area" target="_blank" rel="noopener noreferrer">三角形面积计算器</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-vat" target="_blank" rel="noopener noreferrer">增值税计算器 — 含税与未税互算</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-velocity" target="_blank" rel="noopener noreferrer">速度计算器 — 距离÷时间</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-volume" target="_blank" rel="noopener noreferrer">体积计算器 — 长方体与球</a></li><li><a class="dropdown-item" href="/zh/tools/how-to-calculate-z-score" target="_blank" rel="noopener noreferrer">Z 分数计算器 — 如何计算标准分数</a></li><li><a class="dropdown-item" href="/zh/tools/square-feet" target="_blank" rel="noopener noreferrer">平方英尺转平方米 — 看房与装修面积换算</a></li><li><a class="dropdown-item" href="/zh/tools/unit-converter" target="_blank" rel="noopener noreferrer">单位换算器 — 长度 / 质量 / 温度 / 面积 / 体积 / 速度</a></li></ul>
+        </li><li class="nav-item"><a class="nav-link" href="/zh/where-to-use-tools">用在哪</a></li><li class="nav-item"><a class="nav-link" href="/zh/tool-type">工具类型</a></li></ul>
+          <div class="d-flex align-items-center gap-2">
+            
+            <div class="dropdown theme-switcher">
+              <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="主题">
+                <span class="theme-swatch" data-theme-swatch aria-hidden="true"></span>
+                <span class="d-none d-md-inline">主题</span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><button type="button" class="dropdown-item theme-option" data-theme-set="teal"><span class="theme-swatch theme-swatch--teal" aria-hidden="true"></span>青石蓝</button></li>
+                <li><button type="button" class="dropdown-item theme-option" data-theme-set="green"><span class="theme-swatch theme-swatch--green" aria-hidden="true"></span>森绿</button></li>
+                <li><button type="button" class="dropdown-item theme-option" data-theme-set="amber"><span class="theme-swatch theme-swatch--amber" aria-hidden="true"></span>琥珀橙</button></li>
+                <li><button type="button" class="dropdown-item theme-option" data-theme-set="navy"><span class="theme-swatch theme-swatch--navy" aria-hidden="true"></span>墨青</button></li>
+              </ul>
+            </div>
+            
+    <div class="dropdown">
+      <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        中文
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end"><li><a class="dropdown-item" href="/en/where-to-use-tools/seo">English</a></li><li><span class="dropdown-item active" aria-current="true">中文</span></li><li><a class="dropdown-item" href="/es/where-to-use-tools/seo">Español</a></li><li><a class="dropdown-item" href="/ar/where-to-use-tools/seo">العربية</a></li><li><a class="dropdown-item" href="/pt/where-to-use-tools/seo">Português</a></li><li><a class="dropdown-item" href="/id/where-to-use-tools/seo">Bahasa Indonesia</a></li><li><a class="dropdown-item" href="/fr/where-to-use-tools/seo">Français</a></li><li><a class="dropdown-item" href="/ja/where-to-use-tools/seo">日本語</a></li><li><a class="dropdown-item" href="/ru/where-to-use-tools/seo">Русский</a></li><li><a class="dropdown-item" href="/de/where-to-use-tools/seo">Deutsch</a></li></ul>
+    </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="layout sidebar-collapsed" id="layoutRoot">
+    
+    <aside id="sidebar" class="border-end">
+      <h2 class="sidebar-title h6">用在哪</h2>
+      <div class="list-group list-group-flush small" id="useCasesNav"><a class="list-group-item list-group-item-action" href="/zh/where-to-use-tools/finance">理财</a><a class="list-group-item list-group-item-action" href="/zh/where-to-use-tools/health">健康</a><a class="list-group-item list-group-item-action" href="/zh/where-to-use-tools/sports">运动</a><a class="list-group-item list-group-item-action" href="/zh/where-to-use-tools/math">数学统计</a><a class="list-group-item list-group-item-action" href="/zh/where-to-use-tools/construction">施工装修</a><a class="list-group-item list-group-item-action" href="/zh/where-to-use-tools/everyday">日常</a><a class="list-group-item list-group-item-action" href="/zh/where-to-use-tools/physics">物理</a><a class="list-group-item list-group-item-action" href="/zh/where-to-use-tools/developer">开发</a><a class="list-group-item list-group-item-action" href="/zh/where-to-use-tools/seo">SEO 与站长</a><a class="list-group-item list-group-item-action" href="/zh/where-to-use-tools/design">设计</a><a class="list-group-item list-group-item-action" href="/zh/where-to-use-tools/media">图像媒体</a><a class="list-group-item list-group-item-action" href="/zh/where-to-use-tools/documents">文档</a></div>
+    </aside>
+    <main id="content" class="p-4">
+    <div class="home-wrap">
+      <div class="home-main">
+        <nav class="mb-3 small" aria-label="breadcrumb">
+          <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a href="/zh/">首页</a></li>
+            <li class="breadcrumb-item"><a href="/zh/where-to-use-tools">用在哪</a></li>
+            <li class="breadcrumb-item active" aria-current="page">SEO 与站长</li>
+          </ol>
+        </nav>
+        <section class="mb-4">
+          <div class="home-cat">
+            <span class="home-cat-label">SEO 与站长</span>
+            <h1 class="h3">SEO / 站长工具（分模块）</h1>
+            <p class="home-cat-blurb">把站长工作流拆成模块。本标签下列出主工具；部分模块会互链其他「用在哪」页上的相关工具。</p>
+          </div>
+          <nav class="taxonomy-mod-toc mt-3 mb-4" aria-label="本页模块">
+            <p class="small fw-semibold mb-2">本页模块</p>
+            <ol class="small mb-0 ps-3">
+              <li class="mb-1"><a href="#mod-crawl">抓取与索引</a></li><li class="mb-1"><a href="#mod-technical">技术检查（响应头、DNS、主机）</a></li><li class="mb-1"><a href="#mod-onpage">页面 Meta 与 SERP 预览</a></li><li class="mb-1"><a href="#mod-schema">结构化数据（JSON-LD）</a></li><li class="mb-1"><a href="#mod-performance">性能与 Core Web Vitals</a></li><li class="mb-1"><a href="#mod-growth">活动追踪与国际化</a></li><li class="mb-1"><a href="#mod-social">社交预览与品牌资产</a></li>
+            </ol>
+          </nav>
+        </section>
+        
+      <section class="taxonomy-module mb-4 pb-3 border-bottom" id="mod-crawl">
+        <h2 class="h4 mb-2">抓取与索引</h2>
+        <p class="home-cat-blurb mb-3">帮助搜索引擎发现并重新抓取变更 URL。IndexNow 可在发版后通知参与引擎（如 Bing）；再配合清晰的 robots.txt 与准确的 XML sitemap，标明允许抓取范围与站点 URL 清单。</p>
+        
+    <div class="home-card-grid">
+      
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/indexnow.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/zh/tools/indexnow" target="_blank" rel="noopener noreferrer">IndexNow — Bing URL 提交、密钥检查与状态码</a>
+            </h3>
+            
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">IndexNow 提交 URL：生成密钥、检查 txt、说明 200/202。</p>
+        <a href="/zh/tools/indexnow" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">打开</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/robots-txt-generator.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/zh/tools/robots-txt-generator" target="_blank" rel="noopener noreferrer">Robots.txt 生成器</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/zh/privacy#local" title="在本机处理，不上传服务器。查看隐私说明" target="_blank" rel="noopener noreferrer">不上传</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">在浏览器里生成语法正确的 robots.txt，配置允许、禁止与 AI 爬虫规则。</p>
+        <a href="/zh/tools/robots-txt-generator" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">打开</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/sitemap-xml-generator.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/zh/tools/sitemap-xml-generator" target="_blank" rel="noopener noreferrer">XML Sitemap 生成器</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/zh/privacy#local" title="在本机处理，不上传服务器。查看隐私说明" target="_blank" rel="noopener noreferrer">不上传</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">把 URL 列表转成合法的 sitemap.xml，支持 lastmod、changefreq 与 priority，全程在浏览器内完成。</p>
+        <a href="/zh/tools/sitemap-xml-generator" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">打开</a>
+      </div>
+    </div>
+  </div>
+    </div>
+        
+        
+      </section>
+      <section class="taxonomy-module mb-4 pb-3 border-bottom" id="mod-technical">
+        <h2 class="h4 mb-2">技术检查（响应头、DNS、主机）</h2>
+        <p class="home-cat-blurb mb-3">做排名优化前，先确认主机可解析、TLS/重定向行为正确，且响应头（缓存、robots、Location）符合预期。用 Headers、DNS/RDAP 查询与 www 配置说明锁定规范主机名。</p>
+        
+    <div class="home-card-grid">
+      
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/website-headers.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/zh/tools/website-headers" target="_blank" rel="noopener noreferrer">在线查看 HTTP 响应头</a>
+            </h3>
+            
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">从边缘检查 Cache-Control、CORS 与安全相关响应头。</p>
+        <a href="/zh/tools/website-headers" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">打开</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/domain-lookup.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/zh/tools/domain-lookup" target="_blank" rel="noopener noreferrer">域名查询 — 查看 DNS 解析与注册信息</a>
+            </h3>
+            
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">域名查询：查看 DNS 解析与注册信息（WHOIS/RDAP），含 A/MX/NS 与注册商、到期等。</p>
+        <a href="/zh/tools/domain-lookup" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">打开</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/add-www-to-dns.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/zh/tools/add-www-to-dns" target="_blank" rel="noopener noreferrer">给域名添加 www DNS — 记录生成与各平台教程</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/zh/privacy#local" title="在本机处理，不上传服务器。查看隐私说明" target="_blank" rel="noopener noreferrer">不上传</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">生成 www 的 A/CNAME 记录，查询现网 DNS，并提供 Cloudflare/Vercel/阿里云等操作步骤。</p>
+        <a href="/zh/tools/add-www-to-dns" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">打开</a>
+      </div>
+    </div>
+  </div>
+    </div>
+        
+        <p class="small mb-0 mt-3"><span class="fw-semibold">规划中:</span> 重定向链检查；SSL 证书检查（可作为 Headers 扩展）</p>
+      </section>
+      <section class="taxonomy-module mb-4 pb-3 border-bottom" id="mod-onpage">
+        <h2 class="h4 mb-2">页面 Meta 与 SERP 预览</h2>
+        <p class="home-cat-blurb mb-3">标题与 meta description 影响摘要与点击率。需同时看字符数与近似像素宽度，预览桌面/移动截断，并保证 canonical、robots meta 与可见页面一致。需要时可用 Markdown→HTML 做粘贴进 CMS 前的预览。</p>
+        
+    <div class="home-card-grid">
+      
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/meta-serp-preview.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/zh/tools/meta-serp-preview" target="_blank" rel="noopener noreferrer">Google 搜索结果预览</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/zh/privacy#local" title="在本机处理，不上传服务器。查看隐私说明" target="_blank" rel="noopener noreferrer">不上传</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">发布前查看标题与描述会被截成什么样。</p>
+        <a href="/zh/tools/meta-serp-preview" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">打开</a>
+      </div>
+    </div>
+  </div>
+    </div>
+        
+        <p class="small text-muted mb-2">相关工具（其他场景）</p>
+        <div class="home-card-grid">
+          
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/markdown-to-html.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/zh/tools/markdown-to-html" target="_blank" rel="noopener noreferrer">Markdown ↔ HTML</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/zh/privacy#local" title="在本机处理，不上传服务器。查看隐私说明" target="_blank" rel="noopener noreferrer">不上传</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">浏览器内 Markdown 与 HTML 双向转换与预览。</p>
+        <a href="/zh/tools/markdown-to-html" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">打开</a>
+      </div>
+    </div>
+  </div>
+        </div>
+        <p class="small mb-0 mt-3"><span class="fw-semibold">规划中:</span> Meta 标签生成；多引擎文案长度包</p>
+      </section>
+      <section class="taxonomy-module mb-4 pb-3 border-bottom" id="mod-schema">
+        <h2 class="h4 mb-2">结构化数据（JSON-LD）</h2>
+        <p class="home-cat-blurb mb-3">标记须与可见内容一致。生成 FAQ 等 Schema.org JSON-LD 用于帮助理解页面——不以富结果展示为 KPI（FAQ 富结果已于 2026-05 全站停止）。涉及 feed/API 时可用 JSON Schema 校验结构化载荷。</p>
+        
+    <div class="home-card-grid">
+      
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/schema-jsonld-generator.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/zh/tools/schema-jsonld-generator" target="_blank" rel="noopener noreferrer">JSON-LD 生成器</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/zh/privacy#local" title="在本机处理，不上传服务器。查看隐私说明" target="_blank" rel="noopener noreferrer">不上传</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">在浏览器里为 FAQ、文章、面包屑与组织生成 Schema.org JSON-LD。</p>
+        <a href="/zh/tools/schema-jsonld-generator" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">打开</a>
+      </div>
+    </div>
+  </div>
+    </div>
+        
+        <p class="small text-muted mb-2">相关工具（其他场景）</p>
+        <div class="home-card-grid">
+          
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/json-schema-validator.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/zh/tools/json-schema-validator" target="_blank" rel="noopener noreferrer">JSON Schema 校验器 — 路径错误与本地处理</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/zh/privacy#local" title="在本机处理，不上传服务器。查看隐私说明" target="_blank" rel="noopener noreferrer">不上传</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">用 Schema 校验 JSON，定位 JSON Pointer 错误——本地 draft-07。</p>
+        <a href="/zh/tools/json-schema-validator" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">打开</a>
+      </div>
+    </div>
+  </div>
+        </div>
+        
+      </section>
+      <section class="taxonomy-module mb-4 pb-3 border-bottom" id="mod-performance">
+        <h2 class="h4 mb-2">性能与 Core Web Vitals</h2>
+        <p class="home-cat-blurb mb-3">LCP、INP、CLS 影响页面体验。实验室/实地分数通常来自 PageSpeed Insights / CrUX，而非自研黑箱分。本站先从压缩与优化内容图下手；后续可用带 Google 归因与配额的 PSI 包装页。</p>
+        
+    <div class="home-card-grid">
+      
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/core-web-vitals-checker.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/zh/tools/core-web-vitals-checker" target="_blank" rel="noopener noreferrer">Core Web Vitals 检测</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/zh/privacy#local" title="在本机处理，不上传服务器。查看隐私说明" target="_blank" rel="noopener noreferrer">不上传</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">按公开阈值给 LCP、INP、CLS 评级。数值留在本机，不上传服务器。</p>
+        <a href="/zh/tools/core-web-vitals-checker" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">打开</a>
+      </div>
+    </div>
+  </div>
+    </div>
+        
+        <p class="small text-muted mb-2">相关工具（其他场景）</p>
+        <div class="home-card-grid">
+          
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/image-compress.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/zh/tools/image-compress" target="_blank" rel="noopener noreferrer">图片压缩 — 缩小尺寸与文件体积，本地完成</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/zh/privacy#local" title="在本机处理，不上传服务器。查看隐私说明" target="_blank" rel="noopener noreferrer">不上传</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">本地按最长边、质量与目标体积压缩，下载 WebP 或 JPEG。</p>
+        <a href="/zh/tools/image-compress" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">打开</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/image-optimizer.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/zh/tools/image-optimizer" target="_blank" rel="noopener noreferrer">图片优化 — 更小体积，可调编码器，本地完成</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/zh/privacy#local" title="在本机处理，不上传服务器。查看隐私说明" target="_blank" rel="noopener noreferrer">不上传</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">本地 MozJPEG / WebP / AVIF / OxiPNG，滑动对照体积与画质。</p>
+        <a href="/zh/tools/image-optimizer" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">打开</a>
+      </div>
+    </div>
+  </div>
+        </div>
+        <p class="small mb-0 mt-3"><span class="fw-semibold">规划中:</span> 可选的 PageSpeed Insights 在线报告（Worker + API Key）— 粘贴数值评级已上线</p>
+      </section>
+      <section class="taxonomy-module mb-4 pb-3 border-bottom" id="mod-growth">
+        <h2 class="h4 mb-2">活动追踪与国际化</h2>
+        <p class="home-cat-blurb mb-3">UTM 参数让分析里的活动可归因。hreflang（HTML、HTTP 头或 sitemap 形态）告诉引擎各语言/地区对应 URL——对像本站这样的多语站点尤其重要。</p>
+        
+        
+        <p class="small mb-0 mt-3"><span class="fw-semibold">规划中:</span> UTM 构建器；hreflang 标签生成</p>
+      </section>
+      <section class="taxonomy-module mb-4 pb-3 border-bottom" id="mod-social">
+        <h2 class="h4 mb-2">社交预览与品牌资产</h2>
+        <p class="home-cat-blurb mb-3">Open Graph / Twitter Card 控制站外链接预览。正确的 og 标签需配合品牌色与无障碍对比度，让分享卡片与站点视觉一致。</p>
+        
+        
+        <p class="small text-muted mb-2">相关工具（其他场景）</p>
+        <div class="home-card-grid">
+          
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/smart-website-color-scheme.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/zh/tools/smart-website-color-scheme" target="_blank" rel="noopener noreferrer">智能配色 — 网站颜色搭配方案与 CSS 变量</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/zh/privacy#local" title="在本机处理，不上传服务器。查看隐私说明" target="_blank" rel="noopener noreferrer">不上传</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">智能配色：中性色 + 语义 CSS 变量，中性链接与独立状态色，本地生成。</p>
+        <a href="/zh/tools/smart-website-color-scheme" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">打开</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/wcag-contrast-checker.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/zh/tools/wcag-contrast-checker" target="_blank" rel="noopener noreferrer">WCAG 对比度检测 — AA/AAA 比率在线算</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/zh/privacy#local" title="在本机处理，不上传服务器。查看隐私说明" target="_blank" rel="noopener noreferrer">不上传</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">检测前景/背景对比度比率与 AA/AAA 是否达标，全程在浏览器本地完成。</p>
+        <a href="/zh/tools/wcag-contrast-checker" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">打开</a>
+      </div>
+    </div>
+  </div>
+        </div>
+        <p class="small mb-0 mt-3"><span class="fw-semibold">规划中:</span> Open Graph 预览；社交分享图包；Favicon / PWA 图标包</p>
+      </section>
+        
+      </div>
+    </div>
+  </main>
+  </div>
+  
+  <footer class="site-footer border-top text-center py-3">
+    <div class="container">
+      <div class="mb-1"><small class="text-muted">OnlineFreeTools.org · 学习项目 · 持续迭代</small></div>
+      <nav class="d-inline" aria-label="站点链接">
+        <a class="small text-decoration-none" href="/zh/about">关于</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/zh/privacy">隐私</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/zh/terms">条款</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/zh/contact">联系</a>
+      </nav>
+    </div>
+  </footer>
+  
+  <script src="/vendor/bootstrap/bootstrap.bundle.min.js" defer></script>
+  <script src="/js/theme.js" defer></script>
+  
+  <script>
+    const layout = document.getElementById('layoutRoot');
+    const toggle = document.getElementById('sidebarToggle');
+    if (layout && toggle) {
+      toggle.addEventListener('click', () => layout.classList.toggle('sidebar-collapsed'));
+      
+    document.querySelectorAll("#useCasesNav a").forEach((link) => {
+      link.addEventListener('click', (e) => {
+        try {
+          const sidebar = document.getElementById('sidebar');
+          const prevScroll = sidebar ? sidebar.scrollTop : 0;
+          const href = link.getAttribute('href') || '';
+          if (href.startsWith('#')) {
+            const target = document.querySelector(href);
+            if (target) {
+              e.preventDefault();
+              const headerOffset = 56;
+              const targetY = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+              window.scrollTo({ top: targetY, behavior: 'smooth' });
+            }
+          }
+          link.blur();
+          if (window.innerWidth < 768) layout.classList.add('sidebar-collapsed');
+          setTimeout(() => { if (sidebar) sidebar.scrollTop = prevScroll; }, 300);
+        } catch (err) {}
+      });
+    });
+    }
+  </script>
+</body>
+</html>

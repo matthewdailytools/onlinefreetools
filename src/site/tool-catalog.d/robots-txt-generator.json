@@ -1,0 +1,25 @@
+{
+  "slug": "robots-txt-generator",
+  "path": "/tools/robots-txt-generator",
+  "category": "developer",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_robots_title",
+  "homeTitleKey": "tool_robots_home_title",
+  "homeDescKey": "tool_robots_home_desc",
+  "faqPrefix": "tool_robots",
+  "related": [
+    "sitemap-xml-generator",
+    "website-headers",
+    "indexnow"
+  ],
+  "logo": "/icons/tools/robots-txt-generator.svg",
+  "page": {
+    "module": "../pages/robotsTxtGeneratorPage",
+    "export": "renderRobotsTxtGeneratorPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "seo",
+  "subject": "text"
+}

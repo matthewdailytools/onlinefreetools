@@ -18,6 +18,7 @@ export const TOOL_SCENARIO_ORDER = [
   'everyday',
   'physics',
   'developer',
+  'seo',
   'design',
   'media',
   'documents',

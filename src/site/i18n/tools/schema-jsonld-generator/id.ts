@@ -1,0 +1,81 @@
+/**
+ * i18n tool shard (schema-jsonld-generator / id).
+ * Indonesian locale — 检索向独立重写。
+ */
+import type { SiteLangDict } from '../../../types';
+
+const id: SiteLangDict = {
+	tool_schema_home_title: 'Pembuat JSON-LD',
+	tool_schema_home_desc:
+		'Buat data terstruktur Schema.org untuk FAQ, artikel, breadcrumb, dan organisasi di browser Anda.',
+	tool_schema_title: 'Pembuat JSON-LD — buat data terstruktur untuk FAQ, artikel & breadcrumb',
+	tool_schema_description:
+		'Buat JSON-LD di browser Anda. Langkah: pilih tipe (FAQ, artikel, breadcrumb, organisasi), isi kolom wajib, lalu salin markup Schema.org yang valid dengan tag script siap tempel. Halaman membedakan kolom wajib dan opsional serta memvalidasi JSON sebelum disalin. Tidak ada yang diunggah. Contoh: FAQ dua pertanyaan menghasilkan mainEntity dengan dua simpul Question.',
+	tool_schema_generate: 'Buat',
+	tool_schema_sample: 'Contoh',
+	tool_schema_clear: 'Bersihkan',
+	tool_schema_copy: 'Salin',
+	tool_schema_copied: 'Tersalin',
+	tool_schema_download: 'Unduh',
+	tool_schema_type_label: 'Tipe skema',
+	tool_schema_required: 'Wajib',
+	tool_schema_optional: 'Opsional',
+	tool_schema_fields_label: 'Kolom',
+	tool_schema_output_label: 'Keluaran JSON-LD',
+	tool_schema_wrap_script: 'Bungkus dengan <script type="application/ld+json">',
+	tool_schema_missing_required: 'Kolom wajib belum diisi: {field}',
+	tool_schema_err_no_fields: 'Isi kolom wajib dulu, lalu buat.',
+	tool_schema_breadcrumb_min: 'Breadcrumb membutuhkan minimal dua tingkat.',
+	tool_schema_type_faq: 'FAQ',
+	tool_schema_type_article: 'Artikel',
+	tool_schema_type_breadcrumb: 'Breadcrumb',
+	tool_schema_type_organization: 'Organisasi',
+	tool_schema_faq_question: 'Pertanyaan {n}',
+	tool_schema_faq_answer: 'Jawaban {n}',
+	tool_schema_faq_add: 'Tambah pertanyaan',
+	tool_schema_faq_remove: 'Hapus',
+	tool_schema_article_headline: 'Judul',
+	tool_schema_article_description: 'Deskripsi',
+	tool_schema_article_author: 'Nama penulis',
+	tool_schema_article_date_published: 'Tanggal terbit (YYYY-MM-DD)',
+	tool_schema_article_date_modified: 'Tanggal diubah (YYYY-MM-DD)',
+	tool_schema_article_image: 'URL gambar (opsional)',
+	tool_schema_article_url: 'URL halaman',
+	tool_schema_breadcrumb_name: 'Nama {n}',
+	tool_schema_breadcrumb_url: 'URL {n}',
+	tool_schema_breadcrumb_add: 'Tambah tingkat',
+	tool_schema_org_name: 'Nama organisasi',
+	tool_schema_org_url: 'URL situs',
+	tool_schema_org_logo: 'URL logo (opsional)',
+	tool_schema_org_description: 'Deskripsi singkat (opsional)',
+	tool_schema_how_title: 'Cara kerja',
+	tool_schema_how_body:
+		'Pilih tipe skema, isi kolom form, lalu tekan Buat. Halaman menyusun objek JSON-LD Schema.org, memeriksa kolom wajib terisi, lalu menampilkan hasil rapi yang dibungkus tag script untuk ditempel ke bagian head halaman Anda. Sebelum keluaran dirender, sintaks JSON diperiksa; kolom wajib yang kosong dilaporkan sebagai daftar, bukan diam-diam membuat markup yang cacat.',
+	tool_schema_rules_title: 'Yang dicek pembuat',
+	tool_schema_rules_body:
+		'Setiap tipe punya bentuk minimal yang valid. Pembuat memastikan JSON terbentuk benar dan menandai kolom wajib yang kosong, tetapi tidak bisa menilai apakah markup cocok dengan konten halaman Anda yang terlihat.',
+	tool_schema_rules_item_1: 'FAQ: mainEntity berisi larik simpul Question; setiap item perlu name dan acceptedAnswer.text.',
+	tool_schema_rules_item_2: 'Artikel: headline dan author wajib; datePublished, dateModified, image, description opsional tapi disarankan.',
+	tool_schema_rules_item_3: 'Breadcrumb: itemListElement adalah daftar berurutan dengan position berlanjut (1, 2, 3…).',
+	tool_schema_rules_item_4: 'Konsistensi: Google membandingkan data terstruktur dengan halaman yang terlihat. Markup untuk konten yang tidak ada di halaman melanggar kebijakan spam.',
+	tool_schema_example_title: 'Contoh',
+	tool_schema_example:
+		'Contoh FAQ dua pertanyaan: “Bagaimana cara menginstal SDK?” dan “Apakah data diproses secara lokal?” → keluaran berisi larik mainEntity dengan dua objek Question, masing-masing dengan acceptedAnswer.text, siap ditempel ke head halaman Anda.',
+	tool_schema_usecases_title: 'Cocok untuk',
+	tool_schema_usecase_1: 'Halaman FAQ: tambahkan daftar pertanyaan sebagai data terstruktur agar mesin pencari memahami pertanyaan dan jawabannya.',
+	tool_schema_usecase_2: 'Artikel dan dokumentasi: pasang markup Article dengan penulis dan tanggal untuk situs konten dan basis pengetahuan.',
+	tool_schema_usecase_3: 'Produk dan struktur situs: gunakan Breadcrumb untuk jalur navigasi dan Organization untuk nama serta logo merek.',
+	tool_schema_faq_q1: 'Data terstruktur JSON-LD untuk siapa?',
+	tool_schema_faq_a1: 'Untuk mesin pencari dan pembaca lain dari markup Schema.org. Tertanam di HTML agar mesin memahami entitas, relasi, dan fakta — bukan konten yang terlihat pengguna.',
+	tool_schema_faq_q2: 'Apakah menambah skema FAQ menjamin rich result?',
+	tool_schema_faq_a2: 'Tidak. Rich result FAQ berhenti tampil di seluruh situs pada Mei 2026, dan HowTo lebih awal. Google mungkin tetap membaca markup untuk memahami halaman, tetapi tidak ada jaminan rich result di SERP, jadi perlakukan skema sebagai kejelasan untuk pemahaman, bukan KPI peringkat atau rich result.',
+	tool_schema_faq_q3: 'Kolom apa yang wajib pada markup yang dihasilkan?',
+	tool_schema_faq_a3: 'FAQ butuh pertanyaan + jawaban per item; Artikel butuh judul dan penulis; Breadcrumb butuh minimal dua tingkat dengan nama dan URL; Organisasi butuh nama dan URL. Halaman menandai kolom wajib dan mencantumkan yang kurang.',
+	tool_schema_faq_q4: 'Mengapa markup harus cocok dengan konten yang terlihat?',
+	tool_schema_faq_a4: 'Google menganggap data terstruktur yang tidak mencerminkan halaman yang terlihat sebagai praktik menipu. Contoh: pertanyaan FAQ yang tidak benar-benar dijawab di halaman dapat dianggap penyalahgunaan markup meski JSON-nya valid.',
+	tool_schema_references: 'Schema.org; Google Search Central — Dasar data terstruktur.',
+	tool_schema_ref_schema_label: 'Schema.org',
+	tool_schema_ref_google_label: 'Search Central — Dasar data terstruktur',
+};
+
+export default id;

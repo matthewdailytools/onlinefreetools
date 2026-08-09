@@ -37,7 +37,7 @@
     ],
     "logo": "/icons/tools/add-www-to-dns.svg",
     "localProcessing": true,
-    "scenario": "developer",
+    "scenario": "seo",
     "subject": "network"
   },
   {
@@ -140,6 +140,26 @@
     "subject": "pdf"
   },
   {
+    "slug": "core-web-vitals-checker",
+    "path": "/tools/core-web-vitals-checker",
+    "category": "developer",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_cwv_title",
+    "homeTitleKey": "tool_cwv_home_title",
+    "homeDescKey": "tool_cwv_home_desc",
+    "faqPrefix": "tool_cwv",
+    "related": [
+      "image-compress",
+      "image-optimizer",
+      "website-headers"
+    ],
+    "logo": "/icons/tools/core-web-vitals-checker.svg",
+    "localProcessing": true,
+    "scenario": "seo",
+    "subject": "number"
+  },
+  {
     "slug": "crop-pdf",
     "path": "/tools/crop-pdf",
     "category": "pdf",
@@ -195,7 +215,7 @@
     ],
     "logo": "/icons/tools/domain-lookup.svg",
     "localProcessing": false,
-    "scenario": "developer",
+    "scenario": "seo",
     "subject": "network"
   },
   {
@@ -1461,7 +1481,8 @@
     "related": [
       "image-format-converter",
       "image-crop",
-      "image-optimizer"
+      "image-optimizer",
+      "core-web-vitals-checker"
     ],
     "logo": "/icons/tools/image-compress.svg",
     "localProcessing": true,
@@ -1584,7 +1605,8 @@
     "related": [
       "image-compress",
       "image-format-converter",
-      "image-exif"
+      "image-exif",
+      "core-web-vitals-checker"
     ],
     "logo": "/icons/tools/image-optimizer.svg",
     "localProcessing": true,
@@ -1728,7 +1750,7 @@
     ],
     "logo": "/icons/tools/indexnow.svg",
     "localProcessing": false,
-    "scenario": "developer",
+    "scenario": "seo",
     "subject": "network"
   },
   {
@@ -1831,6 +1853,27 @@
     "localProcessing": true,
     "scenario": "documents",
     "subject": "pdf"
+  },
+  {
+    "slug": "meta-serp-preview",
+    "path": "/tools/meta-serp-preview",
+    "category": "developer",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_serp_title",
+    "homeTitleKey": "tool_serp_home_title",
+    "homeDescKey": "tool_serp_home_desc",
+    "faqPrefix": "tool_serp",
+    "related": [
+      "website-headers",
+      "indexnow",
+      "core-web-vitals-checker",
+      "schema-jsonld-generator"
+    ],
+    "logo": "/icons/tools/meta-serp-preview.svg",
+    "localProcessing": true,
+    "scenario": "seo",
+    "subject": "text"
   },
   {
     "slug": "organize-pdf",
@@ -1989,6 +2032,26 @@
     "subject": "pdf"
   },
   {
+    "slug": "robots-txt-generator",
+    "path": "/tools/robots-txt-generator",
+    "category": "developer",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_robots_title",
+    "homeTitleKey": "tool_robots_home_title",
+    "homeDescKey": "tool_robots_home_desc",
+    "faqPrefix": "tool_robots",
+    "related": [
+      "sitemap-xml-generator",
+      "website-headers",
+      "indexnow"
+    ],
+    "logo": "/icons/tools/robots-txt-generator.svg",
+    "localProcessing": true,
+    "scenario": "seo",
+    "subject": "text"
+  },
+  {
     "slug": "rotate-pdf",
     "path": "/tools/rotate-pdf",
     "category": "pdf",
@@ -2007,6 +2070,46 @@
     "localProcessing": true,
     "scenario": "documents",
     "subject": "pdf"
+  },
+  {
+    "slug": "schema-jsonld-generator",
+    "path": "/tools/schema-jsonld-generator",
+    "category": "developer",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_schema_title",
+    "homeTitleKey": "tool_schema_home_title",
+    "homeDescKey": "tool_schema_home_desc",
+    "faqPrefix": "tool_schema",
+    "related": [
+      "json-schema-validator",
+      "markdown-to-html",
+      "meta-serp-preview"
+    ],
+    "logo": "/icons/tools/schema-jsonld-generator.svg",
+    "localProcessing": true,
+    "scenario": "seo",
+    "subject": "data"
+  },
+  {
+    "slug": "sitemap-xml-generator",
+    "path": "/tools/sitemap-xml-generator",
+    "category": "developer",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_sitemap_title",
+    "homeTitleKey": "tool_sitemap_home_title",
+    "homeDescKey": "tool_sitemap_home_desc",
+    "faqPrefix": "tool_sitemap",
+    "related": [
+      "indexnow",
+      "robots-txt-generator",
+      "website-headers"
+    ],
+    "logo": "/icons/tools/sitemap-xml-generator.svg",
+    "localProcessing": true,
+    "scenario": "seo",
+    "subject": "text"
   },
   {
     "slug": "smart-website-color-scheme",
@@ -2219,11 +2322,12 @@
       "add-www-to-dns",
       "indexnow",
       "markdown-to-html",
-      "text-diff"
+      "text-diff",
+      "core-web-vitals-checker"
     ],
     "logo": "/icons/tools/website-headers.svg",
     "localProcessing": false,
-    "scenario": "developer",
+    "scenario": "seo",
     "subject": "network"
   },
   {

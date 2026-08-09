@@ -1,0 +1,25 @@
+{
+  "slug": "sitemap-xml-generator",
+  "path": "/tools/sitemap-xml-generator",
+  "category": "developer",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_sitemap_title",
+  "homeTitleKey": "tool_sitemap_home_title",
+  "homeDescKey": "tool_sitemap_home_desc",
+  "faqPrefix": "tool_sitemap",
+  "related": [
+    "indexnow",
+    "robots-txt-generator",
+    "website-headers"
+  ],
+  "logo": "/icons/tools/sitemap-xml-generator.svg",
+  "page": {
+    "module": "../pages/sitemapXmlGeneratorPage",
+    "export": "renderSitemapXmlGeneratorPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "seo",
+  "subject": "text"
+}

@@ -10,6 +10,7 @@ import { renderBrandColorTokenPackPage } from '../pages/brandColorTokenPackPage'
 import { renderBrandStyleGuidePage } from '../pages/brandStyleGuidePage';
 import { renderColorFromImagePage } from '../pages/colorFromImagePage';
 import { renderCompressPdfPage } from '../pages/compressPdfPage';
+import { renderCoreWebVitalsCheckerPage } from '../pages/coreWebVitalsCheckerPage';
 import { renderCropPdfPage } from '../pages/cropPdfPage';
 import { renderCsvJsonPage } from '../pages/csvJsonPage';
 import { renderDomainLookupPage } from '../pages/domainLookupPage';
@@ -96,6 +97,7 @@ import { renderJsonSchemaValidatorPage } from '../pages/jsonSchemaValidatorPage'
 import { renderJwtDecoderPage } from '../pages/jwtDecoderPage';
 import { renderMarkdownToHtmlPage } from '../pages/markdownToHtmlPage';
 import { renderMergePdfPage } from '../pages/mergePdfPage';
+import { renderMetaSerpPreviewPage } from '../pages/metaSerpPreviewPage';
 import { renderOrganizePdfPage } from '../pages/organizePdfPage';
 import { renderPasswordGeneratorPage } from '../pages/passwordGeneratorPage';
 import { renderPdfPageNumbersPage } from '../pages/pdfPageNumbersPage';
@@ -104,7 +106,10 @@ import { renderPdfToJpgPage } from '../pages/pdfToJpgPage';
 import { renderPdfToMarkdownPage } from '../pages/pdfToMarkdownPage';
 import { renderPdfWatermarkPage } from '../pages/pdfWatermarkPage';
 import { renderProtectPdfPage } from '../pages/protectPdfPage';
+import { renderRobotsTxtGeneratorPage } from '../pages/robotsTxtGeneratorPage';
 import { renderRotatePdfPage } from '../pages/rotatePdfPage';
+import { renderSchemaJsonldGeneratorPage } from '../pages/schemaJsonldGeneratorPage';
+import { renderSitemapXmlGeneratorPage } from '../pages/sitemapXmlGeneratorPage';
 import { renderSmartWebsiteColorSchemePage } from '../pages/smartWebsiteColorSchemePage';
 import { renderSplitPdfPage } from '../pages/splitPdfPage';
 import { renderSquareFeetPage } from '../pages/squareFeetPage';
@@ -133,6 +138,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'brand-style-guide': (lang, defaultLang, enabled) => renderBrandStyleGuidePage({ lang, defaultLang, enabledLangs: enabled }),
 	'color-from-image': (lang, defaultLang, enabled) => renderColorFromImagePage({ lang, defaultLang, enabledLangs: enabled }),
 	'compress-pdf': (lang, defaultLang, enabled) => renderCompressPdfPage({ lang, defaultLang, enabledLangs: enabled }),
+	'core-web-vitals-checker': (lang, defaultLang, enabled) => renderCoreWebVitalsCheckerPage({ lang, defaultLang, enabledLangs: enabled }),
 	'crop-pdf': (lang, defaultLang, enabled) => renderCropPdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'csv-json': (lang, defaultLang, enabled) => renderCsvJsonPage({ lang, defaultLang, enabledLangs: enabled }),
 	'domain-lookup': (lang, defaultLang, _enabled) => renderDomainLookupPage(lang, defaultLang),
@@ -219,6 +225,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'jwt-decoder': (lang, defaultLang, enabled) => renderJwtDecoderPage({ lang, defaultLang, enabledLangs: enabled }),
 	'markdown-to-html': (lang, defaultLang, enabled) => renderMarkdownToHtmlPage({ lang, defaultLang, enabledLangs: enabled }),
 	'merge-pdf': (lang, defaultLang, enabled) => renderMergePdfPage({ lang, defaultLang, enabledLangs: enabled }),
+	'meta-serp-preview': (lang, defaultLang, enabled) => renderMetaSerpPreviewPage({ lang, defaultLang, enabledLangs: enabled }),
 	'organize-pdf': (lang, defaultLang, enabled) => renderOrganizePdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'password-generator': (lang, defaultLang, enabled) => renderPasswordGeneratorPage({ lang, defaultLang, enabledLangs: enabled }),
 	'pdf-page-numbers': (lang, defaultLang, enabled) => renderPdfPageNumbersPage({ lang, defaultLang, enabledLangs: enabled }),
@@ -227,7 +234,10 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'pdf-to-markdown': (lang, defaultLang, enabled) => renderPdfToMarkdownPage({ lang, defaultLang, enabledLangs: enabled }),
 	'pdf-watermark': (lang, defaultLang, enabled) => renderPdfWatermarkPage({ lang, defaultLang, enabledLangs: enabled }),
 	'protect-pdf': (lang, defaultLang, enabled) => renderProtectPdfPage({ lang, defaultLang, enabledLangs: enabled }),
+	'robots-txt-generator': (lang, defaultLang, enabled) => renderRobotsTxtGeneratorPage({ lang, defaultLang, enabledLangs: enabled }),
 	'rotate-pdf': (lang, defaultLang, enabled) => renderRotatePdfPage({ lang, defaultLang, enabledLangs: enabled }),
+	'schema-jsonld-generator': (lang, defaultLang, enabled) => renderSchemaJsonldGeneratorPage({ lang, defaultLang, enabledLangs: enabled }),
+	'sitemap-xml-generator': (lang, defaultLang, enabled) => renderSitemapXmlGeneratorPage({ lang, defaultLang, enabledLangs: enabled }),
 	'smart-website-color-scheme': (lang, defaultLang, enabled) => renderSmartWebsiteColorSchemePage({ lang, defaultLang, enabledLangs: enabled }),
 	'split-pdf': (lang, defaultLang, enabled) => renderSplitPdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'square-feet': (lang, defaultLang, enabled) => renderSquareFeetPage({ lang, defaultLang, enabledLangs: enabled }),

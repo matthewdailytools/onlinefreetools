@@ -58,13 +58,14 @@ const TAGS = {
   'color-from-image': { scenario: 'design', subject: 'color' },
 
   // —— Developer ——
-  'add-www-to-dns': { scenario: 'developer', subject: 'network' },
+  'add-www-to-dns': { scenario: 'seo', subject: 'network' },
   'base64': { scenario: 'developer', subject: 'text' },
   'csv-json': { scenario: 'developer', subject: 'data' },
-  'domain-lookup': { scenario: 'developer', subject: 'network' },
+  'domain-lookup': { scenario: 'seo', subject: 'network' },
   'file-hash': { scenario: 'developer', subject: 'data' },
   'html-entity': { scenario: 'developer', subject: 'text' },
-  'indexnow': { scenario: 'developer', subject: 'network' },
+  'indexnow': { scenario: 'seo', subject: 'network' },
+  'core-web-vitals-checker': { scenario: 'seo', subject: 'number' },
   'ip-address': { scenario: 'developer', subject: 'network' },
   'json-schema-validator': { scenario: 'developer', subject: 'data' },
   'jwt-decoder': { scenario: 'developer', subject: 'text' },
@@ -74,7 +75,7 @@ const TAGS = {
   'timezone-converter': { scenario: 'developer', subject: 'data' },
   'unix-timestamp': { scenario: 'developer', subject: 'number' },
   'uuid-generator': { scenario: 'developer', subject: 'text' },
-  'website-headers': { scenario: 'developer', subject: 'network' },
+  'website-headers': { scenario: 'seo', subject: 'network' },
   'yaml-json': { scenario: 'developer', subject: 'text' },
 
   // —— Finance ——

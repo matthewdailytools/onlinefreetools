@@ -151,11 +151,11 @@ export const renderHowToCalculateGpaPage = (opts: {
        * @returns {{ok:true, rows:{g:number,c:number}[]}|{ok:false, err:string}}
        */
       function parseCourses(raw) {
-        var lines = String(raw || '').split(/\r?\n/).map(function (l) { return l.trim(); }).filter(Boolean);
+        var lines = String(raw || '').split(/\\r?\\n/).map(function (l) { return l.trim(); }).filter(Boolean);
         if (!lines.length) return { ok: false, err: msgParse };
         var rows = [];
         for (var i = 0; i < lines.length; i++) {
-          var parts = lines[i].split(/[,;\s，、]+/).filter(Boolean);
+          var parts = lines[i].split(/[,;\\s，、]+/).filter(Boolean);
           if (parts.length < 2) return { ok: false, err: msgParse };
           var g = parseFloat(parts[0]);
           var c = parseFloat(parts[1]);
@@ -189,7 +189,7 @@ export const renderHowToCalculateGpaPage = (opts: {
 
       /** 样例：4.0×3 + 3.0×3 → 3.50。 */
       function loadSample() {
-        coursesEl.value = '4.0, 3\n3.0, 3';
+        coursesEl.value = '4.0, 3\\n3.0, 3';
         runCalc();
       }
 

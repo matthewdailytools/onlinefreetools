@@ -13,7 +13,8 @@
     "add-www-to-dns",
     "indexnow",
     "markdown-to-html",
-    "text-diff"
+    "text-diff",
+    "core-web-vitals-checker"
   ],
   "logo": "/icons/tools/website-headers.svg",
   "page": {
@@ -22,6 +23,6 @@
     "style": "pair"
   },
   "localProcessing": false,
-  "scenario": "developer",
+  "scenario": "seo",
   "subject": "network"
 }

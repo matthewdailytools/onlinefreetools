@@ -5,7 +5,7 @@
 
 **工具 slug**：`website-headers`  
 **母版语言**：en / zh  
-**状态**：`i18n-done`（十语检索向已重写；待母语抽查已清）
+**状态**：`i18n-done`（十语检索向已重写；待母语抽查已清；2026-08-09 S1 增强 SEO 头解读已并入十语）
 
 ---
 
@@ -156,3 +156,4 @@
 | 2 按 brief 重写 | | | |
 | 3 抽查+禁词+lint | | | |
 | 清母语抽查 | 2026-08-06 | 用户确认：按 brief 独立重写后清 ar/ja/ru 待抽查；轮次2/3勾选；状态 → `i18n-done` | 十语 |
+| S1 增强：SEO 头解读 | 2026-08-09 | 存量增强（S1 第 4 项，survey §5）：新增结果区「SEO header checks」子卡——Cache-Control / X-Robots-Tag / Redirect 三块人话解读；Worker 改手动逐跳跟随重定向（≤5 跳）返回 redirects 链；10 语新增 27 键（seo_* 解读 + robots_* 指令 + FAQ q6/q7 + rules_item_5）并统一键集（62 keys，脚本校验一致）。 | 十语 |

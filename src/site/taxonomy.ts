@@ -20,6 +20,7 @@ export type ToolScenario =
 	| 'everyday'
 	| 'physics'
 	| 'developer'
+	| 'seo'
 	| 'design'
 	| 'media'
 	| 'documents';
@@ -37,6 +38,7 @@ export const TOOL_SCENARIO_ORDER: ToolScenario[] = [
 	'everyday',
 	'physics',
 	'developer',
+	'seo',
 	'design',
 	'media',
 	'documents',
@@ -120,6 +122,12 @@ export const SCENARIO_I18N_KEYS: Record<ToolScenario, ScenarioI18nKeys> = {
 		titleKey: 'taxonomy_scenario_developer_title',
 		descKey: 'taxonomy_scenario_developer_desc',
 		blurbKey: 'taxonomy_scenario_developer_blurb',
+	},
+	seo: {
+		labelKey: 'taxonomy_scenario_seo',
+		titleKey: 'taxonomy_scenario_seo_title',
+		descKey: 'taxonomy_scenario_seo_desc',
+		blurbKey: 'taxonomy_scenario_seo_blurb',
 	},
 	design: {
 		labelKey: 'taxonomy_scenario_design',

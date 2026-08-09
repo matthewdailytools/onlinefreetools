@@ -1,0 +1,81 @@
+/**
+ * i18n tool shard (schema-jsonld-generator / ru).
+ * Russian locale — 检索向独立重写。
+ */
+import type { SiteLangDict } from '../../../types';
+
+const ru: SiteLangDict = {
+	tool_schema_home_title: 'Генератор JSON-LD',
+	tool_schema_home_desc:
+		'Создавайте структурированные данные Schema.org для FAQ, статьи, хлебных крошек и организации прямо в браузере.',
+	tool_schema_title: 'Генератор JSON-LD — создайте разметку для FAQ, статьи и хлебных крошек',
+	tool_schema_description:
+		'Генерируйте JSON-LD в браузере. Шаги: выберите тип (FAQ, статья, хлебные крошки, организация), заполните обязательные поля и скопируйте валидную разметку Schema.org с готовым тегом script для вставки. Страница различает обязательные и необязательные поля и проверяет корректность JSON перед копированием. Ничего не загружается. Пример: FAQ из двух вопросов даёт mainEntity с двумя узлами Question.',
+	tool_schema_generate: 'Сгенерировать',
+	tool_schema_sample: 'Пример',
+	tool_schema_clear: 'Очистить',
+	tool_schema_copy: 'Копировать',
+	tool_schema_copied: 'Скопировано',
+	tool_schema_download: 'Скачать',
+	tool_schema_type_label: 'Тип схемы',
+	tool_schema_required: 'Обязательно',
+	tool_schema_optional: 'Необязательно',
+	tool_schema_fields_label: 'Поля',
+	tool_schema_output_label: 'Вывод JSON-LD',
+	tool_schema_wrap_script: 'Обернуть в <script type="application/ld+json">',
+	tool_schema_missing_required: 'Не заполнено обязательное поле: {field}',
+	tool_schema_err_no_fields: 'Сначала заполните обязательные поля.',
+	tool_schema_breadcrumb_min: 'Для хлебных крошек нужно минимум два уровня.',
+	tool_schema_type_faq: 'FAQ',
+	tool_schema_type_article: 'Статья',
+	tool_schema_type_breadcrumb: 'Хлебные крошки',
+	tool_schema_type_organization: 'Организация',
+	tool_schema_faq_question: 'Вопрос {n}',
+	tool_schema_faq_answer: 'Ответ {n}',
+	tool_schema_faq_add: 'Добавить вопрос',
+	tool_schema_faq_remove: 'Удалить',
+	tool_schema_article_headline: 'Заголовок',
+	tool_schema_article_description: 'Описание',
+	tool_schema_article_author: 'Имя автора',
+	tool_schema_article_date_published: 'Дата публикации (ГГГГ-ММ-ДД)',
+	tool_schema_article_date_modified: 'Дата изменения (ГГГГ-ММ-ДД)',
+	tool_schema_article_image: 'URL изображения (необязательно)',
+	tool_schema_article_url: 'URL страницы',
+	tool_schema_breadcrumb_name: 'Название {n}',
+	tool_schema_breadcrumb_url: 'URL {n}',
+	tool_schema_breadcrumb_add: 'Добавить уровень',
+	tool_schema_org_name: 'Название организации',
+	tool_schema_org_url: 'URL сайта',
+	tool_schema_org_logo: 'URL логотипа (необязательно)',
+	tool_schema_org_description: 'Краткое описание (необязательно)',
+	tool_schema_how_title: 'Как это работает',
+	tool_schema_how_body:
+		'Выберите тип схемы, заполните форму и нажмите «Сгенерировать». Страница собирает объект JSON-LD по Schema.org, проверяет наличие обязательных полей и показывает отформатированный результат внутри тега script, чтобы его можно было вставить в <head> вашей страницы. Перед выводом выполняется проверка синтаксиса; недостающие обязательные поля выводятся списком, а не молча создаётся битая разметка.',
+	tool_schema_rules_title: 'Что проверяет генератор',
+	tool_schema_rules_body:
+		'У каждого типа есть минимальная корректная структура. Генератор проверяет, что JSON имеет правильную форму, и отмечает пустые обязательные поля, но не может судить, соответствует ли разметка видимому содержимому страницы.',
+	tool_schema_rules_item_1: 'FAQ: mainEntity хранит массив узлов Question; каждому элементу нужны name и acceptedAnswer.text.',
+	tool_schema_rules_item_2: 'Статья: headline и author обязательны; datePublished, dateModified, image и description необязательны, но рекомендуются.',
+	tool_schema_rules_item_3: 'Хлебные крошки: itemListElement — упорядоченный список, где position должны идти подряд (1, 2, 3…).',
+	tool_schema_rules_item_4: 'Соответствие: Google сверяет структурированные данные с видимой страницей. Разметка контента, которого нет на странице, нарушает правила борьбы со спамом.',
+	tool_schema_example_title: 'Пример',
+	tool_schema_example:
+		'Пример FAQ из двух вопросов: «Как установить SDK?» и «Обрабатываются ли данные локально?» → на выходе массив mainEntity с двумя объектами Question, каждый с acceptedAnswer.text, готовый для вставки в head страницы.',
+	tool_schema_usecases_title: 'Когда пригодится',
+	tool_schema_usecase_1: 'Страницы FAQ: добавьте список вопросов как структурированные данные, чтобы поисковик лучше понимал вопросы и ответы на странице.',
+	tool_schema_usecase_2: 'Статьи и документация: подключайте разметку Article с автором и датами для контент-сайтов и баз знаний.',
+	tool_schema_usecase_3: 'Продукт и структура сайта: используйте Breadcrumb для описания путей навигации и Organization — для названия бренда и логотипа.',
+	tool_schema_faq_q1: 'Для кого предназначены структурированные данные JSON-LD?',
+	tool_schema_faq_a1: 'Для поисковых систем и других потребителей разметки Schema.org. Она встроена в HTML, чтобы машины понимали сущности, связи и факты, — это не видимый пользователю контент.',
+	tool_schema_faq_q2: 'Добавление схемы FAQ гарантирует расширенный результат?',
+	tool_schema_faq_a2: 'Нет. Расширенные результаты FAQ перестали показываться на всех сайтах в мае 2026 года, а HowTo — раньше. Google может продолжать читать разметку для понимания страницы, но никакой гарантии расширенного результата нет, поэтому относитесь к схеме как к ясности для понимания, а не как к KPI ранжирования или расширенных результатов.',
+	tool_schema_faq_q3: 'Какие поля обязательны в генерируемой разметке?',
+	tool_schema_faq_a3: 'FAQ требует вопрос и ответ для каждого элемента; статья — заголовок и автора; хлебные крошки — минимум два уровня с названием и URL; организация — название и URL. Страница помечает обязательные поля и перечисляет недостающие.',
+	tool_schema_faq_q4: 'Почему разметка должна совпадать с видимым содержимым?',
+	tool_schema_faq_a4: 'Google считает обманчивыми структурированные данные, которые не отражают видимую страницу. Например, вопрос FAQ, на который страница на самом деле не отвечает, может быть расценён как злоупотребление разметкой, даже если сам JSON корректен.',
+	tool_schema_references: 'Schema.org; Google Search Central — Основы структурированных данных.',
+	tool_schema_ref_schema_label: 'Schema.org',
+	tool_schema_ref_google_label: 'Search Central — Структурированные данные',
+};
+
+export default ru;

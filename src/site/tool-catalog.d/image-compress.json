@@ -11,7 +11,8 @@
   "related": [
     "image-format-converter",
     "image-crop",
-    "image-optimizer"
+    "image-optimizer",
+    "core-web-vitals-checker"
   ],
   "logo": "/icons/tools/image-compress.svg",
   "page": {

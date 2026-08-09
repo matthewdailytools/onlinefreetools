@@ -174,9 +174,9 @@ export const renderHowToCalculateScientificNotationPage = (opts: {
 
         /** 解析科学计数字符串（e / E / ×10^ / *10^）。 */
         function parseSci(raw) {
-          var s = String(raw).trim().replace(/,/g, '').replace(/\s+/g, '');
+          var s = String(raw).trim().replace(/,/g, '').replace(/\\s+/g, '');
           s = s.replace(/[×xX]/g, '*');
-          var m = s.match(/^([+-]?(?:\d+\.?\d*|\.\d+))(?:[eE]|\*10\^)([+-]?\d+)$/);
+          var m = s.match(/^([+-]?(?:\\d+\\.?\\d*|\\.\\d+))(?:[eE]|\\*10\\^)([+-]?\\d+)$/);
           if (m) {
             var a = parseFloat(m[1]);
             var b = parseInt(m[2], 10);

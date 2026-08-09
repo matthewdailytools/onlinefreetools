@@ -595,7 +595,7 @@ export const renderSmartWebsiteColorSchemePage = (opts: {
   function parseCssColor(value) {
     var hex = normalizeHex(value);
     if (hex) return hexToRgb(hex);
-    var m = /^rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)(?:\s*,\s*([0-9.]+))?\s*\)$/i.exec(String(value || '').trim());
+    var m = /^rgba?\\(\\s*(\\d+)\\s*,\\s*(\\d+)\\s*,\\s*(\\d+)(?:\\s*,\\s*([0-9.]+))?\\s*\\)$/i.exec(String(value || '').trim());
     if (!m) return null;
     var r = Number(m[1]), g = Number(m[2]), b = Number(m[3]);
     var a = m[4] !== undefined ? Number(m[4]) : 1;

@@ -1450,6 +1450,78 @@ const fr: SiteLangDict = {
   tool_csv_json_usecase_3:
     'Data/ops : passez un CSV de rapports ou d’événements (virgule, point-virgule ou TSV) en JSON pour un pipeline, virgules et sauts de ligne bien échappés.',
   tool_csv_json_usecases_title: 'Bons cas',
+  tool_cwv_cause_label: 'Causes fréquentes',
+  tool_cwv_clear: 'Effacer',
+  tool_cwv_cls_cause: 'Contenu dynamique, images sans dimensions, pubs/embeds qui poussent la mise en page.',
+  tool_cwv_cls_fix: 'Fixer largeur/hauteur ; réserver l’espace pour pubs et embeds.',
+  tool_cwv_cls_label: 'CLS (Cumulative Layout Shift)',
+  tool_cwv_cls_ph: 'p. ej. 0.18',
+  tool_cwv_description:
+    'Collez LCP, INP et CLS issus de PageSpeed, CrUX ou du widget Performance de Microsoft Clarity pour voir Bon, À améliorer ou Médiocre, avec causes et pistes alignées sur Clarity. Tout se passe dans le navigateur ; les chiffres ne sont pas envoyés à un serveur. Exemple : 3,2 s / 280 ms / 0,18 → À améliorer.',
+  tool_cwv_err_cls: 'CLS debe ser ≥ 0.',
+  tool_cwv_err_empty: 'Saisissez au moins LCP, INP ou CLS.',
+  tool_cwv_err_inp: 'INP debe ser ≥ 0 (ms).',
+  tool_cwv_err_lcp: 'LCP debe ser ≥ 0.',
+  tool_cwv_example: 'Exemple : LCP 3,2 s, INP 280 ms, CLS 0,18 → trois fois À améliorer.',
+  tool_cwv_example_title: 'Exemple',
+  tool_cwv_faq_a1: 'Cibles « Bon » = Clarity + Core Web Vitals ; bandes NI/Médiocre = web.dev/Google (Règles).',
+  tool_cwv_faq_a2: 'Non. Mesurez ailleurs ; ici on note des valeurs collées sans uploader l’URL.',
+  tool_cwv_faq_a3: 'Clarity est passé de FID à INP en janvier 2025. Cet outil note uniquement INP.',
+  tool_cwv_faq_a4: 'Non. Ils restent sur l’appareil/navigateur ; pas d’envoi au serveur.',
+  tool_cwv_faq_a5: 'Clarity indique que le widget montre le p75. Notez le même percentile que votre rapport.',
+  tool_cwv_faq_q1: 'D’où viennent les seuils ?',
+  tool_cwv_faq_q2: 'Remplace PageSpeed ou Clarity ?',
+  tool_cwv_faq_q3: 'Et le FID ?',
+  tool_cwv_faq_q4: 'Mes chiffres sont-ils envoyés ?',
+  tool_cwv_faq_q5: 'Pourquoi le 75e percentile ?',
+  tool_cwv_fix_label: 'À essayer',
+  tool_cwv_grade: 'Noter',
+  tool_cwv_grade_good: 'Bon',
+  tool_cwv_grade_ni: 'À améliorer',
+  tool_cwv_grade_poor: 'Médiocre',
+  tool_cwv_home_desc:
+    'Notez LCP, INP et CLS selon les seuils publics. Les valeurs restent sur l’appareil, sans envoi au serveur.',
+  tool_cwv_home_title: 'Vérifier les Core Web Vitals',
+  tool_cwv_how_body:
+    'Saisissez LCP (s ou ms), INP en ms et CLS. Chaque valeur devient Bon / À améliorer / Médiocre ; sinon, causes et pistes issues de Clarity.',
+  tool_cwv_how_title: 'Fonctionnement',
+  tool_cwv_inp_cause: 'JavaScript lourd et gros travaux de rendu.',
+  tool_cwv_inp_fix: 'Réduire, différer ou charger JS en async ; workers ; découper les longues tâches.',
+  tool_cwv_inp_label: 'INP (Interaction to Next Paint)',
+  tool_cwv_inp_ph: 'p. ej. 280',
+  tool_cwv_lcp_cause: 'Grosses images, serveur lent ou JS/CSS bloquants (Clarity).',
+  tool_cwv_lcp_fix: 'Optimiser les images, améliorer la réponse serveur, minifier ou différer JS/CSS.',
+  tool_cwv_lcp_label: 'LCP (Largest Contentful Paint)',
+  tool_cwv_lcp_ph: 'p. ej. 3.2',
+  tool_cwv_lcp_unit_group: 'Unité LCP',
+  tool_cwv_lcp_unit_ms: 'LCP en millisecondes',
+  tool_cwv_lcp_unit_s: 'LCP en secondes',
+  tool_cwv_metric_cls: 'CLS',
+  tool_cwv_metric_inp: 'INP',
+  tool_cwv_metric_lcp: 'LCP',
+  tool_cwv_note_p75:
+    'Seuils = bandes publiques Core Web Vitals. Clarity affiche souvent le 75e percentile — cette page note les valeurs collées ; elle ne crawl pas votre site.',
+  tool_cwv_ref_clarity_label: 'Microsoft Learn — Clarity Performance metrics (en)',
+  tool_cwv_ref_clarity_zh_label: 'Microsoft Learn — Clarity 性能指标 (zh-CN)',
+  tool_cwv_ref_google_label: 'Google Search — Core Web Vitals',
+  tool_cwv_ref_webdev_label: 'web.dev — Web Vitals',
+  tool_cwv_references: 'Microsoft Learn Clarity Performance metrics; web.dev; Google CWV.',
+  tool_cwv_rules_body:
+    'Bandes Core Web Vitals (web.dev / Google). Clarity vise les mêmes cibles « bonnes » : LCP ≤ 2,5 s, INP ≤ 200 ms, CLS ≤ 0,1. Passage de FID à INP en janvier 2025.',
+  tool_cwv_rules_item_1: 'LCP : Bon ≤ 2,5 s ; À améliorer ≤ 4,0 s ; au-delà Médiocre.',
+  tool_cwv_rules_item_2: 'INP : Bon ≤ 200 ms ; À améliorer ≤ 500 ms ; au-delà Médiocre.',
+  tool_cwv_rules_item_3: 'CLS : Bon ≤ 0,1 ; À améliorer ≤ 0,25 ; au-delà Médiocre.',
+  tool_cwv_rules_item_4: 'Pas un scan Lighthouse/Clarity en direct — collez des valeurs déjà mesurées.',
+  tool_cwv_rules_item_5: 'Analyse web uniquement ; pas pour apps natives (note Clarity).',
+  tool_cwv_rules_title: 'Seuils et règles',
+  tool_cwv_sample: 'Charger l’exemple',
+  tool_cwv_summary_label: 'Résumé',
+  tool_cwv_summary_tpl: '{good} sur {n} métriques en Bon',
+  tool_cwv_title: 'Vérifier les Core Web Vitals — Noter vos scores d’expérience de page',
+  tool_cwv_usecase_1: 'Après Clarity Performance, collez les p75 pour interpréter hors ligne.',
+  tool_cwv_usecase_2: 'Avant/après compression d’images : comparer le LCP PSI.',
+  tool_cwv_usecase_3: 'Expliquer FID→INP et les trois métriques sur une page.',
+  tool_cwv_usecases_title: 'Bons usages',
   tool_date_difference_article: 'Calculateur d’écart entre dates',
   tool_date_difference_calculate: 'Calculer',
   tool_date_difference_clear: 'Effacer',
@@ -2078,7 +2150,7 @@ const fr: SiteLangDict = {
   tool_headers_article:
     'Consultez les en-têtes que l\'edge reçoit pour une URL publique — cache, CORS, redirections et en-têtes de sécurité. Requête proxyée ; nous ne conservons pas le corps de page.',
   tool_headers_description:
-    'Inspectez en ligne les en-têtes HTTP de réponse d\'une URL depuis notre edge. Déroulé : saisir https, envoyer HEAD (GET si besoin), suivre les redirections, afficher statut et carte d\'en-têtes ; bloquer les hôtes privés. Exemple : lire Cache-Control, CORS et HSTS lors d\'un debug CDN ou redirection.',
+    'Inspectez en ligne les en-têtes HTTP de réponse d\'une URL depuis notre edge. Déroulé : saisir https, envoyer HEAD (GET si besoin), suivre les redirections, afficher statut et carte d\'en-têtes ; bloquer les hôtes privés. Bonus : lecture en langage simple de Cache-Control, X-Robots-Tag et de la chaîne de redirection. Exemple : lire Cache-Control, CORS et HSTS lors d\'un debug CDN ou redirection.',
   tool_headers_example:
     'exemple.com → statut 200, URL finale inchangée ; en-têtes avec content-type: text/html et, selon l\'origine, cache-control ou en-têtes de sécurité.',
   tool_headers_example_title: 'Exemple',
@@ -2088,24 +2160,65 @@ const fr: SiteLangDict = {
   tool_headers_faq_a4:
     'Pas toujours. Vous voyez la réponse depuis notre edge ; CDN, géo ou anti-bot peuvent différer de votre poste.',
   tool_headers_faq_a5: 'Requête edge éphémère, sans historique d\'URL. N\'insérez pas de secrets dans la query string.',
+  tool_headers_faq_a6:
+    'Pour le SEO, l\'utile est de savoir si la réponse est mise en cache (no-store vs max-age), combien de temps les caches partagés la gardent (s-maxage) et si elle impose une revalidation (no-cache). Les pages qui changent peu gagnent un max-age long pour que le CDN les serve sans toucher l\'origine.',
+  tool_headers_faq_a7:
+    'x-robots-tag s\'applique à tout type de réponse — HTML, PDF, images — alors que robots meta ne fonctionne que dans le HTML. Utilisez-le pour empêcher l\'indexation d\'actifs non HTML ou des règles difficiles à placer dans la page. En conflit, x-robots-tag l\'emporte.',
   tool_headers_faq_q1: 'Que contiennent les en-têtes de réponse HTTP ?',
   tool_headers_faq_q2: 'L\'outil télécharge-t-il le corps HTML complet ?',
   tool_headers_faq_q3: 'Pourquoi localhost et IP privées sont-ils interdits ?',
   tool_headers_faq_q4: 'Est-ce identique aux DevTools du navigateur ?',
   tool_headers_faq_q5: 'Conservez-vous l\'historique des URL vérifiées ?',
+  tool_headers_faq_q6: 'Que regarder dans cache-control ?',
+  tool_headers_faq_q7: 'Pourquoi x-robots-tag compte-t-il si robots meta existe ?',
   tool_headers_how_body:
-    'Collez une URL http(s) publique puis lancez la vérification. Le worker edge envoie HEAD (GET au besoin), suit les redirections et renvoie statut, URL finale et en-têtes observés. Les cibles privées sont rejetées. Vue edge — peut différer de votre navigateur si le CDN route par région.',
+    'Collez une URL http(s) publique puis lancez la vérification. Le worker edge envoie HEAD (GET au besoin), suit les redirections une à une (jusqu\'à 5 sauts) et renvoie statut, URL finale, en-têtes observés et la chaîne de redirection. Les cibles privées sont rejetées. Vue edge — peut différer de votre navigateur si le CDN route par région.',
   tool_headers_how_title: 'Fonctionnement',
   tool_headers_ref_mdn_label: 'MDN — En-têtes HTTP',
   tool_headers_ref_rfc9110_label: 'RFC 9110 — Sémantique HTTP',
   tool_headers_ref_rfc9111_label: 'RFC 9111 — Mise en cache HTTP',
+  tool_headers_robots_absent:
+    'Aucun en-tête X-Robots-Tag. Les règles d\'indexation viennent de robots.txt et du robots meta de la page.',
+  tool_headers_robots_blocked: 'Cette page est exclue de l\'indexation par cet en-tête.',
+  tool_headers_robots_maxsnippet: 'max-snippet={n} : limite le fragment à {n} caractères.',
+  tool_headers_robots_noarchive: 'noarchive : les moteurs n\'afficheront pas de copie en cache de cette URL.',
+  tool_headers_robots_nofollow: 'nofollow : les robots ne suivront pas les liens de cette réponse.',
+  tool_headers_robots_noindex: 'noindex : cette URL est exclue des résultats de recherche.',
+  tool_headers_robots_none: 'none : équivaut à noindex + nofollow.',
   tool_headers_rules_body:
     'Proxy éphémère dédié à l\'inspection d\'en-têtes ; aucun stockage du contenu page. Les noms respectent la sémantique HTTP (voir Références).',
   tool_headers_rules_item_1: 'HEAD en priorité ; GET si l\'origine ne supporte pas HEAD.',
   tool_headers_rules_item_2: 'Suit les redirections et indique l\'URL finale.',
   tool_headers_rules_item_3: 'Bloque localhost et IP de réseau privé.',
   tool_headers_rules_item_4: 'Met en évidence Cache-Control, CORS, CSP et en-têtes courants.',
+  tool_headers_rules_item_5: 'Recueille la chaîne de redirection (jusqu\'à 5 sauts) avec statut et Location de chaque étape.',
   tool_headers_rules_title: 'Règles du vérificateur',
+  tool_headers_seo_cache_absent:
+    'Aucun en-tête Cache-Control. Navigateurs et CDN utilisent des heuristiques ; un contenu récent peut être servi obsolète.',
+  tool_headers_seo_cache_heading: 'Cache-Control',
+  tool_headers_seo_cache_immutable: 'immutable : pas de revalidation pendant la durée de fraîcheur — typique des assets à empreinte.',
+  tool_headers_seo_cache_maxage:
+    'max-age={n} : navigateurs et caches partagés peuvent réutiliser cette réponse pendant {n} secondes sans consulter l\'origine.',
+  tool_headers_seo_cache_mustrevalidate: 'must-revalidate : les réponses périmées doivent être revalidées avant réutilisation.',
+  tool_headers_seo_cache_nocache: 'no-cache : stockage possible mais revalidation obligatoire avant réutilisation.',
+  tool_headers_seo_cache_nostore:
+    'no-store : rien n\'est mis en cache ; chaque requête atteint l\'origine. Adapté aux pages privées ou volatiles.',
+  tool_headers_seo_cache_other: 'Directive non expliquée ici : {d}',
+  tool_headers_seo_cache_private: 'private : seul le cache du navigateur peut stocker ; les caches partagés non.',
+  tool_headers_seo_cache_public: 'public : n\'importe quel cache peut stocker la réponse.',
+  tool_headers_seo_cache_smaxage:
+    's-maxage={n} : les caches partagés (CDN/proxy) peuvent servir pendant {n} secondes ; écrase max-age pour eux.',
+  tool_headers_seo_intro: 'Lecture en langage simple des en-têtes les plus importants pour la recherche et l\'exploration.',
+  tool_headers_seo_redirect_301:
+    '301 Permanent : les moteurs transfèrent les signaux de classement à la destination — parfait pour pages déplacées et changements de www.',
+  tool_headers_seo_redirect_302:
+    '302/307 Temporaire : à garder pour des changements courts — les signaux restent sur l\'URL d\'origine.',
+  tool_headers_seo_redirect_chain: 'La requête a suivi {n} redirection(s) avant la réponse finale :',
+  tool_headers_seo_redirect_cross_host: 'Ce saut quitte l\'hôte d\'origine : {from} → {to}.',
+  tool_headers_seo_redirect_heading: 'Redirection',
+  tool_headers_seo_redirect_ok: 'Aucune redirection : l\'URL finale est celle vérifiée.',
+  tool_headers_seo_robots_heading: 'X-Robots-Tag',
+  tool_headers_seo_title: 'Vérifications SEO des en-têtes',
   tool_headers_title: 'Vérifier les en-têtes HTTP d\'un site — Inspecter les response headers',
   tool_headers_usecase_1: 'Avant une mise en prod, valider Cache-Control ou le cache CDN.',
   tool_headers_usecase_2: 'Diagnostiquer un preflight CORS via Access-Control-*.',
@@ -4936,6 +5049,69 @@ const fr: SiteLangDict = {
   tool_quadratic_equation_usecase_2: 'Quick sketch.',
   tool_quadratic_equation_usecase_3: 'Algebra drill with related tools.',
   tool_quadratic_equation_usecases_title: 'Cas d’usage',
+  tool_robots_agent_add: 'Ajouter un agent personnalisé',
+  tool_robots_agent_remove: 'Retirer l’agent',
+  tool_robots_agents_hint: 'Cochez les robots à inclure, puis ajoutez des chemins pour chaque groupe.',
+  tool_robots_agents_label: 'User-agents',
+  tool_robots_allow_label: 'Chemins Allow (un par ligne)',
+  tool_robots_clear: 'Effacer',
+  tool_robots_copied: 'Copié',
+  tool_robots_copy: 'Copier',
+  tool_robots_description:
+    'Générez un fichier robots.txt dans votre navigateur. Étapes : choisissez les user-agents, ajoutez des chemins Allow / Disallow et une ligne Sitemap, puis copiez le résultat en texte brut avec les règles de syntaxe et les user-agents à jour des robots d’IA expliqués. Fonctionne localement — rien n’est envoyé. Exemple : bloquer GPTBot tout en gardant Googlebot entièrement actif.',
+  tool_robots_disallow_label: 'Chemins Disallow (un par ligne)',
+  tool_robots_download: 'Télécharger',
+  tool_robots_empty_agent: 'Choisissez ou ajoutez d’abord un user-agent.',
+  tool_robots_example:
+    'Exemple : Googlebot avec Allow: / (entièrement actif), GPTBot avec Disallow: / (bloqué) et une ligne Sitemap pointant vers /sitemap.xml. La sortie reflète ce format : un groupe par robot, ligne vide entre les groupes, sitemap en dernier.',
+  tool_robots_example_title: 'Exemple',
+  tool_robots_faq_a1:
+    'Cela dit à ce robot de ne récupérer aucune URL sous la racine du site. Si Googlebot reçoit Disallow: /, vos pages peuvent disparaître de la recherche Google. Pour un chemin de staging, utilisez plutôt Disallow: /private/.',
+  tool_robots_faq_a2:
+    'Créez un groupe avec le User-agent du robot (par exemple GPTBot, ClaudeBot, Google-Extended, CCBot, PerplexityBot) et ajoutez Disallow: /. Consultez la documentation officielle du robot, car les robots d’IA mettent régulièrement à jour leurs user-agents et plages IP.',
+  tool_robots_faq_a3:
+    'La position n’affecte pas la façon dont les moteurs la lisent, mais la convention la place à la fin du fichier. Le générateur l’ajoute en dernier lorsque vous fournissez une URL.',
+  tool_robots_faq_a4:
+    'Non. Le fichier est généré dans votre navigateur et n’est jamais envoyé à un serveur. Fermez l’onglet et rien n’est conservé.',
+  tool_robots_faq_q1: 'Que se passe-t-il si j’écris Disallow: / ?',
+  tool_robots_faq_q2: 'Comment bloquer les robots d’IA comme GPTBot ?',
+  tool_robots_faq_q3: 'Où doit se trouver la ligne Sitemap ?',
+  tool_robots_faq_q4: 'Mon robots.txt est-il envoyé quelque part ?',
+  tool_robots_generate: 'Générer',
+  tool_robots_home_desc: 'Créez un robots.txt au bon format : autorisations, blocages et robots d’IA, dans votre navigateur.',
+  tool_robots_home_title: 'Générateur de robots.txt',
+  tool_robots_how_body:
+    'Sélectionnez les robots ciblés, ajoutez des chemins Allow et Disallow pour chaque groupe, éventuellement une ligne Sitemap, puis cliquez sur Générer. La page assemble le fichier en texte brut selon le format RFC 9309 : une ligne User-agent par groupe, ses lignes Allow/Disallow dessous, une ligne vide entre les groupes et la ligne Sitemap à la fin. Copiez le résultat à la racine de votre site dans /robots.txt.',
+  tool_robots_how_title: 'Comment ça marche',
+  tool_robots_include: 'Inclure ce user-agent',
+  tool_robots_output_label: 'robots.txt',
+  tool_robots_owner_of: 'Propriétaire : {owner}',
+  tool_robots_ref_ai_label: 'Search Central — Robots d’IA',
+  tool_robots_ref_google_label: 'Search Central — robots.txt',
+  tool_robots_ref_rfc_label: 'RFC 9309 — Protocole d’exclusion des robots',
+  tool_robots_references:
+    'RFC 9309 Protocole d’exclusion des robots ; Google Search Central — robots.txt ; Google Search Central — Gérer les robots d’IA.',
+  tool_robots_rules_body:
+    'Les règles de robots.txt sont des préfixes de chemin, pas des motifs, et un robot applique le dernier groupe qui lui correspond dans le fichier. Voici les règles suivies par ce générateur.',
+  tool_robots_rules_item_1:
+    'Ordre des groupes : une ligne User-agent commence un groupe pour ce robot ; une ligne vide le termine. Le dernier groupe correspondant à un robot prime.',
+  tool_robots_rules_item_2:
+    'Correspondance par préfixe : Allow et Disallow correspondent à des préfixes de chemin, pas à des sous-chaînes ni des regex. Seuls * et $ sont spéciaux (RFC 9309).',
+  tool_robots_rules_item_3:
+    'Disallow: / bloque cet agent sur tout le site. Disallow avec une valeur vide autorise tout pour cet agent.',
+  tool_robots_rules_item_4:
+    'Sitemap est une extension, pas une partie de RFC 9309. Elle est insensible à la casse et peut apparaître n’importe où, même si elle est en général placée à la fin.',
+  tool_robots_rules_title: 'Règles de syntaxe importantes',
+  tool_robots_sample: 'Exemple',
+  tool_robots_sitemap_label: 'URL de Sitemap (facultatif)',
+  tool_robots_sitemap_ph: 'https://example.com/sitemap.xml',
+  tool_robots_title: 'Générateur de robots.txt — gérez autorisations et blocages des robots d’IA',
+  tool_robots_usecase_1:
+    'Sites neufs : générez un robots.txt de départ qui garde les moteurs actifs et masque des chemins de staging privés.',
+  tool_robots_usecase_2:
+    'Contrôle des robots d’IA : bloquez GPTBot, ClaudeBot, Google-Extended, CCBot ou PerplexityBot pour l’entraînement ou l’extraction de résumés sans toucher à Googlebot.',
+  tool_robots_usecase_3: 'Découverte : associez robots.txt à une ligne Sitemap pour que les robots trouvent votre sitemap.',
+  tool_robots_usecases_title: 'Quand l’utiliser',
   tool_roi_article:
     'Le ROI simple exprime le gain net par rapport au coût en pourcentage. Utile pour un bilan approximatif de campagne ou de projet ; pas d’IRR/VAN multipériode.',
   tool_roi_calculate: 'Calculer',
@@ -5183,6 +5359,88 @@ const fr: SiteLangDict = {
   tool_sample_size_usecase_2: 'Voir comment un E plus serré gonfle n.',
   tool_sample_size_usecase_3: 'Le relier ensuite à une page d’intervalle de confiance.',
   tool_sample_size_usecases_title: 'Quand l’utiliser',
+  tool_schema_article_author: 'Nom de l’auteur',
+  tool_schema_article_date_modified: 'Date de modification (AAAA-MM-JJ)',
+  tool_schema_article_date_published: 'Date de publication (AAAA-MM-JJ)',
+  tool_schema_article_description: 'Description',
+  tool_schema_article_headline: 'Titre',
+  tool_schema_article_image: 'URL de l’image (facultatif)',
+  tool_schema_article_url: 'URL de la page',
+  tool_schema_breadcrumb_add: 'Ajouter un niveau',
+  tool_schema_breadcrumb_min: 'Le fil d’Ariane nécessite au moins deux niveaux.',
+  tool_schema_breadcrumb_name: 'Nom {n}',
+  tool_schema_breadcrumb_url: 'URL {n}',
+  tool_schema_clear: 'Effacer',
+  tool_schema_copied: 'Copié',
+  tool_schema_copy: 'Copier',
+  tool_schema_description:
+    'Générez du JSON-LD dans votre navigateur. Étapes : choisissez un type (FAQ, article, fil d’Ariane, organisation), remplissez les champs obligatoires, puis copiez un balisage Schema.org valide avec une balise script prête à coller. La page distingue champs obligatoires et facultatifs et valide le JSON avant de copier. Rien n’est envoyé. Exemple : une FAQ de deux questions produit un mainEntity avec deux nœuds Question.',
+  tool_schema_download: 'Télécharger',
+  tool_schema_err_no_fields: 'Remplissez d’abord les champs obligatoires.',
+  tool_schema_example:
+    'Exemple de FAQ avec deux questions : « Comment installer le SDK ? » et « Les données sont-elles traitées localement ? » → la sortie contient un tableau mainEntity avec deux objets Question, chacun avec acceptedAnswer.text, prêt à coller dans le head de votre page.',
+  tool_schema_example_title: 'Exemple',
+  tool_schema_faq_a1:
+    'Aux moteurs de recherche et autres lecteurs du balisage Schema.org. C’est embarqué dans votre HTML pour que les machines comprennent entités, relations et faits — ce n’est pas un contenu visible par l’utilisateur.',
+  tool_schema_faq_a2:
+    'Non. Les résultats enrichis FAQ ne s’affichent plus sur tout le site depuis mai 2026, et HowTo plus tôt. Google peut continuer à analyser le balisage pour comprendre la page, mais aucune garantie de résultat enrichi : considérez le schéma comme de la clarté pour la compréhension, pas comme un KPI de classement ou de rich result.',
+  tool_schema_faq_a3:
+    'FAQ nécessite question + réponse par élément ; Article nécessite titre et auteur ; Fil d’Ariane nécessite au moins deux niveaux avec nom et URL ; Organisation nécessite nom et URL. La page marque les obligatoires et liste ce qui manque.',
+  tool_schema_faq_a4:
+    'Google traite comme trompeuses les données structurées qui ne reflètent pas la page visible. Par exemple, une question FAQ que la page ne traite pas réellement peut être considérée comme un abus de balisage même si le JSON est valide.',
+  tool_schema_faq_add: 'Ajouter une question',
+  tool_schema_faq_answer: 'Réponse {n}',
+  tool_schema_faq_q1: 'À qui s’adressent les données structurées JSON-LD ?',
+  tool_schema_faq_q2: 'Ajouter le schéma FAQ garantit-il un résultat enrichi ?',
+  tool_schema_faq_q3: 'Quels champs sont obligatoires dans le balisage généré ?',
+  tool_schema_faq_q4: 'Pourquoi le balisage doit-il correspondre au contenu visible ?',
+  tool_schema_faq_question: 'Question {n}',
+  tool_schema_faq_remove: 'Retirer',
+  tool_schema_fields_label: 'Champs',
+  tool_schema_generate: 'Générer',
+  tool_schema_home_desc:
+    'Créez des données structurées Schema.org pour FAQ, article, fil d’Ariane et organisation dans votre navigateur.',
+  tool_schema_home_title: 'Générateur JSON-LD',
+  tool_schema_how_body:
+    'Choisissez un type de schéma, remplissez le formulaire et cliquez sur Générer. La page construit un objet JSON-LD Schema.org, vérifie la présence des champs obligatoires, puis affiche le résultat mis en forme dans une balise script pour le coller dans le <head> de votre page. Une vérification de syntaxe s’exécute avant le rendu ; les champs obligatoires manquants sont listés au lieu de produire un balisage cassé en silence.',
+  tool_schema_how_title: 'Comment ça marche',
+  tool_schema_missing_required: 'Champ obligatoire manquant : {field}',
+  tool_schema_optional: 'Facultatif',
+  tool_schema_org_description: 'Description courte (facultatif)',
+  tool_schema_org_logo: 'URL du logo (facultatif)',
+  tool_schema_org_name: 'Nom de l’organisation',
+  tool_schema_org_url: 'URL du site',
+  tool_schema_output_label: 'Sortie JSON-LD',
+  tool_schema_ref_google_label: 'Search Central — Données structurées',
+  tool_schema_ref_schema_label: 'Schema.org',
+  tool_schema_references: 'Schema.org ; Google Search Central — Notions de base des données structurées.',
+  tool_schema_required: 'Obligatoire',
+  tool_schema_rules_body:
+    'Chaque type a une forme minimale valide. Le générateur valide que le JSON est bien formé et signale les champs obligatoires vides, mais il ne peut pas savoir si le balisage correspond au contenu visible de votre page.',
+  tool_schema_rules_item_1:
+    'FAQ : mainEntity contient un tableau de nœuds Question ; chaque élément nécessite name et acceptedAnswer.text.',
+  tool_schema_rules_item_2:
+    'Article : headline et author sont obligatoires ; datePublished, dateModified, image et description sont facultatifs mais recommandés.',
+  tool_schema_rules_item_3:
+    'Fil d’Ariane : itemListElement est une liste ordonnée dont chaque position doit être séquentielle (1, 2, 3…).',
+  tool_schema_rules_item_4:
+    'Cohérence : Google compare les données structurées à la page visible. Baliser du contenu absent de la page enfreint les politiques de spam.',
+  tool_schema_rules_title: 'Ce que vérifie le générateur',
+  tool_schema_sample: 'Exemple',
+  tool_schema_title: 'Générateur JSON-LD — créez des données structurées pour FAQ, article et fil d’Ariane',
+  tool_schema_type_article: 'Article',
+  tool_schema_type_breadcrumb: 'Fil d’Ariane',
+  tool_schema_type_faq: 'FAQ',
+  tool_schema_type_label: 'Type de schéma',
+  tool_schema_type_organization: 'Organisation',
+  tool_schema_usecase_1:
+    'Pages FAQ : ajoutez une liste de questions en données structurées pour que les moteurs comprennent mieux les questions et réponses.',
+  tool_schema_usecase_2:
+    'Articles et documentation : attachez le balisage Article avec auteur et dates pour les sites de contenu et bases de connaissances.',
+  tool_schema_usecase_3:
+    'Produit et structure du site : utilisez Breadcrumb pour décrire les parcours de navigation et Organization pour le nom et le logo de la marque.',
+  tool_schema_usecases_title: 'Quand l’utiliser',
+  tool_schema_wrap_script: 'Envelopper dans <script type="application/ld+json">',
   tool_scientific_notation_article: 'Convertissez décimaux et notation scientifique a×10^b dans le navigateur.',
   tool_scientific_notation_calculate: 'Calculer',
   tool_scientific_notation_clear: 'Effacer',
@@ -5227,6 +5485,72 @@ const fr: SiteLangDict = {
   tool_scientific_notation_usecases_title: 'Quand l’utiliser',
   tool_scientific_notation_value_label: 'Valeur',
   tool_scientific_notation_value_ph: 'ex. 12300 ou 1,23e4 ou 1,23×10^4',
+  tool_serp_char_count: '{n} caractères',
+  tool_serp_clear: 'Effacer',
+  tool_serp_compare_label: 'Comparer avec un second titre',
+  tool_serp_copied: 'Copié',
+  tool_serp_copy: 'Copier',
+  tool_serp_cut_warning: 'Tronqué — la ligne dépasse le viewport d’environ {limit}px',
+  tool_serp_desc_label: 'Meta description',
+  tool_serp_desc_ph: 'Le texte de l’extrait sous le titre du résultat',
+  tool_serp_description:
+    'Collez un titre et une description pour prévisualiser leur troncature dans les résultats Google, sur ordinateur et mobile. Saisissez titre, description et URL facultative ; consultez le nombre de caractères, la largeur estimée en pixels et le point de coupe de l’extrait ; comparez deux titres côte à côte. Tout se passe dans votre navigateur, rien n’est envoyé. Exemple : un titre de 60 caractères latins et un de 30 caractères CJK peuvent atteindre la limite de pixels avec des comptages différents.',
+  tool_serp_desktop: 'Aperçu ordinateur',
+  tool_serp_err_title_empty: 'Saisissez un titre pour voir l’aperçu.',
+  tool_serp_example:
+    'Exemple : titre « Meta SERP Preview — How to Preview Google Title & Description Truncation Online », description d’environ deux lignes, URL example.com/page → sur ordinateur le titre est coupé près du 57e caractère avec « … », et plus tôt sur mobile ; la description tient en deux lignes.',
+  tool_serp_example_title: 'Exemple',
+  tool_serp_faq_a1:
+    'Les résultats sont coupés selon la largeur rendue en pixels, pas le nombre de caractères. Les glyphes CJK font presque un em tandis que les lettres ASCII font en moyenne un demi-em : moins de caractères remplissent le même viewport.',
+  tool_serp_faq_a2:
+    'Non. Les viewports ordinateur et mobile varient selon l’appareil et la police. Cet outil utilise les limites usuelles d’environ 600px (ordinateur) et 460px (mobile) comme estimation de planification, pas comme garantie du rendu de Google.',
+  tool_serp_faq_a3:
+    'C’est une estimation locale dans le même sens. Pour l’apparence finale, ouvrez votre page dans l’inspection d’URL de Search Console ou dans le test des résultats enrichis, qui rendent dans l’environnement réel de Google.',
+  tool_serp_faq_a4:
+    'Non. Tout le texte reste dans l’onglet de votre navigateur et n’est jamais envoyé à un serveur. Fermez l’onglet et tout disparaît.',
+  tool_serp_faq_q1: 'Pourquoi un titre CJK de 30 caractères tronque avant un titre anglais de 60 ?',
+  tool_serp_faq_q2: 'Les limites en pixels sont-elles exactes ?',
+  tool_serp_faq_q3: 'Correspond-il à l’aperçu mobile de Search Console ?',
+  tool_serp_faq_q4: 'Mon titre est-il envoyé quelque part ?',
+  tool_serp_fit: 'Tient dans le viewport',
+  tool_serp_home_desc: 'Vérifiez la coupure du titre et de la description avant de publier.',
+  tool_serp_home_title: 'Aperçu des résultats Google',
+  tool_serp_how_body:
+    'Saisissez ou collez le titre, la description et une URL facultative. L’outil estime combien de caractères et de pixels approximatifs occupe chaque ligne avec une approximation de métriques de police (les glyphes larges CJK comptent plus que les lettres ASCII étroites), puis dessine un extrait style Google pour ordinateur et un pour mobile. Les lignes plus larges que le viewport estimé reçoivent une marque de coupe.',
+  tool_serp_how_title: 'Comment ça marche',
+  tool_serp_mobile: 'Aperçu mobile',
+  tool_serp_preview: 'Aperçu',
+  tool_serp_px_width: '~{n}px',
+  tool_serp_ref_snippet_label: 'Search Central — Contrôle des extraits',
+  tool_serp_ref_title_label: 'Search Central — Contrôle des titres',
+  tool_serp_references:
+    'Google Search Central — Contrôler les liens de titre ; Google Search Central — Contrôler les extraits.',
+  tool_serp_rules_body:
+    'Les limites en pixels sont approximatives. Google mesure la largeur rendue, pas le nombre de caractères : les langues denses et les glyphes larges tronquent avec moins de caractères.',
+  tool_serp_rules_item_1:
+    'La limite du titre est estimée à ~600px sur ordinateur et ~460px sur mobile. Une ligne plus large est affichée avec une marque de coupe.',
+  tool_serp_rules_item_2: 'Les descriptions sont estimées à environ deux lignes (~600px ordinateur, 460px mobile par ligne).',
+  tool_serp_rules_item_3:
+    'La largeur des glyphes est estimée : lettres et chiffres ASCII environ 0,5 em, caractères CJK proches de 1 em, emoji plus larges.',
+  tool_serp_rules_item_4:
+    'Ce sont des estimations pour planifier. Google peut réécrire les titres ou les descriptions, et le rendu réel dépend de la police et du viewport de l’internaute.',
+  tool_serp_rules_title: 'Ce que montre l’aperçu',
+  tool_serp_sample: 'Exemple',
+  tool_serp_serp_url_display: 'example.com › page',
+  tool_serp_title: 'Aperçu des résultats Google — vérifiez la coupure du titre et de la description',
+  tool_serp_title_b_label: 'Titre B',
+  tool_serp_title_b_ph: 'Collez un titre alternatif à comparer',
+  tool_serp_title_label: 'Titre',
+  tool_serp_title_ph: 'Le titre de la page affiché dans les résultats',
+  tool_serp_url_label: 'URL (facultatif)',
+  tool_serp_url_ph: 'ex. https://example.com/page',
+  tool_serp_usecase_1:
+    'Avant publication : collez le titre et la description finaux pour vérifier que les mots clés survivent à la coupe.',
+  tool_serp_usecase_2:
+    'Comparez deux titres candidats côte à côte et choisissez celui qui garde le mot clé principal visible sur mobile.',
+  tool_serp_usecase_3:
+    'Pages CJK : vérifiez combien de caractères chinois tiennent avant la troncature, car les glyphes larges atteignent la limite avec moins de caractères.',
+  tool_serp_usecases_title: 'Quand l’utiliser',
   tool_share_copied: 'Copié',
   tool_share_copy: 'Copier le lien',
   tool_share_hint: 'Partagez sur les réseaux, copiez le lien ou utilisez le partage du système.',
@@ -5279,6 +5603,64 @@ const fr: SiteLangDict = {
   tool_significant_figures_usecase_2: 'Ramener un résultat à la précision autorisée.',
   tool_significant_figures_usecase_3: 'Comparer affichage ordinaire et scientifique.',
   tool_significant_figures_usecases_title: 'Quand l’utiliser',
+  tool_sitemap_clear: 'Effacer',
+  tool_sitemap_copied: 'Copié',
+  tool_sitemap_copy: 'Copier',
+  tool_sitemap_description:
+    'Générez sitemap.xml dans votre navigateur. Étapes : collez une URL https par ligne avec lastmod / changefreq / priority facultatifs, prévisualisez le XML correctement échappé et copiez-le à la racine du site. Les règles et limites du protocole sont affichées. Rien n’est envoyé. Exemple : 3 URLs → urlset avec trois éléments url.',
+  tool_sitemap_download: 'Télécharger',
+  tool_sitemap_example:
+    'Saisie d’exemple : https://example.com/ et https://example.com/products avec lastmod 2026-08-01, plus https://example.com/about — la sortie est un urlset à trois éléments url, celui du milieu portant lastmod.',
+  tool_sitemap_example_title: 'Exemple',
+  tool_sitemap_faq_a1:
+    '50 000 URLs ou 50 Mo (non compressé). Le générateur avertit quand la liste dépasse 50 000 afin de découper et d’utiliser un sitemap index.',
+  tool_sitemap_faq_a2:
+    'Une date W3C (yyyy-MM-dd) ou une date-heure complète comme 2026-08-01T12:00:00+00:00. Les lignes dont le lastmod ne correspond pas sont signalées pour correction avant enregistrement.',
+  tool_sitemap_faq_a3:
+    'Non. Google ignore changefreq ; c’est une indication pour d’autres consommateurs. priority est aussi ignorée. La métadonnée qui vaut la peine d’être exacte est lastmod.',
+  tool_sitemap_faq_a4:
+    'IndexNow notifie immédiatement les moteurs participants d’un changement d’URL, tandis qu’un sitemap est une liste permanente que les robots consultent. Utilisez les deux : IndexNow pour la notification immédiate, le sitemap pour la découverte continue.',
+  tool_sitemap_faq_q1: 'Quelle est la limite d’URLs d’un sitemap ?',
+  tool_sitemap_faq_q2: 'Quel format de lastmod est requis ?',
+  tool_sitemap_faq_q3: 'changefreq affecte-t-il l’exploration ?',
+  tool_sitemap_faq_q4: 'Quelle différence avec IndexNow ?',
+  tool_sitemap_format_hint:
+    'Chaque ligne : URL, ou URL | lastmod (yyyy-MM-dd), ou URL | lastmod | changefreq | priority. Exemple : https://example.com/page | 2026-08-01 | weekly | 0.8',
+  tool_sitemap_generate: 'Générer',
+  tool_sitemap_home_desc:
+    'Transformez une liste d’URL en sitemap.xml valide avec lastmod, changefreq et priority, directement dans le navigateur.',
+  tool_sitemap_home_title: 'Générateur de sitemap XML',
+  tool_sitemap_how_body:
+    'Collez votre liste d’URLs, une par ligne. Après une barre verticale, ajoutez lastmod (yyyy-MM-dd), changefreq et priority. La page analyse chaque ligne, échappe les caractères réservés, vérifie que l’URL commence par http(s) et construit un urlset selon le protocole. Copiez le XML à la racine du site, puis référencez-le depuis robots.txt ou envoyez-le dans Search Console.',
+  tool_sitemap_how_title: 'Comment ça marche',
+  tool_sitemap_output_label: 'sitemap.xml',
+  tool_sitemap_ref_google_label: 'Search Central — créer et soumettre un sitemap',
+  tool_sitemap_ref_sitemaps_label: 'sitemaps.org — protocole',
+  tool_sitemap_references: 'sitemaps.org — protocole sitemap ; Google Search Central — créer et soumettre un sitemap.',
+  tool_sitemap_rules_body: 'Voici les règles du protocole sitemap et de Google suivies par ce générateur.',
+  tool_sitemap_rules_item_1:
+    'Obligatoire : chaque <url> doit contenir un <loc> avec l’URL complète. lastmod, changefreq et priority sont facultatifs.',
+  tool_sitemap_rules_item_2:
+    'Format de lastmod : une date W3C (yyyy-MM-dd) ou une date-heure comme 2026-08-01T12:00:00+00:00. Les autres formats sont ignorés ou rejetés.',
+  tool_sitemap_rules_item_3:
+    'changefreq est une indication, pas un signal. Google l’ignore, donc la renseigner ne change pas la fréquence d’exploration.',
+  tool_sitemap_rules_item_4:
+    'Limites : un sitemap accepte au maximum 50 000 URLs et 50 Mo après compression. Au-delà, découpez et utilisez un sitemap index.',
+  tool_sitemap_rules_title: 'Règles et limites du protocole',
+  tool_sitemap_sample: 'Exemple',
+  tool_sitemap_title: 'Générateur de sitemap XML — créez sitemap.xml à partir d’URLs',
+  tool_sitemap_urls_label: 'URLs (une par ligne)',
+  tool_sitemap_urls_ph: 'https://example.com/page',
+  tool_sitemap_usecase_1:
+    'Nouveaux sites : générez un premier sitemap.xml depuis votre liste d’URLs et envoyez-le dans Search Console.',
+  tool_sitemap_usecase_2:
+    'Contenu mis à jour : ajoutez lastmod aux pages récemment modifiées pour que les robots captent le signal de fraîcheur.',
+  tool_sitemap_usecase_3:
+    'Découverte : pointez robots.txt vers l’URL du sitemap pour que les robots le trouvent sans attendre l’envoi.',
+  tool_sitemap_usecases_title: 'Cas d’usage',
+  tool_sitemap_warn_bad_lastmod: 'lastmod invalide (utilisez yyyy-MM-dd ou une date-heure W3C) : {url}',
+  tool_sitemap_warn_invalid_url: 'URL non http ignorée : {url}',
+  tool_sitemap_warn_too_many: 'Plus de 50 000 URLs : découpez en plusieurs sitemaps et reliez-les avec un sitemap index.',
   tool_slope_article: 'Calculez la pente m entre deux points avec (y₂−y₁)/(x₂−x₁).',
   tool_slope_calculate: 'Calculer',
   tool_slope_clear: 'Effacer',

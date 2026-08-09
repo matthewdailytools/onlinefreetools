@@ -182,7 +182,7 @@ export const renderHowToCalculatePValuePage = (opts: {
                                 (0.27886807 +
                                   t *
                                     (-1.13520398 +
-                                      t * (1.48851587 + t * (-0.82215223 + t * 0.17087277)))))))
+                                      t * (1.48851587 + t * (-0.82215223 + t * 0.17087277))))))))
           );
           return x >= 0 ? tau : 2 - tau;
         }

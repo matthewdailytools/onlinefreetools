@@ -84,10 +84,16 @@
 ## 交互规格（给实现用）
 
 - 输入：目标 URL（https 优先）
-- 输出：响应头名/值列表；状态码（若已有则保留）
+- 输出：响应头名/值列表；状态码（若已有则保留）；重定向链（≤5 跳，每跳 status+location）
 - 核心规则：经边缘代理发起请求；展示边缘可见响应头
 - 失败与边界：无效 URL、超时、网络错误 → 可见错误文案
 - 示例：文档化一组示例头（如 `content-type`, `cache-control`）供 Example 区
+
+## S1 增强（2026-08-09，survey §5 S1 第 4 项）
+
+- 结果区新增「SEO header checks」子卡：Cache-Control 指令逐条人话解读；X-Robots-Tag noindex/nofollow/noarchive/none/max-snippet 解读 + 命中 noindex 时警示；Redirect 301/302 语义 + 跨主机提示。
+- Worker：HEAD→GET 回退保留；`redirect: manual` 手动逐跳跟随，返回 `redirects`（每跳 status/location/from），超过 5 跳停在最后响应。
+- i18n：十语新增 27 键（`tool_headers_seo_*`、`tool_headers_robots_*`、FAQ q6/q7、rules_item_5），键集 62 全等（脚本校验）。
 
 ## 页面模块清单（与 tool-creation 对齐）
 

@@ -1,0 +1,26 @@
+{
+  "slug": "meta-serp-preview",
+  "path": "/tools/meta-serp-preview",
+  "category": "developer",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_serp_title",
+  "homeTitleKey": "tool_serp_home_title",
+  "homeDescKey": "tool_serp_home_desc",
+  "faqPrefix": "tool_serp",
+  "related": [
+    "website-headers",
+    "indexnow",
+    "core-web-vitals-checker",
+    "schema-jsonld-generator"
+  ],
+  "logo": "/icons/tools/meta-serp-preview.svg",
+  "page": {
+    "module": "../pages/metaSerpPreviewPage",
+    "export": "renderMetaSerpPreviewPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "seo",
+  "subject": "text"
+}

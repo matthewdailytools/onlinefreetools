@@ -1454,6 +1454,78 @@ const es: SiteLangDict = {
   tool_csv_json_usecase_3:
     'Datos/operaciones: pasa un CSV de reportes o eventos (coma, punto y coma o TSV) a JSON para un pipeline, con comas y saltos de línea bien escapados.',
   tool_csv_json_usecases_title: 'Buenos usos',
+  tool_cwv_cause_label: 'Causas habituales',
+  tool_cwv_clear: 'Limpiar',
+  tool_cwv_cls_cause: 'Contenido dinámico, imágenes sin tamaño y anuncios o embeds que empujan el layout.',
+  tool_cwv_cls_fix: 'Define ancho/alto en medios; reserva espacio para anuncios y embeds.',
+  tool_cwv_cls_label: 'CLS (Cumulative Layout Shift)',
+  tool_cwv_cls_ph: 'p. ej. 0.18',
+  tool_cwv_description:
+    'Pega LCP, INP y CLS de PageSpeed, CrUX o el widget de métricas de rendimiento de Microsoft Clarity para ver Bueno, Necesita mejorar o Pobre, con causas y mejoras alineadas a Clarity. Todo en el navegador, sin subir números a un servidor. Ejemplo: 3,2 s / 280 ms / 0,18 → Necesita mejorar.',
+  tool_cwv_err_cls: 'CLS debe ser ≥ 0.',
+  tool_cwv_err_empty: 'Introduce al menos LCP, INP o CLS.',
+  tool_cwv_err_inp: 'INP debe ser ≥ 0 (ms).',
+  tool_cwv_err_lcp: 'LCP debe ser ≥ 0.',
+  tool_cwv_example: 'Ejemplo: LCP 3,2 s, INP 280 ms, CLS 0,18 → las tres Necesita mejorar, con tips de imagen/JS/layout.',
+  tool_cwv_example_title: 'Ejemplo',
+  tool_cwv_faq_a1:
+    'Los objetivos “Bueno” coinciden con Clarity y Core Web Vitals; las bandas NI/Pobre siguen web.dev/Google en Reglas.',
+  tool_cwv_faq_a2: 'No. Mide con PSI/CrUX/Clarity; aquí solo calificas números pegados sin subir la URL.',
+  tool_cwv_faq_a3: 'Clarity pasó de FID a INP en enero de 2025. Esta herramienta solo califica INP.',
+  tool_cwv_faq_a4: 'No. Permanecen en tu dispositivo/navegador; no se suben a un servidor.',
+  tool_cwv_faq_a5: 'Clarity documenta que el widget muestra el p75. Califica el mismo percentil de tu informe.',
+  tool_cwv_faq_q1: '¿De dónde salen los umbrales?',
+  tool_cwv_faq_q2: '¿Sustituye a PageSpeed o Clarity?',
+  tool_cwv_faq_q3: '¿Y FID?',
+  tool_cwv_faq_q4: '¿Se suben mis números?',
+  tool_cwv_faq_q5: '¿Por qué el percentil 75?',
+  tool_cwv_fix_label: 'Qué probar',
+  tool_cwv_grade: 'Calificar',
+  tool_cwv_grade_good: 'Bueno',
+  tool_cwv_grade_ni: 'Necesita mejorar',
+  tool_cwv_grade_poor: 'Pobre',
+  tool_cwv_home_desc: 'Califica LCP, INP y CLS con umbrales públicos. Los valores no salen de tu dispositivo.',
+  tool_cwv_home_title: 'Comprobar Core Web Vitals',
+  tool_cwv_how_body:
+    'Introduce LCP (s o ms), INP en ms y CLS. Cada valor se mapea a Bueno / Necesita mejorar / Pobre y, si no es Bueno, muestra causas y mejoras resumidas de Clarity.',
+  tool_cwv_how_title: 'Cómo funciona',
+  tool_cwv_inp_cause: 'JavaScript pesado y actualizaciones de render grandes.',
+  tool_cwv_inp_fix: 'Reduce, aplaza o carga JS en async; usa workers; parte tareas largas.',
+  tool_cwv_inp_label: 'INP (Interaction to Next Paint)',
+  tool_cwv_inp_ph: 'p. ej. 280',
+  tool_cwv_lcp_cause: 'Imágenes grandes, servidor lento o JS/CSS que bloquean el render (Clarity).',
+  tool_cwv_lcp_fix: 'Optimiza imágenes, mejora el TTFB y minifica o aplaza JS/CSS bloqueantes.',
+  tool_cwv_lcp_label: 'LCP (Largest Contentful Paint)',
+  tool_cwv_lcp_ph: 'p. ej. 3.2',
+  tool_cwv_lcp_unit_group: 'Unidad de LCP',
+  tool_cwv_lcp_unit_ms: 'LCP en milisegundos',
+  tool_cwv_lcp_unit_s: 'LCP en segundos',
+  tool_cwv_metric_cls: 'CLS',
+  tool_cwv_metric_inp: 'INP',
+  tool_cwv_metric_lcp: 'LCP',
+  tool_cwv_note_p75:
+    'Los umbrales siguen las bandas públicas de Core Web Vitals. Clarity suele mostrar el percentil 75: aquí se califican los números que pegas; no rastreamos tu sitio.',
+  tool_cwv_ref_clarity_label: 'Microsoft Learn — Clarity Performance metrics (en)',
+  tool_cwv_ref_clarity_zh_label: 'Microsoft Learn — Clarity 性能指标 (zh-CN)',
+  tool_cwv_ref_google_label: 'Google Search — Core Web Vitals',
+  tool_cwv_ref_webdev_label: 'web.dev — Web Vitals',
+  tool_cwv_references: 'Microsoft Learn Clarity Performance metrics; web.dev; Google CWV.',
+  tool_cwv_rules_body:
+    'Bandas de Core Web Vitals (web.dev / Google). Clarity usa los mismos objetivos “buenos”: LCP ≤ 2,5 s, INP ≤ 200 ms, CLS ≤ 0,1. Clarity pasó de FID a INP en enero de 2025.',
+  tool_cwv_rules_item_1: 'LCP: Bueno ≤ 2,5 s; Necesita mejorar ≤ 4,0 s; peor por encima.',
+  tool_cwv_rules_item_2: 'INP: Bueno ≤ 200 ms; Necesita mejorar ≤ 500 ms; peor por encima.',
+  tool_cwv_rules_item_3: 'CLS: Bueno ≤ 0,1; Necesita mejorar ≤ 0,25; peor por encima.',
+  tool_cwv_rules_item_4: 'No es un escaneo Lighthouse/Clarity en vivo: pega valores ya medidos.',
+  tool_cwv_rules_item_5: 'Solo análisis web; no sirve para apps nativas (nota de Clarity).',
+  tool_cwv_rules_title: 'Umbrales y reglas',
+  tool_cwv_sample: 'Cargar ejemplo',
+  tool_cwv_summary_label: 'Resumen',
+  tool_cwv_summary_tpl: '{good} de {n} métricas en Bueno',
+  tool_cwv_title: 'Comprobar Core Web Vitals — Califica tus puntuaciones de experiencia',
+  tool_cwv_usecase_1: 'Tras Clarity Performance Overview, pega p75 LCP/INP/CLS para interpretar offline.',
+  tool_cwv_usecase_2: 'Antes y después de comprimir imágenes: compara LCP de PSI o datos de campo.',
+  tool_cwv_usecase_3: 'Explicar FID→INP y las tres métricas de experiencia en una sola página.',
+  tool_cwv_usecases_title: 'Buenos usos',
   tool_date_difference_article: 'Calculadora de diferencia de fechas',
   tool_date_difference_calculate: 'Calcular',
   tool_date_difference_clear: 'Limpiar',
@@ -2080,7 +2152,7 @@ const es: SiteLangDict = {
   tool_headers_article:
     'Mira las cabeceras que recibe el edge para una URL pública: caché, CORS, redirecciones y cabeceras de seguridad. La petición pasa por proxy; no almacenamos el cuerpo de la página como producto.',
   tool_headers_description:
-    'Comprueba online las cabeceras HTTP de respuesta de una URL desde nuestro edge. Pasos: pega https, envía HEAD (GET si hace falta), sigue redirecciones, muestra estado y mapa de cabeceras; bloquea hosts privados. Ejemplo: lee cache-control, CORS y Strict-Transport-Security al depurar CDN o redirecciones.',
+    'Comprueba online las cabeceras HTTP de respuesta de una URL desde nuestro edge. Pasos: pega https, envía HEAD (GET si hace falta), sigue redirecciones, muestra estado y mapa de cabeceras; bloquea hosts privados. Extras: lectura en lenguaje claro de Cache-Control, X-Robots-Tag y la cadena de redirección. Ejemplo: lee cache-control, CORS y Strict-Transport-Security al depurar CDN o redirecciones.',
   tool_headers_example:
     'ejemplo.com → estado 200, URL final sin cambios; cabeceras con content-type: text/html y, según el origen, cache-control o cabeceras de seguridad.',
   tool_headers_example_title: 'Ejemplo',
@@ -2093,24 +2165,64 @@ const es: SiteLangDict = {
     'No siempre. Ves la respuesta desde nuestro edge; CDN, geo o filtros anti-bot pueden cambiar el resultado respecto a tu PC.',
   tool_headers_faq_a5:
     'Cada consulta es una petición corta en el edge. No hay historial de URLs; evita pegar secretos en parámetros.',
+  tool_headers_faq_a6:
+    'Para SEO lo útil es saber si la respuesta se cachea (no-store frente a max-age), cuánto la conservan las cachés compartidas (s-maxage) y si obliga a revalidar (no-cache). Las páginas que cambian poco se benefician de un max-age largo para que el CDN las sirva sin tocar el origin.',
+  tool_headers_faq_a7:
+    'x-robots-tag vale para cualquier tipo de respuesta — HTML, PDF, imágenes — mientras que robots meta solo funciona dentro del HTML. Úsalo para impedir la indexación de archivos no HTML o para aplicar reglas difíciles de meter en la propia página. Si hay conflicto, x-robots-tag gana.',
   tool_headers_faq_q1: '¿Qué información dan las cabeceras de respuesta?',
   tool_headers_faq_q2: '¿Descarga el HTML completo de la página?',
   tool_headers_faq_q3: '¿Por qué no puedo probar localhost o IPs privadas?',
   tool_headers_faq_q4: '¿Es lo mismo que las DevTools del navegador?',
   tool_headers_faq_q5: '¿Guardáis un historial de las URLs que consulto?',
+  tool_headers_faq_q6: '¿Qué debo mirar en cache-control?',
+  tool_headers_faq_q7: '¿Por qué importa x-robots-tag si ya existe robots meta?',
   tool_headers_how_body:
-    'Pega una URL pública http(s) y pulsa comprobar. El worker del edge manda HEAD (GET si hace falta), sigue redirecciones y devuelve estado, URL final y cabeceras observadas. Los destinos privados se rechazan. Es la vista del edge: puede diferir de tu navegador si el CDN enruta por región.',
+    'Pega una URL pública http(s) y pulsa comprobar. El worker del edge manda HEAD (GET si hace falta), sigue las redirecciones una a una (hasta 5 saltos) y devuelve estado, URL final, cabeceras observadas y la cadena de redirección. Los destinos privados se rechazan. Es la vista del edge: puede diferir de tu navegador si el CDN enruta por región.',
   tool_headers_how_title: 'Cómo funciona',
   tool_headers_ref_mdn_label: 'MDN — Cabeceras HTTP',
   tool_headers_ref_rfc9110_label: 'RFC 9110 — Semántica HTTP',
   tool_headers_ref_rfc9111_label: 'RFC 9111 — Caché HTTP',
+  tool_headers_robots_absent:
+    'Sin cabecera X-Robots-Tag. Las reglas de indexación vienen de robots.txt y del robots meta de la página.',
+  tool_headers_robots_blocked: 'Esta página queda fuera de la indexación por esta cabecera.',
+  tool_headers_robots_maxsnippet: 'max-snippet={n}: limita el largo del fragmento a {n} caracteres.',
+  tool_headers_robots_noarchive: 'noarchive: los buscadores no mostrarán una copia en caché de esta URL.',
+  tool_headers_robots_nofollow: 'nofollow: los rastreadores no seguirán los enlaces de esta respuesta.',
+  tool_headers_robots_noindex: 'noindex: esta URL queda excluida de los resultados de búsqueda.',
+  tool_headers_robots_none: 'none: equivale a noindex + nofollow.',
   tool_headers_rules_body:
     'Actúa como proxy efímero para inspeccionar cabeceras; no guarda el contenido de la página. Los nombres siguen la semántica HTTP (ver Referencias).',
   tool_headers_rules_item_1: 'HEAD primero; GET si el origen no admite HEAD.',
   tool_headers_rules_item_2: 'Sigue redirecciones e informa la URL final.',
   tool_headers_rules_item_3: 'Bloquea localhost e IPs de red privada.',
   tool_headers_rules_item_4: 'Resalta cabeceras habituales: Cache-Control, CORS, CSP, etc.',
+  tool_headers_rules_item_5: 'Recoge la cadena de redirección (hasta 5 saltos) con estado y Location de cada paso.',
   tool_headers_rules_title: 'Qué hace el comprobador',
+  tool_headers_seo_cache_absent:
+    'Sin cabecera Cache-Control. Navegadores y CDN aplican heurísticas, así que contenido recién cambiado podría servirse caducado.',
+  tool_headers_seo_cache_heading: 'Cache-Control',
+  tool_headers_seo_cache_immutable: 'immutable: las cachés no deben revalidar durante la vida de frescura — típico en assets con hash.',
+  tool_headers_seo_cache_maxage:
+    'max-age={n}: navegadores y cachés compartidas pueden reutilizar esta respuesta durante {n} segundos sin preguntar al origin.',
+  tool_headers_seo_cache_mustrevalidate: 'must-revalidate: las respuestas caducadas deben revalidarse antes de reutilizarse.',
+  tool_headers_seo_cache_nocache: 'no-cache: se puede guardar, pero hay que revalidar antes de reutilizar.',
+  tool_headers_seo_cache_nostore: 'no-store: no se guarda nada; cada petición llega al origin. Bien para páginas privadas o volátiles.',
+  tool_headers_seo_cache_other: 'Directiva no explicada aquí: {d}',
+  tool_headers_seo_cache_private: 'private: solo la caché del navegador puede guardar la respuesta; las compartidas no.',
+  tool_headers_seo_cache_public: 'public: cualquier caché puede guardar la respuesta.',
+  tool_headers_seo_cache_smaxage:
+    's-maxage={n}: las cachés compartidas (CDN/proxy) pueden servir durante {n} segundos; anula max-age para ellas.',
+  tool_headers_seo_intro: 'Lectura en lenguaje claro de las cabeceras que más importan para búsqueda y rastreo.',
+  tool_headers_seo_redirect_301:
+    '301 Permanente: los buscadores transfieren las señales de ranking al destino — adecuado para páginas movidas y cambios de www.',
+  tool_headers_seo_redirect_302:
+    '302/307 Temporal: mantenlo para cambios a corto plazo — las señales de ranking siguen en la URL original.',
+  tool_headers_seo_redirect_chain: 'La petición siguió {n} redirección(es) antes de la respuesta final:',
+  tool_headers_seo_redirect_cross_host: 'Este salto sale del host original: {from} → {to}.',
+  tool_headers_seo_redirect_heading: 'Redirección',
+  tool_headers_seo_redirect_ok: 'Sin redirección: la URL final es la que comprobaste.',
+  tool_headers_seo_robots_heading: 'X-Robots-Tag',
+  tool_headers_seo_title: 'Comprobaciones SEO de cabeceras',
   tool_headers_title: 'Ver cabeceras HTTP de un sitio — Inspeccionar response headers',
   tool_headers_usecase_1: 'Antes de un despliegue, confirma Cache-Control o la caché del CDN.',
   tool_headers_usecase_2: 'Depura preflight CORS leyendo Access-Control-* en la respuesta.',
@@ -4956,6 +5068,70 @@ const es: SiteLangDict = {
   tool_quadratic_equation_usecase_2: 'Quick sketch.',
   tool_quadratic_equation_usecase_3: 'Algebra drill with related tools.',
   tool_quadratic_equation_usecases_title: 'Cuándo usarlo',
+  tool_robots_agent_add: 'Añadir agente personalizado',
+  tool_robots_agent_remove: 'Quitar agente',
+  tool_robots_agents_hint: 'Marca los rastreadores que quieras incluir y añade rutas para cada grupo.',
+  tool_robots_agents_label: 'User-agents',
+  tool_robots_allow_label: 'Rutas Allow (una por línea)',
+  tool_robots_clear: 'Limpiar',
+  tool_robots_copied: 'Copiado',
+  tool_robots_copy: 'Copiar',
+  tool_robots_description:
+    'Genera un robots.txt en tu navegador. Pasos: elige los user-agents, añade rutas Allow / Disallow y una línea Sitemap, y copia el resultado en texto plano con las reglas de sintaxis y los user-agents actuales de rastreadores de IA explicados. Corre localmente: no se sube nada. Ejemplo: bloquear GPTBot mientras Googlebot sigue totalmente habilitado.',
+  tool_robots_disallow_label: 'Rutas Disallow (una por línea)',
+  tool_robots_download: 'Descargar',
+  tool_robots_empty_agent: 'Elige o añade primero un user-agent.',
+  tool_robots_example:
+    'Muestra: Googlebot con Allow: / (totalmente habilitado), GPTBot con Disallow: / (bloqueado) y una línea Sitemap apuntando a /sitemap.xml. La salida refleja este formato: un grupo por rastreador, línea en blanco entre grupos y sitemap al final.',
+  tool_robots_example_title: 'Ejemplo',
+  tool_robots_faq_a1:
+    'Le indica a ese rastreador no buscar ninguna URL bajo la raíz del sitio. Si Googlebot recibe Disallow: /, tus páginas pueden desaparecer de Google Search. Para una ruta de staging usa Disallow: /private/ en su lugar.',
+  tool_robots_faq_a2:
+    'Crea un grupo con el User-agent del rastreador (por ejemplo GPTBot, ClaudeBot, Google-Extended, CCBot, PerplexityBot) y añade Disallow: /. Consulta la documentación oficial del rastreador, ya que los rastreadores de IA actualizan sus user-agents y rangos IP de vez en cuando.',
+  tool_robots_faq_a3:
+    'La posición no afecta cómo la leen los buscadores, pero la convención la sitúa al final del archivo. El generador la añade al final cuando proporcionas una URL.',
+  tool_robots_faq_a4:
+    'No. El archivo se genera en tu navegador y nunca se envía a un servidor. Cierra la pestaña y no queda nada guardado.',
+  tool_robots_faq_q1: '¿Qué pasa si escribo Disallow: / ?',
+  tool_robots_faq_q2: '¿Cómo bloqueo rastreadores de IA como GPTBot?',
+  tool_robots_faq_q3: '¿Dónde debe ir la línea Sitemap?',
+  tool_robots_faq_q4: '¿Mi robots.txt se sube a algún sitio?',
+  tool_robots_generate: 'Generar',
+  tool_robots_home_desc: 'Crea un robots.txt con sintaxis correcta: permisos, bloqueos y rastreadores de IA, en tu navegador.',
+  tool_robots_home_title: 'Generador de robots.txt',
+  tool_robots_how_body:
+    'Selecciona los rastreadores objetivo, añade rutas Allow y Disallow para cada grupo, agrega opcionalmente una línea Sitemap y pulsa Generar. La página ensambla el archivo de texto siguiendo el formato de RFC 9309: una línea User-agent por grupo, sus líneas Allow/Disallow debajo, una línea en blanco entre grupos y la línea Sitemap al final. Copia el resultado a la raíz de tu sitio en /robots.txt.',
+  tool_robots_how_title: 'Cómo funciona',
+  tool_robots_include: 'Incluir este user-agent',
+  tool_robots_output_label: 'robots.txt',
+  tool_robots_owner_of: 'Propietario: {owner}',
+  tool_robots_ref_ai_label: 'Search Central — Rastreadores de IA',
+  tool_robots_ref_google_label: 'Search Central — robots.txt',
+  tool_robots_ref_rfc_label: 'RFC 9309 — Protocolo de exclusión de robots',
+  tool_robots_references:
+    'RFC 9309 Protocolo de exclusión de robots; Google Search Central — robots.txt; Google Search Central — Gestionar rastreadores de IA.',
+  tool_robots_rules_body:
+    'Las reglas de robots.txt son prefijos de ruta, no patrones, y un rastreador aplica el último grupo que coincide en el archivo. Estas son las reglas que sigue este generador.',
+  tool_robots_rules_item_1:
+    'Orden de grupos: una línea User-agent comienza un grupo para ese rastreador; una línea en blanco lo termina. El último grupo que coincide con un rastreador manda.',
+  tool_robots_rules_item_2:
+    'Coincidencia por prefijo: Allow y Disallow coinciden con prefijos de ruta, no subcadenas ni regex. Solo * y $ son especiales (RFC 9309).',
+  tool_robots_rules_item_3:
+    'Disallow: / bloquea a ese agente en todo el sitio. Disallow con valor vacío permite todo para ese agente.',
+  tool_robots_rules_item_4:
+    'Sitemap es una extensión, no parte de RFC 9309. No distingue mayúsculas y puede ir en cualquier lugar, aunque se suele colocar al final.',
+  tool_robots_rules_title: 'Reglas de sintaxis importantes',
+  tool_robots_sample: 'Ejemplo',
+  tool_robots_sitemap_label: 'URL de Sitemap (opcional)',
+  tool_robots_sitemap_ph: 'https://example.com/sitemap.xml',
+  tool_robots_title: 'Generador de robots.txt — gestiona permisos y bloqueos de rastreadores de IA',
+  tool_robots_usecase_1:
+    'Sitios nuevos: genera un robots.txt inicial que mantiene habilitados los buscadores y oculta rutas de staging privadas.',
+  tool_robots_usecase_2:
+    'Control de rastreadores de IA: bloquea GPTBot, ClaudeBot, Google-Extended, CCBot o PerplexityBot para entrenamiento o extracción de resúmenes sin tocar Googlebot.',
+  tool_robots_usecase_3:
+    'Descubrimiento: combina robots.txt con una línea Sitemap para que los rastreadores encuentren tu sitemap.',
+  tool_robots_usecases_title: 'Para qué sirve',
   tool_roi_article:
     'El ROI simple expresa la ganancia neta frente al coste en porcentaje. Úsalo para recaps aproximados de campañas o proyectos; no calcula IRR/VAN multiperiodo.',
   tool_roi_calculate: 'Calcular',
@@ -5201,6 +5377,87 @@ const es: SiteLangDict = {
   tool_sample_size_usecase_2: 'Ver cómo un E más pequeño dispara n.',
   tool_sample_size_usecase_3: 'Combinarlo luego con una página de intervalo de confianza.',
   tool_sample_size_usecases_title: 'Cuándo usarlo',
+  tool_schema_article_author: 'Nombre del autor',
+  tool_schema_article_date_modified: 'Fecha de modificación (AAAA-MM-DD)',
+  tool_schema_article_date_published: 'Fecha de publicación (AAAA-MM-DD)',
+  tool_schema_article_description: 'Descripción',
+  tool_schema_article_headline: 'Titular',
+  tool_schema_article_image: 'URL de imagen (opcional)',
+  tool_schema_article_url: 'URL de la página',
+  tool_schema_breadcrumb_add: 'Añadir nivel',
+  tool_schema_breadcrumb_min: 'Las migas de pan necesitan al menos dos niveles.',
+  tool_schema_breadcrumb_name: 'Nombre {n}',
+  tool_schema_breadcrumb_url: 'URL {n}',
+  tool_schema_clear: 'Limpiar',
+  tool_schema_copied: 'Copiado',
+  tool_schema_copy: 'Copiar',
+  tool_schema_description:
+    'Genera JSON-LD en tu navegador. Pasos: elige un tipo (FAQ, artículo, migas de pan, organización), rellena los campos obligatorios y copia un marcado Schema.org válido con una etiqueta script lista para pegar. Distingue campos obligatorios y opcionales y valida el JSON antes de copiar. No se sube nada. Ejemplo: un FAQ de dos preguntas genera mainEntity con dos nodos Question.',
+  tool_schema_download: 'Descargar',
+  tool_schema_err_no_fields: 'Rellena primero los campos obligatorios.',
+  tool_schema_example:
+    'Muestra de FAQ con dos preguntas: «¿Cómo instalo el SDK?» y «¿Se procesan los datos localmente?» → la salida contiene un array mainEntity con dos objetos Question, cada uno con acceptedAnswer.text, listo para pegar en el head de tu página.',
+  tool_schema_example_title: 'Ejemplo',
+  tool_schema_faq_a1:
+    'Para buscadores y otros consumidores que leen el marcado de Schema.org. Está incrustado en tu HTML para que las máquinas entiendan entidades, relaciones y hechos — no es contenido visible para el usuario.',
+  tool_schema_faq_a2:
+    'No. Los resultados enriquecidos de FAQ dejaron de mostrarse en todo el sitio en mayo de 2026, y los de HowTo antes. Google puede seguir parseando el marcado para entender la página, pero no hay garantía de resultado enriquecido, así que trata el schema como claridad para la comprensión, no como KPI de ranking o rich result.',
+  tool_schema_faq_a3:
+    'FAQ necesita pregunta y respuesta por elemento; Artículo necesita titular y autor; Migas de pan necesita al menos dos niveles con nombre y URL; Organización necesita nombre y URL. La página marca los obligatorios y lista los que falten.',
+  tool_schema_faq_a4:
+    'Google considera engañoso el dato estructurado que no refleja la página visible. Por ejemplo, una pregunta FAQ que la página no responde realmente puede verse como abuso de marcado aunque el JSON sea válido.',
+  tool_schema_faq_add: 'Añadir pregunta',
+  tool_schema_faq_answer: 'Respuesta {n}',
+  tool_schema_faq_q1: '¿Para quién son los datos estructurados JSON-LD?',
+  tool_schema_faq_q2: '¿Añadir schema FAQ garantiza un resultado enriquecido?',
+  tool_schema_faq_q3: '¿Qué campos son obligatorios en el marcado generado?',
+  tool_schema_faq_q4: '¿Por qué el marcado debe coincidir con el contenido visible?',
+  tool_schema_faq_question: 'Pregunta {n}',
+  tool_schema_faq_remove: 'Quitar',
+  tool_schema_fields_label: 'Campos',
+  tool_schema_generate: 'Generar',
+  tool_schema_home_desc: 'Crea datos estructurados Schema.org para FAQ, artículo, migas de pan y organización en tu navegador.',
+  tool_schema_home_title: 'Generador de JSON-LD',
+  tool_schema_how_body:
+    'Elige un tipo de esquema, rellena el formulario y pulsa Generar. La página construye un objeto JSON-LD de Schema.org, comprueba que los campos obligatorios estén presentes y muestra el resultado formateado envuelto en una etiqueta script para pegarlo en el <head> de tu página. Antes de renderizar el resultado se hace una comprobación de sintaxis; los campos obligatorios que falten se listan en vez de producir un marcado roto en silencio.',
+  tool_schema_how_title: 'Cómo funciona',
+  tool_schema_missing_required: 'Falta el campo obligatorio: {field}',
+  tool_schema_optional: 'Opcional',
+  tool_schema_org_description: 'Descripción breve (opcional)',
+  tool_schema_org_logo: 'URL del logo (opcional)',
+  tool_schema_org_name: 'Nombre de la organización',
+  tool_schema_org_url: 'URL del sitio',
+  tool_schema_output_label: 'Salida JSON-LD',
+  tool_schema_ref_google_label: 'Search Central — Datos estructurados',
+  tool_schema_ref_schema_label: 'Schema.org',
+  tool_schema_references: 'Schema.org; Google Search Central — Conceptos básicos de datos estructurados.',
+  tool_schema_required: 'Obligatorio',
+  tool_schema_rules_body:
+    'Cada tipo tiene una forma mínima válida. El generador valida que el JSON esté bien formado y señala los campos obligatorios vacíos, pero no puede saber si el marcado coincide con el contenido visible de tu página.',
+  tool_schema_rules_item_1:
+    'FAQ: mainEntity guarda un array de nodos Question; cada elemento necesita name y acceptedAnswer.text.',
+  tool_schema_rules_item_2:
+    'Artículo: headline y author son obligatorios; datePublished, dateModified, image y description son opcionales pero recomendados.',
+  tool_schema_rules_item_3:
+    'Migas de pan: itemListElement es una lista ordenada donde cada position debe ser secuencial (1, 2, 3…).',
+  tool_schema_rules_item_4:
+    'Coherencia: Google compara los datos estructurados con la página visible. Marcar contenido que no está en la página infringe las políticas de spam.',
+  tool_schema_rules_title: 'Qué comprueba el generador',
+  tool_schema_sample: 'Ejemplo',
+  tool_schema_title: 'Generador de JSON-LD — crea datos estructurados para FAQ, artículo y migas de pan',
+  tool_schema_type_article: 'Artículo',
+  tool_schema_type_breadcrumb: 'Migas de pan',
+  tool_schema_type_faq: 'FAQ',
+  tool_schema_type_label: 'Tipo de esquema',
+  tool_schema_type_organization: 'Organización',
+  tool_schema_usecase_1:
+    'Páginas FAQ: añade una lista de preguntas como datos estructurados para que los buscadores entiendan mejor las preguntas y respuestas.',
+  tool_schema_usecase_2:
+    'Artículos y documentación: incorpora marcado Article con autor y fechas en sitios de contenido y bases de conocimiento.',
+  tool_schema_usecase_3:
+    'Producto y estructura del sitio: usa Breadcrumb para describir rutas de navegación y Organization para nombre y logo de la marca.',
+  tool_schema_usecases_title: 'Para qué sirve',
+  tool_schema_wrap_script: 'Envolver en <script type="application/ld+json">',
   tool_scientific_notation_article: 'Convierte entre decimales y notación científica a×10^b en el navegador.',
   tool_scientific_notation_calculate: 'Calcular',
   tool_scientific_notation_clear: 'Limpiar',
@@ -5245,6 +5502,73 @@ const es: SiteLangDict = {
   tool_scientific_notation_usecases_title: 'Cuándo usarlo',
   tool_scientific_notation_value_label: 'Valor',
   tool_scientific_notation_value_ph: 'p. ej. 12300 o 1,23e4 o 1,23×10^4',
+  tool_serp_char_count: '{n} caracteres',
+  tool_serp_clear: 'Limpiar',
+  tool_serp_compare_label: 'Comparar con un segundo título',
+  tool_serp_copied: 'Copiado',
+  tool_serp_copy: 'Copiar',
+  tool_serp_cut_warning: 'Recortado: la línea supera el viewport de ~{limit}px',
+  tool_serp_desc_label: 'Meta descripción',
+  tool_serp_desc_ph: 'El texto del fragmento bajo el título del resultado',
+  tool_serp_description:
+    'Pega un título y una descripción para ver cómo se recortan en los resultados de Google, en escritorio y móvil. Introduce título, descripción y URL opcional; consulta el número de caracteres, la anchura estimada en píxeles y el punto de corte del fragmento; compara dos títulos lado a lado. Todo se calcula en tu navegador: no se sube nada. Ejemplo: un título de 60 letras y uno de 30 caracteres CJK pueden llegar al límite de píxeles con cuentas distintas.',
+  tool_serp_desktop: 'Vista de escritorio',
+  tool_serp_err_title_empty: 'Introduce un título para ver la vista previa.',
+  tool_serp_example:
+    'Muestra: título «Meta SERP Preview — How to Preview Google Title & Description Truncation Online», descripción de unas dos líneas, URL example.com/page → en escritorio el título se corta cerca del carácter 57 con «…», y en móvil antes; la descripción cabe en dos líneas.',
+  tool_serp_example_title: 'Ejemplo',
+  tool_serp_faq_a1:
+    'Los resultados se recortan por ancho de píxel renderizado, no por número de caracteres. Los glifos CJK miden casi un em mientras que las letras ASCII promedian medio em, así que menos caracteres llenan el mismo viewport.',
+  tool_serp_faq_a2:
+    'No. Los viewports de escritorio y móvil varían por dispositivo y fuente. Esta herramienta usa los límites comunes de ~600px en escritorio y ~460px en móvil como estimación para planificar, no como garantía de cómo Google renderizará tu página.',
+  tool_serp_faq_a3:
+    'Es una estimación local en la misma dirección. Para ver el resultado final, abre tu página en la inspección de URLs de Search Console o en la prueba de resultados enriquecidos, que renderizan con el entorno real de Google.',
+  tool_serp_faq_a4:
+    'No. Todo el texto se queda en la pestaña de tu navegador y nunca se envía a un servidor. Al cerrar la pestaña, todo desaparece.',
+  tool_serp_faq_q1: '¿Por qué un título CJK de 30 caracteres se corta antes que uno en inglés de 60?',
+  tool_serp_faq_q2: '¿Son exactos los límites de píxeles?',
+  tool_serp_faq_q3: '¿Coincide con la vista móvil de Search Console?',
+  tool_serp_faq_q4: '¿Se sube mi título a algún sitio?',
+  tool_serp_fit: 'Cabe en el viewport',
+  tool_serp_home_desc: 'Mira el corte del título y la descripción antes de publicar.',
+  tool_serp_home_title: 'Vista previa de resultados de Google',
+  tool_serp_how_body:
+    'Escribe o pega el título, la descripción y una URL opcional. La herramienta estima cuántos caracteres y píxeles aproximados ocupa cada línea con una aproximación de métricas de fuente (los glifos anchos CJK cuentan más que las letras ASCII estrechas) y dibuja un fragmento estilo Google de escritorio y otro de móvil. Las líneas más anchas que el viewport estimado llevan una marca de corte.',
+  tool_serp_how_title: 'Cómo funciona',
+  tool_serp_mobile: 'Vista móvil',
+  tool_serp_preview: 'Vista previa',
+  tool_serp_px_width: '~{n}px',
+  tool_serp_ref_snippet_label: 'Search Central — Control de fragmentos',
+  tool_serp_ref_title_label: 'Search Central — Control de títulos',
+  tool_serp_references:
+    'Google Search Central — Controla los enlaces de título; Google Search Central — Controla los fragmentos.',
+  tool_serp_rules_body:
+    'Los límites de píxeles son aproximados. Google mide el ancho renderizado, no el número de caracteres, así que los idiomas densos y los glifos anchos se recortan con menos caracteres.',
+  tool_serp_rules_item_1:
+    'El límite del título de escritorio se estima en unos 600px y el del móvil en unos 460px. Una línea más ancha se muestra con marca de corte.',
+  tool_serp_rules_item_2:
+    'Las descripciones se estiman en unas dos líneas (unos 600px en escritorio y 460px en móvil por línea).',
+  tool_serp_rules_item_3:
+    'El ancho de glifo se estima: letras y dígitos ASCII unos 0.5 em, caracteres CJK cerca de 1 em y emojis más anchos.',
+  tool_serp_rules_item_4:
+    'Son estimaciones para planificar. Google puede reescribir títulos o descripciones, y el renderizado real depende de la fuente y el viewport del buscador.',
+  tool_serp_rules_title: 'Qué muestra la vista previa',
+  tool_serp_sample: 'Ejemplo',
+  tool_serp_serp_url_display: 'example.com › page',
+  tool_serp_title: 'Vista previa de resultados de Google — mira el corte de título y descripción',
+  tool_serp_title_b_label: 'Título B',
+  tool_serp_title_b_ph: 'Pega un título alternativo para comparar',
+  tool_serp_title_label: 'Título',
+  tool_serp_title_ph: 'El título de la página que aparece en los resultados',
+  tool_serp_url_label: 'URL (opcional)',
+  tool_serp_url_ph: 'p. ej. https://example.com/page',
+  tool_serp_usecase_1:
+    'Antes de publicar: pega el título y la descripción finales para ver si las palabras clave sobreviven al corte de píxeles.',
+  tool_serp_usecase_2:
+    'Compara dos títulos candidatos lado a lado y elige el que mantiene la palabra clave principal visible en móvil.',
+  tool_serp_usecase_3:
+    'Páginas CJK: comprueba cuántos caracteres chinos caben antes del corte, porque los glifos anchos alcanzan el límite con menos caracteres.',
+  tool_serp_usecases_title: 'Para qué sirve',
   tool_share_copied: 'Copiado',
   tool_share_copy: 'Copiar enlace',
   tool_share_hint: 'Compártelo en redes, copia el enlace o usa el menú de compartir del dispositivo.',
@@ -5297,6 +5621,63 @@ const es: SiteLangDict = {
   tool_significant_figures_usecase_2: 'Ajustar un resultado a la precisión permitida.',
   tool_significant_figures_usecase_3: 'Comparar forma ordinaria y científica.',
   tool_significant_figures_usecases_title: 'Cuándo usarlo',
+  tool_sitemap_clear: 'Limpiar',
+  tool_sitemap_copied: 'Copiado',
+  tool_sitemap_copy: 'Copiar',
+  tool_sitemap_description:
+    'Genera sitemap.xml en tu navegador. Pasos: pega una URL https por línea con lastmod / changefreq / priority opcionales, previsualiza el XML con el escapado correcto y cópialo a la raíz del sitio. Incluye las reglas y límites del protocolo. Nada se sube. Ejemplo: 3 URLs → urlset con tres elementos url.',
+  tool_sitemap_download: 'Descargar',
+  tool_sitemap_example:
+    'Entrada de muestra: https://example.com/ y https://example.com/products con lastmod 2026-08-01, más https://example.com/about — la salida es un urlset con tres elementos url, el del medio con lastmod.',
+  tool_sitemap_example_title: 'Ejemplo',
+  tool_sitemap_faq_a1:
+    '50.000 URLs o 50MB (sin comprimir). El generador avisa cuando la lista supera 50.000 para que lo dividas y uses un sitemap index.',
+  tool_sitemap_faq_a2:
+    'Una fecha W3C (yyyy-MM-dd) o un datetime completo como 2026-08-01T12:00:00+00:00. El generador marca las líneas con lastmod incorrecto para que lo corrijas antes de guardar.',
+  tool_sitemap_faq_a3:
+    'No. Google ignora changefreq; es solo una pista para otros consumidores. Priority también se ignora. El campo que merece la pena mantener exacto es lastmod.',
+  tool_sitemap_faq_a4:
+    'IndexNow avisa al instante a los buscadores participantes de un cambio de URL; un sitemap es una lista permanente que los rastreadores consultan. Usa ambos: IndexNow para notificar, sitemap para el descubrimiento continuo.',
+  tool_sitemap_faq_q1: '¿Cuál es el límite de URLs de un sitemap?',
+  tool_sitemap_faq_q2: '¿Qué formato exige lastmod?',
+  tool_sitemap_faq_q3: '¿Afecta changefreq al rastreo?',
+  tool_sitemap_faq_q4: '¿En qué se diferencia de IndexNow?',
+  tool_sitemap_format_hint:
+    'Cada línea: URL, o URL | lastmod (yyyy-MM-dd), o URL | lastmod | changefreq | priority. Ejemplo: https://example.com/page | 2026-08-01 | weekly | 0.8',
+  tool_sitemap_generate: 'Generar',
+  tool_sitemap_home_desc:
+    'Convierte una lista de URLs en un sitemap.xml válido con lastmod, changefreq y priority, sin salir del navegador.',
+  tool_sitemap_home_title: 'Generador de sitemap XML',
+  tool_sitemap_how_body:
+    'Pega tu lista de URLs, una por línea. Tras una barra vertical puedes añadir lastmod (yyyy-MM-dd), changefreq y priority. La página analiza cada línea, escapa los caracteres reservados, comprueba que la URL empiece por http(s) y construye un urlset según el protocolo. Copia el XML a la raíz del sitio y refiérelo desde robots.txt o envíalo en Search Console.',
+  tool_sitemap_how_title: 'Cómo funciona',
+  tool_sitemap_output_label: 'sitemap.xml',
+  tool_sitemap_ref_google_label: 'Search Central — crear y enviar un sitemap',
+  tool_sitemap_ref_sitemaps_label: 'sitemaps.org — protocolo',
+  tool_sitemap_references: 'sitemaps.org — protocolo sitemap; Google Search Central — crear y enviar un sitemap.',
+  tool_sitemap_rules_body: 'Estas son las reglas del protocolo sitemap y de Google que sigue este generador.',
+  tool_sitemap_rules_item_1:
+    'Obligatorio: cada <url> debe incluir un <loc> con la URL completa. lastmod, changefreq y priority son opcionales.',
+  tool_sitemap_rules_item_2:
+    'Formato de lastmod: una fecha W3C (yyyy-MM-dd) o un datetime como 2026-08-01T12:00:00+00:00. Otros formatos se ignoran o se rechazan.',
+  tool_sitemap_rules_item_3:
+    'changefreq es una pista, no una señal. Google la ignora, así que rellenarla no cambia la frecuencia de rastreo.',
+  tool_sitemap_rules_item_4:
+    'Límites: un sitemap admite como máximo 50.000 URLs y 50MB tras compresión. Más allá, divide y usa un sitemap index.',
+  tool_sitemap_rules_title: 'Reglas y límites del protocolo',
+  tool_sitemap_sample: 'Ejemplo',
+  tool_sitemap_title: 'Generador de sitemap XML — crea sitemap.xml a partir de URLs',
+  tool_sitemap_urls_label: 'URLs (una por línea)',
+  tool_sitemap_urls_ph: 'https://example.com/page',
+  tool_sitemap_usecase_1: 'Sitios nuevos: genera tu primer sitemap.xml desde la lista de URLs y envíalo en Search Console.',
+  tool_sitemap_usecase_2:
+    'Contenido actualizado: añade lastmod a páginas recién cambiadas para que los rastreadores recojan la señal de frescura.',
+  tool_sitemap_usecase_3:
+    'Descubrimiento: apunta robots.txt a tu sitemap para que los rastreadores lo encuentren sin esperar el envío.',
+  tool_sitemap_usecases_title: 'Casos de uso',
+  tool_sitemap_warn_bad_lastmod: 'lastmod no válido (usa yyyy-MM-dd o fecha-hora W3C): {url}',
+  tool_sitemap_warn_invalid_url: 'URL no http omitida: {url}',
+  tool_sitemap_warn_too_many: 'Más de 50.000 URLs: divide en varios sitemaps y enlázalos con un sitemap index.',
   tool_slope_article: 'Calcula la pendiente m entre dos puntos con (y₂−y₁)/(x₂−x₁).',
   tool_slope_calculate: 'Calcular',
   tool_slope_clear: 'Limpiar',

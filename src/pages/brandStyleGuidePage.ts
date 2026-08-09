@@ -1344,7 +1344,7 @@ export const renderBrandStyleGuidePage = (opts: {
    * @returns {number}
    */
   function primaryPct(primaryMax) {
-    var m = /(\d+)/.exec(String(primaryMax || ''));
+    var m = /(\\d+)/.exec(String(primaryMax || ''));
     return m ? Number(m[1]) : 15;
   }
 

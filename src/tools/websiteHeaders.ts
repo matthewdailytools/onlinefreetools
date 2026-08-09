@@ -61,28 +61,64 @@ export const handleWebsiteHeadersApi = async (c: Context) => {
     return c.json({ error: 'Blocked hostname' }, 400);
   }
 
-  const fetchOnce = async (method: 'HEAD' | 'GET') => {
+  /** 重定向链最长 5 跳，防止无限循环。 */
+  const MAX_REDIRECTS = 5;
+  /** 每跳记录：状态码、Location、来源 URL。 */
+  const redirects: Array<{ status: number; location: string; from: string }> = [];
+
+  /**
+   * 以指定方法请求目标，返回原始响应（redirect: manual，不自动跟随）。
+   * @param target 完整 URL
+   * @param method HEAD 或 GET
+   */
+  const fetchOnce = async (target: string, method: 'HEAD' | 'GET') => {
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort('timeout'), 10_000);
     try {
-      const res = await fetch(url.toString(), {
+      return await fetch(target, {
         method,
-        redirect: 'follow',
+        redirect: 'manual',
         signal: controller.signal,
         headers: {
           'user-agent': 'onlinefreetools/website-headers',
           accept: '*/*',
         },
       });
-      return res;
     } finally {
       clearTimeout(timeout);
     }
   };
 
-  let res = await fetchOnce('HEAD');
-  if (res.status === 405 || res.status === 501) {
-    res = await fetchOnce('GET');
+  let current = url.toString();
+  let method: 'HEAD' | 'GET' = 'HEAD';
+  let res: Response | undefined;
+
+  // 手动跟随重定向，收集每一跳；HEAD 被拒（405/501）时改用 GET 重试同一 URL。
+  for (let hop = 0; hop <= MAX_REDIRECTS; ) {
+    res = await fetchOnce(current, method);
+    const status = res.status;
+    const location = res.headers.get('location');
+
+    if (method === 'HEAD' && (status === 405 || status === 501)) {
+      method = 'GET';
+      continue;
+    }
+
+    if (status >= 300 && status < 400 && location) {
+      redirects.push({ status, location, from: current });
+      try {
+        current = new URL(location, current).toString();
+      } catch {
+        break; // Location 无法解析为 URL —— 保留当前响应
+      }
+      hop++;
+      continue;
+    }
+    break;
+  }
+
+  if (!res) {
+    return c.json({ error: 'Request failed' }, 502);
   }
 
   const headers: Record<string, string> = {};
@@ -96,5 +132,6 @@ export const handleWebsiteHeadersApi = async (c: Context) => {
     status: res.status,
     statusText: res.statusText,
     headers,
+    redirects,
   });
 };
