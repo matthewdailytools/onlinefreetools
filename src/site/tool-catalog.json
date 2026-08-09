@@ -15,7 +15,9 @@
       "image-border"
     ],
     "logo": "/icons/tools/add-watermark.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "image"
   },
   {
     "slug": "add-www-to-dns",
@@ -33,7 +35,9 @@
       "indexnow"
     ],
     "logo": "/icons/tools/add-www-to-dns.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "developer",
+    "subject": "network"
   },
   {
     "slug": "base64",
@@ -51,7 +55,9 @@
       "html-entity"
     ],
     "logo": "/icons/tools/base64.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "developer",
+    "subject": "text"
   },
   {
     "slug": "brand-color-token-pack",
@@ -68,7 +74,9 @@
       "wcag-contrast-checker"
     ],
     "logo": "/icons/tools/brand-color-token-pack.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "design",
+    "subject": "color"
   },
   {
     "slug": "brand-style-guide",
@@ -86,7 +94,9 @@
       "wcag-contrast-checker"
     ],
     "logo": "/icons/tools/brand-style-guide.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "design",
+    "subject": "color"
   },
   {
     "slug": "color-from-image",
@@ -103,7 +113,9 @@
       "wcag-contrast-checker"
     ],
     "logo": "/icons/tools/color-from-image.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "design",
+    "subject": "color"
   },
   {
     "slug": "compress-pdf",
@@ -120,7 +132,9 @@
       "merge-pdf"
     ],
     "logo": "/icons/tools/compress-pdf.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "documents",
+    "subject": "pdf"
   },
   {
     "slug": "crop-pdf",
@@ -137,7 +151,9 @@
       "rotate-pdf"
     ],
     "logo": "/icons/tools/crop-pdf.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "documents",
+    "subject": "pdf"
   },
   {
     "slug": "csv-json",
@@ -155,7 +171,9 @@
       "json-schema-validator"
     ],
     "logo": "/icons/tools/csv-json.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "developer",
+    "subject": "data"
   },
   {
     "slug": "domain-lookup",
@@ -173,7 +191,9 @@
       "ip-address"
     ],
     "logo": "/icons/tools/domain-lookup.svg",
-    "localProcessing": false
+    "localProcessing": false,
+    "scenario": "developer",
+    "subject": "network"
   },
   {
     "slug": "file-hash",
@@ -190,7 +210,9 @@
       "text-diff"
     ],
     "logo": "/icons/tools/file-hash.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "developer",
+    "subject": "data"
   },
   {
     "slug": "flip-image",
@@ -208,7 +230,9 @@
       "image-crop"
     ],
     "logo": "/icons/tools/flip-image.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "image"
   },
   {
     "slug": "how-to-calculate-acceleration",
@@ -225,7 +249,9 @@
       "how-to-calculate-ohms-law"
     ],
     "logo": "/icons/tools/how-to-calculate-acceleration.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "physics",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-age",
@@ -242,7 +268,9 @@
       "how-to-calculate-tip"
     ],
     "logo": "/icons/tools/how-to-calculate-age.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "everyday",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-aspect-ratio",
@@ -259,7 +287,9 @@
       "square-feet"
     ],
     "logo": "/icons/tools/how-to-calculate-aspect-ratio.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-bmi",
@@ -276,7 +306,9 @@
       "square-feet"
     ],
     "logo": "/icons/tools/how-to-calculate-bmi.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "health",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-bmr-tdee",
@@ -292,7 +324,9 @@
       "how-to-calculate-bmi"
     ],
     "logo": "/icons/tools/how-to-calculate-bmr-tdee.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "health",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-body-fat",
@@ -309,7 +343,9 @@
       "how-to-calculate-bmr-tdee"
     ],
     "logo": "/icons/tools/how-to-calculate-body-fat.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "health",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-break-even",
@@ -326,7 +362,9 @@
       "how-to-calculate-marginal-revenue"
     ],
     "logo": "/icons/tools/how-to-calculate-break-even.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "finance",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-cagr",
@@ -343,7 +381,9 @@
       "how-to-calculate-compound-interest"
     ],
     "logo": "/icons/tools/how-to-calculate-cagr.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "finance",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-circle",
@@ -360,7 +400,9 @@
       "how-to-calculate-volume"
     ],
     "logo": "/icons/tools/how-to-calculate-circle.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "math",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-compound-interest",
@@ -378,7 +420,9 @@
       "how-to-calculate-emi"
     ],
     "logo": "/icons/tools/how-to-calculate-compound-interest.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "finance",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-concrete",
@@ -395,7 +439,9 @@
       "square-feet"
     ],
     "logo": "/icons/tools/how-to-calculate-concrete.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "construction",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-confidence-interval",
@@ -412,7 +458,9 @@
       "how-to-calculate-standard-deviation"
     ],
     "logo": "/icons/tools/how-to-calculate-confidence-interval.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "math",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-contribution-margin",
@@ -429,7 +477,9 @@
       "how-to-calculate-gross-margin"
     ],
     "logo": "/icons/tools/how-to-calculate-contribution-margin.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "finance",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-date-difference",
@@ -446,7 +496,9 @@
       "how-to-calculate-tip"
     ],
     "logo": "/icons/tools/how-to-calculate-date-difference.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "everyday",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-debt-payoff",
@@ -463,7 +515,9 @@
       "how-to-calculate-compound-interest"
     ],
     "logo": "/icons/tools/how-to-calculate-debt-payoff.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "finance",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-density",
@@ -480,7 +534,9 @@
       "how-to-calculate-ohms-law"
     ],
     "logo": "/icons/tools/how-to-calculate-density.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "physics",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-discount",
@@ -497,7 +553,9 @@
       "how-to-calculate-gross-margin"
     ],
     "logo": "/icons/tools/how-to-calculate-discount.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "finance",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-emi",
@@ -514,7 +572,9 @@
       "how-to-calculate-roi"
     ],
     "logo": "/icons/tools/how-to-calculate-emi.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "finance",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-exponent",
@@ -531,7 +591,9 @@
       "how-to-calculate-scientific-notation"
     ],
     "logo": "/icons/tools/how-to-calculate-exponent.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "math",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-gpa",
@@ -548,7 +610,9 @@
       "how-to-calculate-sample-size"
     ],
     "logo": "/icons/tools/how-to-calculate-gpa.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "math",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-gradient",
@@ -565,7 +629,9 @@
       "how-to-calculate-roi"
     ],
     "logo": "/icons/tools/how-to-calculate-gradient.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "math",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-gross-margin",
@@ -582,7 +648,9 @@
       "how-to-calculate-roi"
     ],
     "logo": "/icons/tools/how-to-calculate-gross-margin.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "finance",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-heart-rate",
@@ -599,7 +667,9 @@
       "how-to-calculate-bmr-tdee"
     ],
     "logo": "/icons/tools/how-to-calculate-heart-rate.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "health",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-ideal-weight",
@@ -616,7 +686,9 @@
       "how-to-calculate-body-fat"
     ],
     "logo": "/icons/tools/how-to-calculate-ideal-weight.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "health",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-inflation",
@@ -633,7 +705,9 @@
       "how-to-calculate-compound-interest"
     ],
     "logo": "/icons/tools/how-to-calculate-inflation.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "finance",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-irr",
@@ -650,7 +724,9 @@
       "how-to-calculate-cagr"
     ],
     "logo": "/icons/tools/how-to-calculate-irr.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "finance",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-logarithm",
@@ -667,7 +743,9 @@
       "how-to-calculate-scientific-notation"
     ],
     "logo": "/icons/tools/how-to-calculate-logarithm.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "math",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-macros",
@@ -684,7 +762,9 @@
       "how-to-calculate-bmr-tdee"
     ],
     "logo": "/icons/tools/how-to-calculate-macros.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "health",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-marginal-revenue",
@@ -701,7 +781,9 @@
       "how-to-calculate-percentage-change"
     ],
     "logo": "/icons/tools/how-to-calculate-marginal-revenue.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "finance",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-markup",
@@ -718,7 +800,9 @@
       "how-to-calculate-gross-margin"
     ],
     "logo": "/icons/tools/how-to-calculate-markup.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "finance",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-mean",
@@ -735,7 +819,9 @@
       "how-to-calculate-standard-deviation"
     ],
     "logo": "/icons/tools/how-to-calculate-mean.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "math",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-median",
@@ -752,7 +838,9 @@
       "how-to-calculate-standard-deviation"
     ],
     "logo": "/icons/tools/how-to-calculate-median.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "math",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-npv",
@@ -769,7 +857,9 @@
       "how-to-calculate-roi"
     ],
     "logo": "/icons/tools/how-to-calculate-npv.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "finance",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-ohms-law",
@@ -786,7 +876,9 @@
       "how-to-calculate-velocity"
     ],
     "logo": "/icons/tools/how-to-calculate-ohms-law.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "physics",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-one-rep-max",
@@ -803,7 +895,9 @@
       "how-to-calculate-body-fat"
     ],
     "logo": "/icons/tools/how-to-calculate-one-rep-max.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "sports",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-p-value",
@@ -820,7 +914,9 @@
       "how-to-calculate-confidence-interval"
     ],
     "logo": "/icons/tools/how-to-calculate-p-value.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "math",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-pace",
@@ -837,7 +933,9 @@
       "how-to-calculate-heart-rate"
     ],
     "logo": "/icons/tools/how-to-calculate-pace.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "sports",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-paint",
@@ -854,7 +952,9 @@
       "how-to-calculate-concrete"
     ],
     "logo": "/icons/tools/how-to-calculate-paint.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "construction",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-payback-period",
@@ -871,7 +971,9 @@
       "how-to-calculate-irr"
     ],
     "logo": "/icons/tools/how-to-calculate-payback-period.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "finance",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-percentage-change",
@@ -888,7 +990,9 @@
       "how-to-calculate-marginal-revenue"
     ],
     "logo": "/icons/tools/how-to-calculate-percentage-change.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "finance",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-permutation-combination",
@@ -905,7 +1009,9 @@
       "how-to-calculate-slope"
     ],
     "logo": "/icons/tools/how-to-calculate-permutation-combination.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "math",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-present-value",
@@ -922,7 +1028,9 @@
       "how-to-calculate-cagr"
     ],
     "logo": "/icons/tools/how-to-calculate-present-value.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "finance",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-profit-margin",
@@ -939,7 +1047,9 @@
       "how-to-calculate-markup"
     ],
     "logo": "/icons/tools/how-to-calculate-profit-margin.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "finance",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-pythagorean-theorem",
@@ -956,7 +1066,9 @@
       "how-to-calculate-logarithm"
     ],
     "logo": "/icons/tools/how-to-calculate-pythagorean-theorem.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "math",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-quadratic-equation",
@@ -973,7 +1085,9 @@
       "how-to-calculate-slope"
     ],
     "logo": "/icons/tools/how-to-calculate-quadratic-equation.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "math",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-roi",
@@ -990,7 +1104,9 @@
       "how-to-calculate-percentage-change"
     ],
     "logo": "/icons/tools/how-to-calculate-roi.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "finance",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-rule-of-72",
@@ -1007,7 +1123,9 @@
       "how-to-calculate-compound-interest"
     ],
     "logo": "/icons/tools/how-to-calculate-rule-of-72.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "finance",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-salary-hourly",
@@ -1024,7 +1142,9 @@
       "how-to-calculate-roi"
     ],
     "logo": "/icons/tools/how-to-calculate-salary-hourly.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "everyday",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-sample-size",
@@ -1041,7 +1161,9 @@
       "how-to-calculate-p-value"
     ],
     "logo": "/icons/tools/how-to-calculate-sample-size.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "math",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-scientific-notation",
@@ -1058,7 +1180,9 @@
       "how-to-calculate-logarithm"
     ],
     "logo": "/icons/tools/how-to-calculate-scientific-notation.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "math",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-significant-figures",
@@ -1075,7 +1199,9 @@
       "how-to-calculate-z-score"
     ],
     "logo": "/icons/tools/how-to-calculate-significant-figures.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "math",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-slope",
@@ -1092,7 +1218,9 @@
       "how-to-calculate-aspect-ratio"
     ],
     "logo": "/icons/tools/how-to-calculate-slope.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "math",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-standard-deviation",
@@ -1109,7 +1237,9 @@
       "how-to-calculate-cagr"
     ],
     "logo": "/icons/tools/how-to-calculate-standard-deviation.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "math",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-tile",
@@ -1126,7 +1256,9 @@
       "square-feet"
     ],
     "logo": "/icons/tools/how-to-calculate-tile.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "construction",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-tip",
@@ -1143,7 +1275,9 @@
       "how-to-calculate-discount"
     ],
     "logo": "/icons/tools/how-to-calculate-tip.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "everyday",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-triangle-area",
@@ -1160,7 +1294,9 @@
       "how-to-calculate-volume"
     ],
     "logo": "/icons/tools/how-to-calculate-triangle-area.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "math",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-vat",
@@ -1177,7 +1313,9 @@
       "how-to-calculate-tip"
     ],
     "logo": "/icons/tools/how-to-calculate-vat.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "finance",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-velocity",
@@ -1194,7 +1332,9 @@
       "how-to-calculate-density"
     ],
     "logo": "/icons/tools/how-to-calculate-velocity.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "physics",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-volume",
@@ -1211,7 +1351,9 @@
       "how-to-calculate-circle"
     ],
     "logo": "/icons/tools/how-to-calculate-volume.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "math",
+    "subject": "number"
   },
   {
     "slug": "how-to-calculate-z-score",
@@ -1228,7 +1370,9 @@
       "how-to-calculate-standard-deviation"
     ],
     "logo": "/icons/tools/how-to-calculate-z-score.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "math",
+    "subject": "number"
   },
   {
     "slug": "html-entity",
@@ -1245,7 +1389,9 @@
       "text-diff"
     ],
     "logo": "/icons/tools/html-entity.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "developer",
+    "subject": "text"
   },
   {
     "slug": "image-border",
@@ -1263,7 +1409,9 @@
       "add-watermark"
     ],
     "logo": "/icons/tools/image-border.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "image"
   },
   {
     "slug": "image-compress",
@@ -1281,7 +1429,9 @@
       "image-optimizer"
     ],
     "logo": "/icons/tools/image-compress.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "image"
   },
   {
     "slug": "image-crop",
@@ -1299,7 +1449,9 @@
       "image-optimizer"
     ],
     "logo": "/icons/tools/image-crop.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "image"
   },
   {
     "slug": "image-exif",
@@ -1317,7 +1469,9 @@
       "image-optimizer"
     ],
     "logo": "/icons/tools/image-exif.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "image"
   },
   {
     "slug": "image-format-converter",
@@ -1336,7 +1490,9 @@
       "image-optimizer"
     ],
     "logo": "/icons/tools/image-format-converter.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "image"
   },
   {
     "slug": "image-grayscale",
@@ -1354,7 +1510,9 @@
       "image-crop"
     ],
     "logo": "/icons/tools/image-grayscale.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "image"
   },
   {
     "slug": "image-merge",
@@ -1374,7 +1532,9 @@
       "images-to-gif"
     ],
     "logo": "/icons/tools/image-merge.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "image"
   },
   {
     "slug": "image-optimizer",
@@ -1392,7 +1552,9 @@
       "image-exif"
     ],
     "logo": "/icons/tools/image-optimizer.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "image"
   },
   {
     "slug": "image-overlay",
@@ -1410,7 +1572,9 @@
       "image-crop"
     ],
     "logo": "/icons/tools/image-overlay.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "image"
   },
   {
     "slug": "image-to-base64",
@@ -1427,7 +1591,9 @@
       "image-compress"
     ],
     "logo": "/icons/tools/image-to-base64.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "image"
   },
   {
     "slug": "images-to-gif",
@@ -1445,7 +1611,9 @@
       "image-format-converter"
     ],
     "logo": "/icons/tools/images-to-gif.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "image"
   },
   {
     "slug": "images-to-pdf",
@@ -1464,7 +1632,9 @@
       "images-to-gif"
     ],
     "logo": "/icons/tools/images-to-pdf.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "image"
   },
   {
     "slug": "images-to-ppt",
@@ -1482,7 +1652,9 @@
       "image-merge"
     ],
     "logo": "/icons/tools/images-to-ppt.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "image"
   },
   {
     "slug": "images-to-word",
@@ -1500,7 +1672,9 @@
       "image-merge"
     ],
     "logo": "/icons/tools/images-to-word.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "image"
   },
   {
     "slug": "indexnow",
@@ -1517,7 +1691,9 @@
       "add-www-to-dns"
     ],
     "logo": "/icons/tools/indexnow.svg",
-    "localProcessing": false
+    "localProcessing": false,
+    "scenario": "developer",
+    "subject": "network"
   },
   {
     "slug": "ip-address",
@@ -1535,7 +1711,9 @@
       "markdown-to-html"
     ],
     "logo": "/icons/tools/ip-address.svg",
-    "localProcessing": false
+    "localProcessing": false,
+    "scenario": "developer",
+    "subject": "network"
   },
   {
     "slug": "json-schema-validator",
@@ -1552,7 +1730,9 @@
       "csv-json"
     ],
     "logo": "/icons/tools/json-schema-validator.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "developer",
+    "subject": "data"
   },
   {
     "slug": "jwt-decoder",
@@ -1569,7 +1749,9 @@
       "unix-timestamp"
     ],
     "logo": "/icons/tools/jwt-decoder.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "developer",
+    "subject": "text"
   },
   {
     "slug": "markdown-to-html",
@@ -1588,7 +1770,9 @@
       "website-headers"
     ],
     "logo": "/icons/tools/markdown-to-html.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "developer",
+    "subject": "text"
   },
   {
     "slug": "merge-pdf",
@@ -1606,7 +1790,9 @@
       "images-to-pdf"
     ],
     "logo": "/icons/tools/merge-pdf.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "documents",
+    "subject": "pdf"
   },
   {
     "slug": "organize-pdf",
@@ -1623,7 +1809,9 @@
       "split-pdf"
     ],
     "logo": "/icons/tools/organize-pdf.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "documents",
+    "subject": "pdf"
   },
   {
     "slug": "password-generator",
@@ -1640,7 +1828,9 @@
       "file-hash"
     ],
     "logo": "/icons/tools/password-generator.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "developer",
+    "subject": "text"
   },
   {
     "slug": "pdf-page-numbers",
@@ -1657,7 +1847,9 @@
       "organize-pdf"
     ],
     "logo": "/icons/tools/pdf-page-numbers.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "documents",
+    "subject": "pdf"
   },
   {
     "slug": "pdf-page-to-image-sizes",
@@ -1674,7 +1866,9 @@
       "images-to-pdf"
     ],
     "logo": "/icons/tools/pdf-page-to-image-sizes.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "documents",
+    "subject": "pdf"
   },
   {
     "slug": "pdf-to-jpg",
@@ -1691,7 +1885,9 @@
       "image-format-converter"
     ],
     "logo": "/icons/tools/pdf-to-jpg.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "documents",
+    "subject": "pdf"
   },
   {
     "slug": "pdf-to-markdown",
@@ -1708,7 +1904,9 @@
       "pdf-to-jpg"
     ],
     "logo": "/icons/tools/pdf-to-markdown.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "documents",
+    "subject": "pdf"
   },
   {
     "slug": "pdf-watermark",
@@ -1725,7 +1923,9 @@
       "pdf-page-numbers"
     ],
     "logo": "/icons/tools/pdf-watermark.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "documents",
+    "subject": "pdf"
   },
   {
     "slug": "protect-pdf",
@@ -1742,7 +1942,9 @@
       "merge-pdf"
     ],
     "logo": "/icons/tools/protect-pdf.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "documents",
+    "subject": "pdf"
   },
   {
     "slug": "rotate-pdf",
@@ -1759,7 +1961,9 @@
       "split-pdf"
     ],
     "logo": "/icons/tools/rotate-pdf.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "documents",
+    "subject": "pdf"
   },
   {
     "slug": "smart-website-color-scheme",
@@ -1776,7 +1980,9 @@
       "wcag-contrast-checker"
     ],
     "logo": "/icons/tools/smart-website-color-scheme.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "design",
+    "subject": "color"
   },
   {
     "slug": "split-pdf",
@@ -1794,7 +2000,9 @@
       "images-to-pdf"
     ],
     "logo": "/icons/tools/split-pdf.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "documents",
+    "subject": "pdf"
   },
   {
     "slug": "square-feet",
@@ -1811,7 +2019,9 @@
       "how-to-calculate-bmi"
     ],
     "logo": "/icons/tools/square-feet.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "construction",
+    "subject": "unit"
   },
   {
     "slug": "text-diff",
@@ -1830,7 +2040,9 @@
       "website-headers"
     ],
     "logo": "/icons/tools/text-diff.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "developer",
+    "subject": "text"
   },
   {
     "slug": "timezone-converter",
@@ -1847,7 +2059,9 @@
       "ip-address"
     ],
     "logo": "/icons/tools/timezone-converter.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "developer",
+    "subject": "data"
   },
   {
     "slug": "unit-converter",
@@ -1864,7 +2078,9 @@
       "how-to-calculate-percentage-change"
     ],
     "logo": "/icons/tools/unit-converter.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "everyday",
+    "subject": "unit"
   },
   {
     "slug": "unix-timestamp",
@@ -1881,7 +2097,9 @@
       "jwt-decoder"
     ],
     "logo": "/icons/tools/unix-timestamp.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "developer",
+    "subject": "number"
   },
   {
     "slug": "unlock-pdf",
@@ -1898,7 +2116,9 @@
       "merge-pdf"
     ],
     "logo": "/icons/tools/unlock-pdf.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "documents",
+    "subject": "pdf"
   },
   {
     "slug": "uuid-generator",
@@ -1915,7 +2135,9 @@
       "file-hash"
     ],
     "logo": "/icons/tools/uuid-generator.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "developer",
+    "subject": "text"
   },
   {
     "slug": "wcag-contrast-checker",
@@ -1932,7 +2154,9 @@
       "brand-color-token-pack"
     ],
     "logo": "/icons/tools/wcag-contrast-checker.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "design",
+    "subject": "color"
   },
   {
     "slug": "website-headers",
@@ -1952,7 +2176,9 @@
       "text-diff"
     ],
     "logo": "/icons/tools/website-headers.svg",
-    "localProcessing": false
+    "localProcessing": false,
+    "scenario": "developer",
+    "subject": "network"
   },
   {
     "slug": "yaml-json",
@@ -1971,6 +2197,8 @@
       "json-schema-validator"
     ],
     "logo": "/icons/tools/yaml-json.svg",
-    "localProcessing": true
+    "localProcessing": true,
+    "scenario": "developer",
+    "subject": "text"
   }
 ]

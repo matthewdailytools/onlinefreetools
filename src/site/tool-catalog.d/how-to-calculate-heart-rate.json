@@ -18,5 +18,7 @@
     "export": "renderHowToCalculateHeartRatePage",
     "style": "opts"
   },
-  "localProcessing": true
+  "localProcessing": true,
+  "scenario": "health",
+  "subject": "number"
 }

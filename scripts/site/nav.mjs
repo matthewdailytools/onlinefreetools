@@ -23,16 +23,29 @@ export const buildCategoryNavDropdowns = (lang) =>
   }));
 
 /**
- * 工具页 / 信息页顶栏：首页 + 各分类工具下拉（关于、开发日志在页脚）。
+ * 应用场景 / 工具类型 hub 入口（不替换原分类下拉；不直链工具；置于导航末尾）。
+ * @param {string} lang
+ */
+export const buildTaxonomyNavLinks = (lang) => [
+  { href: withExplicitLangPath(lang, '/where-to-use-tools'), label: t(lang, 'nav_use_cases') },
+  { href: withExplicitLangPath(lang, '/tool-type'), label: t(lang, 'nav_tool_type') },
+];
+
+/**
+ * 工具页 / 信息页顶栏：首页 + 各分类工具下拉 + 场景/类型（关于、开发日志在页脚）。
  * @param {string} lang
  */
 export const buildToolPageNavItems = (lang) => [
   { href: withExplicitLangPath(lang, '/'), label: t(lang, 'nav_home') },
   ...buildCategoryNavDropdowns(lang),
+  ...buildTaxonomyNavLinks(lang),
 ];
 
 /**
- * 首页顶栏：各分类工具下拉（无「推荐」锚点项）。
+ * 首页顶栏：各分类工具下拉 + 场景/类型入口（无「推荐」锚点项）。
  * @param {string} lang
  */
-export const buildHomeNavItems = (lang) => [...buildCategoryNavDropdowns(lang)];
+export const buildHomeNavItems = (lang) => [
+  ...buildCategoryNavDropdowns(lang),
+  ...buildTaxonomyNavLinks(lang),
+];

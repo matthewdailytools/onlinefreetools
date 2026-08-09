@@ -21,5 +21,7 @@
     "export": "renderWebsiteHeadersPage",
     "style": "pair"
   },
-  "localProcessing": false
+  "localProcessing": false,
+  "scenario": "developer",
+  "subject": "network"
 }

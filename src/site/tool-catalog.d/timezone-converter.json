@@ -18,5 +18,7 @@
     "export": "renderTimezoneConverterPage",
     "style": "opts"
   },
-  "localProcessing": true
+  "localProcessing": true,
+  "scenario": "developer",
+  "subject": "data"
 }

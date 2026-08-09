@@ -18,5 +18,7 @@
     "export": "renderHowToCalculateRuleOf72Page",
     "style": "opts"
   },
-  "localProcessing": true
+  "localProcessing": true,
+  "scenario": "finance",
+  "subject": "number"
 }

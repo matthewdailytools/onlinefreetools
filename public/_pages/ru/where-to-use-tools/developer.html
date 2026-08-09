@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Разработка tools | OnlineFreeTools.org</title>
+  <meta name="description" content="Browse free online tools tagged for разработка. Same card layout as the homepage; each tool appears on only this use-case page." />
+  
+  <link rel="canonical" href="https://onlinefreetools.org/ru/where-to-use-tools/developer" />
+  <meta property="og:title" content="Разработка tools | OnlineFreeTools.org" />
+  <meta property="og:description" content="Browse free online tools tagged for разработка. Same card layout as the homepage; each tool appears on only this use-case page." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://onlinefreetools.org/ru/where-to-use-tools/developer" />
+  <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="alternate" hreflang="en" href="https://onlinefreetools.org/where-to-use-tools/developer" />
+  <link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/where-to-use-tools/developer" />
+  <link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/where-to-use-tools/developer" />
+  <link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/where-to-use-tools/developer" />
+  <link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/where-to-use-tools/developer" />
+  <link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/where-to-use-tools/developer" />
+  <link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/where-to-use-tools/developer" />
+  <link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/where-to-use-tools/developer" />
+  <link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/where-to-use-tools/developer" />
+  <link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/where-to-use-tools/developer" />
+  <link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/where-to-use-tools/developer" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  
+  <script>
+    (function () {
+      try {
+        var enabled = ["en","zh","es","ar","pt","id","fr","ja","ru","de"];
+        var defaultLang = "en";
+        var fallback = defaultLang;
+        var path = window.location.pathname || '/';
+
+        // If the URL already contains a language prefix (including defaultLang), respect it.
+        var hasPrefix = enabled.some(function (l) {
+          return l && (path === '/' + l || path.indexOf('/' + l + '/') === 0);
+        });
+        if (hasPrefix) return;
+
+        var langs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language])
+          .filter(Boolean)
+          .map(function (x) { return String(x).toLowerCase().split('-')[0]; });
+
+        var picked = null;
+        for (var i = 0; i < langs.length; i++) {
+          if (enabled.indexOf(langs[i]) !== -1) { picked = langs[i]; break; }
+        }
+        if (!picked) picked = enabled.indexOf(fallback) !== -1 ? fallback : (enabled[0] || fallback);
+
+        if (picked === "ru") return;
+        var targetPath = path;
+        if (picked !== defaultLang) {
+          targetPath = ('/' + picked + path).replace(/\/{2,}/g, '/');
+        }
+        window.location.replace(targetPath + window.location.search + window.location.hash);
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="preload" href="/vendor/bootstrap/bootstrap.min.css" as="style" />
+  <link rel="preload" href="/vendor/fonts/plus-jakarta-sans.css" as="style" />
+  <link href="/vendor/bootstrap/bootstrap.min.css" rel="stylesheet" />
+  <link href="/vendor/fonts/plus-jakarta-sans.css" rel="stylesheet" />
+  <link href="/styles/site.css" rel="stylesheet" />
+  <style>
+    body { min-height: 100vh; padding-top: var(--header-h, 56px); }
+    .layout { display: flex; min-height: calc(100vh - var(--header-h, 56px)); }
+  </style>
+  
+<script>
+(function () {
+  function run() {
+    try {
+
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xbc0iytpn7");
+    } catch (e) {}
+  }
+  function schedule() {
+    if (typeof requestIdleCallback === 'function') requestIdleCallback(run, { timeout: 4000 });
+    else setTimeout(run, 2000);
+  }
+  if (document.readyState === 'complete') schedule();
+  else window.addEventListener('load', schedule, { once: true });
+})();
+</script>
+  
+  <script type="application/ld+json">[{"@context":"https://schema.org","@type":"CollectionPage","name":"Разработка tools","description":"Browse free online tools tagged for разработка. Same card layout as the homepage; each tool appears on only this use-case page.","url":"https://onlinefreetools.org/ru/where-to-use-tools/developer","isPartOf":{"@type":"WebSite","name":"OnlineFreeTools.org","url":"https://onlinefreetools.org"},"mainEntity":{"@type":"ItemList","numberOfItems":18,"itemListElement":[{"@type":"ListItem","position":1,"name":"Добавить WWW в DNS — A/CNAME и гайды","url":"https://onlinefreetools.org/ru/tools/add-www-to-dns"},{"@type":"ListItem","position":2,"name":"Base64 кодирование и декодирование — преобразовать текст в браузере","url":"https://onlinefreetools.org/ru/tools/base64"},{"@type":"ListItem","position":3,"name":"Конвертер CSV ↔ JSON — типы, разделитель, локально","url":"https://onlinefreetools.org/ru/tools/csv-json"},{"@type":"ListItem","position":4,"name":"Проверка домена — DNS и данные регистрации","url":"https://onlinefreetools.org/ru/tools/domain-lookup"},{"@type":"ListItem","position":5,"name":"Проверка хеша файла — сверка дайджестов в браузере","url":"https://onlinefreetools.org/ru/tools/file-hash"},{"@type":"ListItem","position":6,"name":"Кодирование и декодирование HTML-сущностей — локально","url":"https://onlinefreetools.org/ru/tools/html-entity"},{"@type":"ListItem","position":7,"name":"IndexNow — отправка URL в Bing, проверка ключа и коды","url":"https://onlinefreetools.org/ru/tools/indexnow"},{"@type":"ListItem","position":8,"name":"Узнать свой IP — Публичный адрес (IPv4/IPv6)","url":"https://onlinefreetools.org/ru/tools/ip-address"},{"@type":"ListItem","position":9,"name":"Валидатор JSON Schema — пути draft-07, локально","url":"https://onlinefreetools.org/ru/tools/json-schema-validator"},{"@type":"ListItem","position":10,"name":"JWT декодер — читать header и payload локально (без проверки подписи)","url":"https://onlinefreetools.org/ru/tools/jwt-decoder"},{"@type":"ListItem","position":11,"name":"Markdown ↔ HTML","url":"https://onlinefreetools.org/ru/tools/markdown-to-html"},{"@type":"ListItem","position":12,"name":"Генератор случайных паролей — создавать пароли локально","url":"https://onlinefreetools.org/ru/tools/password-generator"},{"@type":"ListItem","position":13,"name":"Сравнить тексты онлайн","url":"https://onlinefreetools.org/ru/tools/text-diff"},{"@type":"ListItem","position":14,"name":"Конвертер часовых поясов — сравнить один момент по миру","url":"https://onlinefreetools.org/ru/tools/timezone-converter"},{"@type":"ListItem","position":15,"name":"Конвертер Unix timestamp — эпоха ↔ читаемое время","url":"https://onlinefreetools.org/ru/tools/unix-timestamp"},{"@type":"ListItem","position":16,"name":"Генератор UUID и ULID — создавать ID в браузере","url":"https://onlinefreetools.org/ru/tools/uuid-generator"},{"@type":"ListItem","position":17,"name":"Проверка HTTP-заголовков","url":"https://onlinefreetools.org/ru/tools/website-headers"},{"@type":"ListItem","position":18,"name":"YAML в JSON и обратно — типы, multi-doc, локально","url":"https://onlinefreetools.org/ru/tools/yaml-json"}]}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://onlinefreetools.org/ru/"},{"@type":"ListItem","position":2,"name":"Сценарии","item":"https://onlinefreetools.org/ru/where-to-use-tools"},{"@type":"ListItem","position":3,"name":"Разработка","item":"https://onlinefreetools.org/ru/where-to-use-tools/developer"}]}]</script>
+</head>
+<body class="is-home-page">
+  
+  
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light site-navbar border-bottom fixed-top">
+      <div class="container-fluid">
+        <button class="btn btn-outline-secondary me-2" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+        <a class="navbar-brand" href="/ru/">
+          <img class="navbar-brand-logo" src="/brand-logo.svg" width="28" height="28" alt="" decoding="async" />
+          <span class="navbar-brand-text">OnlineFreeTools.org</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="topNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item"><a class="nav-link" href="/ru/">Главная</a></li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Инструменты для изображений</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ru/tools/add-watermark" target="_blank" rel="noopener noreferrer">Текстовый водяной знак — в браузере</a></li><li><a class="dropdown-item" href="/ru/tools/color-from-image" target="_blank" rel="noopener noreferrer">Извлечь цвета из фото — палитра и выбор кликом</a></li><li><a class="dropdown-item" href="/ru/tools/flip-image" target="_blank" rel="noopener noreferrer">Отразить изображение — горизонт./верт.</a></li><li><a class="dropdown-item" href="/ru/tools/image-border" target="_blank" rel="noopener noreferrer">Рамка для фото — цвет и толщина</a></li><li><a class="dropdown-item" href="/ru/tools/image-compress" target="_blank" rel="noopener noreferrer">Сжатие изображений — длинная сторона, качество и целевой размер (локально)</a></li><li><a class="dropdown-item" href="/ru/tools/image-crop" target="_blank" rel="noopener noreferrer">Обрезка и изменение размера — локально</a></li><li><a class="dropdown-item" href="/ru/tools/image-exif" target="_blank" rel="noopener noreferrer">Просмотр и удаление EXIF с фото — GPS, камера, локально</a></li><li><a class="dropdown-item" href="/ru/tools/image-format-converter" target="_blank" rel="noopener noreferrer">Конвертер форматов изображений — PNG JPEG WebP AVIF BMP GIF ICO SVG</a></li><li><a class="dropdown-item" href="/ru/tools/image-grayscale" target="_blank" rel="noopener noreferrer">Оттенки серого — локально</a></li><li><a class="dropdown-item" href="/ru/tools/image-merge" target="_blank" rel="noopener noreferrer">Объединить фото — собрать коллаж из нескольких снимков</a></li><li><a class="dropdown-item" href="/ru/tools/image-optimizer" target="_blank" rel="noopener noreferrer">Оптимизация изображений — WebP, AVIF и MozJPEG локально</a></li><li><a class="dropdown-item" href="/ru/tools/image-overlay" target="_blank" rel="noopener noreferrer">Наложить лого — на фото в браузере</a></li><li><a class="dropdown-item" href="/ru/tools/image-to-base64" target="_blank" rel="noopener noreferrer">Изображение ↔ Base64</a></li><li><a class="dropdown-item" href="/ru/tools/images-to-gif" target="_blank" rel="noopener noreferrer">Изображения в GIF — короткая анимация</a></li><li><a class="dropdown-item" href="/ru/tools/images-to-pdf" target="_blank" rel="noopener noreferrer">Изображения в PDF — по странице на фото</a></li><li><a class="dropdown-item" href="/ru/tools/images-to-ppt" target="_blank" rel="noopener noreferrer">Изображения в PowerPoint — слайд на фото</a></li><li><a class="dropdown-item" href="/ru/tools/images-to-word" target="_blank" rel="noopener noreferrer">Изображения в Word — локальный DOCX</a></li><li><a class="dropdown-item" href="/ru/tools/pdf-page-to-image-sizes" target="_blank" rel="noopener noreferrer">Страница PDF в несколько размеров — пакет экспорта</a></li><li><a class="dropdown-item" href="/ru/tools/pdf-to-jpg" target="_blank" rel="noopener noreferrer">PDF в JPG — сохраните страницы как изображения</a></li></ul>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Инструменты дизайна</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ru/tools/brand-color-token-pack" target="_blank" rel="noopener noreferrer">Сгенерировать шкалу цвета бренда — палитра 50–950 и CSS‑токены</a></li><li><a class="dropdown-item" href="/ru/tools/brand-style-guide" target="_blank" rel="noopener noreferrer">Гайд по стилю бренда — модульный черновик, который можно править</a></li><li><a class="dropdown-item" href="/ru/tools/smart-website-color-scheme" target="_blank" rel="noopener noreferrer">Цветовая схема сайта — семантические CSS-токены</a></li><li><a class="dropdown-item" href="/ru/tools/wcag-contrast-checker" target="_blank" rel="noopener noreferrer">Проверка контраста WCAG — коэффициент AA/AAA</a></li></ul>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">PDF-инструменты</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ru/tools/compress-pdf" target="_blank" rel="noopener noreferrer">Сжать PDF — уменьшите размер в браузере</a></li><li><a class="dropdown-item" href="/ru/tools/crop-pdf" target="_blank" rel="noopener noreferrer">Обрезать PDF — подрежьте поля в браузере</a></li><li><a class="dropdown-item" href="/ru/tools/merge-pdf" target="_blank" rel="noopener noreferrer">Объединить PDF — склейте файлы в браузере</a></li><li><a class="dropdown-item" href="/ru/tools/organize-pdf" target="_blank" rel="noopener noreferrer">Организовать PDF — удалите или переставьте страницы</a></li><li><a class="dropdown-item" href="/ru/tools/pdf-page-numbers" target="_blank" rel="noopener noreferrer">Нумерация страниц PDF — добавьте в браузере</a></li><li><a class="dropdown-item" href="/ru/tools/pdf-to-markdown" target="_blank" rel="noopener noreferrer">PDF в Markdown — извлеките текст для заметок в браузере</a></li><li><a class="dropdown-item" href="/ru/tools/pdf-watermark" target="_blank" rel="noopener noreferrer">Водяной знак PDF — поставьте текст на каждую страницу в браузере</a></li><li><a class="dropdown-item" href="/ru/tools/protect-pdf" target="_blank" rel="noopener noreferrer">Защитить PDF — зашифруйте паролем в браузере</a></li><li><a class="dropdown-item" href="/ru/tools/rotate-pdf" target="_blank" rel="noopener noreferrer">Повернуть PDF — исправьте ориентацию страниц</a></li><li><a class="dropdown-item" href="/ru/tools/split-pdf" target="_blank" rel="noopener noreferrer">Разделить PDF — извлеките страницы локально</a></li><li><a class="dropdown-item" href="/ru/tools/unlock-pdf" target="_blank" rel="noopener noreferrer">Разблокировать PDF — снимите пароль, который вы знаете</a></li></ul>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Для разработчиков</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ru/tools/add-www-to-dns" target="_blank" rel="noopener noreferrer">Добавить WWW в DNS — A/CNAME и гайды</a></li><li><a class="dropdown-item" href="/ru/tools/base64" target="_blank" rel="noopener noreferrer">Base64 кодирование и декодирование — преобразовать текст в браузере</a></li><li><a class="dropdown-item" href="/ru/tools/csv-json" target="_blank" rel="noopener noreferrer">Конвертер CSV ↔ JSON — типы, разделитель, локально</a></li><li><a class="dropdown-item" href="/ru/tools/domain-lookup" target="_blank" rel="noopener noreferrer">Проверка домена — DNS и данные регистрации</a></li><li><a class="dropdown-item" href="/ru/tools/file-hash" target="_blank" rel="noopener noreferrer">Проверка хеша файла — сверка дайджестов в браузере</a></li><li><a class="dropdown-item" href="/ru/tools/html-entity" target="_blank" rel="noopener noreferrer">Кодирование и декодирование HTML-сущностей — локально</a></li><li><a class="dropdown-item" href="/ru/tools/indexnow" target="_blank" rel="noopener noreferrer">IndexNow — отправка URL в Bing, проверка ключа и коды</a></li><li><a class="dropdown-item" href="/ru/tools/ip-address" target="_blank" rel="noopener noreferrer">Узнать свой IP — Публичный адрес (IPv4/IPv6)</a></li><li><a class="dropdown-item" href="/ru/tools/json-schema-validator" target="_blank" rel="noopener noreferrer">Валидатор JSON Schema — пути draft-07, локально</a></li><li><a class="dropdown-item" href="/ru/tools/jwt-decoder" target="_blank" rel="noopener noreferrer">JWT декодер — читать header и payload локально (без проверки подписи)</a></li><li><a class="dropdown-item" href="/ru/tools/markdown-to-html" target="_blank" rel="noopener noreferrer">Markdown ↔ HTML</a></li><li><a class="dropdown-item" href="/ru/tools/password-generator" target="_blank" rel="noopener noreferrer">Генератор случайных паролей — создавать пароли локально</a></li><li><a class="dropdown-item" href="/ru/tools/text-diff" target="_blank" rel="noopener noreferrer">Сравнить тексты онлайн</a></li><li><a class="dropdown-item" href="/ru/tools/timezone-converter" target="_blank" rel="noopener noreferrer">Конвертер часовых поясов — сравнить один момент по миру</a></li><li><a class="dropdown-item" href="/ru/tools/unix-timestamp" target="_blank" rel="noopener noreferrer">Конвертер Unix timestamp — эпоха ↔ читаемое время</a></li><li><a class="dropdown-item" href="/ru/tools/uuid-generator" target="_blank" rel="noopener noreferrer">Генератор UUID и ULID — создавать ID в браузере</a></li><li><a class="dropdown-item" href="/ru/tools/website-headers" target="_blank" rel="noopener noreferrer">Проверка HTTP-заголовков</a></li><li><a class="dropdown-item" href="/ru/tools/yaml-json" target="_blank" rel="noopener noreferrer">YAML в JSON и обратно — типы, multi-doc, локально</a></li></ul>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Калькуляторы</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-acceleration" target="_blank" rel="noopener noreferrer">Калькулятор ускорения</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-age" target="_blank" rel="noopener noreferrer">Калькулятор возраста от даты рождения</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-aspect-ratio" target="_blank" rel="noopener noreferrer">Калькулятор соотношения сторон — расчёт и масштабирование</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-bmi" target="_blank" rel="noopener noreferrer">Калькулятор ИМТ — как рассчитать индекс массы тела</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-bmr-tdee" target="_blank" rel="noopener noreferrer">Калькулятор BMR и TDEE — оценка суточных калорий</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-body-fat" target="_blank" rel="noopener noreferrer">Калькулятор процента жира — оценка по обхватам</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-break-even" target="_blank" rel="noopener noreferrer">Калькулятор точки безубыточности — объём для покрытия затрат</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-cagr" target="_blank" rel="noopener noreferrer">Калькулятор CAGR — среднегодовой темп роста</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-circle" target="_blank" rel="noopener noreferrer">Калькулятор круга</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-compound-interest" target="_blank" rel="noopener noreferrer">Калькулятор сложного процента — будущая стоимость</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-concrete" target="_blank" rel="noopener noreferrer">Калькулятор бетона — оценка объёма бетона</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-confidence-interval" target="_blank" rel="noopener noreferrer">Калькулятор доверительного интервала — Как рассчитать ДИ</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-contribution-margin" target="_blank" rel="noopener noreferrer">Калькулятор маржинальной прибыли</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-date-difference" target="_blank" rel="noopener noreferrer">Калькулятор разницы дат</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-debt-payoff" target="_blank" rel="noopener noreferrer">Калькулятор погашения долга</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-density" target="_blank" rel="noopener noreferrer">Калькулятор плотности</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-discount" target="_blank" rel="noopener noreferrer">Калькулятор скидки — Цена со скидкой</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-emi" target="_blank" rel="noopener noreferrer">Калькулятор EMI — платёж по кредиту</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-exponent" target="_blank" rel="noopener noreferrer">Калькулятор степеней — Как вычислить a^b</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-gpa" target="_blank" rel="noopener noreferrer">Калькулятор GPA — средневзвешенный балл</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-gradient" target="_blank" rel="noopener noreferrer">Калькулятор градиента — многомерный ∇f (частные производные)</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-gross-margin" target="_blank" rel="noopener noreferrer">Калькулятор валовой маржи — прибыль и процент</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-heart-rate" target="_blank" rel="noopener noreferrer">Калькулятор пульсовых зон</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-ideal-weight" target="_blank" rel="noopener noreferrer">Калькулятор идеального веса — оценка диапазона веса</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-inflation" target="_blank" rel="noopener noreferrer">Калькулятор инфляции</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-irr" target="_blank" rel="noopener noreferrer">Калькулятор IRR</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-logarithm" target="_blank" rel="noopener noreferrer">Калькулятор логарифмов — Как вычислить log</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-macros" target="_blank" rel="noopener noreferrer">Калькулятор макронутриентов</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-marginal-revenue" target="_blank" rel="noopener noreferrer">Калькулятор предельной выручки — Формула ΔTR / ΔQ</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-markup" target="_blank" rel="noopener noreferrer">Калькулятор markup — Наценка к себестоимости</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-mean" target="_blank" rel="noopener noreferrer">Калькулятор среднего</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-median" target="_blank" rel="noopener noreferrer">Калькулятор медианы и моды</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-npv" target="_blank" rel="noopener noreferrer">Калькулятор NPV — чистая приведённая стоимость</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-ohms-law" target="_blank" rel="noopener noreferrer">Калькулятор закона Ома</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-one-rep-max" target="_blank" rel="noopener noreferrer">Калькулятор 1ПМ (Epley)</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-p-value" target="_blank" rel="noopener noreferrer">Калькулятор p-value — Как рассчитать p-значение</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-pace" target="_blank" rel="noopener noreferrer">Калькулятор темпа</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-paint" target="_blank" rel="noopener noreferrer">Калькулятор краски — оценка необходимого объёма</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-payback-period" target="_blank" rel="noopener noreferrer">Калькулятор срока окупаемости</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-percentage-change" target="_blank" rel="noopener noreferrer">Калькулятор процентного изменения — От старого значения к новому</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-permutation-combination" target="_blank" rel="noopener noreferrer">Калькулятор перестановок и сочетаний</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-present-value" target="_blank" rel="noopener noreferrer">Калькулятор PV и FV</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-profit-margin" target="_blank" rel="noopener noreferrer">Калькулятор маржи прибыли — Чистая или операционная</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-pythagorean-theorem" target="_blank" rel="noopener noreferrer">Калькулятор Пифагора — Как найти недостающую сторону</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-quadratic-equation" target="_blank" rel="noopener noreferrer">Решатель квадратного уравнения</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-roi" target="_blank" rel="noopener noreferrer">Калькулятор ROI — Как рассчитать рентабельность инвестиций</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-rule-of-72" target="_blank" rel="noopener noreferrer">Калькулятор правила 72</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-salary-hourly" target="_blank" rel="noopener noreferrer">Калькулятор зарплаты в час — Пересчёт ставок оплаты</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-sample-size" target="_blank" rel="noopener noreferrer">Калькулятор размера выборки — Как оценить необходимый n</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-scientific-notation" target="_blank" rel="noopener noreferrer">Калькулятор научной записи — Как преобразовать</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-significant-figures" target="_blank" rel="noopener noreferrer">Калькулятор значащих цифр — Подсчёт и округление</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-slope" target="_blank" rel="noopener noreferrer">Калькулятор наклона — Как найти наклон между двумя точками</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-standard-deviation" target="_blank" rel="noopener noreferrer">Калькулятор стандартного отклонения — СКО и дисперсия</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-tile" target="_blank" rel="noopener noreferrer">Калькулятор плитки — оценка количества плитки</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-tip" target="_blank" rel="noopener noreferrer">Калькулятор чаевых</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-triangle-area" target="_blank" rel="noopener noreferrer">Калькулятор площади треугольника</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-vat" target="_blank" rel="noopener noreferrer">Калькулятор НДС / VAT / GST</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-velocity" target="_blank" rel="noopener noreferrer">Калькулятор скорости</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-volume" target="_blank" rel="noopener noreferrer">Калькулятор объёма</a></li><li><a class="dropdown-item" href="/ru/tools/how-to-calculate-z-score" target="_blank" rel="noopener noreferrer">Калькулятор z-оценки — Как рассчитать стандартный балл</a></li><li><a class="dropdown-item" href="/ru/tools/square-feet" target="_blank" rel="noopener noreferrer">Квадратные футы в м² — Для жилья и ремонта</a></li><li><a class="dropdown-item" href="/ru/tools/unit-converter" target="_blank" rel="noopener noreferrer">Конвертер единиц — длина / масса / температура / площадь / объём / скорость</a></li></ul>
+        </li><li class="nav-item"><a class="nav-link" href="/ru/where-to-use-tools">Сценарии</a></li><li class="nav-item"><a class="nav-link" href="/ru/tool-type">Типы инструментов</a></li></ul>
+          <div class="d-flex align-items-center gap-2">
+            
+            <div class="dropdown theme-switcher">
+              <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Тема">
+                <span class="theme-swatch" data-theme-swatch aria-hidden="true"></span>
+                <span class="d-none d-md-inline">Тема</span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><button type="button" class="dropdown-item theme-option" data-theme-set="teal"><span class="theme-swatch theme-swatch--teal" aria-hidden="true"></span>Сланцевый синий</button></li>
+                <li><button type="button" class="dropdown-item theme-option" data-theme-set="green"><span class="theme-swatch theme-swatch--green" aria-hidden="true"></span>Лесной зелёный</button></li>
+                <li><button type="button" class="dropdown-item theme-option" data-theme-set="amber"><span class="theme-swatch theme-swatch--amber" aria-hidden="true"></span>Янтарный</button></li>
+                <li><button type="button" class="dropdown-item theme-option" data-theme-set="navy"><span class="theme-swatch theme-swatch--navy" aria-hidden="true"></span>Чернильный</button></li>
+              </ul>
+            </div>
+            
+    <div class="dropdown">
+      <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Русский
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end"><li><a class="dropdown-item" href="/en/where-to-use-tools/developer">English</a></li><li><a class="dropdown-item" href="/zh/where-to-use-tools/developer">中文</a></li><li><a class="dropdown-item" href="/es/where-to-use-tools/developer">Español</a></li><li><a class="dropdown-item" href="/ar/where-to-use-tools/developer">العربية</a></li><li><a class="dropdown-item" href="/pt/where-to-use-tools/developer">Português</a></li><li><a class="dropdown-item" href="/id/where-to-use-tools/developer">Bahasa Indonesia</a></li><li><a class="dropdown-item" href="/fr/where-to-use-tools/developer">Français</a></li><li><a class="dropdown-item" href="/ja/where-to-use-tools/developer">日本語</a></li><li><span class="dropdown-item active" aria-current="true">Русский</span></li><li><a class="dropdown-item" href="/de/where-to-use-tools/developer">Deutsch</a></li></ul>
+    </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="layout sidebar-collapsed" id="layoutRoot">
+    
+    <aside id="sidebar" class="border-end">
+      <h2 class="sidebar-title h6">Сценарии</h2>
+      <div class="list-group list-group-flush small" id="useCasesNav"><a class="list-group-item list-group-item-action" href="/ru/where-to-use-tools/finance">Финансы</a><a class="list-group-item list-group-item-action" href="/ru/where-to-use-tools/health">Здоровье</a><a class="list-group-item list-group-item-action" href="/ru/where-to-use-tools/sports">Спорт</a><a class="list-group-item list-group-item-action" href="/ru/where-to-use-tools/math">Математика</a><a class="list-group-item list-group-item-action" href="/ru/where-to-use-tools/construction">Строительство</a><a class="list-group-item list-group-item-action" href="/ru/where-to-use-tools/everyday">Повседневное</a><a class="list-group-item list-group-item-action" href="/ru/where-to-use-tools/physics">Физика</a><a class="list-group-item list-group-item-action" href="/ru/where-to-use-tools/developer">Разработка</a><a class="list-group-item list-group-item-action" href="/ru/where-to-use-tools/design">Дизайн</a><a class="list-group-item list-group-item-action" href="/ru/where-to-use-tools/media">Изображения</a><a class="list-group-item list-group-item-action" href="/ru/where-to-use-tools/documents">Документы</a></div>
+    </aside>
+    <main id="content" class="p-4">
+    <div class="home-wrap">
+      <div class="home-main">
+        <nav class="mb-3 small" aria-label="breadcrumb">
+          <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a href="/ru/">Главная</a></li>
+            <li class="breadcrumb-item"><a href="/ru/where-to-use-tools">Сценарии</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Разработка</li>
+          </ol>
+        </nav>
+        <section>
+          <div class="home-cat">
+            <span class="home-cat-label">Разработка</span>
+            <h1 class="h3">Разработка tools</h1>
+            <p class="home-cat-blurb">Developer utilities for formats, hashes, DNS, headers, and IndexNow.</p>
+            
+    <div class="home-card-grid">
+      
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/add-www-to-dns.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ru/tools/add-www-to-dns" target="_blank" rel="noopener noreferrer">Добавить WWW в DNS — A/CNAME и гайды</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ru/privacy#local" title="На устройстве — без загрузки на сервер. Подробнее о конфиденциальности" target="_blank" rel="noopener noreferrer">Без загрузки</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">Генерация записей www, проверка DNS, гайды Cloudflare/Vercel.</p>
+        <a href="/ru/tools/add-www-to-dns" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Открыть</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/base64.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ru/tools/base64" target="_blank" rel="noopener noreferrer">Base64 кодирование и декодирование — преобразовать текст в браузере</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ru/privacy#local" title="На устройстве — без загрузки на сервер. Подробнее о конфиденциальности" target="_blank" rel="noopener noreferrer">Без загрузки</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">Base64 для UTF-8 текста и файлов, с Base64url — локально в браузере.</p>
+        <a href="/ru/tools/base64" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Открыть</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/csv-json.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ru/tools/csv-json" target="_blank" rel="noopener noreferrer">Конвертер CSV ↔ JSON — типы, разделитель, локально</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ru/privacy#local" title="На устройстве — без загрузки на сервер. Подробнее о конфиденциальности" target="_blank" rel="noopener noreferrer">Без загрузки</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">CSV ↔ JSON с разделителем, заголовком и типами.</p>
+        <a href="/ru/tools/csv-json" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Открыть</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/domain-lookup.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ru/tools/domain-lookup" target="_blank" rel="noopener noreferrer">Проверка домена — DNS и данные регистрации</a>
+            </h3>
+            
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">Проверка домена: DNS и регистрация (WHOIS/RDAP) — A/MX/NS, регистратор и срок действия в одном окне.</p>
+        <a href="/ru/tools/domain-lookup" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Открыть</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/file-hash.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ru/tools/file-hash" target="_blank" rel="noopener noreferrer">Проверка хеша файла — сверка дайджестов в браузере</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ru/privacy#local" title="На устройстве — без загрузки на сервер. Подробнее о конфиденциальности" target="_blank" rel="noopener noreferrer">Без загрузки</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">Хеш текста или файлов локально — hex-дайджесты MD5, SHA-1, SHA-256, SHA-384, SHA-512.</p>
+        <a href="/ru/tools/file-hash" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Открыть</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/html-entity.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ru/tools/html-entity" target="_blank" rel="noopener noreferrer">Кодирование и декодирование HTML-сущностей — локально</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ru/privacy#local" title="На устройстве — без загрузки на сервер. Подробнее о конфиденциальности" target="_blank" rel="noopener noreferrer">Без загрузки</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">HTML-сущности: область, имя/число, строгий decode — всё локально.</p>
+        <a href="/ru/tools/html-entity" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Открыть</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/indexnow.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ru/tools/indexnow" target="_blank" rel="noopener noreferrer">IndexNow — отправка URL в Bing, проверка ключа и коды</a>
+            </h3>
+            
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">IndexNow: ключ, проверка .txt, отправка URL в Bing.</p>
+        <a href="/ru/tools/indexnow" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Открыть</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/ip-address.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ru/tools/ip-address" target="_blank" rel="noopener noreferrer">Узнать свой IP — Публичный адрес (IPv4/IPv6)</a>
+            </h3>
+            
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">IPv4 или IPv6 для этого соединения. Обновите в любой момент; при VPN — IP выхода.</p>
+        <a href="/ru/tools/ip-address" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Открыть</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/json-schema-validator.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ru/tools/json-schema-validator" target="_blank" rel="noopener noreferrer">Валидатор JSON Schema — пути draft-07, локально</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ru/privacy#local" title="На устройстве — без загрузки на сервер. Подробнее о конфиденциальности" target="_blank" rel="noopener noreferrer">Без загрузки</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">Проверка JSON по Schema с ошибками JSON Pointer — локальный draft-07.</p>
+        <a href="/ru/tools/json-schema-validator" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Открыть</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/jwt-decoder.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ru/tools/jwt-decoder" target="_blank" rel="noopener noreferrer">JWT декодер — читать header и payload локально (без проверки подписи)</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ru/privacy#local" title="На устройстве — без загрузки на сервер. Подробнее о конфиденциальности" target="_blank" rel="noopener noreferrer">Без загрузки</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">Декодирование header и payload JWT локально — без проверки подписи; вставка остаётся в браузере.</p>
+        <a href="/ru/tools/jwt-decoder" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Открыть</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/markdown-to-html.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ru/tools/markdown-to-html" target="_blank" rel="noopener noreferrer">Markdown ↔ HTML</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ru/privacy#local" title="На устройстве — без загрузки на сервер. Подробнее о конфиденциальности" target="_blank" rel="noopener noreferrer">Без загрузки</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">Преобразование Markdown ↔ HTML с безопасным предпросмотром.</p>
+        <a href="/ru/tools/markdown-to-html" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Открыть</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/password-generator.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ru/tools/password-generator" target="_blank" rel="noopener noreferrer">Генератор случайных паролей — создавать пароли локально</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ru/privacy#local" title="На устройстве — без загрузки на сервер. Подробнее о конфиденциальности" target="_blank" rel="noopener noreferrer">Без загрузки</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">Случайные пароли с настройкой длины и charset — локально через crypto.getRandomValues.</p>
+        <a href="/ru/tools/password-generator" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Открыть</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/text-diff.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ru/tools/text-diff" target="_blank" rel="noopener noreferrer">Сравнить тексты онлайн</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ru/privacy#local" title="На устройстве — без загрузки на сервер. Подробнее о конфиденциальности" target="_blank" rel="noopener noreferrer">Без загрузки</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">Посмотрите различия двух текстов по строкам, словам или символам.</p>
+        <a href="/ru/tools/text-diff" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Открыть</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/timezone-converter.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ru/tools/timezone-converter" target="_blank" rel="noopener noreferrer">Конвертер часовых поясов — сравнить один момент по миру</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ru/privacy#local" title="На устройстве — без загрузки на сервер. Подробнее о конфиденциальности" target="_blank" rel="noopener noreferrer">Без загрузки</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">Сравнение одного момента между поясами IANA с пояснениями DST — локально в браузере.</p>
+        <a href="/ru/tools/timezone-converter" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Открыть</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/unix-timestamp.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ru/tools/unix-timestamp" target="_blank" rel="noopener noreferrer">Конвертер Unix timestamp — эпоха ↔ читаемое время</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ru/privacy#local" title="На устройстве — без загрузки на сервер. Подробнее о конфиденциальности" target="_blank" rel="noopener noreferrer">Без загрузки</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">Unix timestamp ↔ дата, сек/мс, UTC и локально — в браузере.</p>
+        <a href="/ru/tools/unix-timestamp" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Открыть</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/uuid-generator.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ru/tools/uuid-generator" target="_blank" rel="noopener noreferrer">Генератор UUID и ULID — создавать ID в браузере</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ru/privacy#local" title="На устройстве — без загрузки на сервер. Подробнее о конфиденциальности" target="_blank" rel="noopener noreferrer">Без загрузки</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">UUID v4 и ULID локально — до 100 штук, копирование в один клик.</p>
+        <a href="/ru/tools/uuid-generator" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Открыть</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/website-headers.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ru/tools/website-headers" target="_blank" rel="noopener noreferrer">Проверка HTTP-заголовков</a>
+            </h3>
+            
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">Проверьте HTTP-заголовки ответа любого URL: HEAD/GET, редиректы и карта заголовков с edge.</p>
+        <a href="/ru/tools/website-headers" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Открыть</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/yaml-json.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ru/tools/yaml-json" target="_blank" rel="noopener noreferrer">YAML в JSON и обратно — типы, multi-doc, локально</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ru/privacy#local" title="На устройстве — без загрузки на сервер. Подробнее о конфиденциальности" target="_blank" rel="noopener noreferrer">Без загрузки</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">YAML ↔ JSON с правилами типов и multi-doc.</p>
+        <a href="/ru/tools/yaml-json" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Открыть</a>
+      </div>
+    </div>
+  </div>
+    </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+  </div>
+  
+  <footer class="site-footer border-top text-center py-3">
+    <div class="container">
+      <div class="mb-1"><small class="text-muted">OnlineFreeTools.org · Учебный проект · Итерации</small></div>
+      <nav class="d-inline" aria-label="Ссылки сайта">
+        <a class="small text-decoration-none" href="/ru/about">О сайте</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/ru/privacy">Конфиденциальность</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/ru/terms">Условия</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/ru/contact">Контакты</a>
+      </nav>
+    </div>
+  </footer>
+  
+  <script src="/vendor/bootstrap/bootstrap.bundle.min.js" defer></script>
+  <script src="/js/theme.js" defer></script>
+  
+  <script>
+    const layout = document.getElementById('layoutRoot');
+    const toggle = document.getElementById('sidebarToggle');
+    if (layout && toggle) {
+      toggle.addEventListener('click', () => layout.classList.toggle('sidebar-collapsed'));
+      
+    document.querySelectorAll("#useCasesNav a").forEach((link) => {
+      link.addEventListener('click', (e) => {
+        try {
+          const sidebar = document.getElementById('sidebar');
+          const prevScroll = sidebar ? sidebar.scrollTop : 0;
+          const href = link.getAttribute('href') || '';
+          if (href.startsWith('#')) {
+            const target = document.querySelector(href);
+            if (target) {
+              e.preventDefault();
+              const headerOffset = 56;
+              const targetY = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+              window.scrollTo({ top: targetY, behavior: 'smooth' });
+            }
+          }
+          link.blur();
+          if (window.innerWidth < 768) layout.classList.add('sidebar-collapsed');
+          setTimeout(() => { if (sidebar) sidebar.scrollTop = prevScroll; }, 300);
+        } catch (err) {}
+      });
+    });
+    }
+  </script>
+</body>
+</html>

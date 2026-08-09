@@ -20,5 +20,7 @@
     "export": "renderImageFormatConverterPage",
     "style": "opts"
   },
-  "localProcessing": true
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "image"
 }

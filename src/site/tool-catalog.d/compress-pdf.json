@@ -18,5 +18,7 @@
     "export": "renderCompressPdfPage",
     "style": "opts"
   },
-  "localProcessing": true
+  "localProcessing": true,
+  "scenario": "documents",
+  "subject": "pdf"
 }

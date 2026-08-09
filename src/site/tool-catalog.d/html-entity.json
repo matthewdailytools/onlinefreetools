@@ -18,5 +18,7 @@
     "export": "renderHtmlEntityPage",
     "style": "opts"
   },
-  "localProcessing": true
+  "localProcessing": true,
+  "scenario": "developer",
+  "subject": "text"
 }

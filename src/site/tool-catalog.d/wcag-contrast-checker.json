@@ -18,5 +18,7 @@
     "export": "renderWcagContrastCheckerPage",
     "style": "opts"
   },
-  "localProcessing": true
+  "localProcessing": true,
+  "scenario": "design",
+  "subject": "color"
 }

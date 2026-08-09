@@ -18,5 +18,7 @@
     "export": "renderHowToCalculateAgePage",
     "style": "opts"
   },
-  "localProcessing": true
+  "localProcessing": true,
+  "scenario": "everyday",
+  "subject": "number"
 }

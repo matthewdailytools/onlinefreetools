@@ -18,5 +18,7 @@
     "export": "renderHowToCalculateIrrPage",
     "style": "opts"
   },
-  "localProcessing": true
+  "localProcessing": true,
+  "scenario": "finance",
+  "subject": "number"
 }

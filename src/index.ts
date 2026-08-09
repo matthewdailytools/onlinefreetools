@@ -167,6 +167,46 @@ for (const code of DEFAULT_LANGS) {
 			return res;
 		});
 	}
+
+	// 应用场景 / 工具类型 hub + leaf（静态 `_pages/{lang}/where-to-use-tools|tool-type/...`）
+	for (const hub of ['where-to-use-tools', 'tool-type'] as const) {
+		app.get(`/${code}/${hub}`, (c) => c.redirect(`/${code}/${hub}/`, 308));
+		app.get(`/${code}/${hub}/`, async (c) => {
+			const accept = c.req.header('accept') || '';
+			if (!accept.includes('text/html')) return c.notFound();
+			const res = await fetchAsset(c, `/_pages/${code}/${hub}/index.html`);
+			return res;
+		});
+		app.get(`/${code}/${hub}/:id`, (c) => {
+			const id = c.req.param('id');
+			return c.redirect(`/${code}/${hub}/${id}/`, 308);
+		});
+		app.get(`/${code}/${hub}/:id/`, async (c) => {
+			const accept = c.req.header('accept') || '';
+			if (!accept.includes('text/html')) return c.notFound();
+			const id = c.req.param('id');
+			const res = await fetchAsset(c, `/_pages/${code}/${hub}/${id}.html`);
+			return res;
+		});
+	}
+
+	// 旧路径 301 → 新路径（避免已收录 URL 失效）
+	app.get(`/${code}/use-cases`, (c) => c.redirect(`/${code}/where-to-use-tools/`, 301));
+	app.get(`/${code}/use-cases/`, (c) => c.redirect(`/${code}/where-to-use-tools/`, 301));
+	app.get(`/${code}/use-cases/:id`, (c) =>
+		c.redirect(`/${code}/where-to-use-tools/${c.req.param('id')}/`, 301)
+	);
+	app.get(`/${code}/use-cases/:id/`, (c) =>
+		c.redirect(`/${code}/where-to-use-tools/${c.req.param('id')}/`, 301)
+	);
+	app.get(`/${code}/subjects`, (c) => c.redirect(`/${code}/tool-type/`, 301));
+	app.get(`/${code}/subjects/`, (c) => c.redirect(`/${code}/tool-type/`, 301));
+	app.get(`/${code}/subjects/:id`, (c) =>
+		c.redirect(`/${code}/tool-type/${c.req.param('id')}/`, 301)
+	);
+	app.get(`/${code}/subjects/:id/`, (c) =>
+		c.redirect(`/${code}/tool-type/${c.req.param('id')}/`, 301)
+	);
 }
 
 // 默认语信息页（无前缀规范 URL）
@@ -181,6 +221,42 @@ for (const page of ['about', 'privacy', 'terms', 'contact'] as const) {
 	});
 	app.get(`/${page}/`, (c) => c.redirect(`/${page}`, 301));
 }
+
+// 默认语场景 / 工具类型列表页（无前缀规范 URL）
+for (const hub of ['where-to-use-tools', 'tool-type'] as const) {
+	app.get(`/${hub}`, async (c) => {
+		const accept = c.req.header('accept') || '';
+		if (!accept.includes('text/html')) return c.notFound();
+		const enabled = getEnabledLangs(c.env);
+		const defaultLang = getDefaultLang(c.env, enabled);
+		const res = await fetchAsset(c, `/_pages/${defaultLang}/${hub}/index.html`);
+		return res;
+	});
+	app.get(`/${hub}/`, (c) => c.redirect(`/${hub}`, 301));
+	app.get(`/${hub}/:id`, async (c) => {
+		const accept = c.req.header('accept') || '';
+		if (!accept.includes('text/html')) return c.notFound();
+		const enabled = getEnabledLangs(c.env);
+		const defaultLang = getDefaultLang(c.env, enabled);
+		const id = c.req.param('id');
+		const res = await fetchAsset(c, `/_pages/${defaultLang}/${hub}/${id}.html`);
+		return res;
+	});
+	app.get(`/${hub}/:id/`, (c) => {
+		const id = c.req.param('id');
+		return c.redirect(`/${hub}/${id}`, 301);
+	});
+}
+
+// 默认语旧路径 301
+app.get('/use-cases', (c) => c.redirect('/where-to-use-tools', 301));
+app.get('/use-cases/', (c) => c.redirect('/where-to-use-tools', 301));
+app.get('/use-cases/:id', (c) => c.redirect(`/where-to-use-tools/${c.req.param('id')}`, 301));
+app.get('/use-cases/:id/', (c) => c.redirect(`/where-to-use-tools/${c.req.param('id')}`, 301));
+app.get('/subjects', (c) => c.redirect('/tool-type', 301));
+app.get('/subjects/', (c) => c.redirect('/tool-type', 301));
+app.get('/subjects/:id', (c) => c.redirect(`/tool-type/${c.req.param('id')}`, 301));
+app.get('/subjects/:id/', (c) => c.redirect(`/tool-type/${c.req.param('id')}`, 301));
 
 /**
  * Devlogs 目录索引（Assets 默认也会映射；显式路由保证稳定性）。
@@ -206,7 +282,15 @@ app.use("/*", async (c, next) => {
 		pathname === '/terms' ||
 		pathname.startsWith('/terms/') ||
 		pathname === '/contact' ||
-		pathname.startsWith('/contact/')
+		pathname.startsWith('/contact/') ||
+		pathname === '/where-to-use-tools' ||
+		pathname.startsWith('/where-to-use-tools/') ||
+		pathname === '/tool-type' ||
+		pathname.startsWith('/tool-type/') ||
+		pathname === '/use-cases' ||
+		pathname.startsWith('/use-cases/') ||
+		pathname === '/subjects' ||
+		pathname.startsWith('/subjects/')
 	) {
 		return next();
 	}

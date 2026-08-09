@@ -18,5 +18,7 @@
     "export": "renderHowToCalculatePacePage",
     "style": "opts"
   },
-  "localProcessing": true
+  "localProcessing": true,
+  "scenario": "sports",
+  "subject": "number"
 }

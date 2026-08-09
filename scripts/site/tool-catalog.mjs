@@ -11,7 +11,7 @@ const catalogPath = path.resolve(
   '../../src/site/tool-catalog.json'
 );
 
-/** @type {Array<{slug:string,path:string,category:string,featured?:boolean,ymyl?:boolean,localProcessing?:boolean,i18nKey:string,homeTitleKey:string,homeDescKey:string,faqPrefix:string,logo:string,related?:string[]}>} */
+/** @type {Array<{slug:string,path:string,category:string,scenario:string,subject:string,featured?:boolean,ymyl?:boolean,localProcessing?:boolean,i18nKey:string,homeTitleKey:string,homeDescKey:string,faqPrefix:string,logo:string,related?:string[]}>} */
 export const TOOL_CATALOG = require(catalogPath);
 
 /**
@@ -29,9 +29,23 @@ export const getToolBySlug = (slug) => TOOL_CATALOG.find((p) => p.slug === slug)
 
 /**
  * 按分类筛选工具。
- * @param {'calculator'|'developer'|'image'} category
+ * @param {string} category
  */
 export const getToolsByCategory = (category) =>
   TOOL_CATALOG.filter((p) => p.category === category);
+
+/**
+ * 按应用场景筛选工具。
+ * @param {string} scenario
+ */
+export const getToolsByScenario = (scenario) =>
+  TOOL_CATALOG.filter((p) => p.scenario === scenario);
+
+/**
+ * 按操作对象筛选工具。
+ * @param {string} subject
+ */
+export const getToolsBySubject = (subject) =>
+  TOOL_CATALOG.filter((p) => p.subject === subject);
 
 export default TOOL_CATALOG;

@@ -18,5 +18,7 @@
     "export": "renderHowToCalculateScientificNotationPage",
     "style": "opts"
   },
-  "localProcessing": true
+  "localProcessing": true,
+  "scenario": "math",
+  "subject": "number"
 }

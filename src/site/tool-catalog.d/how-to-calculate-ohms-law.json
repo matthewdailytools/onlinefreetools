@@ -18,5 +18,7 @@
     "export": "renderHowToCalculateOhmsLawPage",
     "style": "opts"
   },
-  "localProcessing": true
+  "localProcessing": true,
+  "scenario": "physics",
+  "subject": "number"
 }

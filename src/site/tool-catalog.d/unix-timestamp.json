@@ -18,5 +18,7 @@
     "export": "renderUnixTimestampPage",
     "style": "opts"
   },
-  "localProcessing": true
+  "localProcessing": true,
+  "scenario": "developer",
+  "subject": "number"
 }

@@ -18,5 +18,7 @@
     "export": "renderHowToCalculateVolumePage",
     "style": "opts"
   },
-  "localProcessing": true
+  "localProcessing": true,
+  "scenario": "math",
+  "subject": "number"
 }

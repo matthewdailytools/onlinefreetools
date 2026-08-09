@@ -17,5 +17,7 @@
     "export": "renderHowToCalculateBmrTdeePage",
     "style": "opts"
   },
-  "localProcessing": true
+  "localProcessing": true,
+  "scenario": "health",
+  "subject": "number"
 }

@@ -18,5 +18,7 @@
     "export": "renderIndexNowPage",
     "style": "opts"
   },
-  "localProcessing": false
+  "localProcessing": false,
+  "scenario": "developer",
+  "subject": "network"
 }

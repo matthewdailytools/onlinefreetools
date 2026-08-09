@@ -13,8 +13,15 @@ import { getAboutPageModel } from './site/pages/about.mjs';
 import { getPrivacyPageModel } from './site/pages/privacy.mjs';
 import { getTermsPageModel } from './site/pages/terms.mjs';
 import { getContactPageModel } from './site/pages/contact.mjs';
+import { getTaxonomyHubPageModel, getTaxonomyLeafPageModel } from './site/pages/taxonomy.mjs';
 import { buildToolPageNavItems } from './site/nav.mjs';
 import { TOOL_CATALOG } from './site/tool-catalog.mjs';
+import {
+  TOOL_SCENARIO_ORDER,
+  TOOL_SUBJECT_ORDER,
+  SCENARIO_HUB_PATH,
+  SUBJECT_HUB_PATH,
+} from './site/taxonomy.mjs';
 const require = createRequire(import.meta.url);
 let marked;
 try {
@@ -442,6 +449,102 @@ export const buildContact = async (lang) =>
   });
 
 /**
+ * 将 taxonomy 页模型写入 `_pages/{lang}/...`（hub 用 index.html，leaf 用 {id}.html）。
+ * @param {string} lang
+ * @param {object} model
+ * @param {string} outRelPath 相对 `_pages/{lang}/` 的输出路径
+ */
+const writeTaxonomyPage = async (lang, model, outRelPath) => {
+  const outRoot = path.join(publicDir, '_pages', lang);
+  const outFile = path.join(outRoot, outRelPath);
+  await ensureDir(path.dirname(outFile));
+
+  const pagePath = model.pagePath;
+  const langAlternates = Object.fromEntries(
+    (siteConfig.enabledLangs || []).map((code) => [code, withExplicitLangPath(code, pagePath)])
+  );
+
+  const headerHtml = renderHeader({
+    lang,
+    brandHref: withExplicitLangPath(lang, '/'),
+    navItems: model.navItems,
+    showSidebarToggle: true,
+    showSearch: true,
+    langAlternates,
+  });
+
+  const sidebarHtml = renderSidebar({
+    title: model.sidebarTitle,
+    items: model.sidebarItems,
+    id: model.sidebarId || 'taxonomyNav',
+  });
+
+  const footerHtml = renderFooter({ lang });
+
+  const html = renderLayout({
+    lang,
+    title: model.title,
+    description: model.description,
+    canonicalPath: model.canonicalPath,
+    ogImageUrl: siteConfig.ogImage,
+    ogType: 'website',
+    alternates: (siteConfig.enabledLangs || []).map((code) => ({
+      lang: code,
+      href: toAbs(withLangPath(code, pagePath)),
+    })),
+    headerHtml,
+    sidebarHtml,
+    contentHtml: model.contentHtml,
+    footerHtml,
+    headJsonLd: model.jsonLd,
+    bodyClass: model.bodyClass || 'is-home-page',
+    sidebarAutoCloseSelector: `#${model.sidebarId || 'taxonomyNav'} a`,
+  });
+
+  await fs.writeFile(outFile, html, 'utf-8');
+};
+
+/**
+ * 构建应用场景 / 操作对象 hub + leaf 静态页。
+ * @param {string} lang
+ */
+export const buildTaxonomyPages = async (lang) => {
+  const outRoot = path.join(publicDir, '_pages', lang);
+  // 清理旧路径目录，避免残留 /use-cases|/subjects 静态页
+  await fs.rm(path.join(outRoot, 'use-cases'), { recursive: true, force: true });
+  await fs.rm(path.join(outRoot, 'subjects'), { recursive: true, force: true });
+
+  const scenarioDir = SCENARIO_HUB_PATH.replace(/^\//, '');
+  const subjectDir = SUBJECT_HUB_PATH.replace(/^\//, '');
+
+  await writeTaxonomyPage(
+    lang,
+    getTaxonomyHubPageModel(lang, 'scenario'),
+    path.join(scenarioDir, 'index.html')
+  );
+  for (const id of TOOL_SCENARIO_ORDER) {
+    await writeTaxonomyPage(
+      lang,
+      getTaxonomyLeafPageModel(lang, 'scenario', id),
+      path.join(scenarioDir, `${id}.html`)
+    );
+  }
+
+  await writeTaxonomyPage(
+    lang,
+    getTaxonomyHubPageModel(lang, 'subject'),
+    path.join(subjectDir, 'index.html')
+  );
+  for (const id of TOOL_SUBJECT_ORDER) {
+    await writeTaxonomyPage(
+      lang,
+      getTaxonomyLeafPageModel(lang, 'subject', id),
+      path.join(subjectDir, `${id}.html`)
+    );
+  }
+};
+
+/**
  * 转义 XML 文本节点 / 属性值。
  * @param {string} s
  */
@@ -492,6 +595,14 @@ ${hreflangLinks(pathname, langs)}
   pushLocalized('/privacy', '0.6');
   pushLocalized('/terms', '0.6');
   pushLocalized('/contact', '0.6');
+  pushLocalized(SCENARIO_HUB_PATH, '0.75');
+  pushLocalized(SUBJECT_HUB_PATH, '0.75');
+  for (const id of TOOL_SCENARIO_ORDER) {
+    pushLocalized(`${SCENARIO_HUB_PATH}/${id}`, '0.7');
+  }
+  for (const id of TOOL_SUBJECT_ORDER) {
+    pushLocalized(`${SUBJECT_HUB_PATH}/${id}`, '0.7');
+  }
 
   for (const tool of TOOL_CATALOG) {
     pushLocalized(tool.path, '0.9');
@@ -518,6 +629,7 @@ const main = async () => {
     await buildPrivacy(lang);
     await buildTerms(lang);
     await buildContact(lang);
+    await buildTaxonomyPages(lang);
   }
   await buildDevLogs();
   await buildSitemap();
