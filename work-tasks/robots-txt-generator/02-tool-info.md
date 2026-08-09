@@ -62,7 +62,7 @@
 | 场景与行业 | 站长 / SEO：生成与理解 robots.txt |
 | 技术 | Tier 0；纯浏览器；`localProcessing: true` |
 | Title (en) | Robots.txt Generator — Manage Allow & Disallow Rules for AI Crawlers |
-| Description | Generate a robots.txt file in your browser. Steps: pick user-agents, add Allow / Disallow paths and a Sitemap line, then copy the plain-text result with syntax rules and updated AI-crawler user-agents explained. Runs locally—nothing is uploaded. Example: blocking GPTBot while keeping Googlebot fully enabled. |
+| Description 要点 | Your robots.txt tells Google which pages to crawl and index — a wrong rule can hide your whole site from search. Generate a robots.txt file in your browser. Steps: pick user-agents, add Allow / Disallow paths and a Sitemap line, then copy the plain-text result with syntax rules and updated AI-crawler user-agents explained. Runs locally—nothing is uploaded. Example: blocking GPTBot while keeping Googlebot fully enabled. |
 | Schema | WebApplication + BreadcrumbList（与可见文案一致） |
 | FAQ ≥3 | Disallow 全部会怎样；AI crawler 怎么写；Sitemap 指令位置；本地生成 |
 | related | sitemap-xml-generator, website-headers, indexnow |

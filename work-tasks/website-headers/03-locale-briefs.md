@@ -5,6 +5,7 @@
 
 **工具 slug**：`website-headers`  
 **母版语言**：en / zh  
+| 5 描述 SEO 作用增强 | 2026-08-09 | 10 语 `tool_headers_description` 前置 HTTP 头对抓取/缓存/索引的作用（X-Robots-Tag 可阻断收录）：en「a wrong X-Robots-Tag can block indexing entirely」、zh「一条错误的 X-Robots-Tag 可能直接阻断收录」；逐语独立改写。 | 通过 |
 **状态**：`i18n-done`（十语检索向已重写；待母语抽查已清；2026-08-09 S1 增强 SEO 头解读已并入十语）
 
 ---

@@ -18,6 +18,8 @@ import {
 import { registerToolPage } from "./site/toolRegistrar";
 import { TOOL_PAGE_RENDERERS } from "./site/toolPageRegistry.generated";
 import { handleWebsiteHeadersApi } from "./tools/websiteHeaders";
+import { handleOnPageSeoApi } from "./tools/onPageSeo";
+import { handleOpenGraphPreviewApi } from "./tools/openGraphPreview";
 import { handleIpAddress } from "./endpoints/ipAddress";
 import { handleDnsLookup } from "./endpoints/dnsLookup";
 import { handleDomainLookup } from "./endpoints/domainLookup";
@@ -340,6 +342,8 @@ openapi.get("/api/tasks/:taskSlug", TaskFetch);
 openapi.delete("/api/tasks/:taskSlug", TaskDelete);
 
 app.get("/api/tools/website-headers", handleWebsiteHeadersApi);
+app.get("/api/tools/on-page-seo", handleOnPageSeoApi);
+app.get("/api/tools/open-graph-preview", handleOpenGraphPreviewApi);
 app.get("/api/tools/ip-address", handleIpAddress);
 app.get("/api/tools/dns-lookup", handleDnsLookup);
 app.get("/api/tools/domain-lookup", handleDomainLookup);

@@ -5,7 +5,7 @@ import type { SiteLangDict } from '../../../types';
 const zh: SiteLangDict = {
   tool_headers_article: '用本工具查看边缘节点收到的公开网址响应头，便于核对缓存、CORS、重定向与安全头。请求经代理发出；我们不以产品形式保存页面正文。',
   tool_headers_description:
-    '从边缘节点检查网址的 HTTP 响应头。流程：提交 https 网址，优先发 HEAD（必要时改 GET），跟随重定向，展示状态码与头部映射，并拦截内网主机。附加：对 Cache-Control、X-Robots-Tag 与重定向链给出人话解读。示例：排查 CDN/重定向时查看 Cache-Control、CORS、Strict-Transport-Security。',
+    'HTTP 响应头决定了 Google 如何抓取、缓存与索引你的页面——一条错误的 X-Robots-Tag 可能直接阻断收录。从边缘节点检查网址的 HTTP 响应头。流程：提交 https 网址，优先发 HEAD（必要时改 GET），跟随重定向，展示状态码与头部映射，并拦截内网主机。附加：对 Cache-Control、X-Robots-Tag 与重定向链给出人话解读。示例：排查 CDN/重定向时查看 Cache-Control、CORS、Strict-Transport-Security。',
   tool_headers_example:
     '示例：查询 https://example.com → 状态 200，最终 URL 不变，headers 含 content-type: text/html，并可能含 cache-control 或安全相关头。',
   tool_headers_example_title: '示例',

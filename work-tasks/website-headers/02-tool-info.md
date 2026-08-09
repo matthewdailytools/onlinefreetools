@@ -73,7 +73,7 @@
 | 场景与行业 | 站长/开发者：核对响应头与安全/缓存策略 |
 | 技术（包、Tier、本地处理） | 现有 Worker/边缘拉取；Tier 0/1；**非**纯本地——FAQ 须诚实 |
 | Title (en) | 保持检索向主词；避免同义词堆砌（实现时对照 brief） |
-| Description | ≥120；步骤 + 示例头 + 隐私一句 |
+| Description 要点 | HTTP headers decide how Google crawls, caches and indexes your pages — a wrong X-Robots-Tag can block indexing entirely. Inspect a URL\'s HTTP response headers from the edge. Process: submit https URL, send HEAD (fall back to GET), follow redirects, show status and header map, block private hosts. Extra: plain-language checks of Cache-Control, X-Robots-Tag and redirect chains. Example: read Cache-Control, CORS, and Strict-Transport-Security while debugging CDN or redirects. |
 | Schema | WebApplication + BreadcrumbList |
 | FAQ（≥3） | How/步骤确认；隐私与边缘；失败边界；是否等于浏览器 DevTools |
 | Disclaimer / References | 非 YMYL；RFC 9110、MDN HTTP Headers |

@@ -7,10 +7,10 @@ import type { SiteLangDict } from '../../../types';
 const pt: SiteLangDict = {
 	tool_sitemap_home_title: 'Gerador de sitemap XML',
 	tool_sitemap_home_desc:
-		'Transforme uma lista de URLs em um sitemap.xml válido com lastmod, changefreq e priority, direto no navegador.',
+		'Ajude o Google a descobrir e indexar cada página que você quer rankear: transforme uma lista de URLs em um sitemap.xml válido com lastmod, changefreq e priority, direto no navegador.',
 	tool_sitemap_title: 'Gerador de sitemap XML — crie sitemap.xml a partir de URLs',
 	tool_sitemap_description:
-		'Gere sitemap.xml no seu navegador. Passos: cole uma URL https por linha com lastmod / changefreq / priority opcionais, visualize o XML com o escaping correto e copie para a raiz do site. Explica as regras e limites do protocolo. Nada é enviado. Exemplo: 3 URLs → urlset com três elementos url.',
+		'Um sitemap ajuda o Google a descobrir e indexar suas páginas mais rápido, principalmente as novas ou com poucos links. Gere sitemap.xml no seu navegador. Passos: cole uma URL https por linha com lastmod / changefreq / priority opcionais, visualize o XML com o escaping correto e copie para a raiz do site. Explica as regras e limites do protocolo. Nada é enviado. Exemplo: 3 URLs → urlset com três elementos url.',
 	tool_sitemap_generate: 'Gerar',
 	tool_sitemap_sample: 'Exemplo',
 	tool_sitemap_clear: 'Limpar',

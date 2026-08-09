@@ -18,6 +18,7 @@
 - [x] **清单前检索覆盖已做**（覆盖表在 02；`coverage:gate --phase=0b` 绿）
 - [x] **检索覆盖已优化**（i18n 初稿之后步 2+4 再勾）
 
+| 5 描述 SEO 作用增强 | 2026-08-09 | 10 语 `tool_sitemap_description`/`tool_sitemap_home_desc` 前置 sitemap 对收录的作用（帮 Google 更快发现与索引页面）：en「help Google discover and index your pages faster」、zh「sitemap 能帮 Google 更快发现并收录你的页面」；逐语独立改写。 | 通过 |
 技术专名 sitemap.xml / URL / lastmod / changefreq / priority / urlset / loc / sitemaps.org 可保留，但不可替代本地主 title。
 
 ---

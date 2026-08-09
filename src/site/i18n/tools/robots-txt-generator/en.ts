@@ -7,10 +7,10 @@ import type { SiteLangDict } from '../../../types';
 const en: SiteLangDict = {
 	tool_robots_home_title: 'Robots.txt Generator',
 	tool_robots_home_desc:
-		'Build a syntax-checked robots.txt with Allow, Disallow and AI-crawler rules in your browser.',
+		'Control how search engines crawl your site with a valid robots.txt — build Allow, Disallow and AI-crawler rules in your browser.',
 	tool_robots_title: 'Robots.txt Generator — Manage Allow & Disallow Rules for AI Crawlers',
 	tool_robots_description:
-		'Generate a robots.txt file in your browser. Steps: pick user-agents, add Allow / Disallow paths and a Sitemap line, then copy the plain-text result with syntax rules and updated AI-crawler user-agents explained. Runs locally—nothing is uploaded. Example: blocking GPTBot while keeping Googlebot fully enabled.',
+		'Your robots.txt tells Google which pages to crawl and index — a wrong rule can hide your whole site from search. Generate a robots.txt file in your browser. Steps: pick user-agents, add Allow / Disallow paths and a Sitemap line, then copy the plain-text result with syntax rules and updated AI-crawler user-agents explained. Runs locally—nothing is uploaded. Example: blocking GPTBot while keeping Googlebot fully enabled.',
 	tool_robots_generate: 'Generate',
 	tool_robots_sample: 'Load sample',
 	tool_robots_clear: 'Clear',

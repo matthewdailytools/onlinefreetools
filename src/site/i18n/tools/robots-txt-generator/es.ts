@@ -7,10 +7,10 @@ import type { SiteLangDict } from '../../../types';
 const es: SiteLangDict = {
 	tool_robots_home_title: 'Generador de robots.txt',
 	tool_robots_home_desc:
-		'Crea un robots.txt con sintaxis correcta: permisos, bloqueos y rastreadores de IA, en tu navegador.',
+		'Controla cómo rastrean tu sitio los buscadores con un robots.txt válido: permisos, bloqueos y rastreadores de IA, en tu navegador.',
 	tool_robots_title: 'Generador de robots.txt — gestiona permisos y bloqueos de rastreadores de IA',
 	tool_robots_description:
-		'Genera un robots.txt en tu navegador. Pasos: elige los user-agents, añade rutas Allow / Disallow y una línea Sitemap, y copia el resultado en texto plano con las reglas de sintaxis y los user-agents actuales de rastreadores de IA explicados. Corre localmente: no se sube nada. Ejemplo: bloquear GPTBot mientras Googlebot sigue totalmente habilitado.',
+		'Tu robots.txt le dice a Google qué páginas puede rastrear e indexar: una regla mal escrita puede ocultar todo tu sitio de la búsqueda. Genera un robots.txt en tu navegador. Pasos: elige los user-agents, añade rutas Allow / Disallow y una línea Sitemap, y copia el resultado en texto plano con las reglas de sintaxis y los user-agents actuales de rastreadores de IA explicados. Corre localmente: no se sube nada. Ejemplo: bloquear GPTBot mientras Googlebot sigue totalmente habilitado.',
 	tool_robots_generate: 'Generar',
 	tool_robots_sample: 'Ejemplo',
 	tool_robots_clear: 'Limpiar',

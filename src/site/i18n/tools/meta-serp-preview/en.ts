@@ -6,10 +6,10 @@ import type { SiteLangDict } from '../../../types';
 
 const en: SiteLangDict = {
 	tool_serp_home_title: 'Google SERP Preview',
-	tool_serp_home_desc: 'Check title & description truncation before you publish.',
+	tool_serp_home_desc: 'Titles that get cut off cost clicks in search — check the truncation before you publish.',
 	tool_serp_title: 'Google SERP Preview — Check title & description snippets',
 	tool_serp_description:
-		'Paste a title and description to preview Google search result truncation on desktop and mobile. Enter title, description, and optional URL; see character counts, estimated pixel widths, and snippet cut points; compare two titles side by side. Everything runs in your browser—nothing is uploaded. Example: a 60-char ASCII title and a 30-char CJK title can reach the pixel limit at different counts.',
+		'A title or description that gets cut off in the results can quietly cost you clicks from Google. Paste a title and description to preview Google search result truncation on desktop and mobile. Enter title, description, and optional URL; see character counts, estimated pixel widths, and snippet cut points; compare two titles side by side. Everything runs in your browser—nothing is uploaded. Example: a 60-char ASCII title and a 30-char CJK title can reach the pixel limit at different counts.',
 	tool_serp_preview: 'Preview',
 	tool_serp_sample: 'Load sample',
 	tool_serp_clear: 'Clear',

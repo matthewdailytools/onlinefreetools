@@ -163,9 +163,11 @@
 | 75 | robots.txt 生成 | B3；S1 | `robots-txt-generator` | 生成 robots.txt；含 AI 爬虫 User-agent（GPTBot 等） | seo | 站长、SEO | 允许/禁止规则 + AI 爬虫选项 | robots.txt 文本 | 已上线 |
 | 76 | sitemap.xml 生成 | B3；S1 | `sitemap-xml-generator` | URL 列表 → sitemap.xml（lastmod/changefreq/priority） | seo | 站长、SEO | URL 列表 + 可选元数据 | sitemap.xml | 已上线 |
 | 77 | 多引擎 Meta 文案长度包 | B.3 | `meta-copy-length-pack` | 一段文案 → 多引擎标题/描述长度套装 | seo | SEO、内容 | 1 段文案 | 多引擎长度检测结果 | 未开始 · P1 |
-| 78 | hreflang 标签生成 | A.12；C-V2 | `hreflang-generator` | 多语言 URL → hreflang 片段 | seo | 站长、国际化前端 | 语言-URL 列表 | link/hreflang 标签 | 未开始 · P2 |
-| 79 | UTM 构建器 | A.12 | `utm-builder` | 拼装带 UTM 的活动链接 | seo | 增长、运营 | 基础 URL + UTM 字段 | 完整追踪 URL | 未开始 · P2 |
-| 80 | 单页 On-page SEO 检查器 | A.12；SeaOcean 式单页审计（142 项）；C-V2 | `on-page-seo-checker` | 贴 URL/HTML → H1、canonical、meta 质量、OG/Twitter、JSON-LD 检测、mixed content、render-blocking 汇总 + 修复建议；合并 canonical 检查候选 | seo | 站长、SEO、前端 | URL 或粘贴 HTML | 逐项判定表 + 修复建议 + References | 未开始 · P2 |
+| 78 | hreflang 标签生成 | A.12；C-V2 | `hreflang-generator` | 多语言 URL → hreflang 片段 | seo | 站长、国际化前端 | 语言-URL 列表 | link/hreflang 标签 | 已上线 |
+| 79 | UTM 构建器 | A.12 | `utm-builder` | 拼装带 UTM 的活动链接 | seo | 增长、运营 | 基础 URL + UTM 字段 | 完整追踪 URL | 已上线 |
+| 80 | 单页 On-page SEO 检查器 | A.12；SeaOcean 式单页审计（142 项）；C-V2 | `on-page-seo-checker` | 贴 URL/HTML → H1、canonical、meta 质量、OG/Twitter、JSON-LD 检测、mixed content、render-blocking 汇总 + 修复建议；合并 canonical 检查候选 | seo | 站长、SEO、前端 | URL 或粘贴 HTML | 逐项判定表 + 修复建议 + References | 已上线 |
+| 81 | Open Graph 预览 | A.12；B3 | `open-graph-preview` | 贴 og/twitter 标签或抓 URL → Facebook / X / WhatsApp 分享卡片预览 + 字段缺失判定 | seo | 站长、社媒运营 | 粘贴标签或 URL | 三平台卡片 + 字段表 | 已上线 |
+| 82 | Meta 标签生成 | A.12 | `meta-tag-generator` | title/desc/canonical/robots/OG → 可直接粘贴的 head 标签 + 长度提示与转义 | seo | 站长、内容运营 | 字段表单 | head HTML 片段 | 已上线 |
 
 ---
 
@@ -397,15 +399,15 @@
 
 | 项 | 约计 |
 |---|---|
-| 序号范围 | **1–161**（全表产品行） |
+| 序号范围 | **1–163**（全表产品行） |
 | ToolDone 公式对照精选 | 22 行（§11） |
 | ToolDone 全量归档 | ~2826 en / ~2835 zh |
 | Omni 意图合并（§9 / §12） | **62** 行；明细 TSV `omnicalculator-intent-merge-howto.tsv` |
 | Omni 全量归档 | ~3867 en（无 zh） |
-| 已上线 | 118 |
+| 已上线 | 123 |
 | 未开始 · P0 | 13 |
 | 未开始 · P1 | ~25（含计算器 P1） |
-| 未开始 · P2 | ~81（含 Omni 合并补充计算器候选；2026-08-09 +`on-page-seo-checker`） |
+| 未开始 · P2 | ~78（含 Omni 合并补充计算器候选） |
 | 待 POC | 3（`local-bg-removal`、`ocr-to-text`、`audio-wav-mp3`） |
 
 **P0 未开始速查**：`create-zip-file`、`unzip-file`、`safe-paste-cleaner`、`ai-token-counter`、`chat-export-converter`、`ios-app-screenshot-resizer`、`app-icon-generator-pack`、`amazon-image-resizer`、`favicon-and-pwa-icon-pack`、`social-share-image-pack`。

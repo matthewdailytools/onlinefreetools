@@ -1,0 +1,25 @@
+{
+  "slug": "utm-builder",
+  "path": "/tools/utm-builder",
+  "category": "developer",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_utm_title",
+  "homeTitleKey": "tool_utm_home_title",
+  "homeDescKey": "tool_utm_home_desc",
+  "faqPrefix": "tool_utm",
+  "related": [
+    "indexnow",
+    "website-headers",
+    "meta-serp-preview"
+  ],
+  "logo": "/icons/tools/utm-builder.svg",
+  "page": {
+    "module": "../pages/utmBuilderPage",
+    "export": "renderUtmBuilderPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "seo",
+  "subject": "text"
+}

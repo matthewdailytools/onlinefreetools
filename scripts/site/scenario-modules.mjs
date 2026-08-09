@@ -42,7 +42,7 @@ export const SCENARIO_MODULES = {
       titleKey: 'taxonomy_scenario_seo_mod_onpage_title',
       descKey: 'taxonomy_scenario_seo_mod_onpage_desc',
       upcomingKey: 'taxonomy_scenario_seo_mod_onpage_upcoming',
-      primarySlugs: ['meta-serp-preview'],
+      primarySlugs: ['meta-serp-preview', 'on-page-seo-checker', 'meta-tag-generator'],
       relatedSlugs: ['markdown-to-html'],
     },
     {
@@ -66,7 +66,7 @@ export const SCENARIO_MODULES = {
       titleKey: 'taxonomy_scenario_seo_mod_growth_title',
       descKey: 'taxonomy_scenario_seo_mod_growth_desc',
       upcomingKey: 'taxonomy_scenario_seo_mod_growth_upcoming',
-      primarySlugs: [],
+      primarySlugs: ['utm-builder', 'hreflang-generator'],
       relatedSlugs: [],
     },
     {
@@ -74,7 +74,7 @@ export const SCENARIO_MODULES = {
       titleKey: 'taxonomy_scenario_seo_mod_social_title',
       descKey: 'taxonomy_scenario_seo_mod_social_desc',
       upcomingKey: 'taxonomy_scenario_seo_mod_social_upcoming',
-      primarySlugs: [],
+      primarySlugs: ['open-graph-preview'],
       relatedSlugs: ['smart-website-color-scheme', 'wcag-contrast-checker'],
     },
   ],

@@ -7,10 +7,10 @@ import type { SiteLangDict } from '../../../types';
 const de: SiteLangDict = {
 	tool_robots_home_title: 'Robots.txt Generator',
 	tool_robots_home_desc:
-		'Erstelle ein korrekt formatiertes robots.txt mit Erlaubnissen, Sperren und KI-Crawlern im Browser.',
+		'Steuere mit einem gültigen robots.txt, was Suchmaschinen crawlen dürfen — Erlaubnisse, Sperren und KI-Crawler im Browser.',
 	tool_robots_title: 'Robots.txt Generator — verwalte Erlaubnisse und Sperren für KI-Crawler',
 	tool_robots_description:
-		'Erstelle eine robots.txt im Browser. Schritte: User-Agents auswählen, Allow-/Disallow-Pfade und eine Sitemap-Zeile hinzufügen, dann das Textresultat mit erklärten Syntaxregeln und aktuellen KI-Crawler-User-Agents kopieren. Läuft lokal – es wird nichts hochgeladen. Beispiel: GPTBot sperren, während Googlebot vollständig aktiv bleibt.',
+		'Deine robots.txt sagt Google, welche Seiten gecrawlt und indexiert werden dürfen – eine falsche Regel kann deine gesamte Website aus der Suche verschwinden lassen. Erstelle eine robots.txt im Browser. Schritte: User-Agents auswählen, Allow-/Disallow-Pfade und eine Sitemap-Zeile hinzufügen, dann das Textresultat mit erklärten Syntaxregeln und aktuellen KI-Crawler-User-Agents kopieren. Läuft lokal – es wird nichts hochgeladen. Beispiel: GPTBot sperren, während Googlebot vollständig aktiv bleibt.',
 	tool_robots_generate: 'Generieren',
 	tool_robots_sample: 'Beispiel',
 	tool_robots_clear: 'Leeren',

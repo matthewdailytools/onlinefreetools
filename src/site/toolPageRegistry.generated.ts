@@ -76,6 +76,7 @@ import { renderHowToCalculateVatPage } from '../pages/howToCalculateVatPage';
 import { renderHowToCalculateVelocityPage } from '../pages/howToCalculateVelocityPage';
 import { renderHowToCalculateVolumePage } from '../pages/howToCalculateVolumePage';
 import { renderHowToCalculateZScorePage } from '../pages/howToCalculateZScorePage';
+import { renderHreflangGeneratorPage } from '../pages/hreflangGeneratorPage';
 import { renderHtmlEntityPage } from '../pages/htmlEntityPage';
 import { renderImageBorderPage } from '../pages/imageBorderPage';
 import { renderImageCompressPage } from '../pages/imageCompressPage';
@@ -98,6 +99,9 @@ import { renderJwtDecoderPage } from '../pages/jwtDecoderPage';
 import { renderMarkdownToHtmlPage } from '../pages/markdownToHtmlPage';
 import { renderMergePdfPage } from '../pages/mergePdfPage';
 import { renderMetaSerpPreviewPage } from '../pages/metaSerpPreviewPage';
+import { renderMetaTagGeneratorPage } from '../pages/metaTagGeneratorPage';
+import { renderOnPageSeoCheckerPage } from '../pages/onPageSeoCheckerPage';
+import { renderOpenGraphPreviewPage } from '../pages/openGraphPreviewPage';
 import { renderOrganizePdfPage } from '../pages/organizePdfPage';
 import { renderPasswordGeneratorPage } from '../pages/passwordGeneratorPage';
 import { renderPdfPageNumbersPage } from '../pages/pdfPageNumbersPage';
@@ -118,6 +122,7 @@ import { renderTimezoneConverterPage } from '../pages/timezoneConverterPage';
 import { renderUnitConverterPage } from '../pages/unitConverterPage';
 import { renderUnixTimestampPage } from '../pages/unixTimestampPage';
 import { renderUnlockPdfPage } from '../pages/unlockPdfPage';
+import { renderUtmBuilderPage } from '../pages/utmBuilderPage';
 import { renderUuidGeneratorPage } from '../pages/uuidGeneratorPage';
 import { renderWcagContrastCheckerPage } from '../pages/wcagContrastCheckerPage';
 import { renderWebsiteHeadersPage } from '../pages/websiteHeadersPage';
@@ -204,6 +209,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'how-to-calculate-velocity': (lang, defaultLang, enabled) => renderHowToCalculateVelocityPage({ lang, defaultLang, enabledLangs: enabled }),
 	'how-to-calculate-volume': (lang, defaultLang, enabled) => renderHowToCalculateVolumePage({ lang, defaultLang, enabledLangs: enabled }),
 	'how-to-calculate-z-score': (lang, defaultLang, enabled) => renderHowToCalculateZScorePage({ lang, defaultLang, enabledLangs: enabled }),
+	'hreflang-generator': (lang, defaultLang, enabled) => renderHreflangGeneratorPage({ lang, defaultLang, enabledLangs: enabled }),
 	'html-entity': (lang, defaultLang, enabled) => renderHtmlEntityPage({ lang, defaultLang, enabledLangs: enabled }),
 	'image-border': (lang, defaultLang, enabled) => renderImageBorderPage({ lang, defaultLang, enabledLangs: enabled }),
 	'image-compress': (lang, defaultLang, enabled) => renderImageCompressPage({ lang, defaultLang, enabledLangs: enabled }),
@@ -226,6 +232,9 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'markdown-to-html': (lang, defaultLang, enabled) => renderMarkdownToHtmlPage({ lang, defaultLang, enabledLangs: enabled }),
 	'merge-pdf': (lang, defaultLang, enabled) => renderMergePdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'meta-serp-preview': (lang, defaultLang, enabled) => renderMetaSerpPreviewPage({ lang, defaultLang, enabledLangs: enabled }),
+	'meta-tag-generator': (lang, defaultLang, enabled) => renderMetaTagGeneratorPage({ lang, defaultLang, enabledLangs: enabled }),
+	'on-page-seo-checker': (lang, defaultLang, enabled) => renderOnPageSeoCheckerPage({ lang, defaultLang, enabledLangs: enabled }),
+	'open-graph-preview': (lang, defaultLang, enabled) => renderOpenGraphPreviewPage({ lang, defaultLang, enabledLangs: enabled }),
 	'organize-pdf': (lang, defaultLang, enabled) => renderOrganizePdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'password-generator': (lang, defaultLang, enabled) => renderPasswordGeneratorPage({ lang, defaultLang, enabledLangs: enabled }),
 	'pdf-page-numbers': (lang, defaultLang, enabled) => renderPdfPageNumbersPage({ lang, defaultLang, enabledLangs: enabled }),
@@ -246,6 +255,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'unit-converter': (lang, defaultLang, enabled) => renderUnitConverterPage({ lang, defaultLang, enabledLangs: enabled }),
 	'unix-timestamp': (lang, defaultLang, enabled) => renderUnixTimestampPage({ lang, defaultLang, enabledLangs: enabled }),
 	'unlock-pdf': (lang, defaultLang, enabled) => renderUnlockPdfPage({ lang, defaultLang, enabledLangs: enabled }),
+	'utm-builder': (lang, defaultLang, enabled) => renderUtmBuilderPage({ lang, defaultLang, enabledLangs: enabled }),
 	'uuid-generator': (lang, defaultLang, enabled) => renderUuidGeneratorPage({ lang, defaultLang, enabledLangs: enabled }),
 	'wcag-contrast-checker': (lang, defaultLang, enabled) => renderWcagContrastCheckerPage({ lang, defaultLang, enabledLangs: enabled }),
 	'website-headers': (lang, defaultLang, _enabled) => renderWebsiteHeadersPage(lang, defaultLang),

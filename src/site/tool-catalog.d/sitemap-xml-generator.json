@@ -11,7 +11,8 @@
   "related": [
     "indexnow",
     "robots-txt-generator",
-    "website-headers"
+    "website-headers",
+    "hreflang-generator"
   ],
   "logo": "/icons/tools/sitemap-xml-generator.svg",
   "page": {

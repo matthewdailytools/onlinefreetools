@@ -63,7 +63,7 @@
 | 场景与行业 | 站长 / 内容 / 开发者：为页面生成 JSON-LD |
 | 技术 | Tier 0；纯浏览器；`localProcessing: true` |
 | Title (en) | JSON-LD Generator — Schema Markup for FAQ, Article & Breadcrumb |
-| Description | Generate JSON-LD in your browser. Steps: pick a type (FAQ, Article, Breadcrumb, Organization), fill the required fields, and copy valid Schema.org markup with a paste-ready script tag. Shows required vs optional fields and validates JSON before you copy. Nothing is uploaded. Example: a 2-item FAQ produces mainEntity with two Question nodes. |
+| Description 要点 | Structured data helps Google understand what your page is about and can earn you richer, more clickable search results. Generate JSON-LD in your browser. Steps: pick a type (FAQ, Article, Breadcrumb, Organization), fill the required fields, and copy valid Schema.org markup with a paste-ready script tag. Shows required vs optional fields and validates JSON before you copy. Nothing is uploaded. Example: a 2-item FAQ produces mainEntity with two Question nodes. |
 | Schema | WebApplication + BreadcrumbList（与可见文案一致） |
 | FAQ ≥3 | JSON-LD 是给谁看的；是否保证富结果；必填字段；与正文一致性 |
 | related | json-schema-validator, markdown-to-html, meta-serp-preview |

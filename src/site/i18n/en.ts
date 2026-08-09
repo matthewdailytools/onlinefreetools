@@ -2208,7 +2208,7 @@ const en: SiteLangDict = {
   tool_headers_article:
     'Use this checker to see the response headers our edge receives for a public URL — useful for caching, CORS, redirects, and security header spot-checks. The request is proxied; we do not store page bodies.',
   tool_headers_description:
-    'Inspect a URL\'s HTTP response headers from the edge. Process: submit https URL, send HEAD (fall back to GET), follow redirects, show status and header map, block private hosts. Extra: plain-language checks of Cache-Control, X-Robots-Tag and redirect chains. Example: read Cache-Control, CORS, and Strict-Transport-Security while debugging CDN or redirects.',
+    'HTTP headers decide how Google crawls, caches and indexes your pages — a wrong X-Robots-Tag can block indexing entirely. Inspect a URL\'s HTTP response headers from the edge. Process: submit https URL, send HEAD (fall back to GET), follow redirects, show status and header map, block private hosts. Extra: plain-language checks of Cache-Control, X-Robots-Tag and redirect chains. Example: read Cache-Control, CORS, and Strict-Transport-Security while debugging CDN or redirects.',
   tool_headers_example:
     'Example: fetch https://example.com → status 200, final URL unchanged, headers include content-type: text/html and often cache-control or security headers depending on the origin.',
   tool_headers_example_title: 'Example',
@@ -2323,6 +2323,79 @@ const en: SiteLangDict = {
   tool_heart_rate_z1Out_label: 'Zone 1 (50–60%)',
   tool_heart_rate_z2Out_label: 'Zone 2 (60–70%)',
   tool_heart_rate_z3Out_label: 'Zone 3 (70–85%)',
+  tool_hreflang_clear: 'Clear',
+  tool_hreflang_copied: 'Copied',
+  tool_hreflang_copy: 'Copy',
+  tool_hreflang_description:
+    'Without hreflang, Google may treat your translated pages as duplicates and show the wrong language version in search. Turn a set of language URLs into hreflang markup in three forms: <link> tags, HTTP Link header and sitemap <xhtml:link>. Steps: paste each language URL with its code, choose a form, copy the generated snippet. Every URL gets its own self-referencing hreflang, and an optional x-default fallback can be added. Runs entirely on your device—nothing is uploaded. Example: en, es and ja versions of one page.',
+  tool_hreflang_error_prefix: 'Error: ',
+  tool_hreflang_example:
+    'The sample lists three versions of one page: https://example.com/ (en), https://example.com/es/ (es) and https://example.com/ja/ (ja). The generated <link> tags include self-references for each language plus an optional x-default pointing to the English root.',
+  tool_hreflang_example_title: 'Example',
+  tool_hreflang_faq_a1:
+    'Use the <link> tags when you can edit the page HTML. Use the HTTP Link header when pages are served by a server you control and HTML is hard to change. Use the sitemap form when you prefer keeping it in the XML sitemap.',
+  tool_hreflang_faq_a2:
+    'x-default tells Google which version to show when the visitor language does not match any listed code. Add it when you have a root or fallback page, usually English.',
+  tool_hreflang_faq_a3:
+    'Yes. Each language version must include its own URL in the set, with a self-referencing hreflang pointing back to itself. Google uses the complete set to pick the right page per language.',
+  tool_hreflang_faq_a4:
+    'BCP 47 codes: a two- or three-letter language, optionally a region (en-US) and optionally a script (zh-Hans). Lowercase the language, and do not invent codes such as "en-us-en".',
+  tool_hreflang_faq_a5:
+    'Either works, but use one consistent form per page set. The <link> tags live in <head>, the HTTP Link header is sent with the response, and the sitemap uses xhtml:link blocks.',
+  tool_hreflang_faq_a6: 'No. The generator runs entirely in your browser and nothing is uploaded.',
+  tool_hreflang_faq_q1: 'Which of the three forms should I use?',
+  tool_hreflang_faq_q2: 'When should I add x-default?',
+  tool_hreflang_faq_q3: 'Does every URL need a self-referencing hreflang?',
+  tool_hreflang_faq_q4: 'What language code format is valid?',
+  tool_hreflang_faq_q5: 'Should hreflang go in <head> or in the sitemap?',
+  tool_hreflang_faq_q6: 'Are my URLs uploaded anywhere?',
+  tool_hreflang_generate: 'Generate',
+  tool_hreflang_home_desc:
+    'Tell Google which language version of a page to show whom — turn language URLs into hreflang tags, HTTP Link headers and sitemap markup from your browser.',
+  tool_hreflang_home_title: 'Hreflang Generator',
+  tool_hreflang_how_body:
+    'The generator parses each line into a language code and a URL, then renders the same set of relationships in three forms. The <link> form goes into the <head> of each page. The HTTP Link header form is set on the server response. The sitemap form embeds <xhtml:link> inside each <url> block. Every URL gets a self-referencing hreflang so each language version points back to itself, and the optional x-default entry covers visitors whose language is not listed.',
+  tool_hreflang_how_title: 'How it works',
+  tool_hreflang_input_hint:
+    'Each line is "language-code URL" or "URL language-code". Codes use the BCP 47 form such as en, en-US or zh-Hans.',
+  tool_hreflang_input_label: 'Language URL list',
+  tool_hreflang_input_ph:
+    'One pair per line: lang code + URL. Example:\nen https://example.com/\nes https://example.com/es/\nja https://example.com/ja/',
+  tool_hreflang_lang_invalid: 'Invalid language code: {lang}. Use BCP 47 forms such as en, en-US or zh-Hans.',
+  tool_hreflang_no_valid_rows: 'No valid rows. Add at least one language code and URL.',
+  tool_hreflang_output_label: 'Generated markup',
+  tool_hreflang_ref_bcp47_label: 'BCP 47 — Tags for identifying languages',
+  tool_hreflang_ref_searchcentral_label: 'Search Central — Localized versions (hreflang)',
+  tool_hreflang_references: 'Google Search Central — Localized versions (hreflang); BCP 47 language tags.',
+  tool_hreflang_rules_body: 'These rules come from Google Search Central and the BCP 47 language tag standard.',
+  tool_hreflang_rules_item_1:
+    'Each language version must include a self-referencing hreflang that points back to its own URL. Skipping it weakens the signal.',
+  tool_hreflang_rules_item_2:
+    'Every URL must be listed from every language version: the full set of alternates appears on each page, not just one direction.',
+  tool_hreflang_rules_item_3:
+    'Language codes use BCP 47: a two-letter language, optionally a region (en-US) and optionally a script (zh-Hans). x-default is the special fallback code.',
+  tool_hreflang_rules_item_4:
+    'x-default points to the page shown when no listed language matches, for example an English root page. Google may use it as a fallback for all undetected languages.',
+  tool_hreflang_rules_item_5:
+    'Choose one delivery form per set: the <link> tags in HTML, the HTTP Link header, or sitemap xhtml:link. Do not mix forms for the same page set, or signals can contradict.',
+  tool_hreflang_rules_title: 'Rules used by the generator',
+  tool_hreflang_sample: 'Load sample',
+  tool_hreflang_tab_http: 'HTTP Link header',
+  tool_hreflang_tab_link: '<link> tags',
+  tool_hreflang_tab_sitemap: 'Sitemap',
+  tool_hreflang_title: 'Hreflang Generator — Create hreflang tags for multilingual sites',
+  tool_hreflang_url_protocol: 'A URL had no protocol — https:// was added automatically.',
+  tool_hreflang_usecase_1:
+    'Launching a multilingual site: generate the <link> tags for each template once and verify every language version lists the full set.',
+  tool_hreflang_usecase_2:
+    'After a site restructure, regenerate the markup so the URL mapping stays consistent across languages instead of drifting.',
+  tool_hreflang_usecase_3:
+    'When search results show the wrong language, check that self-references and x-default exist and that the URLs point to canonical pages.',
+  tool_hreflang_usecases_title: 'Good use cases',
+  tool_hreflang_xdefault_hint:
+    'Optional. x-default tells Google which version to show when no language matches, useful for a root or English homepage.',
+  tool_hreflang_xdefault_label: 'x-default fallback URL',
+  tool_hreflang_xdefault_none: '— do not add x-default —',
   tool_html_entity_article:
     'Bidirectional HTML entity encode and decode with explicit scope, output form, double-encoding notes, and attribute vs text guidance. Built for developers cleaning API strings and CMS snippets.',
   tool_html_entity_clear: 'Clear',
@@ -4143,6 +4216,90 @@ const en: SiteLangDict = {
   tool_merge_pdf_usecases_title: 'Good fits',
   tool_merge_pdf_warn_large: 'A file is larger than ~25 MB — merge may be slow or fail in some browsers.',
   tool_merge_pdf_warn_pdflib: 'PDF library failed to load. Check your network and retry.',
+  tool_meta_canonical_hint: 'The preferred URL for this page. Add the full URL including the protocol.',
+  tool_meta_canonical_label: 'Canonical URL',
+  tool_meta_canonical_ph: 'https://example.com/your-page',
+  tool_meta_canonical_protocol: 'The canonical URL has no protocol — add https:// or http:// for search engines to read it.',
+  tool_meta_clear: 'Clear',
+  tool_meta_copied: 'Copied',
+  tool_meta_copy: 'Copy',
+  tool_meta_desc_hint: 'Keep it around 155–160 characters. Longer text may be truncated in the SERP.',
+  tool_meta_desc_label: 'Meta description',
+  tool_meta_desc_len: 'Description: {n} characters',
+  tool_meta_desc_len_warn: 'Description: {n} characters — over 160, may be truncated.',
+  tool_meta_desc_ph: 'Generate ready-to-paste head meta tags with length hints, robots values and OG fields.',
+  tool_meta_description:
+    'Your title and meta description are what users see in Google, and a wrong canonical can split your rankings across duplicate URLs. Fill in the title, description, canonical, robots and Open Graph fields to generate ready-to-paste <head> meta tags. Steps: enter your fields, read the length hints and previews, copy the generated HTML with correct escaping. Special characters such as & and < are escaped automatically so the tags stay valid. Runs entirely on your device—nothing is uploaded. Example: canonical and og tags side by side.',
+  tool_meta_error_prefix: 'Error: ',
+  tool_meta_example:
+    'The sample fills the title, description, canonical, robots and three Open Graph fields. The generated snippet outputs a <title> tag, the meta description, the canonical link, the robots meta and the og: tags that were filled in.',
+  tool_meta_example_title: 'Example',
+  tool_meta_faq_a1:
+    'index lets search engines include the page in results, while noindex keeps it out. follow allows crawling links on the page, and nofollow tells engines not to. When the tag is absent, the default is index, follow.',
+  tool_meta_faq_a2:
+    'Yes. The generator escapes & < > " and \', so an ampersand becomes &amp; and a less-than sign becomes &lt;. Your tags stay valid even if the value contains markup-like characters.',
+  tool_meta_faq_a3:
+    'Yes, they cover different systems. The canonical link tells search engines the preferred URL, while og: tags describe the page for social sharing. Keep og:url aligned with the canonical URL.',
+  tool_meta_faq_a4:
+    'Around 60 characters for the title and 155–160 for the description are common working limits. They are suggestions: search engines may rewrite or truncate longer values.',
+  tool_meta_faq_a5:
+    'Empty optional fields are skipped, so the generated snippet only contains the tags for the fields you filled in.',
+  tool_meta_faq_a6: 'No. The generator runs entirely in your browser and nothing is uploaded.',
+  tool_meta_faq_q1: 'What do the robots meta values mean?',
+  tool_meta_faq_q2: 'Will special characters in my values be escaped?',
+  tool_meta_faq_q3: 'Can canonical and Open Graph tags coexist?',
+  tool_meta_faq_q4: 'How long should the title and description be?',
+  tool_meta_faq_q5: 'What happens to empty fields?',
+  tool_meta_faq_q6: 'Is my data uploaded anywhere?',
+  tool_meta_generate: 'Generate',
+  tool_meta_home_desc:
+    'Write the title, description, canonical and Open Graph tags that earn clicks in search — generate the complete page head from your browser.',
+  tool_meta_home_title: 'Meta Tag Generator',
+  tool_meta_how_body:
+    'The generator takes your fields and builds the corresponding head tags. Empty optional fields are skipped, so the output contains only what you filled in. Every value is HTML-escaped: an ampersand becomes &amp; and a less-than sign becomes &lt;, keeping the tags valid inside your page. Length hints warn you when the title or description exceeds the commonly used limits, without cutting your text.',
+  tool_meta_how_title: 'How it works',
+  tool_meta_og_desc_label: 'og:description',
+  tool_meta_og_image_label: 'og:image (full URL)',
+  tool_meta_og_title_label: 'og:title',
+  tool_meta_og_type_label: 'og:type',
+  tool_meta_og_url_label: 'og:url',
+  tool_meta_output_label: 'Generated head snippet',
+  tool_meta_ref_searchcentral_canonical_label: 'Search Central — Canonical URLs',
+  tool_meta_ref_searchcentral_tags_label: 'Search Central — Meta tags that Google understands',
+  tool_meta_ref_searchcentral_title_label: 'Search Central — Control your title links',
+  tool_meta_references: 'Google Search Central — Meta tags that Google understands; Control title links; Canonical URLs.',
+  tool_meta_robots_index_follow: 'index, follow (default, let search engines index)',
+  tool_meta_robots_index_nofollow: 'index, nofollow (allow index, do not follow links)',
+  tool_meta_robots_label: 'Robots meta',
+  tool_meta_robots_noindex_follow: 'noindex, follow (hide from results, keep following links)',
+  tool_meta_robots_noindex_nofollow: 'noindex, nofollow (hide page and do not follow links)',
+  tool_meta_robots_none: '— do not add a robots meta —',
+  tool_meta_rules_body: 'These rules follow Google Search Central guidance on meta tags, title links and canonical URLs.',
+  tool_meta_rules_item_1:
+    'The meta title and description are suggestions, not directives: search engines may rewrite or truncate them, so keep the title around 60 characters and the description around 155–160.',
+  tool_meta_rules_item_2:
+    'All values are HTML-escaped: & < > " and \' become entities, so characters in your title or description cannot break the tag markup.',
+  tool_meta_rules_item_3:
+    'The canonical URL should be the full absolute URL with a protocol. A relative or protocol-less URL is not useful as a canonical target.',
+  tool_meta_rules_item_4:
+    'The robots meta uses the values index/noindex and follow/nofollow. When omitted, search engines use their own default, which is to index and follow.',
+  tool_meta_rules_item_5:
+    'Canonical and Open Graph tags can coexist on the same page: og:url should match the canonical URL so social shares point to the same address.',
+  tool_meta_rules_title: 'Rules used by the generator',
+  tool_meta_sample: 'Load sample',
+  tool_meta_title: 'Meta Tag Generator — Generate complete page head tags',
+  tool_meta_title_hint: 'Keep it around 60 characters. Search engines may rewrite longer titles.',
+  tool_meta_title_label: 'Meta title',
+  tool_meta_title_len: 'Title: {n} characters',
+  tool_meta_title_len_warn: 'Title: {n} characters — over 60, consider shortening.',
+  tool_meta_title_ph: 'Meta Tag Generator — Generate complete page head tags',
+  tool_meta_usecase_1:
+    'Building a new page template: generate the head block once, verify the length hints, and paste it into the template before shipping.',
+  tool_meta_usecase_2:
+    'Delivering work for a client: generate the exact head snippet with canonical and OG fields, then paste it into the CMS.',
+  tool_meta_usecase_3:
+    'Before publishing, generate the tags and check them against a search-result preview so the title and description match the visible page.',
+  tool_meta_usecases_title: 'Good use cases',
   tool_npv_article:
     'Net present value (NPV) discounts future cash flows back to today at a chosen annual rate, then subtracts the initial investment. A positive NPV means the discounted inflows exceed the outflow under your assumptions; it is not a forecast or a buy recommendation.',
   tool_npv_calculate: 'Calculate',
@@ -4200,6 +4357,101 @@ const en: SiteLangDict = {
   tool_npv_usecase_3:
     'Sketch whether a multi-year cash plan clears a hurdle rate before talking to an advisor — not a substitute for full analysis.',
   tool_npv_usecases_title: 'When to use it',
+  tool_og_card_large: 'summary_large_image',
+  tool_og_card_summary: 'summary',
+  tool_og_clear: 'Clear',
+  tool_og_copied: 'Copied',
+  tool_og_copy: 'Copy',
+  tool_og_description:
+    'Open Graph tags decide how your page looks every time it is shared — a missing image or title costs you clicks and shares. Paste your og:/twitter:card tags or a URL to preview the Facebook, X and WhatsApp-style share card, spot missing fields and fix image ratios. Steps: paste tags or fetch a URL, read the three preview cards and the field table, then fix what is missing. Paste mode runs on your device; URL mode fetches the page once and does not store it. Example: a page with a 1200×630 og:image shared as a large card.',
+  tool_og_dimensions: '{w}×{h} px',
+  tool_og_error_prefix: 'Error: ',
+  tool_og_example:
+    'The sample tags describe a blog post with a 1200×630 og:image and twitter:card summary_large_image. The preview shows a Facebook card with the image on the left, a large X card, a WhatsApp-style card, and a tag table where every required field is present.',
+  tool_og_example_title: 'Example',
+  tool_og_faq_a1:
+    'Facebook, X and WhatsApp build the preview from the HTML title, meta description and the first image of the page. The card can be incomplete or show the wrong image, which is why the required og: fields exist.',
+  tool_og_faq_a2:
+    'The safe size is 1200×630 px, a 1.91:1 ratio that all major platforms accept. Facebook now also supports 2:1 and 1:1 crops. Very small images are often upscaled and look blurry.',
+  tool_og_faq_a3:
+    'twitter:card selects the layout: summary_large_image shows a wide image, summary shows a small one. When twitter:title, twitter:description or twitter:image are missing, X falls back to the corresponding og: tag.',
+  tool_og_faq_a4:
+    'It falls back to the first image found in the page HTML, or shows the card without an image. A missing og:image is the most common cause of a shared link without a preview picture.',
+  tool_og_faq_a5:
+    'The preview tries to load og:image with a browser image load to read its real size. When the image is blocked, offline, slow or on a server that rejects the request, the size cannot be read and the check reports unknown.',
+  tool_og_faq_a6:
+    'No. In paste mode the parsing and preview run on your device. URL mode fetches the page once through our worker and does not store it.',
+  tool_og_faq_q1: 'What happens if a page has no Open Graph tags?',
+  tool_og_faq_q2: 'How large should og:image be?',
+  tool_og_faq_q3: 'How does twitter:card relate to the og: tags?',
+  tool_og_faq_q4: 'What does a platform do when og:image is missing?',
+  tool_og_faq_q5: 'Why does the ratio check report “unknown”?',
+  tool_og_faq_q6: 'Are my tags uploaded anywhere?',
+  tool_og_fetch_failed: 'Could not fetch the URL. The page may be offline, block bots, or return non-HTML content.',
+  tool_og_field_og_description: 'og:description',
+  tool_og_field_og_image: 'og:image',
+  tool_og_field_og_site_name: 'og:site_name',
+  tool_og_field_og_title: 'og:title',
+  tool_og_field_og_type: 'og:type',
+  tool_og_field_og_url: 'og:url',
+  tool_og_field_twitter_card: 'twitter:card',
+  tool_og_field_twitter_description: 'twitter:description',
+  tool_og_field_twitter_image: 'twitter:image',
+  tool_og_field_twitter_site: 'twitter:site',
+  tool_og_field_twitter_title: 'twitter:title',
+  tool_og_home_desc:
+    'Make every social share of your page earn clicks — preview how it looks on Facebook, X and messaging apps from your browser.',
+  tool_og_home_title: 'Open Graph Preview',
+  tool_og_how_body:
+    'The preview parses the og:/twitter: tags you paste (or extracts them from the HTML fetched for a URL) and renders three share cards. Facebook uses the 1.91:1 image on the left with title, description and domain below. X follows twitter:card: summary_large_image shows a big image on top, summary shows a small one beside the text. Messaging apps such as WhatsApp show one large card. A field table marks og:title, og:description and og:image as required and lists optional fields.',
+  tool_og_how_title: 'How it works',
+  tool_og_missing_label: 'Missing',
+  tool_og_no_tags: 'No OG tags detected',
+  tool_og_no_tags_fallback:
+    'Without Open Graph tags, Facebook, X and WhatsApp build the preview from the page title, description and first image instead.',
+  tool_og_ok_label: 'Present',
+  tool_og_optional_label: 'Optional',
+  tool_og_platform_facebook: 'Facebook',
+  tool_og_platform_generic: 'Messaging apps (WhatsApp style)',
+  tool_og_platform_x: 'X',
+  tool_og_preview: 'Preview',
+  tool_og_ratio_ok: 'og:image is close to 1200×630 px (1.91:1).',
+  tool_og_ratio_unknown: 'Could not read the image size from the URL.',
+  tool_og_ratio_warning: 'og:image should be around 1200×630 px (1.91:1).',
+  tool_og_ref_ogp_label: 'ogp.me — The Open Graph protocol',
+  tool_og_ref_x_label: 'X — Cards markup',
+  tool_og_references: 'ogp.me — The Open Graph protocol; X — Cards markup.',
+  tool_og_required_label: 'Required',
+  tool_og_rules_body:
+    'These are the image sizes and fallbacks the platforms use, based on the Open Graph protocol and the X Cards docs.',
+  tool_og_rules_item_1:
+    'Required fields: og:title, og:description and og:image. Missing ones are marked so you can fix them before publishing.',
+  tool_og_rules_item_2:
+    'og:image at 1200×630 px (1.91:1) works on all major platforms. Facebook now also accepts 2:1 and 1:1 crops; smaller images are often compressed.',
+  tool_og_rules_item_3:
+    'twitter:card summary_large_image pairs with a large image; summary pairs with a smaller one. Without twitter:card, platforms infer a summary card from the og: tags.',
+  tool_og_rules_item_4:
+    'When og:title or og:image is missing, platforms fall back to the HTML title, meta description and the first image of the page.',
+  tool_og_rules_item_5:
+    'Image sizes are measured with a browser image load; if the image cannot be loaded (blocked, offline or wrong URL) the ratio check reports unknown.',
+  tool_og_rules_title: 'Rules used by the preview',
+  tool_og_running: 'Checking…',
+  tool_og_sample: 'Load sample',
+  tool_og_table_title: 'Tag status',
+  tool_og_tags_ph: 'Paste your <meta property="og:*"> and <meta name="twitter:*"> tags here…',
+  tool_og_tags_tab: 'Paste tags',
+  tool_og_title: 'Open Graph Preview — Check social share cards',
+  tool_og_twitter_inferred: 'No twitter:card set — platforms infer a summary card from the og: tags.',
+  tool_og_url_error: 'Enter a valid http(s) URL.',
+  tool_og_url_fetch: 'Fetch URL',
+  tool_og_url_ph: 'https://example.com/page',
+  tool_og_url_tab: 'Fetch URL',
+  tool_og_usecase_1:
+    'Before publishing a post or landing page, paste the tags once and confirm the share card looks right on Facebook, X and messaging apps.',
+  tool_og_usecase_2:
+    'When a shared link shows no image or a cropped one, paste the og: tags to check whether og:image is missing or has a wrong ratio.',
+  tool_og_usecase_3: 'After a CMS or theme update, fetch the live URL and verify that the og: tags still match the page.',
+  tool_og_usecases_title: 'Good use cases',
   tool_ohms_law_I_label: 'Current I',
   tool_ohms_law_I_ph: 'e.g. 2',
   tool_ohms_law_V_label: 'Voltage V',
@@ -4280,6 +4532,125 @@ const en: SiteLangDict = {
   tool_one_rep_max_usecases_title: 'When to use it',
   tool_one_rep_max_weight_label: 'Weight',
   tool_one_rep_max_weight_ph: 'e.g. 100',
+  tool_onpage_canonical_check: 'Canonical',
+  tool_onpage_canonical_missing: 'No canonical URL set. Add <link rel="canonical"> when the same content is reachable at several URLs.',
+  tool_onpage_canonical_ok: 'Self-referencing canonical found.',
+  tool_onpage_canonical_other:
+    'Canonical points to a different URL. Use a self-referencing canonical unless the page is a copy of the target.',
+  tool_onpage_check: 'Check page',
+  tool_onpage_clear: 'Clear',
+  tool_onpage_copied: 'Copied',
+  tool_onpage_copy: 'Copy',
+  tool_onpage_desc_check: 'Meta description',
+  tool_onpage_desc_long: 'Description is {n} characters — snippets usually cut around 160 characters.',
+  tool_onpage_desc_missing: 'No meta description found. Write a 140–160 character summary that matches the page content.',
+  tool_onpage_desc_ok: 'Description found at {n} characters. The 140–160 character range shows well in most snippets.',
+  tool_onpage_desc_short: 'Description is only {n} characters. Use the space to summarize what the page offers.',
+  tool_onpage_description:
+    'Weak titles, missing meta descriptions, duplicate H1s and broken canonicals quietly cost rankings and clicks. Paste a URL or HTML to audit title, H1, meta description, canonical, Open Graph, JSON-LD, mixed content and render-blocking, each with a fix suggestion. Paste mode runs on your device; URL mode fetches the page once without storing it. Example: a sample page with a duplicate H1 and one http:// image.',
+  tool_onpage_error_prefix: 'Error: ',
+  tool_onpage_example:
+    'Sample input is a page with a 71-character title, no meta description, two H1 tags, a canonical to another URL, one og:image, a valid JSON-LD block and one http:// image. The checker reports the title as likely truncated, H1 as a warning, canonical as non-self-referencing, and mixed content as a warning, matching what the tool shows when you load the sample.',
+  tool_onpage_example_title: 'Example',
+  tool_onpage_faq_a1:
+    'It checks the tags a page controls itself: the title, meta description, H1, canonical, robots meta, Open Graph fields, JSON-LD structured data, mixed content and render-blocking resources. It does not measure rankings or backlinks.',
+  tool_onpage_faq_a2:
+    'A single H1 states the topic of the page clearly for both readers and search engines. Multiple H1s blur the outline; use one H1 and structure the rest with H2–H6.',
+  tool_onpage_faq_a3:
+    'For the page that should rank, yes — a self-referencing canonical is the clearest signal. Pointing canonical at another URL tells Google that page is a duplicate, which is useful only when that is true.',
+  tool_onpage_faq_a4:
+    'When a page is served over https and references http:// images, scripts or styles, browsers block the request by default. This check lists those references as warnings so you can switch them to https.',
+  tool_onpage_faq_a5:
+    'It verifies the blocks parse as valid JSON and reminds you to keep structured data consistent with visible content. It does not run a full schema.org validator.',
+  tool_onpage_faq_a6:
+    'No. When you paste HTML, parsing happens on your device and nothing is sent to a server. URL mode fetches the page once through our worker and does not store it.',
+  tool_onpage_faq_q1: 'What does an on-page SEO checker look for?',
+  tool_onpage_faq_q2: 'Why should a page have exactly one H1?',
+  tool_onpage_faq_q3: 'Does canonical have to point to itself?',
+  tool_onpage_faq_q4: 'Why does the checker flag http:// resources as mixed content?',
+  tool_onpage_faq_q5: 'Does the JSON-LD check test validation?',
+  tool_onpage_faq_q6: 'Is my HTML uploaded anywhere?',
+  tool_onpage_fetch_failed: 'Could not fetch the URL. It may be offline, block bots, or return non-HTML content.',
+  tool_onpage_h1_check: 'H1',
+  tool_onpage_h1_missing: 'No H1 found. Use exactly one H1 that states the page topic.',
+  tool_onpage_h1_multiple: '{n} H1 tags found. Keep a single H1 per page and use H2–H6 for sections.',
+  tool_onpage_h1_ok: 'One H1 found and it is inside <body>.',
+  tool_onpage_home_desc:
+    'Catch the tag issues that hold your page back in search: audit title, H1, meta description, canonical, Open Graph and JSON-LD in your browser.',
+  tool_onpage_home_title: 'On-Page SEO Checker',
+  tool_onpage_how_body:
+    'The checker parses the markup you paste (or the HTML fetched from a URL) and evaluates a fixed list of on-page SEO checks. Each check reads a single kind of tag: the title, the meta description, H1 tags, the canonical link, robots meta, Open Graph fields, JSON-LD blocks, mixed content and render-blocking resources. Paste mode runs entirely in your browser; URL mode fetches the page once through our worker and does not store it.',
+  tool_onpage_how_title: 'How it works',
+  tool_onpage_html_ph: 'Paste the <head> (and body snippet) HTML here…',
+  tool_onpage_html_tab: 'Paste HTML',
+  tool_onpage_jsonld_check: 'JSON-LD',
+  tool_onpage_jsonld_invalid: 'A JSON-LD block could not be parsed as JSON. Check for syntax errors.',
+  tool_onpage_jsonld_missing:
+    'No JSON-LD structured data found. Consider adding schema.org markup when it describes visible content.',
+  tool_onpage_jsonld_ok: '{n} JSON-LD block(s) found. Keep the structured data consistent with what visitors see.',
+  tool_onpage_mixed_check: 'Mixed content',
+  tool_onpage_mixed_found:
+    '{n} http:// reference(s) found. Browsers block mixed content; serve these resources over https instead.',
+  tool_onpage_mixed_none: 'No http:// resource references found in an https context.',
+  tool_onpage_no_html: 'Paste some HTML first, or fetch a URL.',
+  tool_onpage_no_results: 'No checks to show yet.',
+  tool_onpage_og_check: 'Open Graph',
+  tool_onpage_og_missing: 'No og: tags found. Add og:title, og:description and og:image for social sharing previews.',
+  tool_onpage_og_ok: 'og:title, og:description and og:image are present.',
+  tool_onpage_og_partial: 'Missing {n} required og: field(s). Make sure og:title, og:description and og:image are present.',
+  tool_onpage_ref_canonical_label: 'Search Central — Canonical URLs',
+  tool_onpage_ref_mdn_label: 'MDN — <meta>: The metadata element',
+  tool_onpage_ref_tags_label: 'Search Central — Meta tags that Google understands',
+  tool_onpage_references: 'Google Search Central — meta tags; Google Search Central — canonical; MDN Web Docs — <meta>.',
+  tool_onpage_render_check: 'Render-blocking',
+  tool_onpage_render_found:
+    '{n} <link rel="stylesheet"> without media in <head>. Inline critical CSS or defer loading to improve LCP.',
+  tool_onpage_render_none: 'No obvious render-blocking stylesheets or scripts detected.',
+  tool_onpage_robots_check: 'Robots meta',
+  tool_onpage_robots_missing: 'No robots meta. Default is index,follow, which is fine for most public pages.',
+  tool_onpage_robots_noindex:
+    'The page sets noindex — it will not appear in Google Search. Remove it when the page should be indexed.',
+  tool_onpage_robots_ok: 'Robots meta allows indexing and following.',
+  tool_onpage_rules_body:
+    'These are the standards each check compares against. They come from Google Search Central and the HTML specification.',
+  tool_onpage_rules_item_1:
+    'Title: a page should have one descriptive <title>. Google may rewrite it, but a concise title near 50–60 characters usually displays well.',
+  tool_onpage_rules_item_2:
+    'H1: use exactly one H1 that states the page topic. Additional headings should be H2–H6 and form a logical outline.',
+  tool_onpage_rules_item_3:
+    'Canonical: a self-referencing canonical tells Google which URL is the preferred one when duplicates exist. Link rel="canonical" goes in <head>.',
+  tool_onpage_rules_item_4:
+    'Mixed content: an https page referencing http:// resources is blocked by browsers. This check lists those references as warnings.',
+  tool_onpage_rules_item_5:
+    'Render-blocking: a stylesheet in <head> without a media attribute blocks rendering. This check is heuristic and does not measure real load time.',
+  tool_onpage_rules_title: 'Rules the checks follow',
+  tool_onpage_running: 'Checking…',
+  tool_onpage_sample: 'Load sample',
+  tool_onpage_status_err: 'Issue',
+  tool_onpage_status_ok: 'OK',
+  tool_onpage_status_warn: 'Warning',
+  tool_onpage_summary_n_err: '{n} issues',
+  tool_onpage_summary_n_ok: '{n} passed',
+  tool_onpage_summary_n_warn: '{n} warnings',
+  tool_onpage_summary_title: 'Check summary',
+  tool_onpage_title: 'On-Page SEO Checker — Find and fix page tag issues',
+  tool_onpage_title_check: 'Title',
+  tool_onpage_title_long: 'Title is {n} characters — likely to be truncated in search results. Aim for about 50–60 characters.',
+  tool_onpage_title_missing: 'No <title> tag found. Add one under <head>.',
+  tool_onpage_title_ok: 'Title found at {n} characters. Keep it close to 50–60 characters for search snippets.',
+  tool_onpage_title_short: 'Title is only {n} characters. Add a specific page focus to make it more informative.',
+  tool_onpage_unknown: 'Could not determine: {label}',
+  tool_onpage_url_error: 'Enter a valid http(s) URL.',
+  tool_onpage_url_fetch: 'Check URL',
+  tool_onpage_url_ph: 'https://example.com/page',
+  tool_onpage_url_tab: 'Fetch URL',
+  tool_onpage_usecase_1:
+    'Before a redesign or relaunch: run the same page through the checker and fix the reported issues in one pass.',
+  tool_onpage_usecase_2:
+    'Template handoff: when you receive HTML from an agency or a page builder, verify the head tags instead of trusting the export.',
+  tool_onpage_usecase_3:
+    'Content updates: after a CMS edit, confirm the title, description and canonical still match the new page.',
+  tool_onpage_usecases_title: 'Good fits',
   tool_organize_pdf_apply: 'Apply',
   tool_organize_pdf_article:
     'Reorder, remove, or keep selected pages from one PDF in your browser—files stay on your device, not on a server.',
@@ -5222,7 +5593,7 @@ const en: SiteLangDict = {
   tool_robots_copied: 'Copied',
   tool_robots_copy: 'Copy',
   tool_robots_description:
-    'Generate a robots.txt file in your browser. Steps: pick user-agents, add Allow / Disallow paths and a Sitemap line, then copy the plain-text result with syntax rules and updated AI-crawler user-agents explained. Runs locally—nothing is uploaded. Example: blocking GPTBot while keeping Googlebot fully enabled.',
+    'Your robots.txt tells Google which pages to crawl and index — a wrong rule can hide your whole site from search. Generate a robots.txt file in your browser. Steps: pick user-agents, add Allow / Disallow paths and a Sitemap line, then copy the plain-text result with syntax rules and updated AI-crawler user-agents explained. Runs locally—nothing is uploaded. Example: blocking GPTBot while keeping Googlebot fully enabled.',
   tool_robots_disallow_label: 'Disallow paths (one per line)',
   tool_robots_download: 'Download',
   tool_robots_empty_agent: 'Tick or add a user-agent first.',
@@ -5242,7 +5613,8 @@ const en: SiteLangDict = {
   tool_robots_faq_q3: 'Where should the Sitemap line go?',
   tool_robots_faq_q4: 'Is my robots.txt uploaded anywhere?',
   tool_robots_generate: 'Generate',
-  tool_robots_home_desc: 'Build a syntax-checked robots.txt with Allow, Disallow and AI-crawler rules in your browser.',
+  tool_robots_home_desc:
+    'Control how search engines crawl your site with a valid robots.txt — build Allow, Disallow and AI-crawler rules in your browser.',
   tool_robots_home_title: 'Robots.txt Generator',
   tool_robots_how_body:
     'Select the crawlers you target, add Allow and Disallow paths for each group, optionally add a Sitemap line, then Generate. The page assembles the plain-text file following the RFC 9309 layout: one User-agent line per group, its Allow/Disallow lines underneath, a blank line between groups, and the Sitemap line at the end. Copy it to the root of your site at /robots.txt.',
@@ -5542,7 +5914,7 @@ const en: SiteLangDict = {
   tool_schema_copied: 'Copied',
   tool_schema_copy: 'Copy',
   tool_schema_description:
-    'Generate JSON-LD in your browser. Steps: pick a type (FAQ, Article, Breadcrumb, Organization), fill the required fields, and copy valid Schema.org markup with a paste-ready script tag. Shows required vs optional fields and validates JSON before you copy. Nothing is uploaded. Example: a 2-item FAQ produces mainEntity with two Question nodes.',
+    'Structured data helps Google understand what your page is about and can earn you richer, more clickable search results. Generate JSON-LD in your browser. Steps: pick a type (FAQ, Article, Breadcrumb, Organization), fill the required fields, and copy valid Schema.org markup with a paste-ready script tag. Shows required vs optional fields and validates JSON before you copy. Nothing is uploaded. Example: a 2-item FAQ produces mainEntity with two Question nodes.',
   tool_schema_download: 'Download',
   tool_schema_err_no_fields: 'Fill the required fields, then generate.',
   tool_schema_example:
@@ -5566,7 +5938,8 @@ const en: SiteLangDict = {
   tool_schema_faq_remove: 'Remove',
   tool_schema_fields_label: 'Fields',
   tool_schema_generate: 'Generate',
-  tool_schema_home_desc: 'Create Schema.org JSON-LD for FAQ, Article, Breadcrumb and Organization in your browser.',
+  tool_schema_home_desc:
+    'Help Google understand your page and earn richer, more clickable search results with Schema.org JSON-LD — generated right in your browser.',
   tool_schema_home_title: 'JSON-LD Generator',
   tool_schema_how_body:
     'Pick a schema type, fill the form fields, and press Generate. The page builds a Schema.org JSON-LD object, checks that required fields are present, and shows the pretty-printed result wrapped in a script tag so you can paste it into your page head. A syntax check runs before the output renders; missing required fields are listed instead of silently producing broken markup.',
@@ -5660,7 +6033,7 @@ const en: SiteLangDict = {
   tool_serp_desc_label: 'Meta description',
   tool_serp_desc_ph: 'The snippet text under the result title',
   tool_serp_description:
-    'Paste a title and description to preview Google search result truncation on desktop and mobile. Enter title, description, and optional URL; see character counts, estimated pixel widths, and snippet cut points; compare two titles side by side. Everything runs in your browser—nothing is uploaded. Example: a 60-char ASCII title and a 30-char CJK title can reach the pixel limit at different counts.',
+    'A title or description that gets cut off in the results can quietly cost you clicks from Google. Paste a title and description to preview Google search result truncation on desktop and mobile. Enter title, description, and optional URL; see character counts, estimated pixel widths, and snippet cut points; compare two titles side by side. Everything runs in your browser—nothing is uploaded. Example: a 60-char ASCII title and a 30-char CJK title can reach the pixel limit at different counts.',
   tool_serp_desktop: 'Desktop preview',
   tool_serp_err_title_empty: 'Enter a title to preview.',
   tool_serp_example:
@@ -5679,7 +6052,7 @@ const en: SiteLangDict = {
   tool_serp_faq_q3: 'Does this match the mobile preview in Search Console?',
   tool_serp_faq_q4: 'Is my title uploaded anywhere?',
   tool_serp_fit: 'Fits within the viewport',
-  tool_serp_home_desc: 'Check title & description truncation before you publish.',
+  tool_serp_home_desc: 'Titles that get cut off cost clicks in search — check the truncation before you publish.',
   tool_serp_home_title: 'Google SERP Preview',
   tool_serp_how_body:
     'Type or paste the title, description, and optional URL. The tool estimates how many characters and approximate pixels each line occupies using a browser font-metric approximation (wide CJK glyphs count more than narrow ASCII letters), then draws a desktop and a mobile Google-style snippet. Lines wider than the estimated viewport get a truncation marker.',
@@ -5773,7 +6146,7 @@ const en: SiteLangDict = {
   tool_sitemap_copied: 'Copied',
   tool_sitemap_copy: 'Copy',
   tool_sitemap_description:
-    'Turn a URL list into sitemap.xml in your browser. Steps: paste one https URL per line with optional lastmod / changefreq / priority, preview the generated XML with proper escaping, and copy it to your site root. Shows protocol rules and limits. Nothing is uploaded. Example: 3 URLs → urlset with three url entries.',
+    'A sitemap helps Google discover and index your pages faster, especially new pages or pages with few links. Turn a URL list into sitemap.xml in your browser. Steps: paste one https URL per line with optional lastmod / changefreq / priority, preview the generated XML with proper escaping, and copy it to your site root. Shows protocol rules and limits. Nothing is uploaded. Example: 3 URLs → urlset with three url entries.',
   tool_sitemap_download: 'Download',
   tool_sitemap_example:
     'Sample input: https://example.com/ and https://example.com/products with lastmod 2026-08-01, plus https://example.com/about — the output is a urlset with three url entries, the middle one carrying a lastmod element.',
@@ -5793,7 +6166,8 @@ const en: SiteLangDict = {
   tool_sitemap_format_hint:
     'Each line: URL, or URL | lastmod (yyyy-MM-dd), or URL | lastmod | changefreq | priority. Example: https://example.com/page | 2026-08-01 | weekly | 0.8',
   tool_sitemap_generate: 'Generate',
-  tool_sitemap_home_desc: 'Turn a URL list into a valid sitemap.xml with lastmod, changefreq and priority in your browser.',
+  tool_sitemap_home_desc:
+    'Help Google discover and index every page you want ranked — turn a URL list into a valid sitemap.xml with lastmod, changefreq and priority in your browser.',
   tool_sitemap_home_title: 'XML Sitemap Generator',
   tool_sitemap_how_body:
     'Paste your URL list, one per line. You can add optional metadata after a pipe: lastmod (yyyy-MM-dd), changefreq and priority. The page parses each line, escapes reserved characters, checks that every URL starts with http(s), and builds a urlset following the sitemap protocol. Copy the XML to your site root, then reference it from robots.txt or submit it in Search Console.',
@@ -6553,6 +6927,100 @@ const en: SiteLangDict = {
   tool_unlock_pdf_usecases_title: 'Good fits',
   tool_unlock_pdf_warn_large: 'File larger than ~25 MB — unlock may be slow or fail in some browsers.',
   tool_unlock_pdf_warn_pdflib: 'PDF library failed to load. Check your network and retry.',
+  tool_utm_campaign_hint: 'The promotion or product the link belongs to.',
+  tool_utm_campaign_label: 'Campaign name (utm_campaign)',
+  tool_utm_campaign_ph: 'summer_sale',
+  tool_utm_campaign_required: 'Campaign name (utm_campaign) is required.',
+  tool_utm_case_note:
+    'Google Analytics treats parameter values as case-sensitive. Use a consistent lowercase style so the same channel groups together.',
+  tool_utm_clear: 'Clear',
+  tool_utm_content_hint: 'Optional. Distinguishes ads or links that point to the same URL.',
+  tool_utm_content_label: 'Campaign content (utm_content)',
+  tool_utm_content_ph: 'header_banner',
+  tool_utm_copied: 'Copied',
+  tool_utm_copy: 'Copy',
+  tool_utm_description:
+    'Clean UTM tags are the only way to prove which campaigns, emails or posts actually drive your traffic — without them, your SEO and marketing efforts are invisible in analytics. Build a campaign tracking link from your landing page URL and utm_source, utm_medium, utm_campaign, utm_term and utm_content. Steps: paste the base URL, fill the five parameters, copy the generated link with correct URL encoding. Existing query parameters are kept and merged, not overwritten. Runs entirely on your device—nothing is uploaded. Example: https://example.com/page with source=newsletter, medium=email and campaign=summer_sale.',
+  tool_utm_encoding_note:
+    'Values are encoded with encodeURIComponent: spaces become %20 and non-ASCII characters are percent-encoded.',
+  tool_utm_error_prefix: 'Error: ',
+  tool_utm_example:
+    'The sample input is https://example.com/page with utm_source=newsletter, utm_medium=email and utm_campaign=summer_sale. The generated link is https://example.com/page?utm_source=newsletter&utm_medium=email&utm_campaign=summer_sale.',
+  tool_utm_example_title: 'Example',
+  tool_utm_faq_a1:
+    'utm_source tells you where the link was seen (newsletter, facebook, google), while utm_medium tells you how it was delivered (email, cpc, social, referral). GA4 combines them with utm_campaign to name the traffic source.',
+  tool_utm_faq_a2:
+    'No. Existing parameters are kept and the UTM parameters are appended with &. If the URL already contains a parameter with the same name, the new value replaces it.',
+  tool_utm_faq_a3:
+    'Every value is percent-encoded: spaces become %20 and non-ASCII characters are encoded too. The generated link stays valid in email clients, messengers and browsers.',
+  tool_utm_faq_a4:
+    'Yes. Google Analytics treats utm_source=Facebook and utm_source=facebook as two different sources. Use a consistent lowercase style so the same channel groups together.',
+  tool_utm_faq_a5:
+    'utm_term identifies paid search keywords, useful for Google Ads. utm_content distinguishes two links or ads that point to the same URL, such as a header banner and a footer link.',
+  tool_utm_faq_a6: 'No. The builder runs entirely in your browser and nothing is uploaded.',
+  tool_utm_faq_q1: 'What is the difference between utm_source and utm_medium?',
+  tool_utm_faq_q2: 'The URL already has query parameters. Will they be lost?',
+  tool_utm_faq_q3: 'What about spaces, Chinese characters or special symbols in values?',
+  tool_utm_faq_q4: 'Are UTM parameter values case-sensitive?',
+  tool_utm_faq_q5: 'When should I use utm_term and utm_content?',
+  tool_utm_faq_q6: 'Is my URL sent anywhere?',
+  tool_utm_generate: 'Generate',
+  tool_utm_home_desc:
+    'Measure which campaigns really drive your traffic — build clean campaign tracking URLs with utm_source, medium, campaign, term and content from your browser.',
+  tool_utm_home_title: 'UTM Builder',
+  tool_utm_how_body:
+    'The builder parses your base URL, keeps its existing query parameters and appends the UTM parameters with & separators. Each value is percent-encoded so spaces, Chinese characters and special symbols survive in the link. If the URL has a hash, it is moved after all parameters. The five UTM parameters are what Google Analytics reads to attribute the visit to a source, medium and campaign.',
+  tool_utm_how_title: 'How it works',
+  tool_utm_medium_hint: 'How the link is delivered: email, cpc, social, referral.',
+  tool_utm_medium_label: 'Campaign medium (utm_medium)',
+  tool_utm_medium_ph: 'email',
+  tool_utm_output_label: 'Generated URL',
+  tool_utm_param_campaign: 'utm_campaign',
+  tool_utm_param_content: 'utm_content',
+  tool_utm_param_empty: 'Empty',
+  tool_utm_param_medium: 'utm_medium',
+  tool_utm_param_optional: 'Optional',
+  tool_utm_param_required: 'Required',
+  tool_utm_param_source: 'utm_source',
+  tool_utm_param_status: 'Status',
+  tool_utm_param_term: 'utm_term',
+  tool_utm_param_value: 'Value',
+  tool_utm_ref_ga_label: 'Google Analytics — Custom campaigns (UTM)',
+  tool_utm_ref_searchcentral_label: 'Google Search Central — URL parameters',
+  tool_utm_references: 'Google Analytics — Custom campaigns (UTM); Google Search Central — URL parameters.',
+  tool_utm_rules_body: 'These are the UTM parameter definitions and encoding rules from the Google Analytics documentation.',
+  tool_utm_rules_item_1:
+    'utm_source identifies where the link was seen; utm_medium identifies how it was delivered. Both are required for attribution.',
+  tool_utm_rules_item_2:
+    'utm_campaign is the promotion name and is required here. utm_term and utm_content are optional: term for paid keywords, content to tell two links apart.',
+  tool_utm_rules_item_3:
+    'When the base URL already has query parameters, they are kept and the UTM parameters are appended with &; an existing parameter with the same name is replaced.',
+  tool_utm_rules_item_4:
+    'Parameter values are percent-encoded: spaces become %20 and non-ASCII characters are encoded. A URL fragment (#anchor) always stays after the query string.',
+  tool_utm_rules_item_5:
+    'Use a consistent lowercase style for values. UTM values are case-sensitive in Google Analytics, so facebook and Facebook would split into two sources.',
+  tool_utm_rules_title: 'Rules used by the builder',
+  tool_utm_sample: 'Load sample',
+  tool_utm_source_hint: 'Where the link is seen: newsletter, facebook, google.',
+  tool_utm_source_label: 'Campaign source (utm_source)',
+  tool_utm_source_ph: 'newsletter',
+  tool_utm_table_title: 'Parameter breakdown',
+  tool_utm_term_hint: 'Optional. Identifies paid search keywords.',
+  tool_utm_term_label: 'Campaign term (utm_term)',
+  tool_utm_term_ph: 'running_shoes',
+  tool_utm_title: 'UTM Builder — Create campaign tracking URLs',
+  tool_utm_url_invalid: 'The URL looks invalid. Check the address and try again.',
+  tool_utm_url_label: 'Landing page URL',
+  tool_utm_url_ph: 'https://example.com/page',
+  tool_utm_url_protocol: 'No protocol detected — https:// was added automatically.',
+  tool_utm_url_required: 'Enter the landing page URL.',
+  tool_utm_usecase_1:
+    'Social campaigns: build one link per platform with the same utm_campaign, so GA4 reports the whole promotion in one row.',
+  tool_utm_usecase_2:
+    'Email sends: use utm_source=newsletter, utm_medium=email and separate content values to compare two banners that point to the same page.',
+  tool_utm_usecase_3:
+    'QR codes and printed links: a full UTM URL is long, but you can shorten it after generating while keeping the parameters.',
+  tool_utm_usecases_title: 'Good use cases',
   tool_uuid_generator_article:
     'Generate UUID v4 or ULID identifiers locally with cryptographically strong randomness. Batch copy for test data, trace IDs, or schema stubs — nothing is uploaded.',
   tool_uuid_generator_clear: 'Clear',

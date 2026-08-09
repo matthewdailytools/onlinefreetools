@@ -6,10 +6,10 @@ import type { SiteLangDict } from '../../../types';
 
 const id: SiteLangDict = {
 	tool_serp_home_title: 'Pratinjau hasil Google',
-	tool_serp_home_desc: 'Cek potongan judul dan deskripsi sebelum publikasi.',
+	tool_serp_home_desc: 'Judul yang terpotong membuat Anda kehilangan klik di pencarian—cek potongannya sebelum publikasi.',
 	tool_serp_title: 'Pratinjau hasil Google — cek potongan judul dan deskripsi',
 	tool_serp_description:
-		'Tempel judul dan deskripsi untuk melihat bagaimana potongannya di hasil Google di desktop dan ponsel. Isi judul, deskripsi, dan URL opsional; lihat jumlah karakter, perkiraan lebar piksel, dan titik potong cuplikan; bandingkan dua judul secara berdampingan. Semua berjalan di browser Anda—tidak ada yang diunggah. Contoh: judul 60 huruf dan judul 30 karakter CJK bisa mencapai batas piksel dengan jumlah yang berbeda.',
+		'Judul atau deskripsi yang terpotong di hasil pencarian bisa diam-diam membuat Anda kehilangan klik dari Google. Tempel judul dan deskripsi untuk melihat bagaimana potongannya di hasil Google di desktop dan ponsel. Isi judul, deskripsi, dan URL opsional; lihat jumlah karakter, perkiraan lebar piksel, dan titik potong cuplikan; bandingkan dua judul secara berdampingan. Semua berjalan di browser Anda—tidak ada yang diunggah. Contoh: judul 60 huruf dan judul 30 karakter CJK bisa mencapai batas piksel dengan jumlah yang berbeda.',
 	tool_serp_preview: 'Pratinjau',
 	tool_serp_sample: 'Contoh',
 	tool_serp_clear: 'Bersihkan',

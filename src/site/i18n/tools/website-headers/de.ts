@@ -6,7 +6,7 @@ const de: SiteLangDict = {
   tool_headers_article:
     'Sehen Sie, welche Header unser Edge für eine öffentliche URL erhält — nützlich für Caching, CORS, Redirects und Security-Header. Anfrage wird proxyt; Seiteninhalt speichern wir nicht.',
   tool_headers_description:
-    'HTTP-Response-Header einer URL online vom Edge prüfen. Ablauf: https einfügen, HEAD senden (GET bei Bedarf), Redirects folgen, Status und Header-Map anzeigen; private Hosts blockieren. Zusätzlich: verständliche Erklärung von Cache-Control, X-Robots-Tag und Redirect-Kette. Beispiel: Cache-Control, CORS und HSTS beim CDN- oder Redirect-Debug lesen.',
+    'HTTP-Header entscheiden darüber, wie Google deine Seiten crawlt, cacht und indexiert – ein falsches X-Robots-Tag kann die Indexierung komplett blockieren. HTTP-Response-Header einer URL online vom Edge prüfen. Ablauf: https einfügen, HEAD senden (GET bei Bedarf), Redirects folgen, Status und Header-Map anzeigen; private Hosts blockieren. Zusätzlich: verständliche Erklärung von Cache-Control, X-Robots-Tag und Redirect-Kette. Beispiel: Cache-Control, CORS und HSTS beim CDN- oder Redirect-Debug lesen.',
   tool_headers_example:
     'beispiel.de → Status 200, finale URL unverändert; Header mit content-type: text/html und je nach Origin cache-control oder Security-Header.',
   tool_headers_example_title: 'Beispiel',

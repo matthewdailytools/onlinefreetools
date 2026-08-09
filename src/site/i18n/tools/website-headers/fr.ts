@@ -6,7 +6,7 @@ const fr: SiteLangDict = {
   tool_headers_article:
     'Consultez les en-têtes que l\'edge reçoit pour une URL publique — cache, CORS, redirections et en-têtes de sécurité. Requête proxyée ; nous ne conservons pas le corps de page.',
   tool_headers_description:
-    'Inspectez en ligne les en-têtes HTTP de réponse d\'une URL depuis notre edge. Déroulé : saisir https, envoyer HEAD (GET si besoin), suivre les redirections, afficher statut et carte d\'en-têtes ; bloquer les hôtes privés. Bonus : lecture en langage simple de Cache-Control, X-Robots-Tag et de la chaîne de redirection. Exemple : lire Cache-Control, CORS et HSTS lors d\'un debug CDN ou redirection.',
+    'Les en-têtes HTTP déterminent comment Google explore, met en cache et indexe vos pages : un X-Robots-Tag erroné peut bloquer entièrement l’indexation. Inspectez en ligne les en-têtes HTTP de réponse d\'une URL depuis notre edge. Déroulé : saisir https, envoyer HEAD (GET si besoin), suivre les redirections, afficher statut et carte d\'en-têtes ; bloquer les hôtes privés. Bonus : lecture en langage simple de Cache-Control, X-Robots-Tag et de la chaîne de redirection. Exemple : lire Cache-Control, CORS et HSTS lors d\'un debug CDN ou redirection.',
   tool_headers_example:
     'exemple.com → statut 200, URL finale inchangée ; en-têtes avec content-type: text/html et, selon l\'origine, cache-control ou en-têtes de sécurité.',
   tool_headers_example_title: 'Exemple',

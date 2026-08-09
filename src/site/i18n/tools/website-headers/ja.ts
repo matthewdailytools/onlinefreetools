@@ -5,7 +5,7 @@ import type { SiteLangDict } from '../../../types';
 const ja: SiteLangDict = {
   tool_headers_article: '公開URLについてエッジが受け取ったレスポンスヘッダを確認できます。キャッシュ、CORS、リダイレクト、セキュリティヘッダの点検に使えます。リクエストはプロキシ経由で、ページ本文は保存しません。',
   tool_headers_description:
-    'URLのHTTPレスポンスヘッダをエッジからオンライン確認。手順：httpsを貼り付け、HEAD送信（必要ならGET）、リダイレクト追跡、ステータスとヘッダー一覧を表示、プライベートホストを拒否。追加：Cache-Control・X-Robots-Tag・リダイレクトチェーンをわかりやすく解説。例：CDNやリダイレクト調査でCache-Control・CORS・HSTSを読む。',
+    'HTTPヘッダーは、Google がページをクロール・キャッシュ・インデックスする方法を決めます。X-Robots-Tag が間違っているとインデックスが完全にブロックされることも。URLのHTTPレスポンスヘッダをエッジからオンライン確認。手順：httpsを貼り付け、HEAD送信（必要ならGET）、リダイレクト追跡、ステータスとヘッダー一覧を表示、プライベートホストを拒否。追加：Cache-Control・X-Robots-Tag・リダイレクトチェーンをわかりやすく解説。例：CDNやリダイレクト調査でCache-Control・CORS・HSTSを読む。',
   tool_headers_example: 'example.com → ステータス200、最終URL変更なし。content-type: text/html などに加え、オリジン次第でcache-controlやセキュリティヘッダー。',
   tool_headers_example_title: '例',
   tool_headers_faq_a1: 'サーバー応答のメタデータです。Content-Type、キャッシュ、リダイレクト、HSTS・CSP・CORSなどのポリシーが含まれます。',

@@ -65,6 +65,11 @@
 - [Schema JSON-LD 生成](https://onlinefreetools.org/zh/tools/schema-jsonld-generator) - 生成 FAQ/Article/Breadcrumb/Organization 的 JSON-LD（与可见内容一致）
 - [robots.txt 生成](https://onlinefreetools.org/zh/tools/robots-txt-generator) - 生成 robots.txt，含 AI 爬虫（GPTBot 等）User-agent 规则
 - [XML Sitemap 生成](https://onlinefreetools.org/zh/tools/sitemap-xml-generator) - 从 URL 列表生成 sitemap.xml（lastmod/changefreq/priority）
+- [On-Page SEO 检测](https://onlinefreetools.org/zh/tools/on-page-seo-checker) - 粘贴 HTML 或抓取 URL，检查 title、H1、canonical、robots、OG 与 JSON-LD 标签问题
+- [Open Graph 预览](https://onlinefreetools.org/zh/tools/open-graph-preview) - 粘贴 og/twitter 标签或抓取 URL，预览 Facebook / X / WhatsApp 分享卡片与字段缺失
+- [UTM 链接生成](https://onlinefreetools.org/zh/tools/utm-builder) - 输入落地页与五个 UTM 参数，生成带编码与参数合并的追踪链接
+- [hreflang 标签生成](https://onlinefreetools.org/zh/tools/hreflang-generator) - 输入语言码与 URL，生成 link / HTTP Link 头 / sitemap 三种形态的 hreflang 标注
+- [Meta 标签生成](https://onlinefreetools.org/zh/tools/meta-tag-generator) - 填写 title/description/canonical/robots/OG，生成可直接粘贴的 head 标签并带长度提示
 - [BMI 计算器](https://onlinefreetools.org/zh/tools/how-to-calculate-bmi) - 按成人筛查公式计算身体质量指数（教育用途，非诊断）
 - [ROI 计算器](https://onlinefreetools.org/zh/tools/how-to-calculate-roi) - 计算投资回报率，含假设说明与非投资建议免责
 - [复利计算器](https://onlinefreetools.org/zh/tools/how-to-calculate-compound-interest) - 按本金、年利率、年数与复利频率计算终值；可对照单利；非投资建议
@@ -187,6 +192,11 @@ Below are our available online tools with their links (English version):
 - [Schema JSON-LD Generator](https://onlinefreetools.org/tools/schema-jsonld-generator) - Generate FAQ/Article/Breadcrumb/Organization JSON-LD matching visible content
 - [Robots.txt Generator](https://onlinefreetools.org/tools/robots-txt-generator) - Build robots.txt with AI crawler user-agents (GPTBot and more)
 - [XML Sitemap Generator](https://onlinefreetools.org/tools/sitemap-xml-generator) - Turn a URL list into sitemap.xml with lastmod/changefreq/priority
+- [On-Page SEO Checker](https://onlinefreetools.org/tools/on-page-seo-checker) - Paste HTML or fetch a URL to audit title, H1, canonical, robots, OG and JSON-LD tag issues
+- [Open Graph Preview](https://onlinefreetools.org/tools/open-graph-preview) - Paste og/twitter tags or fetch a URL to preview Facebook / X / WhatsApp cards and missing fields
+- [UTM Builder](https://onlinefreetools.org/tools/utm-builder) - Turn a landing page and five UTM parameters into an encoded, merge-safe tracking link
+- [Hreflang Generator](https://onlinefreetools.org/tools/hreflang-generator) - Turn language URLs into link tags, an HTTP Link header or sitemap xhtml:link with self-references
+- [Meta Tag Generator](https://onlinefreetools.org/tools/meta-tag-generator) - Build ready-to-paste head tags from title/description/canonical/robots/OG with length hints
 - [BMI Calculator](https://onlinefreetools.org/tools/how-to-calculate-bmi) - Adult BMI screening from weight and height (educational, not a diagnosis)
 - [ROI Calculator](https://onlinefreetools.org/tools/how-to-calculate-roi) - Calculate return on investment with assumptions and a non-advice disclaimer
 - [Compound Interest Calculator](https://onlinefreetools.org/tools/how-to-calculate-compound-interest) - Future value from principal, rate, years, and compounding; optional simple interest; educational only

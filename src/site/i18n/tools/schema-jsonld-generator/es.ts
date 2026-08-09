@@ -7,10 +7,10 @@ import type { SiteLangDict } from '../../../types';
 const es: SiteLangDict = {
 	tool_schema_home_title: 'Generador de JSON-LD',
 	tool_schema_home_desc:
-		'Crea datos estructurados Schema.org para FAQ, artículo, migas de pan y organización en tu navegador.',
+		'Ayuda a Google a entender tu página y consigue resultados más enriquecidos y con más clics con JSON-LD de Schema.org, creado en tu navegador.',
 	tool_schema_title: 'Generador de JSON-LD — crea datos estructurados para FAQ, artículo y migas de pan',
 	tool_schema_description:
-		'Genera JSON-LD en tu navegador. Pasos: elige un tipo (FAQ, artículo, migas de pan, organización), rellena los campos obligatorios y copia un marcado Schema.org válido con una etiqueta script lista para pegar. Distingue campos obligatorios y opcionales y valida el JSON antes de copiar. No se sube nada. Ejemplo: un FAQ de dos preguntas genera mainEntity con dos nodos Question.',
+		'Los datos estructurados ayudan a Google a entender de qué trata tu página y pueden conseguirte resultados más enriquecidos y con más clics. Genera JSON-LD en tu navegador. Pasos: elige un tipo (FAQ, artículo, migas de pan, organización), rellena los campos obligatorios y copia un marcado Schema.org válido con una etiqueta script lista para pegar. Distingue campos obligatorios y opcionales y valida el JSON antes de copiar. No se sube nada. Ejemplo: un FAQ de dos preguntas genera mainEntity con dos nodos Question.',
 	tool_schema_generate: 'Generar',
 	tool_schema_sample: 'Ejemplo',
 	tool_schema_clear: 'Limpiar',

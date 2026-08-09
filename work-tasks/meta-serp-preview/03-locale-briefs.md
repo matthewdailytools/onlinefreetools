@@ -18,6 +18,7 @@
 - [x] **清单前检索覆盖已做**（覆盖表在 02；`coverage:gate --phase=0b` 绿）
 - [x] **检索覆盖已优化**（i18n 初稿之后步 2+4 再勾）
 
+| 5 描述 SEO 作用增强 | 2026-08-09 | 10 语 `tool_serp_description`/`tool_serp_home_desc` 前置 SEO 价值句（截断标题损失点击）：en「A title or description that gets cut off…cost you clicks」、zh「标题被截断会白白损失搜索点击」；逐语按当地习惯独立改写。 | 通过 |
 技术专名 SERP / Google / title / description / CJK / emoji 可保留（作为检索词或技术名），但不可替代本地主 title。
 
 ---

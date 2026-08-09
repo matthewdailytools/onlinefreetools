@@ -61,7 +61,7 @@
 | 场景与行业 | 站长 / SEO：生成 XML sitemap |
 | 技术 | Tier 0；纯浏览器；`localProcessing: true` |
 | Title (en) | XML Sitemap Generator — Create sitemap.xml From URLs |
-| Description | Turn a URL list into sitemap.xml in your browser. Steps: paste one https URL per line with optional lastmod / changefreq / priority, preview the generated XML with proper escaping, and copy it to your site root. Shows protocol rules and limits. Nothing is uploaded. Example: 3 URLs → urlset with three url entries. |
+| Description 要点 | A sitemap helps Google discover and index your pages faster, especially new pages or pages with few links. Turn a URL list into sitemap.xml in your browser. Steps: paste one https URL per line with optional lastmod / changefreq / priority, preview the generated XML with proper escaping, and copy it to your site root. Shows protocol rules and limits. Nothing is uploaded. Example: 3 URLs → urlset with three url entries. |
 | Schema | WebApplication + BreadcrumbList（与可见文案一致） |
 | FAQ ≥3 | 上限多少；lastmod 格式；changefreq 是否重要；与 IndexNow 区别 |
 | related | indexnow, robots-txt-generator, website-headers |

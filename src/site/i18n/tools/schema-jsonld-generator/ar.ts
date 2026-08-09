@@ -6,10 +6,10 @@ import type { SiteLangDict } from '../../../types';
 
 const ar: SiteLangDict = {
 	tool_schema_home_title: 'مولّد JSON-LD',
-	tool_schema_home_desc: 'أنشئ بيانات منظمة Schema.org لـ FAQ والمقال والمسار والمنظمة داخل متصفحك.',
+	tool_schema_home_desc: 'ساعد جوجل على فهم صفحتك واحصل على نتائج بحث أغنى وأكثر نقرًا عبر JSON-LD من Schema.org — أنشئها داخل متصفحك.',
 	tool_schema_title: 'مولّد JSON-LD — أنشئ بيانات منظمة لـFAQ والمقال والمسار',
 	tool_schema_description:
-		'أنشئ JSON-LD داخل متصفحك. الخطوات: اختر نوعًا (FAQ / مقال / مسار / منظمة)، املأ الحقول المطلوبة، ثم انسخ ترميز Schema.org صالحًا مع وسم script جاهز للصق. الصفحة تميّز الحقول المطلوبة من الاختيارية وتتحقق من صحة JSON قبل النسخ. لا يُرفع أي شيء. مثال: FAQ من سؤالين ينتج mainEntity يحوي عقدتي Question.',
+		'البيانات المنظمة تساعد جوجل على فهم محتوى صفحتك بدقة، وقد تمنحك نتائج بحث أغنى وأكثر نقرًا. أنشئ JSON-LD داخل متصفحك. الخطوات: اختر نوعًا (FAQ / مقال / مسار / منظمة)، املأ الحقول المطلوبة، ثم انسخ ترميز Schema.org صالحًا مع وسم script جاهز للصق. الصفحة تميّز الحقول المطلوبة من الاختيارية وتتحقق من صحة JSON قبل النسخ. لا يُرفع أي شيء. مثال: FAQ من سؤالين ينتج mainEntity يحوي عقدتي Question.',
 	tool_schema_generate: 'توليد',
 	tool_schema_sample: 'مثال',
 	tool_schema_clear: 'مسح',

@@ -6,10 +6,10 @@ import type { SiteLangDict } from '../../../types';
 
 const ja: SiteLangDict = {
 	tool_robots_home_title: 'robots.txt 生成ツール',
-	tool_robots_home_desc: 'ブラウザ内で許可・拒否・AI クローラーの robots.txt を生成。',
+	tool_robots_home_desc: 'robots.txt で検索エンジンのクロール範囲を制御——許可・拒否・AI クローラーをブラウザ内で作成。',
 	tool_robots_title: 'robots.txt 生成ツール — AI クローラーを拒否してアクセスを制御',
 	tool_robots_description:
-		'ブラウザ内で robots.txt を生成。手順：User-agent を選び、各グループに Allow / Disallow パスと Sitemap 行を追加し、構文ルールと最新の AI クローラー向け User-agent の説明付きで結果をコピー。すべてローカルで完結し、アップロードは一切ありません。例：GPTBot をブロックしつつ Googlebot は完全に許可する構成。',
+		'robots.txt は Google にどのページをクロール・インデックスしてよいかを伝えるファイルです。誤ったルールはサイト全体を検索結果から隠してしまいます。ブラウザ内で robots.txt を生成。手順：User-agent を選び、各グループに Allow / Disallow パスと Sitemap 行を追加し、構文ルールと最新の AI クローラー向け User-agent の説明付きで結果をコピー。すべてローカルで完結し、アップロードは一切ありません。例：GPTBot をブロックしつつ Googlebot は完全に許可する構成。',
 	tool_robots_generate: '生成',
 	tool_robots_sample: 'サンプル',
 	tool_robots_clear: 'クリア',

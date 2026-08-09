@@ -6,10 +6,10 @@ import type { SiteLangDict } from '../../../types';
 
 const zh: SiteLangDict = {
 	tool_robots_home_title: 'Robots.txt 生成器',
-	tool_robots_home_desc: '在浏览器里生成语法正确的 robots.txt，配置允许、禁止与 AI 爬虫规则。',
+	tool_robots_home_desc: '用一份语法正确的 robots.txt 控制搜索引擎的抓取范围——在浏览器里配置允许、禁止与 AI 爬虫规则。',
 	tool_robots_title: 'Robots.txt 生成器 — 管理允许与禁止并配置 AI 爬虫',
 	tool_robots_description:
-		'在浏览器里生成 robots.txt。步骤：勾选 User-agent，为每个分组添加 Allow / Disallow 路径和 Sitemap 行，然后复制纯文本结果；页面会解释语法规则与常用 AI 爬虫的 User-agent 写法。全部本地完成，内容不上传。示例：阻止 GPTBot 抓取，同时保持 Googlebot 正常抓取。',
+		'robots.txt 决定 Google 能抓取并收录哪些页面——规则写错可能让整个站点从搜索结果中消失。在浏览器里生成 robots.txt。步骤：勾选 User-agent，为每个分组添加 Allow / Disallow 路径和 Sitemap 行，然后复制纯文本结果；页面会解释语法规则与常用 AI 爬虫的 User-agent 写法。全部本地完成，内容不上传。示例：阻止 GPTBot 抓取，同时保持 Googlebot 正常抓取。',
 	tool_robots_generate: '生成',
 	tool_robots_sample: '加载样例',
 	tool_robots_clear: '清空',

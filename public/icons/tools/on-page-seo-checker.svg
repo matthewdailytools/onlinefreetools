@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img">
+  <!-- On-page SEO checker icon: clipboard with check mark -->
+  <rect width="32" height="32" rx="8" fill="#7c3aed"/>
+  <rect x="9" y="7" width="14" height="18" rx="2" fill="none" stroke="#fff" stroke-width="2"/>
+  <rect x="13" y="5" width="6" height="4" rx="1" fill="#fff"/>
+  <line x1="12" y1="16" x2="15" y2="19" stroke="#c4b5fd" stroke-width="2" stroke-linecap="round"/>
+  <line x1="15" y1="19" x2="20" y2="13" stroke="#c4b5fd" stroke-width="2" stroke-linecap="round"/>
+</svg>

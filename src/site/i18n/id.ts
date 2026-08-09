@@ -2115,7 +2115,7 @@ const id: SiteLangDict = {
   tool_headers_article:
     'Lihat header yang diterima edge untuk URL publik — berguna untuk cache, CORS, redirect, dan cek header keamanan. Permintaan diproxy; kami tidak menyimpan body halaman.',
   tool_headers_description:
-    'Periksa header HTTP response sebuah URL dari edge kami. Alur: tempel https, kirim HEAD (GET bila perlu), ikuti redirect, tampilkan status dan peta header; blokir host privat. Ekstra: bacaan bahasa sederhana untuk Cache-Control, X-Robots-Tag, dan rantai redirect. Contoh: baca Cache-Control, CORS, HSTS saat debug CDN atau redirect.',
+    'Header HTTP menentukan cara Google merayapi, meng-cache, dan mengindeks halaman Anda—X-Robots-Tag yang salah bisa memblokir indeksasi sepenuhnya. Periksa header HTTP response sebuah URL dari edge kami. Alur: tempel https, kirim HEAD (GET bila perlu), ikuti redirect, tampilkan status dan peta header; blokir host privat. Ekstra: bacaan bahasa sederhana untuk Cache-Control, X-Robots-Tag, dan rantai redirect. Contoh: baca Cache-Control, CORS, HSTS saat debug CDN atau redirect.',
   tool_headers_example:
     'contoh.com → status 200, URL akhir sama; header berisi content-type: text/html dan mungkin cache-control atau header keamanan tergantung origin.',
   tool_headers_example_title: 'Contoh',
@@ -2227,6 +2227,79 @@ const id: SiteLangDict = {
   tool_heart_rate_z1Out_label: 'Zona 1 (50–60%)',
   tool_heart_rate_z2Out_label: 'Zona 2 (60–70%)',
   tool_heart_rate_z3Out_label: 'Zona 3 (70–85%)',
+  tool_hreflang_clear: 'Bersihkan',
+  tool_hreflang_copied: 'Tersalin',
+  tool_hreflang_copy: 'Salin',
+  tool_hreflang_description:
+    'Tanpa hreflang, Google bisa menganggap halaman terjemahan Anda sebagai duplikat dan menampilkan versi bahasa yang salah di pencarian. Ubah sekumpulan URL bahasa menjadi markup hreflang dalam tiga bentuk: tag <link>, header HTTP Link, dan sitemap <xhtml:link>. Langkah: tempel setiap URL bahasa dengan kodenya, pilih satu bentuk, salin cuplikan yang dihasilkan. Setiap URL mendapat anotasi referensi diri, dan fallback x-default opsional dapat ditambahkan. Berjalan sepenuhnya di perangkat Anda—tidak ada yang diunggah. Contoh: tiga versi satu halaman dalam en, es, dan ja.',
+  tool_hreflang_error_prefix: 'Error: ',
+  tool_hreflang_example:
+    'Contoh mencantumkan tiga versi satu halaman: https://example.com/ (en), https://example.com/es/ (es), dan https://example.com/ja/ (ja). Tag <link> yang dihasilkan menyertakan referensi diri untuk setiap bahasa plus x-default opsional yang menunjuk ke akar berbahasa Inggris.',
+  tool_hreflang_example_title: 'Contoh',
+  tool_hreflang_faq_a1:
+    'Gunakan tag <link> bila Anda dapat mengedit HTML. Gunakan header HTTP Link bila halaman dilayani server yang Anda kendalikan dan HTML sulit diubah. Gunakan bentuk sitemap bila lebih suka menaruhnya di sitemap XML.',
+  tool_hreflang_faq_a2:
+    'x-default memberi tahu Google versi mana yang ditampilkan saat bahasa pengunjung tidak cocok dengan kode mana pun. Tambahkan bila Anda punya halaman akar atau fallback, biasanya berbahasa Inggris.',
+  tool_hreflang_faq_a3:
+    'Ya. Setiap versi bahasa harus menyertakan URL-nya sendiri dalam rangkaian, dengan hreflang referensi diri yang menunjuk ke dirinya. Google memakai rangkaian lengkap untuk memilih halaman yang tepat per bahasa.',
+  tool_hreflang_faq_a4:
+    'Kode BCP 47: bahasa dua atau tiga huruf, opsional wilayah (en-US) dan opsional aksara (zh-Hans). Bahasa dengan huruf kecil, dan jangan membuat kode seperti «en-us-en».',
+  tool_hreflang_faq_a5:
+    'Keduanya berfungsi, tetapi pakai satu bentuk yang konsisten per rangkaian halaman. Tag <link> ada di <head>, header HTTP Link dikirim bersama respons, dan sitemap memakai blok xhtml:link.',
+  tool_hreflang_faq_a6: 'Tidak. Pembuat berjalan sepenuhnya di browser Anda dan tidak ada yang diunggah.',
+  tool_hreflang_faq_q1: 'Manakah dari tiga bentuk yang harus saya pakai?',
+  tool_hreflang_faq_q2: 'Kapan saya harus menambahkan x-default?',
+  tool_hreflang_faq_q3: 'Apakah setiap URL perlu hreflang referensi diri?',
+  tool_hreflang_faq_q4: 'Format kode bahasa apa yang valid?',
+  tool_hreflang_faq_q5: 'Hreflang ditaruh di <head> atau di sitemap?',
+  tool_hreflang_faq_q6: 'Apakah URL saya diunggah ke mana-mana?',
+  tool_hreflang_generate: 'Buat',
+  tool_hreflang_home_desc:
+    'Beri tahu Google versi bahasa mana yang harus ditampilkan kepada siapa — ubah URL bahasa menjadi tag hreflang, header HTTP Link, dan markup sitemap dari browser Anda.',
+  tool_hreflang_home_title: 'Pembuat hreflang',
+  tool_hreflang_how_body:
+    'Pembuat mengurai setiap baris menjadi kode bahasa dan URL, lalu menampilkan rangkaian relasi yang sama dalam tiga bentuk. Bentuk <link> masuk ke <head> setiap halaman. Bentuk header HTTP Link dikirim dalam respons server. Bentuk sitemap menyematkan <xhtml:link> di dalam setiap blok <url>. Setiap URL mendapat anotasi hreflang referensi diri agar setiap versi bahasa menunjuk ke dirinya sendiri, dan entri x-default opsional mencakup pengunjung yang bahasanya tidak tercantum.',
+  tool_hreflang_how_title: 'Cara kerja',
+  tool_hreflang_input_hint:
+    'Setiap baris berupa «kode-bahasa URL» atau «URL kode-bahasa». Kode memakai bentuk BCP 47 seperti en, en-US, atau zh-Hans.',
+  tool_hreflang_input_label: 'Daftar URL per bahasa',
+  tool_hreflang_input_ph:
+    'Satu pasang per baris: kode bahasa + URL. Contoh:\nen https://example.com/\nes https://example.com/es/\nja https://example.com/ja/',
+  tool_hreflang_lang_invalid: 'Kode bahasa tidak valid: {lang}. Gunakan bentuk BCP 47 seperti en, en-US, atau zh-Hans.',
+  tool_hreflang_no_valid_rows: 'Tidak ada baris valid. Tambahkan minimal satu kode bahasa dan URL.',
+  tool_hreflang_output_label: 'Markup yang dihasilkan',
+  tool_hreflang_ref_bcp47_label: 'BCP 47 — Tag untuk mengidentifikasi bahasa',
+  tool_hreflang_ref_searchcentral_label: 'Search Central — Versi dilokalkan (hreflang)',
+  tool_hreflang_references: 'Google Search Central — Versi dilokalkan (hreflang); tag bahasa BCP 47.',
+  tool_hreflang_rules_body: 'Aturan ini berasal dari Google Search Central dan standar tag bahasa BCP 47.',
+  tool_hreflang_rules_item_1:
+    'Setiap versi bahasa harus menyertakan anotasi hreflang referensi diri yang menunjuk ke URL-nya sendiri. Menghilangkannya melemahkan sinyal.',
+  tool_hreflang_rules_item_2:
+    'Setiap URL harus dicantumkan dari semua versi bahasa: rangkaian alternatif lengkap ada di setiap halaman, bukan hanya satu arah.',
+  tool_hreflang_rules_item_3:
+    'Kode bahasa memakai BCP 47: bahasa dua huruf, opsional wilayah (en-US) dan opsional aksara (zh-Hans). x-default adalah kode fallback khusus.',
+  tool_hreflang_rules_item_4:
+    'x-default menunjuk ke halaman yang ditampilkan saat tidak ada bahasa yang cocok, misalnya halaman akar berbahasa Inggris. Google dapat memakainya sebagai fallback untuk semua bahasa yang tidak terdeteksi.',
+  tool_hreflang_rules_item_5:
+    'Pilih satu bentuk pengiriman per rangkaian: tag <link> dalam HTML, header HTTP Link, atau xhtml:link dalam sitemap. Jangan mencampur bentuk untuk rangkaian yang sama, atau sinyal bisa saling bertentangan.',
+  tool_hreflang_rules_title: 'Aturan yang dipakai pembuat',
+  tool_hreflang_sample: 'Muat contoh',
+  tool_hreflang_tab_http: 'Header HTTP Link',
+  tool_hreflang_tab_link: 'Tag <link>',
+  tool_hreflang_tab_sitemap: 'Sitemap',
+  tool_hreflang_title: 'Pembuat hreflang — buat tag bahasa untuk situs multibahasa',
+  tool_hreflang_url_protocol: 'Ada URL tanpa protokol — https:// ditambahkan otomatis.',
+  tool_hreflang_usecase_1:
+    'Meluncurkan situs multibahasa: buat tag <link> sekali per template dan pastikan setiap versi bahasa mencantumkan rangkaian lengkap.',
+  tool_hreflang_usecase_2:
+    'Setelah restrukturisasi situs, buat ulang markup agar pemetaan URL tetap konsisten antar bahasa dan tidak melenceng.',
+  tool_hreflang_usecase_3:
+    'Saat hasil pencarian menampilkan bahasa yang salah, periksa apakah referensi diri dan x-default ada serta URL menunjuk ke halaman kanonik.',
+  tool_hreflang_usecases_title: 'Penggunaan yang tepat',
+  tool_hreflang_xdefault_hint:
+    'Opsional. x-default memberi tahu Google versi mana yang ditampilkan saat tidak ada bahasa yang cocok, berguna untuk halaman akar atau beranda berbahasa Inggris.',
+  tool_hreflang_xdefault_label: 'URL fallback x-default',
+  tool_hreflang_xdefault_none: '— tanpa x-default —',
   tool_html_entity_article:
     'Encode/decode entity HTML dengan cakupan, format keluaran, dan catatan double-encoding untuk string API atau CMS.',
   tool_html_entity_clear: 'Hapus',
@@ -3952,6 +4025,91 @@ const id: SiteLangDict = {
   tool_merge_pdf_usecases_title: 'Cocok untuk',
   tool_merge_pdf_warn_large: 'Ada file lebih dari ~25 MB — penggabungan bisa lambat atau gagal di sebagian browser.',
   tool_merge_pdf_warn_pdflib: 'Gagal memuat pustaka PDF. Periksa jaringan dan coba lagi.',
+  tool_meta_canonical_hint: 'URL pilihan untuk halaman ini. Tambahkan URL lengkap beserta protokolnya.',
+  tool_meta_canonical_label: 'URL kanonik',
+  tool_meta_canonical_ph: 'https://example.com/your-page',
+  tool_meta_canonical_protocol:
+    'URL kanonik tidak memiliki protokol — tambahkan https:// atau http:// agar dapat dibaca mesin pencari.',
+  tool_meta_clear: 'Bersihkan',
+  tool_meta_copied: 'Tersalin',
+  tool_meta_copy: 'Salin',
+  tool_meta_desc_hint: 'Pertahankan sekitar 155–160 karakter. Teks lebih panjang dapat terpotong di SERP.',
+  tool_meta_desc_label: 'Meta description',
+  tool_meta_desc_len: 'Deskripsi: {n} karakter',
+  tool_meta_desc_len_warn: 'Deskripsi: {n} karakter — lebih dari 160, dapat terpotong.',
+  tool_meta_desc_ph: 'Buat tag head siap tempel dengan petunjuk panjang, nilai robots, dan kolom OG.',
+  tool_meta_description:
+    'Judul dan meta description Anda adalah yang dilihat pengguna di Google, dan canonical yang salah dapat membagi peringkat Anda ke URL duplikat. Isi kolom judul, deskripsi, canonical, robots, dan Open Graph untuk menghasilkan tag meta <head> siap tempel. Langkah: masukkan kolom Anda, baca petunjuk panjang dan pratinjau, salin HTML yang dihasilkan dengan escaping yang benar. Karakter khusus seperti & dan < otomatis di-escape agar tag tetap valid. Berjalan sepenuhnya di perangkat Anda—tidak ada yang diunggah. Contoh: tag canonical dan og berdampingan.',
+  tool_meta_error_prefix: 'Error: ',
+  tool_meta_example:
+    'Contoh mengisi judul, deskripsi, canonical, robots, dan tiga kolom Open Graph. Cuplikan yang dihasilkan mengeluarkan tag <title>, meta description, tautan kanonik, robots meta, dan tag og: yang diisi.',
+  tool_meta_example_title: 'Contoh',
+  tool_meta_faq_a1:
+    'index mengizinkan mesin pencari menyertakan halaman di hasil, sedangkan noindex mengeluarkannya. follow mengizinkan merayapi tautan di halaman dan nofollow mencegahnya. Tanpa tag, defaultnya index, follow.',
+  tool_meta_faq_a2:
+    'Ya. Pembuat meng-escape & < > " dan \', sehingga ampersand menjadi &amp; dan tanda kurang dari menjadi &lt;. Tag Anda tetap valid meski nilainya mengandung karakter mirip markup.',
+  tool_meta_faq_a3:
+    'Bisa, keduanya melayani sistem berbeda. Tautan kanonik memberi tahu mesin pencari URL pilihan, sementara tag og: mendeskripsikan halaman untuk berbagi sosial. Jaga og:url selaras dengan URL kanonik.',
+  tool_meta_faq_a4:
+    'Sekitar 60 karakter untuk judul dan 155–160 untuk deskripsi adalah batas umum. Ini saran: mesin pencari dapat menulis ulang atau memotong nilai yang lebih panjang.',
+  tool_meta_faq_a5:
+    'Kolom opsional kosong dilewati, sehingga cuplikan yang dihasilkan hanya berisi tag untuk kolom yang Anda isi.',
+  tool_meta_faq_a6: 'Tidak. Pembuat berjalan sepenuhnya di browser Anda dan tidak ada yang diunggah.',
+  tool_meta_faq_q1: 'Apa arti nilai robots meta?',
+  tool_meta_faq_q2: 'Apakah karakter khusus dalam nilai saya di-escape?',
+  tool_meta_faq_q3: 'Bisakah canonical dan Open Graph berdampingan?',
+  tool_meta_faq_q4: 'Berapa panjang judul dan deskripsi yang ideal?',
+  tool_meta_faq_q5: 'Bagaimana dengan kolom kosong?',
+  tool_meta_faq_q6: 'Apakah data saya diunggah ke mana-mana?',
+  tool_meta_generate: 'Buat',
+  tool_meta_home_desc:
+    'Tulis tag judul, deskripsi, canonical, dan Open Graph yang mendatangkan klik di pencarian: buat tag head halaman secara lengkap dari browser.',
+  tool_meta_home_title: 'Pembuat meta tag',
+  tool_meta_how_body:
+    'Pembuat mengambil kolom Anda dan membangun tag head yang sesuai. Kolom opsional kosong dilewati, sehingga keluaran hanya berisi yang Anda isi. Setiap nilai di-escape HTML: ampersand menjadi &amp; dan tanda kurang dari menjadi &lt;, menjaga tag tetap valid di dalam halaman Anda. Petunjuk panjang memperingatkan saat judul atau deskripsi melewati batas umum, tanpa memotong teks Anda.',
+  tool_meta_how_title: 'Cara kerja',
+  tool_meta_og_desc_label: 'og:description',
+  tool_meta_og_image_label: 'og:image (URL lengkap)',
+  tool_meta_og_title_label: 'og:title',
+  tool_meta_og_type_label: 'og:type',
+  tool_meta_og_url_label: 'og:url',
+  tool_meta_output_label: 'Cuplikan head yang dihasilkan',
+  tool_meta_ref_searchcentral_canonical_label: 'Search Central — URL kanonik',
+  tool_meta_ref_searchcentral_tags_label: 'Search Central — Meta tag yang dipahami Google',
+  tool_meta_ref_searchcentral_title_label: 'Search Central — Kontrol tautan judul Anda',
+  tool_meta_references: 'Google Search Central — Meta tag yang dipahami Google; Kontrol tautan judul Anda; URL kanonik.',
+  tool_meta_robots_index_follow: 'index, follow (default, izinkan indeks)',
+  tool_meta_robots_index_nofollow: 'index, nofollow (izinkan indeks, jangan ikuti tautan)',
+  tool_meta_robots_label: 'Robots meta',
+  tool_meta_robots_noindex_follow: 'noindex, follow (sembunyikan dari hasil, tetap ikuti tautan)',
+  tool_meta_robots_noindex_nofollow: 'noindex, nofollow (sembunyikan halaman dan jangan ikuti tautan)',
+  tool_meta_robots_none: '— tanpa robots meta —',
+  tool_meta_rules_body: 'Aturan ini mengikuti panduan Google Search Central tentang meta tag, title link, dan URL kanonik.',
+  tool_meta_rules_item_1:
+    'Meta title dan deskripsi adalah saran, bukan perintah: mesin pencari dapat menulis ulang atau memotongnya, jadi pertahankan judul sekitar 60 karakter dan deskripsi sekitar 155–160.',
+  tool_meta_rules_item_2:
+    'Semua nilai di-escape HTML: & < > " dan \' menjadi entitas, sehingga karakter dalam judul atau deskripsi Anda tidak dapat merusak markup.',
+  tool_meta_rules_item_3:
+    'URL kanonik harus berupa URL absolut lengkap dengan protokol. URL relatif atau tanpa protokol tidak berguna sebagai target kanonik.',
+  tool_meta_rules_item_4:
+    'Robots meta memakai nilai index/noindex dan follow/nofollow. Saat tidak dicantumkan, mesin pencari memakai defaultnya sendiri, yaitu indeks dan ikuti.',
+  tool_meta_rules_item_5:
+    'Canonical dan Open Graph dapat berdampingan di halaman yang sama: og:url harus cocok dengan URL kanonik agar berbagi sosial menunjuk ke alamat yang sama.',
+  tool_meta_rules_title: 'Aturan yang dipakai pembuat',
+  tool_meta_sample: 'Muat contoh',
+  tool_meta_title: 'Pembuat meta tag — buat tag head halaman secara lengkap',
+  tool_meta_title_hint: 'Pertahankan sekitar 60 karakter. Mesin pencari dapat menulis ulang judul yang lebih panjang.',
+  tool_meta_title_label: 'Meta title',
+  tool_meta_title_len: 'Judul: {n} karakter',
+  tool_meta_title_len_warn: 'Judul: {n} karakter — lebih dari 60, pertimbangkan memendekkannya.',
+  tool_meta_title_ph: 'Pembuat meta tag — buat tag head halaman secara lengkap',
+  tool_meta_usecase_1:
+    'Membangun template halaman baru: buat blok head sekali, tinjau petunjuk panjang, lalu tempel ke template sebelum dipublikasikan.',
+  tool_meta_usecase_2:
+    'Menyerahkan pekerjaan ke klien: buat cuplikan head persis dengan canonical dan OG, lalu tempel ke CMS.',
+  tool_meta_usecase_3:
+    'Sebelum publikasi, buat tag dan cocokkan dengan pratinjau hasil pencarian agar judul dan deskripsi sesuai dengan halaman yang terlihat.',
+  tool_meta_usecases_title: 'Penggunaan yang tepat',
   tool_npv_article:
     'Nilai sekarang bersih mendiskontokan arus kas masa depan dengan tingkat tahunan yang dipilih, lalu mengurangi investasi awal. NPV positif hanya berarti, di bawah asumsi Anda, arus masuk terdiskonto melebihi arus keluar — bukan prakiraan atau rekomendasi beli.',
   tool_npv_calculate: 'Hitung',
@@ -4006,6 +4164,102 @@ const id: SiteLangDict = {
   tool_npv_usecase_2: 'Tugas kuliah: latih penjumlahan NPV dengan tingkat tetap dan daftar arus kas pendek.',
   tool_npv_usecase_3: 'Sketsa sebelum bertemu penasihat — bukan pengganti analisis lengkap.',
   tool_npv_usecases_title: 'Kapan dipakai',
+  tool_og_card_large: 'summary_large_image',
+  tool_og_card_summary: 'summary',
+  tool_og_clear: 'Bersihkan',
+  tool_og_copied: 'Tersalin',
+  tool_og_copy: 'Salin',
+  tool_og_description:
+    'Tag Open Graph menentukan tampilan halaman Anda setiap kali dibagikan—gambar atau judul yang hilang membuat Anda kehilangan klik dan bagikan. Tempel tag og:/twitter:card atau URL untuk melihat pratinjau kartu Facebook, X, dan gaya WhatsApp, menemukan kolom yang hilang, dan memperbaiki rasio gambar. Langkah: tempel tag atau ambil URL, baca tiga kartu pratinjau dan tabel kolom, lalu perbaiki yang kurang. Mode tempel berjalan di perangkat Anda; mode URL mengambil halaman sekali dan tidak menyimpannya. Contoh: halaman dengan og:image 1200×630 dibagikan sebagai kartu besar.',
+  tool_og_dimensions: '{w}×{h} px',
+  tool_og_error_prefix: 'Error: ',
+  tool_og_example:
+    'Tag contoh menggambarkan artikel blog dengan og:image 1200×630 dan twitter:card summary_large_image. Pratinjau menampilkan kartu Facebook dengan gambar di kiri, kartu besar X, kartu gaya WhatsApp, dan tabel tag yang semua kolom wajibnya ada.',
+  tool_og_example_title: 'Contoh',
+  tool_og_faq_a1:
+    'Facebook, X, dan WhatsApp menyusun pratinjau dari judul HTML, meta description, dan gambar pertama halaman. Kartunya bisa tidak lengkap atau menampilkan gambar yang salah, karena itulah kolom og: wajib ada.',
+  tool_og_faq_a2:
+    'Ukuran aman adalah 1200×630 px, rasio 1.91:1 yang diterima semua platform utama. Facebook kini juga mendukung potongan 2:1 dan 1:1. Gambar yang sangat kecil sering diperbesar dan tampak buram.',
+  tool_og_faq_a3:
+    'twitter:card menentukan tata letak: summary_large_image menampilkan gambar lebar, summary menampilkan yang kecil. Saat twitter:title, twitter:description, atau twitter:image hilang, X memakai tag og: yang bersesuaian.',
+  tool_og_faq_a4:
+    'Platform memakai gambar pertama yang ditemukan di HTML halaman, atau menampilkan kartu tanpa gambar. og:image yang hilang adalah penyebab paling umum tautan yang dibagikan tanpa gambar pratinjau.',
+  tool_og_faq_a5:
+    'Pratinjau mencoba memuat og:image dengan pemuatan gambar browser untuk membaca ukuran aslinya. Saat gambar diblokir, offline, lambat, atau server menolak permintaan, ukuran tidak bisa dibaca dan pemeriksaan melaporkan tidak diketahui.',
+  tool_og_faq_a6:
+    'Tidak. Pada mode tempel, penguraian dan pratinjau berjalan di perangkat Anda. Mode URL mengambil halaman sekali melalui worker kami dan tidak menyimpannya.',
+  tool_og_faq_q1: 'Apa yang terjadi jika halaman tidak punya tag Open Graph?',
+  tool_og_faq_q2: 'Seberapa besar sebaiknya og:image?',
+  tool_og_faq_q3: 'Bagaimana hubungan twitter:card dengan tag og:?',
+  tool_og_faq_q4: 'Apa yang dilakukan platform saat og:image hilang?',
+  tool_og_faq_q5: 'Mengapa pemeriksaan rasio melaporkan "tidak diketahui"?',
+  tool_og_faq_q6: 'Apakah tag saya diunggah ke mana-mana?',
+  tool_og_fetch_failed: 'Gagal mengambil URL. Halaman mungkin offline, memblokir bot, atau tidak mengembalikan HTML.',
+  tool_og_field_og_description: 'og:description',
+  tool_og_field_og_image: 'og:image',
+  tool_og_field_og_site_name: 'og:site_name',
+  tool_og_field_og_title: 'og:title',
+  tool_og_field_og_type: 'og:type',
+  tool_og_field_og_url: 'og:url',
+  tool_og_field_twitter_card: 'twitter:card',
+  tool_og_field_twitter_description: 'twitter:description',
+  tool_og_field_twitter_image: 'twitter:image',
+  tool_og_field_twitter_site: 'twitter:site',
+  tool_og_field_twitter_title: 'twitter:title',
+  tool_og_home_desc:
+    'Buat setiap bagikan halaman Anda mendatangkan klik: pratinjau bagaimana tampilannya di Facebook, X, dan aplikasi pesan, langsung dari browser.',
+  tool_og_home_title: 'Pratinjau Open Graph',
+  tool_og_how_body:
+    'Pratinjau mengurai tag og:/twitter: yang Anda tempel (atau mengekstraknya dari HTML yang diambil dari URL) lalu menggambar tiga kartu. Facebook menampilkan gambar 1.91:1 di kiri dengan judul, deskripsi, dan domain di bawahnya. X mengikuti twitter:card: summary_large_image menampilkan gambar besar di atas, summary menampilkan yang kecil di samping teks. Aplikasi pesan seperti WhatsApp menampilkan satu kartu besar. Tabel menandai og:title, og:description, dan og:image sebagai wajib dan mencantumkan kolom opsional.',
+  tool_og_how_title: 'Cara kerja',
+  tool_og_missing_label: 'Hilang',
+  tool_og_no_tags: 'Tag OG tidak terdeteksi',
+  tool_og_no_tags_fallback:
+    'Tanpa tag Open Graph, Facebook, X, dan WhatsApp menyusun pratinjau dari judul, meta description, dan gambar pertama halaman.',
+  tool_og_ok_label: 'Ada',
+  tool_og_optional_label: 'Opsional',
+  tool_og_platform_facebook: 'Facebook',
+  tool_og_platform_generic: 'Aplikasi pesan (gaya WhatsApp)',
+  tool_og_platform_x: 'X',
+  tool_og_preview: 'Pratinjau',
+  tool_og_ratio_ok: 'og:image mendekati 1200×630 px (1.91:1).',
+  tool_og_ratio_unknown: 'Tidak dapat membaca ukuran gambar dari URL.',
+  tool_og_ratio_warning: 'og:image sebaiknya sekitar 1200×630 px (1.91:1).',
+  tool_og_ref_ogp_label: 'ogp.me — Protokol Open Graph',
+  tool_og_ref_x_label: 'X — Markup kartu',
+  tool_og_references: 'ogp.me — Protokol Open Graph; X — Markup kartu.',
+  tool_og_required_label: 'Wajib',
+  tool_og_rules_body:
+    'Berikut ukuran gambar dan fallback yang dipakai platform, berdasarkan protokol Open Graph dan dokumentasi X Cards.',
+  tool_og_rules_item_1:
+    'Kolom wajib: og:title, og:description, dan og:image. Yang hilang ditandai agar diperbaiki sebelum publikasi.',
+  tool_og_rules_item_2:
+    'og:image 1200×630 px (1.91:1) berfungsi di semua platform utama. Facebook kini juga menerima potongan 2:1 dan 1:1; gambar kecil sering diperbesar dan tampak buram.',
+  tool_og_rules_item_3:
+    'twitter:card summary_large_image cocok dengan gambar besar; summary dengan yang kecil. Tanpa twitter:card, platform menyimpulkan kartu summary dari tag og:.',
+  tool_og_rules_item_4:
+    'Saat og:title atau og:image hilang, platform memakai judul HTML, meta description, dan gambar pertama halaman.',
+  tool_og_rules_item_5:
+    'Ukuran gambar diukur dengan memuat gambar di browser; jika tidak dapat dimuat (diblokir, offline, atau URL salah), pemeriksaan melaporkan tidak diketahui.',
+  tool_og_rules_title: 'Aturan yang dipakai pratinjau',
+  tool_og_running: 'Memeriksa…',
+  tool_og_sample: 'Contoh',
+  tool_og_table_title: 'Status tag',
+  tool_og_tags_ph: 'Tempel tag <meta property="og:*"> dan <meta name="twitter:*"> di sini…',
+  tool_og_tags_tab: 'Tempel tag',
+  tool_og_title: 'Pratinjau Open Graph — cek kartu bagikan media sosial',
+  tool_og_twitter_inferred: 'twitter:card tidak diatur — platform menyimpulkan kartu summary dari tag og:.',
+  tool_og_url_error: 'Masukkan URL http(s) yang valid.',
+  tool_og_url_fetch: 'Ambil URL',
+  tool_og_url_ph: 'https://example.com/page',
+  tool_og_url_tab: 'Ambil URL',
+  tool_og_usecase_1:
+    'Sebelum menerbitkan artikel atau landing page, tempel tag sekali dan pastikan kartu terlihat benar di Facebook, X, dan aplikasi pesan.',
+  tool_og_usecase_2:
+    'Saat tautan yang dibagikan tidak menampilkan gambar atau terpotong, tempel tag og: untuk memeriksa apakah og:image hilang atau rasionya salah.',
+  tool_og_usecase_3:
+    'Setelah memperbarui CMS atau tema, ambil URL langsung dan pastikan tag og: masih sesuai dengan halaman.',
+  tool_og_usecases_title: 'Penggunaan yang tepat',
   tool_ohms_law_I_label: 'Arus I',
   tool_ohms_law_I_ph: 'mis. 2',
   tool_ohms_law_V_label: 'Tegangan V',
@@ -4085,6 +4339,126 @@ const id: SiteLangDict = {
   tool_one_rep_max_usecases_title: 'Kapan dipakai',
   tool_one_rep_max_weight_label: 'Berat',
   tool_one_rep_max_weight_ph: 'mis. 100',
+  tool_onpage_canonical_check: 'Canonical',
+  tool_onpage_canonical_missing:
+    'Canonical belum diatur. Tambahkan <link rel="canonical"> saat konten yang sama dapat diakses dari beberapa URL.',
+  tool_onpage_canonical_ok: 'Canonical yang merujuk diri sendiri ditemukan.',
+  tool_onpage_canonical_other:
+    'Canonical menunjuk ke URL lain. Gunakan canonical referensi-diri kecuali halaman ini memang salinan target.',
+  tool_onpage_check: 'Periksa halaman',
+  tool_onpage_clear: 'Bersihkan',
+  tool_onpage_copied: 'Tersalin',
+  tool_onpage_copy: 'Salin',
+  tool_onpage_desc_check: 'Meta description',
+  tool_onpage_desc_long: 'Deskripsi {n} karakter; snippet biasanya terpotong sekitar 160 karakter.',
+  tool_onpage_desc_missing: 'Meta description tidak ditemukan. Tulis ringkasan 140–160 karakter yang sesuai isi halaman.',
+  tool_onpage_desc_ok: 'Deskripsi {n} karakter. Rentang 140–160 karakter tampil baik di kebanyakan snippet.',
+  tool_onpage_desc_short: 'Deskripsi hanya {n} karakter. Manfaatkan ruang untuk merangkum nilai halaman.',
+  tool_onpage_description:
+    'Judul lemah, meta description hilang, H1 ganda, atau canonical yang salah bisa diam-diam menurunkan peringkat dan klik Anda di hasil pencarian. Tempel URL atau HTML untuk mengaudit title, H1, meta description, canonical, Open Graph, JSON-LD, konten campuran, dan pemblokiran render, masing-masing dengan saran perbaikan. Mode tempel berjalan di perangkat Anda; mode URL mengambil halaman sekali tanpa menyimpannya. Contoh: halaman dengan dua H1 dan satu gambar http://.',
+  tool_onpage_error_prefix: 'Kesalahan: ',
+  tool_onpage_example:
+    'Input contoh adalah halaman dengan title 71 karakter, tanpa meta description, dua H1, canonical ke URL lain, satu og:image, blok JSON-LD valid, dan satu gambar http://. Pemeriksa melaporkan title berpotensi terpotong, H1 sebagai peringatan, canonical non-referensi-diri, dan konten campuran sebagai peringatan, sesuai yang ditampilkan alat saat contoh dimuat.',
+  tool_onpage_example_title: 'Contoh',
+  tool_onpage_faq_a1:
+    'Ia memeriksa tag yang dikendalikan halaman: title, meta description, H1, canonical, robots meta, kolom Open Graph, data terstruktur JSON-LD, konten campuran, dan sumber daya pemblokir render. Tidak mengukur peringkat atau backlink.',
+  tool_onpage_faq_a2:
+    'Satu H1 menyatakan topik dengan jelas bagi pembaca dan mesin pencari. Banyak H1 mengaburkan kerangka; gunakan satu H1 dan susun sisanya dengan H2–H6.',
+  tool_onpage_faq_a3:
+    'Untuk halaman yang ingin dirangking, ya — canonical referensi-diri adalah sinyal paling jelas. Menunjuk ke URL lain memberi tahu Google halaman ini duplikat, hanya berguna jika memang demikian.',
+  tool_onpage_faq_a4:
+    'Saat halaman disajikan via https dan merujuk gambar, skrip, atau gaya http://, browser memblokir permintaan secara bawaan. Pemeriksaan ini mencatatnya sebagai peringatan agar Anda beralih ke https.',
+  tool_onpage_faq_a5:
+    'Ia memastikan blok terurai sebagai JSON valid dan mengingatkan agar data terstruktur konsisten dengan konten terlihat. Tidak menjalankan validator schema.org penuh.',
+  tool_onpage_faq_a6:
+    'Tidak. Saat menempel HTML, penguraian terjadi di perangkat Anda dan tidak ada yang dikirim ke server. Mode URL mengambil halaman sekali melalui worker kami dan tidak menyimpannya.',
+  tool_onpage_faq_q1: 'Apa yang diperiksa pemeriksa SEO on-page?',
+  tool_onpage_faq_q2: 'Mengapa halaman harus memiliki tepat satu H1?',
+  tool_onpage_faq_q3: 'Apakah canonical harus menunjuk ke dirinya sendiri?',
+  tool_onpage_faq_q4: 'Mengapa pemeriksa menandai sumber daya http:// sebagai konten campuran?',
+  tool_onpage_faq_q5: 'Apakah pemeriksaan JSON-LD menguji validasi?',
+  tool_onpage_faq_q6: 'Apakah HTML saya diunggah ke mana pun?',
+  tool_onpage_fetch_failed: 'Tidak dapat mengambil URL. Halaman mungkin offline, memblokir bot, atau tidak mengembalikan HTML.',
+  tool_onpage_h1_check: 'H1',
+  tool_onpage_h1_missing: 'H1 tidak ditemukan. Gunakan satu H1 yang menyatakan topik halaman.',
+  tool_onpage_h1_multiple: 'Ditemukan {n} tag H1. Pertahankan satu H1 per halaman dan gunakan H2–H6 untuk bagian.',
+  tool_onpage_h1_ok: 'Ditemukan satu H1 dan berada di dalam <body>.',
+  tool_onpage_home_desc:
+    'Tangkap masalah tag yang menahan peringkat halaman Anda: periksa title, H1, meta description, canonical, Open Graph, dan JSON-LD di browser.',
+  tool_onpage_home_title: 'Pemeriksa SEO On-Page',
+  tool_onpage_how_body:
+    'Pemeriksa mengurai markup yang Anda tempel (atau HTML yang diambil dari URL) dan mengevaluasi daftar tetap pemeriksaan SEO on-page. Setiap pemeriksaan membaca satu jenis tag: title, meta description, H1, canonical, robots meta, kolom Open Graph, blok JSON-LD, konten campuran, dan sumber daya yang memblokir render. Mode tempel sepenuhnya di browser Anda; mode URL mengambil halaman sekali melalui worker kami dan tidak menyimpannya.',
+  tool_onpage_how_title: 'Cara kerjanya',
+  tool_onpage_html_ph: 'Tempel HTML <head> (dan potongan body) di sini…',
+  tool_onpage_html_tab: 'Tempel HTML',
+  tool_onpage_jsonld_check: 'JSON-LD',
+  tool_onpage_jsonld_invalid: 'Blok JSON-LD tidak dapat diuraikan sebagai JSON. Periksa kesalahan sintaks.',
+  tool_onpage_jsonld_missing:
+    'Data terstruktur JSON-LD tidak ditemukan. Pertimbangkan menambah markup schema.org yang mendeskripsikan konten terlihat.',
+  tool_onpage_jsonld_ok:
+    'Ditemukan {n} blok JSON-LD. Jaga data terstruktur tetap konsisten dengan apa yang dilihat pengunjung.',
+  tool_onpage_mixed_check: 'Konten campuran',
+  tool_onpage_mixed_found:
+    'Ditemukan {n} referensi http://. Browser memblokir konten campuran; sajikan sumber daya tersebut melalui https.',
+  tool_onpage_mixed_none: 'Tidak ada referensi http:// dalam konteks https.',
+  tool_onpage_no_html: 'Tempel HTML dulu, atau ambil sebuah URL.',
+  tool_onpage_no_results: 'Belum ada pemeriksaan untuk ditampilkan.',
+  tool_onpage_og_check: 'Open Graph',
+  tool_onpage_og_missing: 'Tag og: tidak ditemukan. Tambahkan og:title, og:description, dan og:image untuk pratinjau berbagi.',
+  tool_onpage_og_ok: 'og:title, og:description, dan og:image sudah tersedia.',
+  tool_onpage_og_partial: 'Kurang {n} kolom og: wajib. Pastikan og:title, og:description, dan og:image tersedia.',
+  tool_onpage_ref_canonical_label: 'Search Central — URL kanonikal',
+  tool_onpage_ref_mdn_label: 'MDN — <meta>: elemen metadata',
+  tool_onpage_ref_tags_label: 'Search Central — Meta tag yang dipahami Google',
+  tool_onpage_references: 'Google Search Central — meta tag; Google Search Central — canonical; MDN — elemen <meta>.',
+  tool_onpage_render_check: 'Pemblokiran render',
+  tool_onpage_render_found:
+    '{n} <link rel="stylesheet"> tanpa media di <head>. Sejajarkan CSS kritis atau tunda pemuatan untuk meningkatkan LCP.',
+  tool_onpage_render_none: 'Tidak ada stylesheet atau skrip yang jelas memblokir render.',
+  tool_onpage_robots_check: 'Robots meta',
+  tool_onpage_robots_missing: 'Tidak ada robots meta. Standarnya index,follow, yang sesuai untuk sebagian besar halaman publik.',
+  tool_onpage_robots_noindex: 'Halaman menetapkan noindex sehingga tidak muncul di hasil Google. Hapus jika halaman perlu diindeks.',
+  tool_onpage_robots_ok: 'Robots meta mengizinkan pengindeksan dan mengikuti tautan.',
+  tool_onpage_rules_body:
+    'Berikut standar yang dibandingkan oleh setiap pemeriksaan, bersumber dari Google Search Central dan spesifikasi HTML.',
+  tool_onpage_rules_item_1:
+    'Title: halaman harus memiliki satu <title> deskriptif. Google dapat menulis ulang, tetapi title ringkas mendekati 50–60 karakter biasanya tampil baik.',
+  tool_onpage_rules_item_2:
+    'H1: gunakan tepat satu H1 yang menyatakan topik. Judul lainnya harus H2–H6 dan membentuk kerangka logis.',
+  tool_onpage_rules_item_3:
+    'Canonical: canonical referensi-diri memberi tahu Google URL yang diutamakan saat ada duplikat. Link rel="canonical" diletakkan di <head>.',
+  tool_onpage_rules_item_4:
+    'Konten campuran: halaman https yang merujuk sumber daya http:// diblokir browser. Pemeriksaan ini mencatatnya sebagai peringatan.',
+  tool_onpage_rules_item_5:
+    'Pemblokiran render: stylesheet di <head> tanpa atribut media memblokir render. Pemeriksaan ini heuristik dan tidak mengukur waktu muat nyata.',
+  tool_onpage_rules_title: 'Aturan yang diikuti pemeriksaan',
+  tool_onpage_running: 'Memeriksa…',
+  tool_onpage_sample: 'Contoh',
+  tool_onpage_status_err: 'Masalah',
+  tool_onpage_status_ok: 'OK',
+  tool_onpage_status_warn: 'Peringatan',
+  tool_onpage_summary_n_err: '{n} masalah',
+  tool_onpage_summary_n_ok: '{n} lulus',
+  tool_onpage_summary_n_warn: '{n} peringatan',
+  tool_onpage_summary_title: 'Ringkasan pemeriksaan',
+  tool_onpage_title: 'Pemeriksa SEO On-Page — temukan dan perbaiki masalah tag halaman',
+  tool_onpage_title_check: 'Title',
+  tool_onpage_title_long: 'Title {n} karakter, kemungkinan terpotong di hasil pencarian. Targetkan sekitar 50–60 karakter.',
+  tool_onpage_title_missing: 'Tag <title> tidak ditemukan. Tambahkan satu di dalam <head>.',
+  tool_onpage_title_ok: 'Title {n} karakter. Mendekati 50–60 karakter biasanya tampil baik di hasil pencarian.',
+  tool_onpage_title_short: 'Title hanya {n} karakter. Tambahkan fokus spesifik halaman agar lebih informatif.',
+  tool_onpage_unknown: 'Tidak dapat menentukan: {label}',
+  tool_onpage_url_error: 'Masukkan URL http(s) yang valid.',
+  tool_onpage_url_fetch: 'Periksa URL',
+  tool_onpage_url_ph: 'https://example.com/page',
+  tool_onpage_url_tab: 'Ambil URL',
+  tool_onpage_usecase_1:
+    'Sebelum redesign atau rilis ulang: jalankan halaman yang sama melalui pemeriksa dan perbaiki masalah yang dilaporkan sekali jalan.',
+  tool_onpage_usecase_2:
+    'Serah terima template: saat menerima HTML dari agensi atau pembuat halaman, verifikasi tag head alih-alih percaya hasil ekspor.',
+  tool_onpage_usecase_3:
+    'Pembaruan konten: setelah edit di CMS, pastikan title, description, dan canonical masih sesuai halaman baru.',
+  tool_onpage_usecases_title: 'Cocok untuk',
   tool_organize_pdf_apply: 'Terapkan',
   tool_organize_pdf_article:
     'Urut ulang, hapus, atau pilih halaman dari satu PDF di browser—file tetap di perangkat, tidak diunggah ke server.',
@@ -4973,7 +5347,7 @@ const id: SiteLangDict = {
   tool_robots_copied: 'Tersalin',
   tool_robots_copy: 'Salin',
   tool_robots_description:
-    'Buat file robots.txt di browser Anda. Langkah: pilih user-agent, tambahkan jalur Allow / Disallow dan baris Sitemap, lalu salin hasil teks polos dengan aturan sintaks dan user-agent terbaru perayap AI yang dijelaskan. Berjalan lokal—tidak ada yang diunggah. Contoh: memblokir GPTBot sambil menjaga Googlebot tetap aktif sepenuhnya.',
+    'Robots.txt Anda memberi tahu Google halaman mana yang boleh dirayapi dan diindeks—aturan yang salah bisa menyembunyikan seluruh situs dari pencarian. Buat file robots.txt di browser Anda. Langkah: pilih user-agent, tambahkan jalur Allow / Disallow dan baris Sitemap, lalu salin hasil teks polos dengan aturan sintaks dan user-agent terbaru perayap AI yang dijelaskan. Berjalan lokal—tidak ada yang diunggah. Contoh: memblokir GPTBot sambil menjaga Googlebot tetap aktif sepenuhnya.',
   tool_robots_disallow_label: 'Jalur Disallow (satu per baris)',
   tool_robots_download: 'Unduh',
   tool_robots_empty_agent: 'Pilih atau tambahkan user-agent dulu.',
@@ -4993,7 +5367,8 @@ const id: SiteLangDict = {
   tool_robots_faq_q3: 'Di mana baris Sitemap sebaiknya ditaruh?',
   tool_robots_faq_q4: 'Apakah robots.txt saya diunggah ke mana pun?',
   tool_robots_generate: 'Buat',
-  tool_robots_home_desc: 'Buat robots.txt dengan sintaks benar: izin, blokir, dan perayap AI di browser Anda.',
+  tool_robots_home_desc:
+    'Kendalikan cara mesin pencari merayapi situs Anda dengan robots.txt yang valid: izin, blokir, dan perayap AI di browser.',
   tool_robots_home_title: 'Pembuat robots.txt',
   tool_robots_how_body:
     'Pilih perayap yang ditargetkan, tambahkan jalur Allow dan Disallow untuk setiap grup, opsional baris Sitemap, lalu tekan Buat. Halaman menyusun file teks polos mengikuti tata letak RFC 9309: satu baris User-agent per grup, baris Allow/Disallow di bawahnya, baris kosong antar grup, dan baris Sitemap di akhir. Salin hasilnya ke akar situs Anda di /robots.txt.',
@@ -5281,7 +5656,7 @@ const id: SiteLangDict = {
   tool_schema_copied: 'Tersalin',
   tool_schema_copy: 'Salin',
   tool_schema_description:
-    'Buat JSON-LD di browser Anda. Langkah: pilih tipe (FAQ, artikel, breadcrumb, organisasi), isi kolom wajib, lalu salin markup Schema.org yang valid dengan tag script siap tempel. Halaman membedakan kolom wajib dan opsional serta memvalidasi JSON sebelum disalin. Tidak ada yang diunggah. Contoh: FAQ dua pertanyaan menghasilkan mainEntity dengan dua simpul Question.',
+    'Data terstruktur membantu Google memahami isi halaman Anda dan dapat menghasilkan hasil pencarian yang lebih kaya dan mudah diklik. Buat JSON-LD di browser Anda. Langkah: pilih tipe (FAQ, artikel, breadcrumb, organisasi), isi kolom wajib, lalu salin markup Schema.org yang valid dengan tag script siap tempel. Halaman membedakan kolom wajib dan opsional serta memvalidasi JSON sebelum disalin. Tidak ada yang diunggah. Contoh: FAQ dua pertanyaan menghasilkan mainEntity dengan dua simpul Question.',
   tool_schema_download: 'Unduh',
   tool_schema_err_no_fields: 'Isi kolom wajib dulu, lalu buat.',
   tool_schema_example:
@@ -5305,7 +5680,8 @@ const id: SiteLangDict = {
   tool_schema_faq_remove: 'Hapus',
   tool_schema_fields_label: 'Kolom',
   tool_schema_generate: 'Buat',
-  tool_schema_home_desc: 'Buat data terstruktur Schema.org untuk FAQ, artikel, breadcrumb, dan organisasi di browser Anda.',
+  tool_schema_home_desc:
+    'Bantu Google memahami halaman Anda dan raih hasil pencarian yang lebih kaya dan mudah diklik dengan JSON-LD Schema.org, dibuat di browser.',
   tool_schema_home_title: 'Pembuat JSON-LD',
   tool_schema_how_body:
     'Pilih tipe skema, isi kolom form, lalu tekan Buat. Halaman menyusun objek JSON-LD Schema.org, memeriksa kolom wajib terisi, lalu menampilkan hasil rapi yang dibungkus tag script untuk ditempel ke bagian head halaman Anda. Sebelum keluaran dirender, sintaks JSON diperiksa; kolom wajib yang kosong dilaporkan sebagai daftar, bukan diam-diam membuat markup yang cacat.',
@@ -5398,7 +5774,7 @@ const id: SiteLangDict = {
   tool_serp_desc_label: 'Meta description',
   tool_serp_desc_ph: 'Teks cuplikan di bawah judul hasil',
   tool_serp_description:
-    'Tempel judul dan deskripsi untuk melihat bagaimana potongannya di hasil Google di desktop dan ponsel. Isi judul, deskripsi, dan URL opsional; lihat jumlah karakter, perkiraan lebar piksel, dan titik potong cuplikan; bandingkan dua judul secara berdampingan. Semua berjalan di browser Anda—tidak ada yang diunggah. Contoh: judul 60 huruf dan judul 30 karakter CJK bisa mencapai batas piksel dengan jumlah yang berbeda.',
+    'Judul atau deskripsi yang terpotong di hasil pencarian bisa diam-diam membuat Anda kehilangan klik dari Google. Tempel judul dan deskripsi untuk melihat bagaimana potongannya di hasil Google di desktop dan ponsel. Isi judul, deskripsi, dan URL opsional; lihat jumlah karakter, perkiraan lebar piksel, dan titik potong cuplikan; bandingkan dua judul secara berdampingan. Semua berjalan di browser Anda—tidak ada yang diunggah. Contoh: judul 60 huruf dan judul 30 karakter CJK bisa mencapai batas piksel dengan jumlah yang berbeda.',
   tool_serp_desktop: 'Tampilan desktop',
   tool_serp_err_title_empty: 'Masukkan judul untuk melihat pratinjau.',
   tool_serp_example:
@@ -5417,7 +5793,7 @@ const id: SiteLangDict = {
   tool_serp_faq_q3: 'Apakah ini sama dengan pratinjau ponsel di Search Console?',
   tool_serp_faq_q4: 'Apakah judul saya diunggah ke mana pun?',
   tool_serp_fit: 'Muai dalam viewport',
-  tool_serp_home_desc: 'Cek potongan judul dan deskripsi sebelum publikasi.',
+  tool_serp_home_desc: 'Judul yang terpotong membuat Anda kehilangan klik di pencarian—cek potongannya sebelum publikasi.',
   tool_serp_home_title: 'Pratinjau hasil Google',
   tool_serp_how_body:
     'Ketik atau tempel judul, deskripsi, dan URL opsional. Alat memperkirakan berapa karakter dan piksel perkiraan setiap baris memakai pendekatan metrik font (glif CJK yang lebar dihitung lebih banyak daripada huruf ASCII yang sempit), lalu menggambar cuplikan gaya Google untuk desktop dan ponsel. Baris yang lebih lebar dari viewport perkiraan diberi tanda potong.',
@@ -5510,7 +5886,7 @@ const id: SiteLangDict = {
   tool_sitemap_copied: 'Tersalin',
   tool_sitemap_copy: 'Salin',
   tool_sitemap_description:
-    'Buat sitemap.xml di browser Anda. Langkah: tempel satu URL https per baris dengan lastmod / changefreq / priority opsional, pratinjau XML dengan escaping yang benar, lalu salin ke root situs. Halaman ini juga menjelaskan aturan dan batas protokol. Tidak ada yang diunggah. Contoh: 3 URL → urlset berisi tiga elemen url.',
+    'Sitemap membantu Google menemukan dan mengindeks halaman Anda lebih cepat, terutama halaman baru atau yang jarang tertaut. Buat sitemap.xml di browser Anda. Langkah: tempel satu URL https per baris dengan lastmod / changefreq / priority opsional, pratinjau XML dengan escaping yang benar, lalu salin ke root situs. Halaman ini juga menjelaskan aturan dan batas protokol. Tidak ada yang diunggah. Contoh: 3 URL → urlset berisi tiga elemen url.',
   tool_sitemap_download: 'Unduh',
   tool_sitemap_example:
     'Input contoh: https://example.com/ dan https://example.com/products dengan lastmod 2026-08-01, plus https://example.com/about — hasilnya urlset berisi tiga elemen url, yang tengah membawa lastmod.',
@@ -5531,7 +5907,7 @@ const id: SiteLangDict = {
     'Tiap baris: URL, atau URL | lastmod (yyyy-MM-dd), atau URL | lastmod | changefreq | priority. Contoh: https://example.com/page | 2026-08-01 | weekly | 0.8',
   tool_sitemap_generate: 'Buat',
   tool_sitemap_home_desc:
-    'Ubah daftar URL menjadi sitemap.xml yang valid dengan lastmod, changefreq, dan priority, langsung di browser.',
+    'Bantu Google menemukan dan mengindeks setiap halaman yang ingin Anda rangking: ubah daftar URL menjadi sitemap.xml yang valid dengan lastmod, changefreq, dan priority, langsung di browser.',
   tool_sitemap_home_title: 'Pembuat sitemap XML',
   tool_sitemap_how_body:
     'Tempel daftar URL, satu per baris. Setelah garis vertikal Anda dapat menambahkan lastmod (yyyy-MM-dd), changefreq, dan priority. Halaman mem-parsing tiap baris, meng-escape karakter cadangan, memastikan URL diawali http(s), lalu menyusun urlset sesuai protokol. Salin XML ke root situs, lalu rujuk dari robots.txt atau kirim di Search Console.',
@@ -6259,6 +6635,99 @@ const id: SiteLangDict = {
   tool_unlock_pdf_usecases_title: 'Cocok untuk',
   tool_unlock_pdf_warn_large: 'File lebih dari ~25 MB — bisa lambat atau gagal di beberapa browser.',
   tool_unlock_pdf_warn_pdflib: 'Gagal memuat pustaka PDF. Periksa jaringan dan coba lagi.',
+  tool_utm_campaign_hint: 'Promosi atau produk tempat link ini berada.',
+  tool_utm_campaign_label: 'Nama kampanye (utm_campaign)',
+  tool_utm_campaign_ph: 'summer_sale',
+  tool_utm_campaign_required: 'Nama kampanye (utm_campaign) wajib diisi.',
+  tool_utm_case_note:
+    'Google Analytics membedakan huruf besar/kecil pada nilai. Gunakan gaya huruf kecil yang konsisten agar kanal yang sama menyatu.',
+  tool_utm_clear: 'Bersihkan',
+  tool_utm_content_hint: 'Opsional. Membedakan iklan atau link yang mengarah ke URL yang sama.',
+  tool_utm_content_label: 'Konten kampanye (utm_content)',
+  tool_utm_content_ph: 'header_banner',
+  tool_utm_copied: 'Tersalin',
+  tool_utm_copy: 'Salin',
+  tool_utm_description:
+    'Tag UTM yang bersih adalah satu-satunya cara membuktikan kampanye, email, atau postingan mana yang benar-benar mendatangkan lalu lintas Anda—tanpa tag yang benar, upaya SEO dan pemasaran Anda tak terlihat di analitik. Bangun link pelacakan kampanye dari URL halaman tujuan dan utm_source, utm_medium, utm_campaign, utm_term, serta utm_content. Langkah: tempel URL dasar, isi lima parameter, salin link yang dihasilkan dengan encoding URL yang benar. Parameter kueri yang sudah ada dipertahankan dan digabung, tidak ditimpa. Berjalan sepenuhnya di perangkat Anda—tidak ada yang diunggah. Contoh: https://example.com/page dengan source=newsletter, medium=email, dan campaign=summer_sale.',
+  tool_utm_encoding_note: 'Nilai di-encode dengan encodeURIComponent: spasi menjadi %20 dan karakter non-ASCII ikut di-encode.',
+  tool_utm_error_prefix: 'Error: ',
+  tool_utm_example:
+    'Input contoh adalah https://example.com/page dengan utm_source=newsletter, utm_medium=email, dan utm_campaign=summer_sale. Link yang dihasilkan adalah https://example.com/page?utm_source=newsletter&utm_medium=email&utm_campaign=summer_sale.',
+  tool_utm_example_title: 'Contoh',
+  tool_utm_faq_a1:
+    'utm_source memberi tahu di mana link dilihat (newsletter, facebook, google), sedangkan utm_medium memberi tahu bagaimana link dikirim (email, cpc, social, referral). GA4 menggabungkannya dengan utm_campaign untuk menamai sumber lalu lintas.',
+  tool_utm_faq_a2:
+    'Tidak. Parameter yang ada dipertahankan dan UTM ditambahkan dengan &. Jika URL sudah berisi parameter bernama sama, nilai baru akan menggantikannya.',
+  tool_utm_faq_a3:
+    'Setiap nilai di-encode persen: spasi menjadi %20 dan karakter non-ASCII ikut di-encode. Link yang dihasilkan tetap valid di klien email, aplikasi pesan, dan browser.',
+  tool_utm_faq_a4:
+    'Ya. Google Analytics memperlakukan utm_source=Facebook dan utm_source=facebook sebagai dua sumber berbeda. Gunakan gaya huruf kecil yang konsisten agar kanal yang sama menyatu.',
+  tool_utm_faq_a5:
+    'utm_term mengidentifikasi kata kunci pencarian berbayar, berguna untuk Google Ads. utm_content membedakan dua link atau iklan yang mengarah ke URL yang sama, seperti banner header dan link footer.',
+  tool_utm_faq_a6: 'Tidak. Pembuat berjalan sepenuhnya di browser Anda dan tidak ada yang diunggah.',
+  tool_utm_faq_q1: 'Apa bedanya utm_source dan utm_medium?',
+  tool_utm_faq_q2: 'URL sudah punya parameter kueri. Apakah akan hilang?',
+  tool_utm_faq_q3: 'Bagaimana dengan spasi, karakter Tionghoa, atau simbol pada nilai?',
+  tool_utm_faq_q4: 'Apakah nilai UTM peka huruf besar/kecil?',
+  tool_utm_faq_q5: 'Kapan saya harus memakai utm_term dan utm_content?',
+  tool_utm_faq_q6: 'Apakah URL saya dikirim ke mana-mana?',
+  tool_utm_generate: 'Buat',
+  tool_utm_home_desc:
+    'Ukur kampanye mana yang benar-benar mendatangkan lalu lintas Anda: buat link pelacakan bersih dengan utm_source, medium, campaign, term, dan content dari browser.',
+  tool_utm_home_title: 'Pembuat UTM',
+  tool_utm_how_body:
+    'Pembuat mem-parsing URL dasar Anda, mempertahankan parameter kueri yang ada, lalu menambahkan parameter UTM dengan pemisah &. Setiap nilai di-encode persen sehingga spasi, karakter Tionghoa, dan simbol tetap aman di dalam link. Jika URL punya hash, hash dipindah ke belakang semua parameter. Lima parameter UTM inilah yang dibaca Google Analytics untuk mengatribusikan kunjungan ke sumber, medium, dan kampanye.',
+  tool_utm_how_title: 'Cara kerja',
+  tool_utm_medium_hint: 'Bagaimana link dikirim: email, cpc, social, referral.',
+  tool_utm_medium_label: 'Medium kampanye (utm_medium)',
+  tool_utm_medium_ph: 'email',
+  tool_utm_output_label: 'URL yang dihasilkan',
+  tool_utm_param_campaign: 'utm_campaign',
+  tool_utm_param_content: 'utm_content',
+  tool_utm_param_empty: 'Kosong',
+  tool_utm_param_medium: 'utm_medium',
+  tool_utm_param_optional: 'Opsional',
+  tool_utm_param_required: 'Wajib',
+  tool_utm_param_source: 'utm_source',
+  tool_utm_param_status: 'Status',
+  tool_utm_param_term: 'utm_term',
+  tool_utm_param_value: 'Nilai',
+  tool_utm_ref_ga_label: 'Google Analytics — Kampanye kustom (UTM)',
+  tool_utm_ref_searchcentral_label: 'Google Search Central — Parameter URL',
+  tool_utm_references: 'Google Analytics — Kampanye kustom (UTM); Google Search Central — Parameter URL.',
+  tool_utm_rules_body: 'Berikut definisi dan aturan encoding parameter UTM menurut dokumentasi Google Analytics.',
+  tool_utm_rules_item_1:
+    'utm_source mengidentifikasi di mana link dilihat; utm_medium mengidentifikasi bagaimana link dikirim. Keduanya wajib untuk atribusi.',
+  tool_utm_rules_item_2:
+    'utm_campaign adalah nama promosi dan wajib di sini. utm_term dan utm_content opsional: term untuk kata kunci berbayar, content untuk membedakan dua link.',
+  tool_utm_rules_item_3:
+    'Jika URL dasar sudah punya parameter kueri, parameter itu dipertahankan dan UTM ditambahkan dengan &; parameter yang sama namanya diganti nilai barunya.',
+  tool_utm_rules_item_4:
+    'Nilai parameter di-encode persen: spasi menjadi %20 dan karakter non-ASCII ikut di-encode. Fragmen (#anchor) selalu berada di belakang string kueri.',
+  tool_utm_rules_item_5:
+    'Gunakan gaya huruf kecil yang konsisten. Nilai UTM peka huruf besar/kecil di Google Analytics, jadi facebook dan Facebook terbagi menjadi dua sumber.',
+  tool_utm_rules_title: 'Aturan yang dipakai pembuat',
+  tool_utm_sample: 'Contoh',
+  tool_utm_source_hint: 'Di mana link dilihat: newsletter, facebook, google.',
+  tool_utm_source_label: 'Sumber kampanye (utm_source)',
+  tool_utm_source_ph: 'newsletter',
+  tool_utm_table_title: 'Rincian parameter',
+  tool_utm_term_hint: 'Opsional. Mengidentifikasi kata kunci pencarian berbayar.',
+  tool_utm_term_label: 'Istilah kampanye (utm_term)',
+  tool_utm_term_ph: 'running_shoes',
+  tool_utm_title: 'Pembuat UTM — buat link pelacakan kampanye',
+  tool_utm_url_invalid: 'URL terlihat tidak valid. Periksa alamatnya lalu coba lagi.',
+  tool_utm_url_label: 'URL halaman tujuan',
+  tool_utm_url_ph: 'https://example.com/page',
+  tool_utm_url_protocol: 'Protokol tidak terdeteksi — https:// ditambahkan otomatis.',
+  tool_utm_url_required: 'Masukkan URL halaman tujuan.',
+  tool_utm_usecase_1:
+    'Kampanye sosial: buat satu link per platform dengan utm_campaign yang sama, agar GA4 melaporkan seluruh promosi dalam satu baris.',
+  tool_utm_usecase_2:
+    'Kiriman email: gunakan utm_source=newsletter, utm_medium=email, dan nilai content berbeda untuk membandingkan dua banner yang mengarah ke halaman yang sama.',
+  tool_utm_usecase_3:
+    'Kode QR dan link cetak: URL UTM lengkap itu panjang, tapi Anda bisa memperpendeknya setelah dibuat sambil tetap mempertahankan parameternya.',
+  tool_utm_usecases_title: 'Penggunaan yang tepat',
   tool_uuid_generator_article:
     'Buat UUID v4 atau ULID secara lokal dengan random kriptografis. Salin batch untuk data uji, trace id, atau stub skema — tanpa upload.',
   tool_uuid_generator_clear: 'Hapus',

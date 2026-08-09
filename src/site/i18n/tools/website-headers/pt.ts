@@ -6,7 +6,7 @@ const pt: SiteLangDict = {
   tool_headers_article:
     'Veja os headers que o edge recebe de uma URL pública — útil para cache, CORS, redirecionamentos e checagens de segurança. A requisição é proxyada; não guardamos o corpo da página.',
   tool_headers_description:
-    'Verifique online os headers HTTP de resposta de uma URL pelo nosso edge. Fluxo: cole https, envie HEAD (GET se precisar), siga redirecionamentos, mostre status e mapa de headers; bloqueie hosts privados. Extras: leitura em linguagem clara de Cache-Control, X-Robots-Tag e da cadeia de redirects. Exemplo: leia Cache-Control, CORS e HSTS ao depurar CDN ou redirects.',
+    'Os headers HTTP decidem como o Google rastreia, armazena em cache e indexa suas páginas: um X-Robots-Tag errado pode bloquear a indexação por completo. Verifique online os headers HTTP de resposta de uma URL pelo nosso edge. Fluxo: cole https, envie HEAD (GET se precisar), siga redirecionamentos, mostre status e mapa de headers; bloqueie hosts privados. Extras: leitura em linguagem clara de Cache-Control, X-Robots-Tag e da cadeia de redirects. Exemplo: leia Cache-Control, CORS e HSTS ao depurar CDN ou redirects.',
   tool_headers_example:
     'exemplo.com → status 200, URL final igual; headers com content-type: text/html e, conforme o origin, cache-control ou headers de segurança.',
   tool_headers_example_title: 'Exemplo',

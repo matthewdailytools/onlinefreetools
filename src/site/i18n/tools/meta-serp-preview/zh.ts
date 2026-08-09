@@ -6,10 +6,10 @@ import type { SiteLangDict } from '../../../types';
 
 const zh: SiteLangDict = {
 	tool_serp_home_title: 'Google 搜索结果预览',
-	tool_serp_home_desc: '发布前查看标题与描述会被截成什么样。',
+	tool_serp_home_desc: '标题被截断会白白损失搜索点击——发布前先看截断效果。',
 	tool_serp_title: 'Google 搜索结果预览 — 查看标题与描述截断效果',
 	tool_serp_description:
-		'粘贴标题与描述，预览它在 Google 桌面与移动搜索结果里的显示与截断。填写标题、描述与可选网址后，可同时看到字符数、估算像素宽与截断位置；还能并排对比两个候选标题。全部在浏览器内完成，内容不上传服务器。示例：60 个英文半角字符与 30 个汉字标题，可能在同样像素宽下有不同的字符上限。',
+		'标题或描述在结果里被截断，会悄悄流失来自 Google 的点击。粘贴标题与描述，预览它在 Google 桌面与移动搜索结果里的显示与截断。填写标题、描述与可选网址后，可同时看到字符数、估算像素宽与截断位置；还能并排对比两个候选标题。全部在浏览器内完成，内容不上传服务器。示例：60 个英文半角字符与 30 个汉字标题，可能在同样像素宽下有不同的字符上限。',
 	tool_serp_preview: '预览',
 	tool_serp_sample: '加载样例',
 	tool_serp_clear: '清空',

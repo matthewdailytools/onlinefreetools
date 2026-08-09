@@ -62,7 +62,7 @@
 | 场景与行业 | 站长 / SEO / 内容运营：发布前标题与描述预览 |
 | 技术 | Tier 0；纯浏览器 Canvas `measureText` + 近似表；`localProcessing: true` |
 | Title (en) | Google SERP Preview — Check title & description snippets |
-| Description | Paste a title and description to preview Google search result truncation on desktop and mobile. Steps: enter title, description, and URL; read pixel-based width estimates, character counts, and snippet cut points; compare two titles side by side. Runs on your device—nothing is uploaded. Example: 60-char title vs CJK title show different widths. |
+| Description 要点 | A title or description that gets cut off in the results can quietly cost you clicks from Google. Paste a title and description to preview Google search result truncation on desktop and mobile. Enter title, description, and optional URL; see character counts, estimated pixel widths, and snippet cut points; compare two titles side by side. Everything runs in your browser—nothing is uploaded. Example: a 60-char ASCII title and a 30-char CJK title can reach the pixel limit at different counts. |
 | Schema | WebApplication + BreadcrumbList（与可见文案一致） |
 | FAQ ≥3 | 像素 vs 字符；为什么同字符数显示不同；移动与桌面差异 |
 | related | website-headers, indexnow, core-web-vitals-checker |

@@ -6,7 +6,7 @@ const es: SiteLangDict = {
   tool_headers_article:
     'Mira las cabeceras que recibe el edge para una URL pública: caché, CORS, redirecciones y cabeceras de seguridad. La petición pasa por proxy; no almacenamos el cuerpo de la página como producto.',
   tool_headers_description:
-    'Comprueba online las cabeceras HTTP de respuesta de una URL desde nuestro edge. Pasos: pega https, envía HEAD (GET si hace falta), sigue redirecciones, muestra estado y mapa de cabeceras; bloquea hosts privados. Extras: lectura en lenguaje claro de Cache-Control, X-Robots-Tag y la cadena de redirección. Ejemplo: lee cache-control, CORS y Strict-Transport-Security al depurar CDN o redirecciones.',
+    'Las cabeceras HTTP deciden cómo Google rastrea, cachea e indexa tus páginas: un X-Robots-Tag erróneo puede bloquear la indexación por completo. Comprueba online las cabeceras HTTP de respuesta de una URL desde nuestro edge. Pasos: pega https, envía HEAD (GET si hace falta), sigue redirecciones, muestra estado y mapa de cabeceras; bloquea hosts privados. Extras: lectura en lenguaje claro de Cache-Control, X-Robots-Tag y la cadena de redirección. Ejemplo: lee cache-control, CORS y Strict-Transport-Security al depurar CDN o redirecciones.',
   tool_headers_example:
     'ejemplo.com → estado 200, URL final sin cambios; cabeceras con content-type: text/html y, según el origen, cache-control o cabeceras de seguridad.',
   tool_headers_example_title: 'Ejemplo',

@@ -6,10 +6,10 @@ import type { SiteLangDict } from '../../../types';
 
 const ar: SiteLangDict = {
 	tool_robots_home_title: 'مولّد robots.txt',
-	tool_robots_home_desc: 'أنشئ robots.txt بصياغة صحيحة للسماح والمنع وروبوتات الذكاء الاصطناعي داخل متصفحك.',
+	tool_robots_home_desc: 'تحكم في زحف محركات البحث إلى موقعك عبر robots.txt صالح — السماح والمنع وروبوتات الذكاء الاصطناعي داخل متصفحك.',
 	tool_robots_title: 'مولّد robots.txt — إدارة السماح والمنع وروبوتات الذكاء الاصطناعي',
 	tool_robots_description:
-		'أنشئ ملف robots.txt داخل متصفحك. الخطوات: اختر User-agent، أضف مسارات Allow / Disallow وسطر Sitemap لكل مجموعة، ثم انسخ النتيجة النصية مع شرح قواعد الصياغة وكتابة User-agent الخاصة بروبوتات الذكاء الاصطناعي المحدثة. يعمل محليًا — لا يُرفع أي شيء. مثال: حظر GPTBot مع إبقاء Googlebot مفعّلًا بالكامل.',
+		'يحدد robots.txt الصفحات التي يمكن لجوجل الزحف إليها وفهرستها، وقاعدة مكتوبة خطأً قد تُخفي موقعك كاملًا من نتائج البحث. أنشئ ملف robots.txt داخل متصفحك. الخطوات: اختر User-agent، أضف مسارات Allow / Disallow وسطر Sitemap لكل مجموعة، ثم انسخ النتيجة النصية مع شرح قواعد الصياغة وكتابة User-agent الخاصة بروبوتات الذكاء الاصطناعي المحدثة. يعمل محليًا — لا يُرفع أي شيء. مثال: حظر GPTBot مع إبقاء Googlebot مفعّلًا بالكامل.',
 	tool_robots_generate: 'توليد',
 	tool_robots_sample: 'مثال',
 	tool_robots_clear: 'مسح',

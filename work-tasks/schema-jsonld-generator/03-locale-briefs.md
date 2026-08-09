@@ -18,6 +18,7 @@
 - [x] **清单前检索覆盖已做**（覆盖表在 02；`coverage:gate --phase=0b` 绿）
 - [x] **检索覆盖已优化**（i18n 初稿之后步 2+4 再勾）
 
+| 5 描述 SEO 作用增强 | 2026-08-09 | 10 语 `tool_schema_description`/`tool_schema_home_desc` 前置结构化数据 SEO 价值（帮 Google 理解页面、争更丰富搜索展示）：en「help Google understand…earn richer results」、zh「结构化数据让 Google 更准确地理解页面内容」；逐语独立改写。 | 通过 |
 技术专名 JSON-LD / Schema.org / FAQ / Article / Breadcrumb / Organization / `@context` / `@type` / `mainEntity` 可保留，但不可替代本地主 title。
 
 ---

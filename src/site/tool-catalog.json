@@ -1430,6 +1430,27 @@
     "subject": "number"
   },
   {
+    "slug": "hreflang-generator",
+    "path": "/tools/hreflang-generator",
+    "category": "developer",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_hreflang_title",
+    "homeTitleKey": "tool_hreflang_home_title",
+    "homeDescKey": "tool_hreflang_home_desc",
+    "faqPrefix": "tool_hreflang",
+    "related": [
+      "sitemap-xml-generator",
+      "schema-jsonld-generator",
+      "meta-tag-generator",
+      "utm-builder"
+    ],
+    "logo": "/icons/tools/hreflang-generator.svg",
+    "localProcessing": true,
+    "scenario": "seo",
+    "subject": "text"
+  },
+  {
     "slug": "html-entity",
     "path": "/tools/html-entity",
     "category": "developer",
@@ -1876,6 +1897,67 @@
     "subject": "text"
   },
   {
+    "slug": "meta-tag-generator",
+    "path": "/tools/meta-tag-generator",
+    "category": "developer",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_meta_title",
+    "homeTitleKey": "tool_meta_home_title",
+    "homeDescKey": "tool_meta_home_desc",
+    "faqPrefix": "tool_meta",
+    "related": [
+      "meta-serp-preview",
+      "open-graph-preview",
+      "on-page-seo-checker"
+    ],
+    "logo": "/icons/tools/meta-tag-generator.svg",
+    "localProcessing": true,
+    "scenario": "seo",
+    "subject": "text"
+  },
+  {
+    "slug": "on-page-seo-checker",
+    "path": "/tools/on-page-seo-checker",
+    "category": "developer",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_onpage_title",
+    "homeTitleKey": "tool_onpage_home_title",
+    "homeDescKey": "tool_onpage_home_desc",
+    "faqPrefix": "tool_onpage",
+    "related": [
+      "meta-serp-preview",
+      "meta-tag-generator",
+      "website-headers",
+      "schema-jsonld-generator"
+    ],
+    "logo": "/icons/tools/on-page-seo-checker.svg",
+    "localProcessing": false,
+    "scenario": "seo",
+    "subject": "text"
+  },
+  {
+    "slug": "open-graph-preview",
+    "path": "/tools/open-graph-preview",
+    "category": "developer",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_og_title",
+    "homeTitleKey": "tool_og_home_title",
+    "homeDescKey": "tool_og_home_desc",
+    "faqPrefix": "tool_og",
+    "related": [
+      "meta-tag-generator",
+      "meta-serp-preview",
+      "on-page-seo-checker"
+    ],
+    "logo": "/icons/tools/open-graph-preview.svg",
+    "localProcessing": false,
+    "scenario": "seo",
+    "subject": "text"
+  },
+  {
     "slug": "organize-pdf",
     "path": "/tools/organize-pdf",
     "category": "pdf",
@@ -2104,7 +2186,8 @@
     "related": [
       "indexnow",
       "robots-txt-generator",
-      "website-headers"
+      "website-headers",
+      "hreflang-generator"
     ],
     "logo": "/icons/tools/sitemap-xml-generator.svg",
     "localProcessing": true,
@@ -2267,6 +2350,26 @@
     "localProcessing": true,
     "scenario": "documents",
     "subject": "pdf"
+  },
+  {
+    "slug": "utm-builder",
+    "path": "/tools/utm-builder",
+    "category": "developer",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_utm_title",
+    "homeTitleKey": "tool_utm_home_title",
+    "homeDescKey": "tool_utm_home_desc",
+    "faqPrefix": "tool_utm",
+    "related": [
+      "indexnow",
+      "website-headers",
+      "meta-serp-preview"
+    ],
+    "logo": "/icons/tools/utm-builder.svg",
+    "localProcessing": true,
+    "scenario": "seo",
+    "subject": "text"
   },
   {
     "slug": "uuid-generator",

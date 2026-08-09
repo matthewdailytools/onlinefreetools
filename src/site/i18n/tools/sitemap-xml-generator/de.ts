@@ -7,10 +7,10 @@ import type { SiteLangDict } from '../../../types';
 const de: SiteLangDict = {
 	tool_sitemap_home_title: 'XML-Sitemap-Generator',
 	tool_sitemap_home_desc:
-		'Erstellen Sie aus einer URL-Liste eine gültige sitemap.xml mit lastmod, changefreq und priority – direkt im Browser.',
+		'Hilf Google, jede Seite, die du ranken willst, schneller zu entdecken und zu indexieren — erstelle aus einer URL-Liste eine gültige sitemap.xml mit lastmod, changefreq und priority, direkt im Browser.',
 	tool_sitemap_title: 'XML-Sitemap-Generator — sitemap.xml aus URLs erstellen',
 	tool_sitemap_description:
-		'Erstellen Sie sitemap.xml im Browser. Schritte: fügen Sie pro Zeile eine https-URL mit optionalem lastmod / changefreq / priority ein, sehen Sie sich das korrekt maskierte XML an und kopieren Sie es ins Site-Verzeichnis. Die Protokollregeln und Grenzen werden angezeigt. Es wird nichts hochgeladen. Beispiel: 3 URLs → urlset mit drei url-Elementen.',
+		'Eine Sitemap hilft Google, deine Seiten schneller zu entdecken und zu indexieren – besonders neue Seiten oder solche mit wenigen Links. Erstellen Sie sitemap.xml im Browser. Schritte: fügen Sie pro Zeile eine https-URL mit optionalem lastmod / changefreq / priority ein, sehen Sie sich das korrekt maskierte XML an und kopieren Sie es ins Site-Verzeichnis. Die Protokollregeln und Grenzen werden angezeigt. Es wird nichts hochgeladen. Beispiel: 3 URLs → urlset mit drei url-Elementen.',
 	tool_sitemap_generate: 'Generieren',
 	tool_sitemap_sample: 'Beispiel',
 	tool_sitemap_clear: 'Leeren',

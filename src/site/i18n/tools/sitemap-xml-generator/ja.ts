@@ -6,10 +6,10 @@ import type { SiteLangDict } from '../../../types';
 
 const ja: SiteLangDict = {
 	tool_sitemap_home_title: 'XML sitemap 生成ツール',
-	tool_sitemap_home_desc: 'URL リストから lastmod・changefreq・priority 付きの正しい sitemap.xml を、ブラウザ内で生成。',
+	tool_sitemap_home_desc: 'Google にページの発見とインデックスを促す——URL リストから lastmod・changefreq・priority 付きの正しい sitemap.xml を、ブラウザ内で生成。',
 	tool_sitemap_title: 'XML sitemap 生成ツール — URL リストから sitemap.xml を作成',
 	tool_sitemap_description:
-		'ブラウザ内で URL リストから sitemap.xml を作成。手順：1 行に 1 つの https URL を貼り、任意で lastmod / changefreq / priority を付けて、正しくエスケープされた XML をプレビューし、サイトのルートにコピーします。プロトコルのルールと上限も表示。データは一切送信しません。例：3 URL → 3 つの url 要素を持つ urlset。',
+		'sitemap は Google のページ発見とインデックスを早めます。特に新規ページやリンクが少ないページで効果的です。ブラウザ内で URL リストから sitemap.xml を作成。手順：1 行に 1 つの https URL を貼り、任意で lastmod / changefreq / priority を付けて、正しくエスケープされた XML をプレビューし、サイトのルートにコピーします。プロトコルのルールと上限も表示。データは一切送信しません。例：3 URL → 3 つの url 要素を持つ urlset。',
 	tool_sitemap_generate: '生成',
 	tool_sitemap_sample: 'サンプル',
 	tool_sitemap_clear: 'クリア',

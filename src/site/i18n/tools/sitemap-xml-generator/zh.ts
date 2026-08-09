@@ -6,10 +6,10 @@ import type { SiteLangDict } from '../../../types';
 
 const zh: SiteLangDict = {
 	tool_sitemap_home_title: 'XML Sitemap 生成器',
-	tool_sitemap_home_desc: '把 URL 列表转成合法的 sitemap.xml，支持 lastmod、changefreq 与 priority，全程在浏览器内完成。',
+	tool_sitemap_home_desc: '帮 Google 更快发现并收录你想排名的每个页面——把 URL 列表转成合法的 sitemap.xml，支持 lastmod、changefreq 与 priority，全程在浏览器内完成。',
 	tool_sitemap_title: 'XML Sitemap 生成器 — 从 URL 列表生成 sitemap.xml',
 	tool_sitemap_description:
-		'在浏览器里把 URL 列表生成 sitemap.xml。步骤：每行一个 https URL，可附 lastmod / changefreq / priority，预览带正确转义的 XML，再复制到站点根目录。页面说明协议规则与限制，不上传任何数据。示例：3 条 URL → urlset 内三个 url 条目。',
+		'sitemap 能帮 Google 更快发现并收录你的页面，尤其是新页面与外部链接较少的页面。在浏览器里把 URL 列表生成 sitemap.xml。步骤：每行一个 https URL，可附 lastmod / changefreq / priority，预览带正确转义的 XML，再复制到站点根目录。页面说明协议规则与限制，不上传任何数据。示例：3 条 URL → urlset 内三个 url 条目。',
 	tool_sitemap_generate: '生成',
 	tool_sitemap_sample: '加载样例',
 	tool_sitemap_clear: '清空',

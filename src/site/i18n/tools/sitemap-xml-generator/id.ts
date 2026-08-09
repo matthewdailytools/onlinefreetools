@@ -7,10 +7,10 @@ import type { SiteLangDict } from '../../../types';
 const id: SiteLangDict = {
 	tool_sitemap_home_title: 'Pembuat sitemap XML',
 	tool_sitemap_home_desc:
-		'Ubah daftar URL menjadi sitemap.xml yang valid dengan lastmod, changefreq, dan priority, langsung di browser.',
+		'Bantu Google menemukan dan mengindeks setiap halaman yang ingin Anda rangking: ubah daftar URL menjadi sitemap.xml yang valid dengan lastmod, changefreq, dan priority, langsung di browser.',
 	tool_sitemap_title: 'Pembuat sitemap XML — buat sitemap.xml dari daftar URL',
 	tool_sitemap_description:
-		'Buat sitemap.xml di browser Anda. Langkah: tempel satu URL https per baris dengan lastmod / changefreq / priority opsional, pratinjau XML dengan escaping yang benar, lalu salin ke root situs. Halaman ini juga menjelaskan aturan dan batas protokol. Tidak ada yang diunggah. Contoh: 3 URL → urlset berisi tiga elemen url.',
+		'Sitemap membantu Google menemukan dan mengindeks halaman Anda lebih cepat, terutama halaman baru atau yang jarang tertaut. Buat sitemap.xml di browser Anda. Langkah: tempel satu URL https per baris dengan lastmod / changefreq / priority opsional, pratinjau XML dengan escaping yang benar, lalu salin ke root situs. Halaman ini juga menjelaskan aturan dan batas protokol. Tidak ada yang diunggah. Contoh: 3 URL → urlset berisi tiga elemen url.',
 	tool_sitemap_generate: 'Buat',
 	tool_sitemap_sample: 'Contoh',
 	tool_sitemap_clear: 'Bersihkan',

@@ -2113,7 +2113,7 @@ const ru: SiteLangDict = {
   tool_headers_article:
     'Смотрите заголовки, которые edge получает для публичного URL — кэш, CORS, редиректы и security-заголовки. Запрос проксируется; тело страницы мы не храним.',
   tool_headers_description:
-    'Проверьте HTTP-заголовки ответа URL онлайн с нашего edge. Шаги: вставьте https, отправьте HEAD (GET при необходимости), следуйте редиректам, покажите статус и карту заголовков; блокируйте частные хосты. Дополнительно: понятное объяснение Cache-Control, X-Robots-Tag и цепочки редиректов. Пример: читайте Cache-Control, CORS и HSTS при отладке CDN или редиректов.',
+    'HTTP-заголовки определяют, как Google обходит, кэширует и индексирует ваши страницы: ошибка в X-Robots-Tag может полностью заблокировать индексацию. Проверьте HTTP-заголовки ответа URL онлайн с нашего edge. Шаги: вставьте https, отправьте HEAD (GET при необходимости), следуйте редиректам, покажите статус и карту заголовков; блокируйте частные хосты. Дополнительно: понятное объяснение Cache-Control, X-Robots-Tag и цепочки редиректов. Пример: читайте Cache-Control, CORS и HSTS при отладке CDN или редиректов.',
   tool_headers_example:
     'example.com → статус 200, финальный URL без изменений; заголовки с content-type: text/html и, по origin, cache-control или security-заголовки.',
   tool_headers_example_title: 'Пример',
@@ -2225,6 +2225,79 @@ const ru: SiteLangDict = {
   tool_heart_rate_z1Out_label: 'Зона 1 (50–60%)',
   tool_heart_rate_z2Out_label: 'Зона 2 (60–70%)',
   tool_heart_rate_z3Out_label: 'Зона 3 (70–85%)',
+  tool_hreflang_clear: 'Очистить',
+  tool_hreflang_copied: 'Скопировано',
+  tool_hreflang_copy: 'Копировать',
+  tool_hreflang_description:
+    'Без hreflang Google может считать переведённые страницы дубликатами и показывать пользователю версию не на том языке. Преобразуйте набор языковых URL в разметку hreflang в трёх формах: теги <link>, заголовок HTTP Link и sitemap <xhtml:link>. Шаги: вставьте каждый языковой URL с его кодом, выберите форму и скопируйте готовый фрагмент. Каждый URL получает собственную аннотацию самоссылки, а при желании добавляется запасной x-default. Работает полностью на вашем устройстве — ничего не загружается. Пример: три версии одной страницы на en, es и ja.',
+  tool_hreflang_error_prefix: 'Ошибка: ',
+  tool_hreflang_example:
+    'В примере три версии одной страницы: https://example.com/ (en), https://example.com/es/ (es) и https://example.com/ja/ (ja). Сгенерированные теги <link> включают самоссылки для каждого языка плюс необязательный x-default на английскую корневую страницу.',
+  tool_hreflang_example_title: 'Пример',
+  tool_hreflang_faq_a1:
+    'Используйте теги <link>, если можете редактировать HTML. Используйте заголовок HTTP Link, когда страницы отдаёт ваш сервер и HTML менять сложно. Используйте форму sitemap, если хотите держать всё в XML-карте сайта.',
+  tool_hreflang_faq_a2:
+    'x-default сообщает Google, какую версию показывать, когда язык посетителя не совпадает ни с одним кодом. Добавляйте его, когда есть корневая или запасная страница, обычно английская.',
+  tool_hreflang_faq_a3:
+    'Да. Каждая языковая версия должна включать собственный URL в набор с hreflang-самоссылкой на себя. Google использует полный набор, чтобы выбрать правильную страницу для каждого языка.',
+  tool_hreflang_faq_a4:
+    'Коды BCP 47: язык из двух-трёх букв, опционально регион (en-US) и опционально письменность (zh-Hans). Язык строчными буквами, и не придумывайте коды вроде «en-us-en».',
+  tool_hreflang_faq_a5:
+    'Работает и то и другое, но для набора страниц выберите одну согласованную форму. Теги <link> живут в <head>, заголовок HTTP Link отправляется с ответом, а sitemap использует блоки xhtml:link.',
+  tool_hreflang_faq_a6: 'Нет. Генератор работает полностью в вашем браузере, и ничего не загружается.',
+  tool_hreflang_faq_q1: 'Какую из трёх форм использовать?',
+  tool_hreflang_faq_q2: 'Когда добавлять x-default?',
+  tool_hreflang_faq_q3: 'Каждому ли URL нужна hreflang-самоссылка?',
+  tool_hreflang_faq_q4: 'Какой формат кода языка допустим?',
+  tool_hreflang_faq_q5: 'Hreflang в <head> или в sitemap?',
+  tool_hreflang_faq_q6: 'Мои URL куда-то загружаются?',
+  tool_hreflang_generate: 'Создать',
+  tool_hreflang_home_desc:
+    'Скажите Google, какую языковую версию страницы показывать кому — превращайте языковые URL в теги hreflang, заголовок HTTP Link и разметку sitemap прямо в браузере.',
+  tool_hreflang_home_title: 'Генератор hreflang',
+  tool_hreflang_how_body:
+    'Генератор разбирает каждую строку на код языка и URL, затем выводит один и тот же набор связей в трёх формах. Форма <link> вставляется в <head> каждой страницы. Форма заголовка HTTP Link отправляется в ответе сервера. Форма sitemap встраивает <xhtml:link> внутрь каждого блока <url>. Каждый URL получает аннотацию hreflang-самоссылки, чтобы каждая языковая версия указывала на себя, а необязательная запись x-default покрывает посетителей, чей язык не указан.',
+  tool_hreflang_how_title: 'Как это работает',
+  tool_hreflang_input_hint:
+    'Каждая строка — «код-языка URL» или «URL код-языка». Коды используют форму BCP 47, например en, en-US или zh-Hans.',
+  tool_hreflang_input_label: 'Список языковых URL',
+  tool_hreflang_input_ph:
+    'По паре в строке: код языка + URL. Пример:\nen https://example.com/\nes https://example.com/es/\nja https://example.com/ja/',
+  tool_hreflang_lang_invalid: 'Неверный код языка: {lang}. Используйте форму BCP 47, например en, en-US или zh-Hans.',
+  tool_hreflang_no_valid_rows: 'Нет корректных строк. Добавьте хотя бы одну пару «код языка + URL».',
+  tool_hreflang_output_label: 'Сгенерированная разметка',
+  tool_hreflang_ref_bcp47_label: 'BCP 47 — Теги для идентификации языков',
+  tool_hreflang_ref_searchcentral_label: 'Search Central — Локализованные версии (hreflang)',
+  tool_hreflang_references: 'Google Search Central — Локализованные версии (hreflang); языковые теги BCP 47.',
+  tool_hreflang_rules_body: 'Эти правила взяты из Google Search Central и стандарта языковых тегов BCP 47.',
+  tool_hreflang_rules_item_1:
+    'Каждая языковая версия должна включать hreflang-самоссылку на собственный URL. Её пропуск ослабляет сигнал.',
+  tool_hreflang_rules_item_2:
+    'Каждый URL должен быть перечислен из всех языковых версий: полный набор альтернатив есть на каждой странице, а не только в одну сторону.',
+  tool_hreflang_rules_item_3:
+    'Коды языка по BCP 47: язык из двух букв, опционально регион (en-US) и опционально письменность (zh-Hans). x-default — специальный запасной код.',
+  tool_hreflang_rules_item_4:
+    'x-default указывает на страницу, показываемую, когда ни один из перечисленных языков не совпадает, например на английскую корневую страницу. Google может использовать её как запасную для всех нераспознанных языков.',
+  tool_hreflang_rules_item_5:
+    'Для одного набора выберите одну форму доставки: теги <link> в HTML, заголовок HTTP Link или xhtml:link в sitemap. Не смешивайте формы для одного набора — сигналы могут противоречить друг другу.',
+  tool_hreflang_rules_title: 'Правила генератора',
+  tool_hreflang_sample: 'Загрузить пример',
+  tool_hreflang_tab_http: 'Заголовок HTTP Link',
+  tool_hreflang_tab_link: 'Теги <link>',
+  tool_hreflang_tab_sitemap: 'Sitemap',
+  tool_hreflang_title: 'Генератор hreflang — создайте языковые теги для многоязычных сайтов',
+  tool_hreflang_url_protocol: 'У одного URL не было протокола — https:// добавлен автоматически.',
+  tool_hreflang_usecase_1:
+    'Запуск многоязычного сайта: один раз сгенерируйте теги <link> для каждого шаблона и проверьте, что каждая языковая версия перечисляет полный набор.',
+  tool_hreflang_usecase_2:
+    'После реструктуризации сайта перегенерируйте разметку, чтобы соответствие URL оставалось согласованным между языками, а не расползалось.',
+  tool_hreflang_usecase_3:
+    'Когда в результатах поиска отображается неверный язык, проверьте наличие самоссылок и x-default и убедитесь, что URL ведут на канонические страницы.',
+  tool_hreflang_usecases_title: 'Подходящие сценарии',
+  tool_hreflang_xdefault_hint:
+    'Необязательно. x-default сообщает Google, какую версию показывать, когда ни один язык не совпадает, — полезно для корневой или английской главной страницы.',
+  tool_hreflang_xdefault_label: 'Запасной URL x-default',
+  tool_hreflang_xdefault_none: '— без x-default —',
   tool_html_entity_article: 'Двустороннее кодирование HTML-сущностей с пояснением области, формы и двойного кодирования.',
   tool_html_entity_clear: 'Очистить',
   tool_html_entity_convert: 'Преобразовать',
@@ -3956,6 +4029,92 @@ const ru: SiteLangDict = {
   tool_merge_pdf_usecases_title: 'Хорошо подходит',
   tool_merge_pdf_warn_large: 'Файл больше ~25 МБ — объединение может быть медленным или упасть в некоторых браузерах.',
   tool_merge_pdf_warn_pdflib: 'Не удалось загрузить библиотеку PDF. Проверьте сеть и повторите.',
+  tool_meta_canonical_hint: 'Предпочтительный адрес этой страницы. Укажите полный URL с протоколом.',
+  tool_meta_canonical_label: 'Канонический URL',
+  tool_meta_canonical_ph: 'https://example.com/your-page',
+  tool_meta_canonical_protocol:
+    'В каноническом URL нет протокола — добавьте https:// или http://, чтобы поисковые системы его прочитали.',
+  tool_meta_clear: 'Очистить',
+  tool_meta_copied: 'Скопировано',
+  tool_meta_copy: 'Копировать',
+  tool_meta_desc_hint: 'Держите в районе 155–160 символов. Более длинный текст может обрезаться в выдаче.',
+  tool_meta_desc_label: 'Meta description',
+  tool_meta_desc_len: 'Описание: {n} символов',
+  tool_meta_desc_len_warn: 'Описание: {n} символов — больше 160, может обрезаться.',
+  tool_meta_desc_ph: 'Готовые head-теги для вставки с подсказками по длине, значениями robots и полями OG.',
+  tool_meta_description:
+    'Ваши title и meta description — это то, что пользователи видят в Google, а ошибка в canonical может разделить ранжирование между дублирующими URL. Заполните поля title, description, canonical, robots и Open Graph, чтобы получить готовые для вставки мета-теги <head>. Шаги: введите поля, посмотрите подсказки по длине и превью, скопируйте сгенерированный HTML с корректным экранированием. Специальные символы вроде & и < экранируются автоматически, поэтому теги остаются корректными. Работает полностью на вашем устройстве — ничего не загружается. Пример: теги canonical и og рядом.',
+  tool_meta_error_prefix: 'Ошибка: ',
+  tool_meta_example:
+    'Пример заполняет заголовок, описание, canonical, robots и три поля Open Graph. Сгенерированный фрагмент выводит тег <title>, meta description, каноническую ссылку, robots meta и заполненные og: теги.',
+  tool_meta_example_title: 'Пример',
+  tool_meta_faq_a1:
+    'index позволяет поисковым системам включать страницу в выдачу, а noindex — исключает её. follow разрешает обходить ссылки на странице, а nofollow запрещает. Если тега нет, по умолчанию используется index, follow.',
+  tool_meta_faq_a2:
+    'Да. Генератор экранирует & < > " и \', поэтому амперсанд становится &amp;, а знак «меньше» — &lt;. Ваши теги остаются корректными, даже если значение содержит похожие на разметку символы.',
+  tool_meta_faq_a3:
+    'Да, они обслуживают разные системы. Каноническая ссылка сообщает поисковым системам предпочтительный адрес, а og: теги описывают страницу для соцсетей. Держите og:url в соответствии с каноническим URL.',
+  tool_meta_faq_a4:
+    'Обычные ориентиры — около 60 символов для заголовка и 155–160 для описания. Это рекомендации: поисковые системы могут переписывать или обрезать более длинные значения.',
+  tool_meta_faq_a5:
+    'Пустые необязательные поля пропускаются, поэтому сгенерированный фрагмент содержит только теги для заполненных вами полей.',
+  tool_meta_faq_a6: 'Нет. Генератор работает полностью в вашем браузере, и ничего не загружается.',
+  tool_meta_faq_q1: 'Что означают значения robots meta?',
+  tool_meta_faq_q2: 'Экранируются ли спецсимволы в моих значениях?',
+  tool_meta_faq_q3: 'Могут ли canonical и Open Graph сосуществовать?',
+  tool_meta_faq_q4: 'Какой длины должны быть заголовок и описание?',
+  tool_meta_faq_q5: 'Что происходит с пустыми полями?',
+  tool_meta_faq_q6: 'Мои данные куда-то загружаются?',
+  tool_meta_generate: 'Создать',
+  tool_meta_home_desc:
+    'Создайте title, description, canonical и Open Graph теги, которые приносят клики в поиске: сгенерируйте все head-теги страницы прямо в браузере.',
+  tool_meta_home_title: 'Генератор мета-тегов',
+  tool_meta_how_body:
+    'Генератор берёт ваши поля и собирает соответствующие head-теги. Пустые необязательные поля пропускаются, поэтому в выводе только то, что вы заполнили. Каждое значение экранируется в HTML: амперсанд превращается в &amp;, а знак «меньше» — в &lt;, что сохраняет теги корректными на вашей странице. Подсказки по длине предупреждают, когда заголовок или описание превышают обычные лимиты, не обрезая ваш текст.',
+  tool_meta_how_title: 'Как это работает',
+  tool_meta_og_desc_label: 'og:description',
+  tool_meta_og_image_label: 'og:image (полный URL)',
+  tool_meta_og_title_label: 'og:title',
+  tool_meta_og_type_label: 'og:type',
+  tool_meta_og_url_label: 'og:url',
+  tool_meta_output_label: 'Сгенерированный head-фрагмент',
+  tool_meta_ref_searchcentral_canonical_label: 'Search Central — Канонические URL',
+  tool_meta_ref_searchcentral_tags_label: 'Search Central — Мета-теги, которые понимает Google',
+  tool_meta_ref_searchcentral_title_label: 'Search Central — Управление title links',
+  tool_meta_references:
+    'Google Search Central — Мета-теги, которые понимает Google; Управление title links; Канонические URL.',
+  tool_meta_robots_index_follow: 'index, follow (по умолчанию, разрешает индексацию)',
+  tool_meta_robots_index_nofollow: 'index, nofollow (разрешить индексацию, не следить за ссылками)',
+  tool_meta_robots_label: 'Robots meta',
+  tool_meta_robots_noindex_follow: 'noindex, follow (скрыть из выдачи, продолжать следить за ссылками)',
+  tool_meta_robots_noindex_nofollow: 'noindex, nofollow (скрыть страницу и не следить за ссылками)',
+  tool_meta_robots_none: '— без robots meta —',
+  tool_meta_rules_body:
+    'Эти правила следуют рекомендациям Google Search Central о мета-тегах, title links и канонических URL.',
+  tool_meta_rules_item_1:
+    'Meta title и описание — это рекомендации, а не директивы: поисковые системы могут переписывать или обрезать их, поэтому держите заголовок около 60 символов, а описание — 155–160.',
+  tool_meta_rules_item_2:
+    'Все значения экранируются в HTML: & < > " и \' превращаются в сущности, поэтому символы в заголовке или описании не могут сломать разметку тегов.',
+  tool_meta_rules_item_3:
+    'Канонический URL должен быть полным абсолютным адресом с протоколом. Относительный URL или URL без протокола не годится как цель canonical.',
+  tool_meta_rules_item_4:
+    'Robots meta использует значения index/noindex и follow/nofollow. Если тега нет, поисковые системы применяют собственный дефолт — индексировать и следить.',
+  tool_meta_rules_item_5:
+    'Canonical и Open Graph теги могут сосуществовать на одной странице: og:url должен совпадать с каноническим URL, чтобы соцсети указывали на тот же адрес.',
+  tool_meta_rules_title: 'Правила генератора',
+  tool_meta_sample: 'Загрузить пример',
+  tool_meta_title: 'Генератор мета-тегов — создайте все head-теги страницы',
+  tool_meta_title_hint: 'Держите в районе 60 символов. Поисковые системы могут переписывать более длинные заголовки.',
+  tool_meta_title_label: 'Meta title',
+  tool_meta_title_len: 'Заголовок: {n} символов',
+  tool_meta_title_len_warn: 'Заголовок: {n} символов — больше 60, стоит сократить.',
+  tool_meta_title_ph: 'Генератор мета-тегов — создайте все head-теги страницы',
+  tool_meta_usecase_1:
+    'Создание нового шаблона страницы: сгенерируйте блок head один раз, проверьте подсказки по длине и вставьте в шаблон перед запуском.',
+  tool_meta_usecase_2: 'Сдача работы клиенту: сгенерируйте точный head-фрагмент с canonical и OG, затем вставьте его в CMS.',
+  tool_meta_usecase_3:
+    'Перед публикацией сгенерируйте теги и сверьте их с превью выдачи, чтобы заголовок и описание совпадали с видимой страницей.',
+  tool_meta_usecases_title: 'Подходящие сценарии',
   tool_npv_article:
     'NPV дисконтирует будущие потоки по выбранной годовой ставке и вычитает начальные инвестиции. Положительный NPV лишь значит, что при ваших допущениях приведённые притоки больше оттока; это не прогноз и не рекомендация к покупке.',
   tool_npv_calculate: 'Рассчитать',
@@ -4010,6 +4169,102 @@ const ru: SiteLangDict = {
   tool_npv_usecase_2: 'Учёба: потренировать сумму NPV при фиксированной ставке и коротком списке потоков.',
   tool_npv_usecase_3: 'Набросок перед разговором с консультантом — не замена полного анализа.',
   tool_npv_usecases_title: 'Когда пригодится',
+  tool_og_card_large: 'summary_large_image',
+  tool_og_card_summary: 'summary',
+  tool_og_clear: 'Очистить',
+  tool_og_copied: 'Скопировано',
+  tool_og_copy: 'Копировать',
+  tool_og_description:
+    'Теги Open Graph определяют, как выглядит ваша страница при каждом расшаривании: отсутствие изображения или заголовка стоит вам кликов и репостов. Вставьте теги og:/twitter:card или URL, чтобы увидеть карточку Facebook, X и в стиле WhatsApp, найти недостающие поля и исправить пропорции изображения. Шаги: вставьте теги или загрузите URL, посмотрите три карточки и таблицу полей, затем дополните недостающее. Режим вставки работает на вашем устройстве; режим URL один раз загружает страницу и не сохраняет её. Пример: страница с og:image 1200×630 публикуется как большая карточка.',
+  tool_og_dimensions: '{w}×{h} px',
+  tool_og_error_prefix: 'Ошибка: ',
+  tool_og_example:
+    'Пример тегов описывает статью с og:image 1200×630 и twitter:card summary_large_image. Предпросмотр показывает карточку Facebook с изображением слева, большую карточку X, карточку в стиле WhatsApp и таблицу, где все обязательные поля присутствуют.',
+  tool_og_example_title: 'Пример',
+  tool_og_faq_a1:
+    'Facebook, X и WhatsApp собирают превью из HTML-заголовка, meta description и первой картинки страницы. Карточка может быть неполной или с неверной картинкой, поэтому и существуют обязательные поля og:.',
+  tool_og_faq_a2:
+    'Безопасный размер — 1200×630 px, пропорция 1.91:1, которую принимают все крупные платформы. Facebook теперь также поддерживает кадрирование 2:1 и 1:1. Очень мелкие изображения часто растягиваются и выглядят размытыми.',
+  tool_og_faq_a3:
+    'twitter:card выбирает макет: summary_large_image показывает широкое изображение, summary — маленькое. Если twitter:title, twitter:description или twitter:image отсутствуют, X использует соответствующий тег og:.',
+  tool_og_faq_a4:
+    'Она берёт первую картинку из HTML страницы или показывает карточку без изображения. Отсутствие og:image — самая частая причина, почему у общей ссылки нет превью-картинки.',
+  tool_og_faq_a5:
+    'Предпросмотр пытается загрузить og:image загрузкой изображения в браузере, чтобы прочитать реальный размер. Если изображение заблокировано, офлайн, медленное или сервер отклоняет запрос, размер прочитать нельзя, и проверка сообщает неизвестно.',
+  tool_og_faq_a6:
+    'Нет. В режиме вставки разбор и предпросмотр происходят на вашем устройстве. Режим URL один раз загружает страницу через наш worker и не сохраняет её.',
+  tool_og_faq_q1: 'Что будет, если на странице нет тегов Open Graph?',
+  tool_og_faq_q2: 'Какого размера должна быть og:image?',
+  tool_og_faq_q3: 'Как twitter:card связан с тегами og:?',
+  tool_og_faq_q4: 'Что делает платформа, если og:image отсутствует?',
+  tool_og_faq_q5: 'Почему проверка пропорции сообщает «неизвестно»?',
+  tool_og_faq_q6: 'Мои теги куда-то загружаются?',
+  tool_og_fetch_failed: 'Не удалось загрузить URL. Страница может быть офлайн, блокировать ботов или не возвращать HTML.',
+  tool_og_field_og_description: 'og:description',
+  tool_og_field_og_image: 'og:image',
+  tool_og_field_og_site_name: 'og:site_name',
+  tool_og_field_og_title: 'og:title',
+  tool_og_field_og_type: 'og:type',
+  tool_og_field_og_url: 'og:url',
+  tool_og_field_twitter_card: 'twitter:card',
+  tool_og_field_twitter_description: 'twitter:description',
+  tool_og_field_twitter_image: 'twitter:image',
+  tool_og_field_twitter_site: 'twitter:site',
+  tool_og_field_twitter_title: 'twitter:title',
+  tool_og_home_desc:
+    'Превратите каждый репост страницы в клики: проверьте, как она выглядит при публикации во Facebook, X и мессенджерах, прямо в браузере.',
+  tool_og_home_title: 'Предпросмотр Open Graph',
+  tool_og_how_body:
+    'Просмотр разбирает теги og:/twitter:, которые вы вставляете (или извлекает их из HTML, загруженного по URL), и рисует три карточки. Facebook показывает изображение 1.91:1 слева, под ним — заголовок, описание и домен. X следует twitter:card: summary_large_image показывает большое изображение сверху, summary — маленькое рядом с текстом. Мессенджеры вроде WhatsApp показывают одну большую карточку. Таблица помечает og:title, og:description и og:image как обязательные и перечисляет необязательные.',
+  tool_og_how_title: 'Как это работает',
+  tool_og_missing_label: 'Отсутствует',
+  tool_og_no_tags: 'Теги OG не обнаружены',
+  tool_og_no_tags_fallback:
+    'Без тегов Open Graph Facebook, X и WhatsApp собирают превью из заголовка, meta description и первой картинки страницы.',
+  tool_og_ok_label: 'Есть',
+  tool_og_optional_label: 'Необязательно',
+  tool_og_platform_facebook: 'Facebook',
+  tool_og_platform_generic: 'Мессенджеры (в стиле WhatsApp)',
+  tool_og_platform_x: 'X',
+  tool_og_preview: 'Предпросмотр',
+  tool_og_ratio_ok: 'og:image близка к 1200×630 px (1.91:1).',
+  tool_og_ratio_unknown: 'Не удалось прочитать размер изображения по URL.',
+  tool_og_ratio_warning: 'og:image должна быть около 1200×630 px (1.91:1).',
+  tool_og_ref_ogp_label: 'ogp.me — протокол Open Graph',
+  tool_og_ref_x_label: 'X — разметка карточек',
+  tool_og_references: 'ogp.me — протокол Open Graph; X — разметка карточек.',
+  tool_og_required_label: 'Обязательно',
+  tool_og_rules_body:
+    'Вот размеры и запасные варианты, которые используют платформы, согласно протоколу Open Graph и документации X Cards.',
+  tool_og_rules_item_1:
+    'Обязательные поля: og:title, og:description и og:image. Отсутствующие помечаются, чтобы вы исправили их до публикации.',
+  tool_og_rules_item_2:
+    'og:image размером 1200×630 px (1.91:1) работает на всех крупных платформах. Facebook теперь также поддерживает кадрирование 2:1 и 1:1; мелкие изображения часто растягиваются и выглядят размытыми.',
+  tool_og_rules_item_3:
+    'twitter:card summary_large_image соответствует большому изображению, summary — маленькому. Без twitter:card платформы выводят карточку summary из тегов og:.',
+  tool_og_rules_item_4:
+    'Когда og:title или og:image отсутствуют, платформы берут HTML-заголовок, meta description и первую картинку страницы.',
+  tool_og_rules_item_5:
+    'Размер измеряется загрузкой изображения в браузере; если загрузить не удаётся (заблокировано, офлайн или неверный URL), проверка сообщает «неизвестно».',
+  tool_og_rules_title: 'Правила предпросмотра',
+  tool_og_running: 'Проверка…',
+  tool_og_sample: 'Пример',
+  tool_og_table_title: 'Состояние тегов',
+  tool_og_tags_ph: 'Вставьте сюда теги <meta property="og:*"> и <meta name="twitter:*">…',
+  tool_og_tags_tab: 'Вставить теги',
+  tool_og_title: 'Предпросмотр Open Graph — проверьте карточки соцсетей',
+  tool_og_twitter_inferred: 'twitter:card не задан — платформы выводят карточку summary из тегов og:.',
+  tool_og_url_error: 'Введите корректный http(s) URL.',
+  tool_og_url_fetch: 'Загрузить URL',
+  tool_og_url_ph: 'https://example.com/page',
+  tool_og_url_tab: 'Загрузить URL',
+  tool_og_usecase_1:
+    'Перед публикацией статьи или лендинга вставьте теги один раз и убедитесь, что карточка корректно выглядит во Facebook, X и мессенджерах.',
+  tool_og_usecase_2:
+    'Когда общая ссылка не показывает изображение или показывает обрезанное, вставьте теги og:, чтобы проверить, отсутствует ли og:image или неверна пропорция.',
+  tool_og_usecase_3:
+    'После обновления CMS или темы загрузите живой URL и проверьте, что теги og: по-прежнему соответствуют странице.',
+  tool_og_usecases_title: 'Подходящие сценарии',
   tool_ohms_law_I_label: 'Ток I',
   tool_ohms_law_I_ph: 'напр. 2',
   tool_ohms_law_V_label: 'Напряжение V',
@@ -4089,6 +4344,128 @@ const ru: SiteLangDict = {
   tool_one_rep_max_usecases_title: 'Когда использовать',
   tool_one_rep_max_weight_label: 'Вес',
   tool_one_rep_max_weight_ph: 'напр. 100',
+  tool_onpage_canonical_check: 'Canonical',
+  tool_onpage_canonical_missing:
+    'Canonical не задан. Добавьте <link rel="canonical">, когда один и тот же контент доступен по нескольким URL.',
+  tool_onpage_canonical_ok: 'Найден самоуказывающий canonical.',
+  tool_onpage_canonical_other:
+    'Canonical указывает на другой URL. Используйте самоуказывающий canonical, если эта страница не является копией цели.',
+  tool_onpage_check: 'Проверить страницу',
+  tool_onpage_clear: 'Очистить',
+  tool_onpage_copied: 'Скопировано',
+  tool_onpage_copy: 'Копировать',
+  tool_onpage_desc_check: 'Meta description',
+  tool_onpage_desc_long: 'Описание из {n} символов — сниппеты обычно обрезаются около 160 символов.',
+  tool_onpage_desc_missing: 'Meta description не найден. Напишите резюме на 140–160 символов, соответствующее содержанию.',
+  tool_onpage_desc_ok: 'Описание из {n} символов. Диапазон 140–160 символов хорошо показывается в сниппетах.',
+  tool_onpage_desc_short: 'Описание всего {n} символов. Используйте место, чтобы кратко описать пользу страницы.',
+  tool_onpage_description:
+    'Слабый title, отсутствующая meta description, дублирующийся H1 или неправильный canonical могут тихо снижать позиции и клики в поиске. Вставьте URL или HTML-код, чтобы проверить title, H1, meta description, canonical, Open Graph, JSON-LD, смешанный контент и блокировку рендеринга — по каждому пункту с рекомендацией. Режим вставки работает на вашем устройстве; режим URL загружает страницу один раз без сохранения. Пример: страница с двумя H1 и картинкой по http://.',
+  tool_onpage_error_prefix: 'Ошибка: ',
+  tool_onpage_example:
+    'Пример ввода — страница с title из 71 символа, без meta description, двумя H1, canonical на другой URL, одним og:image, валидным блоком JSON-LD и одной http://-картинкой. Проверка отмечает title как вероятно обрезанный, H1 — предупреждением, canonical — не самоуказывающим, а смешанный контент — предупреждением, что совпадает с результатом при загрузке примера.',
+  tool_onpage_example_title: 'Пример',
+  tool_onpage_faq_a1:
+    'Он проверяет теги, которые контролирует сама страница: title, meta description, H1, canonical, мета-тег robots, поля Open Graph, структурированные данные JSON-LD, смешанный контент и ресурсы, блокирующие рендеринг. Ранжирование и внешние ссылки он не измеряет.',
+  tool_onpage_faq_a2:
+    'Один H1 чётко передаёт тему страницы и читателям, и поисковикам. Несколько H1 размывают структуру; используйте один H1, а остальное стройте на H2–H6.',
+  tool_onpage_faq_a3:
+    'Для страницы, которую нужно ранжировать, — да: самоуказывающий canonical самый понятный сигнал. Указание на другой URL говорит Google, что страница — дубль, что полезно только если это действительно так.',
+  tool_onpage_faq_a4:
+    'Когда страница отдаётся по https и ссылается на картинки, скрипты или стили по http://, браузер по умолчанию блокирует запрос. Проверка помечает такие ссылки, чтобы вы перевели их на https.',
+  tool_onpage_faq_a5:
+    'Она проверяет, что блоки разбираются как валидный JSON, и напоминает держать структурированные данные согласованными с видимым контентом. Полный валидатор schema.org не запускается.',
+  tool_onpage_faq_a6:
+    'Нет. При вставке HTML разбор происходит на вашем устройстве, и на сервер ничего не отправляется. Режим URL один раз загружает страницу через наш worker и не сохраняет её.',
+  tool_onpage_faq_q1: 'Что проверяет инструмент SEO на странице?',
+  tool_onpage_faq_q2: 'Почему на странице должен быть ровно один H1?',
+  tool_onpage_faq_q3: 'Должен ли canonical указывать на сам себя?',
+  tool_onpage_faq_q4: 'Почему проверка помечает http://-ресурсы как смешанный контент?',
+  tool_onpage_faq_q5: 'Проверка JSON-LD тестирует валидность?',
+  tool_onpage_faq_q6: 'Мой HTML куда-то загружается?',
+  tool_onpage_fetch_failed: 'Не удалось загрузить URL. Страница может быть офлайн, блокировать ботов или не возвращать HTML.',
+  tool_onpage_h1_check: 'H1',
+  tool_onpage_h1_missing: 'H1 не найден. Используйте один H1, отражающий тему страницы.',
+  tool_onpage_h1_multiple: 'Найдено {n} тегов H1. Оставьте один H1 на страницу, остальное — H2–H6.',
+  tool_onpage_h1_ok: 'Найден один H1, и он внутри <body>.',
+  tool_onpage_home_desc:
+    'Найдите теги, которые мешают странице в поиске: проверьте title, H1, meta description, canonical, Open Graph и JSON-LD прямо в браузере.',
+  tool_onpage_home_title: 'Проверка SEO страницы',
+  tool_onpage_how_body:
+    'Проверка разбирает вставленную разметку (или HTML, загруженный по URL) и оценивает фиксированный список проверок SEO на странице. Каждая проверка читает один тип тега: title, meta description, H1, canonical, мета-тег robots, поля Open Graph, блоки JSON-LD, смешанный контент и ресурсы, блокирующие рендеринг. Режим вставки полностью работает в вашем браузере; режим URL один раз загружает страницу через наш worker и не сохраняет её.',
+  tool_onpage_how_title: 'Как это работает',
+  tool_onpage_html_ph: 'Вставьте сюда HTML из <head> (и фрагмент body)…',
+  tool_onpage_html_tab: 'Вставить HTML',
+  tool_onpage_jsonld_check: 'JSON-LD',
+  tool_onpage_jsonld_invalid: 'Блок JSON-LD не удалось разобрать как JSON. Проверьте синтаксис.',
+  tool_onpage_jsonld_missing:
+    'Структурированные данные JSON-LD не найдены. Рассмотрите разметку schema.org, если она описывает видимый контент.',
+  tool_onpage_jsonld_ok:
+    'Найдено блоков JSON-LD: {n}. Держите структурированные данные согласованными с тем, что видят посетители.',
+  tool_onpage_mixed_check: 'Смешанный контент',
+  tool_onpage_mixed_found:
+    'Найдено ссылок на http://: {n}. Браузеры блокируют смешанный контент; отдавайте эти ресурсы по https.',
+  tool_onpage_mixed_none: 'Ссылок на http:// в https-контексте не найдено.',
+  tool_onpage_no_html: 'Сначала вставьте HTML или загрузите URL.',
+  tool_onpage_no_results: 'Пока нет результатов проверки.',
+  tool_onpage_og_check: 'Open Graph',
+  tool_onpage_og_missing: 'Теги og: не найдены. Добавьте og:title, og:description и og:image для превью при публикации.',
+  tool_onpage_og_ok: 'og:title, og:description и og:image присутствуют.',
+  tool_onpage_og_partial:
+    'Не хватает {n} обязательных полей og:. Убедитесь, что og:title, og:description и og:image присутствуют.',
+  tool_onpage_ref_canonical_label: 'Search Central — Канонические URL',
+  tool_onpage_ref_mdn_label: 'MDN — <meta>: элемент метаданных',
+  tool_onpage_ref_tags_label: 'Search Central — Мета-теги, которые понимает Google',
+  tool_onpage_references: 'Google Search Central — мета-теги; Google Search Central — canonical; MDN — элемент <meta>.',
+  tool_onpage_render_check: 'Блокировка рендеринга',
+  tool_onpage_render_found:
+    'В <head> найдено {n} <link rel="stylesheet"> без media. Встраивайте критический CSS или отложите загрузку для улучшения LCP.',
+  tool_onpage_render_none: 'Очевидных блокирующих рендеринг таблиц стилей или скриптов не обнаружено.',
+  tool_onpage_robots_check: 'Мета-тег robots',
+  tool_onpage_robots_missing: 'Мета-тег robots отсутствует. По умолчанию index,follow подходит большинству публичных страниц.',
+  tool_onpage_robots_noindex:
+    'На странице задан noindex, поэтому она не появится в поиске Google. Уберите его, если страницу нужно индексировать.',
+  tool_onpage_robots_ok: 'Мета-тег robots разрешает индексацию и переход по ссылкам.',
+  tool_onpage_rules_body:
+    'Вот критерии, с которыми сверяет каждая проверка. Источники — Google Search Central и спецификация HTML.',
+  tool_onpage_rules_item_1:
+    'Title: на странице должен быть один описательный <title>. Google может переписать его, но лаконичный title около 50–60 символов обычно отображается хорошо.',
+  tool_onpage_rules_item_2:
+    'H1: используйте ровно один H1 с темой страницы. Остальные заголовки — H2–H6, образующие логичную структуру.',
+  tool_onpage_rules_item_3:
+    'Canonical: самоуказывающий canonical сообщает Google предпочтительный URL при дублях. Link rel="canonical" размещается в <head>.',
+  tool_onpage_rules_item_4:
+    'Смешанный контент: https-страница со ссылками на http://-ресурсы блокируется браузерами. Проверка помечает такие ссылки как предупреждения.',
+  tool_onpage_rules_item_5:
+    'Блокировка рендеринга: таблица стилей в <head> без атрибута media блокирует рендеринг. Проверка эвристическая и не измеряет реальное время загрузки.',
+  tool_onpage_rules_title: 'Правила проверок',
+  tool_onpage_running: 'Проверка…',
+  tool_onpage_sample: 'Пример',
+  tool_onpage_status_err: 'Проблема',
+  tool_onpage_status_ok: 'OK',
+  tool_onpage_status_warn: 'Предупреждение',
+  tool_onpage_summary_n_err: '{n} проблем',
+  tool_onpage_summary_n_ok: '{n} в порядке',
+  tool_onpage_summary_n_warn: '{n} предупреждений',
+  tool_onpage_summary_title: 'Итог проверки',
+  tool_onpage_title: 'Проверка SEO страницы — найдите и исправьте проблемы тегов',
+  tool_onpage_title_check: 'Title',
+  tool_onpage_title_long: 'Title из {n} символов, вероятно, обрежется в выдаче. Стремитесь к 50–60 символам.',
+  tool_onpage_title_missing: 'Тег <title> не найден. Добавьте его внутрь <head>.',
+  tool_onpage_title_ok: 'Title из {n} символов. Близко к 50–60 символам — хорошо отображается в выдаче.',
+  tool_onpage_title_short: 'Title всего {n} символов. Добавьте конкретный фокус страницы, чтобы было информативнее.',
+  tool_onpage_unknown: 'Не удалось определить: {label}',
+  tool_onpage_url_error: 'Введите корректный http(s) URL.',
+  tool_onpage_url_fetch: 'Проверить URL',
+  tool_onpage_url_ph: 'https://example.com/page',
+  tool_onpage_url_tab: 'Загрузить URL',
+  tool_onpage_usecase_1:
+    'Перед редизайном или перезапуском: прогоните одну и ту же страницу через проверку и исправьте все замечания за один проход.',
+  tool_onpage_usecase_2:
+    'Приёмка шаблона: получив HTML от подрядчика или конструктора страниц, проверьте теги head, а не доверяйте экспорту.',
+  tool_onpage_usecase_3:
+    'Обновление контента: после правок в CMS убедитесь, что title, description и canonical соответствуют новой странице.',
+  tool_onpage_usecases_title: 'Подходящие сценарии',
   tool_organize_pdf_apply: 'Применить',
   tool_organize_pdf_article:
     'Удаляйте, переставляйте или оставляйте страницы одного PDF в браузере—файл остаётся на устройстве, не уходит на сервер.',
@@ -4988,7 +5365,7 @@ const ru: SiteLangDict = {
   tool_robots_copied: 'Скопировано',
   tool_robots_copy: 'Копировать',
   tool_robots_description:
-    'Создайте файл robots.txt в браузере. Шаги: выберите user-agents, добавьте пути Allow / Disallow и строку Sitemap, затем скопируйте результат в виде обычного текста — с объяснением правил синтаксиса и актуальных user-agents ИИ-краулеров. Работает локально: ничего не загружается. Пример: блокировка GPTBot при полностью разрешённом Googlebot.',
+    'Ваш robots.txt говорит Google, какие страницы обходить и индексировать: ошибка в правиле может скрыть весь сайт из поиска. Создайте файл robots.txt в браузере. Шаги: выберите user-agents, добавьте пути Allow / Disallow и строку Sitemap, затем скопируйте результат в виде обычного текста — с объяснением правил синтаксиса и актуальных user-agents ИИ-краулеров. Работает локально: ничего не загружается. Пример: блокировка GPTBot при полностью разрешённом Googlebot.',
   tool_robots_disallow_label: 'Пути Disallow (по одному в строке)',
   tool_robots_download: 'Скачать',
   tool_robots_empty_agent: 'Сначала выберите или добавьте user-agent.',
@@ -5008,7 +5385,8 @@ const ru: SiteLangDict = {
   tool_robots_faq_q3: 'Где должна стоять строка Sitemap?',
   tool_robots_faq_q4: 'Загружается ли мой robots.txt куда-нибудь?',
   tool_robots_generate: 'Сгенерировать',
-  tool_robots_home_desc: 'Создавайте robots.txt с правильным синтаксисом: разрешения, блокировки и ИИ-краулеры в браузере.',
+  tool_robots_home_desc:
+    'Управляйте тем, как поисковики обходят ваш сайт, с помощью корректного robots.txt: разрешения, блокировки и ИИ-краулеры в браузере.',
   tool_robots_home_title: 'Генератор robots.txt',
   tool_robots_how_body:
     'Выберите целевых краулеров, добавьте пути Allow и Disallow для каждой группы, при необходимости строку Sitemap и нажмите «Сгенерировать». Страница собирает файл в виде обычного текста по формату RFC 9309: строка User-agent для каждой группы, под ней строки Allow/Disallow, пустая строка между группами и строка Sitemap в конце. Скопируйте результат в корень сайта по адресу /robots.txt.',
@@ -5295,7 +5673,7 @@ const ru: SiteLangDict = {
   tool_schema_copied: 'Скопировано',
   tool_schema_copy: 'Копировать',
   tool_schema_description:
-    'Генерируйте JSON-LD в браузере. Шаги: выберите тип (FAQ, статья, хлебные крошки, организация), заполните обязательные поля и скопируйте валидную разметку Schema.org с готовым тегом script для вставки. Страница различает обязательные и необязательные поля и проверяет корректность JSON перед копированием. Ничего не загружается. Пример: FAQ из двух вопросов даёт mainEntity с двумя узлами Question.',
+    'Структурированные данные помогают Google точно понять содержимое страницы и могут принести более насыщенные и кликабельные результаты в поиске. Генерируйте JSON-LD в браузере. Шаги: выберите тип (FAQ, статья, хлебные крошки, организация), заполните обязательные поля и скопируйте валидную разметку Schema.org с готовым тегом script для вставки. Страница различает обязательные и необязательные поля и проверяет корректность JSON перед копированием. Ничего не загружается. Пример: FAQ из двух вопросов даёт mainEntity с двумя узлами Question.',
   tool_schema_download: 'Скачать',
   tool_schema_err_no_fields: 'Сначала заполните обязательные поля.',
   tool_schema_example:
@@ -5320,7 +5698,7 @@ const ru: SiteLangDict = {
   tool_schema_fields_label: 'Поля',
   tool_schema_generate: 'Сгенерировать',
   tool_schema_home_desc:
-    'Создавайте структурированные данные Schema.org для FAQ, статьи, хлебных крошек и организации прямо в браузере.',
+    'Помогите Google понять страницу и получите более насыщенные результаты с большим числом кликов с помощью JSON-LD Schema.org — прямо в браузере.',
   tool_schema_home_title: 'Генератор JSON-LD',
   tool_schema_how_body:
     'Выберите тип схемы, заполните форму и нажмите «Сгенерировать». Страница собирает объект JSON-LD по Schema.org, проверяет наличие обязательных полей и показывает отформатированный результат внутри тега script, чтобы его можно было вставить в <head> вашей страницы. Перед выводом выполняется проверка синтаксиса; недостающие обязательные поля выводятся списком, а не молча создаётся битая разметка.',
@@ -5413,7 +5791,7 @@ const ru: SiteLangDict = {
   tool_serp_desc_label: 'Meta description',
   tool_serp_desc_ph: 'Текст сниппета под заголовком результата',
   tool_serp_description:
-    'Вставьте заголовок и описание, чтобы увидеть, как они обрезаются в результатах Google на десктопе и на мобильном. Введите заголовок, описание и необязательный URL; вы увидите количество символов, примерную ширину в пикселях и точку обрезки сниппета; можно сравнить два заголовка рядом. Всё выполняется в вашем браузере — ничего не загружается. Пример: заголовок из 60 латинских символов и заголовок из 30 символов CJK могут достичь лимита пикселей при разном количестве символов.',
+    'Заголовок или описание, обрезанные в результатах, могут тихо стоить вам кликов из Google. Вставьте заголовок и описание, чтобы увидеть, как они обрезаются в результатах Google на десктопе и на мобильном. Введите заголовок, описание и необязательный URL; вы увидите количество символов, примерную ширину в пикселях и точку обрезки сниппета; можно сравнить два заголовка рядом. Всё выполняется в вашем браузере — ничего не загружается. Пример: заголовок из 60 латинских символов и заголовок из 30 символов CJK могут достичь лимита пикселей при разном количестве символов.',
   tool_serp_desktop: 'Просмотр на десктопе',
   tool_serp_err_title_empty: 'Введите заголовок для предпросмотра.',
   tool_serp_example:
@@ -5432,7 +5810,7 @@ const ru: SiteLangDict = {
   tool_serp_faq_q3: 'Соответствует ли это мобильному предпросмотру в Search Console?',
   tool_serp_faq_q4: 'Мой заголовок куда-то отправляется?',
   tool_serp_fit: 'Вписывается во вьюпорт',
-  tool_serp_home_desc: 'Проверьте обрезку заголовка и описания перед публикацией.',
+  tool_serp_home_desc: 'Обрезанный заголовок лишает вас кликов в поиске — проверьте обрезку перед публикацией.',
   tool_serp_home_title: 'Предпросмотр результатов Google',
   tool_serp_how_body:
     'Введите или вставьте заголовок, описание и необязательный URL. Инструмент оценивает, сколько символов и примерно сколько пикселей занимает каждая строка, используя приближение метрик шрифта (широкие глифы CJK считаются больше, чем узкие латинские буквы), затем рисует сниппет в стиле Google для десктопа и для мобильного. Строки, превышающие оценочный вьюпорт, получают маркер обрезки.',
@@ -5526,7 +5904,7 @@ const ru: SiteLangDict = {
   tool_sitemap_copied: 'Скопировано',
   tool_sitemap_copy: 'Копировать',
   tool_sitemap_description:
-    'Создайте sitemap.xml в браузере. Шаги: вставьте по одному https-URL в строку с необязательными lastmod / changefreq / priority, посмотрите XML с корректным экранированием и скопируйте в корень сайта. Показаны правила и лимиты протокола. Ничего не отправляется. Пример: 3 URL → urlset с тремя элементами url.',
+    'Sitemap помогает Google быстрее находить и индексировать ваши страницы, особенно новые или те, на которые мало ссылок. Создайте sitemap.xml в браузере. Шаги: вставьте по одному https-URL в строку с необязательными lastmod / changefreq / priority, посмотрите XML с корректным экранированием и скопируйте в корень сайта. Показаны правила и лимиты протокола. Ничего не отправляется. Пример: 3 URL → urlset с тремя элементами url.',
   tool_sitemap_download: 'Скачать',
   tool_sitemap_example:
     'Пример ввода: https://example.com/ и https://example.com/products с lastmod 2026-08-01, плюс https://example.com/about — на выходе urlset с тремя элементами url, средний несёт lastmod.',
@@ -5546,7 +5924,8 @@ const ru: SiteLangDict = {
   tool_sitemap_format_hint:
     'Каждая строка: URL, или URL | lastmod (yyyy-MM-dd), или URL | lastmod | changefreq | priority. Пример: https://example.com/page | 2026-08-01 | weekly | 0.8',
   tool_sitemap_generate: 'Сгенерировать',
-  tool_sitemap_home_desc: 'Превратите список URL в корректный sitemap.xml с lastmod, changefreq и priority — прямо в браузере.',
+  tool_sitemap_home_desc:
+    'Помогите Google быстрее находить и индексировать страницы, которые вы хотите продвигать: превратите список URL в корректный sitemap.xml с lastmod, changefreq и priority — прямо в браузере.',
   tool_sitemap_home_title: 'Генератор sitemap XML',
   tool_sitemap_how_body:
     'Вставьте список URL, по одному в строку. Через вертикальную черту можно добавить lastmod (yyyy-MM-dd), changefreq и priority. Страница разбирает каждую строку, экранирует зарезервированные символы, проверяет, что URL начинается с http(s), и собирает urlset по протоколу. Скопируйте XML в корень сайта и укажите его в robots.txt или отправьте в Search Console.',
@@ -6274,6 +6653,100 @@ const ru: SiteLangDict = {
   tool_unlock_pdf_usecases_title: 'Подходящие случаи',
   tool_unlock_pdf_warn_large: 'Файл больше ~25 МБ — может быть медленно или не сработать в некоторых браузерах.',
   tool_unlock_pdf_warn_pdflib: 'Не удалось загрузить библиотеку PDF. Проверьте сеть и повторите.',
+  tool_utm_campaign_hint: 'Акция или продукт, к которому относится ссылка.',
+  tool_utm_campaign_label: 'Название кампании (utm_campaign)',
+  tool_utm_campaign_ph: 'summer_sale',
+  tool_utm_campaign_required: 'Название кампании (utm_campaign) обязательно.',
+  tool_utm_case_note:
+    'Google Analytics различает регистр в значениях. Используйте единый нижний регистр, чтобы один канал группировался вместе.',
+  tool_utm_clear: 'Очистить',
+  tool_utm_content_hint: 'Необязательно. Различает объявления или ссылки, ведущие на один URL.',
+  tool_utm_content_label: 'Содержимое кампании (utm_content)',
+  tool_utm_content_ph: 'header_banner',
+  tool_utm_copied: 'Скопировано',
+  tool_utm_copy: 'Копировать',
+  tool_utm_description:
+    'Чистые UTM-метки — единственный способ доказать, какие кампании, письма или публикации реально приносят вам трафик; без них ваши усилия в SEO и маркетинге невидимы в аналитике. Соберите трекинговую ссылку из URL целевой страницы и utm_source, utm_medium, utm_campaign, utm_term и utm_content. Шаги: вставьте базовый URL, заполните пять параметров, скопируйте сгенерированную ссылку с правильной URL-кодировкой. Существующие параметры запроса сохраняются и объединяются, а не перезаписываются. Работает полностью на вашем устройстве — ничего не загружается. Пример: https://example.com/page с source=newsletter, medium=email и campaign=summer_sale.',
+  tool_utm_encoding_note:
+    'Значения кодируются через encodeURIComponent: пробелы становятся %20, а не-ASCII символы тоже кодируются.',
+  tool_utm_error_prefix: 'Ошибка: ',
+  tool_utm_example:
+    'Пример ввода — https://example.com/page с utm_source=newsletter, utm_medium=email и utm_campaign=summer_sale. Сгенерированная ссылка — https://example.com/page?utm_source=newsletter&utm_medium=email&utm_campaign=summer_sale.',
+  tool_utm_example_title: 'Пример',
+  tool_utm_faq_a1:
+    'utm_source показывает, где была видна ссылка (newsletter, facebook, google), а utm_medium — как она доставлена (email, cpc, social, referral). GA4 объединяет их с utm_campaign, чтобы назвать источник трафика.',
+  tool_utm_faq_a2:
+    'Нет. Существующие параметры сохраняются, а UTM добавляются через &. Если в URL уже есть параметр с тем же именем, новое значение заменяет его.',
+  tool_utm_faq_a3:
+    'Каждое значение кодируется в процентах: пробелы становятся %20, не-ASCII символы тоже кодируются. Сгенерированная ссылка остаётся рабочей в почтовых клиентах, мессенджерах и браузерах.',
+  tool_utm_faq_a4:
+    'Да. Google Analytics считает utm_source=Facebook и utm_source=facebook двумя разными источниками. Используйте единый нижний регистр, чтобы один канал группировался вместе.',
+  tool_utm_faq_a5:
+    'utm_term идентифицирует ключевые слова платного поиска — полезно для Google Ads. utm_content различает две ссылки или объявления на один URL, например баннер в шапке и ссылку в подвале.',
+  tool_utm_faq_a6: 'Нет. Конструктор работает полностью в вашем браузере, и ничего не загружается.',
+  tool_utm_faq_q1: 'В чём разница между utm_source и utm_medium?',
+  tool_utm_faq_q2: 'У URL уже есть параметры запроса. Они потеряются?',
+  tool_utm_faq_q3: 'А пробелы, китайские символы или спецсимволы в значениях?',
+  tool_utm_faq_q4: 'Значения UTM чувствительны к регистру?',
+  tool_utm_faq_q5: 'Когда использовать utm_term и utm_content?',
+  tool_utm_faq_q6: 'Мой URL куда-то загружается?',
+  tool_utm_generate: 'Создать',
+  tool_utm_home_desc:
+    'Измеряйте, какие кампании реально приносят трафик: создавайте чистые трекинговые ссылки с utm_source, medium, campaign, term и content прямо в браузере.',
+  tool_utm_home_title: 'Конструктор UTM',
+  tool_utm_how_body:
+    'Конструктор разбирает ваш базовый URL, сохраняет его существующие параметры запроса и добавляет параметры UTM через разделитель &. Каждое значение кодируется в процентах, чтобы пробелы, китайские символы и спецсимволы пережили в ссылке. Если у URL есть hash, он переносится после всех параметров. Пять параметров UTM — это то, что Google Analytics читает, чтобы отнести визит к источнику, каналу и кампании.',
+  tool_utm_how_title: 'Как это работает',
+  tool_utm_medium_hint: 'Как доставляется ссылка: email, cpc, social, referral.',
+  tool_utm_medium_label: 'Канал кампании (utm_medium)',
+  tool_utm_medium_ph: 'email',
+  tool_utm_output_label: 'Сгенерированная ссылка',
+  tool_utm_param_campaign: 'utm_campaign',
+  tool_utm_param_content: 'utm_content',
+  tool_utm_param_empty: 'Пусто',
+  tool_utm_param_medium: 'utm_medium',
+  tool_utm_param_optional: 'Необязательно',
+  tool_utm_param_required: 'Обязательно',
+  tool_utm_param_source: 'utm_source',
+  tool_utm_param_status: 'Статус',
+  tool_utm_param_term: 'utm_term',
+  tool_utm_param_value: 'Значение',
+  tool_utm_ref_ga_label: 'Google Analytics — Пользовательские кампании (UTM)',
+  tool_utm_ref_searchcentral_label: 'Google Search Central — Параметры URL',
+  tool_utm_references: 'Google Analytics — Пользовательские кампании (UTM); Google Search Central — Параметры URL.',
+  tool_utm_rules_body: 'Это определения и правила кодирования параметров UTM по документации Google Analytics.',
+  tool_utm_rules_item_1:
+    'utm_source показывает, где была видна ссылка; utm_medium — как она была доставлена. Оба обязательны для атрибуции.',
+  tool_utm_rules_item_2:
+    'utm_campaign — название акции, здесь оно обязательно. utm_term и utm_content необязательны: term для платных ключевых слов, content для различия двух ссылок.',
+  tool_utm_rules_item_3:
+    'Если у базового URL уже есть параметры запроса, они сохраняются, а UTM добавляются через &; существующий параметр с тем же именем заменяется.',
+  tool_utm_rules_item_4:
+    'Значения кодируются в процентах: пробелы становятся %20, не-ASCII символы тоже. Фрагмент (#якорь) всегда остаётся после строки запроса.',
+  tool_utm_rules_item_5:
+    'Используйте единый нижний регистр. Значения UTM чувствительны к регистру, поэтому facebook и Facebook будут двумя источниками.',
+  tool_utm_rules_title: 'Правила конструктора',
+  tool_utm_sample: 'Пример',
+  tool_utm_source_hint: 'Где видна ссылка: newsletter, facebook, google.',
+  tool_utm_source_label: 'Источник кампании (utm_source)',
+  tool_utm_source_ph: 'newsletter',
+  tool_utm_table_title: 'Разбор параметров',
+  tool_utm_term_hint: 'Необязательно. Идентифицирует ключевые слова платного поиска.',
+  tool_utm_term_label: 'Ключевое слово кампании (utm_term)',
+  tool_utm_term_ph: 'running_shoes',
+  tool_utm_title: 'Конструктор UTM — создайте трекинговые ссылки кампании',
+  tool_utm_url_invalid: 'URL выглядит неверным. Проверьте адрес и попробуйте снова.',
+  tool_utm_url_label: 'URL целевой страницы',
+  tool_utm_url_ph: 'https://example.com/page',
+  tool_utm_url_protocol: 'Протокол не обнаружен — https:// добавлен автоматически.',
+  tool_utm_url_required: 'Введите URL целевой страницы.',
+  tool_utm_usecase_1:
+    'Соцсети: создайте по ссылке на платформу с одним utm_campaign, чтобы GA4 отразил всю акцию одной строкой.',
+  tool_utm_usecase_2:
+    'Email-рассылки: используйте utm_source=newsletter, utm_medium=email и разные значения content, чтобы сравнить два баннера, ведущие на одну страницу.',
+  tool_utm_usecase_3:
+    'QR-коды и печатные ссылки: полный UTM URL длинный, но после генерации его можно сократить, сохранив параметры.',
+  tool_utm_usecases_title: 'Подходящие сценарии',
   tool_uuid_generator_article:
     'Генерируйте UUID v4 или ULID локально с криптостойкой случайностью. Пакетное копирование для тестовых данных, trace id или заглушек схемы — без загрузки.',
   tool_uuid_generator_clear: 'Очистить',

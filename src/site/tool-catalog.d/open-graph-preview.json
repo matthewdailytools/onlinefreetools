@@ -1,0 +1,25 @@
+{
+  "slug": "open-graph-preview",
+  "path": "/tools/open-graph-preview",
+  "category": "developer",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_og_title",
+  "homeTitleKey": "tool_og_home_title",
+  "homeDescKey": "tool_og_home_desc",
+  "faqPrefix": "tool_og",
+  "related": [
+    "meta-tag-generator",
+    "meta-serp-preview",
+    "on-page-seo-checker"
+  ],
+  "logo": "/icons/tools/open-graph-preview.svg",
+  "page": {
+    "module": "../pages/openGraphPreviewPage",
+    "export": "renderOpenGraphPreviewPage",
+    "style": "opts"
+  },
+  "localProcessing": false,
+  "scenario": "seo",
+  "subject": "text"
+}

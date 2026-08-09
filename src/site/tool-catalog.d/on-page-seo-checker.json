@@ -1,0 +1,26 @@
+{
+  "slug": "on-page-seo-checker",
+  "path": "/tools/on-page-seo-checker",
+  "category": "developer",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_onpage_title",
+  "homeTitleKey": "tool_onpage_home_title",
+  "homeDescKey": "tool_onpage_home_desc",
+  "faqPrefix": "tool_onpage",
+  "related": [
+    "meta-serp-preview",
+    "meta-tag-generator",
+    "website-headers",
+    "schema-jsonld-generator"
+  ],
+  "logo": "/icons/tools/on-page-seo-checker.svg",
+  "page": {
+    "module": "../pages/onPageSeoCheckerPage",
+    "export": "renderOnPageSeoCheckerPage",
+    "style": "opts"
+  },
+  "localProcessing": false,
+  "scenario": "seo",
+  "subject": "text"
+}

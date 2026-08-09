@@ -18,6 +18,7 @@
 - [x] **清单前检索覆盖已做**（覆盖表在 02；`coverage:gate --phase=0b` 绿）
 - [x] **检索覆盖已优化**（i18n 初稿之后步 2+4 再勾）
 
+| 5 描述 SEO 作用增强 | 2026-08-09 | 10 语 `tool_robots_description`/`tool_robots_home_desc` 前置 robots.txt 对抓取收录的作用（规则写错可致整站失收录）：en「a wrong rule can hide your whole site from search」、zh「规则写错可能让整个站点从搜索结果中消失」；逐语独立改写。 | 通过 |
 技术专名 robots.txt / User-agent / Allow / Disallow / Sitemap / GPTBot / ClaudeBot / Google-Extended 可保留，但不可替代本地主 title。
 
 ---

@@ -1,0 +1,26 @@
+{
+  "slug": "hreflang-generator",
+  "path": "/tools/hreflang-generator",
+  "category": "developer",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_hreflang_title",
+  "homeTitleKey": "tool_hreflang_home_title",
+  "homeDescKey": "tool_hreflang_home_desc",
+  "faqPrefix": "tool_hreflang",
+  "related": [
+    "sitemap-xml-generator",
+    "schema-jsonld-generator",
+    "meta-tag-generator",
+    "utm-builder"
+  ],
+  "logo": "/icons/tools/hreflang-generator.svg",
+  "page": {
+    "module": "../pages/hreflangGeneratorPage",
+    "export": "renderHreflangGeneratorPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "seo",
+  "subject": "text"
+}

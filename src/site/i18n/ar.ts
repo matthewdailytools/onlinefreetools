@@ -2065,7 +2065,7 @@ const ar: SiteLangDict = {
   tool_headers_article:
     'اطّلع على الرؤوس التي يستقبلها الـ edge لرابط عام — مفيد للتخزين المؤقت وCORS وإعادة التوجيه ورؤوس الأمان. الطلب يمر عبر وكيل؛ لا نحفظ محتوى الصفحة.',
   tool_headers_description:
-    'افحص ترويسات HTTP لاستجابة أي رابط من حافة شبكتنا. الخطوات: الصق https، أرسل HEAD (GET عند الحاجة)، اتبع إعادة التوجيه، اعرض الحالة وخريطة الرؤوس؛ احظر المضيفات الداخلية. إضافات: قراءة بلغة بسيطة لـ Cache-Control وX-Robots-Tag وسلسلة إعادة التوجيه. مثال: اقرأ Cache-Control وCORS وHSTS أثناء تصحيح CDN أو إعادة التوجيه.',
+    'تحدد ترويسات HTTP طريقة زحف جوجل إلى صفحاتك وتخزينها مؤقتًا وفهرستها، ووسم X-Robots-Tag خاطئ قد يحجب الفهرسة بالكامل. افحص ترويسات HTTP لاستجابة أي رابط من حافة شبكتنا. الخطوات: الصق https، أرسل HEAD (GET عند الحاجة)، اتبع إعادة التوجيه، اعرض الحالة وخريطة الرؤوس؛ احظر المضيفات الداخلية. إضافات: قراءة بلغة بسيطة لـ Cache-Control وX-Robots-Tag وسلسلة إعادة التوجيه. مثال: اقرأ Cache-Control وCORS وHSTS أثناء تصحيح CDN أو إعادة التوجيه.',
   tool_headers_example:
     'example.com → حالة 200، الرابط النهائي دون تغيير؛ رؤوس تتضمن content-type: text/html وربما cache-control أو رؤوس أمان حسب المصدر.',
   tool_headers_example_title: 'مثال',
@@ -2175,6 +2175,78 @@ const ar: SiteLangDict = {
   tool_heart_rate_z1Out_label: 'المنطقة 1 (50–60%)',
   tool_heart_rate_z2Out_label: 'المنطقة 2 (60–70%)',
   tool_heart_rate_z3Out_label: 'المنطقة 3 (70–85%)',
+  tool_hreflang_clear: 'مسح',
+  tool_hreflang_copied: 'تم النسخ',
+  tool_hreflang_copy: 'نسخ',
+  tool_hreflang_description:
+    'بدون hreflang قد تعتبر جوجل صفحاتك المترجمة مكررة وتعرض النسخة بلغة خاطئة في نتائج البحث. حوّل مجموعة عناوين URL للغات إلى ترميز hreflang بثلاث صيغ: وسوم <link> ورأس HTTP Link و<xhtml:link> داخل sitemap. الخطوات: الصق كل عنوان URL مع رمز لغته، اختر الصيغة، ثم انسخ المقطع المولّد. يحصل كل عنوان على وسم إحالة ذاتية، مع إمكانية إضافة x-default اختياري كصفحة احتياطية. يعمل بالكامل على جهازك — لا يُرفع شيء. مثال: ثلاث نسخ من صفحة واحدة باللغات en وes وja.',
+  tool_hreflang_error_prefix: 'خطأ: ',
+  tool_hreflang_example:
+    'يذكر المثال ثلاث نسخ من صفحة واحدة: https://example.com/ (en) وhttps://example.com/es/ (es) وhttps://example.com/ja/ (ja). تتضمن وسوم <link> المولّدة إحالات ذاتية لكل لغة بالإضافة إلى x-default اختياري يشير إلى الجذر الإنكليزي.',
+  tool_hreflang_example_title: 'مثال',
+  tool_hreflang_faq_a1:
+    'استخدم وسوم <link> إذا كنت تستطيع تعديل HTML. استخدم رأس HTTP Link عندما تخدم الصفحات على خادم تسيطر عليه ويصعب تغيير HTML. واستخدم صيغة sitemap إذا فضلت إبقاءها في خريطة الموقع XML.',
+  tool_hreflang_faq_a2:
+    'يخبر x-default جوجل بالنسخة التي تُعرض عندما لا تطابق لغة الزائر أي رمز مدرج. أضفه عندما تكون لديك صفحة جذرية أو احتياطية، غالبًا بالإنكليزية.',
+  tool_hreflang_faq_a3:
+    'نعم. يجب أن تتضمن كل نسخة لغة عنوانها الخاص ضمن المجموعة، مع وسم hreflang ذاتي المرجع يشير إليها. تستخدم جوجل المجموعة الكاملة لاختيار الصفحة الصحيحة لكل لغة.',
+  tool_hreflang_faq_a4:
+    'رموز BCP 47: لغة من حرفين أو ثلاثة، مع منطقة اختيارية (en-US) ونظام كتابة اختياري (zh-Hans). اكتب اللغة بأحرف صغيرة ولا تختلق رموزًا مثل «en-us-en».',
+  tool_hreflang_faq_a5:
+    'كلاهما يعمل، لكن استخدم صيغة واحدة متناسقة لكل مجموعة صفحات. وسوم <link> توضع في <head>، ورأس HTTP Link يُرسل مع الاستجابة، وsitemap يستخدم كتل xhtml:link.',
+  tool_hreflang_faq_a6: 'لا. يعمل المولّد بالكامل في متصفحك ولا يُرفع شيء.',
+  tool_hreflang_faq_q1: 'أي صيغة من الثلاث يجب أن أستخدم؟',
+  tool_hreflang_faq_q2: 'متى أضيف x-default؟',
+  tool_hreflang_faq_q3: 'هل يحتاج كل عنوان إلى وسم ذاتي المرجع؟',
+  tool_hreflang_faq_q4: 'ما صيغة رمز اللغة الصالحة؟',
+  tool_hreflang_faq_q5: 'هل يوضع hreflang في <head> أم في sitemap؟',
+  tool_hreflang_faq_q6: 'هل تُرفع عناوين URL الخاصة بي إلى أي مكان؟',
+  tool_hreflang_generate: 'إنشاء',
+  tool_hreflang_home_desc:
+    'أخبر جوجل بأي نسخة لغة من الصفحة يجب عرضها لمن — حوّل عناوين URL الخاصة باللغات إلى وسوم hreflang ورؤوس HTTP Link وترميز sitemap من متصفحك.',
+  tool_hreflang_home_title: 'مولّد hreflang',
+  tool_hreflang_how_body:
+    'يحلل المولّد كل سطر إلى رمز لغة وعنوان URL، ثم يعرض مجموعة العلاقات نفسها بثلاث صيغ. صيغة <link> توضع داخل <head> لكل صفحة. صيغة رأس HTTP Link تُرسل مع استجابة الخادم. صيغة sitemap تدمج <xhtml:link> داخل كل كتلة <url>. يحصل كل عنوان على وسم hreflang ذاتي المرجع كي تشير كل نسخة إلى نفسها، وتغطي إضافة x-default الاختيارية الزوار الذين لا تظهر لغتهم.',
+  tool_hreflang_how_title: 'كيف يعمل',
+  tool_hreflang_input_hint:
+    'كل سطر بصيغة «رمز-اللغة URL» أو «URL رمز-اللغة». تستخدم الرموز صيغة BCP 47 مثل en أو en-US أو zh-Hans.',
+  tool_hreflang_input_label: 'قائمة عناوين URL حسب اللغة',
+  tool_hreflang_input_ph:
+    'زوج واحد في كل سطر: رمز اللغة + عنوان URL. مثال:\nen https://example.com/\nes https://example.com/es/\nja https://example.com/ja/',
+  tool_hreflang_lang_invalid: 'رمز لغة غير صالح: {lang}. استخدم صيغة BCP 47 مثل en أو en-US أو zh-Hans.',
+  tool_hreflang_no_valid_rows: 'لا توجد أسطر صالحة. أضف رمز لغة وعنوان URL واحدًا على الأقل.',
+  tool_hreflang_output_label: 'الترميز المولّد',
+  tool_hreflang_ref_bcp47_label: 'BCP 47 — وسوم تعريف اللغات',
+  tool_hreflang_ref_searchcentral_label: 'Search Central — النسخ المترجمة (hreflang)',
+  tool_hreflang_references: 'Google Search Central — النسخ المترجمة (hreflang)؛ وسوم اللغة BCP 47.',
+  tool_hreflang_rules_body: 'تأتي هذه القواعد من Google Search Central ومعيار BCP 47 لوسوم اللغة.',
+  tool_hreflang_rules_item_1: 'يجب أن تتضمن كل نسخة لغة وسم hreflang ذاتي المرجع يشير إلى عنوانها الخاص. حذفه يضعف الإشارة.',
+  tool_hreflang_rules_item_2:
+    'يجب أن يُدرج كل عنوان من جميع نسخ اللغة: المجموعة الكاملة من البدائل تظهر في كل صفحة، وليس باتجاه واحد.',
+  tool_hreflang_rules_item_3:
+    'رموز اللغة بصيغة BCP 47: لغة من حرفين، مع منطقة اختيارية (en-US) ونظام كتابة اختياري (zh-Hans). وx-default رمز احتياطي خاص.',
+  tool_hreflang_rules_item_4:
+    'يشير x-default إلى الصفحة المعروضة عندما لا يتطابق أي لغة مدرجة، مثل الصفحة الجذرية الإنكليزية. قد تستخدمه جوجل كاحتياط لجميع اللغات غير المكتشفة.',
+  tool_hreflang_rules_item_5:
+    'اختر صيغة تقديم واحدة للمجموعة: وسوم <link> في HTML أو رأس HTTP Link أو xhtml:link في sitemap. لا تخلط الصيغ لنفس المجموعة وإلا تعارضت الإشارات.',
+  tool_hreflang_rules_title: 'القواعد التي يتبعها المولّد',
+  tool_hreflang_sample: 'تحميل مثال',
+  tool_hreflang_tab_http: 'رأس HTTP Link',
+  tool_hreflang_tab_link: 'وسوم <link>',
+  tool_hreflang_tab_sitemap: 'Sitemap',
+  tool_hreflang_title: 'مولّد hreflang — أنشئ وسوم اللغة للمواقع متعددة اللغات',
+  tool_hreflang_url_protocol: 'أحد العناوين بلا بروتوكول — أُضيف https:// تلقائيًا.',
+  tool_hreflang_usecase_1:
+    'إطلاق موقع متعدد اللغات: ولّد وسوم <link> مرة واحدة لكل قالب وتحقق من أن كل نسخة لغة تسرد المجموعة الكاملة.',
+  tool_hreflang_usecase_2:
+    'بعد إعادة هيكلة الموقع، أعد توليد الترميز كي يبقى تطابق العناوين متناسقًا بين اللغات بدلًا من الانحراف.',
+  tool_hreflang_usecase_3:
+    'عند ظهور لغة خاطئة في نتائج البحث، تحقق من وجود الإحالات الذاتية وx-default ومن أن العناوين تشير إلى الصفحات الأساسية.',
+  tool_hreflang_usecases_title: 'حالات استخدام مناسبة',
+  tool_hreflang_xdefault_hint:
+    'اختياري. يخبر x-default جوجل بالنسخة التي تُعرض عندما لا يتطابق أي لغة، وهو مفيد للصفحة الرئيسية أو الجذر بالإنكليزية.',
+  tool_hreflang_xdefault_label: 'عنوان x-default الاحتياطي',
+  tool_hreflang_xdefault_none: '— دون إضافة x-default —',
   tool_html_entity_article:
     'ترميز وفك ترميز كيانات HTML مع شرح النطاق والصيغة والترميز المزدوج، للمطورين الذين ينظّفون نصوص API أو CMS.',
   tool_html_entity_clear: 'مسح',
@@ -3872,6 +3944,86 @@ const ar: SiteLangDict = {
   tool_merge_pdf_usecases_title: 'مناسب لـ',
   tool_merge_pdf_warn_large: 'ملف أكبر من نحو 25 ميغابايت — قد يبطئ الدمج أو يفشل في بعض المتصفحات.',
   tool_merge_pdf_warn_pdflib: 'فشل تحميل مكتبة PDF. تحقق من الشبكة وأعد المحاولة.',
+  tool_meta_canonical_hint: 'العنوان المفضل لهذه الصفحة. أضف العنوان الكامل مع البروتوكول.',
+  tool_meta_canonical_label: 'عنوان canonical',
+  tool_meta_canonical_ph: 'https://example.com/your-page',
+  tool_meta_canonical_protocol: 'عنوان canonical بلا بروتوكول — أضف https:// أو http:// كي تتمكن محركات البحث من قراءته.',
+  tool_meta_clear: 'مسح',
+  tool_meta_copied: 'تم النسخ',
+  tool_meta_copy: 'نسخ',
+  tool_meta_desc_hint: 'اجعله قريبًا من 155–160 حرفًا. قد يُقتطع النص الأطول في نتائج البحث.',
+  tool_meta_desc_label: 'وصف الميتا',
+  tool_meta_desc_len: 'الوصف: {n} حرفًا',
+  tool_meta_desc_len_warn: 'الوصف: {n} حرفًا — تجاوز 160، قد يُقتطع.',
+  tool_meta_desc_ph: 'أنشئ وسوم رأس جاهزة للصق مع تلميحات طول وقيم robots وحقول OG.',
+  tool_meta_description:
+    'العنوان ووصف الميتا هما أول ما يراه المستخدم في جوجل، وcanonical الخاطئ قد يوزع ترتيبك بين عناوين مكررة. املأ حقول العنوان والوصف وcanonical وrobots وOpen Graph لإنشاء وسوم <head> جاهزة للصق. الخطوات: أدخل حقولك، واطّلع على تلميحات الطول والمعاينات، ثم انسخ HTML المولّد مع الترميز الصحيح. تُرمَّز الأحرف الخاصة مثل & و < تلقائيًا كي تبقى الوسوم سليمة. يعمل بالكامل على جهازك — لا يُرفع شيء. مثال: وسوم canonical وog جنبًا إلى جنب.',
+  tool_meta_error_prefix: 'خطأ: ',
+  tool_meta_example:
+    'يملأ المثال العنوان والوصف وcanonical وrobots وثلاثة حقول Open Graph. يخرج المقطع المولّد وسم <title> وmeta description ورابط canonical ووسم robots ووسوم og: المملوءة.',
+  tool_meta_example_title: 'مثال',
+  tool_meta_faq_a1:
+    'index يسمح لمحركات البحث بإدراج الصفحة في النتائج، بينما noindex يمنع ذلك. follow يسمح بزحف روابط الصفحة وnofollow يمنعه. عند غياب الوسم يكون الافتراضي index, follow.',
+  tool_meta_faq_a2:
+    'نعم. يرمِّز المولّد & < > " و \'، فتتحول & إلى &amp; و< إلى &lt;. تبقى وسومك سليمة حتى لو احتوت القيمة أحرفًا شبيهة بالترميز.',
+  tool_meta_faq_a3:
+    'نعم، فهما يخدمان أنظمة مختلفة. يخبر رابط canonical محركات البحث بالعنوان المفضل، بينما تصف وسوم og: الصفحة للمشاركة على الشبكات. اجعل og:url متوافقًا مع عنوان canonical.',
+  tool_meta_faq_a4:
+    'الحدود الشائعة نحو 60 حرفًا للعنوان و155–160 للوصف. إنها اقتراحات: قد تعيد محركات البحث كتابة القيم الأطول أو اقتطاعها.',
+  tool_meta_faq_a5: 'تُتجاهل الحقول الاختيارية الفارغة، فيحتوي المقطع المولّد على وسوم الحقول التي ملأتها فقط.',
+  tool_meta_faq_a6: 'لا. يعمل المولّد بالكامل في متصفحك ولا يُرفع شيء.',
+  tool_meta_faq_q1: 'ماذا تعني قيم وسم robots؟',
+  tool_meta_faq_q2: 'هل تُرمَّز الأحرف الخاصة في قيمي؟',
+  tool_meta_faq_q3: 'هل يمكن أن تتعايش وسوم canonical وOpen Graph؟',
+  tool_meta_faq_q4: 'كم يجب أن يكون طول العنوان والوصف؟',
+  tool_meta_faq_q5: 'ماذا يحدث للحقول الفارغة؟',
+  tool_meta_faq_q6: 'هل تُرفع بياناتي إلى أي مكان؟',
+  tool_meta_generate: 'إنشاء',
+  tool_meta_home_desc:
+    'أنشئ وسوم العنوان والوصف وcanonical وOpen Graph التي تجلب النقرات في البحث — ولّد وسوم الرأس كاملة لصفحتك من المتصفح.',
+  tool_meta_home_title: 'مولّد وسوم الميتا',
+  tool_meta_how_body:
+    'يبني المولّد وسوم الرأس المقابلة من حقولك. تُتجاهل الحقول الاختيارية الفارغة، فيحتوي الناتج على ما ملأته فقط. يُرمَّز كل قيمة في HTML: تتحول & إلى &amp; و< إلى &lt;، فتبقى الوسوم سليمة داخل صفحتك. تحذرك تلميحات الطول عندما يتجاوز العنوان أو الوصف الحدود الشائعة، دون قطع نصك.',
+  tool_meta_how_title: 'كيف يعمل',
+  tool_meta_og_desc_label: 'og:description',
+  tool_meta_og_image_label: 'og:image (عنوان كامل)',
+  tool_meta_og_title_label: 'og:title',
+  tool_meta_og_type_label: 'og:type',
+  tool_meta_og_url_label: 'og:url',
+  tool_meta_output_label: 'مقطع الرأس المولّد',
+  tool_meta_ref_searchcentral_canonical_label: 'Search Central — عناوين canonical',
+  tool_meta_ref_searchcentral_tags_label: 'Search Central — وسوم الميتا التي تفهمها جوجل',
+  tool_meta_ref_searchcentral_title_label: 'Search Central — التحكم في روابط العنوان',
+  tool_meta_references: 'Google Search Central — وسوم الميتا التي تفهمها جوجل؛ التحكم في روابط العنوان؛ عناوين canonical.',
+  tool_meta_robots_index_follow: 'index, follow (الافتراضي، يسمح لمحركات البحث بالفهرسة)',
+  tool_meta_robots_index_nofollow: 'index, nofollow (السماح بالفهرسة دون متابعة الروابط)',
+  tool_meta_robots_label: 'وسم robots',
+  tool_meta_robots_noindex_follow: 'noindex, follow (إخفاء من النتائج، مع متابعة الروابط)',
+  tool_meta_robots_noindex_nofollow: 'noindex, nofollow (إخفاء الصفحة وعدم متابعة الروابط)',
+  tool_meta_robots_none: '— دون إضافة وسم robots —',
+  tool_meta_rules_body: 'تتبع هذه القواعد إرشادات Google Search Central حول وسوم الميتا وروابط العنوان وعناوين canonical.',
+  tool_meta_rules_item_1:
+    'عنوان الميتا والوصف اقتراحات لا أوامر: قد تعيد محركات البحث كتابتها أو اقتطاعها، لذا اجعل العنوان قريبًا من 60 حرفًا والوصف من 155–160.',
+  tool_meta_rules_item_2:
+    'تُرمَّز جميع القيم في HTML: & < > " و \' تتحول إلى كيانات، فلا تستطيع الحروف الموجودة في عنوانك أو وصفك كسر بنية الوسوم.',
+  tool_meta_rules_item_3:
+    'يجب أن يكون عنوان canonical عنوانًا مطلقًا كاملًا مع بروتوكول. العنوان النسبي أو بلا بروتوكول لا يصلح هدفًا للـcanonical.',
+  tool_meta_rules_item_4:
+    'يستخدم وسم robots القيم index/noindex وfollow/nofollow. عند غيابه تستخدم محركات البحث افتراضها الخاص وهو الفهرسة والمتابعة.',
+  tool_meta_rules_item_5:
+    'يمكن أن تتعايش وسوم canonical وOpen Graph في صفحة واحدة: يجب أن يطابق og:url عنوان canonical كي تشير مشاركات الشبكات إلى العنوان نفسه.',
+  tool_meta_rules_title: 'القواعد التي يتبعها المولّد',
+  tool_meta_sample: 'تحميل مثال',
+  tool_meta_title: 'مولّد وسوم الميتا — أنشئ وسوم الرأس كاملة لصفحتك',
+  tool_meta_title_hint: 'اجعله قريبًا من 60 حرفًا. قد تعيد محركات البحث كتابة العناوين الأطول.',
+  tool_meta_title_label: 'عنوان الميتا',
+  tool_meta_title_len: 'العنوان: {n} حرفًا',
+  tool_meta_title_len_warn: 'العنوان: {n} حرفًا — تجاوز 60، يُنصح بالتقصير.',
+  tool_meta_title_ph: 'مولّد وسوم الميتا — أنشئ وسوم الرأس كاملة لصفحتك',
+  tool_meta_usecase_1: 'بناء قالب صفحة جديد: ولّد كتلة الرأس مرة واحدة، وراجع تلميحات الطول ثم ألصقها في القالب قبل النشر.',
+  tool_meta_usecase_2: 'تسليم عمل لعميل: ولّد مقطع الرأس الدقيق مع حقلي canonical وOG ثم ألصقه في نظام إدارة المحتوى.',
+  tool_meta_usecase_3: 'قبل النشر ولّد الوسوم وقارنها بمعاينة نتائج البحث ليتطابق العنوان والوصف مع الصفحة الظاهرة.',
+  tool_meta_usecases_title: 'حالات استخدام مناسبة',
   tool_npv_article:
     'صافي القيمة الحالية يخصم التدفقات المستقبلية بمعدل سنوي تختاره ثم يطرح الاستثمار الأولي. NPV الموجب يعني فقط أن التدفقات الداخلة المخصومة تفوق الخارج وفق افتراضاتك؛ ليس توقعاً ولا توصية شراء.',
   tool_npv_calculate: 'احسب',
@@ -3925,6 +4077,98 @@ const ar: SiteLangDict = {
   tool_npv_usecase_2: 'واجبات دراسية: تمرين مجموع NPV بمعدل ثابت وقائمة تدفقات قصيرة.',
   tool_npv_usecase_3: 'مسودة قبل استشارة مستشار — لا تغني عن تحليل كامل.',
   tool_npv_usecases_title: 'متى تستخدمها',
+  tool_og_card_large: 'summary_large_image',
+  tool_og_card_summary: 'summary',
+  tool_og_clear: 'مسح',
+  tool_og_copied: 'تم النسخ',
+  tool_og_copy: 'نسخ',
+  tool_og_description:
+    'تحدد وسوم Open Graph شكل صفحتك في كل مرة تُشارك فيها، وغياب الصورة أو العنوان يكلفك نقرات ومشاركات. الصق وسوم og:/twitter:card أو عنوان URL لمعاينة بطاقة المشاركة على فيسبوك وX وواتساب، واكتشف الحقول الناقصة واضبط نسبة الصورة. الخطوات: الصق الوسوم أو أحضر URL، واقرأ البطاقات الثلاث وجدول الحقول، ثم أكمل الناقص. وضع اللصق يعمل على جهازك؛ وضع URL يجلب الصفحة مرة واحدة ولا يخزنها. مثال: صفحة تحتوي og:image بحجم 1200×630 تتم مشاركتها كبطاقة كبيرة.',
+  tool_og_dimensions: '{w}×{h} بكسل',
+  tool_og_error_prefix: 'خطأ: ',
+  tool_og_example:
+    'تصف وسوم المثال مقالة مدونة تحتوي og:image بحجم 1200×630 وtwitter:card بنوع summary_large_image. تعرض المعاينة بطاقة فيسبوك مع الصورة يسارًا، وبطاقة X كبيرة، وبطاقة بأسلوب واتساب، وجدول وسوم تكون فيه كل الحقول الإلزامية موجودة.',
+  tool_og_example_title: 'مثال',
+  tool_og_faq_a1:
+    'تبني فيسبوك وX وواتساب المعاينة من عنوان HTML ووصف meta وأول صورة في الصفحة. قد تكون البطاقة غير مكتملة أو تعرض صورة خاطئة، ولهذا توجد الحقول الإلزامية og:.',
+  tool_og_faq_a2:
+    'الحجم الآمن هو 1200×630 بكسل، بنسبة 1.91:1 تقبلها كل المنصات الرئيسية. تدعم فيسبوك الآن أيضًا قصّات 2:1 و1:1. الصور الصغيرة جدًا تُكبَّر غالبًا وتبدو ضبابية.',
+  tool_og_faq_a3:
+    'تحدد twitter:card التخطيط: summary_large_image تعرض صورة عريضة، وsummary صورة صغيرة. عند غياب twitter:title أو twitter:description أو twitter:image، تسترجع X الوسم og: المقابل.',
+  tool_og_faq_a4:
+    'تسترجع أول صورة في HTML الصفحة، أو تعرض البطاقة بدون صورة. غياب og:image هو السبب الأكثر شيوعًا لظهور رابط مشترك بدون صورة معاينة.',
+  tool_og_faq_a5:
+    'تحاول المعاينة تحميل og:image عبر تحميل صورة في المتصفح لقراءة حجمها الفعلي. إذا كانت الصورة محجوبة أو غير متصلة أو بطيئة أو رفضها الخادم، يتعذّر قراءة الحجم فيُبلَّغ «غير معروف».',
+  tool_og_faq_a6:
+    'لا. في وضع اللصق يتم التحليل والمعاينة على جهازك. وضع URL يجلب الصفحة مرة واحدة عبر عاملنا ولا يخزنها.',
+  tool_og_faq_q1: 'ماذا يحدث إذا لم تحتوِ الصفحة على وسوم Open Graph؟',
+  tool_og_faq_q2: 'ما الحجم المناسب لـ og:image؟',
+  tool_og_faq_q3: 'كيف ترتبط twitter:card بوسوم og:؟',
+  tool_og_faq_q4: 'ماذا تفعل المنصة عند غياب og:image؟',
+  tool_og_faq_q5: 'لماذا يبلّغ فحص النسبة بـ«غير معروف»؟',
+  tool_og_faq_q6: 'هل تُرفع وسومي إلى أي مكان؟',
+  tool_og_fetch_failed: 'تعذّر جلب URL. قد تكون الصفحة غير متصلة، أو تحظر الروبوتات، أو لا تعيد HTML.',
+  tool_og_field_og_description: 'og:description',
+  tool_og_field_og_image: 'og:image',
+  tool_og_field_og_site_name: 'og:site_name',
+  tool_og_field_og_title: 'og:title',
+  tool_og_field_og_type: 'og:type',
+  tool_og_field_og_url: 'og:url',
+  tool_og_field_twitter_card: 'twitter:card',
+  tool_og_field_twitter_description: 'twitter:description',
+  tool_og_field_twitter_image: 'twitter:image',
+  tool_og_field_twitter_site: 'twitter:site',
+  tool_og_field_twitter_title: 'twitter:title',
+  tool_og_home_desc:
+    'اجعل كل مشاركة لصفحتك تجلب النقرات — اعرض كيف ستبدو عند مشاركتها على فيسبوك وX وتطبيقات المراسلة، من المتصفح مباشرة.',
+  tool_og_home_title: 'معاينة Open Graph',
+  tool_og_how_body:
+    'تحلل المعاينة وسوم og:/twitter: التي تلصقها (أو تستخرجها من HTML المجلوب من URL) وترسم ثلاث بطاقات مشاركة. تعرض فيسبوك الصورة بنسبة 1.91:1 على اليسار مع العنوان والوصف والنطاق أسفلها. تتبع X قيمة twitter:card: summary_large_image تعرض صورة كبيرة بالأعلى، وsummary صورة صغيرة بجانب النص. تطبيقات المراسلة مثل واتساب تعرض بطاقة كبيرة واحدة. يميز جدول الحقول og:title وog:description وog:image كإلزامية ويسرد الاختيارية.',
+  tool_og_how_title: 'كيف يعمل',
+  tool_og_missing_label: 'ناقص',
+  tool_og_no_tags: 'لم يتم العثور على وسوم OG',
+  tool_og_no_tags_fallback: 'بدون وسوم Open Graph، تبني فيسبوك وX وواتساب المعاينة من عنوان الصفحة ووصف meta وأول صورة فيها.',
+  tool_og_ok_label: 'موجود',
+  tool_og_optional_label: 'اختياري',
+  tool_og_platform_facebook: 'فيسبوك',
+  tool_og_platform_generic: 'تطبيقات المراسلة (بأسلوب واتساب)',
+  tool_og_platform_x: 'X',
+  tool_og_preview: 'معاينة',
+  tool_og_ratio_ok: 'og:image قريبة من 1200×630 بكسل (1.91:1).',
+  tool_og_ratio_unknown: 'تعذّرت قراءة حجم الصورة من عنوان URL.',
+  tool_og_ratio_warning: 'يُفضَّل أن تكون og:image حوالي 1200×630 بكسل (1.91:1).',
+  tool_og_ref_ogp_label: 'ogp.me — بروتوكول Open Graph',
+  tool_og_ref_x_label: 'X — ترميز البطاقات',
+  tool_og_references: 'ogp.me — بروتوكول Open Graph؛ X — ترميز البطاقات.',
+  tool_og_required_label: 'إلزامي',
+  tool_og_rules_body: 'هذه أحجام الصور وآليات الاسترجاع التي تستخدمها المنصات، وفقًا لبروتوكول Open Graph ووثائق X Cards.',
+  tool_og_rules_item_1: 'الحقول الإلزامية: og:title وog:description وog:image. تُعلَّم الناقصة حتى تصححها قبل النشر.',
+  tool_og_rules_item_2:
+    'حجم og:image 1200×630 بكسل (1.91:1) يعمل على كل المنصات الرئيسية. تدعم فيسبوك الآن أيضًا قصّات 2:1 و1:1؛ الصور الصغيرة جدًا غالبًا تُكبَّر وتظهر ضبابية.',
+  tool_og_rules_item_3:
+    'twitter:card بنوع summary_large_image يقتضي صورة كبيرة، وsummary صورة صغيرة. بدون twitter:card تستنتج المنصات بطاقة summary من وسوم og:.',
+  tool_og_rules_item_4: 'عند غياب og:title أو og:image، تسترجع المنصات عنوان HTML ووصف meta وأول صورة في الصفحة.',
+  tool_og_rules_item_5:
+    'يُقاس حجم الصورة بتحميلها في المتصفح؛ إذا تعذّر التحميل (محجوبة أو غير متصلة أو عنوان خاطئ) يبلّغ الفحص بـ«غير معروف».',
+  tool_og_rules_title: 'القواعد التي تتبعها المعاينة',
+  tool_og_running: 'جارٍ التحقق…',
+  tool_og_sample: 'مثال',
+  tool_og_table_title: 'حالة الوسوم',
+  tool_og_tags_ph: 'الصق وسوم <meta property="og:*"> و <meta name="twitter:*"> هنا…',
+  tool_og_tags_tab: 'لصق الوسوم',
+  tool_og_title: 'معاينة Open Graph — تحقق من بطاقات المشاركة الاجتماعية',
+  tool_og_twitter_inferred: 'لا يوجد twitter:card محدد — تستنتج المنصات بطاقة summary من وسوم og:.',
+  tool_og_url_error: 'أدخل عنوان URL صحيحًا (http أو https).',
+  tool_og_url_fetch: 'جلب URL',
+  tool_og_url_ph: 'https://example.com/page',
+  tool_og_url_tab: 'جلب URL',
+  tool_og_usecase_1:
+    'قبل نشر مقالة أو صفحة هبوط، الصق الوسوم مرة واحدة وتأكد من ظهور بطاقة المشاركة بشكل صحيح على فيسبوك وX وتطبيقات المراسلة.',
+  tool_og_usecase_2:
+    'عندما لا يظهر رابط مشترك بأي صورة أو تظهر مقطوعة، الصق وسوم og: لمعرفة ما إذا كانت og:image ناقصة أم نسبتها خاطئة.',
+  tool_og_usecase_3:
+    'بعد تحديث نظام إدارة المحتوى أو القالب، اجلب عنوان URL الحي وتحقق من أن وسوم og: ما تزال مطابقة للصفحة.',
+  tool_og_usecases_title: 'حالات استخدام مناسبة',
   tool_ohms_law_I_label: 'التيار I',
   tool_ohms_law_I_ph: 'مثال 2',
   tool_ohms_law_V_label: 'الجهد V',
@@ -4004,6 +4248,117 @@ const ar: SiteLangDict = {
   tool_one_rep_max_usecases_title: 'متى تستخدمه',
   tool_one_rep_max_weight_label: 'الوزن',
   tool_one_rep_max_weight_ph: 'مثال 100',
+  tool_onpage_canonical_check: 'Canonical',
+  tool_onpage_canonical_missing: 'لا يوجد canonical. أضف <link rel="canonical"> عندما يكون المحتوى نفسه متاحاً عبر عدة روابط.',
+  tool_onpage_canonical_ok: 'وُجد canonical ذاتي الإحالة.',
+  tool_onpage_canonical_other: 'يشير canonical إلى رابط مختلف. استخدم canonical ذاتي الإحالة إلا إذا كانت الصفحة نسخة من الهدف.',
+  tool_onpage_check: 'فحص الصفحة',
+  tool_onpage_clear: 'مسح',
+  tool_onpage_copied: 'تم النسخ',
+  tool_onpage_copy: 'نسخ',
+  tool_onpage_desc_check: 'وصف الميتا',
+  tool_onpage_desc_long: 'الوصف {n} حرفاً، وعادة ما تُقتطع المقتطفات عند نحو 160 حرفاً.',
+  tool_onpage_desc_missing: 'لا يوجد وصف ميتا. اكتب ملخصاً من 140–160 حرفاً يطابق محتوى الصفحة.',
+  tool_onpage_desc_ok: 'الوصف {n} حرفاً. نطاق 140–160 حرفاً يظهر جيداً في معظم المقتطفات.',
+  tool_onpage_desc_short: 'الوصف {n} حرفاً فقط. استغل المساحة لتلخيص ما تقدمه الصفحة.',
+  tool_onpage_description:
+    'العنوان الضعيف أو وصف الميتا المفقود أو تكرار H1 أو canonical الخاطئ كلها تُضعف ترتيبك في البحث وتُكلفك نقرات بصمت. الصق رابطاً أو HTML لفحص العنوان وH1 ووصف الميتا وcanonical وOpen Graph وJSON-LD والمحتوى المختلط وحجب العرض، مع اقتراح إصلاح لكل بند. وضع اللصق يعمل على جهازك؛ ووضع الرابط يجلب الصفحة مرة واحدة دون تخزينها. مثال: صفحة فيها وسمي H1 وصورة بروتوكول http://.',
+  tool_onpage_error_prefix: 'خطأ: ',
+  tool_onpage_example:
+    'الإدخال التجريبي صفحة بعنوان 71 حرفاً، بلا وصف ميتا، ووسمي H1، وcanonical إلى رابط آخر، وog:image واحد، وكتلة JSON-LD صالحة، وصورة http:// واحدة. يقر المدقق العنوان كاحتمال اقتطاع، وH1 كتحذير، وcanonical كغير ذاتي الإحالة، والمحتوى المختلط كتحذير، بما يطابق ما تعرضه الأداة عند تحميل المثال.',
+  tool_onpage_example_title: 'مثال',
+  tool_onpage_faq_a1:
+    'يفحص الوسوم التي تتحكم بها الصفحة نفسها: العنوان ووصف الميتا وH1 وcanonical ووسم robots وحقول Open Graph وبيانات JSON-LD والمحتوى المختلط وموارد حجب العرض. لا يقيس الترتيب أو الروابط الخلفية.',
+  tool_onpage_faq_a2:
+    'H1 واحد يعبّر عن موضوع الصفحة بوضوح للقارئ ومحرك البحث. تعدد H1 يضعف الهيكل؛ استخدم H1 واحداً ونظّم الباقي بـ H2–H6.',
+  tool_onpage_faq_a3:
+    'للصفحة التي يجب أن تتصدر النتائج، نعم — الإحالة الذاتية أوضح إشارة. إحالة canonical إلى رابط آخر تخبر جوجل أن الصفحة مكررة، وهو مفيد فقط عندما يكون ذلك صحيحاً.',
+  tool_onpage_faq_a4:
+    'عند تقديم صفحة عبر https مع إشارات إلى صور أو سكربتات أو أنماط http://، يحجب المتصفح الطلب افتراضياً. يدرج هذا الفحص هذه الإشارات كتحذيرات لتغييرها إلى https.',
+  tool_onpage_faq_a5:
+    'يتحقق من أن الكتل تُحلل كـ JSON صالح ويذكّر بالحفاظ على اتساق البيانات المنظمة مع المحتوى المرئي. لا يشغّل مدقق schema.org كاملاً.',
+  tool_onpage_faq_a6:
+    'لا. عند لصق HTML، يتم التحليل على جهازك ولا يُرسل شيء إلى خادم. وضع الرابط يجلب الصفحة مرة واحدة عبر العامل ولا يخزنها.',
+  tool_onpage_faq_q1: 'ماذا يفحص مدقق SEO داخل الصفحة؟',
+  tool_onpage_faq_q2: 'لماذا يجب أن تحتوي الصفحة على H1 واحد فقط؟',
+  tool_onpage_faq_q3: 'هل يجب أن يشير canonical إلى نفسه؟',
+  tool_onpage_faq_q4: 'لماذا يعلّم المدقق موارد http:// كمحتوى مختلط؟',
+  tool_onpage_faq_q5: 'هل يختبر فحص JSON-LD الصلاحية؟',
+  tool_onpage_faq_q6: 'هل يُرفع HTML الخاص بي إلى أي مكان؟',
+  tool_onpage_fetch_failed: 'تعذّر جلب الرابط. قد تكون الصفحة غير متصلة، أو تمنع البوتات، أو لا تُرجع HTML.',
+  tool_onpage_h1_check: 'H1',
+  tool_onpage_h1_missing: 'لم يُعثر على H1. استخدم H1 واحداً يوضح موضوع الصفحة.',
+  tool_onpage_h1_multiple: 'وُجد {n} من وسوم H1. أبقِ H1 واحداً في كل صفحة واستخدم H2–H6 للأقسام.',
+  tool_onpage_h1_ok: 'يوجد H1 واحد وهو داخل <body>.',
+  tool_onpage_home_desc:
+    'اكتشف وسوم الصفحة التي تُضعف ترتيبك في البحث: افحص العنوان وH1 ووصف الميتا وcanonical وOpen Graph وJSON-LD من متصفحك.',
+  tool_onpage_home_title: 'مدقق SEO داخل الصفحة',
+  tool_onpage_how_body:
+    'يحلل المدقق الوسوم التي تلصقها (أو HTML المأخوذ من رابط) ويقيّم قائمة ثابتة من فحوصات SEO داخل الصفحة. يقرأ كل فحص نوعاً واحداً من الوسوم: العنوان ووصف الميتا ووسوم H1 ورابط canonical ووسم robots وحقول Open Graph وكتل JSON-LD والمحتوى المختلط وموارد حجب العرض. وضع اللصق يعمل بالكامل في متصفحك؛ ووضع الرابط يجلب الصفحة مرة واحدة عبر العامل لدينا ولا يخزنها.',
+  tool_onpage_how_title: 'كيف يعمل',
+  tool_onpage_html_ph: 'الصق هنا HTML الخاص بـ <head> (وجزء من body)…',
+  tool_onpage_html_tab: 'لصق HTML',
+  tool_onpage_jsonld_check: 'JSON-LD',
+  tool_onpage_jsonld_invalid: 'تعذّر تحليل كتلة JSON-LD كـ JSON. تحقق من أخطاء البنية.',
+  tool_onpage_jsonld_missing: 'لا توجد بيانات منظمة JSON-LD. فكّر في إضافة وسوم schema.org عندما تصف محتوى مرئياً.',
+  tool_onpage_jsonld_ok: 'وُجدت {n} كتلة JSON-LD. حافظ على اتساق البيانات المنظمة مع ما يراه الزائر.',
+  tool_onpage_mixed_check: 'المحتوى المختلط',
+  tool_onpage_mixed_found: 'وُجدت {n} إشارة http://. المتصفحات تحجب المحتوى المختلط؛ قدّم هذه الموارد عبر https.',
+  tool_onpage_mixed_none: 'لا توجد إشارات http:// في سياق https.',
+  tool_onpage_no_html: 'الصق بعض HTML أولاً أو اجلب رابطاً.',
+  tool_onpage_no_results: 'لا توجد نتائج فحص بعد.',
+  tool_onpage_og_check: 'Open Graph',
+  tool_onpage_og_missing: 'لا توجد وسوم og:. أضف og:title وog:description وog:image لمعاينات المشاركة.',
+  tool_onpage_og_ok: 'og:title وog:description وog:image موجودة.',
+  tool_onpage_og_partial: 'ينقص {n} من حقول og: المطلوبة. تأكد من وجود og:title وog:description وog:image.',
+  tool_onpage_ref_canonical_label: 'Search Central — روابط canonical',
+  tool_onpage_ref_mdn_label: 'MDN — <meta>: عنصر البيانات الوصفية',
+  tool_onpage_ref_tags_label: 'Search Central — وسوم الميتا التي تفهمها جوجل',
+  tool_onpage_references: 'Google Search Central — وسوم الميتا؛ Google Search Central — canonical؛ MDN — عنصر <meta>.',
+  tool_onpage_render_check: 'حجب العرض',
+  tool_onpage_render_found: 'وُجد {n} من <link rel="stylesheet"> بدون media في <head>. ادمج CSS الحرج أو أخّر التحميل لتحسين LCP.',
+  tool_onpage_render_none: 'لا توجد أوراق أنماط أو سكربتات تحجب العرض بوضوح.',
+  tool_onpage_robots_check: 'وسم robots',
+  tool_onpage_robots_missing: 'لا يوجد وسم robots. الافتراضي index,follow مناسب لمعظم الصفحات العامة.',
+  tool_onpage_robots_noindex: 'الصفحة مضبوطة على noindex ولن تظهر في نتائج جوجل. أزل الإعداد عندما يجب فهرسة الصفحة.',
+  tool_onpage_robots_ok: 'وسم robots يسمح بالفهرسة وتتبّع الروابط.',
+  tool_onpage_rules_body: 'هذه هي المعايير التي يقارن بها كل فحص، ومصدرها Google Search Central ومواصفات HTML.',
+  tool_onpage_rules_item_1:
+    'العنوان: يجب أن تحتوي الصفحة على <title> وصفي واحد. قد تعيد جوجل كتابته، لكن العنوان المختصر قرب 50–60 حرفاً يعرض جيداً.',
+  tool_onpage_rules_item_2: 'H1: استخدم H1 واحداً يوضح الموضوع، والعناوين الباقية H2–H6 بشكل منطقي.',
+  tool_onpage_rules_item_3:
+    'Canonical: الإحالة الذاتية تخبر جوجل بالرابط المفضل عند وجود نسخ مكررة. يوضع Link rel="canonical" في <head>.',
+  tool_onpage_rules_item_4:
+    'المحتوى المختلط: صفحة https تشير إلى موارد http:// تحجبها المتصفحات. يدرج هذا الفحص هذه الإشارات كتحذيرات.',
+  tool_onpage_rules_item_5:
+    'حجب العرض: ورقة الأنماط في <head> بدون سمة media تحجب العرض. هذا الفحص استرشادي ولا يقيس زمن التحميل الفعلي.',
+  tool_onpage_rules_title: 'القواعد التي تتبعها الفحوصات',
+  tool_onpage_running: 'جارٍ الفحص…',
+  tool_onpage_sample: 'مثال',
+  tool_onpage_status_err: 'مشكلة',
+  tool_onpage_status_ok: 'ناجح',
+  tool_onpage_status_warn: 'تحذير',
+  tool_onpage_summary_n_err: '{n} مشكلة',
+  tool_onpage_summary_n_ok: '{n} ناجح',
+  tool_onpage_summary_n_warn: '{n} تحذير',
+  tool_onpage_summary_title: 'ملخص الفحص',
+  tool_onpage_title: 'مدقق SEO داخل الصفحة — اكتشف مشاكل وسوم الصفحة وأصلحها',
+  tool_onpage_title_check: 'العنوان',
+  tool_onpage_title_long: 'العنوان {n} حرفاً ومن المرجح أن يُقتطع في نتائج البحث. استهدف نحو 50–60 حرفاً.',
+  tool_onpage_title_missing: 'لم يُعثر على <title>. أضف واحداً داخل <head>.',
+  tool_onpage_title_ok: 'العنوان {n} حرفاً. نطاق 50–60 حرفاً يعرض جيداً في نتائج البحث.',
+  tool_onpage_title_short: 'العنوان {n} حرفاً فقط. أضف تركيز الصفحة المحدد ليكون أكثر إفادة.',
+  tool_onpage_unknown: 'تعذّر التحديد: {label}',
+  tool_onpage_url_error: 'أدخل رابط http(s) صالحاً.',
+  tool_onpage_url_fetch: 'فحص الرابط',
+  tool_onpage_url_ph: 'https://example.com/page',
+  tool_onpage_url_tab: 'جلب الرابط',
+  tool_onpage_usecase_1: 'قبل إعادة التصميم أو الإطلاق: مرّر الصفحة نفسها على المدقق وأصلح المشاكل المذكورة في جولة واحدة.',
+  tool_onpage_usecase_2:
+    'تسليم القوالب: عند استلام HTML من وكالة أو منشئ صفحات، تحقق من وسوم head بدلاً من الثقة في الملف المُصدَّر.',
+  tool_onpage_usecase_3:
+    'تحديث المحتوى: بعد التعديل في نظام إدارة المحتوى، تأكد من أن العنوان والوصف وcanonical ما زالت مطابقة للصفحة الجديدة.',
+  tool_onpage_usecases_title: 'استخدامات مناسبة',
   tool_organize_pdf_apply: 'تطبيق',
   tool_organize_pdf_article: 'أعد ترتيب صفحات PDF أو احذفها محليًا في المتصفح—الملف يبقى على جهازك ولا يُرفع إلى خادم.',
   tool_organize_pdf_choose_file: 'اختر PDF',
@@ -4858,7 +5213,7 @@ const ar: SiteLangDict = {
   tool_robots_copied: 'تم النسخ',
   tool_robots_copy: 'نسخ',
   tool_robots_description:
-    'أنشئ ملف robots.txt داخل متصفحك. الخطوات: اختر User-agent، أضف مسارات Allow / Disallow وسطر Sitemap لكل مجموعة، ثم انسخ النتيجة النصية مع شرح قواعد الصياغة وكتابة User-agent الخاصة بروبوتات الذكاء الاصطناعي المحدثة. يعمل محليًا — لا يُرفع أي شيء. مثال: حظر GPTBot مع إبقاء Googlebot مفعّلًا بالكامل.',
+    'يحدد robots.txt الصفحات التي يمكن لجوجل الزحف إليها وفهرستها، وقاعدة مكتوبة خطأً قد تُخفي موقعك كاملًا من نتائج البحث. أنشئ ملف robots.txt داخل متصفحك. الخطوات: اختر User-agent، أضف مسارات Allow / Disallow وسطر Sitemap لكل مجموعة، ثم انسخ النتيجة النصية مع شرح قواعد الصياغة وكتابة User-agent الخاصة بروبوتات الذكاء الاصطناعي المحدثة. يعمل محليًا — لا يُرفع أي شيء. مثال: حظر GPTBot مع إبقاء Googlebot مفعّلًا بالكامل.',
   tool_robots_disallow_label: 'مسارات Disallow (سطر لكل مسار)',
   tool_robots_download: 'تنزيل',
   tool_robots_empty_agent: 'اختر أو أضف User-agent أولًا.',
@@ -4877,7 +5232,8 @@ const ar: SiteLangDict = {
   tool_robots_faq_q3: 'أين يجب وضع سطر Sitemap؟',
   tool_robots_faq_q4: 'هل يُرفع ملف robots.txt إلى أي مكان؟',
   tool_robots_generate: 'توليد',
-  tool_robots_home_desc: 'أنشئ robots.txt بصياغة صحيحة للسماح والمنع وروبوتات الذكاء الاصطناعي داخل متصفحك.',
+  tool_robots_home_desc:
+    'تحكم في زحف محركات البحث إلى موقعك عبر robots.txt صالح — السماح والمنع وروبوتات الذكاء الاصطناعي داخل متصفحك.',
   tool_robots_home_title: 'مولّد robots.txt',
   tool_robots_how_body:
     'اختر الزاحف المستهدف، أضف مسارات Allow و Disallow لكل مجموعة، واختياريًا سطر Sitemap، ثم اضغط «توليد». تجمع الصفحة الملف النصي وفق تخطيط RFC 9309: سطر User-agent لكل مجموعة، أسفله سطور Allow/Disallow، سطر فارغ بين المجموعات، وسطر Sitemap في النهاية. انسخ النتيجة إلى جذر موقعك /robots.txt.',
@@ -5159,7 +5515,7 @@ const ar: SiteLangDict = {
   tool_schema_copied: 'تم النسخ',
   tool_schema_copy: 'نسخ',
   tool_schema_description:
-    'أنشئ JSON-LD داخل متصفحك. الخطوات: اختر نوعًا (FAQ / مقال / مسار / منظمة)، املأ الحقول المطلوبة، ثم انسخ ترميز Schema.org صالحًا مع وسم script جاهز للصق. الصفحة تميّز الحقول المطلوبة من الاختيارية وتتحقق من صحة JSON قبل النسخ. لا يُرفع أي شيء. مثال: FAQ من سؤالين ينتج mainEntity يحوي عقدتي Question.',
+    'البيانات المنظمة تساعد جوجل على فهم محتوى صفحتك بدقة، وقد تمنحك نتائج بحث أغنى وأكثر نقرًا. أنشئ JSON-LD داخل متصفحك. الخطوات: اختر نوعًا (FAQ / مقال / مسار / منظمة)، املأ الحقول المطلوبة، ثم انسخ ترميز Schema.org صالحًا مع وسم script جاهز للصق. الصفحة تميّز الحقول المطلوبة من الاختيارية وتتحقق من صحة JSON قبل النسخ. لا يُرفع أي شيء. مثال: FAQ من سؤالين ينتج mainEntity يحوي عقدتي Question.',
   tool_schema_download: 'تنزيل',
   tool_schema_err_no_fields: 'املأ الحقول المطلوبة أولًا ثم ولّد.',
   tool_schema_example:
@@ -5183,7 +5539,8 @@ const ar: SiteLangDict = {
   tool_schema_faq_remove: 'إزالة',
   tool_schema_fields_label: 'الحقول',
   tool_schema_generate: 'توليد',
-  tool_schema_home_desc: 'أنشئ بيانات منظمة Schema.org لـ FAQ والمقال والمسار والمنظمة داخل متصفحك.',
+  tool_schema_home_desc:
+    'ساعد جوجل على فهم صفحتك واحصل على نتائج بحث أغنى وأكثر نقرًا عبر JSON-LD من Schema.org — أنشئها داخل متصفحك.',
   tool_schema_home_title: 'مولّد JSON-LD',
   tool_schema_how_body:
     'اختر نوع السكيما، املأ الحقول، واضغط «توليد». تبني الصفحة كائن JSON-LD وفق Schema.org، وتتحقق من حضور الحقول المطلوبة، ثم تعرض الناتج المنسق داخل وسم script ليلصق في رأس صفحتك. قبل عرض الناتج تُجرى فحوصات الصياغة؛ الحقول المطلوبة الناقصة تُعرض كقائمة بدل إنتاج ترميز ناقص بصمت.',
@@ -5273,7 +5630,7 @@ const ar: SiteLangDict = {
   tool_serp_desc_label: 'وصف ميتا',
   tool_serp_desc_ph: 'نص الاقتطاع أسفل عنوان النتيجة',
   tool_serp_description:
-    'الصق عنوانًا ووصفًا لمعاينة كيف تظهر نتيجة بحث جوجل على الحاسوب والهاتف، وأين يُقتطع النص. أدخل العنوان والوصف ورابطًا اختياريًا، وسترى عدد الأحرف والعرض التقريبي بالبكسل ونقطة القص؛ يمكنك أيضًا مقارنة عنوانين متجاورين. كل شيء يعمل داخل متصفحك دون رفع أي بيانات. مثال: عنوان من 60 حرفًا لاتينيًا وعنوان من 30 حرفًا CJK قد يبلغان حد البكسل بعدد مختلف من الأحرف.',
+    'العنوان أو الوصف المقتطع في النتائج قد يُكلفك نقرات من جوجل بصمت. الصق عنوانًا ووصفًا لمعاينة كيف تظهر نتيجة بحث جوجل على الحاسوب والهاتف، وأين يُقتطع النص. أدخل العنوان والوصف ورابطًا اختياريًا، وسترى عدد الأحرف والعرض التقريبي بالبكسل ونقطة القص؛ يمكنك أيضًا مقارنة عنوانين متجاورين. كل شيء يعمل داخل متصفحك دون رفع أي بيانات. مثال: عنوان من 60 حرفًا لاتينيًا وعنوان من 30 حرفًا CJK قد يبلغان حد البكسل بعدد مختلف من الأحرف.',
   tool_serp_desktop: 'عرض الحاسوب',
   tool_serp_err_title_empty: 'أدخل عنوانًا لبدء المعاينة.',
   tool_serp_example:
@@ -5291,7 +5648,7 @@ const ar: SiteLangDict = {
   tool_serp_faq_q3: 'هل يطابق معاينة الهاتف في Search Console؟',
   tool_serp_faq_q4: 'هل يُرفع عنواني إلى أي مكان؟',
   tool_serp_fit: 'يناسب العرض',
-  tool_serp_home_desc: 'تحقق من اقتطاع العنوان والوصف قبل النشر.',
+  tool_serp_home_desc: 'العنوان المقتطع يُفقدك نقرات البحث — تحقق من الاقتطاع قبل النشر.',
   tool_serp_home_title: 'معاينة نتائج جوجل',
   tool_serp_how_body:
     'اكتب أو الصق العنوان والوصف ورابطًا اختياريًا. تقدر الأداة عدد الأحرف والبكسل التقريبي لكل سطر عبر تقريب لعرض الحروف (الحروف العربية والواسعة تُحسب أكثر من الحروف اللاتينية الضيقة)، ثم ترسم نتيجة بنمط جوجل للحاسوب وأخرى للهاتف. الأسطر الأوسع من العرض المقدر تُعلَّم بعلامة قص.',
@@ -5379,7 +5736,7 @@ const ar: SiteLangDict = {
   tool_sitemap_copied: 'نُسخ',
   tool_sitemap_copy: 'نسخ',
   tool_sitemap_description:
-    'أنشئ sitemap.xml في متصفحك. الخطوات: الصق رابط https واحدًا في كل سطر مع lastmod / changefreq / priority اختيارية، عاين XML بعد الهروب الصحيح للرموز، وانسخه إلى جذر موقعك. تعرض الصفحة قواعد البروتوكول وحدوده. لا يُرفع أي بيانات. مثال: 3 روابط → urlset يضم ثلاثة عناصر url.',
+    'يساعد sitemap جوجل على اكتشاف صفحاتك وفهرستها بسرعة أكبر، خاصة الصفحات الجديدة أو التي تفتقر إلى روابط خارجية كثيرة. أنشئ sitemap.xml في متصفحك. الخطوات: الصق رابط https واحدًا في كل سطر مع lastmod / changefreq / priority اختيارية، عاين XML بعد الهروب الصحيح للرموز، وانسخه إلى جذر موقعك. تعرض الصفحة قواعد البروتوكول وحدوده. لا يُرفع أي بيانات. مثال: 3 روابط → urlset يضم ثلاثة عناصر url.',
   tool_sitemap_download: 'تنزيل',
   tool_sitemap_example:
     'إدخال نموذجي: https://example.com/ وhttps://example.com/products مع lastmod 2026-08-01، بالإضافة إلى https://example.com/about — المخرجات urlset بثلاثة عناصر url، والوسط منها يحمل lastmod.',
@@ -5400,7 +5757,7 @@ const ar: SiteLangDict = {
     'كل سطر: URL، أو URL | lastmod (yyyy-MM-dd)، أو URL | lastmod | changefreq | priority. مثال: https://example.com/page | 2026-08-01 | weekly | 0.8',
   tool_sitemap_generate: 'توليد',
   tool_sitemap_home_desc:
-    'حوّل قائمة عناوين URL إلى sitemap.xml صالحة مع lastmod وchangefreq وpriority، داخل المتصفح دون رفع أي شيء.',
+    'ساعد جوجل على اكتشاف صفحاتك وفهرستها بشكل أسرع — حوّل قائمة عناوين URL إلى sitemap.xml صالحة مع lastmod وchangefreq وpriority، داخل المتصفح دون رفع أي شيء.',
   tool_sitemap_home_title: 'مولّد خريطة الموقع XML',
   tool_sitemap_how_body:
     'الصق قائمتك، رابطًا في كل سطر. بعد رمز الفاصلة العمودية يمكن إضافة lastmod (yyyy-MM-dd) وchangefreq وpriority. تحلل الصفحة كل سطر، تهرب الرموز المحجوزة، تتحقق أن الرابط يبدأ بـ http(s)، وتبني urlset وفق البروتوكول. انسخ XML إلى جذر الموقع، واربطه من robots.txt أو أرسله في Search Console.',
@@ -6101,6 +6458,97 @@ const ar: SiteLangDict = {
   tool_unlock_pdf_usecases_title: 'حالات مناسبة',
   tool_unlock_pdf_warn_large: 'ملف أكبر من ~25 MB — قد يبطئ أو يفشل في بعض المتصفحات.',
   tool_unlock_pdf_warn_pdflib: 'فشل تحميل مكتبة PDF. تحقق من الشبكة وأعد المحاولة.',
+  tool_utm_campaign_hint: 'الترويج أو المنتج الذي ينتمي إليه الرابط.',
+  tool_utm_campaign_label: 'اسم الحملة (utm_campaign)',
+  tool_utm_campaign_ph: 'summer_sale',
+  tool_utm_campaign_required: 'اسم الحملة (utm_campaign) مطلوب.',
+  tool_utm_case_note:
+    'يميز Google Analytics بين الأحرف الكبيرة والصغيرة في القيم. استخدم نمطًا ثابتًا بالأحرف الصغيرة حتى تتجمع القناة نفسها.',
+  tool_utm_clear: 'مسح',
+  tool_utm_content_hint: 'اختياري. يميز الإعلانات أو الروابط التي تشير إلى نفس URL.',
+  tool_utm_content_label: 'محتوى الحملة (utm_content)',
+  tool_utm_content_ph: 'header_banner',
+  tool_utm_copied: 'تم النسخ',
+  tool_utm_copy: 'نسخ',
+  tool_utm_description:
+    'وسوم UTM النظيفة هي الطريقة الوحيدة لإثبات الحملات أو الرسائل أو المنشورات التي تجلب زياراتك فعلًا؛ وبدونها تبقى جهودك في SEO والتسويق غير مرئية في التحليلات. أنشئ رابط تتبع من عنوان URL لصفحة الهبوط مع utm_source وutm_medium وutm_campaign وutm_term وutm_content. الخطوات: الصق عنوان URL الأساسي، واملأ المعاملات الخمسة، ثم انسخ الرابط المولّد بترميز URL صحيح. تُحفظ معاملات الاستعلام الموجودة وتُدمج دون استبدال. يعمل بالكامل على جهازك — لا يُرفع شيء. مثال: https://example.com/page مع source=newsletter وmedium=email وcampaign=summer_sale.',
+  tool_utm_encoding_note: 'تُرمَّز القيم باستخدام encodeURIComponent: تتحول المسافات إلى %20 وتُرمَّز الأحرف غير ASCII.',
+  tool_utm_error_prefix: 'خطأ: ',
+  tool_utm_example:
+    'الإدخال المثال هو https://example.com/page مع utm_source=newsletter وutm_medium=email وutm_campaign=summer_sale. الرابط المولّد هو https://example.com/page?utm_source=newsletter&utm_medium=email&utm_campaign=summer_sale.',
+  tool_utm_example_title: 'مثال',
+  tool_utm_faq_a1:
+    'يوضح utm_source أين شوهد الرابط (newsletter أو facebook أو google)، بينما يوضح utm_medium طريقة الإيصال (email أو cpc أو social أو referral). يدمجهما GA4 مع utm_campaign لتسمية مصدر الزيارات.',
+  tool_utm_faq_a2:
+    'لا. تُحفظ المعاملات الموجودة وتُضاف UTM بـ &. إذا كان الرابط يحتوي معاملًا بنفس الاسم، يحلّ المكان القيمة الجديدة.',
+  tool_utm_faq_a3:
+    'تُرمَّز كل قيمة بنسبة مئوية: المسافات تتحول إلى %20 والأحرف غير ASCII تُرمَّز أيضًا. يبقى الرابط المولّد صالحًا في برامج البريد والمراسلات والمتصفحات.',
+  tool_utm_faq_a4:
+    'نعم. يعامل Google Analytics utm_source=Facebook وutm_source=facebook كمصدرين مختلفين. استخدم نمطًا ثابتًا بالأحرف الصغيرة حتى تتجمع القناة نفسها.',
+  tool_utm_faq_a5:
+    'يحدد utm_term كلمات البحث المدفوعة، وهو مفيد لإعلانات Google. يميز utm_content بين رابطين أو إعلانين يشيران إلى نفس URL، مثل لافتة الرأس ورابط التذييل.',
+  tool_utm_faq_a6: 'لا. يعمل المنشئ بالكامل في متصفحك ولا يُرفع أي شيء.',
+  tool_utm_faq_q1: 'ما الفرق بين utm_source وutm_medium؟',
+  tool_utm_faq_q2: 'العنوان يحتوي معاملات استعلام. هل ستُفقد؟',
+  tool_utm_faq_q3: 'ماذا عن المسافات أو الأحرف غير اللاتينية أو الرموز في القيم؟',
+  tool_utm_faq_q4: 'هل تتأثر قيم UTM بأحرف الحالة؟',
+  tool_utm_faq_q5: 'متى أستخدم utm_term وutm_content؟',
+  tool_utm_faq_q6: 'هل يُرسل عنوان URL الخاص بي إلى أي مكان؟',
+  tool_utm_generate: 'إنشاء',
+  tool_utm_home_desc:
+    'قيّس الحملات التي تجلب زياراتك فعلًا — أنشئ روابط تتبع نظيفة باستخدام utm_source وmedium وcampaign وterm وcontent من المتصفح.',
+  tool_utm_home_title: 'منشئ UTM',
+  tool_utm_how_body:
+    'يحلل المنشئ عنوان URL الأساسي، ويحفظ معاملات الاستعلام الموجودة، ثم يضيف معاملات UTM بفاصل &. تُرمَّز كل قيمة بنسبة مئوية حتى تبقى المسافات والأحرف غير اللاتينية والرموز سليمة في الرابط. إذا كان للرابط تجزئة (hash)، تُنقل بعد كل المعاملات. هذه المعاملات الخمسة هي ما يقرؤه Google Analytics ليعزو الزيارة إلى مصدر ووسيط وحملة.',
+  tool_utm_how_title: 'كيف يعمل',
+  tool_utm_medium_hint: 'كيف وُصّل الرابط: email أو cpc أو social أو referral.',
+  tool_utm_medium_label: 'وسيط الحملة (utm_medium)',
+  tool_utm_medium_ph: 'email',
+  tool_utm_output_label: 'الرابط المولّد',
+  tool_utm_param_campaign: 'utm_campaign',
+  tool_utm_param_content: 'utm_content',
+  tool_utm_param_empty: 'فارغ',
+  tool_utm_param_medium: 'utm_medium',
+  tool_utm_param_optional: 'اختياري',
+  tool_utm_param_required: 'مطلوب',
+  tool_utm_param_source: 'utm_source',
+  tool_utm_param_status: 'الحالة',
+  tool_utm_param_term: 'utm_term',
+  tool_utm_param_value: 'القيمة',
+  tool_utm_ref_ga_label: 'Google Analytics — الحملات المخصصة (UTM)',
+  tool_utm_ref_searchcentral_label: 'Google Search Central — معاملات URL',
+  tool_utm_references: 'Google Analytics — الحملات المخصصة (UTM)؛ Google Search Central — معاملات URL.',
+  tool_utm_rules_body: 'هذه تعريفات معاملات UTM وقواعد الترميز وفقًا لتوثيق Google Analytics.',
+  tool_utm_rules_item_1: 'يحدد utm_source مكان ظهور الرابط، وutm_medium طريقة إيصاله. كلاهما مطلوب للإسناد.',
+  tool_utm_rules_item_2:
+    'utm_campaign هو اسم الترويج وهو مطلوب هنا. utm_term وutm_content اختياريان: term للكلمات المدفوعة، وcontent للتمييز بين رابطين.',
+  tool_utm_rules_item_3:
+    'إذا كان عنوان URL يحتوي معاملات استعلام، تُحفظ وتُضاف UTM بـ &؛ ويُستبدل أي معامل موجود يحمل الاسم نفسه.',
+  tool_utm_rules_item_4:
+    'تُرمَّز القيم بنسبة مئوية: المسافات تتحول إلى %20 والأحرف غير ASCII تُرمَّز أيضًا. يبقى الجزء بعد علامة # بعد سلسلة الاستعلام دائمًا.',
+  tool_utm_rules_item_5:
+    'استخدم نمطًا ثابتًا بالأحرف الصغيرة. يميز Google Analytics بين أحرف القيم، لذا سيكون facebook وFacebook مصدرين مختلفين.',
+  tool_utm_rules_title: 'قواعد المنشئ',
+  tool_utm_sample: 'مثال',
+  tool_utm_source_hint: 'أين شوهد الرابط: newsletter أو facebook أو google.',
+  tool_utm_source_label: 'مصدر الحملة (utm_source)',
+  tool_utm_source_ph: 'newsletter',
+  tool_utm_table_title: 'تفصيل المعاملات',
+  tool_utm_term_hint: 'اختياري. يحدد كلمات البحث المدفوعة.',
+  tool_utm_term_label: 'مصطلح الحملة (utm_term)',
+  tool_utm_term_ph: 'running_shoes',
+  tool_utm_title: 'منشئ UTM — أنشئ روابط تتبع الحملات',
+  tool_utm_url_invalid: 'يبدو عنوان URL غير صالح. تحقق من العنوان وحاول مجددًا.',
+  tool_utm_url_label: 'عنوان URL لصفحة الهبوط',
+  tool_utm_url_ph: 'https://example.com/page',
+  tool_utm_url_protocol: 'لم يُعثر على بروتوكول — تمت إضافة https:// تلقائيًا.',
+  tool_utm_url_required: 'أدخل عنوان URL لصفحة الهبوط.',
+  tool_utm_usecase_1: 'حملات التواصل: أنشئ رابطًا لكل منصة بنفس utm_campaign ليرصد GA4 الترويج كله في صف واحد.',
+  tool_utm_usecase_2:
+    'إرسال البريد: استخدم utm_source=newsletter وutm_medium=email وقيم content مختلفة لمقارنة لافتين تشيران إلى نفس الصفحة.',
+  tool_utm_usecase_3:
+    'رموز QR والروابط المطبوعة: رابط UTM الكامل طويل، لكن يمكنك تقصيره بعد الإنشاء مع الإبقاء على المعاملات.',
+  tool_utm_usecases_title: 'حالات استخدام مناسبة',
   tool_uuid_generator_article:
     'ولّد معرّفات UUID v4 أو ULID محليًا بعشوائية cryptographically قوية. انسخ دفعات لبيانات اختبار أو trace id أو stubs — بلا رفع.',
   tool_uuid_generator_clear: 'مسح',
