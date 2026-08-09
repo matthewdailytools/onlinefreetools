@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-rule-of-72",
+  "path": "/tools/how-to-calculate-rule-of-72",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": true,
+  "i18nKey": "tool_rule_of_72_title",
+  "homeTitleKey": "tool_rule_of_72_title",
+  "homeDescKey": "tool_rule_of_72_description",
+  "faqPrefix": "tool_rule_of_72",
+  "related": [
+    "how-to-calculate-cagr",
+    "how-to-calculate-compound-interest"
+  ],
+  "logo": "/icons/tools/how-to-calculate-rule-of-72.svg",
+  "page": {
+    "module": "../pages/howToCalculateRuleOf72Page",
+    "export": "renderHowToCalculateRuleOf72Page",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

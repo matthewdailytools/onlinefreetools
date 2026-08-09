@@ -1,0 +1,51 @@
+/**
+ * i18n tool shard (how-to-calculate-scientific-notation / ja).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const ja: SiteLangDict = {
+	tool_scientific_notation_title: "科学表記計算ツール — 科学的記数法の変換",
+	tool_scientific_notation_description: "通常の小数と科学表記 a×10^b を相互変換します。例：12300 → 1.23×10^4。展開時は 1.23e4 や 1.23×10^4 を受け付け、係数と指数も示します。ブラウザ内で宿題向けで、正規化範囲 1≤|a|<10 とゼロの扱いも明示します。",
+	tool_scientific_notation_calculate: "計算する",
+	tool_scientific_notation_sample: "サンプル",
+	tool_scientific_notation_clear: "クリア",
+	tool_scientific_notation_mode_label: "方向",
+	tool_scientific_notation_mode_toSci: "小数 → 科学表記",
+	tool_scientific_notation_mode_toDec: "科学表記 → 小数",
+	tool_scientific_notation_value_label: "値",
+	tool_scientific_notation_value_ph: "例: 12300 または 1.23e4 または 1.23×10^4",
+	tool_scientific_notation_resultOut_label: "変換結果",
+	tool_scientific_notation_coeffOut_label: "係数 a",
+	tool_scientific_notation_expOut_label: "指数 b",
+	tool_scientific_notation_result_note: "科学表記 a×10^b（1 ≤ |a| < 10。0 は 0×10^0）。",
+	tool_scientific_notation_err_generic: "選択したモードで解析できる小数または科学表記を入力してください。",
+	tool_scientific_notation_how_title: "使い方",
+	tool_scientific_notation_how_body: "方向を選びます。小数→科学は通常の数、科学→小数は 1.23e4 や 1.23×10^4 を貼れます。変換文字列と、必要なら係数・指数を示します。",
+	tool_scientific_notation_formula_title: "換算の規則",
+	tool_scientific_notation_formula_body: "x を正規化した a×10^b で書く：",
+	tool_scientific_notation_formula_item_1: "小数点を動かして 1 ≤ |a| < 10（ゼロは 0×10^0）。",
+	tool_scientific_notation_formula_item_2: "b は小数点を動かした桁数。",
+	tool_scientific_notation_formula_item_3: "1.23e4、1.23E+4、1.23×10^4、1.23*10^4 を受け付け。",
+	tool_scientific_notation_formula_item_4: "読みやすい a×10^b を優先表示。",
+	tool_scientific_notation_example_title: "例",
+	tool_scientific_notation_example: "例：12300 → 1.23×10^4（a = 1.23、b = 4）。",
+	tool_scientific_notation_usecases_title: "こんなときに",
+	tool_scientific_notation_usecase_1: "大きい/小さい小数を科学表記に書き換える宿題。",
+	tool_scientific_notation_usecase_2: "a×10^b を通常の小数に戻す。",
+	tool_scientific_notation_usecase_3: "電卓の e 表記と ×10^b を照合。",
+	tool_scientific_notation_disclaimer: "教育用の換算のみで、任意精度演算ライブラリではありません。",
+	tool_scientific_notation_references: "Wikipedia の科学的記数法。",
+	tool_scientific_notation_ref_sci_label: "Wikipedia — 科学的記数法",
+	tool_scientific_notation_ref_exp_label: "Wikipedia — 冪乗",
+	tool_scientific_notation_article: "ブラウザで小数と a×10^b の科学表記を相互変換します。",
+	tool_scientific_notation_faq_q1: "負の数は？",
+	tool_scientific_notation_faq_a1: "符号は係数 a に残り、指数は小数点の移動を表します。",
+	tool_scientific_notation_faq_q2: "どの書き方を受け付ける？",
+	tool_scientific_notation_faq_a2: "1.23e4、1.23E+4、1.23×10^4、1.23*10^4。",
+	tool_scientific_notation_faq_q3: "a の範囲は？",
+	tool_scientific_notation_faq_a3: "正規化では 1 ≤ |a| < 10（ゼロ以外）。",
+	tool_scientific_notation_faq_q4: "精度は無限？",
+	tool_scientific_notation_faq_a4: "いいえ。学習用の通常の JS 数値変換です。",
+};
+
+export default ja;

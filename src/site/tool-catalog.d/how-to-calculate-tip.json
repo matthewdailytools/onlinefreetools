@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-tip",
+  "path": "/tools/how-to-calculate-tip",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_tip_title",
+  "homeTitleKey": "tool_tip_title",
+  "homeDescKey": "tool_tip_description",
+  "faqPrefix": "tool_tip",
+  "related": [
+    "how-to-calculate-vat",
+    "how-to-calculate-discount"
+  ],
+  "logo": "/icons/tools/how-to-calculate-tip.svg",
+  "page": {
+    "module": "../pages/howToCalculateTipPage",
+    "export": "renderHowToCalculateTipPage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

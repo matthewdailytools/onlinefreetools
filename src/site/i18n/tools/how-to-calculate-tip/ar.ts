@@ -1,0 +1,51 @@
+/**
+ * i18n tool shard (how-to-calculate-tip / ar).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const ar: SiteLangDict = {
+	tool_tip_title: "حاسبة البقشيش",
+	tool_tip_description: "احسب البقشيش من الفاتورة والنسبة ثم اقسم الإجمالي. مثال: فاتورة 80 و15٪ → بقشيش 12 والإجمالي 92. في المتصفح. حساب تعليمي في المتصفح وليس نصيحة مهنية.",
+	tool_tip_calculate: "احسب",
+	tool_tip_sample: "تحميل مثال",
+	tool_tip_clear: "مسح",
+	tool_tip_bill_label: "الفاتورة",
+	tool_tip_bill_ph: "مثال 80",
+	tool_tip_tip_label: "البقشيش %",
+	tool_tip_tip_ph: "مثال 15",
+	tool_tip_split_label: "الأشخاص",
+	tool_tip_split_ph: "مثال 1",
+	tool_tip_tipOut_label: "البقشيش",
+	tool_tip_totalOut_label: "الإجمالي",
+	tool_tip_eachOut_label: "للشخص",
+	tool_tip_result_note: "تعليمي.",
+	tool_tip_err_generic: "تحقق من المدخلات.",
+	tool_tip_how_title: "طريقة الاستخدام",
+	tool_tip_how_body: "أدخل الفاتورة والنسبة والأشخاص.",
+	tool_tip_formula_title: "الصيغة",
+	tool_tip_formula_body: "أدخل الفاتورة والنسبة والأشخاص.",
+	tool_tip_formula_item_1: "See formula notes.",
+	tool_tip_formula_item_2: "Check inputs.",
+	tool_tip_formula_item_3: "Educational only.",
+	tool_tip_example_title: "مثال",
+	tool_tip_example: "مثال: 80 و15٪ → 12 / الإجمالي 92.",
+	tool_tip_usecases_title: "متى تستخدمه",
+	tool_tip_usecase_1: "Homework.",
+	tool_tip_usecase_2: "Quick sketch.",
+	tool_tip_usecase_3: "Compare related tools.",
+	tool_tip_faq_q1: "المثال؟",
+	tool_tip_faq_a1: "مثال: 80 و15٪ → 12 / الإجمالي 92.",
+	tool_tip_faq_q2: "Formula?",
+	tool_tip_faq_a2: "See Formula section.",
+	tool_tip_faq_q3: "Advice?",
+	tool_tip_faq_a3: "Educational only.",
+	tool_tip_faq_q4: "Related?",
+	tool_tip_faq_a4: "See related tools.",
+	tool_tip_article: "حاسبة البقشيش",
+	tool_tip_disclaimer: "توضيح تعليمي فقط (tip) وليس نصيحة مالية.",
+	tool_tip_references: "Investopedia وصيغ دراسية.",
+	tool_tip_ref_a_label: "Investopedia",
+	tool_tip_ref_b_label: "Wikipedia",
+};
+
+export default ar;

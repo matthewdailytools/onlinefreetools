@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-vat / zh).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const zh: SiteLangDict = {
+	tool_vat_title: "增值税计算器 — 含税与未税互算",
+	tool_vat_description: "按自填税率给净价加增值税/GST，或从含税价反推税额。示例：净价 100、税率 20% → 含税价 120。不按国家拆页；浏览器本地计算，数据不上传服务器。；全程浏览器本地计算，数据不上传服务器；结果仅供学习对照，不构成投资、理财或经营建议。；全程浏览器本地计算，数据不上传服务器；结果仅供学习对照，不构成投资、理财或经营建议。",
+	tool_vat_calculate: "计算",
+	tool_vat_sample: "加载样例",
+	tool_vat_clear: "清空",
+	tool_vat_mode_label: "模式",
+	tool_vat_mode_add: "净价加税",
+	tool_vat_mode_extract: "含税拆税",
+	tool_vat_amount_label: "金额",
+	tool_vat_amount_ph: "例如 100",
+	tool_vat_rate_label: "税率 %",
+	tool_vat_rate_ph: "例如 20",
+	tool_vat_grossOut_label: "含税价",
+	tool_vat_netOut_label: "净价",
+	tool_vat_taxOut_label: "税额",
+	tool_vat_result_note: "加税：含税=净价×(1+r)；拆税：净价=含税/(1+r)。请自填税率。",
+	tool_vat_err_generic: "金额>0，税率≥0。",
+	tool_vat_how_title: "怎么用",
+	tool_vat_how_body: "选择加税或拆税，填金额与税率。不提供各国税率矩阵。",
+	tool_vat_formula_title: "公式",
+	tool_vat_formula_body: "含税=净价×(1+r)；净价=含税/(1+r)；税额=含税−净价。注意：",
+	tool_vat_formula_item_1: "r 由百分比换算。",
+	tool_vat_formula_item_2: "多档税率与减免不建模。",
+	tool_vat_formula_item_3: "不是申报合规工具。",
+	tool_vat_example_title: "示例",
+	tool_vat_example: "示例：净价 100、20% → 含税 120、税 20。",
+	tool_vat_usecases_title: "适合什么场景",
+	tool_vat_usecase_1: "增值税加减作业。",
+	tool_vat_usecase_2: "记账前速算。",
+	tool_vat_usecase_3: "与折扣/小费页对照小票。",
+	tool_vat_faq_q1: "样例？",
+	tool_vat_faq_a1: "100 加 20% → 120。",
+	tool_vat_faq_q2: "各国税率？",
+	tool_vat_faq_a2: "请自填；无矩阵。",
+	tool_vat_faq_q3: "申报？",
+	tool_vat_faq_a3: "不做。",
+	tool_vat_faq_q4: "GST 与 VAT？",
+	tool_vat_faq_a4: "加减算法相同，名称因地而异。",
+	tool_vat_article: "增值税互算",
+	tool_vat_disclaimer: "结果仅为增值税学习演示，不构成投资、理财或税务建议。",
+	tool_vat_references: "Investopedia 与常见教材公式。",
+	tool_vat_ref_a_label: "Investopedia — VAT",
+	tool_vat_ref_b_label: "Investopedia — Sales tax",
+};
+
+export default zh;

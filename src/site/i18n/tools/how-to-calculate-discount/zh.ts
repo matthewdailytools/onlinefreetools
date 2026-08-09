@@ -1,0 +1,50 @@
+/**
+ * i18n tool shard (how-to-calculate-discount / zh).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const zh: SiteLangDict = {
+	tool_discount_title: "折扣计算器 — 如何算出优惠价",
+	tool_discount_description: "用原价与折扣百分比计算优惠后成交价。示例：原价 100、打 8 折（减 20%）→ 成交价 80。可选第二层折扣在折后价上继续乘。全程浏览器本地计算，数据不上传服务器；仅供购物与作业对照，不是店铺收银系统；第二层折扣按折后价叠乘，固定金额券请自行加减。",
+	tool_discount_calculate: "计算",
+	tool_discount_sample: "加载样例",
+	tool_discount_clear: "清空",
+	tool_discount_original_label: "原价",
+	tool_discount_original_ph: "例如 100",
+	tool_discount_pct_label: "折扣（减价 %）",
+	tool_discount_pct_ph: "例如 20",
+	tool_discount_pct2_label: "第二层折扣 %（可选）",
+	tool_discount_pct2_ph: "例如 10",
+	tool_discount_finalOut_label: "成交价",
+	tool_discount_savedOut_label: "共节省",
+	tool_discount_result_note: "若填写第二层折扣，则在折后价上继续乘（叠折）。仅供学习对照。",
+	tool_discount_err_generic: "请填写大于 0 的原价，以及 0–100 之间的折扣百分比。",
+	tool_discount_how_title: "怎么用",
+	tool_discount_how_body: "填入原价与减价百分比；需要时可再填第二层折扣（作用在折后价上）。页面会给出成交价与节省额。计算在浏览器内完成。",
+	tool_discount_formula_title: "公式",
+	tool_discount_formula_body: "成交价 = 原价 × (1 − d₁/100) × (1 − d₂/100)（有第二层时）；否则去掉第二项。注意：",
+	tool_discount_formula_item_1: "d₁、d₂ 是「减百分之几」（20 表示减 20%），不是 0.8 这种乘数。",
+	tool_discount_formula_item_2: "第二层留空或填 0 即单层折扣。",
+	tool_discount_formula_item_3: "税费、固定金额券与店铺舍入规则不在本页建模。",
+	tool_discount_example_title: "示例",
+	tool_discount_example: "示例：原价 100、减 20% → 成交价 = 100 × 0.8 = 80（省 20）。再减 10% → 80 × 0.9 = 72。",
+	tool_discount_usecases_title: "适合什么场景",
+	tool_discount_usecase_1: "结账前粗算单层折扣后的应付（未含税）。",
+	tool_discount_usecase_2: "作业：练习连续百分比折扣。",
+	tool_discount_usecase_3: "营销叠折的心算对照。",
+	tool_discount_faq_q1: "双层折扣怎么算？",
+	tool_discount_faq_a1: "第二层百分比乘在已经折过的价格上，不是再对原价减一次。",
+	tool_discount_faq_q2: "减 20% 是不是只付 20%？",
+	tool_discount_faq_a2: "不是。减 20% 表示付原价的 80%（乘 0.8）。",
+	tool_discount_faq_q3: "含税吗？",
+	tool_discount_faq_a3: "不含。请填税前金额；税额请用增值税等工具另算。",
+	tool_discount_faq_q4: "固定金额优惠券呢？",
+	tool_discount_faq_a4: "本页只做百分比折扣；固定金额请自行先加减。",
+	tool_discount_disclaimer: "结果仅供价格演算学习，不是店铺收银或税务系统。",
+	tool_discount_references: "Investopedia 折扣说明；连续百分比折扣算术。",
+	tool_discount_ref_a_label: "Investopedia — Discount",
+	tool_discount_ref_b_label: "维基百科 — 折扣",
+	tool_discount_article: "用原价与减价百分比算成交价，可选同页叠第二层折扣。",
+};
+
+export default zh;

@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-paint",
+  "path": "/tools/how-to-calculate-paint",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_paint_title",
+  "homeTitleKey": "tool_paint_title",
+  "homeDescKey": "tool_paint_description",
+  "faqPrefix": "tool_paint",
+  "related": [
+    "how-to-calculate-tile",
+    "how-to-calculate-concrete"
+  ],
+  "logo": "/icons/tools/how-to-calculate-paint.svg",
+  "page": {
+    "module": "../pages/howToCalculatePaintPage",
+    "export": "renderHowToCalculatePaintPage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

@@ -1,0 +1,53 @@
+/**
+ * i18n tool shard (how-to-calculate-macros / en).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const en: SiteLangDict = {
+	tool_macros_title: "Macro Calculator — Calories to Protein Carb Fat Grams",
+	tool_macros_description: "Calculate daily macro grams from calories and protein/carb/fat percents (4 / 4 / 9 kcal per gram). Example: 2000 kcal at 30/40/30% → 150 g / 200 g / ≈66.67 g. Educational only — not medical advice.",
+	tool_macros_calculate: "Calculate",
+	tool_macros_sample: "Load sample",
+	tool_macros_clear: "Clear",
+	tool_macros_cal_label: "Calories (kcal)",
+	tool_macros_cal_ph: "e.g. 2000",
+	tool_macros_pPct_label: "Protein %",
+	tool_macros_pPct_ph: "e.g. 30",
+	tool_macros_cPct_label: "Carb %",
+	tool_macros_cPct_ph: "e.g. 40",
+	tool_macros_fPct_label: "Fat %",
+	tool_macros_fPct_ph: "e.g. 30",
+	tool_macros_pG_label: "Protein (g)",
+	tool_macros_cG_label: "Carbs (g)",
+	tool_macros_fG_label: "Fat (g)",
+	tool_macros_result_note: "Grams = (kcal × percent/100) ÷ kcal-per-gram (P/C=4, fat=9). Percents should sum to 100.",
+	tool_macros_err_generic: "Enter calories > 0 and percents ≥ 0 that sum to 100.",
+	tool_macros_how_title: "How it works",
+	tool_macros_how_body: "Enter daily calories and protein/carb/fat percents. This is textbook energy arithmetic, not a meal plan.",
+	tool_macros_formula_title: "Formula",
+	tool_macros_formula_body: "g_P = kcal×p%/4; g_C = kcal×c%/4; g_F = kcal×f%/9. Notes:",
+	tool_macros_formula_item_1: "Percents must sum to 100 (± tiny float).",
+	tool_macros_formula_item_2: "Not individualized nutrition therapy.",
+	tool_macros_formula_item_3: "Pair with heart-rate / BMR–TDEE tools for education.",
+	tool_macros_example_title: "Example",
+	tool_macros_example: "Example: 2000 kcal at 30/40/30% → 150 g protein, 200 g carbs, ≈66.67 g fat.",
+	tool_macros_usecases_title: "When to use it",
+	tool_macros_usecase_1: "Classroom macro math.",
+	tool_macros_usecase_2: "Compare percent splits.",
+	tool_macros_usecase_3: "Educational pairing with BMR/TDEE.",
+	tool_macros_faq_q1: "Sample?",
+	tool_macros_faq_a1: "2000 @ 30/40/30 → 150/200/≈66.67 g.",
+	tool_macros_faq_q2: "Medical advice?",
+	tool_macros_faq_a2: "No — educational only.",
+	tool_macros_faq_q3: "Why 9 for fat?",
+	tool_macros_faq_a3: "Fat has ~9 kcal/g; P/C ~4.",
+	tool_macros_faq_q4: "Sum ≠100?",
+	tool_macros_faq_a4: "Rejected.",
+	tool_macros_article: "Macronutrient grams",
+	tool_macros_disclaimer: "Educational macronutrients only — not medical advice. Consult a qualified clinician.",
+	tool_macros_references: "CDC / ACSM-style educational references.",
+	tool_macros_ref_a_label: "Wikipedia — Food energy",
+	tool_macros_ref_b_label: "CDC Nutrition",
+};
+
+export default en;

@@ -1,0 +1,50 @@
+/**
+ * i18n tool shard (how-to-calculate-debt-payoff / es).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const es: SiteLangDict = {
+	tool_debt_payoff_title: "Calculadora de liquidación de deuda",
+	tool_debt_payoff_description: "Estima meses para liquidar un saldo con pago mensual fijo e interés anual. Ejemplo: 5000 al 12% pagando 200/mes. Educativo.",
+	tool_debt_payoff_calculate: "Calcular",
+	tool_debt_payoff_sample: "Cargar ejemplo",
+	tool_debt_payoff_clear: "Limpiar",
+	tool_debt_payoff_principal_label: "Saldo",
+	tool_debt_payoff_principal_ph: "p. ej. 5000",
+	tool_debt_payoff_rate_label: "Interés anual %",
+	tool_debt_payoff_rate_ph: "p. ej. 12",
+	tool_debt_payoff_pay_label: "Pago mensual",
+	tool_debt_payoff_pay_ph: "p. ej. 200",
+	tool_debt_payoff_monthsOut_label: "Meses",
+	tool_debt_payoff_interestOut_label: "Interés total (aprox.)",
+	tool_debt_payoff_result_note: "Educativo.",
+	tool_debt_payoff_err_generic: "Revisa los datos.",
+	tool_debt_payoff_how_title: "Cómo funciona",
+	tool_debt_payoff_how_body: "Introduce saldo, tasa y pago mensual.",
+	tool_debt_payoff_formula_title: "Fórmula",
+	tool_debt_payoff_formula_body: "Introduce saldo, tasa y pago mensual.",
+	tool_debt_payoff_formula_item_1: "See formula notes.",
+	tool_debt_payoff_formula_item_2: "Check inputs.",
+	tool_debt_payoff_formula_item_3: "Educational only.",
+	tool_debt_payoff_example_title: "Ejemplo",
+	tool_debt_payoff_example: "Ejemplo: ~30 meses.",
+	tool_debt_payoff_usecases_title: "Cuándo usarlo",
+	tool_debt_payoff_usecase_1: "Homework.",
+	tool_debt_payoff_usecase_2: "Quick sketch.",
+	tool_debt_payoff_usecase_3: "Compare related tools.",
+	tool_debt_payoff_faq_q1: "¿Ejemplo?",
+	tool_debt_payoff_faq_a1: "Ejemplo: ~30 meses.",
+	tool_debt_payoff_faq_q2: "Formula?",
+	tool_debt_payoff_faq_a2: "See Formula section.",
+	tool_debt_payoff_faq_q3: "Advice?",
+	tool_debt_payoff_faq_a3: "Educational only.",
+	tool_debt_payoff_faq_q4: "Related?",
+	tool_debt_payoff_faq_a4: "See related tools.",
+	tool_debt_payoff_article: "Calculadora de liquidación de deuda",
+	tool_debt_payoff_disclaimer: "Solo ilustración educativa (debt payoff); no es consejo financiero.",
+	tool_debt_payoff_references: "Investopedia y fórmulas de libro.",
+	tool_debt_payoff_ref_a_label: "Investopedia",
+	tool_debt_payoff_ref_b_label: "Wikipedia",
+};
+
+export default es;

@@ -1,0 +1,51 @@
+/**
+ * i18n tool shard (how-to-calculate-profit-margin / fr).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const fr: SiteLangDict = {
+	tool_profit_margin_title: "Calculateur de marge — Nette ou d’exploitation",
+	tool_profit_margin_description: "Calculez la marge nette ou d’exploitation à partir du chiffre d’affaires et des coûts. Exemple : CA 10 000 et coûts 7 000 → marge nette 30 %. Type sur une page. Éducatif.",
+	tool_profit_margin_calculate: "Calculer",
+	tool_profit_margin_sample: "Charger l’exemple",
+	tool_profit_margin_clear: "Effacer",
+	tool_profit_margin_type_label: "Type de marge",
+	tool_profit_margin_type_net: "Marge nette",
+	tool_profit_margin_type_op: "Marge d’exploitation",
+	tool_profit_margin_rev_label: "Chiffre d’affaires",
+	tool_profit_margin_rev_ph: "ex. 10000",
+	tool_profit_margin_cost_label: "Coûts",
+	tool_profit_margin_cost_ph: "ex. 7000",
+	tool_profit_margin_marginOut_label: "Marge %",
+	tool_profit_margin_profitOut_label: "Profit",
+	tool_profit_margin_result_note: "Marge = profit ÷ CA. Éducatif.",
+	tool_profit_margin_err_generic: "CA > 0 et coûts ≥ 0.",
+	tool_profit_margin_how_title: "Fonctionnement",
+	tool_profit_margin_how_body: "Choisissez le type, puis CA et coûts. Marge = profit / CA × 100.",
+	tool_profit_margin_formula_title: "Formule",
+	tool_profit_margin_formula_body: "Marge % = (CA − coûts) / CA × 100. Notes :",
+	tool_profit_margin_formula_item_1: "Alignez les coûts sur la définition.",
+	tool_profit_margin_formula_item_2: "CA > 0.",
+	tool_profit_margin_formula_item_3: "Compte de résultat simplifié.",
+	tool_profit_margin_example_title: "Exemple",
+	tool_profit_margin_example: "Exemple : CA 10 000, coûts 7 000 → marge 30 %.",
+	tool_profit_margin_usecases_title: "Cas d’usage",
+	tool_profit_margin_usecase_1: "Devoir de marge nette.",
+	tool_profit_margin_usecase_2: "Comparer exploitation vs nette.",
+	tool_profit_margin_usecase_3: "Contraster avec marge brute.",
+	tool_profit_margin_faq_q1: "Sample / contoh?",
+	tool_profit_margin_faq_a1: "30%",
+	tool_profit_margin_faq_q2: "Markup vs marge ?",
+	tool_profit_margin_faq_a2: "Markup÷cost; margin÷revenue.",
+	tool_profit_margin_faq_q3: "Why two types?",
+	tool_profit_margin_faq_a3: "Same form; different cost stacks.",
+	tool_profit_margin_faq_q4: "Advice?",
+	tool_profit_margin_faq_a4: "Educational only.",
+	tool_profit_margin_article: "Calculateur de marge — Nette ou d’exploitation",
+	tool_profit_margin_disclaimer: "Illustration éducative (margen) uniquement — pas un conseil financier.",
+	tool_profit_margin_references: "Investopedia et formules de manuel.",
+	tool_profit_margin_ref_a_label: "Investopedia — Profit margin",
+	tool_profit_margin_ref_b_label: "Investopedia — Operating margin",
+};
+
+export default fr;

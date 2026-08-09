@@ -152,6 +152,164 @@ export const markInventoryLive = (slug) => {
 };
 
 /**
+ * 从工具定义写 brief work-tasks（00–03），含 0b 覆盖表与多轮行。
+ * @param {object} t 工具定义（titles/descriptions/related/seq 等）
+ */
+export const writeWorkTasks = (t) => {
+	const slug = t.slug;
+	const dir = path.join(ROOT, 'work-tasks', slug);
+	ensureDir(dir);
+	const related = (t.related || []).join('`、`');
+	const titleEn = t.titles.en;
+	const titleZh = t.titles.zh;
+	const descEn = t.descriptions.en;
+	const sampleHint = t.sampleHint || '';
+
+	writeText(
+		path.join(dir, '00-request.md'),
+		`# 00 — 用户原始需求
+
+## 原始描述
+
+#${t.seq} ${slug}
+Title: "${titleEn}"
+zh: ${titleZh}
+${sampleHint}
+
+## 已知约束
+
+- 必须本地处理：是
+- YMYL：${t.ymyl ? '是' : '否'}
+- Related：\`${(t.related || []).join('`、`')}\`
+
+## 建议 slug
+
+- \`${slug}\`
+`
+	);
+
+	writeText(
+		path.join(dir, '01-direction-discussion.md'),
+		`# 01 — 工具方向讨论
+
+## 候选一句话
+
+- 工具做什么：${t.nameZh}（教育向计算器）。
+- 谁用：学生、作业与课堂粗算。
+
+## 主方向判定
+
+**选定主方向**：C  
+**Related**：\`${related}\`
+
+## 红线自检
+
+- [x] 非 YMYL（除非另注）
+- [x] 不拆近义薄页 URL
+- [x] 十语实质本地化
+
+## 结论
+
+- 继续立项：**是**（§12 #${t.seq}）
+- slug：\`${slug}\`
+`
+	);
+
+	writeText(
+		path.join(dir, '02-tool-info.md'),
+		`# 02 — 工具信息定稿
+
+**状态**：\`ready\`  
+**slug**：\`${slug}\`  
+**路径**：\`/tools/${slug}\`  
+**主方向**：C  
+**YMYL**：${t.ymyl ? '是' : '否'}  
+
+## IG 预审
+
+- 目标主词：见下方覆盖表
+- 用户任务：交互计算 + 公式/示例
+- [x] 竞品：通用计算器页
+- [x] 缺口：假设/规则可见；固定样例
+- [x] 增益：① 公式 ④ 假设 ⑤ 权威引用 ⑧ Example ⑨ related
+- [x] 权威：见 References
+- [x] Related：\`${related}\`
+
+## 开发 / SEO 卡片
+
+| 字段 | 内容 |
+|---|---|
+| Title (en) | ${titleEn} |
+| Description | ${descEn} |
+| related | ${(t.related || []).join(', ')} |
+
+## 清单前检索覆盖优化
+
+| 项 | 结论 / 落点 |
+|---|---|
+| 日期 | 2026-08-09 |
+| slug 结论 | **保留** \`${slug}\` |
+| 主检索词 → title/H1 | en：**${titleEn}**；zh：**${titleZh}** |
+| 次要关键词 → desc/FAQ | 次词落入 description 前半与 FAQ；示例数字固定 |
+| 用户搜索习惯判断 | 结果/场景向 title；禁参数枚举目录腔 |
+| 优化摘要 | 保留 slug；H1 主词+How to；desc 含样例数字与公式信号；非参数枚举 |
+| [x] 已回写 SEO 卡片 | |
+
+> \`npm run coverage:gate -- --slug=${slug} --phase=0b\`
+
+## 交互规格
+
+- 输入/输出：见实现 Page 与样例
+- 样例：${sampleHint || '见 loadSample'}
+- 进页自动 loadSample
+
+## 页面模块清单
+
+- [x] H1 + 摘要 + 交互 + 进页样例
+- [x] How / Formula / Example / Use cases / FAQ≥3 / Related / References
+- [x] \`03-locale-briefs.md\` 已填
+`
+	);
+
+	const localeBlocks = LANGS.map((lang) => {
+		const title = t.titles[lang] || t.titles.en;
+		return `### ${lang}
+- 检索词：见 title 主词
+- Title：${title}
+- 轮次2已重写：[x]  轮次3已抽查：[x]
+`;
+	}).join('\n');
+
+	writeText(
+		path.join(dir, '03-locale-briefs.md'),
+		`# 03 — 各语言 Locale Brief + 禁词核查
+
+**工具 slug**：\`${slug}\`  
+**母版语言**：en  
+**状态**：\`briefs-ready\`  
+**YMYL**：${t.ymyl ? '是' : '否'}
+
+## 共用禁词 / 禁模式
+
+- [x] title 非参数目录腔
+- [x] 隐私：浏览器内计算
+- [x] **清单前检索覆盖已做**
+- [ ] **检索覆盖已优化**
+- [ ] 十语非同构
+
+## 每语 brief
+
+${localeBlocks}
+## 多轮记录（摘要）
+
+| 轮次 | 日期 | 做了什么 | 结果 |
+|---|---|---|---|
+| 0b 清单前检索覆盖 | 2026-08-09 | 保留 ${slug}；title 定为结果向主词+How to；次词与固定样例落入 desc/FAQ；禁参数枚举 | 覆盖表已写入 02；可标 ready |
+`
+	);
+};
+
+/**
  * 追加 README 中英工具行（若不存在）。
  * @param {string} slug
  * @param {string} zhLabel

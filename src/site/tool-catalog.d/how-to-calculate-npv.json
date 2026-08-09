@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-npv",
+  "path": "/tools/how-to-calculate-npv",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": true,
+  "i18nKey": "tool_npv_title",
+  "homeTitleKey": "tool_npv_title",
+  "homeDescKey": "tool_npv_description",
+  "faqPrefix": "tool_npv",
+  "related": [
+    "how-to-calculate-cagr",
+    "how-to-calculate-roi"
+  ],
+  "logo": "/icons/tools/how-to-calculate-npv.svg",
+  "page": {
+    "module": "../pages/howToCalculateNpvPage",
+    "export": "renderHowToCalculateNpvPage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

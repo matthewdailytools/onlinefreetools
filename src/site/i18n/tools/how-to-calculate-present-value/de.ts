@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-present-value / de).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const de: SiteLangDict = {
+	tool_present_value_title: "Barwert-Rechner (PV/FV)",
+	tool_present_value_description: "Wechseln Sie zwischen PV und FV für einen Einmalbetrag. Beispiel: EW 10.000 bei 5% über 5 Jahre → BW ≈ 7.835,26. Bildungszweck.",
+	tool_present_value_calculate: "Berechnen",
+	tool_present_value_sample: "Beispiel laden",
+	tool_present_value_clear: "Leeren",
+	tool_present_value_mode_label: "Modus",
+	tool_present_value_mode_pv: "Barwert finden (aus EW)",
+	tool_present_value_mode_fv: "Endwert finden (aus BW)",
+	tool_present_value_amount_label: "Betrag",
+	tool_present_value_amount_ph: "z. B. 10000",
+	tool_present_value_rate_label: "Jahreszins %",
+	tool_present_value_rate_ph: "z. B. 5",
+	tool_present_value_n_label: "Jahre",
+	tool_present_value_n_ph: "z. B. 5",
+	tool_present_value_out_label: "Ergebnis",
+	tool_present_value_result_note: "Bildungszweck.",
+	tool_present_value_err_generic: "Eingaben prüfen.",
+	tool_present_value_how_title: "So funktioniert’s",
+	tool_present_value_how_body: "PV/FV-Modus wählen; Betrag, Zins und Jahre eingeben.",
+	tool_present_value_formula_title: "Formel",
+	tool_present_value_formula_body: "PV/FV-Modus wählen; Betrag, Zins und Jahre eingeben.",
+	tool_present_value_formula_item_1: "See formula notes.",
+	tool_present_value_formula_item_2: "Check inputs.",
+	tool_present_value_formula_item_3: "Educational only.",
+	tool_present_value_example_title: "Beispiel",
+	tool_present_value_example: "Beispiel: EW 10000, 5%, 5 Jahre → BW ≈ 7835,26.",
+	tool_present_value_usecases_title: "Wann sinnvoll",
+	tool_present_value_usecase_1: "Homework.",
+	tool_present_value_usecase_2: "Quick sketch.",
+	tool_present_value_usecase_3: "Compare related tools.",
+	tool_present_value_faq_q1: "Beispiel?",
+	tool_present_value_faq_a1: "Beispiel: EW 10000, 5%, 5 Jahre → BW ≈ 7835,26.",
+	tool_present_value_faq_q2: "Formula?",
+	tool_present_value_faq_a2: "See Formula section.",
+	tool_present_value_faq_q3: "Advice?",
+	tool_present_value_faq_a3: "Educational only.",
+	tool_present_value_faq_q4: "Related?",
+	tool_present_value_faq_a4: "See related tools.",
+	tool_present_value_article: "Barwert-Rechner (PV/FV)",
+	tool_present_value_disclaimer: "Nur zur Veranschaulichung (present value) — keine Finanzberatung.",
+	tool_present_value_references: "Investopedia und Lehrbuchformeln.",
+	tool_present_value_ref_a_label: "Investopedia",
+	tool_present_value_ref_b_label: "Wikipedia",
+};
+
+export default de;

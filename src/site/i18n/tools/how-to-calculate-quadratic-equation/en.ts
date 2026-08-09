@@ -1,0 +1,51 @@
+/**
+ * i18n tool shard (how-to-calculate-quadratic-equation / en).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const en: SiteLangDict = {
+	tool_quadratic_equation_title: "Quadratic Equation Solver — Roots and Discriminant",
+	tool_quadratic_equation_description: "Calculate real roots of ax²+bx+c=0 and show the discriminant with the quadratic formula. Example: a=1, b=-5, c=6 → roots 2 and 3. Browser-only algebra process for quick checks.",
+	tool_quadratic_equation_calculate: "Calculate",
+	tool_quadratic_equation_sample: "Load sample",
+	tool_quadratic_equation_clear: "Clear",
+	tool_quadratic_equation_a_label: "a",
+	tool_quadratic_equation_a_ph: "e.g. 1",
+	tool_quadratic_equation_b_label: "b",
+	tool_quadratic_equation_b_ph: "e.g. -5",
+	tool_quadratic_equation_c_label: "c",
+	tool_quadratic_equation_c_ph: "e.g. 6",
+	tool_quadratic_equation_discOut_label: "Discriminant",
+	tool_quadratic_equation_r1Out_label: "Root 1",
+	tool_quadratic_equation_r2Out_label: "Root 2",
+	tool_quadratic_equation_result_note: "Discriminant Δ=b²−4ac. Roots (−b±√Δ)/(2a) when Δ≥0 and a≠0.",
+	tool_quadratic_equation_err_generic: "Enter finite a,b,c with a≠0; real roots require Δ≥0.",
+	tool_quadratic_equation_how_title: "How it works",
+	tool_quadratic_equation_how_body: "Enter coefficients a, b, c. Complex roots are not listed — when Δ<0 the tool errors.",
+	tool_quadratic_equation_formula_title: "Formula",
+	tool_quadratic_equation_formula_body: "Δ=b²−4ac; x=(−b±√Δ)/(2a). Notes:",
+	tool_quadratic_equation_formula_item_1: "a must be non-zero.",
+	tool_quadratic_equation_formula_item_2: "Δ=0 yields a repeated root.",
+	tool_quadratic_equation_formula_item_3: "Pair with permutation / slope tools.",
+	tool_quadratic_equation_example_title: "Example",
+	tool_quadratic_equation_example: "Example: a=1, b=-5, c=6 → roots 2 and 3.",
+	tool_quadratic_equation_usecases_title: "When to use it",
+	tool_quadratic_equation_usecase_1: "Homework quadratics.",
+	tool_quadratic_equation_usecase_2: "Quick root check.",
+	tool_quadratic_equation_usecase_3: "Algebra drill with related tools.",
+	tool_quadratic_equation_faq_q1: "Sample?",
+	tool_quadratic_equation_faq_a1: "1,−5,6 → 2 and 3.",
+	tool_quadratic_equation_faq_q2: "Complex?",
+	tool_quadratic_equation_faq_a2: "Not shown — Δ must be ≥0.",
+	tool_quadratic_equation_faq_q3: "a=0?",
+	tool_quadratic_equation_faq_a3: "Not a quadratic here.",
+	tool_quadratic_equation_faq_q4: "Advice?",
+	tool_quadratic_equation_faq_a4: "Educational only.",
+	tool_quadratic_equation_article: "Quadratic equation",
+	tool_quadratic_equation_disclaimer: "Educational quadratic equation only — not professional advice.",
+	tool_quadratic_equation_references: "Standard textbook formulas.",
+	tool_quadratic_equation_ref_a_label: "Wikipedia — Quadratic equation",
+	tool_quadratic_equation_ref_b_label: "Wikipedia — Discriminant",
+};
+
+export default en;

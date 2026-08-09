@@ -1,0 +1,51 @@
+/**
+ * i18n tool shard (how-to-calculate-profit-margin / es).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const es: SiteLangDict = {
+	tool_profit_margin_title: "Calculadora de margen de beneficio — Neto u operativo",
+	tool_profit_margin_description: "Calcula el margen neto u operativo con ingresos y costos. Ejemplo: ingresos 10.000 y costos 7.000 → margen neto 30%. Elige el tipo en una página. Matemáticas educativas.",
+	tool_profit_margin_calculate: "Calcular",
+	tool_profit_margin_sample: "Cargar ejemplo",
+	tool_profit_margin_clear: "Limpiar",
+	tool_profit_margin_type_label: "Tipo de margen",
+	tool_profit_margin_type_net: "Margen neto",
+	tool_profit_margin_type_op: "Margen operativo",
+	tool_profit_margin_rev_label: "Ingresos",
+	tool_profit_margin_rev_ph: "p. ej. 10000",
+	tool_profit_margin_cost_label: "Costos",
+	tool_profit_margin_cost_ph: "p. ej. 7000",
+	tool_profit_margin_marginOut_label: "Margen %",
+	tool_profit_margin_profitOut_label: "Beneficio",
+	tool_profit_margin_result_note: "Margen = beneficio ÷ ingresos. Educativo.",
+	tool_profit_margin_err_generic: "Ingresos > 0 y costos ≥ 0.",
+	tool_profit_margin_how_title: "Cómo funciona",
+	tool_profit_margin_how_body: "Elige margen neto u operativo e introduce ingresos y costos. Margen = beneficio / ingresos × 100.",
+	tool_profit_margin_formula_title: "Fórmula",
+	tool_profit_margin_formula_body: "Margen % = (ingresos − costos) / ingresos × 100. Notas:",
+	tool_profit_margin_formula_item_1: "Ajusta costos a la definición elegida.",
+	tool_profit_margin_formula_item_2: "Ingresos deben ser > 0.",
+	tool_profit_margin_formula_item_3: "P&L simplificado.",
+	tool_profit_margin_example_title: "Ejemplo",
+	tool_profit_margin_example: "Ejemplo: ingresos 10.000, costos 7.000 → margen 30%.",
+	tool_profit_margin_usecases_title: "Cuándo usarlo",
+	tool_profit_margin_usecase_1: "Deberes de margen neto.",
+	tool_profit_margin_usecase_2: "Comparar operativo vs neto.",
+	tool_profit_margin_usecase_3: "Contrastar con margen bruto.",
+	tool_profit_margin_faq_q1: "¿Resultado del ejemplo?",
+	tool_profit_margin_faq_a1: "30%",
+	tool_profit_margin_faq_q2: "¿Markup vs margen?",
+	tool_profit_margin_faq_a2: "Markup÷costo; margen÷ingresos.",
+	tool_profit_margin_faq_q3: "¿Por qué dos tipos?",
+	tool_profit_margin_faq_a3: "Misma forma; distinta definición de costos.",
+	tool_profit_margin_faq_q4: "¿Consejo de negocio?",
+	tool_profit_margin_faq_a4: "No, solo educativo.",
+	tool_profit_margin_article: "Calculadora de margen de beneficio — Neto u operativo",
+	tool_profit_margin_disclaimer: "Solo ilustración educativa (margen); no es consejo financiero.",
+	tool_profit_margin_references: "Investopedia y fórmulas de libro.",
+	tool_profit_margin_ref_a_label: "Investopedia — Profit margin",
+	tool_profit_margin_ref_b_label: "Investopedia — Operating margin",
+};
+
+export default es;

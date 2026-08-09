@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-logarithm / ar).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const ar: SiteLangDict = {
+	tool_logarithm_title: "حاسبة اللوغاريتم — كيفية حساب اللوغاريتمات",
+	tool_logarithm_description: "احسب log₁₀ أو ln أو log_b(x) لـ x>0. الأساس المخصص عبر ln(x)/ln(b). مثال: log₁₀(1000)=3. يوضح المجال (x>0 وb>0 وb≠1). في المتصفح للتعلّم.",
+	tool_logarithm_calculate: "احسب",
+	tool_logarithm_sample: "تحميل مثال",
+	tool_logarithm_clear: "مسح",
+	tool_logarithm_mode_label: "نوع اللوغاريتم",
+	tool_logarithm_mode_log10: "log₁₀ (شائع)",
+	tool_logarithm_mode_ln: "ln (طبيعي)",
+	tool_logarithm_mode_custom: "log_b (أساس مخصص)",
+	tool_logarithm_x_label: "الوسيط x",
+	tool_logarithm_x_ph: "مثال 1000",
+	tool_logarithm_base_label: "الأساس b",
+	tool_logarithm_base_ph: "مثال 2",
+	tool_logarithm_logOut_label: "قيمة اللوغاريتم",
+	tool_logarithm_result_note: "تغيير الأساس عبر ln: log_b(x)=ln(x)/ln(b). يتطلب x>0 وأساسًا صالحًا.",
+	tool_logarithm_err_generic: "أدخل x>0؛ وللأساس المخصص b>0 وb≠1.",
+	tool_logarithm_how_title: "طريقة الاستخدام",
+	tool_logarithm_how_body: "اختر log₁₀ أو ln أو أساسًا مخصصًا. أدخل x>0 (وb عند الحاجة). تُحسب عبر Math.log/Math.log10 وتغيير الأساس.",
+	tool_logarithm_formula_title: "الصيغة والمجال",
+	tool_logarithm_formula_body: "log_b(x) هو الأس الذي يحوّل b إلى x. هنا:",
+	tool_logarithm_formula_item_1: "log₁₀ شائع؛ ln طبيعي بقاعدة e.",
+	tool_logarithm_formula_item_2: "مخصص: log_b(x)=ln(x)/ln(b) مع b>0 وb≠1 وx>0.",
+	tool_logarithm_formula_item_3: "يجب أن يكون x موجبًا.",
+	tool_logarithm_formula_item_4: "اربطها بصفحة الأس للتحقق b^y≈x.",
+	tool_logarithm_example_title: "مثال",
+	tool_logarithm_example: "مثال: log₁₀(1000)=3.",
+	tool_logarithm_usecases_title: "متى تستخدمه",
+	tool_logarithm_usecase_1: "واجب: حساب log₁₀ أو ln أو log₂.",
+	tool_logarithm_usecase_2: "التحقق من تغيير الأساس يدويًا.",
+	tool_logarithm_usecase_3: "تحضير مقاييس الترميز العلمي.",
+	tool_logarithm_disclaimer: "لوغاريتمات حقيقية تعليمية فقط وليست بديلاً عن CAS.",
+	tool_logarithm_references: "ويكيبيديا اللوغاريتم واللوغاريتم الطبيعي.",
+	tool_logarithm_ref_log_label: "ويكيبيديا — اللوغاريتم",
+	tool_logarithm_ref_ln_label: "ويكيبيديا — اللوغاريتم الطبيعي",
+	tool_logarithm_article: "احسب log₁₀ أو ln أو لوغاريتم بأساس مخصص لـ x>0 في المتصفح.",
+	tool_logarithm_faq_q1: "هل يمكن أن يكون الأساس 1؟",
+	tool_logarithm_faq_a1: "لا؛ اللوغاريتم بأساس 1 غير معرّف.",
+	tool_logarithm_faq_q2: "ما هو ln؟",
+	tool_logarithm_faq_a2: "اللوغاريتم الطبيعي بأساس e ≈ 2.71828.",
+	tool_logarithm_faq_q3: "كيف تُحسب قاعدة مخصصة؟",
+	tool_logarithm_faq_a3: "بتغيير الأساس: ln(x)/ln(b).",
+	tool_logarithm_faq_q4: "لماذا x > 0؟",
+	tool_logarithm_faq_a4: "اللوغاريتم الحقيقي غير معرّف عند 0 والسالب هنا.",
+};
+
+export default ar;

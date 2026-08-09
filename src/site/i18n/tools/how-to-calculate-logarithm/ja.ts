@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-logarithm / ja).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const ja: SiteLangDict = {
+	tool_logarithm_title: "対数計算ツール — ログの求め方",
+	tool_logarithm_description: "x>0 の log₁₀・ln・任意底 log_b(x) を計算します。任意底は底の変換 ln(x)/ln(b)。例：log₁₀(1000)=3。定義域（x>0、b>0、b≠1）を明示。ブラウザ内で宿題や底の変換の検算向けで、指数ページとも照合できます。",
+	tool_logarithm_calculate: "計算する",
+	tool_logarithm_sample: "サンプル",
+	tool_logarithm_clear: "クリア",
+	tool_logarithm_mode_label: "対数の種類",
+	tool_logarithm_mode_log10: "log₁₀（常用）",
+	tool_logarithm_mode_ln: "ln（自然）",
+	tool_logarithm_mode_custom: "log_b（任意の底）",
+	tool_logarithm_x_label: "真数 x",
+	tool_logarithm_x_ph: "例: 1000",
+	tool_logarithm_base_label: "底 b",
+	tool_logarithm_base_ph: "例: 2",
+	tool_logarithm_logOut_label: "対数の値",
+	tool_logarithm_result_note: "底の変換 log_b(x)=ln(x)/ln(b)。x>0 と合法な底が必要。",
+	tool_logarithm_err_generic: "x>0 を入力。任意底では b>0 かつ b≠1。",
+	tool_logarithm_how_title: "使い方",
+	tool_logarithm_how_body: "log₁₀・ln・任意底を選び、x>0（必要なら底 b）を入れます。Math.log / Math.log10 と底の変換で計算します。",
+	tool_logarithm_formula_title: "式と定義域",
+	tool_logarithm_formula_body: "log_b(x) は b を x にする指数。このページでは：",
+	tool_logarithm_formula_item_1: "log₁₀ は常用、ln は自然対数（底 e）。",
+	tool_logarithm_formula_item_2: "任意：log_b(x)=ln(x)/ln(b)、b>0・b≠1・x>0。",
+	tool_logarithm_formula_item_3: "x は正。0 と負は拒否。",
+	tool_logarithm_formula_item_4: "指数ページで b^y≈x を確認できます。",
+	tool_logarithm_example_title: "例",
+	tool_logarithm_example: "例：log₁₀(1000)=3。",
+	tool_logarithm_usecases_title: "こんなときに",
+	tool_logarithm_usecase_1: "正数の log₁₀・ln・log₂ を求める宿題。",
+	tool_logarithm_usecase_2: "底の変換の手計算を照合。",
+	tool_logarithm_usecase_3: "科学表記の桁合わせの前段。",
+	tool_logarithm_disclaimer: "実数の教育用対数のみで、複素対数や CAS の代わりにはなりません。",
+	tool_logarithm_references: "Wikipedia の対数と自然対数。",
+	tool_logarithm_ref_log_label: "Wikipedia — 対数",
+	tool_logarithm_ref_ln_label: "Wikipedia — 自然対数",
+	tool_logarithm_article: "ブラウザで x>0 の log₁₀・ln・任意底の対数を計算します。",
+	tool_logarithm_faq_q1: "底が 1 でもよい？",
+	tool_logarithm_faq_a1: "いいえ。底 1 の対数は定義されません。",
+	tool_logarithm_faq_q2: "カスタム底の計算は？",
+	tool_logarithm_faq_a2: "底の変換：ln(x)/ln(b)。",
+	tool_logarithm_faq_q3: "なぜ x > 0？",
+	tool_logarithm_faq_a3: "実数の対数は 0 や負でこのページでは扱えません。",
+	tool_logarithm_faq_q4: "ln とは？",
+	tool_logarithm_faq_a4: "底 e≈2.71828 の自然対数です。",
+};
+
+export default ja;

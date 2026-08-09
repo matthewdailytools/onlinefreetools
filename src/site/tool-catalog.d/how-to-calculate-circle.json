@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-circle",
+  "path": "/tools/how-to-calculate-circle",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_circle_title",
+  "homeTitleKey": "tool_circle_title",
+  "homeDescKey": "tool_circle_description",
+  "faqPrefix": "tool_circle",
+  "related": [
+    "how-to-calculate-triangle-area",
+    "how-to-calculate-volume"
+  ],
+  "logo": "/icons/tools/how-to-calculate-circle.svg",
+  "page": {
+    "module": "../pages/howToCalculateCirclePage",
+    "export": "renderHowToCalculateCirclePage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

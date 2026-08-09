@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-logarithm",
+  "path": "/tools/how-to-calculate-logarithm",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_logarithm_title",
+  "homeTitleKey": "tool_logarithm_title",
+  "homeDescKey": "tool_logarithm_description",
+  "faqPrefix": "tool_logarithm",
+  "related": [
+    "how-to-calculate-exponent",
+    "how-to-calculate-scientific-notation"
+  ],
+  "logo": "/icons/tools/how-to-calculate-logarithm.svg",
+  "page": {
+    "module": "../pages/howToCalculateLogarithmPage",
+    "export": "renderHowToCalculateLogarithmPage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

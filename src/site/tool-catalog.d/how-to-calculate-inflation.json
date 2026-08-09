@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-inflation",
+  "path": "/tools/how-to-calculate-inflation",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": true,
+  "i18nKey": "tool_inflation_title",
+  "homeTitleKey": "tool_inflation_title",
+  "homeDescKey": "tool_inflation_description",
+  "faqPrefix": "tool_inflation",
+  "related": [
+    "how-to-calculate-cagr",
+    "how-to-calculate-compound-interest"
+  ],
+  "logo": "/icons/tools/how-to-calculate-inflation.svg",
+  "page": {
+    "module": "../pages/howToCalculateInflationPage",
+    "export": "renderHowToCalculateInflationPage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

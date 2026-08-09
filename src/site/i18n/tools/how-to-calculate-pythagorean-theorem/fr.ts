@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-pythagorean-theorem / fr).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const fr: SiteLangDict = {
+	tool_pythagorean_title: "Calculateur de Pythagore — Trouver le côté manquant",
+	tool_pythagorean_description: "Résolvez le côté manquant a, b ou c avec a²+b²=c². Exemple : a=3, b=4 → c=5. Entrez deux côtés positifs ; refuse les paires impossibles. Dans le navigateur.",
+	tool_pythagorean_calculate: "Calculer",
+	tool_pythagorean_sample: "Charger l’exemple",
+	tool_pythagorean_clear: "Effacer",
+	tool_pythagorean_solve_label: "Résoudre",
+	tool_pythagorean_solve_c: "Hypoténuse c",
+	tool_pythagorean_solve_a: "Côté a",
+	tool_pythagorean_solve_b: "Côté b",
+	tool_pythagorean_known1_label: "Premier côté connu",
+	tool_pythagorean_known1_ph: "ex. 3",
+	tool_pythagorean_known2_label: "Deuxième côté connu",
+	tool_pythagorean_known2_ph: "ex. 4",
+	tool_pythagorean_sideOut_label: "Côté manquant",
+	tool_pythagorean_result_note: "Triangle rectangle : a²+b²=c². Pour un côté, l’hypoténuse doit être plus longue.",
+	tool_pythagorean_err_generic: "Saisissez deux côtés positifs ; pour un côté, l’hypoténuse doit être plus grande.",
+	tool_pythagorean_how_title: "Fonctionnement",
+	tool_pythagorean_how_body: "Choisissez le côté manquant et entrez les deux autres. Pour c : a et b ; pour a : b et c ; pour b : a et c. Renvoie la racine positive.",
+	tool_pythagorean_formula_title: "Formule",
+	tool_pythagorean_formula_body: "Théorème de Pythagore a²+b²=c² :",
+	tool_pythagorean_formula_item_1: "Manque c : c=√(a²+b²).",
+	tool_pythagorean_formula_item_2: "Manque a : a=√(c²−b²) avec c>b>0.",
+	tool_pythagorean_formula_item_3: "Manque b : b=√(c²−a²) avec c>a>0.",
+	tool_pythagorean_formula_item_4: "Longueurs réelles positives seulement.",
+	tool_pythagorean_example_title: "Exemple",
+	tool_pythagorean_example: "Exemple : a=3, b=4 → c=5.",
+	tool_pythagorean_usecases_title: "Quand l’utiliser",
+	tool_pythagorean_usecase_1: "Géométrie : trouver un côté manquant.",
+	tool_pythagorean_usecase_2: "Vérifier des triplets 3-4-5.",
+	tool_pythagorean_usecase_3: "Estimer une diagonale avec deux côtés orthogonaux.",
+	tool_pythagorean_disclaimer: "Géométrie euclidienne pédagogique seulement.",
+	tool_pythagorean_references: "Wikipedia théorème de Pythagore.",
+	tool_pythagorean_ref_py_label: "Wikipedia — Théorème de Pythagore",
+	tool_pythagorean_ref_rt_label: "Wikipedia — Triangle rectangle",
+	tool_pythagorean_article: "Résolvez le côté manquant d’un triangle rectangle avec a²+b²=c².",
+	tool_pythagorean_faq_q1: "Que saisir pour trouver c ?",
+	tool_pythagorean_faq_a1: "Les côtés a et b.",
+	tool_pythagorean_faq_q2: "Unités obligatoires ?",
+	tool_pythagorean_faq_a2: "Non ; gardez la même unité pour les deux côtés.",
+	tool_pythagorean_faq_q3: "Triangles obtus ?",
+	tool_pythagorean_faq_a3: "Non — seulement a²+b²=c² pour un triangle rectangle.",
+	tool_pythagorean_faq_q4: "Pourquoi refuser c≤a ?",
+	tool_pythagorean_faq_a4: "L’hypoténuse doit être strictement plus longue que chaque côté.",
+};
+
+export default fr;

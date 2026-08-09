@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-scientific-notation",
+  "path": "/tools/how-to-calculate-scientific-notation",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_scientific_notation_title",
+  "homeTitleKey": "tool_scientific_notation_title",
+  "homeDescKey": "tool_scientific_notation_description",
+  "faqPrefix": "tool_scientific_notation",
+  "related": [
+    "how-to-calculate-significant-figures",
+    "how-to-calculate-logarithm"
+  ],
+  "logo": "/icons/tools/how-to-calculate-scientific-notation.svg",
+  "page": {
+    "module": "../pages/howToCalculateScientificNotationPage",
+    "export": "renderHowToCalculateScientificNotationPage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

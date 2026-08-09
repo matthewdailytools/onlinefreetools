@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-logarithm / id).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const id: SiteLangDict = {
+	tool_logarithm_title: "Kalkulator logaritma — Cara menghitung log",
+	tool_logarithm_description: "Hitung log₁₀, ln, atau log_b(x) untuk x>0. Basis kustom memakai ln(x)/ln(b). Contoh: log₁₀(1000)=3. Menuliskan domain (x>0, b>0, b≠1). Di browser untuk tugas.",
+	tool_logarithm_calculate: "Hitung",
+	tool_logarithm_sample: "Muat contoh",
+	tool_logarithm_clear: "Hapus",
+	tool_logarithm_mode_label: "Jenis log",
+	tool_logarithm_mode_log10: "log₁₀ (umum)",
+	tool_logarithm_mode_ln: "ln (alami)",
+	tool_logarithm_mode_custom: "log_b (basis kustom)",
+	tool_logarithm_x_label: "Argumen x",
+	tool_logarithm_x_ph: "mis. 1000",
+	tool_logarithm_base_label: "Basis b",
+	tool_logarithm_base_ph: "mis. 2",
+	tool_logarithm_logOut_label: "Nilai logaritma",
+	tool_logarithm_result_note: "Perubahan basis via ln: log_b(x)=ln(x)/ln(b). Memerlukan x>0 dan basis valid.",
+	tool_logarithm_err_generic: "Masukkan x>0; untuk basis kustom, b>0 dan b≠1.",
+	tool_logarithm_how_title: "Cara kerja",
+	tool_logarithm_how_body: "Pilih log₁₀, ln, atau basis kustom. Masukkan x>0 (dan b bila perlu). Dihitung dengan Math.log/Math.log10 dan perubahan basis.",
+	tool_logarithm_formula_title: "Rumus dan domain",
+	tool_logarithm_formula_body: "log_b(x) adalah eksponen yang membawa b ke x. Di halaman ini:",
+	tool_logarithm_formula_item_1: "log₁₀ umum; ln alami (basis e).",
+	tool_logarithm_formula_item_2: "Kustom: log_b(x)=ln(x)/ln(b) dengan b>0, b≠1, x>0.",
+	tool_logarithm_formula_item_3: "x harus positif.",
+	tool_logarithm_formula_item_4: "Padankan dengan halaman eksponen untuk cek b^y≈x.",
+	tool_logarithm_example_title: "Contoh",
+	tool_logarithm_example: "Contoh: log₁₀(1000)=3.",
+	tool_logarithm_usecases_title: "Kapan dipakai",
+	tool_logarithm_usecase_1: "PR: hitung log₁₀, ln, atau log₂.",
+	tool_logarithm_usecase_2: "Cek perubahan basis secara manual.",
+	tool_logarithm_usecase_3: "Siapkan skala notasi ilmiah.",
+	tool_logarithm_disclaimer: "Hanya log real edukasi. Bukan pengganti CAS.",
+	tool_logarithm_references: "Wikipedia logarithm dan natural logarithm.",
+	tool_logarithm_ref_log_label: "Wikipedia — Logarithm",
+	tool_logarithm_ref_ln_label: "Wikipedia — Natural logarithm",
+	tool_logarithm_article: "Hitung log₁₀, ln, atau log basis kustom untuk x>0 di browser.",
+	tool_logarithm_faq_q1: "Apa itu ln?",
+	tool_logarithm_faq_a1: "Log natural dengan basis e ≈ 2,71828.",
+	tool_logarithm_faq_q2: "Mengapa x > 0?",
+	tool_logarithm_faq_a2: "Log real tidak terdefinisi di 0 dan negatif di halaman ini.",
+	tool_logarithm_faq_q3: "Basis boleh 1?",
+	tool_logarithm_faq_a3: "Tidak. Log basis 1 tidak terdefinisi.",
+	tool_logarithm_faq_q4: "Basis kustom?",
+	tool_logarithm_faq_a4: "Perubahan basis: ln(x)/ln(b).",
+};
+
+export default id;

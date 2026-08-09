@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-markup",
+  "path": "/tools/how-to-calculate-markup",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": true,
+  "i18nKey": "tool_markup_title",
+  "homeTitleKey": "tool_markup_title",
+  "homeDescKey": "tool_markup_description",
+  "faqPrefix": "tool_markup",
+  "related": [
+    "how-to-calculate-discount",
+    "how-to-calculate-gross-margin"
+  ],
+  "logo": "/icons/tools/how-to-calculate-markup.svg",
+  "page": {
+    "module": "../pages/howToCalculateMarkupPage",
+    "export": "renderHowToCalculateMarkupPage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

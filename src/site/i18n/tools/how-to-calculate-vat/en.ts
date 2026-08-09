@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-vat / en).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const en: SiteLangDict = {
+	tool_vat_title: "VAT / GST Calculator — Add or Extract Tax",
+	tool_vat_description: "Add VAT/GST to a net amount or extract tax from a gross amount. Sample: net 100 at 20% → gross 120. Enter your own rate — no country tax matrix. Browser-only Calculate VAT/GST add or extract with your rate; example net 100 at 20% → gross 120.",
+	tool_vat_calculate: "Calculate",
+	tool_vat_sample: "Load sample",
+	tool_vat_clear: "Clear",
+	tool_vat_mode_label: "Mode",
+	tool_vat_mode_add: "Add tax to net",
+	tool_vat_mode_extract: "Extract tax from gross",
+	tool_vat_amount_label: "Amount",
+	tool_vat_amount_ph: "e.g. 100",
+	tool_vat_rate_label: "VAT/GST %",
+	tool_vat_rate_ph: "e.g. 20",
+	tool_vat_grossOut_label: "Gross",
+	tool_vat_netOut_label: "Net",
+	tool_vat_taxOut_label: "Tax",
+	tool_vat_result_note: "Add: gross=net×(1+r). Extract: net=gross/(1+r). Enter your own rate.",
+	tool_vat_err_generic: "Enter amount > 0 and tax rate ≥ 0.",
+	tool_vat_how_title: "How it works",
+	tool_vat_how_body: "Choose add or extract, enter amount and rate. No per-country rate pages — you supply the percent.",
+	tool_vat_formula_title: "Formula",
+	tool_vat_formula_body: "Gross = net × (1+r); net = gross / (1+r); tax = gross − net. Notes:",
+	tool_vat_formula_item_1: "r is a decimal from the percent you enter.",
+	tool_vat_formula_item_2: "Multi-rate invoices and exemptions are not modeled.",
+	tool_vat_formula_item_3: "Not a filing or compliance tool.",
+	tool_vat_example_title: "Example",
+	tool_vat_example: "Example: net 100, 20% → gross 120, tax 20.",
+	tool_vat_usecases_title: "When to use it",
+	tool_vat_usecase_1: "Homework VAT add/extract.",
+	tool_vat_usecase_2: "Quick check before bookkeeping.",
+	tool_vat_usecase_3: "Pair with discount/tip pages for receipt math.",
+	tool_vat_faq_q1: "Sample?",
+	tool_vat_faq_a1: "Net 100 at 20% → gross 120.",
+	tool_vat_faq_q2: "Country rates?",
+	tool_vat_faq_a2: "Enter your rate; we do not ship a matrix.",
+	tool_vat_faq_q3: "Filing help?",
+	tool_vat_faq_a3: "No — educational arithmetic only.",
+	tool_vat_faq_q4: "GST vs VAT?",
+	tool_vat_faq_a4: "Same add/extract math; labels differ by region.",
+	tool_vat_article: "VAT/GST add-extract",
+	tool_vat_disclaimer: "Educational VAT only — not financial, tax, or investment advice.",
+	tool_vat_references: "Investopedia and standard textbook formulas.",
+	tool_vat_ref_a_label: "Investopedia — VAT",
+	tool_vat_ref_b_label: "Investopedia — Sales tax",
+};
+
+export default en;

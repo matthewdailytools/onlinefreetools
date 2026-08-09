@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-sample-size / ja).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const ja: SiteLangDict = {
+	tool_sample_size_title: "サンプルサイズ計算ツール — 必要標本数の見積もり方",
+	tool_sample_size_description: "比率の必要標本数を n = Z²·p·(1−p)/E² で見積もります。信頼水準 90/95/99%（Z = 1.645/1.96/2.576）を選び、比率 p と許容誤差 E を入力。例：95%、p = 0.5、E = 0.05 → 切り上げで n ≈ 385。ブラウザ内で宿題や調査設計の粗い確認向けで、正規近似などの前提も明示します。",
+	tool_sample_size_calculate: "計算する",
+	tool_sample_size_sample: "サンプル",
+	tool_sample_size_clear: "クリア",
+	tool_sample_size_conf_label: "信頼水準",
+	tool_sample_size_conf_90: "90%（Z = 1.645）",
+	tool_sample_size_conf_95: "95%（Z = 1.96）",
+	tool_sample_size_conf_99: "99%（Z = 2.576）",
+	tool_sample_size_p_label: "想定比率 p",
+	tool_sample_size_p_ph: "例: 0.5",
+	tool_sample_size_E_label: "許容誤差 E",
+	tool_sample_size_E_ph: "例: 0.05",
+	tool_sample_size_nOut_label: "必要な標本数 n",
+	tool_sample_size_result_note: "比率の n = ceil(Z²·p·(1−p)/E²)。正規近似で、有限母集団補正なし。",
+	tool_sample_size_err_generic: "p は [0,1]、E > 0、信頼水準を選んでください。",
+	tool_sample_size_how_title: "使い方",
+	tool_sample_size_how_body: "90・95・99% を選び、計画用の比率 p と許容誤差 E を入れます。信頼水準を Z に写し、Z² p (1−p)/E² を切り上げて返します。ブラウザ内で調査の宿題向けです。",
+	tool_sample_size_formula_title: "式と前提",
+	tool_sample_size_formula_body: "n = Z² · p · (1 − p) / E² を切り上げ。注意点：",
+	tool_sample_size_formula_item_1: "Z は 90/95/99% で 1.645/1.96/2.576。",
+	tool_sample_size_formula_item_2: "単一比率の正規近似。有限母集団補正は含みません。",
+	tool_sample_size_formula_item_3: "E 固定なら p=0.5 で n が最大（保守的）。",
+	tool_sample_size_formula_item_4: "複雑設計や検出力分析は別途の計画が必要です。",
+	tool_sample_size_example_title: "例",
+	tool_sample_size_example: "例：95%（Z=1.96）、p=0.5、E=0.05 → n = 385。",
+	tool_sample_size_usecases_title: "こんなときに",
+	tool_sample_size_usecase_1: "簡単な比率調査の標本数を見積もる宿題。",
+	tool_sample_size_usecase_2: "E を締めると n がどう膨らむかを比較。",
+	tool_sample_size_usecase_3: "データ取得後は信頼区間ページと併用。",
+	tool_sample_size_faq_q1: "結果は必ず整数？",
+	tool_sample_size_faq_a1: "はい。式の値を切り上げ（ceil）します。",
+	tool_sample_size_faq_q2: "Z を直接入力できますか？",
+	tool_sample_size_faq_a2: "このページは 90/95/99 の選択で標準 Z を使います。",
+	tool_sample_size_faq_q3: "有限母集団補正は？",
+	tool_sample_size_faq_a3: "ありません。母集団が n に対して大きいとみなします。",
+	tool_sample_size_faq_q4: "p が不明なら 0.5 でよい？",
+	tool_sample_size_faq_a4: "同じ E なら最も保守的な n になるため、よく使います。",
+	tool_sample_size_disclaimer: "教育用の比率標本数公式のみで、調査方法論や検出力ソフトの代わりにはなりません。",
+	tool_sample_size_references: "Wikipedia の標本サイズの決定と誤差の範囲。",
+	tool_sample_size_ref_ss_label: "Wikipedia — 標本サイズの決定",
+	tool_sample_size_ref_prop_label: "Wikipedia — 誤差の範囲",
+	tool_sample_size_article: "n = Z² p (1−p)/E² と 90/95/99% で比率調査に必要な標本数を見積もります。",
+};
+
+export default ja;

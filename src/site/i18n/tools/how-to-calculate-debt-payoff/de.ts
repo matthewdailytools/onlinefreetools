@@ -1,0 +1,50 @@
+/**
+ * i18n tool shard (how-to-calculate-debt-payoff / de).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const de: SiteLangDict = {
+	tool_debt_payoff_title: "Schulden-Tilgungsrechner",
+	tool_debt_payoff_description: "Schätzen Sie Monate bis zur Tilgung bei fester Monatsrate und Jahreszins. Beispiel: 5000 bei 12% mit 200/Monat. Bildungszweck.",
+	tool_debt_payoff_calculate: "Berechnen",
+	tool_debt_payoff_sample: "Beispiel laden",
+	tool_debt_payoff_clear: "Leeren",
+	tool_debt_payoff_principal_label: "Saldo",
+	tool_debt_payoff_principal_ph: "z. B. 5000",
+	tool_debt_payoff_rate_label: "Jahreszins %",
+	tool_debt_payoff_rate_ph: "z. B. 12",
+	tool_debt_payoff_pay_label: "Monatsrate",
+	tool_debt_payoff_pay_ph: "z. B. 200",
+	tool_debt_payoff_monthsOut_label: "Monate",
+	tool_debt_payoff_interestOut_label: "Zinsen gesamt (ca.)",
+	tool_debt_payoff_result_note: "Bildungszweck.",
+	tool_debt_payoff_err_generic: "Eingaben prüfen.",
+	tool_debt_payoff_how_title: "So funktioniert’s",
+	tool_debt_payoff_how_body: "Saldo, Zins und Monatsrate eingeben.",
+	tool_debt_payoff_formula_title: "Formel",
+	tool_debt_payoff_formula_body: "Saldo, Zins und Monatsrate eingeben.",
+	tool_debt_payoff_formula_item_1: "See formula notes.",
+	tool_debt_payoff_formula_item_2: "Check inputs.",
+	tool_debt_payoff_formula_item_3: "Educational only.",
+	tool_debt_payoff_example_title: "Beispiel",
+	tool_debt_payoff_example: "Beispiel: ~30 Monate.",
+	tool_debt_payoff_usecases_title: "Wann sinnvoll",
+	tool_debt_payoff_usecase_1: "Homework.",
+	tool_debt_payoff_usecase_2: "Quick sketch.",
+	tool_debt_payoff_usecase_3: "Compare related tools.",
+	tool_debt_payoff_faq_q1: "Beispiel?",
+	tool_debt_payoff_faq_a1: "Beispiel: ~30 Monate.",
+	tool_debt_payoff_faq_q2: "Formula?",
+	tool_debt_payoff_faq_a2: "See Formula section.",
+	tool_debt_payoff_faq_q3: "Advice?",
+	tool_debt_payoff_faq_a3: "Educational only.",
+	tool_debt_payoff_faq_q4: "Related?",
+	tool_debt_payoff_faq_a4: "See related tools.",
+	tool_debt_payoff_article: "Schulden-Tilgungsrechner",
+	tool_debt_payoff_disclaimer: "Nur zur Veranschaulichung (debt payoff) — keine Finanzberatung.",
+	tool_debt_payoff_references: "Investopedia und Lehrbuchformeln.",
+	tool_debt_payoff_ref_a_label: "Investopedia",
+	tool_debt_payoff_ref_b_label: "Wikipedia",
+};
+
+export default de;

@@ -1,0 +1,51 @@
+/**
+ * i18n tool shard (how-to-calculate-scientific-notation / en).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const en: SiteLangDict = {
+	tool_scientific_notation_title: "Scientific Notation Calculator — How to Convert Scientific Notation",
+	tool_scientific_notation_description: "Convert decimals ↔ a×10^b scientific notation. Example: 12300 → 1.23×10^4. Accepts 1.23e4 and 1.23×10^4 when expanding. Shows coefficient and exponent. Browser learning tool for coursework.",
+	tool_scientific_notation_calculate: "Calculate",
+	tool_scientific_notation_sample: "Load sample",
+	tool_scientific_notation_clear: "Clear",
+	tool_scientific_notation_mode_label: "Direction",
+	tool_scientific_notation_mode_toSci: "Decimal → scientific",
+	tool_scientific_notation_mode_toDec: "Scientific → decimal",
+	tool_scientific_notation_value_label: "Value",
+	tool_scientific_notation_value_ph: "e.g. 12300 or 1.23e4 or 1.23×10^4",
+	tool_scientific_notation_resultOut_label: "Converted value",
+	tool_scientific_notation_coeffOut_label: "Coefficient a",
+	tool_scientific_notation_expOut_label: "Exponent b",
+	tool_scientific_notation_result_note: "Scientific form a×10^b with 1 ≤ |a| < 10 (a = 0 kept as 0×10^0).",
+	tool_scientific_notation_err_generic: "Enter a parseable decimal or scientific value for the selected mode.",
+	tool_scientific_notation_how_title: "How it works",
+	tool_scientific_notation_how_body: "Pick a direction. For decimal→scientific, enter an ordinary number. For scientific→decimal, paste forms like 1.23e4 or 1.23×10^4. The tool shows the converted string plus coefficient and exponent when useful.",
+	tool_scientific_notation_formula_title: "Conversion rules",
+	tool_scientific_notation_formula_body: "Write x = a × 10^b with normalized a:",
+	tool_scientific_notation_formula_item_1: "Move the decimal until 1 ≤ |a| < 10 (zero stays 0×10^0).",
+	tool_scientific_notation_formula_item_2: "b is how many places the point moved (sign follows the move).",
+	tool_scientific_notation_formula_item_3: "Accepted scientific inputs: 1.23e4, 1.23E+4, 1.23×10^4, 1.23*10^4.",
+	tool_scientific_notation_formula_item_4: "Display prefers a readable a×10^b string; coefficient/exponent fields echo parts.",
+	tool_scientific_notation_example_title: "Example",
+	tool_scientific_notation_example: "Example: 12300 → 1.23×10^4 (a = 1.23, b = 4).",
+	tool_scientific_notation_usecases_title: "When to use it",
+	tool_scientific_notation_usecase_1: "Homework: rewrite large/small decimals in scientific form.",
+	tool_scientific_notation_usecase_2: "Expand a×10^b back to an ordinary decimal.",
+	tool_scientific_notation_usecase_3: "Check calculator e-notation against ×10^b writing.",
+	tool_scientific_notation_disclaimer: "Educational conversion only — not a full precision-arithmetic library.",
+	tool_scientific_notation_references: "Wikipedia scientific notation.",
+	tool_scientific_notation_ref_sci_label: "Wikipedia — Scientific notation",
+	tool_scientific_notation_ref_exp_label: "Wikipedia — Exponentiation",
+	tool_scientific_notation_article: "Convert between decimals and a×10^b scientific notation in your browser.",
+	tool_scientific_notation_faq_q1: "What range must a have?",
+	tool_scientific_notation_faq_a1: "Normalized scientific form keeps 1 ≤ |a| < 10 (except zero).",
+	tool_scientific_notation_faq_q2: "Which scientific spellings are accepted?",
+	tool_scientific_notation_faq_a2: "1.23e4, 1.23E+4, 1.23×10^4, and 1.23*10^4.",
+	tool_scientific_notation_faq_q3: "What about negative numbers?",
+	tool_scientific_notation_faq_a3: "The sign stays on a; the exponent still tracks decimal moves.",
+	tool_scientific_notation_faq_q4: "Is precision unlimited?",
+	tool_scientific_notation_faq_a4: "No — this is ordinary JavaScript number conversion for learning.",
+};
+
+export default en;

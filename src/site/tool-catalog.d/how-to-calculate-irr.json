@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-irr",
+  "path": "/tools/how-to-calculate-irr",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": true,
+  "i18nKey": "tool_irr_title",
+  "homeTitleKey": "tool_irr_title",
+  "homeDescKey": "tool_irr_description",
+  "faqPrefix": "tool_irr",
+  "related": [
+    "how-to-calculate-npv",
+    "how-to-calculate-cagr"
+  ],
+  "logo": "/icons/tools/how-to-calculate-irr.svg",
+  "page": {
+    "module": "../pages/howToCalculateIrrPage",
+    "export": "renderHowToCalculateIrrPage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

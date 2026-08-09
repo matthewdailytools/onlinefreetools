@@ -1,0 +1,51 @@
+/**
+ * i18n tool shard (how-to-calculate-scientific-notation / fr).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const fr: SiteLangDict = {
+	tool_scientific_notation_title: "Calculateur de notation scientifique — Comment convertir",
+	tool_scientific_notation_description: "Convertissez décimaux ↔ notation scientifique a×10^b. Exemple : 12300 → 1,23×10^4. Accepte 1,23e4 et 1,23×10^4 à l’expansion. Affiche coefficient et exposant. Dans le navigateur.",
+	tool_scientific_notation_calculate: "Calculer",
+	tool_scientific_notation_sample: "Charger l’exemple",
+	tool_scientific_notation_clear: "Effacer",
+	tool_scientific_notation_mode_label: "Sens",
+	tool_scientific_notation_mode_toSci: "Décimal → scientifique",
+	tool_scientific_notation_mode_toDec: "Scientifique → décimal",
+	tool_scientific_notation_value_label: "Valeur",
+	tool_scientific_notation_value_ph: "ex. 12300 ou 1,23e4 ou 1,23×10^4",
+	tool_scientific_notation_resultOut_label: "Valeur convertie",
+	tool_scientific_notation_coeffOut_label: "Coefficient a",
+	tool_scientific_notation_expOut_label: "Exposant b",
+	tool_scientific_notation_result_note: "Forme a×10^b avec 1 ≤ |a| < 10 (0 comme 0×10^0).",
+	tool_scientific_notation_err_generic: "Saisissez une valeur décimale ou scientifique analysable selon le mode.",
+	tool_scientific_notation_how_title: "Fonctionnement",
+	tool_scientific_notation_how_body: "Choisissez le sens. Décimal→scientifique : nombre ordinaire. Scientifique→décimal : 1,23e4 ou 1,23×10^4. Affiche la chaîne convertie et, si utile, a et b.",
+	tool_scientific_notation_formula_title: "Règles de conversion",
+	tool_scientific_notation_formula_body: "Écrire x = a × 10^b normalisé :",
+	tool_scientific_notation_formula_item_1: "Déplacer la virgule jusqu’à 1 ≤ |a| < 10 (zéro → 0×10^0).",
+	tool_scientific_notation_formula_item_2: "b est le nombre de déplacements de la virgule.",
+	tool_scientific_notation_formula_item_3: "Accepté : 1,23e4, 1,23E+4, 1,23×10^4, 1,23*10^4.",
+	tool_scientific_notation_formula_item_4: "Priorité à une chaîne a×10^b lisible.",
+	tool_scientific_notation_example_title: "Exemple",
+	tool_scientific_notation_example: "Exemple : 12300 → 1,23×10^4 (a = 1,23, b = 4).",
+	tool_scientific_notation_usecases_title: "Quand l’utiliser",
+	tool_scientific_notation_usecase_1: "Devoir : réécrire de grands/petits décimaux.",
+	tool_scientific_notation_usecase_2: "Développer a×10^b en décimal.",
+	tool_scientific_notation_usecase_3: "Comparer la notation e et ×10^b.",
+	tool_scientific_notation_disclaimer: "Conversion pédagogique seulement — pas une bibliothèque de précision arbitraire.",
+	tool_scientific_notation_references: "Wikipedia notation scientifique.",
+	tool_scientific_notation_ref_sci_label: "Wikipedia — Notation scientifique",
+	tool_scientific_notation_ref_exp_label: "Wikipedia — Exponentiation",
+	tool_scientific_notation_article: "Convertissez décimaux et notation scientifique a×10^b dans le navigateur.",
+	tool_scientific_notation_faq_q1: "Quelles écritures scientifiques ?",
+	tool_scientific_notation_faq_a1: "1,23e4, 1,23E+4, 1,23×10^4 et 1,23*10^4.",
+	tool_scientific_notation_faq_q2: "Précision illimitée ?",
+	tool_scientific_notation_faq_a2: "Non ; conversion JS ordinaire pour apprendre.",
+	tool_scientific_notation_faq_q3: "Plage de a ?",
+	tool_scientific_notation_faq_a3: "1 ≤ |a| < 10 en forme normalisée (sauf zéro).",
+	tool_scientific_notation_faq_q4: "Nombres négatifs ?",
+	tool_scientific_notation_faq_a4: "Le signe reste sur a ; l’exposant suit les déplacements.",
+};
+
+export default fr;

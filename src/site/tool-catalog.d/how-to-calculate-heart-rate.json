@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-heart-rate",
+  "path": "/tools/how-to-calculate-heart-rate",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": true,
+  "i18nKey": "tool_heart_rate_title",
+  "homeTitleKey": "tool_heart_rate_title",
+  "homeDescKey": "tool_heart_rate_description",
+  "faqPrefix": "tool_heart_rate",
+  "related": [
+    "how-to-calculate-macros",
+    "how-to-calculate-bmr-tdee"
+  ],
+  "logo": "/icons/tools/how-to-calculate-heart-rate.svg",
+  "page": {
+    "module": "../pages/howToCalculateHeartRatePage",
+    "export": "renderHowToCalculateHeartRatePage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

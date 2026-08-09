@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-median",
+  "path": "/tools/how-to-calculate-median",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_median_title",
+  "homeTitleKey": "tool_median_title",
+  "homeDescKey": "tool_median_description",
+  "faqPrefix": "tool_median",
+  "related": [
+    "how-to-calculate-mean",
+    "how-to-calculate-standard-deviation"
+  ],
+  "logo": "/icons/tools/how-to-calculate-median.svg",
+  "page": {
+    "module": "../pages/howToCalculateMedianPage",
+    "export": "renderHowToCalculateMedianPage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

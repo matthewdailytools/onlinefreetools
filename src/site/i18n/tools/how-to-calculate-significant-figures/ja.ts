@@ -1,0 +1,53 @@
+/**
+ * i18n tool shard (how-to-calculate-significant-figures / ja).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const ja: SiteLangDict = {
+	tool_significant_figures_title: "有効数字計算ツール — 桁の数え方と丸め方",
+	tool_significant_figures_description: "数値文字列の有効数字を数え、または N 桁に丸めます。先頭のゼロは数えず、小数点以下の末尾ゼロは数えます。例：0.00304 → 3 桁；1234.56 を 3 桁に → 1230（1.23e3）。正数はゼロから遠ざかる半分（half-up 相当）。ブラウザ内で、計数規則と丸め結果の確認向けです。整数の末尾ゼロの扱いも明記します。",
+	tool_significant_figures_calculate: "計算する",
+	tool_significant_figures_sample: "サンプル",
+	tool_significant_figures_clear: "クリア",
+	tool_significant_figures_mode_label: "モード",
+	tool_significant_figures_mode_count: "有効数字を数える",
+	tool_significant_figures_mode_round: "N 桁に丸める",
+	tool_significant_figures_num_label: "数値（テキスト）",
+	tool_significant_figures_num_ph: "例: 0.00304 または 1234.56",
+	tool_significant_figures_n_label: "N（丸め用）",
+	tool_significant_figures_n_ph: "例: 3",
+	tool_significant_figures_countOut_label: "有効数字の桁数",
+	tool_significant_figures_roundedOut_label: "丸め結果",
+	tool_significant_figures_sciOut_label: "科学表記",
+	tool_significant_figures_result_note: "文字列から計数。丸めはゼロから遠ざかる半分（正数は half-up 相当）。",
+	tool_significant_figures_err_generic: "有効な数値文字列を入力。丸めでは N ≥ 1 も必要です。",
+	tool_significant_figures_how_title: "使い方",
+	tool_significant_figures_how_body: "計数か丸めを選びます。先頭ゼロを残すためテキストで貼り付けます。計数は桁数を返し、丸めは N が必要で通常表記と 1.23e3 のような科学表記を出します。",
+	tool_significant_figures_formula_title: "ここに書いた規則",
+	tool_significant_figures_formula_body: "教材的な計数と半分遠ざかり丸め：",
+	tool_significant_figures_formula_item_1: "非ゼロは必ず数え、間のゼロも数える。",
+	tool_significant_figures_formula_item_2: "先頭ゼロは数えない（0.00304 → 3）。",
+	tool_significant_figures_formula_item_3: "小数点以下の末尾ゼロは数える。小数点のない整数の末尾ゼロはこのページでは数えない。",
+	tool_significant_figures_formula_item_4: "丸め：仮数を N 桁に。ちょうど半分はゼロから遠ざける。",
+	tool_significant_figures_example_title: "例",
+	tool_significant_figures_example: "0.00304 を数える → 3。1234.56 を 3 桁に → 1230 と 1.23e3。",
+	tool_significant_figures_usecases_title: "こんなときに",
+	tool_significant_figures_usecase_1: "実験：測定値の有効数字を確認。",
+	tool_significant_figures_usecase_2: "計算結果を許容桁に丸める。",
+	tool_significant_figures_usecase_3: "通常表記と科学表記を見比べる。",
+	tool_significant_figures_disclaimer: "教育用の計数・丸め規則のみ。実験室 SOP は末尾ゼロの扱いが異なる場合があります。",
+	tool_significant_figures_references: "Wikipedia の有効数字と端数処理。",
+	tool_significant_figures_ref_sig_label: "Wikipedia — 有効数字",
+	tool_significant_figures_ref_round_label: "Wikipedia — 端数処理",
+	tool_significant_figures_article: "数値文字列から有効数字を数え、または丸め、規則を明示します。",
+	tool_significant_figures_faq_q1: "先頭のゼロは数える？",
+	tool_significant_figures_faq_a1: "数えません。0.00304 は 3・0・4 のみで 3 桁。",
+	tool_significant_figures_faq_q2: "1200 の末尾ゼロは？",
+	tool_significant_figures_faq_a2: "小数点がない場合、このページでは数えず 2 桁。",
+	tool_significant_figures_faq_q3: "半分の丸めは？",
+	tool_significant_figures_faq_a3: "ゼロから遠ざかります。正数では half-up 相当。",
+	tool_significant_figures_faq_q4: "なぜテキスト入力？",
+	tool_significant_figures_faq_a4: "計数のため先頭ゼロを残すためです。",
+};
+
+export default ja;

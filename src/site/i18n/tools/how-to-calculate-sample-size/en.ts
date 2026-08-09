@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-sample-size / en).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const en: SiteLangDict = {
+	tool_sample_size_title: "Sample Size Calculator — How to Estimate Required n",
+	tool_sample_size_description: "Estimate required sample size for a proportion with n = Z²·p·(1−p)/E². Pick 90/95/99% confidence (Z = 1.645/1.96/2.576), enter p and margin of error E. Example: 95%, p = 0.5, E = 0.05 → n ≈ 385 (ceil). Browser-only learning tool.",
+	tool_sample_size_calculate: "Calculate",
+	tool_sample_size_sample: "Load sample",
+	tool_sample_size_clear: "Clear",
+	tool_sample_size_conf_label: "Confidence level",
+	tool_sample_size_conf_90: "90% (Z = 1.645)",
+	tool_sample_size_conf_95: "95% (Z = 1.96)",
+	tool_sample_size_conf_99: "99% (Z = 2.576)",
+	tool_sample_size_p_label: "Expected proportion (p)",
+	tool_sample_size_p_ph: "e.g. 0.5",
+	tool_sample_size_E_label: "Margin of error (E)",
+	tool_sample_size_E_ph: "e.g. 0.05",
+	tool_sample_size_nOut_label: "Required sample size (n)",
+	tool_sample_size_result_note: "n = ceil(Z²·p·(1−p)/E²) for a proportion — normal approximation, infinite population.",
+	tool_sample_size_err_generic: "Enter p in [0, 1], E > 0, and a confidence level.",
+	tool_sample_size_how_title: "How it works",
+	tool_sample_size_how_body: "Choose 90%, 95%, or 99% confidence, then enter the planning proportion p and the desired margin of error E. The page maps confidence to Z and returns ceil of Z² p (1−p) / E². Runs in your browser for survey homework.",
+	tool_sample_size_formula_title: "Formula and assumptions",
+	tool_sample_size_formula_body: "n = Z² · p · (1 − p) / E², then round up. Keep in mind:",
+	tool_sample_size_formula_item_1: "Z comes from the selected level: 1.645 / 1.96 / 2.576 for 90 / 95 / 99%.",
+	tool_sample_size_formula_item_2: "Uses a normal approximation for a single proportion; not a finite-population correction.",
+	tool_sample_size_formula_item_3: "p = 0.5 maximizes n for a fixed E — a common conservative plan.",
+	tool_sample_size_formula_item_4: "Design effects, clustering, or multiple outcomes need a fuller study plan.",
+	tool_sample_size_example_title: "Example",
+	tool_sample_size_example: "Example: 95% (Z = 1.96), p = 0.5, E = 0.05 → n = ceil(384.16) = 385.",
+	tool_sample_size_usecases_title: "When to use it",
+	tool_sample_size_usecase_1: "Homework: size a simple proportion survey.",
+	tool_sample_size_usecase_2: "Compare how tighter E inflates required n.",
+	tool_sample_size_usecase_3: "Pair with confidence-interval pages after you have data.",
+	tool_sample_size_faq_q1: "Why use p = 0.5 when unsure?",
+	tool_sample_size_faq_a1: "For a fixed E, p(1−p) peaks at 0.5, so the plan is most conservative.",
+	tool_sample_size_faq_q2: "Is the result always an integer?",
+	tool_sample_size_faq_a2: "Yes here: the raw n is ceiled so you never under-sample the formula.",
+	tool_sample_size_faq_q3: "Does this include finite population correction?",
+	tool_sample_size_faq_a3: "No. It assumes a large or infinite population relative to n.",
+	tool_sample_size_faq_q4: "Can I enter Z instead of a confidence level?",
+	tool_sample_size_faq_a4: "This page uses the 90/95/99 select that maps to standard Z values.",
+	tool_sample_size_disclaimer: "Educational proportion sample-size formula only. Not a substitute for survey methodology or power analysis software.",
+	tool_sample_size_references: "Wikipedia on sample size determination and margin of error.",
+	tool_sample_size_ref_ss_label: "Wikipedia — Sample size determination",
+	tool_sample_size_ref_prop_label: "Wikipedia — Margin of error",
+	tool_sample_size_article: "Estimate required n for a proportion with n = Z² p (1−p) / E² and 90/95/99% levels on one page.",
+};
+
+export default en;

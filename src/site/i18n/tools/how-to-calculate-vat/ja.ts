@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-vat / ja).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const ja: SiteLangDict = {
+	tool_vat_title: "VAT/GST（付加価値税）計算ツール",
+	tool_vat_description: "税抜に VAT/GST を加算、または税込から税額を逆算します。例：税抜 100、税率 20% → 税込 120。国別税率表はなく自分で入力。ブラウザ内計算です。。計算はブラウザ内で行いサーバーにアップロードしません。学習用の目安であり投資・税務・経営の助言ではありません。",
+	tool_vat_calculate: "計算する",
+	tool_vat_sample: "サンプル",
+	tool_vat_clear: "クリア",
+	tool_vat_mode_label: "モード",
+	tool_vat_mode_add: "税抜に加算",
+	tool_vat_mode_extract: "税込から抽出",
+	tool_vat_amount_label: "金額",
+	tool_vat_amount_ph: "例 100",
+	tool_vat_rate_label: "税率 %",
+	tool_vat_rate_ph: "例 20",
+	tool_vat_grossOut_label: "税込",
+	tool_vat_netOut_label: "税抜",
+	tool_vat_taxOut_label: "税額",
+	tool_vat_result_note: "加算: 税込=税抜×(1+r)。抽出: 税抜=税込/(1+r)。税率は自分で入力。",
+	tool_vat_err_generic: "金額>0、税率≥0。",
+	tool_vat_how_title: "使い方",
+	tool_vat_how_body: "加算/抽出を選び金額と税率を入力。国別税率表はありません。",
+	tool_vat_formula_title: "計算式",
+	tool_vat_formula_body: "税込=税抜×(1+r)；税抜=税込/(1+r)。注意:",
+	tool_vat_formula_item_1: "rは百分率から換算。",
+	tool_vat_formula_item_2: "複数税率や免除は扱いません。",
+	tool_vat_formula_item_3: "申告ツールではありません。",
+	tool_vat_example_title: "例",
+	tool_vat_example: "例：税抜100、20% → 税込120、税20。",
+	tool_vat_usecases_title: "こんなときに",
+	tool_vat_usecase_1: "VAT加減の宿題。",
+	tool_vat_usecase_2: "記帳前の速算。",
+	tool_vat_usecase_3: "割引/チップ計算と併用。",
+	tool_vat_faq_q1: "例は？",
+	tool_vat_faq_a1: "100に20%で120。",
+	tool_vat_faq_q2: "国別税率は？",
+	tool_vat_faq_a2: "自分で入力。",
+	tool_vat_faq_q3: "申告支援？",
+	tool_vat_faq_a3: "いいえ。",
+	tool_vat_faq_q4: "GSTとVATは？",
+	tool_vat_faq_a4: "計算は同じで名称が地域で違う。",
+	tool_vat_article: "VAT/GST互算",
+	tool_vat_disclaimer: "付加価値税の学習用試算であり、投資・税務の助言ではありません。",
+	tool_vat_references: "Investopedia と標準的な教科書公式。",
+	tool_vat_ref_a_label: "Investopedia — VAT",
+	tool_vat_ref_b_label: "Investopedia — Sales tax",
+};
+
+export default ja;

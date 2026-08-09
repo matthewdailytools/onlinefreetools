@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-pythagorean-theorem / id).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const id: SiteLangDict = {
+	tool_pythagorean_title: "Kalkulator Pythagoras — Cara mencari sisi yang hilang",
+	tool_pythagorean_description: "Selesaikan sisi hilang a, b, atau c dengan a²+b²=c². Contoh: a=3, b=4 → c=5. Masukkan dua sisi positif; menolak pasangan mustahil. Di browser untuk tugas.",
+	tool_pythagorean_calculate: "Hitung",
+	tool_pythagorean_sample: "Muat contoh",
+	tool_pythagorean_clear: "Hapus",
+	tool_pythagorean_solve_label: "Selesaikan",
+	tool_pythagorean_solve_c: "Sisi miring c",
+	tool_pythagorean_solve_a: "Kaki a",
+	tool_pythagorean_solve_b: "Kaki b",
+	tool_pythagorean_known1_label: "Sisi diketahui pertama",
+	tool_pythagorean_known1_ph: "mis. 3",
+	tool_pythagorean_known2_label: "Sisi diketahui kedua",
+	tool_pythagorean_known2_ph: "mis. 4",
+	tool_pythagorean_sideOut_label: "Sisi yang dicari",
+	tool_pythagorean_result_note: "Segitiga siku-siku: a²+b²=c². Saat mencari kaki, sisi miring harus lebih panjang.",
+	tool_pythagorean_err_generic: "Masukkan dua sisi positif; saat mencari kaki, sisi miring harus lebih besar.",
+	tool_pythagorean_how_title: "Cara kerja",
+	tool_pythagorean_how_body: "Pilih sisi yang hilang dan masukkan dua sisi lain. Untuk c: a dan b; untuk a: b dan c; untuk b: a dan c. Mengembalikan akar positif.",
+	tool_pythagorean_formula_title: "Rumus",
+	tool_pythagorean_formula_body: "Teorema Pythagoras a²+b²=c²:",
+	tool_pythagorean_formula_item_1: "Cari c: c=√(a²+b²).",
+	tool_pythagorean_formula_item_2: "Cari a: a=√(c²−b²) dengan c>b>0.",
+	tool_pythagorean_formula_item_3: "Cari b: b=√(c²−a²) dengan c>a>0.",
+	tool_pythagorean_formula_item_4: "Hanya panjang real positif.",
+	tool_pythagorean_example_title: "Contoh",
+	tool_pythagorean_example: "Contoh: a=3, b=4 → c=5.",
+	tool_pythagorean_usecases_title: "Kapan dipakai",
+	tool_pythagorean_usecase_1: "Geometri: cari sisi yang hilang.",
+	tool_pythagorean_usecase_2: "Cek tripels 3-4-5.",
+	tool_pythagorean_usecase_3: "Perkiraan diagonal dari dua kaki tegak lurus.",
+	tool_pythagorean_disclaimer: "Hanya geometri Euclid edukasi.",
+	tool_pythagorean_references: "Wikipedia Pythagorean theorem.",
+	tool_pythagorean_ref_py_label: "Wikipedia — Pythagorean theorem",
+	tool_pythagorean_ref_rt_label: "Wikipedia — Right triangle",
+	tool_pythagorean_article: "Selesaikan sisi hilang segitiga siku-siku dengan a²+b²=c².",
+	tool_pythagorean_faq_q1: "Input apa untuk mencari c?",
+	tool_pythagorean_faq_a1: "Masukkan kaki a dan b.",
+	tool_pythagorean_faq_q2: "Mengapa menolak c≤a?",
+	tool_pythagorean_faq_a2: "Sisi miring harus lebih panjang dari setiap kaki.",
+	tool_pythagorean_faq_q3: "Untuk segitiga tumpul?",
+	tool_pythagorean_faq_a3: "Tidak; hanya relasi siku-siku a²+b²=c².",
+	tool_pythagorean_faq_q4: "Satuan wajib?",
+	tool_pythagorean_faq_a4: "Tidak; pakai satuan yang sama pada kedua sisi.",
+};
+
+export default id;

@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-vat / pt).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const pt: SiteLangDict = {
+	tool_vat_title: "Calculadora de IVA / GST",
+	tool_vat_description: "Some IVA/GST a um líquido ou extraia o imposto de um bruto. Exemplo: líquido 100 a 20% → bruto 120. Você informa a alíquota. No navegador.",
+	tool_vat_calculate: "Calcular",
+	tool_vat_sample: "Carregar exemplo",
+	tool_vat_clear: "Limpar",
+	tool_vat_mode_label: "Modo",
+	tool_vat_mode_add: "Somar ao líquido",
+	tool_vat_mode_extract: "Extrair do bruto",
+	tool_vat_amount_label: "Valor",
+	tool_vat_amount_ph: "ex. 100",
+	tool_vat_rate_label: "IVA/GST %",
+	tool_vat_rate_ph: "ex. 20",
+	tool_vat_grossOut_label: "Bruto",
+	tool_vat_netOut_label: "Líquido",
+	tool_vat_taxOut_label: "Imposto",
+	tool_vat_result_note: "Educativo.",
+	tool_vat_err_generic: "Verifique os dados.",
+	tool_vat_how_title: "Como funciona",
+	tool_vat_how_body: "Escolha modo, valor e alíquota.",
+	tool_vat_formula_title: "Fórmula",
+	tool_vat_formula_body: "Escolha modo, valor e alíquota.",
+	tool_vat_formula_item_1: "See formula notes.",
+	tool_vat_formula_item_2: "Check inputs.",
+	tool_vat_formula_item_3: "Educational only.",
+	tool_vat_example_title: "Exemplo",
+	tool_vat_example: "Exemplo: líquido 100 a 20% → 120.",
+	tool_vat_usecases_title: "Quando usar",
+	tool_vat_usecase_1: "Homework.",
+	tool_vat_usecase_2: "Quick sketch.",
+	tool_vat_usecase_3: "Compare related tools.",
+	tool_vat_faq_q1: "Exemplo?",
+	tool_vat_faq_a1: "Exemplo: líquido 100 a 20% → 120.",
+	tool_vat_faq_q2: "Formula?",
+	tool_vat_faq_a2: "See Formula section.",
+	tool_vat_faq_q3: "Advice?",
+	tool_vat_faq_a3: "Educational only.",
+	tool_vat_faq_q4: "Related?",
+	tool_vat_faq_a4: "See related tools.",
+	tool_vat_article: "Calculadora de IVA / GST",
+	tool_vat_disclaimer: "Apenas ilustração educativa (VAT); não é conselho financeiro.",
+	tool_vat_references: "Investopedia e fórmulas didáticas.",
+	tool_vat_ref_a_label: "Investopedia",
+	tool_vat_ref_b_label: "Wikipedia",
+};
+
+export default pt;

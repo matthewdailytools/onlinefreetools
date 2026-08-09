@@ -1,0 +1,51 @@
+/**
+ * i18n tool shard (how-to-calculate-profit-margin / de).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const de: SiteLangDict = {
+	tool_profit_margin_title: "Gewinnmargen-Rechner — Netto oder operativ",
+	tool_profit_margin_description: "Berechnen Sie Netto- oder operative Marge aus Umsatz und Kosten. Beispiel: Umsatz 10.000, Kosten 7.000 → Nettomarge 30%. Typ auf einer Seite. Bildungszweck.",
+	tool_profit_margin_calculate: "Berechnen",
+	tool_profit_margin_sample: "Beispiel laden",
+	tool_profit_margin_clear: "Leeren",
+	tool_profit_margin_type_label: "Margentyp",
+	tool_profit_margin_type_net: "Nettomarge",
+	tool_profit_margin_type_op: "Operative Marge",
+	tool_profit_margin_rev_label: "Umsatz",
+	tool_profit_margin_rev_ph: "z. B. 10000",
+	tool_profit_margin_cost_label: "Kosten",
+	tool_profit_margin_cost_ph: "z. B. 7000",
+	tool_profit_margin_marginOut_label: "Marge %",
+	tool_profit_margin_profitOut_label: "Gewinn",
+	tool_profit_margin_result_note: "Marge = Gewinn ÷ Umsatz. Bildungszweck.",
+	tool_profit_margin_err_generic: "Umsatz > 0 und Kosten ≥ 0.",
+	tool_profit_margin_how_title: "So funktioniert’s",
+	tool_profit_margin_how_body: "Margentyp wählen, Umsatz und Kosten eingeben. Marge = Gewinn / Umsatz × 100.",
+	tool_profit_margin_formula_title: "Formel",
+	tool_profit_margin_formula_body: "Marge % = (Umsatz − Kosten) / Umsatz × 100. Hinweise:",
+	tool_profit_margin_formula_item_1: "Kosten zur gewählten Definition passend wählen.",
+	tool_profit_margin_formula_item_2: "Umsatz > 0.",
+	tool_profit_margin_formula_item_3: "Vereinfachte GuV.",
+	tool_profit_margin_example_title: "Beispiel",
+	tool_profit_margin_example: "Beispiel: Umsatz 10.000, Kosten 7.000 → Marge 30%.",
+	tool_profit_margin_usecases_title: "Wann sinnvoll",
+	tool_profit_margin_usecase_1: "Übung Nettomarge.",
+	tool_profit_margin_usecase_2: "Operativ vs Netto vergleichen.",
+	tool_profit_margin_usecase_3: "Mit Bruttomarge kontrastieren.",
+	tool_profit_margin_faq_q1: "Beispielergebnis?",
+	tool_profit_margin_faq_a1: "30%",
+	tool_profit_margin_faq_q2: "Markup vs margin?",
+	tool_profit_margin_faq_a2: "Markup÷cost; margin÷revenue.",
+	tool_profit_margin_faq_q3: "Why two types?",
+	tool_profit_margin_faq_a3: "Same form; different cost stacks.",
+	tool_profit_margin_faq_q4: "Geschäftsberatung?",
+	tool_profit_margin_faq_a4: "Educational only.",
+	tool_profit_margin_article: "Gewinnmargen-Rechner — Netto oder operativ",
+	tool_profit_margin_disclaimer: "Nur zur Veranschaulichung (margen) — keine Finanzberatung.",
+	tool_profit_margin_references: "Investopedia und Lehrbuchformeln.",
+	tool_profit_margin_ref_a_label: "Investopedia — Profit margin",
+	tool_profit_margin_ref_b_label: "Investopedia — Operating margin",
+};
+
+export default de;

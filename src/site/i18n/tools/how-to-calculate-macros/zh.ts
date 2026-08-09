@@ -1,0 +1,53 @@
+/**
+ * i18n tool shard (how-to-calculate-macros / zh).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const zh: SiteLangDict = {
+	tool_macros_title: "宏量营养素计算器 — 热量分配到克数",
+	tool_macros_description: "按热量与比例把蛋白/碳水/脂肪换成克数（每克 4/4/9 kcal）。示例：2000 kcal、30%/40%/30% → 150 g / 200 g / 约 66.67 g。健康教育演示，非医疗建议；浏览器本地计算。；全程浏览器本地计算，数据不上传服务器；结果仅供学习对照，请核对公式假设。",
+	tool_macros_calculate: "计算",
+	tool_macros_sample: "加载样例",
+	tool_macros_clear: "清空",
+	tool_macros_cal_label: "热量 (kcal)",
+	tool_macros_cal_ph: "例如 2000",
+	tool_macros_pPct_label: "蛋白质 %",
+	tool_macros_pPct_ph: "例如 30",
+	tool_macros_cPct_label: "碳水 %",
+	tool_macros_cPct_ph: "例如 40",
+	tool_macros_fPct_label: "脂肪 %",
+	tool_macros_fPct_ph: "例如 30",
+	tool_macros_pG_label: "蛋白质 (g)",
+	tool_macros_cG_label: "碳水 (g)",
+	tool_macros_fG_label: "脂肪 (g)",
+	tool_macros_result_note: "克数=(热量×比例/100)÷每克热量（P/C=4，脂肪=9）。比例宜合计 100%。",
+	tool_macros_err_generic: "热量>0，比例≥0 且合计 100%。",
+	tool_macros_how_title: "怎么用",
+	tool_macros_how_body: "填写热量与三大营养素比例。这是教材能量算术，不是膳食处方。",
+	tool_macros_formula_title: "公式",
+	tool_macros_formula_body: "宏量营养素相关公式见 Formula 节。注意：",
+	tool_macros_formula_item_1: "核对单位与符号。",
+	tool_macros_formula_item_2: "边界输入可能无定义。",
+	tool_macros_formula_item_3: "仅供学习对照。",
+	tool_macros_example_title: "示例",
+	tool_macros_example: "示例：2000 kcal、30/40/30% → 150/200/约66.67 g。",
+	tool_macros_usecases_title: "适合什么场景",
+	tool_macros_usecase_1: "课堂作业。",
+	tool_macros_usecase_2: "快速验算。",
+	tool_macros_usecase_3: "与相关工具对照。",
+	tool_macros_faq_q1: "样例？",
+	tool_macros_faq_a1: "示例：2000 kcal、30/40/30% → 150/200/约66.67 g。",
+	tool_macros_faq_q2: "公式？",
+	tool_macros_faq_a2: "见公式节。",
+	tool_macros_faq_q3: "专业建议？",
+	tool_macros_faq_a3: "不是。",
+	tool_macros_faq_q4: "相关？",
+	tool_macros_faq_a4: "见相关工具。",
+	tool_macros_article: "宏量营养素",
+	tool_macros_disclaimer: "结果仅为宏量营养素健康教育演示，不构成医疗诊断或治疗建议。请咨询专业人士。",
+	tool_macros_references: "CDC / ACSM 等公开教育资料。",
+	tool_macros_ref_a_label: "Wikipedia",
+	tool_macros_ref_b_label: "Textbook formula",
+};
+
+export default zh;

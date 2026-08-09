@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-profit-margin",
+  "path": "/tools/how-to-calculate-profit-margin",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": true,
+  "i18nKey": "tool_profit_margin_title",
+  "homeTitleKey": "tool_profit_margin_title",
+  "homeDescKey": "tool_profit_margin_description",
+  "faqPrefix": "tool_profit_margin",
+  "related": [
+    "how-to-calculate-gross-margin",
+    "how-to-calculate-markup"
+  ],
+  "logo": "/icons/tools/how-to-calculate-profit-margin.svg",
+  "page": {
+    "module": "../pages/howToCalculateProfitMarginPage",
+    "export": "renderHowToCalculateProfitMarginPage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

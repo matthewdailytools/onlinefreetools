@@ -1,0 +1,51 @@
+/**
+ * i18n tool shard (how-to-calculate-tip / pt).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const pt: SiteLangDict = {
+	tool_tip_title: "Calculadora de gorjeta",
+	tool_tip_description: "Calcule a gorjeta com conta e % e divida o total. Exemplo: conta 80 com 15% → gorjeta 12, total 92. No navegador. Cálculo educativo no navegador; não é conselho profissional.",
+	tool_tip_calculate: "Calcular",
+	tool_tip_sample: "Carregar exemplo",
+	tool_tip_clear: "Limpar",
+	tool_tip_bill_label: "Conta",
+	tool_tip_bill_ph: "ex. 80",
+	tool_tip_tip_label: "Gorjeta %",
+	tool_tip_tip_ph: "ex. 15",
+	tool_tip_split_label: "Pessoas",
+	tool_tip_split_ph: "ex. 1",
+	tool_tip_tipOut_label: "Gorjeta",
+	tool_tip_totalOut_label: "Total",
+	tool_tip_eachOut_label: "Por pessoa",
+	tool_tip_result_note: "Educativo.",
+	tool_tip_err_generic: "Verifique os dados.",
+	tool_tip_how_title: "Como funciona",
+	tool_tip_how_body: "Informe conta, % e pessoas.",
+	tool_tip_formula_title: "Fórmula",
+	tool_tip_formula_body: "Informe conta, % e pessoas.",
+	tool_tip_formula_item_1: "See formula notes.",
+	tool_tip_formula_item_2: "Check inputs.",
+	tool_tip_formula_item_3: "Educational only.",
+	tool_tip_example_title: "Exemplo",
+	tool_tip_example: "Exemplo: 80 com 15% → 12 / total 92.",
+	tool_tip_usecases_title: "Quando usar",
+	tool_tip_usecase_1: "Homework.",
+	tool_tip_usecase_2: "Quick sketch.",
+	tool_tip_usecase_3: "Compare related tools.",
+	tool_tip_faq_q1: "Exemplo?",
+	tool_tip_faq_a1: "Exemplo: 80 com 15% → 12 / total 92.",
+	tool_tip_faq_q2: "Formula?",
+	tool_tip_faq_a2: "See Formula section.",
+	tool_tip_faq_q3: "Advice?",
+	tool_tip_faq_a3: "Educational only.",
+	tool_tip_faq_q4: "Related?",
+	tool_tip_faq_a4: "See related tools.",
+	tool_tip_article: "Calculadora de gorjeta",
+	tool_tip_disclaimer: "Apenas ilustração educativa (tip); não é conselho financeiro.",
+	tool_tip_references: "Investopedia e fórmulas didáticas.",
+	tool_tip_ref_a_label: "Investopedia",
+	tool_tip_ref_b_label: "Wikipedia",
+};
+
+export default pt;

@@ -1,0 +1,51 @@
+/**
+ * i18n tool shard (how-to-calculate-quadratic-equation / pt).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const pt: SiteLangDict = {
+	tool_quadratic_equation_title: "Resolvedor de equação do 2º grau",
+	tool_quadratic_equation_description: "Calcule as raízes reais de ax²+bx+c=0 e mostre o discriminante com a fórmula quadrática. Exemplo: a=1, b=-5, c=6 → raízes 2 e 3. Só no navegador; processo algébrico claro.",
+	tool_quadratic_equation_calculate: "Calcular",
+	tool_quadratic_equation_sample: "Carregar exemplo",
+	tool_quadratic_equation_clear: "Limpar",
+	tool_quadratic_equation_a_label: "a",
+	tool_quadratic_equation_a_ph: "ex. 1",
+	tool_quadratic_equation_b_label: "b",
+	tool_quadratic_equation_b_ph: "ex. -5",
+	tool_quadratic_equation_c_label: "c",
+	tool_quadratic_equation_c_ph: "ex. 6",
+	tool_quadratic_equation_discOut_label: "Discriminante",
+	tool_quadratic_equation_r1Out_label: "Raiz 1",
+	tool_quadratic_equation_r2Out_label: "Raiz 2",
+	tool_quadratic_equation_result_note: "Educativo.",
+	tool_quadratic_equation_err_generic: "Verifique os dados.",
+	tool_quadratic_equation_how_title: "Como funciona",
+	tool_quadratic_equation_how_body: "Informe a, b e c.",
+	tool_quadratic_equation_formula_title: "Fórmula",
+	tool_quadratic_equation_formula_body: "Informe a, b e c.",
+	tool_quadratic_equation_formula_item_1: "See formula notes.",
+	tool_quadratic_equation_formula_item_2: "Check inputs.",
+	tool_quadratic_equation_formula_item_3: "Educational only.",
+	tool_quadratic_equation_example_title: "Exemplo",
+	tool_quadratic_equation_example: "Exemplo: raízes 2 e 3.",
+	tool_quadratic_equation_usecases_title: "Quando usar",
+	tool_quadratic_equation_usecase_1: "Homework.",
+	tool_quadratic_equation_usecase_2: "Quick sketch.",
+	tool_quadratic_equation_usecase_3: "Compare related tools.",
+	tool_quadratic_equation_faq_q1: "Exemplo?",
+	tool_quadratic_equation_faq_a1: "Exemplo: raízes 2 e 3.",
+	tool_quadratic_equation_faq_q2: "Formula?",
+	tool_quadratic_equation_faq_a2: "See Formula section.",
+	tool_quadratic_equation_faq_q3: "Advice?",
+	tool_quadratic_equation_faq_a3: "Educational only.",
+	tool_quadratic_equation_faq_q4: "Related?",
+	tool_quadratic_equation_faq_a4: "See related tools.",
+	tool_quadratic_equation_article: "Resolvedor de equação do 2º grau",
+	tool_quadratic_equation_disclaimer: "Apenas ilustração educativa (quadratic equation).",
+	tool_quadratic_equation_references: "Fórmulas didáticas.",
+	tool_quadratic_equation_ref_a_label: "Wikipedia",
+	tool_quadratic_equation_ref_b_label: "Textbook formula",
+};
+
+export default pt;

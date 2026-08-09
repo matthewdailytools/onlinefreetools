@@ -1,0 +1,50 @@
+/**
+ * i18n tool shard (how-to-calculate-discount / ru).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const ru: SiteLangDict = {
+	tool_discount_title: "Калькулятор скидки — Цена со скидкой",
+	tool_discount_description: "Считайте итоговую цену из исходной суммы и процента скидки. Пример: 100 минус 20% → 80. Вторая скидка (по желанию) применяется к уже сниженной цене. Только в браузере — не касса магазина.",
+	tool_discount_calculate: "Рассчитать",
+	tool_discount_sample: "Загрузить пример",
+	tool_discount_clear: "Очистить",
+	tool_discount_original_label: "Исходная цена",
+	tool_discount_original_ph: "напр. 100",
+	tool_discount_pct_label: "Скидка (% off)",
+	tool_discount_pct_ph: "напр. 20",
+	tool_discount_pct2_label: "Вторая скидка % (необяз.)",
+	tool_discount_pct2_ph: "напр. 10",
+	tool_discount_finalOut_label: "Итоговая цена",
+	tool_discount_savedOut_label: "Экономия",
+	tool_discount_result_note: "Вторая скидка, если есть, применяется к уже сниженной цене. Только обучение.",
+	tool_discount_err_generic: "Введите положительную исходную цену и процент от 0 до 100.",
+	tool_discount_how_title: "Как пользоваться",
+	tool_discount_how_body: "Укажите исходную цену и процент скидки. При желании добавьте второй процент на уже сниженную сумму. В браузере увидите итог и экономию.",
+	tool_discount_formula_title: "Формула",
+	tool_discount_formula_body: "Итог = исходная × (1 − d₁/100) × (1 − d₂/100) при второй скидке. Замечания:",
+	tool_discount_formula_item_1: "d₁ и d₂ — проценты скидки (20 = минус 20%), не множители 0,8.",
+	tool_discount_formula_item_2: "Оставьте вторую пустой или 0 для одной скидки.",
+	tool_discount_formula_item_3: "Налоги и купоны с фиксированной суммой не моделируются.",
+	tool_discount_example_title: "Пример",
+	tool_discount_example: "Пример: 100 минус 20% → 80. Затем ещё 10% → 72.",
+	tool_discount_usecases_title: "Когда использовать",
+	tool_discount_usecase_1: "Оценить акционную цену до налога.",
+	tool_discount_usecase_2: "Домашка: последовательные проценты.",
+	tool_discount_usecase_3: "Тренировка двойной скидки.",
+	tool_discount_faq_q1: "Как накладывается вторая скидка?",
+	tool_discount_faq_a1: "На уже сниженную цену.",
+	tool_discount_faq_q2: "Минус 20% значит платить 20%?",
+	tool_discount_faq_a2: "Нет: платите 80% исходной.",
+	tool_discount_faq_q3: "С налогом?",
+	tool_discount_faq_a3: "Нет.",
+	tool_discount_faq_q4: "Купон на фиксированную сумму?",
+	tool_discount_faq_a4: "Здесь только проценты.",
+	tool_discount_disclaimer: "Учебная иллюстрация цены — не касса и не налоговый движок.",
+	tool_discount_references: "Investopedia о скидках; арифметика последовательных %.",
+	tool_discount_ref_a_label: "Investopedia — Discount",
+	tool_discount_ref_b_label: "Википедия — Скидка",
+	tool_discount_article: "Цена со скидкой из исходной суммы и % off, с опциональной второй скидкой на одной странице.",
+};
+
+export default ru;

@@ -1,0 +1,50 @@
+/**
+ * i18n tool shard (how-to-calculate-debt-payoff / ja).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const ja: SiteLangDict = {
+	tool_debt_payoff_title: "借金完済までの月数計算",
+	tool_debt_payoff_description: "元金・年利・固定月額返済から完済までの月数を見積もります。例：元金 5000、年利 12%、月々 200 → 完済月数。学習用であり貸付助言ではありません。。計算はブラウザ内で行いサーバーにアップロードしません。学習用の目安であり投資・税務・経営の助言ではありません。",
+	tool_debt_payoff_calculate: "計算する",
+	tool_debt_payoff_sample: "サンプル",
+	tool_debt_payoff_clear: "クリア",
+	tool_debt_payoff_principal_label: "残高",
+	tool_debt_payoff_principal_ph: "例 5000",
+	tool_debt_payoff_rate_label: "年利 %",
+	tool_debt_payoff_rate_ph: "例 12",
+	tool_debt_payoff_pay_label: "月々の返済額",
+	tool_debt_payoff_pay_ph: "例 200",
+	tool_debt_payoff_monthsOut_label: "完済までの月数",
+	tool_debt_payoff_interestOut_label: "利息合計（目安）",
+	tool_debt_payoff_result_note: "簡易月次ループ。返済額が初月利息を上回る必要あり。貸付助言ではありません。",
+	tool_debt_payoff_err_generic: "残高>0、利率≥0、返済額が月利息を超えること。",
+	tool_debt_payoff_how_title: "使い方",
+	tool_debt_payoff_how_body: "残高・年利・固定月額を入力し、完済まで月次で回します。",
+	tool_debt_payoff_formula_title: "計算式",
+	tool_debt_payoff_formula_body: "毎月：利息=残高×r/12；元金減=返済−利息。注意:",
+	tool_debt_payoff_formula_item_1: "返済≤初月利息なら完済不可。",
+	tool_debt_payoff_formula_item_2: "手数料や延滞は省略。",
+	tool_debt_payoff_formula_item_3: "スノーボール等は説明のみでURL分割しません。",
+	tool_debt_payoff_example_title: "例",
+	tool_debt_payoff_example: "例：5000、12%、月200 → 約30か月。",
+	tool_debt_payoff_usecases_title: "こんなときに",
+	tool_debt_payoff_usecase_1: "償却月数の宿題。",
+	tool_debt_payoff_usecase_2: "返済額で完済できるか確認。",
+	tool_debt_payoff_usecase_3: "EMIページと月額比較。",
+	tool_debt_payoff_faq_q1: "完済できる？",
+	tool_debt_payoff_faq_a1: "月利息より多い返済が必要。",
+	tool_debt_payoff_faq_q2: "例の月数は？",
+	tool_debt_payoff_faq_a2: "約30か月。",
+	tool_debt_payoff_faq_q3: "スノーボール専用URL？",
+	tool_debt_payoff_faq_a3: "ありません。",
+	tool_debt_payoff_faq_q4: "助言？",
+	tool_debt_payoff_faq_a4: "学習用です。",
+	tool_debt_payoff_article: "借金完済月数",
+	tool_debt_payoff_disclaimer: "債務返済の学習用試算であり、投資・税務の助言ではありません。",
+	tool_debt_payoff_references: "Investopedia と標準的な教科書公式。",
+	tool_debt_payoff_ref_a_label: "Investopedia — Amortization",
+	tool_debt_payoff_ref_b_label: "Investopedia — Debt",
+};
+
+export default ja;

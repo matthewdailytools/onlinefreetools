@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-sample-size / ar).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const ar: SiteLangDict = {
+	tool_sample_size_title: "حاسبة حجم العينة — كيفية تقدير الحجم المطلوب",
+	tool_sample_size_description: "قدّر حجم العينة لنسبة بـ n = Z²·p·(1−p)/E². اختر ثقة 90/95/99٪ (Z = 1.645/1.96/2.576) وأدخل p وهامش الخطأ E. مثال: 95٪ وp=0.5 وE=0.05 → n≈385 بعد السقف. في المتصفح للتعلّم.",
+	tool_sample_size_calculate: "احسب",
+	tool_sample_size_sample: "تحميل مثال",
+	tool_sample_size_clear: "مسح",
+	tool_sample_size_conf_label: "مستوى الثقة",
+	tool_sample_size_conf_90: "90٪ (Z = 1.645)",
+	tool_sample_size_conf_95: "95٪ (Z = 1.96)",
+	tool_sample_size_conf_99: "99٪ (Z = 2.576)",
+	tool_sample_size_p_label: "النسبة المتوقعة p",
+	tool_sample_size_p_ph: "مثال 0.5",
+	tool_sample_size_E_label: "هامش الخطأ E",
+	tool_sample_size_E_ph: "مثال 0.05",
+	tool_sample_size_nOut_label: "حجم العينة المطلوب n",
+	tool_sample_size_result_note: "n = ceil(Z²·p·(1−p)/E²) لنسبة — تقريب طبيعي ومجتمع لانهائي.",
+	tool_sample_size_err_generic: "أدخل p ضمن [0,1] وE > 0 واختر مستوى الثقة.",
+	tool_sample_size_how_title: "طريقة الاستخدام",
+	tool_sample_size_how_body: "اختر 90 أو 95 أو 99٪ ثم أدخل p وهامش E. تُحوَّل الثقة إلى Z ويُرجع سقف Z² p (1−p)/E². في المتصفح لواجبات الاستطلاع.",
+	tool_sample_size_formula_title: "الصيغة والافتراضات",
+	tool_sample_size_formula_body: "n = Z² · p · (1 − p) / E² ثم السقف. حدود:",
+	tool_sample_size_formula_item_1: "Z: 1.645 / 1.96 / 2.576 للمستويات 90 / 95 / 99٪.",
+	tool_sample_size_formula_item_2: "تقريب طبيعي لنسبة واحدة؛ بلا تصحيح مجتمع محدود.",
+	tool_sample_size_formula_item_3: "p = 0.5 يعظّم n عند تثبيت E.",
+	tool_sample_size_formula_item_4: "التصاميم المعقّدة تحتاج خطة أشمل.",
+	tool_sample_size_example_title: "مثال",
+	tool_sample_size_example: "مثال: 95٪ (Z=1.96) وp=0.5 وE=0.05 → n = 385.",
+	tool_sample_size_usecases_title: "متى تستخدمه",
+	tool_sample_size_usecase_1: "واجب: تقدير حجم استطلاع نسبة بسيط.",
+	tool_sample_size_usecase_2: "مقارنة أثر تصغير E على n.",
+	tool_sample_size_usecase_3: "ربطه لاحقًا بصفحة فترة ثقة.",
+	tool_sample_size_faq_q1: "هل الناتج دائمًا عدد صحيح؟",
+	tool_sample_size_faq_a1: "نعم؛ تُطبَّق دالة السقف على نتيجة الصيغة.",
+	tool_sample_size_faq_q2: "هل يوجد تصحيح لمجتمع محدود؟",
+	tool_sample_size_faq_a2: "لا؛ يفترض مجتمعًا كبيرًا بالنسبة إلى n.",
+	tool_sample_size_faq_q3: "لماذا يُستخدم p=0.5 عند الجهل؟",
+	tool_sample_size_faq_a3: "لأنه يعطي أكبر n لنفس E فيكون التخطيط أكثر تحفظًا.",
+	tool_sample_size_faq_q4: "هل أُدخل Z يدويًا؟",
+	tool_sample_size_faq_a4: "هذه الصفحة تعتمد قائمة 90/95/99 للقيم الشائعة.",
+	tool_sample_size_disclaimer: "صيغة تعليمية لحجم عينة النسبة فقط ولا تغني عن منهجية المسح.",
+	tool_sample_size_references: "ويكيبيديا تحديد حجم العينة وهامش الخطأ.",
+	tool_sample_size_ref_ss_label: "ويكيبيديا — تحديد حجم العينة",
+	tool_sample_size_ref_prop_label: "ويكيبيديا — هامش الخطأ",
+	tool_sample_size_article: "قدّر n لنسبة عبر n = Z² p (1−p)/E² ومستويات 90/95/99٪ في صفحة واحدة.",
+};
+
+export default ar;

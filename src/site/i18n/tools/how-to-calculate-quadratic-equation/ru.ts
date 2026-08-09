@@ -1,0 +1,51 @@
+/**
+ * i18n tool shard (how-to-calculate-quadratic-equation / ru).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const ru: SiteLangDict = {
+	tool_quadratic_equation_title: "Решатель квадратного уравнения",
+	tool_quadratic_equation_description: "Рассчитайте вещественные корни ax²+bx+c=0 и покажите дискриминант по квадратной формуле. Пример: a=1, b=-5, c=6 → корни 2 и 3. Только в браузере; понятный алгебраический процесс.",
+	tool_quadratic_equation_calculate: "Рассчитать",
+	tool_quadratic_equation_sample: "Загрузить пример",
+	tool_quadratic_equation_clear: "Очистить",
+	tool_quadratic_equation_a_label: "a",
+	tool_quadratic_equation_a_ph: "напр. 1",
+	tool_quadratic_equation_b_label: "b",
+	tool_quadratic_equation_b_ph: "напр. -5",
+	tool_quadratic_equation_c_label: "c",
+	tool_quadratic_equation_c_ph: "напр. 6",
+	tool_quadratic_equation_discOut_label: "Дискриминант",
+	tool_quadratic_equation_r1Out_label: "Корень 1",
+	tool_quadratic_equation_r2Out_label: "Корень 2",
+	tool_quadratic_equation_result_note: "Учебно.",
+	tool_quadratic_equation_err_generic: "Проверьте ввод.",
+	tool_quadratic_equation_how_title: "Как пользоваться",
+	tool_quadratic_equation_how_body: "Введите a, b и c.",
+	tool_quadratic_equation_formula_title: "Формула",
+	tool_quadratic_equation_formula_body: "Введите a, b и c.",
+	tool_quadratic_equation_formula_item_1: "See formula notes.",
+	tool_quadratic_equation_formula_item_2: "Check inputs.",
+	tool_quadratic_equation_formula_item_3: "Educational only.",
+	tool_quadratic_equation_example_title: "Пример",
+	tool_quadratic_equation_example: "Пример: корни 2 и 3.",
+	tool_quadratic_equation_usecases_title: "Когда использовать",
+	tool_quadratic_equation_usecase_1: "Homework.",
+	tool_quadratic_equation_usecase_2: "Quick sketch.",
+	tool_quadratic_equation_usecase_3: "Compare related tools.",
+	tool_quadratic_equation_faq_q1: "Пример?",
+	tool_quadratic_equation_faq_a1: "Пример: корни 2 и 3.",
+	tool_quadratic_equation_faq_q2: "Formula?",
+	tool_quadratic_equation_faq_a2: "See Formula section.",
+	tool_quadratic_equation_faq_q3: "Advice?",
+	tool_quadratic_equation_faq_a3: "Educational only.",
+	tool_quadratic_equation_faq_q4: "Related?",
+	tool_quadratic_equation_faq_a4: "See related tools.",
+	tool_quadratic_equation_article: "Решатель квадратного уравнения",
+	tool_quadratic_equation_disclaimer: "Только учебная иллюстрация (quadratic equation).",
+	tool_quadratic_equation_references: "Учебные формулы.",
+	tool_quadratic_equation_ref_a_label: "Wikipedia",
+	tool_quadratic_equation_ref_b_label: "Textbook formula",
+};
+
+export default ru;

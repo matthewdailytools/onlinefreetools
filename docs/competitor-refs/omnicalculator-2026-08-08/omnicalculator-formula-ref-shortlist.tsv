@@ -12,52 +12,52 @@ how-to-calculate-break-even	盈亏平衡	finance	break-even	https://www.omnicalc
 how-to-calculate-gross-margin	毛利率	finance	gross-margin	https://www.omnicalculator.com/finance/gross-margin	已上线	C-V4
 unit-converter	单位换算（通用）	conversion	conversion-calculator	https://www.omnicalculator.com/conversion/conversion-calculator	已上线	换算枢纽非 how-to-calculate；禁按单位对拆页（Omni conversion≈326）
 how-to-calculate-body-fat	体脂率	health	navy-body-fat	https://www.omnicalculator.com/health/navy-body-fat	已上线	C-V5；合并原 body-fat-navy；合并 navy-body-fat|body-fat|army-body-fat|skinfold-body-fat
-how-to-calculate-ideal-weight	理想体重区间	health	ideal-weight	https://www.omnicalculator.com/health/ideal-weight	未开始 · P2	C-V5
-how-to-calculate-cagr	CAGR	finance	cagr	https://www.omnicalculator.com/finance/cagr	未开始 · P2	C-V4
-how-to-calculate-npv	NPV	finance	net-present-value	https://www.omnicalculator.com/finance/net-present-value	未开始 · P2	C-V4；与 PV/FV 分意图
-how-to-calculate-standard-deviation	标准差 / 方差	statistics	standard-deviation	https://www.omnicalculator.com/statistics/standard-deviation	未开始 · P2	A.7；方差作同页模式；合并 standard-deviation|variance|population-variance|relative-standard-deviation|grouped-data-standard-deviation
-how-to-calculate-concrete	混凝土方量	construction	concrete-slab	https://www.omnicalculator.com/construction/concrete-slab	未开始 · P2	C 工程；形状作选项禁拆页；合并 concrete-slab|concrete-column|concrete-cylinder|concrete-stairs|post-hole-concrete
-how-to-calculate-tile	瓷砖估算	construction	tile	https://www.omnicalculator.com/construction/tile	未开始 · P2	C 工程
-how-to-calculate-aspect-ratio	宽高比	other	aspect-ratio	https://www.omnicalculator.com/other/aspect-ratio	未开始 · P2	禁 16:9/4:3 独立 URL；css-aspect-ratio 另评估；合并 aspect-ratio|16-9-aspect-ratio|16-10-aspect-ratio|4-3-aspect-ratio|pixel-aspect-ratio|portrait-aspect-ratio
-how-to-calculate-paint	油漆估算	construction	paint	https://www.omnicalculator.com/construction/paint	未开始 · P2	C 工程
-how-to-calculate-salary-hourly	年薪 ↔ 时薪	finance	salary-to-hourly	https://www.omnicalculator.com/finance/salary-to-hourly	未开始 · P2	Omni finance 热门；合并 salary-to-hourly|hourly-to-salary|annual-salary|annual-to-monthly-salary|annual-salary-per-hour|hourly-to-annual-salary
-how-to-calculate-p-value	p 值	statistics	p-value	https://www.omnicalculator.com/statistics/p-value	未开始 · P2	A.7
-how-to-calculate-confidence-interval	置信区间	statistics	confidence-interval	https://www.omnicalculator.com/statistics/confidence-interval	未开始 · P2	禁拆 90/95/99 URL；合并 confidence-interval|90-confidence-interval|95-confidence-interval|99-confidence-interval
-how-to-calculate-z-score	Z 分数	statistics	z-score	https://www.omnicalculator.com/statistics/z-score	未开始 · P2	A.7
-how-to-calculate-sample-size	样本量	statistics	sample-size	https://www.omnicalculator.com/statistics/sample-size	未开始 · P2	A.7
-how-to-calculate-significant-figures	有效数字	math	sig-fig	https://www.omnicalculator.com/math/sig-fig	未开始 · P2	Omni math 热门
-how-to-calculate-scientific-notation	科学计数法	math	scientific-notation	https://www.omnicalculator.com/math/scientific-notation	未开始 · P2	A.7；合并 scientific-notation|scientific-notation-converter
-how-to-calculate-logarithm	对数	math	log	https://www.omnicalculator.com/math/log	未开始 · P2	合并原 log-calculator；合并 log|natural-log|antilog|log-2|negative-log
-how-to-calculate-pythagorean-theorem	勾股定理	math	pythagorean-theorem	https://www.omnicalculator.com/math/pythagorean-theorem	未开始 · P2	A.7
-how-to-calculate-slope	斜率	math	slope	https://www.omnicalculator.com/math/slope	未开始 · P2	A.7
-how-to-calculate-exponent	指数幂	math	exponent	https://www.omnicalculator.com/math/exponent	未开始 · P2	shortlist 原有
-how-to-calculate-gpa	GPA	other	gpa	https://www.omnicalculator.com/other/gpa	未开始 · P2	禁拆 college/high-school 薄页；合并 gpa|college-gpa|high-school-gpa|gpa-pakistan
-how-to-calculate-discount	折扣 / 优惠价	finance	discount	https://www.omnicalculator.com/finance/discount	未开始 · P2	Omni 补充；多层折扣作同页选项；合并 discount|markdown|percent-off|percentage-discount|double-discount
-how-to-calculate-markup	加价率 Markup	finance	markup	https://www.omnicalculator.com/finance/markup	未开始 · P2	与 discount 分意图
-how-to-calculate-profit-margin	利润率	finance	net-profit-margin	https://www.omnicalculator.com/finance/net-profit-margin	未开始 · P2	与 gross-margin 分意图；同页多类型；合并 net-profit-margin|operating-margin
-how-to-calculate-contribution-margin	边际贡献	finance	contribution-margin	https://www.omnicalculator.com/finance/contribution-margin	未开始 · P2	C-V4 补充
-how-to-calculate-present-value	现值 / 终值 PV·FV	finance	present-value	https://www.omnicalculator.com/finance/present-value	未开始 · P2	与 NPV 分意图；合并 present-value|future-value|annuity-present-value|annuity-future-value
-how-to-calculate-irr	IRR	finance	internal-rate-of-return	https://www.omnicalculator.com/finance/internal-rate-of-return	未开始 · P2	C-V4 补充；合并 internal-rate-of-return|modified-irr
-how-to-calculate-payback-period	回收期	finance	payback-period	https://www.omnicalculator.com/finance/payback-period	未开始 · P2	可选折现回收作同页模式
-how-to-calculate-inflation	通胀	finance	inflation	https://www.omnicalculator.com/finance/inflation	未开始 · P2	禁 CPI 国家矩阵铺量；合并 inflation|cpi-inflation|salary-inflation
-how-to-calculate-vat	增值税 VAT / GST	finance	vat	https://www.omnicalculator.com/finance/vat	未开始 · P2	禁各国税率拆页；用户自填税率；合并 vat|gst|gst-qst|margin-and-vat
-how-to-calculate-debt-payoff	债务还清	finance	debt-payoff	https://www.omnicalculator.com/finance/debt-payoff	未开始 · P2	雪球/雪崩作策略说明非拆页；合并 debt-payoff|debt-snowball|credit-card-payoff
-how-to-calculate-rule-of-72	72 法则	finance	rule-of-72	https://www.omnicalculator.com/finance/rule-of-72	未开始 · P2	教育向；免责
-how-to-calculate-tip	小费	everyday-life	tip	https://www.omnicalculator.com/everyday-life/tip	未开始 · P2	everyday-life 补充；合并 tip|gratuity
-how-to-calculate-age	年龄	everyday-life	age	https://www.omnicalculator.com/everyday-life/age	未开始 · P2	禁宠物年龄拆页；合并 age|chronological-age
-how-to-calculate-date-difference	日期间隔	everyday-life	days-between-dates	https://www.omnicalculator.com/everyday-life/days-between-dates	未开始 · P2	everyday-life
-how-to-calculate-mean	平均数	statistics	mean	https://www.omnicalculator.com/statistics/mean	未开始 · P2	A.7 补充；合并 mean|average|geometric-mean|harmonic-mean
-how-to-calculate-median	中位数 / 众数	statistics	median	https://www.omnicalculator.com/statistics/median	未开始 · P2	可与 mean 互链；合并 median|mean-median-mode
-how-to-calculate-permutation-combination	排列组合	math	permutation	https://www.omnicalculator.com/math/permutation	未开始 · P2	A.7 补充；合并 permutation|combination
-how-to-calculate-quadratic-equation	二次方程	math	quadratic-formula	https://www.omnicalculator.com/math/quadratic-formula	未开始 · P2	A.7 补充
-how-to-calculate-triangle-area	三角形面积	math	triangle-area	https://www.omnicalculator.com/math/triangle-area	未开始 · P2	形状条件作选项禁拆页；合并 triangle-area|herons-formula|3-sides-triangle-area|right-triangle-area|equilateral-triangle-area|isosceles-triangle-area
-how-to-calculate-circle	圆（周长/面积/弧）	math	circle	https://www.omnicalculator.com/math/circle	未开始 · P2	A.7 补充；合并 circle|circumference|arc-length|area-of-a-circle|circle-diameter
-how-to-calculate-volume	几何体积	math	volume	https://www.omnicalculator.com/math/volume	未开始 · P2	禁每形状一 URL；合并 volume|cylinder-volume|sphere-volume|cone-volume|cube-volume
-how-to-calculate-macros	宏量营养素	health	macro	https://www.omnicalculator.com/health/macro	未开始 · P2	C-V5 补充；YMYL；合并 macro|iifym
-how-to-calculate-heart-rate	心率区间	health	heart-rate	https://www.omnicalculator.com/health/heart-rate	未开始 · P2	YMYL；非医疗建议；合并 heart-rate|max-heart-rate|target-heart-rate|heart-rate-zone
-how-to-calculate-pace	配速	sports	pace	https://www.omnicalculator.com/sports/pace	未开始 · P2	禁 5k/马拉松拆页；合并 pace|running-pace|5k-pace|marathon-pace|half-marathon-pace|bike-pace
-how-to-calculate-one-rep-max	1RM 最大重量	sports	one-rep-max	https://www.omnicalculator.com/sports/one-rep-max	未开始 · P2	YMYL 运动安全免责
-how-to-calculate-ohms-law	欧姆定律	physics	ohms-law	https://www.omnicalculator.com/physics/ohms-law	未开始 · P2	A.7 物理补充；合并 ohms-law|ohms-law-current|ohms-law-power|ohms-law-resistance
-how-to-calculate-density	密度	physics	density	https://www.omnicalculator.com/physics/density	未开始 · P2	A.7；合并 density|density-converter|density-mass-volume
-how-to-calculate-velocity	速度	physics	velocity	https://www.omnicalculator.com/physics/velocity	未开始 · P2	与配速分意图（物理 vs 跑步）；合并 velocity|speed|speed-converter
-how-to-calculate-acceleration	加速度	physics	acceleration	https://www.omnicalculator.com/physics/acceleration	未开始 · P2	A.7；合并 acceleration|acceleration-using-force-and-mass|angular-acceleration
+how-to-calculate-ideal-weight	理想体重区间	health	ideal-weight	https://www.omnicalculator.com/health/ideal-weight	已上线	C-V5
+how-to-calculate-cagr	CAGR	finance	cagr	https://www.omnicalculator.com/finance/cagr	已上线	C-V4
+how-to-calculate-npv	NPV	finance	net-present-value	https://www.omnicalculator.com/finance/net-present-value	已上线	C-V4；与 PV/FV 分意图
+how-to-calculate-standard-deviation	标准差 / 方差	statistics	standard-deviation	https://www.omnicalculator.com/statistics/standard-deviation	已上线	A.7；方差作同页模式；合并 standard-deviation|variance|population-variance|relative-standard-deviation|grouped-data-standard-deviation
+how-to-calculate-concrete	混凝土方量	construction	concrete-slab	https://www.omnicalculator.com/construction/concrete-slab	已上线	C 工程；形状作选项禁拆页；合并 concrete-slab|concrete-column|concrete-cylinder|concrete-stairs|post-hole-concrete
+how-to-calculate-tile	瓷砖估算	construction	tile	https://www.omnicalculator.com/construction/tile	已上线	C 工程 · slug how-to-calculate-tile
+how-to-calculate-aspect-ratio	宽高比	other	aspect-ratio	https://www.omnicalculator.com/other/aspect-ratio	已上线	禁 16:9/4:3 独立 URL；css-aspect-ratio 另评估；合并 aspect-ratio|16-9-aspect-ratio|16-10-aspect-ratio|4-3-aspect-ratio|pixel-aspect-ratio|portrait-aspect-ratio
+how-to-calculate-paint	油漆估算	construction	paint	https://www.omnicalculator.com/construction/paint	已上线	C 工程
+how-to-calculate-salary-hourly	年薪 ↔ 时薪	finance	salary-to-hourly	https://www.omnicalculator.com/finance/salary-to-hourly	已上线	Omni finance 热门；合并 salary-to-hourly|hourly-to-salary|annual-salary|annual-to-monthly-salary|annual-salary-per-hour|hourly-to-annual-salary
+how-to-calculate-p-value	p 值	statistics	p-value	https://www.omnicalculator.com/statistics/p-value	已上线	A.7
+how-to-calculate-confidence-interval	置信区间	statistics	confidence-interval	https://www.omnicalculator.com/statistics/confidence-interval	已上线	禁拆 90/95/99 URL；合并 confidence-interval|90-confidence-interval|95-confidence-interval|99-confidence-interval
+how-to-calculate-z-score	Z 分数	statistics	z-score	https://www.omnicalculator.com/statistics/z-score	已上线	A.7
+how-to-calculate-sample-size	样本量	statistics	sample-size	https://www.omnicalculator.com/statistics/sample-size	已上线	A.7
+how-to-calculate-significant-figures	有效数字	math	sig-fig	https://www.omnicalculator.com/math/sig-fig	已上线	Omni math 热门
+how-to-calculate-scientific-notation	科学计数法	math	scientific-notation	https://www.omnicalculator.com/math/scientific-notation	已上线	A.7；合并 scientific-notation|scientific-notation-converter
+how-to-calculate-logarithm	对数	math	log	https://www.omnicalculator.com/math/log	已上线	合并原 log-calculator；合并 log|natural-log|antilog|log-2|negative-log
+how-to-calculate-pythagorean-theorem	勾股定理	math	pythagorean-theorem	https://www.omnicalculator.com/math/pythagorean-theorem	已上线	A.7
+how-to-calculate-slope	斜率	math	slope	https://www.omnicalculator.com/math/slope	已上线	A.7
+how-to-calculate-exponent	指数幂	math	exponent	https://www.omnicalculator.com/math/exponent	已上线	shortlist 原有
+how-to-calculate-gpa	GPA	other	gpa	https://www.omnicalculator.com/other/gpa	已上线	禁拆 college/high-school 薄页；合并 gpa|college-gpa|high-school-gpa|gpa-pakistan
+how-to-calculate-discount	折扣 / 优惠价	finance	discount	https://www.omnicalculator.com/finance/discount	已上线	Omni 补充；多层折扣作同页选项；合并 discount|markdown|percent-off|percentage-discount|double-discount
+how-to-calculate-markup	加价率 Markup	finance	markup	https://www.omnicalculator.com/finance/markup	已上线	与 discount 分意图
+how-to-calculate-profit-margin	利润率	finance	net-profit-margin	https://www.omnicalculator.com/finance/net-profit-margin	已上线	与 gross-margin 分意图；同页多类型；合并 net-profit-margin|operating-margin
+how-to-calculate-contribution-margin	边际贡献	finance	contribution-margin	https://www.omnicalculator.com/finance/contribution-margin	已上线	C-V4 补充
+how-to-calculate-present-value	现值 / 终值 PV·FV	finance	present-value	https://www.omnicalculator.com/finance/present-value	已上线	与 NPV 分意图；合并 present-value|future-value|annuity-present-value|annuity-future-value
+how-to-calculate-irr	IRR	finance	internal-rate-of-return	https://www.omnicalculator.com/finance/internal-rate-of-return	已上线	C-V4 补充；合并 internal-rate-of-return|modified-irr
+how-to-calculate-payback-period	回收期	finance	payback-period	https://www.omnicalculator.com/finance/payback-period	已上线	可选折现回收作同页模式
+how-to-calculate-inflation	通胀	finance	inflation	https://www.omnicalculator.com/finance/inflation	已上线	禁 CPI 国家矩阵铺量；合并 inflation|cpi-inflation|salary-inflation
+how-to-calculate-vat	增值税 VAT / GST	finance	vat	https://www.omnicalculator.com/finance/vat	已上线	禁各国税率拆页；用户自填税率；合并 vat|gst|gst-qst|margin-and-vat
+how-to-calculate-debt-payoff	债务还清	finance	debt-payoff	https://www.omnicalculator.com/finance/debt-payoff	已上线	雪球/雪崩作策略说明非拆页；合并 debt-payoff|debt-snowball|credit-card-payoff
+how-to-calculate-rule-of-72	72 法则	finance	rule-of-72	https://www.omnicalculator.com/finance/rule-of-72	已上线	教育向；免责
+how-to-calculate-tip	小费	everyday-life	tip	https://www.omnicalculator.com/everyday-life/tip	已上线	everyday-life 补充；合并 tip|gratuity
+how-to-calculate-age	年龄	everyday-life	age	https://www.omnicalculator.com/everyday-life/age	已上线	禁宠物年龄拆页；合并 age|chronological-age
+how-to-calculate-date-difference	日期间隔	everyday-life	days-between-dates	https://www.omnicalculator.com/everyday-life/days-between-dates	已上线	everyday-life
+how-to-calculate-mean	平均数	statistics	mean	https://www.omnicalculator.com/statistics/mean	已上线	A.7 补充；合并 mean|average|geometric-mean|harmonic-mean
+how-to-calculate-median	中位数 / 众数	statistics	median	https://www.omnicalculator.com/statistics/median	已上线	可与 mean 互链；合并 median|mean-median-mode
+how-to-calculate-permutation-combination	排列组合	math	permutation	https://www.omnicalculator.com/math/permutation	已上线	A.7 补充；合并 permutation|combination
+how-to-calculate-quadratic-equation	二次方程	math	quadratic-formula	https://www.omnicalculator.com/math/quadratic-formula	已上线	A.7 补充
+how-to-calculate-triangle-area	三角形面积	math	triangle-area	https://www.omnicalculator.com/math/triangle-area	已上线	形状条件作选项禁拆页；合并 triangle-area|herons-formula|3-sides-triangle-area|right-triangle-area|equilateral-triangle-area|isosceles-triangle-area
+how-to-calculate-circle	圆（周长/面积/弧）	math	circle	https://www.omnicalculator.com/math/circle	已上线	A.7 补充；合并 circle|circumference|arc-length|area-of-a-circle|circle-diameter
+how-to-calculate-volume	几何体积	math	volume	https://www.omnicalculator.com/math/volume	已上线	禁每形状一 URL；合并 volume|cylinder-volume|sphere-volume|cone-volume|cube-volume
+how-to-calculate-macros	宏量营养素	health	macro	https://www.omnicalculator.com/health/macro	已上线	C-V5 补充；YMYL；合并 macro|iifym
+how-to-calculate-heart-rate	心率区间	health	heart-rate	https://www.omnicalculator.com/health/heart-rate	已上线	YMYL；非医疗建议；合并 heart-rate|max-heart-rate|target-heart-rate|heart-rate-zone
+how-to-calculate-pace	配速	sports	pace	https://www.omnicalculator.com/sports/pace	已上线	禁 5k/马拉松拆页；合并 pace|running-pace|5k-pace|marathon-pace|half-marathon-pace|bike-pace
+how-to-calculate-one-rep-max	1RM 最大重量	sports	one-rep-max	https://www.omnicalculator.com/sports/one-rep-max	已上线	YMYL 运动安全免责
+how-to-calculate-ohms-law	欧姆定律	physics	ohms-law	https://www.omnicalculator.com/physics/ohms-law	已上线	A.7 物理补充；合并 ohms-law|ohms-law-current|ohms-law-power|ohms-law-resistance
+how-to-calculate-density	密度	physics	density	https://www.omnicalculator.com/physics/density	已上线	A.7；合并 density|density-converter|density-mass-volume
+how-to-calculate-velocity	速度	physics	velocity	https://www.omnicalculator.com/physics/velocity	已上线	与配速分意图（物理 vs 跑步）；合并 velocity|speed|speed-converter
+how-to-calculate-acceleration	加速度	physics	acceleration	https://www.omnicalculator.com/physics/acceleration	已上线	A.7；合并 acceleration|acceleration-using-force-and-mass|angular-acceleration

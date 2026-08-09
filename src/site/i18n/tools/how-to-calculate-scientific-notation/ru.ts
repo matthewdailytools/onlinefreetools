@@ -1,0 +1,51 @@
+/**
+ * i18n tool shard (how-to-calculate-scientific-notation / ru).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const ru: SiteLangDict = {
+	tool_scientific_notation_title: "Калькулятор научной записи — Как преобразовать",
+	tool_scientific_notation_description: "Преобразуйте десятичные ↔ научную запись a×10^b. Пример: 12300 → 1,23×10^4. Принимает 1,23e4 и 1,23×10^4 при развёртке. Показывает коэффициент и показатель. В браузере для учёбы.",
+	tool_scientific_notation_calculate: "Рассчитать",
+	tool_scientific_notation_sample: "Загрузить пример",
+	tool_scientific_notation_clear: "Очистить",
+	tool_scientific_notation_mode_label: "Направление",
+	tool_scientific_notation_mode_toSci: "Десятичная → научная",
+	tool_scientific_notation_mode_toDec: "Научная → десятичная",
+	tool_scientific_notation_value_label: "Значение",
+	tool_scientific_notation_value_ph: "напр. 12300 или 1,23e4 или 1,23×10^4",
+	tool_scientific_notation_resultOut_label: "Результат",
+	tool_scientific_notation_coeffOut_label: "Коэффициент a",
+	tool_scientific_notation_expOut_label: "Показатель b",
+	tool_scientific_notation_result_note: "Форма a×10^b при 1 ≤ |a| < 10 (0 как 0×10^0).",
+	tool_scientific_notation_err_generic: "Введите разбираемое десятичное или научное значение для выбранного режима.",
+	tool_scientific_notation_how_title: "Как пользоваться",
+	tool_scientific_notation_how_body: "Выберите направление. Десятичная→научная: обычное число. Научная→десятичная: 1,23e4 или 1,23×10^4. Показывается строка и при необходимости a и b.",
+	tool_scientific_notation_formula_title: "Правила преобразования",
+	tool_scientific_notation_formula_body: "Запишите x = a × 10^b в нормализованном виде:",
+	tool_scientific_notation_formula_item_1: "Сдвигайте точку, пока 1 ≤ |a| < 10 (ноль → 0×10^0).",
+	tool_scientific_notation_formula_item_2: "b — число сдвигов точки.",
+	tool_scientific_notation_formula_item_3: "Принимаются 1,23e4, 1,23E+4, 1,23×10^4, 1,23*10^4.",
+	tool_scientific_notation_formula_item_4: "Приоритет у читаемой строки a×10^b.",
+	tool_scientific_notation_example_title: "Пример",
+	tool_scientific_notation_example: "Пример: 12300 → 1,23×10^4 (a = 1,23, b = 4).",
+	tool_scientific_notation_usecases_title: "Когда применять",
+	tool_scientific_notation_usecase_1: "Домашнее задание: переписать большие/малые числа.",
+	tool_scientific_notation_usecase_2: "Развернуть a×10^b в десятичную запись.",
+	tool_scientific_notation_usecase_3: "Сверить e-нотацию с ×10^b.",
+	tool_scientific_notation_disclaimer: "Только учебное преобразование, не библиотека произвольной точности.",
+	tool_scientific_notation_references: "Wikipedia о научной записи.",
+	tool_scientific_notation_ref_sci_label: "Wikipedia — Научная запись",
+	tool_scientific_notation_ref_exp_label: "Wikipedia — Возведение в степень",
+	tool_scientific_notation_article: "Преобразуйте десятичные числа и научную запись a×10^b в браузере.",
+	tool_scientific_notation_faq_q1: "Какие записи принимаются?",
+	tool_scientific_notation_faq_a1: "1,23e4, 1,23E+4, 1,23×10^4 и 1,23*10^4.",
+	tool_scientific_notation_faq_q2: "Отрицательные числа?",
+	tool_scientific_notation_faq_a2: "Знак остаётся у a; показатель отражает сдвиги.",
+	tool_scientific_notation_faq_q3: "Диапазон a?",
+	tool_scientific_notation_faq_a3: "В нормализованном виде 1 ≤ |a| < 10 (кроме нуля).",
+	tool_scientific_notation_faq_q4: "Неограниченная точность?",
+	tool_scientific_notation_faq_a4: "Нет — обычное JS-преобразование для учёбы.",
+};
+
+export default ru;

@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-vat / id).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const id: SiteLangDict = {
+	tool_vat_title: "Kalkulator PPN / VAT / GST",
+	tool_vat_description: "Tambahkan PPN/VAT ke net atau ekstrak pajak dari gross. Contoh: net 100 pada 20% → gross 120. Anda isi tarif. Di browser.",
+	tool_vat_calculate: "Hitung",
+	tool_vat_sample: "Muat contoh",
+	tool_vat_clear: "Hapus",
+	tool_vat_mode_label: "Mode",
+	tool_vat_mode_add: "Tambah ke net",
+	tool_vat_mode_extract: "Ekstrak dari gross",
+	tool_vat_amount_label: "Jumlah",
+	tool_vat_amount_ph: "mis. 100",
+	tool_vat_rate_label: "PPN/VAT %",
+	tool_vat_rate_ph: "mis. 20",
+	tool_vat_grossOut_label: "Gross",
+	tool_vat_netOut_label: "Net",
+	tool_vat_taxOut_label: "Pajak",
+	tool_vat_result_note: "Edukatif.",
+	tool_vat_err_generic: "Periksa input.",
+	tool_vat_how_title: "Cara kerja",
+	tool_vat_how_body: "Pilih mode, jumlah, dan tarif.",
+	tool_vat_formula_title: "Rumus",
+	tool_vat_formula_body: "Pilih mode, jumlah, dan tarif.",
+	tool_vat_formula_item_1: "See formula notes.",
+	tool_vat_formula_item_2: "Check inputs.",
+	tool_vat_formula_item_3: "Educational only.",
+	tool_vat_example_title: "Contoh",
+	tool_vat_example: "Contoh: net 100 pada 20% → 120.",
+	tool_vat_usecases_title: "Kapan dipakai",
+	tool_vat_usecase_1: "Homework.",
+	tool_vat_usecase_2: "Quick sketch.",
+	tool_vat_usecase_3: "Compare related tools.",
+	tool_vat_faq_q1: "Contoh?",
+	tool_vat_faq_a1: "Contoh: net 100 pada 20% → 120.",
+	tool_vat_faq_q2: "Formula?",
+	tool_vat_faq_a2: "See Formula section.",
+	tool_vat_faq_q3: "Advice?",
+	tool_vat_faq_a3: "Educational only.",
+	tool_vat_faq_q4: "Related?",
+	tool_vat_faq_a4: "See related tools.",
+	tool_vat_article: "Kalkulator PPN / VAT / GST",
+	tool_vat_disclaimer: "Hanya ilustrasi edukatif (VAT); bukan saran keuangan.",
+	tool_vat_references: "Investopedia dan rumus buku teks.",
+	tool_vat_ref_a_label: "Investopedia",
+	tool_vat_ref_b_label: "Wikipedia",
+};
+
+export default id;

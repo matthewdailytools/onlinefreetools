@@ -1,0 +1,50 @@
+/**
+ * i18n tool shard (how-to-calculate-discount / ja).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const ja: SiteLangDict = {
+	tool_discount_title: "割引計算ツール — セール価格の求め方",
+	tool_discount_description: "定価と割引率からセール価格を計算します。例：100 を 20% オフ → 80。任意の二重割引は値引き後の価格に続けて掛けます。ブラウザ内のみの計算で、店舗の会計システムではありません。サーバーにアップロードしません二重割引は値引き後価格に乗算します。定額クーポンは別途差し引いてください。",
+	tool_discount_calculate: "計算する",
+	tool_discount_sample: "サンプル",
+	tool_discount_clear: "クリア",
+	tool_discount_original_label: "定価",
+	tool_discount_original_ph: "例 100",
+	tool_discount_pct_label: "割引率（% off）",
+	tool_discount_pct_ph: "例 20",
+	tool_discount_pct2_label: "二重割引 %（任意）",
+	tool_discount_pct2_ph: "例 10",
+	tool_discount_finalOut_label: "セール価格",
+	tool_discount_savedOut_label: "合計割引額",
+	tool_discount_result_note: "二重割引がある場合は、一度値引きしたあとの価格に掛けます。学習用です。",
+	tool_discount_err_generic: "正の定価と 0〜100 の割引率を入力してください。",
+	tool_discount_how_title: "使い方",
+	tool_discount_how_body: "定価と割引率を入れます。必要なら二重割引を値引き後の価格に追加します。最終価格と節約額がブラウザ内で出ます。",
+	tool_discount_formula_title: "計算式",
+	tool_discount_formula_body: "最終 = 定価 × (1 − d₁/100) × (1 − d₂/100)（二重があるとき）。注意:",
+	tool_discount_formula_item_1: "d₁・d₂ はオフ率（20 は 20%オフ）であり、0.8 の乗数表記ではありません。",
+	tool_discount_formula_item_2: "二重を空または 0 にすると一回だけ割引。",
+	tool_discount_formula_item_3: "税や定額クーポンは扱いません。",
+	tool_discount_example_title: "例",
+	tool_discount_example: "例：定価 100、20%オフ → 80。さらに 10%オフ → 72。",
+	tool_discount_usecases_title: "こんなときに",
+	tool_discount_usecase_1: "税込前のセール価格のざっくり確認。",
+	tool_discount_usecase_2: "連続パーセント割引の宿題。",
+	tool_discount_usecase_3: "二重割引の練習。",
+	tool_discount_faq_q1: "二重割引はどう掛けますか？",
+	tool_discount_faq_a1: "一度オフしたあとの価格に次の%を掛けます。",
+	tool_discount_faq_q2: "20%オフは 20% だけ払うこと？",
+	tool_discount_faq_a2: "いいえ。定価の 80% を支払います。",
+	tool_discount_faq_q3: "税込みですか？",
+	tool_discount_faq_a3: "いいえ。税抜き金額を入れてください。",
+	tool_discount_faq_q4: "定額クーポンは？",
+	tool_discount_faq_a4: "このページはパーセント割引のみです。",
+	tool_discount_disclaimer: "価格の学習用試算であり、店舗会計や税務エンジンではありません。",
+	tool_discount_references: "Investopedia の割引解説；連続パーセント割引の計算。",
+	tool_discount_ref_a_label: "Investopedia — Discount",
+	tool_discount_ref_b_label: "Wikipedia — 割引",
+	tool_discount_article: "定価とオフ率からセール価格を求め、任意で二重割引も同じページで扱います。",
+};
+
+export default ja;

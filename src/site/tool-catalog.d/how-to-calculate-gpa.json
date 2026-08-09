@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-gpa",
+  "path": "/tools/how-to-calculate-gpa",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_gpa_title",
+  "homeTitleKey": "tool_gpa_title",
+  "homeDescKey": "tool_gpa_description",
+  "faqPrefix": "tool_gpa",
+  "related": [
+    "how-to-calculate-percentage-change",
+    "how-to-calculate-sample-size"
+  ],
+  "logo": "/icons/tools/how-to-calculate-gpa.svg",
+  "page": {
+    "module": "../pages/howToCalculateGpaPage",
+    "export": "renderHowToCalculateGpaPage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

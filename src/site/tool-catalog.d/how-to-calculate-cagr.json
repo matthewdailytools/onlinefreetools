@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-cagr",
+  "path": "/tools/how-to-calculate-cagr",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": true,
+  "i18nKey": "tool_cagr_title",
+  "homeTitleKey": "tool_cagr_title",
+  "homeDescKey": "tool_cagr_description",
+  "faqPrefix": "tool_cagr",
+  "related": [
+    "how-to-calculate-roi",
+    "how-to-calculate-compound-interest"
+  ],
+  "logo": "/icons/tools/how-to-calculate-cagr.svg",
+  "page": {
+    "module": "../pages/howToCalculateCagrPage",
+    "export": "renderHowToCalculateCagrPage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

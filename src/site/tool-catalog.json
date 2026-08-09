@@ -211,6 +211,57 @@
     "localProcessing": true
   },
   {
+    "slug": "how-to-calculate-acceleration",
+    "path": "/tools/how-to-calculate-acceleration",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_acceleration_title",
+    "homeTitleKey": "tool_acceleration_title",
+    "homeDescKey": "tool_acceleration_description",
+    "faqPrefix": "tool_acceleration",
+    "related": [
+      "how-to-calculate-velocity",
+      "how-to-calculate-ohms-law"
+    ],
+    "logo": "/icons/tools/how-to-calculate-acceleration.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "how-to-calculate-age",
+    "path": "/tools/how-to-calculate-age",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_age_title",
+    "homeTitleKey": "tool_age_title",
+    "homeDescKey": "tool_age_description",
+    "faqPrefix": "tool_age",
+    "related": [
+      "how-to-calculate-date-difference",
+      "how-to-calculate-tip"
+    ],
+    "logo": "/icons/tools/how-to-calculate-age.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "how-to-calculate-aspect-ratio",
+    "path": "/tools/how-to-calculate-aspect-ratio",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_aspect_ratio_title",
+    "homeTitleKey": "tool_aspect_ratio_title",
+    "homeDescKey": "tool_aspect_ratio_description",
+    "faqPrefix": "tool_aspect_ratio",
+    "related": [
+      "unit-converter",
+      "square-feet"
+    ],
+    "logo": "/icons/tools/how-to-calculate-aspect-ratio.svg",
+    "localProcessing": true
+  },
+  {
     "slug": "how-to-calculate-bmi",
     "path": "/tools/how-to-calculate-bmi",
     "category": "calculator",
@@ -278,6 +329,40 @@
     "localProcessing": true
   },
   {
+    "slug": "how-to-calculate-cagr",
+    "path": "/tools/how-to-calculate-cagr",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": true,
+    "i18nKey": "tool_cagr_title",
+    "homeTitleKey": "tool_cagr_title",
+    "homeDescKey": "tool_cagr_description",
+    "faqPrefix": "tool_cagr",
+    "related": [
+      "how-to-calculate-roi",
+      "how-to-calculate-compound-interest"
+    ],
+    "logo": "/icons/tools/how-to-calculate-cagr.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "how-to-calculate-circle",
+    "path": "/tools/how-to-calculate-circle",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_circle_title",
+    "homeTitleKey": "tool_circle_title",
+    "homeDescKey": "tool_circle_description",
+    "faqPrefix": "tool_circle",
+    "related": [
+      "how-to-calculate-triangle-area",
+      "how-to-calculate-volume"
+    ],
+    "logo": "/icons/tools/how-to-calculate-circle.svg",
+    "localProcessing": true
+  },
+  {
     "slug": "how-to-calculate-compound-interest",
     "path": "/tools/how-to-calculate-compound-interest",
     "category": "calculator",
@@ -296,6 +381,125 @@
     "localProcessing": true
   },
   {
+    "slug": "how-to-calculate-concrete",
+    "path": "/tools/how-to-calculate-concrete",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_concrete_title",
+    "homeTitleKey": "tool_concrete_title",
+    "homeDescKey": "tool_concrete_description",
+    "faqPrefix": "tool_concrete",
+    "related": [
+      "unit-converter",
+      "square-feet"
+    ],
+    "logo": "/icons/tools/how-to-calculate-concrete.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "how-to-calculate-confidence-interval",
+    "path": "/tools/how-to-calculate-confidence-interval",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_confidence_interval_title",
+    "homeTitleKey": "tool_confidence_interval_title",
+    "homeDescKey": "tool_confidence_interval_description",
+    "faqPrefix": "tool_confidence_interval",
+    "related": [
+      "how-to-calculate-p-value",
+      "how-to-calculate-standard-deviation"
+    ],
+    "logo": "/icons/tools/how-to-calculate-confidence-interval.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "how-to-calculate-contribution-margin",
+    "path": "/tools/how-to-calculate-contribution-margin",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": true,
+    "i18nKey": "tool_contribution_margin_title",
+    "homeTitleKey": "tool_contribution_margin_title",
+    "homeDescKey": "tool_contribution_margin_description",
+    "faqPrefix": "tool_contribution_margin",
+    "related": [
+      "how-to-calculate-break-even",
+      "how-to-calculate-gross-margin"
+    ],
+    "logo": "/icons/tools/how-to-calculate-contribution-margin.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "how-to-calculate-date-difference",
+    "path": "/tools/how-to-calculate-date-difference",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_date_difference_title",
+    "homeTitleKey": "tool_date_difference_title",
+    "homeDescKey": "tool_date_difference_description",
+    "faqPrefix": "tool_date_difference",
+    "related": [
+      "how-to-calculate-age",
+      "how-to-calculate-tip"
+    ],
+    "logo": "/icons/tools/how-to-calculate-date-difference.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "how-to-calculate-debt-payoff",
+    "path": "/tools/how-to-calculate-debt-payoff",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": true,
+    "i18nKey": "tool_debt_payoff_title",
+    "homeTitleKey": "tool_debt_payoff_title",
+    "homeDescKey": "tool_debt_payoff_description",
+    "faqPrefix": "tool_debt_payoff",
+    "related": [
+      "how-to-calculate-emi",
+      "how-to-calculate-compound-interest"
+    ],
+    "logo": "/icons/tools/how-to-calculate-debt-payoff.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "how-to-calculate-density",
+    "path": "/tools/how-to-calculate-density",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_density_title",
+    "homeTitleKey": "tool_density_title",
+    "homeDescKey": "tool_density_description",
+    "faqPrefix": "tool_density",
+    "related": [
+      "how-to-calculate-volume",
+      "how-to-calculate-ohms-law"
+    ],
+    "logo": "/icons/tools/how-to-calculate-density.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "how-to-calculate-discount",
+    "path": "/tools/how-to-calculate-discount",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_discount_title",
+    "homeTitleKey": "tool_discount_title",
+    "homeDescKey": "tool_discount_description",
+    "faqPrefix": "tool_discount",
+    "related": [
+      "how-to-calculate-markup",
+      "how-to-calculate-gross-margin"
+    ],
+    "logo": "/icons/tools/how-to-calculate-discount.svg",
+    "localProcessing": true
+  },
+  {
     "slug": "how-to-calculate-emi",
     "path": "/tools/how-to-calculate-emi",
     "category": "calculator",
@@ -310,6 +514,40 @@
       "how-to-calculate-roi"
     ],
     "logo": "/icons/tools/how-to-calculate-emi.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "how-to-calculate-exponent",
+    "path": "/tools/how-to-calculate-exponent",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_exponent_title",
+    "homeTitleKey": "tool_exponent_title",
+    "homeDescKey": "tool_exponent_description",
+    "faqPrefix": "tool_exponent",
+    "related": [
+      "how-to-calculate-logarithm",
+      "how-to-calculate-scientific-notation"
+    ],
+    "logo": "/icons/tools/how-to-calculate-exponent.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "how-to-calculate-gpa",
+    "path": "/tools/how-to-calculate-gpa",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_gpa_title",
+    "homeTitleKey": "tool_gpa_title",
+    "homeDescKey": "tool_gpa_description",
+    "faqPrefix": "tool_gpa",
+    "related": [
+      "how-to-calculate-percentage-change",
+      "how-to-calculate-sample-size"
+    ],
+    "logo": "/icons/tools/how-to-calculate-gpa.svg",
     "localProcessing": true
   },
   {
@@ -347,6 +585,108 @@
     "localProcessing": true
   },
   {
+    "slug": "how-to-calculate-heart-rate",
+    "path": "/tools/how-to-calculate-heart-rate",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": true,
+    "i18nKey": "tool_heart_rate_title",
+    "homeTitleKey": "tool_heart_rate_title",
+    "homeDescKey": "tool_heart_rate_description",
+    "faqPrefix": "tool_heart_rate",
+    "related": [
+      "how-to-calculate-macros",
+      "how-to-calculate-bmr-tdee"
+    ],
+    "logo": "/icons/tools/how-to-calculate-heart-rate.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "how-to-calculate-ideal-weight",
+    "path": "/tools/how-to-calculate-ideal-weight",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": true,
+    "i18nKey": "tool_ideal_weight_title",
+    "homeTitleKey": "tool_ideal_weight_title",
+    "homeDescKey": "tool_ideal_weight_description",
+    "faqPrefix": "tool_ideal_weight",
+    "related": [
+      "how-to-calculate-bmi",
+      "how-to-calculate-body-fat"
+    ],
+    "logo": "/icons/tools/how-to-calculate-ideal-weight.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "how-to-calculate-inflation",
+    "path": "/tools/how-to-calculate-inflation",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": true,
+    "i18nKey": "tool_inflation_title",
+    "homeTitleKey": "tool_inflation_title",
+    "homeDescKey": "tool_inflation_description",
+    "faqPrefix": "tool_inflation",
+    "related": [
+      "how-to-calculate-cagr",
+      "how-to-calculate-compound-interest"
+    ],
+    "logo": "/icons/tools/how-to-calculate-inflation.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "how-to-calculate-irr",
+    "path": "/tools/how-to-calculate-irr",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": true,
+    "i18nKey": "tool_irr_title",
+    "homeTitleKey": "tool_irr_title",
+    "homeDescKey": "tool_irr_description",
+    "faqPrefix": "tool_irr",
+    "related": [
+      "how-to-calculate-npv",
+      "how-to-calculate-cagr"
+    ],
+    "logo": "/icons/tools/how-to-calculate-irr.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "how-to-calculate-logarithm",
+    "path": "/tools/how-to-calculate-logarithm",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_logarithm_title",
+    "homeTitleKey": "tool_logarithm_title",
+    "homeDescKey": "tool_logarithm_description",
+    "faqPrefix": "tool_logarithm",
+    "related": [
+      "how-to-calculate-exponent",
+      "how-to-calculate-scientific-notation"
+    ],
+    "logo": "/icons/tools/how-to-calculate-logarithm.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "how-to-calculate-macros",
+    "path": "/tools/how-to-calculate-macros",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": true,
+    "i18nKey": "tool_macros_title",
+    "homeTitleKey": "tool_macros_title",
+    "homeDescKey": "tool_macros_description",
+    "faqPrefix": "tool_macros",
+    "related": [
+      "how-to-calculate-heart-rate",
+      "how-to-calculate-bmr-tdee"
+    ],
+    "logo": "/icons/tools/how-to-calculate-macros.svg",
+    "localProcessing": true
+  },
+  {
     "slug": "how-to-calculate-marginal-revenue",
     "path": "/tools/how-to-calculate-marginal-revenue",
     "category": "calculator",
@@ -361,6 +701,176 @@
       "how-to-calculate-percentage-change"
     ],
     "logo": "/icons/tools/how-to-calculate-marginal-revenue.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "how-to-calculate-markup",
+    "path": "/tools/how-to-calculate-markup",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": true,
+    "i18nKey": "tool_markup_title",
+    "homeTitleKey": "tool_markup_title",
+    "homeDescKey": "tool_markup_description",
+    "faqPrefix": "tool_markup",
+    "related": [
+      "how-to-calculate-discount",
+      "how-to-calculate-gross-margin"
+    ],
+    "logo": "/icons/tools/how-to-calculate-markup.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "how-to-calculate-mean",
+    "path": "/tools/how-to-calculate-mean",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_mean_title",
+    "homeTitleKey": "tool_mean_title",
+    "homeDescKey": "tool_mean_description",
+    "faqPrefix": "tool_mean",
+    "related": [
+      "how-to-calculate-median",
+      "how-to-calculate-standard-deviation"
+    ],
+    "logo": "/icons/tools/how-to-calculate-mean.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "how-to-calculate-median",
+    "path": "/tools/how-to-calculate-median",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_median_title",
+    "homeTitleKey": "tool_median_title",
+    "homeDescKey": "tool_median_description",
+    "faqPrefix": "tool_median",
+    "related": [
+      "how-to-calculate-mean",
+      "how-to-calculate-standard-deviation"
+    ],
+    "logo": "/icons/tools/how-to-calculate-median.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "how-to-calculate-npv",
+    "path": "/tools/how-to-calculate-npv",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": true,
+    "i18nKey": "tool_npv_title",
+    "homeTitleKey": "tool_npv_title",
+    "homeDescKey": "tool_npv_description",
+    "faqPrefix": "tool_npv",
+    "related": [
+      "how-to-calculate-cagr",
+      "how-to-calculate-roi"
+    ],
+    "logo": "/icons/tools/how-to-calculate-npv.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "how-to-calculate-ohms-law",
+    "path": "/tools/how-to-calculate-ohms-law",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_ohms_law_title",
+    "homeTitleKey": "tool_ohms_law_title",
+    "homeDescKey": "tool_ohms_law_description",
+    "faqPrefix": "tool_ohms_law",
+    "related": [
+      "how-to-calculate-density",
+      "how-to-calculate-velocity"
+    ],
+    "logo": "/icons/tools/how-to-calculate-ohms-law.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "how-to-calculate-one-rep-max",
+    "path": "/tools/how-to-calculate-one-rep-max",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_one_rep_max_title",
+    "homeTitleKey": "tool_one_rep_max_title",
+    "homeDescKey": "tool_one_rep_max_description",
+    "faqPrefix": "tool_one_rep_max",
+    "related": [
+      "how-to-calculate-pace",
+      "how-to-calculate-body-fat"
+    ],
+    "logo": "/icons/tools/how-to-calculate-one-rep-max.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "how-to-calculate-p-value",
+    "path": "/tools/how-to-calculate-p-value",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_p_value_title",
+    "homeTitleKey": "tool_p_value_title",
+    "homeDescKey": "tool_p_value_description",
+    "faqPrefix": "tool_p_value",
+    "related": [
+      "how-to-calculate-standard-deviation",
+      "how-to-calculate-confidence-interval"
+    ],
+    "logo": "/icons/tools/how-to-calculate-p-value.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "how-to-calculate-pace",
+    "path": "/tools/how-to-calculate-pace",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_pace_title",
+    "homeTitleKey": "tool_pace_title",
+    "homeDescKey": "tool_pace_description",
+    "faqPrefix": "tool_pace",
+    "related": [
+      "how-to-calculate-one-rep-max",
+      "how-to-calculate-heart-rate"
+    ],
+    "logo": "/icons/tools/how-to-calculate-pace.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "how-to-calculate-paint",
+    "path": "/tools/how-to-calculate-paint",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_paint_title",
+    "homeTitleKey": "tool_paint_title",
+    "homeDescKey": "tool_paint_description",
+    "faqPrefix": "tool_paint",
+    "related": [
+      "how-to-calculate-tile",
+      "how-to-calculate-concrete"
+    ],
+    "logo": "/icons/tools/how-to-calculate-paint.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "how-to-calculate-payback-period",
+    "path": "/tools/how-to-calculate-payback-period",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": true,
+    "i18nKey": "tool_payback_period_title",
+    "homeTitleKey": "tool_payback_period_title",
+    "homeDescKey": "tool_payback_period_description",
+    "faqPrefix": "tool_payback_period",
+    "related": [
+      "how-to-calculate-npv",
+      "how-to-calculate-irr"
+    ],
+    "logo": "/icons/tools/how-to-calculate-payback-period.svg",
     "localProcessing": true
   },
   {
@@ -381,6 +891,91 @@
     "localProcessing": true
   },
   {
+    "slug": "how-to-calculate-permutation-combination",
+    "path": "/tools/how-to-calculate-permutation-combination",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_permutation_combination_title",
+    "homeTitleKey": "tool_permutation_combination_title",
+    "homeDescKey": "tool_permutation_combination_description",
+    "faqPrefix": "tool_permutation_combination",
+    "related": [
+      "how-to-calculate-quadratic-equation",
+      "how-to-calculate-slope"
+    ],
+    "logo": "/icons/tools/how-to-calculate-permutation-combination.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "how-to-calculate-present-value",
+    "path": "/tools/how-to-calculate-present-value",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": true,
+    "i18nKey": "tool_present_value_title",
+    "homeTitleKey": "tool_present_value_title",
+    "homeDescKey": "tool_present_value_description",
+    "faqPrefix": "tool_present_value",
+    "related": [
+      "how-to-calculate-npv",
+      "how-to-calculate-cagr"
+    ],
+    "logo": "/icons/tools/how-to-calculate-present-value.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "how-to-calculate-profit-margin",
+    "path": "/tools/how-to-calculate-profit-margin",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": true,
+    "i18nKey": "tool_profit_margin_title",
+    "homeTitleKey": "tool_profit_margin_title",
+    "homeDescKey": "tool_profit_margin_description",
+    "faqPrefix": "tool_profit_margin",
+    "related": [
+      "how-to-calculate-gross-margin",
+      "how-to-calculate-markup"
+    ],
+    "logo": "/icons/tools/how-to-calculate-profit-margin.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "how-to-calculate-pythagorean-theorem",
+    "path": "/tools/how-to-calculate-pythagorean-theorem",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_pythagorean_title",
+    "homeTitleKey": "tool_pythagorean_title",
+    "homeDescKey": "tool_pythagorean_description",
+    "faqPrefix": "tool_pythagorean",
+    "related": [
+      "how-to-calculate-aspect-ratio",
+      "how-to-calculate-logarithm"
+    ],
+    "logo": "/icons/tools/how-to-calculate-pythagorean-theorem.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "how-to-calculate-quadratic-equation",
+    "path": "/tools/how-to-calculate-quadratic-equation",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_quadratic_equation_title",
+    "homeTitleKey": "tool_quadratic_equation_title",
+    "homeDescKey": "tool_quadratic_equation_description",
+    "faqPrefix": "tool_quadratic_equation",
+    "related": [
+      "how-to-calculate-permutation-combination",
+      "how-to-calculate-slope"
+    ],
+    "logo": "/icons/tools/how-to-calculate-quadratic-equation.svg",
+    "localProcessing": true
+  },
+  {
     "slug": "how-to-calculate-roi",
     "path": "/tools/how-to-calculate-roi",
     "category": "calculator",
@@ -395,6 +990,244 @@
       "how-to-calculate-percentage-change"
     ],
     "logo": "/icons/tools/how-to-calculate-roi.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "how-to-calculate-rule-of-72",
+    "path": "/tools/how-to-calculate-rule-of-72",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": true,
+    "i18nKey": "tool_rule_of_72_title",
+    "homeTitleKey": "tool_rule_of_72_title",
+    "homeDescKey": "tool_rule_of_72_description",
+    "faqPrefix": "tool_rule_of_72",
+    "related": [
+      "how-to-calculate-cagr",
+      "how-to-calculate-compound-interest"
+    ],
+    "logo": "/icons/tools/how-to-calculate-rule-of-72.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "how-to-calculate-salary-hourly",
+    "path": "/tools/how-to-calculate-salary-hourly",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": true,
+    "i18nKey": "tool_salary_hourly_title",
+    "homeTitleKey": "tool_salary_hourly_title",
+    "homeDescKey": "tool_salary_hourly_description",
+    "faqPrefix": "tool_salary_hourly",
+    "related": [
+      "how-to-calculate-cagr",
+      "how-to-calculate-roi"
+    ],
+    "logo": "/icons/tools/how-to-calculate-salary-hourly.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "how-to-calculate-sample-size",
+    "path": "/tools/how-to-calculate-sample-size",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_sample_size_title",
+    "homeTitleKey": "tool_sample_size_title",
+    "homeDescKey": "tool_sample_size_description",
+    "faqPrefix": "tool_sample_size",
+    "related": [
+      "how-to-calculate-confidence-interval",
+      "how-to-calculate-p-value"
+    ],
+    "logo": "/icons/tools/how-to-calculate-sample-size.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "how-to-calculate-scientific-notation",
+    "path": "/tools/how-to-calculate-scientific-notation",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_scientific_notation_title",
+    "homeTitleKey": "tool_scientific_notation_title",
+    "homeDescKey": "tool_scientific_notation_description",
+    "faqPrefix": "tool_scientific_notation",
+    "related": [
+      "how-to-calculate-significant-figures",
+      "how-to-calculate-logarithm"
+    ],
+    "logo": "/icons/tools/how-to-calculate-scientific-notation.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "how-to-calculate-significant-figures",
+    "path": "/tools/how-to-calculate-significant-figures",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_significant_figures_title",
+    "homeTitleKey": "tool_significant_figures_title",
+    "homeDescKey": "tool_significant_figures_description",
+    "faqPrefix": "tool_significant_figures",
+    "related": [
+      "how-to-calculate-scientific-notation",
+      "how-to-calculate-z-score"
+    ],
+    "logo": "/icons/tools/how-to-calculate-significant-figures.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "how-to-calculate-slope",
+    "path": "/tools/how-to-calculate-slope",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_slope_title",
+    "homeTitleKey": "tool_slope_title",
+    "homeDescKey": "tool_slope_description",
+    "faqPrefix": "tool_slope",
+    "related": [
+      "how-to-calculate-pythagorean-theorem",
+      "how-to-calculate-aspect-ratio"
+    ],
+    "logo": "/icons/tools/how-to-calculate-slope.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "how-to-calculate-standard-deviation",
+    "path": "/tools/how-to-calculate-standard-deviation",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_std_dev_title",
+    "homeTitleKey": "tool_std_dev_title",
+    "homeDescKey": "tool_std_dev_description",
+    "faqPrefix": "tool_std_dev",
+    "related": [
+      "how-to-calculate-percentage-change",
+      "how-to-calculate-cagr"
+    ],
+    "logo": "/icons/tools/how-to-calculate-standard-deviation.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "how-to-calculate-tile",
+    "path": "/tools/how-to-calculate-tile",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_tile_title",
+    "homeTitleKey": "tool_tile_title",
+    "homeDescKey": "tool_tile_description",
+    "faqPrefix": "tool_tile",
+    "related": [
+      "how-to-calculate-concrete",
+      "square-feet"
+    ],
+    "logo": "/icons/tools/how-to-calculate-tile.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "how-to-calculate-tip",
+    "path": "/tools/how-to-calculate-tip",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_tip_title",
+    "homeTitleKey": "tool_tip_title",
+    "homeDescKey": "tool_tip_description",
+    "faqPrefix": "tool_tip",
+    "related": [
+      "how-to-calculate-vat",
+      "how-to-calculate-discount"
+    ],
+    "logo": "/icons/tools/how-to-calculate-tip.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "how-to-calculate-triangle-area",
+    "path": "/tools/how-to-calculate-triangle-area",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_triangle_area_title",
+    "homeTitleKey": "tool_triangle_area_title",
+    "homeDescKey": "tool_triangle_area_description",
+    "faqPrefix": "tool_triangle_area",
+    "related": [
+      "how-to-calculate-circle",
+      "how-to-calculate-volume"
+    ],
+    "logo": "/icons/tools/how-to-calculate-triangle-area.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "how-to-calculate-vat",
+    "path": "/tools/how-to-calculate-vat",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_vat_title",
+    "homeTitleKey": "tool_vat_title",
+    "homeDescKey": "tool_vat_description",
+    "faqPrefix": "tool_vat",
+    "related": [
+      "how-to-calculate-discount",
+      "how-to-calculate-tip"
+    ],
+    "logo": "/icons/tools/how-to-calculate-vat.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "how-to-calculate-velocity",
+    "path": "/tools/how-to-calculate-velocity",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_velocity_title",
+    "homeTitleKey": "tool_velocity_title",
+    "homeDescKey": "tool_velocity_description",
+    "faqPrefix": "tool_velocity",
+    "related": [
+      "how-to-calculate-acceleration",
+      "how-to-calculate-density"
+    ],
+    "logo": "/icons/tools/how-to-calculate-velocity.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "how-to-calculate-volume",
+    "path": "/tools/how-to-calculate-volume",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_volume_title",
+    "homeTitleKey": "tool_volume_title",
+    "homeDescKey": "tool_volume_description",
+    "faqPrefix": "tool_volume",
+    "related": [
+      "how-to-calculate-triangle-area",
+      "how-to-calculate-circle"
+    ],
+    "logo": "/icons/tools/how-to-calculate-volume.svg",
+    "localProcessing": true
+  },
+  {
+    "slug": "how-to-calculate-z-score",
+    "path": "/tools/how-to-calculate-z-score",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_z_score_title",
+    "homeTitleKey": "tool_z_score_title",
+    "homeDescKey": "tool_z_score_description",
+    "faqPrefix": "tool_z_score",
+    "related": [
+      "how-to-calculate-p-value",
+      "how-to-calculate-standard-deviation"
+    ],
+    "logo": "/icons/tools/how-to-calculate-z-score.svg",
     "localProcessing": true
   },
   {

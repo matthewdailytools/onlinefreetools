@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-ohms-law",
+  "path": "/tools/how-to-calculate-ohms-law",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_ohms_law_title",
+  "homeTitleKey": "tool_ohms_law_title",
+  "homeDescKey": "tool_ohms_law_description",
+  "faqPrefix": "tool_ohms_law",
+  "related": [
+    "how-to-calculate-density",
+    "how-to-calculate-velocity"
+  ],
+  "logo": "/icons/tools/how-to-calculate-ohms-law.svg",
+  "page": {
+    "module": "../pages/howToCalculateOhmsLawPage",
+    "export": "renderHowToCalculateOhmsLawPage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

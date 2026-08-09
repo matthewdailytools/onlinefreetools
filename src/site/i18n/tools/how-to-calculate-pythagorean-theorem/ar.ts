@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-pythagorean-theorem / ar).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const ar: SiteLangDict = {
+	tool_pythagorean_title: "حاسبة فيثاغورس — كيفية إيجاد الضلع المفقود",
+	tool_pythagorean_description: "حل الضلع المفقود a أو b أو c عبر a²+b²=c². مثال: a=3 وb=4 → c=5. أدخل ضلعين موجبين؛ تُرفض الأزواج المستحيلة. في المتصفح للتعلّم.",
+	tool_pythagorean_calculate: "احسب",
+	tool_pythagorean_sample: "تحميل مثال",
+	tool_pythagorean_clear: "مسح",
+	tool_pythagorean_solve_label: "حل من أجل",
+	tool_pythagorean_solve_c: "الوتر c",
+	tool_pythagorean_solve_a: "الساق a",
+	tool_pythagorean_solve_b: "الساق b",
+	tool_pythagorean_known1_label: "الضلع المعروف الأول",
+	tool_pythagorean_known1_ph: "مثال 3",
+	tool_pythagorean_known2_label: "الضلع المعروف الثاني",
+	tool_pythagorean_known2_ph: "مثال 4",
+	tool_pythagorean_sideOut_label: "الضلع المفقود",
+	tool_pythagorean_result_note: "مثلث قائم: a²+b²=c². عند حل ساق يجب أن يكون الوتر أطول.",
+	tool_pythagorean_err_generic: "أدخل ضلعين موجبين؛ وعند حل ساق يجب أن يكون الوتر أكبر.",
+	tool_pythagorean_how_title: "طريقة الاستخدام",
+	tool_pythagorean_how_body: "اختر الضلع المفقود وأدخل الضلعين الآخرين. لـ c: a وb؛ لـ a: b وc؛ لـ b: a وc. يُرجع الجذر الموجب.",
+	tool_pythagorean_formula_title: "الصيغة",
+	tool_pythagorean_formula_body: "نظرية فيثاغورس a²+b²=c²:",
+	tool_pythagorean_formula_item_1: "نقص c: c=√(a²+b²).",
+	tool_pythagorean_formula_item_2: "نقص a: a=√(c²−b²) مع c>b>0.",
+	tool_pythagorean_formula_item_3: "نقص b: b=√(c²−a²) مع c>a>0.",
+	tool_pythagorean_formula_item_4: "أطوال حقيقية موجبة فقط.",
+	tool_pythagorean_example_title: "مثال",
+	tool_pythagorean_example: "مثال: a=3 وb=4 → c=5.",
+	tool_pythagorean_usecases_title: "متى تستخدمه",
+	tool_pythagorean_usecase_1: "هندسة: إيجاد ضلع ناقص.",
+	tool_pythagorean_usecase_2: "التحقق من ثلاثيات 3-4-5.",
+	tool_pythagorean_usecase_3: "تقدير القطر من ساقين متعامدين.",
+	tool_pythagorean_disclaimer: "هندسة إقليدية تعليمية فقط.",
+	tool_pythagorean_references: "ويكيبيديا نظرية فيثاغورس.",
+	tool_pythagorean_ref_py_label: "ويكيبيديا — نظرية فيثاغورس",
+	tool_pythagorean_ref_rt_label: "ويكيبيديا — مثلث قائم",
+	tool_pythagorean_article: "حل الضلع المفقود لمثلث قائم عبر a²+b²=c².",
+	tool_pythagorean_faq_q1: "ماذا أُدخل لإيجاد c؟",
+	tool_pythagorean_faq_a1: "أدخِل الساقين a وb.",
+	tool_pythagorean_faq_q2: "هل تُشترط الوحدات؟",
+	tool_pythagorean_faq_a2: "لا؛ أبقِ الضلعين المعروفين بنفس الوحدة.",
+	tool_pythagorean_faq_q3: "هل للمثلثات المنفرجة؟",
+	tool_pythagorean_faq_a3: "لا؛ فقط علاقة قائم الزاوية a²+b²=c².",
+	tool_pythagorean_faq_q4: "لماذا يُرفض c≤a؟",
+	tool_pythagorean_faq_a4: "يجب أن يكون الوتر أطول بصرامة من كل ساق.",
+};
+
+export default ar;

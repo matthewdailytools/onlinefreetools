@@ -1,0 +1,53 @@
+/**
+ * i18n tool shard (how-to-calculate-significant-figures / id).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const id: SiteLangDict = {
+	tool_significant_figures_title: "Kalkulator angka penting — Menghitung dan membulatkan",
+	tool_significant_figures_description: "Hitung angka penting pada string angka atau bulatkan ke N. Nol di depan tidak dihitung; nol trailing setelah desimal dihitung. Contoh: 0,00304 → 3; 1234,56 ke 3 → 1230 (1,23e3). Half away from zero. Di browser.",
+	tool_significant_figures_calculate: "Hitung",
+	tool_significant_figures_sample: "Muat contoh",
+	tool_significant_figures_clear: "Hapus",
+	tool_significant_figures_mode_label: "Mode",
+	tool_significant_figures_mode_count: "Hitung angka penting",
+	tool_significant_figures_mode_round: "Bulatkan ke N",
+	tool_significant_figures_num_label: "Angka (teks)",
+	tool_significant_figures_num_ph: "mis. 0,00304 atau 1234,56",
+	tool_significant_figures_n_label: "N (untuk bulat)",
+	tool_significant_figures_n_ph: "mis. 3",
+	tool_significant_figures_countOut_label: "Angka penting",
+	tool_significant_figures_roundedOut_label: "Nilai dibulatkan",
+	tool_significant_figures_sciOut_label: "Bentuk ilmiah",
+	tool_significant_figures_result_note: "Hitung dari string; pembulatan half away from zero.",
+	tool_significant_figures_err_generic: "Masukkan string angka valid; untuk bulat, N ≥ 1.",
+	tool_significant_figures_how_title: "Cara kerja",
+	tool_significant_figures_how_body: "Pilih Hitung atau Bulatkan. Tempel angka sebagai teks agar nol di depan tetap ada. Hitung mengembalikan jumlah; Bulatkan butuh N dan menampilkan bentuk desimal serta ilmiah.",
+	tool_significant_figures_formula_title: "Aturan yang didokumentasikan",
+	tool_significant_figures_formula_body: "Aturan sekolah dan pembulatan menjauh dari nol:",
+	tool_significant_figures_formula_item_1: "Digit bukan nol selalu dihitung; nol di antaranya juga.",
+	tool_significant_figures_formula_item_2: "Nol di depan tidak dihitung (0,00304 → 3).",
+	tool_significant_figures_formula_item_3: "Nol trailing setelah desimal dihitung; pada bilangan bulat tanpa desimal, tidak di halaman ini.",
+	tool_significant_figures_formula_item_4: "Pembulatan: mantissa ke N digit; kasus setengah menjauh dari nol.",
+	tool_significant_figures_example_title: "Contoh",
+	tool_significant_figures_example: "Hitung 0,00304 → 3. Bulatkan 1234,56 ke 3 → 1230 dan 1,23e3.",
+	tool_significant_figures_usecases_title: "Kapan dipakai",
+	tool_significant_figures_usecase_1: "Praktikum: cek angka penting pengukuran.",
+	tool_significant_figures_usecase_2: "Bulatkan hasil ke ketelitian yang diizinkan.",
+	tool_significant_figures_usecase_3: "Bandingkan tampilan biasa dan ilmiah.",
+	tool_significant_figures_disclaimer: "Hanya aturan edukasi; SOP lab bisa berbeda soal nol trailing.",
+	tool_significant_figures_references: "Wikipedia significant figures dan rounding.",
+	tool_significant_figures_ref_sig_label: "Wikipedia — Significant figures",
+	tool_significant_figures_ref_round_label: "Wikipedia — Rounding",
+	tool_significant_figures_article: "Hitung atau bulatkan angka penting dari string dengan aturan eksplisit.",
+	tool_significant_figures_faq_q1: "Apakah nol di depan dihitung?",
+	tool_significant_figures_faq_a1: "Tidak. Pada 0,00304 hanya 3, 0, 4 → 3.",
+	tool_significant_figures_faq_q2: "Nol trailing pada 1200?",
+	tool_significant_figures_faq_a2: "Tanpa desimal, halaman ini tidak menghitungnya (2 angka penting).",
+	tool_significant_figures_faq_q3: "Setengah dibulatkan bagaimana?",
+	tool_significant_figures_faq_a3: "Menjauh dari nol; untuk positif = half-up.",
+	tool_significant_figures_faq_q4: "Mengapa input teks?",
+	tool_significant_figures_faq_a4: "Agar nol di depan tetap terlihat saat menghitung.",
+};
+
+export default id;

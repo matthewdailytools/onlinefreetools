@@ -1,0 +1,53 @@
+/**
+ * i18n tool shard (how-to-calculate-significant-figures / zh).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const zh: SiteLangDict = {
+	tool_significant_figures_title: "有效数字计算器 — 如何计数与修约有效数字",
+	tool_significant_figures_description: "对数字字符串统计有效数字，或按 N 位有效数字修约。前导零不计；小数点后的末尾零计入。示例：0.00304 → 3 位；把 1234.56 修约到 3 位 → 1230，科学计数 1.23e3。正数半分远离零（等同 half-up）。浏览器内计算，适合作业核对计数规则与修约结果，并写明整数末尾零的歧义处理。",
+	tool_significant_figures_calculate: "计算",
+	tool_significant_figures_sample: "加载样例",
+	tool_significant_figures_clear: "清空",
+	tool_significant_figures_mode_label: "模式",
+	tool_significant_figures_mode_count: "计数有效数字",
+	tool_significant_figures_mode_round: "修约到 N 位",
+	tool_significant_figures_num_label: "数字（文本）",
+	tool_significant_figures_num_ph: "例如 0.00304 或 1234.56",
+	tool_significant_figures_n_label: "N（修约用）",
+	tool_significant_figures_n_ph: "例如 3",
+	tool_significant_figures_countOut_label: "有效数字位数",
+	tool_significant_figures_roundedOut_label: "修约结果",
+	tool_significant_figures_sciOut_label: "科学计数形式",
+	tool_significant_figures_result_note: "按字符串计数；修约采用半分远离零（正数等同 half-up）。",
+	tool_significant_figures_err_generic: "请输入合法数字字符串；修约模式还需 N≥1。",
+	tool_significant_figures_how_title: "怎么用",
+	tool_significant_figures_how_body: "选择计数或修约。用文本粘贴数字以保留前导零。计数返回位数；修约需 N，并同时给出普通写法与如 1.23e3 的科学形式。",
+	tool_significant_figures_formula_title: "本页写明的规则",
+	tool_significant_figures_formula_body: "常用教材计数与半分远离零修约：",
+	tool_significant_figures_formula_item_1: "非零数字必计；夹在中间的零也计。",
+	tool_significant_figures_formula_item_2: "前导零不计（0.00304 → 3）。",
+	tool_significant_figures_formula_item_3: "小数点后的末尾零计入；无小数点的整数末尾零本页不计。",
+	tool_significant_figures_formula_item_4: "修约：把尾数缩到 N 位；恰为半分时远离零（正数向上）。",
+	tool_significant_figures_example_title: "示例",
+	tool_significant_figures_example: "计数 0.00304 → 3。把 1234.56 修约到 3 位 → 1230 与 1.23e3。",
+	tool_significant_figures_usecases_title: "适合什么场景",
+	tool_significant_figures_usecase_1: "实验作业：核对测量字符串有几位有效数字。",
+	tool_significant_figures_usecase_2: "把计算结果修约到允许精度。",
+	tool_significant_figures_usecase_3: "对照普通写法与科学计数显示。",
+	tool_significant_figures_disclaimer: "仅为教育用计数/修约规则；实验室 SOP 可能对末尾零另有约定。",
+	tool_significant_figures_references: "维基百科有效数字与舍入条目。",
+	tool_significant_figures_ref_sig_label: "维基百科 — 有效数字",
+	tool_significant_figures_ref_round_label: "维基百科 — 舍入",
+	tool_significant_figures_article: "按字符串计数或修约有效数字，并写明教材常用规则。",
+	tool_significant_figures_faq_q1: "为什么要用文本输入？",
+	tool_significant_figures_faq_a1: "才能保留 0.00304 这类前导零以便计数。",
+	tool_significant_figures_faq_q2: "1200 的末尾零怎么算？",
+	tool_significant_figures_faq_a2: "无小数点时本页不计，记为 2 位有效数字。",
+	tool_significant_figures_faq_q3: "0.00304 为什么是 3 位？",
+	tool_significant_figures_faq_a3: "前导零不计，只计 3、0、4。",
+	tool_significant_figures_faq_q4: "半分如何处理？",
+	tool_significant_figures_faq_a4: "远离零；对正数即 half-up。",
+};
+
+export default zh;

@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-discount",
+  "path": "/tools/how-to-calculate-discount",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_discount_title",
+  "homeTitleKey": "tool_discount_title",
+  "homeDescKey": "tool_discount_description",
+  "faqPrefix": "tool_discount",
+  "related": [
+    "how-to-calculate-markup",
+    "how-to-calculate-gross-margin"
+  ],
+  "logo": "/icons/tools/how-to-calculate-discount.svg",
+  "page": {
+    "module": "../pages/howToCalculateDiscountPage",
+    "export": "renderHowToCalculateDiscountPage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

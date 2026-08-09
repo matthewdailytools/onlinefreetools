@@ -1,0 +1,53 @@
+/**
+ * i18n tool shard (how-to-calculate-significant-figures / pt).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const pt: SiteLangDict = {
+	tool_significant_figures_title: "Calculadora de algarismos significativos — Contar e arredondar",
+	tool_significant_figures_description: "Conte algarismos significativos em uma string ou arredonde para N. Zeros à esquerda não contam; zeros finais após o decimal contam. Exemplo: 0,00304 → 3; 1234,56 para 3 → 1230 (1,23e3). Metade longe de zero. No navegador.",
+	tool_significant_figures_calculate: "Calcular",
+	tool_significant_figures_sample: "Carregar exemplo",
+	tool_significant_figures_clear: "Limpar",
+	tool_significant_figures_mode_label: "Modo",
+	tool_significant_figures_mode_count: "Contar algarismos",
+	tool_significant_figures_mode_round: "Arredondar para N",
+	tool_significant_figures_num_label: "Número (texto)",
+	tool_significant_figures_num_ph: "ex.: 0,00304 ou 1234,56",
+	tool_significant_figures_n_label: "N (arredondamento)",
+	tool_significant_figures_n_ph: "ex.: 3",
+	tool_significant_figures_countOut_label: "Algarismos significativos",
+	tool_significant_figures_roundedOut_label: "Valor arredondado",
+	tool_significant_figures_sciOut_label: "Forma científica",
+	tool_significant_figures_result_note: "Contagem pela string; arredondamento metade longe de zero.",
+	tool_significant_figures_err_generic: "Informe uma string numérica válida; no arredondamento, N ≥ 1.",
+	tool_significant_figures_how_title: "Como funciona",
+	tool_significant_figures_how_body: "Escolha Contar ou Arredondar. Cole o número como texto para manter zeros à esquerda. Contar devolve a quantidade; Arredondar pede N e mostra forma decimal e científica.",
+	tool_significant_figures_formula_title: "Regras documentadas",
+	tool_significant_figures_formula_body: "Contagem escolar e arredondamento metade longe de zero:",
+	tool_significant_figures_formula_item_1: "Dígitos não nulos sempre contam; zeros entre eles também.",
+	tool_significant_figures_formula_item_2: "Zeros à esquerda não contam (0,00304 → 3).",
+	tool_significant_figures_formula_item_3: "Zeros finais após o decimal contam; em inteiros sem decimal, não nesta página.",
+	tool_significant_figures_formula_item_4: "Arredondamento: mantissa a N dígitos; empates longe de zero.",
+	tool_significant_figures_example_title: "Exemplo",
+	tool_significant_figures_example: "Contar 0,00304 → 3. Arredondar 1234,56 para 3 → 1230 e 1,23e3.",
+	tool_significant_figures_usecases_title: "Quando usar",
+	tool_significant_figures_usecase_1: "Laboratório: checar algarismos de uma medida.",
+	tool_significant_figures_usecase_2: "Ajustar resultado à precisão permitida.",
+	tool_significant_figures_usecase_3: "Comparar forma comum e científica.",
+	tool_significant_figures_disclaimer: "Apenas regras educativas; SOPs de laboratório podem tratar zeros finais de outro modo.",
+	tool_significant_figures_references: "Wikipedia algarismos significativos e arredondamento.",
+	tool_significant_figures_ref_sig_label: "Wikipedia — Algarismos significativos",
+	tool_significant_figures_ref_round_label: "Wikipedia — Arredondamento",
+	tool_significant_figures_article: "Conte ou arredonde algarismos significativos a partir de uma string com regras explícitas.",
+	tool_significant_figures_faq_q1: "Zeros à esquerda contam?",
+	tool_significant_figures_faq_a1: "Não. Em 0,00304 só 3, 0 e 4 → 3.",
+	tool_significant_figures_faq_q2: "Por que entrada em texto?",
+	tool_significant_figures_faq_a2: "Para manter zeros iniciais visíveis na contagem.",
+	tool_significant_figures_faq_q3: "E zeros finais em 1200?",
+	tool_significant_figures_faq_a3: "Sem decimal esta página não os conta (2 algarismos).",
+	tool_significant_figures_faq_q4: "Empate no arredondamento?",
+	tool_significant_figures_faq_a4: "Longe de zero; em positivos é half-up.",
+};
+
+export default pt;

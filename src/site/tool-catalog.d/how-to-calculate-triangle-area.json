@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-triangle-area",
+  "path": "/tools/how-to-calculate-triangle-area",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_triangle_area_title",
+  "homeTitleKey": "tool_triangle_area_title",
+  "homeDescKey": "tool_triangle_area_description",
+  "faqPrefix": "tool_triangle_area",
+  "related": [
+    "how-to-calculate-circle",
+    "how-to-calculate-volume"
+  ],
+  "logo": "/icons/tools/how-to-calculate-triangle-area.svg",
+  "page": {
+    "module": "../pages/howToCalculateTriangleAreaPage",
+    "export": "renderHowToCalculateTriangleAreaPage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-one-rep-max",
+  "path": "/tools/how-to-calculate-one-rep-max",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_one_rep_max_title",
+  "homeTitleKey": "tool_one_rep_max_title",
+  "homeDescKey": "tool_one_rep_max_description",
+  "faqPrefix": "tool_one_rep_max",
+  "related": [
+    "how-to-calculate-pace",
+    "how-to-calculate-body-fat"
+  ],
+  "logo": "/icons/tools/how-to-calculate-one-rep-max.svg",
+  "page": {
+    "module": "../pages/howToCalculateOneRepMaxPage",
+    "export": "renderHowToCalculateOneRepMaxPage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

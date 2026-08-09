@@ -1,0 +1,51 @@
+/**
+ * i18n tool shard (how-to-calculate-profit-margin / ar).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const ar: SiteLangDict = {
+	tool_profit_margin_title: "حاسبة هامش الربح — صافٍ أو تشغيلي",
+	tool_profit_margin_description: "احسب هامش الربح الصافي أو التشغيلي من الإيرادات والتكاليف. مثال: إيراد 10000 وتكلفة 7000 → هامش صافٍ 30٪. نوع الهامش في صفحة واحدة. تعليمي.",
+	tool_profit_margin_calculate: "احسب",
+	tool_profit_margin_sample: "تحميل مثال",
+	tool_profit_margin_clear: "مسح",
+	tool_profit_margin_type_label: "نوع الهامش",
+	tool_profit_margin_type_net: "هامش صافٍ",
+	tool_profit_margin_type_op: "هامش تشغيلي",
+	tool_profit_margin_rev_label: "الإيرادات",
+	tool_profit_margin_rev_ph: "مثال 10000",
+	tool_profit_margin_cost_label: "التكاليف",
+	tool_profit_margin_cost_ph: "مثال 7000",
+	tool_profit_margin_marginOut_label: "الهامش %",
+	tool_profit_margin_profitOut_label: "الربح",
+	tool_profit_margin_result_note: "الهامش = الربح ÷ الإيرادات. تعليمي.",
+	tool_profit_margin_err_generic: "إيرادات > 0 وتكاليف ≥ 0.",
+	tool_profit_margin_how_title: "طريقة الاستخدام",
+	tool_profit_margin_how_body: "اختر النوع ثم أدخل الإيرادات والتكاليف. الهامش = الربح / الإيرادات × 100.",
+	tool_profit_margin_formula_title: "الصيغة",
+	tool_profit_margin_formula_body: "الهامش % = (الإيرادات − التكاليف) / الإيرادات × 100. ملاحظات:",
+	tool_profit_margin_formula_item_1: "طابق التكاليف مع التعريف.",
+	tool_profit_margin_formula_item_2: "الإيرادات > 0.",
+	tool_profit_margin_formula_item_3: "قائمة دخل مبسطة.",
+	tool_profit_margin_example_title: "مثال",
+	tool_profit_margin_example: "مثال: إيراد 10000 وتكلفة 7000 → هامش 30٪.",
+	tool_profit_margin_usecases_title: "متى تستخدمه",
+	tool_profit_margin_usecase_1: "واجب الهامش الصافي.",
+	tool_profit_margin_usecase_2: "مقارنة التشغيلي والصافي.",
+	tool_profit_margin_usecase_3: "مقارنته بالهامش الإجمالي.",
+	tool_profit_margin_faq_q1: "Sample / contoh?",
+	tool_profit_margin_faq_a1: "30%",
+	tool_profit_margin_faq_q2: "Markup vs margin?",
+	tool_profit_margin_faq_a2: "Markup÷cost; margin÷revenue.",
+	tool_profit_margin_faq_q3: "Why two types?",
+	tool_profit_margin_faq_a3: "Same form; different cost stacks.",
+	tool_profit_margin_faq_q4: "Advice?",
+	tool_profit_margin_faq_a4: "Educational only.",
+	tool_profit_margin_article: "حاسبة هامش الربح — صافٍ أو تشغيلي",
+	tool_profit_margin_disclaimer: "توضيح تعليمي فقط (margen) وليس نصيحة مالية.",
+	tool_profit_margin_references: "Investopedia وصيغ دراسية.",
+	tool_profit_margin_ref_a_label: "Investopedia — Profit margin",
+	tool_profit_margin_ref_b_label: "Investopedia — Operating margin",
+};
+
+export default ar;

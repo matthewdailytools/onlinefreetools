@@ -1,0 +1,53 @@
+/**
+ * i18n tool shard (how-to-calculate-significant-figures / ar).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const ar: SiteLangDict = {
+	tool_significant_figures_title: "حاسبة الأرقام المعنوية — العد والتقريب",
+	tool_significant_figures_description: "عد الأرقام المعنوية في سلسلة أو قرّب إلى N. الأصفار البادئة لا تُحسب؛ اللاحقة بعد الفاصلة تُحسب. مثال: 0.00304 → 3؛ تقريب 1234.56 إلى 3 → 1230 (1.23e3). النصف بعيدًا عن الصفر. في المتصفح.",
+	tool_significant_figures_calculate: "احسب",
+	tool_significant_figures_sample: "تحميل مثال",
+	tool_significant_figures_clear: "مسح",
+	tool_significant_figures_mode_label: "الوضع",
+	tool_significant_figures_mode_count: "عد الأرقام المعنوية",
+	tool_significant_figures_mode_round: "تقريب إلى N",
+	tool_significant_figures_num_label: "العدد (نص)",
+	tool_significant_figures_num_ph: "مثال 0.00304 أو 1234.56",
+	tool_significant_figures_n_label: "N (للتقريب)",
+	tool_significant_figures_n_ph: "مثال 3",
+	tool_significant_figures_countOut_label: "عدد الأرقام المعنوية",
+	tool_significant_figures_roundedOut_label: "القيمة المقرّبة",
+	tool_significant_figures_sciOut_label: "الصيغة العلمية",
+	tool_significant_figures_result_note: "العد من السلسلة؛ التقريب نصف بعيد عن الصفر.",
+	tool_significant_figures_err_generic: "أدخل سلسلة عددية صالحة؛ وللتقريب N ≥ 1.",
+	tool_significant_figures_how_title: "طريقة الاستخدام",
+	tool_significant_figures_how_body: "اختر العد أو التقريب. الصق العدد كنص للإبقاء على الأصفار البادئة. العد يعيد العدد؛ التقريب يحتاج N ويعرض الشكل العشري والعلمي.",
+	tool_significant_figures_formula_title: "القواعد الموثّقة",
+	tool_significant_figures_formula_body: "عدّ مدرسي وتقريب النصف بعيدًا عن الصفر:",
+	tool_significant_figures_formula_item_1: "الأرقام غير الصفرية تُحسب دائمًا وكذلك الأصفار بينها.",
+	tool_significant_figures_formula_item_2: "الأصفار البادئة لا تُحسب (0.00304 → 3).",
+	tool_significant_figures_formula_item_3: "الأصفار اللاحقة بعد الفاصلة تُحسب؛ في الأعداد الصحيحة بلا فاصلة لا تُحسب هنا.",
+	tool_significant_figures_formula_item_4: "التقريب: اختزال الجزء الصحيح إلى N؛ عند النصف بعيدًا عن الصفر.",
+	tool_significant_figures_example_title: "مثال",
+	tool_significant_figures_example: "عد 0.00304 → 3. قرّب 1234.56 إلى 3 → 1230 و1.23e3.",
+	tool_significant_figures_usecases_title: "متى تستخدمه",
+	tool_significant_figures_usecase_1: "مختبر: التحقق من أرقام قياس.",
+	tool_significant_figures_usecase_2: "تقريب نتيجة إلى الدقة المسموحة.",
+	tool_significant_figures_usecase_3: "مقارنة العرض العادي والعلمي.",
+	tool_significant_figures_disclaimer: "قواعد تعليمية فقط؛ إجراءات المختبر قد تختلف بشأن الأصفار اللاحقة.",
+	tool_significant_figures_references: "ويكيبيديا الأرقام المعنوية والتقريب.",
+	tool_significant_figures_ref_sig_label: "ويكيبيديا — الأرقام المعنوية",
+	tool_significant_figures_ref_round_label: "ويكيبيديا — التقريب",
+	tool_significant_figures_article: "عُد أو قرّب الأرقام المعنوية من سلسلة عددية بقواعد صريحة.",
+	tool_significant_figures_faq_q1: "هل تُحسب الأصفار البادئة؟",
+	tool_significant_figures_faq_a1: "لا. في 0.00304 تُحسب 3 و0 و4 فقط → 3.",
+	tool_significant_figures_faq_q2: "كيف يُعامل النصف؟",
+	tool_significant_figures_faq_a2: "بعيدًا عن الصفر؛ للموجب مثل half-up.",
+	tool_significant_figures_faq_q3: "لماذا الإدخال نصي؟",
+	tool_significant_figures_faq_a3: "للحفاظ على الأصفار البادئة عند العد.",
+	tool_significant_figures_faq_q4: "أصفار 1200 اللاحقة؟",
+	tool_significant_figures_faq_a4: "بلا فاصلة عشرية لا تُحسب هنا (رقمان معنويان).",
+};
+
+export default ar;

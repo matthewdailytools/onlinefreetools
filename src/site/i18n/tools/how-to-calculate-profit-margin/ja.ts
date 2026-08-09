@@ -1,0 +1,51 @@
+/**
+ * i18n tool shard (how-to-calculate-profit-margin / ja).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const ja: SiteLangDict = {
+	tool_profit_margin_title: "利益率計算ツール — 純利益率と営業利益率",
+	tool_profit_margin_description: "売上と費用から純利益率または営業利益率を計算します。例：売上 10000、費用 7000 → 純利益率 30%。種類は同一ページのオプションです。学習用であり経営助言ではありません。。計算はブラウザ内で行いサーバーにアップロードしません。学習用の目安であり投資・税務・経営の助言ではありません。",
+	tool_profit_margin_calculate: "計算する",
+	tool_profit_margin_sample: "サンプル",
+	tool_profit_margin_clear: "クリア",
+	tool_profit_margin_type_label: "利益率の種類",
+	tool_profit_margin_type_net: "純利益率",
+	tool_profit_margin_type_op: "営業利益率",
+	tool_profit_margin_rev_label: "売上",
+	tool_profit_margin_rev_ph: "例 10000",
+	tool_profit_margin_cost_label: "費用",
+	tool_profit_margin_cost_ph: "例 7000",
+	tool_profit_margin_marginOut_label: "利益率 %",
+	tool_profit_margin_profitOut_label: "利益額",
+	tool_profit_margin_result_note: "利益率 = 利益 ÷ 売上。学習用であり経営助言ではありません。",
+	tool_profit_margin_err_generic: "売上 > 0、費用 ≥ 0 を入力。",
+	tool_profit_margin_how_title: "使い方",
+	tool_profit_margin_how_body: "純利益率または営業利益率を選び、売上と対応する費用を入力します。利益率 = 利益 / 売上 × 100。マークアップ（原価割）や粗利率（売上原価のみ）とは別です。",
+	tool_profit_margin_formula_title: "計算式",
+	tool_profit_margin_formula_body: "利益率% = (売上 − 費用) / 売上 × 100。注意:",
+	tool_profit_margin_formula_item_1: "純利益と営業はここでのラベルです。必要な費用口径を使ってください。",
+	tool_profit_margin_formula_item_2: "売上は > 0、費用は 0 可。",
+	tool_profit_margin_formula_item_3: "完全な損益計算書ではありません。",
+	tool_profit_margin_example_title: "例",
+	tool_profit_margin_example: "例：売上 10000、費用 7000 → 利益 3000 → 利益率 30%。",
+	tool_profit_margin_usecases_title: "こんなときに",
+	tool_profit_margin_usecase_1: "宿題：簡略な売上と費用で純利益率。",
+	tool_profit_margin_usecase_2: "費用束を替えて営業と純利益を比較。",
+	tool_profit_margin_usecase_3: "売上原価だけのときは粗利率と対照。",
+	tool_profit_margin_faq_q1: "例の結果は？",
+	tool_profit_margin_faq_a1: "売上10000・費用7000 → 30%。",
+	tool_profit_margin_faq_q2: "マークアップとの違いは？",
+	tool_profit_margin_faq_a2: "マークアップは原価割、利益率は売上割。",
+	tool_profit_margin_faq_q3: "なぜ2種類を1ページに？",
+	tool_profit_margin_faq_a3: "同じ比の形で費用口径だけ変えます。",
+	tool_profit_margin_faq_q4: "経営助言ですか？",
+	tool_profit_margin_faq_a4: "いいえ、学習用です。",
+	tool_profit_margin_article: "純利益率または営業利益率を同一ページで計算。",
+	tool_profit_margin_disclaimer: "利益率の学習用試算であり、投資・税務の助言ではありません。",
+	tool_profit_margin_references: "Investopedia と標準的な教科書公式。",
+	tool_profit_margin_ref_a_label: "Investopedia — 利益率",
+	tool_profit_margin_ref_b_label: "Investopedia — 営業利益率",
+};
+
+export default ja;

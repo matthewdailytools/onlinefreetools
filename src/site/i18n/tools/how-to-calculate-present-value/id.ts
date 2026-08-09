@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-present-value / id).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const id: SiteLangDict = {
+	tool_present_value_title: "Kalkulator present value (PV/FV)",
+	tool_present_value_description: "Ganti mode PV dan FV untuk jumlah tunggal. Contoh: FV 10000, 5%, 5 tahun → PV ≈ 7835.26. Edukatif. Perhitungan edukatif di browser; bukan saran profesional.",
+	tool_present_value_calculate: "Hitung",
+	tool_present_value_sample: "Muat contoh",
+	tool_present_value_clear: "Hapus",
+	tool_present_value_mode_label: "Mode",
+	tool_present_value_mode_pv: "Cari PV (dari FV)",
+	tool_present_value_mode_fv: "Cari FV (dari PV)",
+	tool_present_value_amount_label: "Jumlah",
+	tool_present_value_amount_ph: "mis. 10000",
+	tool_present_value_rate_label: "Suku bunga tahunan %",
+	tool_present_value_rate_ph: "mis. 5",
+	tool_present_value_n_label: "Tahun",
+	tool_present_value_n_ph: "mis. 5",
+	tool_present_value_out_label: "Hasil",
+	tool_present_value_result_note: "Edukatif.",
+	tool_present_value_err_generic: "Periksa input.",
+	tool_present_value_how_title: "Cara kerja",
+	tool_present_value_how_body: "Pilih mode PV/FV, isi jumlah, suku bunga, dan tahun.",
+	tool_present_value_formula_title: "Rumus",
+	tool_present_value_formula_body: "Pilih mode PV/FV, isi jumlah, suku bunga, dan tahun.",
+	tool_present_value_formula_item_1: "See formula notes.",
+	tool_present_value_formula_item_2: "Check inputs.",
+	tool_present_value_formula_item_3: "Educational only.",
+	tool_present_value_example_title: "Contoh",
+	tool_present_value_example: "Contoh: FV 10000, 5%, 5 tahun → PV ≈ 7835.26.",
+	tool_present_value_usecases_title: "Kapan dipakai",
+	tool_present_value_usecase_1: "Homework.",
+	tool_present_value_usecase_2: "Quick sketch.",
+	tool_present_value_usecase_3: "Compare related tools.",
+	tool_present_value_faq_q1: "Contoh?",
+	tool_present_value_faq_a1: "Contoh: FV 10000, 5%, 5 tahun → PV ≈ 7835.26.",
+	tool_present_value_faq_q2: "Formula?",
+	tool_present_value_faq_a2: "See Formula section.",
+	tool_present_value_faq_q3: "Advice?",
+	tool_present_value_faq_a3: "Educational only.",
+	tool_present_value_faq_q4: "Related?",
+	tool_present_value_faq_a4: "See related tools.",
+	tool_present_value_article: "Kalkulator present value (PV/FV)",
+	tool_present_value_disclaimer: "Hanya ilustrasi edukatif (present value); bukan saran keuangan.",
+	tool_present_value_references: "Investopedia dan rumus buku teks.",
+	tool_present_value_ref_a_label: "Investopedia",
+	tool_present_value_ref_b_label: "Wikipedia",
+};
+
+export default id;

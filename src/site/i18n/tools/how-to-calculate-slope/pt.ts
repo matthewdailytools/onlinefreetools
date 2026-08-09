@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-slope / pt).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const pt: SiteLangDict = {
+	tool_slope_title: "Calculadora de inclinação — Como calcular a inclinação entre dois pontos",
+	tool_slope_description: "Calcule a inclinação m=(y₂−y₁)/(x₂−x₁) entre dois pontos. Exemplo: (1,2) e (3,6) → m=2. Rejeita verticais com Δx=0. No navegador, para álgebra.",
+	tool_slope_calculate: "Calcular",
+	tool_slope_sample: "Carregar exemplo",
+	tool_slope_clear: "Limpar",
+	tool_slope_x1_label: "x₁",
+	tool_slope_x1_ph: "ex.: 1",
+	tool_slope_y1_label: "y₁",
+	tool_slope_y1_ph: "ex.: 2",
+	tool_slope_x2_label: "x₂",
+	tool_slope_x2_ph: "ex.: 3",
+	tool_slope_y2_label: "y₂",
+	tool_slope_y2_ph: "ex.: 6",
+	tool_slope_slopeOut_label: "Inclinação m",
+	tool_slope_result_note: "m=(y₂−y₁)/(x₂−x₁). Verticais (Δx=0) são rejeitadas como indefinidas.",
+	tool_slope_err_generic: "Informe quatro coordenadas finitas com x₂≠x₁.",
+	tool_slope_how_title: "Como funciona",
+	tool_slope_how_body: "Digite dois pontos distintos. Devolve a inclinação; se as x coincidem, erro.",
+	tool_slope_formula_title: "Fórmula",
+	tool_slope_formula_body: "Inclinação entre dois pontos:",
+	tool_slope_formula_item_1: "m=(y₂−y₁)/(x₂−x₁).",
+	tool_slope_formula_item_2: "m>0 sobe da esquerda para a direita; m<0 desce.",
+	tool_slope_formula_item_3: "Δx=0 é vertical — indefinida aqui.",
+	tool_slope_formula_item_4: "Trocar ambos os pontos mantém a razão.",
+	tool_slope_example_title: "Exemplo",
+	tool_slope_example: "Exemplo: (1,2) e (3,6) → m=2.",
+	tool_slope_usecases_title: "Quando usar",
+	tool_slope_usecase_1: "Álgebra: inclinação a partir de dois pontos.",
+	tool_slope_usecase_2: "Checar rise/run antes de graficar.",
+	tool_slope_usecase_3: "Comparar com ideias de proporção Δy:Δx.",
+	tool_slope_disclaimer: "Apenas inclinação 2D educativa.",
+	tool_slope_references: "Wikipedia inclinação.",
+	tool_slope_ref_slope_label: "Wikipedia — Inclinação",
+	tool_slope_ref_line_label: "Wikipedia — Equação linear",
+	tool_slope_article: "Calcule a inclinação m entre dois pontos com (y₂−y₁)/(x₂−x₁).",
+	tool_slope_faq_q1: "O que significa m=2?",
+	tool_slope_faq_a1: "Para cada +1 em x, y sobe 2.",
+	tool_slope_faq_q2: "E se x₁=x₂?",
+	tool_slope_faq_a2: "Inclinação indefinida (vertical); erro nesta página.",
+	tool_slope_faq_q3: "Ordem dos pontos?",
+	tool_slope_faq_a3: "Trocar ambos mantém o mesmo m.",
+	tool_slope_faq_q4: "Reta horizontal?",
+	tool_slope_faq_a4: "Sim — m=0 quando y₁=y₂ e x difere.",
+};
+
+export default pt;

@@ -1,0 +1,51 @@
+/**
+ * i18n tool shard (how-to-calculate-tip / id).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const id: SiteLangDict = {
+	tool_tip_title: "Kalkulator tip / tip",
+	tool_tip_description: "Hitung tip dari tagihan dan persen, lalu bagi total. Contoh: tagihan 80 tip 15% → tip 12, total 92. Di browser. Perhitungan edukatif di browser; bukan saran profesional.",
+	tool_tip_calculate: "Hitung",
+	tool_tip_sample: "Muat contoh",
+	tool_tip_clear: "Hapus",
+	tool_tip_bill_label: "Tagihan",
+	tool_tip_bill_ph: "mis. 80",
+	tool_tip_tip_label: "Tip %",
+	tool_tip_tip_ph: "mis. 15",
+	tool_tip_split_label: "Jumlah orang",
+	tool_tip_split_ph: "mis. 1",
+	tool_tip_tipOut_label: "Tip",
+	tool_tip_totalOut_label: "Total",
+	tool_tip_eachOut_label: "Per orang",
+	tool_tip_result_note: "Edukatif.",
+	tool_tip_err_generic: "Periksa input.",
+	tool_tip_how_title: "Cara kerja",
+	tool_tip_how_body: "Isi tagihan, persen, dan orang.",
+	tool_tip_formula_title: "Rumus",
+	tool_tip_formula_body: "Isi tagihan, persen, dan orang.",
+	tool_tip_formula_item_1: "See formula notes.",
+	tool_tip_formula_item_2: "Check inputs.",
+	tool_tip_formula_item_3: "Educational only.",
+	tool_tip_example_title: "Contoh",
+	tool_tip_example: "Contoh: 80 tip 15% → 12 / total 92.",
+	tool_tip_usecases_title: "Kapan dipakai",
+	tool_tip_usecase_1: "Homework.",
+	tool_tip_usecase_2: "Quick sketch.",
+	tool_tip_usecase_3: "Compare related tools.",
+	tool_tip_faq_q1: "Contoh?",
+	tool_tip_faq_a1: "Contoh: 80 tip 15% → 12 / total 92.",
+	tool_tip_faq_q2: "Formula?",
+	tool_tip_faq_a2: "See Formula section.",
+	tool_tip_faq_q3: "Advice?",
+	tool_tip_faq_a3: "Educational only.",
+	tool_tip_faq_q4: "Related?",
+	tool_tip_faq_a4: "See related tools.",
+	tool_tip_article: "Kalkulator tip / tip",
+	tool_tip_disclaimer: "Hanya ilustrasi edukatif (tip); bukan saran keuangan.",
+	tool_tip_references: "Investopedia dan rumus buku teks.",
+	tool_tip_ref_a_label: "Investopedia",
+	tool_tip_ref_b_label: "Wikipedia",
+};
+
+export default id;

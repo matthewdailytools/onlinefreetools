@@ -1,0 +1,51 @@
+/**
+ * i18n tool shard (how-to-calculate-tip / es).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const es: SiteLangDict = {
+	tool_tip_title: "Calculadora de propina",
+	tool_tip_description: "Calcula la propina con cuenta y % y reparte el total. Ejemplo: cuenta 80 con 15% → propina 12, total 92. En el navegador.",
+	tool_tip_calculate: "Calcular",
+	tool_tip_sample: "Cargar ejemplo",
+	tool_tip_clear: "Limpiar",
+	tool_tip_bill_label: "Cuenta",
+	tool_tip_bill_ph: "p. ej. 80",
+	tool_tip_tip_label: "Propina %",
+	tool_tip_tip_ph: "p. ej. 15",
+	tool_tip_split_label: "Personas",
+	tool_tip_split_ph: "p. ej. 1",
+	tool_tip_tipOut_label: "Propina",
+	tool_tip_totalOut_label: "Total",
+	tool_tip_eachOut_label: "Por persona",
+	tool_tip_result_note: "Educativo.",
+	tool_tip_err_generic: "Revisa los datos.",
+	tool_tip_how_title: "Cómo funciona",
+	tool_tip_how_body: "Introduce cuenta, % y personas.",
+	tool_tip_formula_title: "Fórmula",
+	tool_tip_formula_body: "Introduce cuenta, % y personas.",
+	tool_tip_formula_item_1: "See formula notes.",
+	tool_tip_formula_item_2: "Check inputs.",
+	tool_tip_formula_item_3: "Educational only.",
+	tool_tip_example_title: "Ejemplo",
+	tool_tip_example: "Ejemplo: 80 con 15% → 12 / total 92.",
+	tool_tip_usecases_title: "Cuándo usarlo",
+	tool_tip_usecase_1: "Homework.",
+	tool_tip_usecase_2: "Quick sketch.",
+	tool_tip_usecase_3: "Compare related tools.",
+	tool_tip_faq_q1: "¿Ejemplo?",
+	tool_tip_faq_a1: "Ejemplo: 80 con 15% → 12 / total 92.",
+	tool_tip_faq_q2: "Formula?",
+	tool_tip_faq_a2: "See Formula section.",
+	tool_tip_faq_q3: "Advice?",
+	tool_tip_faq_a3: "Educational only.",
+	tool_tip_faq_q4: "Related?",
+	tool_tip_faq_a4: "See related tools.",
+	tool_tip_article: "Calculadora de propina",
+	tool_tip_disclaimer: "Solo ilustración educativa (tip); no es consejo financiero.",
+	tool_tip_references: "Investopedia y fórmulas de libro.",
+	tool_tip_ref_a_label: "Investopedia",
+	tool_tip_ref_b_label: "Wikipedia",
+};
+
+export default es;

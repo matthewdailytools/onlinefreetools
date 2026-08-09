@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-pythagorean-theorem / en).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const en: SiteLangDict = {
+	tool_pythagorean_title: "Pythagorean Theorem Calculator — How to Find a Missing Side",
+	tool_pythagorean_description: "Solve for missing side a, b, or c in a right triangle with a² + b² = c². Example: a = 3, b = 4 → c = 5. Enter two known positive sides; rejects impossible leg/hypotenuse pairs. Browser learning tool.",
+	tool_pythagorean_calculate: "Calculate",
+	tool_pythagorean_sample: "Load sample",
+	tool_pythagorean_clear: "Clear",
+	tool_pythagorean_solve_label: "Solve for",
+	tool_pythagorean_solve_c: "Hypotenuse c",
+	tool_pythagorean_solve_a: "Leg a",
+	tool_pythagorean_solve_b: "Leg b",
+	tool_pythagorean_known1_label: "First known side",
+	tool_pythagorean_known1_ph: "e.g. 3",
+	tool_pythagorean_known2_label: "Second known side",
+	tool_pythagorean_known2_ph: "e.g. 4",
+	tool_pythagorean_sideOut_label: "Missing side",
+	tool_pythagorean_result_note: "Right triangle: a² + b² = c². For leg unknowns, the hypotenuse must be longer than the other leg.",
+	tool_pythagorean_err_generic: "Enter two positive finite sides; when solving a leg, hypotenuse must be larger.",
+	tool_pythagorean_how_title: "How it works",
+	tool_pythagorean_how_body: "Choose which side is missing. Enter the other two positive lengths. For c, inputs are legs a and b; for a, inputs are b and c; for b, inputs are a and c. Returns the positive square-root solution.",
+	tool_pythagorean_formula_title: "Formula",
+	tool_pythagorean_formula_body: "Pythagorean theorem a² + b² = c²:",
+	tool_pythagorean_formula_item_1: "Missing c: c = √(a² + b²).",
+	tool_pythagorean_formula_item_2: "Missing a: a = √(c² − b²) with c > b > 0.",
+	tool_pythagorean_formula_item_3: "Missing b: b = √(c² − a²) with c > a > 0.",
+	tool_pythagorean_formula_item_4: "Only real positive lengths; not a full trigonometry suite.",
+	tool_pythagorean_example_title: "Example",
+	tool_pythagorean_example: "Example: a = 3, b = 4 → c = 5.",
+	tool_pythagorean_usecases_title: "When to use it",
+	tool_pythagorean_usecase_1: "Geometry homework: find a missing right-triangle side.",
+	tool_pythagorean_usecase_2: "Quick check of 3-4-5 style triples.",
+	tool_pythagorean_usecase_3: "Estimate diagonal length from two orthogonal legs.",
+	tool_pythagorean_disclaimer: "Educational Euclidean plane geometry only.",
+	tool_pythagorean_references: "Wikipedia Pythagorean theorem.",
+	tool_pythagorean_ref_py_label: "Wikipedia — Pythagorean theorem",
+	tool_pythagorean_ref_rt_label: "Wikipedia — Right triangle",
+	tool_pythagorean_article: "Solve for a missing side of a right triangle with a² + b² = c².",
+	tool_pythagorean_faq_q1: "Which inputs when solving for c?",
+	tool_pythagorean_faq_a1: "Enter legs a and b as the two known sides.",
+	tool_pythagorean_faq_q2: "Why reject c ≤ a?",
+	tool_pythagorean_faq_a2: "A hypotenuse must be strictly longer than each leg.",
+	tool_pythagorean_faq_q3: "Are units required?",
+	tool_pythagorean_faq_a3: "No — keep both known sides in the same unit.",
+	tool_pythagorean_faq_q4: "Does this handle obtuse triangles?",
+	tool_pythagorean_faq_a4: "No — only the right-triangle relation a²+b²=c².",
+};
+
+export default en;

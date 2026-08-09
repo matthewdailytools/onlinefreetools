@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-pythagorean-theorem",
+  "path": "/tools/how-to-calculate-pythagorean-theorem",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_pythagorean_title",
+  "homeTitleKey": "tool_pythagorean_title",
+  "homeDescKey": "tool_pythagorean_description",
+  "faqPrefix": "tool_pythagorean",
+  "related": [
+    "how-to-calculate-aspect-ratio",
+    "how-to-calculate-logarithm"
+  ],
+  "logo": "/icons/tools/how-to-calculate-pythagorean-theorem.svg",
+  "page": {
+    "module": "../pages/howToCalculatePythagoreanTheoremPage",
+    "export": "renderHowToCalculatePythagoreanTheoremPage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

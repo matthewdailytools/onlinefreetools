@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-z-score",
+  "path": "/tools/how-to-calculate-z-score",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_z_score_title",
+  "homeTitleKey": "tool_z_score_title",
+  "homeDescKey": "tool_z_score_description",
+  "faqPrefix": "tool_z_score",
+  "related": [
+    "how-to-calculate-p-value",
+    "how-to-calculate-standard-deviation"
+  ],
+  "logo": "/icons/tools/how-to-calculate-z-score.svg",
+  "page": {
+    "module": "../pages/howToCalculateZScorePage",
+    "export": "renderHowToCalculateZScorePage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

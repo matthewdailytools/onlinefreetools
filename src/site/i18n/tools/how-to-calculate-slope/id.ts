@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-slope / id).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const id: SiteLangDict = {
+	tool_slope_title: "Kalkulator kemiringan — Cara menghitung kemiringan dua titik",
+	tool_slope_description: "Hitung kemiringan m=(y₂−y₁)/(x₂−x₁) antara dua titik. Contoh: (1,2) dan (3,6) → m=2. Menolak vertikal dengan Δx=0. Di browser untuk aljabar.",
+	tool_slope_calculate: "Hitung",
+	tool_slope_sample: "Muat contoh",
+	tool_slope_clear: "Hapus",
+	tool_slope_x1_label: "x₁",
+	tool_slope_x1_ph: "mis. 1",
+	tool_slope_y1_label: "y₁",
+	tool_slope_y1_ph: "mis. 2",
+	tool_slope_x2_label: "x₂",
+	tool_slope_x2_ph: "mis. 3",
+	tool_slope_y2_label: "y₂",
+	tool_slope_y2_ph: "mis. 6",
+	tool_slope_slopeOut_label: "Kemiringan m",
+	tool_slope_result_note: "m=(y₂−y₁)/(x₂−x₁). Garis vertikal (Δx=0) ditolak sebagai tak terdefinisi.",
+	tool_slope_err_generic: "Masukkan empat koordinat hingga dengan x₂≠x₁.",
+	tool_slope_how_title: "Cara kerja",
+	tool_slope_how_body: "Masukkan dua titik berbeda. Mengembalikan kemiringan; jika x sama, error.",
+	tool_slope_formula_title: "Rumus",
+	tool_slope_formula_body: "Kemiringan antara dua titik:",
+	tool_slope_formula_item_1: "m=(y₂−y₁)/(x₂−x₁).",
+	tool_slope_formula_item_2: "m positif naik kiri→kanan; m negatif turun.",
+	tool_slope_formula_item_3: "Δx=0 berarti vertikal — tak terdefinisi di sini.",
+	tool_slope_formula_item_4: "Menukar kedua titik menjaga rasio.",
+	tool_slope_example_title: "Contoh",
+	tool_slope_example: "Contoh: (1,2) dan (3,6) → m=2.",
+	tool_slope_usecases_title: "Kapan dipakai",
+	tool_slope_usecase_1: "Aljabar: kemiringan dari dua titik.",
+	tool_slope_usecase_2: "Cek rise-over-run sebelum menggambar.",
+	tool_slope_usecase_3: "Bandingkan dengan gagasan rasio Δy:Δx.",
+	tool_slope_disclaimer: "Hanya kemiringan 2D edukasi.",
+	tool_slope_references: "Wikipedia slope.",
+	tool_slope_ref_slope_label: "Wikipedia — Slope",
+	tool_slope_ref_line_label: "Wikipedia — Linear equation",
+	tool_slope_article: "Hitung kemiringan m antara dua titik dengan (y₂−y₁)/(x₂−x₁).",
+	tool_slope_faq_q1: "Garis horizontal?",
+	tool_slope_faq_a1: "Ya — m=0 jika y₁=y₂ dan x berbeda.",
+	tool_slope_faq_q2: "Jika x₁=x₂?",
+	tool_slope_faq_a2: "Kemiringan tak terdefinisi (vertikal); halaman ini error.",
+	tool_slope_faq_q3: "Urutan titik?",
+	tool_slope_faq_a3: "Menukar keduanya tetap memberi m sama.",
+	tool_slope_faq_q4: "Arti m=2?",
+	tool_slope_faq_a4: "Setiap +1 pada x, y naik 2.",
+};
+
+export default id;

@@ -1,0 +1,51 @@
+/**
+ * i18n tool shard (how-to-calculate-quadratic-equation / ja).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const ja: SiteLangDict = {
+	tool_quadratic_equation_title: "二次方程式の解 — 根と判別式",
+	tool_quadratic_equation_description: "ax²+bx+c=0 の実数解と判別式を求めます。例：a=1、b=-5、c=6 → 根 2 と 3。。計算はブラウザ内で行いサーバーにアップロードしません。学習用の目安であり公式の前提を確認してください。。計算はブラウザ内で行いサーバーにアップロードしません。学習用の目安であり公式の前提を確認してください。",
+	tool_quadratic_equation_calculate: "計算する",
+	tool_quadratic_equation_sample: "サンプル",
+	tool_quadratic_equation_clear: "クリア",
+	tool_quadratic_equation_a_label: "a",
+	tool_quadratic_equation_a_ph: "例 1",
+	tool_quadratic_equation_b_label: "b",
+	tool_quadratic_equation_b_ph: "例 -5",
+	tool_quadratic_equation_c_label: "c",
+	tool_quadratic_equation_c_ph: "例 6",
+	tool_quadratic_equation_discOut_label: "判別式",
+	tool_quadratic_equation_r1Out_label: "解1",
+	tool_quadratic_equation_r2Out_label: "解2",
+	tool_quadratic_equation_result_note: "二次方程式の公式でブラウザ内計算します。",
+	tool_quadratic_equation_err_generic: "入力を確認してください。",
+	tool_quadratic_equation_how_title: "使い方",
+	tool_quadratic_equation_how_body: "必要な項目を入れて二次方程式を計算します。",
+	tool_quadratic_equation_formula_title: "計算式",
+	tool_quadratic_equation_formula_body: "二次方程式の式は Formula を参照。注意:",
+	tool_quadratic_equation_formula_item_1: "単位と符号を確認。",
+	tool_quadratic_equation_formula_item_2: "境界値は未定義の場合あり。",
+	tool_quadratic_equation_formula_item_3: "学習用です。",
+	tool_quadratic_equation_example_title: "例",
+	tool_quadratic_equation_example: "例：a=1、b=-5、c=6 → 2 と 3。",
+	tool_quadratic_equation_usecases_title: "こんなときに",
+	tool_quadratic_equation_usecase_1: "宿題。",
+	tool_quadratic_equation_usecase_2: "速算チェック。",
+	tool_quadratic_equation_usecase_3: "関連ツールと比較。",
+	tool_quadratic_equation_faq_q1: "例は？",
+	tool_quadratic_equation_faq_a1: "例：a=1、b=-5、c=6 → 2 と 3。",
+	tool_quadratic_equation_faq_q2: "式は？",
+	tool_quadratic_equation_faq_a2: "公式セクションへ。",
+	tool_quadratic_equation_faq_q3: "助言？",
+	tool_quadratic_equation_faq_a3: "学習用。",
+	tool_quadratic_equation_faq_q4: "関連？",
+	tool_quadratic_equation_faq_a4: "関連ツールへ。",
+	tool_quadratic_equation_article: "二次方程式",
+	tool_quadratic_equation_disclaimer: "二次方程式の学習用試算であり、専門的助言ではありません。",
+	tool_quadratic_equation_references: "標準的な教科書公式。",
+	tool_quadratic_equation_ref_a_label: "Wikipedia",
+	tool_quadratic_equation_ref_b_label: "Textbook formula",
+};
+
+export default ja;

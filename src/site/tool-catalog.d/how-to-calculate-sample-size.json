@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-sample-size",
+  "path": "/tools/how-to-calculate-sample-size",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_sample_size_title",
+  "homeTitleKey": "tool_sample_size_title",
+  "homeDescKey": "tool_sample_size_description",
+  "faqPrefix": "tool_sample_size",
+  "related": [
+    "how-to-calculate-confidence-interval",
+    "how-to-calculate-p-value"
+  ],
+  "logo": "/icons/tools/how-to-calculate-sample-size.svg",
+  "page": {
+    "module": "../pages/howToCalculateSampleSizePage",
+    "export": "renderHowToCalculateSampleSizePage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

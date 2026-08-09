@@ -1,0 +1,50 @@
+/**
+ * i18n tool shard (how-to-calculate-discount / es).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const es: SiteLangDict = {
+	tool_discount_title: "Calculadora de descuento — Precio final",
+	tool_discount_description: "Calcula el precio final con el importe original y el % de descuento. Ejemplo: 100 con 20% → 80. Un segundo descuento opcional se aplica sobre el precio ya rebajado. Solo en el navegador; no es una caja de tienda.",
+	tool_discount_calculate: "Calcular",
+	tool_discount_sample: "Cargar ejemplo",
+	tool_discount_clear: "Limpiar",
+	tool_discount_original_label: "Precio original",
+	tool_discount_original_ph: "p. ej. 100",
+	tool_discount_pct_label: "Descuento (% off)",
+	tool_discount_pct_ph: "p. ej. 20",
+	tool_discount_pct2_label: "Segundo descuento % (opcional)",
+	tool_discount_pct2_ph: "p. ej. 10",
+	tool_discount_finalOut_label: "Precio final",
+	tool_discount_savedOut_label: "Ahorro total",
+	tool_discount_result_note: "El segundo descuento, si hay, se aplica al precio ya rebajado. Solo educativo.",
+	tool_discount_err_generic: "Introduce un precio original positivo y un % entre 0 y 100.",
+	tool_discount_how_title: "Cómo funciona",
+	tool_discount_how_body: "Indica el precio original y el porcentaje de rebaja. Si quieres, añade un segundo % sobre el precio ya rebajado. Verás el final y el ahorro. En el navegador.",
+	tool_discount_formula_title: "Fórmula",
+	tool_discount_formula_body: "Final = original × (1 − d₁/100) × (1 − d₂/100) si hay segundo descuento. Notas:",
+	tool_discount_formula_item_1: "d₁ y d₂ son porcentajes de rebaja (20 = 20% off), no factores 0,8.",
+	tool_discount_formula_item_2: "Deja el segundo en vacío o 0 para una sola rebaja.",
+	tool_discount_formula_item_3: "Impuestos y cupones de importe fijo no se modelan.",
+	tool_discount_example_title: "Ejemplo",
+	tool_discount_example: "Ejemplo: 100 con 20% → 80. Con otro 10% → 72.",
+	tool_discount_usecases_title: "Cuándo usarlo",
+	tool_discount_usecase_1: "Estimar el total con un % de oferta antes de impuestos.",
+	tool_discount_usecase_2: "Deberes: descuentos sucesivos.",
+	tool_discount_usecase_3: "Practicar dobles rebajas de marketing.",
+	tool_discount_faq_q1: "¿El 20% off es pagar solo el 20%?",
+	tool_discount_faq_a1: "No: pagas el 80% del original.",
+	tool_discount_faq_q2: "¿Cómo se apila el segundo descuento?",
+	tool_discount_faq_a2: "Sobre el precio ya rebajado, no otra vez sobre el original.",
+	tool_discount_faq_q3: "¿Incluye impuestos?",
+	tool_discount_faq_a3: "No; usa importes sin impuesto.",
+	tool_discount_faq_q4: "¿Cupón de cantidad fija?",
+	tool_discount_faq_a4: "Esta página solo usa porcentajes.",
+	tool_discount_disclaimer: "Ilustración educativa de precios; no es una caja ni motor fiscal.",
+	tool_discount_references: "Investopedia sobre descuentos; aritmética de % sucesivos.",
+	tool_discount_ref_a_label: "Investopedia — Discount",
+	tool_discount_ref_b_label: "Wikipedia — Discounting",
+	tool_discount_article: "Precio rebajado desde un original y % off, con segundo descuento opcional en la misma página.",
+};
+
+export default es;

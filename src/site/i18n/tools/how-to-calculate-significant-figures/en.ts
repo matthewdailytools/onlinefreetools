@@ -1,0 +1,53 @@
+/**
+ * i18n tool shard (how-to-calculate-significant-figures / en).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const en: SiteLangDict = {
+	tool_significant_figures_title: "Significant Figures Calculator — How to Count and Round Sig Figs",
+	tool_significant_figures_description: "Count significant figures in a number string or round to N sig figs. Leading zeros do not count; trailing zeros after a decimal do. Example: 0.00304 → 3 sig figs; round 1234.56 to 3 → 1230 (1.23e3). Half away from zero. Runs in your browser to calculate and check homework.",
+	tool_significant_figures_calculate: "Calculate",
+	tool_significant_figures_sample: "Load sample",
+	tool_significant_figures_clear: "Clear",
+	tool_significant_figures_mode_label: "Mode",
+	tool_significant_figures_mode_count: "Count sig figs",
+	tool_significant_figures_mode_round: "Round to N sig figs",
+	tool_significant_figures_num_label: "Number (as text)",
+	tool_significant_figures_num_ph: "e.g. 0.00304 or 1234.56",
+	tool_significant_figures_n_label: "N (for round)",
+	tool_significant_figures_n_ph: "e.g. 3",
+	tool_significant_figures_countOut_label: "Significant figures",
+	tool_significant_figures_roundedOut_label: "Rounded value",
+	tool_significant_figures_sciOut_label: "Scientific form",
+	tool_significant_figures_result_note: "Count from the string; round uses half away from zero (half-up for positives).",
+	tool_significant_figures_err_generic: "Enter a valid number string; for round, also N ≥ 1.",
+	tool_significant_figures_how_title: "How it works",
+	tool_significant_figures_how_body: "Choose Count or Round. Paste the number as text so leading zeros stay visible. Count returns how many sig figs; Round needs N and shows a decimal string plus scientific form like 1.23e3.",
+	tool_significant_figures_formula_title: "Rules documented here",
+	tool_significant_figures_formula_body: "Standard school counting and half-away rounding:",
+	tool_significant_figures_formula_item_1: "Non-zero digits always count; zeros between them count.",
+	tool_significant_figures_formula_item_2: "Leading zeros never count (0.00304 → 3).",
+	tool_significant_figures_formula_item_3: "Trailing zeros after a decimal count; bare trailing zeros in integers without a decimal do not.",
+	tool_significant_figures_formula_item_4: "Rounding: scale mantissa to N digits; halfway cases move away from zero (positives half-up).",
+	tool_significant_figures_example_title: "Example",
+	tool_significant_figures_example: "Count 0.00304 → 3. Round 1234.56 to 3 → 1230 and 1.23e3.",
+	tool_significant_figures_usecases_title: "When to use it",
+	tool_significant_figures_usecase_1: "Lab homework: check how many sig figs a measurement string carries.",
+	tool_significant_figures_usecase_2: "Round a calculated result to the allowed precision.",
+	tool_significant_figures_usecase_3: "Compare ordinary and scientific displays of the same round.",
+	tool_significant_figures_disclaimer: "Educational counting/rounding rules only — lab SOPs may define trailing zeros differently.",
+	tool_significant_figures_references: "Wikipedia significant figures and rounding.",
+	tool_significant_figures_ref_sig_label: "Wikipedia — Significant figures",
+	tool_significant_figures_ref_round_label: "Wikipedia — Rounding",
+	tool_significant_figures_article: "Count or round significant figures from a number string with explicit school rules.",
+	tool_significant_figures_faq_q1: "Do leading zeros count?",
+	tool_significant_figures_faq_a1: "No. In 0.00304 only 3, 0, and 4 count → 3.",
+	tool_significant_figures_faq_q2: "What about trailing zeros in 1200?",
+	tool_significant_figures_faq_a2: "Without a decimal point this page does not count them (2 sig figs).",
+	tool_significant_figures_faq_q3: "How is halfway rounded?",
+	tool_significant_figures_faq_a3: "Away from zero; for positives that is half-up.",
+	tool_significant_figures_faq_q4: "Why keep the input as text?",
+	tool_significant_figures_faq_a4: "So forms like 0.00304 keep visible leading zeros for counting.",
+};
+
+export default en;

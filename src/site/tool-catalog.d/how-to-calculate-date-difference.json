@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-date-difference",
+  "path": "/tools/how-to-calculate-date-difference",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_date_difference_title",
+  "homeTitleKey": "tool_date_difference_title",
+  "homeDescKey": "tool_date_difference_description",
+  "faqPrefix": "tool_date_difference",
+  "related": [
+    "how-to-calculate-age",
+    "how-to-calculate-tip"
+  ],
+  "logo": "/icons/tools/how-to-calculate-date-difference.svg",
+  "page": {
+    "module": "../pages/howToCalculateDateDifferencePage",
+    "export": "renderHowToCalculateDateDifferencePage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

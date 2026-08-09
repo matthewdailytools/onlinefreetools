@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-logarithm / zh).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const zh: SiteLangDict = {
+	tool_logarithm_title: "对数计算器 — 如何计算对数",
+	tool_logarithm_description: "计算 log₁₀、ln 或自定义底 log_b(x)（要求 x>0）。自定义底用换底 ln(x)/ln(b)。示例：log₁₀(1000)=3。写明定义域：x>0、b>0 且 b≠1。浏览器内计算，适合作业与换底验算，并可与指数页互相核对。",
+	tool_logarithm_calculate: "计算",
+	tool_logarithm_sample: "加载样例",
+	tool_logarithm_clear: "清空",
+	tool_logarithm_mode_label: "对数类型",
+	tool_logarithm_mode_log10: "log₁₀（常用）",
+	tool_logarithm_mode_ln: "ln（自然）",
+	tool_logarithm_mode_custom: "log_b（自定义底）",
+	tool_logarithm_x_label: "真数 x",
+	tool_logarithm_x_ph: "例如 1000",
+	tool_logarithm_base_label: "底数 b（自定义）",
+	tool_logarithm_base_ph: "例如 2",
+	tool_logarithm_logOut_label: "对数值",
+	tool_logarithm_result_note: "用换底：log_b(x)=ln(x)/ln(b)。要求 x>0 且底合法。",
+	tool_logarithm_err_generic: "请输入 x>0；自定义底还需 b>0 且 b≠1。",
+	tool_logarithm_how_title: "怎么用",
+	tool_logarithm_how_body: "选择 log₁₀、ln 或自定义底。输入 x>0（自定义时再填底 b）。页面用 Math.log / Math.log10 与换底计算。",
+	tool_logarithm_formula_title: "公式与定义域",
+	tool_logarithm_formula_body: "log_b(x) 是把 b 变成 x 的指数。本页：",
+	tool_logarithm_formula_item_1: "log₁₀ 为常用对数；ln 为自然对数（底 e）。",
+	tool_logarithm_formula_item_2: "自定义：log_b(x)=ln(x)/ln(b)，且 b>0、b≠1、x>0。",
+	tool_logarithm_formula_item_3: "x 必须为正；零与负数拒绝。",
+	tool_logarithm_formula_item_4: "可配合指数页用 b^y≈x 验算。",
+	tool_logarithm_example_title: "示例",
+	tool_logarithm_example: "示例：log₁₀(1000)=3。",
+	tool_logarithm_usecases_title: "适合什么场景",
+	tool_logarithm_usecase_1: "作业：求正数的 log₁₀、ln 或 log₂。",
+	tool_logarithm_usecase_2: "手算换底后对照。",
+	tool_logarithm_usecase_3: "为科学计数数量级做准备。",
+	tool_logarithm_disclaimer: "仅为实数教育用对数，不能替代复数对数或 CAS。",
+	tool_logarithm_references: "维基百科对数与自然对数。",
+	tool_logarithm_ref_log_label: "维基百科 — 对数",
+	tool_logarithm_ref_ln_label: "维基百科 — 自然对数",
+	tool_logarithm_article: "在浏览器内计算 x>0 的 log₁₀、ln 或自定义底对数。",
+	tool_logarithm_faq_q1: "自定义底如何算？",
+	tool_logarithm_faq_a1: "换底公式：ln(x)/ln(b)。",
+	tool_logarithm_faq_q2: "为什么 x 必须为正？",
+	tool_logarithm_faq_a2: "本页实数对数在 0 与负数无定义。",
+	tool_logarithm_faq_q3: "底可以为 1 吗？",
+	tool_logarithm_faq_a3: "不可以，底为 1 的对数无定义。",
+	tool_logarithm_faq_q4: "ln 是什么？",
+	tool_logarithm_faq_a4: "以 e≈2.71828 为底的自然对数。",
+};
+
+export default zh;

@@ -1,0 +1,53 @@
+/**
+ * i18n tool shard (how-to-calculate-significant-figures / fr).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const fr: SiteLangDict = {
+	tool_significant_figures_title: "Calculateur de chiffres significatifs — Compter et arrondir",
+	tool_significant_figures_description: "Comptez les chiffres significatifs d’une chaîne ou arrondissez à N. Les zéros de tête ne comptent pas ; les zéros finaux après la virgule oui. Exemple : 0,00304 → 3 ; 1234,56 à 3 → 1230 (1,23e3). Moitié loin de zéro. Dans le navigateur.",
+	tool_significant_figures_calculate: "Calculer",
+	tool_significant_figures_sample: "Charger l’exemple",
+	tool_significant_figures_clear: "Effacer",
+	tool_significant_figures_mode_label: "Mode",
+	tool_significant_figures_mode_count: "Compter les chiffres",
+	tool_significant_figures_mode_round: "Arrondir à N",
+	tool_significant_figures_num_label: "Nombre (texte)",
+	tool_significant_figures_num_ph: "ex. 0,00304 ou 1234,56",
+	tool_significant_figures_n_label: "N (arrondi)",
+	tool_significant_figures_n_ph: "ex. 3",
+	tool_significant_figures_countOut_label: "Chiffres significatifs",
+	tool_significant_figures_roundedOut_label: "Valeur arrondie",
+	tool_significant_figures_sciOut_label: "Forme scientifique",
+	tool_significant_figures_result_note: "Comptage depuis la chaîne ; arrondi moitié loin de zéro.",
+	tool_significant_figures_err_generic: "Saisissez une chaîne numérique valide ; pour l’arrondi, N ≥ 1.",
+	tool_significant_figures_how_title: "Fonctionnement",
+	tool_significant_figures_how_body: "Choisissez Compter ou Arrondir. Collez le nombre en texte pour garder les zéros de tête. Compter renvoie le nombre de chiffres ; Arrondir demande N et affiche forme décimale et scientifique.",
+	tool_significant_figures_formula_title: "Règles documentées",
+	tool_significant_figures_formula_body: "Comptage scolaire et arrondi moitié loin de zéro :",
+	tool_significant_figures_formula_item_1: "Les chiffres non nuls comptent toujours ; les zéros intercalaires aussi.",
+	tool_significant_figures_formula_item_2: "Les zéros de tête ne comptent pas (0,00304 → 3).",
+	tool_significant_figures_formula_item_3: "Zéros finaux après la virgule oui ; entiers sans décimale : non sur cette page.",
+	tool_significant_figures_formula_item_4: "Arrondi : mantisse à N chiffres ; égalité loin de zéro.",
+	tool_significant_figures_example_title: "Exemple",
+	tool_significant_figures_example: "Compter 0,00304 → 3. Arrondir 1234,56 à 3 → 1230 et 1,23e3.",
+	tool_significant_figures_usecases_title: "Quand l’utiliser",
+	tool_significant_figures_usecase_1: "TP : vérifier les chiffres d’une mesure.",
+	tool_significant_figures_usecase_2: "Ramener un résultat à la précision autorisée.",
+	tool_significant_figures_usecase_3: "Comparer affichage ordinaire et scientifique.",
+	tool_significant_figures_disclaimer: "Règles pédagogiques seulement ; les SOP de labo peuvent traiter autrement les zéros finaux.",
+	tool_significant_figures_references: "Wikipedia chiffres significatifs et arrondi.",
+	tool_significant_figures_ref_sig_label: "Wikipedia — Chiffre significatif",
+	tool_significant_figures_ref_round_label: "Wikipedia — Arrondi",
+	tool_significant_figures_article: "Comptez ou arrondissez les chiffres significatifs depuis une chaîne avec règles explicites.",
+	tool_significant_figures_faq_q1: "Les zéros de tête comptent-ils ?",
+	tool_significant_figures_faq_a1: "Non. Dans 0,00304 seuls 3, 0 et 4 → 3.",
+	tool_significant_figures_faq_q2: "Et les zéros finaux de 1200 ?",
+	tool_significant_figures_faq_a2: "Sans décimale cette page ne les compte pas (2 chiffres).",
+	tool_significant_figures_faq_q3: "Arrondi à mi-chemin ?",
+	tool_significant_figures_faq_a3: "Loin de zéro ; pour les positifs, half-up.",
+	tool_significant_figures_faq_q4: "Pourquoi une saisie texte ?",
+	tool_significant_figures_faq_a4: "Pour garder les zéros de tête visibles au comptage.",
+};
+
+export default fr;

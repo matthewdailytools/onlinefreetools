@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-pythagorean-theorem / es).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const es: SiteLangDict = {
+	tool_pythagorean_title: "Calculadora de Pitágoras — Cómo hallar el lado faltante",
+	tool_pythagorean_description: "Resuelve el lado faltante a, b o c con a²+b²=c². Ejemplo: a=3, b=4 → c=5. Introduce dos lados positivos; rechaza pares imposibles. En el navegador, para clase.",
+	tool_pythagorean_calculate: "Calcular",
+	tool_pythagorean_sample: "Cargar ejemplo",
+	tool_pythagorean_clear: "Limpiar",
+	tool_pythagorean_solve_label: "Resolver",
+	tool_pythagorean_solve_c: "Hipotenusa c",
+	tool_pythagorean_solve_a: "Cateto a",
+	tool_pythagorean_solve_b: "Cateto b",
+	tool_pythagorean_known1_label: "Primer lado conocido",
+	tool_pythagorean_known1_ph: "p. ej. 3",
+	tool_pythagorean_known2_label: "Segundo lado conocido",
+	tool_pythagorean_known2_ph: "p. ej. 4",
+	tool_pythagorean_sideOut_label: "Lado faltante",
+	tool_pythagorean_result_note: "Triángulo rectángulo: a²+b²=c². Si falta un cateto, la hipotenusa debe ser mayor.",
+	tool_pythagorean_err_generic: "Introduce dos lados positivos; al resolver un cateto, la hipotenusa debe ser mayor.",
+	tool_pythagorean_how_title: "Cómo funciona",
+	tool_pythagorean_how_body: "Elige el lado que falta e introduce los otros dos. Para c: a y b; para a: b y c; para b: a y c. Devuelve la raíz positiva.",
+	tool_pythagorean_formula_title: "Fórmula",
+	tool_pythagorean_formula_body: "Teorema de Pitágoras a²+b²=c²:",
+	tool_pythagorean_formula_item_1: "Falta c: c=√(a²+b²).",
+	tool_pythagorean_formula_item_2: "Falta a: a=√(c²−b²) con c>b>0.",
+	tool_pythagorean_formula_item_3: "Falta b: b=√(c²−a²) con c>a>0.",
+	tool_pythagorean_formula_item_4: "Solo longitudes reales positivas.",
+	tool_pythagorean_example_title: "Ejemplo",
+	tool_pythagorean_example: "Ejemplo: a=3, b=4 → c=5.",
+	tool_pythagorean_usecases_title: "Cuándo usarlo",
+	tool_pythagorean_usecase_1: "Geometría: hallar un lado faltante.",
+	tool_pythagorean_usecase_2: "Comprobar triples 3-4-5.",
+	tool_pythagorean_usecase_3: "Estimar una diagonal con dos catetos.",
+	tool_pythagorean_disclaimer: "Solo geometría euclídea educativa.",
+	tool_pythagorean_references: "Wikipedia teorema de Pitágoras.",
+	tool_pythagorean_ref_py_label: "Wikipedia — Teorema de Pitágoras",
+	tool_pythagorean_ref_rt_label: "Wikipedia — Triángulo rectángulo",
+	tool_pythagorean_article: "Resuelve el lado faltante de un triángulo rectángulo con a²+b²=c².",
+	tool_pythagorean_faq_q1: "¿Sirve para triángulos obtusos?",
+	tool_pythagorean_faq_a1: "No; solo la relación de rectángulo a²+b²=c².",
+	tool_pythagorean_faq_q2: "¿Qué datos si busco c?",
+	tool_pythagorean_faq_a2: "Los catetos a y b.",
+	tool_pythagorean_faq_q3: "¿Por qué rechazar c≤a?",
+	tool_pythagorean_faq_a3: "La hipotenusa debe ser estrictamente mayor que cada cateto.",
+	tool_pythagorean_faq_q4: "¿Hacen falta unidades?",
+	tool_pythagorean_faq_a4: "No; usa la misma unidad en ambos lados.",
+};
+
+export default es;

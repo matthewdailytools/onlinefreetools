@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-slope / es).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const es: SiteLangDict = {
+	tool_slope_title: "Calculadora de pendiente — Cómo calcular la pendiente entre dos puntos",
+	tool_slope_description: "Calcula la pendiente m=(y₂−y₁)/(x₂−x₁) entre dos puntos. Ejemplo: (1,2) y (3,6) → m=2. Rechaza verticales con Δx=0. En el navegador, para clase de álgebra.",
+	tool_slope_calculate: "Calcular",
+	tool_slope_sample: "Cargar ejemplo",
+	tool_slope_clear: "Limpiar",
+	tool_slope_x1_label: "x₁",
+	tool_slope_x1_ph: "p. ej. 1",
+	tool_slope_y1_label: "y₁",
+	tool_slope_y1_ph: "p. ej. 2",
+	tool_slope_x2_label: "x₂",
+	tool_slope_x2_ph: "p. ej. 3",
+	tool_slope_y2_label: "y₂",
+	tool_slope_y2_ph: "p. ej. 6",
+	tool_slope_slopeOut_label: "Pendiente m",
+	tool_slope_result_note: "m=(y₂−y₁)/(x₂−x₁). Las verticales (Δx=0) se rechazan como indefinidas.",
+	tool_slope_err_generic: "Introduce cuatro coordenadas finitas con x₂≠x₁.",
+	tool_slope_how_title: "Cómo funciona",
+	tool_slope_how_body: "Introduce dos puntos distintos. Devuelve la pendiente; si coinciden las x, error por indefinida.",
+	tool_slope_formula_title: "Fórmula",
+	tool_slope_formula_body: "Pendiente entre dos puntos:",
+	tool_slope_formula_item_1: "m=(y₂−y₁)/(x₂−x₁).",
+	tool_slope_formula_item_2: "m>0 sube de izquierda a derecha; m<0 baja.",
+	tool_slope_formula_item_3: "Δx=0 es vertical — indefinida aquí.",
+	tool_slope_formula_item_4: "Intercambiar ambos puntos deja el mismo cociente.",
+	tool_slope_example_title: "Ejemplo",
+	tool_slope_example: "Ejemplo: (1,2) y (3,6) → m=2.",
+	tool_slope_usecases_title: "Cuándo usarlo",
+	tool_slope_usecase_1: "Álgebra: pendiente desde dos puntos.",
+	tool_slope_usecase_2: "Comprobar rise/run antes de graficar.",
+	tool_slope_usecase_3: "Comparar con ideas de razón de aspecto Δy:Δx.",
+	tool_slope_disclaimer: "Solo pendiente 2D educativa, no un solver completo de rectas.",
+	tool_slope_references: "Wikipedia pendiente.",
+	tool_slope_ref_slope_label: "Wikipedia — Pendiente",
+	tool_slope_ref_line_label: "Wikipedia — Ecuación lineal",
+	tool_slope_article: "Calcula la pendiente m entre dos puntos con (y₂−y₁)/(x₂−x₁).",
+	tool_slope_faq_q1: "¿Línea horizontal?",
+	tool_slope_faq_a1: "Sí; si y₁=y₂ y x difiere, m=0.",
+	tool_slope_faq_q2: "¿Si x₁=x₂?",
+	tool_slope_faq_a2: "Pendiente indefinida (vertical); error aquí.",
+	tool_slope_faq_q3: "¿Importa el orden?",
+	tool_slope_faq_a3: "Intercambiar ambos puntos deja el mismo m.",
+	tool_slope_faq_q4: "¿Qué significa m=2?",
+	tool_slope_faq_a4: "Por cada +1 en x, y sube 2.",
+};
+
+export default es;

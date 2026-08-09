@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-density",
+  "path": "/tools/how-to-calculate-density",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_density_title",
+  "homeTitleKey": "tool_density_title",
+  "homeDescKey": "tool_density_description",
+  "faqPrefix": "tool_density",
+  "related": [
+    "how-to-calculate-volume",
+    "how-to-calculate-ohms-law"
+  ],
+  "logo": "/icons/tools/how-to-calculate-density.svg",
+  "page": {
+    "module": "../pages/howToCalculateDensityPage",
+    "export": "renderHowToCalculateDensityPage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

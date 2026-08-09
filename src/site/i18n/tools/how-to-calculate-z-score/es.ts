@@ -1,0 +1,50 @@
+/**
+ * i18n tool shard (how-to-calculate-z-score / es).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const es: SiteLangDict = {
+	tool_z_score_title: "Calculadora de puntuación z — Cómo calcular un valor estándar",
+	tool_z_score_description: "Convierte una puntuación bruta en z con z = (x − media) / DE. Ejemplo: x = 85, media = 70, DE = 10 → z = 1,5. Deja claros el escalado lineal y DE > 0. En el navegador, para clase y comprobaciones rápidas.",
+	tool_z_score_calculate: "Calcular",
+	tool_z_score_sample: "Cargar ejemplo",
+	tool_z_score_clear: "Limpiar",
+	tool_z_score_x_label: "Puntuación bruta (x)",
+	tool_z_score_x_ph: "p. ej. 85",
+	tool_z_score_mean_label: "Media (μ)",
+	tool_z_score_mean_ph: "p. ej. 70",
+	tool_z_score_sd_label: "Desviación estándar (σ)",
+	tool_z_score_sd_ph: "p. ej. 10",
+	tool_z_score_zOut_label: "Puntuación z",
+	tool_z_score_result_note: "z = (x − media) / DE para aprender — media finita y DE > 0.",
+	tool_z_score_err_generic: "Introduce x y media finitos, y DE > 0.",
+	tool_z_score_how_title: "Cómo funciona",
+	tool_z_score_how_body: "Introduce la puntuación, la media y la desviación. La herramienta devuelve z = (x − media) / DE para ver cuántas DE queda por encima o por debajo. En el navegador, para clase.",
+	tool_z_score_formula_title: "Fórmula y supuestos",
+	tool_z_score_formula_body: "z = (x − μ) / σ. Límites:",
+	tool_z_score_formula_item_1: "La DE debe ser positiva.",
+	tool_z_score_formula_item_2: "Es un reescalado lineal, no una prueba de normalidad.",
+	tool_z_score_formula_item_3: "z es adimensional.",
+	tool_z_score_formula_item_4: "Combínalo con una página de valor p si necesitas la cola normal.",
+	tool_z_score_example_title: "Ejemplo",
+	tool_z_score_example: "Ejemplo: x = 85, media = 70, DE = 10 → z = 1,5.",
+	tool_z_score_usecases_title: "Cuándo usarlo",
+	tool_z_score_usecase_1: "Deberes: pasar una nota a puntuación estándar.",
+	tool_z_score_usecase_2: "Comparar notas de distribuciones distintas.",
+	tool_z_score_usecase_3: "Preparar un z para un contraste a dos colas.",
+	tool_z_score_faq_q1: "¿Qué significa z = 1,5?",
+	tool_z_score_faq_a1: "La puntuación está 1,5 DE por encima de la media indicada.",
+	tool_z_score_faq_q2: "¿Puede ser DE = 0?",
+	tool_z_score_faq_a2: "No; la división por cero no está definida.",
+	tool_z_score_faq_q3: "¿Un |z| grande ya es “significativo”?",
+	tool_z_score_faq_a3: "No por sí solo; hace falta un modelo y un p-valor o valor crítico.",
+	tool_z_score_faq_q4: "¿Exige normalidad?",
+	tool_z_score_faq_a4: "El álgebra de z no; muchos usos posteriores con colas normales sí.",
+	tool_z_score_disclaimer: "Solo z educativo = (x − media) / DE. No sustituye software estadístico.",
+	tool_z_score_references: "Wikipedia sobre puntuación estándar y desviación estándar.",
+	tool_z_score_ref_z_label: "Wikipedia — Puntuación estándar",
+	tool_z_score_ref_sd_label: "Wikipedia — Desviación estándar",
+	tool_z_score_article: "Calcula una puntuación z a partir de x, media y DE con z = (x − media) / DE.",
+};
+
+export default es;

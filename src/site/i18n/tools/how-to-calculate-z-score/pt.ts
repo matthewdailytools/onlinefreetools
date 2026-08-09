@@ -1,0 +1,50 @@
+/**
+ * i18n tool shard (how-to-calculate-z-score / pt).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const pt: SiteLangDict = {
+	tool_z_score_title: "Calculadora de escore z — Como calcular um escore padrão",
+	tool_z_score_description: "Converta um escore bruto em z com z = (x − média) / DP. Exemplo: x = 85, média = 70, DP = 10 → z = 1,5. Deixa claros o escalonamento linear e DP > 0. No navegador, para estudo e checagens rápidas.",
+	tool_z_score_calculate: "Calcular",
+	tool_z_score_sample: "Carregar exemplo",
+	tool_z_score_clear: "Limpar",
+	tool_z_score_x_label: "Escore bruto (x)",
+	tool_z_score_x_ph: "ex.: 85",
+	tool_z_score_mean_label: "Média (μ)",
+	tool_z_score_mean_ph: "ex.: 70",
+	tool_z_score_sd_label: "Desvio padrão (σ)",
+	tool_z_score_sd_ph: "ex.: 10",
+	tool_z_score_zOut_label: "Escore z",
+	tool_z_score_result_note: "z = (x − média) / DP para estudar — média finita e DP > 0.",
+	tool_z_score_err_generic: "Informe x e média finitos e DP > 0.",
+	tool_z_score_how_title: "Como funciona",
+	tool_z_score_how_body: "Digite o escore, a média e o desvio. A ferramenta devolve z = (x − média) / DP para ver quantos DP está acima ou abaixo. No navegador, para aula.",
+	tool_z_score_formula_title: "Fórmula e pressupostos",
+	tool_z_score_formula_body: "z = (x − μ) / σ. Limites:",
+	tool_z_score_formula_item_1: "O DP deve ser positivo.",
+	tool_z_score_formula_item_2: "É um reescalonamento linear, não um teste de normalidade.",
+	tool_z_score_formula_item_3: "z é adimensional.",
+	tool_z_score_formula_item_4: "Combine com uma página de valor-p se precisar da cauda normal.",
+	tool_z_score_example_title: "Exemplo",
+	tool_z_score_example: "Exemplo: x = 85, média = 70, DP = 10 → z = 1,5.",
+	tool_z_score_usecases_title: "Quando usar",
+	tool_z_score_usecase_1: "Tarefa: converter nota em escore padrão.",
+	tool_z_score_usecase_2: "Comparar notas de distribuições diferentes.",
+	tool_z_score_usecase_3: "Preparar um z para um teste bicaudal.",
+	tool_z_score_faq_q1: "O que significa z = 1,5?",
+	tool_z_score_faq_a1: "O escore está 1,5 DP acima da média indicada.",
+	tool_z_score_faq_q2: "DP pode ser zero?",
+	tool_z_score_faq_a2: "Não; divisão por zero é indefinida.",
+	tool_z_score_faq_q3: "|z| grande já é “significativo”?",
+	tool_z_score_faq_a3: "Não sozinho; faltam modelo e p-valor ou valor crítico.",
+	tool_z_score_faq_q4: "Exige normalidade?",
+	tool_z_score_faq_a4: "A álgebra de z não; muitos usos posteriores com caudas normais sim.",
+	tool_z_score_disclaimer: "Apenas z educacional = (x − média) / DP. Não substitui software estatístico.",
+	tool_z_score_references: "Wikipedia sobre escore padrão e desvio padrão.",
+	tool_z_score_ref_z_label: "Wikipedia — Escore padrão",
+	tool_z_score_ref_sd_label: "Wikipedia — Desvio padrão",
+	tool_z_score_article: "Calcule um escore z a partir de x, média e DP com z = (x − média) / DP.",
+};
+
+export default pt;

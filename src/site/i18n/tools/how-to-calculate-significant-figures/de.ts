@@ -1,0 +1,53 @@
+/**
+ * i18n tool shard (how-to-calculate-significant-figures / de).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const de: SiteLangDict = {
+	tool_significant_figures_title: "Signifikante Stellen Rechner — Zählen und Runden",
+	tool_significant_figures_description: "Zählen Sie signifikante Stellen in einer Zahlzeichenkette oder runden Sie auf N. Führende Nullen zählen nicht; nachgestellte nach dem Dezimalpunkt schon. Beispiel: 0,00304 → 3; 1234,56 auf 3 → 1230 (1,23e3). Hälfte weg von null. Im Browser.",
+	tool_significant_figures_calculate: "Berechnen",
+	tool_significant_figures_sample: "Beispiel laden",
+	tool_significant_figures_clear: "Leeren",
+	tool_significant_figures_mode_label: "Modus",
+	tool_significant_figures_mode_count: "Stellen zählen",
+	tool_significant_figures_mode_round: "Auf N runden",
+	tool_significant_figures_num_label: "Zahl (Text)",
+	tool_significant_figures_num_ph: "z. B. 0,00304 oder 1234,56",
+	tool_significant_figures_n_label: "N (zum Runden)",
+	tool_significant_figures_n_ph: "z. B. 3",
+	tool_significant_figures_countOut_label: "Signifikante Stellen",
+	tool_significant_figures_roundedOut_label: "Gerundeter Wert",
+	tool_significant_figures_sciOut_label: "Wissenschaftliche Form",
+	tool_significant_figures_result_note: "Zählen aus der Zeichenkette; Runden mit Hälfte weg von null.",
+	tool_significant_figures_err_generic: "Gültige Zahlzeichenkette eingeben; beim Runden auch N ≥ 1.",
+	tool_significant_figures_how_title: "So funktioniert’s",
+	tool_significant_figures_how_body: "Wählen Sie Zählen oder Runden. Zahl als Text einfügen, damit führende Nullen bleiben. Zählen liefert die Anzahl; Runden braucht N und zeigt Dezimal- sowie wissenschaftliche Form.",
+	tool_significant_figures_formula_title: "Dokumentierte Regeln",
+	tool_significant_figures_formula_body: "Schulmäßiges Zählen und Hälfte-weg-Runden:",
+	tool_significant_figures_formula_item_1: "Nichtnullziffern zählen immer; Nullen dazwischen auch.",
+	tool_significant_figures_formula_item_2: "Führende Nullen zählen nicht (0,00304 → 3).",
+	tool_significant_figures_formula_item_3: "Nachgestellte Nullen nach dem Dezimalpunkt zählen; bei Ganzzahlen ohne Punkt hier nicht.",
+	tool_significant_figures_formula_item_4: "Runden: Mantisse auf N Stellen; genau Hälfte weg von null.",
+	tool_significant_figures_example_title: "Beispiel",
+	tool_significant_figures_example: "Zählen 0,00304 → 3. Runden 1234,56 auf 3 → 1230 und 1,23e3.",
+	tool_significant_figures_usecases_title: "Wann sinnvoll",
+	tool_significant_figures_usecase_1: "Praktikum: Stellen einer Messung prüfen.",
+	tool_significant_figures_usecase_2: "Ergebnis auf erlaubte Genauigkeit runden.",
+	tool_significant_figures_usecase_3: "Gewöhnliche und wissenschaftliche Darstellung vergleichen.",
+	tool_significant_figures_disclaimer: "Nur Lernregeln; Labor-SOPs können nachgestellte Nullen anders definieren.",
+	tool_significant_figures_references: "Wikipedia signifikante Stellen und Runden.",
+	tool_significant_figures_ref_sig_label: "Wikipedia — Signifikante Stelle",
+	tool_significant_figures_ref_round_label: "Wikipedia — Runden",
+	tool_significant_figures_article: "Zählen oder Runden signifikanter Stellen aus einer Zeichenkette mit klaren Regeln.",
+	tool_significant_figures_faq_q1: "Zählen führende Nullen?",
+	tool_significant_figures_faq_a1: "Nein. Bei 0,00304 zählen 3, 0 und 4 → 3.",
+	tool_significant_figures_faq_q2: "Warum Texteingabe?",
+	tool_significant_figures_faq_a2: "Damit führende Nullen beim Zählen sichtbar bleiben.",
+	tool_significant_figures_faq_q3: "Trailing-Nullen bei 1200?",
+	tool_significant_figures_faq_a3: "Ohne Dezimalpunkt zählt diese Seite sie nicht (2 Stellen).",
+	tool_significant_figures_faq_q4: "Halb genau — wohin runden?",
+	tool_significant_figures_faq_a4: "Weg von null; bei Positiven half-up.",
+};
+
+export default de;

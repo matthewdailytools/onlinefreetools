@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-ideal-weight",
+  "path": "/tools/how-to-calculate-ideal-weight",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": true,
+  "i18nKey": "tool_ideal_weight_title",
+  "homeTitleKey": "tool_ideal_weight_title",
+  "homeDescKey": "tool_ideal_weight_description",
+  "faqPrefix": "tool_ideal_weight",
+  "related": [
+    "how-to-calculate-bmi",
+    "how-to-calculate-body-fat"
+  ],
+  "logo": "/icons/tools/how-to-calculate-ideal-weight.svg",
+  "page": {
+    "module": "../pages/howToCalculateIdealWeightPage",
+    "export": "renderHowToCalculateIdealWeightPage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

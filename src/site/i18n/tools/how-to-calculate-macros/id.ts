@@ -1,0 +1,53 @@
+/**
+ * i18n tool shard (how-to-calculate-macros / id).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const id: SiteLangDict = {
+	tool_macros_title: "Kalkulator makro",
+	tool_macros_description: "Hitung gram makro dari kalori dan persen protein/karbo/lemak (4/4/9 kcal per gram). Contoh: 2000 kcal pada 30/40/30% → 150/200/≈66.67 g. Hanya edukatif — bukan saran medis.",
+	tool_macros_calculate: "Hitung",
+	tool_macros_sample: "Muat contoh",
+	tool_macros_clear: "Hapus",
+	tool_macros_cal_label: "Kalori (kcal)",
+	tool_macros_cal_ph: "mis. 2000",
+	tool_macros_pPct_label: "Protein %",
+	tool_macros_pPct_ph: "mis. 30",
+	tool_macros_cPct_label: "Karbo %",
+	tool_macros_cPct_ph: "mis. 40",
+	tool_macros_fPct_label: "Lemak %",
+	tool_macros_fPct_ph: "mis. 30",
+	tool_macros_pG_label: "Protein (g)",
+	tool_macros_cG_label: "Karbo (g)",
+	tool_macros_fG_label: "Lemak (g)",
+	tool_macros_result_note: "Edukatif.",
+	tool_macros_err_generic: "Periksa input.",
+	tool_macros_how_title: "Cara kerja",
+	tool_macros_how_body: "Isi kalori dan %.",
+	tool_macros_formula_title: "Rumus",
+	tool_macros_formula_body: "Isi kalori dan %.",
+	tool_macros_formula_item_1: "See formula notes.",
+	tool_macros_formula_item_2: "Check inputs.",
+	tool_macros_formula_item_3: "Educational only.",
+	tool_macros_example_title: "Contoh",
+	tool_macros_example: "Contoh: 150/200/≈66.67 g.",
+	tool_macros_usecases_title: "Kapan dipakai",
+	tool_macros_usecase_1: "Homework.",
+	tool_macros_usecase_2: "Quick sketch.",
+	tool_macros_usecase_3: "Compare related tools.",
+	tool_macros_faq_q1: "Contoh?",
+	tool_macros_faq_a1: "Contoh: 150/200/≈66.67 g.",
+	tool_macros_faq_q2: "Formula?",
+	tool_macros_faq_a2: "See Formula section.",
+	tool_macros_faq_q3: "Advice?",
+	tool_macros_faq_a3: "Educational only.",
+	tool_macros_faq_q4: "Related?",
+	tool_macros_faq_a4: "See related tools.",
+	tool_macros_article: "Kalkulator makro",
+	tool_macros_disclaimer: "Hanya ilustrasi edukatif (macronutrients); bukan saran medis.",
+	tool_macros_references: "Referensi edukatif.",
+	tool_macros_ref_a_label: "Wikipedia",
+	tool_macros_ref_b_label: "Textbook formula",
+};
+
+export default id;

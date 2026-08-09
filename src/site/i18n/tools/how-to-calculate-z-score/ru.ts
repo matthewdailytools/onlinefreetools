@@ -1,0 +1,50 @@
+/**
+ * i18n tool shard (how-to-calculate-z-score / ru).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const ru: SiteLangDict = {
+	tool_z_score_title: "Калькулятор z-оценки — Как рассчитать стандартный балл",
+	tool_z_score_description: "Переведите сырой балл в z по z = (x − среднее) / СКО. Пример: x = 85, среднее = 70, СКО = 10 → z = 1,5. Явно указывает линейное масштабирование и СКО > 0. В браузере для учёбы и быстрой проверки.",
+	tool_z_score_calculate: "Рассчитать",
+	tool_z_score_sample: "Загрузить пример",
+	tool_z_score_clear: "Очистить",
+	tool_z_score_x_label: "Сырой балл (x)",
+	tool_z_score_x_ph: "напр. 85",
+	tool_z_score_mean_label: "Среднее (μ)",
+	tool_z_score_mean_ph: "напр. 70",
+	tool_z_score_sd_label: "СКО (σ)",
+	tool_z_score_sd_ph: "напр. 10",
+	tool_z_score_zOut_label: "Z-оценка",
+	tool_z_score_result_note: "z = (x − среднее) / СКО для обучения — конечное среднее и СКО > 0.",
+	tool_z_score_err_generic: "Введите конечные x и среднее, и СКО > 0.",
+	tool_z_score_how_title: "Как пользоваться",
+	tool_z_score_how_body: "Введите балл, среднее и СКО. Инструмент считает z = (x − среднее) / СКО, чтобы увидеть, на сколько СКО выше или ниже среднего. В браузере — для учёбы.",
+	tool_z_score_formula_title: "Формула и допущения",
+	tool_z_score_formula_body: "z = (x − μ) / σ. Ограничения:",
+	tool_z_score_formula_item_1: "СКО должно быть положительным.",
+	tool_z_score_formula_item_2: "Линейное перемасштабирование, не проверка нормальности.",
+	tool_z_score_formula_item_3: "z безразмерна.",
+	tool_z_score_formula_item_4: "Для вероятности хвоста свяжите со страницей p-value.",
+	tool_z_score_example_title: "Пример",
+	tool_z_score_example: "Пример: x = 85, среднее = 70, СКО = 10 → z = 1,5.",
+	tool_z_score_usecases_title: "Когда применять",
+	tool_z_score_usecase_1: "Домашнее задание: перевести балл в стандартный.",
+	tool_z_score_usecase_2: "Сравнить баллы из разных распределений.",
+	tool_z_score_usecase_3: "Подготовить z для двустороннего p.",
+	tool_z_score_faq_q1: "Что значит z = 1,5?",
+	tool_z_score_faq_a1: "Балл на 1,5 СКО выше указанного среднего.",
+	tool_z_score_faq_q2: "Может ли СКО быть нулём?",
+	tool_z_score_faq_a2: "Нет; деление на ноль не определено.",
+	tool_z_score_faq_q3: "Большой |z| уже «значим»?",
+	tool_z_score_faq_a3: "Не сам по себе; нужны модель и p или критическое значение.",
+	tool_z_score_faq_q4: "Нужна нормальность?",
+	tool_z_score_faq_a4: "Для алгебры z — нет; для многих последующих нормальных хвостов — да.",
+	tool_z_score_disclaimer: "Только учебный z = (x − среднее) / СКО. Не заменяет статистическое ПО.",
+	tool_z_score_references: "Wikipedia о стандартной оценке и СКО.",
+	tool_z_score_ref_z_label: "Wikipedia — Стандартная оценка",
+	tool_z_score_ref_sd_label: "Wikipedia — Среднеквадратическое отклонение",
+	tool_z_score_article: "Считайте z из x, среднего и СКО по z = (x − среднее) / СКО.",
+};
+
+export default ru;

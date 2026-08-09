@@ -15,17 +15,66 @@ import { renderCsvJsonPage } from '../pages/csvJsonPage';
 import { renderDomainLookupPage } from '../pages/domainLookupPage';
 import { renderFileHashPage } from '../pages/fileHashPage';
 import { renderFlipImagePage } from '../pages/flipImagePage';
+import { renderHowToCalculateAccelerationPage } from '../pages/howToCalculateAccelerationPage';
+import { renderHowToCalculateAgePage } from '../pages/howToCalculateAgePage';
+import { renderHowToCalculateAspectRatioPage } from '../pages/howToCalculateAspectRatioPage';
 import { renderHowToCalculateBmiPage } from '../pages/howToCalculateBmiPage';
 import { renderHowToCalculateBmrTdeePage } from '../pages/howToCalculateBmrTdeePage';
 import { renderHowToCalculateBodyFatPage } from '../pages/howToCalculateBodyFatPage';
 import { renderHowToCalculateBreakEvenPage } from '../pages/howToCalculateBreakEvenPage';
+import { renderHowToCalculateCagrPage } from '../pages/howToCalculateCagrPage';
+import { renderHowToCalculateCirclePage } from '../pages/howToCalculateCirclePage';
 import { renderHowToCalculateCompoundInterestPage } from '../pages/howToCalculateCompoundInterestPage';
+import { renderHowToCalculateConcretePage } from '../pages/howToCalculateConcretePage';
+import { renderHowToCalculateConfidenceIntervalPage } from '../pages/howToCalculateConfidenceIntervalPage';
+import { renderHowToCalculateContributionMarginPage } from '../pages/howToCalculateContributionMarginPage';
+import { renderHowToCalculateDateDifferencePage } from '../pages/howToCalculateDateDifferencePage';
+import { renderHowToCalculateDebtPayoffPage } from '../pages/howToCalculateDebtPayoffPage';
+import { renderHowToCalculateDensityPage } from '../pages/howToCalculateDensityPage';
+import { renderHowToCalculateDiscountPage } from '../pages/howToCalculateDiscountPage';
 import { renderHowToCalculateEmiPage } from '../pages/howToCalculateEmiPage';
+import { renderHowToCalculateExponentPage } from '../pages/howToCalculateExponentPage';
+import { renderHowToCalculateGpaPage } from '../pages/howToCalculateGpaPage';
 import { renderHowToCalculateGradientPage } from '../pages/howToCalculateGradientPage';
 import { renderHowToCalculateGrossMarginPage } from '../pages/howToCalculateGrossMarginPage';
+import { renderHowToCalculateHeartRatePage } from '../pages/howToCalculateHeartRatePage';
+import { renderHowToCalculateIdealWeightPage } from '../pages/howToCalculateIdealWeightPage';
+import { renderHowToCalculateInflationPage } from '../pages/howToCalculateInflationPage';
+import { renderHowToCalculateIrrPage } from '../pages/howToCalculateIrrPage';
+import { renderHowToCalculateLogarithmPage } from '../pages/howToCalculateLogarithmPage';
+import { renderHowToCalculateMacrosPage } from '../pages/howToCalculateMacrosPage';
 import { renderMarginalRevenuePage } from '../pages/marginalRevenuePage';
+import { renderHowToCalculateMarkupPage } from '../pages/howToCalculateMarkupPage';
+import { renderHowToCalculateMeanPage } from '../pages/howToCalculateMeanPage';
+import { renderHowToCalculateMedianPage } from '../pages/howToCalculateMedianPage';
+import { renderHowToCalculateNpvPage } from '../pages/howToCalculateNpvPage';
+import { renderHowToCalculateOhmsLawPage } from '../pages/howToCalculateOhmsLawPage';
+import { renderHowToCalculateOneRepMaxPage } from '../pages/howToCalculateOneRepMaxPage';
+import { renderHowToCalculatePValuePage } from '../pages/howToCalculatePValuePage';
+import { renderHowToCalculatePacePage } from '../pages/howToCalculatePacePage';
+import { renderHowToCalculatePaintPage } from '../pages/howToCalculatePaintPage';
+import { renderHowToCalculatePaybackPeriodPage } from '../pages/howToCalculatePaybackPeriodPage';
 import { renderHowToCalculatePercentageChangePage } from '../pages/howToCalculatePercentageChangePage';
+import { renderHowToCalculatePermutationCombinationPage } from '../pages/howToCalculatePermutationCombinationPage';
+import { renderHowToCalculatePresentValuePage } from '../pages/howToCalculatePresentValuePage';
+import { renderHowToCalculateProfitMarginPage } from '../pages/howToCalculateProfitMarginPage';
+import { renderHowToCalculatePythagoreanTheoremPage } from '../pages/howToCalculatePythagoreanTheoremPage';
+import { renderHowToCalculateQuadraticEquationPage } from '../pages/howToCalculateQuadraticEquationPage';
 import { renderHowToCalculateRoiPage } from '../pages/howToCalculateRoiPage';
+import { renderHowToCalculateRuleOf72Page } from '../pages/howToCalculateRuleOf72Page';
+import { renderHowToCalculateSalaryHourlyPage } from '../pages/howToCalculateSalaryHourlyPage';
+import { renderHowToCalculateSampleSizePage } from '../pages/howToCalculateSampleSizePage';
+import { renderHowToCalculateScientificNotationPage } from '../pages/howToCalculateScientificNotationPage';
+import { renderHowToCalculateSignificantFiguresPage } from '../pages/howToCalculateSignificantFiguresPage';
+import { renderHowToCalculateSlopePage } from '../pages/howToCalculateSlopePage';
+import { renderHowToCalculateStandardDeviationPage } from '../pages/howToCalculateStandardDeviationPage';
+import { renderHowToCalculateTilePage } from '../pages/howToCalculateTilePage';
+import { renderHowToCalculateTipPage } from '../pages/howToCalculateTipPage';
+import { renderHowToCalculateTriangleAreaPage } from '../pages/howToCalculateTriangleAreaPage';
+import { renderHowToCalculateVatPage } from '../pages/howToCalculateVatPage';
+import { renderHowToCalculateVelocityPage } from '../pages/howToCalculateVelocityPage';
+import { renderHowToCalculateVolumePage } from '../pages/howToCalculateVolumePage';
+import { renderHowToCalculateZScorePage } from '../pages/howToCalculateZScorePage';
 import { renderHtmlEntityPage } from '../pages/htmlEntityPage';
 import { renderImageBorderPage } from '../pages/imageBorderPage';
 import { renderImageCompressPage } from '../pages/imageCompressPage';
@@ -89,17 +138,66 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'domain-lookup': (lang, defaultLang, _enabled) => renderDomainLookupPage(lang, defaultLang),
 	'file-hash': (lang, defaultLang, enabled) => renderFileHashPage({ lang, defaultLang, enabledLangs: enabled }),
 	'flip-image': (lang, defaultLang, enabled) => renderFlipImagePage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-acceleration': (lang, defaultLang, enabled) => renderHowToCalculateAccelerationPage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-age': (lang, defaultLang, enabled) => renderHowToCalculateAgePage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-aspect-ratio': (lang, defaultLang, enabled) => renderHowToCalculateAspectRatioPage({ lang, defaultLang, enabledLangs: enabled }),
 	'how-to-calculate-bmi': (lang, defaultLang, enabled) => renderHowToCalculateBmiPage({ lang, defaultLang, enabledLangs: enabled }),
 	'how-to-calculate-bmr-tdee': (lang, defaultLang, enabled) => renderHowToCalculateBmrTdeePage({ lang, defaultLang, enabledLangs: enabled }),
 	'how-to-calculate-body-fat': (lang, defaultLang, enabled) => renderHowToCalculateBodyFatPage({ lang, defaultLang, enabledLangs: enabled }),
 	'how-to-calculate-break-even': (lang, defaultLang, enabled) => renderHowToCalculateBreakEvenPage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-cagr': (lang, defaultLang, enabled) => renderHowToCalculateCagrPage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-circle': (lang, defaultLang, enabled) => renderHowToCalculateCirclePage({ lang, defaultLang, enabledLangs: enabled }),
 	'how-to-calculate-compound-interest': (lang, defaultLang, enabled) => renderHowToCalculateCompoundInterestPage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-concrete': (lang, defaultLang, enabled) => renderHowToCalculateConcretePage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-confidence-interval': (lang, defaultLang, enabled) => renderHowToCalculateConfidenceIntervalPage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-contribution-margin': (lang, defaultLang, enabled) => renderHowToCalculateContributionMarginPage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-date-difference': (lang, defaultLang, enabled) => renderHowToCalculateDateDifferencePage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-debt-payoff': (lang, defaultLang, enabled) => renderHowToCalculateDebtPayoffPage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-density': (lang, defaultLang, enabled) => renderHowToCalculateDensityPage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-discount': (lang, defaultLang, enabled) => renderHowToCalculateDiscountPage({ lang, defaultLang, enabledLangs: enabled }),
 	'how-to-calculate-emi': (lang, defaultLang, enabled) => renderHowToCalculateEmiPage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-exponent': (lang, defaultLang, enabled) => renderHowToCalculateExponentPage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-gpa': (lang, defaultLang, enabled) => renderHowToCalculateGpaPage({ lang, defaultLang, enabledLangs: enabled }),
 	'how-to-calculate-gradient': (lang, defaultLang, enabled) => renderHowToCalculateGradientPage({ lang, defaultLang, enabledLangs: enabled }),
 	'how-to-calculate-gross-margin': (lang, defaultLang, enabled) => renderHowToCalculateGrossMarginPage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-heart-rate': (lang, defaultLang, enabled) => renderHowToCalculateHeartRatePage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-ideal-weight': (lang, defaultLang, enabled) => renderHowToCalculateIdealWeightPage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-inflation': (lang, defaultLang, enabled) => renderHowToCalculateInflationPage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-irr': (lang, defaultLang, enabled) => renderHowToCalculateIrrPage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-logarithm': (lang, defaultLang, enabled) => renderHowToCalculateLogarithmPage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-macros': (lang, defaultLang, enabled) => renderHowToCalculateMacrosPage({ lang, defaultLang, enabledLangs: enabled }),
 	'how-to-calculate-marginal-revenue': (lang, defaultLang, enabled) => renderMarginalRevenuePage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-markup': (lang, defaultLang, enabled) => renderHowToCalculateMarkupPage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-mean': (lang, defaultLang, enabled) => renderHowToCalculateMeanPage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-median': (lang, defaultLang, enabled) => renderHowToCalculateMedianPage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-npv': (lang, defaultLang, enabled) => renderHowToCalculateNpvPage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-ohms-law': (lang, defaultLang, enabled) => renderHowToCalculateOhmsLawPage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-one-rep-max': (lang, defaultLang, enabled) => renderHowToCalculateOneRepMaxPage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-p-value': (lang, defaultLang, enabled) => renderHowToCalculatePValuePage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-pace': (lang, defaultLang, enabled) => renderHowToCalculatePacePage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-paint': (lang, defaultLang, enabled) => renderHowToCalculatePaintPage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-payback-period': (lang, defaultLang, enabled) => renderHowToCalculatePaybackPeriodPage({ lang, defaultLang, enabledLangs: enabled }),
 	'how-to-calculate-percentage-change': (lang, defaultLang, enabled) => renderHowToCalculatePercentageChangePage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-permutation-combination': (lang, defaultLang, enabled) => renderHowToCalculatePermutationCombinationPage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-present-value': (lang, defaultLang, enabled) => renderHowToCalculatePresentValuePage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-profit-margin': (lang, defaultLang, enabled) => renderHowToCalculateProfitMarginPage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-pythagorean-theorem': (lang, defaultLang, enabled) => renderHowToCalculatePythagoreanTheoremPage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-quadratic-equation': (lang, defaultLang, enabled) => renderHowToCalculateQuadraticEquationPage({ lang, defaultLang, enabledLangs: enabled }),
 	'how-to-calculate-roi': (lang, defaultLang, enabled) => renderHowToCalculateRoiPage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-rule-of-72': (lang, defaultLang, enabled) => renderHowToCalculateRuleOf72Page({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-salary-hourly': (lang, defaultLang, enabled) => renderHowToCalculateSalaryHourlyPage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-sample-size': (lang, defaultLang, enabled) => renderHowToCalculateSampleSizePage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-scientific-notation': (lang, defaultLang, enabled) => renderHowToCalculateScientificNotationPage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-significant-figures': (lang, defaultLang, enabled) => renderHowToCalculateSignificantFiguresPage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-slope': (lang, defaultLang, enabled) => renderHowToCalculateSlopePage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-standard-deviation': (lang, defaultLang, enabled) => renderHowToCalculateStandardDeviationPage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-tile': (lang, defaultLang, enabled) => renderHowToCalculateTilePage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-tip': (lang, defaultLang, enabled) => renderHowToCalculateTipPage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-triangle-area': (lang, defaultLang, enabled) => renderHowToCalculateTriangleAreaPage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-vat': (lang, defaultLang, enabled) => renderHowToCalculateVatPage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-velocity': (lang, defaultLang, enabled) => renderHowToCalculateVelocityPage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-volume': (lang, defaultLang, enabled) => renderHowToCalculateVolumePage({ lang, defaultLang, enabledLangs: enabled }),
+	'how-to-calculate-z-score': (lang, defaultLang, enabled) => renderHowToCalculateZScorePage({ lang, defaultLang, enabledLangs: enabled }),
 	'html-entity': (lang, defaultLang, enabled) => renderHtmlEntityPage({ lang, defaultLang, enabledLangs: enabled }),
 	'image-border': (lang, defaultLang, enabled) => renderImageBorderPage({ lang, defaultLang, enabledLangs: enabled }),
 	'image-compress': (lang, defaultLang, enabled) => renderImageCompressPage({ lang, defaultLang, enabledLangs: enabled }),

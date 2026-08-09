@@ -1,0 +1,53 @@
+/**
+ * i18n tool shard (how-to-calculate-significant-figures / ru).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const ru: SiteLangDict = {
+	tool_significant_figures_title: "Калькулятор значащих цифр — Подсчёт и округление",
+	tool_significant_figures_description: "Подсчитайте значащие цифры в строке или округлите до N. Ведущие нули не считаются; конечные после десятичной — считаются. Пример: 0,00304 → 3; 1234,56 до 3 → 1230 (1,23e3). Половина от нуля. В браузере.",
+	tool_significant_figures_calculate: "Рассчитать",
+	tool_significant_figures_sample: "Загрузить пример",
+	tool_significant_figures_clear: "Очистить",
+	tool_significant_figures_mode_label: "Режим",
+	tool_significant_figures_mode_count: "Подсчитать цифры",
+	tool_significant_figures_mode_round: "Округлить до N",
+	tool_significant_figures_num_label: "Число (текст)",
+	tool_significant_figures_num_ph: "напр. 0,00304 или 1234,56",
+	tool_significant_figures_n_label: "N (для округления)",
+	tool_significant_figures_n_ph: "напр. 3",
+	tool_significant_figures_countOut_label: "Значащие цифры",
+	tool_significant_figures_roundedOut_label: "Округлённое значение",
+	tool_significant_figures_sciOut_label: "Научная форма",
+	tool_significant_figures_result_note: "Подсчёт по строке; округление половины от нуля.",
+	tool_significant_figures_err_generic: "Введите корректную числовую строку; для округления также N ≥ 1.",
+	tool_significant_figures_how_title: "Как пользоваться",
+	tool_significant_figures_how_body: "Выберите Подсчёт или Округление. Вставьте число текстом, чтобы сохранить ведущие нули. Подсчёт возвращает количество; округление требует N и показывает обычный и научный вид.",
+	tool_significant_figures_formula_title: "Задокументированные правила",
+	tool_significant_figures_formula_body: "Школьный подсчёт и округление половины от нуля:",
+	tool_significant_figures_formula_item_1: "Ненулевые цифры всегда считаются; нули между ними тоже.",
+	tool_significant_figures_formula_item_2: "Ведущие нули не считаются (0,00304 → 3).",
+	tool_significant_figures_formula_item_3: "Хвостовые нули после десятичной считаются; у целых без точки — нет на этой странице.",
+	tool_significant_figures_formula_item_4: "Округление: мантисса до N цифр; ровно половина — от нуля.",
+	tool_significant_figures_example_title: "Пример",
+	tool_significant_figures_example: "Подсчёт 0,00304 → 3. Округление 1234,56 до 3 → 1230 и 1,23e3.",
+	tool_significant_figures_usecases_title: "Когда применять",
+	tool_significant_figures_usecase_1: "Лабораторная: проверить цифры измерения.",
+	tool_significant_figures_usecase_2: "Округлить результат до допустимой точности.",
+	tool_significant_figures_usecase_3: "Сравнить обычный и научный вид.",
+	tool_significant_figures_disclaimer: "Только учебные правила; лабораторные SOP могут иначе трактовать хвостовые нули.",
+	tool_significant_figures_references: "Wikipedia о значащих цифрах и округлении.",
+	tool_significant_figures_ref_sig_label: "Wikipedia — Значащие цифры",
+	tool_significant_figures_ref_round_label: "Wikipedia — Округление",
+	tool_significant_figures_article: "Подсчитайте или округлите значащие цифры из строки с явными правилами.",
+	tool_significant_figures_faq_q1: "Считаются ли ведущие нули?",
+	tool_significant_figures_faq_a1: "Нет. В 0,00304 считаются 3, 0 и 4 → 3.",
+	tool_significant_figures_faq_q2: "Как округляется половина?",
+	tool_significant_figures_faq_a2: "От нуля; для положительных — half-up.",
+	tool_significant_figures_faq_q3: "Почему текстовый ввод?",
+	tool_significant_figures_faq_a3: "Чтобы сохранить ведущие нули при подсчёте.",
+	tool_significant_figures_faq_q4: "Хвостовые нули в 1200?",
+	tool_significant_figures_faq_a4: "Без десятичной точки здесь не считаются (2 цифры).",
+};
+
+export default ru;

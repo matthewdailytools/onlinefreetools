@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-standard-deviation",
+  "path": "/tools/how-to-calculate-standard-deviation",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_std_dev_title",
+  "homeTitleKey": "tool_std_dev_title",
+  "homeDescKey": "tool_std_dev_description",
+  "faqPrefix": "tool_std_dev",
+  "related": [
+    "how-to-calculate-percentage-change",
+    "how-to-calculate-cagr"
+  ],
+  "logo": "/icons/tools/how-to-calculate-standard-deviation.svg",
+  "page": {
+    "module": "../pages/howToCalculateStandardDeviationPage",
+    "export": "renderHowToCalculateStandardDeviationPage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

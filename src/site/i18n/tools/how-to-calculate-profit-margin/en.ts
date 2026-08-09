@@ -1,0 +1,51 @@
+/**
+ * i18n tool shard (how-to-calculate-profit-margin / en).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const en: SiteLangDict = {
+	tool_profit_margin_title: "Profit Margin Calculator — Net or Operating Margin",
+	tool_profit_margin_description: "Calculate net or operating profit margin from revenue and costs. Example: revenue 10,000 and costs 7,000 → net margin 30%. Pick the margin type on one page. Educational finance math — not business advice.",
+	tool_profit_margin_calculate: "Calculate",
+	tool_profit_margin_sample: "Load sample",
+	tool_profit_margin_clear: "Clear",
+	tool_profit_margin_type_label: "Margin type",
+	tool_profit_margin_type_net: "Net profit margin",
+	tool_profit_margin_type_op: "Operating margin",
+	tool_profit_margin_rev_label: "Revenue",
+	tool_profit_margin_rev_ph: "e.g. 10000",
+	tool_profit_margin_cost_label: "Costs",
+	tool_profit_margin_cost_ph: "e.g. 7000",
+	tool_profit_margin_marginOut_label: "Margin %",
+	tool_profit_margin_profitOut_label: "Profit",
+	tool_profit_margin_result_note: "Margin = profit ÷ revenue. Educational — not business advice.",
+	tool_profit_margin_err_generic: "Enter revenue > 0 and costs ≥ 0.",
+	tool_profit_margin_how_title: "How it works",
+	tool_profit_margin_how_body: "Choose net or operating margin, then enter revenue and the matching cost stack. Margin = profit / revenue × 100. Distinct from markup (cost-based) and from gross margin (COGS-only).",
+	tool_profit_margin_formula_title: "Formula",
+	tool_profit_margin_formula_body: "Margin % = (revenue − costs) / revenue × 100. Notes:",
+	tool_profit_margin_formula_item_1: "Net vs operating is a labeling choice here — use costs that match the definition you need.",
+	tool_profit_margin_formula_item_2: "Revenue must be > 0; costs can be zero.",
+	tool_profit_margin_formula_item_3: "Not a full income statement; taxes and non-cash items are omitted unless included in costs.",
+	tool_profit_margin_example_title: "Example",
+	tool_profit_margin_example: "Example: revenue 10,000, costs 7,000 → profit 3,000 → margin 30%.",
+	tool_profit_margin_usecases_title: "When to use it",
+	tool_profit_margin_usecase_1: "Homework: compute net margin from simplified revenue and costs.",
+	tool_profit_margin_usecase_2: "Compare operating vs net by swapping the cost bundle.",
+	tool_profit_margin_usecase_3: "Cross-check against gross-margin when COGS is the only cost.",
+	tool_profit_margin_faq_q1: "What is the sample result?",
+	tool_profit_margin_faq_a1: "Revenue 10000 and costs 7000 → 30% margin.",
+	tool_profit_margin_faq_q2: "Markup vs margin?",
+	tool_profit_margin_faq_a2: "Markup divides by cost; margin divides by revenue.",
+	tool_profit_margin_faq_q3: "Why two types on one page?",
+	tool_profit_margin_faq_a3: "Net and operating share the same ratio form; pick the cost definition you need.",
+	tool_profit_margin_faq_q4: "Is this business advice?",
+	tool_profit_margin_faq_a4: "No — educational illustration only.",
+	tool_profit_margin_article: "Net or operating profit margin from revenue and costs on one page.",
+	tool_profit_margin_disclaimer: "Educational profit margin only — not financial, tax, or investment advice.",
+	tool_profit_margin_references: "Investopedia and standard textbook formulas.",
+	tool_profit_margin_ref_a_label: "Investopedia — Profit margin",
+	tool_profit_margin_ref_b_label: "Investopedia — Operating margin",
+};
+
+export default en;

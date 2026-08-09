@@ -1,0 +1,51 @@
+/**
+ * i18n tool shard (how-to-calculate-scientific-notation / id).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const id: SiteLangDict = {
+	tool_scientific_notation_title: "Kalkulator notasi ilmiah — Cara mengonversi",
+	tool_scientific_notation_description: "Konversi desimal ↔ notasi ilmiah a×10^b. Contoh: 12300 → 1,23×10^4. Menerima 1,23e4 dan 1,23×10^4 saat diurai. Menampilkan koefisien dan eksponen. Di browser untuk tugas.",
+	tool_scientific_notation_calculate: "Hitung",
+	tool_scientific_notation_sample: "Muat contoh",
+	tool_scientific_notation_clear: "Hapus",
+	tool_scientific_notation_mode_label: "Arah",
+	tool_scientific_notation_mode_toSci: "Desimal → ilmiah",
+	tool_scientific_notation_mode_toDec: "Ilmiah → desimal",
+	tool_scientific_notation_value_label: "Nilai",
+	tool_scientific_notation_value_ph: "mis. 12300 atau 1,23e4 atau 1,23×10^4",
+	tool_scientific_notation_resultOut_label: "Hasil konversi",
+	tool_scientific_notation_coeffOut_label: "Koefisien a",
+	tool_scientific_notation_expOut_label: "Eksponen b",
+	tool_scientific_notation_result_note: "Bentuk a×10^b dengan 1 ≤ |a| < 10 (0 sebagai 0×10^0).",
+	tool_scientific_notation_err_generic: "Masukkan nilai desimal atau ilmiah yang dapat diurai sesuai mode.",
+	tool_scientific_notation_how_title: "Cara kerja",
+	tool_scientific_notation_how_body: "Pilih arah. Desimal→ilmiah: angka biasa. Ilmiah→desimal: 1,23e4 atau 1,23×10^4. Menampilkan string hasil plus a dan b bila berguna.",
+	tool_scientific_notation_formula_title: "Aturan konversi",
+	tool_scientific_notation_formula_body: "Tulis x = a × 10^b yang dinormalisasi:",
+	tool_scientific_notation_formula_item_1: "Geser desimal hingga 1 ≤ |a| < 10 (nol → 0×10^0).",
+	tool_scientific_notation_formula_item_2: "b adalah berapa langkah titik bergeser.",
+	tool_scientific_notation_formula_item_3: "Menerima 1,23e4, 1,23E+4, 1,23×10^4, 1,23*10^4.",
+	tool_scientific_notation_formula_item_4: "Mengutamakan string a×10^b yang mudah dibaca.",
+	tool_scientific_notation_example_title: "Contoh",
+	tool_scientific_notation_example: "Contoh: 12300 → 1,23×10^4 (a = 1,23, b = 4).",
+	tool_scientific_notation_usecases_title: "Kapan dipakai",
+	tool_scientific_notation_usecase_1: "PR: menulis ulang desimal besar/kecil.",
+	tool_scientific_notation_usecase_2: "Mengurai a×10^b ke desimal.",
+	tool_scientific_notation_usecase_3: "Membandingkan notasi e dengan ×10^b.",
+	tool_scientific_notation_disclaimer: "Hanya konversi edukasi, bukan pustaka aritmetika presisi penuh.",
+	tool_scientific_notation_references: "Wikipedia scientific notation.",
+	tool_scientific_notation_ref_sci_label: "Wikipedia — Scientific notation",
+	tool_scientific_notation_ref_exp_label: "Wikipedia — Exponentiation",
+	tool_scientific_notation_article: "Konversi antara desimal dan notasi ilmiah a×10^b di browser.",
+	tool_scientific_notation_faq_q1: "Rentang a?",
+	tool_scientific_notation_faq_a1: "Bentuk ternormalisasi menjaga 1 ≤ |a| < 10 (kecuali nol).",
+	tool_scientific_notation_faq_q2: "Angka negatif?",
+	tool_scientific_notation_faq_a2: "Tanda tetap pada a; eksponen mengikuti pergeseran.",
+	tool_scientific_notation_faq_q3: "Ejaan ilmiah apa yang diterima?",
+	tool_scientific_notation_faq_a3: "1,23e4, 1,23E+4, 1,23×10^4, dan 1,23*10^4.",
+	tool_scientific_notation_faq_q4: "Presisi tak terbatas?",
+	tool_scientific_notation_faq_a4: "Tidak; konversi JS biasa untuk belajar.",
+};
+
+export default id;

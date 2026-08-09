@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-permutation-combination",
+  "path": "/tools/how-to-calculate-permutation-combination",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_permutation_combination_title",
+  "homeTitleKey": "tool_permutation_combination_title",
+  "homeDescKey": "tool_permutation_combination_description",
+  "faqPrefix": "tool_permutation_combination",
+  "related": [
+    "how-to-calculate-quadratic-equation",
+    "how-to-calculate-slope"
+  ],
+  "logo": "/icons/tools/how-to-calculate-permutation-combination.svg",
+  "page": {
+    "module": "../pages/howToCalculatePermutationCombinationPage",
+    "export": "renderHowToCalculatePermutationCombinationPage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

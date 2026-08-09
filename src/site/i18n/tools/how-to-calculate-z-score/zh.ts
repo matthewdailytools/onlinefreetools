@@ -1,0 +1,50 @@
+/**
+ * i18n tool shard (how-to-calculate-z-score / zh).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const zh: SiteLangDict = {
+	tool_z_score_title: "Z 分数计算器 — 如何计算标准分数",
+	tool_z_score_description: "用 z = (x − 均值) / 标准差把原始分换成标准分（Z 分数）。示例：x = 85、均值 = 70、标准差 = 10 → z = 1.5。写明线性尺度与 SD>0。浏览器内计算，适合作业与快速对照。标准分数帮助比较不同分布上的位置。",
+	tool_z_score_calculate: "计算",
+	tool_z_score_sample: "加载样例",
+	tool_z_score_clear: "清空",
+	tool_z_score_x_label: "原始分 x",
+	tool_z_score_x_ph: "例如 85",
+	tool_z_score_mean_label: "均值 μ",
+	tool_z_score_mean_ph: "例如 70",
+	tool_z_score_sd_label: "标准差 σ",
+	tool_z_score_sd_ph: "例如 10",
+	tool_z_score_zOut_label: "Z 分数",
+	tool_z_score_result_note: "z = (x − 均值) / 标准差，供学习——要求均值有限且 SD>0。",
+	tool_z_score_err_generic: "请填写有限的 x 与均值，且标准差 > 0。",
+	tool_z_score_how_title: "怎么用",
+	tool_z_score_how_body: "输入原始分、均值与标准差。工具返回 z = (x − 均值) / 标准差，便于看出该分高于或低于均值多少个标准差。浏览器内计算，适合作业。",
+	tool_z_score_formula_title: "公式与假设",
+	tool_z_score_formula_body: "z = (x − μ) / σ。请注意：",
+	tool_z_score_formula_item_1: "标准差必须为正；零或负值会被拒绝。",
+	tool_z_score_formula_item_2: "这是相对给定均值与标准差的线性换算，不是正态性检验。",
+	tool_z_score_formula_item_3: "量纲会消掉：z 无量纲。",
+	tool_z_score_formula_item_4: "若还要由 z 求正态尾概率，可配合 p 值页。",
+	tool_z_score_example_title: "示例",
+	tool_z_score_example: "示例：x = 85，均值 = 70，SD = 10 → z = (85 − 70) / 10 = 1.5。",
+	tool_z_score_usecases_title: "适合什么场景",
+	tool_z_score_usecase_1: "作业：把考试分数换成标准分。",
+	tool_z_score_usecase_2: "比较均值或离散程度不同的两组分数。",
+	tool_z_score_usecase_3: "先算 z，再去做双侧 p 值对照。",
+	tool_z_score_faq_q1: "z = 1.5 表示什么？",
+	tool_z_score_faq_a1: "原始分比给定均值高出 1.5 个标准差。",
+	tool_z_score_faq_q2: "标准差可以为 0 吗？",
+	tool_z_score_faq_a2: "不可以。除以零无定义，请输入 SD>0。",
+	tool_z_score_faq_q3: "|z| 大就一定“显著”吗？",
+	tool_z_score_faq_a3: "不一定。显著性还需要模型与 p 值或临界值，不能只看 z。",
+	tool_z_score_faq_q4: "一定要假定正态分布吗？",
+	tool_z_score_faq_a4: "z 的代数本身不要求正态；但后续用正态 p 值时常假设正态。",
+	tool_z_score_disclaimer: "结果仅为教育用的 z = (x − 均值) / 标准差，不能替代统计软件或研究设计。",
+	tool_z_score_references: "维基百科标准分数与标准差条目。",
+	tool_z_score_ref_z_label: "维基百科 — 标准分数",
+	tool_z_score_ref_sd_label: "维基百科 — 标准差",
+	tool_z_score_article: "用原始分、均值与标准差按 z = (x − 均值) / 标准差计算 Z 分数，供学习。",
+};
+
+export default zh;

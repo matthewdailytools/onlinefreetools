@@ -1,0 +1,51 @@
+/**
+ * i18n tool shard (how-to-calculate-tip / fr).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const fr: SiteLangDict = {
+	tool_tip_title: "Calculateur de pourboire",
+	tool_tip_description: "Calculez le pourboire avec l’addition et le %, puis partagez. Exemple : 80 avec 15 % → pourboire 12, total 92. Dans le navigateur.",
+	tool_tip_calculate: "Calculer",
+	tool_tip_sample: "Charger l’exemple",
+	tool_tip_clear: "Effacer",
+	tool_tip_bill_label: "Addition",
+	tool_tip_bill_ph: "ex. 80",
+	tool_tip_tip_label: "Pourboire %",
+	tool_tip_tip_ph: "ex. 15",
+	tool_tip_split_label: "Personnes",
+	tool_tip_split_ph: "ex. 1",
+	tool_tip_tipOut_label: "Pourboire",
+	tool_tip_totalOut_label: "Total",
+	tool_tip_eachOut_label: "Par personne",
+	tool_tip_result_note: "Éducatif.",
+	tool_tip_err_generic: "Vérifiez les entrées.",
+	tool_tip_how_title: "Fonctionnement",
+	tool_tip_how_body: "Saisissez addition, % et personnes.",
+	tool_tip_formula_title: "Formule",
+	tool_tip_formula_body: "Saisissez addition, % et personnes.",
+	tool_tip_formula_item_1: "See formula notes.",
+	tool_tip_formula_item_2: "Check inputs.",
+	tool_tip_formula_item_3: "Educational only.",
+	tool_tip_example_title: "Exemple",
+	tool_tip_example: "Exemple : 80 avec 15 % → 12 / total 92.",
+	tool_tip_usecases_title: "Cas d’usage",
+	tool_tip_usecase_1: "Homework.",
+	tool_tip_usecase_2: "Quick sketch.",
+	tool_tip_usecase_3: "Compare related tools.",
+	tool_tip_faq_q1: "Exemple ?",
+	tool_tip_faq_a1: "Exemple : 80 avec 15 % → 12 / total 92.",
+	tool_tip_faq_q2: "Formula?",
+	tool_tip_faq_a2: "See Formula section.",
+	tool_tip_faq_q3: "Advice?",
+	tool_tip_faq_a3: "Educational only.",
+	tool_tip_faq_q4: "Related?",
+	tool_tip_faq_a4: "See related tools.",
+	tool_tip_article: "Calculateur de pourboire",
+	tool_tip_disclaimer: "Illustration éducative (tip) uniquement — pas un conseil financier.",
+	tool_tip_references: "Investopedia et formules de manuel.",
+	tool_tip_ref_a_label: "Investopedia",
+	tool_tip_ref_b_label: "Wikipedia",
+};
+
+export default fr;

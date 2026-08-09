@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-pythagorean-theorem / ja).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const ja: SiteLangDict = {
+	tool_pythagorean_title: "三平方の定理計算ツール — 欠けた辺の求め方",
+	tool_pythagorean_description: "直角三角形の欠けた辺 a・b・c を a²+b²=c² で求めます。例：a=3、b=4 → c=5。既知の正の二辺を入力し、あり得ない斜辺/直角辺の組は拒否。ブラウザ内で宿題や 3-4-5 の検算向けで、直角辺を求めるときは斜辺が長いことを明示します。",
+	tool_pythagorean_calculate: "計算する",
+	tool_pythagorean_sample: "サンプル",
+	tool_pythagorean_clear: "クリア",
+	tool_pythagorean_solve_label: "求める辺",
+	tool_pythagorean_solve_c: "斜辺 c",
+	tool_pythagorean_solve_a: "直角辺 a",
+	tool_pythagorean_solve_b: "直角辺 b",
+	tool_pythagorean_known1_label: "既知の辺 1",
+	tool_pythagorean_known1_ph: "例: 3",
+	tool_pythagorean_known2_label: "既知の辺 2",
+	tool_pythagorean_known2_ph: "例: 4",
+	tool_pythagorean_sideOut_label: "求める辺の長さ",
+	tool_pythagorean_result_note: "直角三角形 a²+b²=c²。直角辺を求めるときは斜辺がもう一方より長い必要あり。",
+	tool_pythagorean_err_generic: "正の有限な二辺を入力。直角辺を求めるときは斜辺の方が大きく。",
+	tool_pythagorean_how_title: "使い方",
+	tool_pythagorean_how_body: "欠けている辺を選び、残りの二辺を入れます。c なら a と b、a なら b と c、b なら a と c。正の平方根解を返します。",
+	tool_pythagorean_formula_title: "公式",
+	tool_pythagorean_formula_body: "三平方の定理 a²+b²=c²：",
+	tool_pythagorean_formula_item_1: "c が未知：c=√(a²+b²)。",
+	tool_pythagorean_formula_item_2: "a が未知：a=√(c²−b²)、c>b>0。",
+	tool_pythagorean_formula_item_3: "b が未知：b=√(c²−a²)、c>a>0。",
+	tool_pythagorean_formula_item_4: "正の実辺のみ。三角法一式ではありません。",
+	tool_pythagorean_example_title: "例",
+	tool_pythagorean_example: "例：a=3、b=4 → c=5。",
+	tool_pythagorean_usecases_title: "こんなときに",
+	tool_pythagorean_usecase_1: "図形：直角三角形の欠けた辺を求める。",
+	tool_pythagorean_usecase_2: "3-4-5 型の検算。",
+	tool_pythagorean_usecase_3: "直交二辺から対角線を見積もる。",
+	tool_pythagorean_disclaimer: "ユークリッド平面幾何の学習用途のみ。",
+	tool_pythagorean_references: "Wikipedia のピタゴラスの定理。",
+	tool_pythagorean_ref_py_label: "Wikipedia — ピタゴラスの定理",
+	tool_pythagorean_ref_rt_label: "Wikipedia — 直角三角形",
+	tool_pythagorean_article: "a²+b²=c² で直角三角形の欠けた辺を求めます。",
+	tool_pythagorean_faq_q1: "鈍角三角形でも使える？",
+	tool_pythagorean_faq_a1: "いいえ。直角の a²+b²=c² のみです。",
+	tool_pythagorean_faq_q2: "c を求める入力は？",
+	tool_pythagorean_faq_a2: "直角辺 a と b を入れます。",
+	tool_pythagorean_faq_q3: "単位は必須？",
+	tool_pythagorean_faq_a3: "不要。二つの既知辺を同じ単位にしてください。",
+	tool_pythagorean_faq_q4: "なぜ c≤a を拒否？",
+	tool_pythagorean_faq_a4: "斜辺は各直角辺より厳密に長くなければなりません。",
+};
+
+export default ja;

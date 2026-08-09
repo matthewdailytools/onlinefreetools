@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-volume",
+  "path": "/tools/how-to-calculate-volume",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_volume_title",
+  "homeTitleKey": "tool_volume_title",
+  "homeDescKey": "tool_volume_description",
+  "faqPrefix": "tool_volume",
+  "related": [
+    "how-to-calculate-triangle-area",
+    "how-to-calculate-circle"
+  ],
+  "logo": "/icons/tools/how-to-calculate-volume.svg",
+  "page": {
+    "module": "../pages/howToCalculateVolumePage",
+    "export": "renderHowToCalculateVolumePage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

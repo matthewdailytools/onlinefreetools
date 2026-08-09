@@ -1,0 +1,51 @@
+/**
+ * i18n tool shard (how-to-calculate-scientific-notation / ar).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const ar: SiteLangDict = {
+	tool_scientific_notation_title: "حاسبة الترميز العلمي — كيفية التحويل",
+	tool_scientific_notation_description: "حوّل بين العشري والترميز العلمي a×10^b. مثال: 12300 → 1.23×10^4. يقبل 1.23e4 و1.23×10^4 عند التوسيع. يعرض المعامل والأس. في المتصفح للتعلّم.",
+	tool_scientific_notation_calculate: "احسب",
+	tool_scientific_notation_sample: "تحميل مثال",
+	tool_scientific_notation_clear: "مسح",
+	tool_scientific_notation_mode_label: "الاتجاه",
+	tool_scientific_notation_mode_toSci: "عشري → علمي",
+	tool_scientific_notation_mode_toDec: "علمي → عشري",
+	tool_scientific_notation_value_label: "القيمة",
+	tool_scientific_notation_value_ph: "مثال 12300 أو 1.23e4 أو 1.23×10^4",
+	tool_scientific_notation_resultOut_label: "القيمة المحوّلة",
+	tool_scientific_notation_coeffOut_label: "المعامل a",
+	tool_scientific_notation_expOut_label: "الأس b",
+	tool_scientific_notation_result_note: "الصيغة a×10^b بشرط 1 ≤ |a| < 10 (الصفر 0×10^0).",
+	tool_scientific_notation_err_generic: "أدخل قيمة عشرية أو علمية قابلة للتحليل حسب الوضع.",
+	tool_scientific_notation_how_title: "طريقة الاستخدام",
+	tool_scientific_notation_how_body: "اختر الاتجاه. للعشري→علمي أدخل عددًا عاديًا. للعلمي→عشري الصق 1.23e4 أو 1.23×10^4. تُعرض السلسلة المحوّلة والمعامل والأس عند الحاجة.",
+	tool_scientific_notation_formula_title: "قواعد التحويل",
+	tool_scientific_notation_formula_body: "اكتب x = a × 10^b بشكل مُعياري:",
+	tool_scientific_notation_formula_item_1: "حرّك الفاصلة حتى 1 ≤ |a| < 10 (الصفر 0×10^0).",
+	tool_scientific_notation_formula_item_2: "b هو عدد مرات تحريك الفاصلة.",
+	tool_scientific_notation_formula_item_3: "يُقبل 1.23e4 و1.23E+4 و1.23×10^4 و1.23*10^4.",
+	tool_scientific_notation_formula_item_4: "يُفضَّل عرض a×10^b المقروء.",
+	tool_scientific_notation_example_title: "مثال",
+	tool_scientific_notation_example: "مثال: 12300 → 1.23×10^4 (a = 1.23 وb = 4).",
+	tool_scientific_notation_usecases_title: "متى تستخدمه",
+	tool_scientific_notation_usecase_1: "واجب: إعادة كتابة أعداد كبيرة/صغيرة.",
+	tool_scientific_notation_usecase_2: "توسيع a×10^b إلى عشري.",
+	tool_scientific_notation_usecase_3: "مقارنة رمز e مع ×10^b.",
+	tool_scientific_notation_disclaimer: "تحويل تعليمي فقط وليس مكتبة دقة عالية.",
+	tool_scientific_notation_references: "ويكيبيديا الترميز العلمي.",
+	tool_scientific_notation_ref_sci_label: "ويكيبيديا — الترميز العلمي",
+	tool_scientific_notation_ref_exp_label: "ويكيبيديا — الرفع إلى أس",
+	tool_scientific_notation_article: "حوّل بين العشري والترميز العلمي a×10^b في المتصفح.",
+	tool_scientific_notation_faq_q1: "ما نطاق a؟",
+	tool_scientific_notation_faq_a1: "الشكل المعياري يبقي 1 ≤ |a| < 10 (عدا الصفر).",
+	tool_scientific_notation_faq_q2: "هل الأعداد السالبة مدعومة؟",
+	tool_scientific_notation_faq_a2: "تبقى الإشارة على a ويتتبع الأس حركة الفاصلة.",
+	tool_scientific_notation_faq_q3: "أي صيغ علمية تُقبل؟",
+	tool_scientific_notation_faq_a3: "1.23e4 و1.23E+4 و1.23×10^4 و1.23*10^4.",
+	tool_scientific_notation_faq_q4: "هل الدقة بلا حدود؟",
+	tool_scientific_notation_faq_a4: "لا؛ تحويل JS عادي للتعلّم.",
+};
+
+export default ar;

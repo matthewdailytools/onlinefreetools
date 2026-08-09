@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-pythagorean-theorem / de).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const de: SiteLangDict = {
+	tool_pythagorean_title: "Pythagoras-Rechner — Fehlende Seite finden",
+	tool_pythagorean_description: "Berechnen Sie die fehlende Seite a, b oder c mit a²+b²=c². Beispiel: a=3, b=4 → c=5. Zwei positive Seiten; unmögliche Paare werden abgelehnt. Im Browser zum Lernen.",
+	tool_pythagorean_calculate: "Berechnen",
+	tool_pythagorean_sample: "Beispiel laden",
+	tool_pythagorean_clear: "Leeren",
+	tool_pythagorean_solve_label: "Lösen nach",
+	tool_pythagorean_solve_c: "Hypotenuse c",
+	tool_pythagorean_solve_a: "Kathete a",
+	tool_pythagorean_solve_b: "Kathete b",
+	tool_pythagorean_known1_label: "Erste bekannte Seite",
+	tool_pythagorean_known1_ph: "z. B. 3",
+	tool_pythagorean_known2_label: "Zweite bekannte Seite",
+	tool_pythagorean_known2_ph: "z. B. 4",
+	tool_pythagorean_sideOut_label: "Fehlende Seite",
+	tool_pythagorean_result_note: "Rechtwinkliges Dreieck: a²+b²=c². Beim Lösen einer Kathete muss die Hypotenuse länger sein.",
+	tool_pythagorean_err_generic: "Zwei positive Seiten eingeben; beim Lösen einer Kathete muss die Hypotenuse größer sein.",
+	tool_pythagorean_how_title: "So funktioniert’s",
+	tool_pythagorean_how_body: "Wählen Sie die fehlende Seite und geben Sie die beiden anderen ein. Für c: a und b; für a: b und c; für b: a und c. Liefert die positive Wurzel.",
+	tool_pythagorean_formula_title: "Formel",
+	tool_pythagorean_formula_body: "Satz des Pythagoras a²+b²=c²:",
+	tool_pythagorean_formula_item_1: "Fehlt c: c=√(a²+b²).",
+	tool_pythagorean_formula_item_2: "Fehlt a: a=√(c²−b²) mit c>b>0.",
+	tool_pythagorean_formula_item_3: "Fehlt b: b=√(c²−a²) mit c>a>0.",
+	tool_pythagorean_formula_item_4: "Nur positive reelle Längen.",
+	tool_pythagorean_example_title: "Beispiel",
+	tool_pythagorean_example: "Beispiel: a=3, b=4 → c=5.",
+	tool_pythagorean_usecases_title: "Wann sinnvoll",
+	tool_pythagorean_usecase_1: "Geometrie: fehlende Seite finden.",
+	tool_pythagorean_usecase_2: "3-4-5-Tripel prüfen.",
+	tool_pythagorean_usecase_3: "Diagonale aus zwei orthogonalen Katheten schätzen.",
+	tool_pythagorean_disclaimer: "Nur euklidische Lerngeometrie.",
+	tool_pythagorean_references: "Wikipedia Satz des Pythagoras.",
+	tool_pythagorean_ref_py_label: "Wikipedia — Satz des Pythagoras",
+	tool_pythagorean_ref_rt_label: "Wikipedia — Rechtwinkliges Dreieck",
+	tool_pythagorean_article: "Berechnen Sie die fehlende Seite eines rechtwinkligen Dreiecks mit a²+b²=c².",
+	tool_pythagorean_faq_q1: "Eingaben für c?",
+	tool_pythagorean_faq_a1: "Die Katheten a und b.",
+	tool_pythagorean_faq_q2: "Einheiten nötig?",
+	tool_pythagorean_faq_a2: "Nein; beide bekannten Seiten in derselben Einheit.",
+	tool_pythagorean_faq_q3: "Stumpfe Dreiecke?",
+	tool_pythagorean_faq_a3: "Nein — nur die Rechtwinkelbeziehung a²+b²=c².",
+	tool_pythagorean_faq_q4: "Warum c≤a ablehnen?",
+	tool_pythagorean_faq_a4: "Die Hypotenuse muss strikt länger als jede Kathete sein.",
+};
+
+export default de;

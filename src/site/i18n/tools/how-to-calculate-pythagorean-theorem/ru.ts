@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-pythagorean-theorem / ru).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const ru: SiteLangDict = {
+	tool_pythagorean_title: "Калькулятор Пифагора — Как найти недостающую сторону",
+	tool_pythagorean_description: "Найдите недостающую сторону a, b или c по a²+b²=c². Пример: a=3, b=4 → c=5. Введите две положительные стороны; невозможные пары отвергаются. В браузере для учёбы.",
+	tool_pythagorean_calculate: "Рассчитать",
+	tool_pythagorean_sample: "Загрузить пример",
+	tool_pythagorean_clear: "Очистить",
+	tool_pythagorean_solve_label: "Найти",
+	tool_pythagorean_solve_c: "Гипотенузу c",
+	tool_pythagorean_solve_a: "Катет a",
+	tool_pythagorean_solve_b: "Катет b",
+	tool_pythagorean_known1_label: "Первая известная сторона",
+	tool_pythagorean_known1_ph: "напр. 3",
+	tool_pythagorean_known2_label: "Вторая известная сторона",
+	tool_pythagorean_known2_ph: "напр. 4",
+	tool_pythagorean_sideOut_label: "Недостающая сторона",
+	tool_pythagorean_result_note: "Прямоугольный треугольник: a²+b²=c². При поиске катета гипотенуза должна быть длиннее.",
+	tool_pythagorean_err_generic: "Введите две положительные стороны; при поиске катета гипотенуза должна быть больше.",
+	tool_pythagorean_how_title: "Как пользоваться",
+	tool_pythagorean_how_body: "Выберите недостающую сторону и введите две другие. Для c — a и b; для a — b и c; для b — a и c. Возвращает положительный корень.",
+	tool_pythagorean_formula_title: "Формула",
+	tool_pythagorean_formula_body: "Теорема Пифагора a²+b²=c²:",
+	tool_pythagorean_formula_item_1: "Нет c: c=√(a²+b²).",
+	tool_pythagorean_formula_item_2: "Нет a: a=√(c²−b²) при c>b>0.",
+	tool_pythagorean_formula_item_3: "Нет b: b=√(c²−a²) при c>a>0.",
+	tool_pythagorean_formula_item_4: "Только положительные вещественные длины.",
+	tool_pythagorean_example_title: "Пример",
+	tool_pythagorean_example: "Пример: a=3, b=4 → c=5.",
+	tool_pythagorean_usecases_title: "Когда применять",
+	tool_pythagorean_usecase_1: "Геометрия: найти недостающую сторону.",
+	tool_pythagorean_usecase_2: "Проверить тройки 3-4-5.",
+	tool_pythagorean_usecase_3: "Оценить диагональ по двум катетам.",
+	tool_pythagorean_disclaimer: "Только учебная евклидова планиметрия.",
+	tool_pythagorean_references: "Wikipedia о теореме Пифагора.",
+	tool_pythagorean_ref_py_label: "Wikipedia — Теорема Пифагора",
+	tool_pythagorean_ref_rt_label: "Wikipedia — Прямоугольный треугольник",
+	tool_pythagorean_article: "Найдите недостающую сторону прямоугольного треугольника по a²+b²=c².",
+	tool_pythagorean_faq_q1: "Что вводить для c?",
+	tool_pythagorean_faq_a1: "Катеты a и b.",
+	tool_pythagorean_faq_q2: "Нужны ли единицы?",
+	tool_pythagorean_faq_a2: "Нет; обе известные стороны в одной единице.",
+	tool_pythagorean_faq_q3: "Почему отказ при c≤a?",
+	tool_pythagorean_faq_a3: "Гипотенуза должна быть строго длиннее каждого катета.",
+	tool_pythagorean_faq_q4: "Тупоугольные треугольники?",
+	tool_pythagorean_faq_a4: "Нет — только соотношение прямоугольного a²+b²=c².",
+};
+
+export default ru;

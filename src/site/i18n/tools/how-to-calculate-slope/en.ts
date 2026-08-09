@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-slope / en).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const en: SiteLangDict = {
+	tool_slope_title: "Slope Calculator — How to Calculate Slope Between Two Points",
+	tool_slope_description: "Calculate slope m = (y₂ − y₁)/(x₂ − x₁) between two points. Example: (1,2) and (3,6) → m = 2. Rejects vertical lines where Δx = 0. Browser learning tool for algebra coursework.",
+	tool_slope_calculate: "Calculate",
+	tool_slope_sample: "Load sample",
+	tool_slope_clear: "Clear",
+	tool_slope_x1_label: "x₁",
+	tool_slope_x1_ph: "e.g. 1",
+	tool_slope_y1_label: "y₁",
+	tool_slope_y1_ph: "e.g. 2",
+	tool_slope_x2_label: "x₂",
+	tool_slope_x2_ph: "e.g. 3",
+	tool_slope_y2_label: "y₂",
+	tool_slope_y2_ph: "e.g. 6",
+	tool_slope_slopeOut_label: "Slope m",
+	tool_slope_result_note: "m = (y₂ − y₁) / (x₂ − x₁). Vertical lines (Δx = 0) are rejected as undefined.",
+	tool_slope_err_generic: "Enter four finite coordinates with x₂ ≠ x₁.",
+	tool_slope_how_title: "How it works",
+	tool_slope_how_body: "Enter two distinct points (x₁,y₁) and (x₂,y₂). The tool returns the slope of the line through them. If the x-coordinates match, the slope is undefined and the page shows an error.",
+	tool_slope_formula_title: "Formula",
+	tool_slope_formula_body: "Slope between two points:",
+	tool_slope_formula_item_1: "m = (y₂ − y₁) / (x₂ − x₁).",
+	tool_slope_formula_item_2: "Positive m rises left→right; negative m falls.",
+	tool_slope_formula_item_3: "Δx = 0 means a vertical line — undefined slope here.",
+	tool_slope_formula_item_4: "Order of points cancels in the ratio if swapped consistently.",
+	tool_slope_example_title: "Example",
+	tool_slope_example: "Example: (1,2) and (3,6) → m = (6−2)/(3−1) = 2.",
+	tool_slope_usecases_title: "When to use it",
+	tool_slope_usecase_1: "Algebra homework: slope from two points.",
+	tool_slope_usecase_2: "Check rise-over-run before graphing.",
+	tool_slope_usecase_3: "Compare with aspect-ratio ideas of Δy:Δx.",
+	tool_slope_disclaimer: "Educational 2D slope only — not a full line-equation solver.",
+	tool_slope_references: "Wikipedia slope.",
+	tool_slope_ref_slope_label: "Wikipedia — Slope",
+	tool_slope_ref_line_label: "Wikipedia — Linear equation",
+	tool_slope_article: "Calculate the slope m between two points with (y₂−y₁)/(x₂−x₁).",
+	tool_slope_faq_q1: "What if x₁ equals x₂?",
+	tool_slope_faq_a1: "The slope is undefined (vertical line); this page errors.",
+	tool_slope_faq_q2: "Does point order matter?",
+	tool_slope_faq_a2: "Swapping both points keeps the same m.",
+	tool_slope_faq_q3: "What does m = 2 mean?",
+	tool_slope_faq_a3: "For each +1 in x, y increases by 2.",
+	tool_slope_faq_q4: "Is a horizontal line allowed?",
+	tool_slope_faq_a4: "Yes — then m = 0 when y₁ = y₂ and x differs.",
+};
+
+export default en;

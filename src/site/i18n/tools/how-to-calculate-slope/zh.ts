@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-slope / zh).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const zh: SiteLangDict = {
+	tool_slope_title: "斜率计算器 — 如何计算两点斜率",
+	tool_slope_description: "用 m=(y₂−y₁)/(x₂−x₁) 计算两点连线斜率。示例：(1,2) 与 (3,6) → m=2。Δx=0 的竖直线视为未定义并拒绝。浏览器内计算，适合作业与画图前核对升降比，并说明水平线 m=0、两点对调后比值不变，以及同一单位下的坐标输入。",
+	tool_slope_calculate: "计算",
+	tool_slope_sample: "加载样例",
+	tool_slope_clear: "清空",
+	tool_slope_x1_label: "x₁",
+	tool_slope_x1_ph: "例如 1",
+	tool_slope_y1_label: "y₁",
+	tool_slope_y1_ph: "例如 2",
+	tool_slope_x2_label: "x₂",
+	tool_slope_x2_ph: "例如 3",
+	tool_slope_y2_label: "y₂",
+	tool_slope_y2_ph: "例如 6",
+	tool_slope_slopeOut_label: "斜率 m",
+	tool_slope_result_note: "m=(y₂−y₁)/(x₂−x₁)。竖直线（Δx=0）视为未定义并拒绝。",
+	tool_slope_err_generic: "请输入四个有限坐标，且 x₂≠x₁。",
+	tool_slope_how_title: "怎么用",
+	tool_slope_how_body: "输入两个不同点 (x₁,y₁) 与 (x₂,y₂)。工具返回连线斜率；若 x 相同则斜率未定义并报错。",
+	tool_slope_formula_title: "公式",
+	tool_slope_formula_body: "两点斜率：",
+	tool_slope_formula_item_1: "m=(y₂−y₁)/(x₂−x₁)。",
+	tool_slope_formula_item_2: "m>0 从左到右上升；m<0 下降。",
+	tool_slope_formula_item_3: "Δx=0 为竖直线——本页视为未定义。",
+	tool_slope_formula_item_4: "两点对调后比值不变。",
+	tool_slope_example_title: "示例",
+	tool_slope_example: "示例：(1,2) 与 (3,6) → m=(6−2)/(3−1)=2。",
+	tool_slope_usecases_title: "适合什么场景",
+	tool_slope_usecase_1: "代数作业：由两点求斜率。",
+	tool_slope_usecase_2: "画图前核对升降比。",
+	tool_slope_usecase_3: "与宽高比中的 Δy:Δx 对照。",
+	tool_slope_disclaimer: "仅为二维斜率教育用途，不是完整直线方程求解器。",
+	tool_slope_references: "维基百科斜率条目。",
+	tool_slope_ref_slope_label: "维基百科 — 斜率",
+	tool_slope_ref_line_label: "维基百科 — 一次方程",
+	tool_slope_article: "用 (y₂−y₁)/(x₂−x₁) 计算两点间斜率 m。",
+	tool_slope_faq_q1: "m=2 表示什么？",
+	tool_slope_faq_a1: "x 每增加 1，y 增加 2。",
+	tool_slope_faq_q2: "x₁=x₂ 会怎样？",
+	tool_slope_faq_a2: "斜率为未定义（竖直线），本页报错。",
+	tool_slope_faq_q3: "点的顺序有影响吗？",
+	tool_slope_faq_a3: "两点对调后比值不变。",
+	tool_slope_faq_q4: "水平线可以吗？",
+	tool_slope_faq_a4: "可以，y 相同且 x 不同时 m=0。",
+};
+
+export default zh;

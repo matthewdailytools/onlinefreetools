@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-logarithm / pt).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const pt: SiteLangDict = {
+	tool_logarithm_title: "Calculadora de logaritmos — Como calcular logs",
+	tool_logarithm_description: "Calcule log₁₀, ln ou log_b(x) com x>0. Bases próprias via ln(x)/ln(b). Exemplo: log₁₀(1000)=3. Deixa claro o domínio (x>0, b>0, b≠1). No navegador, para estudo.",
+	tool_logarithm_calculate: "Calcular",
+	tool_logarithm_sample: "Carregar exemplo",
+	tool_logarithm_clear: "Limpar",
+	tool_logarithm_mode_label: "Tipo de log",
+	tool_logarithm_mode_log10: "log₁₀ (comum)",
+	tool_logarithm_mode_ln: "ln (natural)",
+	tool_logarithm_mode_custom: "log_b (base própria)",
+	tool_logarithm_x_label: "Argumento x",
+	tool_logarithm_x_ph: "ex.: 1000",
+	tool_logarithm_base_label: "Base b",
+	tool_logarithm_base_ph: "ex.: 2",
+	tool_logarithm_logOut_label: "Valor do logaritmo",
+	tool_logarithm_result_note: "Mudança de base via ln: log_b(x)=ln(x)/ln(b). Exige x>0 e base válida.",
+	tool_logarithm_err_generic: "Informe x>0; na base própria, b>0 e b≠1.",
+	tool_logarithm_how_title: "Como funciona",
+	tool_logarithm_how_body: "Escolha log₁₀, ln ou base própria. Digite x>0 (e b se preciso). Calcula com Math.log/Math.log10 e mudança de base.",
+	tool_logarithm_formula_title: "Fórmula e domínio",
+	tool_logarithm_formula_body: "log_b(x) é o expoente que leva b a x. Aqui:",
+	tool_logarithm_formula_item_1: "log₁₀ é comum; ln é natural (base e).",
+	tool_logarithm_formula_item_2: "Própria: log_b(x)=ln(x)/ln(b) com b>0, b≠1, x>0.",
+	tool_logarithm_formula_item_3: "x deve ser positivo.",
+	tool_logarithm_formula_item_4: "Combine com a página de expoentes para checar b^y≈x.",
+	tool_logarithm_example_title: "Exemplo",
+	tool_logarithm_example: "Exemplo: log₁₀(1000)=3.",
+	tool_logarithm_usecases_title: "Quando usar",
+	tool_logarithm_usecase_1: "Tarefa: avaliar log₁₀, ln ou log₂.",
+	tool_logarithm_usecase_2: "Conferir mudança de base à mão.",
+	tool_logarithm_usecase_3: "Preparar escalas de notação científica.",
+	tool_logarithm_disclaimer: "Apenas logs reais educativos. Não substitui CAS.",
+	tool_logarithm_references: "Wikipedia logaritmo e logaritmo natural.",
+	tool_logarithm_ref_log_label: "Wikipedia — Logaritmo",
+	tool_logarithm_ref_ln_label: "Wikipedia — Logaritmo natural",
+	tool_logarithm_article: "Calcule log₁₀, ln ou logs de base própria para x>0 no navegador.",
+	tool_logarithm_faq_q1: "Base pode ser 1?",
+	tool_logarithm_faq_a1: "Não; log na base 1 é indefinido.",
+	tool_logarithm_faq_q2: "Por que x > 0?",
+	tool_logarithm_faq_a2: "Logs reais em 0 ou negativos não são definidos nesta página.",
+	tool_logarithm_faq_q3: "O que é ln?",
+	tool_logarithm_faq_a3: "Log natural na base e ≈ 2,71828.",
+	tool_logarithm_faq_q4: "Base personalizada?",
+	tool_logarithm_faq_a4: "Mudança de base: ln(x)/ln(b).",
+};
+
+export default pt;

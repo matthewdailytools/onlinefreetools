@@ -3,7 +3,7 @@ how-to-calculate-bmi	BMI	health	bmi-calculator-body-mass-index	https://tooldone.
 bmr-tdee	BMR (Mifflin-St Jeor)	health	bmr-calculator-basal-metabolic-rate-mifflin-st-jeor-equation	https://tooldone.com/health/bmr-calculator-basal-metabolic-rate-mifflin-st-jeor-equation/	https://tooldone.com/zh/jiankang/jichu-daixielv-jisuanqi-mifulin-shengqiao-gongshi/	未开始 · P1	公式对照
 bmr-tdee	TDEE / 卡路里	health	calorie-calculator	https://tooldone.com/health/calorie-calculator/	https://tooldone.com/zh/jiankang/kaluli-jisuanqi/	未开始 · P1	与 BMR 同页或 Related
 body-fat-navy	体脂率（海军公式）	health	navy-body-fat-calculator	https://tooldone.com/health/navy-body-fat-calculator/	https://tooldone.com/zh/jiankang/haijun-tizhi-jisuanqi/	已上线	C-V5 已提候选
-ideal-weight	理想体重	health	ideal-weight-calculator	https://tooldone.com/health/ideal-weight-calculator/	https://tooldone.com/zh/jiankang/lixiang-tizhong-jisuanqi/	未开始 · P2	须免责
+ideal-weight	理想体重	health	ideal-weight-calculator	https://tooldone.com/health/ideal-weight-calculator/	https://tooldone.com/zh/jiankang/lixiang-tizhong-jisuanqi/	已上线	须免责
 how-to-calculate-roi	ROI	finance	roi-calculator-return-on-investment	https://tooldone.com/finance/roi-calculator-return-on-investment/	https://tooldone.com/zh/jinrong/roi-jisuanqi-touzi-huibao/	已上线对照	核对口径；勿用 GMROI
 compound-interest	复利	finance	compound-interest-calculator	https://tooldone.com/finance/compound-interest-calculator/	https://tooldone.com/zh/jinrong/fuli-jisuanqi/	未开始 · P1	公式对照
 loan-emi	EMI 等额本息	finance	emi-calculator-equated-monthly-installment	https://tooldone.com/finance/emi-calculator-equated-monthly-installment/	https://tooldone.com/zh/jinrong/deng-e-yue-fu-kuan-ji-suan-qi/	未开始 · P1	公式对照
@@ -16,13 +16,13 @@ how-to-calculate-gradient	多元梯度	math	gradient-calculator	https://tooldone
 square-feet	平方英尺	conversion	square-feet-converter	https://tooldone.com/conversion/square-feet-converter/	https://tooldone.com/zh/zhuanhuan/pingfang-yingchi-zhuanhuanqi/	已上线对照	主对照 square-feet-converter
 unit-converter	通用单位换算	conversion	conversion-calculator	https://tooldone.com/conversion/conversion-calculator/	https://tooldone.com/zh/zhuanhuan/dan-wei-zhuan-huan-ji-suan-qi/	已上线	主入口；忌拆海量单位页
 mortgage-calculator	房贷	finance	mortgage-calculator	https://tooldone.com/finance/mortgage-calculator/	https://tooldone.com/zh/jinrong/diyakuan-jisuanqi/	未开始 · P2	YMYL；可与 EMI 合并评估
-cagr-calculator	CAGR	finance	cagr-calculator	https://tooldone.com/finance/cagr-calculator-compound-annual-growth-rate/	https://tooldone.com/zh/jinrong/cagr-jisuanqi-fuhe-nianzengzhanglu/	未开始 · P2	C-V4
-npv-calculator	NPV	finance	npv-calculator	https://tooldone.com/finance/npv-calculator-net-present-value/	https://tooldone.com/zh/jinrong/npv-jisuanqi-jingxianzhi/	未开始 · P2	C-V4
-standard-deviation	标准差	statistic	standard-deviation-calculator	https://tooldone.com/statistic/standard-deviation-calculator/	https://tooldone.com/zh/tongji/biaozhun-cha-jisuanqi/	未开始 · P2	A.7
+cagr-calculator	CAGR	finance	cagr-calculator	https://tooldone.com/finance/cagr-calculator-compound-annual-growth-rate/	https://tooldone.com/zh/jinrong/cagr-jisuanqi-fuhe-nianzengzhanglu/	已上线	C-V4
+npv-calculator	NPV	finance	npv-calculator	https://tooldone.com/finance/npv-calculator-net-present-value/	https://tooldone.com/zh/jinrong/npv-jisuanqi-jingxianzhi/	已上线	C-V4
+standard-deviation	标准差	statistic	standard-deviation-calculator	https://tooldone.com/statistic/standard-deviation-calculator/	https://tooldone.com/zh/tongji/biaozhun-cha-jisuanqi/	已上线	A.7
 z-score	Z 分数	statistic	z-score-calculator	https://tooldone.com/statistic/z-score-calculator/	https://tooldone.com/zh/tongji/z-fenshu-jisuanqi/	未开始 · P2	A.7
 sample-size	样本量	statistic	sample-size-calculator	https://tooldone.com/statistic/sample-size-calculator/	https://tooldone.com/zh/tongji/yangben-daxiao-jisuanqi/	未开始 · P2	
-concrete-calculator	混凝土方量	construction	concrete-calculator	https://tooldone.com/construction/concrete-calculator/	https://tooldone.com/zh/jianzhu/hunningtu-jisuanqi/	未开始 · P2	C 工程装修
-paint-calculator	油漆估算	construction	paint-calculator	https://tooldone.com/construction/paint-calculator/	https://tooldone.com/zh/jianzhu/youqi-jisuanqi/	未开始 · P2	C 工程装修
-tile-calculator	瓷砖估算	construction	tile-calculator	https://tooldone.com/construction/tile-calculator/	https://tooldone.com/zh/jianzhu/cizhuan-jisuanqi/	未开始 · P2	C 工程装修
-aspect-ratio-calculator	宽高比	other	aspect-ratio-calculator	https://tooldone.com/other/aspect-ratio-calculator/	https://tooldone.com/zh/qita/changkuanbi-jisuanqi/	未开始 · P2	设计/视频辅助
+concrete-calculator	混凝土方量	construction	concrete-calculator	https://tooldone.com/construction/concrete-calculator/	https://tooldone.com/zh/jianzhu/hunningtu-jisuanqi/	已上线	C 工程装修 · slug how-to-calculate-concrete
+paint-calculator	油漆估算	construction	paint-calculator	https://tooldone.com/construction/paint-calculator/	https://tooldone.com/zh/jianzhu/youqi-jisuanqi/	已上线	C 工程装修
+tile-calculator	瓷砖估算	construction	tile-calculator	https://tooldone.com/construction/tile-calculator/	https://tooldone.com/zh/jianzhu/cizhuan-jisuanqi/	已上线	C 工程装修 · slug how-to-calculate-tile
+aspect-ratio-calculator	宽高比	other	aspect-ratio-calculator	https://tooldone.com/other/aspect-ratio-calculator/	https://tooldone.com/zh/qita/changkuanbi-jisuanqi/	已上线	设计/视频辅助
 gpa-calculator	GPA	other	gpa-calculator	https://tooldone.com/other/gpa-calculator/	https://tooldone.com/zh/qita/gpa-jisuanqi/	未开始 · P2	C 教育；须标地区

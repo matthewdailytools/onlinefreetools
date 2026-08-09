@@ -1,0 +1,50 @@
+/**
+ * i18n tool shard (how-to-calculate-z-score / de).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const de: SiteLangDict = {
+	tool_z_score_title: "Z-Wert-Rechner — Standardwert berechnen",
+	tool_z_score_description: "Wandeln Sie einen Rohwert in einen z-Wert um: z = (x − Mittelwert) / SD. Beispiel: x = 85, Mittelwert = 70, SD = 10 → z = 1,5. Macht lineare Skalierung und SD > 0 klar. Im Browser für Übungen und schnelle Checks.",
+	tool_z_score_calculate: "Berechnen",
+	tool_z_score_sample: "Beispiel laden",
+	tool_z_score_clear: "Leeren",
+	tool_z_score_x_label: "Rohwert (x)",
+	tool_z_score_x_ph: "z. B. 85",
+	tool_z_score_mean_label: "Mittelwert (μ)",
+	tool_z_score_mean_ph: "z. B. 70",
+	tool_z_score_sd_label: "Standardabweichung (σ)",
+	tool_z_score_sd_ph: "z. B. 10",
+	tool_z_score_zOut_label: "Z-Wert",
+	tool_z_score_result_note: "z = (x − Mittelwert) / SD zum Lernen — endlicher Mittelwert und SD > 0.",
+	tool_z_score_err_generic: "Bitte endliche x und Mittelwert sowie SD > 0 eingeben.",
+	tool_z_score_how_title: "So funktioniert’s",
+	tool_z_score_how_body: "Geben Sie Rohwert, Mittelwert und SD ein. Das Tool liefert z = (x − Mittelwert) / SD, damit Sie sehen, wie viele SD über oder unter dem Mittelwert liegen. Im Browser für Übungen.",
+	tool_z_score_formula_title: "Formel und Annahmen",
+	tool_z_score_formula_body: "z = (x − μ) / σ. Grenzen:",
+	tool_z_score_formula_item_1: "SD muss positiv sein.",
+	tool_z_score_formula_item_2: "Lineare Umskalierung, kein Normalitätstest.",
+	tool_z_score_formula_item_3: "z ist dimensionslos.",
+	tool_z_score_formula_item_4: "Für die Normal-Schwanzwahrscheinlichkeit mit einer p-Wert-Seite kombinieren.",
+	tool_z_score_example_title: "Beispiel",
+	tool_z_score_example: "Beispiel: x = 85, Mittelwert = 70, SD = 10 → z = 1,5.",
+	tool_z_score_usecases_title: "Wann sinnvoll",
+	tool_z_score_usecase_1: "Hausaufgabe: Note in Standardwert umrechnen.",
+	tool_z_score_usecase_2: "Werte aus Verteilungen mit anderem Mittel/Streuung vergleichen.",
+	tool_z_score_usecase_3: "z für einen zweiseitigen p-Check vorbereiten.",
+	tool_z_score_faq_q1: "Was bedeutet z = 1,5?",
+	tool_z_score_faq_a1: "Der Rohwert liegt 1,5 SD über dem angegebenen Mittelwert.",
+	tool_z_score_faq_q2: "Darf SD = 0 sein?",
+	tool_z_score_faq_a2: "Nein; Division durch null ist undefiniert.",
+	tool_z_score_faq_q3: "Ist großes |z| automatisch „signifikant“?",
+	tool_z_score_faq_a3: "Nicht allein; Modell und p-Wert oder kritischer Wert fehlen sonst.",
+	tool_z_score_faq_q4: "Ist Normalverteilung nötig?",
+	tool_z_score_faq_a4: "Für die z-Algebra nicht; für viele spätere Normal-Schwanz-Anwendungen oft ja.",
+	tool_z_score_disclaimer: "Nur Lern-z = (x − Mittelwert) / SD. Ersetzt keine Statistiksoftware.",
+	tool_z_score_references: "Wikipedia Standardwert und Standardabweichung.",
+	tool_z_score_ref_z_label: "Wikipedia — Standardwert",
+	tool_z_score_ref_sd_label: "Wikipedia — Standardabweichung",
+	tool_z_score_article: "Berechnen Sie einen z-Wert aus x, Mittelwert und SD mit z = (x − Mittelwert) / SD.",
+};
+
+export default de;

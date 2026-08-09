@@ -1,0 +1,51 @@
+/**
+ * i18n tool shard (how-to-calculate-tip / en).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const en: SiteLangDict = {
+	tool_tip_title: "Tip Calculator — Tip Amount and Split",
+	tool_tip_description: "Calculate tip from bill and tip percent, then optionally split the total. Sample: bill 80 with 15% tip → tip 12, total 92. Everyday receipt math in your browser.",
+	tool_tip_calculate: "Calculate",
+	tool_tip_sample: "Load sample",
+	tool_tip_clear: "Clear",
+	tool_tip_bill_label: "Bill amount",
+	tool_tip_bill_ph: "e.g. 80",
+	tool_tip_tip_label: "Tip %",
+	tool_tip_tip_ph: "e.g. 15",
+	tool_tip_split_label: "Split between (people)",
+	tool_tip_split_ph: "e.g. 1",
+	tool_tip_tipOut_label: "Tip",
+	tool_tip_totalOut_label: "Total",
+	tool_tip_eachOut_label: "Per person",
+	tool_tip_result_note: "Tip = bill × tip%; total = bill + tip; per person = total / people.",
+	tool_tip_err_generic: "Enter bill > 0, tip % ≥ 0, and people ≥ 1.",
+	tool_tip_how_title: "How it works",
+	tool_tip_how_body: "Enter the bill, tip percent, and how many people split the total. Customs vary by country — this is arithmetic only.",
+	tool_tip_formula_title: "Formula",
+	tool_tip_formula_body: "Tip = bill × p; total = bill + tip; each = total / n. Notes:",
+	tool_tip_formula_item_1: "Does not auto-add tax; add tax into the bill if needed.",
+	tool_tip_formula_item_2: "Rounding at restaurants may differ.",
+	tool_tip_formula_item_3: "Not a payment processor.",
+	tool_tip_example_title: "Example",
+	tool_tip_example: "Example: bill 80, tip 15%, 1 person → tip 12, total 92.",
+	tool_tip_usecases_title: "When to use it",
+	tool_tip_usecase_1: "Restaurant checkout tip math.",
+	tool_tip_usecase_2: "Split a shared bill after tip.",
+	tool_tip_usecase_3: "Pair with VAT/discount for receipt drills.",
+	tool_tip_faq_q1: "Sample?",
+	tool_tip_faq_a1: "80 at 15% → tip 12, total 92.",
+	tool_tip_faq_q2: "Include tax?",
+	tool_tip_faq_a2: "Add tax into the bill first if you tip on tax-inclusive totals.",
+	tool_tip_faq_q3: "Split 0 people?",
+	tool_tip_faq_a3: "People must be ≥ 1.",
+	tool_tip_faq_q4: "Payment app?",
+	tool_tip_faq_a4: "No — local arithmetic only.",
+	tool_tip_article: "Tip and split",
+	tool_tip_disclaimer: "Educational tip only — not financial, tax, or investment advice.",
+	tool_tip_references: "Investopedia and standard textbook formulas.",
+	tool_tip_ref_a_label: "Wikipedia — Gratuity",
+	tool_tip_ref_b_label: "Investopedia — Tip",
+};
+
+export default en;

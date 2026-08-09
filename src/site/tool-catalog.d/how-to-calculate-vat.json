@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-vat",
+  "path": "/tools/how-to-calculate-vat",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_vat_title",
+  "homeTitleKey": "tool_vat_title",
+  "homeDescKey": "tool_vat_description",
+  "faqPrefix": "tool_vat",
+  "related": [
+    "how-to-calculate-discount",
+    "how-to-calculate-tip"
+  ],
+  "logo": "/icons/tools/how-to-calculate-vat.svg",
+  "page": {
+    "module": "../pages/howToCalculateVatPage",
+    "export": "renderHowToCalculateVatPage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

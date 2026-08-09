@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-p-value",
+  "path": "/tools/how-to-calculate-p-value",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_p_value_title",
+  "homeTitleKey": "tool_p_value_title",
+  "homeDescKey": "tool_p_value_description",
+  "faqPrefix": "tool_p_value",
+  "related": [
+    "how-to-calculate-standard-deviation",
+    "how-to-calculate-confidence-interval"
+  ],
+  "logo": "/icons/tools/how-to-calculate-p-value.svg",
+  "page": {
+    "module": "../pages/howToCalculatePValuePage",
+    "export": "renderHowToCalculatePValuePage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

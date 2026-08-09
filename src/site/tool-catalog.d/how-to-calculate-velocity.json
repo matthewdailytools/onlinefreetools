@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-velocity",
+  "path": "/tools/how-to-calculate-velocity",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_velocity_title",
+  "homeTitleKey": "tool_velocity_title",
+  "homeDescKey": "tool_velocity_description",
+  "faqPrefix": "tool_velocity",
+  "related": [
+    "how-to-calculate-acceleration",
+    "how-to-calculate-density"
+  ],
+  "logo": "/icons/tools/how-to-calculate-velocity.svg",
+  "page": {
+    "module": "../pages/howToCalculateVelocityPage",
+    "export": "renderHowToCalculateVelocityPage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

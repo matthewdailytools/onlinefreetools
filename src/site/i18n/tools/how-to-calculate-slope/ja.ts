@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-slope / ja).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const ja: SiteLangDict = {
+	tool_slope_title: "傾き計算ツール — 二点間の傾きの求め方",
+	tool_slope_description: "二点間の傾き m=(y₂−y₁)/(x₂−x₁) を計算します。例：(1,2) と (3,6) → m=2。Δx=0 の垂直線は未定義として拒否。ブラウザ内で代数の宿題向けで、水平線 m=0、点の順序入れ替え後も比が同じこと、同一単位の座標入力を明示します。",
+	tool_slope_calculate: "計算する",
+	tool_slope_sample: "サンプル",
+	tool_slope_clear: "クリア",
+	tool_slope_x1_label: "x₁",
+	tool_slope_x1_ph: "例: 1",
+	tool_slope_y1_label: "y₁",
+	tool_slope_y1_ph: "例: 2",
+	tool_slope_x2_label: "x₂",
+	tool_slope_x2_ph: "例: 3",
+	tool_slope_y2_label: "y₂",
+	tool_slope_y2_ph: "例: 6",
+	tool_slope_slopeOut_label: "傾き m",
+	tool_slope_result_note: "m=(y₂−y₁)/(x₂−x₁)。垂直線（Δx=0）は未定義として拒否。",
+	tool_slope_err_generic: "有限な四座標を入力し、x₂≠x₁ にしてください。",
+	tool_slope_how_title: "使い方",
+	tool_slope_how_body: "異なる二点 (x₁,y₁) と (x₂,y₂) を入れます。通る直線の傾きを返します。x が同じなら未定義でエラーです。",
+	tool_slope_formula_title: "式",
+	tool_slope_formula_body: "二点の傾き：",
+	tool_slope_formula_item_1: "m=(y₂−y₁)/(x₂−x₁)。",
+	tool_slope_formula_item_2: "m>0 は左から右へ上昇、m<0 は下降。",
+	tool_slope_formula_item_3: "Δx=0 は垂直——ここでは未定義。",
+	tool_slope_formula_item_4: "二点を入れ替えても比は同じ。",
+	tool_slope_example_title: "例",
+	tool_slope_example: "例：(1,2) と (3,6) → m=2。",
+	tool_slope_usecases_title: "こんなときに",
+	tool_slope_usecase_1: "代数：二点から傾きを求める宿題。",
+	tool_slope_usecase_2: "グラフ前に立ち上がり/走りを確認。",
+	tool_slope_usecase_3: "アスペクト比の Δy:Δx と見比べる。",
+	tool_slope_disclaimer: "二次元の学習用傾きのみで、直線方程式の総合ソルバーではありません。",
+	tool_slope_references: "Wikipedia の傾き。",
+	tool_slope_ref_slope_label: "Wikipedia — 傾き",
+	tool_slope_ref_line_label: "Wikipedia — 一次方程式",
+	tool_slope_article: "二点間の傾き m を (y₂−y₁)/(x₂−x₁) で計算します。",
+	tool_slope_faq_q1: "点の順序は影響する？",
+	tool_slope_faq_a1: "両方入れ替えても m は同じです。",
+	tool_slope_faq_q2: "x₁=x₂ のとき？",
+	tool_slope_faq_a2: "傾きは未定義（垂直）。このページはエラーにします。",
+	tool_slope_faq_q3: "水平線は？",
+	tool_slope_faq_a3: "可能。y が等しく x が異なれば m=0。",
+	tool_slope_faq_q4: "m=2 の意味は？",
+	tool_slope_faq_a4: "x が 1 増えると y が 2 増えます。",
+};
+
+export default ja;

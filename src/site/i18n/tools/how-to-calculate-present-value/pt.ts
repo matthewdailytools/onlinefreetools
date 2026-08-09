@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-present-value / pt).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const pt: SiteLangDict = {
+	tool_present_value_title: "Calculadora de valor presente (PV/FV)",
+	tool_present_value_description: "Alterne PV e FV para um montante único. Exemplo: VF 10.000 a 5% em 5 anos → VP ≈ 7.835,26. Educativo. Cálculo educativo no navegador; não é conselho profissional.",
+	tool_present_value_calculate: "Calcular",
+	tool_present_value_sample: "Carregar exemplo",
+	tool_present_value_clear: "Limpar",
+	tool_present_value_mode_label: "Modo",
+	tool_present_value_mode_pv: "Achar VP (a partir do VF)",
+	tool_present_value_mode_fv: "Achar VF (a partir do VP)",
+	tool_present_value_amount_label: "Valor",
+	tool_present_value_amount_ph: "ex. 10000",
+	tool_present_value_rate_label: "Taxa anual %",
+	tool_present_value_rate_ph: "ex. 5",
+	tool_present_value_n_label: "Anos",
+	tool_present_value_n_ph: "ex. 5",
+	tool_present_value_out_label: "Resultado",
+	tool_present_value_result_note: "Educativo.",
+	tool_present_value_err_generic: "Verifique os dados.",
+	tool_present_value_how_title: "Como funciona",
+	tool_present_value_how_body: "Escolha o modo PV/FV e informe valor, taxa e anos.",
+	tool_present_value_formula_title: "Fórmula",
+	tool_present_value_formula_body: "Escolha o modo PV/FV e informe valor, taxa e anos.",
+	tool_present_value_formula_item_1: "See formula notes.",
+	tool_present_value_formula_item_2: "Check inputs.",
+	tool_present_value_formula_item_3: "Educational only.",
+	tool_present_value_example_title: "Exemplo",
+	tool_present_value_example: "Exemplo: VF 10000, 5%, 5 anos → VP ≈ 7835,26.",
+	tool_present_value_usecases_title: "Quando usar",
+	tool_present_value_usecase_1: "Homework.",
+	tool_present_value_usecase_2: "Quick sketch.",
+	tool_present_value_usecase_3: "Compare related tools.",
+	tool_present_value_faq_q1: "Exemplo?",
+	tool_present_value_faq_a1: "Exemplo: VF 10000, 5%, 5 anos → VP ≈ 7835,26.",
+	tool_present_value_faq_q2: "Formula?",
+	tool_present_value_faq_a2: "See Formula section.",
+	tool_present_value_faq_q3: "Advice?",
+	tool_present_value_faq_a3: "Educational only.",
+	tool_present_value_faq_q4: "Related?",
+	tool_present_value_faq_a4: "See related tools.",
+	tool_present_value_article: "Calculadora de valor presente (PV/FV)",
+	tool_present_value_disclaimer: "Apenas ilustração educativa (present value); não é conselho financeiro.",
+	tool_present_value_references: "Investopedia e fórmulas didáticas.",
+	tool_present_value_ref_a_label: "Investopedia",
+	tool_present_value_ref_b_label: "Wikipedia",
+};
+
+export default pt;

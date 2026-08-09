@@ -1,0 +1,50 @@
+/**
+ * i18n tool shard (how-to-calculate-z-score / en).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const en: SiteLangDict = {
+	tool_z_score_title: "Z-Score Calculator — How to Calculate a Standard Score",
+	tool_z_score_description: "Convert a raw score to a z-score with z = (x − mean) / SD. Example: x = 85, mean = 70, SD = 10 → z = 1.5. States the linear scaling assumption and SD > 0. Runs in your browser for coursework and quick checks.",
+	tool_z_score_calculate: "Calculate",
+	tool_z_score_sample: "Load sample",
+	tool_z_score_clear: "Clear",
+	tool_z_score_x_label: "Raw score (x)",
+	tool_z_score_x_ph: "e.g. 85",
+	tool_z_score_mean_label: "Mean (μ)",
+	tool_z_score_mean_ph: "e.g. 70",
+	tool_z_score_sd_label: "Standard deviation (σ)",
+	tool_z_score_sd_ph: "e.g. 10",
+	tool_z_score_zOut_label: "Z-score",
+	tool_z_score_result_note: "z = (x − mean) / SD for learning — assumes a finite mean and SD > 0.",
+	tool_z_score_err_generic: "Enter finite x and mean, and SD > 0.",
+	tool_z_score_how_title: "How it works",
+	tool_z_score_how_body: "Enter a raw score, the distribution mean, and the standard deviation. The tool returns z = (x − mean) / SD so you can see how many SDs the score sits above or below the mean. Runs in your browser for coursework.",
+	tool_z_score_formula_title: "Formula and assumptions",
+	tool_z_score_formula_body: "z = (x − μ) / σ. Keep these limits in mind:",
+	tool_z_score_formula_item_1: "SD (σ) must be positive; zero or negative SD is rejected.",
+	tool_z_score_formula_item_2: "This is a linear rescaling of x relative to the given mean and SD, not a full normality test.",
+	tool_z_score_formula_item_3: "Units cancel: z is dimensionless.",
+	tool_z_score_formula_item_4: "Pair with a p-value page if you next need a normal-tail probability from z.",
+	tool_z_score_example_title: "Example",
+	tool_z_score_example: "Example: x = 85, mean = 70, SD = 10 → z = (85 − 70) / 10 = 1.5.",
+	tool_z_score_usecases_title: "When to use it",
+	tool_z_score_usecase_1: "Homework: convert a test score to a standard score.",
+	tool_z_score_usecase_2: "Compare two scores from distributions with different means or spreads.",
+	tool_z_score_usecase_3: "Prepare a z to feed into a two-tailed p-value check.",
+	tool_z_score_faq_q1: "What does z = 1.5 mean?",
+	tool_z_score_faq_a1: "The raw score is 1.5 standard deviations above the stated mean.",
+	tool_z_score_faq_q2: "Can SD be zero?",
+	tool_z_score_faq_a2: "No. Division by zero is undefined; enter SD > 0.",
+	tool_z_score_faq_q3: "Is a large |z| always “significant”?",
+	tool_z_score_faq_a3: "Not by itself. Significance needs a model and a p-value or critical value, not only the z number.",
+	tool_z_score_faq_q4: "Does this assume a normal distribution?",
+	tool_z_score_faq_a4: "The algebra of z does not require normality, but many follow-on uses (like normal p-values) do.",
+	tool_z_score_disclaimer: "Educational z = (x − mean) / SD only. Not a substitute for statistical software or study design.",
+	tool_z_score_references: "Wikipedia standard score and standard deviation.",
+	tool_z_score_ref_z_label: "Wikipedia — Standard score",
+	tool_z_score_ref_sd_label: "Wikipedia — Standard deviation",
+	tool_z_score_article: "Compute a z-score from a raw value, mean, and SD with z = (x − mean) / SD for learning.",
+};
+
+export default en;

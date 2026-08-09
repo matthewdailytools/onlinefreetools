@@ -1,0 +1,51 @@
+/**
+ * i18n tool shard (how-to-calculate-tip / ja).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const ja: SiteLangDict = {
+	tool_tip_title: "チップ計算ツール — チップと割り勘",
+	tool_tip_description: "会計とチップ率からチップ額を出し、人数で割り勘できます。例：会計 80、チップ 15% → チップ 12、合計 92。ブラウザ内の日常計算です。。計算はブラウザ内で行いサーバーにアップロードしません。学習用の目安であり投資・税務・経営の助言ではありません。",
+	tool_tip_calculate: "計算する",
+	tool_tip_sample: "サンプル",
+	tool_tip_clear: "クリア",
+	tool_tip_bill_label: "会計金額",
+	tool_tip_bill_ph: "例 80",
+	tool_tip_tip_label: "チップ率 %",
+	tool_tip_tip_ph: "例 15",
+	tool_tip_split_label: "割り勘人数",
+	tool_tip_split_ph: "例 1",
+	tool_tip_tipOut_label: "チップ",
+	tool_tip_totalOut_label: "合計",
+	tool_tip_eachOut_label: "一人あたり",
+	tool_tip_result_note: "チップ=会計×率；合計=会計+チップ；一人=合計/人数。",
+	tool_tip_err_generic: "会計>0、率≥0、人数≥1。",
+	tool_tip_how_title: "使い方",
+	tool_tip_how_body: "会計・チップ率・人数を入力。国ごとの習慣は算術の範囲外です。",
+	tool_tip_formula_title: "計算式",
+	tool_tip_formula_body: "チップ=会計×p；合計=会計+チップ。注意:",
+	tool_tip_formula_item_1: "税の自動加算なし。税込みでチップするなら税を会計に含めてください。",
+	tool_tip_formula_item_2: "店舗の端数処理は異なる場合あり。",
+	tool_tip_formula_item_3: "決済アプリではありません。",
+	tool_tip_example_title: "例",
+	tool_tip_example: "例：会計80、15%、1人 → チップ12、合計92。",
+	tool_tip_usecases_title: "こんなときに",
+	tool_tip_usecase_1: "レストラン会計のチップ。",
+	tool_tip_usecase_2: "チップ後の割り勘。",
+	tool_tip_usecase_3: "VAT/割引ページと併用。",
+	tool_tip_faq_q1: "例は？",
+	tool_tip_faq_a1: "80の15%→チップ12、合計92。",
+	tool_tip_faq_q2: "税込み？",
+	tool_tip_faq_a2: "必要なら税を会計に足してから。",
+	tool_tip_faq_q3: "人数0？",
+	tool_tip_faq_a3: "1以上。",
+	tool_tip_faq_q4: "決済？",
+	tool_tip_faq_a4: "いいえ、ローカル計算のみ。",
+	tool_tip_article: "チップと割り勘",
+	tool_tip_disclaimer: "チップの学習用試算であり、投資・税務の助言ではありません。",
+	tool_tip_references: "Investopedia と標準的な教科書公式。",
+	tool_tip_ref_a_label: "Wikipedia — Gratuity",
+	tool_tip_ref_b_label: "Investopedia — Tip",
+};
+
+export default ja;

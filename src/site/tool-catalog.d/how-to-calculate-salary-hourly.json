@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-salary-hourly",
+  "path": "/tools/how-to-calculate-salary-hourly",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": true,
+  "i18nKey": "tool_salary_hourly_title",
+  "homeTitleKey": "tool_salary_hourly_title",
+  "homeDescKey": "tool_salary_hourly_description",
+  "faqPrefix": "tool_salary_hourly",
+  "related": [
+    "how-to-calculate-cagr",
+    "how-to-calculate-roi"
+  ],
+  "logo": "/icons/tools/how-to-calculate-salary-hourly.svg",
+  "page": {
+    "module": "../pages/howToCalculateSalaryHourlyPage",
+    "export": "renderHowToCalculateSalaryHourlyPage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

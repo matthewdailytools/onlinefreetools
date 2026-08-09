@@ -1,0 +1,50 @@
+/**
+ * i18n tool shard (how-to-calculate-discount / de).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const de: SiteLangDict = {
+	tool_discount_title: "Rabatt-Rechner — Verkaufspreis berechnen",
+	tool_discount_description: "Berechnen Sie den Endpreis aus Originalbetrag und Rabattprozent. Beispiel: 100 abzüglich 20% → 80. Optionaler Zweitrabatt gilt auf den bereits reduzierten Preis. Nur im Browser — keine Ladenkasse.",
+	tool_discount_calculate: "Berechnen",
+	tool_discount_sample: "Beispiel laden",
+	tool_discount_clear: "Leeren",
+	tool_discount_original_label: "Originalpreis",
+	tool_discount_original_ph: "z. B. 100",
+	tool_discount_pct_label: "Rabatt (% off)",
+	tool_discount_pct_ph: "z. B. 20",
+	tool_discount_pct2_label: "Zweiter Rabatt % (optional)",
+	tool_discount_pct2_ph: "z. B. 10",
+	tool_discount_finalOut_label: "Endpreis",
+	tool_discount_savedOut_label: "Gesamtersparnis",
+	tool_discount_result_note: "Ein zweiter Rabatt gilt auf den bereits reduzierten Preis. Nur zur Veranschaulichung.",
+	tool_discount_err_generic: "Bitte positiven Originalpreis und Prozent von 0 bis 100 eingeben.",
+	tool_discount_how_title: "So funktioniert’s",
+	tool_discount_how_body: "Originalpreis und Rabattprozent eingeben. Optional einen zweiten Prozentwert auf den bereits reduzierten Betrag. Endpreis und Ersparnis erscheinen im Browser.",
+	tool_discount_formula_title: "Formel",
+	tool_discount_formula_body: "Endpreis = Original × (1 − d₁/100) × (1 − d₂/100) bei Zweitrabatt. Hinweise:",
+	tool_discount_formula_item_1: "d₁ und d₂ sind Abschläge in Prozent (20 = 20% off), keine Faktoren 0,8.",
+	tool_discount_formula_item_2: "Zweiten Wert leer oder 0 lassen für einen einzelnen Rabatt.",
+	tool_discount_formula_item_3: "Steuern und Festbetragsgutscheine werden nicht modelliert.",
+	tool_discount_example_title: "Beispiel",
+	tool_discount_example: "Beispiel: 100 abzüglich 20% → 80. Dann weitere 10% → 72.",
+	tool_discount_usecases_title: "Wann sinnvoll",
+	tool_discount_usecase_1: "Aktionspreis vor Steuer grob schätzen.",
+	tool_discount_usecase_2: "Hausaufgabe: aufeinanderfolgende Prozente.",
+	tool_discount_usecase_3: "Doppelrabatt üben.",
+	tool_discount_faq_q1: "Wie stapelt der zweite Rabatt?",
+	tool_discount_faq_a1: "Auf den bereits reduzierten Preis.",
+	tool_discount_faq_q2: "Heißt 20% off, nur 20% zahlen?",
+	tool_discount_faq_a2: "Nein: Sie zahlen 80% des Originals.",
+	tool_discount_faq_q3: "Mit Steuer?",
+	tool_discount_faq_a3: "Nein.",
+	tool_discount_faq_q4: "Festbetragsgutschein?",
+	tool_discount_faq_a4: "Diese Seite nutzt nur Prozente.",
+	tool_discount_disclaimer: "Nur zur Veranschaulichung von Preisen — keine Kasse und kein Steuerrechner.",
+	tool_discount_references: "Investopedia zu Rabatten; Arithmetik aufeinanderfolgender %.",
+	tool_discount_ref_a_label: "Investopedia — Discount",
+	tool_discount_ref_b_label: "Wikipedia — Rabatt",
+	tool_discount_article: "Verkaufspreis aus Originalbetrag und % off, optional mit Zweitrabatt auf derselben Seite.",
+};
+
+export default de;

@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-pace",
+  "path": "/tools/how-to-calculate-pace",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_pace_title",
+  "homeTitleKey": "tool_pace_title",
+  "homeDescKey": "tool_pace_description",
+  "faqPrefix": "tool_pace",
+  "related": [
+    "how-to-calculate-one-rep-max",
+    "how-to-calculate-heart-rate"
+  ],
+  "logo": "/icons/tools/how-to-calculate-pace.svg",
+  "page": {
+    "module": "../pages/howToCalculatePacePage",
+    "export": "renderHowToCalculatePacePage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

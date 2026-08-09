@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-payback-period",
+  "path": "/tools/how-to-calculate-payback-period",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": true,
+  "i18nKey": "tool_payback_period_title",
+  "homeTitleKey": "tool_payback_period_title",
+  "homeDescKey": "tool_payback_period_description",
+  "faqPrefix": "tool_payback_period",
+  "related": [
+    "how-to-calculate-npv",
+    "how-to-calculate-irr"
+  ],
+  "logo": "/icons/tools/how-to-calculate-payback-period.svg",
+  "page": {
+    "module": "../pages/howToCalculatePaybackPeriodPage",
+    "export": "renderHowToCalculatePaybackPeriodPage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

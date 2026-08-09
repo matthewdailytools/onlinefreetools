@@ -1,0 +1,50 @@
+/**
+ * i18n tool shard (how-to-calculate-discount / fr).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const fr: SiteLangDict = {
+	tool_discount_title: "Calculateur de remise — Prix soldé",
+	tool_discount_description: "Calculez le prix final à partir du montant d’origine et du % de remise. Exemple : 100 à −20 % → 80. Une seconde remise optionnelle s’applique au prix déjà réduit. Dans le navigateur uniquement — pas une caisse magasin.",
+	tool_discount_calculate: "Calculer",
+	tool_discount_sample: "Charger l’exemple",
+	tool_discount_clear: "Effacer",
+	tool_discount_original_label: "Prix d’origine",
+	tool_discount_original_ph: "ex. 100",
+	tool_discount_pct_label: "Remise (% off)",
+	tool_discount_pct_ph: "ex. 20",
+	tool_discount_pct2_label: "Seconde remise % (optionnel)",
+	tool_discount_pct2_ph: "ex. 10",
+	tool_discount_finalOut_label: "Prix final",
+	tool_discount_savedOut_label: "Économie totale",
+	tool_discount_result_note: "La seconde remise, le cas échéant, s’applique au prix déjà réduit. Usage éducatif.",
+	tool_discount_err_generic: "Saisissez un prix d’origine positif et un % entre 0 et 100.",
+	tool_discount_how_title: "Fonctionnement",
+	tool_discount_how_body: "Indiquez le prix d’origine et le pourcentage de remise. Ajoutez éventuellement une seconde remise sur le montant déjà réduit. Le navigateur affiche le final et l’économie.",
+	tool_discount_formula_title: "Formule",
+	tool_discount_formula_body: "Final = original × (1 − d₁/100) × (1 − d₂/100) s’il y a une seconde remise. Notes :",
+	tool_discount_formula_item_1: "d₁ et d₂ sont des pourcentages de baisse (20 = −20 %).",
+	tool_discount_formula_item_2: "Laissez le second vide ou à 0 pour une seule remise.",
+	tool_discount_formula_item_3: "Taxes et coupons à montant fixe ne sont pas modélisés.",
+	tool_discount_example_title: "Exemple",
+	tool_discount_example: "Exemple : 100 à −20 % → 80. Puis −10 % → 72.",
+	tool_discount_usecases_title: "Cas d’usage",
+	tool_discount_usecase_1: "Estimer une promo avant taxe.",
+	tool_discount_usecase_2: "Devoirs : remises successives.",
+	tool_discount_usecase_3: "S’entraîner aux doubles remises.",
+	tool_discount_faq_q1: "Comment s’empile la seconde remise ?",
+	tool_discount_faq_a1: "Sur le prix déjà soldé.",
+	tool_discount_faq_q2: "−20 % signifie payer 20 % ?",
+	tool_discount_faq_a2: "Non : vous payez 80 % du prix d’origine.",
+	tool_discount_faq_q3: "Taxes incluses ?",
+	tool_discount_faq_a3: "Non.",
+	tool_discount_faq_q4: "Coupon à montant fixe ?",
+	tool_discount_faq_a4: "Cette page gère seulement les pourcentages.",
+	tool_discount_disclaimer: "Illustration éducative des prix — pas une caisse ni un moteur fiscal.",
+	tool_discount_references: "Investopedia sur les remises ; arithmétique des % successifs.",
+	tool_discount_ref_a_label: "Investopedia — Discount",
+	tool_discount_ref_b_label: "Wikipédia — Remise",
+	tool_discount_article: "Prix soldé depuis un montant d’origine et un % off, avec seconde remise optionnelle.",
+};
+
+export default fr;

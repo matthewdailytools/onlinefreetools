@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-slope",
+  "path": "/tools/how-to-calculate-slope",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_slope_title",
+  "homeTitleKey": "tool_slope_title",
+  "homeDescKey": "tool_slope_description",
+  "faqPrefix": "tool_slope",
+  "related": [
+    "how-to-calculate-pythagorean-theorem",
+    "how-to-calculate-aspect-ratio"
+  ],
+  "logo": "/icons/tools/how-to-calculate-slope.svg",
+  "page": {
+    "module": "../pages/howToCalculateSlopePage",
+    "export": "renderHowToCalculateSlopePage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

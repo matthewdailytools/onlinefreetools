@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-vat / fr).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const fr: SiteLangDict = {
+	tool_vat_title: "Calculateur de TVA / GST",
+	tool_vat_description: "Ajoutez la TVA à un HT ou extrayez la taxe d’un TTC. Exemple : HT 100 à 20 % → TTC 120. Vous saisissez le taux. Dans le navigateur.",
+	tool_vat_calculate: "Calculer",
+	tool_vat_sample: "Charger l’exemple",
+	tool_vat_clear: "Effacer",
+	tool_vat_mode_label: "Mode",
+	tool_vat_mode_add: "Ajouter au HT",
+	tool_vat_mode_extract: "Extraire du TTC",
+	tool_vat_amount_label: "Montant",
+	tool_vat_amount_ph: "ex. 100",
+	tool_vat_rate_label: "TVA %",
+	tool_vat_rate_ph: "ex. 20",
+	tool_vat_grossOut_label: "TTC",
+	tool_vat_netOut_label: "HT",
+	tool_vat_taxOut_label: "Taxe",
+	tool_vat_result_note: "Éducatif.",
+	tool_vat_err_generic: "Vérifiez les entrées.",
+	tool_vat_how_title: "Fonctionnement",
+	tool_vat_how_body: "Choisissez mode, montant et taux.",
+	tool_vat_formula_title: "Formule",
+	tool_vat_formula_body: "Choisissez mode, montant et taux.",
+	tool_vat_formula_item_1: "See formula notes.",
+	tool_vat_formula_item_2: "Check inputs.",
+	tool_vat_formula_item_3: "Educational only.",
+	tool_vat_example_title: "Exemple",
+	tool_vat_example: "Exemple : HT 100 à 20 % → TTC 120.",
+	tool_vat_usecases_title: "Cas d’usage",
+	tool_vat_usecase_1: "Homework.",
+	tool_vat_usecase_2: "Quick sketch.",
+	tool_vat_usecase_3: "Compare related tools.",
+	tool_vat_faq_q1: "Exemple ?",
+	tool_vat_faq_a1: "Exemple : HT 100 à 20 % → TTC 120.",
+	tool_vat_faq_q2: "Formula?",
+	tool_vat_faq_a2: "See Formula section.",
+	tool_vat_faq_q3: "Advice?",
+	tool_vat_faq_a3: "Educational only.",
+	tool_vat_faq_q4: "Related?",
+	tool_vat_faq_a4: "See related tools.",
+	tool_vat_article: "Calculateur de TVA / GST",
+	tool_vat_disclaimer: "Illustration éducative (VAT) uniquement — pas un conseil financier.",
+	tool_vat_references: "Investopedia et formules de manuel.",
+	tool_vat_ref_a_label: "Investopedia",
+	tool_vat_ref_b_label: "Wikipedia",
+};
+
+export default fr;

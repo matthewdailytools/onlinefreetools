@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-macros",
+  "path": "/tools/how-to-calculate-macros",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": true,
+  "i18nKey": "tool_macros_title",
+  "homeTitleKey": "tool_macros_title",
+  "homeDescKey": "tool_macros_description",
+  "faqPrefix": "tool_macros",
+  "related": [
+    "how-to-calculate-heart-rate",
+    "how-to-calculate-bmr-tdee"
+  ],
+  "logo": "/icons/tools/how-to-calculate-macros.svg",
+  "page": {
+    "module": "../pages/howToCalculateMacrosPage",
+    "export": "renderHowToCalculateMacrosPage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

@@ -1,0 +1,50 @@
+/**
+ * i18n tool shard (how-to-calculate-z-score / fr).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const fr: SiteLangDict = {
+	tool_z_score_title: "Calculateur de score z — Comment calculer un score standard",
+	tool_z_score_description: "Convertissez un score brut en z avec z = (x − moyenne) / écart-type. Exemple : x = 85, moyenne = 70, écart-type = 10 → z = 1,5. Hypothèses d’échelle linéaire et écart-type > 0. Dans le navigateur, pour cours et vérifications.",
+	tool_z_score_calculate: "Calculer",
+	tool_z_score_sample: "Charger l’exemple",
+	tool_z_score_clear: "Effacer",
+	tool_z_score_x_label: "Score brut (x)",
+	tool_z_score_x_ph: "ex. 85",
+	tool_z_score_mean_label: "Moyenne (μ)",
+	tool_z_score_mean_ph: "ex. 70",
+	tool_z_score_sd_label: "Écart-type (σ)",
+	tool_z_score_sd_ph: "ex. 10",
+	tool_z_score_zOut_label: "Score z",
+	tool_z_score_result_note: "z = (x − moyenne) / écart-type pour apprendre — moyenne finie et écart-type > 0.",
+	tool_z_score_err_generic: "Saisissez x et moyenne finis, et écart-type > 0.",
+	tool_z_score_how_title: "Fonctionnement",
+	tool_z_score_how_body: "Entrez le score, la moyenne et l’écart-type. L’outil renvoie z = (x − moyenne) / écart-type pour voir de combien d’écarts-types vous êtes au-dessus ou en dessous. Dans le navigateur, pour les cours.",
+	tool_z_score_formula_title: "Formule et hypothèses",
+	tool_z_score_formula_body: "z = (x − μ) / σ. Limites :",
+	tool_z_score_formula_item_1: "L’écart-type doit être positif.",
+	tool_z_score_formula_item_2: "Rescale linéaire, pas un test de normalité.",
+	tool_z_score_formula_item_3: "z est sans dimension.",
+	tool_z_score_formula_item_4: "Associez une page de p-valeur si vous voulez la queue normale.",
+	tool_z_score_example_title: "Exemple",
+	tool_z_score_example: "Exemple : x = 85, moyenne = 70, écart-type = 10 → z = 1,5.",
+	tool_z_score_usecases_title: "Quand l’utiliser",
+	tool_z_score_usecase_1: "Devoir : convertir une note en score standard.",
+	tool_z_score_usecase_2: "Comparer des scores issus de lois différentes.",
+	tool_z_score_usecase_3: "Préparer un z pour un test bilatéral.",
+	tool_z_score_faq_q1: "Que signifie z = 1,5 ?",
+	tool_z_score_faq_a1: "Le score est 1,5 écart-type au-dessus de la moyenne indiquée.",
+	tool_z_score_faq_q2: "L’écart-type peut-il être nul ?",
+	tool_z_score_faq_a2: "Non ; division par zéro indéfinie.",
+	tool_z_score_faq_q3: "Un grand |z| est-il forcément « significatif » ?",
+	tool_z_score_faq_a3: "Pas seul ; il faut un modèle et une p-valeur ou une valeur critique.",
+	tool_z_score_faq_q4: "Faut-il la normalité ?",
+	tool_z_score_faq_a4: "L’algèbre de z non ; beaucoup d’usages suivants avec queues normales oui.",
+	tool_z_score_disclaimer: "z pédagogique seulement = (x − moyenne) / écart-type. Ne remplace pas un logiciel statistique.",
+	tool_z_score_references: "Wikipedia score standard et écart-type.",
+	tool_z_score_ref_z_label: "Wikipedia — Score standard",
+	tool_z_score_ref_sd_label: "Wikipedia — Écart-type",
+	tool_z_score_article: "Calculez un score z à partir de x, moyenne et écart-type avec z = (x − moyenne) / écart-type.",
+};
+
+export default fr;

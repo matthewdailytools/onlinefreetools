@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-present-value",
+  "path": "/tools/how-to-calculate-present-value",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": true,
+  "i18nKey": "tool_present_value_title",
+  "homeTitleKey": "tool_present_value_title",
+  "homeDescKey": "tool_present_value_description",
+  "faqPrefix": "tool_present_value",
+  "related": [
+    "how-to-calculate-npv",
+    "how-to-calculate-cagr"
+  ],
+  "logo": "/icons/tools/how-to-calculate-present-value.svg",
+  "page": {
+    "module": "../pages/howToCalculatePresentValuePage",
+    "export": "renderHowToCalculatePresentValuePage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

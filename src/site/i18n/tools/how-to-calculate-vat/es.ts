@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-vat / es).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const es: SiteLangDict = {
+	tool_vat_title: "Calculadora de IVA / GST",
+	tool_vat_description: "Añade IVA/GST a un neto o extrae el impuesto de un bruto. Ejemplo: neto 100 al 20% → bruto 120. Tú eliges la tasa. En el navegador.",
+	tool_vat_calculate: "Calcular",
+	tool_vat_sample: "Cargar ejemplo",
+	tool_vat_clear: "Limpiar",
+	tool_vat_mode_label: "Modo",
+	tool_vat_mode_add: "Añadir al neto",
+	tool_vat_mode_extract: "Extraer del bruto",
+	tool_vat_amount_label: "Importe",
+	tool_vat_amount_ph: "p. ej. 100",
+	tool_vat_rate_label: "IVA/GST %",
+	tool_vat_rate_ph: "p. ej. 20",
+	tool_vat_grossOut_label: "Bruto",
+	tool_vat_netOut_label: "Neto",
+	tool_vat_taxOut_label: "Impuesto",
+	tool_vat_result_note: "Educativo.",
+	tool_vat_err_generic: "Revisa los datos.",
+	tool_vat_how_title: "Cómo funciona",
+	tool_vat_how_body: "Elige modo, importe y tasa.",
+	tool_vat_formula_title: "Fórmula",
+	tool_vat_formula_body: "Elige modo, importe y tasa.",
+	tool_vat_formula_item_1: "See formula notes.",
+	tool_vat_formula_item_2: "Check inputs.",
+	tool_vat_formula_item_3: "Educational only.",
+	tool_vat_example_title: "Ejemplo",
+	tool_vat_example: "Ejemplo: neto 100 al 20% → 120.",
+	tool_vat_usecases_title: "Cuándo usarlo",
+	tool_vat_usecase_1: "Homework.",
+	tool_vat_usecase_2: "Quick sketch.",
+	tool_vat_usecase_3: "Compare related tools.",
+	tool_vat_faq_q1: "¿Ejemplo?",
+	tool_vat_faq_a1: "Ejemplo: neto 100 al 20% → 120.",
+	tool_vat_faq_q2: "Formula?",
+	tool_vat_faq_a2: "See Formula section.",
+	tool_vat_faq_q3: "Advice?",
+	tool_vat_faq_a3: "Educational only.",
+	tool_vat_faq_q4: "Related?",
+	tool_vat_faq_a4: "See related tools.",
+	tool_vat_article: "Calculadora de IVA / GST",
+	tool_vat_disclaimer: "Solo ilustración educativa (VAT); no es consejo financiero.",
+	tool_vat_references: "Investopedia y fórmulas de libro.",
+	tool_vat_ref_a_label: "Investopedia",
+	tool_vat_ref_b_label: "Wikipedia",
+};
+
+export default es;

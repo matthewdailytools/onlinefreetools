@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-acceleration",
+  "path": "/tools/how-to-calculate-acceleration",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_acceleration_title",
+  "homeTitleKey": "tool_acceleration_title",
+  "homeDescKey": "tool_acceleration_description",
+  "faqPrefix": "tool_acceleration",
+  "related": [
+    "how-to-calculate-velocity",
+    "how-to-calculate-ohms-law"
+  ],
+  "logo": "/icons/tools/how-to-calculate-acceleration.svg",
+  "page": {
+    "module": "../pages/howToCalculateAccelerationPage",
+    "export": "renderHowToCalculateAccelerationPage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

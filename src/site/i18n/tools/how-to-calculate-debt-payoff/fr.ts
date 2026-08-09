@@ -1,0 +1,50 @@
+/**
+ * i18n tool shard (how-to-calculate-debt-payoff / fr).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const fr: SiteLangDict = {
+	tool_debt_payoff_title: "Calculateur de remboursement de dette",
+	tool_debt_payoff_description: "Estimez les mois pour soldes avec paiement mensuel fixe et taux annuel. Exemple : 5000 à 12 % en payant 200/mois. Éducatif.",
+	tool_debt_payoff_calculate: "Calculer",
+	tool_debt_payoff_sample: "Charger l’exemple",
+	tool_debt_payoff_clear: "Effacer",
+	tool_debt_payoff_principal_label: "Solde",
+	tool_debt_payoff_principal_ph: "ex. 5000",
+	tool_debt_payoff_rate_label: "Taux annuel %",
+	tool_debt_payoff_rate_ph: "ex. 12",
+	tool_debt_payoff_pay_label: "Paiement mensuel",
+	tool_debt_payoff_pay_ph: "ex. 200",
+	tool_debt_payoff_monthsOut_label: "Mois",
+	tool_debt_payoff_interestOut_label: "Intérêts totaux (approx.)",
+	tool_debt_payoff_result_note: "Éducatif.",
+	tool_debt_payoff_err_generic: "Vérifiez les entrées.",
+	tool_debt_payoff_how_title: "Fonctionnement",
+	tool_debt_payoff_how_body: "Saisissez solde, taux et paiement mensuel.",
+	tool_debt_payoff_formula_title: "Formule",
+	tool_debt_payoff_formula_body: "Saisissez solde, taux et paiement mensuel.",
+	tool_debt_payoff_formula_item_1: "See formula notes.",
+	tool_debt_payoff_formula_item_2: "Check inputs.",
+	tool_debt_payoff_formula_item_3: "Educational only.",
+	tool_debt_payoff_example_title: "Exemple",
+	tool_debt_payoff_example: "Exemple : ~30 mois.",
+	tool_debt_payoff_usecases_title: "Cas d’usage",
+	tool_debt_payoff_usecase_1: "Homework.",
+	tool_debt_payoff_usecase_2: "Quick sketch.",
+	tool_debt_payoff_usecase_3: "Compare related tools.",
+	tool_debt_payoff_faq_q1: "Exemple ?",
+	tool_debt_payoff_faq_a1: "Exemple : ~30 mois.",
+	tool_debt_payoff_faq_q2: "Formula?",
+	tool_debt_payoff_faq_a2: "See Formula section.",
+	tool_debt_payoff_faq_q3: "Advice?",
+	tool_debt_payoff_faq_a3: "Educational only.",
+	tool_debt_payoff_faq_q4: "Related?",
+	tool_debt_payoff_faq_a4: "See related tools.",
+	tool_debt_payoff_article: "Calculateur de remboursement de dette",
+	tool_debt_payoff_disclaimer: "Illustration éducative (debt payoff) uniquement — pas un conseil financier.",
+	tool_debt_payoff_references: "Investopedia et formules de manuel.",
+	tool_debt_payoff_ref_a_label: "Investopedia",
+	tool_debt_payoff_ref_b_label: "Wikipedia",
+};
+
+export default fr;

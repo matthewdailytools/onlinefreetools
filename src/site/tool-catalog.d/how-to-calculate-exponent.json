@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-exponent",
+  "path": "/tools/how-to-calculate-exponent",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_exponent_title",
+  "homeTitleKey": "tool_exponent_title",
+  "homeDescKey": "tool_exponent_description",
+  "faqPrefix": "tool_exponent",
+  "related": [
+    "how-to-calculate-logarithm",
+    "how-to-calculate-scientific-notation"
+  ],
+  "logo": "/icons/tools/how-to-calculate-exponent.svg",
+  "page": {
+    "module": "../pages/howToCalculateExponentPage",
+    "export": "renderHowToCalculateExponentPage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

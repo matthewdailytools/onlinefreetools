@@ -1,0 +1,51 @@
+/**
+ * i18n tool shard (how-to-calculate-profit-margin / id).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const id: SiteLangDict = {
+	tool_profit_margin_title: "Kalkulator margin laba — Neto atau operasional",
+	tool_profit_margin_description: "Hitung margin laba neto atau operasional dari pendapatan dan biaya. Contoh: pendapatan 10000, biaya 7000 → margin neto 30%. Jenis di satu halaman. Edukatif.",
+	tool_profit_margin_calculate: "Hitung",
+	tool_profit_margin_sample: "Muat contoh",
+	tool_profit_margin_clear: "Hapus",
+	tool_profit_margin_type_label: "Jenis margin",
+	tool_profit_margin_type_net: "Margin laba neto",
+	tool_profit_margin_type_op: "Margin operasional",
+	tool_profit_margin_rev_label: "Pendapatan",
+	tool_profit_margin_rev_ph: "mis. 10000",
+	tool_profit_margin_cost_label: "Biaya",
+	tool_profit_margin_cost_ph: "mis. 7000",
+	tool_profit_margin_marginOut_label: "Margin %",
+	tool_profit_margin_profitOut_label: "Laba",
+	tool_profit_margin_result_note: "Margin = laba ÷ pendapatan. Edukatif.",
+	tool_profit_margin_err_generic: "Pendapatan > 0 dan biaya ≥ 0.",
+	tool_profit_margin_how_title: "Cara kerja",
+	tool_profit_margin_how_body: "Pilih jenis margin, isi pendapatan dan biaya. Margin = laba / pendapatan × 100.",
+	tool_profit_margin_formula_title: "Rumus",
+	tool_profit_margin_formula_body: "Margin % = (pendapatan − biaya) / pendapatan × 100. Catatan:",
+	tool_profit_margin_formula_item_1: "Sesuaikan biaya dengan definisi.",
+	tool_profit_margin_formula_item_2: "Pendapatan > 0.",
+	tool_profit_margin_formula_item_3: "Laba rugi sederhana.",
+	tool_profit_margin_example_title: "Contoh",
+	tool_profit_margin_example: "Contoh: pendapatan 10000, biaya 7000 → margin 30%.",
+	tool_profit_margin_usecases_title: "Kapan dipakai",
+	tool_profit_margin_usecase_1: "PR margin neto.",
+	tool_profit_margin_usecase_2: "Bandingkan operasional vs neto.",
+	tool_profit_margin_usecase_3: "Bandingkan dengan gross margin.",
+	tool_profit_margin_faq_q1: "Sample / contoh?",
+	tool_profit_margin_faq_a1: "30%",
+	tool_profit_margin_faq_q2: "Markup vs margin?",
+	tool_profit_margin_faq_a2: "Markup÷cost; margin÷revenue.",
+	tool_profit_margin_faq_q3: "Why two types?",
+	tool_profit_margin_faq_a3: "Same form; different cost stacks.",
+	tool_profit_margin_faq_q4: "Advice?",
+	tool_profit_margin_faq_a4: "Educational only.",
+	tool_profit_margin_article: "Kalkulator margin laba — Neto atau operasional",
+	tool_profit_margin_disclaimer: "Hanya ilustrasi edukatif (margen); bukan saran keuangan.",
+	tool_profit_margin_references: "Investopedia dan rumus buku teks.",
+	tool_profit_margin_ref_a_label: "Investopedia — Profit margin",
+	tool_profit_margin_ref_b_label: "Investopedia — Operating margin",
+};
+
+export default id;

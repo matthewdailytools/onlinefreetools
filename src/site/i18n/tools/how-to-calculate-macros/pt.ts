@@ -1,0 +1,53 @@
+/**
+ * i18n tool shard (how-to-calculate-macros / pt).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const pt: SiteLangDict = {
+	tool_macros_title: "Calculadora de macros",
+	tool_macros_description: "Divida calorias em gramas de proteína, carbo e gordura (4/4/9). Exemplo: 2000 a 30/40/30% → 150/200/≈66.67 g. Apenas educativo.",
+	tool_macros_calculate: "Calcular",
+	tool_macros_sample: "Carregar exemplo",
+	tool_macros_clear: "Limpar",
+	tool_macros_cal_label: "Calorias (kcal)",
+	tool_macros_cal_ph: "ex. 2000",
+	tool_macros_pPct_label: "Proteína %",
+	tool_macros_pPct_ph: "ex. 30",
+	tool_macros_cPct_label: "Carboidratos %",
+	tool_macros_cPct_ph: "ex. 40",
+	tool_macros_fPct_label: "Gordura %",
+	tool_macros_fPct_ph: "ex. 30",
+	tool_macros_pG_label: "Proteína (g)",
+	tool_macros_cG_label: "Carboidratos (g)",
+	tool_macros_fG_label: "Gordura (g)",
+	tool_macros_result_note: "Educativo.",
+	tool_macros_err_generic: "Verifique os dados.",
+	tool_macros_how_title: "Como funciona",
+	tool_macros_how_body: "Informe calorias e %.",
+	tool_macros_formula_title: "Fórmula",
+	tool_macros_formula_body: "Informe calorias e %.",
+	tool_macros_formula_item_1: "See formula notes.",
+	tool_macros_formula_item_2: "Check inputs.",
+	tool_macros_formula_item_3: "Educational only.",
+	tool_macros_example_title: "Exemplo",
+	tool_macros_example: "Exemplo: 150/200/≈66.67 g.",
+	tool_macros_usecases_title: "Quando usar",
+	tool_macros_usecase_1: "Homework.",
+	tool_macros_usecase_2: "Quick sketch.",
+	tool_macros_usecase_3: "Compare related tools.",
+	tool_macros_faq_q1: "Exemplo?",
+	tool_macros_faq_a1: "Exemplo: 150/200/≈66.67 g.",
+	tool_macros_faq_q2: "Formula?",
+	tool_macros_faq_a2: "See Formula section.",
+	tool_macros_faq_q3: "Advice?",
+	tool_macros_faq_a3: "Educational only.",
+	tool_macros_faq_q4: "Related?",
+	tool_macros_faq_a4: "See related tools.",
+	tool_macros_article: "Calculadora de macros",
+	tool_macros_disclaimer: "Apenas ilustração educativa (macronutrients); não é conselho médico.",
+	tool_macros_references: "Referências educativas.",
+	tool_macros_ref_a_label: "Wikipedia",
+	tool_macros_ref_b_label: "Textbook formula",
+};
+
+export default pt;

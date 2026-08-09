@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-present-value / zh).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const zh: SiteLangDict = {
+	tool_present_value_title: "现值计算器 — 现值与终值互算",
+	tool_present_value_description: "在现值和终值模式间切换，计算单笔金额的时间价值。示例：终值 10000、年利率 5%、5 年 → 现值约 7835.26。浏览器本地计算；财务教育用，非投资建议。；全程浏览器本地计算，数据不上传服务器；结果仅供学习对照，不构成投资、理财或经营建议。；全程浏览器本地计算，数据不上传服务器；结果仅供学习对照，不构成投资、理财或经营建议。",
+	tool_present_value_calculate: "计算",
+	tool_present_value_sample: "加载样例",
+	tool_present_value_clear: "清空",
+	tool_present_value_mode_label: "模式",
+	tool_present_value_mode_pv: "求现值（已知终值）",
+	tool_present_value_mode_fv: "求终值（已知现值）",
+	tool_present_value_amount_label: "金额（PV 或 FV）",
+	tool_present_value_amount_ph: "例如 10000",
+	tool_present_value_rate_label: "年利率 %",
+	tool_present_value_rate_ph: "例如 5",
+	tool_present_value_n_label: "年数 n",
+	tool_present_value_n_ph: "例如 5",
+	tool_present_value_out_label: "结果",
+	tool_present_value_result_note: "PV=FV/(1+r)^n；FV=PV×(1+r)^n。非投资建议。",
+	tool_present_value_err_generic: "请填写正金额、有效利率（>-100%）与 n>0。",
+	tool_present_value_how_title: "怎么用",
+	tool_present_value_how_body: "选择求现值或求终值，填入已知金额、年利率与年数。与 NPV（多期现金流）分意图。",
+	tool_present_value_formula_title: "公式",
+	tool_present_value_formula_body: "PV = FV/(1+r)^n，FV = PV×(1+r)^n。注意：",
+	tool_present_value_formula_item_1: "本页按年末复利。",
+	tool_present_value_formula_item_2: "利率 ≤ −100% 无效。",
+	tool_present_value_formula_item_3: "年金序列请用 NPV。",
+	tool_present_value_example_title: "示例",
+	tool_present_value_example: "示例：FV=10000、r=5%、n=5 → PV≈7835.26。",
+	tool_present_value_usecases_title: "适合什么场景",
+	tool_present_value_usecase_1: "作业：单笔折现。",
+	tool_present_value_usecase_2: "估算未来目标的今天价值。",
+	tool_present_value_usecase_3: "与 NPV 对照多期现金流。",
+	tool_present_value_faq_q1: "样例现值？",
+	tool_present_value_faq_a1: "约 7835.26。",
+	tool_present_value_faq_q2: "与 NPV 差别？",
+	tool_present_value_faq_a2: "PV 单笔；NPV 折现现金流序列。",
+	tool_present_value_faq_q3: "按月复利？",
+	tool_present_value_faq_a3: "本页仅年期。",
+	tool_present_value_faq_q4: "投资建议？",
+	tool_present_value_faq_a4: "不是。",
+	tool_present_value_article: "现值计算器 — 现值与终值互算",
+	tool_present_value_disclaimer: "结果仅为现值学习演示，不构成投资、理财或税务建议。",
+	tool_present_value_references: "Investopedia 与常见教材公式。",
+	tool_present_value_ref_a_label: "Investopedia — Present value",
+	tool_present_value_ref_b_label: "Investopedia — Future value",
+};
+
+export default zh;

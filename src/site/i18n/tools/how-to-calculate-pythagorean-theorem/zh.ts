@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-pythagorean-theorem / zh).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const zh: SiteLangDict = {
+	tool_pythagorean_title: "勾股定理计算器 — 如何求直角三角形缺边",
+	tool_pythagorean_description: "用勾股定理 a²+b²=c² 求直角三角形缺边 a、b 或 c。示例：a=3、b=4 → c=5。输入两条已知正边长；不合法的直角边/斜边组合会被拒绝。浏览器内计算，适合作业与 3-4-5 型快速核对，并写明求直角边时斜边须更长于另一已知边。",
+	tool_pythagorean_calculate: "计算",
+	tool_pythagorean_sample: "加载样例",
+	tool_pythagorean_clear: "清空",
+	tool_pythagorean_solve_label: "求解",
+	tool_pythagorean_solve_c: "斜边 c",
+	tool_pythagorean_solve_a: "直角边 a",
+	tool_pythagorean_solve_b: "直角边 b",
+	tool_pythagorean_known1_label: "第一条已知边",
+	tool_pythagorean_known1_ph: "例如 3",
+	tool_pythagorean_known2_label: "第二条已知边",
+	tool_pythagorean_known2_ph: "例如 4",
+	tool_pythagorean_sideOut_label: "所求边",
+	tool_pythagorean_result_note: "直角三角形 a²+b²=c²。求直角边时，斜边必须长于另一已知直角边。",
+	tool_pythagorean_err_generic: "请输入两条有限正边长；求直角边时斜边必须更大。",
+	tool_pythagorean_how_title: "怎么用",
+	tool_pythagorean_how_body: "选择所缺边。输入另外两条正长度。求 c 时输入 a、b；求 a 时输入 b、c；求 b 时输入 a、c。返回正的平方根解。",
+	tool_pythagorean_formula_title: "公式",
+	tool_pythagorean_formula_body: "勾股定理 a²+b²=c²：",
+	tool_pythagorean_formula_item_1: "缺 c：c=√(a²+b²)。",
+	tool_pythagorean_formula_item_2: "缺 a：a=√(c²−b²)，且 c>b>0。",
+	tool_pythagorean_formula_item_3: "缺 b：b=√(c²−a²)，且 c>a>0。",
+	tool_pythagorean_formula_item_4: "仅实数正边长，不是完整三角学套件。",
+	tool_pythagorean_example_title: "示例",
+	tool_pythagorean_example: "示例：a=3，b=4 → c=5。",
+	tool_pythagorean_usecases_title: "适合什么场景",
+	tool_pythagorean_usecase_1: "几何作业：求直角三角形缺边。",
+	tool_pythagorean_usecase_2: "快速核对 3-4-5 型勾股数。",
+	tool_pythagorean_usecase_3: "由两条正交边估对角线。",
+	tool_pythagorean_disclaimer: "仅为欧氏平面几何教育用途。",
+	tool_pythagorean_references: "维基百科勾股定理。",
+	tool_pythagorean_ref_py_label: "维基百科 — 勾股定理",
+	tool_pythagorean_ref_rt_label: "维基百科 — 直角三角形",
+	tool_pythagorean_article: "用 a²+b²=c² 求直角三角形的缺边。",
+	tool_pythagorean_faq_q1: "求斜边时输入什么？",
+	tool_pythagorean_faq_a1: "输入两条直角边 a 与 b。",
+	tool_pythagorean_faq_q2: "单位必须填吗？",
+	tool_pythagorean_faq_a2: "不必，两已知边用同一单位即可。",
+	tool_pythagorean_faq_q3: "为什么拒绝 c≤a？",
+	tool_pythagorean_faq_a3: "斜边必须严格长于每一条直角边。",
+	tool_pythagorean_faq_q4: "钝角三角形可用吗？",
+	tool_pythagorean_faq_a4: "否，仅直角三角形 a²+b²=c²。",
+};
+
+export default zh;

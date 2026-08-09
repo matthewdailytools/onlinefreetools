@@ -1,0 +1,51 @@
+/**
+ * i18n tool shard (how-to-calculate-tip / de).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const de: SiteLangDict = {
+	tool_tip_title: "Trinkgeld-Rechner",
+	tool_tip_description: "Berechnen Sie Trinkgeld aus Rechnung und Prozent und teilen Sie optional. Beispiel: 80 bei 15% → 12 Trinkgeld, Gesamt 92. Im Browser.",
+	tool_tip_calculate: "Berechnen",
+	tool_tip_sample: "Beispiel laden",
+	tool_tip_clear: "Leeren",
+	tool_tip_bill_label: "Rechnung",
+	tool_tip_bill_ph: "z. B. 80",
+	tool_tip_tip_label: "Trinkgeld %",
+	tool_tip_tip_ph: "z. B. 15",
+	tool_tip_split_label: "Personen",
+	tool_tip_split_ph: "z. B. 1",
+	tool_tip_tipOut_label: "Trinkgeld",
+	tool_tip_totalOut_label: "Gesamt",
+	tool_tip_eachOut_label: "Pro Person",
+	tool_tip_result_note: "Bildungszweck.",
+	tool_tip_err_generic: "Eingaben prüfen.",
+	tool_tip_how_title: "So funktioniert’s",
+	tool_tip_how_body: "Rechnung, % und Personen eingeben.",
+	tool_tip_formula_title: "Formel",
+	tool_tip_formula_body: "Rechnung, % und Personen eingeben.",
+	tool_tip_formula_item_1: "See formula notes.",
+	tool_tip_formula_item_2: "Check inputs.",
+	tool_tip_formula_item_3: "Educational only.",
+	tool_tip_example_title: "Beispiel",
+	tool_tip_example: "Beispiel: 80 bei 15% → 12 / Gesamt 92.",
+	tool_tip_usecases_title: "Wann sinnvoll",
+	tool_tip_usecase_1: "Homework.",
+	tool_tip_usecase_2: "Quick sketch.",
+	tool_tip_usecase_3: "Compare related tools.",
+	tool_tip_faq_q1: "Beispiel?",
+	tool_tip_faq_a1: "Beispiel: 80 bei 15% → 12 / Gesamt 92.",
+	tool_tip_faq_q2: "Formula?",
+	tool_tip_faq_a2: "See Formula section.",
+	tool_tip_faq_q3: "Advice?",
+	tool_tip_faq_a3: "Educational only.",
+	tool_tip_faq_q4: "Related?",
+	tool_tip_faq_a4: "See related tools.",
+	tool_tip_article: "Trinkgeld-Rechner",
+	tool_tip_disclaimer: "Nur zur Veranschaulichung (tip) — keine Finanzberatung.",
+	tool_tip_references: "Investopedia und Lehrbuchformeln.",
+	tool_tip_ref_a_label: "Investopedia",
+	tool_tip_ref_b_label: "Wikipedia",
+};
+
+export default de;

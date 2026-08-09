@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-present-value / ar).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const ar: SiteLangDict = {
+	tool_present_value_title: "حاسبة القيمة الحالية والقيمة المستقبلية",
+	tool_present_value_description: "بدّل بين القيمة الحالية والمستقبلية لمبلغ واحد. مثال: مستقبل 10000 بمعدل 5٪ لـ5 سنوات → حالي ≈ 7835.26. تعليمي. حساب تعليمي في المتصفح وليس نصيحة مهنية.",
+	tool_present_value_calculate: "احسب",
+	tool_present_value_sample: "تحميل مثال",
+	tool_present_value_clear: "مسح",
+	tool_present_value_mode_label: "الوضع",
+	tool_present_value_mode_pv: "أوجد القيمة الحالية",
+	tool_present_value_mode_fv: "أوجد القيمة المستقبلية",
+	tool_present_value_amount_label: "المبلغ",
+	tool_present_value_amount_ph: "مثال 10000",
+	tool_present_value_rate_label: "معدل سنوي %",
+	tool_present_value_rate_ph: "مثال 5",
+	tool_present_value_n_label: "سنوات",
+	tool_present_value_n_ph: "مثال 5",
+	tool_present_value_out_label: "النتيجة",
+	tool_present_value_result_note: "تعليمي.",
+	tool_present_value_err_generic: "تحقق من المدخلات.",
+	tool_present_value_how_title: "طريقة الاستخدام",
+	tool_present_value_how_body: "اختر الوضع وأدخل المبلغ والمعدل والسنوات.",
+	tool_present_value_formula_title: "الصيغة",
+	tool_present_value_formula_body: "اختر الوضع وأدخل المبلغ والمعدل والسنوات.",
+	tool_present_value_formula_item_1: "See formula notes.",
+	tool_present_value_formula_item_2: "Check inputs.",
+	tool_present_value_formula_item_3: "Educational only.",
+	tool_present_value_example_title: "مثال",
+	tool_present_value_example: "مثال: مستقبل 10000، 5٪، 5 سنوات → ≈7835.26.",
+	tool_present_value_usecases_title: "متى تستخدمه",
+	tool_present_value_usecase_1: "Homework.",
+	tool_present_value_usecase_2: "Quick sketch.",
+	tool_present_value_usecase_3: "Compare related tools.",
+	tool_present_value_faq_q1: "المثال؟",
+	tool_present_value_faq_a1: "مثال: مستقبل 10000، 5٪، 5 سنوات → ≈7835.26.",
+	tool_present_value_faq_q2: "Formula?",
+	tool_present_value_faq_a2: "See Formula section.",
+	tool_present_value_faq_q3: "Advice?",
+	tool_present_value_faq_a3: "Educational only.",
+	tool_present_value_faq_q4: "Related?",
+	tool_present_value_faq_a4: "See related tools.",
+	tool_present_value_article: "حاسبة القيمة الحالية والقيمة المستقبلية",
+	tool_present_value_disclaimer: "توضيح تعليمي فقط (present value) وليس نصيحة مالية.",
+	tool_present_value_references: "Investopedia وصيغ دراسية.",
+	tool_present_value_ref_a_label: "Investopedia",
+	tool_present_value_ref_b_label: "Wikipedia",
+};
+
+export default ar;

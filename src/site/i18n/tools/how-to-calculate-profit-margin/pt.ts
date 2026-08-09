@@ -1,0 +1,51 @@
+/**
+ * i18n tool shard (how-to-calculate-profit-margin / pt).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const pt: SiteLangDict = {
+	tool_profit_margin_title: "Calculadora de margem de lucro — Líquida ou operacional",
+	tool_profit_margin_description: "Calcule a margem líquida ou operacional com receita e custos. Exemplo: receita 10.000 e custos 7.000 → margem líquida 30%. Tipo na mesma página. Educativo.",
+	tool_profit_margin_calculate: "Calcular",
+	tool_profit_margin_sample: "Carregar exemplo",
+	tool_profit_margin_clear: "Limpar",
+	tool_profit_margin_type_label: "Tipo de margem",
+	tool_profit_margin_type_net: "Margem líquida",
+	tool_profit_margin_type_op: "Margem operacional",
+	tool_profit_margin_rev_label: "Receita",
+	tool_profit_margin_rev_ph: "ex. 10000",
+	tool_profit_margin_cost_label: "Custos",
+	tool_profit_margin_cost_ph: "ex. 7000",
+	tool_profit_margin_marginOut_label: "Margem %",
+	tool_profit_margin_profitOut_label: "Lucro",
+	tool_profit_margin_result_note: "Margem = lucro ÷ receita. Educativo.",
+	tool_profit_margin_err_generic: "Receita > 0 e custos ≥ 0.",
+	tool_profit_margin_how_title: "Como funciona",
+	tool_profit_margin_how_body: "Escolha o tipo e informe receita e custos. Margem = lucro / receita × 100.",
+	tool_profit_margin_formula_title: "Fórmula",
+	tool_profit_margin_formula_body: "Margem % = (receita − custos) / receita × 100. Notas:",
+	tool_profit_margin_formula_item_1: "Ajuste custos à definição.",
+	tool_profit_margin_formula_item_2: "Receita > 0.",
+	tool_profit_margin_formula_item_3: "DRE simplificada.",
+	tool_profit_margin_example_title: "Exemplo",
+	tool_profit_margin_example: "Exemplo: receita 10.000, custos 7.000 → margem 30%.",
+	tool_profit_margin_usecases_title: "Quando usar",
+	tool_profit_margin_usecase_1: "Tarefa de margem líquida.",
+	tool_profit_margin_usecase_2: "Comparar operacional vs líquida.",
+	tool_profit_margin_usecase_3: "Contrastar com margem bruta.",
+	tool_profit_margin_faq_q1: "Sample / contoh?",
+	tool_profit_margin_faq_a1: "30%",
+	tool_profit_margin_faq_q2: "Markup vs margin?",
+	tool_profit_margin_faq_a2: "Markup÷cost; margin÷revenue.",
+	tool_profit_margin_faq_q3: "Why two types?",
+	tool_profit_margin_faq_a3: "Same form; different cost stacks.",
+	tool_profit_margin_faq_q4: "Advice?",
+	tool_profit_margin_faq_a4: "Educational only.",
+	tool_profit_margin_article: "Calculadora de margem de lucro — Líquida ou operacional",
+	tool_profit_margin_disclaimer: "Apenas ilustração educativa (margen); não é conselho financeiro.",
+	tool_profit_margin_references: "Investopedia e fórmulas didáticas.",
+	tool_profit_margin_ref_a_label: "Investopedia — Profit margin",
+	tool_profit_margin_ref_b_label: "Investopedia — Operating margin",
+};
+
+export default pt;

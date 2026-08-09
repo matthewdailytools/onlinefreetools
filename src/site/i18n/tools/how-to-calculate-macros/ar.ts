@@ -1,0 +1,53 @@
+/**
+ * i18n tool shard (how-to-calculate-macros / ar).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const ar: SiteLangDict = {
+	tool_macros_title: "حاسبة المغذيات الكبرى",
+	tool_macros_description: "احسب جرامات المغذيات الكبرى من السعرات ونسب البروتين/الكربوهيدرات/الدهون (4/4/9 سعرة لكل جرام). مثال: 2000 سعرة بنسبة 30/40/30٪ → 150/200/≈66.67 جم. تعليمي فقط — ليس نصيحة طبية.",
+	tool_macros_calculate: "احسب",
+	tool_macros_sample: "تحميل مثال",
+	tool_macros_clear: "مسح",
+	tool_macros_cal_label: "السعرات (kcal)",
+	tool_macros_cal_ph: "مثال 2000",
+	tool_macros_pPct_label: "بروتين %",
+	tool_macros_pPct_ph: "مثال 30",
+	tool_macros_cPct_label: "كربوهيدرات %",
+	tool_macros_cPct_ph: "مثال 40",
+	tool_macros_fPct_label: "دهون %",
+	tool_macros_fPct_ph: "مثال 30",
+	tool_macros_pG_label: "بروتين (غ)",
+	tool_macros_cG_label: "كربوهيدرات (غ)",
+	tool_macros_fG_label: "دهون (غ)",
+	tool_macros_result_note: "تعليمي.",
+	tool_macros_err_generic: "تحقق من المدخلات.",
+	tool_macros_how_title: "طريقة الاستخدام",
+	tool_macros_how_body: "أدخل السعرات والنسب.",
+	tool_macros_formula_title: "الصيغة",
+	tool_macros_formula_body: "أدخل السعرات والنسب.",
+	tool_macros_formula_item_1: "See formula notes.",
+	tool_macros_formula_item_2: "Check inputs.",
+	tool_macros_formula_item_3: "Educational only.",
+	tool_macros_example_title: "مثال",
+	tool_macros_example: "مثال: 150/200/≈66.67 جم.",
+	tool_macros_usecases_title: "متى تستخدمه",
+	tool_macros_usecase_1: "Homework.",
+	tool_macros_usecase_2: "Quick sketch.",
+	tool_macros_usecase_3: "Compare related tools.",
+	tool_macros_faq_q1: "المثال؟",
+	tool_macros_faq_a1: "مثال: 150/200/≈66.67 جم.",
+	tool_macros_faq_q2: "Formula?",
+	tool_macros_faq_a2: "See Formula section.",
+	tool_macros_faq_q3: "Advice?",
+	tool_macros_faq_a3: "Educational only.",
+	tool_macros_faq_q4: "Related?",
+	tool_macros_faq_a4: "See related tools.",
+	tool_macros_article: "حاسبة المغذيات الكبرى",
+	tool_macros_disclaimer: "توضيح تعليمي فقط (macronutrients) وليس نصيحة طبية.",
+	tool_macros_references: "مراجع تعليمية.",
+	tool_macros_ref_a_label: "Wikipedia",
+	tool_macros_ref_b_label: "Textbook formula",
+};
+
+export default ar;

@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-significant-figures",
+  "path": "/tools/how-to-calculate-significant-figures",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_significant_figures_title",
+  "homeTitleKey": "tool_significant_figures_title",
+  "homeDescKey": "tool_significant_figures_description",
+  "faqPrefix": "tool_significant_figures",
+  "related": [
+    "how-to-calculate-scientific-notation",
+    "how-to-calculate-z-score"
+  ],
+  "logo": "/icons/tools/how-to-calculate-significant-figures.svg",
+  "page": {
+    "module": "../pages/howToCalculateSignificantFiguresPage",
+    "export": "renderHowToCalculateSignificantFiguresPage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

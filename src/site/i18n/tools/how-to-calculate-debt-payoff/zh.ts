@@ -1,0 +1,50 @@
+/**
+ * i18n tool shard (how-to-calculate-debt-payoff / zh).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const zh: SiteLangDict = {
+	tool_debt_payoff_title: "债务还清计算器 — 多久还清余额",
+	tool_debt_payoff_description: "按本金、年利率与固定月供估算还清月数（简易摊还）。示例：本金 5000、年利率 12%、月供 200 → 还清月数。浏览器本地计算；借款教育用，非放贷或还款建议。；全程浏览器本地计算，数据不上传服务器；结果仅供学习对照，不构成投资、理财或经营建议。；全程浏览器本地计算，数据不上传服务器；结果仅供学习对照，不构成投资、理财或经营建议。",
+	tool_debt_payoff_calculate: "计算",
+	tool_debt_payoff_sample: "加载样例",
+	tool_debt_payoff_clear: "清空",
+	tool_debt_payoff_principal_label: "本金余额",
+	tool_debt_payoff_principal_ph: "例如 5000",
+	tool_debt_payoff_rate_label: "年利率 %",
+	tool_debt_payoff_rate_ph: "例如 12",
+	tool_debt_payoff_pay_label: "月供",
+	tool_debt_payoff_pay_ph: "例如 200",
+	tool_debt_payoff_monthsOut_label: "还清月数",
+	tool_debt_payoff_interestOut_label: "利息合计（约）",
+	tool_debt_payoff_result_note: "简易逐月摊还；月供须覆盖首月利息。非放贷建议。",
+	tool_debt_payoff_err_generic: "本金>0、利率≥0，且月供须覆盖月利息。",
+	tool_debt_payoff_how_title: "怎么用",
+	tool_debt_payoff_how_body: "填入余额、年利率与固定月供，逐月循环直至还清或达到上限。",
+	tool_debt_payoff_formula_title: "公式",
+	tool_debt_payoff_formula_body: "每月：利息=余额×r/12；本金减少=月供−利息。注意：",
+	tool_debt_payoff_formula_item_1: "月供≤首月利息则无法还清。",
+	tool_debt_payoff_formula_item_2: "费用与罚息省略。",
+	tool_debt_payoff_formula_item_3: "雪球/雪崩仅作说明，不拆页。",
+	tool_debt_payoff_example_title: "示例",
+	tool_debt_payoff_example: "示例：5000、12%、月供 200 → 约 30 个月（舍入会影响）。",
+	tool_debt_payoff_usecases_title: "适合什么场景",
+	tool_debt_payoff_usecase_1: "摊还月数作业。",
+	tool_debt_payoff_usecase_2: "检查月供能否还清。",
+	tool_debt_payoff_usecase_3: "与 EMI 页对照月供大小。",
+	tool_debt_payoff_faq_q1: "能还清吗？",
+	tool_debt_payoff_faq_a1: "月供须大于月利息。",
+	tool_debt_payoff_faq_q2: "样例约几个月？",
+	tool_debt_payoff_faq_a2: "约 30 个月。",
+	tool_debt_payoff_faq_q3: "雪球专页？",
+	tool_debt_payoff_faq_a3: "同页 FAQ 说明，不拆 URL。",
+	tool_debt_payoff_faq_q4: "建议？",
+	tool_debt_payoff_faq_a4: "仅供学习。",
+	tool_debt_payoff_article: "债务还清月数",
+	tool_debt_payoff_disclaimer: "结果仅为债务还清学习演示，不构成投资、理财或税务建议。",
+	tool_debt_payoff_references: "Investopedia 与常见教材公式。",
+	tool_debt_payoff_ref_a_label: "Investopedia — Amortization",
+	tool_debt_payoff_ref_b_label: "Investopedia — Debt",
+};
+
+export default zh;

@@ -1,0 +1,53 @@
+/**
+ * i18n tool shard (how-to-calculate-macros / de).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const de: SiteLangDict = {
+	tool_macros_title: "Makro-Rechner — Kalorien in Gramm",
+	tool_macros_description: "Berechnen Sie Makro-Gramm aus Kalorien und Protein-/Kohlenhydrat-/Fettanteilen (4/4/9 kcal/g). Beispiel: 2000 kcal bei 30/40/30% → 150/200/≈66.67 g. Nur Bildung — keine medizinische Beratung.",
+	tool_macros_calculate: "Berechnen",
+	tool_macros_sample: "Beispiel laden",
+	tool_macros_clear: "Leeren",
+	tool_macros_cal_label: "Kalorien (kcal)",
+	tool_macros_cal_ph: "z. B. 2000",
+	tool_macros_pPct_label: "Protein %",
+	tool_macros_pPct_ph: "z. B. 30",
+	tool_macros_cPct_label: "Kohlenhydrate %",
+	tool_macros_cPct_ph: "z. B. 40",
+	tool_macros_fPct_label: "Fett %",
+	tool_macros_fPct_ph: "z. B. 30",
+	tool_macros_pG_label: "Protein (g)",
+	tool_macros_cG_label: "Kohlenhydrate (g)",
+	tool_macros_fG_label: "Fett (g)",
+	tool_macros_result_note: "Bildungszweck.",
+	tool_macros_err_generic: "Eingaben prüfen.",
+	tool_macros_how_title: "So funktioniert’s",
+	tool_macros_how_body: "Kalorien und % eingeben.",
+	tool_macros_formula_title: "Formel",
+	tool_macros_formula_body: "Kalorien und % eingeben.",
+	tool_macros_formula_item_1: "See formula notes.",
+	tool_macros_formula_item_2: "Check inputs.",
+	tool_macros_formula_item_3: "Educational only.",
+	tool_macros_example_title: "Beispiel",
+	tool_macros_example: "Beispiel: 150/200/≈66.67 g.",
+	tool_macros_usecases_title: "Wann sinnvoll",
+	tool_macros_usecase_1: "Homework.",
+	tool_macros_usecase_2: "Quick sketch.",
+	tool_macros_usecase_3: "Compare related tools.",
+	tool_macros_faq_q1: "Beispiel?",
+	tool_macros_faq_a1: "Beispiel: 150/200/≈66.67 g.",
+	tool_macros_faq_q2: "Formula?",
+	tool_macros_faq_a2: "See Formula section.",
+	tool_macros_faq_q3: "Advice?",
+	tool_macros_faq_a3: "Educational only.",
+	tool_macros_faq_q4: "Related?",
+	tool_macros_faq_a4: "See related tools.",
+	tool_macros_article: "Makro-Rechner — Kalorien in Gramm",
+	tool_macros_disclaimer: "Nur zur Veranschaulichung (macronutrients) — keine medizinische Beratung.",
+	tool_macros_references: "Bildungsreferenzen.",
+	tool_macros_ref_a_label: "Wikipedia",
+	tool_macros_ref_b_label: "Textbook formula",
+};
+
+export default de;

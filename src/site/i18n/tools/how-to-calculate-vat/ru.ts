@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-vat / ru).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const ru: SiteLangDict = {
+	tool_vat_title: "Калькулятор НДС / VAT / GST",
+	tool_vat_description: "Добавьте НДС к нетто или извлеките налог из брутто. Пример: нетто 100 при 20% → брутто 120. Ставку вводите сами. В браузере.",
+	tool_vat_calculate: "Рассчитать",
+	tool_vat_sample: "Загрузить пример",
+	tool_vat_clear: "Очистить",
+	tool_vat_mode_label: "Режим",
+	tool_vat_mode_add: "Добавить к нетто",
+	tool_vat_mode_extract: "Извлечь из брутто",
+	tool_vat_amount_label: "Сумма",
+	tool_vat_amount_ph: "напр. 100",
+	tool_vat_rate_label: "НДС %",
+	tool_vat_rate_ph: "напр. 20",
+	tool_vat_grossOut_label: "Брутто",
+	tool_vat_netOut_label: "Нетто",
+	tool_vat_taxOut_label: "Налог",
+	tool_vat_result_note: "Учебно.",
+	tool_vat_err_generic: "Проверьте ввод.",
+	tool_vat_how_title: "Как пользоваться",
+	tool_vat_how_body: "Выберите режим, сумму и ставку.",
+	tool_vat_formula_title: "Формула",
+	tool_vat_formula_body: "Выберите режим, сумму и ставку.",
+	tool_vat_formula_item_1: "See formula notes.",
+	tool_vat_formula_item_2: "Check inputs.",
+	tool_vat_formula_item_3: "Educational only.",
+	tool_vat_example_title: "Пример",
+	tool_vat_example: "Пример: нетто 100 при 20% → 120.",
+	tool_vat_usecases_title: "Когда использовать",
+	tool_vat_usecase_1: "Homework.",
+	tool_vat_usecase_2: "Quick sketch.",
+	tool_vat_usecase_3: "Compare related tools.",
+	tool_vat_faq_q1: "Пример?",
+	tool_vat_faq_a1: "Пример: нетто 100 при 20% → 120.",
+	tool_vat_faq_q2: "Formula?",
+	tool_vat_faq_a2: "See Formula section.",
+	tool_vat_faq_q3: "Advice?",
+	tool_vat_faq_a3: "Educational only.",
+	tool_vat_faq_q4: "Related?",
+	tool_vat_faq_a4: "See related tools.",
+	tool_vat_article: "Калькулятор НДС / VAT / GST",
+	tool_vat_disclaimer: "Только учебная иллюстрация (VAT) — не финансовый совет.",
+	tool_vat_references: "Investopedia и учебные формулы.",
+	tool_vat_ref_a_label: "Investopedia",
+	tool_vat_ref_b_label: "Wikipedia",
+};
+
+export default ru;

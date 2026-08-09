@@ -1,0 +1,51 @@
+/**
+ * i18n tool shard (how-to-calculate-scientific-notation / zh).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const zh: SiteLangDict = {
+	tool_scientific_notation_title: "科学计数法计算器 — 如何互转科学计数法",
+	tool_scientific_notation_description: "在普通小数与科学计数 a×10^b 之间互转。示例：12300 → 1.23×10^4。展开时可识别 1.23e4 与 1.23×10^4。同时给出系数 a 与指数 b。浏览器内计算，适合作业与课堂快速对照，并写明归一化范围 1≤|a|<10 与零的特殊写法。",
+	tool_scientific_notation_calculate: "计算",
+	tool_scientific_notation_sample: "加载样例",
+	tool_scientific_notation_clear: "清空",
+	tool_scientific_notation_mode_label: "方向",
+	tool_scientific_notation_mode_toSci: "小数 → 科学计数",
+	tool_scientific_notation_mode_toDec: "科学计数 → 小数",
+	tool_scientific_notation_value_label: "数值",
+	tool_scientific_notation_value_ph: "例如 12300 或 1.23e4 或 1.23×10^4",
+	tool_scientific_notation_resultOut_label: "转换结果",
+	tool_scientific_notation_coeffOut_label: "系数 a",
+	tool_scientific_notation_expOut_label: "指数 b",
+	tool_scientific_notation_result_note: "科学计数 a×10^b，满足 1 ≤ |a| < 10（0 记为 0×10^0）。",
+	tool_scientific_notation_err_generic: "请按所选模式输入可解析的小数或科学计数。",
+	tool_scientific_notation_how_title: "怎么用",
+	tool_scientific_notation_how_body: "选择方向。小数→科学：输入普通十进制。科学→小数：可贴 1.23e4 或 1.23×10^4。工具给出转换字符串，并在有用时显示系数与指数。",
+	tool_scientific_notation_formula_title: "换算规则",
+	tool_scientific_notation_formula_body: "把 x 写成归一化的 a×10^b：",
+	tool_scientific_notation_formula_item_1: "移动小数点使 1 ≤ |a| < 10（零为 0×10^0）。",
+	tool_scientific_notation_formula_item_2: "b 为小数点移动位数（符号随移动方向）。",
+	tool_scientific_notation_formula_item_3: "接受 1.23e4、1.23E+4、1.23×10^4、1.23*10^4。",
+	tool_scientific_notation_formula_item_4: "优先显示可读的 a×10^b，并回显系数/指数。",
+	tool_scientific_notation_example_title: "示例",
+	tool_scientific_notation_example: "示例：12300 → 1.23×10^4（a = 1.23，b = 4）。",
+	tool_scientific_notation_usecases_title: "适合什么场景",
+	tool_scientific_notation_usecase_1: "作业：把很大/很小的小数改写成科学计数。",
+	tool_scientific_notation_usecase_2: "把 a×10^b 展开回普通小数。",
+	tool_scientific_notation_usecase_3: "对照计算器 e 记法与 ×10^b 写法。",
+	tool_scientific_notation_disclaimer: "仅为教育用换算，不是完整高精度运算库。",
+	tool_scientific_notation_references: "维基百科科学记数法条目。",
+	tool_scientific_notation_ref_sci_label: "维基百科 — 科学记数法",
+	tool_scientific_notation_ref_exp_label: "维基百科 — 幂",
+	tool_scientific_notation_article: "在浏览器内互转普通小数与 a×10^b 科学计数法。",
+	tool_scientific_notation_faq_q1: "负数怎么处理？",
+	tool_scientific_notation_faq_a1: "符号留在系数 a 上，指数仍表示小数点移动。",
+	tool_scientific_notation_faq_q2: "a 要落在什么范围？",
+	tool_scientific_notation_faq_a2: "归一化科学计数保持 1 ≤ |a| < 10（零除外）。",
+	tool_scientific_notation_faq_q3: "接受哪些写法？",
+	tool_scientific_notation_faq_a3: "1.23e4、1.23E+4、1.23×10^4、1.23*10^4。",
+	tool_scientific_notation_faq_q4: "精度无限吗？",
+	tool_scientific_notation_faq_a4: "否，仅为学习用的普通 JS 数值换算。",
+};
+
+export default zh;

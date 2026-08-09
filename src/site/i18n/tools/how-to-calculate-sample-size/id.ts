@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-sample-size / id).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const id: SiteLangDict = {
+	tool_sample_size_title: "Kalkulator ukuran sampel — Cara memperkirakan n yang dibutuhkan",
+	tool_sample_size_description: "Perkirakan ukuran sampel proporsi dengan n = Z²·p·(1−p)/E². Pilih 90/95/99% (Z = 1,645/1,96/2,576), masukkan p dan margin E. Contoh: 95%, p = 0,5, E = 0,05 → n ≈ 385 (ceil). Di browser untuk tugas.",
+	tool_sample_size_calculate: "Hitung",
+	tool_sample_size_sample: "Muat contoh",
+	tool_sample_size_clear: "Hapus",
+	tool_sample_size_conf_label: "Tingkat kepercayaan",
+	tool_sample_size_conf_90: "90% (Z = 1,645)",
+	tool_sample_size_conf_95: "95% (Z = 1,96)",
+	tool_sample_size_conf_99: "99% (Z = 2,576)",
+	tool_sample_size_p_label: "Proporsi yang diharapkan (p)",
+	tool_sample_size_p_ph: "mis. 0,5",
+	tool_sample_size_E_label: "Margin of error (E)",
+	tool_sample_size_E_ph: "mis. 0,05",
+	tool_sample_size_nOut_label: "Ukuran sampel yang dibutuhkan (n)",
+	tool_sample_size_result_note: "n = ceil(Z²·p·(1−p)/E²) untuk proporsi — pendekatan normal, populasi tak hingga.",
+	tool_sample_size_err_generic: "Masukkan p di [0, 1], E > 0, dan tingkat kepercayaan.",
+	tool_sample_size_how_title: "Cara kerja",
+	tool_sample_size_how_body: "Pilih 90%, 95%, atau 99%, lalu masukkan p perencanaan dan margin E. Halaman memetakan tingkat ke Z dan mengembalikan ceil dari Z² p (1−p)/E². Di browser untuk tugas survei.",
+	tool_sample_size_formula_title: "Rumus dan asumsi",
+	tool_sample_size_formula_body: "n = Z² · p · (1 − p) / E² lalu dibulatkan ke atas. Batasan:",
+	tool_sample_size_formula_item_1: "Z: 1,645 / 1,96 / 2,576 untuk 90 / 95 / 99%.",
+	tool_sample_size_formula_item_2: "Pendekatan normal proporsi tunggal; tanpa koreksi populasi terbatas.",
+	tool_sample_size_formula_item_3: "p = 0,5 memaksimalkan n untuk E tetap.",
+	tool_sample_size_formula_item_4: "Desain kompleks butuh rencana yang lebih lengkap.",
+	tool_sample_size_example_title: "Contoh",
+	tool_sample_size_example: "Contoh: 95% (Z = 1,96), p = 0,5, E = 0,05 → n = 385.",
+	tool_sample_size_usecases_title: "Kapan dipakai",
+	tool_sample_size_usecase_1: "PR: menghitung ukuran survei proporsi sederhana.",
+	tool_sample_size_usecase_2: "Melihat dampak E yang lebih ketat terhadap n.",
+	tool_sample_size_usecase_3: "Menyandingkan dengan halaman interval kepercayaan setelah ada data.",
+	tool_sample_size_faq_q1: "Mengapa p = 0,5 jika proporsi tidak diketahui?",
+	tool_sample_size_faq_a1: "Karena p(1−p) maksimal di 0,5 sehingga rencana paling konservatif.",
+	tool_sample_size_faq_q2: "Apakah ada koreksi populasi terbatas?",
+	tool_sample_size_faq_a2: "Tidak; mengasumsikan populasi besar relatif terhadap n.",
+	tool_sample_size_faq_q3: "Bisakah saya mengisi Z sendiri?",
+	tool_sample_size_faq_a3: "Halaman ini memakai pilihan 90/95/99 untuk Z standar.",
+	tool_sample_size_faq_q4: "Apakah hasil selalu bilangan bulat?",
+	tool_sample_size_faq_a4: "Ya; nilai rumus dibulatkan ke atas (ceil).",
+	tool_sample_size_disclaimer: "Hanya rumus edukasi ukuran sampel proporsi. Bukan pengganti metodologi survei.",
+	tool_sample_size_references: "Wikipedia penentuan ukuran sampel dan margin of error.",
+	tool_sample_size_ref_ss_label: "Wikipedia — Penentuan ukuran sampel",
+	tool_sample_size_ref_prop_label: "Wikipedia — Margin of error",
+	tool_sample_size_article: "Perkirakan n untuk proporsi dengan n = Z² p (1−p)/E² dan tingkat 90/95/99%.",
+};
+
+export default id;

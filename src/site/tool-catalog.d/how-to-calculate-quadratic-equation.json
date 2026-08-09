@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-quadratic-equation",
+  "path": "/tools/how-to-calculate-quadratic-equation",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_quadratic_equation_title",
+  "homeTitleKey": "tool_quadratic_equation_title",
+  "homeDescKey": "tool_quadratic_equation_description",
+  "faqPrefix": "tool_quadratic_equation",
+  "related": [
+    "how-to-calculate-permutation-combination",
+    "how-to-calculate-slope"
+  ],
+  "logo": "/icons/tools/how-to-calculate-quadratic-equation.svg",
+  "page": {
+    "module": "../pages/howToCalculateQuadraticEquationPage",
+    "export": "renderHowToCalculateQuadraticEquationPage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

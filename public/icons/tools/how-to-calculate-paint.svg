@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img">
+  <!-- paint roller icon (ASCII comment only) -->
+  <rect width="32" height="32" rx="8" fill="#f59e0b"/>
+  <rect x="6" y="7" width="14" height="8" rx="2" fill="#fef3c7"/>
+  <rect x="18" y="10" width="2" height="10" fill="#fde68a"/>
+  <rect x="12" y="18" width="2" height="6" fill="#fde68a"/>
+  <rect x="9" y="23" width="8" height="2" rx="1" fill="#fef3c7"/>
+</svg>

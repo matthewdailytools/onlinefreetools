@@ -1,0 +1,51 @@
+/**
+ * i18n tool shard (how-to-calculate-tip / zh).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const zh: SiteLangDict = {
+	tool_tip_title: "小费计算器 — 小费与分摊",
+	tool_tip_description: "按账单与小费比例计算小费，并可按人数分摊合计。示例：账单 80、小费 15% → 小费 12、合计 92。浏览器本地计算，数据不上传服务器；日常结账速算。；全程浏览器本地计算，数据不上传服务器；结果仅供学习对照，不构成投资、理财或经营建议。；全程浏览器本地计算，数据不上传服务器；结果仅供学习对照，不构成投资、理财或经营建议。",
+	tool_tip_calculate: "计算",
+	tool_tip_sample: "加载样例",
+	tool_tip_clear: "清空",
+	tool_tip_bill_label: "账单金额",
+	tool_tip_bill_ph: "例如 80",
+	tool_tip_tip_label: "小费比例 %",
+	tool_tip_tip_ph: "例如 15",
+	tool_tip_split_label: "分摊人数",
+	tool_tip_split_ph: "例如 1",
+	tool_tip_tipOut_label: "小费",
+	tool_tip_totalOut_label: "合计",
+	tool_tip_eachOut_label: "人均",
+	tool_tip_result_note: "小费=账单×比例；合计=账单+小费；人均=合计/人数。",
+	tool_tip_err_generic: "账单>0、小费%≥0、人数≥1。",
+	tool_tip_how_title: "怎么用",
+	tool_tip_how_body: "填入账单、小费比例与分摊人数。各国习惯不同，本页只做算术。",
+	tool_tip_formula_title: "公式",
+	tool_tip_formula_body: "小费=账单×p；合计=账单+小费；人均=合计/n。注意：",
+	tool_tip_formula_item_1: "不含自动加税；若按含税小费请把税并入账单。",
+	tool_tip_formula_item_2: "餐厅四舍五入可能不同。",
+	tool_tip_formula_item_3: "不是支付工具。",
+	tool_tip_example_title: "示例",
+	tool_tip_example: "示例：账单 80、15%、1 人 → 小费 12、合计 92。",
+	tool_tip_usecases_title: "适合什么场景",
+	tool_tip_usecase_1: "餐厅结账小费。",
+	tool_tip_usecase_2: "加小费后分摊。",
+	tool_tip_usecase_3: "与增值税/折扣页对照小票。",
+	tool_tip_faq_q1: "样例？",
+	tool_tip_faq_a1: "80 的 15% → 小费 12、合计 92。",
+	tool_tip_faq_q2: "含税吗？",
+	tool_tip_faq_a2: "需要时请先把税加进账单。",
+	tool_tip_faq_q3: "人数 0？",
+	tool_tip_faq_a3: "人数须 ≥1。",
+	tool_tip_faq_q4: "支付 App？",
+	tool_tip_faq_a4: "不是，仅本地算术。",
+	tool_tip_article: "小费与分摊",
+	tool_tip_disclaimer: "结果仅为小费学习演示，不构成投资、理财或税务建议。",
+	tool_tip_references: "Investopedia 与常见教材公式。",
+	tool_tip_ref_a_label: "Wikipedia — Gratuity",
+	tool_tip_ref_b_label: "Investopedia — Tip",
+};
+
+export default zh;

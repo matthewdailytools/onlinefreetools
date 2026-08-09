@@ -1,0 +1,51 @@
+/**
+ * i18n tool shard (how-to-calculate-tip / ru).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const ru: SiteLangDict = {
+	tool_tip_title: "Калькулятор чаевых",
+	tool_tip_description: "Считайте чаевые от счёта и процента и делите итог. Пример: счёт 80, 15% → чаевые 12, итог 92. В браузере. Учебный расчёт в браузере; не профессиональный совет.",
+	tool_tip_calculate: "Рассчитать",
+	tool_tip_sample: "Загрузить пример",
+	tool_tip_clear: "Очистить",
+	tool_tip_bill_label: "Счёт",
+	tool_tip_bill_ph: "напр. 80",
+	tool_tip_tip_label: "Чаевые %",
+	tool_tip_tip_ph: "напр. 15",
+	tool_tip_split_label: "Человек",
+	tool_tip_split_ph: "напр. 1",
+	tool_tip_tipOut_label: "Чаевые",
+	tool_tip_totalOut_label: "Итого",
+	tool_tip_eachOut_label: "На человека",
+	tool_tip_result_note: "Учебно.",
+	tool_tip_err_generic: "Проверьте ввод.",
+	tool_tip_how_title: "Как пользоваться",
+	tool_tip_how_body: "Введите счёт, % и число людей.",
+	tool_tip_formula_title: "Формула",
+	tool_tip_formula_body: "Введите счёт, % и число людей.",
+	tool_tip_formula_item_1: "See formula notes.",
+	tool_tip_formula_item_2: "Check inputs.",
+	tool_tip_formula_item_3: "Educational only.",
+	tool_tip_example_title: "Пример",
+	tool_tip_example: "Пример: 80 и 15% → 12 / итог 92.",
+	tool_tip_usecases_title: "Когда использовать",
+	tool_tip_usecase_1: "Homework.",
+	tool_tip_usecase_2: "Quick sketch.",
+	tool_tip_usecase_3: "Compare related tools.",
+	tool_tip_faq_q1: "Пример?",
+	tool_tip_faq_a1: "Пример: 80 и 15% → 12 / итог 92.",
+	tool_tip_faq_q2: "Formula?",
+	tool_tip_faq_a2: "See Formula section.",
+	tool_tip_faq_q3: "Advice?",
+	tool_tip_faq_a3: "Educational only.",
+	tool_tip_faq_q4: "Related?",
+	tool_tip_faq_a4: "See related tools.",
+	tool_tip_article: "Калькулятор чаевых",
+	tool_tip_disclaimer: "Только учебная иллюстрация (tip) — не финансовый совет.",
+	tool_tip_references: "Investopedia и учебные формулы.",
+	tool_tip_ref_a_label: "Investopedia",
+	tool_tip_ref_b_label: "Wikipedia",
+};
+
+export default ru;

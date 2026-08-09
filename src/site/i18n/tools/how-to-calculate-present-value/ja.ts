@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-present-value / ja).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const ja: SiteLangDict = {
+	tool_present_value_title: "現在価値・将来価値の計算ツール",
+	tool_present_value_description: "一時金の現在価値と将来価値を切り替え計算します。例：将来価値 10000、年利 5%、5年 → 現在価値 ≈ 7835.26。学習用であり投資助言ではありません。。計算はブラウザ内で行いサーバーにアップロードしません。学習用の目安であり投資・税務・経営の助言ではありません。",
+	tool_present_value_calculate: "計算する",
+	tool_present_value_sample: "サンプル",
+	tool_present_value_clear: "クリア",
+	tool_present_value_mode_label: "モード",
+	tool_present_value_mode_pv: "現在価値を求める（将来価値から）",
+	tool_present_value_mode_fv: "将来価値を求める（現在価値から）",
+	tool_present_value_amount_label: "金額（PV または FV）",
+	tool_present_value_amount_ph: "例 10000",
+	tool_present_value_rate_label: "年利 %",
+	tool_present_value_rate_ph: "例 5",
+	tool_present_value_n_label: "年数 n",
+	tool_present_value_n_ph: "例 5",
+	tool_present_value_out_label: "結果",
+	tool_present_value_result_note: "PV=FV/(1+r)^n。投資助言ではありません。",
+	tool_present_value_err_generic: "正の金額、利率(>-100%)、n>0。",
+	tool_present_value_how_title: "使い方",
+	tool_present_value_how_body: "PV/FVモードを選び、既知の金額・年利・年数を入力。NPV（キャッシュフロー列）とは別です。",
+	tool_present_value_formula_title: "計算式",
+	tool_present_value_formula_body: "PV = FV/(1+r)^n、FV = PV×(1+r)^n。注意:",
+	tool_present_value_formula_item_1: "年末複利の簡易モデル。",
+	tool_present_value_formula_item_2: "利率≤-100%は不可。",
+	tool_present_value_formula_item_3: "年金系列はNPVへ。",
+	tool_present_value_example_title: "例",
+	tool_present_value_example: "例：FV10000、r=5%、n=5 → PV≈7835.26。",
+	tool_present_value_usecases_title: "こんなときに",
+	tool_present_value_usecase_1: "一時金の割引宿題。",
+	tool_present_value_usecase_2: "将来目標の現在価値ざっくり。",
+	tool_present_value_usecase_3: "NPVと対照。",
+	tool_present_value_faq_q1: "例のPVは？",
+	tool_present_value_faq_a1: "約7835.26。",
+	tool_present_value_faq_q2: "NPVとの違いは？",
+	tool_present_value_faq_a2: "PVは一筆、NPVは系列。",
+	tool_present_value_faq_q3: "月次複利は？",
+	tool_present_value_faq_a3: "本ページは年次のみ。",
+	tool_present_value_faq_q4: "助言？",
+	tool_present_value_faq_a4: "学習用です。",
+	tool_present_value_article: "現在価値・将来価値の計算ツール",
+	tool_present_value_disclaimer: "現在価値の学習用試算であり、投資・税務の助言ではありません。",
+	tool_present_value_references: "Investopedia と標準的な教科書公式。",
+	tool_present_value_ref_a_label: "Investopedia — Present value",
+	tool_present_value_ref_b_label: "Investopedia — Future value",
+};
+
+export default ja;

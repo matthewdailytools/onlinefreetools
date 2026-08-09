@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-concrete",
+  "path": "/tools/how-to-calculate-concrete",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_concrete_title",
+  "homeTitleKey": "tool_concrete_title",
+  "homeDescKey": "tool_concrete_description",
+  "faqPrefix": "tool_concrete",
+  "related": [
+    "unit-converter",
+    "square-feet"
+  ],
+  "logo": "/icons/tools/how-to-calculate-concrete.svg",
+  "page": {
+    "module": "../pages/howToCalculateConcretePage",
+    "export": "renderHowToCalculateConcretePage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-sample-size / fr).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const fr: SiteLangDict = {
+	tool_sample_size_title: "Calculateur de taille d’échantillon — Comment estimer n",
+	tool_sample_size_description: "Estimez la taille d’échantillon pour une proportion avec n = Z²·p·(1−p)/E². Choisissez 90/95/99 % (Z = 1,645/1,96/2,576), saisissez p et l’erreur E. Exemple : 95 %, p = 0,5, E = 0,05 → n ≈ 385 (ceil). Dans le navigateur.",
+	tool_sample_size_calculate: "Calculer",
+	tool_sample_size_sample: "Charger l’exemple",
+	tool_sample_size_clear: "Effacer",
+	tool_sample_size_conf_label: "Niveau de confiance",
+	tool_sample_size_conf_90: "90 % (Z = 1,645)",
+	tool_sample_size_conf_95: "95 % (Z = 1,96)",
+	tool_sample_size_conf_99: "99 % (Z = 2,576)",
+	tool_sample_size_p_label: "Proportion attendue (p)",
+	tool_sample_size_p_ph: "ex. 0,5",
+	tool_sample_size_E_label: "Marge d’erreur (E)",
+	tool_sample_size_E_ph: "ex. 0,05",
+	tool_sample_size_nOut_label: "Taille d’échantillon requise (n)",
+	tool_sample_size_result_note: "n = ceil(Z²·p·(1−p)/E²) pour une proportion — approximation normale, population infinie.",
+	tool_sample_size_err_generic: "Saisissez p dans [0, 1], E > 0 et un niveau de confiance.",
+	tool_sample_size_how_title: "Fonctionnement",
+	tool_sample_size_how_body: "Choisissez 90 %, 95 % ou 99 %, puis la proportion p de planification et la marge E. La page mappe le niveau vers Z et renvoie le plafond de Z² p (1−p)/E². Dans le navigateur, pour devoirs d’enquête.",
+	tool_sample_size_formula_title: "Formule et hypothèses",
+	tool_sample_size_formula_body: "n = Z² · p · (1 − p) / E² puis arrondi vers le haut. Limites :",
+	tool_sample_size_formula_item_1: "Z : 1,645 / 1,96 / 2,576 pour 90 / 95 / 99 %.",
+	tool_sample_size_formula_item_2: "Approximation normale d’une proportion ; pas de correction de population finie.",
+	tool_sample_size_formula_item_3: "p = 0,5 maximise n pour un E fixé.",
+	tool_sample_size_formula_item_4: "Les plans complexes demandent une étude plus complète.",
+	tool_sample_size_example_title: "Exemple",
+	tool_sample_size_example: "Exemple : 95 % (Z = 1,96), p = 0,5, E = 0,05 → n = 385.",
+	tool_sample_size_usecases_title: "Quand l’utiliser",
+	tool_sample_size_usecase_1: "Devoir : dimensionner une enquête de proportion simple.",
+	tool_sample_size_usecase_2: "Voir comment un E plus serré gonfle n.",
+	tool_sample_size_usecase_3: "Le relier ensuite à une page d’intervalle de confiance.",
+	tool_sample_size_faq_q1: "Y a-t-il une correction de population finie ?",
+	tool_sample_size_faq_a1: "Non ; on suppose une population grande par rapport à n.",
+	tool_sample_size_faq_q2: "Puis-je saisir Z librement ?",
+	tool_sample_size_faq_a2: "Cette page utilise le sélecteur 90/95/99 pour les Z courants.",
+	tool_sample_size_faq_q3: "Pourquoi p = 0,5 en cas d’incertitude ?",
+	tool_sample_size_faq_a3: "Parce que p(1−p) est maximal en 0,5 : plan le plus prudent pour cet E.",
+	tool_sample_size_faq_q4: "Le résultat est-il toujours entier ?",
+	tool_sample_size_faq_a4: "Oui : on applique un plafond (ceil) au résultat de la formule.",
+	tool_sample_size_disclaimer: "Formule pédagogique de taille d’échantillon pour une proportion uniquement. Ne remplace pas une méthodologie d’enquête.",
+	tool_sample_size_references: "Wikipedia sur la détermination de la taille d’échantillon et la marge d’erreur.",
+	tool_sample_size_ref_ss_label: "Wikipedia — Détermination de la taille d’échantillon",
+	tool_sample_size_ref_prop_label: "Wikipedia — Marge d’erreur",
+	tool_sample_size_article: "Estimez n pour une proportion avec n = Z² p (1−p)/E² et les niveaux 90/95/99 %.",
+};
+
+export default fr;

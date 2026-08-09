@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-logarithm / de).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const de: SiteLangDict = {
+	tool_logarithm_title: "Logarithmus-Rechner — Logarithmen berechnen",
+	tool_logarithm_description: "Berechnen Sie log₁₀, ln oder log_b(x) für x>0. Eigene Basen über ln(x)/ln(b). Beispiel: log₁₀(1000)=3. Macht den Definitionsbereich (x>0, b>0, b≠1) klar. Im Browser zum Lernen.",
+	tool_logarithm_calculate: "Berechnen",
+	tool_logarithm_sample: "Beispiel laden",
+	tool_logarithm_clear: "Leeren",
+	tool_logarithm_mode_label: "Log-Typ",
+	tool_logarithm_mode_log10: "log₁₀ (Zehner)",
+	tool_logarithm_mode_ln: "ln (natürlich)",
+	tool_logarithm_mode_custom: "log_b (eigene Basis)",
+	tool_logarithm_x_label: "Argument x",
+	tool_logarithm_x_ph: "z. B. 1000",
+	tool_logarithm_base_label: "Basis b",
+	tool_logarithm_base_ph: "z. B. 2",
+	tool_logarithm_logOut_label: "Logarithmenwert",
+	tool_logarithm_result_note: "Basiswechsel über ln: log_b(x)=ln(x)/ln(b). Erfordert x>0 und gültige Basis.",
+	tool_logarithm_err_generic: "Bitte x>0 eingeben; bei eigener Basis b>0 und b≠1.",
+	tool_logarithm_how_title: "So funktioniert’s",
+	tool_logarithm_how_body: "Wählen Sie log₁₀, ln oder eine eigene Basis. Geben Sie x>0 ein (und b bei Bedarf). Berechnung mit Math.log/Math.log10 und Basiswechsel.",
+	tool_logarithm_formula_title: "Formel und Definitionsbereich",
+	tool_logarithm_formula_body: "log_b(x) ist der Exponent, der b auf x bringt. Hier:",
+	tool_logarithm_formula_item_1: "log₁₀ ist der Zehnerlog; ln der natürliche (Basis e).",
+	tool_logarithm_formula_item_2: "Eigene Basis: log_b(x)=ln(x)/ln(b) mit b>0, b≠1, x>0.",
+	tool_logarithm_formula_item_3: "x muss positiv sein.",
+	tool_logarithm_formula_item_4: "Mit der Potenz-Seite b^y≈x prüfen.",
+	tool_logarithm_example_title: "Beispiel",
+	tool_logarithm_example: "Beispiel: log₁₀(1000)=3.",
+	tool_logarithm_usecases_title: "Wann sinnvoll",
+	tool_logarithm_usecase_1: "Hausaufgabe: log₁₀, ln oder log₂ berechnen.",
+	tool_logarithm_usecase_2: "Basiswechsel von Hand prüfen.",
+	tool_logarithm_usecase_3: "Skalen für wissenschaftliche Notation vorbereiten.",
+	tool_logarithm_disclaimer: "Nur reelle Lern-Logarithmen. Kein Ersatz für CAS.",
+	tool_logarithm_references: "Wikipedia Logarithmus und natürlicher Logarithmus.",
+	tool_logarithm_ref_log_label: "Wikipedia — Logarithmus",
+	tool_logarithm_ref_ln_label: "Wikipedia — Natürlicher Logarithmus",
+	tool_logarithm_article: "Berechnen Sie log₁₀, ln oder Logs mit eigener Basis für x>0 im Browser.",
+	tool_logarithm_faq_q1: "Darf die Basis 1 sein?",
+	tool_logarithm_faq_a1: "Nein; Logarithmus zur Basis 1 ist undefiniert.",
+	tool_logarithm_faq_q2: "Was ist ln?",
+	tool_logarithm_faq_a2: "Natürlicher Logarithmus zur Basis e ≈ 2,71828.",
+	tool_logarithm_faq_q3: "Warum x > 0?",
+	tool_logarithm_faq_a3: "Reelle Logs bei 0 oder Negativen sind hier undefiniert.",
+	tool_logarithm_faq_q4: "Eigene Basis?",
+	tool_logarithm_faq_a4: "Basiswechsel: ln(x)/ln(b).",
+};
+
+export default de;

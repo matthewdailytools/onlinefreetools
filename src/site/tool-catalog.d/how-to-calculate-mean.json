@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-mean",
+  "path": "/tools/how-to-calculate-mean",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_mean_title",
+  "homeTitleKey": "tool_mean_title",
+  "homeDescKey": "tool_mean_description",
+  "faqPrefix": "tool_mean",
+  "related": [
+    "how-to-calculate-median",
+    "how-to-calculate-standard-deviation"
+  ],
+  "logo": "/icons/tools/how-to-calculate-mean.svg",
+  "page": {
+    "module": "../pages/howToCalculateMeanPage",
+    "export": "renderHowToCalculateMeanPage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

@@ -1,0 +1,50 @@
+/**
+ * i18n tool shard (how-to-calculate-z-score / ja).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const ja: SiteLangDict = {
+	tool_z_score_title: "Zスコア計算ツール — 標準得点の求め方",
+	tool_z_score_description: "z = (x − 平均) / 標準偏差 で素点を標準得点（Zスコア）にします。例：x = 85、平均 = 70、SD = 10 → z = 1.5。線形尺度と SD>0 を明示。ブラウザ内で、宿題やざっくり確認向けです。異なる分布上の位置を比べる学習にも使えます。",
+	tool_z_score_calculate: "計算する",
+	tool_z_score_sample: "サンプル",
+	tool_z_score_clear: "クリア",
+	tool_z_score_x_label: "素点 x",
+	tool_z_score_x_ph: "例: 85",
+	tool_z_score_mean_label: "平均 μ",
+	tool_z_score_mean_ph: "例: 70",
+	tool_z_score_sd_label: "標準偏差 σ",
+	tool_z_score_sd_ph: "例: 10",
+	tool_z_score_zOut_label: "Zスコア",
+	tool_z_score_result_note: "学習用の z = (x − 平均) / SD。平均は有限、SD > 0。",
+	tool_z_score_err_generic: "有限の x と平均、および SD > 0 を入力してください。",
+	tool_z_score_how_title: "使い方",
+	tool_z_score_how_body: "素点・平均・標準偏差を入れます。z = (x − 平均) / SD で、平均から何 SD 離れているかを見ます。ブラウザ内で宿題向けです。",
+	tool_z_score_formula_title: "式と前提",
+	tool_z_score_formula_body: "z = (x − μ) / σ。注意点：",
+	tool_z_score_formula_item_1: "SD は正であること。",
+	tool_z_score_formula_item_2: "線形の尺度変換であり、正規性の検定ではありません。",
+	tool_z_score_formula_item_3: "z は無次元です。",
+	tool_z_score_formula_item_4: "正規の裾確率が必要なら p 値ページと併用。",
+	tool_z_score_example_title: "例",
+	tool_z_score_example: "例：x = 85、平均 = 70、SD = 10 → z = 1.5。",
+	tool_z_score_usecases_title: "こんなときに",
+	tool_z_score_usecase_1: "テスト得点を標準得点にする宿題。",
+	tool_z_score_usecase_2: "平均やばらつきが違う分布の得点比較。",
+	tool_z_score_usecase_3: "両側 p 値の前段として z を用意する。",
+	tool_z_score_faq_q1: "z = 1.5 の意味は？",
+	tool_z_score_faq_a1: "素点が与えられた平均より 1.5 SD 上です。",
+	tool_z_score_faq_q2: "SD = 0 は？",
+	tool_z_score_faq_a2: "不可。ゼロ除算になります。",
+	tool_z_score_faq_q3: "|z| が大きければ有意？",
+	tool_z_score_faq_a3: "それだけでは決まりません。モデルと p 値や臨界値が必要です。",
+	tool_z_score_faq_q4: "正規分布が必須？",
+	tool_z_score_faq_a4: "z の式自体は必須ではありません。正規の p 値など後続ではよく仮定します。",
+	tool_z_score_disclaimer: "教育用の z = (x − 平均) / SD のみで、統計ソフトや研究設計の代わりにはなりません。",
+	tool_z_score_references: "Wikipedia の標準得点と標準偏差。",
+	tool_z_score_ref_z_label: "Wikipedia — 標準得点",
+	tool_z_score_ref_sd_label: "Wikipedia — 標準偏差",
+	tool_z_score_article: "素点・平均・SD から z = (x − 平均) / SD で Zスコアを求めます。",
+};
+
+export default ja;

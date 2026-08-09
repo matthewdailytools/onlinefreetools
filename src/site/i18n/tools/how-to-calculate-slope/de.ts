@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-slope / de).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const de: SiteLangDict = {
+	tool_slope_title: "Steigungsrechner — Steigung zwischen zwei Punkten",
+	tool_slope_description: "Berechnen Sie die Steigung m=(y₂−y₁)/(x₂−x₁) zwischen zwei Punkten. Beispiel: (1,2) und (3,6) → m=2. Lehnt Vertikale mit Δx=0 ab. Im Browser für Algebra.",
+	tool_slope_calculate: "Berechnen",
+	tool_slope_sample: "Beispiel laden",
+	tool_slope_clear: "Leeren",
+	tool_slope_x1_label: "x₁",
+	tool_slope_x1_ph: "z. B. 1",
+	tool_slope_y1_label: "y₁",
+	tool_slope_y1_ph: "z. B. 2",
+	tool_slope_x2_label: "x₂",
+	tool_slope_x2_ph: "z. B. 3",
+	tool_slope_y2_label: "y₂",
+	tool_slope_y2_ph: "z. B. 6",
+	tool_slope_slopeOut_label: "Steigung m",
+	tool_slope_result_note: "m=(y₂−y₁)/(x₂−x₁). Vertikale (Δx=0) werden als undefiniert abgelehnt.",
+	tool_slope_err_generic: "Vier endliche Koordinaten mit x₂≠x₁ eingeben.",
+	tool_slope_how_title: "So funktioniert’s",
+	tool_slope_how_body: "Geben Sie zwei verschiedene Punkte ein. Liefert die Steigung; bei gleichen x-Werten Fehler.",
+	tool_slope_formula_title: "Formel",
+	tool_slope_formula_body: "Steigung zwischen zwei Punkten:",
+	tool_slope_formula_item_1: "m=(y₂−y₁)/(x₂−x₁).",
+	tool_slope_formula_item_2: "m>0 steigt links→rechts; m<0 fällt.",
+	tool_slope_formula_item_3: "Δx=0 ist vertikal — hier undefiniert.",
+	tool_slope_formula_item_4: "Vertauschen beider Punkte lässt das Verhältnis gleich.",
+	tool_slope_example_title: "Beispiel",
+	tool_slope_example: "Beispiel: (1,2) und (3,6) → m=2.",
+	tool_slope_usecases_title: "Wann sinnvoll",
+	tool_slope_usecase_1: "Algebra: Steigung aus zwei Punkten.",
+	tool_slope_usecase_2: "Rise/Run vor dem Zeichnen prüfen.",
+	tool_slope_usecase_3: "Mit Δy:Δx-Aspektgedanken vergleichen.",
+	tool_slope_disclaimer: "Nur 2D-Lernsteigung — kein vollständiger Geradenlöser.",
+	tool_slope_references: "Wikipedia Steigung.",
+	tool_slope_ref_slope_label: "Wikipedia — Steigung",
+	tool_slope_ref_line_label: "Wikipedia — Lineare Gleichung",
+	tool_slope_article: "Berechnen Sie die Steigung m zwischen zwei Punkten mit (y₂−y₁)/(x₂−x₁).",
+	tool_slope_faq_q1: "Was bedeutet m=2?",
+	tool_slope_faq_a1: "Pro +1 in x steigt y um 2.",
+	tool_slope_faq_q2: "Wenn x₁=x₂?",
+	tool_slope_faq_a2: "Steigung undefiniert (vertikal); hier Fehler.",
+	tool_slope_faq_q3: "Reihenfolge der Punkte?",
+	tool_slope_faq_a3: "Vertauschen beider Punkte lässt m gleich.",
+	tool_slope_faq_q4: "Horizontale Gerade?",
+	tool_slope_faq_a4: "Ja — m=0 wenn y₁=y₂ und x verschieden.",
+};
+
+export default de;

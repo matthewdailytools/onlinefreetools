@@ -1,0 +1,50 @@
+/**
+ * i18n tool shard (how-to-calculate-z-score / ar).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const ar: SiteLangDict = {
+	tool_z_score_title: "حاسبة درجة z — كيفية حساب الدرجة المعيارية",
+	tool_z_score_description: "حوّل درجة خام إلى درجة z عبر z = (x − المتوسط) / الانحراف. مثال: x = 85 والمتوسط = 70 والانحراف = 10 → z = 1.5. يوضح المقياس الخطي وشرط الانحراف > 0. في المتصفح للتعلّم والتحقق السريع.",
+	tool_z_score_calculate: "احسب",
+	tool_z_score_sample: "تحميل مثال",
+	tool_z_score_clear: "مسح",
+	tool_z_score_x_label: "الدرجة الخام x",
+	tool_z_score_x_ph: "مثال 85",
+	tool_z_score_mean_label: "المتوسط μ",
+	tool_z_score_mean_ph: "مثال 70",
+	tool_z_score_sd_label: "الانحراف المعياري σ",
+	tool_z_score_sd_ph: "مثال 10",
+	tool_z_score_zOut_label: "درجة z",
+	tool_z_score_result_note: "z = (x − المتوسط) / الانحراف للتعلّم — متوسط محدود وانحراف > 0.",
+	tool_z_score_err_generic: "أدخل x ومتوسطًا محدودين وانحرافًا > 0.",
+	tool_z_score_how_title: "طريقة الاستخدام",
+	tool_z_score_how_body: "أدخل الدرجة والمتوسط والانحراف. تُرجع الأداة z = (x − المتوسط) / الانحراف لمعرفة بعدك بعدد الانحرافات. في المتصفح للتعلّم.",
+	tool_z_score_formula_title: "الصيغة والافتراضات",
+	tool_z_score_formula_body: "z = (x − μ) / σ. حدود:",
+	tool_z_score_formula_item_1: "يجب أن يكون الانحراف موجبًا.",
+	tool_z_score_formula_item_2: "إعادة مقياس خطية وليست اختبار طبيعية.",
+	tool_z_score_formula_item_3: "z بلا أبعاد.",
+	tool_z_score_formula_item_4: "اربطها بصفحة قيمة p إن احتجت احتمال الذيل.",
+	tool_z_score_example_title: "مثال",
+	tool_z_score_example: "مثال: x = 85 والمتوسط = 70 والانحراف = 10 → z = 1.5.",
+	tool_z_score_usecases_title: "متى تستخدمه",
+	tool_z_score_usecase_1: "واجبات: تحويل درجة إلى معيارية.",
+	tool_z_score_usecase_2: "مقارنة درجات من توزيعات مختلفة.",
+	tool_z_score_usecase_3: "تجهيز z لفحص p ثنائي الطرف.",
+	tool_z_score_faq_q1: "ماذا يعني z = 1.5؟",
+	tool_z_score_faq_a1: "الدرجة أعلى من المتوسط بمقدار 1.5 انحراف معياري.",
+	tool_z_score_faq_q2: "هل يمكن أن يكون الانحراف صفرًا؟",
+	tool_z_score_faq_a2: "لا؛ القسمة على صفر غير معرّفة.",
+	tool_z_score_faq_q3: "هل |z| الكبير يعني الدلالة دائمًا؟",
+	tool_z_score_faq_a3: "لا وحده؛ تحتاج نموذجًا وp أو قيمة حرجة.",
+	tool_z_score_faq_q4: "هل يفترض التوزيع الطبيعي؟",
+	tool_z_score_faq_a4: "جبر z لا يشترط ذلك؛ كثير من الاستخدامات اللاحقة نعم.",
+	tool_z_score_disclaimer: "z تعليمي فقط = (x − المتوسط) / الانحراف ولا يغني عن برمجيات إحصائية.",
+	tool_z_score_references: "ويكيبيديا الدرجة المعيارية والانحراف المعياري.",
+	tool_z_score_ref_z_label: "ويكيبيديا — الدرجة المعيارية",
+	tool_z_score_ref_sd_label: "ويكيبيديا — الانحراف المعياري",
+	tool_z_score_article: "احسب درجة z من القيمة والمتوسط والانحراف عبر z = (x − المتوسط) / الانحراف.",
+};
+
+export default ar;

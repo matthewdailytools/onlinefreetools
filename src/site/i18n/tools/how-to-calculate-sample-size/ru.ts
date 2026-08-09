@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-sample-size / ru).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const ru: SiteLangDict = {
+	tool_sample_size_title: "Калькулятор размера выборки — Как оценить необходимый n",
+	tool_sample_size_description: "Оцените размер выборки для доли по n = Z²·p·(1−p)/E². Выберите 90/95/99% (Z = 1,645/1,96/2,576), введите p и погрешность E. Пример: 95%, p = 0,5, E = 0,05 → n ≈ 385 (ceil). В браузере для учёбы.",
+	tool_sample_size_calculate: "Рассчитать",
+	tool_sample_size_sample: "Загрузить пример",
+	tool_sample_size_clear: "Очистить",
+	tool_sample_size_conf_label: "Уровень доверия",
+	tool_sample_size_conf_90: "90% (Z = 1,645)",
+	tool_sample_size_conf_95: "95% (Z = 1,96)",
+	tool_sample_size_conf_99: "99% (Z = 2,576)",
+	tool_sample_size_p_label: "Ожидаемая доля (p)",
+	tool_sample_size_p_ph: "напр. 0,5",
+	tool_sample_size_E_label: "Предельная ошибка (E)",
+	tool_sample_size_E_ph: "напр. 0,05",
+	tool_sample_size_nOut_label: "Необходимый размер выборки (n)",
+	tool_sample_size_result_note: "n = ceil(Z²·p·(1−p)/E²) для доли — нормальная аппроксимация, бесконечная генеральная совокупность.",
+	tool_sample_size_err_generic: "Введите p в [0, 1], E > 0 и уровень доверия.",
+	tool_sample_size_how_title: "Как пользоваться",
+	tool_sample_size_how_body: "Выберите 90%, 95% или 99%, затем плановую долю p и погрешность E. Страница сопоставляет уровень с Z и возвращает ceil от Z² p (1−p)/E². В браузере — для учебных опросов.",
+	tool_sample_size_formula_title: "Формула и допущения",
+	tool_sample_size_formula_body: "n = Z² · p · (1 − p) / E² с округлением вверх. Ограничения:",
+	tool_sample_size_formula_item_1: "Z: 1,645 / 1,96 / 2,576 для 90 / 95 / 99%.",
+	tool_sample_size_formula_item_2: "Нормальная аппроксимация одной доли; без поправки на конечную совокупность.",
+	tool_sample_size_formula_item_3: "При фиксированном E значение p = 0,5 даёт максимальный n.",
+	tool_sample_size_formula_item_4: "Сложные дизайны требуют более полного плана.",
+	tool_sample_size_example_title: "Пример",
+	tool_sample_size_example: "Пример: 95% (Z = 1,96), p = 0,5, E = 0,05 → n = 385.",
+	tool_sample_size_usecases_title: "Когда применять",
+	tool_sample_size_usecase_1: "Домашнее задание: оценить n для опроса доли.",
+	tool_sample_size_usecase_2: "Сравнить, как меньший E увеличивает n.",
+	tool_sample_size_usecase_3: "Затем сопоставить со страницей доверительного интервала.",
+	tool_sample_size_faq_q1: "Можно ли ввести Z вручную?",
+	tool_sample_size_faq_a1: "На этой странице селектор 90/95/99 задаёт обычные Z.",
+	tool_sample_size_faq_q2: "Есть ли поправка на конечную совокупность?",
+	tool_sample_size_faq_a2: "Нет; предполагается большая генеральная совокупность относительно n.",
+	tool_sample_size_faq_q3: "Почему при неизвестной доле берут p = 0,5?",
+	tool_sample_size_faq_a3: "Так максимален p(1−p), план наиболее консервативен при данном E.",
+	tool_sample_size_faq_q4: "Результат всегда целое?",
+	tool_sample_size_faq_a4: "Да; к результату формулы применяется ceil.",
+	tool_sample_size_disclaimer: "Только учебная формула размера выборки для доли. Не заменяет методологию опросов.",
+	tool_sample_size_references: "Wikipedia об определении размера выборки и предельной ошибке.",
+	tool_sample_size_ref_ss_label: "Wikipedia — Определение размера выборки",
+	tool_sample_size_ref_prop_label: "Wikipedia — Предельная ошибка",
+	tool_sample_size_article: "Оцените n для доли по n = Z² p (1−p)/E² и уровням 90/95/99%.",
+};
+
+export default ru;

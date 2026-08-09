@@ -29,11 +29,26 @@ export const generateCalculatorPage = (t) => {
             </select>
           </div>`;
 			}
+			/** textarea：现金流列表等多行输入 */
+			if (f.type === 'textarea') {
+				return `
+          <div class="form-group${f.half ? ' form-half' : ''}" style="grid-column:1/-1">
+            <label class="form-label" for="${f.id}">\${escapeHtml(t(opts.lang, '${prefix}_${f.labelKey}'))}</label>
+            <textarea id="${f.id}" class="input-lg" rows="${f.rows || 4}"
+              placeholder="\${escapeHtml(t(opts.lang, '${prefix}_${f.phKey}'))}" style="min-height:6rem;resize:vertical;font-family:inherit"></textarea>
+          </div>`;
+			}
+			/** text / date：日期与需保留原始字符串的输入；其余默认 number */
+			const inputType = f.type === 'text' || f.type === 'date' ? f.type : 'number';
+			const stepAttr = inputType === 'number' ? ' step="any"' : '';
+			const phAttr =
+				inputType === 'date'
+					? ''
+					: ` placeholder="\${escapeHtml(t(opts.lang, '${prefix}_${f.phKey}'))}"`;
 			return `
           <div class="form-group${f.half ? ' form-half' : ''}">
             <label class="form-label" for="${f.id}">\${escapeHtml(t(opts.lang, '${prefix}_${f.labelKey}'))}</label>
-            <input id="${f.id}" class="input-lg" type="number" step="any"
-              placeholder="\${escapeHtml(t(opts.lang, '${prefix}_${f.phKey}'))}">
+            <input id="${f.id}" class="input-lg" type="${inputType}"${stepAttr}${phAttr}>
           </div>`;
 		})
 		.join('\n');

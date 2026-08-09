@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-sample-size / es).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const es: SiteLangDict = {
+	tool_sample_size_title: "Calculadora de tamaño muestral — Cómo estimar la n necesaria",
+	tool_sample_size_description: "Estima el tamaño muestral de una proporción con n = Z²·p·(1−p)/E². Elige 90/95/99% (Z = 1,645/1,96/2,576), introduce p y el error E. Ejemplo: 95%, p = 0,5, E = 0,05 → n ≈ 385 (ceil). En el navegador, para clase.",
+	tool_sample_size_calculate: "Calcular",
+	tool_sample_size_sample: "Cargar ejemplo",
+	tool_sample_size_clear: "Limpiar",
+	tool_sample_size_conf_label: "Nivel de confianza",
+	tool_sample_size_conf_90: "90% (Z = 1,645)",
+	tool_sample_size_conf_95: "95% (Z = 1,96)",
+	tool_sample_size_conf_99: "99% (Z = 2,576)",
+	tool_sample_size_p_label: "Proporción esperada (p)",
+	tool_sample_size_p_ph: "p. ej. 0,5",
+	tool_sample_size_E_label: "Margen de error (E)",
+	tool_sample_size_E_ph: "p. ej. 0,05",
+	tool_sample_size_nOut_label: "Tamaño muestral requerido (n)",
+	tool_sample_size_result_note: "n = ceil(Z²·p·(1−p)/E²) para una proporción — aproximación normal, población infinita.",
+	tool_sample_size_err_generic: "Introduce p en [0, 1], E > 0 y un nivel de confianza.",
+	tool_sample_size_how_title: "Cómo funciona",
+	tool_sample_size_how_body: "Elige 90%, 95% o 99%, luego p de planificación y el margen E. La página asigna Z y devuelve el techo de Z² p (1−p)/E². En el navegador, para encuestas de clase.",
+	tool_sample_size_formula_title: "Fórmula y supuestos",
+	tool_sample_size_formula_body: "n = Z² · p · (1 − p) / E² y luego se redondea hacia arriba. Límites:",
+	tool_sample_size_formula_item_1: "Z: 1,645 / 1,96 / 2,576 para 90 / 95 / 99%.",
+	tool_sample_size_formula_item_2: "Aproximación normal de una proporción; sin corrección de población finita.",
+	tool_sample_size_formula_item_3: "p = 0,5 maximiza n para un E fijo.",
+	tool_sample_size_formula_item_4: "Diseños complejos necesitan un plan más completo.",
+	tool_sample_size_example_title: "Ejemplo",
+	tool_sample_size_example: "Ejemplo: 95% (Z = 1,96), p = 0,5, E = 0,05 → n = 385.",
+	tool_sample_size_usecases_title: "Cuándo usarlo",
+	tool_sample_size_usecase_1: "Deberes: dimensionar una encuesta de proporción.",
+	tool_sample_size_usecase_2: "Ver cómo un E más pequeño dispara n.",
+	tool_sample_size_usecase_3: "Combinarlo luego con una página de intervalo de confianza.",
+	tool_sample_size_faq_q1: "¿Incluye corrección por población finita?",
+	tool_sample_size_faq_a1: "No; supone población grande frente a n.",
+	tool_sample_size_faq_q2: "¿Por qué p = 0,5 si no sé la proporción?",
+	tool_sample_size_faq_a2: "Maximiza p(1−p) y da el plan más conservador para ese E.",
+	tool_sample_size_faq_q3: "¿Siempre sale un entero?",
+	tool_sample_size_faq_a3: "Sí: se aplica techo (ceil) al resultado de la fórmula.",
+	tool_sample_size_faq_q4: "¿Puedo escribir Z a mano?",
+	tool_sample_size_faq_a4: "Aquí el desplegable 90/95/99 fija los Z habituales.",
+	tool_sample_size_disclaimer: "Solo fórmula educativa de tamaño muestral de proporción. No sustituye metodología de encuestas.",
+	tool_sample_size_references: "Wikipedia sobre determinación del tamaño muestral y margen de error.",
+	tool_sample_size_ref_ss_label: "Wikipedia — Determinación del tamaño muestral",
+	tool_sample_size_ref_prop_label: "Wikipedia — Margen de error",
+	tool_sample_size_article: "Estima n para una proporción con n = Z² p (1−p)/E² y niveles 90/95/99%.",
+};
+
+export default es;

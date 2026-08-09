@@ -1,0 +1,53 @@
+/**
+ * i18n tool shard (how-to-calculate-macros / ru).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const ru: SiteLangDict = {
+	tool_macros_title: "Калькулятор макронутриентов",
+	tool_macros_description: "Рассчитайте граммы БЖУ из калорий и долей белка/углеводов/жира (4/4/9 ккал/г). Пример: 2000 ккал при 30/40/30% → 150/200/≈66.67 г. Только учебно — не медицинская рекомендация.",
+	tool_macros_calculate: "Рассчитать",
+	tool_macros_sample: "Загрузить пример",
+	tool_macros_clear: "Очистить",
+	tool_macros_cal_label: "Калории (ккал)",
+	tool_macros_cal_ph: "напр. 2000",
+	tool_macros_pPct_label: "Белки %",
+	tool_macros_pPct_ph: "напр. 30",
+	tool_macros_cPct_label: "Углеводы %",
+	tool_macros_cPct_ph: "напр. 40",
+	tool_macros_fPct_label: "Жиры %",
+	tool_macros_fPct_ph: "напр. 30",
+	tool_macros_pG_label: "Белки (г)",
+	tool_macros_cG_label: "Углеводы (г)",
+	tool_macros_fG_label: "Жиры (г)",
+	tool_macros_result_note: "Учебно.",
+	tool_macros_err_generic: "Проверьте ввод.",
+	tool_macros_how_title: "Как пользоваться",
+	tool_macros_how_body: "Введите калории и %.",
+	tool_macros_formula_title: "Формула",
+	tool_macros_formula_body: "Введите калории и %.",
+	tool_macros_formula_item_1: "See formula notes.",
+	tool_macros_formula_item_2: "Check inputs.",
+	tool_macros_formula_item_3: "Educational only.",
+	tool_macros_example_title: "Пример",
+	tool_macros_example: "Пример: 150/200/≈66.67 г.",
+	tool_macros_usecases_title: "Когда использовать",
+	tool_macros_usecase_1: "Homework.",
+	tool_macros_usecase_2: "Quick sketch.",
+	tool_macros_usecase_3: "Compare related tools.",
+	tool_macros_faq_q1: "Пример?",
+	tool_macros_faq_a1: "Пример: 150/200/≈66.67 г.",
+	tool_macros_faq_q2: "Formula?",
+	tool_macros_faq_a2: "See Formula section.",
+	tool_macros_faq_q3: "Advice?",
+	tool_macros_faq_a3: "Educational only.",
+	tool_macros_faq_q4: "Related?",
+	tool_macros_faq_a4: "See related tools.",
+	tool_macros_article: "Калькулятор макронутриентов",
+	tool_macros_disclaimer: "Только учебная иллюстрация (macronutrients) — не медицинский совет.",
+	tool_macros_references: "Образовательные ссылки.",
+	tool_macros_ref_a_label: "Wikipedia",
+	tool_macros_ref_b_label: "Textbook formula",
+};
+
+export default ru;

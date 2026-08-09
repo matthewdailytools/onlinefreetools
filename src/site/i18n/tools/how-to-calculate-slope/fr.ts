@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-slope / fr).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const fr: SiteLangDict = {
+	tool_slope_title: "Calculateur de pente — Comment calculer la pente entre deux points",
+	tool_slope_description: "Calculez la pente m=(y₂−y₁)/(x₂−x₁) entre deux points. Exemple : (1,2) et (3,6) → m=2. Refuse les verticales avec Δx=0. Dans le navigateur, pour l’algèbre.",
+	tool_slope_calculate: "Calculer",
+	tool_slope_sample: "Charger l’exemple",
+	tool_slope_clear: "Effacer",
+	tool_slope_x1_label: "x₁",
+	tool_slope_x1_ph: "ex. 1",
+	tool_slope_y1_label: "y₁",
+	tool_slope_y1_ph: "ex. 2",
+	tool_slope_x2_label: "x₂",
+	tool_slope_x2_ph: "ex. 3",
+	tool_slope_y2_label: "y₂",
+	tool_slope_y2_ph: "ex. 6",
+	tool_slope_slopeOut_label: "Pente m",
+	tool_slope_result_note: "m=(y₂−y₁)/(x₂−x₁). Les verticales (Δx=0) sont rejetées comme indéfinies.",
+	tool_slope_err_generic: "Saisissez quatre coordonnées finies avec x₂≠x₁.",
+	tool_slope_how_title: "Fonctionnement",
+	tool_slope_how_body: "Entrez deux points distincts. Renvoie la pente ; si les x coïncident, erreur.",
+	tool_slope_formula_title: "Formule",
+	tool_slope_formula_body: "Pente entre deux points :",
+	tool_slope_formula_item_1: "m=(y₂−y₁)/(x₂−x₁).",
+	tool_slope_formula_item_2: "m>0 monte de gauche à droite ; m<0 descend.",
+	tool_slope_formula_item_3: "Δx=0 est vertical — indéfini ici.",
+	tool_slope_formula_item_4: "Échanger les deux points conserve le rapport.",
+	tool_slope_example_title: "Exemple",
+	tool_slope_example: "Exemple : (1,2) et (3,6) → m=2.",
+	tool_slope_usecases_title: "Quand l’utiliser",
+	tool_slope_usecase_1: "Algèbre : pente depuis deux points.",
+	tool_slope_usecase_2: "Vérifier rise/run avant de tracer.",
+	tool_slope_usecase_3: "Comparer avec des idées de ratio Δy:Δx.",
+	tool_slope_disclaimer: "Pente 2D pédagogique seulement.",
+	tool_slope_references: "Wikipedia pente.",
+	tool_slope_ref_slope_label: "Wikipedia — Pente",
+	tool_slope_ref_line_label: "Wikipedia — Équation linéaire",
+	tool_slope_article: "Calculez la pente m entre deux points avec (y₂−y₁)/(x₂−x₁).",
+	tool_slope_faq_q1: "Que signifie m=2 ?",
+	tool_slope_faq_a1: "Pour chaque +1 en x, y augmente de 2.",
+	tool_slope_faq_q2: "Si x₁=x₂ ?",
+	tool_slope_faq_a2: "Pente indéfinie (verticale) ; erreur ici.",
+	tool_slope_faq_q3: "Ordre des points ?",
+	tool_slope_faq_a3: "Échanger les deux points conserve m.",
+	tool_slope_faq_q4: "Droite horizontale ?",
+	tool_slope_faq_a4: "Oui — m=0 si y₁=y₂ et x diffère.",
+};
+
+export default fr;

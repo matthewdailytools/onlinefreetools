@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-tile",
+  "path": "/tools/how-to-calculate-tile",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_tile_title",
+  "homeTitleKey": "tool_tile_title",
+  "homeDescKey": "tool_tile_description",
+  "faqPrefix": "tool_tile",
+  "related": [
+    "how-to-calculate-concrete",
+    "square-feet"
+  ],
+  "logo": "/icons/tools/how-to-calculate-tile.svg",
+  "page": {
+    "module": "../pages/howToCalculateTilePage",
+    "export": "renderHowToCalculateTilePage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

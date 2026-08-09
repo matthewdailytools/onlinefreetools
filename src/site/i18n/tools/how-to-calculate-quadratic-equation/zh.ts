@@ -1,0 +1,51 @@
+/**
+ * i18n tool shard (how-to-calculate-quadratic-equation / zh).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const zh: SiteLangDict = {
+	tool_quadratic_equation_title: "一元二次方程计算器 — 根与判别式",
+	tool_quadratic_equation_description: "解 ax²+bx+c=0 的实根并显示判别式。示例：a=1、b=-5、c=6 → 根 2 与 3。浏览器本地计算。；全程浏览器本地计算，数据不上传服务器；结果仅供学习对照，请核对公式假设。；全程浏览器本地计算，数据不上传服务器；结果仅供学习对照，请核对公式假设。",
+	tool_quadratic_equation_calculate: "计算",
+	tool_quadratic_equation_sample: "加载样例",
+	tool_quadratic_equation_clear: "清空",
+	tool_quadratic_equation_a_label: "a",
+	tool_quadratic_equation_a_ph: "例如 1",
+	tool_quadratic_equation_b_label: "b",
+	tool_quadratic_equation_b_ph: "例如 -5",
+	tool_quadratic_equation_c_label: "c",
+	tool_quadratic_equation_c_ph: "例如 6",
+	tool_quadratic_equation_discOut_label: "判别式",
+	tool_quadratic_equation_r1Out_label: "根 1",
+	tool_quadratic_equation_r2Out_label: "根 2",
+	tool_quadratic_equation_result_note: "结果按一元二次方程公式在浏览器本地计算。",
+	tool_quadratic_equation_err_generic: "请检查输入是否有效。",
+	tool_quadratic_equation_how_title: "怎么用",
+	tool_quadratic_equation_how_body: "填写所需字段后计算一元二次方程。",
+	tool_quadratic_equation_formula_title: "公式",
+	tool_quadratic_equation_formula_body: "一元二次方程相关公式见 Formula 节。注意：",
+	tool_quadratic_equation_formula_item_1: "核对单位与符号。",
+	tool_quadratic_equation_formula_item_2: "边界输入可能无定义。",
+	tool_quadratic_equation_formula_item_3: "仅供学习对照。",
+	tool_quadratic_equation_example_title: "示例",
+	tool_quadratic_equation_example: "示例：a=1、b=-5、c=6 → 2 与 3。",
+	tool_quadratic_equation_usecases_title: "适合什么场景",
+	tool_quadratic_equation_usecase_1: "课堂作业。",
+	tool_quadratic_equation_usecase_2: "快速验算。",
+	tool_quadratic_equation_usecase_3: "与相关工具对照。",
+	tool_quadratic_equation_faq_q1: "样例？",
+	tool_quadratic_equation_faq_a1: "示例：a=1、b=-5、c=6 → 2 与 3。",
+	tool_quadratic_equation_faq_q2: "公式？",
+	tool_quadratic_equation_faq_a2: "见公式节。",
+	tool_quadratic_equation_faq_q3: "专业建议？",
+	tool_quadratic_equation_faq_a3: "不是。",
+	tool_quadratic_equation_faq_q4: "相关？",
+	tool_quadratic_equation_faq_a4: "见相关工具。",
+	tool_quadratic_equation_article: "一元二次方程",
+	tool_quadratic_equation_disclaimer: "结果仅为一元二次方程学习演示，不构成专业建议。",
+	tool_quadratic_equation_references: "常见教材公式。",
+	tool_quadratic_equation_ref_a_label: "Wikipedia",
+	tool_quadratic_equation_ref_b_label: "Textbook formula",
+};
+
+export default zh;

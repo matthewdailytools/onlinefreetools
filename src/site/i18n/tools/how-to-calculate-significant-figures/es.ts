@@ -1,0 +1,53 @@
+/**
+ * i18n tool shard (how-to-calculate-significant-figures / es).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const es: SiteLangDict = {
+	tool_significant_figures_title: "Calculadora de cifras significativas — Contar y redondear",
+	tool_significant_figures_description: "Cuenta cifras significativas en una cadena o redondea a N. Los ceros a la izquierda no cuentan; los finales tras el decimal sí. Ejemplo: 0,00304 → 3; 1234,56 a 3 → 1230 (1,23e3). Mitad lejos de cero. En el navegador.",
+	tool_significant_figures_calculate: "Calcular",
+	tool_significant_figures_sample: "Cargar ejemplo",
+	tool_significant_figures_clear: "Limpiar",
+	tool_significant_figures_mode_label: "Modo",
+	tool_significant_figures_mode_count: "Contar cifras",
+	tool_significant_figures_mode_round: "Redondear a N",
+	tool_significant_figures_num_label: "Número (texto)",
+	tool_significant_figures_num_ph: "p. ej. 0,00304 o 1234,56",
+	tool_significant_figures_n_label: "N (redondeo)",
+	tool_significant_figures_n_ph: "p. ej. 3",
+	tool_significant_figures_countOut_label: "Cifras significativas",
+	tool_significant_figures_roundedOut_label: "Valor redondeado",
+	tool_significant_figures_sciOut_label: "Forma científica",
+	tool_significant_figures_result_note: "Cuenta desde la cadena; el redondeo usa mitad lejos de cero.",
+	tool_significant_figures_err_generic: "Introduce una cadena numérica válida; en redondeo, N ≥ 1.",
+	tool_significant_figures_how_title: "Cómo funciona",
+	tool_significant_figures_how_body: "Elige Contar o Redondear. Pega el número como texto para ver ceros a la izquierda. Contar da la cantidad; Redondear pide N y muestra forma decimal y científica.",
+	tool_significant_figures_formula_title: "Reglas documentadas",
+	tool_significant_figures_formula_body: "Conteo escolar y redondeo mitad lejos de cero:",
+	tool_significant_figures_formula_item_1: "Los dígitos no nulos siempre cuentan; los ceros intermedios también.",
+	tool_significant_figures_formula_item_2: "Los ceros a la izquierda no cuentan (0,00304 → 3).",
+	tool_significant_figures_formula_item_3: "Ceros finales tras el decimal sí; en enteros sin decimal, no en esta página.",
+	tool_significant_figures_formula_item_4: "Redondeo: mantisa a N dígitos; empates lejos de cero.",
+	tool_significant_figures_example_title: "Ejemplo",
+	tool_significant_figures_example: "Contar 0,00304 → 3. Redondear 1234,56 a 3 → 1230 y 1,23e3.",
+	tool_significant_figures_usecases_title: "Cuándo usarlo",
+	tool_significant_figures_usecase_1: "Prácticas: comprobar cifras de una medida.",
+	tool_significant_figures_usecase_2: "Ajustar un resultado a la precisión permitida.",
+	tool_significant_figures_usecase_3: "Comparar forma ordinaria y científica.",
+	tool_significant_figures_disclaimer: "Solo reglas educativas; los SOP de laboratorio pueden diferir en ceros finales.",
+	tool_significant_figures_references: "Wikipedia cifras significativas y redondeo.",
+	tool_significant_figures_ref_sig_label: "Wikipedia — Cifras significativas",
+	tool_significant_figures_ref_round_label: "Wikipedia — Redondeo",
+	tool_significant_figures_article: "Cuenta o redondea cifras significativas desde una cadena con reglas explícitas.",
+	tool_significant_figures_faq_q1: "¿Los ceros a la izquierda cuentan?",
+	tool_significant_figures_faq_a1: "No. En 0,00304 solo 3, 0 y 4 → 3 cifras.",
+	tool_significant_figures_faq_q2: "¿Y los ceros finales de 1200?",
+	tool_significant_figures_faq_a2: "Sin punto decimal esta página no los cuenta (2 cifras).",
+	tool_significant_figures_faq_q3: "¿Cómo se redondea el empate?",
+	tool_significant_figures_faq_a3: "Lejos de cero; en positivos es half-up.",
+	tool_significant_figures_faq_q4: "¿Por qué texto y no número?",
+	tool_significant_figures_faq_a4: "Para conservar ceros a la izquierda visibles al contar.",
+};
+
+export default es;

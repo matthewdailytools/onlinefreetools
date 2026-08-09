@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-vat / ar).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const ar: SiteLangDict = {
+	tool_vat_title: "حاسبة ضريبة القيمة المضافة VAT/GST",
+	tool_vat_description: "أضف VAT/GST إلى صافٍ أو استخرج الضريبة من الإجمالي. مثال: صافٍ 100 بنسبة 20٪ → إجمالي 120. أدخل معدلك. في المتصفح. حساب تعليمي في المتصفح وليس نصيحة مهنية.",
+	tool_vat_calculate: "احسب",
+	tool_vat_sample: "تحميل مثال",
+	tool_vat_clear: "مسح",
+	tool_vat_mode_label: "الوضع",
+	tool_vat_mode_add: "إضافة إلى الصافي",
+	tool_vat_mode_extract: "استخراج من الإجمالي",
+	tool_vat_amount_label: "المبلغ",
+	tool_vat_amount_ph: "مثال 100",
+	tool_vat_rate_label: "VAT/GST %",
+	tool_vat_rate_ph: "مثال 20",
+	tool_vat_grossOut_label: "الإجمالي",
+	tool_vat_netOut_label: "الصافي",
+	tool_vat_taxOut_label: "الضريبة",
+	tool_vat_result_note: "تعليمي.",
+	tool_vat_err_generic: "تحقق من المدخلات.",
+	tool_vat_how_title: "طريقة الاستخدام",
+	tool_vat_how_body: "اختر الوضع والمبلغ والمعدل.",
+	tool_vat_formula_title: "الصيغة",
+	tool_vat_formula_body: "اختر الوضع والمبلغ والمعدل.",
+	tool_vat_formula_item_1: "See formula notes.",
+	tool_vat_formula_item_2: "Check inputs.",
+	tool_vat_formula_item_3: "Educational only.",
+	tool_vat_example_title: "مثال",
+	tool_vat_example: "مثال: صافٍ 100 بنسبة 20٪ → 120.",
+	tool_vat_usecases_title: "متى تستخدمه",
+	tool_vat_usecase_1: "Homework.",
+	tool_vat_usecase_2: "Quick sketch.",
+	tool_vat_usecase_3: "Compare related tools.",
+	tool_vat_faq_q1: "المثال؟",
+	tool_vat_faq_a1: "مثال: صافٍ 100 بنسبة 20٪ → 120.",
+	tool_vat_faq_q2: "Formula?",
+	tool_vat_faq_a2: "See Formula section.",
+	tool_vat_faq_q3: "Advice?",
+	tool_vat_faq_a3: "Educational only.",
+	tool_vat_faq_q4: "Related?",
+	tool_vat_faq_a4: "See related tools.",
+	tool_vat_article: "حاسبة ضريبة القيمة المضافة VAT/GST",
+	tool_vat_disclaimer: "توضيح تعليمي فقط (VAT) وليس نصيحة مالية.",
+	tool_vat_references: "Investopedia وصيغ دراسية.",
+	tool_vat_ref_a_label: "Investopedia",
+	tool_vat_ref_b_label: "Wikipedia",
+};
+
+export default ar;

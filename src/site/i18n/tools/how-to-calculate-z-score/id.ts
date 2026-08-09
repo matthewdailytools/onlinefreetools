@@ -1,0 +1,50 @@
+/**
+ * i18n tool shard (how-to-calculate-z-score / id).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const id: SiteLangDict = {
+	tool_z_score_title: "Kalkulator skor-z — Cara menghitung skor standar",
+	tool_z_score_description: "Ubah skor mentah menjadi skor-z dengan z = (x − mean) / SD. Contoh: x = 85, mean = 70, SD = 10 → z = 1,5. Menuliskan asumsi skala linear dan SD > 0. Di browser untuk tugas dan cek cepat.",
+	tool_z_score_calculate: "Hitung",
+	tool_z_score_sample: "Muat contoh",
+	tool_z_score_clear: "Hapus",
+	tool_z_score_x_label: "Skor mentah (x)",
+	tool_z_score_x_ph: "mis. 85",
+	tool_z_score_mean_label: "Mean (μ)",
+	tool_z_score_mean_ph: "mis. 70",
+	tool_z_score_sd_label: "Simpangan baku (σ)",
+	tool_z_score_sd_ph: "mis. 10",
+	tool_z_score_zOut_label: "Skor-z",
+	tool_z_score_result_note: "z = (x − mean) / SD untuk belajar — mean hingga dan SD > 0.",
+	tool_z_score_err_generic: "Masukkan x dan mean hingga, serta SD > 0.",
+	tool_z_score_how_title: "Cara kerja",
+	tool_z_score_how_body: "Masukkan skor, mean, dan simpangan baku. Alat mengembalikan z = (x − mean) / SD agar terlihat berapa SD di atas atau di bawah mean. Di browser untuk tugas.",
+	tool_z_score_formula_title: "Rumus dan asumsi",
+	tool_z_score_formula_body: "z = (x − μ) / σ. Batasan:",
+	tool_z_score_formula_item_1: "SD harus positif.",
+	tool_z_score_formula_item_2: "Ini penskalaan linear, bukan uji kenormalan.",
+	tool_z_score_formula_item_3: "z tanpa satuan.",
+	tool_z_score_formula_item_4: "Gabungkan dengan halaman p-value bila perlu peluang ekor normal.",
+	tool_z_score_example_title: "Contoh",
+	tool_z_score_example: "Contoh: x = 85, mean = 70, SD = 10 → z = 1,5.",
+	tool_z_score_usecases_title: "Kapan dipakai",
+	tool_z_score_usecase_1: "PR: ubah nilai ujian menjadi skor standar.",
+	tool_z_score_usecase_2: "Bandingkan skor dari sebaran berbeda.",
+	tool_z_score_usecase_3: "Siapkan z untuk cek p dua sisi.",
+	tool_z_score_faq_q1: "Arti z = 1,5?",
+	tool_z_score_faq_a1: "Skor berada 1,5 SD di atas mean yang dinyatakan.",
+	tool_z_score_faq_q2: "Boleh SD = 0?",
+	tool_z_score_faq_a2: "Tidak; pembagian nol tidak terdefinisi.",
+	tool_z_score_faq_q3: "|z| besar otomatis “signifikan”?",
+	tool_z_score_faq_a3: "Tidak sendiri; perlu model dan p-value atau nilai kritis.",
+	tool_z_score_faq_q4: "Wajib normal?",
+	tool_z_score_faq_a4: "Aljabar z tidak; banyak pemakaian lanjutan dengan ekor normal ya.",
+	tool_z_score_disclaimer: "Hanya z edukasi = (x − mean) / SD. Bukan pengganti perangkat lunak statistik.",
+	tool_z_score_references: "Wikipedia skor standar dan simpangan baku.",
+	tool_z_score_ref_z_label: "Wikipedia — Skor standar",
+	tool_z_score_ref_sd_label: "Wikipedia — Simpangan baku",
+	tool_z_score_article: "Hitung skor-z dari x, mean, dan SD dengan z = (x − mean) / SD.",
+};
+
+export default id;

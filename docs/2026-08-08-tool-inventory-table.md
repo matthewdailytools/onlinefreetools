@@ -214,55 +214,55 @@
 | 103 | 毛利率 | Omni finance；Omni `gross-margin`；C-V4 | `how-to-calculate-gross-margin` | 收入与成本 → 毛利/毛利率 | calculator | 运营、财务教育 | 收入、成本 | 毛利与比率 + 免责 | 已上线 |
 | 104 | 单位换算（通用） | Omni conversion；Omni `conversion-calculator`；换算枢纽非 how-to-calculate；禁按单位对拆页（Omni conversion≈326） | `unit-converter` | 长度/重量等通用换算（单页多类别 Tab） | calculator | 学生、工程辅助 | 数值 + 单位对 | 换算结果 | 已上线 |
 | 105 | 体脂率 | Omni health；合并 Omni: navy-body-fat/body-fat/army-body-fat/skinfold-body-fat；C-V5；合并原 body-fat-navy | `how-to-calculate-body-fat` | 海军等围度法估算体脂%（公式作选项） | calculator | 健康教育读者 | 颈/腰/臀等围度或皮褶 | 体脂% + 免责 | 已上线 |
-| 106 | 理想体重区间 | Omni health；Omni `ideal-weight`；C-V5 | `how-to-calculate-ideal-weight` | 常见公式区间估算 | calculator | 健康教育读者 | 身高、性别等 | 体重区间 + 免责 | 未开始 · P2 |
-| 107 | CAGR | Omni finance；Omni `cagr`；C-V4 | `how-to-calculate-cagr` | 期初/期末/年数 → 复合年增长率 | calculator | 财务教育、分析 | 起止价值、年数 | CAGR% + 免责 | 未开始 · P2 |
-| 108 | NPV | Omni finance；Omni `net-present-value`；C-V4；与 PV/FV 分意图 | `how-to-calculate-npv` | 现金流折现 → 净现值 | calculator | 财务教育 | 折现率、现金流序列 | NPV + 免责 | 未开始 · P2 |
-| 109 | 标准差 / 方差 | Omni statistics；合并 Omni: standard-deviation/variance/population-variance/relative-standard-deviation/grouped-data-standard-deviation；A.7；方差作同页模式 | `how-to-calculate-standard-deviation` | 样本/总体标准差与方差 | calculator | 学生、分析 | 数值列表 | σ/s/方差 + 公式说明 | 未开始 · P2 |
-| 110 | 混凝土方量 | Omni construction；合并 Omni: concrete-slab/concrete-column/concrete-cylinder/concrete-stairs/post-hole-concrete；C 工程；形状作选项禁拆页 | `how-to-calculate-concrete` | 尺寸 → 混凝土体积估算（板/柱等场景） | calculator | 装修、施工辅助 | 长宽厚等几何 | 体积/袋数估算 | 未开始 · P2 |
-| 111 | 瓷砖估算 | Omni construction；Omni `tile`；C 工程 | `how-to-calculate-tile` | 面积与单片规格 → 用量 | calculator | 装修辅助 | 面积、瓷砖尺寸、损耗 | 片数估算 | 未开始 · P2 |
-| 112 | 宽高比 | Omni other；合并 Omni: aspect-ratio/16-9-aspect-ratio/16-10-aspect-ratio/4-3-aspect-ratio/pixel-aspect-ratio/portrait-aspect-ratio；禁 16:9/4:3 独立 URL；css-aspect-ratio 另评估 | `how-to-calculate-aspect-ratio` | 分辨率/边长 → 比例与缩放 | calculator | 视频、设计、前端 | 宽、高或预设比例 | 比例与目标尺寸 | 未开始 · P2 |
-| 113 | 油漆估算 | Omni construction；Omni `paint`；C 工程 | `how-to-calculate-paint` | 墙面面积 → 油漆用量估算 | calculator | 装修辅助 | 面积、涂层数、覆盖率 | 升/罐数估算 | 未开始 · P2 |
-| 114 | 年薪 ↔ 时薪 | Omni finance；合并 Omni: salary-to-hourly/hourly-to-salary/annual-salary/annual-to-monthly-salary/annual-salary-per-hour/hourly-to-annual-salary；Omni finance 热门 | `how-to-calculate-salary-hourly` | 年/月/周薪 ↔ 时薪 | calculator | 求职者、人事助理 | 薪资与工作时长假设 | 时薪/年薪对照 + 免责 | 未开始 · P2 |
-| 115 | p 值 | Omni statistics；Omni `p-value`；A.7 | `how-to-calculate-p-value` | 检验统计量 → p 值（须写清假设） | calculator | 学生、分析 | 分布/统计量/尾型 | p 值 + 公式说明 | 未开始 · P2 |
-| 116 | 置信区间 | Omni statistics；合并 Omni: confidence-interval/90-confidence-interval/95-confidence-interval/99-confidence-interval；禁拆 90/95/99 URL | `how-to-calculate-confidence-interval` | 样本 → 置信区间（单页多置信水平） | calculator | 学生、分析 | 均值、σ、n、置信水平 | 区间端点 + 说明 | 未开始 · P2 |
-| 117 | Z 分数 | Omni statistics；Omni `z-score`；A.7 | `how-to-calculate-z-score` | 原始分 → 标准分 | calculator | 学生、分析 | x、μ、σ | z + 说明 | 未开始 · P2 |
-| 118 | 样本量 | Omni statistics；Omni `sample-size`；A.7 | `how-to-calculate-sample-size` | 误差/置信 → 所需样本量估算 | calculator | 调研、学生 | 误差、置信、比例假设 | n 估算 | 未开始 · P2 |
-| 119 | 有效数字 | Omni math；Omni `sig-fig`；Omni math 热门 | `how-to-calculate-significant-figures` | 计数/运算有效数字 | calculator | 学生、实验报告 | 数值或表达式 | 有效数字结果 | 未开始 · P2 |
-| 120 | 科学计数法 | Omni math；合并 Omni: scientific-notation/scientific-notation-converter；A.7 | `how-to-calculate-scientific-notation` | 十进制 ↔ 科学计数法 | calculator | 学生 | 数值 | 科学计数法互转 | 未开始 · P2 |
-| 121 | 对数 | Omni math；合并 Omni: log/natural-log/antilog/log-2/negative-log；合并原 log-calculator | `how-to-calculate-logarithm` | 任意底对数（含 ln） | calculator | 学生 | 真数、底数 | log 值 + 公式 | 未开始 · P2 |
-| 122 | 勾股定理 | Omni math；Omni `pythagorean-theorem`；A.7 | `how-to-calculate-pythagorean-theorem` | 直角三角形缺边求解 | calculator | 学生 | 两边长 | 第三边 + 公式 | 未开始 · P2 |
-| 123 | 斜率 | Omni math；Omni `slope`；A.7 | `how-to-calculate-slope` | 两点 → 直线斜率 | calculator | 学生 | 两点坐标 | 斜率 + 说明 | 未开始 · P2 |
-| 124 | 指数幂 | Omni math；Omni `exponent`；shortlist 原有 | `how-to-calculate-exponent` | a^b 指数运算 | calculator | 学生 | 底数、指数 | 幂值 + 说明 | 未开始 · P2 |
-| 125 | GPA | Omni other；合并 Omni: gpa/college-gpa/high-school-gpa/gpa-pakistan；禁拆 college/high-school 薄页 | `how-to-calculate-gpa` | 成绩点加权平均（须标地区量表） | calculator | 学生 | 课程成绩与学分 | GPA + 地区量表说明 | 未开始 · P2 |
-| 126 | 折扣 / 优惠价 | Omni finance；合并 Omni: discount/markdown/percent-off/percentage-discount/double-discount；Omni 补充；多层折扣作同页选项 | `how-to-calculate-discount` | 原价与折扣 → 成交价或折扣额 | calculator | 运营、零售教育 | 原价、折扣率或优惠额 | 成交价/折扣额 | 未开始 · P2 |
-| 127 | 加价率 Markup | Omni finance；Omni `markup`；与 discount 分意图 | `how-to-calculate-markup` | 成本与售价 → 加价率（区别 markdown） | calculator | 零售、财务教育 | 成本、售价或加价率 | markup% / 售价 | 未开始 · P2 |
-| 128 | 利润率 | Omni finance；合并 Omni: net-profit-margin/operating-margin；与 gross-margin 分意图；同页多类型 | `how-to-calculate-profit-margin` | 营业/净利润率（类型作选项） | calculator | 运营、财务教育 | 收入、成本/费用 | 利润率 + 免责 | 未开始 · P2 |
-| 129 | 边际贡献 | Omni finance；Omni `contribution-margin`；C-V4 补充 | `how-to-calculate-contribution-margin` | 贡献边际计算 | calculator | 运营、财务教育 | 单价、变动成本、销量 | 边际贡献与比率 | 未开始 · P2 |
-| 130 | 现值 / 终值 PV·FV | Omni finance；合并 Omni: present-value/future-value/annuity-present-value/annuity-future-value；与 NPV 分意图 | `how-to-calculate-present-value` | 单笔/年金现值与终值 | calculator | 财务教育 | 金额、利率、期数 | PV 或 FV + 免责 | 未开始 · P2 |
-| 131 | IRR | Omni finance；合并 Omni: internal-rate-of-return/modified-irr；C-V4 补充 | `how-to-calculate-irr` | 内部收益率（可选 MIRR） | calculator | 财务教育 | 现金流序列 | IRR% + 免责 | 未开始 · P2 |
-| 132 | 回收期 | Omni finance；Omni `payback-period`；可选折现回收作同页模式 | `how-to-calculate-payback-period` | 投资回收期估算 | calculator | 财务教育 | 初始投资、现金流 | 回收期 + 免责 | 未开始 · P2 |
-| 133 | 通胀 | Omni finance；合并 Omni: inflation/cpi-inflation/salary-inflation；禁 CPI 国家矩阵铺量 | `how-to-calculate-inflation` | 名义金额 ↔ 通胀调整 | calculator | 财务教育读者 | 金额、通胀率、年数 | 实际购买力对照 + 免责 | 未开始 · P2 |
-| 134 | 增值税 VAT / GST | Omni finance；合并 Omni: vat/gst/gst-qst/margin-and-vat；禁各国税率拆页；用户自填税率 | `how-to-calculate-vat` | 含税/未税互算（税率用户输入） | calculator | 小微经营、财务助理 | 净价/含税价、税率 | 税额与含税价 | 未开始 · P2 |
-| 135 | 债务还清 | Omni finance；合并 Omni: debt-payoff/debt-snowball/credit-card-payoff；雪球/雪崩作策略说明非拆页 | `how-to-calculate-debt-payoff` | 债务还清时间与利息估算 | calculator | 借款人教育 | 余额、利率、月付 | 还清月数/利息 + 免责 | 未开始 · P2 |
-| 136 | 72 法则 | Omni finance；Omni `rule-of-72`；教育向；免责 | `how-to-calculate-rule-of-72` | Rule of 72 估算翻倍时间 | calculator | 财务教育读者 | 年化收益率 | 翻倍约需年数 | 未开始 · P2 |
-| 137 | 小费 | Omni everyday-life；合并 Omni: tip/gratuity；everyday-life 补充 | `how-to-calculate-tip` | 账单小费与分摊 | calculator | 出行、餐饮用户 | 账单、小费比例、分摊人数 | 小费与人均 | 未开始 · P2 |
-| 138 | 年龄 | Omni everyday-life；合并 Omni: age/chronological-age；禁宠物年龄拆页 | `how-to-calculate-age` | 出生日期 → 年龄 | calculator | 通用 | 出生日期/两日期间 | 周岁/天数 | 未开始 · P2 |
-| 139 | 日期间隔 | Omni everyday-life；Omni `days-between-dates`；everyday-life | `how-to-calculate-date-difference` | 两日期之间天数 | calculator | 通用、项目助理 | 起止日期 | 天数/周数 | 未开始 · P2 |
-| 140 | 平均数 | Omni statistics；合并 Omni: mean/average/geometric-mean/harmonic-mean；A.7 补充 | `how-to-calculate-mean` | 算术/几何/调和平均（类型作选项） | calculator | 学生、分析 | 数值列表、平均类型 | 均值 + 公式 | 未开始 · P2 |
-| 141 | 中位数 / 众数 | Omni statistics；合并 Omni: median/mean-median-mode；可与 mean 互链 | `how-to-calculate-median` | 中位数与众数 | calculator | 学生、分析 | 数值列表 | 中位数/众数 | 未开始 · P2 |
-| 142 | 排列组合 | Omni math；合并 Omni: permutation/combination；A.7 补充 | `how-to-calculate-permutation-combination` | 排列与组合计算 | calculator | 学生 | n、r | P/C 值 + 公式 | 未开始 · P2 |
-| 143 | 二次方程 | Omni math；Omni `quadratic-formula`；A.7 补充 | `how-to-calculate-quadratic-equation` | 一元二次方程求根 | calculator | 学生 | a、b、c | 根 + 判别式说明 | 未开始 · P2 |
-| 144 | 三角形面积 | Omni math；合并 Omni: triangle-area/herons-formula/3-sides-triangle-area/right-triangle-area/equilateral-triangle-area/isosceles-triangle-area；形状条件作选项禁拆页 | `how-to-calculate-triangle-area` | 多种已知条件求三角形面积 | calculator | 学生 | 边/底高/角 | 面积 + 公式 | 未开始 · P2 |
-| 145 | 圆（周长/面积/弧） | Omni math；合并 Omni: circle/circumference/arc-length/area-of-a-circle/circle-diameter；A.7 补充 | `how-to-calculate-circle` | 圆的基本量计算 | calculator | 学生 | 半径/直径/弧度 | 周长/面积/弧长 | 未开始 · P2 |
-| 146 | 几何体积 | Omni math；合并 Omni: volume/cylinder-volume/sphere-volume/cone-volume/cube-volume；禁每形状一 URL | `how-to-calculate-volume` | 常见立体体积（形状作选项） | calculator | 学生、工程辅助 | 形状 + 尺寸 | 体积 | 未开始 · P2 |
-| 147 | 宏量营养素 | Omni health；合并 Omni: macro/iifym；C-V5 补充；YMYL | `how-to-calculate-macros` | 热量目标 → 碳水/蛋白/脂肪克数 | calculator | 健康教育读者 | 热量目标、蛋白/碳/脂比例 | 宏量克数 + 免责 | 未开始 · P2 |
-| 148 | 心率区间 | Omni health；合并 Omni: heart-rate/max-heart-rate/target-heart-rate/heart-rate-zone；YMYL；非医疗建议 | `how-to-calculate-heart-rate` | 最大心率与训练区间估算 | calculator | 健身教育读者 | 年龄、静息心率等 | 最大/目标心率区间 + 免责 | 未开始 · P2 |
-| 149 | 配速 | Omni sports；合并 Omni: pace/running-pace/5k-pace/marathon-pace/half-marathon-pace/bike-pace；禁 5k/马拉松拆页 | `how-to-calculate-pace` | 距离时间 → 配速（距离档作选项） | calculator | 跑步爱好者 | 距离、时间 | 配速/完赛时间 | 未开始 · P2 |
-| 150 | 1RM 最大重量 | Omni sports；Omni `one-rep-max`；YMYL 运动安全免责 | `how-to-calculate-one-rep-max` | 多次试举 → 估算一次最大重量 | calculator | 力量训练爱好者 | 重量、次数 | 估算 1RM + 免责 | 未开始 · P2 |
-| 151 | 欧姆定律 | Omni physics；合并 Omni: ohms-law/ohms-law-current/ohms-law-power/ohms-law-resistance；A.7 物理补充 | `how-to-calculate-ohms-law` | 欧姆定律与电功率关系 | calculator | 学生、电子爱好者 | V/I/R/P 已知量 | 未知量 + 公式 | 未开始 · P2 |
-| 152 | 密度 | Omni physics；合并 Omni: density/density-converter/density-mass-volume；A.7 | `how-to-calculate-density` | ρ = m/V | calculator | 学生 | 质量、体积 | 密度 | 未开始 · P2 |
-| 153 | 速度 | Omni physics；合并 Omni: velocity/speed/speed-converter；与配速分意图（物理 vs 跑步） | `how-to-calculate-velocity` | 平均速度 v = d/t | calculator | 学生 | 距离、时间 | 速度 | 未开始 · P2 |
-| 154 | 加速度 | Omni physics；合并 Omni: acceleration/acceleration-using-force-and-mass/angular-acceleration；A.7 | `how-to-calculate-acceleration` | 直线运动加速度（可选 F=ma） | calculator | 学生 | 速度变化/力与质量等 | 加速度 + 公式 | 未开始 · P2 |
+| 106 | 理想体重区间 | Omni health；Omni `ideal-weight`；C-V5 | `how-to-calculate-ideal-weight` | 常见公式区间估算 | calculator | 健康教育读者 | 身高、性别等 | 体重区间 + 免责 | 已上线 |
+| 107 | CAGR | Omni finance；Omni `cagr`；C-V4 | `how-to-calculate-cagr` | 期初/期末/年数 → 复合年增长率 | calculator | 财务教育、分析 | 起止价值、年数 | CAGR% + 免责 | 已上线 |
+| 108 | NPV | Omni finance；Omni `net-present-value`；C-V4；与 PV/FV 分意图 | `how-to-calculate-npv` | 现金流折现 → 净现值 | calculator | 财务教育 | 折现率、现金流序列 | NPV + 免责 | 已上线 |
+| 109 | 标准差 / 方差 | Omni statistics；合并 Omni: standard-deviation/variance/population-variance/relative-standard-deviation/grouped-data-standard-deviation；A.7；方差作同页模式 | `how-to-calculate-standard-deviation` | 样本/总体标准差与方差 | calculator | 学生、分析 | 数值列表 | σ/s/方差 + 公式说明 | 已上线 |
+| 110 | 混凝土方量 | Omni construction；合并 Omni: concrete-slab/concrete-column/concrete-cylinder/concrete-stairs/post-hole-concrete；C 工程；形状作选项禁拆页 | `how-to-calculate-concrete` | 尺寸 → 混凝土体积估算（板/柱等场景） | calculator | 装修、施工辅助 | 长宽厚等几何 | 体积/袋数估算 | 已上线 |
+| 111 | 瓷砖估算 | Omni construction；Omni `tile`；C 工程 | `how-to-calculate-tile` | 面积与单片规格 → 用量 | calculator | 装修辅助 | 面积、瓷砖尺寸、损耗 | 片数估算 | 已上线 |
+| 112 | 宽高比 | Omni other；合并 Omni: aspect-ratio/16-9-aspect-ratio/16-10-aspect-ratio/4-3-aspect-ratio/pixel-aspect-ratio/portrait-aspect-ratio；禁 16:9/4:3 独立 URL；css-aspect-ratio 另评估 | `how-to-calculate-aspect-ratio` | 分辨率/边长 → 比例与缩放 | calculator | 视频、设计、前端 | 宽、高或预设比例 | 比例与目标尺寸 | 已上线 |
+| 113 | 油漆估算 | Omni construction；Omni `paint`；C 工程 | `how-to-calculate-paint` | 墙面面积 → 油漆用量估算 | calculator | 装修辅助 | 面积、涂层数、覆盖率 | 升/罐数估算 | 已上线 |
+| 114 | 年薪 ↔ 时薪 | Omni finance；合并 Omni: salary-to-hourly/hourly-to-salary/annual-salary/annual-to-monthly-salary/annual-salary-per-hour/hourly-to-annual-salary；Omni finance 热门 | `how-to-calculate-salary-hourly` | 年/月/周薪 ↔ 时薪 | calculator | 求职者、人事助理 | 薪资与工作时长假设 | 时薪/年薪对照 + 免责 | 已上线 |
+| 115 | p 值 | Omni statistics；Omni `p-value`；A.7 | `how-to-calculate-p-value` | 检验统计量 → p 值（须写清假设） | calculator | 学生、分析 | 分布/统计量/尾型 | p 值 + 公式说明 | 已上线 |
+| 116 | 置信区间 | Omni statistics；合并 Omni: confidence-interval/90-confidence-interval/95-confidence-interval/99-confidence-interval；禁拆 90/95/99 URL | `how-to-calculate-confidence-interval` | 样本 → 置信区间（单页多置信水平） | calculator | 学生、分析 | 均值、σ、n、置信水平 | 区间端点 + 说明 | 已上线 |
+| 117 | Z 分数 | Omni statistics；Omni `z-score`；A.7 | `how-to-calculate-z-score` | 原始分 → 标准分 | calculator | 学生、分析 | x、μ、σ | z + 说明 | 已上线 |
+| 118 | 样本量 | Omni statistics；Omni `sample-size`；A.7 | `how-to-calculate-sample-size` | 误差/置信 → 所需样本量估算 | calculator | 调研、学生 | 误差、置信、比例假设 | n 估算 | 已上线 |
+| 119 | 有效数字 | Omni math；Omni `sig-fig`；Omni math 热门 | `how-to-calculate-significant-figures` | 计数/运算有效数字 | calculator | 学生、实验报告 | 数值或表达式 | 有效数字结果 | 已上线 |
+| 120 | 科学计数法 | Omni math；合并 Omni: scientific-notation/scientific-notation-converter；A.7 | `how-to-calculate-scientific-notation` | 十进制 ↔ 科学计数法 | calculator | 学生 | 数值 | 科学计数法互转 | 已上线 |
+| 121 | 对数 | Omni math；合并 Omni: log/natural-log/antilog/log-2/negative-log；合并原 log-calculator | `how-to-calculate-logarithm` | 任意底对数（含 ln） | calculator | 学生 | 真数、底数 | log 值 + 公式 | 已上线 |
+| 122 | 勾股定理 | Omni math；Omni `pythagorean-theorem`；A.7 | `how-to-calculate-pythagorean-theorem` | 直角三角形缺边求解 | calculator | 学生 | 两边长 | 第三边 + 公式 | 已上线 |
+| 123 | 斜率 | Omni math；Omni `slope`；A.7 | `how-to-calculate-slope` | 两点 → 直线斜率 | calculator | 学生 | 两点坐标 | 斜率 + 说明 | 已上线 |
+| 124 | 指数幂 | Omni math；Omni `exponent`；shortlist 原有 | `how-to-calculate-exponent` | a^b 指数运算 | calculator | 学生 | 底数、指数 | 幂值 + 说明 | 已上线 |
+| 125 | GPA | Omni other；合并 Omni: gpa/college-gpa/high-school-gpa/gpa-pakistan；禁拆 college/high-school 薄页 | `how-to-calculate-gpa` | 成绩点加权平均（须标地区量表） | calculator | 学生 | 课程成绩与学分 | GPA + 地区量表说明 | 已上线 |
+| 126 | 折扣 / 优惠价 | Omni finance；合并 Omni: discount/markdown/percent-off/percentage-discount/double-discount；Omni 补充；多层折扣作同页选项 | `how-to-calculate-discount` | 原价与折扣 → 成交价或折扣额 | calculator | 运营、零售教育 | 原价、折扣率或优惠额 | 成交价/折扣额 | 已上线 |
+| 127 | 加价率 Markup | Omni finance；Omni `markup`；与 discount 分意图 | `how-to-calculate-markup` | 成本与售价 → 加价率（区别 markdown） | calculator | 零售、财务教育 | 成本、售价或加价率 | markup% / 售价 | 已上线 |
+| 128 | 利润率 | Omni finance；合并 Omni: net-profit-margin/operating-margin；与 gross-margin 分意图；同页多类型 | `how-to-calculate-profit-margin` | 营业/净利润率（类型作选项） | calculator | 运营、财务教育 | 收入、成本/费用 | 利润率 + 免责 | 已上线 |
+| 129 | 边际贡献 | Omni finance；Omni `contribution-margin`；C-V4 补充 | `how-to-calculate-contribution-margin` | 贡献边际计算 | calculator | 运营、财务教育 | 单价、变动成本、销量 | 边际贡献与比率 | 已上线 |
+| 130 | 现值 / 终值 PV·FV | Omni finance；合并 Omni: present-value/future-value/annuity-present-value/annuity-future-value；与 NPV 分意图 | `how-to-calculate-present-value` | 单笔/年金现值与终值 | calculator | 财务教育 | 金额、利率、期数 | PV 或 FV + 免责 | 已上线 |
+| 131 | IRR | Omni finance；合并 Omni: internal-rate-of-return/modified-irr；C-V4 补充 | `how-to-calculate-irr` | 内部收益率（可选 MIRR） | calculator | 财务教育 | 现金流序列 | IRR% + 免责 | 已上线 |
+| 132 | 回收期 | Omni finance；Omni `payback-period`；可选折现回收作同页模式 | `how-to-calculate-payback-period` | 投资回收期估算 | calculator | 财务教育 | 初始投资、现金流 | 回收期 + 免责 | 已上线 |
+| 133 | 通胀 | Omni finance；合并 Omni: inflation/cpi-inflation/salary-inflation；禁 CPI 国家矩阵铺量 | `how-to-calculate-inflation` | 名义金额 ↔ 通胀调整 | calculator | 财务教育读者 | 金额、通胀率、年数 | 实际购买力对照 + 免责 | 已上线 |
+| 134 | 增值税 VAT / GST | Omni finance；合并 Omni: vat/gst/gst-qst/margin-and-vat；禁各国税率拆页；用户自填税率 | `how-to-calculate-vat` | 含税/未税互算（税率用户输入） | calculator | 小微经营、财务助理 | 净价/含税价、税率 | 税额与含税价 | 已上线 |
+| 135 | 债务还清 | Omni finance；合并 Omni: debt-payoff/debt-snowball/credit-card-payoff；雪球/雪崩作策略说明非拆页 | `how-to-calculate-debt-payoff` | 债务还清时间与利息估算 | calculator | 借款人教育 | 余额、利率、月付 | 还清月数/利息 + 免责 | 已上线 |
+| 136 | 72 法则 | Omni finance；Omni `rule-of-72`；教育向；免责 | `how-to-calculate-rule-of-72` | Rule of 72 估算翻倍时间 | calculator | 财务教育读者 | 年化收益率 | 翻倍约需年数 | 已上线 |
+| 137 | 小费 | Omni everyday-life；合并 Omni: tip/gratuity；everyday-life 补充 | `how-to-calculate-tip` | 账单小费与分摊 | calculator | 出行、餐饮用户 | 账单、小费比例、分摊人数 | 小费与人均 | 已上线 |
+| 138 | 年龄 | Omni everyday-life；合并 Omni: age/chronological-age；禁宠物年龄拆页 | `how-to-calculate-age` | 出生日期 → 年龄 | calculator | 通用 | 出生日期/两日期间 | 周岁/天数 | 已上线 |
+| 139 | 日期间隔 | Omni everyday-life；Omni `days-between-dates`；everyday-life | `how-to-calculate-date-difference` | 两日期之间天数 | calculator | 通用、项目助理 | 起止日期 | 天数/周数 | 已上线 |
+| 140 | 平均数 | Omni statistics；合并 Omni: mean/average/geometric-mean/harmonic-mean；A.7 补充 | `how-to-calculate-mean` | 算术/几何/调和平均（类型作选项） | calculator | 学生、分析 | 数值列表、平均类型 | 均值 + 公式 | 已上线 |
+| 141 | 中位数 / 众数 | Omni statistics；合并 Omni: median/mean-median-mode；可与 mean 互链 | `how-to-calculate-median` | 中位数与众数 | calculator | 学生、分析 | 数值列表 | 中位数/众数 | 已上线 |
+| 142 | 排列组合 | Omni math；合并 Omni: permutation/combination；A.7 补充 | `how-to-calculate-permutation-combination` | 排列与组合计算 | calculator | 学生 | n、r | P/C 值 + 公式 | 已上线 |
+| 143 | 二次方程 | Omni math；Omni `quadratic-formula`；A.7 补充 | `how-to-calculate-quadratic-equation` | 一元二次方程求根 | calculator | 学生 | a、b、c | 根 + 判别式说明 | 已上线 |
+| 144 | 三角形面积 | Omni math；合并 Omni: triangle-area/herons-formula/3-sides-triangle-area/right-triangle-area/equilateral-triangle-area/isosceles-triangle-area；形状条件作选项禁拆页 | `how-to-calculate-triangle-area` | 多种已知条件求三角形面积 | calculator | 学生 | 边/底高/角 | 面积 + 公式 | 已上线 |
+| 145 | 圆（周长/面积/弧） | Omni math；合并 Omni: circle/circumference/arc-length/area-of-a-circle/circle-diameter；A.7 补充 | `how-to-calculate-circle` | 圆的基本量计算 | calculator | 学生 | 半径/直径/弧度 | 周长/面积/弧长 | 已上线 |
+| 146 | 几何体积 | Omni math；合并 Omni: volume/cylinder-volume/sphere-volume/cone-volume/cube-volume；禁每形状一 URL | `how-to-calculate-volume` | 常见立体体积（形状作选项） | calculator | 学生、工程辅助 | 形状 + 尺寸 | 体积 | 已上线 |
+| 147 | 宏量营养素 | Omni health；合并 Omni: macro/iifym；C-V5 补充；YMYL | `how-to-calculate-macros` | 热量目标 → 碳水/蛋白/脂肪克数 | calculator | 健康教育读者 | 热量目标、蛋白/碳/脂比例 | 宏量克数 + 免责 | 已上线 |
+| 148 | 心率区间 | Omni health；合并 Omni: heart-rate/max-heart-rate/target-heart-rate/heart-rate-zone；YMYL；非医疗建议 | `how-to-calculate-heart-rate` | 最大心率与训练区间估算 | calculator | 健身教育读者 | 年龄、静息心率等 | 最大/目标心率区间 + 免责 | 已上线 |
+| 149 | 配速 | Omni sports；合并 Omni: pace/running-pace/5k-pace/marathon-pace/half-marathon-pace/bike-pace；禁 5k/马拉松拆页 | `how-to-calculate-pace` | 距离时间 → 配速（距离档作选项） | calculator | 跑步爱好者 | 距离、时间 | 配速/完赛时间 | 已上线 |
+| 150 | 1RM 最大重量 | Omni sports；Omni `one-rep-max`；YMYL 运动安全免责 | `how-to-calculate-one-rep-max` | 多次试举 → 估算一次最大重量 | calculator | 力量训练爱好者 | 重量、次数 | 估算 1RM + 免责 | 已上线 |
+| 151 | 欧姆定律 | Omni physics；合并 Omni: ohms-law/ohms-law-current/ohms-law-power/ohms-law-resistance；A.7 物理补充 | `how-to-calculate-ohms-law` | 欧姆定律与电功率关系 | calculator | 学生、电子爱好者 | V/I/R/P 已知量 | 未知量 + 公式 | 已上线 |
+| 152 | 密度 | Omni physics；合并 Omni: density/density-converter/density-mass-volume；A.7 | `how-to-calculate-density` | ρ = m/V | calculator | 学生 | 质量、体积 | 密度 | 已上线 |
+| 153 | 速度 | Omni physics；合并 Omni: velocity/speed/speed-converter；与配速分意图（物理 vs 跑步） | `how-to-calculate-velocity` | 平均速度 v = d/t | calculator | 学生 | 距离、时间 | 速度 | 已上线 |
+| 154 | 加速度 | Omni physics；合并 Omni: acceleration/acceleration-using-force-and-mass/angular-acceleration；A.7 | `how-to-calculate-acceleration` | 直线运动加速度（可选 F=ma） | calculator | 学生 | 速度变化/力与质量等 | 加速度 + 公式 | 已上线 |
 
 ---
 
@@ -288,24 +288,24 @@
 | 2 | `how-to-calculate-bmr-tdee` | BMR (Mifflin-St Jeor) | https://tooldone.com/health/bmr-calculator-basal-metabolic-rate-mifflin-st-jeor-equation/ | https://tooldone.com/zh/jiankang/jichu-daixielv-jisuanqi-mifulin-shengqiao-gongshi/ | 已上线 |
 | 3 | `how-to-calculate-bmr-tdee` | 卡路里 / TDEE | https://tooldone.com/health/calorie-calculator/ | https://tooldone.com/zh/jiankang/kaluli-jisuanqi/ | 已上线 |
 | 4 | `how-to-calculate-body-fat` | 海军体脂 | https://tooldone.com/health/navy-body-fat-calculator/ | https://tooldone.com/zh/jiankang/haijun-tizhi-jisuanqi/ | 已上线 |
-| 5 | `how-to-calculate-ideal-weight` | 理想体重 | https://tooldone.com/health/ideal-weight-calculator/ | https://tooldone.com/zh/jiankang/lixiang-tizhong-jisuanqi/ | 未开始 · P2 |
+| 5 | `how-to-calculate-ideal-weight` | 理想体重 | https://tooldone.com/health/ideal-weight-calculator/ | https://tooldone.com/zh/jiankang/lixiang-tizhong-jisuanqi/ | 已上线 |
 | 6 | `how-to-calculate-roi` | ROI | https://tooldone.com/finance/roi-calculator-return-on-investment/ | https://tooldone.com/zh/jinrong/roi-jisuanqi-touzi-huibao/ | 已上线对照 |
 | 7 | `how-to-calculate-marginal-revenue` | 边际收益 | https://tooldone.com/finance/marginal-revenue-calculator/ | https://tooldone.com/zh/jinrong/bianjingshouru-jisuanqi/ | 已上线对照 |
-| 8 | `how-to-calculate-compound-interest` | 复利 | https://tooldone.com/finance/compound-interest-calculator/ | https://tooldone.com/zh/jinrong/fuli-jisuanqi/ | 未开始 · P1 |
+| 8 | `how-to-calculate-compound-interest` | 复利 | https://tooldone.com/finance/compound-interest-calculator/ | https://tooldone.com/zh/jinrong/fuli-jisuanqi/ | 已上线 |
 | 9 | `how-to-calculate-emi` | EMI | https://tooldone.com/finance/emi-calculator-equated-monthly-installment/ | https://tooldone.com/zh/jinrong/deng-e-yue-fu-kuan-ji-suan-qi/ | 已上线 |
 | 10 | `how-to-calculate-emi` | 摊还 | https://tooldone.com/finance/amortization-calculator/ | https://tooldone.com/zh/jinrong/zhejiu-jisuanqi/ | 已上线（核对 zh 文案是否误译） |
 | 11 | `how-to-calculate-break-even` | 盈亏平衡 | https://tooldone.com/finance/break-even-calculator/ | https://tooldone.com/zh/jinrong/break-even-jisuanqi/ | 已上线 |
 | 12 | `how-to-calculate-gross-margin` | 毛利率 | https://tooldone.com/finance/gross-margin-calculator/ | https://tooldone.com/zh/jinrong/maoli-lv-jisuanqi/ | 已上线 |
-| 13 | `how-to-calculate-cagr` | CAGR | https://tooldone.com/finance/cagr-calculator-compound-annual-growth-rate/ | https://tooldone.com/zh/jinrong/cagr-jisuanqi-fuhe-nianzengzhanglu/ | 未开始 · P2 |
-| 14 | `how-to-calculate-npv` | NPV | https://tooldone.com/finance/npv-calculator-net-present-value/ | https://tooldone.com/zh/jinrong/npv-jisuanqi-jingxianzhi/ | 未开始 · P2 |
+| 13 | `how-to-calculate-cagr` | CAGR | https://tooldone.com/finance/cagr-calculator-compound-annual-growth-rate/ | https://tooldone.com/zh/jinrong/cagr-jisuanqi-fuhe-nianzengzhanglu/ | 已上线 |
+| 14 | `how-to-calculate-npv` | NPV | https://tooldone.com/finance/npv-calculator-net-present-value/ | https://tooldone.com/zh/jinrong/npv-jisuanqi-jingxianzhi/ | 已上线 |
 | 15 | `how-to-calculate-percentage-change` | 百分比变化 | https://tooldone.com/math/percentage-change-calculator/ | https://tooldone.com/zh/shuxue/baifenbi-bianhua-jisuanqi/ | 已上线对照 |
 | 16 | `how-to-calculate-gradient` | 梯度 ∇f | https://tooldone.com/math/gradient-calculator/ | https://tooldone.com/zh/shuxue/tiliang-jisuanqi/ | 已上线对照 |
 | 17 | `square-feet` | 平方英尺 | https://tooldone.com/conversion/square-feet-converter/ | https://tooldone.com/zh/zhuanhuan/pingfang-yingchi-zhuanhuanqi/ | 已上线对照 |
 | 18 | `unit-converter` | 单位换算 | https://tooldone.com/conversion/conversion-calculator/ | https://tooldone.com/zh/zhuanhuan/dan-wei-zhuan-huan-ji-suan-qi/ | 已上线 |
-| 19 | `how-to-calculate-standard-deviation` | 标准差 | https://tooldone.com/statistic/standard-deviation-calculator/ | https://tooldone.com/zh/tongji/biaozhun-cha-jisuanqi/ | 未开始 · P2 |
-| 20 | `how-to-calculate-concrete` | 混凝土 | https://tooldone.com/construction/concrete-calculator/ | https://tooldone.com/zh/jianzhu/hunningtu-jisuanqi/ | 未开始 · P2 |
-| 21 | `how-to-calculate-tile` | 瓷砖 | https://tooldone.com/construction/tile-calculator/ | https://tooldone.com/zh/jianzhu/cizhuan-jisuanqi/ | 未开始 · P2 |
-| 22 | `how-to-calculate-aspect-ratio` | 宽高比 | https://tooldone.com/other/aspect-ratio-calculator/ | https://tooldone.com/zh/qita/changkuanbi-jisuanqi/ | 未开始 · P2 |
+| 19 | `how-to-calculate-standard-deviation` | 标准差 | https://tooldone.com/statistic/standard-deviation-calculator/ | https://tooldone.com/zh/tongji/biaozhun-cha-jisuanqi/ | 已上线 |
+| 20 | `how-to-calculate-concrete` | 混凝土 | https://tooldone.com/construction/concrete-calculator/ | https://tooldone.com/zh/jianzhu/hunningtu-jisuanqi/ | 已上线 |
+| 21 | `how-to-calculate-tile` | 瓷砖 | https://tooldone.com/construction/tile-calculator/ | https://tooldone.com/zh/jianzhu/cizhuan-jisuanqi/ | 已上线 |
+| 22 | `how-to-calculate-aspect-ratio` | 宽高比 | https://tooldone.com/other/aspect-ratio-calculator/ | https://tooldone.com/zh/qita/changkuanbi-jisuanqi/ | 已上线 |
 
 分品类全量 slug 表：`competitor-refs/tooldone-2026-08-08/lists/*.md`。
 
@@ -332,55 +332,55 @@
 | 11 | `how-to-calculate-gross-margin` | 毛利率 | https://www.omnicalculator.com/finance/gross-margin | 已上线 |
 | 12 | `unit-converter` | 单位换算（通用） | https://www.omnicalculator.com/conversion/conversion-calculator | 已上线 |
 | 13 | `how-to-calculate-body-fat` | 体脂率 | https://www.omnicalculator.com/health/navy-body-fat | 已上线；合并 4 个 Omni slug |
-| 14 | `how-to-calculate-ideal-weight` | 理想体重区间 | https://www.omnicalculator.com/health/ideal-weight | 未开始 · P2 |
-| 15 | `how-to-calculate-cagr` | CAGR | https://www.omnicalculator.com/finance/cagr | 未开始 · P2 |
-| 16 | `how-to-calculate-npv` | NPV | https://www.omnicalculator.com/finance/net-present-value | 未开始 · P2 |
-| 17 | `how-to-calculate-standard-deviation` | 标准差 / 方差 | https://www.omnicalculator.com/statistics/standard-deviation | 未开始 · P2；合并 5 个 Omni slug |
-| 18 | `how-to-calculate-concrete` | 混凝土方量 | https://www.omnicalculator.com/construction/concrete-slab | 未开始 · P2；合并 5 个 Omni slug |
-| 19 | `how-to-calculate-tile` | 瓷砖估算 | https://www.omnicalculator.com/construction/tile | 未开始 · P2 |
-| 20 | `how-to-calculate-aspect-ratio` | 宽高比 | https://www.omnicalculator.com/other/aspect-ratio | 未开始 · P2；合并 6 个 Omni slug |
-| 21 | `how-to-calculate-paint` | 油漆估算 | https://www.omnicalculator.com/construction/paint | 未开始 · P2 |
-| 22 | `how-to-calculate-salary-hourly` | 年薪 ↔ 时薪 | https://www.omnicalculator.com/finance/salary-to-hourly | 未开始 · P2；合并 6 个 Omni slug |
-| 23 | `how-to-calculate-p-value` | p 值 | https://www.omnicalculator.com/statistics/p-value | 未开始 · P2 |
-| 24 | `how-to-calculate-confidence-interval` | 置信区间 | https://www.omnicalculator.com/statistics/confidence-interval | 未开始 · P2；合并 4 个 Omni slug |
-| 25 | `how-to-calculate-z-score` | Z 分数 | https://www.omnicalculator.com/statistics/z-score | 未开始 · P2 |
-| 26 | `how-to-calculate-sample-size` | 样本量 | https://www.omnicalculator.com/statistics/sample-size | 未开始 · P2 |
-| 27 | `how-to-calculate-significant-figures` | 有效数字 | https://www.omnicalculator.com/math/sig-fig | 未开始 · P2 |
-| 28 | `how-to-calculate-scientific-notation` | 科学计数法 | https://www.omnicalculator.com/math/scientific-notation | 未开始 · P2；合并 2 个 Omni slug |
-| 29 | `how-to-calculate-logarithm` | 对数 | https://www.omnicalculator.com/math/log | 未开始 · P2；合并 5 个 Omni slug |
-| 30 | `how-to-calculate-pythagorean-theorem` | 勾股定理 | https://www.omnicalculator.com/math/pythagorean-theorem | 未开始 · P2 |
-| 31 | `how-to-calculate-slope` | 斜率 | https://www.omnicalculator.com/math/slope | 未开始 · P2 |
-| 32 | `how-to-calculate-exponent` | 指数幂 | https://www.omnicalculator.com/math/exponent | 未开始 · P2 |
-| 33 | `how-to-calculate-gpa` | GPA | https://www.omnicalculator.com/other/gpa | 未开始 · P2；合并 4 个 Omni slug |
-| 34 | `how-to-calculate-discount` | 折扣 / 优惠价 | https://www.omnicalculator.com/finance/discount | 未开始 · P2；合并 5 个 Omni slug |
-| 35 | `how-to-calculate-markup` | 加价率 Markup | https://www.omnicalculator.com/finance/markup | 未开始 · P2 |
-| 36 | `how-to-calculate-profit-margin` | 利润率 | https://www.omnicalculator.com/finance/net-profit-margin | 未开始 · P2；合并 2 个 Omni slug |
-| 37 | `how-to-calculate-contribution-margin` | 边际贡献 | https://www.omnicalculator.com/finance/contribution-margin | 未开始 · P2 |
-| 38 | `how-to-calculate-present-value` | 现值 / 终值 PV·FV | https://www.omnicalculator.com/finance/present-value | 未开始 · P2；合并 4 个 Omni slug |
-| 39 | `how-to-calculate-irr` | IRR | https://www.omnicalculator.com/finance/internal-rate-of-return | 未开始 · P2；合并 2 个 Omni slug |
-| 40 | `how-to-calculate-payback-period` | 回收期 | https://www.omnicalculator.com/finance/payback-period | 未开始 · P2 |
-| 41 | `how-to-calculate-inflation` | 通胀 | https://www.omnicalculator.com/finance/inflation | 未开始 · P2；合并 3 个 Omni slug |
-| 42 | `how-to-calculate-vat` | 增值税 VAT / GST | https://www.omnicalculator.com/finance/vat | 未开始 · P2；合并 4 个 Omni slug |
-| 43 | `how-to-calculate-debt-payoff` | 债务还清 | https://www.omnicalculator.com/finance/debt-payoff | 未开始 · P2；合并 3 个 Omni slug |
-| 44 | `how-to-calculate-rule-of-72` | 72 法则 | https://www.omnicalculator.com/finance/rule-of-72 | 未开始 · P2 |
-| 45 | `how-to-calculate-tip` | 小费 | https://www.omnicalculator.com/everyday-life/tip | 未开始 · P2；合并 2 个 Omni slug |
-| 46 | `how-to-calculate-age` | 年龄 | https://www.omnicalculator.com/everyday-life/age | 未开始 · P2；合并 2 个 Omni slug |
-| 47 | `how-to-calculate-date-difference` | 日期间隔 | https://www.omnicalculator.com/everyday-life/days-between-dates | 未开始 · P2 |
-| 48 | `how-to-calculate-mean` | 平均数 | https://www.omnicalculator.com/statistics/mean | 未开始 · P2；合并 4 个 Omni slug |
-| 49 | `how-to-calculate-median` | 中位数 / 众数 | https://www.omnicalculator.com/statistics/median | 未开始 · P2；合并 2 个 Omni slug |
-| 50 | `how-to-calculate-permutation-combination` | 排列组合 | https://www.omnicalculator.com/math/permutation | 未开始 · P2；合并 2 个 Omni slug |
-| 51 | `how-to-calculate-quadratic-equation` | 二次方程 | https://www.omnicalculator.com/math/quadratic-formula | 未开始 · P2 |
-| 52 | `how-to-calculate-triangle-area` | 三角形面积 | https://www.omnicalculator.com/math/triangle-area | 未开始 · P2；合并 6 个 Omni slug |
-| 53 | `how-to-calculate-circle` | 圆（周长/面积/弧） | https://www.omnicalculator.com/math/circle | 未开始 · P2；合并 5 个 Omni slug |
-| 54 | `how-to-calculate-volume` | 几何体积 | https://www.omnicalculator.com/math/volume | 未开始 · P2；合并 5 个 Omni slug |
-| 55 | `how-to-calculate-macros` | 宏量营养素 | https://www.omnicalculator.com/health/macro | 未开始 · P2；合并 2 个 Omni slug |
-| 56 | `how-to-calculate-heart-rate` | 心率区间 | https://www.omnicalculator.com/health/heart-rate | 未开始 · P2；合并 4 个 Omni slug |
-| 57 | `how-to-calculate-pace` | 配速 | https://www.omnicalculator.com/sports/pace | 未开始 · P2；合并 6 个 Omni slug |
-| 58 | `how-to-calculate-one-rep-max` | 1RM 最大重量 | https://www.omnicalculator.com/sports/one-rep-max | 未开始 · P2 |
-| 59 | `how-to-calculate-ohms-law` | 欧姆定律 | https://www.omnicalculator.com/physics/ohms-law | 未开始 · P2；合并 4 个 Omni slug |
-| 60 | `how-to-calculate-density` | 密度 | https://www.omnicalculator.com/physics/density | 未开始 · P2；合并 3 个 Omni slug |
-| 61 | `how-to-calculate-velocity` | 速度 | https://www.omnicalculator.com/physics/velocity | 未开始 · P2；合并 3 个 Omni slug |
-| 62 | `how-to-calculate-acceleration` | 加速度 | https://www.omnicalculator.com/physics/acceleration | 未开始 · P2；合并 3 个 Omni slug |
+| 14 | `how-to-calculate-ideal-weight` | 理想体重区间 | https://www.omnicalculator.com/health/ideal-weight | 已上线 |
+| 15 | `how-to-calculate-cagr` | CAGR | https://www.omnicalculator.com/finance/cagr | 已上线 |
+| 16 | `how-to-calculate-npv` | NPV | https://www.omnicalculator.com/finance/net-present-value | 已上线 |
+| 17 | `how-to-calculate-standard-deviation` | 标准差 / 方差 | https://www.omnicalculator.com/statistics/standard-deviation | 已上线；合并 5 个 Omni slug |
+| 18 | `how-to-calculate-concrete` | 混凝土方量 | https://www.omnicalculator.com/construction/concrete-slab | 已上线；合并 5 个 Omni slug |
+| 19 | `how-to-calculate-tile` | 瓷砖估算 | https://www.omnicalculator.com/construction/tile | 已上线 |
+| 20 | `how-to-calculate-aspect-ratio` | 宽高比 | https://www.omnicalculator.com/other/aspect-ratio | 已上线；合并 6 个 Omni slug |
+| 21 | `how-to-calculate-paint` | 油漆估算 | https://www.omnicalculator.com/construction/paint | 已上线 |
+| 22 | `how-to-calculate-salary-hourly` | 年薪 ↔ 时薪 | https://www.omnicalculator.com/finance/salary-to-hourly | 已上线；合并 6 个 Omni slug |
+| 23 | `how-to-calculate-p-value` | p 值 | https://www.omnicalculator.com/statistics/p-value | 已上线 |
+| 24 | `how-to-calculate-confidence-interval` | 置信区间 | https://www.omnicalculator.com/statistics/confidence-interval | 已上线；合并 4 个 Omni slug |
+| 25 | `how-to-calculate-z-score` | Z 分数 | https://www.omnicalculator.com/statistics/z-score | 已上线 |
+| 26 | `how-to-calculate-sample-size` | 样本量 | https://www.omnicalculator.com/statistics/sample-size | 已上线 |
+| 27 | `how-to-calculate-significant-figures` | 有效数字 | https://www.omnicalculator.com/math/sig-fig | 已上线 |
+| 28 | `how-to-calculate-scientific-notation` | 科学计数法 | https://www.omnicalculator.com/math/scientific-notation | 已上线；合并 2 个 Omni slug |
+| 29 | `how-to-calculate-logarithm` | 对数 | https://www.omnicalculator.com/math/log | 已上线；合并 5 个 Omni slug |
+| 30 | `how-to-calculate-pythagorean-theorem` | 勾股定理 | https://www.omnicalculator.com/math/pythagorean-theorem | 已上线 |
+| 31 | `how-to-calculate-slope` | 斜率 | https://www.omnicalculator.com/math/slope | 已上线 |
+| 32 | `how-to-calculate-exponent` | 指数幂 | https://www.omnicalculator.com/math/exponent | 已上线 |
+| 33 | `how-to-calculate-gpa` | GPA | https://www.omnicalculator.com/other/gpa | 已上线；合并 4 个 Omni slug |
+| 34 | `how-to-calculate-discount` | 折扣 / 优惠价 | https://www.omnicalculator.com/finance/discount | 已上线；合并 5 个 Omni slug |
+| 35 | `how-to-calculate-markup` | 加价率 Markup | https://www.omnicalculator.com/finance/markup | 已上线 |
+| 36 | `how-to-calculate-profit-margin` | 利润率 | https://www.omnicalculator.com/finance/net-profit-margin | 已上线；合并 2 个 Omni slug |
+| 37 | `how-to-calculate-contribution-margin` | 边际贡献 | https://www.omnicalculator.com/finance/contribution-margin | 已上线 |
+| 38 | `how-to-calculate-present-value` | 现值 / 终值 PV·FV | https://www.omnicalculator.com/finance/present-value | 已上线；合并 4 个 Omni slug |
+| 39 | `how-to-calculate-irr` | IRR | https://www.omnicalculator.com/finance/internal-rate-of-return | 已上线；合并 2 个 Omni slug |
+| 40 | `how-to-calculate-payback-period` | 回收期 | https://www.omnicalculator.com/finance/payback-period | 已上线 |
+| 41 | `how-to-calculate-inflation` | 通胀 | https://www.omnicalculator.com/finance/inflation | 已上线；合并 3 个 Omni slug |
+| 42 | `how-to-calculate-vat` | 增值税 VAT / GST | https://www.omnicalculator.com/finance/vat | 已上线；合并 4 个 Omni slug |
+| 43 | `how-to-calculate-debt-payoff` | 债务还清 | https://www.omnicalculator.com/finance/debt-payoff | 已上线；合并 3 个 Omni slug |
+| 44 | `how-to-calculate-rule-of-72` | 72 法则 | https://www.omnicalculator.com/finance/rule-of-72 | 已上线 |
+| 45 | `how-to-calculate-tip` | 小费 | https://www.omnicalculator.com/everyday-life/tip | 已上线；合并 2 个 Omni slug |
+| 46 | `how-to-calculate-age` | 年龄 | https://www.omnicalculator.com/everyday-life/age | 已上线；合并 2 个 Omni slug |
+| 47 | `how-to-calculate-date-difference` | 日期间隔 | https://www.omnicalculator.com/everyday-life/days-between-dates | 已上线 |
+| 48 | `how-to-calculate-mean` | 平均数 | https://www.omnicalculator.com/statistics/mean | 已上线；合并 4 个 Omni slug |
+| 49 | `how-to-calculate-median` | 中位数 / 众数 | https://www.omnicalculator.com/statistics/median | 已上线；合并 2 个 Omni slug |
+| 50 | `how-to-calculate-permutation-combination` | 排列组合 | https://www.omnicalculator.com/math/permutation | 已上线；合并 2 个 Omni slug |
+| 51 | `how-to-calculate-quadratic-equation` | 二次方程 | https://www.omnicalculator.com/math/quadratic-formula | 已上线 |
+| 52 | `how-to-calculate-triangle-area` | 三角形面积 | https://www.omnicalculator.com/math/triangle-area | 已上线；合并 6 个 Omni slug |
+| 53 | `how-to-calculate-circle` | 圆（周长/面积/弧） | https://www.omnicalculator.com/math/circle | 已上线；合并 5 个 Omni slug |
+| 54 | `how-to-calculate-volume` | 几何体积 | https://www.omnicalculator.com/math/volume | 已上线；合并 5 个 Omni slug |
+| 55 | `how-to-calculate-macros` | 宏量营养素 | https://www.omnicalculator.com/health/macro | 已上线；合并 2 个 Omni slug |
+| 56 | `how-to-calculate-heart-rate` | 心率区间 | https://www.omnicalculator.com/health/heart-rate | 已上线；合并 4 个 Omni slug |
+| 57 | `how-to-calculate-pace` | 配速 | https://www.omnicalculator.com/sports/pace | 已上线；合并 6 个 Omni slug |
+| 58 | `how-to-calculate-one-rep-max` | 1RM 最大重量 | https://www.omnicalculator.com/sports/one-rep-max | 已上线 |
+| 59 | `how-to-calculate-ohms-law` | 欧姆定律 | https://www.omnicalculator.com/physics/ohms-law | 已上线；合并 4 个 Omni slug |
+| 60 | `how-to-calculate-density` | 密度 | https://www.omnicalculator.com/physics/density | 已上线；合并 3 个 Omni slug |
+| 61 | `how-to-calculate-velocity` | 速度 | https://www.omnicalculator.com/physics/velocity | 已上线；合并 3 个 Omni slug |
+| 62 | `how-to-calculate-acceleration` | 加速度 | https://www.omnicalculator.com/physics/acceleration | 已上线；合并 3 个 Omni slug |
 
 完整 shortlist TSV：`competitor-refs/omnicalculator-2026-08-08/omnicalculator-formula-ref-shortlist.tsv`。  
 分品类全量 slug 表：`competitor-refs/omnicalculator-2026-08-08/lists/*.md`。
@@ -396,7 +396,7 @@
 | ToolDone 全量归档 | ~2826 en / ~2835 zh |
 | Omni 意图合并（§9 / §12） | **62** 行；明细 TSV `omnicalculator-intent-merge-howto.tsv` |
 | Omni 全量归档 | ~3867 en（无 zh） |
-| 已上线 | 41 |
+| 已上线 | 114 |
 | 未开始 · P0 | 14 |
 | 未开始 · P1 | ~26（含计算器 P1） |
 | 未开始 · P2 | ~80（含 Omni 合并补充计算器候选） |

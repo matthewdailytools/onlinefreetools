@@ -1,0 +1,50 @@
+/**
+ * i18n tool shard (how-to-calculate-discount / ar).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const ar: SiteLangDict = {
+	tool_discount_title: "حاسبة الخصم — السعر بعد التخفيض",
+	tool_discount_description: "احسب السعر النهائي من السعر الأصلي ونسبة الخصم. مثال: 100 بخصم 20٪ → 80. خصم ثانٍ اختياري يُطبَّق على السعر المخفّض. حساب في المتصفح فقط وليس نظام دفع للمتجر.",
+	tool_discount_calculate: "احسب",
+	tool_discount_sample: "تحميل مثال",
+	tool_discount_clear: "مسح",
+	tool_discount_original_label: "السعر الأصلي",
+	tool_discount_original_ph: "مثال 100",
+	tool_discount_pct_label: "الخصم (% off)",
+	tool_discount_pct_ph: "مثال 20",
+	tool_discount_pct2_label: "خصم ثانٍ % (اختياري)",
+	tool_discount_pct2_ph: "مثال 10",
+	tool_discount_finalOut_label: "السعر النهائي",
+	tool_discount_savedOut_label: "إجمالي التوفير",
+	tool_discount_result_note: "الخصم الثاني إن وُجد يُطبَّق على السعر المخفّض. للاستخدام التعليمي.",
+	tool_discount_err_generic: "أدخل سعراً أصلياً موجباً ونسبة خصم بين 0 و100.",
+	tool_discount_how_title: "طريقة الاستخدام",
+	tool_discount_how_body: "أدخل السعر الأصلي ونسبة التخفيض. يمكنك إضافة نسبة ثانية على السعر بعد الخصم. تعرض الصفحة النهائي والتوفير داخل المتصفح.",
+	tool_discount_formula_title: "الصيغة",
+	tool_discount_formula_body: "النهائي = الأصلي × (1 − d₁/100) × (1 − d₂/100) عند وجود خصم ثانٍ. ملاحظات:",
+	tool_discount_formula_item_1: "d₁ وd₂ نسب تخفيض (20 تعني 20٪ خصم) وليست معاملات 0.8.",
+	tool_discount_formula_item_2: "اترك الثاني فارغاً أو 0 لخصم واحد.",
+	tool_discount_formula_item_3: "الضرائب والقسائم ذات المبلغ الثابت غير مُنمذَجة.",
+	tool_discount_example_title: "مثال",
+	tool_discount_example: "مثال: 100 بخصم 20٪ → 80. ثم 10٪ → 72.",
+	tool_discount_usecases_title: "متى تستخدمه",
+	tool_discount_usecase_1: "تقدير سعر العرض قبل الضريبة.",
+	tool_discount_usecase_2: "واجب: خصومات متتالية.",
+	tool_discount_usecase_3: "تمرين الخصم المزدوج.",
+	tool_discount_faq_q1: "هل يشمل الضريبة؟",
+	tool_discount_faq_a1: "لا؛ أدخل مبالغ قبل الضريبة.",
+	tool_discount_faq_q2: "كيف يُطبَّق الخصم الثاني؟",
+	tool_discount_faq_a2: "على السعر بعد الخصم الأول لا على الأصلي مجدداً.",
+	tool_discount_faq_q3: "هل 20٪ خصم تعني دفع 20٪؟",
+	tool_discount_faq_a3: "لا؛ تدفع 80٪ من الأصلي.",
+	tool_discount_faq_q4: "قسيمة بمبلغ ثابت؟",
+	tool_discount_faq_a4: "هذه الصفحة للنسب المئوية فقط.",
+	tool_discount_disclaimer: "توضيح تعليمي للأسعار وليس نظام دفع أو ضرائب.",
+	tool_discount_references: "Investopedia عن الخصم؛ حساب النسب المتتالية.",
+	tool_discount_ref_a_label: "Investopedia — Discount",
+	tool_discount_ref_b_label: "ويكيبيديا — الخصم",
+	tool_discount_article: "سعر بعد خصم نسبي من مبلغ أصلي مع خصم ثانٍ اختياري في صفحة واحدة.",
+};
+
+export default ar;

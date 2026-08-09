@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-confidence-interval",
+  "path": "/tools/how-to-calculate-confidence-interval",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_confidence_interval_title",
+  "homeTitleKey": "tool_confidence_interval_title",
+  "homeDescKey": "tool_confidence_interval_description",
+  "faqPrefix": "tool_confidence_interval",
+  "related": [
+    "how-to-calculate-p-value",
+    "how-to-calculate-standard-deviation"
+  ],
+  "logo": "/icons/tools/how-to-calculate-confidence-interval.svg",
+  "page": {
+    "module": "../pages/howToCalculateConfidenceIntervalPage",
+    "export": "renderHowToCalculateConfidenceIntervalPage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

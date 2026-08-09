@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-present-value / en).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const en: SiteLangDict = {
+	tool_present_value_title: "Present Value Calculator — PV and FV Modes",
+	tool_present_value_description: "Switch between present value and future value for a lump sum. Sample: FV 10,000 at 5% for 5 years → PV ≈ 7,835.26. Educational time-value math — not investment advice Calculate PV or FV with the compound formula; example FV 10,000 at 5% for 5 years → PV ≈ 7,835.26.",
+	tool_present_value_calculate: "Calculate",
+	tool_present_value_sample: "Load sample",
+	tool_present_value_clear: "Clear",
+	tool_present_value_mode_label: "Mode",
+	tool_present_value_mode_pv: "Find present value (from FV)",
+	tool_present_value_mode_fv: "Find future value (from PV)",
+	tool_present_value_amount_label: "Amount (PV or FV)",
+	tool_present_value_amount_ph: "e.g. 10000",
+	tool_present_value_rate_label: "Annual rate %",
+	tool_present_value_rate_ph: "e.g. 5",
+	tool_present_value_n_label: "Years (n)",
+	tool_present_value_n_ph: "e.g. 5",
+	tool_present_value_out_label: "Result",
+	tool_present_value_result_note: "PV = FV/(1+r)^n ; FV = PV×(1+r)^n. Educational — not investment advice.",
+	tool_present_value_err_generic: "Enter positive amount, finite rate > -100%, and n > 0.",
+	tool_present_value_how_title: "How it works",
+	tool_present_value_how_body: "Choose PV or FV mode. Enter the known amount, annual rate, and years. Distinct from NPV (cash-flow series).",
+	tool_present_value_formula_title: "Formula",
+	tool_present_value_formula_body: "PV = FV / (1+r)^n and FV = PV × (1+r)^n with r as a decimal. Notes:",
+	tool_present_value_formula_item_1: "Compounding is annual end-of-year in this simple model.",
+	tool_present_value_formula_item_2: "Rate −100% or below is invalid.",
+	tool_present_value_formula_item_3: "Annuity streams are not modeled — use NPV for series.",
+	tool_present_value_example_title: "Example",
+	tool_present_value_example: "Example: FV 10000, r=5%, n=5 → PV = 10000/1.05^5 ≈ 7835.26.",
+	tool_present_value_usecases_title: "When to use it",
+	tool_present_value_usecase_1: "Homework lump-sum discounting.",
+	tool_present_value_usecase_2: "Sketch what a future goal is worth today.",
+	tool_present_value_usecase_3: "Contrast with NPV for multi-year cash flows.",
+	tool_present_value_faq_q1: "Sample PV?",
+	tool_present_value_faq_a1: "≈7835.26 for FV 10000 at 5% over 5 years.",
+	tool_present_value_faq_q2: "PV vs NPV?",
+	tool_present_value_faq_a2: "PV is one amount; NPV discounts a cash-flow list minus investment.",
+	tool_present_value_faq_q3: "Monthly compounding?",
+	tool_present_value_faq_a3: "This page uses annual periods only.",
+	tool_present_value_faq_q4: "Advice?",
+	tool_present_value_faq_a4: "Educational only.",
+	tool_present_value_article: "Present Value Calculator — PV and FV Modes",
+	tool_present_value_disclaimer: "Educational present value only — not financial, tax, or investment advice.",
+	tool_present_value_references: "Investopedia and standard textbook formulas.",
+	tool_present_value_ref_a_label: "Investopedia — Present value",
+	tool_present_value_ref_b_label: "Investopedia — Future value",
+};
+
+export default en;

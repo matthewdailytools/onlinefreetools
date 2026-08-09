@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-logarithm / ru).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const ru: SiteLangDict = {
+	tool_logarithm_title: "Калькулятор логарифмов — Как вычислить log",
+	tool_logarithm_description: "Считайте log₁₀, ln или log_b(x) при x>0. Своё основание через ln(x)/ln(b). Пример: log₁₀(1000)=3. Явно указывает область (x>0, b>0, b≠1). В браузере для учёбы.",
+	tool_logarithm_calculate: "Рассчитать",
+	tool_logarithm_sample: "Загрузить пример",
+	tool_logarithm_clear: "Очистить",
+	tool_logarithm_mode_label: "Тип логарифма",
+	tool_logarithm_mode_log10: "log₁₀ (обычный)",
+	tool_logarithm_mode_ln: "ln (натуральный)",
+	tool_logarithm_mode_custom: "log_b (своё основание)",
+	tool_logarithm_x_label: "Аргумент x",
+	tool_logarithm_x_ph: "напр. 1000",
+	tool_logarithm_base_label: "Основание b",
+	tool_logarithm_base_ph: "напр. 2",
+	tool_logarithm_logOut_label: "Значение логарифма",
+	tool_logarithm_result_note: "Замена основания через ln: log_b(x)=ln(x)/ln(b). Нужны x>0 и допустимое основание.",
+	tool_logarithm_err_generic: "Введите x>0; для своего основания b>0 и b≠1.",
+	tool_logarithm_how_title: "Как пользоваться",
+	tool_logarithm_how_body: "Выберите log₁₀, ln или своё основание. Введите x>0 (и b при необходимости). Счёт через Math.log/Math.log10 и замену основания.",
+	tool_logarithm_formula_title: "Формула и область",
+	tool_logarithm_formula_body: "log_b(x) — показатель, переводящий b в x. Здесь:",
+	tool_logarithm_formula_item_1: "log₁₀ — обычный; ln — натуральный (основание e).",
+	tool_logarithm_formula_item_2: "Своё: log_b(x)=ln(x)/ln(b) при b>0, b≠1, x>0.",
+	tool_logarithm_formula_item_3: "x должен быть положительным.",
+	tool_logarithm_formula_item_4: "Сверьте с страницей степеней: b^y≈x.",
+	tool_logarithm_example_title: "Пример",
+	tool_logarithm_example: "Пример: log₁₀(1000)=3.",
+	tool_logarithm_usecases_title: "Когда применять",
+	tool_logarithm_usecase_1: "Домашнее задание: log₁₀, ln или log₂.",
+	tool_logarithm_usecase_2: "Проверить замену основания вручную.",
+	tool_logarithm_usecase_3: "Подготовить шкалы научной записи.",
+	tool_logarithm_disclaimer: "Только учебные вещественные логарифмы. Не заменяет CAS.",
+	tool_logarithm_references: "Wikipedia о логарифме и натуральном логарифме.",
+	tool_logarithm_ref_log_label: "Wikipedia — Логарифм",
+	tool_logarithm_ref_ln_label: "Wikipedia — Натуральный логарифм",
+	tool_logarithm_article: "Считайте log₁₀, ln или логарифмы с произвольным основанием для x>0 в браузере.",
+	tool_logarithm_faq_q1: "Что такое ln?",
+	tool_logarithm_faq_a1: "Натуральный логарифм по основанию e ≈ 2,71828.",
+	tool_logarithm_faq_q2: "Может ли основание быть 1?",
+	tool_logarithm_faq_a2: "Нет; логарифм по основанию 1 не определён.",
+	tool_logarithm_faq_q3: "Почему x > 0?",
+	tool_logarithm_faq_a3: "Вещественный логарифм в 0 и отрицательных здесь не определён.",
+	tool_logarithm_faq_q4: "Произвольное основание?",
+	tool_logarithm_faq_a4: "Замена основания: ln(x)/ln(b).",
+};
+
+export default ru;

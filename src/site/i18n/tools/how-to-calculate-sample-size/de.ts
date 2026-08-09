@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-sample-size / de).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const de: SiteLangDict = {
+	tool_sample_size_title: "Stichprobenumfang-Rechner — Erforderliches n schätzen",
+	tool_sample_size_description: "Schätzen Sie den Stichprobenumfang für einen Anteil mit n = Z²·p·(1−p)/E². Wählen Sie 90/95/99 % (Z = 1,645/1,96/2,576), geben Sie p und Fehlerspanne E ein. Beispiel: 95 %, p = 0,5, E = 0,05 → n ≈ 385 (ceil). Im Browser zum Lernen.",
+	tool_sample_size_calculate: "Berechnen",
+	tool_sample_size_sample: "Beispiel laden",
+	tool_sample_size_clear: "Leeren",
+	tool_sample_size_conf_label: "Konfidenzniveau",
+	tool_sample_size_conf_90: "90 % (Z = 1,645)",
+	tool_sample_size_conf_95: "95 % (Z = 1,96)",
+	tool_sample_size_conf_99: "99 % (Z = 2,576)",
+	tool_sample_size_p_label: "Erwarteter Anteil (p)",
+	tool_sample_size_p_ph: "z. B. 0,5",
+	tool_sample_size_E_label: "Fehlerspanne (E)",
+	tool_sample_size_E_ph: "z. B. 0,05",
+	tool_sample_size_nOut_label: "Erforderlicher Stichprobenumfang (n)",
+	tool_sample_size_result_note: "n = ceil(Z²·p·(1−p)/E²) für einen Anteil — Normalnäherung, unendliche Grundgesamtheit.",
+	tool_sample_size_err_generic: "Bitte p in [0, 1], E > 0 und ein Konfidenzniveau eingeben.",
+	tool_sample_size_how_title: "So funktioniert’s",
+	tool_sample_size_how_body: "Wählen Sie 90 %, 95 % oder 99 %, dann den Planungsanteil p und die Fehlerspanne E. Die Seite mappt das Niveau auf Z und liefert die Aufrundung von Z² p (1−p)/E². Im Browser für Umfrage-Übungen.",
+	tool_sample_size_formula_title: "Formel und Annahmen",
+	tool_sample_size_formula_body: "n = Z² · p · (1 − p) / E², danach aufrunden. Grenzen:",
+	tool_sample_size_formula_item_1: "Z: 1,645 / 1,96 / 2,576 für 90 / 95 / 99 %.",
+	tool_sample_size_formula_item_2: "Normalnäherung eines Anteils; keine Korrektur für endliche Grundgesamtheit.",
+	tool_sample_size_formula_item_3: "Bei festem E maximiert p = 0,5 den Wert n.",
+	tool_sample_size_formula_item_4: "Komplexe Designs brauchen einen vollständigeren Plan.",
+	tool_sample_size_example_title: "Beispiel",
+	tool_sample_size_example: "Beispiel: 95 % (Z = 1,96), p = 0,5, E = 0,05 → n = 385.",
+	tool_sample_size_usecases_title: "Wann sinnvoll",
+	tool_sample_size_usecase_1: "Hausaufgabe: n für eine einfache Anteilsbefragung schätzen.",
+	tool_sample_size_usecase_2: "Sehen, wie engeres E das nötige n aufbläht.",
+	tool_sample_size_usecase_3: "Danach mit einer Konfidenzintervall-Seite kombinieren.",
+	tool_sample_size_faq_q1: "Ist das Ergebnis immer ganzzahlig?",
+	tool_sample_size_faq_a1: "Ja; der Formelwert wird aufgerundet (ceil).",
+	tool_sample_size_faq_q2: "Gibt es eine Korrektur für endliche Grundgesamtheiten?",
+	tool_sample_size_faq_a2: "Nein; es wird eine große Grundgesamtheit relativ zu n angenommen.",
+	tool_sample_size_faq_q3: "Kann ich Z frei eingeben?",
+	tool_sample_size_faq_a3: "Diese Seite nutzt die Auswahl 90/95/99 für übliche Z-Werte.",
+	tool_sample_size_faq_q4: "Warum p = 0,5 bei Unsicherheit?",
+	tool_sample_size_faq_a4: "Weil p(1−p) dort maximal ist — konservativster Plan für dieses E.",
+	tool_sample_size_disclaimer: "Nur Lernformel für den Stichprobenumfang eines Anteils. Ersetzt keine Umfragemethodik.",
+	tool_sample_size_references: "Wikipedia zu Stichprobenumfang und Fehlerspanne.",
+	tool_sample_size_ref_ss_label: "Wikipedia — Bestimmung des Stichprobenumfangs",
+	tool_sample_size_ref_prop_label: "Wikipedia — Fehlerspanne",
+	tool_sample_size_article: "Schätzen Sie n für einen Anteil mit n = Z² p (1−p)/E² und 90/95/99 %.",
+};
+
+export default de;

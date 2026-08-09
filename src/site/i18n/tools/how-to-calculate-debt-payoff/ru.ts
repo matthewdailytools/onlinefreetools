@@ -1,0 +1,50 @@
+/**
+ * i18n tool shard (how-to-calculate-debt-payoff / ru).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const ru: SiteLangDict = {
+	tool_debt_payoff_title: "Калькулятор погашения долга",
+	tool_debt_payoff_description: "Оцените месяцы погашения при фиксированном платеже и годовой ставке. Пример: 5000 при 12% и платеже 200/мес. Учебно. Учебный расчёт в браузере; не профессиональный совет.",
+	tool_debt_payoff_calculate: "Рассчитать",
+	tool_debt_payoff_sample: "Загрузить пример",
+	tool_debt_payoff_clear: "Очистить",
+	tool_debt_payoff_principal_label: "Остаток",
+	tool_debt_payoff_principal_ph: "напр. 5000",
+	tool_debt_payoff_rate_label: "Годовая ставка %",
+	tool_debt_payoff_rate_ph: "напр. 12",
+	tool_debt_payoff_pay_label: "Ежемесячный платёж",
+	tool_debt_payoff_pay_ph: "напр. 200",
+	tool_debt_payoff_monthsOut_label: "Месяцы",
+	tool_debt_payoff_interestOut_label: "Всего процентов (прибл.)",
+	tool_debt_payoff_result_note: "Учебно.",
+	tool_debt_payoff_err_generic: "Проверьте ввод.",
+	tool_debt_payoff_how_title: "Как пользоваться",
+	tool_debt_payoff_how_body: "Введите остаток, ставку и платёж.",
+	tool_debt_payoff_formula_title: "Формула",
+	tool_debt_payoff_formula_body: "Введите остаток, ставку и платёж.",
+	tool_debt_payoff_formula_item_1: "See formula notes.",
+	tool_debt_payoff_formula_item_2: "Check inputs.",
+	tool_debt_payoff_formula_item_3: "Educational only.",
+	tool_debt_payoff_example_title: "Пример",
+	tool_debt_payoff_example: "Пример: ~30 месяцев.",
+	tool_debt_payoff_usecases_title: "Когда использовать",
+	tool_debt_payoff_usecase_1: "Homework.",
+	tool_debt_payoff_usecase_2: "Quick sketch.",
+	tool_debt_payoff_usecase_3: "Compare related tools.",
+	tool_debt_payoff_faq_q1: "Пример?",
+	tool_debt_payoff_faq_a1: "Пример: ~30 месяцев.",
+	tool_debt_payoff_faq_q2: "Formula?",
+	tool_debt_payoff_faq_a2: "See Formula section.",
+	tool_debt_payoff_faq_q3: "Advice?",
+	tool_debt_payoff_faq_a3: "Educational only.",
+	tool_debt_payoff_faq_q4: "Related?",
+	tool_debt_payoff_faq_a4: "See related tools.",
+	tool_debt_payoff_article: "Калькулятор погашения долга",
+	tool_debt_payoff_disclaimer: "Только учебная иллюстрация (debt payoff) — не финансовый совет.",
+	tool_debt_payoff_references: "Investopedia и учебные формулы.",
+	tool_debt_payoff_ref_a_label: "Investopedia",
+	tool_debt_payoff_ref_b_label: "Wikipedia",
+};
+
+export default ru;

@@ -1,0 +1,50 @@
+/**
+ * i18n tool shard (how-to-calculate-debt-payoff / en).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const en: SiteLangDict = {
+	tool_debt_payoff_title: "Debt Payoff Calculator — Months to Clear a Balance",
+	tool_debt_payoff_description: "Estimate months to pay off a balance with a fixed monthly payment and annual interest. Sample: principal 5,000 at 12% paying 200/mo → months to clear. Educational amortization — not lending advice Calculate months to clear a balance with a fixed payment amortization loop; example 5,000 at 12% paying 200/mo.",
+	tool_debt_payoff_calculate: "Calculate",
+	tool_debt_payoff_sample: "Load sample",
+	tool_debt_payoff_clear: "Clear",
+	tool_debt_payoff_principal_label: "Principal balance",
+	tool_debt_payoff_principal_ph: "e.g. 5000",
+	tool_debt_payoff_rate_label: "Annual interest %",
+	tool_debt_payoff_rate_ph: "e.g. 12",
+	tool_debt_payoff_pay_label: "Monthly payment",
+	tool_debt_payoff_pay_ph: "e.g. 200",
+	tool_debt_payoff_monthsOut_label: "Months to payoff",
+	tool_debt_payoff_interestOut_label: "Total interest (approx)",
+	tool_debt_payoff_result_note: "Simple amortization loop; payment must cover first-month interest. Educational only — not lending advice.",
+	tool_debt_payoff_err_generic: "Enter principal > 0, rate ≥ 0, and payment that covers monthly interest.",
+	tool_debt_payoff_how_title: "How it works",
+	tool_debt_payoff_how_body: "Enter balance, annual rate, and fixed monthly payment. The page loops month-by-month until the balance clears or hits a cap.",
+	tool_debt_payoff_formula_title: "Formula",
+	tool_debt_payoff_formula_body: "Each month: interest = balance × r/12; principal reduction = payment − interest. Notes:",
+	tool_debt_payoff_formula_item_1: "If payment ≤ first-month interest, payoff never happens.",
+	tool_debt_payoff_formula_item_2: "Fees, penalties, and promotional rates are omitted.",
+	tool_debt_payoff_formula_item_3: "Snowball/avalanche strategy tips are narrative only — not separate URLs.",
+	tool_debt_payoff_example_title: "Example",
+	tool_debt_payoff_example: "Example: 5000 at 12% with 200/mo → about 30 months (approx; depends on rounding).",
+	tool_debt_payoff_usecases_title: "When to use it",
+	tool_debt_payoff_usecase_1: "Homework amortization months.",
+	tool_debt_payoff_usecase_2: "See if a payment clears the balance.",
+	tool_debt_payoff_usecase_3: "Compare with the EMI page for payment sizing.",
+	tool_debt_payoff_faq_q1: "Will it finish?",
+	tool_debt_payoff_faq_a1: "Only if payment exceeds monthly interest.",
+	tool_debt_payoff_faq_q2: "Exact sample months?",
+	tool_debt_payoff_faq_a2: "About 30 months for 5000 @12% with 200/mo under this loop.",
+	tool_debt_payoff_faq_q3: "Snowball page?",
+	tool_debt_payoff_faq_a3: "Strategies stay on this page as FAQ — no thin URL split.",
+	tool_debt_payoff_faq_q4: "Advice?",
+	tool_debt_payoff_faq_a4: "Educational only.",
+	tool_debt_payoff_article: "Debt payoff months",
+	tool_debt_payoff_disclaimer: "Educational debt payoff only — not financial, tax, or investment advice.",
+	tool_debt_payoff_references: "Investopedia and standard textbook formulas.",
+	tool_debt_payoff_ref_a_label: "Investopedia — Amortization",
+	tool_debt_payoff_ref_b_label: "Investopedia — Debt",
+};
+
+export default en;

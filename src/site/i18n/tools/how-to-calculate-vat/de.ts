@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-vat / de).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const de: SiteLangDict = {
+	tool_vat_title: "MwSt-/VAT-Rechner",
+	tool_vat_description: "MwSt/VAT auf Netto aufschlagen oder aus Brutto herausrechnen. Beispiel: Netto 100 bei 20% → Brutto 120. Satz selbst eingeben. Im Browser.",
+	tool_vat_calculate: "Berechnen",
+	tool_vat_sample: "Beispiel laden",
+	tool_vat_clear: "Leeren",
+	tool_vat_mode_label: "Modus",
+	tool_vat_mode_add: "Auf Netto aufschlagen",
+	tool_vat_mode_extract: "Aus Brutto herausrechnen",
+	tool_vat_amount_label: "Betrag",
+	tool_vat_amount_ph: "z. B. 100",
+	tool_vat_rate_label: "MwSt %",
+	tool_vat_rate_ph: "z. B. 20",
+	tool_vat_grossOut_label: "Brutto",
+	tool_vat_netOut_label: "Netto",
+	tool_vat_taxOut_label: "Steuer",
+	tool_vat_result_note: "Bildungszweck.",
+	tool_vat_err_generic: "Eingaben prüfen.",
+	tool_vat_how_title: "So funktioniert’s",
+	tool_vat_how_body: "Modus, Betrag und Satz wählen.",
+	tool_vat_formula_title: "Formel",
+	tool_vat_formula_body: "Modus, Betrag und Satz wählen.",
+	tool_vat_formula_item_1: "See formula notes.",
+	tool_vat_formula_item_2: "Check inputs.",
+	tool_vat_formula_item_3: "Educational only.",
+	tool_vat_example_title: "Beispiel",
+	tool_vat_example: "Beispiel: Netto 100 bei 20% → 120.",
+	tool_vat_usecases_title: "Wann sinnvoll",
+	tool_vat_usecase_1: "Homework.",
+	tool_vat_usecase_2: "Quick sketch.",
+	tool_vat_usecase_3: "Compare related tools.",
+	tool_vat_faq_q1: "Beispiel?",
+	tool_vat_faq_a1: "Beispiel: Netto 100 bei 20% → 120.",
+	tool_vat_faq_q2: "Formula?",
+	tool_vat_faq_a2: "See Formula section.",
+	tool_vat_faq_q3: "Advice?",
+	tool_vat_faq_a3: "Educational only.",
+	tool_vat_faq_q4: "Related?",
+	tool_vat_faq_a4: "See related tools.",
+	tool_vat_article: "MwSt-/VAT-Rechner",
+	tool_vat_disclaimer: "Nur zur Veranschaulichung (VAT) — keine Finanzberatung.",
+	tool_vat_references: "Investopedia und Lehrbuchformeln.",
+	tool_vat_ref_a_label: "Investopedia",
+	tool_vat_ref_b_label: "Wikipedia",
+};
+
+export default de;

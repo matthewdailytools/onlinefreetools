@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-slope / ru).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const ru: SiteLangDict = {
+	tool_slope_title: "Калькулятор наклона — Как найти наклон между двумя точками",
+	tool_slope_description: "Считайте наклон m=(y₂−y₁)/(x₂−x₁) между двумя точками. Пример: (1,2) и (3,6) → m=2. Отвергает вертикали с Δx=0. В браузере для алгебры.",
+	tool_slope_calculate: "Рассчитать",
+	tool_slope_sample: "Загрузить пример",
+	tool_slope_clear: "Очистить",
+	tool_slope_x1_label: "x₁",
+	tool_slope_x1_ph: "напр. 1",
+	tool_slope_y1_label: "y₁",
+	tool_slope_y1_ph: "напр. 2",
+	tool_slope_x2_label: "x₂",
+	tool_slope_x2_ph: "напр. 3",
+	tool_slope_y2_label: "y₂",
+	tool_slope_y2_ph: "напр. 6",
+	tool_slope_slopeOut_label: "Наклон m",
+	tool_slope_result_note: "m=(y₂−y₁)/(x₂−x₁). Вертикали (Δx=0) отвергаются как неопределённые.",
+	tool_slope_err_generic: "Введите четыре конечные координаты с x₂≠x₁.",
+	tool_slope_how_title: "Как пользоваться",
+	tool_slope_how_body: "Введите две различные точки. Возвращает наклон; при совпадении x — ошибка.",
+	tool_slope_formula_title: "Формула",
+	tool_slope_formula_body: "Наклон между двумя точками:",
+	tool_slope_formula_item_1: "m=(y₂−y₁)/(x₂−x₁).",
+	tool_slope_formula_item_2: "m>0 растёт слева направо; m<0 падает.",
+	tool_slope_formula_item_3: "Δx=0 — вертикаль, здесь не определено.",
+	tool_slope_formula_item_4: "Перестановка обеих точек сохраняет отношение.",
+	tool_slope_example_title: "Пример",
+	tool_slope_example: "Пример: (1,2) и (3,6) → m=2.",
+	tool_slope_usecases_title: "Когда применять",
+	tool_slope_usecase_1: "Алгебра: наклон по двум точкам.",
+	tool_slope_usecase_2: "Проверить rise/run перед графиком.",
+	tool_slope_usecase_3: "Сравнить с идеями отношения Δy:Δx.",
+	tool_slope_disclaimer: "Только учебный 2D-наклон.",
+	tool_slope_references: "Wikipedia о наклоне.",
+	tool_slope_ref_slope_label: "Wikipedia — Угловой коэффициент",
+	tool_slope_ref_line_label: "Wikipedia — Линейное уравнение",
+	tool_slope_article: "Считайте наклон m между двумя точками по (y₂−y₁)/(x₂−x₁).",
+	tool_slope_faq_q1: "Что значит m=2?",
+	tool_slope_faq_a1: "При росте x на 1 y растёт на 2.",
+	tool_slope_faq_q2: "Если x₁=x₂?",
+	tool_slope_faq_a2: "Наклон не определён (вертикаль); здесь ошибка.",
+	tool_slope_faq_q3: "Важен ли порядок точек?",
+	tool_slope_faq_a3: "Перестановка обеих точек сохраняет m.",
+	tool_slope_faq_q4: "Горизонтальная линия?",
+	tool_slope_faq_a4: "Да — m=0 при y₁=y₂ и разных x.",
+};
+
+export default ru;

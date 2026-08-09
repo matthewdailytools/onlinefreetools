@@ -1,0 +1,51 @@
+/**
+ * i18n tool shard (how-to-calculate-quadratic-equation / de).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const de: SiteLangDict = {
+	tool_quadratic_equation_title: "Quadratische Gleichung — Wurzeln",
+	tool_quadratic_equation_description: "Berechnen Sie die reellen Wurzeln von ax²+bx+c=0 und zeigen Sie die Diskriminante mit der pq-/abc-Formel. Beispiel: a=1, b=-5, c=6 → Wurzeln 2 und 3. Nur im Browser; klarer Prozess.",
+	tool_quadratic_equation_calculate: "Berechnen",
+	tool_quadratic_equation_sample: "Beispiel laden",
+	tool_quadratic_equation_clear: "Leeren",
+	tool_quadratic_equation_a_label: "a",
+	tool_quadratic_equation_a_ph: "z. B. 1",
+	tool_quadratic_equation_b_label: "b",
+	tool_quadratic_equation_b_ph: "z. B. -5",
+	tool_quadratic_equation_c_label: "c",
+	tool_quadratic_equation_c_ph: "z. B. 6",
+	tool_quadratic_equation_discOut_label: "Diskriminante",
+	tool_quadratic_equation_r1Out_label: "Wurzel 1",
+	tool_quadratic_equation_r2Out_label: "Wurzel 2",
+	tool_quadratic_equation_result_note: "Bildungszweck.",
+	tool_quadratic_equation_err_generic: "Eingaben prüfen.",
+	tool_quadratic_equation_how_title: "So funktioniert’s",
+	tool_quadratic_equation_how_body: "a, b und c eingeben.",
+	tool_quadratic_equation_formula_title: "Formel",
+	tool_quadratic_equation_formula_body: "a, b und c eingeben.",
+	tool_quadratic_equation_formula_item_1: "See formula notes.",
+	tool_quadratic_equation_formula_item_2: "Check inputs.",
+	tool_quadratic_equation_formula_item_3: "Educational only.",
+	tool_quadratic_equation_example_title: "Beispiel",
+	tool_quadratic_equation_example: "Beispiel: Wurzeln 2 und 3.",
+	tool_quadratic_equation_usecases_title: "Wann sinnvoll",
+	tool_quadratic_equation_usecase_1: "Homework.",
+	tool_quadratic_equation_usecase_2: "Quick sketch.",
+	tool_quadratic_equation_usecase_3: "Compare related tools.",
+	tool_quadratic_equation_faq_q1: "Beispiel?",
+	tool_quadratic_equation_faq_a1: "Beispiel: Wurzeln 2 und 3.",
+	tool_quadratic_equation_faq_q2: "Formula?",
+	tool_quadratic_equation_faq_a2: "See Formula section.",
+	tool_quadratic_equation_faq_q3: "Advice?",
+	tool_quadratic_equation_faq_a3: "Educational only.",
+	tool_quadratic_equation_faq_q4: "Related?",
+	tool_quadratic_equation_faq_a4: "See related tools.",
+	tool_quadratic_equation_article: "Quadratische Gleichung — Wurzeln",
+	tool_quadratic_equation_disclaimer: "Nur zur Veranschaulichung (quadratic equation).",
+	tool_quadratic_equation_references: "Lehrbuchformeln.",
+	tool_quadratic_equation_ref_a_label: "Wikipedia",
+	tool_quadratic_equation_ref_b_label: "Textbook formula",
+};
+
+export default de;

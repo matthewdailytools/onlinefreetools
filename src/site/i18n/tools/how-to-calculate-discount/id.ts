@@ -1,0 +1,50 @@
+/**
+ * i18n tool shard (how-to-calculate-discount / id).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const id: SiteLangDict = {
+	tool_discount_title: "Kalkulator diskon — Harga setelah potongan",
+	tool_discount_description: "Hitung harga akhir dari harga asli dan persen diskon. Contoh: 100 diskon 20% → 80. Diskon kedua opsional diterapkan pada harga yang sudah dipotong. Hanya di browser; bukan kasir toko.",
+	tool_discount_calculate: "Hitung",
+	tool_discount_sample: "Muat contoh",
+	tool_discount_clear: "Hapus",
+	tool_discount_original_label: "Harga asli",
+	tool_discount_original_ph: "mis. 100",
+	tool_discount_pct_label: "Diskon (% off)",
+	tool_discount_pct_ph: "mis. 20",
+	tool_discount_pct2_label: "Diskon kedua % (opsional)",
+	tool_discount_pct2_ph: "mis. 10",
+	tool_discount_finalOut_label: "Harga akhir",
+	tool_discount_savedOut_label: "Total hemat",
+	tool_discount_result_note: "Diskon kedua (jika ada) diterapkan pada harga yang sudah dipotong. Hanya edukasi.",
+	tool_discount_err_generic: "Masukkan harga asli positif dan persen 0–100.",
+	tool_discount_how_title: "Cara kerja",
+	tool_discount_how_body: "Isi harga asli dan persen potongan. Opsional: persen kedua pada harga setelah diskon. Hasil akhir dan hemat dihitung di browser.",
+	tool_discount_formula_title: "Rumus",
+	tool_discount_formula_body: "Akhir = asli × (1 − d₁/100) × (1 − d₂/100) jika ada diskon kedua. Catatan:",
+	tool_discount_formula_item_1: "d₁ dan d₂ adalah persen potongan (20 = 20% off).",
+	tool_discount_formula_item_2: "Kosongkan atau 0 untuk satu lapisan saja.",
+	tool_discount_formula_item_3: "Pajak dan kupon nominal tetap tidak dimodelkan.",
+	tool_discount_example_title: "Contoh",
+	tool_discount_example: "Contoh: 100 diskon 20% → 80. Lalu 10% → 72.",
+	tool_discount_usecases_title: "Kapan dipakai",
+	tool_discount_usecase_1: "Perkiraan harga promo sebelum pajak.",
+	tool_discount_usecase_2: "PR: diskon beruntun.",
+	tool_discount_usecase_3: "Latihan diskon ganda marketing.",
+	tool_discount_faq_q1: "Apakah termasuk pajak?",
+	tool_discount_faq_a1: "Tidak.",
+	tool_discount_faq_q2: "Diskon kedua dihitung dari mana?",
+	tool_discount_faq_a2: "Dari harga setelah diskon pertama.",
+	tool_discount_faq_q3: "20% off berarti bayar 20%?",
+	tool_discount_faq_a3: "Tidak; bayar 80% dari harga asli.",
+	tool_discount_faq_q4: "Kupon nominal tetap?",
+	tool_discount_faq_a4: "Halaman ini hanya persen.",
+	tool_discount_disclaimer: "Ilustrasi harga untuk belajar; bukan kasir toko.",
+	tool_discount_references: "Investopedia tentang diskon; aritmetika persen beruntun.",
+	tool_discount_ref_a_label: "Investopedia — Discount",
+	tool_discount_ref_b_label: "Wikipedia — Discounting",
+	tool_discount_article: "Harga setelah persen off dari harga asli, dengan diskon kedua opsional di satu halaman.",
+};
+
+export default id;

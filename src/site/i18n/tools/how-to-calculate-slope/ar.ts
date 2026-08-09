@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-slope / ar).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const ar: SiteLangDict = {
+	tool_slope_title: "حاسبة الميل — كيفية حساب الميل بين نقطتين",
+	tool_slope_description: "احسب الميل m=(y₂−y₁)/(x₂−x₁) بين نقطتين على المستوي. مثال: (1,2) و(3,6) → m=2. ترفض الخطوط الرأسية حيث Δx=0 وتوضّح أن الخط الأفقي له ميل صفر. في المتصفح للتعلّم والجبر.",
+	tool_slope_calculate: "احسب",
+	tool_slope_sample: "تحميل مثال",
+	tool_slope_clear: "مسح",
+	tool_slope_x1_label: "x₁",
+	tool_slope_x1_ph: "مثال 1",
+	tool_slope_y1_label: "y₁",
+	tool_slope_y1_ph: "مثال 2",
+	tool_slope_x2_label: "x₂",
+	tool_slope_x2_ph: "مثال 3",
+	tool_slope_y2_label: "y₂",
+	tool_slope_y2_ph: "مثال 6",
+	tool_slope_slopeOut_label: "الميل m",
+	tool_slope_result_note: "m=(y₂−y₁)/(x₂−x₁). الخطوط الرأسية (Δx=0) تُرفض كغير معرّفة.",
+	tool_slope_err_generic: "أدخل أربع إحداثيات محدودة مع x₂≠x₁.",
+	tool_slope_how_title: "طريقة الاستخدام",
+	tool_slope_how_body: "أدخل نقطتين مختلفتين. تُرجع الميل؛ إن تطابقت x يظهر خطأ.",
+	tool_slope_formula_title: "الصيغة",
+	tool_slope_formula_body: "الميل بين نقطتين:",
+	tool_slope_formula_item_1: "m=(y₂−y₁)/(x₂−x₁).",
+	tool_slope_formula_item_2: "m الموجب يصعد يسار→يمين والسالب يهبط.",
+	tool_slope_formula_item_3: "Δx=0 خط رأسي — غير معرّف هنا.",
+	tool_slope_formula_item_4: "تبديل النقطتين يبقي النسبة.",
+	tool_slope_example_title: "مثال",
+	tool_slope_example: "مثال: (1,2) و(3,6) → m=2.",
+	tool_slope_usecases_title: "متى تستخدمه",
+	tool_slope_usecase_1: "جبر: ميل من نقطتين.",
+	tool_slope_usecase_2: "التحقق قبل الرسم.",
+	tool_slope_usecase_3: "مقارنة مع نسبة Δy:Δx.",
+	tool_slope_disclaimer: "ميل ثنائي الأبعاد تعليمي فقط.",
+	tool_slope_references: "ويكيبيديا الميل.",
+	tool_slope_ref_slope_label: "ويكيبيديا — الميل",
+	tool_slope_ref_line_label: "ويكيبيديا — المعادلة الخطية",
+	tool_slope_article: "احسب الميل m بين نقطتين عبر (y₂−y₁)/(x₂−x₁).",
+	tool_slope_faq_q1: "ماذا لو x₁=x₂؟",
+	tool_slope_faq_a1: "الميل غير معرّف (خط رأسي)؛ تظهر رسالة خطأ.",
+	tool_slope_faq_q2: "هل الترتيب مهم؟",
+	tool_slope_faq_a2: "تبديل النقطتين يبقي m نفسه.",
+	tool_slope_faq_q3: "هل الخط الأفقي مسموح؟",
+	tool_slope_faq_a3: "نعم؛ إذا y₁=y₂ وx مختلف فإن m=0.",
+	tool_slope_faq_q4: "ماذا يعني m=2؟",
+	tool_slope_faq_a4: "لكل +1 في x تزداد y بمقدار 2.",
+};
+
+export default ar;

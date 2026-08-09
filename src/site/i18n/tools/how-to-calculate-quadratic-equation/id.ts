@@ -1,0 +1,51 @@
+/**
+ * i18n tool shard (how-to-calculate-quadratic-equation / id).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const id: SiteLangDict = {
+	tool_quadratic_equation_title: "Penyelesai persamaan kuadrat",
+	tool_quadratic_equation_description: "Hitung akar real ax²+bx+c=0 dan tampilkan diskriminan dengan rumus kuadrat. Contoh: a=1, b=-5, c=6 → akar 2 dan 3. Hanya di browser; proses aljabar jelas.",
+	tool_quadratic_equation_calculate: "Hitung",
+	tool_quadratic_equation_sample: "Muat contoh",
+	tool_quadratic_equation_clear: "Hapus",
+	tool_quadratic_equation_a_label: "a",
+	tool_quadratic_equation_a_ph: "mis. 1",
+	tool_quadratic_equation_b_label: "b",
+	tool_quadratic_equation_b_ph: "mis. -5",
+	tool_quadratic_equation_c_label: "c",
+	tool_quadratic_equation_c_ph: "mis. 6",
+	tool_quadratic_equation_discOut_label: "Diskriminan",
+	tool_quadratic_equation_r1Out_label: "Akar 1",
+	tool_quadratic_equation_r2Out_label: "Akar 2",
+	tool_quadratic_equation_result_note: "Edukatif.",
+	tool_quadratic_equation_err_generic: "Periksa input.",
+	tool_quadratic_equation_how_title: "Cara kerja",
+	tool_quadratic_equation_how_body: "Isi a, b, dan c.",
+	tool_quadratic_equation_formula_title: "Rumus",
+	tool_quadratic_equation_formula_body: "Isi a, b, dan c.",
+	tool_quadratic_equation_formula_item_1: "See formula notes.",
+	tool_quadratic_equation_formula_item_2: "Check inputs.",
+	tool_quadratic_equation_formula_item_3: "Educational only.",
+	tool_quadratic_equation_example_title: "Contoh",
+	tool_quadratic_equation_example: "Contoh: akar 2 dan 3.",
+	tool_quadratic_equation_usecases_title: "Kapan dipakai",
+	tool_quadratic_equation_usecase_1: "Homework.",
+	tool_quadratic_equation_usecase_2: "Quick sketch.",
+	tool_quadratic_equation_usecase_3: "Compare related tools.",
+	tool_quadratic_equation_faq_q1: "Contoh?",
+	tool_quadratic_equation_faq_a1: "Contoh: akar 2 dan 3.",
+	tool_quadratic_equation_faq_q2: "Formula?",
+	tool_quadratic_equation_faq_a2: "See Formula section.",
+	tool_quadratic_equation_faq_q3: "Advice?",
+	tool_quadratic_equation_faq_a3: "Educational only.",
+	tool_quadratic_equation_faq_q4: "Related?",
+	tool_quadratic_equation_faq_a4: "See related tools.",
+	tool_quadratic_equation_article: "Penyelesai persamaan kuadrat",
+	tool_quadratic_equation_disclaimer: "Hanya ilustrasi edukatif (quadratic equation).",
+	tool_quadratic_equation_references: "Rumus buku teks.",
+	tool_quadratic_equation_ref_a_label: "Wikipedia",
+	tool_quadratic_equation_ref_b_label: "Textbook formula",
+};
+
+export default id;

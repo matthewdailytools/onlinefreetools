@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-sample-size / pt).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const pt: SiteLangDict = {
+	tool_sample_size_title: "Calculadora de tamanho amostral — Como estimar o n necessário",
+	tool_sample_size_description: "Estime o tamanho amostral de uma proporção com n = Z²·p·(1−p)/E². Escolha 90/95/99% (Z = 1,645/1,96/2,576), informe p e a margem E. Exemplo: 95%, p = 0,5, E = 0,05 → n ≈ 385 (ceil). No navegador, para estudo.",
+	tool_sample_size_calculate: "Calcular",
+	tool_sample_size_sample: "Carregar exemplo",
+	tool_sample_size_clear: "Limpar",
+	tool_sample_size_conf_label: "Nível de confiança",
+	tool_sample_size_conf_90: "90% (Z = 1,645)",
+	tool_sample_size_conf_95: "95% (Z = 1,96)",
+	tool_sample_size_conf_99: "99% (Z = 2,576)",
+	tool_sample_size_p_label: "Proporção esperada (p)",
+	tool_sample_size_p_ph: "ex.: 0,5",
+	tool_sample_size_E_label: "Margem de erro (E)",
+	tool_sample_size_E_ph: "ex.: 0,05",
+	tool_sample_size_nOut_label: "Tamanho amostral necessário (n)",
+	tool_sample_size_result_note: "n = ceil(Z²·p·(1−p)/E²) para proporção — aproximação normal, população infinita.",
+	tool_sample_size_err_generic: "Informe p em [0, 1], E > 0 e um nível de confiança.",
+	tool_sample_size_how_title: "Como funciona",
+	tool_sample_size_how_body: "Escolha 90%, 95% ou 99%, depois a proporção p de planejamento e a margem E. A página mapeia o nível para Z e devolve o teto de Z² p (1−p)/E². No navegador, para tarefas de pesquisa.",
+	tool_sample_size_formula_title: "Fórmula e pressupostos",
+	tool_sample_size_formula_body: "n = Z² · p · (1 − p) / E² e depois arredonda para cima. Limites:",
+	tool_sample_size_formula_item_1: "Z: 1,645 / 1,96 / 2,576 para 90 / 95 / 99%.",
+	tool_sample_size_formula_item_2: "Aproximação normal de uma proporção; sem correção de população finita.",
+	tool_sample_size_formula_item_3: "p = 0,5 maximiza n para um E fixo.",
+	tool_sample_size_formula_item_4: "Amostragens complexas pedem um plano mais completo.",
+	tool_sample_size_example_title: "Exemplo",
+	tool_sample_size_example: "Exemplo: 95% (Z = 1,96), p = 0,5, E = 0,05 → n = 385.",
+	tool_sample_size_usecases_title: "Quando usar",
+	tool_sample_size_usecase_1: "Tarefa: dimensionar pesquisa de proporção simples.",
+	tool_sample_size_usecase_2: "Ver como E menor aumenta n.",
+	tool_sample_size_usecase_3: "Depois cruzar com uma página de intervalo de confiança.",
+	tool_sample_size_faq_q1: "Posso digitar Z livremente?",
+	tool_sample_size_faq_a1: "Aqui o seletor 90/95/99 fixa os Z usuais.",
+	tool_sample_size_faq_q2: "O resultado é sempre inteiro?",
+	tool_sample_size_faq_a2: "Sim: aplicamos teto (ceil) ao valor da fórmula.",
+	tool_sample_size_faq_q3: "Por que p = 0,5 quando não sei a proporção?",
+	tool_sample_size_faq_a3: "Maximiza p(1−p) e deixa o plano mais conservador para aquele E.",
+	tool_sample_size_faq_q4: "Há correção para população finita?",
+	tool_sample_size_faq_a4: "Não; assume população grande em relação a n.",
+	tool_sample_size_disclaimer: "Apenas fórmula educativa de tamanho amostral de proporção. Não substitui metodologia de pesquisa.",
+	tool_sample_size_references: "Wikipedia sobre determinação de tamanho amostral e margem de erro.",
+	tool_sample_size_ref_ss_label: "Wikipedia — Determinação do tamanho da amostra",
+	tool_sample_size_ref_prop_label: "Wikipedia — Margem de erro",
+	tool_sample_size_article: "Estime n para uma proporção com n = Z² p (1−p)/E² e níveis 90/95/99%.",
+};
+
+export default pt;

@@ -1,0 +1,50 @@
+/**
+ * i18n tool shard (how-to-calculate-debt-payoff / ar).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const ar: SiteLangDict = {
+	tool_debt_payoff_title: "حاسبة سداد الدين",
+	tool_debt_payoff_description: "قدّر أشهر السداد برصيد وفائدة سنوية ودفع شهري ثابت. مثال: 5000 بفائدة 12٪ ودفع 200/شهر. تعليمي. حساب تعليمي في المتصفح وليس نصيحة مهنية.",
+	tool_debt_payoff_calculate: "احسب",
+	tool_debt_payoff_sample: "تحميل مثال",
+	tool_debt_payoff_clear: "مسح",
+	tool_debt_payoff_principal_label: "الرصيد",
+	tool_debt_payoff_principal_ph: "مثال 5000",
+	tool_debt_payoff_rate_label: "فائدة سنوية %",
+	tool_debt_payoff_rate_ph: "مثال 12",
+	tool_debt_payoff_pay_label: "الدفع الشهري",
+	tool_debt_payoff_pay_ph: "مثال 200",
+	tool_debt_payoff_monthsOut_label: "الأشهر",
+	tool_debt_payoff_interestOut_label: "إجمالي الفائدة (تقريبي)",
+	tool_debt_payoff_result_note: "تعليمي.",
+	tool_debt_payoff_err_generic: "تحقق من المدخلات.",
+	tool_debt_payoff_how_title: "طريقة الاستخدام",
+	tool_debt_payoff_how_body: "أدخل الرصيد والمعدل والدفع الشهري.",
+	tool_debt_payoff_formula_title: "الصيغة",
+	tool_debt_payoff_formula_body: "أدخل الرصيد والمعدل والدفع الشهري.",
+	tool_debt_payoff_formula_item_1: "See formula notes.",
+	tool_debt_payoff_formula_item_2: "Check inputs.",
+	tool_debt_payoff_formula_item_3: "Educational only.",
+	tool_debt_payoff_example_title: "مثال",
+	tool_debt_payoff_example: "مثال: نحو 30 شهراً.",
+	tool_debt_payoff_usecases_title: "متى تستخدمه",
+	tool_debt_payoff_usecase_1: "Homework.",
+	tool_debt_payoff_usecase_2: "Quick sketch.",
+	tool_debt_payoff_usecase_3: "Compare related tools.",
+	tool_debt_payoff_faq_q1: "المثال؟",
+	tool_debt_payoff_faq_a1: "مثال: نحو 30 شهراً.",
+	tool_debt_payoff_faq_q2: "Formula?",
+	tool_debt_payoff_faq_a2: "See Formula section.",
+	tool_debt_payoff_faq_q3: "Advice?",
+	tool_debt_payoff_faq_a3: "Educational only.",
+	tool_debt_payoff_faq_q4: "Related?",
+	tool_debt_payoff_faq_a4: "See related tools.",
+	tool_debt_payoff_article: "حاسبة سداد الدين",
+	tool_debt_payoff_disclaimer: "توضيح تعليمي فقط (debt payoff) وليس نصيحة مالية.",
+	tool_debt_payoff_references: "Investopedia وصيغ دراسية.",
+	tool_debt_payoff_ref_a_label: "Investopedia",
+	tool_debt_payoff_ref_b_label: "Wikipedia",
+};
+
+export default ar;

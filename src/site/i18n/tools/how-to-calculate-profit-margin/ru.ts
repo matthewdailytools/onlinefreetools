@@ -1,0 +1,51 @@
+/**
+ * i18n tool shard (how-to-calculate-profit-margin / ru).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const ru: SiteLangDict = {
+	tool_profit_margin_title: "Калькулятор маржи прибыли — Чистая или операционная",
+	tool_profit_margin_description: "Считайте чистую или операционную маржу из выручки и затрат. Пример: выручка 10000, затраты 7000 → чистая маржа 30%. Тип на одной странице. Учебно.",
+	tool_profit_margin_calculate: "Рассчитать",
+	tool_profit_margin_sample: "Загрузить пример",
+	tool_profit_margin_clear: "Очистить",
+	tool_profit_margin_type_label: "Тип маржи",
+	tool_profit_margin_type_net: "Чистая маржа",
+	tool_profit_margin_type_op: "Операционная маржа",
+	tool_profit_margin_rev_label: "Выручка",
+	tool_profit_margin_rev_ph: "напр. 10000",
+	tool_profit_margin_cost_label: "Затраты",
+	tool_profit_margin_cost_ph: "напр. 7000",
+	tool_profit_margin_marginOut_label: "Маржа %",
+	tool_profit_margin_profitOut_label: "Прибыль",
+	tool_profit_margin_result_note: "Маржа = прибыль ÷ выручка. Учебно.",
+	tool_profit_margin_err_generic: "Выручка > 0 и затраты ≥ 0.",
+	tool_profit_margin_how_title: "Как пользоваться",
+	tool_profit_margin_how_body: "Выберите тип, введите выручку и затраты. Маржа = прибыль / выручка × 100.",
+	tool_profit_margin_formula_title: "Формула",
+	tool_profit_margin_formula_body: "Маржа % = (выручка − затраты) / выручка × 100. Замечания:",
+	tool_profit_margin_formula_item_1: "Подберите затраты под определение.",
+	tool_profit_margin_formula_item_2: "Выручка > 0.",
+	tool_profit_margin_formula_item_3: "Упрощённый P&L.",
+	tool_profit_margin_example_title: "Пример",
+	tool_profit_margin_example: "Пример: выручка 10000, затраты 7000 → маржа 30%.",
+	tool_profit_margin_usecases_title: "Когда использовать",
+	tool_profit_margin_usecase_1: "Домашка по чистой марже.",
+	tool_profit_margin_usecase_2: "Сравнить операционную и чистую.",
+	tool_profit_margin_usecase_3: "Сравнить с валовой маржой.",
+	tool_profit_margin_faq_q1: "Sample / contoh?",
+	tool_profit_margin_faq_a1: "30%",
+	tool_profit_margin_faq_q2: "Markup vs margin?",
+	tool_profit_margin_faq_a2: "Markup÷cost; margin÷revenue.",
+	tool_profit_margin_faq_q3: "Why two types?",
+	tool_profit_margin_faq_a3: "Same form; different cost stacks.",
+	tool_profit_margin_faq_q4: "Advice?",
+	tool_profit_margin_faq_a4: "Educational only.",
+	tool_profit_margin_article: "Калькулятор маржи прибыли — Чистая или операционная",
+	tool_profit_margin_disclaimer: "Только учебная иллюстрация (margen) — не финансовый совет.",
+	tool_profit_margin_references: "Investopedia и учебные формулы.",
+	tool_profit_margin_ref_a_label: "Investopedia — Profit margin",
+	tool_profit_margin_ref_b_label: "Investopedia — Operating margin",
+};
+
+export default ru;

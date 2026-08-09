@@ -1,0 +1,53 @@
+/**
+ * i18n tool shard (how-to-calculate-macros / fr).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const fr: SiteLangDict = {
+	tool_macros_title: "Calculateur de macros",
+	tool_macros_description: "Calculez les grammes de macros à partir des calories et des % protéines/glucides/lipides (4/4/9 kcal/g). Exemple : 2000 kcal à 30/40/30 % → 150/200/≈66.67 g. Éducatif seulement — pas un avis médical.",
+	tool_macros_calculate: "Calculer",
+	tool_macros_sample: "Charger l’exemple",
+	tool_macros_clear: "Effacer",
+	tool_macros_cal_label: "Calories (kcal)",
+	tool_macros_cal_ph: "ex. 2000",
+	tool_macros_pPct_label: "Protéines %",
+	tool_macros_pPct_ph: "ex. 30",
+	tool_macros_cPct_label: "Glucides %",
+	tool_macros_cPct_ph: "ex. 40",
+	tool_macros_fPct_label: "Lipides %",
+	tool_macros_fPct_ph: "ex. 30",
+	tool_macros_pG_label: "Protéines (g)",
+	tool_macros_cG_label: "Glucides (g)",
+	tool_macros_fG_label: "Lipides (g)",
+	tool_macros_result_note: "Éducatif.",
+	tool_macros_err_generic: "Vérifiez les entrées.",
+	tool_macros_how_title: "Fonctionnement",
+	tool_macros_how_body: "Saisissez calories et %.",
+	tool_macros_formula_title: "Formule",
+	tool_macros_formula_body: "Saisissez calories et %.",
+	tool_macros_formula_item_1: "See formula notes.",
+	tool_macros_formula_item_2: "Check inputs.",
+	tool_macros_formula_item_3: "Educational only.",
+	tool_macros_example_title: "Exemple",
+	tool_macros_example: "Exemple : 150/200/≈66.67 g.",
+	tool_macros_usecases_title: "Cas d’usage",
+	tool_macros_usecase_1: "Homework.",
+	tool_macros_usecase_2: "Quick sketch.",
+	tool_macros_usecase_3: "Compare related tools.",
+	tool_macros_faq_q1: "Exemple ?",
+	tool_macros_faq_a1: "Exemple : 150/200/≈66.67 g.",
+	tool_macros_faq_q2: "Formula?",
+	tool_macros_faq_a2: "See Formula section.",
+	tool_macros_faq_q3: "Advice?",
+	tool_macros_faq_a3: "Educational only.",
+	tool_macros_faq_q4: "Related?",
+	tool_macros_faq_a4: "See related tools.",
+	tool_macros_article: "Calculateur de macros",
+	tool_macros_disclaimer: "Illustration éducative (macronutrients) uniquement — pas un avis médical.",
+	tool_macros_references: "Références éducatives.",
+	tool_macros_ref_a_label: "Wikipedia",
+	tool_macros_ref_b_label: "Textbook formula",
+};
+
+export default fr;

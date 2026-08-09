@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-logarithm / en).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const en: SiteLangDict = {
+	tool_logarithm_title: "Logarithm Calculator — How to Calculate Logs",
+	tool_logarithm_description: "Calculate log₁₀, ln, or log_b(x) for x > 0. Custom bases use change of base ln(x)/ln(b). Example: log₁₀(1000) = 3. States domain limits (x > 0, b > 0, b ≠ 1). Browser learning tool.",
+	tool_logarithm_calculate: "Calculate",
+	tool_logarithm_sample: "Load sample",
+	tool_logarithm_clear: "Clear",
+	tool_logarithm_mode_label: "Log type",
+	tool_logarithm_mode_log10: "log₁₀ (common)",
+	tool_logarithm_mode_ln: "ln (natural)",
+	tool_logarithm_mode_custom: "log_b (custom base)",
+	tool_logarithm_x_label: "Argument x",
+	tool_logarithm_x_ph: "e.g. 1000",
+	tool_logarithm_base_label: "Base b (custom)",
+	tool_logarithm_base_ph: "e.g. 2",
+	tool_logarithm_logOut_label: "Logarithm value",
+	tool_logarithm_result_note: "Uses change of base via natural log: log_b(x) = ln(x)/ln(b). Requires x > 0 and valid base.",
+	tool_logarithm_err_generic: "Enter x > 0; for custom base, b > 0 and b ≠ 1.",
+	tool_logarithm_how_title: "How it works",
+	tool_logarithm_how_body: "Choose log₁₀, ln, or a custom base. Enter x > 0 (and base b when custom). The page returns the log via Math.log / Math.log10 with change-of-base for custom bases.",
+	tool_logarithm_formula_title: "Formula and domains",
+	tool_logarithm_formula_body: "log_b(x) is the exponent that sends b to x. On this page:",
+	tool_logarithm_formula_item_1: "log₁₀(x) uses common log; ln(x) uses natural log (base e).",
+	tool_logarithm_formula_item_2: "Custom: log_b(x) = ln(x) / ln(b) with b > 0, b ≠ 1, x > 0.",
+	tool_logarithm_formula_item_3: "x must be positive; zero and negatives are rejected.",
+	tool_logarithm_formula_item_4: "Pair with the exponent page to check b^y ≈ x.",
+	tool_logarithm_example_title: "Example",
+	tool_logarithm_example: "Example: log₁₀(1000) = 3.",
+	tool_logarithm_usecases_title: "When to use it",
+	tool_logarithm_usecase_1: "Homework: evaluate log₁₀, ln, or log₂ of a positive number.",
+	tool_logarithm_usecase_2: "Check change-of-base arithmetic by hand.",
+	tool_logarithm_usecase_3: "Prepare exponents for scientific-notation scale checks.",
+	tool_logarithm_disclaimer: "Educational real-valued logs only. Not a complex-log or CAS substitute.",
+	tool_logarithm_references: "Wikipedia logarithm and natural logarithm.",
+	tool_logarithm_ref_log_label: "Wikipedia — Logarithm",
+	tool_logarithm_ref_ln_label: "Wikipedia — Natural logarithm",
+	tool_logarithm_article: "Calculate log₁₀, ln, or custom-base logs of x > 0 in your browser.",
+	tool_logarithm_faq_q1: "Why must x be positive?",
+	tool_logarithm_faq_a1: "Real logarithms are undefined at 0 and negative numbers on this page.",
+	tool_logarithm_faq_q2: "How is a custom base computed?",
+	tool_logarithm_faq_a2: "Via change of base: ln(x)/ln(b).",
+	tool_logarithm_faq_q3: "What is ln?",
+	tool_logarithm_faq_a3: "Natural log with base e ≈ 2.71828.",
+	tool_logarithm_faq_q4: "Can base be 1?",
+	tool_logarithm_faq_a4: "No. Log base 1 is undefined.",
+};
+
+export default en;

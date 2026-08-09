@@ -1,0 +1,51 @@
+/**
+ * i18n tool shard (how-to-calculate-profit-margin / zh).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const zh: SiteLangDict = {
+	tool_profit_margin_title: "利润率计算器 — 净利率与营业利润率",
+	tool_profit_margin_description: "按收入与成本计算净利润率或营业利润率（类型可选）。示例：收入 10000、成本 7000 → 净利率 30%。同页切换类型，不拆近义 URL。浏览器本地计算；财务教育用，不构成经营建议。；全程浏览器本地计算，数据不上传服务器；结果仅供学习对照，不构成投资、理财或经营建议。",
+	tool_profit_margin_calculate: "计算",
+	tool_profit_margin_sample: "加载样例",
+	tool_profit_margin_clear: "清空",
+	tool_profit_margin_type_label: "利润率类型",
+	tool_profit_margin_type_net: "净利润率",
+	tool_profit_margin_type_op: "营业利润率",
+	tool_profit_margin_rev_label: "收入",
+	tool_profit_margin_rev_ph: "例如 10000",
+	tool_profit_margin_cost_label: "成本/费用",
+	tool_profit_margin_cost_ph: "例如 7000",
+	tool_profit_margin_marginOut_label: "利润率 %",
+	tool_profit_margin_profitOut_label: "利润额",
+	tool_profit_margin_result_note: "利润率 = 利润 ÷ 收入。教育演示，非经营建议。",
+	tool_profit_margin_err_generic: "请填写收入 > 0，成本 ≥ 0。",
+	tool_profit_margin_how_title: "怎么用",
+	tool_profit_margin_how_body: "选择净利润率或营业利润率，再填收入与对应成本口径。利润率 = 利润 / 收入 × 100。与加价率（÷成本）和毛利率（仅 COGS）区分。",
+	tool_profit_margin_formula_title: "公式",
+	tool_profit_margin_formula_body: "利润率 % = (收入 − 成本) / 收入 × 100。注意：",
+	tool_profit_margin_formula_item_1: "净利率与营业利润率在此为口径标签——请使用匹配的成本口径。",
+	tool_profit_margin_formula_item_2: "收入必须 > 0；成本可为 0。",
+	tool_profit_margin_formula_item_3: "不是完整损益表；税费与非现金项除非并入成本否则省略。",
+	tool_profit_margin_example_title: "示例",
+	tool_profit_margin_example: "示例：收入 10000、成本 7000 → 利润 3000 → 利润率 30%。",
+	tool_profit_margin_usecases_title: "适合什么场景",
+	tool_profit_margin_usecase_1: "作业：用简化收入与成本算净利率。",
+	tool_profit_margin_usecase_2: "更换成本口径对照营业与净利率。",
+	tool_profit_margin_usecase_3: "仅有销货成本时与毛利率对照。",
+	tool_profit_margin_faq_q1: "样例结果？",
+	tool_profit_margin_faq_a1: "收入 10000、成本 7000 → 30%。",
+	tool_profit_margin_faq_q2: "与加价率差别？",
+	tool_profit_margin_faq_a2: "加价率 ÷ 成本；利润率 ÷ 收入。",
+	tool_profit_margin_faq_q3: "为何同页两种类型？",
+	tool_profit_margin_faq_a3: "公式同形，只需切换成本口径。",
+	tool_profit_margin_faq_q4: "是经营建议吗？",
+	tool_profit_margin_faq_a4: "不是，仅供学习。",
+	tool_profit_margin_article: "同页计算净利率或营业利润率。",
+	tool_profit_margin_disclaimer: "结果仅为利润率学习演示，不构成投资、理财或税务建议。",
+	tool_profit_margin_references: "Investopedia 与常见教材公式。",
+	tool_profit_margin_ref_a_label: "Investopedia — 利润率",
+	tool_profit_margin_ref_b_label: "Investopedia — 营业利润率",
+};
+
+export default zh;

@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-aspect-ratio",
+  "path": "/tools/how-to-calculate-aspect-ratio",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_aspect_ratio_title",
+  "homeTitleKey": "tool_aspect_ratio_title",
+  "homeDescKey": "tool_aspect_ratio_description",
+  "faqPrefix": "tool_aspect_ratio",
+  "related": [
+    "unit-converter",
+    "square-feet"
+  ],
+  "logo": "/icons/tools/how-to-calculate-aspect-ratio.svg",
+  "page": {
+    "module": "../pages/howToCalculateAspectRatioPage",
+    "export": "renderHowToCalculateAspectRatioPage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}

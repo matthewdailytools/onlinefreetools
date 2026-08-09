@@ -1,0 +1,51 @@
+/**
+ * i18n tool shard (how-to-calculate-quadratic-equation / ar).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const ar: SiteLangDict = {
+	tool_quadratic_equation_title: "حلال المعادلة التربيعية",
+	tool_quadratic_equation_description: "احسب الجذور الحقيقية لـ ax²+bx+c=0 واعرض المميّز بصيغة المعادلة التربيعية. مثال: a=1 و b=-5 و c=6 → الجذور 2 و3. في المتصفح؛ عملية جبرية واضحة.",
+	tool_quadratic_equation_calculate: "احسب",
+	tool_quadratic_equation_sample: "تحميل مثال",
+	tool_quadratic_equation_clear: "مسح",
+	tool_quadratic_equation_a_label: "a",
+	tool_quadratic_equation_a_ph: "مثال 1",
+	tool_quadratic_equation_b_label: "b",
+	tool_quadratic_equation_b_ph: "مثال -5",
+	tool_quadratic_equation_c_label: "c",
+	tool_quadratic_equation_c_ph: "مثال 6",
+	tool_quadratic_equation_discOut_label: "المميز",
+	tool_quadratic_equation_r1Out_label: "الجذر 1",
+	tool_quadratic_equation_r2Out_label: "الجذر 2",
+	tool_quadratic_equation_result_note: "تعليمي.",
+	tool_quadratic_equation_err_generic: "تحقق من المدخلات.",
+	tool_quadratic_equation_how_title: "طريقة الاستخدام",
+	tool_quadratic_equation_how_body: "أدخل a و b و c.",
+	tool_quadratic_equation_formula_title: "الصيغة",
+	tool_quadratic_equation_formula_body: "أدخل a و b و c.",
+	tool_quadratic_equation_formula_item_1: "See formula notes.",
+	tool_quadratic_equation_formula_item_2: "Check inputs.",
+	tool_quadratic_equation_formula_item_3: "Educational only.",
+	tool_quadratic_equation_example_title: "مثال",
+	tool_quadratic_equation_example: "مثال: الجذور 2 و3.",
+	tool_quadratic_equation_usecases_title: "متى تستخدمه",
+	tool_quadratic_equation_usecase_1: "Homework.",
+	tool_quadratic_equation_usecase_2: "Quick sketch.",
+	tool_quadratic_equation_usecase_3: "Compare related tools.",
+	tool_quadratic_equation_faq_q1: "المثال؟",
+	tool_quadratic_equation_faq_a1: "مثال: الجذور 2 و3.",
+	tool_quadratic_equation_faq_q2: "Formula?",
+	tool_quadratic_equation_faq_a2: "See Formula section.",
+	tool_quadratic_equation_faq_q3: "Advice?",
+	tool_quadratic_equation_faq_a3: "Educational only.",
+	tool_quadratic_equation_faq_q4: "Related?",
+	tool_quadratic_equation_faq_a4: "See related tools.",
+	tool_quadratic_equation_article: "حلال المعادلة التربيعية",
+	tool_quadratic_equation_disclaimer: "توضيح تعليمي فقط (quadratic equation).",
+	tool_quadratic_equation_references: "صيغ دراسية.",
+	tool_quadratic_equation_ref_a_label: "Wikipedia",
+	tool_quadratic_equation_ref_b_label: "Textbook formula",
+};
+
+export default ar;

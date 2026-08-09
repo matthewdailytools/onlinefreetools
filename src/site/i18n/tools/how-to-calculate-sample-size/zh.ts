@@ -1,0 +1,52 @@
+/**
+ * i18n tool shard (how-to-calculate-sample-size / zh).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const zh: SiteLangDict = {
+	tool_sample_size_title: "样本量计算器 — 如何估算所需样本量",
+	tool_sample_size_description: "用比例样本量公式 n = Z²·p·(1−p)/E² 估算所需样本量。可选 90%/95%/99% 置信水平（对应 Z = 1.645/1.96/2.576），输入总体比例 p 与允许误差 E。示例：95%、p = 0.5、E = 0.05 → 向上取整后 n ≈ 385。浏览器内计算，适合作业与抽样设计粗算，并写明正态近似与有限总体等边界。",
+	tool_sample_size_calculate: "计算",
+	tool_sample_size_sample: "加载样例",
+	tool_sample_size_clear: "清空",
+	tool_sample_size_conf_label: "置信水平",
+	tool_sample_size_conf_90: "90%（Z = 1.645）",
+	tool_sample_size_conf_95: "95%（Z = 1.96）",
+	tool_sample_size_conf_99: "99%（Z = 2.576）",
+	tool_sample_size_p_label: "预期比例 p",
+	tool_sample_size_p_ph: "例如 0.5",
+	tool_sample_size_E_label: "允许误差 E",
+	tool_sample_size_E_ph: "例如 0.05",
+	tool_sample_size_nOut_label: "所需样本量 n",
+	tool_sample_size_result_note: "比例样本量 n = ceil(Z²·p·(1−p)/E²)——正态近似，未做有限总体校正。",
+	tool_sample_size_err_generic: "请填写 [0,1] 内的 p、大于 0 的 E，并选择置信水平。",
+	tool_sample_size_how_title: "怎么用",
+	tool_sample_size_how_body: "选择 90%、95% 或 99%，再填规划用比例 p 与允许误差 E。页面把置信水平映射为 Z，并返回 Z² p (1−p)/E² 的向上取整。浏览器内计算，适合问卷作业。",
+	tool_sample_size_formula_title: "公式与假设",
+	tool_sample_size_formula_body: "n = Z² · p · (1 − p) / E²，再向上取整。注意：",
+	tool_sample_size_formula_item_1: "Z 由水平决定：90/95/99% 对应 1.645/1.96/2.576。",
+	tool_sample_size_formula_item_2: "单比例正态近似；不含有限总体校正。",
+	tool_sample_size_formula_item_3: "固定 E 时 p=0.5 使 n 最大，常作保守规划。",
+	tool_sample_size_formula_item_4: "复杂抽样、多终点或功效分析需更完整方案。",
+	tool_sample_size_example_title: "示例",
+	tool_sample_size_example: "示例：95%（Z=1.96）、p=0.5、E=0.05 → n = ceil(384.16) = 385。",
+	tool_sample_size_usecases_title: "适合什么场景",
+	tool_sample_size_usecase_1: "作业：估算简单比例调查的样本量。",
+	tool_sample_size_usecase_2: "观察缩小 E 会如何抬高所需 n。",
+	tool_sample_size_usecase_3: "有数据后可配合置信区间页对照。",
+	tool_sample_size_faq_q1: "结果一定是整数吗？",
+	tool_sample_size_faq_a1: "本页会对公式结果向上取整，避免按公式欠采样。",
+	tool_sample_size_faq_q2: "不确定 p 时为什么常用 0.5？",
+	tool_sample_size_faq_a2: "固定 E 时 p(1−p) 在 0.5 最大，规划最保守。",
+	tool_sample_size_faq_q3: "包含有限总体校正吗？",
+	tool_sample_size_faq_a3: "不包含；默认总体相对 n 很大。",
+	tool_sample_size_faq_q4: "能直接输入自定义 Z 吗？",
+	tool_sample_size_faq_a4: "本页用 90/95/99 下拉映射到常用 Z。",
+	tool_sample_size_disclaimer: "结果仅为教育用比例样本量公式，不能替代调查方法学或功效分析软件。",
+	tool_sample_size_references: "维基百科样本量确定与误差幅度条目。",
+	tool_sample_size_ref_ss_label: "维基百科 — 样本量确定",
+	tool_sample_size_ref_prop_label: "维基百科 — 误差幅度",
+	tool_sample_size_article: "用 n = Z² p (1−p)/E² 与 90/95/99% 水平估算比例调查所需样本量。",
+};
+
+export default zh;

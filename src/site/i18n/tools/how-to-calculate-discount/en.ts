@@ -1,0 +1,50 @@
+/**
+ * i18n tool shard (how-to-calculate-discount / en).
+ */
+import type { SiteLangDict } from '../../../types';
+
+const en: SiteLangDict = {
+	tool_discount_title: "Discount Calculator — How to Calculate Sale Price",
+	tool_discount_description: "Find the final price from an original amount and percent off. Example: 100 off 20% → 80. Optional second discount stacks on the reduced price. Browser-only math for shopping and homework — not a store checkout.",
+	tool_discount_calculate: "Calculate",
+	tool_discount_sample: "Load sample",
+	tool_discount_clear: "Clear",
+	tool_discount_original_label: "Original price",
+	tool_discount_original_ph: "e.g. 100",
+	tool_discount_pct_label: "Discount (% off)",
+	tool_discount_pct_ph: "e.g. 20",
+	tool_discount_pct2_label: "Second discount % (optional)",
+	tool_discount_pct2_ph: "e.g. 10",
+	tool_discount_finalOut_label: "Final price",
+	tool_discount_savedOut_label: "Total saved",
+	tool_discount_result_note: "Second discount, if any, applies to the already reduced price (stack). Educational only.",
+	tool_discount_err_generic: "Enter a positive original price and a discount percent from 0 to 100.",
+	tool_discount_how_title: "How it works",
+	tool_discount_how_body: "Enter the original price and the percent off. Optionally add a second percent that stacks on the reduced amount. The page shows the final price and how much you save. Runs in your browser.",
+	tool_discount_formula_title: "Formula",
+	tool_discount_formula_body: "Final = original × (1 − d₁/100) × (1 − d₂/100) when a second discount is set; otherwise omit the second factor. Notes:",
+	tool_discount_formula_item_1: "d₁ and d₂ are percent-off values (20 means 20% off), not multipliers like 0.8.",
+	tool_discount_formula_item_2: "Leave the second discount empty or 0 to apply a single markdown.",
+	tool_discount_formula_item_3: "Taxes, coupons with fixed amounts, and store rounding rules are not modeled.",
+	tool_discount_example_title: "Example",
+	tool_discount_example: "Example: original 100, 20% off → final = 100 × 0.8 = 80 (saved 20). With a second 10% off → 80 × 0.9 = 72.",
+	tool_discount_usecases_title: "When to use it",
+	tool_discount_usecase_1: "Compare a single sale percent to the checkout total before tax.",
+	tool_discount_usecase_2: "Homework: practice successive percent-off discounts.",
+	tool_discount_usecase_3: "Rough double-discount stacks for marketing math drills.",
+	tool_discount_faq_q1: "How is a double discount applied?",
+	tool_discount_faq_a1: "The second percent multiplies the already discounted price, not the original.",
+	tool_discount_faq_q2: "Is 20% off the same as paying 20%?",
+	tool_discount_faq_a2: "No. 20% off means you pay 80% of the original (multiply by 0.8).",
+	tool_discount_faq_q3: "Does this include sales tax?",
+	tool_discount_faq_a3: "No. Enter pre-tax amounts; tax pages are separate.",
+	tool_discount_faq_q4: "Can I enter a fixed dollar coupon?",
+	tool_discount_faq_a4: "This page uses percent-off only. Subtract a fixed coupon yourself before or after.",
+	tool_discount_disclaimer: "Educational price illustration only — not a store checkout or tax engine.",
+	tool_discount_references: "Investopedia discount overview; standard successive percent-off arithmetic.",
+	tool_discount_ref_a_label: "Investopedia — Discount",
+	tool_discount_ref_b_label: "Wikipedia — Discounting",
+	tool_discount_article: "Percent-off sale price from an original amount, with optional stacked second discount on one page.",
+};
+
+export default en;

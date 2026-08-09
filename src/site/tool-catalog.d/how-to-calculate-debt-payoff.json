@@ -1,0 +1,22 @@
+{
+  "slug": "how-to-calculate-debt-payoff",
+  "path": "/tools/how-to-calculate-debt-payoff",
+  "category": "calculator",
+  "featured": false,
+  "ymyl": true,
+  "i18nKey": "tool_debt_payoff_title",
+  "homeTitleKey": "tool_debt_payoff_title",
+  "homeDescKey": "tool_debt_payoff_description",
+  "faqPrefix": "tool_debt_payoff",
+  "related": [
+    "how-to-calculate-emi",
+    "how-to-calculate-compound-interest"
+  ],
+  "logo": "/icons/tools/how-to-calculate-debt-payoff.svg",
+  "page": {
+    "module": "../pages/howToCalculateDebtPayoffPage",
+    "export": "renderHowToCalculateDebtPayoffPage",
+    "style": "opts"
+  },
+  "localProcessing": true
+}
