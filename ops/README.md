@@ -24,7 +24,10 @@ ops/
 │   └── stop-dev.sh
 └── seo/
     ├── submit-indexnow.mjs # Bing IndexNow 多场景提交（Node）
-    └── submit-indexnow.sh  # 同上（bash 包装，参数原样转发）
+    ├── submit-indexnow.sh  # 同上（bash 包装，参数原样转发）
+    ├── generate-sitemap.mjs # 全量/筛选生成 sitemap（CLI）
+    ├── sitemap-ui.mjs       # 本地操作页服务（127.0.0.1 + 密码）
+    └── sitemap-ui.html      # 操作页 UI
 
 # IndexNow 验证公钥（须公开可访问）
 # public/{INDEXNOW_KEY}.txt
@@ -102,6 +105,8 @@ npx wrangler dev
 | 命令 | 用途 |
 |---|---|
 | `npm run build:site` | 生成首页/About/devlogs/sitemap 等到 `public/` |
+| `npm run sitemap` | 仅生成 sitemap（全量或 CLI 筛选；见 §4.0） |
+| `npm run sitemap:ui` | 本地 Sitemap 操作页（密码门；见 §4.0） |
 | `npm run build:logs` | 仅重建 `public/devlogs/` |
 | `npm run lint:seo` | SEO 文案校验（description / FAQ / YMYL） |
 | `npm run indexnow` | IndexNow 提交（默认本地 sitemap；见 §4.1） |
@@ -117,6 +122,34 @@ npm run build:site && npm run lint:seo
 ```
 
 详细清单见 [`docs/SEO_PUBLISH_CHECKLIST.md`](../docs/SEO_PUBLISH_CHECKLIST.md) 与 [`docs/2026-07-28-google-seo-strategy-implementation.md`](../docs/2026-07-28-google-seo-strategy-implementation.md) §8.2。
+
+### 4.0 Sitemap 筛选生成与操作页
+
+核心逻辑：`scripts/site/sitemap.mjs`（`build:site` 全量写入仍走此模块）。
+
+**CLI**
+
+```bash
+npm run sitemap                              # 全量 → public/sitemap.xml
+npm run sitemap -- --help
+npm run sitemap -- --lang en,zh --info about,privacy
+npm run sitemap -- --scenario documents --subject pdf --out public/sitemap.filtered.xml
+npm run sitemap -- --category calculator --dry-run
+```
+
+筛选默认写入 `public/sitemap.filtered.xml`（避免误覆盖线上全量）；加 `--overwrite-main` 可强制写 `public/sitemap.xml`。
+
+**操作页（推荐）**
+
+```bash
+npm run sitemap:ui
+# 浏览器打开 http://127.0.0.1:8791/
+# 进入密码：345621（可用环境变量 SITEMAP_UI_PASSWORD 覆盖）
+```
+
+- 仅绑定 `127.0.0.1`，**勿**对公网暴露。
+- 可选：语言、信息页（关于/隐私/条款/联系）、场景 `where-to-use-tools`、工具类型 `tool-type`、catalog `category`。
+- 支持预览统计（不写盘）与生成写入。
 
 ### 4.1 Bing IndexNow
 

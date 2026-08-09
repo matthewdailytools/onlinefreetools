@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>Sitemap 生成 · ops</title>
+    <style>
+      :root {
+        --bg: #0f1419;
+        --panel: #1a2332;
+        --border: #2d3a4d;
+        --text: #e7ecf3;
+        --muted: #8b9bb4;
+        --accent: #3d8bfd;
+        --ok: #3dd68c;
+        --warn: #f5a524;
+        --danger: #f31260;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.45;
+      }
+      .wrap {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 24px 16px 64px;
+      }
+      h1 {
+        font-size: 1.35rem;
+        margin: 0 0 8px;
+      }
+      .sub {
+        color: var(--muted);
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+      }
+      .card {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 16px 18px;
+        margin-bottom: 14px;
+      }
+      .card h2 {
+        font-size: 0.95rem;
+        margin: 0 0 12px;
+        color: var(--muted);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 14px;
+      }
+      label.check {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.92rem;
+        cursor: pointer;
+        user-select: none;
+      }
+      input[type='checkbox'] {
+        accent-color: var(--accent);
+      }
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        margin-top: 8px;
+      }
+      button,
+      .btn {
+        appearance: none;
+        border: 0;
+        border-radius: 8px;
+        padding: 10px 16px;
+        font-size: 0.95rem;
+        font-weight: 600;
+        cursor: pointer;
+        background: var(--accent);
+        color: #fff;
+      }
+      button.secondary {
+        background: transparent;
+        border: 1px solid var(--border);
+        color: var(--text);
+      }
+      button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+      input[type='password'],
+      input[type='text'] {
+        width: 100%;
+        max-width: 320px;
+        padding: 10px 12px;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        background: #0c1118;
+        color: var(--text);
+        font-size: 1rem;
+      }
+      .msg {
+        margin-top: 12px;
+        padding: 10px 12px;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        white-space: pre-wrap;
+        word-break: break-word;
+      }
+      .msg.ok {
+        background: rgba(61, 214, 140, 0.12);
+        color: var(--ok);
+      }
+      .msg.err {
+        background: rgba(243, 18, 96, 0.12);
+        color: #ff8aab;
+      }
+      .msg.info {
+        background: rgba(61, 139, 253, 0.12);
+        color: #9ec1ff;
+      }
+      .toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 10px;
+      }
+      .toolbar button {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+        font-weight: 500;
+      }
+      #gate,
+      #app {
+        display: none;
+      }
+      #gate.show,
+      #app.show {
+        display: block;
+      }
+      .warn-note {
+        color: var(--warn);
+        font-size: 0.85rem;
+        margin-top: 8px;
+      }
+      code {
+        font-size: 0.85em;
+        background: #0c1118;
+        padding: 1px 5px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>Sitemap 生成操作页</h1>
+      <p class="sub">
+        仅监听 <code>127.0.0.1</code>。全量写入 <code>public/sitemap.xml</code>；筛选默认写入
+        <code>public/sitemap.filtered.xml</code>。
+      </p>
+
+      <div id="gate">
+        <div class="card">
+          <h2>进入密码</h2>
+          <form id="loginForm">
+            <input type="password" id="password" autocomplete="current-password" placeholder="密码" />
+            <div class="actions">
+              <button type="submit">进入</button>
+            </div>
+          </form>
+          <div id="loginMsg" class="msg err" style="display: none"></div>
+        </div>
+      </div>
+
+      <div id="app">
+        <div class="card">
+          <h2>预设</h2>
+          <div class="actions">
+            <button type="button" id="btnFull" class="secondary">全量（所有语言 + 全部页面/工具）</button>
+            <button type="button" id="btnLogout" class="secondary">退出</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>语言</h2>
+          <div class="toolbar">
+            <button type="button" class="secondary" data-select="langs" data-mode="all">全选</button>
+            <button type="button" class="secondary" data-select="langs" data-mode="none">清空</button>
+          </div>
+          <div class="row" id="langs"></div>
+        </div>
+
+        <div class="card">
+          <h2>信息页（隐私 / 关于 / 联系 / 条款）</h2>
+          <div class="toolbar">
+            <button type="button" class="secondary" data-select="info" data-mode="all">全选</button>
+            <button type="button" class="secondary" data-select="info" data-mode="none">清空</button>
+          </div>
+          <div class="row">
+            <label class="check"><input type="checkbox" id="includeHome" checked /> 首页 /</label>
+          </div>
+          <div class="row" id="info" style="margin-top: 8px"></div>
+        </div>
+
+        <div class="card">
+          <h2>场景 where-to-use-tools</h2>
+          <div class="row" style="margin-bottom: 10px">
+            <label class="check"
+              ><input type="checkbox" id="includeScenarioHub" checked /> 包含 hub
+              <code id="scenarioHubPath"></code
+            ></label>
+            <label class="check"
+              ><input type="checkbox" id="includeScenarioLeaves" checked /> 包含所选 leaf</label
+            >
+          </div>
+          <div class="toolbar">
+            <button type="button" class="secondary" data-select="scenarios" data-mode="all">全选</button>
+            <button type="button" class="secondary" data-select="scenarios" data-mode="none">清空</button>
+          </div>
+          <div class="row" id="scenarios"></div>
+          <p class="warn-note">勾选的场景同时用于筛选工具页（与分类 / 工具类型为 OR）。</p>
+        </div>
+
+        <div class="card">
+          <h2>工具类型 tool-type</h2>
+          <div class="row" style="margin-bottom: 10px">
+            <label class="check"
+              ><input type="checkbox" id="includeSubjectHub" checked /> 包含 hub
+              <code id="subjectHubPath"></code
+            ></label>
+            <label class="check"
+              ><input type="checkbox" id="includeSubjectLeaves" checked /> 包含所选 leaf</label
+            >
+          </div>
+          <div class="toolbar">
+            <button type="button" class="secondary" data-select="subjects" data-mode="all">全选</button>
+            <button type="button" class="secondary" data-select="subjects" data-mode="none">清空</button>
+          </div>
+          <div class="row" id="subjects"></div>
+        </div>
+
+        <div class="card">
+          <h2>工具分类 category（catalog）</h2>
+          <div class="row" style="margin-bottom: 10px">
+            <label class="check"
+              ><input type="checkbox" id="includeTools" checked /> 包含工具页</label
+            >
+          </div>
+          <div class="toolbar">
+            <button type="button" class="secondary" data-select="categories" data-mode="all">全选</button>
+            <button type="button" class="secondary" data-select="categories" data-mode="none">清空</button>
+          </div>
+          <div class="row" id="categories"></div>
+          <p class="warn-note">分类 / 场景 / 工具类型皆未勾选时 = 全部工具；任一勾选则工具为 OR 命中。</p>
+        </div>
+
+        <div class="card">
+          <h2>输出</h2>
+          <div class="row">
+            <label class="check"
+              ><input type="checkbox" id="overwriteMain" /> 覆盖主文件
+              <code>public/sitemap.xml</code>（筛选时默认写 filtered）</label
+            >
+          </div>
+          <div class="actions">
+            <button type="button" id="btnPreview">预览统计（不写盘）</button>
+            <button type="button" id="btnGenerate">生成并写入</button>
+          </div>
+          <div id="result" class="msg info" style="display: none"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      /**
+       * 勾选组内全部 checkbox。
+       * @param {string} containerId
+       * @param {boolean} checked
+       */
+      function setGroup(containerId, checked) {
+        document.querySelectorAll('#' + containerId + ' input[type=checkbox]').forEach((el) => {
+          el.checked = checked;
+        });
+      }
+
+      /**
+       * 读取勾选值列表。
+       * @param {string} containerId
+       * @returns {string[]}
+       */
+      function readGroup(containerId) {
+        return [...document.querySelectorAll('#' + containerId + ' input[type=checkbox]:checked')].map(
+          (el) => el.value
+        );
+      }
+
+      /**
+       * 渲染一组复选框。
+       * @param {string} containerId
+       * @param {{id:string,label?:string}[]|string[]} items
+       * @param {boolean} checked
+       */
+      function renderChecks(containerId, items, checked = true) {
+        const root = document.getElementById(containerId);
+        root.innerHTML = '';
+        for (const item of items) {
+          const id = typeof item === 'string' ? item : item.id;
+          const label = typeof item === 'string' ? item : item.label || item.id;
+          const lab = document.createElement('label');
+          lab.className = 'check';
+          lab.innerHTML =
+            '<input type="checkbox" value="' +
+            id.replace(/"/g, '') +
+            '"' +
+            (checked ? ' checked' : '') +
+            ' /> ' +
+            label;
+          root.appendChild(lab);
+        }
+      }
+
+      /**
+       * 收集表单选项。
+       * @returns {object}
+       */
+      function collectOptions() {
+        return {
+          langs: readGroup('langs'),
+          includeHome: document.getElementById('includeHome').checked,
+          infoPages: readGroup('info'),
+          includeScenarioHub: document.getElementById('includeScenarioHub').checked,
+          includeSubjectHub: document.getElementById('includeSubjectHub').checked,
+          includeScenarioLeaves: document.getElementById('includeScenarioLeaves').checked,
+          includeSubjectLeaves: document.getElementById('includeSubjectLeaves').checked,
+          includeTools: document.getElementById('includeTools').checked,
+          scenarios: readGroup('scenarios'),
+          subjects: readGroup('subjects'),
+          categories: readGroup('categories'),
+          overwriteMain: document.getElementById('overwriteMain').checked,
+        };
+      }
+
+      /**
+       * 显示结果区。
+       * @param {'ok'|'err'|'info'} kind
+       * @param {string} text
+       */
+      function showResult(kind, text) {
+        const el = document.getElementById('result');
+        el.style.display = 'block';
+        el.className = 'msg ' + kind;
+        el.textContent = text;
+      }
+
+      /**
+       * 调用 JSON API。
+       * @param {string} url
+       * @param {RequestInit} [init]
+       */
+      async function api(url, init) {
+        const res = await fetch(url, {
+          credentials: 'same-origin',
+          headers: { 'Content-Type': 'application/json', ...(init && init.headers) },
+          ...init,
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) throw new Error(data.error || res.statusText || 'request failed');
+        return data;
+      }
+
+      /**
+       * 进入应用态并拉取元数据。
+       */
+      async function enterApp() {
+        document.getElementById('gate').classList.remove('show');
+        document.getElementById('app').classList.add('show');
+        const meta = await api('/api/meta');
+        renderChecks(
+          'langs',
+          meta.languages.filter((l) => meta.enabledLangs.includes(l.code)).map((l) => ({
+            id: l.code,
+            label: l.code + ' · ' + l.label,
+          }))
+        );
+        renderChecks('info', meta.infoPages);
+        renderChecks(
+          'scenarios',
+          meta.scenarios.map((id) => ({ id, label: id }))
+        );
+        renderChecks(
+          'subjects',
+          meta.subjects.map((id) => ({ id, label: id }))
+        );
+        renderChecks(
+          'categories',
+          meta.categories.map((id) => ({ id, label: id }))
+        );
+        document.getElementById('scenarioHubPath').textContent = meta.scenarioHubPath;
+        document.getElementById('subjectHubPath').textContent = meta.subjectHubPath;
+      }
+
+      document.querySelectorAll('[data-select]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          setGroup(btn.getAttribute('data-select'), btn.getAttribute('data-mode') === 'all');
+        });
+      });
+
+      document.getElementById('loginForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const msg = document.getElementById('loginMsg');
+        msg.style.display = 'none';
+        try {
+          await api('/api/login', {
+            method: 'POST',
+            body: JSON.stringify({ password: document.getElementById('password').value }),
+          });
+          await enterApp();
+        } catch (err) {
+          msg.style.display = 'block';
+          msg.textContent = err.message || String(err);
+        }
+      });
+
+      document.getElementById('btnLogout').addEventListener('click', async () => {
+        await api('/api/logout', { method: 'POST', body: '{}' });
+        document.getElementById('app').classList.remove('show');
+        document.getElementById('gate').classList.add('show');
+        document.getElementById('password').value = '';
+      });
+
+      document.getElementById('btnFull').addEventListener('click', () => {
+        setGroup('langs', true);
+        setGroup('info', true);
+        setGroup('scenarios', true);
+        setGroup('subjects', true);
+        setGroup('categories', false);
+        document.getElementById('includeHome').checked = true;
+        document.getElementById('includeScenarioHub').checked = true;
+        document.getElementById('includeSubjectHub').checked = true;
+        document.getElementById('includeScenarioLeaves').checked = true;
+        document.getElementById('includeSubjectLeaves').checked = true;
+        document.getElementById('includeTools').checked = true;
+        document.getElementById('overwriteMain').checked = true;
+      });
+
+      /**
+       * 预览或生成。
+       * @param {boolean} dryRun
+       */
+      async function runGenerate(dryRun) {
+        const body = { ...collectOptions(), dryRun };
+        try {
+          const data = await api('/api/generate', { method: 'POST', body: JSON.stringify(body) });
+          showResult(
+            'ok',
+            [
+              dryRun ? '预览（未写盘）' : '已写入',
+              'entryCount=' + data.entryCount,
+              'urlCount=' + data.urlCount,
+              'langs=' + (data.langs || []).join(','),
+              data.outFile ? 'out=' + data.outFile : '',
+              data.filtered ? 'mode=filtered' : 'mode=full',
+            ]
+              .filter(Boolean)
+              .join('\n')
+          );
+        } catch (err) {
+          showResult('err', err.message || String(err));
+        }
+      }
+
+      document.getElementById('btnPreview').addEventListener('click', () => runGenerate(true));
+      document.getElementById('btnGenerate').addEventListener('click', () => runGenerate(false));
+
+      (async () => {
+        try {
+          const s = await api('/api/session');
+          if (s.ok) await enterApp();
+          else document.getElementById('gate').classList.add('show');
+        } catch {
+          document.getElementById('gate').classList.add('show');
+        }
+      })();
+    </script>
+  </body>
+</html>

@@ -22,6 +22,7 @@ import {
   SCENARIO_HUB_PATH,
   SUBJECT_HUB_PATH,
 } from './site/taxonomy.mjs';
+import { buildFullSitemap } from './site/sitemap.mjs';
 const require = createRequire(import.meta.url);
 let marked;
 try {
@@ -545,78 +546,12 @@ export const buildTaxonomyPages = async (lang) => {
 };
 
 /**
- * 转义 XML 文本节点 / 属性值。
- * @param {string} s
- */
-const escapeXml = (s) =>
-  String(s)
-    .replaceAll('&', '&amp;')
-    .replaceAll('<', '&lt;')
-    .replaceAll('>', '&gt;')
-    .replaceAll('"', '&quot;');
-
-/**
- * 生成一组 URL 的 xhtml hreflang 交替链接（含 x-default）。
- * @param {string} pathname 规范路径（无语言前缀的基础路径，如 /tools/bmi）
- * @param {string[]} langs
- */
-const hreflangLinks = (pathname, langs) => {
-  const links = langs.map((code) => {
-    const href = toAbs(withLangPath(code, pathname));
-    return `    <xhtml:link rel="alternate" hreflang="${escapeXml(code)}" href="${escapeXml(href)}" />`;
-  });
-  const xDefault = toAbs(withLangPath(siteConfig.defaultLang, pathname));
-  links.push(
-    `    <xhtml:link rel="alternate" hreflang="x-default" href="${escapeXml(xDefault)}" />`
-  );
-  return links.join('\n');
-};
-
-/**
- * 构建完整 sitemap：各语言首页、信息页、全部工具（不含 devlogs 内部日志页）。
+ * 构建完整 sitemap（委托 scripts/site/sitemap.mjs；不含 devlogs）。
+ * @returns {Promise<void>}
  */
 export const buildSitemap = async () => {
-  const langs = siteConfig.enabledLangs || [siteConfig.defaultLang];
-  const urls = [];
-
-  const pushLocalized = (pathname, priority = '0.8') => {
-    for (const lang of langs) {
-      const loc = toAbs(withLangPath(lang, pathname));
-      urls.push(`  <url>
-    <loc>${escapeXml(loc)}</loc>
-    <priority>${priority}</priority>
-${hreflangLinks(pathname, langs)}
-  </url>`);
-    }
-  };
-
-  pushLocalized('/', '1.0');
-  pushLocalized('/about', '0.7');
-  pushLocalized('/privacy', '0.6');
-  pushLocalized('/terms', '0.6');
-  pushLocalized('/contact', '0.6');
-  pushLocalized(SCENARIO_HUB_PATH, '0.75');
-  pushLocalized(SUBJECT_HUB_PATH, '0.75');
-  for (const id of TOOL_SCENARIO_ORDER) {
-    pushLocalized(`${SCENARIO_HUB_PATH}/${id}`, '0.7');
-  }
-  for (const id of TOOL_SUBJECT_ORDER) {
-    pushLocalized(`${SUBJECT_HUB_PATH}/${id}`, '0.7');
-  }
-
-  for (const tool of TOOL_CATALOG) {
-    pushLocalized(tool.path, '0.9');
-  }
-
-  const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
-${urls.join('\n')}
-</urlset>
-`;
-
-  await fs.writeFile(path.join(publicDir, 'sitemap.xml'), xml, 'utf-8');
-  console.log(`Wrote sitemap with ${urls.length} URLs`);
+  const result = await buildFullSitemap();
+  console.log(`Wrote sitemap with ${result.urlCount} URLs → ${result.outFile}`);
 };
 
 const main = async () => {

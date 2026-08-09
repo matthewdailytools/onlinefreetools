@@ -120,6 +120,9 @@ out
 
 # public
 
+# 本地筛选生成的 sitemap（勿覆盖/提交生产全量）
+public/sitemap.filtered.xml
+
 # vuepress build output
 
 .vuepress/dist
