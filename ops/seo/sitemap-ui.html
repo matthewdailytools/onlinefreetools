@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex,nofollow" />
-    <title>Sitemap 生成 · ops</title>
+    <title>Ops · Sitemap / 运维手册</title>
     <style>
       :root {
         --bg: #0f1419;
@@ -142,6 +142,117 @@
         font-size: 0.8rem;
         font-weight: 500;
       }
+      .tabs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 16px;
+      }
+      .tabs button {
+        background: transparent;
+        border: 1px solid var(--border);
+        color: var(--muted);
+        padding: 8px 14px;
+        font-weight: 600;
+      }
+      .tabs button.active {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: #fff;
+      }
+      .panel {
+        display: none;
+      }
+      .panel.show {
+        display: block;
+      }
+      .handbook-toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        align-items: center;
+        margin-bottom: 12px;
+      }
+      .handbook-toolbar select {
+        background: #0c1118;
+        color: var(--text);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 8px 10px;
+        font-size: 0.92rem;
+        max-width: 100%;
+      }
+      .handbook-meta {
+        color: var(--muted);
+        font-size: 0.85rem;
+        margin-bottom: 12px;
+      }
+      .handbook-body {
+        background: #0c1118;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 18px 20px;
+        overflow-x: auto;
+        font-size: 0.95rem;
+      }
+      .handbook-body h1 {
+        font-size: 1.4rem;
+        margin: 0 0 12px;
+      }
+      .handbook-body h2 {
+        font-size: 1.15rem;
+        margin: 1.4em 0 0.55em;
+        color: #c5d4ea;
+        text-transform: none;
+        letter-spacing: 0;
+        font-weight: 700;
+      }
+      .handbook-body h3 {
+        font-size: 1.02rem;
+        margin: 1.1em 0 0.4em;
+        color: #a8bdd8;
+      }
+      .handbook-body p,
+      .handbook-body li {
+        color: var(--text);
+      }
+      .handbook-body a {
+        color: #7eb6ff;
+      }
+      .handbook-body pre {
+        background: #151c28;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 12px;
+        overflow-x: auto;
+        font-size: 0.82rem;
+      }
+      .handbook-body code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      }
+      .handbook-body table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 12px 0;
+        font-size: 0.88rem;
+      }
+      .handbook-body th,
+      .handbook-body td {
+        border: 1px solid var(--border);
+        padding: 6px 8px;
+        text-align: left;
+      }
+      .handbook-body th {
+        background: #151c28;
+        color: var(--muted);
+      }
+      .handbook-body blockquote {
+        margin: 12px 0;
+        padding: 8px 12px;
+        border-left: 3px solid var(--accent);
+        color: var(--muted);
+        background: rgba(61, 139, 253, 0.08);
+      }
       #gate,
       #app {
         display: none;
@@ -165,10 +276,10 @@
   </head>
   <body>
     <div class="wrap">
-      <h1>Sitemap 生成操作页</h1>
+      <h1>Ops 操作页</h1>
       <p class="sub">
-        仅监听 <code>127.0.0.1</code>。全量写入 <code>public/sitemap.xml</code>；筛选默认写入
-        <code>public/sitemap.filtered.xml</code>。
+        仅监听 <code>127.0.0.1</code>。含 Sitemap 生成与运维手册只读展示。全量 sitemap 写入
+        <code>public/sitemap.xml</code>；筛选默认写入 <code>public/sitemap.filtered.xml</code>。
       </p>
 
       <div id="gate">
@@ -185,10 +296,18 @@
       </div>
 
       <div id="app">
+        <div class="tabs" role="tablist" aria-label="Ops 功能">
+          <button type="button" class="active" data-tab="sitemap" role="tab" aria-selected="true">
+            Sitemap 生成
+          </button>
+          <button type="button" data-tab="handbook" role="tab" aria-selected="false">运维手册</button>
+        </div>
+
+        <div id="panel-sitemap" class="panel show" role="tabpanel">
         <div class="card">
           <h2>预设</h2>
           <div class="actions">
-            <button type="button" id="btnFull" class="secondary">全量（所有语言 + 全部页面/工具）</button>
+            <button type="button" id="btnFull" class="secondary">全量（默认：无信息页；含首页/场景/类型/工具）</button>
             <button type="button" id="btnLogout" class="secondary">退出</button>
           </div>
         </div>
@@ -203,7 +322,10 @@
         </div>
 
         <div class="card">
-          <h2>信息页（隐私 / 关于 / 联系 / 条款）</h2>
+          <h2>信息页（默认不纳入 sitemap）</h2>
+          <p class="hint" style="margin: 0 0 8px; color: var(--muted, #666); font-size: 0.9rem">
+            生产全量默认剔除关于 / 隐私 / 条款 / 联系；仅排查或显式需要时勾选。
+          </p>
           <div class="toolbar">
             <button type="button" class="secondary" data-select="info" data-mode="all">全选</button>
             <button type="button" class="secondary" data-select="info" data-mode="none">清空</button>
@@ -286,6 +408,24 @@
           </div>
           <div id="result" class="msg info" style="display: none"></div>
         </div>
+        </div><!-- /panel-sitemap -->
+
+        <div id="panel-handbook" class="panel" role="tabpanel" hidden>
+          <div class="card">
+            <h2>运维手册</h2>
+            <p class="sub" style="margin-top: 0">
+              只读展示仓库 <code>ops/</code> 内白名单文档（与磁盘文件同步，改完 Markdown 后点刷新即可）。
+            </p>
+            <div class="handbook-toolbar">
+              <label for="handbookSelect">文档</label>
+              <select id="handbookSelect" aria-label="选择运维文档"></select>
+              <button type="button" id="btnHandbookReload" class="secondary">刷新</button>
+              <button type="button" id="btnLogoutHandbook" class="secondary">退出</button>
+            </div>
+            <p class="handbook-meta" id="handbookMeta"></p>
+            <div class="handbook-body" id="handbookBody">加载中…</div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -351,7 +491,7 @@
       function isFilteredClient(opts) {
         if (!metaCache) return false;
         if (opts.langs.length && opts.langs.length < metaCache.enabledLangs.length) return true;
-        if (opts.infoPages.length !== metaCache.infoPages.length) return true;
+        if (opts.infoPages.length > 0) return true;
         if (!opts.includeHome || !opts.includeTools) return true;
         if (!opts.includeScenarioHub || !opts.includeSubjectHub) return true;
         if (!opts.includeScenarioLeaves || !opts.includeSubjectLeaves) return true;
@@ -453,7 +593,8 @@
             label: l.code + ' · ' + l.label,
           }))
         );
-        renderChecks('info', meta.infoPages);
+        /** 信息页默认不勾选（与生产全量剔除关于/隐私/条款/联系一致）。 */
+        renderChecks('info', meta.infoPages, false);
         renderChecks(
           'scenarios',
           meta.scenarios.map((id) => ({ id, label: id }))
@@ -473,6 +614,65 @@
           outTargetBound = true;
         }
         refreshOutTarget();
+        switchTab('sitemap');
+      }
+
+      /**
+       * 切换 Sitemap / 运维手册页签。
+       * @param {'sitemap'|'handbook'} tab
+       */
+      function switchTab(tab) {
+        document.querySelectorAll('.tabs [data-tab]').forEach((btn) => {
+          const on = btn.getAttribute('data-tab') === tab;
+          btn.classList.toggle('active', on);
+          btn.setAttribute('aria-selected', on ? 'true' : 'false');
+        });
+        const sitemap = document.getElementById('panel-sitemap');
+        const handbook = document.getElementById('panel-handbook');
+        sitemap.classList.toggle('show', tab === 'sitemap');
+        handbook.classList.toggle('show', tab === 'handbook');
+        handbook.hidden = tab !== 'handbook';
+        if (tab === 'handbook') {
+          loadHandbook(document.getElementById('handbookSelect').value || 'ops-readme');
+        }
+      }
+
+      /**
+       * 填充手册下拉并渲染正文。
+       * @param {string} id
+       */
+      async function loadHandbook(id) {
+        const body = document.getElementById('handbookBody');
+        const metaEl = document.getElementById('handbookMeta');
+        const select = document.getElementById('handbookSelect');
+        body.textContent = '加载中…';
+        try {
+          const doc = await api('/api/handbook?id=' + encodeURIComponent(id || 'ops-readme'));
+          if (select.options.length === 0 && Array.isArray(doc.docs)) {
+            doc.docs.forEach((d) => {
+              const opt = document.createElement('option');
+              opt.value = d.id;
+              opt.textContent = d.title;
+              select.appendChild(opt);
+            });
+          }
+          select.value = doc.id;
+          metaEl.textContent = doc.file + ' · ' + doc.title;
+          body.innerHTML = doc.html;
+        } catch (err) {
+          metaEl.textContent = '';
+          body.textContent = err.message || String(err);
+        }
+      }
+
+      /**
+       * 退出登录，回到密码门。
+       */
+      async function logout() {
+        await api('/api/logout', { method: 'POST', body: '{}' });
+        document.getElementById('app').classList.remove('show');
+        document.getElementById('gate').classList.add('show');
+        document.getElementById('password').value = '';
       }
 
       document.querySelectorAll('[data-select]').forEach((btn) => {
@@ -480,6 +680,17 @@
           setGroup(btn.getAttribute('data-select'), btn.getAttribute('data-mode') === 'all');
           refreshOutTarget();
         });
+      });
+
+      document.querySelectorAll('.tabs [data-tab]').forEach((btn) => {
+        btn.addEventListener('click', () => switchTab(btn.getAttribute('data-tab')));
+      });
+
+      document.getElementById('handbookSelect').addEventListener('change', () => {
+        loadHandbook(document.getElementById('handbookSelect').value);
+      });
+      document.getElementById('btnHandbookReload').addEventListener('click', () => {
+        loadHandbook(document.getElementById('handbookSelect').value);
       });
 
       document.getElementById('loginForm').addEventListener('submit', async (e) => {
@@ -498,16 +709,12 @@
         }
       });
 
-      document.getElementById('btnLogout').addEventListener('click', async () => {
-        await api('/api/logout', { method: 'POST', body: '{}' });
-        document.getElementById('app').classList.remove('show');
-        document.getElementById('gate').classList.add('show');
-        document.getElementById('password').value = '';
-      });
+      document.getElementById('btnLogout').addEventListener('click', () => logout());
+      document.getElementById('btnLogoutHandbook').addEventListener('click', () => logout());
 
       document.getElementById('btnFull').addEventListener('click', () => {
         setGroup('langs', true);
-        setGroup('info', true);
+        setGroup('info', false);
         setGroup('scenarios', true);
         setGroup('subjects', true);
         /** 分类全不选 = 不按 category 限制（与「全部工具」一致）。 */

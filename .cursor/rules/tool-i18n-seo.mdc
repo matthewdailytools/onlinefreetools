@@ -27,6 +27,13 @@ alwaysApply: false
 - 至少一个**示例或应用场景**
 - 长度 **≥ 120 字符**（Bing 等会标记过短 meta；HTML head 建议 120–160）
 
+## 相关关键词（强制 · 详见 localization）
+
+完整门禁见 `tool-i18n-localization.mdc`「相关关键词落地」：
+
+1. **落入文案**：主词 → H1（`tool_*_title`）；次词 → `description` / FAQ / Use cases 自然句。禁止页上「相关关键词」列表。  
+2. **按语重跑**：每语按当地用户搜索习惯重定 3–5 词并回写落点；禁止英模关键词表直搬/直译验收。
+
 ## Information Gain 最低配额（上线硬性）
 
 上线前至少满足 **§3.1 九维中的 3 项**，并在 PR 写明「页面哪一节体现」：

@@ -37,7 +37,7 @@ alwaysApply: false
 
 ## 工程清单
 
-> **生成本清单之前**：必须已完成「清单前检索覆盖优化」——对 **slug、title、关键词、desc** 分析用户搜索习惯与关键词覆盖并回写（覆盖表在 `02`/`notes`；见 `tool-i18n-localization.mdc` 步 0b）。未完成不得按下表开工。  
+> **生成本清单之前**：必须已完成「清单前检索覆盖优化」——对 **slug、title、关键词、desc** 分析用户搜索习惯与关键词覆盖并回写（覆盖表在 `02`/`notes`，含**主词→H1、次词→desc/FAQ/Use cases 逐词落点**；见 `tool-i18n-localization.mdc`「相关关键词落地」+ 步 0b）。未完成不得按下表开工。  
 > **检索覆盖 Skill**：多工具 / 新工具实现时先读并执行 [`.cursor/skills/tool-coverage-pass/SKILL.md`](../skills/tool-coverage-pass/SKILL.md)；分阶段跑 `npm run coverage:gate`。
 
 ```
@@ -126,11 +126,12 @@ Disclaimer（YMYL 必备）
 
 ## 上线前 Checklist（PR 合并前）
 
-- [ ] **清单前检索覆盖优化已做**（slug/title/关键词/desc；`02`/`notes` 有覆盖表；见 `tool-i18n-localization.mdc` 步 0b）——**勾本 Checklist 之前必须已完成**
+- [ ] **清单前检索覆盖优化已做**（slug/title/关键词/desc；`02`/`notes` 有覆盖表含逐词落点；见 `tool-i18n-localization.mdc` 步 0b）——**勾本 Checklist 之前必须已完成**
 - [ ] `src/site/tool-catalog.d/{slug}.json` 完成；`related` ≥ 2；纯本地处理默认 `localProcessing: true`（边缘请求工具须 `false`，首页不显示「不上传」标签）
 - [ ] `npm run coverage:gate -- --slug={slug} --phase=all` 通过（0b + 步2/1b + 步4/2b）
 - [ ] 已 `npm run build:site`（含 merge；`public/_pages/*/index.html` 与 sitemap 已含本工具；勿只跑 `merge:tools`）
 - [ ] title 非参数枚举目录腔；`02` 覆盖表填满且 `03` 勾选清单前覆盖与「检索覆盖已优化」
+- [ ] **相关关键词已落入** H1 / description / FAQ / Use cases；无页上关键词列表；**每语已按当地搜法重跑**（非 en 直搬）
 - [ ] 未手改生成物（catalog.json / `i18n/{lang}.ts` / registry / i18n-tools.generated）
 - [ ] 未改其他工具分片或 `src/index.ts`（除非 `CROSS_TOOL_UPDATE=1`）
 - [ ] `TOOL_SLUG={slug} npm run lint:tool-isolation` 通过

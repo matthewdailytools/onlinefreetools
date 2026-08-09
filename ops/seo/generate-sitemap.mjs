@@ -4,7 +4,7 @@
  *
  * 示例：
  *   npm run sitemap
- *   npm run sitemap -- --lang en,zh --info about,privacy
+ *   npm run sitemap -- --info about,privacy
  *   npm run sitemap -- --scenario documents,media --subject pdf,image --out public/sitemap.filtered.xml
  *   npm run sitemap -- --category pdf --no-tools
  *   npm run sitemap -- --help
@@ -33,9 +33,10 @@ Usage:
 Options:
   --full                 Full sitemap → public/sitemap.xml (default when no filters)
   --lang <codes>         Comma-separated langs (default: all enabled)
-  --info <ids>           about,privacy,terms,contact (default: all four)
+  --info <ids>           Opt-in info pages: about,privacy,terms,contact
+                         (default: omit all four from production sitemap)
   --no-home              Omit homepage URLs
-  --no-info              Omit all info pages
+  --no-info              Omit all info pages (same as default)
   --category <ids>       Tool category filter (OR with scenario/subject)
   --scenario <ids>       where-to-use leaf ids; also filters tools by scenario
   --subject <ids>        tool-type leaf ids; also filters tools by subject
@@ -135,8 +136,8 @@ const parseArgs = (argv) => {
 const isFiltered = (opts) => {
   if (opts.full) return false;
   if (opts.langs && opts.langs.length) return true;
-  if (opts.infoPages && opts.infoPages.length !== SITEMAP_INFO_PAGES.length) return true;
-  if (opts.infoPages && opts.infoPages.length === 0) return true;
+  /** 默认不含信息页；显式 --info 纳入任一项视为筛选（相对生产全量）。 */
+  if (opts.infoPages && opts.infoPages.length > 0) return true;
   if (!opts.includeHome) return true;
   if (!opts.includeTools) return true;
   if (!opts.includeScenarioHub || !opts.includeSubjectHub) return true;

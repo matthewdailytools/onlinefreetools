@@ -43,6 +43,29 @@ Agent 提示应类似：`Write {lang} copy for users who search: …`（附该�
 
 ---
 
+## 相关关键词落地（硬性 · 两条）
+
+覆盖分析（清单前 0b + 步 2/4）产出的**主词 / 次词**必须同时满足：
+
+### 1. 必须落入可见文案（禁止只留在 brief）
+
+| 词类 | 必须落到的可见键 / 区块 | 禁止 |
+|---|---|---|
+| **主词**（每语 ≥1） | `tool_*_title`（H1） | 只写在 `work-tasks`、只进 meta 不进 H1 |
+| **次词**（brief 中未进 H1 的高流量说法） | `tool_*_description` 前半，和/或 FAQ（`*_faq_q/a*`），和/或 Use cases（`*_usecase_*`）；必要时 How 首段 | 单独「相关关键词 / Related keywords」列表或标签云；为塞词拆近义 URL；keyword stuffing 式罗列 |
+
+**自检**：打开该语工具页，能指出「每个覆盖词出现在哪一句」；说不出落点 = 未完成。  
+**对齐 Google**：[Keyword stuffing](https://developers.google.com/search/docs/essentials/spam-policies#keyword-stuffing)——成块关键词列表视为 spam 风险；须自然写进对人有用的句子。
+
+### 2. 必须按各语言检索习惯重跑（禁止英模直搬）
+
+- **每语独立**：在写/改该语 i18n 前，于 `03-locale-briefs.md` 写该语 **3–5 个当地检索词**（用户会搜的说法，不是 en 词的字面翻译）。
+- **重跑时机**：步 0b（母版方向）→ 步 3（逐语重写）→ 步 4（抽查语再优化）。**每语**都要对照当地搜法更新主词/次词与落点；禁止「en 覆盖表译完即完」。
+- **产出**：覆盖表或 `03` 多轮行须能看出「语种 → 主词/次词 → 落在 title|desc|faq|usecase 哪一键」；步 4 的 `2b` 摘要须点明抽查语（默认含 `en,zh,es,ja`）的检索向改动。
+- **禁止**：十语共用同一组英文关键词骨架；他语 title/FAQ 与 en 锁死同构只换词。
+
+---
+
 ## 清单前检索覆盖优化（硬门禁 · 生成清单前必做）
 
 **「清单」指**：`02`「页面模块清单」、`tool-creation.mdc`「工程清单」落地与「上线前 Checklist」勾选、以及 README「工具清单 / Tools List」写入。  
@@ -56,20 +79,20 @@ Agent 提示应类似：`Write {lang} copy for users who search: …`（附该�
 |------|----------|----------|
 | **slug** | 是否为用户会搜/会点的 kebab 说法；是否 doorway/近义薄页；与 related、清单已占用 slug 是否撞车 | 必要时改 slug（同步路径/brief 夹名）或合并意图到一带多场景 |
 | **title**（H1 方向） | 主检索词是否落在 H1；是否参数枚举目录腔；是否当地口语 | 改成结果/场景向；主词进 H1 |
-| **关键词**（brief 3–5） | 是否覆盖主意图 + 次要高流量说法；是否堆砌无关词 | 收敛/补齐检索词；次词标明落点（desc/FAQ/Use cases） |
+| **关键词**（brief 3–5） | 是否覆盖主意图 + 次要高流量说法；是否堆砌无关词 | 收敛/补齐；**标明每个词落入 H1 / desc / FAQ / Use cases 哪一处**（见上节「相关关键词落地」） |
 | **desc**（description 要点 / 首页 `_desc`） | 是否含步骤或结果 + 示例信号；次词是否有落点；是否空话口号 | 加长检索向描述；次词写入前半或 FAQ |
 
 **清单（逐项过并记录）**：
 
 1. 用户会搜什么？主词是否进 **title/H1**（指出具体措辞）。
 2. slug 是否与主意图一致、是否需改（改则先改再写清单）。
-3. 次要关键词是否都有落点（desc / FAQ / Use cases）；禁止为塞词拆近义 URL。
+3. 次要关键词是否都有落点（**description / FAQ / Use cases**）；禁止为塞词拆近义 URL；禁止只列词不写句。
 4. title 无参数枚举；desc 非空壳「free online best」。
 5. 与 related / 邻近工具 intent 边界清楚。
 
 **产出（缺一不可）**：
 
-- 在 `02-tool-info.md`（推荐专节）或 `notes.md` 写 **覆盖表**：`主词→H1` / `次词→desc·FAQ` / `slug 结论（保留|已改）` / `优化摘要`（含日期）。
+- 在 `02-tool-info.md`（推荐专节）或 `notes.md` 写 **覆盖表**：`主词→H1` / `次词→desc·FAQ·Use cases`（逐词落点） / `slug 结论（保留|已改）` / `优化摘要`（含日期）。
 - 回写 `02` SEO 卡片的 Title、Description 要点与建议 slug；同步 `03` 母版语检索词与 Title 方向（若有改动）。
 - `03` 勾选「清单前检索覆盖已做」。
 
@@ -79,24 +102,24 @@ Agent 提示应类似：`Write {lang} copy for users who search: …`（附该�
 
 **时机**：在 **i18n 文案**（title、description、首页 `_title`/`_desc`、brief 检索词）**已经写出之后**再执行；**不能代替**上节「清单前」门禁。步 2 = 母版生成后；步 4 = 抽查语重写后。
 
-**对象**：`tool_*_title`、`tool_*_description`、首页 `_title`/`_desc`（生成分片或 `i18n-tools.generated` 来源）、必要时 FAQ/Use cases 首句；同步回写 `03-locale-briefs.md`。
+**对象**：`tool_*_title`、`tool_*_description`、首页 `_title`/`_desc`（生成分片或 `i18n-tools.generated` 来源）、FAQ/Use cases（次词落点）；同步回写 `03-locale-briefs.md`。
 
 **清单（逐项过）**：
 
 1. **主意图是否在 H1**：brief 里 3–5 个检索词中，至少 1 个主词能指出落在 title/H1 的哪里。
 2. **去参数枚举**：副标题若是控件目录 → 改成结果/场景向（见「Title 自然口语」）。
-3. **次高流量词落点**：未进 H1 的次要说法 → description 前半或 FAQ/Use cases；**禁止**为塞词拆近义 URL 或把模式名堆进 H1。
+3. **次高流量词落点**：未进 H1 的次要说法 → description 前半 **和/或** FAQ **和/或** Use cases；**禁止**为塞词拆近义 URL、把模式名堆进 H1、或单独关键词列表。
 4. **intent 边界**：与 catalog `related`、邻近工具 H1 不撞车。
 5. **首页短 title**：短检索主词；补词优先改 `_desc`。
-6. **十语抽查（步 4）**：抽查语 title 不得共用同一英模骨架；各语用当地检索说法。
+6. **按语重跑（强制）**：步 4 对每抽查语用**该语**检索词再核落点；不得沿用 en 词表翻译验收。抽查语 title 不得共用同一英模骨架。
 
-**产出**：在 `03`「多轮记录」增加一行（日期 + 优化摘要）；可更新覆盖表。未做步 2/4 不得标 `i18n-done`。
+**产出**：在 `03`「多轮记录」增加一行（日期 + 优化摘要，须含「哪些次词写入了 desc/FAQ/usecase」）；可更新覆盖表。未做步 2/4 不得标 `i18n-done`。
 
 ---
 
 ## 写法
 
-- **重写非翻译**：先定该语 3–5 个搜索词，再写 title / H1 / description / 按钮。
+- **重写非翻译**：先定该语 3–5 个搜索词，再写 title / H1 / description / 按钮；**相关关键词须按该语习惯重跑**（见「相关关键词落地」§2）。
 - **Title / H1 自然口语（强制）**：主标题写「用户要办的事 + 结果/场景」，**不要**把控件参数名用顿号/逗号串成副标题。控件名（边长、画质、目标 KB、质量滑条等）放 **UI 标签** 或 How/Rules，不堆进 H1。
   - **反例（机械）**：`图片压缩 — 最长边、质量与目标体积（本地处理）`；`Image Compressor — Max Edge, Quality & Target Size Local`
   - **正例（自然）**：`图片压缩 — 缩小尺寸与文件体积，不上传服务器`；`Image Compressor — Shrink photos on your device`
@@ -105,9 +128,9 @@ Agent 提示应类似：`Write {lang} copy for users who search: …`（附该�
 - **UI 短词本地说**；示例可本地化；技术专名（CRLF、`.env`、Markdown、HTML）可保留。
 - **首页** `scripts/site/i18n.mjs` 主词与工具页一致。
 - **反同构**：FAQ 题序、How/Rules 开篇、Use cases 切入点应随语种变化；禁止十语同一「Process: … Example: …」骨架只换词。
-- **只写用户视角**：可见正文（description / how / rules / example / usecases / faq）只写「用户完成任务需要知道什么」。**禁止**把 SEO/工程理由（doorway、空壳页/薄页、thin URL、slug、「双向放同一地址」「不拆 URL」「不是又一个…页」等自我指涉/元叙述）或实现库名（js-yaml、papaparse…）当卖点写进用户文案；此类理由只属于 `work-tasks/` 与 `docs/`（或代码注释）。母版语（en/zh）也须遵守——母版若混入元叙述，会被逐语放大成译腔。
+- **只写用户视角**：面向用户的正文（description/how/rules/example/usecases/faq）只写「用户完成任务需要知道什么」。**禁止**把 SEO/工程理由（doorway、空壳页/薄页、thin URL、slug、「双向放同一地址」「不拆 URL」「不是又一个…页」等自我指涉/元叙述）或实现库名（js-yaml、papaparse…）当卖点写进用户文案；此类理由只属于 `work-tasks/` 与 `docs/`（或代码注释）。母版语（en/zh）也须遵守——母版若混入元叙述，会被逐语放大成译腔。
 - **忌说明书腔**：How/Rules 少写实现术语（`toBlob`、质量二分、Canvas 流水线）当面向用户的主句；改成「缩小、重画、再导出」「逐步降低画质去逼近」等可观察说法。库名/API 名最多进 References。
-
+- **禁止关键词展示模块**：不得为 SEO 增加「相关关键词」可见列表；覆盖词只进自然语言句子。
 ## 隐私本地处理表述（强制）
 
 中文用户常搜/常读 **「不上传服务器」**；其他语言**不能**只写含糊的 `local` / `lokal` / `en local` / `محلياً` / 半截 `no upload` / `sans envoi` / `sem upload` / `ohne Upload`——当地人未必理解为「文件不上你们的服务器」。
@@ -209,6 +232,8 @@ Agent 提示应类似：`Write {lang} copy for users who search: …`（附该�
 | 内部理由外泄 | 用户文案出现 doorway / 空壳页 / 薄页 / URL puerta / slug / 「只改标题」「不拆 URL」「为什么放一页」 | 删除；理由移到 `work-tasks` / `docs` |
 | 元叙述 / 直译腔 | 「跟…走」「类型行为」「这不是又一个薄页」「We keep both directions … so … doorway」 | 用该语自然说法，正文只描述工具行为 |
 | 库名当卖点 | 面向用户写「经典 js-yaml 行为」「用 papaparse」作主张 | 描述可观察行为（如「未加引号的值会被判定类型」）；库名留 References |
+| **关键词列表 SEO** | 页上「相关关键词」块、标签云、无语境词串 | 主词→H1；次词→desc/FAQ/Use cases 自然句 |
+| **英模关键词直搬** | 他语沿用 en 词表不做当地检索重跑 | 每语 brief 3–5 当地词 + 步 3/4 重跑落点 |
 
 技术词（diff、JSON、CRLF）在开发者工具中**可以**保留，但不可代替本地主 title。
 
@@ -216,15 +241,17 @@ Agent 提示应类似：`Write {lang} copy for users who search: …`（附该�
 
 | 轮 | 做什么 | 通过 |
 |---|---|---|
-| 1 | **清单前覆盖（步 0b）** + 母版初稿；`lint:seo`；**紧接母版检索覆盖优化（步 2）** | 覆盖表齐全；≥120、FAQ≥3；主词在 H1；无参数枚举 |
-| 2 | 按每语 brief **独立重写**（非批量同构）；同步首页；**抽查语再跑检索覆盖优化（步 4）**；对照禁词表 | title=检索向且非参数枚举；次词有落点；无禁模式 |
+| 1 | **清单前覆盖（步 0b）** + 母版初稿；`lint:seo`；**紧接母版检索覆盖优化（步 2）** | 覆盖表齐全（逐词落点）；≥120、FAQ≥3；主词在 H1；次词在 desc/FAQ/usecase；无参数枚举 |
+| 2 | 按每语 brief **独立重写**（非批量同构）；**每语按当地搜法重跑关键词**；同步首页；**抽查语再跑检索覆盖优化（步 4）**；对照禁词表 | title=检索向；次词有落点；无英模词表直搬 |
 | 3 | 抽 en+zh+≥2 他语：title/按钮/FAQ/隐私；句式是否同构；title 是否目录腔；再 `lint:seo` | 无译腔/错义/同构/参数枚举 title；待母语抽查已清或已排期 |
 
 ## 定稿自检
 
-- [ ] 每语有 brief（检索词 + title 方向 + 按钮说法）
+- [ ] 每语有 brief（**该语**检索词 3–5 + title 方向 + 按钮说法）
 - [ ] title/H1 为结果或场景向口语，**非**「参数A、参数B、参数C」目录腔（见写法 · Title 自然口语）
-- [ ] **已做清单前检索覆盖优化**（步 0b：slug/title/关键词/desc；`02`/`notes` 有覆盖表）
+- [ ] **相关关键词已落入** H1 / description / FAQ / Use cases（能指出每词所在句）；无关键词列表模块
+- [ ] **每语已按当地检索习惯重跑**关键词（非 en 直译/直搬）
+- [ ] **已做清单前检索覆盖优化**（步 0b：slug/title/关键词/desc；`02`/`notes` 有覆盖表含逐词落点）
 - [ ] **已做文案生成后覆盖优化**（母版步 2 + 抽查语步 4）；`03` 多轮记录有摘要
 - [ ] 对照禁词表扫过 title/按钮/FAQ
 - [ ] 文件/粘贴类：隐私句已按「隐私本地处理表述」写清设备 + 不上服务器（非含糊 local）
@@ -244,3 +271,6 @@ Agent 提示应类似：`Write {lang} copy for users who search: …`（附该�
 - 禁止跳过「清单前检索覆盖优化」（步 0b）就勾页面/工程/上线清单或标 `02`=`ready`
 - 禁止跳过「Title / 描述 / 检索词覆盖优化」（母版步 2、抽查语步 4）就标 `i18n-done`
 - 禁止文件类工具只用含糊 `local` / `本地处理` / 半截 `no upload` 等冒充隐私说明（须对齐「隐私本地处理表述」）
+- 禁止覆盖关键词只写在 `work-tasks` 而未回写到 H1/description/FAQ/Use cases
+- 禁止页上增加「相关关键词」列表/标签云作 SEO
+- 禁止他语沿用 en 关键词表而不按当地用户搜索习惯重跑

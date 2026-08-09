@@ -4,7 +4,7 @@
 
 ## 发版前
 
-1. `npm run build:site` — 生成各语言首页 / About、完整 `public/sitemap.xml`（发版以全量为准；筛选生成见 [`ops/README.md`](../ops/README.md) §4.0，`npm run sitemap` / `sitemap:ui`）
+1. `npm run build:site` — 生成各语言首页 / About、完整 `public/sitemap.xml`（发版以全量为准；**默认不含**关于/隐私/条款/联系；筛选见 [`ops/README.md`](../ops/README.md) §4.0，`npm run sitemap` / `sitemap:ui`）
 2. `npm run lint:seo` — description / FAQ / YMYL / **related≥2 / References** 启发式校验
 3. 确认 `public/og-image.png`、`favicon.ico`、`favicon.svg`、`apple-touch-icon.png` 存在
 4. 抽查：默认语工具 URL 无 `/en` 前缀；首页/nav 工具链指向 `/tools/...`（非 `/en/tools/...`）；`/en/tools/...` 应 301 到 `/tools/...`

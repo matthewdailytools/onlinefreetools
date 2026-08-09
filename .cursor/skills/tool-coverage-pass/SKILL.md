@@ -63,9 +63,12 @@ TOOL_SLUG={slug} npm run lint:tool-isolation
 
 1. 用户会搜什么？主词是否落在 title/H1？
 2. 副标题是否参数目录腔（控件名顿号/逗号罗列）？
-3. 次要词是否在 desc/FAQ/Use cases 有落点（勿拆近义 URL）？
-4. 与 catalog `related` / 邻近工具 H1 是否撞 intent？
-5. 本步是否**改了文案**还是只勾选？（只勾选 → 不合格）
+3. 次要词是否在 **description / FAQ / Use cases** 有落点（勿拆近义 URL；勿做关键词列表）？
+4. **本语**检索词是否按当地习惯重跑（非 en 直搬）？
+5. 与 catalog `related` / 邻近工具 H1 是否撞 intent？
+6. 本步是否**改了文案**还是只勾选？（只勾选 → 不合格）
+
+硬性两条（`tool-i18n-localization.mdc`「相关关键词落地」）：① 覆盖词写入 H1/desc/FAQ/usecase；② 每语按搜索习惯重跑。
 
 ## Plan 多工具 todos 模板
 

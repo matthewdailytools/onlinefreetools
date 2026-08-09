@@ -83,7 +83,7 @@ export const hreflangLinksXml = (pathname, langs) => {
  * @typedef {object} SitemapBuildOptions
  * @property {string[]} [langs] 语言代码；默认 siteConfig.enabledLangs
  * @property {boolean} [includeHome] 是否包含各语言首页；默认 true
- * @property {string[]} [infoPages] 信息页 id：about|privacy|terms|contact；默认全部
+ * @property {string[]} [infoPages] 信息页 id：about|privacy|terms|contact；默认不包含（生产全量剔除）
  * @property {boolean} [includeScenarioHub] 是否包含 /where-to-use-tools hub；默认 true
  * @property {boolean} [includeSubjectHub] 是否包含 /tool-type hub；默认 true
  * @property {string[]} [scenarios] 场景 leaf id；空数组且未禁用场景时表示全部场景 leaf
@@ -136,10 +136,11 @@ const toolMatchesFilters = (tool, filters) => {
  */
 export const collectSitemapEntries = (options = {}) => {
   const includeHome = options.includeHome !== false;
-  /** 未传 infoPages 时默认四页；显式 [] 表示不包含信息页。 */
-  const infoIds = Array.isArray(options.infoPages)
-    ? options.infoPages.map(String)
-    : SITEMAP_INFO_PAGES.map((p) => p.id);
+  /**
+   * 信息页默认剔除（关于/隐私/条款/联系）；仅当显式传入 infoPages 时纳入。
+   * 传 [] 与未传效果相同。
+   */
+  const infoIds = Array.isArray(options.infoPages) ? options.infoPages.map(String) : [];
   const infoSet = new Set(infoIds);
 
   const includeScenarioHub = options.includeScenarioHub !== false;

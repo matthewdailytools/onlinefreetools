@@ -26,7 +26,7 @@ ops/
     ├── submit-indexnow.mjs # Bing IndexNow 多场景提交（Node）
     ├── submit-indexnow.sh  # 同上（bash 包装，参数原样转发）
     ├── generate-sitemap.mjs # 全量/筛选生成 sitemap（CLI）
-    ├── sitemap-ui.mjs       # 本地操作页服务（127.0.0.1 + 密码）
+    ├── sitemap-ui.mjs       # 本地 Ops 操作页（Sitemap + 运维手册，127.0.0.1 + 密码）
     ├── sitemap-ui.html      # 操作页 UI
     └── inbound-link-outreach.md # 白帽入站获链月度清单
 
@@ -107,7 +107,7 @@ npx wrangler dev
 |---|---|
 | `npm run build:site` | 生成首页/About/devlogs/sitemap 等到 `public/` |
 | `npm run sitemap` | 仅生成 sitemap（全量或 CLI 筛选；见 §4.0） |
-| `npm run sitemap:ui` | 本地 Sitemap 操作页（密码门；见 §4.0） |
+| `npm run sitemap:ui` / `npm run ops:ui` | 本地 Ops 操作页（Sitemap + 运维手册；见 §4.0） |
 | `npm run build:logs` | 仅重建 `public/devlogs/` |
 | `npm run lint:seo` | SEO 文案校验（description / FAQ / YMYL） |
 | `npm run indexnow` | IndexNow 提交（默认本地 sitemap；见 §4.1） |
@@ -133,7 +133,7 @@ npm run build:site && npm run lint:seo
 |---|---|
 | `scripts/site/sitemap.mjs` | 生成核心（`build:site` 与 ops 共用） |
 | `ops/seo/generate-sitemap.mjs` | CLI（`npm run sitemap`） |
-| `ops/seo/sitemap-ui.mjs` + `sitemap-ui.html` | 本地密码门操作页（`npm run sitemap:ui`） |
+| `ops/seo/sitemap-ui.mjs` + `sitemap-ui.html` | 本地密码门 Ops 页（`npm run sitemap:ui` / `ops:ui`） |
 | `public/sitemap.xml` | **生产全量**（部署与搜索引擎提交用） |
 | `public/sitemap.filtered.xml` | 筛选默认输出；已 `.gitignore`，勿当线上源 |
 
@@ -152,7 +152,7 @@ npm run build:site && npm run lint:seo
 #### 筛选语义
 
 - **语言** `--lang` / 操作页勾选：只展开这些语种 URL；hreflang 交替链接也只含本次语言集合。  
-- **信息页** `--info`：`about` / `privacy` / `terms` / `contact`（另可 `--no-home` / `--no-info`）。  
+- **信息页** `--info`：`about` / `privacy` / `terms` / `contact`（**默认全部剔除**；需纳入时显式 `--info`；另可 `--no-home` / `--no-info`）。  
 - **场景 leaf** `--scenario`：`/where-to-use-tools/{id}`；同时按 scenario **过滤工具**。  
 - **工具类型 leaf** `--subject` / `--tool-type`：`/tool-type/{id}`；同时按 subject 过滤工具。  
 - **分类** `--category`：仅过滤工具（catalog `category`）。  
@@ -163,9 +163,10 @@ npm run build:site && npm run lint:seo
 #### CLI
 
 ```bash
-npm run sitemap                              # 全量 → public/sitemap.xml
+npm run sitemap                              # 全量 → public/sitemap.xml（不含关于/隐私/条款/联系）
 npm run sitemap -- --help
 npm run sitemap -- --meta                    # 打印可选 lang/category/scenario/subject
+npm run sitemap -- --info about,privacy      # 显式纳入信息页 → 默认写 filtered
 npm run sitemap -- --lang en,zh --info about,privacy
 npm run sitemap -- --scenario documents --subject pdf
 npm run sitemap -- --category calculator --dry-run
@@ -177,6 +178,7 @@ npm run sitemap -- --out /tmp/sitemap-en.xml --lang en
 
 ```bash
 npm run sitemap:ui
+# 或 npm run ops:ui
 # 浏览器打开 http://127.0.0.1:8791/
 ```
 
@@ -186,8 +188,8 @@ npm run sitemap:ui
 | 端口 | 默认 `8791`；`SITEMAP_UI_PORT` 可覆盖 |
 | 绑定 | **仅** `127.0.0.1`，勿对公网暴露、勿配反向代理到公网 |
 | 会话 | 内存 + HttpOnly cookie；进程重启需重新登录 |
-| 功能 | 语言 / 信息页 / 场景 hub+leaf / 工具类型 hub+leaf / category；预览统计；生成写入；「当前目标」路径提示 |
-| 代码更新后 | **须重启** `sitemap:ui` 进程后刷新浏览器 |
+| 页签 | **Sitemap 生成**（语言 / 信息页 / 场景 / 工具类型 / category；预览与写入）；**运维手册**（只读渲染 `ops/README.md` 与入站清单等白名单文档） |
+| 代码更新后 | **须重启** `sitemap:ui` / `ops:ui` 进程后刷新浏览器 |
 
 安全：密码仅为本地轻门禁，**不是**对外认证方案；生产 sitemap 仍只通过 `build:site` / 部署流水线发布。
 

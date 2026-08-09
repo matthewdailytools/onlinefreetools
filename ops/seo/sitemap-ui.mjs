@@ -21,12 +21,63 @@ import {
   getSitemapUiMeta,
   SITEMAP_INFO_PAGES,
 } from '../../scripts/site/sitemap.mjs';
+import { marked } from 'marked';
 
 /** 本文件所在目录。 */
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
+/** 仓库根目录。 */
+const ROOT_DIR = path.resolve(__dirname, '../..');
+
 /** HTML 操作页路径。 */
 const UI_HTML_PATH = path.join(__dirname, 'sitemap-ui.html');
+
+/**
+ * 可在 UI 展示的运维手册（白名单，禁止任意路径读取）。
+ * id → 相对仓库根的路径与展示标题。
+ * @type {ReadonlyArray<{ id: string, file: string, title: string }>}
+ */
+const HANDBOOK_DOCS = Object.freeze([
+  { id: 'ops-readme', file: 'ops/README.md', title: '运维手册（ops/README）' },
+  {
+    id: 'inbound-outreach',
+    file: 'ops/seo/inbound-link-outreach.md',
+    title: '白帽入站获链月度清单',
+  },
+]);
+
+/**
+ * 按 id 解析手册条目。
+ * @param {string} id
+ * @returns {{ id: string, file: string, title: string }|null}
+ */
+const resolveHandbookDoc = (id) =>
+  HANDBOOK_DOCS.find((d) => d.id === id) || null;
+
+/**
+ * 读取并渲染运维手册 Markdown → HTML。
+ * @param {string} id 文档 id
+ * @returns {Promise<{ id: string, title: string, file: string, markdown: string, html: string, docs: typeof HANDBOOK_DOCS }>}
+ */
+const loadHandbook = async (id) => {
+  const meta = resolveHandbookDoc(id) || HANDBOOK_DOCS[0];
+  const abs = path.resolve(ROOT_DIR, meta.file);
+  /** 防目录穿越：必须仍落在仓库 ops/ 下。 */
+  const opsRoot = path.resolve(ROOT_DIR, 'ops') + path.sep;
+  if (!abs.startsWith(opsRoot)) {
+    throw new Error('handbook path rejected');
+  }
+  const markdown = await fs.readFile(abs, 'utf8');
+  const html = marked.parse(markdown, { async: false });
+  return {
+    id: meta.id,
+    title: meta.title,
+    file: meta.file,
+    markdown,
+    html: typeof html === 'string' ? html : String(html),
+    docs: HANDBOOK_DOCS,
+  };
+};
 
 /** 监听主机（强制本机回环）。 */
 const HOST = '127.0.0.1';
@@ -195,8 +246,9 @@ const bodyIsFiltered = (body) => {
   const meta = getSitemapUiMeta();
   const langs = body.langs || [];
   if (langs.length && langs.length < meta.enabledLangs.length) return true;
+  /** 默认剔除信息页；勾选任一项相对生产全量即为筛选。 */
   const info = body.infoPages;
-  if (Array.isArray(info) && info.length !== SITEMAP_INFO_PAGES.length) return true;
+  if (Array.isArray(info) && info.length > 0) return true;
   if (body.includeHome === false) return true;
   if (body.includeTools === false) return true;
   if (body.includeScenarioHub === false || body.includeSubjectHub === false) return true;
@@ -294,6 +346,17 @@ const handler = async (req, res) => {
       return;
     }
 
+    if (method === 'GET' && pathname === '/api/handbook') {
+      const id = String(url.searchParams.get('id') || 'ops-readme');
+      if (!resolveHandbookDoc(id)) {
+        sendJson(res, 404, { error: `unknown handbook id: ${id}` });
+        return;
+      }
+      const doc = await loadHandbook(id);
+      sendJson(res, 200, doc);
+      return;
+    }
+
     if (method === 'POST' && pathname === '/api/generate') {
       const body = await readJson(req);
       const dryRun = Boolean(body.dryRun);
@@ -338,8 +401,8 @@ const main = () => {
   });
 
   server.listen(PORT, HOST, () => {
-    console.log(`Sitemap UI: http://${HOST}:${PORT}/`);
-    console.log('Auth: SITEMAP_UI_PASSWORD (default configured). Bind: 127.0.0.1 only.');
+    console.log(`Ops UI: http://${HOST}:${PORT}/`);
+    console.log('Tabs: Sitemap · 运维手册. Auth: SITEMAP_UI_PASSWORD. Bind: 127.0.0.1 only.');
   });
 };
 

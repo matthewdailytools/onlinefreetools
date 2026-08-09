@@ -33,6 +33,7 @@
     "indexnow:help": "node ops/seo/submit-indexnow.mjs --help",
     "sitemap": "node ops/seo/generate-sitemap.mjs",
     "sitemap:ui": "node ops/seo/sitemap-ui.mjs",
+    "ops:ui": "node ops/seo/sitemap-ui.mjs",
     "predeploy": "npm run build:site && npm run lint:seo && npm run lint:vendor"
   },
   "dependencies": {

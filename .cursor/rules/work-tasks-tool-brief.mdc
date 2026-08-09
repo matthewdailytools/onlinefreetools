@@ -26,10 +26,10 @@ work-tasks/{kebab-slug}/
 1. 建夹并写 `00-request.md`（保留用户原问）。
 2. 读 `docs/2026-07-28-tool-direction.md`，写 `01-direction-discussion.md`：只选一个主方向；过红线与（若 C）立项三问。
 3. 起草 `02` SEO 卡片字段与 `03` 母版检索词（slug / Title 方向 / 关键词 3–5 / Description 要点）——**先草稿，先不勾「页面模块清单」**。
-4. **清单前检索覆盖优化（硬门禁）**：对 **slug、title、关键词、desc** 分析是否符合用户搜索习惯与关键词覆盖并回写优化；在 `02` 专节或 `notes.md` 写覆盖表（见 `tool-i18n-localization.mdc`「清单前检索覆盖优化」）；`03` 多轮行写 **`0b`**。然后：`npm run coverage:gate -- --slug={slug} --phase=0b`。**未绿不得**勾页面模块清单、不得标 `02`=`ready`、不得开始 `tool-creation` 工程/上线清单。Skill：`.cursor/skills/tool-coverage-pass/SKILL.md`。
+4. **清单前检索覆盖优化（硬门禁）**：对 **slug、title、关键词、desc** 分析是否符合用户搜索习惯与关键词覆盖并回写优化；在 `02` 专节或 `notes.md` 写覆盖表（**主词→H1；次词→desc/FAQ/Use cases 逐词落点**；见 `tool-i18n-localization.mdc`「相关关键词落地」+「清单前检索覆盖优化」）；`03` 多轮行写 **`0b`**。然后：`npm run coverage:gate -- --slug={slug} --phase=0b`。**未绿不得**勾页面模块清单、不得标 `02`=`ready`、不得开始 `tool-creation` 工程/上线清单。Skill：`.cursor/skills/tool-coverage-pass/SKILL.md`。
 5. 按策略 §3.8 写满 `02-tool-info.md` 其余项（IG ≥3、related ≥2、交互规格）；**交互规格须写清进页自动样例**（见 `tool-creation.mdc`）；覆盖表齐备且 gate 0b 绿后勾页面模块清单，状态 `draft` → `ready`。
-6. 写十语前填满 `03-locale-briefs.md`（每语检索词、title 方向、按钮说法；勾选禁词表与「清单前检索覆盖已做」）。
-7. 用户明确要求实现且 `02` 为 `ready` 后，按 `tool-creation.mdc` / Skill `tool-coverage-pass`：母版一语 → **`coverage:gate --phase=2`（03 行 `1b`）** → 逐语独立重写 → **`coverage:gate --phase=4`（03 行 `2b`，列出 en,zh,es,ja）** → ≥3 轮核查；**禁止**脚本同构灌语。多工具 Plan 须按 slug 分阶段 todos（见 `tool-creation.mdc`）。
+6. 写十语前填满 `03-locale-briefs.md`（**每语**当地检索词 3–5、title 方向、按钮说法；勾选禁词表与「清单前检索覆盖已做」）。**禁止**他语沿用 en 关键词表不重跑。
+7. 用户明确要求实现且 `02` 为 `ready` 后，按 `tool-creation.mdc` / Skill `tool-coverage-pass`：母版一语 → **`coverage:gate --phase=2`（03 行 `1b`）** → 逐语独立重写（**每语按当地搜法重跑关键词并写入 H1/desc/FAQ/usecase**）→ **`coverage:gate --phase=4`（03 行 `2b`，列出 en,zh,es,ja）** → ≥3 轮核查；**禁止**脚本同构灌语。多工具 Plan 须按 slug 分阶段 todos（见 `tool-creation.mdc`）。
 
 ## 写文档时必引用
 
@@ -41,9 +41,10 @@ work-tasks/{kebab-slug}/
 ## 禁止
 
 - 无 `02-tool-info.md`（或状态非 `ready`）就批量建页 / 拆近义长尾 URL
-- **未做清单前 slug/title/关键词/desc 检索覆盖优化**（无覆盖表）就勾页面模块清单、标 `ready`、或开始工程/上线清单
-- 无 `03-locale-briefs.md`（或 brief 空白）就批量直出十语 i18n
+- **未做清单前 slug/title/关键词/desc 检索覆盖优化**（无覆盖表 / 无逐词落点）就勾页面模块清单、标 `ready`、或开始工程/上线清单
+- 无 `03-locale-briefs.md`（或 brief 空白、或他语未按当地搜法重跑关键词）就批量直出十语 i18n
 - 用脚本批量生成同构多语文案并当作本地化完成（见 `tool-i18n-localization.mdc` 收紧合规）
 - 带着未清的「待母语抽查」勾选就标 `i18n-done` / 合并上线
 - 把实现源码放进 `work-tasks/`
 - 主方向标成「A+B+C 全要」
+- 覆盖关键词只留 brief、或页上做「相关关键词」列表，而不写入 H1/description/FAQ/Use cases
