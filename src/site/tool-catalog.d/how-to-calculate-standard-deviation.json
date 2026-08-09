@@ -9,8 +9,9 @@
   "homeDescKey": "tool_std_dev_description",
   "faqPrefix": "tool_std_dev",
   "related": [
-    "how-to-calculate-percentage-change",
-    "how-to-calculate-cagr"
+    "how-to-calculate-mean",
+    "how-to-calculate-median",
+    "how-to-calculate-z-score"
   ],
   "logo": "/icons/tools/how-to-calculate-standard-deviation.svg",
   "page": {

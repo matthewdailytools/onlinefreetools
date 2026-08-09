@@ -10,7 +10,8 @@
   "faqPrefix": "tool_irr",
   "related": [
     "how-to-calculate-npv",
-    "how-to-calculate-cagr"
+    "how-to-calculate-cagr",
+    "how-to-calculate-payback-period"
   ],
   "logo": "/icons/tools/how-to-calculate-irr.svg",
   "page": {

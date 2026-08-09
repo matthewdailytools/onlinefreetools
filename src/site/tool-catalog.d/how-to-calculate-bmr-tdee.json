@@ -9,7 +9,9 @@
   "homeDescKey": "tool_bmr_tdee_description",
   "faqPrefix": "tool_bmr_tdee",
   "related": [
-    "how-to-calculate-bmi"
+    "how-to-calculate-bmi",
+    "how-to-calculate-macros",
+    "how-to-calculate-heart-rate"
   ],
   "logo": "/icons/tools/how-to-calculate-bmr-tdee.svg",
   "page": {

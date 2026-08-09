@@ -10,7 +10,8 @@
   "faqPrefix": "tool_tip",
   "related": [
     "how-to-calculate-vat",
-    "how-to-calculate-discount"
+    "how-to-calculate-discount",
+    "how-to-calculate-salary-hourly"
   ],
   "logo": "/icons/tools/how-to-calculate-tip.svg",
   "page": {

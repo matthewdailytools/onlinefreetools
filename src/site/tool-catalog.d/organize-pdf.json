@@ -10,7 +10,9 @@
   "faqPrefix": "tool_organize_pdf",
   "related": [
     "merge-pdf",
-    "split-pdf"
+    "split-pdf",
+    "compress-pdf",
+    "crop-pdf"
   ],
   "logo": "/icons/tools/organize-pdf.svg",
   "page": {

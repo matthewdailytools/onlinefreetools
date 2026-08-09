@@ -10,7 +10,8 @@
   "faqPrefix": "tool_slope",
   "related": [
     "how-to-calculate-pythagorean-theorem",
-    "how-to-calculate-aspect-ratio"
+    "how-to-calculate-aspect-ratio",
+    "how-to-calculate-gradient"
   ],
   "logo": "/icons/tools/how-to-calculate-slope.svg",
   "page": {

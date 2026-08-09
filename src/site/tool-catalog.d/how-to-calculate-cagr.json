@@ -10,7 +10,10 @@
   "faqPrefix": "tool_cagr",
   "related": [
     "how-to-calculate-roi",
-    "how-to-calculate-compound-interest"
+    "how-to-calculate-compound-interest",
+    "how-to-calculate-inflation",
+    "how-to-calculate-present-value",
+    "how-to-calculate-rule-of-72"
   ],
   "logo": "/icons/tools/how-to-calculate-cagr.svg",
   "page": {

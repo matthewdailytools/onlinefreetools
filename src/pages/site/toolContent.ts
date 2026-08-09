@@ -105,7 +105,8 @@ export const renderRelatedTools = (
 			const href = withToolLangPrefix(lang, tool.path, defaultLang);
 			const label = t(lang, tool.i18nKey as keyof typeof import('../../site/i18n/en').default);
 			const logo = getToolLogoUrl(tool);
-			return `<li class="tool-related-item"><a href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer"><img class="tool-related-logo" src="${escapeHtml(logo)}" width="18" height="18" alt="" decoding="async" /><span>${escapeHtml(label)}</span></a></li>`;
+			/** 站内 Related 同标签打开；锚文本 = 工具 title（利于理解目标页主题） */
+			return `<li class="tool-related-item"><a href="${escapeHtml(href)}"><img class="tool-related-logo" src="${escapeHtml(logo)}" width="18" height="18" alt="" decoding="async" /><span>${escapeHtml(label)}</span></a></li>`;
 		})
 		.join('');
 	return `
@@ -320,6 +321,33 @@ export const renderToolExtraSections = (opts: {
       ${renderToolFeedbackSection(opts.lang, pageUrl, toolName)}
     </div>`,
 	].join('\n');
+};
+
+/**
+ * 渲染正文语境内链（L3）：用工具 title 作锚文本，规范语言前缀 path。
+ * @param opts.lang 当前语言
+ * @param opts.defaultLang 默认语
+ * @param opts.lead 引导句（纯文本，将 escape）
+ * @param opts.slugs 目标工具 slug 列表
+ */
+export const renderContextualToolLinks = (opts: {
+	lang: SiteLang;
+	defaultLang: SiteLang;
+	lead: string;
+	slugs: string[];
+}) => {
+	const tools = opts.slugs
+		.map((slug) => getToolBySlug(slug))
+		.filter((x): x is ToolPageMeta => Boolean(x));
+	if (!tools.length || !opts.lead) return '';
+	const links = tools
+		.map((tool) => {
+			const href = withToolLangPrefix(opts.lang, tool.path, opts.defaultLang);
+			const label = t(opts.lang, tool.i18nKey as keyof typeof import('../../site/i18n/en').default);
+			return `<a href="${escapeHtml(href)}">${escapeHtml(label)}</a>`;
+		})
+		.join(', ');
+	return `<p class="text-muted mt-3 mb-0 tool-contextual-links">${escapeHtml(opts.lead)} ${links}.</p>`;
 };
 
 /**

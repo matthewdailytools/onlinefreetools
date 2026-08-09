@@ -32,7 +32,8 @@
     "related": [
       "website-headers",
       "ip-address",
-      "indexnow"
+      "indexnow",
+      "domain-lookup"
     ],
     "logo": "/icons/tools/add-www-to-dns.svg",
     "localProcessing": true,
@@ -71,7 +72,9 @@
     "faqPrefix": "tool_brand_color_token_pack",
     "related": [
       "smart-website-color-scheme",
-      "wcag-contrast-checker"
+      "wcag-contrast-checker",
+      "brand-style-guide",
+      "color-from-image"
     ],
     "logo": "/icons/tools/brand-color-token-pack.svg",
     "localProcessing": true,
@@ -284,7 +287,7 @@
     "faqPrefix": "tool_aspect_ratio",
     "related": [
       "unit-converter",
-      "square-feet"
+      "how-to-calculate-slope"
     ],
     "logo": "/icons/tools/how-to-calculate-aspect-ratio.svg",
     "localProcessing": true,
@@ -302,8 +305,9 @@
     "homeDescKey": "tool_bmi_description",
     "faqPrefix": "tool_bmi",
     "related": [
-      "how-to-calculate-percentage-change",
-      "square-feet"
+      "how-to-calculate-bmr-tdee",
+      "how-to-calculate-body-fat",
+      "how-to-calculate-ideal-weight"
     ],
     "logo": "/icons/tools/how-to-calculate-bmi.svg",
     "localProcessing": true,
@@ -321,7 +325,9 @@
     "homeDescKey": "tool_bmr_tdee_description",
     "faqPrefix": "tool_bmr_tdee",
     "related": [
-      "how-to-calculate-bmi"
+      "how-to-calculate-bmi",
+      "how-to-calculate-macros",
+      "how-to-calculate-heart-rate"
     ],
     "logo": "/icons/tools/how-to-calculate-bmr-tdee.svg",
     "localProcessing": true,
@@ -340,7 +346,8 @@
     "faqPrefix": "tool_body_fat",
     "related": [
       "how-to-calculate-bmi",
-      "how-to-calculate-bmr-tdee"
+      "how-to-calculate-bmr-tdee",
+      "how-to-calculate-ideal-weight"
     ],
     "logo": "/icons/tools/how-to-calculate-body-fat.svg",
     "localProcessing": true,
@@ -359,7 +366,8 @@
     "faqPrefix": "tool_break_even",
     "related": [
       "how-to-calculate-roi",
-      "how-to-calculate-marginal-revenue"
+      "how-to-calculate-marginal-revenue",
+      "how-to-calculate-contribution-margin"
     ],
     "logo": "/icons/tools/how-to-calculate-break-even.svg",
     "localProcessing": true,
@@ -378,7 +386,10 @@
     "faqPrefix": "tool_cagr",
     "related": [
       "how-to-calculate-roi",
-      "how-to-calculate-compound-interest"
+      "how-to-calculate-compound-interest",
+      "how-to-calculate-inflation",
+      "how-to-calculate-present-value",
+      "how-to-calculate-rule-of-72"
     ],
     "logo": "/icons/tools/how-to-calculate-cagr.svg",
     "localProcessing": true,
@@ -417,7 +428,9 @@
     "related": [
       "how-to-calculate-roi",
       "how-to-calculate-percentage-change",
-      "how-to-calculate-emi"
+      "how-to-calculate-emi",
+      "how-to-calculate-debt-payoff",
+      "how-to-calculate-inflation"
     ],
     "logo": "/icons/tools/how-to-calculate-compound-interest.svg",
     "localProcessing": true,
@@ -436,7 +449,8 @@
     "faqPrefix": "tool_concrete",
     "related": [
       "unit-converter",
-      "square-feet"
+      "square-feet",
+      "how-to-calculate-paint"
     ],
     "logo": "/icons/tools/how-to-calculate-concrete.svg",
     "localProcessing": true,
@@ -455,7 +469,8 @@
     "faqPrefix": "tool_confidence_interval",
     "related": [
       "how-to-calculate-p-value",
-      "how-to-calculate-standard-deviation"
+      "how-to-calculate-standard-deviation",
+      "how-to-calculate-sample-size"
     ],
     "logo": "/icons/tools/how-to-calculate-confidence-interval.svg",
     "localProcessing": true,
@@ -493,7 +508,8 @@
     "faqPrefix": "tool_date_difference",
     "related": [
       "how-to-calculate-age",
-      "how-to-calculate-tip"
+      "how-to-calculate-tip",
+      "how-to-calculate-salary-hourly"
     ],
     "logo": "/icons/tools/how-to-calculate-date-difference.svg",
     "localProcessing": true,
@@ -569,7 +585,8 @@
     "faqPrefix": "tool_emi",
     "related": [
       "how-to-calculate-compound-interest",
-      "how-to-calculate-roi"
+      "how-to-calculate-roi",
+      "how-to-calculate-debt-payoff"
     ],
     "logo": "/icons/tools/how-to-calculate-emi.svg",
     "localProcessing": true,
@@ -606,8 +623,8 @@
     "homeDescKey": "tool_gpa_description",
     "faqPrefix": "tool_gpa",
     "related": [
-      "how-to-calculate-percentage-change",
-      "how-to-calculate-sample-size"
+      "how-to-calculate-mean",
+      "how-to-calculate-percentage-change"
     ],
     "logo": "/icons/tools/how-to-calculate-gpa.svg",
     "localProcessing": true,
@@ -625,8 +642,8 @@
     "homeDescKey": "tool_gradient_desc",
     "faqPrefix": "tool_gradient",
     "related": [
-      "how-to-calculate-percentage-change",
-      "how-to-calculate-roi"
+      "how-to-calculate-slope",
+      "how-to-calculate-aspect-ratio"
     ],
     "logo": "/icons/tools/how-to-calculate-gradient.svg",
     "localProcessing": true,
@@ -645,7 +662,9 @@
     "faqPrefix": "tool_gross_margin",
     "related": [
       "how-to-calculate-break-even",
-      "how-to-calculate-roi"
+      "how-to-calculate-roi",
+      "how-to-calculate-contribution-margin",
+      "how-to-calculate-profit-margin"
     ],
     "logo": "/icons/tools/how-to-calculate-gross-margin.svg",
     "localProcessing": true,
@@ -664,7 +683,8 @@
     "faqPrefix": "tool_heart_rate",
     "related": [
       "how-to-calculate-macros",
-      "how-to-calculate-bmr-tdee"
+      "how-to-calculate-bmr-tdee",
+      "how-to-calculate-pace"
     ],
     "logo": "/icons/tools/how-to-calculate-heart-rate.svg",
     "localProcessing": true,
@@ -683,7 +703,8 @@
     "faqPrefix": "tool_ideal_weight",
     "related": [
       "how-to-calculate-bmi",
-      "how-to-calculate-body-fat"
+      "how-to-calculate-body-fat",
+      "how-to-calculate-bmr-tdee"
     ],
     "logo": "/icons/tools/how-to-calculate-ideal-weight.svg",
     "localProcessing": true,
@@ -721,7 +742,8 @@
     "faqPrefix": "tool_irr",
     "related": [
       "how-to-calculate-npv",
-      "how-to-calculate-cagr"
+      "how-to-calculate-cagr",
+      "how-to-calculate-payback-period"
     ],
     "logo": "/icons/tools/how-to-calculate-irr.svg",
     "localProcessing": true,
@@ -758,8 +780,9 @@
     "homeDescKey": "tool_macros_description",
     "faqPrefix": "tool_macros",
     "related": [
+      "how-to-calculate-bmr-tdee",
       "how-to-calculate-heart-rate",
-      "how-to-calculate-bmr-tdee"
+      "how-to-calculate-bmi"
     ],
     "logo": "/icons/tools/how-to-calculate-macros.svg",
     "localProcessing": true,
@@ -797,7 +820,8 @@
     "faqPrefix": "tool_markup",
     "related": [
       "how-to-calculate-discount",
-      "how-to-calculate-gross-margin"
+      "how-to-calculate-gross-margin",
+      "how-to-calculate-profit-margin"
     ],
     "logo": "/icons/tools/how-to-calculate-markup.svg",
     "localProcessing": true,
@@ -816,7 +840,8 @@
     "faqPrefix": "tool_mean",
     "related": [
       "how-to-calculate-median",
-      "how-to-calculate-standard-deviation"
+      "how-to-calculate-standard-deviation",
+      "how-to-calculate-gpa"
     ],
     "logo": "/icons/tools/how-to-calculate-mean.svg",
     "localProcessing": true,
@@ -835,7 +860,8 @@
     "faqPrefix": "tool_median",
     "related": [
       "how-to-calculate-mean",
-      "how-to-calculate-standard-deviation"
+      "how-to-calculate-standard-deviation",
+      "how-to-calculate-gpa"
     ],
     "logo": "/icons/tools/how-to-calculate-median.svg",
     "localProcessing": true,
@@ -854,7 +880,9 @@
     "faqPrefix": "tool_npv",
     "related": [
       "how-to-calculate-cagr",
-      "how-to-calculate-roi"
+      "how-to-calculate-roi",
+      "how-to-calculate-payback-period",
+      "how-to-calculate-present-value"
     ],
     "logo": "/icons/tools/how-to-calculate-npv.svg",
     "localProcessing": true,
@@ -911,7 +939,8 @@
     "faqPrefix": "tool_p_value",
     "related": [
       "how-to-calculate-standard-deviation",
-      "how-to-calculate-confidence-interval"
+      "how-to-calculate-confidence-interval",
+      "how-to-calculate-sample-size"
     ],
     "logo": "/icons/tools/how-to-calculate-p-value.svg",
     "localProcessing": true,
@@ -1063,7 +1092,8 @@
     "faqPrefix": "tool_pythagorean",
     "related": [
       "how-to-calculate-aspect-ratio",
-      "how-to-calculate-logarithm"
+      "how-to-calculate-logarithm",
+      "how-to-calculate-gradient"
     ],
     "logo": "/icons/tools/how-to-calculate-pythagorean-theorem.svg",
     "localProcessing": true,
@@ -1138,8 +1168,9 @@
     "homeDescKey": "tool_salary_hourly_description",
     "faqPrefix": "tool_salary_hourly",
     "related": [
-      "how-to-calculate-cagr",
-      "how-to-calculate-roi"
+      "how-to-calculate-tip",
+      "how-to-calculate-vat",
+      "how-to-calculate-discount"
     ],
     "logo": "/icons/tools/how-to-calculate-salary-hourly.svg",
     "localProcessing": true,
@@ -1215,7 +1246,8 @@
     "faqPrefix": "tool_slope",
     "related": [
       "how-to-calculate-pythagorean-theorem",
-      "how-to-calculate-aspect-ratio"
+      "how-to-calculate-aspect-ratio",
+      "how-to-calculate-gradient"
     ],
     "logo": "/icons/tools/how-to-calculate-slope.svg",
     "localProcessing": true,
@@ -1233,8 +1265,9 @@
     "homeDescKey": "tool_std_dev_description",
     "faqPrefix": "tool_std_dev",
     "related": [
-      "how-to-calculate-percentage-change",
-      "how-to-calculate-cagr"
+      "how-to-calculate-mean",
+      "how-to-calculate-median",
+      "how-to-calculate-z-score"
     ],
     "logo": "/icons/tools/how-to-calculate-standard-deviation.svg",
     "localProcessing": true,
@@ -1253,7 +1286,8 @@
     "faqPrefix": "tool_tile",
     "related": [
       "how-to-calculate-concrete",
-      "square-feet"
+      "square-feet",
+      "how-to-calculate-paint"
     ],
     "logo": "/icons/tools/how-to-calculate-tile.svg",
     "localProcessing": true,
@@ -1272,7 +1306,8 @@
     "faqPrefix": "tool_tip",
     "related": [
       "how-to-calculate-vat",
-      "how-to-calculate-discount"
+      "how-to-calculate-discount",
+      "how-to-calculate-salary-hourly"
     ],
     "logo": "/icons/tools/how-to-calculate-tip.svg",
     "localProcessing": true,
@@ -1629,7 +1664,8 @@
       "image-merge",
       "images-to-word",
       "images-to-ppt",
-      "images-to-gif"
+      "images-to-gif",
+      "pdf-page-to-image-sizes"
     ],
     "logo": "/icons/tools/images-to-pdf.svg",
     "localProcessing": true,
@@ -1767,7 +1803,8 @@
       "text-diff",
       "yaml-json",
       "html-entity",
-      "website-headers"
+      "website-headers",
+      "pdf-to-markdown"
     ],
     "logo": "/icons/tools/markdown-to-html.svg",
     "localProcessing": true,
@@ -1787,7 +1824,8 @@
     "related": [
       "split-pdf",
       "organize-pdf",
-      "images-to-pdf"
+      "images-to-pdf",
+      "compress-pdf"
     ],
     "logo": "/icons/tools/merge-pdf.svg",
     "localProcessing": true,
@@ -1806,7 +1844,9 @@
     "faqPrefix": "tool_organize_pdf",
     "related": [
       "merge-pdf",
-      "split-pdf"
+      "split-pdf",
+      "compress-pdf",
+      "crop-pdf"
     ],
     "logo": "/icons/tools/organize-pdf.svg",
     "localProcessing": true,
@@ -1882,7 +1922,9 @@
     "faqPrefix": "tool_pdf_to_jpg",
     "related": [
       "images-to-pdf",
-      "image-format-converter"
+      "image-format-converter",
+      "pdf-page-to-image-sizes",
+      "pdf-to-markdown"
     ],
     "logo": "/icons/tools/pdf-to-jpg.svg",
     "localProcessing": true,
@@ -1958,7 +2000,8 @@
     "faqPrefix": "tool_rotate_pdf",
     "related": [
       "organize-pdf",
-      "split-pdf"
+      "split-pdf",
+      "crop-pdf"
     ],
     "logo": "/icons/tools/rotate-pdf.svg",
     "localProcessing": true,
@@ -1977,7 +2020,8 @@
     "faqPrefix": "tool_smart_website_color_scheme",
     "related": [
       "brand-color-token-pack",
-      "wcag-contrast-checker"
+      "wcag-contrast-checker",
+      "brand-style-guide"
     ],
     "logo": "/icons/tools/smart-website-color-scheme.svg",
     "localProcessing": true,
@@ -2015,8 +2059,9 @@
     "homeDescKey": "tool_squarefeet_description",
     "faqPrefix": "tool_squarefeet",
     "related": [
-      "how-to-calculate-percentage-change",
-      "how-to-calculate-bmi"
+      "unit-converter",
+      "how-to-calculate-tile",
+      "how-to-calculate-concrete"
     ],
     "logo": "/icons/tools/square-feet.svg",
     "localProcessing": true,
@@ -2075,7 +2120,7 @@
     "faqPrefix": "tool_unit_converter",
     "related": [
       "square-feet",
-      "how-to-calculate-percentage-change"
+      "how-to-calculate-aspect-ratio"
     ],
     "logo": "/icons/tools/unit-converter.svg",
     "localProcessing": true,
@@ -2151,7 +2196,8 @@
     "faqPrefix": "tool_wcag_contrast_checker",
     "related": [
       "smart-website-color-scheme",
-      "brand-color-token-pack"
+      "brand-color-token-pack",
+      "color-from-image"
     ],
     "logo": "/icons/tools/wcag-contrast-checker.svg",
     "localProcessing": true,

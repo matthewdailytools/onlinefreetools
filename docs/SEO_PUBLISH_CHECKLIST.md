@@ -4,13 +4,14 @@
 
 ## 发版前
 
-1. `npm run build:site` — 生成各语言首页 / About、完整 `public/sitemap.xml`
-2. `npm run lint:seo` — description / FAQ / YMYL 启发式校验
+1. `npm run build:site` — 生成各语言首页 / About、完整 `public/sitemap.xml`（发版以全量为准；筛选生成见 [`ops/README.md`](../ops/README.md) §4.0，`npm run sitemap` / `sitemap:ui`）
+2. `npm run lint:seo` — description / FAQ / YMYL / **related≥2 / References** 启发式校验
 3. 确认 `public/og-image.png`、`favicon.ico`、`favicon.svg`、`apple-touch-icon.png` 存在
-4. 抽查：默认语工具 URL 无 `/en` 前缀；`/en/tools/...` 应 301 到 `/tools/...`
+4. 抽查：默认语工具 URL 无 `/en` 前缀；首页/nav 工具链指向 `/tools/...`（非 `/en/tools/...`）；`/en/tools/...` 应 301 到 `/tools/...`
 5. 新工具：Doc2 §8.2 Checklist + IG ≥ 3（见主文档）；卡片见 [每工具方案](./2026-07-28-per-tool-dev-seo-plans.md)
 6. 新工具：根目录 `README.md`「工具清单 / Tools List」中英已更新（与 `tool-catalog.json` 一致）
 7. 新工具/大改 i18n：`work-tasks/{slug}/03-locale-briefs.md` 已填；按 brief 重写非直译；本地化 ≥3 轮与禁词核查完成（见 `.cursor/rules/tool-i18n-localization.mdc`）。`lint:seo` 绿 ≠ 本地化完成。
+8. **链接**：`related` ≥ 2 且同簇优先；References ≥ 1（YMYL ≥ 2）；抽查 Related 锚文本为工具 title。详见 [链接执行案](./seo/2026-08-09/link-strategy-execution.md)。
 
 `npm run deploy` 会通过 `predeploy` 自动执行 1–2。
 

@@ -10,7 +10,9 @@
   "faqPrefix": "tool_npv",
   "related": [
     "how-to-calculate-cagr",
-    "how-to-calculate-roi"
+    "how-to-calculate-roi",
+    "how-to-calculate-payback-period",
+    "how-to-calculate-present-value"
   ],
   "logo": "/icons/tools/how-to-calculate-npv.svg",
   "page": {

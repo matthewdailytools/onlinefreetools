@@ -53,4 +53,9 @@ docs/seo/
 - [`2026-08-08/02-next-strategy.md`](./2026-08-08/02-next-strategy.md)
 - [`2026-08-08/03-todo.md`](./2026-08-08/03-todo.md)
 
+## 链接策略（非 GSC 导出批次）
+
+- [`2026-08-09/link-strategy-execution.md`](./2026-08-09/link-strategy-execution.md) — 内链三级 / 出站 / 入站落地
+- 入站月度清单：[`ops/seo/inbound-link-outreach.md`](../../ops/seo/inbound-link-outreach.md)
+
 权威策略：`.cursor/rules/seo-google-policy.mdc` · `docs/2026-07-28-google-seo-strategy-implementation.md`

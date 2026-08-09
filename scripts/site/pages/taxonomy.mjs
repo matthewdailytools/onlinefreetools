@@ -2,7 +2,7 @@
  * 应用场景 / 操作对象 hub 与 leaf 页模型。
  */
 import { t } from '../i18n.mjs';
-import { siteConfig, withLangPath, withExplicitLangPath, absoluteUrl } from '../config.mjs';
+import { siteConfig, withLangPath, absoluteUrl } from '../config.mjs';
 import { TOOL_CATALOG } from '../tool-catalog.mjs';
 import {
   TOOL_SCENARIO_ORDER,
@@ -39,7 +39,7 @@ export const getTaxonomyHubPageModel = (lang, kind) => {
   const canonicalPath = withLangPath(lang, path);
 
   const sidebarItems = order.map((id) => ({
-    href: withExplicitLangPath(lang, `${path}/${id}`),
+    href: withLangPath(lang, `${path}/${id}`),
     label: t(lang, keysMap[id].labelKey),
   }));
 
@@ -93,7 +93,7 @@ export const getTaxonomyLeafPageModel = (lang, kind, id) => {
   const order = isScenario ? TOOL_SCENARIO_ORDER : TOOL_SUBJECT_ORDER;
 
   const sidebarItems = order.map((sid) => ({
-    href: withExplicitLangPath(lang, `${hubPath}/${sid}`),
+    href: withLangPath(lang, `${hubPath}/${sid}`),
     label: t(lang, keysMap[sid].labelKey),
   }));
 

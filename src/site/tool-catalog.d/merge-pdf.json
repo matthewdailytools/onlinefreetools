@@ -11,7 +11,8 @@
   "related": [
     "split-pdf",
     "organize-pdf",
-    "images-to-pdf"
+    "images-to-pdf",
+    "compress-pdf"
   ],
   "logo": "/icons/tools/merge-pdf.svg",
   "page": {

@@ -2,7 +2,7 @@
  * 应用场景 / 操作对象：hub（只链到 leaf，不直链工具）与 leaf（工具卡片网格）。
  */
 import { t } from '../i18n.mjs';
-import { withExplicitLangPath } from '../config.mjs';
+import { withLangPath } from '../config.mjs';
 import { TOOL_CATALOG } from '../tool-catalog.mjs';
 import {
   TOOL_SCENARIO_ORDER,
@@ -48,7 +48,7 @@ export const renderTaxonomyHubContent = ({ lang, kind }) => {
         ? getToolsByScenario(TOOL_CATALOG, id)
         : getToolsBySubject(TOOL_CATALOG, id);
       const countLabel = String(countTpl).replace(/\{n\}/g, String(tools.length));
-      const href = withExplicitLangPath(lang, `${basePath}/${id}`);
+      const href = withLangPath(lang, `${basePath}/${id}`);
       return `
       <div class="home-card-item">
         <div class="card tool-entry-card h-100 d-flex flex-column">
@@ -92,8 +92,8 @@ export const renderTaxonomyLeafContent = ({ lang, kind, id, tools }) => {
   const meta = keysMap[id];
   const hubPath = isScenario ? SCENARIO_HUB_PATH : SUBJECT_HUB_PATH;
   const hubLabel = t(lang, isScenario ? 'nav_use_cases' : 'nav_tool_type');
-  const homeHref = withExplicitLangPath(lang, '/');
-  const hubHref = withExplicitLangPath(lang, hubPath);
+  const homeHref = withLangPath(lang, '/');
+  const hubHref = withLangPath(lang, hubPath);
 
   return `
     <div class="home-wrap">

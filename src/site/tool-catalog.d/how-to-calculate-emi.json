@@ -10,7 +10,8 @@
   "faqPrefix": "tool_emi",
   "related": [
     "how-to-calculate-compound-interest",
-    "how-to-calculate-roi"
+    "how-to-calculate-roi",
+    "how-to-calculate-debt-payoff"
   ],
   "logo": "/icons/tools/how-to-calculate-emi.svg",
   "page": {

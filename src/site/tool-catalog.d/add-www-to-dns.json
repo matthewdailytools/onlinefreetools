@@ -11,7 +11,8 @@
   "related": [
     "website-headers",
     "ip-address",
-    "indexnow"
+    "indexnow",
+    "domain-lookup"
   ],
   "logo": "/icons/tools/add-www-to-dns.svg",
   "page": {

@@ -10,7 +10,9 @@
   "faqPrefix": "tool_pdf_to_jpg",
   "related": [
     "images-to-pdf",
-    "image-format-converter"
+    "image-format-converter",
+    "pdf-page-to-image-sizes",
+    "pdf-to-markdown"
   ],
   "logo": "/icons/tools/pdf-to-jpg.svg",
   "page": {

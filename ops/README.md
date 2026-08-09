@@ -27,7 +27,8 @@ ops/
     ├── submit-indexnow.sh  # 同上（bash 包装，参数原样转发）
     ├── generate-sitemap.mjs # 全量/筛选生成 sitemap（CLI）
     ├── sitemap-ui.mjs       # 本地操作页服务（127.0.0.1 + 密码）
-    └── sitemap-ui.html      # 操作页 UI
+    ├── sitemap-ui.html      # 操作页 UI
+    └── inbound-link-outreach.md # 白帽入站获链月度清单
 
 # IndexNow 验证公钥（须公开可访问）
 # public/{INDEXNOW_KEY}.txt
@@ -125,31 +126,76 @@ npm run build:site && npm run lint:seo
 
 ### 4.0 Sitemap 筛选生成与操作页
 
-核心逻辑：`scripts/site/sitemap.mjs`（`build:site` 全量写入仍走此模块）。
+日常发版仍以 **`npm run build:site` → 全量 `public/sitemap.xml`** 为准（GSC / IndexNow 默认读此文件）。  
+本节用于：**只重建 sitemap**、或按语言 / 信息页 / 分类 / 场景 / 工具类型做**子集**生成（排查、抽样提交、临时清单）。
 
-**CLI**
+| 路径 | 说明 |
+|---|---|
+| `scripts/site/sitemap.mjs` | 生成核心（`build:site` 与 ops 共用） |
+| `ops/seo/generate-sitemap.mjs` | CLI（`npm run sitemap`） |
+| `ops/seo/sitemap-ui.mjs` + `sitemap-ui.html` | 本地密码门操作页（`npm run sitemap:ui`） |
+| `public/sitemap.xml` | **生产全量**（部署与搜索引擎提交用） |
+| `public/sitemap.filtered.xml` | 筛选默认输出；已 `.gitignore`，勿当线上源 |
+
+#### 写入规则
+
+| 情形 | 默认输出 |
+|---|---|
+| 全量（无筛选） | `public/sitemap.xml` |
+| 筛选 | `public/sitemap.filtered.xml` |
+| 筛选 + 覆盖主文件 | `public/sitemap.xml`（**会覆盖生产全量**，慎用） |
+
+- CLI：`--overwrite-main`  
+- 操作页：勾选「覆盖主文件」；页面上的「当前目标」会实时显示将写入的路径；**预览（dry-run）也会返回目标路径**（不写盘）。  
+- 全量内容本身始终写主文件；「覆盖主文件」仅在**内容为筛选**时改变目标路径。
+
+#### 筛选语义
+
+- **语言** `--lang` / 操作页勾选：只展开这些语种 URL；hreflang 交替链接也只含本次语言集合。  
+- **信息页** `--info`：`about` / `privacy` / `terms` / `contact`（另可 `--no-home` / `--no-info`）。  
+- **场景 leaf** `--scenario`：`/where-to-use-tools/{id}`；同时按 scenario **过滤工具**。  
+- **工具类型 leaf** `--subject` / `--tool-type`：`/tool-type/{id}`；同时按 subject 过滤工具。  
+- **分类** `--category`：仅过滤工具（catalog `category`）。  
+- **工具命中**：`category ∪ scenario ∪ subject` 为 **OR**；三维皆空（或操作页上场景/类型「全选」、分类未勾）= **全部工具**。  
+- Hub / leaf 开关：`--no-scenario-hub`、`--no-subject-hub`、`--no-scenario-leaves`、`--no-subject-leaves`、`--no-tools`。  
+- 可选项 id 列表：`npm run sitemap -- --meta`（JSON）。
+
+#### CLI
 
 ```bash
 npm run sitemap                              # 全量 → public/sitemap.xml
 npm run sitemap -- --help
+npm run sitemap -- --meta                    # 打印可选 lang/category/scenario/subject
 npm run sitemap -- --lang en,zh --info about,privacy
-npm run sitemap -- --scenario documents --subject pdf --out public/sitemap.filtered.xml
+npm run sitemap -- --scenario documents --subject pdf
 npm run sitemap -- --category calculator --dry-run
+npm run sitemap -- --lang en --overwrite-main   # 筛选内容写入主文件（慎用）
+npm run sitemap -- --out /tmp/sitemap-en.xml --lang en
 ```
 
-筛选默认写入 `public/sitemap.filtered.xml`（避免误覆盖线上全量）；加 `--overwrite-main` 可强制写 `public/sitemap.xml`。
-
-**操作页（推荐）**
+#### 操作页（推荐）
 
 ```bash
 npm run sitemap:ui
 # 浏览器打开 http://127.0.0.1:8791/
-# 进入密码：345621（可用环境变量 SITEMAP_UI_PASSWORD 覆盖）
 ```
 
-- 仅绑定 `127.0.0.1`，**勿**对公网暴露。
-- 可选：语言、信息页（关于/隐私/条款/联系）、场景 `where-to-use-tools`、工具类型 `tool-type`、catalog `category`。
-- 支持预览统计（不写盘）与生成写入。
+| 项 | 说明 |
+|---|---|
+| 进入密码 | 默认 `345621`；环境变量 `SITEMAP_UI_PASSWORD` 可覆盖 |
+| 端口 | 默认 `8791`；`SITEMAP_UI_PORT` 可覆盖 |
+| 绑定 | **仅** `127.0.0.1`，勿对公网暴露、勿配反向代理到公网 |
+| 会话 | 内存 + HttpOnly cookie；进程重启需重新登录 |
+| 功能 | 语言 / 信息页 / 场景 hub+leaf / 工具类型 hub+leaf / category；预览统计；生成写入；「当前目标」路径提示 |
+| 代码更新后 | **须重启** `sitemap:ui` 进程后刷新浏览器 |
+
+安全：密码仅为本地轻门禁，**不是**对外认证方案；生产 sitemap 仍只通过 `build:site` / 部署流水线发布。
+
+#### 与 IndexNow / GSC
+
+- GSC 提交与日常 IndexNow：**只用**线上/本地全量 `sitemap.xml`（见 §4.1）。  
+- 筛选文件可用于本地核对或临时 `--sitemap public/sitemap.filtered.xml`；**不要**把残缺主文件部署上去。  
+- 误用「覆盖主文件」后：立刻 `npm run sitemap` 或 `npm run build:site` 恢复全量。
 
 ### 4.1 Bing IndexNow
 

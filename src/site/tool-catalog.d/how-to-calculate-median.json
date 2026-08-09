@@ -10,7 +10,8 @@
   "faqPrefix": "tool_median",
   "related": [
     "how-to-calculate-mean",
-    "how-to-calculate-standard-deviation"
+    "how-to-calculate-standard-deviation",
+    "how-to-calculate-gpa"
   ],
   "logo": "/icons/tools/how-to-calculate-median.svg",
   "page": {

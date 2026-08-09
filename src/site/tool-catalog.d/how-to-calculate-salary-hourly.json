@@ -9,8 +9,9 @@
   "homeDescKey": "tool_salary_hourly_description",
   "faqPrefix": "tool_salary_hourly",
   "related": [
-    "how-to-calculate-cagr",
-    "how-to-calculate-roi"
+    "how-to-calculate-tip",
+    "how-to-calculate-vat",
+    "how-to-calculate-discount"
   ],
   "logo": "/icons/tools/how-to-calculate-salary-hourly.svg",
   "page": {

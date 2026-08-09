@@ -10,7 +10,8 @@
   "faqPrefix": "tool_rotate_pdf",
   "related": [
     "organize-pdf",
-    "split-pdf"
+    "split-pdf",
+    "crop-pdf"
   ],
   "logo": "/icons/tools/rotate-pdf.svg",
   "page": {

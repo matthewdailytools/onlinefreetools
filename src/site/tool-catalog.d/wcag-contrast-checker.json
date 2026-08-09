@@ -10,7 +10,8 @@
   "faqPrefix": "tool_wcag_contrast_checker",
   "related": [
     "smart-website-color-scheme",
-    "brand-color-token-pack"
+    "brand-color-token-pack",
+    "color-from-image"
   ],
   "logo": "/icons/tools/wcag-contrast-checker.svg",
   "page": {

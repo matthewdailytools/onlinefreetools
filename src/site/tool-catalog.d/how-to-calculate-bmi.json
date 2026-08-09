@@ -9,8 +9,9 @@
   "homeDescKey": "tool_bmi_description",
   "faqPrefix": "tool_bmi",
   "related": [
-    "how-to-calculate-percentage-change",
-    "square-feet"
+    "how-to-calculate-bmr-tdee",
+    "how-to-calculate-body-fat",
+    "how-to-calculate-ideal-weight"
   ],
   "logo": "/icons/tools/how-to-calculate-bmi.svg",
   "page": {

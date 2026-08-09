@@ -7,12 +7,14 @@ import { t } from '../../site/i18n';
 import { escapeHtml } from './layout';
 
 /**
- * 显式语言前缀路径（含默认语 /en），供站内导航保持用户所选语言。
+ * 为路径加上语言前缀（默认语无前缀，与 sitemap/canonical 一致）。
  * @param lang 当前语言
  * @param pathname 路径
  */
-const withExplicitLangPrefix = (lang: SiteLang, pathname: string) => {
+const withLangPrefix = (lang: SiteLang, pathname: string) => {
 	const safe = pathname.startsWith('/') ? pathname : `/${pathname}`;
+	/** 默认语 en：无前缀；其他语：/{lang}/... */
+	if (lang === 'en') return safe;
 	return `/${lang}${safe}`.replace(/\/{2,}/g, '/');
 };
 
@@ -28,12 +30,12 @@ const FOOTER_LINKS: FooterLink[] = [
 ];
 
 /**
- * 解析页脚链接 href（带当前语言前缀）。
+ * 解析页脚链接 href（规范语言前缀）。
  * @param lang 当前语言
  * @param item 页脚链接项
  */
 const footerHref = (lang: SiteLang, item: FooterLink): string =>
-	withExplicitLangPrefix(lang, item.path);
+	withLangPrefix(lang, item.path);
 
 /**
  * 渲染站点页脚。

@@ -10,7 +10,8 @@
   "faqPrefix": "tool_pythagorean",
   "related": [
     "how-to-calculate-aspect-ratio",
-    "how-to-calculate-logarithm"
+    "how-to-calculate-logarithm",
+    "how-to-calculate-gradient"
   ],
   "logo": "/icons/tools/how-to-calculate-pythagorean-theorem.svg",
   "page": {

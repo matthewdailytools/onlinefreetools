@@ -2,12 +2,13 @@
  * 静态站点顶栏导航项（首页等）：分类名 + 工具链接下拉。
  */
 import { t } from './i18n.mjs';
-import { withExplicitLangPath } from './config.mjs';
+import { withLangPath } from './config.mjs';
 import { getToolsByCategory } from './tool-catalog.mjs';
 import { TOOL_CATEGORY_ORDER, getCategoryHomeLabelKey } from './categories.mjs';
 
 /**
  * 各分类顶栏下拉（标签 = 分类名，子项 = 工具名 + 链接）。
+ * 内容链用 withLangPath（默认语无 /en），与 sitemap/canonical 一致。
  * @param {string} lang
  */
 export const buildCategoryNavDropdowns = (lang) =>
@@ -15,7 +16,7 @@ export const buildCategoryNavDropdowns = (lang) =>
     type: 'dropdown',
     label: t(lang, getCategoryHomeLabelKey(category)),
     items: getToolsByCategory(category).map((tool) => ({
-      href: withExplicitLangPath(lang, tool.path),
+      href: withLangPath(lang, tool.path),
       label: t(lang, tool.homeTitleKey),
       /** 工具页在新标签打开，保留当前首页/工具页上下文 */
       openInNewTab: true,
@@ -27,8 +28,8 @@ export const buildCategoryNavDropdowns = (lang) =>
  * @param {string} lang
  */
 export const buildTaxonomyNavLinks = (lang) => [
-  { href: withExplicitLangPath(lang, '/where-to-use-tools'), label: t(lang, 'nav_use_cases') },
-  { href: withExplicitLangPath(lang, '/tool-type'), label: t(lang, 'nav_tool_type') },
+  { href: withLangPath(lang, '/where-to-use-tools'), label: t(lang, 'nav_use_cases') },
+  { href: withLangPath(lang, '/tool-type'), label: t(lang, 'nav_tool_type') },
 ];
 
 /**
@@ -36,7 +37,7 @@ export const buildTaxonomyNavLinks = (lang) => [
  * @param {string} lang
  */
 export const buildToolPageNavItems = (lang) => [
-  { href: withExplicitLangPath(lang, '/'), label: t(lang, 'nav_home') },
+  { href: withLangPath(lang, '/'), label: t(lang, 'nav_home') },
   ...buildCategoryNavDropdowns(lang),
   ...buildTaxonomyNavLinks(lang),
 ];

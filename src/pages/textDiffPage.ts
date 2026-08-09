@@ -10,7 +10,7 @@ import { buildToolPageNavItems } from './site/nav';
 import { renderLayout, type HreflangAlternate, escapeHtml } from './site/layout';
 import { renderSidebar, buildToolSidebarItems } from './site/sidebar';
 import { getToolBySlug } from '../site/tools';
-import { renderToolExtraSections, buildToolJsonLd } from './site/toolContent';
+import { renderToolExtraSections, buildToolJsonLd, renderToolReferencesSection } from './site/toolContent';
 
 /** 为路径加上语言前缀（默认语无前缀）。 */
 const withLangPrefix = (lang: SiteLang, pathname: string, defaultLang: SiteLang) => {
@@ -154,15 +154,15 @@ export const renderTextDiffPage = (opts: {
       </ul>
     </section>`;
 
-	/** References 放在 FAQ / Related 之后，符合 tool-creation 模块顺序。 */
-	const referencesHtml = `
-    <section class="mt-4" id="references" aria-labelledby="refs-heading">
-      <h2 class="h5" id="refs-heading">${escapeHtml(t(opts.lang, 'tool_references_title'))}</h2>
-      <ul class="mb-0">
-        <li><a href="https://github.com/kpdecker/jsdiff" rel="noopener noreferrer" target="_blank">jsdiff (npm: diff)</a></li>
-        <li><a href="https://en.wikipedia.org/wiki/Diff" rel="noopener noreferrer" target="_blank">Wikipedia: Diff</a></li>
-      </ul>
-    </section>`;
+	/** 权威说明 + 实现库。 */
+	const referencesHtml = renderToolReferencesSection({
+		lang: opts.lang,
+		links: [
+			{ label: 'Wikipedia — Diff', href: 'https://en.wikipedia.org/wiki/Diff' },
+			{ label: 'GNU Diffutils manual', href: 'https://www.gnu.org/software/diffutils/manual/diffutils.html' },
+			{ label: 'jsdiff (npm: diff)', href: 'https://github.com/kpdecker/jsdiff' },
+		],
+	});
 	/** 客户端：加载 jsdiff，本地计算增删高亮与摘要。 */
 	const extraBodyHtml = `
   <script src="https://cdn.jsdelivr.net/npm/diff@5.2.0/dist/diff.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

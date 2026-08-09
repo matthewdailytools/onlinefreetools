@@ -12,7 +12,8 @@
     "image-merge",
     "images-to-word",
     "images-to-ppt",
-    "images-to-gif"
+    "images-to-gif",
+    "pdf-page-to-image-sizes"
   ],
   "logo": "/icons/tools/images-to-pdf.svg",
   "page": {

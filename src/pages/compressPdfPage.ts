@@ -15,6 +15,7 @@ import {
 	renderToolExtraSections,
 	renderToolIgSections,
 	renderToolReferencesSection,
+	renderContextualToolLinks,
 	buildToolJsonLd,
 } from './site/toolContent';
 
@@ -124,6 +125,13 @@ export const renderCompressPdfPage = (opts: {
 		mode: 'rules',
 		usecaseCount: 3,
 		ruleItemCount: 4,
+	});
+
+	const contextualHtml = renderContextualToolLinks({
+		lang: opts.lang,
+		defaultLang: opts.defaultLang,
+		lead: 'After compressing, you may also need to',
+		slugs: ['merge-pdf', 'organize-pdf', 'pdf-to-jpg'],
 	});
 
 	const referencesHtml = renderToolReferencesSection({
@@ -566,7 +574,7 @@ export const renderCompressPdfPage = (opts: {
 		alternates,
 		headerHtml,
 		sidebarHtml,
-		contentHtml: `${contentHtml}${igHtml}${toolSeoHtml}${referencesHtml}`,
+		contentHtml: `${contentHtml}${igHtml}${contextualHtml}${toolSeoHtml}${referencesHtml}`,
 		footerHtml,
 		extraHeadHtml: `${extraHeadHtml}${toolJsonLd}`,
 		extraBodyHtml,

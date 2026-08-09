@@ -9,8 +9,9 @@
   "homeDescKey": "tool_squarefeet_description",
   "faqPrefix": "tool_squarefeet",
   "related": [
-    "how-to-calculate-percentage-change",
-    "how-to-calculate-bmi"
+    "unit-converter",
+    "how-to-calculate-tile",
+    "how-to-calculate-concrete"
   ],
   "logo": "/icons/tools/square-feet.svg",
   "page": {

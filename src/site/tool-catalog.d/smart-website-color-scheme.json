@@ -10,7 +10,8 @@
   "faqPrefix": "tool_smart_website_color_scheme",
   "related": [
     "brand-color-token-pack",
-    "wcag-contrast-checker"
+    "wcag-contrast-checker",
+    "brand-style-guide"
   ],
   "logo": "/icons/tools/smart-website-color-scheme.svg",
   "page": {

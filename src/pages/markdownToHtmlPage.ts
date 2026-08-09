@@ -11,7 +11,7 @@ import { buildToolPageNavItems } from './site/nav';
 import { renderLayout, type HreflangAlternate, escapeHtml } from './site/layout';
 import { renderSidebar, buildToolSidebarItems } from './site/sidebar';
 import { getToolBySlug } from '../site/tools';
-import { renderToolExtraSections, buildToolJsonLd } from './site/toolContent';
+import { renderToolExtraSections, buildToolJsonLd, renderToolReferencesSection } from './site/toolContent';
 
 /** 为路径加上语言前缀（默认语无前缀）。 */
 const withLangPrefix = (lang: SiteLang, pathname: string, defaultLang: SiteLang) => {
@@ -161,17 +161,16 @@ export const renderMarkdownToHtmlPage = (opts: {
       </ul>
     </section>`;
 
-	/** References 放在 FAQ / Related 之后。 */
-	const referencesHtml = `
-    <section class="mt-4" id="references" aria-labelledby="refs-heading">
-      <h2 class="h5" id="refs-heading">${escapeHtml(t(opts.lang, 'tool_references_title'))}</h2>
-      <ul class="mb-0">
-        <li><a href="https://github.com/markedjs/marked" rel="noopener noreferrer" target="_blank">marked</a></li>
-        <li><a href="https://github.com/cure53/DOMPurify" rel="noopener noreferrer" target="_blank">DOMPurify</a></li>
-        <li><a href="https://github.com/mixmark-io/turndown" rel="noopener noreferrer" target="_blank">Turndown</a></li>
-        <li><a href="https://commonmark.org/" rel="noopener noreferrer" target="_blank">CommonMark</a></li>
-      </ul>
-    </section>`;
+	/** 权威规范优先；库文档作实现参考。 */
+	const referencesHtml = renderToolReferencesSection({
+		lang: opts.lang,
+		links: [
+			{ label: 'CommonMark Spec', href: 'https://commonmark.org/' },
+			{ label: 'WHATWG HTML Living Standard', href: 'https://html.spec.whatwg.org/' },
+			{ label: 'marked', href: 'https://github.com/markedjs/marked' },
+			{ label: 'DOMPurify', href: 'https://github.com/cure53/DOMPurify' },
+		],
+	});
 
 	/** 客户端：marked + DOMPurify + turndown；按方向切换面板与复制/下载行为。 */
 	const extraBodyHtml = `

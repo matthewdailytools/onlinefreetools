@@ -9,8 +9,8 @@
   "homeDescKey": "tool_gpa_description",
   "faqPrefix": "tool_gpa",
   "related": [
-    "how-to-calculate-percentage-change",
-    "how-to-calculate-sample-size"
+    "how-to-calculate-mean",
+    "how-to-calculate-percentage-change"
   ],
   "logo": "/icons/tools/how-to-calculate-gpa.svg",
   "page": {

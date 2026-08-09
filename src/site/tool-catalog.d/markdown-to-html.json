@@ -12,7 +12,8 @@
     "text-diff",
     "yaml-json",
     "html-entity",
-    "website-headers"
+    "website-headers",
+    "pdf-to-markdown"
   ],
   "logo": "/icons/tools/markdown-to-html.svg",
   "page": {

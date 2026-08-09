@@ -369,7 +369,9 @@ Footer
 
 ## 7. 链接策略（摘要）
 
-完整战术（外展邮件、Awesome List、日历等）原详案已收敛为本节 + 历史文件 stub。执行以本节为准。
+完整战术见执行案 [`docs/seo/2026-08-09/link-strategy-execution.md`](./seo/2026-08-09/link-strategy-execution.md) 与入站清单 [`ops/seo/inbound-link-outreach.md`](../ops/seo/inbound-link-outreach.md)。本节为摘要。
+
+**内链三级**：L1 发现（首页/nav/taxonomy/侧栏）→ L2 主题（`related` ≥ 2、同簇互链）→ L3 语境（How/Use cases 自然 `<a>`）。主锚文本 = 本地化工具 title；默认语内容 URL 无 `/en` 前缀。
 
 ### 7.1 优先级
 
@@ -392,7 +394,7 @@ Footer
 - 锚文本自然，避免关键词堆砌。  
 - Disavow 仅在 Manual Action 或明显 spam 攻击时使用。
 
-官方依据：[Link spam](https://developers.google.com/search/docs/essentials/spam-policies#link-spam)、[Qualify outbound links](https://developers.google.com/search/docs/crawling-indexing/qualify-outbound-links)。
+官方依据：[Link spam](https://developers.google.com/search/docs/essentials/spam-policies#link-spam)、[Qualify outbound links](https://developers.google.com/search/docs/crawling-indexing/qualify-outbound-links)、[Link best practices](https://developers.google.com/search/docs/crawling-indexing/links-crawlable)。
 
 ---
 

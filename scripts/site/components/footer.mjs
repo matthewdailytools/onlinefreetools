@@ -2,7 +2,7 @@
  * 站点页脚：版权说明 + About / Privacy / Terms / Contact 短链。
  */
 import { t } from '../i18n.mjs';
-import { withExplicitLangPath } from '../config.mjs';
+import { withLangPath } from '../config.mjs';
 
 /**
  * 页脚链接项。
@@ -22,7 +22,7 @@ const FOOTER_LINKS = [
  * @param {string} lang
  * @param {FooterLink} item
  */
-const footerHref = (lang, item) => withExplicitLangPath(lang, item.path);
+const footerHref = (lang, item) => withLangPath(lang, item.path);
 
 /**
  * 渲染页脚 HTML。
@@ -45,4 +45,4 @@ export const renderFooter = ({ lang }) => {
     </div>
   </footer>`;
 };
-
+

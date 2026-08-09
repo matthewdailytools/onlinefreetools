@@ -2,7 +2,7 @@
  * 工具卡片渲染：首页分类区与场景/对象列表页共用。
  */
 import { t } from '../i18n.mjs';
-import { withExplicitLangPath } from '../config.mjs';
+import { withLangPath } from '../config.mjs';
 import { getToolLogoUrl } from '../tool-catalog.mjs';
 
 /** 站内打开工具/说明页：一律新标签，避免冲掉列表页滚动位置 */
@@ -20,7 +20,7 @@ export const showNoUploadTag = (tool) => tool.localProcessing !== false;
  * @returns {string}
  */
 export const renderNoUploadTag = (lang) => {
-  const href = `${withExplicitLangPath(lang, '/privacy')}#local`;
+  const href = `${withLangPath(lang, '/privacy')}#local`;
   const label = t(lang, 'home_tag_no_upload');
   const title = t(lang, 'home_tag_no_upload_title');
   return `<a class="tool-no-upload-tag" href="${href}" title="${title}"${NEW_TAB}>${label}</a>`;
@@ -60,7 +60,7 @@ export const renderToolCard = (lang, tool, cta) =>
   renderToolEntryCard({
     title: t(lang, tool.homeTitleKey),
     desc: t(lang, tool.homeDescKey),
-    href: withExplicitLangPath(lang, tool.path),
+    href: withLangPath(lang, tool.path),
     logo: getToolLogoUrl(tool),
     cta: cta || t(lang, 'home_open'),
     noUploadHtml: showNoUploadTag(tool) ? renderNoUploadTag(lang) : '',

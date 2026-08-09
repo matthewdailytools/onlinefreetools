@@ -15,6 +15,7 @@ import {
 	buildToolJsonLd,
 	renderToolIgSections,
 	renderToolReferencesSection,
+	renderContextualToolLinks,
 } from './site/toolContent';
 
 /** 为路径加上语言前缀（默认语无前缀）。 */
@@ -173,7 +174,13 @@ export const renderHowToCalculateBmiPage = (opts: {
       </div>
     </div>
 
-    ${renderToolIgSections({ lang: opts.lang, prefix: 'tool_bmi', mode: 'formula' })}`;
+    ${renderToolIgSections({ lang: opts.lang, prefix: 'tool_bmi', mode: 'formula' })}
+    ${renderContextualToolLinks({
+			lang: opts.lang,
+			defaultLang: opts.defaultLang,
+			lead: 'For energy needs and body composition next to BMI, also try',
+			slugs: ['how-to-calculate-bmr-tdee', 'how-to-calculate-body-fat', 'how-to-calculate-ideal-weight'],
+		})}`;
 
 	const referencesHtml = renderToolReferencesSection({
 		lang: opts.lang,

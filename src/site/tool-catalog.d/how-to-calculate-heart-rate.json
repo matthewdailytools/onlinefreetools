@@ -10,7 +10,8 @@
   "faqPrefix": "tool_heart_rate",
   "related": [
     "how-to-calculate-macros",
-    "how-to-calculate-bmr-tdee"
+    "how-to-calculate-bmr-tdee",
+    "how-to-calculate-pace"
   ],
   "logo": "/icons/tools/how-to-calculate-heart-rate.svg",
   "page": {

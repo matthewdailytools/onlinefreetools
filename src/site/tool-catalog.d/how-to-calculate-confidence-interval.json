@@ -10,7 +10,8 @@
   "faqPrefix": "tool_confidence_interval",
   "related": [
     "how-to-calculate-p-value",
-    "how-to-calculate-standard-deviation"
+    "how-to-calculate-standard-deviation",
+    "how-to-calculate-sample-size"
   ],
   "logo": "/icons/tools/how-to-calculate-confidence-interval.svg",
   "page": {

@@ -10,7 +10,8 @@
   "faqPrefix": "tool_ideal_weight",
   "related": [
     "how-to-calculate-bmi",
-    "how-to-calculate-body-fat"
+    "how-to-calculate-body-fat",
+    "how-to-calculate-bmr-tdee"
   ],
   "logo": "/icons/tools/how-to-calculate-ideal-weight.svg",
   "page": {

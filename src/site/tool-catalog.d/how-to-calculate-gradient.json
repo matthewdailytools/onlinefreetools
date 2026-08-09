@@ -9,8 +9,8 @@
   "homeDescKey": "tool_gradient_desc",
   "faqPrefix": "tool_gradient",
   "related": [
-    "how-to-calculate-percentage-change",
-    "how-to-calculate-roi"
+    "how-to-calculate-slope",
+    "how-to-calculate-aspect-ratio"
   ],
   "logo": "/icons/tools/how-to-calculate-gradient.svg",
   "page": {

@@ -10,7 +10,9 @@
   "faqPrefix": "tool_gross_margin",
   "related": [
     "how-to-calculate-break-even",
-    "how-to-calculate-roi"
+    "how-to-calculate-roi",
+    "how-to-calculate-contribution-margin",
+    "how-to-calculate-profit-margin"
   ],
   "logo": "/icons/tools/how-to-calculate-gross-margin.svg",
   "page": {

@@ -15,6 +15,7 @@ import {
 	buildToolJsonLd,
 	renderToolIgSections,
 	renderToolReferencesSection,
+	renderContextualToolLinks,
 } from './site/toolContent';
 
 /** 为路径加上语言前缀（默认语无前缀）。 */
@@ -119,7 +120,13 @@ export const renderHowToCalculateRoiPage = (opts: {
       </div>
     </div>
 
-    ${renderToolIgSections({ lang: opts.lang, prefix: 'tool_roi', mode: 'formula' })}`;
+    ${renderToolIgSections({ lang: opts.lang, prefix: 'tool_roi', mode: 'formula' })}
+    ${renderContextualToolLinks({
+			lang: opts.lang,
+			defaultLang: opts.defaultLang,
+			lead: 'Compare ROI with related finance tools such as',
+			slugs: ['how-to-calculate-cagr', 'how-to-calculate-npv', 'how-to-calculate-percentage-change'],
+		})}`;
 
 	const referencesHtml = renderToolReferencesSection({
 		lang: opts.lang,

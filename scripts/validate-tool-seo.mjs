@@ -11,6 +11,7 @@ import { fileURLToPath } from 'url';
 import { validateToolIcons } from './validate-tool-icons.mjs';
 import { validateToolTitleCoverage } from './validate-tool-title-coverage.mjs';
 import { validateAllToolsWithCoverageSection } from './validate-tool-coverage-rounds.mjs';
+import { validateToolLinks } from './validate-tool-links.mjs';
 
 const require = createRequire(import.meta.url);
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -141,6 +142,16 @@ if (roundErrs.length === 0) {
   for (const e of roundErrs) console.warn(`[COVER-FAIL] ${e}`);
   console.log(
     `Coverage rounds validator: ${roundErrs.length} issue(s). Run: npm run coverage:gate -- --slug=<slug> --phase=all`
+  );
+  exitCode = exitCode || 2;
+}
+
+const { fails: linkFails, warns: linkWarns } = validateToolLinks();
+if (linkFails === 0) {
+  console.log(`Link validator: OK — related ≥2 / refs look good (${linkWarns} inbound warn(s))`);
+} else {
+  console.log(
+    `Link validator: ${linkFails} fail(s), ${linkWarns} warn(s). See docs/seo/2026-08-09/link-strategy-execution.md`
   );
   exitCode = exitCode || 2;
 }
