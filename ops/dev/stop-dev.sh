@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# 停止本地 wrangler dev 开发服务器
+# 停止本地 wrangler dev 与 Ops UI（sitemap:ui / ops:ui）
 #
 # 用法:
 #   ./ops/dev/stop-dev.sh
@@ -25,13 +25,17 @@ while [[ $# -gt 0 ]]; do
       ;;
     -h|--help)
       cat <<'EOF'
-停止本地 wrangler dev 开发服务器
+停止本地 wrangler dev 与 Ops UI（sitemap:ui / ops:ui）
 
 用法:
   ./ops/dev/stop-dev.sh
   ./ops/dev/stop-dev.sh --port 8788
   ./ops/dev/stop-dev.sh -p 8788
   ./ops/dev/stop-dev.sh 8788
+
+会同时停止:
+  - wrangler dev（默认端口 8787，可用 --port 覆盖）
+  - Ops UI（默认 8791，可用环境变量 SITEMAP_UI_PORT）
 EOF
       exit 0
       ;;

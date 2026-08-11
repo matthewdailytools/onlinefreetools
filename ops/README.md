@@ -40,6 +40,8 @@ ops/
 |---|---|
 | `.run/wrangler-dev.pid` | 后台 `wrangler dev` 进程 ID |
 | `.run/wrangler-dev.log` | dev 标准输出/错误日志 |
+| `.run/ops-ui.pid` | 后台 Ops UI（`sitemap:ui` / `ops:ui`）进程 ID |
+| `.run/ops-ui.log` | Ops UI 标准输出/错误日志 |
 
 ---
 
@@ -57,23 +59,30 @@ ops/
 ### 3.1 后台启停（推荐日常）
 
 ```bash
-npm run start:dev                 # build:site + 后台 wrangler dev
+npm run start:dev                 # build:site + 后台 wrangler + Ops UI
 npm run start:dev -- --no-build   # 跳过构建，快速启动
-npm run start:dev -- --port 8787  # 指定端口
-npm run stop:dev                  # 停止
-npm run status:dev                # 查看端口 / 健康检查
+npm run start:dev -- --no-ops-ui  # 不启动 Ops / sitemap 操作页
+npm run start:dev -- --port 8787  # 指定 wrangler 端口
+npm run stop:dev                  # 停止 wrangler 与 Ops UI
+npm run status:dev                # 查看端口 / 健康检查（含 Ops UI）
 npm run restart:dev               # 重启
 ```
 
-默认访问：**http://127.0.0.1:8787/**（请在浏览器打开；勿用无 `Accept: text/html` 的简单探测，Worker 对 `/` 会返回 404）
+默认访问：
 
-启动脚本会等待 wrangler 日志出现 `Ready on ...` 并通过 HTTP 健康检查；失败时查看 `.run/wrangler-dev.log`。
+| 服务 | URL |
+|---|---|
+| 站点（wrangler） | **http://127.0.0.1:8787/**（请在浏览器打开；勿用无 `Accept: text/html` 的简单探测，Worker 对 `/` 会返回 404） |
+| Ops UI（sitemap / 运维手册） | **http://127.0.0.1:8791/**（等同 `npm run sitemap:ui` / `ops:ui`；密码见 §4.0） |
+
+启动脚本会等待 wrangler 日志出现 `Ready on ...` 并通过 HTTP 健康检查；随后后台拉起 Ops UI。失败时查看 `.run/wrangler-dev.log` / `.run/ops-ui.log`。
 
 **Windows 直接运行**：
 
 ```powershell
 .\ops\dev\start-dev.ps1
 .\ops\dev\start-dev.ps1 -NoBuild
+.\ops\dev\start-dev.ps1 -NoOpsUi
 .\ops\dev\stop-dev.ps1
 ```
 
@@ -83,6 +92,7 @@ npm run restart:dev               # 重启
 chmod +x ops/dev/*.sh   # 首次可选
 ./ops/dev/start-dev.sh
 ./ops/dev/start-dev.sh --no-build
+./ops/dev/start-dev.sh --no-ops-ui
 ./ops/dev/start-dev.sh --port 8788      # 或 -p 8788 / 8788
 ./ops/dev/start-dev.sh --no-build -p 8788
 ./ops/dev/status-dev.sh -p 8788
@@ -186,6 +196,8 @@ npm run sitemap -- --out /tmp/sitemap-en.xml --lang en
 
 #### 操作页（推荐）
 
+日常本地开发时，**`npm run start:dev` / `./ops/dev/start-dev.sh` 会默认一并后台启动**本页（`stop:dev` / `stop-dev.sh` 会一并停止）。也可单独前台运行：
+
 ```bash
 npm run sitemap:ui
 # 或 npm run ops:ui
@@ -199,7 +211,8 @@ npm run sitemap:ui
 | 绑定 | **仅** `127.0.0.1`，勿对公网暴露、勿配反向代理到公网 |
 | 会话 | 内存 + HttpOnly cookie；进程重启需重新登录 |
 | 页签 | **Sitemap 生成**（语言 / 信息页 / 场景 / 工具类型 / category；预览与写入）；**运维手册**（只读渲染 `ops/README.md` 与入站清单等白名单文档） |
-| 代码更新后 | **须重启** `sitemap:ui` / `ops:ui` 进程后刷新浏览器 |
+| 与 start:dev | 默认随 `start:dev` 启动；可用 `--no-ops-ui` 跳过；PID/日志见 `.run/ops-ui.*` |
+| 代码更新后 | **须重启** Ops UI（`npm run stop:dev && npm run start:dev`，或单独停再 `npm run ops:ui`）后刷新浏览器 |
 
 安全：密码仅为本地轻门禁，**不是**对外认证方案；生产 sitemap 仍只通过 `build:site` / 部署流水线发布。
 

@@ -1,4 +1,4 @@
-# 停止本地 wrangler dev 开发服务器
+# 停止本地 wrangler dev 与 Ops UI（sitemap:ui / ops:ui）
 # 用法: .\ops\dev\stop-dev.ps1
 #       .\ops\dev\stop-dev.ps1 -Port 8787
 param(

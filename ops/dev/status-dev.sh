@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# 查看本地 wrangler dev 状态（端口、PID、HTTP 健康检查）
+# 查看本地 wrangler dev 与 Ops UI 状态（端口、PID、HTTP 健康检查）
 #
 # 用法:
 #   ./ops/dev/status-dev.sh
@@ -25,7 +25,7 @@ while [[ $# -gt 0 ]]; do
       ;;
     -h|--help)
       cat <<'EOF'
-查看本地 wrangler dev 状态（端口、PID、HTTP 健康检查）
+查看本地 wrangler dev 与 Ops UI 状态（端口、PID、HTTP 健康检查）
 
 用法:
   ./ops/dev/status-dev.sh

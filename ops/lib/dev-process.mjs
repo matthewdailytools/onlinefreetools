@@ -30,6 +30,24 @@ export const pidFilePath = path.join(runDir, 'wrangler-dev.pid');
 export const logFilePath = path.join(runDir, 'wrangler-dev.log');
 
 /**
+ * 本地 Ops UI（`ops/seo/sitemap-ui.mjs`，即 `npm run sitemap:ui` / `ops:ui`）默认端口。
+ * 与 `SITEMAP_UI_PORT` 环境变量对齐。
+ */
+export const defaultOpsUiPort = Number(process.env.SITEMAP_UI_PORT || 8791);
+
+/** Ops UI 绑定地址（强制本机回环，与 sitemap-ui.mjs 一致） */
+export const defaultOpsUiHost = '127.0.0.1';
+
+/** Ops UI PID 文件路径 */
+export const opsUiPidFilePath = path.join(runDir, 'ops-ui.pid');
+
+/** Ops UI 标准输出/错误日志路径 */
+export const opsUiLogFilePath = path.join(runDir, 'ops-ui.log');
+
+/** Ops UI 入口脚本绝对路径 */
+export const opsUiEntryPath = path.join(projectRoot, 'ops', 'seo', 'sitemap-ui.mjs');
+
+/**
  * 本地 dev 根 URL。
  * @param {number} [port]
  * @param {string} [host]
@@ -320,6 +338,150 @@ export const parsePortArg = (argv, fallback = defaultDevPort) => {
  * @returns {boolean}
  */
 export const hasNoBuildFlag = (argv) => argv.includes('--no-build');
+
+/**
+ * 是否包含 --no-ops-ui 标志（不启动本地 Ops / sitemap UI）。
+ * @param {string[]} argv
+ * @returns {boolean}
+ */
+export const hasNoOpsUiFlag = (argv) => argv.includes('--no-ops-ui');
+
+/**
+ * Ops UI 根 URL。
+ * @param {number} [port]
+ * @param {string} [host]
+ * @returns {string}
+ */
+export const opsUiOrigin = (port = defaultOpsUiPort, host = defaultOpsUiHost) =>
+  `http://${host}:${port}`;
+
+/**
+ * 读取 Ops UI PID 文件；不存在或无效时返回 null。
+ * @returns {Promise<number|null>}
+ */
+export const readOpsUiPid = async () => {
+  try {
+    const raw = (await fs.readFile(opsUiPidFilePath, 'utf-8')).trim();
+    const pid = Number.parseInt(raw, 10);
+    return Number.isFinite(pid) && pid > 0 ? pid : null;
+  } catch {
+    return null;
+  }
+};
+
+/**
+ * 写入 Ops UI PID 文件。
+ * @param {number} pid
+ * @returns {Promise<void>}
+ */
+export const writeOpsUiPid = async (pid) => {
+  await ensureRunDir();
+  await fs.writeFile(opsUiPidFilePath, String(pid), 'utf-8');
+};
+
+/**
+ * 删除 Ops UI PID 文件（忽略不存在）。
+ * @returns {Promise<void>}
+ */
+export const clearOpsUiPid = async () => {
+  try {
+    await fs.unlink(opsUiPidFilePath);
+  } catch {
+    // 已停止或未启动
+  }
+};
+
+/**
+ * 判断占用 Ops UI 端口的进程是否为本仓库 sitemap-ui。
+ * @param {number} pid
+ * @returns {boolean}
+ */
+export const isProjectOpsUiProcess = (pid) => {
+  const cmd = getProcessCommandLine(pid);
+  if (!cmd) return false;
+  return (
+    cmd.includes('sitemap-ui.mjs') ||
+    cmd.includes(opsUiEntryPath) ||
+    (cmd.includes(projectRoot) && cmd.includes('sitemap-ui'))
+  );
+};
+
+/**
+ * 描述占用 Ops UI 端口的进程。
+ * @param {number} [port]
+ * @returns {{ pid: number, cmd: string, ours: boolean } | null}
+ */
+export const describeOpsUiPortBlocker = (port = defaultOpsUiPort) => {
+  const pid = findPidByPort(port, defaultOpsUiHost);
+  if (!pid) return null;
+  const cmd = getProcessCommandLine(pid);
+  return { pid, cmd, ours: isProjectOpsUiProcess(pid) };
+};
+
+/**
+ * Ops UI HTTP 健康检查（登录页或任意 2xx/3xx 即视为就绪）。
+ * @param {number} [port]
+ * @param {string} [host]
+ * @returns {Promise<boolean>}
+ */
+export const opsUiHealthCheck = async (
+  port = defaultOpsUiPort,
+  host = defaultOpsUiHost
+) => {
+  try {
+    const res = await fetch(`${opsUiOrigin(port, host)}/`, {
+      headers: { Accept: 'text/html,application/xhtml+xml;q=0.9,*/*;q=0.8' },
+      redirect: 'manual',
+    });
+    return res.status >= 200 && res.status < 400;
+  } catch {
+    return false;
+  }
+};
+
+/**
+ * 若 Ops UI 已健康运行则返回 true。
+ * @param {number} [port]
+ * @returns {Promise<boolean>}
+ */
+export const isOpsUiHealthy = async (port = defaultOpsUiPort) => {
+  const portPid = findPidByPort(port, defaultOpsUiHost);
+  if (!portPid) return false;
+  return opsUiHealthCheck(port);
+};
+
+/**
+ * 等待 Ops UI HTTP 可访问。
+ * @param {number} [port]
+ * @param {{ timeoutMs?: number, pollMs?: number }} [opts]
+ * @returns {Promise<boolean>}
+ */
+export const waitForOpsUiReady = async (port = defaultOpsUiPort, opts = {}) => {
+  const { timeoutMs = 15_000, pollMs = 250 } = opts;
+  const deadline = Date.now() + timeoutMs;
+  while (Date.now() < deadline) {
+    if (await opsUiHealthCheck(port)) return true;
+    await new Promise((resolve) => setTimeout(resolve, pollMs));
+  }
+  return false;
+};
+
+/**
+ * 清理本项目 Ops UI 进程与 stale PID 文件。
+ * @param {number} [port]
+ * @returns {Promise<void>}
+ */
+export const cleanupOpsUi = async (port = defaultOpsUiPort) => {
+  const filePid = await readOpsUiPid();
+  const portBlocker = describeOpsUiPortBlocker(port);
+  const portPid = portBlocker?.pid ?? null;
+
+  if (portPid && portBlocker?.ours) killProcessTree(portPid);
+  if (filePid && filePid !== portPid) killProcessTree(filePid);
+
+  await clearOpsUiPid();
+  await new Promise((resolve) => setTimeout(resolve, 400));
+};
 
 /**
  * 返回 wrangler 可执行路径（Windows 用 .cmd）。
