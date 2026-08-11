@@ -1,0 +1,16 @@
+---
+description: 关键词/SERP → 新建工具或丰富已有工具；强制走 keyword-to-tool-funnel Skill
+globs: docs/seo/keyword-to-tool-*.md,docs/seo/keyword-daily-pool.tsv,docs/seo/serp-batches/**
+alwaysApply: false
+---
+
+# 关键词漏斗（事项规则）
+
+编辑本 globs 内文件或处理日抽词 / SERP 意图池时：
+
+1. **先读并遵循** Skill [`.cursor/skills/keyword-to-tool-funnel/SKILL.md`](../skills/keyword-to-tool-funnel/SKILL.md)
+2. 跟进状态只写 [`docs/seo/keyword-to-tool-tracker.md`](../../docs/seo/keyword-to-tool-tracker.md)
+3. **`work-tasks/` 只为创建工具**；分析进池 ≠ 自动立项夹
+4. 两条路径：`build`（新工具，须另确认再建夹）或 `absorb`（更新已有工具文案/IG，不拆 URL）
+
+权威策略展开：`docs/seo/keyword-to-tool-funnel.md`。合规不得放宽 `seo-google-policy` / `tool-i18n-seo`。

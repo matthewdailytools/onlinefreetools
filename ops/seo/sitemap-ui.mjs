@@ -44,6 +44,11 @@ const HANDBOOK_DOCS = Object.freeze([
     file: 'ops/seo/inbound-link-outreach.md',
     title: '白帽入站获链月度清单',
   },
+  {
+    id: 'keyword-to-tool',
+    file: 'ops/seo/keyword-to-tool-ops.md',
+    title: '关键词 → 工具漏斗（操作）',
+  },
 ]);
 
 /**

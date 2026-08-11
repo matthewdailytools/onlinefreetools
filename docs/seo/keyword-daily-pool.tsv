@@ -1,0 +1,11 @@
+date	seed_query	candidate	locale	gl	source_batch	related_or_paa	serp_notes	ig_opportunity	absorb_slug	feasibility	verdict	notes
+2026-08-11	限界収入 求め方	限界収入 求め方	ja	jp	2026-08-11-pilot01	GSC hot query	calculator SERP; site already ranks ~9	FAQ align 求め方; CTR after title change	how-to-calculate-marginal-revenue	yes	absorb	pilot; no new URL
+2026-08-11	calcular roi	calcular roi	es	es	2026-08-11-pilot01	GSC; como calcular el roi	many ROI calculators; rank >80	locale brief round 2 How/Example	how-to-calculate-roi	yes	absorb	pilot; meta already updated
+2026-08-11	wie ist meine ipv4	wie ist meine ipv4	de	de	2026-08-11-pilot01	GSC; was ist meine ip adresse	IP lookup tools; rank ~88	de IG + internal links over time	ip-address	yes	absorb	pilot
+2026-08-11	sqft	square feet calculator	en	us	2026-08-11-pilot01	GSC; pies cuadrados	area converters dominate	real-estate listing use case in FAQ	square-feet	yes	absorb	pilot
+2026-08-11	как посчитать bmi	как посчитать bmi	ru	ru	2026-08-11-pilot01	GSC	BMI calculators; YMYL	ru copy + disclaimer/refs	how-to-calculate-bmi	yes	absorb	pilot; YMYL care
+2026-08-11	formule du gradient	formule du gradient	fr	fr	2026-08-11-pilot01	GSC; calcular gradiente	math explainer pages	fr formula+example absorb	how-to-calculate-gradient	yes	absorb	pilot
+2026-08-11	remove zero width characters	remove zero width characters	en	us	2026-08-11-pilot01	related: invisible characters; clean paste	generic cleaners; slogan-heavy	ZWSP table; false-positive bounds; local privacy		yes	build	pool candidate slug suggestion: safe-paste-cleaner; no work-tasks until tool creation decided
+2026-08-11	remove zero width characters	invisible characters remover	en	us	2026-08-11-pilot01	near-synonym of above	same SERP cluster	merge into one tool intent; no second URL		yes	absorb	same intent as build candidate above; no work-tasks
+2026-08-11	how many tokens in my prompt	ai token counter	en	us	2026-08-11-pilot01	seed from tool-direction B1	token+cost tools; stale price tables	estimate formula; price date; error band		yes	defer	next week after safe-paste
+2026-08-11	cidr calculator	cidr calculator online	en	us	2026-08-11-pilot01	inventory P1 intent word	network calculators	subnet table + host count bounds		yes	defer	after B1 P0 queue

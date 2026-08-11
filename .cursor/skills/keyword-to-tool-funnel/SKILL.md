@@ -1,0 +1,89 @@
+---
+name: keyword-to-tool-funnel
+description: >-
+  From keywords/SERP batches, find new tools to create or enrich existing tools
+  (absorb into title/FAQ/Use cases/IG). Use for 日抽词, 关键词池, SERP 分析,
+  keyword-to-tool, absorb/build/defer, 意图池, or docs/seo/keyword-to-tool-*.
+  Does not auto-create work-tasks; that is only for confirmed tool creation.
+---
+
+# 关键词 → 新工具 / 丰富已有工具
+
+**目标（本 Skill）**：从关键词中寻找**新的工具进行创建**，或**融入并丰富已有工具进行更新**。
+
+分析进池由本 Skill 完成；真正写页面 / 十语时再接 `tool-coverage-pass` 与 `work-tasks-tool-brief`。  
+事项跟进文件：[docs/seo/keyword-to-tool-tracker.md](../../docs/seo/keyword-to-tool-tracker.md)  
+运维操作：[ops/seo/keyword-to-tool-ops.md](../../ops/seo/keyword-to-tool-ops.md)  
+展开策略：[docs/seo/keyword-to-tool-funnel.md](../../docs/seo/keyword-to-tool-funnel.md)
+
+## 何时必须使用
+
+- 用户提供 / 批量导入 Google 搜索词、SERP 摘要、相关搜索、PAA
+- 提到日抽词、意图池、`keyword-daily-pool`、`serp-batches`、absorb / build
+- 问「这个词该新建工具还是并进现有页」
+- 编辑 `docs/seo/keyword-to-tool-*` 或 `docs/seo/serp-batches/`
+
+## 两条产出路径（二选一或并存于同一批）
+
+| `verdict` | 含义 | 下一步 |
+|---|---|---|
+| **`build`** | 新意图 + 浏览器可做 + 相对 SERP 有 ≥3 条 IG 缺口 | **仅记入词池**；开 `work-tasks/{slug}/` **须用户明确要创建该工具** |
+| **`absorb`** | 与已有 catalog slug 同一主意图 / 近义长尾 | **更新已有工具**：title/description、FAQ、Use cases、Example/IG；**不新建 URL** |
+| `defer` | 意图成立但产能/YMYL/技术未就绪 | 留池，决策日志一行 |
+| `drop` | 不可做成工具、重复、无增量 | 留池注明理由即可 |
+
+默认优先 **`absorb` 丰富已有**，再谈 `build`。
+
+## 强制流程
+
+### 1) 入库（只建池，不建页、不建 work-tasks）
+
+1. 脱敏摘要写入 `docs/seo/serp-batches/YYYY-MM-DD-<id>.md`（无完整 SERP HTML / 无密钥）
+2. 从本批抽约 **10** 条候选追加 `docs/seo/keyword-daily-pool.tsv`
+3. 回写 [keyword-to-tool-tracker.md](../../docs/seo/keyword-to-tool-tracker.md) 快照 + 决策日志
+
+### 2) 每条候选必答
+
+1. 用户任务？（算 / 转 / 生成 / 校验）能否交互？  
+2. SERP 缺什么？能否 ≥3 条 IG？  
+3. 是否已有 slug 同意图？→ **`absorb`**  
+4. 是否近义换词？→ 禁止拆页，进 Use cases / FAQ  
+5. YMYL？→ 倾向 `defer` 或加重 disclaimer 成本  
+
+对照 catalog：`src/site/tool-catalog.json`；可行性：`docs/2026-07-28-tool-direction.md`。
+
+### 3A) `absorb` → 丰富已有工具
+
+1. 确定 `absorb_slug`  
+2. 改该工具可见文案（主词→H1；次词→desc/FAQ/usecase）；需要时改 `work-tasks/{已有slug}/` 与 i18n  
+3. 有 i18n 改动时走 Skill **`tool-coverage-pass`**（按既有 slug 的 phase）  
+4. **禁止**为该词新建近义 URL  
+5. tracker 决策日志记：slug + 改了哪一节  
+
+### 3B) `build` → 仅候选；创建工具另决议
+
+1. 词池 `verdict=build`，`notes` 可写建议 slug  
+2. **禁止**因跑本 Skill / 跟进事项而自动 `mkdir work-tasks/...`  
+3. 用户明确「创建 / 立项 / 实现 {slug}」之后：  
+   - 复制 `work-tasks/_template/` → `work-tasks/{slug}/`  
+   - 再按 `work-tasks-tool-brief` + **`tool-coverage-pass`**（0b→…）  
+
+### 4) 产能与合规
+
+- 日抽约 10 词 = **进池**；周新建工具建议 ≤1–2（上限 ≤3）且须满 IG  
+- SERP = 研究输入；禁止抄前排正文；禁止「标题模板 → 空壳页」  
+- 对齐 `seo-google-policy` / `tool-i18n-seo`（一带多场景；禁 doorway / scaled content）
+
+## 红线
+
+- 不为「事项跟进」创建 `work-tasks/`  
+- 不一词一 URL 日更  
+- 不把本 Skill 待办只写进某次 GSC `03-todo` 而不回写 tracker  
+- 不跳过 `tool-coverage-pass` 直接灌十语上线新工具  
+
+## 验收自检
+
+- [ ] 本批有 serp-batches 摘要 + 词池行  
+- [ ] 每条有 `verdict`；`absorb` 已指向真实 slug 或已说明暂缓改文案  
+- [ ] `build` 未擅自建 work-tasks（除非用户本回合明确要求创建该工具）  
+- [ ] tracker 快照 / 决策日志已更新  

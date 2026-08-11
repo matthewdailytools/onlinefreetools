@@ -35,4 +35,4 @@ alwaysApply: true
 流程：策略变更 → 先更新对应 rule（及必要时 `seo-google-policy.mdc`）→ 再改 docs 对齐。  
 **冲突须给出判断并经人工确认后再改文件。**
 
-SEO 落地规则索引：`seo-google-policy` · `tool-i18n-seo` · `tool-i18n-localization` · `tool-creation` · `seo-html-defaults` · `work-tasks-tool-brief`。
+SEO 落地规则索引：`seo-google-policy` · `tool-i18n-seo` · `tool-i18n-localization` · `tool-creation` · `seo-html-defaults` · `work-tasks-tool-brief` · `keyword-to-tool-funnel`（Skill：关键词→新建或丰富已有工具）。

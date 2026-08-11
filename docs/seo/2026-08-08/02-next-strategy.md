@@ -43,6 +43,14 @@
 | 为 GSC 查询批量建新 URL | doorway / scaled content 风险 |
 | 以 FAQ 富结果为 KPI | 2026-05 已全站退役 |
 | 未达标语进 sitemap「凑数」 | 劣质多语比多语数量更伤信任 |
+| **SERP/关键词日抽后日建工具页** | 见 [`../keyword-to-tool-funnel.md`](../keyword-to-tool-funnel.md)：日抽词只进意图池；周建 1–2 个满 IG 工具；长尾优先 absorb |
+
+### 关键词发现（叠加，不推翻 P0）
+
+- **独立项跟进**：[`../keyword-to-tool-tracker.md`](../keyword-to-tool-tracker.md)
+- 主词源可为批量 **Google SERP**（仅分析）；运行表 [`../keyword-daily-pool.tsv`](../keyword-daily-pool.tsv)
+- **日抽约 10 候选进池 ≠ 日建 10 URL**；上线节奏仍为每周 1–2 工具 + 既有页 CTR/IG 收割
+- 漏斗说明：[`../keyword-to-tool-funnel.md`](../keyword-to-tool-funnel.md)
 
 ---
 

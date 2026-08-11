@@ -28,7 +28,8 @@ ops/
     ├── generate-sitemap.mjs # 全量/筛选生成 sitemap（CLI）
     ├── sitemap-ui.mjs       # 本地 Ops 操作页（Sitemap + 运维手册，127.0.0.1 + 密码）
     ├── sitemap-ui.html      # 操作页 UI
-    └── inbound-link-outreach.md # 白帽入站获链月度清单
+    ├── inbound-link-outreach.md # 白帽入站获链月度清单
+    └── keyword-to-tool-ops.md   # 关键词批次 → 新建/丰富工具（操作说明）
 
 # IndexNow 验证公钥（须公开可访问）
 # public/{INDEXNOW_KEY}.txt
@@ -210,7 +211,7 @@ npm run sitemap:ui
 | 端口 | 默认 `8791`；`SITEMAP_UI_PORT` 可覆盖 |
 | 绑定 | **仅** `127.0.0.1`，勿对公网暴露、勿配反向代理到公网 |
 | 会话 | 内存 + HttpOnly cookie；进程重启需重新登录 |
-| 页签 | **Sitemap 生成**（语言 / 信息页 / 场景 / 工具类型 / category；预览与写入）；**运维手册**（只读渲染 `ops/README.md` 与入站清单等白名单文档） |
+| 页签 | **Sitemap 生成**（语言 / 信息页 / 场景 / 工具类型 / category；预览与写入）；**运维手册**（只读渲染 `ops/README.md`、入站清单、关键词漏斗操作说明等白名单文档） |
 | 与 start:dev | 默认随 `start:dev` 启动；可用 `--no-ops-ui` 跳过；PID/日志见 `.run/ops-ui.*` |
 | 代码更新后 | **须重启** Ops UI（`npm run stop:dev && npm run start:dev`，或单独停再 `npm run ops:ui`）后刷新浏览器 |
 
@@ -309,6 +310,22 @@ npm run indexnow -- --help
 
 **部署注意**：`npm run deploy` / `wrangler deploy` 必须实际更新服务 `onlinefreetools.org` 的那套 Worker。若自定义域 zone 不在当前 Wrangler 账号下，部署只会更新 `*.workers.dev`，生产 key 文件会继续 404，IndexNow 校验失败。需先在拥有该 zone 的 Cloudflare 账号中把域名绑到本 Worker（Custom Domain），或在实际服务该域的项目中同步 key 文件后再跑 `npm run indexnow`。
 
+### 4.2 关键词批次 → 新建 / 丰富工具
+
+有一批 Google 搜索词时：先分析进池，再决定 **新建工具** 或 **更新已有工具**（优先 absorb）。  
+完整操作步骤、产物路径与拍板表见：
+
+**[`ops/seo/keyword-to-tool-ops.md`](./seo/keyword-to-tool-ops.md)**
+
+摘要：
+
+1. 准备词表（建议带 locale/gl）→ 对 Agent 说「按 keyword-to-tool-funnel 分析…」  
+2. 产出：`docs/seo/serp-batches/` + `keyword-daily-pool.tsv` + `keyword-to-tool-tracker.md`  
+3. `absorb` → 改已有工具文案；`build` → **确认后再**开 `work-tasks/{slug}/`（分析阶段不自动建夹）  
+4. 上线仍走 `build:site` + `lint:seo` + §4.1 IndexNow  
+
+Skill：`.cursor/skills/keyword-to-tool-funnel/SKILL.md`。事项跟进：`docs/seo/keyword-to-tool-tracker.md`。
+
 ---
 
 ## 5. 部署
@@ -406,6 +423,9 @@ npm run stop:dev
 |---|---|
 | [`docs/SEO_PUBLISH_CHECKLIST.md`](../docs/SEO_PUBLISH_CHECKLIST.md) | 发版与 GSC |
 | [`docs/2026-07-28-google-seo-strategy-implementation.md`](../docs/2026-07-28-google-seo-strategy-implementation.md) | SEO 策略与 Checklist |
+| [`ops/seo/keyword-to-tool-ops.md`](./seo/keyword-to-tool-ops.md) | 关键词批次 → 新建/丰富工具（操作） |
+| [`docs/seo/keyword-to-tool-tracker.md`](../docs/seo/keyword-to-tool-tracker.md) | 同上事项跟进状态 |
+| [`ops/seo/inbound-link-outreach.md`](./seo/inbound-link-outreach.md) | 白帽入站获链月度清单 |
 | [`.cursor/rules/cloudflare-workflow.mdc`](../.cursor/rules/cloudflare-workflow.mdc) | Agent 用 Cloudflare 约定 |
 | [`scripts/`](../scripts/) | 站点构建、SEO lint 实现 |
 
