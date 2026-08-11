@@ -10,7 +10,7 @@ const ar: SiteLangDict = {
 		'ساعد جوجل على اكتشاف صفحاتك وفهرستها بشكل أسرع — حوّل قائمة عناوين URL إلى sitemap.xml صالحة مع lastmod وchangefreq وpriority، داخل المتصفح دون رفع أي شيء.',
 	tool_sitemap_title: 'مولّد خريطة الموقع XML — أنشئ sitemap.xml من الروابط',
 	tool_sitemap_description:
-		'يساعد sitemap جوجل على اكتشاف صفحاتك وفهرستها بسرعة أكبر، خاصة الصفحات الجديدة أو التي تفتقر إلى روابط خارجية كثيرة. أنشئ sitemap.xml في متصفحك. الخطوات: الصق رابط https واحدًا في كل سطر مع lastmod / changefreq / priority اختيارية، عاين XML بعد الهروب الصحيح للرموز، وانسخه إلى جذر موقعك. تعرض الصفحة قواعد البروتوكول وحدوده. لا يُرفع أي بيانات. مثال: 3 روابط → urlset يضم ثلاثة عناصر url.',
+		'خريطة الموقع تساعد Google على الاكتشاف والفهرسة أسرع. الصق روابط https، عاين sitemap.xml صالحًا وانسخه للجذر. مثال: 3 روابط → 3 إدخالات.',
 	tool_sitemap_generate: 'توليد',
 	tool_sitemap_sample: 'مثال',
 	tool_sitemap_clear: 'مسح',

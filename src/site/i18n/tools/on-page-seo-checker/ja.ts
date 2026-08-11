@@ -10,7 +10,7 @@ const ja: SiteLangDict = {
 		'検索順位を下げるページのタグ問題を発見：ブラウザ上で title・H1・meta description・canonical・Open Graph・JSON-LD をチェック。',
 	tool_onpage_title: 'オンページ SEO チェッカー — ページのタグ問題を見つけて直す',
 	tool_onpage_description:
-		'タイトルが弱い、meta description が無い、H1 が重複する、canonical が誤っている——どれも検索順位とクリックを静かに損なう原因です。URL または HTML を貼り付けて、title・H1・meta description・canonical・Open Graph・JSON-LD・混合コンテンツ・レンダリングブロックを項目ごとに修正案付きでチェック。貼り付けモードは端末内処理、URL モードは一度だけ取得し保存しません。例：H1 が 2 つあり http:// 画像を含むサンプルページ。',
+		'弱いタイトル、欠ける meta、重複 H1、誤った canonical は順位を損ないます。URL か HTML を貼り、修正案付きで監査します。貼り付けは端末内、URL は一度だけ取得。例：二重 H1 と http 画像。手順は明確で例もあります。',
 	tool_onpage_url_tab: 'URL を取得',
 	tool_onpage_html_tab: 'HTML を貼り付け',
 	tool_onpage_url_ph: 'https://example.com/page',

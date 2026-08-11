@@ -10,7 +10,7 @@ const ja: SiteLangDict = {
 		'どの施策が本当に流入を生んでいるか測る——utm_source・medium・campaign・term・content でクリーンな追跡リンクをブラウザで作成。',
 	tool_utm_title: 'UTM ビルダー — キャンペーン追跡リンクを作成',
 	tool_utm_description:
-		'正しい UTM タグだけが、どのキャンペーンやメール、投稿が実際にトラフィックを生んでいるかを証明します。タグが雑だと、SEO やマーケ施策の効果はアクセス解析で見えません。ランディングページの URL と utm_source・utm_medium・utm_campaign・utm_term・utm_content からキャンペーン追跡リンクを作成します。手順：ベース URL を貼り、5 つのパラメータを入力し、正しく URL エンコードされたリンクをコピーします。既存のクエリパラメータは保持され、上書きされずに結合されます。すべて端末内で完結し、何もアップロードしません。例：https://example.com/page に source=newsletter・medium=email・campaign=summer_sale。',
+		'UTM が雑だと施策流入が解析で見えません。ブラウザで source・medium・campaign・term・content から追跡 URL を作成します。端末内で完結。例：newsletter + email + summer_sale。',
 	tool_utm_url_label: 'ランディングページ URL',
 	tool_utm_url_ph: 'https://example.com/page',
 	tool_utm_url_required: 'ランディングページ URL を入力してください。',

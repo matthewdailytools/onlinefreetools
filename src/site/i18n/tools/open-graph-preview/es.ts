@@ -10,7 +10,7 @@ const es: SiteLangDict = {
 		'Haz que cada vez que compartan tu página genere clics: previsualiza cómo se verá al compartirla en Facebook, X y apps de mensajería, desde el navegador.',
 	tool_og_title: 'Vista previa de Open Graph — revisa las tarjetas de redes sociales',
 	tool_og_description:
-		'Las etiquetas Open Graph deciden cómo se ve tu página cada vez que se comparte: una imagen o un título ausente te cuesta clics y compartidos. Pega tus etiquetas og:/twitter:card o una URL para previsualizar la tarjeta de Facebook, X y estilo WhatsApp, detectar campos faltantes y corregir la proporción de la imagen. Pasos: pega etiquetas o carga una URL, lee las tres tarjetas y la tabla de campos, corrige lo que falta. El modo pegar funciona en tu dispositivo; el modo URL carga la página una vez y no la almacena. Ejemplo: una página con una og:image de 1200×630 compartida como tarjeta grande.',
+		'Sin imagen OG o título pierdes clics al compartir. Pega etiquetas og/twitter o una URL para previsualizar Facebook, X y chats. Pegado local. Ejemplo: 1200×630.',
 	tool_og_tags_tab: 'Pegar etiquetas',
 	tool_og_url_tab: 'Cargar URL',
 	tool_og_tags_ph: 'Pega aquí tus etiquetas <meta property="og:*"> y <meta name="twitter:*">…',

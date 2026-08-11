@@ -10,7 +10,7 @@ const zh: SiteLangDict = {
 		'告诉 Google 每个语言版本的页面该展示给谁——把各语言页面 URL 转成 hreflang 标签、HTTP Link 响应头与 sitemap 标记，全部在浏览器本地完成。',
 	tool_hreflang_title: 'hreflang 标签生成器 — 为多语网站生成语言标注',
 	tool_hreflang_description:
-		'没有 hreflang，Google 可能把译文页面当成重复内容，并把错误语言的版本展示给用户。把一组语言版本 URL 转成三种形态的 hreflang 标注：<link> 标签、HTTP Link 响应头和 sitemap <xhtml:link>。用法：逐行粘贴语言码与 URL，选择输出形态，复制生成的代码。每个 URL 都会自动生成指向自身的自引用标注，还可以加上可选的 x-default 兜底页。全程在本地运行，不上传任何数据。示例：同一页面的 en、es、ja 三个语言版本。',
+		'没有 hreflang，Google 可能把译文当成重复内容。把各语言版 URL 转成 link 标签、HTTP Link 头或 sitemap 标记，全程本地完成。示例：同一页的 en、es、ja。步骤清晰，含示例说明。隐私友好，正文不上传。',
 	tool_hreflang_input_label: '语言版本 URL 列表',
 	tool_hreflang_input_ph:
 		'每行一对：语言码 + URL。示例：\nen https://example.com/\nes https://example.com/es/\nja https://example.com/ja/',

@@ -50,16 +50,21 @@ const extractKey = (code, key) => {
 };
 
 /**
- * 提取 tool_*_description 文案（支持单/双引号与换行缩进）。
+ * 提取「页面 meta description」键（仅 catalog faqPrefix + `_description`）。
+ * 排除 UI 字段标签如 `tool_og_field_og_description`、`tool_schema_article_description`。
  * @param {string} code
  * @returns {{ key: string, desc: string }[]}
  */
 const extractDescriptions = (code) => {
+  /** @type {Set<string>} */
+  const metaKeys = new Set(catalog.map((t) => `${t.faqPrefix}_description`));
   const out = [];
   const re = /(tool_[a-z0-9_-]+_description):\s*(?:\n\s*)?(?:"([^"]*)"|'((?:\\'|[^'])*)')/gi;
   let m;
   while ((m = re.exec(code))) {
-    out.push({ key: m[1], desc: (m[2] ?? m[3] ?? '').replace(/\\'/g, "'") });
+    const key = m[1];
+    if (!metaKeys.has(key)) continue;
+    out.push({ key, desc: (m[2] ?? m[3] ?? '').replace(/\\'/g, "'") });
   }
   return out;
 };

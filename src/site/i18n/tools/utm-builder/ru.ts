@@ -10,7 +10,7 @@ const ru: SiteLangDict = {
 		'Измеряйте, какие кампании реально приносят трафик: создавайте чистые трекинговые ссылки с utm_source, medium, campaign, term и content прямо в браузере.',
 	tool_utm_title: 'Конструктор UTM — создайте трекинговые ссылки кампании',
 	tool_utm_description:
-		'Чистые UTM-метки — единственный способ доказать, какие кампании, письма или публикации реально приносят вам трафик; без них ваши усилия в SEO и маркетинге невидимы в аналитике. Соберите трекинговую ссылку из URL целевой страницы и utm_source, utm_medium, utm_campaign, utm_term и utm_content. Шаги: вставьте базовый URL, заполните пять параметров, скопируйте сгенерированную ссылку с правильной URL-кодировкой. Существующие параметры запроса сохраняются и объединяются, а не перезаписываются. Работает полностью на вашем устройстве — ничего не загружается. Пример: https://example.com/page с source=newsletter, medium=email и campaign=summer_sale.',
+		'Кривые UTM делают кампании невидимыми в аналитике. Соберите ссылки с source, medium, campaign, term и content. Пример: newsletter + email + sale.',
 	tool_utm_url_label: 'URL целевой страницы',
 	tool_utm_url_ph: 'https://example.com/page',
 	tool_utm_url_required: 'Введите URL целевой страницы.',

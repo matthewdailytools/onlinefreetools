@@ -10,7 +10,7 @@ const zh: SiteLangDict = {
 		'写出能在搜索中带来点击的标题、描述、canonical 与 Open Graph 标签——在浏览器中一键生成完整的网页头部。',
 	tool_meta_title: 'Meta 标签生成器 — 一键生成完整的网页头部标签',
 	tool_meta_description:
-		'标题与 meta 描述就是用户在 Google 里看到的名片，canonical 配错还会让排名分散到重复网址。填写标题、描述、canonical、robots 与 Open Graph 字段，一键生成可直接粘贴到 <head> 的 meta 标签。用法：填入字段，查看长度提示，复制生成好的 HTML，特殊字符（如 & 和 <）会自动转义，保证标签不会损坏。全程在本地运行，不上传任何数据。示例：canonical 与 og 标签同页并存。',
+		'标题与 meta 描述是用户在 Google 里看到的名片；canonical 配错会分散排名信号。填写字段生成可粘贴的 head 标签并查看长度提示。本地运行。示例：canonical 与 og 同页。步骤清晰，含示例说明。隐私友好，正文不上传。',
 	tool_meta_title_label: 'Meta 标题',
 	tool_meta_title_ph: 'Meta 标签生成器 — 一键生成完整的网页头部标签',
 	tool_meta_title_hint: '建议控制在 60 字以内。超长的标题可能会被搜索引擎改写。',

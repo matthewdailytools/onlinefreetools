@@ -10,7 +10,7 @@ const ar: SiteLangDict = {
 		'أخبر جوجل بأي نسخة لغة من الصفحة يجب عرضها لمن — حوّل عناوين URL الخاصة باللغات إلى وسوم hreflang ورؤوس HTTP Link وترميز sitemap من متصفحك.',
 	tool_hreflang_title: 'مولّد hreflang — أنشئ وسوم اللغة للمواقع متعددة اللغات',
 	tool_hreflang_description:
-		'بدون hreflang قد تعتبر جوجل صفحاتك المترجمة مكررة وتعرض النسخة بلغة خاطئة في نتائج البحث. حوّل مجموعة عناوين URL للغات إلى ترميز hreflang بثلاث صيغ: وسوم <link> ورأس HTTP Link و<xhtml:link> داخل sitemap. الخطوات: الصق كل عنوان URL مع رمز لغته، اختر الصيغة، ثم انسخ المقطع المولّد. يحصل كل عنوان على وسم إحالة ذاتية، مع إمكانية إضافة x-default اختياري كصفحة احتياطية. يعمل بالكامل على جهازك — لا يُرفع شيء. مثال: ثلاث نسخ من صفحة واحدة باللغات en وes وja.',
+		'بدون hreflang قد يعتبر Google الترجمات مكررة. حوّل روابط اللغات إلى link أو HTTP Link أو خريطة موقع—محلي. مثال: en وes وja.',
 	tool_hreflang_input_label: 'قائمة عناوين URL حسب اللغة',
 	tool_hreflang_input_ph:
 		'زوج واحد في كل سطر: رمز اللغة + عنوان URL. مثال:\nen https://example.com/\nes https://example.com/es/\nja https://example.com/ja/',

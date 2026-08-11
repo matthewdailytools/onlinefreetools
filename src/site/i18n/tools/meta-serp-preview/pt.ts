@@ -9,7 +9,7 @@ const pt: SiteLangDict = {
 	tool_serp_home_desc: 'Um título cortado custa cliques no Google — confira o corte antes de publicar.',
 	tool_serp_title: 'Prévia de resultados Google — confira o corte do título e da descrição',
 	tool_serp_description:
-		'Um título ou descrição que se corta nos resultados pode custar cliques no Google. Cole um título e uma descrição para ver como eles ficam nos resultados do Google em desktop e no celular. Preencha título, descrição e URL opcional; veja contagem de caracteres, largura estimada em pixels e ponto de corte do trecho; compare dois títulos lado a lado. Tudo roda no seu navegador — nada é enviado. Exemplo: um título de 60 letras e um de 30 caracteres CJK podem atingir o limite de pixels com contagens diferentes.',
+		'Títulos cortados perdem cliques no Google. Cole título e descrição para ver o corte no desktop e celular. Só no navegador. Exemplo: EN e CJK.',
 	tool_serp_preview: 'Prévia',
 	tool_serp_sample: 'Exemplo',
 	tool_serp_clear: 'Limpar',

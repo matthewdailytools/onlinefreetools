@@ -6,7 +6,7 @@ const id: SiteLangDict = {
   tool_headers_article:
     'Lihat header yang diterima edge untuk URL publik — berguna untuk cache, CORS, redirect, dan cek header keamanan. Permintaan diproxy; kami tidak menyimpan body halaman.',
   tool_headers_description:
-    'Header HTTP menentukan cara Google merayapi, meng-cache, dan mengindeks halaman Anda—X-Robots-Tag yang salah bisa memblokir indeksasi sepenuhnya. Periksa header HTTP response sebuah URL dari edge kami. Alur: tempel https, kirim HEAD (GET bila perlu), ikuti redirect, tampilkan status dan peta header; blokir host privat. Ekstra: bacaan bahasa sederhana untuk Cache-Control, X-Robots-Tag, dan rantai redirect. Contoh: baca Cache-Control, CORS, HSTS saat debug CDN atau redirect.',
+    'Header HTTP mengatur crawl dan indeks—X-Robots-Tag salah bisa memblokir. Ambil di edge; cek Cache-Control, X-Robots-Tag, redirect. Contoh: CDN.',
   tool_headers_example:
     'contoh.com → status 200, URL akhir sama; header berisi content-type: text/html dan mungkin cache-control atau header keamanan tergantung origin.',
   tool_headers_example_title: 'Contoh',

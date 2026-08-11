@@ -10,7 +10,7 @@ const de: SiteLangDict = {
 		'Mach aus jedem Teilen deiner Seite Klicks — prüfe, wie sie beim Teilen auf Facebook, X und in Messaging-Apps aussieht, direkt im Browser.',
 	tool_og_title: 'Open-Graph-Vorschau — prüfe Social-Share-Karten',
 	tool_og_description:
-		'Open-Graph-Tags entscheiden, wie deine Seite bei jedem Teilen aussieht: Ein fehlendes Bild oder ein fehlender Titel kostet dich Klicks und Shares. Füge deine og:/twitter:card-Tags oder eine URL ein, um die Share-Karte für Facebook, X und im WhatsApp-Stil zu sehen, fehlende Felder zu finden und das Bildformat zu korrigieren. Schritte: Tags einfügen oder URL laden, die drei Karten und die Feldtabelle lesen, dann Fehlendes ergänzen. Der Einfüge-Modus läuft auf deinem Gerät; der URL-Modus ruft die Seite einmal ab und speichert sie nicht. Beispiel: eine Seite mit einem 1200×630 großen og:image wird als große Karte geteilt.',
+		'Fehlende OG-Bilder oder Titles kosten Share-Klicks. og/twitter-Tags oder URL einfügen, Facebook-, X- und Chat-Karten prüfen. Paste lokal. Beispiel: 1200×630.',
 	tool_og_tags_tab: 'Tags einfügen',
 	tool_og_url_tab: 'URL laden',
 	tool_og_tags_ph: 'Füge hier deine <meta property="og:*">- und <meta name="twitter:*">-Tags ein…',

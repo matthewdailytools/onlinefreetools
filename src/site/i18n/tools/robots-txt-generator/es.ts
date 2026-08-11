@@ -10,7 +10,7 @@ const es: SiteLangDict = {
 		'Controla cómo rastrean tu sitio los buscadores con un robots.txt válido: permisos, bloqueos y rastreadores de IA, en tu navegador.',
 	tool_robots_title: 'Generador de robots.txt — gestiona permisos y bloqueos de rastreadores de IA',
 	tool_robots_description:
-		'Tu robots.txt le dice a Google qué páginas puede rastrear e indexar: una regla mal escrita puede ocultar todo tu sitio de la búsqueda. Genera un robots.txt en tu navegador. Pasos: elige los user-agents, añade rutas Allow / Disallow y una línea Sitemap, y copia el resultado en texto plano con las reglas de sintaxis y los user-agents actuales de rastreadores de IA explicados. Corre localmente: no se sube nada. Ejemplo: bloquear GPTBot mientras Googlebot sigue totalmente habilitado.',
+		'Un robots.txt malo puede ocultar el sitio. Crea Allow, Disallow y reglas de IA en el navegador y copia. Ejemplo: bloquear GPTBot, dejar Googlebot.',
 	tool_robots_generate: 'Generar',
 	tool_robots_sample: 'Ejemplo',
 	tool_robots_clear: 'Limpiar',

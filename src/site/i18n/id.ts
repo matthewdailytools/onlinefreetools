@@ -2115,7 +2115,7 @@ const id: SiteLangDict = {
   tool_headers_article:
     'Lihat header yang diterima edge untuk URL publik — berguna untuk cache, CORS, redirect, dan cek header keamanan. Permintaan diproxy; kami tidak menyimpan body halaman.',
   tool_headers_description:
-    'Header HTTP menentukan cara Google merayapi, meng-cache, dan mengindeks halaman Anda—X-Robots-Tag yang salah bisa memblokir indeksasi sepenuhnya. Periksa header HTTP response sebuah URL dari edge kami. Alur: tempel https, kirim HEAD (GET bila perlu), ikuti redirect, tampilkan status dan peta header; blokir host privat. Ekstra: bacaan bahasa sederhana untuk Cache-Control, X-Robots-Tag, dan rantai redirect. Contoh: baca Cache-Control, CORS, HSTS saat debug CDN atau redirect.',
+    'Header HTTP mengatur crawl dan indeks—X-Robots-Tag salah bisa memblokir. Ambil di edge; cek Cache-Control, X-Robots-Tag, redirect. Contoh: CDN.',
   tool_headers_example:
     'contoh.com → status 200, URL akhir sama; header berisi content-type: text/html dan mungkin cache-control atau header keamanan tergantung origin.',
   tool_headers_example_title: 'Contoh',
@@ -2231,7 +2231,7 @@ const id: SiteLangDict = {
   tool_hreflang_copied: 'Tersalin',
   tool_hreflang_copy: 'Salin',
   tool_hreflang_description:
-    'Tanpa hreflang, Google bisa menganggap halaman terjemahan Anda sebagai duplikat dan menampilkan versi bahasa yang salah di pencarian. Ubah sekumpulan URL bahasa menjadi markup hreflang dalam tiga bentuk: tag <link>, header HTTP Link, dan sitemap <xhtml:link>. Langkah: tempel setiap URL bahasa dengan kodenya, pilih satu bentuk, salin cuplikan yang dihasilkan. Setiap URL mendapat anotasi referensi diri, dan fallback x-default opsional dapat ditambahkan. Berjalan sepenuhnya di perangkat Anda—tidak ada yang diunggah. Contoh: tiga versi satu halaman dalam en, es, dan ja.',
+    'Tanpa hreflang, Google bisa menganggap terjemahan sebagai duplikat. Ubah URL per bahasa jadi link, HTTP Link, atau sitemap—lokal. Contoh: en, es, ja.',
   tool_hreflang_error_prefix: 'Error: ',
   tool_hreflang_example:
     'Contoh mencantumkan tiga versi satu halaman: https://example.com/ (en), https://example.com/es/ (es), dan https://example.com/ja/ (ja). Tag <link> yang dihasilkan menyertakan referensi diri untuk setiap bahasa plus x-default opsional yang menunjuk ke akar berbahasa Inggris.',
@@ -4039,7 +4039,7 @@ const id: SiteLangDict = {
   tool_meta_desc_len_warn: 'Deskripsi: {n} karakter — lebih dari 160, dapat terpotong.',
   tool_meta_desc_ph: 'Buat tag head siap tempel dengan petunjuk panjang, nilai robots, dan kolom OG.',
   tool_meta_description:
-    'Judul dan meta description Anda adalah yang dilihat pengguna di Google, dan canonical yang salah dapat membagi peringkat Anda ke URL duplikat. Isi kolom judul, deskripsi, canonical, robots, dan Open Graph untuk menghasilkan tag meta <head> siap tempel. Langkah: masukkan kolom Anda, baca petunjuk panjang dan pratinjau, salin HTML yang dihasilkan dengan escaping yang benar. Karakter khusus seperti & dan < otomatis di-escape agar tag tetap valid. Berjalan sepenuhnya di perangkat Anda—tidak ada yang diunggah. Contoh: tag canonical dan og berdampingan.',
+    'Title dan meta description adalah kartu Google; canonical salah memecah sinyal. Isi field untuk tag head siap tempel. Contoh: canonical + og.',
   tool_meta_error_prefix: 'Error: ',
   tool_meta_example:
     'Contoh mengisi judul, deskripsi, canonical, robots, dan tiga kolom Open Graph. Cuplikan yang dihasilkan mengeluarkan tag <title>, meta description, tautan kanonik, robots meta, dan tag og: yang diisi.',
@@ -4170,7 +4170,7 @@ const id: SiteLangDict = {
   tool_og_copied: 'Tersalin',
   tool_og_copy: 'Salin',
   tool_og_description:
-    'Tag Open Graph menentukan tampilan halaman Anda setiap kali dibagikan—gambar atau judul yang hilang membuat Anda kehilangan klik dan bagikan. Tempel tag og:/twitter:card atau URL untuk melihat pratinjau kartu Facebook, X, dan gaya WhatsApp, menemukan kolom yang hilang, dan memperbaiki rasio gambar. Langkah: tempel tag atau ambil URL, baca tiga kartu pratinjau dan tabel kolom, lalu perbaiki yang kurang. Mode tempel berjalan di perangkat Anda; mode URL mengambil halaman sekali dan tidak menyimpannya. Contoh: halaman dengan og:image 1200×630 dibagikan sebagai kartu besar.',
+    'OG image atau judul hilang mengurangi klik berbagi. Tempel tag og/twitter atau URL untuk pratinjau Facebook, X, dan chat. Tempel lokal. Contoh: 1200×630.',
   tool_og_dimensions: '{w}×{h} px',
   tool_og_error_prefix: 'Error: ',
   tool_og_example:
@@ -4355,7 +4355,7 @@ const id: SiteLangDict = {
   tool_onpage_desc_ok: 'Deskripsi {n} karakter. Rentang 140–160 karakter tampil baik di kebanyakan snippet.',
   tool_onpage_desc_short: 'Deskripsi hanya {n} karakter. Manfaatkan ruang untuk merangkum nilai halaman.',
   tool_onpage_description:
-    'Judul lemah, meta description hilang, H1 ganda, atau canonical yang salah bisa diam-diam menurunkan peringkat dan klik Anda di hasil pencarian. Tempel URL atau HTML untuk mengaudit title, H1, meta description, canonical, Open Graph, JSON-LD, konten campuran, dan pemblokiran render, masing-masing dengan saran perbaikan. Mode tempel berjalan di perangkat Anda; mode URL mengambil halaman sekali tanpa menyimpannya. Contoh: halaman dengan dua H1 dan satu gambar http://.',
+    'Judul lemah, meta hilang, H1 ganda, atau canonical salah merusak ranking. Tempel URL atau HTML untuk cek dan saran. Tempel lokal. Contoh: dua H1.',
   tool_onpage_error_prefix: 'Kesalahan: ',
   tool_onpage_example:
     'Input contoh adalah halaman dengan title 71 karakter, tanpa meta description, dua H1, canonical ke URL lain, satu og:image, blok JSON-LD valid, dan satu gambar http://. Pemeriksa melaporkan title berpotensi terpotong, H1 sebagai peringatan, canonical non-referensi-diri, dan konten campuran sebagai peringatan, sesuai yang ditampilkan alat saat contoh dimuat.',
@@ -5347,7 +5347,7 @@ const id: SiteLangDict = {
   tool_robots_copied: 'Tersalin',
   tool_robots_copy: 'Salin',
   tool_robots_description:
-    'Robots.txt Anda memberi tahu Google halaman mana yang boleh dirayapi dan diindeks—aturan yang salah bisa menyembunyikan seluruh situs dari pencarian. Buat file robots.txt di browser Anda. Langkah: pilih user-agent, tambahkan jalur Allow / Disallow dan baris Sitemap, lalu salin hasil teks polos dengan aturan sintaks dan user-agent terbaru perayap AI yang dijelaskan. Berjalan lokal—tidak ada yang diunggah. Contoh: memblokir GPTBot sambil menjaga Googlebot tetap aktif sepenuhnya.',
+    'robots.txt salah bisa menyembunyikan situs. Susun Allow, Disallow, dan aturan crawler AI di browser, lalu salin. Contoh: blokir GPTBot, biarkan Googlebot.',
   tool_robots_disallow_label: 'Jalur Disallow (satu per baris)',
   tool_robots_download: 'Unduh',
   tool_robots_empty_agent: 'Pilih atau tambahkan user-agent dulu.',
@@ -5656,7 +5656,7 @@ const id: SiteLangDict = {
   tool_schema_copied: 'Tersalin',
   tool_schema_copy: 'Salin',
   tool_schema_description:
-    'Data terstruktur membantu Google memahami isi halaman Anda dan dapat menghasilkan hasil pencarian yang lebih kaya dan mudah diklik. Buat JSON-LD di browser Anda. Langkah: pilih tipe (FAQ, artikel, breadcrumb, organisasi), isi kolom wajib, lalu salin markup Schema.org yang valid dengan tag script siap tempel. Halaman membedakan kolom wajib dan opsional serta memvalidasi JSON sebelum disalin. Tidak ada yang diunggah. Contoh: FAQ dua pertanyaan menghasilkan mainEntity dengan dua simpul Question.',
+    'Data terstruktur membantu Google dan bisa memperkaya hasil. Pilih tipe, isi field, salin JSON-LD siap tempel. Contoh: FAQ dua pertanyaan.',
   tool_schema_download: 'Unduh',
   tool_schema_err_no_fields: 'Isi kolom wajib dulu, lalu buat.',
   tool_schema_example:
@@ -5774,7 +5774,7 @@ const id: SiteLangDict = {
   tool_serp_desc_label: 'Meta description',
   tool_serp_desc_ph: 'Teks cuplikan di bawah judul hasil',
   tool_serp_description:
-    'Judul atau deskripsi yang terpotong di hasil pencarian bisa diam-diam membuat Anda kehilangan klik dari Google. Tempel judul dan deskripsi untuk melihat bagaimana potongannya di hasil Google di desktop dan ponsel. Isi judul, deskripsi, dan URL opsional; lihat jumlah karakter, perkiraan lebar piksel, dan titik potong cuplikan; bandingkan dua judul secara berdampingan. Semua berjalan di browser Anda—tidak ada yang diunggah. Contoh: judul 60 huruf dan judul 30 karakter CJK bisa mencapai batas piksel dengan jumlah yang berbeda.',
+    'Judul terpotong membuang klik Google. Tempel judul dan deskripsi untuk pratinjau potongan desktop dan seluler. Hanya browser. Contoh: EN vs CJK.',
   tool_serp_desktop: 'Tampilan desktop',
   tool_serp_err_title_empty: 'Masukkan judul untuk melihat pratinjau.',
   tool_serp_example:
@@ -5886,7 +5886,7 @@ const id: SiteLangDict = {
   tool_sitemap_copied: 'Tersalin',
   tool_sitemap_copy: 'Salin',
   tool_sitemap_description:
-    'Sitemap membantu Google menemukan dan mengindeks halaman Anda lebih cepat, terutama halaman baru atau yang jarang tertaut. Buat sitemap.xml di browser Anda. Langkah: tempel satu URL https per baris dengan lastmod / changefreq / priority opsional, pratinjau XML dengan escaping yang benar, lalu salin ke root situs. Halaman ini juga menjelaskan aturan dan batas protokol. Tidak ada yang diunggah. Contoh: 3 URL → urlset berisi tiga elemen url.',
+    'Sitemap membantu Google menemukan dan mengindeks lebih cepat. Tempel URL https, pratinjau sitemap.xml valid, salin ke root. Contoh: 3 URL → 3 entri.',
   tool_sitemap_download: 'Unduh',
   tool_sitemap_example:
     'Input contoh: https://example.com/ dan https://example.com/products dengan lastmod 2026-08-01, plus https://example.com/about — hasilnya urlset berisi tiga elemen url, yang tengah membawa lastmod.',
@@ -6648,7 +6648,7 @@ const id: SiteLangDict = {
   tool_utm_copied: 'Tersalin',
   tool_utm_copy: 'Salin',
   tool_utm_description:
-    'Tag UTM yang bersih adalah satu-satunya cara membuktikan kampanye, email, atau postingan mana yang benar-benar mendatangkan lalu lintas Anda—tanpa tag yang benar, upaya SEO dan pemasaran Anda tak terlihat di analitik. Bangun link pelacakan kampanye dari URL halaman tujuan dan utm_source, utm_medium, utm_campaign, utm_term, serta utm_content. Langkah: tempel URL dasar, isi lima parameter, salin link yang dihasilkan dengan encoding URL yang benar. Parameter kueri yang sudah ada dipertahankan dan digabung, tidak ditimpa. Berjalan sepenuhnya di perangkat Anda—tidak ada yang diunggah. Contoh: https://example.com/page dengan source=newsletter, medium=email, dan campaign=summer_sale.',
+    'UTM berantakan membuat kampanye tak terlacak. Buat tautan dengan source, medium, campaign, term, content di browser. Contoh: newsletter + email + sale.',
   tool_utm_encoding_note: 'Nilai di-encode dengan encodeURIComponent: spasi menjadi %20 dan karakter non-ASCII ikut di-encode.',
   tool_utm_error_prefix: 'Error: ',
   tool_utm_example:

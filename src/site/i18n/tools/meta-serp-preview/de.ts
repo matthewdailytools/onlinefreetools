@@ -9,7 +9,7 @@ const de: SiteLangDict = {
 	tool_serp_home_desc: 'Gekürzte Titel kosten dich Klicks in der Suche — prüfe die Kürzung vor der Veröffentlichung.',
 	tool_serp_title: 'Google-Ergebnisvorschau — prüfe Abschneiden von Titel und Beschreibung',
 	tool_serp_description:
-		'Ein in den Ergebnissen abgeschnittener Titel oder eine abgeschnittene Beschreibung kann dich Klicks aus Google kosten. Füge Titel und Beschreibung ein, um zu sehen, wie sie in den Google-Ergebnissen auf Desktop und Mobil gekürzt werden. Titel, Beschreibung und optionale URL eingeben; du siehst Zeichenanzahl, geschätzte Pixelbreite und Snippet-Schnittpunkte; vergleiche zwei Titel nebeneinander. Alles läuft in deinem Browser – nichts wird hochgeladen. Beispiel: Ein 60-Zeichen-ASCII-Titel und ein 30-Zeichen-CJK-Titel können das Pixel-Limit bei unterschiedlichen Zeichenzahlen erreichen.',
+		'Abgeschnittene Titles kosten Google-Klicks. Titel und Beschreibung einfügen, Desktop-/Mobil-Schnitt prüfen. Nur Browser. Beispiel: EN vs CJK.',
 	tool_serp_preview: 'Vorschau',
 	tool_serp_sample: 'Beispiel',
 	tool_serp_clear: 'Leeren',

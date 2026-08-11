@@ -10,7 +10,7 @@ const fr: SiteLangDict = {
 		'Aidez Google à découvrir et indexer chaque page que vous voulez positionner : transformez une liste d’URL en sitemap.xml valide avec lastmod, changefreq et priority, directement dans le navigateur.',
 	tool_sitemap_title: 'Générateur de sitemap XML — créez sitemap.xml à partir d’URLs',
 	tool_sitemap_description:
-		'Un sitemap aide Google à découvrir et indexer vos pages plus vite, surtout les nouvelles ou celles qui ont peu de liens. Générez sitemap.xml dans votre navigateur. Étapes : collez une URL https par ligne avec lastmod / changefreq / priority facultatifs, prévisualisez le XML correctement échappé et copiez-le à la racine du site. Les règles et limites du protocole sont affichées. Rien n’est envoyé. Exemple : 3 URLs → urlset avec trois éléments url.',
+		'Un sitemap aide Google à découvrir et indexer plus vite. Collez des URL https, prévisualisez un sitemap.xml valide, copiez à la racine. Exemple : 3 URL.',
 	tool_sitemap_generate: 'Générer',
 	tool_sitemap_sample: 'Exemple',
 	tool_sitemap_clear: 'Effacer',

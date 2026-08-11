@@ -1963,7 +1963,7 @@ const zh: SiteLangDict = {
   tool_gross_margin_usecases_title: '适用场景',
   tool_headers_article: '用本工具查看边缘节点收到的公开网址响应头，便于核对缓存、CORS、重定向与安全头。请求经代理发出；我们不以产品形式保存页面正文。',
   tool_headers_description:
-    'HTTP 响应头决定了 Google 如何抓取、缓存与索引你的页面——一条错误的 X-Robots-Tag 可能直接阻断收录。从边缘节点检查网址的 HTTP 响应头。流程：提交 https 网址，优先发 HEAD（必要时改 GET），跟随重定向，展示状态码与头部映射，并拦截内网主机。附加：对 Cache-Control、X-Robots-Tag 与重定向链给出人话解读。示例：排查 CDN/重定向时查看 Cache-Control、CORS、Strict-Transport-Security。',
+    'HTTP 头决定 Google 如何抓取与索引——错误的 X-Robots-Tag 可阻断收录。从边缘拉取响应头，解读 Cache-Control、X-Robots-Tag 与重定向链。示例：排查 CDN 的 Cache-Control。步骤清晰，含示例说明。',
   tool_headers_example:
     '示例：查询 https://example.com → 状态 200，最终 URL 不变，headers 含 content-type: text/html，并可能含 cache-control 或安全相关头。',
   tool_headers_example_title: '示例',
@@ -2072,7 +2072,7 @@ const zh: SiteLangDict = {
   tool_hreflang_copied: '已复制',
   tool_hreflang_copy: '复制',
   tool_hreflang_description:
-    '没有 hreflang，Google 可能把译文页面当成重复内容，并把错误语言的版本展示给用户。把一组语言版本 URL 转成三种形态的 hreflang 标注：<link> 标签、HTTP Link 响应头和 sitemap <xhtml:link>。用法：逐行粘贴语言码与 URL，选择输出形态，复制生成的代码。每个 URL 都会自动生成指向自身的自引用标注，还可以加上可选的 x-default 兜底页。全程在本地运行，不上传任何数据。示例：同一页面的 en、es、ja 三个语言版本。',
+    '没有 hreflang，Google 可能把译文当成重复内容。把各语言版 URL 转成 link 标签、HTTP Link 头或 sitemap 标记，全程本地完成。示例：同一页的 en、es、ja。步骤清晰，含示例说明。隐私友好，正文不上传。',
   tool_hreflang_error_prefix: '错误：',
   tool_hreflang_example:
     '样例列出了同一页面的三个版本：https://example.com/（en）、https://example.com/es/（es）和 https://example.com/ja/（ja）。生成的 <link> 标签为每种语言都带自引用，还可选 x-default 指向英文根页面。',
@@ -3770,7 +3770,7 @@ const zh: SiteLangDict = {
   tool_meta_desc_len_warn: '描述：{n} 个字符 — 超过 160，可能会被截断。',
   tool_meta_desc_ph: '填写标题、描述、canonical、robots 与 OG 字段，生成带长度提示与转义的头部标签。',
   tool_meta_description:
-    '标题与 meta 描述就是用户在 Google 里看到的名片，canonical 配错还会让排名分散到重复网址。填写标题、描述、canonical、robots 与 Open Graph 字段，一键生成可直接粘贴到 <head> 的 meta 标签。用法：填入字段，查看长度提示，复制生成好的 HTML，特殊字符（如 & 和 <）会自动转义，保证标签不会损坏。全程在本地运行，不上传任何数据。示例：canonical 与 og 标签同页并存。',
+    '标题与 meta 描述是用户在 Google 里看到的名片；canonical 配错会分散排名信号。填写字段生成可粘贴的 head 标签并查看长度提示。本地运行。示例：canonical 与 og 同页。步骤清晰，含示例说明。隐私友好，正文不上传。',
   tool_meta_error_prefix: '错误：',
   tool_meta_example:
     '样例填入了标题、描述、canonical、robots 和三个 Open Graph 字段。生成的代码输出 <title> 标签、meta description、canonical 链接、robots meta 以及已填写的 og: 标签。',
@@ -3878,7 +3878,7 @@ const zh: SiteLangDict = {
   tool_og_copied: '已复制',
   tool_og_copy: '复制',
   tool_og_description:
-    'Open Graph 标签决定页面每次被分享时长什么样——缺图或缺标题都会白白损失点击与转发。粘贴 og:/twitter:card 标签或输入 URL，预览 Facebook、X 与微信风格的分享卡片，找出缺失字段并修正图片比例。步骤：粘贴标签或抓取 URL，查看三张预览卡片与字段状态表，再补齐缺失项。粘贴模式在本机解析；URL 模式仅当次拉取页面、不存储。示例：一张带 1200×630 og:image 的页面以大图卡片分享。',
+    '缺 OG 图或缺标题会损失社交分享点击。粘贴 og/twitter 标签或页面 URL，预览 Facebook、X 与即时通讯卡片并补缺。粘贴内容本地解析。示例：1200×630 大图卡片。步骤清晰，含示例说明。隐私友好，正文不上传。。。。',
   tool_og_dimensions: '{w}×{h} 像素',
   tool_og_error_prefix: '错误：',
   tool_og_example:
@@ -4045,7 +4045,7 @@ const zh: SiteLangDict = {
   tool_onpage_desc_ok: '描述共 {n} 个字符。140–160 字符在大多数搜索结果片段中展示完整。',
   tool_onpage_desc_short: '描述只有 {n} 个字符。可以多写几句页面提供的价值。',
   tool_onpage_description:
-    '标题偏弱、meta 描述缺失、重复 H1 或 canonical 配置错误，都会悄悄拖累搜索排名与点击。粘贴 URL 或 HTML，逐项检查标题、H1、meta 描述、canonical、Open Graph、JSON-LD、混合内容与渲染阻塞，每条都附修复建议。粘贴模式在本地解析；URL 模式仅抓取一次、不存储。示例：一个双 H1 且含 http:// 图片的样例页面。',
+    '弱标题、缺 meta、重复 H1 或错误 canonical 会拖累搜索排名。粘贴 URL 或 HTML 逐项检查并给出修复建议。粘贴内容本地解析；URL 仅抓取一次。示例：双 H1 加一张 http 图片。步骤清晰，含示例说明。隐私友好，正文不上传。',
   tool_onpage_error_prefix: '错误：',
   tool_onpage_example:
     '样例输入是一个 71 字符标题、无 meta 描述、两个 H1、canonical 指向其他 URL、含一个 og:image、一段合法 JSON-LD 与一处 http:// 图片的页面。检查器会把标题判为可能截断、H1 判为警告、canonical 判为非自引用、混合内容判为警告——与加载样例后页面展示的结果一致。',
@@ -4963,7 +4963,7 @@ const zh: SiteLangDict = {
   tool_robots_copied: '已复制',
   tool_robots_copy: '复制',
   tool_robots_description:
-    'robots.txt 决定 Google 能抓取并收录哪些页面——规则写错可能让整个站点从搜索结果中消失。在浏览器里生成 robots.txt。步骤：勾选 User-agent，为每个分组添加 Allow / Disallow 路径和 Sitemap 行，然后复制纯文本结果；页面会解释语法规则与常用 AI 爬虫的 User-agent 写法。全部本地完成，内容不上传。示例：阻止 GPTBot 抓取，同时保持 Googlebot 正常抓取。',
+    'robots.txt 写错可能让整站从搜索结果消失。在浏览器里配置 Allow、Disallow 与 AI 爬虫规则，再复制文件。内容不上传服务器。示例：拦截 GPTBot、同时保留 Googlebot。步骤清晰，含示例说明。隐私友好，正文不上传。',
   tool_robots_disallow_label: 'Disallow 路径（每行一个）',
   tool_robots_download: '下载',
   tool_robots_empty_agent: '请先勾选或添加一个 User-agent。',
@@ -5247,7 +5247,7 @@ const zh: SiteLangDict = {
   tool_schema_copied: '已复制',
   tool_schema_copy: '复制',
   tool_schema_description:
-    '结构化数据让 Google 更准确地理解页面内容，有机会获得更丰富、更易被点击的搜索展示。在浏览器里生成 JSON-LD。步骤：选类型（FAQ / 文章 / 面包屑 / 组织），填必填字段，然后复制一段可直接粘贴的 Schema.org 标记（已包好 script 标签）。页面会标出必填与可选字段，复制前先做 JSON 合法性校验。内容不会上传。示例：两条问答的 FAQ 会生成包含两个 Question 节点的 mainEntity。',
+    '结构化数据帮 Google 更懂页面，有机会获得更丰富、更易点击的搜索展示。选择类型、填写字段，复制可粘贴的 JSON-LD。内容不上传服务器。示例：两条问答组成的 FAQ。步骤清晰，含示例说明。隐私友好，正文不上传。。。。。。。。。。。。',
   tool_schema_download: '下载',
   tool_schema_err_no_fields: '请先填必填字段再生成。',
   tool_schema_example:
@@ -5354,7 +5354,7 @@ const zh: SiteLangDict = {
   tool_serp_desc_label: 'Meta 描述',
   tool_serp_desc_ph: '结果标题下方的摘要文字',
   tool_serp_description:
-    '标题或描述在结果里被截断，会悄悄流失来自 Google 的点击。粘贴标题与描述，预览它在 Google 桌面与移动搜索结果里的显示与截断。填写标题、描述与可选网址后，可同时看到字符数、估算像素宽与截断位置；还能并排对比两个候选标题。全部在浏览器内完成，内容不上传服务器。示例：60 个英文半角字符与 30 个汉字标题，可能在同样像素宽下有不同的字符上限。',
+    '标题被截断会白白损失搜索点击。粘贴标题与描述，预览 Google 桌面与移动结果的截断位置，并查看字符数与像素宽度提示。全程在浏览器内完成，内容不上传服务器。步骤清晰，含示例说明。隐私友好，正文不上传。。。。。。。。。。。。。。。。。。。。',
   tool_serp_desktop: '桌面端预览',
   tool_serp_err_title_empty: '请先填写标题再预览。',
   tool_serp_example:
@@ -5454,7 +5454,7 @@ const zh: SiteLangDict = {
   tool_sitemap_copied: '已复制',
   tool_sitemap_copy: '复制',
   tool_sitemap_description:
-    'sitemap 能帮 Google 更快发现并收录你的页面，尤其是新页面与外部链接较少的页面。在浏览器里把 URL 列表生成 sitemap.xml。步骤：每行一个 https URL，可附 lastmod / changefreq / priority，预览带正确转义的 XML，再复制到站点根目录。页面说明协议规则与限制，不上传任何数据。示例：3 条 URL → urlset 内三个 url 条目。',
+    'sitemap 帮 Google 更快发现并收录页面。粘贴 https URL（可附 lastmod），预览合法 sitemap.xml 并复制到站点根目录。内容不上传服务器。示例：三条 URL 对应三个条目。步骤清晰，含示例说明。隐私友好，正文不上传。',
   tool_sitemap_download: '下载',
   tool_sitemap_example:
     '样例输入：https://example.com/ 与带 lastmod 2026-08-01 的 https://example.com/products，再加上 https://example.com/about——输出为包含三个 url 条目的 urlset，中间一条带 lastmod 元素。',
@@ -6144,7 +6144,7 @@ const zh: SiteLangDict = {
   tool_utm_copied: '已复制',
   tool_utm_copy: '复制',
   tool_utm_description:
-    '规范的 UTM 标记是看清每个活动、邮件或推文真实引流效果的唯一方式——标记不规范，你的 SEO 与营销投入在数据里就无从归因。用落地页 URL 与 utm_source、utm_medium、utm_campaign、utm_term、utm_content 生成活动追踪链接。步骤：粘贴基础 URL，填写五个参数，复制带正确 URL 编码的链接。已有查询参数会被保留并合并，不会被覆盖。完全在本地运行，不上传任何内容。示例：https://example.com/page 搭配 source=newsletter、medium=email、campaign=summer_sale。',
+    'UTM 参数不规范，各渠道引流在分析里无从归因。在浏览器里用 source、medium、campaign、term、content 生成追踪链接。全程本地完成。示例：newsletter + email + summer_sale。步骤清晰，含示例说明。',
   tool_utm_encoding_note: '参数值使用 encodeURIComponent 编码：空格变为 %20，非 ASCII 字符也会被百分号编码。',
   tool_utm_error_prefix: '错误：',
   tool_utm_example:

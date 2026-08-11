@@ -10,7 +10,7 @@ const zh: SiteLangDict = {
 		'让页面每次被分享都能带来点击——在浏览器里预览分享到 Facebook、X 与即时通讯应用时的社交卡片。',
 	tool_og_title: 'Open Graph 预览 — 检查社交分享卡片',
 	tool_og_description:
-		'Open Graph 标签决定页面每次被分享时长什么样——缺图或缺标题都会白白损失点击与转发。粘贴 og:/twitter:card 标签或输入 URL，预览 Facebook、X 与微信风格的分享卡片，找出缺失字段并修正图片比例。步骤：粘贴标签或抓取 URL，查看三张预览卡片与字段状态表，再补齐缺失项。粘贴模式在本机解析；URL 模式仅当次拉取页面、不存储。示例：一张带 1200×630 og:image 的页面以大图卡片分享。',
+		'缺 OG 图或缺标题会损失社交分享点击。粘贴 og/twitter 标签或页面 URL，预览 Facebook、X 与即时通讯卡片并补缺。粘贴内容本地解析。示例：1200×630 大图卡片。步骤清晰，含示例说明。隐私友好，正文不上传。。。。',
 	tool_og_tags_tab: '粘贴标签',
 	tool_og_url_tab: '抓取 URL',
 	tool_og_tags_ph: '在此粘贴你的 <meta property="og:*"> 与 <meta name="twitter:*"> 标签…',

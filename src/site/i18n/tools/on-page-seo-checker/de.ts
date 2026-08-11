@@ -10,7 +10,7 @@ const de: SiteLangDict = {
 		'Finde die Tags, die deine Seite in der Suche zurückhalten: prüfe title, H1, Meta-Description, canonical, Open Graph und JSON-LD im Browser.',
 	tool_onpage_title: 'On-Page-SEO-Prüfung — Seiten-Tags finden und korrigieren',
 	tool_onpage_description:
-		'Ein schwacher Title, eine fehlende Meta-Description, doppelte H1 oder ein falsches canonical können deine Rankings und Klicks in der Suche leise kosten. Füge eine URL oder den HTML-Quelltext ein, um title, H1, Meta-Description, canonical, Open Graph, JSON-LD, gemischte Inhalte und renderblockierende Ressourcen zu prüfen – jeweils mit Korrekturvorschlag. Der Einfüge-Modus läuft auf deinem Gerät; der URL-Modus ruft die Seite einmal ab, ohne sie zu speichern. Beispiel: eine Seite mit zwei H1 und einem http://-Bild.',
+		'Schwache Titles, fehlende Meta, doppelte H1 oder falsche Canonicals schaden dem Ranking. URL oder HTML einfügen. Paste lokal. Beispiel: zwei H1.',
 	tool_onpage_url_tab: 'URL laden',
 	tool_onpage_html_tab: 'HTML einfügen',
 	tool_onpage_url_ph: 'https://example.com/page',

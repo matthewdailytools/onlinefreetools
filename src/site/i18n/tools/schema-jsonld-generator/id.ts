@@ -10,7 +10,7 @@ const id: SiteLangDict = {
 		'Bantu Google memahami halaman Anda dan raih hasil pencarian yang lebih kaya dan mudah diklik dengan JSON-LD Schema.org, dibuat di browser.',
 	tool_schema_title: 'Pembuat JSON-LD — buat data terstruktur untuk FAQ, artikel & breadcrumb',
 	tool_schema_description:
-		'Data terstruktur membantu Google memahami isi halaman Anda dan dapat menghasilkan hasil pencarian yang lebih kaya dan mudah diklik. Buat JSON-LD di browser Anda. Langkah: pilih tipe (FAQ, artikel, breadcrumb, organisasi), isi kolom wajib, lalu salin markup Schema.org yang valid dengan tag script siap tempel. Halaman membedakan kolom wajib dan opsional serta memvalidasi JSON sebelum disalin. Tidak ada yang diunggah. Contoh: FAQ dua pertanyaan menghasilkan mainEntity dengan dua simpul Question.',
+		'Data terstruktur membantu Google dan bisa memperkaya hasil. Pilih tipe, isi field, salin JSON-LD siap tempel. Contoh: FAQ dua pertanyaan.',
 	tool_schema_generate: 'Buat',
 	tool_schema_sample: 'Contoh',
 	tool_schema_clear: 'Bersihkan',

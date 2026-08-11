@@ -10,7 +10,7 @@ const id: SiteLangDict = {
 		'Beri tahu Google versi bahasa mana yang harus ditampilkan kepada siapa — ubah URL bahasa menjadi tag hreflang, header HTTP Link, dan markup sitemap dari browser Anda.',
 	tool_hreflang_title: 'Pembuat hreflang — buat tag bahasa untuk situs multibahasa',
 	tool_hreflang_description:
-		'Tanpa hreflang, Google bisa menganggap halaman terjemahan Anda sebagai duplikat dan menampilkan versi bahasa yang salah di pencarian. Ubah sekumpulan URL bahasa menjadi markup hreflang dalam tiga bentuk: tag <link>, header HTTP Link, dan sitemap <xhtml:link>. Langkah: tempel setiap URL bahasa dengan kodenya, pilih satu bentuk, salin cuplikan yang dihasilkan. Setiap URL mendapat anotasi referensi diri, dan fallback x-default opsional dapat ditambahkan. Berjalan sepenuhnya di perangkat Anda—tidak ada yang diunggah. Contoh: tiga versi satu halaman dalam en, es, dan ja.',
+		'Tanpa hreflang, Google bisa menganggap terjemahan sebagai duplikat. Ubah URL per bahasa jadi link, HTTP Link, atau sitemap—lokal. Contoh: en, es, ja.',
 	tool_hreflang_input_label: 'Daftar URL per bahasa',
 	tool_hreflang_input_ph:
 		'Satu pasang per baris: kode bahasa + URL. Contoh:\nen https://example.com/\nes https://example.com/es/\nja https://example.com/ja/',

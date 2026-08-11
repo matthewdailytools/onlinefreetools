@@ -1978,7 +1978,7 @@ const ja: SiteLangDict = {
   tool_gross_margin_usecases_title: 'こんなときに',
   tool_headers_article: '公開URLについてエッジが受け取ったレスポンスヘッダを確認できます。キャッシュ、CORS、リダイレクト、セキュリティヘッダの点検に使えます。リクエストはプロキシ経由で、ページ本文は保存しません。',
   tool_headers_description:
-    'HTTPヘッダーは、Google がページをクロール・キャッシュ・インデックスする方法を決めます。X-Robots-Tag が間違っているとインデックスが完全にブロックされることも。URLのHTTPレスポンスヘッダをエッジからオンライン確認。手順：httpsを貼り付け、HEAD送信（必要ならGET）、リダイレクト追跡、ステータスとヘッダー一覧を表示、プライベートホストを拒否。追加：Cache-Control・X-Robots-Tag・リダイレクトチェーンをわかりやすく解説。例：CDNやリダイレクト調査でCache-Control・CORS・HSTSを読む。',
+    'HTTPヘッダーは Google のクロールとインデックスを決めます。誤った X-Robots-Tag はインデックスを阻み得ます。エッジから取得し Cache-Control・X-Robots-Tag・リダイレクトを確認。例：CDN の Cache-Control。',
   tool_headers_example: 'example.com → ステータス200、最終URL変更なし。content-type: text/html などに加え、オリジン次第でcache-controlやセキュリティヘッダー。',
   tool_headers_example_title: '例',
   tool_headers_faq_a1: 'サーバー応答のメタデータです。Content-Type、キャッシュ、リダイレクト、HSTS・CSP・CORSなどのポリシーが含まれます。',
@@ -2086,7 +2086,7 @@ const ja: SiteLangDict = {
   tool_hreflang_copied: 'コピーしました',
   tool_hreflang_copy: 'コピー',
   tool_hreflang_description:
-    'hreflang がないと、Google は翻訳ページを重複とみなし、間違った言語版を検索結果に表示してしまうことがあります。言語別 URL のセットを 3 つの形式の hreflang マークアップに変換します。<link> タグ、HTTP Link ヘッダー、sitemap の <xhtml:link> です。手順は、各言語 URL をコード付きで貼り付け、形式を選び、生成したコードをコピーするだけ。各 URL には自分自身を指す自己参照 hreflang が付き、任意の x-default フォールバックも追加できます。すべて端末内で完結し、データは一切アップロードされません。例：1 ページの en・es・ja の 3 言語版。',
+    'hreflang がないと翻訳が重複とみなされ得ます。言語別 URL を link タグ・HTTP Link ヘッダー・sitemap 表記に変換します。すべて端末内で完結。例：同一ページの en・es・ja。手順は明確で例もあります。プライバシーに配慮し、本文はアップロードしません。',
   tool_hreflang_error_prefix: 'エラー：',
   tool_hreflang_example:
     'サンプルは 1 ページの 3 バージョン：https://example.com/（en）、https://example.com/es/（es）、https://example.com/ja/（ja）。生成される <link> タグは各言語の自己参照を含み、必要に応じて英語ルートを指す x-default も追加できます。',
@@ -3801,7 +3801,7 @@ const ja: SiteLangDict = {
   tool_meta_desc_len_warn: 'ディスクリプション：{n} 文字 — 160 文字超、省略される恐れがあります。',
   tool_meta_desc_ph: '文字数ヒント、robots の値、OG フィールド付きで貼り付けられる head メタタグを生成。',
   tool_meta_description:
-    'タイトルと meta description はユーザーが Google で最初に目にするもので、canonical を間違えると重複 URL に評価が分散します。タイトル、ディスクリプション、canonical、robots、Open Graph の各フィールドを入力すると、そのまま貼り付けられる <head> メタタグを生成します。手順は、フィールドを入力し、文字数のヒントとプレビューを確認し、正しくエスケープされた HTML をコピーするだけ。& や < などの特殊文字は自動でエスケープされ、タグは常に有効です。すべて端末内で完結し、データは一切アップロードされません。例：canonical と og タグの併用。',
+    'タイトルと meta description は Google で見える名刺です。誤った canonical は評価を分散します。フィールドを埋めて貼り付け用 head タグを生成し、文字数目安を確認します。端末内。例：canonical と og。',
   tool_meta_error_prefix: 'エラー：',
   tool_meta_example:
     'サンプルは、タイトル、ディスクリプション、canonical、robots、3 つの Open Graph フィールドを入力しています。生成されるスニペットは、<title> タグ、meta description、canonical リンク、robots meta、入力済みの og: タグを出力します。',
@@ -3911,7 +3911,7 @@ const ja: SiteLangDict = {
   tool_og_copied: 'コピー済み',
   tool_og_copy: 'コピー',
   tool_og_description:
-    'Open Graph タグはページがシェアされるたびの見た目を決めます。画像やタイトルが欠けていると、クリックとシェアを損します。og:/twitter:card タグまたは URL を貼り付けて、Facebook・X・WhatsApp 風の共有カードをプレビューし、不足フィールドと画像比率を確認できます。手順：タグを貼るか URL を取得し、3 枚のカードとフィールド表を確認して、足りない項目を修正します。貼り付けモードは端末内で処理します。URL モードはページを 1 回だけ取得し、保存しません。例：1200×630 の og:image を持つページが大カードで共有されるケース。',
+    'OG 画像やタイトル不足はシェアのクリックを損ないます。og/twitter タグか URL を貼り、Facebook・X・メッセージカードを確認して不足を直します。貼り付けは端末内。例：1200×630 の大カード。手順は明確で例もあります。',
   tool_og_dimensions: '{w}×{h} ピクセル',
   tool_og_error_prefix: 'エラー：',
   tool_og_example:
@@ -4082,7 +4082,7 @@ const ja: SiteLangDict = {
   tool_onpage_desc_ok: '説明文は {n} 文字。140〜160 文字の範囲は多くのスニペットでよく表示されます。',
   tool_onpage_desc_short: '説明文が {n} 文字しかありません。ページの提供価値をまとめる文字数を増やしましょう。',
   tool_onpage_description:
-    'タイトルが弱い、meta description が無い、H1 が重複する、canonical が誤っている——どれも検索順位とクリックを静かに損なう原因です。URL または HTML を貼り付けて、title・H1・meta description・canonical・Open Graph・JSON-LD・混合コンテンツ・レンダリングブロックを項目ごとに修正案付きでチェック。貼り付けモードは端末内処理、URL モードは一度だけ取得し保存しません。例：H1 が 2 つあり http:// 画像を含むサンプルページ。',
+    '弱いタイトル、欠ける meta、重複 H1、誤った canonical は順位を損ないます。URL か HTML を貼り、修正案付きで監査します。貼り付けは端末内、URL は一度だけ取得。例：二重 H1 と http 画像。手順は明確で例もあります。',
   tool_onpage_error_prefix: 'エラー：',
   tool_onpage_example:
     'サンプル入力は、71 文字のタイトル、meta description なし、H1 が 2 つ、別 URL を指す canonical、og:image 1 つ、有効な JSON-LD、http:// 画像 1 つを持つページです。チェッカーはタイトルを「切れる可能性」、H1 を警告、canonical を非自己参照、混合コンテンツを警告と報告します。サンプル読み込み後の表示と一致します。',
@@ -5002,7 +5002,7 @@ const ja: SiteLangDict = {
   tool_robots_copied: 'コピーしました',
   tool_robots_copy: 'コピー',
   tool_robots_description:
-    'robots.txt は Google にどのページをクロール・インデックスしてよいかを伝えるファイルです。誤ったルールはサイト全体を検索結果から隠してしまいます。ブラウザ内で robots.txt を生成。手順：User-agent を選び、各グループに Allow / Disallow パスと Sitemap 行を追加し、構文ルールと最新の AI クローラー向け User-agent の説明付きで結果をコピー。すべてローカルで完結し、アップロードは一切ありません。例：GPTBot をブロックしつつ Googlebot は完全に許可する構成。',
+    '誤った robots.txt はサイトを検索から隠し得ます。ブラウザで Allow・Disallow・AI クローラー規則を作り、ファイルをコピーします。アップロードなし。例：GPTBot を拒否し Googlebot は許可。手順は明確で例もあります。',
   tool_robots_disallow_label: 'Disallow パス（1 行に 1 つ）',
   tool_robots_download: 'ダウンロード',
   tool_robots_empty_agent: '先に User-agent を選ぶか追加してください。',
@@ -5288,7 +5288,7 @@ const ja: SiteLangDict = {
   tool_schema_copied: 'コピーしました',
   tool_schema_copy: 'コピー',
   tool_schema_description:
-    '構造化データは Google にページの内容を正確に伝え、よりリッチでクリックされやすい検索結果を引き出せる可能性があります。ブラウザ内で JSON-LD を生成。手順：タイプ（FAQ／記事／パンくず／組織）を選び、必須フィールドを埋めて、貼り付け可能な `<script>` 付きの Schema.org マークアップをコピー。必須・任意フィールドを区別して表示し、コピー前に JSON の妥当性を検証します。アップロードは一切ありません。例：2 件の FAQ からは mainEntity に 2 つの Question ノードが生成されます。',
+    '構造化データは Google の理解を助け、よりリッチでクリックされやすい結果につながり得ます。タイプを選び、項目を埋めて貼り付け用 JSON-LD をコピーします。アップロードなし。例：2件の FAQ。手順は明確で例もあります。プライバシーに配慮し、本文はアップロードしません。',
   tool_schema_download: 'ダウンロード',
   tool_schema_err_no_fields: '先に必須フィールドを入力してください。',
   tool_schema_example:
@@ -5397,7 +5397,7 @@ const ja: SiteLangDict = {
   tool_serp_desc_label: 'メタディスクリプション',
   tool_serp_desc_ph: '検索結果のタイトルの下に表示される要約文',
   tool_serp_description:
-    'タイトルや説明文が検索結果で途切れると、Google からのクリックを静かに逃してしまいます。タイトルと説明文を貼り付けて、Google の検索結果でデスクトップとモバイルのどちらでどう切れるかをプレビュー。タイトル・説明文・任意の URL を入力すると、文字数と推定ピクセル幅、スニペットの切れ目が表示され、2 つの候補タイトルを並べて比べることもできます。すべてブラウザ内で処理され、アップロードは一切ありません。例：60 文字の英字タイトルと 30 文字の日本語タイトルでは、同じピクセル幅に到達する文字数が異なります。',
+    '検索結果でタイトルが切れるとクリックを逃します。タイトルと説明文を貼り、デスクトップとモバイルの切れ目、文字数とピクセル目安を確認します。ブラウザ内で完結し、アップロードはありません。手順は明確で例もあります。プライバシーに配慮し、本文はアップロードしません。',
   tool_serp_desktop: 'デスクトップ表示',
   tool_serp_err_title_empty: 'プレビューするにはタイトルを入力してください。',
   tool_serp_example:
@@ -5498,7 +5498,7 @@ const ja: SiteLangDict = {
   tool_sitemap_copied: 'コピー済み',
   tool_sitemap_copy: 'コピー',
   tool_sitemap_description:
-    'sitemap は Google のページ発見とインデックスを早めます。特に新規ページやリンクが少ないページで効果的です。ブラウザ内で URL リストから sitemap.xml を作成。手順：1 行に 1 つの https URL を貼り、任意で lastmod / changefreq / priority を付けて、正しくエスケープされた XML をプレビューし、サイトのルートにコピーします。プロトコルのルールと上限も表示。データは一切送信しません。例：3 URL → 3 つの url 要素を持つ urlset。',
+    'sitemap は Google の発見とインデックスを早めます。https URL を貼り（任意で lastmod）、正しい sitemap.xml をプレビューしてルートへコピーします。アップロードなし。例：3 URL → 3 エントリ。',
   tool_sitemap_download: 'ダウンロード',
   tool_sitemap_example:
     'サンプル入力：https://example.com/ と、lastmod 2026-08-01 の https://example.com/products、さらに https://example.com/about —— 出力は 3 つの url 要素を持つ urlset で、真ん中が lastmod を持ちます。',
@@ -6187,7 +6187,7 @@ const ja: SiteLangDict = {
   tool_utm_copied: 'コピー済み',
   tool_utm_copy: 'コピー',
   tool_utm_description:
-    '正しい UTM タグだけが、どのキャンペーンやメール、投稿が実際にトラフィックを生んでいるかを証明します。タグが雑だと、SEO やマーケ施策の効果はアクセス解析で見えません。ランディングページの URL と utm_source・utm_medium・utm_campaign・utm_term・utm_content からキャンペーン追跡リンクを作成します。手順：ベース URL を貼り、5 つのパラメータを入力し、正しく URL エンコードされたリンクをコピーします。既存のクエリパラメータは保持され、上書きされずに結合されます。すべて端末内で完結し、何もアップロードしません。例：https://example.com/page に source=newsletter・medium=email・campaign=summer_sale。',
+    'UTM が雑だと施策流入が解析で見えません。ブラウザで source・medium・campaign・term・content から追跡 URL を作成します。端末内で完結。例：newsletter + email + summer_sale。',
   tool_utm_encoding_note: '値は encodeURIComponent でエンコードされます。スペースは %20、非 ASCII 文字もパーセントエンコードされます。',
   tool_utm_error_prefix: 'エラー：',
   tool_utm_example:

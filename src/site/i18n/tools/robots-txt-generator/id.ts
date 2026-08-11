@@ -9,7 +9,7 @@ const id: SiteLangDict = {
 	tool_robots_home_desc: 'Kendalikan cara mesin pencari merayapi situs Anda dengan robots.txt yang valid: izin, blokir, dan perayap AI di browser.',
 	tool_robots_title: 'Pembuat robots.txt — kelola izin dan blokir perayap AI',
 	tool_robots_description:
-		'Robots.txt Anda memberi tahu Google halaman mana yang boleh dirayapi dan diindeks—aturan yang salah bisa menyembunyikan seluruh situs dari pencarian. Buat file robots.txt di browser Anda. Langkah: pilih user-agent, tambahkan jalur Allow / Disallow dan baris Sitemap, lalu salin hasil teks polos dengan aturan sintaks dan user-agent terbaru perayap AI yang dijelaskan. Berjalan lokal—tidak ada yang diunggah. Contoh: memblokir GPTBot sambil menjaga Googlebot tetap aktif sepenuhnya.',
+		'robots.txt salah bisa menyembunyikan situs. Susun Allow, Disallow, dan aturan crawler AI di browser, lalu salin. Contoh: blokir GPTBot, biarkan Googlebot.',
 	tool_robots_generate: 'Buat',
 	tool_robots_sample: 'Contoh',
 	tool_robots_clear: 'Bersihkan',

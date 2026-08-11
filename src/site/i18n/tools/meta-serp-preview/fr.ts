@@ -9,7 +9,7 @@ const fr: SiteLangDict = {
 	tool_serp_home_desc: 'Un titre tronqué vous fait perdre des clics dans Google — vérifiez la coupure avant de publier.',
 	tool_serp_title: 'Aperçu des résultats Google — vérifiez la coupure du titre et de la description',
 	tool_serp_description:
-		'Un titre ou une description tronqué dans les résultats peut vous coûter des clics dans Google. Collez un titre et une description pour prévisualiser leur troncature dans les résultats Google, sur ordinateur et mobile. Saisissez titre, description et URL facultative ; consultez le nombre de caractères, la largeur estimée en pixels et le point de coupe de l’extrait ; comparez deux titres côte à côte. Tout se passe dans votre navigateur, rien n’est envoyé. Exemple : un titre de 60 caractères latins et un de 30 caractères CJK peuvent atteindre la limite de pixels avec des comptages différents.',
+		'Un titre tronqué fait perdre des clics Google. Collez titre et description pour voir la coupure desktop et mobile. Navigateur seul. Exemple : EN et CJK.',
 	tool_serp_preview: 'Aperçu',
 	tool_serp_sample: 'Exemple',
 	tool_serp_clear: 'Effacer',

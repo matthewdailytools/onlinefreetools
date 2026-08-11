@@ -10,7 +10,7 @@ const ja: SiteLangDict = {
 		'Google にどの言語版を誰に見せるかを伝える——言語別 URL を hreflang タグ、HTTP Link ヘッダー、sitemap マークアップに変換。ブラウザだけで完結。',
 	tool_hreflang_title: 'hreflang 生成ツール — 多言語サイト用の言語タグを作成',
 	tool_hreflang_description:
-		'hreflang がないと、Google は翻訳ページを重複とみなし、間違った言語版を検索結果に表示してしまうことがあります。言語別 URL のセットを 3 つの形式の hreflang マークアップに変換します。<link> タグ、HTTP Link ヘッダー、sitemap の <xhtml:link> です。手順は、各言語 URL をコード付きで貼り付け、形式を選び、生成したコードをコピーするだけ。各 URL には自分自身を指す自己参照 hreflang が付き、任意の x-default フォールバックも追加できます。すべて端末内で完結し、データは一切アップロードされません。例：1 ページの en・es・ja の 3 言語版。',
+		'hreflang がないと翻訳が重複とみなされ得ます。言語別 URL を link タグ・HTTP Link ヘッダー・sitemap 表記に変換します。すべて端末内で完結。例：同一ページの en・es・ja。手順は明確で例もあります。プライバシーに配慮し、本文はアップロードしません。',
 	tool_hreflang_input_label: '言語別 URL リスト',
 	tool_hreflang_input_ph:
 		'1 行に 1 ペア：言語コード + URL。例：\nen https://example.com/\nes https://example.com/es/\nja https://example.com/ja/',

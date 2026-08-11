@@ -10,7 +10,7 @@ const pt: SiteLangDict = {
 		'Faça cada compartilhamento da sua página gerar cliques: veja como ela vai aparecer no Facebook, X e apps de mensagem, direto no navegador.',
 	tool_og_title: 'Prévia de Open Graph — confira os cards de redes sociais',
 	tool_og_description:
-		'As tags Open Graph decidem como sua página aparece cada vez que é compartilhada: uma imagem ou título ausente custa cliques e compartilhamentos. Cole suas tags og:/twitter:card ou uma URL para ver a prévia do card no Facebook, X e estilo WhatsApp, detectar campos faltantes e corrigir a proporção da imagem. Passos: cole as tags ou busque uma URL, leia os três cards e a tabela de campos, e corrija o que falta. O modo colar roda no seu dispositivo; o modo URL busca a página uma vez e não a armazena. Exemplo: uma página com og:image de 1200×630 compartilhada como card grande.',
+		'Sem imagem OG ou título você perde cliques ao compartilhar. Cole tags og/twitter ou URL para pré-ver Facebook, X e chats. Colagem local. Exemplo: 1200×630.',
 	tool_og_tags_tab: 'Colar tags',
 	tool_og_url_tab: 'Buscar URL',
 	tool_og_tags_ph: 'Cole aqui suas tags <meta property="og:*"> e <meta name="twitter:*">…',

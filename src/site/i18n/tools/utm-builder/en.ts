@@ -10,7 +10,7 @@ const en: SiteLangDict = {
 		'Measure which campaigns really drive your traffic — build clean campaign tracking URLs with utm_source, medium, campaign, term and content from your browser.',
 	tool_utm_title: 'UTM Builder — Create campaign tracking URLs',
 	tool_utm_description:
-		'Clean UTM tags are the only way to prove which campaigns, emails or posts actually drive your traffic — without them, your SEO and marketing efforts are invisible in analytics. Build a campaign tracking link from your landing page URL and utm_source, utm_medium, utm_campaign, utm_term and utm_content. Steps: paste the base URL, fill the five parameters, copy the generated link with correct URL encoding. Existing query parameters are kept and merged, not overwritten. Runs entirely on your device—nothing is uploaded. Example: https://example.com/page with source=newsletter, medium=email and campaign=summer_sale.',
+		'Sloppy UTMs make campaigns untraceable in analytics. Build links with source, medium, campaign, term, content in-browser. Example: newsletter + email + sale.',
 	tool_utm_url_label: 'Landing page URL',
 	tool_utm_url_ph: 'https://example.com/page',
 	tool_utm_url_required: 'Enter the landing page URL.',

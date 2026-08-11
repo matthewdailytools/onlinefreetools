@@ -10,7 +10,7 @@ const en: SiteLangDict = {
 		'Catch the tag issues that hold your page back in search: audit title, H1, meta description, canonical, Open Graph and JSON-LD in your browser.',
 	tool_onpage_title: 'On-Page SEO Checker — Find and fix page tag issues',
 	tool_onpage_description:
-		'Weak titles, missing meta descriptions, duplicate H1s and broken canonicals quietly cost rankings and clicks. Paste a URL or HTML to audit title, H1, meta description, canonical, Open Graph, JSON-LD, mixed content and render-blocking, each with a fix suggestion. Paste mode runs on your device; URL mode fetches the page once without storing it. Example: a sample page with a duplicate H1 and one http:// image.',
+		'Weak titles, missing meta, duplicate H1s, or bad canonicals hurt rankings. Paste URL or HTML for checks and fixes. Paste local; URL once. Example: two H1s.',
 	tool_onpage_url_tab: 'Fetch URL',
 	tool_onpage_html_tab: 'Paste HTML',
 	tool_onpage_url_ph: 'https://example.com/page',

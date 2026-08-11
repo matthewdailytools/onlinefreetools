@@ -2150,7 +2150,7 @@ const fr: SiteLangDict = {
   tool_headers_article:
     'Consultez les en-têtes que l\'edge reçoit pour une URL publique — cache, CORS, redirections et en-têtes de sécurité. Requête proxyée ; nous ne conservons pas le corps de page.',
   tool_headers_description:
-    'Les en-têtes HTTP déterminent comment Google explore, met en cache et indexe vos pages : un X-Robots-Tag erroné peut bloquer entièrement l’indexation. Inspectez en ligne les en-têtes HTTP de réponse d\'une URL depuis notre edge. Déroulé : saisir https, envoyer HEAD (GET si besoin), suivre les redirections, afficher statut et carte d\'en-têtes ; bloquer les hôtes privés. Bonus : lecture en langage simple de Cache-Control, X-Robots-Tag et de la chaîne de redirection. Exemple : lire Cache-Control, CORS et HSTS lors d\'un debug CDN ou redirection.',
+    'Les en-têtes HTTP orientent crawl et indexation : un mauvais X-Robots-Tag peut bloquer. Récupérez en edge ; lisez Cache-Control et redirections. Exemple : CDN.',
   tool_headers_example:
     'exemple.com → statut 200, URL finale inchangée ; en-têtes avec content-type: text/html et, selon l\'origine, cache-control ou en-têtes de sécurité.',
   tool_headers_example_title: 'Exemple',
@@ -2268,7 +2268,7 @@ const fr: SiteLangDict = {
   tool_hreflang_copied: 'Copié',
   tool_hreflang_copy: 'Copier',
   tool_hreflang_description:
-    'Sans hreflang, Google peut considérer vos pages traduites comme dupliquées et afficher la version dans la mauvaise langue dans les résultats. Convertissez un ensemble d’URLs de langue en balisage hreflang sous trois formes : balises <link>, en-tête HTTP Link et sitemap <xhtml:link>. Étapes : collez chaque URL de langue avec son code, choisissez une forme et copiez l’extrait généré. Chaque URL reçoit sa propre annotation d’autoréférence, et un repli x-default facultatif peut être ajouté. Fonctionne entièrement sur votre appareil : rien n’est envoyé. Exemple : trois versions d’une page en en, es et ja.',
+    'Sans hreflang, Google peut voir les traductions comme des doublons. Transformez les URL en balises link, HTTP Link ou sitemap—local. Exemple : en, es et ja.',
   tool_hreflang_error_prefix: 'Erreur : ',
   tool_hreflang_example:
     'L’exemple liste trois versions d’une page : https://example.com/ (en), https://example.com/es/ (es) et https://example.com/ja/ (ja). Les balises <link> générées incluent les autoréférences de chaque langue, plus un x-default facultatif pointant vers la racine anglaise.',
@@ -4095,7 +4095,7 @@ const fr: SiteLangDict = {
   tool_meta_desc_ph:
     'Générez des meta tags de head prêtes à coller, avec indications de longueur, valeurs robots et champs OG.',
   tool_meta_description:
-    'Votre title et votre meta description sont ce que les utilisateurs voient dans Google, et un canonical erroné peut répartir votre classement entre des URLs dupliquées. Remplissez les champs title, description, canonical, robots et Open Graph pour générer des meta tags de <head> prêtes à coller. Étapes : saisissez vos champs, lisez les indications de longueur et les aperçus, copiez le HTML généré avec le bon échappement. Les caractères spéciaux comme & et < sont échappés automatiquement pour que les balises restent valides. Fonctionne entièrement sur votre appareil : rien n’est envoyé. Exemple : balises canonical et og côte à côte.',
+    'Title et meta description sont votre carte Google ; un mauvais canonical dilue les signaux. Remplissez pour balises head prêtes. Exemple : canonical + og.',
   tool_meta_error_prefix: 'Erreur : ',
   tool_meta_example:
     'L’exemple remplit le titre, la description, le canonical, les robots et trois champs Open Graph. L’extrait généré sort une balise <title>, la meta description, le lien canonique, le robots meta et les balises og: renseignées.',
@@ -4226,7 +4226,7 @@ const fr: SiteLangDict = {
   tool_og_copied: 'Copié',
   tool_og_copy: 'Copier',
   tool_og_description:
-    'Les balises Open Graph décident de l’apparence de votre page à chaque partage : une image ou un titre manquant vous coûte des clics et des partages. Collez vos balises og:/twitter:card ou une URL pour prévisualiser la carte Facebook, X et style WhatsApp, repérer les champs manquants et corriger le ratio de l’image. Étapes : collez les balises ou chargez une URL, lisez les trois cartes et le tableau des champs, puis complétez ce qui manque. Le mode coller s’exécute sur votre appareil ; le mode URL récupère la page une fois et ne la stocke pas. Exemple : une page avec une og:image 1200×630 partagée en grande carte.',
+    'Sans image OG ou titre, les partages perdent des clics. Collez balises og/twitter ou URL pour prévisualiser Facebook, X et chats. Local. Exemple : 1200×630.',
   tool_og_dimensions: '{w}×{h} px',
   tool_og_error_prefix: 'Erreur : ',
   tool_og_example:
@@ -4413,7 +4413,7 @@ const fr: SiteLangDict = {
     'Description de {n} caractères. La plage 140–160 caractères s’affiche bien dans la plupart des extraits.',
   tool_onpage_desc_short: 'La description ne fait que {n} caractères. Utilisez l’espace pour résumer ce que propose la page.',
   tool_onpage_description:
-    'Un title faible, une meta description absente, deux H1 ou un canonical erroné peuvent coûter des positions et des clics dans Google. Collez une URL ou le HTML pour auditer title, H1, meta description, canonical, Open Graph, JSON-LD, contenu mixte et blocage du rendu, chacun avec sa suggestion de correction. Le mode coller s’exécute sur votre appareil ; le mode URL récupère la page une fois sans la stocker. Exemple : une page avec deux H1 et une image http://.',
+    'Titres faibles, meta manquante, H1 en double ou canonical erroné nuisent au ranking. Collez URL ou HTML pour auditer. Collage local. Exemple : deux H1.',
   tool_onpage_error_prefix: 'Erreur : ',
   tool_onpage_example:
     'L’entrée d’exemple est une page avec un title de 71 caractères, sans meta description, deux H1, un canonical vers une autre URL, un og:image, un bloc JSON-LD valide et une image http://. Le vérificateur signale le title comme probablement tronqué, le H1 en avertissement, le canonical comme non auto-référent et le contenu mixte en avertissement, comme l’outil le montre au chargement de l’exemple.',
@@ -5438,7 +5438,7 @@ const fr: SiteLangDict = {
   tool_robots_copied: 'Copié',
   tool_robots_copy: 'Copier',
   tool_robots_description:
-    'Votre robots.txt indique à Google quelles pages explorer et indexer : une règle mal écrite peut cacher tout votre site dans la recherche. Générez un fichier robots.txt dans votre navigateur. Étapes : choisissez les user-agents, ajoutez des chemins Allow / Disallow et une ligne Sitemap, puis copiez le résultat en texte brut avec les règles de syntaxe et les user-agents à jour des robots d’IA expliqués. Fonctionne localement — rien n’est envoyé. Exemple : bloquer GPTBot tout en gardant Googlebot entièrement actif.',
+    'Un mauvais robots.txt peut cacher le site. Créez Allow, Disallow et règles IA dans le navigateur, puis copiez. Exemple : bloquer GPTBot, garder Googlebot.',
   tool_robots_disallow_label: 'Chemins Disallow (un par ligne)',
   tool_robots_download: 'Télécharger',
   tool_robots_empty_agent: 'Choisissez ou ajoutez d’abord un user-agent.',
@@ -5755,7 +5755,7 @@ const fr: SiteLangDict = {
   tool_schema_copied: 'Copié',
   tool_schema_copy: 'Copier',
   tool_schema_description:
-    'Les données structurées aident Google à comprendre le contenu de votre page et peuvent vous offrir des résultats plus riches et plus cliquables. Générez du JSON-LD dans votre navigateur. Étapes : choisissez un type (FAQ, article, fil d’Ariane, organisation), remplissez les champs obligatoires, puis copiez un balisage Schema.org valide avec une balise script prête à coller. La page distingue champs obligatoires et facultatifs et valide le JSON avant de copier. Rien n’est envoyé. Exemple : une FAQ de deux questions produit un mainEntity avec deux nœuds Question.',
+    'Les données structurées aident Google et peuvent enrichir les résultats. Choisissez un type, remplissez, copiez le JSON-LD. Exemple : FAQ à deux questions.',
   tool_schema_download: 'Télécharger',
   tool_schema_err_no_fields: 'Remplissez d’abord les champs obligatoires.',
   tool_schema_example:
@@ -5875,7 +5875,7 @@ const fr: SiteLangDict = {
   tool_serp_desc_label: 'Meta description',
   tool_serp_desc_ph: 'Le texte de l’extrait sous le titre du résultat',
   tool_serp_description:
-    'Un titre ou une description tronqué dans les résultats peut vous coûter des clics dans Google. Collez un titre et une description pour prévisualiser leur troncature dans les résultats Google, sur ordinateur et mobile. Saisissez titre, description et URL facultative ; consultez le nombre de caractères, la largeur estimée en pixels et le point de coupe de l’extrait ; comparez deux titres côte à côte. Tout se passe dans votre navigateur, rien n’est envoyé. Exemple : un titre de 60 caractères latins et un de 30 caractères CJK peuvent atteindre la limite de pixels avec des comptages différents.',
+    'Un titre tronqué fait perdre des clics Google. Collez titre et description pour voir la coupure desktop et mobile. Navigateur seul. Exemple : EN et CJK.',
   tool_serp_desktop: 'Aperçu ordinateur',
   tool_serp_err_title_empty: 'Saisissez un titre pour voir l’aperçu.',
   tool_serp_example:
@@ -5988,7 +5988,7 @@ const fr: SiteLangDict = {
   tool_sitemap_copied: 'Copié',
   tool_sitemap_copy: 'Copier',
   tool_sitemap_description:
-    'Un sitemap aide Google à découvrir et indexer vos pages plus vite, surtout les nouvelles ou celles qui ont peu de liens. Générez sitemap.xml dans votre navigateur. Étapes : collez une URL https par ligne avec lastmod / changefreq / priority facultatifs, prévisualisez le XML correctement échappé et copiez-le à la racine du site. Les règles et limites du protocole sont affichées. Rien n’est envoyé. Exemple : 3 URLs → urlset avec trois éléments url.',
+    'Un sitemap aide Google à découvrir et indexer plus vite. Collez des URL https, prévisualisez un sitemap.xml valide, copiez à la racine. Exemple : 3 URL.',
   tool_sitemap_download: 'Télécharger',
   tool_sitemap_example:
     'Saisie d’exemple : https://example.com/ et https://example.com/products avec lastmod 2026-08-01, plus https://example.com/about — la sortie est un urlset à trois éléments url, celui du milieu portant lastmod.',
@@ -6763,7 +6763,7 @@ const fr: SiteLangDict = {
   tool_utm_copied: 'Copié',
   tool_utm_copy: 'Copier',
   tool_utm_description:
-    'Des balises UTM propres sont le seul moyen de prouver quelles campagnes, e-mails ou publications génèrent vraiment votre trafic : sans elles, vos efforts SEO et marketing restent invisibles dans les analyses. Construisez un lien de suivi à partir de l’URL de votre page d’atterrissage et de utm_source, utm_medium, utm_campaign, utm_term et utm_content. Étapes : collez l’URL de base, remplissez les cinq paramètres, copiez le lien généré avec le bon encodage d’URL. Les paramètres de requête existants sont conservés et fusionnés, pas écrasés. Fonctionne entièrement sur votre appareil : rien n’est envoyé. Exemple : https://example.com/page avec source=newsletter, medium=email et campaign=summer_sale.',
+    'Des UTM mal formés rendent les campagnes illisibles. Créez des liens avec source, medium, campaign, term et content. Exemple : newsletter + email + sale.',
   tool_utm_encoding_note:
     'Les valeurs sont encodées avec encodeURIComponent : les espaces deviennent %20 et les caractères non ASCII sont encodés.',
   tool_utm_error_prefix: 'Erreur : ',

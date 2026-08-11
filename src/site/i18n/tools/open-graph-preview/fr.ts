@@ -10,7 +10,7 @@ const fr: SiteLangDict = {
 		'Faites en sorte que chaque partage de votre page génère des clics : aperçu de son apparence sur Facebook, X et les applis de messagerie, depuis le navigateur.',
 	tool_og_title: 'Aperçu Open Graph — vérifiez les cartes de partage social',
 	tool_og_description:
-		'Les balises Open Graph décident de l’apparence de votre page à chaque partage : une image ou un titre manquant vous coûte des clics et des partages. Collez vos balises og:/twitter:card ou une URL pour prévisualiser la carte Facebook, X et style WhatsApp, repérer les champs manquants et corriger le ratio de l’image. Étapes : collez les balises ou chargez une URL, lisez les trois cartes et le tableau des champs, puis complétez ce qui manque. Le mode coller s’exécute sur votre appareil ; le mode URL récupère la page une fois et ne la stocke pas. Exemple : une page avec une og:image 1200×630 partagée en grande carte.',
+		'Sans image OG ou titre, les partages perdent des clics. Collez balises og/twitter ou URL pour prévisualiser Facebook, X et chats. Local. Exemple : 1200×630.',
 	tool_og_tags_tab: 'Coller les balises',
 	tool_og_url_tab: 'Récupérer l’URL',
 	tool_og_tags_ph: 'Collez ici vos balises <meta property="og:*"> et <meta name="twitter:*">…',

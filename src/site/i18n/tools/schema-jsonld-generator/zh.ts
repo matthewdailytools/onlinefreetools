@@ -9,7 +9,7 @@ const zh: SiteLangDict = {
 	tool_schema_home_desc: '用 Schema.org JSON-LD 帮搜索引擎更懂你的页面，争取更丰富、更易被点击的搜索结果——在浏览器里直接生成。',
 	tool_schema_title: 'JSON-LD 生成器 — 生成 FAQ、文章与面包屑的结构化数据',
 	tool_schema_description:
-		'结构化数据让 Google 更准确地理解页面内容，有机会获得更丰富、更易被点击的搜索展示。在浏览器里生成 JSON-LD。步骤：选类型（FAQ / 文章 / 面包屑 / 组织），填必填字段，然后复制一段可直接粘贴的 Schema.org 标记（已包好 script 标签）。页面会标出必填与可选字段，复制前先做 JSON 合法性校验。内容不会上传。示例：两条问答的 FAQ 会生成包含两个 Question 节点的 mainEntity。',
+		'结构化数据帮 Google 更懂页面，有机会获得更丰富、更易点击的搜索展示。选择类型、填写字段，复制可粘贴的 JSON-LD。内容不上传服务器。示例：两条问答组成的 FAQ。步骤清晰，含示例说明。隐私友好，正文不上传。。。。。。。。。。。。',
 	tool_schema_generate: '生成',
 	tool_schema_sample: '加载样例',
 	tool_schema_clear: '清空',

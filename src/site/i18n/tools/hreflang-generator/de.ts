@@ -10,7 +10,7 @@ const de: SiteLangDict = {
 		'Sag Google, welche Sprachversion einer Seite wem angezeigt werden soll — verwandle Sprach-URLs in Hreflang-Tags, HTTP-Link-Header und Sitemap-Markup, direkt im Browser.',
 	tool_hreflang_title: 'Hreflang-Generator — Sprach-Tags für mehrsprachige Websites erstellen',
 	tool_hreflang_description:
-		'Ohne hreflang kann Google deine übersetzten Seiten als Duplikate behandeln und die falsche Sprachversion in der Suche anzeigen. Verwandle eine Menge von Sprach-URLs in Hreflang-Markup in drei Formen: <link>-Tags, HTTP-Link-Header und Sitemap-<xhtml:link>. Schritte: jede Sprach-URL mit ihrem Code einfügen, eine Form wählen, das erzeugte Snippet kopieren. Jede URL erhält ihren eigenen Self-Referencing-Hreflang, und optional kann ein x-default-Fallback ergänzt werden. Läuft komplett auf deinem Gerät – nichts wird hochgeladen. Beispiel: drei Versionen einer Seite in en, es und ja.',
+		'Ohne hreflang kann Google Übersetzungen als Duplikate werten. Sprach-URLs in link-Tags, HTTP-Link oder Sitemap—lokal. Beispiel: en, es und ja.',
 	tool_hreflang_input_label: 'Liste der Sprach-URLs',
 	tool_hreflang_input_ph:
 		'Ein Paar pro Zeile: Sprachcode + URL. Beispiel:\nen https://example.com/\nes https://example.com/es/\nja https://example.com/ja/',

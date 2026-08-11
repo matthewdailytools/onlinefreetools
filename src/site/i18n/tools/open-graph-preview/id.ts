@@ -10,7 +10,7 @@ const id: SiteLangDict = {
 		'Buat setiap bagikan halaman Anda mendatangkan klik: pratinjau bagaimana tampilannya di Facebook, X, dan aplikasi pesan, langsung dari browser.',
 	tool_og_title: 'Pratinjau Open Graph — cek kartu bagikan media sosial',
 	tool_og_description:
-		'Tag Open Graph menentukan tampilan halaman Anda setiap kali dibagikan—gambar atau judul yang hilang membuat Anda kehilangan klik dan bagikan. Tempel tag og:/twitter:card atau URL untuk melihat pratinjau kartu Facebook, X, dan gaya WhatsApp, menemukan kolom yang hilang, dan memperbaiki rasio gambar. Langkah: tempel tag atau ambil URL, baca tiga kartu pratinjau dan tabel kolom, lalu perbaiki yang kurang. Mode tempel berjalan di perangkat Anda; mode URL mengambil halaman sekali dan tidak menyimpannya. Contoh: halaman dengan og:image 1200×630 dibagikan sebagai kartu besar.',
+		'OG image atau judul hilang mengurangi klik berbagi. Tempel tag og/twitter atau URL untuk pratinjau Facebook, X, dan chat. Tempel lokal. Contoh: 1200×630.',
 	tool_og_tags_tab: 'Tempel tag',
 	tool_og_url_tab: 'Ambil URL',
 	tool_og_tags_ph: 'Tempel tag <meta property="og:*"> dan <meta name="twitter:*"> di sini…',

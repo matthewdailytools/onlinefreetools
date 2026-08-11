@@ -10,7 +10,7 @@ const ja: SiteLangDict = {
 		'シェアされるたびにクリックにつなげる——Facebook、X、メッセージアプリで共有したときの見え方をブラウザで確認できます。',
 	tool_og_title: 'Open Graph プレビュー — ソーシャル共有カードを確認',
 	tool_og_description:
-		'Open Graph タグはページがシェアされるたびの見た目を決めます。画像やタイトルが欠けていると、クリックとシェアを損します。og:/twitter:card タグまたは URL を貼り付けて、Facebook・X・WhatsApp 風の共有カードをプレビューし、不足フィールドと画像比率を確認できます。手順：タグを貼るか URL を取得し、3 枚のカードとフィールド表を確認して、足りない項目を修正します。貼り付けモードは端末内で処理します。URL モードはページを 1 回だけ取得し、保存しません。例：1200×630 の og:image を持つページが大カードで共有されるケース。',
+		'OG 画像やタイトル不足はシェアのクリックを損ないます。og/twitter タグか URL を貼り、Facebook・X・メッセージカードを確認して不足を直します。貼り付けは端末内。例：1200×630 の大カード。手順は明確で例もあります。',
 	tool_og_tags_tab: 'タグを貼り付け',
 	tool_og_url_tab: 'URL を取得',
 	tool_og_tags_ph: '<meta property="og:*"> と <meta name="twitter:*"> タグをここに貼り付け…',

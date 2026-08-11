@@ -2208,7 +2208,7 @@ const en: SiteLangDict = {
   tool_headers_article:
     'Use this checker to see the response headers our edge receives for a public URL — useful for caching, CORS, redirects, and security header spot-checks. The request is proxied; we do not store page bodies.',
   tool_headers_description:
-    'HTTP headers decide how Google crawls, caches and indexes your pages — a wrong X-Robots-Tag can block indexing entirely. Inspect a URL\'s HTTP response headers from the edge. Process: submit https URL, send HEAD (fall back to GET), follow redirects, show status and header map, block private hosts. Extra: plain-language checks of Cache-Control, X-Robots-Tag and redirect chains. Example: read Cache-Control, CORS, and Strict-Transport-Security while debugging CDN or redirects.',
+    'HTTP headers steer crawl and index—wrong X-Robots-Tag can block indexing. Fetch at the edge; check Cache-Control, X-Robots-Tag, redirects. Example: CDN.',
   tool_headers_example:
     'Example: fetch https://example.com → status 200, final URL unchanged, headers include content-type: text/html and often cache-control or security headers depending on the origin.',
   tool_headers_example_title: 'Example',
@@ -2327,7 +2327,7 @@ const en: SiteLangDict = {
   tool_hreflang_copied: 'Copied',
   tool_hreflang_copy: 'Copy',
   tool_hreflang_description:
-    'Without hreflang, Google may treat your translated pages as duplicates and show the wrong language version in search. Turn a set of language URLs into hreflang markup in three forms: <link> tags, HTTP Link header and sitemap <xhtml:link>. Steps: paste each language URL with its code, choose a form, copy the generated snippet. Every URL gets its own self-referencing hreflang, and an optional x-default fallback can be added. Runs entirely on your device—nothing is uploaded. Example: en, es and ja versions of one page.',
+    'Without hreflang, Google may treat translations as duplicates. Turn language URLs into link tags, HTTP Link, or sitemap markup—local. Example: en, es, ja.',
   tool_hreflang_error_prefix: 'Error: ',
   tool_hreflang_example:
     'The sample lists three versions of one page: https://example.com/ (en), https://example.com/es/ (es) and https://example.com/ja/ (ja). The generated <link> tags include self-references for each language plus an optional x-default pointing to the English root.',
@@ -4229,7 +4229,7 @@ const en: SiteLangDict = {
   tool_meta_desc_len_warn: 'Description: {n} characters — over 160, may be truncated.',
   tool_meta_desc_ph: 'Generate ready-to-paste head meta tags with length hints, robots values and OG fields.',
   tool_meta_description:
-    'Your title and meta description are what users see in Google, and a wrong canonical can split your rankings across duplicate URLs. Fill in the title, description, canonical, robots and Open Graph fields to generate ready-to-paste <head> meta tags. Steps: enter your fields, read the length hints and previews, copy the generated HTML with correct escaping. Special characters such as & and < are escaped automatically so the tags stay valid. Runs entirely on your device—nothing is uploaded. Example: canonical and og tags side by side.',
+    'Title and meta description are your Google card; bad canonical splits signals. Fill fields for paste-ready head tags and length hints. Example: canonical + og.',
   tool_meta_error_prefix: 'Error: ',
   tool_meta_example:
     'The sample fills the title, description, canonical, robots and three Open Graph fields. The generated snippet outputs a <title> tag, the meta description, the canonical link, the robots meta and the og: tags that were filled in.',
@@ -4363,7 +4363,7 @@ const en: SiteLangDict = {
   tool_og_copied: 'Copied',
   tool_og_copy: 'Copy',
   tool_og_description:
-    'Open Graph tags decide how your page looks every time it is shared — a missing image or title costs you clicks and shares. Paste your og:/twitter:card tags or a URL to preview the Facebook, X and WhatsApp-style share card, spot missing fields and fix image ratios. Steps: paste tags or fetch a URL, read the three preview cards and the field table, then fix what is missing. Paste mode runs on your device; URL mode fetches the page once and does not store it. Example: a page with a 1200×630 og:image shared as a large card.',
+    'Missing OG image or title costs share clicks. Paste og/twitter tags or a URL to preview Facebook, X, and chat cards. Local paste. Example: 1200×630 card.',
   tool_og_dimensions: '{w}×{h} px',
   tool_og_error_prefix: 'Error: ',
   tool_og_example:
@@ -4547,7 +4547,7 @@ const en: SiteLangDict = {
   tool_onpage_desc_ok: 'Description found at {n} characters. The 140–160 character range shows well in most snippets.',
   tool_onpage_desc_short: 'Description is only {n} characters. Use the space to summarize what the page offers.',
   tool_onpage_description:
-    'Weak titles, missing meta descriptions, duplicate H1s and broken canonicals quietly cost rankings and clicks. Paste a URL or HTML to audit title, H1, meta description, canonical, Open Graph, JSON-LD, mixed content and render-blocking, each with a fix suggestion. Paste mode runs on your device; URL mode fetches the page once without storing it. Example: a sample page with a duplicate H1 and one http:// image.',
+    'Weak titles, missing meta, duplicate H1s, or bad canonicals hurt rankings. Paste URL or HTML for checks and fixes. Paste local; URL once. Example: two H1s.',
   tool_onpage_error_prefix: 'Error: ',
   tool_onpage_example:
     'Sample input is a page with a 71-character title, no meta description, two H1 tags, a canonical to another URL, one og:image, a valid JSON-LD block and one http:// image. The checker reports the title as likely truncated, H1 as a warning, canonical as non-self-referencing, and mixed content as a warning, matching what the tool shows when you load the sample.',
@@ -5593,7 +5593,7 @@ const en: SiteLangDict = {
   tool_robots_copied: 'Copied',
   tool_robots_copy: 'Copy',
   tool_robots_description:
-    'Your robots.txt tells Google which pages to crawl and index — a wrong rule can hide your whole site from search. Generate a robots.txt file in your browser. Steps: pick user-agents, add Allow / Disallow paths and a Sitemap line, then copy the plain-text result with syntax rules and updated AI-crawler user-agents explained. Runs locally—nothing is uploaded. Example: blocking GPTBot while keeping Googlebot fully enabled.',
+    'A bad robots.txt can hide your site from search. Build Allow, Disallow, and AI-crawler rules in-browser, then copy. Example: block GPTBot, keep Googlebot.',
   tool_robots_disallow_label: 'Disallow paths (one per line)',
   tool_robots_download: 'Download',
   tool_robots_empty_agent: 'Tick or add a user-agent first.',
@@ -5914,7 +5914,7 @@ const en: SiteLangDict = {
   tool_schema_copied: 'Copied',
   tool_schema_copy: 'Copy',
   tool_schema_description:
-    'Structured data helps Google understand what your page is about and can earn you richer, more clickable search results. Generate JSON-LD in your browser. Steps: pick a type (FAQ, Article, Breadcrumb, Organization), fill the required fields, and copy valid Schema.org markup with a paste-ready script tag. Shows required vs optional fields and validates JSON before you copy. Nothing is uploaded. Example: a 2-item FAQ produces mainEntity with two Question nodes.',
+    'Structured data helps Google understand pages and may unlock richer results. Pick a type, fill fields, copy paste-ready JSON-LD. Example: two-question FAQ.',
   tool_schema_download: 'Download',
   tool_schema_err_no_fields: 'Fill the required fields, then generate.',
   tool_schema_example:
@@ -6033,7 +6033,7 @@ const en: SiteLangDict = {
   tool_serp_desc_label: 'Meta description',
   tool_serp_desc_ph: 'The snippet text under the result title',
   tool_serp_description:
-    'A title or description that gets cut off in the results can quietly cost you clicks from Google. Paste a title and description to preview Google search result truncation on desktop and mobile. Enter title, description, and optional URL; see character counts, estimated pixel widths, and snippet cut points; compare two titles side by side. Everything runs in your browser—nothing is uploaded. Example: a 60-char ASCII title and a 30-char CJK title can reach the pixel limit at different counts.',
+    'Truncated titles waste Google clicks. Paste title and description to preview desktop/mobile SERP cutoffs with length hints. Browser-only. Example: EN vs CJK.',
   tool_serp_desktop: 'Desktop preview',
   tool_serp_err_title_empty: 'Enter a title to preview.',
   tool_serp_example:
@@ -6146,7 +6146,7 @@ const en: SiteLangDict = {
   tool_sitemap_copied: 'Copied',
   tool_sitemap_copy: 'Copy',
   tool_sitemap_description:
-    'A sitemap helps Google discover and index your pages faster, especially new pages or pages with few links. Turn a URL list into sitemap.xml in your browser. Steps: paste one https URL per line with optional lastmod / changefreq / priority, preview the generated XML with proper escaping, and copy it to your site root. Shows protocol rules and limits. Nothing is uploaded. Example: 3 URLs → urlset with three url entries.',
+    'A sitemap helps Google discover and index pages faster. Paste https URLs, preview valid sitemap.xml, copy to root. Example: three URLs → three entries.',
   tool_sitemap_download: 'Download',
   tool_sitemap_example:
     'Sample input: https://example.com/ and https://example.com/products with lastmod 2026-08-01, plus https://example.com/about — the output is a urlset with three url entries, the middle one carrying a lastmod element.',
@@ -6940,7 +6940,7 @@ const en: SiteLangDict = {
   tool_utm_copied: 'Copied',
   tool_utm_copy: 'Copy',
   tool_utm_description:
-    'Clean UTM tags are the only way to prove which campaigns, emails or posts actually drive your traffic — without them, your SEO and marketing efforts are invisible in analytics. Build a campaign tracking link from your landing page URL and utm_source, utm_medium, utm_campaign, utm_term and utm_content. Steps: paste the base URL, fill the five parameters, copy the generated link with correct URL encoding. Existing query parameters are kept and merged, not overwritten. Runs entirely on your device—nothing is uploaded. Example: https://example.com/page with source=newsletter, medium=email and campaign=summer_sale.',
+    'Sloppy UTMs make campaigns untraceable in analytics. Build links with source, medium, campaign, term, content in-browser. Example: newsletter + email + sale.',
   tool_utm_encoding_note:
     'Values are encoded with encodeURIComponent: spaces become %20 and non-ASCII characters are percent-encoded.',
   tool_utm_error_prefix: 'Error: ',

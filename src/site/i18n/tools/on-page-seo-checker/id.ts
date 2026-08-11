@@ -10,7 +10,7 @@ const id: SiteLangDict = {
 		'Tangkap masalah tag yang menahan peringkat halaman Anda: periksa title, H1, meta description, canonical, Open Graph, dan JSON-LD di browser.',
 	tool_onpage_title: 'Pemeriksa SEO On-Page — temukan dan perbaiki masalah tag halaman',
 	tool_onpage_description:
-		'Judul lemah, meta description hilang, H1 ganda, atau canonical yang salah bisa diam-diam menurunkan peringkat dan klik Anda di hasil pencarian. Tempel URL atau HTML untuk mengaudit title, H1, meta description, canonical, Open Graph, JSON-LD, konten campuran, dan pemblokiran render, masing-masing dengan saran perbaikan. Mode tempel berjalan di perangkat Anda; mode URL mengambil halaman sekali tanpa menyimpannya. Contoh: halaman dengan dua H1 dan satu gambar http://.',
+		'Judul lemah, meta hilang, H1 ganda, atau canonical salah merusak ranking. Tempel URL atau HTML untuk cek dan saran. Tempel lokal. Contoh: dua H1.',
 	tool_onpage_url_tab: 'Ambil URL',
 	tool_onpage_html_tab: 'Tempel HTML',
 	tool_onpage_url_ph: 'https://example.com/page',

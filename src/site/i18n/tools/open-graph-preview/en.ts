@@ -10,7 +10,7 @@ const en: SiteLangDict = {
 		'Make every social share of your page earn clicks — preview how it looks on Facebook, X and messaging apps from your browser.',
 	tool_og_title: 'Open Graph Preview — Check social share cards',
 	tool_og_description:
-		'Open Graph tags decide how your page looks every time it is shared — a missing image or title costs you clicks and shares. Paste your og:/twitter:card tags or a URL to preview the Facebook, X and WhatsApp-style share card, spot missing fields and fix image ratios. Steps: paste tags or fetch a URL, read the three preview cards and the field table, then fix what is missing. Paste mode runs on your device; URL mode fetches the page once and does not store it. Example: a page with a 1200×630 og:image shared as a large card.',
+		'Missing OG image or title costs share clicks. Paste og/twitter tags or a URL to preview Facebook, X, and chat cards. Local paste. Example: 1200×630 card.',
 	tool_og_tags_tab: 'Paste tags',
 	tool_og_url_tab: 'Fetch URL',
 	tool_og_tags_ph:

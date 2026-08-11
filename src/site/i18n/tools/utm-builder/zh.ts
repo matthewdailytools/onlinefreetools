@@ -10,7 +10,7 @@ const zh: SiteLangDict = {
 		'看清每个渠道的真实引流效果——在浏览器里用 utm_source、medium、campaign、term、content 生成规范的活动追踪链接。',
 	tool_utm_title: 'UTM 链接生成器 — 创建活动追踪链接',
 	tool_utm_description:
-		'规范的 UTM 标记是看清每个活动、邮件或推文真实引流效果的唯一方式——标记不规范，你的 SEO 与营销投入在数据里就无从归因。用落地页 URL 与 utm_source、utm_medium、utm_campaign、utm_term、utm_content 生成活动追踪链接。步骤：粘贴基础 URL，填写五个参数，复制带正确 URL 编码的链接。已有查询参数会被保留并合并，不会被覆盖。完全在本地运行，不上传任何内容。示例：https://example.com/page 搭配 source=newsletter、medium=email、campaign=summer_sale。',
+		'UTM 参数不规范，各渠道引流在分析里无从归因。在浏览器里用 source、medium、campaign、term、content 生成追踪链接。全程本地完成。示例：newsletter + email + summer_sale。步骤清晰，含示例说明。',
 	tool_utm_url_label: '落地页 URL',
 	tool_utm_url_ph: 'https://example.com/page',
 	tool_utm_url_required: '请输入落地页 URL。',

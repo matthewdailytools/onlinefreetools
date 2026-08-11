@@ -10,7 +10,7 @@ const fr: SiteLangDict = {
 		'Indiquez à Google quelle version linguistique afficher à qui — convertissez des URLs de langue en balises hreflang, en en-tête HTTP Link et en balisage sitemap depuis votre navigateur.',
 	tool_hreflang_title: 'Générateur hreflang — créez des balises pour sites multilingues',
 	tool_hreflang_description:
-		'Sans hreflang, Google peut considérer vos pages traduites comme dupliquées et afficher la version dans la mauvaise langue dans les résultats. Convertissez un ensemble d’URLs de langue en balisage hreflang sous trois formes : balises <link>, en-tête HTTP Link et sitemap <xhtml:link>. Étapes : collez chaque URL de langue avec son code, choisissez une forme et copiez l’extrait généré. Chaque URL reçoit sa propre annotation d’autoréférence, et un repli x-default facultatif peut être ajouté. Fonctionne entièrement sur votre appareil : rien n’est envoyé. Exemple : trois versions d’une page en en, es et ja.',
+		'Sans hreflang, Google peut voir les traductions comme des doublons. Transformez les URL en balises link, HTTP Link ou sitemap—local. Exemple : en, es et ja.',
 	tool_hreflang_input_label: 'Liste d’URLs par langue',
 	tool_hreflang_input_ph:
 		'Une paire par ligne : code de langue + URL. Exemple :\nen https://example.com/\nes https://example.com/es/\nja https://example.com/ja/',

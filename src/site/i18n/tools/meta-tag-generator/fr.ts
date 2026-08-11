@@ -10,7 +10,7 @@ const fr: SiteLangDict = {
 		'Écrivez les title, description, canonical et balises Open Graph qui génèrent des clics dans Google : créez le head de votre page en entier depuis le navigateur.',
 	tool_meta_title: 'Générateur de meta tags — générez le head de votre page en entier',
 	tool_meta_description:
-		'Votre title et votre meta description sont ce que les utilisateurs voient dans Google, et un canonical erroné peut répartir votre classement entre des URLs dupliquées. Remplissez les champs title, description, canonical, robots et Open Graph pour générer des meta tags de <head> prêtes à coller. Étapes : saisissez vos champs, lisez les indications de longueur et les aperçus, copiez le HTML généré avec le bon échappement. Les caractères spéciaux comme & et < sont échappés automatiquement pour que les balises restent valides. Fonctionne entièrement sur votre appareil : rien n’est envoyé. Exemple : balises canonical et og côte à côte.',
+		'Title et meta description sont votre carte Google ; un mauvais canonical dilue les signaux. Remplissez pour balises head prêtes. Exemple : canonical + og.',
 	tool_meta_title_label: 'Meta title',
 	tool_meta_title_ph: 'Générateur de meta tags — générez le head de votre page en entier',
 	tool_meta_title_hint: 'Visez environ 60 caractères. Les moteurs de recherche peuvent réécrire les titres plus longs.',

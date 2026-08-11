@@ -10,7 +10,7 @@ const fr: SiteLangDict = {
 		'Repérez les balises qui freinent votre page dans Google : vérifiez title, H1, meta description, canonical, Open Graph et JSON-LD depuis votre navigateur.',
 	tool_onpage_title: 'Audit SEO On-Page — détectez et corrigez les balises de la page',
 	tool_onpage_description:
-		'Un title faible, une meta description absente, deux H1 ou un canonical erroné peuvent coûter des positions et des clics dans Google. Collez une URL ou le HTML pour auditer title, H1, meta description, canonical, Open Graph, JSON-LD, contenu mixte et blocage du rendu, chacun avec sa suggestion de correction. Le mode coller s’exécute sur votre appareil ; le mode URL récupère la page une fois sans la stocker. Exemple : une page avec deux H1 et une image http://.',
+		'Titres faibles, meta manquante, H1 en double ou canonical erroné nuisent au ranking. Collez URL ou HTML pour auditer. Collage local. Exemple : deux H1.',
 	tool_onpage_url_tab: 'Récupérer l’URL',
 	tool_onpage_html_tab: 'Coller le HTML',
 	tool_onpage_url_ph: 'https://example.com/page',

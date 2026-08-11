@@ -10,7 +10,7 @@ const ar: SiteLangDict = {
 		'قيّس الحملات التي تجلب زياراتك فعلًا — أنشئ روابط تتبع نظيفة باستخدام utm_source وmedium وcampaign وterm وcontent من المتصفح.',
 	tool_utm_title: 'منشئ UTM — أنشئ روابط تتبع الحملات',
 	tool_utm_description:
-		'وسوم UTM النظيفة هي الطريقة الوحيدة لإثبات الحملات أو الرسائل أو المنشورات التي تجلب زياراتك فعلًا؛ وبدونها تبقى جهودك في SEO والتسويق غير مرئية في التحليلات. أنشئ رابط تتبع من عنوان URL لصفحة الهبوط مع utm_source وutm_medium وutm_campaign وutm_term وutm_content. الخطوات: الصق عنوان URL الأساسي، واملأ المعاملات الخمسة، ثم انسخ الرابط المولّد بترميز URL صحيح. تُحفظ معاملات الاستعلام الموجودة وتُدمج دون استبدال. يعمل بالكامل على جهازك — لا يُرفع شيء. مثال: https://example.com/page مع source=newsletter وmedium=email وcampaign=summer_sale.',
+		'وسوم UTM العشوائية تجعل الحملات غير قابلة للتتبع. أنشئ روابط بـ source وmedium وcampaign وterm وcontent. مثال: newsletter + email + sale.',
 	tool_utm_url_label: 'عنوان URL لصفحة الهبوط',
 	tool_utm_url_ph: 'https://example.com/page',
 	tool_utm_url_required: 'أدخل عنوان URL لصفحة الهبوط.',

@@ -5,8 +5,7 @@
 
 **工具 slug**：`website-headers`  
 **母版语言**：en / zh  
-| 5 描述 SEO 作用增强 | 2026-08-09 | 10 语 `tool_headers_description` 前置 HTTP 头对抓取/缓存/索引的作用（X-Robots-Tag 可阻断收录）：en「a wrong X-Robots-Tag can block indexing entirely」、zh「一条错误的 X-Robots-Tag 可能直接阻断收录」；逐语独立改写。 | 通过 |
-**状态**：`i18n-done`（十语检索向已重写；待母语抽查已清；2026-08-09 S1 增强 SEO 头解读已并入十语）
+**状态**：`i18n-done`（十语检索向已重写；待母语抽查已清；2026-08-09 S1 增强 SEO 头解读已并入十语；2026-08-11 补齐覆盖门禁文档）
 
 ---
 
@@ -19,6 +18,8 @@
 - [x] 十语非同一句式骨架；title 含该语检索说法
 - [x] 未依赖 `t()` 英文回退冒充缺语种
 - [x] 未使用「脚本批量同构灌语」作为唯一交付；待母语抽查已清或已排期
+- [x] **清单前检索覆盖已做**（覆盖表在 02；存量增强补齐）
+- [x] **检索覆盖已优化**（十语 title/desc 检索向；en,zh,es,ja 已抽查）
 
 技术专名（HTTP、CORS、CSP、Cache-Control、RFC）可保留，**不可**替代本地主 title。
 
@@ -152,9 +153,14 @@
 
 | 轮次 | 日期 | 做了什么 | 结果 |
 |---|---|---|---|
+| 0b 清单前检索覆盖 | 2026-08-11 | 存量增强补齐：slug 保留 website-headers；H1「Check HTTP Response Headers Online」含主词 HTTP Response Headers；次词 Cache-Control / X-Robots-Tag / redirect / CORS 落入 desc·FAQ·SEO 解读区；禁拆 security-headers 薄页。 | 通过；可 phase=0b |
 | 0 briefs | 2026-08-06 | 十语检索 brief 定稿；状态 `briefs-ready` | 待实现阶段轮次 1–3 |
-| 1 母版+lint | | | |
-| 2 按 brief 重写 | | | |
-| 3 抽查+禁词+lint | | | |
+| 1 母版+lint | 2026-08-06 | en/zh 母版落地；边缘拉取 + FAQ/References。 | 通过 |
+| 1b 母版检索覆盖优化 | 2026-08-11 | 复核 en title「Check HTTP Response Headers Online」主词落点；desc 前置 SEO 价值（X-Robots-Tag 可阻断收录）并含 Cache-Control / redirect 落点；非参数枚举目录腔。 | 通过；可 phase=2 |
+| 2 按 brief 重写 | 2026-08-06 | 十语按当地检索词独立重写。 | 通过 |
+| 2b 抽查语检索覆盖优化 | 2026-08-11 | 抽查 en,zh,es,ja：en「Check HTTP Response Headers Online」、zh「在线查看网站响应头」、es「Ver cabeceras HTTP…」、ja「HTTPレスポンスヘッダ…」；无参数枚举；其余语轮次2已重写。 | 通过；可 phase=4 |
+| 3 抽查+禁词+lint | 2026-08-06 | 禁词表勾选；十语键集一致。 | 通过 |
 | 清母语抽查 | 2026-08-06 | 用户确认：按 brief 独立重写后清 ar/ja/ru 待抽查；轮次2/3勾选；状态 → `i18n-done` | 十语 |
 | S1 增强：SEO 头解读 | 2026-08-09 | 存量增强（S1 第 4 项，survey §5）：新增结果区「SEO header checks」子卡——Cache-Control / X-Robots-Tag / Redirect 三块人话解读；Worker 改手动逐跳跟随重定向（≤5 跳）返回 redirects 链；10 语新增 27 键（seo_* 解读 + robots_* 指令 + FAQ q6/q7 + rules_item_5）并统一键集（62 keys，脚本校验一致）。 | 十语 |
+| 5 描述 SEO 作用增强 | 2026-08-09 | 10 语 `tool_headers_description` 前置 HTTP 头对抓取/缓存/索引的作用（X-Robots-Tag 可阻断收录）；逐语独立改写。 | 通过 |
+| 6 meta 长度收敛 | 2026-08-11 | 按 seo-html-defaults 建议将 `tool_headers_description` 压至约 120–160 字符，保留 SEO 价值首句 + 步骤/示例。 | 通过 |

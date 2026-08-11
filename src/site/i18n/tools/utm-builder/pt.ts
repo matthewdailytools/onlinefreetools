@@ -10,7 +10,7 @@ const pt: SiteLangDict = {
 		'Meça quais campanhas realmente geram seu tráfego: crie links de rastreamento limpos com utm_source, medium, campaign, term e content no navegador.',
 	tool_utm_title: 'Criador de UTM — gere links de rastreamento de campanha',
 	tool_utm_description:
-		'Tags UTM limpas são a única forma de provar quais campanhas, e-mails ou posts realmente geram seu tráfego: sem elas, seu investimento em SEO e marketing fica invisível nas análises. Monte um link de rastreamento a partir do URL da sua página de destino e utm_source, utm_medium, utm_campaign, utm_term e utm_content. Passos: cole o URL base, preencha os cinco parâmetros, copie o link gerado com a codificação de URL correta. Parâmetros de consulta existentes são mantidos e mesclados, não sobrescritos. Roda inteiramente no seu dispositivo — nada é enviado. Exemplo: https://example.com/page com source=newsletter, medium=email e campaign=summer_sale.',
+		'UTM bagunçado torna campanhas ilegíveis. Monte links com source, medium, campaign, term e content no navegador. Exemplo: newsletter + email + sale.',
 	tool_utm_url_label: 'URL da página de destino',
 	tool_utm_url_ph: 'https://example.com/page',
 	tool_utm_url_required: 'Informe o URL da página de destino.',

@@ -10,7 +10,7 @@ const pt: SiteLangDict = {
 		'Descubra as tags que seguram sua página no Google: confira title, H1, meta description, canonical, Open Graph e JSON-LD no navegador.',
 	tool_onpage_title: 'Verificador SEO On-Page — encontre e corrija problemas nas tags da página',
 	tool_onpage_description:
-		'Um title fraco, uma meta description ausente, H1 duplicado ou canonical errado podem custar posições e cliques no Google. Cole uma URL ou o HTML para auditar title, H1, meta description, canonical, Open Graph, JSON-LD, conteúdo misto e bloqueio de renderização, cada um com sugestão de correção. O modo colar roda no seu dispositivo; o modo URL busca a página uma vez sem armazená-la. Exemplo: uma página com dois H1 e uma imagem http://.',
+		'Títulos fracos, meta ausente, H1 duplicados ou canonical errado prejudicam ranking. Cole URL ou HTML para checar e corrigir. Colagem local. Exemplo: dois H1.',
 	tool_onpage_url_tab: 'Buscar URL',
 	tool_onpage_html_tab: 'Colar HTML',
 	tool_onpage_url_ph: 'https://example.com/page',

@@ -10,7 +10,7 @@ const de: SiteLangDict = {
 		'Miss, welche Kampagnen deinen Traffic wirklich bringen — erstelle saubere Tracking-Links mit utm_source, medium, campaign, term und content im Browser.',
 	tool_utm_title: 'UTM-Builder — Tracking-Links für Kampagnen erstellen',
 	tool_utm_description:
-		'Saubere UTM-Tags sind der einzige Weg, zu belegen, welche Kampagnen, E-Mails oder Posts wirklich deinen Traffic bringen – ohne sie bleiben deine SEO- und Marketing-Bemühungen in den Analysen unsichtbar. Baue aus deiner Zielseiten-URL und utm_source, utm_medium, utm_campaign, utm_term und utm_content einen Tracking-Link. Schritte: Basis-URL einfügen, die fünf Parameter ausfüllen, den generierten Link mit korrekter URL-Kodierung kopieren. Vorhandene Query-Parameter werden behalten und zusammengeführt, nicht überschrieben. Läuft komplett auf deinem Gerät – nichts wird hochgeladen. Beispiel: https://example.com/page mit source=newsletter, medium=email und campaign=summer_sale.',
+		'Unsaubere UTMs machen Kampagnen unsichtbar. Tracking-Links mit source, medium, campaign, term und content im Browser. Beispiel: newsletter + email + sale.',
 	tool_utm_url_label: 'Zielseiten-URL',
 	tool_utm_url_ph: 'https://example.com/page',
 	tool_utm_url_required: 'Bitte die Zielseiten-URL eingeben.',

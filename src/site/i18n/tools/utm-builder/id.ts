@@ -10,7 +10,7 @@ const id: SiteLangDict = {
 		'Ukur kampanye mana yang benar-benar mendatangkan lalu lintas Anda: buat link pelacakan bersih dengan utm_source, medium, campaign, term, dan content dari browser.',
 	tool_utm_title: 'Pembuat UTM — buat link pelacakan kampanye',
 	tool_utm_description:
-		'Tag UTM yang bersih adalah satu-satunya cara membuktikan kampanye, email, atau postingan mana yang benar-benar mendatangkan lalu lintas Anda—tanpa tag yang benar, upaya SEO dan pemasaran Anda tak terlihat di analitik. Bangun link pelacakan kampanye dari URL halaman tujuan dan utm_source, utm_medium, utm_campaign, utm_term, serta utm_content. Langkah: tempel URL dasar, isi lima parameter, salin link yang dihasilkan dengan encoding URL yang benar. Parameter kueri yang sudah ada dipertahankan dan digabung, tidak ditimpa. Berjalan sepenuhnya di perangkat Anda—tidak ada yang diunggah. Contoh: https://example.com/page dengan source=newsletter, medium=email, dan campaign=summer_sale.',
+		'UTM berantakan membuat kampanye tak terlacak. Buat tautan dengan source, medium, campaign, term, content di browser. Contoh: newsletter + email + sale.',
 	tool_utm_url_label: 'URL halaman tujuan',
 	tool_utm_url_ph: 'https://example.com/page',
 	tool_utm_url_required: 'Masukkan URL halaman tujuan.',

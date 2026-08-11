@@ -10,7 +10,7 @@ const fr: SiteLangDict = {
 		'Mesurez quelles campagnes génèrent vraiment votre trafic : créez des liens de suivi propres avec utm_source, medium, campaign, term et content depuis le navigateur.',
 	tool_utm_title: 'Générateur UTM — créez des liens de suivi de campagne',
 	tool_utm_description:
-		'Des balises UTM propres sont le seul moyen de prouver quelles campagnes, e-mails ou publications génèrent vraiment votre trafic : sans elles, vos efforts SEO et marketing restent invisibles dans les analyses. Construisez un lien de suivi à partir de l’URL de votre page d’atterrissage et de utm_source, utm_medium, utm_campaign, utm_term et utm_content. Étapes : collez l’URL de base, remplissez les cinq paramètres, copiez le lien généré avec le bon encodage d’URL. Les paramètres de requête existants sont conservés et fusionnés, pas écrasés. Fonctionne entièrement sur votre appareil : rien n’est envoyé. Exemple : https://example.com/page avec source=newsletter, medium=email et campaign=summer_sale.',
+		'Des UTM mal formés rendent les campagnes illisibles. Créez des liens avec source, medium, campaign, term et content. Exemple : newsletter + email + sale.',
 	tool_utm_url_label: 'URL de la page d’atterrissage',
 	tool_utm_url_ph: 'https://example.com/page',
 	tool_utm_url_required: 'Saisissez l’URL de la page d’atterrissage.',

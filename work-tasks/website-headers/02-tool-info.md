@@ -72,8 +72,8 @@
 | 集群 / 优先级 | C05 开发者 · 方向 A · **存量增强** |
 | 场景与行业 | 站长/开发者：核对响应头与安全/缓存策略 |
 | 技术（包、Tier、本地处理） | 现有 Worker/边缘拉取；Tier 0/1；**非**纯本地——FAQ 须诚实 |
-| Title (en) | 保持检索向主词；避免同义词堆砌（实现时对照 brief） |
-| Description 要点 | HTTP headers decide how Google crawls, caches and indexes your pages — a wrong X-Robots-Tag can block indexing entirely. Inspect a URL\'s HTTP response headers from the edge. Process: submit https URL, send HEAD (fall back to GET), follow redirects, show status and header map, block private hosts. Extra: plain-language checks of Cache-Control, X-Robots-Tag and redirect chains. Example: read Cache-Control, CORS, and Strict-Transport-Security while debugging CDN or redirects. |
+| Title (en) | Check HTTP Response Headers Online |
+| Description 要点 | HTTP headers decide how Google crawls and indexes pages—a wrong X-Robots-Tag can block indexing. Fetch a URL’s headers from the edge and read Cache-Control, X-Robots-Tag and redirects. Example: debug CDN Cache-Control. |
 | Schema | WebApplication + BreadcrumbList |
 | FAQ（≥3） | How/步骤确认；隐私与边缘；失败边界；是否等于浏览器 DevTools |
 | Disclaimer / References | 非 YMYL；RFC 9110、MDN HTTP Headers |
@@ -95,18 +95,32 @@
 - Worker：HEAD→GET 回退保留；`redirect: manual` 手动逐跳跟随，返回 `redirects`（每跳 status/location/from），超过 5 跳停在最后响应。
 - i18n：十语新增 27 键（`tool_headers_seo_*`、`tool_headers_robots_*`、FAQ q6/q7、rules_item_5），键集 62 全等（脚本校验）。
 
+## 清单前检索覆盖优化（存量增强补齐 · 2026-08-11）
+
+| 项 | 结论 / 落点 |
+|---|---|
+| 日期 | 2026-08-11 |
+| slug 结论 | 保留 `website-headers`（主词 HTTP headers / response headers；禁拆 security-headers / cache-control 薄 URL） |
+| 主检索词 → title/H1 | **Check HTTP Response Headers Online**（H1 含主词 HTTP Response Headers） |
+| 次要关键词 → desc / FAQ / Use cases | Cache-Control → desc/SEO 解读/FAQ；X-Robots-Tag → desc/SEO 解读/FAQ；redirect chain → desc/FAQ；CORS / HSTS → Use cases/FAQ |
+| 用户搜索习惯判断 | en 搜 “check http headers / website headers online”；zh 搜「查看网站响应头 / HTTP 头检测」 |
+| 优化摘要 | 存量页补齐覆盖表；desc 前置 SEO 价值（错误 X-Robots-Tag 可阻断收录）；次词落点 FAQ 与 SEO 解读区；title 非参数枚举 |
+| [x] 已回写上方 SEO 卡片 Title / Description 与建议 slug | |
+
+> 填完后验收：`npm run coverage:gate -- --slug=website-headers --phase=0b`。
+
 ## 页面模块清单（与 tool-creation 对齐）
 
-> 实现待定 — 下列均为计划项，**未勾选**。
+> 勾选前须完成上一节「清单前检索覆盖优化」。
 
-- [ ] H1 + 一句话摘要
-- [ ] 首屏工具交互区
-- [ ] How it works（**本缺口重点：步骤细化**）
-- [ ] Formula / Rules（可选：常见头速查列表）
-- [ ] Example（固定文案）
-- [ ] Use cases（2–3）
-- [ ] FAQ ≥3（含隐私/本地或边缘说明）
-- [ ] Related tools ≥2（保持现有）
-- [ ] References ≥1（HTTP RFC，可点击；放在 FAQ/Related **之后**）
+- [x] H1 + 一句话摘要
+- [x] 首屏工具交互区
+- [x] How it works（步骤细化）
+- [x] Formula / Rules（常见头与 SEO 解读）
+- [x] Example（固定文案）
+- [x] Use cases（2–3）
+- [x] FAQ ≥3（含隐私/边缘说明；含 Cache-Control / X-Robots-Tag）
+- [x] Related tools ≥2（保持现有）
+- [x] References ≥1（HTTP RFC，可点击；放在 FAQ/Related **之后**）
 - [ ] Disclaimer — 非 YMYL
-- [ ] `03-locale-briefs.md` 已填（实现十语前）
+- [x] `03-locale-briefs.md` 已填（实现十语前）

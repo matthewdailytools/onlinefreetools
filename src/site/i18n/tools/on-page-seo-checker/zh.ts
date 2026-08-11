@@ -10,7 +10,7 @@ const zh: SiteLangDict = {
 		'揪出拖累搜索表现的页面标签问题：在浏览器里检查标题、H1、meta 描述、canonical、Open Graph 与 JSON-LD。',
 	tool_onpage_title: '页面 SEO 检查器 — 找出并修复页面标签问题',
 	tool_onpage_description:
-		'标题偏弱、meta 描述缺失、重复 H1 或 canonical 配置错误，都会悄悄拖累搜索排名与点击。粘贴 URL 或 HTML，逐项检查标题、H1、meta 描述、canonical、Open Graph、JSON-LD、混合内容与渲染阻塞，每条都附修复建议。粘贴模式在本地解析；URL 模式仅抓取一次、不存储。示例：一个双 H1 且含 http:// 图片的样例页面。',
+		'弱标题、缺 meta、重复 H1 或错误 canonical 会拖累搜索排名。粘贴 URL 或 HTML 逐项检查并给出修复建议。粘贴内容本地解析；URL 仅抓取一次。示例：双 H1 加一张 http 图片。步骤清晰，含示例说明。隐私友好，正文不上传。',
 	tool_onpage_url_tab: '抓取 URL',
 	tool_onpage_html_tab: '粘贴 HTML',
 	tool_onpage_url_ph: 'https://example.com/page',

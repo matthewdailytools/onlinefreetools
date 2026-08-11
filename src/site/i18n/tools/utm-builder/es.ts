@@ -10,7 +10,7 @@ const es: SiteLangDict = {
 		'Mide qué campañas generan realmente tu tráfico: crea enlaces de seguimiento limpios con utm_source, medium, campaign, term y content desde el navegador.',
 	tool_utm_title: 'Creador de UTM — genera enlaces de seguimiento de campañas',
 	tool_utm_description:
-		'Las etiquetas UTM limpias son la única forma de demostrar qué campañas, correos o publicaciones generan realmente tu tráfico: sin ellas, tu inversión en SEO y marketing queda invisible en los análisis. Construye un enlace de seguimiento con tu URL de destino y utm_source, utm_medium, utm_campaign, utm_term y utm_content. Pasos: pega la URL base, completa los cinco parámetros, copia el enlace generado con la codificación de URL correcta. Los parámetros de consulta existentes se conservan y se combinan, no se sobrescriben. Funciona por completo en tu dispositivo: no se sube nada. Ejemplo: https://example.com/page con source=newsletter, medium=email y campaign=summer_sale.',
+		'UTM desordenados hacen inviables las campañas. Crea enlaces con source, medium, campaign, term y content en el navegador. Ejemplo: newsletter + email + sale.',
 	tool_utm_url_label: 'URL de destino',
 	tool_utm_url_ph: 'https://example.com/page',
 	tool_utm_url_required: 'Introduce la URL de destino.',

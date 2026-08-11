@@ -10,7 +10,7 @@ const de: SiteLangDict = {
 		'Schreibe title, description, canonical und Open-Graph-Tags, die in der Suche Klicks bringen — erstelle die kompletten Head-Tags deiner Seite direkt im Browser.',
 	tool_meta_title: 'Meta-Tag-Generator — die kompletten Head-Tags deiner Seite erstellen',
 	tool_meta_description:
-		'Dein Title und deine Meta-Description sind das, was Nutzer in Google sehen, und ein falsches canonical kann dein Ranking auf doppelte URLs aufteilen. Fülle die Felder title, description, canonical, robots und Open Graph aus, um fertig einzufügende <head>-Meta-Tags zu erzeugen. Schritte: Felder eingeben, Längenhinweise und Vorschauen lesen, den generierten HTML-Code mit korrektem Escaping kopieren. Sonderzeichen wie & und < werden automatisch escapet, damit die Tags gültig bleiben. Läuft komplett auf deinem Gerät – nichts wird hochgeladen. Beispiel: canonical- und og-Tags nebeneinander.',
+		'Title und Meta-Description sind Ihre Google-Visitenkarte; falsches Canonical splittet Signale. Felder füllen für head-Tags. Beispiel: Canonical + og.',
 	tool_meta_title_label: 'Meta-Title',
 	tool_meta_title_ph: 'Meta-Tag-Generator — die kompletten Head-Tags deiner Seite erstellen',
 	tool_meta_title_hint: 'Halte dich bei etwa 60 Zeichen. Suchmaschinen können längere Titel umschreiben.',

@@ -2120,7 +2120,7 @@ const de: SiteLangDict = {
   tool_headers_article:
     'Sehen Sie, welche Header unser Edge für eine öffentliche URL erhält — nützlich für Caching, CORS, Redirects und Security-Header. Anfrage wird proxyt; Seiteninhalt speichern wir nicht.',
   tool_headers_description:
-    'HTTP-Header entscheiden darüber, wie Google deine Seiten crawlt, cacht und indexiert – ein falsches X-Robots-Tag kann die Indexierung komplett blockieren. HTTP-Response-Header einer URL online vom Edge prüfen. Ablauf: https einfügen, HEAD senden (GET bei Bedarf), Redirects folgen, Status und Header-Map anzeigen; private Hosts blockieren. Zusätzlich: verständliche Erklärung von Cache-Control, X-Robots-Tag und Redirect-Kette. Beispiel: Cache-Control, CORS und HSTS beim CDN- oder Redirect-Debug lesen.',
+    'HTTP-Header steuern Crawl und Index—falsches X-Robots-Tag kann blockieren. Header am Edge laden; Cache-Control, X-Robots-Tag, Redirects prüfen. Beispiel: CDN.',
   tool_headers_example:
     'beispiel.de → Status 200, finale URL unverändert; Header mit content-type: text/html und je nach Origin cache-control oder Security-Header.',
   tool_headers_example_title: 'Beispiel',
@@ -2240,7 +2240,7 @@ const de: SiteLangDict = {
   tool_hreflang_copied: 'Kopiert',
   tool_hreflang_copy: 'Kopieren',
   tool_hreflang_description:
-    'Ohne hreflang kann Google deine übersetzten Seiten als Duplikate behandeln und die falsche Sprachversion in der Suche anzeigen. Verwandle eine Menge von Sprach-URLs in Hreflang-Markup in drei Formen: <link>-Tags, HTTP-Link-Header und Sitemap-<xhtml:link>. Schritte: jede Sprach-URL mit ihrem Code einfügen, eine Form wählen, das erzeugte Snippet kopieren. Jede URL erhält ihren eigenen Self-Referencing-Hreflang, und optional kann ein x-default-Fallback ergänzt werden. Läuft komplett auf deinem Gerät – nichts wird hochgeladen. Beispiel: drei Versionen einer Seite in en, es und ja.',
+    'Ohne hreflang kann Google Übersetzungen als Duplikate werten. Sprach-URLs in link-Tags, HTTP-Link oder Sitemap—lokal. Beispiel: en, es und ja.',
   tool_hreflang_error_prefix: 'Fehler: ',
   tool_hreflang_example:
     'Das Beispiel listet drei Versionen einer Seite: https://example.com/ (en), https://example.com/es/ (es) und https://example.com/ja/ (ja). Die erzeugten <link>-Tags enthalten Self-References für jede Sprache plus ein optionales x-default auf die englische Root-Seite.',
@@ -4064,7 +4064,7 @@ const de: SiteLangDict = {
   tool_meta_desc_len_warn: 'Description: {n} Zeichen — über 160, kann gekürzt werden.',
   tool_meta_desc_ph: 'Erstelle fertig einfügbare Head-Meta-Tags mit Längenhinweisen, robots-Werten und OG-Feldern.',
   tool_meta_description:
-    'Dein Title und deine Meta-Description sind das, was Nutzer in Google sehen, und ein falsches canonical kann dein Ranking auf doppelte URLs aufteilen. Fülle die Felder title, description, canonical, robots und Open Graph aus, um fertig einzufügende <head>-Meta-Tags zu erzeugen. Schritte: Felder eingeben, Längenhinweise und Vorschauen lesen, den generierten HTML-Code mit korrektem Escaping kopieren. Sonderzeichen wie & und < werden automatisch escapet, damit die Tags gültig bleiben. Läuft komplett auf deinem Gerät – nichts wird hochgeladen. Beispiel: canonical- und og-Tags nebeneinander.',
+    'Title und Meta-Description sind Ihre Google-Visitenkarte; falsches Canonical splittet Signale. Felder füllen für head-Tags. Beispiel: Canonical + og.',
   tool_meta_error_prefix: 'Fehler: ',
   tool_meta_example:
     'Das Beispiel füllt Titel, Description, Canonical, Robots und drei Open-Graph-Felder. Der generierte Snippet gibt ein <title>-Tag, die Meta-Description, den Canonical-Link, das Robots-Meta und die ausgefüllten og:-Tags aus.',
@@ -4197,7 +4197,7 @@ const de: SiteLangDict = {
   tool_og_copied: 'Kopiert',
   tool_og_copy: 'Kopieren',
   tool_og_description:
-    'Open-Graph-Tags entscheiden, wie deine Seite bei jedem Teilen aussieht: Ein fehlendes Bild oder ein fehlender Titel kostet dich Klicks und Shares. Füge deine og:/twitter:card-Tags oder eine URL ein, um die Share-Karte für Facebook, X und im WhatsApp-Stil zu sehen, fehlende Felder zu finden und das Bildformat zu korrigieren. Schritte: Tags einfügen oder URL laden, die drei Karten und die Feldtabelle lesen, dann Fehlendes ergänzen. Der Einfüge-Modus läuft auf deinem Gerät; der URL-Modus ruft die Seite einmal ab und speichert sie nicht. Beispiel: eine Seite mit einem 1200×630 großen og:image wird als große Karte geteilt.',
+    'Fehlende OG-Bilder oder Titles kosten Share-Klicks. og/twitter-Tags oder URL einfügen, Facebook-, X- und Chat-Karten prüfen. Paste lokal. Beispiel: 1200×630.',
   tool_og_dimensions: '{w}×{h} px',
   tool_og_error_prefix: 'Fehler: ',
   tool_og_example:
@@ -4384,7 +4384,7 @@ const de: SiteLangDict = {
   tool_onpage_desc_ok: 'Description mit {n} Zeichen. Der Bereich 140–160 Zeichen wird in den meisten Snippets gut angezeigt.',
   tool_onpage_desc_short: 'Die Description hat nur {n} Zeichen. Nutze den Platz, um das Angebot der Seite kurz zu beschreiben.',
   tool_onpage_description:
-    'Ein schwacher Title, eine fehlende Meta-Description, doppelte H1 oder ein falsches canonical können deine Rankings und Klicks in der Suche leise kosten. Füge eine URL oder den HTML-Quelltext ein, um title, H1, Meta-Description, canonical, Open Graph, JSON-LD, gemischte Inhalte und renderblockierende Ressourcen zu prüfen – jeweils mit Korrekturvorschlag. Der Einfüge-Modus läuft auf deinem Gerät; der URL-Modus ruft die Seite einmal ab, ohne sie zu speichern. Beispiel: eine Seite mit zwei H1 und einem http://-Bild.',
+    'Schwache Titles, fehlende Meta, doppelte H1 oder falsche Canonicals schaden dem Ranking. URL oder HTML einfügen. Paste lokal. Beispiel: zwei H1.',
   tool_onpage_error_prefix: 'Fehler: ',
   tool_onpage_example:
     'Die Beispieleingabe ist eine Seite mit 71 Zeichen langem Title, ohne Meta-Description, mit zwei H1, einem Canonical auf eine andere URL, einem og:image, einem gültigen JSON-LD-Block und einem http://-Bild. Die Prüfung meldet den Title als wahrscheinlich abgeschnitten, H1 als Warnung, Canonical als nicht selbstreferenzierend und gemischte Inhalte als Warnung – identisch zum Ergebnis beim Laden des Beispiels.',
@@ -5393,7 +5393,7 @@ const de: SiteLangDict = {
   tool_robots_copied: 'Kopiert',
   tool_robots_copy: 'Kopieren',
   tool_robots_description:
-    'Deine robots.txt sagt Google, welche Seiten gecrawlt und indexiert werden dürfen – eine falsche Regel kann deine gesamte Website aus der Suche verschwinden lassen. Erstelle eine robots.txt im Browser. Schritte: User-Agents auswählen, Allow-/Disallow-Pfade und eine Sitemap-Zeile hinzufügen, dann das Textresultat mit erklärten Syntaxregeln und aktuellen KI-Crawler-User-Agents kopieren. Läuft lokal – es wird nichts hochgeladen. Beispiel: GPTBot sperren, während Googlebot vollständig aktiv bleibt.',
+    'Falsches robots.txt kann die Site verstecken. Allow, Disallow und KI-Crawler-Regeln im Browser bauen und kopieren. Beispiel: GPTBot sperren, Googlebot erlauben.',
   tool_robots_disallow_label: 'Disallow-Pfade (einer pro Zeile)',
   tool_robots_download: 'Herunterladen',
   tool_robots_empty_agent: 'Wähle zuerst einen User-Agent oder füge einen hinzu.',
@@ -5707,7 +5707,7 @@ const de: SiteLangDict = {
   tool_schema_copied: 'Kopiert',
   tool_schema_copy: 'Kopieren',
   tool_schema_description:
-    'Strukturierte Daten helfen Google, den Inhalt deiner Seite genau zu verstehen, und können dir reichhaltigere, klickstärkere Suchergebnisse bescheren. JSON-LD direkt im Browser erzeugen. Schritte: Typ wählen (FAQ, Artikel, Breadcrumb, Organisation), Pflichtfelder ausfüllen und ein gültiges Schema.org-Markup mit einem einfügefertigen script-Tag kopieren. Die Seite unterscheidet Pflicht- und optionale Felder und validiert das JSON vor dem Kopieren. Es wird nichts hochgeladen. Beispiel: Ein FAQ mit zwei Fragen erzeugt ein mainEntity mit zwei Question-Knoten.',
+    'Strukturierte Daten helfen Google und können reichere Ergebnisse ermöglichen. Typ wählen, Felder füllen, JSON-LD kopieren. Beispiel: FAQ mit zwei Fragen.',
   tool_schema_download: 'Herunterladen',
   tool_schema_err_no_fields: 'Fülle zuerst die Pflichtfelder aus.',
   tool_schema_example:
@@ -5827,7 +5827,7 @@ const de: SiteLangDict = {
   tool_serp_desc_label: 'Meta-Beschreibung',
   tool_serp_desc_ph: 'Der Snippet-Text unter dem Ergebnis-Titel',
   tool_serp_description:
-    'Ein in den Ergebnissen abgeschnittener Titel oder eine abgeschnittene Beschreibung kann dich Klicks aus Google kosten. Füge Titel und Beschreibung ein, um zu sehen, wie sie in den Google-Ergebnissen auf Desktop und Mobil gekürzt werden. Titel, Beschreibung und optionale URL eingeben; du siehst Zeichenanzahl, geschätzte Pixelbreite und Snippet-Schnittpunkte; vergleiche zwei Titel nebeneinander. Alles läuft in deinem Browser – nichts wird hochgeladen. Beispiel: Ein 60-Zeichen-ASCII-Titel und ein 30-Zeichen-CJK-Titel können das Pixel-Limit bei unterschiedlichen Zeichenzahlen erreichen.',
+    'Abgeschnittene Titles kosten Google-Klicks. Titel und Beschreibung einfügen, Desktop-/Mobil-Schnitt prüfen. Nur Browser. Beispiel: EN vs CJK.',
   tool_serp_desktop: 'Desktop-Vorschau',
   tool_serp_err_title_empty: 'Gib einen Titel ein, um die Vorschau zu sehen.',
   tool_serp_example:
@@ -5939,7 +5939,7 @@ const de: SiteLangDict = {
   tool_sitemap_copied: 'Kopiert',
   tool_sitemap_copy: 'Kopieren',
   tool_sitemap_description:
-    'Eine Sitemap hilft Google, deine Seiten schneller zu entdecken und zu indexieren – besonders neue Seiten oder solche mit wenigen Links. Erstellen Sie sitemap.xml im Browser. Schritte: fügen Sie pro Zeile eine https-URL mit optionalem lastmod / changefreq / priority ein, sehen Sie sich das korrekt maskierte XML an und kopieren Sie es ins Site-Verzeichnis. Die Protokollregeln und Grenzen werden angezeigt. Es wird nichts hochgeladen. Beispiel: 3 URLs → urlset mit drei url-Elementen.',
+    'Eine Sitemap hilft Google, Seiten schneller zu finden und zu indexieren. https-URLs einfügen, gültiges sitemap.xml prüfen, Root kopieren. Beispiel: 3 URLs.',
   tool_sitemap_download: 'Herunterladen',
   tool_sitemap_example:
     'Beispiel-Eingabe: https://example.com/ und https://example.com/products mit lastmod 2026-08-01 sowie https://example.com/about – die Ausgabe ist ein urlset mit drei url-Elementen, das mittlere trägt lastmod.',
@@ -6705,7 +6705,7 @@ const de: SiteLangDict = {
   tool_utm_copied: 'Kopiert',
   tool_utm_copy: 'Kopieren',
   tool_utm_description:
-    'Saubere UTM-Tags sind der einzige Weg, zu belegen, welche Kampagnen, E-Mails oder Posts wirklich deinen Traffic bringen – ohne sie bleiben deine SEO- und Marketing-Bemühungen in den Analysen unsichtbar. Baue aus deiner Zielseiten-URL und utm_source, utm_medium, utm_campaign, utm_term und utm_content einen Tracking-Link. Schritte: Basis-URL einfügen, die fünf Parameter ausfüllen, den generierten Link mit korrekter URL-Kodierung kopieren. Vorhandene Query-Parameter werden behalten und zusammengeführt, nicht überschrieben. Läuft komplett auf deinem Gerät – nichts wird hochgeladen. Beispiel: https://example.com/page mit source=newsletter, medium=email und campaign=summer_sale.',
+    'Unsaubere UTMs machen Kampagnen unsichtbar. Tracking-Links mit source, medium, campaign, term und content im Browser. Beispiel: newsletter + email + sale.',
   tool_utm_encoding_note:
     'Die Werte werden mit encodeURIComponent kodiert: Leerzeichen werden zu %20 und Nicht-ASCII-Zeichen werden ebenfalls kodiert.',
   tool_utm_error_prefix: 'Fehler: ',

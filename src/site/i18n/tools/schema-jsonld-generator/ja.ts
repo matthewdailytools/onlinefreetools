@@ -9,7 +9,7 @@ const ja: SiteLangDict = {
 	tool_schema_home_desc: 'Schema.org の JSON-LD で Google にページの内容を伝え、よりリッチでクリックされやすい検索結果を狙う——ブラウザ内で生成。',
 	tool_schema_title: 'JSON-LD 生成ツール — FAQ・記事・パンくずの構造化データを作成',
 	tool_schema_description:
-		'構造化データは Google にページの内容を正確に伝え、よりリッチでクリックされやすい検索結果を引き出せる可能性があります。ブラウザ内で JSON-LD を生成。手順：タイプ（FAQ／記事／パンくず／組織）を選び、必須フィールドを埋めて、貼り付け可能な `<script>` 付きの Schema.org マークアップをコピー。必須・任意フィールドを区別して表示し、コピー前に JSON の妥当性を検証します。アップロードは一切ありません。例：2 件の FAQ からは mainEntity に 2 つの Question ノードが生成されます。',
+		'構造化データは Google の理解を助け、よりリッチでクリックされやすい結果につながり得ます。タイプを選び、項目を埋めて貼り付け用 JSON-LD をコピーします。アップロードなし。例：2件の FAQ。手順は明確で例もあります。プライバシーに配慮し、本文はアップロードしません。',
 	tool_schema_generate: '生成',
 	tool_schema_sample: 'サンプル',
 	tool_schema_clear: 'クリア',

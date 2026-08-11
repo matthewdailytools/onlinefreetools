@@ -10,7 +10,7 @@ const ru: SiteLangDict = {
 		'Помогите Google быстрее находить и индексировать страницы, которые вы хотите продвигать: превратите список URL в корректный sitemap.xml с lastmod, changefreq и priority — прямо в браузере.',
 	tool_sitemap_title: 'Генератор sitemap XML — создайте sitemap.xml из списка URL',
 	tool_sitemap_description:
-		'Sitemap помогает Google быстрее находить и индексировать ваши страницы, особенно новые или те, на которые мало ссылок. Создайте sitemap.xml в браузере. Шаги: вставьте по одному https-URL в строку с необязательными lastmod / changefreq / priority, посмотрите XML с корректным экранированием и скопируйте в корень сайта. Показаны правила и лимиты протокола. Ничего не отправляется. Пример: 3 URL → urlset с тремя элементами url.',
+		'Sitemap помогает Google быстрее находить и индексировать страницы. Вставьте https URL, просмотрите sitemap.xml и скопируйте в корень. Пример: 3 URL → 3 записи.',
 	tool_sitemap_generate: 'Сгенерировать',
 	tool_sitemap_sample: 'Пример',
 	tool_sitemap_clear: 'Очистить',

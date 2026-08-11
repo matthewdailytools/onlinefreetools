@@ -10,7 +10,7 @@ const en: SiteLangDict = {
 		'Control how search engines crawl your site with a valid robots.txt — build Allow, Disallow and AI-crawler rules in your browser.',
 	tool_robots_title: 'Robots.txt Generator — Manage Allow & Disallow Rules for AI Crawlers',
 	tool_robots_description:
-		'Your robots.txt tells Google which pages to crawl and index — a wrong rule can hide your whole site from search. Generate a robots.txt file in your browser. Steps: pick user-agents, add Allow / Disallow paths and a Sitemap line, then copy the plain-text result with syntax rules and updated AI-crawler user-agents explained. Runs locally—nothing is uploaded. Example: blocking GPTBot while keeping Googlebot fully enabled.',
+		'A bad robots.txt can hide your site from search. Build Allow, Disallow, and AI-crawler rules in-browser, then copy. Example: block GPTBot, keep Googlebot.',
 	tool_robots_generate: 'Generate',
 	tool_robots_sample: 'Load sample',
 	tool_robots_clear: 'Clear',

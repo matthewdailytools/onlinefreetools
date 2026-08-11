@@ -10,7 +10,7 @@ const en: SiteLangDict = {
 		'Tell Google which language version of a page to show whom — turn language URLs into hreflang tags, HTTP Link headers and sitemap markup from your browser.',
 	tool_hreflang_title: 'Hreflang Generator — Create hreflang tags for multilingual sites',
 	tool_hreflang_description:
-		'Without hreflang, Google may treat your translated pages as duplicates and show the wrong language version in search. Turn a set of language URLs into hreflang markup in three forms: <link> tags, HTTP Link header and sitemap <xhtml:link>. Steps: paste each language URL with its code, choose a form, copy the generated snippet. Every URL gets its own self-referencing hreflang, and an optional x-default fallback can be added. Runs entirely on your device—nothing is uploaded. Example: en, es and ja versions of one page.',
+		'Without hreflang, Google may treat translations as duplicates. Turn language URLs into link tags, HTTP Link, or sitemap markup—local. Example: en, es, ja.',
 	tool_hreflang_input_label: 'Language URL list',
 	tool_hreflang_input_ph:
 		'One pair per line: lang code + URL. Example:\nen https://example.com/\nes https://example.com/es/\nja https://example.com/ja/',

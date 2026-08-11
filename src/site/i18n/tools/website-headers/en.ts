@@ -6,7 +6,7 @@ const en: SiteLangDict = {
   tool_headers_article:
     'Use this checker to see the response headers our edge receives for a public URL — useful for caching, CORS, redirects, and security header spot-checks. The request is proxied; we do not store page bodies.',
   tool_headers_description:
-    'HTTP headers decide how Google crawls, caches and indexes your pages — a wrong X-Robots-Tag can block indexing entirely. Inspect a URL\'s HTTP response headers from the edge. Process: submit https URL, send HEAD (fall back to GET), follow redirects, show status and header map, block private hosts. Extra: plain-language checks of Cache-Control, X-Robots-Tag and redirect chains. Example: read Cache-Control, CORS, and Strict-Transport-Security while debugging CDN or redirects.',
+    'HTTP headers steer crawl and index—wrong X-Robots-Tag can block indexing. Fetch at the edge; check Cache-Control, X-Robots-Tag, redirects. Example: CDN.',
   tool_headers_example:
     'Example: fetch https://example.com → status 200, final URL unchanged, headers include content-type: text/html and often cache-control or security headers depending on the origin.',
   tool_headers_example_title: 'Example',

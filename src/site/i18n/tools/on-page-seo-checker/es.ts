@@ -10,7 +10,7 @@ const es: SiteLangDict = {
 		'Detecta las etiquetas que frenan tu página en Google: audita title, H1, meta description, canonical, Open Graph y JSON-LD desde tu navegador.',
 	tool_onpage_title: 'Auditor SEO On-Page — detecta y corrige etiquetas de la página',
 	tool_onpage_description:
-		'Un title débil, una meta description ausente, dos H1 o un canonical roto pueden costarte posiciones y clics en Google. Pega una URL o el HTML para auditar title, H1, meta description, canonical, Open Graph, JSON-LD, contenido mixto y bloqueo de renderizado, cada uno con su sugerencia de arreglo. El modo pegar corre en tu dispositivo; el modo URL obtiene la página una vez sin guardarla. Ejemplo: una página con dos H1 y una imagen http://.',
+		'Títulos débiles, meta faltante, H1 duplicados o canonicals malos bajan ranking. Pega URL o HTML para revisar y corregir. Pegado local. Ejemplo: dos H1.',
 	tool_onpage_url_tab: 'Obtener URL',
 	tool_onpage_html_tab: 'Pegar HTML',
 	tool_onpage_url_ph: 'https://example.com/page',

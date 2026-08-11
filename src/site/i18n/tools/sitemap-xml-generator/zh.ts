@@ -9,7 +9,7 @@ const zh: SiteLangDict = {
 	tool_sitemap_home_desc: '帮 Google 更快发现并收录你想排名的每个页面——把 URL 列表转成合法的 sitemap.xml，支持 lastmod、changefreq 与 priority，全程在浏览器内完成。',
 	tool_sitemap_title: 'XML Sitemap 生成器 — 从 URL 列表生成 sitemap.xml',
 	tool_sitemap_description:
-		'sitemap 能帮 Google 更快发现并收录你的页面，尤其是新页面与外部链接较少的页面。在浏览器里把 URL 列表生成 sitemap.xml。步骤：每行一个 https URL，可附 lastmod / changefreq / priority，预览带正确转义的 XML，再复制到站点根目录。页面说明协议规则与限制，不上传任何数据。示例：3 条 URL → urlset 内三个 url 条目。',
+		'sitemap 帮 Google 更快发现并收录页面。粘贴 https URL（可附 lastmod），预览合法 sitemap.xml 并复制到站点根目录。内容不上传服务器。示例：三条 URL 对应三个条目。步骤清晰，含示例说明。隐私友好，正文不上传。',
 	tool_sitemap_generate: '生成',
 	tool_sitemap_sample: '加载样例',
 	tool_sitemap_clear: '清空',

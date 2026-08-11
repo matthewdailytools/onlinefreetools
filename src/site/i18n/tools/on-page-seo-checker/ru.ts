@@ -10,7 +10,7 @@ const ru: SiteLangDict = {
 		'Найдите теги, которые мешают странице в поиске: проверьте title, H1, meta description, canonical, Open Graph и JSON-LD прямо в браузере.',
 	tool_onpage_title: 'Проверка SEO страницы — найдите и исправьте проблемы тегов',
 	tool_onpage_description:
-		'Слабый title, отсутствующая meta description, дублирующийся H1 или неправильный canonical могут тихо снижать позиции и клики в поиске. Вставьте URL или HTML-код, чтобы проверить title, H1, meta description, canonical, Open Graph, JSON-LD, смешанный контент и блокировку рендеринга — по каждому пункту с рекомендацией. Режим вставки работает на вашем устройстве; режим URL загружает страницу один раз без сохранения. Пример: страница с двумя H1 и картинкой по http://.',
+		'Слабые title, нет meta, дубли H1 или неверный canonical бьют по позициям. Вставьте URL или HTML. Вставка локально. Пример: два H1.',
 	tool_onpage_url_tab: 'Загрузить URL',
 	tool_onpage_html_tab: 'Вставить HTML',
 	tool_onpage_url_ph: 'https://example.com/page',

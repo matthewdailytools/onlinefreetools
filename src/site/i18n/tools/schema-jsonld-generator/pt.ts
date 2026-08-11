@@ -10,7 +10,7 @@ const pt: SiteLangDict = {
 		'Ajude o Google a entender sua página e conquiste resultados mais ricos e clicáveis com JSON-LD de Schema.org, gerado no seu navegador.',
 	tool_schema_title: 'Gerador de JSON-LD — crie dados estruturados para FAQ, artigo e trilha',
 	tool_schema_description:
-		'Os dados estruturados ajudam o Google a entender o conteúdo da sua página e podem render resultados mais ricos e clicáveis. Gere JSON-LD no seu navegador. Passos: escolha um tipo (FAQ, artigo, trilha, organização), preencha os campos obrigatórios e copie um marcado Schema.org válido com uma tag script pronta para colar. A página distingue campos obrigatórios e opcionais e valida o JSON antes de copiar. Nada é enviado. Exemplo: um FAQ de duas perguntas gera mainEntity com dois nós Question.',
+		'Dados estruturados ajudam o Google e podem enriquecer resultados. Escolha o tipo, preencha e copie JSON-LD pronto. Exemplo: FAQ com duas perguntas.',
 	tool_schema_generate: 'Gerar',
 	tool_schema_sample: 'Exemplo',
 	tool_schema_clear: 'Limpar',
