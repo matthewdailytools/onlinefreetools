@@ -126,16 +126,26 @@ npm run build:site && npm run lint:seo
 
 ### 4.0 Sitemap 筛选生成与操作页
 
-日常发版仍以 **`npm run build:site` → 全量 `public/sitemap.xml`** 为准（GSC / IndexNow 默认读此文件）。  
+日常发版仍以 **`npm run build:site` → 全量 `public/sitemap.xml`** 为准（GSC / IndexNow 默认读此文件）。
 本节用于：**只重建 sitemap**、或按语言 / 信息页 / 分类 / 场景 / 工具类型做**子集**生成（排查、抽样提交、临时清单）。
 
 | 路径 | 说明 |
 |---|---|
 | `scripts/site/sitemap.mjs` | 生成核心（`build:site` 与 ops 共用） |
+| `scripts/site/sitemap-lastmod.mjs` | `<lastmod>`：源文件哈希决定日期 |
+| `scripts/site/sitemap-lastmod-state.json` | lastmod 状态（**入库**；全量构建更新） |
 | `ops/seo/generate-sitemap.mjs` | CLI（`npm run sitemap`） |
 | `ops/seo/sitemap-ui.mjs` + `sitemap-ui.html` | 本地密码门 Ops 页（`npm run sitemap:ui` / `ops:ui`） |
 | `public/sitemap.xml` | **生产全量**（部署与搜索引擎提交用） |
 | `public/sitemap.filtered.xml` | 筛选默认输出；已 `.gitignore`，勿当线上源 |
+
+#### lastmod 规则
+
+- 每个 `<url>` 写入 `<lastmod>yyyy-MM-dd</lastmod>`。
+- **内容未变**（对应源文件哈希与状态一致）→ **沿用**上次日期。
+- **新建或源文件有更新** → 使用当前 git `HEAD` 提交日（无 git 时用当天 UTC）。
+- 仅全量写入 `public/sitemap.xml` 时更新状态文件；筛选构建默认不改状态。
+- 发版前请提交更新后的 `sitemap.xml` 与 `sitemap-lastmod-state.json`，避免 CI 与本地日期漂移。
 
 #### 写入规则
 
@@ -267,7 +277,7 @@ npm run indexnow -- --help
 
 1. 拉取生产 `https://onlinefreetools.org/sitemap.xml` 全部 `<loc>`
 2. 读取本地状态 `.run/indexnow-state.json`（已 gitignore）
-3. `pending = 候选 − 状态中已有 URL`（不看页面内容 / 无 sitemap `lastmod`）
+3. `pending = 候选 − 状态中已有 URL`（不看页面内容 / 暂不读 sitemap `lastmod`）
 4. `pending` 为空则结束；否则 POST（默认 `api.indexnow.org`）
 5. 仅 HTTP `200`/`202` 的批次合并回状态；失败批次下次仍会重试
 

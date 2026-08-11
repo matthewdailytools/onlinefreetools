@@ -202,6 +202,7 @@ const main = async () => {
       `entries=${result.entryCount}`,
       `urls=${result.urlCount}`,
       `langs=${result.langs.join(',')}`,
+      `lastmod=reused:${result.lastmodStats.reusedCount}/changed:${result.lastmodStats.changedCount}/new:${result.lastmodStats.newCount}`,
       opts.dryRun ? 'dry-run' : `wrote=${path.relative(process.cwd(), result.outFile || outFile)}`,
     ].join(' | ')
   );

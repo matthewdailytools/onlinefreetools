@@ -551,7 +551,9 @@ export const buildTaxonomyPages = async (lang) => {
  */
 export const buildSitemap = async () => {
   const result = await buildFullSitemap();
-  console.log(`Wrote sitemap with ${result.urlCount} URLs → ${result.outFile}`);
+  console.log(
+    `Wrote sitemap with ${result.urlCount} URLs → ${result.outFile} (lastmod reused:${result.lastmodStats.reusedCount} changed:${result.lastmodStats.changedCount} new:${result.lastmodStats.newCount})`
+  );
 };
 
 const main = async () => {

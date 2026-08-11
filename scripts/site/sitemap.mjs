@@ -14,6 +14,10 @@ import {
   SCENARIO_HUB_PATH,
   SUBJECT_HUB_PATH,
 } from './taxonomy.mjs';
+import {
+  loadSitemapLastmodsFromFile,
+  resolveLastmodsForEntries,
+} from './sitemap-lastmod.mjs';
 
 /** 仓库根目录（scripts/site → ../..）。 */
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
@@ -96,6 +100,8 @@ export const hreflangLinksXml = (pathname, langs) => {
  * @property {string[]} [toolSubjects] 工具 subject 过滤；空=不按 subject 限制工具
  * @property {string} [outFile] 输出绝对或相对仓库根的路径
  * @property {boolean} [dryRun] 只生成不写盘
+ * @property {boolean} [persistLastmodState] 是否写回 lastmod 状态；默认仅全量主 sitemap 为 true
+ * @property {string} [previousSitemapPath] 读取旧 lastmod 的 sitemap 路径；默认 outFile 或主 sitemap
  */
 
 /**
@@ -220,20 +226,26 @@ export const collectSitemapEntries = (options = {}) => {
 };
 
 /**
- * 将条目展开为 urlset XML 字符串。
+ * 将条目展开为 urlset XML 字符串（含按 URL 的 lastmod）。
  * @param {{ pathname: string, priority: string }[]} entries
  * @param {string[]} langs
+ * @param {Map<string, string>} [lastmodByLoc] loc → yyyy-MM-dd
  * @returns {{ xml: string, urlCount: number }}
  */
-export const entriesToSitemapXml = (entries, langs) => {
+export const entriesToSitemapXml = (entries, langs, lastmodByLoc = new Map()) => {
   const langList = normalizeLangs(langs);
   /** hreflang 始终指向本次选中的语言集合（子集 sitemap 也自洽）。 */
   const urls = [];
   for (const { pathname, priority } of entries) {
     for (const lang of langList) {
       const loc = toAbsUrl(withLangPath(lang, pathname));
+      /** 该 URL 的 lastmod；无则省略节点（兼容调用方未传映射）。 */
+      const lastmod = lastmodByLoc.get(loc);
+      const lastmodLine = lastmod
+        ? `\n    <lastmod>${escapeXml(lastmod)}</lastmod>`
+        : '';
       urls.push(`  <url>
-    <loc>${escapeXml(loc)}</loc>
+    <loc>${escapeXml(loc)}</loc>${lastmodLine}
     <priority>${priority}</priority>
 ${hreflangLinksXml(pathname, langList)}
   </url>`);
@@ -250,22 +262,58 @@ ${urls.join('\n')}
 };
 
 /**
+ * 解析输出路径（绝对路径）。
+ * @param {SitemapBuildOptions} options
+ * @returns {string}
+ */
+const resolveOutFilePath = (options = {}) => {
+  if (!options.outFile) return DEFAULT_SITEMAP_PATH;
+  return path.isAbsolute(options.outFile)
+    ? options.outFile
+    : path.join(rootDir, options.outFile);
+};
+
+/**
  * 构建 sitemap 并可选写入磁盘。
+ * lastmod：源文件哈希未变则沿用旧日期；新建或内容变更则用 HEAD 提交日。
  * @param {SitemapBuildOptions} [options]
- * @returns {Promise<{ xml: string, urlCount: number, entryCount: number, outFile: string|null, langs: string[] }>}
+ * @returns {Promise<{ xml: string, urlCount: number, entryCount: number, outFile: string|null, langs: string[], lastmodStats: { changedCount: number, reusedCount: number, newCount: number } }>}
  */
 export const buildSitemapXml = async (options = {}) => {
   const langs = normalizeLangs(options.langs);
   const entries = collectSitemapEntries(options);
-  const { xml, urlCount } = entriesToSitemapXml(entries, langs);
+  const target = resolveOutFilePath(options);
+  /** 是否写主 sitemap：默认仅此时持久化 lastmod 状态，避免筛选构建污染。 */
+  const isMainSitemap = path.resolve(target) === path.resolve(DEFAULT_SITEMAP_PATH);
+  const persistLastmodState =
+    options.persistLastmodState != null
+      ? Boolean(options.persistLastmodState)
+      : isMainSitemap && !options.dryRun;
+
+  /** 旧 lastmod 来源：显式路径 → 即将覆盖的目标文件 → 主 sitemap。 */
+  const previousPath =
+    options.previousSitemapPath ||
+    (await fs
+      .access(target)
+      .then(() => target)
+      .catch(() => DEFAULT_SITEMAP_PATH));
+  const previousByLoc = await loadSitemapLastmodsFromFile(previousPath);
+
+  const lastmodStats = await resolveLastmodsForEntries(
+    entries,
+    langs,
+    toAbsUrl,
+    withLangPath,
+    { previousByLoc, persistState: persistLastmodState }
+  );
+  const { xml, urlCount } = entriesToSitemapXml(
+    entries,
+    langs,
+    lastmodStats.lastmodByLoc
+  );
 
   let outFile = null;
   if (!options.dryRun) {
-    const target = options.outFile
-      ? path.isAbsolute(options.outFile)
-        ? options.outFile
-        : path.join(rootDir, options.outFile)
-      : DEFAULT_SITEMAP_PATH;
     await fs.mkdir(path.dirname(target), { recursive: true });
     await fs.writeFile(target, xml, 'utf-8');
     outFile = target;
@@ -277,12 +325,17 @@ export const buildSitemapXml = async (options = {}) => {
     entryCount: entries.length,
     outFile,
     langs,
+    lastmodStats: {
+      changedCount: lastmodStats.changedCount,
+      reusedCount: lastmodStats.reusedCount,
+      newCount: lastmodStats.newCount,
+    },
   };
 };
 
 /**
  * 全量 sitemap（与历史 buildSitemap 行为一致）。
- * @returns {Promise<{ xml: string, urlCount: number, entryCount: number, outFile: string|null, langs: string[] }>}
+ * @returns {Promise<{ xml: string, urlCount: number, entryCount: number, outFile: string|null, langs: string[], lastmodStats: { changedCount: number, reusedCount: number, newCount: number } }>}
  */
 export const buildFullSitemap = async () => buildSitemapXml({});
 
