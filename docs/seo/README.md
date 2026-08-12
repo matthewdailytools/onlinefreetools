@@ -68,4 +68,8 @@ docs/seo/
 - [`serp-batches/`](./serp-batches/) — 脱敏 SERP 批次摘要归档
 - 试点批次：[`serp-batches/2026-08-11-pilot01.md`](./serp-batches/2026-08-11-pilot01.md)（词池分析；未自动建 work-tasks）
 
+## 出图 / 缩略图（非 GSC 导出批次）
+
+- [`2026-08-12/serp-image-thumbnail-plan.md`](./2026-08-12/serp-image-thumbnail-plan.md) — 工具页 SERP 出图（已细化）：锁定决策、禁用列表 logo、Phase A/B/C、试点 slug、验收
+
 权威策略：`.cursor/rules/seo-google-policy.mdc` · `docs/2026-07-28-google-seo-strategy-implementation.md`
