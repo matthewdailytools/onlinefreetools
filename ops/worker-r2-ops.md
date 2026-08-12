@@ -141,9 +141,7 @@ npm run verify:r2:live
 | 产物 | 是否入库 | 说明 |
 |---|---|---|
 | `public/vendor/**` | **必须 commit** | 否则样式 / WASM 404 |
-| `public/_pages/**` | 可入库作构建产物；**`.assetsignore`** | **不**上传 Cloudflare Assets；权威只认 R2 |
-| `public/_pages/*/tools/` | **gitignore** | 只靠构建 + R2 |
-| `*.html.gz` | **gitignore** | 只靠 `upload:r2` |
+| `public/_pages/**` | **gitignore（整树）** | 仅本地 `build:site` 产物；权威只认 R2；`.assetsignore` 双保险 |
 
 远端 **不跑** 本地 `predeploy`，也 **不会** 自动 `upload:r2`。仅 push、未 upload → 预渲染 HTML 易 404 / 仍旧。
 

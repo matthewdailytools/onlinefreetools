@@ -353,7 +353,7 @@ npm run verify:r2:live
 仅改 Worker、HTML 未变：`npm run deploy:skip-upload` 后再 push。  
 紧急本机直发：`npm run deploy:worker-only`（或 `node scripts/deploy-site.mjs --wrangler-deploy`）。裸 `npx wrangler deploy` **不**灌 R2、**不**做版本校验。
 
-**Git 自动部署（Cloudflare 拉 GitHub）**：这是当前 **Worker + Assets** 的默认路径。远端通常**不跑** `predeploy` / **不**灌 R2——须先本地（或 CI）`upload:r2`。`public/vendor/` 必须已提交；`public/_pages/*/tools/` 与 `*.html.gz` 已 gitignore。仅 push、未 upload → **预渲染 HTML 易 404**。
+**Git 自动部署（Cloudflare 拉 GitHub）**：这是当前 **Worker + Assets** 的默认路径。远端通常**不跑** `predeploy` / **不**灌 R2——须先本地（或 CI）`upload:r2`。`public/vendor/` 必须已提交；**整个 `public/_pages/` 已 gitignore**。仅 push、未 upload → **预渲染 HTML 易 404**。
 **部署后建议**：
 
 1. 打开生产首页与 1–2 个**工具页**抽检；确认 `/vendor/bootstrap/bootstrap.min.css` 与 `/vendor/fonts/plus-jakarta-sans.css` 为 **200**

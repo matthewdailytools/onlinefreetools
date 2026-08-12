@@ -10,7 +10,7 @@
 | R2（`PAGES_BUCKET`） | **唯一**预渲染 HTML：`_pages/{lang}/**/*.html.gz` |
 | Worker | 路由、语言协商、301/验证直出、API、Cache API |
 
-`public/.assetsignore` 排除 `_pages/` 与 `*.html.gz`，确保预渲染页**不会**打进 Cloudflare Static Assets。
+`public/.assetsignore` 排除 `_pages/` 与 `*.html.gz`；且 `public/_pages/` **整树 gitignore**，确保预渲染页既不进仓库也不进 Cloudflare Static Assets。
 
 ## R2 object key
 

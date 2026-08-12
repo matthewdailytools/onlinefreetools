@@ -175,7 +175,6 @@ public/sitemap.filtered.xml
 !.env.example
 .wrangler/
 
-# Worker+R2 构建产物（明文工具页与 gzip 由 build:site 生成；生产靠 upload:r2）
+# Worker+R2 构建产物（整树由 build:site 生成；生产靠 upload:r2，不入库）
 .cache/
-public/_pages/*/tools/
-public/_pages/**/*.html.gz
+public/_pages/
