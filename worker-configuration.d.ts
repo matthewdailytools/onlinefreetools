@@ -8,7 +8,9 @@ declare namespace Cloudflare {
 	interface Env {
 		SITE_DEFAULT_LANG: "en";
 		SITE_LANGS: "zh,en";
+		PAGES_CACHE_VERSION: "3";
 		ASSETS: Fetcher;
+		PAGES_BUCKET: R2Bucket;
 	}
 }
 interface Env extends Cloudflare.Env {}

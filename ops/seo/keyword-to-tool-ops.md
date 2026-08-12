@@ -48,10 +48,10 @@
 | 池内结果 | 运维 / 产品动作 |
 |---|---|
 | `absorb` | 更新对应已有工具 title / FAQ / Use cases / IG（走既有 i18n + `tool-coverage-pass`）；不新建 URL |
-| `build` | 人工确认 slug 后，再开 `work-tasks/{slug}/` → coverage 0b → 实现 → `build:site` + `lint:seo` |
+| `build` | 人工确认 slug 后，再开 `work-tasks/{slug}/` → coverage 0b → 实现 → `build:site` + `lint:seo` → **`npm run deploy`**（upload/verify）→ **git push** → `verify:r2:live` |
 | `defer` / `drop` | 留池即可；理由写在 `notes` 或 tracker 决策日志 |
 
-发版与 IndexNow 仍按本手册 §4 / §4.1；本流程不替代 `build:site`。
+发版与 IndexNow 仍按 [`ops/README.md`](../README.md) §4 / §4.1 与 [`ops/worker-r2-ops.md`](../worker-r2-ops.md)；本流程不替代 `build:site`，也不替代 R2 灌桶、**git push（CF）** 与版本校验。
 
 ---
 

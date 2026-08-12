@@ -340,6 +340,13 @@ export const parsePortArg = (argv, fallback = defaultDevPort) => {
 export const hasNoBuildFlag = (argv) => argv.includes('--no-build');
 
 /**
+ * 是否包含 --no-seed-r2 标志（跳过本地 R2 灌桶；未灌则预渲染 HTML 依赖桶内已有对象）。
+ * @param {string[]} argv
+ * @returns {boolean}
+ */
+export const hasNoSeedR2Flag = (argv) => argv.includes('--no-seed-r2');
+
+/**
  * 是否包含 --no-ops-ui 标志（不启动本地 Ops / sitemap UI）。
  * @param {string[]} argv
  * @returns {boolean}

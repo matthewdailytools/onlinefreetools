@@ -40,6 +40,11 @@ const UI_HTML_PATH = path.join(__dirname, 'sitemap-ui.html');
 const HANDBOOK_DOCS = Object.freeze([
   { id: 'ops-readme', file: 'ops/README.md', title: '运维手册（ops/README）' },
   {
+    id: 'worker-r2',
+    file: 'ops/worker-r2-ops.md',
+    title: 'Worker + R2 运维（upload / git push / verify）',
+  },
+  {
     id: 'inbound-outreach',
     file: 'ops/seo/inbound-link-outreach.md',
     title: '白帽入站获链月度清单',

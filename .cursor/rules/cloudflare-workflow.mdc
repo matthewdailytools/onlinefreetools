@@ -18,7 +18,12 @@ alwaysApply: false
 ```bash
 npm run start:dev          # build:site + wrangler dev 后台（默认 http://127.0.0.1:8787）
 npm run start:dev -- --no-build   # 跳过构建，快速启动（新增工具后勿长期使用；须另跑 build:site 才刷新首页）
-npm run build:site         # merge:tools + 重建 public/_pages 首页/sitemap/vendor（新工具交付硬性步骤）
+npm run build:site         # merge:tools + 重建 _pages（含工具预渲染）+ gzip + sitemap/vendor
+npm run upload:r2          # 将 public/_pages 下 .html.gz 同步到 R2（含 _meta/pages-build.json）
+npm run verify:r2          # 校验 R2 ↔ Worker PAGES_CACHE_VERSION
+npm run deploy             # predeploy → upload → verify → 提示 git push（CF 拉 GitHub）
+npm run verify:r2:live     # CF 部署成功后再跑
+npm run deploy:worker-only # 紧急本机 wrangler deploy
 npm run stop:dev           # 停止后台 dev 进程
 npm run status:dev         # 端口与健康检查
 npm run restart:dev        # 停止后重新启动
@@ -28,28 +33,36 @@ npm run dev                # 前台 wrangler dev（占用当前终端）
 Windows：`.\ops\dev\start-dev.ps1` / `.\ops\dev\stop-dev.ps1`  
 日志与 PID：`.run/wrangler-dev.log`、`.run/wrangler-dev.pid`
 
+本地须先 `upload:r2`（或 `start:dev` 灌本地桶）；生产 HTML 权威在 R2，Worker/Assets 默认靠 **GitHub push → CF**。
+
 ## Workers
 
 ```bash
-wrangler dev       # 本地开发
-wrangler deploy    # 部署
+wrangler dev                 # 本地开发
+# wrangler deploy            # 生产默认不用；紧急：npm run deploy:worker-only
 ```
 
 - 入口由根目录 `wrangler.jsonc` 的 `main` 指定（当前 `src/index.ts`）。
+- R2：`PAGES_BUCKET` → 桶 `onlinefreetools-pages`（见 `docs/worker+R2架构/design.md`）。
 - 多环境可在 `wrangler.jsonc` 增加 `[env.*]` 区分 staging/prod。
 
 ## Pages / Git 自动部署
 
+- **Worker + Assets 默认路径**：commit + **git push** → Cloudflare 拉 GitHub（`npm run deploy` 不再本机 `wrangler deploy`）。
 - 静态资源在 `public/`；构建产物由 `npm run build:site` 生成。
-- **生产当前多为 Cloudflare 拉 GitHub**：远端**不会**跑本地 `predeploy`。凡页面引用的 `/vendor/*` 必须**已提交进仓库**，否则线上 404（曾导致全站 Bootstrap 样式错位）。
+- **预渲染 HTML（含工具页）权威源为 R2**；push 前须本地（或 CI）`npm run upload:r2`，否则仅依赖桶里旧对象。
+- 远端通常**不跑**本地 `predeploy`。凡页面引用的 `/vendor/*` 必须**已提交进仓库**，否则线上 404（曾导致全站 Bootstrap 样式错位）。
 - `public/vendor/`（bootstrap、fonts、jsquash、gifenc、wasm-feature-detect）**禁止再写入 `.gitignore`**；由 `vendor:site-chrome` / `vendor:image-optimizer`（含在 `build:site`）生成后 **commit**。
+- `public/_pages/*/tools/` 与 `*.html.gz` 为构建产物，**已 gitignore**（不入库）。
 - 发版前跑 `npm run lint:vendor`（`predeploy` 已包含）：校验关键路径落盘、被 git 跟踪、且未被 ignore。
-- 若 CF 控制台配置了 Build command，可用 `npm ci && npm run build:site` 作双保险，但仍以「vendor 入库」为准。
+- 若 CF 控制台配置了 Build command，可用 `npm ci && npm run build:site && npm run upload:r2` 作双保险，但仍以「vendor 入库」为准。
 
 ## 发版前
 
 ```bash
-npm run build:site && npm run lint:seo && npm run lint:vendor
+npm run deploy                 # build+lint+upload+verify，然后按提示 git push
+# 等 Cloudflare 部署成功
+npm run verify:r2:live
 ```
 
-确保 sitemap、静态页、SEO 与 vendor 门禁通过后再部署。新工具另须满足 `tool-creation.mdc` 中的 IG Checklist。
+确保 sitemap、静态页、SEO、R2 HTML 与 vendor 门禁通过后再部署。新工具另须满足 `tool-creation.mdc` 中的 IG Checklist。

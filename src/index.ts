@@ -4,19 +4,16 @@ import { TaskCreate } from "./endpoints/taskCreate";
 import { TaskDelete } from "./endpoints/taskDelete";
 import { TaskFetch } from "./endpoints/taskFetch";
 import { TaskList } from "./endpoints/taskList";
-import { isSupportedLang, type SiteLang } from "./site/i18n";
 import {
 	DEFAULT_LANGS,
 	getEnabledLangs,
-	getFallbackLang,
 	getDefaultLang,
-	parseAcceptLanguage,
 	pickLang,
 	getExplicitLangFromPath,
 	withLangPrefix,
 } from "./site/lang";
-import { registerToolPage } from "./site/toolRegistrar";
-import { TOOL_PAGE_RENDERERS } from "./site/toolPageRegistry.generated";
+import { registerToolPages } from "./site/toolRegistrar";
+import { servePrerenderedHtml, type PagesBindings } from "./site/r2Pages";
 import { handleWebsiteHeadersApi } from "./tools/websiteHeaders";
 import { handleOnPageSeoApi } from "./tools/onPageSeo";
 import { handleOpenGraphPreviewApi } from "./tools/openGraphPreview";
@@ -29,10 +26,11 @@ import {
 	handleIndexnowSubmit,
 } from "./endpoints/indexnow";
 
-type Env = {
-	ASSETS: Fetcher;
+type Env = PagesBindings & {
 	SITE_DEFAULT_LANG?: string;
 	SITE_LANGS?: string;
+	/** HTML Cache / R2 对齐版本（须与 R2 `_meta/pages-build.json` 一致） */
+	PAGES_CACHE_VERSION?: string;
 	/** Turnstile siteverify 密钥（wrangler secret，勿入库） */
 	TURNSTILE_SECRET_KEY?: string;
 };
@@ -77,6 +75,11 @@ const app = new Hono<{ Bindings: Env }>();
 
 // language helper functions moved to `src/site/lang.ts` for reuse
 
+/**
+ * 从 ASSETS 取静态资源（devlogs 等非预渲染页）；跟随内部重定向。
+ * @param c Hono context
+ * @param assetPathname Assets 路径
+ */
 const fetchAsset = async (c: any, assetPathname: string) => {
 	let assetUrl = new URL(c.req.url);
 	assetUrl.pathname = assetPathname;
@@ -96,6 +99,19 @@ const fetchAsset = async (c: any, assetPathname: string) => {
 
 	return res;
 };
+
+/**
+ * 服务 `_pages` 预渲染 HTML（Cache → R2 gzip；未命中 404）。
+ * @param c Hono context
+ * @param assetHtmlPath 内部路径，如 `/_pages/en/index.html`
+ */
+const servePagesHtml = (c: any, assetHtmlPath: string) =>
+	servePrerenderedHtml({
+		request: c.req.raw,
+		env: c.env as PagesBindings,
+		ctx: c.executionCtx,
+		assetHtmlPath,
+	});
 
 /**
  * 直出谷歌验证文件：绕过 Assets 默认把 `*.html` 307 到无扩展名的行为，保证验证 URL 本身返回 200。
@@ -143,11 +159,10 @@ app.get("/", async (c) => {
 	}
 
 	c.header("Vary", "Accept-Language, Accept");
-	const res = await fetchAsset(c, `/_pages/${defaultLang}/index.html`);
-	return res;
+	return servePagesHtml(c, `/_pages/${defaultLang}/index.html`);
 });
 
-// Localized home pages are served from assets at `/_pages/{lang}/index.html`.
+// Localized home pages are served from R2/Assets at `/_pages/{lang}/index.html`.
 // 注意：默认语也提供显式前缀 `/en/`（200），供语言切换器使用；
 // Accept-Language 协商只作用于无前缀 `/`，避免「点了 English 又被弹回中文」。
 // SEO canonical / sitemap 仍使用无前缀规范 URL。
@@ -156,8 +171,7 @@ for (const code of DEFAULT_LANGS) {
 	app.get(`/${code}/`, async (c) => {
 		const accept = c.req.header('accept') || '';
 		if (!accept.includes('text/html')) return c.notFound();
-		const res = await fetchAsset(c, `/_pages/${code}/index.html`);
-		return res;
+		return servePagesHtml(c, `/_pages/${code}/index.html`);
 	});
 	// 静态信息页（含默认语显式前缀）：about / privacy / terms / contact
 	for (const page of ['about', 'privacy', 'terms', 'contact'] as const) {
@@ -165,8 +179,7 @@ for (const code of DEFAULT_LANGS) {
 		app.get(`/${code}/${page}/`, async (c) => {
 			const accept = c.req.header('accept') || '';
 			if (!accept.includes('text/html')) return c.notFound();
-			const res = await fetchAsset(c, `/_pages/${code}/${page}.html`);
-			return res;
+			return servePagesHtml(c, `/_pages/${code}/${page}.html`);
 		});
 	}
 
@@ -176,8 +189,7 @@ for (const code of DEFAULT_LANGS) {
 		app.get(`/${code}/${hub}/`, async (c) => {
 			const accept = c.req.header('accept') || '';
 			if (!accept.includes('text/html')) return c.notFound();
-			const res = await fetchAsset(c, `/_pages/${code}/${hub}/index.html`);
-			return res;
+			return servePagesHtml(c, `/_pages/${code}/${hub}/index.html`);
 		});
 		app.get(`/${code}/${hub}/:id`, (c) => {
 			const id = c.req.param('id');
@@ -187,8 +199,7 @@ for (const code of DEFAULT_LANGS) {
 			const accept = c.req.header('accept') || '';
 			if (!accept.includes('text/html')) return c.notFound();
 			const id = c.req.param('id');
-			const res = await fetchAsset(c, `/_pages/${code}/${hub}/${id}.html`);
-			return res;
+			return servePagesHtml(c, `/_pages/${code}/${hub}/${id}.html`);
 		});
 	}
 
@@ -218,8 +229,7 @@ for (const page of ['about', 'privacy', 'terms', 'contact'] as const) {
 		if (!accept.includes('text/html')) return c.notFound();
 		const enabled = getEnabledLangs(c.env);
 		const defaultLang = getDefaultLang(c.env, enabled);
-		const res = await fetchAsset(c, `/_pages/${defaultLang}/${page}.html`);
-		return res;
+		return servePagesHtml(c, `/_pages/${defaultLang}/${page}.html`);
 	});
 	app.get(`/${page}/`, (c) => c.redirect(`/${page}`, 301));
 }
@@ -231,8 +241,7 @@ for (const hub of ['where-to-use-tools', 'tool-type'] as const) {
 		if (!accept.includes('text/html')) return c.notFound();
 		const enabled = getEnabledLangs(c.env);
 		const defaultLang = getDefaultLang(c.env, enabled);
-		const res = await fetchAsset(c, `/_pages/${defaultLang}/${hub}/index.html`);
-		return res;
+		return servePagesHtml(c, `/_pages/${defaultLang}/${hub}/index.html`);
 	});
 	app.get(`/${hub}/`, (c) => c.redirect(`/${hub}`, 301));
 	app.get(`/${hub}/:id`, async (c) => {
@@ -241,8 +250,7 @@ for (const hub of ['where-to-use-tools', 'tool-type'] as const) {
 		const enabled = getEnabledLangs(c.env);
 		const defaultLang = getDefaultLang(c.env, enabled);
 		const id = c.req.param('id');
-		const res = await fetchAsset(c, `/_pages/${defaultLang}/${hub}/${id}.html`);
-		return res;
+		return servePagesHtml(c, `/_pages/${defaultLang}/${hub}/${id}.html`);
 	});
 	app.get(`/${hub}/:id/`, (c) => {
 		const id = c.req.param('id');
@@ -351,13 +359,43 @@ app.get("/api/tools/indexnow/check-key", handleIndexnowCheckKey);
 app.post("/api/tools/indexnow/resolve-urls", handleIndexnowResolveUrls);
 app.post("/api/tools/indexnow/submit", handleIndexnowSubmit);
 
+/**
+ * 运维：返回 Worker 侧 PAGES_CACHE_VERSION，供 deploy 后与 R2 `_meta/pages-build.json` 对齐校验。
+ * 不暴露密钥；仅版本与绑定存在性。
+ */
+app.get("/api/ops/pages-build", async (c) => {
+	const pagesCacheVersion = String(c.env.PAGES_CACHE_VERSION || "").trim();
+	let r2MetaVersion: string | null = null;
+	let r2MetaHash: string | null = null;
+	try {
+		const obj = await c.env.PAGES_BUCKET.get("_meta/pages-build.json");
+		if (obj) {
+			const meta = (await obj.json()) as { pagesCacheVersion?: string; contentHash?: string };
+			r2MetaVersion = meta.pagesCacheVersion != null ? String(meta.pagesCacheVersion) : null;
+			r2MetaHash = meta.contentHash != null ? String(meta.contentHash) : null;
+		}
+	} catch {
+		r2MetaVersion = null;
+	}
+	const aligned =
+		!!pagesCacheVersion && r2MetaVersion !== null && pagesCacheVersion === r2MetaVersion;
+	return c.json(
+		{
+			pagesCacheVersion,
+			r2MetaVersion,
+			r2MetaHash,
+			aligned,
+			hasPagesBucket: !!c.env.PAGES_BUCKET,
+		},
+		aligned ? 200 : 409
+	);
+});
+
 // Legacy static tool page: redirect to dynamic route.
 app.get("/tools/markdown-to-html.html", (c) => c.redirect("/tools/markdown-to-html", 301));
 
-// Register all tool pages from generated registry (src/site/tool-catalog.d + merge:tools)
-for (const [slug, render] of Object.entries(TOOL_PAGE_RENDERERS)) {
-	registerToolPage(app as any, slug, render);
-}
+// 工具页：预渲染 HTML（R2 / Assets），不再在 Worker 内 SSR 全量 Page 模块
+registerToolPages(app as any);
 
 // Catch-all (GET): perform language negotiation before falling back to static assets.
 app.get("/*", (c) => {

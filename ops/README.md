@@ -1,10 +1,11 @@
 # 运维手册（ops）
 
 **站点**：https://onlinefreetools.org  
-**平台**：Cloudflare Workers + 静态资源（`public/`）  
-**配置**：根目录 `wrangler.jsonc`（入口 `src/index.ts`）
+**平台**：Cloudflare Workers + Static Assets（`public/`）+ **R2**（预渲染 HTML gzip）  
+**配置**：根目录 `wrangler.jsonc`（入口 `src/index.ts`；R2 binding `PAGES_BUCKET`）
 
-> 站点构建脚本仍在 `scripts/`；本目录存放**日常启停、部署、SEO 运维**相关脚本与说明。
+> 站点构建脚本仍在 `scripts/`；本目录存放**日常启停、部署、SEO 运维**相关脚本与说明。  
+> **Worker + R2**：本机 `upload:r2` + **git push（Cloudflare 拉 GitHub）** + `verify:r2:live` —— 见 [`ops/worker-r2-ops.md`](./worker-r2-ops.md)。
 
 ---
 
@@ -13,6 +14,7 @@
 ```
 ops/
 ├── README.md              # 本文（运维总览）
+├── worker-r2-ops.md       # Worker + R2：建桶、upload、git push、verify、缓存、回滚
 ├── lib/
 │   └── dev-process.mjs    # 本地 dev 进程：PID、端口、杀进程
 ├── dev/
@@ -51,7 +53,7 @@ ops/
 1. **Node.js** LTS（与仓库 `package.json` engines 一致即可）
 2. 安装依赖：`npm install`
 3. Wrangler 使用项目内 devDependency，无需全局安装（可选 `npm i -g wrangler`）
-4. Cloudflare 部署需已登录：`npx wrangler login`
+4. 远程 `upload:r2` 需已登录：`npx wrangler login`（Worker/Assets 生产默认靠 **GitHub → Cloudflare**，不必每次本机 `wrangler deploy`）
 
 ---
 
@@ -60,8 +62,9 @@ ops/
 ### 3.1 后台启停（推荐日常）
 
 ```bash
-npm run start:dev                 # build:site + 后台 wrangler + Ops UI
+npm run start:dev                 # build:site + 本地 R2 seed + 后台 wrangler + Ops UI
 npm run start:dev -- --no-build   # 跳过构建，快速启动
+npm run start:dev -- --no-seed-r2 # 跳过本地 R2 灌桶（预渲染 HTML 将 404，除非桶已有对象）
 npm run start:dev -- --no-ops-ui  # 不启动 Ops / sitemap 操作页
 npm run start:dev -- --port 8787  # 指定 wrangler 端口
 npm run stop:dev                  # 停止 wrangler 与 Ops UI
@@ -116,7 +119,12 @@ npx wrangler dev
 
 | 命令 | 用途 |
 |---|---|
-| `npm run build:site` | 生成首页/About/devlogs/sitemap 等到 `public/` |
+| `npm run build:site` | 生成首页/taxonomy/工具预渲染/gzip/sitemap/vendor |
+| `npm run upload:r2` | 灌远程 R2（含 `_meta/pages-build.json`） |
+| `npm run verify:r2` / `verify:r2:live` | R2 ↔ Worker `PAGES_CACHE_VERSION` 校验（live 含生产探针） |
+| `npm run deploy` | **生产推荐**：predeploy → upload → verify → **提示 git push**（CF 拉 GitHub） |
+| `npm run deploy:skip-upload` | HTML 未变时跳过上传，仍 verify + 提示 push |
+| `npm run deploy:worker-only` | 紧急本机 `wrangler deploy` |
 | `npm run sitemap` | 仅生成 sitemap（全量或 CLI 筛选；见 §4.0） |
 | `npm run sitemap:ui` / `npm run ops:ui` | 本地 Ops 操作页（Sitemap + 运维手册；见 §4.0） |
 | `npm run build:logs` | 仅重建 `public/devlogs/` |
@@ -130,10 +138,12 @@ npx wrangler dev
 **发版前最低要求**：
 
 ```bash
-npm run build:site && npm run lint:seo
+npm run deploy
+# 等价于：build:site + lint → upload:r2 → verify:r2 →（请 git push，CF 拉仓库）
+# CF 成功后再：npm run verify:r2:live
 ```
 
-详细清单见 [`docs/SEO_PUBLISH_CHECKLIST.md`](../docs/SEO_PUBLISH_CHECKLIST.md) 与 [`docs/2026-07-28-google-seo-strategy-implementation.md`](../docs/2026-07-28-google-seo-strategy-implementation.md) §8.2。
+Worker + R2 细节见 [`ops/worker-r2-ops.md`](./worker-r2-ops.md)。SEO 清单见 [`docs/SEO_PUBLISH_CHECKLIST.md`](../docs/SEO_PUBLISH_CHECKLIST.md) 与策略文档 §8.2。
 
 ### 4.0 Sitemap 筛选生成与操作页
 
@@ -308,7 +318,7 @@ npm run indexnow -- --help
 
 > IndexNow key 是协议要求的**公开验证文件**，不是 Cloudflare/OAuth 类私密密钥；但仍勿与其他真正的 API Token 混用或误提交到无关位置。
 
-**部署注意**：`npm run deploy` / `wrangler deploy` 必须实际更新服务 `onlinefreetools.org` 的那套 Worker。若自定义域 zone 不在当前 Wrangler 账号下，部署只会更新 `*.workers.dev`，生产 key 文件会继续 404，IndexNow 校验失败。需先在拥有该 zone 的 Cloudflare 账号中把域名绑到本 Worker（Custom Domain），或在实际服务该域的项目中同步 key 文件后再跑 `npm run indexnow`。
+**部署注意**：生产发版请用 **`npm run deploy`**（R2 upload + 版本校验）再 **git push**（CF 拉 GitHub 更新 Worker/Assets）。裸 `npx wrangler deploy` 不灌 R2、不做校验。自定义域须绑在 Cloudflare 拉仓库部署的那套 Worker 上；否则 IndexNow key 等可能仍 404。
 
 ### 4.2 关键词批次 → 新建 / 丰富工具
 
@@ -330,29 +340,28 @@ Skill：`.cursor/skills/keyword-to-tool-funnel/SKILL.md`。事项跟进：`docs/
 
 ## 5. 部署
 
+> **Worker + R2 完整步骤、建桶、缓存失效、工具 404 排查**：见 [`ops/worker-r2-ops.md`](./worker-r2-ops.md)。
+
 ```bash
 npm run deploy
+# CF 部署成功后再：
+npm run verify:r2:live
 ```
 
-等价于 `predeploy` 钩子自动执行 `build:site` + `lint:seo` + `lint:vendor` 后 `wrangler deploy`。
+流程：`predeploy`（`build:site` + lint）→ **`upload:r2`** → **`verify:r2`** → **git push**（Cloudflare 拉 GitHub 部署 Worker + Assets）→ **`verify:r2:live`**。
 
-**Git 自动部署（Cloudflare 拉 GitHub）**：远端通常**不跑**本地 `predeploy`。`public/vendor/`（Bootstrap、字体、jsquash、gifenc、wasm-feature-detect）必须已提交；勿再写入 `.gitignore`。升级相关 npm 包后执行 `npm run vendor:site-chrome` / `npm run vendor:image-optimizer`（或 `build:site`），再 `git add public/vendor && commit`。门禁：`npm run lint:vendor`。
+仅改 Worker、HTML 未变：`npm run deploy:skip-upload` 后再 push。  
+紧急本机直发：`npm run deploy:worker-only`（或 `node scripts/deploy-site.mjs --wrangler-deploy`）。裸 `npx wrangler deploy` **不**灌 R2、**不**做版本校验。
 
-**手动分步**：
-
-```bash
-npm run build:site
-npm run lint:seo
-npm run lint:vendor
-npx wrangler deploy
-```
-
+**Git 自动部署（Cloudflare 拉 GitHub）**：这是当前 **Worker + Assets** 的默认路径。远端通常**不跑** `predeploy` / **不**灌 R2——须先本地（或 CI）`upload:r2`。`public/vendor/` 必须已提交；`public/_pages/*/tools/` 与 `*.html.gz` 已 gitignore。仅 push、未 upload → **预渲染 HTML 易 404**。
 **部署后建议**：
 
-1. 打开生产首页与 1–2 个工具页抽检；确认 `/vendor/bootstrap/bootstrap.min.css` 与 `/vendor/fonts/plus-jakarta-sans.css` 为 **200**
-2. Google Search Console 确认 `https://onlinefreetools.org/sitemap.xml` 可访问（sitemap **不含** devlogs）
-3. 新工具确认各语言 URL 与 hreflang
-4. 确认 IndexNow key 可访问：`https://onlinefreetools.org/{key}.txt`；日常用 `npm run indexnow -- --since-git origin/main --require-live-key` 或 `npm run indexnow:incremental`（见 §4.1）
+1. 打开生产首页与 1–2 个**工具页**抽检；确认 `/vendor/bootstrap/bootstrap.min.css` 与 `/vendor/fonts/plus-jakarta-sans.css` 为 **200**
+2. 确认 `https://onlinefreetools.org/api/ops/pages-build` 返回 `aligned: true`
+3. Google Search Console 确认 `https://onlinefreetools.org/sitemap.xml` 可访问（sitemap **不含** devlogs）
+4. 新工具确认各语言 URL 与 hreflang
+5. 确认 IndexNow key 可访问：`https://onlinefreetools.org/{key}.txt`；日常用 `npm run indexnow -- --since-git origin/main --require-live-key` 或 `npm run indexnow:incremental`（见 §4.1）
+6. HTML 更新后若边缘仍旧：递增 `PAGES_CACHE_VERSION` 或见 R2 手册 §6
 
 ---
 
@@ -397,6 +406,26 @@ npm run build:site
 npm run restart:dev
 ```
 
+### 生产首页正常、工具页 404
+
+多为未灌 R2 或 R2 与 Worker 版本未对齐（工具 HTML 不在 Git）。见 [`ops/worker-r2-ops.md`](./worker-r2-ops.md) §9：
+
+```bash
+npm run deploy
+# 或：npm run build:site && npm run upload:r2 && npm run verify:r2 && git push
+# CF 成功后：npm run verify:r2:live
+curl -sS https://onlinefreetools.org/api/ops/pages-build
+# 期望 aligned: true
+```
+
+### `verify:r2` / live 失败
+
+- 缺 `_meta/pages-build.json` → 先 `npm run upload:r2`
+- `pagesCacheVersion` 不一致 → 确认 `wrangler.jsonc` 的 `PAGES_CACHE_VERSION` 与刚上传的清单一致，再 `npm run deploy` + **git push**
+- `contentHash` 不一致 → 本地改过 HTML 未重新 upload；再跑 `build:site` + `upload:r2`
+- live `aligned: false` → Worker（push）与 R2 清单不一致；按 `upload → verify → git push → verify:r2:live` 重发；勿在 CF 未完成时跑 live
+- live 过早失败 → 等 Cloudflare Dashboard 部署成功后再 `verify:r2:live`
+
 ### `lint:seo` 失败
 
 按终端提示补全 i18n 中 `tool_*_description`（≥120 字符、含步骤/示例）或 FAQ；规则见 [`docs/SEO_TOOL_RULES.md`](../docs/SEO_TOOL_RULES.md)。
@@ -404,8 +433,10 @@ npm run restart:dev
 ### 部署失败
 
 1. 确认 `npx wrangler whoami` 已登录正确账号
-2. 检查 `wrangler.jsonc` 中 `name`、`main`、`assets.directory`
-3. 本地 `npx wrangler deploy --dry-run` 试打包
+2. 检查 `wrangler.jsonc` 中 `name`、`main`、`assets.directory`、`r2_buckets`
+3. 确认 R2 桶已创建（见 [`worker-r2-ops.md`](./worker-r2-ops.md) §2）
+4. 本地 `npx wrangler deploy --dry-run` 试打包（Worker 包应远小于 3MB gzip）
+5. `npm run verify:r2` 单独跑，排除「仅 R2 未对齐」导致的 deploy 编排失败
 
 ### PID 文件残留但进程已死
 
@@ -421,6 +452,8 @@ npm run stop:dev
 
 | 文档 | 内容 |
 |---|---|
+| [`ops/worker-r2-ops.md`](./worker-r2-ops.md) | **Worker + R2** 建桶、upload、发版、缓存、回滚 |
+| [`docs/worker+R2架构/design.md`](../docs/worker+R2架构/design.md) | R2 键规范与请求路径设计 |
 | [`docs/SEO_PUBLISH_CHECKLIST.md`](../docs/SEO_PUBLISH_CHECKLIST.md) | 发版与 GSC |
 | [`docs/2026-07-28-google-seo-strategy-implementation.md`](../docs/2026-07-28-google-seo-strategy-implementation.md) | SEO 策略与 Checklist |
 | [`ops/seo/keyword-to-tool-ops.md`](./seo/keyword-to-tool-ops.md) | 关键词批次 → 新建/丰富工具（操作） |

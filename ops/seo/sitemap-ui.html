@@ -638,6 +638,52 @@
       }
 
       /**
+       * 用服务端返回的 docs 白名单同步下拉（每次加载都刷新，避免旧进程/旧列表残留）。
+       * @param {HTMLSelectElement} select
+       * @param {Array<{ id: string, title: string }>} docs
+       * @param {string} selectedId
+       */
+      function syncHandbookSelect(select, docs, selectedId) {
+        if (!Array.isArray(docs) || !docs.length) return;
+        const prev = selectedId || select.value || 'ops-readme';
+        select.innerHTML = '';
+        docs.forEach((d) => {
+          const opt = document.createElement('option');
+          opt.value = d.id;
+          opt.textContent = d.title;
+          select.appendChild(opt);
+        });
+        const ids = docs.map((d) => d.id);
+        select.value = ids.includes(prev) ? prev : docs[0].id;
+      }
+
+      /**
+       * 手册内相对 .md 链接改为切换本页文档（无法直接打开仓库路径）。
+       * @param {HTMLElement} root
+       * @param {Array<{ id: string, file: string }>} docs
+       */
+      function bindHandbookMdLinks(root, docs) {
+        if (!root || !Array.isArray(docs)) return;
+        root.querySelectorAll('a[href]').forEach((a) => {
+          const href = a.getAttribute('href') || '';
+          if (!/\.md($|#)/i.test(href)) return;
+          const base = href.split('#')[0].replace(/^\.\//, '').replace(/^\.\.\//, '');
+          const fileName = base.split('/').pop();
+          const hit = docs.find(
+            (d) => d.file === base || d.file.endsWith('/' + fileName) || d.file.endsWith(base)
+          );
+          if (!hit) return;
+          a.setAttribute('href', '#handbook/' + hit.id);
+          a.addEventListener('click', (ev) => {
+            ev.preventDefault();
+            const select = document.getElementById('handbookSelect');
+            select.value = hit.id;
+            loadHandbook(hit.id);
+          });
+        });
+      }
+
+      /**
        * 填充手册下拉并渲染正文。
        * @param {string} id
        */
@@ -648,17 +694,11 @@
         body.textContent = '加载中…';
         try {
           const doc = await api('/api/handbook?id=' + encodeURIComponent(id || 'ops-readme'));
-          if (select.options.length === 0 && Array.isArray(doc.docs)) {
-            doc.docs.forEach((d) => {
-              const opt = document.createElement('option');
-              opt.value = d.id;
-              opt.textContent = d.title;
-              select.appendChild(opt);
-            });
-          }
+          syncHandbookSelect(select, doc.docs, doc.id);
           select.value = doc.id;
           metaEl.textContent = doc.file + ' · ' + doc.title;
           body.innerHTML = doc.html;
+          bindHandbookMdLinks(body, doc.docs);
         } catch (err) {
           metaEl.textContent = '';
           body.textContent = err.message || String(err);

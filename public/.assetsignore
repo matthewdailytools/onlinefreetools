@@ -1,2 +1,4 @@
-.DS_Store
-**/.DS_Store
+# 预渲染 HTML 只存 R2（gzip），禁止作为 Workers Static Assets 上传。
+# 见 docs/worker+R2架构/design.md、ops/worker-r2-ops.md
+_pages/
+**/*.html.gz

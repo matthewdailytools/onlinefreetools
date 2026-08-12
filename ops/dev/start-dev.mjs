@@ -7,6 +7,7 @@
  * 用法：
  *   node ops/dev/start-dev.mjs
  *   node ops/dev/start-dev.mjs --no-build
+ *   node ops/dev/start-dev.mjs --no-seed-r2
  *   node ops/dev/start-dev.mjs --no-ops-ui
  *   node ops/dev/start-dev.mjs --port 8787
  *
@@ -28,6 +29,7 @@ import {
   ensureRunDir,
   findPidByPort,
   hasNoBuildFlag,
+  hasNoSeedR2Flag,
   hasNoOpsUiFlag,
   isDevServerHealthy,
   isOpsUiHealthy,
@@ -50,6 +52,8 @@ const argv = process.argv.slice(2);
 const port = parsePortArg(argv, defaultDevPort);
 /** 是否跳过完整 build:site */
 const skipBuild = hasNoBuildFlag(argv);
+/** 是否跳过本地 R2 灌桶（跳过则预渲染 HTML 依赖桶内已有对象，否则 404） */
+const skipSeedR2 = hasNoSeedR2Flag(argv);
 /** 是否跳过本地 Ops / sitemap UI */
 const skipOpsUi = hasNoOpsUiFlag(argv);
 /** Ops UI 端口（与 SITEMAP_UI_PORT / sitemap-ui.mjs 一致） */
@@ -82,6 +86,28 @@ const runBuildSite = () => {
     stdio: 'inherit',
     shell: true,
   });
+};
+
+/**
+ * 将 gzip HTML 灌入本地 R2 模拟桶（与 wrangler dev persist 对齐）。
+ * `_pages` 已 `.assetsignore`，未灌桶时预渲染 HTML 会 404。
+ * @returns {void}
+ */
+const runSeedLocalR2 = () => {
+  if (skipSeedR2) {
+    console.log('Skipping local R2 seed (--no-seed-r2); prerendered HTML will 404 unless the local bucket already has objects.');
+    return;
+  }
+  console.log('Seeding local R2 (npm run upload:r2:local) ...');
+  try {
+    execSync('npm run upload:r2:local', {
+      cwd: projectRoot,
+      stdio: 'inherit',
+      shell: true,
+    });
+  } catch (err) {
+    console.warn('[start-dev] local R2 seed failed (HTML pages will 404 until upload:r2:local succeeds):', err?.message || err);
+  }
 };
 
 /**
@@ -186,13 +212,15 @@ const main = async () => {
   if (!alreadyRunning) {
     if (!skipBuild) {
       runBuildSite();
+      runSeedLocalR2();
     } else {
-      /** Registry/i18n merge must still run so wrangler sees toolPageRegistry.generated.ts */
+      /** Registry/i18n merge must still run so generated slugs stay fresh */
       console.log('Skipping full build:site (--no-build); running merge:tools + site chrome vendor.');
       execSync('npm run merge:tools', { cwd: projectRoot, stdio: 'inherit' });
       /** 确保本地 Bootstrap/字体存在，避免 --no-build 时仍打外网 CDN */
       execSync('node scripts/copy-site-chrome-vendor.mjs', { cwd: projectRoot, stdio: 'inherit' });
       execSync('node scripts/copy-image-optimizer-vendor.mjs', { cwd: projectRoot, stdio: 'inherit' });
+      console.log('Note: --no-build skips tool HTML prerender; run build:site if /tools/* 404.');
     }
 
     /** build 后再清端口，避免 stale listener 占用导致 wrangler bind 失败 */

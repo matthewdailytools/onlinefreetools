@@ -21,14 +21,14 @@ alwaysApply: false
 | 站点共用文案 | `src/site/i18n/core/{lang}.ts`（非单工具改动勿动） |
 | 页面实现 | `src/pages/{camel}Page.ts` |
 | 立项 brief | `work-tasks/{slug}/` |
-| **生成勿手改** | `src/site/tool-catalog.json`、`src/site/i18n/{lang}.ts`、`src/site/toolPageRegistry.generated.ts`、`scripts/site/i18n-tools.generated.mjs` |
+| **生成勿手改** | `src/site/tool-catalog.json`、`src/site/i18n/{lang}.ts`、`src/site/toolPageRegistry.generated.ts`、`src/site/toolSlugs.generated.ts`、`scripts/site/i18n-tools.generated.mjs` |
 
 流程：
 
 1. 只改本工具分片 + 本工具 `*Page.ts` + icon + brief（及 README 清单条目）。
 2. `npm run merge:tools`（合并 catalog / i18n / registry；**不够**刷新首页）。
 3. **`npm run build:site`（硬性）**：在 `merge:tools` 之上重建 `public/_pages/*/index.html`、sitemap、vendor chrome。缺这一步则 `/`、`/zh/` 等静态首页**不会出现**新工具卡片（工具页路由可能已可用，首页仍是旧 HTML）。`start:dev` 默认会跑 `build:site`；若用了 `--no-build` 或只手动 `merge:tools`，交付前必须再跑一遍 `build:site`。
-4. **不要**为新工具改 `src/index.ts`（由 `TOOL_PAGE_RENDERERS` 循环注册）。
+4. **不要**为新工具改 `src/index.ts`（`registerToolPages` + `TOOL_SLUG_SET` 自动覆盖；构建期 `prerender-tool-pages` 写出 HTML）。
 5. 勿改其他工具的 `tool-catalog.d/`、`i18n/tools/`、`*Page.ts`。
 6. 若必须改 related 反向链接或共用 chrome：显式 `CROSS_TOOL_UPDATE=1`，并在 PR 说明。
 7. 隔离检查：`TOOL_SLUG={slug} npm run lint:tool-isolation`。
@@ -59,7 +59,7 @@ TOOL_SLUG={slug} npm run lint:tool-isolation
 
 创建含 ≥2 个新工具的 Plan 时，**每个 slug** 须展开为：`brief-0b` → `i18n-master` → `cover-step2` → `i18n-locales` → `cover-step4` → `ship`（含 `build:site`）。禁止单一 todo「实现全部工具」。实现串行过 `coverage:gate`；可并行写各 slug 的 0b brief。
 
-`src/index.ts` **无需**再 `registerToolPage`；首页卡片由 `build:site` 读合并后的 catalog 生成进 `public/_pages/*/index.html`，一般不必手改 `content-home.mjs`。
+`src/index.ts` **无需**再按工具注册路由；`merge:tools` 更新 `toolSlugs.generated.ts`，`build:site` 预渲染 `_pages/{lang}/tools/{slug}.html`。首页卡片由 `build:site` 读合并后的 catalog 生成进 `public/_pages/*/index.html`，一般不必手改 `content-home.mjs`。
 
 多语言：**按 locale brief 重写**（见 `tool-i18n-localization.mdc`），禁止批量 Translate 直出。  
 文案顺序：① **清单前**优化 slug/title/关键词/desc → ② 写母版 title/description → ③ **生成后再**跑覆盖优化（步 2）→ ④ 逐语重写 → ⑤ 抽查语再优化（步 4）；勿首稿过 lint 即标完成。

@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "deploy": "wrangler deploy",
     "dev": "wrangler dev",
     "start": "wrangler dev",
     "start:dev": "node ops/dev/start-dev.mjs",
@@ -15,6 +14,15 @@
     "split:tools": "node scripts/tool-modules/split-once.mjs",
     "merge:tools": "node scripts/tool-modules/merge-all.mjs",
     "build:site": "npm run merge:tools && node scripts/build-site.mjs",
+    "prerender:tools": "node scripts/prerender-tool-pages.mjs",
+    "gzip:pages": "node scripts/gzip-pages.mjs",
+    "upload:r2": "node scripts/upload-r2-pages.mjs",
+    "upload:r2:local": "node scripts/upload-r2-pages.mjs --local",
+    "verify:r2": "node scripts/verify-r2-worker-sync.mjs",
+    "verify:r2:live": "node scripts/verify-r2-worker-sync.mjs --live",
+    "deploy": "node scripts/deploy-site.mjs",
+    "deploy:worker-only": "wrangler deploy",
+    "deploy:skip-upload": "node scripts/deploy-site.mjs --skip-upload",
     "vendor:image-optimizer": "node scripts/copy-image-optimizer-vendor.mjs",
     "vendor:site-chrome": "node scripts/copy-site-chrome-vendor.mjs",
     "lint:seo": "node scripts/validate-tool-seo.mjs",
@@ -51,6 +59,7 @@
   "devDependencies": {
     "@types/node": "22.13.0",
     "@types/service-worker-mock": "^2.0.4",
+    "esbuild": "^0.25.12",
     "marked": "^11.1.1",
     "wrangler": "^4.58.0"
   }

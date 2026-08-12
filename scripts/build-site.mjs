@@ -158,14 +158,9 @@ export const buildHome = async (lang) => {
 };
 
 const removeStaticToolsDir = async (lang) => {
-  try {
-    const toolsDir = path.join(publicDir, '_pages', lang, 'tools');
-    // remove if exists
-    await fs.rm(toolsDir, { recursive: true, force: true });
-    console.log(`Removed static tools dir for ${lang} if it existed: ${toolsDir}`);
-  } catch (err) {
-    // non-fatal
-  }
+  // 历史：曾删除静态 tools 目录改走 Worker SSR。
+  // 现架构：工具页预渲染进 `_pages/{lang}/tools/`，此函数保留为空操作以免外部引用报错。
+  void lang;
 };
 
 /**
@@ -559,8 +554,6 @@ export const buildSitemap = async () => {
 const main = async () => {
   const langs = siteConfig.enabledLangs || [siteConfig.defaultLang];
   for (const lang of langs) {
-    // Ensure any stale static tool pages are removed before building
-    await removeStaticToolsDir(lang);
     await buildHome(lang);
     await buildAbout(lang);
     await buildPrivacy(lang);
@@ -570,6 +563,29 @@ const main = async () => {
   }
   await buildDevLogs();
   await buildSitemap();
+
+  // 工具页预渲染 → public/_pages/{lang}/tools/{slug}.html（Worker 不再 SSR）
+  const { spawnSync } = await import('node:child_process');
+  console.log('[build-site] prerender tool pages ...');
+  const prerender = spawnSync(process.execPath, [path.join(root, 'scripts', 'prerender-tool-pages.mjs')], {
+    cwd: root,
+    stdio: 'inherit',
+    env: process.env,
+  });
+  if (prerender.status !== 0) {
+    throw new Error('prerender-tool-pages failed');
+  }
+
+  console.log('[build-site] gzip _pages HTML ...');
+  const gzip = spawnSync(process.execPath, [path.join(root, 'scripts', 'gzip-pages.mjs')], {
+    cwd: root,
+    stdio: 'inherit',
+    env: process.env,
+  });
+  if (gzip.status !== 0) {
+    throw new Error('gzip-pages failed');
+  }
+
   console.log(`Built site for langs: ${langs.join(', ')}`);
 };
 
