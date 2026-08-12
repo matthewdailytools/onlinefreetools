@@ -1,7 +1,8 @@
 # Worker + R2 运维手册
 
-多语言 HTML（含工具页）以 **gzip 单版本** 存 R2；Worker 做 **Cache API → R2**（未命中 **404**）。  
-静态资源（css/js/vendor/sitemap/robots/icons）走 Workers Static Assets（`public/`，经 `.assetsignore` **排除 `_pages/`**）。
+工具 / taxonomy / about 等 HTML 以 **gzip** 存 R2；Worker：**Cache → R2**（未命中 **404**）。  
+**各语言首页**由 `build:site` 写入 **常规路径** `public/index.html` 与 `public/{lang}/index.html`（进 Static Assets）；Worker：**Cache → Assets → R2 `_pages/...` 兜底**。`wrangler` 对 `/` 与各 `/{lang}/` 设 `run_worker_first`，保留 Accept-Language。须 **commit + git push** 更新首页。  
+其它静态资源（css/js/vendor/sitemap/robots/icons）同走 Assets。
 
 架构设计（键规范、URL 映射）：[`docs/worker+R2架构/design.md`](../docs/worker+R2架构/design.md)  
 思路原文：[`docs/worker+R2架构/初始思路.md`](../docs/worker+R2架构/初始思路.md)  
@@ -24,9 +25,9 @@
 | 组件 | 配置 / 名称 | 作用 |
 |---|---|---|
 | Worker | `wrangler.jsonc` → `name: onlinefreetools`，`main: src/index.ts` | 路由、语言协商、API、Cache→R2 HTML |
-| R2 | binding `PAGES_BUCKET` → 桶 `onlinefreetools-pages` | **唯一**预渲染 HTML（`.html.gz`） |
+| R2 | binding `PAGES_BUCKET` → 桶 `onlinefreetools-pages` | 预渲染 HTML（`.html.gz`；首页亦上传作兜底） |
 | R2 预览 | `onlinefreetools-pages-preview` | 本地 / preview 用（可选单独创建） |
-| Assets | `assets.directory: ./public/` + `public/.assetsignore` | vendor、sitemap 等；**不含** `_pages` HTML |
+| Assets | `assets.directory: ./public/` + `public/.assetsignore` | vendor、sitemap、**首页** `index.html` / `{lang}/index.html` |
 | 缓存版本 | var `PAGES_CACHE_VERSION` | 改值可使 HTML Cache API key 失效（须随 Worker 一起经 **git push** 上线） |
 
 R2 object key 示例：`_pages/en/tools/text-diff.html.gz`（**不是**公开 URL）。
@@ -47,7 +48,7 @@ npx wrangler r2 bucket create onlinefreetools-pages-preview   # 可选
 4. 确认 **GitHub ↔ Cloudflare** 已绑定本仓库，且生产自定义域绑在**同一 Worker**（`onlinefreetools.org`）。仅本机 `wrangler deploy` 而域在别的账号/项目上时，生产不会更新。
 
 **未建桶就部署 Worker**：常因 R2 binding 失败而部署失败。  
-**桶在但从未 `upload:r2`**：**全部**预渲染 HTML（首页 / taxonomy / 工具）**404**——`_pages` 不进 Assets。
+**桶在但从未 `upload:r2`**：taxonomy / 工具等 **404**；首页若已随 git 进 Assets 仍可访问（Worker 优先读 Assets）。
 
 ---
 

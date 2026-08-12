@@ -13,7 +13,13 @@ import {
 	withLangPrefix,
 } from "./site/lang";
 import { registerToolPages } from "./site/toolRegistrar";
-import { servePrerenderedHtml, type PagesBindings } from "./site/r2Pages";
+import {
+	langHomeAssetPath,
+	langHomeR2Path,
+	serveHomeHtml,
+	servePrerenderedHtml,
+	type PagesBindings,
+} from "./site/r2Pages";
 import { handleWebsiteHeadersApi } from "./tools/websiteHeaders";
 import { handleOnPageSeoApi } from "./tools/onPageSeo";
 import { handleOpenGraphPreviewApi } from "./tools/openGraphPreview";
@@ -103,7 +109,7 @@ const fetchAsset = async (c: any, assetPathname: string) => {
 /**
  * 服务 `_pages` 预渲染 HTML（Cache → R2 gzip；未命中 404）。
  * @param c Hono context
- * @param assetHtmlPath 内部路径，如 `/_pages/en/index.html`
+ * @param assetHtmlPath 内部路径，如 `/_pages/en/tools/text-diff.html`
  */
 const servePagesHtml = (c: any, assetHtmlPath: string) =>
 	servePrerenderedHtml({
@@ -112,6 +118,24 @@ const servePagesHtml = (c: any, assetHtmlPath: string) =>
 		ctx: c.executionCtx,
 		assetHtmlPath,
 	});
+
+/**
+ * 服务各语言首页：Cache → Static Assets（常规 URL）→（miss）R2。
+ * @param c Hono context
+ * @param lang 语言码
+ * @param opts.explicitPrefix 默认语是否用 /{lang}/index.html（如 /en/）
+ */
+const serveLangHomeHtml = (c: any, lang: string, opts?: { explicitPrefix?: boolean }) => {
+	const enabled = getEnabledLangs(c.env);
+	const defaultLang = getDefaultLang(c.env, enabled);
+	return serveHomeHtml({
+		request: c.req.raw,
+		env: c.env as PagesBindings,
+		ctx: c.executionCtx,
+		assetHtmlPath: langHomeAssetPath(lang, defaultLang, opts),
+		r2HtmlPath: langHomeR2Path(lang),
+	});
+};
 
 /**
  * 直出谷歌验证文件：绕过 Assets 默认把 `*.html` 307 到无扩展名的行为，保证验证 URL 本身返回 200。
@@ -139,7 +163,7 @@ app.get(INDEXNOW_KEY_PATH, () => {
 	});
 });
 
-// Home pages are served from assets at `/_pages/{lang}/index.html`.
+// 首页：Assets 常规路径 `public/index.html`；`run_worker_first` 含 `/` 以保留语言协商
 app.get("/", async (c) => {
 	const accept = c.req.header("accept") || "";
 	if (!accept.includes("text/html")) return c.notFound();
@@ -159,19 +183,18 @@ app.get("/", async (c) => {
 	}
 
 	c.header("Vary", "Accept-Language, Accept");
-	return servePagesHtml(c, `/_pages/${defaultLang}/index.html`);
+	return serveLangHomeHtml(c, defaultLang);
 });
 
-// Localized home pages are served from R2/Assets at `/_pages/{lang}/index.html`.
-// 注意：默认语也提供显式前缀 `/en/`（200），供语言切换器使用；
-// Accept-Language 协商只作用于无前缀 `/`，避免「点了 English 又被弹回中文」。
-// SEO canonical / sitemap 仍使用无前缀规范 URL。
+// 各语首页；默认语显式前缀 `/en/` 亦 200（语言切换器）。SEO canonical 仍用无前缀。
 for (const code of DEFAULT_LANGS) {
 	app.get(`/${code}`, (c) => c.redirect(`/${code}/`, 308));
 	app.get(`/${code}/`, async (c) => {
 		const accept = c.req.header('accept') || '';
 		if (!accept.includes('text/html')) return c.notFound();
-		return servePagesHtml(c, `/_pages/${code}/index.html`);
+		const enabled = getEnabledLangs(c.env);
+		const defaultLang = getDefaultLang(c.env, enabled);
+		return serveLangHomeHtml(c, code, { explicitPrefix: code === defaultLang });
 	});
 	// 静态信息页（含默认语显式前缀）：about / privacy / terms / contact
 	for (const page of ['about', 'privacy', 'terms', 'contact'] as const) {

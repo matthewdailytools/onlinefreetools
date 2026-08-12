@@ -1,4 +1,5 @@
-# 预渲染 HTML 只存 R2（gzip），禁止作为 Workers Static Assets 上传。
+# 预渲染 HTML（_pages）不进 Workers Static Assets，走 R2 gzip。
+# 各语言首页写在常规路径：`index.html`、`{lang}/index.html`（随 build 进 Assets）。
 # 见 docs/worker+R2架构/design.md、ops/worker-r2-ops.md
 _pages/
 **/*.html.gz

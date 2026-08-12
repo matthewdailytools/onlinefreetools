@@ -175,6 +175,7 @@ public/sitemap.filtered.xml
 !.env.example
 .wrangler/
 
-# Worker+R2 构建产物（整树由 build:site 生成；生产靠 upload:r2，不入库）
+# Worker+R2：预渲染 `_pages` 不入库（生产靠 upload:r2）
+# 首页在常规路径 `public/index.html` 与 `public/{lang}/index.html`（入库进 Assets）
 .cache/
 public/_pages/

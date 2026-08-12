@@ -164,8 +164,6 @@ export const renderLayout = (opts: {
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="preload" href="${BOOTSTRAP_CSS}" as="style" />
-  <link rel="preload" href="${FONT_CSS}" as="style" />
   <link href="${BOOTSTRAP_CSS}" rel="stylesheet" />
   <link href="${FONT_CSS}" rel="stylesheet" />
   <link href="/styles/site.css" rel="stylesheet" />

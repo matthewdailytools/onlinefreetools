@@ -2,12 +2,12 @@
   "version": 1,
   "entries": {
     "https://onlinefreetools.org/": {
-      "hash": "8e5b22d6ac97482ff632f4993e4de38209d8a9f95647f192a67dfbfe48f5e13c",
-      "lastmod": "2026-08-09"
+      "hash": "61319d59aff77faf6a786003775d3d45e62459d566209a900f5f904a3d79987e",
+      "lastmod": "2026-08-13"
     },
     "https://onlinefreetools.org/ar/": {
-      "hash": "6c2a6fdd757a12e324ca3d02ac79f1110f449e5ceb9c16367a4f435421dd528f",
-      "lastmod": "2026-08-09"
+      "hash": "bc69f042d5101c78c729c206637717d20a418952ff02cd379d302bbfb4bcc031",
+      "lastmod": "2026-08-13"
     },
     "https://onlinefreetools.org/ar/tool-type": {
       "hash": "fc896f191de6aaf425e7532a51487ede7ed2e3b1be7bdfc28dfbf7f3aa06e265",
@@ -594,8 +594,8 @@
       "lastmod": "2026-08-09"
     },
     "https://onlinefreetools.org/de/": {
-      "hash": "d314e6cbf5b090d489fd4c1b51cd7d54c78bc67ddeb6cd328368cc5880c24192",
-      "lastmod": "2026-08-09"
+      "hash": "613104ce179ab8f96155014f3838fad84937711839cb2dd98efd33704bbe5862",
+      "lastmod": "2026-08-13"
     },
     "https://onlinefreetools.org/de/tool-type": {
       "hash": "a609bb82ae489df01738abd34d721aff45001878e99617921bd55ad53a59e4ca",
@@ -1182,8 +1182,8 @@
       "lastmod": "2026-08-09"
     },
     "https://onlinefreetools.org/es/": {
-      "hash": "a97bfcc98ab1ed99490df51d8abf5baf600422067b18d2d4e5e0a694861e4ebe",
-      "lastmod": "2026-08-09"
+      "hash": "315258c918632d4366764ff98807bbbb666101a1f940249ade0c75b3ff686c6b",
+      "lastmod": "2026-08-13"
     },
     "https://onlinefreetools.org/es/tool-type": {
       "hash": "7b23980777b2f3d6ab97f1ea0d417983bb5040f91d697aa6b98a50bbb197eb57",
@@ -1770,8 +1770,8 @@
       "lastmod": "2026-08-09"
     },
     "https://onlinefreetools.org/fr/": {
-      "hash": "42f257097e2c4968f4f71bb32a84a817c1ed23b536fabafc204bfdb7dabe0664",
-      "lastmod": "2026-08-09"
+      "hash": "53749630d7d70349dcd54a9946dbc7f5701eab8fb82fb80b4b41547fbab65e9d",
+      "lastmod": "2026-08-13"
     },
     "https://onlinefreetools.org/fr/tool-type": {
       "hash": "0e854448917316d14668ce806de8392e0d13aa3473c9515044c18e3204f30c2d",
@@ -2358,8 +2358,8 @@
       "lastmod": "2026-08-09"
     },
     "https://onlinefreetools.org/id/": {
-      "hash": "c6ca5a19658a35e9927f9fba4b150d7491e2d04b38bb3cc3dabc9a1755710a86",
-      "lastmod": "2026-08-09"
+      "hash": "5d421796bf684c0c1cfa2dbdc7e75043cb148d1c6d8a219fac27764cf720a003",
+      "lastmod": "2026-08-13"
     },
     "https://onlinefreetools.org/id/tool-type": {
       "hash": "b16fae34bb274a379ceef2938e77a69400e9ebabfffa65e20b14fe49e0047de3",
@@ -2946,8 +2946,8 @@
       "lastmod": "2026-08-09"
     },
     "https://onlinefreetools.org/ja/": {
-      "hash": "bcaeec46928f30a383256c678a4862f25a9d69454147f32398cf2d6be65d477a",
-      "lastmod": "2026-08-09"
+      "hash": "592bb8a8d914c82e4f2c3f836cc808b93ae1c5da29fa13402081e4950e136f73",
+      "lastmod": "2026-08-13"
     },
     "https://onlinefreetools.org/ja/tool-type": {
       "hash": "392dee7a66b9b7437edb88a84703c53aa9f90fdbbf1c69299026ab3e32bb6eaf",
@@ -3534,8 +3534,8 @@
       "lastmod": "2026-08-09"
     },
     "https://onlinefreetools.org/pt/": {
-      "hash": "5f4e2689525e928bc9c36238577a34e082f7c3f9bd25ccb9189e80a8c4e3dd57",
-      "lastmod": "2026-08-09"
+      "hash": "da1e6831df361278fec24b5c0d2a0412cfc1d121a7ee93acae390ca69baf761d",
+      "lastmod": "2026-08-13"
     },
     "https://onlinefreetools.org/pt/tool-type": {
       "hash": "6c495df77c17aa389841791b6fa273064ebcc82cb9e9b8ec0c8d0dcfee593965",
@@ -4122,8 +4122,8 @@
       "lastmod": "2026-08-09"
     },
     "https://onlinefreetools.org/ru/": {
-      "hash": "2bf46c046d9b2f3cbd0fc7c5196b6bd765a9a95fc92b4488c7d2c37addf0bb68",
-      "lastmod": "2026-08-09"
+      "hash": "3ac0e4f4b34d14835689cbd630d235eef42a7d53216ee5a3c8398715b566622c",
+      "lastmod": "2026-08-13"
     },
     "https://onlinefreetools.org/ru/tool-type": {
       "hash": "d66d03a7d039b02d3a7931b65327e7ca17ff8c4bfca11b4a1bdfeb5968659558",
@@ -5294,8 +5294,8 @@
       "lastmod": "2026-08-09"
     },
     "https://onlinefreetools.org/zh/": {
-      "hash": "51c096efe01ade3fbac86c136d6f73a0063ea3805e4f356042023208dbe5147c",
-      "lastmod": "2026-08-09"
+      "hash": "a782b83e8ab1dbdb8dd9e94787b48d74d88bd19bf7e996914cb047d54348b453",
+      "lastmod": "2026-08-13"
     },
     "https://onlinefreetools.org/zh/tool-type": {
       "hash": "adf552570cbb62bade44e5b1b442d14040be11083c4a4cc51b08c43451bcbb61",

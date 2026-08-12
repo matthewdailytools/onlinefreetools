@@ -1,20 +1,19 @@
 /**
- * R2 预渲染 HTML 服务：Cache API → R2（gzip 存盘）→ 未命中则 404。
+ * 预渲染 HTML 服务。
  *
- * R2 仅存 gzip 以省空间；**对外始终返回未压缩 HTML**，由运行时/边缘按
- * Accept-Encoding 再压缩。避免 `encodeBody: manual` 在 Cache 往返后失效导致双重 gzip（浏览器乱码）。
+ * - **首页**：Assets 常规路径（`/index.html`、`/{lang}/index.html`）优先；
+ *   miss 时回退 R2 `_pages/{lang}/index.html.gz`。
+ * - **其它页**：Cache API → R2（gzip）→ 未命中 404；不回退 Assets。
  *
- * **`public/_pages/` 不进 Cloudflare Assets**（见 `public/.assetsignore`）；HTML 权威源只有 R2。
- * 本地开发须 `upload:r2:local` / `start:dev` 灌桶。
- *
- * R2 key 形态：`_pages/{lang}/…/*.html.gz`（见 docs/worker+R2架构/design.md）。
+ * R2 仅存 gzip；对外始终返回未压缩 HTML。
+ * R2 key：`_pages/{lang}/…/*.html.gz`（见 docs/worker+R2架构/design.md）。
  */
 
 /** Worker 绑定中与页面存储相关的环境字段。 */
 export type PagesBindings = {
 	/** 存放 gzip HTML 的 R2 桶。 */
 	PAGES_BUCKET: R2Bucket;
-	/** 静态资源（css/js/vendor 等；不含 `_pages` HTML）。 */
+	/** 静态资源（css/js/vendor + 常规路径首页 `index.html` / `{lang}/index.html`）。 */
 	ASSETS: Fetcher;
 	/** 可选：发版时递增，使 Cache API key 失效。 */
 	PAGES_CACHE_VERSION?: string;
@@ -76,6 +75,105 @@ const identityHtmlResponse = (body: ArrayBuffer | Uint8Array | string, etag?: st
 };
 
 /**
+ * 公开首页对应的 Assets 路径（与 `buildHome` 写入一致）。
+ * @param lang 语言码
+ * @param defaultLang 默认语言（无前缀）
+ * @param opts.explicitPrefix 为 true 时默认语也用 `/{lang}/index.html`（如 `/en/`）
+ */
+export const langHomeAssetPath = (
+	lang: string,
+	defaultLang: string,
+	opts?: { explicitPrefix?: boolean }
+): string => {
+	if (lang === defaultLang && !opts?.explicitPrefix) return '/index.html';
+	return `/${lang}/index.html`;
+};
+
+/**
+ * 首页在 R2 中的内部明文路径（gzip key 由此派生）。
+ * @param lang 语言码
+ */
+export const langHomeR2Path = (lang: string): string => `/_pages/${lang}/index.html`;
+
+/**
+ * @deprecated 旧路径检测；首页已改到常规 URL Assets 路径。
+ * @param assetHtmlPath 任意路径
+ */
+export const isLangHomeAssetPath = (assetHtmlPath: string): boolean =>
+	assetHtmlPath === '/index.html' ||
+	/^\/[a-z]{2}(?:-[a-z]+)?\/index\.html$/i.test(assetHtmlPath) ||
+	/^\/_pages\/[a-z]{2}(?:-[a-z]+)?\/index\.html$/i.test(assetHtmlPath);
+
+/**
+ * 从 ASSETS 读取明文 HTML（跟随少量内部重定向）。
+ * @param opts.env 绑定
+ * @param opts.request 用于拼同源 URL
+ * @param opts.assetHtmlPath Assets 路径
+ */
+const fetchAssetHtml = async (opts: {
+	env: PagesBindings;
+	request: Request;
+	assetHtmlPath: string;
+}): Promise<Response | null> => {
+	const { env, request, assetHtmlPath } = opts;
+	if (!env.ASSETS) return null;
+
+	let assetUrl = new URL(request.url);
+	assetUrl.pathname = assetHtmlPath;
+	let req = new Request(assetUrl.toString(), { method: 'GET' });
+	let res = await env.ASSETS.fetch(req);
+
+	for (let i = 0; i < 3 && res.status >= 300 && res.status < 400; i++) {
+		const loc = res.headers.get('Location');
+		if (!loc) break;
+		assetUrl = new URL(loc, assetUrl);
+		req = new Request(assetUrl.toString(), { method: 'GET' });
+		res = await env.ASSETS.fetch(req);
+	}
+
+	return res.ok ? res : null;
+};
+
+/**
+ * 服务语言首页（**所有语言**同一路径）：Cache → Assets（常规 URL）→（miss）R2 gunzip → 404。
+ * 例：en → `/index.html` 或 `/en/index.html`；zh → `/zh/index.html`。
+ *
+ * @param opts.request 入站请求（公开 URL）
+ * @param opts.env 绑定
+ * @param opts.ctx 用于 waitUntil 写缓存
+ * @param opts.assetHtmlPath Assets 路径，如 `/index.html` 或 `/zh/index.html`
+ * @param opts.r2HtmlPath R2 内部路径，如 `/_pages/zh/index.html`
+ */
+export const serveHomeHtml = async (opts: {
+	request: Request;
+	env: PagesBindings;
+	ctx: ExecutionContext;
+	assetHtmlPath: string;
+	r2HtmlPath: string;
+}): Promise<Response> => {
+	const { request, env, ctx, assetHtmlPath, r2HtmlPath } = opts;
+	const cacheVersion = env.PAGES_CACHE_VERSION || '';
+	const cacheKey = buildHtmlCacheKey(request, cacheVersion);
+
+	try {
+		const cached = await caches.default.match(cacheKey);
+		if (cached) return cached;
+	} catch {
+		// Cache API 在部分本地场景不可用，忽略
+	}
+
+	const assetRes = await fetchAssetHtml({ env, request, assetHtmlPath });
+	if (assetRes) {
+		const plain = await assetRes.arrayBuffer();
+		const res = identityHtmlResponse(plain, assetRes.headers.get('ETag') || undefined);
+		ctx.waitUntil(caches.default.put(cacheKey, res.clone()).catch(() => undefined));
+		return res;
+	}
+
+	return servePrerenderedHtml({ request, env, ctx, assetHtmlPath: r2HtmlPath });
+};
+
+/**
  * 服务预渲染 HTML：Cache → R2（gunzip）；R2 未命中则 404（不回退 Assets）。
  *
  * @param opts.request 入站请求（公开 URL）
@@ -134,5 +232,9 @@ export const clientAcceptsGzip = (request: Request): boolean => {
 export default {
 	assetHtmlPathToR2Key,
 	clientAcceptsGzip,
+	isLangHomeAssetPath,
+	langHomeAssetPath,
+	langHomeR2Path,
+	serveHomeHtml,
 	servePrerenderedHtml,
 };

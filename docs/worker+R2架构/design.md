@@ -1,16 +1,16 @@
 # Worker + R2 架构设计（可执行）
 
-对齐 [初始思路.md](./初始思路.md)。公开 URL 与 SEO 体系不变；多语言 HTML 以 gzip 单版本存 R2，Worker 做 Cache → R2；**不**把 `_pages` 打进 Cloudflare Assets。
+对齐 [初始思路.md](./初始思路.md)。公开 URL 与 SEO 体系不变；工具/taxonomy 等 HTML 以 gzip 存 R2；**各语言首页**写在 Assets **常规路径**（降低 TTFB，随 git push 更新）。
 
 ## 分层
 
 | 层 | 内容 |
 |---|---|
-| Assets（`public/`，经 `.assetsignore`） | css / js / vendor / icons / sitemap / robots / devlogs 等；**不含** `_pages/**` |
-| R2（`PAGES_BUCKET`） | **唯一**预渲染 HTML：`_pages/{lang}/**/*.html.gz` |
-| Worker | 路由、语言协商、301/验证直出、API、Cache API |
+| Assets（`public/`，经 `.assetsignore`） | css / js / vendor / icons / sitemap / robots / **首页** `index.html`、`{lang}/index.html` |
+| R2（`PAGES_BUCKET`） | 预渲染 HTML（含首页备份）：`_pages/{lang}/**/*.html.gz` |
+| Worker | 路由、语言协商、301/验证直出、API；首页 Cache→Assets→R2；其它页 Cache→R2 |
 
-`public/.assetsignore` 排除 `_pages/` 与 `*.html.gz`；且 `public/_pages/` **整树 gitignore**，确保预渲染页既不进仓库也不进 Cloudflare Static Assets。
+`public/.assetsignore` 排除 `_pages/` 与 `*.html.gz`。首页不在 `_pages` 例外里，而在公开路径；`run_worker_first` 含 `/` 与各 `/{lang}/`，避免 Assets 抢先跳过 Accept-Language。
 
 ## R2 object key
 
@@ -24,28 +24,36 @@
 
 示例：公开 `/tools/text-diff` 与 `/en/tools/text-diff` → `_pages/en/tools/text-diff.html.gz`。
 
-## 公开 URL → 内部 HTML 路径
+## 公开 URL → 存储路径
 
-| 公开 pathname | 内部 asset HTML 路径 |
-|---|---|
-| `/` | `/_pages/{defaultLang}/index.html` |
-| `/{lang}/` | `/_pages/{lang}/index.html` |
-| `/about` | `/_pages/{defaultLang}/about.html` |
-| `/{lang}/about/` | `/_pages/{lang}/about.html` |
-| `/where-to-use-tools` | `/_pages/{defaultLang}/where-to-use-tools/index.html` |
-| `/{lang}/tool-type/{id}/` | `/_pages/{lang}/tool-type/{id}.html` |
-| `/tools/{slug}` | `/_pages/{defaultLang}/tools/{slug}.html` |
-| `/{lang}/tools/{slug}` | `/_pages/{lang}/tools/{slug}.html` |
-
-R2 key = 去掉前导 `/` 的 asset 路径 + `.gz`。
+| 公开 pathname | Assets（首页） | R2（其它页 / 首页兜底） |
+|---|---|---|
+| `/` | `/index.html` | `_pages/{defaultLang}/index.html.gz` |
+| `/{lang}/` | `/{lang}/index.html` | `_pages/{lang}/index.html.gz` |
+| `/about` | — | `_pages/{defaultLang}/about.html.gz` |
+| `/{lang}/about/` | — | `_pages/{lang}/about.html.gz` |
+| `/where-to-use-tools` | — | `_pages/{defaultLang}/where-to-use-tools/index.html.gz` |
+| `/{lang}/tool-type/{id}/` | — | `_pages/{lang}/tool-type/{id}.html.gz` |
+| `/tools/{slug}` | — | `_pages/{defaultLang}/tools/{slug}.html.gz` |
+| `/{lang}/tools/{slug}` | — | `_pages/{lang}/tools/{slug}.html.gz` |
 
 ## 请求路径
 
-1. **Cache API**（key = 公开 URL + `PAGES_CACHE_VERSION`；缓存**明文** HTML）
-2. **R2** 读 `{prefix}_pages/...html.gz`，Worker 内 **gunzip**
-3. R2 未命中 → **404**（不再回退 Assets：`_pages` 已从 Assets 排除）
-4. **对外始终返回未压缩 HTML**（不设 `Content-Encoding`），由运行时/边缘按 `Accept-Encoding` 再压缩
-5. `/api/*`、验证文件、静态扩展名仍走 Assets / 原逻辑
+**首页**（`/`、`/{lang}/`）：
+
+1. Worker 先跑（`run_worker_first`；`/` 上做 Accept-Language）
+2. **Cache API**（明文）
+3. **ASSETS** 读 `/index.html` 或 `/{lang}/index.html`
+4. Assets miss → **R2** `_pages/{lang}/index.html.gz`
+5. 仍 miss → **404**
+
+**其它预渲染页**：
+
+1. **Cache API**
+2. **R2** gunzip
+3. 未命中 → **404**（不回退 Assets）
+
+对外始终返回未压缩 HTML；`/api/*`、验证文件、静态扩展名仍走 Assets / 原逻辑。
 
 ## 缓存头
 

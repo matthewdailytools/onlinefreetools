@@ -1,0 +1,2430 @@
+<!doctype html>
+<html lang="ar">
+<head>
+  <meta charset="utf-8" />
+  <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>أدوات مجانية عبر الإنترنت، بلا رفع بيانات، بلا تسجيل | OnlineFreeTools.org</title>
+  <meta name="description" content="مشروع تعليمي: مجموعة أدوات صغيرة عبر الإنترنت للهواتف والكمبيوتر." />
+  
+  <link rel="canonical" href="https://onlinefreetools.org/ar/" />
+  <meta property="og:title" content="أدوات مجانية عبر الإنترنت، بلا رفع بيانات، بلا تسجيل | OnlineFreeTools.org" />
+  <meta property="og:description" content="مشروع تعليمي: مجموعة أدوات صغيرة عبر الإنترنت للهواتف والكمبيوتر." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://onlinefreetools.org/ar/" />
+  <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="alternate" hreflang="en" href="https://onlinefreetools.org/" />
+  <link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/" />
+  <link rel="alternate" hreflang="es" href="https://onlinefreetools.org/es/" />
+  <link rel="alternate" hreflang="ar" href="https://onlinefreetools.org/ar/" />
+  <link rel="alternate" hreflang="pt" href="https://onlinefreetools.org/pt/" />
+  <link rel="alternate" hreflang="id" href="https://onlinefreetools.org/id/" />
+  <link rel="alternate" hreflang="fr" href="https://onlinefreetools.org/fr/" />
+  <link rel="alternate" hreflang="ja" href="https://onlinefreetools.org/ja/" />
+  <link rel="alternate" hreflang="ru" href="https://onlinefreetools.org/ru/" />
+  <link rel="alternate" hreflang="de" href="https://onlinefreetools.org/de/" />
+  <link rel="alternate" hreflang="x-default" href="https://onlinefreetools.org/" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  
+  <script>
+    (function () {
+      try {
+        var enabled = ["en","zh","es","ar","pt","id","fr","ja","ru","de"];
+        var defaultLang = "en";
+        var fallback = defaultLang;
+        var path = window.location.pathname || '/';
+
+        // If the URL already contains a language prefix (including defaultLang), respect it.
+        var hasPrefix = enabled.some(function (l) {
+          return l && (path === '/' + l || path.indexOf('/' + l + '/') === 0);
+        });
+        if (hasPrefix) return;
+
+        var langs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language])
+          .filter(Boolean)
+          .map(function (x) { return String(x).toLowerCase().split('-')[0]; });
+
+        var picked = null;
+        for (var i = 0; i < langs.length; i++) {
+          if (enabled.indexOf(langs[i]) !== -1) { picked = langs[i]; break; }
+        }
+        if (!picked) picked = enabled.indexOf(fallback) !== -1 ? fallback : (enabled[0] || fallback);
+
+        if (picked === "ar") return;
+        var targetPath = path;
+        if (picked !== defaultLang) {
+          targetPath = ('/' + picked + path).replace(/\/{2,}/g, '/');
+        }
+        window.location.replace(targetPath + window.location.search + window.location.hash);
+      } catch (e) {}
+    })();
+  </script>
+  <link href="/vendor/bootstrap/bootstrap.min.css" rel="stylesheet" />
+  <link href="/vendor/fonts/plus-jakarta-sans.css" rel="stylesheet" />
+  <link href="/styles/site.css" rel="stylesheet" />
+  <style>
+    body { min-height: 100vh; padding-top: var(--header-h, 56px); }
+    .layout { display: flex; min-height: calc(100vh - var(--header-h, 56px)); }
+  </style>
+  
+<script>
+(function () {
+  function run() {
+    try {
+
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xbc0iytpn7");
+    } catch (e) {}
+  }
+  function schedule() {
+    if (typeof requestIdleCallback === 'function') requestIdleCallback(run, { timeout: 4000 });
+    else setTimeout(run, 2000);
+  }
+  if (document.readyState === 'complete') schedule();
+  else window.addEventListener('load', schedule, { once: true });
+})();
+</script>
+  <meta name="google-site-verification" content="DRJRq9AI8KKITkdiZbdd7zu4LxrIc38CPOd9OeK15FM" />
+  
+</head>
+<body class="is-home-page">
+  
+  
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light site-navbar border-bottom fixed-top">
+      <div class="container-fluid">
+        <button class="btn btn-outline-secondary me-2" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+        <a class="navbar-brand" href="/ar/">
+          <img class="navbar-brand-logo" src="/brand-logo.svg" width="28" height="28" alt="" decoding="async" />
+          <span class="navbar-brand-text">OnlineFreeTools.org</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav" aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="topNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">أدوات الصور</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ar/tools/add-watermark" target="_blank" rel="noopener noreferrer">علامة مائية نصية — في المتصفح</a></li><li><a class="dropdown-item" href="/ar/tools/color-from-image" target="_blank" rel="noopener noreferrer">استخراج ألوان الصورة — لوحة واختيار بالنقر</a></li><li><a class="dropdown-item" href="/ar/tools/flip-image" target="_blank" rel="noopener noreferrer">قلب الصورة — أفقي أو عمودي</a></li><li><a class="dropdown-item" href="/ar/tools/image-border" target="_blank" rel="noopener noreferrer">إطار صورة — لون وعرض</a></li><li><a class="dropdown-item" href="/ar/tools/image-compress" target="_blank" rel="noopener noreferrer">ضغط الصور — البعد الأطول والجودة والحجم المستهدف (محليًا)</a></li><li><a class="dropdown-item" href="/ar/tools/image-crop" target="_blank" rel="noopener noreferrer">قص الصورة وتغيير الحجم — محليًا</a></li><li><a class="dropdown-item" href="/ar/tools/image-exif" target="_blank" rel="noopener noreferrer">عرض وحذف EXIF من الصور — الموقع والكاميرا محليًا</a></li><li><a class="dropdown-item" href="/ar/tools/image-format-converter" target="_blank" rel="noopener noreferrer">محول تنسيق الصور — PNG JPEG WebP AVIF BMP GIF ICO SVG محليا</a></li><li><a class="dropdown-item" href="/ar/tools/image-grayscale" target="_blank" rel="noopener noreferrer">تحويل الصورة إلى رمادي</a></li><li><a class="dropdown-item" href="/ar/tools/image-merge" target="_blank" rel="noopener noreferrer">دمج الصور — اجمع صورًا في كولاج واحد</a></li><li><a class="dropdown-item" href="/ar/tools/image-optimizer" target="_blank" rel="noopener noreferrer">تحسين الصور — WebP وAVIF وMozJPEG محليًا</a></li><li><a class="dropdown-item" href="/ar/tools/image-overlay" target="_blank" rel="noopener noreferrer">تراكب الصور — ضع شعارًا على صورة</a></li><li><a class="dropdown-item" href="/ar/tools/image-to-base64" target="_blank" rel="noopener noreferrer">صورة ↔ Base64 — ترميز وفك</a></li><li><a class="dropdown-item" href="/ar/tools/images-to-gif" target="_blank" rel="noopener noreferrer">صور إلى GIF — رسوم قصيرة</a></li><li><a class="dropdown-item" href="/ar/tools/images-to-pdf" target="_blank" rel="noopener noreferrer">صور إلى PDF — صفحة لكل صورة</a></li><li><a class="dropdown-item" href="/ar/tools/images-to-ppt" target="_blank" rel="noopener noreferrer">صور إلى PowerPoint — شريحة لكل صورة</a></li><li><a class="dropdown-item" href="/ar/tools/images-to-word" target="_blank" rel="noopener noreferrer">صور إلى Word — DOCX محلي</a></li><li><a class="dropdown-item" href="/ar/tools/pdf-page-to-image-sizes" target="_blank" rel="noopener noreferrer">صفحة PDF بأحجام متعددة — حزمة تصدير للمنصات</a></li><li><a class="dropdown-item" href="/ar/tools/pdf-to-jpg" target="_blank" rel="noopener noreferrer">PDF إلى JPG — حوّل الصفحات إلى صور في المتصفح</a></li></ul>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">أدوات التصميم</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ar/tools/brand-color-token-pack" target="_blank" rel="noopener noreferrer">توليد مقياس ألوان العلامة — لوحة 50–950 ورموز CSS</a></li><li><a class="dropdown-item" href="/ar/tools/brand-style-guide" target="_blank" rel="noopener noreferrer">دليل أسلوب العلامة — مسودة وحدات قابلة للتعديل</a></li><li><a class="dropdown-item" href="/ar/tools/smart-website-color-scheme" target="_blank" rel="noopener noreferrer">نظام ألوان الموقع — رموز CSS دلالية</a></li><li><a class="dropdown-item" href="/ar/tools/wcag-contrast-checker" target="_blank" rel="noopener noreferrer">مدقق تباين WCAG — نسبة AA/AAA</a></li></ul>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">أدوات PDF</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ar/tools/compress-pdf" target="_blank" rel="noopener noreferrer">ضغط PDF — صغّر الملف في المتصفح</a></li><li><a class="dropdown-item" href="/ar/tools/crop-pdf" target="_blank" rel="noopener noreferrer">قص PDF — قلّم الهوامش في المتصفح</a></li><li><a class="dropdown-item" href="/ar/tools/merge-pdf" target="_blank" rel="noopener noreferrer">دمج PDF — اجمع الملفات في المتصفح</a></li><li><a class="dropdown-item" href="/ar/tools/organize-pdf" target="_blank" rel="noopener noreferrer">تنظيم PDF — أعد الترتيب أو احذف الصفحات في المتصفح</a></li><li><a class="dropdown-item" href="/ar/tools/pdf-page-numbers" target="_blank" rel="noopener noreferrer">ترقيم صفحات PDF — أضف الأرقام في المتصفح</a></li><li><a class="dropdown-item" href="/ar/tools/pdf-to-markdown" target="_blank" rel="noopener noreferrer">PDF إلى Markdown — استخرج النص للملاحظات في المتصفح</a></li><li><a class="dropdown-item" href="/ar/tools/pdf-watermark" target="_blank" rel="noopener noreferrer">علامة مائية لـ PDF — اطبع نصًا على كل صفحة في المتصفح</a></li><li><a class="dropdown-item" href="/ar/tools/protect-pdf" target="_blank" rel="noopener noreferrer">حماية PDF — شفّر بكلمة مرور في المتصفح</a></li><li><a class="dropdown-item" href="/ar/tools/rotate-pdf" target="_blank" rel="noopener noreferrer">تدوير PDF — صحّح اتجاه الصفحات في المتصفح</a></li><li><a class="dropdown-item" href="/ar/tools/split-pdf" target="_blank" rel="noopener noreferrer">تقسيم PDF — استخرج الصفحات محلياً</a></li><li><a class="dropdown-item" href="/ar/tools/unlock-pdf" target="_blank" rel="noopener noreferrer">إلغاء قفل PDF — أزل كلمة مرور تعرفها مسبقًا</a></li></ul>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">للمطورين</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ar/tools/add-www-to-dns" target="_blank" rel="noopener noreferrer">إضافة WWW إلى DNS — سجلات A/CNAME وأدلة المنصات</a></li><li><a class="dropdown-item" href="/ar/tools/base64" target="_blank" rel="noopener noreferrer">ترميز وفك Base64 — تحويل النص في المتصفح</a></li><li><a class="dropdown-item" href="/ar/tools/core-web-vitals-checker" target="_blank" rel="noopener noreferrer">فاحص Core Web Vitals</a></li><li><a class="dropdown-item" href="/ar/tools/csv-json" target="_blank" rel="noopener noreferrer">محول CSV ↔ JSON — الأنواع والفواصل ومحليًا</a></li><li><a class="dropdown-item" href="/ar/tools/domain-lookup" target="_blank" rel="noopener noreferrer">البحث عن النطاق — تحقق من DNS وبيانات التسجيل</a></li><li><a class="dropdown-item" href="/ar/tools/file-hash" target="_blank" rel="noopener noreferrer">مدقق تجزئة الملف — التحقق من الملخصات في المتصفح</a></li><li><a class="dropdown-item" href="/ar/tools/hreflang-generator" target="_blank" rel="noopener noreferrer">مولّد hreflang</a></li><li><a class="dropdown-item" href="/ar/tools/html-entity" target="_blank" rel="noopener noreferrer">ترميز وفك ترميز كيانات HTML — محليًا</a></li><li><a class="dropdown-item" href="/ar/tools/indexnow" target="_blank" rel="noopener noreferrer">IndexNow — إرسال روابط Bing وفحص المفتاح ورموز الحالة</a></li><li><a class="dropdown-item" href="/ar/tools/ip-address" target="_blank" rel="noopener noreferrer">ما هو عنوان IP الخاص بي — IP عام (IPv4/IPv6)</a></li><li><a class="dropdown-item" href="/ar/tools/json-schema-validator" target="_blank" rel="noopener noreferrer">مدقق JSON Schema — مسارات draft-07 ومحليًا</a></li><li><a class="dropdown-item" href="/ar/tools/jwt-decoder" target="_blank" rel="noopener noreferrer">فك ترميز JWT — قراءة Header و Payload محليًا (بدون تحقق)</a></li><li><a class="dropdown-item" href="/ar/tools/markdown-to-html" target="_blank" rel="noopener noreferrer">Markdown ↔ HTML</a></li><li><a class="dropdown-item" href="/ar/tools/meta-serp-preview" target="_blank" rel="noopener noreferrer">معاينة نتائج جوجل</a></li><li><a class="dropdown-item" href="/ar/tools/meta-tag-generator" target="_blank" rel="noopener noreferrer">مولّد وسوم الميتا</a></li><li><a class="dropdown-item" href="/ar/tools/on-page-seo-checker" target="_blank" rel="noopener noreferrer">مدقق SEO داخل الصفحة</a></li><li><a class="dropdown-item" href="/ar/tools/open-graph-preview" target="_blank" rel="noopener noreferrer">معاينة Open Graph</a></li><li><a class="dropdown-item" href="/ar/tools/password-generator" target="_blank" rel="noopener noreferrer">مولّد كلمات مرور عشوائية — إنشاء كلمات مرور محليًا</a></li><li><a class="dropdown-item" href="/ar/tools/robots-txt-generator" target="_blank" rel="noopener noreferrer">مولّد robots.txt</a></li><li><a class="dropdown-item" href="/ar/tools/schema-jsonld-generator" target="_blank" rel="noopener noreferrer">مولّد JSON-LD</a></li><li><a class="dropdown-item" href="/ar/tools/sitemap-xml-generator" target="_blank" rel="noopener noreferrer">مولّد خريطة الموقع XML</a></li><li><a class="dropdown-item" href="/ar/tools/text-diff" target="_blank" rel="noopener noreferrer">مقارنة نصين أونلاين</a></li><li><a class="dropdown-item" href="/ar/tools/timezone-converter" target="_blank" rel="noopener noreferrer">محول المناطق الزمنية — مقارنة لحظة واحدة عالميًا</a></li><li><a class="dropdown-item" href="/ar/tools/unix-timestamp" target="_blank" rel="noopener noreferrer">محول Unix timestamp — وقت العصر ↔ وقت مقروء</a></li><li><a class="dropdown-item" href="/ar/tools/utm-builder" target="_blank" rel="noopener noreferrer">منشئ UTM</a></li><li><a class="dropdown-item" href="/ar/tools/uuid-generator" target="_blank" rel="noopener noreferrer">مولّد UUID و ULID — إنشاء معرّفات في المتصفح</a></li><li><a class="dropdown-item" href="/ar/tools/website-headers" target="_blank" rel="noopener noreferrer">فحص ترويسات HTTP</a></li><li><a class="dropdown-item" href="/ar/tools/yaml-json" target="_blank" rel="noopener noreferrer">من YAML إلى JSON وبالعكس — قواعد الأنواع ومحليًا</a></li></ul>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">حاسبات</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-acceleration" target="_blank" rel="noopener noreferrer">حاسبة التسارع</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-age" target="_blank" rel="noopener noreferrer">حاسبة العمر من تاريخ الميلاد</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-aspect-ratio" target="_blank" rel="noopener noreferrer">حاسبة نسبة العرض إلى الارتفاع — حساب وتحجيم النسب</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-bmi" target="_blank" rel="noopener noreferrer">حاسبة مؤشر كتلة الجسم — طريقة الحساب</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-bmr-tdee" target="_blank" rel="noopener noreferrer">حاسبة BMR و TDEE — تقدير السعرات اليومية</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-body-fat" target="_blank" rel="noopener noreferrer">حاسبة نسبة دهون الجسم — تقدير بالنسبة المئوية</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-break-even" target="_blank" rel="noopener noreferrer">حاسبة نقطة التعادل — وحدات استرداد التكلفة</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-cagr" target="_blank" rel="noopener noreferrer">حاسبة CAGR — معدل النمو السنوي المركب</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-circle" target="_blank" rel="noopener noreferrer">حاسبة الدائرة</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-compound-interest" target="_blank" rel="noopener noreferrer">حاسبة الفائدة المركبة — حساب القيمة المستقبلية</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-concrete" target="_blank" rel="noopener noreferrer">حاسبة الخرسانة — تقدير حجم الخرسانة</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-confidence-interval" target="_blank" rel="noopener noreferrer">حاسبة فترة الثقة — كيفية حساب فترة الثقة</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-contribution-margin" target="_blank" rel="noopener noreferrer">حاسبة هامش المساهمة</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-date-difference" target="_blank" rel="noopener noreferrer">حاسبة الفرق بين تاريخين</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-debt-payoff" target="_blank" rel="noopener noreferrer">حاسبة سداد الدين</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-density" target="_blank" rel="noopener noreferrer">حاسبة الكثافة</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-discount" target="_blank" rel="noopener noreferrer">حاسبة الخصم — السعر بعد التخفيض</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-emi" target="_blank" rel="noopener noreferrer">حاسبة القسط الشهري (EMI) — حساب أقساط القرض</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-exponent" target="_blank" rel="noopener noreferrer">حاسبة الأس — كيفية حساب القوى</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-gpa" target="_blank" rel="noopener noreferrer">حاسبة GPA — المعدل التراكمي الموزون</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-gradient" target="_blank" rel="noopener noreferrer">حاسبة التدرج — ∇f متعدد المتغيرات (مشتقات جزئية)</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-gross-margin" target="_blank" rel="noopener noreferrer">حاسبة هامش الربح الإجمالي — الربح والنسبة</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-heart-rate" target="_blank" rel="noopener noreferrer">حاسبة مناطق معدل ضربات القلب</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-ideal-weight" target="_blank" rel="noopener noreferrer">حاسبة الوزن المثالي — تقدير نطاق الوزن</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-inflation" target="_blank" rel="noopener noreferrer">حاسبة التضخم</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-irr" target="_blank" rel="noopener noreferrer">حاسبة معدل العائد الداخلي IRR</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-logarithm" target="_blank" rel="noopener noreferrer">حاسبة اللوغاريتم — كيفية حساب اللوغاريتمات</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-macros" target="_blank" rel="noopener noreferrer">حاسبة المغذيات الكبرى</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-marginal-revenue" target="_blank" rel="noopener noreferrer">حاسبة الإيراد الحدي — الصيغة ΔTR / ΔQ</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-markup" target="_blank" rel="noopener noreferrer">حاسبة Markup — نسبة الزيادة على التكلفة</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-mean" target="_blank" rel="noopener noreferrer">حاسبة المتوسط</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-median" target="_blank" rel="noopener noreferrer">حاسبة الوسيط والمنوال</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-npv" target="_blank" rel="noopener noreferrer">حاسبة NPV — صافي القيمة الحالية</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-ohms-law" target="_blank" rel="noopener noreferrer">حاسبة قانون أوم</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-one-rep-max" target="_blank" rel="noopener noreferrer">حاسبة أقصى تكرار واحد (Epley)</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-p-value" target="_blank" rel="noopener noreferrer">حاسبة قيمة p — كيفية حساب القيمة الاحتمالية</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-pace" target="_blank" rel="noopener noreferrer">حاسبة الإيقاع</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-paint" target="_blank" rel="noopener noreferrer">حاسبة الطلاء — تقدير كمية الطلاء المطلوبة</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-payback-period" target="_blank" rel="noopener noreferrer">حاسبة فترة الاسترداد</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-percentage-change" target="_blank" rel="noopener noreferrer">حاسبة التغير بالنسبة المئوية — من قيمة قديمة إلى جديدة</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-permutation-combination" target="_blank" rel="noopener noreferrer">حاسبة التباديل والتوافيق</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-present-value" target="_blank" rel="noopener noreferrer">حاسبة القيمة الحالية والقيمة المستقبلية</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-profit-margin" target="_blank" rel="noopener noreferrer">حاسبة هامش الربح — صافٍ أو تشغيلي</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-pythagorean-theorem" target="_blank" rel="noopener noreferrer">حاسبة فيثاغورس — كيفية إيجاد الضلع المفقود</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-quadratic-equation" target="_blank" rel="noopener noreferrer">حلال المعادلة التربيعية</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-roi" target="_blank" rel="noopener noreferrer">حاسبة العائد على الاستثمار (ROI) — طريقة الحساب</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-rule-of-72" target="_blank" rel="noopener noreferrer">حاسبة قاعدة 72</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-salary-hourly" target="_blank" rel="noopener noreferrer">حاسبة الراتب بالساعة — تحويل معدلات الأجر</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-sample-size" target="_blank" rel="noopener noreferrer">حاسبة حجم العينة — كيفية تقدير الحجم المطلوب</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-scientific-notation" target="_blank" rel="noopener noreferrer">حاسبة الترميز العلمي — كيفية التحويل</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-significant-figures" target="_blank" rel="noopener noreferrer">حاسبة الأرقام المعنوية — العد والتقريب</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-slope" target="_blank" rel="noopener noreferrer">حاسبة الميل — كيفية حساب الميل بين نقطتين</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-standard-deviation" target="_blank" rel="noopener noreferrer">حاسبة الانحراف المعياري — الانحراف والتباين</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-tile" target="_blank" rel="noopener noreferrer">حاسبة البلاط — تقدير كمية البلاط</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-tip" target="_blank" rel="noopener noreferrer">حاسبة البقشيش</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-triangle-area" target="_blank" rel="noopener noreferrer">حاسبة مساحة المثلث</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-vat" target="_blank" rel="noopener noreferrer">حاسبة ضريبة القيمة المضافة VAT/GST</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-velocity" target="_blank" rel="noopener noreferrer">حاسبة السرعة</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-volume" target="_blank" rel="noopener noreferrer">حاسبة الحجم</a></li><li><a class="dropdown-item" href="/ar/tools/how-to-calculate-z-score" target="_blank" rel="noopener noreferrer">حاسبة درجة z — كيفية حساب الدرجة المعيارية</a></li><li><a class="dropdown-item" href="/ar/tools/square-feet" target="_blank" rel="noopener noreferrer">تحويل القدم المربع إلى متر مربع — للمنازل والتشطيب</a></li><li><a class="dropdown-item" href="/ar/tools/unit-converter" target="_blank" rel="noopener noreferrer">محول الوحدات — طول / كتلة / درجة حرارة / مساحة / حجم / سرعة</a></li></ul>
+        </li><li class="nav-item"><a class="nav-link" href="/ar/where-to-use-tools">أين تستخدم</a></li><li class="nav-item"><a class="nav-link" href="/ar/tool-type">أنواع الأدوات</a></li></ul>
+          <div class="d-flex align-items-center gap-2">
+            
+            <div class="dropdown theme-switcher">
+              <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="المظهر">
+                <span class="theme-swatch" data-theme-swatch aria-hidden="true"></span>
+                <span class="d-none d-md-inline">المظهر</span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><button type="button" class="dropdown-item theme-option" data-theme-set="teal"><span class="theme-swatch theme-swatch--teal" aria-hidden="true"></span>أزرق حجري</button></li>
+                <li><button type="button" class="dropdown-item theme-option" data-theme-set="green"><span class="theme-swatch theme-swatch--green" aria-hidden="true"></span>أخضر غابة</button></li>
+                <li><button type="button" class="dropdown-item theme-option" data-theme-set="amber"><span class="theme-swatch theme-swatch--amber" aria-hidden="true"></span>كهرماني</button></li>
+                <li><button type="button" class="dropdown-item theme-option" data-theme-set="navy"><span class="theme-swatch theme-swatch--navy" aria-hidden="true"></span>أزرق حبري</button></li>
+              </ul>
+            </div>
+            
+    <div class="dropdown">
+      <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        العربية
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end"><li><a class="dropdown-item" href="/en/">English</a></li><li><a class="dropdown-item" href="/zh/">中文</a></li><li><a class="dropdown-item" href="/es/">Español</a></li><li><span class="dropdown-item active" aria-current="true">العربية</span></li><li><a class="dropdown-item" href="/pt/">Português</a></li><li><a class="dropdown-item" href="/id/">Bahasa Indonesia</a></li><li><a class="dropdown-item" href="/fr/">Français</a></li><li><a class="dropdown-item" href="/ja/">日本語</a></li><li><a class="dropdown-item" href="/ru/">Русский</a></li><li><a class="dropdown-item" href="/de/">Deutsch</a></li></ul>
+    </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="layout sidebar-collapsed" id="layoutRoot">
+    
+    <aside id="sidebar" class="border-end">
+      <h2 class="sidebar-title h6">التصنيفات</h2>
+      <div class="list-group list-group-flush small" id="categoryList"><a class="list-group-item list-group-item-action" href="#cat-image">أدوات الصور</a><a class="list-group-item list-group-item-action" href="#cat-design">أدوات التصميم</a><a class="list-group-item list-group-item-action" href="#cat-pdf">أدوات PDF</a><a class="list-group-item list-group-item-action" href="#cat-dev">للمطورين</a><a class="list-group-item list-group-item-action" href="#cat-calculator">حاسبات</a></div>
+    </aside>
+    <main id="content" class="p-4">
+    <div class="home-wrap">
+    <!-- 顶区氛围带：Hero + Why，背景随主题品牌色 -->
+    <div class="home-top">
+    <section class="home-hero" aria-labelledby="home-hero-heading">
+      <div class="home-hero-inner">
+        <h1 class="home-hero-brand" id="home-hero-heading">OnlineFreeTools.org</h1>
+        <div class="home-hero-actions">
+          <p class="home-hero-tool-count" aria-label="124 أداة">124 أداة</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="home-main home-main--top">
+    <section class="home-why" aria-label="لماذا هذه الأدوات">
+      <article class="home-why-item home-why-item--local">
+        <span class="home-why-bg" aria-hidden="true"></span>
+        <span class="home-why-index" aria-hidden="true">I</span>
+        <div class="home-why-body">
+          <h3>محليًا أولًا</h3>
+          <p class="home-why-tag-demo"><a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a></p>
+          <p>بطاقة الأداة التي تحمل «بلا رفع» تعني أن محتواك يُعالج في علامة التبويب هذه دون رفعه إلى خوادمنا. انقر الشارة للتفاصيل. أدوات الطرف الطرفي (الترويسات، IP، IndexNow) بلا شارة وتوضح ذلك في الصفحة.</p>
+        </div>
+      </article>
+      <article class="home-why-item home-why-item--signup">
+        <span class="home-why-bg" aria-hidden="true"></span>
+        <span class="home-why-index" aria-hidden="true">II</span>
+        <div class="home-why-body">
+          <h3>بلا تسجيل</h3>
+          <p>افتح الأداة واستخدمها فورًا بلا حساب أو تثبيت. اختر أداة، احصل على النتيجة، وانسخها.</p>
+        </div>
+      </article>
+      <article class="home-why-item home-why-item--process">
+        <span class="home-why-bg" aria-hidden="true"></span>
+        <span class="home-why-index" aria-hidden="true">III</span>
+        <div class="home-why-body">
+          <h3>عملية شفافة</h3>
+          <p>الصيغ والخطوات وحالات الحد ظاهرة—لا رقمًا أسود الصندوق. يسهل التحقق أو الشرح للآخرين.</p>
+        </div>
+      </article>
+    </section>
+    </div>
+    </div>
+
+    <div class="home-main">
+    <section id="all-tools">
+      <div class="home-section-head">
+        <h2>كل الأدوات</h2>
+      </div>
+
+      
+      <details class="home-cat" open id="cat-image">
+        <summary class="home-cat-summary">
+          <span class="home-cat-label">أدوات الصور</span>
+          <h3>تحويل، ضغط، تجهيز</h3>
+        </summary>
+        <p class="home-cat-blurb">أدوات صور في المتصفح — بدون رفع إلى خادم؛ الملفات تبقى على جهازك.</p>
+        <div class="home-card-grid">
+          
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/add-watermark.svg" width="32" height="32" alt="" decoding="async" loading="eager" fetchpriority="high" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/add-watermark" target="_blank" rel="noopener noreferrer">علامة مائية نصية — في المتصفح</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">علامة مائية نصية — في المتصفح — local, no upload.</p>
+        <a href="/ar/tools/add-watermark" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/color-from-image.svg" width="32" height="32" alt="" decoding="async" loading="eager" fetchpriority="high" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/color-from-image" target="_blank" rel="noopener noreferrer">استخراج ألوان الصورة — لوحة واختيار بالنقر</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">لوحة ألوان سائدة واختيار بالنقر محليًا — استخرج عينات، انسخ HEX/RGB/HSL.</p>
+        <a href="/ar/tools/color-from-image" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/flip-image.svg" width="32" height="32" alt="" decoding="async" loading="eager" fetchpriority="high" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/flip-image" target="_blank" rel="noopener noreferrer">قلب الصورة — أفقي أو عمودي</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">قلب الصورة — أفقي أو عمودي — local, no upload.</p>
+        <a href="/ar/tools/flip-image" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/image-border.svg" width="32" height="32" alt="" decoding="async" loading="eager" fetchpriority="high" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/image-border" target="_blank" rel="noopener noreferrer">إطار صورة — لون وعرض</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">إطار صورة — لون وعرض — local, no upload.</p>
+        <a href="/ar/tools/image-border" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/image-compress.svg" width="32" height="32" alt="" decoding="async" loading="eager" fetchpriority="high" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/image-compress" target="_blank" rel="noopener noreferrer">ضغط الصور — البعد الأطول والجودة والحجم المستهدف (محليًا)</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">تصغير محلي بالضلع الأطول والجودة والحجم المستهدف.</p>
+        <a href="/ar/tools/image-compress" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/image-crop.svg" width="32" height="32" alt="" decoding="async" loading="eager" fetchpriority="high" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/image-crop" target="_blank" rel="noopener noreferrer">قص الصورة وتغيير الحجم — محليًا</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">قص محلي بنسب وأحجام شائعة.</p>
+        <a href="/ar/tools/image-crop" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/image-exif.svg" width="32" height="32" alt="" decoding="async" loading="eager" fetchpriority="high" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/image-exif" target="_blank" rel="noopener noreferrer">عرض وحذف EXIF من الصور — الموقع والكاميرا محليًا</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">اعرض GPS/الكاميرا من الصور محليًا ونزّل نسخة منظّفة.</p>
+        <a href="/ar/tools/image-exif" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/image-format-converter.svg" width="32" height="32" alt="" decoding="async" loading="eager" fetchpriority="high" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/image-format-converter" target="_blank" rel="noopener noreferrer">محول تنسيق الصور — PNG JPEG WebP AVIF BMP GIF ICO SVG محليا</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">حوّل PNG وJPEG وWebP وAVIF محليًا مع الجودة والتحقق من النوع.</p>
+        <a href="/ar/tools/image-format-converter" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/image-grayscale.svg" width="32" height="32" alt="" decoding="async" loading="eager" fetchpriority="high" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/image-grayscale" target="_blank" rel="noopener noreferrer">تحويل الصورة إلى رمادي</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">تحويل الصورة إلى رمادي — local, no upload.</p>
+        <a href="/ar/tools/image-grayscale" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/image-merge.svg" width="32" height="32" alt="" decoding="async" loading="eager" fetchpriority="high" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/image-merge" target="_blank" rel="noopener noreferrer">دمج الصور — اجمع صورًا في كولاج واحد</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">اجمع الصور في كولاج واحد محليًا — أفقي أو عمودي أو شبكة، فراغ وخلفية، تنزيل JPEG/WebP/PNG.</p>
+        <a href="/ar/tools/image-merge" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/image-optimizer.svg" width="32" height="32" alt="" decoding="async" loading="eager" fetchpriority="high" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/image-optimizer" target="_blank" rel="noopener noreferrer">تحسين الصور — WebP وAVIF وMozJPEG محليًا</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">MozJPEG وWebP وAVIF وOxiPNG محليًا مع مقارنة منزلقة.</p>
+        <a href="/ar/tools/image-optimizer" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/image-overlay.svg" width="32" height="32" alt="" decoding="async" loading="eager" fetchpriority="high" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/image-overlay" target="_blank" rel="noopener noreferrer">تراكب الصور — ضع شعارًا على صورة</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">ضع شعارًا أو علامة PNG على صورة محليًا — شفافية وموضع وحجم ومزج، تنزيل JPEG/WebP/PNG.</p>
+        <a href="/ar/tools/image-overlay" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/image-to-base64.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/image-to-base64" target="_blank" rel="noopener noreferrer">صورة ↔ Base64 — ترميز وفك</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">صورة ↔ Base64 — ترميز وفك — local, no upload.</p>
+        <a href="/ar/tools/image-to-base64" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/images-to-gif.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/images-to-gif" target="_blank" rel="noopener noreferrer">صور إلى GIF — رسوم قصيرة</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">صور إلى GIF — رسوم قصيرة — local, no upload.</p>
+        <a href="/ar/tools/images-to-gif" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/images-to-pdf.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/images-to-pdf" target="_blank" rel="noopener noreferrer">صور إلى PDF — صفحة لكل صورة</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">صور إلى PDF — صفحة لكل صورة — local, no upload.</p>
+        <a href="/ar/tools/images-to-pdf" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/images-to-ppt.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/images-to-ppt" target="_blank" rel="noopener noreferrer">صور إلى PowerPoint — شريحة لكل صورة</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">صور إلى PowerPoint — شريحة لكل صورة — local, no upload.</p>
+        <a href="/ar/tools/images-to-ppt" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/images-to-word.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/images-to-word" target="_blank" rel="noopener noreferrer">صور إلى Word — DOCX محلي</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">صور إلى Word — DOCX محلي — local, no upload.</p>
+        <a href="/ar/tools/images-to-word" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/pdf-page-to-image-sizes.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/pdf-page-to-image-sizes" target="_blank" rel="noopener noreferrer">صفحة PDF بأحجام متعددة — حزمة تصدير للمنصات</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">صدّر صفحة PDF واحدة كحزمة JPEG بأحجام متعددة على جهازك — ZIP؛ دون رفع إلى خادم.</p>
+        <a href="/ar/tools/pdf-page-to-image-sizes" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/pdf-to-jpg.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/pdf-to-jpg" target="_blank" rel="noopener noreferrer">PDF إلى JPG — حوّل الصفحات إلى صور في المتصفح</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">حوّل صفحات PDF إلى JPG على جهازك—ZIP عند تعدد الصفحات؛ دون رفع إلى خادم.</p>
+        <a href="/ar/tools/pdf-to-jpg" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+        </div>
+      </details>
+      <details class="home-cat" id="cat-design">
+        <summary class="home-cat-summary">
+          <span class="home-cat-label">أدوات التصميم</span>
+          <h3>لون، تباين، علامة</h3>
+        </summary>
+        <p class="home-cat-blurb">أدوات تصميم في المتصفح — تباين ورموز العلامة؛ بدون رفع إلى خادم.</p>
+        <div class="home-card-grid">
+          
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/brand-color-token-pack.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/brand-color-token-pack" target="_blank" rel="noopener noreferrer">توليد مقياس ألوان العلامة — لوحة 50–950 ورموز CSS</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">لون أساس واحد → HEX/RGB/HSL/OKLCH، مقياس 50–950، أزواج تباين، متغيرات CSS — محلي.</p>
+        <a href="/ar/tools/brand-color-token-pack" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/brand-style-guide.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/brand-style-guide" target="_blank" rel="noopener noreferrer">دليل أسلوب العلامة — مسودة وحدات قابلة للتعديل</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">دليل وحدات: شعار، لون، خط، افعل / لا تفعل — مسودة بقواعد محلية قابلة للتحرير.</p>
+        <a href="/ar/tools/brand-style-guide" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/smart-website-color-scheme.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/smart-website-color-scheme" target="_blank" rel="noopener noreferrer">نظام ألوان الموقع — رموز CSS دلالية</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">نظام ألوان الموقع: محايدات + رموز CSS دلالية، روابط محايدة وحالات ثابتة — محليًا.</p>
+        <a href="/ar/tools/smart-website-color-scheme" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/wcag-contrast-checker.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/wcag-contrast-checker" target="_blank" rel="noopener noreferrer">مدقق تباين WCAG — نسبة AA/AAA</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">تحقق من نسبة التباين ومعايير AA/AAA — دون رفع الألوان.</p>
+        <a href="/ar/tools/wcag-contrast-checker" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+        </div>
+      </details>
+      <details class="home-cat" id="cat-pdf">
+        <summary class="home-cat-summary">
+          <span class="home-cat-label">أدوات PDF</span>
+          <h3>دمج وتقسيم — دون رفع إلى خادم</h3>
+        </summary>
+        <p class="home-cat-blurb">ادمج وقسّم PDF في المتصفح — الملفات لا تُرفع إلى خادم وتبقى على جهازك.</p>
+        <div class="home-card-grid">
+          
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/compress-pdf.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/compress-pdf" target="_blank" rel="noopener noreferrer">ضغط PDF — صغّر الملف في المتصفح</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">اضغط PDF في المتصفح لتقليل الحجم—الملف يبقى على جهازك دون رفعه إلى خادم.</p>
+        <a href="/ar/tools/compress-pdf" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/crop-pdf.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/crop-pdf" target="_blank" rel="noopener noreferrer">قص PDF — قلّم الهوامش في المتصفح</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">قلّم هوامش PDF على جهازك—موحّد أو لكل جانب؛ دون رفع إلى خادم.</p>
+        <a href="/ar/tools/crop-pdf" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/merge-pdf.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/merge-pdf" target="_blank" rel="noopener noreferrer">دمج PDF — اجمع الملفات في المتصفح</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">اجمع عدة ملفات PDF في ملف واحد داخل المتصفح — دون رفع إلى خادم؛ تبقى الملفات على جهازك.</p>
+        <a href="/ar/tools/merge-pdf" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/organize-pdf.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/organize-pdf" target="_blank" rel="noopener noreferrer">تنظيم PDF — أعد الترتيب أو احذف الصفحات في المتصفح</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">أعد ترتيب صفحات PDF أو احذفها في المتصفح—تبقى الملفات على جهازك دون رفعها إلى خادم.</p>
+        <a href="/ar/tools/organize-pdf" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/pdf-page-numbers.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/pdf-page-numbers" target="_blank" rel="noopener noreferrer">ترقيم صفحات PDF — أضف الأرقام في المتصفح</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">ترقيم PDF في المتصفح—موضع ورقم البداية حسب رغبتك؛ دون رفع إلى خادم، يبقى على جهازك.</p>
+        <a href="/ar/tools/pdf-page-numbers" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/pdf-to-markdown.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/pdf-to-markdown" target="_blank" rel="noopener noreferrer">PDF إلى Markdown — استخرج النص للملاحظات في المتصفح</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">حوّل نص PDF إلى Markdown على جهازك للملاحظات — دون رفع إلى خادم؛ يبقى في المتصفح.</p>
+        <a href="/ar/tools/pdf-to-markdown" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/pdf-watermark.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/pdf-watermark" target="_blank" rel="noopener noreferrer">علامة مائية لـ PDF — اطبع نصًا على كل صفحة في المتصفح</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">أضف علامة مائية نصية على كل صفحة PDF في المتصفح — دون رفع إلى خادم؛ تبقى على جهازك.</p>
+        <a href="/ar/tools/pdf-watermark" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/protect-pdf.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/protect-pdf" target="_blank" rel="noopener noreferrer">حماية PDF — شفّر بكلمة مرور في المتصفح</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">أضف كلمة مرور لفتح PDF على جهازك — دون رفع إلى خادم.</p>
+        <a href="/ar/tools/protect-pdf" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/rotate-pdf.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/rotate-pdf" target="_blank" rel="noopener noreferrer">تدوير PDF — صحّح اتجاه الصفحات في المتصفح</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">صحّح اتجاه صفحات PDF على جهازك—كل الصفحات أو نطاق؛ دون رفع إلى خادم.</p>
+        <a href="/ar/tools/rotate-pdf" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/split-pdf.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/split-pdf" target="_blank" rel="noopener noreferrer">تقسيم PDF — استخرج الصفحات محلياً</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">استخرج صفحات من PDF على جهازك — كل صفحة أو نطاقات؛ ZIP عند الحاجة؛ دون رفع إلى خادم.</p>
+        <a href="/ar/tools/split-pdf" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/unlock-pdf.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/unlock-pdf" target="_blank" rel="noopener noreferrer">إلغاء قفل PDF — أزل كلمة مرور تعرفها مسبقًا</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">أزل كلمة مرور فتح تعرفها—على جهازك دون رفع إلى خادم.</p>
+        <a href="/ar/tools/unlock-pdf" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+        </div>
+      </details>
+      <details class="home-cat" id="cat-dev">
+        <summary class="home-cat-summary">
+          <span class="home-cat-label">للمطورين</span>
+          <h3>تصحيح، توليد، تحقق</h3>
+        </summary>
+        <p class="home-cat-blurb">أدوات للمطورين — بدون تسجيل، نتائج قابلة للنسخ.</p>
+        <div class="home-card-grid">
+          
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/add-www-to-dns.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/add-www-to-dns" target="_blank" rel="noopener noreferrer">إضافة WWW إلى DNS — سجلات A/CNAME وأدلة المنصات</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">إنشاء سجلات www وفحص DNS مع أدلة Cloudflare/Vercel.</p>
+        <a href="/ar/tools/add-www-to-dns" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/base64.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/base64" target="_blank" rel="noopener noreferrer">ترميز وفك Base64 — تحويل النص في المتصفح</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">Base64 للنص UTF-8 والملفات مع Base64url — محليًا في المتصفح.</p>
+        <a href="/ar/tools/base64" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/core-web-vitals-checker.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/core-web-vitals-checker" target="_blank" rel="noopener noreferrer">فاحص Core Web Vitals</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">قيّم LCP وINP وCLS وفق العتبات العامة. تبقى القيم على جهازك دون رفع إلى خادم.</p>
+        <a href="/ar/tools/core-web-vitals-checker" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/csv-json.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/csv-json" target="_blank" rel="noopener noreferrer">محول CSV ↔ JSON — الأنواع والفواصل ومحليًا</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">تحويل CSV ↔ JSON مع الفاصل وصف الرأس وقواعد الأنواع.</p>
+        <a href="/ar/tools/csv-json" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/domain-lookup.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/domain-lookup" target="_blank" rel="noopener noreferrer">البحث عن النطاق — تحقق من DNS وبيانات التسجيل</a>
+            </h3>
+            
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">البحث عن النطاق: تحقق من DNS والتسجيل (WHOIS/RDAP) — A/MX/NS والمسجّل وتاريخ الانتهاء في عرض واحد.</p>
+        <a href="/ar/tools/domain-lookup" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/file-hash.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/file-hash" target="_blank" rel="noopener noreferrer">مدقق تجزئة الملف — التحقق من الملخصات في المتصفح</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">تجزئة النص أو الملفات محليًا — تجزئات hex من MD5 و SHA-1 و SHA-256 و SHA-384 و SHA-512.</p>
+        <a href="/ar/tools/file-hash" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/hreflang-generator.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/hreflang-generator" target="_blank" rel="noopener noreferrer">مولّد hreflang</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">أخبر جوجل بأي نسخة لغة من الصفحة يجب عرضها لمن — حوّل عناوين URL الخاصة باللغات إلى وسوم hreflang ورؤوس HTTP Link وترميز sitemap من متصفحك.</p>
+        <a href="/ar/tools/hreflang-generator" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/html-entity.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/html-entity" target="_blank" rel="noopener noreferrer">ترميز وفك ترميز كيانات HTML — محليًا</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">كيانات HTML: نطاق، صيغة اسم/رقم، وفك ترميز صارم — كل ذلك محليًا.</p>
+        <a href="/ar/tools/html-entity" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/indexnow.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/indexnow" target="_blank" rel="noopener noreferrer">IndexNow — إرسال روابط Bing وفحص المفتاح ورموز الحالة</a>
+            </h3>
+            
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">IndexNow: إنشاء مفتاح وفحص txt وإرسال روابط إلى Bing.</p>
+        <a href="/ar/tools/indexnow" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/ip-address.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/ip-address" target="_blank" rel="noopener noreferrer">ما هو عنوان IP الخاص بي — IP عام (IPv4/IPv6)</a>
+            </h3>
+            
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">IPv4 أو IPv6 حسب المسار؛ مع VPN يظهر عنوان الخروج.</p>
+        <a href="/ar/tools/ip-address" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/json-schema-validator.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/json-schema-validator" target="_blank" rel="noopener noreferrer">مدقق JSON Schema — مسارات draft-07 ومحليًا</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">تحقق من JSON مقابل Schema مع أخطاء JSON Pointer — draft-07 محليًا.</p>
+        <a href="/ar/tools/json-schema-validator" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/jwt-decoder.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/jwt-decoder" target="_blank" rel="noopener noreferrer">فك ترميز JWT — قراءة Header و Payload محليًا (بدون تحقق)</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">فك JWT محليًا — قراءة Header و Payload دون التحقق من التوقيع؛ اللصق يبقى في المتصفح.</p>
+        <a href="/ar/tools/jwt-decoder" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/markdown-to-html.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/markdown-to-html" target="_blank" rel="noopener noreferrer">Markdown ↔ HTML</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">تحويل Markdown ↔ HTML مع معاينة آمنة.</p>
+        <a href="/ar/tools/markdown-to-html" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/meta-serp-preview.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/meta-serp-preview" target="_blank" rel="noopener noreferrer">معاينة نتائج جوجل</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">العنوان المقتطع يُفقدك نقرات البحث — تحقق من الاقتطاع قبل النشر.</p>
+        <a href="/ar/tools/meta-serp-preview" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/meta-tag-generator.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/meta-tag-generator" target="_blank" rel="noopener noreferrer">مولّد وسوم الميتا</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">أنشئ وسوم العنوان والوصف وcanonical وOpen Graph التي تجلب النقرات في البحث — ولّد وسوم الرأس كاملة لصفحتك من المتصفح.</p>
+        <a href="/ar/tools/meta-tag-generator" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/on-page-seo-checker.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/on-page-seo-checker" target="_blank" rel="noopener noreferrer">مدقق SEO داخل الصفحة</a>
+            </h3>
+            
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">اكتشف وسوم الصفحة التي تُضعف ترتيبك في البحث: افحص العنوان وH1 ووصف الميتا وcanonical وOpen Graph وJSON-LD من متصفحك.</p>
+        <a href="/ar/tools/on-page-seo-checker" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/open-graph-preview.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/open-graph-preview" target="_blank" rel="noopener noreferrer">معاينة Open Graph</a>
+            </h3>
+            
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">اجعل كل مشاركة لصفحتك تجلب النقرات — اعرض كيف ستبدو عند مشاركتها على فيسبوك وX وتطبيقات المراسلة، من المتصفح مباشرة.</p>
+        <a href="/ar/tools/open-graph-preview" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/password-generator.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/password-generator" target="_blank" rel="noopener noreferrer">مولّد كلمات مرور عشوائية — إنشاء كلمات مرور محليًا</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">كلمات مرور عشوائية مع خيارات الطول و charset — تُولَّد محليًا عبر crypto.getRandomValues.</p>
+        <a href="/ar/tools/password-generator" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/robots-txt-generator.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/robots-txt-generator" target="_blank" rel="noopener noreferrer">مولّد robots.txt</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">تحكم في زحف محركات البحث إلى موقعك عبر robots.txt صالح — السماح والمنع وروبوتات الذكاء الاصطناعي داخل متصفحك.</p>
+        <a href="/ar/tools/robots-txt-generator" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/schema-jsonld-generator.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/schema-jsonld-generator" target="_blank" rel="noopener noreferrer">مولّد JSON-LD</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">ساعد جوجل على فهم صفحتك واحصل على نتائج بحث أغنى وأكثر نقرًا عبر JSON-LD من Schema.org — أنشئها داخل متصفحك.</p>
+        <a href="/ar/tools/schema-jsonld-generator" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/sitemap-xml-generator.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/sitemap-xml-generator" target="_blank" rel="noopener noreferrer">مولّد خريطة الموقع XML</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">ساعد جوجل على اكتشاف صفحاتك وفهرستها بشكل أسرع — حوّل قائمة عناوين URL إلى sitemap.xml صالحة مع lastmod وchangefreq وpriority، داخل المتصفح دون رفع أي شيء.</p>
+        <a href="/ar/tools/sitemap-xml-generator" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/text-diff.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/text-diff" target="_blank" rel="noopener noreferrer">مقارنة نصين أونلاين</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">اطّلع على فروقات نصين حسب السطر أو الكلمة أو الحرف.</p>
+        <a href="/ar/tools/text-diff" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/timezone-converter.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/timezone-converter" target="_blank" rel="noopener noreferrer">محول المناطق الزمنية — مقارنة لحظة واحدة عالميًا</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">قارِن لحظة واحدة بين مناطق IANA مع توضيح التوقيت الصيفي — محلي في المتصفح.</p>
+        <a href="/ar/tools/timezone-converter" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/unix-timestamp.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/unix-timestamp" target="_blank" rel="noopener noreferrer">محول Unix timestamp — وقت العصر ↔ وقت مقروء</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">Unix timestamp ↔ تاريخ مع ثوانٍ/ms وUTC ومحلي — في المتصفح.</p>
+        <a href="/ar/tools/unix-timestamp" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/utm-builder.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/utm-builder" target="_blank" rel="noopener noreferrer">منشئ UTM</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">قيّس الحملات التي تجلب زياراتك فعلًا — أنشئ روابط تتبع نظيفة باستخدام utm_source وmedium وcampaign وterm وcontent من المتصفح.</p>
+        <a href="/ar/tools/utm-builder" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/uuid-generator.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/uuid-generator" target="_blank" rel="noopener noreferrer">مولّد UUID و ULID — إنشاء معرّفات في المتصفح</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">توليد UUID v4 و ULID محليًا — حتى 100، نسخ بنقرة.</p>
+        <a href="/ar/tools/uuid-generator" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/website-headers.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/website-headers" target="_blank" rel="noopener noreferrer">فحص ترويسات HTTP</a>
+            </h3>
+            
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">افحص ترويسات HTTP لأي رابط: HEAD/GET، إعادة التوجيه وخريطة الرؤوس من الـ edge.</p>
+        <a href="/ar/tools/website-headers" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/yaml-json.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/yaml-json" target="_blank" rel="noopener noreferrer">من YAML إلى JSON وبالعكس — قواعد الأنواع ومحليًا</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">تحويل YAML ↔ JSON مع قواعد الأنواع والمستندات المتعددة.</p>
+        <a href="/ar/tools/yaml-json" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+        </div>
+      </details>
+      <details class="home-cat" id="cat-calculator">
+        <summary class="home-cat-summary">
+          <span class="home-cat-label">حاسبات</span>
+          <h3>صيغ، وحدات، كيف تحسب</h3>
+        </summary>
+        <p class="home-cat-blurb">حاسبات تفاعلية بصيغ واضحة وأمثلة.</p>
+        <div class="home-card-grid">
+          
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-acceleration.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-acceleration" target="_blank" rel="noopener noreferrer">حاسبة التسارع</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">احسب التسارع الثابت a=(v−v0)/t للحركة المستقيمة. مثال: v0=0 و v=10 و t=2 → a=5. الحساب في المتصفح فقط؛ راجع خطوات الصيغة وافتراضاتها.</p>
+        <a href="/ar/tools/how-to-calculate-acceleration" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-age.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-age" target="_blank" rel="noopener noreferrer">حاسبة العمر من تاريخ الميلاد</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">احسب العمر التقويمي من تاريخ الميلاد وتاريخ القطع (UTC بصيغة YYYY-MM-DD). مثال: وُلد في 2000-01-01 وحتى 2026-08-09 → 26 سنة و7 أشهر و8 أيام. الحساب محلي في المتصفح.</p>
+        <a href="/ar/tools/how-to-calculate-age" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-aspect-ratio.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-aspect-ratio" target="_blank" rel="noopener noreferrer">حاسبة نسبة العرض إلى الارتفاع — حساب وتحجيم النسب</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">احسب النسبة المبسّطة من العرض × الارتفاع ثم حَجّم إلى عرض (أو ارتفاع) مستهدف. إعدادات 16:9 و4:3 و1:1 خيارات في الصفحة نفسها. مثال: 1920×1080 → 16:9؛ العرض 1280 → الارتفاع 720. يعمل في المتصفح؛ تبقى الأرقام على جهازك دون رفع إلى خادم.</p>
+        <a href="/ar/tools/how-to-calculate-aspect-ratio" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-bmi.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-bmi" target="_blank" rel="noopener noreferrer">حاسبة مؤشر كتلة الجسم — طريقة الحساب</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">احسب مؤشر كتلة الجسم (BMI) بمعادلة الفحص للبالغين. الخطوات: اختر الوحدات المترية أو الإمبراطورية، أدخل الوزن والطول، ثم احسب BMI وقارنه بالفئات الشائعة. مثال: 70 كغ و175 سم → BMI ≈ 22.9 (طبيعي). للتعليم والفحص فقط — ليس تشخيصاً.</p>
+        <a href="/ar/tools/how-to-calculate-bmi" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-bmr-tdee.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-bmr-tdee" target="_blank" rel="noopener noreferrer">حاسبة BMR و TDEE — تقدير السعرات اليومية</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">قدّر معدل الأيض الأساسي (BMR) بصيغ Mifflin-St Jeor أو Harris-Benedict أو Katch-McArdle ثم اضرب بعامل النشاط للحصول على TDEE. مثال: ذكر، 70 كغ، 175 سم، عمر 30، Mifflin، عامل 1.55 → BMR ≈ 1648.75 و TDEE ≈ 2555.56 سعرة/يوم. الحساب في المتصفح؛ للتعليم فقط وليس نصيحة طبية أو غذائية.</p>
+        <a href="/ar/tools/how-to-calculate-bmr-tdee" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-body-fat.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-body-fat" target="_blank" rel="noopener noreferrer">حاسبة نسبة دهون الجسم — تقدير بالنسبة المئوية</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">قدّر نسبة دهون الجسم بصيغ محيطات البحرية الأمريكية (خيار الجيش في نفس الصفحة). مثال: ذكر، طول 178 سم، رقبة 40 سم، خصر 86 سم → ~15.3%. الحساب في المتصفح؛ للتعليم فقط — ليس نصيحة طبية أو تشخيصًا.</p>
+        <a href="/ar/tools/how-to-calculate-body-fat" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-break-even.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-break-even" target="_blank" rel="noopener noreferrer">حاسبة نقطة التعادل — وحدات استرداد التكلفة</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">احسب نقطة التعادل بالوحدات والإيراد من التكاليف الثابتة وسعر الوحدة والتكلفة المتغيرة للوحدة، مع هامش المساهمة. مثال: ثابتة 10000 وسعر 50 ومتغيرة 30 → 500 وحدة وإيراد 25000. في المتصفح؛ للتعليم فقط وليس نصيحة أعمال أو استثمار.</p>
+        <a href="/ar/tools/how-to-calculate-break-even" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-cagr.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-cagr" target="_blank" rel="noopener noreferrer">حاسبة CAGR — معدل النمو السنوي المركب</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">احسب معدل CAGR من القيمة الابتدائية والقيمة النهائية وعدد السنوات. مثال: 10000 → 16105.10 خلال 5 سنوات → نحو 10.00%. يعمل في متصفحك؛ للتوضيح التعليمي فقط — وليس نصيحة استثمارية.</p>
+        <a href="/ar/tools/how-to-calculate-cagr" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-circle.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-circle" target="_blank" rel="noopener noreferrer">حاسبة الدائرة</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">احسب مساحة الدائرة (πr²) ومحيطها (2πr) من نصف القطر. مثال: r=7 → المساحة ≈153.94 والمحيط ≈43.98. الحساب في المتصفح؛ راجع الصيغة والخطوات.</p>
+        <a href="/ar/tools/how-to-calculate-circle" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-compound-interest.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-compound-interest" target="_blank" rel="noopener noreferrer">حاسبة الفائدة المركبة — حساب القيمة المستقبلية</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">احسب القيمة المستقبلية للفائدة المركبة من أصل المبلغ والمعدل السنوي وعدد السنوات وتكرار التركيب. الصيغة A = P(1 + r/n)^(nt)؛ وضع الفائدة البسيطة اختياري. مثال: 10000 بنسبة 5% لمدة 10 سنوات مع تركيب سنوي → نحو 16288.95. الحساب في المتصفح؛ للتعليم فقط وليس نصيحة استثمارية.</p>
+        <a href="/ar/tools/how-to-calculate-compound-interest" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-concrete.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-concrete" target="_blank" rel="noopener noreferrer">حاسبة الخرسانة — تقدير حجم الخرسانة</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">قدّر حجم الخرسانة لبلاطة أو عمود أو أسطوانة من الطول والعرض والسماكة (أو القطر والارتفاع). مثال: بلاطة 5 م × 4 م × 0.1 م → 2.0 م³. عدد الأكياس اختياري بافتراض 0.015 م³ (أو 0.45 قدم³) لكل كيس — موضّح في الصفحة. يعمل في المتصفح؛ تبقى الأرقام على جهازك ولا تُرفع إلى خادم.</p>
+        <a href="/ar/tools/how-to-calculate-concrete" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-confidence-interval.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-confidence-interval" target="_blank" rel="noopener noreferrer">حاسبة فترة الثقة — كيفية حساب فترة الثقة</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">فترة ثقة للمتوسط من المتوسط وSD وn ومستويات 90/95/99 بقيم z. مثال: متوسط 50 وSD 10 وn 100 و95% → حوالي 48.04 إلى 51.96. مستويات في صفحة واحدةحدة. في المتصفح للتعلّم.</p>
+        <a href="/ar/tools/how-to-calculate-confidence-interval" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-contribution-margin.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-contribution-margin" target="_blank" rel="noopener noreferrer">حاسبة هامش المساهمة</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">احسب هامش المساهمة ونسبته من السعر والتكلفة المتغيرة. مثال: سعر 50 وتكلفة 30 → 20 (40٪). تعليمي. حساب تعليمي في المتصفح وليس نصيحة مهنية.</p>
+        <a href="/ar/tools/how-to-calculate-contribution-margin" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-date-difference.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-date-difference" target="_blank" rel="noopener noreferrer">حاسبة الفرق بين تاريخين</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">احسب الأيام والأسابيع الكاملة بين تاريخين تقويميين UTC. مثال: من 2024-01-01 إلى 2024-01-11 → 10 أيام (أسبوع + 3 أيام). الحساب في المتصفح بعملية حسابية واضحة.</p>
+        <a href="/ar/tools/how-to-calculate-date-difference" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-debt-payoff.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-debt-payoff" target="_blank" rel="noopener noreferrer">حاسبة سداد الدين</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">قدّر أشهر السداد برصيد وفائدة سنوية ودفع شهري ثابت. مثال: 5000 بفائدة 12٪ ودفع 200/شهر. تعليمي. حساب تعليمي في المتصفح وليس نصيحة مهنية.</p>
+        <a href="/ar/tools/how-to-calculate-debt-payoff" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-density.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-density" target="_blank" rel="noopener noreferrer">حاسبة الكثافة</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">احسب الكثافة بالصيغة ρ=m/V من الكتلة والحجم. مثال: كتلة 10 وحجم 2 → كثافة 5 (نفس الوحدات). الحساب في المتصفح؛ راجع العملية والوحدات.</p>
+        <a href="/ar/tools/how-to-calculate-density" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-discount.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-discount" target="_blank" rel="noopener noreferrer">حاسبة الخصم — السعر بعد التخفيض</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">احسب السعر النهائي من السعر الأصلي ونسبة الخصم. مثال: 100 بخصم 20٪ → 80. خصم ثانٍ اختياري يُطبَّق على السعر المخفّض. حساب في المتصفح فقط وليس نظام دفع للمتجر.</p>
+        <a href="/ar/tools/how-to-calculate-discount" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-emi.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-emi" target="_blank" rel="noopener noreferrer">حاسبة القسط الشهري (EMI) — حساب أقساط القرض</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">احسب قسط EMI من مبلغ القرض والمعدل السنوي ومدة السداد. صيغة الرصيد المتناقص مع جدول الاستهلاك. اختياري: السعر والدفعة المقدمة؛ أقساط شهرية أو كل أسبوعين. مثال: 100000 بنسبة 6% لمدة 5 سنوات شهريًا → قسط ≈ 1933.28. الحساب في المتصفح؛ للتعليم فقط وليس نصيحة ائتمانية.</p>
+        <a href="/ar/tools/how-to-calculate-emi" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-exponent.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-exponent" target="_blank" rel="noopener noreferrer">حاسبة الأس — كيفية حساب القوى</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">احسب القوى a^b مع مثال 2^10=1024. يوضح Infinity للمقادير الضخمة وNaN لبعض القواعد السالبة بأس غير صحيح. في المتصفح مع اللوغاريتم والترميز العلمي.</p>
+        <a href="/ar/tools/how-to-calculate-exponent" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-gpa.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-gpa" target="_blank" rel="noopener noreferrer">حاسبة GPA — المعدل التراكمي الموزون</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">احسب المعدل التراكمي الموزون حسب الساعات على مقياس 4.0 من نقاط المقرر وساعاته. مثال: A=4.0 (3 ساعات) و B=3.0 (3 ساعات) → GPA 3.5. تختلف المقاييس حسب المدرسة والمنطقة؛ للحساب التعليمي داخل المتصفح فقط.</p>
+        <a href="/ar/tools/how-to-calculate-gpa" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-gradient.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-gradient" target="_blank" rel="noopener noreferrer">حاسبة التدرج — ∇f متعدد المتغيرات (مشتقات جزئية)</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">احسب تدرج ∇f لحقل قياسي كمتجه المشتقات الجزئية. الخطوات: اشتق لكل متغير، شكّل ∇f، ثم قيّم عند نقطة. دالة العرض f(x,y)=x²y+3y → ∇f=(2xy, x²+3)؛ عند (1,2) → (4,4). يُستخدم في التحسين وتفسير الانحدار التدرجي في التعلم الآلي.</p>
+        <a href="/ar/tools/how-to-calculate-gradient" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-gross-margin.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-gross-margin" target="_blank" rel="noopener noreferrer">حاسبة هامش الربح الإجمالي — الربح والنسبة</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">احسب إجمالي الربح وهامش الربح الإجمالي (%) من الإيرادات وتكلفة البضاعة المباعة (COGS). مثال: إيرادات 10000 وتكلفة 6000 → ربح 4000 وهامش 40%. يعمل في المتصفح؛ للتعليم فقط — وليس نصيحة تجارية أو استثمارية.</p>
+        <a href="/ar/tools/how-to-calculate-gross-margin" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-heart-rate.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-heart-rate" target="_blank" rel="noopener noreferrer">حاسبة مناطق معدل ضربات القلب</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">احسب أقصى معدل نبض تقديري (220−العمر) ومناطق التدريب كنسب مئوية من الأقصى. مثال: عمر 30 → أقصى 190؛ المعتدل غالباً ~50–70٪. تعليمي فقط — ليس نصيحة طبية.</p>
+        <a href="/ar/tools/how-to-calculate-heart-rate" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-ideal-weight.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-ideal-weight" target="_blank" rel="noopener noreferrer">حاسبة الوزن المثالي — تقدير نطاق الوزن</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">قدّر الوزن المثالي (IBW) بصيغ Devine وRobinson وMiller وHamwi في صفحة واحدة. مثال: ذكر 178 سم → Devine حوالي 73.2 كغ (نطاق حوالي 70.4–75.2 كغ بين الصيغ). الحساب في المتصفح؛ للتعليم فقط — ليس نصيحة طبية ولا تشخيصًا.</p>
+        <a href="/ar/tools/how-to-calculate-ideal-weight" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-inflation.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-inflation" target="_blank" rel="noopener noreferrer">حاسبة التضخم</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">أسقط مبلغاً حالياً بمعدل تضخم سنوي ثابت. مثال: 1000 على 5 سنوات بنسبة 3٪ → ≈1159.27. تعليمي. حساب تعليمي في المتصفح وليس نصيحة مهنية.</p>
+        <a href="/ar/tools/how-to-calculate-inflation" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-irr.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-irr" target="_blank" rel="noopener noreferrer">حاسبة معدل العائد الداخلي IRR</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">قدّر IRR لتدفقات نقدية بسيطة بطريقة نيوتن. مثال: −1000، 300، 420، 680 → IRR تقريبي. تعليمي. حساب تعليمي في المتصفح وليس نصيحة مهنية.</p>
+        <a href="/ar/tools/how-to-calculate-irr" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-logarithm.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-logarithm" target="_blank" rel="noopener noreferrer">حاسبة اللوغاريتم — كيفية حساب اللوغاريتمات</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">احسب log₁₀ أو ln أو log_b(x) لـ x>0. الأساس المخصص عبر ln(x)/ln(b). مثال: log₁₀(1000)=3. يوضح المجال (x>0 وb>0 وb≠1). في المتصفح للتعلّم.</p>
+        <a href="/ar/tools/how-to-calculate-logarithm" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-macros.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-macros" target="_blank" rel="noopener noreferrer">حاسبة المغذيات الكبرى</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">احسب جرامات المغذيات الكبرى من السعرات ونسب البروتين/الكربوهيدرات/الدهون (4/4/9 سعرة لكل جرام). مثال: 2000 سعرة بنسبة 30/40/30٪ → 150/200/≈66.67 جم. تعليمي فقط — ليس نصيحة طبية.</p>
+        <a href="/ar/tools/how-to-calculate-macros" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-marginal-revenue.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-marginal-revenue" target="_blank" rel="noopener noreferrer">حاسبة الإيراد الحدي — الصيغة ΔTR / ΔQ</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">احسب الإيراد الحدي بالمعادلة MR = ΔTR / ΔQ. العملية: أدخل الكمية والإيراد الكلي عند نقطتين، احسب ΔTR وΔQ ثم اقسم. مثال: الكمية 10→11 والإيراد 1000→1080 → MR = 80. للتعليم فقط — ليست نصيحة تسعير.</p>
+        <a href="/ar/tools/how-to-calculate-marginal-revenue" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-markup.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-markup" target="_blank" rel="noopener noreferrer">حاسبة Markup — نسبة الزيادة على التكلفة</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">احسب نسبة Markup من التكلفة وسعر البيع. مثال: تكلفة 50 وبيع 80 → Markup 60%. يختلف عن هامش الربح. حساب تعليمي في المتصفح.</p>
+        <a href="/ar/tools/how-to-calculate-markup" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-mean.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-mean" target="_blank" rel="noopener noreferrer">حاسبة المتوسط</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">احسب المتوسط الحسابي أو الهندسي أو التوافقي من قائمة أرقام بمسار صيغة واضح. مثال: 1,2,3,4,5 حسابي → 3. في المتصفح فقط؛ اختر نوع المتوسط حسب عمليتك.</p>
+        <a href="/ar/tools/how-to-calculate-mean" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-median.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-median" target="_blank" rel="noopener noreferrer">حاسبة الوسيط والمنوال</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">احسب الوسيط والمنوال لقائمة أرقام بعد الترتيب (القيمة الوسطى؛ الأكثر تكراراً). مثال: 1,2,2,3,4 → وسيط 2 ومنوال 2. في المتصفح فقط؛ عملية إحصائية سريعة.</p>
+        <a href="/ar/tools/how-to-calculate-median" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-npv.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-npv" target="_blank" rel="noopener noreferrer">حاسبة NPV — صافي القيمة الحالية</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">احسب صافي القيمة الحالية (NPV) من معدل خصم سنوي واستثمار أولي وتدفقات نقدية لكل سنة. مثال: استثمار 10000 بمعدل 10% وتدفقات 3000 / 4200 / 6800 → NPV ≈ 1307.29. يعمل داخل المتصفح؛ للتوضيح التعليمي فقط — وليس نصيحة استثمارية.</p>
+        <a href="/ar/tools/how-to-calculate-npv" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-ohms-law.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-ohms-law" target="_blank" rel="noopener noreferrer">حاسبة قانون أوم</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">احسب المقاومة R=V/I والقدرة P=VI من الجهد والتيار بصيغ قانون أوم. مثال: V=12 و I=2 → R=6 و P=24. في المتصفح فقط؛ راجع خطوات العملية.</p>
+        <a href="/ar/tools/how-to-calculate-ohms-law" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-one-rep-max.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-one-rep-max" target="_blank" rel="noopener noreferrer">حاسبة أقصى تكرار واحد (Epley)</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">احسب تقدير 1RM بصيغة Epley: 1RM ≈ w×(1+التكرارات/30). مثال: 100 × 5 تكرارات → ≈116.67. تقدير تعليمي مع تنبيه أمان — ليس نصيحة تدريب.</p>
+        <a href="/ar/tools/how-to-calculate-one-rep-max" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-p-value.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-p-value" target="_blank" rel="noopener noreferrer">حاسبة قيمة p — كيفية حساب القيمة الاحتمالية</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">قيمة p طبيعية ثنائية الطرف من درجة z بتقريب erfc. مثال: z = 1.96 → p ≈ 0.05. يوضح فرضيات الطبيعي المعياري والطرفيْن. في المتصفح للتعلّم والتحقق السريع.</p>
+        <a href="/ar/tools/how-to-calculate-p-value" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-pace.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-pace" target="_blank" rel="noopener noreferrer">حاسبة الإيقاع</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">احسب إيقاع الجري (دقيقة:ثانية لكل كم) والسرعة (كم/س) من المسافة والوقت. مثال: 5 كم في 25 دقيقة → 5:00 /كم و 12 كم/س. في المتصفح؛ عملية تحويل واضحة.</p>
+        <a href="/ar/tools/how-to-calculate-pace" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-paint.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-paint" target="_blank" rel="noopener noreferrer">حاسبة الطلاء — تقدير كمية الطلاء المطلوبة</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">قدّر لترات الطلاء من مساحة الجدار بالمتر المربع (أو الطول × الارتفاع × عدد الجدران) وعدد الطبقات والتغطية م²/لتر (الافتراضي 10). مثال: 40 م²، طبقتان، 10 م²/لتر → 8 لتر. عدّ العلب الاختياري يفترض 3.78 لتر لكل علبة. يعمل في المتصفح؛ تبقى الأرقام على جهازك دون رفع إلى خادم.</p>
+        <a href="/ar/tools/how-to-calculate-paint" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-payback-period.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-payback-period" target="_blank" rel="noopener noreferrer">حاسبة فترة الاسترداد</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">قدّر سنوات الاسترداد من استثمار ابتدائي وتدفق سنوي ثابت. مثال: 10000 و2500 سنوياً → 4 سنوات. تعليمي. حساب تعليمي في المتصفح وليس نصيحة مهنية.</p>
+        <a href="/ar/tools/how-to-calculate-payback-period" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-percentage-change.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-percentage-change" target="_blank" rel="noopener noreferrer">حاسبة التغير بالنسبة المئوية — من قيمة قديمة إلى جديدة</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">احسب نسبة الزيادة أو النقصان من قيمة قديمة إلى جديدة. الخطوات: أدخل القيمتين، طبّق (الجديد − القديم) / القديم × 100، ثم اقرأ الإشارة. مثال: 80 → 100 = +25%. مناسب لإيرادات شهرية وDAU والأسعار — وليس نقاط مئوية.</p>
+        <a href="/ar/tools/how-to-calculate-percentage-change" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-permutation-combination.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-permutation-combination" target="_blank" rel="noopener noreferrer">حاسبة التباديل والتوافيق</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">احسب التباديل P(n,r) والتوافيق C(n,r) للأعداد الصحيحة 0≤r≤n بصيغ المضروب. مثال: n=5 و r=2 → P=20 و C=10. في المتصفح؛ عملية عد مع/بدون ترتيب.</p>
+        <a href="/ar/tools/how-to-calculate-permutation-combination" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-present-value.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-present-value" target="_blank" rel="noopener noreferrer">حاسبة القيمة الحالية والقيمة المستقبلية</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">بدّل بين القيمة الحالية والمستقبلية لمبلغ واحد. مثال: مستقبل 10000 بمعدل 5٪ لـ5 سنوات → حالي ≈ 7835.26. تعليمي. حساب تعليمي في المتصفح وليس نصيحة مهنية.</p>
+        <a href="/ar/tools/how-to-calculate-present-value" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-profit-margin.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-profit-margin" target="_blank" rel="noopener noreferrer">حاسبة هامش الربح — صافٍ أو تشغيلي</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">احسب هامش الربح الصافي أو التشغيلي من الإيرادات والتكاليف. مثال: إيراد 10000 وتكلفة 7000 → هامش صافٍ 30٪. نوع الهامش في صفحة واحدة. تعليمي.</p>
+        <a href="/ar/tools/how-to-calculate-profit-margin" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-pythagorean-theorem.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-pythagorean-theorem" target="_blank" rel="noopener noreferrer">حاسبة فيثاغورس — كيفية إيجاد الضلع المفقود</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">حل الضلع المفقود a أو b أو c عبر a²+b²=c². مثال: a=3 وb=4 → c=5. أدخل ضلعين موجبين؛ تُرفض الأزواج المستحيلة. في المتصفح للتعلّم.</p>
+        <a href="/ar/tools/how-to-calculate-pythagorean-theorem" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-quadratic-equation.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-quadratic-equation" target="_blank" rel="noopener noreferrer">حلال المعادلة التربيعية</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">احسب الجذور الحقيقية لـ ax²+bx+c=0 واعرض المميّز بصيغة المعادلة التربيعية. مثال: a=1 و b=-5 و c=6 → الجذور 2 و3. في المتصفح؛ عملية جبرية واضحة.</p>
+        <a href="/ar/tools/how-to-calculate-quadratic-equation" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-roi.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-roi" target="_blank" rel="noopener noreferrer">حاسبة العائد على الاستثمار (ROI) — طريقة الحساب</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">احسب عائد الاستثمار البسيط بالمعادلة (العائد − التكلفة) / التكلفة × 100٪، أو (القيمة النهائية − الأولية) / الأولية × 100٪. العملية: أدخل التكلفة والقيمة النهائية (أو صافي الربح) وراجع افتراضات الضرائب والرسوم والزمن. مثال: تكلفة 1000 ونهاية 1300 → ROI 30٪. للتوضيح التعليمي فقط — ليست نصيحة استثمار.</p>
+        <a href="/ar/tools/how-to-calculate-roi" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-rule-of-72.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-rule-of-72" target="_blank" rel="noopener noreferrer">حاسبة قاعدة 72</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">قدّر سنوات المضاعفة بقاعدة 72: السنوات ≈ 72 ÷ المعدل%. مثال: 6٪ → نحو 12 سنة. تقريب تعليمي. حساب تعليمي في المتصفح وليس نصيحة مهنية.</p>
+        <a href="/ar/tools/how-to-calculate-rule-of-72" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-salary-hourly.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-salary-hourly" target="_blank" rel="noopener noreferrer">حاسبة الراتب بالساعة — تحويل معدلات الأجر</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">حوّل الراتب السنوي أو الشهري أو بالساعة باستخدام ساعات/أسبوع وأسابيع/سنة (الافتراضي 40 و52). مثال: سنوي 52000 عند 40 ساعة/أسبوع → 25.00 بالساعة. في المتصفح؛ للتعليم فقط وليس نصيحة توظيف أو ضرائب.</p>
+        <a href="/ar/tools/how-to-calculate-salary-hourly" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-sample-size.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-sample-size" target="_blank" rel="noopener noreferrer">حاسبة حجم العينة — كيفية تقدير الحجم المطلوب</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">قدّر حجم العينة لنسبة بـ n = Z²·p·(1−p)/E². اختر ثقة 90/95/99٪ (Z = 1.645/1.96/2.576) وأدخل p وهامش الخطأ E. مثال: 95٪ وp=0.5 وE=0.05 → n≈385 بعد السقف. في المتصفح للتعلّم.</p>
+        <a href="/ar/tools/how-to-calculate-sample-size" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-scientific-notation.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-scientific-notation" target="_blank" rel="noopener noreferrer">حاسبة الترميز العلمي — كيفية التحويل</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">حوّل بين العشري والترميز العلمي a×10^b. مثال: 12300 → 1.23×10^4. يقبل 1.23e4 و1.23×10^4 عند التوسيع. يعرض المعامل والأس. في المتصفح للتعلّم.</p>
+        <a href="/ar/tools/how-to-calculate-scientific-notation" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-significant-figures.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-significant-figures" target="_blank" rel="noopener noreferrer">حاسبة الأرقام المعنوية — العد والتقريب</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">عد الأرقام المعنوية في سلسلة أو قرّب إلى N. الأصفار البادئة لا تُحسب؛ اللاحقة بعد الفاصلة تُحسب. مثال: 0.00304 → 3؛ تقريب 1234.56 إلى 3 → 1230 (1.23e3). النصف بعيدًا عن الصفر. في المتصفح.</p>
+        <a href="/ar/tools/how-to-calculate-significant-figures" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-slope.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-slope" target="_blank" rel="noopener noreferrer">حاسبة الميل — كيفية حساب الميل بين نقطتين</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">احسب الميل m=(y₂−y₁)/(x₂−x₁) بين نقطتين على المستوي. مثال: (1,2) و(3,6) → m=2. ترفض الخطوط الرأسية حيث Δx=0 وتوضّح أن الخط الأفقي له ميل صفر. في المتصفح للتعلّم والجبر.</p>
+        <a href="/ar/tools/how-to-calculate-slope" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-standard-deviation.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-standard-deviation" target="_blank" rel="noopener noreferrer">حاسبة الانحراف المعياري — الانحراف والتباين</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">الصق قائمة أرقام لتحسب الانحراف المعياري والتباين بوضع العينة (n−1) أو المجتمع (n). المجموعة الكلاسيكية 2، 4، 4، 4، 5، 5، 7، 9 → انحراف المجتمع = 2 (العينة ≈ 2.14). الحساب داخل المتصفح؛ تبقى الأرقام على جهازك دون رفع إلى خادم.</p>
+        <a href="/ar/tools/how-to-calculate-standard-deviation" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-tile.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-tile" target="_blank" rel="noopener noreferrer">حاسبة البلاط — تقدير كمية البلاط</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">احسب عدد قطع البلاط من مساحة الغرفة بالمتر المربع (أو الطول × العرض) وحجم القطعة بالسنتيمتر ونسبة الهدر (الافتراضي 10%). مثال: غرفة 12 م² وبلاط 30×30 سم وهدر 10% → 147 قطعة (تقريب لأعلى). يعمل في المتصفح؛ تبقى الأرقام على جهازك ولا تُرفع إلى خادم.</p>
+        <a href="/ar/tools/how-to-calculate-tile" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-tip.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-tip" target="_blank" rel="noopener noreferrer">حاسبة البقشيش</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">احسب البقشيش من الفاتورة والنسبة ثم اقسم الإجمالي. مثال: فاتورة 80 و15٪ → بقشيش 12 والإجمالي 92. في المتصفح. حساب تعليمي في المتصفح وليس نصيحة مهنية.</p>
+        <a href="/ar/tools/how-to-calculate-tip" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-triangle-area.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-triangle-area" target="_blank" rel="noopener noreferrer">حاسبة مساحة المثلث</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">احسب مساحة المثلث من القاعدة والارتفاع بالصيغة المساحة = القاعدة×الارتفاع/2. مثال: قاعدة 10 وارتفاع 6 → مساحة 30. في المتصفح؛ عملية هندسية واضحة.</p>
+        <a href="/ar/tools/how-to-calculate-triangle-area" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-vat.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-vat" target="_blank" rel="noopener noreferrer">حاسبة ضريبة القيمة المضافة VAT/GST</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">أضف VAT/GST إلى صافٍ أو استخرج الضريبة من الإجمالي. مثال: صافٍ 100 بنسبة 20٪ → إجمالي 120. أدخل معدلك. في المتصفح. حساب تعليمي في المتصفح وليس نصيحة مهنية.</p>
+        <a href="/ar/tools/how-to-calculate-vat" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-velocity.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-velocity" target="_blank" rel="noopener noreferrer">حاسبة السرعة</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">احسب السرعة المتوسطة بالصيغة v=d/t من المسافة والوقت. مثال: مسافة 100 ووقت 20 → سرعة 5 (نفس الوحدات). في المتصفح؛ راجع العملية والوحدات.</p>
+        <a href="/ar/tools/how-to-calculate-velocity" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-volume.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-volume" target="_blank" rel="noopener noreferrer">حاسبة الحجم</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">احسب حجم الصندوق (الطول×العرض×الارتفاع) أو الكرة (4/3 πr³) بالصيغة المناسبة. مثال: صندوق 2×3×4 → حجم 24. في المتصفح؛ عملية هندسة فراغية واضحة.</p>
+        <a href="/ar/tools/how-to-calculate-volume" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/how-to-calculate-z-score.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/how-to-calculate-z-score" target="_blank" rel="noopener noreferrer">حاسبة درجة z — كيفية حساب الدرجة المعيارية</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">حوّل درجة خام إلى درجة z عبر z = (x − المتوسط) / الانحراف. مثال: x = 85 والمتوسط = 70 والانحراف = 10 → z = 1.5. يوضح المقياس الخطي وشرط الانحراف > 0. في المتصفح للتعلّم والتحقق السريع.</p>
+        <a href="/ar/tools/how-to-calculate-z-score" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/square-feet.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/square-feet" target="_blank" rel="noopener noreferrer">تحويل القدم المربع إلى متر مربع — للمنازل والتشطيب</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">حوّل مساحة الغرفة بين القدم المربع والمتر المربع للإعلانات والتشطيب. الخطوات: اختر قدم/متر/بوصة، أدخل الطول × العرض، احسب المساحة، ثم اعرض ft² و m² بعامل NIST 1 ft² = 0.09290304 m². مثال: شقة 850 قدمًا مربعًا ≈ 78.97 م².</p>
+        <a href="/ar/tools/square-feet" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/unit-converter.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/unit-converter" target="_blank" rel="noopener noreferrer">محول الوحدات — طول / كتلة / درجة حرارة / مساحة / حجم / سرعة</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">حوّل الطول والكتلة ودرجة الحرارة والمساحة والحجم والسرعة في صفحة واحدة بعوامل واضحة. مثال: 1 ميل → 1.60934 كم. في المتصفح؛ عوامل تعليمية — وليس جهاز مساحة أو جهازًا طبيًا.</p>
+        <a href="/ar/tools/unit-converter" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+        </div>
+      </details>
+    </section>
+    </div>
+    </div>
+  </main>
+  </div>
+  
+  <footer class="site-footer border-top text-center py-3">
+    <div class="container">
+      <div class="mb-1"><small class="text-muted">OnlineFreeTools.org · مشروع تعليمي · تطوير مستمر</small></div>
+      <nav class="d-inline" aria-label="روابط الموقع">
+        <a class="small text-decoration-none" href="/ar/about">حول</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/ar/privacy">الخصوصية</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/ar/terms">الشروط</a><span class="text-muted mx-2" aria-hidden="true">·</span><a class="small text-decoration-none" href="/ar/contact">اتصل</a>
+      </nav>
+    </div>
+  </footer>
+  <script>
+(function(){
+  function openCat(id){
+    if(!id) return;
+    var el=document.getElementById(id);
+    if(el && el.tagName==='DETAILS') el.open=true;
+  }
+  function fromHash(){ openCat((location.hash||'').replace(/^#/,'')); }
+  fromHash();
+  window.addEventListener('hashchange', fromHash);
+  document.querySelectorAll('#categoryList a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(){ openCat((a.getAttribute('href')||'').slice(1)); });
+  });
+})();
+</script>
+  <script src="/vendor/bootstrap/bootstrap.bundle.min.js" defer></script>
+  <script src="/js/theme.js" defer></script>
+  
+  <script>
+    const layout = document.getElementById('layoutRoot');
+    const toggle = document.getElementById('sidebarToggle');
+    if (layout && toggle) {
+      toggle.addEventListener('click', () => layout.classList.toggle('sidebar-collapsed'));
+      
+    document.querySelectorAll("#categoryList a").forEach((link) => {
+      link.addEventListener('click', (e) => {
+        try {
+          const sidebar = document.getElementById('sidebar');
+          const prevScroll = sidebar ? sidebar.scrollTop : 0;
+          const href = link.getAttribute('href') || '';
+          if (href.startsWith('#')) {
+            const target = document.querySelector(href);
+            if (target) {
+              e.preventDefault();
+              const headerOffset = 56;
+              const targetY = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+              window.scrollTo({ top: targetY, behavior: 'smooth' });
+            }
+          }
+          link.blur();
+          if (window.innerWidth < 768) layout.classList.add('sidebar-collapsed');
+          setTimeout(() => { if (sidebar) sidebar.scrollTop = prevScroll; }, 300);
+        } catch (err) {}
+      });
+    });
+    }
+  </script>
+</body>
+</html>

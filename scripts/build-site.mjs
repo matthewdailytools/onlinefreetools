@@ -104,9 +104,18 @@ const langOutRoot = (lang) => {
   return prefixDir ? path.join(publicDir, prefixDir) : publicDir;
 };
 
+/**
+ * 构建各语言首页 HTML（**每种启用语言都进 Static Assets**）。
+ * - **Assets（常规 URL）**：
+ *   - 默认语：`public/index.html`（`/`）+ `public/{defaultLang}/index.html`（如 `/en/`）
+ *   - 其它语：`public/{lang}/index.html`（如 `/zh/`、`/ja/`）
+ * - **R2 备份**：仍写 `public/_pages/{lang}/index.html`（gzip/upload 兜底）
+ * Worker：`serveHomeHtml` 对所有语言先读 Assets，miss 再读 R2。
+ * @param {string} lang 语言码
+ */
 export const buildHome = async (lang) => {
-  const outRoot = path.join(publicDir, '_pages', lang);
-  await ensureDir(outRoot);
+  const pagesOutRoot = path.join(publicDir, '_pages', lang);
+  await ensureDir(pagesOutRoot);
 
   const model = getHomePageModel(lang);
   const langAlternates = Object.fromEntries(
@@ -152,9 +161,38 @@ export const buildHome = async (lang) => {
     footerHtml,
     extraHeadHtml: googleSiteVerificationMeta,
     sidebarAutoCloseSelector: '#categoryList a',
+    /** 侧栏锚点跳转时展开对应 <details> 分类 */
+    extraBodyHtml: `<script>
+(function(){
+  function openCat(id){
+    if(!id) return;
+    var el=document.getElementById(id);
+    if(el && el.tagName==='DETAILS') el.open=true;
+  }
+  function fromHash(){ openCat((location.hash||'').replace(/^#/,'')); }
+  fromHash();
+  window.addEventListener('hashchange', fromHash);
+  document.querySelectorAll('#categoryList a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(){ openCat((a.getAttribute('href')||'').slice(1)); });
+  });
+})();
+</script>`,
   });
 
-  await fs.writeFile(path.join(outRoot, 'index.html'), html, 'utf-8');
+  // R2 / gzip 管道仍用 _pages
+  await fs.writeFile(path.join(pagesOutRoot, 'index.html'), html, 'utf-8');
+
+  // Assets：常规公开路径（/ 与 /{lang}/）
+  const assetRoot = langOutRoot(lang);
+  await ensureDir(assetRoot);
+  await fs.writeFile(path.join(assetRoot, 'index.html'), html, 'utf-8');
+
+  // 默认语额外写 /{defaultLang}/index.html，供语言切换器显式前缀（如 /en/）
+  if (lang === siteConfig.defaultLang) {
+    const explicitRoot = path.join(publicDir, lang);
+    await ensureDir(explicitRoot);
+    await fs.writeFile(path.join(explicitRoot, 'index.html'), html, 'utf-8');
+  }
 };
 
 const removeStaticToolsDir = async (lang) => {
@@ -551,6 +589,31 @@ export const buildSitemap = async () => {
   );
 };
 
+/**
+ * 校验每个启用语言的首页已落在 Assets 常规路径（缺一则 build 失败）。
+ * @param {string[]} langs 启用语言列表
+ */
+const assertLangHomeAssets = async (langs) => {
+  const missing = [];
+  const defaultLang = siteConfig.defaultLang;
+  const required = [`${path.relative(root, path.join(publicDir, 'index.html'))} (default /)`];
+  if (!(await fs.stat(path.join(publicDir, 'index.html')).catch(() => null))) {
+    missing.push('public/index.html');
+  }
+  for (const lang of langs) {
+    const rel = path.join('public', lang, 'index.html');
+    required.push(`${rel} (/${lang}/)`);
+    if (!(await fs.stat(path.join(publicDir, lang, 'index.html')).catch(() => null))) {
+      missing.push(rel);
+    }
+  }
+  if (missing.length) {
+    throw new Error(`[build-site] missing lang home Assets:\n- ${missing.join('\n- ')}`);
+  }
+  console.log(`[build-site] lang home Assets OK (${langs.length} langs + /): default=${defaultLang}`);
+  for (const line of required) console.log(`  - ${line}`);
+};
+
 const main = async () => {
   const langs = siteConfig.enabledLangs || [siteConfig.defaultLang];
   for (const lang of langs) {
@@ -561,6 +624,7 @@ const main = async () => {
     await buildContact(lang);
     await buildTaxonomyPages(lang);
   }
+  await assertLangHomeAssets(langs);
   await buildDevLogs();
   await buildSitemap();
 

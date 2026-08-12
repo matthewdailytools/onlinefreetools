@@ -168,8 +168,6 @@ export const renderLayout = ({
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   ${clientLangRedirectScript}
-  <link rel="preload" href="${bootstrapCss}" as="style" />
-  <link rel="preload" href="${fontCss}" as="style" />
   <link href="${bootstrapCss}" rel="stylesheet" />
   <link href="${fontCss}" rel="stylesheet" />
   <link href="/styles/site.css" rel="stylesheet" />

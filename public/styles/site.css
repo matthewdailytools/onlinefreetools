@@ -1333,6 +1333,51 @@ footer.bg-light {
   border: 1px solid var(--border);
   background: var(--surface);
   box-shadow: none;
+  /* 折叠分类跳过屏外布局/绘制；展开后仍完整保留卡片（利于 SEO） */
+  content-visibility: auto;
+  contain-intrinsic-size: auto 12rem;
+}
+
+.home-cat-summary {
+  list-style: none;
+  cursor: pointer;
+  display: block;
+}
+
+.home-cat-summary::-webkit-details-marker {
+  display: none;
+}
+
+.home-cat-summary::after {
+  content: '';
+  display: inline-block;
+  width: 0.45rem;
+  height: 0.45rem;
+  margin-inline-start: 0.35rem;
+  border-inline-end: 2px solid var(--muted);
+  border-block-end: 2px solid var(--muted);
+  transform: rotate(45deg);
+  vertical-align: 0.25rem;
+  transition: transform 0.15s ease;
+}
+
+.home-cat[open] > .home-cat-summary::after {
+  transform: rotate(225deg);
+  vertical-align: 0.05rem;
+}
+
+.home-cat-summary .home-cat-label {
+  pointer-events: none;
+}
+
+.home-cat-summary h3 {
+  display: inline;
+  pointer-events: none;
+  margin: 0;
+}
+
+.home-cat[open] > .home-cat-blurb {
+  margin-top: 0.75rem;
 }
 
 /**

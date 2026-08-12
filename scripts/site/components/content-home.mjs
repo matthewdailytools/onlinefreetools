@@ -20,19 +20,34 @@ export const renderHomeContent = ({ lang }) => {
   /** 站内工具总数（catalog 行数），用于 Hero 数量文案 */
   const toolCount = TOOL_CATALOG.length;
   const toolsCountLabel = String(t(lang, 'home_tools_count')).replace(/\{n\}/g, String(toolCount));
+  /** 首屏优先加载的图标数（仅第一个展开分类内） */
+  const EAGER_LOGO_COUNT = 12;
+  /** 已分配 eager 的图标计数 */
+  let eagerLeft = EAGER_LOGO_COUNT;
 
-  const categorySections = TOOL_CATEGORY_ORDER.map((category) => {
+  const categorySections = TOOL_CATEGORY_ORDER.map((category, catIndex) => {
     const meta = CATEGORY_HOME_SECTION_KEYS[category];
     const tools = getToolsByCategory(category);
+    /** 仅默认展开第一个分类，降低首屏布局与图标请求 */
+    const openAttr = catIndex === 0 ? ' open' : '';
+    const cards = tools
+      .map((tool) => {
+        const logoEager = catIndex === 0 && eagerLeft > 0;
+        if (logoEager) eagerLeft -= 1;
+        return renderToolCard(lang, tool, openCta, { logoEager });
+      })
+      .join('');
     return `
-      <div class="home-cat" id="${getCategoryAnchor(category)}">
-        <span class="home-cat-label">${t(lang, meta.labelKey)}</span>
-        <h3>${t(lang, meta.descKey)}</h3>
+      <details class="home-cat"${openAttr} id="${getCategoryAnchor(category)}">
+        <summary class="home-cat-summary">
+          <span class="home-cat-label">${t(lang, meta.labelKey)}</span>
+          <h3>${t(lang, meta.descKey)}</h3>
+        </summary>
         <p class="home-cat-blurb">${t(lang, meta.blurbKey)}</p>
         <div class="home-card-grid">
-          ${tools.map((tool) => renderToolCard(lang, tool, openCta)).join('')}
+          ${cards}
         </div>
-      </div>`;
+      </details>`;
   }).join('');
 
   return `
