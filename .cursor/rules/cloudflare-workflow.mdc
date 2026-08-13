@@ -19,7 +19,8 @@ alwaysApply: false
 npm run start:dev          # build:site + wrangler dev 后台（默认 http://127.0.0.1:8787）
 npm run start:dev -- --no-build   # 跳过构建，快速启动（新增工具后勿长期使用；须另跑 build:site 才刷新首页）
 npm run build:site         # merge:tools + 重建 _pages（含工具预渲染）+ gzip + sitemap/vendor
-npm run upload:r2          # 将 public/_pages 下 .html.gz 同步到 R2（含 _meta/pages-build.json）
+npm run upload:r2          # 将 public/_pages 下 .html.gz 同步到 R2（S3 优先；含 _meta/pages-build.json）
+npm run upload:r2:changed  # 仅上传变更文件（S3 凭据：cp .env.example .env，见 ops/worker-r2-ops.md §3.1）
 npm run verify:r2          # 校验 R2 ↔ Worker PAGES_CACHE_VERSION
 npm run deploy             # predeploy → upload → verify → 提示 git push（CF 拉 GitHub）
 npm run verify:r2:live     # CF 部署成功后再跑

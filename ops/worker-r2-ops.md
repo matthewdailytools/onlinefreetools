@@ -36,7 +36,7 @@ R2 object key 示例：`_pages/en/tools/text-diff.html.gz`（**不是**公开 UR
 
 ## 2. 首次开通（只做一次）
 
-1. 登录正确 Cloudflare 账号：`npx wrangler login` / `npx wrangler whoami`（远程 `upload:r2` 需要）
+1. 登录正确 Cloudflare 账号：`npx wrangler login` / `npx wrangler whoami`（记下 **Account ID**，供 `.env` 的 `R2_ACCOUNT_ID`）
 2. 创建桶：
 
 ```bash
@@ -45,7 +45,8 @@ npx wrangler r2 bucket create onlinefreetools-pages-preview   # 可选
 ```
 
 3. 确认 `wrangler.jsonc` 中 `r2_buckets` 的 `bucket_name` / `preview_bucket_name` 与上一致。
-4. 确认 **GitHub ↔ Cloudflare** 已绑定本仓库，且生产自定义域绑在**同一 Worker**（`onlinefreetools.org`）。仅本机 `wrangler deploy` 而域在别的账号/项目上时，生产不会更新。
+4. **配置远程快速上传凭据**（推荐）：按 **§3.1** 在 Cloudflare 创建 R2 S3 Token，写入本机 `.env`（`cp .env.example .env`）。未配置时 `upload:r2` 仍可走 wrangler，但很慢。
+5. 确认 **GitHub ↔ Cloudflare** 已绑定本仓库，且生产自定义域绑在**同一 Worker**（`onlinefreetools.org`）。仅本机 `wrangler deploy` 而域在别的账号/项目上时，生产不会更新。
 
 **未建桶就部署 Worker**：常因 R2 binding 失败而部署失败。  
 **桶在但从未 `upload:r2`**：taxonomy / 工具等 **404**；首页若已随 git 进 Assets 仍可访问（Worker 优先读 Assets）。
@@ -59,7 +60,8 @@ npx wrangler r2 bucket create onlinefreetools-pages-preview   # 可选
 | `npm run build:site` | merge → 首页/taxonomy → **预渲染工具页** → gzip `_pages` → sitemap/vendor |
 | `npm run prerender:tools` | 仅预渲染 `public/_pages/{lang}/tools/{slug}.html` |
 | `npm run gzip:pages` | 为 `_pages` 下 `.html` 生成旁路 `.html.gz`（默认 level 9） |
-| `npm run upload:r2` | 将 `.html.gz` **远程**同步到 `onlinefreetools-pages`，并写 `_meta/pages-build.json` |
+| `npm run upload:r2` | 将 `.html.gz` **远程**同步到 `onlinefreetools-pages`，并写 `_meta/pages-build.json`（**优先 S3 API**） |
+| `npm run upload:r2:changed` | 仅上传相对上次 `fileHashes` 有变化的对象（仍重写 meta） |
 | `npm run upload:r2:local` | 同步到**本地** wrangler 模拟桶（`getPlatformProxy`） |
 | `npm run verify:r2` | 校验 R2 清单与 `PAGES_CACHE_VERSION` / 本地 contentHash 一致 |
 | `npm run verify:r2:live` | 同上 + 请求生产 `/api/ops/pages-build`（**等 CF 部署完成后再跑**） |
@@ -67,6 +69,8 @@ npx wrangler r2 bucket create onlinefreetools-pages-preview   # 可选
 | `npm run deploy:skip-upload` | 跳过上传，仍 verify + 提示 push |
 | `npm run deploy:worker-only` | 紧急：本机 `wrangler deploy` |
 | `npm run upload:r2 -- --dry-run` | 只打印将上传的 object key |
+| `npm run upload:r2 -- --s3` | 强制 S3（缺凭据则失败） |
+| `npm run upload:r2 -- --wrangler` | 强制逐文件 wrangler put（慢回退） |
 | `npm run lint:seo` / `lint:vendor` | 发版门禁 |
 | `npx wrangler deploy` | 仅 Worker + Assets（**不**校验 R2；生产默认走 GitHub） |
 
@@ -75,9 +79,95 @@ npx wrangler r2 bucket create onlinefreetools-pages-preview   # 可选
 | 变量 | 默认 | 说明 |
 |---|---|---|
 | `R2_PAGES_BUCKET` | `onlinefreetools-pages` | 上传目标桶名 |
-| `R2_UPLOAD_CONCURRENCY` | `6`（本地上传脚本内） | 并发 put 数 |
+| `R2_UPLOAD_CONCURRENCY` | S3=`32` / wrangler=`6` | 并发 put 数 |
+| `R2_ACCOUNT_ID` / `CLOUDFLARE_ACCOUNT_ID` | — | S3 endpoint 用账户 ID |
+| `R2_ACCESS_KEY_ID` / `AWS_ACCESS_KEY_ID` | — | R2 S3 API Access Key |
+| `R2_SECRET_ACCESS_KEY` / `AWS_SECRET_ACCESS_KEY` | — | R2 S3 API Secret |
+| `R2_S3_ENDPOINT` / `AWS_ENDPOINT_URL` | `https://{accountId}.r2.cloudflarestorage.com` | 可选覆盖 |
 | `PAGES_CACHE_VERSION` | `wrangler.jsonc` vars | 发版递增以失效边缘 HTML 缓存 |
 | `PAGES_R2_PREFIX` | 空 | 可选 R2 key 前缀（如 `builds/abc/`） |
+
+### 3.1 加速远程 `upload:r2`（S3 + 增量）
+
+默认远程路径：**进程内 S3 `PutObject`**（`@aws-sdk/client-s3`），不再为每个文件 spawn wrangler。未配置 S3 凭据时回退 wrangler（慢，会打 warn）。
+
+凭据与可选参数写入仓库根 **`.env`**（模板 `.env.example`；`.env*` 已 gitignore，**禁止提交密钥**）。脚本启动时自动加载 `.env`、`.env.local`（**不覆盖** shell 里已 `export` 的同名变量）。
+
+#### 3.1.1 参数一览：从哪取值
+
+| `.env` 键 | 是否必填 | Cloudflare 侧如何拿 | 本机如何拿 / 写 |
+|---|---|---|---|
+| `R2_ACCOUNT_ID` | S3 路径必填（无自定义 endpoint 时） | Dashboard → 任意域 Overview 右侧 **API** → **Account ID**；或 **Workers & Pages** → Account details → Account ID；或全局搜索 **Copy account ID** | `npx wrangler whoami` 输出的账户 **Account ID**；多账户时选与桶 `onlinefreetools-pages` 所在账户一致的那一行 |
+| `R2_ACCESS_KEY_ID` | S3 路径必填 | 见下 **§3.1.2** 创建 R2 API Token 后页面上的 **Access Key ID**（只显示一次，立刻复制） | 粘贴进 `.env`；**无法**从 wrangler / 仓库反查已有 Secret |
+| `R2_SECRET_ACCESS_KEY` | S3 路径必填 | 同上页的 **Secret Access Key**（只显示一次；丢失只能重新建 token） | 粘贴进 `.env`；勿写入 git / 聊天 / 截图仓库 |
+| `R2_PAGES_BUCKET` | 可选 | Dashboard → **R2** → 桶列表中的名称 | 默认 `onlinefreetools-pages`（与 `wrangler.jsonc` `r2_buckets` 一致）；本机一般不用改 |
+| `R2_UPLOAD_CONCURRENCY` | 可选 | — | 本机调并发；S3 默认 `32`，wrangler 回退默认 `6` |
+| `R2_S3_ENDPOINT` | 可选 | 默认拼 `https://<AccountID>.r2.cloudflarestorage.com`（见 [R2 Authentication](https://developers.cloudflare.com/r2/api/tokens/)）；EU / FedRAMP 管辖桶用对应 jurisdiction endpoint | 仅当桶有 jurisdiction 或要用自定义 endpoint 时写入 `.env` |
+
+兼容别名（一般不必写）：`CLOUDFLARE_ACCOUNT_ID`、`AWS_ACCESS_KEY_ID`、`AWS_SECRET_ACCESS_KEY`、`AWS_ENDPOINT_URL`。
+
+> **不要混淆**：Dashboard「My Profile → API Tokens」里的 **Cloudflare API Token**（给 wrangler REST / `CLOUDFLARE_API_TOKEN`）**不是** R2 S3 的 Access Key。S3 上传必须用 **R2 → Manage API Tokens** 生成的一对 Key（§3.1.2）。Object Read & Write 的 R2 token **不能**代替 wrangler REST 的 Admin 权限（见 §9.1）。
+
+#### 3.1.2 在 Cloudflare 创建 R2 S3 凭据
+
+官方说明：[R2 API tokens / Authentication](https://developers.cloudflare.com/r2/api/tokens/)
+
+1. 登录 [Cloudflare Dashboard](https://dash.cloudflare.com/)，确认右上角账户是托管 `onlinefreetools.org` / 桶 `onlinefreetools-pages` 的那个账户。
+2. 左侧进入 **R2** → **Overview**（对象存储总览）。
+3. 在 **Account Details**（账户详情）区域，点 **API Tokens** 旁的 **Manage**（管理）。
+4. 选择 **Create Account API token** 或 **Create User API token**（个人常用 User；账号级仅 Super Administrator 可管）。
+5. **Permissions（权限）**选 **Object Read & Write**（对象读与写）。可 **Apply to specific buckets only**，勾选 `onlinefreetools-pages`（及若需要的 preview 桶）。
+6. 创建成功后页面会显示：
+   - **Access Key ID** → 写入 `.env` 的 `R2_ACCESS_KEY_ID`
+   - **Secret Access Key** → 写入 `.env` 的 `R2_SECRET_ACCESS_KEY`  
+   Secret **只显示一次**，关掉页面后无法再看，务必当场保存到本机 `.env`。
+7. 同页或账户详情中确认 **Account ID**，写入 `R2_ACCOUNT_ID`（也可用本机 `wrangler whoami`，见下）。
+
+#### 3.1.3 在本机写入与校验
+
+```bash
+# 1) 确认 wrangler 登录的是正确账户，并抄 Account ID
+npx wrangler login          # 若尚未登录
+npx wrangler whoami         # 记下 Account ID（多账户时对准含 onlinefreetools 的那一行）
+npx wrangler r2 bucket list # 应能看到 onlinefreetools-pages
+
+# 2) 从模板生成本机配置（勿 git add .env）
+cp .env.example .env
+```
+
+编辑仓库根 `.env` 示例：
+
+```bash
+# 来自 wrangler whoami 或 Dashboard Account ID
+R2_ACCOUNT_ID=0123456789abcdef0123456789abcdef
+
+# 来自 R2 → Manage API Tokens 创建成功页（各只出现一次）
+R2_ACCESS_KEY_ID=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+R2_SECRET_ACCESS_KEY=yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy
+
+# 可选
+# R2_PAGES_BUCKET=onlinefreetools-pages
+# R2_UPLOAD_CONCURRENCY=32
+```
+
+校验脚本是否读到 S3 凭据（应走 s3，而不是 wrangler warn）：
+
+```bash
+npm run upload:r2 -- --dry-run
+# 期望日志含：transport=s3
+# 若仍 transport=wrangler：检查 .env 是否在仓库根、键名是否正确、或 shell 是否用空字符串盖住了变量
+```
+
+也可用临时 `export`（优先级高于 `.env`），不必写文件；CI 则把同名变量配进 Runner secrets。
+
+#### 3.1.4 全量 / 增量上传
+
+```bash
+npm run upload:r2              # 全量（S3 并发，通常数十秒级）
+npm run upload:r2:changed      # 只传变更 .html.gz + 重写 meta
+```
+
+增量对比顺序：R2 `_meta/pages-build.json` 的 `fileHashes` → 本地 `.cache/pages-build.json`。首次或无哈希时自动全量。`npm run deploy` 仍走全量 `upload:r2`（更稳）；日常改少量页面可用 `upload:r2:changed`。
 
 ---
 
@@ -239,13 +329,16 @@ SEO / Skill / brief / 分片流程**不变**（见 `tool-creation.mdc`、`tool-c
 | `verify:r2:live` aligned=false | Worker vars 与 R2 meta 不一致 | 先 upload，再 push 含正确 `PAGES_CACHE_VERSION` 的 commit |
 | Worker 包又接近 3MB | 误把 `toolPageRegistry` / `*Page.ts` import 进 Worker | 入口只用 `toolSlugs` + R2 |
 | `upload:r2` 报 **403 Forbidden** | 账号/权限/桶；或 Object R/W token | 见 §9.1 |
-| `upload:r2` 很慢 | 远程逐文件 wrangler put | 调 `R2_UPLOAD_CONCURRENCY`；或日后 S3 批量 |
+| `upload:r2` 很慢 | 未配 S3、回退 wrangler put | 配 §3.1 S3 凭据；或 `upload:r2:changed`；或调 `R2_UPLOAD_CONCURRENCY` |
+| `Credential access key has length 31, should be 32` | `.env` 里 `R2_ACCESS_KEY_ID` 少复制/多删了一位 | 核对长度为 **32**；或 Dashboard 重新创建 R2 token 再写入 `.env`（见 §3.1.2） |
 | R2 缺 `_meta/pages-build.json` | 未用新版 upload | `upload:r2`；看 `.cache/pages-build.json` |
 | gzip 正文乱码 | 双重压缩（历史） | 对外 identity；压缩交给运行时 |
 
 ### 9.1 `upload:r2` → 403 Forbidden
 
-`wrangler r2 object put` 走 **Cloudflare REST API**（不是 S3 兼容 API）。
+**优先改用 S3**（§3.1）：R2 API Token 的 Object Read & Write 即可，不必 Admin。
+
+若仍走 `--wrangler`：`wrangler r2 object put` 用 **Cloudflare REST API**（不是 S3）。
 
 1. **确认账号与桶**  
    ```bash
@@ -255,7 +348,7 @@ SEO / Skill / brief / 分片流程**不变**（见 `tool-creation.mdc`、`tool-c
    ```
 2. **重登**并对准正确账户：`npx wrangler logout && npx wrangler login`  
    必要时删 `node_modules/.cache/wrangler/wrangler-account.json` 再 login。
-3. **`CLOUDFLARE_API_TOKEN`**：Object Read & Write **不能**用于 wrangler REST put（会 403）。需 **Admin Read & Write**，或 `unset CLOUDFLARE_API_TOKEN` 改走 OAuth / S3 兼容凭据。
+3. **`CLOUDFLARE_API_TOKEN`**：Object Read & Write **不能**用于 wrangler REST put（会 403）。需 **Admin Read & Write**，或 `unset CLOUDFLARE_API_TOKEN` 改走 OAuth / **§3.1 S3 凭据**。
 4. Dashboard → R2：账户已开通，桶在**同一** account。
 
 本地不受影响：`npm run upload:r2:local` / `start:dev`。
@@ -280,7 +373,8 @@ npx wrangler deploy --dry-run
 
 ### 首次开通
 
-- [ ] `wrangler login` 账号正确（能 `upload:r2`）  
+- [ ] `wrangler login` 账号正确；`whoami` Account ID 已写入 `.env` 的 `R2_ACCOUNT_ID`  
+- [ ] 已按 §3.1.2 创建 R2 Object Read & Write token，Access/Secret 写入 `.env`（`upload:r2 -- --dry-run` 显示 `transport=s3`）  
 - [ ] 已创建 `onlinefreetools-pages`（及可选 preview）  
 - [ ] GitHub ↔ Cloudflare 绑定；自定义域绑在同一 Worker  
 

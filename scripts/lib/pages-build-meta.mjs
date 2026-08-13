@@ -78,29 +78,62 @@ export const fileToR2Key = (absPath) =>
 /**
  * 根据本地 .html.gz 计算内容指纹（按 key 排序后逐文件 sha256 再汇总）。
  * @param {string[]} gzFiles 绝对路径列表
- * @returns {Promise<{ contentHash: string, fileCount: number, keys: string[] }>}
+ * @returns {Promise<{ contentHash: string, fileCount: number, keys: string[], fileHashes: Record<string, string> }>}
  */
 export const hashLocalPagesGz = async (gzFiles) => {
 	const sorted = [...gzFiles].sort((a, b) => fileToR2Key(a).localeCompare(fileToR2Key(b)));
+	/** 整桶汇总哈希（按 key 排序拼接各文件 sha256） */
 	const agg = createHash('sha256');
-	/** @type {string[]} */
+	/** @type {string[]} R2 object key 列表（相对 public/） */
 	const keys = [];
+	/** @type {Record<string, string>} key → 单文件 sha256（hex），供 --changed-only 对比 */
+	const fileHashes = {};
 	for (const file of sorted) {
 		const key = fileToR2Key(file);
 		keys.push(key);
 		const buf = await fs.readFile(file);
 		const fileHash = createHash('sha256').update(buf).digest('hex');
+		fileHashes[key] = fileHash;
 		agg.update(key);
 		agg.update('\0');
 		agg.update(fileHash);
 		agg.update('\n');
 	}
-	return { contentHash: agg.digest('hex'), fileCount: keys.length, keys };
+	return { contentHash: agg.digest('hex'), fileCount: keys.length, keys, fileHashes };
+};
+
+/**
+ * 对比新旧 fileHashes，得到需要上传的 key 集合。
+ * 旧侧无哈希时返回全部 keys（全量）。
+ * @param {Record<string, string>} nextHashes 本次本地哈希
+ * @param {Record<string, string>|null|undefined} prevHashes 上次（R2 meta 或本地 cache）
+ * @returns {{ uploadKeys: string[], skipped: number, reason: string }}
+ */
+export const diffFileHashesForUpload = (nextHashes, prevHashes) => {
+	const keys = Object.keys(nextHashes).sort();
+	if (!prevHashes || typeof prevHashes !== 'object' || !Object.keys(prevHashes).length) {
+		return { uploadKeys: keys, skipped: 0, reason: 'no-previous-hashes' };
+	}
+	/** @type {string[]} */
+	const uploadKeys = [];
+	let skipped = 0;
+	for (const key of keys) {
+		if (prevHashes[key] === nextHashes[key]) skipped += 1;
+		else uploadKeys.push(key);
+	}
+	return { uploadKeys, skipped, reason: 'delta' };
 };
 
 /**
  * 组装 pages-build 清单对象。
- * @param {{ pagesCacheVersion: string, contentHash: string, fileCount: number, keys?: string[] }} opts
+ * schemaVersion 2：含 fileHashes，供增量上传；Worker 探针仍只读 pagesCacheVersion/contentHash。
+ * @param {{
+ *   pagesCacheVersion: string,
+ *   contentHash: string,
+ *   fileCount: number,
+ *   keys?: string[],
+ *   fileHashes?: Record<string, string>,
+ * }} opts
  */
 export const buildPagesMeta = (opts) => {
 	const toolSlugCount = (() => {
@@ -111,8 +144,10 @@ export const buildPagesMeta = (opts) => {
 			return 0;
 		}
 	})();
+	/** 是否写入逐文件哈希（有则 schema 2） */
+	const hasFileHashes = opts.fileHashes && Object.keys(opts.fileHashes).length > 0;
 	return {
-		schemaVersion: 1,
+		schemaVersion: hasFileHashes ? 2 : 1,
 		pagesCacheVersion: opts.pagesCacheVersion,
 		contentHash: opts.contentHash,
 		fileCount: opts.fileCount,
@@ -127,6 +162,8 @@ export const buildPagesMeta = (opts) => {
 					k.endsWith('/about.html.gz')
 			)
 			.slice(0, 40),
+		/** 逐文件 sha256；增量上传与跨机器对齐用（约百 KB 级，可接受） */
+		...(hasFileHashes ? { fileHashes: opts.fileHashes } : {}),
 	};
 };
 

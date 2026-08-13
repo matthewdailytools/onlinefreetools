@@ -53,7 +53,20 @@ ops/
 1. **Node.js** LTS（与仓库 `package.json` engines 一致即可）
 2. 安装依赖：`npm install`
 3. Wrangler 使用项目内 devDependency，无需全局安装（可选 `npm i -g wrangler`）
-4. 远程 `upload:r2` 需已登录：`npx wrangler login`（Worker/Assets 生产默认靠 **GitHub → Cloudflare**，不必每次本机 `wrangler deploy`）
+4. 远程 `upload:r2` S3 凭据（**推荐**，详见 [`worker-r2-ops.md`](./worker-r2-ops.md) **§3.1**）：
+
+| 参数 | Cloudflare 获取 | 本机落盘 |
+|---|---|---|
+| `R2_ACCOUNT_ID` | Dashboard → Workers & Pages / 域 Overview → **Account ID**；或全局搜索 Copy account ID | `npx wrangler whoami` 抄 Account ID → 写入 `.env` |
+| `R2_ACCESS_KEY_ID` / `R2_SECRET_ACCESS_KEY` | **R2** → Overview → Account Details → **API Tokens → Manage** → 创建 token（权限 **Object Read & Write**，可限定桶 `onlinefreetools-pages`）→ 创建页复制 Access Key ID 与 Secret（Secret 只显示一次） | `cp .env.example .env` 后粘贴；**勿提交** `.env` |
+
+```bash
+npx wrangler login && npx wrangler whoami
+cp .env.example .env   # 编辑填入上表三项
+npm run upload:r2 -- --dry-run   # 期望 transport=s3
+```
+
+未配置时回退 `wrangler` 逐文件 put（慢）。Worker/Assets 生产默认靠 **GitHub → Cloudflare**，不必每次本机 `wrangler deploy`。
 
 ---
 
@@ -120,7 +133,8 @@ npx wrangler dev
 | 命令 | 用途 |
 |---|---|
 | `npm run build:site` | 生成首页/taxonomy/工具预渲染/gzip/sitemap/vendor |
-| `npm run upload:r2` | 灌远程 R2（含 `_meta/pages-build.json`） |
+| `npm run upload:r2` | 灌远程 R2（S3 优先；含 `_meta/pages-build.json`） |
+| `npm run upload:r2:changed` | 仅上传哈希变化的 `.html.gz` + 重写 meta |
 | `npm run verify:r2` / `verify:r2:live` | R2 ↔ Worker `PAGES_CACHE_VERSION` 校验（live 含生产探针） |
 | `npm run deploy` | **生产推荐**：predeploy → upload → verify → **提示 git push**（CF 拉 GitHub） |
 | `npm run deploy:skip-upload` | HTML 未变时跳过上传，仍 verify + 提示 push |
@@ -373,7 +387,7 @@ npm run verify:r2:live
 | Cloudflare Workers 日志 | Cloudflare Dashboard → Workers → 观测 / Real-time logs |
 | 本地查看 dev 日志 | `Get-Content .run/wrangler-dev.log -Wait`（PowerShell）或 `tail -f .run/wrangler-dev.log` |
 
-密钥与 API Token **不得**写入仓库；使用 Wrangler secrets 或 Cloudflare Dashboard 环境变量。
+密钥与 API Token **不得**写入仓库。R2 S3 上传凭据放本机 `.env`（见 §2 / [`worker-r2-ops.md`](./worker-r2-ops.md) §3.1）；Worker 运行时密钥用 Wrangler secrets 或 Cloudflare Dashboard 环境变量。
 
 ---
 

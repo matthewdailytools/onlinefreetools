@@ -17,6 +17,7 @@
     "prerender:tools": "node scripts/prerender-tool-pages.mjs",
     "gzip:pages": "node scripts/gzip-pages.mjs",
     "upload:r2": "node scripts/upload-r2-pages.mjs",
+    "upload:r2:changed": "node scripts/upload-r2-pages.mjs --changed-only",
     "upload:r2:local": "node scripts/upload-r2-pages.mjs --local",
     "verify:r2": "node scripts/verify-r2-worker-sync.mjs",
     "verify:r2:live": "node scripts/verify-r2-worker-sync.mjs --live",
@@ -57,6 +58,7 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
+    "@aws-sdk/client-s3": "^3.1109.0",
     "@types/node": "22.13.0",
     "@types/service-worker-mock": "^2.0.4",
     "esbuild": "^0.25.12",
