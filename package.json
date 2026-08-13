@@ -31,6 +31,8 @@
     "coverage:gate": "node scripts/validate-tool-coverage-rounds.mjs",
     "lint:vendor": "node scripts/validate-vendor-tracked.mjs",
     "lint:tool-isolation": "node scripts/check-tool-isolation.mjs",
+    "verify": "npm run build:site && npm run lint:seo && npm run lint:vendor && npm run lint:taxonomy",
+    "verify:tool": "node scripts/verify-tool.mjs",
     "taxonomy:apply": "node scripts/dev/apply-taxonomy-tags.mjs",
     "indexnow": "node ops/seo/submit-indexnow.mjs",
     "indexnow:sitemap": "node ops/seo/submit-indexnow.mjs --sitemap",
