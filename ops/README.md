@@ -362,8 +362,9 @@ npm run deploy
 npm run verify:r2:live
 ```
 
-流程：`predeploy`（`build:site` + lint）→ **`upload:r2`** → **`verify:r2`** → **git push**（Cloudflare 拉 GitHub 部署 Worker + Assets）→ **`verify:r2:live`**。
+流程：`predeploy`（`build:site` + lint）→ **`upload:r2`**（S3 优先，须本机 `.env`；见 [`worker-r2-ops.md`](./worker-r2-ops.md) §3.1）→ **`verify:r2`** → **git push**（Cloudflare 拉 GitHub 部署 Worker + Assets）→ **`verify:r2:live`**。
 
+仅改少量 HTML 且不跑完整 `deploy` 时：`npm run upload:r2:changed` → `npm run verify:r2` →（若需）push。  
 仅改 Worker、HTML 未变：`npm run deploy:skip-upload` 后再 push。  
 紧急本机直发：`npm run deploy:worker-only`（或 `node scripts/deploy-site.mjs --wrangler-deploy`）。裸 `npx wrangler deploy` **不**灌 R2、**不**做版本校验。
 

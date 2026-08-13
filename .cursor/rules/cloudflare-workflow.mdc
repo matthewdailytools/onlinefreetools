@@ -10,6 +10,7 @@ alwaysApply: false
 
 - Node.js LTS
 - `npm i -g wrangler`（或使用项目 devDependency）
+- 远程快速 `upload:r2`：`cp .env.example .env`，按 [`ops/worker-r2-ops.md`](../../ops/worker-r2-ops.md) **§3.1** 填写 R2 S3 三项（Account ID + Access/Secret）
 
 ## 本地开发（启停）
 
@@ -20,9 +21,9 @@ npm run start:dev          # build:site + wrangler dev 后台（默认 http://12
 npm run start:dev -- --no-build   # 跳过构建，快速启动（新增工具后勿长期使用；须另跑 build:site 才刷新首页）
 npm run build:site         # merge:tools + 重建 _pages（含工具预渲染）+ gzip + sitemap/vendor
 npm run upload:r2          # 将 public/_pages 下 .html.gz 同步到 R2（S3 优先；含 _meta/pages-build.json）
-npm run upload:r2:changed  # 仅上传变更文件（S3 凭据：cp .env.example .env，见 ops/worker-r2-ops.md §3.1）
+npm run upload:r2:changed  # 仅上传变更文件（需 .env S3 凭据；见 ops/worker-r2-ops.md §3.1）
 npm run verify:r2          # 校验 R2 ↔ Worker PAGES_CACHE_VERSION
-npm run deploy             # predeploy → upload → verify → 提示 git push（CF 拉 GitHub）
+npm run deploy             # predeploy → upload（全量）→ verify → 提示 git push（CF 拉 GitHub）
 npm run verify:r2:live     # CF 部署成功后再跑
 npm run deploy:worker-only # 紧急本机 wrangler deploy
 npm run stop:dev           # 停止后台 dev 进程
@@ -34,7 +35,7 @@ npm run dev                # 前台 wrangler dev（占用当前终端）
 Windows：`.\ops\dev\start-dev.ps1` / `.\ops\dev\stop-dev.ps1`  
 日志与 PID：`.run/wrangler-dev.log`、`.run/wrangler-dev.pid`
 
-本地须先 `upload:r2`（或 `start:dev` 灌本地桶）；生产 HTML 权威在 R2，Worker/Assets 默认靠 **GitHub push → CF**。
+本地须先 `upload:r2:local`（或 `start:dev` 灌本地桶）；生产 HTML 权威在 R2，Worker/Assets 默认靠 **GitHub push → CF**。远程 `upload:r2` 无 `.env` 时回退 wrangler（慢）。
 
 ## Workers
 

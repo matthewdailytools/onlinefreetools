@@ -188,7 +188,7 @@ npm run verify:r2:live
 `npm run deploy` → [`scripts/deploy-site.mjs`](../scripts/deploy-site.mjs)：
 
 1. （npm `predeploy`）`build:site` + `lint:seo` + `lint:vendor`
-2. `upload:r2` — 上传 `.html.gz`，写入 R2 `_meta/pages-build.json`（`pagesCacheVersion` + `contentHash`）
+2. `upload:r2` — 上传 `.html.gz`（S3 优先），写入 R2 `_meta/pages-build.json`（`pagesCacheVersion` + `contentHash` + `fileHashes`）
 3. `verify:r2` — R2 清单 ↔ `wrangler.jsonc` 的 `PAGES_CACHE_VERSION` + 本地哈希；抽样 object 存在
 4. **Worker + Assets**：默认 **注释掉** 本机 `wrangler deploy`；打印 **git push** 步骤
 5. `verify:r2:live` — **默认跳过**；CF 成功后单独跑，或 `node scripts/deploy-site.mjs --live`
@@ -222,10 +222,10 @@ npm run verify:r2:live
 | 位置 | 字段 |
 |---|---|
 | Worker | `wrangler.jsonc` → `vars.PAGES_CACHE_VERSION`（经 **git push** / 紧急 wrangler 进 env） |
-| R2 | `_meta/pages-build.json` → `pagesCacheVersion` + `contentHash` |
+| R2 | `_meta/pages-build.json` → `pagesCacheVersion` + `contentHash`（**schemaVersion 2** 另含 `fileHashes`，供 `upload:r2:changed`） |
 | 探针 | `GET /api/ops/pages-build` → `{ pagesCacheVersion, r2MetaVersion, aligned }` |
 
-三者 `pagesCacheVersion` 必须相同；`contentHash` 必须与本地 `public/_pages/**/*.html.gz` 一致。改 HTML 后务必重新 `upload:r2`；仅改 Worker 且 HTML 未变可用 `deploy:skip-upload` 后再 push。
+三者 `pagesCacheVersion` 必须相同；`contentHash` 必须与本地 `public/_pages/**/*.html.gz` 一致。改 HTML 后务必重新 `upload:r2`（或已对齐时用 `upload:r2:changed`）；仅改 Worker 且 HTML 未变可用 `deploy:skip-upload` 后再 push。
 
 ### 入库与 Assets（GitHub 路径）
 

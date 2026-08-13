@@ -12,9 +12,9 @@
 6. 新工具：根目录 `README.md`「工具清单 / Tools List」中英已更新（与 `tool-catalog.json` 一致）
 7. 新工具/大改 i18n：`work-tasks/{slug}/03-locale-briefs.md` 已填；按 brief 重写非直译；本地化 ≥3 轮与禁词核查完成（见 `.cursor/rules/tool-i18n-localization.mdc`）。`lint:seo` 绿 ≠ 本地化完成。
 8. **链接**：`related` ≥ 2 且同簇优先；References ≥ 1（YMYL ≥ 2）；抽查 Related 锚文本为工具 title。详见 [链接执行案](./seo/2026-08-09/link-strategy-execution.md)。
-9. **R2 / Worker 版本**：`npm run deploy`（upload + `verify:r2`）→ **git push**（CF 拉 GitHub）→ `npm run verify:r2:live`；确认 `GET /api/ops/pages-build` 的 `aligned: true`。细节见 [`ops/worker-r2-ops.md`](../ops/worker-r2-ops.md)。
+9. **R2 / Worker 版本**：本机已配置 `.env` S3 凭据（`cp .env.example .env`，见 [`ops/worker-r2-ops.md`](../ops/worker-r2-ops.md) §3.1）→ `npm run deploy`（全量 `upload:r2` + `verify:r2`）→ **git push**（CF 拉 GitHub）→ `npm run verify:r2:live`；确认 `GET /api/ops/pages-build` 的 `aligned: true`。仅改少量预渲染 HTML 且 R2 已有 `fileHashes` 时，可用 `npm run upload:r2:changed` 再 `verify:r2`（`deploy` 仍默认全量，更稳）。
 
-`npm run deploy` 会通过 `predeploy` 自动执行 1–2，并继续 upload / verify；**不**本机 `wrangler deploy`。勿只 push 不 upload（工具页 HTML 不在 Git）。
+`npm run deploy` 会通过 `predeploy` 自动执行 1–2，并继续 upload / verify；**不**本机 `wrangler deploy`。勿只 push 不 upload（工具页 HTML 不在 Git）。无 S3 `.env` 时 upload 会回退 wrangler 逐文件 put（很慢）。
 
 ## Google Search Console
 

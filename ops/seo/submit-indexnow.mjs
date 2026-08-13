@@ -571,6 +571,7 @@ const isSitemapIndex = (xml) => /<sitemapindex[\s>]/i.test(xml);
 
 /**
  * 判断绝对 URL 是否像 sitemap 资源（不应作为 IndexNow 页面 URL 提交）。
+ * 须避免误伤工具页：例如 `/tools/sitemap-xml-generator`（slug 含 sitemap-）。
  * @param {string} raw 绝对 URL
  * @returns {boolean}
  */
@@ -578,12 +579,16 @@ const looksLikeSitemapUrl = (raw) => {
   try {
     /** 解析后的 URL */
     const u = new URL(String(raw || '').trim());
-    /** 小写 pathname */
-    const path = u.pathname.toLowerCase();
+    /** 小写 pathname（去掉尾斜杠，便于精确匹配末段） */
+    const path = u.pathname.toLowerCase().replace(/\/+$/, '') || '/';
     if (path.endsWith('.xml') || path.endsWith('.xml.gz')) {
       return path.includes('sitemap');
     }
-    return /\/sitemap(?:[_-]|$|index)/i.test(path);
+    // /sitemap、/sitemap_index、/sitemap-index；或 /sitemaps/... 目录
+    // 不匹配 /tools/sitemap-xml-generator 这类含 "sitemap-" 的页面路径
+    if (/\/sitemap(?:[_-]index)?$/i.test(path)) return true;
+    if (/\/sitemaps\//i.test(path)) return true;
+    return false;
   } catch {
     return false;
   }

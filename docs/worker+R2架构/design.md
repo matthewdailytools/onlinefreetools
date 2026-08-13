@@ -64,14 +64,18 @@
 ## 构建与部署
 
 ```bash
+cp .env.example .env        # 首次：填 R2_ACCOUNT_ID / R2_ACCESS_KEY_ID / R2_SECRET_ACCESS_KEY（见 ops §3.1）
 npm run build:site          # merge → 静态页 → 预渲染工具 → gzip _pages
-npm run upload:r2           # 同步 .html.gz + 写 _meta/pages-build.json
+npm run upload:r2           # 全量同步 .html.gz + 写 _meta/pages-build.json（优先 S3 API）
+npm run upload:r2:changed   # 日常：仅 put 哈希变化的对象（仍重写 meta；需 schema/fileHashes）
 npm run verify:r2           # R2 ↔ wrangler PAGES_CACHE_VERSION / contentHash
-npm run deploy              # predeploy → upload → verify → 提示 git push（CF）；live 另跑
+npm run deploy              # predeploy → upload（全量）→ verify → 提示 git push（CF）；live 另跑
 # CF 成功后：npm run verify:r2:live
 ```
 
-`predeploy` 含 `build:site` + lint。运维操作：[`ops/worker-r2-ops.md`](../../ops/worker-r2-ops.md)。
+远程上传：有 `.env` S3 凭据时进程内并发 `PutObject`；否则回退逐文件 `wrangler r2 object put`（慢）。`_meta/pages-build.json` 现为 **schemaVersion 2**（含 `fileHashes`，供增量）；Worker 探针仍只读 `pagesCacheVersion` / `contentHash`。
+
+`predeploy` 含 `build:site` + lint。运维操作与凭据获取：[`ops/worker-r2-ops.md`](../../ops/worker-r2-ops.md)（尤其 **§3.1**）。
 
 ## SEO 不变量
 
