@@ -4,7 +4,8 @@
 - Learning project for building and iterating on online utilities; updates are irregular by design.
 - Live domain: https://onlinefreetools.org
 - Runs on Cloudflare (Pages + Workers) with Wrangler for local dev and deploy.
-
+- [github page](https://matthewdailytools.github.io/onlinefreetools/)
+- [运维文档](https://matthewdailytools.github.io/onlinefreetools/ops/)
 ## 工具清单 / Tools List
 以下是我们提供的在线工具及其链接（中文版）：
 
