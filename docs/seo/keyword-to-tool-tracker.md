@@ -40,9 +40,9 @@
 
 | 字段 | 值 |
 |---|---|
-| 最近更新 | 2026-08-11 |
-| 最近批次 | [serp-batches/2026-08-11-pilot01.md](./serp-batches/2026-08-11-pilot01.md) |
-| 池内 `build` 候选 | `safe-paste-cleaner`（仅词池标记；**未**建 work-tasks） |
+| 最近更新 | 2026-08-13 |
+| 最近批次 | [serp-batches/2026-08-13-keyword-planner-magnets.md](./serp-batches/2026-08-13-keyword-planner-magnets.md) |
+| 池内 `build` 候选 | `safe-paste-cleaner`、`magnet-pull-force-calculator`（均仅词池标记；**未**建 work-tasks） |
 | 本周新建工具页 | 0 |
 | 阻塞 | 无；等待下一批 SERP / 人工决定是否对某候选开工具立项 |
 
@@ -64,7 +64,7 @@
 
 ### P0 — 事项节奏（本文件职责）
 
-- [ ] 下一 SERP 批次 → `serp-batches/YYYY-MM-DD-*.md`，抽约 10 条写入 `keyword-daily-pool.tsv`
+- [x] 下一 SERP 批次 → `serp-batches/YYYY-MM-DD-*.md`，抽约 10 条写入 `keyword-daily-pool.tsv`（2026-08-13 磁铁批已完成）
 - [ ] 周审：更新各行 `verdict`；优先 `absorb`；`build` 仅记入池与本日志，**默认不建 work-tasks**
 - [ ] 若人工决定创建工具：在决策日志写明 slug，再另开 `work-tasks/{slug}/`（工具流程，不在本夹）
 
@@ -104,6 +104,8 @@
 | 2026-08-11 | 词池仍保留 `safe-paste-cleaner` 为 `build` 候选 | 仅分析结论；开工具须另决议 |
 | 2026-08-11 | 落地 Skill + 规则 `keyword-to-tool-funnel` | 目标：从关键词找新工具创建，或融入丰富已有工具更新 |
 | 2026-08-12 | 运维文档：`ops/seo/keyword-to-tool-ops.md` + README §4.2 | 有一批词时的操作入口写入 ops |
+| 2026-08-13 | 分析 Keyword Planner 磁铁批（~700 词）进池；无既有 slug 可 absorb；主 build 候选 `magnet-pull-force-calculator`（未建 work-tasks） | 磁铁批约 9 成为商业购买/产品规格/品牌导航意图 → drop；可交互缺口集中在吸力/强度/等级/尺寸 |
+| 2026-08-13 | `magnet-pull-force-calculator` 的等级对照/材料对比/尺寸换算记为同一工具的子意图，禁止按 grades/material/size 拆近义 URL | 对齐 doorway / scaled content 红线；一带多场景 |
 
 ---
 

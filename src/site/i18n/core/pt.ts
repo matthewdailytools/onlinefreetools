@@ -75,6 +75,7 @@ const pt: SiteLangDict = {
   tool_feedback_subject_label: 'Assunto',
   tool_feedback_title: 'Dúvidas ou feedback',
   tool_feedback_to_label: 'Para',
+  tool_last_updated: 'Última atualização:',
   tool_share_copied: 'Copiado',
   tool_share_copy: 'Copiar link',
   tool_share_hint: 'Compartilhe nas redes, copie o link ou use o compartilhamento do dispositivo.',

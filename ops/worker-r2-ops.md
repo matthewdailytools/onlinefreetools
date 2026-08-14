@@ -12,7 +12,7 @@
 
 | 步骤 | 谁做 | 说明 |
 |---|---|---|
-| `npm run deploy` | 本机 | `predeploy`（build + lint）→ `upload:r2` → `verify:r2`；**不**本机 `wrangler deploy` |
+| `npm run deploy` | 本机 | 默认增量：`predeploy`（增量 build + lint）→ `upload:r2`（增量）→ `verify:r2`；**不**本机 `wrangler deploy` |
 | `git push` | 本机 → GitHub | Cloudflare **拉仓库**部署 Worker + Assets |
 | `npm run verify:r2:live` | 本机（CF 成功后） | 生产 `/api/ops/pages-build` 与 R2 对齐 |
 
@@ -57,16 +57,23 @@ npx wrangler r2 bucket create onlinefreetools-pages-preview   # 可选
 
 | 命令 | 作用 |
 |---|---|
-| `npm run build:site` | merge → 首页/taxonomy → **预渲染工具页** → gzip `_pages` → sitemap/vendor |
-| `npm run prerender:tools` | 仅预渲染 `public/_pages/{lang}/tools/{slug}.html` |
-| `npm run gzip:pages` | 为 `_pages` 下 `.html` 生成旁路 `.html.gz`（默认 level 9） |
-| `npm run upload:r2` | 将 `.html.gz` **远程**同步到 `onlinefreetools-pages`，并写 `_meta/pages-build.json`（**优先 S3 API**） |
-| `npm run upload:r2:changed` | 仅上传相对上次 `fileHashes` 有变化的对象（仍重写 meta） |
+| `npm run build:site` | 默认增量：merge → 刷新首页/taxonomy/sitemap/vendor → 只预渲染 `updatedAt` 晚于本地生成基线的工具页 → gzip；缺 `_pages` 基线会自动全量补齐 |
+| `npm run build:site:full` | 强制全量预渲染所有工具页 + gzip |
+| `npm run tool:touch -- --slug=a,b` | 把目标工具 catalog shard 的 `updatedAt` 改为当前 ISO 时间 |
+| `npm run prerender:tools` | 默认增量：仅预渲染 `updatedAt` 晚于本地生成基线的工具；也可加 `-- --slug=a,b` |
+| `npm run prerender:tools:full` | 强制预渲染所有工具页 |
+| `npm run gzip:pages` | 增量压缩：为 `_pages` 下源 HTML 新于 `.gz` 的文件生成旁路 `.html.gz`（默认 level 9） |
+| `npm run gzip:pages:full` | 强制重压全部 `_pages/**/*.html` |
+| `npm run upload:r2` | 默认增量：工具页按 `updatedAt > toolUploadedAt` 上传，非工具页按 `fileHashes` 变化上传，并重写 `_meta/pages-build.json` |
+| `npm run upload:r2:full` | 强制全量上传 `_pages/**/*.html.gz` |
 | `npm run upload:r2:local` | 同步到**本地** wrangler 模拟桶（`getPlatformProxy`） |
-| `npm run verify:r2` | 校验 R2 清单与 `PAGES_CACHE_VERSION` / 本地 contentHash 一致 |
+| `npm run verify:r2` | 校验 R2 清单与 `PAGES_CACHE_VERSION` / 本地 contentHash 一致；有 S3 凭据时与 `upload:r2` 一样优先走 S3 读取 |
 | `npm run verify:r2:live` | 同上 + 请求生产 `/api/ops/pages-build`（**等 CF 部署完成后再跑**） |
-| `npm run deploy` | predeploy → upload → verify → **打印 git push 步骤**；默认不 live |
+| `npm run deploy` | 默认增量：predeploy → upload:r2（增量）→ verify → **打印 git push 步骤**；默认不 live |
+| `npm run deploy:full` | 强制全量 build + 全量 upload + verify |
 | `npm run deploy:skip-upload` | 跳过上传，仍 verify + 提示 push |
+| `npm run stage:tools:changed` | 只 stage 变更/新增工具相关路径；可加 `-- --slug=a,b` |
+| `npm run commit:tools:changed` | 只 commit 变更/新增工具相关路径；建议显式 `-- --slug=a,b -m "tools: update ..."` |
 | `npm run deploy:worker-only` | 紧急：本机 `wrangler deploy` |
 | `npm run upload:r2 -- --dry-run` | 只打印将上传的 object key |
 | `npm run upload:r2 -- --s3` | 强制 S3（缺凭据则失败） |
@@ -160,14 +167,40 @@ npm run upload:r2 -- --dry-run
 
 也可用临时 `export`（优先级高于 `.env`），不必写文件；CI 则把同名变量配进 Runner secrets。
 
-#### 3.1.4 全量 / 增量上传
+#### 3.1.4 增量 / 全量上传
 
 ```bash
-npm run upload:r2              # 全量（S3 并发，通常数十秒级）
-npm run upload:r2:changed      # 只传变更 .html.gz + 重写 meta
+npm run upload:r2              # 默认增量：只传需更新 .html.gz + 重写 meta
+npm run upload:r2:full         # 强制全量（S3 并发，通常数十秒级）
 ```
 
-增量对比顺序：R2 `_meta/pages-build.json` 的 `fileHashes` → 本地 `.cache/pages-build.json`。首次或无哈希时自动全量。`npm run deploy` 仍走全量 `upload:r2`（更稳）；日常改少量页面可用 `upload:r2:changed`。
+增量对比顺序：工具页读取 `src/site/tool-catalog.d/{slug}.json` 的 `updatedAt`，对比 R2 `_meta/pages-build.json`（或本地 `.cache/pages-build.json`）里的 `toolUploadedAt`；首页、taxonomy、sitemap、About 等非工具页继续对比 `fileHashes`。首次、无 meta、无 `toolUploadedAt` 或无哈希时会自动扩大到需要上传的对象。`npm run deploy` 默认走增量上传；排障、重建基线或怀疑远端缺对象时用 `npm run deploy:full`。
+
+如何判断需要更新上传的文件：
+
+- 工具页：任一语言 `_pages/{lang}/tools/{slug}.html.gz` 会在 `catalog.updatedAt > meta.toolUploadedAt[slug]` 时上传。
+- 新工具：远端 meta 没有该 slug 的 `toolUploadedAt`，视为需要上传。
+- 共享/非工具页：如 `_pages/{lang}/index.html.gz`、taxonomy、sitemap 备份、about/privacy/terms/contact，按 `fileHashes` 是否变化上传。
+- git 数据不参与此判断：未 commit 的修改、最新 commit、最新 push 都不会自动触发工具页增量；真正的标记是对应工具 shard 的 `updatedAt`。
+
+#### 3.1.5 少量工具改动的增量路径
+
+适用：只新增或修改少量工具（catalog shard / i18n shard / page module / icon / work-task），并且本机已经有完整的 `public/_pages/**/*.html.gz` 基线。
+
+```bash
+# 首次、清空 public/_pages 后、或不确定基线是否完整：
+npm run build:site        # 会自动发现基线缺失并补齐；也可显式 npm run build:site:full
+
+# 后续少量工具改动（显式 slug，分步最清楚）：
+npm run tool:touch -- --slug=image-compress
+npm run build:site -- --slug=image-compress
+npm run upload:r2
+npm run verify:r2
+npm run commit:tools:changed -- --slug=image-compress -m "tools: update image compress"
+git push
+```
+
+不传 `--slug` 时，`build:site` / `deploy` 不看 git 工作树，而是读取每个工具 catalog shard 的 `updatedAt`，与本地 `.cache/tool-build-state.json` 的 `toolGeneratedAt` 对比。编辑工具时必须把对应 `src/site/tool-catalog.d/{slug}.json` 的 `updatedAt` 改为本次编辑时间（建议 UTC ISO，例如 `2026-08-14T12:00:00.000Z`）；未提交修改、最新 commit、最新 push 都不会自动作为增量依据。`commit:tools:changed` 仍是 git 辅助命令，用目标 slug 生成 pathspec 后只 stage/commit 相关工具路径。
 
 ---
 
@@ -187,9 +220,9 @@ npm run verify:r2:live
 
 `npm run deploy` → [`scripts/deploy-site.mjs`](../scripts/deploy-site.mjs)：
 
-1. （npm `predeploy`）`build:site` + `lint:seo` + `lint:vendor`
-2. `upload:r2` — 上传 `.html.gz`（S3 优先），写入 R2 `_meta/pages-build.json`（`pagesCacheVersion` + `contentHash` + `fileHashes`）
-3. `verify:r2` — R2 清单 ↔ `wrangler.jsonc` 的 `PAGES_CACHE_VERSION` + 本地哈希；抽样 object 存在
+1. （npm `predeploy`）`build:site`（默认增量）+ `lint:seo` + `lint:vendor`
+2. `upload:r2` — 默认只上传需更新对象（S3 优先），写入 R2 `_meta/pages-build.json`（`pagesCacheVersion` + `contentHash` + `fileHashes` + `toolUpdatedAt` + `toolUploadedAt`）
+3. `verify:r2` — R2 清单 ↔ `wrangler.jsonc` 的 `PAGES_CACHE_VERSION` + 本地哈希；抽样 object 存在；有 S3 凭据时优先用 S3 读取，避免与 wrangler 登录账号不一致
 4. **Worker + Assets**：默认 **注释掉** 本机 `wrangler deploy`；打印 **git push** 步骤
 5. `verify:r2:live` — **默认跳过**；CF 成功后单独跑，或 `node scripts/deploy-site.mjs --live`
 
@@ -201,6 +234,16 @@ npm run verify:r2
 npm run verify:r2:live                          # CF 部署完成后
 node scripts/deploy-site.mjs --wrangler-deploy  # 紧急本机 wrangler deploy
 node scripts/deploy-site.mjs --live             # 假定 CF 已好，立刻 live verify
+```
+
+少量工具改动且已更新对应 catalog `updatedAt`（需本地 `_pages` 基线完整）：
+
+```bash
+npm run deploy
+npm run commit:tools:changed -- --slug=image-compress -m "tools: update image compress"
+git push
+# 等 Dashboard 成功
+npm run verify:r2:live
 ```
 
 手动分步（与上等价）：
@@ -222,10 +265,10 @@ npm run verify:r2:live
 | 位置 | 字段 |
 |---|---|
 | Worker | `wrangler.jsonc` → `vars.PAGES_CACHE_VERSION`（经 **git push** / 紧急 wrangler 进 env） |
-| R2 | `_meta/pages-build.json` → `pagesCacheVersion` + `contentHash`（**schemaVersion 2** 另含 `fileHashes`，供 `upload:r2:changed`） |
+| R2 | `_meta/pages-build.json` → `pagesCacheVersion` + `contentHash`（**schemaVersion 3** 另含 `fileHashes`、`toolUpdatedAt`、`toolUploadedAt`，供默认增量 `upload:r2`） |
 | 探针 | `GET /api/ops/pages-build` → `{ pagesCacheVersion, r2MetaVersion, aligned }` |
 
-三者 `pagesCacheVersion` 必须相同；`contentHash` 必须与本地 `public/_pages/**/*.html.gz` 一致。改 HTML 后务必重新 `upload:r2`（或已对齐时用 `upload:r2:changed`）；仅改 Worker 且 HTML 未变可用 `deploy:skip-upload` 后再 push。
+三者 `pagesCacheVersion` 必须相同；`contentHash` 必须与本地 `public/_pages/**/*.html.gz` 一致。改 HTML 后务必重新 `upload:r2`；仅改 Worker 且 HTML 未变可用 `deploy:skip-upload` 后再 push。需要重传所有对象时用 `upload:r2:full`。
 
 ### 入库与 Assets（GitHub 路径）
 
@@ -329,7 +372,7 @@ SEO / Skill / brief / 分片流程**不变**（见 `tool-creation.mdc`、`tool-c
 | `verify:r2:live` aligned=false | Worker vars 与 R2 meta 不一致 | 先 upload，再 push 含正确 `PAGES_CACHE_VERSION` 的 commit |
 | Worker 包又接近 3MB | 误把 `toolPageRegistry` / `*Page.ts` import 进 Worker | 入口只用 `toolSlugs` + R2 |
 | `upload:r2` 报 **403 Forbidden** | 账号/权限/桶；或 Object R/W token | 见 §9.1 |
-| `upload:r2` 很慢 | 未配 S3、回退 wrangler put | 配 §3.1 S3 凭据；或 `upload:r2:changed`；或调 `R2_UPLOAD_CONCURRENCY` |
+| `upload:r2` 很慢 | 未配 S3、回退 wrangler put；或首次无 meta / 无哈希 / 无 `toolUploadedAt` 自动扩大上传 | 配 §3.1 S3 凭据；确认 `_meta/pages-build.json` 有 `fileHashes` 与 `toolUploadedAt`；或调 `R2_UPLOAD_CONCURRENCY` |
 | `Credential access key has length 31, should be 32` | `.env` 里 `R2_ACCESS_KEY_ID` 少复制/多删了一位 | 核对长度为 **32**；或 Dashboard 重新创建 R2 token 再写入 `.env`（见 §3.1.2） |
 | R2 缺 `_meta/pages-build.json` | 未用新版 upload | `upload:r2`；看 `.cache/pages-build.json` |
 | gzip 正文乱码 | 双重压缩（历史） | 对外 identity；压缩交给运行时 |

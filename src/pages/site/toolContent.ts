@@ -22,6 +22,38 @@ export const withToolLangPrefix = (lang: SiteLang, pathname: string, defaultLang
 };
 
 /**
+ * Format a tool updatedAt marker for visible display.
+ */
+export const formatToolUpdatedAt = (lang: SiteLang, updatedAt?: string) => {
+	if (!updatedAt) return '';
+	const raw = updatedAt.trim();
+	const normalized = /^\d{4}-\d{2}-\d{2}$/.test(raw) ? `${raw}T00:00:00.000Z` : raw;
+	const date = new Date(normalized);
+	if (!Number.isFinite(date.getTime())) return raw;
+	try {
+		return new Intl.DateTimeFormat(lang, {
+			dateStyle: 'medium',
+			timeStyle: raw.includes('T') ? 'short' : undefined,
+		}).format(date);
+	} catch {
+		return raw.slice(0, 10);
+	}
+};
+
+/**
+ * Render the visible "last updated" marker for a tool page.
+ */
+export const renderToolUpdatedAt = (lang: SiteLang, tool: ToolPageMeta) => {
+	if (!tool.updatedAt) return '';
+	const label = t(lang, 'tool_last_updated' as keyof typeof import('../../site/i18n/en').default);
+	const value = formatToolUpdatedAt(lang, tool.updatedAt);
+	return `
+    <p class="tool-updated-at text-muted small mt-3 mb-0">
+      ${escapeHtml(label)} <time datetime="${escapeHtml(tool.updatedAt)}">${escapeHtml(value)}</time>
+    </p>`;
+};
+
+/**
  * 从 i18n 收集某工具的 FAQ 条目（q1/a1 … 最多 q8/a8）。
  * @param lang 语言
  * @param faqPrefix 如 tool_bmi
@@ -313,6 +345,7 @@ export const renderToolExtraSections = (opts: {
 	const pageUrl = `${SITE_ORIGIN}${path}`;
 	const toolName = t(opts.lang, opts.tool.i18nKey as keyof typeof import('../../site/i18n/en').default);
 	return [
+		renderToolUpdatedAt(opts.lang, opts.tool),
 		renderFaqSection(opts.lang, faqs),
 		renderYmylSection(opts.lang, opts.tool.faqPrefix, opts.tool.ymyl),
 		renderRelatedTools(opts.lang, opts.defaultLang, opts.tool.related),

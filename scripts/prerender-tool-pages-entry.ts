@@ -21,11 +21,20 @@ const ensureDir = async (dir: string) => {
 };
 
 /**
- * 预渲染全部工具 × 语言。
+ * Prerender all tools, or only PRERENDER_TOOL_SLUGS when set.
  */
 const main = async () => {
 	const langs = (supportedLangs || []) as SiteLang[];
-	const slugs = Object.keys(TOOL_PAGE_RENDERERS).sort();
+	const allSlugs = Object.keys(TOOL_PAGE_RENDERERS).sort();
+	const requestedSlugs = (process.env.PRERENDER_TOOL_SLUGS || '')
+		.split(',')
+		.map((s) => s.trim())
+		.filter(Boolean);
+	const missing = requestedSlugs.filter((slug) => !TOOL_PAGE_RENDERERS[slug]);
+	if (missing.length) {
+		throw new Error(`Unknown prerender slug(s): ${missing.join(', ')}`);
+	}
+	const slugs = requestedSlugs.length ? requestedSlugs.sort() : allSlugs;
 	let wrote = 0;
 	for (const lang of langs) {
 		const toolsDir = path.join(pagesRoot, lang, 'tools');
@@ -39,9 +48,11 @@ const main = async () => {
 			await fs.writeFile(path.join(toolsDir, `${slug}.html`), html, 'utf8');
 			wrote += 1;
 		}
-		console.log(`[prerender-tools] lang=${lang} tools=${slugs.length}`);
+		console.log(`[prerender-tools] lang=${lang} tools=${slugs.length}${requestedSlugs.length ? ' partial' : ''}`);
 	}
-	console.log(`[prerender-tools] wrote=${wrote} defaultLang=${defaultLang}`);
+	console.log(
+		`[prerender-tools] wrote=${wrote} defaultLang=${defaultLang} mode=${requestedSlugs.length ? 'partial' : 'all'}`
+	);
 };
 
 main().catch((err) => {

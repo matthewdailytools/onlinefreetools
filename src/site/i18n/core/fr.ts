@@ -80,6 +80,7 @@ const fr: SiteLangDict = {
   tool_feedback_subject_label: 'Objet',
   tool_feedback_title: 'Questions ou retours',
   tool_feedback_to_label: 'À',
+  tool_last_updated: 'Dernière mise à jour :',
   tool_share_copied: 'Copié',
   tool_share_copy: 'Copier le lien',
   tool_share_hint: 'Partagez sur les réseaux, copiez le lien ou utilisez le partage du système.',

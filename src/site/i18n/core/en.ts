@@ -83,6 +83,7 @@ const en: SiteLangDict = {
   tool_feedback_subject_label: 'Subject',
   tool_feedback_title: 'Questions or feedback',
   tool_feedback_to_label: 'To',
+  tool_last_updated: 'Last updated:',
   tool_references_title: 'References',
   tool_related_title: 'Related tools',
   tool_share_copied: 'Copied',

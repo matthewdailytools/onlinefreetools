@@ -269,6 +269,9 @@ Below are our available online tools with their links (English version):
 - **Ops guide**: [`ops/README.md`](ops/README.md) — local start/stop, build, deploy
 - Local dev (background): `npm run start:dev` — see `ops/dev/`
 - Local dev (foreground): `npm run dev` or `wrangler dev`
+- Build/deploy defaults are incremental: `npm run build:site`, `npm run upload:r2`, and `npm run deploy` update tool HTML by comparing each tool shard's `updatedAt` with the last generated/uploaded timestamps, while refreshing shared pages and metadata.
+- When editing a tool, run `npm run tool:touch -- --slug=<slug>` or manually bump `src/site/tool-catalog.d/{slug}.json` `updatedAt` to the current ISO time; git commit/push state is not used to decide which tool pages are regenerated or uploaded.
+- Force a full baseline only when needed: `npm run build:site:full`, `npm run upload:r2:full`, or `npm run deploy:full`
 - Deploy: `npm run deploy`
 
 ## Static Site Build / 静态站点构建

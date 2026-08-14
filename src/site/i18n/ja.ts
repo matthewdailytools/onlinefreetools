@@ -3435,6 +3435,7 @@ const ja: SiteLangDict = {
   tool_jwt_decoder_usecase_2: 'API 契約：ID token の iss・aud がドキュメントと一致するか確認。',
   tool_jwt_decoder_usecase_3: '学習：Header・Payload・Signature が JWS 3 セグメントにどう対応するかを理解。',
   tool_jwt_decoder_usecases_title: 'こんなときに',
+  tool_last_updated: '最終更新：',
   tool_logarithm_article: 'ブラウザで x>0 の log₁₀・ln・任意底の対数を計算します。',
   tool_logarithm_base_label: '底 b',
   tool_logarithm_base_ph: '例: 2',

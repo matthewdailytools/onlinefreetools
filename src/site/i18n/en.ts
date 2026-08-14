@@ -3827,6 +3827,7 @@ const en: SiteLangDict = {
   tool_jwt_decoder_usecase_2: 'API contracts: confirm iss and aud in an ID token match your service documentation.',
   tool_jwt_decoder_usecase_3: 'Learning: see how header alg/typ and payload claims map to the three JWS segments.',
   tool_jwt_decoder_usecases_title: 'Good fits',
+  tool_last_updated: 'Last updated:',
   tool_logarithm_article: 'Calculate log₁₀, ln, or custom-base logs of x > 0 in your browser.',
   tool_logarithm_base_label: 'Base b (custom)',
   tool_logarithm_base_ph: 'e.g. 2',

@@ -3673,6 +3673,7 @@ const de: SiteLangDict = {
   tool_jwt_decoder_usecase_2: 'API-Verträge: iss und aud eines ID Tokens mit der Doku abgleichen.',
   tool_jwt_decoder_usecase_3: 'Lernen: sehen, wie Header, Payload und Signatur drei JWS-Segmente bilden.',
   tool_jwt_decoder_usecases_title: 'Passende Einsätze',
+  tool_last_updated: 'Zuletzt aktualisiert:',
   tool_logarithm_article: 'Berechnen Sie log₁₀, ln oder Logs mit eigener Basis für x>0 im Browser.',
   tool_logarithm_base_label: 'Basis b',
   tool_logarithm_base_ph: 'z. B. 2',

@@ -2,6 +2,7 @@
   {
     "slug": "add-watermark",
     "path": "/tools/add-watermark",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "image",
     "featured": true,
     "ymyl": false,
@@ -22,6 +23,7 @@
   {
     "slug": "add-www-to-dns",
     "path": "/tools/add-www-to-dns",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "developer",
     "featured": true,
     "ymyl": false,
@@ -43,6 +45,7 @@
   {
     "slug": "base64",
     "path": "/tools/base64",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "developer",
     "featured": true,
     "ymyl": false,
@@ -63,6 +66,7 @@
   {
     "slug": "brand-color-token-pack",
     "path": "/tools/brand-color-token-pack",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "design",
     "featured": true,
     "ymyl": false,
@@ -84,6 +88,7 @@
   {
     "slug": "brand-style-guide",
     "path": "/tools/brand-style-guide",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "design",
     "featured": true,
     "ymyl": false,
@@ -104,6 +109,7 @@
   {
     "slug": "color-from-image",
     "path": "/tools/color-from-image",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "image",
     "featured": true,
     "ymyl": false,
@@ -123,6 +129,7 @@
   {
     "slug": "compress-pdf",
     "path": "/tools/compress-pdf",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "pdf",
     "featured": true,
     "ymyl": false,
@@ -142,6 +149,7 @@
   {
     "slug": "core-web-vitals-checker",
     "path": "/tools/core-web-vitals-checker",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "developer",
     "featured": true,
     "ymyl": false,
@@ -162,6 +170,7 @@
   {
     "slug": "crop-pdf",
     "path": "/tools/crop-pdf",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "pdf",
     "featured": true,
     "ymyl": false,
@@ -181,6 +190,7 @@
   {
     "slug": "csv-json",
     "path": "/tools/csv-json",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "developer",
     "featured": true,
     "ymyl": false,
@@ -201,6 +211,7 @@
   {
     "slug": "domain-lookup",
     "path": "/tools/domain-lookup",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "developer",
     "featured": true,
     "ymyl": false,
@@ -221,6 +232,7 @@
   {
     "slug": "file-hash",
     "path": "/tools/file-hash",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "developer",
     "featured": true,
     "ymyl": false,
@@ -240,6 +252,7 @@
   {
     "slug": "flip-image",
     "path": "/tools/flip-image",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "image",
     "featured": true,
     "ymyl": false,
@@ -260,6 +273,7 @@
   {
     "slug": "how-to-calculate-acceleration",
     "path": "/tools/how-to-calculate-acceleration",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": false,
@@ -279,6 +293,7 @@
   {
     "slug": "how-to-calculate-age",
     "path": "/tools/how-to-calculate-age",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": false,
@@ -298,6 +313,7 @@
   {
     "slug": "how-to-calculate-aspect-ratio",
     "path": "/tools/how-to-calculate-aspect-ratio",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": false,
@@ -317,6 +333,7 @@
   {
     "slug": "how-to-calculate-bmi",
     "path": "/tools/how-to-calculate-bmi",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": true,
     "ymyl": true,
@@ -337,6 +354,7 @@
   {
     "slug": "how-to-calculate-bmr-tdee",
     "path": "/tools/how-to-calculate-bmr-tdee",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": true,
@@ -357,6 +375,7 @@
   {
     "slug": "how-to-calculate-body-fat",
     "path": "/tools/how-to-calculate-body-fat",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": true,
@@ -377,6 +396,7 @@
   {
     "slug": "how-to-calculate-break-even",
     "path": "/tools/how-to-calculate-break-even",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": true,
@@ -397,6 +417,7 @@
   {
     "slug": "how-to-calculate-cagr",
     "path": "/tools/how-to-calculate-cagr",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": true,
@@ -419,6 +440,7 @@
   {
     "slug": "how-to-calculate-circle",
     "path": "/tools/how-to-calculate-circle",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": false,
@@ -438,6 +460,7 @@
   {
     "slug": "how-to-calculate-compound-interest",
     "path": "/tools/how-to-calculate-compound-interest",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": true,
     "ymyl": true,
@@ -460,6 +483,7 @@
   {
     "slug": "how-to-calculate-concrete",
     "path": "/tools/how-to-calculate-concrete",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": false,
@@ -480,6 +504,7 @@
   {
     "slug": "how-to-calculate-confidence-interval",
     "path": "/tools/how-to-calculate-confidence-interval",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": false,
@@ -500,6 +525,7 @@
   {
     "slug": "how-to-calculate-contribution-margin",
     "path": "/tools/how-to-calculate-contribution-margin",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": true,
@@ -519,6 +545,7 @@
   {
     "slug": "how-to-calculate-date-difference",
     "path": "/tools/how-to-calculate-date-difference",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": false,
@@ -539,6 +566,7 @@
   {
     "slug": "how-to-calculate-debt-payoff",
     "path": "/tools/how-to-calculate-debt-payoff",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": true,
@@ -558,6 +586,7 @@
   {
     "slug": "how-to-calculate-density",
     "path": "/tools/how-to-calculate-density",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": false,
@@ -577,6 +606,7 @@
   {
     "slug": "how-to-calculate-discount",
     "path": "/tools/how-to-calculate-discount",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": false,
@@ -596,6 +626,7 @@
   {
     "slug": "how-to-calculate-emi",
     "path": "/tools/how-to-calculate-emi",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": true,
@@ -616,6 +647,7 @@
   {
     "slug": "how-to-calculate-exponent",
     "path": "/tools/how-to-calculate-exponent",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": false,
@@ -635,6 +667,7 @@
   {
     "slug": "how-to-calculate-gpa",
     "path": "/tools/how-to-calculate-gpa",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": false,
@@ -654,6 +687,7 @@
   {
     "slug": "how-to-calculate-gradient",
     "path": "/tools/how-to-calculate-gradient",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": true,
     "ymyl": false,
@@ -673,6 +707,7 @@
   {
     "slug": "how-to-calculate-gross-margin",
     "path": "/tools/how-to-calculate-gross-margin",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": true,
@@ -694,6 +729,7 @@
   {
     "slug": "how-to-calculate-heart-rate",
     "path": "/tools/how-to-calculate-heart-rate",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": true,
@@ -714,6 +750,7 @@
   {
     "slug": "how-to-calculate-ideal-weight",
     "path": "/tools/how-to-calculate-ideal-weight",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": true,
@@ -734,6 +771,7 @@
   {
     "slug": "how-to-calculate-inflation",
     "path": "/tools/how-to-calculate-inflation",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": true,
@@ -753,6 +791,7 @@
   {
     "slug": "how-to-calculate-irr",
     "path": "/tools/how-to-calculate-irr",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": true,
@@ -773,6 +812,7 @@
   {
     "slug": "how-to-calculate-logarithm",
     "path": "/tools/how-to-calculate-logarithm",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": false,
@@ -792,6 +832,7 @@
   {
     "slug": "how-to-calculate-macros",
     "path": "/tools/how-to-calculate-macros",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": true,
@@ -812,6 +853,7 @@
   {
     "slug": "how-to-calculate-marginal-revenue",
     "path": "/tools/how-to-calculate-marginal-revenue",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": true,
     "ymyl": true,
@@ -831,6 +873,7 @@
   {
     "slug": "how-to-calculate-markup",
     "path": "/tools/how-to-calculate-markup",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": true,
@@ -851,6 +894,7 @@
   {
     "slug": "how-to-calculate-mean",
     "path": "/tools/how-to-calculate-mean",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": false,
@@ -871,6 +915,7 @@
   {
     "slug": "how-to-calculate-median",
     "path": "/tools/how-to-calculate-median",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": false,
@@ -891,6 +936,7 @@
   {
     "slug": "how-to-calculate-npv",
     "path": "/tools/how-to-calculate-npv",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": true,
@@ -912,6 +958,7 @@
   {
     "slug": "how-to-calculate-ohms-law",
     "path": "/tools/how-to-calculate-ohms-law",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": false,
@@ -931,6 +978,7 @@
   {
     "slug": "how-to-calculate-one-rep-max",
     "path": "/tools/how-to-calculate-one-rep-max",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": false,
@@ -950,6 +998,7 @@
   {
     "slug": "how-to-calculate-p-value",
     "path": "/tools/how-to-calculate-p-value",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": false,
@@ -970,6 +1019,7 @@
   {
     "slug": "how-to-calculate-pace",
     "path": "/tools/how-to-calculate-pace",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": false,
@@ -989,6 +1039,7 @@
   {
     "slug": "how-to-calculate-paint",
     "path": "/tools/how-to-calculate-paint",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": false,
@@ -1008,6 +1059,7 @@
   {
     "slug": "how-to-calculate-payback-period",
     "path": "/tools/how-to-calculate-payback-period",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": true,
@@ -1027,6 +1079,7 @@
   {
     "slug": "how-to-calculate-percentage-change",
     "path": "/tools/how-to-calculate-percentage-change",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": true,
     "ymyl": false,
@@ -1046,6 +1099,7 @@
   {
     "slug": "how-to-calculate-permutation-combination",
     "path": "/tools/how-to-calculate-permutation-combination",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": false,
@@ -1065,6 +1119,7 @@
   {
     "slug": "how-to-calculate-present-value",
     "path": "/tools/how-to-calculate-present-value",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": true,
@@ -1084,6 +1139,7 @@
   {
     "slug": "how-to-calculate-profit-margin",
     "path": "/tools/how-to-calculate-profit-margin",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": true,
@@ -1103,6 +1159,7 @@
   {
     "slug": "how-to-calculate-pythagorean-theorem",
     "path": "/tools/how-to-calculate-pythagorean-theorem",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": false,
@@ -1123,6 +1180,7 @@
   {
     "slug": "how-to-calculate-quadratic-equation",
     "path": "/tools/how-to-calculate-quadratic-equation",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": false,
@@ -1142,6 +1200,7 @@
   {
     "slug": "how-to-calculate-roi",
     "path": "/tools/how-to-calculate-roi",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": true,
     "ymyl": true,
@@ -1161,6 +1220,7 @@
   {
     "slug": "how-to-calculate-rule-of-72",
     "path": "/tools/how-to-calculate-rule-of-72",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": true,
@@ -1180,6 +1240,7 @@
   {
     "slug": "how-to-calculate-salary-hourly",
     "path": "/tools/how-to-calculate-salary-hourly",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": true,
@@ -1200,6 +1261,7 @@
   {
     "slug": "how-to-calculate-sample-size",
     "path": "/tools/how-to-calculate-sample-size",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": false,
@@ -1219,6 +1281,7 @@
   {
     "slug": "how-to-calculate-scientific-notation",
     "path": "/tools/how-to-calculate-scientific-notation",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": false,
@@ -1238,6 +1301,7 @@
   {
     "slug": "how-to-calculate-significant-figures",
     "path": "/tools/how-to-calculate-significant-figures",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": false,
@@ -1257,6 +1321,7 @@
   {
     "slug": "how-to-calculate-slope",
     "path": "/tools/how-to-calculate-slope",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": false,
@@ -1277,6 +1342,7 @@
   {
     "slug": "how-to-calculate-standard-deviation",
     "path": "/tools/how-to-calculate-standard-deviation",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": false,
@@ -1297,6 +1363,7 @@
   {
     "slug": "how-to-calculate-tile",
     "path": "/tools/how-to-calculate-tile",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": false,
@@ -1317,6 +1384,7 @@
   {
     "slug": "how-to-calculate-tip",
     "path": "/tools/how-to-calculate-tip",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": false,
@@ -1337,6 +1405,7 @@
   {
     "slug": "how-to-calculate-triangle-area",
     "path": "/tools/how-to-calculate-triangle-area",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": false,
@@ -1356,6 +1425,7 @@
   {
     "slug": "how-to-calculate-vat",
     "path": "/tools/how-to-calculate-vat",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": false,
@@ -1375,6 +1445,7 @@
   {
     "slug": "how-to-calculate-velocity",
     "path": "/tools/how-to-calculate-velocity",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": false,
@@ -1394,6 +1465,7 @@
   {
     "slug": "how-to-calculate-volume",
     "path": "/tools/how-to-calculate-volume",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": false,
@@ -1413,6 +1485,7 @@
   {
     "slug": "how-to-calculate-z-score",
     "path": "/tools/how-to-calculate-z-score",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": false,
@@ -1432,6 +1505,7 @@
   {
     "slug": "hreflang-generator",
     "path": "/tools/hreflang-generator",
+    "updatedAt": "2026-08-11T00:00:00.000Z",
     "category": "developer",
     "featured": false,
     "ymyl": false,
@@ -1453,6 +1527,7 @@
   {
     "slug": "html-entity",
     "path": "/tools/html-entity",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "developer",
     "featured": true,
     "ymyl": false,
@@ -1472,6 +1547,7 @@
   {
     "slug": "image-border",
     "path": "/tools/image-border",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "image",
     "featured": true,
     "ymyl": false,
@@ -1492,6 +1568,7 @@
   {
     "slug": "image-compress",
     "path": "/tools/image-compress",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "image",
     "featured": true,
     "ymyl": false,
@@ -1513,6 +1590,7 @@
   {
     "slug": "image-crop",
     "path": "/tools/image-crop",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "image",
     "featured": true,
     "ymyl": false,
@@ -1533,6 +1611,7 @@
   {
     "slug": "image-exif",
     "path": "/tools/image-exif",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "image",
     "featured": true,
     "ymyl": false,
@@ -1553,6 +1632,7 @@
   {
     "slug": "image-format-converter",
     "path": "/tools/image-format-converter",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "image",
     "featured": true,
     "ymyl": false,
@@ -1574,6 +1654,7 @@
   {
     "slug": "image-grayscale",
     "path": "/tools/image-grayscale",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "image",
     "featured": true,
     "ymyl": false,
@@ -1594,6 +1675,7 @@
   {
     "slug": "image-merge",
     "path": "/tools/image-merge",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "image",
     "featured": true,
     "ymyl": false,
@@ -1616,6 +1698,7 @@
   {
     "slug": "image-optimizer",
     "path": "/tools/image-optimizer",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "image",
     "featured": true,
     "ymyl": false,
@@ -1637,6 +1720,7 @@
   {
     "slug": "image-overlay",
     "path": "/tools/image-overlay",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "image",
     "featured": true,
     "ymyl": false,
@@ -1657,6 +1741,7 @@
   {
     "slug": "image-to-base64",
     "path": "/tools/image-to-base64",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "image",
     "featured": true,
     "ymyl": false,
@@ -1676,6 +1761,7 @@
   {
     "slug": "images-to-gif",
     "path": "/tools/images-to-gif",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "image",
     "featured": true,
     "ymyl": false,
@@ -1696,6 +1782,7 @@
   {
     "slug": "images-to-pdf",
     "path": "/tools/images-to-pdf",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "image",
     "featured": true,
     "ymyl": false,
@@ -1718,6 +1805,7 @@
   {
     "slug": "images-to-ppt",
     "path": "/tools/images-to-ppt",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "image",
     "featured": true,
     "ymyl": false,
@@ -1738,6 +1826,7 @@
   {
     "slug": "images-to-word",
     "path": "/tools/images-to-word",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "image",
     "featured": true,
     "ymyl": false,
@@ -1758,6 +1847,7 @@
   {
     "slug": "indexnow",
     "path": "/tools/indexnow",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "developer",
     "featured": true,
     "ymyl": false,
@@ -1777,6 +1867,7 @@
   {
     "slug": "ip-address",
     "path": "/tools/ip-address",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "developer",
     "featured": true,
     "ymyl": false,
@@ -1797,6 +1888,7 @@
   {
     "slug": "json-schema-validator",
     "path": "/tools/json-schema-validator",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "developer",
     "featured": true,
     "ymyl": false,
@@ -1816,6 +1908,7 @@
   {
     "slug": "jwt-decoder",
     "path": "/tools/jwt-decoder",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "developer",
     "featured": true,
     "ymyl": false,
@@ -1835,6 +1928,7 @@
   {
     "slug": "magnet-link-decoder",
     "path": "/tools/magnet-link-decoder",
+    "updatedAt": "2026-08-14T00:00:00.000Z",
     "category": "developer",
     "featured": true,
     "ymyl": false,
@@ -1855,6 +1949,7 @@
   {
     "slug": "markdown-to-html",
     "path": "/tools/markdown-to-html",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "developer",
     "featured": true,
     "ymyl": false,
@@ -1877,6 +1972,7 @@
   {
     "slug": "merge-pdf",
     "path": "/tools/merge-pdf",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "pdf",
     "featured": true,
     "ymyl": false,
@@ -1898,6 +1994,7 @@
   {
     "slug": "meta-serp-preview",
     "path": "/tools/meta-serp-preview",
+    "updatedAt": "2026-08-11T00:00:00.000Z",
     "category": "developer",
     "featured": false,
     "ymyl": false,
@@ -1919,6 +2016,7 @@
   {
     "slug": "meta-tag-generator",
     "path": "/tools/meta-tag-generator",
+    "updatedAt": "2026-08-11T00:00:00.000Z",
     "category": "developer",
     "featured": false,
     "ymyl": false,
@@ -1939,6 +2037,7 @@
   {
     "slug": "on-page-seo-checker",
     "path": "/tools/on-page-seo-checker",
+    "updatedAt": "2026-08-11T00:00:00.000Z",
     "category": "developer",
     "featured": false,
     "ymyl": false,
@@ -1960,6 +2059,7 @@
   {
     "slug": "open-graph-preview",
     "path": "/tools/open-graph-preview",
+    "updatedAt": "2026-08-11T00:00:00.000Z",
     "category": "developer",
     "featured": false,
     "ymyl": false,
@@ -1980,6 +2080,7 @@
   {
     "slug": "organize-pdf",
     "path": "/tools/organize-pdf",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "pdf",
     "featured": true,
     "ymyl": false,
@@ -2001,6 +2102,7 @@
   {
     "slug": "password-generator",
     "path": "/tools/password-generator",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "developer",
     "featured": true,
     "ymyl": false,
@@ -2020,6 +2122,7 @@
   {
     "slug": "pdf-page-numbers",
     "path": "/tools/pdf-page-numbers",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "pdf",
     "featured": true,
     "ymyl": false,
@@ -2039,6 +2142,7 @@
   {
     "slug": "pdf-page-to-image-sizes",
     "path": "/tools/pdf-page-to-image-sizes",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "image",
     "featured": true,
     "ymyl": false,
@@ -2058,6 +2162,7 @@
   {
     "slug": "pdf-to-jpg",
     "path": "/tools/pdf-to-jpg",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "image",
     "featured": true,
     "ymyl": false,
@@ -2079,6 +2184,7 @@
   {
     "slug": "pdf-to-markdown",
     "path": "/tools/pdf-to-markdown",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "pdf",
     "featured": true,
     "ymyl": false,
@@ -2098,6 +2204,7 @@
   {
     "slug": "pdf-watermark",
     "path": "/tools/pdf-watermark",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "pdf",
     "featured": true,
     "ymyl": false,
@@ -2117,6 +2224,7 @@
   {
     "slug": "protect-pdf",
     "path": "/tools/protect-pdf",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "pdf",
     "featured": true,
     "ymyl": false,
@@ -2136,6 +2244,7 @@
   {
     "slug": "robots-txt-generator",
     "path": "/tools/robots-txt-generator",
+    "updatedAt": "2026-08-11T00:00:00.000Z",
     "category": "developer",
     "featured": false,
     "ymyl": false,
@@ -2156,6 +2265,7 @@
   {
     "slug": "rotate-pdf",
     "path": "/tools/rotate-pdf",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "pdf",
     "featured": true,
     "ymyl": false,
@@ -2176,6 +2286,7 @@
   {
     "slug": "schema-jsonld-generator",
     "path": "/tools/schema-jsonld-generator",
+    "updatedAt": "2026-08-11T00:00:00.000Z",
     "category": "developer",
     "featured": false,
     "ymyl": false,
@@ -2196,6 +2307,7 @@
   {
     "slug": "sitemap-xml-generator",
     "path": "/tools/sitemap-xml-generator",
+    "updatedAt": "2026-08-11T00:00:00.000Z",
     "category": "developer",
     "featured": false,
     "ymyl": false,
@@ -2217,6 +2329,7 @@
   {
     "slug": "smart-website-color-scheme",
     "path": "/tools/smart-website-color-scheme",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "design",
     "featured": true,
     "ymyl": false,
@@ -2237,6 +2350,7 @@
   {
     "slug": "split-pdf",
     "path": "/tools/split-pdf",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "pdf",
     "featured": true,
     "ymyl": false,
@@ -2257,6 +2371,7 @@
   {
     "slug": "square-feet",
     "path": "/tools/square-feet",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": true,
     "ymyl": false,
@@ -2277,6 +2392,7 @@
   {
     "slug": "text-diff",
     "path": "/tools/text-diff",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "developer",
     "featured": true,
     "ymyl": false,
@@ -2298,6 +2414,7 @@
   {
     "slug": "timezone-converter",
     "path": "/tools/timezone-converter",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "developer",
     "featured": true,
     "ymyl": false,
@@ -2317,6 +2434,7 @@
   {
     "slug": "unit-converter",
     "path": "/tools/unit-converter",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "calculator",
     "featured": false,
     "ymyl": false,
@@ -2336,6 +2454,7 @@
   {
     "slug": "unix-timestamp",
     "path": "/tools/unix-timestamp",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "developer",
     "featured": true,
     "ymyl": false,
@@ -2355,6 +2474,7 @@
   {
     "slug": "unlock-pdf",
     "path": "/tools/unlock-pdf",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "pdf",
     "featured": true,
     "ymyl": false,
@@ -2374,6 +2494,7 @@
   {
     "slug": "utm-builder",
     "path": "/tools/utm-builder",
+    "updatedAt": "2026-08-11T00:00:00.000Z",
     "category": "developer",
     "featured": false,
     "ymyl": false,
@@ -2394,6 +2515,7 @@
   {
     "slug": "uuid-generator",
     "path": "/tools/uuid-generator",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "developer",
     "featured": true,
     "ymyl": false,
@@ -2413,6 +2535,7 @@
   {
     "slug": "wcag-contrast-checker",
     "path": "/tools/wcag-contrast-checker",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "design",
     "featured": true,
     "ymyl": false,
@@ -2433,6 +2556,7 @@
   {
     "slug": "website-headers",
     "path": "/tools/website-headers",
+    "updatedAt": "2026-08-11T00:00:00.000Z",
     "category": "developer",
     "featured": true,
     "ymyl": false,
@@ -2456,6 +2580,7 @@
   {
     "slug": "yaml-json",
     "path": "/tools/yaml-json",
+    "updatedAt": "2026-08-09T00:00:00.000Z",
     "category": "developer",
     "featured": true,
     "ymyl": false,

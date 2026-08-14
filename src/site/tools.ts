@@ -28,6 +28,8 @@ export type ToolPageMeta = {
 	subject: ToolSubject;
 	/** 是否在首页 Featured 区展示 */
 	featured?: boolean;
+	/** 工具内容最近更新时间；编辑工具时同步更新。 */
+	updatedAt?: string;
 	/** 是否属于 YMYL（需免责与出处） */
 	ymyl?: boolean;
 	/**

@@ -75,6 +75,7 @@ const id: SiteLangDict = {
   tool_feedback_subject_label: 'Subjek',
   tool_feedback_title: 'Pertanyaan atau masukan',
   tool_feedback_to_label: 'Kepada',
+  tool_last_updated: 'Terakhir diperbarui:',
   tool_share_copied: 'Disalin',
   tool_share_copy: 'Salin tautan',
   tool_share_hint: 'Bagikan di jejaring sosial, salin tautan, atau gunakan berbagi perangkat.',

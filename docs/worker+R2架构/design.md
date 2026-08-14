@@ -65,15 +65,18 @@
 
 ```bash
 cp .env.example .env        # 首次：填 R2_ACCOUNT_ID / R2_ACCESS_KEY_ID / R2_SECRET_ACCESS_KEY（见 ops §3.1）
-npm run build:site          # merge → 静态页 → 预渲染工具 → gzip _pages
-npm run upload:r2           # 全量同步 .html.gz + 写 _meta/pages-build.json（优先 S3 API）
-npm run upload:r2:changed   # 日常：仅 put 哈希变化的对象（仍重写 meta；需 schema/fileHashes）
+npm run build:site          # 默认增量：静态共享页刷新，只预渲染 updatedAt 晚于本地生成基线的工具；缺基线自动全量补齐
+npm run build:site:full     # 强制全量预渲染所有工具页 + gzip
+npm run tool:touch -- --slug=<slug> # 工具内容改动后刷新 catalog updatedAt
+npm run upload:r2           # 默认增量：工具页按 updatedAt > toolUploadedAt；非工具页按哈希变化；仍重写 meta
+npm run upload:r2:full      # 强制全量同步 .html.gz + 写 _meta/pages-build.json（优先 S3 API）
 npm run verify:r2           # R2 ↔ wrangler PAGES_CACHE_VERSION / contentHash
-npm run deploy              # predeploy → upload（全量）→ verify → 提示 git push（CF）；live 另跑
+npm run deploy              # 默认增量：predeploy → upload:r2 → verify → 提示 git push（CF）；live 另跑
+npm run deploy:full         # 强制全量 build + 全量 upload + verify
 # CF 成功后：npm run verify:r2:live
 ```
 
-远程上传：有 `.env` S3 凭据时进程内并发 `PutObject`；否则回退逐文件 `wrangler r2 object put`（慢）。`_meta/pages-build.json` 现为 **schemaVersion 2**（含 `fileHashes`，供增量）；Worker 探针仍只读 `pagesCacheVersion` / `contentHash`。
+远程上传：有 `.env` S3 凭据时进程内并发 `PutObject`；否则回退逐文件 `wrangler r2 object put`（慢）。`_meta/pages-build.json` 现为 **schemaVersion 3**（含 `fileHashes`、`toolUpdatedAt`、`toolUploadedAt`，供增量）；Worker 探针仍只读 `pagesCacheVersion` / `contentHash`。工具页增量不看 git，而是由 `src/site/tool-catalog.d/{slug}.json` 的 `updatedAt` 与上次生成/上传时间对比决定。
 
 `predeploy` 含 `build:site` + lint。运维操作与凭据获取：[`ops/worker-r2-ops.md`](../../ops/worker-r2-ops.md)（尤其 **§3.1**）。
 

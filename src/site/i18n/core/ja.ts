@@ -73,6 +73,7 @@ const ja: SiteLangDict = {
   tool_feedback_subject_label: '件名',
   tool_feedback_title: 'お問い合わせ・フィードバック',
   tool_feedback_to_label: '宛先',
+  tool_last_updated: '最終更新：',
   tool_share_copied: 'コピーしました',
   tool_share_copy: 'リンクをコピー',
   tool_share_hint: 'SNSで共有、リンクをコピー、または端末の共有機能を使えます。',

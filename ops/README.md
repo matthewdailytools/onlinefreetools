@@ -132,13 +132,17 @@ npx wrangler dev
 
 | 命令 | 用途 |
 |---|---|
-| `npm run build:site` | 生成首页/taxonomy/工具预渲染/gzip/sitemap/vendor |
-| `npm run upload:r2` | 灌远程 R2（S3 优先；含 `_meta/pages-build.json`） |
-| `npm run upload:r2:changed` | 仅上传哈希变化的 `.html.gz` + 重写 meta |
-| `npm run verify:r2` / `verify:r2:live` | R2 ↔ Worker `PAGES_CACHE_VERSION` 校验（live 含生产探针） |
-| `npm run deploy` | **生产推荐**：predeploy → upload → verify → **提示 git push**（CF 拉 GitHub） |
+| `npm run build:site` | 默认增量：生成首页/taxonomy/sitemap/vendor，只预渲染 `updatedAt` 晚于本地生成基线的工具页；缺 `_pages` 基线会自动全量补齐 |
+| `npm run build:site:full` | 强制全量预渲染所有工具页 |
+| `npm run tool:touch -- --slug=<slug>` | 工具内容/文案/图标改动后刷新 catalog `updatedAt` |
+| `npm run upload:r2` | 默认增量：工具页按 `updatedAt > toolUploadedAt` 上传，非工具页按哈希变化上传，并重写 meta |
+| `npm run upload:r2:full` | 强制全量上传远程 R2（S3 优先；含 `_meta/pages-build.json`） |
+| `npm run verify:r2` / `verify:r2:live` | R2 ↔ Worker `PAGES_CACHE_VERSION` 校验；有 S3 凭据时优先用 S3 读取（live 含生产探针） |
+| `npm run deploy` | **生产推荐**：默认增量 predeploy → upload:r2 → verify → **提示 git push**（CF 拉 GitHub） |
+| `npm run deploy:full` | 强制全量 build + 全量 upload + verify |
 | `npm run deploy:skip-upload` | HTML 未变时跳过上传，仍 verify + 提示 push |
 | `npm run deploy:worker-only` | 紧急本机 `wrangler deploy` |
+| `npm run stage:tools:changed` / `commit:tools:changed` | 只 stage/commit 变更或指定 slug 的工具相关路径 |
 | `npm run sitemap` | 仅生成 sitemap（全量或 CLI 筛选；见 §4.0） |
 | `npm run sitemap:ui` / `npm run ops:ui` | 本地 Ops 操作页（Sitemap + 运维手册；见 §4.0） |
 | `npm run build:logs` | 仅重建 `public/devlogs/` |
@@ -153,7 +157,7 @@ npx wrangler dev
 
 ```bash
 npm run deploy
-# 等价于：build:site + lint → upload:r2 → verify:r2 →（请 git push，CF 拉仓库）
+# 等价于：增量 build:site + lint → 增量 upload:r2 → verify:r2 →（请 git push，CF 拉仓库）
 # CF 成功后再：npm run verify:r2:live
 ```
 
@@ -161,7 +165,8 @@ Worker + R2 细节见 [`ops/worker-r2-ops.md`](./worker-r2-ops.md)。SEO 清单�
 
 ### 4.0 Sitemap 筛选生成与操作页
 
-日常发版仍以 **`npm run build:site` → 全量 `public/sitemap.xml`** 为准（GSC / IndexNow 默认读此文件）。
+日常发版仍以 **`npm run build:site` → `public/sitemap.xml`** 为准（GSC / IndexNow 默认读此全量 sitemap 文件；工具页预渲染本身默认增量）。
+工具页构建/上传增量不依赖 git：编辑工具时运行 `npm run tool:touch -- --slug=<slug>`（或手动更新对应 `src/site/tool-catalog.d/{slug}.json` 的 `updatedAt`）；构建对比 `.cache/tool-build-state.json` 的 `toolGeneratedAt`，上传对比 `_meta/pages-build.json` 的 `toolUploadedAt`。最新 push、最新 commit、未 commit 修改都不是增量判断依据。
 本节用于：**只重建 sitemap**、或按语言 / 信息页 / 分类 / 场景 / 工具类型做**子集**生成（排查、抽样提交、临时清单）。
 
 | 路径 | 说明 |
@@ -362,9 +367,10 @@ npm run deploy
 npm run verify:r2:live
 ```
 
-流程：`predeploy`（`build:site` + lint）→ **`upload:r2`**（S3 优先，须本机 `.env`；见 [`worker-r2-ops.md`](./worker-r2-ops.md) §3.1）→ **`verify:r2`** → **git push**（Cloudflare 拉 GitHub 部署 Worker + Assets）→ **`verify:r2:live`**。
+流程：`predeploy`（默认增量 `build:site` + lint）→ **`upload:r2`**（默认增量；S3 优先，须本机 `.env`；见 [`worker-r2-ops.md`](./worker-r2-ops.md) §3.1）→ **`verify:r2`** → **git push**（Cloudflare 拉 GitHub 部署 Worker + Assets）→ **`verify:r2:live`**。
 
-仅改少量 HTML 且不跑完整 `deploy` 时：`npm run upload:r2:changed` → `npm run verify:r2` →（若需）push。  
+仅改少量 HTML 且不跑完整 `deploy` 时：`npm run upload:r2` → `npm run verify:r2` →（若需）push。  
+少量工具改动时：`npm run tool:touch -- --slug=<slug>` → `npm run build:site`（或显式 `npm run build:site -- --slug=<slug>`）→ `npm run upload:r2` → `npm run verify:r2` → `npm run commit:tools:changed -- --slug=<slug> -m "tools: update <slug>"` → `git push`。不传 `--slug` 时，build/upload 增量命令看 `updatedAt` 与上次生成/上传时间，不看 git 工作树、最新 commit 或最新 push。
 仅改 Worker、HTML 未变：`npm run deploy:skip-upload` 后再 push。  
 紧急本机直发：`npm run deploy:worker-only`（或 `node scripts/deploy-site.mjs --wrangler-deploy`）。裸 `npx wrangler deploy` **不**灌 R2、**不**做版本校验。
 
@@ -414,10 +420,11 @@ Worker 对 `/` 要求请求头含 `text/html`（浏览器正常访问无此问�
 
 ### 启动后页面 404 / 样式丢失
 
-先完整构建静态资源：
+先构建静态资源。默认增量会在 `_pages` 基线缺失时自动补齐；排障时可显式全量：
 
 ```bash
 npm run build:site
+# 或：npm run build:site:full
 npm run restart:dev
 ```
 
@@ -437,7 +444,7 @@ curl -sS https://onlinefreetools.org/api/ops/pages-build
 
 - 缺 `_meta/pages-build.json` → 先 `npm run upload:r2`
 - `pagesCacheVersion` 不一致 → 确认 `wrangler.jsonc` 的 `PAGES_CACHE_VERSION` 与刚上传的清单一致，再 `npm run deploy` + **git push**
-- `contentHash` 不一致 → 本地改过 HTML 未重新 upload；再跑 `build:site` + `upload:r2`
+- `contentHash` 不一致 → 本地改过 HTML 未重新 upload；再跑 `build:site` + `upload:r2`（需要重传全部对象时用 `upload:r2:full`）
 - live `aligned: false` → Worker（push）与 R2 清单不一致；按 `upload → verify → git push → verify:r2:live` 重发；勿在 CF 未完成时跑 live
 - live 过早失败 → 等 Cloudflare Dashboard 部署成功后再 `verify:r2:live`
 

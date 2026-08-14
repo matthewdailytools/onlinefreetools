@@ -79,6 +79,7 @@ const ru: SiteLangDict = {
   tool_feedback_subject_label: 'Тема',
   tool_feedback_title: 'Вопросы и отзывы',
   tool_feedback_to_label: 'Кому',
+  tool_last_updated: 'Последнее обновление:',
   tool_share_copied: 'Скопировано',
   tool_share_copy: 'Копировать ссылку',
   tool_share_hint: 'Поделитесь в соцсетях, скопируйте ссылку или используйте системный шаринг.',

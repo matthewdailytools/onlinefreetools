@@ -17,6 +17,7 @@ const require = createRequire(import.meta.url);
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const i18nDir = path.join(root, 'src/site/i18n');
 const catalog = require(path.join(root, 'src/site/tool-catalog.json'));
+const catalogShardDir = path.join(root, 'src/site/tool-catalog.d');
 
 /** Bing 等搜索引擎建议 meta description 至少约 120 字符 */
 const MIN_DESCRIPTION_LENGTH = 120;
@@ -36,7 +37,46 @@ const keywords = {
 
 let exitCode = 0;
 
+/**
+ * Validate editable catalog shard updatedAt markers.
+ * @returns {number} failure count
+ */
+const validateCatalogUpdatedAt = () => {
+  let fails = 0;
+  const files = fs
+    .readdirSync(catalogShardDir)
+    .filter((file) => file.endsWith('.json'))
+    .sort();
+  for (const file of files) {
+    const full = path.join(catalogShardDir, file);
+    let shard;
+    try {
+      shard = JSON.parse(fs.readFileSync(full, 'utf8'));
+    } catch (err) {
+      console.warn(`[SEO-WARN] ${file}: invalid catalog JSON (${err.message || err})`);
+      fails += 1;
+      continue;
+    }
+    const updatedAt = typeof shard.updatedAt === 'string' ? shard.updatedAt.trim() : '';
+    const normalized = /^\d{4}-\d{2}-\d{2}$/.test(updatedAt) ? `${updatedAt}T00:00:00.000Z` : updatedAt;
+    const updatedMs = Date.parse(normalized);
+    if (!updatedAt || !Number.isFinite(updatedMs)) {
+      console.warn(`[SEO-WARN] ${file}: missing or invalid updatedAt; use an ISO timestamp such as 2026-08-14T12:00:00.000Z`);
+      fails += 1;
+    }
+  }
+  return fails;
+};
+
 const files = fs.readdirSync(i18nDir).filter((f) => f.endsWith('.ts') && !f.includes('.bak'));
+
+const updatedAtFails = validateCatalogUpdatedAt();
+if (updatedAtFails === 0) {
+  console.log('Catalog updatedAt validator: OK — every tool shard has a valid update marker');
+} else {
+  console.log(`Catalog updatedAt validator: ${updatedAtFails} issue(s). Update src/site/tool-catalog.d/{slug}.json.`);
+  exitCode = exitCode || 2;
+}
 
 /**
  * 从 i18n TS 文件中提取 string 字典项。

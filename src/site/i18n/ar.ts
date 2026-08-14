@@ -3582,6 +3582,7 @@ const ar: SiteLangDict = {
   tool_jwt_decoder_usecase_2: 'عقود API: تحقق من iss و aud في ID token مقابل الوثائق.',
   tool_jwt_decoder_usecase_3: 'تعلّم: شاهد كيف يرتبط header و payload و signature في ثلاثة مقاطع JWS.',
   tool_jwt_decoder_usecases_title: 'متى يناسب',
+  tool_last_updated: 'آخر تحديث:',
   tool_logarithm_article: 'احسب log₁₀ أو ln أو لوغاريتم بأساس مخصص لـ x>0 في المتصفح.',
   tool_logarithm_base_label: 'الأساس b',
   tool_logarithm_base_ph: 'مثال 2',

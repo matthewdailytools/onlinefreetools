@@ -4,7 +4,7 @@ Purpose: Make AI agents productive immediately in this repo. Keep changes minima
 
 ## Repo Snapshot
 - Minimal repo; root serves as project root. Conversation logs live in `dev-logs/`.
-- Target platform: Cloudflare (Pages + Workers). Use Wrangler for local/dev/deploy.
+- Target platform: Cloudflare Workers + Static Assets + R2. Use Wrangler for local dev; production Worker/Assets normally deploy via GitHub push after local R2 upload/verify.
 
 ## Default Agent Behaviors
 - Log each Q&A: create one file per exchange in `dev-logs/YYYY-MM/` named `YYYY-MM-DD-HH-MM-<summary>.md`. Use ISO date + 24h time (local), short hyphenated summary (sanitize: spaces→`-`, remove `/\\:*?"<>|`). Month folder matches `YYYY-MM` from the filename.
@@ -54,15 +54,13 @@ Purpose: Make AI agents productive immediately in this repo. Keep changes minima
 
 
 ## Cloudflare Workflows
-- Prereqs: Node.js LTS, `npm i -g wrangler`.
-- Workers (in root or subfolder):
-  - Init: `wrangler init .` (or specify a subdir for multiple apps).
-  - Dev: `wrangler dev`
-  - Deploy: `wrangler deploy`
-- Pages:
-  - Static: ensure `public/` (or framework output dir) exists; connect repo in Cloudflare Pages UI.
-  - Framework (e.g., Next.js): follow framework conventions; set `build command` and `output dir` in Pages settings.
-- Configuration: maintain a single `wrangler.toml` at the app root; use environment sections for staging/prod when needed.
+- Prereqs: Node.js LTS, Wrangler, and R2 S3 credentials in local `.env` for fast remote upload.
+- Local dev: `npm run start:dev` (background build + local R2 seed + Wrangler) or `npm run dev` (foreground Wrangler).
+- Build: `npm run build:site` is the default incremental path. It refreshes shared static pages and sitemap, then prerenders tools whose catalog shard `updatedAt` is newer than the local `.cache/tool-build-state.json` generation marker; it falls back to full tool prerender if the local `_pages` baseline is missing. Use `npm run build:site:full` only when a forced full baseline rebuild is needed.
+- Upload: `npm run upload:r2` is incremental by default. Tool pages are selected by `updatedAt > toolUploadedAt` from `_meta/pages-build.json`; shared/non-tool pages still use `fileHashes` diff. Use `npm run upload:r2:full` only to force all `_pages/**/*.html.gz` objects.
+- Tool edits: always run `npm run tool:touch -- --slug=<slug>` or manually bump `src/site/tool-catalog.d/{slug}.json` `updatedAt` to the current ISO timestamp. Git status, latest commit, and latest push do not decide build/upload incrementality.
+- Deploy: `npm run deploy` runs the default incremental build/lint/upload/verify flow and then prints the GitHub push steps. Use `npm run deploy:full` for full rebuild/reupload, `npm run deploy:worker-only` only for emergencies.
+- Configuration: root `wrangler.jsonc`; Worker serves HTML from Cache/R2, while Git-tracked Assets cover vendor, sitemap, icons, and language home files.
 
 ## Conventions
 - Directory hints:

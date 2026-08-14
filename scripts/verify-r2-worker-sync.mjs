@@ -21,16 +21,44 @@ import {
 	readWorkerPagesCacheVersion,
 	requiredR2Keys,
 } from './lib/pages-build-meta.mjs';
+import {
+	createR2S3Client,
+	hasR2S3Credentials,
+	s3GetObjectText,
+} from './lib/r2-s3-client.mjs';
 
 const argv = process.argv.slice(2);
 const local = argv.includes('--local');
 const live = argv.includes('--live');
+const forceS3 = argv.includes('--s3');
+const forceWrangler = argv.includes('--wrangler');
 const bucket = process.env.R2_PAGES_BUCKET || 'onlinefreetools-pages';
 const baseUrlArg = argv.find((a) => a.startsWith('--base-url='));
 const baseUrl = (baseUrlArg?.slice('--base-url='.length) || process.env.SITE_BASE_URL || 'https://onlinefreetools.org').replace(
 	/\/$/,
 	''
 );
+
+/**
+ * 远程读取后端与 upload:r2 保持一致：优先 S3，必要时回退 wrangler。
+ * @returns {'s3'|'wrangler'}
+ */
+const resolveRemoteTransport = () => {
+	if (local) return 'wrangler';
+	if (forceS3 && forceWrangler) {
+		throw new Error('Cannot combine --s3 and --wrangler');
+	}
+	if (forceWrangler) return 'wrangler';
+	if (forceS3) {
+		if (!hasR2S3Credentials()) {
+			throw new Error(
+				'--s3 requires .env (or env) R2_ACCOUNT_ID + R2_ACCESS_KEY_ID + R2_SECRET_ACCESS_KEY'
+			);
+		}
+		return 's3';
+	}
+	return hasR2S3Credentials() ? 's3' : 'wrangler';
+};
 
 /**
  * 远程：wrangler r2 object get 到临时文件并读文本。
@@ -65,6 +93,14 @@ const getRemoteObjectText = (key) =>
 			}
 		});
 	});
+
+/**
+ * 远程：S3 兼容 API 读文本；对象不存在返回 null。
+ * @param {ReturnType<typeof createR2S3Client>} client
+ * @param {string} key
+ * @returns {Promise<string|null>}
+ */
+const getRemoteS3ObjectText = (client, key) => s3GetObjectText(client, { bucket, key });
 
 /**
  * 本地：getPlatformProxy 读对象。
@@ -110,6 +146,8 @@ const localKeyExists = async (key) => {
 const main = async () => {
 	/** @type {string[]} */
 	const errors = [];
+	const remoteTransport = local ? 'local' : resolveRemoteTransport();
+	const s3Client = !local && remoteTransport === 's3' ? createR2S3Client() : null;
 	const workerVersion = await readWorkerPagesCacheVersion();
 	const pagesRoot = path.join(PROJECT_ROOT, 'public', '_pages');
 	const gzFiles = await listHtmlGzFiles(pagesRoot);
@@ -120,10 +158,18 @@ const main = async () => {
 
 	console.log(`[verify:r2] worker PAGES_CACHE_VERSION=${workerVersion}`);
 	console.log(`[verify:r2] local gz files=${gzFiles.length} contentHash=${localHash?.contentHash || 'n/a'}`);
-	console.log(`[verify:r2] target=${local ? 'local' : 'remote'} bucket=${bucket}`);
+	console.log(`[verify:r2] target=${local ? 'local' : 'remote'} bucket=${bucket} transport=${remoteTransport}`);
 
-	const getMeta = local ? getLocalObjectText : getRemoteObjectText;
-	const keyExists = local ? localKeyExists : remoteKeyExists;
+	const getMeta = local
+		? getLocalObjectText
+		: s3Client
+			? (key) => getRemoteS3ObjectText(s3Client, key)
+			: getRemoteObjectText;
+	const keyExists = local
+		? localKeyExists
+		: s3Client
+			? async (key) => (await getRemoteS3ObjectText(s3Client, key)) !== null
+			: remoteKeyExists;
 
 	const metaRaw = await getMeta(PAGES_BUILD_META_KEY);
 	if (!metaRaw) {

@@ -3403,6 +3403,7 @@ const zh: SiteLangDict = {
   tool_jwt_decoder_usecase_2: 'API 对接：核对 ID token 的 iss、aud 是否与文档一致。',
   tool_jwt_decoder_usecase_3: '学习 JWT：看清 Header、Payload、Signature 三段如何对应 JWS 结构。',
   tool_jwt_decoder_usecases_title: '适合场景',
+  tool_last_updated: '最近更新：',
   tool_logarithm_article: '在浏览器内计算 x>0 的 log₁₀、ln 或自定义底对数。',
   tool_logarithm_base_label: '底数 b（自定义）',
   tool_logarithm_base_ph: '例如 2',

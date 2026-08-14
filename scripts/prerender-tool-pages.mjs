@@ -1,18 +1,21 @@
 #!/usr/bin/env node
 /**
- * 用 esbuild 打包预渲染入口并执行，写出 public/_pages/{lang}/tools/{slug}.html。
+ * Bundle the prerender entry and write public/_pages/{lang}/tools/{slug}.html.
+ * Use --slug=<a,b> or --changed-tools to limit the tool set by catalog updatedAt.
  */
 import { spawnSync } from 'node:child_process';
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { createRequire } from 'node:module';
+import { resolveTargetToolSlugs, wantsChangedTools } from './lib/changed-tools.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const entry = path.join(root, 'scripts', 'prerender-tool-pages-entry.ts');
 const outDir = path.join(root, '.cache');
 const outFile = path.join(outDir, 'prerender-tool-pages.cjs');
 const require = createRequire(import.meta.url);
+const argv = process.argv.slice(2);
 
 /**
  * 解析 esbuild（优先本包，其次 wrangler 依赖树）。
@@ -38,6 +41,21 @@ const loadEsbuild = () => {
 
 const main = async () => {
 	await fs.mkdir(outDir, { recursive: true });
+	const forceFullTools = argv.includes('--full') || argv.includes('--all');
+	const targets = forceFullTools
+		? { slugs: [], source: 'all', changedPaths: [] }
+		: resolveTargetToolSlugs(argv, { requireTargets: false });
+	if (!forceFullTools && wantsChangedTools(argv) && !targets.slugs.length) {
+		console.log('[prerender-tools] mode=updatedAt slugs=0; nothing to prerender');
+		return;
+	}
+	const env = { ...process.env };
+	if (targets.slugs.length) {
+		env.PRERENDER_TOOL_SLUGS = targets.slugs.join(',');
+		console.log(`[prerender-tools] mode=${targets.source} slugs=${targets.slugs.join(',')}`);
+	} else {
+		console.log('[prerender-tools] mode=all');
+	}
 	const esbuild = loadEsbuild();
 	const result = await esbuild.build({
 		entryPoints: [entry],
@@ -57,7 +75,7 @@ const main = async () => {
 	const run = spawnSync(process.execPath, [outFile], {
 		cwd: root,
 		stdio: 'inherit',
-		env: process.env,
+		env,
 	});
 	if (run.status !== 0) process.exit(run.status || 1);
 };

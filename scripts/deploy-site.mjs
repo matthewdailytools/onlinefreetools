@@ -2,11 +2,12 @@
 /**
  * 生产发版编排：upload R2 → 校验版本一致 →（Worker/Assets 由 GitHub push 触发 Cloudflare）→ 可选线上再校验。
  *
- * 通常由 `npm run deploy` 调用；其前会跑 npm `predeploy`（build:site + lint）。
- * 远程 upload 优先读仓库根 `.env` 的 R2 S3 凭据（见 ops/worker-r2-ops.md §3.1）；默认全量 `upload:r2`。
+ * 通常由 `npm run deploy` 调用；其前会跑 npm `predeploy`（增量 build:site + lint）。
+ * 远程 upload 优先读仓库根 `.env` 的 R2 S3 凭据（见 ops/worker-r2-ops.md §3.1）；默认增量 `upload:r2`。
  *
  * 用法：
- *   node scripts/deploy-site.mjs
+ *   node scripts/deploy-site.mjs                  # 默认只上传变化的 .html.gz
+ *   node scripts/deploy-site.mjs --full           # 强制全量上传
  *   node scripts/deploy-site.mjs --skip-upload    # 假定 R2 已是最新，仅 verify
  *   node scripts/deploy-site.mjs --live           # 假定 CF 已部署完，立刻打生产 /api/ops/pages-build
  *   node scripts/deploy-site.mjs --base-url=https://onlinefreetools.org
@@ -19,6 +20,8 @@ import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const argv = process.argv.slice(2);
 const skipUpload = argv.includes('--skip-upload');
+const fullUpload = argv.includes('--full') || argv.includes('--all');
+const changedUpload = !fullUpload;
 /** 默认不自动 live：须等 GitHub→CF 部署完成后再加 --live 或单独 `npm run verify:r2:live` */
 const runLive = argv.includes('--live') && !argv.includes('--skip-live');
 const useWranglerDeploy = argv.includes('--wrangler-deploy');
@@ -53,6 +56,7 @@ const printGithubDeployNextSteps = () => {
 === [deploy] Worker + Assets：请用 GitHub push（Cloudflare 拉仓库部署）===
 
 1. 确认本机改动已 commit（含 wrangler.jsonc / vendor / Worker 源码；*_pages HTML.gz 不入库）
+   少量工具改动可用：npm run commit:tools:changed -- --slug=<slug[,slug]> -m "tools: update <slug>"
 2. git push 到 Cloudflare 已绑定的分支
 3. 在 Cloudflare Dashboard 等本次部署成功
 4. 再跑：npm run verify:r2:live
@@ -65,7 +69,10 @@ const printGithubDeployNextSteps = () => {
 
 const main = () => {
 	if (!skipUpload) {
-		run('upload R2', 'npm', ['run', 'upload:r2']);
+		run(changedUpload ? 'upload changed R2 objects' : 'upload all R2 objects', 'npm', [
+			'run',
+			changedUpload ? 'upload:r2' : 'upload:r2:full',
+		]);
 	} else {
 		console.log('[deploy] skip upload (--skip-upload)');
 	}

@@ -3655,6 +3655,7 @@ const id: SiteLangDict = {
   tool_jwt_decoder_usecase_2: 'Kontrak API: pastikan iss dan aud ID token sesuai dokumentasi.',
   tool_jwt_decoder_usecase_3: 'Belajar: lihat header, payload, dan signature dalam tiga segmen JWS.',
   tool_jwt_decoder_usecases_title: 'Cocok untuk',
+  tool_last_updated: 'Terakhir diperbarui:',
   tool_logarithm_article: 'Hitung log₁₀, ln, atau log basis kustom untuk x>0 di browser.',
   tool_logarithm_base_label: 'Basis b',
   tool_logarithm_base_ph: 'mis. 2',

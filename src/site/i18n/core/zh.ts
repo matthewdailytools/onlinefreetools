@@ -79,6 +79,7 @@ const zh: SiteLangDict = {
   tool_feedback_subject_label: '主题',
   tool_feedback_title: '咨询与反馈',
   tool_feedback_to_label: '收件人',
+  tool_last_updated: '最近更新：',
   tool_references_title: '参考来源',
   tool_related_title: '相关工具',
   tool_share_copied: '已复制',

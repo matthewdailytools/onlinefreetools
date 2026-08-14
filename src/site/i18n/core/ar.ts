@@ -74,6 +74,7 @@ const ar: SiteLangDict = {
   tool_feedback_subject_label: 'الموضوع',
   tool_feedback_title: 'استفسارات أو ملاحظات',
   tool_feedback_to_label: 'إلى',
+  tool_last_updated: 'آخر تحديث:',
   tool_share_copied: 'تم النسخ',
   tool_share_copy: 'نسخ الرابط',
   tool_share_hint: 'شارك عبر الشبكات الاجتماعية، أو انسخ الرابط، أو استخدم مشاركة الجهاز.',

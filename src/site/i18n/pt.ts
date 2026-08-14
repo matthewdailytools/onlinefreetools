@@ -3671,6 +3671,7 @@ const pt: SiteLangDict = {
   tool_jwt_decoder_usecase_2: 'Contratos de API: valide iss e aud de um ID token com a documentação.',
   tool_jwt_decoder_usecase_3: 'Aprender: veja header, payload e assinatura nos três segmentos JWS.',
   tool_jwt_decoder_usecases_title: 'Bons casos de uso',
+  tool_last_updated: 'Última atualização:',
   tool_logarithm_article: 'Calcule log₁₀, ln ou logs de base própria para x>0 no navegador.',
   tool_logarithm_base_label: 'Base b',
   tool_logarithm_base_ph: 'ex.: 2',

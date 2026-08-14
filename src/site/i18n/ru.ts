@@ -3656,6 +3656,7 @@ const ru: SiteLangDict = {
   tool_jwt_decoder_usecase_2: 'API-контракты: сверьте iss и aud ID token с документацией.',
   tool_jwt_decoder_usecase_3: 'Обучение: как header, payload и signature составляют три сегмента JWS.',
   tool_jwt_decoder_usecases_title: 'Когда подходит',
+  tool_last_updated: 'Последнее обновление:',
   tool_logarithm_article: 'Считайте log₁₀, ln или логарифмы с произвольным основанием для x>0 в браузере.',
   tool_logarithm_base_label: 'Основание b',
   tool_logarithm_base_ph: 'напр. 2',

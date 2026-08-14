@@ -19,6 +19,9 @@ export const PAGES_BUILD_META_KEY = '_meta/pages-build.json';
 /** 本地清单落盘路径（upload 后写入，便于核对） */
 export const LOCAL_PAGES_BUILD_META_PATH = path.join(PROJECT_ROOT, '.cache', 'pages-build.json');
 
+/** Catalog shards used for per-tool update/upload markers. */
+const TOOL_CATALOG_DIR = path.join(PROJECT_ROOT, 'src/site/tool-catalog.d');
+
 /**
  * 去掉 JSONC 注释后解析（仅够读 wrangler.jsonc 的 vars）。
  * @param {string} text
@@ -76,6 +79,75 @@ export const fileToR2Key = (absPath) =>
 	path.relative(path.join(PROJECT_ROOT, 'public'), absPath).split(path.sep).join('/');
 
 /**
+ * Parse timestamp marker. Date-only strings are accepted and treated as UTC midnight.
+ * @param {unknown} value
+ * @returns {number|null}
+ */
+export const parseTimeMs = (value) => {
+	if (typeof value !== 'string' || !value.trim()) return null;
+	const raw = value.trim();
+	const normalized = /^\d{4}-\d{2}-\d{2}$/.test(raw) ? `${raw}T00:00:00.000Z` : raw;
+	const ms = Date.parse(normalized);
+	return Number.isFinite(ms) ? ms : null;
+};
+
+/**
+ * Collect catalog updatedAt markers from editable tool shards.
+ * @returns {Record<string, string>}
+ */
+export const collectToolUpdatedAt = () => {
+	/** @type {Record<string, string>} */
+	const out = {};
+	let files = [];
+	try {
+		files = require('node:fs')
+			.readdirSync(TOOL_CATALOG_DIR)
+			.filter((name) => name.endsWith('.json'))
+			.sort();
+	} catch {
+		return out;
+	}
+	for (const name of files) {
+		try {
+			const shard = require(path.join(TOOL_CATALOG_DIR, name));
+			if (typeof shard?.slug === 'string' && typeof shard?.updatedAt === 'string') {
+				out[shard.slug] = shard.updatedAt.trim();
+			}
+		} catch {
+			/* ignore malformed shards here; lint:seo reports them */
+		}
+	}
+	return out;
+};
+
+/**
+ * Extract a tool slug from an R2 page key.
+ * @param {string} key
+ * @returns {string|null}
+ */
+export const toolSlugFromR2Key = (key) => {
+	const m = String(key).match(/^_pages\/[^/]+\/tools\/([^/]+)\.html\.gz$/);
+	return m ? m[1] : null;
+};
+
+/**
+ * Select tool slugs whose catalog updatedAt is newer than the previous upload marker.
+ * Missing upload marker means the tool must be uploaded once.
+ * @param {Record<string, string>} toolUpdatedAt
+ * @param {Record<string, string>|null|undefined} previousToolUploadedAt
+ * @returns {string[]}
+ */
+export const diffToolUpdatedAtForUpload = (toolUpdatedAt, previousToolUploadedAt) => {
+	const slugs = [];
+	for (const [slug, updatedAt] of Object.entries(toolUpdatedAt || {})) {
+		const updatedMs = parseTimeMs(updatedAt);
+		const uploadedMs = parseTimeMs(previousToolUploadedAt?.[slug]);
+		if (updatedMs === null || uploadedMs === null || updatedMs > uploadedMs) slugs.push(slug);
+	}
+	return slugs.sort();
+};
+
+/**
  * 根据本地 .html.gz 计算内容指纹（按 key 排序后逐文件 sha256 再汇总）。
  * @param {string[]} gzFiles 绝对路径列表
  * @returns {Promise<{ contentHash: string, fileCount: number, keys: string[], fileHashes: Record<string, string> }>}
@@ -126,13 +198,17 @@ export const diffFileHashesForUpload = (nextHashes, prevHashes) => {
 
 /**
  * 组装 pages-build 清单对象。
- * schemaVersion 2：含 fileHashes，供增量上传；Worker 探针仍只读 pagesCacheVersion/contentHash。
+ * schemaVersion 3：含 fileHashes + per-tool updated/upload markers.
+ * Worker 探针仍只读 pagesCacheVersion/contentHash。
  * @param {{
  *   pagesCacheVersion: string,
  *   contentHash: string,
  *   fileCount: number,
  *   keys?: string[],
  *   fileHashes?: Record<string, string>,
+ *   previousMeta?: Record<string, any>|null,
+ *   uploadedToolSlugs?: string[],
+ *   uploadedAt?: string,
  * }} opts
  */
 export const buildPagesMeta = (opts) => {
@@ -144,10 +220,15 @@ export const buildPagesMeta = (opts) => {
 			return 0;
 		}
 	})();
-	/** 是否写入逐文件哈希（有则 schema 2） */
+	const toolUpdatedAt = collectToolUpdatedAt();
+	const uploadedAt = opts.uploadedAt || new Date().toISOString();
+	const uploadedToolSlugs = new Set(opts.uploadedToolSlugs || []);
+	const toolUploadedAt = { ...(opts.previousMeta?.toolUploadedAt || {}) };
+	for (const slug of uploadedToolSlugs) toolUploadedAt[slug] = uploadedAt;
+	/** 是否写入逐文件哈希（有则 schema 2+） */
 	const hasFileHashes = opts.fileHashes && Object.keys(opts.fileHashes).length > 0;
 	return {
-		schemaVersion: hasFileHashes ? 2 : 1,
+		schemaVersion: hasFileHashes ? 3 : 1,
 		pagesCacheVersion: opts.pagesCacheVersion,
 		contentHash: opts.contentHash,
 		fileCount: opts.fileCount,
@@ -164,6 +245,10 @@ export const buildPagesMeta = (opts) => {
 			.slice(0, 40),
 		/** 逐文件 sha256；增量上传与跨机器对齐用（约百 KB 级，可接受） */
 		...(hasFileHashes ? { fileHashes: opts.fileHashes } : {}),
+		/** 工具编辑时间来自 src/site/tool-catalog.d/{slug}.json updatedAt。 */
+		...(Object.keys(toolUpdatedAt).length ? { toolUpdatedAt } : {}),
+		/** 工具页对象上次实际上传时间；增量上传用它与 updatedAt 对比。 */
+		...(Object.keys(toolUploadedAt).length ? { toolUploadedAt } : {}),
 	};
 };
 
