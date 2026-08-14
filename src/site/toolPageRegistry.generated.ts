@@ -123,6 +123,7 @@ import { renderTimezoneConverterPage } from '../pages/timezoneConverterPage';
 import { renderUnitConverterPage } from '../pages/unitConverterPage';
 import { renderUnixTimestampPage } from '../pages/unixTimestampPage';
 import { renderUnlockPdfPage } from '../pages/unlockPdfPage';
+import { renderUnzipFilePage } from '../pages/unzipFilePage';
 import { renderUtmBuilderPage } from '../pages/utmBuilderPage';
 import { renderUuidGeneratorPage } from '../pages/uuidGeneratorPage';
 import { renderWcagContrastCheckerPage } from '../pages/wcagContrastCheckerPage';
@@ -257,6 +258,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'unit-converter': (lang, defaultLang, enabled) => renderUnitConverterPage({ lang, defaultLang, enabledLangs: enabled }),
 	'unix-timestamp': (lang, defaultLang, enabled) => renderUnixTimestampPage({ lang, defaultLang, enabledLangs: enabled }),
 	'unlock-pdf': (lang, defaultLang, enabled) => renderUnlockPdfPage({ lang, defaultLang, enabledLangs: enabled }),
+	'unzip-file': (lang, defaultLang, enabled) => renderUnzipFilePage({ lang, defaultLang, enabledLangs: enabled }),
 	'utm-builder': (lang, defaultLang, enabled) => renderUtmBuilderPage({ lang, defaultLang, enabledLangs: enabled }),
 	'uuid-generator': (lang, defaultLang, enabled) => renderUuidGeneratorPage({ lang, defaultLang, enabledLangs: enabled }),
 	'wcag-contrast-checker': (lang, defaultLang, enabled) => renderWcagContrastCheckerPage({ lang, defaultLang, enabledLangs: enabled }),

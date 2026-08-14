@@ -123,6 +123,7 @@ export const TOOL_SLUGS = [
 	"unit-converter",
 	"unix-timestamp",
 	"unlock-pdf",
+	"unzip-file",
 	"utm-builder",
 	"uuid-generator",
 	"wcag-contrast-checker",

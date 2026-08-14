@@ -2492,6 +2492,27 @@
     "subject": "pdf"
   },
   {
+    "slug": "unzip-file",
+    "path": "/tools/unzip-file",
+    "updatedAt": "2026-08-14T00:00:00.000Z",
+    "category": "developer",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_unzip_file_title",
+    "homeTitleKey": "tool_unzip_file_title",
+    "homeDescKey": "tool_unzip_file_desc",
+    "faqPrefix": "tool_unzip_file",
+    "related": [
+      "file-hash",
+      "split-pdf",
+      "base64"
+    ],
+    "logo": "/icons/tools/unzip-file.svg",
+    "localProcessing": true,
+    "scenario": "documents",
+    "subject": "data"
+  },
+  {
     "slug": "utm-builder",
     "path": "/tools/utm-builder",
     "updatedAt": "2026-08-11T00:00:00.000Z",
