@@ -280,8 +280,8 @@ export const renderMagnetLinkDecoderPage = (opts: {
       }
 
       function isPeerHint(value) {
-        if (/^\[[0-9a-fA-F:]+\]:\d{1,5}$/.test(value)) return Number(value.slice(value.lastIndexOf(':') + 1)) <= 65535;
-        var match = /^([^\s:]+):(\d{1,5})$/.exec(value);
+        if (/^\\[[0-9a-fA-F:]+\\]:\\d{1,5}$/.test(value)) return Number(value.slice(value.lastIndexOf(':') + 1)) <= 65535;
+        var match = /^([^\\s:]+):(\\d{1,5})$/.exec(value);
         return Boolean(match && Number(match[2]) <= 65535);
       }
 
