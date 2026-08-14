@@ -2,8 +2,8 @@
 /**
  * 生产发版编排：upload R2 → 校验版本一致 →（Worker/Assets 由 GitHub push 触发 Cloudflare）→ 可选线上再校验。
  *
- * 通常由 `npm run deploy` 调用；其前会跑 npm `predeploy`（增量 build:site + lint）。
- * 远程 upload 优先读仓库根 `.env` 的 R2 S3 凭据（见 ops/worker-r2-ops.md §3.1）；默认增量 `upload:r2`。
+ * 通常由 `npm run deploy` 调用；其前会跑 npm `predeploy`（全量 build:site + lint）。
+ * 远程 upload 优先读仓库根 `.env` 的 R2 S3 凭据（见 ops/worker-r2-ops.md §3.1）；默认 hash 增量 `upload:r2`。
  *
  * 用法：
  *   node scripts/deploy-site.mjs                  # 默认只上传变化的 .html.gz

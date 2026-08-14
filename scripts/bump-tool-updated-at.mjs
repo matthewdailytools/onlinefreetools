@@ -30,6 +30,7 @@ for (const slug of slugs) {
 	const shard = JSON.parse(readFileSync(file, 'utf8'));
 	const next = {};
 	for (const [key, value] of Object.entries(shard)) {
+		if (key === 'updatedAt') continue;
 		next[key] = value;
 		if (key === 'path') next.updatedAt = updatedAt;
 	}

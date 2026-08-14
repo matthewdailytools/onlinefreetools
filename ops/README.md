@@ -132,13 +132,13 @@ npx wrangler dev
 
 | 命令 | 用途 |
 |---|---|
-| `npm run build:site` | 默认增量：生成首页/taxonomy/sitemap/vendor，只预渲染 `updatedAt` 晚于本地生成基线的工具页；缺 `_pages` 基线会自动全量补齐 |
-| `npm run build:site:full` | 强制全量预渲染所有工具页 |
+| `npm run build:site` | 全量生成首页/taxonomy/sitemap/vendor，并预渲染所有工具页 + gzip |
+| `npm run build:site:full` | 同 `build:site`，保留为显式全量别名 |
 | `npm run tool:touch -- --slug=<slug>` | 工具内容/文案/图标改动后刷新 catalog `updatedAt` |
-| `npm run upload:r2` | 默认增量：工具页按 `updatedAt > toolUploadedAt` 上传，非工具页按哈希变化上传，并重写 meta |
+| `npm run upload:r2` | 默认增量：按上次成功上传 manifest 的 `fileHashes` 比较，只上传 hash 不同的 `.html.gz`，并重写 meta |
 | `npm run upload:r2:full` | 强制全量上传远程 R2（S3 优先；含 `_meta/pages-build.json`） |
 | `npm run verify:r2` / `verify:r2:live` | R2 ↔ Worker `PAGES_CACHE_VERSION` 校验；有 S3 凭据时优先用 S3 读取（live 含生产探针） |
-| `npm run deploy` | **生产推荐**：默认增量 predeploy → upload:r2 → verify → **提示 git push**（CF 拉 GitHub） |
+| `npm run deploy` | **生产推荐**：全量 build + lint → hash 增量 upload:r2 → verify → **提示 git push**（CF 拉 GitHub） |
 | `npm run deploy:full` | 强制全量 build + 全量 upload + verify |
 | `npm run deploy:skip-upload` | HTML 未变时跳过上传，仍 verify + 提示 push |
 | `npm run deploy:worker-only` | 紧急本机 `wrangler deploy` |
@@ -157,7 +157,7 @@ npx wrangler dev
 
 ```bash
 npm run deploy
-# 等价于：增量 build:site + lint → 增量 upload:r2 → verify:r2 →（请 git push，CF 拉仓库）
+# 等价于：全量 build:site + lint → hash 增量 upload:r2 → verify:r2 →（请 git push，CF 拉仓库）
 # CF 成功后再：npm run verify:r2:live
 ```
 
@@ -165,8 +165,8 @@ Worker + R2 细节见 [`ops/worker-r2-ops.md`](./worker-r2-ops.md)。SEO 清单�
 
 ### 4.0 Sitemap 筛选生成与操作页
 
-日常发版仍以 **`npm run build:site` → `public/sitemap.xml`** 为准（GSC / IndexNow 默认读此全量 sitemap 文件；工具页预渲染本身默认增量）。
-工具页构建/上传增量不依赖 git：编辑工具时运行 `npm run tool:touch -- --slug=<slug>`（或手动更新对应 `src/site/tool-catalog.d/{slug}.json` 的 `updatedAt`）；构建对比 `.cache/tool-build-state.json` 的 `toolGeneratedAt`，上传对比 `_meta/pages-build.json` 的 `toolUploadedAt`。最新 push、最新 commit、未 commit 修改都不是增量判断依据。
+日常发版仍以 **`npm run build:site` → `public/sitemap.xml`** 为准（GSC / IndexNow 默认读此全量 sitemap 文件；工具页预渲染也默认全量）。
+工具页构建不依赖 git：`npm run build:site` 每次预渲染所有工具页。R2 上传增量也不依赖 git：`npm run upload:r2` 只对比本地 `.html.gz` sha256 与上次成功上传到 `_meta/pages-build.json` 的 `fileHashes`。编辑工具时仍运行 `npm run tool:touch -- --slug=<slug>`（或手动更新对应 `src/site/tool-catalog.d/{slug}.json` 的 `updatedAt`），用于可见更新时间、sitemap/SEO 元数据和工具提交路径。
 本节用于：**只重建 sitemap**、或按语言 / 信息页 / 分类 / 场景 / 工具类型做**子集**生成（排查、抽样提交、临时清单）。
 
 | 路径 | 说明 |
@@ -367,10 +367,10 @@ npm run deploy
 npm run verify:r2:live
 ```
 
-流程：`predeploy`（默认增量 `build:site` + lint）→ **`upload:r2`**（默认增量；S3 优先，须本机 `.env`；见 [`worker-r2-ops.md`](./worker-r2-ops.md) §3.1）→ **`verify:r2`** → **git push**（Cloudflare 拉 GitHub 部署 Worker + Assets）→ **`verify:r2:live`**。
+流程：`predeploy`（全量 `build:site` + lint）→ **`upload:r2`**（hash 增量；S3 优先，须本机 `.env`；见 [`worker-r2-ops.md`](./worker-r2-ops.md) §3.1）→ **`verify:r2`** → **git push**（Cloudflare 拉 GitHub 部署 Worker + Assets）→ **`verify:r2:live`**。
 
 仅改少量 HTML 且不跑完整 `deploy` 时：`npm run upload:r2` → `npm run verify:r2` →（若需）push。  
-少量工具改动时：`npm run tool:touch -- --slug=<slug>` → `npm run build:site`（或显式 `npm run build:site -- --slug=<slug>`）→ `npm run upload:r2` → `npm run verify:r2` → `npm run commit:tools:changed -- --slug=<slug> -m "tools: update <slug>"` → `git push`。不传 `--slug` 时，build/upload 增量命令看 `updatedAt` 与上次生成/上传时间，不看 git 工作树、最新 commit 或最新 push。
+少量工具改动时：`npm run tool:touch -- --slug=<slug>` → `npm run build:site` → `npm run upload:r2` → `npm run verify:r2` → `npm run commit:tools:changed -- --slug=<slug> -m "tools: update <slug>"` → `git push`。构建总是全量；上传只看 `.html.gz` hash 与上次上传 manifest 的差异，不看 git 工作树、最新 commit 或最新 push。
 仅改 Worker、HTML 未变：`npm run deploy:skip-upload` 后再 push。  
 紧急本机直发：`npm run deploy:worker-only`（或 `node scripts/deploy-site.mjs --wrangler-deploy`）。裸 `npx wrangler deploy` **不**灌 R2、**不**做版本校验。
 
@@ -420,11 +420,10 @@ Worker 对 `/` 要求请求头含 `text/html`（浏览器正常访问无此问�
 
 ### 启动后页面 404 / 样式丢失
 
-先构建静态资源。默认增量会在 `_pages` 基线缺失时自动补齐；排障时可显式全量：
+先构建静态资源。`build:site` 默认全量预渲染所有工具页：
 
 ```bash
 npm run build:site
-# 或：npm run build:site:full
 npm run restart:dev
 ```
 

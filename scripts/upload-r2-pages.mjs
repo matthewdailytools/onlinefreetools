@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 /**
  * 将 public/_pages 下全部 .html.gz 同步到 R2（桶名默认 onlinefreetools-pages），
- * 并写入 `_meta/pages-build.json`（含 PAGES_CACHE_VERSION、contentHash、fileHashes、toolUpdatedAt、toolUploadedAt）。
+ * 并写入 `_meta/pages-build.json`（含 PAGES_CACHE_VERSION、contentHash、fileHashes）。
  *
  * 用法：
  *   npm run upload:r2                 # 远程：优先 S3 API；无凭据则回退 wrangler
- *   npm run upload:r2:changed         # 工具页按 updatedAt，非工具页按哈希变化（仍重写 meta）
+ *   npm run upload:r2:changed         # 按上次成功上传 manifest 的 fileHashes 增量上传（仍重写 meta）
  *   npm run upload:r2:local           # 本地模拟桶（getPlatformProxy）
  *   npm run upload:r2 -- --dry-run
  *   npm run upload:r2 -- --s3         # 强制 S3（缺凭据则失败）
@@ -24,14 +24,11 @@ import {
 	PAGES_BUILD_META_KEY,
 	PROJECT_ROOT,
 	buildPagesMeta,
-	collectToolUpdatedAt,
 	diffFileHashesForUpload,
-	diffToolUpdatedAtForUpload,
 	fileToR2Key,
 	hashLocalPagesGz,
 	listHtmlGzFiles,
 	readWorkerPagesCacheVersion,
-	toolSlugFromR2Key,
 	writeLocalPagesMeta,
 } from './lib/pages-build-meta.mjs';
 import {
@@ -54,7 +51,7 @@ const argv = process.argv.slice(2);
 const dryRun = argv.includes('--dry-run');
 /** 写入本地 wrangler 模拟桶 */
 const local = argv.includes('--local');
-/** 增量上传：工具页按 updatedAt > toolUploadedAt，非工具页按哈希变化 */
+/** 增量上传：按上次成功上传 manifest 中的 fileHashes 比较 */
 const changedOnly = argv.includes('--changed-only');
 /** 强制 S3 兼容 API（缺凭据失败） */
 const forceS3 = argv.includes('--s3');
@@ -124,6 +121,41 @@ const putRemoteWranglerOne = (key, filePath, contentType = 'application/octet-st
 			}
 		});
 	});
+
+/**
+ * 远程：调用 wrangler r2 object get 读取文本对象（无 S3 凭据时用于读取上次成功上传 manifest）。
+ * @param {string} key
+ * @returns {Promise<string|null>}
+ */
+const getRemoteWranglerText = async (key) => {
+	await fs.mkdir(path.join(PROJECT_ROOT, '.cache'), { recursive: true });
+	return new Promise((resolve, reject) => {
+		const tmp = path.join(PROJECT_ROOT, '.cache', `r2-get-${Date.now()}-${process.pid}.json`);
+		const args = ['r2', 'object', 'get', `${bucket}/${key}`, `--file=${tmp}`, '--remote'];
+		const child = spawn('npx', ['wrangler', ...args], {
+			cwd: PROJECT_ROOT,
+			stdio: ['ignore', 'pipe', 'pipe'],
+			env: process.env,
+		});
+		let err = '';
+		child.stderr.on('data', (d) => {
+			err += String(d);
+		});
+		child.on('close', async (code) => {
+			try {
+				if (code !== 0) {
+					resolve(null);
+					return;
+				}
+				resolve(await fs.readFile(tmp, 'utf8'));
+			} catch (e) {
+				reject(e);
+			} finally {
+				await fs.unlink(tmp).catch(() => undefined);
+			}
+		});
+	});
+};
 
 /**
  * 读取上次 pages-build meta：优先 R2 meta，其次本地 .cache/pages-build.json。
@@ -311,7 +343,6 @@ const main = async () => {
 
 	/** key → 绝对路径，便于按增量 key 取文件 */
 	const absByKey = Object.fromEntries(allFiles.map((f) => [fileToR2Key(f), f]));
-	const toolUpdatedAt = collectToolUpdatedAt();
 
 	/** @type {string[]} 实际要 put 的绝对路径 */
 	let filesToUpload = allFiles;
@@ -339,32 +370,23 @@ const main = async () => {
 		} else if (hasR2S3Credentials() && !forceWrangler) {
 			const client = createR2S3Client();
 			getRemoteMetaText = () => s3GetObjectText(client, { bucket, key: PAGES_BUILD_META_KEY });
+		} else {
+			getRemoteMetaText = () => getRemoteWranglerText(PAGES_BUILD_META_KEY);
 		}
 		previousMeta = await loadPreviousPagesMeta({ getRemoteMetaText });
 		const hashDiff = diffFileHashesForUpload(fileHashes, previousMeta?.fileHashes);
-		const updatedToolSlugs = diffToolUpdatedAtForUpload(toolUpdatedAt, previousMeta?.toolUploadedAt);
-		const updatedToolSet = new Set(updatedToolSlugs);
-		const timestampKeys = keys.filter((key) => {
-			const slug = toolSlugFromR2Key(key);
-			return slug ? updatedToolSet.has(slug) : false;
-		});
-		const uploadKeys = [...new Set([...hashDiff.uploadKeys, ...timestampKeys])].sort();
+		const uploadKeys = hashDiff.uploadKeys;
 		skipped = keys.length - uploadKeys.length;
-		deltaReason = `${hashDiff.reason}+updatedAt(${updatedToolSlugs.length})`;
+		deltaReason = hashDiff.reason;
 		filesToUpload = uploadKeys.map((k) => absByKey[k]).filter(Boolean);
 	}
 
-	const uploadedToolSlugs = [
-		...new Set(filesToUpload.map((file) => toolSlugFromR2Key(fileToR2Key(file))).filter(Boolean)),
-	].sort();
 	const meta = buildPagesMeta({
 		pagesCacheVersion,
 		contentHash,
 		fileCount,
 		keys,
 		fileHashes,
-		previousMeta,
-		uploadedToolSlugs: dryRun ? [] : uploadedToolSlugs,
 	});
 
 	const transport = local ? 'local' : resolveRemoteTransport();
@@ -375,7 +397,7 @@ const main = async () => {
 	);
 
 	if (!filesToUpload.length && !dryRun) {
-		console.log('[upload-r2] nothing to upload (all hashes match); still refreshing meta');
+		console.log('[upload-r2] nothing to upload (all file hashes match previous successful upload); still refreshing meta');
 	}
 
 	if (local) await uploadLocal(filesToUpload, meta);

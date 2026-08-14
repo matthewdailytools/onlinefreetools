@@ -27,7 +27,7 @@ alwaysApply: false
 
 1. 只改本工具分片 + 本工具 `*Page.ts` + icon + brief（及 README 清单条目）；改完工具内容后跑 `npm run tool:touch -- --slug={slug}` 或手动把 catalog shard 的 `updatedAt` 改为本次编辑 ISO 时间。
 2. `npm run merge:tools`（合并 catalog / i18n / registry；**不够**刷新首页）。
-3. **`npm run build:site`（硬性）**：在 `merge:tools` 之上重建 `public/index.html`、`public/{lang}/index.html`、sitemap、vendor chrome。缺这一步则 `/`、`/zh/` 等静态首页**不会出现**新工具卡片（工具页路由可能已可用，首页仍是旧 HTML）。`start:dev` 默认会跑 `build:site`；若用了 `--no-build` 或只手动 `merge:tools`，交付前必须再跑一遍 `build:site`。当前默认 `build:site` 为增量工具预渲染：共享首页/sitemap 仍刷新，只预渲染 `src/site/tool-catalog.d/{slug}.json` 中 `updatedAt` 晚于本地 `.cache/tool-build-state.json` 生成时间的工具；本地 `_pages` 基线缺失时自动全量补齐。需要强制全量时用 `npm run build:site:full`。
+3. **`npm run build:site`（硬性）**：在 `merge:tools` 之上重建 `public/index.html`、`public/{lang}/index.html`、sitemap、vendor chrome，并全量预渲染所有工具页。缺这一步则 `/`、`/zh/` 等静态首页**不会出现**新工具卡片（工具页路由可能已可用，首页仍是旧 HTML）。`start:dev` 默认会跑 `build:site`；若用了 `--no-build` 或只手动 `merge:tools`，交付前必须再跑一遍 `build:site`。
 4. **不要**为新工具改 `src/index.ts`（`registerToolPages` + `TOOL_SLUG_SET` 自动覆盖；构建期 `prerender-tool-pages` 写出 HTML）。
 5. 勿改其他工具的 `tool-catalog.d/`、`i18n/tools/`、`*Page.ts`。
 6. 若必须改 related 反向链接或共用 chrome：显式 `CROSS_TOOL_UPDATE=1`，并在 PR 说明。
@@ -50,8 +50,8 @@ src/site/i18n/tools/{slug}/{lang}.ts  # 母版 → coverage:gate --phase=2；他
 public/icons/tools/{slug}.svg   # 工具图标（注释优先 ASCII；见下方「图标 SVG」）
 README.md                       # 「工具清单 / Tools List」中英条目（写入前须已过清单前覆盖）
 npm run coverage:gate -- --slug={slug} --phase=all
-npm run build:site              # 默认增量；含 merge:tools；刷新首页 _pages + sitemap（勿只 merge）
-# 强制全量预渲染所有工具：npm run build:site:full
+npm run build:site              # 全量；含 merge:tools；刷新首页 _pages + sitemap（勿只 merge）
+# 显式全量别名：npm run build:site:full
 npm run lint:seo
 TOOL_SLUG={slug} npm run lint:tool-isolation
 # 本地验收：带 Accept: text/html 打开 / 与 /zh/，确认新工具出现在 featured/all-tools

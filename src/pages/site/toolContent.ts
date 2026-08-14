@@ -33,7 +33,7 @@ export const formatToolUpdatedAt = (lang: SiteLang, updatedAt?: string) => {
 	try {
 		return new Intl.DateTimeFormat(lang, {
 			dateStyle: 'medium',
-			timeStyle: raw.includes('T') ? 'short' : undefined,
+			timeZone: 'UTC',
 		}).format(date);
 	} catch {
 		return raw.slice(0, 10);

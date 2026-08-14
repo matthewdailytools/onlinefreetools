@@ -16,7 +16,7 @@ import { getContactPageModel } from './site/pages/contact.mjs';
 import { getTaxonomyHubPageModel, getTaxonomyLeafPageModel } from './site/pages/taxonomy.mjs';
 import { buildToolPageNavItems } from './site/nav.mjs';
 import { TOOL_CATALOG } from './site/tool-catalog.mjs';
-import { markToolSlugsGenerated, resolveTargetToolSlugs, wantsChangedTools } from './lib/changed-tools.mjs';
+import { markToolSlugsGenerated } from './lib/changed-tools.mjs';
 import {
   TOOL_SCENARIO_ORDER,
   TOOL_SUBJECT_ORDER,
@@ -618,16 +618,19 @@ const assertLangHomeAssets = async (langs) => {
 const main = async () => {
   const langs = siteConfig.enabledLangs || [siteConfig.defaultLang];
   const argv = process.argv.slice(2);
-  const forceFullTools = argv.includes('--full') || argv.includes('--all');
-  const targets = forceFullTools
-    ? { slugs: [], source: 'all', changedPaths: [] }
-    : resolveTargetToolSlugs(argv, { requireTargets: false });
-  const requestedIncrementalTools = !forceFullTools && (wantsChangedTools(argv) || targets.slugs.length > 0);
-  if (targets.slugs.length > 0) {
-    console.log(`[build-site] incremental tool pages: mode=${targets.source} slugs=${targets.slugs.join(',')}`);
-  } else if (requestedIncrementalTools) {
-    console.log('[build-site] incremental tool pages: no updated tool slugs detected');
+  if (
+    argv.some(
+      (arg) =>
+        arg === '--changed-tools' ||
+        arg === '--changed' ||
+        arg === '--incremental' ||
+        arg.startsWith('--slug') ||
+        arg.startsWith('--slugs')
+    )
+  ) {
+    console.warn('[build-site] full build is enforced; ignoring incremental tool selection flags');
   }
+  console.log(`[build-site] full tool pages: ${TOOL_CATALOG.length} tools x ${langs.length} langs`);
   for (const lang of langs) {
     await buildHome(lang);
     await buildAbout(lang);
@@ -642,51 +645,15 @@ const main = async () => {
 
   // 工具页预渲染 → public/_pages/{lang}/tools/{slug}.html（Worker 不再 SSR）
   const { spawnSync } = await import('node:child_process');
-  const findMissingToolGzipBaseline = async (limit = 20) => {
-    const missing = [];
-    for (const lang of langs) {
-      for (const tool of TOOL_CATALOG) {
-        const gz = path.join(publicDir, '_pages', lang, 'tools', `${tool.slug}.html.gz`);
-        if (!(await fs.stat(gz).catch(() => null))) {
-          missing.push(path.relative(root, gz));
-          if (missing.length >= limit) return missing;
-        }
-      }
-    }
-    return missing;
-  };
-
-  const missingBeforePrerender = requestedIncrementalTools
-    ? await findMissingToolGzipBaseline(5)
-    : [];
-  const fallbackFullTools = requestedIncrementalTools && missingBeforePrerender.length > 0;
-  if (fallbackFullTools) {
-    console.warn(
-      `[build-site] incremental baseline missing; falling back to full tool prerender. Missing sample:\n- ${missingBeforePrerender.join(
-        '\n- '
-      )}`
-    );
-  }
-
-  const shouldPrerenderTools = forceFullTools || fallbackFullTools || targets.slugs.length > 0 || !requestedIncrementalTools;
   const prerenderArgs = [path.join(root, 'scripts', 'prerender-tool-pages.mjs')];
-  if (targets.slugs.length > 0 && !fallbackFullTools) prerenderArgs.push(`--slug=${targets.slugs.join(',')}`);
-  if (shouldPrerenderTools) {
-    console.log(
-      `[build-site] prerender tool pages ${
-        targets.slugs.length > 0 && !fallbackFullTools ? '(incremental)' : '(all)'
-      } ...`
-    );
-    const prerender = spawnSync(process.execPath, prerenderArgs, {
-      cwd: root,
-      stdio: 'inherit',
-      env: process.env,
-    });
-    if (prerender.status !== 0) {
-      throw new Error('prerender-tool-pages failed');
-    }
-  } else {
-    console.log('[build-site] prerender tool pages skipped (no updated tool slugs)');
+  console.log('[build-site] prerender tool pages (all) ...');
+  const prerender = spawnSync(process.execPath, prerenderArgs, {
+    cwd: root,
+    stdio: 'inherit',
+    env: process.env,
+  });
+  if (prerender.status !== 0) {
+    throw new Error('prerender-tool-pages failed');
   }
 
   console.log('[build-site] gzip _pages HTML ...');
@@ -699,28 +666,9 @@ const main = async () => {
     throw new Error('gzip-pages failed');
   }
 
-  if (requestedIncrementalTools) {
-    const missing = await findMissingToolGzipBaseline(20);
-    if (missing.length) {
-      throw new Error(
-        `[build-site] incremental build requires an existing full public/_pages baseline. Missing:\n- ${missing.join(
-          '\n- '
-        )}\nRun npm run build:site:full once, then retry the incremental command.`
-      );
-    }
-    console.log(`[build-site] incremental _pages baseline OK (${TOOL_CATALOG.length} tools x ${langs.length} langs)`);
-  }
-
-  const generatedToolSlugs =
-    shouldPrerenderTools && (forceFullTools || fallbackFullTools || !requestedIncrementalTools)
-      ? TOOL_CATALOG.map((tool) => tool.slug)
-      : shouldPrerenderTools
-        ? targets.slugs
-        : [];
-  if (generatedToolSlugs.length) {
-    markToolSlugsGenerated(generatedToolSlugs);
-    console.log(`[build-site] wrote tool generation state slugs=${generatedToolSlugs.length}`);
-  }
+  const generatedToolSlugs = TOOL_CATALOG.map((tool) => tool.slug);
+  markToolSlugsGenerated(generatedToolSlugs);
+  console.log(`[build-site] wrote tool generation state slugs=${generatedToolSlugs.length}`);
 
   console.log(`Built site for langs: ${langs.join(', ')}`);
 };
