@@ -96,6 +96,7 @@ export const TOOL_SLUGS = [
 	"ip-address",
 	"json-schema-validator",
 	"jwt-decoder",
+	"magnet-link-decoder",
 	"markdown-to-html",
 	"merge-pdf",
 	"meta-serp-preview",

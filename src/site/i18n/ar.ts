@@ -3672,6 +3672,89 @@ const ar: SiteLangDict = {
   tool_macros_usecase_2: 'Quick sketch.',
   tool_macros_usecase_3: 'Educational pairing with BMR/TDEE.',
   tool_macros_usecases_title: 'متى تستخدمه',
+  tool_magnet_link_decoder_article:
+    'افحص URI من نوع Magnet من دون فتح عميل torrent. يحتفظ المحلل بالمعلمات المتكررة، ويميز exact topic في BitTorrent v1 وv2، ويفحص tracker والحجم والترميز، ويعرض القيمة الأصلية عند وجود خطأ.',
+  tool_magnet_link_decoder_clear: 'مسح',
+  tool_magnet_link_decoder_copy_done: 'تم النسخ',
+  tool_magnet_link_decoder_copy_hash: 'نسخ info hash',
+  tool_magnet_link_decoder_copy_json: 'نسخ JSON',
+  tool_magnet_link_decoder_copy_normalized: 'نسخ URI المنظم',
+  tool_magnet_link_decoder_copy_trackers: 'نسخ trackers',
+  tool_magnet_link_decoder_decode: 'فك',
+  tool_magnet_link_decoder_desc:
+    'فك رابط Magnet محليا لرؤية info hash والاسم والحجم وtrackers وweb seeds وتلميحات peer والتحذيرات من دون بدء تنزيل.',
+  tool_magnet_link_decoder_description:
+    'الصق رابط Magnet لفك الحقول المرمزة وتجميع trackers المتكررة وفحص info hash من نوع btih أو btmh داخل المتصفح. يعرض المثال sample-linux.iso بحجم 1 MiB وinfo hash واحد وtracker اثنين؛ لا يرفع الرابط إلى الخادم ولا يتصل بأي tracker أو DHT أو peer.',
+  tool_magnet_link_decoder_disclaimer:
+    'للفحص فقط: لا ينزل محتوى، ولا يجلب metadata، ولا يتصل بـ tracker أو DHT أو peer، ولا ينشئ ملف .torrent، ولا يحكم على سلامة المحتوى أو قانونيته.',
+  tool_magnet_link_decoder_empty: 'الصق URI من نوع Magnet أولا.',
+  tool_magnet_link_decoder_error_scheme: 'يجب أن يبدأ الإدخال بـ magnet:?.',
+  tool_magnet_link_decoder_example:
+    'الإدخال: URI يحوي xt=urn:btih:0123456789abcdef0123456789abcdef01234567 وdn=sample-linux.iso وxl=1048576 وقيمتي tr. النتيجة: btih صالح، وحجم 1,048,576 bytes (1 MiB)، وtracker اثنان بلا تحذيرات.',
+  tool_magnet_link_decoder_example_title: 'مثال',
+  tool_magnet_link_decoder_faq_a1:
+    'لا. يقرأ المحلل النص الموجود في المتصفح فقط، ولا يتصل بـ tracker أو عقد DHT أو peers أو web seeds أو خدمة metadata، ولا يشغل عميل torrent.',
+  tool_magnet_link_decoder_faq_a2:
+    'تعني xt الموضوع الدقيق. يحمل urn:btih عادة info hash لإصدار v1 من 40 خانة hex أو 32 خانة Base32. ويستخدم v2 غالبا urn:btmh مع multihash سداسي عشري.',
+  tool_magnet_link_decoder_faq_a3:
+    'يمكن تكرار tr لإضافة trackers بديلة. يحافظ المحلل على ترتيبها الأصلي، ويحذر من القيمة التي لا تبدو URL صالحا، وينسخ القائمة بعنوان واحد في كل سطر.',
+  tool_magnet_link_decoder_faq_a4:
+    'لا. قد يعرف URI المحتوى من دون metadata اللازمة لملف .torrent. يتطلب التحويل جلب تلك البيانات من شبكة peers أو مصدر آخر، وهذا المحلل المحلي لا يقوم به.',
+  tool_magnet_link_decoder_faq_a5:
+    'لا. تتم عملية الفك والتجميع والفحص والتنظيم وإنشاء JSON في علامة المتصفح الحالية. لا يرسل الرابط إلى خادمنا، ومع ذلك تجنب الروابط الخاصة على جهاز مشترك.',
+  tool_magnet_link_decoder_faq_q1: 'هل يؤدي فك رابط Magnet إلى تنزيل شيء؟',
+  tool_magnet_link_decoder_faq_q2: 'ماذا يعني xt=urn:btih أو urn:btmh؟',
+  tool_magnet_link_decoder_faq_q3: 'لماذا توجد عدة trackers في tr؟',
+  tool_magnet_link_decoder_faq_q4: 'هل يحول الرابط إلى ملف .torrent؟',
+  tool_magnet_link_decoder_faq_q5: 'هل يرفع رابط Magnet إلى الخادم؟',
+  tool_magnet_link_decoder_field_display_name: 'اسم العرض (dn)',
+  tool_magnet_link_decoder_field_exact_sources: 'المصادر الدقيقة (xs)',
+  tool_magnet_link_decoder_field_exact_topics: 'المواضيع الدقيقة (xt)',
+  tool_magnet_link_decoder_field_other: 'معلمات أخرى',
+  tool_magnet_link_decoder_field_peer_hints: 'تلميحات peer (x.pe)',
+  tool_magnet_link_decoder_field_size: 'الحجم الدقيق (xl)',
+  tool_magnet_link_decoder_field_trackers: 'Trackers (tr)',
+  tool_magnet_link_decoder_field_web_seeds: 'Web seeds (ws)',
+  tool_magnet_link_decoder_how_body:
+    'الصق URI كاملا ثم اختر فك. يفصل المحلل الاستعلام إلى أزواج مرتبة، ويفك percent escapes وعلامة +، ويجمع المفاتيح المتكررة، ويصنف exact topic، ويفحص URL والحجم، ثم يبني URI منظما وJSON. تبقى القيمة ذات الترميز التالف ظاهرة لتشخيص المصدر.',
+  tool_magnet_link_decoder_how_title: 'كيف يعمل',
+  tool_magnet_link_decoder_input_label: 'Magnet URI',
+  tool_magnet_link_decoder_input_placeholder: 'magnet:?xt=urn:btih:...&dn=...&tr=...',
+  tool_magnet_link_decoder_json_label: 'JSON المحلل',
+  tool_magnet_link_decoder_normalized_label: 'URI المنظم',
+  tool_magnet_link_decoder_privacy: 'يعمل داخل المتصفح: لا رفع ولا طلب إلى tracker أو DHT أو peer أو web seed أو metadata.',
+  tool_magnet_link_decoder_result_empty: 'ستظهر الحقول المفكوكة هنا.',
+  tool_magnet_link_decoder_results_title: 'الحقول المفكوكة',
+  tool_magnet_link_decoder_rules_body:
+    'معلمات Magnet خريطة استعلام قابلة للتكرار. يحتفظ المحلل بكل قيمة ويفحص شكلها من دون الادعاء بأن المحتوى موجود.',
+  tool_magnet_link_decoder_rules_item_1:
+    'الحقول: xt للموضوع الدقيق، وdn للاسم، وtr للـ tracker، وxl للطول بالبايت، وws للـ web seed، وxs للمصدر الدقيق، وx.pe لتلميح peer. تبقى المفاتيح غير المعروفة.',
+  tool_magnet_link_decoder_rules_item_2:
+    'شكل hash: يقبل btih أربعين خانة hex أو 32 Base32. ويقبل btmh قيمة multihash سداسية بطول زوجي؛ الشكل الشائع في BitTorrent v2 هو 1220 ثم 64 خانة SHA-256.',
+  tool_magnet_link_decoder_rules_item_3:
+    'فك الترميز: تستخدم المفاتيح والقيم percent decoding وتمثل + مسافة. عند فساد % يبقى النص الخام ويظهر تحذير بدلا من حذف الحقل.',
+  tool_magnet_link_decoder_rules_item_4:
+    'حدود الفحص: اختبارات URL والعدد تكشف الصياغة المشبوهة فقط، ولا تثبت استجابة tracker أو وجود metadata أو سلامة الملف أو السماح بمشاركته.',
+  tool_magnet_link_decoder_rules_title: 'قواعد Magnet URI',
+  tool_magnet_link_decoder_sample: 'تحميل مثال',
+  tool_magnet_link_decoder_size_bytes: '{bytes} bytes ({human})',
+  tool_magnet_link_decoder_status_invalid: 'غير صالح',
+  tool_magnet_link_decoder_status_valid: 'صالح',
+  tool_magnet_link_decoder_status_warning: 'مع تحذير',
+  tool_magnet_link_decoder_summary: '{fields} حقول، {trackers} trackers، {warnings} تحذيرات',
+  tool_magnet_link_decoder_title: 'فك رابط Magnet — عرض info hash وtrackers داخل المتصفح',
+  tool_magnet_link_decoder_unknown_value: '(قيمة فارغة)',
+  tool_magnet_link_decoder_usecase_1: 'التطوير: افحص URI مولدا وترميزه وexact topic وقائمة trackers المتكررة قبل نشر الرابط.',
+  tool_magnet_link_decoder_usecase_2:
+    'الدعم والمراجعة: اعرف trackers وweb seeds والمصادر وتلميحات peer التي يكشفها رابط من دون فتح عميل torrent.',
+  tool_magnet_link_decoder_usecase_3: 'الشرح: استخدم المثال الآمن لتوضيح استخراج info hash وعلاقة xt وdn وxl وقيم tr المتكررة.',
+  tool_magnet_link_decoder_usecases_title: 'فحوص مفيدة',
+  tool_magnet_link_decoder_warn_bad_encoding: 'ترميز النسبة تالف في المعلمة {key}؛ تم الاحتفاظ بالنص الخام.',
+  tool_magnet_link_decoder_warn_bad_hash: 'صيغة info hash غير مدعومة أو تالفة: {value}',
+  tool_magnet_link_decoder_warn_bad_peer: 'يجب أن تكون x.pe بصيغة host:port أو [IPv6]:port: {value}',
+  tool_magnet_link_decoder_warn_bad_size: 'يجب أن تكون xl عددا صحيحا غير سالب من البايتات.',
+  tool_magnet_link_decoder_warn_bad_url: 'القيمة {key} ليست URL مطلقا صالحا: {value}',
+  tool_magnet_link_decoder_warn_missing_xt: 'لم يتم العثور على معلمة xt للموضوع الدقيق.',
   tool_marginal_revenue_article: 'الإيراد الحدي هو تغيّر الإيراد الكلي عند تغيّر الكمية. تعرض هذه الحاسبة الاشتقاق المتقطع بين نقطتين.',
   tool_marginal_revenue_calculate: 'احسب MR',
   tool_marginal_revenue_description:

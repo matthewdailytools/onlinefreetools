@@ -3795,6 +3795,91 @@ const fr: SiteLangDict = {
   tool_macros_usecase_2: 'Quick sketch.',
   tool_macros_usecase_3: 'Educational pairing with BMR/TDEE.',
   tool_macros_usecases_title: 'Cas d’usage',
+  tool_magnet_link_decoder_article:
+    'Examinez un URI magnet sans ouvrir de client torrent. Le parser conserve les paramètres répétés, distingue les exact topics BitTorrent v1/v2, contrôle trackers et tailles, et garde les valeurs mal formées visibles avec leurs alertes.',
+  tool_magnet_link_decoder_clear: 'Effacer',
+  tool_magnet_link_decoder_copy_done: 'Copié',
+  tool_magnet_link_decoder_copy_hash: 'Copier info hash',
+  tool_magnet_link_decoder_copy_json: 'Copier JSON',
+  tool_magnet_link_decoder_copy_normalized: 'Copier URI normalisé',
+  tool_magnet_link_decoder_copy_trackers: 'Copier trackers',
+  tool_magnet_link_decoder_decode: 'Décoder',
+  tool_magnet_link_decoder_desc:
+    'Décodez un lien magnet localement pour voir info hash, nom, taille, trackers, web seeds, peers et alertes sans lancer de téléchargement.',
+  tool_magnet_link_decoder_description:
+    'Collez un lien magnet pour décoder les champs percent-encoded, regrouper les trackers répétés et contrôler les info hashes btih ou btmh dans le navigateur. L’exemple révèle sample-linux.iso, 1 MiB, un info hash et deux trackers ; le lien n’est pas envoyé et aucun tracker, DHT ou peer n’est contacté.',
+  tool_magnet_link_decoder_disclaimer:
+    'Inspection uniquement : aucun téléchargement, récupération de metadata, contact avec tracker, DHT ou peer, création de .torrent, ni jugement sur la sécurité ou la légalité du contenu.',
+  tool_magnet_link_decoder_empty: 'Collez d’abord un URI magnet.',
+  tool_magnet_link_decoder_error_scheme: 'La saisie doit commencer par magnet:?.',
+  tool_magnet_link_decoder_example:
+    'Entrée : URI avec xt=urn:btih:0123456789abcdef0123456789abcdef01234567, dn=sample-linux.iso, xl=1048576 et deux tr. Sortie : btih valide, nom, 1 048 576 bytes (1 MiB), deux trackers et aucune alerte.',
+  tool_magnet_link_decoder_example_title: 'Exemple',
+  tool_magnet_link_decoder_faq_a1:
+    'Non. Le parser ne lit que le texte présent dans le navigateur. La page ne contacte aucun tracker, nœud DHT, peer, web seed ou service de metadata et ne lance pas de client torrent.',
+  tool_magnet_link_decoder_faq_a2:
+    'xt signifie exact topic. Dans BitTorrent, urn:btih contient généralement un info hash v1 de 40 caractères hex ou 32 Base32. La v2 emploie souvent urn:btmh avec un multihash hexadécimal.',
+  tool_magnet_link_decoder_faq_a3:
+    'tr peut être répété pour proposer des trackers de secours. Le parser conserve leur ordre d’origine, signale les valeurs qui ne sont pas des URL valides et copie une adresse par ligne.',
+  tool_magnet_link_decoder_faq_a4:
+    'Non. Un URI magnet peut identifier le contenu sans embarquer les metadata requises par un .torrent. La conversion exige de les récupérer auprès de peers ou d’une autre source, opération volontairement absente ici.',
+  tool_magnet_link_decoder_faq_a5:
+    'Non. Décodage, regroupement, validation, normalisation et JSON s’exécutent dans cet onglet. Le lien ne part pas vers le serveur ; évitez toutefois les liens privés sur un appareil partagé.',
+  tool_magnet_link_decoder_faq_q1: 'Le décodage d’un lien magnet télécharge-t-il quelque chose ?',
+  tool_magnet_link_decoder_faq_q2: 'Que signifie xt=urn:btih ou urn:btmh ?',
+  tool_magnet_link_decoder_faq_q3: 'Pourquoi y a-t-il plusieurs trackers tr ?',
+  tool_magnet_link_decoder_faq_q4: 'Peut-on créer un fichier .torrent ?',
+  tool_magnet_link_decoder_faq_q5: 'Le lien magnet est-il envoyé au serveur ?',
+  tool_magnet_link_decoder_field_display_name: 'Nom affiché (dn)',
+  tool_magnet_link_decoder_field_exact_sources: 'Sources exactes (xs)',
+  tool_magnet_link_decoder_field_exact_topics: 'Exact topics (xt)',
+  tool_magnet_link_decoder_field_other: 'Autres paramètres',
+  tool_magnet_link_decoder_field_peer_hints: 'Peers suggérés (x.pe)',
+  tool_magnet_link_decoder_field_size: 'Taille exacte (xl)',
+  tool_magnet_link_decoder_field_trackers: 'Trackers (tr)',
+  tool_magnet_link_decoder_field_web_seeds: 'Web seeds (ws)',
+  tool_magnet_link_decoder_how_body:
+    'Collez un URI magnet complet puis lancez le décodage. Le parser sépare les paires dans leur ordre, décode les séquences % et le signe +, regroupe les clés répétées, classe les exact topics, vérifie URL et tailles, puis produit un URI normalisé et du JSON. Une séquence cassée reste visible pour le diagnostic.',
+  tool_magnet_link_decoder_how_title: 'Fonctionnement',
+  tool_magnet_link_decoder_input_label: 'URI magnet',
+  tool_magnet_link_decoder_input_placeholder: 'magnet:?xt=urn:btih:...&dn=...&tr=...',
+  tool_magnet_link_decoder_json_label: 'JSON analysé',
+  tool_magnet_link_decoder_normalized_label: 'URI normalisé',
+  tool_magnet_link_decoder_privacy: 'Exécution dans le navigateur : aucun envoi ni requête vers tracker, DHT, peer, web seed ou metadata.',
+  tool_magnet_link_decoder_result_empty: 'Les champs décodés apparaîtront ici.',
+  tool_magnet_link_decoder_results_title: 'Champs décodés',
+  tool_magnet_link_decoder_rules_body:
+    'Les paramètres magnet forment une requête où les clés peuvent se répéter. Chaque occurrence est conservée et contrôlée sans prétendre que le contenu existe.',
+  tool_magnet_link_decoder_rules_item_1:
+    'Champs : xt identifie le sujet ; dn le nom ; tr le tracker ; xl la longueur en bytes ; ws le web seed ; xs la source exacte ; x.pe un peer suggéré. Les clés inconnues restent visibles.',
+  tool_magnet_link_decoder_rules_item_2:
+    'Formats : btih accepte 40 caractères hex ou 32 Base32. btmh accepte un multihash hexadécimal de longueur paire ; 1220 suivi de 64 hex est la forme SHA-256 courante en BitTorrent v2.',
+  tool_magnet_link_decoder_rules_item_3:
+    'Décodage : clés et valeurs utilisent les escapes %, tandis que + vaut espace. Un escape mal formé reste en texte brut et déclenche une alerte.',
+  tool_magnet_link_decoder_rules_item_4:
+    'Limite : les tests d’URL et d’entier repèrent seulement une syntaxe suspecte ; ils ne prouvent ni réponse du tracker, ni présence de metadata, ni sécurité ou droit de partage.',
+  tool_magnet_link_decoder_rules_title: 'Règles du URI magnet',
+  tool_magnet_link_decoder_sample: 'Charger l’exemple',
+  tool_magnet_link_decoder_size_bytes: '{bytes} bytes ({human})',
+  tool_magnet_link_decoder_status_invalid: 'Invalide',
+  tool_magnet_link_decoder_status_valid: 'Valide',
+  tool_magnet_link_decoder_status_warning: 'Avec alertes',
+  tool_magnet_link_decoder_summary: '{fields} champs, {trackers} trackers, {warnings} alertes',
+  tool_magnet_link_decoder_title: 'Décodeur de lien magnet — Info hash et trackers dans le navigateur',
+  tool_magnet_link_decoder_unknown_value: '(valeur vide)',
+  tool_magnet_link_decoder_usecase_1:
+    'Développement : contrôlez un URI généré, son encodage, son exact topic et ses trackers répétés avant publication.',
+  tool_magnet_link_decoder_usecase_2:
+    'Support et modération : repérez trackers, web seeds, sources ou peers exposés sans ouvrir de client torrent.',
+  tool_magnet_link_decoder_usecase_3:
+    'Documentation : expliquez avec l’exemple sûr comment un extracteur d’info hash interprète xt, dn, xl et plusieurs tr.',
+  tool_magnet_link_decoder_usecases_title: 'Contrôles utiles',
+  tool_magnet_link_decoder_warn_bad_encoding: 'Encodage % incorrect dans {key} ; le texte brut a été conservé.',
+  tool_magnet_link_decoder_warn_bad_hash: 'Info hash non pris en charge ou mal formé : {value}',
+  tool_magnet_link_decoder_warn_bad_peer: 'x.pe doit suivre le format hôte:port ou [IPv6]:port : {value}',
+  tool_magnet_link_decoder_warn_bad_size: 'xl doit être une longueur entière positive ou nulle en bytes.',
+  tool_magnet_link_decoder_warn_bad_url: '{key} n’est pas une URL absolue valide : {value}',
+  tool_magnet_link_decoder_warn_missing_xt: 'Aucun paramètre exact-topic xt trouvé.',
   tool_marginal_revenue_article:
     'Le revenu marginal est la variation du revenu total lorsque la quantité change. Ce calculateur montre la dérivation discrète entre deux points.',
   tool_marginal_revenue_calculate: 'Calculer MR',

@@ -96,6 +96,7 @@ import { renderIndexNowPage } from '../pages/indexNowPage';
 import { renderIpAddressPage } from '../pages/ipAddressPage';
 import { renderJsonSchemaValidatorPage } from '../pages/jsonSchemaValidatorPage';
 import { renderJwtDecoderPage } from '../pages/jwtDecoderPage';
+import { renderMagnetLinkDecoderPage } from '../pages/magnetLinkDecoderPage';
 import { renderMarkdownToHtmlPage } from '../pages/markdownToHtmlPage';
 import { renderMergePdfPage } from '../pages/mergePdfPage';
 import { renderMetaSerpPreviewPage } from '../pages/metaSerpPreviewPage';
@@ -229,6 +230,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'ip-address': (lang, defaultLang, _enabled) => renderIpAddressPage(lang, defaultLang),
 	'json-schema-validator': (lang, defaultLang, enabled) => renderJsonSchemaValidatorPage({ lang, defaultLang, enabledLangs: enabled }),
 	'jwt-decoder': (lang, defaultLang, enabled) => renderJwtDecoderPage({ lang, defaultLang, enabledLangs: enabled }),
+	'magnet-link-decoder': (lang, defaultLang, enabled) => renderMagnetLinkDecoderPage({ lang, defaultLang, enabledLangs: enabled }),
 	'markdown-to-html': (lang, defaultLang, enabled) => renderMarkdownToHtmlPage({ lang, defaultLang, enabledLangs: enabled }),
 	'merge-pdf': (lang, defaultLang, enabled) => renderMergePdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'meta-serp-preview': (lang, defaultLang, enabled) => renderMetaSerpPreviewPage({ lang, defaultLang, enabledLangs: enabled }),

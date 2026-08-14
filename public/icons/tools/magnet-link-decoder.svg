@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Magnet link decoder</title>
+  <desc id="desc">A magnet beside decoded link fields</desc>
+  <rect width="64" height="64" rx="12" fill="#f4f7f6"/>
+  <path d="M15 15v17c0 10 7 17 17 17s17-7 17-17V15H38v17c0 4-2 7-6 7s-6-3-6-7V15H15Z" fill="#d94b4b"/>
+  <path d="M15 15h11v10H15zm23 0h11v10H38z" fill="#f2c14e"/>
+  <path d="M32 44h17" fill="none" stroke="#176b87" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="52" cy="44" r="3" fill="#176b87"/>
+  <path d="M36 53h16" fill="none" stroke="#2d3748" stroke-width="3" stroke-linecap="round"/>
+</svg>

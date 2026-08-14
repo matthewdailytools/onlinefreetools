@@ -24,6 +24,7 @@
 - [Unix 时间戳转换](https://onlinefreetools.org/zh/tools/unix-timestamp) - 纪元时间与可读日期时间互转，浏览器本地完成
 - [时区转换](https://onlinefreetools.org/zh/tools/timezone-converter) - 同一时刻在 IANA 多时区对照（含夏令时说明），浏览器本地运行
 - [JWT 解码](https://onlinefreetools.org/zh/tools/jwt-decoder) - 本地查看 JWT Header 与 Payload，不验证签名
+- [磁力链接解析](https://onlinefreetools.org/zh/tools/magnet-link-decoder) - 在浏览器本地查看 info hash、tracker、文件名与大小，不下载内容或联系节点
 - [图片格式转换](https://onlinefreetools.org/zh/tools/image-format-converter) - 浏览器内 PNG / JPEG / WebP / AVIF 互转：质量、透明底色与本地处理
 - [图片 EXIF 查看与清除](https://onlinefreetools.org/zh/tools/image-exif) - 本地查看 GPS/相机等元数据，并重编码清除后下载
 - [图片压缩](https://onlinefreetools.org/zh/tools/image-compress) - 本地按最长边、质量与目标体积压缩图片（JPEG/WebP/PNG）
@@ -151,6 +152,7 @@ Below are our available online tools with their links (English version):
 - [Unix Timestamp Converter](https://onlinefreetools.org/tools/unix-timestamp) - Convert epoch timestamps ↔ readable datetimes — local in the browser
 - [Time Zone Converter](https://onlinefreetools.org/tools/timezone-converter) - Compare one moment across IANA time zones with DST notes — local in the browser
 - [JWT Decoder](https://onlinefreetools.org/tools/jwt-decoder) - Read JWT header and payload locally — no signature verification
+- [Magnet Link Decoder](https://onlinefreetools.org/tools/magnet-link-decoder) - Parse info hashes, trackers, names, and sizes locally without downloading content or contacting peers
 - [Image Format Converter](https://onlinefreetools.org/tools/image-format-converter) - Convert PNG, JPEG, WebP, and AVIF locally with quality, JPEG matte, and MIME checks
 - [EXIF Viewer & Remover](https://onlinefreetools.org/tools/image-exif) - View GPS/camera metadata locally and download a stripped re-encoded copy
 - [Image Compressor](https://onlinefreetools.org/tools/image-compress) - Resize, set quality or a target file size, and download — runs locally in your browser

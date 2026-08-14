@@ -1,0 +1,25 @@
+{
+  "slug": "magnet-link-decoder",
+  "path": "/tools/magnet-link-decoder",
+  "category": "developer",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_magnet_link_decoder_title",
+  "homeTitleKey": "tool_magnet_link_decoder_title",
+  "homeDescKey": "tool_magnet_link_decoder_desc",
+  "faqPrefix": "tool_magnet_link_decoder",
+  "related": [
+    "base64",
+    "file-hash",
+    "jwt-decoder"
+  ],
+  "logo": "/icons/tools/magnet-link-decoder.svg",
+  "page": {
+    "module": "../pages/magnetLinkDecoderPage",
+    "export": "renderMagnetLinkDecoderPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "developer",
+  "subject": "text"
+}
