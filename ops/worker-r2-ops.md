@@ -315,7 +315,7 @@ npm run verify:r2 -- --local         # 校验本地模拟桶 ↔ wrangler 版本
 ## 6. 缓存失效
 
 HTML：`Cache-Control: public, s-maxage=86400, max-age=0`，`Vary: Accept-Encoding`。  
-Cache key = 公开 URL + `__ce=identity` + `__v=<PAGES_CACHE_VERSION>`（缓存**明文** HTML；R2 仍存 gzip）。
+Cache key = 公开 URL（**含 query**）+ `__ce=identity` + `__v=<PAGES_CACHE_VERSION>`（缓存**明文** HTML；R2 仍存 gzip）。`/zh/` 与 `/zh/?preview=1` 是不同 HTML cache key；`__ce` / `__v` 由 Worker 追加或覆盖。
 
 发版后要尽快让用户看到新 HTML：
 
@@ -324,6 +324,28 @@ Cache key = 公开 URL + `__ce=identity` + `__v=<PAGES_CACHE_VERSION>`（缓存*
 3. Dashboard Cache Purge（若账号具备）。
 
 改 HTML 后务必 **`upload:r2`**，否则边缘仍可能命中旧 R2 对象。只 push 不 upload → 新 Worker + 旧 HTML。
+
+### 6.1 运维按 URL 清 Worker Cache
+
+Worker 内置受保护接口，可删除 `caches.default` 中某个公开 URL 的 exact key：
+
+```bash
+curl -sS -X POST 'http://127.0.0.1:8787/api/admin/cache/purge' \
+  -H 'Content-Type: application/json' \
+  -H "Authorization: Bearer $CACHE_ADMIN_TOKEN" \
+  --data '{"urls":["/zh/","/zh/tools/archive-extractor"]}'
+```
+
+Token 配置：
+
+- 本地 `wrangler dev`：写入 `.dev.vars` 的 `CACHE_ADMIN_TOKEN=...`（文件已 gitignore，勿提交）。
+- 生产：`npx wrangler secret put CACHE_ADMIN_TOKEN`。
+- 请求头支持 `Authorization: Bearer <token>` 或 `X-Cache-Admin-Token: <token>`。
+
+边界：
+
+- 这是 **Worker Cache API exact-key delete**，不是 R2 删除，也不是 Cloudflare CDN 全局 purge。
+- Workers Cache API 不提供枚举 `caches.default` 全部条目的能力；接口收到 `{"all":true}` / `{"purgeEverything":true}` 会先校验 token，再返回不支持枚举清空。全站级失效用 `PAGES_CACHE_VERSION`；CDN 级全清用 Cloudflare Cache Purge API / Dashboard。
 
 > Worker **对外始终出明文 HTML**（不设 `Content-Encoding: gzip`）；R2 存 gzip，读时 gunzip。压缩交给运行时/边缘，避免双重 gzip 乱码。
 

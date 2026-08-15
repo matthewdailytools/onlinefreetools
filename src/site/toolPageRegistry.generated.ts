@@ -5,6 +5,7 @@
 import type { SiteLang } from './i18n';
 import { renderAddWatermarkPage } from '../pages/addWatermarkPage';
 import { renderAddWwwToDnsPage } from '../pages/addWwwToDnsPage';
+import { renderArchiveExtractorPage } from '../pages/archiveExtractorPage';
 import { renderBase64Page } from '../pages/base64Page';
 import { renderBrandColorTokenPackPage } from '../pages/brandColorTokenPackPage';
 import { renderBrandStyleGuidePage } from '../pages/brandStyleGuidePage';
@@ -140,6 +141,7 @@ export type ToolPageRenderFn = (
 export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'add-watermark': (lang, defaultLang, enabled) => renderAddWatermarkPage({ lang, defaultLang, enabledLangs: enabled }),
 	'add-www-to-dns': (lang, defaultLang, enabled) => renderAddWwwToDnsPage({ lang, defaultLang, enabledLangs: enabled }),
+	'archive-extractor': (lang, defaultLang, enabled) => renderArchiveExtractorPage({ lang, defaultLang, enabledLangs: enabled }),
 	'base64': (lang, defaultLang, enabled) => renderBase64Page({ lang, defaultLang, enabledLangs: enabled }),
 	'brand-color-token-pack': (lang, defaultLang, enabled) => renderBrandColorTokenPackPage({ lang, defaultLang, enabledLangs: enabled }),
 	'brand-style-guide': (lang, defaultLang, enabled) => renderBrandStyleGuidePage({ lang, defaultLang, enabledLangs: enabled }),

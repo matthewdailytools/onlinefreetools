@@ -19,6 +19,7 @@
 - [HTML 实体编解码](https://onlinefreetools.org/zh/tools/html-entity) - 浏览器内 HTML 实体编码与解码：范围、命名/数字形式、严格解码
 - [文件哈希校验](https://onlinefreetools.org/zh/tools/file-hash) - 在浏览器内校验文本或文件的 MD5、SHA 等十六进制摘要
 - [在线解压 ZIP](https://onlinefreetools.org/zh/tools/unzip-file) - 浏览器内查看 ZIP 文件树、预览文本/图片，并下载单个文件或导出全部，不上传服务器
+- [压缩包在线解压](https://onlinefreetools.org/zh/tools/archive-extractor) - 浏览器内打开 ZIP、TAR、TAR.GZ 压缩包，预览文件并导出干净 ZIP，不上传服务器
 - [UUID / ULID 生成](https://onlinefreetools.org/zh/tools/uuid-generator) - 在浏览器内创建 UUID v4 与 ULID 标识符，一键复制
 - [随机密码生成](https://onlinefreetools.org/zh/tools/password-generator) - 在浏览器内本地生成随机密码（crypto.getRandomValues）
 - [Base64 编解码](https://onlinefreetools.org/zh/tools/base64) - 在浏览器内转换文本或文件字节的 Base64 / Base64url
@@ -148,6 +149,7 @@ Below are our available online tools with their links (English version):
 - [HTML Entity Encoder & Decoder](https://onlinefreetools.org/tools/html-entity) - Encode and decode HTML entities with scope, named/decimal/hex output, and strict decode — all in-browser
 - [File Hash Checker](https://onlinefreetools.org/tools/file-hash) - Verify MD5 and SHA hex digests for pasted text or local files in your browser
 - [Unzip File Online](https://onlinefreetools.org/tools/unzip-file) - Inspect ZIP contents, preview text/images, and download one file or export all in your browser — no server upload
+- [Archive Extractor Online](https://onlinefreetools.org/tools/archive-extractor) - Open ZIP, TAR, and TAR.GZ archives in your browser, preview files, and export a clean ZIP — no server upload
 - [UUID & ULID Generator](https://onlinefreetools.org/tools/uuid-generator) - Create UUID v4 and ULID IDs in your browser with one-click copy
 - [Random Password Generator](https://onlinefreetools.org/tools/password-generator) - Create random passwords locally with crypto.getRandomValues — demo-grade
 - [Base64 Encode & Decode](https://onlinefreetools.org/tools/base64) - Convert text or file bytes to Base64 and back — local in the browser

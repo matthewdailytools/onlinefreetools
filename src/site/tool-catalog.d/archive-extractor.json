@@ -1,0 +1,26 @@
+{
+  "slug": "archive-extractor",
+  "path": "/tools/archive-extractor",
+  "updatedAt": "2026-08-14T15:41:03.000Z",
+  "category": "developer",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_archive_extractor_title",
+  "homeTitleKey": "tool_archive_extractor_title",
+  "homeDescKey": "tool_archive_extractor_desc",
+  "faqPrefix": "tool_archive_extractor",
+  "related": [
+    "unzip-file",
+    "file-hash",
+    "split-pdf"
+  ],
+  "logo": "/icons/tools/archive-extractor.svg",
+  "page": {
+    "module": "../pages/archiveExtractorPage",
+    "export": "renderArchiveExtractorPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "documents",
+  "subject": "data"
+}

@@ -37,16 +37,37 @@ export const assetHtmlPathToR2Key = (assetHtmlPath: string, prefix = ''): string
 };
 
 /**
- * 构造 Cache API 用的 Request（公开 URL + 版本号；只缓存明文变体）。
+ * 构造 Cache API 用的 Request（公开 URL 含 query + 版本号；只缓存明文变体）。
  * @param request 原始请求
  * @param cacheVersion 可选版本串
  */
 export const buildHtmlCacheKey = (request: Request, cacheVersion?: string): Request => {
 	const url = new URL(request.url);
-	url.search = '';
 	url.searchParams.set('__ce', 'identity');
 	if (cacheVersion) url.searchParams.set('__v', cacheVersion);
 	return new Request(url.toString(), { method: 'GET' });
+};
+
+/**
+ * 删除某个公开 URL 对应的 HTML Cache API exact key。
+ * @param opts.request 当前请求，用作相对 URL 的同源基准
+ * @param opts.env Worker 绑定
+ * @param opts.rawUrl 要删除的公开 URL，可为绝对 URL 或同源相对路径
+ */
+export const deleteHtmlCacheForUrl = async (opts: {
+	request: Request;
+	env: PagesBindings;
+	rawUrl: string;
+}): Promise<{ url: string; cacheKey: string; deleted: boolean }> => {
+	const { request, env, rawUrl } = opts;
+	const base = new URL(request.url);
+	const target = new URL(rawUrl, base);
+	if (target.origin !== base.origin) {
+		throw new Error('cross-origin cache purge is not allowed');
+	}
+	const cacheKey = buildHtmlCacheKey(new Request(target.toString(), { method: 'GET' }), env.PAGES_CACHE_VERSION || '');
+	const deleted = await caches.default.delete(cacheKey);
+	return { url: target.toString(), cacheKey: cacheKey.url, deleted };
 };
 
 /**
@@ -231,6 +252,7 @@ export const clientAcceptsGzip = (request: Request): boolean => {
 
 export default {
 	assetHtmlPathToR2Key,
+	deleteHtmlCacheForUrl,
 	clientAcceptsGzip,
 	isLangHomeAssetPath,
 	langHomeAssetPath,

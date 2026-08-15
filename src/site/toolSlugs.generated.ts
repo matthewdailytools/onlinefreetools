@@ -5,6 +5,7 @@
 export const TOOL_SLUGS = [
 	"add-watermark",
 	"add-www-to-dns",
+	"archive-extractor",
 	"base64",
 	"brand-color-token-pack",
 	"brand-style-guide",

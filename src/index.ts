@@ -14,6 +14,7 @@ import {
 } from "./site/lang";
 import { registerToolPages } from "./site/toolRegistrar";
 import {
+	deleteHtmlCacheForUrl,
 	langHomeAssetPath,
 	langHomeR2Path,
 	serveHomeHtml,
@@ -39,6 +40,8 @@ type Env = PagesBindings & {
 	PAGES_CACHE_VERSION?: string;
 	/** Turnstile siteverify 密钥（wrangler secret，勿入库） */
 	TURNSTILE_SECRET_KEY?: string;
+	/** 运维缓存清理接口 token（wrangler secret / .dev.vars，勿入库） */
+	CACHE_ADMIN_TOKEN?: string;
 };
 
 /**
@@ -75,6 +78,55 @@ const isGoogleSiteVerificationPath = (pathname: string) => pathname === GOOGLE_S
  * @param pathname 请求路径
  */
 const isIndexNowKeyPath = (pathname: string) => pathname === INDEXNOW_KEY_PATH;
+
+type CachePurgePayload = {
+	url?: unknown;
+	urls?: unknown;
+	all?: unknown;
+	purgeEverything?: unknown;
+};
+
+/**
+ * 从 Authorization Bearer 或 X-Cache-Admin-Token 读取运维 token。
+ * @param request 入站请求
+ */
+const readCacheAdminToken = (request: Request): string => {
+	const auth = request.headers.get("Authorization") || "";
+	const bearer = auth.match(/^Bearer\s+(.+)$/i);
+	if (bearer) return bearer[1].trim();
+	return (request.headers.get("X-Cache-Admin-Token") || "").trim();
+};
+
+/**
+ * 常量时间校验运维 token；未配置 secret 时一律拒绝。
+ * @param request 入站请求
+ * @param env Worker 绑定
+ */
+const verifyCacheAdminToken = (request: Request, env: Env): boolean => {
+	const expected = String(env.CACHE_ADMIN_TOKEN || "").trim();
+	const provided = readCacheAdminToken(request);
+	if (!expected || !provided) return false;
+	const enc = new TextEncoder();
+	const a = enc.encode(provided);
+	const b = enc.encode(expected);
+	if (a.length !== b.length) return false;
+	return crypto.subtle.timingSafeEqual(a, b);
+};
+
+/**
+ * 解析缓存清理请求中的 URL 列表。
+ * @param payload JSON body
+ */
+const parseCachePurgeUrls = (payload: CachePurgePayload): string[] => {
+	const out: string[] = [];
+	if (typeof payload.url === "string") out.push(payload.url);
+	if (Array.isArray(payload.urls)) {
+		for (const item of payload.urls) {
+			if (typeof item === "string") out.push(item);
+		}
+	}
+	return [...new Set(out.map((s) => s.trim()).filter(Boolean))];
+};
 
 // Start a Hono app
 const app = new Hono<{ Bindings: Env }>();
@@ -412,6 +464,83 @@ app.get("/api/ops/pages-build", async (c) => {
 		},
 		aligned ? 200 : 409
 	);
+});
+
+/**
+ * 运维：按公开 URL 删除 HTML Cache API exact key。
+ *
+ * Body:
+ *   { "url": "/zh/" }
+ *   { "urls": ["/zh/", "/zh/tools/archive-extractor?preview=1"] }
+ *
+ * Token:
+ *   Authorization: Bearer <CACHE_ADMIN_TOKEN>
+ *   或 X-Cache-Admin-Token: <CACHE_ADMIN_TOKEN>
+ */
+app.post("/api/admin/cache/purge", async (c) => {
+	if (!verifyCacheAdminToken(c.req.raw, c.env)) {
+		const configured = !!String(c.env.CACHE_ADMIN_TOKEN || "").trim();
+		return c.json(
+			{
+				ok: false,
+				error: configured ? "unauthorized" : "cache_admin_token_not_configured",
+			},
+			configured ? 401 : 503
+		);
+	}
+
+	let payload: CachePurgePayload = {};
+	try {
+		payload = (await c.req.json()) as CachePurgePayload;
+	} catch {
+		payload = {};
+	}
+
+	if (payload.all === true || payload.purgeEverything === true) {
+		return c.json(
+			{
+				ok: false,
+				error: "cache_api_cannot_enumerate_entries",
+				message:
+					"Workers Cache API supports exact-key delete, but this runtime does not expose a way to list and clear every caches.default entry. Use PAGES_CACHE_VERSION for release-wide invalidation, or Cloudflare CDN purge outside the Worker for CDN cache.",
+			},
+			400
+		);
+	}
+
+	const urls = parseCachePurgeUrls(payload);
+	if (!urls.length) {
+		return c.json(
+			{
+				ok: false,
+				error: "missing_urls",
+				message: "Send {\"url\":\"/zh/\"} or {\"urls\":[\"/zh/\",\"/tools/example?x=1\"]}.",
+			},
+			400
+		);
+	}
+	if (urls.length > 50) {
+		return c.json({ ok: false, error: "too_many_urls", limit: 50 }, 400);
+	}
+
+	const results = [];
+	for (const rawUrl of urls) {
+		try {
+			results.push(await deleteHtmlCacheForUrl({ request: c.req.raw, env: c.env, rawUrl }));
+		} catch (err) {
+			results.push({
+				url: rawUrl,
+				deleted: false,
+				error: err instanceof Error ? err.message : "delete failed",
+			});
+		}
+	}
+
+	return c.json({
+		ok: true,
+		pagesCacheVersion: String(c.env.PAGES_CACHE_VERSION || ""),
+		results,
+	});
 });
 
 // Legacy static tool page: redirect to dynamic route.
