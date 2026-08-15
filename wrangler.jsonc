@@ -50,7 +50,7 @@
 		"SITE_DEFAULT_LANG": "en",
 		"SITE_LANGS": "en,zh,es,ar,pt,id,fr,ja,ru,de",
 		/** 发版递增可使 HTML Cache API key 失效（见 src/site/r2Pages.ts）。 */
-		"PAGES_CACHE_VERSION": "4"
+		"PAGES_CACHE_VERSION": "4.1"
 	},
 	/**
 	 * 预渲染多语言 HTML（gzip）存储桶。
