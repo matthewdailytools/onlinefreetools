@@ -5,9 +5,9 @@
 import type { SiteLangDict } from '../../../types';
 
 const en: SiteLangDict = {
-	tool_npv_title: 'NPV Calculator — How to Calculate Net Present Value',
+	tool_npv_title: 'How to Calculate NPV — Net Present Value Calculator',
 	tool_npv_description:
-		'Calculate NPV from an annual discount rate, initial investment, and year-by-year cash flows. Example: invest 10,000 at 10% with cash flows 3,000 / 4,200 / 6,800 → NPV ≈ 1,307.29. Runs in your browser; educational illustration only — not investment advice.',
+		'How to calculate NPV from an annual discount rate, initial investment, and year-by-year cash flows. Formula: NPV = −I₀ + Σ (CFₜ/(1+r)ᵗ). Example: invest 10,000 at 10% with cash flows 3,000 / 4,200 / 6,800 → NPV ≈ 1,307.29. Runs in your browser; educational illustration only — not investment advice.',
 	tool_npv_article:
 		'Net present value (NPV) discounts future cash flows back to today at a chosen annual rate, then subtracts the initial investment. A positive NPV means the discounted inflows exceed the outflow under your assumptions; it is not a forecast or a buy recommendation.',
 	tool_npv_calculate: 'Calculate',

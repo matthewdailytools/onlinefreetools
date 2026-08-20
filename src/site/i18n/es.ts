@@ -7225,7 +7225,7 @@ const es: SiteLangDict = {
   tool_volume_calculate: 'Calcular',
   tool_volume_clear: 'Limpiar',
   tool_volume_description:
-    'Calcula el volumen de una caja (L×W×H) o una esfera (4/3 πr³) con la fórmula correspondiente. Ejemplo: caja 2×3×4 → volumen 24. Solo en el navegador; proceso de geometría sólida claro.',
+    'Calcula el volumen online de una caja (L×W×H) o una esfera (4/3 πr³) con la fórmula correspondiente. Pasos: elige la forma, introduce las dimensiones y obtén el volumen. Ejemplo: caja 2×3×4 → volumen 24. Solo en el navegador; geometría sólida clara, sin subir datos al servidor.',
   tool_volume_disclaimer: 'Solo ilustración educativa (volume).',
   tool_volume_err_generic: 'Revisa los datos.',
   tool_volume_example: 'Ejemplo: caja 24.',
@@ -7259,7 +7259,7 @@ const es: SiteLangDict = {
   tool_volume_shape_box: 'Caja',
   tool_volume_shape_label: 'Forma',
   tool_volume_shape_sphere: 'Esfera',
-  tool_volume_title: 'Calculadora de volumen',
+  tool_volume_title: 'Calcular el volumen — Calculadora de caja y esfera',
   tool_volume_usecase_1: 'Homework.',
   tool_volume_usecase_2: 'Quick sketch.',
   tool_volume_usecase_3: 'Compare related shape tools.',

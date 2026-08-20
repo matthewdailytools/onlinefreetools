@@ -4474,7 +4474,7 @@ const en: SiteLangDict = {
   tool_npv_cf_ph: 'e.g. 3000, 4200, 6800',
   tool_npv_clear: 'Clear',
   tool_npv_description:
-    'Calculate NPV from an annual discount rate, initial investment, and year-by-year cash flows. Example: invest 10,000 at 10% with cash flows 3,000 / 4,200 / 6,800 → NPV ≈ 1,307.29. Runs in your browser; educational illustration only — not investment advice.',
+    'How to calculate NPV from an annual discount rate, initial investment, and year-by-year cash flows. Formula: NPV = −I₀ + Σ (CFₜ/(1+r)ᵗ). Example: invest 10,000 at 10% with cash flows 3,000 / 4,200 / 6,800 → NPV ≈ 1,307.29. Runs in your browser; educational illustration only — not investment advice.',
   tool_npv_disclaimer:
     'NPV results are educational illustrations only and are not investment, tax, or financial advice. Discount rates, cash-flow timing, fees, taxes, and risk are simplified on this page. Past or hypothetical figures do not guarantee future results.',
   tool_npv_err_cf: 'Enter at least one valid cash-flow number (comma or newline separated).',
@@ -4516,7 +4516,7 @@ const en: SiteLangDict = {
   tool_npv_result_label: 'NPV',
   tool_npv_result_note: 'Educational illustration only — not investment advice.',
   tool_npv_sample: 'Load sample',
-  tool_npv_title: 'NPV Calculator — How to Calculate Net Present Value',
+  tool_npv_title: 'How to Calculate NPV — Net Present Value Calculator',
   tool_npv_usecase_1:
     'Rough project screening: compare discounted inflows to the upfront cost under a stated rate (illustration only).',
   tool_npv_usecase_2: 'Coursework: practice the NPV sum with a fixed discount rate and a short cash-flow list.',
@@ -6080,7 +6080,7 @@ const en: SiteLangDict = {
   tool_schema_copied: 'Copied',
   tool_schema_copy: 'Copy',
   tool_schema_description:
-    'Structured data helps Google understand pages and may unlock richer results. Pick a type, fill fields, copy paste-ready JSON-LD. Example: two-question FAQ.',
+    'JSON-LD schema generator for Schema.org markup: pick a type, fill fields, copy paste-ready JSON-LD in your browser. Steps: choose FAQ, Article, Breadcrumb or Organization → fill required fields → Generate. Example: two-question FAQ → mainEntity with Question nodes. Helps machines understand the page; no rich-result guarantee.',
   tool_schema_download: 'Download',
   tool_schema_err_no_fields: 'Fill the required fields, then generate.',
   tool_schema_example:
@@ -6105,8 +6105,8 @@ const en: SiteLangDict = {
   tool_schema_fields_label: 'Fields',
   tool_schema_generate: 'Generate',
   tool_schema_home_desc:
-    'Help Google understand your page and earn richer, more clickable search results with Schema.org JSON-LD — generated right in your browser.',
-  tool_schema_home_title: 'JSON-LD Generator',
+    'Generate Schema.org JSON-LD in your browser: FAQ, Article, Breadcrumb, Organization — paste-ready markup so search engines can understand your page.',
+  tool_schema_home_title: 'JSON-LD Schema Generator',
   tool_schema_how_body:
     'Pick a schema type, fill the form fields, and press Generate. The page builds a Schema.org JSON-LD object, checks that required fields are present, and shows the pretty-printed result wrapped in a script tag so you can paste it into your page head. A syntax check runs before the output renders; missing required fields are listed instead of silently producing broken markup.',
   tool_schema_how_title: 'How it works',
@@ -6132,7 +6132,7 @@ const en: SiteLangDict = {
     'Consistency: Google compares structured data with the visible page. Markup for content that is not on the page is against the spam policies.',
   tool_schema_rules_title: 'What the generator checks',
   tool_schema_sample: 'Load sample',
-  tool_schema_title: 'JSON-LD Generator — Schema Markup for FAQ, Article & Breadcrumb',
+  tool_schema_title: 'JSON-LD Schema Generator — Schema.org Markup Online',
   tool_schema_type_article: 'Article',
   tool_schema_type_breadcrumb: 'Breadcrumb',
   tool_schema_type_faq: 'FAQ',

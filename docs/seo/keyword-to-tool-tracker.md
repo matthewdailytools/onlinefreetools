@@ -40,7 +40,7 @@
 
 | 字段 | 值 |
 |---|---|
-| 最近更新 | 2026-08-13 |
+| 最近更新 | 2026-08-20 |
 | 最近批次 | [serp-batches/2026-08-13-keyword-planner-magnets.md](./serp-batches/2026-08-13-keyword-planner-magnets.md) |
 | 池内 `build` 候选 | `safe-paste-cleaner`、`magnet-pull-force-calculator`（均仅词池标记；**未**建 work-tasks） |
 | 本周新建工具页 | 0 |
@@ -106,6 +106,7 @@
 | 2026-08-12 | 运维文档：`ops/seo/keyword-to-tool-ops.md` + README §4.2 | 有一批词时的操作入口写入 ops |
 | 2026-08-13 | 分析 Keyword Planner 磁铁批（~700 词）进池；无既有 slug 可 absorb；主 build 候选 `magnet-pull-force-calculator`（未建 work-tasks） | 磁铁批约 9 成为商业购买/产品规格/品牌导航意图 → drop；可交互缺口集中在吸力/强度/等级/尺寸 |
 | 2026-08-13 | `magnet-pull-force-calculator` 的等级对照/材料对比/尺寸换算记为同一工具的子意图，禁止按 grades/material/size 拆近义 URL | 对齐 doorway / scaled content 红线；一带多场景 |
+| 2026-08-20 | GSC 高展示零点击簇 **absorb**：`ru/image-merge`、`en/schema-jsonld-generator`、`es/how-to-calculate-volume`、`en/how-to-calculate-npv` 改 title/description（及 schema home_*）；不新建 URL | 用户确认优先现有工具 CTR/排名；对齐 2026-08-12 P0 meta |
 
 ---
 

@@ -957,7 +957,7 @@
   {
     "slug": "how-to-calculate-npv",
     "path": "/tools/how-to-calculate-npv",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-08-20T12:50:00.852Z",
     "category": "calculator",
     "featured": false,
     "ymyl": true,
@@ -1486,7 +1486,7 @@
   {
     "slug": "how-to-calculate-volume",
     "path": "/tools/how-to-calculate-volume",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-08-20T12:50:00.718Z",
     "category": "calculator",
     "featured": false,
     "ymyl": false,
@@ -1696,7 +1696,7 @@
   {
     "slug": "image-merge",
     "path": "/tools/image-merge",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-08-20T12:50:00.438Z",
     "category": "image",
     "featured": true,
     "ymyl": false,
@@ -2307,7 +2307,7 @@
   {
     "slug": "schema-jsonld-generator",
     "path": "/tools/schema-jsonld-generator",
-    "updatedAt": "2026-08-11T00:00:00.000Z",
+    "updatedAt": "2026-08-20T12:50:00.583Z",
     "category": "developer",
     "featured": false,
     "ymyl": false,

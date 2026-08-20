@@ -31,12 +31,13 @@
 
 > 改前先确认线上已部署上轮 i18n；改后 `lint:seo` + `build:site`。
 
-- [ ] `ru` `image-merge`：title/description 对齐「объединить / склеить фото онлайн」等高展示俄语词簇
-- [ ] `en` `schema-jsonld-generator`：title 前置 JSON-LD / Schema generator
-- [ ] `es` `how-to-calculate-volume`：title 前置 calcular volumen / calculadora
-- [ ] `en` `how-to-calculate-npv`：title/description 对齐 “how to calculate npv”（排名深，先 meta，不期待一次进前 20）
-- [ ] 同步受影响语种的首页卡片 title（若走 `scripts/site/i18n.mjs` / merge 流程）
-- [ ] `npm run lint:seo` 通过后再部署
+- [x] `ru` `image-merge`：title/description 对齐「объединить / склеить фото онлайн」等高展示俄语词簇（2026-08-20）
+- [x] `en` `schema-jsonld-generator`：title 前置 JSON-LD / Schema generator；去掉过时 richer-results 承诺（2026-08-20）
+- [x] `es` `how-to-calculate-volume`：title 前置 calcular volumen / calculadora（2026-08-20）
+- [x] `en` `how-to-calculate-npv`：title/description 对齐 “how to calculate npv”（2026-08-20）
+- [x] 同步受影响语种的首页卡片 title（`merge:tools` → `i18n-tools.generated` + ru legacy in `i18n.mjs`）
+- [x] `npm run lint:seo` + `build:site` 通过（2026-08-20）
+- [ ] **部署**本轮 meta 改动 + IndexNow incremental（`--since-git`）
 
 ---
 
