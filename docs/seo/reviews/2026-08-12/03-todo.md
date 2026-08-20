@@ -37,7 +37,8 @@
 - [x] `en` `how-to-calculate-npv`：title/description 对齐 “how to calculate npv”（2026-08-20）
 - [x] 同步受影响语种的首页卡片 title（`merge:tools` → `i18n-tools.generated` + ru legacy in `i18n.mjs`）
 - [x] `npm run lint:seo` + `build:site` 通过（2026-08-20）
-- [ ] **部署**本轮 meta 改动 + IndexNow incremental（`--since-git`）
+- [x] **部署**本轮 meta 改动 + IndexNow（`npm run deploy` + `git push` + `--tool` 四 slug，2026-08-20）
+- [ ] CF Dashboard 确认 GitHub 部署成功后，可选 `npm run verify:r2:live`
 
 ---
 
