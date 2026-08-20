@@ -11,12 +11,15 @@
 - 合规底线：`.cursor/rules/seo-google-policy.mdc`
 - IG 配额 / 禁拆页：`.cursor/rules/tool-i18n-seo.mdc`
 - 覆盖门禁：`.cursor/skills/tool-coverage-pass/SKILL.md`
-- 现行 GSC 策略：[2026-08-08/02-next-strategy.md](./2026-08-08/02-next-strategy.md)
+- 现行 GSC 策略：[reviews/2026-08-12/02-next-strategy.md](./reviews/2026-08-12/02-next-strategy.md)
+- **长尾缺口优先（选题）**：[2026-08-20-long-tail-gap-strategy.md](./2026-08-20-long-tail-gap-strategy.md)
 - Omni 对标（学结构不学页数）：[../2026-08-08-omnicalculator-seo-traffic-strategy.md](../2026-08-08-omnicalculator-seo-traffic-strategy.md)
 - 运行表模板：[keyword-daily-pool.tsv](./keyword-daily-pool.tsv)
 - SERP 批次归档：[serp-batches/README.md](./serp-batches/README.md)
 
-> **一句话**：从谷歌搜索批量取词进意图池（分析用）→ 合并过滤 → **每周立项 1–2 个**真实可交互工具并做满 Information Gain；禁止「一词一 URL」日建页。
+> **一句话**：从谷歌搜索批量取词进意图池（分析用）→ **竞品覆盖分类（回避大词、主攻未覆盖长尾）** → 合并过滤 → **每周立项 1–2 个**真实可交互工具并做满 Information Gain；禁止「一词一 URL」日建页。
+
+**选题战略（2026-08-20）**：[2026-08-20-long-tail-gap-strategy.md](./2026-08-20-long-tail-gap-strategy.md) — 不与已有流量站抢已占位大词；主攻其未覆盖/极薄的长尾与语言缺口。已有 GSC 展示的大词仅做 CTR 收割，不作进攻立项。
 
 ---
 
@@ -100,16 +103,28 @@ flowchart TD
 2. SERP 前排缺什么？能否用 **≥3 条 IG** 补上？  
 3. 是否与站内已有 slug **同一主意图**？→ 优先 `absorb`  
 4. 是否只是近义换词？→ 禁止拆页，进 Use cases / FAQ  
-5. YMYL？→ disclaimer + 引用成本更高，可 `defer`
+5. YMYL？→ disclaimer + 引用成本更高，可 `defer`  
+6. **竞品覆盖**（见长尾缺口策略）：谁在占位？是否大词/已覆盖？还是未覆盖长尾 / 语言缺口？→ 填 `competition_tier` + `gap_notes`
 
-### 3.5 `verdict` 取值
+### 3.5 `competition_tier`（选题门禁）
+
+| 值 | 含义 | 周 `build` |
+|---|---|---|
+| `head` | 大词；品牌/流量站已占位 | **禁止进攻**；无本站展示 → `drop`/`defer`；有展示 → 仅 CTR 收割 |
+| `mid_covered` | 竞品已有同意图深页 | 无 slug → 不立项；有 slug → 可 `absorb` |
+| `long_gap` | 未覆盖或极薄的具体意图 | **优先** `build` / `absorb` |
+| `locale_gap` | 他语强、目标语弱/无 | 优先该语种 absorb / 满 IG 本地化 |
+
+周立项名额只分配给 `long_gap` / `locale_gap`（详见 [2026-08-20-long-tail-gap-strategy.md](./2026-08-20-long-tail-gap-strategy.md) §3–§4）。
+
+### 3.6 `verdict` 取值
 
 | 值 | 含义 |
 |---|---|
-| `build` | 新意图 + 可行 + 有 IG 缺口 → 进入周立项候选 |
+| `build` | 新意图 + 可行 + 有 IG 缺口 + **非 head 进攻** → 进入周立项候选 |
 | `absorb` | 并入已有 slug（改 meta / FAQ / Use cases） |
-| `defer` | 意图成立但产能/YMYL/技术未就绪 |
-| `drop` | 不可做成工具、重复、或无增量 |
+| `defer` | 意图成立但产能/YMYL/技术未就绪，或 mid_covered 暂不硬刚 |
+| `drop` | 不可做成工具、重复、无增量，或纯大词无展示不值得跟 |
 
 ---
 
@@ -131,7 +146,8 @@ flowchart TD
 2. 相对 SERP 能写出 **≥3 条 IG**（九维见下节）  
 3. 技术可行（工具方向 A/B/C）  
 4. 不与 catalog 现有 slug 撞同一主意图  
-5. 流水线：`work-tasks/{slug}/` → `npm run coverage:gate -- --slug=… --phase=0b` → 实现 → phase `2`/`4` → `build:site` + `lint:seo`
+5. **`competition_tier` 为 `long_gap` 或 `locale_gap`**（禁止纯 `head` 进攻立项）  
+6. 流水线：`work-tasks/{slug}/` → `npm run coverage:gate -- --slug=… --phase=0b` → 实现 → phase `2`/`4` → `build:site` + `lint:seo`
 
 ---
 
@@ -188,6 +204,8 @@ IG 是内容策略原则（对齐 Helpful Content），**不是**已确认的独
 | `absorb_slug` | 可并入的 catalog slug；新建则空 |
 | `feasibility` | `yes` / `no` / `maybe`（浏览器可做） |
 | `verdict` | `build` / `absorb` / `defer` / `drop` |
+| `competition_tier` | `head` / `mid_covered` / `long_gap` / `locale_gap` |
+| `gap_notes` | 谁占位 + 缺口一句（未覆盖/薄/语言等） |
 | `notes` | 其他 |
 
 ---
@@ -200,6 +218,7 @@ IG 是内容策略原则（对齐 Helpful Content），**不是**已确认的独
 - 为 GSC/SERP 查询批量建近义 URL  
 - 未过 0b / 无交互 / 无 IG 的占位工具进 sitemap  
 - 以 FAQ 富结果 / `llms.txt` / AI 专用 schema 为 KPI  
+- **与流量站正面硬刚已占位大词**（搜索量排序当立项队列；纯 `head` 进周 build）  
 
 ---
 

@@ -1,6 +1,7 @@
 # 关键词 → 工具漏斗（运维操作）
 
 从一批搜索词中：**找新工具创建**，或**融入并丰富已有工具**。  
+选题约束：不抢竞品已占位**大词**，主攻**未覆盖长尾** — [`docs/seo/2026-08-20-long-tail-gap-strategy.md`](../../docs/seo/2026-08-20-long-tail-gap-strategy.md)。  
 事项跟进（非工具夹）：[`docs/seo/keyword-to-tool-tracker.md`](../../docs/seo/keyword-to-tool-tracker.md)  
 可执行 Skill：[`.cursor/skills/keyword-to-tool-funnel/SKILL.md`](../../.cursor/skills/keyword-to-tool-funnel/SKILL.md)
 
@@ -13,11 +14,13 @@
 | 产物 | 路径 | 说明 |
 |---|---|---|
 | 批次摘要 | `docs/seo/serp-batches/YYYY-MM-DD-<id>.md` | 脱敏；无完整 SERP HTML / 密钥 |
-| 意图池（主结果表） | `docs/seo/keyword-daily-pool.tsv` | 每词一行：`verdict` 等 |
+| 意图池（主结果表） | `docs/seo/keyword-daily-pool.tsv` | 每词一行：`verdict`、`competition_tier`、`gap_notes` 等 |
 | 事项跟进 | `docs/seo/keyword-to-tool-tracker.md` | 快照 + 决策日志 |
-| 策略说明 | `docs/seo/keyword-to-tool-funnel.md` | 漏斗与合规展开 |
+| 选题战略 | `docs/seo/2026-08-20-long-tail-gap-strategy.md` | 回避大词、主攻长尾缺口 |
+| 漏斗说明 | `docs/seo/keyword-to-tool-funnel.md` | 漏斗与合规展开 |
 
-`verdict`：`build`（新工具候选）· `absorb`（丰富已有 slug）· `defer` · `drop`。默认优先 **absorb**。
+`verdict`：`build`（新工具候选）· `absorb`（丰富已有 slug）· `defer` · `drop`。默认优先 **absorb**。  
+`competition_tier`：`long_gap` / `locale_gap` 优先进周 build；`head` 禁止进攻立项。
 
 ---
 
@@ -32,14 +35,15 @@
 
 示例：
 
-> 按 keyword-to-tool-funnel 分析下面这批词，写入 serp-batches + keyword-daily-pool，更新 tracker；先 absorb 优先。不要自动建 work-tasks。
+> 按 keyword-to-tool-funnel 分析下面这批词，写入 serp-batches + keyword-daily-pool，更新 tracker；先 absorb 优先；填写 competition_tier（回避大词、主攻 long_gap/locale_gap）。不要自动建 work-tasks。
 
 然后粘贴词表，或给出已保存的批次路径。
 
 ### 2.3 验收分析产出
 
 - [ ] `docs/seo/serp-batches/` 有本批 `.md`
-- [ ] `keyword-daily-pool.tsv` 已追加行且每行有 `verdict`
+- [ ] `keyword-daily-pool.tsv` 已追加行且每行有 `verdict` + `competition_tier`
+- [ ] 本批缺口类（`long_gap`+`locale_gap`）占多数；`head` 未进入周 build 进攻队列
 - [ ] `keyword-to-tool-tracker.md` 快照 / 决策日志已更新
 - [ ] **未**因本次分析新建 `work-tasks/`
 
@@ -55,12 +59,22 @@
 
 ---
 
+## 2.5 存量工具：词根 → Keyword Planner（每周）
+
+1. 打开 [`docs/seo/2026-08-20-tool-keyword-roots.md`](../../docs/seo/2026-08-20-tool-keyword-roots.md)，选 3–5 个 slug  
+2. 用该行 `primary_roots` / `adwords_seed_suggested` 在 Google Ads **Keyword Planner** 查相关与长尾（脱敏笔记）  
+3. 头词标 `head` 丢弃进攻；长尾写入 `keyword-daily-pool.tsv`（`absorb_slug`=该工具，`competition_tier`=`long_gap`/`locale_gap`）  
+4. 按长尾优化该工具功能与 SEO（FAQ/Use cases/控件），不新建近义 URL  
+5. 细节见策略 [`2026-08-20-long-tail-gap-strategy.md`](../../docs/seo/2026-08-20-long-tail-gap-strategy.md) §4.7  
+
+---
+
 ## 3. 节奏建议
 
 | 节奏 | 动作 |
 |---|---|
 | 按批 / 每天 | 词进池（约 10 条），0 新 URL |
-| 每周 | 审 `verdict`；absorb 排期改文案；`build` 仅在确认创建时开 work-tasks（建议 ≤1–2） |
+| 每周 | 审 `verdict`；**3–5 slug 词根→Keyword Planner→absorb**（§2.5）；`build` 仅确认创建时开 work-tasks（≤1–2） |
 | 每 2–4 周 | GSC 复盘；结论回写 tracker |
 
 ---
@@ -79,7 +93,9 @@
 | 文档 | 用途 |
 |---|---|
 | [keyword-to-tool-tracker.md](../../docs/seo/keyword-to-tool-tracker.md) | 事项状态 |
-| [keyword-to-tool-funnel.md](../../docs/seo/keyword-to-tool-funnel.md) | 策略展开 |
+| [2026-08-20-long-tail-gap-strategy.md](../../docs/seo/2026-08-20-long-tail-gap-strategy.md) | 选题：回避大词、主攻长尾缺口；§4.7 AdWords |
+| [2026-08-20-tool-keyword-roots.md](../../docs/seo/2026-08-20-tool-keyword-roots.md) | 127 工具词根 |
+| [keyword-to-tool-funnel.md](../../docs/seo/keyword-to-tool-funnel.md) | 漏斗展开 |
 | [keyword-daily-pool.tsv](../../docs/seo/keyword-daily-pool.tsv) | 运行表 |
 | [serp-batches/](../../docs/seo/serp-batches/) | 批次目录 |
 | Skill `keyword-to-tool-funnel` | Agent 强制流程 |

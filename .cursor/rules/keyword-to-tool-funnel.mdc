@@ -13,4 +13,4 @@ alwaysApply: false
 3. **`work-tasks/` 只为创建工具**；分析进池 ≠ 自动立项夹
 4. 两条路径：`build`（新工具，须另确认再建夹）或 `absorb`（更新已有工具文案/IG，不拆 URL）
 
-权威策略展开：`docs/seo/keyword-to-tool-funnel.md`。合规不得放宽 `seo-google-policy` / `tool-i18n-seo`。
+权威策略展开：`docs/seo/keyword-to-tool-funnel.md`。选题叠加：`docs/seo/2026-08-20-long-tail-gap-strategy.md`（回避大词、主攻未覆盖长尾）。合规不得放宽 `seo-google-policy` / `tool-i18n-seo`。

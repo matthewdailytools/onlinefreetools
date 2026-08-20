@@ -11,10 +11,12 @@
 - [SEO 发布清单](./SEO_PUBLISH_CHECKLIST.md) — 发版与 GSC 操作
 - [JS 工具包调研](./2026-07-09-js-tool-packages-survey.md) — 技术可行性（非 SEO 优先级）
 - Agent 镜像：`.cursor/rules/seo-google-policy.mdc`（最高合规）及 `tool-i18n-seo` / `tool-i18n-localization` / `tool-creation`
+- **选题执行（2026-08-20）**：[seo/2026-08-20-long-tail-gap-strategy.md](./seo/2026-08-20-long-tail-gap-strategy.md) — 回避已占位大词，主攻竞品未覆盖长尾
 
 > **权威序**：Google Search Central 现行文档 → 运行代码 / `lint:seo` → `.cursor/rules/*` → 本文（须对齐前三者）。  
 > **本文职责**：回答「工具页如何符合最新 Google 规则，以及如何用 Information Gain 胜过同类页并落地」。  
 > **IG 定位**：内容策略原则（对齐 Helpful Content），**不是**已确认的独立排名因子；长尾默认「一带多场景」，禁止空壳变体铺量（§3.0、§3.3）。  
+> **选题**：不与流量站抢已占位大词；缺口长尾见上链策略文。  
 > **不做工具选型清单**（见工具方向文档）。
 
 ---

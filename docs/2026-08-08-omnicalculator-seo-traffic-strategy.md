@@ -11,7 +11,8 @@
 - 工具方向：[2026-07-28-tool-direction.md](./2026-07-28-tool-direction.md)（A.7 / C-V4·V5 / 附录）
 - 清单总表：[2026-08-08-tool-inventory-table.md](./2026-08-08-tool-inventory-table.md) §9（Omni 意图合并 · `how-to-calculate-*`，62 行）/ §12
 - 意图合并 TSV：[omnicalculator-intent-merge-howto.tsv](./competitor-refs/omnicalculator-2026-08-08/omnicalculator-intent-merge-howto.tsv)
-- GSC 现行策略：[seo/2026-08-08/02-next-strategy.md](./seo/2026-08-08/02-next-strategy.md)
+- GSC 现行策略：[seo/reviews/2026-08-12/02-next-strategy.md](./seo/reviews/2026-08-12/02-next-strategy.md)
+- **长尾缺口优先（选题，2026-08-20）**：[seo/2026-08-20-long-tail-gap-strategy.md](./seo/2026-08-20-long-tail-gap-strategy.md) — 不与 Omni 等抢已占位大词；主攻未覆盖长尾
 - Google 落地：[2026-07-28-google-seo-strategy-implementation.md](./2026-07-28-google-seo-strategy-implementation.md)
 
 **规则权威（本文不重复立法）**：核心「一带多场景 / 禁 doorway」已在 `.cursor/rules` 中——`seo-google-policy.mdc`、`tool-i18n-seo.mdc`、`tool-creation.mdc`、`tool-i18n-localization.mdc`。本文是 **Omni 对标下的执行策略与示例展开**；冲突时以 Google Search Central 现行文档与上述 rules 为准。
@@ -20,7 +21,7 @@
 
 ## 0. 一句话结论
 
-Omni 用 **海量拆页 + 公式叙事** 垄断 en 计算器长尾。本站可行路径是：**吃掉已曝光意图的 CTR → 按 shortlist P1 补高意图「公式教育页」→ 用 zh/L2 实质本地化抢语言缺口 → IndexNow/可引用结构吃 Bing/Copilot**。页数不是杠杆；Information Gain 与语言深度才是。
+Omni 用 **海量拆页 + 公式叙事** 垄断 en 计算器长尾。本站可行路径是：**不正面硬刚其已占位大词** → 收割本站已曝光意图的 CTR → **主攻 Omni/同类站未覆盖或极薄的长尾与语言缺口** → IndexNow/可引用结构吃 Bing/Copilot。页数不是杠杆；Information Gain 与缺口选题才是。选题立法见 [seo/2026-08-20-long-tail-gap-strategy.md](./seo/2026-08-20-long-tail-gap-strategy.md)。
 
 ---
 

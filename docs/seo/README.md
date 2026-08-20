@@ -60,10 +60,12 @@ docs/seo/
 
 ## 关键词 → 工具漏斗（SERP 分析）
 
+- **选题战略（长尾缺口优先）**：[2026-08-20-long-tail-gap-strategy.md](./2026-08-20-long-tail-gap-strategy.md) — 不抢已占位大词；主攻竞品未覆盖长尾 / 语言缺口；§4.7 词根→AdWords→absorb
+- **全站词根清单**：[2026-08-20-tool-keyword-roots.md](./2026-08-20-tool-keyword-roots.md) · [tsv](./2026-08-20-tool-keyword-roots.tsv)（127 工具 primary/secondary 种子）
 - **跟进**：[keyword-to-tool-tracker.md](./keyword-to-tool-tracker.md)（独立项状态 / 里程碑 / 周待办）
 - **运维操作**：[ops/seo/keyword-to-tool-ops.md](../../ops/seo/keyword-to-tool-ops.md)（有一批词怎么开始）
 - **Skill**：[`.cursor/skills/keyword-to-tool-funnel/SKILL.md`](../../.cursor/skills/keyword-to-tool-funnel/SKILL.md) — 从关键词找新工具或丰富已有工具
-- [`keyword-to-tool-funnel.md`](./keyword-to-tool-funnel.md) — 日抽词进池、周审、IG 门禁
+- [`keyword-to-tool-funnel.md`](./keyword-to-tool-funnel.md) — 日抽词进池、周审、IG 门禁 + `competition_tier`
 - [`keyword-daily-pool.tsv`](./keyword-daily-pool.tsv) — 候选运行表
 - [`serp-batches/`](./serp-batches/) — 脱敏 SERP 批次摘要归档
 - 试点批次：[`serp-batches/2026-08-11-pilot01.md`](./serp-batches/2026-08-11-pilot01.md)（词池分析；未自动建 work-tasks）

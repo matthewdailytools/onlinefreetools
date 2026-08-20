@@ -11,6 +11,8 @@ description: >-
 
 **目标（本 Skill）**：从关键词中寻找**新的工具进行创建**，或**融入并丰富已有工具进行更新**。
 
+**选题约束（2026-08-20）**：不与已有流量站抢已占位**大词**；主攻其**未覆盖/极薄长尾**与**语言缺口**。详见 [docs/seo/2026-08-20-long-tail-gap-strategy.md](../../docs/seo/2026-08-20-long-tail-gap-strategy.md)。已有 GSC 展示的大词只做 CTR 收割，不进攻立项。存量工具另走 **词根 → Keyword Planner → absorb**（策略 §4.7；词根表 [tool-keyword-roots](../../docs/seo/2026-08-20-tool-keyword-roots.md)）。
+
 分析进池由本 Skill 完成；真正写页面 / 十语时再接 `tool-coverage-pass` 与 `work-tasks-tool-brief`。  
 事项跟进文件：[docs/seo/keyword-to-tool-tracker.md](../../docs/seo/keyword-to-tool-tracker.md)  
 运维操作：[ops/seo/keyword-to-tool-ops.md](../../ops/seo/keyword-to-tool-ops.md)  
@@ -27,12 +29,12 @@ description: >-
 
 | `verdict` | 含义 | 下一步 |
 |---|---|---|
-| **`build`** | 新意图 + 浏览器可做 + 相对 SERP 有 ≥3 条 IG 缺口 | **仅记入词池**；开 `work-tasks/{slug}/` **须用户明确要创建该工具** |
+| **`build`** | 新意图 + 浏览器可做 + ≥3 条 IG + **`competition_tier` 为 `long_gap`/`locale_gap`**（禁止纯大词进攻） | **仅记入词池**；开 `work-tasks/{slug}/` **须用户明确要创建该工具** |
 | **`absorb`** | 与已有 catalog slug 同一主意图 / 近义长尾 | **更新已有工具**：title/description、FAQ、Use cases、Example/IG；**不新建 URL** |
-| `defer` | 意图成立但产能/YMYL/技术未就绪 | 留池，决策日志一行 |
-| `drop` | 不可做成工具、重复、无增量 | 留池注明理由即可 |
+| `defer` | 意图成立但产能/YMYL/技术未就绪，或 `mid_covered` 暂不硬刚 | 留池，决策日志一行 |
+| `drop` | 不可做成工具、重复、无增量，或纯 `head` 且无本站展示 | 留池注明理由即可 |
 
-默认优先 **`absorb` 丰富已有**，再谈 `build`。
+默认优先 **`absorb` 丰富已有**，再谈 `build`。周 `build` 名额只给缺口类，不给 `head`。
 
 ## 强制流程
 
@@ -49,8 +51,10 @@ description: >-
 3. 是否已有 slug 同意图？→ **`absorb`**  
 4. 是否近义换词？→ 禁止拆页，进 Use cases / FAQ  
 5. YMYL？→ 倾向 `defer` 或加重 disclaimer 成本  
+6. **竞品覆盖**：谁占位？→ 填 `competition_tier`（`head` / `mid_covered` / `long_gap` / `locale_gap`）+ `gap_notes`  
 
-对照 catalog：`src/site/tool-catalog.json`；可行性：`docs/2026-07-28-tool-direction.md`。
+对照 catalog：`src/site/tool-catalog.json`；可行性：`docs/2026-07-28-tool-direction.md`。  
+选题细则：`docs/seo/2026-08-20-long-tail-gap-strategy.md`。种子可含大词，**入池以向下展开的长尾缺口为主**（建议每批缺口类 ≥6/10）。
 
 ### 3A) `absorb` → 丰富已有工具
 
@@ -62,9 +66,10 @@ description: >-
 
 ### 3B) `build` → 仅候选；创建工具另决议
 
-1. 词池 `verdict=build`，`notes` 可写建议 slug  
-2. **禁止**因跑本 Skill / 跟进事项而自动 `mkdir work-tasks/...`  
-3. 用户明确「创建 / 立项 / 实现 {slug}」之后：  
+1. 词池 `verdict=build`，且 `competition_tier` 为 `long_gap` 或 `locale_gap`；`notes` 可写建议 slug  
+2. 若实为 `head` 进攻 → 改为 `drop`/`defer`，或仅在有 GSC 展示时走既有页 CTR 收割  
+3. **禁止**因跑本 Skill / 跟进事项而自动 `mkdir work-tasks/...`  
+4. 用户明确「创建 / 立项 / 实现 {slug}」之后：  
    - 复制 `work-tasks/_template/` → `work-tasks/{slug}/`  
    - 再按 `work-tasks-tool-brief` + **`tool-coverage-pass`**（0b→…）  
 
@@ -80,10 +85,11 @@ description: >-
 - 不一词一 URL 日更  
 - 不把本 Skill 待办只写进某次 GSC `03-todo` 而不回写 tracker  
 - 不跳过 `tool-coverage-pass` 直接灌十语上线新工具  
+- **不把已占位大词当作周 build 进攻队列**（搜索量 ≠ 立项理由）  
 
 ## 验收自检
 
 - [ ] 本批有 serp-batches 摘要 + 词池行  
-- [ ] 每条有 `verdict`；`absorb` 已指向真实 slug 或已说明暂缓改文案  
-- [ ] `build` 未擅自建 work-tasks（除非用户本回合明确要求创建该工具）  
+- [ ] 每条有 `verdict` 与 `competition_tier`；`absorb` 已指向真实 slug 或已说明暂缓改文案  
+- [ ] `build` 均为缺口类；未擅自建 work-tasks（除非用户本回合明确要求创建该工具）  
 - [ ] tracker 快照 / 决策日志已更新  
