@@ -52,11 +52,13 @@ alwaysApply: false
 
 另须：
 
-- 可见 **How it works** + 至少 **1** 个完整 Example（计算/转换类加 Formula/Rules）
+- 可见 **How it works**：`how_body`（总答）+ **`how_item_1…n` 有序操作步骤**（建议 3–6；动词开头、与 UI 一致；渲染为 `<ol>`）。凡可交互工具均须有步骤（含计算器：填字段 → 选模式 → 计算 → 读结果）。存量仅有散文 `how_body` 的页在改文案时迁移。
+- 至少 **1** 个完整 Example（计算/转换类加 Formula/Rules；Rules 写约束，勿假扮操作步骤）
 - **FAQ ≥ 3**（YMYL 须含局限性/免责类问题）
 - 动态工具结果的关键解读须落到可索引 **Example / FAQ**（勿仅依赖交互态文案）
+- **不为**进 Bing/Google AI 摘要单独加 HowTo schema / `llms.txt` / AI 专用切块；步骤为人服务，抽取是副产品
 
-**禁止零增益**：仅写 `Upload → Click → Download` 或「快、安全、免费」口号。
+**禁止零增益**：仅写 `Upload → Click → Download` 口号而无真实控件对应，或「快、安全、免费」空话。
 
 ## 长尾与拆页
 

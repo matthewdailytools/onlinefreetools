@@ -426,6 +426,54 @@ body.is-tool-page .tool-lead {
 }
 
 /**
+ * lg+：顶栏分类较多时，左侧导航可横向滚动，右侧主题/语言始终可见可点。
+ * 避免整行挤出视口导致「右边菜单溢出点不到」。
+ */
+@media (min-width: 992px) {
+  .navbar.site-navbar .container-fluid {
+    flex-wrap: nowrap;
+    min-width: 0;
+  }
+
+  .navbar.site-navbar .navbar-collapse {
+    display: flex !important;
+    flex-wrap: nowrap;
+    align-items: center;
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+
+  .navbar.site-navbar .navbar-nav {
+    flex: 1 1 auto;
+    flex-wrap: nowrap;
+    min-width: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .navbar.site-navbar .navbar-nav::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .navbar.site-navbar .navbar-nav::-webkit-scrollbar-thumb {
+    background: rgba(148, 163, 184, 0.55);
+    border-radius: 999px;
+  }
+
+  .navbar.site-navbar .navbar-nav .nav-link {
+    white-space: nowrap;
+  }
+
+  /* 主题 + 语言：不参与压缩，始终留在右侧 */
+  .navbar.site-navbar .navbar-collapse > .d-flex {
+    flex: 0 0 auto;
+    margin-left: 0.75rem;
+  }
+}
+
+/**
  * Navbar：主题浅染底 + 品牌底边高光，随 data-theme 的 --brand* 变化。
  */
 .navbar.site-navbar,

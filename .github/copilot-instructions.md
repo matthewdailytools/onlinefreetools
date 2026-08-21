@@ -38,7 +38,7 @@ Purpose: Make AI agents productive immediately in this repo. Keep changes minima
   - `tool_*_example`：至少一个输入→输出示例
 
 - **页面内容**（可见正文）：
-  - How it works、Use cases、Formula/Rules（如适用）、Example、FAQ（≥3）、Related tools（≥2）、References（≥1；YMYL 建议 ≥2）
+  - How it works（`how_body` 总答 + `how_item_1…n` 有序步骤，新工具必填）、Use cases、Formula/Rules（如适用）、Example、FAQ（≥3）、Related tools（≥2）、References（≥1；YMYL 建议 ≥2）
   - **进页样例**：须配置并可运行；初始化后自动跑出与主流程一致的真实结果（非空态占位）；与 H2 Example 对齐；例外写 `02`（见 `tool-creation.mdc`）
   - Information Gain：上线前 §3.1 九维至少 3 项；长尾默认一带多场景，慎拆近义 URL
   - 文件/粘贴类：隐私 FAQ/声明须该语说清「留在设备」+「不上服务器」（见 `tool-i18n-localization.mdc`）

@@ -395,10 +395,12 @@ export type ToolReferenceLink = {
 
 /**
  * 渲染 How / Formula|Rules / Example / Use cases 结构化 IG 区块。
- * 键约定：`{prefix}_how_title`、`_how_body`、`_formula_title` 或 `_rules_title`、
- * `_formula_body` 或 `_rules_body`、可选 `_formula_item_1…n` / `_rules_item_1…n`、
- * `_example_title`、`_example`、`_usecases_title`、`_usecase_1…n`。
- * 缺失键则跳过对应小节（不回退成 key 字符串）。
+ * 键约定：`{prefix}_how_title`、`_how_body`、可选 `_how_item_1…n`（有序操作步骤）、
+ * `_formula_title` 或 `_rules_title`、`_formula_body` 或 `_rules_body`、
+ * 可选 `_formula_item_1…n` / `_rules_item_1…n`、`_example_title`、`_example`、
+ * `_usecases_title`、`_usecase_1…n`。
+ * How：有 `how_item_*` 时渲染 `<ol>`；`how_body` 作总答（可与步骤并存）。
+ * 仅有 `how_body` 时仍输出单段 `<p>`（存量兼容）。缺失键则跳过对应小节。
  */
 export const renderToolIgSections = (opts: {
 	lang: SiteLang;
@@ -410,11 +412,14 @@ export const renderToolIgSections = (opts: {
 	usecaseCount?: number;
 	/** 公式/规则列表项上限（默认 4） */
 	ruleItemCount?: number;
+	/** How 操作步骤条数上限（默认 6） */
+	howItemCount?: number;
 }) => {
 	const { lang, prefix } = opts;
 	const mode = opts.mode ?? 'formula';
 	const usecaseCount = opts.usecaseCount ?? 3;
 	const ruleItemCount = opts.ruleItemCount ?? 4;
+	const howItemCount = opts.howItemCount ?? 6;
 	const parts: string[] = [];
 
 	/** 读取 i18n；若等于 key 本身则视为未配置。 */
@@ -426,11 +431,29 @@ export const renderToolIgSections = (opts: {
 
 	const howTitle = tx(`${prefix}_how_title`);
 	const howBody = tx(`${prefix}_how_body`);
-	if (howTitle && howBody) {
+	const howItems: string[] = [];
+	for (let i = 1; i <= howItemCount; i++) {
+		const item = tx(`${prefix}_how_item_${i}`);
+		if (item) howItems.push(item);
+	}
+	if (howTitle && (howBody || howItems.length)) {
+		const howLead =
+			howBody && howItems.length
+				? `<p class="text-muted mb-2">${escapeHtml(howBody)}</p>`
+				: howBody && !howItems.length
+					? `<p class="text-muted mb-0">${escapeHtml(howBody)}</p>`
+					: '';
+		const howList =
+			howItems.length > 0
+				? `<ol class="text-muted mb-0">${howItems
+						.map((x) => `<li>${escapeHtml(x)}</li>`)
+						.join('')}</ol>`
+				: '';
 		parts.push(`
     <section class="mt-4 tool-section" id="how" aria-labelledby="how-heading">
       <h2 class="h5" id="how-heading">${escapeHtml(howTitle)}</h2>
-      <p class="text-muted mb-0">${escapeHtml(howBody)}</p>
+      ${howLead}
+      ${howList}
     </section>`);
 	}
 

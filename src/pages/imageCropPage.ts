@@ -1,7 +1,7 @@
 /**
- * ???????????????? + ??/???? + Canvas drawImage/toBlob??
- * slug: image-crop????crop-image / resize-image / crop-to-square ????URL??
- * ??work-tasks/image-crop/02-tool-info.md??
+ * 图片裁剪与改尺寸工具页：本地选区 + 比例/像素预设 + Canvas drawImage/toBlob。
+ * slug: image-crop；不拆 crop-image / resize-image / crop-to-square 等近义 URL。
+ * 见 work-tasks/image-crop/02-tool-info.md。
  */
 import type { SiteLang } from '../site/i18n';
 import { t, supportedLangs } from '../site/i18n';
@@ -161,28 +161,28 @@ export const renderImageCropPage = (opts: {
       <select id="icrPreset" class="form-select form-select-sm" style="width:auto;max-width:16rem;">
         <option value="">${escapeHtml(t(opts.lang, 'tool_image_crop_preset_custom'))}</option>
         <optgroup label="${escapeHtml(t(opts.lang, 'tool_image_crop_preset_group_avatar'))}">
-          <option value="512x512" selected>512?512</option>
-          <option value="400x400">400?400</option>
-          <option value="256x256">256?256</option>
-          <option value="128x128">128?128</option>
-          <option value="800x800">800?800</option>
-          <option value="1000x1000">1000?1000</option>
+          <option value="512x512" selected>512:512</option>
+          <option value="400x400">400:400</option>
+          <option value="256x256">256:256</option>
+          <option value="128x128">128:128</option>
+          <option value="800x800">800:800</option>
+          <option value="1000x1000">1000:1000</option>
         </optgroup>
         <optgroup label="${escapeHtml(t(opts.lang, 'tool_image_crop_preset_group_thumb'))}">
-          <option value="150x150">150?150</option>
-          <option value="300x300">300?300</option>
+          <option value="150x150">150:150</option>
+          <option value="300x300">300:300</option>
         </optgroup>
         <optgroup label="${escapeHtml(t(opts.lang, 'tool_image_crop_preset_group_cover'))}">
-          <option value="1920x1080">1920?1080</option>
-          <option value="1280x720">1280?720</option>
-          <option value="1600x900">1600?900</option>
-          <option value="1200x675">1200?675</option>
-          <option value="1200x630">1200?630</option>
-          <option value="1920x600">1920?600</option>
+          <option value="1920x1080">1920:1080</option>
+          <option value="1280x720">1280:720</option>
+          <option value="1600x900">1600:900</option>
+          <option value="1200x675">1200:675</option>
+          <option value="1200x630">1200:630</option>
+          <option value="1920x600">1920:600</option>
         </optgroup>
         <optgroup label="${escapeHtml(t(opts.lang, 'tool_image_crop_preset_group_portrait'))}">
-          <option value="1080x1920">1080?1920</option>
-          <option value="1080x1350">1080?1350</option>
+          <option value="1080x1920">1080:1920</option>
+          <option value="1080x1350">1080:1350</option>
         </optgroup>
         <optgroup label="${escapeHtml(t(opts.lang, 'tool_image_crop_preset_group_web'))}">
           <option value="max1200">${escapeHtml(t(opts.lang, 'tool_image_crop_preset_max1200'))}</option>
@@ -191,7 +191,7 @@ export const renderImageCropPage = (opts: {
       </select>
       <label class="form-label mb-0" for="icrOutW">${escapeHtml(t(opts.lang, 'tool_image_crop_output_size'))}</label>
       <input type="number" id="icrOutW" class="form-control form-control-sm" min="1" max="8192" value="512" style="width:5.5rem;" aria-label="output width">
-      <span class="small">?</span>
+      <span class="small" aria-hidden="true">:</span>
       <input type="number" id="icrOutH" class="form-control form-control-sm" min="1" max="8192" value="512" style="width:5.5rem;" aria-label="output height">
       <span class="small text-muted">px</span>
       <button type="button" id="icrBtnSame" class="btn btn-outline-secondary btn-sm">${escapeHtml(t(opts.lang, 'tool_image_crop_same_as_selection'))}</button>
@@ -257,8 +257,8 @@ export const renderImageCropPage = (opts: {
 	const referencesHtml = renderToolReferencesSection({
 		lang: opts.lang,
 		links: [
-			{ label: 'MDN ??CanvasRenderingContext2D.drawImage()', href: 'https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage' },
-			{ label: 'MDN ??HTMLCanvasElement.toBlob()', href: 'https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob' },
+			{ label: 'MDN - CanvasRenderingContext2D.drawImage()', href: 'https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage' },
+			{ label: 'MDN - HTMLCanvasElement.toBlob()', href: 'https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob' },
 		],
 	});
 
@@ -1089,7 +1089,7 @@ export const renderImageCropPage = (opts: {
         ctx.font = 'bold 56px sans-serif';
         ctx.fillText('Sample crop', 160, 160);
         ctx.font = '28px sans-serif';
-        ctx.fillText('1600 ? 1000', 160, 210);
+        ctx.fillText('1600 x 1000', 160, 210);
         return new Promise(function (resolve) {
           c.toBlob(function (blob) {
             if (!blob) { resolve(); return; }

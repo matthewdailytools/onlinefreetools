@@ -98,7 +98,7 @@ TOOL_SLUG={slug} npm run lint:tool-isolation
 ```
 H1 + 一句话摘要
 【工具交互区】← 首屏（进页须自动跑样例并显示真实结果，见下节）
-H2 How it works
+H2 How it works（`how_body` 总答 + `how_item_1…n` 有序操作步骤，见下）
 H2 Formula / Rules / Algorithm（计算与转换类）
 H2 Example（固定 Input→Output；须与默认样例行为一致）
 H2 Use cases（2–3 条场景；长尾意图优先写此，慎拆 URL）
@@ -107,6 +107,14 @@ H2 Related tools（catalog related ≥2）
 H2 References（≥1 可点击权威链，YMYL 建议 ≥2）
 Disclaimer（YMYL 必备）
 ```
+
+**How it works（硬性 · 操作步骤）**：每个可交互工具都必须写清「用户怎么完成任务」，不是机制散文。
+
+- `tool_*_how_title` + `tool_*_how_body`（1–2 句总答）+ **`tool_*_how_item_1…n`（建议 3–6 条）**
+- 每步动词开头，与页面按钮/控件文案一致；渲染为可见 `<ol>`（`renderToolIgSections`）
+- 计算器同样适用（填字段 → 选模式 → 计算 → 读结果），步骤可更短
+- Formula/Rules 写算法与边界，**不要**改写成假操作步骤
+- **新工具**：立项即写 `how_item_*`；**存量**：改文案时顺带迁移，禁止为「进 AI 摘要」单独堆 HowTo schema
 
 **文案深度**（相对「三步怎么用」）：为何遇到该问题、输入类型差异、失败边界、参数选择、与竞品/其他方法差异。
 
@@ -132,6 +140,7 @@ Disclaimer（YMYL 必备）
 - [ ] `src/site/tool-catalog.d/{slug}.json` 完成且 `updatedAt` 已改为本次编辑的 ISO 时间；`related` ≥ 2；纯本地处理默认 `localProcessing: true`（边缘请求工具须 `false`，首页不显示「不上传」标签）
 - [ ] `npm run coverage:gate -- --slug={slug} --phase=all` 通过（0b + 步2/1b + 步4/2b）
 - [ ] 已 `npm run build:site`（含 merge；`public/index.html` / `public/{lang}/index.html` 与 sitemap 已含本工具；勿只跑 `merge:tools`）
+- [ ] **How it works 含有序操作步骤**：`how_body` 总答 + `how_item_1…n`（建议 3–6；与 UI 文案一致）；十语齐全
 - [ ] title 非参数枚举目录腔；`02` 覆盖表填满且 `03` 勾选清单前覆盖与「检索覆盖已优化」
 - [ ] **相关关键词已落入** H1 / description / FAQ / Use cases；无页上关键词列表；**每语已按当地搜法重跑**（非 en 直搬）
 - [ ] 未手改生成物（catalog.json / `i18n/{lang}.ts` / registry / i18n-tools.generated）
