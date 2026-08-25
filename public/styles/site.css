@@ -426,8 +426,8 @@ body.is-tool-page .tool-lead {
 }
 
 /**
- * lg+：顶栏分类较多时，左侧导航可横向滚动，右侧主题/语言始终可见可点。
- * 避免整行挤出视口导致「右边菜单溢出点不到」。
+ * lg+：分类项过多时左侧 nav 仍可横向滑动（不画滚动条），右侧主题/语言始终可见。
+ * 分类下拉改为铺满 nav 的多列面板，避免单列内滚动条。
  */
 @media (min-width: 992px) {
   .navbar.site-navbar .container-fluid {
@@ -444,22 +444,76 @@ body.is-tool-page .tool-lead {
   }
 
   .navbar.site-navbar .navbar-nav {
+    position: relative;
     flex: 1 1 auto;
     flex-wrap: nowrap;
     min-width: 0;
+    /* 空间不够时仍可横向滑动，但不画滚动条（顶栏出现滚动条会很怪） */
     overflow-x: auto;
     overflow-y: hidden;
-    scrollbar-width: thin;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
     -webkit-overflow-scrolling: touch;
   }
 
   .navbar.site-navbar .navbar-nav::-webkit-scrollbar {
-    height: 4px;
+    display: none;
+    width: 0;
+    height: 0;
   }
 
-  .navbar.site-navbar .navbar-nav::-webkit-scrollbar-thumb {
-    background: rgba(148, 163, 184, 0.55);
-    border-radius: 999px;
+  /**
+   * overflow-x:auto 会把另一轴算成 hidden/auto，裁掉下拉。
+   * 打开时取消裁剪（JS 加 class；:has 兜底）。
+   */
+  .navbar.site-navbar .navbar-nav.navbar-nav--dropdown-open,
+  .navbar.site-navbar .navbar-nav:has(.dropdown-menu.show),
+  .navbar.site-navbar .navbar-nav:has(.dropdown-toggle[aria-expanded='true']) {
+    overflow: visible;
+  }
+
+  /**
+   * 分类下拉相对整条 nav 定位，铺成多列面板，避免 60+ 项单列 + 内滚动条。
+   */
+  .navbar.site-navbar .navbar-nav > .dropdown {
+    position: static;
+  }
+
+  .navbar.site-navbar .navbar-nav > .dropdown > .dropdown-menu {
+    left: 0;
+    right: 0;
+    width: auto;
+    max-width: none;
+    padding: 0.45rem 0.5rem;
+    /* 多数桌面一屏铺开；仅视口更矮时才可滚，且不画滚动条 */
+    max-height: calc(100vh - var(--header-h) - 8px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .navbar.site-navbar .navbar-nav > .dropdown > .dropdown-menu.show {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+  }
+
+  .navbar.site-navbar .navbar-nav > .dropdown > .dropdown-menu::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
+  .navbar.site-navbar .navbar-nav > .dropdown > .dropdown-menu > li {
+    flex: 0 0 50%;
+    min-width: 0;
+  }
+
+  .navbar.site-navbar .navbar-nav > .dropdown > .dropdown-menu .dropdown-item {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .navbar.site-navbar .navbar-nav .nav-link {
@@ -470,6 +524,18 @@ body.is-tool-page .tool-lead {
   .navbar.site-navbar .navbar-collapse > .d-flex {
     flex: 0 0 auto;
     margin-left: 0.75rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .navbar.site-navbar .navbar-nav > .dropdown > .dropdown-menu > li {
+    flex: 0 0 33.333%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .navbar.site-navbar .navbar-nav > .dropdown > .dropdown-menu > li {
+    flex: 0 0 25%;
   }
 }
 
@@ -513,9 +579,10 @@ body.is-tool-page .tool-lead {
   position: relative;
 }
 
-/* fixed-top 仍需 absolute 伪元素相对 navbar 定位 */
+/* fixed-top 仍需 absolute 伪元素相对 navbar 定位；overflow 保持可见以免再裁下拉 */
 .navbar.site-navbar.fixed-top {
   position: fixed;
+  overflow: visible;
 }
 
 .navbar .navbar-brand {
@@ -559,6 +626,8 @@ body.is-tool-page .tool-lead {
   border-radius: var(--radius-sm);
   box-shadow: none;
   padding: 0.35rem;
+  /* 高于侧栏 1020，避免菜单画出 navbar 后被挡住点不到 */
+  z-index: 1040;
 }
 
 .navbar .dropdown-item {
