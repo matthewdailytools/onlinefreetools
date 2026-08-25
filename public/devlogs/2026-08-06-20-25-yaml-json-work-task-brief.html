@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>按规则策略完成 YAML ↔ JSON 立项文档（work-tasks/yaml-json） | Dev Logs</title>
-  <meta name="description" content="按规则策略完成 YAML ↔ JSON 立项文档（work-tasks/yaml-json）" />
-  <meta name="robots" content="noindex" />
+  <title>Completed the YAML ↔ JSON work-task brief under work-tasks/yaml-json per current rules (page code not implemented yet). | Dev Logs</title>
+  <meta name="description" content="Completed the YAML ↔ JSON work-task brief under work-tasks/yaml-json per current rules (page code not implemented yet)." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-06-20-25-yaml-json-work-task-brief.html" />
-  <meta property="og:title" content="按规则策略完成 YAML ↔ JSON 立项文档（work-tasks/yaml-json） | Dev Logs" />
-  <meta property="og:description" content="按规则策略完成 YAML ↔ JSON 立项文档（work-tasks/yaml-json）" />
+  <meta property="og:title" content="Completed the YAML ↔ JSON work-task brief under work-tasks/yaml-json per current rules (page code not implemented yet). | Dev Logs" />
+  <meta property="og:description" content="Completed the YAML ↔ JSON work-task brief under work-tasks/yaml-json per current rules (page code not implemented yet)." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-06-20-25-yaml-json-work-task-brief.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,38 +143,38 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">按规则策略完成 YAML ↔ JSON 立项文档（work-tasks/yaml-json） | Dev Logs</h1>
+          <h1 class="h4 mb-0">Completed the YAML ↔ JSON work-task brief under work-tasks/yaml-json per current rules (page code not implemented yet). | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-06 20:25
-Summary: 按规则策略完成 YAML ↔ JSON 立项文档（work-tasks/yaml-json）</p>
+Summary: Completed the YAML ↔ JSON work-task brief under work-tasks/yaml-json per current rules (page code not implemented yet).</p>
 <p>[question]
 重新根据规则策略 立项：YAML ↔ JSON</p>
 <p>[try to solve]
-已在 <code>work-tasks/yaml-json/</code> 完成立项（尚未实现页面代码）。</p>
-<p><strong>结论</strong></p>
+Created the full brief under <code>work-tasks/yaml-json/</code> (no page implementation yet).</p>
+<p><strong>Decisions</strong></p>
 <ul>
-<li><strong>slug</strong>：<code>yaml-json</code> → <code>/tools/yaml-json</code></li>
-<li><strong>主方向</strong>：<strong>B</strong>（配置互通 1→1 桥；技术对齐 A.1 / Tier 1 <code>js-yaml</code>）</li>
-<li><strong>YMYL</strong>：否；粘贴本地处理</li>
-<li><strong><code>02</code> 状态</strong>：<code>ready</code>；<strong><code>03</code> 状态</strong>：<code>briefs-ready</code></li>
-<li><strong>长尾</strong>：同页双向 Tab，不拆 <code>json-to-yaml</code> / K8s 专用薄页</li>
+<li><strong>slug</strong>: <code>yaml-json</code> → <code>/tools/yaml-json</code></li>
+<li><strong>Primary track</strong>: <strong>B</strong> (config interchange 1→1 bridge; tech aligns A.1 / Tier 1 <code>js-yaml</code>)</li>
+<li><strong>YMYL</strong>: no; paste is processed locally</li>
+<li><strong><code>02</code> status</strong>: <code>ready</code>; <strong><code>03</code> status</strong>: <code>briefs-ready</code></li>
+<li><strong>Long-tail</strong>: bidirectional tabs on one page; do not split thin <code>json-to-yaml</code> or K8s-only pages</li>
 </ul>
-<p><strong>相对 SERP 的 IG 重点（≥3）</strong></p>
+<p><strong>SERP information-gain focus (≥3)</strong></p>
 <ol>
-<li>类型推断规则对照（DEFAULT vs JSON-safe；<code>yes</code>/<code>no</code> 等）</li>
-<li>多文档政策写死：<code>loadAll</code> → JSON 数组</li>
-<li>往返损失对照（注释/锚点/键序）+ 本地隐私诚实说明（文本不上传 vs CDN）</li>
-<li>十语检索向 brief（实现时 ≥3 轮，禁脚本同构灌语）</li>
+<li>Type-inference rule table (DEFAULT vs JSON-safe; <code>yes</code>/<code>no</code>, etc.)</li>
+<li>Multi-document policy fixed: <code>loadAll</code> → JSON array</li>
+<li>Round-trip loss table (comments / anchors / key order) plus honest local-privacy note (text not uploaded vs CDN)</li>
+<li>Ten-locale search-oriented briefs (at implement time: ≥3 rounds; no scripted isomorphic dumps)</li>
 </ol>
-<p><strong>Related（现网）</strong>：<code>markdown-to-html</code>、<code>text-diff</code>（卡片目标链的 schema/csv 工具未上线前）</p>
-<p>下一步：你明确要求实现且保持 <code>02=ready</code> 后，再按 <code>tool-creation.mdc</code> + 稳妥常态本地化开工。</p>
+<p><strong>Related (live)</strong>: <code>markdown-to-html</code>, <code>text-diff</code> (schema/csv tools on the card target chain not shipped yet)</p>
+<p>Next: implement only after an explicit request while keeping <code>02=ready</code>, following <code>tool-creation.mdc</code> and the steady localization path.</p>
 <p>[actions]</p>
 <ul>
-<li>新建 <code>work-tasks/yaml-json/00-request.md</code></li>
-<li>新建 <code>work-tasks/yaml-json/01-direction-discussion.md</code></li>
-<li>新建 <code>work-tasks/yaml-json/02-tool-info.md</code>（ready）</li>
-<li>新建 <code>work-tasks/yaml-json/03-locale-briefs.md</code>（briefs-ready，十语 brief）</li>
+<li>Added <code>work-tasks/yaml-json/00-request.md</code></li>
+<li>Added <code>work-tasks/yaml-json/01-direction-discussion.md</code></li>
+<li>Added <code>work-tasks/yaml-json/02-tool-info.md</code> (ready)</li>
+<li>Added <code>work-tasks/yaml-json/03-locale-briefs.md</code> (briefs-ready, ten-locale briefs)</li>
 </ul>
 </article>
       </section>

@@ -5,16 +5,16 @@ Summary: Submitted 420 sitemap URLs via IndexNow with new apex key; Bing and api
 https://onlinefreetools.org/2f01147b65c24c4194c4f785eacafef9.txt 已更新
 
 [try to solve]
-新 key 线上可访问（HTTP 200，正文匹配）。仓库侧已是该 key（`public/{key}.txt` / config / Worker / wrangler）。
+New key is live (HTTP 200, body matches). Repo already uses that key (`public/{key}.txt` / config / Worker / wrangler).
 
-提交结果（host=`onlinefreetools.org`，keyLocation=该 txt，420 URLs）：
+Submit results (host=`onlinefreetools.org`, keyLocation=that txt, 420 URLs):
 1. `https://api.indexnow.org/indexnow` → **HTTP 200**
-2. `https://www.bing.com/indexnow` 首次 → 403 `SiteVerificationNotCompleted`（校验未完成）
-3. 约 30s 后重试 Bing → **HTTP 200 OK（420 URLs）**
+2. `https://www.bing.com/indexnow` first try → 403 `SiteVerificationNotCompleted`
+3. ~30s later retry Bing → **HTTP 200 OK (420 URLs)**
 
-可在 Bing Webmaster → IndexNow 面板核对接收记录。
+Check Bing Webmaster → IndexNow panel for receipt records.
 
 [actions]
 - `npm run indexnow:check`
 - `npm run indexnow -- --remote-sitemap --endpoint indexnow --require-live-key`
-- `npm run indexnow -- --remote-sitemap --endpoint bing --require-live-key`（重试成功）
+- `npm run indexnow -- --remote-sitemap --endpoint bing --require-live-key` (retry succeeded)

@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Added common dimension and target-KB presets to image-compress UI. | Dev Logs</title>
-  <meta name="description" content="Added common dimension and target-KB presets to image-compress UI." />
-  <meta name="robots" content="noindex" />
+  <title>Added common dimension and target-KB presets to the image-compress UI. | Dev Logs</title>
+  <meta name="description" content="Added common dimension and target-KB presets to the image-compress UI." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-07-14-58-image-compress-presets.html" />
-  <meta property="og:title" content="Added common dimension and target-KB presets to image-compress UI. | Dev Logs" />
-  <meta property="og:description" content="Added common dimension and target-KB presets to image-compress UI." />
+  <meta property="og:title" content="Added common dimension and target-KB presets to the image-compress UI. | Dev Logs" />
+  <meta property="og:description" content="Added common dimension and target-KB presets to the image-compress UI." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-07-14-58-image-compress-presets.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,21 +143,21 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Added common dimension and target-KB presets to image-compress UI. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Added common dimension and target-KB presets to the image-compress UI. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-07 14:58
-Summary: Added common dimension and target-KB presets to image-compress UI.</p>
+Summary: Added common dimension and target-KB presets to the image-compress UI.</p>
 <p>[question]
 <a href="http://localhost:8787/zh/tools/image-compress">http://localhost:8787/zh/tools/image-compress</a> 增加常用压缩到尺寸和大小）选项</p>
 <p>[try to solve]
-在图片压缩页增加「常用预设」下拉：</p>
+Added a “Common presets” dropdown on the image-compress page:</p>
 <ul>
-<li><strong>场景组合</strong>：网页高清 1920；网页轻量 1280+200KB；邮件 1280+100KB；社交 1080+150KB；表单 1600+300KB；缩略 800+50KB；小头像 512+30KB（同时设边长/目标体积/质量）</li>
-<li><strong>仅最长边</strong>：1920 / 1280 / 1200 / 1080 / 800 / 640</li>
-<li><strong>仅目标体积</strong>：500 / 200 / 100 / 50 / 30 KB</li>
+<li><strong>Scene combos</strong>: web HD 1920; web light 1280+200KB; email 1280+100KB; social 1080+150KB; forms 1600+300KB; thumb 800+50KB; small avatar 512+30KB (sets max edge / target size / quality together)</li>
+<li><strong>Max edge only</strong>: 1920 / 1280 / 1200 / 1080 / 800 / 640</li>
+<li><strong>Target size only</strong>: 500 / 200 / 100 / 50 / 30 KB</li>
 </ul>
-<p>选中后写入控件；已有源图则自动再压缩。手动改参数会清空预设选择。十语 UI 文案已补。</p>
+<p>Selection writes into the controls; if a source image is already loaded, compression re-runs automatically. Manual parameter edits clear the preset selection. Ten-locale UI strings added.</p>
 <p>[actions]</p>
 <ul>
 <li>Updated <code>src/pages/imageCompressPage.ts</code></li>

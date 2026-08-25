@@ -1,21 +1,21 @@
 Date: 2026-08-07 11:38
-Summary: Implement image-format-converter (PNG/JPEG/WebP/AVIF) with ten-locale copy
+Summary: Implemented image-format-converter (PNG/JPEG/WebP/AVIF) with ten-locale copy.
 
 [question]
 按brief实现
 
 [try to solve]
-已按 `work-tasks/image-format-converter/` brief 落地工具页（尚未要求 commit）。
+Shipped the tool page from `work-tasks/image-format-converter/` (commit not requested).
 
-**路径**：`/tools/image-format-converter`  
-**技术**：Tier 0 Canvas `toBlob`；本地不上传；探测 WebP/AVIF 编码；校验 `blob.type`；JPEG 可选底色；单文件 + 透明样例。
+**Path**: `/tools/image-format-converter`  
+**Tech**: Tier 0 Canvas `toBlob`; local-only; detect WebP/AVIF encode support; validate `blob.type`; optional JPEG background; single file + transparent sample.
 
-**工程**：`imageFormatConverterPage.ts`、catalog、`index.ts` 注册、十语 i18n、首页 `i18n.mjs`、图标、README；`lint:seo` 与 `build:site` 通过。
+**Engineering**: `imageFormatConverterPage.ts`, catalog, `index.ts` registration, ten-locale i18n, home `i18n.mjs`, icon, README; `lint:seo` and `build:site` passed.
 
-**IG**：Rules 对照表、透明→JPEG、编码回退检测、隐私 FAQ、Related（占位 markdown-to-html / yaml-json）。  
-`02` → `implemented`；`03` → `i18n-done`（≥3 轮）。
+**IG**: Rules comparison table, transparency→JPEG, encode fallback detection, privacy FAQ, Related (placeholders markdown-to-html / yaml-json).  
+`02` → `implemented`; `03` → `i18n-done` (≥3 rounds).
 
-本地可开 `npm run start:dev` 访问 `/tools/image-format-converter`。
+Local check: `npm run start:dev` → `/tools/image-format-converter`.
 
 [actions]
 - Added src/pages/imageFormatConverterPage.ts

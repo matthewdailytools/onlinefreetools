@@ -5,17 +5,17 @@ Summary: Listed unfinished items from work-todos and related SEO/keyword tracker
 查看未完成的todo项
 
 [try to solve]
-当前会话无 Cursor TodoWrite 项。仓库内未完成项如下。
+No Cursor TodoWrite items in this session. Unfinished repo items:
 
-**每日工作（work-todos）— 今天 2026-08-13**
-1. 增量 upload R2（按 hash/ETag 跳过未变 `.html.gz`；运维文档）；工作区已有相关改动，清单仍未勾选
-2. repair-toolbox 方案细化（续 08-12，见 `docs/repair-toolbox-方案文档.md`）
+**Daily work (work-todos) — 2026-08-13**
+1. Incremental R2 upload (skip unchanged `.html.gz` by hash/ETag; ops docs); related workspace changes exist, checklist still unchecked
+2. repair-toolbox plan detail (continues 08-12; see `docs/repair-toolbox-方案文档.md`)
 
-**SEO reviews/2026-08-12（P0 摘要）**
-- 重导 28 天效果；robots `/api/`；devlogs noindex 抽查；信息页尾斜杠 301；软404/4xx/规范冲突；上轮部署确认；若干 URL 索引抽查
-- CTR/meta：ru image-merge、en schema-jsonld、es volume、en npv 等
+**SEO reviews/2026-08-12 (P0 summary)**
+- Re-check 28-day impact; robots `/api/`; spot-check devlogs noindex; info-page trailing-slash 301; soft 404/4xx/canonical conflicts; confirm prior deploy; sample URL index checks
+- CTR/meta: ru image-merge, en schema-jsonld, es volume, en npv, etc.
 
-**另：** `reviews/2026-08-08/03-todo`、`keyword-to-tool-tracker` 仍有未勾选项（观察/漏斗节奏）。
+**Also:** `reviews/2026-08-08/03-todo` and `keyword-to-tool-tracker` still have unchecked items (observe/funnel cadence).
 
 [actions]
-- 只读：`work-todos/2026-08/{12,13}.md`、`docs/seo/reviews/2026-08-12/03-todo.md` 等
+- Read-only: `work-todos/2026-08/{12,13}.md`, `docs/seo/reviews/2026-08-12/03-todo.md`, etc.

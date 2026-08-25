@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Add Square Feet Calculator tool page and translations | Dev Logs</title>
-  <meta name="description" content="Add Square Feet Calculator tool page and translations" />
-  <meta name="robots" content="noindex" />
+  <title>Added a Square Feet Calculator tool page with unit switching and i18n keys across locales. | Dev Logs</title>
+  <meta name="description" content="Added a Square Feet Calculator tool page with unit switching and i18n keys across locales." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-01-15-%E5%88%9B%E5%BB%BA%E5%B9%B3%E6%96%B9%E8%8B%B1%E5%B0%BA%E5%B7%A5%E5%85%B7.html" />
-  <meta property="og:title" content="Add Square Feet Calculator tool page and translations | Dev Logs" />
-  <meta property="og:description" content="Add Square Feet Calculator tool page and translations" />
+  <meta property="og:title" content="Added a Square Feet Calculator tool page with unit switching and i18n keys across locales. | Dev Logs" />
+  <meta property="og:description" content="Added a Square Feet Calculator tool page with unit switching and i18n keys across locales." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-01-15-%E5%88%9B%E5%BB%BA%E5%B9%B3%E6%96%B9%E8%8B%B1%E5%B0%BA%E5%B7%A5%E5%85%B7.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,25 +143,24 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Add Square Feet Calculator tool page and translations | Dev Logs</h1>
+          <h1 class="h4 mb-0">Added a Square Feet Calculator tool page with unit switching and i18n keys across locales. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-01-15 00:00
-Summary: Add Square Feet Calculator tool page and translations</p>
+Summary: Added a Square Feet Calculator tool page with unit switching and i18n keys across locales.</p>
 <p>[question]
 用户请求：参考HowtoCalculateBMI创建工具： Square feet Calculator - how calculate square feet. 需要支持多国语言，首页入口，以及丰富的介绍内容，使用方法，使用场景。</p>
-<p>[try to solve]
-完成项：</p>
+<p>[try to solve]</p>
 <ul>
-<li>在 <code>src/pages</code> 中新增 <code>squareFeetPage.ts</code>，实现带单位切换（英尺、米、英寸）的平方英尺面积计算器，包含介绍、用法与场景段落。</li>
-<li>在 <code>src/index.ts</code> 中注册新的路由 <code>/tools/square-feet</code>。</li>
-<li>为所有现有语言文件添加翻译键：<code>tool_squarefeet_*</code>、<code>unit_feet</code>、<code>unit_meters</code>、<code>unit_inches</code>、<code>sqft_unit</code> 等。</li>
+<li>Added <code>src/pages/squareFeetPage.ts</code>: square-feet area calculator with unit switching (feet, meters, inches), plus intro, usage, and use-case copy.</li>
+<li>Registered <code>/tools/square-feet</code> in <code>src/index.ts</code>.</li>
+<li>Added translation keys across existing locale files: <code>tool_squarefeet_*</code>, <code>unit_feet</code>, <code>unit_meters</code>, <code>unit_inches</code>, <code>sqft_unit</code>, and related strings.</li>
 </ul>
 <p>[actions]</p>
 <ul>
-<li>添加文件： <code>src/pages/squareFeetPage.ts</code></li>
-<li>修改文件： <code>src/index.ts</code></li>
-<li>修改语言文件： <code>src/site/i18n/en.ts</code>, <code>src/site/i18n/zh.ts</code>, <code>src/site/i18n/ru.ts</code>, <code>src/site/i18n/pt.ts</code>, <code>src/site/i18n/ja.ts</code>, <code>src/site/i18n/id.ts</code>, <code>src/site/i18n/fr.ts</code>, <code>src/site/i18n/es.ts</code>, <code>src/site/i18n/de.ts</code>, <code>src/site/i18n/ar.ts</code></li>
+<li>Added: <code>src/pages/squareFeetPage.ts</code></li>
+<li>Updated: <code>src/index.ts</code></li>
+<li>Updated: <code>src/site/i18n/en.ts</code>, <code>src/site/i18n/zh.ts</code>, <code>src/site/i18n/ru.ts</code>, <code>src/site/i18n/pt.ts</code>, <code>src/site/i18n/ja.ts</code>, <code>src/site/i18n/id.ts</code>, <code>src/site/i18n/fr.ts</code>, <code>src/site/i18n/es.ts</code>, <code>src/site/i18n/de.ts</code>, <code>src/site/i18n/ar.ts</code></li>
 </ul>
 </article>
       </section>

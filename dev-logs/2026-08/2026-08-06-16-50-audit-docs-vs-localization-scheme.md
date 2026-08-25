@@ -1,11 +1,13 @@
 Date: 2026-08-06 16:50
-Summary: Audited docs vs latest localization/work-tasks scheme; aligned lagging strategy files.
+Summary: Audited docs against the latest localization/work-tasks scheme and aligned lagging strategy files.
 
 [question]
 根据最新方案检查项目其他文档和策略是否一致
 
 [try to solve]
-核查结论：Cursor 侧 tool-creation / tool-i18n-seo / localization / work-tasks / SEO_TOOL_RULES 已基本对齐；滞后项已补齐——策略 §5.5/§8.2/§9、SEO_PUBLISH_CHECKLIST、per-tool-dev-seo-plans、copilot-instructions、project-core、tool-creation 工程清单、IG 维度7。仍存：work-tasks/text-diff 缺 03-locale-briefs（存量缺口）；seo-html-defaults / tool-direction / public-mirror 与本地化无冲突故未改。
+Audit result: Cursor-side `tool-creation` / `tool-i18n-seo` / localization / work-tasks / `SEO_TOOL_RULES` were mostly aligned. Lagging items were updated — strategy §5.5 / §8.2 / §9, `SEO_PUBLISH_CHECKLIST`, per-tool-dev-seo-plans, `copilot-instructions`, `project-core`, `tool-creation` engineering checklist, and Information Gain dimension 7.
+
+Remaining gap: `work-tasks/text-diff` still lacked `03-locale-briefs` (legacy backlog). `seo-html-defaults`, tool-direction, and public-mirror had no conflict with localization, so they were left unchanged.
 
 [actions]
 - docs/2026-07-28-google-seo-strategy-implementation.md

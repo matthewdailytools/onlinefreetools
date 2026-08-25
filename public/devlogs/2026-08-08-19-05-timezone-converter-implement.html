@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Implemented timezone-converter tool with Intl multi-zone UI and ten-locale i18n shards. | Dev Logs</title>
   <meta name="description" content="Implemented timezone-converter tool with Intl multi-zone UI and ten-locale i18n shards." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-19-05-timezone-converter-implement.html" />
   <meta property="og:title" content="Implemented timezone-converter tool with Intl multi-zone UI and ten-locale i18n shards. | Dev Logs" />
   <meta property="og:description" content="Implemented timezone-converter tool with Intl multi-zone UI and ten-locale i18n shards." />
@@ -151,15 +151,15 @@ Summary: Implemented timezone-converter tool with Intl multi-zone UI and ten-loc
 <p>[question]
 Implement timezone-converter for /Users/xuli/vscodeai/onlinefreetools. Read work-tasks/timezone-converter/02-tool-info.md and 03-locale-briefs.md. Create catalog shard, icon, page, ten i18n shards; mark 02 implemented, update 03, README zh+en. Do NOT merge:tools. Do NOT edit plan. Return file list when done.</p>
 <p>[try to solve]
-已实现 <code>timezone-converter</code> 全套分片：</p>
+Shipped full <code>timezone-converter</code> shards:</p>
 <ul>
-<li><strong>Catalog</strong>：<code>src/site/tool-catalog.d/timezone-converter.json</code>（developer、featured、related unix-timestamp/ip-address）</li>
-<li><strong>页面</strong>：<code>src/pages/timezoneConverterPage.ts</code> — datetime-local + 源 IANA 下拉 + 多区 checkbox 对照表；Convert/Now/Load sample/Clear；进页自动样例 <code>2026-06-15T14:30</code> @ <code>America/Los_Angeles</code> → UTC/NY/London/Tokyo；DST gap 报错；References IANA TZDB + MDN Intl</li>
-<li><strong>图标</strong>：<code>public/icons/tools/timezone-converter.svg</code></li>
-<li><strong>i18n</strong>：十语独立重写于 <code>src/site/i18n/tools/timezone-converter/{en,zh,es,ar,pt,id,fr,ja,ru,de}.ts</code></li>
-<li><strong>文档</strong>：<code>02</code> → <code>implemented</code>；<code>03</code> → <code>i18n-done</code>；<code>README.md</code> 中英各一条</li>
+<li><strong>Catalog</strong>: <code>src/site/tool-catalog.d/timezone-converter.json</code> (developer, featured, related unix-timestamp/ip-address)</li>
+<li><strong>Page</strong>: <code>src/pages/timezoneConverterPage.ts</code> — datetime-local + source IANA select + multi-zone checkbox comparison table; Convert/Now/Load sample/Clear; on enter auto-sample <code>2026-06-15T14:30</code> @ <code>America/Los_Angeles</code> → UTC/NY/London/Tokyo; DST gap errors; References IANA TZDB + MDN Intl</li>
+<li><strong>Icon</strong>: <code>public/icons/tools/timezone-converter.svg</code></li>
+<li><strong>i18n</strong>: ten independent rewrites under <code>src/site/i18n/tools/timezone-converter/{en,zh,es,ar,pt,id,fr,ja,ru,de}.ts</code></li>
+<li><strong>Docs</strong>: <code>02</code> → <code>implemented</code>; <code>03</code> → <code>i18n-done</code>; <code>README.md</code> zh+en one entry each</li>
 </ul>
-<p><strong>未执行</strong> <code>npm run merge:tools</code>（按请求）。上线前需 merge + <code>lint:seo</code> + <code>TOOL_SLUG=timezone-converter npm run lint:tool-isolation</code>。</p>
+<p>Did <strong>not</strong> run <code>npm run merge:tools</code> (per request). Before ship: merge + <code>lint:seo</code> + <code>TOOL_SLUG=timezone-converter npm run lint:tool-isolation</code>.</p>
 <p>[actions]</p>
 <ul>
 <li>src/site/tool-catalog.d/timezone-converter.json</li>

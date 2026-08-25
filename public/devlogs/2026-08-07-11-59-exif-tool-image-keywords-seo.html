@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Assess whether missing “image” keywords on the EXIF tool hurts SEO. | Dev Logs</title>
-  <meta name="description" content="Assess whether missing “image” keywords on the EXIF tool hurts SEO." />
-  <meta name="robots" content="noindex" />
+  <title>Assessed whether missing “image” keywords on the EXIF tool is a real SEO problem. | Dev Logs</title>
+  <meta name="description" content="Assessed whether missing “image” keywords on the EXIF tool is a real SEO problem." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-07-11-59-exif-tool-image-keywords-seo.html" />
-  <meta property="og:title" content="Assess whether missing “image” keywords on the EXIF tool hurts SEO. | Dev Logs" />
-  <meta property="og:description" content="Assess whether missing “image” keywords on the EXIF tool hurts SEO." />
+  <meta property="og:title" content="Assessed whether missing “image” keywords on the EXIF tool is a real SEO problem. | Dev Logs" />
+  <meta property="og:description" content="Assessed whether missing “image” keywords on the EXIF tool is a real SEO problem." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-07-11-59-exif-tool-image-keywords-seo.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,22 +143,22 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Assess whether missing “image” keywords on the EXIF tool hurts SEO. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Assessed whether missing “image” keywords on the EXIF tool is a real SEO problem. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-07 11:59
-Summary: Assess whether missing “image” keywords on the EXIF tool hurts SEO.</p>
+Summary: Assessed whether missing “image” keywords on the EXIF tool is a real SEO problem.</p>
 <p>[question]
 EXIF 工具缺少图片关键词，是否不利于seo</p>
 <p>[try to solve]
-整体<strong>不算硬伤</strong>，不必为堆「图片/image」而改版。</p>
+Not a hard defect; do not revamp just to stack “image” synonyms.</p>
 <ul>
-<li>Google 不靠独立 <code>meta keywords</code>；相关度看 title/H1/正文与用户意图是否匹配（people-first），不是词频清单。</li>
-<li>站内 brief 主意图是 view/remove EXIF、strip metadata、remove GPS from photo；中文 title 已含「图片 EXIF」；英文 title 偏「EXIF Viewer &amp; Remover」，但 description/正文已大量使用 photo、image、JPEG、PNG。</li>
-<li>相对 SERP，英文 title 若想更贴「remove EXIF from photo」类查询，可<strong>轻量</strong>加 photo/image（如 “… from Photos”），属微调机会，不是「缺词就排不上」。</li>
-<li>勿为 SEO 在正文反复堆「图片关键词」——易像 scaled/doorway 堆砌，违反站内 SEO 策略。</li>
+<li>Google does not rely on a standalone <code>meta keywords</code> list; relevance comes from title/H1/body matching user intent (people-first), not keyword frequency.</li>
+<li>Site brief intent is view/remove EXIF, strip metadata, remove GPS from photo; zh title already includes “image EXIF”; en title leans “EXIF Viewer &amp; Remover,” while description/body already use photo, image, JPEG, PNG heavily.</li>
+<li>Versus SERP, a light en title nudge toward “remove EXIF from photo” queries (e.g. “… from Photos”) is an optional micro-tweak, not “missing a word = won’t rank.”</li>
+<li>Do not repeatedly dump “image keywords” into body for SEO — that risks scaled/doorway stuffing against site SEO policy.</li>
 </ul>
-<p>结论：缺「图片」字样本身不构成明显 SEO 劣势；若优化，优先英文 title 自然带入 photo/image，而非批量灌词。</p>
+<p>Verdict: lacking the literal Chinese word for “image” is not a clear SEO disadvantage; if optimizing, prefer naturally adding photo/image in the English title over bulk stuffing.</p>
 <p>[actions]</p>
 <ul>
 <li>Reviewed <code>tool_image_exif_*</code> en/zh i18n and <code>work-tasks/image-exif/03-locale-briefs.md</code></li>

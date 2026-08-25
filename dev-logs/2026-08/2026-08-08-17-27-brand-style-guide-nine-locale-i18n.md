@@ -53,17 +53,17 @@ Verify each file exports default and has the same number of keys as en.ts (count
 Return a short summary of files written and any keys you struggled with.
 
 [try to solve]
-已创建 9 个 locale 分片，路径均在 `src/site/i18n/tools/brand-style-guide/`：`zh.ts`、`es.ts`、`ar.ts`、`pt.ts`、`id.ts`、`fr.ts`、`ja.ts`、`ru.ts`、`de.ts`。
+Created nine locale shards under `src/site/i18n/tools/brand-style-guide/`: `zh.ts`, `es.ts`, `ar.ts`, `pt.ts`, `id.ts`, `fr.ts`, `ja.ts`, `ru.ts`, `de.ts`.
 
-**验证**：十语（含 en）均为 **130** 个 `tool_brand_style_guide_*` 键，键名与 en.ts 完全一致；各文件 `export default {lang}`；6 条 `copy_*_one` 均保留字面 `{brand}` 占位符。
+**Verification**: All ten locales (including en) have **130** `tool_brand_style_guide_*` keys matching en.ts exactly; each file `export default {lang}`; all six `copy_*_one` strings keep the literal `{brand}` placeholder.
 
-**本地化要点**：
-- 各语 title/H1、按钮短词按 `03-locale-briefs.md` 方向撰写
-- smart/智能 均明确为规则预填、非云端 AI/LLM
-- FAQ 题序在 zh/ja 等语有调整以降低同构
-- ja 用「こんなときに」作 use cases 标题；ar 用 افعل/لا تفعل；de 保留 Do’s/Don’ts
+**Localization notes**:
+- Titles/H1 and short button labels follow `03-locale-briefs.md` per language
+- “Smart” / intelligent-prefill clarified as rule-based prefill, not cloud AI/LLM
+- FAQ question order adjusted in zh/ja (and similar) to reduce isomorphism
+- ja uses natural “when you need this” phrasing for use-cases heading; ar uses do/don’t equivalents; de keeps Do’s/Don’ts
 
-**较难键**：`rules_item_*` 与 `description` 需在规则可见性与篇幅间平衡；ar 混合保留 HEX/Logo/Markdown 与 RTL 自然表述；ja 避免「ユースケース」目录腔。
+**Harder keys**: `rules_item_*` and `description` needed balance between rule visibility and length; ar mixes retained HEX/Logo/Markdown with natural RTL wording; ja avoids catalog-tone katakana “use cases.”
 
 [actions]
 - Added `src/site/i18n/tools/brand-style-guide/{zh,es,ar,pt,id,fr,ja,ru,de}.ts`

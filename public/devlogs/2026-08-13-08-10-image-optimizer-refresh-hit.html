@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>image-optimizer refresh HIT; Worker 276→37ms; max-age rewritten to 14400. | Dev Logs</title>
   <meta name="description" content="image-optimizer refresh HIT; Worker 276→37ms; max-age rewritten to 14400." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-13-08-10-image-optimizer-refresh-hit.html" />
   <meta property="og:title" content="image-optimizer refresh HIT; Worker 276→37ms; max-age rewritten to 14400. | Dev Logs" />
   <meta property="og:description" content="image-optimizer refresh HIT; Worker 276→37ms; max-age rewritten to 14400." />
@@ -166,10 +166,10 @@ content-encoding: zstd
 alt-svc: h3=&quot;:443&quot;; ma=86400
 X-Firefox-Spdy: h2</p>
 <p>[try to solve]
-同 URL 热路径确认：HIT、age=65、Worker 276→37ms、仍 zstd、origin=0。max-age 0→14400 再次印证 CF Browser Cache TTL 出站改写。与 image-format-converter 刷新模式一致；缓存链路正常。</p>
+Same URL hot path confirmed: HIT, age=65, Worker 276→37ms, still zstd, origin=0. max-age 0→14400 again shows CF Browser Cache TTL rewriting outbound Cache-Control. Matches the image-format-converter refresh pattern; the cache path is healthy.</p>
 <p>[actions]</p>
 <ul>
-<li>（只读对比 miss/HIT）</li>
+<li>Read-only miss/HIT comparison</li>
 </ul>
 </article>
       </section>

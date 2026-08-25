@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>添加“如何计算边际收益”工具页面并更新 i18n 与首页展示 | Dev Logs</title>
-  <meta name="description" content="添加“如何计算边际收益”工具页面并更新 i18n 与首页展示" />
-  <meta name="robots" content="noindex" />
+  <title>Added a Marginal Revenue calculator tool with en/zh i18n and a home-page card. | Dev Logs</title>
+  <meta name="description" content="Added a Marginal Revenue calculator tool with en/zh i18n and a home-page card." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-01-15-%E5%88%9B%E5%BB%BA%E8%BE%B9%E9%99%85%E6%94%B6%E7%9B%8A%E5%B7%A5%E5%85%B7.html" />
-  <meta property="og:title" content="添加“如何计算边际收益”工具页面并更新 i18n 与首页展示 | Dev Logs" />
-  <meta property="og:description" content="添加“如何计算边际收益”工具页面并更新 i18n 与首页展示" />
+  <meta property="og:title" content="Added a Marginal Revenue calculator tool with en/zh i18n and a home-page card. | Dev Logs" />
+  <meta property="og:description" content="Added a Marginal Revenue calculator tool with en/zh i18n and a home-page card." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-01-15-%E5%88%9B%E5%BB%BA%E8%BE%B9%E9%99%85%E6%94%B6%E7%9B%8A%E5%B7%A5%E5%85%B7.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,21 +143,21 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">添加“如何计算边际收益”工具页面并更新 i18n 与首页展示 | Dev Logs</h1>
+          <h1 class="h4 mb-0">Added a Marginal Revenue calculator tool with en/zh i18n and a home-page card. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-01-15 12:00
-Summary: 添加“如何计算边际收益”工具页面并更新 i18n 与首页展示</p>
+Summary: Added a Marginal Revenue calculator tool with en/zh i18n and a home-page card.</p>
 <p>[question]
 创建tools工具: how to calculate marginal revenue (See <attachments> above for file contents. You may not need to search or read the file again.)</p>
 <p>[try to solve]
-已添加新的边际收益（Marginal Revenue）工具页面，包含输入两组 (Q, TR) 数据并计算 MR = ΔTR / ΔQ 的前端计算器；同时为中/英两种语言添加了 i18n 条目，并将工具卡添加到首页脚本以便展示。</p>
+Added a Marginal Revenue tool page that takes two (Q, TR) points and computes MR = ΔTR / ΔQ in the browser. Added English and Chinese i18n entries and registered a tool card in the home content script so the tool appears on the home page.</p>
 <p>[actions]</p>
 <ul>
-<li>修改: src/site/i18n/en.ts</li>
-<li>修改: src/site/i18n/zh.ts</li>
-<li>修改: scripts/site/components/content-home.mjs</li>
-<li>新增: src/pages/marginalRevenuePage.ts</li>
+<li>Updated: <code>src/site/i18n/en.ts</code></li>
+<li>Updated: <code>src/site/i18n/zh.ts</code></li>
+<li>Updated: <code>scripts/site/components/content-home.mjs</code></li>
+<li>Added: <code>src/pages/marginalRevenuePage.ts</code></li>
 </ul>
 </article>
       </section>

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Align about/privacy/terms/contact horizontal padding with the home page --page-pad-x. | Dev Logs</title>
   <meta name="description" content="Align about/privacy/terms/contact horizontal padding with the home page --page-pad-x." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-21-56-info-pages-page-pad-x.html" />
   <meta property="og:title" content="Align about/privacy/terms/contact horizontal padding with the home page --page-pad-x. | Dev Logs" />
   <meta property="og:description" content="Align about/privacy/terms/contact horizontal padding with the home page --page-pad-x." />
@@ -151,11 +151,11 @@ Summary: Align about/privacy/terms/contact horizontal padding with the home page
 <p>[question]
 privacy，条款，联系，关于，和主页一样，增加左右margin，</p>
 <p>[try to solve]
-信息页改用 <code>body.is-info-page</code>，左右 padding 使用与首页相同的 <code>--page-pad-x</code>，并限制最大宽度对齐 <code>--home-max</code>；不再误用首页的 <code>padding: 0</code>。已 <code>build:site</code>。</p>
+Info pages now use <code>body.is-info-page</code> with the same horizontal padding as home (<code>--page-pad-x</code>) and max-width aligned to <code>--home-max</code>; they no longer incorrectly inherit home’s <code>padding: 0</code>. Ran <code>build:site</code>.</p>
 <p>[actions]</p>
 <ul>
-<li>scripts/site/layout.mjs（bodyClass）</li>
-<li>scripts/build-site.mjs（info 页 bodyClass=is-info-page）</li>
+<li>scripts/site/layout.mjs (bodyClass)</li>
+<li>scripts/build-site.mjs (info pages bodyClass=is-info-page)</li>
 <li>public/styles/site.css</li>
 <li>npm run build:site</li>
 </ul>

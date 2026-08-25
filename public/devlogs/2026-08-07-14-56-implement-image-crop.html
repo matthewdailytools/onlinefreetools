@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Implemented image-crop tool with local Canvas selection, presets, ten-locale i18n. | Dev Logs</title>
-  <meta name="description" content="Implemented image-crop tool with local Canvas selection, presets, ten-locale i18n." />
-  <meta name="robots" content="noindex" />
+  <title>Implemented image-crop with local Canvas selection, presets, and ten-locale i18n. | Dev Logs</title>
+  <meta name="description" content="Implemented image-crop with local Canvas selection, presets, and ten-locale i18n." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-07-14-56-implement-image-crop.html" />
-  <meta property="og:title" content="Implemented image-crop tool with local Canvas selection, presets, ten-locale i18n. | Dev Logs" />
-  <meta property="og:description" content="Implemented image-crop tool with local Canvas selection, presets, ten-locale i18n." />
+  <meta property="og:title" content="Implemented image-crop with local Canvas selection, presets, and ten-locale i18n. | Dev Logs" />
+  <meta property="og:description" content="Implemented image-crop with local Canvas selection, presets, and ten-locale i18n." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-07-14-56-implement-image-crop.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,20 +143,20 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Implemented image-crop tool with local Canvas selection, presets, ten-locale i18n. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Implemented image-crop with local Canvas selection, presets, and ten-locale i18n. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-07 14:56
-Summary: Implemented image-crop tool with local Canvas selection, presets, ten-locale i18n.</p>
+Summary: Implemented image-crop with local Canvas selection, presets, and ten-locale i18n.</p>
 <p>[question]
 开始实现</p>
 <p>[try to solve]
-已实现 <code>/tools/image-crop</code>（分类 <code>image</code>）：</p>
+Implemented <code>/tools/image-crop</code> (category <code>image</code>):</p>
 <ul>
-<li>页面：<code>src/pages/imageCropPage.ts</code> — 选区舞台、比例锁、常用像素预设、裁剪/整图改尺寸（contain/cover）、默认不放大、JPEG/WebP/PNG 导出、自动样例</li>
-<li>注册：<code>tool-catalog.json</code> + <code>src/index.ts</code>；related 与 compress/format-converter 互链</li>
-<li>十语 i18n（<code>src/site/i18n/*.ts</code>）+ 首页 <code>scripts/site/i18n.mjs</code>；图标 <code>public/icons/tools/image-crop.svg</code></li>
-<li>README 中英清单；<code>02</code>/<code>03</code> 状态 shipped；<code>npm run build:site</code> + <code>lint:seo</code> 通过</li>
+<li>Page: <code>src/pages/imageCropPage.ts</code> — selection stage, aspect lock, common pixel presets, crop / full-image resize (contain/cover), no upscale by default, JPEG/WebP/PNG export, auto sample</li>
+<li>Registration: <code>tool-catalog.json</code> + <code>src/index.ts</code>; related links with compress / format-converter</li>
+<li>Ten-locale i18n (<code>src/site/i18n/*.ts</code>) + home <code>scripts/site/i18n.mjs</code>; icon <code>public/icons/tools/image-crop.svg</code></li>
+<li>README EN/ZH lists; <code>02</code>/<code>03</code> marked shipped; <code>npm run build:site</code> + <code>lint:seo</code> passed</li>
 </ul>
 <p>[actions]</p>
 <ul>

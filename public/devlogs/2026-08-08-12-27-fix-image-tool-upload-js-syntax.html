@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Fixed image tool upload by restoring broken em-dash string literals that crashed client scripts. | Dev Logs</title>
   <meta name="description" content="Fixed image tool upload by restoring broken em-dash string literals that crashed client scripts." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-12-27-fix-image-tool-upload-js-syntax.html" />
   <meta property="og:title" content="Fixed image tool upload by restoring broken em-dash string literals that crashed client scripts. | Dev Logs" />
   <meta property="og:description" content="Fixed image tool upload by restoring broken em-dash string literals that crashed client scripts." />
@@ -151,14 +151,14 @@ Summary: Fixed image tool upload by restoring broken em-dash string literals tha
 <p>[question]
 图片工具的图片上传有问题，例如<a href="http://localhost:8788/zh/tools/image-exif">http://localhost:8788/zh/tools/image-exif</a></p>
 <p>[try to solve]
-根因：<code>819ac16</code> 编码损坏把占位符 <code>—</code> 弄成未闭合字符串（如 <code>return &#39;??;</code>），客户端 <code>&lt;script&gt;</code> 整段解析失败，文件选择/拖放监听器从未绑定，所以上传看起来无效。</p>
-<p>已修复四处：</p>
+Root cause: encoding corruption in <code>819ac16</code> turned placeholder <code>—</code> into unclosed strings (e.g. <code>return &#39;??;</code>), so the whole client <code>&lt;script&gt;</code> failed to parse and file-select/drop listeners never bound — uploads looked broken.</p>
+<p>Fixed four places:</p>
 <ul>
-<li><code>src/pages/imageExifPage.ts</code>：<code>return &#39;—&#39;;</code></li>
-<li><code>src/pages/imageCompressPage.ts</code> / <code>imageCropPage.ts</code>：<code>mime || &#39;—&#39;</code></li>
-<li><code>src/pages/imageOptimizerPage.ts</code>：<code>codec || &#39;—&#39;</code></li>
+<li><code>src/pages/imageExifPage.ts</code>: <code>return &#39;—&#39;;</code></li>
+<li><code>src/pages/imageCompressPage.ts</code> / <code>imageCropPage.ts</code>: <code>mime || &#39;—&#39;</code></li>
+<li><code>src/pages/imageOptimizerPage.ts</code>: <code>codec || &#39;—&#39;</code></li>
 </ul>
-<p>本地 <code>image-exif</code> 页面脚本现已通过 <code>node --check</code>；刷新后上传应恢复。format-converter / merge / overlay / color-from-image 脚本本身语法本就正常。</p>
+<p>Local <code>image-exif</code> page script now passes <code>node --check</code>; refresh should restore upload. format-converter / merge / overlay / color-from-image scripts were already syntactically fine.</p>
 <p>[actions]</p>
 <ul>
 <li>Fixed: <code>src/pages/imageExifPage.ts</code>, <code>imageCompressPage.ts</code>, <code>imageCropPage.ts</code>, <code>imageOptimizerPage.ts</code></li>

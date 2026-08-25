@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Fix localhost image-crop 404 by seeding local R2. | Dev Logs</title>
   <meta name="description" content="Fix localhost image-crop 404 by seeding local R2." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-21-11-23-fix-local-r2-seed-404.html" />
   <meta property="og:title" content="Fix localhost image-crop 404 by seeding local R2. | Dev Logs" />
   <meta property="og:description" content="Fix localhost image-crop 404 by seeding local R2." />
@@ -151,7 +151,7 @@ Summary: Fix localhost image-crop 404 by seeding local R2.</p>
 <p>[question]
 找不到 localhost 的网页 <a href="http://localhost:8787/zh/tools/image-crop">http://localhost:8787/zh/tools/image-crop</a></p>
 <p>[try to solve]
-原因：只用了 <code>npm run dev</code>（wrangler），未把 <code>public/_pages</code> 灌进本地 R2；工具页 HTML 权威在 R2，未 seed 则 404。首页可从 Assets 出所以能开。已执行 <code>npm run upload:r2:local</code>（1540 个对象），复查 <code>http://127.0.0.1:8787/zh/tools/image-crop</code> 返回 200 且含 How <code>&lt;ol&gt;</code>。建议日常用 <code>npm run start:dev</code>（含 build + seed）。</p>
+Cause: only <code>npm run dev</code> (wrangler) was used; <code>public/_pages</code> was never seeded into local R2. Tool-page HTML is authoritative in R2, so without seed the URL 404s. The home page can still load from Assets. Ran <code>npm run upload:r2:local</code> (1540 objects); recheck of <code>http://127.0.0.1:8787/zh/tools/image-crop</code> returned 200 with How <code>&lt;ol&gt;</code>. Prefer daily <code>npm run start:dev</code> (includes build + seed).</p>
 <p>[actions]</p>
 <ul>
 <li>npm run upload:r2:local</li>

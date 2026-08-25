@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Default deploy uses GitHub push instead of wrangler deploy; live verify after CF. | Dev Logs</title>
   <meta name="description" content="Default deploy uses GitHub push instead of wrangler deploy; live verify after CF." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-13-00-42-deploy-via-github-push.html" />
   <meta property="og:title" content="Default deploy uses GitHub push instead of wrangler deploy; live verify after CF. | Dev Logs" />
   <meta property="og:description" content="Default deploy uses GitHub push instead of wrangler deploy; live verify after CF." />
@@ -151,7 +151,7 @@ Summary: Default deploy uses GitHub push instead of wrangler deploy; live verify
 <p>[question]
 注释掉，替换成github</p>
 <p>[try to solve]
-<code>scripts/deploy-site.mjs</code> 已注释默认 <code>wrangler deploy</code>，改为打印 git push → Cloudflare 拉仓库步骤；<code>verify:r2:live</code> 默认跳过（加 <code>--live</code> 或单独命令）。紧急仍可用 <code>--wrangler-deploy</code> / <code>deploy:worker-only</code>。已同步 ops/worker-r2-ops、ops/README、design、cloudflare-workflow、SEO checklist。</p>
+<code>scripts/deploy-site.mjs</code> now comments out the default <code>wrangler deploy</code> and prints git push → Cloudflare pull-repo steps instead; <code>verify:r2:live</code> is skipped by default (use <code>--live</code> or a separate command). Emergency path remains <code>--wrangler-deploy</code> / <code>deploy:worker-only</code>. Synced ops/worker-r2-ops, ops/README, design, cloudflare-workflow, and SEO checklist.</p>
 <p>[actions]</p>
 <ul>
 <li>Updated <code>scripts/deploy-site.mjs</code></li>

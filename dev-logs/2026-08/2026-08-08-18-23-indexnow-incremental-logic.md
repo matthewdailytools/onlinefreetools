@@ -5,9 +5,9 @@ Summary: Explained npm run indexnow:incremental flow (remote sitemap − state �
 npm run indexnow:incremental的逻辑
 
 [try to solve]
-`indexnow:incremental` = `--incremental --remote-sitemap`。
+`indexnow:incremental` = `--incremental --remote-sitemap`.
 
-流程：拉生产 sitemap 全部 <loc> → 读 `.run/indexnow-state.json` → 去掉状态里已有 URL → 对剩余 URL POST IndexNow（默认 api.indexnow.org）→ 仅 200/202 的批次合并回状态。pending=0 则不提交。不看页面内容/lastmod；已推过的 URL 即使内容更新也不会再推（内容变更请用 --since-git / --tool）。可用 --baseline 先灌状态，--reset-state 清空。
+Flow: fetch all `<loc>` from the production sitemap → read `.run/indexnow-state.json` → drop URLs already in state → POST remaining URLs to IndexNow (default api.indexnow.org) → merge only 200/202 batches back into state. If pending=0, skip submit. Does not inspect page content or lastmod; a previously pushed URL will not be re-pushed when content changes (use `--since-git` / `--tool` for content updates). Use `--baseline` to seed state first; `--reset-state` to clear.
 
 [actions]
-- （说明性回答，无代码改动）
+- (Explanatory answer only; no code changes)

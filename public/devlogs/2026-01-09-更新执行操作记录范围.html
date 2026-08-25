@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>更新执行操作记录范围 | Dev Logs</title>
-  <meta name="description" content="更新执行操作记录范围" />
-  <meta name="robots" content="noindex" />
+  <title>Stopped recording creation of the log file itself under actions. | Dev Logs</title>
+  <meta name="description" content="Stopped recording creation of the log file itself under actions." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-01-09-%E6%9B%B4%E6%96%B0%E6%89%A7%E8%A1%8C%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95%E8%8C%83%E5%9B%B4.html" />
-  <meta property="og:title" content="更新执行操作记录范围 | Dev Logs" />
-  <meta property="og:description" content="更新执行操作记录范围" />
+  <meta property="og:title" content="Stopped recording creation of the log file itself under actions. | Dev Logs" />
+  <meta property="og:description" content="Stopped recording creation of the log file itself under actions." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-01-09-%E6%9B%B4%E6%96%B0%E6%89%A7%E8%A1%8C%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95%E8%8C%83%E5%9B%B4.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,19 +143,19 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">更新执行操作记录范围 | Dev Logs</h1>
+          <h1 class="h4 mb-0">Stopped recording creation of the log file itself under actions. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>日期：2026年1月9日
-摘要：更新执行操作记录范围</p>
-<p>【question】
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-01-09 00:00
+Summary: Stopped recording creation of the log file itself under actions.</p>
+<p>[question]
 执行操作中，无需记录自身文件生成记录的操作，例如“创建 <code>dev-logs/2026-01-08-问答可见性规则.md</code></p>
-<p>【try to solve】
-已在 <code>.github/copilot-instructions.md</code> 补充规则：<code>【执行操作】</code> 不记录日志文件自身的创建，只列与用户相关的文件或配置改动。同时修订了 <code>dev-logs/2026-01-08-问答可见性规则.md</code> 去除自指的创建记录。</p>
-<p>【执行操作】</p>
+<p>[try to solve]
+Updated <code>.github/copilot-instructions.md</code> so the actions section omits creating the log file itself and only lists user-relevant file/config changes. Also edited <code>dev-logs/2026-01-08-问答可见性规则.md</code> to remove the self-referential create action.</p>
+<p>[actions]</p>
 <ul>
-<li>更新 <code>.github/copilot-instructions.md</code></li>
-<li>更新 <code>dev-logs/2026-01-08-问答可见性规则.md</code></li>
+<li>Updated <code>.github/copilot-instructions.md</code></li>
+<li>Updated <code>dev-logs/2026-01-08-问答可见性规则.md</code></li>
 </ul>
 </article>
       </section>

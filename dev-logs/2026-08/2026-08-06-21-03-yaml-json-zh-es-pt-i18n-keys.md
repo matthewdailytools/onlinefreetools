@@ -77,17 +77,17 @@ After editing, verify each file still exports default and has no syntax errors (
 Return: confirmation of which keys were added per file + any FAQ order choices you made.
 
 [try to solve]
-已在 zh / es / pt 各写入全部 54 个 `tool_yaml_json_*` 键（经解析校验：缺键 0；description ≥120 且含 SEO 关键词；export default 正常）。
+Wrote all 54 `tool_yaml_json_*` keys into zh / es / pt (parse checks: 0 missing keys; description ≥120 with SEO keywords; `export default` intact).
 
-FAQ 题序（相对 en 的 类型→多文档→隐私→往返→行号）：
-- zh：隐私 → 多文档 → yes/no 类型 → 往返会丢什么 → 报错行号
-- es：多文档 → 浏览器本地 → yes/no → 注释往返 → 行列号
-- pt：往返丢失 → yes/no → 多文档 --- → 隐私 → 行列号
+FAQ topic order (vs en types → multi-doc → privacy → round-trip → line numbers):
+- zh: privacy → multi-doc → yes/no types → what round-trip loses → error line numbers
+- es: multi-doc → local in browser → yes/no → comment round-trip → row/column
+- pt: round-trip loss → yes/no → multi-doc `---` → privacy → row/column
 
-How/场景切入也做了差异化：zh How「先选方向」+ 场景从 K8s 起；es How「Pegá…pestaña」+ 场景从 API JSON→YAML 起；pt How「Na mesma página」+ 场景从 pipelines 起。
+How / scenario cut-ins also differ: zh How “pick direction first” + scenarios open on K8s; es How “Pegá…pestaña” + scenarios open on API JSON→YAML; pt How “Na mesma página” + scenarios open on pipelines.
 
 [actions]
-- src/site/i18n/zh.ts — 新增全部 tool_yaml_json_*（工具块在 markdown 后；FAQ 在 markdown FAQ 后）
-- src/site/i18n/es.ts — 同上（整块插在 markdown FAQ 与 BMI 之间，含 FAQ）
-- src/site/i18n/pt.ts — 同上
-- node 导入校验 54/54 keys、descLen/kw、banned 词扫描
+- src/site/i18n/zh.ts — added all tool_yaml_json_* (tool block after markdown; FAQ after markdown FAQ)
+- src/site/i18n/es.ts — same (block between markdown FAQ and BMI, including FAQ)
+- src/site/i18n/pt.ts — same
+- Node import checks: 54/54 keys, descLen/kw, banned-word scan

@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>修复默认语言设为英文时仍默认展示中文的问题。 | Dev Logs</title>
-  <meta name="description" content="修复默认语言设为英文时仍默认展示中文的问题。" />
-  <meta name="robots" content="noindex" />
+  <title>Fixed default-English display so `/` and prefixes follow `SITE_DEFAULT_LANG=en`. | Dev Logs</title>
+  <meta name="description" content="Fixed default-English display so `/` and prefixes follow `SITE_DEFAULT_LANG=en`." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-01-11-00-41-%E9%BB%98%E8%AE%A4%E8%8B%B1%E6%96%87%E5%B1%95%E7%A4%BA%E4%BF%AE%E5%A4%8D.html" />
-  <meta property="og:title" content="修复默认语言设为英文时仍默认展示中文的问题。 | Dev Logs" />
-  <meta property="og:description" content="修复默认语言设为英文时仍默认展示中文的问题。" />
+  <meta property="og:title" content="Fixed default-English display so `/` and prefixes follow `SITE_DEFAULT_LANG=en`. | Dev Logs" />
+  <meta property="og:description" content="Fixed default-English display so `/` and prefixes follow `SITE_DEFAULT_LANG=en`." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-01-11-00-41-%E9%BB%98%E8%AE%A4%E8%8B%B1%E6%96%87%E5%B1%95%E7%A4%BA%E4%BF%AE%E5%A4%8D.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,22 +143,22 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">修复默认语言设为英文时仍默认展示中文的问题。 | Dev Logs</h1>
+          <h1 class="h4 mb-0">Fixed default-English display so `/` and prefixes follow `SITE_DEFAULT_LANG=en`. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>日期：2026年1月11日0时41分
-摘要：修复默认语言设为英文时仍默认展示中文的问题。</p>
-<p>【question】
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-01-11 00:41
+Summary: Fixed default-English display so <code>/</code> and prefixes follow <code>SITE_DEFAULT_LANG=en</code>.</p>
+<p>[question]
 修改系统默认为英文展示，但目前网站默认为中文</p>
-<p>【try to solve】
-已修复 Worker 端默认语言判断与 URL 前缀规则：默认语言不再被写死为中文，而是以 <code>SITE_DEFAULT_LANG</code>（当前为 <code>en</code>）为准；当浏览器偏好中文时会从 <code>/</code> 重定向到 <code>/zh/</code>，无 <code>Accept-Language</code> 或偏好英文时 <code>/</code> 直接返回英文页面；同时修复了静态站点构建与客户端脚本中对“中文永远无前缀”的假设，并重新构建站点以保证导航链接与路径前缀一致。</p>
-<p>【执行操作】</p>
+<p>[try to solve]
+Fixed Worker default-language and URL-prefix rules: default is no longer hard-coded Chinese; it follows <code>SITE_DEFAULT_LANG</code> (currently <code>en</code>). When the browser prefers Chinese, <code>/</code> redirects to <code>/zh/</code>; with no Accept-Language or English preference, <code>/</code> serves English. Also fixed static build and client scripts that assumed Chinese never has a prefix, then rebuilt so nav links and path prefixes match.</p>
+<p>[actions]</p>
 <ul>
-<li>修改：<code>src/index.ts</code></li>
-<li>修改：<code>src/pages/websiteHeadersPage.ts</code></li>
-<li>修改：<code>scripts/site/config.mjs</code></li>
-<li>修改：<code>scripts/site/layout.mjs</code></li>
-<li>执行：<code>env SITE_LANGS=zh,en SITE_DEFAULT_LANG=en npm run build:site</code></li>
+<li>Updated: <code>src/index.ts</code></li>
+<li>Updated: <code>src/pages/websiteHeadersPage.ts</code></li>
+<li>Updated: <code>scripts/site/config.mjs</code></li>
+<li>Updated: <code>scripts/site/layout.mjs</code></li>
+<li>Ran: <code>env SITE_LANGS=zh,en SITE_DEFAULT_LANG=en npm run build:site</code></li>
 </ul>
 </article>
       </section>

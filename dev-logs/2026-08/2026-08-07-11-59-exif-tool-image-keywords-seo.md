@@ -1,18 +1,18 @@
 Date: 2026-08-07 11:59
-Summary: Assess whether missing “image” keywords on the EXIF tool hurts SEO.
+Summary: Assessed whether missing “image” keywords on the EXIF tool is a real SEO problem.
 
 [question]
 EXIF 工具缺少图片关键词，是否不利于seo
 
 [try to solve]
-整体**不算硬伤**，不必为堆「图片/image」而改版。
+Not a hard defect; do not revamp just to stack “image” synonyms.
 
-- Google 不靠独立 `meta keywords`；相关度看 title/H1/正文与用户意图是否匹配（people-first），不是词频清单。
-- 站内 brief 主意图是 view/remove EXIF、strip metadata、remove GPS from photo；中文 title 已含「图片 EXIF」；英文 title 偏「EXIF Viewer & Remover」，但 description/正文已大量使用 photo、image、JPEG、PNG。
-- 相对 SERP，英文 title 若想更贴「remove EXIF from photo」类查询，可**轻量**加 photo/image（如 “… from Photos”），属微调机会，不是「缺词就排不上」。
-- 勿为 SEO 在正文反复堆「图片关键词」——易像 scaled/doorway 堆砌，违反站内 SEO 策略。
+- Google does not rely on a standalone `meta keywords` list; relevance comes from title/H1/body matching user intent (people-first), not keyword frequency.
+- Site brief intent is view/remove EXIF, strip metadata, remove GPS from photo; zh title already includes “image EXIF”; en title leans “EXIF Viewer & Remover,” while description/body already use photo, image, JPEG, PNG heavily.
+- Versus SERP, a light en title nudge toward “remove EXIF from photo” queries (e.g. “… from Photos”) is an optional micro-tweak, not “missing a word = won’t rank.”
+- Do not repeatedly dump “image keywords” into body for SEO — that risks scaled/doorway stuffing against site SEO policy.
 
-结论：缺「图片」字样本身不构成明显 SEO 劣势；若优化，优先英文 title 自然带入 photo/image，而非批量灌词。
+Verdict: lacking the literal Chinese word for “image” is not a clear SEO disadvantage; if optimizing, prefer naturally adding photo/image in the English title over bulk stuffing.
 
 [actions]
 - Reviewed `tool_image_exif_*` en/zh i18n and `work-tasks/image-exif/03-locale-briefs.md`

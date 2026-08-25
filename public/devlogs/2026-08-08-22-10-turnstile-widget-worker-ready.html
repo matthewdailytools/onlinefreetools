@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Created Turnstile widget and deployed siteverify Worker; awaiting yes/show for domain-lookup frontend wiring. | Dev Logs</title>
   <meta name="description" content="Created Turnstile widget and deployed siteverify Worker; awaiting yes/show for domain-lookup frontend wiring." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-22-10-turnstile-widget-worker-ready.html" />
   <meta property="og:title" content="Created Turnstile widget and deployed siteverify Worker; awaiting yes/show for domain-lookup frontend wiring. | Dev Logs" />
   <meta property="og:description" content="Created Turnstile widget and deployed siteverify Worker; awaiting yes/show for domain-lookup frontend wiring." />
@@ -151,13 +151,13 @@ Summary: Created Turnstile widget and deployed siteverify Worker; awaiting yes/s
 <p>[question]
 ok</p>
 <p>[try to solve]
-Widget 已创建：sitekey <code>0x4AAAAAAEKPkweeKKHYjYJX</code>（domains: localhost, 127.0.0.1, onlinefreetools.org）。
-Worker 已部署：<code>https://turnstile-siteverify-onlinefreetools.dailyonetools.workers.dev</code>，secret <code>TURNSTILE_SECRET_KEY</code> 已上传。
-本机 curl 探测 siteverify 超时（可能网络拦 workers.dev），不影响部署成功记录。下一步按 skill 等用户确认前端接线（yes/show）。</p>
+Widget created: sitekey <code>0x4AAAAAAEKPkweeKKHYjYJX</code> (domains: localhost, 127.0.0.1, onlinefreetools.org).
+Worker deployed: <code>https://turnstile-siteverify-onlinefreetools.dailyonetools.workers.dev</code>; secret <code>TURNSTILE_SECRET_KEY</code> uploaded.
+Local curl to siteverify timed out (possible network block of workers.dev); does not undo the successful deploy. Next step per skill: wait for user yes/show before frontend wiring.</p>
 <p>[actions]</p>
 <ul>
 <li>widget-create.sh OK</li>
-<li>本地模板 wrangler deploy + secret put OK</li>
+<li>Local template wrangler deploy + secret put OK</li>
 </ul>
 </article>
       </section>

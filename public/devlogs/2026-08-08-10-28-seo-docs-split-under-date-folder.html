@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Split GSC SEO docs into analysis, strategy, and todo under docs/seo/YYYY-MM-DD/. | Dev Logs</title>
   <meta name="description" content="Split GSC SEO docs into analysis, strategy, and todo under docs/seo/YYYY-MM-DD/." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-10-28-seo-docs-split-under-date-folder.html" />
   <meta property="og:title" content="Split GSC SEO docs into analysis, strategy, and todo under docs/seo/YYYY-MM-DD/. | Dev Logs" />
   <meta property="og:description" content="Split GSC SEO docs into analysis, strategy, and todo under docs/seo/YYYY-MM-DD/." />
@@ -151,18 +151,18 @@ Summary: Split GSC SEO docs into analysis, strategy, and todo under docs/seo/YYY
 <p>[question]
 优化分析文档放在日期文件夹下，应该分分析复盘文档，下一步策略和todo文档</p>
 <p>[try to solve]
-已按日期文件夹重组 SEO 文档结构：</p>
+Reorganized SEO docs under date folders:</p>
 <pre><code>docs/seo/YYYY-MM-DD/
-  01-analysis-review.md   # 分析复盘
-  02-next-strategy.md     # 下一步策略
-  03-todo.md              # 可执行 Todo
-  …GSC CSV 子目录…
+  01-analysis-review.md   # analysis / retrospective
+  02-next-strategy.md     # next strategy
+  03-todo.md              # actionable todo
+  …GSC CSV subdirs…
 </code></pre>
 <ul>
-<li>将原 <code>docs/seo/2026-08-08-gsc-analysis-and-actions.md</code> 拆为三份并移入 <code>docs/seo/2026-08-08/</code></li>
-<li>更新 <code>docs/seo/README.md</code> 目录约定与示例链接</li>
-<li>更新 <code>docs/SEO_PUBLISH_CHECKLIST.md</code> 引用</li>
-<li>删除根目录下的合并版 <code>2026-08-08-gsc-analysis-and-actions.md</code></li>
+<li>Split the former <code>docs/seo/2026-08-08-gsc-analysis-and-actions.md</code> into three files and moved them into <code>docs/seo/2026-08-08/</code></li>
+<li>Updated <code>docs/seo/README.md</code> directory convention and example links</li>
+<li>Updated references in <code>docs/SEO_PUBLISH_CHECKLIST.md</code></li>
+<li>Deleted the root-level combined <code>2026-08-08-gsc-analysis-and-actions.md</code></li>
 </ul>
 <p>[actions]</p>
 <ul>

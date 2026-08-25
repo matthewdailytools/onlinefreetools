@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Briefed how-to-calculate-compound-interest to ready with coverage gate 0b green. | Dev Logs</title>
   <meta name="description" content="Briefed how-to-calculate-compound-interest to ready with coverage gate 0b green." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-23-55-brief-compound-interest.html" />
   <meta property="og:title" content="Briefed how-to-calculate-compound-interest to ready with coverage gate 0b green. | Dev Logs" />
   <meta property="og:description" content="Briefed how-to-calculate-compound-interest to ready with coverage gate 0b green." />
@@ -151,20 +151,20 @@ Summary: Briefed how-to-calculate-compound-interest to ready with coverage gate 
 <p>[question]
 立项工具：how-to-calculate-compound-interest</p>
 <p>[try to solve]
-已完成立项文档（未写页面代码）：</p>
+Briefing complete (no page code yet):</p>
 <ul>
-<li><code>work-tasks/how-to-calculate-compound-interest/00-request.md</code> — 用户原问与约束</li>
-<li><code>01-direction-discussion.md</code> — 主方向 C（C-V4 财务 YMYL）；合并单利/频率长尾不拆页</li>
-<li><code>02-tool-info.md</code> — 状态 <strong>ready</strong>；IG≥3；交互规格（复利公式 + 单利模式 + 进页样例 P=10000,r=5%,t=10,n=1）；清单前覆盖表已填</li>
-<li><code>03-locale-briefs.md</code> — 十语 brief；状态 <code>briefs-ready</code>；多轮行 <strong>0b</strong> 已写</li>
+<li><code>work-tasks/how-to-calculate-compound-interest/00-request.md</code> — original request and constraints</li>
+<li><code>01-direction-discussion.md</code> — primary direction C (C-V4 finance YMYL); merge simple-interest / frequency long-tail on one page</li>
+<li><code>02-tool-info.md</code> — status <strong>ready</strong>; IG≥3; interaction spec (compound formula + simple mode + loadSample P=10000, r=5%, t=10, n=1); pre-checklist coverage table filled</li>
+<li><code>03-locale-briefs.md</code> — ten-locale briefs; status <code>briefs-ready</code>; multi-round row <strong>0b</strong> written</li>
 </ul>
-<p>门禁：<code>npm run coverage:gate -- --slug=how-to-calculate-compound-interest --phase=0b</code> → OK。</p>
-<p>清单 §9 序号 99 进度改为进行中。下一步需用户明确要求实现后再按 <code>tool-creation</code> 写 Page/i18n（母版 → phase=2 → 十语 → phase=4）。</p>
+<p>Gate: <code>npm run coverage:gate -- --slug=how-to-calculate-compound-interest --phase=0b</code> → OK.</p>
+<p>Inventory §9 row 99 marked in progress. Next: implement Page/i18n only when the user explicitly asks (<code>tool-creation</code>: master → phase=2 → ten locales → phase=4).</p>
 <p>[actions]</p>
 <ul>
-<li>新增 <code>work-tasks/how-to-calculate-compound-interest/{00,01,02,03}.md</code></li>
-<li>更新 <code>docs/2026-08-08-tool-inventory-table.md</code> §9/#99、§12</li>
-<li>更新 <code>omnicalculator-intent-merge-howto.tsv</code> 进度</li>
+<li>Added <code>work-tasks/how-to-calculate-compound-interest/{00,01,02,03}.md</code></li>
+<li>Updated <code>docs/2026-08-08-tool-inventory-table.md</code> §9/#99, §12</li>
+<li>Updated <code>omnicalculator-intent-merge-howto.tsv</code> progress</li>
 <li><code>npm run coverage:gate -- --slug=how-to-calculate-compound-interest --phase=0b</code></li>
 </ul>
 </article>

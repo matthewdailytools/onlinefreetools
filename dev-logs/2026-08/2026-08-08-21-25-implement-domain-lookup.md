@@ -5,28 +5,28 @@ Summary: Implemented domain-lookup tool (DoH multi-type + RDAP), ten-locale i18n
 开始实现
 
 [try to solve]
-已实现 `domain-lookup`（`02` → `implemented`，`03` → `i18n-done`）。
+Implemented `domain-lookup` (`02` → `implemented`, `03` → `i18n-done`).
 
 **API**
-- 共享 DoH：`src/endpoints/dnsDoh.ts`（类型扩至 A/AAAA/CNAME/MX/NS/TXT/SOA）
-- `dnsLookup.ts` 改用共享模块
-- 新接口：`GET /api/tools/domain-lookup?name=&dns=&rdap=`（`domainLookup.ts`；IANA RDAP bootstrap + 分区失败降级）
-- `src/index.ts` 注册路由
+- Shared DoH: `src/endpoints/dnsDoh.ts` (types extended to A/AAAA/CNAME/MX/NS/TXT/SOA)
+- `dnsLookup.ts` switched to the shared module
+- New endpoint: `GET /api/tools/domain-lookup?name=&dns=&rdap=` (`domainLookup.ts`; IANA RDAP bootstrap + per-section degrade on failure)
+- Routes registered in `src/index.ts`
 
-**页面 / catalog / i18n**
-- `domainLookupPage.ts`：进页 `loadSample()` → `example.com`
-- `tool-catalog.d/domain-lookup.json`（featured；related：add-www-to-dns / website-headers / ip-address）
-- 十语 `i18n/tools/domain-lookup/*`；icon SVG
-- README 中英条目；清单表序号 9 → 已上线
+**Page / catalog / i18n**
+- `domainLookupPage.ts`: on-enter `loadSample()` → `example.com`
+- `tool-catalog.d/domain-lookup.json` (featured; related: add-www-to-dns / website-headers / ip-address)
+- Ten-locale `i18n/tools/domain-lookup/*`; icon SVG
+- README EN/ZH entries; inventory row 9 → shipped
 
-**验收**
+**Verification**
 - `coverage:gate --phase=all` OK
-- `npm run build:site` OK（58 tools）
+- `npm run build:site` OK (58 tools)
 - `npm run lint:seo` OK
-- `CROSS_TOOL_UPDATE=1 TOOL_SLUG=domain-lookup lint:tool-isolation` OK（含共享 endpoint / index；工作区另有无关脏文件）
+- `CROSS_TOOL_UPDATE=1 TOOL_SLUG=domain-lookup lint:tool-isolation` OK (shared endpoint / index; unrelated dirty files in the workspace)
 
-本地网络对 `cloudflare-dns.com` DoH 可能 `fetch failed`；Worker 边缘通常可达。RDAP（Verisign）已本地冒烟 200。
+Local network may `fetch failed` against `cloudflare-dns.com` DoH; Worker edge is usually reachable. RDAP (Verisign) smoked locally with HTTP 200.
 
 [actions]
-- 新增/改：`src/endpoints/dnsDoh.ts`、`domainLookup.ts`、`dnsLookup.ts`、`domainLookupPage.ts`、catalog/i18n/icon、`index.ts`、README、inventory、work-tasks
-- `npm run build:site`；`coverage:gate --phase=all`；`lint:seo`
+- Added/updated: `src/endpoints/dnsDoh.ts`, `domainLookup.ts`, `dnsLookup.ts`, `domainLookupPage.ts`, catalog/i18n/icon, `index.ts`, README, inventory, work-tasks
+- `npm run build:site`; `coverage:gate --phase=all`; `lint:seo`

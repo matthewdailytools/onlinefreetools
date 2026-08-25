@@ -1,16 +1,16 @@
 Date: 2026-08-12 00:02
-Summary: Integrate sitemap:ui / ops:ui into start-dev and stop-dev lifecycle scripts.
+Summary: Integrated sitemap:ui / ops:ui into start-dev and stop-dev lifecycle scripts.
 
 [question]
 将 npm run sitemap:ui / npm run ops:ui 融入到 start-dev.sh和stop-dev.sh 脚本里面
 
 [try to solve]
-`start-dev.sh` / `stop-dev.sh` 本身转发到 `.mjs`；已在启停链路默认一并管理 Ops UI（等同 `sitemap:ui` / `ops:ui`）：
+`start-dev.sh` / `stop-dev.sh` already forward to `.mjs`; the start/stop chain now manages Ops UI by default (same as `sitemap:ui` / `ops:ui`):
 
-- **start**：wrangler 就绪后后台拉起 `ops/seo/sitemap-ui.mjs`（`.run/ops-ui.pid` / `.run/ops-ui.log`）；`--no-ops-ui` 可跳过；站点已在跑时也会补齐 Ops UI。
-- **stop**：同时清理 wrangler 与 Ops UI；外站占用端口不误杀、不因此失败。
-- **status**：同时报告两侧健康检查。
-- 同步更新 `.ps1`、`ops/README.md`。
+- **start**: after wrangler is ready, background-start `ops/seo/sitemap-ui.mjs` (`.run/ops-ui.pid` / `.run/ops-ui.log`); `--no-ops-ui` skips; if the site is already running, Ops UI is still started if missing.
+- **stop**: cleans wrangler and Ops UI together; does not kill foreign processes on the port or fail because of them.
+- **status**: reports health checks for both sides.
+- Synced `.ps1` scripts and `ops/README.md`.
 
 [actions]
 - `ops/lib/dev-process.mjs`

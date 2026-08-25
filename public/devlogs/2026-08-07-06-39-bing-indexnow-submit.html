@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Implemented Bing IndexNow key hosting + sitemap submit script; production custom domain not bound to this CF account. | Dev Logs</title>
-  <meta name="description" content="Implemented Bing IndexNow key hosting + sitemap submit script; production custom domain not bound to this CF account." />
-  <meta name="robots" content="noindex" />
+  <title>Implemented Bing IndexNow key hosting and a sitemap submit script; production custom domain is not bound to this CF account. | Dev Logs</title>
+  <meta name="description" content="Implemented Bing IndexNow key hosting and a sitemap submit script; production custom domain is not bound to this CF account." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-07-06-39-bing-indexnow-submit.html" />
-  <meta property="og:title" content="Implemented Bing IndexNow key hosting + sitemap submit script; production custom domain not bound to this CF account. | Dev Logs" />
-  <meta property="og:description" content="Implemented Bing IndexNow key hosting + sitemap submit script; production custom domain not bound to this CF account." />
+  <meta property="og:title" content="Implemented Bing IndexNow key hosting and a sitemap submit script; production custom domain is not bound to this CF account. | Dev Logs" />
+  <meta property="og:description" content="Implemented Bing IndexNow key hosting and a sitemap submit script; production custom domain is not bound to this CF account." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-07-06-39-bing-indexnow-submit.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,29 +143,29 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Implemented Bing IndexNow key hosting + sitemap submit script; production custom domain not bound to this CF account. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Implemented Bing IndexNow key hosting and a sitemap submit script; production custom domain is not bound to this CF account. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-07 06:39
-Summary: Implemented Bing IndexNow key hosting + sitemap submit script; production custom domain not bound to this CF account.</p>
+Summary: Implemented Bing IndexNow key hosting and a sitemap submit script; production custom domain is not bound to this CF account.</p>
 <p>[question]
 api key：8212779ba7e9451aa4faed4cfd20ded4，使用这个api，完成 bing indexnow 功能</p>
 <p>[try to solve]
-已完成 IndexNow 工程接入，并用该 key 跑通提交流程（协议侧 HTTP 202）。</p>
-<p>实现内容：</p>
+IndexNow is wired in engineering and a submit run with this key returned protocol-side HTTP 202.</p>
+<p>What was built:</p>
 <ol>
-<li>公钥文件 <code>public/8212779ba7e9451aa4faed4cfd20ded4.txt</code>（正文 = key；IndexNow 要求公开托管）</li>
-<li>Worker 对 <code>/{key}.txt</code> 直出（<code>src/index.ts</code>，并加入 <code>wrangler.jsonc</code> 的 <code>run_worker_first</code>）</li>
-<li>提交脚本 <code>scripts/submit-indexnow.mjs</code> + <code>npm run indexnow</code>（默认读 <code>public/sitemap.xml</code>，支持 <code>--url</code> / <code>--dry-run</code> / <code>--endpoint bing</code>）</li>
-<li>配置项 <code>siteConfig.indexNowKey</code>；文档：<code>ops/README.md</code>、<code>docs/SEO_PUBLISH_CHECKLIST.md</code>、策略文档清单</li>
+<li>Public key file <code>public/8212779ba7e9451aa4faed4cfd20ded4.txt</code> (body = key; IndexNow requires public hosting)</li>
+<li>Worker serves <code>/{key}.txt</code> directly (<code>src/index.ts</code>, plus <code>run_worker_first</code> in <code>wrangler.jsonc</code>)</li>
+<li>Submit script <code>scripts/submit-indexnow.mjs</code> + <code>npm run indexnow</code> (defaults to <code>public/sitemap.xml</code>; supports <code>--url</code> / <code>--dry-run</code> / <code>--endpoint bing</code>)</li>
+<li>Config <code>siteConfig.indexNowKey</code>; docs in <code>ops/README.md</code>, <code>docs/SEO_PUBLISH_CHECKLIST.md</code>, and the strategy doc checklist</li>
 </ol>
-<p>验证：</p>
+<p>Checks:</p>
 <ul>
-<li><code>npm run indexnow -- --dry-run</code>：160 URLs OK</li>
-<li><code>npm run indexnow</code>：<code>https://api.indexnow.org/indexnow</code> 返回 <strong>HTTP 202</strong>（已接收，key 校验待完成）</li>
-<li>生产 <code>https://onlinefreetools.org/{key}.txt</code> 仍为 <strong>404</strong></li>
+<li><code>npm run indexnow -- --dry-run</code>: 160 URLs OK</li>
+<li><code>npm run indexnow</code>: <code>https://api.indexnow.org/indexnow</code> returned <strong>HTTP 202</strong> (accepted; key verification may still be pending)</li>
+<li>Production <code>https://onlinefreetools.org/{key}.txt</code> is still <strong>404</strong></li>
 </ul>
-<p>根因：当前 Wrangler 账号（<a href="mailto:Vscodeai@outlook.com">Vscodeai@outlook.com</a>）下 <strong>没有</strong> <code>onlinefreetools.org</code> zone；<code>wrangler deploy</code> 只更新 <code>onlinefreetools.*.workers.dev</code>，自定义域由其他账号/部署在服务。需把域名 Custom Domain 绑到本 Worker，或在实际服务该域的项目中同步 key 文件后再提交。</p>
+<p>Root cause: the current Wrangler account (<a href="mailto:Vscodeai@outlook.com">Vscodeai@outlook.com</a>) has <strong>no</strong> <code>onlinefreetools.org</code> zone; <code>wrangler deploy</code> only updates <code>onlinefreetools.*.workers.dev</code>. The custom domain is served by another account/deploy. Bind the Custom Domain to this Worker, or sync the key file into the project that actually serves the domain, then submit again.</p>
 <p>[actions]</p>
 <ul>
 <li>public/8212779ba7e9451aa4faed4cfd20ded4.txt</li>

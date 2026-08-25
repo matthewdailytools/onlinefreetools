@@ -31,7 +31,7 @@ Do NOT create the tools themselves. Only category wiring + i18n keys.
 Return list of files changed.
 
 [try to solve]
-已接入 catalog 分类 `design`（尚未创建具体工具）：`ToolCategory` 含 `design`；`TOOL_CATEGORY_ORDER` 为 `image → design → developer → calculator`；锚点 `#cat-design`；运行时键 `tool_category_design`；首页键 `home_cat_design` / `_desc` / `_blurb`；JSON-LD 使用 `tool_category_design`、`cat-design`、`DesignApplication`。十语 core 已加 `tool_category_design`（`home_cat_*` 仅在构建侧 `scripts/site/i18n.mjs`）；已 `npm run merge:tools` 刷新生成的 `src/site/i18n/{lang}.ts`。
+Wired catalog category `design` (no concrete tools yet): `ToolCategory` includes `design`; `TOOL_CATEGORY_ORDER` is `image → design → developer → calculator`; anchor `#cat-design`; runtime key `tool_category_design`; home keys `home_cat_design` / `_desc` / `_blurb`; JSON-LD uses `tool_category_design`, `cat-design`, `DesignApplication`. Ten-locale core files gained `tool_category_design` (`home_cat_*` live only in build-side `scripts/site/i18n.mjs`); ran `npm run merge:tools` to refresh generated `src/site/i18n/{lang}.ts`.
 
 Files changed:
 - src/site/tools.ts

@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Clarify home HTML lives under public/_pages/{lang}/index.html. | Dev Logs</title>
-  <meta name="description" content="Clarify home HTML lives under public/_pages/{lang}/index.html." />
-  <meta name="robots" content="noindex" />
+  <title>Clarify home HTML lives under public/_pages/{lang}/index.html, not public/index.html. | Dev Logs</title>
+  <meta name="description" content="Clarify home HTML lives under public/_pages/{lang}/index.html, not public/index.html." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-13-07-41-clarify-home-html-path.html" />
-  <meta property="og:title" content="Clarify home HTML lives under public/_pages/{lang}/index.html. | Dev Logs" />
-  <meta property="og:description" content="Clarify home HTML lives under public/_pages/{lang}/index.html." />
+  <meta property="og:title" content="Clarify home HTML lives under public/_pages/{lang}/index.html, not public/index.html. | Dev Logs" />
+  <meta property="og:description" content="Clarify home HTML lives under public/_pages/{lang}/index.html, not public/index.html." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-13-07-41-clarify-home-html-path.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,15 +143,15 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Clarify home HTML lives under public/_pages/{lang}/index.html. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Clarify home HTML lives under public/_pages/{lang}/index.html, not public/index.html. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-13 07:41
-Summary: Clarify home HTML lives under public/_pages/{lang}/index.html.</p>
+Summary: Clarify home HTML lives under public/_pages/{lang}/index.html, not public/index.html.</p>
 <p>[question]
 为什么npm run build:site 后，public没有出现首页的html</p>
 <p>[try to solve]
-首页不在 <code>public/index.html</code>，而在 <code>public/_pages/{lang}/index.html</code>（当前十语均有，如 en ~193KB）。公开 URL <code>/</code> 由 Worker 映射到该内部路径后再从 Assets 读。若侧栏看不到 <code>_pages</code>，多半是资源管理器隐藏了 gitignore 路径；用终端 <code>ls public/_pages/*/index.html</code> 可确认。</p>
+Homes are not at <code>public/index.html</code>; they are at <code>public/_pages/{lang}/index.html</code> (all ten languages present, e.g. en ~193KB). Public URL <code>/</code> is mapped by the Worker to that internal path, then read from Assets. If the sidebar hides <code>_pages</code>, the explorer is often filtering gitignored paths; confirm with <code>ls public/_pages/*/index.html</code>.</p>
 <p>[actions]</p>
 <ul>
 <li>Inspected <code>public/_pages/*/index.html</code> and <code>scripts/build-site.mjs</code> output path</li>

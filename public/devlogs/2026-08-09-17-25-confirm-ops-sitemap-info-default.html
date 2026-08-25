@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Confirm ops sitemap CLI/UI were updated with default info-page exclusion. | Dev Logs</title>
-  <meta name="description" content="Confirm ops sitemap CLI/UI were updated with default info-page exclusion." />
-  <meta name="robots" content="noindex" />
+  <title>Confirmed ops sitemap CLI and UI already default to excluding info pages, matching core site behavior. | Dev Logs</title>
+  <meta name="description" content="Confirmed ops sitemap CLI and UI already default to excluding info pages, matching core site behavior." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-09-17-25-confirm-ops-sitemap-info-default.html" />
-  <meta property="og:title" content="Confirm ops sitemap CLI/UI were updated with default info-page exclusion. | Dev Logs" />
-  <meta property="og:description" content="Confirm ops sitemap CLI/UI were updated with default info-page exclusion." />
+  <meta property="og:title" content="Confirmed ops sitemap CLI and UI already default to excluding info pages, matching core site behavior. | Dev Logs" />
+  <meta property="og:description" content="Confirmed ops sitemap CLI and UI already default to excluding info pages, matching core site behavior." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-09-17-25-confirm-ops-sitemap-info-default.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,18 +143,18 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Confirm ops sitemap CLI/UI were updated with default info-page exclusion. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Confirmed ops sitemap CLI and UI already default to excluding info pages, matching core site behavior. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-09 17:25
-Summary: Confirm ops sitemap CLI/UI were updated with default info-page exclusion.</p>
+Summary: Confirmed ops sitemap CLI and UI already default to excluding info pages, matching core site behavior.</p>
 <p>[question]
 ops中的sitemap生成是否同步修改了</p>
 <p>[try to solve]
-是。ops 已与核心同步：CLI（generate-sitemap.mjs）、操作页（sitemap-ui.html/mjs）、ops/README 均默认剔除关于/隐私/条款/联系；勾选或 <code>--info</code> 才纳入并视为筛选。</p>
+Yes. Ops is aligned with core: the CLI (<code>generate-sitemap.mjs</code>), ops UI (<code>sitemap-ui.html</code> / <code>sitemap-ui.mjs</code>), and <code>ops/README</code> all exclude about/privacy/terms/contact by default. Those URLs are included only when the UI checkbox or <code>--info</code> is set, and that counts as an explicit filter.</p>
 <p>[actions]</p>
 <ul>
-<li>只读核对 ops/seo/* 与 ops/README.md</li>
+<li>Read-only check of ops/seo/* and ops/README.md</li>
 </ul>
 </article>
       </section>

@@ -1,5 +1,5 @@
 Date: 2026-08-07 13:21
-Summary: Fix invalid control character in image-exif.svg XML comment
+Summary: Fixed an invalid control character in the image-exif.svg XML comment (and the same class of bug in image-compress.svg).
 
 [question]
 http://localhost:8787/icons/tools/image-exif.svgThis page contains the following errors:
@@ -7,12 +7,12 @@ error on line 6 at column 8: xmlParseComment: invalid xmlChar value 7
 Below is a rendering of the page up to the first error
 
 [try to solve]
-根因是 `public/icons/tools/image-exif.svg` 第 6 行 XML 注释里混入了非法控制字符 `0x07`（BEL），XML 解析器无法处理。
+Root cause: line 6 of `public/icons/tools/image-exif.svg` had an illegal control character `0x07` (BEL) inside an XML comment, which XML parsers reject.
 
-已将损坏注释 `<!-- ~/Cpna -->` 替换为 `<!-- EXIF 元数据条 -->`（与同目录 `image-format-converter.svg` 的中文注释风格一致）。修复后 PowerShell XML 解析通过。
+Replaced the corrupted comment with a clean EXIF metadata-bar comment (same Chinese comment style as sibling `image-format-converter.svg`). PowerShell XML parse succeeded afterward.
 
-顺带修复了 `image-compress.svg` 中同样损坏的注释（含 `0x1A` 等非法字符），避免同类报错。
+Also fixed the same class of corrupted comments in `image-compress.svg` (illegal chars including `0x1A`) to prevent the same error.
 
 [actions]
-- `public/icons/tools/image-exif.svg`：修正第 6 行注释
-- `public/icons/tools/image-compress.svg`：修正第 3、7 行注释
+- `public/icons/tools/image-exif.svg`: fixed line 6 comment
+- `public/icons/tools/image-compress.svg`: fixed lines 3 and 7 comments

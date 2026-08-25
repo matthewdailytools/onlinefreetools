@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Implemented text-diff tool page with 10-lang i18n, catalog, and local jsdiff UI. | Dev Logs</title>
-  <meta name="description" content="Implemented text-diff tool page with 10-lang i18n, catalog, and local jsdiff UI." />
-  <meta name="robots" content="noindex" />
+  <title>Implemented the text-diff tool page with 10-locale i18n, catalog entry, and local jsdiff UI. | Dev Logs</title>
+  <meta name="description" content="Implemented the text-diff tool page with 10-locale i18n, catalog entry, and local jsdiff UI." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-06-16-05-implement-text-diff-tool.html" />
-  <meta property="og:title" content="Implemented text-diff tool page with 10-lang i18n, catalog, and local jsdiff UI. | Dev Logs" />
-  <meta property="og:description" content="Implemented text-diff tool page with 10-lang i18n, catalog, and local jsdiff UI." />
+  <meta property="og:title" content="Implemented the text-diff tool page with 10-locale i18n, catalog entry, and local jsdiff UI. | Dev Logs" />
+  <meta property="og:description" content="Implemented the text-diff tool page with 10-locale i18n, catalog entry, and local jsdiff UI." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-06-16-05-implement-text-diff-tool.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,33 +143,33 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Implemented text-diff tool page with 10-lang i18n, catalog, and local jsdiff UI. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Implemented the text-diff tool page with 10-locale i18n, catalog entry, and local jsdiff UI. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-06 16:05
-Summary: Implemented text-diff tool page with 10-lang i18n, catalog, and local jsdiff UI.</p>
+Summary: Implemented the text-diff tool page with 10-locale i18n, catalog entry, and local jsdiff UI.</p>
 <p>[question]
 按该定稿开始实现页面</p>
 <p>[try to solve]
-已按 <code>work-tasks/text-diff/02-tool-info.md</code> 实现文本 Diff 对比器：</p>
+Implemented the text Diff comparer per <code>work-tasks/text-diff/02-tool-info.md</code>:</p>
 <ul>
-<li>页面：<code>src/pages/textDiffPage.ts</code>（双栏粘贴、行/词/字符、忽略空白、CRLF→LF、交换/清空、本地高亮；How / Rules / Example / Use cases / References）</li>
-<li>注册：<code>tool-catalog.json</code> + <code>src/index.ts</code>；Related 互链 markdown / headers</li>
-<li>i18n：10 语 title/description/article/example/FAQ/UI；首页 <code>scripts/site/i18n.mjs</code> 卡片</li>
-<li>校验：<code>npm run lint:seo</code> OK；<code>npm run build:site</code>（sitemap 120 URLs）</li>
-<li>工作任务状态改为 <code>implemented</code></li>
+<li>Page: <code>src/pages/textDiffPage.ts</code> (dual paste panes; line/word/char; ignore whitespace; CRLF→LF; swap/clear; local highlight; How / Rules / Example / Use cases / References)</li>
+<li>Registration: <code>tool-catalog.json</code> + <code>src/index.ts</code>; Related cross-links to markdown / headers</li>
+<li>i18n: 10-locale title/description/article/example/FAQ/UI; home card in <code>scripts/site/i18n.mjs</code></li>
+<li>Checks noted in source: <code>npm run lint:seo</code> OK; <code>npm run build:site</code> (sitemap 120 URLs)</li>
+<li>Work-task status set to <code>implemented</code></li>
 </ul>
-<p>访问路径：<code>/tools/text-diff</code>（及各语言前缀）。</p>
-<p>IG 落点：① Rules ② FAQ 边界 ③ Use cases ⑥ 本地隐私 FAQ ⑧ Example ⑨ Related。</p>
+<p>URL: <code>/tools/text-diff</code> (and language prefixes).</p>
+<p>IG placement: ① Rules ② FAQ boundaries ③ Use cases ⑥ local-privacy FAQ ⑧ Example ⑨ Related.</p>
 <p>[actions]</p>
 <ul>
-<li>src/pages/textDiffPage.ts</li>
-<li>src/index.ts</li>
-<li>src/site/tool-catalog.json</li>
-<li>src/site/i18n/*.ts</li>
-<li>scripts/site/i18n.mjs</li>
-<li>work-tasks/text-diff/02-tool-info.md</li>
-<li>public/_pages/*/index.html, public/sitemap.xml (via build:site)</li>
+<li><code>src/pages/textDiffPage.ts</code></li>
+<li><code>src/index.ts</code></li>
+<li><code>src/site/tool-catalog.json</code></li>
+<li><code>src/site/i18n/*.ts</code></li>
+<li><code>scripts/site/i18n.mjs</code></li>
+<li><code>work-tasks/text-diff/02-tool-info.md</code></li>
+<li><code>public/_pages/*/index.html</code>, <code>public/sitemap.xml</code> (via <code>build:site</code>)</li>
 </ul>
 </article>
       </section>

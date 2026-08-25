@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Clarified that how-to-calculate can be a selective naming pattern vs Omni, not a mass URL factory. | Dev Logs</title>
-  <meta name="description" content="Clarified that how-to-calculate can be a selective naming pattern vs Omni, not a mass URL factory." />
-  <meta name="robots" content="noindex" />
+  <title>Clarified that how-to-calculate can be a selective naming pattern versus Omni, not a mass URL factory. | Dev Logs</title>
+  <meta name="description" content="Clarified that how-to-calculate can be a selective naming pattern versus Omni, not a mass URL factory." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-22-52-how-to-calculate-pattern-vs-omni.html" />
-  <meta property="og:title" content="Clarified that how-to-calculate can be a selective naming pattern vs Omni, not a mass URL factory. | Dev Logs" />
-  <meta property="og:description" content="Clarified that how-to-calculate can be a selective naming pattern vs Omni, not a mass URL factory." />
+  <meta property="og:title" content="Clarified that how-to-calculate can be a selective naming pattern versus Omni, not a mass URL factory. | Dev Logs" />
+  <meta property="og:description" content="Clarified that how-to-calculate can be a selective naming pattern versus Omni, not a mass URL factory." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-08-22-52-how-to-calculate-pattern-vs-omni.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,29 +143,29 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Clarified that how-to-calculate can be a selective naming pattern vs Omni, not a mass URL factory. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Clarified that how-to-calculate can be a selective naming pattern versus Omni, not a mass URL factory. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-08 22:52
-Summary: Clarified that how-to-calculate can be a selective naming pattern vs Omni, not a mass URL factory.</p>
+Summary: Clarified that how-to-calculate can be a selective naming pattern versus Omni, not a mass URL factory.</p>
 <p>[question]
 是否可以走how to calculate xxx模式来对标</p>
 <p>[try to solve]
-可以，但应作为「意图层命名策略」，不能当成按 Omni 批量铺 URL 的模板。</p>
-<p>结论：可用 <code>how to calculate xxx</code> 对标 Omni 的「公式教育」意图；slug/title 按意图选型，一意图一 URL，禁止 how-to + calculator 双 URL，禁止批量套壳。</p>
-<p>与 Omni 差异：Omni 多为短 path（<code>/finance/roi</code>、<code>/health/bmi</code>），靠页内长文吃「how to」流量；本站已有 5/6 计算器用 <code>how-to-calculate-*</code>，GSC 也出现 <code>how to calculate marginal revenue</code>、<code>como calcular el roi</code>、<code>限界収入 求め方</code> 等教育向查询——模式已被验证。</p>
-<p>推荐规则：</p>
+Yes—as an intent-layer naming strategy, not as a template for batch-building URLs like Omni’s catalog.</p>
+<p>Conclusion: <code>how to calculate xxx</code> can match Omni’s “formula education” intent. Choose slug/title by intent; one URL per intent; never ship both how-to and calculator URLs for the same topic; never mass-clone shells.</p>
+<p>Vs Omni: Omni mostly uses short paths (<code>/finance/roi</code>, <code>/health/bmi</code>) and captures “how to” traffic with long on-page copy. This site already has 5/6 calculators using <code>how-to-calculate-*</code>, and GSC shows educational queries such as <code>how to calculate marginal revenue</code>, <code>como calcular el roi</code>, and the Japanese query for marginal-revenue how-to—the pattern is already validated.</p>
+<p>Recommended rules:</p>
 <ol>
-<li>主检索为「how to calculate / 怎么算 / 求め方 / cómo calcular」→ slug 可用 <code>how-to-calculate-{topic}</code>；title/H1 写该语自然说法，不必英文套壳。</li>
-<li>主检索为「X calculator / 计算器 / calculadora」或工具任务名 → 用短 slug（如清单里的 <code>compound-interest</code>、<code>loan-emi</code>、<code>bmr-tdee</code>）；title 仍可同时覆盖「how to calculate」。</li>
-<li>禁止同一主题拆 <code>how-to-calculate-roi</code> + <code>roi-calculator</code> 两页（doorway / Bing duplicate）。</li>
-<li>禁止把 Omni 3867 页改写成 how-to-calculate 矩阵——模式换皮仍是 scaled content。</li>
-<li>多语：slug 可统一英文 kebab；可见 title 用当地说法（ja「求め方」、es「cómo calcular / calculadora」、zh「如何计算 / 计算器」）。</li>
+<li>If the primary query is educational “how to calculate” (including local equivalents) → slug may be <code>how-to-calculate-{topic}</code>; title/H1 use natural local phrasing (not an English shell).</li>
+<li>If the primary query is “X calculator” or a task name → use a short slug (inventory examples: <code>compound-interest</code>, <code>loan-emi</code>, <code>bmr-tdee</code>); title can still cover “how to calculate”.</li>
+<li>Never split one topic into <code>how-to-calculate-roi</code> + <code>roi-calculator</code> (doorway / Bing duplicate).</li>
+<li>Never rewrite Omni’s ~3867 pages into a how-to-calculate matrix—skin-swaps are still scaled content.</li>
+<li>Multilingual: slug may stay English kebab-case; visible titles use local phrasing.</li>
 </ol>
-<p>落地建议：已上线 5 个 how-to 页保持；P1 财务/健康工具按清单短 slug，靠 title+正文吃双重意图；仅当 coverage 证明「how to」显著强于「calculator」时，新工具才选 how-to-calculate 前缀。</p>
+<p>Ship guidance: keep the five live how-to pages; for P1 finance/health tools use short inventory slugs and cover dual intent via title + body; only choose the how-to-calculate prefix when coverage shows “how to” clearly stronger than “calculator”.</p>
 <p>[actions]</p>
 <ul>
-<li>无代码改动；策略口径澄清（相对 Omni SEO 计划）</li>
+<li>No code changes; clarified strategy vs the Omni SEO plan</li>
 </ul>
 </article>
       </section>

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Tool page refresh confirms edge HIT; Worker 8ms; max-age rewritten to 14400. | Dev Logs</title>
   <meta name="description" content="Tool page refresh confirms edge HIT; Worker 8ms; max-age rewritten to 14400." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-13-07-55-tool-page-refresh-hit.html" />
   <meta property="og:title" content="Tool page refresh confirms edge HIT; Worker 8ms; max-age rewritten to 14400. | Dev Logs" />
   <meta property="og:description" content="Tool page refresh confirms edge HIT; Worker 8ms; max-age rewritten to 14400." />
@@ -166,10 +166,10 @@ content-encoding: zstd
 alt-svc: h3=&quot;:443&quot;; ma=86400
 X-Firefox-Spdy: h2</p>
 <p>[try to solve]
-同 URL <code>/zh/tools/image-format-converter</code> 刷新后确认热路径：HIT、age=108（约 1.8 分钟前填入）、Worker 333ms→8ms、Edge≈9ms、origin=0。缓存填充正常。HIT 时 <code>max-age</code> 从 Worker 的 0 变为 14400，与首页 HIT 一致，指向 Cloudflare Browser Cache TTL（4h）在边缘出站改写；miss 时仍见设计头 max-age=0。结论：R2+Cache 链路健康；若要浏览器也强制每次再校验，Dashboard 将 Browser Cache TTL 设为 Respect Existing Headers。</p>
+Same URL <code>/zh/tools/image-format-converter</code> after refresh confirms the hot path: HIT, age=108 (~1.8 minutes since fill), Worker 333ms→8ms, Edge≈9ms, origin=0. Cache fill is healthy. On HIT, <code>max-age</code> moves from Worker’s 0 to 14400—same as home HIT—pointing to Cloudflare Browser Cache TTL (4h) rewriting at the edge; on miss the designed max-age=0 still appears. Conclusion: R2+Cache path is healthy; to force browsers to revalidate every time, set Dashboard Browser Cache TTL to Respect Existing Headers.</p>
 <p>[actions]</p>
 <ul>
-<li>（只读分析刷新后 headers）</li>
+<li>Read-only analysis of post-refresh headers</li>
 </ul>
 </article>
       </section>

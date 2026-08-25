@@ -1,11 +1,11 @@
 Date: 2026-08-06 15:47
-Summary: Disallowed /devlogs/ in robots.txt so search engines should not crawl development logs.
+Summary: Disallowed `/devlogs/` in `robots.txt` so crawlers should not fetch development logs.
 
 [question]
 开发日志在robot规则中写成不允许爬取
 
 [try to solve]
-已在 `public/robots.txt` 增加 `Disallow: /devlogs/`，开发日志目录对爬虫禁止抓取；站内仍可访问。同步更新了 `.cursor/rules/seo-html-defaults.mdc` 索引说明（与此前 sitemap 排除 devlogs 一致）。
+Added `Disallow: /devlogs/` to `public/robots.txt` so crawlers should not fetch the development-log directory; in-site access remains. Also updated indexing notes in `.cursor/rules/seo-html-defaults.mdc` (consistent with earlier sitemap exclusion of devlogs).
 
 ```
 User-agent: *
@@ -15,5 +15,5 @@ Sitemap: https://onlinefreetools.org/sitemap.xml
 ```
 
 [actions]
-- public/robots.txt
-- .cursor/rules/seo-html-defaults.mdc
+- `public/robots.txt`
+- `.cursor/rules/seo-html-defaults.mdc`

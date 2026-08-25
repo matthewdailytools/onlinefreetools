@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Diagnosed releasematch IndexNow failure as upstream api.indexnow.org HTTP 429 rate limit, not key/sitemap parse. | Dev Logs</title>
   <meta name="description" content="Diagnosed releasematch IndexNow failure as upstream api.indexnow.org HTTP 429 rate limit, not key/sitemap parse." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-09-09-03-indexnow-429-releasematch.html" />
   <meta property="og:title" content="Diagnosed releasematch IndexNow failure as upstream api.indexnow.org HTTP 429 rate limit, not key/sitemap parse. | Dev Logs" />
   <meta property="og:description" content="Diagnosed releasematch IndexNow failure as upstream api.indexnow.org HTTP 429 rate limit, not key/sitemap parse." />
@@ -151,11 +151,11 @@ Summary: Diagnosed releasematch IndexNow failure as upstream api.indexnow.org HT
 <p>[question]
 <a href="https://releasematch.com/Cnu4Ma9IVbcgCMu81QRFzqOOTUUFTR5G.txt">https://releasematch.com/Cnu4Ma9IVbcgCMu81QRFzqOOTUUFTR5G.txt</a> 通过sitemap.xml上传，反馈提交失败或返回非成功状态。 HTTP 429，{ &quot;ok&quot;: false, &quot;status&quot;: 429, &quot;endpoint&quot;: &quot;<a href="https://api.indexnow.org/indexnow">https://api.indexnow.org/indexnow</a>&quot;, ... &quot;bodyPreview&quot;: &quot;{&quot;errorCode&quot;:&quot;TooManyRequests&quot;,...}&quot; }</p>
 <p>[try to solve]
-结论：密钥与 37 条 urlList 组装正常；失败来自 IndexNow 聚合端点限流（TooManyRequests），不是本站校验或 sitemap 展开错误。建议停顿 15–60 分钟后只提交一次，或改 Bing 直连；并注意 releasematch.com/sitemap.xml 曾出现 HTTP 500，必要时粘贴本地 XML。</p>
+Conclusion: the key and the 37-URL <code>urlList</code> assembled correctly; the failure is rate limiting on the IndexNow aggregate endpoint (<code>TooManyRequests</code>), not local validation or sitemap expansion. Wait 15–60 minutes and submit once, or use Bing direct; also note <code>releasematch.com/sitemap.xml</code> had returned HTTP 500, so paste local XML if needed.</p>
 <p>[actions]</p>
 <ul>
-<li>校验 key txt HTTP 200 / 正文匹配</li>
-<li>尝试拉取 sitemap.xml（观察到 500）</li>
+<li>Verified key txt HTTP 200 / body match</li>
+<li>Attempted to fetch sitemap.xml (observed 500)</li>
 </ul>
 </article>
       </section>

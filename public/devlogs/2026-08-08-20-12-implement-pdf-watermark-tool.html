@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Implemented full pdf-watermark tool with pdf-lib, 10 locales, and all gates green. | Dev Logs</title>
   <meta name="description" content="Implemented full pdf-watermark tool with pdf-lib, 10 locales, and all gates green." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-20-12-implement-pdf-watermark-tool.html" />
   <meta property="og:title" content="Implemented full pdf-watermark tool with pdf-lib, 10 locales, and all gates green. | Dev Logs" />
   <meta property="og:description" content="Implemented full pdf-watermark tool with pdf-lib, 10 locales, and all gates green." />
@@ -164,30 +164,30 @@ Implement full <code>pdf-watermark</code> in /Users/xuli/vscodeai/onlinefreetool
 <p>npm run merge:tools &amp;&amp; npm run coverage:gate -- --slug=pdf-watermark --phase=all &amp;&amp; npm run build:site &amp;&amp; npm run lint:seo &amp;&amp; CROSS_TOOL_UPDATE=1 TOOL_SLUG=pdf-watermark npm run lint:tool-isolation</p>
 <p>No plan edit, no commit. 中文 brief. Chinese comments on code.</p>
 <p>[try to solve]
-已完成 <code>pdf-watermark</code> 全栈实现并通过全部门禁。</p>
-<p><strong>交付物</strong></p>
+Finished full <code>pdf-watermark</code> stack; all gates green.</p>
+<p><strong>Deliverables</strong></p>
 <ul>
-<li><code>src/site/tool-catalog.d/pdf-watermark.json</code> — category pdf，related 因 <code>pdf-page-numbers</code> 未上线采用 <code>add-watermark</code> + <code>rotate-pdf</code></li>
-<li><code>src/pages/pdfWatermarkPage.ts</code> — pdf-lib drawText/drawImage；文字/透明度/旋转/位置/可选 PNG·JPG；25MB 警告；加密错误；进页 <code>loadSample()</code> 两页 + DRAFT → <code>watermarked.pdf</code></li>
+<li><code>src/site/tool-catalog.d/pdf-watermark.json</code> — category pdf; related uses <code>add-watermark</code> + <code>rotate-pdf</code> because <code>pdf-page-numbers</code> was not live yet</li>
+<li><code>src/pages/pdfWatermarkPage.ts</code> — pdf-lib drawText/drawImage; text/opacity/rotation/position/optional PNG·JPG; 25MB warn; encrypted errors; on-enter <code>loadSample()</code> two pages + DRAFT → <code>watermarked.pdf</code></li>
 <li><code>public/icons/tools/pdf-watermark.svg</code></li>
-<li><code>src/site/i18n/tools/pdf-watermark/{en,zh,es,ar,pt,id,fr,ja,ru,de}.ts</code> — 十语完整键、独立重写</li>
-<li><code>work-tasks/pdf-watermark/02-tool-info.md</code>、<code>03-locale-briefs.md</code> — 1b/2b 多轮记录；03 → <code>i18n-done</code></li>
-<li><code>docs/2026-08-08-tool-inventory-table.md</code> #56 → 已上线</li>
-<li><code>README.md</code> 中英工具清单各一条</li>
+<li><code>src/site/i18n/tools/pdf-watermark/{en,zh,es,ar,pt,id,fr,ja,ru,de}.ts</code> — full keys, independent rewrites</li>
+<li><code>work-tasks/pdf-watermark/02-tool-info.md</code>, <code>03-locale-briefs.md</code> — 1b/2b multi-round; 03 → <code>i18n-done</code></li>
+<li><code>docs/2026-08-08-tool-inventory-table.md</code> #56 → live</li>
+<li><code>README.md</code> zh+en tool-list entries</li>
 </ul>
-<p><strong>门禁（全部通过）</strong></p>
+<p><strong>Gates (all passed)</strong></p>
 <ul>
 <li><code>coverage:gate --phase=all</code></li>
-<li><code>build:site</code>（catalog 51 工具）</li>
+<li><code>build:site</code> (catalog 51 tools)</li>
 <li><code>lint:seo</code></li>
-<li><code>lint:tool-isolation</code>（CROSS_TOOL_UPDATE=1）</li>
+<li><code>lint:tool-isolation</code> (<code>CROSS_TOOL_UPDATE=1</code>)</li>
 </ul>
 <p>[actions]</p>
 <ul>
 <li>src/site/tool-catalog.d/pdf-watermark.json</li>
 <li>src/pages/pdfWatermarkPage.ts</li>
 <li>public/icons/tools/pdf-watermark.svg</li>
-<li>src/site/i18n/tools/pdf-watermark/*.ts（10 语）</li>
+<li>src/site/i18n/tools/pdf-watermark/*.ts (10 locales)</li>
 <li>work-tasks/pdf-watermark/02-tool-info.md, 03-locale-briefs.md</li>
 <li>docs/2026-08-08-tool-inventory-table.md, README.md</li>
 </ul>

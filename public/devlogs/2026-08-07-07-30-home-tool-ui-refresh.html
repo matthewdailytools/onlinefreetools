@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Unified site.css chrome; homepage hero/Why/categories; tool-panel shell on representative pages. | Dev Logs</title>
-  <meta name="description" content="Unified site.css chrome; homepage hero/Why/categories; tool-panel shell on representative pages." />
-  <meta name="robots" content="noindex" />
+  <title>Unified site.css chrome; refreshed homepage hero/Why/categories and tool-panel shell on representative pages. | Dev Logs</title>
+  <meta name="description" content="Unified site.css chrome; refreshed homepage hero/Why/categories and tool-panel shell on representative pages." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-07-07-30-home-tool-ui-refresh.html" />
-  <meta property="og:title" content="Unified site.css chrome; homepage hero/Why/categories; tool-panel shell on representative pages. | Dev Logs" />
-  <meta property="og:description" content="Unified site.css chrome; homepage hero/Why/categories; tool-panel shell on representative pages." />
+  <meta property="og:title" content="Unified site.css chrome; refreshed homepage hero/Why/categories and tool-panel shell on representative pages. | Dev Logs" />
+  <meta property="og:description" content="Unified site.css chrome; refreshed homepage hero/Why/categories and tool-panel shell on representative pages." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-07-07-30-home-tool-ui-refresh.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,16 +143,16 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Unified site.css chrome; homepage hero/Why/categories; tool-panel shell on representative pages. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Unified site.css chrome; refreshed homepage hero/Why/categories and tool-panel shell on representative pages. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-07 07:30
-Summary: Unified site.css chrome; homepage hero/Why/categories; tool-panel shell on representative pages.</p>
+Summary: Unified site.css chrome; refreshed homepage hero/Why/categories and tool-panel shell on representative pages.</p>
 <p>[question]
 根据 <a href="https://www.freetools.org/">https://www.freetools.org/</a> 和 <a href="https://www.freetools.org/networking-tools/accessibility-checker">https://www.freetools.org/networking-tools/accessibility-checker</a> 优化本站的首页，工具页设计
 （Implement the plan: 首页与工具页设计优化）</p>
 <p>[try to solve]
-已落地共享 <code>public/styles/site.css</code>（token + navbar/sidebar/card/tool 壳），首页与工具页 layout 均引用；首页增加品牌首屏、CTA、Why×3、分类分区卡片；header/sidebar/footer 类名同步；html-entity / indexnow 对齐 tool-title + tool-panel；其余工具页靠全局 CSS 抬高首屏 H1。<code>build:site</code> + <code>lint:seo</code> OK。未抄评分墙/夸张数据条。</p>
+Shipped shared <code>public/styles/site.css</code> (tokens + navbar/sidebar/card/tool shell); home and tool layouts both reference it. Home gains a branded hero, CTAs, Why×3, and category cards; header/sidebar/footer class names aligned; html-entity / indexnow use tool-title + tool-panel; other tool pages get a stronger first-viewport H1 via global CSS. <code>build:site</code> + <code>lint:seo</code> OK. Did not copy rating walls or exaggerated stat strips.</p>
 <p>[actions]</p>
 <ul>
 <li>added: <code>public/styles/site.css</code></li>

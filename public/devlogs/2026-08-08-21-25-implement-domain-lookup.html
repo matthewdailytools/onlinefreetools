@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Implemented domain-lookup tool (DoH multi-type + RDAP), ten-locale i18n, build:site and coverage gates green. | Dev Logs</title>
   <meta name="description" content="Implemented domain-lookup tool (DoH multi-type + RDAP), ten-locale i18n, build:site and coverage gates green." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-21-25-implement-domain-lookup.html" />
   <meta property="og:title" content="Implemented domain-lookup tool (DoH multi-type + RDAP), ten-locale i18n, build:site and coverage gates green. | Dev Logs" />
   <meta property="og:description" content="Implemented domain-lookup tool (DoH multi-type + RDAP), ten-locale i18n, build:site and coverage gates green." />
@@ -151,33 +151,33 @@ Summary: Implemented domain-lookup tool (DoH multi-type + RDAP), ten-locale i18n
 <p>[question]
 开始实现</p>
 <p>[try to solve]
-已实现 <code>domain-lookup</code>（<code>02</code> → <code>implemented</code>，<code>03</code> → <code>i18n-done</code>）。</p>
+Implemented <code>domain-lookup</code> (<code>02</code> → <code>implemented</code>, <code>03</code> → <code>i18n-done</code>).</p>
 <p><strong>API</strong></p>
 <ul>
-<li>共享 DoH：<code>src/endpoints/dnsDoh.ts</code>（类型扩至 A/AAAA/CNAME/MX/NS/TXT/SOA）</li>
-<li><code>dnsLookup.ts</code> 改用共享模块</li>
-<li>新接口：<code>GET /api/tools/domain-lookup?name=&amp;dns=&amp;rdap=</code>（<code>domainLookup.ts</code>；IANA RDAP bootstrap + 分区失败降级）</li>
-<li><code>src/index.ts</code> 注册路由</li>
+<li>Shared DoH: <code>src/endpoints/dnsDoh.ts</code> (types extended to A/AAAA/CNAME/MX/NS/TXT/SOA)</li>
+<li><code>dnsLookup.ts</code> switched to the shared module</li>
+<li>New endpoint: <code>GET /api/tools/domain-lookup?name=&amp;dns=&amp;rdap=</code> (<code>domainLookup.ts</code>; IANA RDAP bootstrap + per-section degrade on failure)</li>
+<li>Routes registered in <code>src/index.ts</code></li>
 </ul>
-<p><strong>页面 / catalog / i18n</strong></p>
+<p><strong>Page / catalog / i18n</strong></p>
 <ul>
-<li><code>domainLookupPage.ts</code>：进页 <code>loadSample()</code> → <code>example.com</code></li>
-<li><code>tool-catalog.d/domain-lookup.json</code>（featured；related：add-www-to-dns / website-headers / ip-address）</li>
-<li>十语 <code>i18n/tools/domain-lookup/*</code>；icon SVG</li>
-<li>README 中英条目；清单表序号 9 → 已上线</li>
+<li><code>domainLookupPage.ts</code>: on-enter <code>loadSample()</code> → <code>example.com</code></li>
+<li><code>tool-catalog.d/domain-lookup.json</code> (featured; related: add-www-to-dns / website-headers / ip-address)</li>
+<li>Ten-locale <code>i18n/tools/domain-lookup/*</code>; icon SVG</li>
+<li>README EN/ZH entries; inventory row 9 → shipped</li>
 </ul>
-<p><strong>验收</strong></p>
+<p><strong>Verification</strong></p>
 <ul>
 <li><code>coverage:gate --phase=all</code> OK</li>
-<li><code>npm run build:site</code> OK（58 tools）</li>
+<li><code>npm run build:site</code> OK (58 tools)</li>
 <li><code>npm run lint:seo</code> OK</li>
-<li><code>CROSS_TOOL_UPDATE=1 TOOL_SLUG=domain-lookup lint:tool-isolation</code> OK（含共享 endpoint / index；工作区另有无关脏文件）</li>
+<li><code>CROSS_TOOL_UPDATE=1 TOOL_SLUG=domain-lookup lint:tool-isolation</code> OK (shared endpoint / index; unrelated dirty files in the workspace)</li>
 </ul>
-<p>本地网络对 <code>cloudflare-dns.com</code> DoH 可能 <code>fetch failed</code>；Worker 边缘通常可达。RDAP（Verisign）已本地冒烟 200。</p>
+<p>Local network may <code>fetch failed</code> against <code>cloudflare-dns.com</code> DoH; Worker edge is usually reachable. RDAP (Verisign) smoked locally with HTTP 200.</p>
 <p>[actions]</p>
 <ul>
-<li>新增/改：<code>src/endpoints/dnsDoh.ts</code>、<code>domainLookup.ts</code>、<code>dnsLookup.ts</code>、<code>domainLookupPage.ts</code>、catalog/i18n/icon、<code>index.ts</code>、README、inventory、work-tasks</li>
-<li><code>npm run build:site</code>；<code>coverage:gate --phase=all</code>；<code>lint:seo</code></li>
+<li>Added/updated: <code>src/endpoints/dnsDoh.ts</code>, <code>domainLookup.ts</code>, <code>dnsLookup.ts</code>, <code>domainLookupPage.ts</code>, catalog/i18n/icon, <code>index.ts</code>, README, inventory, work-tasks</li>
+<li><code>npm run build:site</code>; <code>coverage:gate --phase=all</code>; <code>lint:seo</code></li>
 </ul>
 </article>
       </section>

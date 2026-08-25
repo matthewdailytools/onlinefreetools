@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Implement image-optimizer page with Tier 2 jSquash codecs | Dev Logs</title>
-  <meta name="description" content="Implement image-optimizer page with Tier 2 jSquash codecs" />
-  <meta name="robots" content="noindex" />
+  <title>Implemented the image-optimizer page with Tier 2 jSquash codecs. | Dev Logs</title>
+  <meta name="description" content="Implemented the image-optimizer page with Tier 2 jSquash codecs." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-07-16-37-implement-image-optimizer.html" />
-  <meta property="og:title" content="Implement image-optimizer page with Tier 2 jSquash codecs | Dev Logs" />
-  <meta property="og:description" content="Implement image-optimizer page with Tier 2 jSquash codecs" />
+  <meta property="og:title" content="Implemented the image-optimizer page with Tier 2 jSquash codecs. | Dev Logs" />
+  <meta property="og:description" content="Implemented the image-optimizer page with Tier 2 jSquash codecs." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-07-16-37-implement-image-optimizer.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,22 +143,22 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Implement image-optimizer page with Tier 2 jSquash codecs | Dev Logs</h1>
+          <h1 class="h4 mb-0">Implemented the image-optimizer page with Tier 2 jSquash codecs. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-07 16:37
-Summary: Implement image-optimizer page with Tier 2 jSquash codecs</p>
+Summary: Implemented the image-optimizer page with Tier 2 jSquash codecs.</p>
 <p>[question]
 实现</p>
 <p>[try to solve]
-已实现 <code>/tools/image-optimizer</code>：点击加载引擎后懒加载 MozJPEG/WebP/AVIF/OxiPNG（<code>@jsquash/*</code> vendor + <code>engine.mjs</code>），滑动对照、AVIF 可取消。十语 i18n、catalog、首页短词、README、related 互链已接。<code>npm run lint:seo</code> 通过；wrangler dry-run 通过。WASM vendor 由 <code>npm run vendor:image-optimizer</code> / <code>build:site</code> 复制且 gitignore。</p>
+Implemented <code>/tools/image-optimizer</code>: after click-to-load engine, lazily loads MozJPEG/WebP/AVIF/OxiPNG (<code>@jsquash/*</code> vendor + <code>engine.mjs</code>), slider compare, AVIF cancellable. Wired ten-locale i18n, catalog, home short labels, README, and related links. <code>npm run lint:seo</code> passed; wrangler dry-run passed. WASM vendor copied via <code>npm run vendor:image-optimizer</code> / <code>build:site</code> and gitignored.</p>
 <p>[actions]</p>
 <ul>
-<li>新增 <code>src/pages/imageOptimizerPage.ts</code>、<code>public/tools/image-optimizer/engine.mjs</code>、<code>scripts/copy-image-optimizer-vendor.mjs</code></li>
-<li>新增十语 <code>tool_image_optimizer_*</code>（<code>src/site/i18n/*.ts</code>）与 <code>scripts/site/i18n.mjs</code> 首页短词</li>
-<li>更新 <code>tool-catalog.json</code>、<code>src/index.ts</code>、<code>README.md</code>、<code>package.json</code>、<code>.gitignore</code>、<code>scripts/build-site.mjs</code></li>
-<li>安装 <code>@jsquash/jpeg|webp|avif|oxipng</code>；FAQ 收集扩至 q6</li>
-<li><code>work-tasks/image-optimizer/02</code> → implemented；<code>03</code> briefs-ready</li>
+<li>Added <code>src/pages/imageOptimizerPage.ts</code>, <code>public/tools/image-optimizer/engine.mjs</code>, <code>scripts/copy-image-optimizer-vendor.mjs</code></li>
+<li>Added ten-locale <code>tool_image_optimizer_*</code> (<code>src/site/i18n/*.ts</code>) and <code>scripts/site/i18n.mjs</code> home short labels</li>
+<li>Updated <code>tool-catalog.json</code>, <code>src/index.ts</code>, <code>README.md</code>, <code>package.json</code>, <code>.gitignore</code>, <code>scripts/build-site.mjs</code></li>
+<li>Installed <code>@jsquash/jpeg|webp|avif|oxipng</code>; FAQ collection expanded to q6</li>
+<li><code>work-tasks/image-optimizer/02</code> → implemented; <code>03</code> briefs-ready</li>
 </ul>
 </article>
       </section>

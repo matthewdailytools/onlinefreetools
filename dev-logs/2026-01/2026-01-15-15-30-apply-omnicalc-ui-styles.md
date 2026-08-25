@@ -39,5 +39,4 @@ Additional fix (2026-01-15 16:10):
 
 Notes:
 - To preview locally, run the project's dev server (e.g. `npm run dev` or `wrangler dev`) and open an index or a tool page in the browser.
-- I can continue refining tool card grid layout or update additional pages on request.
-- After this fix, you can run `npm run build` or `wrangler dev` to verify the site builds cleanly.
+- After this fix, run `npm run build` or `wrangler dev` to verify the site builds cleanly.

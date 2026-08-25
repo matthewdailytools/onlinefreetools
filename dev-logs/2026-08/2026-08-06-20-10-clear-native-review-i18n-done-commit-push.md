@@ -5,7 +5,7 @@ Summary: Cleared pending-native-review flags to i18n-done and committed/pushed t
 清母语抽查 → 标 i18n-done，提交/推送这批改动
 
 [try to solve]
-对存量重建的 8 个工具（及 text-diff 残留勾选）在 `work-tasks/*/03-locale-briefs.md` 中：清 ar/ja/ru「待母语抽查」、勾选轮次 2/3 与禁词表、状态改为 `i18n-done`；同步 `02` 中 Locale briefs 状态引用。随后将 IG 重建相关改动一并 commit 并 push 到 origin/main。`lint:seo` 与 `build:site` / `build:logs` 已跑通。
+For the eight rebuilt stock tools (plus leftover text-diff checklist items), in each `work-tasks/*/03-locale-briefs.md`: cleared ar/ja/ru “pending native review”, checked rounds 2/3 and the banned-word list, and set status to `i18n-done`. Synced Locale briefs status references in each `02`. Then committed the IG rebuild changes and pushed to origin/main. `lint:seo` and `build:site` / `build:logs` already passed.
 
 [actions]
 - Updated work-tasks/*/03-locale-briefs.md and 02 status refs to i18n-done

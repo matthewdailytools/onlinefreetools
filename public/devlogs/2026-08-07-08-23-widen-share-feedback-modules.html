@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Widened the stacked share/feedback module block to match the tool content max width. | Dev Logs</title>
   <meta name="description" content="Widened the stacked share/feedback module block to match the tool content max width." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-07-08-23-widen-share-feedback-modules.html" />
   <meta property="og:title" content="Widened the stacked share/feedback module block to match the tool content max width. | Dev Logs" />
   <meta property="og:description" content="Widened the stacked share/feedback module block to match the tool content max width." />
@@ -151,7 +151,7 @@ Summary: Widened the stacked share/feedback module block to match the tool conte
 <p>[question]
 宽度加大</p>
 <p>[try to solve]
-将 <code>.tool-module-grid</code> 的 <code>max-width</code> 从 <code>40rem</code> 调整为 <code>var(--content-max)</code>（880px）并设 <code>width: 100%</code>，与工具页内容区同宽。</p>
+Raised <code>.tool-module-grid</code> <code>max-width</code> from <code>40rem</code> to <code>var(--content-max)</code> (880px) and set <code>width: 100%</code> so the block matches the tool page content width.</p>
 <p>[actions]</p>
 <ul>
 <li><code>public/styles/site.css</code></li>

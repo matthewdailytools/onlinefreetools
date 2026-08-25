@@ -1,0 +1,9 @@
+batch: 03
+count: 20
+rewritten: 20
+skipped_already_english: 0
+issues:
+- None blocking.
+- All 20 files had CJK (or mixed) narrative in [try to solve]; rewritten in place to editorial English.
+- [question] kept verbatim (including Chinese and long English task prompts).
+- Preserved technical tokens: paths, npm scripts, locale codes, formulas, NIST factor, example IPs/numbers, intentional local search phrases in examples.

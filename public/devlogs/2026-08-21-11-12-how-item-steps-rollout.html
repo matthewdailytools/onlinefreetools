@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Require ordered How steps for all tools; renderer + image-crop pilot. | Dev Logs</title>
   <meta name="description" content="Require ordered How steps for all tools; renderer + image-crop pilot." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-21-11-12-how-item-steps-rollout.html" />
   <meta property="og:title" content="Require ordered How steps for all tools; renderer + image-crop pilot. | Dev Logs" />
   <meta property="og:description" content="Require ordered How steps for all tools; renderer + image-crop pilot." />
@@ -151,11 +151,11 @@ Summary: Require ordered How steps for all tools; renderer + image-crop pilot.</
 <p>[question]
 好的（确认：把「全工具须有操作步骤」写入 rules，改 renderToolIgSections 支持 how_item_*，image-crop 试点）</p>
 <p>[try to solve]
-已落地：</p>
+Shipped:</p>
 <ol>
-<li><code>renderToolIgSections</code> 支持 <code>how_item_1…n</code> → 可见 <code>&lt;ol&gt;</code>；<code>how_body</code> 作总答；仅有 body 时仍兼容旧单段 p。</li>
-<li><code>tool-creation.mdc</code> / <code>tool-i18n-seo.mdc</code> / copilot-instructions：新工具硬性要求 how_item；存量改文案时迁移；Rules 勿假扮步骤；不为 AI 堆 HowTo schema。</li>
-<li><code>image-crop</code> 十语试点：总答 + 5 步，与按钮文案对齐；<code>tool:touch</code> + <code>merge:tools</code> 已跑。<code>build:site</code> 因缺 bootstrap 依赖未完成全量预渲染，源码与合并 i18n 已就绪。</li>
+<li><code>renderToolIgSections</code> supports <code>how_item_1…n</code> → visible <code>&lt;ol&gt;</code>; <code>how_body</code> as overview; body-only still falls back to a single <code>&lt;p&gt;</code>.</li>
+<li><code>tool-creation.mdc</code> / <code>tool-i18n-seo.mdc</code> / copilot-instructions: new tools hard-require how_item; migrate when rewriting existing copy; Rules must not pose as steps; no HowTo schema stacked for AI.</li>
+<li><code>image-crop</code> 10-locale pilot: overview + 5 steps aligned to button copy; <code>tool:touch</code> + <code>merge:tools</code> ran. <code>build:site</code> did not finish full prerender (missing bootstrap dep); source and merged i18n were ready.</li>
 </ol>
 <p>[actions]</p>
 <ul>

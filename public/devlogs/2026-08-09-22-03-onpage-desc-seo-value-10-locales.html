@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>on-page-seo-checker 10 语描述前置 SEO 价值句，突出工具对搜索排名与点击的作用。 | Dev Logs</title>
-  <meta name="description" content="on-page-seo-checker 10 语描述前置 SEO 价值句，突出工具对搜索排名与点击的作用。" />
-  <meta name="robots" content="noindex" />
+  <title>Prefixed on-page-seo-checker descriptions in all 10 locales with an SEO-value opening sentence tailored to each language. | Dev Logs</title>
+  <meta name="description" content="Prefixed on-page-seo-checker descriptions in all 10 locales with an SEO-value opening sentence tailored to each language." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-09-22-03-onpage-desc-seo-value-10-locales.html" />
-  <meta property="og:title" content="on-page-seo-checker 10 语描述前置 SEO 价值句，突出工具对搜索排名与点击的作用。 | Dev Logs" />
-  <meta property="og:description" content="on-page-seo-checker 10 语描述前置 SEO 价值句，突出工具对搜索排名与点击的作用。" />
+  <meta property="og:title" content="Prefixed on-page-seo-checker descriptions in all 10 locales with an SEO-value opening sentence tailored to each language. | Dev Logs" />
+  <meta property="og:description" content="Prefixed on-page-seo-checker descriptions in all 10 locales with an SEO-value opening sentence tailored to each language." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-09-22-03-onpage-desc-seo-value-10-locales.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,27 +143,27 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">on-page-seo-checker 10 语描述前置 SEO 价值句，突出工具对搜索排名与点击的作用。 | Dev Logs</h1>
+          <h1 class="h4 mb-0">Prefixed on-page-seo-checker descriptions in all 10 locales with an SEO-value opening sentence tailored to each language. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-09 22:03
-Summary: on-page-seo-checker 10 语描述前置 SEO 价值句，突出工具对搜索排名与点击的作用。</p>
+Summary: Prefixed on-page-seo-checker descriptions in all 10 locales with an SEO-value opening sentence tailored to each language.</p>
 <p>[question]
 上面的seo工具对seo的作用需要在描述中体现出来，注意各个语言需要符合用户语言习惯</p>
 <p>[try to solve]
-逐语独立重写 on-page-seo-checker 的 <code>tool_onpage_description</code>（页面 meta 描述/H1 摘要）与 <code>tool_onpage_home_desc</code>（首页卡片描述），把「该工具对 SEO 的作用」前置成首句，而非直译母版。</p>
+Independently rewrote on-page-seo-checker <code>tool_onpage_description</code> (page meta/H1 summary) and <code>tool_onpage_home_desc</code> (home card) per locale so the SEO impact leads the copy—not an English calque.</p>
 <ul>
-<li>en 母版首句：Weak titles, missing meta descriptions, duplicate H1s and broken canonicals quietly cost rankings and clicks.</li>
-<li>zh 首句：标题偏弱、meta 描述缺失、重复 H1 或 canonical 配置错误，都会悄悄拖累搜索排名与点击。</li>
-<li>其余 es/ja/ar/pt/id/fr/ru/de 均按当地表达习惯独立改写（Google 排名/点击的说法逐语不同），保留检查项、本地处理说明与示例句。</li>
-<li>同步更新 <code>work-tasks/on-page-seo-checker/02-tool-info.md</code> 的 SEO 卡片 Title/Description 要点，及 <code>03-locale-briefs.md</code> 多轮记录（新增「4 描述 SEO 作用增强」行）。</li>
-<li>验证：<code>npm run merge:tools</code> 成功（124 tools / 10 locales）；聚合 home_desc 10 语生效；dev server 上 zh/en 页面 meta description 已含 SEO 价值首句；<code>lint:seo</code> 通过（0 入链警告、无参数枚举 title）；<code>build:site</code> 通过。</li>
+<li>en lead: Weak titles, missing meta descriptions, duplicate H1s and broken canonicals quietly cost rankings and clicks.</li>
+<li>zh lead: 标题偏弱、meta 描述缺失、重复 H1 或 canonical 配置错误，都会悄悄拖累搜索排名与点击。</li>
+<li>es/ja/ar/pt/id/fr/ru/de each rewritten for local phrasing of ranking/clicks; kept check list, local-processing note, and examples.</li>
+<li>Synced <code>work-tasks/on-page-seo-checker/02-tool-info.md</code> SEO card Title/Description points and <code>03-locale-briefs.md</code> multipass log (new row: description SEO-value enhance).</li>
+<li>Verification: <code>npm run merge:tools</code> (124 tools / 10 locales); aggregated home_desc live; zh/en meta descriptions include the SEO-value lead; <code>lint:seo</code> OK (0 inbound warn, no param-enum title); <code>build:site</code> OK.</li>
 </ul>
 <p>[actions]</p>
 <ul>
-<li>修改 <code>src/site/i18n/tools/on-page-seo-checker/{en,zh,es,ja,ar,pt,id,fr,ru,de}.ts</code> 的 tool_onpage_description 与 tool_onpage_home_desc</li>
-<li>修改 <code>work-tasks/on-page-seo-checker/02-tool-info.md</code>、<code>03-locale-briefs.md</code></li>
-<li>运行 <code>npm run merge:tools</code>、<code>npm run build:site</code>、<code>npm run lint:seo</code></li>
+<li><code>src/site/i18n/tools/on-page-seo-checker/{en,zh,es,ja,ar,pt,id,fr,ru,de}.ts</code> tool_onpage_description and tool_onpage_home_desc</li>
+<li><code>work-tasks/on-page-seo-checker/02-tool-info.md</code>, <code>03-locale-briefs.md</code></li>
+<li>Ran <code>npm run merge:tools</code>, <code>npm run build:site</code>, <code>npm run lint:seo</code></li>
 </ul>
 </article>
       </section>

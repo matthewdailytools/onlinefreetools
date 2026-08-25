@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Re-ran color-from-image, image-merge, and image-overlay to auto-execute sample pipelines on page load per the new rule. | Dev Logs</title>
-  <meta name="description" content="Re-ran color-from-image, image-merge, and image-overlay to auto-execute sample pipelines on page load per the new rule." />
-  <meta name="robots" content="noindex" />
+  <title>Re-ran color-from-image, image-merge, and image-overlay so sample pipelines auto-execute on page load per the new rule. | Dev Logs</title>
+  <meta name="description" content="Re-ran color-from-image, image-merge, and image-overlay so sample pipelines auto-execute on page load per the new rule." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-11-57-three-tools-auto-sample-rerun.html" />
-  <meta property="og:title" content="Re-ran color-from-image, image-merge, and image-overlay to auto-execute sample pipelines on page load per the new rule. | Dev Logs" />
-  <meta property="og:description" content="Re-ran color-from-image, image-merge, and image-overlay to auto-execute sample pipelines on page load per the new rule." />
+  <meta property="og:title" content="Re-ran color-from-image, image-merge, and image-overlay so sample pipelines auto-execute on page load per the new rule. | Dev Logs" />
+  <meta property="og:description" content="Re-ran color-from-image, image-merge, and image-overlay so sample pipelines auto-execute on page load per the new rule." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-08-11-57-three-tools-auto-sample-rerun.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,21 +143,21 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Re-ran color-from-image, image-merge, and image-overlay to auto-execute sample pipelines on page load per the new rule. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Re-ran color-from-image, image-merge, and image-overlay so sample pipelines auto-execute on page load per the new rule. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-08 11:57
-Summary: Re-ran color-from-image, image-merge, and image-overlay to auto-execute sample pipelines on page load per the new rule.</p>
+Summary: Re-ran color-from-image, image-merge, and image-overlay so sample pipelines auto-execute on page load per the new rule.</p>
 <p>[question]
 将最近生成的3个工具按照新规则重新跑一次</p>
 <p>[try to solve]
-Aligned the three newest image tools with <code>tool-creation.mdc</code>「进页样例须实际跑出结果」:</p>
+Aligned the three newest image tools with <code>tool-creation.mdc</code> (“on-page sample must actually produce a result”):</p>
 <ol>
 <li><code>color-from-image</code> — init calls <code>loadSample()</code> → extract → palette visible.</li>
 <li><code>image-merge</code> — <code>loadSample()</code> builds 3 PNGs, <code>addFiles</code> returns a Promise, then <code>merge()</code>; init auto-runs (preview + download ready).</li>
 <li><code>image-overlay</code> — <code>loadSample()</code> awaits both layers, places logo bottom-right at 75% opacity, then <code>applyOverlay()</code>; fixed apply no longer wiping <code>resultBlob</code> via <code>drawPreview()</code>; init auto-runs.</li>
 </ol>
-<p>Updated each <code>work-tasks/*/02-tool-info.md</code> with the 进页样例 spec. <code>lint:seo</code> OK.</p>
+<p>Updated each <code>work-tasks/*/02-tool-info.md</code> with the on-page sample spec. <code>lint:seo</code> OK.</p>
 <p>[actions]</p>
 <ul>
 <li>Updated <code>src/pages/colorFromImagePage.ts</code></li>

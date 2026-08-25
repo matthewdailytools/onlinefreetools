@@ -1,21 +1,21 @@
 Date: 2026-08-20 22:24
-Summary: Adopt long-tail gap SEO strategy: avoid head terms owned by traffic sites; document execution plan and align funnel.
+Summary: Adopted long-tail gap SEO strategy: avoid head terms owned by traffic sites; documented execution plan and aligned funnel.
 
 [question]
 修改策略：不能与其他已经获取流量的站抢已有大词的流量，需要抢他们没有覆盖的长尾词。基于次，制定seo优化执行方案和策略文档
 
 [try to solve]
-核心策略已立法并落到执行链：不与已有稳定流量站正面硬刚其已占位大词；主攻 SERP 未覆盖/极薄的长尾与语言缺口；本站已有 GSC 展示的大词仅做 CTR/meta 收割（防守），不作进攻立项。
+Core strategy is now written into the execution chain: do not head-on compete for head terms already owned by stable-traffic sites; prioritize long-tail and locale gaps that SERP leaves uncovered or very thin; for head terms where this site already has GSC impressions, only harvest CTR/meta (defense)—do not open offensive new-tool briefs.
 
-主文档：`docs/seo/2026-08-20-long-tail-gap-strategy.md`（定义 head / mid_covered / long_gap / locale_gap、决策流程图、周选型优先级、取词/产能/验收/KPI、明确不做）。
+Primary doc: `docs/seo/2026-08-20-long-tail-gap-strategy.md` (defines head / mid_covered / long_gap / locale_gap, decision flow, weekly selection priority, sourcing/capacity/acceptance/KPI, and explicit non-goals).
 
-已同步：
-- 漏斗 `keyword-to-tool-funnel.md`：竞品覆盖三问、建站门禁第 5 条、词池新列
-- Skill / rule / ops / serp-batches 模板 / README / tracker 决策日志
-- 词池 TSV 新增列 `competition_tier`、`gap_notes`
-- Omni 对标与 Google SEO 落地文交叉引用更新
+Synced:
+- Funnel `keyword-to-tool-funnel.md`: competitor-coverage three questions, build gate #5, new pool columns
+- Skill / rule / ops / serp-batches templates / README / tracker decision log
+- Keyword pool TSV columns `competition_tier`, `gap_notes`
+- Cross-links in Omni benchmarking and Google SEO implementation docs
 
-执行要点：种子可含大词但入池以向下展开长尾为主（建议每批缺口类 ≥6/10）；周 build ≤1–2 且只给 long_gap/locale_gap；同簇长尾仍一带多场景，禁止拆 doorway。
+Execution notes: seeds may include head terms, but pooling should expand downward into long-tail (aim ≥6/10 gap-class per batch); weekly build ≤1–2 and only for long_gap/locale_gap; same-cluster long-tails stay one-tool multi-scenario—no doorway splits.
 
 [actions]
 - docs/seo/2026-08-20-long-tail-gap-strategy.md (new)

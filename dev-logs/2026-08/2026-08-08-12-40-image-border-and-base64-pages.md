@@ -31,26 +31,26 @@ Do NOT edit catalog/index/i18n. Only these two page files.
 Return paths when done.
 
 [try to solve]
-已创建两个完整页面文件，结构与 `imageOverlayPage.ts` / `colorFromImagePage.ts` 一致：
+Created two complete page files, structured like `imageOverlayPage.ts` / `colorFromImagePage.ts`:
 
 1. **`src/pages/imageBorderPage.ts`**
-   - 导出 `renderImageBorderPage`
-   - 单图 dropzone、边框宽度（默认 24px）、颜色选择、JPEG/WebP/PNG 格式
-   - Apply / Download / Sample / Clear；扩画布 `w+2*border` × `h+2*border`，`fillRect` 铺边框色，`drawImage` 居中
-   - `loadSample()` 进页自动跑色块样例并应用 24px 白边框
-   - i18n 前缀 `tool_image_border_*`；软限制 25MB / 8192px；IG 4 rules + 3 use cases
-   - References：MDN fillRect / strokeRect / drawImage
+   - Exports `renderImageBorderPage`
+   - Single-image dropzone, border width (default 24px), color picker, JPEG/WebP/PNG format
+   - Apply / Download / Sample / Clear; expand canvas to `w+2*border` × `h+2*border`, `fillRect` for border color, `drawImage` inset
+   - `loadSample()` auto-runs a color-block sample with a 24px white border on load
+   - i18n prefix `tool_image_border_*`; soft limits 25MB / 8192px; IG 4 rules + 3 use cases
+   - References: MDN fillRect / strokeRect / drawImage
 
 2. **`src/pages/imageToBase64Page.ts`**
-   - 导出 `renderImageToBase64Page`
-   - Encode | Decode 模式 Tab
-   - Encode：`FileReader.readAsDataURL` → textarea；可选去掉 `data:` 前缀；Copy + 预览
-   - Decode：粘贴 data URL 或裸 Base64（默认 `image/png`）→ 预览 + Download
-   - `loadSample()` 进页自动 Canvas PNG → Encode 显示 data URL
-   - i18n 前缀 `tool_image_to_base64_*`；大文件软警告
-   - References：MDN FileReader.readAsDataURL + Data URLs
+   - Exports `renderImageToBase64Page`
+   - Encode | Decode mode tabs
+   - Encode: `FileReader.readAsDataURL` → textarea; optional strip of `data:` prefix; Copy + preview
+   - Decode: paste data URL or raw Base64 (default `image/png`) → preview + Download
+   - `loadSample()` auto Canvas PNG → Encode showing data URL on load
+   - i18n prefix `tool_image_to_base64_*`; soft warn on large files
+   - References: MDN FileReader.readAsDataURL + Data URLs
 
-未改动 catalog / index / i18n。
+Did not change catalog / index / i18n.
 
 [actions]
 - Added `src/pages/imageBorderPage.ts`

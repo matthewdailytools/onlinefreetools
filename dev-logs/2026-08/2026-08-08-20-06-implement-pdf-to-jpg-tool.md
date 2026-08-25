@@ -39,13 +39,13 @@ Do NOT edit plan file. Do NOT commit. Reply 中文 brief with pass confirmation.
 Reference patterns: src/pages/compressPdfPage.ts (pdfjs), src/pages/splitPdfPage.ts (fflate ZIP), src/pages/organizePdfPage.ts (page shell).
 
 [try to solve]
-`pdf-to-jpg` 已完整上线实现：
+`pdf-to-jpg` fully implemented and gated:
 
-- **页面**：`src/pages/pdfToJpgPage.ts` — pdf.js 懒加载 @4.10.38，scale=2、JPEG 0.92；单页直出 JPG，多页 fflate ZIP；进页 2 页样例自动转换并可下载；25MB 软警告与加密/损坏错误映射。
-- **配置**：catalog 分片 category=`image`，related=`images-to-pdf` + `image-format-converter`；十语 i18n 分片齐全。
-- **文档**：work-tasks 02→`implemented`、03→`i18n-done`（含 1b/2b）；清单 #54→已上线；README 中英条目已加。
+- **Page**: `src/pages/pdfToJpgPage.ts` — lazy pdf.js @4.10.38, scale=2, JPEG 0.92; single page direct JPG, multi-page fflate ZIP; on enter 2-page sample auto-converts and is downloadable; 25MB soft warn and encrypted/corrupt error mapping.
+- **Config**: catalog shard category=`image`, related=`images-to-pdf` + `image-format-converter`; ten-locale i18n shards complete.
+- **Docs**: work-tasks 02→`implemented`, 03→`i18n-done` (with 1b/2b); inventory #54→live; README zh+en entries added.
 
-**门禁全部通过**：`merge:tools`、`coverage:gate --phase=all`、`build:site`、`lint:seo`、`lint:tool-isolation`（CROSS_TOOL_UPDATE=1）。
+**All gates green**: `merge:tools`, `coverage:gate --phase=all`, `build:site`, `lint:seo`, `lint:tool-isolation` (`CROSS_TOOL_UPDATE=1`).
 
 [actions]
 - src/site/tool-catalog.d/pdf-to-jpg.json

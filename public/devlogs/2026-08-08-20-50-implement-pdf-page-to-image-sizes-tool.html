@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Implemented pdf-page-to-image-sizes tool (#62) with full i18n, gates green, inventory updated. | Dev Logs</title>
   <meta name="description" content="Implemented pdf-page-to-image-sizes tool (#62) with full i18n, gates green, inventory updated." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-20-50-implement-pdf-page-to-image-sizes-tool.html" />
   <meta property="og:title" content="Implemented pdf-page-to-image-sizes tool (#62) with full i18n, gates green, inventory updated. | Dev Logs" />
   <meta property="og:description" content="Implemented pdf-page-to-image-sizes tool (#62) with full i18n, gates green, inventory updated." />
@@ -175,24 +175,24 @@ Implement full <code>pdf-page-to-image-sizes</code> in /Users/xuli/vscodeai/onli
 <p>No plan/commit. 中文 brief. Chinese comments on functions.</p>
 <p>Also double-check inventory lines 52-62 are all 已上线; if any still 未开始, fix them.</p>
 <p>[try to solve]
-已完成 <code>pdf-page-to-image-sizes</code>（清单 #62）全量实现：</p>
-<p><strong>页面与逻辑</strong>（<code>src/pages/pdfPageToImageSizesPage.ts</code>）</p>
+Shipped full <code>pdf-page-to-image-sizes</code> (inventory #62):</p>
+<p><strong>Page / logic</strong> (<code>src/pages/pdfPageToImageSizesPage.ts</code>)</p>
 <ul>
-<li><a href="mailto:pdfjs-dist@4.10.38">pdfjs-dist@4.10.38</a> 懒加载；选定页 2× 渲染一次</li>
-<li>Canvas contain 居中 fit 至四预设（1080²、1200×630、1280×720、1080×1920），白底 JPEG 0.9</li>
-<li><a href="mailto:fflate@0.8.2">fflate@0.8.2</a> 打包 <code>page-{n}-{WxH}.jpg</code> → <code>page-{n}-sizes.zip</code></li>
-<li>页码输入（默认 1）；25MB 软警告；加密/损坏可读错误</li>
-<li><code>loadSample()</code> 进页自动跑：pdf-lib 单页样例 → 导出 → Download 可用</li>
+<li>Lazy <a href="mailto:pdfjs-dist@4.10.38">pdfjs-dist@4.10.38</a>; selected page rendered once at 2×</li>
+<li>Canvas contain-centered into four presets (1080², 1200×630, 1280×720, 1080×1920), white-bg JPEG 0.9</li>
+<li><a href="mailto:fflate@0.8.2">fflate@0.8.2</a> packs <code>page-{n}-{WxH}.jpg</code> → <code>page-{n}-sizes.zip</code></li>
+<li>Page number input (default 1); 25 MB soft warn; readable encrypted/corrupt errors</li>
+<li><code>loadSample()</code> on enter: pdf-lib one-page sample → export → Download ready</li>
 </ul>
-<p><strong>注册与文案</strong></p>
+<p><strong>Registration / copy</strong></p>
 <ul>
-<li><code>src/site/tool-catalog.d/pdf-page-to-image-sizes.json</code>（category: image，related: pdf-to-jpg, images-to-pdf）</li>
+<li><code>src/site/tool-catalog.d/pdf-page-to-image-sizes.json</code> (category: image; related: pdf-to-jpg, images-to-pdf)</li>
 <li><code>public/icons/tools/pdf-page-to-image-sizes.svg</code></li>
-<li>十语独立 i18n：<code>src/site/i18n/tools/pdf-page-to-image-sizes/{en,zh,es,ar,pt,id,fr,ja,ru,de}.ts</code></li>
-<li><code>03-locale-briefs.md</code> 补 1b/2b 多轮记录；<code>README.md</code> 中英条目；inventory #62 → <strong>已上线 · P2</strong></li>
+<li>Independent ten-locale i18n under <code>src/site/i18n/tools/pdf-page-to-image-sizes/{en,zh,es,ar,pt,id,fr,ja,ru,de}.ts</code></li>
+<li><code>03-locale-briefs.md</code> 1b/2b multi-round notes; <code>README.md</code> EN/ZH entries; inventory #62 → <strong>shipped · P2</strong></li>
 </ul>
-<p><strong>清单 52–62 核对</strong>：#52–#61 原本已为「已上线」；仅 #62 由「未开始 · P2」更新为「已上线 · P2」。</p>
-<p><strong>门禁</strong>：<code>merge:tools</code>、<code>coverage:gate --phase=all</code>、<code>build:site</code>、<code>lint:seo</code>、<code>lint:tool-isolation</code>（CROSS_TOOL_UPDATE=1）全部通过。</p>
+<p><strong>Inventory #52–62 check</strong>: #52–#61 were already “shipped”; only #62 moved from “not started · P2” to “shipped · P2”.</p>
+<p><strong>Gates</strong>: <code>merge:tools</code>, <code>coverage:gate --phase=all</code>, <code>build:site</code>, <code>lint:seo</code>, <code>lint:tool-isolation</code> (<code>CROSS_TOOL_UPDATE=1</code>) all passed.</p>
 <p>[actions]</p>
 <ul>
 <li>src/site/tool-catalog.d/pdf-page-to-image-sizes.json</li>

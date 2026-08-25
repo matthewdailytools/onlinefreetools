@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Added cross-platform start/stop/restart scripts for local wrangler dev server. | Dev Logs</title>
-  <meta name="description" content="Added cross-platform start/stop/restart scripts for local wrangler dev server." />
-  <meta name="robots" content="noindex" />
+  <title>Added cross-platform start, stop, and restart scripts for the local wrangler dev server. | Dev Logs</title>
+  <meta name="description" content="Added cross-platform start, stop, and restart scripts for the local wrangler dev server." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-06-14-13-add-dev-start-stop-scripts.html" />
-  <meta property="og:title" content="Added cross-platform start/stop/restart scripts for local wrangler dev server. | Dev Logs" />
-  <meta property="og:description" content="Added cross-platform start/stop/restart scripts for local wrangler dev server." />
+  <meta property="og:title" content="Added cross-platform start, stop, and restart scripts for the local wrangler dev server. | Dev Logs" />
+  <meta property="og:description" content="Added cross-platform start, stop, and restart scripts for the local wrangler dev server." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-06-14-13-add-dev-start-stop-scripts.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,56 +143,56 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Added cross-platform start/stop/restart scripts for local wrangler dev server. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Added cross-platform start, stop, and restart scripts for the local wrangler dev server. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-06 14:13
-Summary: Added cross-platform start/stop/restart scripts for local wrangler dev server.</p>
+Summary: Added cross-platform start, stop, and restart scripts for the local wrangler dev server.</p>
 <p>[question]
 创建脚本，常见启动和停止应用的脚本</p>
 <p>[try to solve]
-新增本地开发启停脚本：</p>
+Added local dev start/stop scripts:</p>
 <table>
 <thead>
 <tr>
-<th>命令 / 文件</th>
-<th>作用</th>
+<th>Command / file</th>
+<th>Role</th>
 </tr>
 </thead>
 <tbody><tr>
 <td><code>npm run start:dev</code></td>
-<td><code>build:site</code> + 后台 <code>wrangler dev</code>（默认 8787）</td>
+<td><code>build:site</code> + background <code>wrangler dev</code> (default 8787)</td>
 </tr>
 <tr>
 <td><code>npm run start:dev -- --no-build</code></td>
-<td>跳过构建快速启动</td>
+<td>Skip build for a faster start</td>
 </tr>
 <tr>
 <td><code>npm run stop:dev</code></td>
-<td>按 PID 文件或端口停止</td>
+<td>Stop via PID file or port</td>
 </tr>
 <tr>
 <td><code>npm run restart:dev</code></td>
-<td>停止后重启</td>
+<td>Stop then start</td>
 </tr>
 <tr>
 <td><code>scripts/start-dev.ps1</code> / <code>stop-dev.ps1</code></td>
-<td>Windows 快捷入口</td>
+<td>Windows shortcuts</td>
 </tr>
 <tr>
 <td><code>scripts/start-dev.sh</code> / <code>stop-dev.sh</code></td>
-<td>macOS/Linux 快捷入口</td>
+<td>macOS/Linux shortcuts</td>
 </tr>
 </tbody></table>
-<p>实现：<code>scripts/lib/dev-process.mjs</code>（PID/端口/杀进程）、<code>scripts/start-dev.mjs</code>、<code>scripts/stop-dev.mjs</code>。日志与 PID 在 <code>.run/</code>（已加入 <code>.gitignore</code>）。</p>
+<p>Implementation: <code>scripts/lib/dev-process.mjs</code> (PID/port/kill), <code>scripts/start-dev.mjs</code>, <code>scripts/stop-dev.mjs</code>. Logs and PID live under <code>.run/</code> (added to <code>.gitignore</code>).</p>
 <p>[actions]</p>
 <ul>
-<li>scripts/lib/dev-process.mjs</li>
-<li>scripts/start-dev.mjs, stop-dev.mjs</li>
-<li>scripts/start-dev.ps1, stop-dev.ps1, start-dev.sh, stop-dev.sh</li>
-<li>package.json</li>
-<li>.gitignore</li>
-<li>.cursor/rules/cloudflare-workflow.mdc</li>
+<li><code>scripts/lib/dev-process.mjs</code></li>
+<li><code>scripts/start-dev.mjs</code>, <code>stop-dev.mjs</code></li>
+<li><code>scripts/start-dev.ps1</code>, <code>stop-dev.ps1</code>, <code>start-dev.sh</code>, <code>stop-dev.sh</code></li>
+<li><code>package.json</code></li>
+<li><code>.gitignore</code></li>
+<li><code>.cursor/rules/cloudflare-workflow.mdc</code></li>
 </ul>
 </article>
       </section>

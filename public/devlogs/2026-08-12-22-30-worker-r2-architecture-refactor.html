@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Implement Worker+R2 architecture: prerender HTML to `_pages/{lang}/**/*.html.gz`, Cache→R2 serve, Worker bundle ~83KB gzip. | Dev Logs</title>
-  <meta name="description" content="Implement Worker+R2 architecture: prerender HTML to `_pages/{lang}/**/*.html.gz`, Cache→R2 serve, Worker bundle ~83KB gzip." />
-  <meta name="robots" content="noindex" />
+  <title>Implemented Worker+R2 architecture: prerender HTML to `_pages/{lang}/**/*.html.gz`, Cache→R2 serve, Worker bundle ~83KB gzip. | Dev Logs</title>
+  <meta name="description" content="Implemented Worker+R2 architecture: prerender HTML to `_pages/{lang}/**/*.html.gz`, Cache→R2 serve, Worker bundle ~83KB gzip." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-12-22-30-worker-r2-architecture-refactor.html" />
-  <meta property="og:title" content="Implement Worker+R2 architecture: prerender HTML to `_pages/{lang}/**/*.html.gz`, Cache→R2 serve, Worker bundle ~83KB gzip. | Dev Logs" />
-  <meta property="og:description" content="Implement Worker+R2 architecture: prerender HTML to `_pages/{lang}/**/*.html.gz`, Cache→R2 serve, Worker bundle ~83KB gzip." />
+  <meta property="og:title" content="Implemented Worker+R2 architecture: prerender HTML to `_pages/{lang}/**/*.html.gz`, Cache→R2 serve, Worker bundle ~83KB gzip. | Dev Logs" />
+  <meta property="og:description" content="Implemented Worker+R2 architecture: prerender HTML to `_pages/{lang}/**/*.html.gz`, Cache→R2 serve, Worker bundle ~83KB gzip." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-12-22-30-worker-r2-architecture-refactor.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,34 +143,34 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Implement Worker+R2 architecture: prerender HTML to `_pages/{lang}/**/*.html.gz`, Cache→R2 serve, Worker bundle ~83KB gzip. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Implemented Worker+R2 architecture: prerender HTML to `_pages/{lang}/**/*.html.gz`, Cache→R2 serve, Worker bundle ~83KB gzip. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-12 22:30
-Summary: Implement Worker+R2 architecture: prerender HTML to <code>_pages/{lang}/**/*.html.gz</code>, Cache→R2 serve, Worker bundle ~83KB gzip.</p>
+Summary: Implemented Worker+R2 architecture: prerender HTML to <code>_pages/{lang}/**/*.html.gz</code>, Cache→R2 serve, Worker bundle ~83KB gzip.</p>
 <p>[question]
 根据”docs/worker+R2架构/初始思路.md“进行项目架构重构，要求不要影响现在的用户体验和seo（索引和原来构建的seo体系）
 （确认 R2 key：<code>_pages/{lang}/tools/text-diff.html.gz</code> 模式）</p>
 <p>[try to solve]
-按计划落地 Worker + R2 三层缓存，公开 URL / sitemap / hreflang / 验证文件 / 语言协商不变。</p>
-<p>要点：</p>
+Shipped Worker + R2 three-layer cache per plan; public URLs / sitemap / hreflang / verification files / language negotiation unchanged.</p>
+<p>Highlights:</p>
 <ul>
-<li>R2 key：<code>_pages/{lang}/…/*.html.gz</code>（含工具页）</li>
-<li>Worker：<code>Cache API → R2 gzip → ASSETS 明文回退</code>；gzip 用 <code>encodeBody: manual</code>；ASSETS 回退只返回 identity 防双重压缩</li>
-<li>工具页构建期预渲染（esbuild），Worker 仅用 <code>toolSlugs.generated.ts</code> 校验 slug</li>
-<li>Worker 上传体积：约 <strong>415 KiB / gzip 83 KiB</strong>（原先约 9.8MB）</li>
-<li>脚本：<code>prerender:tools</code>、<code>gzip:pages</code>、<code>upload:r2</code> / <code>upload:r2:local</code>；<code>start:dev</code> 默认本地灌桶（<code>--no-seed-r2</code> 可跳过）</li>
-<li>文档：<code>docs/worker+R2架构/design.md</code></li>
-<li>回归：首页/工具/sitemap/robots/GSC/IndexNow/语言 302/API/lint:seo/lint:vendor 通过</li>
+<li>R2 key: <code>_pages/{lang}/…/*.html.gz</code> (including tool pages)</li>
+<li>Worker: <code>Cache API → R2 gzip → ASSETS plaintext fallback</code>; gzip via <code>encodeBody: manual</code>; ASSETS fallback returns identity only to avoid double compression</li>
+<li>Tool pages prerendered at build (esbuild); Worker only uses <code>toolSlugs.generated.ts</code> for slug validation</li>
+<li>Worker upload size: ~<strong>415 KiB / gzip 83 KiB</strong> (was ~9.8MB)</li>
+<li>Scripts: <code>prerender:tools</code>, <code>gzip:pages</code>, <code>upload:r2</code> / <code>upload:r2:local</code>; <code>start:dev</code> seeds local bucket by default (<code>--no-seed-r2</code> to skip)</li>
+<li>Docs: <code>docs/worker+R2架构/design.md</code></li>
+<li>Regression: home/tools/sitemap/robots/GSC/IndexNow/language 302/API/lint:seo/lint:vendor passed</li>
 </ul>
-<p>生产发版需先创建 R2 桶并执行 <code>npm run upload:r2</code>。</p>
+<p>Production release still needs creating the R2 bucket and running <code>npm run upload:r2</code>.</p>
 <p>[actions]</p>
 <ul>
-<li>docs/worker+R2架构/design.md（新建）；初始思路.md 链到设计</li>
-<li>wrangler.jsonc：PAGES_BUCKET、PAGES_CACHE_VERSION</li>
-<li>src/site/r2Pages.ts、toolRegistrar.ts、toolSlugs.generated.ts；src/index.ts 改走预渲染</li>
-<li>scripts：prerender-tool-pages*.mjs/ts、gzip-pages.mjs、upload-r2-pages.mjs；build-site.mjs / merge-all.mjs / package.json</li>
-<li>ops/dev/start-dev.mjs：本地 R2 seed；.gitignore 工具 HTML 与 .html.gz；rules 同步</li>
+<li>docs/worker+R2架构/design.md (new); 初始思路.md links to design</li>
+<li>wrangler.jsonc: PAGES_BUCKET, PAGES_CACHE_VERSION</li>
+<li>src/site/r2Pages.ts, toolRegistrar.ts, toolSlugs.generated.ts; src/index.ts serves prerender</li>
+<li>scripts: prerender-tool-pages*.mjs/ts, gzip-pages.mjs, upload-r2-pages.mjs; build-site.mjs / merge-all.mjs / package.json</li>
+<li>ops/dev/start-dev.mjs: local R2 seed; .gitignore tool HTML and .html.gz; rules synced</li>
 </ul>
 </article>
       </section>

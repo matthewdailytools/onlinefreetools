@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Implemented full pdf-to-jpg tool with ten locales and all gates green. | Dev Logs</title>
   <meta name="description" content="Implemented full pdf-to-jpg tool with ten locales and all gates green." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-20-06-implement-pdf-to-jpg-tool.html" />
   <meta property="og:title" content="Implemented full pdf-to-jpg tool with ten locales and all gates green. | Dev Logs" />
   <meta property="og:description" content="Implemented full pdf-to-jpg tool with ten locales and all gates green." />
@@ -184,13 +184,13 @@ CROSS_TOOL_UPDATE=1 TOOL_SLUG=pdf-to-jpg npm run lint:tool-isolation
 <p>Do NOT edit plan file. Do NOT commit. Reply 中文 brief with pass confirmation.</p>
 <p>Reference patterns: src/pages/compressPdfPage.ts (pdfjs), src/pages/splitPdfPage.ts (fflate ZIP), src/pages/organizePdfPage.ts (page shell).</p>
 <p>[try to solve]
-<code>pdf-to-jpg</code> 已完整上线实现：</p>
+<code>pdf-to-jpg</code> fully implemented and gated:</p>
 <ul>
-<li><strong>页面</strong>：<code>src/pages/pdfToJpgPage.ts</code> — pdf.js 懒加载 @4.10.38，scale=2、JPEG 0.92；单页直出 JPG，多页 fflate ZIP；进页 2 页样例自动转换并可下载；25MB 软警告与加密/损坏错误映射。</li>
-<li><strong>配置</strong>：catalog 分片 category=<code>image</code>，related=<code>images-to-pdf</code> + <code>image-format-converter</code>；十语 i18n 分片齐全。</li>
-<li><strong>文档</strong>：work-tasks 02→<code>implemented</code>、03→<code>i18n-done</code>（含 1b/2b）；清单 #54→已上线；README 中英条目已加。</li>
+<li><strong>Page</strong>: <code>src/pages/pdfToJpgPage.ts</code> — lazy pdf.js @4.10.38, scale=2, JPEG 0.92; single page direct JPG, multi-page fflate ZIP; on enter 2-page sample auto-converts and is downloadable; 25MB soft warn and encrypted/corrupt error mapping.</li>
+<li><strong>Config</strong>: catalog shard category=<code>image</code>, related=<code>images-to-pdf</code> + <code>image-format-converter</code>; ten-locale i18n shards complete.</li>
+<li><strong>Docs</strong>: work-tasks 02→<code>implemented</code>, 03→<code>i18n-done</code> (with 1b/2b); inventory #54→live; README zh+en entries added.</li>
 </ul>
-<p><strong>门禁全部通过</strong>：<code>merge:tools</code>、<code>coverage:gate --phase=all</code>、<code>build:site</code>、<code>lint:seo</code>、<code>lint:tool-isolation</code>（CROSS_TOOL_UPDATE=1）。</p>
+<p><strong>All gates green</strong>: <code>merge:tools</code>, <code>coverage:gate --phase=all</code>, <code>build:site</code>, <code>lint:seo</code>, <code>lint:tool-isolation</code> (<code>CROSS_TOOL_UPDATE=1</code>).</p>
 <p>[actions]</p>
 <ul>
 <li>src/site/tool-catalog.d/pdf-to-jpg.json</li>

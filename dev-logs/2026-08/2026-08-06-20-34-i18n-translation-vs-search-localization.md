@@ -5,28 +5,29 @@ Summary: Current pages aim for search-habit localization rewrites, not pure tran
 现在页面的语言是翻译的，还是根据本地化用户习惯和搜索习惯写的？
 
 [try to solve]
-**目标上是「按当地检索习惯重写」，不是「英模直译」；实际交付是混合态，且母语真人审尚未验证。**
+Target: rewrite for local search habits, not English-template literal translation. Delivery is mixed, and live native human review is not yet verified.
 
-### 规则意图
-`tool-i18n-localization.mdc` 要求：先 locale brief（检索词 / title 方向）→ 按 brief 独立重写 → ≥3 轮；禁止 `Translate to {lang}` 与脚本同构灌语。
+### Rule intent
+`tool-i18n-localization.mdc` requires: locale brief (query / title direction) → independent rewrite from the brief → ≥3 rounds; forbid `Translate to {lang}` and scripted isomorphic dumps.
 
-### 已上线证据（偏本地化）
-- Title 用当地主词：es/pt/fr 用 IMC；ru 用 ИМТ；zh「公网 IP」「身体质量指数」；ja「体格指数の求め方」「こんなときに」
-- 部分 FAQ 题序已打乱（如 marginal revenue：es/id/de 与 en 不同）
-- 存量工具 `03` 多标 `i18n-done`，相对早期 `.bak` 的直译 title 已检索向改写
+### Live evidence (leans localization)
+- Titles use local primary terms: es/pt/fr use IMC; ru uses the Russian BMI acronym; zh uses public-IP and BMI phrasing natural to Chinese search; ja uses natural “how to get body-mass index” / “when to use this” headings
+- Some FAQ topic order already differs (e.g. marginal revenue: es/id/de vs en)
+- Stock-tool `03` files mostly mark `i18n-done`; relative to early `.bak` literal titles, search-oriented rewrites landed
 
-### 仍像「翻译骨架」之处
-- 模块结构十语基本平行（How / Formula / FAQ 主题集合常同套）
-- 许多 FAQ 仍是同一组问题换语（如 percentage-change）
-- ar/ja/ru「待母语抽查」是用户确认清勾，**不是**已完成真人母语 QA
+### Still translation-skeleton-like
+- Module structure stays largely parallel across ten locales (How / Formula / FAQ topic sets often match)
+- Many FAQs are the same question set with different wording (e.g. percentage-change)
+- ar/ja/ru “pending native review” was cleared by user confirmation — not completed live native QA
 
-### 一句话
-| 问法 | 答案 |
+### One-liners
+
+| Framing | Answer |
 |---|---|
-| 是机翻直出吗？ | 按现行流程与抽查，**不是**纯机翻交付目标 |
-| 是母语按搜索习惯原创吗？ | **意图与 title 层接近**；长文/FAQ 仍有同构痕迹；**未经验证的真人母语审** |
+| Pure machine translation out? | Per current process and spot-checks, not the delivery target |
+| Native original for search habits? | Intent and title layer are close; long copy/FAQ still show isomorphic traces; no verified live native review |
 
-更准确：**检索向 AI 重写（localization-oriented rewrite），不是专业本地化定稿。**
+More accurate label: search-oriented AI rewrite (localization-oriented rewrite), not professional localization final copy.
 
 [actions]
-- 抽查 `src/site/i18n/*` title/FAQ/usecases 标题；对照 `work-tasks/*/03-locale-briefs.md` 与 localization 规则
+- Spot-checked `src/site/i18n/*` title/FAQ/usecases headings; compared `work-tasks/*/03-locale-briefs.md` and localization rules

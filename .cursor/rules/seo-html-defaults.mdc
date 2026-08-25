@@ -34,8 +34,8 @@ alwaysApply: false
 
 ## 索引
 
-- `robots.txt` 允许正常抓取；`Disallow: /devlogs/`（开发日志不收录）；`sitemap.xml` 由 `npm run build:site` 生成（不含 devlogs）；每条 URL 带真实 `<lastmod>`（源文件未变则沿用旧日期，见 `scripts/site/sitemap-lastmod.mjs`）
-- 开发日志（`public/devlogs/`）与测试/门禁页：`meta name="robots" content="noindex"`（`buildDevLogs` → `renderLayout` 的 `robotsNoindex: true`）
+- `robots.txt` 允许正常抓取；`Disallow: /api/`（接口不收录）；`/devlogs/` **允许**抓取（日志页须 people-first，见 `dev-logs.mdc`）；`sitemap.xml` 由 `npm run build:site` 生成（**不含** devlogs；靠站内链与允许抓取发现）；每条 URL 带真实 `<lastmod>`（源文件未变则沿用旧日期，见 `scripts/site/sitemap-lastmod.mjs`）
+- 测试/门禁页：`meta name="robots" content="noindex"`（`renderLayout` 的 `robotsNoindex: true`）。开发日志页**不再**默认 noindex
 - 禁止 `llms.txt` 或「AI 专用」Schema 类型
 
 ## 国际化

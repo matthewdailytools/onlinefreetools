@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Tightened i18n compliance rules (stable workflow, anti-batch isomorphic) and rewrote all ten markdown locales; cleared pending-native-review. | Dev Logs</title>
   <meta name="description" content="Tightened i18n compliance rules (stable workflow, anti-batch isomorphic) and rewrote all ten markdown locales; cleared pending-native-review." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-06-18-21-tighten-i18n-compliance-rules.html" />
   <meta property="og:title" content="Tightened i18n compliance rules (stable workflow, anti-batch isomorphic) and rewrote all ten markdown locales; cleared pending-native-review. | Dev Logs" />
   <meta property="og:description" content="Tightened i18n compliance rules (stable workflow, anti-batch isomorphic) and rewrote all ten markdown locales; cleared pending-native-review." />
@@ -151,14 +151,14 @@ Summary: Tightened i18n compliance rules (stable workflow, anti-batch isomorphic
 <p>[question]
 要收紧合规，下一步可对 所有语言（及任意一句式雷同的语）做一轮母语向重写，并在 03 标「待母语抽查」清掉。把收紧合规策略和稳妥常态写成rules</p>
 <p>[try to solve]
-已写入规则并落实本工具十语重写：</p>
-<p><strong>Rules（稳妥常态 + 收紧合规）</strong> — 主文件 <code>.cursor/rules/tool-i18n-localization.mdc</code>：</p>
+Wrote the rules and applied a ten-locale rewrite for this tool:</p>
+<p><strong>Rules (steady workflow + tighter compliance)</strong> — primary file <code>.cursor/rules/tool-i18n-localization.mdc</code>:</p>
 <ul>
-<li>常态：brief → 母版一语 → 逐语或每批 ≤3 语独立重写 → ≥3 轮；脚本仅可落盘已审文案</li>
-<li>禁止：en/zh 后脚本同构灌其余语；带着「待母语抽查」标 <code>i18n-done</code></li>
-<li>同步：<code>work-tasks-tool-brief.mdc</code>、<code>tool-i18n-seo.mdc</code>、<code>tool-creation.mdc</code>、<code>work-tasks/_template/03</code>、<code>work-tasks/README.md</code>、<code>.github/copilot-instructions.md</code></li>
+<li>Steady path: brief → one master locale → rewrite each locale (or batches of ≤3) independently → ≥3 rounds; scripts may only persist already-reviewed copy</li>
+<li>Ban: isomorphic fill of remaining locales after en/zh; marking <code>i18n-done</code> while “pending native review” remains</li>
+<li>Synced: <code>work-tasks-tool-brief.mdc</code>, <code>tool-i18n-seo.mdc</code>, <code>tool-creation.mdc</code>, <code>work-tasks/_template/03</code>, <code>work-tasks/README.md</code>, <code>.github/copilot-instructions.md</code></li>
 </ul>
-<p><strong>本工具</strong>：十语 SEO 段（title/description/How/Rules/FAQ/Use cases）按 brief 独立重写打散句式；<code>03</code> 中 ar/ja/ru「待母语抽查」已清勾；<code>lint:seo</code> OK；状态保持 <code>i18n-done</code>。</p>
+<p><strong>This tool</strong>: SEO blocks (title/description/How/Rules/FAQ/Use cases) independently rewritten per brief to break isomorphic sentence patterns; ar/ja/ru “pending native review” cleared in <code>03</code>; <code>lint:seo</code> OK; status remains <code>i18n-done</code>.</p>
 <p>[actions]</p>
 <ul>
 <li>Updated: <code>.cursor/rules/tool-i18n-localization.mdc</code></li>
@@ -166,7 +166,7 @@ Summary: Tightened i18n compliance rules (stable workflow, anti-batch isomorphic
 <li>Updated: <code>.github/copilot-instructions.md</code></li>
 <li>Updated: <code>work-tasks/_template/03-locale-briefs.md</code>, <code>work-tasks/README.md</code></li>
 <li>Updated: <code>work-tasks/markdown-to-html/03-locale-briefs.md</code></li>
-<li>Updated: <code>src/site/i18n/{en,zh,es,ar,pt,id,fr,ja,ru,de}.ts</code>（markdown SEO 键）</li>
+<li>Updated: <code>src/site/i18n/{en,zh,es,ar,pt,id,fr,ja,ru,de}.ts</code> (markdown SEO keys)</li>
 <li>Ran: <code>npm run lint:seo</code></li>
 </ul>
 </article>

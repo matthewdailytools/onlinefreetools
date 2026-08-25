@@ -1,11 +1,11 @@
-Date: 2026-08-09
-Summary: Shipped §12 #60 how-to-calculate-density.
+Date: 2026-08-09 09:26
+Summary: Shipped Omni §12 #60 how-to-calculate-density after coverage gates and site build.
 
 [question]
 串行立项+实现 Omni §12 #60 how-to-calculate-density
 
 [try to solve]
-已完成立项门禁与实现上线：coverage 0b/2/4/all、build:site、lint:seo；清单已标已上线。
+Completed briefing gates and implementation: coverage 0b/2/4/all, build:site, lint:seo. Inventory marked as shipped.
 
 [actions]
 - ship-one density.mjs

@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Fully rewrote BMR/TDEE ten-locale i18n after English UI fallback bug. | Dev Logs</title>
-  <meta name="description" content="Fully rewrote BMR/TDEE ten-locale i18n after English UI fallback bug." />
-  <meta name="robots" content="noindex" />
+  <title>Fully rewrote BMR/TDEE ten-locale i18n after an English UI fallback bug. | Dev Logs</title>
+  <meta name="description" content="Fully rewrote BMR/TDEE ten-locale i18n after an English UI fallback bug." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-09-00-47-bmr-tdee-i18n-full-rewrite.html" />
-  <meta property="og:title" content="Fully rewrote BMR/TDEE ten-locale i18n after English UI fallback bug. | Dev Logs" />
-  <meta property="og:description" content="Fully rewrote BMR/TDEE ten-locale i18n after English UI fallback bug." />
+  <meta property="og:title" content="Fully rewrote BMR/TDEE ten-locale i18n after an English UI fallback bug. | Dev Logs" />
+  <meta property="og:description" content="Fully rewrote BMR/TDEE ten-locale i18n after an English UI fallback bug." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-09-00-47-bmr-tdee-i18n-full-rewrite.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,20 +143,20 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Fully rewrote BMR/TDEE ten-locale i18n after English UI fallback bug. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Fully rewrote BMR/TDEE ten-locale i18n after an English UI fallback bug. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-09 00:47
-Summary: Fully rewrote BMR/TDEE ten-locale i18n after English UI fallback bug.</p>
+Summary: Fully rewrote BMR/TDEE ten-locale i18n after an English UI fallback bug.</p>
 <p>[question]
 不对，<a href="http://localhost:8788/zh/tools/how-to-calculate-bmr-tdee%E8%AF%AD%E8%A8%80%E6%B2%A1%E6%9C%89%E9%87%8D%E5%86%99">http://localhost:8788/zh/tools/how-to-calculate-bmr-tdee语言没有重写</a></p>
 <p>[try to solve]
-确认问题：ship-one 只本地化了 title/按钮，表单与 How/Formula/FAQ/免责仍回落英文。已按 03 brief 完整重写 zh/es/ja/fr/de/pt/id/ru/ar（含控件标签与问答）；<code>merge:tools</code> + coverage phase=4 通过。并收紧 <code>scripts/dev/omni-s12/ship-one.mjs</code>：非 en 缺 <code>t.ui[lang]</code> 或 how_body 仍等于英文母版时直接失败，禁止再英模灌语。</p>
+Root cause: ship-one only localized title/buttons; form labels and How/Formula/FAQ/disclaimer still fell back to English. Fully rewrote zh/es/ja/fr/de/pt/id/ru/ar per the 03 brief (including control labels and Q&amp;A). <code>merge:tools</code> + coverage phase=4 passed. Tightened <code>scripts/dev/omni-s12/ship-one.mjs</code>: fail immediately when a non-en locale lacks <code>t.ui[lang]</code> or when how_body still equals the English master—no more English-shell locale dumps.</p>
 <p>[actions]</p>
 <ul>
-<li>重写 <code>src/site/i18n/tools/how-to-calculate-bmr-tdee/{zh,es,ja,fr,de,pt,id,ru,ar}.ts</code></li>
-<li>更新 <code>03-locale-briefs.md</code>、<code>scripts/dev/omni-s12/ship-one.mjs</code></li>
-<li><code>npm run merge:tools</code>；<code>coverage:gate --phase=4</code></li>
+<li>Rewrote <code>src/site/i18n/tools/how-to-calculate-bmr-tdee/{zh,es,ja,fr,de,pt,id,ru,ar}.ts</code></li>
+<li>Updated <code>03-locale-briefs.md</code>, <code>scripts/dev/omni-s12/ship-one.mjs</code></li>
+<li><code>npm run merge:tools</code>; <code>coverage:gate --phase=4</code></li>
 </ul>
 </article>
       </section>

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Wire new catalog category `design` with sync categories + ten-locale i18n keys. | Dev Logs</title>
   <meta name="description" content="Wire new catalog category `design` with sync categories + ten-locale i18n keys." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-15-52-add-design-tool-category.html" />
   <meta property="og:title" content="Wire new catalog category `design` with sync categories + ten-locale i18n keys. | Dev Logs" />
   <meta property="og:description" content="Wire new catalog category `design` with sync categories + ten-locale i18n keys." />
@@ -183,7 +183,7 @@ In repo /Users/xuli/vscodeai/onlinefreetools, add a new tool category <code>desi
 <p>Do NOT create the tools themselves. Only category wiring + i18n keys.</p>
 <p>Return list of files changed.</p>
 <p>[try to solve]
-已接入 catalog 分类 <code>design</code>（尚未创建具体工具）：<code>ToolCategory</code> 含 <code>design</code>；<code>TOOL_CATEGORY_ORDER</code> 为 <code>image → design → developer → calculator</code>；锚点 <code>#cat-design</code>；运行时键 <code>tool_category_design</code>；首页键 <code>home_cat_design</code> / <code>_desc</code> / <code>_blurb</code>；JSON-LD 使用 <code>tool_category_design</code>、<code>cat-design</code>、<code>DesignApplication</code>。十语 core 已加 <code>tool_category_design</code>（<code>home_cat_*</code> 仅在构建侧 <code>scripts/site/i18n.mjs</code>）；已 <code>npm run merge:tools</code> 刷新生成的 <code>src/site/i18n/{lang}.ts</code>。</p>
+Wired catalog category <code>design</code> (no concrete tools yet): <code>ToolCategory</code> includes <code>design</code>; <code>TOOL_CATEGORY_ORDER</code> is <code>image → design → developer → calculator</code>; anchor <code>#cat-design</code>; runtime key <code>tool_category_design</code>; home keys <code>home_cat_design</code> / <code>_desc</code> / <code>_blurb</code>; JSON-LD uses <code>tool_category_design</code>, <code>cat-design</code>, <code>DesignApplication</code>. Ten-locale core files gained <code>tool_category_design</code> (<code>home_cat_*</code> live only in build-side <code>scripts/site/i18n.mjs</code>); ran <code>npm run merge:tools</code> to refresh generated <code>src/site/i18n/{lang}.ts</code>.</p>
 <p>Files changed:</p>
 <ul>
 <li>src/site/tools.ts</li>

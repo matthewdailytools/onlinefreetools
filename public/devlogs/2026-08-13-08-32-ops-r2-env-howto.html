@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Document how to obtain R2 S3 config from Cloudflare Dashboard and local wrangler into .env. | Dev Logs</title>
   <meta name="description" content="Document how to obtain R2 S3 config from Cloudflare Dashboard and local wrangler into .env." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-13-08-32-ops-r2-env-howto.html" />
   <meta property="og:title" content="Document how to obtain R2 S3 config from Cloudflare Dashboard and local wrangler into .env. | Dev Logs" />
   <meta property="og:description" content="Document how to obtain R2 S3 config from Cloudflare Dashboard and local wrangler into .env." />
@@ -151,12 +151,12 @@ Summary: Document how to obtain R2 S3 config from Cloudflare Dashboard and local
 <p>[question]
 修改运维文件，并且把配置参数如何从cloudflare和本地获取写入运维文档</p>
 <p>[try to solve]
-已更新运维文档，写明各 R2 S3 参数如何从 Cloudflare / 本机获取并写入 <code>.env</code>：</p>
+Updated ops docs so each R2 S3 parameter explains how to get it from Cloudflare / the local machine and write it into <code>.env</code>:</p>
 <ul>
-<li><code>ops/worker-r2-ops.md</code>：§2 首次开通增加 <code>.env</code>；§3.1 拆成 3.1.1 参数表（CF vs 本机）、3.1.2 Dashboard 创建 R2 API Token 步骤、3.1.3 本机 whoami / <code>.env</code> / dry-run 校验、3.1.4 全量/增量；§10 检查清单同步。</li>
-<li><code>ops/README.md</code> §2 / §6：摘要表 + 指向 §3.1；密钥放 <code>.env</code>。</li>
-<li><code>.env.example</code>：注释标明各键获取路径。</li>
-<li><code>.cursor/rules/cloudflare-workflow.mdc</code>：补充 <code>.env</code> 提示。</li>
+<li><code>ops/worker-r2-ops.md</code>: §2 first-time setup adds <code>.env</code>; §3.1 split into 3.1.1 parameter table (CF vs local), 3.1.2 Dashboard steps to create an R2 API Token, 3.1.3 local whoami / <code>.env</code> / dry-run checks, 3.1.4 full vs delta upload; §10 checklist synced.</li>
+<li><code>ops/README.md</code> §2 / §6: summary table + pointer to §3.1; secrets in <code>.env</code>.</li>
+<li><code>.env.example</code>: comments name where each key comes from.</li>
+<li><code>.cursor/rules/cloudflare-workflow.mdc</code>: <code>.env</code> hint added.</li>
 </ul>
 <p>[actions]</p>
 <ul>

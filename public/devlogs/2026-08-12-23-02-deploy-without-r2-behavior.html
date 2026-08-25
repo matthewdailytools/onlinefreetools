@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Without R2 upload, home/info pages still work via Assets; all /tools/* 404 because tool HTML is gitignored. | Dev Logs</title>
   <meta name="description" content="Without R2 upload, home/info pages still work via Assets; all /tools/* 404 because tool HTML is gitignored." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-12-23-02-deploy-without-r2-behavior.html" />
   <meta property="og:title" content="Without R2 upload, home/info pages still work via Assets; all /tools/* 404 because tool HTML is gitignored. | Dev Logs" />
   <meta property="og:description" content="Without R2 upload, home/info pages still work via Assets; all /tools/* 404 because tool HTML is gitignored." />
@@ -151,15 +151,15 @@ Summary: Without R2 upload, home/info pages still work via Assets; all /tools/* 
 <p>[question]
 如果现在push到git，然后cloudflare 拉取deploy后，如果没有R2，是否访问就会出错？</p>
 <p>[try to solve]
-分两层：</p>
+Two layers:</p>
 <ol>
-<li>若 R2 桶未创建：deploy 常会因 binding 失败，整站上不了。</li>
-<li>若桶在但为空 / 未 upload:r2：Worker 会 R2 miss → ASSETS 回退。首页/about/taxonomy 等仍在 git 的 <code>public/_pages</code>（约 270 页）→ 可访问；工具页 <code>public/_pages/*/tools/</code> 已 gitignore、不进 Assets → <code>/tools/*</code> 会 404。</li>
+<li>If the R2 bucket was never created: deploy often fails on the binding and the whole site never comes up.</li>
+<li>If the bucket exists but is empty / never got <code>upload:r2</code>: Worker R2 miss → ASSETS fallback. Home/about/taxonomy pages still live in git under <code>public/_pages</code> (~270 pages) → reachable. Tool pages under <code>public/_pages/*/tools/</code> are gitignored and never enter Assets → <code>/tools/*</code> returns 404.</li>
 </ol>
-<p>结论：不能只 push 不灌 R2 就当工具站可用；上线须 <code>upload:r2</code>（或改 CI 构建并上传）。</p>
+<p>Conclusion: push alone without seeding R2 does not make the tool site usable. Production needs <code>upload:r2</code> (or CI that builds and uploads).</p>
 <p>[actions]</p>
 <ul>
-<li>（说明，无代码改动）</li>
+<li>Explanation only; no code changes</li>
 </ul>
 </article>
       </section>

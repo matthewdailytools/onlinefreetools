@@ -27,15 +27,15 @@ Mark each 02 implemented; update 03; add README entries zh+en. Do NOT merge:tool
 Return file list when done.
 
 [try to solve]
-已实现三个开发者工具，遵循 `htmlEntityPage.ts` 模式：
+Implemented three developer tools following the `htmlEntityPage.ts` pattern:
 
-**file-hash**：文本/文件 Tab、MD5/SHA-1/256/384/512 多选、Web Crypto SHA + lazy crypto-js MD5、大文件分块进度与 100MB 软警告、进页 `loadSample("hello")` 自动算 SHA-256。
+**file-hash**: text/file tabs; multi-select MD5/SHA-1/256/384/512; Web Crypto SHA + lazy crypto-js MD5; chunked progress for large files with 100MB soft warn; on-load `loadSample("hello")` auto-computes SHA-256.
 
-**uuid-generator**：UUID v4（randomUUID/getRandomValues）与本地 ULID（Crockford Base32）、数量 1–100、Generate/Copy all/Sample、进页自动样例。
+**uuid-generator**: UUID v4 (randomUUID/getRandomValues) and local ULID (Crockford Base32); count 1–100; Generate/Copy all/Sample; auto sample on init.
 
-**password-generator**：长度滑条、字符集勾选、排除易混字符、数量、CSPRNG、可见 disclaimer、进页自动生成。
+**password-generator**: length slider, charset toggles, exclude ambiguous chars, count, CSPRNG, visible disclaimer, auto-generate on init.
 
-每个工具含 catalog 分片、`*Page.ts`、10 语 i18n、`public/icons/tools/*.svg`；`02` 标 `implemented`，`03` 标 `i18n-done`；README 中英各增三条。未运行 `merge:tools`。
+Each tool has catalog shard, `*Page.ts`, 10-locale i18n, `public/icons/tools/*.svg`; `02` marked `implemented`, `03` marked `i18n-done`; README zh+en each gained three entries. Did not run `merge:tools`.
 
 [actions]
 - src/site/tool-catalog.d/file-hash.json, uuid-generator.json, password-generator.json

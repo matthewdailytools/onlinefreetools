@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Remove homepage hero lead and refresh three why cards across ten locales. | Dev Logs</title>
   <meta name="description" content="Remove homepage hero lead and refresh three why cards across ten locales." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-11-00-home-hero-lead-remove-why-cards.html" />
   <meta property="og:title" content="Remove homepage hero lead and refresh three why cards across ten locales. | Dev Logs" />
   <meta property="og:description" content="Remove homepage hero lead and refresh three why cards across ten locales." />
@@ -151,20 +151,20 @@ Summary: Remove homepage hero lead and refresh three why cards across ten locale
 <p>[question]
 首页上的&quot;安静好用的免费工具库：计算器、格式转换与站长辅助。打开即用，无需注册。&quot;删除，然后优化三个优点卡片</p>
 <p>[try to solve]
-已删除首屏 <code>home_hero_lead</code> 段落（十语同步移除该 i18n 键），首屏仅保留品牌 H1 与两个 CTA；微调 hero 标题下边距与按钮动画时序。</p>
-<p>三个优点卡片重写为差异化价值（替换原「浏览器内/免费/十语」）：</p>
+Removed the hero <code>home_hero_lead</code> paragraph (dropped that i18n key in all ten locales). Hero keeps brand H1 and two CTAs only; tweaked title bottom margin and button animation timing.</p>
+<p>Rewrote the three value cards (replacing the old “in-browser / free / ten locales” set):</p>
 <ol>
-<li><strong>本地优先</strong> — 浏览器内处理，需 edge 时事先说明</li>
-<li><strong>打开即用</strong> — 无注册安装，复制结果即可</li>
-<li><strong>过程看得见</strong> — 公式、步骤与边界说明</li>
+<li><strong>Local-first</strong> — process in the browser; call out edge use when needed</li>
+<li><strong>Open and go</strong> — no signup or install; copy results and leave</li>
+<li><strong>Visible process</strong> — formulas, steps, and boundary notes</li>
 </ol>
-<p>十语 <code>scripts/site/i18n.mjs</code> 已更新；<code>npm run build:site</code> 已重建 <code>public/_pages/*/index.html</code>。</p>
+<p>Updated ten-locale <code>scripts/site/i18n.mjs</code>; ran <code>npm run build:site</code> to rebuild <code>public/_pages/*/index.html</code>.</p>
 <p>[actions]</p>
 <ul>
 <li>scripts/site/components/content-home.mjs</li>
 <li>scripts/site/i18n.mjs</li>
 <li>public/styles/site.css</li>
-<li>public/_pages/*/index.html（build 输出）</li>
+<li>public/_pages/*/index.html (build output)</li>
 </ul>
 </article>
       </section>

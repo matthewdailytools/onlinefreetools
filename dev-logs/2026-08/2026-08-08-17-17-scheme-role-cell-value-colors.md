@@ -5,7 +5,7 @@ Summary: Semantic table Role column now tints from each token value.
 表格中，角色的颜色或者背景，按照值进行变化。
 
 [try to solve]
-语义表「角色」列按 token 值着色：text/link/on-action 用前景色+白底；其余（含 rgba soft）用该值作背景，并自动选黑/白字保证可读。
+Semantic table “Role” column now tints from each token value: text/link/on-action use the foreground color on a white background; others (including rgba soft values) use the value as background, with black or white text chosen automatically for readability.
 
 [actions]
 - src/pages/smartWebsiteColorSchemePage.ts

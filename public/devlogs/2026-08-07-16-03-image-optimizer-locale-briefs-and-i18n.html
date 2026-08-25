@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Created image-optimizer locale briefs (briefs-ready) and inserted ten-locale i18n keys after image-compress. | Dev Logs</title>
   <meta name="description" content="Created image-optimizer locale briefs (briefs-ready) and inserted ten-locale i18n keys after image-compress." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-07-16-03-image-optimizer-locale-briefs-and-i18n.html" />
   <meta property="og:title" content="Created image-optimizer locale briefs (briefs-ready) and inserted ten-locale i18n keys after image-compress. | Dev Logs" />
   <meta property="og:description" content="Created image-optimizer locale briefs (briefs-ready) and inserted ten-locale i18n keys after image-compress." />
@@ -158,8 +158,8 @@ Search intent (NOT &quot;advanced codec&quot;): image optimizer / 图片优化; 
 Include shared ban-word checklist (unchecked), per-locale fields, round checkboxes unchecked.</p>
 <h2>2) Provide FULL en + 9 locale TypeScript property blocks with prefix <code>tool_image_optimizer_</code>, preferring direct write into <code>src/site/i18n/{lang}.ts</code> after image-compress / before image-crop.</h2>
 <p>[try to solve]
-已写入 <code>work-tasks/image-optimizer/03-locale-briefs.md</code>（状态 <code>briefs-ready</code>），十语 brief 含检索词、结果向 Title/H1、按钮短词、SERP 摘录；共用禁词表与轮次框未勾选。</p>
-<p>已在十个 <code>src/site/i18n/{lang}.ts</code> 于 <code>tool_image_compress_faq_a6</code> 与 <code>tool_image_crop_*</code> 之间插入完整 <code>tool_image_optimizer_*</code> 键（每语约 64 键）：title/description/article、引擎与编解码 UI、对照/统计/警告错误态、How/Rules/Example/Use cases、FAQ×6（题序按语种变化）。EN title：<code>Image Optimizer — WebP, AVIF &amp; MozJPEG Local</code>；ZH title：<code>图片优化 — 更小体积，可调编码器，本地完成</code>。正文区分 Canvas 压缩页与本页 WASM 优化，未把 jsquash 等包名当卖点。同步更新了 <code>02-tool-info.md</code> 中 Locale briefs 状态勾选。首页 <code>scripts/site/i18n.mjs</code> 短描述尚未加（实现 catalog 时再同步）。</p>
+Wrote <code>work-tasks/image-optimizer/03-locale-briefs.md</code> (status <code>briefs-ready</code>) with ten-locale briefs: search terms, outcome-oriented Title/H1, short button labels, SERP snippets; shared ban-word list and round checkboxes left unchecked.</p>
+<p>Inserted full <code>tool_image_optimizer_*</code> keys in all ten <code>src/site/i18n/{lang}.ts</code> files between <code>tool_image_compress_faq_a6</code> and <code>tool_image_crop_*</code> (~64 keys per locale): title/description/article, engine and codec UI, compare/stats/warning/error states, How/Rules/Example/Use cases, FAQ×6 (question order varies by locale). EN title: <code>Image Optimizer — WebP, AVIF &amp; MozJPEG Local</code>; ZH title covers image optimization with smaller size, tunable encoders, and local completion. Body distinguishes the Canvas compress page from this WASM optimizer and does not sell package names like jsquash. Synced Locale briefs status in <code>02-tool-info.md</code>. Home short descriptions in <code>scripts/site/i18n.mjs</code> not added yet (sync when catalog is implemented).</p>
 <p>[actions]</p>
 <ul>
 <li>Created <code>work-tasks/image-optimizer/03-locale-briefs.md</code></li>

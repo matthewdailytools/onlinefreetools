@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Created addWatermarkPage.ts following imageOverlayPage patterns. | Dev Logs</title>
   <meta name="description" content="Created addWatermarkPage.ts following imageOverlayPage patterns." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-12-43-add-watermark-page-ts.html" />
   <meta property="og:title" content="Created addWatermarkPage.ts following imageOverlayPage patterns. | Dev Logs" />
   <meta property="og:description" content="Created addWatermarkPage.ts following imageOverlayPage patterns." />
@@ -174,10 +174,10 @@ In /Users/xuli/vscodeai/onlinefreetools create <code>src/pages/addWatermarkPage.
 <p>IMPORTANT: properly closed JS strings only. Document key functions with comments.</p>
 <p>Do not edit catalog/index/i18n. Return path when done.</p>
 <p>[try to solve]
-已创建 <code>src/pages/addWatermarkPage.ts</code>，导出 <code>renderAddWatermarkPage</code>，slug 为 <code>add-watermark</code>。</p>
-<p>页面结构对齐 <code>imageOverlayPage.ts</code>：单图 dropzone、水印文本（默认 SAMPLE）、字号/颜色/透明度/旋转、九宫格位置（tl=0.1,0.1 … br=0.9,0.9，手动 x/y 大于 1 时切换像素锚点）、JPEG/WebP/PNG + 质量 + JPEG 背景色、Apply/Download/Sample/Clear、预览 canvas。</p>
-<p>客户端：<code>drawImage</code> 底图后 <code>save</code> → <code>translate</code> 锚点 → <code>rotate</code> → <code>globalAlpha</code> → <code>fillText</code> 居中；软限制 25MB/8192；<code>loadSample()</code> 渐变底 + SAMPLE 斜水印并自动 <code>applyWatermark()</code>，初始化时调用。</p>
-<p>i18n 键前缀 <code>tool_add_watermark_*</code>；IG <code>rules</code> 4 条 + use cases 3；References 含 MDN fillText。未改 catalog/index/i18n。</p>
+Created <code>src/pages/addWatermarkPage.ts</code>, exporting <code>renderAddWatermarkPage</code>, slug <code>add-watermark</code>.</p>
+<p>Page structure matches <code>imageOverlayPage.ts</code>: single-image dropzone, watermark text (default SAMPLE), font size/color/opacity/rotation, nine-grid position (tl=0.1,0.1 … br=0.9,0.9; manual x/y &gt; 1 switches to pixel anchors), JPEG/WebP/PNG + quality + JPEG background color, Apply/Download/Sample/Clear, preview canvas.</p>
+<p>Client: <code>drawImage</code> base, then <code>save</code> → <code>translate</code> anchor → <code>rotate</code> → <code>globalAlpha</code> → centered <code>fillText</code>; soft limits 25MB/8192; <code>loadSample()</code> builds a gradient base + SAMPLE diagonal watermark and auto <code>applyWatermark()</code> on init.</p>
+<p>i18n key prefix <code>tool_add_watermark_*</code>; IG <code>rules</code> 4 + use cases 3; References include MDN fillText. Did not change catalog/index/i18n.</p>
 <p>[actions]</p>
 <ul>
 <li>src/pages/addWatermarkPage.ts (added)</li>

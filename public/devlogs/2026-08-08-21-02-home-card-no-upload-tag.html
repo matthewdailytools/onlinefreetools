@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Added a home tool-card “No upload” badge (linked to privacy#local) and catalog localProcessing flag. | Dev Logs</title>
   <meta name="description" content="Added a home tool-card “No upload” badge (linked to privacy#local) and catalog localProcessing flag." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-21-02-home-card-no-upload-tag.html" />
   <meta property="og:title" content="Added a home tool-card “No upload” badge (linked to privacy#local) and catalog localProcessing flag. | Dev Logs" />
   <meta property="og:description" content="Added a home tool-card “No upload” badge (linked to privacy#local) and catalog localProcessing flag." />
@@ -151,17 +151,14 @@ Summary: Added a home tool-card “No upload” badge (linked to privacy#local) 
 <p>[question]
 放弃前一条要求，改为：工具卡片增加不上传标签。</p>
 <p>[try to solve]
-已放弃「标题强制写不上传服务器」方案。改为首页 Featured / 分类工具卡片在标题下显示短标签「不上传」（十语 <code>home_tag_no_upload</code>），链接到 <code>/{lang}/privacy#local</code>。</p>
-<p>Catalog 增加 <code>localProcessing</code>：纯本地工具为 true；<code>website-headers</code> / <code>ip-address</code> / <code>indexnow</code> 为 false（不挂标签）。规则写入 <code>tool-i18n-localization.mdc</code> 与 <code>tool-creation.mdc</code>；隐私页说明已同步。<code>build:site</code> 后 zh 首页约 108 标签 / 114 卡片（边缘工具各出现两次均无标签）。</p>
+Dropped the “force no-server-upload into titles” approach. Featured / category tool cards on the home page now show a short “No upload” badge under the title (ten-locale <code>home_tag_no_upload</code>), linking to <code>/{lang}/privacy#local</code>.</p>
+<p>Catalog gained <code>localProcessing</code>: true for pure local tools; false for <code>website-headers</code> / <code>ip-address</code> / <code>indexnow</code> (no badge). Rules updated in <code>tool-i18n-localization.mdc</code> and <code>tool-creation.mdc</code>; privacy page copy synced. After <code>build:site</code>, zh home ~108 badges / 114 cards (edge tools appear twice, neither with a badge).</p>
 <p>[actions]</p>
 <ul>
-<li><code>scripts/site/components/content-home.mjs</code>、<code>public/styles/site.css</code>、<code>scripts/site/i18n.mjs</code></li>
-<li><code>src/site/tool-catalog.d/*</code> + <code>tools.ts</code>；rules / copilot / privacy i18n</li>
+<li><code>scripts/site/components/content-home.mjs</code>, <code>public/styles/site.css</code>, <code>scripts/site/i18n.mjs</code></li>
+<li><code>src/site/tool-catalog.d/*</code> + <code>tools.ts</code>; rules / copilot / privacy i18n</li>
 <li><code>npm run merge:tools &amp;&amp; npm run build:site</code></li>
 </ul>
-<hr>
-<p>Date: 2026-08-08 21:06
-Follow-up: Local-first why card explains the No-upload badge (sample tag + ten-locale body copy).</p>
 </article>
       </section>
     </main>

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Applied title/description/search-keyword coverage optimization (steps 2+4) to color-from-image, image-merge, and image-overlay across 10 locales. | Dev Logs</title>
   <meta name="description" content="Applied title/description/search-keyword coverage optimization (steps 2+4) to color-from-image, image-merge, and image-overlay across 10 locales." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-12-11-three-image-tools-title-keyword-coverage.html" />
   <meta property="og:title" content="Applied title/description/search-keyword coverage optimization (steps 2+4) to color-from-image, image-merge, and image-overlay across 10 locales. | Dev Logs" />
   <meta property="og:description" content="Applied title/description/search-keyword coverage optimization (steps 2+4) to color-from-image, image-merge, and image-overlay across 10 locales." />
@@ -155,22 +155,22 @@ Completed retrieval-coverage optimization for all three image tools in 10 locale
 <p><strong>color-from-image</strong></p>
 <ul>
 <li>en: <code>Extract Colors from Image — Local Palette</code> → <code>Extract Colors from Image — Palette &amp; Click Pick</code></li>
-<li>zh: <code>图片主色提取 — 本地色板</code> → <code>图片主色提取 — 色板与点击取色</code></li>
+<li>zh: dominant-color extract title updated from “local palette” to “palette &amp; click pick”</li>
 <li>Descriptions lead with dominant color / palette / click pick; home <code>_desc</code> mentions click pick + palette.</li>
 </ul>
 <p><strong>image-merge</strong></p>
 <ul>
 <li>en: <code>Merge Images — Horizontal, Vertical &amp; Grid, Locally</code> → <code>Merge Images — Combine Photos into One Collage</code></li>
-<li>zh: <code>多图拼接 — 横排、竖排与网格，本地完成</code> → <code>多图拼接 — 合成一张拼图，本地完成</code></li>
-<li>Removed parameter-enum H1; collage/拼图 early in description; IG/FB sizes out of H1.</li>
+<li>zh: multi-image stitch title updated to “combine into one collage, done locally” (removed H/V/grid enum from H1)</li>
+<li>collage phrasing early in description; IG/FB sizes out of H1.</li>
 </ul>
 <p><strong>image-overlay</strong></p>
 <ul>
 <li>en: <code>Overlay Images — Opacity, Position &amp; Blend, Locally</code> → <code>Overlay Images — Put a Logo on a Photo</code></li>
-<li>zh: <code>图层叠加 — 透明度、位置与混合，本地完成</code> → <code>图片叠加 Logo — 透明定位，本地完成</code></li>
+<li>zh: layer-overlay title updated to “overlay logo on image — transparent positioning, local”</li>
 <li>Logo/PNG watermark early; vs merge and text watermark in description; no bare &quot;Watermark&quot; H1.</li>
 </ul>
-<p>Other langs rewritten per locale (es/fr/de/ja/ru/ar/pt/id). Updated <code>03-locale-briefs.md</code> with 1b/2b rows and 「检索覆盖已优化」; synced <code>02-tool-info.md</code> Title (en). <code>npm run lint:seo</code> passes.</p>
+<p>Other langs rewritten per locale (es/fr/de/ja/ru/ar/pt/id). Updated <code>03-locale-briefs.md</code> with 1b/2b rows and “search coverage optimized”; synced <code>02-tool-info.md</code> Title (en). <code>npm run lint:seo</code> passes.</p>
 <p>[actions]</p>
 <ul>
 <li>src/site/i18n/{en,zh,es,ar,pt,id,fr,ja,ru,de}.ts — title + description for three tools</li>

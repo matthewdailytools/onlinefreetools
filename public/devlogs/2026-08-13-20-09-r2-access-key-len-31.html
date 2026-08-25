@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Diagnose upload:r2:changed failure: R2_ACCESS_KEY_ID is 31 chars (must be 32); add early validation. | Dev Logs</title>
   <meta name="description" content="Diagnose upload:r2:changed failure: R2_ACCESS_KEY_ID is 31 chars (must be 32); add early validation." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-13-20-09-r2-access-key-len-31.html" />
   <meta property="og:title" content="Diagnose upload:r2:changed failure: R2_ACCESS_KEY_ID is 31 chars (must be 32); add early validation. | Dev Logs" />
   <meta property="og:description" content="Diagnose upload:r2:changed failure: R2_ACCESS_KEY_ID is 31 chars (must be 32); add early validation." />
@@ -152,7 +152,7 @@ Summary: Diagnose upload:r2:changed failure: R2_ACCESS_KEY_ID is 31 chars (must 
 npm run upload:r2:changed
 … InvalidArgument: Credential access key has length 31, should be 32</p>
 <p>[try to solve]
-不是增量逻辑问题：1510 文件哈希已全部匹配（upload=0），失败发生在刷新 <code>_meta/pages-build.json</code> 时。本机 <code>.env</code> 里 <code>R2_ACCESS_KEY_ID</code> 长度为 <strong>31</strong>（应为 <strong>32</strong>），Account ID=32、Secret=64 正常。请重新从 R2 → Manage API Tokens 复制 Access Key，或新建 token 写入 <code>.env</code> 后再跑。脚本已加凭据长度预检；运维手册 §9 补充该错误排查。</p>
+Not a delta-logic bug: all 1510 file hashes already matched (upload=0); failure happened while refreshing <code>_meta/pages-build.json</code>. Local <code>.env</code> had <code>R2_ACCESS_KEY_ID</code> length <strong>31</strong> (must be <strong>32</strong>); Account ID=32 and Secret=64 were fine. Re-copy the Access Key from R2 → Manage API Tokens, or create a new token into <code>.env</code>, then rerun. Scripts now preflight credential lengths; ops handbook §9 documents this error.</p>
 <p>[actions]</p>
 <ul>
 <li>Updated <code>scripts/lib/r2-s3-client.mjs</code> (<code>assertR2S3CredentialShape</code>)</li>

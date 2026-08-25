@@ -19,7 +19,7 @@ Summary: Fix R2 meta verification after updatedAt incremental upload.
 xuli@Matthew-2023 onlinefreetools %
 
 [try to solve]
-已修复 `verify:r2` 与 `upload:r2` 的远端读取方式不一致问题：`upload:r2` 默认优先使用 R2 S3 凭据写入，而旧的 `verify:r2` 远端读取只走 wrangler。现在 `verify:r2` 有 S3 凭据时也优先用 S3，必要时可用 `--wrangler` 强制走 wrangler。随后已执行 `npm run upload:r2` 刷新远端 `_meta/pages-build.json`，并执行 `npm run verify:r2` 确认 R2 meta、contentHash、fileCount 与 `PAGES_CACHE_VERSION=4` 对齐。
+Fixed a transport mismatch between `verify:r2` and `upload:r2`: `upload:r2` prefers R2 S3 credentials when available, while the old `verify:r2` remote read path used only wrangler. `verify:r2` now also prefers S3 when credentials are configured, with `--wrangler` to force wrangler. Then ran `npm run upload:r2` to refresh remote `_meta/pages-build.json`, and `npm run verify:r2` confirmed R2 meta, contentHash, fileCount, and `PAGES_CACHE_VERSION=4` aligned.
 
 [actions]
 - Updated `scripts/verify-r2-worker-sync.mjs` to prefer S3 for remote verification when S3 credentials are configured.

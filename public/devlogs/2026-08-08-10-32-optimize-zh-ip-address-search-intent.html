@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Optimized zh /tools/ip-address copy for CN search intent (外网/公网, router vs WAN, VPN/NAS use cases). | Dev Logs</title>
-  <meta name="description" content="Optimized zh /tools/ip-address copy for CN search intent (外网/公网, router vs WAN, VPN/NAS use cases)." />
-  <meta name="robots" content="noindex" />
+  <title>Optimized zh /tools/ip-address copy for CN search intent (public/WAN IP, router vs WAN, VPN/NAS use cases). | Dev Logs</title>
+  <meta name="description" content="Optimized zh /tools/ip-address copy for CN search intent (public/WAN IP, router vs WAN, VPN/NAS use cases)." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-10-32-optimize-zh-ip-address-search-intent.html" />
-  <meta property="og:title" content="Optimized zh /tools/ip-address copy for CN search intent (外网/公网, router vs WAN, VPN/NAS use cases). | Dev Logs" />
-  <meta property="og:description" content="Optimized zh /tools/ip-address copy for CN search intent (外网/公网, router vs WAN, VPN/NAS use cases)." />
+  <meta property="og:title" content="Optimized zh /tools/ip-address copy for CN search intent (public/WAN IP, router vs WAN, VPN/NAS use cases). | Dev Logs" />
+  <meta property="og:description" content="Optimized zh /tools/ip-address copy for CN search intent (public/WAN IP, router vs WAN, VPN/NAS use cases)." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-08-10-32-optimize-zh-ip-address-search-intent.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,52 +143,52 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Optimized zh /tools/ip-address copy for CN search intent (外网/公网, router vs WAN, VPN/NAS use cases). | Dev Logs</h1>
+          <h1 class="h4 mb-0">Optimized zh /tools/ip-address copy for CN search intent (public/WAN IP, router vs WAN, VPN/NAS use cases). | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-08 10:32
-Summary: Optimized zh /tools/ip-address copy for CN search intent (外网/公网, router vs WAN, VPN/NAS use cases).</p>
+Summary: Optimized zh /tools/ip-address copy for CN search intent (public/WAN IP, router vs WAN, VPN/NAS use cases).</p>
 <p>[question]
 细分分析用户需求和搜索习惯，优化 <a href="https://onlinefreetools.org/zh/tools/ip-address">https://onlinefreetools.org/zh/tools/ip-address</a></p>
 <p>[try to solve]</p>
-<h3>中文用户分层与检索习惯</h3>
+<h3>Chinese user segments and search habits</h3>
 <table>
 <thead>
 <tr>
-<th>人群</th>
-<th>典型搜法</th>
-<th>真正需求</th>
+<th>Segment</th>
+<th>Typical queries</th>
+<th>Real need</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>普通用户</td>
-<td>我的IP、IP地址查询、查IP</td>
-<td>一键看到当前地址，少术语</td>
+<td>Everyday users</td>
+<td>my IP / IP address lookup</td>
+<td>See current address in one click; few jargon terms</td>
 </tr>
 <tr>
-<td>路由器用户</td>
-<td>为什么和192.168不一样</td>
-<td>理解内网 vs 公网/外网</td>
+<td>Router users</td>
+<td>why different from 192.168</td>
+<td>Understand LAN vs public / WAN</td>
 </tr>
 <tr>
-<td>VPN/代理用户</td>
-<td>外网IP、VPN IP</td>
-<td>确认出口是否切换</td>
+<td>VPN/proxy users</td>
+<td>public/WAN IP, VPN IP</td>
+<td>Confirm egress switched</td>
 </tr>
 <tr>
-<td>联机/运维</td>
-<td>白名单、NAS、远程桌面</td>
-<td>向管理员报可放行的公网 IP</td>
+<td>Gaming/ops</td>
+<td>allowlist, NAS, remote desktop</td>
+<td>Report an allowlist-ready public IP to admins</td>
 </tr>
 </tbody></table>
-<h3>已落地（zh i18n）</h3>
+<h3>Shipped (zh i18n)</h3>
 <ul>
-<li><strong>Title</strong>：<code>IP 地址查询 — 查看我的公网 IP（IPv4/IPv6）</code>（前置高频词「IP 地址查询」）</li>
-<li><strong>Description / 正文</strong>：自然覆盖「外网 IP」口语；192.168 对比；VPN/白名单场景</li>
-<li><strong>FAQ ×5</strong>：路由器 IP 差异 → 公网/外网 → VPN → IPv4/IPv6 → 隐私</li>
-<li><strong>Use cases</strong>：NAS/游戏联机、VPN 验证、云安全组</li>
-<li><strong>UI</strong>：<code>我的公网 IP</code> + <code>刷新查询</code></li>
-<li>同步 <code>scripts/site/i18n.mjs</code> 首页卡片；更新 <code>work-tasks/ip-address/03-locale-briefs.md</code> zh brief</li>
+<li><strong>Title</strong>: IP address lookup — view my public IP (IPv4/IPv6); front-loads the high-frequency lookup phrasing</li>
+<li><strong>Description / body</strong>: natural coverage of spoken “public/WAN IP”; 192.168 contrast; VPN/allowlist scenarios</li>
+<li><strong>FAQ ×5</strong>: router IP mismatch → public/WAN → VPN → IPv4/IPv6 → privacy</li>
+<li><strong>Use cases</strong>: NAS/game join, VPN check, cloud security groups</li>
+<li><strong>UI</strong>: “My public IP” + refresh/lookup button labels in zh</li>
+<li>Synced home card in <code>scripts/site/i18n.mjs</code>; updated <code>work-tasks/ip-address/03-locale-briefs.md</code> zh brief</li>
 </ul>
 <p>[actions]</p>
 <ul>

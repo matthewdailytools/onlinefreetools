@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Align site background, font, buttons, and cards with iLovePDF visual tokens. | Dev Logs</title>
   <meta name="description" content="Align site background, font, buttons, and cards with iLovePDF visual tokens." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-15-24-align-site-styles-to-ilovepdf.html" />
   <meta property="og:title" content="Align site background, font, buttons, and cards with iLovePDF visual tokens. | Dev Logs" />
   <meta property="og:description" content="Align site background, font, buttons, and cards with iLovePDF visual tokens." />
@@ -151,22 +151,22 @@ Summary: Align site background, font, buttons, and cards with iLovePDF visual to
 <p>[question]
 将本站样式按照<a href="https://www.ilovepdf.com/">https://www.ilovepdf.com/</a>  修改背景色，字体，按钮，卡片框</p>
 <p>[try to solve]
-已按 iLovePDF 视觉 token 更新全站样式（克制吸收，不热链对方私有 Graphik 字体）：</p>
+Updated site-wide styles to iLovePDF visual tokens (restrained uptake; no hotlink of their private Graphik font):</p>
 <ul>
-<li>背景：<code>#f5f5fa</code>；正文 <code>#33333b</code> / 次要 <code>#47474f</code>；边框 <code>#d6d6df</code></li>
-<li>主色：朱红 <code>#e5322d</code>（悬停 <code>#bd060a</code>）</li>
-<li>字体：Plus Jakarta Sans（Graphik 开源近似）；布局模板与静态页已切换</li>
-<li>按钮：8px 圆角、实心红/描边红、无阴影（去掉原 pill + 投影）</li>
-<li>卡片：白底、<code>1px #d6d6df</code>、16px 圆角；悬停边框加深至 <code>#292931</code>（无抬升阴影）</li>
-<li>首页 hero 改为浅色居中标题区，与对标站一致</li>
+<li>Background: <code>#f5f5fa</code>; body <code>#33333b</code> / secondary <code>#47474f</code>; border <code>#d6d6df</code></li>
+<li>Primary: vermillion <code>#e5322d</code> (hover <code>#bd060a</code>)</li>
+<li>Font: Plus Jakarta Sans (open-source Graphik-ish stand-in); layout templates and static pages switched</li>
+<li>Buttons: 8px radius, solid red / outline red, no shadow (dropped prior pill + drop shadow)</li>
+<li>Cards: white, <code>1px #d6d6df</code>, 16px radius; hover border darkens to <code>#292931</code> (no lift shadow)</li>
+<li>Home hero became a light centered title band, closer to the reference site</li>
 </ul>
-<p>主要改动：<code>public/styles/site.css</code>、<code>src/pages/site/layout.ts</code>、<code>scripts/site/layout.mjs</code>；并 <code>npm run build:site</code> 刷新静态页。</p>
+<p>Main edits: <code>public/styles/site.css</code>, <code>src/pages/site/layout.ts</code>, <code>scripts/site/layout.mjs</code>; ran <code>npm run build:site</code> to refresh static pages.</p>
 <p>[actions]</p>
 <ul>
 <li>public/styles/site.css</li>
 <li>src/pages/site/layout.ts</li>
 <li>scripts/site/layout.mjs</li>
-<li>public/_pages/**（build:site）</li>
+<li>public/_pages/** (build:site)</li>
 <li>npm run build:site</li>
 </ul>
 </article>

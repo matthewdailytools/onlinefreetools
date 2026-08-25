@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Submitted 420 sitemap URLs via IndexNow with new apex key; Bing and api.indexnow.org both HTTP 200. | Dev Logs</title>
   <meta name="description" content="Submitted 420 sitemap URLs via IndexNow with new apex key; Bing and api.indexnow.org both HTTP 200." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-18-12-indexnow-new-key-submit-ok.html" />
   <meta property="og:title" content="Submitted 420 sitemap URLs via IndexNow with new apex key; Bing and api.indexnow.org both HTTP 200. | Dev Logs" />
   <meta property="og:description" content="Submitted 420 sitemap URLs via IndexNow with new apex key; Bing and api.indexnow.org both HTTP 200." />
@@ -151,19 +151,19 @@ Summary: Submitted 420 sitemap URLs via IndexNow with new apex key; Bing and api
 <p>[question]
 <a href="https://onlinefreetools.org/2f01147b65c24c4194c4f785eacafef9.txt">https://onlinefreetools.org/2f01147b65c24c4194c4f785eacafef9.txt</a> 已更新</p>
 <p>[try to solve]
-新 key 线上可访问（HTTP 200，正文匹配）。仓库侧已是该 key（<code>public/{key}.txt</code> / config / Worker / wrangler）。</p>
-<p>提交结果（host=<code>onlinefreetools.org</code>，keyLocation=该 txt，420 URLs）：</p>
+New key is live (HTTP 200, body matches). Repo already uses that key (<code>public/{key}.txt</code> / config / Worker / wrangler).</p>
+<p>Submit results (host=<code>onlinefreetools.org</code>, keyLocation=that txt, 420 URLs):</p>
 <ol>
 <li><code>https://api.indexnow.org/indexnow</code> → <strong>HTTP 200</strong></li>
-<li><code>https://www.bing.com/indexnow</code> 首次 → 403 <code>SiteVerificationNotCompleted</code>（校验未完成）</li>
-<li>约 30s 后重试 Bing → <strong>HTTP 200 OK（420 URLs）</strong></li>
+<li><code>https://www.bing.com/indexnow</code> first try → 403 <code>SiteVerificationNotCompleted</code></li>
+<li>~30s later retry Bing → <strong>HTTP 200 OK (420 URLs)</strong></li>
 </ol>
-<p>可在 Bing Webmaster → IndexNow 面板核对接收记录。</p>
+<p>Check Bing Webmaster → IndexNow panel for receipt records.</p>
 <p>[actions]</p>
 <ul>
 <li><code>npm run indexnow:check</code></li>
 <li><code>npm run indexnow -- --remote-sitemap --endpoint indexnow --require-live-key</code></li>
-<li><code>npm run indexnow -- --remote-sitemap --endpoint bing --require-live-key</code>（重试成功）</li>
+<li><code>npm run indexnow -- --remote-sitemap --endpoint bing --require-live-key</code> (retry succeeded)</li>
 </ul>
 </article>
       </section>

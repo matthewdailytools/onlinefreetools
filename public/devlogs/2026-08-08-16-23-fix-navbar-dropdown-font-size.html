@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Shrink navbar dropdown-item below nav-link size (Bootstrap 1rem was larger than --fs-nav). | Dev Logs</title>
   <meta name="description" content="Shrink navbar dropdown-item below nav-link size (Bootstrap 1rem was larger than --fs-nav)." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-16-23-fix-navbar-dropdown-font-size.html" />
   <meta property="og:title" content="Shrink navbar dropdown-item below nav-link size (Bootstrap 1rem was larger than --fs-nav). | Dev Logs" />
   <meta property="og:description" content="Shrink navbar dropdown-item below nav-link size (Bootstrap 1rem was larger than --fs-nav)." />
@@ -151,7 +151,7 @@ Summary: Shrink navbar dropdown-item below nav-link size (Bootstrap 1rem was lar
 <p>[question]
 但菜单下拉的字体大小明显比菜单主题还大</p>
 <p>[try to solve]
-Bootstrap <code>.dropdown-item</code> 默认 1rem，顶栏 <code>.nav-link</code> 为 <code>--fs-nav</code>（0.9375rem/15px）。已在 site.css 将 <code>.navbar .dropdown-item</code> 设为 <code>--fs-muted</code>（14px），语言按钮字号对齐 <code>--fs-nav</code>。硬刷新即可。</p>
+Bootstrap <code>.dropdown-item</code> defaults to 1rem while navbar <code>.nav-link</code> uses <code>--fs-nav</code> (0.9375rem/15px). Set <code>.navbar .dropdown-item</code> to <code>--fs-muted</code> (14px) in site.css and aligned the language button size to <code>--fs-nav</code>. Hard-refresh to see the change.</p>
 <p>[actions]</p>
 <ul>
 <li>public/styles/site.css</li>

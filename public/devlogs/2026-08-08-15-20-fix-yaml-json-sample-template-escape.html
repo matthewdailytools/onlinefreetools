@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Fixed yaml-json empty sample: normalizeSample regex inside TS template literal broke the inline script. | Dev Logs</title>
   <meta name="description" content="Fixed yaml-json empty sample: normalizeSample regex inside TS template literal broke the inline script." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-15-20-fix-yaml-json-sample-template-escape.html" />
   <meta property="og:title" content="Fixed yaml-json empty sample: normalizeSample regex inside TS template literal broke the inline script. | Dev Logs" />
   <meta property="og:description" content="Fixed yaml-json empty sample: normalizeSample regex inside TS template literal broke the inline script." />
@@ -151,10 +151,10 @@ Summary: Fixed yaml-json empty sample: normalizeSample regex inside TS template 
 <p>[question]
 <a href="http://localhost:8788/zh/tools/yaml-json">http://localhost:8788/zh/tools/yaml-json</a> 没有样例</p>
 <p>[try to solve]
-原因：在 <code>extraBodyHtml</code> 模板字符串里写了 <code>.replace(/\\n/g, &#39;\n&#39;)</code>，生成到页面时变成非法的跨行字符串，整段脚本语法错误，样例无法填入。已去掉 <code>normalizeSample</code>，直接使用已修好的 i18n 样例。请硬刷新验证。</p>
+Cause: inside the <code>extraBodyHtml</code> template string, <code>.replace(/\\n/g, &#39;\n&#39;)</code> became an illegal cross-line string in the generated page, so the whole script failed to parse and samples never filled. Removed <code>normalizeSample</code> and use the already-fixed i18n samples directly. Hard-refresh to verify.</p>
 <p>[actions]</p>
 <ul>
-<li>Updated <code>src/pages/yamlJsonPage.ts</code>（移除模板内 normalizeSample）</li>
+<li>Updated <code>src/pages/yamlJsonPage.ts</code> (removed in-template normalizeSample)</li>
 </ul>
 </article>
       </section>

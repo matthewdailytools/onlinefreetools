@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Confirmed per-locale `<url>` + full hreflang in one sitemap meets Google; file-split by language optional, not required at current size. | Dev Logs</title>
   <meta name="description" content="Confirmed per-locale `<url>` + full hreflang in one sitemap meets Google; file-split by language optional, not required at current size." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-12-21-31-sitemap-per-locale-compliance.html" />
   <meta property="og:title" content="Confirmed per-locale `<url>` + full hreflang in one sitemap meets Google; file-split by language optional, not required at current size. | Dev Logs" />
   <meta property="og:description" content="Confirmed per-locale `<url>` + full hreflang in one sitemap meets Google; file-split by language optional, not required at current size." />
@@ -151,12 +151,12 @@ Summary: Confirmed per-locale <code>&lt;url&gt;</code> + full hreflang in one si
 <p>[question]
 分语言生成@public/sitemap.xml 是否符合要求</p>
 <p>[try to solve]
-符合——若「分语言」指每个语种各有一条 <code>&lt;url&gt;</code>/<code>&lt;loc&gt;</code>，且每条内挂完整互指 <code>xhtml:link</code>（含自引用与 <code>x-default</code>）。这正是 Google Localized versions 官方 Sitemap 示例；本站 <code>scripts/site/sitemap.mjs</code> → <code>public/sitemap.xml</code>（约 1470 URL / 2MB）已是该形态。</p>
-<p>若指拆成 <code>sitemap-en.xml</code> 等多文件 + sitemap index：协议允许，但当前远低于 5 万 URL / 50MB 上限，<strong>非必需</strong>；拆分时每文件内仍须写全量语种 hreflang，不能只挂本语。</p>
-<p>若指生产只提交某一语筛选版：不符合——会破坏双向互指；筛选仅用于运维旁路（<code>sitemap.filtered.xml</code>），发版以全量 <code>sitemap.xml</code> 为准。</p>
+Compliant — if “per language” means each locale has its own <code>&lt;url&gt;</code>/<code>&lt;loc&gt;</code>, and each entry carries the full reciprocal <code>xhtml:link</code> set (including self-reference and <code>x-default</code>). That matches Google Localized versions Sitemap examples; this site’s <code>scripts/site/sitemap.mjs</code> → <code>public/sitemap.xml</code> (~1470 URLs / 2MB) already uses that shape.</p>
+<p>If it means splitting into <code>sitemap-en.xml</code> etc. plus a sitemap index: allowed by the protocol, but we are far below the 50k URL / 50MB limits, so <strong>not required</strong>; each split file must still list the full locale hreflang set, not only its own language.</p>
+<p>If it means shipping only one locale’s filtered build: <strong>not compliant</strong> — it breaks bidirectional annotations; filtered output is ops-only (<code>sitemap.filtered.xml</code>); release uses full <code>sitemap.xml</code>.</p>
 <p>[actions]</p>
 <ul>
-<li>对照 Google Search Central localized-versions 与 <code>scripts/site/sitemap.mjs</code> / <code>public/sitemap.xml</code></li>
+<li>Cross-checked Google Search Central localized-versions against <code>scripts/site/sitemap.mjs</code> / <code>public/sitemap.xml</code></li>
 </ul>
 </article>
       </section>

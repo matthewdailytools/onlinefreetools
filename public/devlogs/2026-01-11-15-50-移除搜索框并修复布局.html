@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>移除搜索框并修复布局 | Dev Logs</title>
-  <meta name="description" content="移除搜索框并修复布局" />
-  <meta name="robots" content="noindex" />
+  <title>Removed the header search form and fixed layout overlap on navigation and the Markdown tool. | Dev Logs</title>
+  <meta name="description" content="Removed the header search form and fixed layout overlap on navigation and the Markdown tool." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-01-11-15-50-%E7%A7%BB%E9%99%A4%E6%90%9C%E7%B4%A2%E6%A1%86%E5%B9%B6%E4%BF%AE%E5%A4%8D%E5%B8%83%E5%B1%80.html" />
-  <meta property="og:title" content="移除搜索框并修复布局 | Dev Logs" />
-  <meta property="og:description" content="移除搜索框并修复布局" />
+  <meta property="og:title" content="Removed the header search form and fixed layout overlap on navigation and the Markdown tool. | Dev Logs" />
+  <meta property="og:description" content="Removed the header search form and fixed layout overlap on navigation and the Markdown tool." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-01-11-15-50-%E7%A7%BB%E9%99%A4%E6%90%9C%E7%B4%A2%E6%A1%86%E5%B9%B6%E4%BF%AE%E5%A4%8D%E5%B8%83%E5%B1%80.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,37 +143,27 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">移除搜索框并修复布局 | Dev Logs</h1>
+          <h1 class="h4 mb-0">Removed the header search form and fixed layout overlap on navigation and the Markdown tool. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-01-11 15:50
-Summary: 移除搜索框并修复布局</p>
+Summary: Removed the header search form and fixed layout overlap on navigation and the Markdown tool.</p>
 <p>[question]
 删除搜索框和搜索按钮</p>
 <p>[try to solve]
-我已在静态站点构建组件中移除了搜索表单，并修复了导航/侧边栏与 Markdown 工具的布局。变更包括：</p>
+Removed the search form from the static site header and adjusted layout so the fixed navbar and Markdown tool columns no longer collide with content.</p>
 <ul>
-<li>修改 <code>scripts/site/components/header.mjs</code>：移除顶部搜索表单并保留语言切换。</li>
-<li>修改 <code>src/pages/site/layout.ts</code>：为固定顶部导航加入 <code>padding-top: 56px</code>，并调整 <code>.layout</code> 高度及桌面视口下 navbar 的 flex 行为，防止导航内元素换行和 header 遮挡内容。</li>
-<li>修改 <code>src/pages/markdownToHtmlPage.ts</code>：为 Markdown 工具的输入与预览列使用 flex 布局，设置 <code>box-sizing: border-box</code> 与 <code>overflow:auto</code>，避免输入/预览与下方文章内容边框重叠。</li>
-<li>运行 <code>npm run build:site</code> 以更新 <code>public/</code> 输出；构建成功并验证 <code>public/</code> 中不再包含搜索表单（<code>role=&quot;search&quot;</code> 不存在）。</li>
+<li><code>scripts/site/components/header.mjs</code>: dropped the top search form; kept the language switcher.</li>
+<li><code>src/pages/site/layout.ts</code>: added <code>padding-top: 56px</code> for the fixed navbar, tuned <code>.layout</code> height and desktop flex so nav items do not wrap and the header does not cover content.</li>
+<li><code>src/pages/markdownToHtmlPage.ts</code>: used flex columns with <code>box-sizing: border-box</code> and <code>overflow: auto</code> so input/preview no longer overlap the article below.</li>
+<li>Ran <code>npm run build:site</code>; confirmed <code>public/</code> no longer contains a <code>role=&quot;search&quot;</code> form.</li>
 </ul>
 <p>[actions]</p>
 <ul>
-<li>Modified files:<ul>
-<li><code>scripts/site/components/header.mjs</code></li>
-<li><code>src/pages/site/layout.ts</code></li>
-<li><code>src/pages/markdownToHtmlPage.ts</code></li>
-</ul>
-</li>
-<li>Commands run:<ul>
-<li><code>npm run build:site</code></li>
-</ul>
-</li>
-<li>Outputs updated:<ul>
-<li><code>public/</code> 静态文件已重新生成（移除了搜索表单）</li>
-</ul>
-</li>
+<li>Modified: <code>scripts/site/components/header.mjs</code></li>
+<li>Modified: <code>src/pages/site/layout.ts</code></li>
+<li>Modified: <code>src/pages/markdownToHtmlPage.ts</code></li>
+<li>Ran: <code>npm run build:site</code></li>
 </ul>
 </article>
       </section>

@@ -1,5 +1,5 @@
 Date: 2026-08-08 12:05
-Summary: Sync nine locale files for color-from-image click-to-pick keys with en.ts; update work-task interaction spec.
+Summary: Synced nine locale files for color-from-image click-to-pick keys with en.ts and updated the work-task interaction spec.
 
 [question]
 Update `tool_color_from_image_*` keys in these locale files under /Users/xuli/vscodeai/onlinefreetools/src/site/i18n/ to match the NEW English key set in en.ts (search tool_color_from_image_title).
@@ -29,7 +29,7 @@ Run `npm run lint:seo` and fix until green.
 Return list of files changed.
 
 [try to solve]
-已在 9 个语言文件（zh、es、ar、pt、id、fr、ja、ru、de）中补齐并本地化 `tool_color_from_image_*` 键，与 `en.ts` 对齐：新增 `palette_label`、`pick_hint`、`pick_label`、`pick_xy_tpl`、`pick_transparent`、`status_picked`、`rules_item_5`；更新 description/article/preview/how/rules/example/usecases/FAQ q3–q4 及 faq_a5/status_done，突出预览点击 ~7×7 源像素区域平均取色。中文按要求使用「色板」标签与可点击预览说明。`work-tasks/color-from-image/02-tool-info.md` 交互规格已补充点击取色说明。`npm run lint:seo` 通过。
+Filled and localized `tool_color_from_image_*` keys in nine locale files (zh, es, ar, pt, id, fr, ja, ru, de) to match `en.ts`: added `palette_label`, `pick_hint`, `pick_label`, `pick_xy_tpl`, `pick_transparent`, `status_picked`, `rules_item_5`; updated description/article/preview/how/rules/example/usecases/FAQ q3–q4 plus faq_a5/status_done to highlight click-to-pick averaging ~7×7 source pixels on the preview. Chinese uses a short “palette” label and clickable-preview copy as requested. `work-tasks/color-from-image/02-tool-info.md` interaction spec now mentions click region pick. `npm run lint:seo` passed.
 
 [actions]
 - src/site/i18n/zh.ts, es.ts, ar.ts, pt.ts, id.ts, fr.ts, ja.ts, ru.ts, de.ts

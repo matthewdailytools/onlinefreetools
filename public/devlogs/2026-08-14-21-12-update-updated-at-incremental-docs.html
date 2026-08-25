@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Update docs for the updatedAt incremental tool flow. | Dev Logs</title>
   <meta name="description" content="Update docs for the updatedAt incremental tool flow." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-14-21-12-update-updated-at-incremental-docs.html" />
   <meta property="og:title" content="Update docs for the updatedAt incremental tool flow. | Dev Logs" />
   <meta property="og:description" content="Update docs for the updatedAt incremental tool flow." />
@@ -151,7 +151,7 @@ Summary: Update docs for the updatedAt incremental tool flow.</p>
 <p>[question]
 更新文档</p>
 <p>[try to solve]
-已补充相关文档，明确工具页增量生成/上传以 <code>updatedAt</code> 和上次生成/上传时间为依据，并把 <code>npm run tool:touch -- --slug=&lt;slug&gt;</code> 写入日常流程。构建/上传不看最新 push、最新 commit 或未提交 git diff；git 只用于最终提交和 Cloudflare 拉仓库部署 Worker/Assets。</p>
+Updated the related docs so tool-page incremental generation and upload are clearly based on <code>updatedAt</code> versus the last generation/upload timestamps, and so <code>npm run tool:touch -- --slug=&lt;slug&gt;</code> is part of the daily flow. Build and upload do not key off latest push, latest commit, or uncommitted git diff; git is only for final commits and for Cloudflare pulling the repo to deploy Worker/Assets.</p>
 <p>[actions]</p>
 <ul>
 <li>Updated <code>.github/copilot-instructions.md</code> to mention <code>tool:touch</code>.</li>

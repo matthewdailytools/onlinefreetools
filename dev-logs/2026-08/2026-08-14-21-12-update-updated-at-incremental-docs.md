@@ -5,7 +5,7 @@ Summary: Update docs for the updatedAt incremental tool flow.
 更新文档
 
 [try to solve]
-已补充相关文档，明确工具页增量生成/上传以 `updatedAt` 和上次生成/上传时间为依据，并把 `npm run tool:touch -- --slug=<slug>` 写入日常流程。构建/上传不看最新 push、最新 commit 或未提交 git diff；git 只用于最终提交和 Cloudflare 拉仓库部署 Worker/Assets。
+Updated the related docs so tool-page incremental generation and upload are clearly based on `updatedAt` versus the last generation/upload timestamps, and so `npm run tool:touch -- --slug=<slug>` is part of the daily flow. Build and upload do not key off latest push, latest commit, or uncommitted git diff; git is only for final commits and for Cloudflare pulling the repo to deploy Worker/Assets.
 
 [actions]
 - Updated `.github/copilot-instructions.md` to mention `tool:touch`.

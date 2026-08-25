@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Explain home prefers Assets so R2-only upload does not refresh home. | Dev Logs</title>
-  <meta name="description" content="Explain home prefers Assets so R2-only upload does not refresh home." />
-  <meta name="robots" content="noindex" />
+  <title>Home prefers Assets, so an R2-only upload does not refresh the homepage. | Dev Logs</title>
+  <meta name="description" content="Home prefers Assets, so an R2-only upload does not refresh the homepage." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-13-07-42-home-r2-upload-vs-assets.html" />
-  <meta property="og:title" content="Explain home prefers Assets so R2-only upload does not refresh home. | Dev Logs" />
-  <meta property="og:description" content="Explain home prefers Assets so R2-only upload does not refresh home." />
+  <meta property="og:title" content="Home prefers Assets, so an R2-only upload does not refresh the homepage. | Dev Logs" />
+  <meta property="og:description" content="Home prefers Assets, so an R2-only upload does not refresh the homepage." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-13-07-42-home-r2-upload-vs-assets.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,15 +143,15 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Explain home prefers Assets so R2-only upload does not refresh home. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Home prefers Assets, so an R2-only upload does not refresh the homepage. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-13 07:42
-Summary: Explain home prefers Assets so R2-only upload does not refresh home.</p>
+Summary: Home prefers Assets, so an R2-only upload does not refresh the homepage.</p>
 <p>[question]
 如果上传，首页是不是不起作用</p>
 <p>[try to solve]
-是。Worker <code>serveHomeHtml</code> 顺序为 Cache → Assets → R2 兜底。Assets 已有 <code>_pages/{lang}/index.html</code> 时会直接命中，R2 上即使上传了新首页也不会生效（除非 Assets miss 或清/换 Cache）。更新首页须：<code>build:site</code> → commit 十语 <code>index.html</code> → <code>git push</code>（CF 部署 Assets）；可选仍 <code>upload:r2</code> 作兜底。工具等其它页仍只靠 R2，upload 即生效。</p>
+Correct. Worker <code>serveHomeHtml</code> order is Cache → Assets → R2 fallback. When Assets already has <code>_pages/{lang}/index.html</code>, that wins; a newer home on R2 does not apply unless Assets miss or Cache is cleared/versioned. Updating home requires: <code>build:site</code> → commit the ten-language <code>index.html</code> files → <code>git push</code> (CF deploys Assets); optional <code>upload:r2</code> remains fallback. Other pages (tools, etc.) still depend only on R2, so upload takes effect immediately.</p>
 <p>[actions]</p>
 <ul>
 <li>None (explanation only)</li>

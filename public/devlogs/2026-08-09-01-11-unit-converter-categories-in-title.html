@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Put all six unit-converter categories into H1/title across ten locales using slash separators so coverage gates stay green. | Dev Logs</title>
   <meta name="description" content="Put all six unit-converter categories into H1/title across ten locales using slash separators so coverage gates stay green." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-09-01-11-unit-converter-categories-in-title.html" />
   <meta property="og:title" content="Put all six unit-converter categories into H1/title across ten locales using slash separators so coverage gates stay green. | Dev Logs" />
   <meta property="og:description" content="Put all six unit-converter categories into H1/title across ten locales using slash separators so coverage gates stay green." />
@@ -151,7 +151,12 @@ Summary: Put all six unit-converter categories into H1/title across ten locales 
 <p>[question]
 unit-converter 应该把转换的类别直接体现在title上</p>
 <p>[try to solve]
-Updated ten-locale <code>tool_unit_converter_title</code> values so H1 lists Length / Mass / Temperature / Area / Volume / Speed (localized). Used <code>/</code> separators instead of commas/顿号 to avoid the param-enum title heuristic while still surfacing every category. Synced work-tasks 02/03; merge:tools + coverage:gate phase 2/4 + build:site + lint:seo OK. Example en: “Unit Converter — Length / Mass / Temperature / Area / Volume / Speed”; zh: “单位换算器 — 长度 / 质量 / 温度 / 面积 / 体积 / 速度”.</p>
+Updated ten-locale <code>tool_unit_converter_title</code> values so H1 lists Length / Mass / Temperature / Area / Volume / Speed (localized). Used <code>/</code> separators instead of commas or CJK enumeration commas to avoid the param-enum title heuristic while still surfacing every category. Synced work-tasks 02/03; <code>merge:tools</code> + <code>coverage:gate</code> phase 2/4 + <code>build:site</code> + <code>lint:seo</code> OK.</p>
+<p>Examples:</p>
+<ul>
+<li>en: <code>Unit Converter — Length / Mass / Temperature / Area / Volume / Speed</code></li>
+<li>zh: <code>单位换算器 — 长度 / 质量 / 温度 / 面积 / 体积 / 速度</code></li>
+</ul>
 <p>[actions]</p>
 <ul>
 <li>src/site/i18n/tools/unit-converter/*.ts; work-tasks/unit-converter/02|03; merge:tools; build:site</li>

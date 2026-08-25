@@ -1,0 +1,302 @@
+{
+  "archivedAt": "2026-08-26 00:29",
+  "policy": "dev-logs.mdc relevance screen: exclude pure git add/commit/push and meta-log noise from published set",
+  "count": 58,
+  "byReason": {
+    "git-ops-only": 56,
+    "meta-log-noise": 1,
+    "git-ops-filename-thin": 1
+  },
+  "items": [
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-06-12-00-commit-push-seo-rules-and-strategy.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-06-12-00-commit-push-seo-rules-and-strategy.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-06-13-40-commit-push-dev-logs-monthly-archive.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-06-13-40-commit-push-dev-logs-monthly-archive.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-06-17-01-commit-push-text-diff-ops-seo-governance.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-06-17-01-commit-push-text-diff-ops-seo-governance.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-06-17-14-commit-push-readme-rule-text-diff-align.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-06-17-14-commit-push-readme-rule-text-diff-align.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-06-18-25-commit-push-markdown-html-bidirectional.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-06-18-25-commit-push-markdown-html-bidirectional.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-07-06-43-commit-push-indexnow-tools.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-07-06-43-commit-push-indexnow-tools.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-07-06-52-commit-push-indexnow-cli.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-07-06-52-commit-push-indexnow-cli.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-07-07-06-commit-push-and-indexnow-tool-brief.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-07-07-06-commit-push-and-indexnow-tool-brief.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-07-07-19-commit-push-indexnow-tool.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-07-07-19-commit-push-indexnow-tool.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-07-07-47-commit-push-ui-share-tool-logos.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-07-07-47-commit-push-ui-share-tool-logos.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-07-08-26-commit-push-feedback-compose-width.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-07-08-26-commit-push-feedback-compose-width.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-07-14-21-commit-push-image-compress.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-07-14-21-commit-push-image-compress.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-07-17-48-commit-push-image-ux-designer-roadmap.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-07-17-48-commit-push-image-ux-designer-roadmap.md"
+    },
+    {
+      "reason": "meta-log-noise",
+      "from": "dev-logs/2026-08/2026-08-07-18-01-commit-push-leftover-dev-log.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-07-18-01-commit-push-leftover-dev-log.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-08-12-23-commit-three-image-tools.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-08-12-23-commit-three-image-tools.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-08-12-28-commit-image-upload-js-fix.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-08-12-28-commit-image-upload-js-fix.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-08-14-23-commit-and-isolate-new-tools.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-08-14-23-commit-and-isolate-new-tools.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-08-15-12-commit-structure-and-schema-validator.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-08-15-12-commit-structure-and-schema-validator.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-08-15-18-commit-tool-direction-inventory-competitors.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-08-15-18-commit-tool-direction-inventory-competitors.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-08-15-22-commit-i18n-sample-newline-fix.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-08-15-22-commit-i18n-sample-newline-fix.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-08-15-45-commit-push-ilovepdf-perf-layout.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-08-15-45-commit-push-ilovepdf-perf-layout.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-08-16-12-commit-lint-vendor-gate.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-08-16-12-commit-lint-vendor-gate.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-08-16-16-commit-design-wcag-brand-tokens.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-08-16-16-commit-design-wcag-brand-tokens.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-08-16-48-commit-type-scale-color-themes.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-08-16-48-commit-type-scale-color-themes.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-08-17-20-commit-smart-website-color-scheme.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-08-17-20-commit-smart-website-color-scheme.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-08-17-54-commit-push-brand-style-guide.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-08-17-54-commit-push-brand-style-guide.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-08-18-09-commit-push-indexnow-key-rotation.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-08-18-09-commit-push-indexnow-key-rotation.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-08-19-34-commit-tools-18-24-coverage-gates.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-08-19-34-commit-tools-18-24-coverage-gates.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-08-19-55-commit-merge-split-pdf-category.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-08-19-55-commit-merge-split-pdf-category.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-08-21-33-commit-captcha-note.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-08-21-33-commit-captcha-note.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-08-21-33-commit-pdf-domain-home-ux.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-08-21-33-commit-pdf-domain-home-ux.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-08-22-24-commit-domain-lookup-turnstile-rdap.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-08-22-24-commit-domain-lookup-turnstile-rdap.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-08-22-25-push-main.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-08-22-25-push-main.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-08-23-43-commit-remove-footer-devlog.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-08-23-43-commit-remove-footer-devlog.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-09-00-18-commit-compound-interest-home.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-09-00-18-commit-compound-interest-home.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-09-01-13-commit-emi-through-body-fat.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-09-01-13-commit-emi-through-body-fat.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-09-08-42-commit-indexnow-expand-sitemap.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-09-08-42-commit-indexnow-expand-sitemap.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-09-08-50-push-main-indexnow.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-09-08-50-push-main-indexnow.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-09-09-33-commit-omni-s12-tools-14-through-62.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-09-09-33-commit-omni-s12-tools-14-through-62.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-09-10-33-commit-push-taxonomy-listing-pages.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-09-10-33-commit-push-taxonomy-listing-pages.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-09-12-47-commit-push-aconvert-av-ebook-docs.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-09-12-47-commit-push-aconvert-av-ebook-docs.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-09-14-05-commit-push-sitemap-ops-ui.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-09-14-05-commit-push-sitemap-ops-ui.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-09-14-32-commit-sitemap-ui-overwrite-fix.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-09-14-32-commit-sitemap-ui-overwrite-fix.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-09-14-33-push-sitemap-ui-overwrite-fix.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-09-14-33-push-sitemap-ui-overwrite-fix.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-09-17-20-commit-push-link-strategy.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-09-17-20-commit-push-link-strategy.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-09-17-41-commit-push-sitemap-and-coverage-rules.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-09-17-41-commit-push-sitemap-and-coverage-rules.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-11-23-30-commit-sitemap-lastmod.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-11-23-30-commit-sitemap-lastmod.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-11-23-41-commit-seo-audit-remediation.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-11-23-41-commit-seo-audit-remediation.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-12-00-04-commit-ops-ui-start-stop-dev.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-12-00-04-commit-ops-ui-start-stop-dev.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-12-00-06-commit-keyword-to-tool-funnel.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-12-00-06-commit-keyword-to-tool-funnel.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-12-21-38-commit-push-gsc-reviews-robots-api.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-12-21-38-commit-push-gsc-reviews-robots-api.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-13-01-00-commit-push-worker-r2.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-13-01-00-commit-push-worker-r2.md"
+    },
+    {
+      "reason": "git-ops-filename-thin",
+      "from": "dev-logs/2026-08/2026-08-13-01-03-ssh-auth-ok-push-locally.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-13-01-03-ssh-auth-ok-push-locally.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-13-01-15-commit-push-gitignore-pages.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-13-01-15-commit-push-gitignore-pages.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-13-20-33-commit-push-r2-s3-upload.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-13-20-33-commit-push-r2-s3-upload.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-13-20-42-commit-push-indexnow-fix.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-13-20-42-commit-push-indexnow-fix.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-21-00-20-commit-push-long-tail-seo.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-21-00-20-commit-push-long-tail-seo.md"
+    },
+    {
+      "reason": "git-ops-only",
+      "from": "dev-logs/2026-08/2026-08-21-11-58-commit-push-how-item-image-crop.md",
+      "to": "dev-logs/_archive/2026-08/2026-08-21-11-58-commit-push-how-item-image-crop.md"
+    }
+  ]
+}

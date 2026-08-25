@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Added lint:vendor gate plus rules/ops docs so Git-connected Cloudflare deploys cannot omit /vendor. | Dev Logs</title>
   <meta name="description" content="Added lint:vendor gate plus rules/ops docs so Git-connected Cloudflare deploys cannot omit /vendor." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-16-10-prevent-missing-vendor-gate.html" />
   <meta property="og:title" content="Added lint:vendor gate plus rules/ops docs so Git-connected Cloudflare deploys cannot omit /vendor. | Dev Logs" />
   <meta property="og:description" content="Added lint:vendor gate plus rules/ops docs so Git-connected Cloudflare deploys cannot omit /vendor." />
@@ -151,11 +151,11 @@ Summary: Added lint:vendor gate plus rules/ops docs so Git-connected Cloudflare 
 <p>[question]
 避免后续发生相同问题</p>
 <p>[try to solve]
-新增 <code>scripts/validate-vendor-tracked.mjs</code>（<code>npm run lint:vendor</code>）：校验 chrome+图片关键 vendor 落盘、git 跟踪、且 <code>.gitignore</code> 不再忽略 public/vendor 子树；已挂入 <code>predeploy</code>。更新 <code>project-core.mdc</code>、<code>cloudflare-workflow.mdc</code>、<code>ops/README.md</code>、<code>public/vendor/README.md</code>。未 commit（待用户指示）。</p>
+Added <code>scripts/validate-vendor-tracked.mjs</code> (<code>npm run lint:vendor</code>): checks that chrome + image-related vendor files exist on disk, are git-tracked, and that <code>.gitignore</code> no longer ignores the <code>public/vendor</code> subtree; wired into <code>predeploy</code>. Updated <code>project-core.mdc</code>, <code>cloudflare-workflow.mdc</code>, <code>ops/README.md</code>, and <code>public/vendor/README.md</code>. Not committed (awaiting user direction).</p>
 <p>[actions]</p>
 <ul>
 <li>scripts/validate-vendor-tracked.mjs</li>
-<li>package.json（lint:vendor, predeploy）</li>
+<li>package.json (lint:vendor, predeploy)</li>
 <li>.cursor/rules/project-core.mdc, cloudflare-workflow.mdc</li>
 <li>ops/README.md, public/vendor/README.md</li>
 </ul>

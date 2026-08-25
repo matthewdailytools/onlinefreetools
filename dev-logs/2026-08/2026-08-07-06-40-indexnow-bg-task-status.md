@@ -5,7 +5,7 @@ Summary: Background Wrangler/probe shells finished; IndexNow status unchanged—
 Briefly inform the user about the task result and perform any follow-up actions (if needed).
 
 [try to solve]
-后台任务结果：Wrangler 已登录（vscodeai@outlook.com）；探测脚本确认新静态资源未出现在 onlinefreetools.org。IndexNow 代码与提交脚本已就绪，生产 key 仍 404，需先绑定自定义域后再 `npm run indexnow`。
+Background task result: Wrangler is logged in (vscodeai@outlook.com); the probe confirmed new static assets are not yet on onlinefreetools.org. IndexNow code and submit script are ready, but the production key is still 404—bind the custom domain first, then run `npm run indexnow`.
 
 [actions]
-- （无新代码改动）
+- (no new code changes)

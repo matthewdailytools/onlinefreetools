@@ -1,45 +1,79 @@
 ---
-description: 每次 Q&A 写入 dev-logs 的格式与范围
+description: 开发日志写入前须相关筛选；英文正文；对齐 SEO 内容质量；排除纯 git 操作
 alwaysApply: true
 ---
 
 # 开发日志（dev-logs）
 
-每次 Q&A 结束后，在 **`dev-logs/YYYY-MM/`** 新建一条日志（按文件名中的年月分月归档）。
+每次 Q&A 结束后**先做相关梳理与筛选**，通过后才在 **`dev-logs/YYYY-MM/`** 新建一篇英文日志。  
+**不是每轮对话都写日志。** 公开页由 `npm run build:logs` 生成到 `public/devlogs/`（`robots.txt` **允许** `/devlogs/`；页面默认可索引；**不**写入 sitemap；须按 SEO 内容质量撰写，避免薄内容/灌水）。
 
-## 路径与文件名
+## 1. 相关筛选（每轮必做）
+
+写日志前自问并只在「是」时落盘：
+
+| 通过条件（满足 ≥1） | 说明 |
+| --- | --- |
+| 可复用决策 / 规则 / 流程 | 改了 `.cursor/rules`、工作流、运维约定、SEO/i18n 策略等 |
+| 有实质交付 | 新工具、修 bug、功能/架构改动、可复述的实现结论 |
+| 对外有信息增量 | 问题→方案→边界/注意点，后人（或站内读者）能独立看懂 |
+| 明确的排查结论 | 根因 + 修复，不是「试了一下」 |
+
+**一律不写（跳过落盘，聊天照常回答）：**
+
+- **仅** `git add` / `git commit` / `git push`（含「帮我提交并推送」且无其它可记交付）
+- 纯确认、闲聊、重复追问、无结论的半截对话
+- 仅创建/更新本日志文件本身
+- 密钥、凭证、`.env`、个人隐私等敏感内容（即使对话里出现，日志中也不得写入）
+- 无增量的近义复述、空壳「已完成」清单（对齐 Google **people-first / 禁 scaled thin content**）
+
+同一主题多轮迭代：优先**一篇 consolidated 日志**（合并最终结论），避免连发薄篇。
+
+## 2. SEO 内容质量（每篇须符合）
+
+权威：`.cursor/rules/seo-google-policy.mdc`（Helpful Content / spam 政策镜像）。日志页虽不收录，但**每篇仍按可索引内容标准写**，防止站内薄页与灌水习惯。
+
+- **People-first**：写给人看的完整问答与结论，不为凑篇数。
+- **唯一价值**：`Summary` 与正文须有独立信息增量；禁止换皮空壳、堆砌同义词。
+- **标题质量**：`Summary` 用一句英文说明「做了什么 / 结论是什么」（可作页面 description 源）；禁止 `commit-push-…`、`fix-misc` 这类无信息摘要。
+- **结构清晰**：保留下方固定区块；`[try to solve]` 为最终 consolidated 英文回答（可含要点列表与关键路径）。
+- **禁止**：虚假宣传、与事实不符的「已上线/已验证」、操纵排名式关键词堆砌、把工具页 SEO 文案整段复制进日志充字数。
+- **语言**：新日志**全文英文**（`Date` / `Summary` / 各节标题固定英文；`[question]` 可保留用户原问原文，其下解答仍用英文）。
+- **历史**：默认只追加、不改写正文。用户明确要求「梳理历史」时：将未过相关筛选的篇目**移入** `dev-logs/_archive/`（不删除）。用户明确要求「逐篇英文化 / 按篇人工改写」时：对**保留篇**逐篇改写成英文模板（保留原文件名以稳定 `/devlogs/<file>.html`；`[question]` 可留原文；禁止整库无审机翻灌页）。`_archive` / `_curation` 等 `_` 前缀目录不参与 `build:logs`。
+
+## 3. 路径与文件名
 
 - **目录**：`dev-logs/YYYY-MM/`（例如 `dev-logs/2026-08/`）
 - **文件名**：`YYYY-MM-DD-HH-MM-<summary>.md`
-- 本地 24 小时制；summary 用短横线连接（空格→`-`，去掉 `/\\:*?"<>|`）
+- 本地 24 小时制；`<summary>` 英文 kebab-case（空格→`-`，去掉 `/\\:*?"<>|`），反映主题而非 git 动作
 
-## 正文格式（新日志用英文模板）
+## 4. 正文模板（新日志）
 
 ```markdown
 Date: <YYYY-MM-DD HH:MM>
-Summary: <one sentence>
+Summary: <one English sentence: outcome or decision>
 
 [question]
-<用户原问>
+<user's original question; may keep original language>
 
 [try to solve]
-<最终完整回答>
+<final consolidated answer in English>
 
 [actions]
-- <可选：改动的文件或命令，不含创建日志本身>
+- <optional: files or commands changed; never include creating this log file>
 ```
 
-## 范围与可见性
+## 5. 范围与可见性
 
-- **只记**：用户原问 + 最终 consolidated 回答。
-- **不记**：AI 末尾追问/确认句；创建日志文件这一动作。
-- **聊天**：完整 Q&A 仍在对话中展示；`public/devlogs/` 是发布输出，不因此缩短对用户可见内容。
-- **历史**：只追加、不改写；旧日志随归档迁入对应月份目录，公开 URL（`/devlogs/<文件名>.html`）保持不变。
+- **只记**：通过筛选的用户原问 + 最终 consolidated 英文回答（及可选 `[actions]`）。
+- **不记**：AI 末尾追问/确认句；创建日志文件这一动作；纯 git add/commit/push。
+- **聊天**：完整 Q&A 仍在对话中展示；不因是否写日志而缩短对用户可见内容。
+- **公开 URL**：`/devlogs/<文件名>.html` 保持不变；旧日志随归档迁入月份目录。
+
+## 6. 构建
+
+`npm run build:logs` 递归读取各月目录下的 `.md`（跳过 `_` 前缀目录），生成 `public/devlogs/` 索引（按月分组）与各篇 HTML，并删除已无源文件的孤儿 HTML。
 
 ## 示例路径
 
-`dev-logs/2026-08/2026-08-06-12-00-commit-push-seo-rules-and-strategy.md`
-
-## 构建
-
-`npm run build:logs` 递归读取各月目录下的 `.md`，生成 `public/devlogs/` 索引（按月分组）与各篇 HTML。
+`dev-logs/2026-08/2026-08-26-00-21-refine-dev-logs-relevance-and-seo.md`

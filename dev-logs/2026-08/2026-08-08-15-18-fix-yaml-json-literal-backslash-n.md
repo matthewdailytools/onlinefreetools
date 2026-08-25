@@ -5,9 +5,9 @@ Summary: Fixed yaml-json (and other tools) literal \\n samples; corrected locale
 http://localhost:8788/zh/tools/yaml-json 也有类似错误
 
 [try to solve]
-与 JSON Schema 相同：结构层 split/merge 把样例里的换行写成了字面 `\\n`。已修复 `parseLocaleDict` / `escapeSingleQuoted`；批量修正 yaml-json / csv-json / text-diff / markdown-to-html 十语分片；`yamlJsonPage` 载入样例时再规范化；`merge:tools` 后页面样例为真换行。
+Same class of bug as JSON Schema: structure-layer split/merge wrote sample newlines as literal `\\n`. Fixed `parseLocaleDict` / `escapeSingleQuoted`; batch-corrected ten-locale shards for yaml-json / csv-json / text-diff / markdown-to-html; `yamlJsonPage` normalizes again on sample load; after `merge:tools`, page samples use real newlines.
 
-请硬刷新 `/zh/tools/yaml-json` 验证。
+Hard-refresh `/zh/tools/yaml-json` to verify.
 
 [actions]
 - Updated `scripts/tool-modules/lib.mjs`, `src/pages/yamlJsonPage.ts`, i18n tools shards (40 files), ran `merge:tools`

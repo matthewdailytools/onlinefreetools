@@ -1,0 +1,8 @@
+batch: 01
+count: 20
+rewritten: 8
+skipped_already_english: 12
+issues:
+- None blocking.
+- Skipped (already English Summary/[try to solve]): 2026-01-11-12-27-seo-use-apex-domain-no-www.md; 2026-01-11-12-42-devlogs-no-lang-root-folder.md; 2026-01-11-13-56-add-tool-description-rule.md; 2026-01-11-13-56-dynamic-markdown-to-html-route.md; 2026-01-11-14-10-add-tool-articles.md; 2026-01-11-15-08-expand-top10-languages.md; 2026-01-11-fix-lang-redirect.md; 2026-01-12-创建BMI计算工具页面.md (Date normalized to 00:00); 2026-01-15-15-30-apply-omnicalc-ui-styles.md (trimmed trailing assistant offer fluff); 2026-01-15-15-45-fix-sidebar-sticky-click-behavior.md (trimmed trailing assistant offer fluff); 2026-01-15-16-00-添加边际收益多语言支持.md; 2026-01-15-应用翻译建议并更新i18n.md.
+- Rewritten from CJK editorial text: 2026-01-11-15-30-统一语言处理并添加工具路由注册器.md; 2026-01-11-15-50-移除搜索框并修复布局.md; 2026-01-12-构建并发布BMI工具页面.md; 2026-01-12-首页未展示BMI工具.md; 2026-01-12-首页自动收录BMI工具.md; 2026-01-15-创建平方英尺工具.md; 2026-01-15-创建边际收益工具.md; 2026-01-15-翻译修改建议-SEO.md (framing English; preserved multilingual suggested description strings as payload).

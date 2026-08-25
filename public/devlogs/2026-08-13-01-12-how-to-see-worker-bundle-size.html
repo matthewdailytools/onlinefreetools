@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Worker bundle size is not shown clearly online; use wrangler deploy --dry-run. | Dev Logs</title>
   <meta name="description" content="Worker bundle size is not shown clearly online; use wrangler deploy --dry-run." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-13-01-12-how-to-see-worker-bundle-size.html" />
   <meta property="og:title" content="Worker bundle size is not shown clearly online; use wrangler deploy --dry-run. | Dev Logs" />
   <meta property="og:description" content="Worker bundle size is not shown clearly online; use wrangler deploy --dry-run." />
@@ -151,10 +151,10 @@ Summary: Worker bundle size is not shown clearly online; use wrangler deploy --d
 <p>[question]
 怎么在线上看worker的包大小</p>
 <p>[try to solve]
-Dashboard Deployments/Versions 一般不直观展示 gzip 包体积。官方建议本机 <code>npx wrangler deploy --dry-run</code>（或 <code>--outdir</code>）看 <code>Total Upload: … / gzip: …</code>。当前仓库 dry-run 约 414 KiB / gzip 83 KiB。Static Assets 体积与 Worker 脚本限额分开；免费档压缩后脚本上限约 3MB。</p>
+Dashboard Deployments/Versions generally do not surface gzip bundle size clearly. Official guidance is to run locally <code>npx wrangler deploy --dry-run</code> (or <code>--outdir</code>) and read <code>Total Upload: … / gzip: …</code>. Current repo dry-run is about 414 KiB / gzip 83 KiB. Static Assets size is separate from the Worker script limit; free tier compressed script limit is about 3MB.</p>
 <p>[actions]</p>
 <ul>
-<li>（只读说明 + 本地 dry-run）</li>
+<li>Read-only explanation plus local dry-run</li>
 </ul>
 </article>
       </section>

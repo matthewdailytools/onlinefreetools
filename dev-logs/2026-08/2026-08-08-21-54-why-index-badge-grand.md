@@ -5,8 +5,8 @@ Summary: Restyle why-card index badges as larger circular brand medallions.
 01 / 02 / 03 主题色序号徽章 修改样式，目前样式不够大气
 
 [try to solve]
-序号由小 pill 改为约 3–3.5rem 圆形徽章：品牌渐变实心、白字、字重 800，外圈品牌光环与阴影；悬停略加强。已 `build:site`。
+Index badges changed from small pills to ~3–3.5rem circular medallions: solid brand gradient, white type at weight 800, brand halo and shadow; hover slightly strengthens. Ran `build:site`.
 
 [actions]
-- public/styles/site.css（.home-why-index）
+- public/styles/site.css (.home-why-index)
 - npm run build:site

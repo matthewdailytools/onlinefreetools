@@ -5,13 +5,13 @@ Summary: Re-ran title/description/keyword coverage optimization for color-from-i
 根据最新规则重跑3个工具
 
 [try to solve]
-Applied post-draft search-coverage optimization across ten locales + home i18n + locale briefs:
+Applied post-draft search-coverage optimization across ten locales, home i18n, and locale briefs:
 
-- color-from-image → Palette & Click Pick / 色板与点击取色; dominant/picker in description
-- image-merge → Combine into One Collage / 合成一张拼图; removed H/V/grid enum from H1
-- image-overlay → Put a Logo on a Photo / 图片叠加 Logo; removed opacity/position/blend enum from H1
+- color-from-image → Palette & Click Pick (zh: palette and click pick); dominant/picker in description
+- image-merge → Combine into One Collage (zh: combine into one collage); removed H/V/grid enum from H1
+- image-overlay → Put a Logo on a Photo (zh: overlay logo on image); removed opacity/position/blend enum from H1
 
-Updated README one-liners; `03` marked 检索覆盖已优化 with 1b/2b rows; `lint:seo` OK.
+Updated README one-liners; `03` marked “search coverage optimized” with 1b/2b rows; `lint:seo` OK.
 
 [actions]
 - Updated `src/site/i18n/*.ts`, `scripts/site/i18n.mjs`, `README.md`

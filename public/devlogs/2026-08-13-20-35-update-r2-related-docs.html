@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Sync related docs/rules/todos with S3 upload, .env creds, and upload:r2:changed. | Dev Logs</title>
   <meta name="description" content="Sync related docs/rules/todos with S3 upload, .env creds, and upload:r2:changed." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-13-20-35-update-r2-related-docs.html" />
   <meta property="og:title" content="Sync related docs/rules/todos with S3 upload, .env creds, and upload:r2:changed. | Dev Logs" />
   <meta property="og:description" content="Sync related docs/rules/todos with S3 upload, .env creds, and upload:r2:changed." />
@@ -151,14 +151,14 @@ Summary: Sync related docs/rules/todos with S3 upload, .env creds, and upload:r2
 <p>[question]
 更新相关文档</p>
 <p>[try to solve]
-已把 S3 / <code>.env</code> / <code>upload:r2:changed</code> 同步进周边文档与清单（运维 §3.1 此前已有，本次补齐交叉引用）：</p>
+Synced S3 / <code>.env</code> / <code>upload:r2:changed</code> into surrounding docs and checklists (ops §3.1 already existed; this pass added cross-refs):</p>
 <ul>
-<li><code>docs/worker+R2架构/design.md</code>：构建部署命令 + schemaVersion 2 / fileHashes</li>
-<li><code>docs/SEO_PUBLISH_CHECKLIST.md</code>：发版前 R2 项含 <code>.env</code> 与增量可选路径</li>
-<li><code>ops/README.md</code> / <code>ops/worker-r2-ops.md</code>：deploy 流程、版本对齐表含 fileHashes</li>
-<li><code>.cursor/rules/cloudflare-workflow.mdc</code>：前置 <code>.env</code>；本地 seed 用 <code>upload:r2:local</code></li>
-<li><code>scripts/deploy-site.mjs</code>：头注释指向 §3.1</li>
-<li><code>work-todos/2026-08/2026-08-13.md</code>：增量 upload 标为 Done</li>
+<li><code>docs/worker+R2架构/design.md</code>: build/deploy commands + schemaVersion 2 / fileHashes</li>
+<li><code>docs/SEO_PUBLISH_CHECKLIST.md</code>: pre-ship R2 items include <code>.env</code> and optional delta path</li>
+<li><code>ops/README.md</code> / <code>ops/worker-r2-ops.md</code>: deploy flow; version-alignment table includes fileHashes</li>
+<li><code>.cursor/rules/cloudflare-workflow.mdc</code>: require <code>.env</code> first; local seed via <code>upload:r2:local</code></li>
+<li><code>scripts/deploy-site.mjs</code>: header comment points to §3.1</li>
+<li><code>work-todos/2026-08/2026-08-13.md</code>: incremental upload marked Done</li>
 </ul>
 <p>[actions]</p>
 <ul>

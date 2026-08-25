@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Explain slow remote upload:r2 due to per-file wrangler CLI puts. | Dev Logs</title>
   <meta name="description" content="Explain slow remote upload:r2 due to per-file wrangler CLI puts." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-13-00-54-why-upload-r2-slow.html" />
   <meta property="og:title" content="Explain slow remote upload:r2 due to per-file wrangler CLI puts. | Dev Logs" />
   <meta property="og:description" content="Explain slow remote upload:r2 due to per-file wrangler CLI puts." />
@@ -151,10 +151,10 @@ Summary: Explain slow remote upload:r2 due to per-file wrangler CLI puts.</p>
 <p>[question]
 为什么npm run upload:r2这么缓慢</p>
 <p>[try to solve]
-远程约 1510 个 <code>.html.gz</code>（~24MB），每个都 <code>spawn npx wrangler r2 object put</code>（冷启动 CLI + REST 一轮），默认并发 6，墙钟常数分钟到十余分钟。瓶颈是进程开销与 API 次数，不是压缩体积。<code>upload:r2:local</code> 走 binding 直写故快。可临时提高 <code>R2_UPLOAD_CONCURRENCY</code>；长期应改 S3 兼容批量上传或只传变更文件。</p>
+Remote upload covers <del>1510 <code>.html.gz</code> files (</del>24MB). Each file <code>spawn</code>s <code>npx wrangler r2 object put</code> (CLI cold start + one REST round-trip), default concurrency 6 → wall clock from several to 10+ minutes. Bottleneck is process overhead and API call count, not compressed size. <code>upload:r2:local</code> writes via binding and is fast. Temporary: raise <code>R2_UPLOAD_CONCURRENCY</code>. Longer term: S3-compatible bulk upload or upload only changed files.</p>
 <p>[actions]</p>
 <ul>
-<li>（只读说明）</li>
+<li>Read-only explanation</li>
 </ul>
 </article>
       </section>

@@ -1,5 +1,5 @@
 Date: 2026-08-06 19:45
-Summary: Rewrote BMI i18n keys for ar, ja, ru and updated home card copy.
+Summary: Rewrote BMI i18n keys for ar, ja, and ru and updated matching home-card copy.
 
 [question]
 In /Users/xuli/vscodeai/onlinefreetools, update BMI i18n keys for languages: ar, ja, ru.
@@ -20,7 +20,9 @@ Leave 待母语抽查 as a note in your summary (do not edit 03 unless asked).
 Return files changed.
 
 [try to solve]
-已为 ar / ja / ru 按 `03-locale-briefs.md` 独立重写 BMI 全套键（54 项，与 en.ts 对齐），含 how/formula/example/usecases、ref、FAQ q1–q4、disclaimer、中性筛查解读（无「恭喜/تهانينا/おめでとう/Поздравляем」）、`bmi_result_label`、`bmi_invalid_input`、`bmi_unit_group_label`；description 均 ≥120 字符并含本地流程/示例关键词。同步更新 `scripts/site/i18n.mjs` 三语首页卡片 title/desc 及解读文案。`npm run lint:seo` 通过（仅既有 zh 描述偏短警告）。**待母语抽查**：ar / ja / ru 仍建议母语者复核后再清 brief 勾选。
+Independently rewrote the full BMI key set for ar / ja / ru from `03-locale-briefs.md` (54 keys aligned with en.ts), including how/formula/example/usecases, refs, FAQ q1–q4, disclaimer, neutral screening interpretations (no congratulations / تهانينا / おめでとう / Поздравляем), `bmi_result_label`, `bmi_invalid_input`, `bmi_unit_group_label`. Descriptions are ≥120 characters with local process/example keywords. Synced `scripts/site/i18n.mjs` three-locale home-card titles/descs and interpretation strings. `npm run lint:seo` passed (pre-existing short zh description warning only).
+
+**Pending native review**: ar / ja / ru still recommend a native speaker pass before clearing the brief checkboxes.
 
 [actions]
 - src/site/i18n/ar.ts

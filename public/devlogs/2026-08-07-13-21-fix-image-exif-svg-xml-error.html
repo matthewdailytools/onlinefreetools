@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Fix invalid control character in image-exif.svg XML comment | Dev Logs</title>
-  <meta name="description" content="Fix invalid control character in image-exif.svg XML comment" />
-  <meta name="robots" content="noindex" />
+  <title>Fixed an invalid control character in the image-exif.svg XML comment (and the same class of bug in image-compress.svg). | Dev Logs</title>
+  <meta name="description" content="Fixed an invalid control character in the image-exif.svg XML comment (and the same class of bug in image-compress.svg)." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-07-13-21-fix-image-exif-svg-xml-error.html" />
-  <meta property="og:title" content="Fix invalid control character in image-exif.svg XML comment | Dev Logs" />
-  <meta property="og:description" content="Fix invalid control character in image-exif.svg XML comment" />
+  <meta property="og:title" content="Fixed an invalid control character in the image-exif.svg XML comment (and the same class of bug in image-compress.svg). | Dev Logs" />
+  <meta property="og:description" content="Fixed an invalid control character in the image-exif.svg XML comment (and the same class of bug in image-compress.svg)." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-07-13-21-fix-image-exif-svg-xml-error.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,23 +143,23 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Fix invalid control character in image-exif.svg XML comment | Dev Logs</h1>
+          <h1 class="h4 mb-0">Fixed an invalid control character in the image-exif.svg XML comment (and the same class of bug in image-compress.svg). | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-07 13:21
-Summary: Fix invalid control character in image-exif.svg XML comment</p>
+Summary: Fixed an invalid control character in the image-exif.svg XML comment (and the same class of bug in image-compress.svg).</p>
 <p>[question]
 <a href="http://localhost:8787/icons/tools/image-exif.svgThis">http://localhost:8787/icons/tools/image-exif.svgThis</a> page contains the following errors:
 error on line 6 at column 8: xmlParseComment: invalid xmlChar value 7
 Below is a rendering of the page up to the first error</p>
 <p>[try to solve]
-根因是 <code>public/icons/tools/image-exif.svg</code> 第 6 行 XML 注释里混入了非法控制字符 <code>0x07</code>（BEL），XML 解析器无法处理。</p>
-<p>已将损坏注释 <code>&lt;!-- ~/Cpna --&gt;</code> 替换为 <code>&lt;!-- EXIF 元数据条 --&gt;</code>（与同目录 <code>image-format-converter.svg</code> 的中文注释风格一致）。修复后 PowerShell XML 解析通过。</p>
-<p>顺带修复了 <code>image-compress.svg</code> 中同样损坏的注释（含 <code>0x1A</code> 等非法字符），避免同类报错。</p>
+Root cause: line 6 of <code>public/icons/tools/image-exif.svg</code> had an illegal control character <code>0x07</code> (BEL) inside an XML comment, which XML parsers reject.</p>
+<p>Replaced the corrupted comment with a clean EXIF metadata-bar comment (same Chinese comment style as sibling <code>image-format-converter.svg</code>). PowerShell XML parse succeeded afterward.</p>
+<p>Also fixed the same class of corrupted comments in <code>image-compress.svg</code> (illegal chars including <code>0x1A</code>) to prevent the same error.</p>
 <p>[actions]</p>
 <ul>
-<li><code>public/icons/tools/image-exif.svg</code>：修正第 6 行注释</li>
-<li><code>public/icons/tools/image-compress.svg</code>：修正第 3、7 行注释</li>
+<li><code>public/icons/tools/image-exif.svg</code>: fixed line 6 comment</li>
+<li><code>public/icons/tools/image-compress.svg</code>: fixed lines 3 and 7 comments</li>
 </ul>
 </article>
       </section>

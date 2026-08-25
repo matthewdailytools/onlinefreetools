@@ -1,22 +1,22 @@
 Date: 2026-08-06 17:29
-Summary: Initiated HTML↔Markdown as bidirectional enhancement of existing markdown-to-html (no thin new slug).
+Summary: Briefed HTML↔Markdown as a bidirectional enhancement of existing markdown-to-html (no thin new slug).
 
 [question]
 立项“HTML 转Markdown”，可以与目前的Markdown → HTML 合并
 
 [try to solve]
-已立项：在 `work-tasks/markdown-to-html/` 落文档，主方向 A，**增强现有** `/tools/markdown-to-html`，同页 Tab 做 MD→HTML | HTML→MD，**不**新建 `html-to-markdown` 薄页（对齐 B7 / 长尾一带多场景）。
+Opened the brief under `work-tasks/markdown-to-html/`. Primary direction A: **enhance** existing `/tools/markdown-to-html` with same-page tabs for MD→HTML | HTML→MD. **Do not** create a thin `html-to-markdown` slug (aligns with B7 / one page covering multiple long-tail scenes).
 
-| 文件 | 内容 |
+| File | Content |
 |---|---|
-| `00-request.md` | 用户原话与约束 |
-| `01-direction-discussion.md` | 主方向 A；`turndown` + 现有 `marked`/`DOMPurify` |
-| `02-tool-info.md` | 状态 `ready`；IG ≥3；交互规格（Tab、边界、往返损失） |
-| `03-locale-briefs.md` | 十语检索 brief（`briefs-ready`；实现时 ≥3 轮） |
+| `00-request.md` | User request and constraints |
+| `01-direction-discussion.md` | Direction A; `turndown` plus existing `marked` / `DOMPurify` |
+| `02-tool-info.md` | Status `ready`; IG ≥3; interaction spec (tabs, edges, round-trip loss) |
+| `03-locale-briefs.md` | Ten-locale search briefs (`briefs-ready`; ≥3 rounds at implement time) |
 
-技术：CDN/`turndown`（Tier 1）；粘贴本地处理。Title 方向覆盖双向主词。Related 计划：`text-diff`、`website-headers`。
+Tech: CDN / `turndown` (Tier 1); paste stays local. Title direction covers bidirectional head terms. Related planned: `text-diff`, `website-headers`.
 
-下一步：你确认后按 `tool-creation.mdc` 改页面与十语（按 `03` brief 重写，非直译）。
+Next: after confirm, implement per `tool-creation.mdc` and rewrite ten locales from `03` briefs (not literal translate).
 
 [actions]
 - Added: `work-tasks/markdown-to-html/00-request.md`

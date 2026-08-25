@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Rewrote text-diff 10-lang copy for search intent; lint:seo OK; re-audited SEO. | Dev Logs</title>
-  <meta name="description" content="Rewrote text-diff 10-lang copy for search intent; lint:seo OK; re-audited SEO." />
-  <meta name="robots" content="noindex" />
+  <title>Rewrote text-diff ten-locale copy for search intent; lint:seo passed; re-audited SEO quality. | Dev Logs</title>
+  <meta name="description" content="Rewrote text-diff ten-locale copy for search intent; lint:seo passed; re-audited SEO quality." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-06-16-30-rewrite-text-diff-search-intent-i18n.html" />
-  <meta property="og:title" content="Rewrote text-diff 10-lang copy for search intent; lint:seo OK; re-audited SEO. | Dev Logs" />
-  <meta property="og:description" content="Rewrote text-diff 10-lang copy for search intent; lint:seo OK; re-audited SEO." />
+  <meta property="og:title" content="Rewrote text-diff ten-locale copy for search intent; lint:seo passed; re-audited SEO quality. | Dev Logs" />
+  <meta property="og:description" content="Rewrote text-diff ten-locale copy for search intent; lint:seo passed; re-audited SEO quality." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-06-16-30-rewrite-text-diff-search-intent-i18n.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,15 +143,16 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Rewrote text-diff 10-lang copy for search intent; lint:seo OK; re-audited SEO. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Rewrote text-diff ten-locale copy for search intent; lint:seo passed; re-audited SEO quality. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-06 16:30
-Summary: Rewrote text-diff 10-lang copy for search intent; lint:seo OK; re-audited SEO.</p>
+Summary: Rewrote text-diff ten-locale copy for search intent; lint:seo passed; re-audited SEO quality.</p>
 <p>[question]
 按上表直接改一版「检索向」十语文案并再跑 lint:seo，然后再次核查seo</p>
 <p>[try to solve]
-已重写 text-diff 十语 title/description/UI/FAQ/How/Rules/Use cases 与首页卡片：对齐各地检索说法（如 zh「在线文本对比」、es「Comparar textos online」、de「Texte online vergleichen」、ja「テキスト比較」），去掉粒度/hunk/altas y bajas 等机翻腔；<code>npm run lint:seo</code> 通过。复核查：结构与 IG 仍达标；检索向与可读性明显改善；仍建议母语者抽查 ar/ja/ru 细部。</p>
+Rewrote text-diff title, description, UI, FAQ, How, Rules, Use cases, and home-card copy for all ten locales to match local search phrasing (examples: zh online text compare; es Comparar textos online; de Texte online vergleichen; ja text-compare phrasing). Removed machine-translation artifacts (granularity/hunk/altas y bajas style calques).</p>
+<p><code>npm run lint:seo</code> passed. Re-audit: structure and Information Gain still meet the bar; search intent and readability improved clearly. Native spot-checks for ar/ja/ru detail wording remain recommended.</p>
 <p>[actions]</p>
 <ul>
 <li>src/site/i18n/{en,zh,es,ar,pt,id,fr,ja,ru,de}.ts</li>

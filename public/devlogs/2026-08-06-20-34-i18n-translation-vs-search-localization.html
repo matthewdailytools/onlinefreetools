@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Current pages aim for search-habit localization rewrites, not pure translation; quality is mixed and ar/ja/ru lack verified native review. | Dev Logs</title>
   <meta name="description" content="Current pages aim for search-habit localization rewrites, not pure translation; quality is mixed and ar/ja/ru lack verified native review." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-06-20-34-i18n-translation-vs-search-localization.html" />
   <meta property="og:title" content="Current pages aim for search-habit localization rewrites, not pure translation; quality is mixed and ar/ja/ru lack verified native review. | Dev Logs" />
   <meta property="og:description" content="Current pages aim for search-habit localization rewrites, not pure translation; quality is mixed and ar/ja/ru lack verified native review." />
@@ -151,42 +151,42 @@ Summary: Current pages aim for search-habit localization rewrites, not pure tran
 <p>[question]
 现在页面的语言是翻译的，还是根据本地化用户习惯和搜索习惯写的？</p>
 <p>[try to solve]
-<strong>目标上是「按当地检索习惯重写」，不是「英模直译」；实际交付是混合态，且母语真人审尚未验证。</strong></p>
-<h3>规则意图</h3>
-<p><code>tool-i18n-localization.mdc</code> 要求：先 locale brief（检索词 / title 方向）→ 按 brief 独立重写 → ≥3 轮；禁止 <code>Translate to {lang}</code> 与脚本同构灌语。</p>
-<h3>已上线证据（偏本地化）</h3>
+Target: rewrite for local search habits, not English-template literal translation. Delivery is mixed, and live native human review is not yet verified.</p>
+<h3>Rule intent</h3>
+<p><code>tool-i18n-localization.mdc</code> requires: locale brief (query / title direction) → independent rewrite from the brief → ≥3 rounds; forbid <code>Translate to {lang}</code> and scripted isomorphic dumps.</p>
+<h3>Live evidence (leans localization)</h3>
 <ul>
-<li>Title 用当地主词：es/pt/fr 用 IMC；ru 用 ИМТ；zh「公网 IP」「身体质量指数」；ja「体格指数の求め方」「こんなときに」</li>
-<li>部分 FAQ 题序已打乱（如 marginal revenue：es/id/de 与 en 不同）</li>
-<li>存量工具 <code>03</code> 多标 <code>i18n-done</code>，相对早期 <code>.bak</code> 的直译 title 已检索向改写</li>
+<li>Titles use local primary terms: es/pt/fr use IMC; ru uses the Russian BMI acronym; zh uses public-IP and BMI phrasing natural to Chinese search; ja uses natural “how to get body-mass index” / “when to use this” headings</li>
+<li>Some FAQ topic order already differs (e.g. marginal revenue: es/id/de vs en)</li>
+<li>Stock-tool <code>03</code> files mostly mark <code>i18n-done</code>; relative to early <code>.bak</code> literal titles, search-oriented rewrites landed</li>
 </ul>
-<h3>仍像「翻译骨架」之处</h3>
+<h3>Still translation-skeleton-like</h3>
 <ul>
-<li>模块结构十语基本平行（How / Formula / FAQ 主题集合常同套）</li>
-<li>许多 FAQ 仍是同一组问题换语（如 percentage-change）</li>
-<li>ar/ja/ru「待母语抽查」是用户确认清勾，<strong>不是</strong>已完成真人母语 QA</li>
+<li>Module structure stays largely parallel across ten locales (How / Formula / FAQ topic sets often match)</li>
+<li>Many FAQs are the same question set with different wording (e.g. percentage-change)</li>
+<li>ar/ja/ru “pending native review” was cleared by user confirmation — not completed live native QA</li>
 </ul>
-<h3>一句话</h3>
+<h3>One-liners</h3>
 <table>
 <thead>
 <tr>
-<th>问法</th>
-<th>答案</th>
+<th>Framing</th>
+<th>Answer</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>是机翻直出吗？</td>
-<td>按现行流程与抽查，<strong>不是</strong>纯机翻交付目标</td>
+<td>Pure machine translation out?</td>
+<td>Per current process and spot-checks, not the delivery target</td>
 </tr>
 <tr>
-<td>是母语按搜索习惯原创吗？</td>
-<td><strong>意图与 title 层接近</strong>；长文/FAQ 仍有同构痕迹；<strong>未经验证的真人母语审</strong></td>
+<td>Native original for search habits?</td>
+<td>Intent and title layer are close; long copy/FAQ still show isomorphic traces; no verified live native review</td>
 </tr>
 </tbody></table>
-<p>更准确：<strong>检索向 AI 重写（localization-oriented rewrite），不是专业本地化定稿。</strong></p>
+<p>More accurate label: search-oriented AI rewrite (localization-oriented rewrite), not professional localization final copy.</p>
 <p>[actions]</p>
 <ul>
-<li>抽查 <code>src/site/i18n/*</code> title/FAQ/usecases 标题；对照 <code>work-tasks/*/03-locale-briefs.md</code> 与 localization 规则</li>
+<li>Spot-checked <code>src/site/i18n/*</code> title/FAQ/usecases headings; compared <code>work-tasks/*/03-locale-briefs.md</code> and localization rules</li>
 </ul>
 </article>
       </section>

@@ -1,19 +1,19 @@
 Date: 2026-08-07 16:01
-Summary: Expanded site footer with Privacy, Terms, and Contact pages across ten locales.
+Summary: Expanded the site footer with Privacy, Terms, and Contact pages across ten locales.
 
 [question]
 补充常规网站foot及关联页面
 
 [try to solve]
-已按常规工具站补齐页脚与关联页：
+Brought the footer and related pages in line with a typical tools site:
 
-- 页脚现为版权行 + About / Privacy / Terms / Contact（静态站与工具页 SSR 共用同一链接集）
-- 新增十语静态页：`/privacy`、`/terms`、`/contact`（默认语无前缀；其余为 `/{lang}/…`），含 hreflang、sitemap、Worker 路由
-- Privacy 写明本地处理、边缘 Worker 场景、Clarity/百度统计与联系邮箱；Terms 含可接受使用、无担保、健康/财务教育性免责；Contact 使用公开邮箱 `dailyonetools@outlook.com`
-- 信息页文案落在 `scripts/site/i18n-site-pages.mjs`，由 `t()` 合并查询
+- Footer is now copyright + About / Privacy / Terms / Contact (same link set for static site and tool-page SSR)
+- Added ten-locale static pages: `/privacy`, `/terms`, `/contact` (default locale unprefixed; others `/{lang}/…`), with hreflang, sitemap, and Worker routes
+- Privacy covers local processing, edge Worker cases, Clarity/Baidu analytics, and contact email; Terms cover acceptable use, no warranty, and educational health/finance disclaimer; Contact uses public email `dailyonetools@outlook.com`
+- Info-page copy lives in `scripts/site/i18n-site-pages.mjs`, merged via `t()`
 
 [actions]
-- 新增 `scripts/site/pages/{info-page,privacy,terms,contact}.mjs`、`scripts/site/i18n-site-pages.mjs`
-- 更新 `scripts/site/components/footer.mjs`、`src/pages/site/footer.ts`、`scripts/build-site.mjs`、`src/index.ts`、`scripts/site/config.mjs`、`scripts/site/i18n.mjs`、`scripts/site/pages/about.mjs`
-- 十语 `src/site/i18n/*.ts` 增加 footer 短标签键
-- `npm run build:site`（sitemap 含新页）
+- Added `scripts/site/pages/{info-page,privacy,terms,contact}.mjs`, `scripts/site/i18n-site-pages.mjs`
+- Updated `scripts/site/components/footer.mjs`, `src/pages/site/footer.ts`, `scripts/build-site.mjs`, `src/index.ts`, `scripts/site/config.mjs`, `scripts/site/i18n.mjs`, `scripts/site/pages/about.mjs`
+- Ten-locale `src/site/i18n/*.ts` footer short-label keys
+- `npm run build:site` (sitemap includes new pages)

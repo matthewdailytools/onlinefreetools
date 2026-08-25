@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Implement image-format-converter (PNG/JPEG/WebP/AVIF) with ten-locale copy | Dev Logs</title>
-  <meta name="description" content="Implement image-format-converter (PNG/JPEG/WebP/AVIF) with ten-locale copy" />
-  <meta name="robots" content="noindex" />
+  <title>Implemented image-format-converter (PNG/JPEG/WebP/AVIF) with ten-locale copy. | Dev Logs</title>
+  <meta name="description" content="Implemented image-format-converter (PNG/JPEG/WebP/AVIF) with ten-locale copy." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-07-11-38-implement-image-format-converter.html" />
-  <meta property="og:title" content="Implement image-format-converter (PNG/JPEG/WebP/AVIF) with ten-locale copy | Dev Logs" />
-  <meta property="og:description" content="Implement image-format-converter (PNG/JPEG/WebP/AVIF) with ten-locale copy" />
+  <meta property="og:title" content="Implemented image-format-converter (PNG/JPEG/WebP/AVIF) with ten-locale copy. | Dev Logs" />
+  <meta property="og:description" content="Implemented image-format-converter (PNG/JPEG/WebP/AVIF) with ten-locale copy." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-07-11-38-implement-image-format-converter.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,19 +143,19 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Implement image-format-converter (PNG/JPEG/WebP/AVIF) with ten-locale copy | Dev Logs</h1>
+          <h1 class="h4 mb-0">Implemented image-format-converter (PNG/JPEG/WebP/AVIF) with ten-locale copy. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-07 11:38
-Summary: Implement image-format-converter (PNG/JPEG/WebP/AVIF) with ten-locale copy</p>
+Summary: Implemented image-format-converter (PNG/JPEG/WebP/AVIF) with ten-locale copy.</p>
 <p>[question]
 按brief实现</p>
 <p>[try to solve]
-已按 <code>work-tasks/image-format-converter/</code> brief 落地工具页（尚未要求 commit）。</p>
-<p><strong>路径</strong>：<code>/tools/image-format-converter</code><br><strong>技术</strong>：Tier 0 Canvas <code>toBlob</code>；本地不上传；探测 WebP/AVIF 编码；校验 <code>blob.type</code>；JPEG 可选底色；单文件 + 透明样例。</p>
-<p><strong>工程</strong>：<code>imageFormatConverterPage.ts</code>、catalog、<code>index.ts</code> 注册、十语 i18n、首页 <code>i18n.mjs</code>、图标、README；<code>lint:seo</code> 与 <code>build:site</code> 通过。</p>
-<p><strong>IG</strong>：Rules 对照表、透明→JPEG、编码回退检测、隐私 FAQ、Related（占位 markdown-to-html / yaml-json）。<br><code>02</code> → <code>implemented</code>；<code>03</code> → <code>i18n-done</code>（≥3 轮）。</p>
-<p>本地可开 <code>npm run start:dev</code> 访问 <code>/tools/image-format-converter</code>。</p>
+Shipped the tool page from <code>work-tasks/image-format-converter/</code> (commit not requested).</p>
+<p><strong>Path</strong>: <code>/tools/image-format-converter</code><br><strong>Tech</strong>: Tier 0 Canvas <code>toBlob</code>; local-only; detect WebP/AVIF encode support; validate <code>blob.type</code>; optional JPEG background; single file + transparent sample.</p>
+<p><strong>Engineering</strong>: <code>imageFormatConverterPage.ts</code>, catalog, <code>index.ts</code> registration, ten-locale i18n, home <code>i18n.mjs</code>, icon, README; <code>lint:seo</code> and <code>build:site</code> passed.</p>
+<p><strong>IG</strong>: Rules comparison table, transparency→JPEG, encode fallback detection, privacy FAQ, Related (placeholders markdown-to-html / yaml-json).<br><code>02</code> → <code>implemented</code>; <code>03</code> → <code>i18n-done</code> (≥3 rounds).</p>
+<p>Local check: <code>npm run start:dev</code> → <code>/tools/image-format-converter</code>.</p>
 <p>[actions]</p>
 <ul>
 <li>Added src/pages/imageFormatConverterPage.ts</li>

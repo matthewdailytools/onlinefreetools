@@ -5,56 +5,56 @@ Summary: From an SEO traffic view, do not cut language pages now; manage localiz
 从seo流量获取的角度，分析是否需要缩减语言页面
 
 [try to solve]
-结论先说：**从 SEO 流量获取角度，现阶段不需要缩减语言页面。** 真正该管的是「十语质量产能」，不是 URL 数量。
+**Verdict: for SEO traffic acquisition, do not reduce language pages at this stage.** Manage ten-locale quality capacity, not URL count.
 
-### 现状量级（为何爬取预算不是问题）
+### Scale (why crawl budget is not the issue)
 
-| 项 | 现状 |
+| Item | Current |
 |---|---|
-| 语言 | 10：en / zh / es / ar / pt / id / fr / ja / ru / de |
-| 已上线工具 | 10 |
-| sitemap URL | ~120 |
-| 技术 | hreflang + x-default + 按语 sitemap 已齐 |
+| Languages | 10: en / zh / es / ar / pt / id / fr / ja / ru / de |
+| Live tools | 10 |
+| Sitemap URLs | ~120 |
+| Tech | hreflang + x-default + per-locale sitemaps in place |
 
-Google 自身口径：站点 URL **远低于数千**、新页能较快被抓时，**不必为 crawl budget 缩语**。你们大约是「工具数 × 10」，即便做到 50 个工具也才 ~500–600 URL，仍属小站。
+Google’s guidance: when a site is well below thousands of URLs and new pages are crawled reasonably fast, **do not cut languages for crawl budget**. Scale is roughly tools × 10; even at 50 tools (~500–600 URLs) this remains a small site.
 
-### 缩语会不会带来更多流量？通常不会
+### Cutting languages usually does not increase traffic
 
-1. **少语 ≠ 英文更强** — 删掉 `/es`、`/id` 等不会把该语种需求自动并到 en；多数用户用母语搜，没有对应页就丢印象份额。
-2. **hreflang 是资产，不是负担** — 正确互指时各语版是同一工具的语言变体；缩语等于主动放弃市场入口。
-3. **本站差异化写在策略里** — 「多语言 + 教育式说明」相对竞品数量铺量是优势；十语是 IG 维度之一，前提是检索向重写而非机翻。
-4. **真正伤流量的是劣质多语，不是多语数量** — spam / scaled content 针对无实质编辑的 AI/机翻批量页；十语各自有 brief、有增量则是扩面。
+1. **Fewer locales ≠ stronger English** — removing `/es`, `/id`, etc. does not fold that demand into en; most users search in their own language and you lose impression share without a matching page.
+2. **hreflang is an asset** — correct cross-links treat locales as variants of the same tool; cutting locales abandons market entry points.
+3. **Strategy differentiation** — multilingual + educational copy vs competitor volume is an advantage; ten locales are an IG dimension only when each is a search-oriented rewrite, not machine translation.
+4. **What hurts traffic is poor multilingual quality, not locale count** — spam / scaled-content rules target AI/MT pages without real editing; briefs with real incremental value expand coverage safely.
 
-### 何时才该「缩」或「缓」
+### When to shrink or pause
 
-| 信号 | 建议 |
+| Signal | Action |
 |---|---|
-| GSC：某语长期几乎无展示/点击，且抽查像英模换皮 | 先修质量或暂停该语新工具，勿先删已索引 URL |
-| 产能：每工具十语 ≥3 轮做不完，拖慢上新 | 分层运营，不是立刻砍站内语 |
-| 明确 Manual Action / 大面积「已抓取未编入索引」且集中在弱语 | 对该语 noindex 或下线，并修文案后再开 |
-| 工具涨到数千 URL 且抓取滞后 | 再谈 crawl 优先级；当前远未到 |
+| GSC: a locale has near-zero impressions/clicks long-term and spot-checks look like English skin swaps | Fix quality or pause new tools for that locale first; do not delete already-indexed URLs first |
+| Capacity: ten locales × ≥3 rounds cannot keep up with shipping | Tier operations; do not immediately cut live locales |
+| Clear Manual Action or widespread “crawled – not indexed” concentrated on weak locales | noindex or take offline that locale, fix copy, then reopen |
+| Tools grow to thousands of URLs with crawl lag | Then discuss crawl priority; not there yet |
 
-没有 GSC 分语种数据前，凭感觉砍语是丢流量，不是优化。
+Without GSC per-locale data, cutting languages by gut feel loses traffic rather than optimizing it.
 
-### 推荐做法（保流量、控风险）
+### Recommended approach (keep traffic, control risk)
 
-**不要缩减已上线语种清单**；改成产能分层：
+**Do not shrink the live locale list.** Use capacity tiers:
 
-| 层级 | 语言（示例） | 做法 |
+| Tier | Languages (examples) | Practice |
 |---|---|---|
-| L1 必满 | en、zh | 每工具完整 IG + 本地化，优先索引与内链 |
-| L2 高潜力 | es、pt、id、de、fr | 按 brief 独立重写；可与 L1 同发或晚 1 批 |
-| L3 母语成本高 | ar、ja、ru | 可「工具上线后 1–2 周内补齐」；未达标前勿标 i18n-done；禁止英回退冒充 |
+| L1 must-complete | en, zh | Full IG + localization per tool; prioritize indexing and internal links |
+| L2 high potential | es, pt, id, de, fr | Independent rewrites from briefs; ship with L1 or one batch later |
+| L3 high native cost | ar, ja, ru | May catch up within 1–2 weeks after tool launch; do not mark `i18n-done` until met; never fake English fallback as native |
 
-未写好的语种：宁可不进 sitemap / 暂不发布该语 URL。已发布的语种：优先重写提质，避免随意 404/砍 hreflang。
+For locales not ready: prefer omitting from sitemap / not publishing that locale URL. For already published locales: rewrite for quality rather than casual 404s or hreflang cuts.
 
-### 一句话裁决
+### One-line rulings
 
-| 问题 | 答案 |
+| Question | Answer |
 |---|---|
-| 为 SEO 流量要不要砍语言页？ | **现在不要砍。** |
-| 十语是负担还是杠杆？ | 质量达标时是杠杆；机翻同构时是风险。 |
-| 瓶颈在哪？ | **本地化产能与 ar/ja/ru 母语质量**，不是 ~120 URL 的爬取预算。 |
+| Cut language pages for SEO traffic? | **Not now.** |
+| Are ten locales burden or leverage? | Leverage when quality holds; risk when MT-isomorphic. |
+| Where is the bottleneck? | **Localization capacity and ar/ja/ru native quality**, not crawl budget on ~120 URLs. |
 
 [actions]
-- 对照 sitemap（~120 URL）、`DEFAULT_LANGS` 十语、策略 §5.5 与 Google crawl-budget / multilingual 口径做分析；未改代码
+- Analyzed against sitemap (~120 URLs), `DEFAULT_LANGS` ten locales, strategy §5.5, and Google crawl-budget / multilingual guidance; no code changes

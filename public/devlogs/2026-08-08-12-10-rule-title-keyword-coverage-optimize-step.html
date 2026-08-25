@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Added a mandatory post-draft step to optimize title, description, and search-keyword coverage in localization/tool-creation rules. | Dev Logs</title>
-  <meta name="description" content="Added a mandatory post-draft step to optimize title, description, and search-keyword coverage in localization/tool-creation rules." />
-  <meta name="robots" content="noindex" />
+  <title>Added a mandatory post-draft step to optimize title, description, and search-keyword coverage in localization and tool-creation rules. | Dev Logs</title>
+  <meta name="description" content="Added a mandatory post-draft step to optimize title, description, and search-keyword coverage in localization and tool-creation rules." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-12-10-rule-title-keyword-coverage-optimize-step.html" />
-  <meta property="og:title" content="Added a mandatory post-draft step to optimize title, description, and search-keyword coverage in localization/tool-creation rules. | Dev Logs" />
-  <meta property="og:description" content="Added a mandatory post-draft step to optimize title, description, and search-keyword coverage in localization/tool-creation rules." />
+  <meta property="og:title" content="Added a mandatory post-draft step to optimize title, description, and search-keyword coverage in localization and tool-creation rules. | Dev Logs" />
+  <meta property="og:description" content="Added a mandatory post-draft step to optimize title, description, and search-keyword coverage in localization and tool-creation rules." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-08-12-10-rule-title-keyword-coverage-optimize-step.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,15 +143,15 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Added a mandatory post-draft step to optimize title, description, and search-keyword coverage in localization/tool-creation rules. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Added a mandatory post-draft step to optimize title, description, and search-keyword coverage in localization and tool-creation rules. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-08 12:10
-Summary: Added a mandatory post-draft step to optimize title, description, and search-keyword coverage in localization/tool-creation rules.</p>
+Summary: Added a mandatory post-draft step to optimize title, description, and search-keyword coverage in localization and tool-creation rules.</p>
 <p>[question]
 在规则中增加步骤：工具的title，描述和搜索关键词覆盖优化，放在目前这些元素生成之后，进行优化步骤</p>
 <p>[try to solve]
-Inserted into <code>tool-i18n-localization.mdc</code> 稳妥常态 workflow as step 2 (after母版 draft) and step 4 (after per-locale rewrite), with a dedicated checklist section (H1 main intent, no parameter-enum subtitles, secondary intents in desc/FAQ, intent boundaries, home short title). Synced <code>tool-creation.mdc</code> checklist, <code>work-tasks-tool-brief.mdc</code>, <code>_template/03-locale-briefs.md</code> (勾选 + 多轮行 1b/2b), <code>tool-i18n-seo.mdc</code>, and <code>.github/copilot-instructions.md</code>. Skipping this step is now a red-line / 不合规 item before <code>i18n-done</code>.</p>
+Inserted into <code>tool-i18n-localization.mdc</code> the steady-state workflow as step 2 (after master draft) and step 4 (after per-locale rewrite), with a dedicated checklist section (H1 main intent, no parameter-enum subtitles, secondary intents in desc/FAQ, intent boundaries, home short title). Synced <code>tool-creation.mdc</code> checklist, <code>work-tasks-tool-brief.mdc</code>, <code>_template/03-locale-briefs.md</code> (checkboxes + multi-round rows 1b/2b), <code>tool-i18n-seo.mdc</code>, and <code>.github/copilot-instructions.md</code>. Skipping this step is now a red-line / non-compliant item before <code>i18n-done</code>.</p>
 <p>[actions]</p>
 <ul>
 <li>Updated <code>.cursor/rules/tool-i18n-localization.mdc</code></li>

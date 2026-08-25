@@ -5,7 +5,7 @@ Summary: Replace git-based tool incrementality with per-tool updatedAt markers.
 这个会有问题，过于依赖git，修改为，每个工具增加一个最新更新时间，每次编辑修改时候修改为最新时间，这个时间也可以展示在页面上。以此时间作为标记和上次最后生成和上传时间作对比。
 
 [try to solve]
-已将工具页构建/上传增量判断从 git 差异切换为每个工具 catalog shard 的 `updatedAt`。编辑工具时更新 `src/site/tool-catalog.d/{slug}.json` 的 `updatedAt`；构建对比本地 `.cache/tool-build-state.json` 的 `toolGeneratedAt`，上传对比 `_meta/pages-build.json` 的 `toolUploadedAt`。git commit、push、未提交修改都不再决定工具页是否进入增量生成/上传。
+Switched tool-page build/upload incrementality from git diffs to each tool catalog shard's `updatedAt`. When editing a tool, bump `updatedAt` in `src/site/tool-catalog.d/{slug}.json`. Build compares against local `.cache/tool-build-state.json` `toolGeneratedAt`; upload compares against `_meta/pages-build.json` `toolUploadedAt`. Git commit, push, and uncommitted changes no longer decide whether a tool page enters incremental generation or upload.
 
 [actions]
 - Added `updatedAt` to all tool catalog shards and merged generated catalog/i18n outputs.

@@ -5,7 +5,7 @@ Summary: Implemented compress-pdf tool with pdf.js rasterize + pdf-lib JPEG rebu
 Implement the full `compress-pdf` tool in /Users/xuli/vscodeai/onlinefreetools following existing patterns from organize-pdf and merge-pdf.
 
 [try to solve]
-已完成 `compress-pdf` 工具全量实现：pdf.js 栅格化 + pdf-lib JPEG 重嵌、Med/Low 两档、进页样例自动压缩、十语 i18n、catalog/icon/page。`coverage:gate --phase=all`、`lint:seo`、`lint:tool-isolation` 均通过；清单 #53 与 README 已更新。
+Finished full `compress-pdf` implementation: pdf.js rasterize + pdf-lib JPEG re-embed, Med/Low quality tiers, on-enter sample auto-compress, ten-locale i18n, catalog/icon/page. `coverage:gate --phase=all`, `lint:seo`, and `lint:tool-isolation` all passed; inventory #53 and README updated.
 
 [actions]
 - src/site/tool-catalog.d/compress-pdf.json

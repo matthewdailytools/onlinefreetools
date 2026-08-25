@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Remove All Tools nav item; make card titles clickable; open tool links in new tabs. | Dev Logs</title>
   <meta name="description" content="Remove All Tools nav item; make card titles clickable; open tool links in new tabs." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-21-21-home-nav-card-title-new-tab.html" />
   <meta property="og:title" content="Remove All Tools nav item; make card titles clickable; open tool links in new tabs. | Dev Logs" />
   <meta property="og:description" content="Remove All Tools nav item; make card titles clickable; open tool links in new tabs." />
@@ -151,14 +151,14 @@ Summary: Remove All Tools nav item; make card titles clickable; open tool links 
 <p>[question]
 菜单的“全部工具”删除，卡片标题也需要可以点击，所有的打开都是新开一个标签页</p>
 <p>[try to solve]
-首页顶栏去掉「全部工具」锚点项。工具卡片标题与「打开」按钮均可点，且与菜单分类下拉、不上传标签、工具页相关工具链接一律 <code>target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;</code>；页内锚点（推荐/浏览全部）仍本页跳转。已 <code>build:site</code>。</p>
+Removed the home top-nav “All tools” anchor. Tool-card titles and Open buttons are clickable; those plus category dropdowns, No-upload badges, and related-tool links on tool pages use <code>target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;</code>. In-page anchors (Featured / Browse all) still navigate in-page. Ran <code>build:site</code>.</p>
 <p>[actions]</p>
 <ul>
 <li>scripts/site/nav.mjs</li>
 <li>scripts/site/components/header.mjs</li>
 <li>scripts/site/components/content-home.mjs</li>
-<li>public/styles/site.css（.home-card-title-link）</li>
-<li>src/pages/site/nav.ts、header.ts、toolContent.ts</li>
+<li>public/styles/site.css (.home-card-title-link)</li>
+<li>src/pages/site/nav.ts, header.ts, toolContent.ts</li>
 <li>npm run build:site</li>
 </ul>
 </article>

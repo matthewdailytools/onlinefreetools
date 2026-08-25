@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>~/.cf-turnstile-token present but Cloudflare API returns Invalid API Token (401); asked user to recreate token. | Dev Logs</title>
   <meta name="description" content="~/.cf-turnstile-token present but Cloudflare API returns Invalid API Token (401); asked user to recreate token." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-21-50-turnstile-token-invalid.html" />
   <meta property="og:title" content="~/.cf-turnstile-token present but Cloudflare API returns Invalid API Token (401); asked user to recreate token. | Dev Logs" />
   <meta property="og:description" content="~/.cf-turnstile-token present but Cloudflare API returns Invalid API Token (401); asked user to recreate token." />
@@ -151,10 +151,10 @@ Summary: ~/.cf-turnstile-token present but Cloudflare API returns Invalid API To
 <p>[question]
 2已经完成</p>
 <p>[try to solve]
-已从 <code>~/.cf-turnstile-token</code> 读取 token（未回显）。<code>https://api.cloudflare.com/client/v4/user/tokens/verify</code> 返回 401 Invalid API Token。<code>wrangler whoami --json</code> 在本机 wrangler 4.58 也不支持。需用户重建含 Turnstile:Edit + Workers Scripts:Edit 的 Custom token 并覆盖写入该文件后再继续。</p>
+Read token from <code>~/.cf-turnstile-token</code> (not echoed). <code>https://api.cloudflare.com/client/v4/user/tokens/verify</code> returned 401 Invalid API Token. Local <code>wrangler whoami --json</code> is also unsupported on wrangler 4.58. User must recreate a Custom token with Turnstile:Edit + Workers Scripts:Edit, overwrite that file, then continue.</p>
 <p>[actions]</p>
 <ul>
-<li>读取 <code>~/.cf-turnstile-token</code>；verify API → 401</li>
+<li>Read <code>~/.cf-turnstile-token</code>; verify API → 401</li>
 </ul>
 </article>
       </section>

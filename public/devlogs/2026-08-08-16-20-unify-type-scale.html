@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Unified site type scale tokens and home card classes; rebuilt static pages. | Dev Logs</title>
   <meta name="description" content="Unified site type scale tokens and home card classes; rebuilt static pages." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-16-20-unify-type-scale.html" />
   <meta property="og:title" content="Unified site type scale tokens and home card classes; rebuilt static pages. | Dev Logs" />
   <meta property="og:description" content="Unified site type scale tokens and home card classes; rebuilt static pages." />
@@ -151,7 +151,7 @@ Summary: Unified site type scale tokens and home card classes; rebuilt static pa
 <p>[question]
 统一修改</p>
 <p>[try to solve]
-在 <code>site.css</code> 增加 <code>--fs-*</code> 阶梯（Hero→区块→分类→副标/推荐卡→卡片→正文→次要），首页/顶栏/侧栏/工具页 H1·lead·区块 H2 改用 token；去掉卡片 Bootstrap <code>h5/h6/small</code>，改为 <code>home-card-title</code> / <code>--featured</code> 与 <code>home-card-desc</code> / <code>--sm</code>；修正无效字重 750/650；已 <code>build:site</code>。刷新 <a href="http://localhost:8788/zh/%EF%BC%88%E6%88%96">http://localhost:8788/zh/（或</a> <code>/_pages/zh/index.html</code>）查看。</p>
+Added a <code>--fs-*</code> ladder in <code>site.css</code> (Hero → section → category → subtitle/featured card → card → body → muted). Home/header/sidebar/tool H1·lead·section H2 now use tokens. Removed Bootstrap <code>h5/h6/small</code> on cards in favor of <code>home-card-title</code> / <code>--featured</code> and <code>home-card-desc</code> / <code>--sm</code>. Fixed invalid font-weights 750/650. Ran <code>build:site</code>. Refresh <a href="http://localhost:8788/zh/">http://localhost:8788/zh/</a> (or <code>/_pages/zh/index.html</code>) to review.</p>
 <p>[actions]</p>
 <ul>
 <li>public/styles/site.css</li>

@@ -5,62 +5,62 @@ Summary: Consolidated follow-up plans from SEO tracker, GSC todo, tool inventory
 查看后续计划
 
 [try to solve]
-## 一、SEO 运营（P0，近期）
+## 1. SEO operations (P0, near term)
 
-来源：`docs/seo/reviews/2026-08-12/03-todo.md`、`02-next-strategy.md`
+Sources: `docs/seo/reviews/2026-08-12/03-todo.md`, `02-next-strategy.md`
 
-**索引与规范（未完成）**
-- 重新导出 GSC **28 天**效果报告（目标窗口 2026-08-26～09-09）
-- `robots.txt` 补充 `Disallow: /api/`
-- 确认 `/devlogs/*` 线上 `noindex`
-- 信息页尾斜杠统一 canonical + 301（fr/ja/pt/zh 的 privacy/terms/contact）
-- 展开 GSC：软 404 ×1、4xx ×1、规范冲突 ×1 的具体 URL 并修复
-- 确认上轮部署：`build:site`、sitemap 提交、IndexNow incremental
-- 可选：`npm run verify:r2:live`（CF 部署成功后）
+**Indexing & hygiene (open)**
+- Re-export GSC **28-day** performance report (target window 2026-08-26–09-09)
+- Add `Disallow: /api/` to `robots.txt`
+- Confirm `/devlogs/*` is `noindex` in production
+- Unify trailing-slash canonical + 301 for info pages (fr/ja/pt/zh privacy/terms/contact)
+- Expand GSC issues: soft 404 ×1, 4xx ×1, canonical conflict ×1 — list concrete URLs and fix
+- Confirm last deploy: `build:site`, sitemap submit, IndexNow incremental
+- Optional: `npm run verify:r2:live` (after a successful CF deploy)
 
-**CTR / meta（已完成 2026-08-20，待观察）**
-- ru image-merge、en schema-jsonld-generator、es how-to-calculate-volume、en how-to-calculate-npv 已改 title/description 并部署 IndexNow
-- 下轮用 ≥28 天数据对比 CTR、点击、es sqft、ru image-merge
+**CTR / meta (done 2026-08-20; watch)**
+- ru image-merge, en schema-jsonld-generator, es how-to-calculate-volume, en how-to-calculate-npv: title/description updated and IndexNow’d
+- Next round: compare CTR, clicks, es sqft, ru image-merge with ≥28 days of data
 
-**观察期（P1，2–4 周）**
-- ja 限界収入、es/pt ROI：长窗口有展示再下结论
-- 图片簇多语未收录 → 按 slug 开 IG，禁止扫 110 URL
-- de IP 排名仍 >70 → 德语文案 FAQ/Example 增补
-- 图片类俄语/阿语查询 → absorb 进既有工具，不新建 doorway
+**Observation window (P1, 2–4 weeks)**
+- ja marginal-revenue and es/pt ROI: wait for longer-window impressions before concluding
+- Multilingual image-cluster pages not indexed → open IG per slug; do not sweep 110 URLs
+- de IP still ranked >70 → enrich German FAQ/Example copy
+- Image-related Russian/Arabic queries → absorb into existing tools; no new doorway pages
 
 ---
 
-## 二、关键词漏斗（持续节奏）
+## 2. Keyword funnel (ongoing cadence)
 
-来源：`docs/seo/keyword-to-tool-tracker.md`、`2026-08-20-long-tail-gap-strategy.md`
+Sources: `docs/seo/keyword-to-tool-tracker.md`, `2026-08-20-long-tail-gap-strategy.md`
 
-**战略**：回避大词硬刚；主攻 `long_gap` / `locale_gap`；周建工具 ≤1–2；优先 absorb。
+**Strategy:** avoid head-term wars; focus on `long_gap` / `locale_gap`; ship ≤1–2 new tools per week; prefer absorb.
 
-**待办**
-- [ ] 周审：更新 `keyword-daily-pool.tsv` 各行 `verdict` + `competition_tier`
-- [ ] 词根→AdWords：每周 3–5 slug，用 tool-keyword-roots 种子进 Keyword Planner，长尾入池并 absorb
-- [ ] 池中 `absorb` 排期改既有 title/FAQ
-- [ ] 里程碑 M2：连续 ≥2 周抽词/周审可复盘
-- [ ] 里程碑 M7：首轮 Keyword Planner ≥3 slug 长尾入池并完成 absorb
+**Todos**
+- [ ] Weekly review: update each `keyword-daily-pool.tsv` row’s `verdict` + `competition_tier`
+- [ ] Roots → AdWords: 3–5 slugs/week; seed Keyword Planner from tool-keyword-roots; pool long-tails and absorb
+- [ ] Schedule `absorb` rows to update existing titles/FAQs
+- [ ] Milestone M2: ≥2 consecutive weeks of draw/review that can be retrospected
+- [ ] Milestone M7: first Keyword Planner pass with ≥3 slugs of long-tails pooled and absorbed
 
-**build 候选（仅词池，未建 work-tasks）**
+**Build candidates (pool only; no work-tasks yet)**
 - `safe-paste-cleaner`
 - `magnet-pull-force-calculator`
 
-**新鲜度管道（每周扫）**
-1. GSC 新查询 → 优先 absorb
-2. Trends + Planner 上升长尾
-3. 社交/HN/产品发布新动词组 → 只保留浏览器可做工具意图
+**Freshness pipeline (weekly scan)**
+1. New GSC queries → prefer absorb
+2. Rising long-tails from Trends + Planner
+3. Social/HN/product-launch verb groups → keep only browser-doable tool intents
 
 ---
 
-## 三、工具开发 backlog
+## 3. Tool development backlog
 
-来源：`docs/2026-08-08-tool-inventory-table.md`（123 已上线 / 13 P0 未开始）
+Source: `docs/2026-08-08-tool-inventory-table.md` (123 live / 13 P0 not started)
 
-**P0 未开始速查**
+**P0 not started (quick list)**
 - `create-zip-file`
-- `unzip-file`（catalog 已有 slug，清单表可能滞后）
+- `unzip-file` (slug already in catalog; inventory table may lag)
 - `safe-paste-cleaner`
 - `ai-token-counter`
 - `chat-export-converter`
@@ -70,25 +70,25 @@ Summary: Consolidated follow-up plans from SEO tracker, GSC todo, tool inventory
 - `favicon-and-pwa-icon-pack`
 - `social-share-image-pack`
 
-**work-tasks 状态 `ready` 且已在 catalog 的 SEO 工具簇**（brief 已定稿，工程/多语可按需推进）：csv-json、pdf-watermark、open-graph-preview、on-page-seo-checker、pdf-page-to-image-sizes、robots-txt-generator、utm-builder、hreflang-generator、unlock-pdf、pdf-to-markdown、archive-extractor、schema-jsonld-generator、sitemap-xml-generator、meta-serp-preview、meta-tag-generator。
+**work-tasks status `ready` and already in catalog (SEO tool cluster)** (briefs locked; engineering/i18n can proceed as capacity allows): csv-json, pdf-watermark, open-graph-preview, on-page-seo-checker, pdf-page-to-image-sizes, robots-txt-generator, utm-builder, hreflang-generator, unlock-pdf, pdf-to-markdown, archive-extractor, schema-jsonld-generator, sitemap-xml-generator, meta-serp-preview, meta-tag-generator.
 
-**待 POC**：`local-bg-removal`、`ocr-to-text`、`audio-wav-mp3`
-
----
-
-## 四、近期新增策略方向
-
-- **Bing AI Summary**（2026-08-21）：不追 GIMP 类软件教程意图；进攻「在线/浏览器裁剪」等本站即答案查询；结构清晰 + IndexNow；不以「进摘要」为 KPI
-- **新词组发现**（2026-08-21）：多源信号 → 去重 → 可交互任务 + SERP 缺口 → 进 funnel，禁止见新词就建页
+**Pending POC:** `local-bg-removal`, `ocr-to-text`, `audio-wav-mp3`
 
 ---
 
-## 五、建议优先级（本周）
+## 4. Recent strategy directions
 
-1. **SEO P0 收尾**：robots / 尾斜杠 / devlogs noindex / GSC 异常 URL
-2. **准备 28 天 GSC 导出**（8 月底～9 月初）
-3. **关键词周审 + 3–5 slug AdWords 长尾**
-4. **工具**：按产能从 P0 未开始中选 1 个（如 create-zip-file / safe-paste-cleaner）或推进 ready 簇 i18n
+- **Bing AI Summary** (2026-08-21): do not chase GIMP-style desktop-tutorial intent; attack “online/browser crop” queries this site can answer; clear structure + IndexNow; do not use “appear in summary” as a KPI
+- **New phrase discovery** (2026-08-21): multi-source signals → dedupe → interactive task + SERP gap → enter funnel; never create a page for every new phrase
+
+---
+
+## 5. Suggested priority (this week)
+
+1. **Finish SEO P0:** robots / trailing slash / devlogs noindex / GSC anomaly URLs
+2. **Prepare 28-day GSC export** (late August–early September)
+3. **Keyword weekly review + 3–5 slug AdWords long-tails**
+4. **Tools:** pick one from P0 not-started (e.g. create-zip-file / safe-paste-cleaner) or advance the ready-cluster i18n, by capacity
 
 [actions]
-- 汇总 `docs/seo/`、`work-tasks/`、工具清单与近期 dev-logs（未改业务代码）
+- Consolidated from `docs/seo/`, `work-tasks/`, tool inventory, and recent dev-logs (no product code changes)

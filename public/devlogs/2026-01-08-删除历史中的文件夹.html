@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>删除提交历史中的文件夹 | Dev Logs</title>
-  <meta name="description" content="删除提交历史中的文件夹" />
-  <meta name="robots" content="noindex" />
+  <title>Explained how to remove a committed folder from Git history (or only from future commits). | Dev Logs</title>
+  <meta name="description" content="Explained how to remove a committed folder from Git history (or only from future commits)." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-01-08-%E5%88%A0%E9%99%A4%E5%8E%86%E5%8F%B2%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9.html" />
-  <meta property="og:title" content="删除提交历史中的文件夹 | Dev Logs" />
-  <meta property="og:description" content="删除提交历史中的文件夹" />
+  <meta property="og:title" content="Explained how to remove a committed folder from Git history (or only from future commits). | Dev Logs" />
+  <meta property="og:description" content="Explained how to remove a committed folder from Git history (or only from future commits)." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-01-08-%E5%88%A0%E9%99%A4%E5%8E%86%E5%8F%B2%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,59 +143,59 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">删除提交历史中的文件夹 | Dev Logs</h1>
+          <h1 class="h4 mb-0">Explained how to remove a committed folder from Git history (or only from future commits). | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>日期：2026年1月8日
-摘要：删除提交历史中的文件夹</p>
-<p>【question】
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-01-08 00:00
+Summary: Explained how to remove a committed folder from Git history (or only from future commits).</p>
+<p>[question]
 如何删除已经提交github的文件夹以及提交仓库中的历史</p>
-<p>【try to solve】
-下面给出删除已提交文件夹及其历史记录的常用做法：</p>
-<h3>1) 如果只想在后续版本移除（保留历史）：</h3>
+<p>[try to solve]
+Common approaches to remove a committed folder and (optionally) its history:</p>
+<h3>1) Remove going forward only (keep history)</h3>
 <ul>
-<li>本地删除文件夹：<code>rm -rf &lt;folder&gt;</code></li>
-<li>提交并推送：<code>git add -A &amp;&amp; git commit -m &quot;remove &lt;folder&gt;&quot; &amp;&amp; git push</code></li>
-<li>历史仍保留；仅当前与未来版本不再包含该目录。</li>
+<li>Delete locally: <code>rm -rf &lt;folder&gt;</code></li>
+<li>Commit and push: <code>git add -A &amp;&amp; git commit -m &quot;remove &lt;folder&gt;&quot; &amp;&amp; git push</code></li>
+<li>History still contains the folder; only current and future trees omit it.</li>
 </ul>
-<h3>2) 彻底从历史抹除（重写历史，需强推，团队先沟通）：</h3>
+<h3>2) Purge from history (rewrites history; force-push; coordinate with the team)</h3>
 <ul>
-<li>备份仓库，确认无未推送工作。</li>
-<li>安装 <code>git filter-repo</code>（推荐替代 BFG）：</li>
+<li>Back up the repo; ensure no unpushed work you care about.</li>
+<li>Install <code>git filter-repo</code> (preferred over BFG):</li>
 </ul>
 <pre><code class="language-zsh">brew install git-filter-repo   # macOS
 </code></pre>
 <ul>
-<li>重写历史移除目录（示例移除 secret-folder）：</li>
+<li>Rewrite history to drop a path (example: <code>secret-folder</code>):</li>
 </ul>
 <pre><code class="language-zsh">git filter-repo --path secret-folder --invert-paths
 </code></pre>
 <ul>
-<li>多个目录可重复 <code>--path &lt;dir&gt;</code>。</li>
-<li>若需清理大文件，可用 <code>--strip-blobs-bigger-than 10M</code>。</li>
-<li>检查结果：<code>git log --stat | head</code>、确认目标目录消失。</li>
-<li>强制推送覆盖远端：</li>
+<li>Repeat <code>--path &lt;dir&gt;</code> for multiple directories.</li>
+<li>For large blobs: <code>--strip-blobs-bigger-than 10M</code>.</li>
+<li>Verify: <code>git log --stat | head</code>; confirm the path is gone.</li>
+<li>Force-push:</li>
 </ul>
 <pre><code class="language-zsh">git push --force --all
 git push --force --tags
 </code></pre>
 <ul>
-<li>如是公共仓库，提醒协作者重新克隆或 <code>git fetch --all &amp;&amp; git reset --hard origin/main</code>（会丢本地改动）。</li>
+<li>For public repos, tell collaborators to re-clone or <code>git fetch --all &amp;&amp; git reset --hard origin/main</code> (discards local changes).</li>
 </ul>
-<h3>3) GitHub UI 删除 release/attachements（可选）</h3>
+<h3>3) GitHub releases / attachments (optional)</h3>
 <ul>
-<li>若有 release 附带大文件，需到 GitHub Release 页面手动移除后再重推。</li>
+<li>Remove large release assets in the GitHub Releases UI before re-pushing if needed.</li>
 </ul>
-<h3>4) 防止再次提交</h3>
+<h3>4) Prevent re-commit</h3>
 <ul>
-<li>将目录加入 <code>.gitignore</code>：在 <code>.gitignore</code> 追加 <code>&lt;folder&gt;/</code>，再提交。</li>
+<li>Add <code>&lt;folder&gt;/</code> to <code>.gitignore</code> and commit.</li>
 </ul>
-<p>风险与注意事项</p>
+<p>Risks</p>
 <ul>
-<li>重写历史会改变提交哈希，已克隆的开发者必须重新同步；在多人协作时务必事先沟通。</li>
-<li>公共仓库如曾被 fork，fork 中的历史仍会保留；无法完全抹除公开副本。</li>
+<li>History rewrite changes commit hashes; clones must re-sync; communicate first in shared repos.</li>
+<li>Forks of a public repo may still keep the old history; you cannot erase all public copies.</li>
 </ul>
-<p>如需我直接在当前仓库清理指定目录，请告知目录名；若需仅删除最新版本不改历史，也请说明。</p>
+<p>Name the folder if you want it cleaned in this repo, or say if you only want a forward-only delete.</p>
 </article>
       </section>
     </main>

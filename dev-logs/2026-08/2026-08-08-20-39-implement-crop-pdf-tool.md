@@ -23,15 +23,15 @@ npm run merge:tools && npm run coverage:gate -- --slug=crop-pdf --phase=all && n
 No plan/commit. 中文 brief. Chinese comments.
 
 [try to solve]
-已完成 `crop-pdf`（清单 #61）全量实现，所有门禁通过。
+Shipped full `crop-pdf` (inventory #61); all gates passed.
 
-**页面**：`src/pages/cropPdfPage.ts` — pdf-lib@1.17.1 CDN；上/右/下/左 +「四边相同」同步；每页 `setCropBox` + `setMediaBox`；裁后宽/高 ≤10pt 拒绝；进页 `loadSample()` 单页 420×300、四边 36pt → `cropped.pdf` + 尺寸统计；25MB 警告、加密/损坏错误。
+**Page**: `src/pages/cropPdfPage.ts` — pdf-lib@1.17.1 CDN; top/right/bottom/left plus “same on all sides” sync; per page `setCropBox` + `setMediaBox`; reject cropped width/height ≤10pt; on-enter `loadSample()` one page 420×300, 36pt all sides → `cropped.pdf` + size stats; 25 MB warn; encrypted/corrupt errors.
 
-**工程**：catalog 分片、SVG 图标、10 语 i18n 独立重写；related `organize-pdf` / `rotate-pdf`；FAQ 明确非像素拖拽编辑器。
+**Engineering**: catalog shard, SVG icon, 10 independently rewritten locales; related `organize-pdf` / `rotate-pdf`; FAQ states this is not a pixel drag editor.
 
-**文档**：`02`→implemented、`03`→i18n-done（1b/2b 行）；inventory #61 已上线；README 中英各一条。
+**Docs**: `02` → implemented; `03` → i18n-done (1b/2b); inventory #61 shipped; README EN/ZH lines.
 
-**门禁**：`merge:tools`、`coverage:gate --phase=all`、`build:site`、`lint:seo`、`lint:tool-isolation` 全部 OK。
+**Gates**: `merge:tools`, `coverage:gate --phase=all`, `build:site`, `lint:seo`, `lint:tool-isolation` all OK.
 
 [actions]
 - src/site/tool-catalog.d/crop-pdf.json

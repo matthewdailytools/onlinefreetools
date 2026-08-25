@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Match iLovePDF Workflows tag button style and fluid horizontal page padding. | Dev Logs</title>
   <meta name="description" content="Match iLovePDF Workflows tag button style and fluid horizontal page padding." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-15-32-ilovepdf-tag-btn-and-fluid-page-pad.html" />
   <meta property="og:title" content="Match iLovePDF Workflows tag button style and fluid horizontal page padding. | Dev Logs" />
   <meta property="og:description" content="Match iLovePDF Workflows tag button style and fluid horizontal page padding." />
@@ -152,8 +152,8 @@ Summary: Match iLovePDF Workflows tag button style and fluid horizontal page pad
 按钮采用<a href="https://www.ilovepdf.com/">https://www.ilovepdf.com/</a> 上Workflows按钮的样式，另外页面正文body左右margin应该跟随屏幕改变</p>
 <p>[try to solve]</p>
 <ol>
-<li>主/描边按钮对齐首页筛选 <code>.tag</code>（Workflows）：白底、<code>1px #d6d6df</code>、全圆角 pill、字重 500；悬停边框 <code>#292931</code>；按下填充 <code>#292931</code> 白字。</li>
-<li>正文水平边距用 <code>--page-pad-x</code>：默认 48px，≤1440px 为 32px，≤960px 为 24px（对齐 iLovePDF <code>.tools</code>）；工具页 <code>#content</code> 与首页 hero/main 共用。</li>
+<li>Primary/outline buttons align with home filter <code>.tag</code> (Workflows): white background, <code>1px #d6d6df</code>, full-round pill, font-weight 500; hover border <code>#292931</code>; pressed fill <code>#292931</code> with white text.</li>
+<li>Horizontal page padding uses <code>--page-pad-x</code>: default 48px, ≤1440px → 32px, ≤960px → 24px (aligned with iLovePDF <code>.tools</code>); shared by tool-page <code>#content</code> and home hero/main.</li>
 </ol>
 <p>[actions]</p>
 <ul>

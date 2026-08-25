@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Make home tool cards use fluid auto-fill columns by viewport width. | Dev Logs</title>
   <meta name="description" content="Make home tool cards use fluid auto-fill columns by viewport width." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-15-42-home-card-grid-autofill.html" />
   <meta property="og:title" content="Make home tool cards use fluid auto-fill columns by viewport width. | Dev Logs" />
   <meta property="og:description" content="Make home tool cards use fluid auto-fill columns by viewport width." />
@@ -151,7 +151,7 @@ Summary: Make home tool cards use fluid auto-fill columns by viewport width.</p>
 <p>[question]
 首页每排卡片应该随屏幕变化而变化</p>
 <p>[try to solve]
-首页 Featured / 分类工具卡片改为 CSS Grid <code>auto-fill</code> + <code>minmax</code>（<code>.home-card-grid</code>），列数随可用宽度自动增减；<code>--home-max</code> 提到 1370px。替换原先固定断点的 Bootstrap <code>row-cols-*</code>。</p>
+Home Featured / category tool cards now use CSS Grid <code>auto-fill</code> + <code>minmax</code> (<code>.home-card-grid</code>) so column count grows/shrinks with available width; <code>--home-max</code> raised to 1370px. Replaced fixed-breakpoint Bootstrap <code>row-cols-*</code>.</p>
 <p>[actions]</p>
 <ul>
 <li>public/styles/site.css</li>

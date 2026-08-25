@@ -15,9 +15,9 @@ Include shared ban-word checklist (unchecked), per-locale fields, round checkbox
 ## 2) Provide FULL en + 9 locale TypeScript property blocks with prefix `tool_image_optimizer_`, preferring direct write into `src/site/i18n/{lang}.ts` after image-compress / before image-crop.
 
 [try to solve]
-已写入 `work-tasks/image-optimizer/03-locale-briefs.md`（状态 `briefs-ready`），十语 brief 含检索词、结果向 Title/H1、按钮短词、SERP 摘录；共用禁词表与轮次框未勾选。
+Wrote `work-tasks/image-optimizer/03-locale-briefs.md` (status `briefs-ready`) with ten-locale briefs: search terms, outcome-oriented Title/H1, short button labels, SERP snippets; shared ban-word list and round checkboxes left unchecked.
 
-已在十个 `src/site/i18n/{lang}.ts` 于 `tool_image_compress_faq_a6` 与 `tool_image_crop_*` 之间插入完整 `tool_image_optimizer_*` 键（每语约 64 键）：title/description/article、引擎与编解码 UI、对照/统计/警告错误态、How/Rules/Example/Use cases、FAQ×6（题序按语种变化）。EN title：`Image Optimizer — WebP, AVIF & MozJPEG Local`；ZH title：`图片优化 — 更小体积，可调编码器，本地完成`。正文区分 Canvas 压缩页与本页 WASM 优化，未把 jsquash 等包名当卖点。同步更新了 `02-tool-info.md` 中 Locale briefs 状态勾选。首页 `scripts/site/i18n.mjs` 短描述尚未加（实现 catalog 时再同步）。
+Inserted full `tool_image_optimizer_*` keys in all ten `src/site/i18n/{lang}.ts` files between `tool_image_compress_faq_a6` and `tool_image_crop_*` (~64 keys per locale): title/description/article, engine and codec UI, compare/stats/warning/error states, How/Rules/Example/Use cases, FAQ×6 (question order varies by locale). EN title: `Image Optimizer — WebP, AVIF & MozJPEG Local`; ZH title covers image optimization with smaller size, tunable encoders, and local completion. Body distinguishes the Canvas compress page from this WASM optimizer and does not sell package names like jsquash. Synced Locale briefs status in `02-tool-info.md`. Home short descriptions in `scripts/site/i18n.mjs` not added yet (sync when catalog is implemented).
 
 [actions]
 - Created `work-tasks/image-optimizer/03-locale-briefs.md`

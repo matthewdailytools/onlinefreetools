@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>SEO and natural-language review of text-diff i18n across 10 locales (audit only). | Dev Logs</title>
-  <meta name="description" content="SEO and natural-language review of text-diff i18n across 10 locales (audit only)." />
-  <meta name="robots" content="noindex" />
+  <title>SEO and natural-language audit of text-diff i18n across ten locales (read-only; no copy edits). | Dev Logs</title>
+  <meta name="description" content="SEO and natural-language audit of text-diff i18n across ten locales (read-only; no copy edits)." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-06-16-22-audit-text-diff-i18n-seo.html" />
-  <meta property="og:title" content="SEO and natural-language review of text-diff i18n across 10 locales (audit only). | Dev Logs" />
-  <meta property="og:description" content="SEO and natural-language review of text-diff i18n across 10 locales (audit only)." />
+  <meta property="og:title" content="SEO and natural-language audit of text-diff i18n across ten locales (read-only; no copy edits). | Dev Logs" />
+  <meta property="og:description" content="SEO and natural-language audit of text-diff i18n across ten locales (read-only; no copy edits)." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-06-16-22-audit-text-diff-i18n-seo.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,18 +143,19 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">SEO and natural-language review of text-diff i18n across 10 locales (audit only). | Dev Logs</h1>
+          <h1 class="h4 mb-0">SEO and natural-language audit of text-diff i18n across ten locales (read-only; no copy edits). | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-06 16:22
-Summary: SEO and natural-language review of text-diff i18n across 10 locales (audit only).</p>
+Summary: SEO and natural-language audit of text-diff i18n across ten locales (read-only; no copy edits).</p>
 <p>[question]
 根据策略方案，检查产出的各种语言的页面，是否符合seo策略。对翻译进行评价，需要符合搜索习惯和用户语言习惯，而不是ai习惯</p>
 <p>[try to solve]
-对 text-diff 十语文案做策略合规与「是否像真人检索用语」抽查：结构/IG/lint 基本达标；en/zh 尚可；es/de/fr/pt/id/ru/ja/ar 多为英模直译，检索主词与本地习惯词未对齐，存在明显机翻腔，策略要求的「人工审核」未真正完成。详见对话中的分项评价与改写方向。</p>
+Spot-checked text-diff copy in all ten locales for strategy compliance and whether wording matches how people actually search and speak (not AI-flavored English calques).</p>
+<p>Structure, Information Gain, and lint expectations largely pass. English and Chinese read acceptably. Spanish, German, French, Portuguese, Indonesian, Russian, Japanese, and Arabic are mostly English-template literal translations: primary search terms and local phrasing are misaligned, with clear machine-translation tone. The strategy’s required human review pass was not truly completed. Per-locale notes and rewrite directions were covered in the conversation; no i18n body files were changed in this pass.</p>
 <p>[actions]</p>
 <ul>
-<li>只读审阅 src/site/i18n/* 与 SEO 策略文档，未改正文</li>
+<li>Read-only review of src/site/i18n/* and SEO strategy docs; no copy edits</li>
 </ul>
 </article>
       </section>

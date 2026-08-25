@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Fixed ops dev start/stop on Windows; added status:dev and health-check before reporting ready. | Dev Logs</title>
-  <meta name="description" content="Fixed ops dev start/stop on Windows; added status:dev and health-check before reporting ready." />
-  <meta name="robots" content="noindex" />
+  <title>Fixed ops start/stop on Windows; added `status:dev` and an HTTP health check before reporting ready. | Dev Logs</title>
+  <meta name="description" content="Fixed ops start/stop on Windows; added `status:dev` and an HTTP health check before reporting ready." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-06-15-19-fix-ops-dev-server-health-check.html" />
-  <meta property="og:title" content="Fixed ops dev start/stop on Windows; added status:dev and health-check before reporting ready. | Dev Logs" />
-  <meta property="og:description" content="Fixed ops dev start/stop on Windows; added status:dev and health-check before reporting ready." />
+  <meta property="og:title" content="Fixed ops start/stop on Windows; added `status:dev` and an HTTP health check before reporting ready. | Dev Logs" />
+  <meta property="og:description" content="Fixed ops start/stop on Windows; added `status:dev` and an HTTP health check before reporting ready." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-06-15-19-fix-ops-dev-server-health-check.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,33 +143,33 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Fixed ops dev start/stop on Windows; added status:dev and health-check before reporting ready. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Fixed ops start/stop on Windows; added `status:dev` and an HTTP health check before reporting ready. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-06 15:19
-Summary: Fixed ops dev start/stop on Windows; added status:dev and health-check before reporting ready.</p>
+Summary: Fixed ops start/stop on Windows; added <code>status:dev</code> and an HTTP health check before reporting ready.</p>
 <p>[question]
 <a href="http://127.0.0.1:8787">http://127.0.0.1:8787</a> 无法访问，请对运维手册的命令进行测试</p>
 <p>[try to solve]
-测试发现两类问题：</p>
+Testing found two problems:</p>
 <ol>
-<li><strong>假「已在运行」</strong>：PID 文件记录 spawn 进程，Wrangler 实际监听在子进程；stop 后 PID 仍被误判为存活。</li>
-<li><strong>误判不可访问</strong>：PowerShell/curl 无 <code>Accept: text/html</code> 时 Worker 对 <code>/</code> 返回 404，但浏览器正常。</li>
+<li><strong>False “already running”</strong>: the PID file tracked the spawn process while Wrangler listened in a child; after stop, the PID could still look alive.</li>
+<li><strong>False “unreachable”</strong>: PowerShell/curl without <code>Accept: text/html</code> got 404 from the Worker on <code>/</code>, while a browser worked.</li>
 </ol>
-<p>修复：</p>
+<p>Fixes:</p>
 <ul>
-<li>启动前/后做 HTTP 健康检查（含 Accept: text/html）</li>
-<li>等待日志 <code>Ready on http://127.0.0.1:8787</code> 再报成功</li>
-<li>stop 优先杀端口 LISTEN 进程</li>
-<li>stale PID 自动清理</li>
-<li>新增 <code>npm run status:dev</code></li>
+<li>HTTP health check before/after start (with <code>Accept: text/html</code>)</li>
+<li>Wait for log line <code>Ready on http://127.0.0.1:8787</code> before reporting success</li>
+<li>Prefer killing the LISTEN process on the port when stopping</li>
+<li>Auto-clean stale PID files</li>
+<li>Added <code>npm run status:dev</code></li>
 </ul>
-<p>验证：<code>status:dev</code> → HTTP health OK；<code>Invoke-WebRequest</code> + Accept → 200；<code>restart:dev -- --no-build</code> 通过。</p>
+<p>Verification noted in source: <code>status:dev</code> → HTTP health OK; <code>Invoke-WebRequest</code> with Accept → 200; <code>restart:dev -- --no-build</code> succeeded.</p>
 <p>[actions]</p>
 <ul>
-<li>ops/lib/dev-process.mjs</li>
-<li>ops/dev/start-dev.mjs, stop-dev.mjs, status-dev.mjs</li>
-<li>package.json, ops/README.md, cloudflare-workflow.mdc</li>
+<li><code>ops/lib/dev-process.mjs</code></li>
+<li><code>ops/dev/start-dev.mjs</code>, <code>stop-dev.mjs</code>, <code>status-dev.mjs</code></li>
+<li><code>package.json</code>, <code>ops/README.md</code>, <code>cloudflare-workflow.mdc</code></li>
 </ul>
 </article>
       </section>

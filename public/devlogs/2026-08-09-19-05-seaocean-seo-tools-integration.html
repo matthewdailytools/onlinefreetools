@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>调研 seaocean.io/features（SEO+GEO 审计 SaaS）并整合到 SEO 工具清单 | Dev Logs</title>
-  <meta name="description" content="调研 seaocean.io/features（SEO+GEO 审计 SaaS）并整合到 SEO 工具清单" />
-  <meta name="robots" content="noindex" />
+  <title>Surveyed seaocean.io/features (SEO+GEO audit SaaS) and folded findings into the SEO tools inventory. | Dev Logs</title>
+  <meta name="description" content="Surveyed seaocean.io/features (SEO+GEO audit SaaS) and folded findings into the SEO tools inventory." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-09-19-05-seaocean-seo-tools-integration.html" />
-  <meta property="og:title" content="调研 seaocean.io/features（SEO+GEO 审计 SaaS）并整合到 SEO 工具清单 | Dev Logs" />
-  <meta property="og:description" content="调研 seaocean.io/features（SEO+GEO 审计 SaaS）并整合到 SEO 工具清单" />
+  <meta property="og:title" content="Surveyed seaocean.io/features (SEO+GEO audit SaaS) and folded findings into the SEO tools inventory. | Dev Logs" />
+  <meta property="og:description" content="Surveyed seaocean.io/features (SEO+GEO audit SaaS) and folded findings into the SEO tools inventory." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-09-19-05-seaocean-seo-tools-integration.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,21 +143,21 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">调研 seaocean.io/features（SEO+GEO 审计 SaaS）并整合到 SEO 工具清单 | Dev Logs</h1>
+          <h1 class="h4 mb-0">Surveyed seaocean.io/features (SEO+GEO audit SaaS) and folded findings into the SEO tools inventory. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-09 19:05
-Summary: 调研 seaocean.io/features（SEO+GEO 审计 SaaS）并整合到 SEO 工具清单</p>
+Summary: Surveyed seaocean.io/features (SEO+GEO audit SaaS) and folded findings into the SEO tools inventory.</p>
 <p>[question]
 调研 <a href="https://seaocean.io/features">https://seaocean.io/features</a> 的工具，整合到seo工具中清单中</p>
 <p>[try to solve]
-SeaOcean 是单一订阅 SaaS（Free / Pro $19 / Agency $49，对标 SEMrush/Ahrefs/SE Ranking），产品 = 即时 SEO Audit（140+ 检查项）+ GEO 营销（AI 可见性，/aiseo、/free-geo-audit）。142 检查项可拆解为：Basic SEO（Title/Meta/H1/Canonical）、Social &amp; OG（og:*/Twitter Card）、Technical（HTTPS/sitemap/robots/mixed content）、Performance（页面大小/压缩/缓存头/render-blocking）；GEO 侧含 llms.txt Generator、AI SoV、9 GEO factors、AI 引用率叙事。</p>
-<p>本站裁决：吸收其<strong>单页检查器</strong>形态与检查项字典 → 清单 §6 新增 <strong><code>on-page-seo-checker</code></strong>（P2，贴 URL/HTML → H1、canonical、meta 质量、OG/Twitter、JSON-LD 检测、mixed content、render-blocking 汇总 + 修复建议；合并原 canonical 检查候选，一带多场景不拆薄页）。明确<strong>不做</strong>：llms.txt 生成器（Google 官方可忽略）、GEO Score / AI SoV / 引用率承诺（黑箱 + 无自有数据）、全站爬虫审计/监控/排名/PDF SaaS（形态偏离）、9 factors 独立成页（其 people-first 部分并入 seo-launch-checklist，不叫 GEO）。已在调研主文 §1.4/§2.2/§3.2/§3.3/§5/§8/§9 同步。</p>
+SeaOcean is a single-subscription SaaS (Free / Pro $19 / Agency $49, peers SEMrush/Ahrefs/SE Ranking). Product = instant SEO Audit (140+ checks) + GEO marketing (AI visibility, /aiseo, /free-geo-audit). The 142 checks break down into Basic SEO (Title/Meta/H1/Canonical), Social &amp; OG (og:*/Twitter Card), Technical (HTTPS/sitemap/robots/mixed content), Performance (page size/compression/cache headers/render-blocking); GEO side includes llms.txt Generator, AI SoV, 9 GEO factors, and AI citation-rate narrative.</p>
+<p>Site decision: absorb the single-page checker shape and check dictionary → inventory §6 adds <strong><code>on-page-seo-checker</code></strong> (P2: paste URL/HTML → H1, canonical, meta quality, OG/Twitter, JSON-LD detection, mixed content, render-blocking summary + fix tips; merge the former canonical-check candidate so one tool covers many scenes without thin pages). Explicitly <strong>do not</strong> build: llms.txt generator (Google says it can be ignored), GEO Score / AI SoV / citation-rate promises (black box, no first-party data), full-site crawl audit/monitor/rank/PDF SaaS (wrong product shape), or nine factors as separate pages (people-first bits fold into seo-launch-checklist, not branded GEO). Synced survey doc §§1.4 / 2.2 / 3.2 / 3.3 / 5 / 8 / 9.</p>
 <p>[actions]</p>
 <ul>
-<li>docs/competitor-refs/seaocean-2026-08-09/README.md（新建快照：功能枚举 + 裁决矩阵 + 能力吸收矩阵）</li>
-<li>docs/2026-08-09-seo-webmaster-tools-survey.md（§1.4 SeaOcean 专项、§2.2/§3.2 新增 on-page-seo-checker、§3.3/§8 禁项补充、§5 排期、§9 状态）</li>
-<li>docs/2026-08-08-tool-inventory-table.md（§6 新增 on-page-seo-checker=78，§7–§10 序号 79–159 重排，统计更新 1–159 / P2 ~81）</li>
+<li>docs/competitor-refs/seaocean-2026-08-09/README.md (new snapshot: feature list + decision matrix + capability absorb matrix)</li>
+<li>docs/2026-08-09-seo-webmaster-tools-survey.md (§1.4 SeaOcean, §2.2/§3.2 add on-page-seo-checker, §3.3/§8 bans, §5 schedule, §9 status)</li>
+<li>docs/2026-08-08-tool-inventory-table.md (§6 add on-page-seo-checker=78, renumber §§7–10 to 79–159, stats 1–159 / P2 ~81)</li>
 </ul>
 </article>
       </section>

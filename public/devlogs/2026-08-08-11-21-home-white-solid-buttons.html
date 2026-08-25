@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Homepage buttons use white solid style as the primary pattern. | Dev Logs</title>
   <meta name="description" content="Homepage buttons use white solid style as the primary pattern." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-11-21-home-white-solid-buttons.html" />
   <meta property="og:title" content="Homepage buttons use white solid style as the primary pattern. | Dev Logs" />
   <meta property="og:description" content="Homepage buttons use white solid style as the primary pattern." />
@@ -151,18 +151,18 @@ Summary: Homepage buttons use white solid style as the primary pattern.</p>
 <p>[question]
 首页按钮以白色实心按钮为主</p>
 <p>[try to solve]
-首页按钮统一为白色实心（<code>btn-primary</code>）：</p>
+Unified homepage buttons to white solid (<code>btn-primary</code>):</p>
 <ul>
-<li><strong>Hero</strong>：两个 CTA 均为 <code>btn-primary</code>（深底白字实心）</li>
-<li><strong>推荐/分类卡片</strong>与「查看全部」：由 outline 改为 <code>btn-primary</code></li>
-<li><strong>CSS</strong>：<code>.home-wrap .home-main .btn-primary</code> 浅底白字实心 + 细边框/阴影；移除 hero 区 outline 幽灵按钮样式</li>
+<li><strong>Hero</strong>: both CTAs use <code>btn-primary</code> (solid dark-on-white / white-on-dark as styled)</li>
+<li><strong>Featured/category cards</strong> and “View all”: outline → <code>btn-primary</code></li>
+<li><strong>CSS</strong>: <code>.home-wrap .home-main .btn-primary</code> as light-ground white solid with thin border/shadow; removed hero outline/ghost button styles</li>
 </ul>
-<p>已运行 <code>npm run build:site</code> 更新静态首页。</p>
+<p>Ran <code>npm run build:site</code> to refresh static home pages.</p>
 <p>[actions]</p>
 <ul>
 <li>scripts/site/components/content-home.mjs</li>
 <li>public/styles/site.css</li>
-<li>public/_pages/*/index.html（build 输出）</li>
+<li>public/_pages/*/index.html (build output)</li>
 </ul>
 </article>
       </section>

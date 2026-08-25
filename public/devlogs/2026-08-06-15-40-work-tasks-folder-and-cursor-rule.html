@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Added work-tasks/ folder with templates and a Cursor rule for new-tool briefing. | Dev Logs</title>
-  <meta name="description" content="Added work-tasks/ folder with templates and a Cursor rule for new-tool briefing." />
-  <meta name="robots" content="noindex" />
+  <title>Added the `work-tasks/` folder with templates and a Cursor rule for new-tool briefing. | Dev Logs</title>
+  <meta name="description" content="Added the `work-tasks/` folder with templates and a Cursor rule for new-tool briefing." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-06-15-40-work-tasks-folder-and-cursor-rule.html" />
-  <meta property="og:title" content="Added work-tasks/ folder with templates and a Cursor rule for new-tool briefing. | Dev Logs" />
-  <meta property="og:description" content="Added work-tasks/ folder with templates and a Cursor rule for new-tool briefing." />
+  <meta property="og:title" content="Added the `work-tasks/` folder with templates and a Cursor rule for new-tool briefing. | Dev Logs" />
+  <meta property="og:description" content="Added the `work-tasks/` folder with templates and a Cursor rule for new-tool briefing." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-06-15-40-work-tasks-folder-and-cursor-rule.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,37 +143,37 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Added work-tasks/ folder with templates and a Cursor rule for new-tool briefing. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Added the `work-tasks/` folder with templates and a Cursor rule for new-tool briefing. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-06 15:40
-Summary: Added work-tasks/ folder with templates and a Cursor rule for new-tool briefing.</p>
+Summary: Added the <code>work-tasks/</code> folder with templates and a Cursor rule for new-tool briefing.</p>
 <p>[question]
 新建一个工作任务文件夹，里面根据需要建的工具创建子文件夹，子文件夹下面根据提供的工具方向进行讨论生成新工具信息文档，将这个规则创建在.cursor下</p>
 <p>[try to solve]
-已落地：</p>
+Shipped:</p>
 <ol>
-<li><p><code>work-tasks/</code> — 新工具立项工作区</p>
+<li><p><code>work-tasks/</code> — new-tool briefing workspace</p>
 <ul>
-<li><code>README.md</code> 说明目录与流程</li>
-<li><code>_template/</code>：<code>00-request.md</code>、<code>01-direction-discussion.md</code>、<code>02-tool-info.md</code></li>
-<li>每个待建工具复制为 <code>work-tasks/{kebab-slug}/</code></li>
+<li><code>README.md</code> describes layout and flow</li>
+<li><code>_template/</code>: <code>00-request.md</code>, <code>01-direction-discussion.md</code>, <code>02-tool-info.md</code></li>
+<li>Copy per pending tool to <code>work-tasks/{kebab-slug}/</code></li>
 </ul>
 </li>
 <li><p><code>.cursor/rules/work-tasks-tool-brief.mdc</code></p>
 <ul>
-<li>立项时先建夹写文档；对照工具方向 A/B/C；写满 IG 预审与卡片后状态 <code>ready</code>，再按 <code>tool-creation.mdc</code> 实现</li>
+<li>On intake, create the folder and docs first; map to direction A/B/C; fill IG pre-review and card, set status <code>ready</code>, then implement per <code>tool-creation.mdc</code></li>
 <li>globs: <code>work-tasks/**/*</code></li>
 </ul>
 </li>
-<li><p><code>project-core.mdc</code> 补充 <code>work-tasks/</code> 目录约定与文档优先级第 4 条</p>
+<li><p><code>project-core.mdc</code> gained <code>work-tasks/</code> directory convention and docs-priority item 4</p>
 </li>
 </ol>
 <p>[actions]</p>
 <ul>
-<li>work-tasks/README.md, work-tasks/_template/*</li>
-<li>.cursor/rules/work-tasks-tool-brief.mdc</li>
-<li>.cursor/rules/project-core.mdc</li>
+<li><code>work-tasks/README.md</code>, <code>work-tasks/_template/*</code></li>
+<li><code>.cursor/rules/work-tasks-tool-brief.mdc</code></li>
+<li><code>.cursor/rules/project-core.mdc</code></li>
 </ul>
 </article>
       </section>

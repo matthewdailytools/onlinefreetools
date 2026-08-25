@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Analyzed GSC CSV in docs/seo/2026-08-08 and optimized title/description for top-impression locales. | Dev Logs</title>
   <meta name="description" content="Analyzed GSC CSV in docs/seo/2026-08-08 and optimized title/description for top-impression locales." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-10-25-gsc-data-analysis-seo-optimization.html" />
   <meta property="og:title" content="Analyzed GSC CSV in docs/seo/2026-08-08 and optimized title/description for top-impression locales. | Dev Logs" />
   <meta property="og:description" content="Analyzed GSC CSV in docs/seo/2026-08-08 and optimized title/description for top-impression locales." />
@@ -151,22 +151,22 @@ Summary: Analyzed GSC CSV in docs/seo/2026-08-08 and optimized title/description
 <p>[question]
 根据seo文档下按日期存储了谷歌seo数据，根据数据分析，优化seo</p>
 <p>[try to solve]
-已读取 <code>docs/seo/2026-08-08/</code> GSC 导出（效果 8/2–8/5；索引 8/5），结论：<strong>~283 展示、1 点击、CTR≈0.35%</strong> — 站点极早期；瓶颈是 <strong>SERP 标题/摘要与检索词对齐</strong> 与索引管道，不是缩语种。</p>
-<h3>数据要点</h3>
+Read GSC exports under <code>docs/seo/2026-08-08/</code> (performance 8/2–8/5; indexing 8/5). Snapshot: <strong>~283 impressions, 1 click, CTR ≈ 0.35%</strong> — very early stage. Bottleneck is <strong>SERP title/snippet alignment with queries</strong> and the indexing pipeline, not cutting locales.</p>
+<h3>Data highlights</h3>
 <ul>
-<li>高展示页：<code>/es/tools/square-feet</code>（42）、<code>/de/tools/ip-address</code>（39）、<code>/es|pt/tools/how-to-calculate-roi</code></li>
-<li>好排名零点击：<code>/ja/tools/how-to-calculate-marginal-revenue</code> 排名 <del>8.8，查询「限界収入 求め方」</del>9.2</li>
-<li>索引：150 已编入 / 80 未编入；devlogs 仍有展示 → 依赖已加的 noindex 部署</li>
-<li>移动排名优于桌面，但均无点击 → title 前置检索词</li>
+<li>High-impression pages: <code>/es/tools/square-feet</code> (42), <code>/de/tools/ip-address</code> (39), <code>/es|pt/tools/how-to-calculate-roi</code></li>
+<li>Decent rank, zero clicks: <code>/ja/tools/how-to-calculate-marginal-revenue</code> ~rank 8.8; Japanese query for how to find marginal revenue ~rank 9.2</li>
+<li>Indexing: 150 indexed / 80 not indexed; devlogs still showed impressions → rely on the noindex deploy already added</li>
+<li>Mobile ranks better than desktop, but both get no clicks → put query terms first in titles</li>
 </ul>
-<h3>已落地</h3>
+<h3>Shipped</h3>
 <ul>
-<li>新增 <code>docs/seo/README.md</code>、<code>docs/seo/2026-08-08-gsc-analysis-and-actions.md</code></li>
-<li>按 GSC 查询优化 title/description：<code>en/ja</code> 边际收益、<code>es</code> 平方英尺+ROI、<code>de</code> IP、<code>pt</code> ROI</li>
-<li>同步 <code>scripts/site/i18n.mjs</code> 首页卡片 title；<code>SEO_PUBLISH_CHECKLIST</code> 增加 GSC 归档步骤</li>
+<li>Added <code>docs/seo/README.md</code>, <code>docs/seo/2026-08-08-gsc-analysis-and-actions.md</code></li>
+<li>Optimized title/description from GSC queries: <code>en/ja</code> marginal revenue, <code>es</code> square feet + ROI, <code>de</code> IP, <code>pt</code> ROI</li>
+<li>Synced home-card titles in <code>scripts/site/i18n.mjs</code>; added a GSC archive step to <code>SEO_PUBLISH_CHECKLIST</code></li>
 </ul>
-<h3>后续</h3>
-<p>部署 → <code>npm run indexnow:sitemap</code> → 2–4 周再导入 CSV 对比 CTR</p>
+<h3>Follow-up</h3>
+<p>Deploy → <code>npm run indexnow:sitemap</code> → re-import CSV in 2–4 weeks and compare CTR</p>
 <p>[actions]</p>
 <ul>
 <li>docs/seo/README.md, docs/seo/2026-08-08-gsc-analysis-and-actions.md</li>

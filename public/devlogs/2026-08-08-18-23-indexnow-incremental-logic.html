@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Explained npm run indexnow:incremental flow (remote sitemap − state → POST → update state). | Dev Logs</title>
   <meta name="description" content="Explained npm run indexnow:incremental flow (remote sitemap − state → POST → update state)." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-18-23-indexnow-incremental-logic.html" />
   <meta property="og:title" content="Explained npm run indexnow:incremental flow (remote sitemap − state → POST → update state). | Dev Logs" />
   <meta property="og:description" content="Explained npm run indexnow:incremental flow (remote sitemap − state → POST → update state)." />
@@ -151,11 +151,11 @@ Summary: Explained npm run indexnow:incremental flow (remote sitemap − state �
 <p>[question]
 npm run indexnow:incremental的逻辑</p>
 <p>[try to solve]
-<code>indexnow:incremental</code> = <code>--incremental --remote-sitemap</code>。</p>
-<p>流程：拉生产 sitemap 全部 <loc> → 读 <code>.run/indexnow-state.json</code> → 去掉状态里已有 URL → 对剩余 URL POST IndexNow（默认 api.indexnow.org）→ 仅 200/202 的批次合并回状态。pending=0 则不提交。不看页面内容/lastmod；已推过的 URL 即使内容更新也不会再推（内容变更请用 --since-git / --tool）。可用 --baseline 先灌状态，--reset-state 清空。</p>
+<code>indexnow:incremental</code> = <code>--incremental --remote-sitemap</code>.</p>
+<p>Flow: fetch all <code>&lt;loc&gt;</code> from the production sitemap → read <code>.run/indexnow-state.json</code> → drop URLs already in state → POST remaining URLs to IndexNow (default api.indexnow.org) → merge only 200/202 batches back into state. If pending=0, skip submit. Does not inspect page content or lastmod; a previously pushed URL will not be re-pushed when content changes (use <code>--since-git</code> / <code>--tool</code> for content updates). Use <code>--baseline</code> to seed state first; <code>--reset-state</code> to clear.</p>
 <p>[actions]</p>
 <ul>
-<li>（说明性回答，无代码改动）</li>
+<li>(Explanatory answer only; no code changes)</li>
 </ul>
 </article>
       </section>

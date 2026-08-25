@@ -5,9 +5,9 @@ Summary: Removed remaining untracked local files so the working tree matches ori
 本地未提交清掉
 
 [try to solve]
-已用 `git clean -fd` 删除全部未跟踪文件与目录。工作区现为 clean，`main` 与 `origin/main` 一致。
+Ran `git clean -fd` to delete all untracked files and directories. The working tree is clean; `main` matches `origin/main`.
 
-删除内容包括：`.tmp/`、若干未入库的 `dev-logs/2026-08/*.md`、`docs/seo/2026-08-20-focus-five-clicks.md`。此前已跟踪但未提交的修改已在上一轮 `reset --hard` 中丢弃。
+Removed items included: `.tmp/`, several untracked `dev-logs/2026-08/*.md`, and `docs/seo/2026-08-20-focus-five-clicks.md`. Previously tracked but uncommitted edits were discarded in an earlier `reset --hard`.
 
 [actions]
 - `git clean -fd`

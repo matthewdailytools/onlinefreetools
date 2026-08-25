@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Added keyword-to-tool-funnel Skill and rule for discover-or-enrich workflow. | Dev Logs</title>
   <meta name="description" content="Added keyword-to-tool-funnel Skill and rule for discover-or-enrich workflow." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-11-23-51-keyword-to-tool-funnel-skill.html" />
   <meta property="og:title" content="Added keyword-to-tool-funnel Skill and rule for discover-or-enrich workflow. | Dev Logs" />
   <meta property="og:description" content="Added keyword-to-tool-funnel Skill and rule for discover-or-enrich workflow." />
@@ -151,7 +151,7 @@ Summary: Added keyword-to-tool-funnel Skill and rule for discover-or-enrich work
 <p>[question]
 这是一个单独的规则或者说skill，目标是从关键词中寻找新的工具进行创建或者融入丰富已有的工具进行更新</p>
 <p>[try to solve]
-新增可执行 Skill <code>.cursor/skills/keyword-to-tool-funnel/SKILL.md</code>（目标：关键词→新建工具或 absorb 丰富已有；不自动建 work-tasks），以及编辑词池时触发的规则 <code>.cursor/rules/keyword-to-tool-funnel.mdc</code>；并挂入 project-core SEO 索引与 tracker/funnel/README。与 <code>tool-coverage-pass</code> 衔接：分析用本 Skill，真正创建/改 i18n 再走 coverage。</p>
+Added executable Skill <code>.cursor/skills/keyword-to-tool-funnel/SKILL.md</code> (goal: keywords → new tools or absorb/enrich existing ones; does not auto-create work-tasks) and trigger rule <code>.cursor/rules/keyword-to-tool-funnel.mdc</code> when editing the pool; hooked into project-core SEO index and tracker/funnel/README. Bridges to <code>tool-coverage-pass</code>: use this Skill for analysis; use coverage when actually creating tools or changing i18n.</p>
 <p>[actions]</p>
 <ul>
 <li>.cursor/skills/keyword-to-tool-funnel/SKILL.md</li>

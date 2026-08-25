@@ -19,7 +19,7 @@ Pipeline: work-tasks 00-03 with 0b; gate 0b; page+en+catalog+icon; phase2; 9 ind
 Return volume sample and catalog count.
 
 [try to solve]
-已上线 `how-to-calculate-concrete`（§12 #18 / §9 #110）。板/柱/圆柱同页选项；样例板 5×4×0.1 m → **2.0 m³**（可选袋数，公制 0.015 m³/袋 ≈ 134 袋）；十语独立重写；coverage:gate 0b→2→4→all、build:site、lint:seo、isolation 均通过。**catalog count = 70**。
+Shipped `how-to-calculate-concrete` (§12 #18 / §9 #110). Slab/column/cylinder as on-page options; sample slab 5×4×0.1 m → **2.0 m³** (optional bags; metric 0.015 m³/bag ≈ 134 bags). Independent ten-locale rewrite; coverage:gate 0b→2→4→all, build:site, lint:seo, and isolation all passed. **catalog count = 70**.
 
 [actions]
 - work-tasks/how-to-calculate-concrete/00–03
@@ -27,6 +27,6 @@ Return volume sample and catalog count.
 - src/site/tool-catalog.d/how-to-calculate-concrete.json
 - src/site/i18n/tools/how-to-calculate-concrete/{en,zh,es,ar,pt,id,fr,ja,ru,de}.ts
 - public/icons/tools/how-to-calculate-concrete.svg
-- docs inventory §9/#110 §12/#18 + Omni/ToolDone TSVs → 已上线
-- README 中英工具清单
+- docs inventory §9/#110 §12/#18 + Omni/ToolDone TSVs → live
+- README en+zh tool list
 - npm run coverage:gate (0b/2/4/all); npm run build:site; npm run lint:seo; CROSS_TOOL_UPDATE=1 TOOL_SLUG=how-to-calculate-concrete npm run lint:tool-isolation

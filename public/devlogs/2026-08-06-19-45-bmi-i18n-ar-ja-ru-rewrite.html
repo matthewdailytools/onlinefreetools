@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Rewrote BMI i18n keys for ar, ja, ru and updated home card copy. | Dev Logs</title>
-  <meta name="description" content="Rewrote BMI i18n keys for ar, ja, ru and updated home card copy." />
-  <meta name="robots" content="noindex" />
+  <title>Rewrote BMI i18n keys for ar, ja, and ru and updated matching home-card copy. | Dev Logs</title>
+  <meta name="description" content="Rewrote BMI i18n keys for ar, ja, and ru and updated matching home-card copy." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-06-19-45-bmi-i18n-ar-ja-ru-rewrite.html" />
-  <meta property="og:title" content="Rewrote BMI i18n keys for ar, ja, ru and updated home card copy. | Dev Logs" />
-  <meta property="og:description" content="Rewrote BMI i18n keys for ar, ja, ru and updated home card copy." />
+  <meta property="og:title" content="Rewrote BMI i18n keys for ar, ja, and ru and updated matching home-card copy. | Dev Logs" />
+  <meta property="og:description" content="Rewrote BMI i18n keys for ar, ja, and ru and updated matching home-card copy." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-06-19-45-bmi-i18n-ar-ja-ru-rewrite.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,11 +143,11 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Rewrote BMI i18n keys for ar, ja, ru and updated home card copy. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Rewrote BMI i18n keys for ar, ja, and ru and updated matching home-card copy. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-06 19:45
-Summary: Rewrote BMI i18n keys for ar, ja, ru and updated home card copy.</p>
+Summary: Rewrote BMI i18n keys for ar, ja, and ru and updated matching home-card copy.</p>
 <p>[question]
 In /Users/xuli/vscodeai/onlinefreetools, update BMI i18n keys for languages: ar, ja, ru.</p>
 <p>Files: src/site/i18n/{ar,ja,ru}.ts</p>
@@ -160,7 +160,8 @@ Update scripts/site/i18n.mjs home cards for ar/ja/ru BMI title/desc briefly.</p>
 <p>Leave 待母语抽查 as a note in your summary (do not edit 03 unless asked).</p>
 <p>Return files changed.</p>
 <p>[try to solve]
-已为 ar / ja / ru 按 <code>03-locale-briefs.md</code> 独立重写 BMI 全套键（54 项，与 en.ts 对齐），含 how/formula/example/usecases、ref、FAQ q1–q4、disclaimer、中性筛查解读（无「恭喜/تهانينا/おめでとう/Поздравляем」）、<code>bmi_result_label</code>、<code>bmi_invalid_input</code>、<code>bmi_unit_group_label</code>；description 均 ≥120 字符并含本地流程/示例关键词。同步更新 <code>scripts/site/i18n.mjs</code> 三语首页卡片 title/desc 及解读文案。<code>npm run lint:seo</code> 通过（仅既有 zh 描述偏短警告）。<strong>待母语抽查</strong>：ar / ja / ru 仍建议母语者复核后再清 brief 勾选。</p>
+Independently rewrote the full BMI key set for ar / ja / ru from <code>03-locale-briefs.md</code> (54 keys aligned with en.ts), including how/formula/example/usecases, refs, FAQ q1–q4, disclaimer, neutral screening interpretations (no congratulations / تهانينا / おめでとう / Поздравляем), <code>bmi_result_label</code>, <code>bmi_invalid_input</code>, <code>bmi_unit_group_label</code>. Descriptions are ≥120 characters with local process/example keywords. Synced <code>scripts/site/i18n.mjs</code> three-locale home-card titles/descs and interpretation strings. <code>npm run lint:seo</code> passed (pre-existing short zh description warning only).</p>
+<p><strong>Pending native review</strong>: ar / ja / ru still recommend a native speaker pass before clearing the brief checkboxes.</p>
 <p>[actions]</p>
 <ul>
 <li>src/site/i18n/ar.ts</li>

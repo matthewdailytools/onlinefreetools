@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Fixed yaml-json (and other tools) literal \\n samples; corrected locale parse/escape in tool-modules lib. | Dev Logs</title>
   <meta name="description" content="Fixed yaml-json (and other tools) literal \\n samples; corrected locale parse/escape in tool-modules lib." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-15-18-fix-yaml-json-literal-backslash-n.html" />
   <meta property="og:title" content="Fixed yaml-json (and other tools) literal \\n samples; corrected locale parse/escape in tool-modules lib. | Dev Logs" />
   <meta property="og:description" content="Fixed yaml-json (and other tools) literal \\n samples; corrected locale parse/escape in tool-modules lib." />
@@ -151,8 +151,8 @@ Summary: Fixed yaml-json (and other tools) literal \n samples; corrected locale 
 <p>[question]
 <a href="http://localhost:8788/zh/tools/yaml-json">http://localhost:8788/zh/tools/yaml-json</a> 也有类似错误</p>
 <p>[try to solve]
-与 JSON Schema 相同：结构层 split/merge 把样例里的换行写成了字面 <code>\\n</code>。已修复 <code>parseLocaleDict</code> / <code>escapeSingleQuoted</code>；批量修正 yaml-json / csv-json / text-diff / markdown-to-html 十语分片；<code>yamlJsonPage</code> 载入样例时再规范化；<code>merge:tools</code> 后页面样例为真换行。</p>
-<p>请硬刷新 <code>/zh/tools/yaml-json</code> 验证。</p>
+Same class of bug as JSON Schema: structure-layer split/merge wrote sample newlines as literal <code>\\n</code>. Fixed <code>parseLocaleDict</code> / <code>escapeSingleQuoted</code>; batch-corrected ten-locale shards for yaml-json / csv-json / text-diff / markdown-to-html; <code>yamlJsonPage</code> normalizes again on sample load; after <code>merge:tools</code>, page samples use real newlines.</p>
+<p>Hard-refresh <code>/zh/tools/yaml-json</code> to verify.</p>
 <p>[actions]</p>
 <ul>
 <li>Updated <code>scripts/tool-modules/lib.mjs</code>, <code>src/pages/yamlJsonPage.ts</code>, i18n tools shards (40 files), ran <code>merge:tools</code></li>

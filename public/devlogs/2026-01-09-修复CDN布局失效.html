@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>修复CDN切换后布局失效 | Dev Logs</title>
-  <meta name="description" content="修复CDN切换后布局失效" />
-  <meta name="robots" content="noindex" />
+  <title>Fixed broken layout after CDN switch by removing mismatched Bootstrap SRI hashes. | Dev Logs</title>
+  <meta name="description" content="Fixed broken layout after CDN switch by removing mismatched Bootstrap SRI hashes." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-01-09-%E4%BF%AE%E5%A4%8DCDN%E5%B8%83%E5%B1%80%E5%A4%B1%E6%95%88.html" />
-  <meta property="og:title" content="修复CDN切换后布局失效 | Dev Logs" />
-  <meta property="og:description" content="修复CDN切换后布局失效" />
+  <meta property="og:title" content="Fixed broken layout after CDN switch by removing mismatched Bootstrap SRI hashes. | Dev Logs" />
+  <meta property="og:description" content="Fixed broken layout after CDN switch by removing mismatched Bootstrap SRI hashes." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-01-09-%E4%BF%AE%E5%A4%8DCDN%E5%B8%83%E5%B1%80%E5%A4%B1%E6%95%88.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,19 +143,19 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">修复CDN切换后布局失效 | Dev Logs</h1>
+          <h1 class="h4 mb-0">Fixed broken layout after CDN switch by removing mismatched Bootstrap SRI hashes. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>日期：2026年1月9日
-摘要：修复CDN切换后布局失效</p>
-<p>【question】
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-01-09 00:00
+Summary: Fixed broken layout after CDN switch by removing mismatched Bootstrap SRI hashes.</p>
+<p>[question]
 页面布局失效，检查是否切换js和css 的cdn链接的原因</p>
-<p>【try to solve】
-排查：切换到 Cloudflare cdnjs 后可能因 SRI 校验不匹配导致 CSS/JS 未加载，从而布局失效。
-修复：移除 <code>public/index.html</code> 中 Bootstrap 5.3.3 的 SRI，保留 Cloudflare cdnjs 链接与 <code>referrerpolicy=&quot;no-referrer&quot;</code>，以确保资源加载。</p>
-<p>【执行操作】</p>
+<p>[try to solve]
+Diagnosis: after switching to Cloudflare cdnjs, SRI hash mismatch likely blocked CSS/JS load and broke layout.
+Fix: removed Bootstrap 5.3.3 SRI from <code>public/index.html</code>, kept the Cloudflare cdnjs URLs and <code>referrerpolicy=&quot;no-referrer&quot;</code> so assets load.</p>
+<p>[actions]</p>
 <ul>
-<li>更新 <code>public/index.html</code></li>
+<li>Updated <code>public/index.html</code></li>
 </ul>
 </article>
       </section>

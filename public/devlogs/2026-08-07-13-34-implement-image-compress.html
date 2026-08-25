@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Implement local image compressor tool (image-compress) with ten-locale i18n. | Dev Logs</title>
-  <meta name="description" content="Implement local image compressor tool (image-compress) with ten-locale i18n." />
-  <meta name="robots" content="noindex" />
+  <title>Shipped the local image-compress tool with Canvas controls and ten-locale i18n. | Dev Logs</title>
+  <meta name="description" content="Shipped the local image-compress tool with Canvas controls and ten-locale i18n." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-07-13-34-implement-image-compress.html" />
-  <meta property="og:title" content="Implement local image compressor tool (image-compress) with ten-locale i18n. | Dev Logs" />
-  <meta property="og:description" content="Implement local image compressor tool (image-compress) with ten-locale i18n." />
+  <meta property="og:title" content="Shipped the local image-compress tool with Canvas controls and ten-locale i18n. | Dev Logs" />
+  <meta property="og:description" content="Shipped the local image-compress tool with Canvas controls and ten-locale i18n." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-07-13-34-implement-image-compress.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,20 +143,20 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Implement local image compressor tool (image-compress) with ten-locale i18n. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Shipped the local image-compress tool with Canvas controls and ten-locale i18n. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-07 13:34
-Summary: Implement local image compressor tool (image-compress) with ten-locale i18n.</p>
+Summary: Shipped the local image-compress tool with Canvas controls and ten-locale i18n.</p>
 <p>[question]
 实现</p>
 <p>[try to solve]
-已上线 <code>/tools/image-compress</code>（catalog <code>image</code>）：</p>
+Shipped <code>/tools/image-compress</code> (catalog category <code>image</code>):</p>
 <ul>
-<li>Tier 0 Canvas：最长边缩放、质量、可选目标 KB（质量二分）、输出 WebP/JPEG/PNG、JPEG 底色、前后体积对照；达不到目标时诚实警告</li>
-<li>Related 互链：<code>image-format-converter</code> ↔ <code>image-exif</code> ↔ <code>image-compress</code></li>
-<li>十语 i18n + 首页卡片 + README；<code>lint:seo</code> OK；<code>build:site</code>（sitemap 200 URLs）</li>
-<li>work-tasks：<code>02</code> → <code>implemented</code>，<code>03</code> → <code>i18n-done</code></li>
+<li>Tier 0 Canvas: max-edge resize, quality, optional target KB (quality binary search), WebP/JPEG/PNG output, JPEG background color, before/after size compare; honest warning when the target cannot be met</li>
+<li>Related links: <code>image-format-converter</code> ↔ <code>image-exif</code> ↔ <code>image-compress</code></li>
+<li>Ten-locale i18n + home card + README; <code>lint:seo</code> OK; <code>build:site</code> (sitemap 200 URLs)</li>
+<li>work-tasks: <code>02</code> → <code>implemented</code>, <code>03</code> → <code>i18n-done</code></li>
 </ul>
 <p>[actions]</p>
 <ul>

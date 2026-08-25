@@ -25,20 +25,20 @@ Pipeline (must run gates and get green before advancing):
 Return: sample NPV number, gate results, catalog tool count after merge.
 
 [try to solve]
-样例 NPV ≈ **1307.29**（I0=10000，r=10%，CF=3000/4200/6800）。
+Sample NPV ≈ **1307.29** (I0=10000, r=10%, CF=3000/4200/6800).
 
-门禁结果：
+Gate results:
 - coverage:gate phase=0b → OK
 - coverage:gate phase=2 → OK
 - coverage:gate phase=4 → OK
 - coverage:gate phase=all → OK
-- build:site → OK（sitemap 730 URLs）
+- build:site → OK (sitemap 730 URLs)
 - lint:seo → OK
-- lint:tool-isolation → OK（CROSS_TOOL_UPDATE=1）
+- lint:tool-isolation → OK (CROSS_TOOL_UPDATE=1)
 
-merge 后 catalog 工具数：**68**。
+Catalog tool count after merge: **68**.
 
-已交付：work-tasks 00–03；catalog/icon/Page；十语 i18n（faqPrefix tool_npv）；清单 §9/#108、§11/#14、§12/#16 与 Omni/ToolDone TSV 标「已上线」；README 中英条目。
+Delivered: work-tasks 00–03; catalog/icon/Page; ten-locale i18n (faqPrefix `tool_npv`); inventory §9/#108, §11/#14, §12/#16 and Omni/ToolDone TSVs marked live; README en+zh entries.
 
 [actions]
 - work-tasks/how-to-calculate-npv/{01,02,03}-*.md
@@ -46,5 +46,5 @@ merge 后 catalog 工具数：**68**。
 - public/icons/tools/how-to-calculate-npv.svg
 - src/pages/howToCalculateNpvPage.ts
 - src/site/i18n/tools/how-to-calculate-npv/{en,zh,es,ja,fr,de,pt,id,ru,ar}.ts
-- docs/2026-08-08-tool-inventory-table.md；omnicalculator/tooldone TSV；README.md
-- npm run merge:tools；coverage:gate 0b/2/4/all；build:site；lint:seo；lint:tool-isolation
+- docs/2026-08-08-tool-inventory-table.md; omnicalculator/tooldone TSV; README.md
+- npm run merge:tools; coverage:gate 0b/2/4/all; build:site; lint:seo; lint:tool-isolation

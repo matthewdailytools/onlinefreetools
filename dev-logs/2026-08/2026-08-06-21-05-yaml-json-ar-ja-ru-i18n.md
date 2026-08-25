@@ -33,16 +33,16 @@ FACTS: bidirectional one page; js-yaml; paste not uploaded; CDN = library only; 
 Return confirmation + note that copy is native-style rewrite (for clearing 待母语抽查 later).
 
 [try to solve]
-已为 ar / ja / ru 写入全部 `tool_yaml_json_*` 键（UI+IG+FAQ），插在 markdown FAQ 与 BMI 之间，与这三语现有结构一致。
+Wrote all `tool_yaml_json_*` keys (UI + IG + FAQ) for ar / ja / ru, inserted between markdown FAQ and BMI to match those locales’ existing layout.
 
-确认要点：
-- 按 brief 独立重写（非英模直译）；FAQ 题序与 How/Rules 开篇相对英文有变化。
-- description ≥120 且含各语关键词（ar: مثال/خطوات；ja: 手順/例；ru: пример/шаг）。
-- ja `usecases_title` =「こんなときに」，无「ユースケース」。
-- 保留 YAML、JSON、js-yaml、Kubernetes、CDN、---；本地示例用词（ar الاسم/مفعّل/عناصر；ja 名前/有効/項目；ru имя/включено/элементы）。
-- `npm run lint:seo` 通过。
+Confirmation:
+- Independent rewrites from briefs (not English-template literal translation); FAQ order and How/Rules openings differ from English.
+- description ≥120 with locale keywords (ar: example/steps; ja: procedure/example; ru: example/step).
+- ja `usecases_title` uses the natural “when to use this” heading; no katakana calque of “use cases”.
+- Kept YAML, JSON, js-yaml, Kubernetes, CDN, ---; localized sample words for name/enabled/items in each locale.
+- `npm run lint:seo` passed.
 
-文案为母语风格重写，可供后续清除「待母语抽查」勾选时抽查。
+Copy is native-style rewrite, suitable for later spot-checks when clearing “pending native review”.
 
 [actions]
 - Updated `src/site/i18n/ar.ts`, `src/site/i18n/ja.ts`, `src/site/i18n/ru.ts`

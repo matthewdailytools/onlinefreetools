@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>S1 SEO 工具套餐（4 新工具 + website-headers 增强）全部按 tool-creation 与 coverage gate 流程实现完毕 | Dev Logs</title>
-  <meta name="description" content="S1 SEO 工具套餐（4 新工具 + website-headers 增强）全部按 tool-creation 与 coverage gate 流程实现完毕" />
-  <meta name="robots" content="noindex" />
+  <title>Implemented the full S1 SEO package (four new tools plus website-headers enhancements) under tool-creation and coverage-gate flow. | Dev Logs</title>
+  <meta name="description" content="Implemented the full S1 SEO package (four new tools plus website-headers enhancements) under tool-creation and coverage-gate flow." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-09-19-30-seo-s1-tools-implemented.html" />
-  <meta property="og:title" content="S1 SEO 工具套餐（4 新工具 + website-headers 增强）全部按 tool-creation 与 coverage gate 流程实现完毕 | Dev Logs" />
-  <meta property="og:description" content="S1 SEO 工具套餐（4 新工具 + website-headers 增强）全部按 tool-creation 与 coverage gate 流程实现完毕" />
+  <meta property="og:title" content="Implemented the full S1 SEO package (four new tools plus website-headers enhancements) under tool-creation and coverage-gate flow. | Dev Logs" />
+  <meta property="og:description" content="Implemented the full S1 SEO package (four new tools plus website-headers enhancements) under tool-creation and coverage-gate flow." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-09-19-30-seo-s1-tools-implemented.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,31 +143,31 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">S1 SEO 工具套餐（4 新工具 + website-headers 增强）全部按 tool-creation 与 coverage gate 流程实现完毕 | Dev Logs</h1>
+          <h1 class="h4 mb-0">Implemented the full S1 SEO package (four new tools plus website-headers enhancements) under tool-creation and coverage-gate flow. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-09 19:30
-Summary: S1 SEO 工具套餐（4 新工具 + website-headers 增强）全部按 tool-creation 与 coverage gate 流程实现完毕</p>
+Summary: Implemented the full S1 SEO package (four new tools plus website-headers enhancements) under tool-creation and coverage-gate flow.</p>
 <p>[question]
 立项按S1（第 1–5 项），然后实现，不要跳过规则和skill中的步骤</p>
 <p>[try to solve]
-按 <code>docs/2026-08-09-seo-webmaster-tools-survey.md</code> §5 S1 套餐逐项完成，全部遵循 tool-creation / tool-i18n-localization / tool-coverage-pass（0b→2→4 门禁）与 merge:tools / build:site / lint 链：</p>
+Completed <code>docs/2026-08-09-seo-webmaster-tools-survey.md</code> §5 S1 items end-to-end, following tool-creation / tool-i18n-localization / tool-coverage-pass (0b→2→4 gates) and merge:tools / build:site / lint:</p>
 <ol>
-<li><strong>meta-serp-preview</strong>：catalog 分片、en 母版 + 9 语独立重写 i18n、页面（字符/像素估算 + 桌面/移动 SERP 预览）、SVG 图标；onpage 模块 primarySlugs + i18n-taxonomy upcoming 移除；coverage:gate 0b/2/4 全绿。</li>
-<li><strong>schema-jsonld-generator</strong>：FAQ/Article/Breadcrumb/Organization 四类 JSON-LD 生成（含「面包屑至少两级」错误键）；schema 模块 primarySlugs；10 语 i18n；0b/2/4 全绿。</li>
-<li><strong>robots-txt-generator</strong>：含 AI 爬虫 User-agent（GPTBot/ClaudeBot/Google-Extended 等）；crawl 模块 primarySlugs；英文 title 曾触发参数枚举目录腔门禁，改为单段动作向 H1「Robots.txt Generator — Manage Allow &amp; Disallow Rules for AI Crawlers」后通过；10 语；0b/2/4 全绿。</li>
-<li><strong>sitemap-xml-generator</strong>：每行 URL 可选 lastmod/changefreq/priority（竖线分隔），URL 转义、lastmod 校验、&gt;50k 拆分提示；crawl 模块 primarySlugs；crawl upcoming 十语置空；10 语；0b/2/4 全绿。</li>
-<li><strong>website-headers 增强</strong>：Worker 改为 <code>redirect: manual</code> 手动逐跳跟随（≤5 跳）返回 <code>redirects</code> 链；结果区新增「SEO header checks」子卡——Cache-Control 指令逐条解读、X-Robots-Tag noindex/nofollow/none/max-snippet 解读 + 阻断警示、Redirect 301/302 语义 + 跨主机提示；10 语新增 27 键，键集 62 全等（脚本校验）。</li>
+<li><strong>meta-serp-preview</strong>: catalog shard, en master + 9 locale rewrites, page (char/pixel estimates + desktop/mobile SERP preview), SVG icon; onpage module primarySlugs + remove i18n-taxonomy upcoming; coverage:gate 0b/2/4 green.</li>
+<li><strong>schema-jsonld-generator</strong>: FAQ/Article/Breadcrumb/Organization JSON-LD (including “breadcrumb needs ≥2 levels” error key); schema module primarySlugs; 10 locales; 0b/2/4 green.</li>
+<li><strong>robots-txt-generator</strong>: AI crawler User-agents (GPTBot/ClaudeBot/Google-Extended, etc.); crawl module primarySlugs; English title initially failed param-enum directory-cavity gate — retitled to action H1 “Robots.txt Generator — Manage Allow &amp; Disallow Rules for AI Crawlers”; 10 locales; 0b/2/4 green.</li>
+<li><strong>sitemap-xml-generator</strong>: per-line URL with optional lastmod/changefreq/priority (pipe-separated), URL escaping, lastmod validation, &gt;50k split hint; crawl module primarySlugs; crawl upcoming emptied for ten locales; 10 locales; 0b/2/4 green.</li>
+<li><strong>website-headers enhance</strong>: Worker uses <code>redirect: manual</code> and follows ≤5 hops returning a <code>redirects</code> chain; results add “SEO header checks” subcard — Cache-Control directive-by-directive, X-Robots-Tag noindex/nofollow/none/max-snippet with block warnings, Redirect 301/302 semantics + cross-host tip; 10 locales +27 keys, keyset 62 identical (script-checked).</li>
 </ol>
-<p>收尾：README 中英工具清单各 +4 新工具并更新 website-headers 描述；<code>tool-inventory-table.md</code> §6 新增 robots/sitemap 两行、修正 schema slug、73/74 标已上线，全表重编号至 1–161（脚本校验无重复无缺号），统计区已上线 114→118、P0 14→13；meta-serp-preview 从 P0 速查移除；schema-jsonld-generator 入链孤儿修复（meta-serp-preview related 加回链）。</p>
-<p>验证：<code>npm run merge:tools</code>（119 tools / 10 locales）、<code>npm run build:site</code>（1420 URLs sitemap）、<code>npm run lint:seo</code>（Title/coverage OK、Link validator 0 inbound warn；15 条 legacy WARN 均为既有工具）、<code>npm run lint:tool-isolation</code>（无 TOOL_SLUG 跳过）。四个新工具 0b/1b/2b 轮次与各语「轮次2已重写 / 抽查语轮次3」标记均已写入各自 <code>work-tasks/{slug}/03-locale-briefs.md</code>。</p>
+<p>Wrap-up: README EN/ZH tool lists +4 tools and refreshed website-headers blurb; <code>tool-inventory-table.md</code> §6 added robots/sitemap rows, fixed schema slug, marked 73/74 shipped, renumbered to 1–161 (script: no dupes/gaps), shipped count 114→118, P0 14→13; meta-serp-preview removed from P0 quick list; schema-jsonld-generator inbound orphan fixed (meta-serp-preview related backlink).</p>
+<p>Verification: <code>npm run merge:tools</code> (119 tools / 10 locales), <code>npm run build:site</code> (1420 sitemap URLs), <code>npm run lint:seo</code> (Title/coverage OK, Link validator 0 inbound warn; 15 legacy WARNs on older tools), <code>npm run lint:tool-isolation</code> (skipped without TOOL_SLUG). Each new tool’s 0b/1b/2b rounds and per-locale “round 2 rewritten / spot-check locale round 3” marks written into <code>work-tasks/{slug}/03-locale-briefs.md</code>.</p>
 <p>[actions]</p>
 <ul>
-<li>新增 <code>src/site/tool-catalog.d/{meta-serp-preview,schema-jsonld-generator,robots-txt-generator,sitemap-xml-generator}.json</code></li>
-<li>新增 <code>src/site/i18n/tools/{4 slug}/</code> 各 10 语分片；<code>src/pages/{4 Page}.ts</code>；<code>public/icons/tools/{4}.svg</code></li>
-<li>修改 <code>scripts/site/scenario-modules.mjs</code>（onpage/schema/crawl 模块）、<code>scripts/site/i18n-taxonomy.mjs</code>（upcoming 移除/置空）</li>
-<li>增强 <code>src/tools/websiteHeaders.ts</code>（手动重定向链）与 <code>src/pages/websiteHeadersPage.ts</code>（SEO 头解读）；10 语 website-headers 分片 +27 键</li>
-<li>更新 <code>README.md</code>、<code>docs/2026-08-08-tool-inventory-table.md</code>、<code>work-tasks/{4 slug}/</code> 与 <code>work-tasks/website-headers/</code> 03 简报</li>
+<li>Added <code>src/site/tool-catalog.d/{meta-serp-preview,schema-jsonld-generator,robots-txt-generator,sitemap-xml-generator}.json</code></li>
+<li>Added <code>src/site/i18n/tools/{4 slug}/</code> ×10 locales; <code>src/pages/{4 Page}.ts</code>; <code>public/icons/tools/{4}.svg</code></li>
+<li>Updated <code>scripts/site/scenario-modules.mjs</code> (onpage/schema/crawl), <code>scripts/site/i18n-taxonomy.mjs</code> (upcoming remove/empty)</li>
+<li>Enhanced <code>src/tools/websiteHeaders.ts</code> (manual redirect chain) and <code>src/pages/websiteHeadersPage.ts</code> (SEO header readouts); website-headers i18n +27 keys</li>
+<li>Updated <code>README.md</code>, <code>docs/2026-08-08-tool-inventory-table.md</code>, <code>work-tasks/{4 slug}/</code> and <code>work-tasks/website-headers/</code> 03 briefs</li>
 </ul>
 </article>
       </section>

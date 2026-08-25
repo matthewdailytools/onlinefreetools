@@ -29,13 +29,13 @@ IMPORTANT: properly closed JS strings only. Document key functions with comments
 Do not edit catalog/index/i18n. Return path when done.
 
 [try to solve]
-已创建 `src/pages/addWatermarkPage.ts`，导出 `renderAddWatermarkPage`，slug 为 `add-watermark`。
+Created `src/pages/addWatermarkPage.ts`, exporting `renderAddWatermarkPage`, slug `add-watermark`.
 
-页面结构对齐 `imageOverlayPage.ts`：单图 dropzone、水印文本（默认 SAMPLE）、字号/颜色/透明度/旋转、九宫格位置（tl=0.1,0.1 … br=0.9,0.9，手动 x/y 大于 1 时切换像素锚点）、JPEG/WebP/PNG + 质量 + JPEG 背景色、Apply/Download/Sample/Clear、预览 canvas。
+Page structure matches `imageOverlayPage.ts`: single-image dropzone, watermark text (default SAMPLE), font size/color/opacity/rotation, nine-grid position (tl=0.1,0.1 … br=0.9,0.9; manual x/y > 1 switches to pixel anchors), JPEG/WebP/PNG + quality + JPEG background color, Apply/Download/Sample/Clear, preview canvas.
 
-客户端：`drawImage` 底图后 `save` → `translate` 锚点 → `rotate` → `globalAlpha` → `fillText` 居中；软限制 25MB/8192；`loadSample()` 渐变底 + SAMPLE 斜水印并自动 `applyWatermark()`，初始化时调用。
+Client: `drawImage` base, then `save` → `translate` anchor → `rotate` → `globalAlpha` → centered `fillText`; soft limits 25MB/8192; `loadSample()` builds a gradient base + SAMPLE diagonal watermark and auto `applyWatermark()` on init.
 
-i18n 键前缀 `tool_add_watermark_*`；IG `rules` 4 条 + use cases 3；References 含 MDN fillText。未改 catalog/index/i18n。
+i18n key prefix `tool_add_watermark_*`; IG `rules` 4 + use cases 3; References include MDN fillText. Did not change catalog/index/i18n.
 
 [actions]
 - src/pages/addWatermarkPage.ts (added)

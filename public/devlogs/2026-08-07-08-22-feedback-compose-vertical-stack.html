@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Stacked share/feedback modules vertically and replaced feedback CTA with a compose-email form UI. | Dev Logs</title>
-  <meta name="description" content="Stacked share/feedback modules vertically and replaced feedback CTA with a compose-email form UI." />
-  <meta name="robots" content="noindex" />
+  <title>Stacked share/feedback modules vertically and replaced the feedback CTA with a compose-email form UI. | Dev Logs</title>
+  <meta name="description" content="Stacked share/feedback modules vertically and replaced the feedback CTA with a compose-email form UI." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-07-08-22-feedback-compose-vertical-stack.html" />
-  <meta property="og:title" content="Stacked share/feedback modules vertically and replaced feedback CTA with a compose-email form UI. | Dev Logs" />
-  <meta property="og:description" content="Stacked share/feedback modules vertically and replaced feedback CTA with a compose-email form UI." />
+  <meta property="og:title" content="Stacked share/feedback modules vertically and replaced the feedback CTA with a compose-email form UI. | Dev Logs" />
+  <meta property="og:description" content="Stacked share/feedback modules vertically and replaced the feedback CTA with a compose-email form UI." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-07-08-22-feedback-compose-vertical-stack.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,23 +143,23 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Stacked share/feedback modules vertically and replaced feedback CTA with a compose-email form UI. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Stacked share/feedback modules vertically and replaced the feedback CTA with a compose-email form UI. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-07 08:22
-Summary: Stacked share/feedback modules vertically and replaced feedback CTA with a compose-email form UI.</p>
+Summary: Stacked share/feedback modules vertically and replaced the feedback CTA with a compose-email form UI.</p>
 <p>[question]
 底部的分享这个工具和咨询反馈模块，按从上到下排放，同时邮件反馈模块给出类似写邮件的界面</p>
 <p>[try to solve]</p>
 <ol>
-<li><code>.tool-module-grid</code> 改为纵向 <code>flex</code> 单列：先分享、后反馈。</li>
-<li>反馈区改为仿写信表单：收件人（只读）、主题、正文；提交后打开系统邮件应用（mailto），预填当前工具信息。</li>
+<li>Changed <code>.tool-module-grid</code> to a vertical single-column flex stack: share first, then feedback.</li>
+<li>Replaced the feedback area with a compose-style form (read-only To, Subject, Message). Submit opens the system mail app via <code>mailto</code> with the current tool context prefilled.</li>
 </ol>
 <p>[actions]</p>
 <ul>
-<li><code>src/pages/site/toolContent.ts</code> — 写信表单 + mailto 脚本</li>
-<li><code>public/styles/site.css</code> — 单列布局与 <code>.tool-mail-*</code> 样式</li>
-<li><code>src/site/i18n/*.ts</code> — To/Subject/Message 等文案</li>
+<li><code>src/pages/site/toolContent.ts</code> — compose form + mailto script</li>
+<li><code>public/styles/site.css</code> — single-column layout and <code>.tool-mail-*</code> styles</li>
+<li><code>src/site/i18n/*.ts</code> — To / Subject / Message copy</li>
 </ul>
 </article>
       </section>

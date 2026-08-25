@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Implemented rotate-pdf tool with pdf-lib rotation, 10-locale i18n, and all gates passing. | Dev Logs</title>
   <meta name="description" content="Implemented rotate-pdf tool with pdf-lib rotation, 10-locale i18n, and all gates passing." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-20-15-implement-rotate-pdf-tool.html" />
   <meta property="og:title" content="Implemented rotate-pdf tool with pdf-lib rotation, 10-locale i18n, and all gates passing. | Dev Logs" />
   <meta property="og:description" content="Implemented rotate-pdf tool with pdf-lib rotation, 10-locale i18n, and all gates passing." />
@@ -151,7 +151,7 @@ Summary: Implemented rotate-pdf tool with pdf-lib rotation, 10-locale i18n, and 
 <p>[question]
 Implement full <code>rotate-pdf</code> in /Users/xuli/vscodeai/onlinefreetools (slug rotate-pdf, category pdf, #55; pdf-lib CDN; all/ranges modes; loadSample 2-page 90° CW; gates merge/coverage/build/lint).</p>
 <p>[try to solve]
-已完成 <code>rotate-pdf</code> 全栈实现：<code>src/pages/rotatePdfPage.ts</code>（<a href="mailto:pdf-lib@1.17.1">pdf-lib@1.17.1</a> CDN、<code>page.setRotation(PDFLib.degrees(...))</code> 累加角度；全部页或 1-based 范围 <code>1-3,5</code>；90° CW / 180° / 90° CCW；进页 <code>loadSample()</code> 两页样例顺时针 90° 后 Download 可用；25MB 软警告与加密错误）。新增 catalog 分片、SVG 图标、十语 i18n 独立重写；<code>02</code>=implemented、<code>03</code>=i18n-done（含 1b/2b）；清单 #55 已上线；README 已增条目。门禁全部通过：<code>merge:tools</code>、<code>coverage:gate --phase=all</code>、<code>build:site</code>、<code>lint:seo</code>、<code>lint:tool-isolation</code>。</p>
+Finished full <code>rotate-pdf</code> stack: <code>src/pages/rotatePdfPage.ts</code> (<a href="mailto:pdf-lib@1.17.1">pdf-lib@1.17.1</a> CDN, <code>page.setRotation(PDFLib.degrees(...))</code> accumulates angle; all pages or 1-based ranges <code>1-3,5</code>; 90° CW / 180° / 90° CCW; on-enter <code>loadSample()</code> two-page sample at 90° CW then Download enabled; 25MB soft warn and encrypted errors). Added catalog shard, SVG icon, ten independent i18n rewrites; <code>02</code>=implemented, <code>03</code>=i18n-done (with 1b/2b); inventory #55 live; README entries added. All gates passed: <code>merge:tools</code>, <code>coverage:gate --phase=all</code>, <code>build:site</code>, <code>lint:seo</code>, <code>lint:tool-isolation</code>.</p>
 <p>[actions]</p>
 <ul>
 <li>src/site/tool-catalog.d/rotate-pdf.json, src/pages/rotatePdfPage.ts, public/icons/tools/rotate-pdf.svg</li>

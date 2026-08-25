@@ -5,9 +5,9 @@ Summary: Fixed json-schema-validator samples: literal \\n broke JSON.parse; use 
 http://localhost:8788/zh/tools/json-schema-validator 出错，结果输出框没有数据，另外“JSON Schema"上面显示红色字"Schema 不是合法 JSON（或编译失败）。 Expected property name or '}' in JSON at position 1 (line 1 column 2)”；最后：JSON Schema和实例 JSON 框为什么会有 "\n"字符
 
 [try to solve]
-根因：十语 i18n 样例写成了 `\\n`（字面 `\`+`n`），文本框里可见 `\n`，`JSON.parse` 在 position 1 失败，结果区为空。
+Root cause: ten-locale i18n samples used `\\n` (literal `\`+`n`). Textareas showed visible `\n`, `JSON.parse` failed at position 1, and the result area stayed empty.
 
-修复：样例改为合法紧凑 JSON；载入时用 `JSON.stringify(..., null, 2)` 格式化显示；已 `merge:tools`。请硬刷新页面验证。
+Fix: samples are valid compact JSON; on load, pretty-print with `JSON.stringify(..., null, 2)`; ran `merge:tools`. Hard-refresh the page to verify.
 
 [actions]
 - Updated `src/site/i18n/tools/json-schema-validator/{10 langs}.ts` sample/placeholder keys

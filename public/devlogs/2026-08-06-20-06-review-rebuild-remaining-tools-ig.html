@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Reviewed and rebuilt eight remaining tools to IG/SEO/i18n standards (shared helpers, work-tasks, ten-locale copy). | Dev Logs</title>
   <meta name="description" content="Reviewed and rebuilt eight remaining tools to IG/SEO/i18n standards (shared helpers, work-tasks, ten-locale copy)." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-06-20-06-review-rebuild-remaining-tools-ig.html" />
   <meta property="og:title" content="Reviewed and rebuilt eight remaining tools to IG/SEO/i18n standards (shared helpers, work-tasks, ten-locale copy). | Dev Logs" />
   <meta property="og:description" content="Reviewed and rebuilt eight remaining tools to IG/SEO/i18n standards (shared helpers, work-tasks, ten-locale copy)." />
@@ -151,30 +151,30 @@ Summary: Reviewed and rebuilt eight remaining tools to IG/SEO/i18n standards (sh
 <p>[question]
 根据规则和策略，review和重建其他工具</p>
 <p>[try to solve]
-按策略 §C「存量缺口增强」与 text-diff / markdown-to-html 已定标准，对除这两页外的 8 个已上线工具做了 review + 重建：</p>
-<p><strong>共享基建</strong></p>
+Per strategy §C “gap enhancement for existing tools” and the standards set by text-diff / markdown-to-html, reviewed and rebuilt the other eight live tools:</p>
+<p><strong>Shared infrastructure</strong></p>
 <ul>
-<li><code>src/pages/site/toolContent.ts</code> 新增 <code>renderToolIgSections</code>、<code>renderToolReferencesSection</code>（How / Formula|Rules / Example / Use cases + 可点击 References）</li>
+<li><code>src/pages/site/toolContent.ts</code> added <code>renderToolIgSections</code> and <code>renderToolReferencesSection</code> (How / Formula|Rules / Example / Use cases + clickable References)</li>
 </ul>
-<p><strong>work-tasks（均已 <code>02: implemented</code>；<code>03: pending-native-review</code>，ar/ja/ru 待母语抽查）</strong></p>
+<p><strong>work-tasks</strong> (all <code>02: implemented</code>; <code>03: pending-native-review</code> for ar/ja/ru)</p>
 <ul>
-<li>website-headers、ip-address、how-to-calculate-bmi、how-to-calculate-roi、how-to-calculate-marginal-revenue、square-feet、how-to-calculate-percentage-change、how-to-calculate-gradient</li>
+<li>website-headers, ip-address, how-to-calculate-bmi, how-to-calculate-roi, how-to-calculate-marginal-revenue, square-feet, how-to-calculate-percentage-change, how-to-calculate-gradient</li>
 </ul>
-<p><strong>页面 IG 补齐（保留原交互）</strong></p>
+<p><strong>Page IG fill (interactions kept)</strong></p>
 <ul>
-<li>开发者：website-headers（RFC/MDN 引用、边缘隐私 FAQ）、ip-address（边缘视角、VPN/代理局限）</li>
-<li>YMYL：BMI（中性筛查语气、WHO/CDC 可点引用）、ROI（假设表 + Investopedia）、边际收益（公式推导可见）</li>
-<li>其他计算器：square-feet（房产/装修场景）、percentage-change（百分点对照）、gradient（多元 ∇f，非两点斜率；FAQ 说明差异）</li>
+<li>Developer: website-headers (RFC/MDN refs, edge privacy FAQ), ip-address (edge view, VPN/proxy limits)</li>
+<li>YMYL: BMI (neutral screening tone, WHO/CDC clickable refs), ROI (assumptions table + Investopedia), marginal revenue (visible formula derivation)</li>
+<li>Other calculators: square-feet (real-estate/renovation scenes), percentage-change (percentage-points contrast), gradient (multivariable ∇f, not two-point slope; FAQ explains the difference)</li>
 </ul>
-<p><strong>校验</strong></p>
+<p><strong>Verification</strong></p>
 <ul>
-<li><code>npm run lint:seo</code> 通过；<code>npm run build:site</code> 已跑（sitemap 120 URLs）</li>
-<li><code>README.md</code> 工具清单已与新 title/说明对齐</li>
+<li><code>npm run lint:seo</code> passed; <code>npm run build:site</code> ran (sitemap 120 URLs)</li>
+<li><code>README.md</code> Tools List aligned with new titles/blurbs</li>
 </ul>
-<p><strong>未完成 / 后续</strong></p>
+<p><strong>Follow-ups</strong></p>
 <ul>
-<li>各工具 <code>03</code> 未标 <code>i18n-done</code>：需完成轮次勾选并清掉 ar/ja/ru「待母语抽查」</li>
-<li>gradient 的 brief 初稿曾按「两点斜率」写过，实现保持存量多元 ∇f 口径（已在 <code>02</code> 注明）</li>
+<li>Tool <code>03</code> files not marked <code>i18n-done</code>: need round checkboxes and clearing ar/ja/ru pending-native-review</li>
+<li>Gradient briefs originally drafted as two-point slope; implementation kept existing multivariable ∇f (noted in <code>02</code>)</li>
 </ul>
 <p>[actions]</p>
 <ul>

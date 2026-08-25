@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Added --port / -p / bare-port args to bash start/stop/status-dev scripts. | Dev Logs</title>
-  <meta name="description" content="Added --port / -p / bare-port args to bash start/stop/status-dev scripts." />
-  <meta name="robots" content="noindex" />
+  <title>Added --port / -p / bare-port args to the bash start/stop/status-dev scripts. | Dev Logs</title>
+  <meta name="description" content="Added --port / -p / bare-port args to the bash start/stop/status-dev scripts." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-07-05-59-bash-dev-scripts-port-args.html" />
-  <meta property="og:title" content="Added --port / -p / bare-port args to bash start/stop/status-dev scripts. | Dev Logs" />
-  <meta property="og:description" content="Added --port / -p / bare-port args to bash start/stop/status-dev scripts." />
+  <meta property="og:title" content="Added --port / -p / bare-port args to the bash start/stop/status-dev scripts. | Dev Logs" />
+  <meta property="og:description" content="Added --port / -p / bare-port args to the bash start/stop/status-dev scripts." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-07-05-59-bash-dev-scripts-port-args.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,16 +143,16 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Added --port / -p / bare-port args to bash start/stop/status-dev scripts. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Added --port / -p / bare-port args to the bash start/stop/status-dev scripts. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-07 05:59
-Summary: Added --port / -p / bare-port args to bash start/stop/status-dev scripts.</p>
+Summary: Added --port / -p / bare-port args to the bash start/stop/status-dev scripts.</p>
 <p>[question]
 在 bash增加端口参数</p>
 <p>[try to solve]
-已为 macOS/Linux bash 启停脚本增加端口参数解析，并同步文档。</p>
-<p><strong>用法</strong></p>
+Port parsing was added to the macOS/Linux bash start/stop scripts, and docs were updated.</p>
+<p><strong>Usage</strong></p>
 <pre><code class="language-bash">./ops/dev/start-dev.sh --port 8788
 ./ops/dev/start-dev.sh -p 8788
 ./ops/dev/start-dev.sh 8788
@@ -160,7 +160,7 @@ Summary: Added --port / -p / bare-port args to bash start/stop/status-dev script
 ./ops/dev/status-dev.sh -p 8788
 ./ops/dev/stop-dev.sh --port 8788
 </code></pre>
-<p>新增 <code>ops/dev/status-dev.sh</code>；<code>ops/README.md</code> 已补充示例。</p>
+<p>Also added <code>ops/dev/status-dev.sh</code>; <code>ops/README.md</code> now includes examples.</p>
 <p>[actions]</p>
 <ul>
 <li>Updated <code>ops/dev/start-dev.sh</code>, <code>ops/dev/stop-dev.sh</code></li>

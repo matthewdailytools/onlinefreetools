@@ -5,14 +5,14 @@ Summary: Wired Turnstile on domain-lookup (widget + server siteverify) after use
 yes
 
 [try to solve]
-已把 Turnstile 接到 `domain-lookup`：表单内嵌 widget（sitekey `0x4AAAAAAEKPkweeKKHYjYJX`），提交前要求 token；真正 siteverify 在同源 `/api/tools/domain-lookup`（token 只能校验一次，故不先打 Spin Worker 再打业务 API）。`TURNSTILE_SECRET_KEY` 已写入 `onlinefreetools` Worker Secret 与本地 `.dev.vars`。十语增加 captcha 文案并 `merge:tools`。Spin `validate.sh` 因本机访问 `*.workers.dev` 超时失败（health）；需你在可达网络下复验或部署后浏览器实测。是否把 Spin skill 持久化到 `.claude/skills/turnstile-spin/`？
+Wired Turnstile into `domain-lookup`: form embeds the widget (sitekey `0x4AAAAAAEKPkweeKKHYjYJX`) and requires a token before submit; real siteverify runs in same-origin `/api/tools/domain-lookup` (token is single-use, so do not hit the Spin Worker first then the business API). `TURNSTILE_SECRET_KEY` written to the `onlinefreetools` Worker Secret and local `.dev.vars`. Added captcha copy for ten locales and ran `merge:tools`. Spin `validate.sh` failed health because local access to `*.workers.dev` timed out; recheck on a reachable network or in the browser after deploy. Asked whether to persist the Spin skill under `.claude/skills/turnstile-spin/`.
 
 [actions]
-- `src/pages/domainLookupPage.ts` — Turnstile script/widget + 门闩；进页样例等 callback
-- `src/endpoints/turnstileSiteverify.ts` — 新增 Cloudflare siteverify 封装
-- `src/endpoints/domainLookup.ts` — 查上游前强制 Turnstile
+- `src/pages/domainLookupPage.ts` — Turnstile script/widget + gate; sample load waits for callback
+- `src/endpoints/turnstileSiteverify.ts` — new Cloudflare siteverify helper
+- `src/endpoints/domainLookup.ts` — require Turnstile before upstream lookups
 - `src/index.ts` — `Env.TURNSTILE_SECRET_KEY`
-- `src/site/i18n/tools/domain-lookup/*` + merge 生成物 — captcha 三键
+- `src/site/i18n/tools/domain-lookup/*` + merge outputs — three captcha keys
 - `npx wrangler secret put TURNSTILE_SECRET_KEY --name onlinefreetools`
-- 本地 `.dev.vars`（gitignore）写入同密钥
-- `bash …/validate.sh` → health 失败（workers.dev 不可达）
+- Local `.dev.vars` (gitignored) with the same secret
+- `bash …/validate.sh` → health fail (workers.dev unreachable)

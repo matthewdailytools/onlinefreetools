@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Implemented IndexNow tool page with Worker check-key/submit APIs and ten-locale copy. | Dev Logs</title>
-  <meta name="description" content="Implemented IndexNow tool page with Worker check-key/submit APIs and ten-locale copy." />
-  <meta name="robots" content="noindex" />
+  <title>Implemented the IndexNow tool page with Worker check-key/submit APIs and ten-locale copy. | Dev Logs</title>
+  <meta name="description" content="Implemented the IndexNow tool page with Worker check-key/submit APIs and ten-locale copy." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-07-07-18-implement-indexnow-tool.html" />
-  <meta property="og:title" content="Implemented IndexNow tool page with Worker check-key/submit APIs and ten-locale copy. | Dev Logs" />
-  <meta property="og:description" content="Implemented IndexNow tool page with Worker check-key/submit APIs and ten-locale copy." />
+  <meta property="og:title" content="Implemented the IndexNow tool page with Worker check-key/submit APIs and ten-locale copy. | Dev Logs" />
+  <meta property="og:description" content="Implemented the IndexNow tool page with Worker check-key/submit APIs and ten-locale copy." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-07-07-18-implement-indexnow-tool.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,15 +143,15 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Implemented IndexNow tool page with Worker check-key/submit APIs and ten-locale copy. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Implemented the IndexNow tool page with Worker check-key/submit APIs and ten-locale copy. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-07 07:18
-Summary: Implemented IndexNow tool page with Worker check-key/submit APIs and ten-locale copy.</p>
+Summary: Implemented the IndexNow tool page with Worker check-key/submit APIs and ten-locale copy.</p>
 <p>[question]
 开始实现 indexnow工具</p>
 <p>[try to solve]
-已实现 <code>/tools/indexnow</code>：生成 key、下载 <code>{key}.txt</code>、Worker <code>GET /api/tools/indexnow/check-key</code> 与 <code>POST /api/tools/indexnow/submit</code>（限流、host 校验、最多 500 URL）、状态码表、Rules/Example/FAQ、Related（website-headers、add-www-to-dns）。十语 i18n + 首页短文案 + README + catalog；<code>build:site</code> 170 URLs；<code>lint:seo</code> OK。<code>work-tasks/indexnow/02</code> → <code>implemented</code>；<code>03</code> 为 <code>pending-native-review</code>（ar/ja/ru）。</p>
+Shipped <code>/tools/indexnow</code>: generate a key, download <code>{key}.txt</code>, Worker <code>GET /api/tools/indexnow/check-key</code> and <code>POST /api/tools/indexnow/submit</code> (rate limit, host checks, max 500 URLs), status-code table, Rules/Example/FAQ, Related (website-headers, add-www-to-dns). Ten-locale i18n + home short copy + README + catalog; <code>build:site</code> 170 URLs; <code>lint:seo</code> OK. <code>work-tasks/indexnow/02</code> → <code>implemented</code>; <code>03</code> is <code>pending-native-review</code> (ar/ja/ru).</p>
 <p>[actions]</p>
 <ul>
 <li>added: <code>src/pages/indexNowPage.ts</code>, <code>src/endpoints/indexnow.ts</code></li>

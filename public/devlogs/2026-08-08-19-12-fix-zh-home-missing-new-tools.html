@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Rebuilt static homepage so /zh/ lists tools 18–24. | Dev Logs</title>
   <meta name="description" content="Rebuilt static homepage so /zh/ lists tools 18–24." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-19-12-fix-zh-home-missing-new-tools.html" />
   <meta property="og:title" content="Rebuilt static homepage so /zh/ lists tools 18–24. | Dev Logs" />
   <meta property="og:description" content="Rebuilt static homepage so /zh/ lists tools 18–24." />
@@ -151,12 +151,12 @@ Summary: Rebuilt static homepage so /zh/ lists tools 18–24.</p>
 <p>[question]
 <a href="http://localhost:8788/zh/%E6%B2%A1%E6%9C%89%E6%98%BE%E7%A4%BA">http://localhost:8788/zh/没有显示</a></p>
 <p>[try to solve]
-原因：新增七个工具后只跑了 <code>merge:tools</code>，未跑 <code>build:site</code>，静态首页 <code>public/_pages/zh/index.html</code> 仍是旧版，故 <code>/zh/</code> 推荐/全部工具区看不到新工具。工具页本身（如 <code>/tools/jwt-decoder</code>）已可访问。</p>
-<p>处理：执行 <code>npm run build:site</code> 重建各语首页与 sitemap。验证 <code>/zh/</code> 已包含 jwt-decoder、file-hash、base64、uuid-generator、password-generator、unix-timestamp、timezone-converter。请硬刷新浏览器缓存后查看。</p>
+Cause: after adding seven tools only <code>merge:tools</code> ran, not <code>build:site</code>, so static home <code>public/_pages/zh/index.html</code> stayed stale and <code>/zh/</code> featured/all-tools sections omitted the new tools. Tool routes themselves (e.g. <code>/tools/jwt-decoder</code>) were already reachable.</p>
+<p>Fix: ran <code>npm run build:site</code> to rebuild locale homes and sitemap. Confirmed <code>/zh/</code> links include jwt-decoder, file-hash, base64, uuid-generator, password-generator, unix-timestamp, timezone-converter. Hard-refresh the browser cache to see them.</p>
 <p>[actions]</p>
 <ul>
 <li>npm run build:site</li>
-<li>验证 <a href="http://127.0.0.1:8788/zh/">http://127.0.0.1:8788/zh/</a> 含七个新工具链接</li>
+<li>Verified <a href="http://127.0.0.1:8788/zh/">http://127.0.0.1:8788/zh/</a> lists the seven new tool links</li>
 </ul>
 </article>
       </section>

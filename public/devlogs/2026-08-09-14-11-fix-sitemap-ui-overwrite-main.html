@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Fixed sitemap ops UI overwrite-main target path (dry-run + live hint). | Dev Logs</title>
   <meta name="description" content="Fixed sitemap ops UI overwrite-main target path (dry-run + live hint)." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-09-14-11-fix-sitemap-ui-overwrite-main.html" />
   <meta property="og:title" content="Fixed sitemap ops UI overwrite-main target path (dry-run + live hint). | Dev Logs" />
   <meta property="og:description" content="Fixed sitemap ops UI overwrite-main target path (dry-run + live hint)." />
@@ -151,14 +151,14 @@ Summary: Fixed sitemap ops UI overwrite-main target path (dry-run + live hint).<
 <p>[question]
 覆盖主文件选项不起作用</p>
 <p>[try to solve]
-已修复。根因是预览（dry-run）时 API 把 <code>outFile</code> 固定返回 <code>null</code>，结果里又用 <code>mode=filtered</code> 表示「内容筛选」，容易误以为仍写入 filtered 文件；「全量」预设还会把覆盖勾选粘成 true。</p>
-<p>改动：</p>
+Fixed. Root cause: dry-run preview API always returned <code>outFile</code> as <code>null</code>, and results used <code>mode=filtered</code> for content filtering, which looked like writes still went to the filtered file; the “full” preset also stuck overwrite checked as true.</p>
+<p>Changes:</p>
 <ul>
-<li>服务端 <code>resolveOutFile</code>：预览/实写都返回解析后的目标路径与 <code>overwriteMain</code></li>
-<li>操作页显示「当前目标」实时路径；结果区分「内容=筛选/全量」与「目标=…」</li>
-<li>「全量」预设不再勾选覆盖主文件（全量本身写主文件）</li>
+<li>Server <code>resolveOutFile</code>: preview and live both return the resolved target path and <code>overwriteMain</code></li>
+<li>Ops UI shows live “current target” path; results separate “content=filtered/full” from “target=…”</li>
+<li>“Full” preset no longer checks overwrite main (full already writes the main file)</li>
 </ul>
-<p>请重启 <code>npm run sitemap:ui</code> 后验证：筛选 + 勾选覆盖 → 目标应为 <code>public/sitemap.xml</code>。</p>
+<p>Restart <code>npm run sitemap:ui</code> to verify: filter + overwrite checked → target should be <code>public/sitemap.xml</code>.</p>
 <p>[actions]</p>
 <ul>
 <li>Updated <code>ops/seo/sitemap-ui.mjs</code>, <code>ops/seo/sitemap-ui.html</code></li>

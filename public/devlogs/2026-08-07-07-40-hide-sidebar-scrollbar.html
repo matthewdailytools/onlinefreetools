@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Hid the left sidebar’s always-visible scrollbar; keep scroll, show a thin bar only on hover. | Dev Logs</title>
   <meta name="description" content="Hid the left sidebar’s always-visible scrollbar; keep scroll, show a thin bar only on hover." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-07-07-40-hide-sidebar-scrollbar.html" />
   <meta property="og:title" content="Hid the left sidebar’s always-visible scrollbar; keep scroll, show a thin bar only on hover. | Dev Logs" />
   <meta property="og:description" content="Hid the left sidebar’s always-visible scrollbar; keep scroll, show a thin bar only on hover." />
@@ -151,10 +151,10 @@ Summary: Hid the left sidebar’s always-visible scrollbar; keep scroll, show a 
 <p>[question]
 左侧菜单有滚动条实现下拉，看起来不美观</p>
 <p>[try to solve]
-侧栏仍 <code>overflow-y: auto</code>（菜单过长时可滚），但默认隐藏系统滚动条（Firefox <code>scrollbar-width: none</code>、WebKit 宽度 0）。鼠标悬停时再显示 4px 细滚动条，避免常驻粗条影响观感。</p>
+Sidebar still uses <code>overflow-y: auto</code> (scroll when the menu is long), but the system scrollbar is hidden by default (Firefox <code>scrollbar-width: none</code>, WebKit width 0). On hover, a 4px thin scrollbar appears so a permanent thick bar does not dominate the UI.</p>
 <p>[actions]</p>
 <ul>
-<li><code>public/styles/site.css</code> — <code>#sidebar</code> 滚动条隐藏 / 悬停细条样式</li>
+<li><code>public/styles/site.css</code> — <code>#sidebar</code> scrollbar hide / hover thin-bar styles</li>
 </ul>
 </article>
       </section>

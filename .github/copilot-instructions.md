@@ -7,16 +7,15 @@ Purpose: Make AI agents productive immediately in this repo. Keep changes minima
 - Target platform: Cloudflare Workers + Static Assets + R2. Use Wrangler for local dev; production Worker/Assets normally deploy via GitHub push after local R2 upload/verify.
 
 ## Default Agent Behaviors
-- Log each Q&A: create one file per exchange in `dev-logs/YYYY-MM/` named `YYYY-MM-DD-HH-MM-<summary>.md`. Use ISO date + 24h time (local), short hyphenated summary (sanitize: spaces→`-`, remove `/\\:*?"<>|`). Month folder matches `YYYY-MM` from the filename.
-- Log in English format (applies to new logs only; do not rewrite past entries):
+- Dev logs (see `.cursor/rules/dev-logs.mdc`): **screen for relevance every turn** — do not log every Q&A. Skip pure `git add` / `commit` / `push`, confirmations, thin/no-conclusion chats, and secrets. When logging, write **English** people-first content (unique Summary, consolidated answer; no scaled thin pages). Path: `dev-logs/YYYY-MM/YYYY-MM-DD-HH-MM-<summary>.md` (24h local; kebab-case summary; month folder matches filename). Historical curation (user-requested): move fails to `dev-logs/_archive/` (skipped by build); do not mass-machine-translate keepers.
+- Log template (new logs only; do not rewrite past entries):
   - `Date: <YYYY-MM-DD HH:MM>`
-  - `Summary: <one sentence>`
-  - `[question]` + original text
-  - `[try to solve]` + final answer
-  - Optionally append `[actions]` with file paths/commands changed.
-- Logging scope: do not log the act of creating the log file itself in `[actions]`; only list user-relevant file or config changes.
-- Exclusions: do not record the AI's trailing or clarifying prompts (e.g., the last AI question asking for confirmation). Only include the user's original question and the final, consolidated answer。
-- Visibility: keep full Q&A content visible in the chat; logging to `public/dev-logs/` is a backend record and should not reduce or hide the conversation shown to the user.
+  - `Summary: <one English sentence: outcome or decision>`
+  - `[question]` + user's original text (may keep original language)
+  - `[try to solve]` + final consolidated answer **in English**
+  - Optionally `[actions]` with file paths/commands changed (never the log file itself).
+- Exclusions: AI trailing clarifying prompts; creating the log file; git-only sessions.
+- Visibility: keep full Q&A visible in chat; `public/devlogs/` is generated output (crawlable; not in sitemap) and must not shorten the chat reply.
 - Keep edits surgical: modify only files directly relevant to the user request. Do not introduce frameworks or unrelated refactors without explicit instruction.
 - Do not save sensitive data: use environment variables or other secure methods.
 
@@ -84,5 +83,5 @@ Purpose: Make AI agents productive immediately in this repo. Keep changes minima
 - i18n: `<html lang>` + full `hreflang` per locale. Full rules: `docs/SEO_TOOL_RULES.md` and `.cursor/rules/`.
 
 ## Examples
-- Create a new log for a Q&A about initializing Cloudflare: `dev-logs/2026-01/2026-01-08-初始化cloudflare项目.md` with the sections above.
+- After a durable decision (e.g. Cloudflare init), if relevance screening passes: `dev-logs/2026-08/2026-08-26-00-21-refine-dev-logs-relevance-and-seo.md` in the English template above. Do not create a log for a git-only commit/push request.
 - Minimal Worker entrypoint example path once created: `src/worker.ts` referenced by `wrangler.toml` (`main = "src/worker.ts"`).

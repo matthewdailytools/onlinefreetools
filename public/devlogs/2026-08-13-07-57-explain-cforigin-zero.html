@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Explain cfOrigin dur=0: no HTTP origin fetch; R2/Assets bindings not counted. | Dev Logs</title>
-  <meta name="description" content="Explain cfOrigin dur=0: no HTTP origin fetch; R2/Assets bindings not counted." />
-  <meta name="robots" content="noindex" />
+  <title>Explain cfOrigin dur=0: no HTTP origin fetch; R2/Assets bindings are not counted. | Dev Logs</title>
+  <meta name="description" content="Explain cfOrigin dur=0: no HTTP origin fetch; R2/Assets bindings are not counted." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-13-07-57-explain-cforigin-zero.html" />
-  <meta property="og:title" content="Explain cfOrigin dur=0: no HTTP origin fetch; R2/Assets bindings not counted. | Dev Logs" />
-  <meta property="og:description" content="Explain cfOrigin dur=0: no HTTP origin fetch; R2/Assets bindings not counted." />
+  <meta property="og:title" content="Explain cfOrigin dur=0: no HTTP origin fetch; R2/Assets bindings are not counted. | Dev Logs" />
+  <meta property="og:description" content="Explain cfOrigin dur=0: no HTTP origin fetch; R2/Assets bindings are not counted." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-13-07-57-explain-cforigin-zero.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,18 +143,18 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Explain cfOrigin dur=0: no HTTP origin fetch; R2/Assets bindings not counted. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Explain cfOrigin dur=0: no HTTP origin fetch; R2/Assets bindings are not counted. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-13 07:57
-Summary: Explain cfOrigin dur=0: no HTTP origin fetch; R2/Assets bindings not counted.</p>
+Summary: Explain cfOrigin dur=0: no HTTP origin fetch; R2/Assets bindings are not counted.</p>
 <p>[question]
 origin 仍为 0的含义</p>
 <p>[try to solve]
-<code>server-timing: … cfOrigin;dur=0</code> 表示本次请求在 Cloudflare 计时里<strong>没有对「HTTP Origin」发起回源 fetch</strong>（或耗时记为 0）。对本站：工具页冷路径是 Worker 内 R2 绑定 <code>get</code> + gunzip，首页可走 ASSETS 绑定；这些是 Worker binding，一般<strong>不计入</strong> cfOrigin。因此 HIT 时 origin=0 正常；miss 时也可能仍是 0（只打了 R2/Assets，没打传统源站 URL）。cfOrigin&gt;0 才更像 Worker/<code>fetch</code> 打了外部/源站主机。不要把 origin=0 理解成「没读任何存储」——读 R2/Cache/Assets 的时间在 <code>cfWorker</code> 里。</p>
+<code>server-timing: … cfOrigin;dur=0</code> means this request did not issue an HTTP Origin fetch in Cloudflare’s timing (or that duration is recorded as 0). On this site, tool cold path is Worker R2 binding <code>get</code> + gunzip; home may use the ASSETS binding. Those are Worker bindings and generally do not count toward cfOrigin. So origin=0 on HIT is normal; on miss it can still be 0 if only R2/Assets ran, not a traditional origin URL. cfOrigin&gt;0 more often means Worker/<code>fetch</code> hit an external or origin host. Do not read origin=0 as “no storage read”—time spent on R2/Cache/Assets lands in <code>cfWorker</code>.</p>
 <p>[actions]</p>
 <ul>
-<li>（只读解释）</li>
+<li>Read-only explanation</li>
 </ul>
 </article>
       </section>

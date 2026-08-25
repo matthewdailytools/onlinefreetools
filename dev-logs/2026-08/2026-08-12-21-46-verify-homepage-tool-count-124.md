@@ -5,21 +5,21 @@ Summary: Verified homepage tool count 124 matches catalog and related sources.
 检查工具数量,首页显示124个工具是否正确
 
 [try to solve]
-结论：正确。首页「124 个工具」与目录一致。
+Verdict: correct. Homepage “124 tools” matches the catalog.
 
-核对结果：
+Checks:
 
-| 来源 | 数量 |
+| Source | Count |
 |------|------|
-| `src/site/tool-catalog.json` | 124（slug 无重复） |
+| `src/site/tool-catalog.json` | 124 (unique slugs) |
 | `src/site/tool-catalog.d/` | 124 |
 | `src/pages/*Page.ts` | 124 |
 | `src/site/i18n/tools/` | 124 |
-| 英文首页工具链接 | 124 |
+| English homepage tool links | 124 |
 
-Hero 数字来自 `TOOL_CATALOG.length`（`scripts/site/components/content-home.mjs`），不是写死的。
+Hero number comes from `TOOL_CATALOG.length` (`scripts/site/components/content-home.mjs`), not a hard-coded constant.
 
-按分类：计算器 62、开发者 28、图片 19、PDF 11、设计 4，合计 124。
+By category: calculators 62, developer 28, image 19, PDF 11, design 4 — total 124.
 
 [actions]
-- 读取/核对 `src/site/tool-catalog.json`、`tool-catalog.d`、`src/pages`、`i18n/tools`、首页 HTML 与 `content-home.mjs`
+- Read/verified `src/site/tool-catalog.json`, `tool-catalog.d`, `src/pages`, `i18n/tools`, homepage HTML, and `content-home.mjs`

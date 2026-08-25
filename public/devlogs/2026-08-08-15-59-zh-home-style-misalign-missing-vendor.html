@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Production /zh/ looks broken because self-hosted Bootstrap/font vendor assets 404 after upload. | Dev Logs</title>
   <meta name="description" content="Production /zh/ looks broken because self-hosted Bootstrap/font vendor assets 404 after upload." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-15-59-zh-home-style-misalign-missing-vendor.html" />
   <meta property="og:title" content="Production /zh/ looks broken because self-hosted Bootstrap/font vendor assets 404 after upload. | Dev Logs" />
   <meta property="og:description" content="Production /zh/ looks broken because self-hosted Bootstrap/font vendor assets 404 after upload." />
@@ -151,8 +151,8 @@ Summary: Production /zh/ looks broken because self-hosted Bootstrap/font vendor 
 <p>[question]
 为什么上传后，<a href="https://onlinefreetools.org/zh/">https://onlinefreetools.org/zh/</a>  样式错位了</p>
 <p>[try to solve]
-根因：今日把布局从 CDN 改为同域 <code>/vendor/bootstrap/</code>、<code>/vendor/fonts/</code> 后，线上 HTML 已引用这些路径，但生产上这两个资源返回 <strong>404</strong>；<code>/styles/site.css</code> 仍 200。缺少 Bootstrap 栅格/组件样式就会表现为首页错位。本地 <code>public/vendor/bootstrap/</code>、<code>public/vendor/fonts/</code> 由 <code>build:site</code> / <code>vendor:site-chrome</code> 生成，且在 <code>.gitignore</code> 中，若只上传 HTML/页面、或部署未跑 vendor 复制，就不会带上这些文件。</p>
-<p>修复：部署前执行 <code>npm run build:site</code>（或至少 <code>npm run vendor:site-chrome</code>），再 <code>npm run deploy</code> / 完整上传含 <code>public/vendor/bootstrap/</code> 与 <code>public/vendor/fonts/</code> 的 assets。</p>
+Root cause: after switching layout from CDN to same-origin <code>/vendor/bootstrap/</code> and <code>/vendor/fonts/</code>, production HTML referenced those paths but both returned <strong>404</strong>; <code>/styles/site.css</code> still 200. Missing Bootstrap grid/component CSS shows up as a broken home layout. Local <code>public/vendor/bootstrap/</code> and <code>public/vendor/fonts/</code> are produced by <code>build:site</code> / <code>vendor:site-chrome</code> and were gitignored — uploading only HTML/pages, or deploying without the vendor copy, omits those files.</p>
+<p>Fix: before deploy run <code>npm run build:site</code> (or at least <code>npm run vendor:site-chrome</code>), then <code>npm run deploy</code> / upload assets that include <code>public/vendor/bootstrap/</code> and <code>public/vendor/fonts/</code>.</p>
 <p>[actions]</p>
 <ul>
 <li>Verified live: bootstrap.min.css / plus-jakarta-sans.css → 404; site.css → 200</li>

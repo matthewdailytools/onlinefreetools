@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Added meta robots noindex to generated devlog HTML pages and index. | Dev Logs</title>
   <meta name="description" content="Added meta robots noindex to generated devlog HTML pages and index." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-10-16-devlog-html-noindex.html" />
   <meta property="og:title" content="Added meta robots noindex to generated devlog HTML pages and index. | Dev Logs" />
   <meta property="og:description" content="Added meta robots noindex to generated devlog HTML pages and index." />
@@ -151,20 +151,20 @@ Summary: Added meta robots noindex to generated devlog HTML pages and index.</p>
 <p>[question]
 devlog的生成的html 增加noindex</p>
 <p>[try to solve]
-已在 devlog 构建链路为全部生成页加入 <code>&lt;meta name=&quot;robots&quot; content=&quot;noindex&quot; /&gt;</code>：</p>
+Added <code>&lt;meta name=&quot;robots&quot; content=&quot;noindex&quot; /&gt;</code> to all generated devlog pages in the build pipeline:</p>
 <ol>
-<li><strong><code>scripts/site/layout.mjs</code></strong> — <code>renderLayout</code> 新增可选参数 <code>robotsNoindex</code>（默认 <code>false</code>）。</li>
-<li><strong><code>scripts/build-site.mjs</code></strong> — <code>buildDevLogs()</code> 对单篇与索引页均传 <code>robotsNoindex: true</code>。</li>
-<li><strong><code>.cursor/rules/seo-html-defaults.mdc</code></strong> — 索引说明同步为 devlogs 使用 noindex meta。</li>
+<li><strong><code>scripts/site/layout.mjs</code></strong> — <code>renderLayout</code> gained optional <code>robotsNoindex</code> (default <code>false</code>).</li>
+<li><strong><code>scripts/build-site.mjs</code></strong> — <code>buildDevLogs()</code> passes <code>robotsNoindex: true</code> for both article and index pages.</li>
+<li><strong><code>.cursor/rules/seo-html-defaults.mdc</code></strong> — indexing notes updated: devlogs use noindex meta.</li>
 </ol>
-<p>与既有策略一致：<code>robots.txt</code> 已 <code>Disallow: /devlogs/</code>，sitemap 不含 devlogs；noindex 用于已发现/曾收录 URL 的额外信号。</p>
-<p>已运行 <code>npm run build:logs</code> 刷新 <code>public/devlogs/</code> 全部 HTML。</p>
+<p>Aligned with existing policy: <code>robots.txt</code> already has <code>Disallow: /devlogs/</code>, and the sitemap excludes devlogs; noindex is an extra signal for already-discovered or previously indexed URLs.</p>
+<p>Ran <code>npm run build:logs</code> to refresh all HTML under <code>public/devlogs/</code>.</p>
 <p>[actions]</p>
 <ul>
 <li>scripts/site/layout.mjs</li>
 <li>scripts/build-site.mjs</li>
 <li>.cursor/rules/seo-html-defaults.mdc</li>
-<li>public/devlogs/*.html（build:logs 重建）</li>
+<li>public/devlogs/*.html (rebuild via build:logs)</li>
 </ul>
 </article>
       </section>

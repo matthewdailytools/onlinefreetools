@@ -5,20 +5,20 @@ Summary: Confirmed strategy: prioritize existing tools CTR/ranking over new tool
 目前有展现很少点击，优先优化现有工具的排名和点击
 
 [try to solve]
-同意：阶段已是「广覆盖、有展示、近零点击」，应优先 absorb 丰富已有工具，暂缓新建。
+Agreed: the phase is “broad coverage, some impressions, near-zero clicks,” so prioritize absorb/enrichment of existing tools and defer new builds.
 
-诊断（GSC 2026-08-12，24h）：展示 ~302、点击 0、加权排名 ~70；矛盾是 SERP 深位 + title/描述未对齐检索主词，不是缺 URL。
+Diagnosis (GSC 2026-08-12, 24h): ~302 impressions, 0 clicks, weighted position ~70. The gap is deep SERP position plus title/description not aligned to primary query terms—not missing URLs.
 
-本周执行优先级（CTR meta，不拆页）：
-1. ru image-merge（展示 Top）— title 对齐 объединить/склеить фото онлайн
-2. en schema-jsonld-generator — 前置 JSON-LD / Schema generator
-3. es how-to-calculate-volume — 前置 calcular volumen
-4. en how-to-calculate-npv — 对齐 how to calculate npv（排名深，先 meta）
-5. es square-feet — 排名已 ~18，长窗口仍 0 点击再微调前 30 字
+This week’s execution priority (CTR meta only; no URL splits):
+1. ru image-merge (top impressions) — title aligned to объединить/склеить фото онлайн
+2. en schema-jsonld-generator — front-load JSON-LD / Schema generator
+3. es how-to-calculate-volume — front-load calcular volumen
+4. en how-to-calculate-npv — align how to calculate npv (deep rank; meta first)
+5. es square-feet — already ~position 18; if still 0 clicks over a longer window, tweak the first 30 characters
 
-并行：索引噪声（robots /api、devlogs noindex、信息页尾斜杠）；导出 ≥28 天效果再验 CTR。
+In parallel: index noise (robots `/api`, devlogs noindex, info-page trailing slash); export ≥28 days of data before judging CTR.
 
-明确不做：日建新工具、砍语种、按未收录 URL 扫射改页。
+Explicitly not doing: daily new tools, cutting locales, or shotgun page edits for unindexed URLs.
 
 [actions]
-- 只读对照 docs/seo/reviews/2026-08-12 与高展示页现行 title；未改代码
+- Read-only comparison of docs/seo/reviews/2026-08-12 vs current titles on high-impression pages; no code changes

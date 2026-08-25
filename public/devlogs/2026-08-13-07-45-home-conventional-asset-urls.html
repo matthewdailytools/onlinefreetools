@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Home pages at conventional Asset URLs with Worker-first language negotiation. | Dev Logs</title>
-  <meta name="description" content="Home pages at conventional Asset URLs with Worker-first language negotiation." />
-  <meta name="robots" content="noindex" />
+  <title>Home pages use conventional Asset URLs with Worker-first language negotiation. | Dev Logs</title>
+  <meta name="description" content="Home pages use conventional Asset URLs with Worker-first language negotiation." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-13-07-45-home-conventional-asset-urls.html" />
-  <meta property="og:title" content="Home pages at conventional Asset URLs with Worker-first language negotiation. | Dev Logs" />
-  <meta property="og:description" content="Home pages at conventional Asset URLs with Worker-first language negotiation." />
+  <meta property="og:title" content="Home pages use conventional Asset URLs with Worker-first language negotiation. | Dev Logs" />
+  <meta property="og:description" content="Home pages use conventional Asset URLs with Worker-first language negotiation." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-13-07-45-home-conventional-asset-urls.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,15 +143,15 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Home pages at conventional Asset URLs with Worker-first language negotiation. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Home pages use conventional Asset URLs with Worker-first language negotiation. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-13 07:45
-Summary: Home pages at conventional Asset URLs with Worker-first language negotiation.</p>
+Summary: Home pages use conventional Asset URLs with Worker-first language negotiation.</p>
 <p>[question]
 需要首页在asset起作用，且按常规url访问</p>
 <p>[try to solve]
-<code>buildHome</code> 写入常规路径：<code>public/index.html</code>（默认语 <code>/</code>）、<code>public/{lang}/index.html</code>（含 <code>/en/</code>），并仍写 <code>_pages/{lang}/index.html</code> 供 R2 兜底。Worker <code>serveHomeHtml</code> 按常规路径读 Assets。<code>run_worker_first</code> 增加 <code>/</code> 与各语前缀，避免 Assets 抢先出默认首页而跳过 Accept-Language。<code>.assetsignore</code> 恢复整树排除 <code>_pages</code>。上线：<code>build:site</code> → commit <code>public/index.html</code> 与 <code>public/*/index.html</code> → git push。</p>
+<code>buildHome</code> writes conventional paths: <code>public/index.html</code> (default language <code>/</code>), <code>public/{lang}/index.html</code> (including <code>/en/</code>), and still writes <code>_pages/{lang}/index.html</code> for R2 fallback. Worker <code>serveHomeHtml</code> reads Assets at those conventional paths. <code>run_worker_first</code> covers <code>/</code> and each language prefix so Assets cannot serve the default home before Accept-Language runs. <code>.assetsignore</code> again excludes the whole <code>_pages</code> tree. Ship: <code>build:site</code> → commit <code>public/index.html</code> and <code>public/*/index.html</code> → git push.</p>
 <p>[actions]</p>
 <ul>
 <li>Updated <code>scripts/build-site.mjs</code>, <code>src/site/r2Pages.ts</code>, <code>src/index.ts</code>, <code>wrangler.jsonc</code></li>

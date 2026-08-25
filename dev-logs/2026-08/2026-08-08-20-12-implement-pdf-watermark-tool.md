@@ -21,27 +21,27 @@ npm run merge:tools && npm run coverage:gate -- --slug=pdf-watermark --phase=all
 No plan edit, no commit. 中文 brief. Chinese comments on code.
 
 [try to solve]
-已完成 `pdf-watermark` 全栈实现并通过全部门禁。
+Finished full `pdf-watermark` stack; all gates green.
 
-**交付物**
-- `src/site/tool-catalog.d/pdf-watermark.json` — category pdf，related 因 `pdf-page-numbers` 未上线采用 `add-watermark` + `rotate-pdf`
-- `src/pages/pdfWatermarkPage.ts` — pdf-lib drawText/drawImage；文字/透明度/旋转/位置/可选 PNG·JPG；25MB 警告；加密错误；进页 `loadSample()` 两页 + DRAFT → `watermarked.pdf`
+**Deliverables**
+- `src/site/tool-catalog.d/pdf-watermark.json` — category pdf; related uses `add-watermark` + `rotate-pdf` because `pdf-page-numbers` was not live yet
+- `src/pages/pdfWatermarkPage.ts` — pdf-lib drawText/drawImage; text/opacity/rotation/position/optional PNG·JPG; 25MB warn; encrypted errors; on-enter `loadSample()` two pages + DRAFT → `watermarked.pdf`
 - `public/icons/tools/pdf-watermark.svg`
-- `src/site/i18n/tools/pdf-watermark/{en,zh,es,ar,pt,id,fr,ja,ru,de}.ts` — 十语完整键、独立重写
-- `work-tasks/pdf-watermark/02-tool-info.md`、`03-locale-briefs.md` — 1b/2b 多轮记录；03 → `i18n-done`
-- `docs/2026-08-08-tool-inventory-table.md` #56 → 已上线
-- `README.md` 中英工具清单各一条
+- `src/site/i18n/tools/pdf-watermark/{en,zh,es,ar,pt,id,fr,ja,ru,de}.ts` — full keys, independent rewrites
+- `work-tasks/pdf-watermark/02-tool-info.md`, `03-locale-briefs.md` — 1b/2b multi-round; 03 → `i18n-done`
+- `docs/2026-08-08-tool-inventory-table.md` #56 → live
+- `README.md` zh+en tool-list entries
 
-**门禁（全部通过）**
+**Gates (all passed)**
 - `coverage:gate --phase=all`
-- `build:site`（catalog 51 工具）
+- `build:site` (catalog 51 tools)
 - `lint:seo`
-- `lint:tool-isolation`（CROSS_TOOL_UPDATE=1）
+- `lint:tool-isolation` (`CROSS_TOOL_UPDATE=1`)
 
 [actions]
 - src/site/tool-catalog.d/pdf-watermark.json
 - src/pages/pdfWatermarkPage.ts
 - public/icons/tools/pdf-watermark.svg
-- src/site/i18n/tools/pdf-watermark/*.ts（10 语）
+- src/site/i18n/tools/pdf-watermark/*.ts (10 locales)
 - work-tasks/pdf-watermark/02-tool-info.md, 03-locale-briefs.md
 - docs/2026-08-08-tool-inventory-table.md, README.md

@@ -9,7 +9,7 @@ Implement the plan as specified, it is attached for your reference. Do NOT edit 
 To-do's from the plan have already been created. Do not create them again. Mark them as in_progress as you work, starting with the first one. Don't stop until you have completed all the to-dos.
 
 [try to solve]
-在不改动原有 homepage `category` 分区的前提下，为每个工具增加唯一的 `scenario` 与 `subject` 字段，并生成与首页同构的可索引列表页。Hub（`/use-cases/`、`/subjects/`）只链到 leaf，不直链工具；leaf 展示该标签下全部工具卡片。工具规范 URL 仍为 `/{lang}/tools/{slug}`。顶栏增加「应用场景」「操作对象」入口；sitemap 已纳入；`npm run lint:taxonomy` 与 `build:site` 通过。
+Without changing existing homepage `category` sections, added unique `scenario` and `subject` fields per tool and built indexable listing pages matching the home layout. Hubs (`/use-cases/`, `/subjects/`) link only to leaf pages, not tools directly; each leaf shows all tool cards for that tag. Canonical tool URLs remain `/{lang}/tools/{slug}`. Top nav gained “use cases” and “subjects” entries; sitemap includes the new pages; `npm run lint:taxonomy` and `build:site` passed.
 
 [actions]
 - Extended ToolPageMeta + src/site/taxonomy.ts / scripts/site/taxonomy.mjs

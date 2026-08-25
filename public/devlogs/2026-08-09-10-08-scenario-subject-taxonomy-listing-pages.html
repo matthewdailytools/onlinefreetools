@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Added unique scenario/subject tags for all 114 tools and home-style listing pages under /use-cases and /subjects. | Dev Logs</title>
   <meta name="description" content="Added unique scenario/subject tags for all 114 tools and home-style listing pages under /use-cases and /subjects." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-09-10-08-scenario-subject-taxonomy-listing-pages.html" />
   <meta property="og:title" content="Added unique scenario/subject tags for all 114 tools and home-style listing pages under /use-cases and /subjects. | Dev Logs" />
   <meta property="og:description" content="Added unique scenario/subject tags for all 114 tools and home-style listing pages under /use-cases and /subjects." />
@@ -153,7 +153,7 @@ Summary: Added unique scenario/subject tags for all 114 tools and home-style lis
 <p>Implement the plan as specified, it is attached for your reference. Do NOT edit the plan file itself.</p>
 <p>To-do&#39;s from the plan have already been created. Do not create them again. Mark them as in_progress as you work, starting with the first one. Don&#39;t stop until you have completed all the to-dos.</p>
 <p>[try to solve]
-在不改动原有 homepage <code>category</code> 分区的前提下，为每个工具增加唯一的 <code>scenario</code> 与 <code>subject</code> 字段，并生成与首页同构的可索引列表页。Hub（<code>/use-cases/</code>、<code>/subjects/</code>）只链到 leaf，不直链工具；leaf 展示该标签下全部工具卡片。工具规范 URL 仍为 <code>/{lang}/tools/{slug}</code>。顶栏增加「应用场景」「操作对象」入口；sitemap 已纳入；<code>npm run lint:taxonomy</code> 与 <code>build:site</code> 通过。</p>
+Without changing existing homepage <code>category</code> sections, added unique <code>scenario</code> and <code>subject</code> fields per tool and built indexable listing pages matching the home layout. Hubs (<code>/use-cases/</code>, <code>/subjects/</code>) link only to leaf pages, not tools directly; each leaf shows all tool cards for that tag. Canonical tool URLs remain <code>/{lang}/tools/{slug}</code>. Top nav gained “use cases” and “subjects” entries; sitemap includes the new pages; <code>npm run lint:taxonomy</code> and <code>build:site</code> passed.</p>
 <p>[actions]</p>
 <ul>
 <li>Extended ToolPageMeta + src/site/taxonomy.ts / scripts/site/taxonomy.mjs</li>

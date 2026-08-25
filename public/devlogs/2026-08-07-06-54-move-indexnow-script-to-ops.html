@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Move IndexNow submit script from scripts/ to ops/seo/. | Dev Logs</title>
-  <meta name="description" content="Move IndexNow submit script from scripts/ to ops/seo/." />
-  <meta name="robots" content="noindex" />
+  <title>Moved the IndexNow submit script from scripts/ to ops/seo/. | Dev Logs</title>
+  <meta name="description" content="Moved the IndexNow submit script from scripts/ to ops/seo/." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-07-06-54-move-indexnow-script-to-ops.html" />
-  <meta property="og:title" content="Move IndexNow submit script from scripts/ to ops/seo/. | Dev Logs" />
-  <meta property="og:description" content="Move IndexNow submit script from scripts/ to ops/seo/." />
+  <meta property="og:title" content="Moved the IndexNow submit script from scripts/ to ops/seo/. | Dev Logs" />
+  <meta property="og:description" content="Moved the IndexNow submit script from scripts/ to ops/seo/." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-07-06-54-move-indexnow-script-to-ops.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,15 +143,15 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Move IndexNow submit script from scripts/ to ops/seo/. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Moved the IndexNow submit script from scripts/ to ops/seo/. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-07 06:54
-Summary: Move IndexNow submit script from scripts/ to ops/seo/.</p>
+Summary: Moved the IndexNow submit script from scripts/ to ops/seo/.</p>
 <p>[question]
 这个脚本迁移到 ops中</p>
 <p>[try to solve]
-已将 <code>scripts/submit-indexnow.mjs</code> 迁移为 <code>ops/seo/submit-indexnow.mjs</code>：修正仓库根与 <code>scripts/site/config.mjs</code> 引用；<code>package.json</code> 的 <code>indexnow*</code> 命令改指向新路径；同步 <code>ops/README.md</code> 目录结构与 SEO 策略文档中的路径。<code>npm run indexnow -- --help</code> 与 <code>--dry-run --limit 2</code> 验证通过。历史 dig-log 中旧路径不改写。</p>
+Moved <code>scripts/submit-indexnow.mjs</code> to <code>ops/seo/submit-indexnow.mjs</code>: fixed repo-root and <code>scripts/site/config.mjs</code> imports; pointed <code>package.json</code> <code>indexnow*</code> scripts at the new path; synced <code>ops/README.md</code> layout and SEO strategy doc paths. Verified with <code>npm run indexnow -- --help</code> and <code>--dry-run --limit 2</code>. Historical dig-log paths were left unchanged.</p>
 <p>[actions]</p>
 <ul>
 <li>moved: <code>scripts/submit-indexnow.mjs</code> → <code>ops/seo/submit-indexnow.mjs</code></li>

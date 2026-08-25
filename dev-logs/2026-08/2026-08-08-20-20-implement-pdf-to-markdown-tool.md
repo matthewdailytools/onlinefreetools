@@ -23,23 +23,23 @@ npm run merge:tools && npm run coverage:gate -- --slug=pdf-to-markdown --phase=a
 No plan/commit. 中文 brief. Chinese comments on functions.
 
 [try to solve]
-已完成 `pdf-to-markdown` 全量实现：
+Shipped full `pdf-to-markdown`:
 
-**核心实现**（`src/pages/pdfToMarkdownPage.ts`）
-- pdfjs-dist@4.10.38 懒加载；逐页 `getTextContent`，按 y 容差分行、行内空格拼接；页间 `\n\n---\n\n`
-- trim 后空文本硬失败（`err_notext`，明确无 OCR）
-- pdf-lib 生成 1 页 Helvetica 样例「Hello PDF to Markdown sample.」；进页 `loadSample()` 自动转换并启用 Download .md
-- 25MB 软警告；Markdown 预览区；隐私 FAQ
+**Core** (`src/pages/pdfToMarkdownPage.ts`)
+- Lazy pdfjs-dist@4.10.38; per-page `getTextContent`, group by y tolerance into lines, join with spaces; pages separated by `\n\n---\n\n`
+- Empty trimmed text hard-fails (`err_notext`; no OCR)
+- pdf-lib builds a 1-page Helvetica sample “Hello PDF to Markdown sample.”; on-enter `loadSample()` auto-converts and enables Download .md
+- 25 MB soft warn; Markdown preview; privacy FAQ
 
-**新增/更新**
-- `src/site/tool-catalog.d/pdf-to-markdown.json`（category: pdf，related: markdown-to-html, pdf-to-jpg）
+**Added/updated**
+- `src/site/tool-catalog.d/pdf-to-markdown.json` (category: pdf; related: markdown-to-html, pdf-to-jpg)
 - `public/icons/tools/pdf-to-markdown.svg`
-- 十语 i18n 分片 `src/site/i18n/tools/pdf-to-markdown/*.ts`
-- `work-tasks/pdf-to-markdown/03-locale-briefs.md` 1b+2b 行与「检索覆盖已优化」
-- `docs/2026-08-08-tool-inventory-table.md` #58 → 已上线
-- `README.md` 中英清单各一条
+- Ten-locale shards `src/site/i18n/tools/pdf-to-markdown/*.ts`
+- `work-tasks/pdf-to-markdown/03-locale-briefs.md` 1b+2b rows and search-coverage note
+- `docs/2026-08-08-tool-inventory-table.md` #58 → shipped
+- `README.md` EN/ZH inventory lines
 
-**门禁**：merge:tools、coverage:gate all、build:site、lint:seo、lint:tool-isolation 全部通过。
+**Gates**: `merge:tools`, `coverage:gate` all, `build:site`, `lint:seo`, `lint:tool-isolation` all passed.
 
 [actions]
 - src/pages/pdfToMarkdownPage.ts

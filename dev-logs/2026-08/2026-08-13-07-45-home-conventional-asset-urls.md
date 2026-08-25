@@ -1,11 +1,11 @@
 Date: 2026-08-13 07:45
-Summary: Home pages at conventional Asset URLs with Worker-first language negotiation.
+Summary: Home pages use conventional Asset URLs with Worker-first language negotiation.
 
 [question]
 需要首页在asset起作用，且按常规url访问
 
 [try to solve]
-`buildHome` 写入常规路径：`public/index.html`（默认语 `/`）、`public/{lang}/index.html`（含 `/en/`），并仍写 `_pages/{lang}/index.html` 供 R2 兜底。Worker `serveHomeHtml` 按常规路径读 Assets。`run_worker_first` 增加 `/` 与各语前缀，避免 Assets 抢先出默认首页而跳过 Accept-Language。`.assetsignore` 恢复整树排除 `_pages`。上线：`build:site` → commit `public/index.html` 与 `public/*/index.html` → git push。
+`buildHome` writes conventional paths: `public/index.html` (default language `/`), `public/{lang}/index.html` (including `/en/`), and still writes `_pages/{lang}/index.html` for R2 fallback. Worker `serveHomeHtml` reads Assets at those conventional paths. `run_worker_first` covers `/` and each language prefix so Assets cannot serve the default home before Accept-Language runs. `.assetsignore` again excludes the whole `_pages` tree. Ship: `build:site` → commit `public/index.html` and `public/*/index.html` → git push.
 
 [actions]
 - Updated `scripts/build-site.mjs`, `src/site/r2Pages.ts`, `src/index.ts`, `wrangler.jsonc`

@@ -9,5 +9,5 @@ Aconvert is a server-side “convert everything” site: category hubs + functio
 
 [actions]
 - docs/competitor-refs/aconvert-2026-08-09/README.md (new)
-- docs/2026-07-28-tool-direction.md (related docs + appendix row + Aconvert vs 本站速查)
+- docs/2026-07-28-tool-direction.md (related docs + appendix row + Aconvert vs this-site quick compare)
 - docs/2026-08-08-tool-inventory-table.md (source + Aconvert note; P0 order unchanged)

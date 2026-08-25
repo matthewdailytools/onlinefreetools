@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Clarified region/ISP feasibility via Cloudflare request.cf vs current product scope. | Dev Logs</title>
   <meta name="description" content="Clarified region/ISP feasibility via Cloudflare request.cf vs current product scope." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-10-49-ip-region-isp-feasibility.html" />
   <meta property="og:title" content="Clarified region/ISP feasibility via Cloudflare request.cf vs current product scope. | Dev Logs" />
   <meta property="og:description" content="Clarified region/ISP feasibility via Cloudflare request.cf vs current product scope." />
@@ -151,17 +151,17 @@ Summary: Clarified region/ISP feasibility via Cloudflare request.cf vs current p
 <p>[question]
 能否获取的地区和服务商</p>
 <p>[try to solve]
-<strong>技术上可以（在 Worker 侧），当前产品未做。</strong></p>
-<p>Cloudflare <code>request.cf</code> 可在<strong>无第三方 API</strong> 下附带：</p>
+<strong>Technically yes on the Worker side; not in the product yet.</strong></p>
+<p>Cloudflare <code>request.cf</code> can attach, <strong>without a third-party API</strong>:</p>
 <ul>
-<li><strong>地区</strong>：<code>country</code>、<code>region</code>/<code>regionCode</code>、<code>city</code>、<code>timezone</code>（及可选 lat/long）</li>
-<li><strong>服务商</strong>：<code>asn</code>、<code>asOrganization</code>（ASN 所属组织名，近似 ISP）</li>
+<li><strong>Region</strong>: <code>country</code>, <code>region</code>/<code>regionCode</code>, <code>city</code>, <code>timezone</code> (and optional lat/long)</li>
+<li><strong>Provider</strong>: <code>asn</code>, <code>asOrganization</code> (ASN organization name; approximate ISP)</li>
 </ul>
-<p>局限：字段可能缺失；VPN/代理下为<strong>出口节点</strong>信息；精度为 IP 地理库级别（非「归属地精查」）；与竞品 MaxMind 类产品不同。本站 <code>tool_ip_address_article</code> 已声明 <strong>Not geolocation, ISP lookup</strong>；02-tool-info 定位为出口 IP + 边界说明，非归属库。</p>
-<p>若要做：扩展 <code>/api/tools/ip-address</code> 返回 geo/isp 块、UI 展示、FAQ 写清精度与 VPN、更新十语 article 边界文案。</p>
+<p>Limits: fields may be missing; under VPN/proxy you see the <strong>egress node</strong>; accuracy is IP-geo-db level (not precise “attribution lookup”); not the same as MaxMind-class products. Site copy in <code>tool_ip_address_article</code> already states <strong>Not geolocation, ISP lookup</strong>; <code>02-tool-info</code> positions the tool as egress IP + boundary notes, not an attribution database.</p>
+<p>To ship: extend <code>/api/tools/ip-address</code> with a geo/isp block, UI rows, FAQ on accuracy/VPN, and update ten-locale article boundary copy.</p>
 <p>[actions]</p>
 <ul>
-<li>（问答-only，无代码改动）</li>
+<li>(Q&amp;A only; no code changes)</li>
 </ul>
 </article>
       </section>

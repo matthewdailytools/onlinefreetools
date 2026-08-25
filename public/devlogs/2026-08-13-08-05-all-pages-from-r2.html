@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>All HTML from R2 is feasible; only homes still prefer Assets; static/API stay Worker/Assets. | Dev Logs</title>
-  <meta name="description" content="All HTML from R2 is feasible; only homes still prefer Assets; static/API stay Worker/Assets." />
-  <meta name="robots" content="noindex" />
+  <title>All HTML from R2 is feasible; only homes still prefer Assets; static/API stay on Worker/Assets. | Dev Logs</title>
+  <meta name="description" content="All HTML from R2 is feasible; only homes still prefer Assets; static/API stay on Worker/Assets." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-13-08-05-all-pages-from-r2.html" />
-  <meta property="og:title" content="All HTML from R2 is feasible; only homes still prefer Assets; static/API stay Worker/Assets. | Dev Logs" />
-  <meta property="og:description" content="All HTML from R2 is feasible; only homes still prefer Assets; static/API stay Worker/Assets." />
+  <meta property="og:title" content="All HTML from R2 is feasible; only homes still prefer Assets; static/API stay on Worker/Assets. | Dev Logs" />
+  <meta property="og:description" content="All HTML from R2 is feasible; only homes still prefer Assets; static/API stay on Worker/Assets." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-13-08-05-all-pages-from-r2.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,18 +143,18 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">All HTML from R2 is feasible; only homes still prefer Assets; static/API stay Worker/Assets. | Dev Logs</h1>
+          <h1 class="h4 mb-0">All HTML from R2 is feasible; only homes still prefer Assets; static/API stay on Worker/Assets. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-13 08:05
-Summary: All HTML from R2 is feasible; only homes still prefer Assets; static/API stay Worker/Assets.</p>
+Summary: All HTML from R2 is feasible; only homes still prefer Assets; static/API stay on Worker/Assets.</p>
 <p>[question]
 如果坚持所有页面来自R2呢，是否能够实现</p>
 <p>[try to solve]
-能。若「所有页面」= 全部 HTML：工具/about/taxonomy 等已是 Cache→R2；仅首页仍 Assets→R2 兜底。把 <code>serveHomeHtml</code> 改为只走 R2（与 <code>servePrerenderedHtml</code> 相同）即可实现全站 HTML 均来自 R2；Worker 仍负责路由、Accept-Language、API、验证文件。css/js/vendor/sitemap/robots 宜留 Assets，不必进 R2。发版统一 <code>build:site</code> + <code>upload:r2</code>（+ 可选 PAGES_CACHE_VERSION）；可不再依赖 git push 更新首页 HTML。代价：首页冷路径与工具页类似（miss 数百 ms），热路径 HIT 后接近。若指连静态资源也全进 R2——技术可做但收益差，不推荐。</p>
+Yes. If “all pages” means all HTML: tools/about/taxonomy already use Cache→R2; only homes still prefer Assets with R2 fallback. Changing <code>serveHomeHtml</code> to R2-only (same as <code>servePrerenderedHtml</code>) makes all site HTML come from R2. The Worker still owns routing, Accept-Language, APIs, and verification files. Keep css/js/vendor/sitemap/robots on Assets; they need not go into R2. Ship with <code>build:site</code> + <code>upload:r2</code> (optional <code>PAGES_CACHE_VERSION</code>); home HTML no longer depends on git push. Cost: home cold path similar to tool pages (miss hundreds of ms); hot HIT is close to Assets. Putting all static assets in R2 is technically possible but poor ROI — not recommended.</p>
 <p>[actions]</p>
 <ul>
-<li>（只读可行性说明）</li>
+<li>Read-only feasibility note</li>
 </ul>
 </article>
       </section>

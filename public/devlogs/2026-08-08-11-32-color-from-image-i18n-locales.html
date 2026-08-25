@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Added complete tool_color_from_image_* i18n keys to 9 locale files and home keys to i18n.mjs for all 10 languages. | Dev Logs</title>
   <meta name="description" content="Added complete tool_color_from_image_* i18n keys to 9 locale files and home keys to i18n.mjs for all 10 languages." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-11-32-color-from-image-i18n-locales.html" />
   <meta property="og:title" content="Added complete tool_color_from_image_* i18n keys to 9 locale files and home keys to i18n.mjs for all 10 languages. | Dev Logs" />
   <meta property="og:description" content="Added complete tool_color_from_image_* i18n keys to 9 locale files and home keys to i18n.mjs for all 10 languages." />
@@ -151,7 +151,7 @@ Summary: Added complete tool_color_from_image_* i18n keys to 9 locale files and 
 <p>[question]
 Add complete <code>tool_color_from_image_*</code> i18n keys to zh/es/ar/pt/id/fr/ja/ru/de matching en key set; add home title/desc to scripts/site/i18n.mjs for all 10 langs after tool_image_crop_desc.</p>
 <p>[try to solve]
-已为 9 个 locale 文件各插入 44 个 <code>tool_color_from_image_*</code> 键（与 en 完全一致），位置在 <code>tool_add_www_to_dns_title</code> 之前；并在 <code>scripts/site/i18n.mjs</code> 的 10 语首页块加入 <code>tool_color_from_image_title</code> / <code>tool_color_from_image_desc</code>（位于 <code>tool_image_crop_desc</code> 之后）。文案按 brief 独立重写：场景向 title、description ≥120 字含步骤与示例、FAQ 题序各语差异化；<code>npm run lint:seo</code> 已通过。</p>
+Inserted 44 <code>tool_color_from_image_*</code> keys into each of 9 locale files (matching the en key set), placed before <code>tool_add_www_to_dns_title</code>. Added <code>tool_color_from_image_title</code> / <code>tool_color_from_image_desc</code> to all 10 home blocks in <code>scripts/site/i18n.mjs</code> (after <code>tool_image_crop_desc</code>). Copy independently rewritten per brief: scenario-oriented titles, descriptions ≥120 chars with steps/examples, FAQ question order varied by locale. <code>npm run lint:seo</code> passed.</p>
 <p>[actions]</p>
 <ul>
 <li>src/site/i18n/zh.ts, es.ts, ar.ts, pt.ts, id.ts, fr.ts, ja.ts, ru.ts, de.ts</li>

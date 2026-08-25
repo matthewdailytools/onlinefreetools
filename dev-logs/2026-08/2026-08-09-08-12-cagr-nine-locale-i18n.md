@@ -22,9 +22,9 @@ Must include sample ~10.00% and YMYL not-investment advice. zh/ja desc ≥120 ch
 Return list of files + zh button text.
 
 [try to solve]
-已写入九语独立重写分片（各 42 键，与 en 对齐），示例含约 10.00%，含非投资建议声明；zh/ja description 分别约 130/136 字。
+Wrote nine independent locale shards (42 keys each, aligned with en). Sample ~10.00% and a not-investment-advice disclaimer are included; zh/ja descriptions are about 130/136 characters.
 
-文件：
+Files:
 - src/site/i18n/tools/how-to-calculate-cagr/zh.ts
 - src/site/i18n/tools/how-to-calculate-cagr/es.ts
 - src/site/i18n/tools/how-to-calculate-cagr/ja.ts
@@ -35,7 +35,7 @@ Return list of files + zh button text.
 - src/site/i18n/tools/how-to-calculate-cagr/ru.ts
 - src/site/i18n/tools/how-to-calculate-cagr/ar.ts
 
-中文按钮：开始计算 / 加载示例 / 清空；区块标题「怎么用」。
+zh UI strings: Calculate = 开始计算; Load sample = 加载示例; Clear = 清空; How-it-works heading = 怎么用.
 
 [actions]
 - Created nine locale shards under src/site/i18n/tools/how-to-calculate-cagr/

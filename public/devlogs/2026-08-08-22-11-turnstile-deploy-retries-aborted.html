@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Note aborted intermediate Turnstile deploy shells; final deploy already succeeded; still awaiting frontend yes/show. | Dev Logs</title>
   <meta name="description" content="Note aborted intermediate Turnstile deploy shells; final deploy already succeeded; still awaiting frontend yes/show." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-22-11-turnstile-deploy-retries-aborted.html" />
   <meta property="og:title" content="Note aborted intermediate Turnstile deploy shells; final deploy already succeeded; still awaiting frontend yes/show. | Dev Logs" />
   <meta property="og:description" content="Note aborted intermediate Turnstile deploy shells; final deploy already succeeded; still awaiting frontend yes/show." />
@@ -151,10 +151,10 @@ Summary: Note aborted intermediate Turnstile deploy shells; final deploy already
 <p>[question]
 Briefly inform the user about the task result and perform any follow-up actions (if needed). If there&#39;s no follow-ups needed, don&#39;t explicitly say that.</p>
 <p>[try to solve]
-中间两次 deploy shell（degit/npm 卡住、管道缓冲卡住）已中止；随后用项目 wrangler 部署成功，siteverify Worker 与 secret 已就绪。仍待用户回复 yes/show 以接线 domain-lookup 前端。</p>
+Two intermediate deploy shells were aborted (degit/npm stall; pipe buffering stall). A later deploy with the project wrangler succeeded; siteverify Worker and secret are ready. Still waiting for user yes/show to wire the domain-lookup frontend.</p>
 <p>[actions]</p>
 <ul>
-<li>无新部署操作</li>
+<li>No new deploy operations</li>
 </ul>
 </article>
       </section>

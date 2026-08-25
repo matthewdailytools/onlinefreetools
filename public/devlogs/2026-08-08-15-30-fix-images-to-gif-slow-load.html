@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Fix slow images-to-gif enter by vendoring gifenc locally instead of jsDelivr. | Dev Logs</title>
   <meta name="description" content="Fix slow images-to-gif enter by vendoring gifenc locally instead of jsDelivr." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-15-30-fix-images-to-gif-slow-load.html" />
   <meta property="og:title" content="Fix slow images-to-gif enter by vendoring gifenc locally instead of jsDelivr. | Dev Logs" />
   <meta property="og:description" content="Fix slow images-to-gif enter by vendoring gifenc locally instead of jsDelivr." />
@@ -151,20 +151,20 @@ Summary: Fix slow images-to-gif enter by vendoring gifenc locally instead of jsD
 <p>[question]
 加载<a href="http://localhost:8788/zh/tools/images-to-gif%E5%BE%88%E6%85%A2%EF%BC%8C%E5%88%86%E6%9E%90%E4%BF%AE%E6%AD%A3">http://localhost:8788/zh/tools/images-to-gif很慢，分析修正</a></p>
 <p>[try to solve]
-根因：进页自动 <code>loadSample()</code> → <code>build()</code> 会 <code>import(&#39;https://cdn.jsdelivr.net/npm/gifenc@1.0.3/+esm&#39;)</code>；HTML 本身约几十毫秒，但 CDN 在本地/受限网络下超时或失败，导致页面“卡住很久”。</p>
-<p>修正：</p>
+Root cause: on enter, auto <code>loadSample()</code> → <code>build()</code> called <code>import(&#39;https://cdn.jsdelivr.net/npm/gifenc@1.0.3/+esm&#39;)</code>. HTML itself returned in tens of ms, but the CDN timed out or failed on local/restricted networks, so the page felt stuck for a long time.</p>
+<p>Fix:</p>
 <ol>
-<li>将 <code>gifenc@1.0.3</code> ESM（约 9KB）复制到 <code>/vendor/gifenc/gifenc.esm.js</code>（<code>copy-image-optimizer-vendor.mjs</code> / <code>build:site</code>）</li>
-<li>页面改为同域懒加载 + <code>modulepreload</code></li>
-<li>样例帧缩小；首屏 paint 后再跑样例；<code>repeat</code> 经 gifenc 首帧 options 传入</li>
+<li>Copy <code>gifenc@1.0.3</code> ESM (~9KB) to <code>/vendor/gifenc/gifenc.esm.js</code> (<code>copy-image-optimizer-vendor.mjs</code> / <code>build:site</code>)</li>
+<li>Page uses same-origin lazy load + <code>modulepreload</code></li>
+<li>Smaller sample frames; run sample after first paint; pass <code>repeat</code> via gifenc first-frame options</li>
 </ol>
-<p>验证：HTML + local gifenc 关键路径约 20ms，页面不再含 jsDelivr gifenc URL。</p>
+<p>Check: HTML + local gifenc critical path ~20ms; page no longer embeds a jsDelivr gifenc URL.</p>
 <p>[actions]</p>
 <ul>
 <li>src/pages/imagesToGifPage.ts</li>
 <li>scripts/copy-image-optimizer-vendor.mjs</li>
-<li>package.json / package-lock.json（依赖 gifenc）</li>
-<li>.gitignore（public/vendor/gifenc/）</li>
+<li>package.json / package-lock.json (gifenc dependency)</li>
+<li>.gitignore (public/vendor/gifenc/)</li>
 <li>node scripts/copy-image-optimizer-vendor.mjs</li>
 </ul>
 </article>

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Make tool page body width fluid with viewport like the home layout. | Dev Logs</title>
   <meta name="description" content="Make tool page body width fluid with viewport like the home layout." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-15-44-tool-page-fluid-content-width.html" />
   <meta property="og:title" content="Make tool page body width fluid with viewport like the home layout. | Dev Logs" />
   <meta property="og:description" content="Make tool page body width fluid with viewport like the home layout." />
@@ -151,7 +151,7 @@ Summary: Make tool page body width fluid with viewport like the home layout.</p>
 <p>[question]
 工具页的正文宽度也是，要随屏幕改变而改变</p>
 <p>[try to solve]
-工具页 <code>#content</code> 改为占满主栏、<code>max-width</code> 对齐 <code>--home-max</code> + 流体 <code>--page-pad-x</code>；去掉原先固定 880px 对 tool-panel / lead / sections / 计算器卡片的限制，正文宽度随屏宽伸缩。</p>
+Tool-page <code>#content</code> now fills the main column with <code>max-width</code> aligned to <code>--home-max</code> plus fluid <code>--page-pad-x</code>. Removed the prior fixed 880px caps on tool-panel / lead / sections / calculator cards so body width scales with the viewport.</p>
 <p>[actions]</p>
 <ul>
 <li>public/styles/site.css</li>

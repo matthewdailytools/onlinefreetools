@@ -13,26 +13,26 @@ Create catalog, icon, page, i18n (10 langs). UI: Bidirectional timestamp↔datet
 For BOTH: mark work-tasks 02 as implemented; update 03 multi-round; add README zh+en list entries. Do NOT run merge:tools.
 
 [try to solve]
-已完成两个开发者工具的全部分片实现（未运行 merge:tools）：
+Finished both developer tools as shards only (did not run `merge:tools`):
 
 **base64**
 - `src/site/tool-catalog.d/base64.json` — developer / featured / related: image-to-base64, jwt-decoder, html-entity
-- `src/pages/base64Page.ts` — Encode/Decode Tab、UTF-8 TextEncoder/btoa、Base64url 选项、文件字节编码、软上限警告、进页 loadSample 自动转换
+- `src/pages/base64Page.ts` — Encode/Decode tabs, UTF-8 TextEncoder/btoa, Base64url option, file-byte encode, soft size warn, auto-convert via `loadSample` on enter
 - `public/icons/tools/base64.svg`
-- `src/site/i18n/tools/base64/{en,zh,es,ar,pt,id,fr,ja,ru,de}.ts` — 5 条 FAQ、RFC 4648 References
+- `src/site/i18n/tools/base64/{en,zh,es,ar,pt,id,fr,ja,ru,de}.ts` — 5 FAQs, RFC 4648 References
 
 **unix-timestamp**
 - `src/site/tool-catalog.d/unix-timestamp.json` — related: timezone-converter, jwt-decoder
-- `src/pages/unixTimestampPage.ts` — 双向 Tab、秒/毫秒切换与自动识别、UTC+local 并排、Now、BigInt 范围校验、进页样例 1516239022 自动转换
+- `src/pages/unixTimestampPage.ts` — bidirectional tabs, sec/ms toggle with auto-detect, UTC+local side-by-side, Now, BigInt range checks, sample `1516239022` auto-converts on enter
 - `public/icons/tools/unix-timestamp.svg`
-- `src/site/i18n/tools/unix-timestamp/{10 langs}.ts` — 4 条 FAQ、Wikipedia/MDN References
+- `src/site/i18n/tools/unix-timestamp/{10 langs}.ts` — 4 FAQs, Wikipedia/MDN References
 
-**文档**
+**Docs**
 - `work-tasks/*/02-tool-info.md` → `implemented`
-- `work-tasks/*/03-locale-briefs.md` → 多轮记录与 `i18n-done`
-- `README.md` 中英工具清单各增一条
+- `work-tasks/*/03-locale-briefs.md` → multi-round notes and `i18n-done`
+- `README.md` zh+en tool lists each gained one entry
 
-上线前需运行 `npm run merge:tools && npm run lint:seo`。
+Before ship: run `npm run merge:tools && npm run lint:seo`.
 
 [actions]
 - src/site/tool-catalog.d/base64.json, unix-timestamp.json

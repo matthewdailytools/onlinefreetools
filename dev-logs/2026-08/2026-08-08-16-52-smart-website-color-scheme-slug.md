@@ -1,12 +1,12 @@
 Date: 2026-08-08 16:52
-Summary: Renamed work-task slug to smart-website-color-scheme to cover 智能配色.
+Summary: Renamed work-task slug to smart-website-color-scheme to cover smart color-scheme search intent.
 
 [question]
 slug增加智能配色
 
 [try to solve]
-立项夹由 `website-color-scheme` 更名为 `smart-website-color-scheme`；路径 `/tools/smart-website-color-scheme`。中文主词「智能配色」写入 zh title/brief；英文 Smart 表示规则自动推导，FAQ/禁词明确非云端 AI。检索覆盖表已回写，`02` 仍为 ready。
+Renamed the work-task folder from `website-color-scheme` to `smart-website-color-scheme`; path `/tools/smart-website-color-scheme`. Chinese primary term for “smart color scheme” written into zh title/brief; English “Smart” means rule-based derivation — FAQ/forbidden wording clarify it is not cloud AI. Search-coverage table updated; `02` remains ready.
 
 [actions]
 - mv work-tasks/website-color-scheme → smart-website-color-scheme
-- 更新 00–03、notes
+- Updated 00–03, notes

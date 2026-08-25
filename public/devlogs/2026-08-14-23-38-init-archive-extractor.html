@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Created the archive-extractor work-task brief and passed the 0b coverage gate. | Dev Logs</title>
   <meta name="description" content="Created the archive-extractor work-task brief and passed the 0b coverage gate." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-14-23-38-init-archive-extractor.html" />
   <meta property="og:title" content="Created the archive-extractor work-task brief and passed the 0b coverage gate. | Dev Logs" />
   <meta property="og:description" content="Created the archive-extractor work-task brief and passed the 0b coverage gate." />
@@ -151,7 +151,7 @@ Summary: Created the archive-extractor work-task brief and passed the 0b coverag
 <p>[question]
 立项：archive-extractor</p>
 <p>[try to solve]
-已完成 <code>archive-extractor</code> 立项：新增 work-task 四件套，状态到 <code>ready</code> / <code>briefs-ready</code>，并通过 <code>npm run coverage:gate -- --slug=archive-extractor --phase=0b</code>。该工具定位为多格式归档解压，和已上线 <code>unzip-file</code> 明确分工：ZIP-only 高频意图继续由 <code>unzip-file</code> 承接，<code>archive-extractor</code> 覆盖 ZIP/TAR/TAR.GZ 核心路径，以及点击加载后的 RAR/7Z/ISO 只读候选。</p>
+Completed the <code>archive-extractor</code> brief: added the four work-task files, status to <code>ready</code> / <code>briefs-ready</code>, and passed <code>npm run coverage:gate -- --slug=archive-extractor --phase=0b</code>. The tool is a multi-format archive extractor with a clear split from live <code>unzip-file</code>: ZIP-only high-frequency intent stays on <code>unzip-file</code>; <code>archive-extractor</code> covers ZIP/TAR/TAR.GZ as core paths, plus click-to-load read-only candidates for RAR/7Z/ISO.</p>
 <p>[actions]</p>
 <ul>
 <li>Added <code>work-tasks/archive-extractor/00-request.md</code></li>

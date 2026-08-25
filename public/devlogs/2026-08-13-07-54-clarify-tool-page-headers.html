@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Clarify second headers were tool page image-format-converter, not home. | Dev Logs</title>
-  <meta name="description" content="Clarify second headers were tool page image-format-converter, not home." />
-  <meta name="robots" content="noindex" />
+  <title>Clarify the second headers were for tool page image-format-converter, not home. | Dev Logs</title>
+  <meta name="description" content="Clarify the second headers were for tool page image-format-converter, not home." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-13-07-54-clarify-tool-page-headers.html" />
-  <meta property="og:title" content="Clarify second headers were tool page image-format-converter, not home. | Dev Logs" />
-  <meta property="og:description" content="Clarify second headers were tool page image-format-converter, not home." />
+  <meta property="og:title" content="Clarify the second headers were for tool page image-format-converter, not home. | Dev Logs" />
+  <meta property="og:description" content="Clarify the second headers were for tool page image-format-converter, not home." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-13-07-54-clarify-tool-page-headers.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,18 +143,18 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Clarify second headers were tool page image-format-converter, not home. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Clarify the second headers were for tool page image-format-converter, not home. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-13 07:54
-Summary: Clarify second headers were tool page image-format-converter, not home.</p>
+Summary: Clarify the second headers were for tool page image-format-converter, not home.</p>
 <p>[question]
 这个的链接是<a href="https://onlinefreetools.org/zh/tools/image-format-converter">https://onlinefreetools.org/zh/tools/image-format-converter</a></p>
 <p>[try to solve]
-更正：第二组 header 属于工具页，路径为 Cache API → R2 <code>_pages/zh/tools/image-format-converter.html.gz</code> → gunzip → <code>identityHtmlResponse</code>（非首页 Assets）。<code>cache-control: public, s-maxage=86400, max-age=0</code> 与设计一致；无 HIT/age + <code>cfWorker=333ms</code> + <code>cfOrigin=0</code> 符合 Cache miss 后 R2 绑定读取（R2 通常不计入 cfOrigin）再解压组包。与首页 HIT（Worker~37ms、可能带 max-age=14400）不可直接对比：URL/存储层不同。热路径再请求同 URL 应出现更低 Worker 时长或边缘 HIT。</p>
+Correction: the second header set is a tool page. Path is Cache API → R2 <code>_pages/zh/tools/image-format-converter.html.gz</code> → gunzip → <code>identityHtmlResponse</code> (not home Assets). <code>cache-control: public, s-maxage=86400, max-age=0</code> matches design; missing HIT/age plus <code>cfWorker=333ms</code> and <code>cfOrigin=0</code> fits Cache miss then R2 binding read (R2 usually does not count as cfOrigin) plus decompress/pack. Do not compare directly with home HIT (Worker~37ms, possibly max-age=14400)—URL and storage layer differ. A warm re-request of the same URL should show lower Worker time or edge HIT.</p>
 <p>[actions]</p>
 <ul>
-<li>（只读澄清 URL 与 servePrerenderedHtml 路径）</li>
+<li>Read-only clarification of URL vs <code>servePrerenderedHtml</code> path</li>
 </ul>
 </article>
       </section>

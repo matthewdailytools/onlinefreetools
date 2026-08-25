@@ -1,24 +1,24 @@
 Date: 2026-08-07 05:55
-Summary: start-dev timeout was caused by port 8787 held by another project's wrangler; scripts now detect foreign blockers and suggest --port.
+Summary: start-dev timed out because port 8787 was held by another project's wrangler; scripts now detect foreign blockers and suggest --port.
 
 [question]
 start-dev still fails: "Dev server failed to become ready within timeout" after ENOENT fix.
 
 [try to solve]
-根因不是本项目 wrangler 启动慢，而是 **8787 已被其他项目占用**（日志：`Address already in use`）。本机 listener 来自 `seoontest/funnyT/apps/api` 的 workerd，不是 onlinefreetools。
+Root cause was not slow wrangler startup in this repo: **8787 was already in use** (log: `Address already in use`). The listener belonged to workerd from `seoontest/funnyT/apps/api`, not onlinefreetools.
 
-**立即可用**
+**Immediate workaround**
 ```bash
 npm run start:dev -- --port 8788
 ```
-然后访问 http://127.0.0.1:8788/tools/html-entity
+Then open http://127.0.0.1:8788/tools/html-entity
 
-或停掉另一个项目的 wrangler，再在本项目用默认 8787。
+Or stop the other project's wrangler and use the default 8787 here.
 
-**脚本改进**（`ops/lib/dev-process.mjs`、`ops/dev/start-dev.mjs`）
-- 启动前检测端口；若为**其他项目**进程占用，打印其命令行并提示 `--port 8788`，不再等满 90s
-- 仅清理**本仓库** wrangler/workerd，避免误杀其他项目
-- 日志含 `Address already in use` 时快速失败
+**Script improvements** (`ops/lib/dev-process.mjs`, `ops/dev/start-dev.mjs`)
+- Before start, detect the port; if another project owns it, print that process command line and suggest `--port 8788` instead of waiting the full 90s
+- Only clean up **this repo's** wrangler/workerd so other projects are not killed
+- Fail fast when logs contain `Address already in use`
 
 [actions]
 - Updated `ops/lib/dev-process.mjs`, `ops/dev/start-dev.mjs`

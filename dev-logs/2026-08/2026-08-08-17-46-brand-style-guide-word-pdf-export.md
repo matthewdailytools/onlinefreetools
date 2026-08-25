@@ -5,7 +5,7 @@ Summary: Added local Word (.docx) and PDF download export to brand-style-guide.
 增加 导出为word和pdf的能力
 
 [try to solve]
-在品牌手册工具栏增加「下载 Word」「下载 PDF」：生成指南后可导出。Word 懒加载 jsDelivr `docx@8.5.0` 写 .docx；PDF 用系统字体 Canvas 排版（支持中文）再 `pdf-lib@1.17.1` 打多页。库按需加载、正文不上传。十语按钮/状态/FAQ 已补；`lint:seo` OK。硬刷新后先 Generate/Sample，再点下载。
+Added “Download Word” / “Download PDF” on the brand-style-guide toolbar; export after generating a guide. Word lazy-loads jsDelivr `docx@8.5.0` for `.docx`; PDF lays out with system fonts on Canvas (Chinese-capable) then packs multi-page via `pdf-lib@1.17.1`. Libraries load on demand; body text is not uploaded. Ten-locale buttons/status/FAQ updated; `lint:seo` OK. Hard-refresh, Generate/Sample first, then download.
 
 [actions]
 - Updated `src/pages/brandStyleGuidePage.ts`

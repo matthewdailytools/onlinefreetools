@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Ship core-web-vitals-checker from Clarity Performance metrics docs | Dev Logs</title>
-  <meta name="description" content="Ship core-web-vitals-checker from Clarity Performance metrics docs" />
-  <meta name="robots" content="noindex" />
+  <title>Shipped core-web-vitals-checker from Clarity Performance metrics docs. | Dev Logs</title>
+  <meta name="description" content="Shipped core-web-vitals-checker from Clarity Performance metrics docs." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-09-18-33-core-web-vitals-checker.html" />
-  <meta property="og:title" content="Ship core-web-vitals-checker from Clarity Performance metrics docs | Dev Logs" />
-  <meta property="og:description" content="Ship core-web-vitals-checker from Clarity Performance metrics docs" />
+  <meta property="og:title" content="Shipped core-web-vitals-checker from Clarity Performance metrics docs. | Dev Logs" />
+  <meta property="og:description" content="Shipped core-web-vitals-checker from Clarity Performance metrics docs." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-09-18-33-core-web-vitals-checker.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,15 +143,15 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Ship core-web-vitals-checker from Clarity Performance metrics docs | Dev Logs</h1>
+          <h1 class="h4 mb-0">Shipped core-web-vitals-checker from Clarity Performance metrics docs. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-09 18:33
-Summary: Ship core-web-vitals-checker from Clarity Performance metrics docs</p>
+Summary: Shipped core-web-vitals-checker from Clarity Performance metrics docs.</p>
 <p>[question]
 根据 <a href="https://learn.microsoft.com/zh-cn/clarity/insights/performance-widget">https://learn.microsoft.com/zh-cn/clarity/insights/performance-widget</a> 增加工具</p>
 <p>[try to solve]
-已上线 <code>core-web-vitals-checker</code>：粘贴 LCP/INP/CLS → Good / Needs improvement / Poor（web.dev/Google 分档；Clarity 良好目标一致），未达标时展示 Clarity 文档中的成因与改进；说明 p75、FID→INP、非实时抓站。十语 + coverage:gate all + lint:seo；scenario=seo，已挂入 where2use SEO「性能」模块主工具；Related 图片压缩/优化与 Headers。</p>
+Shipped <code>core-web-vitals-checker</code>: paste LCP/INP/CLS → Good / Needs improvement / Poor (web.dev/Google thresholds; Clarity “good” targets match). When below target, shows causes and fixes from Clarity docs; explains p75, FID→INP, and that it is not live site crawling. Ten locales + coverage:gate all + lint:seo; scenario=seo; primary tool on the where2use SEO “performance” module; Related to image compress/optimize and Headers.</p>
 <p>[actions]</p>
 <ul>
 <li>work-tasks/core-web-vitals-checker/*</li>

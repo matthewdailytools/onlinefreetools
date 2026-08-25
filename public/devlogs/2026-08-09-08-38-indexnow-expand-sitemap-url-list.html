@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>IndexNow sitemap flow now expands <loc> into urlList instead of submitting the sitemap URL itself. | Dev Logs</title>
   <meta name="description" content="IndexNow sitemap flow now expands <loc> into urlList instead of submitting the sitemap URL itself." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-09-08-38-indexnow-expand-sitemap-url-list.html" />
   <meta property="og:title" content="IndexNow sitemap flow now expands <loc> into urlList instead of submitting the sitemap URL itself. | Dev Logs" />
   <meta property="og:description" content="IndexNow sitemap flow now expands <loc> into urlList instead of submitting the sitemap URL itself." />
@@ -151,21 +151,21 @@ Summary: IndexNow sitemap flow now expands <loc> into urlList instead of submitt
 <p>[question]
 IndexNow 提交Sitemap逻辑应该是解析 出Sitemap的url list 进行提交，而不是直接提交sitemap</p>
 <p>[try to solve]
-已对齐 IndexNow 协议：只提交页面 <code>urlList</code>，不把 sitemap 地址当变更页。</p>
+Aligned with the IndexNow protocol: submit page <code>urlList</code> only; do not treat a sitemap address as a changed page.</p>
 <ol>
-<li>Worker 新增 <code>POST /api/tools/indexnow/resolve-urls</code>：拉取同 host sitemap（含 sitemapindex 递归），展开 <code>&lt;loc&gt;</code> 为页面列表。</li>
-<li><code>submit</code> 在转发前若发现 sitemap 形态 URL，会先展开再 POST。</li>
-<li>工具页预览/提交前调用 resolve；粘贴 sitemap URL 或 sitemapindex XML 都会展开。</li>
-<li>CLI 对 urlset 中仍像子 sitemap 的 loc 继续递归，并防御性剔除误入的 sitemap URL。</li>
-<li>十语 i18n / ops README 同步说明「解析后提交页面，不提交 sitemap 本身」。</li>
+<li>Worker adds <code>POST /api/tools/indexnow/resolve-urls</code>: fetch same-host sitemap (including recursive sitemapindex) and expand <code>&lt;loc&gt;</code> into a page list.</li>
+<li><code>submit</code> expands sitemap-shaped URLs before forwarding the POST.</li>
+<li>Tool page preview/submit calls resolve; pasted sitemap URLs or sitemapindex XML are expanded.</li>
+<li>CLI keeps recursing into locs that still look like child sitemaps inside a urlset, and defensively strips mistaken sitemap URLs.</li>
+<li>Ten-locale i18n and ops README now state that pages are submitted after resolve, not the sitemap itself.</li>
 </ol>
-<p>CLI dry-run 确认：<code>public/sitemap.xml</code> → 页面 URL（如 <code>/</code>、<code>/zh/</code>），而非 <code>sitemap.xml</code>。</p>
+<p>CLI dry-run confirmed: <code>public/sitemap.xml</code> → page URLs (e.g. <code>/</code>, <code>/zh/</code>), not <code>sitemap.xml</code>.</p>
 <p>[actions]</p>
 <ul>
 <li>src/endpoints/indexnow.ts</li>
 <li>src/index.ts</li>
 <li>src/pages/indexNowPage.ts</li>
-<li>src/site/i18n/tools/indexnow/*.ts（+ merge:tools）</li>
+<li>src/site/i18n/tools/indexnow/*.ts (+ merge:tools)</li>
 <li>ops/seo/submit-indexnow.mjs</li>
 <li>ops/README.md</li>
 </ul>

@@ -5,8 +5,8 @@ Summary: Make home tool entry cards semi-transparent with light backdrop blur.
 工具卡片增加透明度
 
 [try to solve]
-工具入口卡背景改为约 72% surface 半透明，并加轻 `backdrop-filter`；描边带品牌色；悬停提高到约 88% 以保可读。已 `build:site`。
+Tool entry cards use ~72% surface opacity plus light `backdrop-filter`; border uses brand tint; hover raises opacity to ~88% for readability. Ran `build:site`.
 
 [actions]
-- public/styles/site.css（.card.tool-entry-card）
+- public/styles/site.css (.card.tool-entry-card)
 - npm run build:site

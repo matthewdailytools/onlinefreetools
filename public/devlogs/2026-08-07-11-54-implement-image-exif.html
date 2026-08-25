@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Implement image-exif viewer/stripper with ten-locale copy | Dev Logs</title>
-  <meta name="description" content="Implement image-exif viewer/stripper with ten-locale copy" />
-  <meta name="robots" content="noindex" />
+  <title>Implemented image-exif viewer/stripper with ten-locale copy. | Dev Logs</title>
+  <meta name="description" content="Implemented image-exif viewer/stripper with ten-locale copy." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-07-11-54-implement-image-exif.html" />
-  <meta property="og:title" content="Implement image-exif viewer/stripper with ten-locale copy | Dev Logs" />
-  <meta property="og:description" content="Implement image-exif viewer/stripper with ten-locale copy" />
+  <meta property="og:title" content="Implemented image-exif viewer/stripper with ten-locale copy. | Dev Logs" />
+  <meta property="og:description" content="Implemented image-exif viewer/stripper with ten-locale copy." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-07-11-54-implement-image-exif.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,23 +143,23 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Implement image-exif viewer/stripper with ten-locale copy | Dev Logs</h1>
+          <h1 class="h4 mb-0">Implemented image-exif viewer/stripper with ten-locale copy. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-07 11:54
-Summary: Implement image-exif viewer/stripper with ten-locale copy</p>
+Summary: Implemented image-exif viewer/stripper with ten-locale copy.</p>
 <p>[question]
 按工作任务实现</p>
 <p>[try to solve]
-已按 <code>work-tasks/image-exif/</code> 落地 <code>/tools/image-exif</code>。</p>
+Shipped <code>/tools/image-exif</code> from <code>work-tasks/image-exif/</code>.</p>
 <ul>
-<li>读：CDN <code>exifr</code>；GPS/相机/时间/其他分组；隐私字段高亮  </li>
-<li>清：Orientation 摆正 → Canvas <code>toBlob</code> → 下载；复读校验 GPS  </li>
-<li>catalog <code>image</code>；Related 与 <code>image-format-converter</code> 互链  </li>
-<li>十语 + README；<code>lint:seo</code> / <code>build:site</code> 通过  </li>
-<li><code>02</code> → <code>implemented</code>；<code>03</code> → <code>i18n-done</code></li>
+<li>Read: CDN <code>exifr</code>; GPS / camera / time / other groups; highlight privacy fields  </li>
+<li>Strip: normalize Orientation → Canvas <code>toBlob</code> → download; re-read to verify GPS gone  </li>
+<li>catalog <code>image</code>; Related cross-links with <code>image-format-converter</code>  </li>
+<li>Ten locales + README; <code>lint:seo</code> / <code>build:site</code> passed  </li>
+<li><code>02</code> → <code>implemented</code>; <code>03</code> → <code>i18n-done</code></li>
 </ul>
-<p>本地访问：<code>/tools/image-exif</code>（或 <code>/zh/tools/image-exif</code>）。</p>
+<p>Local: <code>/tools/image-exif</code> (or <code>/zh/tools/image-exif</code>).</p>
 <p>[actions]</p>
 <ul>
 <li>Added src/pages/imageExifPage.ts, public/icons/tools/image-exif.svg</li>

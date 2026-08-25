@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Shipped how-to-calculate-aspect-ratio end-to-end with coverage gates 0b→2→4→all; sample 1920×1080 → 16:9 and scale W 1280 → H 720; catalog count 72. | Dev Logs</title>
   <meta name="description" content="Shipped how-to-calculate-aspect-ratio end-to-end with coverage gates 0b→2→4→all; sample 1920×1080 → 16:9 and scale W 1280 → H 720; catalog count 72." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-09-08-33-ship-how-to-calculate-aspect-ratio.html" />
   <meta property="og:title" content="Shipped how-to-calculate-aspect-ratio end-to-end with coverage gates 0b→2→4→all; sample 1920×1080 → 16:9 and scale W 1280 → H 720; catalog count 72. | Dev Logs" />
   <meta property="og:description" content="Shipped how-to-calculate-aspect-ratio end-to-end with coverage gates 0b→2→4→all; sample 1920×1080 → 16:9 and scale W 1280 → H 720; catalog count 72." />
@@ -151,7 +151,7 @@ Summary: Shipped how-to-calculate-aspect-ratio end-to-end with coverage gates 0b
 <p>[question]
 Ship tools SERIAL end-to-end (Tool A first): how-to-calculate-aspect-ratio (§12 #20). NOT YMYL. Related: unit-converter, square-feet. Title: Aspect Ratio Calculator — How to Calculate and Scale Ratios. Presets 16:9/4:3/1:1 as options not URLs. Sample: 1920×1080 → 16:9; scale W to 1280 → H 720. Full briefs+gates+10 locales+inventory §9/#112 §12/#20+TSV+README+isolation+dev-log.</p>
 <p>[try to solve]
-已上线 <code>how-to-calculate-aspect-ratio</code>（§12 #20 / §9 #112）。样例：1920×1080 → <strong>16:9</strong>；目标宽 1280 → 高 <strong>720</strong>。catalog 工具数：<strong>72</strong>。门禁 <code>coverage:gate</code> 0b→2→4→all、<code>build:site</code>、<code>lint:seo</code>、<code>CROSS_TOOL_UPDATE=1</code> isolation 均通过；十语独立重写；inventory/TSV/README 已标已上线。</p>
+Shipped <code>how-to-calculate-aspect-ratio</code> (§12 #20 / §9 #112). Sample: 1920×1080 → <strong>16:9</strong>; target width 1280 → height <strong>720</strong>. Catalog tool count: <strong>72</strong>. Gates coverage:gate 0b→2→4→all, build:site, lint:seo, and CROSS_TOOL_UPDATE=1 isolation all passed; independent ten-locale rewrite; inventory/TSV/README marked live.</p>
 <p>[actions]</p>
 <ul>
 <li>work-tasks/how-to-calculate-aspect-ratio/00–03</li>
@@ -160,7 +160,7 @@ Ship tools SERIAL end-to-end (Tool A first): how-to-calculate-aspect-ratio (§12
 <li>src/site/i18n/tools/how-to-calculate-aspect-ratio/{en,zh,es,ar,pt,id,fr,ja,ru,de}.ts</li>
 <li>public/icons/tools/how-to-calculate-aspect-ratio.svg</li>
 <li>docs inventory §9/#112 §12/#20 + Omni/ToolDone TSV</li>
-<li>README 中英工具清单</li>
+<li>README en+zh tool list</li>
 <li>npm run coverage:gate phase=0b|2|4|all; build:site; lint:seo; CROSS_TOOL_UPDATE=1 lint:tool-isolation</li>
 </ul>
 </article>

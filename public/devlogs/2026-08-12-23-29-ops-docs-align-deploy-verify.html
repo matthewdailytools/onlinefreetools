@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Align ops docs with deploy+verify:r2 flow (README, worker-r2-ops, keyword-to-tool, SEO checklist, Ops UI handbook). | Dev Logs</title>
   <meta name="description" content="Align ops docs with deploy+verify:r2 flow (README, worker-r2-ops, keyword-to-tool, SEO checklist, Ops UI handbook)." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-12-23-29-ops-docs-align-deploy-verify.html" />
   <meta property="og:title" content="Align ops docs with deploy+verify:r2 flow (README, worker-r2-ops, keyword-to-tool, SEO checklist, Ops UI handbook). | Dev Logs" />
   <meta property="og:description" content="Align ops docs with deploy+verify:r2 flow (README, worker-r2-ops, keyword-to-tool, SEO checklist, Ops UI handbook)." />
@@ -151,17 +151,17 @@ Summary: Align ops docs with deploy+verify:r2 flow (README, worker-r2-ops, keywo
 <p>[question]
 ops对应修改</p>
 <p>[try to solve]
-同步运维文档与当前 <code>npm run deploy</code>（upload → verify → deploy → live）：</p>
+Synced ops docs with the current <code>npm run deploy</code> flow (upload → verify → deploy → live):</p>
 <ul>
-<li><code>ops/README.md</code>：命令表、发版最低要求、工具 404 / verify 失败 / 部署失败排查</li>
-<li><code>ops/worker-r2-ops.md</code>：CI 表述、抽检含 <code>/api/ops/pages-build</code>、本地 verify、新工具/回滚清单</li>
-<li><code>ops/seo/keyword-to-tool-ops.md</code>：build 拍板后上线走 deploy</li>
-<li><code>docs/SEO_PUBLISH_CHECKLIST.md</code>：增加 R2/版本对齐项</li>
-<li><code>ops/seo/sitemap-ui.mjs</code>：Ops UI 手册白名单加入 worker-r2-ops</li>
+<li><code>ops/README.md</code>: command table, minimum release requirements, troubleshooting for tool 404 / verify failure / deploy failure</li>
+<li><code>ops/worker-r2-ops.md</code>: CI wording, spot-checks including <code>/api/ops/pages-build</code>, local verify, new-tool/rollback checklist</li>
+<li><code>ops/seo/keyword-to-tool-ops.md</code>: after build sign-off, ship via deploy</li>
+<li><code>docs/SEO_PUBLISH_CHECKLIST.md</code>: add R2 / version-alignment items</li>
+<li><code>ops/seo/sitemap-ui.mjs</code>: Ops UI handbook whitelist includes worker-r2-ops</li>
 </ul>
 <p>[actions]</p>
 <ul>
-<li>ops/README.md、ops/worker-r2-ops.md、ops/seo/keyword-to-tool-ops.md、ops/seo/sitemap-ui.mjs</li>
+<li>ops/README.md, ops/worker-r2-ops.md, ops/seo/keyword-to-tool-ops.md, ops/seo/sitemap-ui.mjs</li>
 <li>docs/SEO_PUBLISH_CHECKLIST.md</li>
 </ul>
 </article>

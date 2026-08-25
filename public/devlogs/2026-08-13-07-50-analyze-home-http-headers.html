@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Homepage headers show CDN HIT; max-age=14400 vs designed max-age=0. | Dev Logs</title>
   <meta name="description" content="Homepage headers show CDN HIT; max-age=14400 vs designed max-age=0." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-13-07-50-analyze-home-http-headers.html" />
   <meta property="og:title" content="Homepage headers show CDN HIT; max-age=14400 vs designed max-age=0. | Dev Logs" />
   <meta property="og:description" content="Homepage headers show CDN HIT; max-age=14400 vs designed max-age=0." />
@@ -166,13 +166,13 @@ content-encoding: zstd
 alt-svc: h3=&quot;:443&quot;; ma=86400
 X-Firefox-Spdy: h2</p>
 <p>[try to solve]
-结论：首页边缘缓存已生效（HIT），链路健康；max-age=14400 与代码设计的 max-age=0 不一致，多半是 Cloudflare 区域级 Browser Cache TTL 改写。</p>
-<p>逐项：HTTP/2 200、text/html 正常；cf-cache-status HIT + age 1183 表示 SEA 已缓存约 19.7 分钟；cfOrigin=0 未回源；cfWorker≈37ms Worker 仍执行；cfEdge≈55ms TTFB 较好；Cache-Control 为 CDN 1 天、浏览器 4 小时；zstd 边缘压缩；Vary 仅 Accept-Encoding 合理。</p>
-<p>与仓库差异：identityHtmlResponse / design 为 <code>public, s-maxage=86400, max-age=0</code>，线上 max-age=14400 恰为 CF 常见 Browser Cache TTL=4h。发版后浏览器可能最多 4h 见旧首页；CDN 仍可用 s-maxage + PAGES_CACHE_VERSION。若要发版即对新访客可见，Dashboard 将 Browser Cache TTL 设为 Respect Existing Headers。</p>
-<p>性能：相对此前 Cache miss+R2，边缘 HIT 已达成；若仍慢，主因更可能是 HTML 体积/图标，而非回源 header。</p>
+Verdict: edge cache for the homepage is working (HIT) and the path looks healthy; <code>max-age=14400</code> disagrees with the designed <code>max-age=0</code>, most likely Cloudflare zone Browser Cache TTL rewriting outbound headers.</p>
+<p>Per header: HTTP/2 200 and <code>text/html</code> are fine; <code>cf-cache-status: HIT</code> plus <code>age: 1183</code> means SEA has cached for ~19.7 minutes; <code>cfOrigin=0</code> (no HTTP origin fetch); <code>cfWorker≈37ms</code> (Worker still runs); <code>cfEdge≈55ms</code> TTFB is good; Cache-Control is CDN 1 day / browser 4 hours; zstd edge compression; <code>Vary: Accept-Encoding</code> only is reasonable.</p>
+<p>Vs repo: <code>identityHtmlResponse</code> / design use <code>public, s-maxage=86400, max-age=0</code>; live <code>max-age=14400</code> matches CF’s common Browser Cache TTL=4h. After a deploy, browsers may keep an old home up to 4h; CDN can still use <code>s-maxage</code> + <code>PAGES_CACHE_VERSION</code>. For immediate visibility to new visitors, set Dashboard Browser Cache TTL to Respect Existing Headers.</p>
+<p>Performance: vs earlier cache miss + R2, edge HIT is achieved; if still slow, weight is more likely HTML size/icons than origin headers.</p>
 <p>[actions]</p>
 <ul>
-<li>（只读分析 headers 与 src/site/r2Pages.ts / design.md）</li>
+<li>Read-only analysis of headers vs <code>src/site/r2Pages.ts</code> / design.md</li>
 </ul>
 </article>
       </section>

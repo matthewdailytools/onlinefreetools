@@ -5,15 +5,15 @@ Summary: Clarified region/ISP feasibility via Cloudflare request.cf vs current p
 能否获取的地区和服务商
 
 [try to solve]
-**技术上可以（在 Worker 侧），当前产品未做。**
+**Technically yes on the Worker side; not in the product yet.**
 
-Cloudflare `request.cf` 可在**无第三方 API** 下附带：
-- **地区**：`country`、`region`/`regionCode`、`city`、`timezone`（及可选 lat/long）
-- **服务商**：`asn`、`asOrganization`（ASN 所属组织名，近似 ISP）
+Cloudflare `request.cf` can attach, **without a third-party API**:
+- **Region**: `country`, `region`/`regionCode`, `city`, `timezone` (and optional lat/long)
+- **Provider**: `asn`, `asOrganization` (ASN organization name; approximate ISP)
 
-局限：字段可能缺失；VPN/代理下为**出口节点**信息；精度为 IP 地理库级别（非「归属地精查」）；与竞品 MaxMind 类产品不同。本站 `tool_ip_address_article` 已声明 **Not geolocation, ISP lookup**；02-tool-info 定位为出口 IP + 边界说明，非归属库。
+Limits: fields may be missing; under VPN/proxy you see the **egress node**; accuracy is IP-geo-db level (not precise “attribution lookup”); not the same as MaxMind-class products. Site copy in `tool_ip_address_article` already states **Not geolocation, ISP lookup**; `02-tool-info` positions the tool as egress IP + boundary notes, not an attribution database.
 
-若要做：扩展 `/api/tools/ip-address` 返回 geo/isp 块、UI 展示、FAQ 写清精度与 VPN、更新十语 article 边界文案。
+To ship: extend `/api/tools/ip-address` with a geo/isp block, UI rows, FAQ on accuracy/VPN, and update ten-locale article boundary copy.
 
 [actions]
-- （问答-only，无代码改动）
+- (Q&A only; no code changes)

@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Moved taxonomy nav to the end; renamed paths to /where-to-use-tools and /tool-type; subject label is 工具类型. | Dev Logs</title>
-  <meta name="description" content="Moved taxonomy nav to the end; renamed paths to /where-to-use-tools and /tool-type; subject label is 工具类型." />
-  <meta name="robots" content="noindex" />
+  <title>Moved taxonomy nav to the end; renamed paths to /where-to-use-tools and /tool-type; subject label is tool type. | Dev Logs</title>
+  <meta name="description" content="Moved taxonomy nav to the end; renamed paths to /where-to-use-tools and /tool-type; subject label is tool type." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-09-10-30-rename-taxonomy-nav-paths.html" />
-  <meta property="og:title" content="Moved taxonomy nav to the end; renamed paths to /where-to-use-tools and /tool-type; subject label is 工具类型. | Dev Logs" />
-  <meta property="og:description" content="Moved taxonomy nav to the end; renamed paths to /where-to-use-tools and /tool-type; subject label is 工具类型." />
+  <meta property="og:title" content="Moved taxonomy nav to the end; renamed paths to /where-to-use-tools and /tool-type; subject label is tool type. | Dev Logs" />
+  <meta property="og:description" content="Moved taxonomy nav to the end; renamed paths to /where-to-use-tools and /tool-type; subject label is tool type." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-09-10-30-rename-taxonomy-nav-paths.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,15 +143,15 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Moved taxonomy nav to the end; renamed paths to /where-to-use-tools and /tool-type; subject label is 工具类型. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Moved taxonomy nav to the end; renamed paths to /where-to-use-tools and /tool-type; subject label is tool type. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-09 10:30
-Summary: Moved taxonomy nav to the end; renamed paths to /where-to-use-tools and /tool-type; subject label is 工具类型.</p>
+Summary: Moved taxonomy nav to the end; renamed paths to /where-to-use-tools and /tool-type; subject label is tool type.</p>
 <p>[question]
 将应用场景和操作对象菜单移到最后面；需改应用场景链接为where-to-use-tools,操作对象名称修改为&quot;工具类型“,链接为：tool-type</p>
 <p>[try to solve]
-顶栏「应用场景」「工具类型」已移到分类下拉之后。路径改为 <code>/where-to-use-tools</code> 与 <code>/tool-type</code>；中文导航文案为「工具类型」。旧 <code>/use-cases</code>、<code>/subjects</code> 在 Worker 中 301 到新路径；静态旧目录在 build 时清除；sitemap 已更新。</p>
+Top-nav “use cases” and “tool type” entries now sit after the category dropdown. Paths are <code>/where-to-use-tools</code> and <code>/tool-type</code>; Chinese nav copy uses the requested “tool type” wording. Old <code>/use-cases</code> and <code>/subjects</code> 301 in the Worker to the new paths; stale static directories are cleared on build; sitemap updated.</p>
 <p>[actions]</p>
 <ul>
 <li>Updated nav order/paths in scripts/site/nav.mjs and src/pages/site/nav.ts</li>

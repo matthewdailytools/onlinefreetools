@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Removed brand-colored left bar from sidebar active state. | Dev Logs</title>
   <meta name="description" content="Removed brand-colored left bar from sidebar active state." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-17-13-remove-sidebar-active-left-accent.html" />
   <meta property="og:title" content="Removed brand-colored left bar from sidebar active state. | Dev Logs" />
   <meta property="og:description" content="Removed brand-colored left bar from sidebar active state." />
@@ -151,7 +151,7 @@ Summary: Removed brand-colored left bar from sidebar active state.</p>
 <p>[question]
 选中的左边的不同颜色剔除</p>
 <p>[try to solve]
-侧栏选中项去掉 <code>box-shadow: inset 3px 0 0 var(--accent)</code>，仅保留 action-soft 浅底 + 加粗字。智能配色工具预览同步去掉左侧色条；颜色方案文档验收项已改。</p>
+Removed <code>box-shadow: inset 3px 0 0 var(--accent)</code> from the sidebar active item; keep only action-soft light background + bold text. Smart color-scheme tool preview dropped the left accent bar the same way; color-system doc acceptance criteria updated.</p>
 <p>[actions]</p>
 <ul>
 <li>public/styles/site.css</li>

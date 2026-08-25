@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Advise against mapping /{lang} directly to R2; Worker-only R2 is possible but slower cold path. | Dev Logs</title>
-  <meta name="description" content="Advise against mapping /{lang} directly to R2; Worker-only R2 is possible but slower cold path." />
-  <meta name="robots" content="noindex" />
+  <title>Advise against mapping /{lang} directly to R2; Worker-only R2 is possible but slower on cold path. | Dev Logs</title>
+  <meta name="description" content="Advise against mapping /{lang} directly to R2; Worker-only R2 is possible but slower on cold path." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-13-08-01-lang-home-direct-r2.html" />
-  <meta property="og:title" content="Advise against mapping /{lang} directly to R2; Worker-only R2 is possible but slower cold path. | Dev Logs" />
-  <meta property="og:description" content="Advise against mapping /{lang} directly to R2; Worker-only R2 is possible but slower cold path." />
+  <meta property="og:title" content="Advise against mapping /{lang} directly to R2; Worker-only R2 is possible but slower on cold path. | Dev Logs" />
+  <meta property="og:description" content="Advise against mapping /{lang} directly to R2; Worker-only R2 is possible but slower on cold path." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-13-08-01-lang-home-direct-r2.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,18 +143,18 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Advise against mapping /{lang} directly to R2; Worker-only R2 is possible but slower cold path. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Advise against mapping /{lang} directly to R2; Worker-only R2 is possible but slower on cold path. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-13 08:01
-Summary: Advise against mapping /{lang} directly to R2; Worker-only R2 is possible but slower cold path.</p>
+Summary: Advise against mapping /{lang} directly to R2; Worker-only R2 is possible but slower on cold path.</p>
 <p>[question]
 是否可以将<a href="https://onlinefreetools.org/%7Blang%7D">https://onlinefreetools.org/{lang}</a> 直接指向 R2</p>
 <p>[try to solve]
-不建议把公开 URL 直接挂到 R2（自定义域/公开桶）。原因：R2 key 是内部 <code>_pages/{lang}/index.html.gz</code>，与 <code>/{lang}/</code> 路径不一致；对象为 gzip，需解压后以明文+协商压缩下发；<code>/</code> 的 Accept-Language、trailing slash、301、Cache-Control 等仍要 Worker。技术上可做成「首页也只走 Cache→R2」（像工具页，已有兜底），但会失去当前 Assets 冷路径优势（工具页 miss ~300ms 级）；热路径 HIT 后差异小。推荐维持现状：<code>/{lang}/</code> 仍 Worker + Assets 优先、R2 兜底。</p>
+Do not map the public URL straight onto R2 (custom domain / public bucket). Reasons: R2 keys are internal <code>_pages/{lang}/index.html.gz</code>, not <code>/{lang}/</code>; objects are gzip and must be gunzipped then served as identity + negotiated compression; <code>/</code> still needs Accept-Language, trailing slash, 301, Cache-Control, etc. in the Worker. Technically you could serve home only as Cache→R2 (like tools; fallback already exists), but you lose the current Assets cold-path advantage (tool miss is ~300ms class); after HIT the difference is small. Prefer status quo: <code>/{lang}/</code> stays Worker + Assets first, R2 fallback.</p>
 <p>[actions]</p>
 <ul>
-<li>（只读架构建议）</li>
+<li>Read-only architecture advice</li>
 </ul>
 </article>
       </section>

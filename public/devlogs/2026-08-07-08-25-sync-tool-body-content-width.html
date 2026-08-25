@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Synced tool page body, panels, IG/FAQ sections, and calculator cards to the same --content-max width as share/feedback. | Dev Logs</title>
   <meta name="description" content="Synced tool page body, panels, IG/FAQ sections, and calculator cards to the same --content-max width as share/feedback." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-07-08-25-sync-tool-body-content-width.html" />
   <meta property="og:title" content="Synced tool page body, panels, IG/FAQ sections, and calculator cards to the same --content-max width as share/feedback. | Dev Logs" />
   <meta property="og:description" content="Synced tool page body, panels, IG/FAQ sections, and calculator cards to the same --content-max width as share/feedback." />
@@ -151,7 +151,7 @@ Summary: Synced tool page body, panels, IG/FAQ sections, and calculator cards to
 <p>[question]
 工具正文的宽度同步修正</p>
 <p>[try to solve]
-将工具页标题/摘要、<code>.tool-panel</code>、IG/FAQ <code>tool-section</code>、通用 <code>.tool-card</code> 以及各计算器页内联卡片（bmi/pct/grad/mr/sf）的 <code>max-width</code> 统一为 <code>var(--content-max)</code>（880px），与底部分享/反馈模块同宽。</p>
+Unified <code>max-width</code> to <code>var(--content-max)</code> (880px) for tool title/summary, <code>.tool-panel</code>, IG/FAQ <code>tool-section</code>, shared <code>.tool-card</code>, and inline calculator cards (bmi / pct / grad / mr / sf), matching the bottom share/feedback modules.</p>
 <p>[actions]</p>
 <ul>
 <li><code>public/styles/site.css</code></li>

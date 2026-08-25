@@ -1,5 +1,5 @@
 Date: 2026-08-13 08:09
-Summary: image-optimizer headers: HTTP/3 miss path; Worker~276ms; design Cache-Control; zstd.
+Summary: image-optimizer headers show HTTP/3 miss path; Worker ~276ms; designed Cache-Control; zstd.
 
 [question]
 分析https://onlinefreetools.org/zh/tools/image-optimizer httpheader：HTTP/3 200 
@@ -18,7 +18,7 @@ cf-ray: a2a37c964de383bf-SEA
 alt-svc: h3=":443"; ma=86400
 
 [try to solve]
-工具页冷/miss：无 HIT/age；Cache-Control 为 Worker 设计头 max-age=0、s-maxage=1d；cfWorker≈276ms + cfOrigin=0 ≈ Cache miss→R2 get+gunzip（绑定不计 origin）；边缘 zstd；HTTP/3 + priority/cfExtPri 为协议层，与缓存无关。与 image-format-converter miss（~333ms）同型；再刷预期 HIT、Worker 降至十余 ms、max-age 可能被 Browser Cache TTL 改成 14400。
+Tool-page cold/miss: no HIT/age; Cache-Control is the Worker-designed `max-age=0`, `s-maxage=1d`; `cfWorker≈276ms` with `cfOrigin=0` ≈ Cache miss → R2 get + gunzip (binding does not count as origin); edge zstd; HTTP/3 + priority/cfExtPri are protocol-layer and unrelated to cache. Same pattern as image-format-converter miss (~333ms). A refresh should HIT, drop Worker to ~tens of ms, and Browser Cache TTL may rewrite max-age to 14400.
 
 [actions]
-- （只读分析）
+- Read-only header analysis

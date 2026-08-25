@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Fix HTML mojibake: stop serving R2 pre-gzip with Content-Encoding; always return identity and let runtime compress. | Dev Logs</title>
   <meta name="description" content="Fix HTML mojibake: stop serving R2 pre-gzip with Content-Encoding; always return identity and let runtime compress." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-12-23-48-fix-html-double-gzip-mojibake.html" />
   <meta property="og:title" content="Fix HTML mojibake: stop serving R2 pre-gzip with Content-Encoding; always return identity and let runtime compress. | Dev Logs" />
   <meta property="og:description" content="Fix HTML mojibake: stop serving R2 pre-gzip with Content-Encoding; always return identity and let runtime compress." />
@@ -151,12 +151,12 @@ Summary: Fix HTML mojibake: stop serving R2 pre-gzip with Content-Encoding; alwa
 <p>[question]
 <a href="http://localhost:8788/zh/tools/add-watermark">http://localhost:8788/zh/tools/add-watermark</a> 乱码</p>
 <p>[try to solve]
-根因：R2 预压缩字节 + <code>Content-Encoding: gzip</code> + Cache 往返后 <code>encodeBody:manual</code> 失效 → 双重 gzip，浏览器只解一层显示乱码。
-修复：<code>r2Pages.ts</code> 对外始终返回明文 HTML；R2 仍存 gzip（读时 gunzip）；<code>PAGES_CACHE_VERSION</code>→3 失效旧缓存。已本地验证浏览器式 Accept-Encoding 下仅单层 gzip 且中文正常。</p>
+Root cause: R2 pre-compressed bytes + <code>Content-Encoding: gzip</code> + Cache round-trip made <code>encodeBody:manual</code> ineffective → double gzip; the browser decoded only one layer and showed mojibake.</p>
+<p>Fix: <code>r2Pages.ts</code> always returns plaintext HTML to clients; R2 still stores gzip (gunzip on read); bump <code>PAGES_CACHE_VERSION</code> → 3 to bust old cache. Locally verified under browser-like Accept-Encoding: single-layer gzip and Chinese renders correctly.</p>
 <p>[actions]</p>
 <ul>
-<li>src/site/r2Pages.ts；wrangler.jsonc / worker-configuration.d.ts（PAGES_CACHE_VERSION=3）</li>
-<li>docs/worker+R2架构/design.md、ops/worker-r2-ops.md</li>
+<li>src/site/r2Pages.ts; wrangler.jsonc / worker-configuration.d.ts (PAGES_CACHE_VERSION=3)</li>
+<li>docs/worker+R2架构/design.md, ops/worker-r2-ops.md</li>
 </ul>
 </article>
       </section>

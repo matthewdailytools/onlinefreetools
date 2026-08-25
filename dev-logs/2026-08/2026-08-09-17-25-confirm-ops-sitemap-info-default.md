@@ -1,11 +1,11 @@
 Date: 2026-08-09 17:25
-Summary: Confirm ops sitemap CLI/UI were updated with default info-page exclusion.
+Summary: Confirmed ops sitemap CLI and UI already default to excluding info pages, matching core site behavior.
 
 [question]
 ops中的sitemap生成是否同步修改了
 
 [try to solve]
-是。ops 已与核心同步：CLI（generate-sitemap.mjs）、操作页（sitemap-ui.html/mjs）、ops/README 均默认剔除关于/隐私/条款/联系；勾选或 `--info` 才纳入并视为筛选。
+Yes. Ops is aligned with core: the CLI (`generate-sitemap.mjs`), ops UI (`sitemap-ui.html` / `sitemap-ui.mjs`), and `ops/README` all exclude about/privacy/terms/contact by default. Those URLs are included only when the UI checkbox or `--info` is set, and that counts as an explicit filter.
 
 [actions]
-- 只读核对 ops/seo/* 与 ops/README.md
+- Read-only check of ops/seo/* and ops/README.md

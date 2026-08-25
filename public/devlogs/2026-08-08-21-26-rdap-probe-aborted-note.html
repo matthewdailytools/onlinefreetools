@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Note that an early rdap.org probe shell task was aborted; implementation used Verisign RDAP successfully. | Dev Logs</title>
   <meta name="description" content="Note that an early rdap.org probe shell task was aborted; implementation used Verisign RDAP successfully." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-21-26-rdap-probe-aborted-note.html" />
   <meta property="og:title" content="Note that an early rdap.org probe shell task was aborted; implementation used Verisign RDAP successfully. | Dev Logs" />
   <meta property="og:description" content="Note that an early rdap.org probe shell task was aborted; implementation used Verisign RDAP successfully." />
@@ -151,11 +151,7 @@ Summary: Note that an early rdap.org probe shell task was aborted; implementatio
 <p>[question]
 Briefly inform the user about the task result and perform any follow-up actions (if needed). If there&#39;s no follow-ups needed, don&#39;t explicitly say that.</p>
 <p>[try to solve]
-先前探测 <code>rdap.org</code> 的后台 curl 任务已中止（超时/无输出）。后续改用 <code>rdap.verisign.com</code> 与 IANA bootstrap，RDAP 冒烟 200，<code>domain-lookup</code> 实现不受影响。</p>
-<p>[actions]</p>
-<ul>
-<li>无代码改动</li>
-</ul>
+An earlier background curl probe of <code>rdap.org</code> was aborted (timeout / no output). Implementation later used <code>rdap.verisign.com</code> with IANA bootstrap; RDAP smoke returned 200, and <code>domain-lookup</code> was unaffected.</p>
 </article>
       </section>
     </main>

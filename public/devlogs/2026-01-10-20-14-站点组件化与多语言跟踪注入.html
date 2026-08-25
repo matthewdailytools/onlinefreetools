@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>将站点抽象为可复用的 header/sidebar/footer/content 构建组件，并加入 i18n 与 tracking 注入点，统一生成首页与 devlogs。 | Dev Logs</title>
-  <meta name="description" content="将站点抽象为可复用的 header/sidebar/footer/content 构建组件，并加入 i18n 与 tracking 注入点，统一生成首页与 devlogs。" />
-  <meta name="robots" content="noindex" />
+  <title>Componentized site layout (header/sidebar/footer/content) with i18n and tracking hooks for home and devlogs. | Dev Logs</title>
+  <meta name="description" content="Componentized site layout (header/sidebar/footer/content) with i18n and tracking hooks for home and devlogs." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-01-10-20-14-%E7%AB%99%E7%82%B9%E7%BB%84%E4%BB%B6%E5%8C%96%E4%B8%8E%E5%A4%9A%E8%AF%AD%E8%A8%80%E8%B7%9F%E8%B8%AA%E6%B3%A8%E5%85%A5.html" />
-  <meta property="og:title" content="将站点抽象为可复用的 header/sidebar/footer/content 构建组件，并加入 i18n 与 tracking 注入点，统一生成首页与 devlogs。 | Dev Logs" />
-  <meta property="og:description" content="将站点抽象为可复用的 header/sidebar/footer/content 构建组件，并加入 i18n 与 tracking 注入点，统一生成首页与 devlogs。" />
+  <meta property="og:title" content="Componentized site layout (header/sidebar/footer/content) with i18n and tracking hooks for home and devlogs. | Dev Logs" />
+  <meta property="og:description" content="Componentized site layout (header/sidebar/footer/content) with i18n and tracking hooks for home and devlogs." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-01-10-20-14-%E7%AB%99%E7%82%B9%E7%BB%84%E4%BB%B6%E5%8C%96%E4%B8%8E%E5%A4%9A%E8%AF%AD%E8%A8%80%E8%B7%9F%E8%B8%AA%E6%B3%A8%E5%85%A5.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,25 +143,25 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">将站点抽象为可复用的 header/sidebar/footer/content 构建组件，并加入 i18n 与 tracking 注入点，统一生成首页与 devlogs。 | Dev Logs</h1>
+          <h1 class="h4 mb-0">Componentized site layout (header/sidebar/footer/content) with i18n and tracking hooks for home and devlogs. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>日期：2026年1月10日20时14分
-摘要：将站点抽象为可复用的 header/sidebar/footer/content 构建组件，并加入 i18n 与 tracking 注入点，统一生成首页与 devlogs。</p>
-<p>【question】
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-01-10 20:14
+Summary: Componentized site layout (header/sidebar/footer/content) with i18n and tracking hooks for home and devlogs.</p>
+<p>[question]
 将网站分为header，sidebar，footer，content组件和部分，以便统一更新，例如多国语言，增加跟踪代码，同时需要很容易扩展语言支持。</p>
-<p>【try to solve】
-通过“构建时组件化渲染”落地：新增 <code>scripts/site/</code> 下的布局与组件渲染模块（header/sidebar/footer/content），并提供 i18n（<code>t(lang,key)</code> 翻译字典 + 可配置语言列表）与 tracking 注入钩子（从环境变量注入 <code>&lt;head&gt;</code>/<code>&lt;body&gt;</code> 片段）。随后用统一构建入口 <code>scripts/build-site.mjs</code> 生成首页与 devlogs（索引页 + 每篇日志页），并将旧的 <code>scripts/build-logs.mjs</code> 变为薄封装以保持命令兼容。</p>
-<p>多语言扩展：通过 <code>SITE_LANGS=zh,en</code> 启用多语言输出（默认仅 zh），页面支持生成 <code>hreflang</code> alternates，并在 header 中提供语言切换入口。</p>
-<p>跟踪代码统一注入：通过 <code>SITE_TRACKING_HEAD_HTML</code> / <code>SITE_TRACKING_BODY_HTML</code> 配置后重新构建即可全站生效。</p>
-<p>关键修复：避免 <code>scripts/build-site.mjs</code> 被 <code>import</code> 时执行入口逻辑（仅直接运行时执行 main），确保 <code>npm run build:logs</code> 只构建 devlogs，不会触发整站构建副作用。</p>
-<p>【执行操作】</p>
+<p>[try to solve]
+Implemented build-time component rendering under <code>scripts/site/</code> (header/sidebar/footer/content), with i18n (<code>t(lang,key)</code> dictionary + configurable language list) and tracking injection hooks (env-driven <code>&lt;head&gt;</code> / <code>&lt;body&gt;</code> snippets). Unified entry <code>scripts/build-site.mjs</code> generates the home page and devlogs (index + per-log pages). <code>scripts/build-logs.mjs</code> became a thin wrapper for command compatibility.</p>
+<p>Multilingual: <code>SITE_LANGS=zh,en</code> enables multi-language output (default was zh-only), with <code>hreflang</code> alternates and a header language switcher.</p>
+<p>Tracking: set <code>SITE_TRACKING_HEAD_HTML</code> / <code>SITE_TRACKING_BODY_HTML</code> and rebuild to apply site-wide.</p>
+<p>Fix: keep <code>scripts/build-site.mjs</code> from running <code>main</code> on import so <code>npm run build:logs</code> only builds devlogs.</p>
+<p>[actions]</p>
 <ul>
-<li>新增：<code>scripts/site/config.mjs</code>、<code>scripts/site/i18n.mjs</code>、<code>scripts/site/tracking.mjs</code>、<code>scripts/site/components.mjs</code>、<code>scripts/site/layout.mjs</code>、<code>scripts/site/pages/home.mjs</code></li>
-<li>新增：<code>scripts/build-site.mjs</code></li>
-<li>重构：<code>scripts/build-logs.mjs</code></li>
-<li>更新：<code>package.json</code>（新增 <code>build:site</code>）、<code>README.md</code></li>
-<li>生成：<code>public/index.html</code>、<code>public/devlogs/index.html</code>、<code>public/devlogs/*.html</code></li>
+<li>Added <code>scripts/site/config.mjs</code>, <code>i18n.mjs</code>, <code>tracking.mjs</code>, <code>components.mjs</code>, <code>layout.mjs</code>, <code>pages/home.mjs</code></li>
+<li>Added <code>scripts/build-site.mjs</code></li>
+<li>Refactored <code>scripts/build-logs.mjs</code></li>
+<li>Updated <code>package.json</code> (<code>build:site</code>), <code>README.md</code></li>
+<li>Generated <code>public/index.html</code>, <code>public/devlogs/index.html</code>, <code>public/devlogs/*.html</code></li>
 </ul>
 </article>
       </section>

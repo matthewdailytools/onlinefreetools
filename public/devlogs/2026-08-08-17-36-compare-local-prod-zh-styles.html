@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Compared localhost:8788/zh/ vs onlinefreetools.org/zh/ styles; almost identical except one sidebar CSS line and two unpublished tools. | Dev Logs</title>
   <meta name="description" content="Compared localhost:8788/zh/ vs onlinefreetools.org/zh/ styles; almost identical except one sidebar CSS line and two unpublished tools." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-17-36-compare-local-prod-zh-styles.html" />
   <meta property="og:title" content="Compared localhost:8788/zh/ vs onlinefreetools.org/zh/ styles; almost identical except one sidebar CSS line and two unpublished tools. | Dev Logs" />
   <meta property="og:description" content="Compared localhost:8788/zh/ vs onlinefreetools.org/zh/ styles; almost identical except one sidebar CSS line and two unpublished tools." />
@@ -151,48 +151,48 @@ Summary: Compared localhost:8788/zh/ vs onlinefreetools.org/zh/ styles; almost i
 <p>[question]
 分析本地 <a href="http://localhost:8788/zh/">http://localhost:8788/zh/</a> 和<a href="https://onlinefreetools.org/zh/">https://onlinefreetools.org/zh/</a> 样式是否一致</p>
 <p>[try to solve]
-结论：<strong>整体样式基本一致</strong>；样式栈（Bootstrap / Plus Jakarta Sans / site.css / theme.js / 四套 data-theme）两边相同。唯一 CSS 差异是本地 <code>site.css</code> 已去掉侧栏选中态左侧品牌色条（<code>box-shadow: inset 3px 0 0 var(--accent)</code>），线上仍保留。另有内容差异：本地多 <code>brand-style-guide</code>、<code>smart-website-color-scheme</code> 两个工具；线上多 Cloudflare Insights 脚本（不影响样式）。</p>
-<p>对比方法：拉取两边 <code>/zh/</code> HTML 与静态资源并做字节级比对。</p>
+Verdict: <strong>styles are largely identical</strong>. Both sides share the same style stack (Bootstrap / Plus Jakarta Sans / site.css / theme.js / four data-theme sets). The only CSS delta: local <code>site.css</code> already removed the sidebar active left brand bar (<code>box-shadow: inset 3px 0 0 var(--accent)</code>); production still has it. Content deltas: local has two extra tools (<code>brand-style-guide</code>, <code>smart-website-color-scheme</code>); production injects Cloudflare Insights (no style impact).</p>
+<p>Method: fetched both <code>/zh/</code> HTML and static assets and compared byte-level.</p>
 <table>
 <thead>
 <tr>
-<th>资源</th>
-<th>结果</th>
+<th>Asset</th>
+<th>Result</th>
 </tr>
 </thead>
 <tbody><tr>
 <td><code>/vendor/bootstrap/bootstrap.min.css</code></td>
-<td>一致</td>
+<td>Match</td>
 </tr>
 <tr>
 <td><code>/vendor/fonts/plus-jakarta-sans.css</code></td>
-<td>一致</td>
+<td>Match</td>
 </tr>
 <tr>
 <td><code>/js/theme.js</code></td>
-<td>一致</td>
+<td>Match</td>
 </tr>
 <tr>
 <td><code>/styles/site.css</code></td>
-<td><strong>差 1 行</strong>（见上）</td>
+<td><strong>1-line diff</strong> (above)</td>
 </tr>
 <tr>
-<td>HTML head 样式链接 / preload / 内联 layout style</td>
-<td>一致</td>
+<td>HTML head style links / preload / inline layout style</td>
+<td>Match</td>
 </tr>
 <tr>
-<td>CSS class 集合</td>
-<td>一致（70 个）</td>
+<td>CSS class set</td>
+<td>Match (70 classes)</td>
 </tr>
 <tr>
-<td>主题 bootstrap（<code>oft-theme</code> → teal/green/amber/navy）</td>
-<td>一致</td>
+<td>Theme bootstrap (<code>oft-theme</code> → teal/green/amber/navy)</td>
+<td>Match</td>
 </tr>
 </tbody></table>
-<p>首页视觉上几乎无差；进入带侧栏选中态的工具页时，线上会多一条左侧品牌色竖条，本地没有。</p>
+<p>Home looks nearly the same; on tool pages with a selected sidebar item, production still shows the left brand accent bar that local no longer has.</p>
 <p>[actions]</p>
 <ul>
-<li>对比 <code>http://localhost:8788/zh/</code> 与 <code>https://onlinefreetools.org/zh/</code> 的 HTML/CSS/JS</li>
+<li>Compared HTML/CSS/JS for <code>http://localhost:8788/zh/</code> vs <code>https://onlinefreetools.org/zh/</code></li>
 </ul>
 </article>
       </section>

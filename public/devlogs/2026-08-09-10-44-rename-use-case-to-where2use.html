@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Renamed nav/hub “use case” labels to where2use (EN) and natural local equivalents in other locales. | Dev Logs</title>
   <meta name="description" content="Renamed nav/hub “use case” labels to where2use (EN) and natural local equivalents in other locales." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-09-10-44-rename-use-case-to-where2use.html" />
   <meta property="og:title" content="Renamed nav/hub “use case” labels to where2use (EN) and natural local equivalents in other locales. | Dev Logs" />
   <meta property="og:description" content="Renamed nav/hub “use case” labels to where2use (EN) and natural local equivalents in other locales." />
@@ -151,7 +151,7 @@ Summary: Renamed nav/hub “use case” labels to where2use (EN) and natural loc
 <p>[question]
 use case 统一修改为where2use，其他语言按照用户习惯修改</p>
 <p>[try to solve]
-英文导航与 hub 文案统一为 where2use；中文为「用在哪」，西/葡/法/德/印尼/日/俄/阿等改为「用在哪」类自然说法（如 Dónde usar、どこで使う）。叶子页 meta 中残留的 “use-case page” 已替换。路径仍为 <code>/where-to-use-tools</code>。已 <code>build:site</code>。</p>
+English nav and hub copy unified to where2use; Chinese and other locales use natural “where to use” phrasing (e.g. Spanish Dónde usar, Japanese “where to use”). Leftover “use-case page” wording in leaf meta was replaced. Paths remain <code>/where-to-use-tools</code>. Ran <code>build:site</code>.</p>
 <p>[actions]</p>
 <ul>
 <li>Updated scripts/site/i18n-taxonomy.mjs and src/site/i18n/core/*.ts; npm run build:site</li>

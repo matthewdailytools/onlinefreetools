@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Remove duplicate tool_ip_address keys in en.ts | Dev Logs</title>
-  <meta name="description" content="Remove duplicate tool_ip_address keys in en.ts" />
-  <meta name="robots" content="noindex" />
+  <title>Removed duplicate tool_ip_address keys in en.ts that triggered Wrangler warnings. | Dev Logs</title>
+  <meta name="description" content="Removed duplicate tool_ip_address keys in en.ts that triggered Wrangler warnings." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-07-11-41-fix-duplicate-ip-address-i18n-keys.html" />
-  <meta property="og:title" content="Remove duplicate tool_ip_address keys in en.ts | Dev Logs" />
-  <meta property="og:description" content="Remove duplicate tool_ip_address keys in en.ts" />
+  <meta property="og:title" content="Removed duplicate tool_ip_address keys in en.ts that triggered Wrangler warnings. | Dev Logs" />
+  <meta property="og:description" content="Removed duplicate tool_ip_address keys in en.ts that triggered Wrangler warnings." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-07-11-41-fix-duplicate-ip-address-i18n-keys.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,15 +143,15 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Remove duplicate tool_ip_address keys in en.ts | Dev Logs</h1>
+          <h1 class="h4 mb-0">Removed duplicate tool_ip_address keys in en.ts that triggered Wrangler warnings. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-07 11:41
-Summary: Remove duplicate tool_ip_address keys in en.ts</p>
+Summary: Removed duplicate tool_ip_address keys in en.ts that triggered Wrangler warnings.</p>
 <p>[question]
 @terminals/1.txt:697-728 (wrangler duplicate-object-key warnings for tool_ip_address_description / article)</p>
 <p>[try to solve]
-<code>src/site/i18n/en.ts</code> 里 <code>tool_ip_address_description</code> 与 <code>tool_ip_address_article</code> 各出现两次（约 L315 完整块与 L479 重复）。已删除后者重复项，保留 UI 键（<code>ip_label</code> 等）与 FAQ。内容与首次定义相同，无语义变更。</p>
+In <code>src/site/i18n/en.ts</code>, <code>tool_ip_address_description</code> and <code>tool_ip_address_article</code> each appeared twice (full block ~L315 and a duplicate ~L479). Deleted the later duplicates; kept UI keys (<code>ip_label</code>, etc.) and FAQ. Content matched the first definition, so no semantic change.</p>
 <p>[actions]</p>
 <ul>
 <li>Updated src/site/i18n/en.ts (removed duplicate description/article)</li>

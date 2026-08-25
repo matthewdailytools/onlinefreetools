@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Gitignore entire public/_pages/; untrack 270 HTML from index. | Dev Logs</title>
-  <meta name="description" content="Gitignore entire public/_pages/; untrack 270 HTML from index." />
-  <meta name="robots" content="noindex" />
+  <title>Gitignore entire public/_pages/; untrack ~270 HTML files from the index. | Dev Logs</title>
+  <meta name="description" content="Gitignore entire public/_pages/; untrack ~270 HTML files from the index." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-13-01-14-gitignore-entire-pages-tree.html" />
-  <meta property="og:title" content="Gitignore entire public/_pages/; untrack 270 HTML from index. | Dev Logs" />
-  <meta property="og:description" content="Gitignore entire public/_pages/; untrack 270 HTML from index." />
+  <meta property="og:title" content="Gitignore entire public/_pages/; untrack ~270 HTML files from the index. | Dev Logs" />
+  <meta property="og:description" content="Gitignore entire public/_pages/; untrack ~270 HTML files from the index." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-13-01-14-gitignore-entire-pages-tree.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,19 +143,19 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Gitignore entire public/_pages/; untrack 270 HTML from index. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Gitignore entire public/_pages/; untrack ~270 HTML files from the index. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-13 01:14
-Summary: Gitignore entire public/_pages/; untrack 270 HTML from index.</p>
+Summary: Gitignore entire public/_pages/; untrack ~270 HTML files from the index.</p>
 <p>[question]
 把整个 public/_pages/ 都 gitignore</p>
 <p>[try to solve]
-<code>.gitignore</code> 改为 <code>public/_pages/</code>；<code>git rm -r --cached</code> 移除已跟踪的约 270 个非工具 HTML（本地文件保留）。已同步 ops/worker-r2-ops、ops/README、cloudflare-workflow、design.md。发版仍靠 build:site + upload:r2；需再 commit/push 后 GitHub 才会去掉这些文件。</p>
+<code>.gitignore</code> now uses <code>public/_pages/</code>; <code>git rm -r --cached</code> removed the previously tracked ~270 non-tool HTML files (local files kept). Synced notes in ops/worker-r2-ops, ops/README, cloudflare-workflow, and design.md. Releases still rely on <code>build:site</code> + <code>upload:r2</code>; GitHub drops those files only after another commit/push.</p>
 <p>[actions]</p>
 <ul>
 <li>Updated <code>.gitignore</code>; <code>git rm --cached public/_pages</code></li>
-<li>Updated ops/docs/rules mentioning _pages tracking</li>
+<li>Updated ops/docs/rules mentioning <code>_pages</code> tracking</li>
 </ul>
 </article>
       </section>

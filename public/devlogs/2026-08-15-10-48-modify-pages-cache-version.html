@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Explain how to update PAGES_CACHE_VERSION. | Dev Logs</title>
-  <meta name="description" content="Explain how to update PAGES_CACHE_VERSION." />
-  <meta name="robots" content="noindex" />
+  <title>Explained how to bump PAGES_CACHE_VERSION for site-wide HTML cache invalidation. | Dev Logs</title>
+  <meta name="description" content="Explained how to bump PAGES_CACHE_VERSION for site-wide HTML cache invalidation." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-15-10-48-modify-pages-cache-version.html" />
-  <meta property="og:title" content="Explain how to update PAGES_CACHE_VERSION. | Dev Logs" />
-  <meta property="og:description" content="Explain how to update PAGES_CACHE_VERSION." />
+  <meta property="og:title" content="Explained how to bump PAGES_CACHE_VERSION for site-wide HTML cache invalidation. | Dev Logs" />
+  <meta property="og:description" content="Explained how to bump PAGES_CACHE_VERSION for site-wide HTML cache invalidation." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-15-10-48-modify-pages-cache-version.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,30 +143,30 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Explain how to update PAGES_CACHE_VERSION. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Explained how to bump PAGES_CACHE_VERSION for site-wide HTML cache invalidation. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-15 10:48
-Summary: Explain how to update PAGES_CACHE_VERSION.</p>
+Summary: Explained how to bump PAGES_CACHE_VERSION for site-wide HTML cache invalidation.</p>
 <p>[question]
 PAGES_CACHE_VERSION 怎么修改</p>
 <p>[try to solve]
-<code>PAGES_CACHE_VERSION</code> 的源头在 <code>wrangler.jsonc</code> 的 <code>vars.PAGES_CACHE_VERSION</code>，当前是 <code>&quot;4&quot;</code>。要全站 HTML 缓存失效时，把它递增为新的字符串版本，例如 <code>&quot;5&quot;</code>。</p>
-<p>修改后要让生产生效，推荐流程是先重新构建并上传 R2 HTML，使 R2 <code>_meta/pages-build.json</code> 写入同一个版本，然后通过 git push 让 Worker vars 上线，最后等 Cloudflare 部署完成后跑 live 校验。常用顺序：</p>
+The source of <code>PAGES_CACHE_VERSION</code> is <code>wrangler.jsonc</code> under <code>vars.PAGES_CACHE_VERSION</code> (currently <code>&quot;4&quot;</code>). To invalidate HTML cache site-wide, bump it to a new string version such as <code>&quot;5&quot;</code>.</p>
+<p>For production to take effect, rebuild and upload R2 HTML so R2 <code>_meta/pages-build.json</code> stores the same version, then git-push so Worker vars ship, wait for the Cloudflare deploy, and run live verification. Typical order:</p>
 <pre><code class="language-bash">npm run build:site
 npm run upload:r2
 npm run verify:r2
 git push
-# 等 Cloudflare Dashboard 部署成功后
+# after Cloudflare Dashboard deploy succeeds
 npm run verify:r2:live
 </code></pre>
-<p>也可以直接用项目封装：</p>
+<p>Or use the project wrapper:</p>
 <pre><code class="language-bash">npm run deploy
 git push
-# 等 Cloudflare Dashboard 部署成功后
+# after Cloudflare Dashboard deploy succeeds
 npm run verify:r2:live
 </code></pre>
-<p>注意：只改 <code>wrangler.jsonc</code> 但不 <code>upload:r2</code>，容易出现 Worker 版本变了、R2 meta/HTML 还是旧的；只 <code>upload:r2</code> 但不 push，则线上 Worker 还用旧 <code>PAGES_CACHE_VERSION</code>。</p>
+<p>Caveat: changing only <code>wrangler.jsonc</code> without <code>upload:r2</code> can leave Worker on the new version while R2 meta/HTML stay old; uploading R2 without push leaves the live Worker on the old <code>PAGES_CACHE_VERSION</code>.</p>
 <p>[actions]</p>
 <ul>
 <li>Read <code>.cursor/rules/project-core.mdc</code>, <code>.cursor/rules/dev-logs.mdc</code>, and <code>.cursor/rules/cloudflare-workflow.mdc</code>.</li>

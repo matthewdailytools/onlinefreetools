@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Clarified brand primary comes before role mapping; current iLovePDF red can serve as interim primary. | Dev Logs</title>
   <meta name="description" content="Clarified brand primary comes before role mapping; current iLovePDF red can serve as interim primary." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-16-28-need-brand-primary-first.html" />
   <meta property="og:title" content="Clarified brand primary comes before role mapping; current iLovePDF red can serve as interim primary. | Dev Logs" />
   <meta property="og:description" content="Clarified brand primary comes before role mapping; current iLovePDF red can serve as interim primary." />
@@ -151,7 +151,7 @@ Summary: Clarified brand primary comes before role mapping; current iLovePDF red
 <p>[question]
 是不是先要定一套品牌主色？</p>
 <p>[try to solve]
-是：角色用色（link≠accent）依赖已锁定的主色。现状已有事实主色 <code>--accent #e5322d</code>（对齐 iLovePDF）。两条路：A 确认沿用该红为品牌主色，再拆 link/chrome 规则；B 先另定差异化主色再衍生 soft/hover。未定主色就大改链接色也可以，但后续换主色要重扫。建议先口头确认「沿用红 / 另选」。</p>
+Yes: role colors (link ≠ accent) depend on a locked primary. Today the de-facto primary is <code>--accent #e5322d</code> (iLovePDF-aligned). Two paths: A) confirm that red as brand primary, then split link/chrome rules; B) pick a differentiated primary first, then derive soft/hover. Large link-color changes without a locked primary are possible but force a rescan if primary changes later. Recommend a verbal choice: keep the red vs pick another.</p>
 <p>[actions]</p>
 </article>
       </section>

@@ -5,16 +5,16 @@ Summary: Fix slow home/tool loads by self-hosting Bootstrap/fonts and deferring 
 http://localhost:8788/zh/tools/images-to-gif 还是很缓慢，解决这个问题，首页也很缓慢http://localhost:8788/zh/
 
 [try to solve]
-服务端 HTML 本身很快（约 10–20ms）；缓慢来自首屏阻塞外网资源：cdnjs Bootstrap、fonts.googleapis、Clarity/百度统计在本地/受限网络超时。
+Server HTML itself is fast (~10–20ms). Slowness came from first-paint-blocking third-party assets: cdnjs Bootstrap, fonts.googleapis, and Clarity/Baidu analytics timing out on local/restricted networks.
 
-修正：
-1. `scripts/copy-site-chrome-vendor.mjs` 将 Bootstrap 5.3.3 与 Plus Jakarta Sans woff2 复制到 `/vendor/`
-2. `layout.ts` / `layout.mjs` 改为同域 CSS/JS/字体；Bootstrap `defer`
-3. Clarity/百度统计改为 `load` + `requestIdleCallback` 后注入
-4. 侧栏/首页次级卡片图标 `loading="lazy"`；gifenc 此前已同域化
-5. `build:site` / `start:dev --no-build` 会跑 vendor 复制
+Fix:
+1. `scripts/copy-site-chrome-vendor.mjs` copies Bootstrap 5.3.3 and Plus Jakarta Sans woff2 into `/vendor/`
+2. `layout.ts` / `layout.mjs` use same-origin CSS/JS/fonts; Bootstrap loads with `defer`
+3. Clarity/Baidu inject after `load` + `requestIdleCallback`
+4. Sidebar/home secondary card icons use `loading="lazy"`; gifenc was already same-origin
+5. `build:site` / `start:dev --no-build` run the vendor copy
 
-验证：首页/工具页 HTML 不再含 cdnjs/fonts.googleapis；关键同域资源并行约 16ms。
+Check: home/tool HTML no longer references cdnjs/fonts.googleapis; critical same-origin assets load in parallel ~16ms.
 
 [actions]
 - scripts/copy-site-chrome-vendor.mjs
@@ -25,6 +25,6 @@ http://localhost:8788/zh/tools/images-to-gif 还是很缓慢，解决这个问�
 - src/pages/site/layout.ts
 - src/pages/site/sidebar.ts
 - ops/dev/start-dev.mjs
-- package.json（bootstrap、@fontsource/plus-jakarta-sans、vendor:site-chrome）
+- package.json (bootstrap, @fontsource/plus-jakarta-sans, vendor:site-chrome)
 - .gitignore
 - npm run build:site

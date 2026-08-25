@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Serve Google HTML verification file at exact URL with 200 and no redirect | Dev Logs</title>
-  <meta name="description" content="Serve Google HTML verification file at exact URL with 200 and no redirect" />
-  <meta name="robots" content="noindex" />
+  <title>Served the Google HTML verification file at its exact `.html` URL with HTTP 200 and no redirect. | Dev Logs</title>
+  <meta name="description" content="Served the Google HTML verification file at its exact `.html` URL with HTTP 200 and no redirect." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-03-20-59-google-html-verification-no-redirect.html" />
-  <meta property="og:title" content="Serve Google HTML verification file at exact URL with 200 and no redirect | Dev Logs" />
-  <meta property="og:description" content="Serve Google HTML verification file at exact URL with 200 and no redirect" />
+  <meta property="og:title" content="Served the Google HTML verification file at its exact `.html` URL with HTTP 200 and no redirect. | Dev Logs" />
+  <meta property="og:description" content="Served the Google HTML verification file at its exact `.html` URL with HTTP 200 and no redirect." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-03-20-59-google-html-verification-no-redirect.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,21 +143,20 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Serve Google HTML verification file at exact URL with 200 and no redirect | Dev Logs</h1>
+          <h1 class="h4 mb-0">Served the Google HTML verification file at its exact `.html` URL with HTTP 200 and no redirect. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-03 20:59
-Summary: Serve Google HTML verification file at exact URL with 200 and no redirect</p>
+Summary: Served the Google HTML verification file at its exact <code>.html</code> URL with HTTP 200 and no redirect.</p>
 <p>[question]
 google2cb457f0956f79d9.html 这个页面放在public下面，需要可以直接访问<a href="http://Onlinefreetools.org/google2cb457f0956f79d9.html,%E4%B8%8D%E8%83%BD%E8%B7%B3%E8%BD%AC%EF%BC%8C%E4%BB%A5%E6%BB%A1%E8%B6%B3%E8%B0%B7%E6%AD%8C%E9%AA%8C%E8%AF%81%E7%9A%84%E8%A6%81%E6%B1%82">http://Onlinefreetools.org/google2cb457f0956f79d9.html,不能跳转，以满足谷歌验证的要求</a></p>
 <p>[try to solve]
-线上 <code>/google….html</code> 被 Cloudflare Workers Assets 默认 <code>html_handling</code> 307 到 <code>/google…</code>（无扩展名）。本地 <code>wrangler dev</code> 下通过 Worker 显式路由 + <code>html_handling: &quot;none&quot;</code> 可对精确 <code>.html</code> 返回 200；多次部署后生产仍 307（Assets 配置变更似乎未按预期落到该域名的静态命中路径）。首页已注入 meta 验证标签可作为备用。</p>
+Production <code>/google….html</code> was being 307-redirected by Cloudflare Workers Assets default <code>html_handling</code> to <code>/google…</code> (extension stripped). Locally under <code>wrangler dev</code>, an explicit Worker route plus <code>html_handling: &quot;none&quot;</code> returned 200 for the exact <code>.html</code> path. After several deploys, production still 307ed (Assets config changes did not appear to apply on that domain’s static hit path as expected). Homepage meta verification remained available as a fallback.</p>
 <p>[actions]</p>
 <ul>
-<li>更新：<code>wrangler.jsonc</code>（<code>run_worker_first: [&quot;/google2cb457f0956f79d9.html&quot;]</code>，<code>html_handling: &quot;none&quot;</code>）</li>
-<li>更新：<code>src/index.ts</code>（验证路径 200 直出；跳过语言协商；<code>/devlogs/</code> 索引）</li>
-<li>保留：<code>public/google2cb457f0956f79d9.html</code> 与 <code>verification/</code> 备份</li>
-<li>本日志：<code>dev-logs/2026-08-03-20-59-google-html-verification-no-redirect.md</code></li>
+<li>Updated: <code>wrangler.jsonc</code> (<code>run_worker_first: [&quot;/google2cb457f0956f79d9.html&quot;]</code>, <code>html_handling: &quot;none&quot;</code>)</li>
+<li>Updated: <code>src/index.ts</code> (verification path returns 200; skip language negotiation; <code>/devlogs/</code> index)</li>
+<li>Kept: <code>public/google2cb457f0956f79d9.html</code> and <code>verification/</code> backup</li>
 </ul>
 </article>
       </section>

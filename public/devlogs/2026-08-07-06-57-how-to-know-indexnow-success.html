@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Explain how to verify IndexNow submission success (CLI HTTP codes vs Bing panel). | Dev Logs</title>
-  <meta name="description" content="Explain how to verify IndexNow submission success (CLI HTTP codes vs Bing panel)." />
-  <meta name="robots" content="noindex" />
+  <title>Explained how to verify IndexNow success (CLI HTTP codes vs Bing Webmaster panel). | Dev Logs</title>
+  <meta name="description" content="Explained how to verify IndexNow success (CLI HTTP codes vs Bing Webmaster panel)." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-07-06-57-how-to-know-indexnow-success.html" />
-  <meta property="og:title" content="Explain how to verify IndexNow submission success (CLI HTTP codes vs Bing panel). | Dev Logs" />
-  <meta property="og:description" content="Explain how to verify IndexNow submission success (CLI HTTP codes vs Bing panel)." />
+  <meta property="og:title" content="Explained how to verify IndexNow success (CLI HTTP codes vs Bing Webmaster panel). | Dev Logs" />
+  <meta property="og:description" content="Explained how to verify IndexNow success (CLI HTTP codes vs Bing Webmaster panel)." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-07-06-57-how-to-know-indexnow-success.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,18 +143,18 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Explain how to verify IndexNow submission success (CLI HTTP codes vs Bing panel). | Dev Logs</h1>
+          <h1 class="h4 mb-0">Explained how to verify IndexNow success (CLI HTTP codes vs Bing Webmaster panel). | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-07 06:57
-Summary: Explain how to verify IndexNow submission success (CLI HTTP codes vs Bing panel).</p>
+Summary: Explained how to verify IndexNow success (CLI HTTP codes vs Bing Webmaster panel).</p>
 <p>[question]
 怎么知道 indexnow有没有成功</p>
 <p>[try to solve]
-分两层：1) 脚本侧：退出码 0 且批次 HTTP 200/202 即表示端点已接收（202 也算成功，可能 key 仍在校验）；提交前可用 <code>--check-key</code> 确认线上 <code>/{key}.txt</code>。2) Bing 侧：在 Bing Webmaster Tools → IndexNow 查看是否收到记录。IndexNow 成功只代表「已通知变更」，不等于已收录进搜索结果。常见失败：403（key 不可用/不匹配）、422（URL 与 host 不符）。</p>
+Two layers: (1) Script side — exit code 0 and batch HTTP 200/202 mean the endpoint accepted the payload (202 still counts as success; key verification may still be in progress). Before submit, use <code>--check-key</code> to confirm live <code>/{key}.txt</code>. (2) Bing side — check Bing Webmaster Tools → IndexNow for received records. IndexNow success only means “change notified,” not “already in search results.” Common failures: 403 (key unavailable/mismatch), 422 (URL does not match host).</p>
 <p>[actions]</p>
 <ul>
-<li>（说明性回答，无代码改动）</li>
+<li>(explanatory answer only; no code changes)</li>
 </ul>
 </article>
       </section>

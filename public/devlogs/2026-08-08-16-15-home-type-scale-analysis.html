@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Analyzed homepage font-size hierarchy; found inverted levels and failed featured/secondary title distinction. | Dev Logs</title>
   <meta name="description" content="Analyzed homepage font-size hierarchy; found inverted levels and failed featured/secondary title distinction." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-16-15-home-type-scale-analysis.html" />
   <meta property="og:title" content="Analyzed homepage font-size hierarchy; found inverted levels and failed featured/secondary title distinction. | Dev Logs" />
   <meta property="og:description" content="Analyzed homepage font-size hierarchy; found inverted levels and failed featured/secondary title distinction." />
@@ -151,7 +151,7 @@ Summary: Analyzed homepage font-size hierarchy; found inverted levels and failed
 <p>[question]
 分析网站各个模块字体大小，看起来大小层次不对，不一致 <a href="http://localhost:8788/zh/">http://localhost:8788/zh/</a></p>
 <p>[try to solve]
-对照 <code>site.css</code> + <code>content-home.mjs</code> + Bootstrap 默认：Hero 品牌 1.75–2.625rem；区块 H2 1.35–1.65；分类 H3 1.2；Why 标题 1.05（小于卡片标题 1.125，层次倒置）；推荐/分类卡片标题因 <code>.card .card-title</code> 特异性压过 <code>.h5/.h6</code> 而同为 1.125rem，h5/h6 区分失效；分类区正文用 <code>.small</code>(0.875em) 与推荐区正文不一致属有意但标题未拉开；Hero <code>btn-lg</code> 被改成 1rem 与普通按钮接近；<code>font-weight:750</code> 无效。根因是缺少统一 type scale token，字号散落且与 Bootstrap 工具类打架。</p>
+Compared <code>site.css</code> + <code>content-home.mjs</code> + Bootstrap defaults: Hero brand 1.75–2.625rem; section H2 1.35–1.65; category H3 1.2; Why headings 1.05 (smaller than card titles at 1.125 — inverted hierarchy); featured/category card titles both land at 1.125rem because <code>.card .card-title</code> specificity beats <code>.h5/.h6</code>, so h5/h6 distinction fails; category body uses <code>.small</code> (0.875em) vs featured body intentionally, but titles are not stepped; Hero <code>btn-lg</code> overridden to 1rem near normal buttons; <code>font-weight:750</code> is invalid. Root cause: no unified type-scale tokens; sizes are scattered and fight Bootstrap utility classes.</p>
 <p>[actions]</p>
 </article>
       </section>

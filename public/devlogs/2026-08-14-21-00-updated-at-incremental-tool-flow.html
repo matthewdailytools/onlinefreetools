@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Replace git-based tool incrementality with per-tool updatedAt markers. | Dev Logs</title>
   <meta name="description" content="Replace git-based tool incrementality with per-tool updatedAt markers." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-14-21-00-updated-at-incremental-tool-flow.html" />
   <meta property="og:title" content="Replace git-based tool incrementality with per-tool updatedAt markers. | Dev Logs" />
   <meta property="og:description" content="Replace git-based tool incrementality with per-tool updatedAt markers." />
@@ -151,7 +151,7 @@ Summary: Replace git-based tool incrementality with per-tool updatedAt markers.<
 <p>[question]
 这个会有问题，过于依赖git，修改为，每个工具增加一个最新更新时间，每次编辑修改时候修改为最新时间，这个时间也可以展示在页面上。以此时间作为标记和上次最后生成和上传时间作对比。</p>
 <p>[try to solve]
-已将工具页构建/上传增量判断从 git 差异切换为每个工具 catalog shard 的 <code>updatedAt</code>。编辑工具时更新 <code>src/site/tool-catalog.d/{slug}.json</code> 的 <code>updatedAt</code>；构建对比本地 <code>.cache/tool-build-state.json</code> 的 <code>toolGeneratedAt</code>，上传对比 <code>_meta/pages-build.json</code> 的 <code>toolUploadedAt</code>。git commit、push、未提交修改都不再决定工具页是否进入增量生成/上传。</p>
+Switched tool-page build/upload incrementality from git diffs to each tool catalog shard&#39;s <code>updatedAt</code>. When editing a tool, bump <code>updatedAt</code> in <code>src/site/tool-catalog.d/{slug}.json</code>. Build compares against local <code>.cache/tool-build-state.json</code> <code>toolGeneratedAt</code>; upload compares against <code>_meta/pages-build.json</code> <code>toolUploadedAt</code>. Git commit, push, and uncommitted changes no longer decide whether a tool page enters incremental generation or upload.</p>
 <p>[actions]</p>
 <ul>
 <li>Added <code>updatedAt</code> to all tool catalog shards and merged generated catalog/i18n outputs.</li>

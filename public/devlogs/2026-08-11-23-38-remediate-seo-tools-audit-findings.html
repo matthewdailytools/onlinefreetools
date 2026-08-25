@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Remediated audit findings for 10 SEO tools: website-headers coverage docs, lint:seo false positives, and meta descriptions to 120–160. | Dev Logs</title>
-  <meta name="description" content="Remediated audit findings for 10 SEO tools: website-headers coverage docs, lint:seo false positives, and meta descriptions to 120–160." />
-  <meta name="robots" content="noindex" />
+  <title>Remediated audit findings for 10 SEO tools: website-headers coverage docs, lint:seo false positives, and meta descriptions to 120–160 characters. | Dev Logs</title>
+  <meta name="description" content="Remediated audit findings for 10 SEO tools: website-headers coverage docs, lint:seo false positives, and meta descriptions to 120–160 characters." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-11-23-38-remediate-seo-tools-audit-findings.html" />
-  <meta property="og:title" content="Remediated audit findings for 10 SEO tools: website-headers coverage docs, lint:seo false positives, and meta descriptions to 120–160. | Dev Logs" />
-  <meta property="og:description" content="Remediated audit findings for 10 SEO tools: website-headers coverage docs, lint:seo false positives, and meta descriptions to 120–160." />
+  <meta property="og:title" content="Remediated audit findings for 10 SEO tools: website-headers coverage docs, lint:seo false positives, and meta descriptions to 120–160 characters. | Dev Logs" />
+  <meta property="og:description" content="Remediated audit findings for 10 SEO tools: website-headers coverage docs, lint:seo false positives, and meta descriptions to 120–160 characters." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-11-23-38-remediate-seo-tools-audit-findings.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,28 +143,28 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Remediated audit findings for 10 SEO tools: website-headers coverage docs, lint:seo false positives, and meta descriptions to 120–160. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Remediated audit findings for 10 SEO tools: website-headers coverage docs, lint:seo false positives, and meta descriptions to 120–160 characters. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-11 23:38
-Summary: Remediated audit findings for 10 SEO tools: website-headers coverage docs, lint:seo false positives, and meta descriptions to 120–160.</p>
+Summary: Remediated audit findings for 10 SEO tools: website-headers coverage docs, lint:seo false positives, and meta descriptions to 120–160 characters.</p>
 <p>[question]
 需要</p>
 <p>[try to solve]
-按审计三项全部修复并验证通过：</p>
+Fixed and verified all three audit items:</p>
 <ol>
-<li><p><strong>website-headers 覆盖文档</strong>：补齐 <code>02-tool-info.md</code> 清单前检索覆盖与 Title/Description；修正 <code>03-locale-briefs.md</code> 表头错位，勾选清单前/检索覆盖已优化，补 <code>0b</code>/<code>1b</code>/<code>2b</code>。<code>coverage:gate --slug=website-headers --phase=all</code> → OK。</p>
+<li><p><strong>website-headers coverage docs</strong>: Completed pre-checklist search coverage and Title/Description in <code>02-tool-info.md</code>; fixed misaligned table headers in <code>03-locale-briefs.md</code>, marked pre-checklist / search-coverage optimized, and filled <code>0b</code> / <code>1b</code> / <code>2b</code>. <code>coverage:gate --slug=website-headers --phase=all</code> → OK.</p>
 </li>
-<li><p><strong>lint:seo 误报</strong>：<code>scripts/validate-tool-seo.mjs</code> 的 <code>extractDescriptions</code> 仅校验 catalog <code>faqPrefix_description</code>，跳过 UI 字段如 <code>tool_og_field_og_description</code>。</p>
+<li><p><strong>lint:seo false positives</strong>: <code>scripts/validate-tool-seo.mjs</code> <code>extractDescriptions</code> now validates only catalog <code>faqPrefix_description</code> fields and skips UI fields such as <code>tool_og_field_og_description</code>.</p>
 </li>
-<li><p><strong>meta description</strong>：10 工具 × 10 语言重写为约 120–160 字符，含 SEO 收益与 example/步骤类关键词；去掉机械填充与断句。<code>npm run merge:tools</code> + <code>lint:seo</code> → OK；10 个 slug <code>coverage:gate --phase=all</code> → 全部 OK。</p>
+<li><p><strong>meta description</strong>: Rewrote 10 tools × 10 locales to roughly 120–160 characters, including SEO benefit and example/step keywords; removed mechanical filler and broken sentences. <code>npm run merge:tools</code> + <code>lint:seo</code> → OK; all 10 slugs <code>coverage:gate --phase=all</code> → OK.</p>
 </li>
 </ol>
 <p>[actions]</p>
 <ul>
 <li><code>work-tasks/website-headers/02-tool-info.md</code>, <code>03-locale-briefs.md</code></li>
 <li><code>scripts/validate-tool-seo.mjs</code></li>
-<li><code>src/site/i18n/tools/{10 SEO slugs}/*.ts</code> + merge 生成物</li>
+<li><code>src/site/i18n/tools/{10 SEO slugs}/*.ts</code> + merge outputs</li>
 <li><code>npm run merge:tools</code>, <code>npm run lint:seo</code>, <code>coverage:gate</code> ×10</li>
 </ul>
 </article>

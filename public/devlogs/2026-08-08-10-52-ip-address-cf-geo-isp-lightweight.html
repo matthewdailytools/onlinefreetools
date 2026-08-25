@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Add lightweight region/ISP display from Cloudflare request.cf on IP tool. | Dev Logs</title>
   <meta name="description" content="Add lightweight region/ISP display from Cloudflare request.cf on IP tool." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-10-52-ip-address-cf-geo-isp-lightweight.html" />
   <meta property="og:title" content="Add lightweight region/ISP display from Cloudflare request.cf on IP tool. | Dev Logs" />
   <meta property="og:description" content="Add lightweight region/ISP display from Cloudflare request.cf on IP tool." />
@@ -151,18 +151,18 @@ Summary: Add lightweight region/ISP display from Cloudflare request.cf on IP too
 <p>[question]
 做轻量版（只读 request.cf、不引第三方）</p>
 <p>[try to solve]
-已实现轻量版地区/运营商展示：</p>
+Shipped lightweight region/ISP display:</p>
 <ul>
-<li><strong>API</strong>（<code>src/endpoints/ipAddress.ts</code>）：新增 <code>extractCfGeoIsp()</code>，响应 <code>{ ip, version, geo, isp }</code>；<code>geo</code> 含 country/region/regionCode/city/timezone；<code>isp</code> 含 organization/asn。只读 <code>request.cf</code>，无第三方 geo API。</li>
-<li><strong>页面</strong>（<code>src/pages/ipAddressPage.ts</code>）：结果卡片增加大致地区、时区、网络/ISP 行及 disclaimer 说明。</li>
-<li><strong>十语 i18n</strong>：新增 <code>ip_location_label</code>、<code>ip_timezone_label</code>、<code>ip_isp_label</code>、<code>ip_geo_unknown</code>、<code>ip_isp_unknown</code>、<code>ip_geo_note</code>；更新 description/article/how/rules/example；FAQ q6 说明精度与 VPN 局限。</li>
+<li><strong>API</strong> (<code>src/endpoints/ipAddress.ts</code>): added <code>extractCfGeoIsp()</code>; response <code>{ ip, version, geo, isp }</code>; <code>geo</code> has country/region/regionCode/city/timezone; <code>isp</code> has organization/asn. Reads only <code>request.cf</code>; no third-party geo API.</li>
+<li><strong>Page</strong> (<code>src/pages/ipAddressPage.ts</code>): result card adds approximate region, timezone, network/ISP rows plus disclaimer copy.</li>
+<li><strong>Ten-locale i18n</strong>: added <code>ip_location_label</code>, <code>ip_timezone_label</code>, <code>ip_isp_label</code>, <code>ip_geo_unknown</code>, <code>ip_isp_unknown</code>, <code>ip_geo_note</code>; updated description/article/how/rules/example; FAQ q6 covers accuracy and VPN limits.</li>
 </ul>
-<p><code>npm run lint:seo</code> 通过。仍为近似信息，非精确定位或查任意 IP。</p>
+<p><code>npm run lint:seo</code> passed. Still approximate info — not precise location or lookup of arbitrary IPs.</p>
 <p>[actions]</p>
 <ul>
 <li>src/endpoints/ipAddress.ts</li>
 <li>src/pages/ipAddressPage.ts</li>
-<li>src/site/i18n/*.ts（十语）</li>
+<li>src/site/i18n/*.ts (ten locales)</li>
 </ul>
 </article>
       </section>

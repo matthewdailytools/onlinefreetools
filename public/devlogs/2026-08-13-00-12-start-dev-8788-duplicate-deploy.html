@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>start-dev on 8788 succeeded; fix duplicate deploy script key warning. | Dev Logs</title>
   <meta name="description" content="start-dev on 8788 succeeded; fix duplicate deploy script key warning." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-13-00-12-start-dev-8788-duplicate-deploy.html" />
   <meta property="og:title" content="start-dev on 8788 succeeded; fix duplicate deploy script key warning. | Dev Logs" />
   <meta property="og:description" content="start-dev on 8788 succeeded; fix duplicate deploy script key warning." />
@@ -152,7 +152,7 @@ Summary: start-dev on 8788 succeeded; fix duplicate deploy script key warning.</
 xuli@Matthew-2023 onlinefreetools % bash ops/dev/start-dev.sh -- --port 8788
 …（build:site / prerender lang=en… Duplicate key &quot;deploy&quot; 警告）</p>
 <p>[try to solve]
-该次启动已跑完：预渲染 1240 页、gzip 1510、本地 R2 灌桶、wrangler 在 <a href="http://127.0.0.1:8788/%E3%80%81Ops">http://127.0.0.1:8788/、Ops</a> UI 8791；首页 Accept:text/html 为 200。<code>Duplicate key &quot;deploy&quot;</code> 来自 package.json 同时有 <code>wrangler deploy</code> 与 <code>deploy-site.mjs</code>；已去掉重复，保留 <code>deploy</code>→deploy-site，另加 <code>deploy:worker-only</code>→纯 wrangler。<code>npm run status:dev</code> 默认探 8787，用 8788 时勿被 FAIL 误导。</p>
+That start completed: prerendered 1240 pages, gzip 1510, local R2 seeded, wrangler on <a href="http://127.0.0.1:8788/">http://127.0.0.1:8788/</a>, Ops UI on 8791; home with <code>Accept: text/html</code> returned 200. <code>Duplicate key &quot;deploy&quot;</code> came from package.json defining both <code>wrangler deploy</code> and <code>deploy-site.mjs</code>; removed the duplicate—kept <code>deploy</code> → deploy-site and added <code>deploy:worker-only</code> → bare wrangler. <code>npm run status:dev</code> probes 8787 by default; a FAIL when using 8788 is expected noise.</p>
 <p>[actions]</p>
 <ul>
 <li>Fixed <code>package.json</code> duplicate <code>deploy</code> key (<code>deploy</code> + <code>deploy:worker-only</code>)</li>

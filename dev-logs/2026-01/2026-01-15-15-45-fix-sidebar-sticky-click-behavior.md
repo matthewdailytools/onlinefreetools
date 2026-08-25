@@ -26,7 +26,3 @@ Key changes made:
 - Modified `scripts/site/layout.mjs`
 - Ran `npm run build:site` to regenerate `public/_pages` with the updated CSS/JS
 - Created local commits describing the sidebar fixes
-
-If you want, I can now:
-- Capture screenshots of affected pages at key viewport widths and save them to `dev-logs/` for review, or
-- Push the commits and open a PR (please provide the remote/branch preference).

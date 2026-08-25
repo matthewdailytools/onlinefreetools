@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Shipped four brand themes with navbar switcher, link≠accent roles, and localStorage persistence. | Dev Logs</title>
   <meta name="description" content="Shipped four brand themes with navbar switcher, link≠accent roles, and localStorage persistence." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-16-35-four-theme-switcher.html" />
   <meta property="og:title" content="Shipped four brand themes with navbar switcher, link≠accent roles, and localStorage persistence. | Dev Logs" />
   <meta property="og:description" content="Shipped four brand themes with navbar switcher, link≠accent roles, and localStorage persistence." />
@@ -151,7 +151,7 @@ Summary: Shipped four brand themes with navbar switcher, link≠accent roles, an
 <p>[question]
 4套颜色都做一套方案，然后在网站上可以自选主题进行切换</p>
 <p>[try to solve]
-已落地四套 <code>data-theme</code>（teal/green/amber/navy）覆盖 <code>--accent*</code>；默认青石蓝。全局链接改为 <code>--link</code>（正文色）；侧栏选中为 soft 底 + 深字 + 左边线。顶栏「主题」下拉可切换，<code>localStorage oft-theme</code> 持久化，head 内联防 FOUC，<code>/js/theme.js</code> 处理点击。十语 i18n 主题名已加；<code>build:site</code> 已跑。硬刷新 /zh/ 右上角试切换。</p>
+Landed four <code>data-theme</code> sets (teal/green/amber/navy) covering <code>--accent*</code>; default slate teal. Global links use <code>--link</code> (body color); sidebar active uses soft background + dark text + left border. Navbar Theme dropdown switches themes; <code>localStorage oft-theme</code> persists; inline head script prevents FOUC; <code>/js/theme.js</code> handles clicks. Ten-locale theme name i18n added; <code>build:site</code> ran. Hard-refresh /zh/ and try the top-right switcher.</p>
 <p>[actions]</p>
 <ul>
 <li>public/styles/site.css, public/js/theme.js</li>

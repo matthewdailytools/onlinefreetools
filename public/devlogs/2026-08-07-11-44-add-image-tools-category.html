@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Add parallel home category “Image tools” (catalog image) | Dev Logs</title>
-  <meta name="description" content="Add parallel home category “Image tools” (catalog image)" />
-  <meta name="robots" content="noindex" />
+  <title>Added a parallel home category “Image tools” (catalog category image). | Dev Logs</title>
+  <meta name="description" content="Added a parallel home category “Image tools” (catalog category image)." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-07-11-44-add-image-tools-category.html" />
-  <meta property="og:title" content="Add parallel home category “Image tools” (catalog image) | Dev Logs" />
-  <meta property="og:description" content="Add parallel home category “Image tools” (catalog image)" />
+  <meta property="og:title" content="Added a parallel home category “Image tools” (catalog category image). | Dev Logs" />
+  <meta property="og:description" content="Added a parallel home category “Image tools” (catalog category image)." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-07-11-44-add-image-tools-category.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,23 +143,23 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Add parallel home category “Image tools” (catalog image) | Dev Logs</h1>
+          <h1 class="h4 mb-0">Added a parallel home category “Image tools” (catalog category image). | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-07 11:44
-Summary: Add parallel home category “Image tools” (catalog image)</p>
+Summary: Added a parallel home category “Image tools” (catalog category image).</p>
 <p>[question]
 单独启动一个类别：图片处理工具，与开发者工具平行</p>
 <p>[try to solve]
-新增 catalog 分类 <code>image</code>，与 <code>developer</code> / <code>calculator</code> 并列。</p>
+Added catalog category <code>image</code>, parallel to <code>developer</code> / <code>calculator</code>.</p>
 <ul>
-<li><code>image-format-converter</code> 改归 <code>image</code></li>
-<li>首页「全部工具」与侧栏增加 <code>#cat-image</code>（中文「图片处理工具」）</li>
-<li>面包屑 / JSON-LD 映射 <code>tool_category_image</code>；Schema <code>MultimediaApplication</code></li>
-<li>十语首页文案 <code>home_cat_image*</code>；en/zh 运行时 <code>tool_category_image</code></li>
-<li><code>npm run build:site</code> 已通过</li>
+<li>Moved <code>image-format-converter</code> into <code>image</code></li>
+<li>Home “All tools” and sidebar gained <code>#cat-image</code> (Chinese home label for image-processing tools)</li>
+<li>Breadcrumb / JSON-LD map to <code>tool_category_image</code>; Schema <code>MultimediaApplication</code></li>
+<li>Ten-locale home copy <code>home_cat_image*</code>; en/zh runtime <code>tool_category_image</code></li>
+<li><code>npm run build:site</code> passed</li>
 </ul>
-<p>后续图片类工具在 catalog 写 <code>&quot;category&quot;: &quot;image&quot;</code> 即可进该区。</p>
+<p>Later image tools only need <code>&quot;category&quot;: &quot;image&quot;</code> in the catalog to land in this section.</p>
 <p>[actions]</p>
 <ul>
 <li>Updated src/site/tools.ts, tool-catalog.json, toolContent.ts</li>

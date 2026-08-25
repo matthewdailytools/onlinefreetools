@@ -5,7 +5,7 @@ Summary: Whether tool-page step markup must change for Bing AI summaries.
 再次分析，是否页面的步骤元素要修改格式
 
 [try to solve]
-不必为进 Bing Summary 改一套专用步骤 DOM。现网 How 是单段 p，Rules/Use cases 是 ul，FAQ 是 h3+p，JSON-LD 无 HowTo。ol 有利于人和抽取，但不是收录开关；HowTo schema 不为摘要 KPI。操作类工具若改，用 how_item_N 渲染 ol，保留总答 p；公式/规则不要改成假步骤。
+No need for a Bing-Summary-specific step DOM. Live How sections are a single `<p>`; Rules/Use cases use `<ul>`; FAQ is h3+p; JSON-LD has no HowTo. Ordered lists help humans and extraction but are not an indexing switch; HowTo schema is not a summary KPI. For action tools that change markup, render `how_item_N` as `<ol>` and keep an overview `<p>`; do not turn formulas/rules into fake steps.
 
 [actions]
-- 更新画布 canvases/bing-ai-summary-strategy.canvas.tsx（步骤格式专节）
+- Updated canvas canvases/bing-ai-summary-strategy.canvas.tsx (step-format section)

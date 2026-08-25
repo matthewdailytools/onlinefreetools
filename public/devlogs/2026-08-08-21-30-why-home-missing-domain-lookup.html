@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Homepage missing domain-lookup because code is uncommitted/undeployed and local wrangler is not running; built _pages already include the card. | Dev Logs</title>
   <meta name="description" content="Homepage missing domain-lookup because code is uncommitted/undeployed and local wrangler is not running; built _pages already include the card." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-21-30-why-home-missing-domain-lookup.html" />
   <meta property="og:title" content="Homepage missing domain-lookup because code is uncommitted/undeployed and local wrangler is not running; built _pages already include the card. | Dev Logs" />
   <meta property="og:description" content="Homepage missing domain-lookup because code is uncommitted/undeployed and local wrangler is not running; built _pages already include the card." />
@@ -151,16 +151,16 @@ Summary: Homepage missing domain-lookup because code is uncommitted/undeployed a
 <p>[question]
 为什么首页找不到入口</p>
 <p>[try to solve]
-本地已 <code>build:site</code>：<code>public/_pages/zh/index.html</code> featured 第 10 张即「域名查询」；顶栏/全部工具也有。</p>
-<p>找不到通常因为：</p>
+Local <code>build:site</code> already places Domain Lookup as featured card #10 in <code>public/_pages/zh/index.html</code>; top nav and All tools also list it.</p>
+<p>Not seeing it usually means:</p>
 <ol>
-<li>看的是线上 <a href="https://onlinefreetools.org">https://onlinefreetools.org</a> —— <code>domain-lookup</code> 相关文件仍是未跟踪/未推送，生产没有。</li>
-<li>本地未起服务或曾用 <code>--no-build</code>：<code>status:dev</code> 显示 8787 未监听。</li>
+<li>Looking at production <a href="https://onlinefreetools.org">https://onlinefreetools.org</a> — <code>domain-lookup</code> files are still untracked/unpushed, so prod has none.</li>
+<li>Local server not running, or started with <code>--no-build</code>: <code>status:dev</code> showed port 8787 not listening.</li>
 </ol>
-<p>本地验收：<code>npm run start:dev</code> 后打开 <code>/zh/</code>（带 Accept: text/html）或直达 <code>/zh/tools/domain-lookup</code>。要上线需 commit + push/deploy。</p>
+<p>Local check: <code>npm run start:dev</code>, then open <code>/zh/</code> (with Accept: text/html) or go straight to <code>/zh/tools/domain-lookup</code>. Shipping needs commit + push/deploy.</p>
 <p>[actions]</p>
 <ul>
-<li>查 <code>public/_pages/zh/index.html</code>、<code>git status</code>、<code>status:dev</code></li>
+<li>Checked <code>public/_pages/zh/index.html</code>, <code>git status</code>, <code>status:dev</code></li>
 </ul>
 </article>
       </section>

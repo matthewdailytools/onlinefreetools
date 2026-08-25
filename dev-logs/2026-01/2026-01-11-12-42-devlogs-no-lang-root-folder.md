@@ -9,7 +9,7 @@ devlogs不用区分语言，devlogs文件夹放在根目录下
 - Updated the home page nav to link to `/devlogs/` without any language prefix.
 - Hid the language switcher on devlogs pages to avoid implying language-specific devlogs URLs.
 - Updated Worker language negotiation to exclude `/devlogs/*` (and the static `/tools/markdown-to-html.html`) from redirects, preventing broken `/<lang>/devlogs` paths.
-- Improved devlog front-matter parsing so both legacy CN (`日期/摘要`) and new EN (`Date/Summary`) log headers are recognized.
+- Improved devlog front-matter parsing so both legacy Chinese headers (`日期` / `摘要`) and English headers (`Date` / `Summary`) are recognized.
 - Cleaned legacy generated outputs and rebuilt the site.
 
 [actions]

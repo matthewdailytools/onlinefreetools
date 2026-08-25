@@ -1,0 +1,6 @@
+batch: 09
+count: 20
+rewritten: 19
+skipped_already_english: 1
+issues:
+- skipped already English: dev-logs/2026-08/2026-08-08-12-04-color-from-image-click-pick.md

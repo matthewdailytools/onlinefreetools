@@ -5,7 +5,7 @@ Summary: Change home why-card index badges from 01/02/03 to Roman numerals I/II/
 首页why卡片的序号采用罗马数字
 
 [try to solve]
-Why 卡序号改为 I / II / III，并略调徽章字号与字距。已 `build:site`。
+Why-card indexes are now I / II / III, with slight badge font-size and letter-spacing tweaks. Ran `build:site`.
 
 [actions]
 - scripts/site/components/content-home.mjs

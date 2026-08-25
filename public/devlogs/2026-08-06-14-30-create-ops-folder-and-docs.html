@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Created ops/ folder, moved dev start/stop scripts, and added ops README. | Dev Logs</title>
-  <meta name="description" content="Created ops/ folder, moved dev start/stop scripts, and added ops README." />
-  <meta name="robots" content="noindex" />
+  <title>Created the `ops/` folder, moved dev start/stop scripts into it, and added an ops README. | Dev Logs</title>
+  <meta name="description" content="Created the `ops/` folder, moved dev start/stop scripts into it, and added an ops README." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-06-14-30-create-ops-folder-and-docs.html" />
-  <meta property="og:title" content="Created ops/ folder, moved dev start/stop scripts, and added ops README. | Dev Logs" />
-  <meta property="og:description" content="Created ops/ folder, moved dev start/stop scripts, and added ops README." />
+  <meta property="og:title" content="Created the `ops/` folder, moved dev start/stop scripts into it, and added an ops README. | Dev Logs" />
+  <meta property="og:description" content="Created the `ops/` folder, moved dev start/stop scripts into it, and added an ops README." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-06-14-30-create-ops-folder-and-docs.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,31 +143,31 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Created ops/ folder, moved dev start/stop scripts, and added ops README. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Created the `ops/` folder, moved dev start/stop scripts into it, and added an ops README. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-06 14:30
-Summary: Created ops/ folder, moved dev start/stop scripts, and added ops README.</p>
+Summary: Created the <code>ops/</code> folder, moved dev start/stop scripts into it, and added an ops README.</p>
 <p>[question]
 创建运维文件夹，将脚本放入，以及写运维文档</p>
 <p>[try to solve]
-新建 <code>ops/</code> 运维目录并迁移启停脚本：</p>
+Created the <code>ops/</code> operations directory and moved start/stop scripts into it:</p>
 <pre><code>ops/
-├── README.md           # 运维手册（环境、启停、构建、部署、排障）
+├── README.md           # runbook (env, start/stop, build, deploy, troubleshooting)
 ├── lib/dev-process.mjs
-└── dev/                # start/stop（mjs + ps1 + sh）
+└── dev/                # start/stop (mjs + ps1 + sh)
 </code></pre>
 <ul>
-<li><code>package.json</code> npm 脚本指向 <code>ops/dev/</code></li>
-<li>删除原 <code>scripts/</code> 下启停脚本</li>
-<li>更新 <code>README.md</code>、<code>.cursor/rules/cloudflare-workflow.mdc</code>、<code>project-core.mdc</code></li>
+<li><code>package.json</code> npm scripts point at <code>ops/dev/</code></li>
+<li>Removed the former start/stop scripts under <code>scripts/</code></li>
+<li>Updated <code>README.md</code>, <code>.cursor/rules/cloudflare-workflow.mdc</code>, and <code>project-core.mdc</code></li>
 </ul>
 <p>[actions]</p>
 <ul>
-<li>ops/README.md, ops/lib/, ops/dev/*</li>
-<li>package.json, README.md</li>
-<li>.cursor/rules/cloudflare-workflow.mdc, project-core.mdc</li>
-<li>删除 scripts/start-dev.<em>, scripts/stop-dev.</em>, scripts/lib/dev-process.mjs</li>
+<li><code>ops/README.md</code>, <code>ops/lib/</code>, <code>ops/dev/*</code></li>
+<li><code>package.json</code>, <code>README.md</code></li>
+<li><code>.cursor/rules/cloudflare-workflow.mdc</code>, <code>project-core.mdc</code></li>
+<li>Deleted <code>scripts/start-dev.*</code>, <code>scripts/stop-dev.*</code>, <code>scripts/lib/dev-process.mjs</code></li>
 </ul>
 </article>
       </section>

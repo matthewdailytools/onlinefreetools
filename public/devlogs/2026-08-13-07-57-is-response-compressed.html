@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Yes — edge serves zstd; Worker sends identity HTML. | Dev Logs</title>
   <meta name="description" content="Yes — edge serves zstd; Worker sends identity HTML." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-13-07-57-is-response-compressed.html" />
   <meta property="og:title" content="Yes — edge serves zstd; Worker sends identity HTML. | Dev Logs" />
   <meta property="og:description" content="Yes — edge serves zstd; Worker sends identity HTML." />
@@ -151,10 +151,10 @@ Summary: Yes — edge serves zstd; Worker sends identity HTML.</p>
 <p>[question]
 是否压缩</p>
 <p>[try to solve]
-是。响应头有 <code>content-encoding: zstd</code>，说明 Cloudflare 边缘按客户端 Accept-Encoding 做了 Zstandard 压缩后再下发。Worker/R2 路径对外是明文 HTML（不设 Content-Encoding），由运行时协商压缩；Firefox 支持 zstd，故见 zstd 而非 gzip/br。</p>
+Yes. Response headers include <code>content-encoding: zstd</code>, so the Cloudflare edge compressed with Zstandard per the client’s Accept-Encoding before delivery. The Worker/R2 path emits plaintext HTML (no Content-Encoding set) and lets the runtime negotiate compression; Firefox supports zstd, so you see zstd rather than gzip/br.</p>
 <p>[actions]</p>
 <ul>
-<li>（只读回答）</li>
+<li>Read-only answer</li>
 </ul>
 </article>
       </section>

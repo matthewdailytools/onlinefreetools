@@ -1,22 +1,22 @@
 Date: 2026-08-07 14:34
-Summary: Added conventional default aspect and pixel presets to image-crop brief.
+Summary: Added conventional default aspect and pixel presets to the image-crop brief.
 
 [question]
 提供常规常用默认需求尺寸
 
 [try to solve]
-已在 `work-tasks/image-crop/02-tool-info.md` 写入 v1 默认预设（同页快捷，不拆 URL、不绑平台合规包）：
+Documented v1 default presets in `work-tasks/image-crop/02-tool-info.md` (same-page shortcuts; no extra URLs; not tied to platform compliance packs):
 
-**比例**：自由、1:1、4:3、3:4、3:2、2:3、16:9、9:16、21:9、自定义。
+**Aspect ratios**: free, 1:1, 4:3, 3:4, 3:2, 2:3, 16:9, 9:16, 21:9, custom.
 
-**常用输出像素（场景分组）**：
-- 头像/方图：512、400、256、128、800×800、1000×1000
-- 缩略：150、300
-- 横幅/封面：1920×1080、1280×720、1600×900、1200×675、1200×630、1920×600
-- 竖屏：1080×1920、1080×1350
-- Web：最长边 1200、宽 800 等比
+**Common output pixels (by scene)**:
+- Avatar / square: 512, 400, 256, 128, 800×800, 1000×1000
+- Thumbnail: 150, 300
+- Banner / cover: 1920×1080, 1280×720, 1600×900, 1200×675, 1200×630, 1920×600
+- Portrait: 1080×1920, 1080×1350
+- Web: max edge 1200, width 800 proportional
 
-**默认示例输出**：1:1 → 512×512 JPEG。`03` en/zh 按钮词补了「常用尺寸 / Presets」。
+**Default sample output**: 1:1 → 512×512 JPEG. Added “Common sizes / Presets” button wording in `03` en/zh.
 
 [actions]
 - Updated `work-tasks/image-crop/02-tool-info.md` (preset tables)

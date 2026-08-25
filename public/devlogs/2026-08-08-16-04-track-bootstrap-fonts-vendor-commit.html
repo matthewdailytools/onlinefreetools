@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Track bootstrap/fonts in git, rebuild static pages, commit 29ac93e. | Dev Logs</title>
   <meta name="description" content="Track bootstrap/fonts in git, rebuild static pages, commit 29ac93e." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-16-04-track-bootstrap-fonts-vendor-commit.html" />
   <meta property="og:title" content="Track bootstrap/fonts in git, rebuild static pages, commit 29ac93e. | Dev Logs" />
   <meta property="og:description" content="Track bootstrap/fonts in git, rebuild static pages, commit 29ac93e." />
@@ -151,7 +151,7 @@ Summary: Track bootstrap/fonts in git, rebuild static pages, commit 29ac93e.</p>
 <p>[question]
 直接改 .gitignore（去掉 bootstrap/fonts 两行），并把本地 vendor 加进仓库,然后重跑静态页面，commit</p>
 <p>[try to solve]
-已从 <code>.gitignore</code> 去掉 <code>public/vendor/bootstrap/</code> 与 <code>public/vendor/fonts/</code>；跑 <code>vendor:site-chrome</code> + <code>build:site</code>；提交 <code>29ac93e</code>（gitignore、vendor chrome 资产、十语静态页与 sitemap）。未 push。jsquash/gifenc/wasm-feature-detect 仍 ignore。</p>
+Removed <code>public/vendor/bootstrap/</code> and <code>public/vendor/fonts/</code> from <code>.gitignore</code>; ran <code>vendor:site-chrome</code> + <code>build:site</code>; committed <code>29ac93e</code> (gitignore, vendor chrome assets, ten-locale static pages, sitemap). Not pushed. jsquash/gifenc/wasm-feature-detect remain ignored.</p>
 <p>[actions]</p>
 <ul>
 <li>.gitignore</li>

@@ -1,0 +1,4 @@
+batch: 07
+completed: 20
+issues:
+- Residual CJK in [try to solve] only as preserved literals (ZH titles, category labels, quoted product strings); Summary/narrative English elsewhere. No skips.

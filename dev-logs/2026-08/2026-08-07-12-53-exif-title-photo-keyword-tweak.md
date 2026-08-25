@@ -1,16 +1,16 @@
 Date: 2026-08-07 12:53
-Summary: Lightly add photo/image terms to EXIF tool titles across locales.
+Summary: Lightly added photo/image terms to EXIF tool titles across locales.
 
 [question]
 微调
 
 [try to solve]
-按上一轮建议，仅在 title / 首页卡片短标题中自然带入「照片/photo」类词，不改正文堆砌：
+Per the prior recommendation, only titles and home-card short titles gained natural “photo” wording — no body stuffing:
 
-- en：`Photo EXIF Viewer & Remover — …`（首页短标题同步）
-- es/pt/id/fr/de/ja/ru/ar：title 与 `scripts/site/i18n.mjs` 卡片名对应加上 fotos / foto / photos / Fotos / 写真 / фото / الصور
-- zh：原已有「图片 EXIF」，未改
-- `03-locale-briefs.md` Title 方向已对齐；`lint:seo --slug image-exif` OK；已 `build:site`
+- en: `Photo EXIF Viewer & Remover — …` (home short title synced)
+- es/pt/id/fr/de/ja/ru/ar: title and `scripts/site/i18n.mjs` card names gained fotos / foto / photos / Fotos / photo (ja) / photo (ru) / photos (ar)
+- zh: already had “image EXIF” in the title; unchanged
+- `03-locale-briefs.md` Title direction aligned; `lint:seo --slug image-exif` OK; `build:site` run
 
 [actions]
 - Updated `src/site/i18n/{en,es,pt,id,fr,de,ja,ru,ar}.ts` titles

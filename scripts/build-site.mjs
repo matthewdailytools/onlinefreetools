@@ -50,15 +50,18 @@ try {
 
 /**
  * 递归收集 dev-logs 下所有 Markdown 源文件（支持 dev-logs/YYYY-MM/ 分月目录）。
- * @param {string} dir
- * @returns {Promise<{ fullPath: string, fileName: string }[]>}
+ * 跳过以下划线开头的目录（如 `_archive`、`_curation`），不参与公开构建。
+ * @param {string} dir 绝对或相对目录路径
+ * @returns {Promise<{ fullPath: string, fileName: string }[]>} 源文件列表
  */
 const collectDevLogMarkdownFiles = async (dir) => {
   const entries = await fs.readdir(dir, { withFileTypes: true });
   const files = [];
   for (const entry of entries) {
     const fullPath = path.join(dir, entry.name);
+    // 下划线前缀目录：归档/策展元数据，不发布
     if (entry.isDirectory()) {
+      if (entry.name.startsWith('_')) continue;
       files.push(...(await collectDevLogMarkdownFiles(fullPath)));
     } else if (entry.isFile() && entry.name.endsWith('.md')) {
       files.push({ fullPath, fileName: entry.name });
@@ -204,7 +207,9 @@ const removeStaticToolsDir = async (lang) => {
 
 /**
  * 从 dev-logs/*.md 生成 public/devlogs/ 索引与各篇 HTML。
- * 开发日志不参与 sitemap，且 head 含 robots noindex（与 robots.txt Disallow 双保险）。
+ * 开发日志可被抓取与收录（robots.txt 已允许 `/devlogs/`）；仍不写入 sitemap（见 buildSitemap）。
+ * 构建后会删除输出目录中已无对应源文件的孤儿 `.html`（不含 index.html）。
+ * @returns {Promise<object[]>} 索引条目列表
  */
 export const buildDevLogs = async () => {
   const lang = siteConfig.defaultLang;
@@ -223,12 +228,16 @@ export const buildDevLogs = async () => {
   });
   const footerHtml = renderFooter({ lang });
 
+  /** @type {Set<string>} 本轮应保留的文章 HTML 文件名（含 .html） */
+  const expectedHtmlNames = new Set(['index.html']);
   const items = [];
   for (const { fullPath, fileName } of fileEntries) {
     const md = await fs.readFile(fullPath, 'utf-8');
     const { date, summary } = parseMeta(md);
     const htmlBody = marked.parse(md);
     const base = fileName.replace(/\.md$/, '');
+    const htmlName = `${base}.html`;
+    expectedHtmlNames.add(htmlName);
 
     const pageTitle = summary ? `${summary} | ${t(lang, 'nav_devlogs')}` : base;
     const description = summary || `${siteConfig.brand} dev logs`;
@@ -261,14 +270,13 @@ export const buildDevLogs = async () => {
       ogImageUrl: siteConfig.ogImage,
       ogType: 'article',
       alternates: [],
-      robotsNoindex: true,
       headerHtml,
       sidebarHtml,
       contentHtml,
       footerHtml,
     });
 
-    await fs.writeFile(path.join(outDir, `${base}.html`), page, 'utf-8');
+    await fs.writeFile(path.join(outDir, htmlName), page, 'utf-8');
 
     items.push({
       href: `/devlogs/${base}.html`,
@@ -278,10 +286,18 @@ export const buildDevLogs = async () => {
     });
   }
 
+  // 清理归档后残留的孤儿 HTML，避免公开目录继续挂薄页
+  const existingOut = await fs.readdir(outDir);
+  for (const name of existingOut) {
+    if (!name.endsWith('.html')) continue;
+    if (expectedHtmlNames.has(name)) continue;
+    await fs.unlink(path.join(outDir, name));
+  }
+
   const indexTitle = `${t(lang, 'devlogs_title')} | ${siteConfig.brand}`;
   const indexDescription =
     lang === 'en'
-      ? 'Project dev logs and Q&A notes, organized by month.'
+      ? 'Curated project development notes with reusable decisions and fixes, organized by month.'
       : 'OnlineFreeTools.org 开发日志清单，按月汇总所有问答记录。';
   const indexCanonicalPath = '/devlogs/';
 
@@ -365,7 +381,6 @@ export const buildDevLogs = async () => {
     ogImageUrl: siteConfig.ogImage,
     ogType: 'website',
     alternates: [],
-    robotsNoindex: true,
     headJsonLd: indexJsonLd,
     headerHtml,
     sidebarHtml,

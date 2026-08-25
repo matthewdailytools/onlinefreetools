@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Fixed broken image tool SVG icons caused by corrupted Chinese XML comments. | Dev Logs</title>
   <meta name="description" content="Fixed broken image tool SVG icons caused by corrupted Chinese XML comments." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-07-17-33-fix-broken-image-tool-svg-icons.html" />
   <meta property="og:title" content="Fixed broken image tool SVG icons caused by corrupted Chinese XML comments. | Dev Logs" />
   <meta property="og:description" content="Fixed broken image tool SVG icons caused by corrupted Chinese XML comments." />
@@ -146,17 +146,17 @@
           <h1 class="h4 mb-0">Fixed broken image tool SVG icons caused by corrupted Chinese XML comments. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>﻿Date: 2026-08-07 17:33
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-07 17:33
 Summary: Fixed broken image tool SVG icons caused by corrupted Chinese XML comments.</p>
 <p>[question]
 <a href="http://localhost:8787/icons/tools/image-format-converter.svg%EF%BC%9Bhttp://localhost:8787/icons/tools/image-compress.svg%EF%BC%9B%E5%9B%BE%E7%89%87%E5%87%BA%E9%94%99">http://localhost:8787/icons/tools/image-format-converter.svg；http://localhost:8787/icons/tools/image-compress.svg；图片出错</a></p>
 <p>[try to solve]
-改色时 PowerShell 重写 SVG 损坏了中文注释字节，浏览器按 XML 解析失败。已将 image-compress / image-format-converter / image-exif 注释改为 ASCII，与 image-optimizer 一致。</p>
+A PowerShell rewrite during the palette change corrupted Chinese comment bytes in SVGs, so browsers failed XML parsing. Replaced comments in <code>image-compress</code> / <code>image-format-converter</code> / <code>image-exif</code> with ASCII, matching <code>image-optimizer</code>.</p>
 <p>[actions]</p>
 <ul>
-<li>修复 public/icons/tools/image-compress.svg</li>
-<li>修复 public/icons/tools/image-format-converter.svg</li>
-<li>修复 public/icons/tools/image-exif.svg</li>
+<li>Fixed public/icons/tools/image-compress.svg</li>
+<li>Fixed public/icons/tools/image-format-converter.svg</li>
+<li>Fixed public/icons/tools/image-exif.svg</li>
 </ul>
 </article>
       </section>

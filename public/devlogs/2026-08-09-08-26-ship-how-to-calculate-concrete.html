@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Shipped how-to-calculate-concrete end-to-end with coverage gates 0b→2→4→all, ten-locale i18n, and catalog count 70. | Dev Logs</title>
   <meta name="description" content="Shipped how-to-calculate-concrete end-to-end with coverage gates 0b→2→4→all, ten-locale i18n, and catalog count 70." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-09-08-26-ship-how-to-calculate-concrete.html" />
   <meta property="og:title" content="Shipped how-to-calculate-concrete end-to-end with coverage gates 0b→2→4→all, ten-locale i18n, and catalog count 70. | Dev Logs" />
   <meta property="og:description" content="Shipped how-to-calculate-concrete end-to-end with coverage gates 0b→2→4→all, ten-locale i18n, and catalog count 70." />
@@ -159,7 +159,7 @@ zh: 混凝土计算器 — 如何估算混凝土方量</p>
 <p>Pipeline: work-tasks 00-03 with 0b; gate 0b; page+en+catalog+icon; phase2; 9 independent locales (zh/ja desc≥120); phase4/all; inventory §9/#110 §12/#18 + omni TSVs 已上线; README; build:site; lint:seo; isolation CROSS_TOOL_UPDATE=1; dev-log.</p>
 <p>Return volume sample and catalog count.</p>
 <p>[try to solve]
-已上线 <code>how-to-calculate-concrete</code>（§12 #18 / §9 #110）。板/柱/圆柱同页选项；样例板 5×4×0.1 m → <strong>2.0 m³</strong>（可选袋数，公制 0.015 m³/袋 ≈ 134 袋）；十语独立重写；coverage:gate 0b→2→4→all、build:site、lint:seo、isolation 均通过。<strong>catalog count = 70</strong>。</p>
+Shipped <code>how-to-calculate-concrete</code> (§12 #18 / §9 #110). Slab/column/cylinder as on-page options; sample slab 5×4×0.1 m → <strong>2.0 m³</strong> (optional bags; metric 0.015 m³/bag ≈ 134 bags). Independent ten-locale rewrite; coverage:gate 0b→2→4→all, build:site, lint:seo, and isolation all passed. <strong>catalog count = 70</strong>.</p>
 <p>[actions]</p>
 <ul>
 <li>work-tasks/how-to-calculate-concrete/00–03</li>
@@ -167,8 +167,8 @@ zh: 混凝土计算器 — 如何估算混凝土方量</p>
 <li>src/site/tool-catalog.d/how-to-calculate-concrete.json</li>
 <li>src/site/i18n/tools/how-to-calculate-concrete/{en,zh,es,ar,pt,id,fr,ja,ru,de}.ts</li>
 <li>public/icons/tools/how-to-calculate-concrete.svg</li>
-<li>docs inventory §9/#110 §12/#18 + Omni/ToolDone TSVs → 已上线</li>
-<li>README 中英工具清单</li>
+<li>docs inventory §9/#110 §12/#18 + Omni/ToolDone TSVs → live</li>
+<li>README en+zh tool list</li>
 <li>npm run coverage:gate (0b/2/4/all); npm run build:site; npm run lint:seo; CROSS_TOOL_UPDATE=1 TOOL_SLUG=how-to-calculate-concrete npm run lint:tool-isolation</li>
 </ul>
 </article>

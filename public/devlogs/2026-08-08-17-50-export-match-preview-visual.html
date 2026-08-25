@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Word/PDF export now captures the on-page preview so downloaded files match the preview look. | Dev Logs</title>
   <meta name="description" content="Word/PDF export now captures the on-page preview so downloaded files match the preview look." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-17-50-export-match-preview-visual.html" />
   <meta property="og:title" content="Word/PDF export now captures the on-page preview so downloaded files match the preview look. | Dev Logs" />
   <meta property="og:description" content="Word/PDF export now captures the on-page preview so downloaded files match the preview look." />
@@ -151,11 +151,11 @@ Summary: Word/PDF export now captures the on-page preview so downloaded files ma
 <p>[question]
 下载后的展现样式和页面的不同，需要保证一致</p>
 <p>[try to solve]
-Word / PDF 导出已改为截取页面预览 DOM（<code>#guidePreview</code> 的离屏克隆 + html2canvas），再按 A4 比例分页写入 <code>.docx</code> 图片或 PDF 页，而不再按 Markdown 纯文本重排。动效示例在导出时冻结为静态帧。Word 顶部有一句说明导出视觉与页面预览一致；FAQ a6 与十语 <code>export_visual_note</code> 已同步。</p>
+Word / PDF export now captures the on-page preview DOM (off-screen clone of <code>#guidePreview</code> + html2canvas), then paginates to A4 into <code>.docx</code> images or PDF pages — no longer reflowing from Markdown plain text. Motion samples freeze to a static frame for export. Word header notes that export visuals match the page preview; FAQ a6 and ten-locale <code>export_visual_note</code> synced.</p>
 <p>[actions]</p>
 <ul>
-<li><code>src/pages/brandStyleGuidePage.ts</code>：<code>capturePreviewPages</code> / <code>loadHtml2Canvas</code>；Word/PDF 嵌入预览截图</li>
-<li><code>src/site/i18n/tools/brand-style-guide/*</code>：<code>export_visual_note</code> + FAQ a6；<code>npm run merge:tools</code></li>
+<li><code>src/pages/brandStyleGuidePage.ts</code>: <code>capturePreviewPages</code> / <code>loadHtml2Canvas</code>; Word/PDF embed preview screenshots</li>
+<li><code>src/site/i18n/tools/brand-style-guide/*</code>: <code>export_visual_note</code> + FAQ a6; <code>npm run merge:tools</code></li>
 </ul>
 </article>
       </section>

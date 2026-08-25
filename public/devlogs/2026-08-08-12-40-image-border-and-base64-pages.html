@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Created image-border and image-to-base64 tool page files following existing image tool patterns. | Dev Logs</title>
   <meta name="description" content="Created image-border and image-to-base64 tool page files following existing image tool patterns." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-12-40-image-border-and-base64-pages.html" />
   <meta property="og:title" content="Created image-border and image-to-base64 tool page files following existing image tool patterns. | Dev Logs" />
   <meta property="og:description" content="Created image-border and image-to-base64 tool page files following existing image tool patterns." />
@@ -180,31 +180,31 @@ You are implementing image tools in /Users/xuli/vscodeai/onlinefreetools followi
 <p>Do NOT edit catalog/index/i18n. Only these two page files.
 Return paths when done.</p>
 <p>[try to solve]
-已创建两个完整页面文件，结构与 <code>imageOverlayPage.ts</code> / <code>colorFromImagePage.ts</code> 一致：</p>
+Created two complete page files, structured like <code>imageOverlayPage.ts</code> / <code>colorFromImagePage.ts</code>:</p>
 <ol>
 <li><p><strong><code>src/pages/imageBorderPage.ts</code></strong></p>
 <ul>
-<li>导出 <code>renderImageBorderPage</code></li>
-<li>单图 dropzone、边框宽度（默认 24px）、颜色选择、JPEG/WebP/PNG 格式</li>
-<li>Apply / Download / Sample / Clear；扩画布 <code>w+2*border</code> × <code>h+2*border</code>，<code>fillRect</code> 铺边框色，<code>drawImage</code> 居中</li>
-<li><code>loadSample()</code> 进页自动跑色块样例并应用 24px 白边框</li>
-<li>i18n 前缀 <code>tool_image_border_*</code>；软限制 25MB / 8192px；IG 4 rules + 3 use cases</li>
-<li>References：MDN fillRect / strokeRect / drawImage</li>
+<li>Exports <code>renderImageBorderPage</code></li>
+<li>Single-image dropzone, border width (default 24px), color picker, JPEG/WebP/PNG format</li>
+<li>Apply / Download / Sample / Clear; expand canvas to <code>w+2*border</code> × <code>h+2*border</code>, <code>fillRect</code> for border color, <code>drawImage</code> inset</li>
+<li><code>loadSample()</code> auto-runs a color-block sample with a 24px white border on load</li>
+<li>i18n prefix <code>tool_image_border_*</code>; soft limits 25MB / 8192px; IG 4 rules + 3 use cases</li>
+<li>References: MDN fillRect / strokeRect / drawImage</li>
 </ul>
 </li>
 <li><p><strong><code>src/pages/imageToBase64Page.ts</code></strong></p>
 <ul>
-<li>导出 <code>renderImageToBase64Page</code></li>
-<li>Encode | Decode 模式 Tab</li>
-<li>Encode：<code>FileReader.readAsDataURL</code> → textarea；可选去掉 <code>data:</code> 前缀；Copy + 预览</li>
-<li>Decode：粘贴 data URL 或裸 Base64（默认 <code>image/png</code>）→ 预览 + Download</li>
-<li><code>loadSample()</code> 进页自动 Canvas PNG → Encode 显示 data URL</li>
-<li>i18n 前缀 <code>tool_image_to_base64_*</code>；大文件软警告</li>
-<li>References：MDN FileReader.readAsDataURL + Data URLs</li>
+<li>Exports <code>renderImageToBase64Page</code></li>
+<li>Encode | Decode mode tabs</li>
+<li>Encode: <code>FileReader.readAsDataURL</code> → textarea; optional strip of <code>data:</code> prefix; Copy + preview</li>
+<li>Decode: paste data URL or raw Base64 (default <code>image/png</code>) → preview + Download</li>
+<li><code>loadSample()</code> auto Canvas PNG → Encode showing data URL on load</li>
+<li>i18n prefix <code>tool_image_to_base64_*</code>; soft warn on large files</li>
+<li>References: MDN FileReader.readAsDataURL + Data URLs</li>
 </ul>
 </li>
 </ol>
-<p>未改动 catalog / index / i18n。</p>
+<p>Did not change catalog / index / i18n.</p>
 <p>[actions]</p>
 <ul>
 <li>Added <code>src/pages/imageBorderPage.ts</code></li>

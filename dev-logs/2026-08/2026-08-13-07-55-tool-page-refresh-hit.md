@@ -20,7 +20,7 @@ alt-svc: h3=":443"; ma=86400
 X-Firefox-Spdy: h2
 
 [try to solve]
-同 URL `/zh/tools/image-format-converter` 刷新后确认热路径：HIT、age=108（约 1.8 分钟前填入）、Worker 333ms→8ms、Edge≈9ms、origin=0。缓存填充正常。HIT 时 `max-age` 从 Worker 的 0 变为 14400，与首页 HIT 一致，指向 Cloudflare Browser Cache TTL（4h）在边缘出站改写；miss 时仍见设计头 max-age=0。结论：R2+Cache 链路健康；若要浏览器也强制每次再校验，Dashboard 将 Browser Cache TTL 设为 Respect Existing Headers。
+Same URL `/zh/tools/image-format-converter` after refresh confirms the hot path: HIT, age=108 (~1.8 minutes since fill), Worker 333ms→8ms, Edge≈9ms, origin=0. Cache fill is healthy. On HIT, `max-age` moves from Worker’s 0 to 14400—same as home HIT—pointing to Cloudflare Browser Cache TTL (4h) rewriting at the edge; on miss the designed max-age=0 still appears. Conclusion: R2+Cache path is healthy; to force browsers to revalidate every time, set Dashboard Browser Cache TTL to Respect Existing Headers.
 
 [actions]
-- （只读分析刷新后 headers）
+- Read-only analysis of post-refresh headers

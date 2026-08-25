@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>新增“获取网站响应 Header”工具（Worker 路由模式，含 API），提供中英文页面并保留语言配置扩展，同时清理首页未实现工具入口。 | Dev Logs</title>
-  <meta name="description" content="新增“获取网站响应 Header”工具（Worker 路由模式，含 API），提供中英文页面并保留语言配置扩展，同时清理首页未实现工具入口。" />
-  <meta name="robots" content="noindex" />
+  <title>Added Website Headers tool via Worker routes/API with zh/en pages; removed unimplemented home cards. | Dev Logs</title>
+  <meta name="description" content="Added Website Headers tool via Worker routes/API with zh/en pages; removed unimplemented home cards." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-01-10-21-51-%E6%96%B0%E5%A2%9E%E8%8E%B7%E5%8F%96%E7%BD%91%E7%AB%99header%E5%B7%A5%E5%85%B7%E5%B9%B6%E5%88%87%E6%8D%A2%E8%B7%AF%E7%94%B1%E6%A8%A1%E5%BC%8F.html" />
-  <meta property="og:title" content="新增“获取网站响应 Header”工具（Worker 路由模式，含 API），提供中英文页面并保留语言配置扩展，同时清理首页未实现工具入口。 | Dev Logs" />
-  <meta property="og:description" content="新增“获取网站响应 Header”工具（Worker 路由模式，含 API），提供中英文页面并保留语言配置扩展，同时清理首页未实现工具入口。" />
+  <meta property="og:title" content="Added Website Headers tool via Worker routes/API with zh/en pages; removed unimplemented home cards. | Dev Logs" />
+  <meta property="og:description" content="Added Website Headers tool via Worker routes/API with zh/en pages; removed unimplemented home cards." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-01-10-21-51-%E6%96%B0%E5%A2%9E%E8%8E%B7%E5%8F%96%E7%BD%91%E7%AB%99header%E5%B7%A5%E5%85%B7%E5%B9%B6%E5%88%87%E6%8D%A2%E8%B7%AF%E7%94%B1%E6%A8%A1%E5%BC%8F.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,32 +143,32 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">新增“获取网站响应 Header”工具（Worker 路由模式，含 API），提供中英文页面并保留语言配置扩展，同时清理首页未实现工具入口。 | Dev Logs</h1>
+          <h1 class="h4 mb-0">Added Website Headers tool via Worker routes/API with zh/en pages; removed unimplemented home cards. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>日期：2026年1月10日21时51分
-摘要：新增“获取网站响应 Header”工具（Worker 路由模式，含 API），提供中英文页面并保留语言配置扩展，同时清理首页未实现工具入口。</p>
-<p>【question】
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-01-10 21:51
+Summary: Added Website Headers tool via Worker routes/API with zh/en pages; removed unimplemented home cards.</p>
+<p>[question]
 增加工具：怎么获取网站header信息。采用路由模式而不是静态页面， 提供中英文语言，保留语言配置拓展。清理目前没有实现的工具入口。</p>
-<p>【try to solve】
-新增一个“获取网站响应 Header”的工具，采用 Worker 路由返回 HTML（不再生成静态工具页），并提供后端 API 由服务器侧请求目标网址获取响应 Header：</p>
+<p>[try to solve]
+Added a “Website response Headers” tool served by Worker HTML routes (not a static tool page), with a backend API that fetches the target URL server-side and returns response headers:</p>
 <ul>
-<li>路由页面：<code>/tools/website-headers</code>（默认语言），以及 <code>/&lt;lang&gt;/tools/website-headers</code>（例如 <code>/en/tools/website-headers</code>）</li>
-<li>API：<code>/api/tools/website-headers?url=...</code>，返回 <code>status/finalUrl/headers</code> 等 JSON</li>
-<li>安全限制：仅允许 http/https；拦截 localhost/内网 IP（如 127.0.0.1、10.0.0.0/8、192.168.0.0/16、172.16.0.0/12、::1、fc00::/7、fe80::/10 等），减少 SSRF 风险</li>
-<li>i18n：页面提供中文/英文文案与语言切换入口，语言配置以可扩展列表形式组织</li>
-<li>默认语言配置：在 <code>wrangler.jsonc</code> 增加 <code>SITE_DEFAULT_LANG</code>（默认 <code>zh</code>）与 <code>SITE_LANGS</code>（默认 <code>zh,en</code>）以便后续扩展与环境配置</li>
+<li>Page routes: <code>/tools/website-headers</code> (default lang) and <code>/&lt;lang&gt;/tools/website-headers</code> (e.g. <code>/en/tools/website-headers</code>)</li>
+<li>API: <code>/api/tools/website-headers?url=...</code> → JSON with <code>status</code> / <code>finalUrl</code> / <code>headers</code></li>
+<li>Safety: http/https only; block localhost and private ranges (127.0.0.1, 10.0.0.0/8, 192.168.0.0/16, 172.16.0.0/12, ::1, fc00::/7, fe80::/10, etc.) to reduce SSRF risk</li>
+<li>i18n: Chinese/English copy and language switcher; languages as an extensible list</li>
+<li>Defaults in <code>wrangler.jsonc</code>: <code>SITE_DEFAULT_LANG</code> (default <code>zh</code>) and <code>SITE_LANGS</code> (default <code>zh,en</code>)</li>
 </ul>
-<p>同时清理首页未实现的工具入口：移除所有 <code>href=&quot;#&quot;</code> 的占位卡片，仅保留已存在的 <code>Markdown → HTML</code>，并新增新工具入口链接到 <code>/tools/website-headers</code>（英文页对应 <code>/en/tools/website-headers</code>）。</p>
-<p>【执行操作】</p>
+<p>Also cleaned the home page: removed all <code>href=&quot;#&quot;</code> placeholder cards; kept existing Markdown → HTML; added link to <code>/tools/website-headers</code> (English: <code>/en/tools/website-headers</code>).</p>
+<p>[actions]</p>
 <ul>
-<li>新增：<code>src/site/i18n.ts</code>、<code>src/site/lang.ts</code></li>
-<li>新增：<code>src/pages/websiteHeadersPage.ts</code></li>
-<li>新增：<code>src/tools/websiteHeaders.ts</code></li>
-<li>更新：<code>src/index.ts</code>（新增工具路由与 API）</li>
-<li>更新：<code>scripts/site/pages/home.mjs</code>（清理未实现入口 + 新增工具入口）</li>
-<li>更新：<code>wrangler.jsonc</code>、<code>worker-configuration.d.ts</code>（新增 vars 并重新 typegen）</li>
-<li>生成：<code>public/index.html</code>、<code>public/en/index.html</code>（首页入口更新）</li>
+<li>Added: <code>src/site/i18n.ts</code>, <code>src/site/lang.ts</code></li>
+<li>Added: <code>src/pages/websiteHeadersPage.ts</code></li>
+<li>Added: <code>src/tools/websiteHeaders.ts</code></li>
+<li>Updated: <code>src/index.ts</code> (tool routes + API)</li>
+<li>Updated: <code>scripts/site/pages/home.mjs</code> (remove placeholders + add tool link)</li>
+<li>Updated: <code>wrangler.jsonc</code>, <code>worker-configuration.d.ts</code> (vars + typegen)</li>
+<li>Generated: <code>public/index.html</code>, <code>public/en/index.html</code></li>
 </ul>
 </article>
       </section>

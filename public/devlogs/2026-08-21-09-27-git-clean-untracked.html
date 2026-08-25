@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Removed remaining untracked local files so the working tree matches origin/main. | Dev Logs</title>
   <meta name="description" content="Removed remaining untracked local files so the working tree matches origin/main." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-21-09-27-git-clean-untracked.html" />
   <meta property="og:title" content="Removed remaining untracked local files so the working tree matches origin/main. | Dev Logs" />
   <meta property="og:description" content="Removed remaining untracked local files so the working tree matches origin/main." />
@@ -151,8 +151,8 @@ Summary: Removed remaining untracked local files so the working tree matches ori
 <p>[question]
 本地未提交清掉</p>
 <p>[try to solve]
-已用 <code>git clean -fd</code> 删除全部未跟踪文件与目录。工作区现为 clean，<code>main</code> 与 <code>origin/main</code> 一致。</p>
-<p>删除内容包括：<code>.tmp/</code>、若干未入库的 <code>dev-logs/2026-08/*.md</code>、<code>docs/seo/2026-08-20-focus-five-clicks.md</code>。此前已跟踪但未提交的修改已在上一轮 <code>reset --hard</code> 中丢弃。</p>
+Ran <code>git clean -fd</code> to delete all untracked files and directories. The working tree is clean; <code>main</code> matches <code>origin/main</code>.</p>
+<p>Removed items included: <code>.tmp/</code>, several untracked <code>dev-logs/2026-08/*.md</code>, and <code>docs/seo/2026-08-20-focus-five-clicks.md</code>. Previously tracked but uncommitted edits were discarded in an earlier <code>reset --hard</code>.</p>
 <p>[actions]</p>
 <ul>
 <li><code>git clean -fd</code></li>

@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Explain Cursor SOCKS proxy setup for local chat/login networking (scenario 1). | Dev Logs</title>
-  <meta name="description" content="Explain Cursor SOCKS proxy setup for local chat/login networking (scenario 1)." />
-  <meta name="robots" content="noindex" />
+  <title>Explained Cursor SOCKS proxy setup for local chat/login networking (scenario 1). | Dev Logs</title>
+  <meta name="description" content="Explained Cursor SOCKS proxy setup for local chat/login networking (scenario 1)." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-06-21-21-cursor-ssh-socks-proxy-setup.html" />
-  <meta property="og:title" content="Explain Cursor SOCKS proxy setup for local chat/login networking (scenario 1). | Dev Logs" />
-  <meta property="og:description" content="Explain Cursor SOCKS proxy setup for local chat/login networking (scenario 1)." />
+  <meta property="og:title" content="Explained Cursor SOCKS proxy setup for local chat/login networking (scenario 1). | Dev Logs" />
+  <meta property="og:description" content="Explained Cursor SOCKS proxy setup for local chat/login networking (scenario 1)." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-06-21-21-cursor-ssh-socks-proxy-setup.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,26 +143,26 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Explain Cursor SOCKS proxy setup for local chat/login networking (scenario 1). | Dev Logs</h1>
+          <h1 class="h4 mb-0">Explained Cursor SOCKS proxy setup for local chat/login networking (scenario 1). | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-06 21:21
-Summary: Explain Cursor SOCKS proxy setup for local chat/login networking (scenario 1).</p>
+Summary: Explained Cursor SOCKS proxy setup for local chat/login networking (scenario 1).</p>
 <p>[question]
 cursor 怎么设置 ssh socks代理</p>
 <p>（用户随后选择场景 1：Cursor 聊天/登录走 SOCKS）</p>
 <p>[try to solve]
-场景 1：让 Cursor 本机联网（聊天/登录）走 SOCKS。</p>
-<p>在本机 settings.json 加上（端口改成你本地 SOCKS 口）：</p>
+Scenario 1: route Cursor’s local networking (chat/login) through SOCKS.</p>
+<p>Add to local settings.json (change the port to your local SOCKS port):</p>
 <pre><code class="language-json">&quot;http.proxy&quot;: &quot;socks5://127.0.0.1:7890&quot;,
 &quot;http.proxySupport&quot;: &quot;on&quot;,
 &quot;cursor.general.disableHttp2&quot;: true
 </code></pre>
-<p>操作：Cmd+Shift+P → Preferences: Open User Settings (JSON) → 粘贴上述三项 → 完全退出并重启 Cursor。</p>
-<p>若 SOCKS 不通，改用代理软件的 HTTP 口，例如 <code>&quot;http.proxy&quot;: &quot;http://127.0.0.1:7890&quot;</code>。Clash/Surge 常见 SOCKS 7891、HTTP 7890，以客户端显示为准。</p>
+<p>Steps: Cmd+Shift+P → Preferences: Open User Settings (JSON) → paste the three keys → fully quit and restart Cursor.</p>
+<p>If SOCKS fails, use the proxy app’s HTTP port instead, e.g. <code>&quot;http.proxy&quot;: &quot;http://127.0.0.1:7890&quot;</code>. Clash/Surge often use SOCKS 7891 and HTTP 7890 — confirm in the client UI.</p>
 <p>[actions]</p>
 <ul>
-<li>无代码改动；查阅了本机 Cursor User/settings.json（尚无 proxy 配置）</li>
+<li>No code changes; checked local Cursor User/settings.json (no proxy config yet)</li>
 </ul>
 </article>
       </section>

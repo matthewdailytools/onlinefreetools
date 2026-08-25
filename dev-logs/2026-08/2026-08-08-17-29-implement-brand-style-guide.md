@@ -5,15 +5,15 @@ Summary: Implemented /tools/brand-style-guide with modular smart draft, ten-loca
 实现页面
 
 [try to solve]
-已落地 `/tools/brand-style-guide`（主方向 A，本地规则引擎，非云端 AI）：
+Shipped `/tools/brand-style-guide` (primary direction A, local rule engine — not cloud AI):
 
-- 交互：品牌名/行业/主色/性格标签/结构 preset（Strict·Product·Friendly）/模块开关；Generate、仅重填未改项、Sample、Copy Markdown/JSON；字段 `smart|manual` 标记；进页自动加载 Northline Studio `#0F6E8C` 样例并出完整预览。
-- 模块 M0–M9：预览 + Do/Don’t；关模块不进导出。
-- 工程：catalog 分片、`brandStyleGuidePage.ts`、icon、十语 i18n、README 中英条目；`merge:tools`；`lint:seo` OK；`build:site`（420 URLs）。
-- work-tasks：`02`→`implemented`；`03`→`pending-native-review`（ar/ja/ru 待母语）。
-- 隔离 lint 因工作区其它工具脏文件失败；本工具改动本身在 allowlist（可用 `CROSS_TOOL_UPDATE=1` 跳过脏树）。
+- **Interaction**: brand name / industry / primary color / personality tags / structure presets (Strict·Product·Friendly) / module toggles; Generate, refill-only-unedited, Sample, Copy Markdown/JSON; fields marked `smart|manual`; on load auto-loads Northline Studio `#0F6E8C` sample with full preview.
+- **Modules M0–M9**: preview + Do/Don’t; disabled modules excluded from export.
+- **Engineering**: catalog shard, `brandStyleGuidePage.ts`, icon, ten-locale i18n, README zh+en entries; `merge:tools`; `lint:seo` OK; `build:site` (420 URLs).
+- **work-tasks**: `02` → `implemented`; `03` → `pending-native-review` (ar/ja/ru await native check).
+- Isolation lint failed due to dirty files from other tools in the workspace; this tool’s own changes are on the allowlist (can use `CROSS_TOOL_UPDATE=1` to skip a dirty tree).
 
-预览：`/tools/brand-style-guide` 与 `/zh/tools/brand-style-guide`。
+Preview: `/tools/brand-style-guide` and `/zh/tools/brand-style-guide`.
 
 [actions]
 - Added `src/pages/brandStyleGuidePage.ts`

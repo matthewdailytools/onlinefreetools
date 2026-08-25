@@ -49,15 +49,15 @@ After edits: run `npm run lint:seo` and fix failures you introduced.
 Return summary of files changed and any leftover gaps.
 
 [try to solve]
-已将三个存量工具页对齐 BMI/website-headers 的 IG 结构：页面接入 `renderToolIgSections` / `renderToolReferencesSection` / `renderToolExtraSections`，References 置于 FAQ/Related 之后。
+Aligned three existing tool pages with the BMI / website-headers IG structure: pages wire `renderToolIgSections` / `renderToolReferencesSection` / `renderToolExtraSections`; References sit after FAQ/Related.
 
-- **IP**：保留 `/api/tools/ip-address` 拉取 UI；How + Rules（边缘可信客户端 IP、VPN/NAT/双栈）；Example 用 203.0.113.10；引用 MDN X-Forwarded-For 与 Cloudflare Learning。
-- **ROI（YMYL）**：保留 initial/final/gain；Formula 含税/时间/费用/多期局限假设项；固定例 1000→1300 = 30%；两条 Investopedia 可点引用；语气软化。
-- **边际收益（YMYL）**：保留 Q1/TR1/Q2/TR2 计算器并显示 ΔTR/ΔQ 推导；例 10→11 / 1000→1080 → MR 80；Investopedia + OpenStax 引用。
+- **IP**: kept `/api/tools/ip-address` fetch UI; How + Rules (edge-trusted client IP, VPN/NAT/dual-stack); Example uses 203.0.113.10; refs MDN X-Forwarded-For and Cloudflare Learning.
+- **ROI (YMYL)**: kept initial/final/gain; Formula includes tax/time/fees/multi-period assumption items; fixed example 1000→1300 = 30%; two clickable Investopedia refs; softened advice tone.
+- **Marginal revenue (YMYL)**: kept Q1/TR1/Q2/TR2 calculator with visible ΔTR/ΔQ derivation; example 10→11 / 1000→1080 → MR 80; Investopedia + OpenStax refs.
 
-十语文案按 `03-locale-briefs.md` 独立重写（非英模同构）；`scripts/site/i18n.mjs` 首页卡片 title/desc 已同步。`npm run lint:seo` 通过。
+Ten-locale copy rewritten independently from `03-locale-briefs.md` (not English-template isomorphic); `scripts/site/i18n.mjs` home-card titles/descs synced. `npm run lint:seo` passed.
 
-**遗留缺口**：`03` 中 ar/ja/ru 仍标「待母语抽查」；未改 `tool-catalog.json`；未触碰 text-diff / markdown-to-html。
+**Leftover gaps**: `03` still marks ar/ja/ru pending native review; `tool-catalog.json` unchanged; text-diff / markdown-to-html untouched.
 
 [actions]
 - src/pages/ipAddressPage.ts

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Explained Turnstile free tier unlimited challenges vs Worker/upstream request costs. | Dev Logs</title>
   <meta name="description" content="Explained Turnstile free tier unlimited challenges vs Worker/upstream request costs." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-22-28-turnstile-counts-against-quota.html" />
   <meta property="og:title" content="Explained Turnstile free tier unlimited challenges vs Worker/upstream request costs. | Dev Logs" />
   <meta property="og:description" content="Explained Turnstile free tier unlimited challenges vs Worker/upstream request costs." />
@@ -151,10 +151,10 @@ Summary: Explained Turnstile free tier unlimited challenges vs Worker/upstream r
 <p>[question]
 验证占不占请求次数？</p>
 <p>[try to solve]
-Turnstile Free 官方写明 Unlimited challenges（traffic or verification requests），验证本身不按次计费/不占 Turnstile 套餐次数。但每次点 Lookup 仍会打一次本站 Worker（含一次 siteverify 子请求）；只有校验通过后才会打 DoH/RDAP。仅加载 widget、未提交，一般不走业务 API。</p>
+Turnstile Free officially states Unlimited challenges (traffic or verification requests); verification itself is not metered against the Turnstile plan. Each Lookup still hits this site’s Worker once (including one siteverify subrequest); DoH/RDAP run only after verification succeeds. Loading the widget without submitting generally does not hit the business API.</p>
 <p>[actions]</p>
 <ul>
-<li>无代码改动</li>
+<li>No code changes</li>
 </ul>
 </article>
       </section>

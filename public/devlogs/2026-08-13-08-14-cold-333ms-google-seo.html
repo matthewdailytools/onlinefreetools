@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>333ms cold miss is fine for Google SEO; TTFB not CWV; web.dev good ≤800ms. | Dev Logs</title>
-  <meta name="description" content="333ms cold miss is fine for Google SEO; TTFB not CWV; web.dev good ≤800ms." />
-  <meta name="robots" content="noindex" />
+  <title>333ms cold miss is fine for Google SEO; TTFB is not CWV; web.dev good is ≤800ms. | Dev Logs</title>
+  <meta name="description" content="333ms cold miss is fine for Google SEO; TTFB is not CWV; web.dev good is ≤800ms." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-13-08-14-cold-333ms-google-seo.html" />
-  <meta property="og:title" content="333ms cold miss is fine for Google SEO; TTFB not CWV; web.dev good ≤800ms. | Dev Logs" />
-  <meta property="og:description" content="333ms cold miss is fine for Google SEO; TTFB not CWV; web.dev good ≤800ms." />
+  <meta property="og:title" content="333ms cold miss is fine for Google SEO; TTFB is not CWV; web.dev good is ≤800ms. | Dev Logs" />
+  <meta property="og:description" content="333ms cold miss is fine for Google SEO; TTFB is not CWV; web.dev good is ≤800ms." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-13-08-14-cold-333ms-google-seo.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,18 +143,18 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">333ms cold miss is fine for Google SEO; TTFB not CWV; web.dev good ≤800ms. | Dev Logs</h1>
+          <h1 class="h4 mb-0">333ms cold miss is fine for Google SEO; TTFB is not CWV; web.dev good is ≤800ms. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-13 08:14
-Summary: 333ms cold miss is fine for Google SEO; TTFB not CWV; web.dev good ≤800ms.</p>
+Summary: 333ms cold miss is fine for Google SEO; TTFB is not CWV; web.dev good is ≤800ms.</p>
 <p>[question]
 333ms符合谷歌seo么</p>
 <p>[try to solve]
-符合、无违规。Google 无「TTFB 必须 &lt;X」的硬性 SEO/spam 门槛；排名相关的是 Core Web Vitals（LCP≤2.5s、INP≤200ms、CLS≤0.1，CrUX p75），TTFB 只是诊断项并间接影响 LCP。web.dev 对 TTFB：≤0.8s 为 good、&gt;1.8s 为 poor——333ms 远在 good 内。且多数用户/回访为 HIT（~几十 ms），p75 通常更好。不必为 SEO 合规单独消这 333ms；优化属体验与预热，非政策要求。</p>
+Yes — no policy violation. Google has no hard SEO/spam “TTFB must be &lt;X” rule. Ranking-related metrics are Core Web Vitals (LCP≤2.5s, INP≤200ms, CLS≤0.1 at CrUX p75); TTFB is diagnostic and only indirectly affects LCP. web.dev rates TTFB ≤0.8s good and &gt;1.8s poor — 333ms is well inside good. Most users/return visits are HIT (~tens of ms), so p75 is usually better. Do not chase this 333ms for SEO compliance alone; warmup/experience work is optional, not a policy requirement.</p>
 <p>[actions]</p>
 <ul>
-<li>（只读对照 Google/web.dev 指引）</li>
+<li>Read-only check against Google/web.dev guidance</li>
 </ul>
 </article>
       </section>

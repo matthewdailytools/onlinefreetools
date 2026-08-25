@@ -5,7 +5,7 @@ Summary: Shipped how-to-calculate-p-value end-to-end; sample z=1.96 → two-tail
 #23 how-to-calculate-p-value (NOT YMYL). Title: P-Value Calculator — How to Calculate a P-Value. zh: p 值计算器 — 如何计算 p 值. Simple z-test two-tail from z-score using erfc. Sample: z=1.96 → two-tailed p≈0.05. Related: std-dev + percentage-change while CI not live.
 
 [try to solve]
-已上线 `how-to-calculate-p-value`（§12 #23 / §9 #115）。样例：z = **1.96** → 双侧 p ≈ **0.05**（约 0.049996）。related：`how-to-calculate-standard-deviation`、`how-to-calculate-percentage-change`。catalog：**75**。coverage 0b→2→4→all、`build:site`、`lint:seo`、isolation 通过；十语独立重写；inventory/TSV/README 已标已上线。
+Shipped `how-to-calculate-p-value` (§12 #23 / §9 #115). Sample: z = **1.96** → two-tailed p ≈ **0.05** (about 0.049996). Related: `how-to-calculate-standard-deviation`, `how-to-calculate-percentage-change`. Catalog: **75**. coverage 0b→2→4→all, build:site, lint:seo, and isolation passed; independent ten-locale rewrite; inventory/TSV/README marked live.
 
 [actions]
 - work-tasks/how-to-calculate-p-value/00–03

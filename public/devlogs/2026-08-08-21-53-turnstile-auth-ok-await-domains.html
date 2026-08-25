@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Turnstile/Workers API scopes OK on Dailyonetools account; awaiting domain list and insertion confirmation. | Dev Logs</title>
   <meta name="description" content="Turnstile/Workers API scopes OK on Dailyonetools account; awaiting domain list and insertion confirmation." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-21-53-turnstile-auth-ok-await-domains.html" />
   <meta property="og:title" content="Turnstile/Workers API scopes OK on Dailyonetools account; awaiting domain list and insertion confirmation. | Dev Logs" />
   <meta property="og:description" content="Turnstile/Workers API scopes OK on Dailyonetools account; awaiting domain list and insertion confirmation." />
@@ -151,11 +151,11 @@ Summary: Turnstile/Workers API scopes OK on Dailyonetools account; awaiting doma
 <p>[question]
 好了</p>
 <p>[try to solve]
-新 token 可列出账户并调用 Turnstile widgets / Workers scripts（200）。<code>auth-probe</code> 因 wrangler 4.58 无 <code>whoami --json</code> 误报，已绕过。账号：<a href="mailto:Dailyonetools@outlook.com">Dailyonetools@outlook.com</a>&#39;s Account。扫描到接入点：<code>domainLookupPage.ts</code> 的 <code>#form</code> / <code>runLookup</code>（含进页 loadSample）。待用户确认域名与插入方案后再创建 widget。</p>
+New token can list accounts and call Turnstile widgets / Workers scripts (200). <code>auth-probe</code> false-alarmed because wrangler 4.58 lacks <code>whoami --json</code>; bypassed. Account: <a href="mailto:Dailyonetools@outlook.com">Dailyonetools@outlook.com</a>&#39;s Account. Integration point found: <code>domainLookupPage.ts</code> <code>#form</code> / <code>runLookup</code> (including on-page loadSample). Waiting for user to confirm domains and insertion approach before creating the widget.</p>
 <p>[actions]</p>
 <ul>
-<li>verify/accounts/turnstile/workers API 探测</li>
-<li>读 vanilla-html 与 domainLookupPage 表单</li>
+<li>Probed verify/accounts/turnstile/workers APIs</li>
+<li>Read vanilla-html and domainLookupPage form</li>
 </ul>
 </article>
       </section>

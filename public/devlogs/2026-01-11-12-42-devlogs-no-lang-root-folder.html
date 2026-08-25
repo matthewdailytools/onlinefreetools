@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Made devlogs global (no language split) and served from the root /devlogs/ path. | Dev Logs</title>
   <meta name="description" content="Made devlogs global (no language split) and served from the root /devlogs/ path." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-01-11-12-42-devlogs-no-lang-root-folder.html" />
   <meta property="og:title" content="Made devlogs global (no language split) and served from the root /devlogs/ path. | Dev Logs" />
   <meta property="og:description" content="Made devlogs global (no language split) and served from the root /devlogs/ path." />
@@ -156,7 +156,7 @@ devlogs不用区分语言，devlogs文件夹放在根目录下</p>
 <li>Updated the home page nav to link to <code>/devlogs/</code> without any language prefix.</li>
 <li>Hid the language switcher on devlogs pages to avoid implying language-specific devlogs URLs.</li>
 <li>Updated Worker language negotiation to exclude <code>/devlogs/*</code> (and the static <code>/tools/markdown-to-html.html</code>) from redirects, preventing broken <code>/&lt;lang&gt;/devlogs</code> paths.</li>
-<li>Improved devlog front-matter parsing so both legacy CN (<code>日期/摘要</code>) and new EN (<code>Date/Summary</code>) log headers are recognized.</li>
+<li>Improved devlog front-matter parsing so both legacy Chinese headers (<code>日期</code> / <code>摘要</code>) and English headers (<code>Date</code> / <code>Summary</code>) are recognized.</li>
 <li>Cleaned legacy generated outputs and rebuilt the site.</li>
 </ul>
 <p>[actions]</p>

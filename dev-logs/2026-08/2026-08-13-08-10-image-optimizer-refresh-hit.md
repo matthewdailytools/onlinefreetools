@@ -20,7 +20,7 @@ alt-svc: h3=":443"; ma=86400
 X-Firefox-Spdy: h2
 
 [try to solve]
-同 URL 热路径确认：HIT、age=65、Worker 276→37ms、仍 zstd、origin=0。max-age 0→14400 再次印证 CF Browser Cache TTL 出站改写。与 image-format-converter 刷新模式一致；缓存链路正常。
+Same URL hot path confirmed: HIT, age=65, Worker 276→37ms, still zstd, origin=0. max-age 0→14400 again shows CF Browser Cache TTL rewriting outbound Cache-Control. Matches the image-format-converter refresh pattern; the cache path is healthy.
 
 [actions]
-- （只读对比 miss/HIT）
+- Read-only miss/HIT comparison

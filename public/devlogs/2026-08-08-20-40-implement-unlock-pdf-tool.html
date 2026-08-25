@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Implemented unlock-pdf tool (#60) with known-password-only unlock, 10-locale i18n, and all gates green. | Dev Logs</title>
   <meta name="description" content="Implemented unlock-pdf tool (#60) with known-password-only unlock, 10-locale i18n, and all gates green." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-20-40-implement-unlock-pdf-tool.html" />
   <meta property="og:title" content="Implemented unlock-pdf tool (#60) with known-password-only unlock, 10-locale i18n, and all gates green. | Dev Logs" />
   <meta property="og:description" content="Implemented unlock-pdf tool (#60) with known-password-only unlock, 10-locale i18n, and all gates green." />
@@ -168,28 +168,28 @@ Implement full <code>unlock-pdf</code> in /Users/xuli/vscodeai/onlinefreetools.<
 <p>npm run merge:tools &amp;&amp; npm run coverage:gate -- --slug=unlock-pdf --phase=all &amp;&amp; npm run build:site &amp;&amp; npm run lint:seo &amp;&amp; CROSS_TOOL_UPDATE=1 TOOL_SLUG=unlock-pdf npm run lint:tool-isolation</p>
 <p>No plan/commit. 中文 brief. Chinese comments.</p>
 <p>[try to solve]
-已完成 <strong>unlock-pdf</strong>（清单 #60）全量实现，所有门禁通过。</p>
-<p><strong>产品红线</strong></p>
+Shipped full <strong>unlock-pdf</strong> (inventory #60); all gates passed.</p>
+<p><strong>Product red lines</strong></p>
 <ul>
-<li>仅支持<strong>已知打开密码</strong>去保护；十语 FAQ q1 均明确「非破解 / 非暴力猜密 / 不恢复遗忘密码」。</li>
-<li>错密、空密（文件需要时）、未加密 PDF 均有明确错误提示。</li>
+<li>Only removes protection with a <strong>known open password</strong>; ten-locale FAQ q1 states no cracking / brute force / recovery of forgotten passwords.</li>
+<li>Wrong password, empty password (when required), and already-unencrypted PDFs get clear errors.</li>
 </ul>
-<p><strong>技术</strong></p>
+<p><strong>Tech</strong></p>
 <ul>
-<li>页面 <code>src/pages/unlockPdfPage.ts</code>：CDN <code>pdf-lib-with-encrypt@1.2.1</code>（与 protect-pdf 同源）。</li>
-<li>解锁：<code>PDFDocument.load(bytes, { password, ignoreEncryption: false })</code> → <code>save()</code> 输出 <code>unlocked.pdf</code>。</li>
-<li>进页 <code>loadSample()</code>：生成 password=<code>sample</code> 的单页加密 PDF → 自动填密 → 解锁 → 启用下载。</li>
+<li>Page <code>src/pages/unlockPdfPage.ts</code>: CDN <code>pdf-lib-with-encrypt@1.2.1</code> (same as protect-pdf).</li>
+<li>Unlock: <code>PDFDocument.load(bytes, { password, ignoreEncryption: false })</code> → <code>save()</code> → <code>unlocked.pdf</code>.</li>
+<li>On-enter <code>loadSample()</code>: builds single-page PDF with password=<code>sample</code> → auto-fills password → unlocks → enables download.</li>
 </ul>
-<p><strong>交付物</strong></p>
+<p><strong>Deliverables</strong></p>
 <ul>
-<li><code>src/site/tool-catalog.d/unlock-pdf.json</code>；<code>protect-pdf.json</code> related 改为 <code>unlock-pdf, merge-pdf</code>。</li>
-<li><code>public/icons/tools/unlock-pdf.svg</code>；十语 <code>src/site/i18n/tools/unlock-pdf/*.ts</code>。</li>
-<li><code>work-tasks/unlock-pdf/03-locale-briefs.md</code> 补 1b+2b；inventory #60 标已上线；README 中英条目。</li>
+<li><code>src/site/tool-catalog.d/unlock-pdf.json</code>; <code>protect-pdf.json</code> related set to <code>unlock-pdf, merge-pdf</code>.</li>
+<li><code>public/icons/tools/unlock-pdf.svg</code>; ten-locale <code>src/site/i18n/tools/unlock-pdf/*.ts</code>.</li>
+<li><code>work-tasks/unlock-pdf/03-locale-briefs.md</code> 1b+2b; inventory #60 marked shipped; README EN/ZH entries.</li>
 </ul>
-<p><strong>门禁</strong></p>
+<p><strong>Gates</strong></p>
 <ul>
 <li><code>coverage:gate --phase=all</code> ✓</li>
-<li><code>build:site</code> ✓（sitemap 600 URL）</li>
+<li><code>build:site</code> ✓ (sitemap 600 URLs)</li>
 <li><code>lint:seo</code> ✓</li>
 <li><code>CROSS_TOOL_UPDATE=1 TOOL_SLUG=unlock-pdf lint:tool-isolation</code> ✓</li>
 </ul>

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Turnstile setup blocked: CLOUDFLARE_API_TOKEN missing; asked user for Custom token with Turnstile+Workers scopes. | Dev Logs</title>
   <meta name="description" content="Turnstile setup blocked: CLOUDFLARE_API_TOKEN missing; asked user for Custom token with Turnstile+Workers scopes." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-21-36-turnstile-missing-api-token.html" />
   <meta property="og:title" content="Turnstile setup blocked: CLOUDFLARE_API_TOKEN missing; asked user for Custom token with Turnstile+Workers scopes. | Dev Logs" />
   <meta property="og:description" content="Turnstile setup blocked: CLOUDFLARE_API_TOKEN missing; asked user for Custom token with Turnstile+Workers scopes." />
@@ -151,7 +151,7 @@ Summary: Turnstile setup blocked: CLOUDFLARE_API_TOKEN missing; asked user for C
 <p>[question]
 继续</p>
 <p>[try to solve]
-Wrangler 4.58.0 可用。<code>auth-probe.sh</code> 返回 <code>missing_token</code>（未设置 <code>CLOUDFLARE_API_TOKEN</code>）。需用户在 Cloudflare 创建含 <code>Account.Turnstile:Edit</code> 与 <code>Account.Workers Scripts:Edit</code> 的 Custom token，再通过 export/文件/粘贴之一提供后继续。</p>
+Wrangler 4.58.0 is available. <code>auth-probe.sh</code> returned <code>missing_token</code> (<code>CLOUDFLARE_API_TOKEN</code> unset). User needs a Cloudflare Custom token with <code>Account.Turnstile:Edit</code> and <code>Account.Workers Scripts:Edit</code>, then provide it via export, file, or paste so setup can continue.</p>
 <p>[actions]</p>
 <ul>
 <li><code>npx wrangler --version</code> → 4.58.0</li>

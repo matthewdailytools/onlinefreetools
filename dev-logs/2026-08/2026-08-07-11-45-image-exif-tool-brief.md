@@ -1,20 +1,20 @@
 Date: 2026-08-07 11:45
-Summary: Tool brief for image EXIF viewer/stripper (direction A, category image)
+Summary: Completed the tool brief for an image EXIF viewer/stripper (direction A, category image).
 
 [question]
 工具立项：图片 EXIF 读/清
 
 [try to solve]
-已在 `work-tasks/image-exif/` 完成立项（未写页面代码）。
+Briefing is done under `work-tasks/image-exif/` (no page code yet).
 
-**主方向：A**（A.2 · `exifr` 读 + Canvas 清）  
-**slug**：`image-exif` → `/tools/image-exif`  
-**catalog 分类（实现时）**：`image`  
-**同页**查看 + 清除；不拆 viewer/remover 近义 URL  
-**`02`**：`ready`（IG：字段/隐私对照、清除=重编码边界、复读验证、本地隐私、十语）  
-**`03`**：`briefs-ready`
+**Primary direction: A** (A.2 · `exifr` read + Canvas strip)  
+**slug**: `image-exif` → `/tools/image-exif`  
+**catalog category (on implement)**: `image`  
+Same page for view + strip; do not split viewer/remover near-duplicate URLs  
+**`02`**: `ready` (IG: field/privacy table, strip = re-encode boundary, re-read verify, local privacy, ten locales)  
+**`03`**: `briefs-ready`
 
-实现时说「按 brief 实现」即可。
+Say “implement per brief” when ready to build.
 
 [actions]
 - Created work-tasks/image-exif/00-request.md

@@ -5,7 +5,7 @@ Summary: User wants anti-abuse verification on domain lookup; proposed Cloudflar
 想加上防滥用验证
 
 [try to solve]
-将用 Cloudflare Turnstile 做端到端防滥用：检查鉴权、扫代码、创建 widget、部署 siteverify Worker、接到域名查询表单、校验。待用户确认后继续。
+Proposed end-to-end Cloudflare Turnstile for anti-abuse: check auth, scan code, create widget, deploy siteverify Worker, wire the domain-lookup form, and verify. Waiting for user confirmation before continuing.
 
 [actions]
-- 读 turnstile-spin skill；等待用户确认 Proceed
+- Read turnstile-spin skill; waiting for user Proceed

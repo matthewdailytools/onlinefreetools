@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Cleared pending-native-review flags to i18n-done and committed/pushed the stock-tool IG rebuild batch. | Dev Logs</title>
   <meta name="description" content="Cleared pending-native-review flags to i18n-done and committed/pushed the stock-tool IG rebuild batch." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-06-20-10-clear-native-review-i18n-done-commit-push.html" />
   <meta property="og:title" content="Cleared pending-native-review flags to i18n-done and committed/pushed the stock-tool IG rebuild batch. | Dev Logs" />
   <meta property="og:description" content="Cleared pending-native-review flags to i18n-done and committed/pushed the stock-tool IG rebuild batch." />
@@ -151,7 +151,7 @@ Summary: Cleared pending-native-review flags to i18n-done and committed/pushed t
 <p>[question]
 清母语抽查 → 标 i18n-done，提交/推送这批改动</p>
 <p>[try to solve]
-对存量重建的 8 个工具（及 text-diff 残留勾选）在 <code>work-tasks/*/03-locale-briefs.md</code> 中：清 ar/ja/ru「待母语抽查」、勾选轮次 2/3 与禁词表、状态改为 <code>i18n-done</code>；同步 <code>02</code> 中 Locale briefs 状态引用。随后将 IG 重建相关改动一并 commit 并 push 到 origin/main。<code>lint:seo</code> 与 <code>build:site</code> / <code>build:logs</code> 已跑通。</p>
+For the eight rebuilt stock tools (plus leftover text-diff checklist items), in each <code>work-tasks/*/03-locale-briefs.md</code>: cleared ar/ja/ru “pending native review”, checked rounds 2/3 and the banned-word list, and set status to <code>i18n-done</code>. Synced Locale briefs status references in each <code>02</code>. Then committed the IG rebuild changes and pushed to origin/main. <code>lint:seo</code> and <code>build:site</code> / <code>build:logs</code> already passed.</p>
 <p>[actions]</p>
 <ul>
 <li>Updated work-tasks/*/03-locale-briefs.md and 02 status refs to i18n-done</li>

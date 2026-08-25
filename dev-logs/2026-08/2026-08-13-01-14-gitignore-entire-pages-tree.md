@@ -1,12 +1,12 @@
 Date: 2026-08-13 01:14
-Summary: Gitignore entire public/_pages/; untrack 270 HTML from index.
+Summary: Gitignore entire public/_pages/; untrack ~270 HTML files from the index.
 
 [question]
 把整个 public/_pages/ 都 gitignore
 
 [try to solve]
-`.gitignore` 改为 `public/_pages/`；`git rm -r --cached` 移除已跟踪的约 270 个非工具 HTML（本地文件保留）。已同步 ops/worker-r2-ops、ops/README、cloudflare-workflow、design.md。发版仍靠 build:site + upload:r2；需再 commit/push 后 GitHub 才会去掉这些文件。
+`.gitignore` now uses `public/_pages/`; `git rm -r --cached` removed the previously tracked ~270 non-tool HTML files (local files kept). Synced notes in ops/worker-r2-ops, ops/README, cloudflare-workflow, and design.md. Releases still rely on `build:site` + `upload:r2`; GitHub drops those files only after another commit/push.
 
 [actions]
 - Updated `.gitignore`; `git rm --cached public/_pages`
-- Updated ops/docs/rules mentioning _pages tracking
+- Updated ops/docs/rules mentioning `_pages` tracking

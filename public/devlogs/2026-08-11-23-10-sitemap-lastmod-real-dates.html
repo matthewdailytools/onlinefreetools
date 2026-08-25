@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Sitemap lastmod now tracks real content changes via source hashes; unchanged URLs keep prior dates. | Dev Logs</title>
   <meta name="description" content="Sitemap lastmod now tracks real content changes via source hashes; unchanged URLs keep prior dates." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-11-23-10-sitemap-lastmod-real-dates.html" />
   <meta property="og:title" content="Sitemap lastmod now tracks real content changes via source hashes; unchanged URLs keep prior dates. | Dev Logs" />
   <meta property="og:description" content="Sitemap lastmod now tracks real content changes via source hashes; unchanged URLs keep prior dates." />
@@ -151,15 +151,15 @@ Summary: Sitemap lastmod now tracks real content changes via source hashes; unch
 <p>[question]
 sitemap的生成中日期字段，需要根据实际的来，如果没有更新，就按照之前的日期；有更新或者新建按新日期来。</p>
 <p>[try to solve]
-已为全站 sitemap 写入真实 <code>&lt;lastmod&gt;</code>，并按源文件内容决定是否刷新日期。</p>
-<p>规则：</p>
+Sitewide sitemap now writes real <code>&lt;lastmod&gt;</code> values and refreshes them only when source content changes.</p>
+<p>Rules:</p>
 <ul>
-<li>每个 <code>&lt;url&gt;</code> 带 <code>&lt;lastmod&gt;yyyy-MM-dd&lt;/lastmod&gt;</code>。</li>
-<li>对应源文件哈希未变 → 沿用状态/旧 sitemap 中的日期。</li>
-<li>新建或源文件有更新 → 使用当前 git HEAD 提交日（无 git 时用当天 UTC）。</li>
-<li>状态写入 <code>scripts/site/sitemap-lastmod-state.json</code>（入库）；仅全量写 <code>public/sitemap.xml</code> 时更新，筛选构建默认不改状态。</li>
+<li>Every <code>&lt;url&gt;</code> includes <code>&lt;lastmod&gt;yyyy-MM-dd&lt;/lastmod&gt;</code>.</li>
+<li>Unchanged source-file hash → reuse the date from state / prior sitemap.</li>
+<li>New URL or updated source → use current git HEAD commit date (or UTC today without git).</li>
+<li>State lives in <code>scripts/site/sitemap-lastmod-state.json</code> (committed); updated only on full writes of <code>public/sitemap.xml</code>; filtered builds leave state alone by default.</li>
 </ul>
-<p>验证：首次生成 1470 条均为 new；立即再跑 1470 条全部 reused；单改某语 i18n 仅该 URL changed。</p>
+<p>Verification: first run marked 1470 URLs new; immediate re-run reused all 1470; changing one locale i18n file marked only that URL changed.</p>
 <p>[actions]</p>
 <ul>
 <li>Added <code>scripts/site/sitemap-lastmod.mjs</code> + <code>scripts/site/sitemap-lastmod-state.json</code></li>

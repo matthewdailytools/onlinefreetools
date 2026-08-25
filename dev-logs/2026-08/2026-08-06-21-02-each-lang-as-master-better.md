@@ -5,30 +5,30 @@ Summary: Treat each language at master-level for expression/search, but keep one
 是否每个语言都作为母版来写会更好
 
 [try to solve]
-**表达与检索上：每语都应按「母版质量」来写。事实与 IG 上：仍应只有一份母版真相，十语各自另起炉灶通常更差。**
+**For expression and search: write every locale at master quality. For facts and IG: keep one factual master — ten separate factual masters are usually worse.**
 
-### 分清两种「母版」
+### Two meanings of “master”
 
-| 含义 | 是否更好 |
+| Meaning | Better? |
 |---|---|
-| **质量母版**：每语像当地独立站点那样写 title/FAQ/场景（检索向、反同构） | **是** — 这正是现行「重写非翻译」 |
-| **事实母版**：十语各自定公式、边界、免责、隐私承诺，互不参照 | **否** — 易漂移、难维护、YMYL 风险 |
+| **Quality master**: each locale writes title/FAQ/scenarios like a local independent site (search-oriented, anti-isomorphism) | **Yes** — this is the current “rewrite, don’t translate” model |
+| **Factual master**: each locale invents its own formulas, boundaries, disclaimers, privacy promises with no shared reference | **No** — drifts, hard to maintain, YMYL risk |
 
-现行规则已是：一语写齐 How/Rules/Example/FAQ（事实母版）→ 每语按 brief **独立重写表达**（质量母版），不是 Translate。
+Current rules already: write full How/Rules/Example/FAQ in one master language (factual master) → independently rewrite expression per locale from its brief (quality master), not Translate.
 
-### 为何不要「十个事实母版」
-1. **事实不一致**：同一 ROI/BMI/换算因子说法分叉，伤害信任与 E-E-A-T。
-2. **维护成本 ×10**：改一条边界要改十套逻辑叙述。
-3. **产能假象**：十次从零立项，多数变成重复劳动或隐性互译。
-4. **hreflang 预期**：各语是同一工具的语言变体，核心能力应一致，差异在用语与场景切入。
+### Why not “ten factual masters”
+1. **Fact inconsistency**: ROI/BMI/conversion-factor wording forks and hurts trust / E-E-A-T.
+2. **Maintenance ×10**: changing one boundary means ten narrative logic updates.
+3. **Capacity illusion**: ten from-scratch briefs become duplicate work or hidden mutual translation.
+4. **hreflang expectation**: locales are language variants of the same tool; core capability stays aligned; differences belong in wording and scenario entry points.
 
-### 推荐模型（比「每语都当事实母版」更好）
-1. **IG 事实卡（一份）**：公式、默认行为、边界、隐私、YMYL 免责、固定 Example 数字 — 各语不得改事实。  
-2. **每语 brief + 母版级重写**：检索词、title、FAQ 题序、本地场景、本地示例用词可变。  
-3. **可选双母版**：en 与 zh 都写到母版深度（市场大），其余仍挂同一事实卡重写。  
-4. ar/ja/ru：表达上当母版写，事实上仍对齐事实卡；需要时再母语终审。
+### Preferred model (better than “every locale is a factual master”)
+1. **One IG fact card**: formulas, defaults, boundaries, privacy, YMYL disclaimers, fixed Example numbers — other locales must not change facts.
+2. **Per-locale brief + master-quality rewrite**: queries, title, FAQ order, local scenarios, local sample wording may vary.
+3. **Optional dual masters**: en and zh both written to master depth (large markets); others still rewrite from the same fact card.
+4. ar/ja/ru: write expression as masters; keep facts aligned to the fact card; live native final review when needed.
 
-**一句话**：每语都值得「当母版那样写」（表达）；不值得「每语另起一套事实母版」。更好的是 **一份 IG 事实母版 + 十语母版级检索向重写**。
+**Bottom line**: Every locale deserves to be **written like a master** (expression); none deserve a **separate factual master**. Better: **one IG factual master + ten master-quality search-oriented rewrites**.
 
 [actions]
-- 对照 `tool-i18n-localization.mdc` 稳妥常态；未改代码
+- Compared against `tool-i18n-localization.mdc` steady path; no code changes

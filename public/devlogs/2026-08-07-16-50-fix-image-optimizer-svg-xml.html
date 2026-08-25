@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Fix image-optimizer.svg illegal XML comment chars; add icon lint | Dev Logs</title>
-  <meta name="description" content="Fix image-optimizer.svg illegal XML comment chars; add icon lint" />
-  <meta name="robots" content="noindex" />
+  <title>Fixed illegal XML comment chars in image-optimizer.svg and added an icon lint. | Dev Logs</title>
+  <meta name="description" content="Fixed illegal XML comment chars in image-optimizer.svg and added an icon lint." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-07-16-50-fix-image-optimizer-svg-xml.html" />
-  <meta property="og:title" content="Fix image-optimizer.svg illegal XML comment chars; add icon lint | Dev Logs" />
-  <meta property="og:description" content="Fix image-optimizer.svg illegal XML comment chars; add icon lint" />
+  <meta property="og:title" content="Fixed illegal XML comment chars in image-optimizer.svg and added an icon lint. | Dev Logs" />
+  <meta property="og:description" content="Fixed illegal XML comment chars in image-optimizer.svg and added an icon lint." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-07-16-50-fix-image-optimizer-svg-xml.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,20 +143,20 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Fix image-optimizer.svg illegal XML comment chars; add icon lint | Dev Logs</h1>
+          <h1 class="h4 mb-0">Fixed illegal XML comment chars in image-optimizer.svg and added an icon lint. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-07 16:50
-Summary: Fix image-optimizer.svg illegal XML comment chars; add icon lint</p>
+Summary: Fixed illegal XML comment chars in image-optimizer.svg and added an icon lint.</p>
 <p>[question]
 <a href="http://localhost:8787/icons/tools/image-optimizer.svg">http://localhost:8787/icons/tools/image-optimizer.svg</a> 有错，分析原因，避免后续相同错误</p>
 <p>[try to solve]
-根因与此前 image-exif/image-compress 相同：SVG 注释里混入 XML 非法 C0 控制符（本文件为 0x18/0x16/0x1f），浏览器报 xmlParseComment: invalid xmlChar。常见诱因是中文注释经写入管道损坏。</p>
-<p>已用 ASCII 注释重写 <code>image-optimizer.svg</code>；新增 <code>scripts/validate-tool-icons.mjs</code> 并并入 <code>lint:seo</code>；在 <code>tool-creation.mdc</code> 约定图标注释优先 ASCII。</p>
+Same root cause as earlier image-exif / image-compress icons: SVG comments contained illegal XML C0 controls (here 0x18 / 0x16 / 0x1f); the browser reported <code>xmlParseComment: invalid xmlChar</code>. Often caused by Chinese comments corrupted through a write pipeline.</p>
+<p>Rewrote <code>image-optimizer.svg</code> with ASCII comments; added <code>scripts/validate-tool-icons.mjs</code> into <code>lint:seo</code>; documented in <code>tool-creation.mdc</code> that icon comments should prefer ASCII.</p>
 <p>[actions]</p>
 <ul>
-<li>修复 <code>public/icons/tools/image-optimizer.svg</code></li>
-<li>新增 <code>scripts/validate-tool-icons.mjs</code>；更新 <code>scripts/validate-tool-seo.mjs</code>、<code>.cursor/rules/tool-creation.mdc</code></li>
+<li>Fixed <code>public/icons/tools/image-optimizer.svg</code></li>
+<li>Added <code>scripts/validate-tool-icons.mjs</code>; updated <code>scripts/validate-tool-seo.mjs</code>, <code>.cursor/rules/tool-creation.mdc</code></li>
 </ul>
 </article>
       </section>

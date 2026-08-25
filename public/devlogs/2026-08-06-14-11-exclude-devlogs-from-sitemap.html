@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Removed devlogs URLs from sitemap generation; sitemap now has 110 tool/site URLs only. | Dev Logs</title>
-  <meta name="description" content="Removed devlogs URLs from sitemap generation; sitemap now has 110 tool/site URLs only." />
-  <meta name="robots" content="noindex" />
+  <title>Removed `/devlogs/` URLs from sitemap generation; sitemap retained 110 tool and site URLs only. | Dev Logs</title>
+  <meta name="description" content="Removed `/devlogs/` URLs from sitemap generation; sitemap retained 110 tool and site URLs only." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-06-14-11-exclude-devlogs-from-sitemap.html" />
-  <meta property="og:title" content="Removed devlogs URLs from sitemap generation; sitemap now has 110 tool/site URLs only. | Dev Logs" />
-  <meta property="og:description" content="Removed devlogs URLs from sitemap generation; sitemap now has 110 tool/site URLs only." />
+  <meta property="og:title" content="Removed `/devlogs/` URLs from sitemap generation; sitemap retained 110 tool and site URLs only. | Dev Logs" />
+  <meta property="og:description" content="Removed `/devlogs/` URLs from sitemap generation; sitemap retained 110 tool and site URLs only." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-06-14-11-exclude-devlogs-from-sitemap.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,20 +143,20 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Removed devlogs URLs from sitemap generation; sitemap now has 110 tool/site URLs only. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Removed `/devlogs/` URLs from sitemap generation; sitemap retained 110 tool and site URLs only. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-06 14:11
-Summary: Removed devlogs URLs from sitemap generation; sitemap now has 110 tool/site URLs only.</p>
+Summary: Removed <code>/devlogs/</code> URLs from sitemap generation; sitemap retained 110 tool and site URLs only.</p>
 <p>[question]
 sitemap不要放开发日志链接</p>
 <p>[try to solve]
-已从 <code>scripts/build-site.mjs</code> 的 <code>buildSitemap()</code> 中移除 <code>/devlogs/</code> 索引及全部单篇 devlog URL。开发日志页面仍可通过站内导航访问，但不提交给搜索引擎 sitemap。</p>
-<p>已运行 <code>npm run build:site</code>，<code>public/sitemap.xml</code> 现为 110 条 URL（无 devlogs）。</p>
+Removed the <code>/devlogs/</code> index and all individual devlog URLs from <code>buildSitemap()</code> in <code>scripts/build-site.mjs</code>. Dev-log pages remain reachable via in-site navigation but are not submitted in the search-engine sitemap.</p>
+<p>Ran <code>npm run build:site</code>; <code>public/sitemap.xml</code> then had 110 URLs (no devlogs).</p>
 <p>[actions]</p>
 <ul>
-<li>scripts/build-site.mjs</li>
-<li>public/sitemap.xml</li>
+<li><code>scripts/build-site.mjs</code></li>
+<li><code>public/sitemap.xml</code></li>
 </ul>
 </article>
       </section>

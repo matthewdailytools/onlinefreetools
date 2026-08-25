@@ -5,7 +5,7 @@ Summary: Background Turnstile probe shell was aborted after useful API results; 
 Briefly inform the user about the task result and perform any follow-up actions (if needed). If there's no follow-ups needed, don't explicitly say that.
 
 [try to solve]
-后台探测任务在 `wrangler whoami` 处中止，但此前已确认 Turnstile/Workers API 200、账号可用。Turnstile 接入仍停在等待用户确认域名与接入点（上一轮已提问）。
+Background probe aborted at `wrangler whoami`, but earlier checks already confirmed Turnstile/Workers API 200 and a usable account. Turnstile integration still waits on user confirmation of domains and insertion point (asked in the previous turn).
 
 [actions]
-- 无新代码改动
+- No new code changes

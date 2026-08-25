@@ -5,17 +5,17 @@ Summary: Committed CTR meta, deployed R2, pushed main, IndexNow 40 URLs OK; live
 需要
 
 [try to solve]
-已完成 commit + 部署 + IndexNow：
+Finished commit + deploy + IndexNow:
 
-- Commit `325abf29`：seo front-load CTR meta（四工具 + 生成物 + 首页/sitemap + 开发日志）
-- `npm run deploy`：R2 增量上传 490 对象，verify:r2 OK（PAGES_CACHE_VERSION=4.1）
+- Commit `325abf29`: seo front-load CTR meta (four tools + generated artifacts + home/sitemap + dev logs)
+- `npm run deploy`: R2 incremental upload of 490 objects; verify:r2 OK (`PAGES_CACHE_VERSION=4.1`)
 - `git push` main → origin
-- IndexNow：`--tool image-merge,schema-jsonld-generator,how-to-calculate-volume,how-to-calculate-npv --require-live-key` → 40 URL，HTTP 200
-- 线上抽查：`/ru/tools/image-merge` title 已是「Склеить фото онлайн — …」
-- 跟进 commit `9f2fbd3b`：03-todo 勾选部署/IndexNow
+- IndexNow: `--tool image-merge,schema-jsonld-generator,how-to-calculate-volume,how-to-calculate-npv --require-live-key` → 40 URLs, HTTP 200
+- Live spot-check: `/ru/tools/image-merge` title is “Склеить фото онлайн — …”
+- Follow-up commit `9f2fbd3b`: checked deploy/IndexNow on 03-todo
 
 [actions]
-- git commit 325abf29 / 9f2fbd3b；git push origin main
-- npm run deploy（R2 upload 490）
-- npm run indexnow -- --tool … --require-live-key（40 URLs HTTP 200）
+- git commit 325abf29 / 9f2fbd3b; git push origin main
+- npm run deploy (R2 upload 490)
+- npm run indexnow -- --tool … --require-live-key (40 URLs HTTP 200)
 - docs/seo/reviews/2026-08-12/03-todo.md

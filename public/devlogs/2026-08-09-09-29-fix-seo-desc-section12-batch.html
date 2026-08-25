@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Fixed 126 SEO description length/keyword warnings for §12 remaining-batch tools across i18n shards. | Dev Logs</title>
   <meta name="description" content="Fixed 126 SEO description length/keyword warnings for §12 remaining-batch tools across i18n shards." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-09-09-29-fix-seo-desc-section12-batch.html" />
   <meta property="og:title" content="Fixed 126 SEO description length/keyword warnings for §12 remaining-batch tools across i18n shards. | Dev Logs" />
   <meta property="og:description" content="Fixed 126 SEO description length/keyword warnings for §12 remaining-batch tools across i18n shards." />
@@ -163,11 +163,11 @@ In /Users/xuli/vscodeai/onlinefreetools, fix ALL SEO description length/keyword 
 Must end with: SEO validator: OK (no WARNINGS detected for descriptions). COVER-WARN legacy titles on old tools are OK to leave.</p>
 <p>Return count of description keys fixed and final lint:seo summary line.</p>
 <p>[try to solve]
-扩写了 <strong>126</strong> 个失败的 <code>tool_*_description</code>（shards，非仅合并文件），覆盖 acceleration、age(ar)、circle、date-difference、density、heart-rate、macros、mean、median、ohms-law、one-rep-max、pace、permutation-combination、quadratic-equation、triangle-area、velocity、volume 等语种；英文补上 calculate/example/process/formula，他语独立本地化并保留 YMYL 免责。随后 <code>merge:tools</code> + <code>build:site</code> + <code>lint:seo</code>。</p>
-<p>最终：<code>SEO validator: OK — descriptions, FAQ pairs, and YMYL disclaimers look good</code>（描述过短/缺关键词 WARN 为 0；遗留 COVER-WARN title 未动）。</p>
+Expanded <strong>126</strong> failing <code>tool_*_description</code> keys in shards (not only merged files), covering acceleration, age (ar), circle, date-difference, density, heart-rate, macros, mean, median, ohms-law, one-rep-max, pace, permutation-combination, quadratic-equation, triangle-area, velocity, volume, and related locales. English gained calculate/example/process/formula cues; other locales kept independent copy and YMYL disclaimers. Then <code>merge:tools</code> + <code>build:site</code> + <code>lint:seo</code>.</p>
+<p>Final: <code>SEO validator: OK — descriptions, FAQ pairs, and YMYL disclaimers look good</code> (zero short/missing-keyword description WARNs; legacy COVER-WARN titles left unchanged).</p>
 <p>[actions]</p>
 <ul>
-<li>更新 <code>src/site/i18n/tools/how-to-calculate-*/{en,es,fr,de,ru,pt,id,ar}.ts</code> 中相关 description</li>
+<li>Updated related descriptions in <code>src/site/i18n/tools/how-to-calculate-*/{en,es,fr,de,ru,pt,id,ar}.ts</code></li>
 <li><code>npm run merge:tools &amp;&amp; npm run build:site &amp;&amp; npm run lint:seo</code></li>
 </ul>
 </article>

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Executed P0 CTR meta absorb on four high-impression zero-click tools; lint:seo and build:site passed. | Dev Logs</title>
   <meta name="description" content="Executed P0 CTR meta absorb on four high-impression zero-click tools; lint:seo and build:site passed." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-20-20-50-execute-p0-ctr-meta.html" />
   <meta property="og:title" content="Executed P0 CTR meta absorb on four high-impression zero-click tools; lint:seo and build:site passed. | Dev Logs" />
   <meta property="og:description" content="Executed P0 CTR meta absorb on four high-impression zero-click tools; lint:seo and build:site passed." />
@@ -151,23 +151,23 @@ Summary: Executed P0 CTR meta absorb on four high-impression zero-click tools; l
 <p>[question]
 立刻执行优化</p>
 <p>[try to solve]
-已按 2026-08-12 P0 完成四页 title/description absorb（不拆 URL）：</p>
+Completed title/description absorb for the four 2026-08-12 P0 pages (no URL splits):</p>
 <ol>
-<li>ru image-merge →「Склеить фото онлайн — …」；desc 前置 склеить/объединить + 不上服务器</li>
-<li>en schema-jsonld-generator →「JSON-LD Schema Generator — Schema.org Markup Online」；home_title/desc 同步；去掉 richer-results 过时承诺</li>
-<li>es how-to-calculate-volume →「Calcular el volumen — Calculadora de caja y esfera」</li>
-<li>en how-to-calculate-npv →「How to Calculate NPV — Net Present Value Calculator」；desc 首句对齐查询词并写入公式</li>
+<li>ru image-merge → “Склеить фото онлайн — …”; desc front-loads склеить/объединить + no-server</li>
+<li>en schema-jsonld-generator → “JSON-LD Schema Generator — Schema.org Markup Online”; home_title/desc synced; removed outdated richer-results promise</li>
+<li>es how-to-calculate-volume → “Calcular el volumen — Calculadora de caja y esfera”</li>
+<li>en how-to-calculate-npv → “How to Calculate NPV — Net Present Value Calculator”; desc lead aligns to the query and includes the formula</li>
 </ol>
-<p>同步：tool:touch 四 slug；ru 首页 legacy 短 title；merge:tools + build:site；lint:seo OK。
-文档：03-todo CTR 项勾完并加部署待办；keyword-to-tool-tracker 决策日志追加 2026-08-20。</p>
-<p>下一步：部署 + IndexNow incremental；≥28 天 GSC 验 CTR。</p>
+<p>Also: tool:touch on four slugs; ru home legacy short title; merge:tools + build:site; lint:seo OK.
+Docs: 03-todo CTR items checked with a deploy follow-up; keyword-to-tool-tracker decision log appended 2026-08-20.</p>
+<p>Next: deploy + IndexNow incremental; verify CTR in GSC after ≥28 days.</p>
 <p>[actions]</p>
 <ul>
 <li>src/site/i18n/tools/image-merge/ru.ts</li>
 <li>src/site/i18n/tools/schema-jsonld-generator/en.ts</li>
 <li>src/site/i18n/tools/how-to-calculate-volume/es.ts</li>
 <li>src/site/i18n/tools/how-to-calculate-npv/en.ts</li>
-<li>scripts/site/i18n.mjs（ru home legacy）</li>
+<li>scripts/site/i18n.mjs (ru home legacy)</li>
 <li>catalog updatedAt via tool:touch ×4</li>
 <li>docs/seo/reviews/2026-08-12/03-todo.md</li>
 <li>docs/seo/keyword-to-tool-tracker.md</li>

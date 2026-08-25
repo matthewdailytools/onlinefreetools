@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Removed Dev Logs link from site footer. | Dev Logs</title>
-  <meta name="description" content="Removed Dev Logs link from site footer." />
-  <meta name="robots" content="noindex" />
+  <title>Removed the Dev Logs link from the site footer. | Dev Logs</title>
+  <meta name="description" content="Removed the Dev Logs link from the site footer." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-23-41-remove-footer-devlog-link.html" />
-  <meta property="og:title" content="Removed Dev Logs link from site footer. | Dev Logs" />
-  <meta property="og:description" content="Removed Dev Logs link from site footer." />
+  <meta property="og:title" content="Removed the Dev Logs link from the site footer. | Dev Logs" />
+  <meta property="og:description" content="Removed the Dev Logs link from the site footer." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-08-23-41-remove-footer-devlog-link.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,15 +143,15 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Removed Dev Logs link from site footer. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Removed the Dev Logs link from the site footer. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-08 23:41
-Summary: Removed Dev Logs link from site footer.</p>
+Summary: Removed the Dev Logs link from the site footer.</p>
 <p>[question]
 底部删除devlog入口</p>
 <p>[try to solve]
-已从页脚移除 Dev Logs / 开发日志入口。改动了 <code>src/pages/site/footer.ts</code> 与 <code>scripts/site/components/footer.mjs</code> 的 <code>FOOTER_LINKS</code>，并执行 <code>npm run build:site</code> 刷新静态页。页脚现仅保留 About / Privacy / Terms / Contact；<code>/devlogs/</code> 路由与页面本身未删除。</p>
+Removed the Dev Logs footer entry (zh label was 开发日志). Updated <code>FOOTER_LINKS</code> in <code>src/pages/site/footer.ts</code> and <code>scripts/site/components/footer.mjs</code>, then ran <code>npm run build:site</code> to refresh static pages. Footer now keeps only About / Privacy / Terms / Contact; the <code>/devlogs/</code> route and pages themselves were not deleted.</p>
 <p>[actions]</p>
 <ul>
 <li>Updated <code>src/pages/site/footer.ts</code></li>

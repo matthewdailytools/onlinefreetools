@@ -5,6 +5,6 @@ Summary: Clarified Git-connected Cloudflare deploy: only tracked or build-genera
 目前的部署是云flare自动拉github代码
 
 [try to solve]
-Cloudflare 拉 GitHub 时：仓库里有的才会默认上线；gitignore 的 vendor 只有 CF 构建命令跑 `npm run build:site`（内含 copy-site-chrome + copy-image-optimizer）才会生成。本地 `predeploy` 不会在 Git 自动部署里跑。bootstrap/fonts 已入库 → push 后全站 chrome 应修复。jsquash/gifenc/wasm 仍 ignore → 若 CF Build command 未跑 build:site，图片工具会缺 vendor。建议 CF 构建设为 `npm ci && npm run build:site`（或等价），或把那三项也入库。
+When Cloudflare pulls from GitHub, only files present in the repo ship by default. Gitignored vendor appears only if the CF build command runs `npm run build:site` (which includes copy-site-chrome + copy-image-optimizer). Local `predeploy` does not run on Git-connected auto-deploy. Bootstrap/fonts are already tracked, so a push should fix site chrome. jsquash/gifenc/wasm remain ignored — if the CF Build command does not run `build:site`, image tools will miss vendor. Recommendation: set CF build to `npm ci && npm run build:site` (or equivalent), or track those three vendor trees as well.
 
 [actions]

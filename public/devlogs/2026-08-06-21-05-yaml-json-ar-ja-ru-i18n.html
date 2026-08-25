@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Added native-style tool_yaml_json_* i18n for ar, ja, and ru. | Dev Logs</title>
   <meta name="description" content="Added native-style tool_yaml_json_* i18n for ar, ja, and ru." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-06-21-05-yaml-json-ar-ja-ru-i18n.html" />
   <meta property="og:title" content="Added native-style tool_yaml_json_* i18n for ar, ja, and ru. | Dev Logs" />
   <meta property="og:description" content="Added native-style tool_yaml_json_* i18n for ar, ja, and ru." />
@@ -178,16 +178,16 @@ You are localizing the new yaml-json tool for the onlinefreetools repo at /Users
 <p>FACTS: bidirectional one page; js-yaml; paste not uploaded; CDN = library only; DEFAULT bare yes/no may be boolean; JSON-safe keeps strings; multi-doc --- loadAll → array if ≥2; comments lost; anchors expand; ~200k warn; use cases K8s multi-resource, API JSON→YAML, data/AI pipeline; example + yes boundary.</p>
 <p>Return confirmation + note that copy is native-style rewrite (for clearing 待母语抽查 later).</p>
 <p>[try to solve]
-已为 ar / ja / ru 写入全部 <code>tool_yaml_json_*</code> 键（UI+IG+FAQ），插在 markdown FAQ 与 BMI 之间，与这三语现有结构一致。</p>
-<p>确认要点：</p>
+Wrote all <code>tool_yaml_json_*</code> keys (UI + IG + FAQ) for ar / ja / ru, inserted between markdown FAQ and BMI to match those locales’ existing layout.</p>
+<p>Confirmation:</p>
 <ul>
-<li>按 brief 独立重写（非英模直译）；FAQ 题序与 How/Rules 开篇相对英文有变化。</li>
-<li>description ≥120 且含各语关键词（ar: مثال/خطوات；ja: 手順/例；ru: пример/шаг）。</li>
-<li>ja <code>usecases_title</code> =「こんなときに」，无「ユースケース」。</li>
-<li>保留 YAML、JSON、js-yaml、Kubernetes、CDN、---；本地示例用词（ar الاسم/مفعّل/عناصر；ja 名前/有効/項目；ru имя/включено/элементы）。</li>
-<li><code>npm run lint:seo</code> 通过。</li>
+<li>Independent rewrites from briefs (not English-template literal translation); FAQ order and How/Rules openings differ from English.</li>
+<li>description ≥120 with locale keywords (ar: example/steps; ja: procedure/example; ru: example/step).</li>
+<li>ja <code>usecases_title</code> uses the natural “when to use this” heading; no katakana calque of “use cases”.</li>
+<li>Kept YAML, JSON, js-yaml, Kubernetes, CDN, ---; localized sample words for name/enabled/items in each locale.</li>
+<li><code>npm run lint:seo</code> passed.</li>
 </ul>
-<p>文案为母语风格重写，可供后续清除「待母语抽查」勾选时抽查。</p>
+<p>Copy is native-style rewrite, suitable for later spot-checks when clearing “pending native review”.</p>
 <p>[actions]</p>
 <ul>
 <li>Updated <code>src/site/i18n/ar.ts</code>, <code>src/site/i18n/ja.ts</code>, <code>src/site/i18n/ru.ts</code></li>

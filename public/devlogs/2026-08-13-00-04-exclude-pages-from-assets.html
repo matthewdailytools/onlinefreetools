@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Exclude public/_pages from Cloudflare Assets; HTML only via R2. | Dev Logs</title>
   <meta name="description" content="Exclude public/_pages from Cloudflare Assets; HTML only via R2." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-13-00-04-exclude-pages-from-assets.html" />
   <meta property="og:title" content="Exclude public/_pages from Cloudflare Assets; HTML only via R2. | Dev Logs" />
   <meta property="og:description" content="Exclude public/_pages from Cloudflare Assets; HTML only via R2." />
@@ -151,7 +151,7 @@ Summary: Exclude public/_pages from Cloudflare Assets; HTML only via R2.</p>
 <p>[question]
 “ASSETS public/_pages/<em>.html — 本地/未 upload 回退 ” 不应该上传 public/_pages/</em>.html 到云flare</p>
 <p>[try to solve]
-已落实：<code>public/.assetsignore</code> 排除 <code>_pages/</code> 与 <code>*.html.gz</code>，预渲染 HTML 不再上传到 Cloudflare Static Assets。Worker 链路改为 Cache → R2，未命中直接 404（去掉 ASSETS <code>_pages</code> 回退）。本地须 <code>upload:r2:local</code> / <code>start:dev</code> 灌桶；生产须 <code>npm run deploy</code>（含 upload）。文档已同步（design.md、worker-r2-ops.md、ops/README、start-dev 提示）。</p>
+Done: <code>public/.assetsignore</code> excludes <code>_pages/</code> and <code>*.html.gz</code>, so prerendered HTML is no longer uploaded to Cloudflare Static Assets. Worker path is Cache → R2; miss returns 404 (no ASSETS <code>_pages</code> fallback). Locally use <code>upload:r2:local</code> / <code>start:dev</code> to seed the bucket; production must use <code>npm run deploy</code> (includes upload). Docs synced (design.md, worker-r2-ops.md, ops/README, start-dev hints).</p>
 <p>[actions]</p>
 <ul>
 <li>Added <code>public/.assetsignore</code></li>

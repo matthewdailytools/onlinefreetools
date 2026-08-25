@@ -5,7 +5,7 @@ Summary: Clarified that ~/.cf-turnstile-token is optional for day-to-day; .dev.v
 本地的apitoken是否还需要
 
 [try to solve]
-日常跑站 / domain-lookup **不需要** `~/.cf-turnstile-token`（那是 Cloudflare 管理 API：建 widget、部署 siteverify Worker、改 secret）。运行时靠公开 sitekey + Worker/` .dev.vars` 里的 `TURNSTILE_SECRET_KEY`。本地 `wrangler dev` 仍建议保留 `.dev.vars` 中的 secret；生产已用 `wrangler secret put`。若近期不再做仪表盘级操作，可删掉 token 文件；需要时再按 Spin 流程重建。
+Day-to-day site / domain-lookup does **not** need `~/.cf-turnstile-token` (that is the Cloudflare management API for creating widgets, deploying the siteverify Worker, changing secrets). Runtime uses the public sitekey plus `TURNSTILE_SECRET_KEY` in the Worker / `.dev.vars`. Keep the secret in `.dev.vars` for local `wrangler dev`; production already has `wrangler secret put`. If no dashboard-level ops soon, the token file can be deleted and recreated later via the Spin flow.
 
 [actions]
-- 无代码改动
+- No code changes

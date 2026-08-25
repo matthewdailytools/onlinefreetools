@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Added cursor rule for i18n localization and multi-pass SEO review. | Dev Logs</title>
-  <meta name="description" content="Added cursor rule for i18n localization and multi-pass SEO review." />
-  <meta name="robots" content="noindex" />
+  <title>Added a Cursor rule for locale-native i18n and mandatory multi-pass SEO review after generation. | Dev Logs</title>
+  <meta name="description" content="Added a Cursor rule for locale-native i18n and mandatory multi-pass SEO review after generation." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-06-16-35-rule-i18n-localization-multipass.html" />
-  <meta property="og:title" content="Added cursor rule for i18n localization and multi-pass SEO review. | Dev Logs" />
-  <meta property="og:description" content="Added cursor rule for i18n localization and multi-pass SEO review." />
+  <meta property="og:title" content="Added a Cursor rule for locale-native i18n and mandatory multi-pass SEO review after generation. | Dev Logs" />
+  <meta property="og:description" content="Added a Cursor rule for locale-native i18n and mandatory multi-pass SEO review after generation." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-06-16-35-rule-i18n-localization-multipass.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,15 +143,16 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Added cursor rule for i18n localization and multi-pass SEO review. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Added a Cursor rule for locale-native i18n and mandatory multi-pass SEO review after generation. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-06 16:35
-Summary: Added cursor rule for i18n localization and multi-pass SEO review.</p>
+Summary: Added a Cursor rule for locale-native i18n and mandatory multi-pass SEO review after generation.</p>
 <p>[question]
 将语言翻译本地化，以及生成后多次核查和修改放入规则文档</p>
 <p>[try to solve]
-新增 <code>.cursor/rules/tool-i18n-localization.mdc</code>：要求按当地检索习惯写文案、禁止英模机翻；新工具/大改 i18n 须 ≥3 轮核查（母版+lint → 检索向重写 → 抽查再 lint）。并挂到 <code>tool-i18n-seo.mdc</code>、<code>tool-creation.mdc</code> checklist、<code>project-core.mdc</code> 优先级、<code>docs/SEO_TOOL_RULES.md</code>、<code>work-tasks/_template/02-tool-info.md</code>。</p>
+Added <code>.cursor/rules/tool-i18n-localization.mdc</code>: write copy for local search habits; ban English-template machine translation; for new tools or major i18n changes require ≥3 review rounds (master + lint → search-intent rewrite → spot-check and lint again).</p>
+<p>Cross-linked from <code>tool-i18n-seo.mdc</code>, the <code>tool-creation.mdc</code> checklist, <code>project-core.mdc</code> priority notes, <code>docs/SEO_TOOL_RULES.md</code>, and <code>work-tasks/_template/02-tool-info.md</code>.</p>
 <p>[actions]</p>
 <ul>
 <li>.cursor/rules/tool-i18n-localization.mdc</li>

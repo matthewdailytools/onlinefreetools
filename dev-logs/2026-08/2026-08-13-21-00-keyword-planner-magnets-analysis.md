@@ -1,30 +1,30 @@
 Date: 2026-08-13 21:00
-Summary: 分析 Google Keyword Planner 磁铁批（~700 词）进意图池；主 build 候选 magnet-pull-force-calculator；未建 work-tasks
+Summary: Analyzed Google Keyword Planner magnets batch (~700 keywords) into the intent pool; primary build candidate magnet-pull-force-calculator; no work-tasks created.
 
 [question]
 按 keyword-to-tool-funnel 分析“Keyword Planner 08-13-2026 at 12-51-05.csv”这批词，写入 serp-batches + keyword-daily-pool，更新 tracker；先 absorb 优先。不要自动建 work-tasks。
 
 [try to solve]
-按 Skill keyword-to-tool-funnel 完成整批分析并入库（只建池、不建页、不建 work-tasks）：
+Completed the full batch via the keyword-to-tool-funnel skill (pool only — no pages, no work-tasks):
 
-1. 批次摘要：docs/seo/serp-batches/2026-08-13-keyword-planner-magnets.md
-   - 来源 Google Keyword Planner 批量导出（~700 词，en/us）；含搜索量区间/竞争/建议出价
-   - 意图聚类：磁铁强度/吸力、磁铁等级、材料对比、尺寸规格、磁铁类型知识、原理科普、用途列表、购买渠道、定制/冰箱磁铁、品牌厂家、产品规格
+1. Batch summary: `docs/seo/serp-batches/2026-08-13-keyword-planner-magnets.md`
+   - Source: Google Keyword Planner bulk export (~700 keywords, en/us); includes volume ranges / competition / suggested bids
+   - Intent clusters: magnet strength/pull, grades, material comparison, sizes/specs, magnet-type knowledge, how-it-works education, use lists, buy channels, custom/fridge magnets, brands/makers, product specs
 
-2. 词池追加 10 行（keyword-daily-pool.tsv，source_batch=2026-08-13-keyword-planner-magnets）：
-   - build ×4：magnet strength calculator（主工具候选，建议 slug magnet-pull-force-calculator）、magnet grades、neodymium vs regular、magnet sizes——后三条并入主工具（等级/材料/尺寸），禁止拆近义 URL
-   - defer ×2：types of magnets、different magnetic materials（知识意图，待主工具上线后吸收为 How/FAQ 素材）
-   - drop ×4：how do magnets work、everyday uses of magnets（纯教育/列表）、buy magnets online（商业购买意图）、custom magnets（定制产品意图）
+2. Appended 10 pool rows (`keyword-daily-pool.tsv`, source_batch=2026-08-13-keyword-planner-magnets):
+   - build ×4: magnet strength calculator (primary tool candidate; suggested slug magnet-pull-force-calculator), magnet grades, neodymium vs regular, magnet sizes — fold the last three into the primary tool (grades/materials/sizes); do not split near-duplicate URLs
+   - defer ×2: types of magnets, different magnetic materials (knowledge intent; absorb into How/FAQ after the primary tool ships)
+   - drop ×4: how do magnets work, everyday uses of magnets (pure education/lists), buy magnets online (commercial buy intent), custom magnets (custom product intent)
 
-3. tracker 更新（keyword-to-tool-tracker.md）：快照最近批次/池内 build 候选 += magnet-pull-force-calculator；P0 勾掉本批；决策日志追加 2 行（主候选立项理由 + 一带多场景禁拆页）。
+3. Tracker update (`keyword-to-tool-tracker.md`): snapshot recent batch / in-pool build candidates += magnet-pull-force-calculator; check off this batch’s P0; decision log +2 rows (primary candidate rationale + one-page multi-scenario ban on doorway splits).
 
-结论要点：
-- catalog 无磁铁类既有 slug 可 absorb（magnet-link-decoder 是 BitTorrent 磁力链接，非物理磁铁）
-- 本批约 9 成为商业购买/产品规格/品牌导航意图 → drop；可交互工具缺口集中在吸力/强度/等级/尺寸
-- 磁铁吸力计算器 SERP 竞品是磁铁商店自带计算器（K&J 等），通用工具站空白；IG 缺口：估算公式+误差边界、N 级对照表、材料对比、inch↔mm 换算、安全提示
-- 未创建任何 work-tasks
+Key points:
+- Catalog has no physics-magnet slug to absorb (`magnet-link-decoder` is BitTorrent magnet URI, not physical magnets)
+- ~90% of the batch is commercial buy / product-spec / brand-nav → drop; interactive gap centers on pull/strength/grade/size
+- SERP competitors for magnet pull calculators are magnet-shop widgets (K&J etc.); generic tool sites are blank; IG gaps: estimate formula + error bounds, N-grade table, material compare, inch↔mm, safety notes
+- No work-tasks created
 
 [actions]
-- docs/seo/serp-batches/2026-08-13-keyword-planner-magnets.md（新建批次摘要）
-- docs/seo/keyword-daily-pool.tsv（追加 10 行候选，含 verdict）
-- docs/seo/keyword-to-tool-tracker.md（快照 + P0 + 决策日志 2 行）
+- docs/seo/serp-batches/2026-08-13-keyword-planner-magnets.md (new batch summary)
+- docs/seo/keyword-daily-pool.tsv (10 candidate rows with verdict)
+- docs/seo/keyword-to-tool-tracker.md (snapshot + P0 + 2 decision-log rows)

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Rules now require a hard pre-checklist pass analyzing slug, title, keywords, and desc for search habit and keyword coverage before any engineering/page/launch checklists. | Dev Logs</title>
   <meta name="description" content="Rules now require a hard pre-checklist pass analyzing slug, title, keywords, and desc for search habit and keyword coverage before any engineering/page/launch checklists." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-15-10-rule-pre-checklist-search-coverage.html" />
   <meta property="og:title" content="Rules now require a hard pre-checklist pass analyzing slug, title, keywords, and desc for search habit and keyword coverage before any engineering/page/launch checklists. | Dev Logs" />
   <meta property="og:description" content="Rules now require a hard pre-checklist pass analyzing slug, title, keywords, and desc for search habit and keyword coverage before any engineering/page/launch checklists." />
@@ -151,11 +151,11 @@ Summary: Rules now require a hard pre-checklist pass analyzing slug, title, keyw
 <p>[question]
 把规则修改为：生成清单前再一次对slug， title，关键词，desc，分析是否符合用户搜索习惯和关键词覆盖进行优化覆盖优化</p>
 <p>[try to solve]
-已把「清单前检索覆盖优化」写成硬门禁（Agent/人工按清单分析回写，非 lint 自动替代）：</p>
+Codified “search-coverage optimization before checklists” as a hard gate (Agent/human analyze and write back per checklist; lint does not replace it):</p>
 <ul>
-<li><strong>步 0b</strong>（<code>tool-i18n-localization.mdc</code>）：在勾选/生成页面模块清单、工程清单、上线前 Checklist、README 工具清单之前，必须分析并优化 <strong>slug / title / 关键词 / desc</strong>，产出覆盖表；未完成不得 <code>02</code>→<code>ready</code>。</li>
-<li>文案生成后的步 2 / 步 4 <strong>仍然保留</strong>（生成后再优化）。</li>
-<li>同步：<code>work-tasks-tool-brief.mdc</code>、<code>tool-creation.mdc</code>、<code>tool-i18n-seo.mdc</code>、<code>project-core.mdc</code>；模板 <code>02</code> 增加覆盖表专节、<code>03</code> 增加勾选与多轮行。</li>
+<li><strong>Step 0b</strong> (<code>tool-i18n-localization.mdc</code>): Before checking/generating page-module, engineering, or pre-launch checklists, or the README tool list, you must analyze and optimize <strong>slug / title / keywords / desc</strong> and produce a coverage table; without that, <code>02</code> must not move to <code>ready</code>.</li>
+<li>Post-copy steps 2 and 4 <strong>remain</strong> (optimize again after generation).</li>
+<li>Synced: <code>work-tasks-tool-brief.mdc</code>, <code>tool-creation.mdc</code>, <code>tool-i18n-seo.mdc</code>, <code>project-core.mdc</code>; template <code>02</code> gained a coverage-table section; <code>03</code> gained checkboxes and multi-round rows.</li>
 </ul>
 <p>[actions]</p>
 <ul>

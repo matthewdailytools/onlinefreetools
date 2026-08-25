@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Restyle the three home why cards with asymmetric shapes, index badges, and theme accents. | Dev Logs</title>
   <meta name="description" content="Restyle the three home why cards with asymmetric shapes, index badges, and theme accents." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-21-25-home-why-cards-shape-polish.html" />
   <meta property="og:title" content="Restyle the three home why cards with asymmetric shapes, index badges, and theme accents. | Dev Logs" />
   <meta property="og:description" content="Restyle the three home why cards with asymmetric shapes, index badges, and theme accents." />
@@ -151,11 +151,11 @@ Summary: Restyle the three home why cards with asymmetric shapes, index badges, 
 <p>[question]
 顶部三个卡片进行美化（可以调整卡片形状）</p>
 <p>[try to solve]
-三张 Why 卡改为 article + 01/02/03 异形序号徽章；三卡使用不同不对称圆角；顶缘品牌细带与角落主题光斑；悬停轻抬升。颜色与阴影均基于 <code>--brand*</code>。已 <code>build:site</code>。</p>
+Three Why cards are now <code>article</code> elements with 01/02/03 asymmetric index badges; each card uses different asymmetric corner radii; brand top edge stripe and corner theme glow; light hover lift. Colors and shadows based on <code>--brand*</code>. Ran <code>build:site</code>.</p>
 <p>[actions]</p>
 <ul>
 <li>scripts/site/components/content-home.mjs</li>
-<li>public/styles/site.css（.home-why-item*）</li>
+<li>public/styles/site.css (.home-why-item*)</li>
 <li>npm run build:site</li>
 </ul>
 </article>

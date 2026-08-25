@@ -1,14 +1,14 @@
 Date: 2026-08-07 16:50
-Summary: Fix image-optimizer.svg illegal XML comment chars; add icon lint
+Summary: Fixed illegal XML comment chars in image-optimizer.svg and added an icon lint.
 
 [question]
 http://localhost:8787/icons/tools/image-optimizer.svg 有错，分析原因，避免后续相同错误
 
 [try to solve]
-根因与此前 image-exif/image-compress 相同：SVG 注释里混入 XML 非法 C0 控制符（本文件为 0x18/0x16/0x1f），浏览器报 xmlParseComment: invalid xmlChar。常见诱因是中文注释经写入管道损坏。
+Same root cause as earlier image-exif / image-compress icons: SVG comments contained illegal XML C0 controls (here 0x18 / 0x16 / 0x1f); the browser reported `xmlParseComment: invalid xmlChar`. Often caused by Chinese comments corrupted through a write pipeline.
 
-已用 ASCII 注释重写 `image-optimizer.svg`；新增 `scripts/validate-tool-icons.mjs` 并并入 `lint:seo`；在 `tool-creation.mdc` 约定图标注释优先 ASCII。
+Rewrote `image-optimizer.svg` with ASCII comments; added `scripts/validate-tool-icons.mjs` into `lint:seo`; documented in `tool-creation.mdc` that icon comments should prefer ASCII.
 
 [actions]
-- 修复 `public/icons/tools/image-optimizer.svg`
-- 新增 `scripts/validate-tool-icons.mjs`；更新 `scripts/validate-tool-seo.mjs`、`.cursor/rules/tool-creation.mdc`
+- Fixed `public/icons/tools/image-optimizer.svg`
+- Added `scripts/validate-tool-icons.mjs`; updated `scripts/validate-tool-seo.mjs`, `.cursor/rules/tool-creation.mdc`

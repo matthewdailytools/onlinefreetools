@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Diagnose upload:r2 403 Forbidden as R2 REST auth/account/bucket issue. | Dev Logs</title>
   <meta name="description" content="Diagnose upload:r2 403 Forbidden as R2 REST auth/account/bucket issue." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-13-00-22-upload-r2-403-forbidden.html" />
   <meta property="og:title" content="Diagnose upload:r2 403 Forbidden as R2 REST auth/account/bucket issue. | Dev Logs" />
   <meta property="og:description" content="Diagnose upload:r2 403 Forbidden as R2 REST auth/account/bucket issue." />
@@ -151,7 +151,7 @@ Summary: Diagnose upload:r2 403 Forbidden as R2 REST auth/account/bucket issue.<
 <p>[question]
 npm run upload:r2 → wrangler put 403 Forbidden on <code>_pages/ar/privacy.html.gz</code></p>
 <p>[try to solve]
-这是 Cloudflare REST 侧拒绝写 R2，不是脚本逻辑错误。本地 <code>upload:r2:local</code> 不受影响。请在本机跑 <code>wrangler whoami</code> / <code>r2 bucket list</code>，确认桶在正确账户且已创建；多账户时 logout+login 并清 <code>wrangler-account.json</code>；若用 <code>CLOUDFLARE_API_TOKEN</code>，Object Read/Write 对 wrangler put 不够，需 Admin Read &amp; Write 或改用 S3 API。手册已加 §9.1；upload 脚本在 403 时给出同向提示。</p>
+Cloudflare’s REST side rejected the R2 write—this is not a script logic bug. Local <code>upload:r2:local</code> is unaffected. On the machine, run <code>wrangler whoami</code> / <code>r2 bucket list</code>, confirm the bucket exists in the correct account; with multiple accounts, logout+login and clear <code>wrangler-account.json</code>. If using <code>CLOUDFLARE_API_TOKEN</code>, Object Read/Write is not enough for wrangler put—need Admin Read &amp; Write, or switch to the S3 API. Handbook §9.1 added; upload script prints the same hint on 403.</p>
 <p>[actions]</p>
 <ul>
 <li>Updated <code>ops/worker-r2-ops.md</code> §9.1</li>

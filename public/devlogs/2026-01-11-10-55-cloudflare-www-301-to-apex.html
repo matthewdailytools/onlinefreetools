@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>在 Cloudflare 控制台配置将 www 域名 301 重定向到裸域（非 www）。 | Dev Logs</title>
-  <meta name="description" content="在 Cloudflare 控制台配置将 www 域名 301 重定向到裸域（非 www）。" />
-  <meta name="robots" content="noindex" />
+  <title>Documented Cloudflare Redirect Rules to 301 www to the apex (non-www) domain. | Dev Logs</title>
+  <meta name="description" content="Documented Cloudflare Redirect Rules to 301 www to the apex (non-www) domain." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-01-11-10-55-cloudflare-www-301-to-apex.html" />
-  <meta property="og:title" content="在 Cloudflare 控制台配置将 www 域名 301 重定向到裸域（非 www）。 | Dev Logs" />
-  <meta property="og:description" content="在 Cloudflare 控制台配置将 www 域名 301 重定向到裸域（非 www）。" />
+  <meta property="og:title" content="Documented Cloudflare Redirect Rules to 301 www to the apex (non-www) domain. | Dev Logs" />
+  <meta property="og:description" content="Documented Cloudflare Redirect Rules to 301 www to the apex (non-www) domain." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-01-11-10-55-cloudflare-www-301-to-apex.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,49 +143,58 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">在 Cloudflare 控制台配置将 www 域名 301 重定向到裸域（非 www）。 | Dev Logs</h1>
+          <h1 class="h4 mb-0">Documented Cloudflare Redirect Rules to 301 www to the apex (non-www) domain. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>日期：2026年1月11日10时55分
-摘要：在 Cloudflare 控制台配置将 www 域名 301 重定向到裸域（非 www）。</p>
-<p>【question】
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-01-11 10:55
+Summary: Documented Cloudflare Redirect Rules to 301 www to the apex (non-www) domain.</p>
+<p>[question]
 how cloudfare setting: www domain 301 redirect to none www domain</p>
-<p>【try to solve】
-推荐用 Cloudflare Redirect Rules（最直接），把 <code>www.example.com</code> 永久重定向到 <code>example.com</code>，并保留路径与查询参数。</p>
-<p>前置检查</p>
+<p>[try to solve]
+Prefer Cloudflare Redirect Rules to permanently redirect <code>www.example.com</code> to <code>example.com</code>, preserving path and query string.</p>
+<p>Prerequisites</p>
 <ul>
-<li>DNS：<code>www</code> 需要有记录（通常 <code>CNAME www -&gt; example.com</code> 或 <code>A/AAAA</code>），并且建议打开代理（橙云），这样重定向规则能生效。</li>
-<li>SSL/TLS：确保站点可用 HTTPS（Cloudflare 里通常选 Full 或 Full (strict)）。</li>
+<li>DNS: <code>www</code> must resolve (usually <code>CNAME www → example.com</code> or A/AAAA), proxied (orange cloud) so redirect rules apply.</li>
+<li>SSL/TLS: HTTPS available (typically Full or Full (strict)).</li>
 </ul>
-<p>方案 A：Redirect Rules（推荐）
-1）进入 Cloudflare Dashboard -&gt; 选择你的站点 -&gt; Rules -&gt; Redirect Rules。
-2）Create rule。
-3）When incoming requests match...</p>
+<h3>A. Redirect Rules (recommended)</h3>
+<ol>
+<li>Cloudflare Dashboard → site → Rules → Redirect Rules.</li>
+<li>Create rule.</li>
+<li>When incoming requests match…</li>
+</ol>
 <ul>
-<li>Field 选 <code>Hostname</code></li>
-<li>Operator 选 <code>equals</code></li>
-<li>Value 填 <code>www.example.com</code>
-4）Then...</li>
-<li>Action 选 <code>Static redirect</code></li>
-<li>URL 填 <code>https://example.com/$1</code></li>
-<li>Status code 选 <code>301</code></li>
-<li>打开 “Preserve query string”（或等价选项）</li>
-<li>如果有 “Preserve path”/“Dynamic” 选项：确保会把原始 path 拼到目标上（常见写法是用 <code>$1</code> 表示原 path；不同 UI 版本字段名略有差异，以“保留路径”为准）。
-5）保存并把规则放在较靠前的位置（优先于其它重写/重定向规则）。</li>
+<li>Field: <code>Hostname</code></li>
+<li>Operator: <code>equals</code></li>
+<li>Value: <code>www.example.com</code></li>
 </ul>
-<p>方案 B：Bulk Redirects（可选，适合多条映射）
-1）Rules -&gt; Bulk Redirects -&gt; Create。
-2）建一个 redirect list：</p>
+<ol start="4">
+<li>Then…</li>
+</ol>
 <ul>
-<li>Source：<code>http://www.example.com/*</code> 与 <code>https://www.example.com/*</code></li>
-<li>Target：<code>https://example.com/$1</code></li>
-<li>Status：301
-3）创建 Bulk Redirect rule 并启用。</li>
+<li>Action: Static redirect</li>
+<li>URL: <code>https://example.com/$1</code></li>
+<li>Status: <code>301</code></li>
+<li>Preserve query string (or equivalent)</li>
+<li>Preserve path / Dynamic as needed so the original path is kept (UI labels vary; goal is keep path).</li>
 </ul>
-<p>快速自测</p>
+<ol start="5">
+<li>Save and place the rule early (above other rewrite/redirect rules).</li>
+</ol>
+<h3>B. Bulk Redirects (optional, many mappings)</h3>
+<ol>
+<li>Rules → Bulk Redirects → Create.</li>
+<li>List entries such as:</li>
+</ol>
 <ul>
-<li>访问 <code>https://www.example.com/some/path?x=1</code> 应 301 到 <code>https://example.com/some/path?x=1</code>。</li>
+<li>Source: <code>http://www.example.com/*</code> and <code>https://www.example.com/*</code></li>
+<li>Target: <code>https://example.com/$1</code></li>
+<li>Status: 301</li>
 </ul>
+<ol start="3">
+<li>Create and enable the Bulk Redirect rule.</li>
+</ol>
+<p>Self-test: <code>https://www.example.com/some/path?x=1</code> should 301 to <code>https://example.com/some/path?x=1</code>.</p>
 </article>
       </section>
     </main>

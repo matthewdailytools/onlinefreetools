@@ -5,7 +5,7 @@ Summary: Make tool page body width fluid with viewport like the home layout.
 工具页的正文宽度也是，要随屏幕改变而改变
 
 [try to solve]
-工具页 `#content` 改为占满主栏、`max-width` 对齐 `--home-max` + 流体 `--page-pad-x`；去掉原先固定 880px 对 tool-panel / lead / sections / 计算器卡片的限制，正文宽度随屏宽伸缩。
+Tool-page `#content` now fills the main column with `max-width` aligned to `--home-max` plus fluid `--page-pad-x`. Removed the prior fixed 880px caps on tool-panel / lead / sections / calculator cards so body width scales with the viewport.
 
 [actions]
 - public/styles/site.css

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Fixed json-schema-validator samples: literal \\n broke JSON.parse; use compact JSON and pretty-print on load. | Dev Logs</title>
   <meta name="description" content="Fixed json-schema-validator samples: literal \\n broke JSON.parse; use compact JSON and pretty-print on load." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-15-15-fix-schema-validator-literal-backslash-n.html" />
   <meta property="og:title" content="Fixed json-schema-validator samples: literal \\n broke JSON.parse; use compact JSON and pretty-print on load. | Dev Logs" />
   <meta property="og:description" content="Fixed json-schema-validator samples: literal \\n broke JSON.parse; use compact JSON and pretty-print on load." />
@@ -151,8 +151,8 @@ Summary: Fixed json-schema-validator samples: literal \n broke JSON.parse; use c
 <p>[question]
 <a href="http://localhost:8788/zh/tools/json-schema-validator">http://localhost:8788/zh/tools/json-schema-validator</a> 出错，结果输出框没有数据，另外“JSON Schema&quot;上面显示红色字&quot;Schema 不是合法 JSON（或编译失败）。 Expected property name or &#39;}&#39; in JSON at position 1 (line 1 column 2)”；最后：JSON Schema和实例 JSON 框为什么会有 &quot;\n&quot;字符</p>
 <p>[try to solve]
-根因：十语 i18n 样例写成了 <code>\\n</code>（字面 <code>\</code>+<code>n</code>），文本框里可见 <code>\n</code>，<code>JSON.parse</code> 在 position 1 失败，结果区为空。</p>
-<p>修复：样例改为合法紧凑 JSON；载入时用 <code>JSON.stringify(..., null, 2)</code> 格式化显示；已 <code>merge:tools</code>。请硬刷新页面验证。</p>
+Root cause: ten-locale i18n samples used <code>\\n</code> (literal <code>\</code>+<code>n</code>). Textareas showed visible <code>\n</code>, <code>JSON.parse</code> failed at position 1, and the result area stayed empty.</p>
+<p>Fix: samples are valid compact JSON; on load, pretty-print with <code>JSON.stringify(..., null, 2)</code>; ran <code>merge:tools</code>. Hard-refresh the page to verify.</p>
 <p>[actions]</p>
 <ul>
 <li>Updated <code>src/site/i18n/tools/json-schema-validator/{10 langs}.ts</code> sample/placeholder keys</li>

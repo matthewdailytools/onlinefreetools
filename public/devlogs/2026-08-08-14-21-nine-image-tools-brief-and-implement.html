@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Briefed and implemented nine image tools (flip/grayscale/border/base64/watermark/PDF/GIF/Word/PPT). | Dev Logs</title>
   <meta name="description" content="Briefed and implemented nine image tools (flip/grayscale/border/base64/watermark/PDF/GIF/Word/PPT)." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-14-21-nine-image-tools-brief-and-implement.html" />
   <meta property="og:title" content="Briefed and implemented nine image tools (flip/grayscale/border/base64/watermark/PDF/GIF/Word/PPT). | Dev Logs" />
   <meta property="og:description" content="Briefed and implemented nine image tools (flip/grayscale/border/base64/watermark/PDF/GIF/Word/PPT)." />
@@ -153,10 +153,10 @@ Summary: Briefed and implemented nine image tools (flip/grayscale/border/base64/
 <p>Implement the plan as specified, it is attached for your reference. Do NOT edit the plan file itself.</p>
 <p>To-do&#39;s from the plan have already been created. Do not create them again. Mark them as in_progress as you work, starting with the first one. Don&#39;t stop until you have completed all the to-dos.</p>
 <p>[try to solve]
-已完成 Phase 0–4。</p>
-<p>立项：<code>work-tasks/{flip-image,image-grayscale,image-border,image-to-base64,add-watermark,images-to-pdf,images-to-gif,images-to-word,images-to-ppt}/</code>（00–03；02 现为 <code>implemented</code>）。「转 git」按动画 GIF（<code>images-to-gif</code>）。</p>
-<p>实现：九个页面已注册并上线本地路由；十语 i18n + catalog + icons + README + 首页键；<code>lint:seo</code> 通过。本地验证 <code>http://127.0.0.1:8788/zh/tools/{slug}</code> 均为 200，客户端脚本语法通过。</p>
-<p>技术要点：单图工具为 Canvas Tier 0；多图 PDF/GIF/Word/PPT 在浏览器懒加载 CDN 库（pdf-lib / gifenc / docx / pptxgenjs），不上传用户文件。<code>add-watermark</code> 与 <code>image-overlay</code> 分工并已改 overlay FAQ 互指。</p>
+Completed Phases 0–4.</p>
+<p>Briefs: <code>work-tasks/{flip-image,image-grayscale,image-border,image-to-base64,add-watermark,images-to-pdf,images-to-gif,images-to-word,images-to-ppt}/</code> (00–03; 02 now <code>implemented</code>). “Convert to git” interpreted as animated GIF (<code>images-to-gif</code>).</p>
+<p>Implementation: nine pages registered on local routes; ten-locale i18n + catalog + icons + README + home keys; <code>lint:seo</code> passed. Local checks <code>http://127.0.0.1:8788/zh/tools/{slug}</code> all 200; client scripts syntax-checked.</p>
+<p>Tech notes: single-image tools are Canvas Tier 0; multi-image PDF/GIF/Word/PPT lazily load CDN libs in-browser (pdf-lib / gifenc / docx / pptxgenjs) with no user-file upload. <code>add-watermark</code> vs <code>image-overlay</code> roles split; overlay FAQ cross-links updated.</p>
 <p>[actions]</p>
 <ul>
 <li>Added work-tasks briefs ×9</li>

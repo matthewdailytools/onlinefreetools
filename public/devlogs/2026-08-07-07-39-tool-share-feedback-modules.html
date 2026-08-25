@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Added share-tool and email feedback modules to all tool pages via shared toolContent. | Dev Logs</title>
   <meta name="description" content="Added share-tool and email feedback modules to all tool pages via shared toolContent." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-07-07-39-tool-share-feedback-modules.html" />
   <meta property="og:title" content="Added share-tool and email feedback modules to all tool pages via shared toolContent. | Dev Logs" />
   <meta property="og:description" content="Added share-tool and email feedback modules to all tool pages via shared toolContent." />
@@ -151,17 +151,17 @@ Summary: Added share-tool and email feedback modules to all tool pages via share
 <p>[question]
 工具页增加分享工具模块，以及增加email咨询反馈模块，联系email：<a href="mailto:dailyonetools@outlook.com">dailyonetools@outlook.com</a></p>
 <p>[try to solve]
-已在所有走 <code>renderToolExtraSections</code> 的工具页底部增加两块模块：</p>
+Every tool page that goes through <code>renderToolExtraSections</code> now gets two footer modules:</p>
 <ol>
-<li><strong>分享工具</strong>：展示绝对页链，支持「复制链接」；若浏览器支持 Web Share API 则显示「分享…」。</li>
-<li><strong>咨询与反馈</strong>：公开邮箱 <code>dailyonetools@outlook.com</code>，并提供预填主题/正文（含工具名与页 URL）的「写邮件」<code>mailto</code> 按钮。</li>
+<li><strong>Share tool</strong>: shows the absolute page URL with “Copy link”; if the browser supports Web Share API, also shows “Share…”.</li>
+<li><strong>Feedback</strong>: public email <code>dailyonetools@outlook.com</code> plus a “Write email” <code>mailto</code> button with prefilled subject/body (tool name + page URL).</li>
 </ol>
-<p>实现落在共享 <code>src/pages/site/toolContent.ts</code>，无需逐页改；样式在 <code>public/styles/site.css</code>（双栏网格，窄屏单列）；十语文案键 <code>tool_share_*</code> / <code>tool_feedback_*</code> 已写入各 <code>src/site/i18n/*.ts</code>。</p>
+<p>Implemented in shared <code>src/pages/site/toolContent.ts</code> (no per-page edits). Styles in <code>public/styles/site.css</code> (two-column grid, single column on narrow screens). Ten-locale keys <code>tool_share_*</code> / <code>tool_feedback_*</code> in each <code>src/site/i18n/*.ts</code>.</p>
 <p>[actions]</p>
 <ul>
-<li><code>src/pages/site/toolContent.ts</code> — <code>renderToolShareSection</code> / <code>renderToolFeedbackSection</code>，并入 <code>renderToolExtraSections</code></li>
-<li><code>public/styles/site.css</code> — <code>.tool-module-grid</code> / <code>.tool-module</code> 样式</li>
-<li><code>src/site/i18n/{en,zh,es,de,fr,pt,id,ja,ru,ar}.ts</code> — 分享与反馈文案</li>
+<li><code>src/pages/site/toolContent.ts</code> — <code>renderToolShareSection</code> / <code>renderToolFeedbackSection</code>, wired into <code>renderToolExtraSections</code></li>
+<li><code>public/styles/site.css</code> — <code>.tool-module-grid</code> / <code>.tool-module</code> styles</li>
+<li><code>src/site/i18n/{en,zh,es,de,fr,pt,id,ja,ru,ar}.ts</code> — share and feedback copy</li>
 <li><code>npm run lint:seo</code> — OK</li>
 </ul>
 </article>

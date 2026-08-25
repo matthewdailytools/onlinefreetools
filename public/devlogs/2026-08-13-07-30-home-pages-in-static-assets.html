@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Serve language home pages from Static Assets after build. | Dev Logs</title>
   <meta name="description" content="Serve language home pages from Static Assets after build." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-13-07-30-home-pages-in-static-assets.html" />
   <meta property="og:title" content="Serve language home pages from Static Assets after build. | Dev Logs" />
   <meta property="og:description" content="Serve language home pages from Static Assets after build." />
@@ -151,7 +151,7 @@ Summary: Serve language home pages from Static Assets after build.</p>
 <p>[question]
 build的时候首页存放asset</p>
 <p>[try to solve]
-各语言首页在 <code>build:site</code> / <code>buildHome</code> 写入 <code>public/_pages/{lang}/index.html</code> 后，经 <code>.assetsignore</code> 与 <code>.gitignore</code> 反选进仓库与 Workers Static Assets；工具等其它 <code>_pages</code> 仍只走 R2。Worker 新增 <code>serveHomeHtml</code>：Cache → Assets → R2 兜底。上线须 commit 十语 <code>index.html</code> 并 git push（CF 部署 Assets）；R2 仍可继续上传首页作兜底。</p>
+After <code>build:site</code> / <code>buildHome</code> writes <code>public/_pages/{lang}/index.html</code>, language homes are opt-in to the repo and Workers Static Assets via <code>.assetsignore</code> / <code>.gitignore</code> exceptions; other <code>_pages</code> content (tools, etc.) still goes only to R2. Worker adds <code>serveHomeHtml</code>: Cache → Assets → R2 fallback. Ship requires committing the ten-language <code>index.html</code> files and git push (CF deploys Assets); R2 may still upload homes as fallback.</p>
 <p>[actions]</p>
 <ul>
 <li>Updated <code>public/.assetsignore</code>, <code>.gitignore</code>, <code>src/site/r2Pages.ts</code>, <code>src/index.ts</code>, <code>scripts/build-site.mjs</code></li>

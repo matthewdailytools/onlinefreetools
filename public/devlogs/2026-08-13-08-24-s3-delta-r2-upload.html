@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Speed up R2 publish with S3 PutObject path and --changed-only delta uploads. | Dev Logs</title>
   <meta name="description" content="Speed up R2 publish with S3 PutObject path and --changed-only delta uploads." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-13-08-24-s3-delta-r2-upload.html" />
   <meta property="og:title" content="Speed up R2 publish with S3 PutObject path and --changed-only delta uploads. | Dev Logs" />
   <meta property="og:description" content="Speed up R2 publish with S3 PutObject path and --changed-only delta uploads." />
@@ -151,18 +151,18 @@ Summary: Speed up R2 publish with S3 PutObject path and --changed-only delta upl
 <p>[question]
 需要</p>
 <p>[try to solve]
-已实现远程 R2 发布加速：</p>
+Implemented remote R2 publish acceleration:</p>
 <ol>
-<li><strong>S3 直传</strong>（默认）：有 <code>R2_ACCOUNT_ID</code> + <code>R2_ACCESS_KEY_ID</code> + <code>R2_SECRET_ACCESS_KEY</code> 时用 <code>@aws-sdk/client-s3</code> 进程内并发 PutObject（默认并发 32）；无凭据回退 wrangler（慢，会 warn）。可用 <code>--s3</code> / <code>--wrangler</code> 强制。</li>
-<li><strong>增量</strong>：<code>npm run upload:r2:changed</code>（<code>--changed-only</code>）。meta <code>schemaVersion: 2</code> 含 <code>fileHashes</code>；对比 R2 meta → 本地 <code>.cache</code>；无旧哈希则全量。仍重写 <code>_meta/pages-build.json</code>。</li>
-<li>文档：<code>ops/worker-r2-ops.md</code> §3.1；<code>ops/README.md</code>；<code>cloudflare-workflow.mdc</code>。</li>
+<li><strong>S3 direct upload</strong> (default): when <code>R2_ACCOUNT_ID</code> + <code>R2_ACCESS_KEY_ID</code> + <code>R2_SECRET_ACCESS_KEY</code> are set, use <code>@aws-sdk/client-s3</code> for in-process concurrent PutObject (default concurrency 32); without credentials, fall back to wrangler (slow, with warn). Force with <code>--s3</code> / <code>--wrangler</code>.</li>
+<li><strong>Delta</strong>: <code>npm run upload:r2:changed</code> (<code>--changed-only</code>). Meta <code>schemaVersion: 2</code> includes <code>fileHashes</code>; compare R2 meta → local <code>.cache</code>; missing old hashes means full upload. Still rewrites <code>_meta/pages-build.json</code>.</li>
+<li>Docs: <code>ops/worker-r2-ops.md</code> §3.1; <code>ops/README.md</code>; <code>cloudflare-workflow.mdc</code>.</li>
 </ol>
-<p>用法：</p>
+<p>Usage:</p>
 <pre><code class="language-bash">export R2_ACCOUNT_ID=&#39;...&#39;
 export R2_ACCESS_KEY_ID=&#39;...&#39;
 export R2_SECRET_ACCESS_KEY=&#39;...&#39;
-npm run upload:r2           # 全量 S3
-npm run upload:r2:changed   # 只传变更
+npm run upload:r2           # full S3 upload
+npm run upload:r2:changed   # changed files only
 </code></pre>
 <p>[actions]</p>
 <ul>

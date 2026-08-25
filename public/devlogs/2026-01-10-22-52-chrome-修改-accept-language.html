@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>说明在 Chrome 中修改 Accept-Language 的几种方法（设置语言顺序/调试覆盖/启动参数）。 | Dev Logs</title>
-  <meta name="description" content="说明在 Chrome 中修改 Accept-Language 的几种方法（设置语言顺序/调试覆盖/启动参数）。" />
-  <meta name="robots" content="noindex" />
+  <title>Documented ways to change Accept-Language in Chrome (settings, DevTools, flags, extensions). | Dev Logs</title>
+  <meta name="description" content="Documented ways to change Accept-Language in Chrome (settings, DevTools, flags, extensions)." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-01-10-22-52-chrome-%E4%BF%AE%E6%94%B9-accept-language.html" />
-  <meta property="og:title" content="说明在 Chrome 中修改 Accept-Language 的几种方法（设置语言顺序/调试覆盖/启动参数）。 | Dev Logs" />
-  <meta property="og:description" content="说明在 Chrome 中修改 Accept-Language 的几种方法（设置语言顺序/调试覆盖/启动参数）。" />
+  <meta property="og:title" content="Documented ways to change Accept-Language in Chrome (settings, DevTools, flags, extensions). | Dev Logs" />
+  <meta property="og:description" content="Documented ways to change Accept-Language in Chrome (settings, DevTools, flags, extensions)." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-01-10-22-52-chrome-%E4%BF%AE%E6%94%B9-accept-language.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,41 +143,42 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">说明在 Chrome 中修改 Accept-Language 的几种方法（设置语言顺序/调试覆盖/启动参数）。 | Dev Logs</h1>
+          <h1 class="h4 mb-0">Documented ways to change Accept-Language in Chrome (settings, DevTools, flags, extensions). | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>日期：2026年1月10日22时52分
-摘要：说明在 Chrome 中修改 Accept-Language 的几种方法（设置语言顺序/调试覆盖/启动参数）。
-【question】
-chrome 修改 accept-language
-【try to solve】
-1）影响“真实请求头”的方式（推荐）</p>
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-01-10 22:52
+Summary: Documented ways to change Accept-Language in Chrome (settings, DevTools, flags, extensions).</p>
+<p>[question]
+chrome 修改 accept-language</p>
+<p>[try to solve]</p>
+<ol>
+<li>Affect the real request header (recommended)</li>
+</ol>
 <ul>
-<li>打开：chrome://settings/languages</li>
-<li>在“首选语言”里添加需要的语言，并把目标语言拖到最上方/调整顺序</li>
-<li>重启 Chrome 后再验证（Accept-Language 通常会按该顺序生成）</li>
+<li>Open <code>chrome://settings/languages</code></li>
+<li>Add preferred languages and drag the target language to the top</li>
+<li>Restart Chrome and verify (Accept-Language usually follows that order)</li>
 </ul>
-<p>2）仅用于调试/单次覆盖</p>
+<ol start="2">
+<li>Debug / one-off override</li>
+</ol>
 <ul>
-<li>DevTools：打开开发者工具 → Network（网络）→ 右上角更多/More tools → Network conditions（网络条件）<ul>
-<li>如果你的 Chrome 版本里有 Accept-Language 选项：取消“Use browser default”，手填例如：en-US,en;q=0.9</li>
-<li>注意：该方式通常只影响调试环境/当前会话，且不同版本 UI 可能略有差异</li>
+<li>DevTools → Network → More tools → Network conditions<ul>
+<li>If Accept-Language is available: uncheck “Use browser default” and set e.g. <code>en-US,en;q=0.9</code></li>
+<li>Usually session-only; UI varies by Chrome version</li>
 </ul>
 </li>
 </ul>
-<p>3）强制方式（更可控）</p>
+<ol start="3">
+<li>Forced override (more control)</li>
+</ol>
 <ul>
-<li>使用请求头改写工具：ModHeader 等扩展，或用代理工具（Charles / Proxyman）改写请求头 Accept-Language</li>
-<li>启动参数（macOS 示例）：<ul>
-<li>退出 Chrome 后执行：open -a &quot;Google Chrome&quot; --args --lang=en-US</li>
-<li>该参数会影响浏览器语言相关行为，常用于临时切换测试</li>
+<li>Header rewrite extensions (e.g. ModHeader) or a proxy (Charles / Proxyman)</li>
+<li>Launch flag (macOS example): quit Chrome, then
+<code>open -a &quot;Google Chrome&quot; --args --lang=en-US</code>
+(affects browser language-related behavior; good for temporary tests)</li>
 </ul>
-</li>
-</ul>
-<p>验证建议</p>
-<ul>
-<li>打开 <a href="https://httpbin.org/headers">https://httpbin.org/headers</a> 或你自己的回显接口，查看请求头里 Accept-Language 是否按预期变化。</li>
-</ul>
+<p>Verify with <a href="https://httpbin.org/headers">https://httpbin.org/headers</a> or your own echo endpoint and confirm Accept-Language.</p>
 </article>
       </section>
     </main>

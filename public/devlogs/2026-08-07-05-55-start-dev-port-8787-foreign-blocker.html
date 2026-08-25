@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>start-dev timeout was caused by port 8787 held by another project's wrangler; scripts now detect foreign blockers and suggest --port. | Dev Logs</title>
-  <meta name="description" content="start-dev timeout was caused by port 8787 held by another project's wrangler; scripts now detect foreign blockers and suggest --port." />
-  <meta name="robots" content="noindex" />
+  <title>start-dev timed out because port 8787 was held by another project's wrangler; scripts now detect foreign blockers and suggest --port. | Dev Logs</title>
+  <meta name="description" content="start-dev timed out because port 8787 was held by another project's wrangler; scripts now detect foreign blockers and suggest --port." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-07-05-55-start-dev-port-8787-foreign-blocker.html" />
-  <meta property="og:title" content="start-dev timeout was caused by port 8787 held by another project's wrangler; scripts now detect foreign blockers and suggest --port. | Dev Logs" />
-  <meta property="og:description" content="start-dev timeout was caused by port 8787 held by another project's wrangler; scripts now detect foreign blockers and suggest --port." />
+  <meta property="og:title" content="start-dev timed out because port 8787 was held by another project's wrangler; scripts now detect foreign blockers and suggest --port. | Dev Logs" />
+  <meta property="og:description" content="start-dev timed out because port 8787 was held by another project's wrangler; scripts now detect foreign blockers and suggest --port." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-07-05-55-start-dev-port-8787-foreign-blocker.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,25 +143,25 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">start-dev timeout was caused by port 8787 held by another project's wrangler; scripts now detect foreign blockers and suggest --port. | Dev Logs</h1>
+          <h1 class="h4 mb-0">start-dev timed out because port 8787 was held by another project's wrangler; scripts now detect foreign blockers and suggest --port. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-07 05:55
-Summary: start-dev timeout was caused by port 8787 held by another project&#39;s wrangler; scripts now detect foreign blockers and suggest --port.</p>
+Summary: start-dev timed out because port 8787 was held by another project&#39;s wrangler; scripts now detect foreign blockers and suggest --port.</p>
 <p>[question]
 start-dev still fails: &quot;Dev server failed to become ready within timeout&quot; after ENOENT fix.</p>
 <p>[try to solve]
-根因不是本项目 wrangler 启动慢，而是 <strong>8787 已被其他项目占用</strong>（日志：<code>Address already in use</code>）。本机 listener 来自 <code>seoontest/funnyT/apps/api</code> 的 workerd，不是 onlinefreetools。</p>
-<p><strong>立即可用</strong></p>
+Root cause was not slow wrangler startup in this repo: <strong>8787 was already in use</strong> (log: <code>Address already in use</code>). The listener belonged to workerd from <code>seoontest/funnyT/apps/api</code>, not onlinefreetools.</p>
+<p><strong>Immediate workaround</strong></p>
 <pre><code class="language-bash">npm run start:dev -- --port 8788
 </code></pre>
-<p>然后访问 <a href="http://127.0.0.1:8788/tools/html-entity">http://127.0.0.1:8788/tools/html-entity</a></p>
-<p>或停掉另一个项目的 wrangler，再在本项目用默认 8787。</p>
-<p><strong>脚本改进</strong>（<code>ops/lib/dev-process.mjs</code>、<code>ops/dev/start-dev.mjs</code>）</p>
+<p>Then open <a href="http://127.0.0.1:8788/tools/html-entity">http://127.0.0.1:8788/tools/html-entity</a></p>
+<p>Or stop the other project&#39;s wrangler and use the default 8787 here.</p>
+<p><strong>Script improvements</strong> (<code>ops/lib/dev-process.mjs</code>, <code>ops/dev/start-dev.mjs</code>)</p>
 <ul>
-<li>启动前检测端口；若为<strong>其他项目</strong>进程占用，打印其命令行并提示 <code>--port 8788</code>，不再等满 90s</li>
-<li>仅清理<strong>本仓库</strong> wrangler/workerd，避免误杀其他项目</li>
-<li>日志含 <code>Address already in use</code> 时快速失败</li>
+<li>Before start, detect the port; if another project owns it, print that process command line and suggest <code>--port 8788</code> instead of waiting the full 90s</li>
+<li>Only clean up <strong>this repo&#39;s</strong> wrangler/workerd so other projects are not killed</li>
+<li>Fail fast when logs contain <code>Address already in use</code></li>
 </ul>
 <p>[actions]</p>
 <ul>

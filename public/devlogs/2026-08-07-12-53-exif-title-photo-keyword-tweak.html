@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Lightly add photo/image terms to EXIF tool titles across locales. | Dev Logs</title>
-  <meta name="description" content="Lightly add photo/image terms to EXIF tool titles across locales." />
-  <meta name="robots" content="noindex" />
+  <title>Lightly added photo/image terms to EXIF tool titles across locales. | Dev Logs</title>
+  <meta name="description" content="Lightly added photo/image terms to EXIF tool titles across locales." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-07-12-53-exif-title-photo-keyword-tweak.html" />
-  <meta property="og:title" content="Lightly add photo/image terms to EXIF tool titles across locales. | Dev Logs" />
-  <meta property="og:description" content="Lightly add photo/image terms to EXIF tool titles across locales." />
+  <meta property="og:title" content="Lightly added photo/image terms to EXIF tool titles across locales. | Dev Logs" />
+  <meta property="og:description" content="Lightly added photo/image terms to EXIF tool titles across locales." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-07-12-53-exif-title-photo-keyword-tweak.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,20 +143,20 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Lightly add photo/image terms to EXIF tool titles across locales. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Lightly added photo/image terms to EXIF tool titles across locales. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-07 12:53
-Summary: Lightly add photo/image terms to EXIF tool titles across locales.</p>
+Summary: Lightly added photo/image terms to EXIF tool titles across locales.</p>
 <p>[question]
 微调</p>
 <p>[try to solve]
-按上一轮建议，仅在 title / 首页卡片短标题中自然带入「照片/photo」类词，不改正文堆砌：</p>
+Per the prior recommendation, only titles and home-card short titles gained natural “photo” wording — no body stuffing:</p>
 <ul>
-<li>en：<code>Photo EXIF Viewer &amp; Remover — …</code>（首页短标题同步）</li>
-<li>es/pt/id/fr/de/ja/ru/ar：title 与 <code>scripts/site/i18n.mjs</code> 卡片名对应加上 fotos / foto / photos / Fotos / 写真 / фото / الصور</li>
-<li>zh：原已有「图片 EXIF」，未改</li>
-<li><code>03-locale-briefs.md</code> Title 方向已对齐；<code>lint:seo --slug image-exif</code> OK；已 <code>build:site</code></li>
+<li>en: <code>Photo EXIF Viewer &amp; Remover — …</code> (home short title synced)</li>
+<li>es/pt/id/fr/de/ja/ru/ar: title and <code>scripts/site/i18n.mjs</code> card names gained fotos / foto / photos / Fotos / photo (ja) / photo (ru) / photos (ar)</li>
+<li>zh: already had “image EXIF” in the title; unchanged</li>
+<li><code>03-locale-briefs.md</code> Title direction aligned; <code>lint:seo --slug image-exif</code> OK; <code>build:site</code> run</li>
 </ul>
 <p>[actions]</p>
 <ul>

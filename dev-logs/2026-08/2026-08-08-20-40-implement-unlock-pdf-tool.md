@@ -25,25 +25,25 @@ npm run merge:tools && npm run coverage:gate -- --slug=unlock-pdf --phase=all &&
 No plan/commit. 中文 brief. Chinese comments.
 
 [try to solve]
-已完成 **unlock-pdf**（清单 #60）全量实现，所有门禁通过。
+Shipped full **unlock-pdf** (inventory #60); all gates passed.
 
-**产品红线**
-- 仅支持**已知打开密码**去保护；十语 FAQ q1 均明确「非破解 / 非暴力猜密 / 不恢复遗忘密码」。
-- 错密、空密（文件需要时）、未加密 PDF 均有明确错误提示。
+**Product red lines**
+- Only removes protection with a **known open password**; ten-locale FAQ q1 states no cracking / brute force / recovery of forgotten passwords.
+- Wrong password, empty password (when required), and already-unencrypted PDFs get clear errors.
 
-**技术**
-- 页面 `src/pages/unlockPdfPage.ts`：CDN `pdf-lib-with-encrypt@1.2.1`（与 protect-pdf 同源）。
-- 解锁：`PDFDocument.load(bytes, { password, ignoreEncryption: false })` → `save()` 输出 `unlocked.pdf`。
-- 进页 `loadSample()`：生成 password=`sample` 的单页加密 PDF → 自动填密 → 解锁 → 启用下载。
+**Tech**
+- Page `src/pages/unlockPdfPage.ts`: CDN `pdf-lib-with-encrypt@1.2.1` (same as protect-pdf).
+- Unlock: `PDFDocument.load(bytes, { password, ignoreEncryption: false })` → `save()` → `unlocked.pdf`.
+- On-enter `loadSample()`: builds single-page PDF with password=`sample` → auto-fills password → unlocks → enables download.
 
-**交付物**
-- `src/site/tool-catalog.d/unlock-pdf.json`；`protect-pdf.json` related 改为 `unlock-pdf, merge-pdf`。
-- `public/icons/tools/unlock-pdf.svg`；十语 `src/site/i18n/tools/unlock-pdf/*.ts`。
-- `work-tasks/unlock-pdf/03-locale-briefs.md` 补 1b+2b；inventory #60 标已上线；README 中英条目。
+**Deliverables**
+- `src/site/tool-catalog.d/unlock-pdf.json`; `protect-pdf.json` related set to `unlock-pdf, merge-pdf`.
+- `public/icons/tools/unlock-pdf.svg`; ten-locale `src/site/i18n/tools/unlock-pdf/*.ts`.
+- `work-tasks/unlock-pdf/03-locale-briefs.md` 1b+2b; inventory #60 marked shipped; README EN/ZH entries.
 
-**门禁**
+**Gates**
 - `coverage:gate --phase=all` ✓
-- `build:site` ✓（sitemap 600 URL）
+- `build:site` ✓ (sitemap 600 URLs)
 - `lint:seo` ✓
 - `CROSS_TOOL_UPDATE=1 TOOL_SLUG=unlock-pdf lint:tool-isolation` ✓
 

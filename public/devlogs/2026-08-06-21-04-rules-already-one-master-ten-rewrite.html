@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Yes — cursor/rules already encode one-language factual master plus per-locale search-oriented rewrite at master quality; “事实卡” is implicit via the master lang, not a separate named artifact. | Dev Logs</title>
-  <meta name="description" content="Yes — cursor/rules already encode one-language factual master plus per-locale search-oriented rewrite at master quality; “事实卡” is implicit via the master lang, not a separate named artifact." />
-  <meta name="robots" content="noindex" />
+  <title>Yes — cursor/rules already encode one-language factual master plus per-locale search-oriented rewrite at master quality; “fact card” is implicit via the master lang, not a separate named artifact. | Dev Logs</title>
+  <meta name="description" content="Yes — cursor/rules already encode one-language factual master plus per-locale search-oriented rewrite at master quality; “fact card” is implicit via the master lang, not a separate named artifact." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-06-21-04-rules-already-one-master-ten-rewrite.html" />
-  <meta property="og:title" content="Yes — cursor/rules already encode one-language factual master plus per-locale search-oriented rewrite at master quality; “事实卡” is implicit via the master lang, not a separate named artifact. | Dev Logs" />
-  <meta property="og:description" content="Yes — cursor/rules already encode one-language factual master plus per-locale search-oriented rewrite at master quality; “事实卡” is implicit via the master lang, not a separate named artifact." />
+  <meta property="og:title" content="Yes — cursor/rules already encode one-language factual master plus per-locale search-oriented rewrite at master quality; “fact card” is implicit via the master lang, not a separate named artifact. | Dev Logs" />
+  <meta property="og:description" content="Yes — cursor/rules already encode one-language factual master plus per-locale search-oriented rewrite at master quality; “fact card” is implicit via the master lang, not a separate named artifact." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-06-21-04-rules-already-one-master-ten-rewrite.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,58 +143,58 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Yes — cursor/rules already encode one-language factual master plus per-locale search-oriented rewrite at master quality; “事实卡” is implicit via the master lang, not a separate named artifact. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Yes — cursor/rules already encode one-language factual master plus per-locale search-oriented rewrite at master quality; “fact card” is implicit via the master lang, not a separate named artifact. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-06 21:04
-Summary: Yes — cursor/rules already encode one-language factual master plus per-locale search-oriented rewrite at master quality; “事实卡” is implicit via the master lang, not a separate named artifact.</p>
+Summary: Yes — cursor/rules already encode one-language factual master plus per-locale search-oriented rewrite at master quality; “fact card” is implicit via the master lang, not a separate named artifact.</p>
 <p>[question]
 目前cursor/rules是否采用“一份事实母版 + 十语都按母版质量做检索向重写”规则</p>
 <p>[try to solve]
-<strong>是，实质已采用；措辞是「一种母版语 + 逐语按 brief 独立重写」，没有单独名叫「事实卡」的文件。</strong></p>
-<h3>规则落点</h3>
+<strong>Yes in substance.</strong> The wording is “one master language + independent rewrite per locale from its brief,” not a separately named “fact card” file.</p>
+<h3>Where it lands in rules</h3>
 <table>
 <thead>
 <tr>
-<th>文件</th>
-<th>对应关系</th>
+<th>File</th>
+<th>Mapping</th>
 </tr>
 </thead>
 <tbody><tr>
-<td><code>tool-i18n-localization.mdc</code> 步 1</td>
-<td><strong>一份母版</strong>：通常 en 或 zh，写齐 How/Rules/Example/Use cases/FAQ/UI</td>
+<td><code>tool-i18n-localization.mdc</code> step 1</td>
+<td><strong>One master</strong>: usually en or zh, full How/Rules/Example/Use cases/FAQ/UI</td>
 </tr>
 <tr>
-<td>同文件步 2 + 写法</td>
-<td><strong>十语母版质量重写</strong>：按每语 brief 独立重写；禁 Translate；反同构</td>
+<td>Same file step 2 + writing guidance</td>
+<td><strong>Ten-locale master-quality rewrite</strong>: independent rewrite from each brief; no Translate; anti-isomorphism</td>
 </tr>
 <tr>
 <td><code>tool-creation.mdc</code> / <code>work-tasks-tool-brief.mdc</code></td>
-<td>实现前 <code>03-locale-briefs</code>；稳妥常态：母版一语 → 逐语重写 → ≥3 轮</td>
+<td><code>03-locale-briefs</code> before implement; steady path: one master lang → per-locale rewrite → ≥3 rounds</td>
 </tr>
 <tr>
 <td><code>tool-i18n-seo.mdc</code> IG⑦</td>
-<td>各语检索向重写；禁「母版 + 脚本灌其余语」同构交付</td>
+<td>Search-oriented rewrite per locale; forbid “master + script dump remaining locales” isomorphic delivery</td>
 </tr>
 <tr>
 <td><code>seo-google-policy.mdc</code></td>
-<td>scaled content → brief + 检索向重写 + ≥3 轮</td>
+<td>scaled content → brief + search-oriented rewrite + ≥3 rounds</td>
 </tr>
 </tbody></table>
-<h3>未写死但隐含的</h3>
+<h3>Implied but not spelled out</h3>
 <ul>
-<li>未单独规定「事实卡」产物名；<strong>母版语文案 = 事实/IG 源</strong>。</li>
-<li>未逐条写「他语不得改公式/免责事实」，但流程是重写表达而非另起事实体系；YMYL/边界随母版键齐全落地。</li>
+<li>No separate “fact card” artifact name; <strong>master-language copy = fact/IG source</strong>.</li>
+<li>No line-by-line “other locales must not change formula/disclaimer facts,” but the flow is rewrite expression, not invent a new fact system; YMYL/boundaries land via complete master keys.</li>
 </ul>
-<h3>明确反对的反面</h3>
+<h3>Explicitly opposed</h3>
 <ul>
-<li>十语各自当无关事实母版：未鼓励。</li>
-<li>「母版定稿 → 脚本灌八语」：明确禁止。</li>
+<li>Ten locales as unrelated factual masters: not encouraged.</li>
+<li>“Master final → script dump eight locales”: explicitly forbidden.</li>
 </ul>
-<p><strong>一句话</strong>：<strong>规则已是该模型</strong>；若要把「事实不得漂移」写得更硬，可在 localization 加一句「他语可改检索表达与题序，不得改公式/默认行为/免责事实」——属增强清晰度，非换模型。</p>
+<p><strong>Bottom line</strong>: <strong>Rules already follow this model.</strong> To harden “facts must not drift,” localization could add: other locales may change search wording and FAQ order, but must not change formulas / default behavior / disclaimer facts — clarity enhancement, not a model change.</p>
 <p>[actions]</p>
 <ul>
-<li>核对 localization / creation / i18n-seo / work-tasks / google-policy；未改文件</li>
+<li>Checked localization / creation / i18n-seo / work-tasks / google-policy; no file changes</li>
 </ul>
 </article>
       </section>

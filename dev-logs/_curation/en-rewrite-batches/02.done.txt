@@ -1,0 +1,9 @@
+batch: 02
+count: 20
+rewritten: 16
+skipped_already_english: 4
+issues:
+- None blocking.
+- Skipped (already English Summary/[try to solve]): 2026-01-28-create-how-to-calculate-roi.md; 2026-01-28-create-percentage-change-tool.md; 2026-01-28-how-to-calculate-gradient.md; 2026-06-23-10-14-google-seo-analysis-plan.md.
+- Rewritten from CJK editorial text: 2026-07-28-21-05-implement-seo-remediation-plan.md; 2026-07-28-21-35-fix-language-switcher.md; 2026-08-03-20-48-add-google-site-verification-meta.md; 2026-08-03-20-59-google-html-verification-no-redirect.md; 2026-08-06-11-59-sync-cursor-rules-with-google-seo-strategy.md; 2026-08-06-13-03-dev-logs-monthly-archive.md; 2026-08-06-14-11-exclude-devlogs-from-sitemap.md; 2026-08-06-14-13-add-dev-start-stop-scripts.md; 2026-08-06-14-30-create-ops-folder-and-docs.md; 2026-08-06-14-30-create-ops-folder-and-runbook.md; 2026-08-06-15-19-fix-ops-dev-server-health-check.md; 2026-08-06-15-35-new-tool-required-inputs.md; 2026-08-06-15-40-work-tasks-folder-and-cursor-rule.md; 2026-08-06-15-47-disallow-devlogs-in-robots.md; 2026-08-06-15-52-brief-text-diff-tool.md; 2026-08-06-16-05-implement-text-diff-tool.md.
+- Note: create-ops-folder-and-docs.md and create-ops-folder-and-runbook.md are near-duplicate sources; both rewritten in place with aligned English.

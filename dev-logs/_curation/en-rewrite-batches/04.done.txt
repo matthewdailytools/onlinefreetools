@@ -1,0 +1,9 @@
+batch: 04
+count: 20
+rewritten: 20
+skipped_already_english: 0
+issues:
+- None blocking.
+- All 20 files had CJK (or mixed) narrative in Summary and/or [try to solve]; rewritten in place to editorial English.
+- [question] kept verbatim (including Chinese prompts and long English localization task prompts).
+- Preserved technical tokens: paths, npm scripts, locale codes, js-yaml version, FAQ order notes, SOCKS settings JSON, intentional local title/sample phrases (zh/ja/ar/ru) as evidence in solve text.

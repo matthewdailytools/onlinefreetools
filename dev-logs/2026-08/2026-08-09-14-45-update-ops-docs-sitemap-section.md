@@ -5,10 +5,10 @@ Summary: Expanded ops README §4.0 for filtered sitemap CLI/UI and linked the SE
 更新运维文档
 
 [try to solve]
-已更新运维文档中的 Sitemap 说明：
+Updated sitemap ops docs:
 
-- `ops/README.md` §4.0：补全文件表、写入规则（含覆盖主文件）、筛选语义（OR / 全选）、CLI 与操作页（密码/端口/绑定/重启）、与 GSC·IndexNow 的边界
-- `docs/SEO_PUBLISH_CHECKLIST.md`：发版前 sitemap 步骤指向 §4.0（发版仍以 `build:site` 全量为准）
+- `ops/README.md` §4.0: file table, write rules (including overwrite main), filter semantics (OR / select-all), CLI and ops UI (password/port/bind/restart), and boundaries vs GSC/IndexNow
+- `docs/SEO_PUBLISH_CHECKLIST.md`: pre-publish sitemap step points to §4.0 (ship still uses `build:site` full sitemap)
 
 [actions]
 - Updated `ops/README.md`, `docs/SEO_PUBLISH_CHECKLIST.md`

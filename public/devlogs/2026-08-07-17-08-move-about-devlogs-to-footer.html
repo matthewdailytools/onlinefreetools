@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Move About and Dev Logs from header nav to footer | Dev Logs</title>
-  <meta name="description" content="Move About and Dev Logs from header nav to footer" />
-  <meta name="robots" content="noindex" />
+  <title>Moved About and Dev Logs from the header nav into the footer. | Dev Logs</title>
+  <meta name="description" content="Moved About and Dev Logs from the header nav into the footer." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-07-17-08-move-about-devlogs-to-footer.html" />
-  <meta property="og:title" content="Move About and Dev Logs from header nav to footer | Dev Logs" />
-  <meta property="og:description" content="Move About and Dev Logs from header nav to footer" />
+  <meta property="og:title" content="Moved About and Dev Logs from the header nav into the footer. | Dev Logs" />
+  <meta property="og:description" content="Moved About and Dev Logs from the header nav into the footer." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-07-17-08-move-about-devlogs-to-footer.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,22 +143,22 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Move About and Dev Logs from header nav to footer | Dev Logs</h1>
+          <h1 class="h4 mb-0">Moved About and Dev Logs from the header nav into the footer. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-07 17:08
-Summary: Move About and Dev Logs from header nav to footer</p>
+Summary: Moved About and Dev Logs from the header nav into the footer.</p>
 <p>[question]
 将菜单中的关于和开发日志移到foot中</p>
 <p>[try to solve]
-顶栏已移除「关于」「开发日志」；页脚现为：关于 · 开发日志 · 隐私 · 条款 · 联系（<code>/devlogs/</code> 保持根路径无语言前缀）。</p>
-<p>涉及：<code>nav.mjs</code> / <code>nav.ts</code>、<code>footer.mjs</code> / <code>footer.ts</code>、<code>info-page.mjs</code>、<code>build-site.mjs</code>（devlogs 顶栏与工具页一致）；已 <code>npm run build:site</code>。</p>
+Removed About and Dev Logs from the top nav. The footer now lists: About · Dev Logs · Privacy · Terms · Contact (<code>/devlogs/</code> stays at the root path with no language prefix).</p>
+<p>Touched: <code>nav.mjs</code> / <code>nav.ts</code>, <code>footer.mjs</code> / <code>footer.ts</code>, <code>info-page.mjs</code>, <code>build-site.mjs</code> (devlogs top bar aligned with tool pages). Ran <code>npm run build:site</code>.</p>
 <p>[actions]</p>
 <ul>
 <li><code>scripts/site/nav.mjs</code>, <code>scripts/site/pages/home.mjs</code>, <code>scripts/site/pages/info-page.mjs</code></li>
 <li><code>scripts/site/components/footer.mjs</code>, <code>scripts/build-site.mjs</code></li>
 <li><code>src/pages/site/nav.ts</code>, <code>src/pages/site/footer.ts</code></li>
-<li><code>public/_pages/*/index.html</code> 等构建产物</li>
+<li><code>public/_pages/*/index.html</code> and other build outputs</li>
 </ul>
 </article>
       </section>

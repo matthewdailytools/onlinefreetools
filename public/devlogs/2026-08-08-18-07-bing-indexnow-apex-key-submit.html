@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Confirmed IndexNow uses apex keyLocation (not www); Bing still returns 403 for this key. | Dev Logs</title>
   <meta name="description" content="Confirmed IndexNow uses apex keyLocation (not www); Bing still returns 403 for this key." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-18-07-bing-indexnow-apex-key-submit.html" />
   <meta property="og:title" content="Confirmed IndexNow uses apex keyLocation (not www); Bing still returns 403 for this key. | Dev Logs" />
   <meta property="og:description" content="Confirmed IndexNow uses apex keyLocation (not www); Bing still returns 403 for this key." />
@@ -151,20 +151,20 @@ Summary: Confirmed IndexNow uses apex keyLocation (not www); Bing still returns 
 <p>[question]
 应该使用<a href="https://onlinefreetools.org/8212779ba7e9451aa4faed4cfd20ded4.txt%EF%BC%8C%E8%80%8C%E4%B8%8D%E6%98%AFhttps://www.onlinefreetools.org/8212779ba7e9451aa4faed4cfd20ded4.txt">https://onlinefreetools.org/8212779ba7e9451aa4faed4cfd20ded4.txt，而不是https://www.onlinefreetools.org/8212779ba7e9451aa4faed4cfd20ded4.txt</a> ，发送的格式文档：<a href="https://www.bing.com/indexnow/getstarted">https://www.bing.com/indexnow/getstarted</a></p>
 <p>[try to solve]
-已按你的要求对齐：只用裸域 key，不用 www。</p>
+Aligned to apex-only key (no www), as requested.</p>
 <ol>
-<li>已撤回误换新 key 的本地改动，恢复 <code>8212779ba7e9451aa4faed4cfd20ded4</code>。</li>
-<li>线上校验：<code>https://onlinefreetools.org/8212779ba7e9451aa4faed4cfd20ded4.txt</code> → HTTP 200，正文匹配。</li>
-<li>提交载荷（对齐 Bing getstarted）：<ul>
+<li>Reverted mistaken local new-key change; restored <code>8212779ba7e9451aa4faed4cfd20ded4</code>.</li>
+<li>Live check: <code>https://onlinefreetools.org/8212779ba7e9451aa4faed4cfd20ded4.txt</code> → HTTP 200, body matches.</li>
+<li>Submit payload (per Bing getstarted):<ul>
 <li>host=<code>onlinefreetools.org</code></li>
 <li>keyLocation=<code>https://onlinefreetools.org/8212779ba7e9451aa4faed4cfd20ded4.txt</code></li>
-<li>urlList 全部为 apex（sitemap 420 条，www=0）</li>
+<li>urlList all apex (sitemap 420 URLs, www=0)</li>
 </ul>
 </li>
-<li>实际 POST 到 <code>api.indexnow.org</code> 与 <code>www.bing.com/indexnow</code>，以及单 URL GET：均返回 <strong>HTTP 403</strong> <code>UserForbiddedToAccessSite</code>（User is unauthorized to access the site. Please verify the site using the key and try again）。</li>
-<li>CLI dry-run 亦确认 <code>host</code> / <code>keyLocation</code> 均为裸域，不是 www。</li>
+<li>Actual POST to <code>api.indexnow.org</code> and <code>www.bing.com/indexnow</code>, plus single-URL GET: all returned <strong>HTTP 403</strong> <code>UserForbiddedToAccessSite</code> (User is unauthorized to access the site. Please verify the site using the key and try again).</li>
+<li>CLI dry-run also confirmed <code>host</code> / <code>keyLocation</code> are apex, not www.</li>
 </ol>
-<p>结论：www/裸域格式问题已排除；当前是 Bing 侧拒收该 key 与站点绑定（常见于早期 key 文件曾 404 后被判无效）。需在 Bing Webmaster → IndexNow 重新 Generate key 并替换托管文件后再提交，或确认 BWT 中站点属性为 <code>https://onlinefreetools.org/</code>。</p>
+<p>Conclusion: www vs apex formatting is ruled out; Bing is rejecting this key/site binding (common after an early key file 404 marked the key invalid). Next: Bing Webmaster → IndexNow → Generate a new key, replace the hosted file, then resubmit — or confirm the BWT property is <code>https://onlinefreetools.org/</code>.</p>
 <p>[actions]</p>
 <ul>
 <li>restored: <code>public/8212779ba7e9451aa4faed4cfd20ded4.txt</code>, <code>scripts/site/config.mjs</code>, <code>src/index.ts</code>, <code>wrangler.jsonc</code></li>

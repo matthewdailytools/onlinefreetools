@@ -1,5 +1,5 @@
 Date: 2026-08-09 00:02
-Summary: Added 8 locale i18n shards for compound interest tool.
+Summary: Added 8 locale i18n shards for the compound interest tool.
 
 [question]
 Create 8 i18n TypeScript files for the compound interest tool in /Users/xuli/vscodeai/onlinefreetools/src/site/i18n/tools/how-to-calculate-compound-interest/
@@ -42,7 +42,7 @@ YMYL: each lang needs non-investment-advice disclaimer in local natural wording.
 Write all 8 files to disk. Return list of files written.
 
 [try to solve]
-已写入 8 个 i18n 分片，键与 `en.ts` 完全一致（各 56 键）。各语按 `03-locale-briefs.md` 独立重写 title/description/UI/FAQ/disclaimer；含公式 A = P(1 + r/n)^(nt)、示例 10000/5%/10 年 → ≈16288.95（单利 15000）及 YMYL 非投资建议免责。
+Wrote 8 i18n shards with keys matching `en.ts` exactly (56 keys each). Each locale independently rewrote title/description/UI/FAQ/disclaimer per `03-locale-briefs.md`; includes formula A = P(1 + r/n)^(nt), example 10000/5%/10 years → ≈16288.95 (simple interest 15000), and a YMYL non-investment-advice disclaimer.
 
 **Files written:**
 - `src/site/i18n/tools/how-to-calculate-compound-interest/es.ts`

@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>首页未展示新开发的BMI工具 | Dev Logs</title>
-  <meta name="description" content="首页未展示新开发的BMI工具" />
-  <meta name="robots" content="noindex" />
+  <title>Confirmed the home page did not list the new BMI tool because home catalog rendering did not auto-include it. | Dev Logs</title>
+  <meta name="description" content="Confirmed the home page did not list the new BMI tool because home catalog rendering did not auto-include it." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-01-12-%E9%A6%96%E9%A1%B5%E6%9C%AA%E5%B1%95%E7%A4%BABMI%E5%B7%A5%E5%85%B7.html" />
-  <meta property="og:title" content="首页未展示新开发的BMI工具 | Dev Logs" />
-  <meta property="og:description" content="首页未展示新开发的BMI工具" />
+  <meta property="og:title" content="Confirmed the home page did not list the new BMI tool because home catalog rendering did not auto-include it. | Dev Logs" />
+  <meta property="og:description" content="Confirmed the home page did not list the new BMI tool because home catalog rendering did not auto-include it." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-01-12-%E9%A6%96%E9%A1%B5%E6%9C%AA%E5%B1%95%E7%A4%BABMI%E5%B7%A5%E5%85%B7.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,16 +143,19 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">首页未展示新开发的BMI工具 | Dev Logs</h1>
+          <h1 class="h4 mb-0">Confirmed the home page did not list the new BMI tool because home catalog rendering did not auto-include it. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-01-12<br>Summary: 首页未展示新开发的BMI工具</p>
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-01-12 00:00
+Summary: Confirmed the home page did not list the new BMI tool because home catalog rendering did not auto-include it.</p>
 <p>[question]
 首页并没有新开发的工具</p>
 <p>[try to solve]
-经检查，public/_pages/zh/index.html 首页推荐和全部工具区块未包含“如何计算BMI”工具。当前工具分类和渲染逻辑未自动收录新工具，需要在首页构建脚本或模板中补充BMI工具入口，确保其在推荐和全部工具列表中展示。</p>
-<p>[actions]
-public/_pages/zh/index.html</p>
+Checked <code>public/_pages/zh/index.html</code>: neither the recommended nor the all-tools section included “How to calculate BMI”. Tool categorization/render logic did not auto-pick up the new tool, so the home build script or template needed a BMI entry for both sections.</p>
+<p>[actions]</p>
+<ul>
+<li>Inspected: <code>public/_pages/zh/index.html</code></li>
+</ul>
 </article>
       </section>
     </main>

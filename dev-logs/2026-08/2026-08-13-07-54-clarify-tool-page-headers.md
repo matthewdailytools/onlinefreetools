@@ -1,11 +1,11 @@
 Date: 2026-08-13 07:54
-Summary: Clarify second headers were tool page image-format-converter, not home.
+Summary: Clarify the second headers were for tool page image-format-converter, not home.
 
 [question]
 这个的链接是https://onlinefreetools.org/zh/tools/image-format-converter
 
 [try to solve]
-更正：第二组 header 属于工具页，路径为 Cache API → R2 `_pages/zh/tools/image-format-converter.html.gz` → gunzip → `identityHtmlResponse`（非首页 Assets）。`cache-control: public, s-maxage=86400, max-age=0` 与设计一致；无 HIT/age + `cfWorker=333ms` + `cfOrigin=0` 符合 Cache miss 后 R2 绑定读取（R2 通常不计入 cfOrigin）再解压组包。与首页 HIT（Worker~37ms、可能带 max-age=14400）不可直接对比：URL/存储层不同。热路径再请求同 URL 应出现更低 Worker 时长或边缘 HIT。
+Correction: the second header set is a tool page. Path is Cache API → R2 `_pages/zh/tools/image-format-converter.html.gz` → gunzip → `identityHtmlResponse` (not home Assets). `cache-control: public, s-maxage=86400, max-age=0` matches design; missing HIT/age plus `cfWorker=333ms` and `cfOrigin=0` fits Cache miss then R2 binding read (R2 usually does not count as cfOrigin) plus decompress/pack. Do not compare directly with home HIT (Worker~37ms, possibly max-age=14400)—URL and storage layer differ. A warm re-request of the same URL should show lower Worker time or edge HIT.
 
 [actions]
-- （只读澄清 URL 与 servePrerenderedHtml 路径）
+- Read-only clarification of URL vs `servePrerenderedHtml` path

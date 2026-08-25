@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Fixed brand-logo.svg XML encoding error caused by a corrupted comment. | Dev Logs</title>
-  <meta name="description" content="Fixed brand-logo.svg XML encoding error caused by a corrupted comment." />
-  <meta name="robots" content="noindex" />
+  <title>Fixed brand-logo.svg XML encoding error caused by corrupted Chinese bytes in a comment. | Dev Logs</title>
+  <meta name="description" content="Fixed brand-logo.svg XML encoding error caused by corrupted Chinese bytes in a comment." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-07-07-44-fix-brand-logo-encoding.html" />
-  <meta property="og:title" content="Fixed brand-logo.svg XML encoding error caused by a corrupted comment. | Dev Logs" />
-  <meta property="og:description" content="Fixed brand-logo.svg XML encoding error caused by a corrupted comment." />
+  <meta property="og:title" content="Fixed brand-logo.svg XML encoding error caused by corrupted Chinese bytes in a comment. | Dev Logs" />
+  <meta property="og:description" content="Fixed brand-logo.svg XML encoding error caused by corrupted Chinese bytes in a comment." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-07-07-44-fix-brand-logo-encoding.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,18 +143,18 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Fixed brand-logo.svg XML encoding error caused by a corrupted comment. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Fixed brand-logo.svg XML encoding error caused by corrupted Chinese bytes in a comment. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-07 07:44
-Summary: Fixed brand-logo.svg XML encoding error caused by a corrupted comment.</p>
+Summary: Fixed brand-logo.svg XML encoding error caused by corrupted Chinese bytes in a comment.</p>
 <p>[question]
 <a href="http://localhost:8788/brand-logo.svg">http://localhost:8788/brand-logo.svg</a> This page contains the following errors: error on line 2 at column 3: Encoding error</p>
 <p>[try to solve]
-SVG 注释里的中文曾被写成非法字节，XML 解析失败。已重写为纯 ASCII 的 <code>brand-logo.svg</code>，并同步到 <code>favicon.svg</code>。</p>
+Chinese text in an SVG comment had been written as illegal bytes, so XML parsing failed. Rewrote <code>brand-logo.svg</code> as pure ASCII and synced the same fix to <code>favicon.svg</code>.</p>
 <p>[actions]</p>
 <ul>
-<li><code>public/brand-logo.svg</code>、<code>public/favicon.svg</code></li>
+<li><code>public/brand-logo.svg</code>, <code>public/favicon.svg</code></li>
 </ul>
 </article>
       </section>

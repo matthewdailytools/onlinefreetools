@@ -1,24 +1,24 @@
 Date: 2026-08-08 22:52
-Summary: Clarified that how-to-calculate can be a selective naming pattern vs Omni, not a mass URL factory.
+Summary: Clarified that how-to-calculate can be a selective naming pattern versus Omni, not a mass URL factory.
 
 [question]
 是否可以走how to calculate xxx模式来对标
 
 [try to solve]
-可以，但应作为「意图层命名策略」，不能当成按 Omni 批量铺 URL 的模板。
+Yes—as an intent-layer naming strategy, not as a template for batch-building URLs like Omni’s catalog.
 
-结论：可用 `how to calculate xxx` 对标 Omni 的「公式教育」意图；slug/title 按意图选型，一意图一 URL，禁止 how-to + calculator 双 URL，禁止批量套壳。
+Conclusion: `how to calculate xxx` can match Omni’s “formula education” intent. Choose slug/title by intent; one URL per intent; never ship both how-to and calculator URLs for the same topic; never mass-clone shells.
 
-与 Omni 差异：Omni 多为短 path（`/finance/roi`、`/health/bmi`），靠页内长文吃「how to」流量；本站已有 5/6 计算器用 `how-to-calculate-*`，GSC 也出现 `how to calculate marginal revenue`、`como calcular el roi`、`限界収入 求め方` 等教育向查询——模式已被验证。
+Vs Omni: Omni mostly uses short paths (`/finance/roi`, `/health/bmi`) and captures “how to” traffic with long on-page copy. This site already has 5/6 calculators using `how-to-calculate-*`, and GSC shows educational queries such as `how to calculate marginal revenue`, `como calcular el roi`, and the Japanese query for marginal-revenue how-to—the pattern is already validated.
 
-推荐规则：
-1. 主检索为「how to calculate / 怎么算 / 求め方 / cómo calcular」→ slug 可用 `how-to-calculate-{topic}`；title/H1 写该语自然说法，不必英文套壳。
-2. 主检索为「X calculator / 计算器 / calculadora」或工具任务名 → 用短 slug（如清单里的 `compound-interest`、`loan-emi`、`bmr-tdee`）；title 仍可同时覆盖「how to calculate」。
-3. 禁止同一主题拆 `how-to-calculate-roi` + `roi-calculator` 两页（doorway / Bing duplicate）。
-4. 禁止把 Omni 3867 页改写成 how-to-calculate 矩阵——模式换皮仍是 scaled content。
-5. 多语：slug 可统一英文 kebab；可见 title 用当地说法（ja「求め方」、es「cómo calcular / calculadora」、zh「如何计算 / 计算器」）。
+Recommended rules:
+1. If the primary query is educational “how to calculate” (including local equivalents) → slug may be `how-to-calculate-{topic}`; title/H1 use natural local phrasing (not an English shell).
+2. If the primary query is “X calculator” or a task name → use a short slug (inventory examples: `compound-interest`, `loan-emi`, `bmr-tdee`); title can still cover “how to calculate”.
+3. Never split one topic into `how-to-calculate-roi` + `roi-calculator` (doorway / Bing duplicate).
+4. Never rewrite Omni’s ~3867 pages into a how-to-calculate matrix—skin-swaps are still scaled content.
+5. Multilingual: slug may stay English kebab-case; visible titles use local phrasing.
 
-落地建议：已上线 5 个 how-to 页保持；P1 财务/健康工具按清单短 slug，靠 title+正文吃双重意图；仅当 coverage 证明「how to」显著强于「calculator」时，新工具才选 how-to-calculate 前缀。
+Ship guidance: keep the five live how-to pages; for P1 finance/health tools use short inventory slugs and cover dual intent via title + body; only choose the how-to-calculate prefix when coverage shows “how to” clearly stronger than “calculator”.
 
 [actions]
-- 无代码改动；策略口径澄清（相对 Omni SEO 计划）
+- No code changes; clarified strategy vs the Omni SEO plan

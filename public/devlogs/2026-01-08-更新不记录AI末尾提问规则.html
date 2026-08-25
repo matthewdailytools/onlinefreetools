@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>更新不记录AI末尾提问规则 | Dev Logs</title>
-  <meta name="description" content="更新不记录AI末尾提问规则" />
-  <meta name="robots" content="noindex" />
+  <title>Added a rule to exclude AI trailing questions from development logs. | Dev Logs</title>
+  <meta name="description" content="Added a rule to exclude AI trailing questions from development logs." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-01-08-%E6%9B%B4%E6%96%B0%E4%B8%8D%E8%AE%B0%E5%BD%95AI%E6%9C%AB%E5%B0%BE%E6%8F%90%E9%97%AE%E8%A7%84%E5%88%99.html" />
-  <meta property="og:title" content="更新不记录AI末尾提问规则 | Dev Logs" />
-  <meta property="og:description" content="更新不记录AI末尾提问规则" />
+  <meta property="og:title" content="Added a rule to exclude AI trailing questions from development logs. | Dev Logs" />
+  <meta property="og:description" content="Added a rule to exclude AI trailing questions from development logs." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-01-08-%E6%9B%B4%E6%96%B0%E4%B8%8D%E8%AE%B0%E5%BD%95AI%E6%9C%AB%E5%B0%BE%E6%8F%90%E9%97%AE%E8%A7%84%E5%88%99.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,19 +143,18 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">更新不记录AI末尾提问规则 | Dev Logs</h1>
+          <h1 class="h4 mb-0">Added a rule to exclude AI trailing questions from development logs. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>日期：2026年1月8日
-摘要：更新不记录AI末尾提问规则</p>
-<p>【question】
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-01-08 00:00
+Summary: Added a rule to exclude AI trailing questions from development logs.</p>
+<p>[question]
 修改默认规则,增加规则：不要记录最后ai的提问这些没有意义的内容，并更新跟则</p>
-<p>【try to solve】
-已更新 <code>.github/copilot-instructions.md</code>：在默认代理行为中新增“Exclusions”规则，明确不记录 AI 尾部的提问/澄清性问题，仅记录用户问题与最终答案。</p>
-<p>【执行操作】</p>
+<p>[try to solve]
+Updated <code>.github/copilot-instructions.md</code>: under default agent behavior, added an “Exclusions” rule so logs omit AI trailing questions/clarifications and only record the user question and the final answer.</p>
+<p>[actions]</p>
 <ul>
-<li>更新 <code>.github/copilot-instructions.md</code></li>
-<li>创建 <code>dev-logs/2026-01-08-更新不记录AI末尾提问规则.md</code></li>
+<li>Updated <code>.github/copilot-instructions.md</code></li>
 </ul>
 </article>
       </section>

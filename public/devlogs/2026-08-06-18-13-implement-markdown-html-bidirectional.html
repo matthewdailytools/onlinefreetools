@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Implemented bidirectional Markdown ↔ HTML on existing markdown-to-html page with Turndown and ten-locale copy. | Dev Logs</title>
-  <meta name="description" content="Implemented bidirectional Markdown ↔ HTML on existing markdown-to-html page with Turndown and ten-locale copy." />
-  <meta name="robots" content="noindex" />
+  <title>Implemented bidirectional Markdown ↔ HTML on the existing markdown-to-html page with Turndown and ten-locale copy. | Dev Logs</title>
+  <meta name="description" content="Implemented bidirectional Markdown ↔ HTML on the existing markdown-to-html page with Turndown and ten-locale copy." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-06-18-13-implement-markdown-html-bidirectional.html" />
-  <meta property="og:title" content="Implemented bidirectional Markdown ↔ HTML on existing markdown-to-html page with Turndown and ten-locale copy. | Dev Logs" />
-  <meta property="og:description" content="Implemented bidirectional Markdown ↔ HTML on existing markdown-to-html page with Turndown and ten-locale copy." />
+  <meta property="og:title" content="Implemented bidirectional Markdown ↔ HTML on the existing markdown-to-html page with Turndown and ten-locale copy. | Dev Logs" />
+  <meta property="og:description" content="Implemented bidirectional Markdown ↔ HTML on the existing markdown-to-html page with Turndown and ten-locale copy." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-06-18-13-implement-markdown-html-bidirectional.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,23 +143,23 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Implemented bidirectional Markdown ↔ HTML on existing markdown-to-html page with Turndown and ten-locale copy. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Implemented bidirectional Markdown ↔ HTML on the existing markdown-to-html page with Turndown and ten-locale copy. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-06 18:13
-Summary: Implemented bidirectional Markdown ↔ HTML on existing markdown-to-html page with Turndown and ten-locale copy.</p>
+Summary: Implemented bidirectional Markdown ↔ HTML on the existing markdown-to-html page with Turndown and ten-locale copy.</p>
 <p>[question]
 实现工具</p>
 <p>[try to solve]
-已在现有 <code>/tools/markdown-to-html</code> 落地双向转换（不新建 <code>html-to-markdown</code>）：</p>
+Shipped bidirectional conversion on existing <code>/tools/markdown-to-html</code> (no new <code>html-to-markdown</code> slug):</p>
 <ul>
-<li>Tab：<code>Markdown → HTML</code>（默认，marked + DOMPurify）| <code>HTML → Markdown</code>（DOMPurify 后 Turndown，ATX + fenced）</li>
-<li>SEO 模块：How / Rules / Example / Use cases / FAQ×5 / Related / References</li>
-<li>十语检索向文案 + 首页卡片 + README；<code>related</code> → <code>text-diff</code>, <code>website-headers</code>, <code>ip-address</code></li>
-<li><code>npm run lint:seo</code> 通过；<code>npm run build:site</code> 完成</li>
-<li>立项文档状态改为 <code>implemented</code> / <code>i18n-done</code></li>
+<li>Tabs: <code>Markdown → HTML</code> (default, marked + DOMPurify) | <code>HTML → Markdown</code> (DOMPurify then Turndown, ATX + fenced)</li>
+<li>SEO modules: How / Rules / Example / Use cases / FAQ×5 / Related / References</li>
+<li>Ten-locale search-intent copy + home cards + README; <code>related</code> → <code>text-diff</code>, <code>website-headers</code>, <code>ip-address</code></li>
+<li><code>npm run lint:seo</code> passed; <code>npm run build:site</code> completed</li>
+<li>Work-tasks status set to <code>implemented</code> / <code>i18n-done</code></li>
 </ul>
-<p>IG：① Rules ② 边界 FAQ ③ Use cases ④ 双向对照 ⑥ 隐私/CDN ⑧ Example ⑨ related。</p>
+<p>IG covered: ① Rules ② edge FAQ ③ Use cases ④ bidirectional contrast ⑥ privacy/CDN ⑧ Example ⑨ related.</p>
 <p>[actions]</p>
 <ul>
 <li>Updated: <code>src/pages/markdownToHtmlPage.ts</code></li>

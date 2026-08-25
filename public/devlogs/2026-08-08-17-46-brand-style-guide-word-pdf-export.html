@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Added local Word (.docx) and PDF download export to brand-style-guide. | Dev Logs</title>
   <meta name="description" content="Added local Word (.docx) and PDF download export to brand-style-guide." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-17-46-brand-style-guide-word-pdf-export.html" />
   <meta property="og:title" content="Added local Word (.docx) and PDF download export to brand-style-guide. | Dev Logs" />
   <meta property="og:description" content="Added local Word (.docx) and PDF download export to brand-style-guide." />
@@ -151,7 +151,7 @@ Summary: Added local Word (.docx) and PDF download export to brand-style-guide.<
 <p>[question]
 增加 导出为word和pdf的能力</p>
 <p>[try to solve]
-在品牌手册工具栏增加「下载 Word」「下载 PDF」：生成指南后可导出。Word 懒加载 jsDelivr <code>docx@8.5.0</code> 写 .docx；PDF 用系统字体 Canvas 排版（支持中文）再 <code>pdf-lib@1.17.1</code> 打多页。库按需加载、正文不上传。十语按钮/状态/FAQ 已补；<code>lint:seo</code> OK。硬刷新后先 Generate/Sample，再点下载。</p>
+Added “Download Word” / “Download PDF” on the brand-style-guide toolbar; export after generating a guide. Word lazy-loads jsDelivr <code>docx@8.5.0</code> for <code>.docx</code>; PDF lays out with system fonts on Canvas (Chinese-capable) then packs multi-page via <code>pdf-lib@1.17.1</code>. Libraries load on demand; body text is not uploaded. Ten-locale buttons/status/FAQ updated; <code>lint:seo</code> OK. Hard-refresh, Generate/Sample first, then download.</p>
 <p>[actions]</p>
 <ul>
 <li>Updated <code>src/pages/brandStyleGuidePage.ts</code></li>

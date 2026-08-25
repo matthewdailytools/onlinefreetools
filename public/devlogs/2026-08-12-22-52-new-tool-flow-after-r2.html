@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Clarify that new-tool SEO rules/skills are unchanged; only ship adds upload:r2 after build:site. | Dev Logs</title>
-  <meta name="description" content="Clarify that new-tool SEO rules/skills are unchanged; only ship adds upload:r2 after build:site." />
-  <meta name="robots" content="noindex" />
+  <title>Clarified that new-tool SEO rules/skills are unchanged; only ship adds upload:r2 after build:site. | Dev Logs</title>
+  <meta name="description" content="Clarified that new-tool SEO rules/skills are unchanged; only ship adds upload:r2 after build:site." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-12-22-52-new-tool-flow-after-r2.html" />
-  <meta property="og:title" content="Clarify that new-tool SEO rules/skills are unchanged; only ship adds upload:r2 after build:site. | Dev Logs" />
-  <meta property="og:description" content="Clarify that new-tool SEO rules/skills are unchanged; only ship adds upload:r2 after build:site." />
+  <meta property="og:title" content="Clarified that new-tool SEO rules/skills are unchanged; only ship adds upload:r2 after build:site. | Dev Logs" />
+  <meta property="og:description" content="Clarified that new-tool SEO rules/skills are unchanged; only ship adds upload:r2 after build:site." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-12-22-52-new-tool-flow-after-r2.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,19 +143,19 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Clarify that new-tool SEO rules/skills are unchanged; only ship adds upload:r2 after build:site. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Clarified that new-tool SEO rules/skills are unchanged; only ship adds upload:r2 after build:site. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-12 22:52
-Summary: Clarify that new-tool SEO rules/skills are unchanged; only ship adds upload:r2 after build:site.</p>
+Summary: Clarified that new-tool SEO rules/skills are unchanged; only ship adds upload:r2 after build:site.</p>
 <p>[question]
 问题：如果现在要创建新的工具，那么是否和原来一样，是否原来的seo规则以及skill也照旧起作用，以及创建新的工具整体流程（从发出需求到上线）</p>
 <p>[try to solve]
-结论：创建与 SEO 规则/Skill <strong>照旧</strong>；工程真相源仍是 brief + catalog/i18n 分片 + <code>*Page.ts</code>。架构变化只在构建/发版：<code>build:site</code> 会预渲染工具 HTML 并 gzip，生产须多一步 <code>upload:r2</code>；仍不必改 <code>src/index.ts</code>。</p>
-<p>整体流程：需求/关键词 → work-tasks brief + coverage 0b → 实现分片与 Page → coverage 2/4 → build:site + lint → 本地验收 → upload:r2 + deploy。</p>
+Verdict: creation and SEO rules/Skills <strong>unchanged</strong>; engineering source of truth remains brief + catalog/i18n shards + <code>*Page.ts</code>. Architecture change is only in build/ship: <code>build:site</code> prerenders tool HTML and gzips it; production needs one extra step <code>upload:r2</code>; still no need to edit <code>src/index.ts</code> for new tools.</p>
+<p>End-to-end flow: request/keywords → work-tasks brief + coverage 0b → implement shards and Page → coverage 2/4 → build:site + lint → local verify → upload:r2 + deploy.</p>
 <p>[actions]</p>
 <ul>
-<li>（只读说明，无代码改动）</li>
+<li>(read-only explanation; no code changes)</li>
 </ul>
 </article>
       </section>

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Explained red link/active colors come from global a{--accent} and sidebar active rules (iLovePDF red). | Dev Logs</title>
   <meta name="description" content="Explained red link/active colors come from global a{--accent} and sidebar active rules (iLovePDF red)." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-16-24-why-links-are-red.html" />
   <meta property="og:title" content="Explained red link/active colors come from global a{--accent} and sidebar active rules (iLovePDF red). | Dev Logs" />
   <meta property="og:description" content="Explained red link/active colors come from global a{--accent} and sidebar active rules (iLovePDF red)." />
@@ -151,7 +151,7 @@ Summary: Explained red link/active colors come from global a{--accent} and sideb
 <p>[question]
 为什么相关工具和左侧菜单选中的工具，以及底部的关于等是红色字体</p>
 <p>[try to solve]
-全站 <code>a { color: var(--accent) }</code>，<code>--accent</code> 为对齐 iLovePDF 的红 <code>#e5322d</code>，故「相关工具」、页脚「关于/隐私…」等未单独设色的链接一律红色。侧栏选中项另有 <code>#sidebar .list-group-item.active { color: var(--accent) }</code> 显式用强调色。若希望 chrome 链接用正文色、仅 CTA/当前态用红，需改全局链接与侧栏/页脚规则。</p>
+Site-wide <code>a { color: var(--accent) }</code> with <code>--accent</code> set to iLovePDF-aligned red <code>#e5322d</code>, so Related tools, footer About/Privacy, and other links without a local color all render red. Sidebar active items also use <code>#sidebar .list-group-item.active { color: var(--accent) }</code> explicitly. To use body text color for chrome links and reserve red for CTA/current state only, global link and sidebar/footer rules need changing.</p>
 <p>[actions]</p>
 </article>
       </section>

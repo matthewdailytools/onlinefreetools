@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Added conventional default aspect and pixel presets to image-crop brief. | Dev Logs</title>
-  <meta name="description" content="Added conventional default aspect and pixel presets to image-crop brief." />
-  <meta name="robots" content="noindex" />
+  <title>Added conventional default aspect and pixel presets to the image-crop brief. | Dev Logs</title>
+  <meta name="description" content="Added conventional default aspect and pixel presets to the image-crop brief." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-07-14-34-image-crop-default-size-presets.html" />
-  <meta property="og:title" content="Added conventional default aspect and pixel presets to image-crop brief. | Dev Logs" />
-  <meta property="og:description" content="Added conventional default aspect and pixel presets to image-crop brief." />
+  <meta property="og:title" content="Added conventional default aspect and pixel presets to the image-crop brief. | Dev Logs" />
+  <meta property="og:description" content="Added conventional default aspect and pixel presets to the image-crop brief." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-07-14-34-image-crop-default-size-presets.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,25 +143,25 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Added conventional default aspect and pixel presets to image-crop brief. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Added conventional default aspect and pixel presets to the image-crop brief. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-07 14:34
-Summary: Added conventional default aspect and pixel presets to image-crop brief.</p>
+Summary: Added conventional default aspect and pixel presets to the image-crop brief.</p>
 <p>[question]
 提供常规常用默认需求尺寸</p>
 <p>[try to solve]
-已在 <code>work-tasks/image-crop/02-tool-info.md</code> 写入 v1 默认预设（同页快捷，不拆 URL、不绑平台合规包）：</p>
-<p><strong>比例</strong>：自由、1:1、4:3、3:4、3:2、2:3、16:9、9:16、21:9、自定义。</p>
-<p><strong>常用输出像素（场景分组）</strong>：</p>
+Documented v1 default presets in <code>work-tasks/image-crop/02-tool-info.md</code> (same-page shortcuts; no extra URLs; not tied to platform compliance packs):</p>
+<p><strong>Aspect ratios</strong>: free, 1:1, 4:3, 3:4, 3:2, 2:3, 16:9, 9:16, 21:9, custom.</p>
+<p><strong>Common output pixels (by scene)</strong>:</p>
 <ul>
-<li>头像/方图：512、400、256、128、800×800、1000×1000</li>
-<li>缩略：150、300</li>
-<li>横幅/封面：1920×1080、1280×720、1600×900、1200×675、1200×630、1920×600</li>
-<li>竖屏：1080×1920、1080×1350</li>
-<li>Web：最长边 1200、宽 800 等比</li>
+<li>Avatar / square: 512, 400, 256, 128, 800×800, 1000×1000</li>
+<li>Thumbnail: 150, 300</li>
+<li>Banner / cover: 1920×1080, 1280×720, 1600×900, 1200×675, 1200×630, 1920×600</li>
+<li>Portrait: 1080×1920, 1080×1350</li>
+<li>Web: max edge 1200, width 800 proportional</li>
 </ul>
-<p><strong>默认示例输出</strong>：1:1 → 512×512 JPEG。<code>03</code> en/zh 按钮词补了「常用尺寸 / Presets」。</p>
+<p><strong>Default sample output</strong>: 1:1 → 512×512 JPEG. Added “Common sizes / Presets” button wording in <code>03</code> en/zh.</p>
 <p>[actions]</p>
 <ul>
 <li>Updated <code>work-tasks/image-crop/02-tool-info.md</code> (preset tables)</li>

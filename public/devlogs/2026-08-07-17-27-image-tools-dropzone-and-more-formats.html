@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Enlarged image-tool drop zones with copy below, and expanded format converter to BMP/GIF/ICO/SVG. | Dev Logs</title>
   <meta name="description" content="Enlarged image-tool drop zones with copy below, and expanded format converter to BMP/GIF/ICO/SVG." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-07-17-27-image-tools-dropzone-and-more-formats.html" />
   <meta property="og:title" content="Enlarged image-tool drop zones with copy below, and expanded format converter to BMP/GIF/ICO/SVG. | Dev Logs" />
   <meta property="og:description" content="Enlarged image-tool drop zones with copy below, and expanded format converter to BMP/GIF/ICO/SVG." />
@@ -146,7 +146,7 @@
           <h1 class="h4 mb-0">Enlarged image-tool drop zones with copy below, and expanded format converter to BMP/GIF/ICO/SVG. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>﻿Date: 2026-08-07 17:27
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-07 17:27
 Summary: Enlarged image-tool drop zones with copy below, and expanded format converter to BMP/GIF/ICO/SVG.</p>
 <p>[question]</p>
 <ol>
@@ -154,14 +154,14 @@ Summary: Enlarged image-tool drop zones with copy below, and expanded format con
 </ol>
 <p>[try to solve]</p>
 <ol>
-<li>全站增加 .tool-dropzone；五个图片工具页改为 H1 → 大拖放区 → 操作/选项 → 预览 → .tool-lead 说明后置。</li>
-<li>image-format-converter 目标格式扩展为 PNG/JPEG/WebP/AVIF + BMP/GIF/ICO/SVG；新增 public/tools/image-format-converter/extra-formats.js 本地编码；十语文案与 rules/FAQ 同步；FAQ 收集上限调到 8；lint:seo 通过。</li>
+<li>Added site-wide <code>.tool-dropzone</code>. Five image tool pages now follow H1 → large drop zone → controls/options → preview → <code>.tool-lead</code> copy moved below.</li>
+<li><code>image-format-converter</code> target formats expanded to PNG/JPEG/WebP/AVIF + BMP/GIF/ICO/SVG; added <code>public/tools/image-format-converter/extra-formats.js</code> for local encoding; synced ten-locale copy and rules/FAQ; FAQ collect cap raised to 8; <code>lint:seo</code> passed.</li>
 </ol>
 <p>[actions]</p>
 <ul>
 <li>public/styles/site.css</li>
 <li>public/tools/image-format-converter/extra-formats.js</li>
-<li>src/pages/imageFormatConverterPage.ts 及 compress/crop/exif/optimizer</li>
+<li>src/pages/imageFormatConverterPage.ts and compress/crop/exif/optimizer</li>
 <li>src/pages/site/toolContent.ts</li>
 <li>src/site/i18n/*.ts</li>
 <li>work-tasks/image-format-converter/02-tool-info.md</li>

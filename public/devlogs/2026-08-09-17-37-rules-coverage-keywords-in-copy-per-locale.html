@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Encode two hard rules: coverage keywords land in H1/desc/FAQ/Use cases; re-run keywords per locale search habits. | Dev Logs</title>
-  <meta name="description" content="Encode two hard rules: coverage keywords land in H1/desc/FAQ/Use cases; re-run keywords per locale search habits." />
-  <meta name="robots" content="noindex" />
+  <title>Encoded two hard rules: coverage keywords land in H1/description/FAQ/Use cases, and keywords are re-run per locale search habits. | Dev Logs</title>
+  <meta name="description" content="Encoded two hard rules: coverage keywords land in H1/description/FAQ/Use cases, and keywords are re-run per locale search habits." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-09-17-37-rules-coverage-keywords-in-copy-per-locale.html" />
-  <meta property="og:title" content="Encode two hard rules: coverage keywords land in H1/desc/FAQ/Use cases; re-run keywords per locale search habits. | Dev Logs" />
-  <meta property="og:description" content="Encode two hard rules: coverage keywords land in H1/desc/FAQ/Use cases; re-run keywords per locale search habits." />
+  <meta property="og:title" content="Encoded two hard rules: coverage keywords land in H1/description/FAQ/Use cases, and keywords are re-run per locale search habits. | Dev Logs" />
+  <meta property="og:description" content="Encoded two hard rules: coverage keywords land in H1/description/FAQ/Use cases, and keywords are re-run per locale search habits." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-09-17-37-rules-coverage-keywords-in-copy-per-locale.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,22 +143,22 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Encode two hard rules: coverage keywords land in H1/desc/FAQ/Use cases; re-run keywords per locale search habits. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Encoded two hard rules: coverage keywords land in H1/description/FAQ/Use cases, and keywords are re-run per locale search habits. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-09 17:37
-Summary: Encode two hard rules: coverage keywords land in H1/desc/FAQ/Use cases; re-run keywords per locale search habits.</p>
+Summary: Encoded two hard rules: coverage keywords land in H1/description/FAQ/Use cases, and keywords are re-run per locale search habits.</p>
 <p>[question]
 在规则确保两点：1、相关关键词落入到H1，description，FAQ，USE case等文案中。2、相关关键词必须根据各个语言习惯和用户搜索习惯重新跑</p>
 <p>[try to solve]
-已在规则与配套文件中固化两条硬性要求：</p>
+Hardened both requirements in rules and companion files:</p>
 <ol>
-<li><p><strong>落入可见文案</strong>：主词 → H1（<code>tool_*_title</code>）；次词 → description / FAQ / Use cases 自然句。禁止页上「相关关键词」列表/标签云；禁止只写在 brief 不回写页面。覆盖表须标明逐词落点。</p>
+<li><p>Land in visible copy: primary term → H1 (<code>tool_*_title</code>); secondary terms → natural sentences in description / FAQ / Use cases. Ban on-page “related keywords” lists or tag clouds; ban leaving terms only in the brief without writing them back to the page. Coverage tables must show per-term landing spots.</p>
 </li>
-<li><p><strong>按语重跑</strong>：每语在 <code>03-locale-briefs</code> 写当地检索词 3–5（非 en 直译）；步 0b→3→4 对照当地搜法更新主词/次词与落点；禁止十语共用英文关键词骨架。</p>
+<li><p>Re-run per locale: each language records 3–5 local search terms in <code>03-locale-briefs</code> (not English calques); steps 0b→3→4 update primary/secondary terms and landing spots against local search habits; ban sharing one English keyword skeleton across all ten locales.</p>
 </li>
 </ol>
-<p>落地文件：<code>tool-i18n-localization.mdc</code>（专节「相关关键词落地」+ 自检/红线）、<code>tool-i18n-seo.mdc</code>、<code>work-tasks-tool-brief.mdc</code>、<code>tool-creation.mdc</code>（上线 Checklist）、<code>.cursor/skills/tool-coverage-pass/SKILL.md</code>、<code>.github/copilot-instructions.md</code>。</p>
+<p>Landed in: <code>tool-i18n-localization.mdc</code> (section “相关关键词落地” / landing related keywords, plus self-check/red lines), <code>tool-i18n-seo.mdc</code>, <code>work-tasks-tool-brief.mdc</code>, <code>tool-creation.mdc</code> (ship Checklist), <code>.cursor/skills/tool-coverage-pass/SKILL.md</code>, <code>.github/copilot-instructions.md</code>.</p>
 <p>[actions]</p>
 <ul>
 <li><code>.cursor/rules/tool-i18n-localization.mdc</code></li>

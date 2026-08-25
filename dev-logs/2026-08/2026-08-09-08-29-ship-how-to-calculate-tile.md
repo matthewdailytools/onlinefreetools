@@ -17,7 +17,7 @@ Full pipeline: briefs, gates, page+en+9 locales, inventory §9/#111 §12/#19 + T
 Return tiles count for sample and catalog count.
 
 [try to solve]
-已上线 `how-to-calculate-tile`（§12 #19 / §9 #111）。样例：房间 12 m²、瓷砖 30×30 cm、损耗 10% → **147** 片（ceil(12×1.10/0.09)）。catalog 工具数：**71**。门禁 `coverage:gate` 0b→2→4→all、`build:site`、`lint:seo`、`CROSS_TOOL_UPDATE=1` isolation 均通过；十语独立重写；inventory/TSV/README 已标已上线。
+Shipped `how-to-calculate-tile` (§12 #19 / §9 #111). Sample: room 12 m², tile 30×30 cm, waste 10% → **147** tiles (ceil(12×1.10/0.09)). Catalog tool count: **71**. Gates coverage:gate 0b→2→4→all, build:site, lint:seo, and CROSS_TOOL_UPDATE=1 isolation all passed; independent ten-locale rewrite; inventory/TSV/README marked live.
 
 [actions]
 - work-tasks/how-to-calculate-tile/00–03
@@ -26,5 +26,5 @@ Return tiles count for sample and catalog count.
 - src/site/i18n/tools/how-to-calculate-tile/{en,zh,es,ar,pt,id,fr,ja,ru,de}.ts
 - public/icons/tools/how-to-calculate-tile.svg
 - docs inventory §9/#111 §12/#19 + Omni/ToolDone TSV
-- README 中英清单
+- README en+zh list
 - npm run coverage:gate (0b/2/4/all); build:site; lint:seo; CROSS_TOOL_UPDATE=1 lint:tool-isolation

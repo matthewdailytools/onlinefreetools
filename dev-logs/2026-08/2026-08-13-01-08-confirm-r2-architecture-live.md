@@ -1,11 +1,11 @@
 Date: 2026-08-13 01:08
-Summary: Checklist to confirm Worker+R2 live: pages-build, HTML 200, identity/gunzip, vendor.
+Summary: Checklist to confirm Worker+R2 is live: pages-build, HTML 200, identity/gunzip, vendor.
 
 [question]
 已经上线，如何确认新架构生效
 
 [try to solve]
-验收清单：1) `GET /api/ops/pages-build` → `aligned:true` 且有 pagesCacheVersion（新接口，旧栈常 404）；2) `/` 与 `/tools/{slug}` 带 Accept:text/html 为 200，非工具 HTML 404；3) HTML 响应无 Worker 预置 Content-Encoding:gzip 乱码，浏览器 Accept-Encoding:gzip 时单层 gzip 可解且中文正常；4) `/vendor/*`、sitemap 200；5) 可选 dry-run/Dashboard 确认 Worker 包约数百 KiB。Agent 环境因代理无法代测生产，需本机 curl。
+Acceptance checklist: (1) `GET /api/ops/pages-build` returns `aligned:true` with a `pagesCacheVersion` (new API; old stack often 404). (2) `/` and `/tools/{slug}` with `Accept: text/html` return 200; non-tool HTML should 404. (3) HTML responses must not ship Worker-preset `Content-Encoding: gzip` that shows as mojibake; with browser `Accept-Encoding: gzip`, a single gzip layer should decompress and Chinese text should render correctly. (4) `/vendor/*` and sitemap return 200. (5) Optional: dry-run or Dashboard to confirm Worker bundle is on the order of a few hundred KiB. The agent environment cannot probe production through the proxy; verify with local curl.
 
 [actions]
-- （说明；生产探针在 agent 侧 403）
+- Explanation only; production probes returned 403 from the agent side

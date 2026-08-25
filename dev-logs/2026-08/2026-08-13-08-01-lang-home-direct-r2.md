@@ -1,11 +1,11 @@
 Date: 2026-08-13 08:01
-Summary: Advise against mapping /{lang} directly to R2; Worker-only R2 is possible but slower cold path.
+Summary: Advise against mapping /{lang} directly to R2; Worker-only R2 is possible but slower on cold path.
 
 [question]
 是否可以将https://onlinefreetools.org/{lang} 直接指向 R2
 
 [try to solve]
-不建议把公开 URL 直接挂到 R2（自定义域/公开桶）。原因：R2 key 是内部 `_pages/{lang}/index.html.gz`，与 `/{lang}/` 路径不一致；对象为 gzip，需解压后以明文+协商压缩下发；`/` 的 Accept-Language、trailing slash、301、Cache-Control 等仍要 Worker。技术上可做成「首页也只走 Cache→R2」（像工具页，已有兜底），但会失去当前 Assets 冷路径优势（工具页 miss ~300ms 级）；热路径 HIT 后差异小。推荐维持现状：`/{lang}/` 仍 Worker + Assets 优先、R2 兜底。
+Do not map the public URL straight onto R2 (custom domain / public bucket). Reasons: R2 keys are internal `_pages/{lang}/index.html.gz`, not `/{lang}/`; objects are gzip and must be gunzipped then served as identity + negotiated compression; `/` still needs Accept-Language, trailing slash, 301, Cache-Control, etc. in the Worker. Technically you could serve home only as Cache→R2 (like tools; fallback already exists), but you lose the current Assets cold-path advantage (tool miss is ~300ms class); after HIT the difference is small. Prefer status quo: `/{lang}/` stays Worker + Assets first, R2 fallback.
 
 [actions]
-- （只读架构建议）
+- Read-only architecture advice

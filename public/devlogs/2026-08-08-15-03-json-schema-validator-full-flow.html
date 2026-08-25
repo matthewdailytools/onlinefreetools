@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Shipped json-schema-validator end-to-end: briefs 00–03, Ajv page, ten-locale shards, merge/registry fixes, and rule audit. | Dev Logs</title>
   <meta name="description" content="Shipped json-schema-validator end-to-end: briefs 00–03, Ajv page, ten-locale shards, merge/registry fixes, and rule audit." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-15-03-json-schema-validator-full-flow.html" />
   <meta property="og:title" content="Shipped json-schema-validator end-to-end: briefs 00–03, Ajv page, ten-locale shards, merge/registry fixes, and rule audit. | Dev Logs" />
   <meta property="og:description" content="Shipped json-schema-validator end-to-end: briefs 00–03, Ajv page, ten-locale shards, merge/registry fixes, and rule audit." />
@@ -152,18 +152,18 @@ Summary: Shipped json-schema-validator end-to-end: briefs 00–03, Ajv page, ten
 JSON Schema 校验器：立项 + 实现 + 规则核查</p>
 <p>Implement the plan as specified, it is attached for your reference. Do NOT edit the plan file itself.</p>
 <p>[try to solve]
-已完成 <code>json-schema-validator</code> 全流程。</p>
-<p><strong>立项</strong>：<code>work-tasks/json-schema-validator/</code>（00–03；主方向 B；<code>02</code>→<code>implemented</code>；<code>03</code>→<code>i18n-done</code>；核查见 <code>notes.md</code>）。</p>
-<p><strong>实现</strong>：</p>
+Completed the full <code>json-schema-validator</code> flow.</p>
+<p><strong>Briefs</strong>: <code>work-tasks/json-schema-validator/</code> (00–03; primary track B; <code>02</code> → <code>implemented</code>; <code>03</code> → <code>i18n-done</code>; audit notes in <code>notes.md</code>).</p>
+<p><strong>Implementation</strong>:</p>
 <ul>
-<li>页面 <code>src/pages/jsonSchemaValidatorPage.ts</code>：双栏 Schema/Instance，Ajv <strong>8.17.1</strong>（jsDelivr ESM），进页失败样例自动校验，JSON Pointer 错误列表</li>
-<li>分片 catalog + 十语 <code>i18n/tools/json-schema-validator/</code></li>
-<li>图标、README 中英条目</li>
-<li>Related：本工具 → yaml-json / csv-json；反向追加进 yaml-json、csv-json</li>
-<li><code>merge:tools</code> 注册 33 工具</li>
+<li>Page <code>src/pages/jsonSchemaValidatorPage.ts</code>: dual-pane Schema/Instance, Ajv <strong>8.17.1</strong> (jsDelivr ESM), auto-validate on enter with a failing sample, JSON Pointer error list</li>
+<li>Catalog shard + ten-locale <code>i18n/tools/json-schema-validator/</code></li>
+<li>Icon and README EN/ZH entries</li>
+<li>Related: this tool → yaml-json / csv-json; reverse links into yaml-json and csv-json</li>
+<li><code>merge:tools</code> registered 33 tools</li>
 </ul>
-<p><strong>结构层修复（为可启动）</strong>：catalog/<code>lib.mjs</code> 修正 <code>marginalRevenuePage</code>、<code>indexNowPage</code>/<code>renderIndexNowPage</code> 路径与导出名。</p>
-<p><strong>验收</strong>：<code>lint:seo</code> OK；<code>CROSS_TOOL_UPDATE=1</code> isolation OK；<code>/tools/json-schema-validator</code> 与 <code>/zh/...</code> 200。</p>
+<p><strong>Structure fixes (for bootability)</strong>: catalog/<code>lib.mjs</code> corrected <code>marginalRevenuePage</code>, <code>indexNowPage</code>/<code>renderIndexNowPage</code> paths and export names.</p>
+<p><strong>Checks</strong>: <code>lint:seo</code> OK; <code>CROSS_TOOL_UPDATE=1</code> isolation OK; <code>/tools/json-schema-validator</code> and <code>/zh/...</code> returned 200.</p>
 <p>[actions]</p>
 <ul>
 <li>Added work-tasks/json-schema-validator/*, src/pages/jsonSchemaValidatorPage.ts, tool-catalog.d/json-schema-validator.json, i18n/tools/json-schema-validator/{10 langs}, public/icons/tools/json-schema-validator.svg</li>

@@ -25,21 +25,21 @@ Verify pdf-lib encrypt API works in the page script (PDFDocument.encrypt before 
 No plan/commit. 中文 brief. Chinese comments.
 
 [try to solve]
-已完成 `protect-pdf` 全量实现并通过全部门禁。
+Shipped full `protect-pdf` with all gates green.
 
-**交付要点**
-- 新增 catalog 分片、`protectPdfPage.ts`、图标、十语 i18n；`related` 暂为 `merge-pdf` + `organize-pdf`（unlock-pdf 尚未上线）。
-- UI：PDF 上传 + 密码/确认密码（须一致、拒绝空密码）；Protect / Download / Sample / Clear；~25MB 软警告。
-- `loadSample()`：进页自动生成 1 页样例，用密码 `sample` 加密，启用 `protected.pdf` 下载，状态行显示样例密码。
-- FAQ：强调用户密码加密、非军用级、后续用 unlock 工具+已知密码打开（非破解）；隐私=device+不上服务器。
+**Deliverables**
+- New catalog shard, `protectPdfPage.ts`, icon, ten-locale i18n; `related` temporarily `merge-pdf` + `organize-pdf` (`unlock-pdf` not shipped yet).
+- UI: PDF upload + password / confirm (must match; empty rejected); Protect / Download / Sample / Clear; ~25 MB soft warn.
+- `loadSample()`: on enter, builds a 1-page sample encrypted with password `sample`, enables `protected.pdf` download, shows sample password in status.
+- FAQ: user-password encryption, not military-grade; later unlock with known password (not cracking); privacy = device, no server upload.
 
-**技术说明**
-- 经验证，官方 `pdf-lib@1.17.1` **无** `PDFDocument.encrypt`（GitHub #1680）。页面改用 CDN `pdf-lib-with-encrypt@1.2.1`，保留相同 API：`doc.encrypt({ userPassword, ownerPassword })` → `save()`。
+**Tech note**
+- Stock `pdf-lib@1.17.1` has **no** `PDFDocument.encrypt` (GitHub #1680). Page uses CDN `pdf-lib-with-encrypt@1.2.1` with the same API: `doc.encrypt({ userPassword, ownerPassword })` → `save()`.
 
-**文档**
-- 更新 `02`→implemented、`03` 1b/2b 与 i18n-done；清单 #59→已上线；README 中英条目。
+**Docs**
+- `02` → implemented; `03` 1b/2b and i18n-done; inventory #59 → shipped; README EN/ZH entries.
 
-**门禁**
+**Gates**
 - `coverage:gate --phase=all` ✓
 - `build:site` ✓
 - `lint:seo` ✓
@@ -48,8 +48,8 @@ No plan/commit. 中文 brief. Chinese comments.
 [actions]
 - src/site/tool-catalog.d/protect-pdf.json
 - src/pages/protectPdfPage.ts
-- src/site/i18n/tools/protect-pdf/*.ts（10 语）
+- src/site/i18n/tools/protect-pdf/*.ts (10 locales)
 - public/icons/tools/protect-pdf.svg
-- work-tasks/protect-pdf/02-tool-info.md、03-locale-briefs.md
+- work-tasks/protect-pdf/02-tool-info.md, 03-locale-briefs.md
 - docs/2026-08-08-tool-inventory-table.md
 - README.md

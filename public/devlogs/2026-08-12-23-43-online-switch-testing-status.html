@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Clarify online switch testing is not supported end-to-end; only design stubs (PAGES_R2_PREFIX) and local/preview bucket. | Dev Logs</title>
   <meta name="description" content="Clarify online switch testing is not supported end-to-end; only design stubs (PAGES_R2_PREFIX) and local/preview bucket." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-12-23-43-online-switch-testing-status.html" />
   <meta property="og:title" content="Clarify online switch testing is not supported end-to-end; only design stubs (PAGES_R2_PREFIX) and local/preview bucket. | Dev Logs" />
   <meta property="og:description" content="Clarify online switch testing is not supported end-to-end; only design stubs (PAGES_R2_PREFIX) and local/preview bucket." />
@@ -151,10 +151,10 @@ Summary: Clarify online switch testing is not supported end-to-end; only design 
 <p>[question]
 目前是否支持在线切换测试</p>
 <p>[try to solve]
-不支持「线上一点切换、多版本并行测」的完整能力。现状：生产单桶单前缀；<code>PAGES_R2_PREFIX</code> 仅 Worker 读取、upload/verify/wrangler vars 未接好；无 staging env、无 Ops UI 切流。可用的是本地 wrangler / preview 桶、改 <code>PAGES_CACHE_VERSION</code> 后 redeploy、或整站 upload 覆盖。若要蓝绿切换需补 upload 前缀、Dashboard 改 var、verify 对齐。</p>
+Full “one-click online switch / multi-version parallel testing” is not supported. Today: one production bucket and one prefix; <code>PAGES_R2_PREFIX</code> is read by the Worker only—upload/verify/wrangler vars are not wired; no staging env and no Ops UI traffic switch. What works: local wrangler / preview bucket, bump <code>PAGES_CACHE_VERSION</code> then redeploy, or whole-site upload overwrite. Blue/green would need upload prefix support, Dashboard var changes, and verify alignment.</p>
 <p>[actions]</p>
 <ul>
-<li>（说明，无代码改动）</li>
+<li>Explanation only; no code changes</li>
 </ul>
 </article>
       </section>

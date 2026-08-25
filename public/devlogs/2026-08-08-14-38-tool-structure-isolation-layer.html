@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Adopted structural tool isolation: catalog/i18n shards, merge pipeline, generated registry, isolation lint, and tool-creation rules. | Dev Logs</title>
   <meta name="description" content="Adopted structural tool isolation: catalog/i18n shards, merge pipeline, generated registry, isolation lint, and tool-creation rules." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-14-38-tool-structure-isolation-layer.html" />
   <meta property="og:title" content="Adopted structural tool isolation: catalog/i18n shards, merge pipeline, generated registry, isolation lint, and tool-creation rules. | Dev Logs" />
   <meta property="og:description" content="Adopted structural tool isolation: catalog/i18n shards, merge pipeline, generated registry, isolation lint, and tool-creation rules." />
@@ -151,38 +151,38 @@ Summary: Adopted structural tool isolation: catalog/i18n shards, merge pipeline,
 <p>[question]
 采用结构层</p>
 <p>[try to solve]
-已落地「结构层」隔离：每个工具的可编辑真相源按 slug 分片，合并产物由脚本生成，新工具不再手改 <code>src/index.ts</code> 或其他工具文件。</p>
-<p><strong>真相源（可编辑）</strong></p>
+Landed “structural layer” isolation: each tool’s editable source of truth is sharded by slug; merge outputs are script-generated; new tools no longer hand-edit <code>src/index.ts</code> or other tools’ files.</p>
+<p><strong>Editable source of truth</strong></p>
 <ul>
-<li><code>src/site/tool-catalog.d/{slug}.json</code>（含 <code>page.module</code> / <code>page.export</code> / <code>page.style</code>）</li>
+<li><code>src/site/tool-catalog.d/{slug}.json</code> (includes <code>page.module</code> / <code>page.export</code> / <code>page.style</code>)</li>
 <li><code>src/site/i18n/tools/{slug}/{lang}.ts</code></li>
-<li><code>src/site/i18n/core/{lang}.ts</code>（站点共用，非单工具勿动）</li>
+<li><code>src/site/i18n/core/{lang}.ts</code> (site-wide; do not touch for single-tool work)</li>
 <li><code>src/pages/{camel}Page.ts</code></li>
 </ul>
-<p><strong>生成勿手改</strong></p>
+<p><strong>Generated — do not hand-edit</strong></p>
 <ul>
 <li><code>src/site/tool-catalog.json</code></li>
 <li><code>src/site/i18n/{lang}.ts</code></li>
 <li><code>src/site/toolPageRegistry.generated.ts</code></li>
 <li><code>scripts/site/i18n-tools.generated.mjs</code></li>
 </ul>
-<p><strong>脚本与 npm</strong></p>
+<p><strong>Scripts and npm</strong></p>
 <ul>
-<li><code>npm run split:tools</code> — 一次性从旧单体拆分（日常勿在未 merge 时重跑）</li>
-<li><code>npm run merge:tools</code> — 合并分片；已挂入 <code>build:site</code>；<code>--no-build</code> 的 <code>start:dev</code> 也会先 merge</li>
-<li><code>TOOL_SLUG={slug} npm run lint:tool-isolation</code> — 路径 allowlist；跨工具改动需 <code>CROSS_TOOL_UPDATE=1</code></li>
+<li><code>npm run split:tools</code> — one-time split from old monolith (do not re-run daily without a prior merge)</li>
+<li><code>npm run merge:tools</code> — merge shards; hooked into <code>build:site</code>; <code>--no-build</code> <code>start:dev</code> also merges first</li>
+<li><code>TOOL_SLUG={slug} npm run lint:tool-isolation</code> — path allowlist; cross-tool edits need <code>CROSS_TOOL_UPDATE=1</code></li>
 </ul>
-<p><strong>注册</strong></p>
+<p><strong>Registration</strong></p>
 <ul>
-<li><code>src/index.ts</code> 用 <code>TOOL_PAGE_RENDERERS</code> 循环 <code>registerToolPage</code>，共 32 个工具。</li>
+<li><code>src/index.ts</code> loops <code>TOOL_PAGE_RENDERERS</code> into <code>registerToolPage</code> (32 tools).</li>
 </ul>
-<p><strong>规则</strong></p>
+<p><strong>Rules</strong></p>
 <ul>
-<li><code>.cursor/rules/tool-creation.mdc</code> 已改为分片工作流与上线 checklist。</li>
+<li><code>.cursor/rules/tool-creation.mdc</code> updated to the shard workflow and ship checklist.</li>
 </ul>
-<p><strong>验证</strong></p>
+<p><strong>Verification</strong></p>
 <ul>
-<li><code>lint:seo</code> OK；本地 <code>/zh/tools/flip-image</code>、<code>/tools/image-exif</code>、<code>/zh/tools/images-to-gif</code>、<code>/zh/tools/image-compress</code> 均 200。</li>
+<li><code>lint:seo</code> OK; local <code>/zh/tools/flip-image</code>, <code>/tools/image-exif</code>, <code>/zh/tools/images-to-gif</code>, <code>/zh/tools/image-compress</code> all 200.</li>
 </ul>
 <p>[actions]</p>
 <ul>

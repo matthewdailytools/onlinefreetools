@@ -8,7 +8,7 @@ Summary: Audited 10 S1/S2 SEO tools against Google SEO policy, project rules, an
 Scope (S1+S2): meta-serp-preview, schema-jsonld-generator, robots-txt-generator, sitemap-xml-generator, website-headers (enhance), on-page-seo-checker, open-graph-preview, utm-builder, hreflang-generator, meta-tag-generator.
 
 Automated gates:
-- coverage:gate --phase=all: 9/10 OK; website-headers FAIL (missing 02「清单前检索覆盖」, 03 rows 0b/1b/2b, 未勾选「检索覆盖已优化」). website-headers is legacy enhance, not a new product.
+- coverage:gate --phase=all: 9/10 OK; website-headers FAIL (missing 02 “pre-checklist search coverage”, 03 rows 0b/1b/2b, and the “search coverage optimized” checkbox). website-headers is legacy enhance, not a new product.
 - lint:seo: title/coverage OK for new tools (no param-enum FAIL); link related≥2 OK; exit 2 from SEO-WARN on UI field keys named *_description (tool_og_field_og_description, tool_schema_article_description, tool_schema_org_description) — false positives vs real meta descriptions.
 - sitemap.xml includes all 9 new tool URLs (120 locs each across locales).
 - Content checks: all 10 locales FAQ≥3, main desc≥120, related≥2, ymyl=false, IG rough ≥5–6/9; titles pass isParamEnumTitle; localProcessing=false for URL-fetch tools (on-page, open-graph, website-headers) and true for pure client tools.

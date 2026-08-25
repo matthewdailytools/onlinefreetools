@@ -5,11 +5,12 @@ Summary: Without R2 upload, home/info pages still work via Assets; all /tools/* 
 如果现在push到git，然后cloudflare 拉取deploy后，如果没有R2，是否访问就会出错？
 
 [try to solve]
-分两层：
-1) 若 R2 桶未创建：deploy 常会因 binding 失败，整站上不了。
-2) 若桶在但为空 / 未 upload:r2：Worker 会 R2 miss → ASSETS 回退。首页/about/taxonomy 等仍在 git 的 `public/_pages`（约 270 页）→ 可访问；工具页 `public/_pages/*/tools/` 已 gitignore、不进 Assets → `/tools/*` 会 404。
+Two layers:
 
-结论：不能只 push 不灌 R2 就当工具站可用；上线须 `upload:r2`（或改 CI 构建并上传）。
+1. If the R2 bucket was never created: deploy often fails on the binding and the whole site never comes up.
+2. If the bucket exists but is empty / never got `upload:r2`: Worker R2 miss → ASSETS fallback. Home/about/taxonomy pages still live in git under `public/_pages` (~270 pages) → reachable. Tool pages under `public/_pages/*/tools/` are gitignored and never enter Assets → `/tools/*` returns 404.
+
+Conclusion: push alone without seeding R2 does not make the tool site usable. Production needs `upload:r2` (or CI that builds and uploads).
 
 [actions]
-- （说明，无代码改动）
+- Explanation only; no code changes

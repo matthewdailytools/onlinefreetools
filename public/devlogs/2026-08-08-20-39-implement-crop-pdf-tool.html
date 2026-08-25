@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Implemented full crop-pdf tool (#61) with pdf-lib margin trimming, 10-locale i18n, and all gates green. | Dev Logs</title>
   <meta name="description" content="Implemented full crop-pdf tool (#61) with pdf-lib margin trimming, 10-locale i18n, and all gates green." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-20-39-implement-crop-pdf-tool.html" />
   <meta property="og:title" content="Implemented full crop-pdf tool (#61) with pdf-lib margin trimming, 10-locale i18n, and all gates green. | Dev Logs" />
   <meta property="og:description" content="Implemented full crop-pdf tool (#61) with pdf-lib margin trimming, 10-locale i18n, and all gates green." />
@@ -166,11 +166,11 @@ Implement full <code>crop-pdf</code> in /Users/xuli/vscodeai/onlinefreetools.</p
 <p>npm run merge:tools &amp;&amp; npm run coverage:gate -- --slug=crop-pdf --phase=all &amp;&amp; npm run build:site &amp;&amp; npm run lint:seo &amp;&amp; CROSS_TOOL_UPDATE=1 TOOL_SLUG=crop-pdf npm run lint:tool-isolation</p>
 <p>No plan/commit. 中文 brief. Chinese comments.</p>
 <p>[try to solve]
-已完成 <code>crop-pdf</code>（清单 #61）全量实现，所有门禁通过。</p>
-<p><strong>页面</strong>：<code>src/pages/cropPdfPage.ts</code> — <a href="mailto:pdf-lib@1.17.1">pdf-lib@1.17.1</a> CDN；上/右/下/左 +「四边相同」同步；每页 <code>setCropBox</code> + <code>setMediaBox</code>；裁后宽/高 ≤10pt 拒绝；进页 <code>loadSample()</code> 单页 420×300、四边 36pt → <code>cropped.pdf</code> + 尺寸统计；25MB 警告、加密/损坏错误。</p>
-<p><strong>工程</strong>：catalog 分片、SVG 图标、10 语 i18n 独立重写；related <code>organize-pdf</code> / <code>rotate-pdf</code>；FAQ 明确非像素拖拽编辑器。</p>
-<p><strong>文档</strong>：<code>02</code>→implemented、<code>03</code>→i18n-done（1b/2b 行）；inventory #61 已上线；README 中英各一条。</p>
-<p><strong>门禁</strong>：<code>merge:tools</code>、<code>coverage:gate --phase=all</code>、<code>build:site</code>、<code>lint:seo</code>、<code>lint:tool-isolation</code> 全部 OK。</p>
+Shipped full <code>crop-pdf</code> (inventory #61); all gates passed.</p>
+<p><strong>Page</strong>: <code>src/pages/cropPdfPage.ts</code> — <a href="mailto:pdf-lib@1.17.1">pdf-lib@1.17.1</a> CDN; top/right/bottom/left plus “same on all sides” sync; per page <code>setCropBox</code> + <code>setMediaBox</code>; reject cropped width/height ≤10pt; on-enter <code>loadSample()</code> one page 420×300, 36pt all sides → <code>cropped.pdf</code> + size stats; 25 MB warn; encrypted/corrupt errors.</p>
+<p><strong>Engineering</strong>: catalog shard, SVG icon, 10 independently rewritten locales; related <code>organize-pdf</code> / <code>rotate-pdf</code>; FAQ states this is not a pixel drag editor.</p>
+<p><strong>Docs</strong>: <code>02</code> → implemented; <code>03</code> → i18n-done (1b/2b); inventory #61 shipped; README EN/ZH lines.</p>
+<p><strong>Gates</strong>: <code>merge:tools</code>, <code>coverage:gate --phase=all</code>, <code>build:site</code>, <code>lint:seo</code>, <code>lint:tool-isolation</code> all OK.</p>
 <p>[actions]</p>
 <ul>
 <li>src/site/tool-catalog.d/crop-pdf.json</li>

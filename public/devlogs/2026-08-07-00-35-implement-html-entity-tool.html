@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Implemented the html-entity tool page with Tier 0 encode/decode, ten-language i18n, and catalog registration. | Dev Logs</title>
   <meta name="description" content="Implemented the html-entity tool page with Tier 0 encode/decode, ten-language i18n, and catalog registration." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-07-00-35-implement-html-entity-tool.html" />
   <meta property="og:title" content="Implemented the html-entity tool page with Tier 0 encode/decode, ten-language i18n, and catalog registration. | Dev Logs" />
   <meta property="og:description" content="Implemented the html-entity tool page with Tier 0 encode/decode, ten-language i18n, and catalog registration." />
@@ -151,21 +151,21 @@ Summary: Implemented the html-entity tool page with Tier 0 encode/decode, ten-la
 <p>[question]
 实现 html-entity</p>
 <p>[try to solve]
-已实现 HTML 实体编解码工具，路径 <code>/tools/html-entity</code>（十语）。</p>
-<p><strong>功能</strong></p>
+Shipped the HTML entity encode/decode tool at <code>/tools/html-entity</code> (ten locales).</p>
+<p><strong>Features</strong></p>
 <ul>
-<li>Encode / Decode 同页 Tab</li>
-<li>编码：范围（最小 / 仅非 ASCII / 全部）+ 输出形式（命名 / 十进制 / 十六进制）</li>
-<li>解码：Strict / Lenient；Once / Until stable；纯文本预览（textContent）</li>
-<li>Tier 0 零依赖原生实现；Copy / Sample / Clear；输入 debounce 即时转换</li>
+<li>Encode / Decode tabs on one page</li>
+<li>Encode: scope (minimal / non-ASCII only / all) + output form (named / decimal / hex)</li>
+<li>Decode: Strict / Lenient; Once / Until stable; plain-text preview (<code>textContent</code>)</li>
+<li>Tier 0 zero-dependency native implementation; Copy / Sample / Clear; debounced live convert on input</li>
 </ul>
-<p><strong>工程</strong></p>
+<p><strong>Engineering</strong></p>
 <ul>
 <li><code>src/pages/htmlEntityPage.ts</code></li>
-<li><code>src/site/tool-catalog.json</code> + <code>src/index.ts</code> 注册</li>
-<li>十语 <code>src/site/i18n/*.ts</code> + 首页 <code>scripts/site/i18n.mjs</code></li>
-<li><code>README.md</code> 工具清单</li>
-<li><code>npm run build:site</code>（sitemap 150 URL）与 <code>npm run lint:seo</code> 通过</li>
+<li>Registered in <code>src/site/tool-catalog.json</code> + <code>src/index.ts</code></li>
+<li>Ten-locale <code>src/site/i18n/*.ts</code> + home <code>scripts/site/i18n.mjs</code></li>
+<li><code>README.md</code> tool list</li>
+<li><code>npm run build:site</code> (sitemap 150 URLs) and <code>npm run lint:seo</code> passed</li>
 </ul>
 <p>[actions]</p>
 <ul>

@@ -20,10 +20,10 @@ Must end with: SEO validator: OK (no WARNINGS detected for descriptions). COVER-
 Return count of description keys fixed and final lint:seo summary line.
 
 [try to solve]
-扩写了 **126** 个失败的 `tool_*_description`（shards，非仅合并文件），覆盖 acceleration、age(ar)、circle、date-difference、density、heart-rate、macros、mean、median、ohms-law、one-rep-max、pace、permutation-combination、quadratic-equation、triangle-area、velocity、volume 等语种；英文补上 calculate/example/process/formula，他语独立本地化并保留 YMYL 免责。随后 `merge:tools` + `build:site` + `lint:seo`。
+Expanded **126** failing `tool_*_description` keys in shards (not only merged files), covering acceleration, age (ar), circle, date-difference, density, heart-rate, macros, mean, median, ohms-law, one-rep-max, pace, permutation-combination, quadratic-equation, triangle-area, velocity, volume, and related locales. English gained calculate/example/process/formula cues; other locales kept independent copy and YMYL disclaimers. Then `merge:tools` + `build:site` + `lint:seo`.
 
-最终：`SEO validator: OK — descriptions, FAQ pairs, and YMYL disclaimers look good`（描述过短/缺关键词 WARN 为 0；遗留 COVER-WARN title 未动）。
+Final: `SEO validator: OK — descriptions, FAQ pairs, and YMYL disclaimers look good` (zero short/missing-keyword description WARNs; legacy COVER-WARN titles left unchanged).
 
 [actions]
-- 更新 `src/site/i18n/tools/how-to-calculate-*/{en,es,fr,de,ru,pt,id,ar}.ts` 中相关 description
+- Updated related descriptions in `src/site/i18n/tools/how-to-calculate-*/{en,es,fr,de,ru,pt,id,ar}.ts`
 - `npm run merge:tools && npm run build:site && npm run lint:seo`

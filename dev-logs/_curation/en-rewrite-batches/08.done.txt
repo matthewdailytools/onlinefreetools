@@ -1,0 +1,7 @@
+batch: 08
+completed: 20
+rewritten: 19
+skipped_already_english: 1
+issues:
+- Skipped (already English Summary/[try to solve]): 2026-08-08-11-50-three-image-tools-brief-and-implement.md
+- Preserved factual JP query string in 10-25; preserved zh product title/UI strings in 10-32 as cited copy.

@@ -5,10 +5,10 @@ Summary: Exclude about/privacy/terms/contact from default sitemap generation.
 sitemap 生成，默认剔除: 关于，隐私，联系，条款
 
 [try to solve]
-生产全量 sitemap 默认不再包含关于/隐私/条款/联系（4×10 语 = 40 URL）。需纳入时显式 `--info about,...` 或操作页勾选。已改 `scripts/site/sitemap.mjs`、CLI、sitemap-ui、ops/README、SEO_PUBLISH_CHECKLIST；`npm run sitemap` → 1360 URLs，零信息页 loc。
+Production full sitemap no longer includes about/privacy/terms/contact by default (4 × 10 langs = 40 URLs). Include them only via explicit `--info about,...` or ops-UI checkboxes. Updated `scripts/site/sitemap.mjs`, CLI, sitemap-ui, ops/README, SEO_PUBLISH_CHECKLIST; `npm run sitemap` → 1360 URLs with zero info-page locs.
 
 [actions]
-- scripts/site/sitemap.mjs：infoPages 默认 []
-- ops/seo/generate-sitemap.mjs、sitemap-ui.mjs、sitemap-ui.html
-- ops/README.md、docs/SEO_PUBLISH_CHECKLIST.md
-- npm run sitemap 刷新 public/sitemap.xml
+- scripts/site/sitemap.mjs: infoPages default []
+- ops/seo/generate-sitemap.mjs, sitemap-ui.mjs, sitemap-ui.html
+- ops/README.md, docs/SEO_PUBLISH_CHECKLIST.md
+- npm run sitemap refreshed public/sitemap.xml

@@ -1,16 +1,16 @@
-Date: 2026-08-09 20:57
-Summary: 为 schema-jsonld-generator 输出区新增「下载」按钮（schema.jsonld 下载），10 语新增 tool_schema_download 键。
+Date: 2026-08-09 20:58
+Summary: Added a Download button to schema-jsonld-generator output (schema.jsonld) with tool_schema_download across 10 locales.
 
 [question]
 http://localhost:8788/zh/tools/schema-jsonld-generator 缺少下载按钮
 
 [try to solve]
-与其他生成器（sitemap/robots）对齐，输出区新增「下载」按钮：Blob 生成 schema.jsonld（application/ld+json），支持任意 schema 类型输出（含 script 包裹形式）。复制按钮保留。新增 10 语键 tool_schema_download（zh「下载」/ en Download / es Descargar / ja ダウンロード / ar تنزيل / pt Baixar / id Unduh / fr Télécharger / ru Скачать / de Herunterladen）。
+Aligned with other generators (sitemap/robots): the output area gets a Download button. Blob writes `schema.jsonld` (`application/ld+json`) for any schema type output (including script-wrapped form). Copy button kept. Added 10-locale key `tool_schema_download` (en Download plus native labels in zh/es/ja/ar/pt/id/fr/ru/de).
 
-验证：10 语键集合一致；工具脚本语法 OK；DOM mock 验证进页 FAQ 样例渲染 + 下载触发 schema.jsonld；模板转义扫描 0 隐患；119 工具页脚本全过；build:site / lint:seo 全绿。
+Verification: 10-locale keysets match; tool script syntax OK; DOM mock — FAQ sample on load + download → schema.jsonld; template-escape scan clean; 119 tool-page scripts pass; build:site / lint:seo green.
 
 [actions]
-- 修改 src/pages/schemaJsonldGeneratorPage.ts（输出区下载按钮 + JS）
-- 修改 src/site/i18n/tools/schema-jsonld-generator/{en,zh,es,ja,ar,pt,id,fr,ru,de}.ts（新增 tool_schema_download）
-- 修改 work-tasks/schema-jsonld-generator/03-locale-briefs.md（追加交互增强轮次）
-- 命令：npm run merge:tools、npm run build:site、npm run lint:seo
+- src/pages/schemaJsonldGeneratorPage.ts (output download button + JS)
+- src/site/i18n/tools/schema-jsonld-generator/{en,zh,es,ja,ar,pt,id,fr,ru,de}.ts (tool_schema_download)
+- work-tasks/schema-jsonld-generator/03-locale-briefs.md (interaction-enhance round)
+- Commands: npm run merge:tools, npm run build:site, npm run lint:seo

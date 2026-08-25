@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Added design category and shipped wcag-contrast-checker plus brand-color-token-pack. | Dev Logs</title>
   <meta name="description" content="Added design category and shipped wcag-contrast-checker plus brand-color-token-pack." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-16-14-design-category-wcag-brand-tokens.html" />
   <meta property="og:title" content="Added design category and shipped wcag-contrast-checker plus brand-color-token-pack. | Dev Logs" />
   <meta property="og:description" content="Added design category and shipped wcag-contrast-checker plus brand-color-token-pack." />
@@ -151,12 +151,12 @@ Summary: Added design category and shipped wcag-contrast-checker plus brand-colo
 <p>[question]
 新建设计类，立项工具:wcag-contrast-checker,brand-color-token-pack；然后实现</p>
 <p>[try to solve]
-已新增站内 <code>design</code> 分类（顺序 image → design → developer → calculator；锚点 <code>#cat-design</code>；十语 <code>tool_category_design</code> / <code>home_cat_design*</code>；JSON-LD <code>DesignApplication</code>），并完成两个 P0 设计师工具的立项（<code>work-tasks/*/00–03</code>，含清单前检索覆盖）与实现。</p>
+Added an on-site <code>design</code> category (order: image → design → developer → calculator; anchor <code>#cat-design</code>; ten-locale <code>tool_category_design</code> / <code>home_cat_design*</code>; JSON-LD <code>DesignApplication</code>), and completed briefs (<code>work-tasks/*/00–03</code>, including pre-checklist search coverage) plus implementation for two P0 designer tools.</p>
 <ul>
-<li><code>wcag-contrast-checker</code>：前景/背景取色 → WCAG 相对亮度与对比度比率、AA/AAA（普通/大字）徽章、建议配对；进页样例 <code>#767676</code> / <code>#ffffff</code>；Related → brand-color-token-pack、color-from-image。</li>
-<li><code>brand-color-token-pack</code>：一主色 → HEX/RGB/HSL/OKLCH、50–950 色阶、黑白文字对比、Copy CSS/JSON；进页样例 <code>#2563eb</code>；Related → wcag-contrast-checker、color-from-image。</li>
-<li><code>color-from-image</code> related 已互链至上述两工具（显式跨工具改动）。</li>
-<li>十语 i18n 分片、<code>merge:tools</code>、<code>lint:seo</code>、首页 <code>build:site</code>、本地 200 冒烟通过；README 与库存表状态已更新。本地路径：<code>/tools/wcag-contrast-checker</code>、<code>/tools/brand-color-token-pack</code>。</li>
+<li><code>wcag-contrast-checker</code>: foreground/background pickers → WCAG relative luminance and contrast ratio, AA/AAA badges (normal/large text), suggested pairs; entry sample <code>#767676</code> / <code>#ffffff</code>; Related → brand-color-token-pack, color-from-image.</li>
+<li><code>brand-color-token-pack</code>: one primary → HEX/RGB/HSL/OKLCH, 50–950 scale, black/white text contrast, Copy CSS/JSON; entry sample <code>#2563eb</code>; Related → wcag-contrast-checker, color-from-image.</li>
+<li><code>color-from-image</code> related links updated to both tools (explicit cross-tool change).</li>
+<li>Ten-locale i18n shards, <code>merge:tools</code>, <code>lint:seo</code>, homepage <code>build:site</code>, and local 200 smoke checks passed; README and inventory table updated. Local paths: <code>/tools/wcag-contrast-checker</code>, <code>/tools/brand-color-token-pack</code>.</li>
 </ul>
 <p>[actions]</p>
 <ul>

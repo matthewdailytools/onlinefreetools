@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Load R2 S3 credentials from repo-root .env config file (.env.example template). | Dev Logs</title>
-  <meta name="description" content="Load R2 S3 credentials from repo-root .env config file (.env.example template)." />
-  <meta name="robots" content="noindex" />
+  <title>Load R2 S3 credentials from a repo-root .env file (.env.example as template). | Dev Logs</title>
+  <meta name="description" content="Load R2 S3 credentials from a repo-root .env file (.env.example as template)." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-13-08-27-r2-creds-in-dotenv.html" />
-  <meta property="og:title" content="Load R2 S3 credentials from repo-root .env config file (.env.example template). | Dev Logs" />
-  <meta property="og:description" content="Load R2 S3 credentials from repo-root .env config file (.env.example template)." />
+  <meta property="og:title" content="Load R2 S3 credentials from a repo-root .env file (.env.example as template). | Dev Logs" />
+  <meta property="og:description" content="Load R2 S3 credentials from a repo-root .env file (.env.example as template)." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-13-08-27-r2-creds-in-dotenv.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,20 +143,20 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Load R2 S3 credentials from repo-root .env config file (.env.example template). | Dev Logs</h1>
+          <h1 class="h4 mb-0">Load R2 S3 credentials from a repo-root .env file (.env.example as template). | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-13 08:27
-Summary: Load R2 S3 credentials from repo-root .env config file (.env.example template).</p>
+Summary: Load R2 S3 credentials from a repo-root .env file (.env.example as template).</p>
 <p>[question]
 环境变量的参数写在配置文件里面</p>
 <p>[try to solve]
-R2 S3 凭据改为写入仓库根配置文件，脚本自动加载：</p>
+R2 S3 credentials now live in a repo-root config file and are loaded automatically:</p>
 <ol>
-<li>模板 <code>.env.example</code>（可提交）</li>
-<li>本机 <code>cp .env.example .env</code> 填写 <code>R2_ACCOUNT_ID</code> / <code>R2_ACCESS_KEY_ID</code> / <code>R2_SECRET_ACCESS_KEY</code>（<code>.env*</code> 已 gitignore）</li>
-<li><code>scripts/lib/load-dotenv.mjs</code> 加载 <code>.env</code>、<code>.env.local</code>（不覆盖已 export 的变量）</li>
-<li><code>upload:r2</code> / <code>r2-s3-client</code> 启动时自动读入；文档 §3.1 已改为推荐写 <code>.env</code></li>
+<li>Commitable template <code>.env.example</code></li>
+<li>Locally <code>cp .env.example .env</code> and fill <code>R2_ACCOUNT_ID</code> / <code>R2_ACCESS_KEY_ID</code> / <code>R2_SECRET_ACCESS_KEY</code> (<code>.env*</code> is gitignored)</li>
+<li><code>scripts/lib/load-dotenv.mjs</code> loads <code>.env</code> and <code>.env.local</code> (does not override already-exported vars)</li>
+<li><code>upload:r2</code> / <code>r2-s3-client</code> read them at startup; ops §3.1 now recommends writing <code>.env</code></li>
 </ol>
 <p>[actions]</p>
 <ul>

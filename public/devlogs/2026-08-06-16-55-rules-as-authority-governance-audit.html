@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Governance audit: propose .cursor/rules as authority; list conflicts for manual confirm before edits. | Dev Logs</title>
-  <meta name="description" content="Governance audit: propose .cursor/rules as authority; list conflicts for manual confirm before edits." />
-  <meta name="robots" content="noindex" />
+  <title>Proposed `.cursor/rules` as governance authority; listed conflicts for manual confirm before any edits. | Dev Logs</title>
+  <meta name="description" content="Proposed `.cursor/rules` as governance authority; listed conflicts for manual confirm before any edits." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-06-16-55-rules-as-authority-governance-audit.html" />
-  <meta property="og:title" content="Governance audit: propose .cursor/rules as authority; list conflicts for manual confirm before edits. | Dev Logs" />
-  <meta property="og:description" content="Governance audit: propose .cursor/rules as authority; list conflicts for manual confirm before edits." />
+  <meta property="og:title" content="Proposed `.cursor/rules` as governance authority; listed conflicts for manual confirm before any edits. | Dev Logs" />
+  <meta property="og:description" content="Proposed `.cursor/rules` as governance authority; listed conflicts for manual confirm before any edits." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-06-16-55-rules-as-authority-governance-audit.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,18 +143,19 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Governance audit: propose .cursor/rules as authority; list conflicts for manual confirm before edits. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Proposed `.cursor/rules` as governance authority; listed conflicts for manual confirm before any edits. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-06 16:55
-Summary: Governance audit: propose .cursor/rules as authority; list conflicts for manual confirm before edits.</p>
+Summary: Proposed <code>.cursor/rules</code> as governance authority; listed conflicts for manual confirm before any edits.</p>
 <p>[question]
 以.cursor/rules为核心，所有策略需要对齐rules，如果有冲突，需要重新分析给出判断，手动确认后再修改，所有策略需要同步写入rules</p>
 <p>[try to solve]
-提出治理模型：Agent/冲突裁决以 <code>.cursor/rules</code> 为准，docs 为展开说明且须对齐 rules；代码实现冲突仍以运行代码为准。列出优先冲突（project-core 文档优先于 rules、策略 §3.1 维7 过时、description 80 vs ≥120、策略未入 rules 的链接/节奏/工具方向等）及建议裁决，<strong>等用户确认后再改文件</strong>。未擅自修改规则或策略正文。</p>
+Proposed governance model: Agent and conflict decisions treat <code>.cursor/rules</code> as the executable source of truth; docs expand and must align with rules; runtime/code conflicts still prefer running code.</p>
+<p>Listed priority conflicts for confirmation before edits: <code>project-core</code> ranking docs above rules; strategy §3.1 dimension 7 outdated; description length 80 vs ≥120; strategy items not yet in rules (linking cadence, tool direction, etc.) with suggested resolutions. <strong>No rule or strategy body files were changed pending user confirmation.</strong></p>
 <p>[actions]</p>
 <ul>
-<li>无代码改动（待确认）</li>
+<li>No code changes (awaiting confirmation)</li>
 </ul>
 </article>
       </section>

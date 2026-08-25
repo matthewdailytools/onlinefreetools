@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Homepage slowness mainly large HTML (~192KB) + 125 icons + R2/cache miss TTFB. | Dev Logs</title>
-  <meta name="description" content="Homepage slowness mainly large HTML (~192KB) + 125 icons + R2/cache miss TTFB." />
-  <meta name="robots" content="noindex" />
+  <title>Homepage slowness is mainly large HTML (~192KB), 125 icons, and R2/cache-miss TTFB. | Dev Logs</title>
+  <meta name="description" content="Homepage slowness is mainly large HTML (~192KB), 125 icons, and R2/cache-miss TTFB." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-13-01-18-analyze-slow-homepage.html" />
-  <meta property="og:title" content="Homepage slowness mainly large HTML (~192KB) + 125 icons + R2/cache miss TTFB. | Dev Logs" />
-  <meta property="og:description" content="Homepage slowness mainly large HTML (~192KB) + 125 icons + R2/cache miss TTFB." />
+  <meta property="og:title" content="Homepage slowness is mainly large HTML (~192KB), 125 icons, and R2/cache-miss TTFB. | Dev Logs" />
+  <meta property="og:description" content="Homepage slowness is mainly large HTML (~192KB), 125 icons, and R2/cache-miss TTFB." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-13-01-18-analyze-slow-homepage.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,18 +143,18 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Homepage slowness mainly large HTML (~192KB) + 125 icons + R2/cache miss TTFB. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Homepage slowness is mainly large HTML (~192KB), 125 icons, and R2/cache-miss TTFB. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-13 01:18
-Summary: Homepage slowness mainly large HTML (~192KB) + 125 icons + R2/cache miss TTFB.</p>
+Summary: Homepage slowness is mainly large HTML (~192KB), 125 icons, and R2/cache-miss TTFB.</p>
 <p>[question]
 首页打开较缓慢，分析原因</p>
 <p>[try to solve]
-首页 HTML <del>192KB（124 工具卡、125 个 SVG img、重复引入 bootstrap/font CSS）；Worker 对外先出明文再边缘压缩，Cache miss 时还有 R2 get+gunzip。本机 TTFB</del>8ms；生产抽样 TTFB<del>1.0s、total</del>2.8s（未压缩体）。主因是页面体量大与首包链路，非单纯 Worker 包。优化方向：首屏精简卡片/分页、去重 CSS、确认 Cache HIT、或评估流式/预压缩协商。</p>
+Home HTML is ~192KB (124 tool cards, 125 SVG imgs, duplicated bootstrap/font CSS). The Worker emits plaintext outward and relies on edge compression; on cache miss there is also R2 get + gunzip. Local TTFB ~8ms; a production sample showed TTFB ~1.0s and total ~2.8s (uncompressed body). Main causes are page weight and first-byte path, not Worker bundle size alone. Directions: trim first-screen cards/pagination, dedupe CSS, confirm Cache HIT, or evaluate streaming / precompressed negotiation.</p>
 <p>[actions]</p>
 <ul>
-<li>（只读分析）</li>
+<li>Read-only analysis</li>
 </ul>
 </article>
       </section>

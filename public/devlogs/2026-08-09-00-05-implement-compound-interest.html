@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Implemented how-to-calculate-compound-interest with How to Calculate title pattern, ten locales, and SEO gates green. | Dev Logs</title>
   <meta name="description" content="Implemented how-to-calculate-compound-interest with How to Calculate title pattern, ten locales, and SEO gates green." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-09-00-05-implement-compound-interest.html" />
   <meta property="og:title" content="Implemented how-to-calculate-compound-interest with How to Calculate title pattern, ten locales, and SEO gates green. | Dev Logs" />
   <meta property="og:description" content="Implemented how-to-calculate-compound-interest with How to Calculate title pattern, ten locales, and SEO gates green." />
@@ -151,20 +151,20 @@ Summary: Implemented how-to-calculate-compound-interest with How to Calculate ti
 <p>[question]
 好的，继续</p>
 <p>[try to solve]
-已对齐 title 并实现复利工具上线就绪交付：</p>
+Aligned the title and shipped the compound-interest tool ready for release:</p>
 <ul>
-<li>Title (en)：<code>Compound Interest Calculator — How to Calculate Future Value</code>（对齐 ROI/BMI）</li>
-<li>页面：<code>src/pages/howToCalculateCompoundInterestPage.ts</code>（复利/单利、频率、进页 loadSample：10000×5%×10 年年复利 → 16288.95）</li>
-<li>Catalog/icon/十语 i18n；YMYL disclaimer + Investopedia 双引用</li>
-<li><code>coverage:gate --phase=all</code> OK；<code>lint:seo</code> OK；<code>build:site</code> 后首页/nav 已出现工具</li>
-<li>清单 §9 #99 → 已上线；README 中英条目已加；<code>02</code>=<code>implemented</code>，<code>03</code>=<code>i18n-done</code></li>
+<li>Title (en): <code>Compound Interest Calculator — How to Calculate Future Value</code> (aligned with ROI/BMI)</li>
+<li>Page: <code>src/pages/howToCalculateCompoundInterestPage.ts</code> (compound/simple, frequency, loadSample: 10000×5%×10 years annual → 16288.95)</li>
+<li>Catalog/icon/ten-locale i18n; YMYL disclaimer + dual Investopedia references</li>
+<li><code>coverage:gate --phase=all</code> OK; <code>lint:seo</code> OK; after <code>build:site</code>, tool appears on home/nav</li>
+<li>Inventory §9 #99 → live; README en/zh entries added; <code>02</code>=<code>implemented</code>, <code>03</code>=<code>i18n-done</code></li>
 </ul>
-<p>路径：<code>/tools/how-to-calculate-compound-interest</code>、<code>/zh/tools/how-to-calculate-compound-interest</code></p>
+<p>Paths: <code>/tools/how-to-calculate-compound-interest</code>, <code>/zh/tools/how-to-calculate-compound-interest</code></p>
 <p>[actions]</p>
 <ul>
-<li>更新 <code>work-tasks/how-to-calculate-compound-interest/02|03</code></li>
-<li>新增 catalog/page/icon/i18n×10</li>
-<li>更新 README、inventory §9/§12</li>
+<li>Updated <code>work-tasks/how-to-calculate-compound-interest/02|03</code></li>
+<li>Added catalog/page/icon/i18n×10</li>
+<li>Updated README, inventory §9/§12</li>
 <li><code>npm run merge:tools</code> / <code>build:site</code> / <code>lint:seo</code> / <code>coverage:gate --phase=all</code></li>
 </ul>
 </article>

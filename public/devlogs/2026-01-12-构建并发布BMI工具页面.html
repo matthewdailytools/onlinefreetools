@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>构建并发布BMI工具页面，修复语法错误 | Dev Logs</title>
-  <meta name="description" content="构建并发布BMI工具页面，修复语法错误" />
-  <meta name="robots" content="noindex" />
+  <title>Fixed BMI page syntax errors and rebuilt the static site so the tool renders cleanly. | Dev Logs</title>
+  <meta name="description" content="Fixed BMI page syntax errors and rebuilt the static site so the tool renders cleanly." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-01-12-%E6%9E%84%E5%BB%BA%E5%B9%B6%E5%8F%91%E5%B8%83BMI%E5%B7%A5%E5%85%B7%E9%A1%B5%E9%9D%A2.html" />
-  <meta property="og:title" content="构建并发布BMI工具页面，修复语法错误 | Dev Logs" />
-  <meta property="og:description" content="构建并发布BMI工具页面，修复语法错误" />
+  <meta property="og:title" content="Fixed BMI page syntax errors and rebuilt the static site so the tool renders cleanly. | Dev Logs" />
+  <meta property="og:description" content="Fixed BMI page syntax errors and rebuilt the static site so the tool renders cleanly." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-01-12-%E6%9E%84%E5%BB%BA%E5%B9%B6%E5%8F%91%E5%B8%83BMI%E5%B7%A5%E5%85%B7%E9%A1%B5%E9%9D%A2.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,17 +143,20 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">构建并发布BMI工具页面，修复语法错误 | Dev Logs</h1>
+          <h1 class="h4 mb-0">Fixed BMI page syntax errors and rebuilt the static site so the tool renders cleanly. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-01-12<br>Summary: 构建并发布BMI工具页面，修复语法错误</p>
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-01-12 00:00
+Summary: Fixed BMI page syntax errors and rebuilt the static site so the tool renders cleanly.</p>
 <p>[question]
 构建和编写开发日志</p>
 <p>[try to solve]
-已修复 howToCalculateBmiPage.ts 的所有语法错误，确保页面可正常渲染。随后运行 node scripts/build-site.mjs 成功构建全站静态产物，包含最新的BMI计算工具页面和多语言内容。</p>
-<p>[actions]
-src/pages/howToCalculateBmiPage.ts
-scripts/build-site.mjs</p>
+Fixed all syntax errors in <code>howToCalculateBmiPage.ts</code> so the page renders. Then ran <code>node scripts/build-site.mjs</code>, which successfully built the full static site including the BMI calculator page and its multilingual content.</p>
+<p>[actions]</p>
+<ul>
+<li>Updated: <code>src/pages/howToCalculateBmiPage.ts</code></li>
+<li>Ran: <code>node scripts/build-site.mjs</code></li>
+</ul>
 </article>
       </section>
     </main>

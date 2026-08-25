@@ -1,16 +1,16 @@
 Date: 2026-08-07 13:34
-Summary: Implement local image compressor tool (image-compress) with ten-locale i18n.
+Summary: Shipped the local image-compress tool with Canvas controls and ten-locale i18n.
 
 [question]
 实现
 
 [try to solve]
-已上线 `/tools/image-compress`（catalog `image`）：
+Shipped `/tools/image-compress` (catalog category `image`):
 
-- Tier 0 Canvas：最长边缩放、质量、可选目标 KB（质量二分）、输出 WebP/JPEG/PNG、JPEG 底色、前后体积对照；达不到目标时诚实警告
-- Related 互链：`image-format-converter` ↔ `image-exif` ↔ `image-compress`
-- 十语 i18n + 首页卡片 + README；`lint:seo` OK；`build:site`（sitemap 200 URLs）
-- work-tasks：`02` → `implemented`，`03` → `i18n-done`
+- Tier 0 Canvas: max-edge resize, quality, optional target KB (quality binary search), WebP/JPEG/PNG output, JPEG background color, before/after size compare; honest warning when the target cannot be met
+- Related links: `image-format-converter` ↔ `image-exif` ↔ `image-compress`
+- Ten-locale i18n + home card + README; `lint:seo` OK; `build:site` (sitemap 200 URLs)
+- work-tasks: `02` → `implemented`, `03` → `i18n-done`
 
 [actions]
 - Added `src/pages/imageCompressPage.ts`, icon, catalog, `src/index.ts` route

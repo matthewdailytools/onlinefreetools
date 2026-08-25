@@ -1,5 +1,5 @@
 Date: 2026-08-06 19:37
-Summary: Created work-tasks gap-enhancement docs for seven existing tools (not BMI/text-diff/markdown-to-html).
+Summary: Created work-tasks gap-enhancement docs for seven existing tools (excluding BMI, text-diff, and markdown-to-html).
 
 [question]
 You are working in /Users/xuli/vscodeai/onlinefreetools. Create work-tasks folders and markdown docs for these EXISTING tools that need gap-enhancement (存量增强, NOT new products). Follow work-tasks/_template/ and rules in .cursor/rules/work-tasks-tool-brief.mdc, tool-i18n-localization.mdc, docs/2026-07-28-per-tool-dev-seo-plans.md section C, and docs/2026-07-28-google-seo-strategy-implementation.md §3.1/§3.8.
@@ -27,11 +27,11 @@ Reference style: work-tasks/text-diff/02-tool-info.md and 03-locale-briefs.md.
 Return a short summary of folders created and any open questions.
 
 [try to solve]
-已为 7 个存量工具各建 `work-tasks/{slug}/`（00–03），未改 `src/`，未建 BMI / text-diff / markdown-to-html。
+Created `work-tasks/{slug}/` (00–03) for seven existing tools. Did not touch `src/`. Did not create BMI / text-diff / markdown-to-html folders.
 
-| slug | 02 | 03 | related（catalog） |
+| slug | 02 | 03 | related (catalog) |
 |---|---|---|---|
-| website-headers | ready | briefs-ready | ip-address, markdown-to-html, text-diff（保持） |
+| website-headers | ready | briefs-ready | ip-address, markdown-to-html, text-diff (kept) |
 | ip-address | ready | briefs-ready | website-headers, markdown-to-html |
 | how-to-calculate-roi | ready · YMYL | briefs-ready | MR, percentage-change |
 | how-to-calculate-marginal-revenue | ready · YMYL | briefs-ready | ROI, percentage-change |
@@ -39,9 +39,9 @@ Return a short summary of folders created and any open questions.
 | how-to-calculate-percentage-change | ready | briefs-ready | ROI, MR |
 | how-to-calculate-gradient | ready | briefs-ready | percentage-change, ROI |
 
-各 02：§3.1 IG 计划表已填；页面模块清单未勾。各 03：十语检索 brief；轮次未勾；ar/ja/ru 待母语抽查已勾。
+Each `02`: §3.1 IG plan filled; page-module checklist unchecked. Each `03`: ten-locale search briefs; rounds unchecked; ar/ja/ru pending-native-review checked.
 
-开放问题：gradient 与站长/设计工具互链待 meta-serp 等上线；pt 斜率用词 BR/PT；square-feet 是否支持「坪」；ROI/MR 公式口径与现页对齐。
+Open questions: gradient related links to webmaster/design tools await meta-serp and similar; Portuguese slope wording BR vs PT; whether square-feet should support tsubo (Japanese area unit); ROI/MR formula framing vs current pages.
 
 [actions]
 - Created work-tasks/{website-headers,ip-address,how-to-calculate-roi,how-to-calculate-marginal-revenue,square-feet,how-to-calculate-percentage-change,how-to-calculate-gradient}/{00,01,02,03}.md

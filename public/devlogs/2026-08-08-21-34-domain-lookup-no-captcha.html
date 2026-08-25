@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Clarify domain-lookup has no captcha in code; user report about image verification code. | Dev Logs</title>
-  <meta name="description" content="Clarify domain-lookup has no captcha in code; user report about image verification code." />
-  <meta name="robots" content="noindex" />
+  <title>Clarified that domain-lookup has no captcha in code; user report about an image verification challenge. | Dev Logs</title>
+  <meta name="description" content="Clarified that domain-lookup has no captcha in code; user report about an image verification challenge." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-21-34-domain-lookup-no-captcha.html" />
-  <meta property="og:title" content="Clarify domain-lookup has no captcha in code; user report about image verification code. | Dev Logs" />
-  <meta property="og:description" content="Clarify domain-lookup has no captcha in code; user report about image verification code." />
+  <meta property="og:title" content="Clarified that domain-lookup has no captcha in code; user report about an image verification challenge. | Dev Logs" />
+  <meta property="og:description" content="Clarified that domain-lookup has no captcha in code; user report about an image verification challenge." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-08-21-34-domain-lookup-no-captcha.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,20 +143,20 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Clarify domain-lookup has no captcha in code; user report about image verification code. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Clarified that domain-lookup has no captcha in code; user report about an image verification challenge. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-08 21:34
-Summary: Clarify domain-lookup has no captcha in code; user report about image verification code.</p>
+Summary: Clarified that domain-lookup has no captcha in code; user report about an image verification challenge.</p>
 <p>[question]
 域名查询提交需要输入验证图片的验证码</p>
 <p>[try to solve]
-本站 <code>domain-lookup</code> 实现中无 captcha/Turnstile/验证码：<code>domainLookupPage.ts</code> 与 <code>/api/tools/domain-lookup</code> 均无相关逻辑。提交只做域名校验后并行查 DoH + RDAP。</p>
-<p>若页面上出现「验证图片」验证码，不是本工具 UI 内置的；常见来源包括浏览器/安全扩展、CDN 人机挑战，或看错第三方 Whois 站。</p>
-<p>若产品上要做防滥用，建议用 Cloudflare Turnstile（非传统图片验证码），需另开需求再接入。</p>
+This site’s <code>domain-lookup</code> has no captcha/Turnstile/image challenge in code: neither <code>domainLookupPage.ts</code> nor <code>/api/tools/domain-lookup</code> includes that logic. Submit only validates the domain, then queries DoH and RDAP in parallel.</p>
+<p>If an image captcha appears on the page, it is not built into this tool UI; common sources are browser/security extensions, a CDN bot challenge, or a mistaken third-party Whois site.</p>
+<p>If the product needs anti-abuse later, prefer Cloudflare Turnstile (not a classic image captcha) as a separate follow-up.</p>
 <p>[actions]</p>
 <ul>
-<li>检索 src 无 captcha/turnstile/验证码</li>
+<li>Searched src: no captcha/turnstile/image-verification logic</li>
 </ul>
 </article>
       </section>

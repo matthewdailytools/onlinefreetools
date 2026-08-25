@@ -5,7 +5,7 @@ Summary: Explained zsh terminated on start:dev; cleared stale 8787/8788 workerd 
 @terminals/1.txt:457-458 (zsh: terminated npm run start:dev --port 8788)
 
 [try to solve]
-`zsh: terminated` = 进程收到 SIGTERM（常因端口已被旧 workerd 占用、或 stop/冲突杀进程）。当时 8788 有僵尸 workerd、健康实例在 8787。已 force-kill 后 `start:dev --port 8788 --no-build`，Ready；`/zh/` 200 且含 theme-switcher。
+`zsh: terminated` means the process received SIGTERM (often because the port was held by an old workerd, or a stop/conflict killed the process). At the time, 8788 had a zombie workerd while a healthy instance was on 8787. Force-killed stale processes, then `start:dev --port 8788 --no-build` → Ready; `/zh/` 200 and includes the theme-switcher.
 
 [actions]
 - kill stale workerd; npm run start:dev -- --port 8788 --no-build

@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Confirm upload:r2 is always full put; few-tool changes still reupload all gz. | Dev Logs</title>
-  <meta name="description" content="Confirm upload:r2 is always full put; few-tool changes still reupload all gz." />
-  <meta name="robots" content="noindex" />
+  <title>Confirm upload:r2 always does a full put; adding or changing a few tools still reuploads every .html.gz. | Dev Logs</title>
+  <meta name="description" content="Confirm upload:r2 always does a full put; adding or changing a few tools still reuploads every .html.gz." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-13-00-59-upload-r2-always-full.html" />
-  <meta property="og:title" content="Confirm upload:r2 is always full put; few-tool changes still reupload all gz. | Dev Logs" />
-  <meta property="og:description" content="Confirm upload:r2 is always full put; few-tool changes still reupload all gz." />
+  <meta property="og:title" content="Confirm upload:r2 always does a full put; adding or changing a few tools still reuploads every .html.gz. | Dev Logs" />
+  <meta property="og:description" content="Confirm upload:r2 always does a full put; adding or changing a few tools still reuploads every .html.gz." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-13-00-59-upload-r2-always-full.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,18 +143,18 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Confirm upload:r2 is always full put; few-tool changes still reupload all gz. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Confirm upload:r2 always does a full put; adding or changing a few tools still reuploads every .html.gz. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-13 00:59
-Summary: Confirm upload:r2 is always full put; few-tool changes still reupload all gz.</p>
+Summary: Confirm upload:r2 always does a full put; adding or changing a few tools still reuploads every .html.gz.</p>
 <p>[question]
 如果后续修改或新增几个工具，是否也会导致全量更新？</p>
 <p>[try to solve]
-会。当前 <code>upload:r2</code> 无增量：每次把 <code>public/_pages</code> 下全部 <code>.html.gz</code>（约 1510）逐个 wrangler put，并重写 <code>_meta/pages-build.json</code>。改/加几个工具时，构建也会重渲相关页（加工具常连带首页/taxonomy），但上传仍是全量。本地 <code>--local</code> 同样全量写，只是快。要避免全量需日后做按 hash/ETag 跳过未变文件或 S3 同步。</p>
+Yes. Current <code>upload:r2</code> has no incremental path: each run puts every <code>.html.gz</code> under <code>public/_pages</code> (about 1510) via wrangler and rewrites <code>_meta/pages-build.json</code>. Changing or adding a few tools still re-renders related pages (new tools often also refresh home/taxonomy), but upload remains full. Local <code>--local</code> is also full write—just faster. Avoiding full uploads later would need hash/ETag skip of unchanged objects or an S3-style sync.</p>
 <p>[actions]</p>
 <ul>
-<li>（只读说明）</li>
+<li>Read-only explanation</li>
 </ul>
 </article>
       </section>

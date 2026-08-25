@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Guide to speed up remote R2 publish: concurrency now, S3 API + delta upload next. | Dev Logs</title>
-  <meta name="description" content="Guide to speed up remote R2 publish: concurrency now, S3 API + delta upload next." />
-  <meta name="robots" content="noindex" />
+  <title>Guide to speed up remote R2 publish: raise concurrency now; S3 API + delta upload next. | Dev Logs</title>
+  <meta name="description" content="Guide to speed up remote R2 publish: raise concurrency now; S3 API + delta upload next." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-13-08-19-optimize-r2-publish-speed.html" />
-  <meta property="og:title" content="Guide to speed up remote R2 publish: concurrency now, S3 API + delta upload next. | Dev Logs" />
-  <meta property="og:description" content="Guide to speed up remote R2 publish: concurrency now, S3 API + delta upload next." />
+  <meta property="og:title" content="Guide to speed up remote R2 publish: raise concurrency now; S3 API + delta upload next. | Dev Logs" />
+  <meta property="og:description" content="Guide to speed up remote R2 publish: raise concurrency now; S3 API + delta upload next." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-13-08-19-optimize-r2-publish-speed.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,74 +143,74 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Guide to speed up remote R2 publish: concurrency now, S3 API + delta upload next. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Guide to speed up remote R2 publish: raise concurrency now; S3 API + delta upload next. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-13 08:19
-Summary: Guide to speed up remote R2 publish: concurrency now, S3 API + delta upload next.</p>
+Summary: Guide to speed up remote R2 publish: raise concurrency now; S3 API + delta upload next.</p>
 <p>[question]
 如何优化R2的发布速度</p>
 <p>[try to solve]
-瓶颈在「每个文件起一次 wrangler CLI」，不是 gzip 体积。按投入从低到高可以这样加速：</p>
-<h2>现状</h2>
+The bottleneck is spawning wrangler CLI once per file, not gzip size. Speed up from low to high effort:</p>
+<h2>Current state</h2>
 <ul>
-<li><code>npm run upload:r2</code> 对约 <strong>1510</strong> 个 <code>.html.gz</code> 各 <code>spawn npx wrangler r2 object put</code></li>
-<li>默认 <code>R2_UPLOAD_CONCURRENCY=6</code></li>
-<li>墙钟时间主要吃在 <strong>CLI 冷启动 × 次数</strong>，不是 24MB 传输本身</li>
-<li><code>upload:r2:local</code> 走 binding 直写，所以本地快、远程慢</li>
+<li><code>npm run upload:r2</code> runs ~<strong>1510</strong> <code>.html.gz</code> files each via <code>spawn npx wrangler r2 object put</code></li>
+<li>Default <code>R2_UPLOAD_CONCURRENCY=6</code></li>
+<li>Wall clock is dominated by <strong>CLI cold start × count</strong>, not the ~24MB transfer</li>
+<li><code>upload:r2:local</code> writes via binding, so local is fast and remote is slow</li>
 </ul>
-<h2>立刻可用（不改代码）</h2>
+<h2>Available immediately (no code change)</h2>
 <ol>
-<li><p><strong>提高并发</strong>（最简单）</p>
+<li><p><strong>Raise concurrency</strong> (simplest)</p>
 <pre><code class="language-bash">R2_UPLOAD_CONCURRENCY=20 npm run upload:r2
 </code></pre>
-<p>经验上 12–24 通常比 6 快一截；再高容易撞 API 限流/本机 CPU，建议试几次找甜点。</p>
+<p>Empirically 12–24 is often faster than 6; higher may hit API limits or local CPU — tune a few times.</p>
 </li>
-<li><p><strong>HTML 没变就别灌桶</strong></p>
+<li><p><strong>Skip the bucket when HTML did not change</strong></p>
 <pre><code class="language-bash">npm run deploy:skip-upload
 </code></pre>
-<p>只改 Worker/Assets 时跳过全量 put。</p>
+<p>Use when only Worker/Assets changed.</p>
 </li>
-<li><p><strong>确认不必每次本机 <code>wrangler deploy</code></strong>
-当前默认是 upload → git push → CF 拉仓库；发布墙钟别把 Worker 部署和 R2 灌桶混成一条慢路径重复做。</p>
+<li><p><strong>Do not treat every local <code>wrangler deploy</code> as required</strong>
+Default path is upload → git push → CF pulls the repo; do not double-count Worker deploy and R2 fill as one slow path.</p>
 </li>
 </ol>
-<h2>高收益改造（建议落地）</h2>
+<h2>High-ROI changes (recommended)</h2>
 <table>
 <thead>
 <tr>
-<th>方向</th>
-<th>效果</th>
-<th>做法</th>
+<th>Direction</th>
+<th>Effect</th>
+<th>Approach</th>
 </tr>
 </thead>
 <tbody><tr>
-<td><strong>S3 兼容 API 直传</strong></td>
-<td>通常从「数分钟～十余分钟」降到「数十秒级」</td>
-<td>用 <code>@aws-sdk/client-s3</code> + R2 endpoint，进程内并发 <code>PutObject</code>；<strong>不要</strong>再 spawn wrangler。Token 用 R2 S3 凭据（Object R/W），与 wrangler REST 的 Admin token 分开</td>
+<td><strong>S3-compatible PutObject</strong></td>
+<td>Often “minutes–10+ min” → “tens of seconds”</td>
+<td><code>@aws-sdk/client-s3</code> + R2 endpoint; in-process concurrent <code>PutObject</code>; <strong>stop</strong> spawning wrangler. Use R2 S3 credentials (Object R/W), separate from wrangler Admin token</td>
 </tr>
 <tr>
-<td><strong>只传变更（delta）</strong></td>
-<td>改 1 个工具时接近秒级</td>
-<td>本地已有整桶 <code>contentHash</code>；扩展 meta：按 key 存 per-file sha256，对比上次 <code>.cache/pages-build.json</code> 或 R2 meta，只 put 变更 + 重写 <code>_meta/pages-build.json</code></td>
+<td><strong>Delta only</strong></td>
+<td>Near seconds when one tool changes</td>
+<td>Local build already has whole-bucket <code>contentHash</code>; extend meta with per-file sha256, compare last <code>.cache/pages-build.json</code> or R2 meta, put only changes + rewrite <code>_meta/pages-build.json</code></td>
 </tr>
 <tr>
-<td><strong>批量/流水线</strong></td>
-<td>稳定化</td>
-<td>CI 里 <code>build:site</code> → S3 上传 → <code>verify:r2</code>，本机只 push；或本机 delta + CI 全量兜底</td>
+<td><strong>Batch/pipeline</strong></td>
+<td>Stabilizes</td>
+<td>CI: <code>build:site</code> → S3 upload → <code>verify:r2</code>; local push only; or local delta + CI full fallback</td>
 </tr>
 </tbody></table>
-<p>实现优先级建议：<strong>先 S3 直传（去掉 CLI）→ 再加 delta</strong>。并发调参只能治标。</p>
-<h2>不值得优先做的</h2>
+<p>Priority: <strong>S3 direct upload (drop CLI) first → then delta</strong>. Concurrency tuning alone is a stopgap.</p>
+<h2>Not worth prioritizing</h2>
 <ul>
-<li>再压 gzip：已是 <code>.html.gz</code>，体积不是主因</li>
-<li>提高 <code>multipart</code>：单文件很小，multipart 帮不上忙</li>
-<li>指望 Cloudflare Git 部署自动灌 R2：远端默认<strong>不会</strong>跑 <code>upload:r2</code></li>
+<li>Further gzip compression: already <code>.html.gz</code>; size is not the main cost</li>
+<li>Multipart: objects are small; multipart does not help</li>
+<li>Expecting Cloudflare Git deploy to fill R2: remote default <strong>does not</strong> run <code>upload:r2</code></li>
 </ul>
-<p>若要改脚本，最小改动是：<code>upload-r2-pages.mjs</code> 远程路径改成 S3 <code>PutObject</code> + 可选 <code>--changed-only</code>。</p>
+<p>Minimal script change: remote path in <code>upload-r2-pages.mjs</code> → S3 <code>PutObject</code> + optional <code>--changed-only</code>.</p>
 <p>[actions]</p>
 <ul>
-<li>（只读说明）</li>
+<li>Read-only guidance</li>
 </ul>
 </article>
       </section>

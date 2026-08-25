@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Implemented multi-tool auto coverage workflow (0b / step 2 / step 4) with coverage:gate, Skill, rules, and backfilled 1b/2b rows. | Dev Logs</title>
   <meta name="description" content="Implemented multi-tool auto coverage workflow (0b / step 2 / step 4) with coverage:gate, Skill, rules, and backfilled 1b/2b rows." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-19-31-auto-coverage-workflow-0b-2-4.html" />
   <meta property="og:title" content="Implemented multi-tool auto coverage workflow (0b / step 2 / step 4) with coverage:gate, Skill, rules, and backfilled 1b/2b rows. | Dev Logs" />
   <meta property="og:description" content="Implemented multi-tool auto coverage workflow (0b / step 2 / step 4) with coverage:gate, Skill, rules, and backfilled 1b/2b rows." />
@@ -151,23 +151,23 @@ Summary: Implemented multi-tool auto coverage workflow (0b / step 2 / step 4) wi
 <p>[question]
 多工具创建自动完成检索覆盖（0b / 步 2 / 步 4）— Implement the plan as specified.</p>
 <p>[try to solve]
-已按计划落地三层叠加：Plan 分阶段 todos 模板 + Skill <code>tool-coverage-pass</code> + <code>npm run coverage:gate</code> 产物门禁。</p>
+Landed the planned three-layer stack: Plan phased todos template + Skill <code>tool-coverage-pass</code> + <code>npm run coverage:gate</code> artifact gate.</p>
 <ul>
-<li>新增 <code>scripts/validate-tool-coverage-rounds.mjs</code>（phase=<code>0b|2|4|all</code>）与 <code>package.json</code> 的 <code>coverage:gate</code></li>
-<li>模板 <code>02</code>/<code>03</code> 预置覆盖表说明与多轮行 ID（<code>0b</code>/<code>1b</code>/<code>2b</code>）</li>
-<li><code>lint:seo</code> 对 catalog 中有「清单前检索覆盖」专节的工具跑 coverage rounds；去掉硬编码 <code>FORCE_TITLE_SLUGS</code>（有专节即强制）</li>
-<li>Skill：<code>.cursor/skills/tool-coverage-pass/SKILL.md</code>；同步 <code>tool-creation</code> / <code>work-tasks-tool-brief</code> / <code>tool-i18n-localization</code> / <code>tool-i18n-seo</code> / copilot；多工具 Plan 禁止「一次实现全部」</li>
-<li>回归：为 18–24 及带专节的 brand/wcag 等补齐 <code>03</code> 多轮 <code>1b</code>/<code>2b</code>（含 <code>wcag-contrast-checker</code> 新增「多轮记录」）；<code>coverage:gate</code> / <code>lint:seo</code> 全绿（旧工具仅 COVER-WARN）</li>
+<li>Added <code>scripts/validate-tool-coverage-rounds.mjs</code> (<code>phase=0b|2|4|all</code>) and <code>coverage:gate</code> in <code>package.json</code></li>
+<li>Templates <code>02</code>/<code>03</code> pre-seed coverage-table notes and multi-round row IDs (<code>0b</code>/<code>1b</code>/<code>2b</code>)</li>
+<li><code>lint:seo</code> runs coverage rounds for catalog tools that have a “pre-checklist search coverage” section; removed hardcoded <code>FORCE_TITLE_SLUGS</code> (section presence forces the check)</li>
+<li>Skill: <code>.cursor/skills/tool-coverage-pass/SKILL.md</code>; synced <code>tool-creation</code> / <code>work-tasks-tool-brief</code> / <code>tool-i18n-localization</code> / <code>tool-i18n-seo</code> / copilot; multi-tool Plans must not “implement everything in one shot”</li>
+<li>Regression: backfilled <code>03</code> multi-round <code>1b</code>/<code>2b</code> for 18–24 and sectioned brand/wcag tools (including new multi-round block on <code>wcag-contrast-checker</code>); <code>coverage:gate</code> / <code>lint:seo</code> green (older tools COVER-WARN only)</li>
 </ul>
 <p>[actions]</p>
 <ul>
-<li>scripts/validate-tool-coverage-rounds.mjs（新增）</li>
+<li>scripts/validate-tool-coverage-rounds.mjs (new)</li>
 <li>scripts/validate-tool-seo.mjs / scripts/validate-tool-title-coverage.mjs / package.json</li>
-<li>work-tasks/_template/02-tool-info.md、03-locale-briefs.md</li>
+<li>work-tasks/_template/02-tool-info.md, 03-locale-briefs.md</li>
 <li>.cursor/skills/tool-coverage-pass/SKILL.md</li>
-<li>.cursor/rules/tool-creation.mdc、work-tasks-tool-brief.mdc、tool-i18n-localization.mdc、tool-i18n-seo.mdc</li>
+<li>.cursor/rules/tool-creation.mdc, work-tasks-tool-brief.mdc, tool-i18n-localization.mdc, tool-i18n-seo.mdc</li>
 <li>.github/copilot-instructions.md</li>
-<li>work-tasks/*/03-locale-briefs.md（18–24 及 brand/wcag 等补齐多轮行）</li>
+<li>work-tasks/*/03-locale-briefs.md (18–24 and brand/wcag multi-round rows)</li>
 <li>npm run coverage:gate / lint:seo</li>
 </ul>
 </article>

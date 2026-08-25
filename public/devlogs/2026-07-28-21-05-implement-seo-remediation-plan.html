@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Implement Google SEO remediation plan (sitemap, About, FAQ/YMYL, catalog, lint) | Dev Logs</title>
-  <meta name="description" content="Implement Google SEO remediation plan (sitemap, About, FAQ/YMYL, catalog, lint)" />
-  <meta name="robots" content="noindex" />
+  <title>Implemented the three-phase Google SEO remediation plan (sitemap, About, FAQ/YMYL, catalog, lint). | Dev Logs</title>
+  <meta name="description" content="Implemented the three-phase Google SEO remediation plan (sitemap, About, FAQ/YMYL, catalog, lint)." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-07-28-21-05-implement-seo-remediation-plan.html" />
-  <meta property="og:title" content="Implement Google SEO remediation plan (sitemap, About, FAQ/YMYL, catalog, lint) | Dev Logs" />
-  <meta property="og:description" content="Implement Google SEO remediation plan (sitemap, About, FAQ/YMYL, catalog, lint)" />
+  <meta property="og:title" content="Implemented the three-phase Google SEO remediation plan (sitemap, About, FAQ/YMYL, catalog, lint). | Dev Logs" />
+  <meta property="og:description" content="Implemented the three-phase Google SEO remediation plan (sitemap, About, FAQ/YMYL, catalog, lint)." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-07-28-21-05-implement-seo-remediation-plan.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,49 +143,48 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Implement Google SEO remediation plan (sitemap, About, FAQ/YMYL, catalog, lint) | Dev Logs</h1>
+          <h1 class="h4 mb-0">Implemented the three-phase Google SEO remediation plan (sitemap, About, FAQ/YMYL, catalog, lint). | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-07-28 21:05
-Summary: Implement Google SEO remediation plan (sitemap, About, FAQ/YMYL, catalog, lint)</p>
+Summary: Implemented the three-phase Google SEO remediation plan (sitemap, About, FAQ/YMYL, catalog, lint).</p>
 <p>[question]
 Implement the Online Free Tools SEO 修改方案 as specified. Do NOT edit the plan file. Complete all to-dos.
 随后：生成 devlogs。</p>
 <p>[try to solve]
-按方案三期落地，对齐 Google 现行规则（不依赖 FAQ/HowTo 富结果、避免 Scaled content / Doorway）：</p>
-<p>Phase 1（入场券）</p>
+Shipped the plan in three phases, aligned with current Google rules (do not rely on FAQ/HowTo rich results; avoid scaled content and doorway pages):</p>
+<p>Phase 1 (entry requirements)</p>
 <ul>
-<li><code>build-site.mjs</code> 自动生成完整 <code>sitemap.xml</code>（各语言首页 / About / 全部工具 / devlogs，含 xhtml hreflang 与 x-default）；约 171 条 URL</li>
-<li>两处 layout（<code>src/pages/site/layout.ts</code>、<code>scripts/site/layout.mjs</code>）增加 <code>x-default</code>、favicon / apple-touch-icon</li>
-<li>补齐 <code>public/og-image.png</code>、<code>favicon.ico</code>、<code>favicon.svg</code>、<code>apple-touch-icon.png</code></li>
-<li>首页改为由 <code>tool-catalog.json</code> 驱动，补全 percentage-change；分类改为 Calculators / Developer；链接改用 <code>withLangPath</code></li>
-<li>Worker：<code>/en</code>、<code>/en/tools/:slug</code>、<code>/en/about</code> 301 到无前缀规范 URL；<code>toolRegistrar</code> 对默认语显式前缀同样 301</li>
+<li><code>build-site.mjs</code> now auto-generates a full <code>sitemap.xml</code> (per-language home / About / all tools / devlogs, with xhtml hreflang and x-default); about 171 URLs</li>
+<li>Both layouts (<code>src/pages/site/layout.ts</code>, <code>scripts/site/layout.mjs</code>) gained <code>x-default</code>, favicon, and apple-touch-icon</li>
+<li>Added <code>public/og-image.png</code>, <code>favicon.ico</code>, <code>favicon.svg</code>, <code>apple-touch-icon.png</code></li>
+<li>Home is driven by <code>tool-catalog.json</code>, including percentage-change; categories are Calculators / Developer; links use <code>withLangPath</code></li>
+<li>Worker: <code>/en</code>, <code>/en/tools/:slug</code>, <code>/en/about</code> 301 to prefix-free canonical URLs; <code>toolRegistrar</code> likewise 301s default-language explicit prefixes</li>
 </ul>
-<p>Phase 2（信任与内容）</p>
+<p>Phase 2 (trust and content)</p>
 <ul>
-<li>新建多语言 About 页（Who / How / Why / 免责）+ footer 链接 + 写入 sitemap</li>
-<li>抽取 <code>toolContent.ts</code>：可见 FAQ、YMYL disclaimer/references、相关工具互链</li>
-<li>各工具页注入上述区块与 <code>BreadcrumbList</code> + <code>WebApplication</code> JSON-LD（不为富结果 KPI）</li>
-<li>en/zh 补齐 FAQ 与 YMYL 文案；其他语言 <code>t()</code> 回退英文</li>
+<li>New multilingual About page (Who / How / Why / disclaimer) plus footer link and sitemap entry</li>
+<li>Extracted <code>toolContent.ts</code>: visible FAQ, YMYL disclaimer/references, related-tool cross-links</li>
+<li>Tool pages inject those blocks plus <code>BreadcrumbList</code> + <code>WebApplication</code> JSON-LD (not as a rich-result KPI)</li>
+<li>en/zh FAQ and YMYL copy completed; other locales fall back to English via <code>t()</code></li>
 </ul>
-<p>Phase 3（结构加固）</p>
+<p>Phase 3 (structure)</p>
 <ul>
-<li>单一数据源 <code>src/site/tool-catalog.json</code>（runtime <code>tools.ts</code> + build <code>tool-catalog.mjs</code>）</li>
-<li>扩展 <code>lint:seo</code>（description + FAQ 成对 + YMYL disclaimer）</li>
-<li>更新 <code>docs/SEO_TOOL_RULES.md</code>、新增 <code>docs/SEO_PUBLISH_CHECKLIST.md</code>；<code>predeploy</code> 跑 <code>build:site &amp;&amp; lint:seo</code></li>
+<li>Single source of truth <code>src/site/tool-catalog.json</code> (runtime <code>tools.ts</code> + build <code>tool-catalog.mjs</code>)</li>
+<li>Extended <code>lint:seo</code> (description + FAQ pairs + YMYL disclaimer)</li>
+<li>Updated <code>docs/SEO_TOOL_RULES.md</code>, added <code>docs/SEO_PUBLISH_CHECKLIST.md</code>; <code>predeploy</code> runs <code>build:site &amp;&amp; lint:seo</code></li>
 </ul>
-<p>验证：<code>npm run build:site</code>、<code>npm run lint:seo</code> 通过；<code>wrangler deploy --dry-run</code> 可打包。</p>
+<p>Verification noted in source: <code>npm run build:site</code> and <code>npm run lint:seo</code> passed; <code>wrangler deploy --dry-run</code> packaged successfully.</p>
 <p>[actions]</p>
 <ul>
-<li>新增：<code>src/site/tool-catalog.json</code>、<code>scripts/site/tool-catalog.mjs</code>、<code>src/pages/site/toolContent.ts</code></li>
-<li>新增：<code>scripts/site/pages/about.mjs</code>、<code>docs/SEO_PUBLISH_CHECKLIST.md</code>、<code>docs/SEO_TOOL_RULES.md</code>（规则同步）</li>
-<li>新增资产：<code>public/og-image.png</code>、<code>public/favicon.ico</code>、<code>public/favicon.svg</code>、<code>public/apple-touch-icon.png</code>、<code>public/favicon-32.png</code></li>
-<li>更新：<code>scripts/build-site.mjs</code>（buildAbout / buildSitemap）、<code>scripts/site/layout.mjs</code>、<code>src/pages/site/layout.ts</code></li>
-<li>更新：<code>scripts/site/components/content-home.mjs</code>、<code>scripts/site/pages/home.mjs</code>、footer（构建侧与运行时）</li>
-<li>更新：<code>src/index.ts</code>、<code>src/site/toolRegistrar.ts</code>、<code>src/site/tools.ts</code></li>
-<li>更新：全部 <code>src/pages/*Page.ts</code>、<code>src/site/i18n/en.ts</code> / <code>zh.ts</code>、<code>scripts/site/i18n.mjs</code></li>
-<li>更新：<code>scripts/validate-tool-seo.mjs</code>、<code>package.json</code>（predeploy）、<code>docs/SEO_ANALYSIS_PLAN.md</code> 进度说明</li>
-<li>本日志：<code>dev-logs/2026-07-28-21-05-implement-seo-remediation-plan.md</code></li>
+<li>Added: <code>src/site/tool-catalog.json</code>, <code>scripts/site/tool-catalog.mjs</code>, <code>src/pages/site/toolContent.ts</code></li>
+<li>Added: <code>scripts/site/pages/about.mjs</code>, <code>docs/SEO_PUBLISH_CHECKLIST.md</code>, <code>docs/SEO_TOOL_RULES.md</code> (rules sync)</li>
+<li>Added assets: <code>public/og-image.png</code>, <code>public/favicon.ico</code>, <code>public/favicon.svg</code>, <code>public/apple-touch-icon.png</code>, <code>public/favicon-32.png</code></li>
+<li>Updated: <code>scripts/build-site.mjs</code> (buildAbout / buildSitemap), <code>scripts/site/layout.mjs</code>, <code>src/pages/site/layout.ts</code></li>
+<li>Updated: <code>scripts/site/components/content-home.mjs</code>, <code>scripts/site/pages/home.mjs</code>, footer (build and runtime)</li>
+<li>Updated: <code>src/index.ts</code>, <code>src/site/toolRegistrar.ts</code>, <code>src/site/tools.ts</code></li>
+<li>Updated: all <code>src/pages/*Page.ts</code>, <code>src/site/i18n/en.ts</code> / <code>zh.ts</code>, <code>scripts/site/i18n.mjs</code></li>
+<li>Updated: <code>scripts/validate-tool-seo.mjs</code>, <code>package.json</code> (predeploy), <code>docs/SEO_ANALYSIS_PLAN.md</code> progress notes</li>
 </ul>
 </article>
       </section>

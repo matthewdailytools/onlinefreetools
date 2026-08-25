@@ -5,13 +5,13 @@ Summary: Finished brand-style-guide coverage table, marked 02 ready, and filled 
 进行下一步
 
 [try to solve]
-完成立项下一阶段（未实现页面代码）：
+Completed the next planning stage for the tool brief (no page code yet):
 
-1. **清单前检索覆盖**：EN 主词对齐 brand style guide / brand guidelines；ZH 对齐品牌手册 / 品牌设计规范。slug 由 `brand-design-guideline` **改为 `brand-style-guide`**（夹名同步）；不加 `ai-`/`generator` 进 slug；智能=规则预填写进 desc/FAQ。
-2. **`02-tool-info.md` → `ready`**：补全 IG（竞品 Guidelines.online / StyleGuideGen / uBrand 等缺口）、SEO 卡片、交互规格（preset、模块开关、smart|manual、进页 Northline 样例）、页面模块清单已勾。
-3. **`03-locale-briefs.md` → `briefs-ready`**：十语检索词 + title 方向 + 按钮短词；ar/ja/ru 标待母语抽查；额外禁云端 AI / VI 物料站 / 官方资产镜像。
+1. **Pre-checklist search coverage**: EN primary terms align to brand style guide / brand guidelines; ZH to brand handbook / brand design guidelines. Slug renamed from `brand-design-guideline` to `brand-style-guide` (folder renamed with it). Do not put `ai-` or `generator` in the slug; “smart” means rule-based prefill, documented in desc/FAQ.
+2. **`02-tool-info.md` → `ready`**: Filled IG (gaps vs Guidelines.online / StyleGuideGen / uBrand, etc.), SEO card, interaction spec (presets, module toggles, smart|manual, Northline sample on load), and page-module checklist.
+3. **`03-locale-briefs.md` → `briefs-ready`**: Ten-locale search terms + title direction + short button labels; ar/ja/ru flagged for native review; extra bans on cloud AI, VI asset sites, and mirroring official brand assets.
 
-可实现条件已满足；等用户明确要求后再按 tool-creation 编码。
+Implementation criteria are met; wait for an explicit user request before coding per tool-creation.
 
 [actions]
 - Renamed `work-tasks/brand-design-guideline/` → `work-tasks/brand-style-guide/`

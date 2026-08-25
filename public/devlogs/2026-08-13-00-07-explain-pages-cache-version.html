@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Explain PAGES_CACHE_VERSION Cache API busting and R2 verify alignment. | Dev Logs</title>
   <meta name="description" content="Explain PAGES_CACHE_VERSION Cache API busting and R2 verify alignment." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-13-00-07-explain-pages-cache-version.html" />
   <meta property="og:title" content="Explain PAGES_CACHE_VERSION Cache API busting and R2 verify alignment. | Dev Logs" />
   <meta property="og:description" content="Explain PAGES_CACHE_VERSION Cache API busting and R2 verify alignment." />
@@ -151,10 +151,11 @@ Summary: Explain PAGES_CACHE_VERSION Cache API busting and R2 verify alignment.<
 <p>[question]
 PAGES_CACHE_VERSION 的逻辑是什么？</p>
 <p>[try to solve]
-PAGES_CACHE_VERSION 是 wrangler vars 里的字符串（当前 &quot;3&quot;）。读 HTML 时 Workers Cache API 的 key = 公开 URL + <code>__ce=identity</code> + <code>__v=&lt;版本&gt;</code>；递增版本 → key 变了 → 旧缓存 miss → 重新从 R2 gunzip 写入。浏览器侧 max-age=0，主要管边缘 Cache（s-maxage=1d）。upload:r2 把同一版本写入 R2 <code>_meta/pages-build.json</code>；verify:r2 /live 与 Worker env 对齐，防「新 Worker + 旧 R2 清单」或反过来。它不改 R2 object key，也不自动随内容变——改 HTML 后要 upload；要立刻刷掉边缘旧页才手动递增并 deploy。</p>
+<code>PAGES_CACHE_VERSION</code> is a string in wrangler vars (currently <code>&quot;3&quot;</code>). On HTML read, the Workers Cache API key = public URL + <code>__ce=identity</code> + <code>__v=&lt;version&gt;</code>. Bumping the version changes the key → old entries miss → Worker gunzips from R2 and rewrites the cache. Browser side uses max-age=0; this mainly controls the edge Cache (s-maxage=1d).</p>
+<p><code>upload:r2</code> writes the same version into R2 <code>_meta/pages-build.json</code>; <code>verify:r2</code> / live checks alignment with Worker env to avoid “new Worker + old R2 manifest” or the reverse. It does not change R2 object keys and does not auto-bump with content—after HTML changes you must upload; bump and deploy only when you need to flush stale edge pages immediately.</p>
 <p>[actions]</p>
 <ul>
-<li>（无代码改动）</li>
+<li>Explanation only; no code changes</li>
 </ul>
 </article>
       </section>

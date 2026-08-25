@@ -5,7 +5,7 @@ Summary: Widened the stacked share/feedback module block to match the tool conte
 宽度加大
 
 [try to solve]
-将 `.tool-module-grid` 的 `max-width` 从 `40rem` 调整为 `var(--content-max)`（880px）并设 `width: 100%`，与工具页内容区同宽。
+Raised `.tool-module-grid` `max-width` from `40rem` to `var(--content-max)` (880px) and set `width: 100%` so the block matches the tool page content width.
 
 [actions]
 - `public/styles/site.css`

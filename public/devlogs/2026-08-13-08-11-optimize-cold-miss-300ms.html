@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Ranked ways to cut tool-page cold miss ~300ms (warm, plaintext R2, region, Assets). | Dev Logs</title>
   <meta name="description" content="Ranked ways to cut tool-page cold miss ~300ms (warm, plaintext R2, region, Assets)." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-13-08-11-optimize-cold-miss-300ms.html" />
   <meta property="og:title" content="Ranked ways to cut tool-page cold miss ~300ms (warm, plaintext R2, region, Assets). | Dev Logs" />
   <meta property="og:description" content="Ranked ways to cut tool-page cold miss ~300ms (warm, plaintext R2, region, Assets)." />
@@ -151,10 +151,10 @@ Summary: Ranked ways to cut tool-page cold miss ~300ms (warm, plaintext R2, regi
 <p>[question]
 怎么优化第一次访问的333ms</p>
 <p>[try to solve]
-333ms 是 SEA PoP 上 Cache miss：Worker 内 R2 get + gunzip + 组响应，不是传输慢。优先：1) 发版后预热（sitemap/热门 URL curl 或脚本写 Cache），让真实用户少遇 miss；2) R2 改存明文跳过 gunzip（测 R2 更大对象是否抵消）；3) 确认桶地域靠近主流量；4) 热门工具像首页进 Assets；5) Tiered Cache/Cache Reserve 降跨 PoP 冷。不推荐为省这 300ms 去掉 Worker。流式 gunzip 收益有限。先做预热 ROI 最高。</p>
+The ~333ms is SEA PoP Cache miss: Worker R2 get + gunzip + response assembly, not slow transfer. Prefer: (1) post-deploy warmup (curl sitemap/hot URLs or a script writing Cache) so real users hit miss less; (2) store plaintext in R2 and skip gunzip (measure whether larger objects cancel the win); (3) keep the bucket region near main traffic; (4) put popular tools on Assets like homes; (5) Tiered Cache / Cache Reserve to reduce cross-PoP cold. Do not remove the Worker just to save ~300ms. Streaming gunzip helps little. Warmup has the best ROI first.</p>
 <p>[actions]</p>
 <ul>
-<li>（只读优化建议）</li>
+<li>Read-only optimization guidance</li>
 </ul>
 </article>
       </section>

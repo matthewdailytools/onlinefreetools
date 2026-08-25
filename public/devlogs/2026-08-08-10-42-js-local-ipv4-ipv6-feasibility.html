@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Explained browser JS limits for dual-stack IPv4+IPv6 public IP detection. | Dev Logs</title>
   <meta name="description" content="Explained browser JS limits for dual-stack IPv4+IPv6 public IP detection." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-10-42-js-local-ipv4-ipv6-feasibility.html" />
   <meta property="og:title" content="Explained browser JS limits for dual-stack IPv4+IPv6 public IP detection. | Dev Logs" />
   <meta property="og:description" content="Explained browser JS limits for dual-stack IPv4+IPv6 public IP detection." />
@@ -151,20 +151,20 @@ Summary: Explained browser JS limits for dual-stack IPv4+IPv6 public IP detectio
 <p>[question]
 能否js本地实现获取ipv4 ipv6</p>
 <p>[try to solve]
-<strong>不能</strong>用纯浏览器 JS「本地算出来」公网 IPv4 和 IPv6——没有 <code>navigator</code> 一类 API 能直接读公网出口。</p>
-<p>可行路径与局限：</p>
+You <strong>cannot</strong> discover public IPv4 and IPv6 with pure browser JS “locally” — there is no <code>navigator</code>-style API that reads the public egress address.</p>
+<p>Feasible paths and limits:</p>
 <ol>
-<li><p><strong>WebRTC + STUN（页面内 JS）</strong>：通过 ICE <code>srflx</code> 候选间接暴露出口 IP。现代 Chrome/Firefox/Safari 已大幅限制（mDNS、候选过滤、指纹隐私），<strong>双栈同时拿 v4+v6 不可靠</strong>，且易被视为指纹采集，不适合本站 people-first 定位。</p>
+<li><p><strong>WebRTC + STUN (in-page JS)</strong>: ICE <code>srflx</code> candidates can indirectly expose egress IP. Modern Chrome/Firefox/Safari heavily restrict this (mDNS, candidate filtering, fingerprint privacy). Getting <strong>both v4 and v6 reliably on dual-stack is unreliable</strong>, and it often looks like fingerprinting — a poor fit for this site’s people-first positioning.</p>
 </li>
-<li><p><strong>并行请求 v4-only / v6-only 主机（推荐若要做双栈）</strong>：例如 <code>v4.example.com</code> 仅 A、<code>v6.example.com</code> 仅 AAAA，各 hit 一次 Worker 返回 <code>{ ip }</code>。浏览器须分别走 IPv4/IPv6 路径——<strong>仍非纯本地</strong>，但可自控、无第三方。同域名连打两次无效（Happy Eyeballs 通常只走一条路径）。</p>
+<li><p><strong>Parallel hits to v4-only / v6-only hosts (preferred if dual-stack is required)</strong>: e.g. <code>v4.example.com</code> A-only and <code>v6.example.com</code> AAAA-only, each hitting a Worker that returns <code>{ ip }</code>. The browser must take separate IPv4/IPv6 paths — <strong>still not pure-local</strong>, but self-hosted with no third party. Hitting the same hostname twice does not work (Happy Eyeballs usually picks one path).</p>
 </li>
-<li><p><strong>第三方 API</strong>（ipify 等）：实现简单，有外部依赖与隐私披露成本。</p>
+<li><p><strong>Third-party APIs</strong> (ipify, etc.): easy to implement; external dependency and privacy disclosure cost.</p>
 </li>
 </ol>
-<p><strong>结论</strong>：若产品要并列显示 v4+v6，建议 v4-only/v6-only 双子域 + 现有 API；不建议 WebRTC 方案。当前单连接 <code>{ ip, version }</code> 实现已诚实反映边缘所见。</p>
+<p><strong>Conclusion</strong>: If the product must show v4 and v6 side by side, use v4-only/v6-only dual hosts plus the existing API; do not use WebRTC. The current single-connection <code>{ ip, version }</code> response honestly reflects what the edge sees.</p>
 <p>[actions]</p>
 <ul>
-<li>（问答-only，无代码改动）</li>
+<li>(Q&amp;A only; no code changes)</li>
 </ul>
 </article>
       </section>

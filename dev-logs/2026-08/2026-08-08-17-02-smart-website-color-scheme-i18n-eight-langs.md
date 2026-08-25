@@ -40,19 +40,19 @@ Also for ar/ja/ru leave quality native; write real Arabic/Japanese/Russian text.
 Return: list of files written and confirmation all keys from en are present in each.
 
 [try to solve]
-已写入 8 个独立检索向 i18n 分片（非英模同构机翻），每语 77 键齐全，与 en.ts 一致。标题按 03-locale-briefs；ja 场景标题为「利用シーン」。description/example 含示例 teal #0F6E8C、规则推衍非云端 AI、中性链接≠action、固定状态色、本地浏览器、:root CSS 复制、最多 4 主题。
+Wrote 8 independently search-oriented i18n shards (not English-skeleton machine translation), 77 keys each matching en.ts. Titles follow `03-locale-briefs`. For ja, the use-cases heading uses natural “when to use this” phrasing (not a katakana calque of “use cases”). Description/example cover sample teal `#0F6E8C`, rule-based derivation (not cloud AI), neutral links ≠ action, fixed status colors, local browser, `:root` CSS copy, and max 4 themes.
 
-文件：
-- src/site/i18n/tools/smart-website-color-scheme/es.ts
-- src/site/i18n/tools/smart-website-color-scheme/ar.ts
-- src/site/i18n/tools/smart-website-color-scheme/pt.ts
-- src/site/i18n/tools/smart-website-color-scheme/id.ts
-- src/site/i18n/tools/smart-website-color-scheme/fr.ts
-- src/site/i18n/tools/smart-website-color-scheme/ja.ts
-- src/site/i18n/tools/smart-website-color-scheme/ru.ts
-- src/site/i18n/tools/smart-website-color-scheme/de.ts
+Files:
+- `src/site/i18n/tools/smart-website-color-scheme/es.ts`
+- `src/site/i18n/tools/smart-website-color-scheme/ar.ts`
+- `src/site/i18n/tools/smart-website-color-scheme/pt.ts`
+- `src/site/i18n/tools/smart-website-color-scheme/id.ts`
+- `src/site/i18n/tools/smart-website-color-scheme/fr.ts`
+- `src/site/i18n/tools/smart-website-color-scheme/ja.ts`
+- `src/site/i18n/tools/smart-website-color-scheme/ru.ts`
+- `src/site/i18n/tools/smart-website-color-scheme/de.ts`
 
-Key check: en=77；es/ar/pt/id/fr/ja/ru/de 均为 77，missing=0，extra=0。
+Key check: en=77; es/ar/pt/id/fr/ja/ru/de all 77; missing=0, extra=0.
 
 [actions]
 - Wrote 8 i18n shards under `src/site/i18n/tools/smart-website-color-scheme/`

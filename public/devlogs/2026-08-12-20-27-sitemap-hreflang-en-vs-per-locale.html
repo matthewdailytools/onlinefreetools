@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Compared two multilingual sitemap patterns; Google requires each locale as its own url entry with full reciprocal hreflang. | Dev Logs</title>
   <meta name="description" content="Compared two multilingual sitemap patterns; Google requires each locale as its own url entry with full reciprocal hreflang." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-12-20-27-sitemap-hreflang-en-vs-per-locale.html" />
   <meta property="og:title" content="Compared two multilingual sitemap patterns; Google requires each locale as its own url entry with full reciprocal hreflang. | Dev Logs" />
   <meta property="og:description" content="Compared two multilingual sitemap patterns; Google requires each locale as its own url entry with full reciprocal hreflang." />
@@ -151,10 +151,10 @@ Summary: Compared two multilingual sitemap patterns; Google requires each locale
 <p>[question]
 分析seo的sitemap 上能按照 en为主语言，其他rel=&quot;alternate&quot; hreflang=&quot;en&quot; 进行提交；和每个语言这么呈现一次；这两种方式，那种方式最符合谷歌seo</p>
 <p>[try to solve]
-按 Google Search Central「Localized versions」Sitemap 规则：有 N 个语种版本就要有 N 个 <code>&lt;url&gt;</code>，且每个 <code>&lt;url&gt;</code> 内挂同一套完整 <code>xhtml:link</code>（含自引用与互指）。因此「每种语言各呈现一次 + 全量 hreflang」最符合官方；「仅 en 作 loc、他语只写 alternate」不符合官方示例，他语发现/索引信号更弱，也易缺双向互指。本站 <code>public/sitemap.xml</code> / <code>scripts/site/sitemap.mjs</code> 已是正确做法。</p>
+Per Google Search Central “Localized versions” Sitemap rules: N language versions require N <code>&lt;url&gt;</code> entries, and each <code>&lt;url&gt;</code> must carry the same full set of <code>xhtml:link</code> annotations (including self-reference and reciprocal links). Therefore “one entry per language + full hreflang” matches the official pattern; “only en as loc, other languages as alternate only” does not match the official examples, weakens discovery/indexing signals for other locales, and risks missing bidirectional annotations. This site’s <code>public/sitemap.xml</code> / <code>scripts/site/sitemap.mjs</code> already follow the correct approach.</p>
 <p>[actions]</p>
 <ul>
-<li>查阅 Google localized-versions 文档与本站 sitemap 实现对照</li>
+<li>Cross-checked Google localized-versions docs against this site’s sitemap implementation</li>
 </ul>
 </article>
       </section>

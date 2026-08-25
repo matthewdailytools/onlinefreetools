@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Path /{lang} cannot DNS-map to R2; implement via Worker Cache→R2 or separate R2 host. | Dev Logs</title>
-  <meta name="description" content="Path /{lang} cannot DNS-map to R2; implement via Worker Cache→R2 or separate R2 host." />
-  <meta name="robots" content="noindex" />
+  <title>Path /{lang} cannot DNS-map to R2; implement via Worker Cache→R2 or a separate R2 host. | Dev Logs</title>
+  <meta name="description" content="Path /{lang} cannot DNS-map to R2; implement via Worker Cache→R2 or a separate R2 host." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-13-08-03-how-lang-home-r2.html" />
-  <meta property="og:title" content="Path /{lang} cannot DNS-map to R2; implement via Worker Cache→R2 or separate R2 host. | Dev Logs" />
-  <meta property="og:description" content="Path /{lang} cannot DNS-map to R2; implement via Worker Cache→R2 or separate R2 host." />
+  <meta property="og:title" content="Path /{lang} cannot DNS-map to R2; implement via Worker Cache→R2 or a separate R2 host. | Dev Logs" />
+  <meta property="og:description" content="Path /{lang} cannot DNS-map to R2; implement via Worker Cache→R2 or a separate R2 host." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-13-08-03-how-lang-home-r2.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,22 +143,22 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Path /{lang} cannot DNS-map to R2; implement via Worker Cache→R2 or separate R2 host. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Path /{lang} cannot DNS-map to R2; implement via Worker Cache→R2 or a separate R2 host. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-13 08:03
-Summary: Path /{lang} cannot DNS-map to R2; implement via Worker Cache→R2 or separate R2 host.</p>
+Summary: Path /{lang} cannot DNS-map to R2; implement via Worker Cache→R2 or a separate R2 host.</p>
 <p>[question]
 <a href="https://onlinefreetools.org/%7Blang%7D">https://onlinefreetools.org/{lang}</a> 能否配置指向R2，如果可以改R2，怎么实现</p>
 <p>[try to solve]
-结论：不能把 apex 上仅路径 <code>/{lang}</code> 用 DNS/R2 自定义域「配置指向」R2——自定义域是整主机名级，且 <code>onlinefreetools.org</code> 已是 Pages，不能再挂同一主机的 R2 自定义域做路径分流。可行实现只有 Worker 读 R2。</p>
-<p>方案 A（推荐若坚持首页只走 R2，改动小）：<code>serveHomeHtml</code> 跳过 Assets，只走 Cache→R2 <code>_pages/{lang}/index.html.gz</code>→gunzip（与工具页相同）；upload:r2 已含首页备份；可不再依赖 git 里的 <code>public/{lang}/index.html</code> 热更新（仍可保留作兜底）。代价：冷路径接近工具页 miss ~300ms。</p>
-<p>方案 B（改 R2 布局）：上传明文 key 对齐公开路径如 <code>zh/index.html</code>（非 <code>.gz</code>），Worker 映射 <code>/{lang}/</code>→该 key；仍须 Worker，不能 DNS 直挂。公开桶/自定义域只适合独立子域（如 <code>pages-cdn…</code>），无法单独接管 apex 的 <code>/{lang}</code>。</p>
-<p>方案 C：R2 自定义域挂子域——解决不了 <code>onlinefreetools.org/{lang}</code>。</p>
-<p>不建议为首页单独改 R2 公开布局；现状 Assets 优先更优。若做方案 A，改 <code>r2Pages.serveHomeHtml</code> + 文档/ops，不必改桶绑定。</p>
+Conclusion: you cannot point only the path <code>/{lang}</code> on the apex host at R2 via DNS or an R2 custom domain. Custom domains are hostname-scoped, and <code>onlinefreetools.org</code> already serves Pages, so you cannot attach an R2 custom domain on the same host for path-based routing. The workable approach is a Worker that reads from R2.</p>
+<p>Option A (recommended if homes must come only from R2; small change): make <code>serveHomeHtml</code> skip Assets and use Cache→R2 <code>_pages/{lang}/index.html.gz</code>→gunzip (same as tool pages). <code>upload:r2</code> already backs up home HTML; git-tracked <code>public/{lang}/index.html</code> can remain as fallback but is not required for hot updates. Cost: cold path similar to tool-page miss (~300ms).</p>
+<p>Option B (change R2 layout): upload plaintext keys aligned to public paths such as <code>zh/index.html</code> (not <code>.gz</code>); Worker maps <code>/{lang}/</code> to that key. Still requires a Worker; DNS alone cannot do it. A public bucket / custom domain only fits a separate subdomain (e.g. <code>pages-cdn…</code>) and cannot take over apex <code>/{lang}</code>.</p>
+<p>Option C: R2 custom domain on a subdomain — does not solve <code>onlinefreetools.org/{lang}</code>.</p>
+<p>Do not restructure R2 only for homes; Assets-first is better today. If choosing A, change <code>r2Pages.serveHomeHtml</code> plus docs/ops; no bucket-binding change needed.</p>
 <p>[actions]</p>
 <ul>
-<li>（只读方案说明，未改代码）</li>
+<li>Read-only design note; no code changes</li>
 </ul>
 </article>
       </section>

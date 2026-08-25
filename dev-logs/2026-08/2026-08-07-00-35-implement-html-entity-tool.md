@@ -5,20 +5,20 @@ Summary: Implemented the html-entity tool page with Tier 0 encode/decode, ten-la
 实现 html-entity
 
 [try to solve]
-已实现 HTML 实体编解码工具，路径 `/tools/html-entity`（十语）。
+Shipped the HTML entity encode/decode tool at `/tools/html-entity` (ten locales).
 
-**功能**
-- Encode / Decode 同页 Tab
-- 编码：范围（最小 / 仅非 ASCII / 全部）+ 输出形式（命名 / 十进制 / 十六进制）
-- 解码：Strict / Lenient；Once / Until stable；纯文本预览（textContent）
-- Tier 0 零依赖原生实现；Copy / Sample / Clear；输入 debounce 即时转换
+**Features**
+- Encode / Decode tabs on one page
+- Encode: scope (minimal / non-ASCII only / all) + output form (named / decimal / hex)
+- Decode: Strict / Lenient; Once / Until stable; plain-text preview (`textContent`)
+- Tier 0 zero-dependency native implementation; Copy / Sample / Clear; debounced live convert on input
 
-**工程**
+**Engineering**
 - `src/pages/htmlEntityPage.ts`
-- `src/site/tool-catalog.json` + `src/index.ts` 注册
-- 十语 `src/site/i18n/*.ts` + 首页 `scripts/site/i18n.mjs`
-- `README.md` 工具清单
-- `npm run build:site`（sitemap 150 URL）与 `npm run lint:seo` 通过
+- Registered in `src/site/tool-catalog.json` + `src/index.ts`
+- Ten-locale `src/site/i18n/*.ts` + home `scripts/site/i18n.mjs`
+- `README.md` tool list
+- `npm run build:site` (sitemap 150 URLs) and `npm run lint:seo` passed
 
 [actions]
 - Added `src/pages/htmlEntityPage.ts`

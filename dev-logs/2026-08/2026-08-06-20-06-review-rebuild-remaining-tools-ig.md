@@ -5,26 +5,26 @@ Summary: Reviewed and rebuilt eight remaining tools to IG/SEO/i18n standards (sh
 根据规则和策略，review和重建其他工具
 
 [try to solve]
-按策略 §C「存量缺口增强」与 text-diff / markdown-to-html 已定标准，对除这两页外的 8 个已上线工具做了 review + 重建：
+Per strategy §C “gap enhancement for existing tools” and the standards set by text-diff / markdown-to-html, reviewed and rebuilt the other eight live tools:
 
-**共享基建**
-- `src/pages/site/toolContent.ts` 新增 `renderToolIgSections`、`renderToolReferencesSection`（How / Formula|Rules / Example / Use cases + 可点击 References）
+**Shared infrastructure**
+- `src/pages/site/toolContent.ts` added `renderToolIgSections` and `renderToolReferencesSection` (How / Formula|Rules / Example / Use cases + clickable References)
 
-**work-tasks（均已 `02: implemented`；`03: pending-native-review`，ar/ja/ru 待母语抽查）**
-- website-headers、ip-address、how-to-calculate-bmi、how-to-calculate-roi、how-to-calculate-marginal-revenue、square-feet、how-to-calculate-percentage-change、how-to-calculate-gradient
+**work-tasks** (all `02: implemented`; `03: pending-native-review` for ar/ja/ru)
+- website-headers, ip-address, how-to-calculate-bmi, how-to-calculate-roi, how-to-calculate-marginal-revenue, square-feet, how-to-calculate-percentage-change, how-to-calculate-gradient
 
-**页面 IG 补齐（保留原交互）**
-- 开发者：website-headers（RFC/MDN 引用、边缘隐私 FAQ）、ip-address（边缘视角、VPN/代理局限）
-- YMYL：BMI（中性筛查语气、WHO/CDC 可点引用）、ROI（假设表 + Investopedia）、边际收益（公式推导可见）
-- 其他计算器：square-feet（房产/装修场景）、percentage-change（百分点对照）、gradient（多元 ∇f，非两点斜率；FAQ 说明差异）
+**Page IG fill (interactions kept)**
+- Developer: website-headers (RFC/MDN refs, edge privacy FAQ), ip-address (edge view, VPN/proxy limits)
+- YMYL: BMI (neutral screening tone, WHO/CDC clickable refs), ROI (assumptions table + Investopedia), marginal revenue (visible formula derivation)
+- Other calculators: square-feet (real-estate/renovation scenes), percentage-change (percentage-points contrast), gradient (multivariable ∇f, not two-point slope; FAQ explains the difference)
 
-**校验**
-- `npm run lint:seo` 通过；`npm run build:site` 已跑（sitemap 120 URLs）
-- `README.md` 工具清单已与新 title/说明对齐
+**Verification**
+- `npm run lint:seo` passed; `npm run build:site` ran (sitemap 120 URLs)
+- `README.md` Tools List aligned with new titles/blurbs
 
-**未完成 / 后续**
-- 各工具 `03` 未标 `i18n-done`：需完成轮次勾选并清掉 ar/ja/ru「待母语抽查」
-- gradient 的 brief 初稿曾按「两点斜率」写过，实现保持存量多元 ∇f 口径（已在 `02` 注明）
+**Follow-ups**
+- Tool `03` files not marked `i18n-done`: need round checkboxes and clearing ar/ja/ru pending-native-review
+- Gradient briefs originally drafted as two-point slope; implementation kept existing multivariable ∇f (noted in `02`)
 
 [actions]
 - Added work-tasks for 8 tools; extended toolContent IG helpers

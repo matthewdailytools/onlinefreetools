@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Fixed Generate JS syntax error and added visual Do/Don't samples per module. | Dev Logs</title>
   <meta name="description" content="Fixed Generate JS syntax error and added visual Do/Don't samples per module." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-17-37-fix-brand-style-guide-generate-samples.html" />
   <meta property="og:title" content="Fixed Generate JS syntax error and added visual Do/Don't samples per module. | Dev Logs" />
   <meta property="og:description" content="Fixed Generate JS syntax error and added visual Do/Don't samples per module." />
@@ -151,8 +151,8 @@ Summary: Fixed Generate JS syntax error and added visual Do/Don&#39;t samples pe
 <p>[question]
 1、要有各个模块的样例展示。2、点击生成没有任何反应</p>
 <p>[try to solve]
-根因：内联脚本里 <code>motion: { duration: &#39;…&#39;; reduce: … }</code> 误用分号分隔对象属性，整段 JS 解析失败，故 Generate / 进页样例均无反应。</p>
-<p>已修复为逗号，并去掉易踩坑的 Unicode 破折号；<code>{brand}</code> 改用 <code>split/join</code>。各开启模块增加左右对照可视化样例（Logo 净空、色占比、字阶、间距圆角、图像图标、动效、语气、触点、对比度）；进页 Sample 默认勾选 M0–M9 以便一次看全。硬刷新后试 <code>/tools/brand-style-guide</code>。</p>
+Root cause: inline script used semicolons between object properties in <code>motion: { duration: &#39;…&#39;; reduce: … }</code>, so the whole JS block failed to parse — Generate and on-load Sample both did nothing.</p>
+<p>Fixed to commas and removed easy-to-trip Unicode dashes; <code>{brand}</code> now uses <code>split/join</code>. Each enabled module got left/right visual Do/Don’t samples (logo clearspace, color share, type scale, spacing/radius, image/icon, motion, tone, touchpoints, contrast). On-load Sample defaults M0–M9 on so one pass shows everything. Hard-refresh <code>/tools/brand-style-guide</code> to verify.</p>
 <p>[actions]</p>
 <ul>
 <li>Fixed <code>src/pages/brandStyleGuidePage.ts</code> (syntax + visual samples + sample modules on)</li>

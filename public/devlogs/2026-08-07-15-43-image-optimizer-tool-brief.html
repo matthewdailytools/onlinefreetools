@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>立项图片优化（原「高级编解码」）并按检索习惯定名 | Dev Logs</title>
-  <meta name="description" content="立项图片优化（原「高级编解码」）并按检索习惯定名" />
-  <meta name="robots" content="noindex" />
+  <title>Briefed image-optimizer (ex “advanced codecs”) under a search-friendly name. | Dev Logs</title>
+  <meta name="description" content="Briefed image-optimizer (ex “advanced codecs”) under a search-friendly name." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-07-15-43-image-optimizer-tool-brief.html" />
-  <meta property="og:title" content="立项图片优化（原「高级编解码」）并按检索习惯定名 | Dev Logs" />
-  <meta property="og:description" content="立项图片优化（原「高级编解码」）并按检索习惯定名" />
+  <meta property="og:title" content="Briefed image-optimizer (ex “advanced codecs”) under a search-friendly name. | Dev Logs" />
+  <meta property="og:description" content="Briefed image-optimizer (ex “advanced codecs”) under a search-friendly name." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-07-15-43-image-optimizer-tool-brief.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,21 +143,21 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">立项图片优化（原「高级编解码」）并按检索习惯定名 | Dev Logs</h1>
+          <h1 class="h4 mb-0">Briefed image-optimizer (ex “advanced codecs”) under a search-friendly name. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-07 15:43
-Summary: 立项图片优化（原「高级编解码」）并按检索习惯定名</p>
+Summary: Briefed image-optimizer (ex “advanced codecs”) under a search-friendly name.</p>
 <p>[question]
 立项：图片高级编解码 （这个名称不太像seo用户搜索名称，需要根据用户搜索习惯确定）</p>
 <p>[try to solve]
-「高级编解码」是方向 A.2 的工程标签，不是用户检索词。按搜索习惯对外主词定为 Image Optimizer / 图片优化，slug：<code>image-optimizer</code>。</p>
-<p>与已有页边界：<code>image-compress</code>（Canvas 快压）与 <code>image-format-converter</code>（换 MIME）互补；本页是 Tier 2 WASM 编码器级优化（MozJPEG/WebP/AVIF 等）+ 前后对照。实现优先 <code>@jsquash/*</code>（<code>@squoosh/lib</code> 已停更）。已建 <code>work-tasks/image-optimizer/</code>（00/01/02，状态 draft），待确认命名与 v1 编码器集合后再改 <code>ready</code>。</p>
+“Advanced codecs” is an engineering label from direction A.2, not a user search phrase. Public primary term set to Image Optimizer / image optimize (zh); slug: <code>image-optimizer</code>.</p>
+<p>Boundaries vs existing pages: complements <code>image-compress</code> (fast Canvas compress) and <code>image-format-converter</code> (MIME swap). This page is Tier 2 WASM encoder-level optimize (MozJPEG/WebP/AVIF, etc.) with before/after compare. Prefer <code>@jsquash/*</code> (<code>@squoosh/lib</code> is unmaintained). Created <code>work-tasks/image-optimizer/</code> (00/01/02, status draft); wait to confirm naming and v1 encoder set before <code>ready</code>.</p>
 <p>[actions]</p>
 <ul>
-<li>新建 <code>work-tasks/image-optimizer/00-request.md</code></li>
-<li>新建 <code>work-tasks/image-optimizer/01-direction-discussion.md</code></li>
-<li>新建 <code>work-tasks/image-optimizer/02-tool-info.md</code>（draft）</li>
+<li>Created <code>work-tasks/image-optimizer/00-request.md</code></li>
+<li>Created <code>work-tasks/image-optimizer/01-direction-discussion.md</code></li>
+<li>Created <code>work-tasks/image-optimizer/02-tool-info.md</code> (draft)</li>
 </ul>
 </article>
       </section>

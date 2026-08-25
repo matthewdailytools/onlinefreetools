@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>GitHub _pages has ~270 non-tool HTML tracked; tools gitignored — optional, R2 is source of truth. | Dev Logs</title>
-  <meta name="description" content="GitHub _pages has ~270 non-tool HTML tracked; tools gitignored — optional, R2 is source of truth." />
-  <meta name="robots" content="noindex" />
+  <title>GitHub tracks ~270 non-tool HTML under _pages; tools are gitignored — optional, R2 is source of truth. | Dev Logs</title>
+  <meta name="description" content="GitHub tracks ~270 non-tool HTML under _pages; tools are gitignored — optional, R2 is source of truth." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-13-01-13-github-pages-html-reasonable.html" />
-  <meta property="og:title" content="GitHub _pages has ~270 non-tool HTML tracked; tools gitignored — optional, R2 is source of truth. | Dev Logs" />
-  <meta property="og:description" content="GitHub _pages has ~270 non-tool HTML tracked; tools gitignored — optional, R2 is source of truth." />
+  <meta property="og:title" content="GitHub tracks ~270 non-tool HTML under _pages; tools are gitignored — optional, R2 is source of truth. | Dev Logs" />
+  <meta property="og:description" content="GitHub tracks ~270 non-tool HTML under _pages; tools are gitignored — optional, R2 is source of truth." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-13-01-13-github-pages-html-reasonable.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,18 +143,18 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">GitHub _pages has ~270 non-tool HTML tracked; tools gitignored — optional, R2 is source of truth. | Dev Logs</h1>
+          <h1 class="h4 mb-0">GitHub tracks ~270 non-tool HTML under _pages; tools are gitignored — optional, R2 is source of truth. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-13 01:13
-Summary: GitHub _pages has ~270 non-tool HTML tracked; tools gitignored — optional, R2 is source of truth.</p>
+Summary: GitHub tracks ~270 non-tool HTML under _pages; tools are gitignored — optional, R2 is source of truth.</p>
 <p>[question]
 git hub上 _pages目录有大量的html文件，是否合理</p>
 <p>[try to solve]
-合理但非必须。仓库约 270 个入库页：首页/about/taxonomy 等；<code>public/_pages/*/tools/</code>（约 1240）与 <code>*.html.gz</code> 已 gitignore，不上 GitHub。生产 HTML 权威在 R2，且 <code>.assetsignore</code> 排除 <code>_pages</code> 不上 Assets。保留非工具 HTML 便于 diff/历史；若嫌吵可整树 gitignore，发版只靠 build+upload:r2。</p>
+Reasonable but not required. The repo tracks about 270 pages (home, about, taxonomy, etc.). <code>public/_pages/*/tools/</code> (~1240) and <code>*.html.gz</code> are already gitignored and not on GitHub. Production HTML authority is R2, and <code>.assetsignore</code> excludes <code>_pages</code> from Assets. Keeping non-tool HTML helps diff/history; if the noise is unwanted, gitignore the whole tree and ship only via build + <code>upload:r2</code>.</p>
 <p>[actions]</p>
 <ul>
-<li>（只读说明）</li>
+<li>Read-only explanation</li>
 </ul>
 </article>
       </section>

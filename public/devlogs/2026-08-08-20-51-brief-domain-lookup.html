@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Created work-tasks brief for domain-lookup (ready + 0b gate green); updated inventory row #9. | Dev Logs</title>
   <meta name="description" content="Created work-tasks brief for domain-lookup (ready + 0b gate green); updated inventory row #9." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-20-51-brief-domain-lookup.html" />
   <meta property="og:title" content="Created work-tasks brief for domain-lookup (ready + 0b gate green); updated inventory row #9. | Dev Logs" />
   <meta property="og:description" content="Created work-tasks brief for domain-lookup (ready + 0b gate green); updated inventory row #9." />
@@ -151,29 +151,29 @@ Summary: Created work-tasks brief for domain-lookup (ready + 0b gate green); upd
 <p>[question]
 立项：domain-lookup</p>
 <p>[try to solve]
-已完成 <code>domain-lookup</code> 立项 brief，并通过 <code>coverage:gate --phase=0b</code>。</p>
-<p><strong>产物</strong>（<code>work-tasks/domain-lookup/</code>）</p>
+Finished <code>domain-lookup</code> brief and passed <code>coverage:gate --phase=0b</code>.</p>
+<p><strong>Artifacts</strong> (<code>work-tasks/domain-lookup/</code>)</p>
 <ul>
-<li><code>00-request.md</code>：用户原问（域名查询实现 + 立项）</li>
-<li><code>01-direction-discussion.md</code>：主方向 A.10；不拆 whois/dns/rdap 薄页</li>
-<li><code>02-tool-info.md</code>：状态 <code>ready</code>；MVP = DoH（扩 MX/NS/TXT/SOA）+ RDAP 分区；进页样例 <code>example.com</code>；related：<code>add-www-to-dns</code> / <code>website-headers</code> / <code>ip-address</code></li>
-<li><code>03-locale-briefs.md</code>：十语 brief + 行 <code>0b</code>；状态 <code>briefs-ready</code></li>
+<li><code>00-request.md</code>: original ask (domain lookup how-to + brief)</li>
+<li><code>01-direction-discussion.md</code>: primary direction A.10; do not split thin whois/dns/rdap pages</li>
+<li><code>02-tool-info.md</code>: status <code>ready</code>; MVP = DoH (extend MX/NS/TXT/SOA) + RDAP sections; on-enter sample <code>example.com</code>; related: <code>add-www-to-dns</code> / <code>website-headers</code> / <code>ip-address</code></li>
+<li><code>03-locale-briefs.md</code>: ten-locale briefs + <code>0b</code> row; status <code>briefs-ready</code></li>
 </ul>
 <p><strong>SEO 0b</strong></p>
 <ul>
-<li>H1 方向：<code>Domain Lookup — Check DNS Records &amp; Registration Online</code></li>
-<li>去掉参数枚举腔；whois/dns/expiry 落 desc/FAQ</li>
+<li>H1 direction: <code>Domain Lookup — Check DNS Records &amp; Registration Online</code></li>
+<li>Dropped parameter-enumeration tone; whois/dns/expiry land in desc/FAQ</li>
 <li><code>npm run coverage:gate -- --slug=domain-lookup --phase=0b</code> → OK</li>
 </ul>
-<p><strong>清单表</strong></p>
+<p><strong>Inventory</strong></p>
 <ul>
-<li><code>docs/2026-08-08-tool-inventory-table.md</code> 序号 9：<code>domain-lookup</code>，进度「进行中」；全表 1–116</li>
+<li><code>docs/2026-08-08-tool-inventory-table.md</code> row 9: <code>domain-lookup</code>, progress “in progress”; table covers 1–116</li>
 </ul>
-<p>下一步：用户明确要求实现后再按 <code>tool-creation</code> + coverage 步 2/4 写页面与 i18n。</p>
+<p>Next: implement page + i18n only after an explicit implement request, via <code>tool-creation</code> + coverage steps 2/4.</p>
 <p>[actions]</p>
 <ul>
-<li>新建 <code>work-tasks/domain-lookup/{00,01,02,03}.md</code></li>
-<li>更新 <code>docs/2026-08-08-tool-inventory-table.md</code></li>
+<li>Created <code>work-tasks/domain-lookup/{00,01,02,03}.md</code></li>
+<li>Updated <code>docs/2026-08-08-tool-inventory-table.md</code></li>
 <li><code>npm run coverage:gate -- --slug=domain-lookup --phase=0b</code></li>
 </ul>
 </article>

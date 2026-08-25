@@ -9,13 +9,13 @@ Implement the plan as specified, it is attached for your reference. Do NOT edit 
 To-do's from the plan have already been created. Do not create them again. Mark them as in_progress as you work, starting with the first one. Don't stop until you have completed all the to-dos.
 
 [try to solve]
-已完成 Phase 0–4。
+Completed Phases 0–4.
 
-立项：`work-tasks/{flip-image,image-grayscale,image-border,image-to-base64,add-watermark,images-to-pdf,images-to-gif,images-to-word,images-to-ppt}/`（00–03；02 现为 `implemented`）。「转 git」按动画 GIF（`images-to-gif`）。
+Briefs: `work-tasks/{flip-image,image-grayscale,image-border,image-to-base64,add-watermark,images-to-pdf,images-to-gif,images-to-word,images-to-ppt}/` (00–03; 02 now `implemented`). “Convert to git” interpreted as animated GIF (`images-to-gif`).
 
-实现：九个页面已注册并上线本地路由；十语 i18n + catalog + icons + README + 首页键；`lint:seo` 通过。本地验证 `http://127.0.0.1:8788/zh/tools/{slug}` 均为 200，客户端脚本语法通过。
+Implementation: nine pages registered on local routes; ten-locale i18n + catalog + icons + README + home keys; `lint:seo` passed. Local checks `http://127.0.0.1:8788/zh/tools/{slug}` all 200; client scripts syntax-checked.
 
-技术要点：单图工具为 Canvas Tier 0；多图 PDF/GIF/Word/PPT 在浏览器懒加载 CDN 库（pdf-lib / gifenc / docx / pptxgenjs），不上传用户文件。`add-watermark` 与 `image-overlay` 分工并已改 overlay FAQ 互指。
+Tech notes: single-image tools are Canvas Tier 0; multi-image PDF/GIF/Word/PPT lazily load CDN libs in-browser (pdf-lib / gifenc / docx / pptxgenjs) with no user-file upload. `add-watermark` vs `image-overlay` roles split; overlay FAQ cross-links updated.
 
 [actions]
 - Added work-tasks briefs ×9

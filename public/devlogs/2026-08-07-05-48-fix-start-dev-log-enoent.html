@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Fixed start-dev ENOENT when .run/wrangler-dev.log did not exist yet. | Dev Logs</title>
   <meta name="description" content="Fixed start-dev ENOENT when .run/wrangler-dev.log did not exist yet." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-07-05-48-fix-start-dev-log-enoent.html" />
   <meta property="og:title" content="Fixed start-dev ENOENT when .run/wrangler-dev.log did not exist yet. | Dev Logs" />
   <meta property="og:description" content="Fixed start-dev ENOENT when .run/wrangler-dev.log did not exist yet." />
@@ -151,11 +151,11 @@ Summary: Fixed start-dev ENOENT when .run/wrangler-dev.log did not exist yet.</p
 <p>[question]
 bash ./ops/dev/start-dev.sh failed with ENOENT on .run/wrangler-dev.log (truncateSync before file exists).</p>
 <p>[try to solve]
-根因：<code>spawnWrangler</code> 在日志文件尚未创建时对路径调用 <code>truncateSync(logFilePath, 0)</code>，Node 会抛 ENOENT。</p>
-<p>修复：先 <code>openSync(logFilePath, &#39;a&#39;)</code> 创建/打开文件，再 <code>ftruncateSync(logFd, 0)</code> 清空。请重新运行：</p>
+Root cause: <code>spawnWrangler</code> called <code>truncateSync(logFilePath, 0)</code> before the log file existed, and Node threw ENOENT.</p>
+<p>Fix: <code>openSync(logFilePath, &#39;a&#39;)</code> first to create/open the file, then <code>ftruncateSync(logFd, 0)</code> to clear it. Re-run:</p>
 <pre><code class="language-bash">bash ./ops/dev/start-dev.sh
 </code></pre>
-<p>或 <code>npm run start:dev</code>。</p>
+<p>or <code>npm run start:dev</code>.</p>
 <p>[actions]</p>
 <ul>
 <li>Updated <code>ops/dev/start-dev.mjs</code> spawnWrangler log initialization.</li>

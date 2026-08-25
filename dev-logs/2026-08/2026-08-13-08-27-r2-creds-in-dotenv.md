@@ -1,16 +1,16 @@
 Date: 2026-08-13 08:27
-Summary: Load R2 S3 credentials from repo-root .env config file (.env.example template).
+Summary: Load R2 S3 credentials from a repo-root .env file (.env.example as template).
 
 [question]
 环境变量的参数写在配置文件里面
 
 [try to solve]
-R2 S3 凭据改为写入仓库根配置文件，脚本自动加载：
+R2 S3 credentials now live in a repo-root config file and are loaded automatically:
 
-1. 模板 `.env.example`（可提交）
-2. 本机 `cp .env.example .env` 填写 `R2_ACCOUNT_ID` / `R2_ACCESS_KEY_ID` / `R2_SECRET_ACCESS_KEY`（`.env*` 已 gitignore）
-3. `scripts/lib/load-dotenv.mjs` 加载 `.env`、`.env.local`（不覆盖已 export 的变量）
-4. `upload:r2` / `r2-s3-client` 启动时自动读入；文档 §3.1 已改为推荐写 `.env`
+1. Commitable template `.env.example`
+2. Locally `cp .env.example .env` and fill `R2_ACCOUNT_ID` / `R2_ACCESS_KEY_ID` / `R2_SECRET_ACCESS_KEY` (`.env*` is gitignored)
+3. `scripts/lib/load-dotenv.mjs` loads `.env` and `.env.local` (does not override already-exported vars)
+4. `upload:r2` / `r2-s3-client` read them at startup; ops §3.1 now recommends writing `.env`
 
 [actions]
 - Added `.env.example`, `scripts/lib/load-dotenv.mjs`

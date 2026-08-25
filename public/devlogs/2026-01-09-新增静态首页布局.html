@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>新增静态首页布局 | Dev Logs</title>
-  <meta name="description" content="新增静态首页布局" />
-  <meta name="robots" content="noindex" />
+  <title>Added a Bootstrap static home page with nav, collapsible sidebar, cards, and footer. | Dev Logs</title>
+  <meta name="description" content="Added a Bootstrap static home page with nav, collapsible sidebar, cards, and footer." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-01-09-%E6%96%B0%E5%A2%9E%E9%9D%99%E6%80%81%E9%A6%96%E9%A1%B5%E5%B8%83%E5%B1%80.html" />
-  <meta property="og:title" content="新增静态首页布局 | Dev Logs" />
-  <meta property="og:description" content="新增静态首页布局" />
+  <meta property="og:title" content="Added a Bootstrap static home page with nav, collapsible sidebar, cards, and footer. | Dev Logs" />
+  <meta property="og:description" content="Added a Bootstrap static home page with nav, collapsible sidebar, cards, and footer." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-01-09-%E6%96%B0%E5%A2%9E%E9%9D%99%E6%80%81%E9%A6%96%E9%A1%B5%E5%B8%83%E5%B1%80.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,24 +143,24 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">新增静态首页布局 | Dev Logs</h1>
+          <h1 class="h4 mb-0">Added a Bootstrap static home page with nav, collapsible sidebar, cards, and footer. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>日期：2026年1月9日
-摘要：新增静态首页布局</p>
-<p>【question】
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-01-09 00:00
+Summary: Added a Bootstrap static home page with nav, collapsible sidebar, cards, and footer.</p>
+<p>[question]
 增加静态首页，以bootstrap+js+html作为技术栈，适配h5和pc，布局为导航，具备sidebar（可点击隐藏），顶部菜单，底部footer，内容区为工具分类成列卡片。分类类别名称在sidebar</p>
-<p>【try to solve】
-已在 <code>public/index.html</code> 添加基于 Bootstrap 5 的静态首页，适配移动与桌面，具体包括：</p>
+<p>[try to solve]
+Added a Bootstrap 5 static home page in <code>public/index.html</code> for mobile and desktop:</p>
 <ul>
-<li>固定顶部导航（含搜索框）</li>
-<li>可点击折叠的分类 sidebar，移动端点击分类后自动收起</li>
-<li>内容区按分类分区的卡片栅格（示例分类与卡片占位）</li>
-<li>底部 footer</li>
+<li>Fixed top nav (with search)</li>
+<li>Collapsible category sidebar; collapses after category click on mobile</li>
+<li>Content area: category card grids (sample categories/placeholders)</li>
+<li>Footer</li>
 </ul>
-<p>【执行操作】</p>
+<p>[actions]</p>
 <ul>
-<li>创建 <code>public/index.html</code></li>
+<li>Created <code>public/index.html</code></li>
 </ul>
 </article>
       </section>

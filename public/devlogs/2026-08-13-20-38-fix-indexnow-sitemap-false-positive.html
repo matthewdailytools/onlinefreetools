@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Fixed IndexNow CLI mistaking /tools/sitemap-xml-generator for a nested sitemap URL. | Dev Logs</title>
   <meta name="description" content="Fixed IndexNow CLI mistaking /tools/sitemap-xml-generator for a nested sitemap URL." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-13-20-38-fix-indexnow-sitemap-false-positive.html" />
   <meta property="og:title" content="Fixed IndexNow CLI mistaking /tools/sitemap-xml-generator for a nested sitemap URL. | Dev Logs" />
   <meta property="og:description" content="Fixed IndexNow CLI mistaking /tools/sitemap-xml-generator for a nested sitemap URL." />
@@ -157,10 +157,10 @@ node ops/seo/submit-indexnow.mjs --sitemap <a href="https://onlinefreetools.org/
 <p>IndexNow sitemap source(s): <a href="https://onlinefreetools.org/sitemap.xml">https://onlinefreetools.org/sitemap.xml</a>
 Failed to fetch sitemap <a href="https://onlinefreetools.org/tools/sitemap-xml-generator">https://onlinefreetools.org/tools/sitemap-xml-generator</a>: HTTP 404</p>
 <p>[try to solve]
-根因：<code>looksLikeSitemapUrl</code> 旧正则 <code>/\/sitemap(?:[_-]|$|index)/i</code> 会把工具页 <code>/tools/sitemap-xml-generator</code>（sitemap 后的 <code>-</code>）误判为子 sitemap，进而去 GET 该页并因生产 404 整批失败。</p>
-<p>已收紧判断：仅认 <code>.xml</code>/<code>.xml.gz</code> 且路径含 sitemap，或末段为 <code>/sitemap</code>、<code>/sitemap_index</code>、<code>/sitemap-index</code>，或 <code>/sitemaps/</code> 目录。本地 dry-run 已通过。</p>
-<p>另：线上 <code>https://onlinefreetools.org/tools/sitemap-xml-generator</code> 当前 HTTP 404，但 sitemap.xml 已收录该 URL——需另行部署/同步站点产物。</p>
-<p>修复后可重新执行：
+Root cause: old <code>looksLikeSitemapUrl</code> regex <code>/\/sitemap(?:[_-]|$|index)/i</code> treated the tool page <code>/tools/sitemap-xml-generator</code> (hyphen after <code>sitemap</code>) as a nested sitemap, then GET that page and failed the whole batch on production 404.</p>
+<p>Tightened detection: only treat as sitemap if <code>.xml</code>/<code>.xml.gz</code> and path contains sitemap, or the last segment is <code>/sitemap</code>, <code>/sitemap_index</code>, <code>/sitemap-index</code>, or under <code>/sitemaps/</code>. Local dry-run passed.</p>
+<p>Also: production <code>https://onlinefreetools.org/tools/sitemap-xml-generator</code> currently returns HTTP 404 while sitemap.xml still lists that URL — needs a separate deploy/sync of site artifacts.</p>
+<p>After the fix, rerun:
 <code>npm run indexnow -- --sitemap https://onlinefreetools.org/sitemap.xml</code></p>
 <p>[actions]</p>
 <ul>

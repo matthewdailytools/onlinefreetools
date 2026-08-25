@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Implemented YAML ↔ JSON tool (yaml-json) with ten-locale IG copy | Dev Logs</title>
-  <meta name="description" content="Implemented YAML ↔ JSON tool (yaml-json) with ten-locale IG copy" />
-  <meta name="robots" content="noindex" />
+  <title>Implemented YAML ↔ JSON tool (yaml-json) with ten-locale IG copy. | Dev Logs</title>
+  <meta name="description" content="Implemented YAML ↔ JSON tool (yaml-json) with ten-locale IG copy." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-06-21-07-implement-yaml-json-tool.html" />
-  <meta property="og:title" content="Implemented YAML ↔ JSON tool (yaml-json) with ten-locale IG copy | Dev Logs" />
-  <meta property="og:description" content="Implemented YAML ↔ JSON tool (yaml-json) with ten-locale IG copy" />
+  <meta property="og:title" content="Implemented YAML ↔ JSON tool (yaml-json) with ten-locale IG copy. | Dev Logs" />
+  <meta property="og:description" content="Implemented YAML ↔ JSON tool (yaml-json) with ten-locale IG copy." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-06-21-07-implement-yaml-json-tool.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,33 +143,33 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Implemented YAML ↔ JSON tool (yaml-json) with ten-locale IG copy | Dev Logs</h1>
+          <h1 class="h4 mb-0">Implemented YAML ↔ JSON tool (yaml-json) with ten-locale IG copy. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-06 21:07
-Summary: Implemented YAML ↔ JSON tool (yaml-json) with ten-locale IG copy</p>
+Summary: Implemented YAML ↔ JSON tool (yaml-json) with ten-locale IG copy.</p>
 <p>[question]
 根据规则和任务实现工具</p>
 <p>[try to solve]
-已按 <code>work-tasks/yaml-json/02-tool-info.md</code>（ready）与 <code>tool-creation.mdc</code> / 本地化稳妥常态实现 <strong>YAML ↔ JSON</strong>。</p>
-<p><strong>上线路径</strong>：<code>/tools/yaml-json</code>（十语 hreflang；不拆反向薄页）</p>
-<p><strong>交互</strong></p>
+Implemented <strong>YAML ↔ JSON</strong> from <code>work-tasks/yaml-json/02-tool-info.md</code> (<code>ready</code>) following <code>tool-creation.mdc</code> and the steady localization path.</p>
+<p><strong>URL</strong>: <code>/tools/yaml-json</code> (ten-locale hreflang; no reverse thin pages)</p>
+<p><strong>Interaction</strong></p>
 <ul>
-<li>Tab：YAML → JSON | JSON → YAML</li>
-<li><code>js-yaml@4.1.0</code> CDN；多文档 <code>loadAll</code>（单篇=值，多篇=数组）</li>
-<li>可选 JSON-safe types；缩进 2/4/minify；行号错误；Copy/Download/Sample/Clear</li>
-<li>粘贴本地处理；FAQ 区分 CDN 载库</li>
+<li>Tabs: YAML → JSON | JSON → YAML</li>
+<li><code>js-yaml@4.1.0</code> CDN; multi-doc <code>loadAll</code> (one doc = value; multiple = array)</li>
+<li>Optional JSON-safe types; indent 2/4/minify; line-number errors; Copy/Download/Sample/Clear</li>
+<li>Paste processed locally; FAQ distinguishes CDN library load</li>
 </ul>
-<p><strong>IG</strong>：Rules（类型/多文档/往返损失/隐私）+ Example + Use cases×3 + FAQ×5 + References（YAML 1.2 / js-yaml / RFC 8259）+ related → markdown-to-html、text-diff</p>
-<p><strong>本地化</strong>：en 母版 → 三批独立重写（FAQ 题序打散）；<code>lint:seo</code> 通过；<code>03</code> → <code>i18n-done</code>；<code>02</code> → <code>implemented</code></p>
-<p><strong>验收</strong>：<code>npm run lint:seo</code> OK；<code>npm run build:site</code>（sitemap 含 yaml-json）</p>
+<p><strong>IG</strong>: Rules (types / multi-doc / round-trip loss / privacy) + Example + Use cases×3 + FAQ×5 + References (YAML 1.2 / js-yaml / RFC 8259) + related → markdown-to-html, text-diff</p>
+<p><strong>Localization</strong>: en master → three independent rewrite batches (FAQ order shuffled); <code>lint:seo</code> passed; <code>03</code> → <code>i18n-done</code>; <code>02</code> → <code>implemented</code></p>
+<p><strong>Acceptance</strong>: <code>npm run lint:seo</code> OK; <code>npm run build:site</code> (sitemap includes yaml-json)</p>
 <p>[actions]</p>
 <ul>
-<li>新建 <code>src/pages/yamlJsonPage.ts</code></li>
-<li>更新 <code>src/site/tool-catalog.json</code>、<code>src/index.ts</code>、<code>README.md</code></li>
-<li>十语 <code>src/site/i18n/*.ts</code> + <code>scripts/site/i18n.mjs</code> 首页主词</li>
-<li>更新 <code>work-tasks/yaml-json/02</code>/<code>03</code></li>
-<li><code>npm run lint:seo</code>；<code>npm run build:site</code></li>
+<li>Added <code>src/pages/yamlJsonPage.ts</code></li>
+<li>Updated <code>src/site/tool-catalog.json</code>, <code>src/index.ts</code>, <code>README.md</code></li>
+<li>Ten-locale <code>src/site/i18n/*.ts</code> + <code>scripts/site/i18n.mjs</code> home primary terms</li>
+<li>Updated <code>work-tasks/yaml-json/02</code> / <code>03</code></li>
+<li><code>npm run lint:seo</code>; <code>npm run build:site</code></li>
 </ul>
 </article>
       </section>

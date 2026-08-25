@@ -5,8 +5,8 @@ Summary: Turnstile/Workers API scopes OK on Dailyonetools account; awaiting doma
 好了
 
 [try to solve]
-新 token 可列出账户并调用 Turnstile widgets / Workers scripts（200）。`auth-probe` 因 wrangler 4.58 无 `whoami --json` 误报，已绕过。账号：Dailyonetools@outlook.com's Account。扫描到接入点：`domainLookupPage.ts` 的 `#form` / `runLookup`（含进页 loadSample）。待用户确认域名与插入方案后再创建 widget。
+New token can list accounts and call Turnstile widgets / Workers scripts (200). `auth-probe` false-alarmed because wrangler 4.58 lacks `whoami --json`; bypassed. Account: Dailyonetools@outlook.com's Account. Integration point found: `domainLookupPage.ts` `#form` / `runLookup` (including on-page loadSample). Waiting for user to confirm domains and insertion approach before creating the widget.
 
 [actions]
-- verify/accounts/turnstile/workers API 探测
-- 读 vanilla-html 与 domainLookupPage 表单
+- Probed verify/accounts/turnstile/workers APIs
+- Read vanilla-html and domainLookupPage form

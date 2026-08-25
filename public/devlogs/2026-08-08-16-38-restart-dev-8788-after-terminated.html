@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Explained zsh terminated on start:dev; cleared stale 8787/8788 workerd and restarted on 8788. | Dev Logs</title>
   <meta name="description" content="Explained zsh terminated on start:dev; cleared stale 8787/8788 workerd and restarted on 8788." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-16-38-restart-dev-8788-after-terminated.html" />
   <meta property="og:title" content="Explained zsh terminated on start:dev; cleared stale 8787/8788 workerd and restarted on 8788. | Dev Logs" />
   <meta property="og:description" content="Explained zsh terminated on start:dev; cleared stale 8787/8788 workerd and restarted on 8788." />
@@ -151,7 +151,7 @@ Summary: Explained zsh terminated on start:dev; cleared stale 8787/8788 workerd 
 <p>[question]
 @terminals/1.txt:457-458 (zsh: terminated npm run start:dev --port 8788)</p>
 <p>[try to solve]
-<code>zsh: terminated</code> = 进程收到 SIGTERM（常因端口已被旧 workerd 占用、或 stop/冲突杀进程）。当时 8788 有僵尸 workerd、健康实例在 8787。已 force-kill 后 <code>start:dev --port 8788 --no-build</code>，Ready；<code>/zh/</code> 200 且含 theme-switcher。</p>
+<code>zsh: terminated</code> means the process received SIGTERM (often because the port was held by an old workerd, or a stop/conflict killed the process). At the time, 8788 had a zombie workerd while a healthy instance was on 8787. Force-killed stale processes, then <code>start:dev --port 8788 --no-build</code> → Ready; <code>/zh/</code> 200 and includes the theme-switcher.</p>
 <p>[actions]</p>
 <ul>
 <li>kill stale workerd; npm run start:dev -- --port 8788 --no-build</li>

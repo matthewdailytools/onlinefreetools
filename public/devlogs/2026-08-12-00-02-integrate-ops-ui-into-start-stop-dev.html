@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Integrate sitemap:ui / ops:ui into start-dev and stop-dev lifecycle scripts. | Dev Logs</title>
-  <meta name="description" content="Integrate sitemap:ui / ops:ui into start-dev and stop-dev lifecycle scripts." />
-  <meta name="robots" content="noindex" />
+  <title>Integrated sitemap:ui / ops:ui into start-dev and stop-dev lifecycle scripts. | Dev Logs</title>
+  <meta name="description" content="Integrated sitemap:ui / ops:ui into start-dev and stop-dev lifecycle scripts." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-12-00-02-integrate-ops-ui-into-start-stop-dev.html" />
-  <meta property="og:title" content="Integrate sitemap:ui / ops:ui into start-dev and stop-dev lifecycle scripts. | Dev Logs" />
-  <meta property="og:description" content="Integrate sitemap:ui / ops:ui into start-dev and stop-dev lifecycle scripts." />
+  <meta property="og:title" content="Integrated sitemap:ui / ops:ui into start-dev and stop-dev lifecycle scripts. | Dev Logs" />
+  <meta property="og:description" content="Integrated sitemap:ui / ops:ui into start-dev and stop-dev lifecycle scripts." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-12-00-02-integrate-ops-ui-into-start-stop-dev.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,20 +143,20 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Integrate sitemap:ui / ops:ui into start-dev and stop-dev lifecycle scripts. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Integrated sitemap:ui / ops:ui into start-dev and stop-dev lifecycle scripts. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-12 00:02
-Summary: Integrate sitemap:ui / ops:ui into start-dev and stop-dev lifecycle scripts.</p>
+Summary: Integrated sitemap:ui / ops:ui into start-dev and stop-dev lifecycle scripts.</p>
 <p>[question]
 将 npm run sitemap:ui / npm run ops:ui 融入到 start-dev.sh和stop-dev.sh 脚本里面</p>
 <p>[try to solve]
-<code>start-dev.sh</code> / <code>stop-dev.sh</code> 本身转发到 <code>.mjs</code>；已在启停链路默认一并管理 Ops UI（等同 <code>sitemap:ui</code> / <code>ops:ui</code>）：</p>
+<code>start-dev.sh</code> / <code>stop-dev.sh</code> already forward to <code>.mjs</code>; the start/stop chain now manages Ops UI by default (same as <code>sitemap:ui</code> / <code>ops:ui</code>):</p>
 <ul>
-<li><strong>start</strong>：wrangler 就绪后后台拉起 <code>ops/seo/sitemap-ui.mjs</code>（<code>.run/ops-ui.pid</code> / <code>.run/ops-ui.log</code>）；<code>--no-ops-ui</code> 可跳过；站点已在跑时也会补齐 Ops UI。</li>
-<li><strong>stop</strong>：同时清理 wrangler 与 Ops UI；外站占用端口不误杀、不因此失败。</li>
-<li><strong>status</strong>：同时报告两侧健康检查。</li>
-<li>同步更新 <code>.ps1</code>、<code>ops/README.md</code>。</li>
+<li><strong>start</strong>: after wrangler is ready, background-start <code>ops/seo/sitemap-ui.mjs</code> (<code>.run/ops-ui.pid</code> / <code>.run/ops-ui.log</code>); <code>--no-ops-ui</code> skips; if the site is already running, Ops UI is still started if missing.</li>
+<li><strong>stop</strong>: cleans wrangler and Ops UI together; does not kill foreign processes on the port or fail because of them.</li>
+<li><strong>status</strong>: reports health checks for both sides.</li>
+<li>Synced <code>.ps1</code> scripts and <code>ops/README.md</code>.</li>
 </ul>
 <p>[actions]</p>
 <ul>

@@ -5,7 +5,7 @@ Summary: Explained why SEO title/keyword coverage cannot be fully automated.
 为什么不能自动跑
 
 [try to solve]
-检索覆盖（0b / 步 2 / 步 4）不能整段自动当合规完成：规则要求对照用户搜索习惯做分析与回写，仓库无 SERP 爬虫，lint:seo 只验长度/FAQ 等，不能判定 H1 主词、参数枚举腔、related intent 撞车或十语是否检索向。可自动的是辅助检查（字数、禁模式启发式、缺覆盖表 fail）；改 title/desc 仍须按 brief 判断。上次批量勾选≠实质优化。
+Search coverage (0b / step 2 / step 4) cannot be marked compliant by automation alone: rules require analysis against real search habits and write-back; the repo has no SERP crawler; `lint:seo` only checks length/FAQ etc., not H1 primary terms, param-enumeration tone, related-intent collisions, or whether ten locales are search-oriented. Automation can help (length, banned-pattern heuristics, missing coverage-table fail); title/desc edits still need brief judgment. Prior batch checkboxes ≠ substantive optimization.
 
 [actions]
-- （说明，无代码改动）
+- (explanation only; no code changes)

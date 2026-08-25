@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Implemented protect-pdf tool with browser-side password encryption, 10-locale i18n, and all gates green. | Dev Logs</title>
   <meta name="description" content="Implemented protect-pdf tool with browser-side password encryption, 10-locale i18n, and all gates green." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-20-35-implement-protect-pdf-tool.html" />
   <meta property="og:title" content="Implemented protect-pdf tool with browser-side password encryption, 10-locale i18n, and all gates green. | Dev Logs" />
   <meta property="og:description" content="Implemented protect-pdf tool with browser-side password encryption, 10-locale i18n, and all gates green." />
@@ -167,23 +167,23 @@ Implement full <code>protect-pdf</code> in /Users/xuli/vscodeai/onlinefreetools.
 <p>Verify pdf-lib encrypt API works in the page script (PDFDocument.encrypt before save). If API differs, check pdf-lib docs — method is on PDFDocument instance: <code>doc.encrypt({ userPassword, ownerPassword })</code>.</p>
 <p>No plan/commit. 中文 brief. Chinese comments.</p>
 <p>[try to solve]
-已完成 <code>protect-pdf</code> 全量实现并通过全部门禁。</p>
-<p><strong>交付要点</strong></p>
+Shipped full <code>protect-pdf</code> with all gates green.</p>
+<p><strong>Deliverables</strong></p>
 <ul>
-<li>新增 catalog 分片、<code>protectPdfPage.ts</code>、图标、十语 i18n；<code>related</code> 暂为 <code>merge-pdf</code> + <code>organize-pdf</code>（unlock-pdf 尚未上线）。</li>
-<li>UI：PDF 上传 + 密码/确认密码（须一致、拒绝空密码）；Protect / Download / Sample / Clear；~25MB 软警告。</li>
-<li><code>loadSample()</code>：进页自动生成 1 页样例，用密码 <code>sample</code> 加密，启用 <code>protected.pdf</code> 下载，状态行显示样例密码。</li>
-<li>FAQ：强调用户密码加密、非军用级、后续用 unlock 工具+已知密码打开（非破解）；隐私=device+不上服务器。</li>
+<li>New catalog shard, <code>protectPdfPage.ts</code>, icon, ten-locale i18n; <code>related</code> temporarily <code>merge-pdf</code> + <code>organize-pdf</code> (<code>unlock-pdf</code> not shipped yet).</li>
+<li>UI: PDF upload + password / confirm (must match; empty rejected); Protect / Download / Sample / Clear; ~25 MB soft warn.</li>
+<li><code>loadSample()</code>: on enter, builds a 1-page sample encrypted with password <code>sample</code>, enables <code>protected.pdf</code> download, shows sample password in status.</li>
+<li>FAQ: user-password encryption, not military-grade; later unlock with known password (not cracking); privacy = device, no server upload.</li>
 </ul>
-<p><strong>技术说明</strong></p>
+<p><strong>Tech note</strong></p>
 <ul>
-<li>经验证，官方 <code>pdf-lib@1.17.1</code> <strong>无</strong> <code>PDFDocument.encrypt</code>（GitHub #1680）。页面改用 CDN <code>pdf-lib-with-encrypt@1.2.1</code>，保留相同 API：<code>doc.encrypt({ userPassword, ownerPassword })</code> → <code>save()</code>。</li>
+<li>Stock <code>pdf-lib@1.17.1</code> has <strong>no</strong> <code>PDFDocument.encrypt</code> (GitHub #1680). Page uses CDN <code>pdf-lib-with-encrypt@1.2.1</code> with the same API: <code>doc.encrypt({ userPassword, ownerPassword })</code> → <code>save()</code>.</li>
 </ul>
-<p><strong>文档</strong></p>
+<p><strong>Docs</strong></p>
 <ul>
-<li>更新 <code>02</code>→implemented、<code>03</code> 1b/2b 与 i18n-done；清单 #59→已上线；README 中英条目。</li>
+<li><code>02</code> → implemented; <code>03</code> 1b/2b and i18n-done; inventory #59 → shipped; README EN/ZH entries.</li>
 </ul>
-<p><strong>门禁</strong></p>
+<p><strong>Gates</strong></p>
 <ul>
 <li><code>coverage:gate --phase=all</code> ✓</li>
 <li><code>build:site</code> ✓</li>
@@ -194,9 +194,9 @@ Implement full <code>protect-pdf</code> in /Users/xuli/vscodeai/onlinefreetools.
 <ul>
 <li>src/site/tool-catalog.d/protect-pdf.json</li>
 <li>src/pages/protectPdfPage.ts</li>
-<li>src/site/i18n/tools/protect-pdf/*.ts（10 语）</li>
+<li>src/site/i18n/tools/protect-pdf/*.ts (10 locales)</li>
 <li>public/icons/tools/protect-pdf.svg</li>
-<li>work-tasks/protect-pdf/02-tool-info.md、03-locale-briefs.md</li>
+<li>work-tasks/protect-pdf/02-tool-info.md, 03-locale-briefs.md</li>
 <li>docs/2026-08-08-tool-inventory-table.md</li>
 <li>README.md</li>
 </ul>

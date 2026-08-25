@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Expanded site footer with Privacy, Terms, and Contact pages across ten locales. | Dev Logs</title>
-  <meta name="description" content="Expanded site footer with Privacy, Terms, and Contact pages across ten locales." />
-  <meta name="robots" content="noindex" />
+  <title>Expanded the site footer with Privacy, Terms, and Contact pages across ten locales. | Dev Logs</title>
+  <meta name="description" content="Expanded the site footer with Privacy, Terms, and Contact pages across ten locales." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-07-16-01-site-footer-privacy-terms-contact.html" />
-  <meta property="og:title" content="Expanded site footer with Privacy, Terms, and Contact pages across ten locales. | Dev Logs" />
-  <meta property="og:description" content="Expanded site footer with Privacy, Terms, and Contact pages across ten locales." />
+  <meta property="og:title" content="Expanded the site footer with Privacy, Terms, and Contact pages across ten locales. | Dev Logs" />
+  <meta property="og:description" content="Expanded the site footer with Privacy, Terms, and Contact pages across ten locales." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-07-16-01-site-footer-privacy-terms-contact.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,27 +143,27 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Expanded site footer with Privacy, Terms, and Contact pages across ten locales. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Expanded the site footer with Privacy, Terms, and Contact pages across ten locales. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-07 16:01
-Summary: Expanded site footer with Privacy, Terms, and Contact pages across ten locales.</p>
+Summary: Expanded the site footer with Privacy, Terms, and Contact pages across ten locales.</p>
 <p>[question]
 补充常规网站foot及关联页面</p>
 <p>[try to solve]
-已按常规工具站补齐页脚与关联页：</p>
+Brought the footer and related pages in line with a typical tools site:</p>
 <ul>
-<li>页脚现为版权行 + About / Privacy / Terms / Contact（静态站与工具页 SSR 共用同一链接集）</li>
-<li>新增十语静态页：<code>/privacy</code>、<code>/terms</code>、<code>/contact</code>（默认语无前缀；其余为 <code>/{lang}/…</code>），含 hreflang、sitemap、Worker 路由</li>
-<li>Privacy 写明本地处理、边缘 Worker 场景、Clarity/百度统计与联系邮箱；Terms 含可接受使用、无担保、健康/财务教育性免责；Contact 使用公开邮箱 <code>dailyonetools@outlook.com</code></li>
-<li>信息页文案落在 <code>scripts/site/i18n-site-pages.mjs</code>，由 <code>t()</code> 合并查询</li>
+<li>Footer is now copyright + About / Privacy / Terms / Contact (same link set for static site and tool-page SSR)</li>
+<li>Added ten-locale static pages: <code>/privacy</code>, <code>/terms</code>, <code>/contact</code> (default locale unprefixed; others <code>/{lang}/…</code>), with hreflang, sitemap, and Worker routes</li>
+<li>Privacy covers local processing, edge Worker cases, Clarity/Baidu analytics, and contact email; Terms cover acceptable use, no warranty, and educational health/finance disclaimer; Contact uses public email <code>dailyonetools@outlook.com</code></li>
+<li>Info-page copy lives in <code>scripts/site/i18n-site-pages.mjs</code>, merged via <code>t()</code></li>
 </ul>
 <p>[actions]</p>
 <ul>
-<li>新增 <code>scripts/site/pages/{info-page,privacy,terms,contact}.mjs</code>、<code>scripts/site/i18n-site-pages.mjs</code></li>
-<li>更新 <code>scripts/site/components/footer.mjs</code>、<code>src/pages/site/footer.ts</code>、<code>scripts/build-site.mjs</code>、<code>src/index.ts</code>、<code>scripts/site/config.mjs</code>、<code>scripts/site/i18n.mjs</code>、<code>scripts/site/pages/about.mjs</code></li>
-<li>十语 <code>src/site/i18n/*.ts</code> 增加 footer 短标签键</li>
-<li><code>npm run build:site</code>（sitemap 含新页）</li>
+<li>Added <code>scripts/site/pages/{info-page,privacy,terms,contact}.mjs</code>, <code>scripts/site/i18n-site-pages.mjs</code></li>
+<li>Updated <code>scripts/site/components/footer.mjs</code>, <code>src/pages/site/footer.ts</code>, <code>scripts/build-site.mjs</code>, <code>src/index.ts</code>, <code>scripts/site/config.mjs</code>, <code>scripts/site/i18n.mjs</code>, <code>scripts/site/pages/about.mjs</code></li>
+<li>Ten-locale <code>src/site/i18n/*.ts</code> footer short-label keys</li>
+<li><code>npm run build:site</code> (sitemap includes new pages)</li>
 </ul>
 </article>
       </section>

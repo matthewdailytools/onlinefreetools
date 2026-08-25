@@ -5,7 +5,7 @@ Summary: Track bootstrap/fonts in git, rebuild static pages, commit 29ac93e.
 直接改 .gitignore（去掉 bootstrap/fonts 两行），并把本地 vendor 加进仓库,然后重跑静态页面，commit
 
 [try to solve]
-已从 `.gitignore` 去掉 `public/vendor/bootstrap/` 与 `public/vendor/fonts/`；跑 `vendor:site-chrome` + `build:site`；提交 `29ac93e`（gitignore、vendor chrome 资产、十语静态页与 sitemap）。未 push。jsquash/gifenc/wasm-feature-detect 仍 ignore。
+Removed `public/vendor/bootstrap/` and `public/vendor/fonts/` from `.gitignore`; ran `vendor:site-chrome` + `build:site`; committed `29ac93e` (gitignore, vendor chrome assets, ten-locale static pages, sitemap). Not pushed. jsquash/gifenc/wasm-feature-detect remain ignored.
 
 [actions]
 - .gitignore

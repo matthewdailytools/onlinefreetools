@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Clarified that ~/.cf-turnstile-token is optional for day-to-day; .dev.vars secret is what local lookup needs. | Dev Logs</title>
   <meta name="description" content="Clarified that ~/.cf-turnstile-token is optional for day-to-day; .dev.vars secret is what local lookup needs." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-22-24-local-api-token-still-needed.html" />
   <meta property="og:title" content="Clarified that ~/.cf-turnstile-token is optional for day-to-day; .dev.vars secret is what local lookup needs. | Dev Logs" />
   <meta property="og:description" content="Clarified that ~/.cf-turnstile-token is optional for day-to-day; .dev.vars secret is what local lookup needs." />
@@ -151,10 +151,10 @@ Summary: Clarified that ~/.cf-turnstile-token is optional for day-to-day; .dev.v
 <p>[question]
 本地的apitoken是否还需要</p>
 <p>[try to solve]
-日常跑站 / domain-lookup <strong>不需要</strong> <code>~/.cf-turnstile-token</code>（那是 Cloudflare 管理 API：建 widget、部署 siteverify Worker、改 secret）。运行时靠公开 sitekey + Worker/<code> .dev.vars</code> 里的 <code>TURNSTILE_SECRET_KEY</code>。本地 <code>wrangler dev</code> 仍建议保留 <code>.dev.vars</code> 中的 secret；生产已用 <code>wrangler secret put</code>。若近期不再做仪表盘级操作，可删掉 token 文件；需要时再按 Spin 流程重建。</p>
+Day-to-day site / domain-lookup does <strong>not</strong> need <code>~/.cf-turnstile-token</code> (that is the Cloudflare management API for creating widgets, deploying the siteverify Worker, changing secrets). Runtime uses the public sitekey plus <code>TURNSTILE_SECRET_KEY</code> in the Worker / <code>.dev.vars</code>. Keep the secret in <code>.dev.vars</code> for local <code>wrangler dev</code>; production already has <code>wrangler secret put</code>. If no dashboard-level ops soon, the token file can be deleted and recreated later via the Spin flow.</p>
 <p>[actions]</p>
 <ul>
-<li>无代码改动</li>
+<li>No code changes</li>
 </ul>
 </article>
       </section>

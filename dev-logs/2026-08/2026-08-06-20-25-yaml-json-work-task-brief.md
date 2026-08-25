@@ -1,31 +1,31 @@
 Date: 2026-08-06 20:25
-Summary: 按规则策略完成 YAML ↔ JSON 立项文档（work-tasks/yaml-json）
+Summary: Completed the YAML ↔ JSON work-task brief under work-tasks/yaml-json per current rules (page code not implemented yet).
 
 [question]
 重新根据规则策略 立项：YAML ↔ JSON
 
 [try to solve]
-已在 `work-tasks/yaml-json/` 完成立项（尚未实现页面代码）。
+Created the full brief under `work-tasks/yaml-json/` (no page implementation yet).
 
-**结论**
-- **slug**：`yaml-json` → `/tools/yaml-json`
-- **主方向**：**B**（配置互通 1→1 桥；技术对齐 A.1 / Tier 1 `js-yaml`）
-- **YMYL**：否；粘贴本地处理
-- **`02` 状态**：`ready`；**`03` 状态**：`briefs-ready`
-- **长尾**：同页双向 Tab，不拆 `json-to-yaml` / K8s 专用薄页
+**Decisions**
+- **slug**: `yaml-json` → `/tools/yaml-json`
+- **Primary track**: **B** (config interchange 1→1 bridge; tech aligns A.1 / Tier 1 `js-yaml`)
+- **YMYL**: no; paste is processed locally
+- **`02` status**: `ready`; **`03` status**: `briefs-ready`
+- **Long-tail**: bidirectional tabs on one page; do not split thin `json-to-yaml` or K8s-only pages
 
-**相对 SERP 的 IG 重点（≥3）**
-1. 类型推断规则对照（DEFAULT vs JSON-safe；`yes`/`no` 等）
-2. 多文档政策写死：`loadAll` → JSON 数组
-3. 往返损失对照（注释/锚点/键序）+ 本地隐私诚实说明（文本不上传 vs CDN）
-4. 十语检索向 brief（实现时 ≥3 轮，禁脚本同构灌语）
+**SERP information-gain focus (≥3)**
+1. Type-inference rule table (DEFAULT vs JSON-safe; `yes`/`no`, etc.)
+2. Multi-document policy fixed: `loadAll` → JSON array
+3. Round-trip loss table (comments / anchors / key order) plus honest local-privacy note (text not uploaded vs CDN)
+4. Ten-locale search-oriented briefs (at implement time: ≥3 rounds; no scripted isomorphic dumps)
 
-**Related（现网）**：`markdown-to-html`、`text-diff`（卡片目标链的 schema/csv 工具未上线前）
+**Related (live)**: `markdown-to-html`, `text-diff` (schema/csv tools on the card target chain not shipped yet)
 
-下一步：你明确要求实现且保持 `02=ready` 后，再按 `tool-creation.mdc` + 稳妥常态本地化开工。
+Next: implement only after an explicit request while keeping `02=ready`, following `tool-creation.mdc` and the steady localization path.
 
 [actions]
-- 新建 `work-tasks/yaml-json/00-request.md`
-- 新建 `work-tasks/yaml-json/01-direction-discussion.md`
-- 新建 `work-tasks/yaml-json/02-tool-info.md`（ready）
-- 新建 `work-tasks/yaml-json/03-locale-briefs.md`（briefs-ready，十语 brief）
+- Added `work-tasks/yaml-json/00-request.md`
+- Added `work-tasks/yaml-json/01-direction-discussion.md`
+- Added `work-tasks/yaml-json/02-tool-info.md` (ready)
+- Added `work-tasks/yaml-json/03-locale-briefs.md` (briefs-ready, ten-locale briefs)

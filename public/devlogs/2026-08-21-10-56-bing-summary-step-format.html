@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Whether tool-page step markup must change for Bing AI summaries. | Dev Logs</title>
   <meta name="description" content="Whether tool-page step markup must change for Bing AI summaries." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-21-10-56-bing-summary-step-format.html" />
   <meta property="og:title" content="Whether tool-page step markup must change for Bing AI summaries. | Dev Logs" />
   <meta property="og:description" content="Whether tool-page step markup must change for Bing AI summaries." />
@@ -151,10 +151,10 @@ Summary: Whether tool-page step markup must change for Bing AI summaries.</p>
 <p>[question]
 再次分析，是否页面的步骤元素要修改格式</p>
 <p>[try to solve]
-不必为进 Bing Summary 改一套专用步骤 DOM。现网 How 是单段 p，Rules/Use cases 是 ul，FAQ 是 h3+p，JSON-LD 无 HowTo。ol 有利于人和抽取，但不是收录开关；HowTo schema 不为摘要 KPI。操作类工具若改，用 how_item_N 渲染 ol，保留总答 p；公式/规则不要改成假步骤。</p>
+No need for a Bing-Summary-specific step DOM. Live How sections are a single <code>&lt;p&gt;</code>; Rules/Use cases use <code>&lt;ul&gt;</code>; FAQ is h3+p; JSON-LD has no HowTo. Ordered lists help humans and extraction but are not an indexing switch; HowTo schema is not a summary KPI. For action tools that change markup, render <code>how_item_N</code> as <code>&lt;ol&gt;</code> and keep an overview <code>&lt;p&gt;</code>; do not turn formulas/rules into fake steps.</p>
 <p>[actions]</p>
 <ul>
-<li>更新画布 canvases/bing-ai-summary-strategy.canvas.tsx（步骤格式专节）</li>
+<li>Updated canvas canvases/bing-ai-summary-strategy.canvas.tsx (step-format section)</li>
 </ul>
 </article>
       </section>

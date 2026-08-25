@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Rebuilt square-feet, percentage-change, and gradient pages to BMI-style IG pattern with ten-locale copy. | Dev Logs</title>
-  <meta name="description" content="Rebuilt square-feet, percentage-change, and gradient pages to BMI-style IG pattern with ten-locale copy." />
-  <meta name="robots" content="noindex" />
+  <title>Rebuilt square-feet, percentage-change, and gradient pages to the BMI-style IG pattern with ten-locale copy. | Dev Logs</title>
+  <meta name="description" content="Rebuilt square-feet, percentage-change, and gradient pages to the BMI-style IG pattern with ten-locale copy." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-06-20-04-rebuild-sqft-pct-gradient-ig.html" />
-  <meta property="og:title" content="Rebuilt square-feet, percentage-change, and gradient pages to BMI-style IG pattern with ten-locale copy. | Dev Logs" />
-  <meta property="og:description" content="Rebuilt square-feet, percentage-change, and gradient pages to BMI-style IG pattern with ten-locale copy." />
+  <meta property="og:title" content="Rebuilt square-feet, percentage-change, and gradient pages to the BMI-style IG pattern with ten-locale copy. | Dev Logs" />
+  <meta property="og:description" content="Rebuilt square-feet, percentage-change, and gradient pages to the BMI-style IG pattern with ten-locale copy." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-06-20-04-rebuild-sqft-pct-gradient-ig.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,11 +143,11 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Rebuilt square-feet, percentage-change, and gradient pages to BMI-style IG pattern with ten-locale copy. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Rebuilt square-feet, percentage-change, and gradient pages to the BMI-style IG pattern with ten-locale copy. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-06 20:04
-Summary: Rebuilt square-feet, percentage-change, and gradient pages to BMI-style IG pattern with ten-locale copy.</p>
+Summary: Rebuilt square-feet, percentage-change, and gradient pages to the BMI-style IG pattern with ten-locale copy.</p>
 <p>[question]
 In /Users/xuli/vscodeai/onlinefreetools, rebuild these EXISTING calculator pages to match IG pattern in howToCalculateBmiPage.ts (helpers: renderToolIgSections, renderToolReferencesSection from src/pages/site/toolContent.ts).</p>
 <h2>Tools</h2>
@@ -193,14 +193,14 @@ In /Users/xuli/vscodeai/onlinefreetools, rebuild these EXISTING calculator pages
 </ul>
 <p>Return files changed + gaps.</p>
 <p>[try to solve]
-三页已按 BMI 的 IG 模式重建：<code>renderToolIgSections</code>（How / Formula / Example / Use cases）+ <code>renderToolReferencesSection</code>；保留计算器交互。</p>
+Rebuilt three pages to the BMI IG pattern: <code>renderToolIgSections</code> (How / Formula / Example / Use cases) + <code>renderToolReferencesSection</code>; calculator UI kept.</p>
 <ul>
-<li><strong>square-feet</strong>：长×宽单位切换保留；结果同时显示 sq ft 与 m²（NIST 因子 0.09290304）；房产/装修场景；NIST SP 811 引用；FAQ 含套内/建筑口径与非估价。</li>
-<li><strong>percentage-change</strong>：公式 (new−old)/old×100；示例 80→100=+25%；商业/数据 Use cases；百分点 FAQ；Relative change 引用。</li>
-<li><strong>gradient</strong>：按用户要求保持<strong>多元 ∇f</strong>（非两点斜率）；演示函数求值交互；优化/ML Use cases；Wikipedia Gradient + Khan Academy；related 仍为 percentage-change、roi。</li>
+<li><strong>square-feet</strong>: L×W unit switching kept; results show both sq ft and m² (NIST factor 0.09290304); real-estate/renovation use cases; NIST SP 811 reference; FAQ covers net vs gross area and non-appraisal.</li>
+<li><strong>percentage-change</strong>: formula (new−old)/old×100; example 80→100 = +25%; business/data use cases; percentage-points FAQ; Relative change reference.</li>
+<li><strong>gradient</strong>: kept multivariable ∇f per user request (not two-point slope); demo function evaluation UI; optimization/ML use cases; Wikipedia Gradient + Khan Academy; related remains percentage-change, roi.</li>
 </ul>
-<p>十语独立文案已写入 <code>src/site/i18n/*.ts</code>；首页卡片 title/desc 已同步 <code>scripts/site/i18n.mjs</code>。<code>npm run lint:seo</code> 通过。</p>
-<p><strong>Gaps</strong>：① work-tasks gradient <code>02</code>/<code>03</code> 偏向两点斜率，实现按用户指令保留多元微积分；② ar/ja/ru 仍建议母语抽查；③ <code>03</code> 轮次勾选未改（未要求）；④ square-feet 仍是 L×W 面积工具（非纯面积数值双向换算框）。</p>
+<p>Ten-locale independent copy written to <code>src/site/i18n/*.ts</code>; home-card titles/descs synced in <code>scripts/site/i18n.mjs</code>. <code>npm run lint:seo</code> passed.</p>
+<p><strong>Gaps</strong>: (1) work-tasks gradient <code>02</code>/<code>03</code> leaned two-point slope; implementation kept multivariable calculus per user instruction; (2) ar/ja/ru still recommend native review; (3) <code>03</code> round checkboxes unchanged (not requested); (4) square-feet remains an L×W area tool (not a pure area-value bidirectional converter).</p>
 <p>[actions]</p>
 <ul>
 <li>src/pages/squareFeetPage.ts</li>

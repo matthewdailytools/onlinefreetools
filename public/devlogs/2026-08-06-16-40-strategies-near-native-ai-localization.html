@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Explained strategies for near-native AI localization (process, not one-shot MT). | Dev Logs</title>
-  <meta name="description" content="Explained strategies for near-native AI localization (process, not one-shot MT)." />
-  <meta name="robots" content="noindex" />
+  <title>Outlined process strategies for near-native AI localization (workflow over one-shot MT); no code changes. | Dev Logs</title>
+  <meta name="description" content="Outlined process strategies for near-native AI localization (workflow over one-shot MT); no code changes." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-06-16-40-strategies-near-native-ai-localization.html" />
-  <meta property="og:title" content="Explained strategies for near-native AI localization (process, not one-shot MT). | Dev Logs" />
-  <meta property="og:description" content="Explained strategies for near-native AI localization (process, not one-shot MT)." />
+  <meta property="og:title" content="Outlined process strategies for near-native AI localization (workflow over one-shot MT); no code changes. | Dev Logs" />
+  <meta property="og:description" content="Outlined process strategies for near-native AI localization (workflow over one-shot MT); no code changes." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-06-16-40-strategies-near-native-ai-localization.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,18 +143,27 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Explained strategies for near-native AI localization (process, not one-shot MT). | Dev Logs</h1>
+          <h1 class="h4 mb-0">Outlined process strategies for near-native AI localization (workflow over one-shot MT); no code changes. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-06 16:40
-Summary: Explained strategies for near-native AI localization (process, not one-shot MT).</p>
+Summary: Outlined process strategies for near-native AI localization (workflow over one-shot MT); no code changes.</p>
 <p>[question]
 有什么策略能够让AI翻译类似母语翻译的效果</p>
 <p>[try to solve]
-近母语效果靠流程而非单次机翻：① 禁止英→各语直译，按目标语检索意图重写；② 给模型母语 brief（会搜什么、忌用词、语气、本地例子）；③ 分角色两轮（起草→审校挑译腔/错义）；④ 术语表与 UI 短词表；⑤ 对照 SERP 本地竞品 title；⑥ 抽样人工终审 ar/ja/ru 等。与现有 tool-i18n-localization.mdc 的 ≥3 轮核查一致。</p>
+Near-native quality comes from process, not a single machine-translation pass:</p>
+<ol>
+<li>Ban English→locale literal translation; rewrite for target-language search intent.</li>
+<li>Give the model a native brief (what people search, banned words, tone, local examples).</li>
+<li>Two roles / two passes (draft → review for calques and wrong sense).</li>
+<li>Glossaries and short UI term lists.</li>
+<li>Compare against local SERP competitor titles.</li>
+<li>Sample human final review for ar/ja/ru and similar locales.</li>
+</ol>
+<p>This matches the ≥3 review rounds already required in <code>tool-i18n-localization.mdc</code>.</p>
 <p>[actions]</p>
 <ul>
-<li>无代码改动</li>
+<li>No code changes</li>
 </ul>
 </article>
       </section>

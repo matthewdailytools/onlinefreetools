@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Header nav shows category names with tool links in each dropdown | Dev Logs</title>
-  <meta name="description" content="Header nav shows category names with tool links in each dropdown" />
-  <meta name="robots" content="noindex" />
+  <title>Header nav now shows category names with per-category tool links in each dropdown. | Dev Logs</title>
+  <meta name="description" content="Header nav now shows category names with per-category tool links in each dropdown." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-07-15-35-category-dropdown-tool-links.html" />
-  <meta property="og:title" content="Header nav shows category names with tool links in each dropdown | Dev Logs" />
-  <meta property="og:description" content="Header nav shows category names with tool links in each dropdown" />
+  <meta property="og:title" content="Header nav now shows category names with per-category tool links in each dropdown. | Dev Logs" />
+  <meta property="og:description" content="Header nav now shows category names with per-category tool links in each dropdown." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-07-15-35-category-dropdown-tool-links.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,18 +143,18 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Header nav shows category names with tool links in each dropdown | Dev Logs</h1>
+          <h1 class="h4 mb-0">Header nav now shows category names with per-category tool links in each dropdown. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-07 15:35
-Summary: Header nav shows category names with tool links in each dropdown</p>
+Summary: Header nav now shows category names with per-category tool links in each dropdown.</p>
 <p>[question]
 直接写分类名，然后下拉就是工具名和链接</p>
 <p>[try to solve]
-顶栏由单一「分类」下拉改为三个并列下拉，<strong>标签即分类名</strong>（图片编辑工具 / 开发者工具 / 计算器），子项为 catalog 中该分类下各工具的<strong>名称 + 链到 /tools/{slug}</strong>。</p>
+Replaced the single “Categories” dropdown with three side-by-side dropdowns. Labels are the category names (image editing / developer / calculators); children are each tool’s name + link to <code>/tools/{slug}</code> from the catalog.</p>
 <ul>
-<li><code>buildCategoryNavDropdowns</code>：<code>src/pages/site/nav.ts</code>（运行时工具页）、<code>scripts/site/nav.mjs</code>（静态首页）</li>
-<li>工具页与首页均已重建；图片编辑仍排第一</li>
+<li><code>buildCategoryNavDropdowns</code>: <code>src/pages/site/nav.ts</code> (runtime tool pages), <code>scripts/site/nav.mjs</code> (static home)</li>
+<li>Tool pages and home rebuilt; image editing still first</li>
 </ul>
 <p>[actions]</p>
 <ul>

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Fix R2 meta verification after updatedAt incremental upload. | Dev Logs</title>
   <meta name="description" content="Fix R2 meta verification after updatedAt incremental upload." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-14-21-23-fix-r2-meta-verify-transport.html" />
   <meta property="og:title" content="Fix R2 meta verification after updatedAt incremental upload. | Dev Logs" />
   <meta property="og:description" content="Fix R2 meta verification after updatedAt incremental upload." />
@@ -167,7 +167,7 @@ node scripts/verify-r2-worker-sync.mjs</p>
 xuli@Matthew-2023 onlinefreetools %</li>
 </ul>
 <p>[try to solve]
-已修复 <code>verify:r2</code> 与 <code>upload:r2</code> 的远端读取方式不一致问题：<code>upload:r2</code> 默认优先使用 R2 S3 凭据写入，而旧的 <code>verify:r2</code> 远端读取只走 wrangler。现在 <code>verify:r2</code> 有 S3 凭据时也优先用 S3，必要时可用 <code>--wrangler</code> 强制走 wrangler。随后已执行 <code>npm run upload:r2</code> 刷新远端 <code>_meta/pages-build.json</code>，并执行 <code>npm run verify:r2</code> 确认 R2 meta、contentHash、fileCount 与 <code>PAGES_CACHE_VERSION=4</code> 对齐。</p>
+Fixed a transport mismatch between <code>verify:r2</code> and <code>upload:r2</code>: <code>upload:r2</code> prefers R2 S3 credentials when available, while the old <code>verify:r2</code> remote read path used only wrangler. <code>verify:r2</code> now also prefers S3 when credentials are configured, with <code>--wrangler</code> to force wrangler. Then ran <code>npm run upload:r2</code> to refresh remote <code>_meta/pages-build.json</code>, and <code>npm run verify:r2</code> confirmed R2 meta, contentHash, fileCount, and <code>PAGES_CACHE_VERSION=4</code> aligned.</p>
 <p>[actions]</p>
 <ul>
 <li>Updated <code>scripts/verify-r2-worker-sync.mjs</code> to prefer S3 for remote verification when S3 credentials are configured.</li>

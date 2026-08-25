@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Archived dev-log markdown into YYYY-MM folders and updated build to list by month. | Dev Logs</title>
-  <meta name="description" content="Archived dev-log markdown into YYYY-MM folders and updated build to list by month." />
-  <meta name="robots" content="noindex" />
+  <title>Moved dev-log markdown into `YYYY-MM` folders and updated the build to list entries by month. | Dev Logs</title>
+  <meta name="description" content="Moved dev-log markdown into `YYYY-MM` folders and updated the build to list entries by month." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-06-13-03-dev-logs-monthly-archive.html" />
-  <meta property="og:title" content="Archived dev-log markdown into YYYY-MM folders and updated build to list by month. | Dev Logs" />
-  <meta property="og:description" content="Archived dev-log markdown into YYYY-MM folders and updated build to list by month." />
+  <meta property="og:title" content="Moved dev-log markdown into `YYYY-MM` folders and updated the build to list entries by month. | Dev Logs" />
+  <meta property="og:description" content="Moved dev-log markdown into `YYYY-MM` folders and updated the build to list entries by month." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-06-13-03-dev-logs-monthly-archive.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,33 +143,33 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Archived dev-log markdown into YYYY-MM folders and updated build to list by month. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Moved dev-log markdown into `YYYY-MM` folders and updated the build to list entries by month. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-06 13:03
-Summary: Archived dev-log markdown into YYYY-MM folders and updated build to list by month.</p>
+Summary: Moved dev-log markdown into <code>YYYY-MM</code> folders and updated the build to list entries by month.</p>
 <p>[question]
 将dev-log内容进行分月归档</p>
 <p>[try to solve]
-已将 <code>dev-logs/</code> 下全部 Markdown 迁入分月目录：</p>
+Moved all Markdown under <code>dev-logs/</code> into monthly directories:</p>
 <ul>
-<li><code>dev-logs/2026-01/</code>（57 篇）</li>
-<li><code>dev-logs/2026-06/</code>（1 篇）</li>
-<li><code>dev-logs/2026-07/</code>（2 篇）</li>
-<li><code>dev-logs/2026-08/</code>（5 篇）</li>
+<li><code>dev-logs/2026-01/</code> (57 articles)</li>
+<li><code>dev-logs/2026-06/</code> (1 article)</li>
+<li><code>dev-logs/2026-07/</code> (2 articles)</li>
+<li><code>dev-logs/2026-08/</code> (5 articles)</li>
 </ul>
-<p><code>index.html</code>、<code>viewer.html</code> 仍留在 <code>dev-logs/</code> 根目录。公开 URL（<code>/devlogs/&lt;文件名&gt;.html</code>）不变。</p>
-<p><strong>构建</strong>：<code>scripts/build-site.mjs</code> 递归读取各月目录；索引页按 <code>YYYY-MM</code> 分组展示。</p>
-<p><strong>规则</strong>：<code>.cursor/rules/dev-logs.mdc</code>、<code>.github/copilot-instructions.md</code> 路径改为 <code>dev-logs/YYYY-MM/</code>。</p>
-<p>已运行 <code>npm run build:logs</code> 刷新 <code>public/devlogs/</code>。</p>
+<p><code>index.html</code> and <code>viewer.html</code> stay at the <code>dev-logs/</code> root. Public URLs (<code>/devlogs/&lt;filename&gt;.html</code>) are unchanged.</p>
+<p>Build: <code>scripts/build-site.mjs</code> recursively reads monthly folders; the index page groups by <code>YYYY-MM</code>.</p>
+<p>Rules: <code>.cursor/rules/dev-logs.mdc</code> and <code>.github/copilot-instructions.md</code> paths updated to <code>dev-logs/YYYY-MM/</code>.</p>
+<p>Ran <code>npm run build:logs</code> to refresh <code>public/devlogs/</code>.</p>
 <p>[actions]</p>
 <ul>
-<li>dev-logs/2026-{01,06,07,08}/*.md（自根目录与日目录迁入）</li>
-<li>scripts/build-site.mjs</li>
-<li>scripts/site/i18n.mjs</li>
-<li>.cursor/rules/dev-logs.mdc</li>
-<li>.github/copilot-instructions.md</li>
-<li>public/devlogs/</li>
+<li><code>dev-logs/2026-{01,06,07,08}/*.md</code> (moved from root and day folders)</li>
+<li><code>scripts/build-site.mjs</code></li>
+<li><code>scripts/site/i18n.mjs</code></li>
+<li><code>.cursor/rules/dev-logs.mdc</code></li>
+<li><code>.github/copilot-instructions.md</code></li>
+<li><code>public/devlogs/</code></li>
 </ul>
 </article>
       </section>

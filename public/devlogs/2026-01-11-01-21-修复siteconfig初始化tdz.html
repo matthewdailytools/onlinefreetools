@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>修复 build:site 因 siteConfig 初始化自引用导致的 TDZ 报错 | Dev Logs</title>
-  <meta name="description" content="修复 build:site 因 siteConfig 初始化自引用导致的 TDZ 报错" />
-  <meta name="robots" content="noindex" />
+  <title>Fixed `build:site` TDZ crash caused by `siteConfig` self-reference during initialization. | Dev Logs</title>
+  <meta name="description" content="Fixed `build:site` TDZ crash caused by `siteConfig` self-reference during initialization." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-01-11-01-21-%E4%BF%AE%E5%A4%8Dsiteconfig%E5%88%9D%E5%A7%8B%E5%8C%96tdz.html" />
-  <meta property="og:title" content="修复 build:site 因 siteConfig 初始化自引用导致的 TDZ 报错 | Dev Logs" />
-  <meta property="og:description" content="修复 build:site 因 siteConfig 初始化自引用导致的 TDZ 报错" />
+  <meta property="og:title" content="Fixed `build:site` TDZ crash caused by `siteConfig` self-reference during initialization. | Dev Logs" />
+  <meta property="og:description" content="Fixed `build:site` TDZ crash caused by `siteConfig` self-reference during initialization." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-01-11-01-21-%E4%BF%AE%E5%A4%8Dsiteconfig%E5%88%9D%E5%A7%8B%E5%8C%96tdz.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,12 +143,12 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">修复 build:site 因 siteConfig 初始化自引用导致的 TDZ 报错 | Dev Logs</h1>
+          <h1 class="h4 mb-0">Fixed `build:site` TDZ crash caused by `siteConfig` self-reference during initialization. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>日期：2026年01月11日01时21分
-摘要：修复 build:site 因 siteConfig 初始化自引用导致的 TDZ 报错
-【question】</p>
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-01-11 01:21
+Summary: Fixed <code>build:site</code> TDZ crash caused by <code>siteConfig</code> self-reference during initialization.</p>
+<p>[question]</p>
 <blockquote>
 <p><a href="mailto:cloudflare-workers-openapi@0.0.1">cloudflare-workers-openapi@0.0.1</a> build:site
 node scripts/build-site.mjs</p>
@@ -162,15 +162,15 @@ node scripts/build-site.mjs</p>
     at ModuleJob.run (node:internal/modules/esm/module_job:274:25)
     at async onImport.tracePromise.<strong>proto</strong> (node:internal/modules/esm/loader:644:26)
     at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:98:5)</p>
-<p>Node.js v23.10.0
-【try to solve】
-原因是 <code>siteConfig</code> 对象初始化期间在 <code>enabledLangs</code> 的 IIFE 里自引用了 <code>siteConfig.languages</code>，触发 TDZ（在初始化完成前访问自身）。</p>
-<p>修复方式：把 <code>languages</code> 抽成独立常量，在构造 <code>siteConfig</code> 时引用该常量，并在 <code>enabledLangs</code> 计算里使用 <code>languages</code>，避免在初始化阶段访问 <code>siteConfig</code>。</p>
-<p>修复后重新执行 <code>env SITE_LANGS=zh,en SITE_DEFAULT_LANG=en npm run build:site</code>，构建成功并输出 <code>Built site for langs: zh, en</code>。
-【执行操作】</p>
+<p>Node.js v23.10.0</p>
+<p>[try to solve]
+Cause: while initializing <code>siteConfig</code>, an IIFE for <code>enabledLangs</code> referenced <code>siteConfig.languages</code>, hitting the temporal dead zone.</p>
+<p>Fix: extract <code>languages</code> as a standalone constant; build <code>siteConfig</code> from that constant and compute <code>enabledLangs</code> from <code>languages</code> without reading <code>siteConfig</code> during init.</p>
+<p>After the fix, <code>env SITE_LANGS=zh,en SITE_DEFAULT_LANG=en npm run build:site</code> succeeded and printed <code>Built site for langs: zh, en</code>.</p>
+<p>[actions]</p>
 <ul>
-<li>修改：<code>scripts/site/config.mjs</code></li>
-<li>运行：<code>env SITE_LANGS=zh,en SITE_DEFAULT_LANG=en npm run build:site</code></li>
+<li>Updated: <code>scripts/site/config.mjs</code></li>
+<li>Ran: <code>env SITE_LANGS=zh,en SITE_DEFAULT_LANG=en npm run build:site</code></li>
 </ul>
 </article>
       </section>

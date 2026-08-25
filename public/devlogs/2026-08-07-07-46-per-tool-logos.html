@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Configured a distinct logo for every tool in the catalog and surfaced them in sidebar, home cards, and related links. | Dev Logs</title>
   <meta name="description" content="Configured a distinct logo for every tool in the catalog and surfaced them in sidebar, home cards, and related links." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-07-07-46-per-tool-logos.html" />
   <meta property="og:title" content="Configured a distinct logo for every tool in the catalog and surfaced them in sidebar, home cards, and related links. | Dev Logs" />
   <meta property="og:description" content="Configured a distinct logo for every tool in the catalog and surfaced them in sidebar, home cards, and related links." />
@@ -151,13 +151,13 @@ Summary: Configured a distinct logo for every tool in the catalog and surfaced t
 <p>[question]
 每个工具配置一个logo</p>
 <p>[try to solve]
-在 <code>tool-catalog.json</code> 为每个工具增加 <code>logo</code> 字段（<code>/icons/tools/{slug}.svg</code>），并生成 15 个独立 SVG 图标。展示位置：左侧工具菜单、首页卡片、相关工具列表。<code>getToolLogoUrl</code> 供运行时与构建侧复用；缺省回退到同路径约定。</p>
+Added a <code>logo</code> field on each tool in <code>tool-catalog.json</code> (<code>/icons/tools/{slug}.svg</code>) and generated 15 distinct SVG icons. Display surfaces: left tool menu, home cards, and related-tools lists. <code>getToolLogoUrl</code> is shared by runtime and build; missing entries fall back to the same path convention.</p>
 <p>[actions]</p>
 <ul>
-<li><code>src/site/tool-catalog.json</code> — <code>logo</code> 字段</li>
-<li><code>public/icons/tools/*.svg</code> — 15 个工具图标</li>
-<li><code>src/site/tools.ts</code>、<code>scripts/site/tool-catalog.mjs</code> — <code>getToolLogoUrl</code></li>
-<li><code>src/pages/site/sidebar.ts</code>、<code>toolContent.ts</code>、<code>scripts/site/components/content-home.mjs</code>、<code>public/styles/site.css</code></li>
+<li><code>src/site/tool-catalog.json</code> — <code>logo</code> field</li>
+<li><code>public/icons/tools/*.svg</code> — 15 tool icons</li>
+<li><code>src/site/tools.ts</code>, <code>scripts/site/tool-catalog.mjs</code> — <code>getToolLogoUrl</code></li>
+<li><code>src/pages/site/sidebar.ts</code>, <code>toolContent.ts</code>, <code>scripts/site/components/content-home.mjs</code>, <code>public/styles/site.css</code></li>
 <li><code>npm run build:site</code></li>
 </ul>
 </article>

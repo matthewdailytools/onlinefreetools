@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Wired Turnstile on domain-lookup (widget + server siteverify) after user confirmed frontend edits. | Dev Logs</title>
   <meta name="description" content="Wired Turnstile on domain-lookup (widget + server siteverify) after user confirmed frontend edits." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-22-15-wire-turnstile-domain-lookup.html" />
   <meta property="og:title" content="Wired Turnstile on domain-lookup (widget + server siteverify) after user confirmed frontend edits. | Dev Logs" />
   <meta property="og:description" content="Wired Turnstile on domain-lookup (widget + server siteverify) after user confirmed frontend edits." />
@@ -151,17 +151,17 @@ Summary: Wired Turnstile on domain-lookup (widget + server siteverify) after use
 <p>[question]
 yes</p>
 <p>[try to solve]
-已把 Turnstile 接到 <code>domain-lookup</code>：表单内嵌 widget（sitekey <code>0x4AAAAAAEKPkweeKKHYjYJX</code>），提交前要求 token；真正 siteverify 在同源 <code>/api/tools/domain-lookup</code>（token 只能校验一次，故不先打 Spin Worker 再打业务 API）。<code>TURNSTILE_SECRET_KEY</code> 已写入 <code>onlinefreetools</code> Worker Secret 与本地 <code>.dev.vars</code>。十语增加 captcha 文案并 <code>merge:tools</code>。Spin <code>validate.sh</code> 因本机访问 <code>*.workers.dev</code> 超时失败（health）；需你在可达网络下复验或部署后浏览器实测。是否把 Spin skill 持久化到 <code>.claude/skills/turnstile-spin/</code>？</p>
+Wired Turnstile into <code>domain-lookup</code>: form embeds the widget (sitekey <code>0x4AAAAAAEKPkweeKKHYjYJX</code>) and requires a token before submit; real siteverify runs in same-origin <code>/api/tools/domain-lookup</code> (token is single-use, so do not hit the Spin Worker first then the business API). <code>TURNSTILE_SECRET_KEY</code> written to the <code>onlinefreetools</code> Worker Secret and local <code>.dev.vars</code>. Added captcha copy for ten locales and ran <code>merge:tools</code>. Spin <code>validate.sh</code> failed health because local access to <code>*.workers.dev</code> timed out; recheck on a reachable network or in the browser after deploy. Asked whether to persist the Spin skill under <code>.claude/skills/turnstile-spin/</code>.</p>
 <p>[actions]</p>
 <ul>
-<li><code>src/pages/domainLookupPage.ts</code> — Turnstile script/widget + 门闩；进页样例等 callback</li>
-<li><code>src/endpoints/turnstileSiteverify.ts</code> — 新增 Cloudflare siteverify 封装</li>
-<li><code>src/endpoints/domainLookup.ts</code> — 查上游前强制 Turnstile</li>
+<li><code>src/pages/domainLookupPage.ts</code> — Turnstile script/widget + gate; sample load waits for callback</li>
+<li><code>src/endpoints/turnstileSiteverify.ts</code> — new Cloudflare siteverify helper</li>
+<li><code>src/endpoints/domainLookup.ts</code> — require Turnstile before upstream lookups</li>
 <li><code>src/index.ts</code> — <code>Env.TURNSTILE_SECRET_KEY</code></li>
-<li><code>src/site/i18n/tools/domain-lookup/*</code> + merge 生成物 — captcha 三键</li>
+<li><code>src/site/i18n/tools/domain-lookup/*</code> + merge outputs — three captcha keys</li>
 <li><code>npx wrangler secret put TURNSTILE_SECRET_KEY --name onlinefreetools</code></li>
-<li>本地 <code>.dev.vars</code>（gitignore）写入同密钥</li>
-<li><code>bash …/validate.sh</code> → health 失败（workers.dev 不可达）</li>
+<li>Local <code>.dev.vars</code> (gitignored) with the same secret</li>
+<li><code>bash …/validate.sh</code> → health fail (workers.dev unreachable)</li>
 </ul>
 </article>
       </section>

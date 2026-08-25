@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>在 Cloudflare 的 DNS 设置中添加 www 子域名记录（常见为 CNAME 到裸域或 Pages 目标）。 | Dev Logs</title>
-  <meta name="description" content="在 Cloudflare 的 DNS 设置中添加 www 子域名记录（常见为 CNAME 到裸域或 Pages 目标）。" />
-  <meta name="robots" content="noindex" />
+  <title>Documented adding a www DNS record in Cloudflare (CNAME to apex or Pages). | Dev Logs</title>
+  <meta name="description" content="Documented adding a www DNS record in Cloudflare (CNAME to apex or Pages)." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-01-11-11-09-cloudflare-%E6%B7%BB%E5%8A%A0-www-dns.html" />
-  <meta property="og:title" content="在 Cloudflare 的 DNS 设置中添加 www 子域名记录（常见为 CNAME 到裸域或 Pages 目标）。 | Dev Logs" />
-  <meta property="og:description" content="在 Cloudflare 的 DNS 设置中添加 www 子域名记录（常见为 CNAME 到裸域或 Pages 目标）。" />
+  <meta property="og:title" content="Documented adding a www DNS record in Cloudflare (CNAME to apex or Pages). | Dev Logs" />
+  <meta property="og:description" content="Documented adding a www DNS record in Cloudflare (CNAME to apex or Pages)." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-01-11-11-09-cloudflare-%E6%B7%BB%E5%8A%A0-www-dns.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,38 +143,42 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">在 Cloudflare 的 DNS 设置中添加 www 子域名记录（常见为 CNAME 到裸域或 Pages 目标）。 | Dev Logs</h1>
+          <h1 class="h4 mb-0">Documented adding a www DNS record in Cloudflare (CNAME to apex or Pages). | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>日期：2026年1月11日11时09分
-摘要：在 Cloudflare 的 DNS 设置中添加 www 子域名记录（常见为 CNAME 到裸域或 Pages 目标）。</p>
-<p>【question】
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-01-11 11:09
+Summary: Documented adding a www DNS record in Cloudflare (CNAME to apex or Pages).</p>
+<p>[question]
 how cloudfare setting: add www domain  dns setting</p>
-<p>【try to solve】
-最常见目标：让 <code>www.example.com</code> 生效。</p>
-<p>方案 A（通用/推荐）：<code>www</code> 做 CNAME 指向裸域
-1）Cloudflare Dashboard -&gt; 选择站点 -&gt; DNS -&gt; Records -&gt; Add record。
-2）填写：</p>
+<p>[try to solve]
+Goal: make <code>www.example.com</code> resolve.</p>
+<h3>A (common/recommended): CNAME www → apex</h3>
+<ol>
+<li>Cloudflare Dashboard → site → DNS → Records → Add record.</li>
+<li>Fields:</li>
+</ol>
 <ul>
-<li>Type：CNAME</li>
-<li>Name：<code>www</code></li>
-<li>Target：<code>example.com</code>（或填 <code>@</code>，取决于界面是否支持）</li>
-<li>Proxy status：Proxied（橙云，通常建议开启）</li>
-<li>TTL：Auto
-3）保存后等待生效（通常几分钟内）。</li>
+<li>Type: CNAME</li>
+<li>Name: <code>www</code></li>
+<li>Target: <code>example.com</code> (or <code>@</code> if the UI allows)</li>
+<li>Proxy status: Proxied (orange cloud, usually recommended)</li>
+<li>TTL: Auto</li>
 </ul>
-<p>方案 B（Cloudflare Pages 场景）：<code>www</code> CNAME 指向 <code>xxx.pages.dev</code></p>
+<ol start="3">
+<li>Save; wait a few minutes for propagation.</li>
+</ol>
+<h3>B (Cloudflare Pages): CNAME www → <code>xxx.pages.dev</code></h3>
 <ul>
-<li>Type：CNAME</li>
-<li>Name：<code>www</code></li>
-<li>Target：<code>&lt;你的项目&gt;.pages.dev</code></li>
-<li>Proxy status：Proxied/Auto（按 Pages 提示）
-并在 Pages 项目里把 <code>www.example.com</code> 添加为 Custom Domain（Cloudflare 会自动配置/校验）。</li>
+<li>Type: CNAME</li>
+<li>Name: <code>www</code></li>
+<li>Target: <code>&lt;your-project&gt;.pages.dev</code></li>
+<li>Proxy: Proxied/Auto per Pages guidance
+Also add <code>www.example.com</code> as a Custom Domain on the Pages project (Cloudflare configures/validates).</li>
 </ul>
-<p>常见问题</p>
+<h3>Common issues</h3>
 <ul>
-<li>只加了 DNS 但访问仍不通：检查站点 SSL/TLS 配置、以及源站是否接受该 Host。</li>
-<li>已经做了 www-&gt;apex 301：仍建议保留 <code>www</code> DNS 记录，否则用户解析不到就无法跳转。</li>
+<li>DNS only but still unreachable: check SSL/TLS and whether the origin accepts that Host.</li>
+<li>If you already 301 www → apex, still keep the www DNS record so clients can resolve before the redirect.</li>
 </ul>
 </article>
       </section>

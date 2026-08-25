@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Explain Worker bundle shrink: Page/i18n still exist but moved from Worker runtime import to build-time prerender. | Dev Logs</title>
-  <meta name="description" content="Explain Worker bundle shrink: Page/i18n still exist but moved from Worker runtime import to build-time prerender." />
-  <meta name="robots" content="noindex" />
+  <title>Worker bundle shrank because Page/i18n code moved from runtime import to build-time prerender, not because tool sources were deleted. | Dev Logs</title>
+  <meta name="description" content="Worker bundle shrank because Page/i18n code moved from runtime import to build-time prerender, not because tool sources were deleted." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-12-22-54-why-worker-bundle-smaller.html" />
-  <meta property="og:title" content="Explain Worker bundle shrink: Page/i18n still exist but moved from Worker runtime import to build-time prerender. | Dev Logs" />
-  <meta property="og:description" content="Explain Worker bundle shrink: Page/i18n still exist but moved from Worker runtime import to build-time prerender." />
+  <meta property="og:title" content="Worker bundle shrank because Page/i18n code moved from runtime import to build-time prerender, not because tool sources were deleted. | Dev Logs" />
+  <meta property="og:description" content="Worker bundle shrank because Page/i18n code moved from runtime import to build-time prerender, not because tool sources were deleted." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-12-22-54-why-worker-bundle-smaller.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,20 +143,20 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Explain Worker bundle shrink: Page/i18n still exist but moved from Worker runtime import to build-time prerender. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Worker bundle shrank because Page/i18n code moved from runtime import to build-time prerender, not because tool sources were deleted. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-12 22:54
-Summary: Explain Worker bundle shrink: Page/i18n still exist but moved from Worker runtime import to build-time prerender.</p>
+Summary: Worker bundle shrank because Page/i18n code moved from runtime import to build-time prerender, not because tool sources were deleted.</p>
 <p>[question]
 那为什么打包会变小，既然原来生成工具后的文件都没有改变</p>
 <p>[try to solve]
-源文件（catalog / i18n / *Page.ts）确实还在、也几乎照旧维护。变小的是 <strong>打进 Cloudflare Worker 的包</strong>，不是删掉了工具代码。</p>
-<p>以前：<code>toolPageRegistry</code> 把全部 <code>*Page.ts</code> + 十语 i18n 拉进 Worker，请求时边缘 SSR → Worker 包约 9.8MB。
-现在：构建期用同一套渲染函数写出 HTML（预渲染包仍约 9.4MB，只在 Node 跑）；Worker 只留 slug 列表 + 读 R2/Assets → 约 416KB / gzip 83KB。</p>
+Source files (catalog / i18n / <code>*Page.ts</code>) are still present and maintained much as before. What got smaller is the <strong>Cloudflare Worker bundle</strong>, not the tool codebase itself.</p>
+<p>Previously: <code>toolPageRegistry</code> pulled every <code>*Page.ts</code> plus ten-locale i18n into the Worker, which SSR’d at the edge → Worker package ~9.8MB.
+Now: the same render functions run at build time to write HTML (prerender package still ~9.4MB, Node-only). The Worker keeps only the slug list and R2/Assets reads → ~416KB / gzip 83KB.</p>
 <p>[actions]</p>
 <ul>
-<li>（说明，无代码改动）</li>
+<li>Explanation only; no code changes</li>
 </ul>
 </article>
       </section>

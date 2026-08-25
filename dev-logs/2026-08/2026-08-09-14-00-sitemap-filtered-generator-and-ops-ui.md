@@ -5,23 +5,23 @@ Summary: Added filtered sitemap generation (lang/info/category/scenario/subject)
 sitemap的生成除了全量生成外，提供语言选择，相关页面选择(隐私，关于，联系，条款页面)，以及按类别，场景（where2use），工具类型选择，提供一个生成操作页面，进入密码为345621
 
 [try to solve]
-已支持全量之外的筛选生成，并提供本地密码门操作页（勿对公网暴露）。
+Filtered generation is supported beyond full sitemaps, with a local password-gated ops UI (do not expose publicly).
 
-**用法**
-- CLI：`npm run sitemap`（全量 → `public/sitemap.xml`）；筛选示例见 `ops/README.md` §4.0
-- 操作页：`npm run sitemap:ui` → http://127.0.0.1:8791/ ，进入密码 `345621`（可用 `SITEMAP_UI_PASSWORD` 覆盖）
-- 筛选默认写入 `public/sitemap.filtered.xml`；加覆盖选项才写主 sitemap
-- `npm run build:site` 仍走全量 `buildFullSitemap()`（当前约 140 entries × 10 langs = 1400 URLs）
+**Usage**
+- CLI: `npm run sitemap` (full → `public/sitemap.xml`); filter examples in `ops/README.md` §4.0
+- Ops UI: `npm run sitemap:ui` → http://127.0.0.1:8791/ ; entry password `345621` (override with `SITEMAP_UI_PASSWORD`)
+- Filters default to `public/sitemap.filtered.xml`; overwrite option writes the main sitemap
+- `npm run build:site` still uses full `buildFullSitemap()` (then ~140 entries × 10 langs = 1400 URLs)
 
-**筛选语义**
-- 语言 / 信息页（about、privacy、terms、contact）/ 场景 leaf / 工具类型 leaf / catalog category 可勾选
-- 工具过滤：category ∪ scenario ∪ subject 为 OR；三维皆空（或场景/类型全选）= 全部工具
-- 场景/类型「清空」= 不输出对应 leaf，且不按该维过滤工具
+**Filter semantics**
+- Language / info pages (about, privacy, terms, contact) / scenario leaves / tool-type leaves / catalog category are selectable
+- Tool filter: category ∪ scenario ∪ subject is OR; all three empty (or scenario/type fully selected) = all tools
+- Scenario/type “clear” = omit those leaves and do not filter tools on that dimension
 
-**实现**
-- 核心：`scripts/site/sitemap.mjs`
-- CLI：`ops/seo/generate-sitemap.mjs`
-- UI：`ops/seo/sitemap-ui.mjs` + `sitemap-ui.html`（仅绑定 127.0.0.1）
+**Implementation**
+- Core: `scripts/site/sitemap.mjs`
+- CLI: `ops/seo/generate-sitemap.mjs`
+- UI: `ops/seo/sitemap-ui.mjs` + `sitemap-ui.html` (bound to 127.0.0.1 only)
 
 [actions]
 - Added `scripts/site/sitemap.mjs`; wired `scripts/build-site.mjs` → `buildFullSitemap`

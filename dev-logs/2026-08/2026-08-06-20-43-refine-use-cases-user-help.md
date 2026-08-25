@@ -5,31 +5,31 @@ Summary: More refined use cases help when they add workflow constraints and deci
 用户使用场景是否更细化，这样会对用户更有帮助么？
 
 [try to solve]
-**会更有帮助——前提是「细化＝加上可执行约束/决策」，不是「多列几个行业名」。**
+**Yes — if “refine” means adding executable constraints and decisions, not stacking more industry labels.**
 
-### 为何细化有用
-策略把场景语境当作 IG（§3.1 ③），长尾默认「一带多场景」、慎拆页（§3.3）。用户真正需要的是：我这种情况该怎么设参数、会踩什么坑、结果能不能信。
+### Why refinement helps
+Strategy treats scenario context as IG (§3.1 ③) and defaults to covering multiple scenarios on one page while being cautious about splitting pages (§3.3). Users need: how to set parameters for my case, what pitfalls apply, and whether to trust the result.
 
-### 何种细化有用 vs 无用
+### Useful vs useless refinement
 
-| 有用的细化 | 无用的「细化」 |
+| Useful refinement | Useless “refinement” |
 |---|---|
-| 岗位 + 具体任务 + 约束 | 「适合学生 / 开发者 / 所有人」 |
-| 参数建议或对照（按行 vs 按词；公制 vs 英制） | 同义场景堆砌凑长尾 |
-| 失败/不适用边界 | 空壳拆 URL（doorway） |
-| 一条带数字的迷你例 | 只换 title 的变体页 |
+| Role + concrete task + constraints | “For students / developers / everyone” |
+| Parameter advice or comparison (line vs word; metric vs imperial) | Synonym scene stacking for long-tail |
+| Failure / not-applicable boundaries | Thin doorway URL splits |
+| One mini example with numbers | Variant pages that only change the title |
 
-### 现状（en）已有好坏对照
-- **已较细、较有用**：Headers（CORS / Cache-Control / CSP）；Markdown（CMS 导出、邮件 HTML→MD、剪贴板进 LLM）；百分比变化（GMV、DAU、价格且区分百分点）；Text Diff（.env、prompt 按词、校对）
-- **仍偏浅**：BMI「fitness onboarding」；ROI「coursework practice」——点到岗位但缺步骤/限制
+### Current en: good vs shallow
+- **Already finer / more useful**: Headers (CORS / Cache-Control / CSP); Markdown (CMS export, email HTML→MD, clipboard into LLM); percentage change (GMV, DAU, price with percentage-point distinction); Text Diff (.env, prompt word-level, proofreading)
+- **Still shallow**: BMI “fitness onboarding”; ROI “coursework practice” — names a role but lacks steps/limits
 
-### 建议写法（仍保持 2–3 条，加深不堆量）
-每条尽量含：**谁 + 任务 + 怎么用本工具 + 注意什么**。  
-例（sqft 可从现有再深一层）：「美式 listing 850 sq ft ↔ 本地 m² 广告比对；本页只算矩形平面面积，不含套内/公摊定义。」
+### Writing guidance (keep 2–3 items; deepen, don’t pile)
+Each item should cover **who + task + how to use this tool + what to watch**.  
+Example (sqft, one step deeper than today): “US listing 850 sq ft ↔ local m² ad comparison; this page only computes rectangular floor area, not interior/common-area definitions.”
 
-数量：默认仍 **2–3 条深场景**；第四条仅当有独立约束/例。不要为 SEO 扩到 8–10 条空标签。
+Count: default remains **2–3 deep scenarios**; add a fourth only when it has distinct constraints/examples. Do not expand to 8–10 empty labels for SEO.
 
-**一句话**：场景应该更细，细在「任务步骤与边界」；细成「行业标签清单」对用户帮助有限，还容易像堆内容。
+**Bottom line**: Scenarios should be finer in **task steps and boundaries**; finer as an **industry-tag list** helps users little and can look like content stuffing.
 
 [actions]
-- 对照 §3.1/§3.3 与 en 十工具 usecase 文案；未改代码
+- Compared §3.1/§3.3 with en usecase copy across ten tools; no code changes

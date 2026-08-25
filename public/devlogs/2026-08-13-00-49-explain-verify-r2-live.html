@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Explain verify:r2:live checks R2 meta plus live Worker /api/ops/pages-build. | Dev Logs</title>
   <meta name="description" content="Explain verify:r2:live checks R2 meta plus live Worker /api/ops/pages-build." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-13-00-49-explain-verify-r2-live.html" />
   <meta property="og:title" content="Explain verify:r2:live checks R2 meta plus live Worker /api/ops/pages-build. | Dev Logs" />
   <meta property="og:description" content="Explain verify:r2:live checks R2 meta plus live Worker /api/ops/pages-build." />
@@ -151,10 +151,10 @@ Summary: Explain verify:r2:live checks R2 meta plus live Worker /api/ops/pages-b
 <p>[question]
 npm run verify:r2:live的作用</p>
 <p>[try to solve]
-<code>verify:r2:live</code> = <code>verify:r2</code> 全部检查 + 请求生产 <code>GET /api/ops/pages-build</code>。先比本地 wrangler <code>PAGES_CACHE_VERSION</code>、本地 gzip 哈希与 R2 <code>_meta/pages-build.json</code>，并抽样关键 key；再确认线上 Worker 的 env 版本与 R2 meta 一致且 <code>aligned: true</code>。用于 git push / CF 部署完成后验收，避免「新 Worker + 旧 R2」或反过来。CF 未部署完时不要跑。</p>
+<code>verify:r2:live</code> = all <code>verify:r2</code> checks plus a request to production <code>GET /api/ops/pages-build</code>. First it compares local wrangler <code>PAGES_CACHE_VERSION</code>, local gzip hashes, and R2 <code>_meta/pages-build.json</code>, and samples related keys; then it confirms the live Worker env version matches R2 meta with <code>aligned: true</code>. Use it after git push / CF deploy finishes to catch “new Worker + old R2” (or the reverse). Do not run while CF deploy is still in progress.</p>
 <p>[actions]</p>
 <ul>
-<li>（只读说明）</li>
+<li>Read-only explanation</li>
 </ul>
 </article>
       </section>

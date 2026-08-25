@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Add top category dropdown; image editing tools first in nav order | Dev Logs</title>
-  <meta name="description" content="Add top category dropdown; image editing tools first in nav order" />
-  <meta name="robots" content="noindex" />
+  <title>Added a top category dropdown and put image-editing tools first in nav order. | Dev Logs</title>
+  <meta name="description" content="Added a top category dropdown and put image-editing tools first in nav order." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-07-15-29-header-category-dropdown-image-first.html" />
-  <meta property="og:title" content="Add top category dropdown; image editing tools first in nav order | Dev Logs" />
-  <meta property="og:description" content="Add top category dropdown; image editing tools first in nav order" />
+  <meta property="og:title" content="Added a top category dropdown and put image-editing tools first in nav order. | Dev Logs" />
+  <meta property="og:description" content="Added a top category dropdown and put image-editing tools first in nav order." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-07-15-29-header-category-dropdown-image-first.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,23 +143,23 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Add top category dropdown; image editing tools first in nav order | Dev Logs</h1>
+          <h1 class="h4 mb-0">Added a top category dropdown and put image-editing tools first in nav order. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-07 15:29
-Summary: Add top category dropdown; image editing tools first in nav order</p>
+Summary: Added a top category dropdown and put image-editing tools first in nav order.</p>
 <p>[question]
 顶部增加分类下拉菜单，调整分类顺序，图片编辑工具放在首位</p>
 <p>[try to solve]
-已实现全站顶栏「分类」Bootstrap 下拉，链到首页各分类锚点；分类顺序统一为 <strong>图片编辑 → 开发者 → 计算器</strong>。</p>
-<p>改动要点：</p>
+Implemented a site-wide header “Categories” Bootstrap dropdown linking to home category anchors. Category order is unified as Image editing → Developer → Calculators.</p>
+<p>Key changes:</p>
 <ul>
-<li>新增 <code>src/site/categories.ts</code>、<code>scripts/site/categories.mjs</code> 作为分类顺序单一数据源</li>
-<li>顶栏 <code>renderHeader</code>（运行时 + 静态构建）支持 <code>type: &#39;dropdown&#39;</code> 导航项</li>
-<li>首页顶栏与侧栏、首页 <code>#all-tools</code> 分区均按新顺序渲染</li>
-<li>全部工具页改用 <code>buildToolPageNavItems</code>（含分类下拉）</li>
-<li>十语 <code>nav_categories</code>；中文分类名改为「图片编辑工具」</li>
-<li>已运行 <code>npm run build:site</code> 刷新 <code>public/_pages/*/index.html</code></li>
+<li>Added <code>src/site/categories.ts</code> and <code>scripts/site/categories.mjs</code> as the single source of category order</li>
+<li>Header <code>renderHeader</code> (runtime + static build) supports <code>type: &#39;dropdown&#39;</code> nav items</li>
+<li>Home header, sidebar, and <code>#all-tools</code> sections all render in the new order</li>
+<li>All tool pages use <code>buildToolPageNavItems</code> (includes the category dropdown)</li>
+<li>Ten-locale <code>nav_categories</code>; Chinese category label set to the image-editing-tools phrase</li>
+<li>Ran <code>npm run build:site</code> to refresh <code>public/_pages/*/index.html</code></li>
 </ul>
 <p>[actions]</p>
 <ul>
@@ -167,7 +167,7 @@ Summary: Add top category dropdown; image editing tools first in nav order</p>
 <li><code>scripts/site/categories.mjs</code>, <code>scripts/site/nav.mjs</code>, <code>scripts/site/components/header.mjs</code></li>
 <li><code>scripts/site/pages/home.mjs</code>, <code>scripts/site/components/content-home.mjs</code></li>
 <li><code>scripts/site/i18n.mjs</code>, <code>src/site/i18n/*.ts</code>, <code>src/pages/*Page.ts</code></li>
-<li><code>public/_pages/*/index.html</code>（build 产出）</li>
+<li><code>public/_pages/*/index.html</code> (build output)</li>
 </ul>
 </article>
       </section>

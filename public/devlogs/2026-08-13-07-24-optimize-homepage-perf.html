@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Optimize homepage: collapse categories, content-visibility, eager first icons. | Dev Logs</title>
-  <meta name="description" content="Optimize homepage: collapse categories, content-visibility, eager first icons." />
-  <meta name="robots" content="noindex" />
+  <title>Optimize homepage with collapsed categories, content-visibility, and eager first icons. | Dev Logs</title>
+  <meta name="description" content="Optimize homepage with collapsed categories, content-visibility, and eager first icons." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-13-07-24-optimize-homepage-perf.html" />
-  <meta property="og:title" content="Optimize homepage: collapse categories, content-visibility, eager first icons. | Dev Logs" />
-  <meta property="og:description" content="Optimize homepage: collapse categories, content-visibility, eager first icons." />
+  <meta property="og:title" content="Optimize homepage with collapsed categories, content-visibility, and eager first icons. | Dev Logs" />
+  <meta property="og:description" content="Optimize homepage with collapsed categories, content-visibility, and eager first icons." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-13-07-24-optimize-homepage-perf.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,15 +143,15 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Optimize homepage: collapse categories, content-visibility, eager first icons. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Optimize homepage with collapsed categories, content-visibility, and eager first icons. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-13 07:24
-Summary: Optimize homepage: collapse categories, content-visibility, eager first icons.</p>
+Summary: Optimize homepage with collapsed categories, content-visibility, and eager first icons.</p>
 <p>[question]
 进行优化</p>
 <p>[try to solve]
-首页优化已落地：1) 分类改为 <code>&lt;details&gt;</code>，默认只展开第一类（全部工具链接仍在 HTML，利于 SEO）；2) <code>.home-cat</code> 加 <code>content-visibility:auto</code>；3) 首屏最多 12 个图标 <code>loading=eager</code>+<code>fetchpriority=high</code>，其余 lazy；4) 去掉 layout 里无效的 CSS preload 双写；5) 侧栏锚点点击/hash 自动展开对应分类。HTML 体积接近（~193KB），主要收益是首屏布局与图标请求减少。上线需 <code>gzip:pages</code>/<code>upload:r2</code> + push。</p>
+Homepage optimizations landed: (1) categories use <code>&lt;details&gt;</code>, only the first open by default (all tool links remain in HTML for SEO); (2) <code>.home-cat</code> gets <code>content-visibility: auto</code>; (3) at most 12 first-screen icons use <code>loading=eager</code> + <code>fetchpriority=high</code>, rest lazy; (4) removed ineffective CSS preload double-write in layout; (5) sidebar anchor click/hash auto-expands the matching category. HTML size stays ~193KB; main win is first-screen layout and fewer icon requests. Ship needs <code>gzip:pages</code> / <code>upload:r2</code> + push.</p>
 <p>[actions]</p>
 <ul>
 <li>Updated <code>scripts/site/components/content-home.mjs</code>, <code>content-tool-cards.mjs</code>, <code>layout.mjs</code>, <code>build-site.mjs</code></li>

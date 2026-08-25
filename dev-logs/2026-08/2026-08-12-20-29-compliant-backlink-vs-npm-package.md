@@ -5,7 +5,7 @@ Summary: Advised against automated backlink deployment; npm homepage links are f
 有没有比较好的自动部署外链的好方式，且是合规的，例如制作npm包，指向本站
 
 [try to solve]
-Google Link spam 明确禁止「用自动化程序/服务给本站造链」以及主要为操纵排名而铺链。不存在合规的「自动部署外链」流水线。npm 包若有真实功能、README/homepage 自然指文档或本站工具页，属于正常产品署名，可做；若为 SEO 批量发包、模板灌链、关键词锚文本，则落入 widget/template/自动化造链风险。合规做法仍是站内可链资产 + 月度白帽触点（awesome/教育资源/断链修复/真实社区回答），见 ops/seo/inbound-link-outreach.md；不以链数为 KPI。
+Google Link spam policies forbid “using automated programs/services to create links to your site” and schemes whose main purpose is to manipulate ranking. There is no compliant “auto-deploy backlinks” pipeline. An npm package with real functionality whose README/homepage naturally points to docs or a tool page is normal product attribution and is fine; batch SEO packages, template link stuffing, or keyword-anchored spam fall into widget/template/automated link-building risk. Compliant practice remains linkable on-site assets plus monthly white-hat outreach (awesome lists / education resources / broken-link repair / real community answers); see ops/seo/inbound-link-outreach.md; do not treat link count as a KPI.
 
 [actions]
-- 对照 Google spam-policies Link spam 与本站 link-strategy-execution / inbound checklist
+- Cross-checked Google spam-policies Link spam against this site’s link-strategy-execution / inbound checklist

@@ -5,7 +5,9 @@ Summary: GitHub push can replace bare wrangler deploy if same commit and live ve
 如下 npx wrangler deploy 这一步是否可以用 github 的 push 来替代？ npm run build:site / lint / upload:r2 / verify:r2 / wrangler deploy / verify:r2:live
 
 [try to solve]
-可以替代「只部署 Worker+Assets」那一步，前提：push 的 commit 与刚 build/upload 的代码和 `PAGES_CACHE_VERSION` 一致；CF 拉部署完成后再跑 `verify:r2:live`（异步部署，勿立刻探针）。不能替代 upload/verify；Git 路径也不会带上未 commit 的本地改动。推荐顺序：本地 build+lint+upload+verify → commit/push（触发 CF）→ 等部署成功 → verify:r2:live。若 CF Build 命令也跑 upload，会与本地 upload 重复，需二选一。
+Yes for the “deploy Worker+Assets only” step, if the pushed commit matches the just-built/uploaded code and `PAGES_CACHE_VERSION`, and you run `verify:r2:live` only after CF pull-deploy finishes (async—do not probe immediately). It does not replace upload/verify; the Git path also will not include uncommitted local changes.
+
+Recommended order: local build+lint+upload+verify → commit/push (triggers CF) → wait for deploy success → verify:r2:live. If the CF Build command also runs upload, that duplicates local upload—pick one.
 
 [actions]
-- （只读说明）
+- Read-only explanation

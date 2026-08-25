@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Make home tool entry cards semi-transparent with light backdrop blur. | Dev Logs</title>
   <meta name="description" content="Make home tool entry cards semi-transparent with light backdrop blur." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-21-34-tool-cards-transparency.html" />
   <meta property="og:title" content="Make home tool entry cards semi-transparent with light backdrop blur. | Dev Logs" />
   <meta property="og:description" content="Make home tool entry cards semi-transparent with light backdrop blur." />
@@ -151,10 +151,10 @@ Summary: Make home tool entry cards semi-transparent with light backdrop blur.</
 <p>[question]
 工具卡片增加透明度</p>
 <p>[try to solve]
-工具入口卡背景改为约 72% surface 半透明，并加轻 <code>backdrop-filter</code>；描边带品牌色；悬停提高到约 88% 以保可读。已 <code>build:site</code>。</p>
+Tool entry cards use ~72% surface opacity plus light <code>backdrop-filter</code>; border uses brand tint; hover raises opacity to ~88% for readability. Ran <code>build:site</code>.</p>
 <p>[actions]</p>
 <ul>
-<li>public/styles/site.css（.card.tool-entry-card）</li>
+<li>public/styles/site.css (.card.tool-entry-card)</li>
 <li>npm run build:site</li>
 </ul>
 </article>

@@ -1,48 +1,48 @@
 Date: 2026-08-09 21:55
-Summary: S2 批次 5 个 SEO 工具（on-page-seo-checker / open-graph-preview / utm-builder / hreflang-generator / meta-tag-generator）完成立项与实现，全部 phase=all 绿并入库上线。
+Summary: Shipped S2’s five SEO tools (on-page-seo-checker, open-graph-preview, utm-builder, hreflang-generator, meta-tag-generator) with phase=all green.
 
 [question]
 分步骤立项工具：on-page-seo-checker，open-graph-preview，utm-builder，hreflang-generator，meta-tag-generator；然后分步骤实现；
 
 [try to solve]
-按 tool-creation / work-tasks 流程完成 5 个 S2 工具立项与实现，每套走完 0b→1b→2→2b→3 轮次与 phase=all 门禁：
+Completed five S2 tools via tool-creation / work-tasks, each through rounds 0b→1b→2→2b→3 and phase=all gates:
 
 **on-page-seo-checker**
-- 新增 Worker API `/api/tools/on-page-seo`（拉取 URL HTML，含私有网段拦截/超时/2MB 上限），`parseUrlOrThrow` / `isBlockedHostname` 导出复用。
-- 页面双模式：粘贴 HTML（DOMParser 本地审计）与抓取 URL；检查 title/description/H1/canonical/robots/OG/JSON-LD/mixed content/render-blocking，canonical 用 finalUrl 判自引用。
-- 修复样例 JSON-LD 中未转义 `</script>` 导致内联脚本截断的语法错误。
-- 中文标题「On-Page SEO 检测」；en「On-Page SEO Checker — Find and fix page tag issues」（结果向，避免参数枚举）。
+- Worker API `/api/tools/on-page-seo` (fetch URL HTML; private-network block / timeout / 2MB cap); exports `parseUrlOrThrow` / `isBlockedHostname` for reuse.
+- Dual mode: paste HTML (DOMParser local audit) or fetch URL; checks title/description/H1/canonical/robots/OG/JSON-LD/mixed content/render-blocking; canonical self-ref uses finalUrl.
+- Fixed sample JSON-LD with unescaped `</script>` that truncated the inline script.
+- zh title: On-Page SEO Checker (localized); en: “On-Page SEO Checker — Find and fix page tag issues” (outcome-oriented, avoid param enum).
 
 **open-graph-preview**
-- 新增 Worker API `/api/tools/open-graph-preview`（复用 onPageSeo 辅助函数）。
-- 页面双模式：粘贴 og/twitter 标签或抓取 URL；解析标签渲染 Facebook / X / WhatsApp 三卡片 + 字段缺失表 + og:image 尺寸/比例读取。
-- 归 social 模块；移除 social upcoming 中「Open Graph preview」。
+- Worker API `/api/tools/open-graph-preview` (reuses onPageSeo helpers).
+- Dual mode: paste og/twitter tags or fetch URL; parse into Facebook / X / WhatsApp cards + missing-field table + og:image size/ratio.
+- Placed in the social module; removed “Open Graph preview” from social upcoming.
 
 **utm-builder**
-- 纯本地 `localProcessing: true`；页面表单生成 UTM 链接：自动补协议、参数合并（同名替换）、encodeURIComponent 编码、hash 保留在末尾、参数明细表 + 复制。
-- 归 growth 模块；移除 growth upcoming 中「UTM builder」。
+- Pure client (`localProcessing: true`); form builds UTM links: auto scheme, merge params (same name replaces), encodeURIComponent, hash kept at end, param detail table + copy.
+- Placed in the growth module; removed “UTM builder” from growth upcoming.
 
 **hreflang-generator**
-- 纯本地；输入「语言码 + URL」行列表，校验 BCP 47 语言码，URL 无协议自动补 https；输出三种形态 tab（`<link>` / HTTP Link 头 / sitemap xhtml:link），每 URL 自引用 + 可选 x-default。
-- 修复两处逻辑：语言码非法报错被 renderOutput 覆盖丢失 → 改 pendingErrors 收集；`{lang} {url}` 中 URL 无协议时整行被跳过 → 改用语言码判定解析。
-- 归 growth 模块；清空 growth upcoming（hreflang + UTM 均已实现）。
+- Pure client; language-code + URL line list; validate BCP 47; bare URLs get https; three output tabs (`<link>` / HTTP Link header / sitemap xhtml:link); per-URL self-ref + optional x-default.
+- Two logic fixes: invalid lang errors lost under renderOutput → collect via pendingErrors; `{lang} {url}` with schemeless URL skipped the whole line → parse by language-code first.
+- Placed in the growth module; cleared growth upcoming (hreflang + UTM both shipped).
 
 **meta-tag-generator**
-- 纯本地；title/desc/canonical/robots(select)/OG 字段 → 完整 head 片段；长度提示（title 60 / desc 160，不硬切）、escapeHtml 全字段转义、canonical 无协议标黄、空字段跳过、复制按钮。
-- 母版 title 曾被判参数枚举目录腔（「Create title, description & OG tags」）→ 改为结果向「Generate complete page head tags」，同步 02/03 与 zh/es/ja 方向。
-- 归 onpage 模块（含此前缺失的 on-page-seo-checker）；移除 onpage upcoming 中「Meta tag generator」。
+- Pure client; title/desc/canonical/robots(select)/OG → full head fragment; soft length hints (title 60 / desc 160), escapeHtml on all fields, schemeless canonical warned yellow, empty fields skipped, copy button.
+- Master title failed the param-enum gate (“Create title, description & OG tags”) → outcome “Generate complete page head tags”; synced 02/03 and zh/es/ja direction.
+- Placed in the onpage module (also added previously missing on-page-seo-checker); removed “Meta tag generator” from onpage upcoming.
 
-**全局收尾**
-- merge:tools 124 tools / 10 locales；10 语键集合逐一比对一致（on-page 95 / og 76 / utm 75 / hreflang 53 / meta 67 keys）。
-- 修复 lint:seo 2 个入链孤儿：sitemap-xml-generator related 加 hreflang-generator、hreflang-generator related 加 utm-builder → 0 inbound warn。
-- build:site 通过（sitemap 1470 URLs）；esbuild 编译 5 页面 + 2 Worker + index.ts 全过；每个工具都用 Node DOM mock 验证样例自动生成与关键交互。
-- README 中/英清单各插入 5 条目；清单总表 §6 行 78–80 标已上线、新增 81/82 行、统计区已上线 118→123、序号范围 1–163、未开始·P2 →~78。
+**Global wrap-up**
+- merge:tools: 124 tools / 10 locales; per-tool keysets match (on-page 95 / og 76 / utm 75 / hreflang 53 / meta 67).
+- Fixed lint:seo inbound orphans: sitemap-xml-generator related → hreflang-generator, hreflang-generator related → utm-builder → 0 inbound warn.
+- build:site OK (sitemap 1470 URLs); esbuild compiled 5 pages + 2 Workers + index.ts; Node DOM mocks for sample auto-gen and key interactions.
+- README EN/ZH lists +5 entries; inventory §6 rows 78–80 marked shipped, added 81/82, shipped count 118→123, index 1–163, open P2 →~78.
 
 [actions]
-- 新增 `src/tools/onPageSeo.ts`、`src/tools/openGraphPreview.ts`（Worker API + 路由）
-- 新增 `src/pages/onPageSeoCheckerPage.ts`、`openGraphPreviewPage.ts`、`utmBuilderPage.ts`、`hreflangGeneratorPage.ts`、`metaTagGeneratorPage.ts`
-- 新增 5 套 `work-tasks/{slug}/00-03` 文档（状态 `i18n-done`）与 `src/site/i18n/tools/{slug}/{10 语}.ts`
-- 新增 5 个 `src/site/tool-catalog.d/{slug}.json` 与 `public/icons/tools/{slug}.svg`
-- 更新 `scripts/site/scenario-modules.mjs`（onpage 补 on-page-seo-checker/meta-tag-generator；growth 补 utm/hreflang；social 已有 open-graph-preview）
-- 更新 `scripts/site/i18n-taxonomy.mjs`（onpage/growth upcoming 移除已实现项）
-- 更新 `README.md` 与 `docs/2026-08-08-tool-inventory-table.md`
+- Added `src/tools/onPageSeo.ts`, `src/tools/openGraphPreview.ts` (Worker API + routes)
+- Added `src/pages/onPageSeoCheckerPage.ts`, `openGraphPreviewPage.ts`, `utmBuilderPage.ts`, `hreflangGeneratorPage.ts`, `metaTagGeneratorPage.ts`
+- Added 5× `work-tasks/{slug}/00-03` (status `i18n-done`) and `src/site/i18n/tools/{slug}/{10 locales}.ts`
+- Added 5× `src/site/tool-catalog.d/{slug}.json` and `public/icons/tools/{slug}.svg`
+- Updated `scripts/site/scenario-modules.mjs` (onpage + on-page-seo-checker/meta-tag-generator; growth + utm/hreflang; social already had open-graph-preview)
+- Updated `scripts/site/i18n-taxonomy.mjs` (onpage/growth upcoming cleared of shipped items)
+- Updated `README.md` and `docs/2026-08-08-tool-inventory-table.md`

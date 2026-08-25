@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Local-first why card now shows and explains the No-upload badge. | Dev Logs</title>
   <meta name="description" content="Local-first why card now shows and explains the No-upload badge." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-21-05-why-card-explains-no-upload-tag.html" />
   <meta property="og:title" content="Local-first why card now shows and explains the No-upload badge. | Dev Logs" />
   <meta property="og:description" content="Local-first why card now shows and explains the No-upload badge." />
@@ -151,10 +151,10 @@ Summary: Local-first why card now shows and explains the No-upload badge.</p>
 <p>[question]
 本地优先卡片对不上传标签进行说明</p>
 <p>[try to solve]
-首页「本地优先 / Local-first」卡片内展示「不上传」标签样例（链到 privacy#local），并更新十语 <code>home_why_1_body</code>：说明标签含义、可点开隐私说明，以及边缘工具不挂标签。已 <code>build:site</code>。</p>
+The home “Local-first” why card now shows a sample “No upload” badge (linked to privacy#local) and updates ten-locale <code>home_why_1_body</code> to explain the badge, that it opens the privacy note, and that edge tools omit the badge. Ran <code>build:site</code>.</p>
 <p>[actions]</p>
 <ul>
-<li><code>scripts/site/components/content-home.mjs</code>、<code>scripts/site/i18n.mjs</code>、<code>public/styles/site.css</code></li>
+<li><code>scripts/site/components/content-home.mjs</code>, <code>scripts/site/i18n.mjs</code>, <code>public/styles/site.css</code></li>
 <li><code>npm run build:site</code></li>
 </ul>
 </article>

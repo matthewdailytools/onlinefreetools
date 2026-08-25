@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Verified homepage tool count 124 matches catalog and related sources. | Dev Logs</title>
   <meta name="description" content="Verified homepage tool count 124 matches catalog and related sources." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-12-21-46-verify-homepage-tool-count-124.html" />
   <meta property="og:title" content="Verified homepage tool count 124 matches catalog and related sources. | Dev Logs" />
   <meta property="og:description" content="Verified homepage tool count 124 matches catalog and related sources." />
@@ -151,18 +151,18 @@ Summary: Verified homepage tool count 124 matches catalog and related sources.</
 <p>[question]
 检查工具数量,首页显示124个工具是否正确</p>
 <p>[try to solve]
-结论：正确。首页「124 个工具」与目录一致。</p>
-<p>核对结果：</p>
+Verdict: correct. Homepage “124 tools” matches the catalog.</p>
+<p>Checks:</p>
 <table>
 <thead>
 <tr>
-<th>来源</th>
-<th>数量</th>
+<th>Source</th>
+<th>Count</th>
 </tr>
 </thead>
 <tbody><tr>
 <td><code>src/site/tool-catalog.json</code></td>
-<td>124（slug 无重复）</td>
+<td>124 (unique slugs)</td>
 </tr>
 <tr>
 <td><code>src/site/tool-catalog.d/</code></td>
@@ -177,15 +177,15 @@ Summary: Verified homepage tool count 124 matches catalog and related sources.</
 <td>124</td>
 </tr>
 <tr>
-<td>英文首页工具链接</td>
+<td>English homepage tool links</td>
 <td>124</td>
 </tr>
 </tbody></table>
-<p>Hero 数字来自 <code>TOOL_CATALOG.length</code>（<code>scripts/site/components/content-home.mjs</code>），不是写死的。</p>
-<p>按分类：计算器 62、开发者 28、图片 19、PDF 11、设计 4，合计 124。</p>
+<p>Hero number comes from <code>TOOL_CATALOG.length</code> (<code>scripts/site/components/content-home.mjs</code>), not a hard-coded constant.</p>
+<p>By category: calculators 62, developer 28, image 19, PDF 11, design 4 — total 124.</p>
 <p>[actions]</p>
 <ul>
-<li>读取/核对 <code>src/site/tool-catalog.json</code>、<code>tool-catalog.d</code>、<code>src/pages</code>、<code>i18n/tools</code>、首页 HTML 与 <code>content-home.mjs</code></li>
+<li>Read/verified <code>src/site/tool-catalog.json</code>, <code>tool-catalog.d</code>, <code>src/pages</code>, <code>i18n/tools</code>, homepage HTML, and <code>content-home.mjs</code></li>
 </ul>
 </article>
       </section>

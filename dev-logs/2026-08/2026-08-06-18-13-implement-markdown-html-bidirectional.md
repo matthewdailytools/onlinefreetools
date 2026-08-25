@@ -1,19 +1,19 @@
 Date: 2026-08-06 18:13
-Summary: Implemented bidirectional Markdown ↔ HTML on existing markdown-to-html page with Turndown and ten-locale copy.
+Summary: Implemented bidirectional Markdown ↔ HTML on the existing markdown-to-html page with Turndown and ten-locale copy.
 
 [question]
 实现工具
 
 [try to solve]
-已在现有 `/tools/markdown-to-html` 落地双向转换（不新建 `html-to-markdown`）：
+Shipped bidirectional conversion on existing `/tools/markdown-to-html` (no new `html-to-markdown` slug):
 
-- Tab：`Markdown → HTML`（默认，marked + DOMPurify）| `HTML → Markdown`（DOMPurify 后 Turndown，ATX + fenced）
-- SEO 模块：How / Rules / Example / Use cases / FAQ×5 / Related / References
-- 十语检索向文案 + 首页卡片 + README；`related` → `text-diff`, `website-headers`, `ip-address`
-- `npm run lint:seo` 通过；`npm run build:site` 完成
-- 立项文档状态改为 `implemented` / `i18n-done`
+- Tabs: `Markdown → HTML` (default, marked + DOMPurify) | `HTML → Markdown` (DOMPurify then Turndown, ATX + fenced)
+- SEO modules: How / Rules / Example / Use cases / FAQ×5 / Related / References
+- Ten-locale search-intent copy + home cards + README; `related` → `text-diff`, `website-headers`, `ip-address`
+- `npm run lint:seo` passed; `npm run build:site` completed
+- Work-tasks status set to `implemented` / `i18n-done`
 
-IG：① Rules ② 边界 FAQ ③ Use cases ④ 双向对照 ⑥ 隐私/CDN ⑧ Example ⑨ related。
+IG covered: ① Rules ② edge FAQ ③ Use cases ④ bidirectional contrast ⑥ privacy/CDN ⑧ Example ⑨ related.
 
 [actions]
 - Updated: `src/pages/markdownToHtmlPage.ts`

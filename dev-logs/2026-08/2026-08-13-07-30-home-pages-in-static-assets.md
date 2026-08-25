@@ -5,7 +5,7 @@ Summary: Serve language home pages from Static Assets after build.
 build的时候首页存放asset
 
 [try to solve]
-各语言首页在 `build:site` / `buildHome` 写入 `public/_pages/{lang}/index.html` 后，经 `.assetsignore` 与 `.gitignore` 反选进仓库与 Workers Static Assets；工具等其它 `_pages` 仍只走 R2。Worker 新增 `serveHomeHtml`：Cache → Assets → R2 兜底。上线须 commit 十语 `index.html` 并 git push（CF 部署 Assets）；R2 仍可继续上传首页作兜底。
+After `build:site` / `buildHome` writes `public/_pages/{lang}/index.html`, language homes are opt-in to the repo and Workers Static Assets via `.assetsignore` / `.gitignore` exceptions; other `_pages` content (tools, etc.) still goes only to R2. Worker adds `serveHomeHtml`: Cache → Assets → R2 fallback. Ship requires committing the ten-language `index.html` files and git push (CF deploys Assets); R2 may still upload homes as fallback.
 
 [actions]
 - Updated `public/.assetsignore`, `.gitignore`, `src/site/r2Pages.ts`, `src/index.ts`, `scripts/build-site.mjs`

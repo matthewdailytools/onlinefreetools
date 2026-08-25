@@ -5,7 +5,7 @@ Summary: Report current _pages gzip ratio (~82.5% saved) and that level is alrea
 gzip 目前的压缩率是多少，能增加么？
 
 [try to solve]
-1510 对文件：总体 HTML 138.45MB → gzip 24.19MB，体积约保留 17.5%（节省 ~82.5%）；中位 gz/html≈0.175。脚本已用 `createGzip({ level: 9 })`（zlib 最高）。相对 level 6 几乎无增益；Brotli q11 可再小约 20–30% 相对 gzip，但 Worker 现只 gunzip，换格式要改存储与解压。结论：gzip 侧已顶满，再压需换算法或减 HTML 源体积。
+1510 file pairs: overall HTML 138.45MB → gzip 24.19MB, size kept ~17.5% (saved ~82.5%); median gz/html ≈ 0.175. Script already uses `createGzip({ level: 9 })` (zlib max). Almost no gain vs level 6. Brotli q11 could shrink another ~20–30% relative to gzip, but the Worker only gunzips today—switching formats needs storage and decompress changes. Conclusion: gzip side is maxed; further size cuts need another algorithm or smaller HTML sources.
 
 [actions]
-- （只读测量，无代码改动）
+- Read-only measurement; no code changes

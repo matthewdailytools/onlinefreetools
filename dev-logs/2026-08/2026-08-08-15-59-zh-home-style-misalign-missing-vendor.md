@@ -5,9 +5,9 @@ Summary: Production /zh/ looks broken because self-hosted Bootstrap/font vendor 
 为什么上传后，https://onlinefreetools.org/zh/  样式错位了
 
 [try to solve]
-根因：今日把布局从 CDN 改为同域 `/vendor/bootstrap/`、`/vendor/fonts/` 后，线上 HTML 已引用这些路径，但生产上这两个资源返回 **404**；`/styles/site.css` 仍 200。缺少 Bootstrap 栅格/组件样式就会表现为首页错位。本地 `public/vendor/bootstrap/`、`public/vendor/fonts/` 由 `build:site` / `vendor:site-chrome` 生成，且在 `.gitignore` 中，若只上传 HTML/页面、或部署未跑 vendor 复制，就不会带上这些文件。
+Root cause: after switching layout from CDN to same-origin `/vendor/bootstrap/` and `/vendor/fonts/`, production HTML referenced those paths but both returned **404**; `/styles/site.css` still 200. Missing Bootstrap grid/component CSS shows up as a broken home layout. Local `public/vendor/bootstrap/` and `public/vendor/fonts/` are produced by `build:site` / `vendor:site-chrome` and were gitignored — uploading only HTML/pages, or deploying without the vendor copy, omits those files.
 
-修复：部署前执行 `npm run build:site`（或至少 `npm run vendor:site-chrome`），再 `npm run deploy` / 完整上传含 `public/vendor/bootstrap/` 与 `public/vendor/fonts/` 的 assets。
+Fix: before deploy run `npm run build:site` (or at least `npm run vendor:site-chrome`), then `npm run deploy` / upload assets that include `public/vendor/bootstrap/` and `public/vendor/fonts/`.
 
 [actions]
 - Verified live: bootstrap.min.css / plus-jakarta-sans.css → 404; site.css → 200

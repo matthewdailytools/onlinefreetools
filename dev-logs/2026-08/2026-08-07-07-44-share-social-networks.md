@@ -5,9 +5,9 @@ Summary: Extended the tool share module with X, Facebook, LinkedIn, Reddit, What
 分享模块提供一些常用的分享路径，例如x，facebook等
 
 [try to solve]
-在工具页分享模块中增加常用社交外链（新窗口打开）：X、Facebook、LinkedIn、Reddit、WhatsApp、Telegram；保留复制链接与系统分享。十语文案补充 `tool_share_networks_label` 并更新 hint；样式为轻量按钮组。
+Added common social outbound links on the tool-page share module (open in a new window): X, Facebook, LinkedIn, Reddit, WhatsApp, and Telegram; kept copy-link and system share. Added `tool_share_networks_label` across ten locales and updated the hint; styled as a light button group.
 
 [actions]
 - `src/pages/site/toolContent.ts` — `buildSocialShareLinks`
 - `public/styles/site.css` — `.tool-share-networks` / `.tool-share-net`
-- `src/site/i18n/*.ts` — 分享文案更新
+- `src/site/i18n/*.ts` — share copy updates

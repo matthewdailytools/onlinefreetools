@@ -5,7 +5,7 @@ Summary: Unified site type scale tokens and home card classes; rebuilt static pa
 统一修改
 
 [try to solve]
-在 `site.css` 增加 `--fs-*` 阶梯（Hero→区块→分类→副标/推荐卡→卡片→正文→次要），首页/顶栏/侧栏/工具页 H1·lead·区块 H2 改用 token；去掉卡片 Bootstrap `h5/h6/small`，改为 `home-card-title` / `--featured` 与 `home-card-desc` / `--sm`；修正无效字重 750/650；已 `build:site`。刷新 http://localhost:8788/zh/（或 `/_pages/zh/index.html`）查看。
+Added a `--fs-*` ladder in `site.css` (Hero → section → category → subtitle/featured card → card → body → muted). Home/header/sidebar/tool H1·lead·section H2 now use tokens. Removed Bootstrap `h5/h6/small` on cards in favor of `home-card-title` / `--featured` and `home-card-desc` / `--sm`. Fixed invalid font-weights 750/650. Ran `build:site`. Refresh http://localhost:8788/zh/ (or `/_pages/zh/index.html`) to review.
 
 [actions]
 - public/styles/site.css

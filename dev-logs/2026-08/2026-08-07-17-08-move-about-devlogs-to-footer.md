@@ -1,16 +1,16 @@
 Date: 2026-08-07 17:08
-Summary: Move About and Dev Logs from header nav to footer
+Summary: Moved About and Dev Logs from the header nav into the footer.
 
 [question]
 将菜单中的关于和开发日志移到foot中
 
 [try to solve]
-顶栏已移除「关于」「开发日志」；页脚现为：关于 · 开发日志 · 隐私 · 条款 · 联系（`/devlogs/` 保持根路径无语言前缀）。
+Removed About and Dev Logs from the top nav. The footer now lists: About · Dev Logs · Privacy · Terms · Contact (`/devlogs/` stays at the root path with no language prefix).
 
-涉及：`nav.mjs` / `nav.ts`、`footer.mjs` / `footer.ts`、`info-page.mjs`、`build-site.mjs`（devlogs 顶栏与工具页一致）；已 `npm run build:site`。
+Touched: `nav.mjs` / `nav.ts`, `footer.mjs` / `footer.ts`, `info-page.mjs`, `build-site.mjs` (devlogs top bar aligned with tool pages). Ran `npm run build:site`.
 
 [actions]
 - `scripts/site/nav.mjs`, `scripts/site/pages/home.mjs`, `scripts/site/pages/info-page.mjs`
 - `scripts/site/components/footer.mjs`, `scripts/build-site.mjs`
 - `src/pages/site/nav.ts`, `src/pages/site/footer.ts`
-- `public/_pages/*/index.html` 等构建产物
+- `public/_pages/*/index.html` and other build outputs

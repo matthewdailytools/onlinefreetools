@@ -5,7 +5,7 @@ Summary: Implemented how-to-calculate-cagr (en master) and passed coverage:gate 
 In repo /Users/xuli/vscodeai/onlinefreetools, implement how-to-calculate-cagr AFTER confirming work-tasks exist (they do). Create catalog, SVG, en.ts, Page; set 02 ready; add 03 rows 1+1b; run merge:tools && coverage:gate phase=2. Return phase=2 result and sample confirmation. Do NOT write non-en locales yet.
 
 [try to solve]
-CAGR 工具已落地：catalog / SVG / en 母版 / Page 齐备，`02` 标 ready，`03` 已写 1 与 1b 行。`coverage:gate --phase=2` 通过；样例 10000 → 16105.1、5 年 → **10.00%**。
+CAGR tool landed: catalog, SVG, English master, and Page are in place; `02` marked ready; `03` has rows 1 and 1b. `coverage:gate --phase=2` passed. Sample: 10000 → 16105.1 over 5 years → **10.00%**.
 
 [actions]
 - Created `src/site/tool-catalog.d/how-to-calculate-cagr.json`

@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Removed home nav Featured and hero Featured CTA; replaced Browse tools link with tool count text. | Dev Logs</title>
-  <meta name="description" content="Removed home nav Featured and hero Featured CTA; replaced Browse tools link with tool count text." />
-  <meta name="robots" content="noindex" />
+  <title>Removed home nav Featured and hero Featured CTA; replaced Browse tools link with tool-count text. | Dev Logs</title>
+  <meta name="description" content="Removed home nav Featured and hero Featured CTA; replaced Browse tools link with tool-count text." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-09-00-14-home-remove-featured-cta-show-count.html" />
-  <meta property="og:title" content="Removed home nav Featured and hero Featured CTA; replaced Browse tools link with tool count text. | Dev Logs" />
-  <meta property="og:description" content="Removed home nav Featured and hero Featured CTA; replaced Browse tools link with tool count text." />
+  <meta property="og:title" content="Removed home nav Featured and hero Featured CTA; replaced Browse tools link with tool-count text. | Dev Logs" />
+  <meta property="og:description" content="Removed home nav Featured and hero Featured CTA; replaced Browse tools link with tool-count text." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-09-00-14-home-remove-featured-cta-show-count.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,24 +143,24 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Removed home nav Featured and hero Featured CTA; replaced Browse tools link with tool count text. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Removed home nav Featured and hero Featured CTA; replaced Browse tools link with tool-count text. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-09 00:14
-Summary: Removed home nav Featured and hero Featured CTA; replaced Browse tools link with tool count text.</p>
+Summary: Removed home nav Featured and hero Featured CTA; replaced Browse tools link with tool-count text.</p>
 <p>[question]
 将顶部菜单“推荐”以及why卡片上方的“推荐工具”删除，“浏览全部工具”剔除链接，显示工具数量xxx</p>
 <p>[try to solve]
-已改首页构建：</p>
+Homepage build updates:</p>
 <ol>
-<li>顶栏去掉「推荐」：<code>buildHomeNavItems</code> 仅保留分类下拉（<code>scripts/site/nav.mjs</code>）。</li>
-<li>Hero 去掉「推荐工具」按钮（原 <code>home_cta_featured</code> → <code>#featured</code>）。</li>
-<li>「浏览全部工具」改为非链接文案：按 catalog 显示数量，如 zh <code>59 个工具</code>、en <code>59 tools</code>（键 <code>home_tools_count: &#39;{n} …&#39;</code>，十语已加）。</li>
+<li>Top nav dropped Featured (zh label was 推荐): <code>buildHomeNavItems</code> keeps only the category dropdown (<code>scripts/site/nav.mjs</code>).</li>
+<li>Hero dropped the Featured tools CTA (was <code>home_cta_featured</code> → <code>#featured</code>).</li>
+<li>“Browse all tools” became non-link copy showing catalog count via <code>home_tools_count: &#39;{n} …&#39;</code> for all ten locales (examples: en <code>59 tools</code>, zh <code>59 个工具</code>).</li>
 </ol>
-<p><code>npm run build:site</code> 已刷新 <code>public/_pages/*/index.html</code>。下方 Featured 工具卡片区仍保留（仅去掉入口按钮与顶栏项）。</p>
+<p><code>npm run build:site</code> refreshed <code>public/_pages/*/index.html</code>. The Featured tool cards section below remained at this step (only nav entry and CTA removed).</p>
 <p>[actions]</p>
 <ul>
-<li>更新 <code>scripts/site/nav.mjs</code>、<code>scripts/site/components/content-home.mjs</code>、<code>scripts/site/i18n.mjs</code>、<code>public/styles/site.css</code></li>
+<li>Updated <code>scripts/site/nav.mjs</code>, <code>scripts/site/components/content-home.mjs</code>, <code>scripts/site/i18n.mjs</code>, <code>public/styles/site.css</code></li>
 <li><code>npm run build:site</code></li>
 </ul>
 </article>

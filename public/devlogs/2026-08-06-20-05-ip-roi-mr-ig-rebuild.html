@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Rebuilt IP, ROI, and marginal-revenue tool pages to the shared IG pattern with full ten-locale copy. | Dev Logs</title>
   <meta name="description" content="Rebuilt IP, ROI, and marginal-revenue tool pages to the shared IG pattern with full ten-locale copy." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-06-20-05-ip-roi-mr-ig-rebuild.html" />
   <meta property="og:title" content="Rebuilt IP, ROI, and marginal-revenue tool pages to the shared IG pattern with full ten-locale copy. | Dev Logs" />
   <meta property="og:description" content="Rebuilt IP, ROI, and marginal-revenue tool pages to the shared IG pattern with full ten-locale copy." />
@@ -197,14 +197,14 @@ In /Users/xuli/vscodeai/onlinefreetools, rebuild these EXISTING tool pages to ma
 <p>After edits: run <code>npm run lint:seo</code> and fix failures you introduced.</p>
 <p>Return summary of files changed and any leftover gaps.</p>
 <p>[try to solve]
-已将三个存量工具页对齐 BMI/website-headers 的 IG 结构：页面接入 <code>renderToolIgSections</code> / <code>renderToolReferencesSection</code> / <code>renderToolExtraSections</code>，References 置于 FAQ/Related 之后。</p>
+Aligned three existing tool pages with the BMI / website-headers IG structure: pages wire <code>renderToolIgSections</code> / <code>renderToolReferencesSection</code> / <code>renderToolExtraSections</code>; References sit after FAQ/Related.</p>
 <ul>
-<li><strong>IP</strong>：保留 <code>/api/tools/ip-address</code> 拉取 UI；How + Rules（边缘可信客户端 IP、VPN/NAT/双栈）；Example 用 203.0.113.10；引用 MDN X-Forwarded-For 与 Cloudflare Learning。</li>
-<li><strong>ROI（YMYL）</strong>：保留 initial/final/gain；Formula 含税/时间/费用/多期局限假设项；固定例 1000→1300 = 30%；两条 Investopedia 可点引用；语气软化。</li>
-<li><strong>边际收益（YMYL）</strong>：保留 Q1/TR1/Q2/TR2 计算器并显示 ΔTR/ΔQ 推导；例 10→11 / 1000→1080 → MR 80；Investopedia + OpenStax 引用。</li>
+<li><strong>IP</strong>: kept <code>/api/tools/ip-address</code> fetch UI; How + Rules (edge-trusted client IP, VPN/NAT/dual-stack); Example uses 203.0.113.10; refs MDN X-Forwarded-For and Cloudflare Learning.</li>
+<li><strong>ROI (YMYL)</strong>: kept initial/final/gain; Formula includes tax/time/fees/multi-period assumption items; fixed example 1000→1300 = 30%; two clickable Investopedia refs; softened advice tone.</li>
+<li><strong>Marginal revenue (YMYL)</strong>: kept Q1/TR1/Q2/TR2 calculator with visible ΔTR/ΔQ derivation; example 10→11 / 1000→1080 → MR 80; Investopedia + OpenStax refs.</li>
 </ul>
-<p>十语文案按 <code>03-locale-briefs.md</code> 独立重写（非英模同构）；<code>scripts/site/i18n.mjs</code> 首页卡片 title/desc 已同步。<code>npm run lint:seo</code> 通过。</p>
-<p><strong>遗留缺口</strong>：<code>03</code> 中 ar/ja/ru 仍标「待母语抽查」；未改 <code>tool-catalog.json</code>；未触碰 text-diff / markdown-to-html。</p>
+<p>Ten-locale copy rewritten independently from <code>03-locale-briefs.md</code> (not English-template isomorphic); <code>scripts/site/i18n.mjs</code> home-card titles/descs synced. <code>npm run lint:seo</code> passed.</p>
+<p><strong>Leftover gaps</strong>: <code>03</code> still marks ar/ja/ru pending native review; <code>tool-catalog.json</code> unchanged; text-diff / markdown-to-html untouched.</p>
 <p>[actions]</p>
 <ul>
 <li>src/pages/ipAddressPage.ts</li>

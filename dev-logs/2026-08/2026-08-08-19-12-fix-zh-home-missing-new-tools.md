@@ -5,10 +5,10 @@ Summary: Rebuilt static homepage so /zh/ lists tools 18–24.
 http://localhost:8788/zh/没有显示
 
 [try to solve]
-原因：新增七个工具后只跑了 `merge:tools`，未跑 `build:site`，静态首页 `public/_pages/zh/index.html` 仍是旧版，故 `/zh/` 推荐/全部工具区看不到新工具。工具页本身（如 `/tools/jwt-decoder`）已可访问。
+Cause: after adding seven tools only `merge:tools` ran, not `build:site`, so static home `public/_pages/zh/index.html` stayed stale and `/zh/` featured/all-tools sections omitted the new tools. Tool routes themselves (e.g. `/tools/jwt-decoder`) were already reachable.
 
-处理：执行 `npm run build:site` 重建各语首页与 sitemap。验证 `/zh/` 已包含 jwt-decoder、file-hash、base64、uuid-generator、password-generator、unix-timestamp、timezone-converter。请硬刷新浏览器缓存后查看。
+Fix: ran `npm run build:site` to rebuild locale homes and sitemap. Confirmed `/zh/` links include jwt-decoder, file-hash, base64, uuid-generator, password-generator, unix-timestamp, timezone-converter. Hard-refresh the browser cache to see them.
 
 [actions]
 - npm run build:site
-- 验证 http://127.0.0.1:8788/zh/ 含七个新工具链接
+- Verified http://127.0.0.1:8788/zh/ lists the seven new tool links

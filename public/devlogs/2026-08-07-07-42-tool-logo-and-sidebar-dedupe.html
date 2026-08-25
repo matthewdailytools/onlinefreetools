@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Added site brand logo to the navbar and removed duplicate tool entries from the left sidebar. | Dev Logs</title>
-  <meta name="description" content="Added site brand logo to the navbar and removed duplicate tool entries from the left sidebar." />
-  <meta name="robots" content="noindex" />
+  <title>Added a site brand logo to the navbar and removed duplicate tool entries from the left sidebar. | Dev Logs</title>
+  <meta name="description" content="Added a site brand logo to the navbar and removed duplicate tool entries from the left sidebar." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-07-07-42-tool-logo-and-sidebar-dedupe.html" />
-  <meta property="og:title" content="Added site brand logo to the navbar and removed duplicate tool entries from the left sidebar. | Dev Logs" />
-  <meta property="og:description" content="Added site brand logo to the navbar and removed duplicate tool entries from the left sidebar." />
+  <meta property="og:title" content="Added a site brand logo to the navbar and removed duplicate tool entries from the left sidebar. | Dev Logs" />
+  <meta property="og:description" content="Added a site brand logo to the navbar and removed duplicate tool entries from the left sidebar." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-07-07-42-tool-logo-and-sidebar-dedupe.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,25 +143,25 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Added site brand logo to the navbar and removed duplicate tool entries from the left sidebar. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Added a site brand logo to the navbar and removed duplicate tool entries from the left sidebar. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-07 07:42
-Summary: Added site brand logo to the navbar and removed duplicate tool entries from the left sidebar.</p>
+Summary: Added a site brand logo to the navbar and removed duplicate tool entries from the left sidebar.</p>
 <p>[question]
 工具增加logo，另外菜单上有工具重复了：http响应头</p>
 <p>[try to solve]</p>
 <ol>
-<li><strong>Logo</strong>：新增 <code>/brand-logo.svg</code>，顶栏 <code>navbar-brand</code>（首页静态 + 工具页 Worker）展示 logo + 站名；<code>favicon.svg</code> 同步为同一标。</li>
-<li><strong>侧栏去重</strong>：原先各工具页把「当前工具锚点」prepend 后再展开全量 <code>TOOL_PAGES</code>，导致如「在线查看 HTTP 响应头」出现两次。改为共享 <code>buildToolSidebarItems</code>：每个工具只列一次，当前项高亮并可指向页内锚点。</li>
+<li><strong>Logo</strong>: added <code>/brand-logo.svg</code>; top <code>navbar-brand</code> (static home + Worker tool pages) shows logo + site name; <code>favicon.svg</code> matches the same mark.</li>
+<li><strong>Sidebar dedupe</strong>: tool pages used to prepend a “current tool” anchor then expand full <code>TOOL_PAGES</code>, so entries like “View HTTP response headers online” appeared twice. Shared <code>buildToolSidebarItems</code> now lists each tool once; the current item is highlighted and may still target an in-page anchor.</li>
 </ol>
 <p>[actions]</p>
 <ul>
-<li><code>public/brand-logo.svg</code>、<code>public/favicon.svg</code></li>
-<li><code>src/pages/site/header.ts</code>、<code>scripts/site/components/header.mjs</code>、<code>public/styles/site.css</code></li>
+<li><code>public/brand-logo.svg</code>, <code>public/favicon.svg</code></li>
+<li><code>src/pages/site/header.ts</code>, <code>scripts/site/components/header.mjs</code>, <code>public/styles/site.css</code></li>
 <li><code>src/pages/site/sidebar.ts</code> — <code>buildToolSidebarItems</code></li>
-<li>全部工具页改用去重侧栏</li>
-<li><code>npm run build:site</code>、<code>npm run lint:seo</code></li>
+<li>All tool pages switched to the deduped sidebar</li>
+<li><code>npm run build:site</code>, <code>npm run lint:seo</code></li>
 </ul>
 </article>
       </section>

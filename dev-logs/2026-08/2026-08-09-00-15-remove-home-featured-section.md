@@ -5,8 +5,8 @@ Summary: Removed the entire homepage Featured tools card section.
 下方 Featured 卡片区仍在；也要整段去掉
 
 [try to solve]
-已从 `scripts/site/components/content-home.mjs` 删除 `#featured` 整段（标题「推荐」+「查看全部」+ Featured 卡片网格），并移除仅用于该区的 `renderPrimaryCard`。首页结构现为 Hero（工具数量）→ Why×3 → 全部工具分类目录。`npm run build:site` 已刷新十语首页；产物中无 `id="featured"` / `home-featured`。
+Deleted the whole `#featured` block from `scripts/site/components/content-home.mjs` (heading “Featured / 推荐” + “View all” + Featured card grid) and removed `renderPrimaryCard`, which existed only for that section. Homepage structure is now Hero (tool count) → Why×3 → All-tools category directory. `npm run build:site` refreshed ten-locale home pages; build output has no `id="featured"` / `home-featured`.
 
 [actions]
-- 更新 `scripts/site/components/content-home.mjs`、`public/styles/site.css` 注释
+- Updated `scripts/site/components/content-home.mjs`, `public/styles/site.css` comments
 - `npm run build:site`

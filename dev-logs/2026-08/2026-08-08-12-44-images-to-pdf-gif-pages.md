@@ -23,23 +23,23 @@ In /Users/xuli/vscodeai/onlinefreetools create two pages following `src/pages/im
 Do not edit catalog/index/i18n. Return paths.
 
 [try to solve]
-已创建两个工具页渲染器，沿用 `imageMergePage.ts` 的多文件列表 UX（拖放、排序、缩略图、上移/下移/移除）：
+Created two tool page renderers, reusing `imageMergePage.ts` multi-file list UX (drop, sort, thumbs, up/down/remove):
 
-- **`src/pages/imagesToPdfPage.ts`** — `renderImagesToPdfPage`，slug `images-to-pdf`
-  - CDN 加载 pdf-lib（全局 `PDFLib`）
-  - 控件：纵向/横向、contain/cover
-  - 每图一页 PDF，canvas 转 JPEG/PNG 嵌入，下载 `.pdf`
-  - `loadSample()` 进页自动跑 3 色块样例并启用下载
-  - i18n 前缀 `tool_images_to_pdf_*`；25MB/8192px 软限制；PDFLib 缺失警告
+- **`src/pages/imagesToPdfPage.ts`** — `renderImagesToPdfPage`, slug `images-to-pdf`
+  - CDN-loads pdf-lib (global `PDFLib`)
+  - Controls: portrait/landscape, contain/cover
+  - One image per PDF page; canvas → JPEG/PNG embed; download `.pdf`
+  - `loadSample()` auto-runs 3 color-block samples and enables download
+  - i18n prefix `tool_images_to_pdf_*`; 25MB/8192px soft limits; warn if PDFLib missing
 
-- **`src/pages/imagesToGifPage.ts`** — `renderImagesToGifPage`，slug `images-to-gif`
-  - 动态 `import('https://cdn.jsdelivr.net/npm/gifenc@1.0.3/+esm')`
-  - 控件：delay 500ms、loop 0=无限、宽度 480（高度按首帧比例）
-  - contain 绘制、quantize、预览 `<img>`、下载 GIF
-  - `loadSample()` 进页自动跑 3 帧样例
-  - i18n 前缀 `tool_images_to_gif_*`；25MB/8192px/约 50 帧软限制；FAQ 区预留与 format-converter 区分（via `renderToolIgSections`）
+- **`src/pages/imagesToGifPage.ts`** — `renderImagesToGifPage`, slug `images-to-gif`
+  - Dynamic `import('https://cdn.jsdelivr.net/npm/gifenc@1.0.3/+esm')`
+  - Controls: delay 500ms, loop 0=infinite, width 480 (height from first-frame aspect)
+  - contain draw, quantize, preview `<img>`, download GIF
+  - `loadSample()` auto-runs 3-frame sample on load
+  - i18n prefix `tool_images_to_gif_*`; 25MB/8192px/~50-frame soft limits; FAQ reserved to distinguish from format-converter (via `renderToolIgSections`)
 
-未修改 catalog / index / i18n（按请求）。
+Did not modify catalog / index / i18n (as requested).
 
 [actions]
 - src/pages/imagesToPdfPage.ts (added)

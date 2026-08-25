@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Fix image-compress page crash in renderToolExtraSections (wrong API args). | Dev Logs</title>
-  <meta name="description" content="Fix image-compress page crash in renderToolExtraSections (wrong API args)." />
-  <meta name="robots" content="noindex" />
+  <title>Fixed image-compress crash from outdated renderToolExtraSections API args. | Dev Logs</title>
+  <meta name="description" content="Fixed image-compress crash from outdated renderToolExtraSections API args." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-07-13-48-fix-image-compress-extra-sections-api.html" />
-  <meta property="og:title" content="Fix image-compress page crash in renderToolExtraSections (wrong API args). | Dev Logs" />
-  <meta property="og:description" content="Fix image-compress page crash in renderToolExtraSections (wrong API args)." />
+  <meta property="og:title" content="Fixed image-compress crash from outdated renderToolExtraSections API args. | Dev Logs" />
+  <meta property="og:description" content="Fixed image-compress crash from outdated renderToolExtraSections API args." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-07-13-48-fix-image-compress-extra-sections-api.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,15 +143,15 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Fix image-compress page crash in renderToolExtraSections (wrong API args). | Dev Logs</h1>
+          <h1 class="h4 mb-0">Fixed image-compress crash from outdated renderToolExtraSections API args. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-07 13:48
-Summary: Fix image-compress page crash in renderToolExtraSections (wrong API args).</p>
+Summary: Fixed image-compress crash from outdated renderToolExtraSections API args.</p>
 <p>[question]
 @terminals/1.txt:976-991 TypeError: Cannot read properties of undefined (reading &#39;faqPrefix&#39;)</p>
 <p>[try to solve]
-<code>imageCompressPage</code> 仍按旧签名调用 <code>renderToolExtraSections</code> / <code>buildToolJsonLd</code>（传 <code>faqPrefix</code> 等），当前 API 需要 <code>{ lang, defaultLang, tool }</code>。已对齐 <code>image-format-converter</code> 的写法；刷新 <code>/tools/image-compress</code> 即可。</p>
+<code>imageCompressPage</code> still called <code>renderToolExtraSections</code> / <code>buildToolJsonLd</code> with the old signature (<code>faqPrefix</code>, etc.). The current API expects <code>{ lang, defaultLang, tool }</code>. Aligned the call sites with <code>image-format-converter</code>; refresh <code>/tools/image-compress</code> to verify.</p>
 <p>[actions]</p>
 <ul>
 <li>Fixed <code>src/pages/imageCompressPage.ts</code> extra sections + JSON-LD wiring</li>

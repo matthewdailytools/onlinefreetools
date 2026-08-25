@@ -1,13 +1,13 @@
 Date: 2026-08-07 05:59
-Summary: Added --port / -p / bare-port args to bash start/stop/status-dev scripts.
+Summary: Added --port / -p / bare-port args to the bash start/stop/status-dev scripts.
 
 [question]
 在 bash增加端口参数
 
 [try to solve]
-已为 macOS/Linux bash 启停脚本增加端口参数解析，并同步文档。
+Port parsing was added to the macOS/Linux bash start/stop scripts, and docs were updated.
 
-**用法**
+**Usage**
 ```bash
 ./ops/dev/start-dev.sh --port 8788
 ./ops/dev/start-dev.sh -p 8788
@@ -17,7 +17,7 @@ Summary: Added --port / -p / bare-port args to bash start/stop/status-dev script
 ./ops/dev/stop-dev.sh --port 8788
 ```
 
-新增 `ops/dev/status-dev.sh`；`ops/README.md` 已补充示例。
+Also added `ops/dev/status-dev.sh`; `ops/README.md` now includes examples.
 
 [actions]
 - Updated `ops/dev/start-dev.sh`, `ops/dev/stop-dev.sh`

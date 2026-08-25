@@ -31,24 +31,24 @@ No plan/commit. 中文 brief. Chinese comments on functions.
 Also double-check inventory lines 52-62 are all 已上线; if any still 未开始, fix them.
 
 [try to solve]
-已完成 `pdf-page-to-image-sizes`（清单 #62）全量实现：
+Shipped full `pdf-page-to-image-sizes` (inventory #62):
 
-**页面与逻辑**（`src/pages/pdfPageToImageSizesPage.ts`）
-- pdfjs-dist@4.10.38 懒加载；选定页 2× 渲染一次
-- Canvas contain 居中 fit 至四预设（1080²、1200×630、1280×720、1080×1920），白底 JPEG 0.9
-- fflate@0.8.2 打包 `page-{n}-{WxH}.jpg` → `page-{n}-sizes.zip`
-- 页码输入（默认 1）；25MB 软警告；加密/损坏可读错误
-- `loadSample()` 进页自动跑：pdf-lib 单页样例 → 导出 → Download 可用
+**Page / logic** (`src/pages/pdfPageToImageSizesPage.ts`)
+- Lazy pdfjs-dist@4.10.38; selected page rendered once at 2×
+- Canvas contain-centered into four presets (1080², 1200×630, 1280×720, 1080×1920), white-bg JPEG 0.9
+- fflate@0.8.2 packs `page-{n}-{WxH}.jpg` → `page-{n}-sizes.zip`
+- Page number input (default 1); 25 MB soft warn; readable encrypted/corrupt errors
+- `loadSample()` on enter: pdf-lib one-page sample → export → Download ready
 
-**注册与文案**
-- `src/site/tool-catalog.d/pdf-page-to-image-sizes.json`（category: image，related: pdf-to-jpg, images-to-pdf）
+**Registration / copy**
+- `src/site/tool-catalog.d/pdf-page-to-image-sizes.json` (category: image; related: pdf-to-jpg, images-to-pdf)
 - `public/icons/tools/pdf-page-to-image-sizes.svg`
-- 十语独立 i18n：`src/site/i18n/tools/pdf-page-to-image-sizes/{en,zh,es,ar,pt,id,fr,ja,ru,de}.ts`
-- `03-locale-briefs.md` 补 1b/2b 多轮记录；`README.md` 中英条目；inventory #62 → **已上线 · P2**
+- Independent ten-locale i18n under `src/site/i18n/tools/pdf-page-to-image-sizes/{en,zh,es,ar,pt,id,fr,ja,ru,de}.ts`
+- `03-locale-briefs.md` 1b/2b multi-round notes; `README.md` EN/ZH entries; inventory #62 → **shipped · P2**
 
-**清单 52–62 核对**：#52–#61 原本已为「已上线」；仅 #62 由「未开始 · P2」更新为「已上线 · P2」。
+**Inventory #52–62 check**: #52–#61 were already “shipped”; only #62 moved from “not started · P2” to “shipped · P2”.
 
-**门禁**：`merge:tools`、`coverage:gate --phase=all`、`build:site`、`lint:seo`、`lint:tool-isolation`（CROSS_TOOL_UPDATE=1）全部通过。
+**Gates**: `merge:tools`, `coverage:gate --phase=all`, `build:site`, `lint:seo`, `lint:tool-isolation` (`CROSS_TOOL_UPDATE=1`) all passed.
 
 [actions]
 - src/site/tool-catalog.d/pdf-page-to-image-sizes.json

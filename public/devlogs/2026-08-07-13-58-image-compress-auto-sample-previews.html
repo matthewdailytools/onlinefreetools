@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Auto-load sample and compress so both preview panes show on open. | Dev Logs</title>
-  <meta name="description" content="Auto-load sample and compress so both preview panes show on open." />
-  <meta name="robots" content="noindex" />
+  <title>Auto-load the sample and compress so both preview panes show on open. | Dev Logs</title>
+  <meta name="description" content="Auto-load the sample and compress so both preview panes show on open." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-07-13-58-image-compress-auto-sample-previews.html" />
-  <meta property="og:title" content="Auto-load sample and compress so both preview panes show on open. | Dev Logs" />
-  <meta property="og:description" content="Auto-load sample and compress so both preview panes show on open." />
+  <meta property="og:title" content="Auto-load the sample and compress so both preview panes show on open. | Dev Logs" />
+  <meta property="og:description" content="Auto-load the sample and compress so both preview panes show on open." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-07-13-58-image-compress-auto-sample-previews.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,15 +143,15 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Auto-load sample and compress so both preview panes show on open. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Auto-load the sample and compress so both preview panes show on open. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-07 13:58
-Summary: Auto-load sample and compress so both preview panes show on open.</p>
+Summary: Auto-load the sample and compress so both preview panes show on open.</p>
 <p>[question]
 示例的两张图片直接加载显示</p>
 <p>[try to solve]
-图片压缩页进入后自动加载示例并立即压缩：左侧原图、右侧压缩结果同时显示；点击「加载示例」同样会自动压缩。<code>loadFile</code> / <code>compress</code> / <code>loadSample</code> 改为可链式 Promise。</p>
+On enter, the image-compress page auto-loads the sample and compresses immediately so the left pane shows the original and the right pane shows the result. Clicking “Load sample” also auto-compresses. <code>loadFile</code> / <code>compress</code> / <code>loadSample</code> are Promise-chainable.</p>
 <p>[actions]</p>
 <ul>
 <li>Updated <code>src/pages/imageCompressPage.ts</code> sample auto-run on probeAll</li>

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Require build:site in tool-creation and related rules after homepage miss. | Dev Logs</title>
   <meta name="description" content="Require build:site in tool-creation and related rules after homepage miss." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-19-15-add-build-site-to-rules.html" />
   <meta property="og:title" content="Require build:site in tool-creation and related rules after homepage miss. | Dev Logs" />
   <meta property="og:description" content="Require build:site in tool-creation and related rules after homepage miss." />
@@ -151,12 +151,12 @@ Summary: Require build:site in tool-creation and related rules after homepage mi
 <p>[question]
 将build:site步骤放入规则中</p>
 <p>[try to solve]
-已将 <code>npm run build:site</code> 定为新工具交付硬性步骤，写入：</p>
+Made <code>npm run build:site</code> a hard ship step for new tools in:</p>
 <ol>
-<li><code>.cursor/rules/tool-creation.mdc</code> — 流程第 3 步、工程清单、首页节、上线前 Checklist（强调仅 <code>merge:tools</code> 不刷新 <code>/</code> <code>/zh/</code> 静态首页）</li>
-<li><code>.cursor/rules/project-core.mdc</code> — 新工具实现收尾须 build:site</li>
-<li><code>.cursor/rules/cloudflare-workflow.mdc</code> — 本地命令表补充 build:site 与 <code>--no-build</code> 注意</li>
-<li><code>.github/copilot-instructions.md</code> — 与 rules 摘要同步</li>
+<li><code>.cursor/rules/tool-creation.mdc</code> — flow step 3, engineering checklist, home section, pre-ship checklist (notes that <code>merge:tools</code> alone does not refresh <code>/</code> <code>/zh/</code> static homes)</li>
+<li><code>.cursor/rules/project-core.mdc</code> — new-tool wrap-up must run build:site</li>
+<li><code>.cursor/rules/cloudflare-workflow.mdc</code> — local command table adds build:site and <code>--no-build</code> caveat</li>
+<li><code>.github/copilot-instructions.md</code> — synced summary from rules</li>
 </ol>
 <p>[actions]</p>
 <ul>

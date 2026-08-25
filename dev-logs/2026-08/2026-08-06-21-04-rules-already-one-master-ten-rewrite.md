@@ -1,30 +1,31 @@
 Date: 2026-08-06 21:04
-Summary: Yes — cursor/rules already encode one-language factual master plus per-locale search-oriented rewrite at master quality; “事实卡” is implicit via the master lang, not a separate named artifact.
+Summary: Yes — cursor/rules already encode one-language factual master plus per-locale search-oriented rewrite at master quality; “fact card” is implicit via the master lang, not a separate named artifact.
 
 [question]
 目前cursor/rules是否采用“一份事实母版 + 十语都按母版质量做检索向重写”规则
 
 [try to solve]
-**是，实质已采用；措辞是「一种母版语 + 逐语按 brief 独立重写」，没有单独名叫「事实卡」的文件。**
+**Yes in substance.** The wording is “one master language + independent rewrite per locale from its brief,” not a separately named “fact card” file.
 
-### 规则落点
-| 文件 | 对应关系 |
+### Where it lands in rules
+
+| File | Mapping |
 |---|---|
-| `tool-i18n-localization.mdc` 步 1 | **一份母版**：通常 en 或 zh，写齐 How/Rules/Example/Use cases/FAQ/UI |
-| 同文件步 2 + 写法 | **十语母版质量重写**：按每语 brief 独立重写；禁 Translate；反同构 |
-| `tool-creation.mdc` / `work-tasks-tool-brief.mdc` | 实现前 `03-locale-briefs`；稳妥常态：母版一语 → 逐语重写 → ≥3 轮 |
-| `tool-i18n-seo.mdc` IG⑦ | 各语检索向重写；禁「母版 + 脚本灌其余语」同构交付 |
-| `seo-google-policy.mdc` | scaled content → brief + 检索向重写 + ≥3 轮 |
+| `tool-i18n-localization.mdc` step 1 | **One master**: usually en or zh, full How/Rules/Example/Use cases/FAQ/UI |
+| Same file step 2 + writing guidance | **Ten-locale master-quality rewrite**: independent rewrite from each brief; no Translate; anti-isomorphism |
+| `tool-creation.mdc` / `work-tasks-tool-brief.mdc` | `03-locale-briefs` before implement; steady path: one master lang → per-locale rewrite → ≥3 rounds |
+| `tool-i18n-seo.mdc` IG⑦ | Search-oriented rewrite per locale; forbid “master + script dump remaining locales” isomorphic delivery |
+| `seo-google-policy.mdc` | scaled content → brief + search-oriented rewrite + ≥3 rounds |
 
-### 未写死但隐含的
-- 未单独规定「事实卡」产物名；**母版语文案 = 事实/IG 源**。
-- 未逐条写「他语不得改公式/免责事实」，但流程是重写表达而非另起事实体系；YMYL/边界随母版键齐全落地。
+### Implied but not spelled out
+- No separate “fact card” artifact name; **master-language copy = fact/IG source**.
+- No line-by-line “other locales must not change formula/disclaimer facts,” but the flow is rewrite expression, not invent a new fact system; YMYL/boundaries land via complete master keys.
 
-### 明确反对的反面
-- 十语各自当无关事实母版：未鼓励。
-- 「母版定稿 → 脚本灌八语」：明确禁止。
+### Explicitly opposed
+- Ten locales as unrelated factual masters: not encouraged.
+- “Master final → script dump eight locales”: explicitly forbidden.
 
-**一句话**：**规则已是该模型**；若要把「事实不得漂移」写得更硬，可在 localization 加一句「他语可改检索表达与题序，不得改公式/默认行为/免责事实」——属增强清晰度，非换模型。
+**Bottom line**: **Rules already follow this model.** To harden “facts must not drift,” localization could add: other locales may change search wording and FAQ order, but must not change formulas / default behavior / disclaimer facts — clarity enhancement, not a model change.
 
 [actions]
-- 核对 localization / creation / i18n-seo / work-tasks / google-policy；未改文件
+- Checked localization / creation / i18n-seo / work-tasks / google-policy; no file changes

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Add theme-tinted SVG background illustrations to the three home why cards. | Dev Logs</title>
   <meta name="description" content="Add theme-tinted SVG background illustrations to the three home why cards." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-21-27-why-cards-bg-images.html" />
   <meta property="og:title" content="Add theme-tinted SVG background illustrations to the three home why cards. | Dev Logs" />
   <meta property="og:description" content="Add theme-tinted SVG background illustrations to the three home why cards." />
@@ -151,11 +151,11 @@ Summary: Add theme-tinted SVG background illustrations to the three home why car
 <p>[question]
 why卡片尝试增加背景图片</p>
 <p>[try to solve]
-为三张 Why 卡增加右下/角落水印插画：<code>why-local</code> / <code>why-signup</code> / <code>why-process</code> 单色 SVG，经 CSS <code>mask-image</code> + <code>--brand</code> 染色，随主题变色；悬停略提高不透明度。已 <code>build:site</code>。</p>
+Added corner watermark illustrations on the three Why cards: single-color SVGs <code>why-local</code>, <code>why-signup</code>, and <code>why-process</code>, tinted via CSS <code>mask-image</code> and <code>--brand</code> so they follow the theme; hover slightly raises opacity. Ran <code>build:site</code>.</p>
 <p>[actions]</p>
 <ul>
-<li>public/icons/home/why-local.svg、why-signup.svg、why-process.svg</li>
-<li>scripts/site/components/content-home.mjs（.home-why-bg）</li>
+<li>public/icons/home/why-local.svg, why-signup.svg, why-process.svg</li>
+<li>scripts/site/components/content-home.mjs (.home-why-bg)</li>
 <li>public/styles/site.css</li>
 <li>npm run build:site</li>
 </ul>

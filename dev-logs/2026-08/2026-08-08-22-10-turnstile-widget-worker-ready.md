@@ -5,10 +5,10 @@ Summary: Created Turnstile widget and deployed siteverify Worker; awaiting yes/s
 ok
 
 [try to solve]
-Widget 已创建：sitekey `0x4AAAAAAEKPkweeKKHYjYJX`（domains: localhost, 127.0.0.1, onlinefreetools.org）。
-Worker 已部署：`https://turnstile-siteverify-onlinefreetools.dailyonetools.workers.dev`，secret `TURNSTILE_SECRET_KEY` 已上传。
-本机 curl 探测 siteverify 超时（可能网络拦 workers.dev），不影响部署成功记录。下一步按 skill 等用户确认前端接线（yes/show）。
+Widget created: sitekey `0x4AAAAAAEKPkweeKKHYjYJX` (domains: localhost, 127.0.0.1, onlinefreetools.org).
+Worker deployed: `https://turnstile-siteverify-onlinefreetools.dailyonetools.workers.dev`; secret `TURNSTILE_SECRET_KEY` uploaded.
+Local curl to siteverify timed out (possible network block of workers.dev); does not undo the successful deploy. Next step per skill: wait for user yes/show before frontend wiring.
 
 [actions]
 - widget-create.sh OK
-- 本地模板 wrangler deploy + secret put OK
+- Local template wrangler deploy + secret put OK

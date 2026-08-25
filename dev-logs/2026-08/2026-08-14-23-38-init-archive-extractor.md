@@ -5,7 +5,7 @@ Summary: Created the archive-extractor work-task brief and passed the 0b coverag
 立项：archive-extractor
 
 [try to solve]
-已完成 `archive-extractor` 立项：新增 work-task 四件套，状态到 `ready` / `briefs-ready`，并通过 `npm run coverage:gate -- --slug=archive-extractor --phase=0b`。该工具定位为多格式归档解压，和已上线 `unzip-file` 明确分工：ZIP-only 高频意图继续由 `unzip-file` 承接，`archive-extractor` 覆盖 ZIP/TAR/TAR.GZ 核心路径，以及点击加载后的 RAR/7Z/ISO 只读候选。
+Completed the `archive-extractor` brief: added the four work-task files, status to `ready` / `briefs-ready`, and passed `npm run coverage:gate -- --slug=archive-extractor --phase=0b`. The tool is a multi-format archive extractor with a clear split from live `unzip-file`: ZIP-only high-frequency intent stays on `unzip-file`; `archive-extractor` covers ZIP/TAR/TAR.GZ as core paths, plus click-to-load read-only candidates for RAR/7Z/ISO.
 
 [actions]
 - Added `work-tasks/archive-extractor/00-request.md`

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Added IndexNow incremental submit via local state file and optional --since-git mapping. | Dev Logs</title>
   <meta name="description" content="Added IndexNow incremental submit via local state file and optional --since-git mapping." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-18-21-indexnow-incremental-push.html" />
   <meta property="og:title" content="Added IndexNow incremental submit via local state file and optional --since-git mapping. | Dev Logs" />
   <meta property="og:description" content="Added IndexNow incremental submit via local state file and optional --since-git mapping." />
@@ -151,16 +151,16 @@ Summary: Added IndexNow incremental submit via local state file and optional --s
 <p>[question]
 indexnow增加实现增量推送功能</p>
 <p>[try to solve]
-在 <code>ops/seo/submit-indexnow.mjs</code> 增加增量能力：</p>
+Added incremental submit in <code>ops/seo/submit-indexnow.mjs</code>:</p>
 <ol>
-<li><strong>状态文件</strong> <code>.run/indexnow-state.json</code>（gitignore）：记录已成功提交的 URL。</li>
-<li><strong><code>--incremental</code></strong>：候选 URL 减去状态中已有项后再 POST；成功写回状态。</li>
-<li><strong><code>--baseline</code></strong>：把当前收集的 URL 写入状态、不 POST（冷启动后避免全量重推）。</li>
-<li><strong><code>--since-git &lt;ref&gt;</code></strong>：按 <code>git diff ref...HEAD</code> 映射工具/页面变更 → 多语言 URL；单独使用时不拉全量 sitemap。</li>
-<li><strong><code>--reset-state</code> / <code>--state-file</code> / <code>--no-save-state</code></strong>。</li>
-<li>npm：<code>indexnow:incremental</code>、<code>indexnow:baseline</code>、<code>indexnow:since-git</code>；文档同步 <code>ops/README.md</code>、<code>docs/SEO_PUBLISH_CHECKLIST.md</code>。</li>
+<li><strong>State file</strong> <code>.run/indexnow-state.json</code> (gitignore): records URLs successfully submitted.</li>
+<li><strong><code>--incremental</code></strong>: candidate URLs minus those already in state, then POST; write state back on success.</li>
+<li><strong><code>--baseline</code></strong>: write currently collected URLs into state without POST (avoids a full re-push after cold start).</li>
+<li><strong><code>--since-git &lt;ref&gt;</code></strong>: map <code>git diff ref...HEAD</code> tool/page changes → multilingual URLs; when used alone, does not pull the full sitemap.</li>
+<li><strong><code>--reset-state</code> / <code>--state-file</code> / <code>--no-save-state</code></strong>.</li>
+<li>npm scripts: <code>indexnow:incremental</code>, <code>indexnow:baseline</code>, <code>indexnow:since-git</code>; docs synced in <code>ops/README.md</code>, <code>docs/SEO_PUBLISH_CHECKLIST.md</code>.</li>
 </ol>
-<p>验证：<code>--baseline --remote-sitemap</code> 写入 420；随后 <code>--incremental</code> pending=0；<code>--since-git HEAD~3 --dry-run</code> 能展开变更工具 URL。</p>
+<p>Checks: <code>--baseline --remote-sitemap</code> wrote 420; then <code>--incremental</code> pending=0; <code>--since-git HEAD~3 --dry-run</code> expands changed-tool URLs.</p>
 <p>[actions]</p>
 <ul>
 <li>ops/seo/submit-indexnow.mjs</li>

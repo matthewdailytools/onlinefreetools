@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Codify ban on mechanical parameter-list titles in localization rules. | Dev Logs</title>
-  <meta name="description" content="Codify ban on mechanical parameter-list titles in localization rules." />
-  <meta name="robots" content="noindex" />
+  <title>Codified a ban on mechanical parameter-list titles in localization rules. | Dev Logs</title>
+  <meta name="description" content="Codified a ban on mechanical parameter-list titles in localization rules." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-07-13-55-rule-ban-mechanical-param-titles.html" />
-  <meta property="og:title" content="Codify ban on mechanical parameter-list titles in localization rules. | Dev Logs" />
-  <meta property="og:description" content="Codify ban on mechanical parameter-list titles in localization rules." />
+  <meta property="og:title" content="Codified a ban on mechanical parameter-list titles in localization rules. | Dev Logs" />
+  <meta property="og:description" content="Codified a ban on mechanical parameter-list titles in localization rules." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-07-13-55-rule-ban-mechanical-param-titles.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,19 +143,19 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Codify ban on mechanical parameter-list titles in localization rules. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Codified a ban on mechanical parameter-list titles in localization rules. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-07 13:55
-Summary: Codify ban on mechanical parameter-list titles in localization rules.</p>
+Summary: Codified a ban on mechanical parameter-list titles in localization rules.</p>
 <p>[question]
 加入到规则中，避免后续出现类似的情况</p>
 <p>[try to solve]
-已写入本地化权威规则，避免再出现「最长边、质量与目标体积」式机械 title：</p>
+Recorded the rule in the localization authority files so titles like “max edge, quality, and target size” (parameter-list style) do not recur:</p>
 <ul>
-<li><code>.cursor/rules/tool-i18n-localization.mdc</code>：新增 <strong>Title / H1 自然口语</strong>、忌说明书腔；禁词表增加「参数枚举 title」；收紧合规第 6 条；轮次/定稿自检同步</li>
-<li><code>work-tasks/_template/03-locale-briefs.md</code>：共用禁词勾选 + Title 方向注释</li>
-<li><code>.github/copilot-instructions.md</code>：摘要同步（rules → copilot 单向）</li>
+<li><code>.cursor/rules/tool-i18n-localization.mdc</code>: added Title / H1 natural spoken tone, avoid manual-style copy; ban list now includes “parameter-enumeration titles”; tightened compliance item 6; synced round / finalize self-checks</li>
+<li><code>work-tasks/_template/03-locale-briefs.md</code>: shared ban-word checklist + Title direction notes</li>
+<li><code>.github/copilot-instructions.md</code>: summary sync (rules → copilot, one-way)</li>
 </ul>
 <p>[actions]</p>
 <ul>

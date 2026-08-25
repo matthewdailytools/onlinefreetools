@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Disallowed /devlogs/ in robots.txt so search engines should not crawl development logs. | Dev Logs</title>
-  <meta name="description" content="Disallowed /devlogs/ in robots.txt so search engines should not crawl development logs." />
-  <meta name="robots" content="noindex" />
+  <title>Disallowed `/devlogs/` in `robots.txt` so crawlers should not fetch development logs. | Dev Logs</title>
+  <meta name="description" content="Disallowed `/devlogs/` in `robots.txt` so crawlers should not fetch development logs." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-06-15-47-disallow-devlogs-in-robots.html" />
-  <meta property="og:title" content="Disallowed /devlogs/ in robots.txt so search engines should not crawl development logs. | Dev Logs" />
-  <meta property="og:description" content="Disallowed /devlogs/ in robots.txt so search engines should not crawl development logs." />
+  <meta property="og:title" content="Disallowed `/devlogs/` in `robots.txt` so crawlers should not fetch development logs. | Dev Logs" />
+  <meta property="og:description" content="Disallowed `/devlogs/` in `robots.txt` so crawlers should not fetch development logs." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-06-15-47-disallow-devlogs-in-robots.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,15 +143,15 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Disallowed /devlogs/ in robots.txt so search engines should not crawl development logs. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Disallowed `/devlogs/` in `robots.txt` so crawlers should not fetch development logs. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-06 15:47
-Summary: Disallowed /devlogs/ in robots.txt so search engines should not crawl development logs.</p>
+Summary: Disallowed <code>/devlogs/</code> in <code>robots.txt</code> so crawlers should not fetch development logs.</p>
 <p>[question]
 开发日志在robot规则中写成不允许爬取</p>
 <p>[try to solve]
-已在 <code>public/robots.txt</code> 增加 <code>Disallow: /devlogs/</code>，开发日志目录对爬虫禁止抓取；站内仍可访问。同步更新了 <code>.cursor/rules/seo-html-defaults.mdc</code> 索引说明（与此前 sitemap 排除 devlogs 一致）。</p>
+Added <code>Disallow: /devlogs/</code> to <code>public/robots.txt</code> so crawlers should not fetch the development-log directory; in-site access remains. Also updated indexing notes in <code>.cursor/rules/seo-html-defaults.mdc</code> (consistent with earlier sitemap exclusion of devlogs).</p>
 <pre><code>User-agent: *
 Allow: /
 Disallow: /devlogs/
@@ -159,8 +159,8 @@ Sitemap: https://onlinefreetools.org/sitemap.xml
 </code></pre>
 <p>[actions]</p>
 <ul>
-<li>public/robots.txt</li>
-<li>.cursor/rules/seo-html-defaults.mdc</li>
+<li><code>public/robots.txt</code></li>
+<li><code>.cursor/rules/seo-html-defaults.mdc</code></li>
 </ul>
 </article>
       </section>

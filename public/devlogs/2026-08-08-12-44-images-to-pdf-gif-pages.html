@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Created images-to-pdf and images-to-gif tool page renderers following imageMergePage multi-file list UX. | Dev Logs</title>
   <meta name="description" content="Created images-to-pdf and images-to-gif tool page renderers following imageMergePage multi-file list UX." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-12-44-images-to-pdf-gif-pages.html" />
   <meta property="og:title" content="Created images-to-pdf and images-to-gif tool page renderers following imageMergePage multi-file list UX. | Dev Logs" />
   <meta property="og:description" content="Created images-to-pdf and images-to-gif tool page renderers following imageMergePage multi-file list UX." />
@@ -174,28 +174,28 @@ In /Users/xuli/vscodeai/onlinefreetools create two pages following <code>src/pag
 </ol>
 <p>Do not edit catalog/index/i18n. Return paths.</p>
 <p>[try to solve]
-已创建两个工具页渲染器，沿用 <code>imageMergePage.ts</code> 的多文件列表 UX（拖放、排序、缩略图、上移/下移/移除）：</p>
+Created two tool page renderers, reusing <code>imageMergePage.ts</code> multi-file list UX (drop, sort, thumbs, up/down/remove):</p>
 <ul>
-<li><p><strong><code>src/pages/imagesToPdfPage.ts</code></strong> — <code>renderImagesToPdfPage</code>，slug <code>images-to-pdf</code></p>
+<li><p><strong><code>src/pages/imagesToPdfPage.ts</code></strong> — <code>renderImagesToPdfPage</code>, slug <code>images-to-pdf</code></p>
 <ul>
-<li>CDN 加载 pdf-lib（全局 <code>PDFLib</code>）</li>
-<li>控件：纵向/横向、contain/cover</li>
-<li>每图一页 PDF，canvas 转 JPEG/PNG 嵌入，下载 <code>.pdf</code></li>
-<li><code>loadSample()</code> 进页自动跑 3 色块样例并启用下载</li>
-<li>i18n 前缀 <code>tool_images_to_pdf_*</code>；25MB/8192px 软限制；PDFLib 缺失警告</li>
+<li>CDN-loads pdf-lib (global <code>PDFLib</code>)</li>
+<li>Controls: portrait/landscape, contain/cover</li>
+<li>One image per PDF page; canvas → JPEG/PNG embed; download <code>.pdf</code></li>
+<li><code>loadSample()</code> auto-runs 3 color-block samples and enables download</li>
+<li>i18n prefix <code>tool_images_to_pdf_*</code>; 25MB/8192px soft limits; warn if PDFLib missing</li>
 </ul>
 </li>
-<li><p><strong><code>src/pages/imagesToGifPage.ts</code></strong> — <code>renderImagesToGifPage</code>，slug <code>images-to-gif</code></p>
+<li><p><strong><code>src/pages/imagesToGifPage.ts</code></strong> — <code>renderImagesToGifPage</code>, slug <code>images-to-gif</code></p>
 <ul>
-<li>动态 <code>import(&#39;https://cdn.jsdelivr.net/npm/gifenc@1.0.3/+esm&#39;)</code></li>
-<li>控件：delay 500ms、loop 0=无限、宽度 480（高度按首帧比例）</li>
-<li>contain 绘制、quantize、预览 <code>&lt;img&gt;</code>、下载 GIF</li>
-<li><code>loadSample()</code> 进页自动跑 3 帧样例</li>
-<li>i18n 前缀 <code>tool_images_to_gif_*</code>；25MB/8192px/约 50 帧软限制；FAQ 区预留与 format-converter 区分（via <code>renderToolIgSections</code>）</li>
+<li>Dynamic <code>import(&#39;https://cdn.jsdelivr.net/npm/gifenc@1.0.3/+esm&#39;)</code></li>
+<li>Controls: delay 500ms, loop 0=infinite, width 480 (height from first-frame aspect)</li>
+<li>contain draw, quantize, preview <code>&lt;img&gt;</code>, download GIF</li>
+<li><code>loadSample()</code> auto-runs 3-frame sample on load</li>
+<li>i18n prefix <code>tool_images_to_gif_*</code>; 25MB/8192px/~50-frame soft limits; FAQ reserved to distinguish from format-converter (via <code>renderToolIgSections</code>)</li>
 </ul>
 </li>
 </ul>
-<p>未修改 catalog / index / i18n（按请求）。</p>
+<p>Did not modify catalog / index / i18n (as requested).</p>
 <p>[actions]</p>
 <ul>
 <li>src/pages/imagesToPdfPage.ts (added)</li>

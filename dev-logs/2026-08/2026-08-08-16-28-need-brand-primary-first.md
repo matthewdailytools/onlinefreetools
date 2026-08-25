@@ -5,6 +5,6 @@ Summary: Clarified brand primary comes before role mapping; current iLovePDF red
 是不是先要定一套品牌主色？
 
 [try to solve]
-是：角色用色（link≠accent）依赖已锁定的主色。现状已有事实主色 `--accent #e5322d`（对齐 iLovePDF）。两条路：A 确认沿用该红为品牌主色，再拆 link/chrome 规则；B 先另定差异化主色再衍生 soft/hover。未定主色就大改链接色也可以，但后续换主色要重扫。建议先口头确认「沿用红 / 另选」。
+Yes: role colors (link ≠ accent) depend on a locked primary. Today the de-facto primary is `--accent #e5322d` (iLovePDF-aligned). Two paths: A) confirm that red as brand primary, then split link/chrome rules; B) pick a differentiated primary first, then derive soft/hover. Large link-color changes without a locked primary are possible but force a rescan if primary changes later. Recommend a verbal choice: keep the red vs pick another.
 
 [actions]

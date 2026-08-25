@@ -1,11 +1,11 @@
 Date: 2026-08-08 23:41
-Summary: Removed Dev Logs link from site footer.
+Summary: Removed the Dev Logs link from the site footer.
 
 [question]
 底部删除devlog入口
 
 [try to solve]
-已从页脚移除 Dev Logs / 开发日志入口。改动了 `src/pages/site/footer.ts` 与 `scripts/site/components/footer.mjs` 的 `FOOTER_LINKS`，并执行 `npm run build:site` 刷新静态页。页脚现仅保留 About / Privacy / Terms / Contact；`/devlogs/` 路由与页面本身未删除。
+Removed the Dev Logs footer entry (zh label was 开发日志). Updated `FOOTER_LINKS` in `src/pages/site/footer.ts` and `scripts/site/components/footer.mjs`, then ran `npm run build:site` to refresh static pages. Footer now keeps only About / Privacy / Terms / Contact; the `/devlogs/` route and pages themselves were not deleted.
 
 [actions]
 - Updated `src/pages/site/footer.ts`

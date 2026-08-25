@@ -5,34 +5,34 @@ Summary: FAQ as a page module (≥3) fits all tools; a universal question templa
 FAQ 骨架是否不适合所有工具
 
 [try to solve]
-**要分清两种「骨架」：**
+**Separate two meanings of “skeleton”:**
 
-| 含义 | 是否适合所有工具 |
+| Meaning | Fits every tool? |
 |---|---|
-| **页面模块**：每工具有可见 FAQ，≥3 组 | **适合**（硬性配额；服务真人，非富结果 KPI） |
-| **统一题库模板**：各工具都问「是什么 / 怎么用 / 免费吗 / 安全吗」同一套 | **不适合** |
-| **跨语言同构**：十语同一题序、同一连接词骨架 | **不适合**（localization 明确禁止） |
+| **Page module**: each tool has a visible FAQ, ≥3 Q&As | **Yes** (hard quota; serves people, not rich-result KPIs) |
+| **Universal question template**: every tool asks the same “what is it / how to use / free / safe” set | **No** |
+| **Cross-locale isomorphism**: identical topic order and connective skeleton across ten locales | **No** (localization forbids this) |
 
-### 规则实际要求
-- 必有 FAQ ≥3；YMYL 须含局限/免责；粘贴/文件类须有本地处理类问答。
-- **没有**规定全站共用同一组问题。
-- 默认用 FAQ + Use cases 一带多场景，但问题内容应随工具任务变。
+### What the rules actually require
+- FAQ ≥3 required; YMYL must include limits/disclaimer; paste/file tools need local-processing Q&As.
+- **No** requirement that the whole site share one question set.
+- Default is FAQ + Use cases covering multiple scenarios on one page, but question content should follow the tool’s task.
 
-### 线上已按工具类型分化（en 抽查）
-- 计算类：公式、分类、边界（运动员/儿童、ΔQ=0、旧值为 0）
-- 转换类：消毒、往返损失、语法覆盖、隐私
-- 网络类：VPN/局域网、不全量下载 body、localhost 拦截、是否记日志
-- Diff：按行/按词、换行标红、能否比二进制
+### Live differentiation by tool type (en spot-check)
+- Calculators: formulas, categories, boundaries (athletes/children, ΔQ=0, old value 0)
+- Converters: sanitization, round-trip loss, grammar coverage, privacy
+- Network: VPN/LAN, not downloading full body, localhost block, logging
+- Diff: line vs word, newline highlighting, binary comparison
 
-说明「FAQ 区块」通用，「FAQ 题目骨架」已不该、也不应做成全站一套。
+So the **FAQ block** is universal; a **shared FAQ question skeleton** should not — and must not — be site-wide.
 
-### 结论与写法
-1. **保留**每工具 FAQ 模块与 ≥3 配额。
-2. **不要**维护跨工具万能题模板；按类型选题（公式/边界、映射损失、隐私与代理、YMYL 免责）。
-3. **跨语**可变题序与切入点；禁止十语锁死同构。
-4. 若某工具真实用户几乎不问某类事，宁可换成长尾/边界题，也不要硬套「通用骨架」凑数。
+### Conclusions for writing
+1. **Keep** the per-tool FAQ module and ≥3 quota.
+2. **Do not** maintain a cross-tool universal question template; pick by type (formula/boundaries, mapping loss, privacy/proxy, YMYL disclaimer).
+3. **Across locales**, vary topic order and entry points; forbid locked ten-locale isomorphism.
+4. If real users rarely ask something for a tool, prefer long-tail/boundary questions over padding with a “generic skeleton”.
 
-**一句话**：FAQ **作为模块**适合所有工具；**作为统一问题骨架**不适合——应按工具类型与当地检索意图各自命题。
+**Bottom line**: FAQ **as a module** fits all tools; FAQ **as a universal question skeleton** does not — write per tool type and local search intent.
 
 [actions]
-- 对照 rules（FAQ≥3、反同构）与 en 十工具 FAQ 题面；未改代码
+- Compared rules (FAQ≥3, anti-isomorphism) with en FAQs across ten tools; no code changes

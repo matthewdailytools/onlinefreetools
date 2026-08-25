@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Clarified that post-draft title/desc/keyword coverage optimization is a required Agent checklist, not an automatic SEO analyzer; lint:seo does not cover search-habit fit. | Dev Logs</title>
   <meta name="description" content="Clarified that post-draft title/desc/keyword coverage optimization is a required Agent checklist, not an automatic SEO analyzer; lint:seo does not cover search-habit fit." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-15-05-seo-title-keyword-optimize-flow.html" />
   <meta property="og:title" content="Clarified that post-draft title/desc/keyword coverage optimization is a required Agent checklist, not an automatic SEO analyzer; lint:seo does not cover search-habit fit. | Dev Logs" />
   <meta property="og:description" content="Clarified that post-draft title/desc/keyword coverage optimization is a required Agent checklist, not an automatic SEO analyzer; lint:seo does not cover search-habit fit." />
@@ -149,18 +149,18 @@
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-08 15:05
 Summary: Clarified that post-draft title/desc/keyword coverage optimization is a required Agent checklist, not an automatic SEO analyzer; lint:seo does not cover search-habit fit.</p>
 <p>[question]
-回答：上述创建过程中，seo的slug， title，关键词，desc处理流程，是否生成后，根据规则，自动分析是否符合用户搜索习惯和关键覆盖进行优化</p>
+回答：上述创建过程中，seo的slug， title，关键词，desc处理流程，是否生成后，根据规则，自动分析是否符合用户搜索习惯和关键词覆盖进行优化</p>
 <p>[try to solve]
-规则要求「生成后」做检索覆盖优化，但是 <strong>Agent/人工清单</strong>，不是仓库里的自动分析脚本。</p>
+Rules require search-coverage optimization after drafting, but it is an <strong>Agent/human checklist</strong>, not an in-repo automatic analyzer.</p>
 <ul>
-<li><strong>slug</strong>：立项/方向文档锁定（如 <code>json-schema-validator</code>），不走「生成后再自动改 slug」流水线。</li>
-<li><strong>title / description / 检索词</strong>：<code>tool-i18n-localization.mdc</code> 稳妥常态步 1 写初稿后，<strong>必须</strong>再跑步 2（母版）与步 4（抽查语）的「Title / 描述 / 检索词覆盖优化」清单（主词进 H1、次词进 desc/FAQ、去参数枚举、intent 不撞 related 等），并记入 <code>03</code>。</li>
-<li><strong>不是自动</strong>：没有脚本会抓 SERP/分析搜索习惯后改文案；<code>lint:seo</code> 只做长度/FAQ/YMYL 等结构门禁，<strong>不等于</strong>检索覆盖已优化。</li>
-<li><strong>本次工具</strong>：按 brief 写了检索向文案并勾了轮次，属规则要求的人工/Agent 优化；并非独立自动分析器输出。</li>
+<li><strong>slug</strong>: Locked in the brief / direction docs (e.g. <code>json-schema-validator</code>); there is no “auto-rewrite slug after generate” pipeline.</li>
+<li><strong>title / description / search terms</strong>: After step 1 draft in <code>tool-i18n-localization.mdc</code>, you <strong>must</strong> run step 2 (master locale) and step 4 (spot-check locales) “Title / description / search-term coverage” checklists (primary term in H1, secondary in desc/FAQ, no param enums, intent must not collide with related tools, etc.) and record them in <code>03</code>.</li>
+<li><strong>Not automatic</strong>: No script scrapes SERP or rewrites copy for search habits; <code>lint:seo</code> only gates structure (length/FAQ/YMYL, etc.) and <strong>does not</strong> mean search coverage is optimized.</li>
+<li><strong>This tool</strong>: Search-oriented copy was written from the brief and rounds were checked — that is the required human/Agent pass, not output from a separate auto-analyzer.</li>
 </ul>
 <p>[actions]</p>
 <ul>
-<li>（无代码改动）</li>
+<li>(no code changes)</li>
 </ul>
 </article>
       </section>

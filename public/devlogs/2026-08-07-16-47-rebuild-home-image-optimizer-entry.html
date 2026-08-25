@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Rebuild home pages so image-optimizer appears in nav and cards | Dev Logs</title>
-  <meta name="description" content="Rebuild home pages so image-optimizer appears in nav and cards" />
-  <meta name="robots" content="noindex" />
+  <title>Rebuilt static home pages so Image Optimizer appears in nav, cards, and sitemap. | Dev Logs</title>
+  <meta name="description" content="Rebuilt static home pages so Image Optimizer appears in nav, cards, and sitemap." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-07-16-47-rebuild-home-image-optimizer-entry.html" />
-  <meta property="og:title" content="Rebuild home pages so image-optimizer appears in nav and cards | Dev Logs" />
-  <meta property="og:description" content="Rebuild home pages so image-optimizer appears in nav and cards" />
+  <meta property="og:title" content="Rebuilt static home pages so Image Optimizer appears in nav, cards, and sitemap. | Dev Logs" />
+  <meta property="og:description" content="Rebuilt static home pages so Image Optimizer appears in nav, cards, and sitemap." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-07-16-47-rebuild-home-image-optimizer-entry.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,18 +143,19 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Rebuild home pages so image-optimizer appears in nav and cards | Dev Logs</h1>
+          <h1 class="h4 mb-0">Rebuilt static home pages so Image Optimizer appears in nav, cards, and sitemap. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-07 16:47
-Summary: Rebuild home pages so image-optimizer appears in nav and cards</p>
+Summary: Rebuilt static home pages so Image Optimizer appears in nav, cards, and sitemap.</p>
 <p>[question]
 首页页面没有对应入口</p>
 <p>[try to solve]
-原因是首页来自静态 <code>public/_pages/{lang}/index.html</code>，catalog 已登记但未跑 <code>build:site</code>。已执行 <code>npm run build:site</code>，en/zh 首页导航下拉、Featured、All tools 与 sitemap 均已出现 Image Optimizer / 图片优化。刷新本地首页即可看到。</p>
+Root cause: home pages are static under <code>public/_pages/{lang}/index.html</code>. The tool was already in the catalog, but <code>build:site</code> had not been run, so the home UI had no entry.</p>
+<p>Ran <code>npm run build:site</code>. English and Chinese home nav dropdowns, Featured, All tools, and the sitemap now include Image Optimizer (zh card label: image optimization). Refresh the local home page to see it.</p>
 <p>[actions]</p>
 <ul>
-<li>运行 <code>npm run build:site</code>（刷新 <code>_pages</code> 与 sitemap）</li>
+<li>Ran <code>npm run build:site</code> (refreshed <code>_pages</code> and sitemap)</li>
 </ul>
 </article>
       </section>

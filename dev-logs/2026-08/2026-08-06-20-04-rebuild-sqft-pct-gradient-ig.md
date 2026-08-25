@@ -1,5 +1,5 @@
 Date: 2026-08-06 20:04
-Summary: Rebuilt square-feet, percentage-change, and gradient pages to BMI-style IG pattern with ten-locale copy.
+Summary: Rebuilt square-feet, percentage-change, and gradient pages to the BMI-style IG pattern with ten-locale copy.
 
 [question]
 In /Users/xuli/vscodeai/onlinefreetools, rebuild these EXISTING calculator pages to match IG pattern in howToCalculateBmiPage.ts (helpers: renderToolIgSections, renderToolReferencesSection from src/pages/site/toolContent.ts).
@@ -44,15 +44,15 @@ Read work-tasks/{slug}/02-tool-info.md and 03-locale-briefs.md.
 Return files changed + gaps.
 
 [try to solve]
-三页已按 BMI 的 IG 模式重建：`renderToolIgSections`（How / Formula / Example / Use cases）+ `renderToolReferencesSection`；保留计算器交互。
+Rebuilt three pages to the BMI IG pattern: `renderToolIgSections` (How / Formula / Example / Use cases) + `renderToolReferencesSection`; calculator UI kept.
 
-- **square-feet**：长×宽单位切换保留；结果同时显示 sq ft 与 m²（NIST 因子 0.09290304）；房产/装修场景；NIST SP 811 引用；FAQ 含套内/建筑口径与非估价。
-- **percentage-change**：公式 (new−old)/old×100；示例 80→100=+25%；商业/数据 Use cases；百分点 FAQ；Relative change 引用。
-- **gradient**：按用户要求保持**多元 ∇f**（非两点斜率）；演示函数求值交互；优化/ML Use cases；Wikipedia Gradient + Khan Academy；related 仍为 percentage-change、roi。
+- **square-feet**: L×W unit switching kept; results show both sq ft and m² (NIST factor 0.09290304); real-estate/renovation use cases; NIST SP 811 reference; FAQ covers net vs gross area and non-appraisal.
+- **percentage-change**: formula (new−old)/old×100; example 80→100 = +25%; business/data use cases; percentage-points FAQ; Relative change reference.
+- **gradient**: kept multivariable ∇f per user request (not two-point slope); demo function evaluation UI; optimization/ML use cases; Wikipedia Gradient + Khan Academy; related remains percentage-change, roi.
 
-十语独立文案已写入 `src/site/i18n/*.ts`；首页卡片 title/desc 已同步 `scripts/site/i18n.mjs`。`npm run lint:seo` 通过。
+Ten-locale independent copy written to `src/site/i18n/*.ts`; home-card titles/descs synced in `scripts/site/i18n.mjs`. `npm run lint:seo` passed.
 
-**Gaps**：① work-tasks gradient `02`/`03` 偏向两点斜率，实现按用户指令保留多元微积分；② ar/ja/ru 仍建议母语抽查；③ `03` 轮次勾选未改（未要求）；④ square-feet 仍是 L×W 面积工具（非纯面积数值双向换算框）。
+**Gaps**: (1) work-tasks gradient `02`/`03` leaned two-point slope; implementation kept multivariable calculus per user instruction; (2) ar/ja/ru still recommend native review; (3) `03` round checkboxes unchanged (not requested); (4) square-feet remains an L×W area tool (not a pure area-value bidirectional converter).
 
 [actions]
 - src/pages/squareFeetPage.ts

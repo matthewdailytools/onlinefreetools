@@ -5,7 +5,7 @@ Summary: Center-align text and content inside the three home why cards.
 why卡片文字居中
 
 [try to solve]
-Why 卡改为居中排版：卡片与正文 `text-align: center`，序号与标签水平居中。已 `build:site`。
+Centered Why-card layout: cards and body use `text-align: center`; index badges and labels are horizontally centered. Ran `build:site`.
 
 [actions]
 - public/styles/site.css

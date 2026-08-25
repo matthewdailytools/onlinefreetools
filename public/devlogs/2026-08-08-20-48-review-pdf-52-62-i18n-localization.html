@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Re-reviewed ten-locale copy for PDF tools #52–62; fixed vague “local” titles and library jargon in user-facing strings. | Dev Logs</title>
   <meta name="description" content="Re-reviewed ten-locale copy for PDF tools #52–62; fixed vague “local” titles and library jargon in user-facing strings." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-20-48-review-pdf-52-62-i18n-localization.html" />
   <meta property="og:title" content="Re-reviewed ten-locale copy for PDF tools #52–62; fixed vague “local” titles and library jargon in user-facing strings. | Dev Logs" />
   <meta property="og:description" content="Re-reviewed ten-locale copy for PDF tools #52–62; fixed vague “local” titles and library jargon in user-facing strings." />
@@ -151,23 +151,23 @@ Summary: Re-reviewed ten-locale copy for PDF tools #52–62; fixed vague “loca
 <p>[question]
 重新review本地化的个语言描述实现</p>
 <p>[try to solve]
-对照 <code>tool-i18n-localization.mdc</code> 复审清单 #52–62 十语文案。</p>
-<p><strong>结论（修前）</strong></p>
+Re-reviewed inventory #52–62 ten-locale copy against <code>tool-i18n-localization.mdc</code>.</p>
+<p><strong>Findings (before fixes)</strong></p>
 <ol>
-<li>Title 主词与结果向整体合格；十语非纯英壳。</li>
-<li>首页 <code>_desc</code> 多数已含「设备 + 不上服务器」。</li>
-<li>问题：<code>pdf-watermark</code> / <code>pdf-to-markdown</code> 多语 title 用 Locally / en local / 在本地 / lokal 等含糊说法；用户可见 How/FAQ/Rules/article 大量出现 <code>pdf-lib</code> / <code>fflate</code> / <code>copyPages</code> / <code>PDF.js</code>；部分 How 仍写 “runs locally” 未说清不上服务器。</li>
+<li>Title head terms and outcome-oriented wording were generally solid; locales were not English shells.</li>
+<li>Most home <code>_desc</code> strings already said device + no server upload.</li>
+<li>Issues: <code>pdf-watermark</code> / <code>pdf-to-markdown</code> multi-locale titles used vague Locally / en local / lokal (and equivalent soft “on-device” wording); user-visible How/FAQ/Rules/article text named <code>pdf-lib</code> / <code>fflate</code> / <code>copyPages</code> / <code>PDF.js</code> heavily; some How still said “runs locally” without clarifying no server upload.</li>
 </ol>
-<p><strong>已修</strong></p>
+<p><strong>Fixed</strong></p>
 <ul>
-<li>watermark / markdown 各语 title 改为 browser/设备向。</li>
-<li>十一工具十语用户文案去掉实现库名（键名 <code>err_fflate</code> 等保留）；How/Rules 补设备/标签页 + 不上服务器。</li>
-<li>中文破损句（「在浏览器里在浏览器里」等）已修；<code>merge:tools</code> / <code>lint:seo</code> / 抽查 coverage:gate 通过。</li>
+<li>Watermark / markdown titles per locale shifted to browser/device wording.</li>
+<li>Removed implementation library names from user-facing copy across eleven tools × ten locales (kept key names like <code>err_fflate</code>); How/Rules now stress device/tab + no server upload.</li>
+<li>Fixed broken Chinese (duplicated “in the browser” phrasing, etc.); <code>merge:tools</code> / <code>lint:seo</code> / spot <code>coverage:gate</code> passed.</li>
 </ul>
 <p>[actions]</p>
 <ul>
-<li>改 <code>src/site/i18n/tools/{11 slugs}/*.ts</code>；<code>npm run merge:tools</code></li>
-<li>更新部分 <code>work-tasks/*/03-locale-briefs.md</code> 3b 行</li>
+<li>Updated <code>src/site/i18n/tools/{11 slugs}/*.ts</code>; <code>npm run merge:tools</code></li>
+<li>Updated some <code>work-tasks/*/03-locale-briefs.md</code> 3b rows</li>
 </ul>
 </article>
       </section>

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Explain how to implement domain information lookup on this Cloudflare Workers stack, layered by DNS / RDAP / HTTP. | Dev Logs</title>
   <meta name="description" content="Explain how to implement domain information lookup on this Cloudflare Workers stack, layered by DNS / RDAP / HTTP." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-20-36-how-to-implement-domain-lookup.html" />
   <meta property="og:title" content="Explain how to implement domain information lookup on this Cloudflare Workers stack, layered by DNS / RDAP / HTTP. | Dev Logs" />
   <meta property="og:description" content="Explain how to implement domain information lookup on this Cloudflare Workers stack, layered by DNS / RDAP / HTTP." />
@@ -151,82 +151,82 @@ Summary: Explain how to implement domain information lookup on this Cloudflare W
 <p>[question]
 如何实现根据域名查询相关信息</p>
 <p>[try to solve]
-本站已有 DNS 查询能力；「按域名查信息」可按数据层拆开做。</p>
-<p>「域名相关信息」通常分几层，实现方式不同：</p>
+The site already has DNS lookup; “look up info by domain” splits cleanly by data layer.</p>
+<p>Domain-related info usually has several layers, each with a different implementation:</p>
 <table>
 <thead>
 <tr>
-<th>信息类型</th>
-<th>典型字段</th>
-<th>推荐实现（本站 CF Workers）</th>
+<th>Info type</th>
+<th>Typical fields</th>
+<th>Recommended approach (this CF Workers stack)</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>DNS 记录</td>
+<td>DNS records</td>
 <td>A/AAAA/CNAME/MX/NS/TXT/SOA</td>
-<td>Worker 代理 DoH（已有骨架）</td>
+<td>Worker proxy to DoH (skeleton exists)</td>
 </tr>
 <tr>
-<td>注册信息</td>
-<td>注册商、到期日、状态、NS</td>
-<td>RDAP（优先于传统 WHOIS）</td>
+<td>Registration</td>
+<td>Registrar, expiry, status, NS</td>
+<td>RDAP (prefer over classic WHOIS)</td>
 </tr>
 <tr>
-<td>HTTP/站点</td>
-<td>状态码、响应头、重定向</td>
-<td>已有 <code>website-headers</code></td>
+<td>HTTP / site</td>
+<td>Status, headers, redirects</td>
+<td>Existing <code>website-headers</code></td>
 </tr>
 <tr>
-<td>证书</td>
-<td>颁发者、SAN、到期</td>
-<td>Worker <code>fetch</code> TLS 侧或第三方 API（需评估）</td>
+<td>Certificate</td>
+<td>Issuer, SAN, expiry</td>
+<td>Worker <code>fetch</code> TLS side or third-party API (evaluate)</td>
 </tr>
 <tr>
-<td>IP 归属</td>
-<td>ASN、国家、ISP</td>
-<td>解析 A/AAAA 后再查 GeoIP API</td>
+<td>IP ownership</td>
+<td>ASN, country, ISP</td>
+<td>Resolve A/AAAA then GeoIP API</td>
 </tr>
 </tbody></table>
-<p><strong>已有能力</strong></p>
+<p><strong>Existing capability</strong></p>
 <ul>
 <li><code>GET /api/tools/dns-lookup?name=&amp;type=</code> → <code>src/endpoints/dnsLookup.ts</code></li>
-<li>上游：Cloudflare DoH <code>https://cloudflare-dns.com/dns-query</code></li>
-<li>当前类型：仅 <code>A</code> / <code>AAAA</code> / <code>CNAME</code></li>
-<li>前端用法：<code>add-www-to-dns</code> 页并行查 apex/www</li>
+<li>Upstream: Cloudflare DoH <code>https://cloudflare-dns.com/dns-query</code></li>
+<li>Current types: only <code>A</code> / <code>AAAA</code> / <code>CNAME</code></li>
+<li>Frontend usage: <code>add-www-to-dns</code> page queries apex/www in parallel</li>
 </ul>
-<p><strong>推荐落地路径（本仓库）</strong></p>
+<p><strong>Recommended path in this repo</strong></p>
 <ol>
-<li><p><strong>DNS Lookup 工具页（最快）</strong><br>扩展 <code>dnsLookup.ts</code> 支持 MX/NS/TXT/SOA；新建 <code>dns-lookup</code> 工具页，输入域名 → 多类型并行查询 → 表格展示。</p>
+<li><p><strong>DNS Lookup tool page (fastest)</strong><br>Extend <code>dnsLookup.ts</code> for MX/NS/TXT/SOA; new <code>dns-lookup</code> tool page: enter domain → parallel multi-type queries → table.</p>
 </li>
-<li><p><strong>Domain Whois / RDAP（注册信息）</strong>  </p>
+<li><p><strong>Domain Whois / RDAP (registration)</strong>  </p>
 <ul>
-<li>优先 RDAP：<code>https://rdap.org/domain/{domain}</code> 或 IANA bootstrap  </li>
-<li>Worker 代理 + 超时/限流/缓存；解析 JSON 展示 registrar、events、status、nameservers  </li>
-<li>浏览器直连 WHOIS 端口 43 不可行；传统 WHOIS 文本难解析，RDAP 更适合 API</li>
+<li>Prefer RDAP: <code>https://rdap.org/domain/{domain}</code> or IANA bootstrap  </li>
+<li>Worker proxy + timeout / rate limit / cache; parse JSON for registrar, events, status, nameservers  </li>
+<li>Browser cannot open WHOIS port 43; classic WHOIS text is hard to parse; RDAP fits APIs better</li>
 </ul>
 </li>
-<li><p><strong>组合「域名信息」页（可选）</strong><br>一次输入 → 并行：DNS 多类型 + RDAP +（可选）HEAD/GET 头信息；分区展示，失败单块降级。</p>
+<li><p><strong>Combined “domain info” page (optional)</strong><br>One input → parallel DNS multi-type + RDAP + optional HEAD/GET headers; sectioned UI with per-block degrade on failure.</p>
 </li>
 </ol>
-<p><strong>Worker 端注意点</strong></p>
+<p><strong>Worker caveats</strong></p>
 <ul>
-<li>校验主机名（已有 <code>normalizeAndValidateHostname</code>），防 SSRF/垃圾查询  </li>
-<li>超时（现 8s）、速率限制、可选短 TTL 缓存（KV）  </li>
-<li>隐私：WHOIS/RDAP 常有 redaction；文案勿承诺完整联系人  </li>
-<li>勿在客户端写死第三方密钥；密钥走环境变量</li>
+<li>Validate hostname (existing <code>normalizeAndValidateHostname</code>) to limit SSRF / junk queries  </li>
+<li>Timeout (currently 8s), rate limits, optional short-TTL cache (KV)  </li>
+<li>Privacy: WHOIS/RDAP often redact; copy must not promise full contacts  </li>
+<li>Never hard-code third-party keys in the client; secrets via env vars</li>
 </ul>
-<p><strong>最小调用示例（现有 API）</strong></p>
+<p><strong>Minimal call (existing API)</strong></p>
 <pre><code class="language-js">const res = await fetch(
   &#39;/api/tools/dns-lookup?name=&#39; + encodeURIComponent(&#39;example.com&#39;) + &#39;&amp;type=A&#39;,
   { headers: { Accept: &#39;application/json&#39; } }
 );
 const data = await res.json();
-// data.Answer[].data → IPv4 等
+// data.Answer[].data → IPv4, etc.
 </code></pre>
-<p>若要做成正式工具：立项 <code>work-tasks/dns-lookup/</code> 或 <code>domain-lookup/</code>，按 <code>tool-creation</code> 走 catalog/i18n/<code>build:site</code>。</p>
+<p>For a formal tool: brief <code>work-tasks/dns-lookup/</code> or <code>domain-lookup/</code>, then follow <code>tool-creation</code> for catalog / i18n / <code>build:site</code>.</p>
 <p>[actions]</p>
 <ul>
-<li>查阅 <code>src/endpoints/dnsLookup.ts</code>、<code>src/index.ts</code> 路由、<code>addWwwToDnsPage.ts</code> 前端调用</li>
+<li>Reviewed <code>src/endpoints/dnsLookup.ts</code>, <code>src/index.ts</code> routes, <code>addWwwToDnsPage.ts</code> client usage</li>
 </ul>
 </article>
       </section>

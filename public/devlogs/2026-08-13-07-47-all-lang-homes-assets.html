@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Confirm all language homes already use Assets; add build assert. | Dev Logs</title>
-  <meta name="description" content="Confirm all language homes already use Assets; add build assert." />
-  <meta name="robots" content="noindex" />
+  <title>Confirm all language homes already use Assets; add a build assert. | Dev Logs</title>
+  <meta name="description" content="Confirm all language homes already use Assets; add a build assert." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-13-07-47-all-lang-homes-assets.html" />
-  <meta property="og:title" content="Confirm all language homes already use Assets; add build assert. | Dev Logs" />
-  <meta property="og:description" content="Confirm all language homes already use Assets; add build assert." />
+  <meta property="og:title" content="Confirm all language homes already use Assets; add a build assert. | Dev Logs" />
+  <meta property="og:description" content="Confirm all language homes already use Assets; add a build assert." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-13-07-47-all-lang-homes-assets.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,15 +143,15 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Confirm all language homes already use Assets; add build assert. | Dev Logs</h1>
+          <h1 class="h4 mb-0">Confirm all language homes already use Assets; add a build assert. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-13 07:47
-Summary: Confirm all language homes already use Assets; add build assert.</p>
+Summary: Confirm all language homes already use Assets; add a build assert.</p>
 <p>[question]
 其他语言的首页也需要走asset</p>
 <p>[try to solve]
-十语首页此前已全部走 Assets：<code>public/index.html</code> + <code>public/{lang}/index.html</code>，Worker <code>serveHomeHtml</code> 对 <code>/</code> 与各 <code>/{lang}/</code> 均先读 Assets。本次补充 <code>assertLangHomeAssets</code>（缺任一语则 build 失败）并澄清注释。上线须 commit 全部 <code>public/*/index.html</code>（不仅英文），git push 后 CF 才会进 Static Assets。</p>
+All ten language homes already go through Assets: <code>public/index.html</code> plus <code>public/{lang}/index.html</code>. Worker <code>serveHomeHtml</code> reads Assets first for <code>/</code> and each <code>/{lang}/</code>. This change adds <code>assertLangHomeAssets</code> (build fails if any language is missing) and clarifies comments. Ship must commit every <code>public/*/index.html</code> (not only English); after git push, CF picks them up as Static Assets.</p>
 <p>[actions]</p>
 <ul>
 <li>Updated <code>scripts/build-site.mjs</code>, <code>src/site/r2Pages.ts</code> comments + assert</li>

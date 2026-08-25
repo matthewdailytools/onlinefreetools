@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Clarify whether start:dev with a custom port follows updatedAt incrementality. | Dev Logs</title>
   <meta name="description" content="Clarify whether start:dev with a custom port follows updatedAt incrementality." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-14-21-13-start-dev-port-incremental-logic.html" />
   <meta property="og:title" content="Clarify whether start:dev with a custom port follows updatedAt incrementality. | Dev Logs" />
   <meta property="og:description" content="Clarify whether start:dev with a custom port follows updatedAt incrementality." />
@@ -151,7 +151,7 @@ Summary: Clarify whether start:dev with a custom port follows updatedAt incremen
 <p>[question]
 npm run start:dev -- --port 8788 符合这个逻辑么</p>
 <p>[try to solve]
-<code>npm run start:dev -- --port 8788</code> 符合新的 <code>updatedAt</code> 构建逻辑，前提是该端口上的 dev server 还没有健康运行。<code>--port 8788</code> 只改变 Wrangler 监听端口；脚本仍会先执行 <code>npm run build:site</code>，而 <code>build:site</code> 默认按工具 catalog shard 的 <code>updatedAt</code> 与 <code>.cache/tool-build-state.json</code> 的 <code>toolGeneratedAt</code> 做增量预渲染。随后脚本会执行 <code>npm run upload:r2:local</code> 灌本地 R2 模拟桶，再启动 Wrangler。注意：如果 8788 上已有健康 dev server，脚本会直接复用并跳过 build/seed；如果加 <code>--no-build</code>，也会绕过这个增量构建流程。</p>
+<code>npm run start:dev -- --port 8788</code> follows the new <code>updatedAt</code> build logic, as long as no healthy dev server is already running on that port. <code>--port 8788</code> only changes the Wrangler listen port; the script still runs <code>npm run build:site</code> first, and <code>build:site</code> defaults to incremental prerender by comparing each tool catalog shard&#39;s <code>updatedAt</code> with <code>.cache/tool-build-state.json</code> <code>toolGeneratedAt</code>. It then runs <code>npm run upload:r2:local</code> to seed the local R2 mock bucket before starting Wrangler. Note: if a healthy dev server is already on 8788, the script reuses it and skips build/seed; <code>--no-build</code> also bypasses this incremental build path.</p>
 <p>[actions]</p>
 <ul>
 <li>Checked <code>ops/dev/start-dev.mjs</code> and package scripts.</li>

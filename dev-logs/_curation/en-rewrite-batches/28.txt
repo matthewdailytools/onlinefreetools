@@ -1,0 +1,5 @@
+dev-logs/2026-08/2026-08-21-11-41-fix-zh-image-crop-colon.md
+dev-logs/2026-08/2026-08-21-23-47-cursor-socks-proxy-settings-json.md
+dev-logs/2026-08/2026-08-24-22-22-view-follow-up-plans.md
+dev-logs/2026-08/2026-08-26-00-21-refine-dev-logs-relevance-and-seo.md
+dev-logs/2026-08/2026-08-26-00-30-curate-historical-dev-logs.md

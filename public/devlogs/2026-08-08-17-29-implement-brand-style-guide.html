@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Implemented /tools/brand-style-guide with modular smart draft, ten-locale i18n, lint and build. | Dev Logs</title>
   <meta name="description" content="Implemented /tools/brand-style-guide with modular smart draft, ten-locale i18n, lint and build." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-17-29-implement-brand-style-guide.html" />
   <meta property="og:title" content="Implemented /tools/brand-style-guide with modular smart draft, ten-locale i18n, lint and build. | Dev Logs" />
   <meta property="og:description" content="Implemented /tools/brand-style-guide with modular smart draft, ten-locale i18n, lint and build." />
@@ -151,15 +151,15 @@ Summary: Implemented /tools/brand-style-guide with modular smart draft, ten-loca
 <p>[question]
 实现页面</p>
 <p>[try to solve]
-已落地 <code>/tools/brand-style-guide</code>（主方向 A，本地规则引擎，非云端 AI）：</p>
+Shipped <code>/tools/brand-style-guide</code> (primary direction A, local rule engine — not cloud AI):</p>
 <ul>
-<li>交互：品牌名/行业/主色/性格标签/结构 preset（Strict·Product·Friendly）/模块开关；Generate、仅重填未改项、Sample、Copy Markdown/JSON；字段 <code>smart|manual</code> 标记；进页自动加载 Northline Studio <code>#0F6E8C</code> 样例并出完整预览。</li>
-<li>模块 M0–M9：预览 + Do/Don’t；关模块不进导出。</li>
-<li>工程：catalog 分片、<code>brandStyleGuidePage.ts</code>、icon、十语 i18n、README 中英条目；<code>merge:tools</code>；<code>lint:seo</code> OK；<code>build:site</code>（420 URLs）。</li>
-<li>work-tasks：<code>02</code>→<code>implemented</code>；<code>03</code>→<code>pending-native-review</code>（ar/ja/ru 待母语）。</li>
-<li>隔离 lint 因工作区其它工具脏文件失败；本工具改动本身在 allowlist（可用 <code>CROSS_TOOL_UPDATE=1</code> 跳过脏树）。</li>
+<li><strong>Interaction</strong>: brand name / industry / primary color / personality tags / structure presets (Strict·Product·Friendly) / module toggles; Generate, refill-only-unedited, Sample, Copy Markdown/JSON; fields marked <code>smart|manual</code>; on load auto-loads Northline Studio <code>#0F6E8C</code> sample with full preview.</li>
+<li><strong>Modules M0–M9</strong>: preview + Do/Don’t; disabled modules excluded from export.</li>
+<li><strong>Engineering</strong>: catalog shard, <code>brandStyleGuidePage.ts</code>, icon, ten-locale i18n, README zh+en entries; <code>merge:tools</code>; <code>lint:seo</code> OK; <code>build:site</code> (420 URLs).</li>
+<li><strong>work-tasks</strong>: <code>02</code> → <code>implemented</code>; <code>03</code> → <code>pending-native-review</code> (ar/ja/ru await native check).</li>
+<li>Isolation lint failed due to dirty files from other tools in the workspace; this tool’s own changes are on the allowlist (can use <code>CROSS_TOOL_UPDATE=1</code> to skip a dirty tree).</li>
 </ul>
-<p>预览：<code>/tools/brand-style-guide</code> 与 <code>/zh/tools/brand-style-guide</code>。</p>
+<p>Preview: <code>/tools/brand-style-guide</code> and <code>/zh/tools/brand-style-guide</code>.</p>
 <p>[actions]</p>
 <ul>
 <li>Added <code>src/pages/brandStyleGuidePage.ts</code></li>

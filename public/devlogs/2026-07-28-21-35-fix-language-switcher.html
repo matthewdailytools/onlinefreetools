@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Fix language switcher broken by /en 301 and Accept-Language conflict | Dev Logs</title>
-  <meta name="description" content="Fix language switcher broken by /en 301 and Accept-Language conflict" />
-  <meta name="robots" content="noindex" />
+  <title>Fixed the language switcher broken by default-language `/en` 301s conflicting with Accept-Language negotiation. | Dev Logs</title>
+  <meta name="description" content="Fixed the language switcher broken by default-language `/en` 301s conflicting with Accept-Language negotiation." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-07-28-21-35-fix-language-switcher.html" />
-  <meta property="og:title" content="Fix language switcher broken by /en 301 and Accept-Language conflict | Dev Logs" />
-  <meta property="og:description" content="Fix language switcher broken by /en 301 and Accept-Language conflict" />
+  <meta property="og:title" content="Fixed the language switcher broken by default-language `/en` 301s conflicting with Accept-Language negotiation. | Dev Logs" />
+  <meta property="og:description" content="Fixed the language switcher broken by default-language `/en` 301s conflicting with Accept-Language negotiation." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-07-28-21-35-fix-language-switcher.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,23 +143,23 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Fix language switcher broken by /en 301 and Accept-Language conflict | Dev Logs</h1>
+          <h1 class="h4 mb-0">Fixed the language switcher broken by default-language `/en` 301s conflicting with Accept-Language negotiation. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-07-28 21:35
-Summary: Fix language switcher broken by /en 301 and Accept-Language conflict</p>
+Summary: Fixed the language switcher broken by default-language <code>/en</code> 301s conflicting with Accept-Language negotiation.</p>
 <p>[question]
 语言无法切换，分析原因和修正</p>
 <p>[try to solve]
-根因（与 2026-01-11 同类问题）：SEO 方案把默认语显式前缀 <code>/en</code>、<code>/en/tools/*</code>、<code>/en/about</code> 301 到无前缀规范 URL，同时语言切换链接改为 <code>withLangPath</code>。用户点 English 落到 <code>/</code> 或 <code>/tools/...</code> 后，服务端 Accept-Language 与客户端协商脚本又按浏览器偏好（如 zh）302/replace 回 <code>/zh/</code>，表现为「语言切换无效」。</p>
-<p>修复：恢复显式前缀供导航与语言切换（<code>/en/</code> 等返回 200，不再 301）；语言下拉、首页工具卡片、brand/footer/About 导航改回 <code>withExplicitLangPath</code>。SEO canonical / hreflang / sitemap 仍使用无前缀规范 URL，互不冲突。</p>
+Root cause (same class of issue as 2026-01-11): the SEO plan 301ed default-language explicit prefixes <code>/en</code>, <code>/en/tools/*</code>, <code>/en/about</code> to prefix-free canonical URLs, while language-switch links moved to <code>withLangPath</code>. After the user chose English and landed on <code>/</code> or <code>/tools/...</code>, server Accept-Language plus the client negotiation script redirected or replaced back to the browser preference (e.g. <code>/zh/</code>), so the switch appeared broken.</p>
+<p>Fix: keep explicit prefixes for navigation and language switching (<code>/en/</code> and similar return 200, no 301). Language dropdown, home tool cards, and brand/footer/About nav use <code>withExplicitLangPath</code> again. SEO canonical, hreflang, and sitemap still use prefix-free canonical URLs, so the two concerns stay separate.</p>
 <p>[actions]</p>
 <ul>
-<li>修改：<code>src/index.ts</code>（撤销默认语 301，显式 <code>/en/</code>、<code>/en/about/</code> 正常提供页面）</li>
-<li>修改：<code>src/site/toolRegistrar.ts</code>（撤销默认语工具页 301）</li>
-<li>修改：<code>scripts/build-site.mjs</code>、<code>scripts/site/components/content-home.mjs</code>、<code>header</code> 相关 brand/alternates</li>
-<li>修改：<code>scripts/site/pages/home.mjs</code>、<code>about.mjs</code>、<code>footer.mjs</code>、<code>src/pages/site/footer.ts</code></li>
-<li>执行：<code>npm run build:site</code></li>
+<li>Updated: <code>src/index.ts</code> (removed default-language 301; serve <code>/en/</code>, <code>/en/about/</code> normally)</li>
+<li>Updated: <code>src/site/toolRegistrar.ts</code> (removed default-language tool-page 301)</li>
+<li>Updated: <code>scripts/build-site.mjs</code>, <code>scripts/site/components/content-home.mjs</code>, header brand/alternates</li>
+<li>Updated: <code>scripts/site/pages/home.mjs</code>, <code>about.mjs</code>, <code>footer.mjs</code>, <code>src/pages/site/footer.ts</code></li>
+<li>Ran: <code>npm run build:site</code></li>
 </ul>
 </article>
       </section>

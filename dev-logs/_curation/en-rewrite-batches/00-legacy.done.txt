@@ -1,0 +1,3 @@
+Batch 00-legacy: completed 36/36.
+
+Problems: none blocking. Residual CJK only in verbatim [question] blocks and historical Chinese filenames referenced in paths (kept on purpose). No files skipped as already-English.

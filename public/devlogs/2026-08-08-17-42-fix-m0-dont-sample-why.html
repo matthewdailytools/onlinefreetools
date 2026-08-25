@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Replaced M0 Don't ??? placeholder with localized bad slogan and added why reasons. | Dev Logs</title>
   <meta name="description" content="Replaced M0 Don't ??? placeholder with localized bad slogan and added why reasons." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-17-42-fix-m0-dont-sample-why.html" />
   <meta property="og:title" content="Replaced M0 Don't ??? placeholder with localized bad slogan and added why reasons. | Dev Logs" />
   <meta property="og:description" content="Replaced M0 Don't ??? placeholder with localized bad slogan and added why reasons." />
@@ -151,7 +151,7 @@ Summary: Replaced M0 Don&#39;t ??? placeholder with localized bad slogan and add
 <p>[question]
 M0 品牌基础 的禁止部分&quot;??? Brand — synergy-driven next-gen solutions forever&quot;,有问号是否对，另外缺少禁止原因</p>
 <p>[try to solve]
-问号不对：原为临时占位，易误解。已改为本地化坏示例（如中文「未命名品牌 — 赋能驱动的下一代解决方案…」），并补上「原因：」说明空泛套话会导致合作方各说各话；推荐侧也附原因。另有 Do/Don’t 文案卡与 Markdown 导出。十语已加 <code>sample_m0_*</code> / <code>sample_why_label</code>。硬刷新后看 M0。</p>
+The question marks were wrong — a temporary placeholder that read like a bug. Replaced with localized bad examples (e.g. ZH: unnamed brand — buzzword-heavy “empowerment-driven next-gen solutions…”) and added a “Why:” note that vague buzzwords leave partners talking past each other; the Do side also has a why. Separate Do/Don’t copy cards and Markdown export. Ten locales gained <code>sample_m0_*</code> / <code>sample_why_label</code>. Hard-refresh to see M0.</p>
 <p>[actions]</p>
 <ul>
 <li>Updated <code>src/pages/brandStyleGuidePage.ts</code> (sampleStage why + M0 copy)</li>

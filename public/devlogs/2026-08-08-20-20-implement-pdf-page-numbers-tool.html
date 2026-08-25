@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Implemented full pdf-page-numbers tool (#57) with pdf-lib, 10-locale i18n, and all quality gates green. | Dev Logs</title>
   <meta name="description" content="Implemented full pdf-page-numbers tool (#57) with pdf-lib, 10-locale i18n, and all quality gates green." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-20-20-implement-pdf-page-numbers-tool.html" />
   <meta property="og:title" content="Implemented full pdf-page-numbers tool (#57) with pdf-lib, 10-locale i18n, and all quality gates green. | Dev Logs" />
   <meta property="og:description" content="Implemented full pdf-page-numbers tool (#57) with pdf-lib, 10-locale i18n, and all quality gates green." />
@@ -166,27 +166,27 @@ Implement full <code>pdf-page-numbers</code> in /Users/xuli/vscodeai/onlinefreet
 <p>npm run merge:tools &amp;&amp; npm run coverage:gate -- --slug=pdf-page-numbers --phase=all &amp;&amp; npm run build:site &amp;&amp; npm run lint:seo &amp;&amp; CROSS_TOOL_UPDATE=1 TOOL_SLUG=pdf-page-numbers npm run lint:tool-isolation</p>
 <p>No plan/commit. 中文 brief. Chinese comments.</p>
 <p>[try to solve]
-已完成 <code>pdf-page-numbers</code>（清单 #57）全量实现，所有门禁通过。</p>
-<p><strong>功能</strong></p>
+Shipped full <code>pdf-page-numbers</code> (inventory #57); all gates passed.</p>
+<p><strong>Behavior</strong></p>
 <ul>
-<li><code>src/pages/pdfPageNumbersPage.ts</code>：pdf-lib CDN，每页 <code>drawText</code> 页码</li>
-<li>控件：位置（底中默认 + 四角 + 顶/底居中）、起始页码（默认 1）、边距 pt（默认 24）、字号（默认 12）、格式（纯数字 / Page N）</li>
-<li><code>loadSample()</code>：3 页样例 → 底中从 1 编号 → 可下载 <code>numbered.pdf</code></li>
-<li>25 MB 软警告、加密/损坏可读错误、隐私 FAQ</li>
+<li><code>src/pages/pdfPageNumbersPage.ts</code>: pdf-lib CDN; <code>drawText</code> page numbers on every page</li>
+<li>Controls: position (bottom-center default, four corners, top/bottom center), start number (default 1), margin pt (default 24), font size (default 12), format (digits only / Page N)</li>
+<li><code>loadSample()</code>: 3-page sample → bottom-center numbering from 1 → downloadable <code>numbered.pdf</code></li>
+<li>25 MB soft warn, readable encrypted/corrupt errors, privacy FAQ</li>
 </ul>
-<p><strong>交付物</strong></p>
+<p><strong>Deliverables</strong></p>
 <ul>
 <li><code>src/site/tool-catalog.d/pdf-page-numbers.json</code> + <code>public/icons/tools/pdf-page-numbers.svg</code></li>
-<li>十语 i18n：<code>src/site/i18n/tools/pdf-page-numbers/{en,zh,es,ar,pt,id,fr,ja,ru,de}.ts</code></li>
-<li><code>pdf-watermark</code> related 更新为 <code>[&quot;add-watermark&quot;,&quot;pdf-page-numbers&quot;]</code></li>
-<li><code>work-tasks/pdf-page-numbers/02</code> → implemented；<code>03</code> 补 1b/2b 行</li>
-<li><code>docs/2026-08-08-tool-inventory-table.md</code> #57 → 已上线</li>
-<li><code>README.md</code> 中英各增一条</li>
+<li>Ten-locale i18n: <code>src/site/i18n/tools/pdf-page-numbers/{en,zh,es,ar,pt,id,fr,ja,ru,de}.ts</code></li>
+<li><code>pdf-watermark</code> related updated to <code>[&quot;add-watermark&quot;,&quot;pdf-page-numbers&quot;]</code></li>
+<li><code>work-tasks/pdf-page-numbers/02</code> → implemented; <code>03</code> with 1b/2b rows</li>
+<li><code>docs/2026-08-08-tool-inventory-table.md</code> #57 → shipped</li>
+<li><code>README.md</code> EN/ZH entries added</li>
 </ul>
-<p><strong>门禁（全部绿）</strong></p>
+<p><strong>Gates (all green)</strong></p>
 <ul>
 <li><code>coverage:gate --phase=all</code></li>
-<li><code>build:site</code>（52 tools，sitemap 570 URLs）</li>
+<li><code>build:site</code> (52 tools, sitemap 570 URLs)</li>
 <li><code>lint:seo</code></li>
 <li><code>CROSS_TOOL_UPDATE=1 lint:tool-isolation</code></li>
 </ul>

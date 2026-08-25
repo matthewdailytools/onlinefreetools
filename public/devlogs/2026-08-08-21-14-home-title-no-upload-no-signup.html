@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Update homepage document titles to free tools / no upload / no signup messaging. | Dev Logs</title>
   <meta name="description" content="Update homepage document titles to free tools / no upload / no signup messaging." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-21-14-home-title-no-upload-no-signup.html" />
   <meta property="og:title" content="Update homepage document titles to free tools / no upload / no signup messaging. | Dev Logs" />
   <meta property="og:description" content="Update homepage document titles to free tools / no upload / no signup messaging." />
@@ -151,10 +151,10 @@ Summary: Update homepage document titles to free tools / no upload / no signup m
 <p>[question]
 首页标题：免费在线工具，不上传数据，无需注册 | OnlineFreeTools.org</p>
 <p>[try to solve]
-将十语 <code>home_title</code> 改为「免费/不上传/无需注册」卖点 + <code>| OnlineFreeTools.org</code>（中文用用户原文；其余语言同等义本地化）。已 <code>build:site</code>。</p>
+Set ten-locale <code>home_title</code> to free / no-upload / no-signup messaging + <code>| OnlineFreeTools.org</code> (Chinese keeps the user’s wording; other locales equivalent localization). Ran <code>build:site</code>.</p>
 <p>[actions]</p>
 <ul>
-<li>scripts/site/i18n.mjs（home_title ×10）</li>
+<li>scripts/site/i18n.mjs (home_title ×10)</li>
 <li>npm run build:site</li>
 </ul>
 </article>

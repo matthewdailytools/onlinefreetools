@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>首页自动收录BMI工具，构建后已展示 | Dev Logs</title>
-  <meta name="description" content="首页自动收录BMI工具，构建后已展示" />
-  <meta name="robots" content="noindex" />
+  <title>Updated home content rendering so the BMI tool appears automatically after rebuild. | Dev Logs</title>
+  <meta name="description" content="Updated home content rendering so the BMI tool appears automatically after rebuild." />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-01-12-%E9%A6%96%E9%A1%B5%E8%87%AA%E5%8A%A8%E6%94%B6%E5%BD%95BMI%E5%B7%A5%E5%85%B7.html" />
-  <meta property="og:title" content="首页自动收录BMI工具，构建后已展示 | Dev Logs" />
-  <meta property="og:description" content="首页自动收录BMI工具，构建后已展示" />
+  <meta property="og:title" content="Updated home content rendering so the BMI tool appears automatically after rebuild. | Dev Logs" />
+  <meta property="og:description" content="Updated home content rendering so the BMI tool appears automatically after rebuild." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-01-12-%E9%A6%96%E9%A1%B5%E8%87%AA%E5%8A%A8%E6%94%B6%E5%BD%95BMI%E5%B7%A5%E5%85%B7.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -143,17 +143,21 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">首页自动收录BMI工具，构建后已展示 | Dev Logs</h1>
+          <h1 class="h4 mb-0">Updated home content rendering so the BMI tool appears automatically after rebuild. | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-01-12<br>Summary: 首页自动收录BMI工具，构建后已展示</p>
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-01-12 00:00
+Summary: Updated home content rendering so the BMI tool appears automatically after rebuild.</p>
 <p>[question]
 自动收录</p>
 <p>[try to solve]
-已更新首页内容渲染逻辑，自动收录“如何计算BMI”工具到推荐区和全部工具区块。重新运行 npm run build:site 后，首页已自动展示BMI工具入口，无需手动维护。</p>
-<p>[actions]
-scripts/site/components/content-home.mjs
-public/_pages/zh/index.html</p>
+Updated home content rendering to auto-include the “How to calculate BMI” tool in both the recommended and all-tools sections. After <code>npm run build:site</code>, the home page showed the BMI entry without manual maintenance.</p>
+<p>[actions]</p>
+<ul>
+<li>Updated: <code>scripts/site/components/content-home.mjs</code></li>
+<li>Regenerated: <code>public/_pages/zh/index.html</code></li>
+<li>Ran: <code>npm run build:site</code></li>
+</ul>
 </article>
       </section>
     </main>

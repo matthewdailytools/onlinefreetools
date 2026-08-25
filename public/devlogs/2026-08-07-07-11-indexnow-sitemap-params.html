@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Added explicit IndexNow sitemap flags for local/remote sources, filters, and npm shortcuts. | Dev Logs</title>
   <meta name="description" content="Added explicit IndexNow sitemap flags for local/remote sources, filters, and npm shortcuts." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-07-07-11-indexnow-sitemap-params.html" />
   <meta property="og:title" content="Added explicit IndexNow sitemap flags for local/remote sources, filters, and npm shortcuts. | Dev Logs" />
   <meta property="og:description" content="Added explicit IndexNow sitemap flags for local/remote sources, filters, and npm shortcuts." />
@@ -151,7 +151,7 @@ Summary: Added explicit IndexNow sitemap flags for local/remote sources, filters
 <p>[question]
 增加支持根据sitemap 提交的参数</p>
 <p>[try to solve]
-在 <code>ops/seo/submit-indexnow.mjs</code> 增加按 sitemap 提交的专用参数：<code>--sitemap [path|url]</code>、<code>--sitemap-url</code>、<code>--remote-sitemap</code>、<code>--sitemap-only</code>（保留 <code>--from-sitemap</code>）。支持本地文件与远程 URL，以及 sitemapindex 递归；npm 增加 <code>indexnow:sitemap</code> / <code>indexnow:remote-sitemap</code>。文档已同步。</p>
+Extended <code>ops/seo/submit-indexnow.mjs</code> with sitemap-focused flags: <code>--sitemap [path|url]</code>, <code>--sitemap-url</code>, <code>--remote-sitemap</code>, <code>--sitemap-only</code> (kept <code>--from-sitemap</code>). Supports local files and remote URLs, plus recursive sitemapindex; npm adds <code>indexnow:sitemap</code> / <code>indexnow:remote-sitemap</code>. Docs synced.</p>
 <p>[actions]</p>
 <ul>
 <li>ops/seo/submit-indexnow.mjs</li>

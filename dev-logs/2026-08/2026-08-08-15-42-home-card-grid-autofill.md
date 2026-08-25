@@ -5,7 +5,7 @@ Summary: Make home tool cards use fluid auto-fill columns by viewport width.
 首页每排卡片应该随屏幕变化而变化
 
 [try to solve]
-首页 Featured / 分类工具卡片改为 CSS Grid `auto-fill` + `minmax`（`.home-card-grid`），列数随可用宽度自动增减；`--home-max` 提到 1370px。替换原先固定断点的 Bootstrap `row-cols-*`。
+Home Featured / category tool cards now use CSS Grid `auto-fill` + `minmax` (`.home-card-grid`) so column count grows/shrinks with available width; `--home-max` raised to 1370px. Replaced fixed-breakpoint Bootstrap `row-cols-*`.
 
 [actions]
 - public/styles/site.css

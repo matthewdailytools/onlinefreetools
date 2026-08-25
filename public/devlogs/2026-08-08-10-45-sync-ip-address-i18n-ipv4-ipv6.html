@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Sync ten-locale IP tool i18n and clarify IPv4/IPv6 capability (detect one, not dual-stack both). | Dev Logs</title>
   <meta name="description" content="Sync ten-locale IP tool i18n and clarify IPv4/IPv6 capability (detect one, not dual-stack both)." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-10-45-sync-ip-address-i18n-ipv4-ipv6.html" />
   <meta property="og:title" content="Sync ten-locale IP tool i18n and clarify IPv4/IPv6 capability (detect one, not dual-stack both). | Dev Logs" />
   <meta property="og:description" content="Sync ten-locale IP tool i18n and clarify IPv4/IPv6 capability (detect one, not dual-stack both)." />
@@ -151,36 +151,36 @@ Summary: Sync ten-locale IP tool i18n and clarify IPv4/IPv6 capability (detect o
 <p>[question]
 同步优化其他语言的页面，并确定是否实现ipv4、Ipv6的获取</p>
 <p>[try to solve]</p>
-<h2>多语言同步（十语）</h2>
-<p>已按 en/zh 结构完成 IP 工具文案同步：<code>title</code> 含 IPv4/IPv6 检索意图；<code>description</code> 说明「本次连接可见 IPv4 或 IPv6」；<code>use cases</code>×3；<code>FAQ</code>×5（含「不能同时获得 v4 与 v6」）；新增 <code>ip_version_ipv4</code> / <code>ip_version_ipv6</code> UI 键。补全此前未完成的 <strong>ar / ru / id</strong>。首页卡片 <code>scripts/site/i18n.mjs</code> 十语 <code>tool_ip_address_title</code> / <code>tool_ip_address_desc</code> 已对齐。<code>npm run lint:seo</code> 通过。</p>
-<h2>IPv4 / IPv6 实现结论</h2>
+<h2>Multilingual sync (ten locales)</h2>
+<p>Synced IP tool copy to the en/zh structure: <code>title</code> includes IPv4/IPv6 intent; <code>description</code> states “this connection shows IPv4 or IPv6”; <code>use cases</code>×3; <code>FAQ</code>×5 (including “cannot get both v4 and v6 at once”); added <code>ip_version_ipv4</code> / <code>ip_version_ipv6</code> UI keys. Completed previously unfinished <strong>ar / ru / id</strong>. Home cards in <code>scripts/site/i18n.mjs</code> aligned for all ten locales (<code>tool_ip_address_title</code> / <code>tool_ip_address_desc</code>). <code>npm run lint:seo</code> passed.</p>
+<h2>IPv4 / IPv6 capability conclusion</h2>
 <table>
 <thead>
 <tr>
-<th>能力</th>
-<th>状态</th>
+<th>Capability</th>
+<th>Status</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>返回本次连接的公网 IP</td>
-<td>✅ 已实现（<code>CF-Connecting-IP</code> 等）</td>
+<td>Return this connection’s public IP</td>
+<td>Done (<code>CF-Connecting-IP</code>, etc.)</td>
 </tr>
 <tr>
-<td>识别并标注 IPv4 或 IPv6</td>
-<td>✅ 已实现（API 返回 <code>{ ip, version }</code>，页面显示 badge）</td>
+<td>Detect and label IPv4 or IPv6</td>
+<td>Done (API returns <code>{ ip, version }</code>; page shows badge)</td>
 </tr>
 <tr>
-<td><strong>同时</strong>获取双栈两个地址</td>
-<td>❌ <strong>未实现</strong>（单次 HTTP 请求只能看到一条路径上的地址）</td>
+<td>Get <strong>both</strong> dual-stack addresses at once</td>
+<td><strong>Not implemented</strong> (a single HTTP request only sees one path’s address)</td>
 </tr>
 </tbody></table>
-<p>FAQ 与 description 已明确：双栈用户刷新或换网络后结果可能切换；若需并列显示 v4+v6 需另立项（WebRTC STUN、分别走 v4-only/v6-only 端点或第三方 API，有隐私与复杂度成本）。</p>
+<p>FAQ and description already state: dual-stack users may see a different family after refresh or network change; side-by-side v4+v6 would need a separate project (WebRTC STUN, separate v4-only/v6-only endpoints, or third-party APIs — privacy and complexity cost).</p>
 <p>[actions]</p>
 <ul>
-<li>src/endpoints/ipAddress.ts — normalizeClientIp、detectIpVersion、响应 version 字段</li>
-<li>src/pages/ipAddressPage.ts — 结果旁 IPv4/IPv6 badge</li>
-<li>src/site/i18n/*.ts（十语）— title/description/FAQ/use cases/version 键</li>
-<li>scripts/site/i18n.mjs — 首页卡片 title/desc 同步</li>
+<li>src/endpoints/ipAddress.ts — normalizeClientIp, detectIpVersion, response version field</li>
+<li>src/pages/ipAddressPage.ts — IPv4/IPv6 badge beside result</li>
+<li>src/site/i18n/*.ts (ten locales) — title/description/FAQ/use cases/version keys</li>
+<li>scripts/site/i18n.mjs — home card title/desc sync</li>
 </ul>
 </article>
       </section>

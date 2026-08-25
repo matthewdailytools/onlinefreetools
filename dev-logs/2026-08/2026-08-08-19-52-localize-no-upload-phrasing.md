@@ -7,12 +7,12 @@ Summary: Rewrote multi-locale “local / no upload” phrasing to device-vs-serv
 [try to solve]
 Replaced vague `local` / `lokal` / bare `no upload` / `sans envoi` / `sem upload` with locale-natural privacy phrasing:
 
-- zh: 不上传服务器  
-- en: files stay on your device / not uploaded to a server  
-- es: sin subir al servidor / no salen del dispositivo  
-- de: ohne Server-Upload / bleiben auf Ihrem Gerät  
-- fr: sans envoi au serveur / ne quittent pas votre appareil  
-- pt/id/ja/ru/ar: equivalent “device + not to server” forms  
+- zh: not uploaded to a server
+- en: files stay on your device / not uploaded to a server
+- es: sin subir al servidor / no salen del dispositivo
+- de: ohne Server-Upload / bleiben auf Ihrem Gerät
+- fr: sans envoi au serveur / ne quittent pas votre appareil
+- pt/id/ja/ru/ar: equivalent “device + not to server” forms
 
 Updated `home_cat_pdf_*` and aligned image/design category blurbs; tightened merge-pdf/split-pdf home `desc` and SEO description openers. Ran `merge:tools` + `build:site`.
 

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Implemented base64 and unix-timestamp developer tools with full i18n shards. | Dev Logs</title>
   <meta name="description" content="Implemented base64 and unix-timestamp developer tools with full i18n shards." />
-  <meta name="robots" content="noindex" />
+  
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-08-19-05-implement-base64-unix-timestamp-tools.html" />
   <meta property="og:title" content="Implemented base64 and unix-timestamp developer tools with full i18n shards. | Dev Logs" />
   <meta property="og:description" content="Implemented base64 and unix-timestamp developer tools with full i18n shards." />
@@ -156,28 +156,28 @@ Implement TWO developer tools for /Users/xuli/vscodeai/onlinefreetools. Follow s
 <p>Create catalog, icon, page, i18n (10 langs). UI: Bidirectional timestamp↔datetime; seconds/milliseconds; UTC + local; Now; Load sample; auto-run on init. FAQ ≥4.</p>
 <p>For BOTH: mark work-tasks 02 as implemented; update 03 multi-round; add README zh+en list entries. Do NOT run merge:tools.</p>
 <p>[try to solve]
-已完成两个开发者工具的全部分片实现（未运行 merge:tools）：</p>
+Finished both developer tools as shards only (did not run <code>merge:tools</code>):</p>
 <p><strong>base64</strong></p>
 <ul>
 <li><code>src/site/tool-catalog.d/base64.json</code> — developer / featured / related: image-to-base64, jwt-decoder, html-entity</li>
-<li><code>src/pages/base64Page.ts</code> — Encode/Decode Tab、UTF-8 TextEncoder/btoa、Base64url 选项、文件字节编码、软上限警告、进页 loadSample 自动转换</li>
+<li><code>src/pages/base64Page.ts</code> — Encode/Decode tabs, UTF-8 TextEncoder/btoa, Base64url option, file-byte encode, soft size warn, auto-convert via <code>loadSample</code> on enter</li>
 <li><code>public/icons/tools/base64.svg</code></li>
-<li><code>src/site/i18n/tools/base64/{en,zh,es,ar,pt,id,fr,ja,ru,de}.ts</code> — 5 条 FAQ、RFC 4648 References</li>
+<li><code>src/site/i18n/tools/base64/{en,zh,es,ar,pt,id,fr,ja,ru,de}.ts</code> — 5 FAQs, RFC 4648 References</li>
 </ul>
 <p><strong>unix-timestamp</strong></p>
 <ul>
 <li><code>src/site/tool-catalog.d/unix-timestamp.json</code> — related: timezone-converter, jwt-decoder</li>
-<li><code>src/pages/unixTimestampPage.ts</code> — 双向 Tab、秒/毫秒切换与自动识别、UTC+local 并排、Now、BigInt 范围校验、进页样例 1516239022 自动转换</li>
+<li><code>src/pages/unixTimestampPage.ts</code> — bidirectional tabs, sec/ms toggle with auto-detect, UTC+local side-by-side, Now, BigInt range checks, sample <code>1516239022</code> auto-converts on enter</li>
 <li><code>public/icons/tools/unix-timestamp.svg</code></li>
-<li><code>src/site/i18n/tools/unix-timestamp/{10 langs}.ts</code> — 4 条 FAQ、Wikipedia/MDN References</li>
+<li><code>src/site/i18n/tools/unix-timestamp/{10 langs}.ts</code> — 4 FAQs, Wikipedia/MDN References</li>
 </ul>
-<p><strong>文档</strong></p>
+<p><strong>Docs</strong></p>
 <ul>
 <li><code>work-tasks/*/02-tool-info.md</code> → <code>implemented</code></li>
-<li><code>work-tasks/*/03-locale-briefs.md</code> → 多轮记录与 <code>i18n-done</code></li>
-<li><code>README.md</code> 中英工具清单各增一条</li>
+<li><code>work-tasks/*/03-locale-briefs.md</code> → multi-round notes and <code>i18n-done</code></li>
+<li><code>README.md</code> zh+en tool lists each gained one entry</li>
 </ul>
-<p>上线前需运行 <code>npm run merge:tools &amp;&amp; npm run lint:seo</code>。</p>
+<p>Before ship: run <code>npm run merge:tools &amp;&amp; npm run lint:seo</code>.</p>
 <p>[actions]</p>
 <ul>
 <li>src/site/tool-catalog.d/base64.json, unix-timestamp.json</li>
