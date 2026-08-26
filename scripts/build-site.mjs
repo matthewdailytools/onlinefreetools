@@ -24,6 +24,7 @@ import {
   SUBJECT_HUB_PATH,
 } from './site/taxonomy.mjs';
 import { buildFullSitemap } from './site/sitemap.mjs';
+import { collectDevLogMarkdownFiles } from './site/devlogs.mjs';
 const require = createRequire(import.meta.url);
 let marked;
 try {
@@ -47,28 +48,6 @@ try {
 } catch (err) {
   console.warn('[build-site] copy-image-optimizer-vendor skipped:', err?.message || err);
 }
-
-/**
- * 递归收集 dev-logs 下所有 Markdown 源文件（支持 dev-logs/YYYY-MM/ 分月目录）。
- * 跳过以下划线开头的目录（如 `_archive`、`_curation`），不参与公开构建。
- * @param {string} dir 绝对或相对目录路径
- * @returns {Promise<{ fullPath: string, fileName: string }[]>} 源文件列表
- */
-const collectDevLogMarkdownFiles = async (dir) => {
-  const entries = await fs.readdir(dir, { withFileTypes: true });
-  const files = [];
-  for (const entry of entries) {
-    const fullPath = path.join(dir, entry.name);
-    // 下划线前缀目录：归档/策展元数据，不发布
-    if (entry.isDirectory()) {
-      if (entry.name.startsWith('_')) continue;
-      files.push(...(await collectDevLogMarkdownFiles(fullPath)));
-    } else if (entry.isFile() && entry.name.endsWith('.md')) {
-      files.push({ fullPath, fileName: entry.name });
-    }
-  }
-  return files;
-};
 
 /**
  * 从日志文件名提取 YYYY-MM 月份键（用于索引分组）。
@@ -207,7 +186,7 @@ const removeStaticToolsDir = async (lang) => {
 
 /**
  * 从 dev-logs/*.md 生成 public/devlogs/ 索引与各篇 HTML。
- * 开发日志可被抓取与收录（robots.txt 已允许 `/devlogs/`）；仍不写入 sitemap（见 buildSitemap）。
+ * 开发日志可被抓取与收录；sitemap 含 `/devlogs/` 与各篇（见 collectDevlogSitemapEntries）。
  * 构建后会删除输出目录中已无对应源文件的孤儿 `.html`（不含 index.html）。
  * @returns {Promise<object[]>} 索引条目列表
  */
@@ -595,7 +574,7 @@ export const buildTaxonomyPages = async (lang) => {
 };
 
 /**
- * 构建完整 sitemap（委托 scripts/site/sitemap.mjs；不含 devlogs）。
+ * 构建完整 sitemap（委托 scripts/site/sitemap.mjs；含 devlogs 索引与各篇）。
  * @returns {Promise<void>}
  */
 export const buildSitemap = async () => {

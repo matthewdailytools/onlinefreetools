@@ -6,7 +6,7 @@ alwaysApply: true
 # 开发日志（dev-logs）
 
 每次 Q&A 结束后**先做相关梳理与筛选**，通过后才在 **`dev-logs/YYYY-MM/`** 新建一篇英文日志。  
-**不是每轮对话都写日志。** 公开页由 `npm run build:logs` 生成到 `public/devlogs/`（`robots.txt` **允许** `/devlogs/`；页面默认可索引；**不**写入 sitemap；须按 SEO 内容质量撰写，避免薄内容/灌水）。
+**不是每轮对话都写日志。** 公开页由 `npm run build:logs` 生成到 `public/devlogs/`（`robots.txt` **允许** `/devlogs/`；页面默认可索引；**写入** `sitemap.xml`；须按 SEO 内容质量撰写，避免薄内容/灌水）。
 
 ## 1. 相关筛选（每轮必做）
 

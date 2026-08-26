@@ -15,7 +15,7 @@ Purpose: Make AI agents productive immediately in this repo. Keep changes minima
   - `[try to solve]` + final consolidated answer **in English**
   - Optionally `[actions]` with file paths/commands changed (never the log file itself).
 - Exclusions: AI trailing clarifying prompts; creating the log file; git-only sessions.
-- Visibility: keep full Q&A visible in chat; `public/devlogs/` is generated output (crawlable; not in sitemap) and must not shorten the chat reply.
+- Visibility: keep full Q&A visible in chat; `public/devlogs/` is generated output (crawlable; included in `sitemap.xml` via `build:site`) and must not shorten the chat reply.
 - Keep edits surgical: modify only files directly relevant to the user request. Do not introduce frameworks or unrelated refactors without explicit instruction.
 - Do not save sensitive data: use environment variables or other secure methods.
 

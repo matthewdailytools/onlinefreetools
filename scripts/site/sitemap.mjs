@@ -18,6 +18,7 @@ import {
   loadSitemapLastmodsFromFile,
   resolveLastmodsForEntries,
 } from './sitemap-lastmod.mjs';
+import { collectDevlogSitemapEntries } from './devlogs.mjs';
 
 /** 仓库根目录（scripts/site → ../..）。 */
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
@@ -87,6 +88,7 @@ export const hreflangLinksXml = (pathname, langs) => {
  * @typedef {object} SitemapBuildOptions
  * @property {string[]} [langs] 语言代码；默认 siteConfig.enabledLangs
  * @property {boolean} [includeHome] 是否包含各语言首页；默认 true
+ * @property {boolean} [includeDevlogs] 是否包含 `/devlogs/` 索引与各篇；默认 true（生产全量）
  * @property {string[]} [infoPages] 信息页 id：about|privacy|terms|contact；默认不包含（生产全量剔除）
  * @property {boolean} [includeScenarioHub] 是否包含 /where-to-use-tools hub；默认 true
  * @property {boolean} [includeSubjectHub] 是否包含 /tool-type hub；默认 true
@@ -138,10 +140,11 @@ const toolMatchesFilters = (tool, filters) => {
 /**
  * 收集 sitemap 中的规范 pathname 条目（尚未按语言展开）。
  * @param {SitemapBuildOptions} options
- * @returns {{ pathname: string, priority: string }[]}
+ * @returns {Promise<{ pathname: string, priority: string, singleUrl?: boolean, sourceFiles?: string[] }[]>}
  */
-export const collectSitemapEntries = (options = {}) => {
+export const collectSitemapEntries = async (options = {}) => {
   const includeHome = options.includeHome !== false;
+  const includeDevlogs = options.includeDevlogs !== false;
   /**
    * 信息页默认剔除（关于/隐私/条款/联系）；仅当显式传入 infoPages 时纳入。
    * 传 [] 与未传效果相同。
@@ -222,6 +225,10 @@ export const collectSitemapEntries = (options = {}) => {
     }
   }
 
+  if (includeDevlogs) {
+    entries.push(...(await collectDevlogSitemapEntries()));
+  }
+
   return entries;
 };
 
@@ -236,7 +243,20 @@ export const entriesToSitemapXml = (entries, langs, lastmodByLoc = new Map()) =>
   const langList = normalizeLangs(langs);
   /** hreflang 始终指向本次选中的语言集合（子集 sitemap 也自洽）。 */
   const urls = [];
-  for (const { pathname, priority } of entries) {
+  for (const entry of entries) {
+    const { pathname, priority, singleUrl } = entry;
+    if (singleUrl) {
+      const loc = toAbsUrl(pathname);
+      const lastmod = lastmodByLoc.get(loc);
+      const lastmodLine = lastmod
+        ? `\n    <lastmod>${escapeXml(lastmod)}</lastmod>`
+        : '';
+      urls.push(`  <url>
+    <loc>${escapeXml(loc)}</loc>${lastmodLine}
+    <priority>${priority}</priority>
+  </url>`);
+      continue;
+    }
     for (const lang of langList) {
       const loc = toAbsUrl(withLangPath(lang, pathname));
       /** 该 URL 的 lastmod；无则省略节点（兼容调用方未传映射）。 */
@@ -281,7 +301,7 @@ const resolveOutFilePath = (options = {}) => {
  */
 export const buildSitemapXml = async (options = {}) => {
   const langs = normalizeLangs(options.langs);
-  const entries = collectSitemapEntries(options);
+  const entries = await collectSitemapEntries(options);
   const target = resolveOutFilePath(options);
   /** 是否写主 sitemap：默认仅此时持久化 lastmod 状态，避免筛选构建污染。 */
   const isMainSitemap = path.resolve(target) === path.resolve(DEFAULT_SITEMAP_PATH);

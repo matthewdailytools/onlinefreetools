@@ -69,7 +69,16 @@ export const buildTaxonomyNavLinks = (lang: SiteLang, defaultLang: SiteLang): Na
 ];
 
 /**
- * 工具页顶栏：首页 + 各分类工具下拉 + 场景/类型（关于、开发日志在页脚）。
+ * 开发日志顶栏入口（全局 `/devlogs/`，无语言前缀）。
+ * @param lang 当前语言
+ */
+export const buildDevlogsNavLink = (lang: SiteLang): NavLinkItem => ({
+	href: '/devlogs/',
+	label: t(lang, 'nav_devlogs'),
+});
+
+/**
+ * 工具页顶栏：首页 + 各分类工具下拉 + 场景/类型 + 开发日志。
  * @param lang 当前语言
  * @param defaultLang 站点默认语言
  */
@@ -79,4 +88,5 @@ export const buildToolPageNavItems = (lang: SiteLang, defaultLang: SiteLang): Na
 		withLangPrefix(lang, toolPath, defaultLang)
 	),
 	...buildTaxonomyNavLinks(lang, defaultLang),
+	buildDevlogsNavLink(lang),
 ];

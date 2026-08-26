@@ -24,7 +24,7 @@ export const buildCategoryNavDropdowns = (lang) =>
   }));
 
 /**
- * 应用场景 / 工具类型 hub 入口（不替换原分类下拉；不直链工具；置于导航末尾）。
+ * 应用场景 / 工具类型 hub 入口（不替换原分类下拉；置于导航末尾）。
  * @param {string} lang
  */
 export const buildTaxonomyNavLinks = (lang) => [
@@ -33,20 +33,31 @@ export const buildTaxonomyNavLinks = (lang) => [
 ];
 
 /**
- * 工具页 / 信息页顶栏：首页 + 各分类工具下拉 + 场景/类型（关于、开发日志在页脚）。
+ * 开发日志顶栏入口（全局 `/devlogs/`，无语言前缀）。
+ * @param {string} lang
+ */
+export const buildDevlogsNavLink = (lang) => ({
+  href: '/devlogs/',
+  label: t(lang, 'nav_devlogs'),
+});
+
+/**
+ * 工具页 / 信息页顶栏：首页 + 各分类工具下拉 + 场景/类型 + 开发日志。
  * @param {string} lang
  */
 export const buildToolPageNavItems = (lang) => [
   { href: withLangPath(lang, '/'), label: t(lang, 'nav_home') },
   ...buildCategoryNavDropdowns(lang),
   ...buildTaxonomyNavLinks(lang),
+  buildDevlogsNavLink(lang),
 ];
 
 /**
- * 首页顶栏：各分类工具下拉 + 场景/类型入口（无「推荐」锚点项）。
+ * 首页顶栏：各分类工具下拉 + 场景/类型 + 开发日志。
  * @param {string} lang
  */
 export const buildHomeNavItems = (lang) => [
   ...buildCategoryNavDropdowns(lang),
   ...buildTaxonomyNavLinks(lang),
+  buildDevlogsNavLink(lang),
 ];

@@ -11,6 +11,7 @@ import { promises as fs, readFileSync, existsSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+import { siteConfig } from './config.mjs';
 import { TOOL_CATALOG } from './tool-catalog.mjs';
 import {
   SCENARIO_HUB_PATH,
@@ -359,10 +360,21 @@ export const resolveLastmodsForEntries = async (
   /** 文件内容缓存，避免同一源文件被多语 URL 重复读取。 */
   const fileCache = new Map();
 
-  for (const { pathname } of entries) {
-    for (const lang of langs) {
-      const loc = toAbsUrl(withLangPath(lang, pathname));
-      const sources = resolveSourceFilesForEntry(pathname, lang);
+  for (const entry of entries) {
+    const { pathname, singleUrl, sourceFiles } = entry;
+    /** @type {{ loc: string, lang: string }[]} */
+    const targets = singleUrl
+      ? [{ loc: toAbsUrl(pathname), lang: siteConfig.defaultLang }]
+      : langs.map((lang) => ({
+          loc: toAbsUrl(withLangPath(lang, pathname)),
+          lang,
+        }));
+
+    for (const { loc, lang } of targets) {
+      const sources =
+        Array.isArray(sourceFiles) && sourceFiles.length
+          ? sourceFiles
+          : resolveSourceFilesForEntry(pathname, lang);
       const hash = await hashSourceFiles(sources, fileCache);
       const prevState = state.entries[loc];
       const prevSitemap = previousByLoc.get(loc);
