@@ -32,6 +32,7 @@ const ar: SiteLangDict = {
   final_url_label: 'الرابط النهائي',
   footer_about: 'حول',
   footer_contact: 'اتصل',
+  footer_github: 'GitHub',
   footer_nav_label: 'روابط الموقع',
   footer_privacy: 'الخصوصية',
   footer_terms: 'الشروط',

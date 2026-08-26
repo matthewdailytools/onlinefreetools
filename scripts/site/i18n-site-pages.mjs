@@ -9,6 +9,7 @@ export const sitePageTranslations = {
     footer_privacy: 'Privacy',
     footer_terms: 'Terms',
     footer_contact: 'Contact',
+    footer_github: 'GitHub',
     footer_nav_label: 'Site links',
 
     privacy_title: 'Privacy Policy',
@@ -67,6 +68,7 @@ export const sitePageTranslations = {
     footer_privacy: '隐私',
     footer_terms: '条款',
     footer_contact: '联系',
+    footer_github: 'GitHub',
     footer_nav_label: '站点链接',
 
     privacy_title: '隐私政策',
@@ -122,6 +124,7 @@ export const sitePageTranslations = {
     footer_privacy: 'Privacidad',
     footer_terms: 'Términos',
     footer_contact: 'Contacto',
+    footer_github: 'GitHub',
     footer_nav_label: 'Enlaces del sitio',
     privacy_title: 'Política de privacidad',
     privacy_description:
@@ -179,6 +182,7 @@ export const sitePageTranslations = {
     footer_privacy: 'الخصوصية',
     footer_terms: 'الشروط',
     footer_contact: 'اتصل',
+    footer_github: 'GitHub',
     footer_nav_label: 'روابط الموقع',
     privacy_title: 'سياسة الخصوصية',
     privacy_description:
@@ -235,6 +239,7 @@ export const sitePageTranslations = {
     footer_privacy: 'Privacidade',
     footer_terms: 'Termos',
     footer_contact: 'Contacto',
+    footer_github: 'GitHub',
     footer_nav_label: 'Ligações do site',
     privacy_title: 'Política de privacidade',
     privacy_description:
@@ -292,6 +297,7 @@ export const sitePageTranslations = {
     footer_privacy: 'Privasi',
     footer_terms: 'Ketentuan',
     footer_contact: 'Kontak',
+    footer_github: 'GitHub',
     footer_nav_label: 'Tautan situs',
     privacy_title: 'Kebijakan privasi',
     privacy_description:
@@ -349,6 +355,7 @@ export const sitePageTranslations = {
     footer_privacy: 'Confidentialité',
     footer_terms: 'Conditions',
     footer_contact: 'Contact',
+    footer_github: 'GitHub',
     footer_nav_label: 'Liens du site',
     privacy_title: 'Politique de confidentialité',
     privacy_description:
@@ -406,6 +413,7 @@ export const sitePageTranslations = {
     footer_privacy: 'プライバシー',
     footer_terms: '利用規約',
     footer_contact: 'お問い合わせ',
+    footer_github: 'GitHub',
     footer_nav_label: 'サイトリンク',
     privacy_title: 'プライバシーポリシー',
     privacy_description:
@@ -463,6 +471,7 @@ export const sitePageTranslations = {
     footer_privacy: 'Конфиденциальность',
     footer_terms: 'Условия',
     footer_contact: 'Контакты',
+    footer_github: 'GitHub',
     footer_nav_label: 'Ссылки сайта',
     privacy_title: 'Политика конфиденциальности',
     privacy_description:
@@ -520,6 +529,7 @@ export const sitePageTranslations = {
     footer_privacy: 'Datenschutz',
     footer_terms: 'Nutzungsbedingungen',
     footer_contact: 'Kontakt',
+    footer_github: 'GitHub',
     footer_nav_label: 'Seitenlinks',
     privacy_title: 'Datenschutzerklärung',
     privacy_description:

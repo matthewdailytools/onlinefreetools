@@ -21,6 +21,13 @@ export const siteConfig = {
    */
   contactEmail:
     process.env.SITE_CONTACT_EMAIL || 'dailyonetools@outlook.com',
+  /**
+   * 本站开源仓库（页脚 GitHub 入口）。
+   * 可用环境变量 SITE_GITHUB_REPO_URL 覆盖。
+   */
+  githubRepoUrl:
+    process.env.SITE_GITHUB_REPO_URL ||
+    'https://github.com/matthewdailytools/onlinefreetools',
   /** Google Search Console 站点所有权验证码（meta 标签 content） */
   googleSiteVerification:
     process.env.SITE_GOOGLE_SITE_VERIFICATION ||

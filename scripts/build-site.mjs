@@ -4,7 +4,7 @@ import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { createRequire } from 'node:module';
 
-import { siteConfig, getLangConfig, withLangPath, withExplicitLangPath } from './site/config.mjs';
+import { siteConfig, getLangConfig, withLangPath, withExplicitLangPath, absoluteUrl } from './site/config.mjs';
 import { t } from './site/i18n.mjs';
 import { renderLayout } from './site/layout.mjs';
 import { renderFooter, renderHeader, renderSidebar } from './site/components.mjs';
@@ -24,7 +24,13 @@ import {
   SUBJECT_HUB_PATH,
 } from './site/taxonomy.mjs';
 import { buildFullSitemap } from './site/sitemap.mjs';
-import { collectDevLogMarkdownFiles } from './site/devlogs.mjs';
+import {
+  collectDevLogMarkdownFiles,
+  DEVLOGS_PAGE_SIZE,
+  devlogsIndexFileName,
+  devlogsIndexPathname,
+  devlogsTotalPages,
+} from './site/devlogs.mjs';
 const require = createRequire(import.meta.url);
 let marked;
 try {
@@ -185,9 +191,9 @@ const removeStaticToolsDir = async (lang) => {
 };
 
 /**
- * 从 dev-logs/*.md 生成 public/devlogs/ 索引与各篇 HTML。
- * 开发日志可被抓取与收录；sitemap 含 `/devlogs/` 与各篇（见 collectDevlogSitemapEntries）。
- * 构建后会删除输出目录中已无对应源文件的孤儿 `.html`（不含 index.html）。
+ * 从 dev-logs/*.md 生成 public/devlogs/ 索引（每页 30 条）与各篇 HTML。
+ * 开发日志可被抓取与收录；sitemap 含 `/devlogs/`、`/devlogs/page-N.html` 与各篇。
+ * 构建后会删除输出目录中已无对应源文件的孤儿 `.html`。
  * @returns {Promise<object[]>} 索引条目列表
  */
 export const buildDevLogs = async () => {
@@ -273,35 +279,57 @@ export const buildDevLogs = async () => {
     await fs.unlink(path.join(outDir, name));
   }
 
-  const indexTitle = `${t(lang, 'devlogs_title')} | ${siteConfig.brand}`;
-  const indexDescription =
-    lang === 'en'
-      ? 'Curated project development notes with reusable decisions and fixes, organized by month.'
-      : 'OnlineFreeTools.org 开发日志清单，按月汇总所有问答记录。';
-  const indexCanonicalPath = '/devlogs/';
+  const totalPages = devlogsTotalPages(items.length, DEVLOGS_PAGE_SIZE);
+  const githubRepoUrl = siteConfig.githubRepoUrl;
+  const githubLabel = t(lang, 'devlogs_github');
 
-  const headerHtml = renderHeader({
-    lang,
-    brandHref: '/',
-    navItems: headerNavItems,
-    showSidebarToggle: true,
-    showSearch: false,
-    showLangSwitcher: false,
-  });
+  /**
+   * 渲染某一页索引正文（按月分组 + 底部分页）。
+   * @param {number} page 1-based 页码
+   * @param {typeof items} pageItems 本页条目
+   */
+  const renderIndexContent = (page, pageItems) => {
+    const months = [...new Set(pageItems.map((i) => i.month))].sort((a, b) =>
+      b.localeCompare(a)
+    );
+    const statusText = t(lang, 'devlogs_page_status')
+      .replace('{current}', String(page))
+      .replace('{total}', String(totalPages));
+    const prevHref = page > 1 ? devlogsIndexPathname(page - 1) : '';
+    const nextHref = page < totalPages ? devlogsIndexPathname(page + 1) : '';
+    const paginationHtml =
+      totalPages > 1
+        ? `
+      <nav class="d-flex flex-wrap justify-content-between align-items-center gap-2 mt-4" aria-label="${t(lang, 'devlogs_title')}">
+        ${
+          prevHref
+            ? `<a class="btn btn-outline-secondary btn-sm" href="${prevHref}" rel="prev">${t(lang, 'devlogs_prev')}</a>`
+            : `<span class="btn btn-outline-secondary btn-sm disabled" aria-disabled="true">${t(lang, 'devlogs_prev')}</span>`
+        }
+        <span class="small text-muted">${statusText}</span>
+        ${
+          nextHref
+            ? `<a class="btn btn-outline-secondary btn-sm" href="${nextHref}" rel="next">${t(lang, 'devlogs_next')}</a>`
+            : `<span class="btn btn-outline-secondary btn-sm disabled" aria-disabled="true">${t(lang, 'devlogs_next')}</span>`
+        }
+      </nav>`
+        : '';
 
-  const months = [...new Set(items.map((i) => i.month))].sort((a, b) => b.localeCompare(a));
-  const listHtml = `
+    return `
     <section>
-      <div class="d-flex justify-content-between align-items-center mb-3">
+      <div class="d-flex justify-content-between align-items-start gap-3 mb-3">
         <div>
           <h1 class="h4 mb-1">${t(lang, 'devlogs_title')}</h1>
-          <p class="text-muted mb-0">${t(lang, 'devlogs_subtitle')}</p>
+          <p class="text-muted mb-0">
+            ${t(lang, 'devlogs_subtitle')}
+            <a class="ms-1 text-decoration-none" href="${githubRepoUrl}" target="_blank" rel="noopener noreferrer">${githubLabel}</a>
+          </p>
         </div>
-        <a class="btn btn-outline-secondary btn-sm" href="/">${t(lang, 'back_home')}</a>
+        <a class="btn btn-outline-secondary btn-sm flex-shrink-0" href="/">${t(lang, 'back_home')}</a>
       </div>
       ${months
         .map((month) => {
-          const monthItems = items.filter((i) => i.month === month);
+          const monthItems = pageItems.filter((i) => i.month === month);
           const monthLabel =
             month === 'other'
               ? lang === 'en'
@@ -325,49 +353,101 @@ export const buildDevLogs = async () => {
       </div>`;
         })
         .join('')}
+      ${paginationHtml}
     </section>
   `;
+  };
 
-  const indexJsonLd = JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'CollectionPage',
-    name: t(lang, 'devlogs_title'),
-    url: `${siteConfig.baseUrl.replace(/\/$/, '')}${indexCanonicalPath}`,
-    breadcrumb: {
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        {
-          '@type': 'ListItem',
-          position: 1,
-          name: t(lang, 'nav_home'),
-          item: `${siteConfig.baseUrl.replace(/\/$/, '')}/`,
-        },
-        {
-          '@type': 'ListItem',
-          position: 2,
-          name: t(lang, 'nav_devlogs'),
-          item: `${siteConfig.baseUrl.replace(/\/$/, '')}${indexCanonicalPath}`,
-        },
-      ],
-    },
-  });
-
-  const indexPage = renderLayout({
+  const headerHtml = renderHeader({
     lang,
-    title: indexTitle,
-    description: indexDescription,
-    canonicalPath: indexCanonicalPath,
-    ogImageUrl: siteConfig.ogImage,
-    ogType: 'website',
-    alternates: [],
-    headJsonLd: indexJsonLd,
-    headerHtml,
-    sidebarHtml,
-    contentHtml: listHtml,
-    footerHtml,
+    brandHref: '/',
+    navItems: headerNavItems,
+    showSidebarToggle: true,
+    showSearch: false,
+    showLangSwitcher: false,
   });
 
-  await fs.writeFile(path.join(outDir, 'index.html'), indexPage, 'utf-8');
+  for (let page = 1; page <= totalPages; page++) {
+    const start = (page - 1) * DEVLOGS_PAGE_SIZE;
+    const pageItems = items.slice(start, start + DEVLOGS_PAGE_SIZE);
+    const outName = devlogsIndexFileName(page);
+    expectedHtmlNames.add(outName);
+
+    const canonicalPath = devlogsIndexPathname(page);
+    const indexTitle =
+      page === 1
+        ? `${t(lang, 'devlogs_title')} | ${siteConfig.brand}`
+        : `${t(lang, 'devlogs_title')} (${page}/${totalPages}) | ${siteConfig.brand}`;
+    const indexDescriptionBase =
+      lang === 'en'
+        ? 'Curated project development notes with reusable decisions and fixes, organized by month.'
+        : 'OnlineFreeTools.org 开发日志清单，按月汇总所有问答记录。';
+    const indexDescription =
+      page === 1
+        ? indexDescriptionBase
+        : `${indexDescriptionBase} (${page}/${totalPages})`;
+
+    const prevPath = page > 1 ? absoluteUrl(devlogsIndexPathname(page - 1)) : '';
+    const nextPath =
+      page < totalPages ? absoluteUrl(devlogsIndexPathname(page + 1)) : '';
+    const extraHeadHtml = [
+      prevPath ? `<link rel="prev" href="${prevPath}" />` : '',
+      nextPath ? `<link rel="next" href="${nextPath}" />` : '',
+    ]
+      .filter(Boolean)
+      .join('\n  ');
+
+    const indexJsonLd = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      name: page === 1 ? t(lang, 'devlogs_title') : `${t(lang, 'devlogs_title')} (${page}/${totalPages})`,
+      url: `${siteConfig.baseUrl.replace(/\/$/, '')}${canonicalPath}`,
+      breadcrumb: {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: t(lang, 'nav_home'),
+            item: `${siteConfig.baseUrl.replace(/\/$/, '')}/`,
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: t(lang, 'nav_devlogs'),
+            item: `${siteConfig.baseUrl.replace(/\/$/, '')}/devlogs/`,
+          },
+        ],
+      },
+    });
+
+    const indexPage = renderLayout({
+      lang,
+      title: indexTitle,
+      description: indexDescription,
+      canonicalPath,
+      ogImageUrl: siteConfig.ogImage,
+      ogType: 'website',
+      alternates: [],
+      headJsonLd: indexJsonLd,
+      extraHeadHtml,
+      headerHtml,
+      sidebarHtml,
+      contentHtml: renderIndexContent(page, pageItems),
+      footerHtml,
+    });
+
+    await fs.writeFile(path.join(outDir, outName), indexPage, 'utf-8');
+  }
+
+  // 再次清理：删掉本次未写入的旧分页页（如页数减少后的 page-N.html）
+  const existingAfter = await fs.readdir(outDir);
+  for (const name of existingAfter) {
+    if (!name.endsWith('.html')) continue;
+    if (expectedHtmlNames.has(name)) continue;
+    await fs.unlink(path.join(outDir, name));
+  }
+
   return items;
 };
 

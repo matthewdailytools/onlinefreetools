@@ -32,6 +32,7 @@ const id: SiteLangDict = {
   final_url_label: 'URL Akhir',
   footer_about: 'Tentang',
   footer_contact: 'Kontak',
+  footer_github: 'GitHub',
   footer_nav_label: 'Tautan situs',
   footer_privacy: 'Privasi',
   footer_terms: 'Ketentuan',

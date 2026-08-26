@@ -40,6 +40,7 @@ const fr: SiteLangDict = {
   final_url_label: 'URL finale',
   footer_about: 'À propos',
   footer_contact: 'Contact',
+  footer_github: 'GitHub',
   footer_nav_label: 'Liens du site',
   footer_privacy: 'Confidentialité',
   footer_terms: 'Conditions',

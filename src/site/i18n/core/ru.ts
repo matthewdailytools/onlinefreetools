@@ -40,6 +40,7 @@ const ru: SiteLangDict = {
   final_url_label: 'Конечный URL',
   footer_about: 'О сайте',
   footer_contact: 'Контакты',
+  footer_github: 'GitHub',
   footer_nav_label: 'Ссылки сайта',
   footer_privacy: 'Конфиденциальность',
   footer_terms: 'Условия',

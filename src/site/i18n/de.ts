@@ -33,6 +33,7 @@ const de: SiteLangDict = {
   final_url_label: 'Endgültige URL',
   footer_about: 'Über uns',
   footer_contact: 'Kontakt',
+  footer_github: 'GitHub',
   footer_nav_label: 'Seitenlinks',
   footer_privacy: 'Datenschutz',
   footer_terms: 'Nutzungsbedingungen',

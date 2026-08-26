@@ -32,6 +32,7 @@ const zh: SiteLangDict = {
   final_url_label: '最终 URL',
   footer_about: '关于',
   footer_contact: '联系',
+  footer_github: 'GitHub',
   footer_nav_label: '站点链接',
   footer_privacy: '隐私',
   footer_terms: '条款',

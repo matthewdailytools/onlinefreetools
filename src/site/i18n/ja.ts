@@ -32,6 +32,7 @@ const ja: SiteLangDict = {
   final_url_label: '最終URL',
   footer_about: 'について',
   footer_contact: 'お問い合わせ',
+  footer_github: 'GitHub',
   footer_nav_label: 'サイトリンク',
   footer_privacy: 'プライバシー',
   footer_terms: '利用規約',
