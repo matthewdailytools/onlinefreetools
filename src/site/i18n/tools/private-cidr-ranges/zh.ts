@@ -1,0 +1,101 @@
+/**
+ * i18n tool shard (private-cidr-ranges / zh).
+ * 当地主词：私有 CIDR / 私网 IP 段；勿写成通用「CIDR 计算器」。
+ */
+import type { SiteLangDict } from '../../../types';
+
+const zh: SiteLangDict = {
+	tool_private_cidr_ranges_title: '私有 CIDR 网段 — 检查 IP/前缀是否属于私网或特殊用途',
+	tool_private_cidr_ranges_desc:
+		'私有 CIDR：核对 RFC1918、CGNAT、ULA。示例：100.64.1.10 → 共享地址空间。',
+	tool_private_cidr_ranges_description:
+		'私有 CIDR 网段：粘贴 IP 或 CIDR，立刻对照 RFC1918 私网 IP 段、CGNAT（100.64/10）、IPv6 ULA 与文档前缀（示例：100.64.1.10 → 共享地址空间）。可点选参考表；也说明 Tailscale 常用 CGNAT 空间。检查在浏览器内完成，不上传服务器。',
+	tool_private_cidr_ranges_article:
+		'粘贴地址或 CIDR，匹配内置私网/特殊用途前缀（RFC1918、CGNAT、链路本地、回环、文档网段、IPv6 ULA）。点表行可加载该前缀。本页不展开主机列表。',
+	tool_private_cidr_ranges_check: '检查',
+	tool_private_cidr_ranges_sample: '加载示例',
+	tool_private_cidr_ranges_clear: '清空',
+	tool_private_cidr_ranges_copy: '复制摘要',
+	tool_private_cidr_ranges_copy_done: '已复制',
+	tool_private_cidr_ranges_input_label: 'IP 地址或 CIDR',
+	tool_private_cidr_ranges_input_ph: '100.64.1.10 或 10.0.0.0/8',
+	tool_private_cidr_ranges_filter_all: '全部',
+	tool_private_cidr_ranges_filter_v4: 'IPv4 表',
+	tool_private_cidr_ranges_filter_v6: 'IPv6 表',
+	tool_private_cidr_ranges_result_label: '命中',
+	tool_private_cidr_ranges_table_title: '参考表（点击一行）',
+	tool_private_cidr_ranges_col_cidr: 'CIDR',
+	tool_private_cidr_ranges_col_name: '名称',
+	tool_private_cidr_ranges_col_family: '族',
+	tool_private_cidr_ranges_col_spec: '规范',
+	tool_private_cidr_ranges_no_match: '不在本页内置的私网/特殊用途列表中（可能是全球单播等）。',
+	tool_private_cidr_ranges_tailscale_tip: 'Tailscale 等产品常使用这段 CGNAT 空间（100.64.0.0/10）。',
+	tool_private_cidr_ranges_err_empty: '请输入 IPv4/IPv6 地址或 CIDR。',
+	tool_private_cidr_ranges_err_parse: '无法解析为 IP 地址或 CIDR。',
+	tool_private_cidr_ranges_name_rfc1918_10: 'RFC1918 私网',
+	tool_private_cidr_ranges_name_rfc1918_172: 'RFC1918 私网',
+	tool_private_cidr_ranges_name_rfc1918_192: 'RFC1918 私网',
+	tool_private_cidr_ranges_name_cgnat: 'CGNAT 共享地址空间',
+	tool_private_cidr_ranges_name_loopback: '回环',
+	tool_private_cidr_ranges_name_linklocal_v4: '链路本地',
+	tool_private_cidr_ranges_name_doc_testnet1: '文档网段（TEST-NET-1）',
+	tool_private_cidr_ranges_name_doc_testnet2: '文档网段（TEST-NET-2）',
+	tool_private_cidr_ranges_name_doc_testnet3: '文档网段（TEST-NET-3）',
+	tool_private_cidr_ranges_name_ula: 'IPv6 ULA',
+	tool_private_cidr_ranges_name_linklocal_v6: 'IPv6 链路本地',
+	tool_private_cidr_ranges_name_doc_v6: 'IPv6 文档前缀',
+	tool_private_cidr_ranges_note_rfc1918_10: '私有用途 — 10.0.0.0/8（RFC 1918）。',
+	tool_private_cidr_ranges_note_rfc1918_172: '私有用途 — 172.16.0.0/12（RFC 1918）。',
+	tool_private_cidr_ranges_note_rfc1918_192: '私有用途 — 192.168.0.0/16（RFC 1918）。',
+	tool_private_cidr_ranges_note_cgnat: '运营商级 NAT 共享地址空间（RFC 6598）。不是 RFC1918。',
+	tool_private_cidr_ranges_note_loopback: '主机回环 — 127.0.0.0/8。',
+	tool_private_cidr_ranges_note_linklocal_v4: '链路本地 APIPA — 169.254.0.0/16。',
+	tool_private_cidr_ranges_note_doc_testnet1: '仅供文档示例 — 勿用于生产（RFC 5737）。',
+	tool_private_cidr_ranges_note_doc_testnet2: '仅供文档示例 — 勿用于生产（RFC 5737）。',
+	tool_private_cidr_ranges_note_doc_testnet3: '仅供文档示例 — 勿用于生产（RFC 5737）。',
+	tool_private_cidr_ranges_note_ula: '唯一本地地址 — fc00::/7（RFC 4193）。',
+	tool_private_cidr_ranges_note_linklocal_v6: 'IPv6 链路本地 — fe80::/10。',
+	tool_private_cidr_ranges_note_doc_v6: '文档前缀 — 2001:db8::/32。',
+	tool_private_cidr_ranges_how_title: '怎么用',
+	tool_private_cidr_ranges_how_body:
+		'先确认这段地址是否落在私网或特殊用途 CIDR（RFC1918、CGNAT、ULA、文档前缀等），不是在数主机。粘贴后看命中，或点参考表。',
+	tool_private_cidr_ranges_how_item_1: '明确目标是分类私网/特殊用途块，不是展开主机列表。',
+	tool_private_cidr_ranges_how_item_2: '粘贴 IPv4/IPv6 地址或 CIDR（例如 100.64.1.10）。',
+	tool_private_cidr_ranges_how_item_3: '阅读类别、匹配 CIDR 与 RFC 说明（命中 CGNAT 时还有 Tailscale 提示）。',
+	tool_private_cidr_ranges_how_item_4: '需要时点击参考表某一行，填入该前缀再检查。',
+	tool_private_cidr_ranges_how_item_5: '若无命中，说明不在本表私网/特殊列表——不要轻易当成「私网」。',
+	tool_private_cidr_ranges_formula_title: '规则',
+	tool_private_cidr_ranges_formula_body:
+		'把输入解析为地址或前缀，再与内置表做包含判断；更具体（前缀更长）的命中排在前面。',
+	tool_private_cidr_ranges_formula_item_1: 'IPv4 用 32 位整数，IPv6 用 128 位；族不混用。',
+	tool_private_cidr_ranges_formula_item_2: '裸地址：列出所有包含它的表项 CIDR。',
+	tool_private_cidr_ranges_formula_item_3: 'CIDR 输入：列出能完整包含该前缀的表项。',
+	tool_private_cidr_ranges_formula_item_4: '按前缀长度降序排列，最具体的块优先显示。',
+	tool_private_cidr_ranges_example_title: '示例',
+	tool_private_cidr_ranges_example:
+		'输入：100.64.1.10。输出：CGNAT 共享地址空间 100.64.0.0/10（RFC 6598），并提示 Tailscale 等常使用该空间。输入 10.0.0.5 命中 RFC1918 10.0.0.0/8。',
+	tool_private_cidr_ranges_usecases_title: '适用场景',
+	tool_private_cidr_ranges_usecase_1: '规划 VPC/实验室网段前，确认选的是真正的 RFC1918 私网。',
+	tool_private_cidr_ranges_usecase_2: '看到 100.x 地址时，区分 CGNAT/Tailscale 空间与 RFC1918 私网。',
+	tool_private_cidr_ranges_usecase_3: '核对 IPv6 ULA 或 2001:db8 文档地址，避免当生产路由用。',
+	tool_private_cidr_ranges_faq_q1: 'RFC1918 的三段私有 CIDR 是什么？',
+	tool_private_cidr_ranges_faq_a1: '10.0.0.0/8、172.16.0.0/12、192.168.0.0/16，即常见私网 IP 段的 CIDR 写法。',
+	tool_private_cidr_ranges_faq_q2: '100.64.0.0/10 算私网吗？和 Tailscale 什么关系？',
+	tool_private_cidr_ranges_faq_a2:
+		'它是运营商级 NAT 共享地址空间（RFC 6598），不是 RFC1918。Tailscale 等常占用这段 CGNAT；本页只做标注，不是 Tailscale 控制台。',
+	tool_private_cidr_ranges_faq_q3: 'IPv6 ULA（fc00::/7）是什么？',
+	tool_private_cidr_ranges_faq_a3: '用于本地网络的唯一本地地址，不是公网全球单播，不要指望在公网路由。',
+	tool_private_cidr_ranges_faq_q4: '为什么要标出文档前缀？',
+	tool_private_cidr_ranges_faq_a4: '如 192.0.2.0/24、2001:db8::/32 专供示例与文档，放进生产会破坏连通预期。',
+	tool_private_cidr_ranges_faq_q5: '会展开主机列表或上传地址吗？',
+	tool_private_cidr_ranges_faq_a5:
+		'不会展开主机或广播。地址留在本机浏览器标签页，不上传服务器。要做 CIDR→范围请用另一类工具。',
+	tool_private_cidr_ranges_ref_rfc1918_label: 'RFC 1918 — 私有互联网地址分配',
+	tool_private_cidr_ranges_ref_rfc6598_label: 'RFC 6598 — 共享地址空间',
+	tool_private_cidr_ranges_ref_rfc4193_label: 'RFC 4193 — IPv6 唯一本地地址',
+	tool_private_cidr_ranges_ref_rfc5737_label: 'RFC 5737 — 文档保留 IPv4 块',
+	tool_private_cidr_ranges_disclaimer:
+		'命中结果对齐公开 RFC 的私网/特殊用途定义。这不是路由或防火墙策略建议；关键变更请在自有环境验证。',
+};
+
+export default zh;

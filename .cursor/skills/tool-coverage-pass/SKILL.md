@@ -26,6 +26,7 @@ description: >-
 ### 1) phase=0b（清单前）
 
 对照 `03` 检索词与用户搜法，写满 `02`「清单前检索覆盖」表（slug / 主词→H1 / 次词→desc·FAQ / 习惯判断 / **优化摘要** / 已回写）。必要时改建议 title（结果/场景向，禁参数枚举）。  
+**若本意图 slug 已有 Google / Bing Keyword Planner（Ads）长尾分析**（`docs/seo/keywords/{theme}/*-keyword-planner.md` 等）：须填 `02`「Ads / Keyword Planner 长尾」表——归属长尾**融入文案**且**功能覆盖**对应任务（见 `work-tasks-tool-brief.mdc`「Ads / Keyword Planner 长尾融入」）；仅塞词无能力 → 不合格。  
 写 `03` 多轮行 **`0b`**（日期 YYYY-MM-DD + ≥20 字摘要），勾选「清单前检索覆盖已做」。
 
 ```bash
@@ -36,7 +37,7 @@ npm run coverage:gate -- --slug={slug} --phase=0b
 
 **紧接着（同一 0b 阶段内，标 ready 前）— 用户意图审查并优化**
 
-对照 `00` 原话 + 主检索词用户任务（不是「怎么点本站按钮」）：立项是否**满足**、是否**超出**（次 UI 抢首屏、第二计算器、desc 元叙述）。部分满足或越界则回写 How / 交互主次 / FAQ / desc。写入 `02`「用户意图审查」（可详写 `notes.md`）。细则：`work-tasks-tool-brief.mdc`「用户意图审查」。只勾选不回写 → 不合格。
+对照 `00` 原话 + 主检索词用户任务（不是「怎么点本站按钮」）：立项是否**满足**、是否**超出**（次 UI 抢首屏、第二计算器、desc 元叙述）。部分满足或越界则回写 How / 交互主次 / FAQ / desc。写入 `02`「用户意图审查」（可详写 `notes.md`）。细则：`work-tasks-tool-brief.mdc`「用户意图审查」。有 Planner 长尾时须核对长尾任务能否办成。只勾选不回写 → 不合格。
 
 ### 2) 母版 i18n 后 → phase=2
 
@@ -77,8 +78,10 @@ TOOL_SLUG={slug} npm run lint:tool-isolation
 5. 与 catalog `related` / 邻近工具 H1 是否撞 intent？
 6. 本步是否**改了文案**还是只勾选？（只勾选 → 不合格）
 7. **意图审查**：搜主词的人打开页能否办成事？How 是否先答用户任务？有无超出（次模式抢首屏、第二工具、元叙述）？有缺口是否已回写？
+8. **Ads/Planner 长尾（若有）**：归属本 slug 的长尾是否已融入文案？交互是否覆盖长尾任务（非只出现词）？
 
-硬性两条（`tool-i18n-localization.mdc`「相关关键词落地」）：① 覆盖词写入 H1/desc/FAQ/usecase；② 每语按搜索习惯重跑。
+硬性两条（`tool-i18n-localization.mdc`「相关关键词落地」）：① 覆盖词写入 H1/desc/FAQ/usecase；② 每语按搜索习惯重跑。  
+有 Planner 分析时再加：③ 长尾任务有对应功能（`work-tasks-tool-brief.mdc`）。
 
 ## Plan 多工具 todos 模板
 

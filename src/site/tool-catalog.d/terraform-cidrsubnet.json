@@ -13,7 +13,8 @@
   "related": [
     "ip-address",
     "domain-lookup",
-    "ip-range-to-cidr"
+    "ip-range-to-cidr",
+    "private-cidr-ranges"
   ],
   "logo": "/icons/tools/terraform-cidrsubnet.svg",
   "page": {

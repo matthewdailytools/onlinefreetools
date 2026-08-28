@@ -1,0 +1,100 @@
+/**
+ * i18n tool shard (cidr-to-ip-range / zh).
+ * 当地检索：CIDR 转 IP 范围；勿把 H1 写成「CIDR 计算器」硬刚大词。
+ */
+import type { SiteLangDict } from '../../../types';
+
+const zh: SiteLangDict = {
+	tool_cidr_to_ip_range_title: 'CIDR 转 IP 范围 — 把前缀展开成可用地址段',
+	tool_cidr_to_ip_range_desc:
+		'CIDR 转 IP 范围：粘贴 192.168.1.0/24，得到网络地址、广播与可用主机。浏览器内计算，不上传服务器。',
+	tool_cidr_to_ip_range_description:
+		'CIDR 转 IP 范围：粘贴 IPv4 CIDR（示例 192.168.1.0/24），立刻得到网络地址、广播、可用主机起止、主机数与子网掩码。也可做掩码↔前缀互转、判断地址是否在段内，以及带行数上限的地址展开。和常见「CIDR 计算器 / CIDR 记法计算器」是同一类任务——文件留在本机浏览器，不上传服务器。',
+	tool_cidr_to_ip_range_article:
+		'粘贴一条 IPv4 CIDR，查看网络地址、广播、可用首末主机、主机数、子网掩码与通配符。可选模式：掩码与前缀互转、包含/重叠检查、限额展开。',
+	tool_cidr_to_ip_range_calculate: '计算',
+	tool_cidr_to_ip_range_sample: '加载示例',
+	tool_cidr_to_ip_range_clear: '清空',
+	tool_cidr_to_ip_range_copy: '复制结果',
+	tool_cidr_to_ip_range_copy_done: '已复制',
+	tool_cidr_to_ip_range_mode_label: '模式',
+	tool_cidr_to_ip_range_mode_range: '前缀 → 网段',
+	tool_cidr_to_ip_range_mode_mask: '掩码 ↔ 前缀',
+	tool_cidr_to_ip_range_mode_check: '包含 / 重叠',
+	tool_cidr_to_ip_range_mode_expand: '展开（有上限）',
+	tool_cidr_to_ip_range_input_label: 'IPv4 CIDR',
+	tool_cidr_to_ip_range_input_ph: '192.168.1.0/24',
+	tool_cidr_to_ip_range_mask_label: '点分掩码',
+	tool_cidr_to_ip_range_mask_ph: '255.255.255.0',
+	tool_cidr_to_ip_range_second_label: 'IP 或第二段 CIDR',
+	tool_cidr_to_ip_range_second_ph: '192.168.1.50 或 192.168.1.128/25',
+	tool_cidr_to_ip_range_result_label: '结果',
+	tool_cidr_to_ip_range_lbl_network: '网络地址',
+	tool_cidr_to_ip_range_lbl_broadcast: '广播地址',
+	tool_cidr_to_ip_range_lbl_first: '首个可用',
+	tool_cidr_to_ip_range_lbl_last: '末个可用',
+	tool_cidr_to_ip_range_lbl_hosts: '主机数',
+	tool_cidr_to_ip_range_lbl_mask: '子网掩码',
+	tool_cidr_to_ip_range_lbl_wildcard: '通配符掩码',
+	tool_cidr_to_ip_range_lbl_prefix: '前缀长度',
+	tool_cidr_to_ip_range_lbl_normalized: '规范化 CIDR',
+	tool_cidr_to_ip_range_norm_hint: '输入含主机位，结果已按网络地址规范化。',
+	tool_cidr_to_ip_range_expand_limit: '展开已达安全上限（{limit} 行）。请改用更长前缀，或只看汇总字段。',
+	tool_cidr_to_ip_range_check_in: '该地址在此 CIDR 内。',
+	tool_cidr_to_ip_range_check_out: '该地址不在此 CIDR 内。',
+	tool_cidr_to_ip_range_overlap_equal: '两段完全相同。',
+	tool_cidr_to_ip_range_overlap_contain: '第一段包含第二段。',
+	tool_cidr_to_ip_range_overlap_inside: '第一段落在第二段内。',
+	tool_cidr_to_ip_range_overlap_overlap: '两段部分重叠。',
+	tool_cidr_to_ip_range_overlap_disjoint: '两段不相交。',
+	tool_cidr_to_ip_range_mask_to_prefix: '掩码对应前缀：/{n}',
+	tool_cidr_to_ip_range_prefix_to_mask: '前缀对应掩码：{mask}',
+	tool_cidr_to_ip_range_err_empty: '请输入 IPv4 CIDR，例如 192.168.1.0/24。',
+	tool_cidr_to_ip_range_err_parse: '无法解析为 IPv4 地址或 CIDR。',
+	tool_cidr_to_ip_range_err_prefix: '前缀长度须为 0–32 的整数。',
+	tool_cidr_to_ip_range_err_ipv6: '本页仅支持 IPv4。IPv6 前缀请用专门的 IPv6 CIDR 工具。',
+	tool_cidr_to_ip_range_err_mask: '该点分掩码不是合法的连续 IPv4 子网掩码。',
+	tool_cidr_to_ip_range_err_second: '请填写用于包含/重叠判断的第二个 IPv4 地址或 CIDR。',
+	tool_cidr_to_ip_range_how_title: '怎么用',
+	tool_cidr_to_ip_range_how_body:
+		'把一条 CIDR 前缀展开成网段与可用主机——这也是很多人搜「CIDR 计算器 / CIDR 记法计算器」时要办的事。',
+	tool_cidr_to_ip_range_how_item_1: '先明确目标：由 CIDR 得到网络地址、广播与可用主机范围（不是起止再汇总成 CIDR）。',
+	tool_cidr_to_ip_range_how_item_2: '粘贴 IPv4 CIDR，例如 192.168.1.0/24（或点「加载示例」）。',
+	tool_cidr_to_ip_range_how_item_3: '查看网络/广播/可用起止/主机数/掩码，需要时复制。',
+	tool_cidr_to_ip_range_how_item_4: '需要时再切换掩码互转、包含/重叠或限额展开。',
+	tool_cidr_to_ip_range_how_item_5: '起止地址转 CIDR 请用相关工具「IP 段转 CIDR」；IPv6 请用独立 IPv6 页（上线后）。',
+	tool_cidr_to_ip_range_formula_title: '计算规则',
+	tool_cidr_to_ip_range_formula_body:
+		'掩码 = 2^32 − 2^(32−前缀)。网络地址 = 地址 AND 掩码。广播 = 网络 OR 掩码取反。/31 按 RFC 3021，/32 为单主机。',
+	tool_cidr_to_ip_range_formula_item_1: '解析 a.b.c.d/nn；拒绝 IPv6 与越界前缀。',
+	tool_cidr_to_ip_range_formula_item_2: '按位运算得到网络地址与广播地址。',
+	tool_cidr_to_ip_range_formula_item_3: '可用主机：/32 单地址；/31 两端可用；其余为 network+1 到 broadcast−1。',
+	tool_cidr_to_ip_range_formula_item_4: '若输入含主机位，规范化到网络地址并提示。',
+	tool_cidr_to_ip_range_example_title: '示例',
+	tool_cidr_to_ip_range_example:
+		'输入：192.168.1.0/24。输出：网络 192.168.1.0，广播 192.168.1.255，可用 192.168.1.1–192.168.1.254，掩码 255.255.255.0，主机数 254。输入 192.168.1.37/24 会规范为 192.168.1.0/24。',
+	tool_cidr_to_ip_range_usecases_title: '适用场景',
+	tool_cidr_to_ip_range_usecase_1: '安全组只有 CIDR，写 ACL 前先展开成起止地址核对覆盖范围。',
+	tool_cidr_to_ip_range_usecase_2: '给同事一份 /24 的点分掩码与可用主机数，不必再开表格手算。',
+	tool_cidr_to_ip_range_usecase_3: '核对 Proxmox/桥接规划里的网段：确认网络地址与广播是否符合预期。',
+	tool_cidr_to_ip_range_faq_q1: '/31 和 /32 的可用主机怎么算？',
+	tool_cidr_to_ip_range_faq_a1:
+		'/32 就是单主机。/31 按 RFC 3021：两端地址都可用于点对点，没有传统「网络/广播」闲置。',
+	tool_cidr_to_ip_range_faq_q2: '粘贴 192.168.1.37/24 会怎样？',
+	tool_cidr_to_ip_range_faq_a2: '会规范成 192.168.1.0/24，并提示已忽略主机位，再输出该块的网络/广播/可用范围。',
+	tool_cidr_to_ip_range_faq_q3: '这和「CIDR 记法计算器」是一回事吗？',
+	tool_cidr_to_ip_range_faq_a3:
+		'对常见需求是：把 CIDR 记法变成网段字段。标题用「CIDR 转 IP 范围」说清结果；搜计算器类词也会落到本页。',
+	tool_cidr_to_ip_range_faq_q4: '大网段能全部展开吗？',
+	tool_cidr_to_ip_range_faq_a4: '展开模式有安全上限（1024 行），避免 /8 卡死标签页。可改用更长前缀或只看汇总。',
+	tool_cidr_to_ip_range_faq_q5: '起止地址怎么转成 CIDR？',
+	tool_cidr_to_ip_range_faq_a5: '那是反向任务，请用相关工具「IP 段转 CIDR」。本页只做前缀→范围（及限额列表）。',
+	tool_cidr_to_ip_range_faq_q6: '地址会上传吗？',
+	tool_cidr_to_ip_range_faq_a6: '不会。地址留在本机浏览器标签页，不上传到服务器。',
+	tool_cidr_to_ip_range_ref_rfc4632_label: 'RFC 4632 — 无类域间路由（CIDR）',
+	tool_cidr_to_ip_range_ref_rfc3021_label: 'RFC 3021 — IPv4 点对点链路使用 31 位前缀',
+	tool_cidr_to_ip_range_disclaimer:
+		'结果遵循常见 IPv4 CIDR 算术（含 /31 的 RFC 3021）。这不是路由或防火墙策略建议；关键变更请在自有环境验证。',
+};
+
+export default zh;

@@ -26,21 +26,42 @@ work-tasks/{kebab-slug}/
 1. 建夹并写 `00-request.md`（保留用户原问）。
 2. 读 `docs/2026-07-28-tool-direction.md`，写 `01-direction-discussion.md`：只选一个主方向；过红线与（若 C）立项三问。
 3. 起草 `02` SEO 卡片字段与 `03` 母版检索词（slug / Title 方向 / 关键词 3–5 / Description 要点）——**先草稿，先不勾「页面模块清单」**。
-4. **清单前检索覆盖优化（硬门禁）**：对 **slug、title、关键词、desc** 分析是否符合用户搜索习惯与关键词覆盖并回写优化；在 `02` 专节或 `notes.md` 写覆盖表（**主词→H1；次词→desc/FAQ/Use cases 逐词落点**；见 `tool-i18n-localization.mdc`「相关关键词落地」+「清单前检索覆盖优化」）；`03` 多轮行写 **`0b`**。然后：`npm run coverage:gate -- --slug={slug} --phase=0b`。**未绿不得**勾页面模块清单、不得标 `02`=`ready`、不得开始 `tool-creation` 工程/上线清单。Skill：`.cursor/skills/tool-coverage-pass/SKILL.md`。
-5. **用户意图审查并优化（硬门禁）**：覆盖表起草之后、勾页面模块清单 / 标 `ready` **之前**。对照 `00` 站长原话与**主检索词搜索者要完成的任务**，审查立项是否**满足**、是否**超出预期**，有缺口或越界则回写 How / 交互主次 / FAQ / desc。产出写入 `02`「用户意图审查」专节（可详写在 `notes.md`）。**未写审查表不得** `02`=`ready`、不得勾页面模块清单。细则见下节。
+4. **清单前检索覆盖优化（硬门禁）**：对 **slug、title、关键词、desc** 分析是否符合用户搜索习惯与关键词覆盖并回写优化；在 `02` 专节或 `notes.md` 写覆盖表（**主词→H1；次词→desc/FAQ/Use cases 逐词落点**；见 `tool-i18n-localization.mdc`「相关关键词落地」+「清单前检索覆盖优化」）；**若本意图 slug 已有 Google / Bing Ads（Keyword Planner）长尾分析，须按下方「Ads/Planner 长尾融入」并入覆盖表与交互规格**；`03` 多轮行写 **`0b`**。然后：`npm run coverage:gate -- --slug={slug} --phase=0b`。**未绿不得**勾页面模块清单、不得标 `02`=`ready`、不得开始 `tool-creation` 工程/上线清单。Skill：`.cursor/skills/tool-coverage-pass/SKILL.md`。
+5. **用户意图审查并优化（硬门禁）**：覆盖表起草之后、勾页面模块清单 / 标 `ready` **之前**。对照 `00` 站长原话与**主检索词搜索者要完成的任务**，审查立项是否**满足**、是否**超出预期**，有缺口或越界则回写 How / 交互主次 / FAQ / desc。产出写入 `02`「用户意图审查」专节（可详写在 `notes.md`）。**未写审查表不得** `02`=`ready`、不得勾页面模块清单。细则见下节。若有 Ads/Planner 长尾归属本 slug，意图审查须核对：**搜这些长尾的人打开页能否办成对应任务**（功能覆盖，不只是文案出现词）。
 6. 按策略 §3.8 写满 `02-tool-info.md` 其余项（IG ≥3、related ≥2、交互规格）；**交互规格须写清进页自动样例**（见 `tool-creation.mdc`）；覆盖表 + 意图审查齐备且 gate 0b 绿后勾页面模块清单，状态 `draft` → `ready`。
 7. 写十语前填满 `03-locale-briefs.md`（**每语**当地检索词 3–5、title 方向、按钮说法；勾选禁词表、「清单前检索覆盖已做」与「用户意图审查已做」）。**禁止**他语沿用 en 关键词表不重跑。
 8. 用户明确要求实现且 `02` 为 `ready` 后，按 `tool-creation.mdc` / Skill `tool-coverage-pass`：母版一语 → **`coverage:gate --phase=2`（03 行 `1b`）** → 逐语独立重写（**每语按当地搜法重跑关键词并写入 H1/desc/FAQ/usecase**）→ **`coverage:gate --phase=4`（03 行 `2b`，列出 en,zh,es,ja）** → ≥3 轮核查；**禁止**脚本同构灌语。多工具 Plan 须按 slug 分阶段 todos（见 `tool-creation.mdc`）。
+
+## Ads / Keyword Planner 长尾融入（有分析时硬门禁）
+
+**触发**：本意图 slug（或同主题簇里已定为 `build` / `absorb` 到本 slug 的词）在 `docs/seo/keywords/{theme}/`、`docs/seo/serp-batches/`、`docs/seo/keyword-daily-pool.tsv` 或 tracker 中，已有 **Google Keyword Planner** 和/或 **Bing Keyword Planner（Ads）** 跑出的长尾词表与选词结论（常见文件：`*-keyword-planner.md`、Planner CSV、长尾 SERP 批）。**无此类分析则跳过本条**（仍须做常规 0b / 0i）。
+
+立项与实现须**同时**做到两层（缺一不得标 `02`=`ready`、不得勾页面模块清单）：
+
+| 层 | 要求 | 产出落点 |
+|---|---|---|
+| **文案融入** | Planner 归属本 slug 的长尾（主选用词 + 须 absorb 的近义/并入词）写入可见文案：主词→H1；其余→desc / FAQ / Use cases 自然句 | `02` 覆盖表逐词落点；禁止只留在 planner 文档或 brief |
+| **功能覆盖** | 交互 / How / Example / 结果区须能完成这些长尾背后的**真实任务**（例如「ip range to cidr」须有起止→前缀能力，不能只有正向 CIDR→网段） | `02`「Ads/Planner 长尾」表 + 交互规格；意图审查总判须点明长尾任务是否满足 |
+
+**边界（不得借本条违规）**：
+
+- 仍服从 `seo-google-policy` / `tool-i18n-seo`：禁 doorway、禁仅为塞词拆近义 URL、禁页上「相关关键词」列表。
+- Planner 已 **drop** / 兽医同形 / 品牌导航 / 噪声词：不进 H1，不扩功能；最多 FAQ 消歧一句。
+- 已标 **有意不满足** 或应独立 `build` 的异意图长尾：不得硬塞进本 slug 功能；在表中写清「不覆盖 + 理由 / 指向他 slug」。
+- 头词仅作种子、选用长尾作 H1 时：功能以**选用长尾任务**为准，并可并入同簇 absorb 能力（见 `docs/seo/2026-08-20-long-tail-gap-strategy.md` §3.3）。
+
+**自检**：打开 `02` 能指出「每条归属长尾 → 文案哪一句 + 控件/结果哪一步」；说不出功能步骤 = 未完成。
 
 ## 用户意图审查（满足 / 超出 / 优化）
 
 覆盖表回答「词落在哪」；本步回答「搜这个词的人打开页能否办成事，以及有没有做多」。**不能**用覆盖表绿代替本步。
 
-对照三层（缺一层则审查不合格）：
+对照下列层级（缺一层则审查不合格；**有 Ads/Planner 长尾时第 4 层必做**）：
 
 1. **`00` 站长原话**：要建的 slug / 主词 / 约束是否仍成立。
 2. **主检索词搜索者**：打开页要完成的真实任务（仪器怎么测、数怎么算、文件怎么处理），**不是**「怎么点本站按钮」。How 须先答这件事，再进入控件步骤。
 3. **词表头词（若有）**：同意图须满足或标明落点；不同意图须 **有意不满足**（FAQ 一句即可）或 **drop**，禁止为量级改 H1 / 拆 doorway。
+4. **Ads/Planner 归属长尾（若有）**：搜选用/absorb 长尾的人能否在本页办成对应任务；仅文案出现词、功能做不到 → **部分满足**，必须补交互或划界后再 `ready`。
 
 | 结论 | 含义 | 动作 |
 |---|---|---|
@@ -57,11 +78,13 @@ work-tasks/{kebab-slug}/
 - IG / 预审：`docs/2026-07-28-google-seo-strategy-implementation.md` §3.1、§3.8
 - 卡片字段：`docs/2026-07-28-per-tool-dev-seo-plans.md`
 - 本地化 brief / 禁词：`tool-i18n-localization.mdc`、本夹 `03-locale-briefs.md`
+- 有 Planner 长尾时：`docs/seo/keywords/{theme}/*-keyword-planner.md`、长尾策略 `docs/seo/2026-08-20-long-tail-gap-strategy.md` §3.3、漏斗 `keyword-to-tool-funnel.mdc`
 
 ## 禁止
 
 - 无 `02-tool-info.md`（或状态非 `ready`）就批量建页 / 拆近义长尾 URL
 - **未做清单前 slug/title/关键词/desc 检索覆盖优化**（无覆盖表 / 无逐词落点）就勾页面模块清单、标 `ready`、或开始工程/上线清单
+- **意图 slug 已有 Google/Bing Ads（Keyword Planner）长尾分析，却未把归属长尾融入文案（H1/desc/FAQ/Use cases）或未让功能覆盖长尾任务**，就标 `ready` 或勾页面模块清单
 - **未做用户意图审查**（无满足/超出总判、或只勾选不回写 How/交互）就标 `ready` 或开始工程
 - 无 `03-locale-briefs.md`（或 brief 空白、或他语未按当地搜法重跑关键词）就批量直出十语 i18n
 - 用脚本批量生成同构多语文案并当作本地化完成（见 `tool-i18n-localization.mdc` 收紧合规）

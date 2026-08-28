@@ -75,15 +75,29 @@
 
 > 填完后验收：`npm run coverage:gate -- --slug={tool-slug} --phase=0b`（须绿才可标 `ready` / 勾下方页面模块清单）。
 
+## Ads / Keyword Planner 长尾（有分析时必做）
+
+> 规则：`.cursor/rules/work-tasks-tool-brief.mdc`「Ads / Keyword Planner 长尾融入」。无 Google/Bing Planner 分析则勾「不适用」并跳过本表。
+
+- [ ] 不适用（本 slug 无 Planner / Ads 长尾分析）
+- [ ] 已引用分析路径：`docs/seo/keywords/…`（写出文件名）
+
+| 长尾词（Planner） | 归属 | 文案落点（H1/desc/FAQ/usecase） | 功能覆盖（控件/结果哪一步） | 不覆盖理由（若有） |
+|---|---|---|---|---|
+| | build 主词 / absorb / drop | | | |
+
+- [ ] 交互规格已按上表补齐能力（不仅写进文案）
+
 ## 用户意图审查（标 ready 前必做）
 
-> 规则：`.cursor/rules/work-tasks-tool-brief.mdc`「用户意图审查」。对照 `00` 原话 + 主检索词用户任务。未填不得 `ready`。
+> 规则：`.cursor/rules/work-tasks-tool-brief.mdc`「用户意图审查」。对照 `00` 原话 + 主检索词用户任务（有 Planner 长尾时含长尾任务）。未填不得 `ready`。
 
 | 项 | 结论 |
 |---|---|
 | 日期 | |
 | 总判 | 满足 / 部分满足 / 超出 / 有意不满足（一句） |
 | 主词搜索者任务 | （打开页要完成什么，不是「怎么点本站按钮」） |
+| Ads/Planner 长尾任务 | （无则写「不适用」；有则逐条是否能办成） |
 | 满足之处 | |
 | 超出 / 应划边界 | （次 UI 是否抢首屏；desc 是否元叙述） |
 | 缺口与已做优化 | （回写了 How/FAQ/desc 哪一段；无则写「无」） |

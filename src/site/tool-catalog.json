@@ -134,6 +134,27 @@
     "launchedAt": "2026-08-08T17:55:12+08:00"
   },
   {
+    "slug": "cidr-to-ip-range",
+    "path": "/tools/cidr-to-ip-range",
+    "updatedAt": "2026-08-28T15:37:04.616Z",
+    "launchedAt": "2026-08-28T15:35:00.000Z",
+    "category": "developer",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_cidr_to_ip_range_title",
+    "homeTitleKey": "tool_cidr_to_ip_range_title",
+    "homeDescKey": "tool_cidr_to_ip_range_desc",
+    "faqPrefix": "tool_cidr_to_ip_range",
+    "related": [
+      "ip-range-to-cidr",
+      "terraform-cidrsubnet"
+    ],
+    "logo": "/icons/tools/cidr-to-ip-range.svg",
+    "localProcessing": true,
+    "scenario": "developer",
+    "subject": "network"
+  },
+  {
     "slug": "color-from-image",
     "path": "/tools/color-from-image",
     "updatedAt": "2026-08-09T00:00:00.000Z",
@@ -2012,7 +2033,9 @@
     "faqPrefix": "tool_ip_range_to_cidr",
     "related": [
       "terraform-cidrsubnet",
-      "ip-address"
+      "ip-address",
+      "private-cidr-ranges",
+      "cidr-to-ip-range"
     ],
     "logo": "/icons/tools/ip-range-to-cidr.svg",
     "localProcessing": true,
@@ -2393,6 +2416,27 @@
     "launchedAt": "2026-08-08T21:33:07+08:00"
   },
   {
+    "slug": "private-cidr-ranges",
+    "path": "/tools/private-cidr-ranges",
+    "updatedAt": "2026-08-28T15:15:00.000Z",
+    "launchedAt": "2026-08-28T15:15:00.000Z",
+    "category": "developer",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_private_cidr_ranges_title",
+    "homeTitleKey": "tool_private_cidr_ranges_title",
+    "homeDescKey": "tool_private_cidr_ranges_desc",
+    "faqPrefix": "tool_private_cidr_ranges",
+    "related": [
+      "ip-range-to-cidr",
+      "terraform-cidrsubnet"
+    ],
+    "logo": "/icons/tools/private-cidr-ranges.svg",
+    "localProcessing": true,
+    "scenario": "developer",
+    "subject": "network"
+  },
+  {
     "slug": "protect-pdf",
     "path": "/tools/protect-pdf",
     "updatedAt": "2026-08-09T00:00:00.000Z",
@@ -2583,7 +2627,8 @@
     "related": [
       "ip-address",
       "domain-lookup",
-      "ip-range-to-cidr"
+      "ip-range-to-cidr",
+      "private-cidr-ranges"
     ],
     "logo": "/icons/tools/terraform-cidrsubnet.svg",
     "localProcessing": true,

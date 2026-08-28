@@ -9,6 +9,7 @@ import { renderArchiveExtractorPage } from '../pages/archiveExtractorPage';
 import { renderBase64Page } from '../pages/base64Page';
 import { renderBrandColorTokenPackPage } from '../pages/brandColorTokenPackPage';
 import { renderBrandStyleGuidePage } from '../pages/brandStyleGuidePage';
+import { renderCidrToIpRangePage } from '../pages/cidrToIpRangePage';
 import { renderColorFromImagePage } from '../pages/colorFromImagePage';
 import { renderCompressPdfPage } from '../pages/compressPdfPage';
 import { renderCoreWebVitalsCheckerPage } from '../pages/coreWebVitalsCheckerPage';
@@ -113,6 +114,7 @@ import { renderPdfPageToImageSizesPage } from '../pages/pdfPageToImageSizesPage'
 import { renderPdfToJpgPage } from '../pages/pdfToJpgPage';
 import { renderPdfToMarkdownPage } from '../pages/pdfToMarkdownPage';
 import { renderPdfWatermarkPage } from '../pages/pdfWatermarkPage';
+import { renderPrivateCidrRangesPage } from '../pages/privateCidrRangesPage';
 import { renderProtectPdfPage } from '../pages/protectPdfPage';
 import { renderRobotsTxtGeneratorPage } from '../pages/robotsTxtGeneratorPage';
 import { renderRotatePdfPage } from '../pages/rotatePdfPage';
@@ -148,6 +150,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'base64': (lang, defaultLang, enabled) => renderBase64Page({ lang, defaultLang, enabledLangs: enabled }),
 	'brand-color-token-pack': (lang, defaultLang, enabled) => renderBrandColorTokenPackPage({ lang, defaultLang, enabledLangs: enabled }),
 	'brand-style-guide': (lang, defaultLang, enabled) => renderBrandStyleGuidePage({ lang, defaultLang, enabledLangs: enabled }),
+	'cidr-to-ip-range': (lang, defaultLang, enabled) => renderCidrToIpRangePage({ lang, defaultLang, enabledLangs: enabled }),
 	'color-from-image': (lang, defaultLang, enabled) => renderColorFromImagePage({ lang, defaultLang, enabledLangs: enabled }),
 	'compress-pdf': (lang, defaultLang, enabled) => renderCompressPdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'core-web-vitals-checker': (lang, defaultLang, enabled) => renderCoreWebVitalsCheckerPage({ lang, defaultLang, enabledLangs: enabled }),
@@ -252,6 +255,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'pdf-to-jpg': (lang, defaultLang, enabled) => renderPdfToJpgPage({ lang, defaultLang, enabledLangs: enabled }),
 	'pdf-to-markdown': (lang, defaultLang, enabled) => renderPdfToMarkdownPage({ lang, defaultLang, enabledLangs: enabled }),
 	'pdf-watermark': (lang, defaultLang, enabled) => renderPdfWatermarkPage({ lang, defaultLang, enabledLangs: enabled }),
+	'private-cidr-ranges': (lang, defaultLang, enabled) => renderPrivateCidrRangesPage({ lang, defaultLang, enabledLangs: enabled }),
 	'protect-pdf': (lang, defaultLang, enabled) => renderProtectPdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'robots-txt-generator': (lang, defaultLang, enabled) => renderRobotsTxtGeneratorPage({ lang, defaultLang, enabledLangs: enabled }),
 	'rotate-pdf': (lang, defaultLang, enabled) => renderRotatePdfPage({ lang, defaultLang, enabledLangs: enabled }),

@@ -12,7 +12,9 @@
   "faqPrefix": "tool_ip_range_to_cidr",
   "related": [
     "terraform-cidrsubnet",
-    "ip-address"
+    "ip-address",
+    "private-cidr-ranges",
+    "cidr-to-ip-range"
   ],
   "logo": "/icons/tools/ip-range-to-cidr.svg",
   "page": {

@@ -1,0 +1,26 @@
+{
+  "slug": "private-cidr-ranges",
+  "path": "/tools/private-cidr-ranges",
+  "updatedAt": "2026-08-28T15:15:00.000Z",
+  "launchedAt": "2026-08-28T15:15:00.000Z",
+  "category": "developer",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_private_cidr_ranges_title",
+  "homeTitleKey": "tool_private_cidr_ranges_title",
+  "homeDescKey": "tool_private_cidr_ranges_desc",
+  "faqPrefix": "tool_private_cidr_ranges",
+  "related": [
+    "ip-range-to-cidr",
+    "terraform-cidrsubnet"
+  ],
+  "logo": "/icons/tools/private-cidr-ranges.svg",
+  "page": {
+    "module": "../pages/privateCidrRangesPage",
+    "export": "renderPrivateCidrRangesPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "developer",
+  "subject": "network"
+}
