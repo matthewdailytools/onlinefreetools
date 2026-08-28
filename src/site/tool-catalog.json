@@ -1991,6 +1991,26 @@
     "subject": "text"
   },
   {
+    "slug": "measuring-magnetic-fields",
+    "path": "/tools/measuring-magnetic-fields",
+    "updatedAt": "2026-08-28T05:15:18.709Z",
+    "category": "calculator",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_measuring_magnetic_fields_title",
+    "homeTitleKey": "tool_measuring_magnetic_fields_title",
+    "homeDescKey": "tool_measuring_magnetic_fields_description",
+    "faqPrefix": "tool_measuring_magnetic_fields",
+    "related": [
+      "how-to-calculate-ohms-law",
+      "how-to-calculate-density"
+    ],
+    "logo": "/icons/tools/measuring-magnetic-fields.svg",
+    "localProcessing": true,
+    "scenario": "physics",
+    "subject": "number"
+  },
+  {
     "slug": "merge-pdf",
     "path": "/tools/merge-pdf",
     "updatedAt": "2026-08-09T00:00:00.000Z",

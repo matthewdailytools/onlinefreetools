@@ -99,6 +99,40 @@ export const checkCoverageTableFilled = (md) => {
 };
 
 /**
+ * 若 02 或 notes 含「用户意图审查」专节，则须有非占位总判（满足/超出等）。
+ * 旧工具无专节则跳过，避免存量 coverage:gate 全红。
+ * @param {string} md 02-tool-info.md 与可选 notes.md 的拼接文本
+ * @returns {{ ok: boolean, skipped?: boolean, reason?: string }}
+ */
+export const checkIntentReviewFilled = (md) => {
+	if (!md || !/用户意图审查/.test(md)) {
+		return { ok: true, skipped: true };
+	}
+	const idx = md.search(/用户意图审查/);
+	const section = md.slice(idx, idx + 5000);
+	if (!/总判/.test(section)) {
+		return { ok: false, reason: '用户意图审查缺少「总判」' };
+	}
+	const tableZong = section.match(/\|\s*总判\s*\|\s*([^|\n]+)\|/);
+	const proseZong = section.match(/\*\*总判\*\*[：:]\s*([^\n]+)/);
+	const zongText = (tableZong?.[1] || proseZong?.[1] || '').trim();
+	if (
+		!zongText ||
+		/（总判）|（一句）/.test(zongText) ||
+		/^满足\s*\/\s*部分满足/.test(zongText)
+	) {
+		return { ok: false, reason: '用户意图审查：总判 empty or placeholder' };
+	}
+	if (!/(满足|部分满足|超出|有意不满足)/.test(section)) {
+		return { ok: false, reason: '用户意图审查未写满足/超出结论' };
+	}
+	if (/已按审查回写/.test(section) && !/\[[xX]\]\s*已按审查回写/.test(section)) {
+		return { ok: false, reason: '未勾选「已按审查回写 How / 交互主次 / FAQ / desc」' };
+	}
+	return { ok: true };
+};
+
+/**
  * 从 03-locale-briefs.md 判断是否勾选清单前覆盖。
  * @param {string} md
  * @returns {boolean}
@@ -116,4 +150,26 @@ export const hasLocaleBriefCoverageCheck = (md) => {
 export const localeBriefHasCoverageItem = (md) => {
 	if (!md) return false;
 	return /清单前检索覆盖已做/.test(md);
+};
+
+/**
+ * 03 是否勾选「用户意图审查已做」。
+ * @param {string} md
+ * @returns {boolean}
+ */
+export const hasLocaleBriefIntentReviewCheck = (md) => {
+	if (!md) return false;
+	return (
+		/\[[xX]\]\s*\*\*用户意图审查已做\*\*/.test(md) || /\[[xX]\]\s*用户意图审查已做/.test(md)
+	);
+};
+
+/**
+ * 03 是否包含「用户意图审查已做」检查项（旧 brief 可能无此行）。
+ * @param {string} md
+ * @returns {boolean}
+ */
+export const localeBriefHasIntentReviewItem = (md) => {
+	if (!md) return false;
+	return /用户意图审查已做/.test(md);
 };

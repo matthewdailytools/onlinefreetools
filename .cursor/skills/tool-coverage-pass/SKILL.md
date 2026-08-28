@@ -3,14 +3,15 @@ name: tool-coverage-pass
 description: >-
   Run SEO search-coverage passes (0b, step 2, step 4) when creating or batching
   tools. Use for 立项, 实现, 多工具, Plan with multiple slugs, coverage:gate,
-  清单前检索覆盖, or title/keyword optimization. Forces per-slug gates before
+  清单前检索覆盖, 用户意图审查, or title/keyword optimization. Forces per-slug gates before
   ready / i18n-done / build:site.
 ---
 
 # Tool coverage pass（0b / 步 2 / 步 4）
 
 分析由 Agent 完成；脚本只验收。对齐 `.cursor/rules/tool-i18n-localization.mdc`。  
-**禁止**跳过本 Skill 直接灌十语或勾选「检索覆盖已优化」。
+**禁止**跳过本 Skill 直接灌十语或勾选「检索覆盖已优化」。  
+单工具且需控上下文成本时，可叠加 `.cursor/skills/tool-token-efficiency/SKILL.md`（**不得**因此跳过本 Skill 任一阶段）。
 
 ## 何时必须使用
 
@@ -31,7 +32,11 @@ description: >-
 npm run coverage:gate -- --slug={slug} --phase=0b
 ```
 
-须绿 → 才可 `02=ready`、勾页面模块清单、开始工程文件。
+须绿 → 才可进入意图审查；审查表未写仍不得 `02=ready`、勾页面模块清单、开始工程文件。
+
+**紧接着（同一 0b 阶段内，标 ready 前）— 用户意图审查并优化**
+
+对照 `00` 原话 + 主检索词用户任务（不是「怎么点本站按钮」）：立项是否**满足**、是否**超出**（次 UI 抢首屏、第二计算器、desc 元叙述）。部分满足或越界则回写 How / 交互主次 / FAQ / desc。写入 `02`「用户意图审查」（可详写 `notes.md`）。细则：`work-tasks-tool-brief.mdc`「用户意图审查」。只勾选不回写 → 不合格。
 
 ### 2) 母版 i18n 后 → phase=2
 
@@ -67,6 +72,7 @@ TOOL_SLUG={slug} npm run lint:tool-isolation
 4. **本语**检索词是否按当地习惯重跑（非 en 直搬）？
 5. 与 catalog `related` / 邻近工具 H1 是否撞 intent？
 6. 本步是否**改了文案**还是只勾选？（只勾选 → 不合格）
+7. **意图审查**：搜主词的人打开页能否办成事？How 是否先答用户任务？有无超出（次模式抢首屏、第二工具、元叙述）？有缺口是否已回写？
 
 硬性两条（`tool-i18n-localization.mdc`「相关关键词落地」）：① 覆盖词写入 H1/desc/FAQ/usecase；② 每语按搜索习惯重跑。
 
@@ -74,7 +80,7 @@ TOOL_SLUG={slug} npm run lint:tool-isolation
 
 每个 slug 展开（禁止单一「实现全部工具」）：
 
-- `brief-0b-{slug}` → coverage:gate phase=0b  
+- `brief-0b-{slug}` → coverage:gate phase=0b **+ 用户意图审查并优化**  
 - `i18n-master-{slug}`  
 - `cover-step2-{slug}` → phase=2  
 - `i18n-locales-{slug}`  

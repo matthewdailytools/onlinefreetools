@@ -28,7 +28,27 @@
 ## 本批结论（仅分析）
 
 - **无既有 catalog slug 可 absorb**（`tool-catalog.json` 无磁铁类工具；`work-tasks/magnet-link-decoder` 是 BitTorrent 磁力链接，非物理磁铁）。
-- 主 `build` 候选建议名：**`magnet-pull-force-calculator`**（磁铁吸力/强度估算）；等级对照、材料对比、尺寸换算**并入同一页**（一带多场景），**禁止**按 grades/material/size 拆近义 URL。
+- 主候选建议名：**`magnet-pull-force-calculator`**（磁铁吸力/强度估算）；等级对照、材料对比、尺寸换算**并入同一页**（一带多场景），**禁止**按 grades/material/size 拆近义 URL。
 - **未**因本批创建 `work-tasks/`；开工具立项须另人工决议。
 - 多数词（~9 成）为商业购买 / 产品规格 / 品牌导航意图 → `drop`；知识意图 → `defer`（可作主工具 How/FAQ/Use cases 素材）。
 - 事项跟进：[`../keyword-to-tool-tracker.md`](../keyword-to-tool-tracker.md)
+
+## 周审复核（2026-08-25）
+
+原判 `build` 依据是「通用工具站几乎空白」。长尾缺口策略下，**磁铁商店的同意图深页也算已覆盖**。
+
+| 原候选 slug | 新 `verdict` | `competition_tier` | 理由 |
+|---|---|---|---|
+| `magnet-pull-force-calculator` | `defer` | `mid_covered` | EN SERP 被 K&J / Radial Magnets / Magfine / dhit 等商店吸力计算器占位（含公式、等级、尺寸）；不占周 `build` 名额 |
+| grades / material / size 子意图 | `defer` | `mid_covered` | 仍禁止拆近义 URL；若将来做主工具再一带多场景 |
+
+中文「N52 圆片 + 气隙吸力」等更具体问法**尚未入池**；不得把 EN `magnet pull force calculator` 当作 `locale_gap` 去撞商店头词页。
+
+## 立项 pivot（2026-08-28）
+
+用户明确要求创建工具，并将建议 slug / 主打关键词从 `magnet-pull-force-calculator` 改为 **measuring magnetic fields**（kebab：`measuring-magnetic-fields`）。
+
+- 主意图：霍尔探头 / 高斯计 / 磁力计**读数换算与解读**（T↔G、典型场强、仪器量程）。
+- 原吸力 / N 级 / 材料 / 尺寸：**同一 URL 次模块 + FAQ**，禁止拆近义页；H1 **不用** magnet pull force calculator。
+- work-tasks：`work-tasks/measuring-magnetic-fields/`（`02`=`ready`；实现另回合）。
+- 词池：主词行 `verdict=build`；原四条吸力簇改为 `absorb` → `measuring-magnetic-fields`。

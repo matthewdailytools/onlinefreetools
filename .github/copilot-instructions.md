@@ -22,7 +22,7 @@ Purpose: Make AI agents productive immediately in this repo. Keep changes minima
 ### 工具创建规则（默认）
 
 - **目标**：工具页可交互、多语言、可检索、对用户有用（people-first），且相对 SERP 有 Information Gain。
-- **权威序**：Google 官方（`.cursor/rules/seo-google-policy.mdc`）→ `lint:seo` / 代码 → `.cursor/rules/*`（`tool-creation` / `tool-i18n-seo` / `tool-i18n-localization`）→ `docs/*`（须对齐前三者）→ 本文件（从 rules 同步）。立项：`work-tasks/`。
+- **权威序**：Google 官方（`.cursor/rules/seo-google-policy.mdc`）→ `lint:seo` / 代码 → `.cursor/rules/*`（`tool-creation` / `tool-i18n-seo` / `tool-i18n-localization`）→ `docs/*`（须对齐前三者）→ 本文件（从 rules 同步）。立项：`work-tasks/`（覆盖表 0b 之后须做**用户意图审查**：满足/超出并回写 How，见 `work-tasks-tool-brief.mdc`）。
 - **支持语言**：以 `src/site/i18n.ts` 的 `supportedLangs` 为准（当前 10 语：en, zh, es, ar, pt, id, fr, ja, ru, de）。新增语言需同步路由、hreflang、sitemap 与首页卡片。
 - **多语言链接验证**：
   - 新工具入库后必须 `npm run build:site`（含 merge）：刷新 `public/_pages/*/index.html` 与 sitemap；**禁止只跑 `merge:tools`**（否则 `/`、`/zh/` 静态首页看不到新卡片）。一般不必手改 `content-home.mjs`。
@@ -48,6 +48,7 @@ Purpose: Make AI agents productive immediately in this repo. Keep changes minima
 - **首页、导航与 README**：新工具须在首页与工具导航有入口；实现收尾跑 `npm run build:site` 后本地核对 `/`、`/zh/`；并更新根目录 `README.md`「工具清单 / Tools List」（中英各一条，与 `tool-catalog.json` 一致）。
 
 - **检索覆盖（0b / 步2 / 步4）**：按 `.cursor/skills/tool-coverage-pass/SKILL.md`；`npm run coverage:gate -- --slug=… --phase=0b|2|4|all`。覆盖表须含**逐词落点**（H1/desc/FAQ/usecase）；步 4 按各语搜法重跑。多工具 Plan 须每 slug 分阶段 todos，禁止「一次实现全部」。`lint:seo` 对有清单前覆盖专节的工具强制多轮行。
+- **单工具 token 效率（可选）**：与 coverage pass 叠加 `.cursor/skills/tool-token-efficiency/SKILL.md`——会话拆分、只读 slug 分片、禁止读合并 i18n/全 catalog；**不得**跳过 gate 或降低十语质量。
 
 - **SEO 验证**：`coverage:gate --phase=all` → `npm run build:site && npm run lint:seo`（新工具/发版前均须；`build:site` 不可省略）。FAQ/富结果展示不作 KPI。
 

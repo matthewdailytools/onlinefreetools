@@ -99,6 +99,7 @@ import { renderJsonSchemaValidatorPage } from '../pages/jsonSchemaValidatorPage'
 import { renderJwtDecoderPage } from '../pages/jwtDecoderPage';
 import { renderMagnetLinkDecoderPage } from '../pages/magnetLinkDecoderPage';
 import { renderMarkdownToHtmlPage } from '../pages/markdownToHtmlPage';
+import { renderMeasuringMagneticFieldsPage } from '../pages/measuringMagneticFieldsPage';
 import { renderMergePdfPage } from '../pages/mergePdfPage';
 import { renderMetaSerpPreviewPage } from '../pages/metaSerpPreviewPage';
 import { renderMetaTagGeneratorPage } from '../pages/metaTagGeneratorPage';
@@ -235,6 +236,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'jwt-decoder': (lang, defaultLang, enabled) => renderJwtDecoderPage({ lang, defaultLang, enabledLangs: enabled }),
 	'magnet-link-decoder': (lang, defaultLang, enabled) => renderMagnetLinkDecoderPage({ lang, defaultLang, enabledLangs: enabled }),
 	'markdown-to-html': (lang, defaultLang, enabled) => renderMarkdownToHtmlPage({ lang, defaultLang, enabledLangs: enabled }),
+	'measuring-magnetic-fields': (lang, defaultLang, enabled) => renderMeasuringMagneticFieldsPage({ lang, defaultLang, enabledLangs: enabled }),
 	'merge-pdf': (lang, defaultLang, enabled) => renderMergePdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'meta-serp-preview': (lang, defaultLang, enabled) => renderMetaSerpPreviewPage({ lang, defaultLang, enabledLangs: enabled }),
 	'meta-tag-generator': (lang, defaultLang, enabled) => renderMetaTagGeneratorPage({ lang, defaultLang, enabledLangs: enabled }),

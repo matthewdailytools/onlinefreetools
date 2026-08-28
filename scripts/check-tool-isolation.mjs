@@ -37,10 +37,13 @@ function changedPaths() {
 	} catch {
 		base = 'HEAD~1';
 	}
-	const out = execSync(
-		`git -c core.quotepath=false diff -z --name-only ${base}...HEAD; git -c core.quotepath=false diff -z --name-only; git -c core.quotepath=false ls-files -z --others --exclude-standard`,
-		{ cwd: ROOT, encoding: 'utf8' }
-	);
+	const parts = [
+		`git -c core.quotepath=false diff -z --name-only ${base}...HEAD`,
+		'git -c core.quotepath=false diff -z --name-only',
+		'git -c core.quotepath=false ls-files -z --others --exclude-standard',
+	];
+	/** Windows `execSync` 默认不走 shell，不能用 `;` 串命令，否则 git 会把 `HEAD;` 当成修订名。 */
+	const out = parts.map((cmd) => execSync(cmd, { cwd: ROOT, encoding: 'utf8' })).join('');
 	return [...new Set(out.split('\0').filter(Boolean))];
 }
 

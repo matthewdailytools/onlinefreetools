@@ -41,6 +41,10 @@ must follow them when their trigger conditions match:
 - `.cursor/skills/tool-coverage-pass/SKILL.md`: use for new tool creation,
   multi-tool plans, coverage gates, title/keyword optimization, and any change
   that marks a tool brief ready or i18n-done.
+- `.cursor/skills/tool-token-efficiency/SKILL.md`: use alongside coverage pass
+  when implementing or shipping a single tool and token/context cost matters;
+  optimizes reads, session splits, and command output handling without skipping
+  gates or lowering i18n/SEO quality.
 
 ## Verification
 

@@ -15,6 +15,7 @@ import { fileURLToPath } from 'url';
 import {
 	isParamEnumTitle,
 	checkCoverageTableFilled,
+	checkIntentReviewFilled,
 	hasLocaleBriefCoverageCheck,
 	localeBriefHasCoverageItem,
 } from './lib/title-coverage-heuristics.mjs';
@@ -86,6 +87,13 @@ export const validateToolTitleCoverage = () => {
 				const cov = checkCoverageTableFilled(md);
 				if (!cov.ok) {
 					console.warn(`[COVER-FAIL] work-tasks/${slug}/02-tool-info.md: ${cov.reason}`);
+					fails += 1;
+				}
+				const notesPath = path.join(workTasksDir, slug, 'notes.md');
+				const mdNotes = fs.existsSync(notesPath) ? fs.readFileSync(notesPath, 'utf8') : '';
+				const intent = checkIntentReviewFilled(`${md}\n${mdNotes}`);
+				if (!intent.skipped && !intent.ok) {
+					console.warn(`[COVER-FAIL] work-tasks/${slug}: ${intent.reason}`);
 					fails += 1;
 				}
 			}

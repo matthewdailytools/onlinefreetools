@@ -99,6 +99,7 @@ export const TOOL_SLUGS = [
 	"jwt-decoder",
 	"magnet-link-decoder",
 	"markdown-to-html",
+	"measuring-magnetic-fields",
 	"merge-pdf",
 	"meta-serp-preview",
 	"meta-tag-generator",

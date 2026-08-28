@@ -14,7 +14,9 @@ import { fileURLToPath } from 'url';
 import {
 	isParamEnumTitle,
 	checkCoverageTableFilled,
+	checkIntentReviewFilled,
 	hasLocaleBriefCoverageCheck,
+	hasLocaleBriefIntentReviewCheck,
 } from './lib/title-coverage-heuristics.mjs';
 
 const require = createRequire(import.meta.url);
@@ -180,6 +182,7 @@ export const validateCoveragePhase = (slug, phase) => {
 	const faqPrefix = tool?.faqPrefix || `tool_${slug.replace(/-/g, '_')}`;
 	const infoPath = path.join(workTasksDir, slug, '02-tool-info.md');
 	const briefPath = path.join(workTasksDir, slug, '03-locale-briefs.md');
+	const notesPath = path.join(workTasksDir, slug, 'notes.md');
 
 	if (!fs.existsSync(infoPath)) {
 		errs.push(`缺少 work-tasks/${slug}/02-tool-info.md`);
@@ -192,6 +195,7 @@ export const validateCoveragePhase = (slug, phase) => {
 
 	const md02 = fs.readFileSync(infoPath, 'utf8');
 	const md03 = fs.readFileSync(briefPath, 'utf8');
+	const mdNotes = fs.existsSync(notesPath) ? fs.readFileSync(notesPath, 'utf8') : '';
 	const phases = phase === 'all' ? ['0b', '2', '4'] : [phase];
 
 	for (const p of phases) {
@@ -214,6 +218,19 @@ export const validateCoveragePhase = (slug, phase) => {
 			}
 			if (!checkCoverageTableFilled(md02).ok && moduleChecklistHeavilyChecked(md02)) {
 				errs.push(`${slug}: 覆盖表未填满却已勾选大量「页面模块清单」项`);
+			}
+			const intent = checkIntentReviewFilled(`${md02}\n${mdNotes}`);
+			if (!intent.skipped && !intent.ok) {
+				errs.push(`${slug}: 02/notes ${intent.reason}`);
+			}
+			if (
+				/用户意图审查已做/.test(md03) &&
+				!hasLocaleBriefIntentReviewCheck(md03)
+			) {
+				const status = (md03.match(/\*\*状态\*\*[：:]\s*`([^`]+)`/) || [])[1] || '';
+				if (status === 'briefs-ready' || status === 'i18n-done' || status === 'draft') {
+					errs.push(`${slug}: 03 未勾选「用户意图审查已做」`);
+				}
 			}
 		}
 

@@ -41,6 +41,6 @@ work-tasks/
 1. 复制 `_template/` → `work-tasks/{slug}/`
 2. 填 `00-request.md`
 3. 对照工具方向写完 `01-direction-discussion.md`
-4. 填满 `02-tool-info.md`，状态改为 `ready`
-5. 实现十语前填 `03-locale-briefs.md`（检索词 + title 方向 + 禁词勾选）
+4. 填 `02` 覆盖表，跑 `coverage:gate --phase=0b`，再做**用户意图审查**（满足/超出并回写 How），然后状态改为 `ready`
+5. 实现十语前填 `03-locale-briefs.md`（检索词 + title 方向 + 禁词勾选 + 意图审查已做）
 6. 再请求实现工程：按 `tool-i18n-localization.mdc` **稳妥常态**（母版一语 → 逐语/≤3 语独立重写 → ≥3 轮）；禁止脚本同构灌语；「待母语抽查」清掉后才可 `i18n-done`
