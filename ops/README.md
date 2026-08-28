@@ -31,7 +31,8 @@ ops/
     ├── sitemap-ui.mjs       # 本地 Ops 操作页（Sitemap + 运维手册，127.0.0.1 + 密码）
     ├── sitemap-ui.html      # 操作页 UI
     ├── inbound-link-outreach.md # 白帽入站获链月度清单
-    └── keyword-to-tool-ops.md   # 关键词批次 → 新建/丰富工具（操作说明）
+    ├── keyword-to-tool-ops.md   # 关键词批次 → 新建/丰富工具（操作说明）
+    └── bing_serp/               # CloakBrowser → Bing SERP 采集与分析（Python）
 
 # IndexNow 验证公钥（须公开可访问）
 # public/{INDEXNOW_KEY}.txt
@@ -348,11 +349,12 @@ npm run indexnow -- --help
 
 摘要：
 
-1. 准备词表（建议带 locale/gl）→ 对 Agent 说「按 keyword-to-tool-funnel 分析…」  
+1. 准备词表（建议带 locale/gl）→ 可选：`python ops/seo/bing_serp/run_bing_serp.py … --write-batch-md` 录 Bing SERP → 对 Agent 说「按 keyword-to-tool-funnel 分析…」  
 2. 产出：`docs/seo/serp-batches/` + `keyword-daily-pool.tsv` + `keyword-to-tool-tracker.md`  
 3. `absorb` → 改已有工具文案；`build` → **确认后再**开 `work-tasks/{slug}/`（分析阶段不自动建夹）  
 4. 上线仍走 `build:site` + `lint:seo` + §4.1 IndexNow  
 
+Bing 采集说明：[`ops/seo/bing_serp/README.md`](./seo/bing_serp/README.md)。  
 Skill：`.cursor/skills/keyword-to-tool-funnel/SKILL.md`。事项跟进：`docs/seo/keyword-to-tool-tracker.md`。
 
 ---

@@ -31,6 +31,16 @@
 词表至少含：**候选词**；建议另附 `locale` / `gl`（如 `en`/`us`）、种子词、相关搜索/PAA 备注。  
 可直接交给 Agent，或先手写批次文件（模板见 [`docs/seo/serp-batches/README.md`](../../docs/seo/serp-batches/README.md)）。
 
+**Bing SERP 自动记录（可选）**：本机 CloakBrowser 已安装时，用公用脚本批量搜索并落脱敏摘要：
+
+```bash
+python ops/seo/bing_serp/run_bing_serp.py --queries "terraform cidrsubnet" --write-batch-md --batch-id YYYY-MM-DD-<id>
+# 或从 Planner CSV：
+python ops/seo/bing_serp/run_bing_serp.py --file docs/seo/keywords/cidr/Cidr_KeywordPlanner_bing.csv --column 关键词 --limit-queries 20 --write-batch-md --batch-id YYYY-MM-DD-<id>
+```
+
+说明见 [`bing_serp/README.md`](./bing_serp/README.md)。JSON 在 `.cache/serp/bing/`；`--write-batch-md` 写入 `docs/seo/serp-batches/`。脚本给出的 `competition_tier` 是草稿，入池前仍走下方 Agent 分析。
+
 ### 2.2 触发分析（对 Agent 说清）
 
 示例：

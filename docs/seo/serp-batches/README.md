@@ -1,15 +1,24 @@
 # SERP 批次归档
 
-存放从 **Google 搜索**批量获取后、脱敏整理的分析摘要（供意图池使用）。  
+存放从 **Google / Bing 搜索**批量获取后、脱敏整理的分析摘要（供意图池使用）。  
 正式候选请追加到上级 [`../keyword-daily-pool.tsv`](../keyword-daily-pool.tsv)；漏斗说明见 [`../keyword-to-tool-funnel.md`](../keyword-to-tool-funnel.md)。  
 选题战略：[`../2026-08-20-long-tail-gap-strategy.md`](../2026-08-20-long-tail-gap-strategy.md)（种子可含大词，**入池以未覆盖长尾为主**）。
+
+## Bing 自动采集（可选）
+
+本机已装 CloakBrowser 时，可用公用脚本批量查 Bing 并生成脱敏批次草稿：
+
+- 脚本与说明：[`ops/seo/bing_serp/README.md`](../../ops/seo/bing_serp/README.md)
+- CLI：`python ops/seo/bing_serp/run_bing_serp.py --help`
+- JSON 落在本地 `.cache/serp/bing/`（不入库）；加 `--write-batch-md` 才写入本目录 `.md`
+- 产出的 `competition_tier` 为**草稿**，入池前须复核
 
 ## 约定
 
 - **只存脱敏摘要**：种子词、相关/联想/PAA 候选、前排结果类型与缺口笔记；**不入库**完整 SERP HTML、个人信息或账号凭证
 - 文件名：`YYYY-MM-DD-<short-id>.md`（例如 `2026-08-11-batch01.md`）
 - 每批处理完后，从摘要中抽约 **10** 条写入 `keyword-daily-pool.tsv`，`source_batch` 填本文件名（无扩展名亦可）；建议缺口类（`long_gap`/`locale_gap`）≥6
-- 取词方式与频率自行合规；本目录不规定爬虫实现
+- 取词方式与频率自行合规；本目录不规定爬虫实现（Bing 可用上述脚本，Google 仍可手工/其他方式）
 
 ## 单批模板
 

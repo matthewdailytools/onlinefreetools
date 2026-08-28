@@ -44,10 +44,10 @@
 | 字段 | 值 |
 |---|---|
 | 最近更新 | 2026-08-28 |
-| 最近批次 | [serp-batches/2026-08-13-keyword-planner-magnets.md](./serp-batches/2026-08-13-keyword-planner-magnets.md)（2026-08-28 立项 pivot，无新 SERP 批次） |
-| 池内 `build` 候选 | **`measuring-magnetic-fields`**（用户确认立项；原 `magnet-pull-force-calculator` 已废弃为 slug） |
-| 本周新建工具页 | 0（仅 work-tasks brief + coverage 0b；页面未实现） |
-| 阻塞 | 实现回合待用户要求开工；吸力头词仍 `mid_covered`，不得改回 H1 |
+| 最近批次 | [serp-batches/2026-08-28-cidr-keyword-planner.md](./serp-batches/2026-08-28-cidr-keyword-planner.md)（CIDR 修订：无主题页；`/tools/{slug}`；11 候选 slug） |
+| 池内 `build` 候选 | **`measuring-magnetic-fields`**（已立项未实现）；CIDR `long_gap` 建议：`terraform-cidrsubnet`、`ip-range-to-cidr`、`cidr-overlap-checker`、`ipv6-cidr-calculator`、`cidr-to-ip-list`、`private-cidr-checker`、`vpc-cidr-planner` — **均未确认创建** |
+| 本周新建工具页 | 0（磁铁 brief 未实现；CIDR 仅方案） |
+| 阻塞 | 磁铁：实现待用户开工。CIDR：未开 work-tasks；IPv4 旗舰 H1 不用 `cidr calculator` |
 
 ---
 
@@ -120,6 +120,8 @@
 | 2026-08-25 | 周审：池内 **0** 个合格 `build` slug。`safe-paste-cleaner`、`magnet-pull-force-calculator` 由 `build` 改为 `defer`（`mid_covered`）。产品 P0 待建 ≠ 漏斗周建名额。 | 用户要求分析符合门禁的 slug；SERP 复核见词池与两份 serp-batches 周审节 |
 | 2026-08-28 | 用户确认立项：slug/主词改为 **measuring magnetic fields**（`measuring-magnetic-fields`），替换 `magnet-pull-force-calculator`。开 `work-tasks/measuring-magnetic-fields/`；吸力/N 级/尺寸 absorb 进该页，禁止拆近义 URL。H1 不用商店吸力头词。 | 明确「开始立项」；主 SERP 为测量/读数而非 pull force；交互缺口=换算+解读 |
 | 2026-08-28 | 按 `docs/seo/keywords/measuring-magnet-fields/keywords-search-volumns.txt` 优化立项关键词：H1 核心仍是 measuring magnetic fields；副标题 Field strength calculator；force/formula/chart/bar magnet 一带多场景；库仑/张力/洛伦兹作业题 drop。 | 用户要求用该词表做页面关键词；禁 doorway 拆页与 keyword stuffing |
+| 2026-08-28 | CIDR Bing Planner 批（345 词）只出 `/cidr` 主题簇方案：主题页 + 最多 3–4 个子工具；`cidr calculator`/`cidr notation` 维持 `head` 不进攻；兽医 CIDR 同形词 drop。建议 path：`/cidr`、`/cidr/calculator`、`/cidr/ip-range`、`/cidr/cidrsubnet`（可选 `/cidr/vpc`）。**未**建 work-tasks。 | 用户要求按 `/主题/工具slug` 先给方案；空壳 hub 与一词一页禁止；平台仍硬编码 `/tools/{slug}` |
+| 2026-08-28 | CIDR 方案修订：取消主题页；URL 一律 `/tools/{slug}`。按意图拆出 11 个须满 IG 的候选 slug（IPv4 host-range / mask / chart / range→CIDR / IP list / IPv6 / VLSM / overlap / terraform / VPC / private checker）。近义与头词不拆。**仍未**建 work-tasks。 | 用户要求沿用原路由、尽量拆长尾且每页有足够 Information Gain |
 
 ---
 
