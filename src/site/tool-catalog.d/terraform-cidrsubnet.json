@@ -12,7 +12,8 @@
   "faqPrefix": "tool_terraform_cidrsubnet",
   "related": [
     "ip-address",
-    "domain-lookup"
+    "domain-lookup",
+    "ip-range-to-cidr"
   ],
   "logo": "/icons/tools/terraform-cidrsubnet.svg",
   "page": {

@@ -28,6 +28,7 @@
 - [JWT 解码](https://onlinefreetools.org/zh/tools/jwt-decoder) - 本地查看 JWT Header 与 Payload，不验证签名
 - [磁力链接解析](https://onlinefreetools.org/zh/tools/magnet-link-decoder) - 在浏览器本地查看 info hash、tracker、文件名与大小，不下载内容或联系节点
 - [Terraform cidrsubnet](https://onlinefreetools.org/zh/tools/terraform-cidrsubnet) - 按 prefix/newbits/netnum 算出 Terraform 会返回的子网 CIDR。示例：10.1.2.0/24、4、15 → 10.1.2.240/28。浏览器本地计算，不上服务器
+- [IP 段转 CIDR](https://onlinefreetools.org/zh/tools/ip-range-to-cidr) - 把起止 IP（或多行范围）收成覆盖前缀。示例：192.168.1.0–192.168.1.255 → 192.168.1.0/24。浏览器本地计算，不上服务器
 - [图片格式转换](https://onlinefreetools.org/zh/tools/image-format-converter) - 浏览器内 PNG / JPEG / WebP / AVIF 互转：质量、透明底色与本地处理
 - [图片 EXIF 查看与清除](https://onlinefreetools.org/zh/tools/image-exif) - 本地查看 GPS/相机等元数据，并重编码清除后下载
 - [图片压缩](https://onlinefreetools.org/zh/tools/image-compress) - 本地按最长边、质量与目标体积压缩图片（JPEG/WebP/PNG）
@@ -160,6 +161,7 @@ Below are our available online tools with their links (English version):
 - [JWT Decoder](https://onlinefreetools.org/tools/jwt-decoder) - Read JWT header and payload locally — no signature verification
 - [Magnet Link Decoder](https://onlinefreetools.org/tools/magnet-link-decoder) - Parse info hashes, trackers, names, and sizes locally without downloading content or contacting peers
 - [Terraform cidrsubnet](https://onlinefreetools.org/tools/terraform-cidrsubnet) - Evaluate cidrsubnet(prefix, newbits, netnum) to the child CIDR Terraform would return. Sample: 10.1.2.0/24, 4, 15 → 10.1.2.240/28. Runs on your device, not uploaded to a server
+- [IP range to CIDR](https://onlinefreetools.org/tools/ip-range-to-cidr) - Turn start–end IP ranges into covering CIDR prefixes. Sample: 192.168.1.0–192.168.1.255 → 192.168.1.0/24. Runs on your device, not uploaded to a server
 - [Image Format Converter](https://onlinefreetools.org/tools/image-format-converter) - Convert PNG, JPEG, WebP, and AVIF locally with quality, JPEG matte, and MIME checks
 - [EXIF Viewer & Remover](https://onlinefreetools.org/tools/image-exif) - View GPS/camera metadata locally and download a stripped re-encoded copy
 - [Image Compressor](https://onlinefreetools.org/tools/image-compress) - Resize, set quality or a target file size, and download — runs locally in your browser

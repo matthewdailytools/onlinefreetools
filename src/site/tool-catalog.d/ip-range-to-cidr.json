@@ -1,0 +1,26 @@
+{
+  "slug": "ip-range-to-cidr",
+  "path": "/tools/ip-range-to-cidr",
+  "updatedAt": "2026-08-28T12:53:11.452Z",
+  "launchedAt": "2026-08-28T12:40:00.000Z",
+  "category": "developer",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_ip_range_to_cidr_title",
+  "homeTitleKey": "tool_ip_range_to_cidr_title",
+  "homeDescKey": "tool_ip_range_to_cidr_desc",
+  "faqPrefix": "tool_ip_range_to_cidr",
+  "related": [
+    "terraform-cidrsubnet",
+    "ip-address"
+  ],
+  "logo": "/icons/tools/ip-range-to-cidr.svg",
+  "page": {
+    "module": "../pages/ipRangeToCidrPage",
+    "export": "renderIpRangeToCidrPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "developer",
+  "subject": "network"
+}

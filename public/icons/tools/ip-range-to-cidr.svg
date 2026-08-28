@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img">
+  <!-- IP range to CIDR: start-end bar collapsing into prefix blocks. ASCII comments only. -->
+  <rect width="32" height="32" rx="8" fill="#0d6e6e"/>
+  <rect x="4" y="8" width="24" height="5" rx="1.5" fill="#fff" opacity="0.92"/>
+  <rect x="4" y="17" width="7" height="7" rx="1.2" fill="#b8ecec"/>
+  <rect x="13" y="17" width="7" height="7" rx="1.2" fill="#b8ecec"/>
+  <rect x="22" y="17" width="6" height="7" rx="1.2" fill="#b8ecec"/>
+  <path d="M16 13.5 L16 16.5" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+</svg>

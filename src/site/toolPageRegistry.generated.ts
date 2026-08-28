@@ -95,6 +95,7 @@ import { renderImagesToPptPage } from '../pages/imagesToPptPage';
 import { renderImagesToWordPage } from '../pages/imagesToWordPage';
 import { renderIndexNowPage } from '../pages/indexNowPage';
 import { renderIpAddressPage } from '../pages/ipAddressPage';
+import { renderIpRangeToCidrPage } from '../pages/ipRangeToCidrPage';
 import { renderJsonSchemaValidatorPage } from '../pages/jsonSchemaValidatorPage';
 import { renderJwtDecoderPage } from '../pages/jwtDecoderPage';
 import { renderMagnetLinkDecoderPage } from '../pages/magnetLinkDecoderPage';
@@ -233,6 +234,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'images-to-word': (lang, defaultLang, enabled) => renderImagesToWordPage({ lang, defaultLang, enabledLangs: enabled }),
 	'indexnow': (lang, defaultLang, enabled) => renderIndexNowPage({ lang, defaultLang, enabledLangs: enabled }),
 	'ip-address': (lang, defaultLang, _enabled) => renderIpAddressPage(lang, defaultLang),
+	'ip-range-to-cidr': (lang, defaultLang, enabled) => renderIpRangeToCidrPage({ lang, defaultLang, enabledLangs: enabled }),
 	'json-schema-validator': (lang, defaultLang, enabled) => renderJsonSchemaValidatorPage({ lang, defaultLang, enabledLangs: enabled }),
 	'jwt-decoder': (lang, defaultLang, enabled) => renderJwtDecoderPage({ lang, defaultLang, enabledLangs: enabled }),
 	'magnet-link-decoder': (lang, defaultLang, enabled) => renderMagnetLinkDecoderPage({ lang, defaultLang, enabledLangs: enabled }),

@@ -1999,6 +1999,27 @@
     "launchedAt": "2026-01-12T00:57:56+08:00"
   },
   {
+    "slug": "ip-range-to-cidr",
+    "path": "/tools/ip-range-to-cidr",
+    "updatedAt": "2026-08-28T12:53:11.452Z",
+    "launchedAt": "2026-08-28T12:40:00.000Z",
+    "category": "developer",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_ip_range_to_cidr_title",
+    "homeTitleKey": "tool_ip_range_to_cidr_title",
+    "homeDescKey": "tool_ip_range_to_cidr_desc",
+    "faqPrefix": "tool_ip_range_to_cidr",
+    "related": [
+      "terraform-cidrsubnet",
+      "ip-address"
+    ],
+    "logo": "/icons/tools/ip-range-to-cidr.svg",
+    "localProcessing": true,
+    "scenario": "developer",
+    "subject": "network"
+  },
+  {
     "slug": "json-schema-validator",
     "path": "/tools/json-schema-validator",
     "updatedAt": "2026-08-09T00:00:00.000Z",
@@ -2561,7 +2582,8 @@
     "faqPrefix": "tool_terraform_cidrsubnet",
     "related": [
       "ip-address",
-      "domain-lookup"
+      "domain-lookup",
+      "ip-range-to-cidr"
     ],
     "logo": "/icons/tools/terraform-cidrsubnet.svg",
     "localProcessing": true,

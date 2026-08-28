@@ -95,6 +95,7 @@ export const TOOL_SLUGS = [
 	"images-to-word",
 	"indexnow",
 	"ip-address",
+	"ip-range-to-cidr",
 	"json-schema-validator",
 	"jwt-decoder",
 	"magnet-link-decoder",
