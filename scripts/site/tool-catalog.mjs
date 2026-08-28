@@ -11,8 +11,23 @@ const catalogPath = path.resolve(
   '../../src/site/tool-catalog.json'
 );
 
-/** @type {Array<{slug:string,path:string,category:string,scenario:string,subject:string,featured?:boolean,ymyl?:boolean,localProcessing?:boolean,i18nKey:string,homeTitleKey:string,homeDescKey:string,faqPrefix:string,logo:string,related?:string[]}>} */
+/**
+ * 构建侧工具目录条目。
+ * launchedAt 为首次上线时间（merge 时冻结）；updatedAt 为内容最近编辑时间。
+ * @typedef {{slug:string,path:string,category:string,scenario:string,subject:string,featured?:boolean,ymyl?:boolean,localProcessing?:boolean,i18nKey:string,homeTitleKey:string,homeDescKey:string,faqPrefix:string,logo:string,related?:string[],updatedAt?:string,launchedAt?:string}} ToolCatalogEntry
+ */
+/** @type {ToolCatalogEntry[]} */
 export const TOOL_CATALOG = require(catalogPath);
+
+/** 首页「最新上线」默认展示条数 */
+export const LATEST_TOOL_COUNT = 8;
+
+/**
+ * 解析工具首次上线时间（毫秒）。缺 launchedAt 时回退 updatedAt。
+ * @param {ToolCatalogEntry} tool
+ * @returns {number}
+ */
+const launchTimeMs = (tool) => Date.parse(tool.launchedAt || tool.updatedAt || '') || 0;
 
 /**
  * 解析工具 logo 公共路径。
@@ -47,5 +62,19 @@ export const getToolsByScenario = (scenario) =>
  */
 export const getToolsBySubject = (subject) =>
   TOOL_CATALOG.filter((p) => p.subject === subject);
+
+/**
+ * 首页「最新上线」列表：按 launchedAt 降序，同秒再按 slug 稳定排序。
+ * @param {number} [limit] 条数，默认 LATEST_TOOL_COUNT
+ * @returns {ToolCatalogEntry[]}
+ */
+export const getLatestTools = (limit = LATEST_TOOL_COUNT) =>
+  [...TOOL_CATALOG]
+    .sort((a, b) => {
+      const delta = launchTimeMs(b) - launchTimeMs(a);
+      if (delta !== 0) return delta;
+      return String(a.slug).localeCompare(String(b.slug));
+    })
+    .slice(0, Math.max(0, limit));
 
 export default TOOL_CATALOG;

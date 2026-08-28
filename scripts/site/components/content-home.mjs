@@ -1,9 +1,9 @@
 /**
- * 首页内容：Hero（工具数量）+ Why×3 + 分类工具目录。
+ * 首页内容：Hero（工具数量）+ Why×3 + 最新上线 + 分类工具目录。
  * 站内工具链接使用显式语言前缀（含 /en/），避免切到英文后再被 Accept-Language 打回。
  */
 import { t } from '../i18n.mjs';
-import { TOOL_CATALOG, getToolsByCategory } from '../tool-catalog.mjs';
+import { TOOL_CATALOG, getLatestTools, getToolsByCategory, LATEST_TOOL_COUNT } from '../tool-catalog.mjs';
 import {
   TOOL_CATEGORY_ORDER,
   getCategoryAnchor,
@@ -20,10 +20,32 @@ export const renderHomeContent = ({ lang }) => {
   /** 站内工具总数（catalog 行数），用于 Hero 数量文案 */
   const toolCount = TOOL_CATALOG.length;
   const toolsCountLabel = String(t(lang, 'home_tools_count')).replace(/\{n\}/g, String(toolCount));
-  /** 首屏优先加载的图标数（仅第一个展开分类内） */
+  /** 首屏优先加载的图标数（最新上线 + 第一个展开分类） */
   const EAGER_LOGO_COUNT = 12;
   /** 已分配 eager 的图标计数 */
   let eagerLeft = EAGER_LOGO_COUNT;
+  /** 按首次上线时间取最近一批，供首页「最新上线」模块 */
+  const latestTools = getLatestTools(LATEST_TOOL_COUNT);
+  /** 最新上线卡片 HTML；无工具时不渲染整块 */
+  const latestCards = latestTools
+    .map((tool) => {
+      const logoEager = eagerLeft > 0;
+      if (logoEager) eagerLeft -= 1;
+      return renderToolCard(lang, tool, openCta, { logoEager });
+    })
+    .join('');
+  /** 最新上线整块 HTML；无工具时为空字符串 */
+  const latestSection = latestTools.length
+    ? `
+    <section id="latest-tools" class="home-latest" aria-labelledby="home-latest-heading">
+      <div class="home-section-head">
+        <h2 id="home-latest-heading">${t(lang, 'home_latest')}</h2>
+      </div>
+      <div class="home-card-grid home-card-grid--latest">
+        ${latestCards}
+      </div>
+    </section>`
+    : '';
 
   const categorySections = TOOL_CATEGORY_ORDER.map((category, catIndex) => {
     const meta = CATEGORY_HOME_SECTION_KEYS[category];
@@ -95,6 +117,8 @@ export const renderHomeContent = ({ lang }) => {
     </div>
 
     <div class="home-main">
+    ${latestSection}
+
     <section id="all-tools">
       <div class="home-section-head">
         <h2>${t(lang, 'home_all_tools')}</h2>

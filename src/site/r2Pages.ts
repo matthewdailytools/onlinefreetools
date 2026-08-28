@@ -25,6 +25,13 @@ export type PagesBindings = {
 const HTML_S_MAXAGE = 86400;
 
 /**
+ * Cache API key 的规范 origin。
+ * 必须固定：本地 `localhost` 与 `127.0.0.1` 若各自带 host 进 key，
+ * 会各存一份旧 HTML，改首页后一边新一边旧（无痕窗口仍旧）。
+ */
+const HTML_CACHE_ORIGIN = 'https://onlinefreetools.org';
+
+/**
  * 将 Assets 明文路径转为 R2 object key（含 .gz）。
  * @param assetHtmlPath 如 `/_pages/en/tools/text-diff.html`
  * @param prefix 可选 R2 前缀
@@ -37,12 +44,14 @@ export const assetHtmlPathToR2Key = (assetHtmlPath: string, prefix = ''): string
 };
 
 /**
- * 构造 Cache API 用的 Request（公开 URL 含 query + 版本号；只缓存明文变体）。
+ * 构造 Cache API 用的 Request（pathname+query + 版本号；host 规范化为固定 origin）。
  * @param request 原始请求
  * @param cacheVersion 可选版本串
  */
 export const buildHtmlCacheKey = (request: Request, cacheVersion?: string): Request => {
-	const url = new URL(request.url);
+	const incoming = new URL(request.url);
+	/** 只用路径与 query，避免 localhost / 127.0.0.1 分裂成两套缓存 */
+	const url = new URL(`${incoming.pathname}${incoming.search}`, HTML_CACHE_ORIGIN);
 	url.searchParams.set('__ce', 'identity');
 	if (cacheVersion) url.searchParams.set('__v', cacheVersion);
 	return new Request(url.toString(), { method: 'GET' });

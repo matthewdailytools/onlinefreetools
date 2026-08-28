@@ -26,10 +26,12 @@ export type ToolPageMeta = {
 	 * 工具类型标签（恰好一个；列表页 /tool-type/{subject}/）。
 	 */
 	subject: ToolSubject;
-	/** 是否在首页 Featured 区展示 */
+	/** 是否在首页 Featured 区展示（历史字段；首页现以 launchedAt 展示最新上线） */
 	featured?: boolean;
 	/** 工具内容最近更新时间；编辑工具时同步更新。 */
 	updatedAt?: string;
+	/** 首次上线时间；merge 时冻结，tool:touch 不得改写。 */
+	launchedAt?: string;
 	/** 是否属于 YMYL（需免责与出处） */
 	ymyl?: boolean;
 	/**

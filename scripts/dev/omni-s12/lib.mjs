@@ -66,9 +66,13 @@ export const writeCatalog = (t) => {
 	// Normalize: page file howToCalculateXPage.ts export renderHowToCalculateXPage
 	const fileBase = t.pageFile || `howTo${slugToPascal(t.slug.replace(/^how-to-/, ''))}Page`;
 	const exp = t.pageExport || `render${fileBase.charAt(0).toUpperCase()}${fileBase.slice(1)}`;
+	/** 新工具首次写入时的上线与更新时间（同一时刻） */
+	const now = new Date().toISOString();
 	const json = {
 		slug: t.slug,
 		path: `/tools/${t.slug}`,
+		updatedAt: now,
+		launchedAt: now,
 		category: t.category || 'calculator',
 		featured: false,
 		ymyl: Boolean(t.ymyl),

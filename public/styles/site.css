@@ -296,6 +296,12 @@ body.is-tool-page {
   max-width: 100%;
 }
 
+/** 首页无侧栏：主栏占满，不预留侧栏宽度 */
+.layout-no-sidebar #content {
+  margin-left: 0;
+  width: 100%;
+}
+
 body.is-home-page #content.p-4 {
   padding: 0 !important;
   max-width: none;
@@ -1143,14 +1149,16 @@ footer.bg-light {
   padding-bottom: 2.5rem;
 }
 
-/** 推荐区：标题左侧品牌色条，与顶区视觉收束 */
-.home-featured .home-section-head h2 {
+/** 推荐区 / 最新上线：标题左侧品牌色条，与顶区视觉收束 */
+.home-featured .home-section-head h2,
+.home-latest .home-section-head h2 {
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
 }
 
-.home-featured .home-section-head h2::before {
+.home-featured .home-section-head h2::before,
+.home-latest .home-section-head h2::before {
   content: '';
   display: inline-block;
   width: 0.28rem;
@@ -1162,6 +1170,11 @@ footer.bg-light {
     color-mix(in srgb, var(--brand) 45%, var(--brand-tint)) 100%
   );
   flex-shrink: 0;
+}
+
+/** 最新上线与下方全部分类目录拉开间距 */
+.home-latest {
+  margin-bottom: 2.75rem;
 }
 
 .home-why {
@@ -1508,7 +1521,8 @@ footer.bg-light {
   width: 100%;
 }
 
-.home-card-grid--featured {
+.home-card-grid--featured,
+.home-card-grid--latest {
   grid-template-columns: repeat(auto-fill, minmax(min(100%, var(--home-card-min-featured)), 1fr));
   gap: 1.15rem;
 }
@@ -1524,7 +1538,8 @@ footer.bg-light {
 
 @media (max-width: 440px) {
   .home-card-grid,
-  .home-card-grid--featured {
+  .home-card-grid--featured,
+  .home-card-grid--latest {
     grid-template-columns: 1fr;
   }
 }

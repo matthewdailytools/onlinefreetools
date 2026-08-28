@@ -14,7 +14,7 @@
  * 等价 npm：npm run start:dev
  */
 import { spawn, execSync } from 'node:child_process';
-import { openSync, ftruncateSync } from 'node:fs';
+import { openSync, unlinkSync } from 'node:fs';
 import path from 'node:path';
 import {
   cleanupDevServer,
@@ -45,6 +45,30 @@ import {
   writeOpsUiPid,
   writePid,
 } from '../lib/dev-process.mjs';
+
+/**
+ * 打开日志 fd 供子进程 stdout/stderr 写入：文件不存在则创建，已存在则清空。
+ * Windows 上不可用 `'a'` + `ftruncateSync`：append 句柄没有截断权限，会 EPERM。
+ * 若旧 wrangler 仍锁着日志，先 unlink 再建（Windows 允许 delete-pending 后新开同名文件）。
+ * @param {string} filePath 日志绝对路径
+ * @returns {number} 可写文件描述符
+ */
+const openTruncatedLogFd = (filePath) => {
+  try {
+    return openSync(filePath, 'w');
+  } catch (err) {
+    const code = err?.code;
+    if (code !== 'EPERM' && code !== 'EACCES' && code !== 'EBUSY') {
+      throw err;
+    }
+    try {
+      unlinkSync(filePath);
+    } catch {
+      /* 删除失败则仍尝试 'w'；若仍失败把原始错误抛给调用方 */
+    }
+    return openSync(filePath, 'w');
+  }
+};
 
 /** CLI 参数（去掉 node / 脚本路径） */
 const argv = process.argv.slice(2);
@@ -116,9 +140,7 @@ const runSeedLocalR2 = () => {
  */
 const spawnWrangler = async () => {
   await ensureRunDir();
-  /** 先 open 创建文件（若不存在），再按 fd 截断，避免 truncateSync(path) 在 ENOENT 时失败 */
-  const logFd = openSync(logFilePath, 'a');
-  ftruncateSync(logFd, 0);
+  const logFd = openTruncatedLogFd(logFilePath);
 
   const wranglerBin = path.join(projectRoot, 'node_modules', 'wrangler', 'bin', 'wrangler.js');
   const args = ['dev', '--port', String(port), '--ip', defaultDevHost];
@@ -142,8 +164,7 @@ const spawnWrangler = async () => {
  */
 const spawnOpsUi = async () => {
   await ensureRunDir();
-  const logFd = openSync(opsUiLogFilePath, 'a');
-  ftruncateSync(logFd, 0);
+  const logFd = openTruncatedLogFd(opsUiLogFilePath);
 
   const child = spawn(process.execPath, [opsUiEntryPath], {
     cwd: projectRoot,

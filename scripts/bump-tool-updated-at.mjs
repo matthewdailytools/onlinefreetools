@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 /**
  * Bump one or more tool catalog shard updatedAt markers to the current ISO time.
+ * Does not change launchedAt (homepage「最新上线」uses the frozen first-ship time).
  */
 import { readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';

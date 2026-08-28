@@ -9,6 +9,7 @@
  *
  * `build:site` / `start:dev` 会自动调用；改分片后本地也可直接 `npm run merge:tools`。
  */
+import { execSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 import {
@@ -21,6 +22,7 @@ import {
 	HOME_I18N_OUT,
 	ensureDir,
 	writeJson,
+	readJson,
 	loadCatalogShards,
 	toPublicCatalogEntry,
 	parseLocaleDict,
@@ -30,6 +32,107 @@ import {
 } from './lib.mjs';
 
 /**
+ * 读取已生成 catalog 中各 slug 的 launchedAt，供合并时冻结首次上线时间。
+ * @returns {Map<string, string>}
+ */
+function loadPreviousLaunchedAt() {
+	/** @type {Map<string, string>} */
+	const map = new Map();
+	if (!fs.existsSync(CATALOG_PATH)) return map;
+	try {
+		const previous = readJson(CATALOG_PATH);
+		if (!Array.isArray(previous)) return map;
+		for (const entry of previous) {
+			if (entry && typeof entry.slug === 'string' && typeof entry.launchedAt === 'string' && entry.launchedAt.trim()) {
+				map.set(entry.slug, entry.launchedAt.trim());
+			}
+		}
+	} catch {
+		return map;
+	}
+	return map;
+}
+
+/** git 路径 → 首次加入 ISO 时间；缺 launchedAt 时一次性加载 */
+let gitFirstAddedMap = null;
+
+/**
+ * 一次 git log 收集 src/pages 与 catalog 分片的首次加入时间（oldest-first，先写入者胜）。
+ * @returns {Map<string, string>}
+ */
+function loadGitFirstAddedMap() {
+	/** @type {Map<string, string>} */
+	const map = new Map();
+	try {
+		const out = execSync(
+			'git log --reverse --diff-filter=A --name-only --pretty=format:---%aI -- src/pages src/site/tool-catalog.d',
+			{
+				encoding: 'utf8',
+				stdio: ['ignore', 'pipe', 'ignore'],
+				maxBuffer: 10 * 1024 * 1024,
+			}
+		);
+		let currentDate = '';
+		for (const line of out.split(/\r?\n/)) {
+			if (line.startsWith('---')) {
+				currentDate = line.slice(3).trim();
+				continue;
+			}
+			const file = line.trim().replace(/\\/g, '/');
+			if (!file || !currentDate) continue;
+			if (!map.has(file)) map.set(file, currentDate);
+		}
+	} catch {
+		return map;
+	}
+	return map;
+}
+
+/**
+ * 用 git 首次加入提交时间作为 launchedAt 回退（仅缺字段时调用）。
+ * @param {string} relPath 相对仓库根的路径（正斜杠）
+ * @returns {string}
+ */
+function gitFirstAddedAt(relPath) {
+	if (!relPath) return '';
+	if (!gitFirstAddedMap) gitFirstAddedMap = loadGitFirstAddedMap();
+	return gitFirstAddedMap.get(relPath.replace(/\\/g, '/')) || '';
+}
+
+/**
+ * 解析 catalog 分片对应的页面源文件相对路径。
+ * @param {Record<string, any>} shard
+ * @returns {string}
+ */
+function shardPageSourcePath(shard) {
+	const mod = shard?.page?.module;
+	if (typeof mod !== 'string' || !mod.trim()) return '';
+	const base = path.basename(mod.trim());
+	return `src/pages/${base}.ts`;
+}
+
+/**
+ * 解析工具首次上线时间：分片 launchedAt → 已生成 catalog → git 首次加入 → updatedAt。
+ * 一旦写入 catalog.json 即冻结，后续 tool:touch 只改 updatedAt，不会把旧工具顶进「最新上线」。
+ * @param {Record<string, any>} shard
+ * @param {Map<string, string>} previousLaunchedAt
+ * @returns {string}
+ */
+function resolveLaunchedAt(shard, previousLaunchedAt) {
+	const fromShard = typeof shard.launchedAt === 'string' ? shard.launchedAt.trim() : '';
+	if (fromShard && Number.isFinite(Date.parse(fromShard))) return fromShard;
+	const fromPrev = previousLaunchedAt.get(shard.slug);
+	if (fromPrev && Number.isFinite(Date.parse(fromPrev))) return fromPrev;
+	const fromGit =
+		gitFirstAddedAt(shardPageSourcePath(shard)) ||
+		gitFirstAddedAt(`src/site/tool-catalog.d/${shard.slug}.json`);
+	if (fromGit && Number.isFinite(Date.parse(fromGit))) return fromGit;
+	const fromUpdated = typeof shard.updatedAt === 'string' ? shard.updatedAt.trim() : '';
+	if (fromUpdated && Number.isFinite(Date.parse(fromUpdated))) return fromUpdated;
+	return new Date().toISOString();
+}
+
+/**
  * Merge catalog shards.
  */
 function mergeCatalog() {
@@ -37,7 +140,12 @@ function mergeCatalog() {
 	if (!shards.length) {
 		throw new Error('No catalog shards in src/site/tool-catalog.d — run npm run split:tools first');
 	}
-	const publicCatalog = shards.map(toPublicCatalogEntry);
+	const previousLaunchedAt = loadPreviousLaunchedAt();
+	const publicCatalog = shards.map((shard) => {
+		const entry = toPublicCatalogEntry(shard);
+		entry.launchedAt = resolveLaunchedAt(shard, previousLaunchedAt);
+		return entry;
+	});
 	writeJson(CATALOG_PATH, publicCatalog);
 	console.log(`merged catalog: ${publicCatalog.length} tools → tool-catalog.json`);
 	return shards;

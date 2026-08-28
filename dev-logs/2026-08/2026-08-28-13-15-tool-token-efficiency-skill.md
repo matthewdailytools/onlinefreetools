@@ -11,6 +11,8 @@ Created `.cursor/skills/tool-token-efficiency/SKILL.md` as a companion to `tool-
 
 Registered in `AGENTS.md`, one-line pointers in `tool-creation.mdc` and `tool-coverage-pass/SKILL.md`, and `.github/copilot-instructions.md`.
 
+Full analysis (causes, factor weights, tool-count conclusion): `dev-logs/2026-08/2026-08-28-13-36-single-tool-agent-token-analysis.md`.
+
 [actions]
 - Added `.cursor/skills/tool-token-efficiency/SKILL.md`
 - Updated `AGENTS.md`, `.cursor/rules/tool-creation.mdc`, `.cursor/skills/tool-coverage-pass/SKILL.md`, `.github/copilot-instructions.md`

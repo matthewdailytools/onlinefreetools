@@ -115,15 +115,10 @@ export const buildHome = async (lang) => {
     lang,
     brandHref: withExplicitLangPath(lang, '/'),
     navItems: model.navItems,
-    showSidebarToggle: true,
+    /** 首页无侧栏，不渲染汉堡开关 */
+    showSidebarToggle: false,
     showSearch: true,
     langAlternates,
-  });
-
-  const sidebarHtml = renderSidebar({
-    title: model.sidebarTitle,
-    items: model.sidebarItems,
-    id: 'categoryList',
   });
 
   const footerHtml = renderFooter({ lang });
@@ -145,12 +140,14 @@ export const buildHome = async (lang) => {
       href: toAbs(withLangPath(code, '/')),
     })),
     headerHtml,
-    sidebarHtml,
+    /** 首页不渲染侧栏 */
+    sidebarHtml: '',
     contentHtml: model.contentHtml,
     footerHtml,
     extraHeadHtml: googleSiteVerificationMeta,
-    sidebarAutoCloseSelector: '#categoryList a',
-    /** 侧栏锚点跳转时展开对应 <details> 分类 */
+    /** 无侧栏开关，不注入 toggle 脚本 */
+    includeSidebarToggleScript: false,
+    /** 深链 #cat-* 时仍展开对应分类 <details> */
     extraBodyHtml: `<script>
 (function(){
   function openCat(id){
@@ -161,9 +158,6 @@ export const buildHome = async (lang) => {
   function fromHash(){ openCat((location.hash||'').replace(/^#/,'')); }
   fromHash();
   window.addEventListener('hashchange', fromHash);
-  document.querySelectorAll('#categoryList a[href^="#"]').forEach(function(a){
-    a.addEventListener('click', function(){ openCat((a.getAttribute('href')||'').slice(1)); });
-  });
 })();
 </script>`,
   });

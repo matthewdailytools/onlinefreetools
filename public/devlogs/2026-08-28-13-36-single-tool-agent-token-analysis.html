@@ -4,14 +4,14 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Dev Logs | OnlineFreeTools.org</title>
-  <meta name="description" content="Curated project development notes with reusable decisions and fixes, organized by month." />
+  <title>Single-tool Agent token use grows mainly from multi-phase workflows and context accumulation, not from reading all 128 tools; mitigated by `tool-token-efficiency` Skill without dropping quality gates. | Dev Logs</title>
+  <meta name="description" content="Single-tool Agent token use grows mainly from multi-phase workflows and context accumulation, not from reading all 128 tools; mitigated by `tool-token-efficiency` Skill without dropping quality gates." />
   
-  <link rel="canonical" href="https://onlinefreetools.org/devlogs/" />
-  <meta property="og:title" content="Dev Logs | OnlineFreeTools.org" />
-  <meta property="og:description" content="Curated project development notes with reusable decisions and fixes, organized by month." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://onlinefreetools.org/devlogs/" />
+  <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-08-28-13-36-single-tool-agent-token-analysis.html" />
+  <meta property="og:title" content="Single-tool Agent token use grows mainly from multi-phase workflows and context accumulation, not from reading all 128 tools; mitigated by `tool-token-efficiency` Skill without dropping quality gates. | Dev Logs" />
+  <meta property="og:description" content="Single-tool Agent token use grows mainly from multi-phase workflows and context accumulation, not from reading all 128 tools; mitigated by `tool-token-efficiency` Skill without dropping quality gates." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-08-28-13-36-single-tool-agent-token-analysis.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
   
@@ -80,8 +80,8 @@
   else window.addEventListener('load', schedule, { once: true });
 })();
 </script>
-  <link rel="next" href="https://onlinefreetools.org/devlogs/page-2.html" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Dev Logs","url":"https://onlinefreetools.org/devlogs/","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://onlinefreetools.org/"},{"@type":"ListItem","position":2,"name":"Dev Logs","item":"https://onlinefreetools.org/devlogs/"}]}}</script>
+  
+  
 </head>
 <body class="is-home-page">
   
@@ -141,152 +141,253 @@
       <div class="list-group list-group-flush small" id="navList"><a class="list-group-item list-group-item-action" href="/">Home</a></div>
     </aside>
     <main id="content" class="p-4">
-    <section>
-      <div class="d-flex justify-content-between align-items-start gap-3 mb-3">
-        <div>
-          <h1 class="h4 mb-1">Dev Logs</h1>
-          <p class="text-muted mb-0">
-            Browse Q&A and implementation notes by month.
-            <a class="ms-1 text-decoration-none" href="https://github.com/matthewdailytools/onlinefreetools" target="_blank" rel="noopener noreferrer">GitHub</a>
-          </p>
+      <section class="mb-3">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h1 class="h4 mb-0">Single-tool Agent token use grows mainly from multi-phase workflows and context accumulation, not from reading all 128 tools; mitigated by `tool-token-efficiency` Skill without dropping quality gates. | Dev Logs</h1>
+          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
-        <a class="btn btn-outline-secondary btn-sm flex-shrink-0" href="/">Back to Home</a>
-      </div>
-      
-      <div class="mb-4">
-        <h2 class="h5 text-muted mb-2">2026-08</h2>
-        <ul class="list-group shadow-sm">
-          
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-28-14-32-localhost-zh-home-already-updated.html" class="text-decoration-none">localhost-zh-home-already-updated</a>
-            <span class="badge text-bg-secondary">2026-08-28</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-28-14-14-remove-home-sidebar.html" class="text-decoration-none">remove-home-sidebar</a>
-            <span class="badge text-bg-secondary">2026-08-28</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-28-14-02-home-latest-tools-module.html" class="text-decoration-none">home-latest-tools-module</a>
-            <span class="badge text-bg-secondary">2026-08-28</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-28-13-36-single-tool-agent-token-analysis.html" class="text-decoration-none">single-tool-agent-token-analysis</a>
-            <span class="badge text-bg-secondary">2026-08-28</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-28-13-29-fix-start-dev-windows-ftruncate-eperm.html" class="text-decoration-none">fix-start-dev-windows-ftruncate-eperm</a>
-            <span class="badge text-bg-secondary">2026-08-28</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-28-13-23-implement-measuring-magnetic-fields.html" class="text-decoration-none">implement-measuring-magnetic-fields</a>
-            <span class="badge text-bg-secondary">2026-08-28</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-28-13-15-tool-token-efficiency-skill.html" class="text-decoration-none">tool-token-efficiency-skill</a>
-            <span class="badge text-bg-secondary">2026-08-28</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-28-12-51-intent-review-brief-step.html" class="text-decoration-none">intent-review-brief-step</a>
-            <span class="badge text-bg-secondary">2026-08-28</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-28-11-54-intent-review-magnetic-fields.html" class="text-decoration-none">intent-review-magnetic-fields</a>
-            <span class="badge text-bg-secondary">2026-08-28</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-28-11-48-magnetic-fields-keyword-coverage.html" class="text-decoration-none">magnetic-fields-keyword-coverage</a>
-            <span class="badge text-bg-secondary">2026-08-28</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-28-11-39-measuring-magnetic-fields-brief.html" class="text-decoration-none">measuring-magnetic-fields-brief</a>
-            <span class="badge text-bg-secondary">2026-08-28</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-26-10-36-devlogs-pagination-and-github-link.html" class="text-decoration-none">devlogs-pagination-and-github-link</a>
-            <span class="badge text-bg-secondary">2026-08-26</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-26-10-09-footer-github-repo-link.html" class="text-decoration-none">footer-github-repo-link</a>
-            <span class="badge text-bg-secondary">2026-08-26</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-26-08-38-devlogs-nav-menu-and-sitemap.html" class="text-decoration-none">devlogs-nav-menu-and-sitemap</a>
-            <span class="badge text-bg-secondary">2026-08-26</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-26-01-04-rebuild-after-final-rewrite-batches.html" class="text-decoration-none">rebuild-after-final-rewrite-batches</a>
-            <span class="badge text-bg-secondary">2026-08-26</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-26-01-03-english-rewrite-batches-complete.html" class="text-decoration-none">english-rewrite-batches-complete</a>
-            <span class="badge text-bg-secondary">2026-08-26</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-26-01-00-allow-devlogs-in-robots.html" class="text-decoration-none">allow-devlogs-in-robots</a>
-            <span class="badge text-bg-secondary">2026-08-26</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-26-00-57-english-rewrite-historical-dev-logs.html" class="text-decoration-none">english-rewrite-historical-dev-logs</a>
-            <span class="badge text-bg-secondary">2026-08-26</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-26-00-30-curate-historical-dev-logs.html" class="text-decoration-none">curate-historical-dev-logs</a>
-            <span class="badge text-bg-secondary">2026-08-26</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-26-00-21-refine-dev-logs-relevance-and-seo.html" class="text-decoration-none">refine-dev-logs-relevance-and-seo</a>
-            <span class="badge text-bg-secondary">2026-08-26</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-25-15-29-title-front-match-ranking.html" class="text-decoration-none">title-front-match-ranking</a>
-            <span class="badge text-bg-secondary">2026-08-25</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-25-14-38-wrangler-dev-aborted.html" class="text-decoration-none">wrangler-dev-aborted</a>
-            <span class="badge text-bg-secondary">2026-08-25</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-25-14-36-analyze-funnel-build-slugs.html" class="text-decoration-none">analyze-funnel-build-slugs</a>
-            <span class="badge text-bg-secondary">2026-08-25</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-25-13-35-commit-push-navbar-mega-menu.html" class="text-decoration-none">commit-push-navbar-mega-menu</a>
-            <span class="badge text-bg-secondary">2026-08-25</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-25-10-28-navbar-mega-menu-no-scrollbar.html" class="text-decoration-none">navbar-mega-menu-no-scrollbar</a>
-            <span class="badge text-bg-secondary">2026-08-25</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-25-10-17-fix-navbar-category-dropdown-overflow.html" class="text-decoration-none">fix-navbar-category-dropdown-overflow</a>
-            <span class="badge text-bg-secondary">2026-08-25</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-24-22-22-view-follow-up-plans.html" class="text-decoration-none">view-follow-up-plans</a>
-            <span class="badge text-bg-secondary">2026-08-24</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-21-23-47-cursor-socks-proxy-settings-json.html" class="text-decoration-none">cursor-socks-proxy-settings-json</a>
-            <span class="badge text-bg-secondary">2026-08-21</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-21-14-16-codex-skills-rules-cursor-effect.html" class="text-decoration-none">codex-skills-rules-cursor-effect</a>
-            <span class="badge text-bg-secondary">2026-08-21</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-21-11-41-fix-zh-image-crop-colon.html" class="text-decoration-none">fix-zh-image-crop-colon</a>
-            <span class="badge text-bg-secondary">2026-08-21</span>
-          </li>
-        </ul>
-      </div>
-      
-      <nav class="d-flex flex-wrap justify-content-between align-items-center gap-2 mt-4" aria-label="Dev Logs">
-        <span class="btn btn-outline-secondary btn-sm disabled" aria-disabled="true">Previous</span>
-        <span class="small text-muted">Page 1 of 21</span>
-        <a class="btn btn-outline-secondary btn-sm" href="/devlogs/page-2.html" rel="next">Next</a>
-      </nav>
-    </section>
-  </main>
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-28 13:36
+Summary: Single-tool Agent token use grows mainly from multi-phase workflows and context accumulation, not from reading all 128 tools; mitigated by <code>tool-token-efficiency</code> Skill without dropping quality gates.</p>
+<p>[question]
+单个工具的生成，使用token量越来越大，分析一下原因，以及影响因素，另外还要分析是否由于项目工具越来越多导致。后续：单独一个 skill 做 token 优化约束，但绝对不要降低生成工具的质量。</p>
+<p>[try to solve]</p>
+<h2>Executive summary</h2>
+<p>Token consumption for <strong>one new tool</strong> has risen faster than tool count alone explains. The dominant drivers are <strong>more workflow phases</strong> (0b → intent review → master i18n → phase 2 → ten locales → phase 4 → ship), <strong>thicker rules and deliverables</strong>, and <strong>multi-turn conversation history</strong>—not the need to load all 128 existing tools into Agent context.</p>
+<p>Tool count (<strong>128</strong> as of 2026-08-28) matters <strong>indirectly</strong>: full-site <code>build:site</code> / <code>lint:seo</code> take longer and produce noisier terminal output; merged artifacts (<code>src/site/i18n/en.ts</code> ~599 KB, <code>tool-catalog.json</code> ~76 KB) become dangerous if an Agent reads them by mistake. Slug-level isolation (<code>tool-catalog.d/{slug}.json</code>, <code>i18n/tools/{slug}/</code>) keeps the <strong>normal</strong> read path flat as the catalog grows.</p>
+<p><strong>Mitigation shipped</strong>: <code>.cursor/skills/tool-token-efficiency/SKILL.md</code>—session splits, read allowlists, short lint handling—while <strong>all</strong> coverage and i18n quality gates remain mandatory (<code>tool-coverage-pass</code>, localization rules).</p>
+<hr>
+<h2>Token spend model (five layers)</h2>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Typical size (repo, Aug 2026)</th>
+<th>Scales with tool count?</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>A · Fixed per turn</strong></td>
+<td>always_applied rules ~8 KB + user/system prompt</td>
+<td>Slow (rule edits)</td>
+<td><code>seo-google-policy</code>, <code>project-core</code>, <code>dev-logs</code> every turn</td>
+</tr>
+<tr>
+<td><strong>B · Glob-triggered rules</strong></td>
+<td>Tool rules + Skills <del><strong>52 KB</strong> (</del>13k tokens est.)</td>
+<td>Yes (rules grow)</td>
+<td><code>tool-i18n-localization</code> (<del>25 KB), <code>tool-creation</code> (</del>13 KB), coverage + token Skills</td>
+</tr>
+<tr>
+<td><strong>C · Single-tool deliverables</strong></td>
+<td>brief ~40 KB; i18n shards ~49 KB/tool median; Page ~600 lines</td>
+<td>Per slug, not catalog size</td>
+<td>Isolated truth sources</td>
+</tr>
+<tr>
+<td><strong>D · Conversation history</strong></td>
+<td>15–30+ turns × (reads + command output + replies)</td>
+<td>With workflow phases</td>
+<td><strong>Largest hidden multiplier</strong></td>
+</tr>
+<tr>
+<td><strong>E · Accidental full-site reads</strong></td>
+<td>merged i18n <strong>~6 MB</strong> (10 langs); catalog <strong>~76 KB</strong></td>
+<td><strong>Linear</strong></td>
+<td>Only when Agent mis-reads; catastrophic for tokens</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Why single-tool tokens keep rising</h2>
+<h3>1. Workflow phase multiplication (~40% of growth)</h3>
+<p>Early path: brief → Page + en → bulk locales → merge.</p>
+<p>Current mandatory path (<code>tool-coverage-pass</code> + localization):</p>
+<pre><code>0b (pre-list coverage) + coverage:gate
+  → 0i (user intent review)
+  → master locale + phase=2
+  → per-locale rewrite (10 langs, batches ≤3) + phase=4
+  → build:site + lint:seo + lint:tool-isolation
+</code></pre>
+<p>Each phase often maps to <strong>separate chat turns</strong>. Rules (layer B) re-inject every turn; history (layer D) accumulates reads, edits, and gate output. Example: <code>measuring-magnetic-fields</code> brief alone split across <strong>three</strong> dev-log sessions before implementation.</p>
+<h3>2. Rules and compliance thickness (~25%)</h3>
+<table>
+<thead>
+<tr>
+<th>Artifact</th>
+<th>Lines / bytes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>tool-i18n-localization.mdc</code></td>
+<td>298 lines / ~25 KB</td>
+</tr>
+<tr>
+<td><code>tool-creation.mdc</code></td>
+<td>166 lines / ~13 KB</td>
+</tr>
+<tr>
+<td><code>tool-coverage-pass/SKILL.md</code></td>
+<td>90 lines</td>
+</tr>
+<tr>
+<td><code>tool-token-efficiency/SKILL.md</code></td>
+<td>179 lines</td>
+</tr>
+</tbody></table>
+<p>Recent hard requirements all expand Agent-facing text: intent review (0i), How <code>how_item_1…n</code>, auto <code>loadSample</code>, IG ≥3, FAQ ≥3, description ≥120 chars with steps + example, ten-locale search-oriented rewrite (not translate), ≥3 review rounds. Quality improves; <strong>token floor</strong> rises.</p>
+<h3>3. Per-tool content volume (~20%)</h3>
+<p>Measured references (Aug 2026):</p>
+<ul>
+<li>~<strong>50 i18n keys</strong> per locale (<code>jwt-decoder</code> en shard)</li>
+<li><strong>~49 KB median</strong> i18n shard total per tool (10 langs); max shard ~142 KB</li>
+<li>Typical <code>*Page.ts</code>: <strong>500–800 lines</strong></li>
+<li><code>work-tasks/{slug}/</code>: <strong>~40 KB</strong> when briefs are complete</li>
+</ul>
+<p>Ten locales × multi-pass copy (steps 2 and 4) multiply generation and re-read cost even when isolation is correct.</p>
+<h3>4. Agent exploration patterns (~15%)</h3>
+<p>Common high-cost patterns observed in tool work:</p>
+<ul>
+<li>Reading full reference pages (e.g. <code>imageCompressPage.ts</code> ~800 lines) instead of slices</li>
+<li>Reading merged <code>src/site/i18n/{lang}.ts</code> (~600 KB/lang) instead of slug shards</li>
+<li>Reading full <code>tool-catalog.json</code> for <code>related</code> instead of grep + 2–3 candidate shards</li>
+<li>Re-ingesting full <code>build:site</code> / <code>lint:seo</code> stdout (128-tool scan) into context</li>
+</ul>
+<h3>5. Tool catalog size (~10%, mostly indirect)</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+<th>Agent context impact</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Tools in catalog</td>
+<td><strong>128</strong></td>
+<td>None if only slug shards are read</td>
+</tr>
+<tr>
+<td><code>tool-catalog.json</code></td>
+<td>~76 KB</td>
+<td>Only if read whole</td>
+</tr>
+<tr>
+<td>Merged i18n (10 langs)</td>
+<td>~6 MB</td>
+<td>Only if merged files are read</td>
+</tr>
+<tr>
+<td><code>build:site</code></td>
+<td>Full prerender 128×10 langs</td>
+<td>Wall-clock + verbose stdout; not required read</td>
+</tr>
+<tr>
+<td><code>lint:seo</code></td>
+<td>Scans all merged i18n + all FAQ pairs</td>
+<td>Warnings from <strong>other</strong> slugs pollute context if pasted back</td>
+</tr>
+</tbody></table>
+<p><strong>Conclusion on tool count</strong>: The repo is <strong>not</strong> designed to load 128 tools into one Agent prompt. Growth in tool count <strong>linearly inflates CI/build/lint</strong> and <strong>mistake surface</strong> (merged files), but <strong>should not</strong> linearly inflate tokens if agents follow slug isolation. Violations of isolation dominate the “128 tools → huge context” perception.</p>
+<hr>
+<h2>Factor weighting (estimated)</h2>
+<pre><code>Multi-turn workflow + history accumulation     ████████████████████  ~40%
+Rules/Skills thickness + per-turn re-inject    ███████████████       ~25%
+Ten-locale deep copy (non-machine-translate)   ████████████          ~20%
+Single-tool Page / IG complexity               ████████              ~15%
+Catalog size (build/lint/mis-reads)            ████                  ~10%
+</code></pre>
+<hr>
+<h2>Quality-preserving mitigations (implemented)</h2>
+<p>Added <strong><code>.cursor/skills/tool-token-efficiency/SKILL.md</code></strong> as companion to <code>tool-coverage-pass</code>.</p>
+<p><strong>Conflict order</strong>: Google SEO / localization rules → <code>tool-coverage-pass</code> → token Skill.</p>
+<p><strong>What it optimizes (HOW)</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Technique</th>
+<th>Token saved</th>
+<th>Quality impact</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Session split A/B/C/D (brief / master / locales / ship)</td>
+<td>Cuts history carry-over</td>
+<td>None—state in <code>work-tasks/{slug}/</code></td>
+</tr>
+<tr>
+<td>Read only slug shards + briefs</td>
+<td>Avoids 600 KB merged i18n</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Reference Page ≤150 lines by type</td>
+<td>Avoids 800-line reads</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Filter lint to active slug lines</td>
+<td>Less stdout in context</td>
+<td>None—full lint still runs</td>
+</tr>
+<tr>
+<td><code>npm run verify:tool -- --slug=</code></td>
+<td>One ship gate sequence</td>
+<td>None—all gates preserved</td>
+</tr>
+</tbody></table>
+<p><strong>What it explicitly forbids skipping</strong>:</p>
+<ul>
+<li>0b, 0i, phase 2, phase 4, <code>coverage:gate --phase=all</code></li>
+<li>Ten-locale search-oriented rewrite; ≥3 rounds</li>
+<li>IG, FAQ, how_items, loadSample, build:site, lint:seo, tool isolation</li>
+</ul>
+<p>Registered in <code>AGENTS.md</code>, <code>tool-creation.mdc</code>, <code>tool-coverage-pass/SKILL.md</code>, <code>.github/copilot-instructions.md</code>.</p>
+<hr>
+<h2>Recommendations not yet implemented</h2>
+<p>These would reduce <strong>wall-clock</strong> or <strong>mistake risk</strong> further; optional follow-ups:</p>
+<ol>
+<li><strong>True incremental <code>build:site</code> for ship session D</strong> — <code>build-site.mjs</code> currently enforces full prerender (<code>--full</code>); incremental flags exist in <code>prerender-tool-pages.mjs</code> but are ignored at site build. Token Skill accepts full build for quality; incremental build would help local dev time, not Agent reads.</li>
+<li><strong>Slug-scoped lint wrapper</strong> — run SEO checks only for <code>{slug}</code> during intermediate turns; keep full <code>lint:seo</code> at ship (would need script work).</li>
+<li><strong>Rule progressive disclosure</strong> — short “agent summary” front-matter in long <code>.mdc</code> files; full text on demand (rules architecture change).</li>
+</ol>
+<hr>
+<h2>Answers to the original questions</h2>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Answer</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Why are tokens growing for one tool?</td>
+<td>Mainly <strong>more phases and turns</strong>, <strong>thicker rules</strong>, <strong>deeper ten-locale copy</strong>, and <strong>history accumulation</strong>—not model pricing alone.</td>
+</tr>
+<tr>
+<td>Key influencing factors?</td>
+<td>Workflow gates, rule/Skill size, per-tool i18n+Page volume, exploration habits, accidental full-site reads, build/lint output feedback.</td>
+</tr>
+<tr>
+<td>Is it because there are more tools?</td>
+<td><strong>Partially and indirectly</strong> (~10%): longer build/lint, larger merged artifacts if mis-read, bigger README/catalog for related picking. <strong>Not</strong> because agents must load 128 tool sources each time—if isolation and the token Skill are followed.</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Related artifacts</h2>
+<ul>
+<li>Analysis mitigation Skill: <code>.cursor/skills/tool-token-efficiency/SKILL.md</code></li>
+<li>Coverage workflow (unchanged): <code>.cursor/skills/tool-coverage-pass/SKILL.md</code></li>
+<li>Skill delivery note: <code>dev-logs/2026-08/2026-08-28-13-15-tool-token-efficiency-skill.md</code></li>
+</ul>
+<p>[actions]</p>
+<ul>
+<li>Added <code>.cursor/skills/tool-token-efficiency/SKILL.md</code></li>
+<li>Updated <code>AGENTS.md</code>, <code>.cursor/rules/tool-creation.mdc</code>, <code>.cursor/skills/tool-coverage-pass/SKILL.md</code>, <code>.github/copilot-instructions.md</code></li>
+<li>This consolidated analysis log (companion to 2026-08-28-13-15)</li>
+</ul>
+</article>
+      </section>
+    </main>
   </div>
   
   <footer class="site-footer border-top text-center py-3">

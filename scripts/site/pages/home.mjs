@@ -1,28 +1,23 @@
 /**
- * 首页模型：导航、侧栏分类与内容。
+ * 首页模型：顶栏导航与内容（无侧栏）。
  */
 import { t } from '../i18n.mjs';
-import { withExplicitLangPath, withLangPath } from '../config.mjs';
+import { withLangPath } from '../config.mjs';
 import { renderHomeContent } from '../components.mjs';
 import { buildHomeNavItems } from '../nav.mjs';
-import { TOOL_CATEGORY_ORDER, getCategoryAnchor, getCategoryHomeLabelKey } from '../categories.mjs';
 
 /**
  * 生成指定语言的首页模型。
  * @param {string} lang
  */
 export const getHomePageModel = (lang) => {
+  /** 顶栏分类下拉 + 场景/类型 + 开发日志 */
   const navItems = buildHomeNavItems(lang);
-
-  const sidebarTitle = t(lang, 'sidebar_categories');
-  const sidebarItems = TOOL_CATEGORY_ORDER.map((category) => ({
-    href: `#${getCategoryAnchor(category)}`,
-    label: t(lang, getCategoryHomeLabelKey(category)),
-  }));
-
+  /** 首页 title（SEO） */
   const title = t(lang, 'home_title');
+  /** 首页 description（SEO） */
   const description = t(lang, 'home_description');
-
+  /** 首页主体 HTML（Hero / Why / 最新上线 / 分类目录） */
   const contentHtml = renderHomeContent({ lang });
 
   return {
@@ -30,8 +25,6 @@ export const getHomePageModel = (lang) => {
     description,
     canonicalPath: withLangPath(lang, '/'),
     navItems,
-    sidebarTitle,
-    sidebarItems,
     contentHtml,
   };
 };

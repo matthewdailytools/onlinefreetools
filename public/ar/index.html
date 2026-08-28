@@ -99,7 +99,7 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-light site-navbar border-bottom fixed-top">
       <div class="container-fluid">
-        <button class="btn btn-outline-secondary me-2" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+        
         <a class="navbar-brand" href="/ar/">
           <img class="navbar-brand-logo" src="/brand-logo.svg" width="28" height="28" alt="" decoding="async" />
           <span class="navbar-brand-text">OnlineFreeTools.org</span>
@@ -150,12 +150,8 @@
       </div>
     </nav>
   </header>
-  <div class="layout sidebar-collapsed" id="layoutRoot">
+  <div class="layout layout-no-sidebar" id="layoutRoot">
     
-    <aside id="sidebar" class="border-end">
-      <h2 class="sidebar-title h6">التصنيفات</h2>
-      <div class="list-group list-group-flush small" id="categoryList"><a class="list-group-item list-group-item-action" href="#cat-image">أدوات الصور</a><a class="list-group-item list-group-item-action" href="#cat-design">أدوات التصميم</a><a class="list-group-item list-group-item-action" href="#cat-pdf">أدوات PDF</a><a class="list-group-item list-group-item-action" href="#cat-dev">للمطورين</a><a class="list-group-item list-group-item-action" href="#cat-calculator">حاسبات</a></div>
-    </aside>
     <main id="content" class="p-4">
     <div class="home-wrap">
     <!-- 顶区氛围带：Hero + Why，背景随主题品牌色 -->
@@ -201,6 +197,152 @@
     </div>
 
     <div class="home-main">
+    
+    <section id="latest-tools" class="home-latest" aria-labelledby="home-latest-heading">
+      <div class="home-section-head">
+        <h2 id="home-latest-heading">أحدث الأدوات</h2>
+      </div>
+      <div class="home-card-grid home-card-grid--latest">
+        
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/measuring-magnetic-fields.svg" width="32" height="32" alt="" decoding="async" loading="eager" fetchpriority="high" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/measuring-magnetic-fields" target="_blank" rel="noopener noreferrer">قياس المجال المغناطيسي — حاسبة شدة المجال</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">قياس المجال المغناطيسي: أدخل قراءة مسبار هول أو مقياس غاوس وحوّل الشدة. مثال: 200 غاوس → 0.02 تسلا. قارن غاوس المغناطيس بجدول أوامر المقدار، أو قدّر المجال المحوري لمغناطيس شريطي. الحساب يتم في المتصفح ولا تُرفع الأرقام إلى خادم.</p>
+        <a href="/ar/tools/measuring-magnetic-fields" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/archive-extractor.svg" width="32" height="32" alt="" decoding="async" loading="eager" fetchpriority="high" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/archive-extractor" target="_blank" rel="noopener noreferrer">استخراج الأرشيف أونلاين — افتح الملفات المضغوطة داخل المتصفح</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">استخراج الأرشيف أونلاين لفتح ZIP و TAR و TAR.GZ في المتصفح، مع معاينة الملفات وتصدير ZIP دون رفع إلى خادم.</p>
+        <a href="/ar/tools/archive-extractor" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/unzip-file.svg" width="32" height="32" alt="" decoding="async" loading="eager" fetchpriority="high" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/unzip-file" target="_blank" rel="noopener noreferrer">فك ضغط ZIP أونلاين — عرض الملفات واستخراجها داخل المتصفح</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">فك ضغط ZIP أونلاين داخل المتصفح مع معاينة المحتوى وتنزيل الملفات، دون رفع إلى خادم.</p>
+        <a href="/ar/tools/unzip-file" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/magnet-link-decoder.svg" width="32" height="32" alt="" decoding="async" loading="eager" fetchpriority="high" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/magnet-link-decoder" target="_blank" rel="noopener noreferrer">فك رابط Magnet — عرض info hash وtrackers داخل المتصفح</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">فك رابط Magnet محليا لرؤية info hash والاسم والحجم وtrackers وweb seeds وتلميحات peer والتحذيرات من دون بدء تنزيل.</p>
+        <a href="/ar/tools/magnet-link-decoder" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/hreflang-generator.svg" width="32" height="32" alt="" decoding="async" loading="eager" fetchpriority="high" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/hreflang-generator" target="_blank" rel="noopener noreferrer">مولّد hreflang</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">أخبر جوجل بأي نسخة لغة من الصفحة يجب عرضها لمن — حوّل عناوين URL الخاصة باللغات إلى وسوم hreflang ورؤوس HTTP Link وترميز sitemap من متصفحك.</p>
+        <a href="/ar/tools/hreflang-generator" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/meta-tag-generator.svg" width="32" height="32" alt="" decoding="async" loading="eager" fetchpriority="high" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/meta-tag-generator" target="_blank" rel="noopener noreferrer">مولّد وسوم الميتا</a>
+            </h3>
+            <a class="tool-no-upload-tag" href="/ar/privacy#local" aria-label="يعمل على جهازك دون رفع إلى خادم. تفاصيل الخصوصية" target="_blank" rel="noopener noreferrer">بلا رفع</a>
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">أنشئ وسوم العنوان والوصف وcanonical وOpen Graph التي تجلب النقرات في البحث — ولّد وسوم الرأس كاملة لصفحتك من المتصفح.</p>
+        <a href="/ar/tools/meta-tag-generator" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/on-page-seo-checker.svg" width="32" height="32" alt="" decoding="async" loading="eager" fetchpriority="high" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/on-page-seo-checker" target="_blank" rel="noopener noreferrer">مدقق SEO داخل الصفحة</a>
+            </h3>
+            
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">اكتشف وسوم الصفحة التي تُضعف ترتيبك في البحث: افحص العنوان وH1 ووصف الميتا وcanonical وOpen Graph وJSON-LD من متصفحك.</p>
+        <a href="/ar/tools/on-page-seo-checker" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+  <div class="home-card-item">
+    <div class="card tool-entry-card h-100 d-flex flex-column">
+      <div class="card-body d-flex flex-column">
+        <div class="tool-card-head">
+          <img class="tool-card-logo" src="/icons/tools/open-graph-preview.svg" width="32" height="32" alt="" decoding="async" loading="eager" fetchpriority="high" />
+          <div class="tool-card-head-text">
+            <h3 class="card-title home-card-title mb-0">
+              <a class="home-card-title-link" href="/ar/tools/open-graph-preview" target="_blank" rel="noopener noreferrer">معاينة Open Graph</a>
+            </h3>
+            
+          </div>
+        </div>
+        <p class="card-text home-card-desc home-card-desc--sm flex-grow-1">اجعل كل مشاركة لصفحتك تجلب النقرات — اعرض كيف ستبدو عند مشاركتها على فيسبوك وX وتطبيقات المراسلة، من المتصفح مباشرة.</p>
+        <a href="/ar/tools/open-graph-preview" class="mt-auto btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">فتح</a>
+      </div>
+    </div>
+  </div>
+      </div>
+    </section>
+
     <section id="all-tools">
       <div class="home-section-head">
         <h2>كل الأدوات</h2>
@@ -287,7 +429,7 @@
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/image-compress.svg" width="32" height="32" alt="" decoding="async" loading="eager" fetchpriority="high" />
+          <img class="tool-card-logo" src="/icons/tools/image-compress.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <div class="tool-card-head-text">
             <h3 class="card-title home-card-title mb-0">
               <a class="home-card-title-link" href="/ar/tools/image-compress" target="_blank" rel="noopener noreferrer">ضغط الصور — البعد الأطول والجودة والحجم المستهدف (محليًا)</a>
@@ -304,7 +446,7 @@
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/image-crop.svg" width="32" height="32" alt="" decoding="async" loading="eager" fetchpriority="high" />
+          <img class="tool-card-logo" src="/icons/tools/image-crop.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <div class="tool-card-head-text">
             <h3 class="card-title home-card-title mb-0">
               <a class="home-card-title-link" href="/ar/tools/image-crop" target="_blank" rel="noopener noreferrer">قص الصورة وتغيير الحجم — محليًا</a>
@@ -321,7 +463,7 @@
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/image-exif.svg" width="32" height="32" alt="" decoding="async" loading="eager" fetchpriority="high" />
+          <img class="tool-card-logo" src="/icons/tools/image-exif.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <div class="tool-card-head-text">
             <h3 class="card-title home-card-title mb-0">
               <a class="home-card-title-link" href="/ar/tools/image-exif" target="_blank" rel="noopener noreferrer">عرض وحذف EXIF من الصور — الموقع والكاميرا محليًا</a>
@@ -338,7 +480,7 @@
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/image-format-converter.svg" width="32" height="32" alt="" decoding="async" loading="eager" fetchpriority="high" />
+          <img class="tool-card-logo" src="/icons/tools/image-format-converter.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <div class="tool-card-head-text">
             <h3 class="card-title home-card-title mb-0">
               <a class="home-card-title-link" href="/ar/tools/image-format-converter" target="_blank" rel="noopener noreferrer">محول تنسيق الصور — PNG JPEG WebP AVIF BMP GIF ICO SVG محليا</a>
@@ -355,7 +497,7 @@
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/image-grayscale.svg" width="32" height="32" alt="" decoding="async" loading="eager" fetchpriority="high" />
+          <img class="tool-card-logo" src="/icons/tools/image-grayscale.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <div class="tool-card-head-text">
             <h3 class="card-title home-card-title mb-0">
               <a class="home-card-title-link" href="/ar/tools/image-grayscale" target="_blank" rel="noopener noreferrer">تحويل الصورة إلى رمادي</a>
@@ -372,7 +514,7 @@
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/image-merge.svg" width="32" height="32" alt="" decoding="async" loading="eager" fetchpriority="high" />
+          <img class="tool-card-logo" src="/icons/tools/image-merge.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <div class="tool-card-head-text">
             <h3 class="card-title home-card-title mb-0">
               <a class="home-card-title-link" href="/ar/tools/image-merge" target="_blank" rel="noopener noreferrer">دمج الصور — اجمع صورًا في كولاج واحد</a>
@@ -389,7 +531,7 @@
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/image-optimizer.svg" width="32" height="32" alt="" decoding="async" loading="eager" fetchpriority="high" />
+          <img class="tool-card-logo" src="/icons/tools/image-optimizer.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <div class="tool-card-head-text">
             <h3 class="card-title home-card-title mb-0">
               <a class="home-card-title-link" href="/ar/tools/image-optimizer" target="_blank" rel="noopener noreferrer">تحسين الصور — WebP وAVIF وMozJPEG محليًا</a>
@@ -406,7 +548,7 @@
     <div class="card tool-entry-card h-100 d-flex flex-column">
       <div class="card-body d-flex flex-column">
         <div class="tool-card-head">
-          <img class="tool-card-logo" src="/icons/tools/image-overlay.svg" width="32" height="32" alt="" decoding="async" loading="eager" fetchpriority="high" />
+          <img class="tool-card-logo" src="/icons/tools/image-overlay.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <div class="tool-card-head-text">
             <h3 class="card-title home-card-title mb-0">
               <a class="home-card-title-link" href="/ar/tools/image-overlay" target="_blank" rel="noopener noreferrer">تراكب الصور — ضع شعارًا على صورة</a>
@@ -2457,42 +2599,10 @@
   function fromHash(){ openCat((location.hash||'').replace(/^#/,'')); }
   fromHash();
   window.addEventListener('hashchange', fromHash);
-  document.querySelectorAll('#categoryList a[href^="#"]').forEach(function(a){
-    a.addEventListener('click', function(){ openCat((a.getAttribute('href')||'').slice(1)); });
-  });
 })();
 </script>
   <script src="/vendor/bootstrap/bootstrap.bundle.min.js" defer></script>
   <script src="/js/theme.js" defer></script>
   
-  <script>
-    const layout = document.getElementById('layoutRoot');
-    const toggle = document.getElementById('sidebarToggle');
-    if (layout && toggle) {
-      toggle.addEventListener('click', () => layout.classList.toggle('sidebar-collapsed'));
-      
-    document.querySelectorAll("#categoryList a").forEach((link) => {
-      link.addEventListener('click', (e) => {
-        try {
-          const sidebar = document.getElementById('sidebar');
-          const prevScroll = sidebar ? sidebar.scrollTop : 0;
-          const href = link.getAttribute('href') || '';
-          if (href.startsWith('#')) {
-            const target = document.querySelector(href);
-            if (target) {
-              e.preventDefault();
-              const headerOffset = 56;
-              const targetY = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
-              window.scrollTo({ top: targetY, behavior: 'smooth' });
-            }
-          }
-          link.blur();
-          if (window.innerWidth < 768) layout.classList.add('sidebar-collapsed');
-          setTimeout(() => { if (sidebar) sidebar.scrollTop = prevScroll; }, 300);
-        } catch (err) {}
-      });
-    });
-    }
-  </script>
 </body>
 </html>

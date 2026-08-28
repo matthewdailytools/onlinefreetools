@@ -134,8 +134,13 @@ export const renderLayout = ({
     });`
     : '';
 
+  /** 无侧栏 HTML 时不占位、不加 collapsed 类（首页） */
+  const hasSidebar = Boolean(String(sidebarHtml || '').trim());
+  /** 有侧栏默认收起；无侧栏主栏占满 */
+  const layoutClass = hasSidebar ? 'layout sidebar-collapsed' : 'layout layout-no-sidebar';
+
   const sidebarScript =
-    includeSidebarToggleScript
+    includeSidebarToggleScript && hasSidebar
       ? `
   <script>
     const layout = document.getElementById('layoutRoot');
@@ -179,8 +184,8 @@ export const renderLayout = ({
 <body class="${bodyClass}">
   ${tracking.bodyHtml}
   ${headerHtml}
-  <div class="layout sidebar-collapsed" id="layoutRoot">
-    ${sidebarHtml}
+  <div class="${layoutClass}" id="layoutRoot">
+    ${hasSidebar ? sidebarHtml : ''}
     <main id="content" class="p-4">${contentHtml}</main>
   </div>
   ${footerHtml}
