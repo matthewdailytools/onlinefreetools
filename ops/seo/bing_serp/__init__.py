@@ -5,7 +5,7 @@ Bing SERP 采集与分析公用包（CloakBrowser）。
 用途
 ----
 为 keyword-to-tool 漏斗批量查询 Bing，记录前排有机结果摘要，并草稿
-``competition_tier`` / 结果类型，供 Agent 写入 ``docs/seo/serp-batches/``。
+``competition_tier`` / 结果类型，供 Agent 写入 ``docs/seo/keywords/{theme}/``（``--theme``）或 ``docs/seo/serp-batches/``。
 
 合规
 ----
@@ -21,4 +21,4 @@ Bing SERP 采集与分析公用包（CloakBrowser）。
 from __future__ import annotations
 
 # 包版本：行为变更时递增，写入每次运行的 meta
-__version__ = "0.1.1"
+__version__ = "0.1.2"

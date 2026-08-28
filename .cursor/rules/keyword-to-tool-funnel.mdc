@@ -1,6 +1,6 @@
 ---
 description: 关键词/SERP → 新建工具或丰富已有工具；强制走 keyword-to-tool-funnel Skill
-globs: docs/seo/keyword-to-tool-*.md,docs/seo/keyword-daily-pool.tsv,docs/seo/serp-batches/**
+globs: docs/seo/keyword-to-tool-*.md,docs/seo/keyword-daily-pool.tsv,docs/seo/keywords/**,docs/seo/serp-batches/**
 alwaysApply: false
 ---
 

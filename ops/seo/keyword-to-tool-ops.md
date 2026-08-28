@@ -13,7 +13,8 @@
 
 | 产物 | 路径 | 说明 |
 |---|---|---|
-| 批次摘要 | `docs/seo/serp-batches/YYYY-MM-DD-<id>.md` | 脱敏；无完整 SERP HTML / 密钥 |
+| 批次摘要 | `docs/seo/keywords/{theme}/YYYY-MM-DD-*.md`（主题夹）；跨主题试点仍可用 `docs/seo/serp-batches/` | 脱敏；无完整 SERP HTML / 密钥 |
+| 主题词表 | `docs/seo/keywords/{theme}/` | Planner CSV、聚类、SERP 同夹；见 [`docs/seo/keywords/README.md`](../../docs/seo/keywords/README.md) |
 | 意图池（主结果表） | `docs/seo/keyword-daily-pool.tsv` | 每词一行：`verdict`、`competition_tier`、`gap_notes` 等 |
 | 事项跟进 | `docs/seo/keyword-to-tool-tracker.md` | 快照 + 决策日志 |
 | 选题战略 | `docs/seo/2026-08-20-long-tail-gap-strategy.md` | 回避大词、主攻长尾缺口 |
@@ -29,29 +30,29 @@
 ### 2.1 准备输入
 
 词表至少含：**候选词**；建议另附 `locale` / `gl`（如 `en`/`us`）、种子词、相关搜索/PAA 备注。  
-可直接交给 Agent，或先手写批次文件（模板见 [`docs/seo/serp-batches/README.md`](../../docs/seo/serp-batches/README.md)）。
+可直接交给 Agent，或写入主题夹（模板见 [`docs/seo/keywords/README.md`](../../docs/seo/keywords/README.md)；跨主题试点见 [`docs/seo/serp-batches/README.md`](../../docs/seo/serp-batches/README.md)）。
 
-**Bing SERP 自动记录（可选）**：本机 CloakBrowser 已安装时，用公用脚本批量搜索并落脱敏摘要：
+**Bing SERP 自动记录（可选）**：本机 CloakBrowser 已安装时，用公用脚本批量搜索并落**主题夹**脱敏摘要：
 
 ```bash
-python ops/seo/bing_serp/run_bing_serp.py --queries "terraform cidrsubnet" --write-batch-md --batch-id YYYY-MM-DD-<id>
+python ops/seo/bing_serp/run_bing_serp.py --theme cidr --queries "terraform cidrsubnet" --write-batch-md --batch-id YYYY-MM-DD-cidr-...
 # 或从 Planner CSV：
-python ops/seo/bing_serp/run_bing_serp.py --file docs/seo/keywords/cidr/Cidr_KeywordPlanner_bing.csv --column 关键词 --limit-queries 20 --write-batch-md --batch-id YYYY-MM-DD-<id>
+python ops/seo/bing_serp/run_bing_serp.py --theme cidr --file docs/seo/keywords/cidr/Cidr_KeywordPlanner_bing.csv --column 关键词 --limit-queries 20 --write-batch-md --batch-id YYYY-MM-DD-cidr-...
 ```
 
-说明见 [`bing_serp/README.md`](./bing_serp/README.md)。JSON 在 `.cache/serp/bing/`；`--write-batch-md` 写入 `docs/seo/serp-batches/`。脚本给出的 `competition_tier` 是草稿，入池前仍走下方 Agent 分析。
+说明见 [`bing_serp/README.md`](./bing_serp/README.md)。JSON 在 `.cache/serp/bing/`；`--theme` + `--write-batch-md` 写入 `docs/seo/keywords/{theme}/`。脚本给出的 `competition_tier` 是草稿，入池前仍走下方 Agent 分析。
 
 ### 2.2 触发分析（对 Agent 说清）
 
 示例：
 
-> 按 keyword-to-tool-funnel 分析下面这批词，写入 serp-batches + keyword-daily-pool，更新 tracker；先 absorb 优先；填写 competition_tier（回避大词、主攻 long_gap/locale_gap）。不要自动建 work-tasks。
+> 按 keyword-to-tool-funnel 分析下面这批词，写入 docs/seo/keywords/{theme}/ + keyword-daily-pool，更新 tracker；先 absorb 优先；填写 competition_tier（回避大词、主攻 long_gap/locale_gap）。不要自动建 work-tasks。
 
 然后粘贴词表，或给出已保存的批次路径。
 
 ### 2.3 验收分析产出
 
-- [ ] `docs/seo/serp-batches/` 有本批 `.md`
+- [ ] `docs/seo/keywords/{theme}/` 有本批 `.md`（或跨主题时 `serp-batches/`）
 - [ ] `keyword-daily-pool.tsv` 已追加行且每行有 `verdict` + `competition_tier`
 - [ ] 本批缺口类（`long_gap`+`locale_gap`）占多数；`head` 未进入周 build 进攻队列
 - [ ] `keyword-to-tool-tracker.md` 快照 / 决策日志已更新
@@ -107,7 +108,8 @@ python ops/seo/bing_serp/run_bing_serp.py --file docs/seo/keywords/cidr/Cidr_Key
 | [2026-08-20-tool-keyword-roots.md](../../docs/seo/2026-08-20-tool-keyword-roots.md) | 127 工具词根 |
 | [keyword-to-tool-funnel.md](../../docs/seo/keyword-to-tool-funnel.md) | 漏斗展开 |
 | [keyword-daily-pool.tsv](../../docs/seo/keyword-daily-pool.tsv) | 运行表 |
-| [serp-batches/](../../docs/seo/serp-batches/) | 批次目录 |
+| [keywords/](../../docs/seo/keywords/) | **主题词表与分析**（每主题一夹） |
+| [serp-batches/](../../docs/seo/serp-batches/) | 跨主题/试点批次（主题批优先 keywords/） |
 | Skill `keyword-to-tool-funnel` | Agent 强制流程 |
 | Skill `tool-coverage-pass` | 真正改/建工具时的覆盖门禁 |
 | [inbound-link-outreach.md](./inbound-link-outreach.md) | 入站获链（另一条 SEO 运维线） |

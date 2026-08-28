@@ -31,7 +31,8 @@
 | 规则（编辑词池时） | `.cursor/rules/keyword-to-tool-funnel.mdc` |
 | 漏斗说明 | [keyword-to-tool-funnel.md](./keyword-to-tool-funnel.md) |
 | 意图池运行表 | [keyword-daily-pool.tsv](./keyword-daily-pool.tsv) |
-| SERP 批次目录 | [serp-batches/](./serp-batches/) |
+| **主题词表 / 分析** | [keywords/](./keywords/)（每主题一夹，如 [`keywords/cidr/`](./keywords/cidr/)） |
+| SERP 批次（跨主题试点） | [serp-batches/](./serp-batches/) |
 | GSC 策略交叉引用 | [reviews/2026-08-12/02-next-strategy.md](./reviews/2026-08-12/02-next-strategy.md) |
 | 合规 / IG | `.cursor/rules/seo-google-policy.mdc` · `tool-i18n-seo.mdc` |
 | 覆盖门禁（写工具时） | `.cursor/skills/tool-coverage-pass/SKILL.md` |
@@ -44,10 +45,10 @@
 | 字段 | 值 |
 |---|---|
 | 最近更新 | 2026-08-28 |
-| 最近批次 | [serp-batches/2026-08-28-cidr-keyword-planner.md](./serp-batches/2026-08-28-cidr-keyword-planner.md)（CIDR 修订：无主题页；`/tools/{slug}`；11 候选 slug） |
-| 池内 `build` 候选 | **`measuring-magnetic-fields`**（已立项未实现）；CIDR `long_gap` 建议：`terraform-cidrsubnet`、`ip-range-to-cidr`、`cidr-overlap-checker`、`ipv6-cidr-calculator`、`cidr-to-ip-list`、`private-cidr-checker`、`vpc-cidr-planner` — **均未确认创建** |
-| 本周新建工具页 | 0（磁铁 brief 未实现；CIDR 仅方案） |
-| 阻塞 | 磁铁：实现待用户开工。CIDR：未开 work-tasks；IPv4 旗舰 H1 不用 `cidr calculator` |
+| 最近批次 | [keywords/cidr/2026-08-28-cidr-keyword-planner.md](./keywords/cidr/2026-08-28-cidr-keyword-planner.md)（§3.3 G 重跑选词/slug） |
+| 池内 `build` 候选 | **`measuring-magnetic-fields`**（已立项）；CIDR P0：`terraform-cidrsubnet`、`ip-range-to-cidr`、`private-cidr-ranges`；P1：`ipv6-cidr`、`cidr-cheat-sheet`；P2：`aws-vpc-cidr-planner`；收割：`cidr-to-ip-range` — **均未确认创建** |
+| 本周新建工具页 | 0 |
+| 阻塞 | CIDR slug 已重跑；等用户点名 slug 再建 work-tasks |
 
 ---
 
@@ -122,6 +123,11 @@
 | 2026-08-28 | 按 `docs/seo/keywords/measuring-magnet-fields/keywords-search-volumns.txt` 优化立项关键词：H1 核心仍是 measuring magnetic fields；副标题 Field strength calculator；force/formula/chart/bar magnet 一带多场景；库仑/张力/洛伦兹作业题 drop。 | 用户要求用该词表做页面关键词；禁 doorway 拆页与 keyword stuffing |
 | 2026-08-28 | CIDR Bing Planner 批（345 词）只出 `/cidr` 主题簇方案：主题页 + 最多 3–4 个子工具；`cidr calculator`/`cidr notation` 维持 `head` 不进攻；兽医 CIDR 同形词 drop。建议 path：`/cidr`、`/cidr/calculator`、`/cidr/ip-range`、`/cidr/cidrsubnet`（可选 `/cidr/vpc`）。**未**建 work-tasks。 | 用户要求按 `/主题/工具slug` 先给方案；空壳 hub 与一词一页禁止；平台仍硬编码 `/tools/{slug}` |
 | 2026-08-28 | CIDR 方案修订：取消主题页；URL 一律 `/tools/{slug}`。按意图拆出 11 个须满 IG 的候选 slug（IPv4 host-range / mask / chart / range→CIDR / IP list / IPv6 / VLSM / overlap / terraform / VPC / private checker）。近义与头词不拆。**仍未**建 work-tasks。 | 用户要求沿用原路由、尽量拆长尾且每页有足够 Information Gain |
+| 2026-08-28 | CIDR IA 以「意图聚类」为主表校正独立工具：长尾优先；IPv6→独立 `ipv6-cidr`；私网→`private-cidr-ranges`；overlap/expander/mask absorb 进 `cidr-host-range`；Bing serp×12 人工复核后更新词池。P0=`terraform-cidrsubnet`/`ip-range-to-cidr`/`private-cidr-ranges`。 | 用户要求聚类权威、第一时间满足长尾需求、用 bing_serp 选长尾 |
+| 2026-08-28 | 主题文件归档约定：CIDR 分析/词表/SERP 一律放 `docs/seo/keywords/cidr/`；`bing_serp --theme` 写主题夹；`serp-batches` 仅跨主题试点。 | 用户要求每个主题对应文件保存在 keywords/{keyword}/ |
+| 2026-08-28 | CIDR Planner ≥100 未扫词 Bing SERP×29（含 `cidr notation`）；人工复核**无新增 P0**；计算器近义→`cidr-host-range`，定义/chart→`cidr-prefix-chart`；`ipv6 cidr` 确认独立 P1。 | 用户要求补做 100+ 流量词 SERP |
+| 2026-08-28 | 选题增加兜底 **title_gap_fallback**（策略 §3.3 G）：大词被工具占位时，同簇长尾若在该长尾 SERP 的 organic title 中未出现区别词，则用该长尾作工具 slug/H1（一簇一 URL、满 IG；默认不占周进攻）。 | 用户要求分析完善该规则 |
+| 2026-08-28 | CIDR Planner **重跑选词/slug**：收割页 `cidr-to-ip-range`（H1=CIDR to IP range，title_gap）；速查 `cidr-cheat-sheet`；VPC `aws-vpc-cidr-planner`；废止 `cidr-host-range`/`cidr-prefix-chart`/`vpc-cidr-planner`。P0 仍为 terraform / ip-range-to-cidr / private-cidr-ranges。 | 用户要求按新标准重跑 |
 
 ---
 

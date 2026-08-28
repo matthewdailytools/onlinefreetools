@@ -37,7 +37,7 @@ must follow them when their trigger conditions match:
 
 - `.cursor/skills/keyword-to-tool-funnel/SKILL.md`: use for keyword batches,
   SERP analysis, keyword pools, absorb/build/defer decisions, and edits under
-  `docs/seo/keyword-to-tool-*` or `docs/seo/serp-batches/`.
+  `docs/seo/keyword-to-tool-*`, `docs/seo/keywords/`, or `docs/seo/serp-batches/`.
 - `.cursor/skills/tool-coverage-pass/SKILL.md`: use for new tool creation,
   multi-tool plans, coverage gates, title/keyword optimization, and any change
   that marks a tool brief ready or i18n-done.

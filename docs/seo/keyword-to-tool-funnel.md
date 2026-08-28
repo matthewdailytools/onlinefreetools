@@ -15,11 +15,12 @@
 - **长尾缺口优先（选题）**：[2026-08-20-long-tail-gap-strategy.md](./2026-08-20-long-tail-gap-strategy.md)
 - Omni 对标（学结构不学页数）：[../2026-08-08-omnicalculator-seo-traffic-strategy.md](../2026-08-08-omnicalculator-seo-traffic-strategy.md)
 - 运行表模板：[keyword-daily-pool.tsv](./keyword-daily-pool.tsv)
-- SERP 批次归档：[serp-batches/README.md](./serp-batches/README.md)
+- **主题词表 / 分析**：[keywords/README.md](./keywords/README.md)
+- SERP 批次（跨主题试点）：[serp-batches/README.md](./serp-batches/README.md)
 
 > **一句话**：从谷歌搜索批量取词进意图池（分析用）→ **竞品覆盖分类（回避大词、主攻未覆盖长尾）** → 合并过滤 → **每周立项 1–2 个**真实可交互工具并做满 Information Gain；禁止「一词一 URL」日建页。
 
-**选题战略（2026-08-20）**：[2026-08-20-long-tail-gap-strategy.md](./2026-08-20-long-tail-gap-strategy.md) — 不与已有流量站抢已占位大词；主攻其未覆盖/极薄的长尾与语言缺口。已有 GSC 展示的大词仅做 CTR 收割，不作进攻立项。
+**选题战略（2026-08-20）**：[2026-08-20-long-tail-gap-strategy.md](./2026-08-20-long-tail-gap-strategy.md) — 不与已有流量站抢已占位大词；主攻其未覆盖/极薄的长尾与语言缺口。已有 GSC 展示的大词仅做 CTR 收割，不作进攻立项。头词工具占位时可用 **§3.3 G `title_gap_fallback`**：同簇长尾在 SERP title 中未出现 → 作 slug/H1（一簇一 URL）。
 
 ---
 
@@ -187,7 +188,8 @@ IG 是内容策略原则（对齐 Helpful Content），**不是**已确认的独
 | 文件 | 用途 |
 |---|---|
 | [keyword-daily-pool.tsv](./keyword-daily-pool.tsv) | 候选总表（追加行；含 SERP 分析字段） |
-| [serp-batches/](./serp-batches/) | 按批归档脱敏摘要（可选）；见该目录 README |
+| [keywords/](./keywords/) | **按主题**归档词表、意图聚类、Bing/Google SERP 脱敏批次 |
+| [serp-batches/](./serp-batches/) | 跨主题/试点批次（主题批优先写 `keywords/{theme}/`） |
 
 ### 池表列说明
 

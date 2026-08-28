@@ -7,11 +7,13 @@ Bing SERP 批量采集 CLI（CloakBrowser）。
 ::
 
     python ops/seo/bing_serp/run_bing_serp.py \\
+      --theme cidr \\
       --queries "terraform cidrsubnet,ip range to cidr" \\
       --batch-id 2026-08-28-cidr-bing-smoke \\
       --write-batch-md
 
     python ops/seo/bing_serp/run_bing_serp.py \\
+      --theme cidr \\
       --file docs/seo/keywords/cidr/Cidr_KeywordPlanner_bing.csv \\
       --column 关键词 \\
       --limit-queries 15 \\
@@ -54,11 +56,11 @@ from browser_util import (  # noqa: E402
     launch_cloak_browser,
 )
 from io_util import (  # noqa: E402
-    DEFAULT_BATCH_DIR,
     DEFAULT_CACHE_DIR,
     ensure_run_dir,
     load_queries,
     render_batch_markdown,
+    resolve_batch_dir,
     write_batch_markdown,
     write_query_json,
     write_run_manifest,
@@ -138,12 +140,17 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     p.add_argument(
         "--write-batch-md",
         action="store_true",
-        help="额外写入 docs/seo/serp-batches/{batch-id}.md",
+        help="额外写入 Markdown 批次（默认 docs/seo/keywords/{theme}/ 或 serp-batches）",
+    )
+    p.add_argument(
+        "--theme",
+        default="",
+        help="主题短名（如 cidr）；有值时 Markdown 写到 docs/seo/keywords/{theme}/",
     )
     p.add_argument(
         "--batch-dir",
-        default=str(DEFAULT_BATCH_DIR),
-        help="批次 Markdown 目录",
+        default="",
+        help="覆盖 Markdown 输出目录（默认由 --theme 或 serp-batches 决定）",
     )
     p.add_argument(
         "--allow-cn",
@@ -441,7 +448,7 @@ def run_batch(args: argparse.Namespace) -> int:
     }
     write_run_manifest(run_dir, manifest)
 
-    # 可选：脱敏批次 md
+    # 可选：脱敏批次 md（优先主题夹）
     if args.write_batch_md:
         method = (
             f"CloakBrowser {__version__} Bing scrape; "
@@ -454,7 +461,12 @@ def run_batch(args: argparse.Namespace) -> int:
             seed_queries=query_list,
             rows=row_summaries,
         )
-        write_batch_markdown(Path(args.batch_dir), batch_id, body)
+        out_batch_dir = resolve_batch_dir(
+            theme=args.theme or None,
+            batch_dir=args.batch_dir or None,
+        )
+        write_batch_markdown(out_batch_dir, batch_id, body)
+        logger.info("batch markdown dir=%s", out_batch_dir)
 
     logger.info(
         "done ok=%d err=%d dir=%s",

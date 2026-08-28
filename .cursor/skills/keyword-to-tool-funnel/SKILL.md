@@ -21,9 +21,9 @@ description: >-
 ## 何时必须使用
 
 - 用户提供 / 批量导入 Google 搜索词、SERP 摘要、相关搜索、PAA
-- 提到日抽词、意图池、`keyword-daily-pool`、`serp-batches`、absorb / build
+- 提到日抽词、意图池、`keyword-daily-pool`、`keywords/{theme}`、`serp-batches`、absorb / build
 - 问「这个词该新建工具还是并进现有页」
-- 编辑 `docs/seo/keyword-to-tool-*` 或 `docs/seo/serp-batches/`
+- 编辑 `docs/seo/keyword-to-tool-*`、`docs/seo/keywords/` 或 `docs/seo/serp-batches/`
 
 ## 两条产出路径（二选一或并存于同一批）
 
@@ -34,13 +34,14 @@ description: >-
 | `defer` | 意图成立但产能/YMYL/技术未就绪，或 `mid_covered` 暂不硬刚 | 留池，决策日志一行 |
 | `drop` | 不可做成工具、重复、无增量，或纯 `head` 且无本站展示 | 留池注明理由即可 |
 
-默认优先 **`absorb` 丰富已有**，再谈 `build`。周 `build` 名额只给缺口类，不给 `head`。
+默认优先 **`absorb` 丰富已有**，再谈 `build`。周 `build` 名额只给缺口类，不给 `head`。  
+头词已被工具占位时：按策略 **§3.3 G**（`title_gap_fallback`）——同簇长尾若在该长尾 SERP 的 organic **title 中未出现**，用该长尾作工具 **slug/H1**（一簇一 URL；满 IG；默认不占周进攻，除非任务实质不同）。
 
 ## 强制流程
 
 ### 1) 入库（只建池，不建页、不建 work-tasks）
 
-1. 脱敏摘要写入 `docs/seo/serp-batches/YYYY-MM-DD-<id>.md`（无完整 SERP HTML / 无密钥）
+1. 脱敏摘要写入 `docs/seo/keywords/{theme}/YYYY-MM-DD-<id>.md`（主题夹；跨主题试点仍可用 `docs/seo/serp-batches/`）
 2. 从本批抽约 **10** 条候选追加 `docs/seo/keyword-daily-pool.tsv`
 3. 回写 [keyword-to-tool-tracker.md](../../docs/seo/keyword-to-tool-tracker.md) 快照 + 决策日志
 
@@ -54,7 +55,7 @@ description: >-
 6. **竞品覆盖**：谁占位？→ 填 `competition_tier`（`head` / `mid_covered` / `long_gap` / `locale_gap`）+ `gap_notes`  
 
 对照 catalog：`src/site/tool-catalog.json`；可行性：`docs/2026-07-28-tool-direction.md`。  
-选题细则：`docs/seo/2026-08-20-long-tail-gap-strategy.md`。种子可含大词，**入池以向下展开的长尾缺口为主**（建议每批缺口类 ≥6/10）。
+选题细则：`docs/seo/2026-08-20-long-tail-gap-strategy.md`（含 **§3.3 选长尾词策略标准：Google + Bing**）。种子可含大词，**入池以向下展开的长尾缺口为主**（建议每批缺口类 ≥6/10）。
 
 ### 3A) `absorb` → 丰富已有工具
 

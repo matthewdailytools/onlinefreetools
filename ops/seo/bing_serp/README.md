@@ -12,22 +12,24 @@ cloakbrowser info
 
 Python ≥ 3.10。无需写入本仓库 `package.json`（运维脚本，非站点运行时依赖）。
 
-## 快速试跑
+## 快速试跑（写入主题夹）
 
 ```bash
 python ops/seo/bing_serp/run_bing_serp.py ^
+  --theme cidr ^
   --queries "terraform cidrsubnet,ip range to cidr" ^
   --batch-id 2026-08-28-cidr-bing-smoke ^
   --write-batch-md ^
   --limit-queries 2
 ```
 
-（bash / macOS 把 `^` 换成 `\`。）
+Markdown → `docs/seo/keywords/cidr/{batch-id}.md`。
 
 ## 从 Keyword Planner CSV 批量
 
 ```bash
 python ops/seo/bing_serp/run_bing_serp.py ^
+  --theme cidr ^
   --file docs/seo/keywords/cidr/Cidr_KeywordPlanner_bing.csv ^
   --column 关键词 ^
   --limit-queries 20 ^
@@ -40,49 +42,24 @@ python ops/seo/bing_serp/run_bing_serp.py ^
 
 | 路径 | 是否入库 | 内容 |
 |---|---|---|
-| `.cache/serp/bing/{batch-id}/*.json` | 否（`.gitignore`） | 每词结构化结果（title/url/snippet/分析） |
+| `.cache/serp/bing/{batch-id}/*.json` | 否（`.gitignore`） | 每词结构化结果 |
 | `.cache/serp/bing/{batch-id}/manifest.json` | 否 | 批次索引 |
-| `docs/seo/serp-batches/{batch-id}.md` | 可选（`--write-batch-md`） | **脱敏**摘要表；无完整 HTML |
+| `docs/seo/keywords/{theme}/{batch-id}.md` | 是（`--theme` + `--write-batch-md`） | 主题脱敏摘要 |
+| `docs/seo/serp-batches/{batch-id}.md` | 仅无 `--theme` 时 | 跨主题/试点回退 |
 
 ## 中国区 Bing → 国际版
 
-默认（`--mkt en-US` 等非大陆市场）会：
-
-1. 启动后写入 `ENSEARCH=BENVER=1` 与 `_EDGE_S=mkt=en-US` Cookie  
-2. 每次搜完检测：落地 `cn.bing.com`、中文 UI（含「国际版」入口）、或前排国内站占比 ≥50%  
-3. 若判定为 CN Bing → 带 `ensearch=1` **再搜一次国际版**  
-
-若你就是要大陆 SERP：加 `--allow-cn`。`--mkt zh-CN` 不会强制切国际版。
-
+默认（`--mkt en-US`）检测 CN 后自动 `ensearch=1` 重搜。要大陆 SERP：`--allow-cn`。
 
 ## 常用参数
 
 | 参数 | 含义 |
 |---|---|
-| `--queries` | 逗号分隔词 |
-| `--file` / `--column` | 词表文件与列名 |
+| `--theme` | 主题短名；Markdown 写到 `keywords/{theme}/` |
+| `--queries` / `--file` / `--column` | 词表 |
 | `--mkt` | 默认 `en-US` |
-| `--allow-cn` | 保留 CN Bing，不自动切国际版 |
-| `--headed` | 有头调试 |
-| `--humanize` | CloakBrowser 人类行为 |
-| `--delay-min` / `--delay-max` | 词间随机等待（秒） |
-| `--write-batch-md` | 写 serp-batches Markdown |
+| `--allow-cn` | 保留 CN Bing |
+| `--write-batch-md` | 写 Markdown 批次 |
+| `--batch-dir` | 覆盖输出目录 |
 
-## 模块
-
-| 文件 | 职责 |
-|---|---|
-| `browser_util.py` | 启动 CloakBrowser、等待、停顿 |
-| `bing_parse.py` | Bing URL / 有机结果 / 相关搜索解析 |
-| `analyze.py` | result_type + `competition_tier` 草稿 |
-| `io_util.py` | 词表加载与落盘 |
-| `run_bing_serp.py` | CLI |
-
-## 合规
-
-- 频率与 ToS 自行控制；默认词间 3–8s。
-- **不要**把完整 SERP HTML 或密钥提交进仓库。
-- 草稿 tier **必须**人工/Agent 复核后再进 `keyword-daily-pool.tsv`。
-- 禁止抄前排正文进工具文案；本脚本不创建 `work-tasks/`。
-
-关联：[`../keyword-to-tool-ops.md`](../keyword-to-tool-ops.md) · [`../../docs/seo/serp-batches/README.md`](../../docs/seo/serp-batches/README.md)
+关联：[`../keyword-to-tool-ops.md`](../keyword-to-tool-ops.md) · [`../../docs/seo/keywords/README.md`](../../docs/seo/keywords/README.md)

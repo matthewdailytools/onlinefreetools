@@ -125,6 +125,170 @@ flowchart TD
 
 周 `build` 名额（≤1–2）**不得**分配给纯 `head` 进攻项。
 
+### 3.3 选长尾词策略标准（Google + Bing 综合）
+
+权威序不变：**Google Search Central**（people-first / 禁 doorway·scaled content）管「做什么页」；Bing Keyword Planner + Bing/Google SERP 管「选哪条词」。两引擎都服务同一目标：**具体任务意图 + 可交互缺口 + 满 Information Gain**，不是刷量。
+
+#### A. 双引擎分工
+
+| 来源 | 用来做什么 | 不要用来做什么 |
+|---|---|---|
+| **Google**（GSC / 相关搜索 / PAA / 有机 SERP） | 真实需求与 CTR 收割；验证意图是否「算/转/生成/校验」；AI Overview 只要求页已 indexed + snippet-eligible，**不为 AI 堆 schema/`llms.txt`** | 以「大词月搜」或 AI Overview 出现与否作为立项理由 |
+| **Bing**（Keyword Planner 量级带 + Bing 有机 SERP） | 词表展开与量级分桶；交叉验证前排类型（工具/文档/UGC）；本站脚本默认国际版 `en-US` | 把 Planner「100–1k / 1k+」当成必须进攻；CN Bing 噪声当缺口 |
+
+**交叉规则**：同一候选须 **至少一侧 SERP（优先 Google；本仓运维默认 Bing 国际版可先跑）** 人工看过前 5–10；草稿 `competition_tier` 不可直接立项。Google 与 Bing 结论冲突时：以 **用户任务是否一致** 为准；任一侧出现「前排工具站密集」→ 倾向 `head`/`mid_covered`，不上周 `build`。
+
+#### B. 量级分桶（Planner / 广告工具）— 只做筛选，不做 KPI
+
+| 量级带（约） | 默认角色 | 选词动作 |
+|---|---|---|
+| **1,000+**（头词） | 回避进攻 | 只作种子向下展开；有 GSC 展示则 CTR 收割；**禁止**作新工具唯一 H1 |
+| **100–1,000** | 中词 / 头词邻接高风险 | 必须过 SERP：工具站密集 → `head` absorb/`defer`；仅当任务极具体且缺口清晰才进 `build` 候选 |
+| **10–100** | **长尾主战场** | 优先入池；代表词做 SERP；同簇合并，不一词一页 |
+| **0–10** | 微尾 / 噪声风险 | 可作 FAQ/Use case 用语；单独 `build` 须有清晰任务 + IG，否则 `absorb`/`drop` |
+
+CIDR 实证：≥100 补扫 **无新增 P0**；P0 多来自 **任务句长尾**（如 `terraform cidrsubnet`、`private cidr ranges`），量级可在 10–1k，但 SERP 缺可交互求值/分类。
+
+#### C. 通过标准（`build` 长尾）— 须同时满足
+
+记分：下列 **硬条件全过**；软条件建议 ≥3/5。
+
+**硬条件（缺一不可）**
+
+1. **任务句**：能一句话说清用户要完成的动作（算 / 转 / 生成 / 校验 / 分类），不是「什么是 X」。  
+2. **可交互**：浏览器内可做；不是纯百科、购买、品牌导航、同形词噪声。  
+3. **SERP 缺口**（Google 或 Bing，人工确认）：前排以文档/论坛/PDF/薄页/错意图为主，**或**有工具但缺本任务专用控件；满足策略 §2.3 ≥2 条 → `long_gap` / `locale_gap`。  
+4. **Information Gain ≥3**：相对前排可写出 ≥3 条可验证增量（边界/公式/场景/对照等）；禁换皮近义页。  
+5. **非 doorway**：同簇近义进同一 `/tools/{slug}`；H1 用长尾任务句，**不用**品类头词（如不用 `CIDR Calculator` 抢头）。头词工具占位时启用 **§3.3 G**（title 字面缺口长尾 → slug/H1）。  
+6. **合规**：非 YMYL 高风险硬刚；不抄前排正文；不为操纵排名批量铺 URL。
+
+**软条件（加分，用于周排序）**
+
+| # | 信号 | 加分含义 |
+|---|---|---|
+| 1 | 工作流/产品约束（Terraform、AWS VPC、Proxmox…） | 文档多、专用交互少 |
+| 2 | 双向/逆向任务（range→CIDR vs CIDR→range） | 常被泛计算器吞掉一侧 |
+| 3 | 边界/错误场景可产品化（越界、族混用、/31） | 易写满 IG |
+| 4 | 语言问法缺口（非 en 强、本站语种弱） | → `locale_gap` |
+| 5 | 本站已有相关簇可内链 | 上线后发现成本低 |
+
+**周 `build` 排序**：硬条件全过的词中，按 软条件得分 → 再看可行性与产能；**禁止**按月搜量倒序排。
+
+#### D. 一票否决（直接 `drop` / `defer` / 仅收割）
+
+- 前 5 名 ≥3 个同意图成熟工具站（Google 或 Bing 任一侧稳定如此）→ `head` / `mid_covered`  
+- 意图 = 定义 / 全称 / 「what is」且无交互增量 → FAQ absorb，禁独立 URL  
+- 品牌导航（`mxtoolbox …`）、竞品站名、购买/本地服务  
+- 同形词/错领域（如兽医 CIDR）  
+- SERP 严重污染且无法确认意图（百度壳、what-is-my-ip 误匹配等）→ 重抓或 `defer`，**不**标 `long_gap` 立项  
+- 仅 Planner 高量、未做 SERP → **不得**入周 `build`
+
+#### E. `absorb` vs `build`（选定长尾之后）
+
+| 情况 | 标准 |
+|---|---|
+| 与 catalog **同主意图** 或近义换词 | **`absorb`**（默认优先）：改 title/FAQ/Use cases/模式，不新建 URL |
+| 用户搜该词会期望 **不同主控件/不同对象**（如 IPv6 vs IPv4；cidrsubnet 求值 vs 单块计算） | 可 **`build`** 独立 slug，仍须硬条件全过 |
+| 量级高但任务 = 头词邻接 | 启用 **§3.3 G title_gap_fallback**：用 title 未出现的长尾作 slug/H1；**不**占周进攻名额（除非任务实质不同且过硬条件） |
+
+#### F. 操作清单（每条候选 30 秒自检）
+
+```text
+[ ] 量级带已标；1k+ 未当唯一 H1
+[ ] 用户任务一句；可交互 = yes
+[ ] Google 和/或 Bing 前 5–10 已看；tier 人工确认
+[ ] 缺口 ≥2 条或明确 mid/head
+[ ] 若 head 工具占位：是否跑 §3.3 G title_gap_fallback（长尾 title 字面缺口 → slug/H1）
+[ ] IG 草稿 ≥3；同簇合并计划写明
+[ ] verdict = absorb | build | defer | drop；build 仅 long_gap/locale_gap
+```
+
+落地文件：主题夹 `docs/seo/keywords/{theme}/` + `keyword-daily-pool.tsv`；Bing 采集：`ops/seo/bing_serp`（`--theme`）。
+
+#### G. 兜底规则：头词被工具占位 → 用「SERP title 未出现」的长尾作 slug/H1
+
+**问题**：大词（如 `cidr calculator`）SERP 已被成熟工具站占满 → 禁止用大词当 H1 正面硬刚；但簇内仍要有一页可交互工具承接需求。若仍用大词做 title，既难进前页，也像 doorway。
+
+**思路**：在**同一大词意图簇**内，找一条（或少数）长尾：用户会搜它，但前排工具页的 **organic title 并未写入该长尾字面**（仍用泛标题如 “CIDR Calculator / Subnet Calculator”）。用这条长尾做本站 **唯一主 slug + H1/title**，页面能力覆盖大词任务，次词进 FAQ/模式——**标题对齐长尾问法，功能收割簇，而不是换皮抢大词。**
+
+##### G.1 触发条件（须同时成立）
+
+| # | 条件 | 判定 |
+|---|---|---|
+| 1 | **大词工具占位** | 大词（或品类短词）SERP 前 5 中 ≥3 为同意图工具站 → `competition_tier=head`（或强 `mid_covered`） |
+| 2 | **同簇长尾存在** | Planner / 相关搜索 / PAA 中，与大词**同一用户任务**的更具体问法（单位、方向、对象、产品、边界） |
+| 3 | **长尾可交互** | 该长尾仍是算/转/生成/校验，不是 what-is / 购买 / 品牌导航 |
+| 4 | **Title 字面缺口** | 对该长尾做 Google 或 Bing SERP：前 **5–10** 条有机结果的 **title**（大小写不敏感；忽略标点）中，**未出现**该长尾的核心区别词组（见 G.2） |
+
+四条都满足 → 启用本兜底；记 `gap_notes`：`title_gap_fallback` + 大词种子 + 选用长尾。
+
+##### G.2 「title 没有」怎么量（防误判）
+
+对候选长尾 `L`，令 **区别词组** = `L` 去掉与大词共享的词干后剩余的区分部分（例：大词 `cidr calculator`，长尾 `cidr calculator ipv4` → 区别词至少含 `ipv4`；长尾 `ip range to cidr` → 整句视为区别任务句）。
+
+| 判定 | 标准 |
+|---|---|
+| **缺口成立（可用）** | 前 5 title 中，含区别词组（或 `L` 全文近匹配）的条数 **≤1**；多数 title 仍是泛工具名 / 大词换皮 |
+| **缺口不成立** | 前 5 已有 ≥2 条 title 明确写出该长尾任务句 → 该 `L` 可能已是 `mid_covered` 精确页，改走常规 §2.2/§3.3，**不**再当「兜底改名」素材 |
+| **无效检测** | SERP 污染、错意图、空结果 → 重抓后再判；不可用噪声 SERP 宣称 title 缺口 |
+
+**只看 title**（本规则）；snippet 里偶然出现长尾**不**否决缺口（竞品常在摘要堆词、标题仍泛化）。若需更严，可另加「可见 H1」人工抽查，不作默认门禁。
+
+##### G.3 选用哪一条长尾（同簇多选一时）
+
+按序挑 **一条** 作主词（其余 absorb 进同一 URL）：
+
+1. **Title 缺口更强**（前 5 命中 0 条优先于 1 条）  
+2. **任务更具体**（有对象/方向/边界：ipv4、range→cidr、host range…）  
+3. **量级**：优先 **10–100**，其次 100–1k 且非纯大词同义；避免 0–10 除非任务极清  
+4. **可 slug 化**：英文 kebab-case 可读；能当 H1 自然短语（非电报式堆词）  
+5. **非近义刷屏**：不与已选主词仅差同义词（`calc`/`calculator`）再拆第二 URL  
+
+选定后：
+
+| 字段 | 写法 |
+|---|---|
+| `slug` | 长尾任务句 kebab（如 `cidr-host-range`、`ip-range-to-cidr`） |
+| H1 / 主 title | 该长尾的自然语言标题（如 `IPv4 CIDR to host range`），**禁止**用大词 `CIDR Calculator` |
+| 大词 | 仅作种子/内文提及/次要 meta；**不**作唯一主词 |
+| 同簇其它长尾 | FAQ / Use cases / 控件模式；`verdict=absorb` |
+
+##### G.4 与 `build` / 周产能的关系
+
+| 情形 | 处理 |
+|---|---|
+| 仅 title 缺口、能力仍是大词同款泛计算器 | 可建 **一页** 承接簇，但标 **`defer` 不占周进攻** 或「簇内收割页」；须满 IG，H1=长尾；**不算**对大词的 `long_gap` 进攻胜利 |
+| Title 缺口 + 任务相对泛工具有实质差异（逆向转换、专用对象） | 可按 §3.3 硬条件评 `long_gap` → 正常周 `build` |
+| Catalog 已有同簇 slug | **只改**已有页 H1/title 到该长尾（absorb），禁止再新建 |
+
+**禁止**：为大词簇批量生成「每条 title 缺口长尾 × 一 URL」——仍属 doorway / scaled thin。一簇 **最多一个** 兜底主 URL。
+
+##### G.5 合规边界（Google 优先）
+
+- People-first：页面必须真正完成该长尾任务，不是只改 title。  
+- 禁 cloaking：H1/title 与可见主控件一致。  
+- 禁 keyword stuffing：一条主长尾 + 有限次词，不堆 Planner 列表。  
+- 有 GSC 大词展示时：可同时做 CTR 收割，但主叙事仍跟长尾 H1，避免退回大词唯一主词。
+
+##### G.6 操作清单（兜底专用）
+
+```text
+[ ] 大词 SERP 已确认工具占位（head/mid）
+[ ] 候选 L 与大词同任务簇；可交互
+[ ] 已抓 L 的 SERP；前 5 title 区别词命中 ≤1
+[ ] 同簇只选 1 条作 slug/H1；其余 absorb
+[ ] IG≥3；H1 ≠ 大词字面
+[ ] 词池 gap_notes 含 title_gap_fallback；是否占周 build 已标明
+```
+
+##### G.7 示例（CIDR）
+
+| 大词 | 长尾候选 | 长尾 SERP title 现象 | 兜底采用 |
+|---|---|---|---|
+| `cidr calculator` | `cidr to ip range` / 叙事 `IPv4 CIDR to host range` | 前排多为 “Subnet Calculator - CIDR…” 泛标题 | slug=`cidr-host-range`，H1=`IPv4 CIDR to host range`（不占周进攻） |
+| `cidr calculator` | `terraform cidrsubnet` | 前排多为 HashiCorp docs，少有同名求值器 title | **不是**本兜底主路径 → 独立 `long_gap` 工具（任务已不同） |
+| `cidr notation` | `what is cidr` | 教育页 title 常含问法 | 定义簇 → FAQ absorb，**不**建工具 URL |
+
 ---
 
 ## 4. 执行方案（可操作节奏）

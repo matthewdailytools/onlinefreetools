@@ -350,7 +350,7 @@ npm run indexnow -- --help
 摘要：
 
 1. 准备词表（建议带 locale/gl）→ 可选：`python ops/seo/bing_serp/run_bing_serp.py … --write-batch-md` 录 Bing SERP → 对 Agent 说「按 keyword-to-tool-funnel 分析…」  
-2. 产出：`docs/seo/serp-batches/` + `keyword-daily-pool.tsv` + `keyword-to-tool-tracker.md`  
+2. 产出：`docs/seo/keywords/{theme}/`（主题批）或 `docs/seo/serp-batches/`（跨主题）+ `keyword-daily-pool.tsv` + `keyword-to-tool-tracker.md`  
 3. `absorb` → 改已有工具文案；`build` → **确认后再**开 `work-tasks/{slug}/`（分析阶段不自动建夹）  
 4. 上线仍走 `build:site` + `lint:seo` + §4.1 IndexNow  
 

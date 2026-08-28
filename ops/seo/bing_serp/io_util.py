@@ -3,7 +3,8 @@
 查询词加载与 SERP 运行结果落盘（JSON / 脱敏 Markdown）。
 
 JSON 默认写在 ``.cache/serp/bing/``（已被仓库 .gitignore）；
-Markdown 可选写入 ``docs/seo/serp-batches/``，只含摘要字段。
+Markdown 默认按主题写入 ``docs/seo/keywords/{theme}/``（``--theme``），
+未指定主题时回退 ``docs/seo/serp-batches/``。
 """
 
 from __future__ import annotations
@@ -25,8 +26,55 @@ REPO_ROOT = Path(__file__).resolve().parents[3]
 # 默认缓存目录（不入库）
 DEFAULT_CACHE_DIR = REPO_ROOT / ".cache" / "serp" / "bing"
 
-# 默认批次 Markdown 目录（可入库的脱敏摘要）
+# 跨主题/试点批次目录（无 --theme 时的回退）
 DEFAULT_BATCH_DIR = REPO_ROOT / "docs" / "seo" / "serp-batches"
+
+# 主题词表根目录
+KEYWORDS_ROOT = REPO_ROOT / "docs" / "seo" / "keywords"
+
+
+def theme_batch_dir(theme: str) -> Path:
+    """
+    解析主题归档目录 ``docs/seo/keywords/{theme}/``。
+
+    参数
+    ----
+    theme:
+        主题短名（kebab-case），如 ``cidr``。
+
+    返回
+    ----
+    主题目录 Path（不自动创建）。
+    """
+    # 只允许安全路径段，防止目录穿越
+    safe = re.sub(r"[^\w\-]+", "-", (theme or "").strip()).strip("-").lower()
+    if not safe:
+        raise ValueError("theme 不能为空")
+    return KEYWORDS_ROOT / safe
+
+
+def resolve_batch_dir(*, theme: str | None = None, batch_dir: str | Path | None = None) -> Path:
+    """
+    决定 Markdown 批次输出目录。
+
+    优先级：显式 ``batch_dir`` > ``theme`` 主题夹 > 默认 ``serp-batches``。
+
+    参数
+    ----
+    theme:
+        主题名；非空则指向 ``keywords/{theme}/``。
+    batch_dir:
+        调用方覆盖路径。
+
+    返回
+    ----
+    输出目录 Path。
+    """
+    if batch_dir is not None and str(batch_dir).strip():
+        return Path(batch_dir)
+    if theme and str(theme).strip():
+        return theme_batch_dir(theme)
+    return DEFAULT_BATCH_DIR
 
 
 def load_queries(
@@ -180,7 +228,7 @@ def render_batch_markdown(
     rows: list[dict[str, Any]],
 ) -> str:
     """
-    生成可放入 ``docs/seo/serp-batches/`` 的脱敏 Markdown 正文。
+    生成可放入主题夹或 ``docs/seo/serp-batches/`` 的脱敏 Markdown 正文。
 
     参数
     ----
@@ -271,7 +319,7 @@ def render_batch_markdown(
 
 def write_batch_markdown(batch_dir: Path, batch_id: str, body: str) -> Path:
     """
-    将脱敏批次 Markdown 写入 ``docs/seo/serp-batches/{batch_id}.md``。
+    将脱敏批次 Markdown 写入 ``{batch_dir}/{batch_id}.md``（主题夹或 serp-batches）。
 
     参数
     ----
