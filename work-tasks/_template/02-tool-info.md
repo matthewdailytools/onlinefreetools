@@ -48,6 +48,7 @@
 | 集群 / 优先级 | |
 | 场景与行业 | |
 | 技术（包、Tier、本地处理） | |
+| Catalog `page.style` | **新工具必须 `opts`**（勿抄 `pair`；见 `tool-creation.mdc`） |
 | Title (en) | |
 | Description 要点（步骤/公式 + 示例；≥120 字落地时再写满） | |
 | Schema | WebApplication + BreadcrumbList（与可见文案一致） |
@@ -96,6 +97,7 @@
 - 失败与边界行为：
 - 示例 Input → Output：
 - **进页样例（必填）**：默认样例数据是什么；进页是否 `loadSample()` 自动跑出真实结果；与 H2 Example 如何对齐；若不能自动执行写操作，例外理由与安全演示路径（见 `.cursor/rules/tool-creation.mdc`「进页样例须实际跑出结果」）
+- **实现防呆**：Page 用 `opts` 签名；若有 `extraBodyHtml` 模板字符串，正则写 `\\w`；B 后跑 `npm run lint:tool-page -- --slug=…`
 
 ## 页面模块清单（与 tool-creation 对齐）
 

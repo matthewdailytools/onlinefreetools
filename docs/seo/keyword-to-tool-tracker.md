@@ -46,9 +46,9 @@
 |---|---|
 | 最近更新 | 2026-08-28 |
 | 最近批次 | [keywords/cidr/2026-08-28-cidr-keyword-planner.md](./keywords/cidr/2026-08-28-cidr-keyword-planner.md)（§3.3 G 重跑选词/slug） |
-| 池内 `build` 候选 | **`measuring-magnetic-fields`**（已立项）；CIDR P0：`terraform-cidrsubnet`、`ip-range-to-cidr`、`private-cidr-ranges`；P1：`ipv6-cidr`、`cidr-cheat-sheet`；P2：`aws-vpc-cidr-planner`；收割：`cidr-to-ip-range` — **均未确认创建** |
-| 本周新建工具页 | 0 |
-| 阻塞 | CIDR slug 已重跑；等用户点名 slug 再建 work-tasks |
+| 池内 `build` 候选 | **`terraform-cidrsubnet`**（已开 `work-tasks/`，0b ready，页面未实现）；`measuring-magnetic-fields`（已立项）；其余 CIDR P0：`ip-range-to-cidr`、`private-cidr-ranges`；P1：`ipv6-cidr`、`cidr-cheat-sheet`；P2：`aws-vpc-cidr-planner`；收割：`cidr-to-ip-range` |
+| 本周新建工具页 | 0（brief only） |
+| 阻塞 | CIDR 其余 slug 仍等用户点名再建 work-tasks |
 
 ---
 
@@ -59,7 +59,7 @@
 | M0 | 漏斗文档 + 词池模板 + 策略交叉引用 + **本跟踪文件** | done | 2026-08-11 |
 | M1 | 首批 SERP 分析进池（~10 候选） | done | pilot01；含 absorb/build/defer |
 | M2 | 常态：连续 ≥2 周「抽词进池 / 周审 verdict」可复盘 | todo | |
-| M3 | （可选、另决议）对某 `build` 开 `work-tasks` 并上线满 IG 工具 | in progress | 2026-08-28 已开 `work-tasks/measuring-magnetic-fields/`（0b ready）；页面未实现 |
+| M3 | （可选、另决议）对某 `build` 开 `work-tasks` 并上线满 IG 工具 | in progress | 2026-08-28 已开 `measuring-magnetic-fields/` 与 `terraform-cidrsubnet/`（0b ready）；页面未实现 |
 | M4 | 首轮 GSC 对照（有新工具或 absorb 改动后 2–4 周） | todo | |
 | M5 | 长尾缺口策略落地：词池字段 + 漏斗/Skill 对齐；后续批次按 `competition_tier` 入池 | done | 2026-08-20；见 `2026-08-20-long-tail-gap-strategy.md` |
 | M6 | 全站工具词根 Review + §4.7 AdWords 长尾闭环写入执行方案 | done | 2026-08-20；`2026-08-20-tool-keyword-roots.*` |
@@ -75,7 +75,7 @@
 - [x] 周审（2026-08-25）：补全词池 `competition_tier`；两条原 `build` 改为 `defer`（`mid_covered`）；**未**建 work-tasks
 - [ ] 下一周审：仅当新批次出现 `long_gap`/`locale_gap` 且 `feasibility=yes` 时才标 `build`；`head` 不进进攻立项
 - [ ] **词根→AdWords**：每周 3–5 slug，用 [tool-keyword-roots](./2026-08-20-tool-keyword-roots.md) 种子进 Keyword Planner，长尾过滤后入池并 absorb（策略 §4.7）
-- [x] 若人工决定创建工具：确认属 `long_gap`/`locale_gap` 后，在决策日志写明 slug，再另开 `work-tasks/{slug}/`（2026-08-28：`measuring-magnetic-fields`）
+- [x] 若人工决定创建工具：确认属 `long_gap`/`locale_gap` 后，在决策日志写明 slug，再另开 `work-tasks/{slug}/`（2026-08-28：`measuring-magnetic-fields`；同日 `terraform-cidrsubnet`）
 
 ### P1 — 与既有页协同
 
@@ -128,6 +128,7 @@
 | 2026-08-28 | CIDR Planner ≥100 未扫词 Bing SERP×29（含 `cidr notation`）；人工复核**无新增 P0**；计算器近义→`cidr-host-range`，定义/chart→`cidr-prefix-chart`；`ipv6 cidr` 确认独立 P1。 | 用户要求补做 100+ 流量词 SERP |
 | 2026-08-28 | 选题增加兜底 **title_gap_fallback**（策略 §3.3 G）：大词被工具占位时，同簇长尾若在该长尾 SERP 的 organic title 中未出现区别词，则用该长尾作工具 slug/H1（一簇一 URL、满 IG；默认不占周进攻）。 | 用户要求分析完善该规则 |
 | 2026-08-28 | CIDR Planner **重跑选词/slug**：收割页 `cidr-to-ip-range`（H1=CIDR to IP range，title_gap）；速查 `cidr-cheat-sheet`；VPC `aws-vpc-cidr-planner`；废止 `cidr-host-range`/`cidr-prefix-chart`/`vpc-cidr-planner`。P0 仍为 terraform / ip-range-to-cidr / private-cidr-ranges。 | 用户要求按新标准重跑 |
+| 2026-08-28 | 用户点名立项 **`terraform-cidrsubnet`**：开 `work-tasks/terraform-cidrsubnet/`（0b+0i ready）。H1=Terraform cidrsubnet；cidrhost/cidrnetmask/cidrsubnets/hashicorp subnets cidr absorb 本页；不拆近义 URL；不做 VPC 规划器。 | 明确「立项」；long_gap 可交互求值缺口 |
 
 ---
 

@@ -120,6 +120,7 @@ import { renderSitemapXmlGeneratorPage } from '../pages/sitemapXmlGeneratorPage'
 import { renderSmartWebsiteColorSchemePage } from '../pages/smartWebsiteColorSchemePage';
 import { renderSplitPdfPage } from '../pages/splitPdfPage';
 import { renderSquareFeetPage } from '../pages/squareFeetPage';
+import { renderTerraformCidrsubnetPage } from '../pages/terraformCidrsubnetPage';
 import { renderTextDiffPage } from '../pages/textDiffPage';
 import { renderTimezoneConverterPage } from '../pages/timezoneConverterPage';
 import { renderUnitConverterPage } from '../pages/unitConverterPage';
@@ -257,6 +258,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'smart-website-color-scheme': (lang, defaultLang, enabled) => renderSmartWebsiteColorSchemePage({ lang, defaultLang, enabledLangs: enabled }),
 	'split-pdf': (lang, defaultLang, enabled) => renderSplitPdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'square-feet': (lang, defaultLang, enabled) => renderSquareFeetPage({ lang, defaultLang, enabledLangs: enabled }),
+	'terraform-cidrsubnet': (lang, defaultLang, enabled) => renderTerraformCidrsubnetPage({ lang, defaultLang, enabledLangs: enabled }),
 	'text-diff': (lang, defaultLang, enabled) => renderTextDiffPage({ lang, defaultLang, enabledLangs: enabled }),
 	'timezone-converter': (lang, defaultLang, enabled) => renderTimezoneConverterPage({ lang, defaultLang, enabledLangs: enabled }),
 	'unit-converter': (lang, defaultLang, enabled) => renderUnitConverterPage({ lang, defaultLang, enabledLangs: enabled }),

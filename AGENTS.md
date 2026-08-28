@@ -53,11 +53,13 @@ Prefer executable gates over prose-only checks.
 - General pre-ship check: `npm run verify`
 - Single-tool ship check: `npm run verify:tool -- --slug=<slug>`
 - Coverage only: `npm run coverage:gate -- --slug=<slug> --phase=all`
+- Page wiring / template-escape / loadSample smoke: `npm run lint:tool-page -- --slug=<slug> [--require-html]`
 - Isolation only: `TOOL_SLUG=<slug> npm run lint:tool-isolation`
 
 For new or modified tools, do not stop at `npm run merge:tools`; run
 `npm run build:site` or a wrapper that includes it so home pages, prerendered
-tool pages, sitemap, and vendor chrome are refreshed.
+tool pages, sitemap, and vendor chrome are refreshed. New tools must use
+catalog `page.style: "opts"` (not `pair`).
 
 ## Edit Boundaries
 

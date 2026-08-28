@@ -2548,6 +2548,27 @@
     "launchedAt": "2026-01-15T10:21:13+08:00"
   },
   {
+    "slug": "terraform-cidrsubnet",
+    "path": "/tools/terraform-cidrsubnet",
+    "updatedAt": "2026-08-28T10:44:02.953Z",
+    "launchedAt": "2026-08-28T10:25:00.000Z",
+    "category": "developer",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_terraform_cidrsubnet_title",
+    "homeTitleKey": "tool_terraform_cidrsubnet_title",
+    "homeDescKey": "tool_terraform_cidrsubnet_desc",
+    "faqPrefix": "tool_terraform_cidrsubnet",
+    "related": [
+      "ip-address",
+      "domain-lookup"
+    ],
+    "logo": "/icons/tools/terraform-cidrsubnet.svg",
+    "localProcessing": true,
+    "scenario": "developer",
+    "subject": "network"
+  },
+  {
     "slug": "text-diff",
     "path": "/tools/text-diff",
     "updatedAt": "2026-08-09T00:00:00.000Z",

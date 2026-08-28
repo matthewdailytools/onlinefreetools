@@ -97,7 +97,7 @@
 4. `aws-vpc-cidr-planner` / `vlsm-subnet-calculator`  
 5. `cidr-to-ip-range` 仅收割，不上进攻队列  
 
-**未**开 `work-tasks/`。开工具须用户点名 slug。
+2026-08-28 用户点名后已开 `work-tasks/terraform-cidrsubnet/`（0b ready；页面未实现）。其余 slug 仍须点名再建夹。
 
 ## 6. 历史（superseded）
 

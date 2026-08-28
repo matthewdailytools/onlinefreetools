@@ -36,7 +36,7 @@ description: >-
 | **十语**检索向独立重写（非 en 直搬） | 每语 brief 有当地 3–5 词；禁止同构灌语 |
 | **≥3 轮**核查 | `03` 轮次勾选；禁词表 |
 | IG ≥3、FAQ ≥3、How `how_item_1…n`、进页 **loadSample** | `tool-creation.mdc` Checklist |
-| Ship 前 **build:site** + **lint:seo** + **lint:tool-isolation** | `npm run verify:tool -- --slug={slug}` 或等价步骤全绿 |
+| Ship 前 **build:site** + **lint:tool-page --require-html** + **lint:seo** + **lint:tool-isolation** | `npm run verify:tool -- --slug={slug}` 或等价步骤全绿 |
 
 **禁止**：合并阶段、跳过他语、用机翻代替重写、只勾 gate 不改文案、省略 intent 审查、不跑 build 就标完成。
 
@@ -49,9 +49,9 @@ description: >-
 | 会话 | 范围 | 交接物（下一会话只读这些） |
 |---|---|---|
 | **A · Brief** | `00`–`03`、0b、0i、`coverage:gate --phase=0b` | `work-tasks/{slug}/02-tool-info.md`（`ready`）、`03-locale-briefs.md`（`briefs-ready`） |
-| **B · 工程 + 母版** | catalog 分片、`*Page.ts`、icon、en i18n、phase=2 | 上述 + `src/site/i18n/tools/{slug}/en.ts`、gate 2 绿 |
+| **B · 工程 + 母版** | catalog（**`page.style: opts`**）、`*Page.ts`、icon、en i18n、`phase=2`、`lint:tool-page` | 上述 + `en.ts`、gate 2 绿、page wiring 绿 |
 | **C · 他语** | 逐语或每批 ≤3 语、phase=4 | `03` 各语 brief + 已写分片列表 |
-| **D · Ship** | merge、build、lint、README | `npm run verify:tool -- --slug={slug}` |
+| **D · Ship** | **全量** `build:site`、`lint:tool-page --require-html`、lint、README、首页+工具 URL | `npm run verify:tool -- --slug={slug}` |
 
 同一 slug 的 Page/i18n **仍须串行**（与 coverage Skill 一致）；省 token 靠**拆会话**，不靠并行 slug 实现。
 
@@ -87,11 +87,29 @@ public/icons/tools/{slug}.svg
 | 类型 | 参考文件 | 建议只看 |
 |---|---|---|
 | 纯计算器 / 表单 | `src/pages/howToCalculateBmiPage.ts` | 渲染壳 + 表单/计算函数 |
+| **表单 + 大段 `extraBodyHtml` 脚本** | `src/pages/terraformCidrsubnetPage.ts` 或同类 | 壳 + `loadSample`；**正则须 `\\w` 双反斜杠**；catalog **`style: opts`** |
 | 文件 + Canvas / 本地处理 | `src/pages/imageCompressPage.ts` | `loadSample`、初始化末尾自动样例、处理流水线 |
 | 文本粘贴解码 | `src/pages/jwtDecoderPage.ts` | 输入区 + decode 按钮 + 错误态 |
 | 单位 / 多模式换算 | `src/pages/unitConverterPage.ts` | 模式切换 + 换算核心 |
 
-需要第二个参考时，先说明缺什么再读；**禁止**默认堆读 2×800 行 Page。
+需要第二个参考时，先说明缺什么再读；**禁止**默认堆读 2×800 行 Page。**禁止**从 `ip-address` 等 `pair` 页抄 catalog style。
+
+### 机械防呆（B/D 必跑 · 省返工 token）
+
+```bash
+# B 结束（写十语前）
+npm run lint:tool-page -- --slug={slug}
+
+# D（build 后；verify:tool 已含）
+npm run lint:tool-page -- --slug={slug} --require-html
+```
+
+- 新页 **`page.style: "opts"`**；`pair` 仅存量三页。
+- `extraBodyHtml` 模板里 `\w`/`\d` 写成 `\\w`/`\\d`。
+- **局部 prerender ≠ ship**：必须全量 `build:site`，并抽检 `/` 与 `/tools/{slug}`。
+- 首页旧、磁盘新 → Cache API；勿重写工具逻辑。
+- isolation：`docs/seo/` 允许；`__pycache__` 忽略；失败只看是否动了别的工具分片。
+- 用户一句「实现」：仍按阶段 gate，B 的 `lint:tool-page` 绿再进 C。
 
 ### 规则文档：不重复通读
 
@@ -117,9 +135,10 @@ public/icons/tools/{slug}.svg
 # 分阶段（与 coverage Skill 一致，但只跑当前 slug）
 npm run coverage:gate -- --slug={slug} --phase=0b
 npm run coverage:gate -- --slug={slug} --phase=2
+npm run lint:tool-page -- --slug={slug}          # B 后：style/opts + 源码转义
 npm run coverage:gate -- --slug={slug} --phase=4
 
-# 单工具 ship 聚合（推荐代替手跑 5 条）
+# 单工具 ship 聚合（推荐代替手跑多条；内含 build + HTML smoke）
 npm run verify:tool -- --slug={slug}
 ```
 
@@ -165,9 +184,10 @@ npm run verify:tool -- --slug={slug}
 | 只读 `i18n/tools/{slug}/` | ✅ | 读 `src/site/i18n/en.ts` |
 | Grep + 2 个 related 分片 | ✅ | 读完整 `tool-catalog.json` |
 | 参考 Page 读 100 行 | ✅ | 读 800 行「学习写法」 |
-| 用 `verify:tool` 一次 ship | ✅ | 跳过 `coverage:gate --phase=all` |
+| 用 `verify:tool` 一次 ship | ✅ | 跳过 `coverage:gate --phase=all` 或只 prerender 一页就宣称完成 |
 | 他语每批 3 语 | ✅ | 十语机翻一次灌满 |
 | lint 失败只看本 slug 行 | ✅ | 跳过 lint:seo |
+| B 后先 `lint:tool-page` | ✅ | 未过 wiring 就开九语 |
 
 ---
 

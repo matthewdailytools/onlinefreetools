@@ -60,10 +60,14 @@ npm run coverage:gate -- --slug={slug} --phase=4
 
 ```bash
 npm run coverage:gate -- --slug={slug} --phase=all
-npm run build:site && npm run lint:seo
+npm run build:site
+npm run lint:tool-page -- --slug={slug} --require-html
+npm run lint:seo
 TOOL_SLUG={slug} npm run lint:tool-isolation
+# 或：npm run verify:tool -- --slug={slug}
 ```
 
+母版阶段（phase=2 后、开他语前）另跑：`npm run lint:tool-page -- --slug={slug}`（拦 `page.style` / 模板 `\w` 被吃）。
 ## 分析提示词（每步自问）
 
 1. 用户会搜什么？主词是否落在 title/H1？
@@ -85,6 +89,6 @@ TOOL_SLUG={slug} npm run lint:tool-isolation
 - `cover-step2-{slug}` → phase=2  
 - `i18n-locales-{slug}`  
 - `cover-step4-{slug}` → phase=4  
-- `ship-{slug}` → build:site + lint:seo  
+- `ship-{slug}` → `verify:tool`（含 build:site + lint:tool-page --require-html + lint:seo + isolation）
 
 然后下一 slug。

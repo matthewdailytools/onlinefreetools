@@ -120,6 +120,7 @@ export const TOOL_SLUGS = [
 	"smart-website-color-scheme",
 	"split-pdf",
 	"square-feet",
+	"terraform-cidrsubnet",
 	"text-diff",
 	"timezone-converter",
 	"unit-converter",

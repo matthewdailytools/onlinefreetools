@@ -52,11 +52,20 @@ public/icons/tools/{slug}.svg   # 工具图标（注释优先 ASCII；见下方�
 README.md                       # 「工具清单 / Tools List」中英条目（写入前须已过清单前覆盖）
 npm run coverage:gate -- --slug={slug} --phase=all
 npm run build:site              # 全量；含 merge:tools；刷新首页 _pages + sitemap（勿只 merge）
+npm run lint:tool-page -- --slug={slug} --require-html   # style/opts + 模板转义 + loadSample
 # 显式全量别名：npm run build:site:full
 npm run lint:seo
 TOOL_SLUG={slug} npm run lint:tool-isolation
-# 本地验收：带 Accept: text/html 打开 / 与 /zh/，确认新工具出现在 latest/all-tools
+# 或一次跑完：npm run verify:tool -- --slug={slug}
+# 本地验收：带 Accept: text/html 打开 / 与 /zh/，确认新工具出现在 latest/all-tools；再打开 /tools/{slug} 确认样例结果
 ```
+
+### Ship 防呆（机械项 · 省 token）
+
+1. **勿把「只 prerender 本 slug」当成 ship 完成**——首页卡片来自 `build:site` 写的 `public/index.html` / `public/{lang}/index.html`；缺全量 build 则 `/` 无入口。
+2. 本地首页仍旧、磁盘 HTML 已新：多半是 Worker **Cache API** 旧条目；`restart:dev` 或递增/绕过缓存，**不要**为此改工具算法。
+3. `lint:tool-isolation`：`docs/seo/` 已在 allowlist；`__pycache__` / `*.pyc` 视为噪声忽略。仍失败时看是否改了**其他工具分片**；勿为绿而去 revert 无关关键词文档。
+4. 用户说「实现」时仍按 A→B→C→D 阶段 gate；B 结束须 `lint:tool-page`（源码）绿再开十语。
 
 ### Plan 多工具 todos（强制）
 
@@ -123,6 +132,25 @@ Disclaimer（YMYL 必备）
 
 **Tier 2 / WASM**：首屏不拉大块 WASM；点击后懒加载（CWV）。
 
+## Catalog `page.style`（新工具硬性）
+
+| style | Page export 形参 | 何时用 |
+|---|---|---|
+| **`opts`（默认）** | `(opts: { lang, defaultLang, enabledLangs })` | **所有新工具** |
+| `pair` | `(lang, defaultLang)` | 仅存量三页：`ip-address` / `domain-lookup` / `website-headers`；**禁止**新工具抄 `pair` |
+
+`merge:tools` 按 style 生成 registry：`pair` 会把 `(lang, defaultLang)` 直接传入 export。若 Page 实际只收 `opts` 对象，预渲染会 `Cannot read properties of undefined (reading '…_title')`。  
+验收：`npm run lint:tool-page -- --slug={slug}`（`verify:tool` 已含）。
+
+## 内联脚本 / `extraBodyHtml` 转义（硬性）
+
+Page 里若用 TypeScript **模板字符串**拼 `<script>`：
+
+- 正则字类必须写成 **双反斜杠**：`/{(\\w+)}/g`、`/\\d+/` 等，否则 `\w` 在模板里被吃掉，预渲染 HTML 变成 `/{(w+)}/`，占位替换静默失败。
+- 交付前：`lint:tool-page -- --slug=… --require-html` 会拦 HTML 里的 `/{(w+)}/`，并要求存在 `loadSample`。
+
+引擎/官方样例可先用独立 `node -e` 对照，再嵌进 `extraBodyHtml`，避免 ship 后才发现算错或 fill 失效。
+
 ## 进页样例须实际跑出结果（硬性）
 
 交互工具页除静态 H2 Example 文案外，**必须配置并可运行的样例**，且首屏进入后看到**真实处理结果**（对齐 `image-compress` / `image-crop`）：
@@ -139,28 +167,29 @@ Disclaimer（YMYL 必备）
 
 - [ ] **清单前检索覆盖优化已做**（slug/title/关键词/desc；`02`/`notes` 有覆盖表含逐词落点；见 `tool-i18n-localization.mdc` 步 0b）——**勾本 Checklist 之前必须已完成**
 - [ ] **用户意图审查已做**（`02`/`notes` 有满足/超出总判；How 先答搜索者任务；越界已划边界；见 `work-tasks-tool-brief.mdc` 步 0i）
-- [ ] `src/site/tool-catalog.d/{slug}.json` 完成且 `updatedAt` 已改为本次编辑的 ISO 时间；**新工具须写 `launchedAt`（首次上线 ISO，之后勿改）**；`related` ≥ 2；纯本地处理默认 `localProcessing: true`（边缘请求工具须 `false`，首页不显示「不上传」标签）
+- [ ] `src/site/tool-catalog.d/{slug}.json` 完成且 `updatedAt` 已改为本次编辑的 ISO 时间；**新工具须写 `launchedAt`（首次上线 ISO，之后勿改）**；**`page.style` 为 `opts`**（勿抄 pair）；`related` ≥ 2；纯本地处理默认 `localProcessing: true`（边缘请求工具须 `false`，首页不显示「不上传」标签）
 - [ ] `npm run coverage:gate -- --slug={slug} --phase=all` 通过（0b + 步2/1b + 步4/2b）
-- [ ] 已 `npm run build:site`（含 merge；`public/index.html` / `public/{lang}/index.html` 与 sitemap 已含本工具；勿只跑 `merge:tools`）
+- [ ] 已 `npm run build:site`（含 merge；`public/index.html` / `public/{lang}/index.html` 与 sitemap 已含本工具；勿只跑 `merge:tools` / 单 slug prerender）
+- [ ] `npm run lint:tool-page -- --slug={slug} --require-html` 通过（style↔签名、模板 `\\w`、HTML 含 `loadSample`）
 - [ ] **How it works 含有序操作步骤**：`how_body` 总答 + `how_item_1…n`（建议 3–6；与 UI 文案一致）；十语齐全
 - [ ] title 非参数枚举目录腔；`02` 覆盖表填满且 `03` 勾选清单前覆盖与「检索覆盖已优化」
 - [ ] **相关关键词已落入** H1 / description / FAQ / Use cases；无页上关键词列表；**每语已按当地搜法重跑**（非 en 直搬）
 - [ ] 未手改生成物（catalog.json / `i18n/{lang}.ts` / registry / i18n-tools.generated）
 - [ ] 未改其他工具分片或 `src/index.ts`（除非 `CROSS_TOOL_UPDATE=1`）
-- [ ] `TOOL_SLUG={slug} npm run lint:tool-isolation` 通过
+- [ ] `TOOL_SLUG={slug} npm run lint:tool-isolation` 通过（或 `verify:tool`；`docs/seo/` 允许；pyc 噪声忽略）
 - [ ] `public/icons/tools/{slug}.svg` 可在浏览器打开（无 xmlParseComment）；注释 ASCII
 - [ ] 10 语言 title / description / article / example 齐全（写在 `i18n/tools/{slug}/`）
 - [ ] 十语已按 `tool-i18n-localization.mdc` **稳妥常态**做检索向独立重写（非脚本同构灌语），并完成 ≥3 轮核查；「待母语抽查」已清
 - [ ] **文案生成后覆盖优化已做**（母版步 2 + 抽查语步 4）；无参数枚举 H1；次要意图有落点
 - [ ] `README.md` 工具清单已更新（中英各一条，与 catalog 一致；写入前已过清单前覆盖）
-- [ ] 本地打开 `/` 与 `/zh/`（或目标语首页），latest/all-tools 可见本工具入口
+- [ ] 本地打开 `/` 与 `/zh/`（或目标语首页），latest/all-tools 可见本工具入口（Accept: text/html）；若磁盘有卡片而线上无，查 Cache API 而非改 Page
 - [ ] **进页自动跑样例并显示真实结果**（Load sample 与自动路径一致；见上节）；例外已在 `02` 注明
-- [ ] `npm run lint:seo` 通过
+- [ ] `npm run lint:seo` 通过（只修本 slug 相关 FAIL；全站 WARN 勿顺手扩 scope）
 - [ ] IG ≥ 3 项（§3.1），PR 写明对应章节
 - [ ] 长尾：写入 Use cases/FAQ，或满足拆页条件并附理由
 - [ ] 文件/粘贴类：本地处理 FAQ 或声明
 - [ ] JSON-LD 与可见文案一致；无虚假评分
-
+- [ ] 推荐：`npm run verify:tool -- --slug={slug}` 一次跑完上述机械门禁
 ## 详细 SEO
 
 见 `seo-google-policy.mdc`、`tool-i18n-seo.mdc`、`tool-i18n-localization.mdc`、`docs/SEO_TOOL_RULES.md`、`docs/2026-07-28-google-seo-strategy-implementation.md`。

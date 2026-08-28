@@ -54,16 +54,23 @@ function changedPaths() {
 function allowlistFor(toolSlug) {
 	return [
 		`work-tasks/${toolSlug}/`,
+		`work-tasks/_template/`,
 		`src/pages/`, // only the matching Page.ts checked below
 		`src/site/tool-catalog.d/${toolSlug}.json`,
 		`src/site/i18n/tools/${toolSlug}/`,
 		`public/icons/tools/${toolSlug}.svg`,
 		`scripts/tool-modules/`,
 		`scripts/check-tool-isolation.mjs`,
+		`scripts/validate-tool-page-wiring.mjs`,
+		`scripts/verify-tool.mjs`,
 		`.cursor/rules/`,
+		`.cursor/skills/`,
 		`dev-logs/`,
 		`public/devlogs/`,
 		`README.md`,
+		`AGENTS.md`,
+		// Keyword funnel / SERP notes often land in the same session as a new tool
+		`docs/seo/`,
 		// generated / merge outputs (ok to refresh)
 		`src/site/tool-catalog.json`,
 		`src/site/i18n/en.ts`,
@@ -98,6 +105,16 @@ function allowlistFor(toolSlug) {
 }
 
 /**
+ * 工作区噪声：不视为「改了别的工具」。
+ * @param {string} norm 正斜杠路径
+ */
+function isIgnorableNoise(norm) {
+	if (norm.includes('/__pycache__/') || norm.endsWith('.pyc') || norm.endsWith('.pyo')) return true;
+	if (norm.endsWith('.DS_Store') || norm.endsWith('Thumbs.db')) return true;
+	return false;
+}
+
+/**
  * @param {string} file
  * @param {string} toolSlug
  */
@@ -122,7 +139,10 @@ function isAllowed(file, toolSlug) {
 	if (norm.startsWith('public/icons/tools/') && norm !== `public/icons/tools/${toolSlug}.svg`) {
 		return false;
 	}
-	if (norm.startsWith('work-tasks/') && !norm.startsWith(`work-tasks/${toolSlug}/`)) {
+	if (norm.startsWith('work-tasks/')) {
+		if (norm.startsWith(`work-tasks/${toolSlug}/`) || norm.startsWith('work-tasks/_template/')) {
+			return true;
+		}
 		return false;
 	}
 
@@ -146,14 +166,19 @@ if (!slug) {
 }
 
 const changed = changedPaths();
-const bad = changed.filter((f) => !isAllowed(f, slug));
+const considered = changed.filter((f) => !isIgnorableNoise(f.replace(/\\/g, '/')));
+const noise = changed.length - considered.length;
+const bad = considered.filter((f) => !isAllowed(f, slug));
 
 if (bad.length) {
 	console.error(`lint:tool-isolation FAILED for slug=${slug}`);
 	console.error('These paths are outside the single-tool allowlist:');
 	for (const f of bad) console.error(`  - ${f}`);
 	console.error('\nFix: move edits into the tool shard, or set CROSS_TOOL_UPDATE=1 if you explicitly need related-tool changes.');
+	console.error('Note: docs/seo/ is allowlisted; __pycache__ / *.pyc are ignored as noise.');
 	process.exit(1);
 }
 
-console.log(`lint:tool-isolation OK for slug=${slug} (${changed.length} changed paths)`);
+console.log(
+	`lint:tool-isolation OK for slug=${slug} (${considered.length} paths${noise ? `, ignored noise=${noise}` : ''})`
+);

@@ -43,6 +43,7 @@
     "coverage:gate": "node scripts/validate-tool-coverage-rounds.mjs",
     "lint:vendor": "node scripts/validate-vendor-tracked.mjs",
     "lint:tool-isolation": "node scripts/check-tool-isolation.mjs",
+    "lint:tool-page": "node scripts/validate-tool-page-wiring.mjs",
     "verify": "npm run build:site && npm run lint:seo && npm run lint:vendor && npm run lint:taxonomy",
     "verify:full": "npm run build:site:full && npm run lint:seo && npm run lint:vendor && npm run lint:taxonomy",
     "stage:tools:changed": "node scripts/commit-changed-tools.mjs --changed-tools --stage-only",

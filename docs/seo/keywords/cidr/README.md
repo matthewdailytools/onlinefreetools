@@ -24,4 +24,6 @@
 | 收割 | `cidr-to-ip-range` | CIDR to IP range（title_gap_fallback） |
 
 已废止命名：`cidr-host-range`、`cidr-prefix-chart`、`vpc-cidr-planner`。
-
+
+2026-08-28：用户点名后已开 `work-tasks/terraform-cidrsubnet/`（brief 0b ready；页面未实现）。
+

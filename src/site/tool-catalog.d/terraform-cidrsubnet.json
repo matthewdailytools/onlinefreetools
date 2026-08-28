@@ -1,0 +1,26 @@
+{
+  "slug": "terraform-cidrsubnet",
+  "path": "/tools/terraform-cidrsubnet",
+  "updatedAt": "2026-08-28T10:44:02.953Z",
+  "launchedAt": "2026-08-28T10:25:00.000Z",
+  "category": "developer",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_terraform_cidrsubnet_title",
+  "homeTitleKey": "tool_terraform_cidrsubnet_title",
+  "homeDescKey": "tool_terraform_cidrsubnet_desc",
+  "faqPrefix": "tool_terraform_cidrsubnet",
+  "related": [
+    "ip-address",
+    "domain-lookup"
+  ],
+  "logo": "/icons/tools/terraform-cidrsubnet.svg",
+  "page": {
+    "module": "../pages/terraformCidrsubnetPage",
+    "export": "renderTerraformCidrsubnetPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "developer",
+  "subject": "network"
+}
