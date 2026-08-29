@@ -3,6 +3,10 @@
   "path": "/tools/how-to-calculate-age",
   "updatedAt": "2026-08-09T00:00:00.000Z",
   "category": "calculator",
+  "primaryTopic": "time-calendar",
+  "secondaryTopics": [
+    "personal-money"
+  ],
   "featured": false,
   "ymyl": false,
   "i18nKey": "tool_age_title",

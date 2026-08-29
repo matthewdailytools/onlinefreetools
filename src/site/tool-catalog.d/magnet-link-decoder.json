@@ -3,6 +3,10 @@
   "path": "/tools/magnet-link-decoder",
   "updatedAt": "2026-08-14T00:00:00.000Z",
   "category": "developer",
+  "primaryTopic": "files-archives",
+  "secondaryTopics": [
+    "dev-data"
+  ],
   "featured": true,
   "ymyl": false,
   "i18nKey": "tool_magnet_link_decoder_title",

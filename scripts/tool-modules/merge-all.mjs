@@ -135,6 +135,54 @@ function resolveLaunchedAt(shard, previousLaunchedAt) {
 /**
  * Merge catalog shards.
  */
+/** 合法 primaryTopic / secondaryTopics（与 src/site/topics.ts 同步）。 */
+const TOOL_TOPIC_IDS = new Set([
+	'health-body',
+	'personal-money',
+	'business-finance',
+	'math-stats',
+	'geometry-measure',
+	'science-physics',
+	'home-diy',
+	'time-calendar',
+	'pdf-docs',
+	'image-media',
+	'design-brand',
+	'seo-growth',
+	'network-ip',
+	'dev-data',
+	'security-ids',
+	'files-archives',
+]);
+
+/**
+ * 校验分片主题字段：primaryTopic 必填且合法；secondaryTopics 可选且不含 primary。
+ * @param {Record<string, any>} shard
+ */
+function assertTopicFields(shard) {
+	const slug = shard?.slug || '(unknown)';
+	const primary = shard?.primaryTopic;
+	if (typeof primary !== 'string' || !TOOL_TOPIC_IDS.has(primary)) {
+		throw new Error(`catalog shard ${slug}: missing/invalid primaryTopic (${primary})`);
+	}
+	const secondary = shard?.secondaryTopics;
+	if (secondary == null) return;
+	if (!Array.isArray(secondary)) {
+		throw new Error(`catalog shard ${slug}: secondaryTopics must be an array`);
+	}
+	for (const id of secondary) {
+		if (!TOOL_TOPIC_IDS.has(id)) {
+			throw new Error(`catalog shard ${slug}: invalid secondaryTopics entry (${id})`);
+		}
+		if (id === primary) {
+			throw new Error(`catalog shard ${slug}: secondaryTopics must not repeat primaryTopic`);
+		}
+	}
+}
+
+/**
+ * Merge catalog shards.
+ */
 function mergeCatalog() {
 	const shards = loadCatalogShards();
 	if (!shards.length) {
@@ -142,6 +190,7 @@ function mergeCatalog() {
 	}
 	const previousLaunchedAt = loadPreviousLaunchedAt();
 	const publicCatalog = shards.map((shard) => {
+		assertTopicFields(shard);
 		const entry = toPublicCatalogEntry(shard);
 		entry.launchedAt = resolveLaunchedAt(shard, previousLaunchedAt);
 		return entry;

@@ -3,6 +3,10 @@
   "path": "/tools/unix-timestamp",
   "updatedAt": "2026-08-09T00:00:00.000Z",
   "category": "developer",
+  "primaryTopic": "time-calendar",
+  "secondaryTopics": [
+    "dev-data"
+  ],
   "featured": true,
   "ymyl": false,
   "i18nKey": "tool_unix_timestamp_title",

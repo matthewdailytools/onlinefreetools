@@ -3,6 +3,7 @@
   "path": "/tools/how-to-calculate-date-difference",
   "updatedAt": "2026-08-09T00:00:00.000Z",
   "category": "calculator",
+  "primaryTopic": "time-calendar",
   "featured": false,
   "ymyl": false,
   "i18nKey": "tool_date_difference_title",

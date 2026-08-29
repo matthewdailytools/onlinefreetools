@@ -11,6 +11,7 @@ alwaysApply: false
 - Node.js LTS
 - `npm i -g wrangler`（或使用项目 devDependency）
 - 远程快速 `upload:r2`：`cp .env.example .env`，按 [`ops/worker-r2-ops.md`](../../ops/worker-r2-ops.md) **§3.1** 填写 R2 S3 三项（Account ID + Access/Secret）
+- 本机直连 Cloudflare 超时：见同文档 **§3.1.5**（`R2_HTTPS_PROXY=socks5h://127.0.0.1:8888`；`ssh -D` 须 SOCKS，勿写 `http://`）
 
 ## 本地开发（启停）
 

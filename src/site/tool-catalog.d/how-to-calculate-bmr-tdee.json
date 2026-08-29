@@ -3,6 +3,7 @@
   "path": "/tools/how-to-calculate-bmr-tdee",
   "updatedAt": "2026-08-09T00:00:00.000Z",
   "category": "calculator",
+  "primaryTopic": "health-body",
   "featured": false,
   "ymyl": true,
   "i18nKey": "tool_bmr_tdee_title",

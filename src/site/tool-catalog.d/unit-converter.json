@@ -3,6 +3,10 @@
   "path": "/tools/unit-converter",
   "updatedAt": "2026-08-09T00:00:00.000Z",
   "category": "calculator",
+  "primaryTopic": "geometry-measure",
+  "secondaryTopics": [
+    "home-diy"
+  ],
   "featured": false,
   "ymyl": false,
   "i18nKey": "tool_unit_converter_title",

@@ -3,6 +3,10 @@
   "path": "/tools/color-from-image",
   "updatedAt": "2026-08-09T00:00:00.000Z",
   "category": "image",
+  "primaryTopic": "image-media",
+  "secondaryTopics": [
+    "design-brand"
+  ],
   "featured": true,
   "ymyl": false,
   "i18nKey": "tool_color_from_image_title",

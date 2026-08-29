@@ -3,6 +3,10 @@
   "path": "/tools/schema-jsonld-generator",
   "updatedAt": "2026-08-20T12:50:00.583Z",
   "category": "developer",
+  "primaryTopic": "seo-growth",
+  "secondaryTopics": [
+    "dev-data"
+  ],
   "featured": false,
   "ymyl": false,
   "i18nKey": "tool_schema_title",

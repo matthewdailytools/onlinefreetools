@@ -87,5 +87,26 @@ const ar: SiteLangDict = {
   unit_meters: 'أمتار',
   url_label: 'الرابط',
   url_placeholder: 'مثال: https://example.com',
+  // --- topic labels (auto) ---
+  nav_topics: "المواضيع",
+  topics_view_all: "عرض الكل في هذا الموضوع",
+  topic_health_body: "الصحة والجسم",
+  topic_personal_money: "المال الشخصي",
+  topic_business_finance: "مالية الأعمال",
+  topic_math_stats: "رياضيات وإحصاء",
+  topic_geometry_measure: "هندسة وقياس",
+  topic_science_physics: "علوم وفيزياء",
+  topic_home_diy: "المنزل وDIY",
+  topic_time_calendar: "الوقت والتقويم",
+  topic_pdf_docs: "PDF والمستندات",
+  topic_image_media: "الصور والوسائط",
+  topic_design_brand: "التصميم والعلامة",
+  topic_seo_growth: "SEO والنمو",
+  topic_network_ip: "الشبكة وIP",
+  topic_dev_data: "التطوير والبيانات",
+  topic_security_ids: "الأمان والمعرّفات",
+  topic_files_archives: "الملفات والأرشيف",
+  // --- end topic labels ---
+
 };
 export default ar;

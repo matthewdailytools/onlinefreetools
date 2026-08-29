@@ -1,6 +1,58 @@
 import type { SiteLang } from '../../site/i18n';
+import { t } from '../../site/i18n';
+import { getToolBySlug } from '../../site/tools';
+import { TOPIC_I18N_KEYS, topicLeafPath } from '../../site/topics';
 
 const SITE_BASE_URL = 'https://onlinefreetools.org';
+const DEFAULT_LANG: SiteLang = 'en';
+
+export const escapeHtml = (s: string) =>
+	s
+		.replaceAll('&', '&amp;')
+		.replaceAll('<', '&lt;')
+		.replaceAll('>', '&gt;')
+		.replaceAll('"', '&quot;')
+		.replaceAll("'", '&#39;');
+
+/**
+ * 为工具路径加语言前缀（默认语无前缀）。
+ * @param lang 当前语言
+ * @param pathname 路径
+ * @param defaultLang 默认语言
+ */
+const withLangPrefix = (lang: SiteLang, pathname: string, defaultLang: SiteLang) => {
+	const safe = pathname.startsWith('/') ? pathname : `/${pathname}`;
+	return lang === defaultLang ? safe : `/${lang}${safe}`;
+};
+
+/**
+ * 工具页可见面包屑：Home → primary topic → 工具名。
+ * @param lang 当前语言
+ * @param defaultLang 默认语言
+ * @param toolSlug 工具 slug
+ * @param toolName 工具显示名
+ */
+const renderAutoToolBreadcrumb = (
+	lang: SiteLang,
+	defaultLang: SiteLang,
+	toolSlug: string,
+	toolName: string
+) => {
+	const tool = getToolBySlug(toolSlug);
+	const topic = tool?.primaryTopic;
+	if (!topic || !TOPIC_I18N_KEYS[topic]) return '';
+	const topicLabel = t(lang, TOPIC_I18N_KEYS[topic].labelKey as keyof typeof import('../../site/i18n/en').default);
+	const homeHref = withLangPrefix(lang, '/', defaultLang);
+	const topicHref = withLangPrefix(lang, topicLeafPath(topic), defaultLang);
+	return `
+<nav class="mb-3 small tool-topic-breadcrumb" aria-label="breadcrumb">
+  <ol class="breadcrumb mb-0">
+    <li class="breadcrumb-item"><a href="${escapeHtml(homeHref)}">${escapeHtml(t(lang, 'nav_home'))}</a></li>
+    <li class="breadcrumb-item"><a href="${escapeHtml(topicHref)}">${escapeHtml(topicLabel)}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">${escapeHtml(toolName)}</li>
+  </ol>
+</nav>`;
+};
 
 /**
  * Clarity：load 后再空闲注入，避免与首屏同域资源抢连接（外网不可达时也不拖慢页面）。
@@ -35,14 +87,6 @@ const FONT_CSS = '/vendor/fonts/plus-jakarta-sans.css';
  * 合法值：teal | green | amber | navy；默认 teal。
  */
 const THEME_BOOT_SCRIPT = `<script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>`;
-
-export const escapeHtml = (s: string) =>
-	s
-		.replaceAll('&', '&amp;')
-		.replaceAll('<', '&lt;')
-		.replaceAll('>', '&gt;')
-		.replaceAll('"', '&quot;')
-		.replaceAll("'", '&#39;');
 
 export const absoluteUrl = (pathnameOrUrl: string) => {
 	try {
@@ -93,6 +137,22 @@ export const renderLayout = (opts: {
 		),
 		`<link rel="alternate" hreflang="x-default" href="${escapeHtml(xDefaultHref)}" />`,
 	].join('\n  ');
+
+	/**
+	 * 工具页自动注入 primary topic 可见面包屑（避免改遍 132 个 Page 文件）。
+	 * 若内容已含 tool-topic-breadcrumb 则跳过，防止重复。
+	 */
+	let mainContentHtml = opts.contentHtml;
+	const toolSlugMatch = opts.canonicalPath.match(/\/tools\/([^/]+)\/?$/);
+	if (toolSlugMatch && !opts.contentHtml.includes('tool-topic-breadcrumb')) {
+		const slug = toolSlugMatch[1];
+		const tool = getToolBySlug(slug);
+		if (tool?.primaryTopic) {
+			const toolName = t(opts.lang, tool.i18nKey as keyof typeof import('../../site/i18n/en').default);
+			mainContentHtml =
+				renderAutoToolBreadcrumb(opts.lang, DEFAULT_LANG, slug, toolName) + opts.contentHtml;
+		}
+	}
 
 	const sidebarAutoClose = opts.sidebarAutoCloseSelector
 		? `
@@ -175,7 +235,7 @@ export const renderLayout = (opts: {
   ${opts.headerHtml}
   <div class="layout sidebar-mobile-collapsed" id="layoutRoot">
     ${opts.sidebarHtml}
-    <main id="content" class="p-4">${opts.contentHtml}</main>
+    <main id="content" class="p-4">${mainContentHtml}</main>
   </div>
   ${opts.footerHtml}
   ${opts.extraBodyHtml || ''}

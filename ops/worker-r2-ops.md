@@ -16,7 +16,8 @@
 | `git push` | 本机 → GitHub | Cloudflare **拉仓库**部署 Worker + Assets |
 | `npm run verify:r2:live` | 本机（CF 成功后） | 生产 `/api/ops/pages-build` 与 R2 对齐 |
 
-紧急本机直发 Worker：`npm run deploy:worker-only`（或 `node scripts/deploy-site.mjs --wrangler-deploy`）。
+紧急本机直发 Worker：`npm run deploy:worker-only`（或 `node scripts/deploy-site.mjs --wrangler-deploy`）。  
+本机直连 Cloudflare 超时（`ETIMEDOUT 172.64.*`）：**§3.1.5** / **§9.2**（`R2_HTTPS_PROXY=socks5h://127.0.0.1:8888`）。
 
 ---
 
@@ -91,6 +92,7 @@ npx wrangler r2 bucket create onlinefreetools-pages-preview   # 可选
 | `R2_ACCESS_KEY_ID` / `AWS_ACCESS_KEY_ID` | — | R2 S3 API Access Key |
 | `R2_SECRET_ACCESS_KEY` / `AWS_SECRET_ACCESS_KEY` | — | R2 S3 API Secret |
 | `R2_S3_ENDPOINT` / `AWS_ENDPOINT_URL` | `https://{accountId}.r2.cloudflarestorage.com` | 可选覆盖 |
+| `R2_HTTPS_PROXY` / `HTTPS_PROXY` / `HTTP_PROXY` / `ALL_PROXY` | 空（直连） | 本机经代理访问 R2；`ssh -D 8888` 用 `socks5h://127.0.0.1:8888`（优先 `R2_HTTPS_PROXY`） |
 | `PAGES_CACHE_VERSION` | `wrangler.jsonc` vars | 发版递增以失效边缘 HTML 缓存 |
 | `PAGES_R2_PREFIX` | 空 | 可选 R2 key 前缀（如 `builds/abc/`） |
 
@@ -110,6 +112,7 @@ npx wrangler r2 bucket create onlinefreetools-pages-preview   # 可选
 | `R2_PAGES_BUCKET` | 可选 | Dashboard → **R2** → 桶列表中的名称 | 默认 `onlinefreetools-pages`（与 `wrangler.jsonc` `r2_buckets` 一致）；本机一般不用改 |
 | `R2_UPLOAD_CONCURRENCY` | 可选 | — | 本机调并发；S3 默认 `32`，wrangler 回退默认 `6` |
 | `R2_S3_ENDPOINT` | 可选 | 默认拼 `https://<AccountID>.r2.cloudflarestorage.com`（见 [R2 Authentication](https://developers.cloudflare.com/r2/api/tokens/)）；EU / FedRAMP 管辖桶用对应 jurisdiction endpoint | 仅当桶有 jurisdiction 或要用自定义 endpoint 时写入 `.env` |
+| `R2_HTTPS_PROXY` | 可选 | — | 本机 HTTP/SOCKS 隧道，见 **§3.1.3** |
 
 兼容别名（一般不必写）：`CLOUDFLARE_ACCOUNT_ID`、`AWS_ACCESS_KEY_ID`、`AWS_SECRET_ACCESS_KEY`、`AWS_ENDPOINT_URL`。
 
@@ -155,6 +158,8 @@ R2_SECRET_ACCESS_KEY=yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy
 # 可选
 # R2_PAGES_BUCKET=onlinefreetools-pages
 # R2_UPLOAD_CONCURRENCY=32
+# 本机直连 Cloudflare 超时见 §3.1.5：
+# R2_HTTPS_PROXY=socks5h://127.0.0.1:8888
 ```
 
 校验脚本是否读到 S3 凭据（应走 s3，而不是 wrangler warn）：
@@ -182,7 +187,65 @@ npm run upload:r2:full         # 强制全量（S3 并发，通常数十秒级�
 - 新增对象：远端 meta 没有该 key 的 hash，视为需要上传。
 - git 数据不参与此判断：未 commit 的修改、最新 commit、最新 push 都不会触发上传；真正的上传依据是本地 `.html.gz` 内容 hash。
 
-#### 3.1.5 少量工具改动路径
+#### 3.1.5 本机代理 / SSH 隧道（直连 Cloudflare 超时）
+
+国内或受限网络下，`upload:r2` / `verify:r2` 可能在 TCP 阶段失败：
+
+```text
+AggregateError [ETIMEDOUT]
+  connect ETIMEDOUT 172.64.*.*:443
+```
+
+这通常**不是** `.env` 凭据错误（日志已出现 `transport=s3` 时凭据已读到），而是本机无法直连 `*.r2.cloudflarestorage.com`（Cloudflare Anycast）。
+
+`scripts/lib/r2-s3-client.mjs` 会为 S3 客户端注入代理（AWS SDK **默认不读** `HTTPS_PROXY`）。读取顺序：
+
+1. `R2_HTTPS_PROXY`（推荐，专给 R2，避免被 Cursor 等注入的失效 `HTTPS_PROXY` 覆盖）
+2. `HTTPS_PROXY` / `https_proxy`
+3. `HTTP_PROXY` / `http_proxy`
+4. `ALL_PROXY` / `all_proxy`
+
+协议：
+
+| 本机隧道类型 | 典型命令 | `.env` / 命令行 URL |
+|---|---|---|
+| SSH 动态端口（SOCKS） | `ssh -D 8888 user@jump` | **`socks5h://127.0.0.1:8888`**（注意 `socks5h`，DNS 也走代理） |
+| HTTP CONNECT 代理 | Clash / Surge HTTP 端口 | `http://127.0.0.1:7890` |
+| 系统 TUN / VPN | 客户端开增强模式 | 通常**不必**设代理变量 |
+
+**操作步骤（以本机 `8888` = `ssh -D` 为例）**：
+
+```bash
+# 1) 确认隧道在听
+nc -z 127.0.0.1 8888 && echo ok
+
+# 2) 确认是 SOCKS（HTTP 会 CONNECT aborted）
+curl -I --connect-timeout 8 -x socks5h://127.0.0.1:8888 https://cloudflare.com
+# 期望：有 HTTP 响应头（如 301/200），不是超时 / CONNECT aborted
+
+# 3) 单次命令（优先）
+R2_HTTPS_PROXY=socks5h://127.0.0.1:8888 npm run upload:r2
+R2_HTTPS_PROXY=socks5h://127.0.0.1:8888 npm run verify:r2
+R2_HTTPS_PROXY=socks5h://127.0.0.1:8888 npm run deploy
+
+# 或写入仓库根 .env（持久；勿提交）
+# R2_HTTPS_PROXY=socks5h://127.0.0.1:8888
+
+# 4) 确认脚本吃到了代理
+R2_PROXY_DEBUG=1 R2_HTTPS_PROXY=socks5h://127.0.0.1:8888 npm run upload:r2 -- --dry-run
+# stderr 期望：[r2-s3] using proxy=socks5h://127.0.0.1:8888
+```
+
+**常见误用**：
+
+- 把 SOCKS 写成 `http://127.0.0.1:8888` → CONNECT aborted 或仍超时。
+- 只开了浏览器代理、未设 `R2_HTTPS_PROXY` / 未开 TUN → Node 仍直连 CF IP。
+- Cursor 注入了已关闭的 `HTTPS_PROXY=http://127.0.0.1:xxxxx` → 用 **`R2_HTTPS_PROXY`** 覆盖，或 `unset HTTPS_PROXY HTTP_PROXY ALL_PROXY` 后再 export 正确值。
+- `--wrangler` 回退路径**不**走本节 S3 代理注入；网络不通时请用默认 S3 + `R2_HTTPS_PROXY`，不要强制 wrangler。
+
+本地 `upload:r2:local` / `start:dev` 写模拟桶，**不需要**连 Cloudflare，不必设代理。
+
+#### 3.1.6 少量工具改动路径
 
 适用：只新增或修改少量工具（catalog shard / i18n shard / page module / icon / work-task）。构建仍全量；上传会根据 hash 只传变化对象。
 
@@ -389,6 +452,7 @@ SEO / Skill / brief / 分片流程**不变**（见 `tool-creation.mdc`、`tool-c
 | `verify:r2:live` aligned=false | Worker vars 与 R2 meta 不一致 | 先 upload，再 push 含正确 `PAGES_CACHE_VERSION` 的 commit |
 | Worker 包又接近 3MB | 误把 `toolPageRegistry` / `*Page.ts` import 进 Worker | 入口只用 `toolSlugs` + R2 |
 | `upload:r2` 报 **403 Forbidden** | 账号/权限/桶；或 Object R/W token | 见 §9.1 |
+| `upload:r2` **ETIMEDOUT** 连 `172.64.*:443` | 本机直连 Cloudflare 不通 | 见 **§9.2** / **§3.1.5**；`R2_HTTPS_PROXY=socks5h://127.0.0.1:8888` |
 | `upload:r2` 很慢 | 未配 S3、回退 wrangler put；或首次无 meta / 无 `fileHashes` 自动扩大上传 | 配 §3.1 S3 凭据；确认 `_meta/pages-build.json` 有 `fileHashes`；或调 `R2_UPLOAD_CONCURRENCY` |
 | `Credential access key has length 31, should be 32` | `.env` 里 `R2_ACCESS_KEY_ID` 少复制/多删了一位 | 核对长度为 **32**；或 Dashboard 重新创建 R2 token 再写入 `.env`（见 §3.1.2） |
 | R2 缺 `_meta/pages-build.json` | 未用新版 upload | `upload:r2`；看 `.cache/pages-build.json` |
@@ -427,6 +491,23 @@ npx wrangler deploy --dry-run
 # 期望 Total Upload 约数百 KiB 级，gzip 远小于 3MB
 ```
 
+### 9.2 `upload:r2` → ETIMEDOUT（连不上 Cloudflare）
+
+症状：日志已有 `transport=s3` / `files=…`，随后：
+
+```text
+AggregateError [ETIMEDOUT]: connect ETIMEDOUT 172.64.x.x:443
+```
+
+| 检查 | 命令 / 动作 |
+|---|---|
+| 本机能否直连 CF | `curl -I --connect-timeout 8 https://cloudflare.com`（超时 → 需代理/TUN） |
+| 本地隧道是否 SOCKS | `curl -I -x socks5h://127.0.0.1:8888 https://cloudflare.com` |
+| 脚本是否吃到代理 | `R2_PROXY_DEBUG=1 R2_HTTPS_PROXY=socks5h://127.0.0.1:8888 npm run upload:r2 -- --dry-run` |
+| 协议是否写错 | SOCKS 必须 `socks5h://`；`http://127.0.0.1:8888` 对 `ssh -D` 无效 |
+
+完整步骤与变量优先级见 **§3.1.5**。
+
 ---
 
 ## 10. 检查清单（复制用）
@@ -435,6 +516,7 @@ npx wrangler deploy --dry-run
 
 - [ ] `wrangler login` 账号正确；`whoami` Account ID 已写入 `.env` 的 `R2_ACCOUNT_ID`  
 - [ ] 已按 §3.1.2 创建 R2 Object Read & Write token，Access/Secret 写入 `.env`（`upload:r2 -- --dry-run` 显示 `transport=s3`）  
+- [ ] 若本机直连 Cloudflare 超时：已按 §3.1.5 配置 `R2_HTTPS_PROXY`（如 `socks5h://127.0.0.1:8888`）并通过 `R2_PROXY_DEBUG=1` 确认  
 - [ ] 已创建 `onlinefreetools-pages`（及可选 preview）  
 - [ ] GitHub ↔ Cloudflare 绑定；自定义域绑在同一 Worker  
 

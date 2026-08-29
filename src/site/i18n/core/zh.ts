@@ -96,5 +96,26 @@ const zh: SiteLangDict = {
   url_placeholder: '例如：https://example.com',
   what_is_ip_content: '互联网协议（IP）地址是分配给连接到计算机网络的每个设备的数字标签。它有两个主要功能：主机或网络接口识别和位置寻址。目前有两个版本在使用：IPv4 和 IPv6。',
   what_is_ip_title: '什么是 IP 地址？',
+  // --- topic labels (auto) ---
+  nav_topics: "主题",
+  topics_view_all: "查看本主题全部工具",
+  topic_health_body: "健康与身体",
+  topic_personal_money: "个人理财",
+  topic_business_finance: "经营财务",
+  topic_math_stats: "数学与统计",
+  topic_geometry_measure: "几何与度量",
+  topic_science_physics: "科学与物理",
+  topic_home_diy: "家装与 DIY",
+  topic_time_calendar: "时间与日历",
+  topic_pdf_docs: "PDF 与文档",
+  topic_image_media: "图片与媒体",
+  topic_design_brand: "设计与品牌",
+  topic_seo_growth: "SEO 与增长",
+  topic_network_ip: "网络与 IP",
+  topic_dev_data: "开发与数据",
+  topic_security_ids: "安全与标识",
+  topic_files_archives: "文件与压缩包",
+  // --- end topic labels ---
+
 };
 export default zh;

@@ -3,6 +3,7 @@
   "path": "/tools/domain-lookup",
   "updatedAt": "2026-08-09T00:00:00.000Z",
   "category": "developer",
+  "primaryTopic": "network-ip",
   "featured": true,
   "ymyl": false,
   "i18nKey": "tool_domain_lookup_title",

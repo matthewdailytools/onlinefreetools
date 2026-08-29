@@ -6,6 +6,7 @@ import type { SiteLang } from '../../site/i18n';
 import { t } from '../../site/i18n';
 import { escapeHtml } from './layout';
 import { getToolBySlug, getToolLogoUrl, type ToolPageMeta } from '../../site/tools';
+import { TOPIC_I18N_KEYS, topicLeafPath } from '../../site/topics';
 
 /** 站长咨询 / 反馈邮箱（公开联系方式） */
 const TOOL_CONTACT_EMAIL = 'dailyonetools@outlook.com';
@@ -531,6 +532,35 @@ export const renderToolReferencesSection = (opts: {
 };
 
 /**
+ * 可见面包屑：Home → primary topic hub → 当前工具。
+ * @param opts.lang 当前语言
+ * @param opts.defaultLang 默认语言
+ * @param opts.tool 工具元数据（须含 primaryTopic）
+ * @param opts.toolName 工具显示名（与 H1 一致）
+ */
+export const renderToolPrimaryTopicBreadcrumb = (opts: {
+	lang: SiteLang;
+	defaultLang: SiteLang;
+	tool: ToolPageMeta;
+	toolName: string;
+}) => {
+	const topic = opts.tool.primaryTopic;
+	if (!topic || !TOPIC_I18N_KEYS[topic]) return '';
+	const labelKey = TOPIC_I18N_KEYS[topic].labelKey;
+	const topicLabel = t(opts.lang, labelKey as keyof typeof import('../../site/i18n/en').default);
+	const homeHref = withToolLangPrefix(opts.lang, '/', opts.defaultLang);
+	const topicHref = withToolLangPrefix(opts.lang, topicLeafPath(topic), opts.defaultLang);
+	return `
+<nav class="mb-3 small tool-topic-breadcrumb" aria-label="breadcrumb">
+  <ol class="breadcrumb mb-0">
+    <li class="breadcrumb-item"><a href="${escapeHtml(homeHref)}">${escapeHtml(t(opts.lang, 'nav_home'))}</a></li>
+    <li class="breadcrumb-item"><a href="${escapeHtml(topicHref)}">${escapeHtml(topicLabel)}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">${escapeHtml(opts.toolName)}</li>
+  </ol>
+</nav>`;
+};
+
+/**
  * 生成 BreadcrumbList + WebApplication JSON-LD（与可见内容一致）。
  */
 export const buildToolJsonLd = (opts: {
@@ -544,29 +574,14 @@ export const buildToolJsonLd = (opts: {
 	const base = 'https://onlinefreetools.org';
 	const pageUrl = `${base}${opts.canonicalPath}`;
 	const homePath = withToolLangPrefix(opts.lang, '/', opts.defaultLang);
-	/** 面包屑分类文案 i18n 键（与顶栏/首页分类一致）。 */
-	const categoryLabelKey =
-		opts.tool.category === 'calculator'
-			? 'tool_category_calculator'
-			: opts.tool.category === 'image'
-				? 'tool_category_image'
-				: opts.tool.category === 'design'
-					? 'tool_category_design'
-					: opts.tool.category === 'pdf'
-						? 'tool_category_pdf'
-						: 'tool_category_developer';
-	const categoryLabel = t(opts.lang, categoryLabelKey as keyof typeof import('../../site/i18n/en').default);
-	/** 首页分类锚点（breadcrumb 第二级链到首页分区）。 */
-	const categoryAnchor =
-		opts.tool.category === 'calculator'
-			? 'cat-calculator'
-			: opts.tool.category === 'image'
-				? 'cat-image'
-				: opts.tool.category === 'design'
-					? 'cat-design'
-					: opts.tool.category === 'pdf'
-						? 'cat-pdf'
-						: 'cat-dev';
+	const topic = opts.tool.primaryTopic;
+	const topicMeta = topic ? TOPIC_I18N_KEYS[topic] : undefined;
+	const topicLabel = topicMeta
+		? t(opts.lang, topicMeta.labelKey as keyof typeof import('../../site/i18n/en').default)
+		: '';
+	const topicPath = topic
+		? withToolLangPrefix(opts.lang, topicLeafPath(topic), opts.defaultLang)
+		: homePath;
 	/** Schema.org applicationCategory：与可见分类语义对齐。 */
 	const applicationCategory =
 		opts.tool.category === 'developer'
@@ -576,23 +591,20 @@ export const buildToolJsonLd = (opts: {
 				: opts.tool.category === 'design'
 					? 'DesignApplication'
 					: 'UtilitiesApplication';
-	const data = {
-		'@context': 'https://schema.org',
-		'@graph': [
-			{
-				'@type': 'BreadcrumbList',
-				itemListElement: [
-					{
-						'@type': 'ListItem',
-						position: 1,
-						name: t(opts.lang, 'nav_home'),
-						item: `${base}${homePath === '/' ? '/' : homePath}`,
-					},
+	const breadcrumbItems = [
+		{
+			'@type': 'ListItem',
+			position: 1,
+			name: t(opts.lang, 'nav_home'),
+			item: `${base}${homePath === '/' ? '/' : homePath}`,
+		},
+		...(topicMeta
+			? [
 					{
 						'@type': 'ListItem',
 						position: 2,
-						name: categoryLabel,
-						item: `${base}${homePath === '/' ? '/' : homePath}#${categoryAnchor}`,
+						name: topicLabel,
+						item: `${base}${topicPath}`,
 					},
 					{
 						'@type': 'ListItem',
@@ -600,7 +612,22 @@ export const buildToolJsonLd = (opts: {
 						name: opts.name,
 						item: pageUrl,
 					},
-				],
+				]
+			: [
+					{
+						'@type': 'ListItem',
+						position: 2,
+						name: opts.name,
+						item: pageUrl,
+					},
+				]),
+	];
+	const data = {
+		'@context': 'https://schema.org',
+		'@graph': [
+			{
+				'@type': 'BreadcrumbList',
+				itemListElement: breadcrumbItems,
 			},
 			{
 				'@type': 'WebApplication',

@@ -3,6 +3,7 @@
   "path": "/tools/how-to-calculate-heart-rate",
   "updatedAt": "2026-08-09T00:00:00.000Z",
   "category": "calculator",
+  "primaryTopic": "health-body",
   "featured": false,
   "ymyl": true,
   "i18nKey": "tool_heart_rate_title",

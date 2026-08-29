@@ -80,6 +80,8 @@
   --shadow: none;
   --shadow-sm: none;
   --header-h: 60px;
+  /* 桌面多行主题菜单占位（约两行 nav-link）；侧栏 sticky top 同步 */
+  --header-h-multirow: 7.25rem;
   --sidebar-w: 248px;
   --home-max: 1370px;
   --content-max: 100%;
@@ -432,19 +434,28 @@ body.is-tool-page .tool-lead {
 }
 
 /**
- * lg+：分类项过多时左侧 nav 仍可横向滑动（不画滚动条），右侧主题/语言始终可见。
- * 分类下拉改为铺满 nav 的多列面板，避免单列内滚动条。
+ * lg+：主题下拉允许换行成多行菜单；右侧主题/语言始终可见。
+ * 下拉面板铺成多列，避免单列内滚动条。
  */
 @media (min-width: 992px) {
+  :root {
+    --header-h: var(--header-h-multirow);
+  }
+
+  .navbar.site-navbar {
+    min-height: var(--header-h);
+  }
+
   .navbar.site-navbar .container-fluid {
     flex-wrap: nowrap;
     min-width: 0;
+    align-items: flex-start;
   }
 
   .navbar.site-navbar .navbar-collapse {
     display: flex !important;
     flex-wrap: nowrap;
-    align-items: center;
+    align-items: flex-start;
     min-width: 0;
     flex: 1 1 auto;
   }
@@ -452,14 +463,12 @@ body.is-tool-page .tool-lead {
   .navbar.site-navbar .navbar-nav {
     position: relative;
     flex: 1 1 auto;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    align-content: flex-start;
     min-width: 0;
-    /* 空间不够时仍可横向滑动，但不画滚动条（顶栏出现滚动条会很怪） */
-    overflow-x: auto;
-    overflow-y: hidden;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    -webkit-overflow-scrolling: touch;
+    overflow: visible;
+    row-gap: 0.1rem;
+    max-height: none;
   }
 
   .navbar.site-navbar .navbar-nav::-webkit-scrollbar {
@@ -468,19 +477,12 @@ body.is-tool-page .tool-lead {
     height: 0;
   }
 
-  /**
-   * overflow-x:auto 会把另一轴算成 hidden/auto，裁掉下拉。
-   * 打开时取消裁剪（JS 加 class；:has 兜底）。
-   */
   .navbar.site-navbar .navbar-nav.navbar-nav--dropdown-open,
   .navbar.site-navbar .navbar-nav:has(.dropdown-menu.show),
   .navbar.site-navbar .navbar-nav:has(.dropdown-toggle[aria-expanded='true']) {
     overflow: visible;
   }
 
-  /**
-   * 分类下拉相对整条 nav 定位，铺成多列面板，避免 60+ 项单列 + 内滚动条。
-   */
   .navbar.site-navbar .navbar-nav > .dropdown {
     position: static;
   }
@@ -491,7 +493,6 @@ body.is-tool-page .tool-lead {
     width: auto;
     max-width: none;
     padding: 0.45rem 0.5rem;
-    /* 多数桌面一屏铺开；仅视口更矮时才可滚，且不画滚动条 */
     max-height: calc(100vh - var(--header-h) - 8px);
     overflow-x: hidden;
     overflow-y: auto;
@@ -524,12 +525,16 @@ body.is-tool-page .tool-lead {
 
   .navbar.site-navbar .navbar-nav .nav-link {
     white-space: nowrap;
+    padding-top: 0.35rem;
+    padding-bottom: 0.35rem;
   }
 
   /* 主题 + 语言：不参与压缩，始终留在右侧 */
   .navbar.site-navbar .navbar-collapse > .d-flex {
     flex: 0 0 auto;
     margin-left: 0.75rem;
+    align-self: flex-start;
+    padding-top: 0.25rem;
   }
 }
 

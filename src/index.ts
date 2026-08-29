@@ -258,8 +258,8 @@ for (const code of DEFAULT_LANGS) {
 		});
 	}
 
-	// 应用场景 / 工具类型 hub + leaf（静态 `_pages/{lang}/where-to-use-tools|tool-type/...`）
-	for (const hub of ['where-to-use-tools', 'tool-type'] as const) {
+	// 应用场景 / 工具类型 / 主题 hub + leaf（静态 `_pages/{lang}/...`）
+	for (const hub of ['where-to-use-tools', 'tool-type', 'topics'] as const) {
 		app.get(`/${code}/${hub}`, (c) => c.redirect(`/${code}/${hub}/`, 308));
 		app.get(`/${code}/${hub}/`, async (c) => {
 			const accept = c.req.header('accept') || '';
@@ -309,8 +309,8 @@ for (const page of ['about', 'privacy', 'terms', 'contact'] as const) {
 	app.get(`/${page}/`, (c) => c.redirect(`/${page}`, 301));
 }
 
-// 默认语场景 / 工具类型列表页（无前缀规范 URL）
-for (const hub of ['where-to-use-tools', 'tool-type'] as const) {
+// 默认语场景 / 工具类型 / 主题列表页（无前缀规范 URL）
+for (const hub of ['where-to-use-tools', 'tool-type', 'topics'] as const) {
 	app.get(`/${hub}`, async (c) => {
 		const accept = c.req.header('accept') || '';
 		if (!accept.includes('text/html')) return c.notFound();
@@ -372,6 +372,8 @@ app.use("/*", async (c, next) => {
 		pathname.startsWith('/where-to-use-tools/') ||
 		pathname === '/tool-type' ||
 		pathname.startsWith('/tool-type/') ||
+		pathname === '/topics' ||
+		pathname.startsWith('/topics/') ||
 		pathname === '/use-cases' ||
 		pathname.startsWith('/use-cases/') ||
 		pathname === '/subjects' ||

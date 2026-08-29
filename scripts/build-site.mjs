@@ -14,6 +14,7 @@ import { getPrivacyPageModel } from './site/pages/privacy.mjs';
 import { getTermsPageModel } from './site/pages/terms.mjs';
 import { getContactPageModel } from './site/pages/contact.mjs';
 import { getTaxonomyHubPageModel, getTaxonomyLeafPageModel } from './site/pages/taxonomy.mjs';
+import { getTopicsHubPageModel, getTopicsLeafPageModel } from './site/pages/topics.mjs';
 import { buildToolPageNavItems } from './site/nav.mjs';
 import { TOOL_CATALOG } from './site/tool-catalog.mjs';
 import { markToolSlugsGenerated } from './lib/changed-tools.mjs';
@@ -23,6 +24,7 @@ import {
   SCENARIO_HUB_PATH,
   SUBJECT_HUB_PATH,
 } from './site/taxonomy.mjs';
+import { TOOL_TOPIC_ORDER, TOPICS_HUB_PATH } from './site/topics.mjs';
 import { buildFullSitemap } from './site/sitemap.mjs';
 import {
   collectDevLogMarkdownFiles,
@@ -648,6 +650,23 @@ export const buildTaxonomyPages = async (lang) => {
 };
 
 /**
+ * 构建主题 hub + leaf 静态页（/topics、/topics/{id}）。
+ * @param {string} lang
+ */
+export const buildTopicsPages = async (lang) => {
+  const topicsDir = TOPICS_HUB_PATH.replace(/^\//, '');
+
+  await writeTaxonomyPage(lang, getTopicsHubPageModel(lang), path.join(topicsDir, 'index.html'));
+  for (const id of TOOL_TOPIC_ORDER) {
+    await writeTaxonomyPage(
+      lang,
+      getTopicsLeafPageModel(lang, id),
+      path.join(topicsDir, `${id}.html`)
+    );
+  }
+};
+
+/**
  * 构建完整 sitemap（委托 scripts/site/sitemap.mjs；含 devlogs 索引与各篇）。
  * @returns {Promise<void>}
  */
@@ -706,6 +725,7 @@ const main = async () => {
     await buildTerms(lang);
     await buildContact(lang);
     await buildTaxonomyPages(lang);
+    await buildTopicsPages(lang);
   }
   await assertLangHomeAssets(langs);
   await buildDevLogs();

@@ -3,6 +3,10 @@
   "path": "/tools/image-to-base64",
   "updatedAt": "2026-08-09T00:00:00.000Z",
   "category": "image",
+  "primaryTopic": "image-media",
+  "secondaryTopics": [
+    "dev-data"
+  ],
   "featured": true,
   "ymyl": false,
   "i18nKey": "tool_image_to_base64_title",

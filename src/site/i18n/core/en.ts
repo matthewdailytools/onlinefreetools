@@ -101,5 +101,26 @@ const en: SiteLangDict = {
   what_is_ip_content:
     'An Internet Protocol (IP) address is a numerical label assigned to each device connected to a computer network. It serves two primary functions: host or network interface identification and location addressing. There are two versions in use today: IPv4 and IPv6.',
   what_is_ip_title: 'What is an IP Address?',
+  // --- topic labels (auto) ---
+  nav_topics: "Topics",
+  topics_view_all: "View all in this topic",
+  topic_health_body: "Health & body",
+  topic_personal_money: "Personal money",
+  topic_business_finance: "Business finance",
+  topic_math_stats: "Math & stats",
+  topic_geometry_measure: "Geometry & measure",
+  topic_science_physics: "Science & physics",
+  topic_home_diy: "Home & DIY",
+  topic_time_calendar: "Time & calendar",
+  topic_pdf_docs: "PDF & docs",
+  topic_image_media: "Image & media",
+  topic_design_brand: "Design & brand",
+  topic_seo_growth: "SEO & growth",
+  topic_network_ip: "Network & IP",
+  topic_dev_data: "Dev & data",
+  topic_security_ids: "Security & IDs",
+  topic_files_archives: "Files & archives",
+  // --- end topic labels ---
+
 };
 export default en;

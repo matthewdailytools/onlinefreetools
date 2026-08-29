@@ -3,6 +3,10 @@
   "path": "/tools/how-to-calculate-pace",
   "updatedAt": "2026-08-09T00:00:00.000Z",
   "category": "calculator",
+  "primaryTopic": "health-body",
+  "secondaryTopics": [
+    "time-calendar"
+  ],
   "featured": false,
   "ymyl": false,
   "i18nKey": "tool_pace_title",

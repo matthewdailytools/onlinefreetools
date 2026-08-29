@@ -3,6 +3,7 @@
   "path": "/tools/split-pdf",
   "updatedAt": "2026-08-09T00:00:00.000Z",
   "category": "pdf",
+  "primaryTopic": "pdf-docs",
   "featured": true,
   "ymyl": false,
   "i18nKey": "tool_split_pdf_title",

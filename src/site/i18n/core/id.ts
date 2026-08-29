@@ -88,5 +88,26 @@ const id: SiteLangDict = {
   unit_meters: 'Meter',
   url_label: 'URL',
   url_placeholder: 'contoh https://contoh.com',
+  // --- topic labels (auto) ---
+  nav_topics: "Topik",
+  topics_view_all: "Lihat semua di topik ini",
+  topic_health_body: "Kesehatan & tubuh",
+  topic_personal_money: "Uang pribadi",
+  topic_business_finance: "Keuangan bisnis",
+  topic_math_stats: "Matematika & statistik",
+  topic_geometry_measure: "Geometri & ukuran",
+  topic_science_physics: "Sains & fisika",
+  topic_home_diy: "Rumah & DIY",
+  topic_time_calendar: "Waktu & kalender",
+  topic_pdf_docs: "PDF & dokumen",
+  topic_image_media: "Gambar & media",
+  topic_design_brand: "Desain & merek",
+  topic_seo_growth: "SEO & pertumbuhan",
+  topic_network_ip: "Jaringan & IP",
+  topic_dev_data: "Dev & data",
+  topic_security_ids: "Keamanan & ID",
+  topic_files_archives: "File & arsip",
+  // --- end topic labels ---
+
 };
 export default id;

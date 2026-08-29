@@ -3,6 +3,10 @@
   "path": "/tools/website-headers",
   "updatedAt": "2026-08-11T00:00:00.000Z",
   "category": "developer",
+  "primaryTopic": "network-ip",
+  "secondaryTopics": [
+    "seo-growth"
+  ],
   "featured": true,
   "ymyl": false,
   "i18nKey": "tool_headers_title",

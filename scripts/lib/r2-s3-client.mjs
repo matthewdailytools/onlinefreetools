@@ -7,13 +7,78 @@
  *   R2_ACCESS_KEY_ID / AWS_ACCESS_KEY_ID
  *   R2_SECRET_ACCESS_KEY / AWS_SECRET_ACCESS_KEY
  * 可选：R2_S3_ENDPOINT（完整 endpoint URL，覆盖默认拼接）
+ * 可选代理（AWS SDK 默认不读代理环境变量，须由此处注入）：
+ *   R2_HTTPS_PROXY / HTTPS_PROXY / HTTP_PROXY / ALL_PROXY / 对应小写
+ *   例：ssh -D 8888 后 `ALL_PROXY=socks5h://127.0.0.1:8888 npm run upload:r2`
  * 模板见仓库根 `.env.example`（复制为 `.env` 后填写，勿提交）。
  */
 import { S3Client, PutObjectCommand, GetObjectCommand } from '@aws-sdk/client-s3';
+import { NodeHttpHandler } from '@smithy/node-http-handler';
+import { HttpsProxyAgent } from 'https-proxy-agent';
+import { SocksProxyAgent } from 'socks-proxy-agent';
 import { loadProjectEnvSync } from './load-dotenv.mjs';
 
 /** 模块加载时读入 `.env`，供后续 hasR2S3Credentials / 并发默认值使用 */
 loadProjectEnvSync();
+
+/**
+ * 从环境变量解析出应使用的代理 URL（空字符串表示直连）。
+ * 优先级：R2_HTTPS_PROXY → HTTPS_PROXY → HTTP_PROXY → ALL_PROXY（及同名小写）。
+ * @returns {string}
+ */
+export const readR2ProxyUrl = () => {
+	loadProjectEnvSync();
+	/** 专用于 R2 上传的代理覆盖（避免误用 Cursor 注入的失效代理端口） */
+	const r2Only = String(process.env.R2_HTTPS_PROXY || '').trim();
+	if (r2Only) return r2Only;
+	/** 标准代理链：HTTPS → HTTP → ALL（含小写，兼容 shell） */
+	const candidates = [
+		process.env.HTTPS_PROXY,
+		process.env.https_proxy,
+		process.env.HTTP_PROXY,
+		process.env.http_proxy,
+		process.env.ALL_PROXY,
+		process.env.all_proxy,
+	];
+	for (const raw of candidates) {
+		const url = String(raw || '').trim();
+		if (url) return url;
+	}
+	return '';
+};
+
+/**
+ * 根据代理 URL 创建 Node http(s) Agent；无代理返回 null。
+ * socks / socks5 / socks5h → SocksProxyAgent；其余按 HTTP CONNECT 代理处理。
+ * @param {string} proxyUrl
+ * @returns {import('node:http').Agent | null}
+ */
+export const createProxyAgentFromUrl = (proxyUrl) => {
+	const trimmed = String(proxyUrl || '').trim();
+	if (!trimmed) return null;
+	/** 协议小写，便于判断 SOCKS */
+	const scheme = trimmed.split(':', 1)[0].toLowerCase();
+	if (scheme === 'socks' || scheme === 'socks5' || scheme === 'socks5h' || scheme === 'socks4') {
+		return new SocksProxyAgent(trimmed);
+	}
+	return new HttpsProxyAgent(trimmed);
+};
+
+/**
+ * 若配置了代理，返回带 httpAgent/httpsAgent 的 NodeHttpHandler；否则 undefined（SDK 默认直连）。
+ * @returns {NodeHttpHandler | undefined}
+ */
+export const createR2RequestHandler = () => {
+	/** 当前进程应使用的代理 URL */
+	const proxyUrl = readR2ProxyUrl();
+	/** 对应的 Node Agent；null 表示直连 */
+	const agent = createProxyAgentFromUrl(proxyUrl);
+	if (!agent) return undefined;
+	return new NodeHttpHandler({
+		httpAgent: agent,
+		httpsAgent: agent,
+	});
+};
 
 /**
  * 从环境变量（含已加载的 `.env`）解析 R2 S3 凭据；缺任一关键项则返回 null。
@@ -93,6 +158,13 @@ export const createR2S3Client = () => {
 		);
 	}
 	assertR2S3CredentialShape(creds);
+	/** 可选：经本地 HTTP/SOCKS 隧道访问 R2（见 readR2ProxyUrl） */
+	const requestHandler = createR2RequestHandler();
+	/** 调试：确认上传是否走了代理（不打印凭据） */
+	const proxyUrl = readR2ProxyUrl();
+	if (proxyUrl && process.env.R2_PROXY_DEBUG === '1') {
+		console.error(`[r2-s3] using proxy=${proxyUrl}`);
+	}
 	return new S3Client({
 		region: 'auto',
 		endpoint: creds.endpoint,
@@ -100,6 +172,7 @@ export const createR2S3Client = () => {
 			accessKeyId: creds.accessKeyId,
 			secretAccessKey: creds.secretAccessKey,
 		},
+		...(requestHandler ? { requestHandler } : {}),
 		// R2 尚未完整支持 SDK 默认强制 checksum；仅在必需时计算/校验
 		requestChecksumCalculation: 'WHEN_REQUIRED',
 		responseChecksumValidation: 'WHEN_REQUIRED',

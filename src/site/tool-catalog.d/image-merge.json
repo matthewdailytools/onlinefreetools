@@ -3,6 +3,7 @@
   "path": "/tools/image-merge",
   "updatedAt": "2026-08-20T12:50:00.438Z",
   "category": "image",
+  "primaryTopic": "image-media",
   "featured": true,
   "ymyl": false,
   "i18nKey": "tool_image_merge_title",

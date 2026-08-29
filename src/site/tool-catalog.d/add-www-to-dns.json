@@ -3,6 +3,10 @@
   "path": "/tools/add-www-to-dns",
   "updatedAt": "2026-08-09T00:00:00.000Z",
   "category": "developer",
+  "primaryTopic": "network-ip",
+  "secondaryTopics": [
+    "seo-growth"
+  ],
   "featured": true,
   "ymyl": false,
   "i18nKey": "tool_add_www_to_dns_title",

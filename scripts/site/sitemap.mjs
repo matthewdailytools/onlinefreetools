@@ -14,6 +14,7 @@ import {
   SCENARIO_HUB_PATH,
   SUBJECT_HUB_PATH,
 } from './taxonomy.mjs';
+import { TOOL_TOPIC_ORDER, TOPICS_HUB_PATH } from './topics.mjs';
 import {
   loadSitemapLastmodsFromFile,
   resolveLastmodsForEntries,
@@ -92,10 +93,13 @@ export const hreflangLinksXml = (pathname, langs) => {
  * @property {string[]} [infoPages] 信息页 id：about|privacy|terms|contact；默认不包含（生产全量剔除）
  * @property {boolean} [includeScenarioHub] 是否包含 /where-to-use-tools hub；默认 true
  * @property {boolean} [includeSubjectHub] 是否包含 /tool-type hub；默认 true
+ * @property {boolean} [includeTopicsHub] 是否包含 /topics hub；默认 true
  * @property {string[]} [scenarios] 场景 leaf id；空数组且未禁用场景时表示全部场景 leaf
  * @property {string[]} [subjects] 工具类型 leaf id；空且未禁用时表示全部 subject leaf
+ * @property {string[]} [topics] 主题 leaf id；空且未禁用时表示全部 topic leaf
  * @property {boolean} [includeScenarioLeaves] 是否输出场景 leaf；默认 true
  * @property {boolean} [includeSubjectLeaves] 是否输出工具类型 leaf；默认 true
+ * @property {boolean} [includeTopicsLeaves] 是否输出主题 leaf；默认 true
  * @property {boolean} [includeTools] 是否输出工具页；默认 true
  * @property {string[]} [categories] 工具 category 过滤；空=不按 category 限制
  * @property {string[]} [toolScenarios] 工具 scenario 过滤；空=不按 scenario 限制工具
@@ -154,8 +158,10 @@ export const collectSitemapEntries = async (options = {}) => {
 
   const includeScenarioHub = options.includeScenarioHub !== false;
   const includeSubjectHub = options.includeSubjectHub !== false;
+  const includeTopicsHub = options.includeTopicsHub !== false;
   const includeScenarioLeaves = options.includeScenarioLeaves !== false;
   const includeSubjectLeaves = options.includeSubjectLeaves !== false;
+  const includeTopicsLeaves = options.includeTopicsLeaves !== false;
   const includeTools = options.includeTools !== false;
 
   /**
@@ -172,6 +178,13 @@ export const collectSitemapEntries = async (options = {}) => {
   const subjects = Array.isArray(options.subjects)
     ? options.subjects.filter((id) => TOOL_SUBJECT_ORDER.includes(/** @type {any} */ (id)))
     : [...TOOL_SUBJECT_ORDER];
+  /**
+   * 主题 leaf：未传时默认全部；传 [] 表示不输出。
+   * @type {string[]}
+   */
+  const topics = Array.isArray(options.topics)
+    ? options.topics.filter((id) => TOOL_TOPIC_ORDER.includes(/** @type {any} */ (id)))
+    : [...TOOL_TOPIC_ORDER];
 
   const categories = (options.categories || []).map(String).filter(Boolean);
   /** 工具过滤：优先 toolScenarios/toolSubjects；否则回退到 scenarios/subjects 勾选。 */
@@ -205,6 +218,9 @@ export const collectSitemapEntries = async (options = {}) => {
   if (includeSubjectHub) {
     entries.push({ pathname: SUBJECT_HUB_PATH, priority: '0.75' });
   }
+  if (includeTopicsHub) {
+    entries.push({ pathname: TOPICS_HUB_PATH, priority: '0.75' });
+  }
 
   if (includeScenarioLeaves) {
     for (const id of scenarios) {
@@ -214,6 +230,11 @@ export const collectSitemapEntries = async (options = {}) => {
   if (includeSubjectLeaves) {
     for (const id of subjects) {
       entries.push({ pathname: `${SUBJECT_HUB_PATH}/${id}`, priority: '0.7' });
+    }
+  }
+  if (includeTopicsLeaves) {
+    for (const id of topics) {
+      entries.push({ pathname: `${TOPICS_HUB_PATH}/${id}`, priority: '0.7' });
     }
   }
 
@@ -385,9 +406,11 @@ export const getSitemapUiMeta = () => {
     categories,
     scenarios: [...TOOL_SCENARIO_ORDER],
     subjects: [...TOOL_SUBJECT_ORDER],
+    topics: [...TOOL_TOPIC_ORDER],
     infoPages: SITEMAP_INFO_PAGES,
     scenarioHubPath: SCENARIO_HUB_PATH,
     subjectHubPath: SUBJECT_HUB_PATH,
+    topicsHubPath: TOPICS_HUB_PATH,
     defaultSitemapPath: 'public/sitemap.xml',
     defaultFilteredPath: 'public/sitemap.filtered.xml',
     toolCount: TOOL_CATALOG.length,

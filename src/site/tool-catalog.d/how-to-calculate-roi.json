@@ -3,6 +3,10 @@
   "path": "/tools/how-to-calculate-roi",
   "updatedAt": "2026-08-09T00:00:00.000Z",
   "category": "calculator",
+  "primaryTopic": "business-finance",
+  "secondaryTopics": [
+    "personal-money"
+  ],
   "featured": true,
   "ymyl": true,
   "i18nKey": "tool_roi_title",

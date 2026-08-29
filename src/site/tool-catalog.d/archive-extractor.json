@@ -3,6 +3,7 @@
   "path": "/tools/archive-extractor",
   "updatedAt": "2026-08-14T15:41:03.000Z",
   "category": "developer",
+  "primaryTopic": "files-archives",
   "featured": true,
   "ymyl": false,
   "i18nKey": "tool_archive_extractor_title",

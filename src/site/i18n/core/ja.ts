@@ -86,5 +86,26 @@ const ja: SiteLangDict = {
   unit_meters: 'メートル',
   url_label: 'URL',
   url_placeholder: '例：https://example.com',
+  // --- topic labels (auto) ---
+  nav_topics: "トピック",
+  topics_view_all: "このトピックをすべて見る",
+  topic_health_body: "健康・身体",
+  topic_personal_money: "個人のお金",
+  topic_business_finance: "事業財務",
+  topic_math_stats: "数学・統計",
+  topic_geometry_measure: "幾何・測定",
+  topic_science_physics: "科学・物理",
+  topic_home_diy: "ホーム・DIY",
+  topic_time_calendar: "時間・カレンダー",
+  topic_pdf_docs: "PDF・ドキュメント",
+  topic_image_media: "画像・メディア",
+  topic_design_brand: "デザイン・ブランド",
+  topic_seo_growth: "SEO・成長",
+  topic_network_ip: "ネットワーク・IP",
+  topic_dev_data: "開発・データ",
+  topic_security_ids: "セキュリティ・ID",
+  topic_files_archives: "ファイル・アーカイブ",
+  // --- end topic labels ---
+
 };
 export default ja;

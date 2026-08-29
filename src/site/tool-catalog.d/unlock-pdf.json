@@ -3,6 +3,10 @@
   "path": "/tools/unlock-pdf",
   "updatedAt": "2026-08-09T00:00:00.000Z",
   "category": "pdf",
+  "primaryTopic": "pdf-docs",
+  "secondaryTopics": [
+    "security-ids"
+  ],
   "featured": true,
   "ymyl": false,
   "i18nKey": "tool_unlock_pdf_title",

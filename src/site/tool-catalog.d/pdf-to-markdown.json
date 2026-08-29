@@ -3,6 +3,10 @@
   "path": "/tools/pdf-to-markdown",
   "updatedAt": "2026-08-09T00:00:00.000Z",
   "category": "pdf",
+  "primaryTopic": "pdf-docs",
+  "secondaryTopics": [
+    "dev-data"
+  ],
   "featured": true,
   "ymyl": false,
   "i18nKey": "tool_pdf_to_markdown_title",

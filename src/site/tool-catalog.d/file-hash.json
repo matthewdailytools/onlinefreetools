@@ -3,6 +3,10 @@
   "path": "/tools/file-hash",
   "updatedAt": "2026-08-09T00:00:00.000Z",
   "category": "developer",
+  "primaryTopic": "security-ids",
+  "secondaryTopics": [
+    "files-archives"
+  ],
   "featured": true,
   "ymyl": false,
   "i18nKey": "tool_file_hash_title",

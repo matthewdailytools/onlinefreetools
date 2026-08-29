@@ -69,6 +69,17 @@ npm run upload:r2 -- --dry-run   # 期望 transport=s3
 
 未配置时回退 `wrangler` 逐文件 put（慢）。Worker/Assets 生产默认靠 **GitHub → Cloudflare**，不必每次本机 `wrangler deploy`。
 
+5. **本机无法直连 Cloudflare 时**（`upload:r2` 报 `ETIMEDOUT 172.64.*:443`）：用 SSH 动态端口或 HTTP 代理。完整说明见 [`worker-r2-ops.md`](./worker-r2-ops.md) **§3.1.5** / **§9.2**。
+
+```bash
+# 例：ssh -D 8888 后（必须是 socks5h，不是 http://）
+curl -I --connect-timeout 8 -x socks5h://127.0.0.1:8888 https://cloudflare.com
+R2_HTTPS_PROXY=socks5h://127.0.0.1:8888 npm run upload:r2
+# 或写入 .env：R2_HTTPS_PROXY=socks5h://127.0.0.1:8888
+```
+
+`R2_HTTPS_PROXY` 优先于 `HTTPS_PROXY` / `ALL_PROXY`，避免被 Cursor 等注入的失效代理端口干扰。TUN/VPN 全局出网时通常不必设。
+
 ---
 
 ## 3. 本地开发
@@ -369,12 +380,18 @@ npm run deploy
 npm run verify:r2:live
 ```
 
-流程：`predeploy`（全量 `build:site` + lint）→ **`upload:r2`**（hash 增量；S3 优先，须本机 `.env`；见 [`worker-r2-ops.md`](./worker-r2-ops.md) §3.1）→ **`verify:r2`** → **git push**（Cloudflare 拉 GitHub 部署 Worker + Assets）→ **`verify:r2:live`**。
+流程：`predeploy`（全量 `build:site` + lint）→ **`upload:r2`**（hash 增量；S3 优先，须本机 `.env`；见 [`worker-r2-ops.md`](./worker-r2-ops.md) §3.1；直连 CF 超时时见 §3.1.5）→ **`verify:r2`** → **git push**（Cloudflare 拉 GitHub 部署 Worker + Assets）→ **`verify:r2:live`**。
 
 仅改少量 HTML 且不跑完整 `deploy` 时：`npm run upload:r2` → `npm run verify:r2` →（若需）push。  
 少量工具改动时：`npm run tool:touch -- --slug=<slug>` → `npm run build:site` → `npm run upload:r2` → `npm run verify:r2` → `npm run commit:tools:changed -- --slug=<slug> -m "tools: update <slug>"` → `git push`。构建总是全量；上传只看 `.html.gz` hash 与上次上传 manifest 的差异，不看 git 工作树、最新 commit 或最新 push。
 仅改 Worker、HTML 未变：`npm run deploy:skip-upload` 后再 push。  
 紧急本机直发：`npm run deploy:worker-only`（或 `node scripts/deploy-site.mjs --wrangler-deploy`）。裸 `npx wrangler deploy` **不**灌 R2、**不**做版本校验。
+
+直连 Cloudflare 超时示例：
+
+```bash
+R2_HTTPS_PROXY=socks5h://127.0.0.1:8888 npm run deploy
+```
 
 **Git 自动部署（Cloudflare 拉 GitHub）**：这是当前 **Worker + Assets** 的默认路径。远端通常**不跑** `predeploy` / **不**灌 R2——须先本地（或 CI）`upload:r2`。`public/vendor/` 必须已提交；**整个 `public/_pages/` 已 gitignore**。仅 push、未 upload → **预渲染 HTML 易 404**。
 **部署后建议**：
@@ -440,6 +457,17 @@ npm run deploy
 curl -sS https://onlinefreetools.org/api/ops/pages-build
 # 期望 aligned: true
 ```
+
+### `upload:r2` / `deploy` 报 ETIMEDOUT（`172.64.*:443`）
+
+本机连不上 Cloudflare R2，不是凭据问题（已见 `transport=s3` 时）。见 [`worker-r2-ops.md`](./worker-r2-ops.md) **§3.1.5** / **§9.2**：
+
+```bash
+curl -I --connect-timeout 8 -x socks5h://127.0.0.1:8888 https://cloudflare.com
+R2_HTTPS_PROXY=socks5h://127.0.0.1:8888 npm run upload:r2
+```
+
+SOCKS（`ssh -D`）必须用 `socks5h://`，不要写成 `http://127.0.0.1:8888`。
 
 ### `verify:r2` / live 失败
 

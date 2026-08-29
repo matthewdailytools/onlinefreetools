@@ -92,5 +92,26 @@ const ru: SiteLangDict = {
   unit_meters: 'Метры',
   url_label: 'URL',
   url_placeholder: 'например https://example.com',
+  // --- topic labels (auto) ---
+  nav_topics: "Темы",
+  topics_view_all: "Смотреть всё в этой теме",
+  topic_health_body: "Здоровье и тело",
+  topic_personal_money: "Личные финансы",
+  topic_business_finance: "Бизнес-финансы",
+  topic_math_stats: "Математика и статистика",
+  topic_geometry_measure: "Геометрия и меры",
+  topic_science_physics: "Наука и физика",
+  topic_home_diy: "Дом и DIY",
+  topic_time_calendar: "Время и календарь",
+  topic_pdf_docs: "PDF и документы",
+  topic_image_media: "Изображения и медиа",
+  topic_design_brand: "Дизайн и бренд",
+  topic_seo_growth: "SEO и рост",
+  topic_network_ip: "Сеть и IP",
+  topic_dev_data: "Dev и данные",
+  topic_security_ids: "Безопасность и ID",
+  topic_files_archives: "Файлы и архивы",
+  // --- end topic labels ---
+
 };
 export default ru;

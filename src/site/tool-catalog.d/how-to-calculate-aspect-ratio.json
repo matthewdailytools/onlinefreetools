@@ -3,6 +3,10 @@
   "path": "/tools/how-to-calculate-aspect-ratio",
   "updatedAt": "2026-08-09T00:00:00.000Z",
   "category": "calculator",
+  "primaryTopic": "geometry-measure",
+  "secondaryTopics": [
+    "image-media"
+  ],
   "featured": false,
   "ymyl": false,
   "i18nKey": "tool_aspect_ratio_title",

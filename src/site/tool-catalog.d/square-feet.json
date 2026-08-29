@@ -3,6 +3,10 @@
   "path": "/tools/square-feet",
   "updatedAt": "2026-08-09T00:00:00.000Z",
   "category": "calculator",
+  "primaryTopic": "home-diy",
+  "secondaryTopics": [
+    "geometry-measure"
+  ],
   "featured": true,
   "ymyl": false,
   "i18nKey": "tool_squarefeet_title",

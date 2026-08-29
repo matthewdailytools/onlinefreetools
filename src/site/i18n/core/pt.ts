@@ -88,5 +88,26 @@ const pt: SiteLangDict = {
   unit_meters: 'Metros',
   url_label: 'URL',
   url_placeholder: 'por exemplo https://exemplo.com',
+  // --- topic labels (auto) ---
+  nav_topics: "Tópicos",
+  topics_view_all: "Ver tudo neste tópico",
+  topic_health_body: "Saúde e corpo",
+  topic_personal_money: "Dinheiro pessoal",
+  topic_business_finance: "Finanças de negócio",
+  topic_math_stats: "Matemática e estatística",
+  topic_geometry_measure: "Geometria e medida",
+  topic_science_physics: "Ciência e física",
+  topic_home_diy: "Casa e DIY",
+  topic_time_calendar: "Tempo e calendário",
+  topic_pdf_docs: "PDF e documentos",
+  topic_image_media: "Imagem e média",
+  topic_design_brand: "Design e marca",
+  topic_seo_growth: "SEO e crescimento",
+  topic_network_ip: "Rede e IP",
+  topic_dev_data: "Dev e dados",
+  topic_security_ids: "Segurança e IDs",
+  topic_files_archives: "Ficheiros e arquivos",
+  // --- end topic labels ---
+
 };
 export default pt;

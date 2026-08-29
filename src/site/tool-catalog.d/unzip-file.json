@@ -3,6 +3,7 @@
   "path": "/tools/unzip-file",
   "updatedAt": "2026-08-14T14:15:19.108Z",
   "category": "developer",
+  "primaryTopic": "files-archives",
   "featured": true,
   "ymyl": false,
   "i18nKey": "tool_unzip_file_title",

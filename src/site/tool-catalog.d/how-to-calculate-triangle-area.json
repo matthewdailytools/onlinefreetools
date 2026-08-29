@@ -3,6 +3,7 @@
   "path": "/tools/how-to-calculate-triangle-area",
   "updatedAt": "2026-08-09T00:00:00.000Z",
   "category": "calculator",
+  "primaryTopic": "geometry-measure",
   "featured": false,
   "ymyl": false,
   "i18nKey": "tool_triangle_area_title",

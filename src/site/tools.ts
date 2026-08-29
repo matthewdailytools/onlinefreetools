@@ -3,11 +3,12 @@
  */
 import catalog from './tool-catalog.json';
 import type { ToolScenario, ToolSubject } from './taxonomy';
+import type { ToolTopic } from './topics';
 
 /** 工具分类：计算器、开发者工具、图片处理工具、设计工具、PDF 工具。 */
 export type ToolCategory = 'calculator' | 'developer' | 'image' | 'design' | 'pdf';
 
-export type { ToolScenario, ToolSubject };
+export type { ToolScenario, ToolSubject, ToolTopic };
 
 /** 单个工具的目录元数据。 */
 export type ToolPageMeta = {
@@ -17,6 +18,15 @@ export type ToolPageMeta = {
 	path: string;
 	/** 首页/枢纽分类 */
 	category: ToolCategory;
+	/**
+	 * 主主题（恰好一个；面包屑 / 顶栏下拉归属；hub `/topics/{id}`）。
+	 * 见 docs/seo/2026-08-28-tool-topic-reassignment.md。
+	 */
+	primaryTopic: ToolTopic;
+	/**
+	 * 次主题（可选；仅增加 hub 列表成员，不改面包屑与规范 URL）。
+	 */
+	secondaryTopics?: ToolTopic[];
 	/**
 	 * 应用场景标签（恰好一个；列表页 /where-to-use-tools/{scenario}/）。
 	 * 与 category 独立，不参与首页分区。
@@ -78,5 +88,12 @@ export const getToolBySlug = (slug: string): ToolPageMeta | undefined =>
  */
 export const getToolsByCategory = (category: ToolCategory): ToolPageMeta[] =>
 	TOOL_PAGES.filter((p) => p.category === category);
+
+/**
+ * 按主主题筛选工具（顶栏下拉）。
+ * @param topic 主题 id
+ */
+export const getToolsByPrimaryTopic = (topic: ToolTopic): ToolPageMeta[] =>
+	TOOL_PAGES.filter((p) => p.primaryTopic === topic);
 
 export default TOOL_PAGES;

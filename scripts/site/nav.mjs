@@ -1,33 +1,45 @@
 /**
- * 静态站点顶栏导航项（首页等）：分类名 + 工具链接下拉。
+ * 静态站点顶栏导航项（首页等）：主题名 + 工具链接下拉（多行换行）。
  */
 import { t } from './i18n.mjs';
 import { withLangPath } from './config.mjs';
-import { getToolsByCategory } from './tool-catalog.mjs';
-import { TOOL_CATEGORY_ORDER, getCategoryHomeLabelKey } from './categories.mjs';
+import { getToolsByPrimaryTopic } from './tool-catalog.mjs';
+import { TOOL_TOPIC_ORDER, TOPIC_I18N_KEYS, TOPICS_HUB_PATH } from './topics.mjs';
 
 /**
- * 各分类顶栏下拉（标签 = 分类名，子项 = 工具名 + 链接）。
- * 内容链用 withLangPath（默认语无 /en），与 sitemap/canonical 一致。
+ * 各主题顶栏下拉（标签 = 主题短名，子项 = 查看全部 + primary 工具）。
  * @param {string} lang
  */
-export const buildCategoryNavDropdowns = (lang) =>
-  TOOL_CATEGORY_ORDER.map((category) => ({
-    type: 'dropdown',
-    label: t(lang, getCategoryHomeLabelKey(category)),
-    items: getToolsByCategory(category).map((tool) => ({
-      href: withLangPath(lang, tool.path),
-      label: t(lang, tool.homeTitleKey),
-      /** 工具页在新标签打开，保留当前首页/工具页上下文 */
-      openInNewTab: true,
-    })),
-  }));
+export const buildTopicNavDropdowns = (lang) =>
+  TOOL_TOPIC_ORDER.map((topic) => {
+    const meta = TOPIC_I18N_KEYS[topic];
+    const hubHref = withLangPath(lang, `${TOPICS_HUB_PATH}/${topic}`);
+    const tools = getToolsByPrimaryTopic(topic);
+    return {
+      type: 'dropdown',
+      label: t(lang, meta.labelKey),
+      items: [
+        {
+          href: hubHref,
+          label: t(lang, 'topics_view_all'),
+          openInNewTab: false,
+        },
+        ...tools.map((tool) => ({
+          href: withLangPath(lang, tool.path),
+          label: t(lang, tool.homeTitleKey),
+          /** 工具页在新标签打开，保留当前首页/工具页上下文 */
+          openInNewTab: true,
+        })),
+      ],
+    };
+  });
 
 /**
- * 应用场景 / 工具类型 hub 入口（不替换原分类下拉；置于导航末尾）。
+ * 应用场景 / 工具类型 / 主题 hub 入口（置于主题下拉之后）。
  * @param {string} lang
  */
 export const buildTaxonomyNavLinks = (lang) => [
+  { href: withLangPath(lang, TOPICS_HUB_PATH), label: t(lang, 'nav_topics') },
   { href: withLangPath(lang, '/where-to-use-tools'), label: t(lang, 'nav_use_cases') },
   { href: withLangPath(lang, '/tool-type'), label: t(lang, 'nav_tool_type') },
 ];
@@ -42,22 +54,22 @@ export const buildDevlogsNavLink = (lang) => ({
 });
 
 /**
- * 工具页 / 信息页顶栏：首页 + 各分类工具下拉 + 场景/类型 + 开发日志。
+ * 工具页 / 信息页顶栏：首页 + 各主题工具下拉 + 场景/类型 + 开发日志。
  * @param {string} lang
  */
 export const buildToolPageNavItems = (lang) => [
   { href: withLangPath(lang, '/'), label: t(lang, 'nav_home') },
-  ...buildCategoryNavDropdowns(lang),
+  ...buildTopicNavDropdowns(lang),
   ...buildTaxonomyNavLinks(lang),
   buildDevlogsNavLink(lang),
 ];
 
 /**
- * 首页顶栏：各分类工具下拉 + 场景/类型 + 开发日志。
+ * 首页顶栏：各主题工具下拉 + 场景/类型 + 开发日志。
  * @param {string} lang
  */
 export const buildHomeNavItems = (lang) => [
-  ...buildCategoryNavDropdowns(lang),
+  ...buildTopicNavDropdowns(lang),
   ...buildTaxonomyNavLinks(lang),
   buildDevlogsNavLink(lang),
 ];

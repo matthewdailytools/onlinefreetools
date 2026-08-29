@@ -3,6 +3,7 @@
   "path": "/tools/how-to-calculate-debt-payoff",
   "updatedAt": "2026-08-09T00:00:00.000Z",
   "category": "calculator",
+  "primaryTopic": "personal-money",
   "featured": false,
   "ymyl": true,
   "i18nKey": "tool_debt_payoff_title",

@@ -3,6 +3,10 @@
   "path": "/tools/timezone-converter",
   "updatedAt": "2026-08-09T00:00:00.000Z",
   "category": "developer",
+  "primaryTopic": "time-calendar",
+  "secondaryTopics": [
+    "dev-data"
+  ],
   "featured": true,
   "ymyl": false,
   "i18nKey": "tool_timezone_converter_title",

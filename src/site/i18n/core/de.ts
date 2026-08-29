@@ -89,5 +89,26 @@ const de: SiteLangDict = {
   unit_meters: 'Meter',
   url_label: 'URL',
   url_placeholder: 'z.B. https://beispiel.de',
+  // --- topic labels (auto) ---
+  nav_topics: "Themen",
+  topics_view_all: "Alles in diesem Thema ansehen",
+  topic_health_body: "Gesundheit & Körper",
+  topic_personal_money: "Privates Geld",
+  topic_business_finance: "Unternehmensfinanz",
+  topic_math_stats: "Mathe & Statistik",
+  topic_geometry_measure: "Geometrie & Maß",
+  topic_science_physics: "Wissenschaft & Physik",
+  topic_home_diy: "Zuhause & DIY",
+  topic_time_calendar: "Zeit & Kalender",
+  topic_pdf_docs: "PDF & Docs",
+  topic_image_media: "Bild & Medien",
+  topic_design_brand: "Design & Marke",
+  topic_seo_growth: "SEO & Wachstum",
+  topic_network_ip: "Netzwerk & IP",
+  topic_dev_data: "Dev & Daten",
+  topic_security_ids: "Sicherheit & IDs",
+  topic_files_archives: "Dateien & Archive",
+  // --- end topic labels ---
+
 };
 export default de;

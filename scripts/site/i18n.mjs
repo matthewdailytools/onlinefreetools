@@ -1,5 +1,6 @@
 import { sitePageTranslations } from './i18n-site-pages.mjs';
 import { taxonomyTranslations } from './i18n-taxonomy.mjs';
+import { topicTranslations } from './i18n-topics.mjs';
 import { toolHomeTranslations } from './i18n-tools.generated.mjs';
 
 const translations = {
@@ -1770,6 +1771,7 @@ export const t = (lang, key) => {
   const table = translations[lang] || translations.en || translations.zh;
   const siteTable = sitePageTranslations[lang] || sitePageTranslations.en || {};
   const taxonomyTable = taxonomyTranslations[lang] || taxonomyTranslations.en || {};
+  const topicTable = topicTranslations[lang] || topicTranslations.en || {};
   /** Prefer generated tool-home shards over legacy duplicates in `translations`. */
   const toolHome = toolHomeTranslations[lang] || toolHomeTranslations.en || {};
   return (
@@ -1777,14 +1779,17 @@ export const t = (lang, key) => {
     table[key] ||
     siteTable[key] ||
     taxonomyTable[key] ||
+    topicTable[key] ||
     (toolHomeTranslations.en && toolHomeTranslations.en[key]) ||
     (translations.en && translations.en[key]) ||
     (sitePageTranslations.en && sitePageTranslations.en[key]) ||
     (taxonomyTranslations.en && taxonomyTranslations.en[key]) ||
+    (topicTranslations.en && topicTranslations.en[key]) ||
     (toolHomeTranslations.zh && toolHomeTranslations.zh[key]) ||
     translations.zh[key] ||
     (sitePageTranslations.zh && sitePageTranslations.zh[key]) ||
     (taxonomyTranslations.zh && taxonomyTranslations.zh[key]) ||
+    (topicTranslations.zh && topicTranslations.zh[key]) ||
     key
   );
 };

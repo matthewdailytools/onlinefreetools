@@ -3,6 +3,10 @@
   "path": "/tools/how-to-calculate-percentage-change",
   "updatedAt": "2026-08-09T00:00:00.000Z",
   "category": "calculator",
+  "primaryTopic": "personal-money",
+  "secondaryTopics": [
+    "math-stats"
+  ],
   "featured": true,
   "ymyl": false,
   "i18nKey": "tool_percentage_change_title",

@@ -3,6 +3,10 @@
   "path": "/tools/base64",
   "updatedAt": "2026-08-09T00:00:00.000Z",
   "category": "developer",
+  "primaryTopic": "dev-data",
+  "secondaryTopics": [
+    "security-ids"
+  ],
   "featured": true,
   "ymyl": false,
   "i18nKey": "tool_base64_title",
