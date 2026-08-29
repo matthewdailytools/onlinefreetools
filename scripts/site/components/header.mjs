@@ -1,6 +1,13 @@
+/**
+ * 构建侧顶栏 HTML：品牌、导航（含工具巨型菜单）、页面设置、语言切换。
+ */
 import { siteConfig, withExplicitLangPath, withLangPath } from '../config.mjs';
 import { t } from '../i18n.mjs';
 
+/**
+ * 语言下拉。
+ * @param {{lang:string,langAlternates?:Record<string,string>}} opts
+ */
 const renderLangSwitcher = ({ lang, langAlternates }) => {
   if (!siteConfig.languages || siteConfig.languages.length <= 1) return '';
 
@@ -27,8 +34,8 @@ const renderLangSwitcher = ({ lang, langAlternates }) => {
       const label = (siteConfig.languages.find((l) => l.code === code) || { label: code }).label;
       const href = code === current ? null : (langAlternates && langAlternates[code]) || withExplicitLangPath(code, '/');
       return href
-        ? `<li><a class=\"dropdown-item\" href=\"${href}\">${label}</a></li>`
-        : `<li><span class=\"dropdown-item active\" aria-current=\"true\">${label}</span></li>`;
+        ? `<li><a class="dropdown-item" href="${href}">${label}</a></li>`
+        : `<li><span class="dropdown-item active" aria-current="true">${label}</span></li>`;
     })
     .join('');
 
@@ -37,10 +44,14 @@ const renderLangSwitcher = ({ lang, langAlternates }) => {
       <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
         ${currentLabel}
       </button>
-      <ul class=\"dropdown-menu dropdown-menu-end\">${links}</ul>
+      <ul class="dropdown-menu dropdown-menu-end">${links}</ul>
     </div>`;
 };
 
+/**
+ * 渲染顶栏。
+ * @param {object} opts
+ */
 export const renderHeader = ({
   lang,
   brandHref,
@@ -56,6 +67,46 @@ export const renderHeader = ({
 
   const navHtml = navItems
     .map((item) => {
+      if (item.type === 'mega') {
+        /**
+         * 两级面板：左侧仅主题名，悬停主题后右侧再出工具。
+         * 不用 Bootstrap dropdown。
+         */
+        const cols = item.columns || [];
+        const rail = cols
+          .map((col, idx) => {
+            const id = col.id || `topic-${idx}`;
+            const active = idx === 0 ? ' is-active' : '';
+            const pressed = idx === 0 ? 'true' : 'false';
+            return `<button type="button" class="tools-mega-topic${active}" data-topic-id="${id}" aria-controls="tools-mega-pane-${id}" aria-pressed="${pressed}">${col.heading.label}</button>`;
+          })
+          .join('');
+        const panes = cols
+          .map((col, idx) => {
+            const id = col.id || `topic-${idx}`;
+            const hidden = idx === 0 ? '' : ' hidden';
+            const active = idx === 0 ? ' is-active' : '';
+            const links = (col.items || [])
+              .map(
+                (sub) =>
+                  `<a class="tools-mega-link" href="${sub.href}"${linkAttrs(sub)}>${sub.label}</a>`,
+              )
+              .join('');
+            return `<div class="tools-mega-pane${active}" id="tools-mega-pane-${id}" data-topic-id="${id}" role="region"${hidden}>
+              <a class="tools-mega-hub" href="${col.heading.href}">${col.heading.label} →</a>
+              <div class="tools-mega-pane-links">${links}</div>
+            </div>`;
+          })
+          .join('');
+        const toggleHref = item.href || '#';
+        return `<li class="nav-item nav-item--tools-mega">
+          <a class="nav-link nav-link--tools-mega" href="${toggleHref}" aria-haspopup="true" aria-expanded="false" id="toolsMegaToggle">${item.label}</a>
+          <div class="tools-mega-panel" role="menu" aria-labelledby="toolsMegaToggle">
+            <div class="tools-mega-rail" role="tablist" aria-label="${item.label}">${rail}</div>
+            <div class="tools-mega-stages">${panes}</div>
+          </div>
+        </li>`;
+      }
       if (item.type === 'dropdown') {
         const menu = (item.items || [])
           .map(
@@ -72,10 +123,8 @@ export const renderHeader = ({
     })
     .join('');
 
-  // Search form intentionally removed: site no longer exposes a top-level search input/button.
-
-  /** 四套品牌主题切换器（色点 + 本地化名称）。 */
-  const themeSwitcher = `
+  /** 页面设置：四套品牌配色（原「页面主题」）。 */
+  const pageSettingsSwitcher = `
             <div class="dropdown theme-switcher">
               <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="${t(lang, 'theme_label')}">
                 <span class="theme-swatch" data-theme-swatch aria-hidden="true"></span>
@@ -108,7 +157,7 @@ export const renderHeader = ({
         <div class="collapse navbar-collapse" id="topNav">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">${navHtml}</ul>
           <div class="d-flex align-items-center gap-2">
-            ${themeSwitcher}
+            ${pageSettingsSwitcher}
             ${showLangSwitcher ? renderLangSwitcher({ lang, langAlternates }) : ''}
           </div>
         </div>

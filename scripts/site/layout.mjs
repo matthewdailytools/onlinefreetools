@@ -109,9 +109,10 @@ export const renderLayout = ({
     .layout { display: flex; min-height: calc(100vh - var(--header-h, 56px)); }
   `;
 
+  /** 侧栏内任意链接点击后收起移动端抽屉。 */
   const sidebarAutoClose = sidebarAutoCloseSelector
     ? `
-    document.querySelectorAll(${JSON.stringify(sidebarAutoCloseSelector)}).forEach((link) => {
+    document.querySelectorAll('#sidebar a').forEach((link) => {
       link.addEventListener('click', (e) => {
         try {
           const sidebar = document.getElementById('sidebar');
@@ -151,6 +152,98 @@ export const renderLayout = ({
     }
   </script>`
       : '';
+
+  /** 两级主题面板 + 桌面延时关闭 + 窄屏点击。 */
+  const toolsMegaScript = `
+  <script>
+    (function () {
+      var item = document.querySelector('.nav-item--tools-mega');
+      if (!item) return;
+      var toggle = item.querySelector('.nav-link--tools-mega');
+      var panel = item.querySelector('.tools-mega-panel');
+      if (!toggle || !panel) return;
+      var mq = window.matchMedia('(min-width: 992px)');
+      var closeTimer = null;
+      var CLOSE_DELAY_MS = 220;
+
+      function setOpen(open) {
+        item.classList.toggle('is-open', open);
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      }
+
+      function clearCloseTimer() {
+        if (closeTimer) {
+          clearTimeout(closeTimer);
+          closeTimer = null;
+        }
+      }
+
+      function scheduleClose() {
+        clearCloseTimer();
+        closeTimer = setTimeout(function () {
+          setOpen(false);
+          closeTimer = null;
+        }, CLOSE_DELAY_MS);
+      }
+
+      function activateTopic(topicId) {
+        if (!topicId) return;
+        panel.querySelectorAll('.tools-mega-topic').forEach(function (btn) {
+          var on = btn.getAttribute('data-topic-id') === topicId;
+          btn.classList.toggle('is-active', on);
+          btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+        });
+        panel.querySelectorAll('.tools-mega-pane').forEach(function (pane) {
+          var on = pane.getAttribute('data-topic-id') === topicId;
+          pane.classList.toggle('is-active', on);
+          if (on) pane.removeAttribute('hidden');
+          else pane.setAttribute('hidden', '');
+        });
+      }
+
+      panel.querySelectorAll('.tools-mega-topic').forEach(function (btn) {
+        btn.addEventListener('mouseenter', function () {
+          activateTopic(btn.getAttribute('data-topic-id'));
+        });
+        btn.addEventListener('focus', function () {
+          activateTopic(btn.getAttribute('data-topic-id'));
+        });
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          activateTopic(btn.getAttribute('data-topic-id'));
+        });
+      });
+
+      item.addEventListener('mouseenter', function () {
+        if (!mq.matches) return;
+        clearCloseTimer();
+        setOpen(true);
+      });
+      item.addEventListener('mouseleave', function () {
+        if (!mq.matches) return;
+        scheduleClose();
+      });
+      panel.addEventListener('mouseenter', function () {
+        if (!mq.matches) return;
+        clearCloseTimer();
+        setOpen(true);
+      });
+      panel.addEventListener('mouseleave', function () {
+        if (!mq.matches) return;
+        scheduleClose();
+      });
+
+      toggle.addEventListener('click', function (e) {
+        if (mq.matches) return;
+        e.preventDefault();
+        setOpen(!item.classList.contains('is-open'));
+      });
+      document.addEventListener('click', function (e) {
+        if (mq.matches) return;
+        if (!item.contains(e.target)) setOpen(false);
+      });
+    })();
+  </script>`;
 
   return `<!doctype html>
 <html lang="${lang}">
@@ -193,6 +286,7 @@ export const renderLayout = ({
   <script src="${bootstrapJs}" defer></script>
   <script src="/js/theme.js" defer></script>
   ${sidebarScript}
+  ${toolsMegaScript}
 </body>
 </html>`;
 };

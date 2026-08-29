@@ -24,7 +24,7 @@ const ar: SiteLangDict = {
   bmi_weight_lbs: 'الوزن (رطل)',
   bmi_weight_lbs_placeholder: 'الوزن بالرطل',
   brand: 'OnlineFreeTools.org',
-  theme_label: 'المظهر',
+  theme_label: 'إعدادات الصفحة',
   theme_teal: 'أزرق حجري',
   theme_green: 'أخضر غابة',
   theme_amber: 'كهرماني',
@@ -88,7 +88,7 @@ const ar: SiteLangDict = {
   url_label: 'الرابط',
   url_placeholder: 'مثال: https://example.com',
   // --- topic labels (auto) ---
-  nav_topics: "المواضيع",
+  nav_topics: "مواضيع الأدوات",
   topics_view_all: "عرض الكل في هذا الموضوع",
   topic_health_body: "الصحة والجسم",
   topic_personal_money: "المال الشخصي",

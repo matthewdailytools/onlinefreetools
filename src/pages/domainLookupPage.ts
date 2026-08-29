@@ -95,7 +95,7 @@ export const renderDomainLookupPage = (lang: SiteLang, defaultLang: SiteLang) =>
 	/** 侧栏 HTML */
 	const sidebarHtml = renderSidebar({
 		title: t(lang, 'nav_tools'),
-		items: buildToolSidebarItems({
+		groups: buildToolSidebarItems({
 			lang: lang,
 			defaultLang: defaultLang,
 			currentSlug: 'domain-lookup',

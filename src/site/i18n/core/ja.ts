@@ -24,7 +24,7 @@ const ja: SiteLangDict = {
   bmi_weight_lbs: '体重（lb）',
   bmi_weight_lbs_placeholder: '体重（ポンド）',
   brand: 'OnlineFreeTools.org',
-  theme_label: 'テーマ',
+  theme_label: 'ページ設定',
   theme_teal: 'スレートブルー',
   theme_green: 'フォレスト',
   theme_amber: 'アンバー',
@@ -87,7 +87,7 @@ const ja: SiteLangDict = {
   url_label: 'URL',
   url_placeholder: '例：https://example.com',
   // --- topic labels (auto) ---
-  nav_topics: "トピック",
+  nav_topics: "ツールのトピック",
   topics_view_all: "このトピックをすべて見る",
   topic_health_body: "健康・身体",
   topic_personal_money: "個人のお金",

@@ -8,7 +8,7 @@
 /** @type {Record<string, Record<string, string>>} */
 export const topicTranslations = {
   "en": {
-    "nav_topics": "Topics",
+    "nav_topics": "Tool topics",
     "topics_hub_title": "Browse tools by topic",
     "topics_hub_desc": "Free browser tools grouped by job: health, money, business math, PDFs, images, SEO, networking, and developer utilities—with guidance on how to pick each topic.",
     "topics_hub_intro": "Topics group tools by the job you are trying to finish—not by file type alone. Open a topic for who it serves, how to pick a tool, honest limits, and FAQs. Each tool keeps one /tools/ URL; some appear under a secondary topic when they also help that job.",
@@ -260,7 +260,7 @@ export const topicTranslations = {
     "topic_files_archives_faq_a3": "Zips are packages, not a backup strategy. Use versioned backups with restore tests for irreplaceable data."
   },
   "zh": {
-    "nav_topics": "主题",
+    "nav_topics": "工具主题",
     "topics_hub_title": "按主题浏览工具",
     "topics_hub_desc": "按要完成的任务浏览免费浏览器工具：健康指标、家庭理财、经营测算、PDF、图片、SEO、网络与开发者工具，并说明如何选择合适主题。",
     "topics_hub_intro": "主题按「你要完成的工作」归类工具，而不只按文件类型。进入主题可看到适用人群、如何选型、能力边界与常见问题。每个工具仍只有一个 /tools/ 地址；若也能服务另一类工作，会出现在次要主题列表中。",
@@ -512,7 +512,7 @@ export const topicTranslations = {
     "topic_files_archives_faq_a3": "Zip 是打包，不是备份策略。不可替代数据请用可版本化、可演练恢复的备份。"
   },
   "es": {
-    "nav_topics": "Temas",
+    "nav_topics": "Temas de herramientas",
     "topics_hub_title": "Explorar herramientas por tema",
     "topics_hub_desc": "Herramientas gratis en el navegador agrupadas por trabajo: salud, dinero, finanzas de negocio, PDF, imágenes, SEO, red y utilidades para desarrolladores, con guía para elegir.",
     "topics_hub_intro": "Los temas agrupan herramientas por el trabajo que quieres terminar, no solo por tipo de archivo. Abre un tema para ver a quién sirve, cómo elegir, límites honestos y FAQ. Cada herramienta conserva una URL /tools/; algunas aparecen en un tema secundario cuando también ayudan a ese trabajo.",
@@ -764,7 +764,7 @@ export const topicTranslations = {
     "topic_files_archives_faq_a3": "Son paquetes, no una estrategia de backup. Usa backups versionados con pruebas de restore."
   },
   "ar": {
-    "nav_topics": "المواضيع",
+    "nav_topics": "مواضيع الأدوات",
     "topics_hub_title": "تصفّح الأدوات حسب الموضوع",
     "topics_hub_desc": "أدوات متصفح مجانية مجمّعة حسب المهمة: الصحة، المال الشخصي، مالية الأعمال، PDF، الصور، SEO، الشبكة وأدوات المطوّرين—مع إرشاد للاختيار.",
     "topics_hub_intro": "تجمع المواضيع الأدوات حسب العمل الذي تريد إنجازه—لا حسب نوع الملف فقط. افتح موضوعًا لمعرفة الجمهور وكيفية الاختيار والحدود والأسئلة الشائعة. لكل أداة عنوان /tools/ واحد؛ وقد تظهر ثانويًا إن ساعدت مهمة أخرى.",
@@ -1016,7 +1016,7 @@ export const topicTranslations = {
     "topic_files_archives_faq_a3": "حزم لا استراتيجية نسخ احتياطي."
   },
   "pt": {
-    "nav_topics": "Tópicos",
+    "nav_topics": "Tópicos das ferramentas",
     "topics_hub_title": "Explorar ferramentas por tópico",
     "topics_hub_desc": "Ferramentas grátis no navegador agrupadas por tarefa: saúde, dinheiro, finanças de negócio, PDF, imagens, SEO, rede e utilitários para desenvolvedores—com orientação para escolher.",
     "topics_hub_intro": "Os tópicos agrupam ferramentas pelo trabalho que você quer concluir—não só pelo tipo de arquivo. Abra um tópico para ver para quem serve, como escolher, limites honestos e FAQ. Cada ferramenta mantém uma URL /tools/; algumas aparecem num tópico secundário quando também ajudam nessa tarefa.",
@@ -1268,7 +1268,7 @@ export const topicTranslations = {
     "topic_files_archives_faq_a3": "São pacotes, não estratégia de backup."
   },
   "id": {
-    "nav_topics": "Topik",
+    "nav_topics": "Topik alat",
     "topics_hub_title": "Jelajahi alat menurut topik",
     "topics_hub_desc": "Alat browser gratis dikelompokkan menurut tugas: kesehatan, uang, keuangan bisnis, PDF, gambar, SEO, jaringan, dan utilitas developer—dengan panduan memilih.",
     "topics_hub_intro": "Topik mengelompokkan alat menurut pekerjaan yang ingin Anda selesaikan—bukan hanya jenis file. Buka topik untuk melihat audiens, cara memilih, batas jujur, dan FAQ. Setiap alat tetap punya satu URL /tools/; beberapa muncul di topik sekunder bila juga membantu pekerjaan itu.",
@@ -1520,7 +1520,7 @@ export const topicTranslations = {
     "topic_files_archives_faq_a3": "Paket, bukan strategi backup."
   },
   "fr": {
-    "nav_topics": "Thèmes",
+    "nav_topics": "Thèmes d’outils",
     "topics_hub_title": "Parcourir les outils par thème",
     "topics_hub_desc": "Outils gratuits dans le navigateur regroupés par tâche : santé, argent, finance d’entreprise, PDF, images, SEO, réseau et utilitaires développeur—avec un guide pour choisir.",
     "topics_hub_intro": "Les thèmes regroupent les outils selon le travail à terminer—pas seulement le type de fichier. Ouvrez un thème pour voir le public, comment choisir, les limites et la FAQ. Chaque outil garde une URL /tools/ ; certains apparaissent aussi en thème secondaire.",
@@ -1772,7 +1772,7 @@ export const topicTranslations = {
     "topic_files_archives_faq_a3": "Ce sont des paquets, pas une stratégie de backup."
   },
   "ja": {
-    "nav_topics": "トピック",
+    "nav_topics": "ツールのトピック",
     "topics_hub_title": "トピック別にツールを探す",
     "topics_hub_desc": "健康・家計・事業財務・PDF・画像・SEO・ネットワーク・開発者向けなど、やりたい仕事ごとに無料ブラウザツールを整理。選び方も案内します。",
     "topics_hub_intro": "トピックはファイル種別だけでなく「片付けたい仕事」でツールをまとめます。対象ユーザー、選び方、正直な限界、FAQを確認できます。各ツールのURLは /tools/ のまま。別の仕事にも役立つ場合は副次トピックにも掲載されます。",
@@ -2024,7 +2024,7 @@ export const topicTranslations = {
     "topic_files_archives_faq_a3": "パッケージでありバックアップ戦略ではない。"
   },
   "ru": {
-    "nav_topics": "Темы",
+    "nav_topics": "Темы инструментов",
     "topics_hub_title": "Инструменты по темам",
     "topics_hub_desc": "Бесплатные браузерные инструменты по задачам: здоровье, личные финансы, бизнес-расчёты, PDF, изображения, SEO, сеть и утилиты для разработчиков — с подсказками по выбору.",
     "topics_hub_intro": "Темы группируют инструменты по работе, которую вы хотите закончить, а не только по типу файла. Откройте тему: аудитория, как выбрать, честные ограничения и FAQ. У каждого инструмента один URL /tools/; некоторые дублируются во вторичной теме, если помогают и там.",
@@ -2276,7 +2276,7 @@ export const topicTranslations = {
     "topic_files_archives_faq_a3": "Это пакеты, не стратегия бэкапа."
   },
   "de": {
-    "nav_topics": "Themen",
+    "nav_topics": "Tool-Themen",
     "topics_hub_title": "Tools nach Thema durchsuchen",
     "topics_hub_desc": "Kostenlose Browser-Tools nach Aufgabe: Gesundheit, Geld, Unternehmensfinanz, PDF, Bilder, SEO, Netzwerk und Entwickler-Utilities—mit Auswahlhilfe.",
     "topics_hub_intro": "Themen gruppieren Tools nach dem Job, den Sie erledigen wollen—nicht nur nach Dateityp. Öffnen Sie ein Thema für Zielgruppe, Auswahlhilfe, ehrliche Grenzen und FAQ. Jedes Tool behält eine /tools/-URL; manche erscheinen sekundär, wenn sie auch diesen Job unterstützen.",

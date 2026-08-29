@@ -27,7 +27,7 @@ const en: SiteLangDict = {
   bmi_weight_lbs: 'Weight (lbs)',
   bmi_weight_lbs_placeholder: 'Weight in lbs',
   brand: 'OnlineFreeTools.org',
-  theme_label: 'Theme',
+  theme_label: 'Page settings',
   theme_teal: 'Slate blue',
   theme_green: 'Forest',
   theme_amber: 'Amber',
@@ -102,7 +102,7 @@ const en: SiteLangDict = {
     'An Internet Protocol (IP) address is a numerical label assigned to each device connected to a computer network. It serves two primary functions: host or network interface identification and location addressing. There are two versions in use today: IPv4 and IPv6.',
   what_is_ip_title: 'What is an IP Address?',
   // --- topic labels (auto) ---
-  nav_topics: "Topics",
+  nav_topics: "Tool topics",
   topics_view_all: "View all in this topic",
   topic_health_body: "Health & body",
   topic_personal_money: "Personal money",

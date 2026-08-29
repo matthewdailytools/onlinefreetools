@@ -24,7 +24,7 @@ const zh: SiteLangDict = {
   bmi_weight_lbs: '体重（磅）',
   bmi_weight_lbs_placeholder: '体重（磅）',
   brand: 'OnlineFreeTools.org',
-  theme_label: '主题',
+  theme_label: '页面设置',
   theme_teal: '青石蓝',
   theme_green: '森绿',
   theme_amber: '琥珀橙',
@@ -97,7 +97,7 @@ const zh: SiteLangDict = {
   what_is_ip_content: '互联网协议（IP）地址是分配给连接到计算机网络的每个设备的数字标签。它有两个主要功能：主机或网络接口识别和位置寻址。目前有两个版本在使用：IPv4 和 IPv6。',
   what_is_ip_title: '什么是 IP 地址？',
   // --- topic labels (auto) ---
-  nav_topics: "主题",
+  nav_topics: "工具主题",
   topics_view_all: "查看本主题全部工具",
   topic_health_body: "健康与身体",
   topic_personal_money: "个人理财",

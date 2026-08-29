@@ -1,5 +1,5 @@
 /**
- * 工具主题（job / domain）枚举与查询：驱动 /topics 枢纽、顶栏多行菜单、工具页 primary 面包屑。
+ * 工具主题（job / domain）枚举与查询：驱动 /topics 枢纽、顶栏「工具」巨型菜单、侧栏手风琴、工具页 primary 面包屑。
  * 与构建侧 scripts/site/topics.mjs 保持同步。
  */
 import type { ToolPageMeta } from './tools';

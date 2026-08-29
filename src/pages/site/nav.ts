@@ -1,5 +1,6 @@
 /**
- * 全站顶栏导航项构建：各主题名下拉列出该主题 primary 工具链接（多行菜单）。
+ * 工具页顶栏导航项构建（仅 slug 工具页 / 信息页共用 buildToolPageNavItems）。
+ * 首页导航在 scripts/site/nav.mjs 的 buildHomeNavItems，保持分主题下拉，不改。
  */
 import type { SiteLang } from '../../site/i18n';
 import { t } from '../../site/i18n';
@@ -15,15 +16,31 @@ export type NavLinkItem = {
 	openInNewTab?: boolean;
 };
 
-/** 顶栏主题下拉：标签为主题名，子项为工具名 + 链接。 */
+/** 顶栏单列下拉（子项为扁平链接）。 */
 export type NavDropdownItem = {
 	type: 'dropdown';
 	label: string;
 	items: { href: string; label: string; openInNewTab?: boolean }[];
 };
 
-/** 顶栏导航项：链接或下拉。 */
-export type NavItem = NavLinkItem | NavDropdownItem;
+/** 顶栏「工具」巨型菜单：按主题分列，列头链到主题 hub。 */
+export type NavMegaItem = {
+	type: 'mega';
+	/** 顶栏可见标签（如「工具」） */
+	label: string;
+	/** 切换按钮可选落地 URL（主题总览） */
+	href?: string;
+	/** 每列：主题 id + 标题 + primary 工具链接 */
+	columns: {
+		/** 主题 id（两级面板切换用） */
+		id: string;
+		heading: { href: string; label: string };
+		items: { href: string; label: string; openInNewTab?: boolean }[];
+	}[];
+};
+
+/** 顶栏导航项：链接、下拉或巨型菜单。 */
+export type NavItem = NavLinkItem | NavDropdownItem | NavMegaItem;
 
 /**
  * 为路径加上语言前缀（默认语无前缀）。
@@ -37,46 +54,43 @@ const withLangPrefix = (lang: SiteLang, pathname: string, defaultLang: SiteLang)
 };
 
 /**
- * 按主题构建顶栏下拉：主题名为标签，子项为「查看全部」+ primary 工具。
+ * 构建「工具」巨型菜单：悬停后按主题分列展示 primary 工具（不依赖 Bootstrap Dropdown JS）。
  * @param lang 当前语言
  * @param defaultLang 站点默认语言
  * @param resolveToolHref 将工具 path 解析为最终 href
  */
-export const buildTopicNavDropdowns = (
+export const buildToolsMegaNavItem = (
 	lang: SiteLang,
 	defaultLang: SiteLang,
 	resolveToolHref: (toolPath: string) => string
-): NavDropdownItem[] =>
-	TOOL_TOPIC_ORDER.map((topic) => {
+): NavMegaItem => ({
+	type: 'mega',
+	label: t(lang, 'nav_tools'),
+	href: withLangPrefix(lang, TOPICS_HUB_PATH, defaultLang),
+	columns: TOOL_TOPIC_ORDER.map((topic) => {
 		const meta = TOPIC_I18N_KEYS[topic];
-		const hubHref = withLangPrefix(lang, `${TOPICS_HUB_PATH}/${topic}`, defaultLang);
 		return {
-			type: 'dropdown',
-			label: t(lang, meta.labelKey as keyof typeof import('../../site/i18n/en').default),
-			items: [
-				{
-					href: hubHref,
-					label: t(lang, 'topics_view_all' as keyof typeof import('../../site/i18n/en').default),
-					openInNewTab: false,
-				},
-				...getToolsByPrimaryTopic(topic).map((tool) => ({
-					href: resolveToolHref(tool.path),
-					label: t(lang, tool.i18nKey as keyof typeof import('../../site/i18n/en').default),
-					/** 工具页在新标签打开，保留当前页上下文 */
-					openInNewTab: true,
-				})),
-			],
+			id: topic,
+			heading: {
+				href: withLangPrefix(lang, `${TOPICS_HUB_PATH}/${topic}`, defaultLang),
+				label: t(lang, meta.labelKey as keyof typeof import('../../site/i18n/en').default),
+			},
+			items: getToolsByPrimaryTopic(topic).map((tool) => ({
+				href: resolveToolHref(tool.path),
+				label: t(lang, tool.i18nKey as keyof typeof import('../../site/i18n/en').default),
+				openInNewTab: true,
+			})),
 		};
-	});
+	}),
+});
 
 /**
- * 主题 / 应用场景 / 工具类型 hub 入口。
+ * 主题总览 + 工具类型 hub 入口。
  * @param lang 当前语言
  * @param defaultLang 站点默认语言
  */
 export const buildTaxonomyNavLinks = (lang: SiteLang, defaultLang: SiteLang): NavLinkItem[] => [
 	{ href: withLangPrefix(lang, TOPICS_HUB_PATH, defaultLang), label: t(lang, 'nav_topics') },
-	{ href: withLangPrefix(lang, '/where-to-use-tools', defaultLang), label: t(lang, 'nav_use_cases') },
 	{ href: withLangPrefix(lang, '/tool-type', defaultLang), label: t(lang, 'nav_tool_type') },
 ];
 
@@ -90,15 +104,13 @@ export const buildDevlogsNavLink = (lang: SiteLang): NavLinkItem => ({
 });
 
 /**
- * 工具页顶栏：首页 + 各主题工具下拉 + 场景/类型 + 开发日志。
+ * 工具页顶栏：首页 + 工具巨型菜单 + 主题/类型 + 开发日志。
  * @param lang 当前语言
  * @param defaultLang 站点默认语言
  */
 export const buildToolPageNavItems = (lang: SiteLang, defaultLang: SiteLang): NavItem[] => [
 	{ href: withLangPrefix(lang, '/', defaultLang), label: t(lang, 'nav_home') },
-	...buildTopicNavDropdowns(lang, defaultLang, (toolPath) =>
-		withLangPrefix(lang, toolPath, defaultLang)
-	),
+	buildToolsMegaNavItem(lang, defaultLang, (toolPath) => withLangPrefix(lang, toolPath, defaultLang)),
 	...buildTaxonomyNavLinks(lang, defaultLang),
 	buildDevlogsNavLink(lang),
 ];

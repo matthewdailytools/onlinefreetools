@@ -62,7 +62,7 @@ export const renderIpAddressPage = (lang: SiteLang, defaultLang: SiteLang) => {
 
 	const sidebarHtml = renderSidebar({
 		title: t(lang, 'nav_tools'),
-		items: buildToolSidebarItems({ lang: lang, defaultLang: defaultLang, currentSlug: 'ip-address', currentAnchor: '#ip-address' }),
+		groups: buildToolSidebarItems({ lang: lang, defaultLang: defaultLang, currentSlug: 'ip-address', currentAnchor: '#ip-address' }),
 		id: 'toolNav',
 	});
 

@@ -28,7 +28,7 @@ const ru: SiteLangDict = {
   bmi_weight_lbs: 'Вес (фунт)',
   bmi_weight_lbs_placeholder: 'Вес в фунтах',
   brand: 'OnlineFreeTools.org',
-  theme_label: 'Тема',
+  theme_label: 'Настройки страницы',
   theme_teal: 'Сланцевый синий',
   theme_green: 'Лесной зелёный',
   theme_amber: 'Янтарный',
@@ -93,7 +93,7 @@ const ru: SiteLangDict = {
   url_label: 'URL',
   url_placeholder: 'например https://example.com',
   // --- topic labels (auto) ---
-  nav_topics: "Темы",
+  nav_topics: "Темы инструментов",
   topics_view_all: "Смотреть всё в этой теме",
   topic_health_body: "Здоровье и тело",
   topic_personal_money: "Личные финансы",

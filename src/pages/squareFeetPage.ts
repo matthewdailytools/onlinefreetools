@@ -67,7 +67,7 @@ export const renderSquareFeetPage = (opts: {
 
 	const sidebarHtml = renderSidebar({
 		title: t(opts.lang, 'nav_tools'),
-		items: buildToolSidebarItems({ lang: opts.lang, defaultLang: opts.defaultLang, currentSlug: 'square-feet', currentAnchor: '#calc' }),
+		groups: buildToolSidebarItems({ lang: opts.lang, defaultLang: opts.defaultLang, currentSlug: 'square-feet', currentAnchor: '#calc' }),
 		id: 'toolNav',
 	});
 

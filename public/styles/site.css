@@ -80,7 +80,7 @@
   --shadow: none;
   --shadow-sm: none;
   --header-h: 60px;
-  /* 桌面多行主题菜单占位（约两行 nav-link）；侧栏 sticky top 同步 */
+  /* 首页多行主题下拉占位；工具页单行不使用 */
   --header-h-multirow: 7.25rem;
   --sidebar-w: 248px;
   --home-max: 1370px;
@@ -434,25 +434,25 @@ body.is-tool-page .tool-lead {
 }
 
 /**
- * lg+：主题下拉允许换行成多行菜单；右侧主题/语言始终可见。
- * 下拉面板铺成多列，避免单列内滚动条。
+ * 首页 lg+：恢复多行主题下拉（body.is-home-page）。
+ * 工具页不带此 class，保持单行顶栏。
  */
 @media (min-width: 992px) {
-  :root {
+  body.is-home-page {
     --header-h: var(--header-h-multirow);
   }
 
-  .navbar.site-navbar {
+  body.is-home-page .navbar.site-navbar {
     min-height: var(--header-h);
   }
 
-  .navbar.site-navbar .container-fluid {
+  body.is-home-page .navbar.site-navbar .container-fluid {
     flex-wrap: nowrap;
     min-width: 0;
     align-items: flex-start;
   }
 
-  .navbar.site-navbar .navbar-collapse {
+  body.is-home-page .navbar.site-navbar .navbar-collapse {
     display: flex !important;
     flex-wrap: nowrap;
     align-items: flex-start;
@@ -460,7 +460,7 @@ body.is-tool-page .tool-lead {
     flex: 1 1 auto;
   }
 
-  .navbar.site-navbar .navbar-nav {
+  body.is-home-page .navbar.site-navbar .navbar-nav {
     position: relative;
     flex: 1 1 auto;
     flex-wrap: wrap;
@@ -468,26 +468,13 @@ body.is-tool-page .tool-lead {
     min-width: 0;
     overflow: visible;
     row-gap: 0.1rem;
-    max-height: none;
   }
 
-  .navbar.site-navbar .navbar-nav::-webkit-scrollbar {
-    display: none;
-    width: 0;
-    height: 0;
-  }
-
-  .navbar.site-navbar .navbar-nav.navbar-nav--dropdown-open,
-  .navbar.site-navbar .navbar-nav:has(.dropdown-menu.show),
-  .navbar.site-navbar .navbar-nav:has(.dropdown-toggle[aria-expanded='true']) {
-    overflow: visible;
-  }
-
-  .navbar.site-navbar .navbar-nav > .dropdown {
+  body.is-home-page .navbar.site-navbar .navbar-nav > .dropdown {
     position: static;
   }
 
-  .navbar.site-navbar .navbar-nav > .dropdown > .dropdown-menu {
+  body.is-home-page .navbar.site-navbar .navbar-nav > .dropdown > .dropdown-menu {
     left: 0;
     right: 0;
     width: auto;
@@ -496,41 +483,26 @@ body.is-tool-page .tool-lead {
     max-height: calc(100vh - var(--header-h) - 8px);
     overflow-x: hidden;
     overflow-y: auto;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
   }
 
-  .navbar.site-navbar .navbar-nav > .dropdown > .dropdown-menu.show {
+  body.is-home-page .navbar.site-navbar .navbar-nav > .dropdown > .dropdown-menu.show {
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
   }
 
-  .navbar.site-navbar .navbar-nav > .dropdown > .dropdown-menu::-webkit-scrollbar {
-    display: none;
-    width: 0;
-    height: 0;
-  }
-
-  .navbar.site-navbar .navbar-nav > .dropdown > .dropdown-menu > li {
+  body.is-home-page .navbar.site-navbar .navbar-nav > .dropdown > .dropdown-menu > li {
     flex: 0 0 50%;
     min-width: 0;
   }
 
-  .navbar.site-navbar .navbar-nav > .dropdown > .dropdown-menu .dropdown-item {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .navbar.site-navbar .navbar-nav .nav-link {
+  body.is-home-page .navbar.site-navbar .navbar-nav .nav-link {
     white-space: nowrap;
     padding-top: 0.35rem;
     padding-bottom: 0.35rem;
   }
 
-  /* 主题 + 语言：不参与压缩，始终留在右侧 */
-  .navbar.site-navbar .navbar-collapse > .d-flex {
+  body.is-home-page .navbar.site-navbar .navbar-collapse > .d-flex {
     flex: 0 0 auto;
     margin-left: 0.75rem;
     align-self: flex-start;
@@ -539,15 +511,368 @@ body.is-tool-page .tool-lead {
 }
 
 @media (min-width: 1200px) {
-  .navbar.site-navbar .navbar-nav > .dropdown > .dropdown-menu > li {
+  body.is-home-page .navbar.site-navbar .navbar-nav > .dropdown > .dropdown-menu > li {
     flex: 0 0 33.333%;
   }
 }
 
 @media (min-width: 1400px) {
-  .navbar.site-navbar .navbar-nav > .dropdown > .dropdown-menu > li {
+  body.is-home-page .navbar.site-navbar .navbar-nav > .dropdown > .dropdown-menu > li {
     flex: 0 0 25%;
   }
+}
+
+/**
+ * 「工具」巨型菜单：悬停「工具」展开两级面板（左主题 / 右工具）。
+ * 默认收起；面板相对整条 navbar 铺开，::before 热区桥接空隙。
+ */
+@media (min-width: 992px) {
+  .nav-item--tools-mega {
+    position: static;
+  }
+
+  .tools-mega-panel {
+    position: absolute;
+    z-index: 1050;
+    top: calc(100% - 4px);
+    left: 0.5rem;
+    right: 0.5rem;
+    display: none;
+    grid-template-columns: minmax(11rem, 15rem) minmax(0, 1fr);
+    gap: 0;
+    padding: 0;
+    margin: 0;
+    max-height: calc(100vh - var(--header-h) - 12px);
+    overflow: hidden;
+    background: var(--surface);
+    border: 1px solid color-mix(in srgb, var(--brand) 18%, var(--border));
+    border-radius: var(--radius-sm);
+    box-shadow: 0 10px 32px rgba(15, 23, 42, 0.14);
+  }
+
+  /* 不可见热区：盖住顶栏底边到面板顶之间的缝 */
+  .tools-mega-panel::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -28px;
+    height: 28px;
+  }
+
+  .nav-item--tools-mega:hover > .tools-mega-panel,
+  .nav-item--tools-mega:focus-within > .tools-mega-panel,
+  .nav-item--tools-mega.is-open > .tools-mega-panel {
+    display: grid !important;
+  }
+
+  .tools-mega-rail {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    padding: 0.55rem 0.4rem;
+    overflow-y: auto;
+    max-height: inherit;
+    border-right: 1px solid color-mix(in srgb, var(--brand) 14%, var(--border));
+    background: color-mix(in srgb, var(--brand) 4%, var(--surface));
+  }
+
+  .tools-mega-topic {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    text-align: left;
+    width: 100%;
+    padding: 0.4rem 0.55rem;
+    border-radius: 6px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--text);
+    cursor: pointer;
+    line-height: 1.3;
+  }
+
+  .tools-mega-topic:hover,
+  .tools-mega-topic:focus-visible {
+    background: color-mix(in srgb, var(--brand) 10%, transparent);
+    color: var(--brand);
+    outline: none;
+  }
+
+  .tools-mega-topic.is-active {
+    background: color-mix(in srgb, var(--brand) 14%, transparent);
+    color: var(--brand);
+  }
+
+  .tools-mega-stages {
+    position: relative;
+    min-height: 12rem;
+    max-height: inherit;
+    overflow: hidden;
+  }
+
+  .tools-mega-pane {
+    display: none;
+    padding: 0.65rem 0.85rem 0.85rem;
+    max-height: calc(100vh - var(--header-h) - 24px);
+    overflow-y: auto;
+  }
+
+  .tools-mega-pane.is-active,
+  .tools-mega-pane:not([hidden]) {
+    display: block;
+  }
+
+  .tools-mega-pane[hidden] {
+    display: none !important;
+  }
+
+  .tools-mega-hub {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 650;
+    color: var(--brand);
+    text-decoration: none;
+    margin-bottom: 0.45rem;
+  }
+
+  .tools-mega-hub:hover,
+  .tools-mega-hub:focus-visible {
+    text-decoration: underline;
+  }
+
+  .tools-mega-pane-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.15rem 0.75rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .tools-mega-pane-links {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1400px) {
+  .tools-mega-pane-links {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/**
+ * 工具页 lg+：单行顶栏（与首页多行主题下拉分离）。
+ */
+@media (min-width: 992px) {
+  body.is-tool-page .navbar.site-navbar .container-fluid {
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  body.is-tool-page .navbar.site-navbar .navbar-collapse {
+    display: flex !important;
+    flex-wrap: nowrap;
+    align-items: center;
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+
+  body.is-tool-page .navbar.site-navbar .navbar-nav {
+    flex: 1 1 auto;
+    flex-wrap: nowrap;
+    align-items: center;
+    min-width: 0;
+    overflow: visible;
+  }
+
+  body.is-tool-page .navbar.site-navbar .navbar-nav .nav-link {
+    white-space: nowrap;
+  }
+
+  body.is-tool-page .navbar.site-navbar .navbar-collapse > .d-flex {
+    flex: 0 0 auto;
+    margin-left: 0.75rem;
+  }
+}
+
+.tools-mega-link {
+  display: block;
+  font-size: 0.8125rem;
+  padding: 0.28rem 0.35rem;
+  color: var(--text);
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-radius: 4px;
+}
+
+.tools-mega-link:hover,
+.tools-mega-link:focus-visible {
+  color: var(--brand);
+  background: color-mix(in srgb, var(--brand) 8%, transparent);
+}
+
+/* 「工具」链接旁小三角，提示可展开 */
+.nav-link--tools-mega::after {
+  content: '';
+  display: inline-block;
+  width: 0.35rem;
+  height: 0.35rem;
+  margin-left: 0.35rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-0.1rem) rotate(45deg);
+  vertical-align: middle;
+  opacity: 0.75;
+}
+
+/* 窄屏：点击「工具」展开；主题轨 + 当前工具列表纵向堆叠 */
+@media (max-width: 991.98px) {
+  .tools-mega-panel {
+    display: none;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem 0.65rem;
+    max-height: min(70vh, 28rem);
+    overflow-y: auto;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    margin: 0.25rem 0 0.5rem;
+  }
+
+  .nav-item--tools-mega.is-open > .tools-mega-panel {
+    display: flex !important;
+  }
+
+  .tools-mega-rail {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+
+  .tools-mega-topic {
+    appearance: none;
+    border: 1px solid color-mix(in srgb, var(--brand) 16%, var(--border));
+    background: var(--surface);
+    border-radius: 999px;
+    padding: 0.25rem 0.55rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .tools-mega-topic.is-active {
+    border-color: var(--brand);
+    color: var(--brand);
+    background: color-mix(in srgb, var(--brand) 10%, transparent);
+  }
+
+  .tools-mega-pane[hidden] {
+    display: none !important;
+  }
+
+  .tools-mega-pane-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+
+  .tools-mega-hub {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 650;
+    color: var(--brand);
+    text-decoration: none;
+    margin-bottom: 0.35rem;
+  }
+}
+
+/* 侧栏：主题手风琴 */
+.sidebar-topic-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0 0.35rem 0.75rem;
+}
+
+.sidebar-topic {
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  background: transparent;
+}
+
+.sidebar-topic[open],
+.sidebar-topic--current {
+  border-color: color-mix(in srgb, var(--brand) 14%, var(--border));
+  background: color-mix(in srgb, var(--brand) 4%, var(--surface));
+}
+
+.sidebar-topic-summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.45rem 0.55rem;
+  font-size: 0.8125rem;
+  font-weight: 650;
+  color: var(--text);
+  user-select: none;
+}
+
+.sidebar-topic-summary::-webkit-details-marker {
+  display: none;
+}
+
+.sidebar-topic-summary::before {
+  content: '';
+  width: 0.4rem;
+  height: 0.4rem;
+  border-right: 2px solid var(--muted);
+  border-bottom: 2px solid var(--muted);
+  transform: rotate(-45deg);
+  margin-right: 0.15rem;
+  flex: 0 0 auto;
+  transition: transform 0.15s ease;
+}
+
+.sidebar-topic[open] > .sidebar-topic-summary::before {
+  transform: rotate(45deg);
+}
+
+.sidebar-topic-label {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sidebar-topic-count {
+  flex: 0 0 auto;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--muted);
+  background: color-mix(in srgb, var(--brand) 8%, var(--surface));
+  border-radius: 999px;
+  padding: 0.05rem 0.4rem;
+}
+
+.sidebar-topic-tools {
+  padding-bottom: 0.35rem;
+}
+
+.sidebar-topic-hub {
+  font-size: 0.75rem !important;
+  color: var(--brand) !important;
+  font-weight: 600;
+}
+
+.sidebar-topic-tool {
+  padding-left: 1.1rem !important;
 }
 
 /**

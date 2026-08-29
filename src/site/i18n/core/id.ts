@@ -24,7 +24,7 @@ const id: SiteLangDict = {
   bmi_weight_lbs: 'Berat (lb)',
   bmi_weight_lbs_placeholder: 'Berat dalam pon',
   brand: 'OnlineFreeTools.org',
-  theme_label: 'Tema',
+  theme_label: 'Pengaturan halaman',
   theme_teal: 'Biru batu',
   theme_green: 'Hijau hutan',
   theme_amber: 'Ambar',
@@ -89,7 +89,7 @@ const id: SiteLangDict = {
   url_label: 'URL',
   url_placeholder: 'contoh https://contoh.com',
   // --- topic labels (auto) ---
-  nav_topics: "Topik",
+  nav_topics: "Topik alat",
   topics_view_all: "Lihat semua di topik ini",
   topic_health_body: "Kesehatan & tubuh",
   topic_personal_money: "Uang pribadi",

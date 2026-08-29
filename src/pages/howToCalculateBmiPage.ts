@@ -68,7 +68,7 @@ export const renderHowToCalculateBmiPage = (opts: {
 
 	const sidebarHtml = renderSidebar({
 		title: t(opts.lang, 'nav_tools'),
-		items: buildToolSidebarItems({ lang: opts.lang, defaultLang: opts.defaultLang, currentSlug: 'how-to-calculate-bmi', currentAnchor: '#bmi' }),
+		groups: buildToolSidebarItems({ lang: opts.lang, defaultLang: opts.defaultLang, currentSlug: 'how-to-calculate-bmi', currentAnchor: '#bmi' }),
 		id: 'toolNav',
 	});
 

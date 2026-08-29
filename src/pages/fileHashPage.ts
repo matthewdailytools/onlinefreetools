@@ -71,7 +71,7 @@ export const renderFileHashPage = (opts: {
 
 	const sidebarHtml = renderSidebar({
 		title: t(opts.lang, 'nav_tools'),
-		items: buildToolSidebarItems({
+		groups: buildToolSidebarItems({
 			lang: opts.lang,
 			defaultLang: opts.defaultLang,
 			currentSlug: 'file-hash',

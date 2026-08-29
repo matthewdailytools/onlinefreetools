@@ -69,7 +69,7 @@ export const renderHowToCalculateGradientPage = (opts: {
 
 	const sidebarHtml = renderSidebar({
 		title: t(opts.lang, 'nav_tools'),
-		items: buildToolSidebarItems({ lang: opts.lang, defaultLang: opts.defaultLang, currentSlug: 'how-to-calculate-gradient', currentAnchor: '#gradient' }),
+		groups: buildToolSidebarItems({ lang: opts.lang, defaultLang: opts.defaultLang, currentSlug: 'how-to-calculate-gradient', currentAnchor: '#gradient' }),
 		id: 'toolNav',
 	});
 

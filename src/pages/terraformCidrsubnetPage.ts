@@ -96,7 +96,7 @@ export const renderTerraformCidrsubnetPage = (opts: {
 	/** 侧栏工具列表。 */
 	const sidebarHtml = renderSidebar({
 		title: t(opts.lang, 'nav_tools'),
-		items: buildToolSidebarItems({
+		groups: buildToolSidebarItems({
 			lang: opts.lang,
 			defaultLang: opts.defaultLang,
 			currentSlug: 'terraform-cidrsubnet',

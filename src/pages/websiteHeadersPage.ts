@@ -62,7 +62,7 @@ export const renderWebsiteHeadersPage = (lang: SiteLang, defaultLang: SiteLang) 
 
 	const sidebarHtml = renderSidebar({
 		title: t(lang, 'nav_tools'),
-		items: buildToolSidebarItems({ lang: lang, defaultLang: defaultLang, currentSlug: 'website-headers', currentAnchor: '#website-headers' }),
+		groups: buildToolSidebarItems({ lang: lang, defaultLang: defaultLang, currentSlug: 'website-headers', currentAnchor: '#website-headers' }),
 		id: 'toolNav',
 	});
 

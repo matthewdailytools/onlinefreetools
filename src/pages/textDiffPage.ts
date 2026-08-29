@@ -62,7 +62,7 @@ export const renderTextDiffPage = (opts: {
 
 	const sidebarHtml = renderSidebar({
 		title: t(opts.lang, 'nav_tools'),
-		items: buildToolSidebarItems({ lang: opts.lang, defaultLang: opts.defaultLang, currentSlug: 'text-diff', currentAnchor: '#text-diff' }),
+		groups: buildToolSidebarItems({ lang: opts.lang, defaultLang: opts.defaultLang, currentSlug: 'text-diff', currentAnchor: '#text-diff' }),
 		id: 'toolNav',
 	});
 

@@ -67,7 +67,7 @@ export const renderPdfToMarkdownPage = (opts: {
 
 	const sidebarHtml = renderSidebar({
 		title: t(opts.lang, 'nav_tools'),
-		items: buildToolSidebarItems({
+		groups: buildToolSidebarItems({
 			lang: opts.lang,
 			defaultLang: opts.defaultLang,
 			currentSlug: 'pdf-to-markdown',

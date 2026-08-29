@@ -57,7 +57,7 @@ const fr: SiteLangDict = {
   nav_home: 'Accueil',
   nav_tool_type: 'Types d’outil',
   nav_tools: 'Outils',
-  nav_topics: 'Thèmes',
+  nav_topics: 'Thèmes d’outils',
   nav_use_cases: 'Où utiliser',
   note_1:
     'Si HEAD est refusé, nous passons en GET. L\'objectif est les en-têtes, pas le téléchargement du HTML.',
@@ -68,7 +68,7 @@ const fr: SiteLangDict = {
   status_label: 'Statut',
   theme_amber: 'Ambre',
   theme_green: 'Vert forêt',
-  theme_label: 'Thème',
+  theme_label: 'Réglages de page',
   theme_navy: 'Bleu encre',
   theme_teal: 'Bleu ardoise',
   tool_acceleration_accOut_label: 'Accélération',

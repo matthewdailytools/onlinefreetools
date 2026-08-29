@@ -8,7 +8,7 @@ declare namespace Cloudflare {
 	interface Env {
 		SITE_DEFAULT_LANG: "en";
 		SITE_LANGS: "zh,en";
-		PAGES_CACHE_VERSION: "4.3";
+		PAGES_CACHE_VERSION: "4.4";
 		ASSETS: Fetcher;
 		PAGES_BUCKET: R2Bucket;
 	}

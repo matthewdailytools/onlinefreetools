@@ -6,7 +6,7 @@ import { toolHomeTranslations } from './i18n-tools.generated.mjs';
 const translations = {
   en: {
     brand: 'OnlineFreeTools.org',
-    theme_label: 'Theme',
+    theme_label: 'Page settings',
     theme_teal: 'Slate blue',
     theme_green: 'Forest',
     theme_amber: 'Amber',
@@ -16,6 +16,7 @@ const translations = {
     home_description:
       'OnlineFreeTools.org learning project: a collection of small online utilities for mobile and desktop.',
     nav_home: 'Home',
+    nav_tools: 'Tools',
     nav_devlogs: 'Dev Logs',
     nav_featured: 'Featured',
     nav_all_tools: 'All Tools',
@@ -184,7 +185,7 @@ const translations = {
   },
   zh: {
     brand: 'OnlineFreeTools.org',
-    theme_label: '主题',
+    theme_label: '页面设置',
     theme_teal: '青石蓝',
     theme_green: '森绿',
     theme_amber: '琥珀橙',
@@ -193,6 +194,7 @@ const translations = {
     home_title: '免费在线工具，不上传数据，无需注册 | OnlineFreeTools.org',
     home_description: 'OnlineFreeTools.org 学习项目，聚合多类在线小工具，支持移动与桌面访问。',
     nav_home: '首页',
+    nav_tools: '工具',
     nav_devlogs: '开发日志',
     nav_featured: '推荐',
     nav_all_tools: '全部工具',
@@ -363,7 +365,7 @@ const translations = {
   },
   es: {
     brand: 'OnlineFreeTools.org',
-    theme_label: 'Tema',
+    theme_label: 'Ajustes de página',
     theme_teal: 'Azul pizarra',
     theme_green: 'Verde bosque',
     theme_amber: 'Ámbar',
@@ -373,6 +375,7 @@ const translations = {
     home_description:
       'Proyecto de aprendizaje de OnlineFreeTools.org: una colección de pequeñas utilidades en línea para móvil y escritorio.',
     nav_home: 'Inicio',
+    nav_tools: 'Herramientas',
     nav_devlogs: 'Registros',
     nav_featured: 'Destacados',
     nav_all_tools: 'Herramientas',
@@ -539,7 +542,7 @@ const translations = {
   },
   ar: {
     brand: 'OnlineFreeTools.org',
-    theme_label: 'المظهر',
+    theme_label: 'إعدادات الصفحة',
     theme_teal: 'أزرق حجري',
     theme_green: 'أخضر غابة',
     theme_amber: 'كهرماني',
@@ -549,6 +552,7 @@ const translations = {
     home_description:
       'مشروع تعليمي: مجموعة أدوات صغيرة عبر الإنترنت للهواتف والكمبيوتر.',
     nav_home: 'الرئيسية',
+    nav_tools: 'الأدوات',
     nav_devlogs: 'سجلات التطوير',
     nav_featured: 'مميز',
     nav_all_tools: 'كل الأدوات',
@@ -716,7 +720,7 @@ const translations = {
   },
   pt: {
     brand: 'OnlineFreeTools.org',
-    theme_label: 'Tema',
+    theme_label: 'Definições da página',
     theme_teal: 'Azul ardósia',
     theme_green: 'Verde floresta',
     theme_amber: 'Âmbar',
@@ -726,6 +730,7 @@ const translations = {
     home_description:
       'Projeto de aprendizado: uma coleção de pequenas utilidades online para mobile e desktop.',
     nav_home: 'Início',
+    nav_tools: 'Ferramentas',
     nav_devlogs: 'Logs',
     nav_featured: 'Destaques',
     nav_all_tools: 'Ferramentas',
@@ -892,7 +897,7 @@ const translations = {
   },
   id: {
     brand: 'OnlineFreeTools.org',
-    theme_label: 'Tema',
+    theme_label: 'Pengaturan halaman',
     theme_teal: 'Biru batu',
     theme_green: 'Hijau hutan',
     theme_amber: 'Ambar',
@@ -902,6 +907,7 @@ const translations = {
     home_description:
       'Proyek pembelajaran: kumpulan utilitas online kecil untuk mobile dan desktop.',
     nav_home: 'Beranda',
+    nav_tools: 'Alat',
     nav_devlogs: 'Log Dev',
     nav_featured: 'Unggulan',
     nav_all_tools: 'Alat',
@@ -1068,7 +1074,7 @@ const translations = {
   },
   fr: {
     brand: 'OnlineFreeTools.org',
-    theme_label: 'Thème',
+    theme_label: 'Réglages de page',
     theme_teal: 'Bleu ardoise',
     theme_green: 'Vert forêt',
     theme_amber: 'Ambre',
@@ -1078,6 +1084,7 @@ const translations = {
     home_description:
       'Projet d’apprentissage : une collection de petits outils en ligne pour mobile et ordinateur.',
     nav_home: 'Accueil',
+    nav_tools: 'Outils',
     nav_devlogs: 'Journal',
     nav_featured: 'À la une',
     nav_all_tools: 'Outils',
@@ -1244,7 +1251,7 @@ const translations = {
   },
   ja: {
     brand: 'OnlineFreeTools.org',
-    theme_label: 'テーマ',
+    theme_label: 'ページ設定',
     theme_teal: 'スレートブルー',
     theme_green: 'フォレスト',
     theme_amber: 'アンバー',
@@ -1253,6 +1260,7 @@ const translations = {
     home_title: '無料オンラインツール、データ非アップロード、登録不要 | OnlineFreeTools.org',
     home_description: '学習プロジェクト：モバイルとデスクトップ向けの小さなオンラインツール集。',
     nav_home: 'ホーム',
+    nav_tools: 'ツール',
     nav_devlogs: '開発ログ',
     nav_featured: 'おすすめ',
     nav_all_tools: 'ツール',
@@ -1420,7 +1428,7 @@ const translations = {
   },
   ru: {
     brand: 'OnlineFreeTools.org',
-    theme_label: 'Тема',
+    theme_label: 'Настройки страницы',
     theme_teal: 'Сланцевый синий',
     theme_green: 'Лесной зелёный',
     theme_amber: 'Янтарный',
@@ -1430,6 +1438,7 @@ const translations = {
     home_description:
       'Учебный проект: набор небольших онлайн‑инструментов для мобильных и настольных устройств.',
     nav_home: 'Главная',
+    nav_tools: 'Инструменты',
     nav_devlogs: 'Логи',
     nav_featured: 'Избранное',
     nav_all_tools: 'Инструменты',
@@ -1597,7 +1606,7 @@ const translations = {
   },
   de: {
     brand: 'OnlineFreeTools.org',
-    theme_label: 'Theme',
+    theme_label: 'Seiteneinstellungen',
     theme_teal: 'Schieferblau',
     theme_green: 'Waldgrün',
     theme_amber: 'Bernstein',
@@ -1607,6 +1616,7 @@ const translations = {
     home_description:
       'Lernprojekt: eine Sammlung kleiner Online‑Tools für Mobilgeräte und Desktop.',
     nav_home: 'Start',
+    nav_tools: 'Werkzeuge',
     nav_devlogs: 'Dev-Logs',
     nav_featured: 'Empfohlen',
     nav_all_tools: 'Tools',

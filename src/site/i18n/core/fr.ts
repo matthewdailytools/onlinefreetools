@@ -28,7 +28,7 @@ const fr: SiteLangDict = {
   bmi_weight_lbs: 'Poids (lb)',
   bmi_weight_lbs_placeholder: 'Poids en livres',
   brand: 'OnlineFreeTools.org',
-  theme_label: 'Thème',
+  theme_label: 'Réglages de page',
   theme_teal: 'Bleu ardoise',
   theme_green: 'Vert forêt',
   theme_amber: 'Ambre',
@@ -94,7 +94,7 @@ const fr: SiteLangDict = {
   url_label: 'URL',
   url_placeholder: 'par exemple https://exemple.com',
   // --- topic labels (auto) ---
-  nav_topics: "Thèmes",
+  nav_topics: "Thèmes d’outils",
   topics_view_all: "Tout voir dans ce thème",
   topic_health_body: "Santé & corps",
   topic_personal_money: "Argent perso",

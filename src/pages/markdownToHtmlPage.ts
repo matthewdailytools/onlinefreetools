@@ -63,7 +63,7 @@ export const renderMarkdownToHtmlPage = (opts: {
 
 	const sidebarHtml = renderSidebar({
 		title: t(opts.lang, 'nav_tools'),
-		items: buildToolSidebarItems({ lang: opts.lang, defaultLang: opts.defaultLang, currentSlug: 'markdown-to-html', currentAnchor: '#converter' }),
+		groups: buildToolSidebarItems({ lang: opts.lang, defaultLang: opts.defaultLang, currentSlug: 'markdown-to-html', currentAnchor: '#converter' }),
 		id: 'toolNav',
 	});
 

@@ -156,13 +156,13 @@
         </li><li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Fichiers & archives</a>
           <ul class="dropdown-menu"><li><a class="dropdown-item" href="/fr/topics/files-archives">Tout voir dans ce thème</a></li><li><a class="dropdown-item" href="/fr/tools/archive-extractor" target="_blank" rel="noopener noreferrer">Extracteur d archive en ligne — ouvrez les fichiers compressés dans le navigateur</a></li><li><a class="dropdown-item" href="/fr/tools/magnet-link-decoder" target="_blank" rel="noopener noreferrer">Décodeur de lien magnet — Info hash et trackers dans le navigateur</a></li><li><a class="dropdown-item" href="/fr/tools/unzip-file" target="_blank" rel="noopener noreferrer">Décompresser un ZIP en ligne — voir et extraire les fichiers dans le navigateur</a></li></ul>
-        </li><li class="nav-item"><a class="nav-link" href="/fr/topics">Thèmes</a></li><li class="nav-item"><a class="nav-link" href="/fr/where-to-use-tools">Où utiliser</a></li><li class="nav-item"><a class="nav-link" href="/fr/tool-type">Types d’outil</a></li><li class="nav-item"><a class="nav-link" href="/devlogs/">Journal</a></li></ul>
+        </li><li class="nav-item"><a class="nav-link" href="/fr/topics">Thèmes d’outils</a></li><li class="nav-item"><a class="nav-link" href="/fr/where-to-use-tools">Où utiliser</a></li><li class="nav-item"><a class="nav-link" href="/fr/tool-type">Types d’outil</a></li><li class="nav-item"><a class="nav-link" href="/devlogs/">Journal</a></li></ul>
           <div class="d-flex align-items-center gap-2">
             
             <div class="dropdown theme-switcher">
-              <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Thème">
+              <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Réglages de page">
                 <span class="theme-swatch" data-theme-swatch aria-hidden="true"></span>
-                <span class="d-none d-md-inline">Thème</span>
+                <span class="d-none d-md-inline">Réglages de page</span>
               </button>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li><button type="button" class="dropdown-item theme-option" data-theme-set="teal"><span class="theme-swatch theme-swatch--teal" aria-hidden="true"></span>Bleu ardoise</button></li>
@@ -2705,5 +2705,95 @@
   <script src="/vendor/bootstrap/bootstrap.bundle.min.js" defer></script>
   <script src="/js/theme.js" defer></script>
   
+  
+  <script>
+    (function () {
+      var item = document.querySelector('.nav-item--tools-mega');
+      if (!item) return;
+      var toggle = item.querySelector('.nav-link--tools-mega');
+      var panel = item.querySelector('.tools-mega-panel');
+      if (!toggle || !panel) return;
+      var mq = window.matchMedia('(min-width: 992px)');
+      var closeTimer = null;
+      var CLOSE_DELAY_MS = 220;
+
+      function setOpen(open) {
+        item.classList.toggle('is-open', open);
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      }
+
+      function clearCloseTimer() {
+        if (closeTimer) {
+          clearTimeout(closeTimer);
+          closeTimer = null;
+        }
+      }
+
+      function scheduleClose() {
+        clearCloseTimer();
+        closeTimer = setTimeout(function () {
+          setOpen(false);
+          closeTimer = null;
+        }, CLOSE_DELAY_MS);
+      }
+
+      function activateTopic(topicId) {
+        if (!topicId) return;
+        panel.querySelectorAll('.tools-mega-topic').forEach(function (btn) {
+          var on = btn.getAttribute('data-topic-id') === topicId;
+          btn.classList.toggle('is-active', on);
+          btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+        });
+        panel.querySelectorAll('.tools-mega-pane').forEach(function (pane) {
+          var on = pane.getAttribute('data-topic-id') === topicId;
+          pane.classList.toggle('is-active', on);
+          if (on) pane.removeAttribute('hidden');
+          else pane.setAttribute('hidden', '');
+        });
+      }
+
+      panel.querySelectorAll('.tools-mega-topic').forEach(function (btn) {
+        btn.addEventListener('mouseenter', function () {
+          activateTopic(btn.getAttribute('data-topic-id'));
+        });
+        btn.addEventListener('focus', function () {
+          activateTopic(btn.getAttribute('data-topic-id'));
+        });
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          activateTopic(btn.getAttribute('data-topic-id'));
+        });
+      });
+
+      item.addEventListener('mouseenter', function () {
+        if (!mq.matches) return;
+        clearCloseTimer();
+        setOpen(true);
+      });
+      item.addEventListener('mouseleave', function () {
+        if (!mq.matches) return;
+        scheduleClose();
+      });
+      panel.addEventListener('mouseenter', function () {
+        if (!mq.matches) return;
+        clearCloseTimer();
+        setOpen(true);
+      });
+      panel.addEventListener('mouseleave', function () {
+        if (!mq.matches) return;
+        scheduleClose();
+      });
+
+      toggle.addEventListener('click', function (e) {
+        if (mq.matches) return;
+        e.preventDefault();
+        setOpen(!item.classList.contains('is-open'));
+      });
+      document.addEventListener('click', function (e) {
+        if (mq.matches) return;
+        if (!item.contains(e.target)) setOpen(false);
+      });
+    })();
+  </script>
 </body>
 </html>
