@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img">
+  <!-- IPv6 CIDR: hex block plus prefix bar. ASCII comments only. -->
+  <rect width="32" height="32" rx="8" fill="#2d4a3e"/>
+  <text x="16" y="14" text-anchor="middle" fill="#fff" font-size="7" font-family="ui-monospace,Consolas,monospace">v6</text>
+  <rect x="5" y="18" width="22" height="7" rx="1.5" fill="#8fbc8f"/>
+  <rect x="5" y="18" width="11" height="7" rx="1.5" fill="#c5e0c5"/>
+</svg>

@@ -6,9 +6,11 @@ import type { SiteLang } from './i18n';
 import { renderAddWatermarkPage } from '../pages/addWatermarkPage';
 import { renderAddWwwToDnsPage } from '../pages/addWwwToDnsPage';
 import { renderArchiveExtractorPage } from '../pages/archiveExtractorPage';
+import { renderAwsVpcCidrPlannerPage } from '../pages/awsVpcCidrPlannerPage';
 import { renderBase64Page } from '../pages/base64Page';
 import { renderBrandColorTokenPackPage } from '../pages/brandColorTokenPackPage';
 import { renderBrandStyleGuidePage } from '../pages/brandStyleGuidePage';
+import { renderCidrCheatSheetPage } from '../pages/cidrCheatSheetPage';
 import { renderCidrToIpRangePage } from '../pages/cidrToIpRangePage';
 import { renderColorFromImagePage } from '../pages/colorFromImagePage';
 import { renderCompressPdfPage } from '../pages/compressPdfPage';
@@ -97,6 +99,7 @@ import { renderImagesToWordPage } from '../pages/imagesToWordPage';
 import { renderIndexNowPage } from '../pages/indexNowPage';
 import { renderIpAddressPage } from '../pages/ipAddressPage';
 import { renderIpRangeToCidrPage } from '../pages/ipRangeToCidrPage';
+import { renderIpv6CidrPage } from '../pages/ipv6CidrPage';
 import { renderJsonSchemaValidatorPage } from '../pages/jsonSchemaValidatorPage';
 import { renderJwtDecoderPage } from '../pages/jwtDecoderPage';
 import { renderMagnetLinkDecoderPage } from '../pages/magnetLinkDecoderPage';
@@ -147,9 +150,11 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'add-watermark': (lang, defaultLang, enabled) => renderAddWatermarkPage({ lang, defaultLang, enabledLangs: enabled }),
 	'add-www-to-dns': (lang, defaultLang, enabled) => renderAddWwwToDnsPage({ lang, defaultLang, enabledLangs: enabled }),
 	'archive-extractor': (lang, defaultLang, enabled) => renderArchiveExtractorPage({ lang, defaultLang, enabledLangs: enabled }),
+	'aws-vpc-cidr-planner': (lang, defaultLang, enabled) => renderAwsVpcCidrPlannerPage({ lang, defaultLang, enabledLangs: enabled }),
 	'base64': (lang, defaultLang, enabled) => renderBase64Page({ lang, defaultLang, enabledLangs: enabled }),
 	'brand-color-token-pack': (lang, defaultLang, enabled) => renderBrandColorTokenPackPage({ lang, defaultLang, enabledLangs: enabled }),
 	'brand-style-guide': (lang, defaultLang, enabled) => renderBrandStyleGuidePage({ lang, defaultLang, enabledLangs: enabled }),
+	'cidr-cheat-sheet': (lang, defaultLang, enabled) => renderCidrCheatSheetPage({ lang, defaultLang, enabledLangs: enabled }),
 	'cidr-to-ip-range': (lang, defaultLang, enabled) => renderCidrToIpRangePage({ lang, defaultLang, enabledLangs: enabled }),
 	'color-from-image': (lang, defaultLang, enabled) => renderColorFromImagePage({ lang, defaultLang, enabledLangs: enabled }),
 	'compress-pdf': (lang, defaultLang, enabled) => renderCompressPdfPage({ lang, defaultLang, enabledLangs: enabled }),
@@ -238,6 +243,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'indexnow': (lang, defaultLang, enabled) => renderIndexNowPage({ lang, defaultLang, enabledLangs: enabled }),
 	'ip-address': (lang, defaultLang, _enabled) => renderIpAddressPage(lang, defaultLang),
 	'ip-range-to-cidr': (lang, defaultLang, enabled) => renderIpRangeToCidrPage({ lang, defaultLang, enabledLangs: enabled }),
+	'ipv6-cidr': (lang, defaultLang, enabled) => renderIpv6CidrPage({ lang, defaultLang, enabledLangs: enabled }),
 	'json-schema-validator': (lang, defaultLang, enabled) => renderJsonSchemaValidatorPage({ lang, defaultLang, enabledLangs: enabled }),
 	'jwt-decoder': (lang, defaultLang, enabled) => renderJwtDecoderPage({ lang, defaultLang, enabledLangs: enabled }),
 	'magnet-link-decoder': (lang, defaultLang, enabled) => renderMagnetLinkDecoderPage({ lang, defaultLang, enabledLangs: enabled }),

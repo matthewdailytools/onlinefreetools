@@ -1,0 +1,27 @@
+{
+  "slug": "ipv6-cidr",
+  "path": "/tools/ipv6-cidr",
+  "updatedAt": "2026-08-31T02:40:00.000Z",
+  "launchedAt": "2026-08-31T02:40:00.000Z",
+  "category": "developer",
+  "primaryTopic": "network-ip",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_ipv6_cidr_title",
+  "homeTitleKey": "tool_ipv6_cidr_title",
+  "homeDescKey": "tool_ipv6_cidr_desc",
+  "faqPrefix": "tool_ipv6_cidr",
+  "related": [
+    "cidr-to-ip-range",
+    "ip-range-to-cidr"
+  ],
+  "logo": "/icons/tools/ipv6-cidr.svg",
+  "page": {
+    "module": "../pages/ipv6CidrPage",
+    "export": "renderIpv6CidrPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "developer",
+  "subject": "network"
+}

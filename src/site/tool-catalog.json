@@ -73,6 +73,28 @@
     "launchedAt": "2026-08-15T10:45:13+08:00"
   },
   {
+    "slug": "aws-vpc-cidr-planner",
+    "path": "/tools/aws-vpc-cidr-planner",
+    "updatedAt": "2026-08-31T03:40:00.000Z",
+    "launchedAt": "2026-08-31T03:40:00.000Z",
+    "category": "developer",
+    "primaryTopic": "network-ip",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_aws_vpc_cidr_planner_title",
+    "homeTitleKey": "tool_aws_vpc_cidr_planner_title",
+    "homeDescKey": "tool_aws_vpc_cidr_planner_desc",
+    "faqPrefix": "tool_aws_vpc_cidr_planner",
+    "related": [
+      "terraform-cidrsubnet",
+      "cidr-to-ip-range"
+    ],
+    "logo": "/icons/tools/aws-vpc-cidr-planner.svg",
+    "localProcessing": true,
+    "scenario": "developer",
+    "subject": "network"
+  },
+  {
     "slug": "base64",
     "path": "/tools/base64",
     "updatedAt": "2026-08-09T00:00:00.000Z",
@@ -144,6 +166,28 @@
     "scenario": "design",
     "subject": "color",
     "launchedAt": "2026-08-08T17:55:12+08:00"
+  },
+  {
+    "slug": "cidr-cheat-sheet",
+    "path": "/tools/cidr-cheat-sheet",
+    "updatedAt": "2026-08-31T03:10:00.000Z",
+    "launchedAt": "2026-08-31T03:10:00.000Z",
+    "category": "developer",
+    "primaryTopic": "network-ip",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_cidr_cheat_sheet_title",
+    "homeTitleKey": "tool_cidr_cheat_sheet_title",
+    "homeDescKey": "tool_cidr_cheat_sheet_desc",
+    "faqPrefix": "tool_cidr_cheat_sheet",
+    "related": [
+      "cidr-to-ip-range",
+      "private-cidr-ranges"
+    ],
+    "logo": "/icons/tools/cidr-cheat-sheet.svg",
+    "localProcessing": true,
+    "scenario": "developer",
+    "subject": "network"
   },
   {
     "slug": "cidr-to-ip-range",
@@ -2216,6 +2260,28 @@
       "cidr-to-ip-range"
     ],
     "logo": "/icons/tools/ip-range-to-cidr.svg",
+    "localProcessing": true,
+    "scenario": "developer",
+    "subject": "network"
+  },
+  {
+    "slug": "ipv6-cidr",
+    "path": "/tools/ipv6-cidr",
+    "updatedAt": "2026-08-31T02:40:00.000Z",
+    "launchedAt": "2026-08-31T02:40:00.000Z",
+    "category": "developer",
+    "primaryTopic": "network-ip",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_ipv6_cidr_title",
+    "homeTitleKey": "tool_ipv6_cidr_title",
+    "homeDescKey": "tool_ipv6_cidr_desc",
+    "faqPrefix": "tool_ipv6_cidr",
+    "related": [
+      "cidr-to-ip-range",
+      "ip-range-to-cidr"
+    ],
+    "logo": "/icons/tools/ipv6-cidr.svg",
     "localProcessing": true,
     "scenario": "developer",
     "subject": "network"

@@ -28,8 +28,11 @@
 - [JWT 解码](https://onlinefreetools.org/zh/tools/jwt-decoder) - 本地查看 JWT Header 与 Payload，不验证签名
 - [磁力链接解析](https://onlinefreetools.org/zh/tools/magnet-link-decoder) - 在浏览器本地查看 info hash、tracker、文件名与大小，不下载内容或联系节点
 - [Terraform cidrsubnet](https://onlinefreetools.org/zh/tools/terraform-cidrsubnet) - 按 prefix/newbits/netnum 算出 Terraform 会返回的子网 CIDR。示例：10.1.2.0/24、4、15 → 10.1.2.240/28。浏览器本地计算，不上服务器
+- [AWS VPC CIDR 规划器](https://onlinefreetools.org/zh/tools/aws-vpc-cidr-planner) - 把 VPC CIDR 按可用区切成公有/私有子网。示例：10.0.0.0/16 × 3 AZ → 六个 /19。浏览器本地计算，不上服务器
 - [IP 段转 CIDR](https://onlinefreetools.org/zh/tools/ip-range-to-cidr) - 把起止 IP（或多行范围）收成覆盖前缀。示例：192.168.1.0–192.168.1.255 → 192.168.1.0/24。浏览器本地计算，不上服务器
 - [CIDR 转 IP 范围](https://onlinefreetools.org/zh/tools/cidr-to-ip-range) - 把 IPv4 CIDR 展开成网络地址、广播与可用主机。示例：192.168.1.0/24。浏览器本地计算，不上服务器
+- [IPv6 CIDR 计算器](https://onlinefreetools.org/zh/tools/ipv6-cidr) - 把 IPv6 前缀展开成网段、末地址和压缩写法。示例：2001:db8:1::/64。浏览器本地计算，不上服务器
+- [CIDR 速查表](https://onlinefreetools.org/zh/tools/cidr-cheat-sheet) - 点选 /8–/32 查看掩码、通配符和主机数。示例：/24 → 255.255.255.0、254 台可用主机。浏览器内查看，不上服务器
 - [私有 CIDR 网段](https://onlinefreetools.org/zh/tools/private-cidr-ranges) - 核对 IP/CIDR 是否属于 RFC1918、CGNAT、ULA 等私网或特殊用途。示例：100.64.1.10 → CGNAT。浏览器本地检查，不上服务器
 - [图片格式转换](https://onlinefreetools.org/zh/tools/image-format-converter) - 浏览器内 PNG / JPEG / WebP / AVIF 互转：质量、透明底色与本地处理
 - [图片 EXIF 查看与清除](https://onlinefreetools.org/zh/tools/image-exif) - 本地查看 GPS/相机等元数据，并重编码清除后下载
@@ -163,8 +166,11 @@ Below are our available online tools with their links (English version):
 - [JWT Decoder](https://onlinefreetools.org/tools/jwt-decoder) - Read JWT header and payload locally — no signature verification
 - [Magnet Link Decoder](https://onlinefreetools.org/tools/magnet-link-decoder) - Parse info hashes, trackers, names, and sizes locally without downloading content or contacting peers
 - [Terraform cidrsubnet](https://onlinefreetools.org/tools/terraform-cidrsubnet) - Evaluate cidrsubnet(prefix, newbits, netnum) to the child CIDR Terraform would return. Sample: 10.1.2.0/24, 4, 15 → 10.1.2.240/28. Runs on your device, not uploaded to a server
+- [AWS VPC CIDR planner](https://onlinefreetools.org/tools/aws-vpc-cidr-planner) - Split a VPC CIDR into public/private subnets per AZ. Sample: 10.0.0.0/16 × 3 AZs → six /19s. Runs on your device, not uploaded to a server
 - [IP range to CIDR](https://onlinefreetools.org/tools/ip-range-to-cidr) - Turn start–end IP ranges into covering CIDR prefixes. Sample: 192.168.1.0–192.168.1.255 → 192.168.1.0/24. Runs on your device, not uploaded to a server
 - [CIDR to IP range](https://onlinefreetools.org/tools/cidr-to-ip-range) - Expand an IPv4 CIDR into network, broadcast, and usable hosts. Sample: 192.168.1.0/24. Runs on your device, not uploaded to a server
+- [IPv6 CIDR calculator](https://onlinefreetools.org/tools/ipv6-cidr) - Expand an IPv6 prefix into network, last address, and compressed form. Sample: 2001:db8:1::/64. Runs on your device, not uploaded to a server
+- [CIDR cheat sheet](https://onlinefreetools.org/tools/cidr-cheat-sheet) - Click /8–/32 for mask, wildcard, and host count. Sample: /24 → 255.255.255.0, 254 usable hosts. Runs on your device, not uploaded to a server
 - [Private CIDR ranges](https://onlinefreetools.org/tools/private-cidr-ranges) - Check whether an IP or CIDR is RFC1918, CGNAT, ULA, or other special-use space. Sample: 100.64.1.10 → CGNAT. Runs on your device, not uploaded to a server
 - [Image Format Converter](https://onlinefreetools.org/tools/image-format-converter) - Convert PNG, JPEG, WebP, and AVIF locally with quality, JPEG matte, and MIME checks
 - [EXIF Viewer & Remover](https://onlinefreetools.org/tools/image-exif) - View GPS/camera metadata locally and download a stripped re-encoded copy

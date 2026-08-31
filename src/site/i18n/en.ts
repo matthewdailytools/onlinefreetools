@@ -487,6 +487,88 @@ const en: SiteLangDict = {
   tool_aspect_ratio_usecases_title: 'When to use it',
   tool_aspect_ratio_w_label: 'Width',
   tool_aspect_ratio_w_ph: 'e.g. 1920',
+  tool_aws_vpc_cidr_planner_article:
+    'Turn a VPC CIDR into non-overlapping public and private subnets per Availability Zone. No AWS account is required; this is prefix arithmetic only.',
+  tool_aws_vpc_cidr_planner_az_2: '2 AZs',
+  tool_aws_vpc_cidr_planner_az_3: '3 AZs',
+  tool_aws_vpc_cidr_planner_az_label: 'Availability Zones',
+  tool_aws_vpc_cidr_planner_clear: 'Clear',
+  tool_aws_vpc_cidr_planner_col_cidr: 'CIDR',
+  tool_aws_vpc_cidr_planner_col_role: 'Role',
+  tool_aws_vpc_cidr_planner_col_usable: 'Usable IPs',
+  tool_aws_vpc_cidr_planner_copy: 'Copy table',
+  tool_aws_vpc_cidr_planner_copy_done: 'Copied',
+  tool_aws_vpc_cidr_planner_desc:
+    'AWS VPC CIDR planner: paste 10.0.0.0/16 and pick 3 AZs for public/private subnet CIDRs. Runs on your device.',
+  tool_aws_vpc_cidr_planner_description:
+    'AWS VPC CIDR planner: paste a VPC CIDR (example 10.0.0.0/16) and choose 2 or 3 AZs to get public and private subnet CIDRs. Enforces AWS /16–/28 limits, subtracts five reserved addresses per subnet, and warns if the block overlaps 172.17.0.0/16 (Docker’s default bridge). Optional Azure reserved-address notes. Runs on your device, not uploaded to a server.',
+  tool_aws_vpc_cidr_planner_disclaimer:
+    'Figures follow published AWS IPv4 VPC/subnet sizing (reserved addresses). This is not official AWS architecture advice; confirm against current documentation before production.',
+  tool_aws_vpc_cidr_planner_err_empty: 'Enter a VPC CIDR such as 10.0.0.0/16.',
+  tool_aws_vpc_cidr_planner_err_fit:
+    'This VPC is too small for {slots} equal subnets that stay within /28. Use a shorter VPC prefix or fewer AZs.',
+  tool_aws_vpc_cidr_planner_err_ipv6: 'This planner is IPv4 VPC CIDRs only.',
+  tool_aws_vpc_cidr_planner_err_parse: 'Could not parse that as an IPv4 CIDR.',
+  tool_aws_vpc_cidr_planner_err_vpc: 'AWS VPC IPv4 CIDRs must be between /16 and /28 inclusive.',
+  tool_aws_vpc_cidr_planner_example:
+    'Input: 10.0.0.0/16, 3 AZs, AWS rules. Output six /19 subnets: 10.0.0.0/19 AZ1 public, 10.0.32.0/19 AZ2 public, 10.0.64.0/19 AZ3 public, 10.0.96.0/19 AZ1 private, 10.0.128.0/19 AZ2 private, 10.0.160.0/19 AZ3 private. Each has 8192−5 = 8187 usable IPs.',
+  tool_aws_vpc_cidr_planner_example_title: 'Example',
+  tool_aws_vpc_cidr_planner_faq_a1:
+    'IPv4 VPC CIDRs are /16 through /28. Subnets in this planner also stay at /28 or shorter (more addresses). That matches AWS documentation for IPv4 VPC CIDR blocks.',
+  tool_aws_vpc_cidr_planner_faq_a2:
+    'AWS keeps the network address, the VPC router (+1), DNS (+2), a future use address (+3), and broadcast (last). Usable hosts are total minus five. Azure-style counting also subtracts five (first four + last).',
+  tool_aws_vpc_cidr_planner_faq_a3:
+    'Docker’s default bridge uses 172.17.0.0/16. If the VPC (or a subnet) overlaps that space, containers on the same host often cannot reach VPC resources. The planner still shows the table and adds a warning.',
+  tool_aws_vpc_cidr_planner_faq_a4:
+    'This page allocates a whole public/private layout. cidrsubnet() evaluates one function call (prefix, newbits, netnum). Use the related Terraform tool when you already know newbits and netnum.',
+  tool_aws_vpc_cidr_planner_faq_a5:
+    'No. It only changes the reserved-address explanation. The H1 stays AWS VPC CIDR planner. It does not call Azure or AWS APIs.',
+  tool_aws_vpc_cidr_planner_faq_a6: 'No account. Prefixes stay on your device in this browser tab and are not uploaded to a server.',
+  tool_aws_vpc_cidr_planner_faq_q1: 'Which VPC CIDR sizes does AWS allow?',
+  tool_aws_vpc_cidr_planner_faq_q2: 'Why are five addresses missing in each subnet?',
+  tool_aws_vpc_cidr_planner_faq_q3: 'Why warn about 172.17.0.0/16?',
+  tool_aws_vpc_cidr_planner_faq_q4: 'How is this different from Terraform cidrsubnet?',
+  tool_aws_vpc_cidr_planner_faq_q5: 'Does the Azure switch create an Azure VNet?',
+  tool_aws_vpc_cidr_planner_faq_q6: 'Do I need an AWS account? Are CIDRs uploaded?',
+  tool_aws_vpc_cidr_planner_formula_body:
+    'Need 2×AZ equal subnets. Extra bits = ceil(log2(2×AZ)). Subnet prefix = VPC prefix + extra bits (must stay ≤28). Carve sequentially from the VPC network address. Usable IPs = 2^(32−subnetPrefix) − 5.',
+  tool_aws_vpc_cidr_planner_formula_item_1: 'Reject VPC prefixes outside /16–/28 and reject IPv6.',
+  tool_aws_vpc_cidr_planner_formula_item_2: 'First AZ-count blocks are public; the next AZ-count blocks are private, AZ order 1…N.',
+  tool_aws_vpc_cidr_planner_formula_item_3:
+    'AWS reserved: network, router, DNS, future, broadcast. Azure-style uses the same count with different names.',
+  tool_aws_vpc_cidr_planner_formula_item_4: 'Overlap with 172.17.0.0/16 is a warning, not a hard fail.',
+  tool_aws_vpc_cidr_planner_formula_title: 'Formula',
+  tool_aws_vpc_cidr_planner_how_body:
+    'An AWS VPC CIDR planner splits one VPC prefix into public and private subnets per AZ. You leave with CIDRs you can paste into a template—not a console login.',
+  tool_aws_vpc_cidr_planner_how_item_1: 'Know you are splitting a VPC CIDR into AZ subnets (not creating a real VPC in AWS).',
+  tool_aws_vpc_cidr_planner_how_item_2: 'Paste a VPC CIDR such as 10.0.0.0/16 and choose 2 or 3 AZs (or Load sample).',
+  tool_aws_vpc_cidr_planner_how_item_3: 'Read each public/private CIDR and the usable IP count after reserved addresses.',
+  tool_aws_vpc_cidr_planner_how_item_4: 'If the 172.17.0.0/16 warning appears, pick a different VPC block when Docker runs on the same hosts.',
+  tool_aws_vpc_cidr_planner_how_item_5:
+    'To evaluate Terraform cidrsubnet() on one of those blocks, use the related Terraform cidrsubnet tool.',
+  tool_aws_vpc_cidr_planner_how_title: 'How it works',
+  tool_aws_vpc_cidr_planner_input_label: 'VPC CIDR',
+  tool_aws_vpc_cidr_planner_input_ph: '10.0.0.0/16',
+  tool_aws_vpc_cidr_planner_plan: 'Plan',
+  tool_aws_vpc_cidr_planner_plat_aws: 'AWS (five addresses per subnet)',
+  tool_aws_vpc_cidr_planner_plat_azure: 'Azure-style (first four + last)',
+  tool_aws_vpc_cidr_planner_plat_label: 'Reserved-address rules',
+  tool_aws_vpc_cidr_planner_ref_subnet_label: 'AWS Docs — Subnet sizing',
+  tool_aws_vpc_cidr_planner_ref_vpc_label: 'AWS Docs — VPC CIDR blocks',
+  tool_aws_vpc_cidr_planner_reserved_aws: 'AWS reserves five addresses per subnet: network, +1 VPC router, +2 DNS, +3 future, and broadcast.',
+  tool_aws_vpc_cidr_planner_reserved_azure:
+    'Azure-style counting reserves the first four addresses and the last address in each subnet (still five).',
+  tool_aws_vpc_cidr_planner_result_label: 'Subnet plan',
+  tool_aws_vpc_cidr_planner_role_priv: 'AZ {n} private',
+  tool_aws_vpc_cidr_planner_role_pub: 'AZ {n} public',
+  tool_aws_vpc_cidr_planner_sample: 'Load sample',
+  tool_aws_vpc_cidr_planner_title: 'AWS VPC CIDR planner — Split a VPC into AZ subnets',
+  tool_aws_vpc_cidr_planner_usecase_1: 'Green-field account: carve 10.0.0.0/16 into three AZs before writing Terraform.',
+  tool_aws_vpc_cidr_planner_usecase_2: 'Catch a plan that sits on 172.17.0.0/16 before Docker hosts fight the VPC router.',
+  tool_aws_vpc_cidr_planner_usecase_3: 'Compare the printed /19s with a cidrsubnet(prefix, 3, netnum) hand check.',
+  tool_aws_vpc_cidr_planner_usecases_title: 'When this helps',
+  tool_aws_vpc_cidr_planner_warn_docker:
+    'This VPC overlaps 172.17.0.0/16, Docker’s default bridge. Hosts that also run Docker often see routing clashes.',
   tool_base64_article:
     'Encode and decode UTF-8 text or raw bytes to Base64 and Base64url in one tabbed page. Built for API payloads, JWT segments, and config strings — distinct from our image-only Base64 tool.',
   tool_base64_clear: 'Clear',
@@ -1049,6 +1131,74 @@ const en: SiteLangDict = {
   tool_category_developer: 'Developer tools',
   tool_category_image: 'Image editing tools',
   tool_category_pdf: 'PDF tools',
+  tool_cidr_cheat_sheet_article:
+    'A clickable IPv4 prefix table: mask, wildcard, and hosts. CompTIA-style rows are marked. This is a cheat sheet, not a calculator for an arbitrary host address.',
+  tool_cidr_cheat_sheet_clear: 'Clear highlight',
+  tool_cidr_cheat_sheet_col_comptia: 'CompTIA',
+  tool_cidr_cheat_sheet_col_hosts: 'Usable hosts',
+  tool_cidr_cheat_sheet_col_mask: 'Subnet mask',
+  tool_cidr_cheat_sheet_col_prefix: 'Prefix',
+  tool_cidr_cheat_sheet_col_wild: 'Wildcard',
+  tool_cidr_cheat_sheet_comptia_no: '—',
+  tool_cidr_cheat_sheet_comptia_yes: 'Often on Network+ style charts',
+  tool_cidr_cheat_sheet_desc:
+    'CIDR cheat sheet: click /8–/32 for mask, wildcard, and host count. Same table as a CIDR chart. Stays on your device.',
+  tool_cidr_cheat_sheet_description:
+    'CIDR cheat sheet: click any prefix from /8 to /32 for subnet mask, wildcard, and usable host count. Example: /24 → 255.255.255.0 and 254 usable hosts. Includes a CompTIA-oriented column and /31 /32 footnotes. Same table people mean by a CIDR chart or CIDR notation chart. To expand a specific block, use CIDR to IP range. Runs in your browser, not uploaded to a server.',
+  tool_cidr_cheat_sheet_disclaimer:
+    'Figures follow common IPv4 CIDR arithmetic (including RFC 3021 for /31). The CompTIA column is a study hint, not an official exam outline. This is not a routing advisor.',
+  tool_cidr_cheat_sheet_err_jump: 'Enter an integer prefix from 8 to 32.',
+  tool_cidr_cheat_sheet_example:
+    'Select /24. Output: mask 255.255.255.0, wildcard 0.0.0.255, usable hosts 254, total addresses 256. CompTIA column marked. Same numbers as the default sample.',
+  tool_cidr_cheat_sheet_example_title: 'Example',
+  tool_cidr_cheat_sheet_faq_a1:
+    'Classless Inter-Domain Routing. The slash (for example /24) is the prefix length. This page is a cheat sheet of those lengths, not a “what is networking” course.',
+  tool_cidr_cheat_sheet_faq_a2:
+    'Common Network+ style tables highlight /8, /16, /24 and nearby lengths such as /25–/28 and /30. The CompTIA column marks those rows. It is not an official CompTIA outline.',
+  tool_cidr_cheat_sheet_faq_a3:
+    '/32 is one host. /31 follows RFC 3021: both addresses are usable on a point-to-point link. Other lengths subtract two for network and broadcast.',
+  tool_cidr_cheat_sheet_faq_a4:
+    'No. In farming, CIDR can mean a hormone implant for cattle. This page is only the networking cheat sheet (slash prefixes and masks).',
+  tool_cidr_cheat_sheet_faq_a5:
+    'Not on this table. Use the related CIDR to IP range calculator for a specific block. This cheat sheet only looks up /n → mask and host count.',
+  tool_cidr_cheat_sheet_faq_a6: 'No. Clicks stay on your device in this browser tab and are not uploaded to a server.',
+  tool_cidr_cheat_sheet_faq_q1: 'What does CIDR stand for?',
+  tool_cidr_cheat_sheet_faq_q2: 'Which prefixes matter for CompTIA-style charts?',
+  tool_cidr_cheat_sheet_faq_q3: 'How are /31 and /32 host counts calculated?',
+  tool_cidr_cheat_sheet_faq_q4: 'Is this the veterinary CIDR implant?',
+  tool_cidr_cheat_sheet_faq_q5: 'Can I expand 192.168.1.37/24 into a broadcast address here?',
+  tool_cidr_cheat_sheet_faq_q6: 'Are lookups uploaded?',
+  tool_cidr_cheat_sheet_formula_body:
+    'Mask bits = 2^32 − 2^(32−n). Wildcard is the bitwise NOT of the mask. Usable hosts: /32 → 1; /31 → 2 (RFC 3021); otherwise 2^(32−n) − 2. Total addresses = 2^(32−n).',
+  tool_cidr_cheat_sheet_formula_item_1: 'This table covers IPv4 prefixes /8 through /32 only.',
+  tool_cidr_cheat_sheet_formula_item_2: 'CompTIA marks common exam prefixes; it is not an official exam outline.',
+  tool_cidr_cheat_sheet_formula_item_3: '/31 and /32 footnotes override the classic unused network/broadcast pair.',
+  tool_cidr_cheat_sheet_formula_item_4: 'CIDR stands for Classless Inter-Domain Routing (see FAQ). Veterinary CIDR is a different word.',
+  tool_cidr_cheat_sheet_formula_title: 'Rules',
+  tool_cidr_cheat_sheet_how_body:
+    'A CIDR cheat sheet (the same job as a CIDR chart) lets you look up slash length against dotted mask and host count. Click a row instead of scanning a PDF.',
+  tool_cidr_cheat_sheet_how_item_1: 'Know you are looking up a CIDR prefix against mask and host count—not expanding an arbitrary IP.',
+  tool_cidr_cheat_sheet_how_item_2: 'Click a table row from /8 to /32, or type a prefix and press Show (or Load sample for /24).',
+  tool_cidr_cheat_sheet_how_item_3: 'Read subnet mask, wildcard, usable hosts, and whether the row is often on CompTIA-style charts.',
+  tool_cidr_cheat_sheet_how_item_4: 'For /31 and /32, read the footnote: usable counts do not follow the classic “minus two” rule.',
+  tool_cidr_cheat_sheet_how_item_5:
+    'To expand a concrete block such as 192.168.1.0/24 into network and broadcast, use the related CIDR to IP range tool.',
+  tool_cidr_cheat_sheet_how_title: 'How it works',
+  tool_cidr_cheat_sheet_jump: 'Show',
+  tool_cidr_cheat_sheet_jump_label: 'Jump to prefix',
+  tool_cidr_cheat_sheet_jump_ph: '24',
+  tool_cidr_cheat_sheet_lbl_total: 'Total addresses',
+  tool_cidr_cheat_sheet_note_31: '/31: both addresses are usable (RFC 3021 point-to-point). There is no unused network/broadcast pair.',
+  tool_cidr_cheat_sheet_note_32: '/32: a single host. Network equals that address; no classic broadcast.',
+  tool_cidr_cheat_sheet_ref_rfc3021_label: 'RFC 3021 — Using 31-Bit Prefixes on IPv4 Point-to-Point Links',
+  tool_cidr_cheat_sheet_ref_rfc4632_label: 'RFC 4632 — Classless Inter-domain Routing',
+  tool_cidr_cheat_sheet_result_label: 'Selected prefix',
+  tool_cidr_cheat_sheet_sample: 'Load sample',
+  tool_cidr_cheat_sheet_title: 'CIDR cheat sheet — Click a prefix to see mask and hosts',
+  tool_cidr_cheat_sheet_usecase_1: 'Scan /24 /25 /26 before a Network+ style chart question without opening a static PDF.',
+  tool_cidr_cheat_sheet_usecase_2: 'Check how many usable hosts a /28 firewall object actually has before writing the ACL.',
+  tool_cidr_cheat_sheet_usecase_3: 'Explain to a colleague that “slash 24” means 256 addresses and mask 255.255.255.0.',
+  tool_cidr_cheat_sheet_usecases_title: 'When this helps',
   tool_cidr_to_ip_range_article:
     'Paste an IPv4 CIDR to see network address, broadcast, usable first/last hosts, host count, subnet mask, and wildcard. Optional modes convert mask ↔ prefix, test contains/overlap, or expand addresses up to a safe limit.',
   tool_cidr_to_ip_range_calculate: 'Calculate',
@@ -3908,6 +4058,83 @@ const en: SiteLangDict = {
   tool_ip_range_to_cidr_usecase_3:
     'Aggregate several private ranges from a ticket (one line each) into a compact prefix list for Ansible or Terraform variables.',
   tool_ip_range_to_cidr_usecases_title: 'When this helps',
+  tool_ipv6_cidr_article:
+    'Turn an IPv6 CIDR into network and last addresses, plus compressed and expanded text. The page also flags prefixes that are not on a nibble (4-bit) boundary, which matters for reverse DNS and many allocation habits.',
+  tool_ipv6_cidr_calculate: 'Calculate',
+  tool_ipv6_cidr_clear: 'Clear',
+  tool_ipv6_cidr_copy: 'Copy fields',
+  tool_ipv6_cidr_copy_done: 'Copied',
+  tool_ipv6_cidr_desc:
+    'IPv6 CIDR calculator: paste 2001:db8:1::/64 for network, last address, and compressed form. Runs on your device.',
+  tool_ipv6_cidr_description:
+    'IPv6 CIDR calculator: paste a prefix (example 2001:db8:1::/64) to get the network address, last address, address count, and RFC 5952 compressed/expanded forms. Warns when the prefix is not nibble-aligned. Covers /64 LAN, /127 point-to-point, and /128 host. Runs on your device, not uploaded to a server.',
+  tool_ipv6_cidr_disclaimer:
+    'Results follow common IPv6 CIDR arithmetic (RFC 4291, RFC 5952, RFC 6164). This is not a routing or ISP allocation advisor; verify critical changes in your own lab.',
+  tool_ipv6_cidr_err_empty: 'Enter an IPv6 CIDR such as 2001:db8:1::/64.',
+  tool_ipv6_cidr_err_ipv4: 'This page is IPv6 only. Use the CIDR to IP range tool for IPv4 prefixes.',
+  tool_ipv6_cidr_err_parse: 'Could not parse that as an IPv6 address or CIDR.',
+  tool_ipv6_cidr_err_prefix: 'Prefix length must be an integer from 0 to 128.',
+  tool_ipv6_cidr_example:
+    'Input: 2001:db8:1::/64. Output: network 2001:db8:1:: (expanded 2001:0db8:0001:0000:0000:0000:0000:0000), last 2001:db8:1:0:ffff:ffff:ffff:ffff, count 2^64, nibble-aligned yes.',
+  tool_ipv6_cidr_example_title: 'Example',
+  tool_ipv6_cidr_faq_a1:
+    'IPv6 reverse DNS and many allocations step in 4-bit (nibble) units: /4, /8, … /64, /68. A prefix such as /67 still has a valid network range, but ip6.arpa zones and some ISP tools expect nibble steps. This calculator still shows the range and adds a warning.',
+  tool_ipv6_cidr_faq_a2:
+    '/64 is the usual LAN size. /127 is the two-address point-to-point prefix (RFC 6164). /128 is a single host. The result panel notes these sizes when you paste them.',
+  tool_ipv6_cidr_faq_a3:
+    'Yes for the common task: turn IPv6 CIDR notation into network/last addresses and canonical text. A separate “IPv6 CIDR chart” of every prefix is not on this page; use this calculator for one block, and the IPv4 CIDR cheat sheet for dotted-mask tables.',
+  tool_ipv6_cidr_faq_a4:
+    'Use the related CIDR to IP range tool. This page rejects IPv4 literals on purpose so a search for IPv6 CIDR does not land on IPv4 fields.',
+  tool_ipv6_cidr_faq_a5:
+    'No. Connectivity testers (such as test-ipv6 style pages) answer a different job. This tool only does prefix arithmetic in the browser.',
+  tool_ipv6_cidr_faq_a6: 'No. Addresses stay on your device in this browser tab and are not uploaded to a server.',
+  tool_ipv6_cidr_faq_q1: 'What does “not nibble-aligned” mean?',
+  tool_ipv6_cidr_faq_q2: 'How do /64, /127, and /128 differ?',
+  tool_ipv6_cidr_faq_q3: 'Is this the same as IPv6 CIDR notation lookup?',
+  tool_ipv6_cidr_faq_q4: 'Where do I expand an IPv4 CIDR?',
+  tool_ipv6_cidr_faq_q5: 'Does this test whether IPv6 works on my network?',
+  tool_ipv6_cidr_faq_q6: 'Are my addresses uploaded?',
+  tool_ipv6_cidr_formula_body:
+    'Parse the IPv6 text (one “::” compression). Mask = 2^128 − 2^(128−prefix). Network = address AND mask. Last = network OR NOT mask. Compress with RFC 5952 (longest zero run, lowercase). Address count is 2^(128−prefix).',
+  tool_ipv6_cidr_formula_item_1: 'Reject IPv4 literals and prefixes outside 0–128.',
+  tool_ipv6_cidr_formula_item_2: 'AND/OR the 128-bit values to get network and last addresses.',
+  tool_ipv6_cidr_formula_item_3: 'Special sizes: /128 → 1 address; /127 → 2 addresses (RFC 6164); /64 → 2^64 (typical LAN).',
+  tool_ipv6_cidr_formula_item_4: 'Nibble alignment: prefix modulo 4 equals 0. Other lengths still calculate, but show a warning.',
+  tool_ipv6_cidr_formula_title: 'Formula',
+  tool_ipv6_cidr_how_body:
+    'An IPv6 CIDR calculator turns a prefix into a network range: first address, last address, size, and RFC 5952 text. That is the same job as looking up IPv6 CIDR notation for a block you already have.',
+  tool_ipv6_cidr_how_item_1: 'Know you are turning an IPv6 CIDR prefix into a network range (not an IPv6 connectivity test).',
+  tool_ipv6_cidr_how_item_2: 'Paste an IPv6 CIDR such as 2001:db8:1::/64 (or use Load sample).',
+  tool_ipv6_cidr_how_item_3: 'Read the compressed and expanded network, last address, and address count; copy what you need.',
+  tool_ipv6_cidr_how_item_4: 'If the prefix is not a multiple of 4, read the nibble warning (reverse DNS and allocation habits).',
+  tool_ipv6_cidr_how_item_5: 'For IPv4 prefixes use CIDR to IP range; to fold start–end addresses into CIDRs use IP range to CIDR.',
+  tool_ipv6_cidr_how_title: 'How it works',
+  tool_ipv6_cidr_input_label: 'IPv6 CIDR',
+  tool_ipv6_cidr_input_ph: '2001:db8:1::/64',
+  tool_ipv6_cidr_lbl_count: 'Address count',
+  tool_ipv6_cidr_lbl_last: 'Last address (compressed)',
+  tool_ipv6_cidr_lbl_last_exp: 'Last address (expanded)',
+  tool_ipv6_cidr_lbl_network: 'Network (compressed)',
+  tool_ipv6_cidr_lbl_network_exp: 'Network (expanded)',
+  tool_ipv6_cidr_lbl_nibble: 'Nibble-aligned',
+  tool_ipv6_cidr_lbl_prefix: 'Prefix length',
+  tool_ipv6_cidr_nibble_no:
+    'No — this prefix is not on a 4-bit (nibble) boundary. Reverse DNS (ip6.arpa) and many ISP allocations expect /4, /8, … /64, /68 steps.',
+  tool_ipv6_cidr_nibble_yes: 'Yes — prefix length is a multiple of 4.',
+  tool_ipv6_cidr_note_127: '/127 is the point-to-point prefix (RFC 6164): two addresses, no unused pair.',
+  tool_ipv6_cidr_note_128: '/128 is a single host.',
+  tool_ipv6_cidr_note_64: '/64 is the usual LAN prefix (SLAAC and most host subnets).',
+  tool_ipv6_cidr_ref_rfc4291_label: 'RFC 4291 — IPv6 Addressing Architecture',
+  tool_ipv6_cidr_ref_rfc5952_label: 'RFC 5952 — A Recommendation for IPv6 Address Text Representation',
+  tool_ipv6_cidr_ref_rfc6164_label: 'RFC 6164 — Using 127-Bit IPv6 Prefixes on Inter-Router Links',
+  tool_ipv6_cidr_result_label: 'Result',
+  tool_ipv6_cidr_sample: 'Load sample',
+  tool_ipv6_cidr_title: 'IPv6 CIDR calculator — Expand a prefix into its address range',
+  tool_ipv6_cidr_usecase_1: 'Plan an office LAN as a /64 and copy the compressed network address into router config.',
+  tool_ipv6_cidr_usecase_2: 'Check a router point-to-point link that should be /127 (RFC 6164) so you only expect two addresses.',
+  tool_ipv6_cidr_usecase_3:
+    'Normalize documentation prefixes such as 2001:db8::/32 into RFC 5952 compressed form before a screenshot.',
+  tool_ipv6_cidr_usecases_title: 'When this helps',
   tool_irr_article: 'IRR via Newton',
   tool_irr_calculate: 'Calculate',
   tool_irr_cf_label: 'Cash flows (comma/newline; CF0 first)',

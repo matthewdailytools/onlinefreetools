@@ -1,0 +1,27 @@
+{
+  "slug": "aws-vpc-cidr-planner",
+  "path": "/tools/aws-vpc-cidr-planner",
+  "updatedAt": "2026-08-31T03:40:00.000Z",
+  "launchedAt": "2026-08-31T03:40:00.000Z",
+  "category": "developer",
+  "primaryTopic": "network-ip",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_aws_vpc_cidr_planner_title",
+  "homeTitleKey": "tool_aws_vpc_cidr_planner_title",
+  "homeDescKey": "tool_aws_vpc_cidr_planner_desc",
+  "faqPrefix": "tool_aws_vpc_cidr_planner",
+  "related": [
+    "terraform-cidrsubnet",
+    "cidr-to-ip-range"
+  ],
+  "logo": "/icons/tools/aws-vpc-cidr-planner.svg",
+  "page": {
+    "module": "../pages/awsVpcCidrPlannerPage",
+    "export": "renderAwsVpcCidrPlannerPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "developer",
+  "subject": "network"
+}

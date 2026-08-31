@@ -44,11 +44,11 @@
 
 | 字段 | 值 |
 |---|---|
-| 最近更新 | 2026-08-28 |
+| 最近更新 | 2026-08-31 |
 | 最近批次 | [keywords/cidr/2026-08-28-cidr-keyword-planner.md](./keywords/cidr/2026-08-28-cidr-keyword-planner.md)（§3.3 G 重跑选词/slug） |
-| 池内 `build` 候选 | **`terraform-cidrsubnet`** / **`ip-range-to-cidr`** / **`private-cidr-ranges`**（已开 `work-tasks/`）；收割 **`cidr-to-ip-range`**（已开夹，0b ready，不占周进攻）；`measuring-magnetic-fields`（已立项）；P1：`ipv6-cidr`、`cidr-cheat-sheet`；P2：`aws-vpc-cidr-planner` |
-| 本周新建工具页 | 0（brief only） |
-| 阻塞 | CIDR P1/P2 slug 仍等用户点名再建 work-tasks |
+| 池内 `build` 候选 | CIDR P0 已上线；P1 **`ipv6-cidr`** / **`cidr-cheat-sheet`** 与 P2 **`aws-vpc-cidr-planner`** 已实现（2026-08-31）。`vlsm-subnet-calculator` 仍 defer。 |
+| 本周新建工具页 | 3（`ipv6-cidr`、`cidr-cheat-sheet`、`aws-vpc-cidr-planner`） |
+| 阻塞 | CIDR P1/P2 已实现；VLSM 仍 defer |
 
 ---
 
@@ -130,6 +130,7 @@
 | 2026-08-28 | CIDR Planner **重跑选词/slug**：收割页 `cidr-to-ip-range`（H1=CIDR to IP range，title_gap）；速查 `cidr-cheat-sheet`；VPC `aws-vpc-cidr-planner`；废止 `cidr-host-range`/`cidr-prefix-chart`/`vpc-cidr-planner`。P0 仍为 terraform / ip-range-to-cidr / private-cidr-ranges。 | 用户要求按新标准重跑 |
 | 2026-08-28 | 用户点名立项 **`terraform-cidrsubnet`**：开 `work-tasks/terraform-cidrsubnet/`（0b+0i ready）。H1=Terraform cidrsubnet；cidrhost/cidrnetmask/cidrsubnets/hashicorp subnets cidr absorb 本页；不拆近义 URL；不做 VPC 规划器。 | 明确「立项」；long_gap 可交互求值缺口 |
 | 2026-08-28 | 用户点名「cidr notation calculator」→ 按 Planner absorb 开收割页 **`cidr-to-ip-range`**（`work-tasks/` 0b+0i ready）。H1=CIDR to IP range；notation/calculator/mask/expand absorb；禁 H1=CIDR Calculator。 | 明确「立项」；title_gap_fallback 收割 |
+| 2026-08-31 | 用户点名 token 效率模式立项并实现剩余 CIDR build slug：`ipv6-cidr`、`cidr-cheat-sheet`、`aws-vpc-cidr-planner`（十语 + coverage 0b/2/4 + build:site）。`vlsm-subnet-calculator` 仍不立项。 | 明确「立项并实现」；P1/P2 阻塞清除 |
 
 ---
 
