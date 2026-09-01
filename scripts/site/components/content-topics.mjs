@@ -77,7 +77,15 @@ export const renderTopicsLeafContent = ({ lang, id }) => {
     [meta.faqQ1Key, meta.faqA1Key],
     [meta.faqQ2Key, meta.faqA2Key],
     [meta.faqQ3Key, meta.faqA3Key],
+    [meta.faqQ4Key, meta.faqA4Key],
   ];
+  /** 工具选型指南：双换行拆成多段，便于扫读场景→工具映射 */
+  const guideBodyRaw = t(lang, meta.guideBodyKey);
+  const guideParagraphs = String(guideBodyRaw)
+    .split(/\n\n+/)
+    .filter(Boolean)
+    .map((para) => `<p class="text-muted mb-2">${para}</p>`)
+    .join('');
   const faqItems = faqKeys
     .map(([qKey, aKey]) => {
       const q = t(lang, qKey);
@@ -122,6 +130,10 @@ export const renderTopicsLeafContent = ({ lang, id }) => {
         <section class="mb-4">
           <h2 class="h4 mb-2">${t(lang, meta.limitsTitleKey)}</h2>
           <p class="text-muted mb-0">${t(lang, meta.limitsBodyKey)}</p>
+        </section>
+        <section class="mb-4" id="topic-guide">
+          <h2 class="h4 mb-2">${t(lang, meta.guideTitleKey)}</h2>
+          ${guideParagraphs}
         </section>
         <section class="mb-4" id="topic-primary">
           <h2 class="h4 mb-2">${t(lang, 'topics_primary_heading')}</h2>

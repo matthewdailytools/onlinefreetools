@@ -1,6 +1,7 @@
 import { sitePageTranslations } from './i18n-site-pages.mjs';
 import { taxonomyTranslations } from './i18n-taxonomy.mjs';
 import { topicTranslations } from './i18n-topics.mjs';
+import { topicGuideTranslations } from './i18n-topics-guides.mjs';
 import { toolHomeTranslations } from './i18n-tools.generated.mjs';
 
 const translations = {
@@ -1791,7 +1792,10 @@ export const t = (lang, key) => {
   const table = translations[lang] || translations.en || translations.zh;
   const siteTable = sitePageTranslations[lang] || sitePageTranslations.en || {};
   const taxonomyTable = taxonomyTranslations[lang] || taxonomyTranslations.en || {};
-  const topicTable = topicTranslations[lang] || topicTranslations.en || {};
+  const topicTable = {
+    ...(topicTranslations[lang] || topicTranslations.en || {}),
+    ...(topicGuideTranslations[lang] || topicGuideTranslations.en || {}),
+  };
   /** Prefer generated tool-home shards over legacy duplicates in `translations`. */
   const toolHome = toolHomeTranslations[lang] || toolHomeTranslations.en || {};
   return (

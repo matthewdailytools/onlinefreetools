@@ -33,7 +33,7 @@ export const TOOL_TOPIC_ORDER = [
  */
 export const topicKeyFragment = (id) => String(id).replace(/-/g, '_');
 
-/** @type {Record<string, {labelKey:string,titleKey:string,descKey:string,blurbKey:string,introKey:string,chooseTitleKey:string,chooseBodyKey:string,limitsTitleKey:string,limitsBodyKey:string,faqQ1Key:string,faqA1Key:string,faqQ2Key:string,faqA2Key:string,faqQ3Key:string,faqA3Key:string}>} */
+/** @type {Record<string, {labelKey:string,titleKey:string,descKey:string,blurbKey:string,introKey:string,chooseTitleKey:string,chooseBodyKey:string,limitsTitleKey:string,limitsBodyKey:string,faqQ1Key:string,faqA1Key:string,faqQ2Key:string,faqA2Key:string,faqQ3Key:string,faqA3Key:string,faqQ4Key:string,faqA4Key:string,guideTitleKey:string,guideBodyKey:string}>} */
 export const TOPIC_I18N_KEYS = Object.fromEntries(
   TOOL_TOPIC_ORDER.map((id) => {
     const f = topicKeyFragment(id);
@@ -55,6 +55,10 @@ export const TOPIC_I18N_KEYS = Object.fromEntries(
         faqA2Key: `topic_${f}_faq_a2`,
         faqQ3Key: `topic_${f}_faq_q3`,
         faqA3Key: `topic_${f}_faq_a3`,
+        faqQ4Key: `topic_${f}_faq_q4`,
+        faqA4Key: `topic_${f}_faq_a4`,
+        guideTitleKey: `topic_${f}_guide_title`,
+        guideBodyKey: `topic_${f}_guide_body`,
       },
     ];
   })

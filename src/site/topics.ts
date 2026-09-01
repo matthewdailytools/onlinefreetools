@@ -73,13 +73,19 @@ export type TopicI18nKeys = {
 	limitsTitleKey: string;
 	/** 「边界 / 注意」正文 */
 	limitsBodyKey: string;
-	/** FAQ 问 1–3 */
+	/** FAQ 问 1–4 */
 	faqQ1Key: string;
 	faqA1Key: string;
 	faqQ2Key: string;
 	faqA2Key: string;
 	faqQ3Key: string;
 	faqA3Key: string;
+	faqQ4Key: string;
+	faqA4Key: string;
+	/** 工具选型指南 H2（按场景映射本站工具） */
+	guideTitleKey: string;
+	/** 工具选型指南正文（双换行分段） */
+	guideBodyKey: string;
 };
 
 /**
@@ -112,6 +118,10 @@ export const TOPIC_I18N_KEYS: Record<ToolTopic, TopicI18nKeys> = Object.fromEntr
 				faqA2Key: `topic_${f}_faq_a2`,
 				faqQ3Key: `topic_${f}_faq_q3`,
 				faqA3Key: `topic_${f}_faq_a3`,
+				faqQ4Key: `topic_${f}_faq_q4`,
+				faqA4Key: `topic_${f}_faq_a4`,
+				guideTitleKey: `topic_${f}_guide_title`,
+				guideBodyKey: `topic_${f}_guide_body`,
 			} satisfies TopicI18nKeys,
 		];
 	})
