@@ -71,7 +71,7 @@ TOOL_SLUG={slug} npm run lint:tool-isolation
 母版阶段（phase=2 后、开他语前）另跑：`npm run lint:tool-page -- --slug={slug}`（拦 `page.style` / 模板 `\w` 被吃）。
 ## 分析提示词（每步自问）
 
-1. 用户会搜什么？主词是否落在 title/H1？
+1. 用户会搜什么？主词是否落在 title/H1？是否已落到**实际使用场景**（情境+动作+结果；平台只是例子）？进页默认是否就是该场景？
 2. 副标题是否参数目录腔（控件名顿号/逗号罗列）？
 3. 次要词是否在 **description / FAQ / Use cases** 有落点（勿拆近义 URL；勿做关键词列表）？
 4. **本语**检索词是否按当地习惯重跑（非 en 直搬）？

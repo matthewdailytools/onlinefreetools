@@ -2,7 +2,7 @@
  * 本地 Wrangler 开发进程管理：PID、端口、健康检查、启停辅助。
  * 供 ops/dev/start-dev.mjs 与 ops/dev/stop-dev.mjs 共用。
  */
-import { promises as fs } from 'node:fs';
+import { promises as fs, existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { execSync } from 'node:child_process';
@@ -195,6 +195,203 @@ export const healthCheck = async (port = defaultDevPort, host = defaultDevHost) 
     return res.status >= 200 && res.status < 400;
   } catch {
     return false;
+  }
+};
+
+/**
+ * 预渲染工具 HTML 目录（含 `.html` 与 `.html.gz`）。
+ * @param {string} lang 语言码，默认 en
+ * @returns {string}
+ */
+export const prerenderedToolsDir = (lang = 'en') =>
+  path.join(projectRoot, 'public', '_pages', lang, 'tools');
+
+/**
+ * 按 mtime 取本地最新预渲染工具 slug（用来抓住「新页 404、旧页仍 200」）。
+ * @param {string} [lang]
+ * @returns {string | null}
+ */
+export const pickNewestPrerenderedToolSlug = (lang = 'en') => {
+  const dir = prerenderedToolsDir(lang);
+  if (!existsSync(dir)) return null;
+  /** @type {string | null} */
+  let best = null;
+  let bestMtime = -1;
+  for (const name of readdirSync(dir)) {
+    const m = name.match(/^(.+)\.html(?:\.gz)?$/);
+    if (!m) continue;
+    const mtime = statSync(path.join(dir, name)).mtimeMs;
+    if (mtime >= bestMtime) {
+      bestMtime = mtime;
+      best = m[1];
+    }
+  }
+  return best;
+};
+
+/**
+ * 带 Accept: text/html 探测工具页是否从本地 R2 返回 200。
+ * 默认语 en 无前缀；其它语为 `/{lang}/tools/{slug}`。
+ * 首页 Assets 200 不能证明灌桶成功，须用本函数（或 assertNewestToolPageServed）。
+ * @param {number} port wrangler 端口
+ * @param {string} slug 工具 slug
+ * @param {string} [lang] 探测语言，默认 zh（与常见本机验收一致）
+ * @param {string} [host] 绑定主机，默认 127.0.0.1
+ * @returns {Promise<{ ok: boolean, status: number, url: string }>}
+ */
+export const toolPageHealthCheck = async (port, slug, lang = 'zh', host = defaultDevHost) => {
+  /** 默认语无路径前缀；其它语 `/{lang}` */
+  const prefix = lang === 'en' ? '' : `/${lang}`;
+  /** 带 Accept: text/html 的探测 URL（Worker 对无 Accept 的 / 会 404） */
+  const url = `${devServerOrigin(port, host)}${prefix}/tools/${encodeURIComponent(slug)}`;
+  try {
+    const res = await fetch(url, {
+      headers: { Accept: 'text/html,application/xhtml+xml;q=0.9,*/*;q=0.8' },
+      redirect: 'manual',
+    });
+    return { ok: res.status === 200, status: res.status, url };
+  } catch {
+    return { ok: false, status: 0, url };
+  }
+};
+
+/**
+ * 判断某语种下是否已有该 slug 的预渲染 HTML（明文或 gzip）。
+ * @param {string} slug 工具 slug
+ * @param {string} lang 语言码
+ * @returns {boolean}
+ */
+export const prerenderedToolExists = (slug, lang) => {
+  const dir = prerenderedToolsDir(lang);
+  return existsSync(path.join(dir, `${slug}.html`)) || existsSync(path.join(dir, `${slug}.html.gz`));
+};
+
+/**
+ * catalog shard 中 `updatedAt` 最新的 slug（新工具通常比旧页 mtime 更准）。
+ * 全量 prerender/gzip 会把所有 `.html.gz` 写成相近 mtime，不能单靠磁盘时间找新页。
+ * @returns {string | null}
+ */
+export const pickNewestCatalogToolSlug = () => {
+  const dir = path.join(projectRoot, 'src', 'site', 'tool-catalog.d');
+  if (!existsSync(dir)) return null;
+  /** @type {string | null} */
+  let best = null;
+  /** ISO 时间字符串，字符串比较与 ISO-8601 一致 */
+  let bestAt = '';
+  for (const name of readdirSync(dir)) {
+    if (!name.endsWith('.json')) continue;
+    const slug = name.slice(0, -'.json'.length);
+    try {
+      const raw = JSON.parse(readFileSync(path.join(dir, name), 'utf8'));
+      const at = String(raw?.updatedAt || '');
+      if (at >= bestAt) {
+        bestAt = at;
+        best = slug;
+      }
+    } catch {
+      /* 跳过损坏 shard */
+    }
+  }
+  return best;
+};
+
+/**
+ * 启动/status 要探测的工具页：catalog 最新 updatedAt + 磁盘 mtime 最新（去重）。
+ * 只靠 mtime 会误探旧 slug，灌桶失败时新工具 404 仍会被当成健康。
+ * @returns {Array<{ slug: string, lang: string }>}
+ */
+export const listToolPageProbes = () => {
+  const lang = existsSync(prerenderedToolsDir('zh'))
+    ? 'zh'
+    : existsSync(prerenderedToolsDir('en'))
+      ? 'en'
+      : null;
+  if (!lang) return [];
+  /** @type {Set<string>} */
+  const slugs = new Set();
+  const catalogSlug = pickNewestCatalogToolSlug();
+  if (catalogSlug && prerenderedToolExists(catalogSlug, lang)) slugs.add(catalogSlug);
+  const mtimeSlug = pickNewestPrerenderedToolSlug(lang);
+  if (mtimeSlug) slugs.add(mtimeSlug);
+  return [...slugs].map((slug) => ({ slug, lang }));
+};
+
+/**
+ * 选取 status/start 探测用的最新工具页（优先 catalog updatedAt）。
+ * @returns {{ slug: string, lang: string } | null}
+ */
+export const pickNewestToolPageProbe = () => listToolPageProbes()[0] ?? null;
+
+/**
+ * 探测 catalog 最新 + 磁盘 mtime 最新的工具页。任一 404 即视为灌桶失败。
+ * 首页 200 + 新工具 404 通常是本地 R2 未灌上。
+ * @param {number} [port]
+ * @param {string} [host]
+ * @returns {Promise<{
+ *   ok: boolean,
+ *   skipped: boolean,
+ *   status: number,
+ *   url: string,
+ *   slug: string | null,
+ *   lang: string | null,
+ *   hint: string,
+ *   results: Array<{ ok: boolean, status: number, url: string, slug: string, lang: string }>,
+ * }>}
+ */
+export const probeNewestToolPage = async (port = defaultDevPort, host = defaultDevHost) => {
+  const probes = listToolPageProbes();
+  if (!probes.length) {
+    return {
+      ok: true,
+      skipped: true,
+      status: 0,
+      url: '',
+      slug: null,
+      lang: null,
+      hint: 'no public/_pages/{lang}/tools HTML; run npm run build:site then npm run upload:r2:local',
+      results: [],
+    };
+  }
+  /** 每条探测的 HTTP 结果 */
+  const results = [];
+  for (const p of probes) {
+    const result = await toolPageHealthCheck(port, p.slug, p.lang, host);
+    results.push({ ...result, slug: p.slug, lang: p.lang });
+  }
+  const failed = results.find((r) => !r.ok);
+  const first = failed || results[0];
+  /** 灌桶失败时首页仍可能从 Assets 返回 200 */
+  const hint = failed
+    ? 'Home can be 200 from Assets while new tools 404 if local R2 seed failed. Fix: npm run upload:r2:local (start:dev no longer swallows seed errors).'
+    : '';
+  return {
+    ok: !failed,
+    skipped: false,
+    status: first.status,
+    url: first.url,
+    slug: first.slug,
+    lang: first.lang,
+    hint,
+    results,
+  };
+};
+
+/**
+ * start:dev 硬闸：探测页非 200 则抛错（无预渲染文件时警告并跳过）。
+ * @param {number} port wrangler 端口
+ * @returns {Promise<void>}
+ */
+export const assertNewestToolPageServed = async (port) => {
+  const probe = await probeNewestToolPage(port);
+  if (probe.skipped) {
+    console.warn(`[start-dev] skip tool-page smoke (${probe.hint}).`);
+    return;
+  }
+  if (!probe.ok) {
+    throw new Error(`Tool page ${probe.url} returned ${probe.status} (expected 200). ${probe.hint}`);
+  }
+  for (const r of probe.results) {
+    console.log(`Tool page smoke OK: ${r.url}`);
   }
 };
 

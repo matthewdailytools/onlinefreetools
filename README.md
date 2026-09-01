@@ -19,6 +19,7 @@
 - [HTML 实体编解码](https://onlinefreetools.org/zh/tools/html-entity) - 浏览器内 HTML 实体编码与解码：范围、命名/数字形式、严格解码
 - [文件哈希校验](https://onlinefreetools.org/zh/tools/file-hash) - 在浏览器内校验文本或文件的 MD5、SHA 等十六进制摘要
 - [在线解压 ZIP](https://onlinefreetools.org/zh/tools/unzip-file) - 浏览器内查看 ZIP 文件树、预览文本/图片，并下载单个文件或导出全部，不上传服务器
+- [创建 zip 文件](https://onlinefreetools.org/zh/tools/create-zip-file) - 在浏览器里把多个文件打成 ZIP 下载；可保留文件夹路径；文件留在设备、不上传服务器
 - [压缩包在线解压](https://onlinefreetools.org/zh/tools/archive-extractor) - 浏览器内打开 ZIP、TAR、TAR.GZ 压缩包，预览文件并导出干净 ZIP，不上传服务器
 - [UUID / ULID 生成](https://onlinefreetools.org/zh/tools/uuid-generator) - 在浏览器内创建 UUID v4 与 ULID 标识符，一键复制
 - [随机密码生成](https://onlinefreetools.org/zh/tools/password-generator) - 在浏览器内本地生成随机密码（crypto.getRandomValues）
@@ -37,6 +38,10 @@
 - [图片格式转换](https://onlinefreetools.org/zh/tools/image-format-converter) - 浏览器内 PNG / JPEG / WebP / AVIF 互转：质量、透明底色与本地处理
 - [图片 EXIF 查看与清除](https://onlinefreetools.org/zh/tools/image-exif) - 本地查看 GPS/相机等元数据，并重编码清除后下载
 - [图片压缩](https://onlinefreetools.org/zh/tools/image-compress) - 本地按最长边、质量与目标体积压缩图片（JPEG/WebP/PNG）
+- [Amazon 主图尺寸](https://onlinefreetools.org/zh/tools/amazon-main-image-size) - 把商品图导出为 2000×2000 白底主图 JPEG，并提示 1000px 缩放下限；文件留在设备、不上传服务器
+- [iPhone 6.9 截图尺寸](https://onlinefreetools.org/zh/tools/iphone-app-store-screenshot) - 把截图 cover 导出为 1320×2868 等 6.9 必传档；文件留在设备、不上传服务器
+- [apple-touch-icon 180×180](https://onlinefreetools.org/zh/tools/apple-touch-icon) - 把 logo 导出为不透明 180×180 PNG，可选 32/192/512 ZIP；文件留在设备、不上传服务器
+- [Open Graph 图片尺寸](https://onlinefreetools.org/zh/tools/open-graph-image-size) - 把图 cover 导出为 1200×630 分享卡 JPEG；文件留在设备、不上传服务器
 - [图片优化](https://onlinefreetools.org/zh/tools/image-optimizer) - 本地 MozJPEG / WebP / AVIF / OxiPNG 编码器优化，滑动对照后下载
 - [图片裁剪与改尺寸](https://onlinefreetools.org/zh/tools/image-crop) - 本地框选裁剪、比例与常用像素预设，导出 JPEG/WebP/PNG
 - [图片主色提取](https://onlinefreetools.org/zh/tools/color-from-image) - 本地提取主色板，也可点击预览取区域色，复制 HEX/RGB/HSL
@@ -157,6 +162,7 @@ Below are our available online tools with their links (English version):
 - [HTML Entity Encoder & Decoder](https://onlinefreetools.org/tools/html-entity) - Encode and decode HTML entities with scope, named/decimal/hex output, and strict decode — all in-browser
 - [File Hash Checker](https://onlinefreetools.org/tools/file-hash) - Verify MD5 and SHA hex digests for pasted text or local files in your browser
 - [Unzip File Online](https://onlinefreetools.org/tools/unzip-file) - Inspect ZIP contents, preview text/images, and download one file or export all in your browser — no server upload
+- [Create zip file](https://onlinefreetools.org/tools/create-zip-file) - Pack several files into a ZIP in your browser, keep folder paths when the browser provides them — stays on the device, not uploaded
 - [Archive Extractor Online](https://onlinefreetools.org/tools/archive-extractor) - Open ZIP, TAR, and TAR.GZ archives in your browser, preview files, and export a clean ZIP — no server upload
 - [UUID & ULID Generator](https://onlinefreetools.org/tools/uuid-generator) - Create UUID v4 and ULID IDs in your browser with one-click copy
 - [Random Password Generator](https://onlinefreetools.org/tools/password-generator) - Create random passwords locally with crypto.getRandomValues — demo-grade
@@ -175,6 +181,10 @@ Below are our available online tools with their links (English version):
 - [Image Format Converter](https://onlinefreetools.org/tools/image-format-converter) - Convert PNG, JPEG, WebP, and AVIF locally with quality, JPEG matte, and MIME checks
 - [EXIF Viewer & Remover](https://onlinefreetools.org/tools/image-exif) - View GPS/camera metadata locally and download a stripped re-encoded copy
 - [Image Compressor](https://onlinefreetools.org/tools/image-compress) - Resize, set quality or a target file size, and download — runs locally in your browser
+- [Amazon main image size](https://onlinefreetools.org/tools/amazon-main-image-size) - Export a 2000×2000 white-background main image and check the 1000px zoom floor — stays on the device, not uploaded
+- [iPhone 6.9 screenshot size](https://onlinefreetools.org/tools/iphone-app-store-screenshot) - Cover-fill a screenshot to 1320×2868 (and the other 6.9 pairs) — stays on the device, not uploaded
+- [Apple-touch-icon 180×180](https://onlinefreetools.org/tools/apple-touch-icon) - Export an opaque 180×180 PNG (optional 32 / 192 / 512 ZIP) — stays on the device, not uploaded
+- [Open Graph image size](https://onlinefreetools.org/tools/open-graph-image-size) - Cover-fill a photo to 1200×630 share-card JPEG — stays on the device, not uploaded
 - [Image Optimizer](https://onlinefreetools.org/tools/image-optimizer) - Optimize with MozJPEG, WebP, AVIF, or OxiPNG locally — compare with a slider, then download
 - [Crop & Resize Image](https://onlinefreetools.org/tools/image-crop) - Crop with aspect presets and common output sizes — runs locally in your browser
 - [Extract Colors from Image](https://onlinefreetools.org/tools/color-from-image) - Local palette and click-to-pick colors — copy HEX, RGB, or HSL

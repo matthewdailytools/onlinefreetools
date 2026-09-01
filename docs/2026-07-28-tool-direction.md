@@ -163,7 +163,7 @@
 
 - 为每个布局方向单独开 slug（doorway）  
 - 「AI Combiner」类无法写清规则的黑盒页  
-- 与 `social-share-image-pack`（1→N）混标题或互抢 intent
+- 与 B9 场景页（OG 卡 / 封面 / Story 等 1→N）混标题或互抢 intent
 
 ---
 
@@ -546,7 +546,7 @@
 |---|---|---|---|
 | 1 | 配置互通 | YAML ↔ JSON | `yaml-json` |
 | 2 | 表数据互通 | CSV ↔ JSON | `csv-json` |
-| 3 | 对话语料归档 | Chat 导出 → MD/JSON/CSV | `chat-export-converter` |
+| 3 | 对话语料归档 | Chat 导出 → MD/JSON/CSV | `chatgpt-export-to-markdown`（P1） |
 | 4 | 扫描件入库 | 图片 → 文本 | `ocr-to-text`（Tier 2） |
 
 **痛点**：配置格式混用；导出字段因厂商而异；OCR 上传隐私顾虑。  
@@ -570,7 +570,7 @@
 |---|---|---|---|
 | 1 | 表转 API JSON | CSV → JSON | `csv-json`（示例列：SKU/title/price） |
 | 2 | 字段约束 | Schema + 商品 JSON | `json-schema-validator` |
-| 3 | 主图合规（1→N） | 1 图 → Amazon 等尺寸/体积包 | `amazon-image-resizer` |
+| 3 | 主图合规（1→N） | 1 图 → Amazon 主图尺寸/体积 | `amazon-main-image-size`（P0） |
 | 4 | （可选）价税说明 | 价格假设 → 结果 | 方向 C 电商工具 |
 
 **痛点**：Excel/CSV 与店铺 API 字段不一致；主图被拒；校验错误难读。
@@ -606,7 +606,7 @@
 | （可选高级） | Mac / Watch / visionOS 子集 | 默认折叠，避免首屏过重 |
 
 **技术**：Canvas ✅✅✅ + `fflate`/`jszip`；规格表 JSON 可配置。  
-**建议 slug**：`ios-app-screenshot-resizer`、`app-icon-generator-pack`、`google-play-asset-pack`（或首发合并 `app-store-asset-pack`）。
+**建议 slug（清单 §0）**：P0 `iphone-app-store-screenshot`；P1 `ios-app-icon-size`。Play 素材默认芯片，勿先独立 `google-play-asset-pack`。
 
 #### 场景 B7：电商主图合规 — 单图 → 平台尺寸与体积（1→N）
 
@@ -622,7 +622,7 @@
 | 同上 | 辅图常用尺寸 + 命名建议（`main` / `pt01`…） | |
 | 同上 | 多平台预设：eBay、Shopify、Walmart、Shopee 等 | 每平台独立规格表 |
 
-**建议 slug**：`amazon-image-resizer`、`marketplace-image-pack`。  
+**建议 slug（清单 §0）**：P0 `amazon-main-image-size`。eBay/Shopify/Walmart 主图作芯片；**禁止**独立 `marketplace-image-pack`。  
 **边界**：主打尺寸/体积合规 + ZIP；完美抠白底不作必选能力。
 
 #### 场景 B8：站点与 PWA 图标 — 单 Logo → Favicon 套装（1→N）
@@ -631,16 +631,25 @@
 |---|---|
 | 1 张方 Logo（建议 ≥512） | favicon 多尺寸、apple-touch-icon、PWA 192/512、可选 Windows tile |
 
-**建议 slug**：`favicon-and-pwa-icon-pack`。  
+**建议 slug（清单 §0）**：P0 `apple-touch-icon`（废止 `favicon-and-pwa-icon-pack` 作主 URL）。  
 **IG**：文件名对照表 + 示例 `site.webmanifest` 片段。
 
-#### 场景 B9：社交与 OG 分享图 — 单图 → 多平台封面（1→N）
+#### 场景 B9：社交与 OG 分享图 — 单图 → 平台规范尺寸（1→N）
 
-| 输入 | 输出预设 |
-|---|---|
-| 1 张主视觉 | OG 1200×630、X/Twitter、LinkedIn、Facebook、Pinterest、YouTube 缩略图等（按市场勾选） |
+用户不会搜「社交图包」。slug/H1 必须是用户**实际使用场景**任务句（长尾策略 §3.3 H；此处情境恰好含平台）。进页默认即该场景。按**作业类型**聚类，禁止仅换品牌名拆近义 URL。
 
-**建议 slug**：`social-share-image-pack`。规格常变 → 表版本化 + References。
+| 作业类型 | 用户一步到位的事 | 建议主 slug（待 SERP；簇内选一条） | 同页芯片（不拆 URL） |
+|---|---|---|---|
+| 链接预览卡 | 裁成 OG/分享卡（约 1200×630） | `open-graph-image-size` | FB/LinkedIn/X/WhatsApp 链接预览 |
+| 封面安全区 | 超宽封面并避开头像/UI 遮挡 | `linkedin-banner-size`（或封面类 title 缺口更强的长尾） | FB 封面、X header、YT 频道图、LinkedIn 公司页 |
+| 信息流帖图 | 1:1 / 4:5 发帖图 | `instagram-post-size` | IG 竖帖、FB 动态配图 |
+| Stories 竖屏 | 9:16 故事/Reels | `instagram-story-size` | FB Story、TikTok、YT Shorts 封面 |
+| 视频缩略图 | YT 1280×720 与平台规则 | `youtube-thumbnail-size` | — |
+| Pin 长图 | 2:3 Pin | `pinterest-pin-size`（产能紧则并入帖图页） | — |
+
+**废止**以 `social-share-image-pack` 为 `/tools/` slug。规格常变 → 表版本化 + References。聚类草案：[`docs/seo/keywords/social-share/2026-08-31-scene-slug-clusters.md`](./seo/keywords/social-share/2026-08-31-scene-slug-clusters.md)。
+
+与 B13：`image-merge` 是多图拼一张；本场景是单图套平台规范。与 `open-graph-preview`：那边验标签，这边出图。
 
 #### 场景 B10：扩展与 IM 应用图标（1→N）
 
@@ -738,13 +747,14 @@
 
 | 渠道 / 场景 | 建议 slug | 输入 | 多规格输出摘要 | 技术 | 优先级 |
 |---|---|---|---|---|---|
-| Apple App Store 截图 | `ios-app-screenshot-resizer` | 1 张截图源 | iPhone/iPad 当期尺寸全套 | Canvas + ZIP | **P0** |
-| App Icon 全套 | `app-icon-generator-pack` | 1 张 1024 Logo | 商店图 + 设备倍率包 | Canvas + ZIP | **P0** |
-| Google Play 素材 | `google-play-asset-pack` | 1–2 张图 | Icon + Feature Graphic + 截图 | Canvas + ZIP | P1 |
-| Amazon 主图合规 | `amazon-image-resizer` | 1 张商品图 | 尺寸 + 体积 + 命名建议 | Canvas | **P0** |
-| 多电商平台图包 | `marketplace-image-pack` | 1 张图 | Amazon/eBay/Shopify/… 预设 | Canvas + ZIP | P1 |
-| Favicon + PWA | `favicon-and-pwa-icon-pack` | 1 张 Logo | ico/png 套装 + manifest 示例 | Canvas | P1 |
-| 社交分享图 | `social-share-image-pack` | 1 张图 | OG/X/LinkedIn/YouTube… | Canvas + ZIP | P1 |
+| Apple App Store 截图 | `iphone-app-store-screenshot` | 1 张截图源 | 当期 iPhone 套装；iPad 芯片 | Canvas + ZIP | **P0** |
+| App Icon | `ios-app-icon-size` | 1 张 1024 Logo | iOS 倍率；Play 可芯片 | Canvas + ZIP | P1 |
+| Google Play 素材 | 芯片 absorb，勿先独立 URL | 1–2 张图 | Icon + Feature Graphic | Canvas + ZIP | P1 芯片 |
+| Amazon 主图合规 | `amazon-main-image-size` | 1 张商品图 | 主图尺寸/体积；它店芯片 | Canvas | **P0** |
+| 多电商平台图包 | absorb → 上列芯片 | 1 张图 | 勿独立 `marketplace-image-pack` | Canvas + ZIP | P0 芯片 |
+| Favicon + PWA | `apple-touch-icon` | 1 张 Logo | apple-touch / favicon / PWA | Canvas | **P0** |
+| 社交 · 链接卡 | `open-graph-image-size` | 1 张图 | ~1200×630；其它链接卡芯片 | Canvas + ZIP | **P0** |
+| 社交 · 其余作业类型 | `linkedin-banner-size` / `instagram-story-size` / `youtube-thumbnail-size` / `instagram-post-size` | 1 张图 | 见 B9；禁 pack slug | Canvas + ZIP | P1 |
 | Chrome 扩展图标 | `chrome-extension-icon-pack` | 1 张 Logo | 扩展商店图标尺寸 | Canvas | P2 |
 | Shopify/Woo 尺寸 | `shopify-woocommerce-image-sizes` | 1 张图 | 主题常用尺寸 | Canvas | P2 |
 | YouTube 频道套装 | `youtube-channel-art-pack` | 1 张横图 | Banner 安全区 + 头像 | Canvas | P2 |
@@ -768,7 +778,7 @@
 | 文字水印 | `add-watermark` | 1 图 + 文本 | 水印图 | Canvas | P1 |
 | 翻转镜像 | `flip-image` | 1 张图 | 水平/垂直 | Canvas | P2 |
 
-> **立项注意**：N→1 页须写清布局公式（画布宽高、间距、单元格尺寸）；平台预设须 References；**禁止**与 B.9 `social-share-image-pack` 共用同一 H1 intent。
+> **立项注意**：N→1 页须写清布局公式（画布宽高、间距、单元格尺寸）；平台预设须 References；**禁止**与 B9 场景页（`open-graph-image-size` 等）共用同一 H1 intent。
 
 #### 非图片类同构（同样 1→N）
 
@@ -801,34 +811,26 @@ H1 具名渠道 + 动作（如 Amazon Product Image Resizer）
 
 | slug | 主场景 | 模式 | 技术层级 | 建议优先级 |
 |---|---|---|---|---|
-| `safe-paste-cleaner` | B1 | 1→1 | Tier 0 | P0 |
-| `ai-token-counter` | B1 | 1→1 | Tier 0 | P0 |
-| `json-schema-validator` | B1/B4/B5 | 1→1 | Tier 0/1 | P0 |
-| `yaml-json` | B2/B5 | 1→1 | Tier 1 | P0 |
-| `chat-export-converter` | B2 | 1→1 | Tier 0/1 | P0 |
-| `meta-serp-preview` | B3 | 1→1 | Tier 0 | P0 |
-| `ios-app-screenshot-resizer` | B6 | **1→N** | Tier 0/1 | **P0** |
-| `app-icon-generator-pack` | B6 | **1→N** | Tier 0/1 | **P0** |
-| `amazon-image-resizer` | B7 | **1→N** | Tier 0/1 | **P0** |
+| `json-schema-validator` | B1/B4/B5 | 1→1 | Tier 0/1 | **已上线** |
+| `yaml-json` | B2/B5 | 1→1 | Tier 1 | **已上线** |
+| `meta-serp-preview` | B3 | 1→1 | Tier 0 | **已上线** |
+| `create-zip-file` | B14 / A.5 | N→1 | Tier 1 | **P0**（待办 §0） |
+| `unzip-file` | B14 / A.5 | 1→N | Tier 1 | **已上线** |
+| `amazon-main-image-size` | B7 | 1→N | Tier 0/1 | **P0**（旧 `amazon-image-resizer`） |
+| `iphone-app-store-screenshot` | B6 | 1→N | Tier 0/1 | **P0**（旧 `ios-app-screenshot-resizer`） |
+| `apple-touch-icon` | B8 | 1→N | Tier 0/1 | **P0**（旧 `favicon-and-pwa-icon-pack`） |
+| `open-graph-image-size` | B9 | 1→N | Tier 0/1 | **P0**（唯一社交进攻作业类型） |
+| `ios-app-icon-size` | B6 | 1→N | Tier 0/1 | P1（旧 `app-icon-generator-pack`） |
+| `chatgpt-export-to-markdown` | B2 | 1→1 | Tier 0/1 | P1（旧 `chat-export-converter`） |
 | `prompt-template-builder` | B1 | 1→1 | Tier 0 | P1 |
-| `csv-json` | B2/B4 | 1→1 | Tier 1 | P1 |
-| `faq-schema-generator` | B3 | 1→1 | Tier 0 | P1 |
-| `google-play-asset-pack` | B6 | 1→N | Tier 0/1 | P1 |
-| `favicon-and-pwa-icon-pack` | B8 | 1→N | Tier 0/1 | P1 |
-| `social-share-image-pack` | B9 | 1→N | Tier 0/1 | P1 |
-| `marketplace-image-pack` | B7 | 1→N | Tier 0/1 | P1 |
-| `product-feed-template-pack` | B4 | 1→N | Tier 1 | P1 |
-| `ocr-to-text` | B2 | 1→1 | Tier 2 | P1（POC 后） |
-| HTML↔Markdown 增强 | B5 | 1→1 | Tier 1 | P1 |
-| `image-merge` | B13 | **N→1** | Tier 0/1 | P1 |
-| `images-to-pdf` | B13 | **N→1** | Tier 1 | P1 |
-| `add-watermark` | B13 / A.2 | 1→1 | Tier 0 | P1 |
-| `image-overlay` | B13 | N→1 | Tier 0/1 | P2 |
-| `flip-image` | A.2 | 1→1 | Tier 0 | P2 |
-| `create-zip-file` | B14 / A.5 | N→1（多文件→一包） | Tier 1 | **P0** |
-| `unzip-file` | B14 / A.5 | 1→N（一包→多文件） | Tier 1 | **P0** |
-| `extract-archive` | B14 / A.5 | 1→N + 可选再打包 ZIP | Tier 1→2 | P1 |
-| 其余 B.3 表 P2 项 | B8–B12 等 | 1→N | 见上 | P2 |
+| `csv-json` | B2/B4 | 1→1 | Tier 1 | **已上线** |
+| `linkedin-banner-size` 等 | B9 | 1→N | Tier 0/1 | P1（封面/Story/缩略图/发帖；见清单 §0） |
+| `svg-optimizer` | D | 1→1 | Tier 1 | P1 |
+| `ocr-to-text` | B2 | 1→1 | Tier 2 | 待 POC |
+| `image-merge` / `images-to-pdf` / `add-watermark` | B13 | — | — | **已上线** |
+| `safe-paste-cleaner` / `ai-token-counter` | B1 | 1→1 | Tier 0 | **P2 / 漏斗 defer**（非进攻 P0） |
+| `extract-archive` | B14 | — | — | **已上线** 为 `archive-extractor` |
+| 其余 B.3 薄规格包 | B8–B12 | 1→N | — | P2 或芯片 absorb |
 
 ### B.6 方向 B 独立验收
 
@@ -920,7 +922,7 @@ H1 具名渠道 + 动作（如 Amazon Product Image Resizer）
 |---|---|
 | **岗位** | 电商运营、跨境卖家、目录专员、美工助理 |
 | **痛点** | Feed 字段乱；**主图因尺寸/体积/白底被拒**；折扣/含税口径不一 |
-| **候选工具** | `amazon-image-resizer` / `marketplace-image-pack`；产品 feed CSV↔JSON；`product-feed-template-pack`；折扣/含税价；体积重专页 |
+| **候选工具** | P0 `amazon-main-image-size`（它店主图芯片）；feed CSV↔JSON 已有；`product-feed-template-pack` 为 P2；折扣/含税价；体积重专页 |
 | **术语** | feed、SKU、GTIN、main image、white background、tax included、dimensional weight |
 | **References** | Amazon Seller Central 图片要求、平台 feed 文档、公开税率说明 |
 | **YMYL** | 弱（价格说明免责） |
@@ -1006,7 +1008,7 @@ H1 具名渠道 + 动作（如 Amazon Product Image Resizer）
 |---|---|
 | **岗位** | iOS/Android 开发者、独立开发者、外包 PM |
 | **痛点** | 截图与 Icon 尺寸多、易漏交；规范随系统版本变 |
-| **候选工具** | `ios-app-screenshot-resizer`、`app-icon-generator-pack`、`google-play-asset-pack`（主挂 B6 或本垂直二选一） |
+| **候选工具** | P0 `iphone-app-store-screenshot`；P1 `ios-app-icon-size`（Play 默认芯片，见 B6 / 清单 §0） |
 | **术语** | App Store Connect、screenshot specifications、App Icon、Feature Graphic、asset catalog |
 | **References** | [Apple screenshot specifications](https://developer.apple.com/help/app-store-connect/reference/screenshot-specifications)、Google Play 图标与功能图文档 |
 | **YMYL** | 否 |
@@ -1026,8 +1028,8 @@ H1 具名渠道 + 动作（如 Amazon Product Image Resizer）
 | 工程装修 | 瓷砖/油漆/混凝土方量（对照 ToolDone construction；Omni `tile` / `paint` / `concrete-slab`，见 shortlist） | 公式 + 权威教材；**禁止**材料品牌矩阵铺量 |
 | 教育 | GPA 地区差异表（对照 ToolDone `gpa-calculator`；Omni `gpa`） | 明确地区 |
 | 法律文书 | 字数估算 | 司法区免责 |
-| 内容创作者 | `youtube-channel-art-pack`、`podcast-cover-art-pack` | 平台规范表 |
-| 站长品牌 | `favicon-and-pwa-icon-pack`、`social-share-image-pack` | 与 V2 协同；**排期与竞品见「专题：设计师工具」** |
+| 内容创作者 | `youtube-thumbnail-size` / 频道封面芯片（并入封面簇）、`podcast-cover-art-pack` | 平台规范表；频道套装不与缩略图抢 H1 |
+| 站长品牌 | P0 `apple-touch-icon`、P0 `open-graph-image-size`、P1 封面/Story | 与 V2 协同；**排期见清单 §0 / D.1** |
 | UI / 品牌设计（桥工具） | 对比度、色 token、SVG 优化、拼图 | 非完整设计套件；见专题 D 节 |
 
 ### C.9 方向 C 明确拒绝 / 降级
@@ -1112,29 +1114,30 @@ H1 具名渠道 + 动作（如 Amazon Product Image Resizer）
 | `how-to-calculate-gradient` | 多元函数梯度 ∇f（偏导向量；**不是** CSS/图片渐变） | A | A.7 | — | **已上线**（`calculator`）；CSS 渐变另立项 `css-gradient-generator` |
 | `css-gradient-generator` | 颜色停靠点 → CSS linear/radial-gradient | A | A.9 / D | **P2** | 候选；勿与数学梯度页混 slug / intent |
 | `image-compress` / `image-crop` / `image-format-converter` / `image-exif` / `image-optimizer` | 单图管线：压缩·裁切·格式·EXIF·优化 | A | A.2 | — | **已上线 / 在研** |
-| `wcag-contrast-checker` | 前景/背景对比度 → AA/AAA 判定 + 建议配对色 | A | A.9 | **P0** | 新建；Rules 表须写清 WCAG 2.x 比率 |
-| `brand-color-token-pack` | 1 主色 → HEX/RGB/HSL/OKLCH + 色阶（如 50–950）+ 对比度配对 | A + 1→N | A.9 / B.3 非图片同构 | **P0** | 可与对比度页 Related；勿拆「仅 HEX 转换」薄页 |
-| `favicon-and-pwa-icon-pack` | 1 方 Logo → favicon / apple-touch / PWA 尺寸 + manifest 示例 | B | B8 | **P0** | 设计师交付站标高频 |
-| `social-share-image-pack` | 1 主视觉 → OG / X / LinkedIn / YouTube 等封面 ZIP | B | B9 | **P0** | 与 `image-merge` 平台拼贴 **intent 分离** |
-| `image-merge` | 2+ 图 → 横/竖/网格一张；可选 IG 1080² / FB 1200×630 预设 | B | B13 / A.2.1 | **P1** | N→1；布局公式页内可见 |
-| `add-watermark` | 单图文字水印（位置/透明度/旋转） | A | A.2 / B13 | **P1** | 与 overlay 分工：文字 vs 双图层 |
-| `images-to-pdf` | 多图 → 多页 PDF | A/B | A.5 / B13 | **P1** | 归档/交付 |
-| `svg-optimizer` | SVG 粘贴/上传 → SVGO 选项可视化 + 体积对比 | A | A（矢量） | **P1** | 对标 SVGOMG 交互；本地处理 |
-| `color-from-image` | 图 → 主色板（可导入 token 页） | A | A.2 colorthief | **P1** | 可并入 `brand-color-token-pack` Tab，避免双薄页 |
+| `wcag-contrast-checker` | 前景/背景对比度 → AA/AAA 判定 + 建议配对色 | A | A.9 | **P0** | **已上线** |
+| `brand-color-token-pack` | 1 主色 → HEX/RGB/HSL/OKLCH + 色阶 + 对比度配对 | A + 1→N | A.9 | **P0** | **已上线** |
+| `apple-touch-icon` | 方 Logo → apple-touch / favicon / PWA | B | B8 | **P0** | 待办 §0；旧 `favicon-and-pwa-icon-pack` |
+| `open-graph-image-size` | 链接分享卡图 ~1200×630 | B | B9 | **P0** | 待办 §0；**勿**注册 `social-share-image-pack` |
+| `image-merge` | 2+ 图 → 横/竖/网格一张 | B | B13 | — | **已上线** |
+| `add-watermark` | 单图文字水印 | A | A.2 / B13 | — | **已上线** |
+| `images-to-pdf` | 多图 → 多页 PDF | A/B | A.5 / B13 | — | **已上线** |
+| `svg-optimizer` | SVG → 体积对比压缩 | A | A（矢量） | **P1** | 候选 |
+| `color-from-image` | 图 → 主色板 | A | A.2 | — | **已上线** |
+| `ios-app-icon-size` | 1024 → iOS 图标倍率 | B | B6 | **P1** | 旧 `app-icon-generator-pack` |
+| `local-bg-removal` | 浏览器端抠图 | A | A.11 | **待 POC** | Tier 2 |
 | `type-scale-token-pack` | 1 基准字号 → 模块化字阶表（可导出 CSS 变量） | A + 1→N | B.3 非图片同构 | **P2** | 不做完整字体库/Google Fonts 托管 |
 | `css-shadow-generator` | 可视化 box/text-shadow → 可复制 CSS | A | A.9 扩展 | **P2** | 生成器类；须有参数→CSS 规则说明 |
-| `image-overlay` | 底图 + 叠图（透明度/混合/位置） | A/B | B13 | **P2** | |
-| `flip-image` | 水平/垂直镜像 | A | A.2.1 | **P2** | 可并入 crop「变换」区 |
-| `app-icon-generator-pack` | 1 Logo → App 图标全套倍率 | B | B6 | **P1**（渠道向） | 偏开发者交付，设计师常供源图 |
-| `local-bg-removal` | 浏览器端抠图 → 透明 PNG | A | A.11 | **P2** | Tier 2 WASM；须误差声明；不做付费墙级 SaaS |
+| `image-overlay` | 底图 + 叠图（透明度/混合/位置） | A/B | B13 | **P2** | **已上线** |
+| `flip-image` | 水平/垂直镜像 | A | A.2.1 | **P2** | **已上线** |
 
-**建议排期（设计师簇产能线）**：
+**建议排期（设计师簇 · 待办对齐清单 §0）**：
 
 ```
-P0：wcag-contrast-checker → brand-color-token-pack（含取色 Tab 可选）
-    → favicon-and-pwa-icon-pack → social-share-image-pack
-P1：image-merge → add-watermark → svg-optimizer → images-to-pdf
-P2：type-scale / css-shadow / overlay / flip / local-bg-removal
+已上线：wcag / brand-color-token / image-merge / watermark / images-to-pdf / overlay / flip / color-from-image
+P0：apple-touch-icon → open-graph-image-size
+P1：svg-optimizer → ios-app-icon-size → linkedin-banner / instagram-story / youtube-thumbnail
+P2：type-scale / css-shadow / css-gradient
+待 POC：local-bg-removal
 ```
 
 ### D.2 竞品对照表（可学习对象）
@@ -1180,7 +1183,7 @@ P2：type-scale / css-shadow / overlay / flip / local-bg-removal
 1. 每个上线页能指出 **主方向 A 或 B** + 本表 slug 行。  
 2. 配色/对比度页：可见 **WCAG 比率表** + 色空间说明（非仅色块好看）。  
 3. 1→N 交付页：规格表 + References + 更新日期 + ZIP/多文件说明（同 B.6）。  
-4. N→1 合成页：布局公式可见；**不得**与 `social-share-image-pack` 共用同一 H1 intent。  
+4. N→1 合成页：布局公式可见；**不得**与 B9 场景页共用同一 H1 intent。  
 5. 文件类默认 **本地处理** 声明；Tier 2（抠图等）须用户触发加载 + 误差声明。  
 6. **禁止**：仅改 title 的「设计师版」图片压缩换皮；无增量 AI 配色灌页。
 
@@ -1214,16 +1217,13 @@ P2：type-scale / css-shadow / overlay / flip / local-bg-removal
 
 ### 方向 B 建议优先（场景桥 + 1→N）
 
-**1→1（既有）**：`json-schema-validator` → `ai-token-counter` → `safe-paste-cleaner` → `yaml-json` → `meta-serp-preview` → `chat-export-converter`
+权威待办：[工具清单 §0](./2026-08-08-tool-inventory-table.md)。
 
-**1→N（本轮挖掘重点，可与上并行择一产能线）**：
+**1→1**：Schema / YAML / meta SERP 等 **已上线**。`chatgpt-export-to-markdown` 为 P1。`safe-paste-cleaner` / `ai-token-counter` 为漏斗 defer（P2）。
 
-1. `amazon-image-resizer`（电商拒图痛点清晰、规格相对集中）  
-2. `app-icon-generator-pack`（Logo → 全套倍率，实现面干净）  
-3. `ios-app-screenshot-resizer`（规格表较长，需维护 `asset-specs` JSON）  
-4. 随后：`favicon-and-pwa-icon-pack`、`social-share-image-pack`、`google-play-asset-pack`
+**1→N P0**：`amazon-main-image-size` → `iphone-app-store-screenshot` → `apple-touch-icon` → `open-graph-image-size`；并行归档 `create-zip-file`（`unzip-file` 已上线）。
 
-**设计师交付产能线（可与电商/App 1→N 并行择一）**：`favicon-and-pwa-icon-pack` → `social-share-image-pack` → `image-merge`（见专题 D.1）。
+**设计师交付产能线**：`apple-touch-icon` → `open-graph-image-size`（见 D.1 / 清单 §0）。`image-merge` 已上线。
 
 逐工具卡片见 [每工具方案](./2026-07-28-per-tool-dev-seo-plans.md)。
 
@@ -1268,14 +1268,12 @@ npm run lint:seo && npm run build:site
 
 ## 下一步
 
-1. **方向 B · 1→N**：落地 `amazon-image-resizer` 或 `app-icon-generator-pack`（验证规格 JSON + ZIP 模板产能）。  
-2. **方向 B · 1→1**：按每工具方案继续 Schema Validator 等桥工具。  
-3. **方向 A / B14**：立项 `create-zip-file` + `unzip-file`（`fflate`、本地处理、目录列表）；再评估 `extract-archive` Tier 2。  
-4. **方向 A / PDF（A.5.2）**：立项 `merge-pdf` + `split-pdf`（`pdf-lib`、本地）；再排 `compress-pdf` / `pdf-to-jpg` / `rotate-pdf`。  
-5. **方向 A**：文本/图片/编码成熟度 ✅✅✅ 的独立工具。  
-6. **专题 · 设计师工具**：P0 立项 `wcag-contrast-checker` 或 `brand-color-token-pack`；并行评估 `favicon-and-pwa-icon-pack`（见 D.1）。  
-7. **方向 C**：存量 YMYL References；V6/V3 与 1→N 工具选主方向挂靠。  
-8. 每季度分方向复盘；核对 Apple/Amazon/Google 规格；对照 Coolors / Squoosh / Merge Images / ezyZip / ToolDone / **Omni Calculator** / **iLovePDF（A.5.2）** / **Aconvert（附录）**。
+1. **待办 P0（清单 §0）**：`create-zip-file`；`amazon-main-image-size`；`iphone-app-store-screenshot`；`apple-touch-icon`；`open-graph-image-size`。须使用场景表 + 用户点名 + 0b。  
+2. **P1**：`ios-app-icon-size`、`chatgpt-export-to-markdown`、社交其余作业类型、`svg-optimizer`。  
+3. **已上线勿重复立项**：`unzip-file`、`archive-extractor`、`json-schema-validator`、merge/split PDF、设计师对比度/色 token、`image-merge`。  
+4. **勿排进攻 P0**：`safe-paste-cleaner`、`ai-token-counter`、任何 `*-pack` 工程名。  
+5. **方向 C**：存量 YMYL References。  
+6. 每季度核对 Apple/Amazon/Google 规格；对照竞品附录。
 
 ---
 

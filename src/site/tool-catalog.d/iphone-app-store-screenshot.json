@@ -1,0 +1,27 @@
+{
+  "slug": "iphone-app-store-screenshot",
+  "path": "/tools/iphone-app-store-screenshot",
+  "updatedAt": "2026-09-01T02:40:00.000Z",
+  "launchedAt": "2026-09-01T02:40:00.000Z",
+  "category": "image",
+  "primaryTopic": "image-media",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_iphone_app_store_screenshot_title",
+  "homeTitleKey": "tool_iphone_app_store_screenshot_title",
+  "homeDescKey": "tool_iphone_app_store_screenshot_desc",
+  "faqPrefix": "tool_iphone_app_store_screenshot",
+  "related": [
+    "image-crop",
+    "image-compress"
+  ],
+  "logo": "/icons/tools/iphone-app-store-screenshot.svg",
+  "page": {
+    "module": "../pages/iphoneAppStoreScreenshotPage",
+    "export": "renderIphoneAppStoreScreenshotPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "image"
+}

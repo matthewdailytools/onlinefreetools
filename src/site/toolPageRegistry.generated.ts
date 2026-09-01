@@ -5,6 +5,8 @@
 import type { SiteLang } from './i18n';
 import { renderAddWatermarkPage } from '../pages/addWatermarkPage';
 import { renderAddWwwToDnsPage } from '../pages/addWwwToDnsPage';
+import { renderAmazonMainImageSizePage } from '../pages/amazonMainImageSizePage';
+import { renderAppleTouchIconPage } from '../pages/appleTouchIconPage';
 import { renderArchiveExtractorPage } from '../pages/archiveExtractorPage';
 import { renderAwsVpcCidrPlannerPage } from '../pages/awsVpcCidrPlannerPage';
 import { renderBase64Page } from '../pages/base64Page';
@@ -15,6 +17,7 @@ import { renderCidrToIpRangePage } from '../pages/cidrToIpRangePage';
 import { renderColorFromImagePage } from '../pages/colorFromImagePage';
 import { renderCompressPdfPage } from '../pages/compressPdfPage';
 import { renderCoreWebVitalsCheckerPage } from '../pages/coreWebVitalsCheckerPage';
+import { renderCreateZipFilePage } from '../pages/createZipFilePage';
 import { renderCropPdfPage } from '../pages/cropPdfPage';
 import { renderCsvJsonPage } from '../pages/csvJsonPage';
 import { renderDomainLookupPage } from '../pages/domainLookupPage';
@@ -99,6 +102,7 @@ import { renderImagesToWordPage } from '../pages/imagesToWordPage';
 import { renderIndexNowPage } from '../pages/indexNowPage';
 import { renderIpAddressPage } from '../pages/ipAddressPage';
 import { renderIpRangeToCidrPage } from '../pages/ipRangeToCidrPage';
+import { renderIphoneAppStoreScreenshotPage } from '../pages/iphoneAppStoreScreenshotPage';
 import { renderIpv6CidrPage } from '../pages/ipv6CidrPage';
 import { renderJsonSchemaValidatorPage } from '../pages/jsonSchemaValidatorPage';
 import { renderJwtDecoderPage } from '../pages/jwtDecoderPage';
@@ -109,6 +113,7 @@ import { renderMergePdfPage } from '../pages/mergePdfPage';
 import { renderMetaSerpPreviewPage } from '../pages/metaSerpPreviewPage';
 import { renderMetaTagGeneratorPage } from '../pages/metaTagGeneratorPage';
 import { renderOnPageSeoCheckerPage } from '../pages/onPageSeoCheckerPage';
+import { renderOpenGraphImageSizePage } from '../pages/openGraphImageSizePage';
 import { renderOpenGraphPreviewPage } from '../pages/openGraphPreviewPage';
 import { renderOrganizePdfPage } from '../pages/organizePdfPage';
 import { renderPasswordGeneratorPage } from '../pages/passwordGeneratorPage';
@@ -149,6 +154,8 @@ export type ToolPageRenderFn = (
 export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'add-watermark': (lang, defaultLang, enabled) => renderAddWatermarkPage({ lang, defaultLang, enabledLangs: enabled }),
 	'add-www-to-dns': (lang, defaultLang, enabled) => renderAddWwwToDnsPage({ lang, defaultLang, enabledLangs: enabled }),
+	'amazon-main-image-size': (lang, defaultLang, enabled) => renderAmazonMainImageSizePage({ lang, defaultLang, enabledLangs: enabled }),
+	'apple-touch-icon': (lang, defaultLang, enabled) => renderAppleTouchIconPage({ lang, defaultLang, enabledLangs: enabled }),
 	'archive-extractor': (lang, defaultLang, enabled) => renderArchiveExtractorPage({ lang, defaultLang, enabledLangs: enabled }),
 	'aws-vpc-cidr-planner': (lang, defaultLang, enabled) => renderAwsVpcCidrPlannerPage({ lang, defaultLang, enabledLangs: enabled }),
 	'base64': (lang, defaultLang, enabled) => renderBase64Page({ lang, defaultLang, enabledLangs: enabled }),
@@ -159,6 +166,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'color-from-image': (lang, defaultLang, enabled) => renderColorFromImagePage({ lang, defaultLang, enabledLangs: enabled }),
 	'compress-pdf': (lang, defaultLang, enabled) => renderCompressPdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'core-web-vitals-checker': (lang, defaultLang, enabled) => renderCoreWebVitalsCheckerPage({ lang, defaultLang, enabledLangs: enabled }),
+	'create-zip-file': (lang, defaultLang, enabled) => renderCreateZipFilePage({ lang, defaultLang, enabledLangs: enabled }),
 	'crop-pdf': (lang, defaultLang, enabled) => renderCropPdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'csv-json': (lang, defaultLang, enabled) => renderCsvJsonPage({ lang, defaultLang, enabledLangs: enabled }),
 	'domain-lookup': (lang, defaultLang, _enabled) => renderDomainLookupPage(lang, defaultLang),
@@ -243,6 +251,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'indexnow': (lang, defaultLang, enabled) => renderIndexNowPage({ lang, defaultLang, enabledLangs: enabled }),
 	'ip-address': (lang, defaultLang, _enabled) => renderIpAddressPage(lang, defaultLang),
 	'ip-range-to-cidr': (lang, defaultLang, enabled) => renderIpRangeToCidrPage({ lang, defaultLang, enabledLangs: enabled }),
+	'iphone-app-store-screenshot': (lang, defaultLang, enabled) => renderIphoneAppStoreScreenshotPage({ lang, defaultLang, enabledLangs: enabled }),
 	'ipv6-cidr': (lang, defaultLang, enabled) => renderIpv6CidrPage({ lang, defaultLang, enabledLangs: enabled }),
 	'json-schema-validator': (lang, defaultLang, enabled) => renderJsonSchemaValidatorPage({ lang, defaultLang, enabledLangs: enabled }),
 	'jwt-decoder': (lang, defaultLang, enabled) => renderJwtDecoderPage({ lang, defaultLang, enabledLangs: enabled }),
@@ -253,6 +262,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'meta-serp-preview': (lang, defaultLang, enabled) => renderMetaSerpPreviewPage({ lang, defaultLang, enabledLangs: enabled }),
 	'meta-tag-generator': (lang, defaultLang, enabled) => renderMetaTagGeneratorPage({ lang, defaultLang, enabledLangs: enabled }),
 	'on-page-seo-checker': (lang, defaultLang, enabled) => renderOnPageSeoCheckerPage({ lang, defaultLang, enabledLangs: enabled }),
+	'open-graph-image-size': (lang, defaultLang, enabled) => renderOpenGraphImageSizePage({ lang, defaultLang, enabledLangs: enabled }),
 	'open-graph-preview': (lang, defaultLang, enabled) => renderOpenGraphPreviewPage({ lang, defaultLang, enabledLangs: enabled }),
 	'organize-pdf': (lang, defaultLang, enabled) => renderOrganizePdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'password-generator': (lang, defaultLang, enabled) => renderPasswordGeneratorPage({ lang, defaultLang, enabledLangs: enabled }),

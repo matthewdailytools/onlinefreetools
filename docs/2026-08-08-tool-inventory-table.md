@@ -1,6 +1,6 @@
 # 工具清单总表（自工具方向文档提炼）
 
-**日期**: 2026-08-08（修订：…；ToolDone；iLovePDF；Omni 公式对照；**Omni 意图合并 → how-to-calculate-* 补充 §9**；**2026-08-09 Aconvert 全格式转换对照**；**2026-08-09 SeaOcean SEO+GEO 审计对照 §6**）  
+**日期**: 2026-08-08（修订：2026-08-31 **§0 待办 P0/P1/P2 按使用场景重梳**；ToolDone；iLovePDF；Omni；Aconvert；SeaOcean）  
 **来源**: [2026-07-28-tool-direction.md](./2026-07-28-tool-direction.md) + `tool-catalog.json` + [ToolDone](./competitor-refs/tooldone-2026-08-08/README.md) + [iLovePDF](./competitor-refs/ilovepdf-2026-08-08/README.md) + [Omni Calculator](./competitor-refs/omnicalculator-2026-08-08/README.md) + [Aconvert](./competitor-refs/aconvert-2026-08-09/README.md) + [SeaOcean](./competitor-refs/seaocean-2026-08-09/README.md)  
 **目标站点**: https://onlinefreetools.org  
 
@@ -39,7 +39,91 @@
 | **未开始 · P2** | 产能允许再上，尚未开工 |
 | **待 POC** | 技术/准确率需先验证（Tier 2 / WASM 等），通过后再立项 |
 
-> 进入编码或 `work-tasks/{slug}/` 后，可将对应行改为 **进行中**；合并上线后改为 **已上线**。优先级以工具方向文档为准，本表随排期调整。
+> 进入编码或 `work-tasks/{slug}/` 后，可将对应行改为 **进行中**；合并上线后改为 **已上线**。  
+> **待办优先级以本节 §0 为准**（2026-08-31 按 catalog 实况 + 长尾策略 §3.3 H 重梳）。分节表内「未开始 · P0」若与 §0 冲突，以 §0 为准并应回写该行。
+
+---
+
+## 0. 待办 slug 优先级（2026-08-31）
+
+对齐：[工具方向](./2026-07-28-tool-direction.md) · [长尾 §3.3 H](./seo/2026-08-20-long-tail-gap-strategy.md)（**使用场景**定 slug，平台只是例子）· [漏斗](./seo/keyword-to-tool-funnel.md)（`head`/`mid_covered` 不占进攻 P0）。
+
+- slug = 用户这一次会搜的任务句；进页默认即该场景。  
+- 同作业类型只排 **一条** 主 URL，其余芯片 absorb。  
+- 下列均为**产品排期**；开 `work-tasks/` 仍须用户点名 + coverage 0b。未跑 SERP 的标「待 SERP」，不得直接当周 `build`。
+
+### 已上线或已覆盖（移出待办）
+
+| 旧清单 slug | 处理 |
+|---|---|
+| `json-schema-validator`、`unzip-file`、`archive-extractor` | catalog 已有 |
+| `extract-archive` | **absorb** → `archive-extractor`（导出 ZIP 模式） |
+| `cidr-calculator` | **已覆盖** → `cidr-to-ip-range` 簇（禁再注册该头词 slug） |
+| `wcag-contrast-checker`、`brand-color-token-pack`、设计师/PDF/计算器 §9 已上线项 | 见分节「已上线」行 |
+
+### P0（下一波主场景；最多 5 条主 URL）
+
+| 建议 slug | 使用场景（一步到位） | 同页 absorb / 芯片 | 废止作主 URL |
+|---|---|---|---|
+| `create-zip-file` | 把多文件打成一个 ZIP 发出去 | Gzip 单文件作次模式 | — |
+| `amazon-main-image-size` | Amazon **主图**尺寸与体积合规 | eBay/Shopify/Walmart **主图** | `amazon-image-resizer`、`marketplace-image-pack` |
+| `iphone-app-store-screenshot` | App Store 当期 **iPhone 6.9"** 截图（1320×2868 等；勿用 6.7 作 H1） | iPad、6.5" 后备 | `ios-app-screenshot-resizer` |
+| `apple-touch-icon` | 方 Logo → apple-touch / favicon / PWA 图标 | manifest 示例、多尺寸 ZIP | `favicon-and-pwa-icon-pack` |
+| `open-graph-image-size` | 网页 **链接分享卡**（约 1200×630） | FB/LinkedIn/X/WhatsApp 链接预览 | `social-share-image-pack`（整包） |
+
+社交 P0 **只排链接卡这一种作业类型**（与已上线 `open-graph-preview` 成对：那边验标签，这边出图）。封面/Story/缩略图见 P1。
+
+长尾 H1 候选（Bing+用户也搜，2026-08-31）：[`docs/seo/keywords/p0-scene/2026-08-31-p0-scene-longtail-selection.md`](./seo/keywords/p0-scene/2026-08-31-p0-scene-longtail-selection.md)。CN Bing 污染词未标 `long_gap`。
+
+### P1（紧随；场景句，待 SERP）
+
+| 建议 slug | 使用场景 | absorb / 边界 |
+|---|---|---|
+| `ios-app-icon-size` | 1024 Logo → **iOS App 图标**倍率 | Play 图标若规则不同可同页芯片，勿先拆 `google-play-asset-pack` |
+| `linkedin-banner-size` | LinkedIn **个人背景横幅** + 安全区 | FB 封面、X header、YT 频道图芯片；`youtube-channel-art-pack` 不独立 |
+| `instagram-story-size` | IG **Story** 9:16 | Reels / TikTok / Shorts 封面 |
+| `youtube-thumbnail-size` | YouTube **视频缩略图** | 勿与 OG 链接卡混 H1 |
+| `instagram-post-size` | IG **方图发帖** | 4:5、FB 动态配图 |
+| `chatgpt-export-to-markdown` | 把 ChatGPT/Claude **导出**打成 MD/JSON | 旧 `chat-export-converter` |
+| `svg-optimizer` | 压缩 SVG 并看体积对比 | 对标 SVGOMG 交互 |
+| `curl-to-fetch` | 把 **cURL** 转成 fetch | — |
+| `prompt-template-builder` | 把一段 Prompt **固化成**角色/任务模板 | — |
+| `file-metadata-analyzer` | 看本地文件 **分辨率/时长/容器字段** | Aconvert P1；不插队 P0 |
+
+`qr-code-generator`：头词生成器，**不进 P1 进攻** → P2。  
+`color-converter` → absorb `brand-color-token-pack`。  
+`meta-copy-length-pack` → absorb `meta-serp-preview` / `meta-tag-generator`。  
+`gzip-file` → `create-zip-file` 次模式。
+
+### P2（产能允许；含漏斗 defer）
+
+| 建议 slug | 说明 |
+|---|---|
+| `safe-paste-cleaner`、`ai-token-counter` | 漏斗 **defer**（`mid_covered`）；产品曾标 P0，**不再排进攻 P0** |
+| `vlsm-subnet-calculator` | CIDR defer；不立项 |
+| `sql-formatter`、`cron-explainer` | 开发者零件 |
+| `css-gradient-generator`、`css-shadow-generator`、`type-scale-token-pack` | 设计生成器 |
+| `barcode-generator`、`qr-code-generator` | 码类头词 |
+| `redirect-rules-generator`、`sitemap-xml-validator`、`ssl-certificate-checker`、`seo-launch-checklist` | 站长调研可做；优先增强已有页 |
+| `podcast-cover-art-pack` → 场景句如 `podcast-cover-size` | 与封面簇近，默认 absorb 封面页 |
+| `shopify-woocommerce-image-sizes`、`etsy-listing-image-pack`、`ebook-cover-size-pack` | 主图合规芯片，禁近义包 URL |
+| `chrome-extension-icon-pack` → `chrome-extension-icon-size` | 可芯片进 `apple-touch-icon` / `ios-app-icon-size` |
+| `device-frame-screenshot-pack` | 规格薄页风险高 |
+| `meeting-timezone-pack` | 优先 absorb `timezone-converter` 导出模式 |
+| `cert-fingerprint-pack` | PEM 指纹表 |
+| `product-feed-template-pack` | 列映射；产能后 |
+| `pinterest-pin-size` | 可并入 `instagram-post-size` |
+| `audio-recorder`、`audio-trim` | 音频旁路 |
+
+### 待 POC（先验证再给场景 slug）
+
+`local-bg-removal`、`ocr-to-text`、`audio-wav-mp3`
+
+### 明确不排期
+
+- 再注册 `social-share-image-pack` / `marketplace-image-pack` / `cidr-calculator` / `pdf-tools`  
+- 按平台或后缀拆近义 URL  
+- 漏斗 `head` 进攻（如再做「CIDR Calculator」H1）
 
 ---
 
@@ -57,14 +141,14 @@
 | 8 | 添加 WWW DNS 说明 | A.12 / 站长运维 | `add-www-to-dns` | 说明如何为域名配置 www 记录 | developer | 站长、运维 | 域名/场景选择 | 配置步骤与记录示例 | 已上线 |
 | 9 | 域名查询 | A.10 网络；站长核对 | `domain-lookup` | 按域名查 DNS 记录与 RDAP 注册信息 | developer | 站长、运维、开发者 | 域名 | DNS 分区 + 注册信息分区 | 已上线 |
 | 10 | IndexNow 提交辅助 | A.12；B3 | `indexnow` | 协助构造/理解 IndexNow 提交 | seo | 站长、SEO | URL / 密钥相关输入 | 提交说明或请求构造结果 | 已上线 |
-| 11 | JSON Schema 校验器 | B1/B4/B5；C-V1 | `json-schema-validator` | 用 Schema 校验 JSON，定位路径错误 | developer | AI 工程、后端、电商 feed | Schema + JSON | 通过/失败 + JSON Pointer | 未开始 · P0 |
-| 12 | Safe Paste 清理 | B1 AI Prompt 流水线 | `safe-paste-cleaner` | 清除零宽/隐藏字符等脏粘贴 | developer | Prompt 工程师、AI 用户 | 脏文本 | 干净文本 + 清除项说明 | 未开始 · P0 |
-| 13 | AI Token 计数 | B1 | `ai-token-counter` | 估算 Prompt token 与费用 | developer | AI 开发者、产品 | Prompt 文本 + 模型/价表假设 | token 数与费用估算 | 未开始 · P0 |
+| 11 | JSON Schema 校验器 | B1/B4/B5；C-V1 | `json-schema-validator` | 用 Schema 校验 JSON，定位路径错误 | developer | AI 工程、后端、电商 feed | Schema + JSON | 通过/失败 + JSON Pointer | 已上线 |
+| 12 | Safe Paste 清理 | B1；漏斗 defer | `safe-paste-cleaner` | 清除零宽/隐藏字符等脏粘贴 | developer | Prompt 工程师、AI 用户 | 脏文本 | 干净文本 + 清除项说明 | 未开始 · P2 |
+| 13 | AI Token 计数 | B1；漏斗 defer | `ai-token-counter` | 估算 Prompt token 与费用 | developer | AI 开发者、产品 | Prompt 文本 + 模型/价表假设 | token 数与费用估算 | 未开始 · P2 |
 | 14 | Prompt 模板构建 | B1 | `prompt-template-builder` | 把自由文本固化为角色/任务/约束模板 | developer | AI 应用开发者 | 自由文本或字段 | 结构化 Prompt 模板 | 未开始 · P1 |
-| 15 | Chat 导出转换 | B2 RAG/语料准备 | `chat-export-converter` | 聊天导出转为 MD/JSON/CSV | developer | 数据工程、AI 训练准备 | Chat 导出文件/文本 | MD / JSON / CSV | 未开始 · P0 |
+| 15 | 聊天导出转 Markdown | B2 RAG；§3.3 H | `chatgpt-export-to-markdown`（旧 `chat-export-converter`） | 把 ChatGPT/Claude 导出打成 MD/JSON/CSV | developer | 数据工程、AI 训练准备 | Chat 导出文件/文本 | MD / JSON / CSV | 未开始 · P1 |
 | 16 | SQL 格式化 | A.1 | `sql-formatter` | SQL 美化/缩进 | developer | 后端、数据分析 | SQL 文本 | 格式化 SQL | 未开始 · P2 |
 | 17 | cURL → fetch | A.10；B5 | `curl-to-fetch` | 把 cURL 命令转为 fetch 代码 | developer | 前端、全栈 | cURL 字符串 | JavaScript fetch 片段 | 未开始 · P1 |
-| 18 | CIDR 计算器 | A.10；C-V1 | `cidr-calculator` | 网段、掩码、主机范围计算 | developer | 运维、网络工程 | CIDR / IP+掩码 | 网络范围与主机数 | 未开始 · P1 |
+| 18 | CIDR 单块展开 | A.10；已覆盖 | `cidr-to-ip-range`（**勿**再注册 `cidr-calculator`） | 前缀 → 网段/广播/主机 | developer | 运维、网络工程 | CIDR / IP+掩码 | 网络范围与主机数 | 已上线 |
 | 19 | JWT 解码 | A.6；C-V1 | `jwt-decoder` | Base64url 解码 JWT（不验签） | developer | 后端、安全调试 | JWT 字符串 | Header/Payload JSON + 免责声明 | 已上线 |
 | 20 | 文件/文本哈希 | A.6 | `file-hash` | 计算 MD5/SHA 等摘要 | developer | 开发者、发布校验 | 文件或文本 | 哈希十六进制 | 已上线 |
 | 21 | Base64 编解码 | A.6 | `base64` | Base64 编码/解码 | developer | 开发者 | 文本或文件字节 | Base64 或还原内容 | 已上线 |
@@ -107,10 +191,10 @@
 
 | 序号 | 工具名称 | 工具场景/渠道 | 工具 slug | 工具功能 | 工具分类 | 工具用户角色 | 工具输入 | 工具输出 | 开发进度 |
 |---|---|---|---|---|---|---|---|---|---|
-| 47 | 创建 ZIP | B14；A.5；对照 ezyZip；slug 对齐 *create zip file*（非 `zip-create`） | `create-zip-file` | 多文件/文件夹打包为 ZIP | archive | 全体知识工作者、学生、运营 | 多文件或文件夹 + 压缩级 | `.zip` | 未开始 · P0 |
-| 48 | 解压 ZIP | B14；A.5；slug 对齐 *unzip file* / *unzip online* | `unzip-file` | 列出/预览/提取 ZIP 内容 | archive | Chromebook/平板用户、运营、学生 | `.zip`（可选密码） | 文件树 + 单文件/全部下载 | 未开始 · P0 |
-| 49 | 多格式归档解压 | B14；A.5 | `extract-archive` | ZIP/TAR(.GZ) 及懒加载 7Z/RAR 等只读解压，可导出 ZIP | archive | 开发者、运维、收非 ZIP 包的用户 | 归档文件 | 文件列表/提取物；可选标准 ZIP | 未开始 · P1 |
-| 50 | Gzip 压缩 | A.5 | `gzip-file` | 文本或单文件 Gzip | archive | 开发者、运维 | 文本/单文件 | `.gz` | 未开始 · P1 |
+| 47 | 创建 ZIP | B14；A.5；§0 P0 | `create-zip-file` | 多文件打成一个 ZIP 发出去 | archive | 全体知识工作者、学生、运营 | 多文件或文件夹 + 压缩级 | `.zip` | 未开始 · P0 |
+| 48 | 解压 ZIP | B14；A.5 | `unzip-file` | 列出/预览/提取 ZIP 内容 | archive | Chromebook/平板用户、运营、学生 | `.zip`（可选密码） | 文件树 + 单文件/全部下载 | 已上线 |
+| 49 | 多格式归档解压 | B14；A.5 | `archive-extractor`（旧建议 `extract-archive`，不另建） | ZIP/TAR(.GZ)/7Z/RAR 只读解压，可导出 ZIP | archive | 开发者、运维、收非 ZIP 包的用户 | 归档文件 | 文件列表/提取物；可选标准 ZIP | 已上线 |
+| 50 | Gzip 压缩 | A.5 | （absorb → `create-zip-file` 次模式；勿独立 `gzip-file`） | 文本或单文件 Gzip | archive | 开发者、运维 | 文本/单文件 | `.gz` | 未开始 · P0（并入打包页） |
 
 ---
 
@@ -146,9 +230,9 @@
 | 67 | SVG 优化 | D；对标 SVGOMG | `svg-optimizer` | SVGO 选项可视化压缩 | design | 前端、设计师 | SVG 文本/文件 | 优化 SVG + 体积对比 | 未开始 · P1 |
 | 68 | CSS 阴影生成 | A.9；D P2 | `css-shadow-generator` | 可视化生成 box/text-shadow | design | 前端、设计师 | 阴影参数 | 可复制 CSS | 未开始 · P2 |
 | 69 | CSS 渐变生成器 | A.9；D（**非** `how-to-calculate-gradient`） | `css-gradient-generator` | 颜色/角度 → CSS `linear-gradient` / `radial-gradient` | design | 前端、设计师 | 颜色停靠点、角度/类型 | 可复制 CSS | 未开始 · P2 |
-| 70 | QR 码生成 | A.9 | `qr-code-generator` | 文本/URL → QR 图 | design | 运营、线下活动 | 文本或 URL | QR 图片 | 未开始 · P1 |
+| 70 | QR 码生成 | A.9；头词 | `qr-code-generator` | 文本/URL → QR 图 | design | 运营、线下活动 | 文本或 URL | QR 图片 | 未开始 · P2 |
 | 71 | 条码生成 | A.9 | `barcode-generator` | 生成常见一维条码 | design | 零售、仓储、运营 | 编码内容 + 码制 | 条码图 | 未开始 · P2 |
-| 72 | 颜色格式转换 | A.9 | `color-converter` | HEX/RGB/HSL 等互转 | design | 设计师、前端 | 一种色值 | 多格式色值 | 未开始 · P1 |
+| 72 | 颜色格式转换 | A.9 | absorb → `brand-color-token-pack`（勿独立 `color-converter`） | HEX/RGB/HSL 等互转 | design | 设计师、前端 | 一种色值 | 多格式色值 | 已覆盖 |
 
 ---
 
@@ -162,7 +246,7 @@
 | 74 | Schema JSON-LD 生成 | B3；C-V2 | `schema-jsonld-generator` | FAQ/Article/Breadcrumb/Organization → JSON-LD（须与正文一致） | seo | 站长、内容 | 问答/文章/面包屑/组织信息 | JSON-LD 字符串 | 已上线 · P1 |
 | 75 | robots.txt 生成 | B3；S1 | `robots-txt-generator` | 生成 robots.txt；含 AI 爬虫 User-agent（GPTBot 等） | seo | 站长、SEO | 允许/禁止规则 + AI 爬虫选项 | robots.txt 文本 | 已上线 |
 | 76 | sitemap.xml 生成 | B3；S1 | `sitemap-xml-generator` | URL 列表 → sitemap.xml（lastmod/changefreq/priority） | seo | 站长、SEO | URL 列表 + 可选元数据 | sitemap.xml | 已上线 |
-| 77 | 多引擎 Meta 文案长度包 | B.3 | `meta-copy-length-pack` | 一段文案 → 多引擎标题/描述长度套装 | seo | SEO、内容 | 1 段文案 | 多引擎长度检测结果 | 未开始 · P1 |
+| 77 | 多引擎 Meta 文案长度 | B.3 | absorb → `meta-serp-preview`（勿独立 `meta-copy-length-pack`） | 一段文案 → 多引擎标题/描述长度 | seo | SEO、内容 | 1 段文案 | 多引擎长度检测结果 | 已覆盖 |
 | 78 | hreflang 标签生成 | A.12；C-V2 | `hreflang-generator` | 多语言 URL → hreflang 片段 | seo | 站长、国际化前端 | 语言-URL 列表 | link/hreflang 标签 | 已上线 |
 | 79 | UTM 构建器 | A.12 | `utm-builder` | 拼装带 UTM 的活动链接 | seo | 增长、运营 | 基础 URL + UTM 字段 | 完整追踪 URL | 已上线 |
 | 80 | 单页 On-page SEO 检查器 | A.12；SeaOcean 式单页审计（142 项）；C-V2 | `on-page-seo-checker` | 贴 URL/HTML → H1、canonical、meta 质量、OG/Twitter、JSON-LD 检测、mixed content、render-blocking 汇总 + 修复建议；合并 canonical 检查候选 | seo | 站长、SEO、前端 | URL 或粘贴 HTML | 逐项判定表 + 修复建议 + References | 已上线 |
@@ -175,15 +259,15 @@
 
 | 序号 | 工具名称 | 工具场景/渠道 | 工具 slug | 工具功能 | 工具分类 | 工具用户角色 | 工具输入 | 工具输出 | 开发进度 |
 |---|---|---|---|---|---|---|---|---|---|
-| 81 | iOS 截图尺寸套装 | B6；C-V6；App Store | `ios-app-screenshot-resizer` | 1 张截图 → iPhone/iPad 当期尺寸全套 | image | iOS 开发者、外包 PM | 1 张截图源 | 多尺寸截图 ZIP | 未开始 · P0 |
-| 82 | App Icon 全套 | B6；C-V6 | `app-icon-generator-pack` | 1 张 1024 Logo → 商店与设备倍率图标 | image | 移动开发者、设计师 | 1 张方 Logo | 多尺寸 Icon ZIP | 未开始 · P0 |
-| 83 | Google Play 素材包 | B6；C-V6；Google Play | `google-play-asset-pack` | Icon + Feature Graphic + 截图规格包 | image | Android 开发者、PM | 1–2 张图 | Play 素材 ZIP | 未开始 · P1 |
-| 84 | Favicon / PWA 图标包 | B8；D P0 | `favicon-and-pwa-icon-pack` | 1 Logo → favicon/apple-touch/PWA + manifest 示例 | image | 站长、前端、设计师 | 1 张方 Logo | 图标套装 + manifest 示例 | 未开始 · P0 |
-| 85 | 社交分享图包 | B9；D P0；OG/X/LinkedIn… | `social-share-image-pack` | 1 主视觉 → 多平台封面尺寸 | image | 运营、站长、设计师 | 1 张主视觉 | 多平台封面 ZIP | 未开始 · P0 |
-| 86 | Chrome 扩展图标包 | B10 | `chrome-extension-icon-pack` | 1 Logo → 扩展商店图标尺寸 | image | 扩展开发者 | 1 张 Logo | 多尺寸图标 | 未开始 · P2 |
-| 87 | YouTube 频道套装 | B.3；创作者 | `youtube-channel-art-pack` | 横图 → Banner 安全区 + 头像尺寸 | image | 视频创作者 | 1 张横图 | Banner/头像规格图 | 未开始 · P2 |
-| 88 | 播客封面包 | B.3；Apple/Spotify | `podcast-cover-art-pack` | 方图 → 播客平台封面规格 | image | 播客制作人 | 1 张方图 | 封面规格图 | 未开始 · P2 |
-| 89 | 设备外框截图包 | B.3 P2 | `device-frame-screenshot-pack` | 截图套轻量外框并导出多尺寸 | image | 产品营销、开发者 | 1 张截图 | 带外框图包 | 未开始 · P2 |
+| 81 | iPhone App Store 截图 | B6；§0 P0 | `iphone-app-store-screenshot`（旧 `ios-app-screenshot-resizer`） | 当期 iPhone 截图套装；iPad 芯片 | image | iOS 开发者、外包 PM | 1 张截图源 | 多尺寸截图 ZIP | 未开始 · P0 |
+| 82 | iOS App 图标 | B6；§0 P1 | `ios-app-icon-size`（旧 `app-icon-generator-pack`） | 1024 Logo → iOS 图标倍率；Play 可芯片 | image | 移动开发者、设计师 | 1 张方 Logo | 多尺寸 Icon ZIP | 未开始 · P1 |
+| 83 | Google Play 素材 | B6 | absorb → `ios-app-icon-size` / 截图页芯片（勿先独立 `google-play-asset-pack`） | Icon + Feature Graphic + 截图 | image | Android 开发者、PM | 1–2 张图 | Play 素材 ZIP | 未开始 · P1（芯片） |
+| 84 | apple-touch / Favicon | B8；§0 P0 | `apple-touch-icon`（旧 `favicon-and-pwa-icon-pack`） | Logo → apple-touch、favicon、PWA | image | 站长、前端、设计师 | 1 张方 Logo | 图标套装 + manifest 示例 | 未开始 · P0 |
+| 85 | 链接分享卡图 | B9；§0 P0 | `open-graph-image-size`（**废止** `social-share-image-pack`） | OG ~1200×630；其它链接卡芯片 | image | 运营、站长 | 1 张主视觉 | 该场景规范图 | 未开始 · P0 · 待 SERP |
+| 86 | Chrome 扩展图标 | B10 | `chrome-extension-icon-size`（旧 pack） | 扩展商店图标尺寸 | image | 扩展开发者 | 1 张 Logo | 多尺寸图标 | 未开始 · P2 |
+| 87 | YouTube 频道封面 | B9 封面簇 | absorb → `linkedin-banner-size` 芯片（勿独立 `youtube-channel-art-pack`） | 频道图安全区 | image | 视频创作者 | 1 张横图 | Banner 规格图 | 未开始 · P1（芯片） |
+| 88 | 播客封面 | B.3 | `podcast-cover-size` 或 absorb 封面簇 | Apple/Spotify 封面规格 | image | 播客制作人 | 1 张方图 | 封面规格图 | 未开始 · P2 |
+| 89 | 设备外框截图 | B.3 | `device-frame-screenshot-pack` | 轻量外框 | image | 产品营销、开发者 | 1 张截图 | 带外框图包 | 未开始 · P2 |
 
 ---
 
@@ -191,12 +275,12 @@
 
 | 序号 | 工具名称 | 工具场景/渠道 | 工具 slug | 工具功能 | 工具分类 | 工具用户角色 | 工具输入 | 工具输出 | 开发进度 |
 |---|---|---|---|---|---|---|---|---|---|
-| 90 | Amazon 主图合规尺寸 | B7；C-V3；Amazon | `amazon-image-resizer` | 1 商品图 → Amazon 推荐尺寸/体积 | image | 跨境卖家、电商运营、美工 | 1 张商品图 | 合规尺寸图 + 命名建议 | 未开始 · P0 |
-| 91 | 多电商平台图包 | B7；C-V3 | `marketplace-image-pack` | 1 图 → Amazon/eBay/Shopify 等预设 | image | 多平台卖家、运营 | 1 张图 | 多平台尺寸 ZIP | 未开始 · P1 |
-| 92 | Shopify/Woo 主题尺寸 | B11 | `shopify-woocommerce-image-sizes` | 1 图 → 主题常用尺寸 | image | 独立站运营 | 1 张图 | 主题尺寸图包 | 未开始 · P2 |
-| 93 | Etsy Listing 图包 | B.3；Etsy | `etsy-listing-image-pack` | 1 图 → Etsy 推荐像素与比例 | image | Etsy 卖家 | 1 张图 | Listing 图包 | 未开始 · P2 |
-| 94 | 电子书封面多店 | B.3；C 图书 | `ebook-cover-size-pack` | 1 封面 → Kindle/Apple Books/Kobo | image | 作者、出版运营 | 1 张封面 | 多店封面尺寸 | 未开始 · P2 |
-| 95 | 产品 Feed 模板包 | B4；C-V3 | `product-feed-template-pack` | 1 份 CSV → 多平台 feed 列映射文件 | developer | 电商目录专员 | 1 份产品 CSV | 多平台 feed 文件（1→N） | 未开始 · P1 |
+| 90 | Amazon 主图合规 | B7；§0 P0 | `amazon-main-image-size`（旧 `amazon-image-resizer`） | 上架主图尺寸/体积 | image | 跨境卖家、电商运营、美工 | 1 张商品图 | 合规主图 + 命名建议 | 未开始 · P0 |
+| 91 | 多电商主图 | B7 | absorb → `amazon-main-image-size` 芯片（勿独立 `marketplace-image-pack`） | 其它店主图预设 | image | 多平台卖家、运营 | 1 张图 | 多平台尺寸 ZIP | 未开始 · P0（芯片） |
+| 92 | Shopify/Woo 主题图 | B11 | absorb → 主图页芯片 | 主题常用尺寸 | image | 独立站运营 | 1 张图 | 主题尺寸图包 | 未开始 · P2 |
+| 93 | Etsy Listing 图 | B.3 | absorb → 主图页芯片 | Etsy 推荐比例 | image | Etsy 卖家 | 1 张图 | Listing 图包 | 未开始 · P2 |
+| 94 | 电子书封面多店 | B.3 | absorb → 封面簇或 P2 | Kindle 等封面 | image | 作者、出版运营 | 1 张封面 | 多店封面尺寸 | 未开始 · P2 |
+| 95 | 产品 Feed 列映射 | B4 | `product-feed-template-pack` | CSV → 多平台 feed 文件 | developer | 电商目录专员 | 1 份产品 CSV | 多平台 feed | 未开始 · P2 |
 
 ---
 
@@ -404,13 +488,14 @@
 | ToolDone 全量归档 | ~2826 en / ~2835 zh |
 | Omni 意图合并（§9 / §12） | **62** 行；明细 TSV `omnicalculator-intent-merge-howto.tsv` |
 | Omni 全量归档 | ~3867 en（无 zh） |
-| 已上线 | 123 |
-| 未开始 · P0 | 13 |
-| 未开始 · P1 | ~25（含计算器 P1） |
-| 未开始 · P2 | ~78（含 Omni 合并补充计算器候选） |
+| 已上线 | 以 catalog 为准（计算器 §9 已全部上线；归档解压/JSON Schema 已上线） |
+| 未开始 · P0 | **5** 条主 URL：`create-zip-file`、`amazon-main-image-size`、`iphone-app-store-screenshot`、`apple-touch-icon`、`open-graph-image-size`（见 §0） |
+| 未开始 · P1 | 约 10 条场景 URL（图标/社交其余作业类型/导出 MD/SVG/cURL/Prompt/文件元数据） |
+| 未开始 · P2 | 生成器、漏斗 defer、站长增强、薄规格包 |
 | 待 POC | 3（`local-bg-removal`、`ocr-to-text`、`audio-wav-mp3`） |
 
-**P0 未开始速查**：`create-zip-file`、`unzip-file`、`safe-paste-cleaner`、`ai-token-counter`、`chat-export-converter`、`ios-app-screenshot-resizer`、`app-icon-generator-pack`、`amazon-image-resizer`、`favicon-and-pwa-icon-pack`、`social-share-image-pack`。
+**P0 速查（§0）**：`create-zip-file` · `amazon-main-image-size` · `iphone-app-store-screenshot` · `apple-touch-icon` · `open-graph-image-size`。  
+**勿再当 P0**：`safe-paste-cleaner`、`ai-token-counter`、任何 `*-pack` 工程名、`cidr-calculator`。
 
 ---
 
@@ -419,5 +504,6 @@
 - 方向文档增删场景/slug 时，同步更新本表对应行，并**重排全表序号**保持连续。  
 - 开工：`开发进度` → **进行中**（可选注明 `work-tasks/{slug}/`）。  
 - 上线：`开发进度` → **已上线**，并与 `tool-catalog.json` / README 工具清单一致。  
+- **待办 P0/P1/P2 以 §0 为准**；改方向优先级时同步 §0 与本统计。  
 - 计算器：§9 意图合并后立项；复核打开 §11 / §12 / `omnicalculator-intent-merge-howto.tsv` / `*-formula-ref-shortlist.tsv`；已上线 slug 勿改 path。季度可重拉 Omni sitemap。  
-- 冲突裁决：以 [工具方向](./2026-07-28-tool-direction.md) 与 Google SEO 政策为准；本表只做扁平索引。
+- 冲突裁决：以 [工具方向](./2026-07-28-tool-direction.md)、Google SEO 政策、[§3.3 H](./seo/2026-08-20-long-tail-gap-strategy.md) 为准；本表只做扁平索引。

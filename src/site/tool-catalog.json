@@ -50,6 +50,50 @@
     "launchedAt": "2026-08-07T06:42:32+08:00"
   },
   {
+    "slug": "amazon-main-image-size",
+    "path": "/tools/amazon-main-image-size",
+    "updatedAt": "2026-09-01T02:20:00.000Z",
+    "launchedAt": "2026-09-01T02:20:00.000Z",
+    "category": "image",
+    "primaryTopic": "image-media",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_amazon_main_image_size_title",
+    "homeTitleKey": "tool_amazon_main_image_size_title",
+    "homeDescKey": "tool_amazon_main_image_size_desc",
+    "faqPrefix": "tool_amazon_main_image_size",
+    "related": [
+      "image-crop",
+      "image-compress"
+    ],
+    "logo": "/icons/tools/amazon-main-image-size.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "image"
+  },
+  {
+    "slug": "apple-touch-icon",
+    "path": "/tools/apple-touch-icon",
+    "updatedAt": "2026-09-01T03:00:00.000Z",
+    "launchedAt": "2026-09-01T03:00:00.000Z",
+    "category": "image",
+    "primaryTopic": "image-media",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_apple_touch_icon_title",
+    "homeTitleKey": "tool_apple_touch_icon_title",
+    "homeDescKey": "tool_apple_touch_icon_desc",
+    "faqPrefix": "tool_apple_touch_icon",
+    "related": [
+      "image-compress",
+      "image-crop"
+    ],
+    "logo": "/icons/tools/apple-touch-icon.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "image"
+  },
+  {
     "slug": "archive-extractor",
     "path": "/tools/archive-extractor",
     "updatedAt": "2026-08-14T15:41:03.000Z",
@@ -283,6 +327,29 @@
     "scenario": "seo",
     "subject": "number",
     "launchedAt": "2026-08-09T21:03:55+08:00"
+  },
+  {
+    "slug": "create-zip-file",
+    "path": "/tools/create-zip-file",
+    "updatedAt": "2026-09-01T02:00:00.000Z",
+    "launchedAt": "2026-09-01T02:00:00.000Z",
+    "category": "developer",
+    "primaryTopic": "files-archives",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_create_zip_file_title",
+    "homeTitleKey": "tool_create_zip_file_title",
+    "homeDescKey": "tool_create_zip_file_desc",
+    "faqPrefix": "tool_create_zip_file",
+    "related": [
+      "unzip-file",
+      "file-hash",
+      "archive-extractor"
+    ],
+    "logo": "/icons/tools/create-zip-file.svg",
+    "localProcessing": true,
+    "scenario": "documents",
+    "subject": "data"
   },
   {
     "slug": "crop-pdf",
@@ -2265,6 +2332,28 @@
     "subject": "network"
   },
   {
+    "slug": "iphone-app-store-screenshot",
+    "path": "/tools/iphone-app-store-screenshot",
+    "updatedAt": "2026-09-01T02:40:00.000Z",
+    "launchedAt": "2026-09-01T02:40:00.000Z",
+    "category": "image",
+    "primaryTopic": "image-media",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_iphone_app_store_screenshot_title",
+    "homeTitleKey": "tool_iphone_app_store_screenshot_title",
+    "homeDescKey": "tool_iphone_app_store_screenshot_desc",
+    "faqPrefix": "tool_iphone_app_store_screenshot",
+    "related": [
+      "image-crop",
+      "image-compress"
+    ],
+    "logo": "/icons/tools/iphone-app-store-screenshot.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "image"
+  },
+  {
     "slug": "ipv6-cidr",
     "path": "/tools/ipv6-cidr",
     "updatedAt": "2026-08-31T02:40:00.000Z",
@@ -2503,6 +2592,28 @@
     "scenario": "seo",
     "subject": "text",
     "launchedAt": "2026-08-09T22:33:39+08:00"
+  },
+  {
+    "slug": "open-graph-image-size",
+    "path": "/tools/open-graph-image-size",
+    "updatedAt": "2026-09-01T03:10:00.000Z",
+    "launchedAt": "2026-09-01T03:10:00.000Z",
+    "category": "image",
+    "primaryTopic": "image-media",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_open_graph_image_size_title",
+    "homeTitleKey": "tool_open_graph_image_size_title",
+    "homeDescKey": "tool_open_graph_image_size_desc",
+    "faqPrefix": "tool_open_graph_image_size",
+    "related": [
+      "open-graph-preview",
+      "image-crop"
+    ],
+    "logo": "/icons/tools/open-graph-image-size.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "image"
   },
   {
     "slug": "open-graph-preview",

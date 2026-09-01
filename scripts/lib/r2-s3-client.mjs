@@ -12,11 +12,13 @@
  *   例：ssh -D 8888 后 `ALL_PROXY=socks5h://127.0.0.1:8888 npm run upload:r2`
  * 模板见仓库根 `.env.example`（复制为 `.env` 后填写，勿提交）。
  */
+import { createRequire } from 'node:module';
 import { S3Client, PutObjectCommand, GetObjectCommand } from '@aws-sdk/client-s3';
 import { NodeHttpHandler } from '@smithy/node-http-handler';
-import { HttpsProxyAgent } from 'https-proxy-agent';
-import { SocksProxyAgent } from 'socks-proxy-agent';
 import { loadProjectEnvSync } from './load-dotenv.mjs';
+
+/** 仅在配置了代理时再加载 agent 包，避免直连/本地灌桶被缺依赖打断。 */
+const require = createRequire(import.meta.url);
 
 /** 模块加载时读入 `.env`，供后续 hasR2S3Credentials / 并发默认值使用 */
 loadProjectEnvSync();
@@ -59,8 +61,10 @@ export const createProxyAgentFromUrl = (proxyUrl) => {
 	/** 协议小写，便于判断 SOCKS */
 	const scheme = trimmed.split(':', 1)[0].toLowerCase();
 	if (scheme === 'socks' || scheme === 'socks5' || scheme === 'socks5h' || scheme === 'socks4') {
+		const { SocksProxyAgent } = require('socks-proxy-agent');
 		return new SocksProxyAgent(trimmed);
 	}
+	const { HttpsProxyAgent } = require('https-proxy-agent');
 	return new HttpsProxyAgent(trimmed);
 };
 

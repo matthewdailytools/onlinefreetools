@@ -1,0 +1,27 @@
+{
+  "slug": "amazon-main-image-size",
+  "path": "/tools/amazon-main-image-size",
+  "updatedAt": "2026-09-01T02:20:00.000Z",
+  "launchedAt": "2026-09-01T02:20:00.000Z",
+  "category": "image",
+  "primaryTopic": "image-media",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_amazon_main_image_size_title",
+  "homeTitleKey": "tool_amazon_main_image_size_title",
+  "homeDescKey": "tool_amazon_main_image_size_desc",
+  "faqPrefix": "tool_amazon_main_image_size",
+  "related": [
+    "image-crop",
+    "image-compress"
+  ],
+  "logo": "/icons/tools/amazon-main-image-size.svg",
+  "page": {
+    "module": "../pages/amazonMainImageSizePage",
+    "export": "renderAmazonMainImageSizePage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "image"
+}

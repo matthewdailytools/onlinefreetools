@@ -18,8 +18,8 @@ alwaysApply: false
 详见 [`ops/README.md`](../../ops/README.md)。
 
 ```bash
-npm run start:dev          # build:site + wrangler dev 后台（默认 http://127.0.0.1:8787）
-npm run start:dev -- --no-build   # 跳过构建，快速启动（新增工具后勿长期使用；须另跑 build:site 才刷新首页）
+npm run start:dev          # build:site + 本地 R2 seed（失败则退出）+ wrangler；Ready 后探测最新工具页
+npm run start:dev -- --no-build   # 跳过构建，仍灌本地 R2（新增工具后勿长期使用；须另跑 build:site 才刷新首页/_pages）
 npm run build:site         # 全量：刷新共享页/sitemap/vendor，并预渲染所有工具页 + gzip
 npm run build:site:full    # 同 build:site，保留为显式全量别名
 npm run tool:touch -- --slug=<slug[,slug]> # 工具内容改动后刷新 catalog updatedAt
@@ -32,7 +32,7 @@ npm run verify:r2          # 校验 R2 ↔ Worker PAGES_CACHE_VERSION
 npm run verify:r2:live     # CF 部署成功后再跑
 npm run deploy:worker-only # 紧急本机 wrangler deploy
 npm run stop:dev           # 停止后台 dev 进程
-npm run status:dev         # 端口与健康检查
+npm run status:dev         # 首页 + 最新工具页；首页 OK 而工具页 FAIL = 本地 R2 未灌上
 npm run restart:dev        # 停止后重新启动
 npm run dev                # 前台 wrangler dev（占用当前终端）
 ```
@@ -40,7 +40,7 @@ npm run dev                # 前台 wrangler dev（占用当前终端）
 Windows：`.\ops\dev\start-dev.ps1` / `.\ops\dev\stop-dev.ps1`  
 日志与 PID：`.run/wrangler-dev.log`、`.run/wrangler-dev.pid`
 
-本地须先 `upload:r2:local`（或 `start:dev` 灌本地桶）；生产 HTML 权威在 R2，Worker/Assets 默认靠 **GitHub push → CF**。远程 `upload:r2` 无 `.env` 时回退 wrangler（慢）。
+本地须先 `upload:r2:local`（或 `start:dev` 灌本地桶；**灌桶失败不得继续起 wrangler**）；生产 HTML 权威在 R2，Worker/Assets 默认靠 **GitHub push → CF**。远程 `upload:r2` 无 `.env` 时回退 wrangler（慢）。首页 Assets 200 不能证明新工具页已在本地桶。
 
 ## Workers
 

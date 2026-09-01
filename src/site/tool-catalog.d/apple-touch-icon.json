@@ -1,0 +1,27 @@
+{
+  "slug": "apple-touch-icon",
+  "path": "/tools/apple-touch-icon",
+  "updatedAt": "2026-09-01T03:00:00.000Z",
+  "launchedAt": "2026-09-01T03:00:00.000Z",
+  "category": "image",
+  "primaryTopic": "image-media",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_apple_touch_icon_title",
+  "homeTitleKey": "tool_apple_touch_icon_title",
+  "homeDescKey": "tool_apple_touch_icon_desc",
+  "faqPrefix": "tool_apple_touch_icon",
+  "related": [
+    "image-compress",
+    "image-crop"
+  ],
+  "logo": "/icons/tools/apple-touch-icon.svg",
+  "page": {
+    "module": "../pages/appleTouchIconPage",
+    "export": "renderAppleTouchIconPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "image"
+}

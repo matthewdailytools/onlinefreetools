@@ -45,10 +45,10 @@
 | 字段 | 值 |
 |---|---|
 | 最近更新 | 2026-08-31 |
-| 最近批次 | [keywords/cidr/2026-08-28-cidr-keyword-planner.md](./keywords/cidr/2026-08-28-cidr-keyword-planner.md)（§3.3 G 重跑选词/slug） |
-| 池内 `build` 候选 | CIDR P0 已上线；P1 **`ipv6-cidr`** / **`cidr-cheat-sheet`** 与 P2 **`aws-vpc-cidr-planner`** 已实现（2026-08-31）。`vlsm-subnet-calculator` 仍 defer。 |
+| 最近批次 | [keywords/p0-scene/2026-08-31-p0-scene-longtail-selection.md](./keywords/p0-scene/2026-08-31-p0-scene-longtail-selection.md)（P0 Bing SERP + 用户也搜）。社交草案仍见 [keywords/social-share/](./keywords/social-share/)；CIDR 见 [keywords/cidr/](./keywords/cidr/) |
+| 池内 `build` 候选 | CIDR 簇已上线；P0 五条 **未**入周进攻（`head`/`mid_covered`/`defer`）。产品待办见 [工具清单 §0](../2026-08-08-tool-inventory-table.md) |
 | 本周新建工具页 | 3（`ipv6-cidr`、`cidr-cheat-sheet`、`aws-vpc-cidr-planner`） |
-| 阻塞 | CIDR P1/P2 已实现；VLSM 仍 defer |
+| 阻塞 | VLSM defer；P0 须点名才开 work-tasks；CN Bing 对本批品牌词不可靠，立项前补 Google 前 10 |
 
 ---
 
@@ -131,6 +131,10 @@
 | 2026-08-28 | 用户点名立项 **`terraform-cidrsubnet`**：开 `work-tasks/terraform-cidrsubnet/`（0b+0i ready）。H1=Terraform cidrsubnet；cidrhost/cidrnetmask/cidrsubnets/hashicorp subnets cidr absorb 本页；不拆近义 URL；不做 VPC 规划器。 | 明确「立项」；long_gap 可交互求值缺口 |
 | 2026-08-28 | 用户点名「cidr notation calculator」→ 按 Planner absorb 开收割页 **`cidr-to-ip-range`**（`work-tasks/` 0b+0i ready）。H1=CIDR to IP range；notation/calculator/mask/expand absorb；禁 H1=CIDR Calculator。 | 明确「立项」；title_gap_fallback 收割 |
 | 2026-08-31 | 用户点名 token 效率模式立项并实现剩余 CIDR build slug：`ipv6-cidr`、`cidr-cheat-sheet`、`aws-vpc-cidr-planner`（十语 + coverage 0b/2/4 + build:site）。`vlsm-subnet-calculator` 仍不立项。 | 明确「立项并实现」；P1/P2 阻塞清除 |
+| 2026-08-31 | 选题增加 **§3.3 H**：slug 须细化到用户**实际使用场景**（情境+动作+结果），全站适用；平台/渠道只是例子。废止品类/`*-pack` 作主 URL。社交草案见 [`keywords/social-share/`](./keywords/social-share/README.md)。**未**建 work-tasks。 | 用户要求 slug 落到真实使用场景 |
+| 2026-08-31 | 澄清 §3.3 H **不是**「只适用于平台」：拓宽为全站使用场景表；社交平台拆法仅为示例。同步漏斗 / Skill / work-tasks / 覆盖门禁表述。 | 用户要求规则拓宽 |
+| 2026-08-31 | 重梳产品待办 P0/P1/P2（清单 §0）：P0=`create-zip-file`、`amazon-main-image-size`、`iphone-app-store-screenshot`、`apple-touch-icon`、`open-graph-image-size`。`safe-paste-cleaner`/`ai-token-counter` 降为 P2 defer。废止 pack 名作进攻 slug。 | 用户要求按使用场景重排优先级 |
+| 2026-08-31 | P0 Bing SERP×种子/长尾/改写三批；CN 国际版大量劫持且 Related 为空。人工选词：H1=`Open Graph image size`、`apple-touch-icon 180×180`、`Amazon main image size`（2000×2000 为 title_gap）、`iPhone 6.9 screenshot size`（弃 6.7）；`zip files online`/`apple-touch-icon generator` 标 head 不进攻。词池 10 行均为 defer/drop，**未**建 work-tasks。 | 用户要求为 P0 跑 Bing SERP 并用用户也搜选长尾 |
 
 ---
 

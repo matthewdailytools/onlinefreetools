@@ -358,11 +358,12 @@ curl -sS -o /dev/null -w '%{http_code}\n' https://onlinefreetools.org/google2cb4
 ## 5. 本地开发
 
 ```bash
-npm run start:dev                    # build:site + 灌本地 R2 + wrangler + Ops UI
+npm run start:dev                    # build:site + 灌本地 R2（失败则退出）+ wrangler + 最新工具页探测 + Ops UI
 npm run start:dev -- --no-seed-r2    # 不灌本地 R2（预渲染 HTML 将 404，除非桶里已有对象）
-npm run start:dev -- --no-build      # 跳过构建（gzip/清单可能过期）
+npm run start:dev -- --no-build      # 跳过构建，仍会灌本地 R2（gzip/清单可能过期）
 npm run upload:r2:local              # 单独灌本地模拟桶（含 _meta/pages-build.json）
 npm run verify:r2 -- --local         # 校验本地模拟桶 ↔ wrangler 版本
+npm run status:dev                   # 首页 + 最新工具页；新工具 404 会 FAIL
 ```
 
 | 场景 | 行为 |
@@ -370,8 +371,9 @@ npm run verify:r2 -- --local         # 校验本地模拟桶 ↔ wrangler 版本
 | 已 `build:site`，未 seed R2 | 预渲染 HTML **404**（Assets 无 `_pages`） |
 | 已 seed 本地 R2 | 与生产路径一致（Cache → R2） |
 | 生产未 upload | **全部**预渲染 HTML **404** |
+| 灌桶失败但 wrangler 仍起（旧行为） | 首页/旧工具 200，**新**工具 404 |
 
-默认站点：`http://127.0.0.1:8787/`（探测须带 `Accept: text/html`）。`status:dev` 默认探 8787；若 `--port 8788` 勿被 FAIL 误导。
+默认站点：`http://127.0.0.1:8787/`（探测须带 `Accept: text/html`）。`status:dev` 默认探 8787；若 `--port 8788` 勿被 FAIL 误导。`start:dev` 不再吞掉 `upload:r2:local` 错误。
 
 ---
 
@@ -446,7 +448,8 @@ SEO / Skill / brief / 分片流程**不变**（见 `tool-creation.mdc`、`tool-c
 |---|---|---|
 | CF/Git 部署报 R2 binding 错 | 桶未创建或名称不一致 | §2 建桶；核对 `wrangler.jsonc` |
 | 首页/工具均 404 | 未 `upload:r2`；或误以为 Assets 有 `_pages` | `npm run build:site && npm run upload:r2` |
-| 本地工具 404 | 未 seed R2 / `--no-seed-r2` / 未 `build:site` | `upload:r2:local`；勿依赖 Assets |
+| 本地工具 404 | 未 seed R2 / `--no-seed-r2` / 未 `build:site` / 灌桶被吞过 | `upload:r2:local`；勿依赖 Assets。`start:dev` 灌桶失败会退出；`status:dev` 会测最新工具页 |
+| 本地**新**工具 404、旧工具/首页 200 | 模拟桶仍是旧对象（灌桶失败或 `--no-build` 曾跳过 seed） | 看 `start:dev` / `upload:r2:local` 是否报错；`npm run status:dev`；不要用首页 200 当验收 |
 | 改了文案线上仍旧 | 只 push 未 upload；或 Cache / 旧 R2 | 再 `upload:r2`；递增 `PAGES_CACHE_VERSION` 并 push |
 | `verify:r2:live` 过早失败 | CF 尚未部署完 | 等 Dashboard 成功后再跑 |
 | `verify:r2:live` aligned=false | Worker vars 与 R2 meta 不一致 | 先 upload，再 push 含正确 `PAGES_CACHE_VERSION` 的 commit |

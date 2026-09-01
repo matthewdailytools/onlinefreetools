@@ -5,6 +5,7 @@
 #   ./ops/dev/start-dev.sh
 #   ./ops/dev/start-dev.sh --no-build
 #   ./ops/dev/start-dev.sh --no-ops-ui
+#   ./ops/dev/start-dev.sh --no-seed-r2
 #   ./ops/dev/start-dev.sh --port 8788
 #   ./ops/dev/start-dev.sh -p 8788
 #   ./ops/dev/start-dev.sh 8788
@@ -17,12 +18,12 @@ NO_BUILD=0
 NO_OPS_UI=0
 EXTRA=()
 
-# 解析 CLI：--port / -p / 纯数字端口、--no-build、--no-ops-ui；其余原样转发
+# 解析 CLI：--port / -p / 纯数字端口、--no-build、--no-ops-ui；--no-seed-r2 等其余原样转发
 while [[ $# -gt 0 ]]; do
   case "$1" in
     --port|-p)
       if [[ $# -lt 2 || ! "$2" =~ ^[0-9]+$ ]]; then
-        echo "Usage: $0 [--no-build] [--no-ops-ui] [--port|-p <port>] [<port>]" >&2
+        echo "Usage: $0 [--no-build] [--no-ops-ui] [--no-seed-r2] [--port|-p <port>] [<port>]" >&2
         exit 1
       fi
       PORT="$2"
@@ -44,6 +45,7 @@ while [[ $# -gt 0 ]]; do
   ./ops/dev/start-dev.sh
   ./ops/dev/start-dev.sh --no-build
   ./ops/dev/start-dev.sh --no-ops-ui
+  ./ops/dev/start-dev.sh --no-seed-r2
   ./ops/dev/start-dev.sh --port 8788
   ./ops/dev/start-dev.sh -p 8788
   ./ops/dev/start-dev.sh 8788
@@ -54,8 +56,9 @@ while [[ $# -gt 0 ]]; do
   - Ops UI       → http://127.0.0.1:8791/  (npm run sitemap:ui / ops:ui)
 
 选项:
-  --no-build    跳过完整 build:site（仍会 merge:tools + vendor）
+  --no-build    跳过完整 build:site（仍会 merge:tools + vendor，仍会灌本地 R2）
   --no-ops-ui   不启动 Ops / sitemap 操作页
+  --no-seed-r2  跳过本地 R2 灌桶（预渲染 HTML 将 404，除非桶已有对象）
   --port|-p N   wrangler 端口（默认 8787）
 EOF
       exit 0

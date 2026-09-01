@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Amazon main image size">
+  <!-- Square product frame on a storefront tile (ASCII comment only). -->
+  <rect width="32" height="32" rx="8" fill="#2f6f8f"/>
+  <rect x="7" y="7" width="18" height="18" rx="2" fill="#fff"/>
+  <rect x="10" y="10" width="12" height="12" rx="1" fill="#e8f1f6"/>
+  <path d="M12 20h8l-2.2-3.2-1.6 1.4-1.8-2.4z" fill="#2f6f8f"/>
+</svg>

@@ -2,7 +2,7 @@
 /**
  * 启动本地开发服务器（build:site + wrangler dev 后台）以及本地 Ops UI（sitemap:ui / ops:ui）。
  *
- * 启动后会等待日志 Ready 并通过 HTTP 健康检查，失败则自动清理进程。
+ * 启动后会等待日志 Ready、首页健康检查、以及最新预渲染工具页 200；灌桶或工具页失败则退出且不把 wrangler 当成可用。
  *
  * 用法：
  *   node ops/dev/start-dev.mjs
@@ -11,12 +11,16 @@
  *   node ops/dev/start-dev.mjs --no-ops-ui
  *   node ops/dev/start-dev.mjs --port 8787
  *
+ * 灌桶失败会直接退出、不启动 wrangler（首页 Assets 200 不能证明新工具页在本地 R2）。
+ * wrangler Ready 后会 GET 最新预渲染工具页（Accept: text/html）；404 则退出 1。
+ *
  * 等价 npm：npm run start:dev
  */
 import { spawn, execSync } from 'node:child_process';
 import { openSync, unlinkSync } from 'node:fs';
 import path from 'node:path';
 import {
+  assertNewestToolPageServed,
   cleanupDevServer,
   cleanupOpsUi,
   defaultDevHost,
@@ -115,6 +119,7 @@ const runBuildSite = () => {
 /**
  * 将 gzip HTML 灌入本地 R2 模拟桶（与 wrangler dev persist 对齐）。
  * `_pages` 已 `.assetsignore`，未灌桶时预渲染 HTML 会 404。
+ * 失败必须抛错：不得吞掉后继续起 wrangler（否则旧工具 200、新工具 404）。
  * @returns {void}
  */
 const runSeedLocalR2 = () => {
@@ -123,15 +128,11 @@ const runSeedLocalR2 = () => {
     return;
   }
   console.log('Seeding local R2 (npm run upload:r2:local) ...');
-  try {
-    execSync('npm run upload:r2:local', {
-      cwd: projectRoot,
-      stdio: 'inherit',
-      shell: true,
-    });
-  } catch (err) {
-    console.warn('[start-dev] local R2 seed failed (HTML pages will 404 until upload:r2:local succeeds):', err?.message || err);
-  }
+  execSync('npm run upload:r2:local', {
+    cwd: projectRoot,
+    stdio: 'inherit',
+    shell: true,
+  });
 };
 
 /**
@@ -227,13 +228,15 @@ const ensureOpsUiRunning = async () => {
   console.log('  Auth: SITEMAP_UI_PASSWORD (default 345621). Bind: 127.0.0.1 only.');
 };
 
+/** 本轮是否由本脚本 spawn 了 wrangler；失败回滚时只杀本次拉起的进程 */
+let spawnedThisRun = false;
+
 const main = async () => {
   const alreadyRunning = await prepareStart();
 
   if (!alreadyRunning) {
     if (!skipBuild) {
       runBuildSite();
-      runSeedLocalR2();
     } else {
       /** Registry/i18n merge must still run so generated slugs stay fresh */
       console.log('Skipping full build:site (--no-build); running merge:tools + site chrome vendor.');
@@ -243,6 +246,9 @@ const main = async () => {
       execSync('node scripts/copy-image-optimizer-vendor.mjs', { cwd: projectRoot, stdio: 'inherit' });
       console.log('Note: --no-build skips tool HTML prerender; run build:site if /tools/* 404.');
     }
+
+    /** --no-build 仍须灌桶：磁盘上已有 _pages 时，跳过 seed 会沿用旧模拟桶 */
+    runSeedLocalR2();
 
     /** build 后再清端口，避免 stale listener 占用导致 wrangler bind 失败 */
     const portStatus = await ensurePortFree(port);
@@ -261,6 +267,7 @@ const main = async () => {
     }
 
     const childPid = await spawnWrangler();
+    spawnedThisRun = true;
     console.log(`Starting wrangler dev (PID ${childPid}), waiting for ready ...`);
 
     const ready = await waitForDevReady(port);
@@ -280,7 +287,15 @@ const main = async () => {
     console.log(`Dev server ready at ${devServerOrigin(port)}/`);
     console.log(`  Listener PID: ${listenerPid ?? 'unknown'} (spawn PID ${childPid})`);
     console.log(`  Log: ${logFilePath}`);
+  } else {
+    /** 已在跑时仍灌桶，避免「只复用旧进程、新 HTML 从未进模拟桶」 */
+    console.log('Re-seeding local R2 while the existing wrangler process stays up.');
+    console.log('For a full rebuild of tool HTML, run: npm run stop:dev && npm run start:dev');
+    runSeedLocalR2();
   }
+
+  /** 首页健康检查过不了「新工具 404」；Must 在 wrangler Ready 之后 */
+  await assertNewestToolPageServed(port);
 
   await ensureOpsUiRunning();
 
@@ -289,7 +304,9 @@ const main = async () => {
 
 main().catch(async (err) => {
   console.error(err);
-  await cleanupDevServer(port);
-  if (!skipOpsUi) await cleanupOpsUi(opsUiPort);
+  if (spawnedThisRun) {
+    await cleanupDevServer(port);
+    if (!skipOpsUi) await cleanupOpsUi(opsUiPort);
+  }
   process.exit(1);
 });

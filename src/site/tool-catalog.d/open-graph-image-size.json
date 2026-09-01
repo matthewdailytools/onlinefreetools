@@ -1,0 +1,27 @@
+{
+  "slug": "open-graph-image-size",
+  "path": "/tools/open-graph-image-size",
+  "updatedAt": "2026-09-01T03:10:00.000Z",
+  "launchedAt": "2026-09-01T03:10:00.000Z",
+  "category": "image",
+  "primaryTopic": "image-media",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_open_graph_image_size_title",
+  "homeTitleKey": "tool_open_graph_image_size_title",
+  "homeDescKey": "tool_open_graph_image_size_desc",
+  "faqPrefix": "tool_open_graph_image_size",
+  "related": [
+    "open-graph-preview",
+    "image-crop"
+  ],
+  "logo": "/icons/tools/open-graph-image-size.svg",
+  "page": {
+    "module": "../pages/openGraphImageSizePage",
+    "export": "renderOpenGraphImageSizePage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "image"
+}

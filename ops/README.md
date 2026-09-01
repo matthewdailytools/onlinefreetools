@@ -87,13 +87,13 @@ R2_HTTPS_PROXY=socks5h://127.0.0.1:8888 npm run upload:r2
 ### 3.1 后台启停（推荐日常）
 
 ```bash
-npm run start:dev                 # build:site + 本地 R2 seed + 后台 wrangler + Ops UI
-npm run start:dev -- --no-build   # 跳过构建，快速启动
+npm run start:dev                 # build:site + 本地 R2 seed（失败则退出）+ 后台 wrangler + 最新工具页探测 + Ops UI
+npm run start:dev -- --no-build   # 跳过构建，仍会灌本地 R2（磁盘上须已有 public/_pages）
 npm run start:dev -- --no-seed-r2 # 跳过本地 R2 灌桶（预渲染 HTML 将 404，除非桶已有对象）
 npm run start:dev -- --no-ops-ui  # 不启动 Ops / sitemap 操作页
 npm run start:dev -- --port 8787  # 指定 wrangler 端口
 npm run stop:dev                  # 停止 wrangler 与 Ops UI
-npm run status:dev                # 查看端口 / 健康检查（含 Ops UI）
+npm run status:dev                # 首页 + 最新工具页 + Ops UI；首页 OK 而工具页 FAIL 即灌桶问题
 npm run restart:dev               # 重启
 ```
 
@@ -104,7 +104,7 @@ npm run restart:dev               # 重启
 | 站点（wrangler） | **http://127.0.0.1:8787/**（请在浏览器打开；勿用无 `Accept: text/html` 的简单探测，Worker 对 `/` 会返回 404） |
 | Ops UI（sitemap / 运维手册） | **http://127.0.0.1:8791/**（等同 `npm run sitemap:ui` / `ops:ui`；密码见 §4.0） |
 
-启动脚本会等待 wrangler 日志出现 `Ready on ...` 并通过 HTTP 健康检查；随后后台拉起 Ops UI。失败时查看 `.run/wrangler-dev.log` / `.run/ops-ui.log`。
+启动脚本会等待 wrangler 日志出现 `Ready on ...`、首页 HTTP 健康检查、以及**最新预渲染工具页** `200`。`upload:r2:local` 失败会直接退出，不再带着旧模拟桶启动 wrangler。失败时查看 `.run/wrangler-dev.log` / `.run/ops-ui.log`。
 
 **Windows 直接运行**：
 
@@ -112,6 +112,7 @@ npm run restart:dev               # 重启
 .\ops\dev\start-dev.ps1
 .\ops\dev\start-dev.ps1 -NoBuild
 .\ops\dev\start-dev.ps1 -NoOpsUi
+.\ops\dev\start-dev.ps1 -NoSeedR2
 .\ops\dev\stop-dev.ps1
 ```
 
@@ -437,9 +438,24 @@ Get-Content .run\wrangler-dev.log -Tail 40
 
 Worker 对 `/` 要求请求头含 `text/html`（浏览器正常访问无此问题）。不要用 `curl http://127.0.0.1:8787/` 无 `-H Accept:text/html` 判断服务是否存活；请用 `npm run status:dev`。
 
+### 本地新工具 404、旧工具 / 首页正常
+
+工具 HTML **不走 Assets**，走 Worker **Cache → 本地 R2 模拟桶**。`build:site` 只写出 `public/_pages`（gitignore）；未成功 `upload:r2:local` 时，旧 slug 仍在桶里所以 200，新 slug 404。首页来自 Assets，也会 200。
+
+`start:dev` 现在：**灌桶失败则退出**；Ready 后会探测最新预渲染工具页。`status:dev` 在首页 OK 时若最新工具页非 200 会 FAIL。
+
+```bash
+npm run status:dev
+# Tool page (zh/<slug>): FAIL HTTP 404  → 灌桶未进模拟桶
+npm run upload:r2:local
+npm run restart:dev -- --no-build
+```
+
+缺依赖（例如 `https-proxy-agent`）也会让灌桶崩掉；补齐 `npm i` 后再 `start:dev`，不要只看首页 200。
+
 ### 启动后页面 404 / 样式丢失
 
-先构建静态资源。`build:site` 默认全量预渲染所有工具页：
+先构建静态资源。`build:site` 默认全量预渲染所有工具页，然后必须灌本地 R2（`start:dev` 默认会做）：
 
 ```bash
 npm run build:site
