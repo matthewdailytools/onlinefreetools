@@ -6,7 +6,7 @@ alwaysApply: true
 # 项目核心约定
 
 - **平台**：Cloudflare Pages + Workers；本地/部署用 Wrangler。
-- **结构**：根目录即项目根；对话日志在 `dev-logs/`（先相关筛选再写；英文；对齐 SEO 内容质量；只追加不改写；纯 git add/commit/push 不写日志——见 `dev-logs.mdc`）。
+- **结构**：根目录即项目根；对话日志在 `dev-logs/`（对人有帮助→默认可索引详述；项目留档但对人无帮助→`Visibility: project` 即 noindex,nofollow 且不进 sitemap；只追加不改写；纯 git / 空壳 / 密钥不写——见 `dev-logs.mdc`）。
 - **改动原则**：只改与请求直接相关的文件；不擅自引入框架或无关重构。
 - **安全**：密钥/凭证走环境变量，不写入仓库。
 

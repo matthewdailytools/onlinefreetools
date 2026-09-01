@@ -6,13 +6,15 @@ Bing SERP 批量采集 CLI（CloakBrowser）。
 --------
 ::
 
-    python ops/seo/bing_serp/run_bing_serp.py \\
+    # 用 aibrowsercrawler 的 venv（本仓库不自带 cloakbrowser）
+    PY="${AIBROWSERCRAWLER_VENV:-$HOME/vscodeai/aibrowsercrawler/venv}/bin/python"
+    "$PY" ops/seo/bing_serp/run_bing_serp.py \\
       --theme cidr \\
       --queries "terraform cidrsubnet,ip range to cidr" \\
       --batch-id 2026-08-28-cidr-bing-smoke \\
       --write-batch-md
 
-    python ops/seo/bing_serp/run_bing_serp.py \\
+    "$PY" ops/seo/bing_serp/run_bing_serp.py \\
       --theme cidr \\
       --file docs/seo/keywords/cidr/Cidr_KeywordPlanner_bing.csv \\
       --column 关键词 \\
@@ -23,7 +25,8 @@ Bing SERP 批量采集 CLI（CloakBrowser）。
 
 环境
 ----
-- 本机已安装：``pip install cloakbrowser`` 且 ``cloakbrowser install``
+- 使用 sibling ``aibrowsercrawler`` 虚拟环境中的 cloakbrowser（勿在本仓库新建 .venv）
+- 浏览器本体通常在 ``~/.cloakbrowser``（由该 venv 的 ``cloakbrowser install`` 管理）
 - Python 3.10+
 """
 

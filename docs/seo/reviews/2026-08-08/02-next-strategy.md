@@ -49,7 +49,7 @@
 
 - **独立项跟进**：[`../keyword-to-tool-tracker.md`](../keyword-to-tool-tracker.md)
 - 主词源可为批量 **Google SERP**（仅分析）；运行表 [`../keyword-daily-pool.tsv`](../keyword-daily-pool.tsv)
-- **日抽约 10 候选进池 ≠ 日建 10 URL**；上线节奏仍为每周 1–2 工具 + 既有页 CTR/IG 收割
+- **进池不设条数上限**（进池 ≠ 日建 URL）；上线节奏仍为每周 1–2 工具 + 既有页 CTR/IG 收割
 - 漏斗说明：[`../keyword-to-tool-funnel.md`](../keyword-to-tool-funnel.md)
 
 ---

@@ -1,51 +1,76 @@
 /**
  * i18n 工具分片（prompt-template-builder / zh）。
- * 检索向 H1：Prompt 模板构建器；非 LLM，结构化 Role/Task/Constraints/Output。
+ * 检索向 H1：Prompt 模板构建器；description 与首屏体现 ChatGPT / Gemini / Claude / DeepSeek。
  */
 import type { SiteLangDict } from '../../../types';
 
 const zh: SiteLangDict = {
 	tool_prompt_template_builder_article:
-		'在本页把草稿 Prompt 整理成可复用的 Role / Task / Constraints / Output 模板。可粘贴自由文本或填写字段，再复制 Markdown 或 JSON。不调用任何模型 API。文本留在本机，不上传服务器。',
+		'在本页把草稿 Prompt 整理成可复用的 Role / Task / Constraints / Output 模板。可粘贴自由文本或填写字段，再复制 Markdown 或 JSON 到 ChatGPT、Gemini、Claude 或 DeepSeek。不调用任何模型 API。文本留在本机，不上传服务器。',
 	tool_prompt_template_builder_build: '构建模板',
 	tool_prompt_template_builder_clear: '清空',
 	tool_prompt_template_builder_constraints_label: '约束',
 	tool_prompt_template_builder_constraints_ph: '语气限制、范围、避免事项…',
 	tool_prompt_template_builder_copy: '复制',
-	tool_prompt_template_builder_desc: '构建结构化 Prompt 模板（Markdown/JSON）；文本留在本机，不上传服务器。',
+	tool_prompt_template_builder_desc:
+		'面向 ChatGPT、Gemini、Claude、DeepSeek 的 Prompt 模板构建器（Markdown/JSON）；文本留在本机，不上传服务器。',
 	tool_prompt_template_builder_description:
-		'Prompt 模板构建器：把自由 Prompt 文本与 Role、Task、Constraints、Output 字段合并为可复用模板。示例：进页会自动展示代码审查 Agent 样例。默认 Markdown 芯片；JSON 输出 {role,task,constraints,output}。解析只在本标签页——不是 LLM，也不是云端 Prompt 库。文本不出本机，不上传服务器。',
+		'面向 ChatGPT、Gemini、Claude、DeepSeek 的 Prompt 模板构建器：把 Role、Task、Constraints、Output 合并为可复用模板。场景芯片含代码审查、电影、短剧、Android、iOS。示例：进页自动展示代码审查 Agent 样例。默认 Markdown；JSON 输出 {role,task,constraints,output}。只在本标签页解析——不是 LLM。文本不出本机，不上传服务器。',
 	tool_prompt_template_builder_download: '下载',
 	tool_prompt_template_builder_empty: '请先填写自由文本或至少一个字段。',
 	tool_prompt_template_builder_example:
-		'加载示例会填入代码审查 Agent 的四段字段，生成带四个 ## 标题的 Markdown，并启用复制与下载。',
+		'加载示例会填入代码审查 Agent 预设并生成 Markdown。也可点电影、短剧、Android、iOS 芯片切换默认场景。',
 	tool_prompt_template_builder_example_title: '示例',
-	tool_prompt_template_builder_faq_a1: '不会。模板只在本浏览器标签页构建。不会上传到 OpenAI、Anthropic 或我们的服务器。',
-	tool_prompt_template_builder_faq_a2: '不会。本页只把你的文字整理成块，不调用模型 API，也不替你写新文案。',
+	tool_prompt_template_builder_faq_a1:
+		'默认只在本浏览器标签页本地构建模板。可选「AI 扩写/润色」仅把该次点击提交的文字发往 Cloudflare Workers AI，不会从我们的服务器调用 OpenAI、Google、Anthropic 或 DeepSeek。',
+	tool_prompt_template_builder_faq_a2:
+		'本地模式只在本标签页整理文字，不调用 ChatGPT、Gemini、Claude、DeepSeek 或任何模型 API。可选 AI 使用 Cloudflare Workers AI（见下方 FAQ）。',
 	tool_prompt_template_builder_faq_a3:
 		'ChatGPT 导出转 Markdown 是把对话导出变成可读文件。本页是把草稿整理成可复用的系统 Prompt——归档对话后可再用本页提炼模板。',
 	tool_prompt_template_builder_faq_a4:
 		'可以。JSON 芯片输出 {role,task,constraints,output}，便于配置或测试。需要 Schema 校验时可配合 JSON Schema 校验器。',
 	tool_prompt_template_builder_faq_a5: '自由文本框里以 Role:、Task:、Constraints:、Output: 开头的行会分段；显式字段优先于解析结果。',
+	tool_prompt_template_builder_faq_a6:
+		'可以。构建完成后复制到 ChatGPT、Gemini、Claude 或 DeepSeek 即可——四字段结构在各聊天界面通用。我们不按平台拆独立 URL，因为任务是整理文本，不是代调用 API。',
 	tool_prompt_template_builder_faq_q1: 'Prompt 会上传吗？',
 	tool_prompt_template_builder_faq_q2: '会调用大模型吗？',
 	tool_prompt_template_builder_faq_q3: '和 ChatGPT 导出转 Markdown 有何不同？',
 	tool_prompt_template_builder_faq_q4: '能输出 JSON 吗？',
 	tool_prompt_template_builder_faq_q5: '自由文本如何分段？',
+	tool_prompt_template_builder_faq_q6: '能在 ChatGPT、Gemini、Claude、DeepSeek 里用吗？',
+	tool_prompt_template_builder_faq_q7: '本地模式与可选 Cloudflare AI 有何区别？',
+	tool_prompt_template_builder_faq_a7:
+		'本地模式只在本标签页整理文字，不上传。可选「AI 扩写/润色」仅把该次点击提交的文字发往 Cloudflare Workers AI（须 Turnstile、有频率限制）。失败或超额时继续用本地模式。我们不承诺无限 AI。',
+	tool_prompt_template_builder_ai_expand: 'AI 扩写',
+	tool_prompt_template_builder_ai_polish: 'AI 润色',
+	tool_prompt_template_builder_ai_panel_label: '可选 Cloudflare AI',
+	tool_prompt_template_builder_ai_consent_title: '发送到 Cloudflare Workers AI？',
+	tool_prompt_template_builder_ai_consent_body:
+		'此可选步骤会把当前草稿发往 Cloudflare Workers AI 推理；不会从我们的服务器调用 OpenAI、Google、Anthropic 或 DeepSeek。不用 AI 也能本地组装。',
+	tool_prompt_template_builder_ai_consent_ok: '继续',
+	tool_prompt_template_builder_ai_consent_cancel: '取消',
+	tool_prompt_template_builder_ai_working: 'Cloudflare AI 处理中…',
+	tool_prompt_template_builder_ai_done: '已应用 AI 建议，复制前请核对。',
+	tool_prompt_template_builder_ai_err_generic: 'AI 失败，本地模板未改。',
+	tool_prompt_template_builder_ai_err_rate: 'AI 配额已满，请用本地模式或明日（UTC）再试。',
+	tool_prompt_template_builder_ai_err_turnstile: '使用 AI 前请完成 Turnstile 验证。',
 	tool_prompt_template_builder_fmt_json: 'JSON',
 	tool_prompt_template_builder_fmt_label: '输出格式',
 	tool_prompt_template_builder_fmt_md: 'Markdown',
 	tool_prompt_template_builder_free_label: '自由 Prompt（可选）',
 	tool_prompt_template_builder_free_ph: '粘贴草稿，或 Role: … Task: … 这样的行',
-	tool_prompt_template_builder_how_body: '写好草稿，可选填四段，构建模板，再复制或下载。Markdown 与 JSON 是同任务的芯片。',
-	tool_prompt_template_builder_how_item_1: '在自由框粘贴草稿，或填写 Role、Task、Constraints、Output——任务是结构化 Prompt 模板。',
-	tool_prompt_template_builder_how_item_2: '点「构建模板」（进页已自动跑过示例）。',
+	tool_prompt_template_builder_how_body:
+		'选场景芯片或自行写草稿，填 Role / Task / Constraints / Output，构建模板，再粘贴到 ChatGPT、Gemini、Claude 或 DeepSeek。',
+	tool_prompt_template_builder_how_item_1: '选代码审查、电影、短剧、Android 或 iOS 芯片，或在自由框粘贴草稿。',
+	tool_prompt_template_builder_how_item_2: '点「构建模板」（进页已自动跑过代码审查示例）。',
 	tool_prompt_template_builder_how_item_3: '需要 {role,task,constraints,output} 时可切到 JSON。',
-	tool_prompt_template_builder_how_item_4: '复制或下载。可随时改字段再构建。',
+	tool_prompt_template_builder_how_item_4: '复制或下载后，粘贴到 ChatGPT、Gemini、Claude 或 DeepSeek。',
 	tool_prompt_template_builder_how_title: '怎么用',
 	tool_prompt_template_builder_load_sample: '加载示例',
 	tool_prompt_template_builder_output_fmt_label: '输出格式',
 	tool_prompt_template_builder_output_fmt_ph: 'Markdown 小节、JSON 结构、要点列表…',
+	tool_prompt_template_builder_platforms_lead:
+		'适用于 ChatGPT、Gemini、Claude、DeepSeek——把成品模板复制到任一聊天界面即可。',
 	tool_prompt_template_builder_result_label: '模板',
 	tool_prompt_template_builder_role_label: '角色 Role',
 	tool_prompt_template_builder_role_ph: '模型应扮演谁…',
@@ -53,8 +78,14 @@ const zh: SiteLangDict = {
 	tool_prompt_template_builder_rules_item_1: '四块：Role、Task、Constraints、Output。空块不出现在 Markdown 里。',
 	tool_prompt_template_builder_rules_item_2: '显式字段优先于自由文本解析。',
 	tool_prompt_template_builder_rules_item_3: '默认 Markdown，## 标题；JSON 是同页芯片。',
-	tool_prompt_template_builder_rules_item_4: '本工具只整理文字，不估 token，也不做 Schema 校验。',
+	tool_prompt_template_builder_rules_item_4: '场景芯片预设电影、短剧、移动开发字段——同一构建器，不按平台拆 URL。',
 	tool_prompt_template_builder_rules_title: '使用规则',
+	tool_prompt_template_builder_scene_android: 'Android 代码',
+	tool_prompt_template_builder_scene_code: '代码审查',
+	tool_prompt_template_builder_scene_ios: 'iOS 代码',
+	tool_prompt_template_builder_scene_label: '场景预设',
+	tool_prompt_template_builder_scene_movie: '电影剧本',
+	tool_prompt_template_builder_scene_short_drama: '短剧',
 	tool_prompt_template_builder_sec_constraints: 'Constraints',
 	tool_prompt_template_builder_sec_output: 'Output format',
 	tool_prompt_template_builder_sec_role: 'Role',
@@ -65,9 +96,12 @@ const zh: SiteLangDict = {
 	tool_prompt_template_builder_task_label: '任务 Task',
 	tool_prompt_template_builder_task_ph: '要完成的步骤…',
 	tool_prompt_template_builder_title: 'Prompt 模板构建器',
-	tool_prompt_template_builder_usecase_1: '产出团队可粘贴到任意聊天界面的代码审查 Agent 系统 Prompt。',
-	tool_prompt_template_builder_usecase_2: '在接 API 前，把会议记录整理成 Role/Task/Constraints 块。',
+	tool_prompt_template_builder_usecase_1: '产出可粘贴到 ChatGPT、Gemini、Claude 或 DeepSeek 的代码审查 Agent 系统 Prompt。',
+	tool_prompt_template_builder_usecase_2: '在接任意聊天 API 前，把会议记录整理成 Role/Task/Constraints 块。',
 	tool_prompt_template_builder_usecase_3: '导出 JSON 后，用 JSON Schema 校验器检查下游配置文件。',
+	tool_prompt_template_builder_usecase_4: '点「电影剧本」芯片，生成三幕节拍表再粘贴到常用聊天界面。',
+	tool_prompt_template_builder_usecase_5: '点「短剧」芯片，为竖屏连载写钩子与 cliffhanger 大纲。',
+	tool_prompt_template_builder_usecase_6: '点 Android 或 iOS 芯片，得到 Kotlin/Swift 编码 Agent 模板，无需开四个平台专页。',
 	tool_prompt_template_builder_usecases_title: '适用场景',
 };
 

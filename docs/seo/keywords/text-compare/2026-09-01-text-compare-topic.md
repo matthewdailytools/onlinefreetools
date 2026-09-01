@@ -1,7 +1,7 @@
 # text-compare topic — 长尾 H1 与分场景 URL
 
 - date: **2026-09-01 16:40**
-- 词表：[Compare-Text Planner](../Compare-Text/Keyword%20Planner%2009-01-2026%20at%2002-27-45.csv) · [text-diff Planner](../text-diff/Keyword%20Planner%2009-01-2026%20at%2002-24-42.csv)
+- 词表：[compare-text-seeds Planner](../compare-text-seeds/Keyword%20Planner%2009-01-2026%20at%2002-27-45.csv) · [text-diff Planner](../text-diff/Keyword%20Planner%2009-01-2026%20at%2002-24-42.csv)
 - SERP：[../text-diff/2026-09-01-compare-text-scene-serp.md](../text-diff/2026-09-01-compare-text-scene-serp.md)
 - 旧分析（已被本文件取代「0 build」结论）：[../text-diff/2026-09-01-compare-text-scene-slugs.md](../text-diff/2026-09-01-compare-text-scene-slugs.md)
 - 规则：§3.3 H 场景任务句；§3.3 G title 缺口优先；禁 doorway；H1 = Planner 长尾**原句**（禁营销后缀）

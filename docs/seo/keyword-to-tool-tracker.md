@@ -45,10 +45,10 @@
 | 字段 | 值 |
 |---|---|
 | 最近更新 | 2026-09-01 |
-| 最近批次 | [keywords/text-compare/2026-09-01-text-compare-topic.md](./keywords/text-compare/2026-09-01-text-compare-topic.md)（长尾 H1 + 分场景 URL）。SERP 仍见 [keywords/text-diff/](./keywords/text-diff/) |
-| 池内 `build` 候选 | 用户点名：`compare-two-text-files-online`、`compare-two-word-documents-for-differences`、`json-diff-checker-online`、`excel-compare-files`。收割 `text-diff` H1=Check difference between two texts |
-| 本周新建工具页 | 进行中（text-compare topic） |
-| 阻塞 | YAML/XML P2；头词不进 H1 |
+| 最近批次 | [keywords/prompt-builder/…](./keywords/prompt-builder/)：场景修订（命名须 ai/prompt/builder\|generator；按 Planner 搜法：S0 结构化 / S1 图像 / S2 写作 / S3 随机…）；Google+Bing SERP **0 long_gap** |
+| 池内 `build` 候选 | text-compare 点名四 slug；prompt-builder **无** build |
+| 本周新建工具页 | text-compare topic 进行中；prompt-template-builder 仅 absorb（场景 FAQ 待补） |
+| 阻塞 | CloakBrowser/Bing 补采可选；YAML/XML P2 |
 
 ---
 
@@ -71,7 +71,7 @@
 
 ### P0 — 事项节奏（本文件职责）
 
-- [x] 下一 SERP 批次 → `serp-batches/YYYY-MM-DD-*.md`，抽约 10 条写入 `keyword-daily-pool.tsv`（2026-08-13 磁铁批已完成）
+- [x] 下一 SERP 批次 → `serp-batches/YYYY-MM-DD-*.md`，结论写入 `keyword-daily-pool.tsv`（2026-08-13 磁铁批已完成；**不设约 10 条上限**）
 - [x] 周审（2026-08-25）：补全词池 `competition_tier`；两条原 `build` 改为 `defer`（`mid_covered`）；**未**建 work-tasks
 - [ ] 下一周审：仅当新批次出现 `long_gap`/`locale_gap` 且 `feasibility=yes` 时才标 `build`；`head` 不进进攻立项
 - [ ] **词根→AdWords**：每周 3–5 slug，用 [tool-keyword-roots](./2026-08-20-tool-keyword-roots.md) 种子进 Keyword Planner，长尾过滤后入池并 absorb（策略 §4.7）
@@ -94,7 +94,7 @@
 ### Week YYYY-Www（日期范围）
 
 - [ ] SERP 批次：`serp-batches/…`
-- [ ] 词池新增约 N 行（目标 ~10）
+- [ ] 词池新增 N 行（不设上限；记实际条数）
 - [ ] 周审 verdict 变更：…
 - [ ] 是否另开工具立项（work-tasks）：slug=… / 否
 - [ ] absorb 动作：…
@@ -137,6 +137,15 @@
 | 2026-08-31 | P0 Bing SERP×种子/长尾/改写三批；CN 国际版大量劫持且 Related 为空。人工选词：H1=`Open Graph image size`、`apple-touch-icon 180×180`、`Amazon main image size`（2000×2000 为 title_gap）、`iPhone 6.9 screenshot size`（弃 6.7）；`zip files online`/`apple-touch-icon generator` 标 head 不进攻。词池 10 行均为 defer/drop，**未**建 work-tasks。 | 用户要求为 P0 跑 Bing SERP 并用用户也搜选长尾 |
 | 2026-09-01 | Compare-Text（733）+ text-diff（491）Planner 按使用场景聚类；Bing SERP×15 全 `usable`。收割页保持 `/tools/text-diff`（H1=Compare Two Texts Online）。Word/JSON/Excel 记 defer 建议 slug，**不占周 build**。禁止 `compare-text` 近义 URL。词池 +10 行；**未**建 work-tasks。 | 用户要求场景细化 slug、关键词归属、bing_serp、统一 SEO 策略 |
 | 2026-09-01 | 用户点名 **text-compare topic**：保留 `/tools/text-diff`，H1 改为 **Check difference between two texts**；分场景建 `compare-two-text-files-online`、`compare-two-word-documents-for-differences`、`json-diff-checker-online`、`excel-compare-files`。H1=Planner 长尾原句。权威表 `keywords/text-compare/`。 | 明确立项并实现；细化操作场景、少控件 |
+| 2026-09-01 | 固化 **Keyword Planner 归类 playbook**（`keyword-planner-analysis-rules.md`）；对 `keywords/prompt-builder` 98 词归类：**0 build**；结构化簇 absorb → `prompt-template-builder`；generator 头词/服务/品牌 drop 或划界；图像·写作·随机 defer。未 SERP、未建 work-tasks。 | 用户要求综合既往分析并保存可复用规则 |
+| 2026-09-01 | **剔除词池「约 10 行」上限**：playbook / Skill / ops / 漏斗 / 策略 / bing_serp 模板对齐；进池不设条数限制，周 build 名额不变 | 用户要求 |
+| 2026-09-01 | **docs/seo 整理**：枢纽 README；`magnet`→`measuring-magnet-fields`；`Compare-Text`→`compare-text-seeds`；补 reviews README；修出图方案坏链 | 用户要求整理 md |
+| 2026-09-01 | prompt-builder **SERP 复核**（Google×6）：generator/builder/text-to/midjourney/random=**head**；`prompt template builder`=**mid_covered**（多页已用该 title）→ **G 不触发**；**0 long_gap / 0 build**。批次 `keywords/prompt-builder/2026-09-01-prompt-builder-serp.md` | 用户要求 SERP 复核；Bing CloakBrowser 本机未就绪 |
+| 2026-09-01 | prompt-builder **场景修订**：① slug/H1/主打须含 prompt+(builder\|generator)，宜含 ai；② 按 Planner 搜法切 S0–S7（图像/写作/随机有证据；视频·论文·代码本批 0 不臆造）；③ 全覆盖仍成立，周 build 仍 0。Bing 批次已入库。 | 用户约束命名词族 + 按真实搜法场景 |
+| 2026-09-01 | 调研 Feedough Prompt 工具线，落盘清单 `keywords/prompt-builder/2026-09-01-feedough-prompt-tools-inventory.md`（通用/模型/图像/视频/技法/格式/库；对照本站本地结构化路径） | 用户要求调研 feedough.com prompt 工具 |
+| 2026-09-01 | 本地+CF AI **二合一方案** + 独立 **Workers AI 免费/付费接入**手册（未实现 binding） | 用户要求两份文档 |
+| 2026-09-01 | **Topic 分析**：`2026-09-01-ai-prompt-template-builder-topic.md` — 可分场景+IG+进页即用；禁 Feedough 换皮 | 用户问竞品分场景与新 topic |
+| 2026-09-01 | prompt-builder topic **修订：立项不看 SERP**；建议 3 工具页（S0 强化 + writing-prompt-generator + midjourney-prompt-builder） | 用户明确无需考虑 SERP |
 
 ---
 

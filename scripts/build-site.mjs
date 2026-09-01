@@ -29,9 +29,11 @@ import { buildFullSitemap } from './site/sitemap.mjs';
 import {
   collectDevLogMarkdownFiles,
   DEVLOGS_PAGE_SIZE,
+  DEVLOG_VISIBILITY_PROJECT,
   devlogsIndexFileName,
   devlogsIndexPathname,
   devlogsTotalPages,
+  parseDevLogMeta,
 } from './site/devlogs.mjs';
 const require = createRequire(import.meta.url);
 let marked;
@@ -74,19 +76,6 @@ const ensureDir = async (dir) => {
 const toAbs = (pathname) => {
   const base = siteConfig.baseUrl.replace(/\/$/, '');
   return `${base}${pathname}`;
-};
-const parseMeta = (md) => {
-  const lines = md.split(/\r?\n/);
-  let date = '';
-  let summary = '';
-  for (const line of lines) {
-    if (!date && line.startsWith('日期：')) date = line.replace('日期：', '').trim();
-    if (!summary && line.startsWith('摘要：')) summary = line.replace('摘要：', '').trim();
-    if (!date && line.startsWith('Date:')) date = line.replace('Date:', '').trim();
-    if (!summary && line.startsWith('Summary:')) summary = line.replace('Summary:', '').trim();
-    if (date && summary) break;
-  }
-  return { date, summary };
 };
 
 const langOutRoot = (lang) => {
@@ -188,7 +177,7 @@ const removeStaticToolsDir = async (lang) => {
 
 /**
  * 从 dev-logs/*.md 生成 public/devlogs/ 索引（每页 30 条）与各篇 HTML。
- * 开发日志可被抓取与收录；sitemap 含 `/devlogs/`、`/devlogs/page-N.html` 与各篇。
+ * 对人有帮助的篇默认可抓取与收录；`Visibility: project` 篇输出 noindex,nofollow 且不进 sitemap。
  * 构建后会删除输出目录中已无对应源文件的孤儿 `.html`。
  * @returns {Promise<object[]>} 索引条目列表
  */
@@ -214,7 +203,7 @@ export const buildDevLogs = async () => {
   const items = [];
   for (const { fullPath, fileName } of fileEntries) {
     const md = await fs.readFile(fullPath, 'utf-8');
-    const { date, summary } = parseMeta(md);
+    const { date, summary, visibility, robotsContent } = parseDevLogMeta(md);
     const htmlBody = marked.parse(md);
     const base = fileName.replace(/\.md$/, '');
     const htmlName = `${base}.html`;
@@ -223,6 +212,7 @@ export const buildDevLogs = async () => {
     const pageTitle = summary ? `${summary} | ${t(lang, 'nav_devlogs')}` : base;
     const description = summary || `${siteConfig.brand} dev logs`;
     const canonicalPath = `/devlogs/${encodeURIComponent(base)}.html`;
+    const isProjectOnly = visibility === DEVLOG_VISIBILITY_PROJECT;
 
     const headerHtml = renderHeader({
       lang,
@@ -255,6 +245,9 @@ export const buildDevLogs = async () => {
       sidebarHtml,
       contentHtml,
       footerHtml,
+      robotsNoindex: isProjectOnly,
+      robotsNofollow: isProjectOnly,
+      robotsContent: isProjectOnly ? robotsContent || 'noindex, nofollow' : '',
     });
 
     await fs.writeFile(path.join(outDir, htmlName), page, 'utf-8');
@@ -264,6 +257,7 @@ export const buildDevLogs = async () => {
       title: `${base.replace(/^[0-9-]+/, '').trim() || summary || base}`,
       date: (date || '').split(' ')[0] || date || '',
       month: devLogMonthKey(fileName),
+      visibility,
     });
   }
 

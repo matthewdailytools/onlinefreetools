@@ -16,7 +16,7 @@
 | 填 Role/Task/Constraints/Output 字段合并 | 同页 | 字段优先于解析 |
 | 输出 Markdown 模板 | 默认芯片 | |
 | 输出 JSON `{role,task,constraints,output}` | 芯片 | absorb |
-| 调用 LLM 生成文案 | — | **有意不满足** |
+| 调用 LLM 生成文案 | 可选 | **默认本地**；Expand/Polish opt-in → Cloudflare Workers AI |
 
 ---
 
@@ -30,7 +30,7 @@
 - [x] 长尾：prompt structure / reusable template → FAQ 与 How；不拆 URL。
 - [x] 权威：OpenAI prompting guide、Anthropic prompt engineering。
 - [x] Use cases：Agent 系统 Prompt；团队共享模板；从 ChatGPT 导出提炼后再结构化。
-- [x] 边界：不生成新文案、不估 token、不云端保存。
+- [x] 边界：默认本地；可选 CF AI（Turnstile + 配额）；429 回退本地
 - [x] Example：样例字段 + 自由文本 → Markdown 模板。
 - [x] Related：`chatgpt-export-to-markdown`、`json-schema-validator`
 
@@ -56,12 +56,12 @@
 |---|---|
 | 集群 / 优先级 | 清单 §0 P1；B1 Prompt 工程 |
 | 场景与行业 | Agent / Prompt 模板固化 |
-| 技术 | Tier 0 纯 JS；localProcessing true；page.style opts |
+| 技术 | Tier 0 纯 JS 主路径；`localProcessing` true（默认本地）；可选 `POST …/ai` CF Workers AI |
 | Catalog `page.style` | **opts** |
 | Title (en) / H1 | **Prompt template builder** |
 | Description 要点 | Turn draft prompt into Role/Task/Constraints/Output template; MD/JSON chips; stays on device, not uploaded. Not an LLM. |
 | Schema | WebApplication + BreadcrumbList |
-| FAQ 要点 | 上传？是否 LLM？vs 导出工具？JSON 芯片？ |
+| FAQ 要点 | 上传？是否 LLM？本地 vs 可选 CF AI？vs 导出工具？JSON 芯片？ |
 | related | chatgpt-export-to-markdown, json-schema-validator |
 | 验收 | coverage 0b→4；verify:tool |
 | 本地化核查 | 03 |
@@ -93,11 +93,11 @@
 | 项 | 结论 |
 |---|---|
 | 日期 | 2026-09-01 |
-| 总判 | 满足：首屏字段 + 自由文本 → 结构化模板；有意不满足 LLM 生成 |
+| 总判 | 满足：首屏字段 + 自由文本 → 结构化模板；可选 CF AI Expand/Polish（opt-in） |
 | 主词搜索者任务 | 把草稿整理成 Role/Task/Constraints/Output 可复用模板并复制 |
 | Ads/Planner 长尾任务 | 不适用 |
 | 满足之处 | loadSample 自动出 Markdown；Convert/Copy/Download；字段与轻分段 |
-| 超出 / 应划边界 | 不做模型调用、不做 token 计数、不做云端 Prompt 库 |
+| 超出 / 应划边界 | 不做 frontier 默认、不做 token 计数、不做云端 Prompt 库；AI 非 unlimited |
 | 缺口与已做优化 | How 先写「整理模板」，FAQ 划界 vs chatgpt-export 与 vs LLM |
 | [x] 已按审查回写 How / 交互主次 / FAQ / desc | |
 
@@ -109,6 +109,7 @@
 - 失败：全空 → 提示
 - 示例：代码审查 Agent 样例 → Markdown
 - **进页样例**：`loadSample()` 填字段并 Convert
+- **可选 AI**：Expand/Polish → `/api/tools/prompt-template-builder/ai`（Turnstile + 配额）；见 `notes-ai-infra.md`
 - **实现防呆**：opts；DOM 前缀 `ptb`；模板正则 `\\w`
 
 ## 页面模块清单（与 tool-creation 对齐）

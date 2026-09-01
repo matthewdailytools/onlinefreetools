@@ -4,22 +4,36 @@
 
 ## 前置
 
+**不在本仓库安装** CloakBrowser / 项目内 `.venv`。约定使用 sibling 项目
+`~/vscodeai/aibrowsercrawler` 已装好的 venv
+（浏览器本体在本机 `~/.cloakbrowser`，由该环境的 `cloakbrowser install` 管理）。
+
 ```bash
-pip install cloakbrowser
-cloakbrowser install
-cloakbrowser info
+# 默认路径（可按本机改；或 export AIBROWSERCRAWLER_VENV=...）
+PY="${AIBROWSERCRAWLER_VENV:-$HOME/vscodeai/aibrowsercrawler/venv}/bin/python"
+
+# 冒烟：能 import / launch 即可
+"$PY" -c 'from cloakbrowser import launch; print("ok")'
 ```
 
-Python ≥ 3.10。无需写入本仓库 `package.json`（运维脚本，非站点运行时依赖）。
+之后一律用该解释器跑采集（勿用系统全局 `python3`，也勿在 `onlinefreetools` 再 `pip install cloakbrowser`）：
+
+```bash
+"$PY" ops/seo/bing_serp/run_bing_serp.py ...
+```
+
+Python ≥ 3.10。无需写入本仓库 `package.json`（运维脚本，非站点运行时依赖）。  
+误建的 `ops/seo/bing_serp/.venv/` / `.venv-bing-serp/` 已 `.gitignore`，请直接删掉，不要提交。
 
 ## 快速试跑（写入主题夹）
 
 ```bash
-python ops/seo/bing_serp/run_bing_serp.py ^
-  --theme cidr ^
-  --queries "terraform cidrsubnet,ip range to cidr" ^
-  --batch-id 2026-08-28-cidr-bing-smoke ^
-  --write-batch-md ^
+PY="${AIBROWSERCRAWLER_VENV:-$HOME/vscodeai/aibrowsercrawler/venv}/bin/python"
+"$PY" ops/seo/bing_serp/run_bing_serp.py \
+  --theme cidr \
+  --queries "terraform cidrsubnet,ip range to cidr" \
+  --batch-id 2026-08-28-cidr-bing-smoke \
+  --write-batch-md \
   --limit-queries 2
 ```
 
@@ -28,13 +42,14 @@ Markdown → `docs/seo/keywords/cidr/{batch-id}.md`。
 ## 从 Keyword Planner CSV 批量
 
 ```bash
-python ops/seo/bing_serp/run_bing_serp.py ^
-  --theme cidr ^
-  --file docs/seo/keywords/cidr/Cidr_KeywordPlanner_bing.csv ^
-  --column 关键词 ^
-  --limit-queries 20 ^
-  --batch-id 2026-08-28-cidr-bing-serp ^
-  --write-batch-md ^
+PY="${AIBROWSERCRAWLER_VENV:-$HOME/vscodeai/aibrowsercrawler/venv}/bin/python"
+"$PY" ops/seo/bing_serp/run_bing_serp.py \
+  --theme cidr \
+  --file docs/seo/keywords/cidr/Cidr_KeywordPlanner_bing.csv \
+  --column 关键词 \
+  --limit-queries 20 \
+  --batch-id 2026-08-28-cidr-bing-serp \
+  --write-batch-md \
   --delay-min 4 --delay-max 9
 ```
 

@@ -7,14 +7,13 @@ Purpose: Make AI agents productive immediately in this repo. Keep changes minima
 - Target platform: Cloudflare Workers + Static Assets + R2. Use Wrangler for local dev; production Worker/Assets normally deploy via GitHub push after local R2 upload/verify.
 
 ## Default Agent Behaviors
-- Dev logs (see `.cursor/rules/dev-logs.mdc`): **screen for relevance every turn** — do not log every Q&A. Skip pure `git add` / `commit` / `push`, confirmations, thin/no-conclusion chats, and secrets. When logging, write **English** people-first content (unique Summary, consolidated answer; no scaled thin pages). Path: `dev-logs/YYYY-MM/YYYY-MM-DD-HH-MM-<summary>.md` (24h local; kebab-case summary; month folder matches filename). Historical curation (user-requested): move fails to `dev-logs/_archive/` (skipped by build); do not mass-machine-translate keepers.
+- Dev logs (see `.cursor/rules/dev-logs.mdc`): write when **people-helpful** (default `Visibility: people`, detailed process+solution, indexable + sitemap) **or** when **project-needed but not people-helpful** (`Visibility: project` → HTML `noindex, nofollow`, omit from sitemap; still list on `/devlogs/`). Skip only: pure `git add`/`commit`/`push`, empty confirmations, secrets/PII, log-file-only turns, and worthless empty shells. Path: `dev-logs/YYYY-MM/YYYY-MM-DD-HH-MM-<summary>.md`. Same-topic multi-turn → one consolidated log. Curation: thin junk → `_archive/`; keepers may be marked `Visibility: project` instead of deleting.
 - Log template (new logs only; do not rewrite past entries):
-  - `Date: <YYYY-MM-DD HH:MM>`
-  - `Summary: <one English sentence: outcome or decision>`
-  - `[question]` + user's original text (may keep original language)
-  - `[try to solve]` + final consolidated answer **in English**
-  - Optionally `[actions]` with file paths/commands changed (never the log file itself).
-- Exclusions: AI trailing clarifying prompts; creating the log file; git-only sessions.
+  - `Date:` / `Summary:` / optional `Visibility: people|project` (or `Robots: noindex, nofollow`)
+  - `[question]` + original text
+  - `[try to solve]` + English narrative (People: Context→Process→Root cause→Solution→Notes; Project: shorter but factual)
+  - Optional `[actions]` (never the log file itself)
+- Exclusions: AI trailing prompts; creating the log file; git-only sessions; secrets.
 - Visibility: keep full Q&A visible in chat; `public/devlogs/` is generated output (crawlable; included in `sitemap.xml` via `build:site`) and must not shorten the chat reply.
 - Keep edits surgical: modify only files directly relevant to the user request. Do not introduce frameworks or unrelated refactors without explicit instruction.
 - Do not save sensitive data: use environment variables or other secure methods.

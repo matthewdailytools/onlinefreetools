@@ -47,7 +47,9 @@ def launch_cloak_browser(
         from cloakbrowser import launch
     except ImportError as exc:  # pragma: no cover
         raise SystemExit(
-            "未找到 cloakbrowser。请先：pip install cloakbrowser && cloakbrowser install"
+            "未找到 cloakbrowser。请用 aibrowsercrawler 的 venv 运行本脚本："
+            " PY=\"${AIBROWSERCRAWLER_VENV:-$HOME/vscodeai/aibrowsercrawler/venv}/bin/python\""
+            " \"$PY\" ops/seo/bing_serp/run_bing_serp.py ...（勿在 onlinefreetools 内 pip install）"
         ) from exc
 
     logger.info(

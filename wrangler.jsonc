@@ -50,7 +50,16 @@
 		"SITE_DEFAULT_LANG": "en",
 		"SITE_LANGS": "en,zh,es,ar,pt,id,fr,ja,ru,de",
 		/** 发版递增可使 HTML Cache API key 失效（见 src/site/r2Pages.ts）。 */
-		"PAGES_CACHE_VERSION": "4.4"
+		"PAGES_CACHE_VERSION": "4.4",
+		/** Prompt AI：false/0/off 关闭 API 与前端按钮 */
+		"PROMPT_AI_ENABLED": "true",
+		/** Workers AI 默认小模型（上线前核对 Free ACL） */
+		"PROMPT_AI_MODEL": "@cf/meta/llama-3.2-1b-instruct",
+		"PROMPT_AI_MAX_INPUT_CHARS": "6000",
+		"PROMPT_AI_MAX_OUTPUT_TOKENS": "384",
+		"PROMPT_AI_DAILY_LIMIT_PER_IP": "8",
+		"PROMPT_AI_MINUTE_LIMIT_PER_IP": "4",
+		"PROMPT_AI_SITE_DAILY_LIMIT": "200"
 	},
 	/**
 	 * 预渲染多语言 HTML（gzip）存储桶。
@@ -62,6 +71,23 @@
 			"binding": "PAGES_BUCKET",
 			"bucket_name": "onlinefreetools-pages",
 			"preview_bucket_name": "onlinefreetools-pages-preview"
+		}
+	],
+	/**
+	 * Workers AI：Prompt template builder Expand/Polish（见 ops/cloudflare-workers-ai-access.md）。
+	 */
+	"ai": {
+		"binding": "AI"
+	},
+	/**
+	 * 日级限流 KV。创建：wrangler kv namespace create RATE_LIMIT_KV
+	 * 将返回的 id 填入下方（preview 用于 wrangler dev）。
+	 */
+	"kv_namespaces": [
+		{
+			"binding": "RATE_LIMIT_KV",
+			"id": "00000000000000000000000000000000",
+			"preview_id": "00000000000000000000000000000000"
 		}
 	]
 	/**

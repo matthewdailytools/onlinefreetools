@@ -2,7 +2,7 @@
 
 - date: **2026-09-01 14:10**
 - locale / gl: en / us（Keyword Planner + Bing SERP）
-- 词表：[`../Compare-Text/Keyword Planner 09-01-2026 at 02-27-45.csv`](../Compare-Text/Keyword%20Planner%2009-01-2026%20at%2002-27-45.csv)（733 词）· [`Keyword Planner 09-01-2026 at 02-24-42.csv`](./Keyword%20Planner%2009-01-2026%20at%2002-24-42.csv)（491 词）
+- 词表：[`../compare-text-seeds/Keyword Planner 09-01-2026 at 02-27-45.csv`](../compare-text-seeds/Keyword%20Planner%2009-01-2026%20at%2002-27-45.csv)（733 词）· [`Keyword Planner 09-01-2026 at 02-24-42.csv`](./Keyword%20Planner%2009-01-2026%20at%2002-24-42.csv)（491 词）
 - 去重后 **983** 条唯一关键词；两表重叠集中在「粘贴两段文本看增删」
 - SERP：[2026-09-01-compare-text-scene-serp.md](./2026-09-01-compare-text-scene-serp.md)（Bing intl ×15，`usable=yes`，无污染行）
 - catalog：**已有** `/tools/text-diff`（粘贴双栏、行/词/字符）

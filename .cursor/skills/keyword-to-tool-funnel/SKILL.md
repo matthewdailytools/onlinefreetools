@@ -16,7 +16,8 @@ description: >-
 分析进池由本 Skill 完成；真正写页面 / 十语时再接 `tool-coverage-pass` 与 `work-tasks-tool-brief`。  
 事项跟进文件：[docs/seo/keyword-to-tool-tracker.md](../../docs/seo/keyword-to-tool-tracker.md)  
 运维操作：[ops/seo/keyword-to-tool-ops.md](../../ops/seo/keyword-to-tool-ops.md)  
-展开策略：[docs/seo/keyword-to-tool-funnel.md](../../docs/seo/keyword-to-tool-funnel.md)
+展开策略：[docs/seo/keyword-to-tool-funnel.md](../../docs/seo/keyword-to-tool-funnel.md)  
+**Keyword Planner CSV 归类**（固定步骤，可迭代）：[docs/seo/keyword-planner-analysis-rules.md](../../docs/seo/keyword-planner-analysis-rules.md)
 
 ## 何时必须使用
 
@@ -31,10 +32,11 @@ description: >-
 |---|---|---|
 | **`build`** | 新意图 + 浏览器可做 + ≥3 条 IG + **`competition_tier` 为 `long_gap`/`locale_gap`**（禁止纯大词进攻） | **仅记入词池**；开 `work-tasks/{slug}/` **须用户明确要创建该工具** |
 | **`absorb`** | 与已有 catalog slug 同一主意图 / 近义长尾 | **更新已有工具**：title/description、FAQ、Use cases、Example/IG；**不新建 URL** |
-| `defer` | 意图成立但产能/YMYL/技术未就绪，或 `mid_covered` 暂不硬刚 | 留池，决策日志一行 |
+| `defer` | 意图成立但主打词/产能/YMYL/SERP 未钉死，或 `mid_covered` 暂不硬刚 | **仍须写覆盖落点**；留池，决策日志一行 |
 | `drop` | 不可做成工具、重复、无增量，或纯 `head` 且无本站展示 | 留池注明理由即可 |
 
 默认优先 **`absorb` 丰富已有**，再谈 `build`。周 `build` 名额只给缺口类，不给 `head`。  
+**Planner 细分场景须全覆盖**（文案+能力落点）；差别在 **slug / title / 主打关键词**，见 [keyword-planner-analysis-rules.md](../../docs/seo/keyword-planner-analysis-rules.md) §0；`defer`≠不做。  
 头词已被工具占位时：按策略 **§3.3 G**（`title_gap_fallback`）——同簇长尾若在该长尾 SERP 的 organic **title 中未出现**，用该长尾作工具 **slug/H1**（一簇一 URL；满 IG；默认不占周进攻，除非任务实质不同）。  
 另须 **§3.3 H（全站）**：slug/H1 = 用户**实际使用场景**（情境+动作+结果），不是品类/`*-pack`；进页默认即该场景。平台只是情境的一种（如 LinkedIn 横幅）。只按作业类型拆 URL。无「使用场景」表不得标 `build`。
 
@@ -42,9 +44,10 @@ description: >-
 
 ### 1) 入库（只建池，不建页、不建 work-tasks）
 
-1. 脱敏摘要写入 `docs/seo/keywords/{theme}/YYYY-MM-DD-<id>.md`（主题夹；跨主题试点仍可用 `docs/seo/serp-batches/`）
-2. 从本批抽约 **10** 条候选追加 `docs/seo/keyword-daily-pool.tsv`
-3. 回写 [keyword-to-tool-tracker.md](../../docs/seo/keyword-to-tool-tracker.md) 快照 + 决策日志
+1. 若输入是 **Keyword Planner CSV**：先按 [keyword-planner-analysis-rules.md](../../docs/seo/keyword-planner-analysis-rules.md) 写主题夹权威分析（量级分桶 → drop → 作业类型 → absorb/收割；未 SERP 不得 `long_gap` build）
+2. 脱敏摘要写入 `docs/seo/keywords/{theme}/YYYY-MM-DD-<id>.md`（主题夹；跨主题试点仍可用 `docs/seo/serp-batches/`）
+3. 本批有结论的候选追加 `docs/seo/keyword-daily-pool.tsv`（**不设条数上限**；`verdict`/`tier`/落点完全相同的纯字序近义可合并一行）
+4. 回写 [keyword-to-tool-tracker.md](../../docs/seo/keyword-to-tool-tracker.md) 快照 + 决策日志
 
 ### 2) 每条候选必答
 
@@ -56,7 +59,7 @@ description: >-
 6. **竞品覆盖**：谁占位？→ 填 `competition_tier`（`head` / `mid_covered` / `long_gap` / `locale_gap`）+ `gap_notes`  
 
 对照 catalog：`src/site/tool-catalog.json`；可行性：`docs/2026-07-28-tool-direction.md`。  
-选题细则：`docs/seo/2026-08-20-long-tail-gap-strategy.md`（含 **§3.3 选长尾词策略标准：Google + Bing**，**§3.3 I Bing 用户搜法防污染**）。种子可含大词，**入池以向下展开的长尾缺口为主**（建议每批缺口类 ≥6/10）。  
+选题细则：`docs/seo/2026-08-20-long-tail-gap-strategy.md`（含 **§3.3 选长尾词策略标准：Google + Bing**，**§3.3 I Bing 用户搜法防污染**）。种子可含大词，**入池以向下展开的长尾缺口为主**（建议本批缺口类 `long_gap`/`locale_gap` **占多数**；不设入池条数上限）。  
 Bing 采集默认：国际版优先、每词独立 BrowserContext、搜索框提交、剥 `pq` 串词、污染则用户搜法变体（仍脏再 `language:en`）；`unusable` / `serp_usable=false` 不得当 `long_gap`。禁止默认加引号或品牌倒置。
 
 ### 3A) `absorb` → 丰富已有工具
@@ -78,7 +81,7 @@ Bing 采集默认：国际版优先、每词独立 BrowserContext、搜索框提
 
 ### 4) 产能与合规
 
-- 日抽约 10 词 = **进池**；周新建工具建议 ≤1–2（上限 ≤3）且须满 IG  
+- 进池**不设条数上限**（进池 ≠ 建页）；周新建工具建议 ≤1–2（上限 ≤3）且须满 IG  
 - SERP = 研究输入；禁止抄前排正文；禁止「标题模板 → 空壳页」  
 - 对齐 `seo-google-policy` / `tool-i18n-seo`（一带多场景；禁 doorway / scaled content）
 

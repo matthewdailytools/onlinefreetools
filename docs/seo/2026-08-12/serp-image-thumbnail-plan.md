@@ -3,7 +3,7 @@
 > 权威：Google [Image SEO best practices](https://developers.google.com/search/docs/appearance/google-images)（含 *Specify a preferred image with metadata*）、[Discover](https://developers.google.com/search/docs/appearance/google-discover)、[SoftwareApplication](https://developers.google.com/search/docs/appearance/structured-data/software-app)、站内 `.cursor/rules/seo-google-policy.mdc` · `seo-html-defaults.mdc`。  
 > 背景：GSC 有展示、CTR 近零；讨论过用「搜索结果出图」抬 CTR。本文件定 **稳妥 / 合规 / 可规模化** 的落地边界与工程步骤。  
 > 状态：**方案已细化**（2026-08-12）；代码未实施。实施按 §5 Phase A → B → C。  
-> 相关：[`../2026-08-08/01-analysis-review.md`](../2026-08-08/01-analysis-review.md)（有展示无点击）、[`../2026-08-09/link-strategy-execution.md`](../2026-08-09/link-strategy-execution.md)。
+> 相关：[`../reviews/2026-08-08/01-analysis-review.md`](../reviews/2026-08-08/01-analysis-review.md)（有展示无点击）、[`../2026-08-09/link-strategy-execution.md`](../2026-08-09/link-strategy-execution.md)。
 
 ## 1. 目标与预期
 

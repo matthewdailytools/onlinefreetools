@@ -21,6 +21,75 @@ export const DEVLOGS_NAV_PATH = '/devlogs/';
 export const DEVLOGS_PAGE_SIZE = 30;
 
 /**
+ * 对人有帮助、默认可索引并进入 sitemap。
+ * @type {'people'}
+ */
+export const DEVLOG_VISIBILITY_PEOPLE = 'people';
+
+/**
+ * 仅项目留档：公开 HTML 带 noindex,nofollow，且不进 sitemap。
+ * @type {'project'}
+ */
+export const DEVLOG_VISIBILITY_PROJECT = 'project';
+
+/**
+ * 解析开发日志 Markdown 头部元数据（Date / Summary / Visibility / Robots）。
+ * @param {string} md 源 Markdown 全文
+ * @returns {{ date: string, summary: string, visibility: 'people'|'project', robotsContent: string }}
+ */
+export const parseDevLogMeta = (md) => {
+  const lines = String(md || '').split(/\r?\n/);
+  let date = '';
+  let summary = '';
+  /** @type {'people'|'project'} */
+  let visibility = DEVLOG_VISIBILITY_PEOPLE;
+  let robotsContent = '';
+  let sawVisibility = false;
+  let sawRobots = false;
+
+  for (const line of lines) {
+    const trimmed = line.trim();
+    if (!date && trimmed.startsWith('日期：')) date = trimmed.replace('日期：', '').trim();
+    if (!summary && trimmed.startsWith('摘要：')) summary = trimmed.replace('摘要：', '').trim();
+    if (!date && trimmed.startsWith('Date:')) date = trimmed.replace(/^Date:\s*/i, '').trim();
+    if (!summary && trimmed.startsWith('Summary:')) summary = trimmed.replace(/^Summary:\s*/i, '').trim();
+
+    if (!sawVisibility && /^Visibility:\s*/i.test(trimmed)) {
+      sawVisibility = true;
+      const raw = trimmed.replace(/^Visibility:\s*/i, '').trim().toLowerCase();
+      if (
+        raw === 'project' ||
+        raw === 'internal' ||
+        raw === 'noindex' ||
+        raw === 'private'
+      ) {
+        visibility = DEVLOG_VISIBILITY_PROJECT;
+      } else {
+        visibility = DEVLOG_VISIBILITY_PEOPLE;
+      }
+    }
+
+    if (!sawRobots && /^Robots:\s*/i.test(trimmed)) {
+      sawRobots = true;
+      robotsContent = trimmed.replace(/^Robots:\s*/i, '').trim();
+      const lower = robotsContent.toLowerCase();
+      if (lower.includes('noindex')) {
+        visibility = DEVLOG_VISIBILITY_PROJECT;
+      }
+    }
+
+    // 头部常见字段读完即可；正文很长时避免全文件扫描
+    if (trimmed.startsWith('[question]') || trimmed.startsWith('[try to solve]')) break;
+  }
+
+  if (visibility === DEVLOG_VISIBILITY_PROJECT && !robotsContent) {
+    robotsContent = 'noindex, nofollow';
+  }
+
+  return { date, summary, visibility, robotsContent };
+};
+
+/**
  * 递归收集 dev-logs 下所有 Markdown 源文件（支持 dev-logs/YYYY-MM/ 分月目录）。
  * 跳过以下划线开头的目录（如 `_archive`、`_curation`），不参与公开构建。
  * @param {string} [dir] 起始目录，默认 `dev-logs/`
@@ -81,10 +150,19 @@ export const devlogsTotalPages = (totalItems, pageSize = DEVLOGS_PAGE_SIZE) => {
 
 /**
  * 收集开发日志 sitemap 条目（索引各页 + 各篇；单 URL，不按语言展开）。
+ * `Visibility: project`（或 Robots 含 noindex）的篇目**不**写入 sitemap。
  * @returns {Promise<Array<{ pathname: string, priority: string, singleUrl: true, sourceFiles: string[] }>>}
  */
 export const collectDevlogSitemapEntries = async () => {
   const files = await collectDevLogMarkdownFiles();
+  /** @type {{ fileName: string, relPath: string, fullPath: string }[]} */
+  const indexableFiles = [];
+  for (const file of files) {
+    const md = await fs.readFile(file.fullPath, 'utf-8');
+    const { visibility } = parseDevLogMeta(md);
+    if (visibility === DEVLOG_VISIBILITY_PROJECT) continue;
+    indexableFiles.push(file);
+  }
   const allSources = files.map((f) => f.relPath);
   const pageCount = devlogsTotalPages(files.length);
   /** @type {Array<{ pathname: string, priority: string, singleUrl: true, sourceFiles: string[] }>} */
@@ -97,7 +175,7 @@ export const collectDevlogSitemapEntries = async () => {
       sourceFiles: ['scripts/build-site.mjs', 'scripts/site/devlogs.mjs', ...allSources],
     });
   }
-  for (const { fileName, relPath } of files) {
+  for (const { fileName, relPath } of indexableFiles) {
     const base = fileName.replace(/\.md$/, '');
     entries.push({
       pathname: `/devlogs/${encodeURIComponent(base)}.html`,

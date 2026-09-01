@@ -15,7 +15,10 @@ Bing SERP 采集与分析公用包（CloakBrowser）。
 
 入口
 ----
-``python ops/seo/bing_serp/run_bing_serp.py --help``
+用 sibling ``aibrowsercrawler`` 的 Python 运行（本仓库不自带 cloakbrowser）::
+
+    PY="${AIBROWSERCRAWLER_VENV:-$HOME/vscodeai/aibrowsercrawler/venv}/bin/python"
+    "$PY" ops/seo/bing_serp/run_bing_serp.py --help
 """
 
 from __future__ import annotations

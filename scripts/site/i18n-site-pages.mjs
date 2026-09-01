@@ -23,6 +23,9 @@ export const sitePageTranslations = {
     privacy_edge_title: 'When a request leaves your device',
     privacy_edge_body:
       'A few tools need our edge Worker—for example fetching public HTTP headers, checking DNS, reading your public IP as seen by the edge, or submitting IndexNow URL lists. Those requests carry only what the tool needs for that action, and we do not keep them in a content database as a product feature. Tool pages state this clearly where it applies.',
+    privacy_workers_ai_title: 'Optional Cloudflare Workers AI (opt-in)',
+    privacy_workers_ai_body:
+      'On Prompt template builder, local assembly stays in your browser by default. If you choose Expand with AI or Polish with AI, the text you submit for that action is sent to Cloudflare Workers AI for inference only—not to OpenAI, Google, Anthropic, or DeepSeek APIs from our servers. Those chat products are where you paste the finished template afterward. AI actions require Turnstile verification and are rate-limited. We do not store your prompt text in a user content database as a product feature.',
     privacy_analytics_title: 'Analytics',
     privacy_analytics_body:
       'Pages may load Microsoft Clarity (clarity.ms) to understand aggregate traffic and usability. This third party may set cookies or similar identifiers under its own policies. We do not sell personal data.',
@@ -81,6 +84,9 @@ export const sitePageTranslations = {
     privacy_edge_title: '何时会离开本机',
     privacy_edge_body:
       '少数工具需要边缘 Worker，例如读取公开 HTTP 响应头、查询 DNS、查看边缘所见的公网 IP，或提交 IndexNow URL 列表。请求只携带完成该操作所需的数据，我们不会将其作为内容库长期保存。适用工具页会写明这一点。',
+    privacy_workers_ai_title: '可选 Cloudflare Workers AI（需主动点击）',
+    privacy_workers_ai_body:
+      '在 Prompt 模板构建器上，默认只在浏览器本地组装模板。若你选择「AI 扩写」或「AI 润色」，仅该次提交的文字会发往 Cloudflare Workers AI 做推理——不会从我们的服务器调用 OpenAI、Google、Anthropic 或 DeepSeek 的 API；你之后再自行粘贴到这些聊天产品。AI 操作须通过 Turnstile 验证并受频率限制。我们不会把 Prompt 全文作为用户内容库长期保存。',
     privacy_analytics_title: '访问分析',
     privacy_analytics_body:
       '页面可能加载 Microsoft Clarity（clarity.ms），用于了解汇总流量与可用性。该第三方可能按其政策设置 Cookie 或类似标识。我们不出售个人数据。',
@@ -137,6 +143,9 @@ export const sitePageTranslations = {
     privacy_edge_title: 'Cuando sale una petición',
     privacy_edge_body:
       'Algunas herramientas necesitan el Worker (cabeceras HTTP públicas, DNS, IP pública vista desde el edge o listas IndexNow). Solo se envía lo necesario y no lo guardamos en una base de contenidos. Las páginas lo indican cuando aplica.',
+    privacy_workers_ai_title: 'Cloudflare Workers AI opcional (opt-in)',
+    privacy_workers_ai_body:
+      'En Prompt template builder, el ensamblado local queda en tu navegador por defecto. Si eliges Expandir con IA o Pulir con IA, el texto que envíes solo para esa acción va a Cloudflare Workers AI — no a las APIs de OpenAI, Google, Anthropic o DeepSeek desde nuestros servidores. Luego pegas la plantilla en ChatGPT, Gemini, Claude o DeepSeek. Requiere Turnstile y tiene límites de uso.',
     privacy_analytics_title: 'Analítica',
     privacy_analytics_body:
       'Las páginas pueden cargar Microsoft Clarity (clarity.ms) para tráfico agregado y usabilidad. Este tercero puede usar cookies según su política. No vendemos datos personales.',
@@ -195,6 +204,9 @@ export const sitePageTranslations = {
     privacy_edge_title: 'عندما يغادر الطلب جهازك',
     privacy_edge_body:
       'بعض الأدوات تحتاج Worker (ترويسات HTTP عامة، DNS، IP العامة كما يراها الحافة، أو قوائم IndexNow). نرسل ما يلزم فقط ولا نخزّنها في قاعدة محتوى. الصفحات توضح ذلك عند الحاجة.',
+    privacy_workers_ai_title: 'Cloudflare Workers AI اختياري (بموافقتك)',
+    privacy_workers_ai_body:
+      'في Prompt template builder يبقى التجميع المحلي في متصفحك افتراضيًا. إذا اخترت التوسيع أو التلميع بالذكاء الاصطناعي، يُرسل النص لـ Cloudflare Workers AI فقط — وليس إلى واجهات OpenAI أو Google أو Anthropic أو DeepSeek من خوادمنا. ثم تلصق القالب في ChatGPT أو Gemini أو Claude أو DeepSeek. يتطلب Turnstile وله حدود استخدام.',
     privacy_analytics_title: 'التحليلات',
     privacy_analytics_body:
       'قد تُحمَّل Microsoft Clarity (clarity.ms) لفهم الزيارات المجمّعة وسهولة الاستخدام. قد يضع هذا الطرف الثالث ملفات تعريف وفق سياسته. لا نبيع البيانات الشخصية.',
@@ -252,6 +264,9 @@ export const sitePageTranslations = {
     privacy_edge_title: 'Quando um pedido sai do dispositivo',
     privacy_edge_body:
       'Algumas ferramentas precisam do Worker (cabeçalhos HTTP públicos, DNS, IP público visto na edge ou listas IndexNow). Enviamos só o necessário e não guardamos numa base de conteúdos.',
+    privacy_workers_ai_title: 'Cloudflare Workers AI opcional (opt-in)',
+    privacy_workers_ai_body:
+      'No Prompt template builder, a montagem local fica no navegador por padrão. Se escolher Expandir ou Polir com IA, o texto enviado só para essa ação vai ao Cloudflare Workers AI — não às APIs OpenAI, Google, Anthropic ou DeepSeek nos nossos servidores. Depois cole o modelo no ChatGPT, Gemini, Claude ou DeepSeek. Exige Turnstile e tem limites de uso.',
     privacy_analytics_title: 'Analytics',
     privacy_analytics_body:
       'As páginas podem carregar Microsoft Clarity (clarity.ms) para tráfego agregado e usabilidade. Esse terceiro pode usar cookies segundo a sua política. Não vendemos dados pessoais.',
@@ -310,6 +325,9 @@ export const sitePageTranslations = {
     privacy_edge_title: 'Saat permintaan meninggalkan perangkat',
     privacy_edge_body:
       'Beberapa alat membutuhkan Worker (header HTTP publik, DNS, IP publik dari edge, atau daftar IndexNow). Hanya data yang diperlukan dikirim; kami tidak menyimpannya di basis konten.',
+    privacy_workers_ai_title: 'Cloudflare Workers AI opsional (opt-in)',
+    privacy_workers_ai_body:
+      'Di Prompt template builder, perakitan lokal tetap di browser secara default. Jika Anda memilih Perluas atau Polestir dengan AI, teks yang Anda kirim hanya untuk aksi itu dikirim ke Cloudflare Workers AI — bukan ke API OpenAI, Google, Anthropic, atau DeepSeek dari server kami. Tempel template ke ChatGPT, Gemini, Claude, atau DeepSeek setelahnya. Perlu Turnstile dan ada batas penggunaan.',
     privacy_analytics_title: 'Analitik',
     privacy_analytics_body:
       'Halaman dapat memuat Microsoft Clarity (clarity.ms) untuk lalu lintas agregat dan kegunaan. Pihak ketiga ini dapat memakai cookie sesuai kebijakannya. Kami tidak menjual data pribadi.',
@@ -368,6 +386,9 @@ export const sitePageTranslations = {
     privacy_edge_title: 'Quand une requête quitte l’appareil',
     privacy_edge_body:
       'Certains outils ont besoin du Worker (en-têtes HTTP publics, DNS, IP publique vue depuis l’edge ou listes IndexNow). Seul le nécessaire est envoyé ; nous ne les stockons pas dans une base de contenus.',
+    privacy_workers_ai_title: 'Cloudflare Workers AI optionnel (opt-in)',
+    privacy_workers_ai_body:
+      'Sur Prompt template builder, l’assemblage local reste dans votre navigateur par défaut. Si vous choisissez Développer ou Peaufiner avec l’IA, le texte envoyé pour cette action part vers Cloudflare Workers AI — pas vers les API OpenAI, Google, Anthropic ou DeepSeek depuis nos serveurs. Collez ensuite le modèle dans ChatGPT, Gemini, Claude ou DeepSeek. Turnstile requis ; usage limité.',
     privacy_analytics_title: 'Analytique',
     privacy_analytics_body:
       'Les pages peuvent charger Microsoft Clarity (clarity.ms) pour le trafic agrégé et l’utilisabilité. Ce tiers peut utiliser des cookies selon sa politique. Nous ne vendons pas de données personnelles.',
@@ -426,6 +447,9 @@ export const sitePageTranslations = {
     privacy_edge_title: '端末外へのリクエスト',
     privacy_edge_body:
       '一部ツールは Worker が必要です（公開 HTTP ヘッダー、DNS、エッジから見た公開 IP、IndexNow の URL 一覧など）。必要なデータだけを送り、コンテンツ DB としては保持しません。該当ページに明記します。',
+    privacy_workers_ai_title: '任意の Cloudflare Workers AI（オプトイン）',
+    privacy_workers_ai_body:
+      'Prompt template builder では既定でブラウザ内組み立てです。「AI で展開」「AI で推敲」を選んだ場合のみ、その送信テキストが Cloudflare Workers AI に送られます（当サーバーから OpenAI / Google / Anthropic / DeepSeek API は呼びません）。完成テンプレは ChatGPT、Gemini、Claude、DeepSeek 等へ貼り付けます。Turnstile と利用上限があります。',
     privacy_analytics_title: 'アクセス解析',
     privacy_analytics_body:
       '集計トラフィックと使いやすさの把握のため、Microsoft Clarity（clarity.ms）を読み込む場合があります。当該第三者は自社ポリシーに基づき Cookie 等を使うことがあります。個人データを販売しません。',
@@ -484,6 +508,9 @@ export const sitePageTranslations = {
     privacy_edge_title: 'Когда запрос уходит с устройства',
     privacy_edge_body:
       'Некоторым инструментам нужен Worker (публичные HTTP-заголовки, DNS, публичный IP с края сети или списки IndexNow). Передаётся только необходимое; мы не храним это в контентной базе.',
+    privacy_workers_ai_title: 'Необязательный Cloudflare Workers AI (opt-in)',
+    privacy_workers_ai_body:
+      'В Prompt template builder сборка по умолчанию локально в браузере. При «Расширить с ИИ» или «Отполировать с ИИ» текст этой операции отправляется в Cloudflare Workers AI — не в API OpenAI, Google, Anthropic или DeepSeek с наших серверов. Готовый шаблон вставляете в ChatGPT, Gemini, Claude или DeepSeek. Нужен Turnstile; действуют лимиты.',
     privacy_analytics_title: 'Аналитика',
     privacy_analytics_body:
       'Страницы могут загружать Microsoft Clarity (clarity.ms) для агрегированного трафика и удобства. Этот сторонний сервис может ставить cookie по своей политике. Мы не продаём персональные данные.',
@@ -542,6 +569,9 @@ export const sitePageTranslations = {
     privacy_edge_title: 'Wenn eine Anfrage das Gerät verlässt',
     privacy_edge_body:
       'Einige Tools brauchen den Worker (öffentliche HTTP-Header, DNS, öffentliche IP aus Edge-Sicht oder IndexNow-URL-Listen). Es wird nur das Nötige gesendet; wir speichern es nicht in einer Inhaltsdatenbank.',
+    privacy_workers_ai_title: 'Optionales Cloudflare Workers AI (Opt-in)',
+    privacy_workers_ai_body:
+      'Beim Prompt template builder bleibt die lokale Montage standardmäßig im Browser. Bei „Mit KI erweitern“ oder „Mit KI polieren“ wird nur der für diese Aktion gesendete Text an Cloudflare Workers AI übermittelt — nicht an OpenAI-, Google-, Anthropic- oder DeepSeek-APIs von unseren Servern. Die fertige Vorlage fügen Sie in ChatGPT, Gemini, Claude oder DeepSeek ein. Turnstile erforderlich; Nutzungslimits gelten.',
     privacy_analytics_title: 'Analytics',
     privacy_analytics_body:
       'Seiten können Microsoft Clarity (clarity.ms) für aggregierten Traffic und Nutzbarkeit laden. Dieser Drittanbieter kann Cookies nach seinen Richtlinien setzen. Wir verkaufen keine personenbezogenen Daten.',

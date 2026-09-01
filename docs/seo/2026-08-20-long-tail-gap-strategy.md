@@ -205,7 +205,8 @@ CIDR 实证：≥100 补扫 **无新增 P0**；P0 多来自 **任务句长尾**�
 [ ] verdict = absorb | build | defer | drop；build 仅 long_gap/locale_gap
 ```
 
-落地文件：主题夹 `docs/seo/keywords/{theme}/` + `keyword-daily-pool.tsv`；Bing 采集：`ops/seo/bing_serp`（`--theme`）。
+落地文件：主题夹 `docs/seo/keywords/{theme}/` + `keyword-daily-pool.tsv`；Bing 采集：`ops/seo/bing_serp`（`--theme`）。  
+**操作 playbook（CSV 归类固定步骤）**：[`keyword-planner-analysis-rules.md`](./keyword-planner-analysis-rules.md)。
 
 #### G. 兜底规则：头词被工具占位 → 用「SERP title 未出现」的长尾作 slug/H1
 
@@ -301,7 +302,8 @@ CIDR 实证：≥100 补扫 **无新增 P0**；P0 多来自 **任务句长尾**�
 
 「平台 + 该平台用途」（如 LinkedIn 个人背景横幅）只是渠道类工具的**一种拆法**。其它域同样要拆场景，例如：Terraform `cidrsubnet` 求值 ≠ 泛 CIDR 计算器；已知密码解锁 PDF ≠ 合并 PDF；EMI 月供 ≠ 「贷款计算器包」。
 
-与 **§3.3 G** 的关系：G 解决「头词被占 → 用 title 缺口长尾当 H1」；H 解决「候选必须细到真实使用场景」。先 H 列出场景，再 G 选哪一条当主 slug。
+与 **§3.3 G** 的关系：G 解决「头词被占 → 用 title 缺口长尾当 H1」；H 解决「候选必须细到真实使用场景」。先 H 列出场景，再 G 选哪一条当主 slug。  
+**Planner 操作补充**（[`keyword-planner-analysis-rules.md`](./keyword-planner-analysis-rules.md) §0）：细分出的场景**都要覆盖**（文案+能力落点）；差别在各 URL 的 **slug / title / 主打关键词**；`defer` 只表示主打未钉死或节奏靠后，不是整类不做。
 
 ##### H.1 任务句公式（缺一层则 slug 不合格）
 
@@ -436,7 +438,7 @@ slug / H1   = 该任务句的检索向说法（kebab / 口语）
 
 ### 4.2 单批分析清单（Agent / 人工）
 
-1. 种子可含大词，但入池候选须 **展开后的长尾** 为主（约 10 条里 `long_gap`/`locale_gap` 建议 ≥6）  
+1. 种子可含大词，但入池候选须 **展开后的长尾** 为主（本批缺口类 `long_gap`/`locale_gap` **建议占多数**；**不设入池条数上限**）  
 2. 每条填写：`competition_tier`、`gap_notes`（谁占位 + 缺什么，一句）  
 3. `head` 且无本站展示 → 不占周 build 名额  
 4. 回写 [keyword-daily-pool.tsv](./keyword-daily-pool.tsv) + [keyword-to-tool-tracker.md](./keyword-to-tool-tracker.md)  
@@ -511,7 +513,7 @@ flowchart LR
 ## 5. 验收标准（本策略是否在执行）
 
 - [ ] 新入池行含 `competition_tier`；`head` 未进入当周 `build` 进攻队列  
-- [ ] 每批约 10 词中，缺口类（`long_gap`+`locale_gap`）占多数  
+- [ ] 每批入池词中，缺口类（`long_gap`+`locale_gap`）占多数（不设入池条数上限）  
 - [ ] 周建工具的主词不是品类大词，而是可验证的未覆盖具体意图  
 - [ ] 无「一词一 URL」长尾拆页；同簇进 FAQ/Use cases  
 - [ ] 有 GSC 展示的大词页仅 meta/IG 收割，不新建变体页  

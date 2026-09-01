@@ -16,7 +16,9 @@ const themeBootScript = `<script>(function(){try{var k='oft-theme',v=localStorag
  * 渲染站点静态页 HTML 外壳（head、布局、侧栏脚本等）。
  * @param {object} opts
  * @param {string} [opts.bodyClass='is-home-page'] body 类名（首页 / 信息页等布局差异）
- * @param {boolean} [opts.robotsNoindex=false] 为 true 时输出 `<meta name="robots" content="noindex">`（测试/门禁页等）
+ * @param {boolean} [opts.robotsNoindex=false] 为 true 时输出 noindex（测试/门禁页等）
+ * @param {boolean} [opts.robotsNofollow=false] 与 robotsNoindex 联用时输出 nofollow
+ * @param {string} [opts.robotsContent=''] 若非空则直接作为 `meta robots` content（优先于布尔开关）
  */
 export const renderLayout = ({
   lang,
@@ -36,10 +38,17 @@ export const renderLayout = ({
   includeSidebarToggleScript = true,
   sidebarAutoCloseSelector,
   robotsNoindex = false,
+  robotsNofollow = false,
+  robotsContent = '',
   bodyClass = 'is-home-page',
 }) => {
   const canonical = absoluteUrl(canonicalPath);
   const tracking = getTrackingSnippets();
+  /** @type {string} 最终写入 `<meta name="robots">` 的 content；空字符串表示不输出该标签 */
+  let robotsMetaContent = String(robotsContent || '').trim();
+  if (!robotsMetaContent && robotsNoindex) {
+    robotsMetaContent = robotsNofollow ? 'noindex, nofollow' : 'noindex';
+  }
 
   const enabledLangs = Array.isArray(alternates)
     ? Array.from(
@@ -253,7 +262,7 @@ export const renderLayout = ({
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>${title}</title>
   <meta name="description" content="${description}" />
-  ${robotsNoindex ? '<meta name="robots" content="noindex" />' : ''}
+  ${robotsMetaContent ? `<meta name="robots" content="${robotsMetaContent}" />` : ''}
   <link rel="canonical" href="${canonical}" />
   <meta property="og:title" content="${title}" />
   <meta property="og:description" content="${description}" />

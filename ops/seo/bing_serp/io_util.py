@@ -322,7 +322,7 @@ def render_batch_markdown(
         [
             "## Next steps",
             "",
-            "- 人工 / Agent 复核 ``competition_tier`` 后，抽约 10 条写入 ``keyword-daily-pool.tsv``",
+            "- 人工 / Agent 复核 ``competition_tier`` 后，将本批结论写入 ``keyword-daily-pool.tsv``（不设条数上限；同结论近义可合并）",
             "- ``usable=NO`` / ``unusable``：§3.3 D/I 噪声 SERP，禁止当 ``long_gap`` 入池",
             "- 禁止把本摘要中的竞品标题套路成空壳工具页",
             "- 开 ``work-tasks/`` 须另决议，本脚本不创建工具",

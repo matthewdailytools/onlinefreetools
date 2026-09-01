@@ -32,12 +32,13 @@
 词表至少含：**候选词**；建议另附 `locale` / `gl`（如 `en`/`us`）、种子词、相关搜索/PAA 备注。  
 可直接交给 Agent，或写入主题夹（模板见 [`docs/seo/keywords/README.md`](../../docs/seo/keywords/README.md)；跨主题试点见 [`docs/seo/serp-batches/README.md`](../../docs/seo/serp-batches/README.md)）。
 
-**Bing SERP 自动记录（可选）**：本机 CloakBrowser 已安装时，用公用脚本批量搜索并落**主题夹**脱敏摘要：
+**Bing SERP 自动记录（可选）**：用 sibling `aibrowsercrawler` 的 venv（已装 CloakBrowser）跑公用脚本，落**主题夹**脱敏摘要（本仓库不自建 `.venv`）：
 
 ```bash
-python ops/seo/bing_serp/run_bing_serp.py --theme cidr --queries "terraform cidrsubnet" --write-batch-md --batch-id YYYY-MM-DD-cidr-...
+PY="${AIBROWSERCRAWLER_VENV:-$HOME/vscodeai/aibrowsercrawler/venv}/bin/python"
+"$PY" ops/seo/bing_serp/run_bing_serp.py --theme cidr --queries "terraform cidrsubnet" --write-batch-md --batch-id YYYY-MM-DD-cidr-...
 # 或从 Planner CSV：
-python ops/seo/bing_serp/run_bing_serp.py --theme cidr --file docs/seo/keywords/cidr/Cidr_KeywordPlanner_bing.csv --column 关键词 --limit-queries 20 --write-batch-md --batch-id YYYY-MM-DD-cidr-...
+"$PY" ops/seo/bing_serp/run_bing_serp.py --theme cidr --file docs/seo/keywords/cidr/Cidr_KeywordPlanner_bing.csv --column 关键词 --limit-queries 20 --write-batch-md --batch-id YYYY-MM-DD-cidr-...
 ```
 
 说明见 [`bing_serp/README.md`](./bing_serp/README.md)。JSON 在 `.cache/serp/bing/`；`--theme` + `--write-batch-md` 写入 `docs/seo/keywords/{theme}/`。脚本给出的 `competition_tier` 是草稿：`unusable` 表示 SERP 污染（§3.3 I），入池前仍走下方 Agent 分析，**不得**把污染行当 `long_gap`。
@@ -70,11 +71,15 @@ python ops/seo/bing_serp/run_bing_serp.py --theme cidr --file docs/seo/keywords/
 
 ---
 
-## 2.5 存量工具：词根 → Keyword Planner（每周）
+## 2.5 Keyword Planner CSV 归类（固定 playbook）
+
+拿到 Google/Bing Planner 导出后，**按** [`docs/seo/keyword-planner-analysis-rules.md`](../../docs/seo/keyword-planner-analysis-rules.md) 跑完整步骤（分桶 → drop → §3.3 H 作业类型 → 收割/G → 归属表 → 可选 SERP）。产出写在 `docs/seo/keywords/{theme}/YYYY-MM-DD-*-keyword-planner.md`；本批结论行进词池（**不设条数上限**）。迭代规则时改该 playbook 修订日志，勿每主题另起流程。
+
+## 2.6 存量工具：词根 → Keyword Planner（每周）
 
 1. 打开 [`docs/seo/2026-08-20-tool-keyword-roots.md`](../../docs/seo/2026-08-20-tool-keyword-roots.md)，选 3–5 个 slug  
 2. 用该行 `primary_roots` / `adwords_seed_suggested` 在 Google Ads **Keyword Planner** 查相关与长尾（脱敏笔记）  
-3. 头词标 `head` 丢弃进攻；长尾写入 `keyword-daily-pool.tsv`（`absorb_slug`=该工具，`competition_tier`=`long_gap`/`locale_gap`）  
+3. 导出落入 `docs/seo/keywords/{theme}/` 后走 **§2.5** playbook；头词标 `head` 丢弃进攻；长尾写入 `keyword-daily-pool.tsv`（`absorb_slug`=该工具；**仅 SERP 后**可标 `long_gap`/`locale_gap`）  
 4. 按长尾优化该工具功能与 SEO（FAQ/Use cases/控件），不新建近义 URL  
 5. 细节见策略 [`2026-08-20-long-tail-gap-strategy.md`](../../docs/seo/2026-08-20-long-tail-gap-strategy.md) §4.7  
 
@@ -84,8 +89,8 @@ python ops/seo/bing_serp/run_bing_serp.py --theme cidr --file docs/seo/keywords/
 
 | 节奏 | 动作 |
 |---|---|
-| 按批 / 每天 | 词进池（约 10 条），0 新 URL |
-| 每周 | 审 `verdict`；**3–5 slug 词根→Keyword Planner→absorb**（§2.5）；`build` 仅确认创建时开 work-tasks（≤1–2） |
+| 按批 / 每天 | 词进池（本批结论均可入；不设条数上限），0 新 URL |
+| 每周 | 审 `verdict`；**3–5 slug 词根→Keyword Planner→absorb**（§2.6；CSV 归类走 §2.5）；`build` 仅确认创建时开 work-tasks（≤1–2） |
 | 每 2–4 周 | GSC 复盘；结论回写 tracker |
 
 ---

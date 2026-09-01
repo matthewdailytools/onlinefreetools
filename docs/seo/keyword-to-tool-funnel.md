@@ -16,6 +16,7 @@
 - Omni 对标（学结构不学页数）：[../2026-08-08-omnicalculator-seo-traffic-strategy.md](../2026-08-08-omnicalculator-seo-traffic-strategy.md)
 - 运行表模板：[keyword-daily-pool.tsv](./keyword-daily-pool.tsv)
 - **主题词表 / 分析**：[keywords/README.md](./keywords/README.md)
+- **Keyword Planner 归类 playbook**：[keyword-planner-analysis-rules.md](./keyword-planner-analysis-rules.md)
 - SERP 批次（跨主题试点）：[serp-batches/README.md](./serp-batches/README.md)
 
 > **一句话**：从谷歌搜索批量取词进意图池（分析用）→ **竞品覆盖分类（回避大词、主攻未覆盖长尾）** → 合并过滤 → **每周立项 1–2 个**真实可交互工具并做满 Information Gain；禁止「一词一 URL」日建页。
@@ -24,7 +25,7 @@
 
 ---
 
-## 1. 为什么不是「每天 10 词 = 每天 10 工具」
+## 1. 为什么不是「进池多少词 = 建多少工具」
 
 | 风险 | 说明 |
 |---|---|
@@ -33,7 +34,7 @@
 | 产能 | 每工具须可交互 + IG≥3/9 维 + FAQ≥3 + `work-tasks` + coverage 0b/2/4 + 十语检索向重写 |
 | 与 P0 冲突 | 有展示少点击时，应先改 CTR/meta，不是狂加 URL |
 
-粗算：日产 10 工具 × 10 语 ≈ 日更 100 页，极易呈「批量无增量」观感。
+粗算：日产 10 工具 × 10 语 ≈ 日更 100 页，极易呈「批量无增量」观感。**词池条数不设上限**；约束的是周 `build` 名额与 IG，不是进池行数。
 
 ---
 
@@ -42,7 +43,7 @@
 ```mermaid
 flowchart TD
   serpBatch[Google_SERP_batch]
-  pick10[Pick_about_10_candidates]
+  pickCandidates[Pool_batch_candidates]
   pool[Intent_pool]
   analyze[SERP_gap_and_intent]
   merge[Cluster_and_merge]
@@ -51,8 +52,8 @@ flowchart TD
   ship[One_tool_IG_plus_locales]
   harvest[Existing_URL_CTR_IG]
 
-  serpBatch --> pick10
-  pick10 --> pool
+  serpBatch --> pickCandidates
+  pickCandidates --> pool
   pool --> analyze
   analyze --> merge
   merge --> gate
@@ -63,7 +64,7 @@ flowchart TD
 
 | 层 | 动作 | 产出 |
 |---|---|---|
-| 1 | 批量 Google SERP 入库 → 抽约 10 候选进池 | [keyword-daily-pool.tsv](./keyword-daily-pool.tsv) 行；**0 新 URL** |
+| 1 | 批量 Google SERP / Planner 入库 → 本批结论进池（不设条数上限） | [keyword-daily-pool.tsv](./keyword-daily-pool.tsv) 行；**0 新 URL** |
 | 2 | 意图聚类 / 近义合并 | `absorb` 或单一主意图候选 |
 | 3 | 建站门禁（每周 1–2） | 仅当人工决定创建工具时：再开 `work-tasks/{slug}/` + coverage `0b` |
 | 4 | Information Gain + 十语 | 可上线工具页 |
@@ -176,12 +177,12 @@ IG 是内容策略原则（对齐 Helpful Content），**不是**已确认的独
 
 | 节奏 | 动作 | 产出 |
 |---|---|---|
-| 按批 / 每天 | SERP 批量入库 → 抽约 10 候选 + 填分析字段 | 词池行，0 新 URL |
+| 按批 / 每天 | SERP / Planner 入库 → 本批结论进池 + 填分析字段（不设条数上限） | 词池行，0 新 URL |
 | 每周 | 从池中选 1–2 个 `build` | `work-tasks` + coverage `0b` |
 | 随后 3–7 天 | 做满 1 个工具至可上线 | 1 个满 IG 工具 |
 | 每 2–4 周 | GSC 复盘 | 调 CTR / 补 IG / 下批评审 |
 
-**日抽约 10 词 = 意图发现节奏；周建 1–2 工具 = 上线节奏。**
+**进池不设条数上限（进池 ≠ 建页）；周建 1–2 工具 = 上线节奏。**
 
 ---
 

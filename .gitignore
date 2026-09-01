@@ -179,3 +179,8 @@ public/sitemap.filtered.xml
 # 首页在常规路径 `public/index.html` 与 `public/{lang}/index.html`（入库进 Assets）
 .cache/
 public/_pages/
+
+# Bing SERP：禁止在本仓库维护 cloakbrowser venv（约定用 aibrowsercrawler/venv）
+# 下列路径仅作误建兜底 ignore，发现后应删除，勿 pip install 进本项目
+ops/seo/bing_serp/.venv/
+.venv-bing-serp/

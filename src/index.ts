@@ -32,6 +32,10 @@ import {
 	handleIndexnowResolveUrls,
 	handleIndexnowSubmit,
 } from "./endpoints/indexnow";
+import {
+	handlePromptTemplateBuilderAi,
+	handlePromptTemplateBuilderAiHealth,
+} from "./endpoints/promptTemplateBuilderAi";
 
 type Env = PagesBindings & {
 	SITE_DEFAULT_LANG?: string;
@@ -42,6 +46,19 @@ type Env = PagesBindings & {
 	TURNSTILE_SECRET_KEY?: string;
 	/** 运维缓存清理接口 token（wrangler secret / .dev.vars，勿入库） */
 	CACHE_ADMIN_TOKEN?: string;
+	/** Cloudflare Workers AI binding（wrangler ai.binding） */
+	AI?: Ai;
+	/** 全站 API 日级限流 KV */
+	RATE_LIMIT_KV?: KVNamespace;
+	/** 逗号分隔额外允许的 Origin（staging 等） */
+	SITE_ALLOWED_ORIGINS?: string;
+	PROMPT_AI_ENABLED?: string;
+	PROMPT_AI_MODEL?: string;
+	PROMPT_AI_MAX_INPUT_CHARS?: string;
+	PROMPT_AI_MAX_OUTPUT_TOKENS?: string;
+	PROMPT_AI_DAILY_LIMIT_PER_IP?: string;
+	PROMPT_AI_MINUTE_LIMIT_PER_IP?: string;
+	PROMPT_AI_SITE_DAILY_LIMIT?: string;
 };
 
 /**
@@ -435,6 +452,9 @@ app.get("/api/tools/domain-lookup", handleDomainLookup);
 app.get("/api/tools/indexnow/check-key", handleIndexnowCheckKey);
 app.post("/api/tools/indexnow/resolve-urls", handleIndexnowResolveUrls);
 app.post("/api/tools/indexnow/submit", handleIndexnowSubmit);
+
+app.get("/api/tools/prompt-template-builder/ai/health", handlePromptTemplateBuilderAiHealth);
+app.post("/api/tools/prompt-template-builder/ai", handlePromptTemplateBuilderAi);
 
 /**
  * 运维：返回 Worker 侧 PAGES_CACHE_VERSION，供 deploy 后与 R2 `_meta/pages-build.json` 对齐校验。
