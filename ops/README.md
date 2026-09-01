@@ -16,6 +16,7 @@ ops/
 ├── README.md              # 本文（运维总览）
 ├── worker-r2-ops.md       # Worker + R2：建桶、upload、git push、verify、缓存、回滚
 ├── cloudflare-workers-ai-access.md  # Workers AI 免费/付费接入
+├── prompt-ai-deploy-checklist.md    # S0 Expand/Polish 部署步骤（KV + 冒烟 + 生产）
 ├── lib/
 │   └── dev-process.mjs    # 本地 dev 进程：PID、端口、杀进程
 ├── dev/
@@ -525,6 +526,7 @@ npm run stop:dev
 | [`docs/SEO_PUBLISH_CHECKLIST.md`](../docs/SEO_PUBLISH_CHECKLIST.md) | 发版与 GSC |
 | [`docs/2026-07-28-google-seo-strategy-implementation.md`](../docs/2026-07-28-google-seo-strategy-implementation.md) | SEO 策略与 Checklist |
 | [`ops/cloudflare-workers-ai-access.md`](./cloudflare-workers-ai-access.md) | Workers AI 免费额度 / Paid 按量接入 |
+| [`ops/prompt-ai-deploy-checklist.md`](./prompt-ai-deploy-checklist.md) | Prompt AI 部署：KV、本地冒烟、生产验证 |
 | [`ops/seo/keyword-to-tool-ops.md`](./seo/keyword-to-tool-ops.md) | 关键词批次 → 新建/丰富工具（操作） |
 | [`docs/seo/keyword-to-tool-tracker.md`](../docs/seo/keyword-to-tool-tracker.md) | 同上事项跟进状态 |
 | [`ops/seo/inbound-link-outreach.md`](./seo/inbound-link-outreach.md) | 白帽入站获链月度清单 |

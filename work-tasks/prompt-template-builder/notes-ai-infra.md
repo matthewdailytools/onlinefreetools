@@ -27,6 +27,8 @@
 
 ## Dashboard 清单（人工 — cf-dashboard todo）
 
+> 分步命令见 **[Prompt AI 部署清单](../../ops/prompt-ai-deploy-checklist.md)**；KV id 写入用 `node scripts/ops/patch-rate-limit-kv.mjs`。
+
 - [ ] Workers & Pages → **Workers AI** 已开通；**Neurons usage** 可见
 - [ ] 记录账户 **Free vs Paid** 状态
 - [ ] 配置 **Billing notifications**（用量阈值告警）
