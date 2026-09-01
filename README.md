@@ -12,12 +12,17 @@
 - [在线查看 HTTP 响应头](https://onlinefreetools.org/zh/tools/website-headers) - 从边缘检查公开网址的 HTTP 响应头，含 Cache-Control / X-Robots-Tag / 重定向链的人话解读
 - [我的 IP 地址是什么？](https://onlinefreetools.org/zh/tools/ip-address) - 查看边缘节点看到的公网 IP，并说明代理/VPN 局限
 - [Markdown ↔ HTML](https://onlinefreetools.org/zh/tools/markdown-to-html) - 浏览器内 Markdown 与 HTML 双向转换：预览、安全清理与导出
-- [在线文本对比](https://onlinefreetools.org/zh/tools/text-diff) - 并排对比两段文本，高亮增删改差异
+- [查看两段文本的差异](https://onlinefreetools.org/zh/tools/text-diff) - 左右粘贴两段纯文本，按行/词/字符高亮增删；文件留在本机、不上传
+- [在线对比两个文本文件](https://onlinefreetools.org/zh/tools/compare-two-text-files-online) - 选两个 txt，按行看增删；文件留在本机、不上传
+- [对比两份 Word 文档的差异](https://onlinefreetools.org/zh/tools/compare-two-word-documents-for-differences) - 选两份 docx，抽出可见文字再看增删；不是审阅窗格；文件留在本机
+- [在线 JSON 差异检查](https://onlinefreetools.org/zh/tools/json-diff-checker-online) - 按路径对比两份 JSON，默认忽略键顺序；内容留在本机、不上传
+- [对比 Excel 文件](https://onlinefreetools.org/zh/tools/excel-compare-files) - 选两个表格，按当前工作表对格子；文件留在本机、不上传
 - [YAML ↔ JSON](https://onlinefreetools.org/zh/tools/yaml-json) - 浏览器内 YAML 与 JSON 双向转换：类型规则、多文档与本地处理
 - [CSV ↔ JSON](https://onlinefreetools.org/zh/tools/csv-json) - 浏览器内 CSV 与 JSON 双向转换：分隔符、表头、类型推断与嵌套扁平化
 - [JSON Schema 校验器](https://onlinefreetools.org/zh/tools/json-schema-validator) - 浏览器内用 draft-07 Schema 校验 JSON，并以 JSON Pointer 定位错误
 - [HTML 实体编解码](https://onlinefreetools.org/zh/tools/html-entity) - 浏览器内 HTML 实体编码与解码：范围、命名/数字形式、严格解码
 - [文件哈希校验](https://onlinefreetools.org/zh/tools/file-hash) - 在浏览器内校验文本或文件的 MD5、SHA 等十六进制摘要
+- [文件元数据分析器](https://onlinefreetools.org/zh/tools/file-metadata-analyzer) - 本地查看文件大小、MIME、修改时间，以及图片尺寸或音视频时长；文件留在设备、不上传服务器
 - [在线解压 ZIP](https://onlinefreetools.org/zh/tools/unzip-file) - 浏览器内查看 ZIP 文件树、预览文本/图片，并下载单个文件或导出全部，不上传服务器
 - [创建 zip 文件](https://onlinefreetools.org/zh/tools/create-zip-file) - 在浏览器里把多个文件打成 ZIP 下载；可保留文件夹路径；文件留在设备、不上传服务器
 - [压缩包在线解压](https://onlinefreetools.org/zh/tools/archive-extractor) - 浏览器内打开 ZIP、TAR、TAR.GZ 压缩包，预览文件并导出干净 ZIP，不上传服务器
@@ -41,6 +46,15 @@
 - [Amazon 主图尺寸](https://onlinefreetools.org/zh/tools/amazon-main-image-size) - 把商品图导出为 2000×2000 白底主图 JPEG，并提示 1000px 缩放下限；文件留在设备、不上传服务器
 - [iPhone 6.9 截图尺寸](https://onlinefreetools.org/zh/tools/iphone-app-store-screenshot) - 把截图 cover 导出为 1320×2868 等 6.9 必传档；文件留在设备、不上传服务器
 - [apple-touch-icon 180×180](https://onlinefreetools.org/zh/tools/apple-touch-icon) - 把 logo 导出为不透明 180×180 PNG，可选 32/192/512 ZIP；文件留在设备、不上传服务器
+- [iOS 应用图标尺寸](https://onlinefreetools.org/zh/tools/ios-app-icon-size) - 把 logo 导出为 App Store 1024×1024 不透明 PNG，可选 180/167/Play 512 ZIP；文件留在设备、不上传服务器
+- [LinkedIn 横幅尺寸](https://onlinefreetools.org/zh/tools/linkedin-banner-size) - 把横图 cover 为个人背景 1584×396 并预览头像安全区；文件留在设备、不上传服务器
+- [Instagram 快拍尺寸](https://onlinefreetools.org/zh/tools/instagram-story-size) - 把图 cover 为 Story 1080×1920 并预览顶/底界面安全区，Reels/TikTok/Shorts 作芯片；文件留在设备、不上传服务器
+- [YouTube 缩略图尺寸](https://onlinefreetools.org/zh/tools/youtube-thumbnail-size) - 把剧照 cover 为视频缩略图 1280×720（可选 640×360）；文件留在设备、不上传服务器
+- [Instagram 发帖尺寸](https://onlinefreetools.org/zh/tools/instagram-post-size) - 把图 cover 为动态方帖 1080×1080，可选 4:5 / 横图芯片；文件留在设备、不上传服务器
+- [ChatGPT 导出转 Markdown](https://onlinefreetools.org/zh/tools/chatgpt-export-to-markdown) - 把 ChatGPT/Claude 导出 JSON 打成 Markdown（可切 JSON/CSV）；文件留在设备、不上传服务器
+- [SVG 优化器](https://onlinefreetools.org/zh/tools/svg-optimizer) - 粘贴或拖放 SVG，选项芯片清理并对比优化前后字节与预览；文件留在设备、不上传服务器
+- [curl 转 fetch](https://onlinefreetools.org/zh/tools/curl-to-fetch) - 粘贴 cURL 命令，生成 JavaScript fetch 代码；支持方法、请求头、JSON 正文与 Basic 认证；命令留在设备、不上传服务器
+- [Prompt 模板构建器](https://onlinefreetools.org/zh/tools/prompt-template-builder) - 把草稿 Prompt 整理成 Role/Task/Constraints/Output 可复用模板（Markdown/JSON）；纯本地、不调用模型 API；文本留在本机、不上传服务器
 - [Open Graph 图片尺寸](https://onlinefreetools.org/zh/tools/open-graph-image-size) - 把图 cover 导出为 1200×630 分享卡 JPEG；文件留在设备、不上传服务器
 - [图片优化](https://onlinefreetools.org/zh/tools/image-optimizer) - 本地 MozJPEG / WebP / AVIF / OxiPNG 编码器优化，滑动对照后下载
 - [图片裁剪与改尺寸](https://onlinefreetools.org/zh/tools/image-crop) - 本地框选裁剪、比例与常用像素预设，导出 JPEG/WebP/PNG
@@ -155,12 +169,17 @@ Below are our available online tools with their links (English version):
 - [Check HTTP Response Headers](https://onlinefreetools.org/tools/website-headers) - Inspect response headers from the edge, with plain-language reads of Cache-Control, X-Robots-Tag and redirect chains
 - [What Is My IP Address?](https://onlinefreetools.org/tools/ip-address) - See the public IP our edge observes, with proxy/VPN limits explained
 - [Markdown ↔ HTML](https://onlinefreetools.org/tools/markdown-to-html) - Convert Markdown ↔ HTML with sanitize, preview, and export
-- [Text Diff Checker](https://onlinefreetools.org/tools/text-diff) - Compare two texts side by side and highlight differences
+- [Check difference between two texts](https://onlinefreetools.org/tools/text-diff) - Paste two texts and highlight adds and deletes by line, word, or character — stays on the device, not uploaded
+- [Compare two text files online](https://onlinefreetools.org/tools/compare-two-text-files-online) - Choose two .txt files and highlight line adds and deletes — stays on the device, not uploaded
+- [Compare two Word documents for differences](https://onlinefreetools.org/tools/compare-two-word-documents-for-differences) - Extract visible text from two .docx files and highlight wording changes — not Word Review Compare
+- [JSON diff checker online](https://onlinefreetools.org/tools/json-diff-checker-online) - Compare two JSON values by path, ignore key order by default — paste stays on the device
+- [Excel compare files](https://onlinefreetools.org/tools/excel-compare-files) - Compare two spreadsheets cell by cell on the current sheet — stays on the device, not uploaded
 - [YAML ↔ JSON](https://onlinefreetools.org/tools/yaml-json) - Convert YAML ↔ JSON with typing rules, multi-doc arrays, and local paste
 - [CSV ↔ JSON](https://onlinefreetools.org/tools/csv-json) - Convert CSV ↔ JSON with delimiter, header, type inference, and nested flattening
 - [JSON Schema Validator](https://onlinefreetools.org/tools/json-schema-validator) - Validate JSON against draft-07 Schema with JSON Pointer error paths — local in the browser
 - [HTML Entity Encoder & Decoder](https://onlinefreetools.org/tools/html-entity) - Encode and decode HTML entities with scope, named/decimal/hex output, and strict decode — all in-browser
 - [File Hash Checker](https://onlinefreetools.org/tools/file-hash) - Verify MD5 and SHA hex digests for pasted text or local files in your browser
+- [File metadata analyzer](https://onlinefreetools.org/tools/file-metadata-analyzer) - Inspect local file size, MIME, modified time, plus image dimensions or A/V duration — stays on the device, not uploaded
 - [Unzip File Online](https://onlinefreetools.org/tools/unzip-file) - Inspect ZIP contents, preview text/images, and download one file or export all in your browser — no server upload
 - [Create zip file](https://onlinefreetools.org/tools/create-zip-file) - Pack several files into a ZIP in your browser, keep folder paths when the browser provides them — stays on the device, not uploaded
 - [Archive Extractor Online](https://onlinefreetools.org/tools/archive-extractor) - Open ZIP, TAR, and TAR.GZ archives in your browser, preview files, and export a clean ZIP — no server upload
@@ -184,6 +203,15 @@ Below are our available online tools with their links (English version):
 - [Amazon main image size](https://onlinefreetools.org/tools/amazon-main-image-size) - Export a 2000×2000 white-background main image and check the 1000px zoom floor — stays on the device, not uploaded
 - [iPhone 6.9 screenshot size](https://onlinefreetools.org/tools/iphone-app-store-screenshot) - Cover-fill a screenshot to 1320×2868 (and the other 6.9 pairs) — stays on the device, not uploaded
 - [Apple-touch-icon 180×180](https://onlinefreetools.org/tools/apple-touch-icon) - Export an opaque 180×180 PNG (optional 32 / 192 / 512 ZIP) — stays on the device, not uploaded
+- [iOS app icon size](https://onlinefreetools.org/tools/ios-app-icon-size) - Export an opaque 1024×1024 App Store PNG (optional 180 / 167 / Play 512 ZIP) — stays on the device, not uploaded
+- [LinkedIn banner size](https://onlinefreetools.org/tools/linkedin-banner-size) - Cover-fill a 1584×396 personal background and preview the avatar overlap — stays on the device, not uploaded
+- [Instagram story size](https://onlinefreetools.org/tools/instagram-story-size) - Cover-fill 1080×1920 Story with a UI safe-zone overlay (Reels / TikTok / Shorts chips) — stays on the device, not uploaded
+- [YouTube thumbnail size](https://onlinefreetools.org/tools/youtube-thumbnail-size) - Cover-fill a 1280×720 video thumbnail (optional 640×360) — stays on the device, not uploaded
+- [Instagram post size](https://onlinefreetools.org/tools/instagram-post-size) - Cover-fill a 1080×1080 feed square (4:5 / landscape chips) — stays on the device, not uploaded
+- [ChatGPT export to Markdown](https://onlinefreetools.org/tools/chatgpt-export-to-markdown) - Turn ChatGPT/Claude export JSON into Markdown (JSON/CSV chips) — stays on the device, not uploaded
+- [SVG optimizer](https://onlinefreetools.org/tools/svg-optimizer) - Paste or drop SVG, toggle cleanup options, compare bytes with preview — stays on the device, not uploaded
+- [curl to fetch](https://onlinefreetools.org/tools/curl-to-fetch) - Paste a cURL command, get a JavaScript fetch snippet — method, headers, JSON body, Basic auth; stays on the device, not uploaded
+- [Prompt template builder](https://onlinefreetools.org/tools/prompt-template-builder) - Turn draft prompt text into a reusable Role/Task/Constraints/Output template (Markdown/JSON chips) — client-only, no LLM; stays on the device, not uploaded
 - [Open Graph image size](https://onlinefreetools.org/tools/open-graph-image-size) - Cover-fill a photo to 1200×630 share-card JPEG — stays on the device, not uploaded
 - [Image Optimizer](https://onlinefreetools.org/tools/image-optimizer) - Optimize with MozJPEG, WebP, AVIF, or OxiPNG locally — compare with a slider, then download
 - [Crop & Resize Image](https://onlinefreetools.org/tools/image-crop) - Crop with aspect presets and common output sizes — runs locally in your browser

@@ -7,8 +7,10 @@ const pt: SiteLangDict = {
     'Ferramenta grátis para comparar dois textos lado a lado. Modo linha para configs e código; modo palavra para texto e prompts; modo caractere para erros finos. Tudo no navegador — não enviamos seu texto.',
   tool_text_diff_clear: 'Limpar',
   tool_text_diff_compare: 'Comparar',
+  tool_text_diff_desc:
+    'Verificar diferenças entre dois textos colando os dois lados no navegador, sem enviar arquivos.',
   tool_text_diff_description:
-    'Compare dois textos online e veja o que mudou. Processo: cole o original e a versão revisada, escolha linha, palavra ou caractere, opcionalmente ignore espaços ou unifique quebras Windows (CRLF→LF), e destaque adições e remoções no navegador. Exemplo: mude "olá mundo" para "olá amigo" — o modo palavra mostra uma substituição.',
+    'Verificar diferenças entre dois textos no navegador. Processo: cole o original e a revisão (também se busca comparar dois textos online ou diff checker), escolha linha, palavra ou caractere, ignore espaços ou unifique CRLF e LF, e destaque adições e remoções. Os arquivos ficam no dispositivo e não são enviados. Exemplo: mude "olá mundo" para "olá amigo" — o modo palavra mostra uma substituição. Esta página é só colar texto; Word, Excel e JSON têm outras páginas.',
   tool_text_diff_empty_hint: 'Cole texto em um ou ambos os lados e compare.',
   tool_text_diff_example:
     'Exemplo (modo palavra): A = "Olá mundo", B = "Olá amigo" → uma alteração (mundo → amigo). Se só a linha do meio muda num bloco de três, o modo linha marca essa linha.',
@@ -17,11 +19,15 @@ const pt: SiteLangDict = {
   tool_text_diff_faq_a2:
     'O texto colado não é enviado nem guardado por nós — a comparação corre no browser. A página pode carregar jsdiff (open source) via CDN; isso não envia o seu texto para os nossos servidores.',
   tool_text_diff_faq_a3: 'Windows usa CRLF; Mac/Linux costumam usar LF. Ative “Tratar CRLF e LF iguais” e compare de novo.',
-  tool_text_diff_faq_a4: 'Não. Apenas texto simples.',
+  tool_text_diff_faq_a4:
+    'Não. Só texto colado — sem imagens, ZIP, Word, Excel ou JSON estruturado. Para abrir .txt, .docx ou planilhas, use a página desse formato.',
+  tool_text_diff_faq_a5:
+    'Sim: muita gente busca comparar textos online ou diff checker. Aqui isso se faz colando dois textos. O título usa a frase mais específica «verificar diferenças entre dois textos».',
   tool_text_diff_faq_q1: 'Comparar por linha ou por palavra?',
   tool_text_diff_faq_q2: 'Meu texto vai para um servidor?',
   tool_text_diff_faq_q3: 'Por que só a quebra de linha deixa a linha toda vermelha?',
-  tool_text_diff_faq_q4: 'Posso comparar imagens ou arquivos binários?',
+  tool_text_diff_faq_q4: 'Posso comparar imagens, Word ou arquivos binários?',
+  tool_text_diff_faq_q5: 'É o mesmo que um diff checker online?',
   tool_text_diff_how_body:
     'Cole duas versões, escolha linha, palavra ou caractere, e veja adições em verde e remoções em vermelho. O texto colado não é enviado nem guardado por nós. A página pode carregar a biblioteca open-source jsdiff via CDN para comparar no browser.',
   tool_text_diff_how_title: 'Como funciona',
@@ -60,5 +66,6 @@ const pt: SiteLangDict = {
   tool_text_diff_usecase_2: 'Ajustar um prompt: modo palavra para ver o que entrou ou saiu.',
   tool_text_diff_usecase_3: 'Revisar texto ou tradução: confirme que só as frases previstas mudaram.',
   tool_text_diff_usecases_title: 'Quando usar',
+  tool_text_diff_title: 'Verificar diferenças entre dois textos',
 };
 export default pt;

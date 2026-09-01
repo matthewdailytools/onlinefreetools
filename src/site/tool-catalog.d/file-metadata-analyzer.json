@@ -1,0 +1,30 @@
+{
+  "slug": "file-metadata-analyzer",
+  "path": "/tools/file-metadata-analyzer",
+  "updatedAt": "2026-09-01T10:30:00.000Z",
+  "launchedAt": "2026-09-01T10:30:00.000Z",
+  "category": "developer",
+  "primaryTopic": "security-ids",
+  "secondaryTopics": [
+    "files-archives"
+  ],
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_file_metadata_analyzer_title",
+  "homeTitleKey": "tool_file_metadata_analyzer_title",
+  "homeDescKey": "tool_file_metadata_analyzer_desc",
+  "faqPrefix": "tool_file_metadata_analyzer",
+  "related": [
+    "image-exif",
+    "file-hash"
+  ],
+  "logo": "/icons/tools/file-metadata-analyzer.svg",
+  "page": {
+    "module": "../pages/fileMetadataAnalyzerPage",
+    "export": "renderFileMetadataAnalyzerPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "developer",
+  "subject": "file"
+}

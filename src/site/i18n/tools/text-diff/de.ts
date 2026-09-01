@@ -7,8 +7,10 @@ const de: SiteLangDict = {
     'Kostenloser Textvergleich im Browser. Zeilenmodus für Configs und Code, Wortmodus für Texte und Prompts, Zeichenmodus für Tippfehler. Alles lokal — Ihr Text wird nicht hochgeladen.',
   tool_text_diff_clear: 'Leeren',
   tool_text_diff_compare: 'Vergleichen',
+  tool_text_diff_desc:
+    'Unterschied zwischen zwei Texten prüfen: beide Seiten einfügen — Zeile, Wort oder Zeichen, im Browser.',
   tool_text_diff_description:
-    'Zwei Texte online vergleichen und sehen, was sich geändert hat. Ablauf: Original und Überarbeitung einfügen, nach Zeile, Wort oder Zeichen vergleichen, optional Leerzeichen ignorieren oder Windows-Zeilenumbrüche (CRLF→LF) angleichen, dann Ergänzungen und Löschungen im Browser markieren. Beispiel: „Hallo Welt“ zu „Hallo Freund“ — im Wortmodus erscheint eine Ersetzung.',
+    'Unterschied zwischen zwei Texten im Browser prüfen. Ablauf: Original und Überarbeitung einfügen (auch Text vergleichen oder Diff-Checker genannt), nach Zeile, Wort oder Zeichen vergleichen, optional Leerzeichen ignorieren oder CRLF und LF angleichen, dann Ergänzungen und Löschungen markieren. Dateien bleiben auf dem Gerät und werden nicht hochgeladen. Beispiel: „Hallo Welt“ zu „Hallo Freund“ — im Wortmodus eine Ersetzung. Diese Seite ist nur Einfügen; Word, Excel und JSON haben eigene Seiten.',
   tool_text_diff_empty_hint: 'Text auf einer oder beiden Seiten einfügen und vergleichen.',
   tool_text_diff_example:
     'Beispiel (Wortmodus): A = "Hallo Welt", B = "Hallo Freund" → eine Änderung (Welt → Freund). Ändert sich nur die mittlere von drei Zeilen, markiert der Zeilenmodus genau diese Zeile.',
@@ -19,11 +21,15 @@ const de: SiteLangDict = {
     'Ihr eingefügter Text wird von uns nicht hochgeladen oder gespeichert — der Vergleich läuft im Browser. Die Seite kann jsdiff (Open Source) per CDN laden; Ihr Text geht dabei nicht an unsere Server.',
   tool_text_diff_faq_a3:
     'Windows nutzt oft CRLF, macOS/Linux LF. „CRLF und LF gleich behandeln“ einschalten, dann erneut vergleichen.',
-  tool_text_diff_faq_a4: 'Nein. Nur Klartext.',
+  tool_text_diff_faq_a4:
+    'Nein. Nur eingefügter Klartext — keine Bilder, ZIP, Word, Excel oder strukturiertes JSON. Für .txt, .docx oder Tabellen die jeweilige Vergleichsseite nutzen.',
+  tool_text_diff_faq_a5:
+    'Ja: Viele suchen nach Text vergleichen oder Diff-Checker. Hier erledigen Sie das per Einfügen. Die Überschrift nutzt die genauere Formulierung „Unterschied zwischen zwei Texten prüfen“.',
   tool_text_diff_faq_q1: 'Zeilen- oder Wortvergleich?',
   tool_text_diff_faq_q2: 'Wird mein Text auf einen Server geschickt?',
   tool_text_diff_faq_q3: 'Warum wird die ganze Zeile rot, obwohl nur der Umbruch anders ist?',
-  tool_text_diff_faq_q4: 'Kann ich Bilder oder Binärdateien vergleichen?',
+  tool_text_diff_faq_q4: 'Kann ich Bilder, Word oder Binärdateien vergleichen?',
+  tool_text_diff_faq_q5: 'Ist das dasselbe wie ein Online-Diff-Checker?',
   tool_text_diff_how_body:
     'Zwei Versionen einfügen, Feinheit wählen (Zeile, Wort oder Zeichen), dann grüne Zusätze und rote Löschungen prüfen. Ihr eingefügter Text wird von uns nicht hochgeladen oder gespeichert. Die Seite kann die Open-Source-Bibliothek jsdiff per CDN laden, damit der Vergleich im Browser läuft.',
   tool_text_diff_how_title: 'So funktioniert’s',
@@ -62,5 +68,6 @@ const de: SiteLangDict = {
   tool_text_diff_usecase_2: 'Prompt überarbeiten: im Wortmodus sehen, welche Formulierungen dazukamen oder weggefallen sind.',
   tool_text_diff_usecase_3: 'Texte oder Übersetzungen lektorieren: prüfen, ob nur die geplanten Sätze geändert wurden.',
   tool_text_diff_usecases_title: 'Typische Situationen',
+  tool_text_diff_title: 'Unterschied zwischen zwei Texten prüfen',
 };
 export default de;

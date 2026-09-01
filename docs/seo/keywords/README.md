@@ -30,5 +30,8 @@ python ops/seo/bing_serp/run_bing_serp.py --theme cidr --write-batch-md --batch-
 | [`measuring-magnet-fields/`](./measuring-magnet-fields/) | 磁场测量词表 |
 | [`social-share/`](./social-share/) | 社交/OG 图使用场景聚类（§3.3 H 的**渠道类示例**；规则本身全站适用） |
 | [`p0-scene/`](./p0-scene/) | 产品待办 P0 五条场景 slug 的 Bing SERP / 长尾选词（2026-08-31） |
+| [`text-diff/`](./text-diff/) | Planner CSV + Bing SERP；场景分析已被 [`text-compare/`](./text-compare/) 取代「0 build」结论 |
+| [`Compare-Text/`](./Compare-Text/) | Planner CSV 种子 |
+| [`text-compare/`](./text-compare/) | **权威**：长尾 H1 + 分场景 slug（2026-09-01 用户点名立项） |
 
 漏斗说明：[`../keyword-to-tool-funnel.md`](../keyword-to-tool-funnel.md) · 运维：[`../../ops/seo/keyword-to-tool-ops.md`](../../ops/seo/keyword-to-tool-ops.md)

@@ -73,14 +73,54 @@
 | 集群 / 优先级 | C05 开发者/文本 · 方向 A |
 | 场景与行业 | 开发者配置核对；AI Prompt 迭代；文案/译稿校对 |
 | 技术（包、Tier、本地处理） | `diff`（jsdiff）经 **CDN**（jsDelivr）加载 UMD；Tier 1；**粘贴文本纯客户端对比、不上传**；库文件来自 CDN（FAQ 须写清） |
-| Title (en) | `Compare Two Texts Online — Text Diff Checker \| {Brand}` |
-| Description | ≥120；步骤（粘贴→选方式→高亮）+ 示例；十语检索向 |
+| Title (en) | **Check difference between two texts**（Planner 原句；`<title>` 同句，layout 再拼 `\| Brand`。禁止破折号营销后缀） |
+| Description | ≥120；步骤（粘贴→选方式→高亮）+ 示例；次长尾 compare two texts online / diff checker 进 desc/FAQ；十语检索向 |
 | Schema | WebApplication + BreadcrumbList |
-| FAQ（≥3） | 行 vs 词；文本是否上传（含 CDN 说明）；换行标红；能否比图片/二进制 |
+| FAQ（≥3） | 行 vs 词；文本是否上传（含 CDN 说明）；换行标红；能否比图片/Word/二进制；与 diff checker 是否同一作业 |
 | Disclaimer / References | 非 YMYL；jsdiff、Wikipedia Diff |
-| related | `markdown-to-html`, `website-headers` |
+| related | 簇内互链：文件/Word/JSON/Excel 页上线后写入；过渡期可保留 `markdown-to-html` / `yaml-json` |
 | 验收 | `lint:seo`；`03` ≥3 轮；`README.md` 工具清单已含本工具；UI 高亮与 Example 一致 |
 | 工期粗估 | （已实现）交互 + 十语检索向 + 规则对齐优化 |
+
+## 清单前检索覆盖优化（生成页面模块清单前必做）
+
+| 项 | 结论 / 落点 |
+|---|---|
+| 日期 | 2026-09-01 |
+| slug 结论 | 保留 `text-diff` 与 `/tools/text-diff`（已收录 path；不改成 check-difference-between-two-texts） |
+| 主检索词 → title/H1 | Planner 原句 **Check difference between two texts**（大小写可句首；不加 “— Text Diff Checker”） |
+| 次要关键词 → desc / FAQ / Use cases | compare two texts online → description；diff checker / text compare online → FAQ 别称；string/paragraphs/code as text → Use cases；txt/Word/JSON/Excel → FAQ 有意不满足并划界 |
+| 用户搜索习惯判断 | 搜 check difference between two texts / compare two texts / diff checker；H1 跟紧更细任务句，短头词只进 FAQ |
+| 优化摘要 | 2026-09-01：H1 从营销后缀改为 Planner 长尾原句；次长尾进 desc/FAQ；文件类作业划出本页 |
+| [x] 已回写上方 SEO 卡片 Title / Description 与建议 slug | |
+
+## Ads / Keyword Planner 长尾（有分析时必做）
+
+- [ ] 不适用
+- [x] 已引用分析路径：`docs/seo/keywords/text-compare/2026-09-01-text-compare-topic.md`（CSV：Compare-Text / text-diff Planner）
+
+| 长尾词（Planner） | 归属 | 文案落点（H1/desc/FAQ/usecase） | 功能覆盖（控件/结果哪一步） | 不覆盖理由（若有） |
+|---|---|---|---|---|
+| check difference between two texts | build 主词 | H1 | 粘贴 A/B → 高亮 | |
+| compare two texts online | absorb | desc | 同上粘贴作业 | 前排 title 已写该短句，不进 H1 |
+| diff checker / text compare online | absorb | FAQ 别称 | 同上 | 头词不进攻 H1 |
+| string compare / paragraphs / code as text | absorb | Use cases | 字符/词/行模式 | 同粘贴作业不拆 URL |
+| compare two text files / Word / JSON / Excel | 有意不满足 | FAQ 划界 | 不提供文件选择器 | 对象不同，各有独立页 |
+
+- [x] 交互规格已按上表补齐能力（不仅写进文案）
+
+## 用户意图审查（标 ready 前必做）
+
+| 项 | 结论 |
+|---|---|
+| 日期 | 2026-09-01 |
+| 总判 | 满足：进页双栏已预填并自动跑出差异；有意不满足文件/Word/JSON/Excel |
+| 主词搜索者任务 | 把两段纯文本贴进去，看出增删改在哪 |
+| Ads/Planner 长尾任务 | check difference 能办成；compare two texts / diff checker 同作业；文件类 FAQ 划界 |
+| 满足之处 | 预填样例 + runDiff；行/词/字符；CRLF 开关 |
+| 超出 / 应划边界 | 首屏不要文件选择器；desc 不写 SEO 自述 |
+| 缺口与已做优化 | H1 改为长尾原句；FAQ 写清与文件/Word 页分工 |
+| [x] 已按审查回写 How / 交互主次 / FAQ / desc | |
 
 ## 交互规格（给实现用）
 

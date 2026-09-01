@@ -1,0 +1,8 @@
+<!-- File metadata analyzer tool icon: document + info badge -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img">
+  <rect width="32" height="32" rx="8" fill="#1d3557"/>
+  <path fill="#fff" d="M10 8h8l4 4v12a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2z"/>
+  <path fill="#a8dadc" d="M18 8v4h4"/>
+  <circle cx="22" cy="22" r="5" fill="#e63946"/>
+  <text x="22" y="24.5" text-anchor="middle" font-family="ui-sans-serif,system-ui,sans-serif" font-size="7" font-weight="700" fill="#fff">i</text>
+</svg>

@@ -7,8 +7,10 @@ const en: SiteLangDict = {
     'Use this free text diff checker to compare two strings or documents side by side. Choose line mode for configs and code, word mode for writing and prompts, and character mode for tiny edits. Everything runs locally — your paste is not uploaded.',
   tool_text_diff_clear: 'Clear',
   tool_text_diff_compare: 'Compare',
+  tool_text_diff_desc:
+    'Check the difference between two texts by pasting both sides — line, word, or character, in the browser.',
   tool_text_diff_description:
-    'Compare two texts online and see what changed. Process: paste original and revised text, pick line, word, or character mode, optionally ignore spaces or fix Windows newlines (CRLF→LF), then highlight adds and deletes in your browser. Example: change "hello world" to "hello there" — word mode shows one replacement.',
+    'Check the difference between two texts in your browser. Process: paste original and revised text (also called compare two texts online or a diff checker), pick line, word, or character mode, optionally ignore spaces or treat Windows newlines (CRLF) like LF, then highlight adds and deletes. Files stay on your device and are not uploaded. Example: change "hello world" to "hello there" — word mode shows one replacement. This page is paste-only; Word, Excel, and JSON files have their own tools.',
   tool_text_diff_empty_hint: 'Paste text on one or both sides, then compare.',
   tool_text_diff_example:
     'Example (word mode): A = "Hello world", B = "Hello there" → one change (world → there). Line mode on three lines where only the middle line differs marks that line as changed.',
@@ -19,11 +21,15 @@ const en: SiteLangDict = {
     'Your pasted text is not uploaded or stored by us — comparison runs in your browser. The page may load the open-source jsdiff library from a CDN; that does not send your text to our servers.',
   tool_text_diff_faq_a3:
     'Windows uses CRLF and Unix uses LF, so the same line can look different. Turn on “Treat CRLF and LF the same” before comparing.',
-  tool_text_diff_faq_a4: 'No. This tool is for plain text only.',
+  tool_text_diff_faq_a4:
+    'No. This page is paste-only plain text — not images, ZIP, Word, Excel, or structured JSON. Use a dedicated compare page if you need to open .txt files, .docx, JSON objects, or spreadsheets.',
+  tool_text_diff_faq_q4: 'Can I compare images, Word, or binary files?',
   tool_text_diff_faq_q1: 'Should I compare by line or by word?',
   tool_text_diff_faq_q2: 'Is my text uploaded to a server?',
   tool_text_diff_faq_q3: 'Why does a newline-only change mark a whole line red?',
-  tool_text_diff_faq_q4: 'Can I compare images or binary files?',
+  tool_text_diff_faq_q5: 'Is this the same as an online diff checker?',
+  tool_text_diff_faq_a5:
+    'Yes — people also search text compare online and diff checker. This page does that job by pasting two texts. The heading uses the more specific phrase “check difference between two texts.”',
   tool_text_diff_how_body:
     'Paste two versions of a text, pick how fine the comparison should be (line, word, or character), then review green additions and red deletions. Your pasted text stays in the browser and is not uploaded or stored by us. The page may load the open-source jsdiff library from a CDN so the checker can run.',
   tool_text_diff_how_title: 'How it works',
@@ -58,7 +64,7 @@ const en: SiteLangDict = {
   tool_text_diff_sample_b: 'Hello there\nline two\nline three',
   tool_text_diff_summary: '{added} added, {removed} removed',
   tool_text_diff_swap: 'Swap sides',
-  tool_text_diff_title: 'Compare Two Texts Online — Text Diff Checker',
+  tool_text_diff_title: 'Check difference between two texts',
   tool_text_diff_usecase_1: 'Check config changes: compare two .env or YAML snippets line by line.',
   tool_text_diff_usecase_2: 'Review prompt edits: use word mode to see which wording was added or removed.',
   tool_text_diff_usecase_3: 'Proofread copy or translations: confirm only the intended sentences changed.',

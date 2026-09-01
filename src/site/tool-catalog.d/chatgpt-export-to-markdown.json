@@ -1,0 +1,27 @@
+{
+  "slug": "chatgpt-export-to-markdown",
+  "path": "/tools/chatgpt-export-to-markdown",
+  "updatedAt": "2026-09-01T09:20:00.000Z",
+  "launchedAt": "2026-09-01T09:20:00.000Z",
+  "category": "developer",
+  "primaryTopic": "dev-data",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_chatgpt_export_to_markdown_title",
+  "homeTitleKey": "tool_chatgpt_export_to_markdown_title",
+  "homeDescKey": "tool_chatgpt_export_to_markdown_desc",
+  "faqPrefix": "tool_chatgpt_export_to_markdown",
+  "related": [
+    "yaml-json",
+    "markdown-to-html"
+  ],
+  "logo": "/icons/tools/chatgpt-export-to-markdown.svg",
+  "page": {
+    "module": "../pages/chatgptExportToMarkdownPage",
+    "export": "renderChatgptExportToMarkdownPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "developer",
+  "subject": "text"
+}

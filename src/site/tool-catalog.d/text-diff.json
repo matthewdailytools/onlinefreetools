@@ -1,9 +1,10 @@
 {
   "slug": "text-diff",
   "path": "/tools/text-diff",
-  "updatedAt": "2026-08-09T00:00:00.000Z",
+  "updatedAt": "2026-09-01T09:35:30.825Z",
   "category": "developer",
-  "primaryTopic": "dev-data",
+  "primaryTopic": "text-compare",
+  "secondaryTopics": ["dev-data"],
   "featured": true,
   "ymyl": false,
   "i18nKey": "tool_text_diff_title",
@@ -11,10 +12,10 @@
   "homeDescKey": "tool_text_diff_desc",
   "faqPrefix": "tool_text_diff",
   "related": [
-    "markdown-to-html",
-    "yaml-json",
-    "html-entity",
-    "website-headers"
+    "compare-two-text-files-online",
+    "compare-two-word-documents-for-differences",
+    "json-diff-checker-online",
+    "excel-compare-files"
   ],
   "logo": "/icons/tools/text-diff.svg",
   "page": {

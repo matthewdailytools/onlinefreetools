@@ -109,6 +109,7 @@ const ru: SiteLangDict = {
   topic_seo_growth: "SEO и рост",
   topic_network_ip: "Сеть и IP",
   topic_dev_data: "Dev и данные",
+  topic_text_compare: "Сравнение текста",
   topic_security_ids: "Безопасность и ID",
   topic_files_archives: "Файлы и архивы",
   // --- end topic labels ---

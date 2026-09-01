@@ -104,6 +104,7 @@ const ar: SiteLangDict = {
   topic_seo_growth: "SEO والنمو",
   topic_network_ip: "الشبكة وIP",
   topic_dev_data: "التطوير والبيانات",
+  topic_text_compare: "مقارنة النص",
   topic_security_ids: "الأمان والمعرّفات",
   topic_files_archives: "الملفات والأرشيف",
   // --- end topic labels ---

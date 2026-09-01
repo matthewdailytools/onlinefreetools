@@ -7,8 +7,11 @@ const es: SiteLangDict = {
     'Herramienta gratis para comparar dos textos lado a lado. Usa modo línea para configs y código; modo palabra para redacción y prompts; modo carácter para erratas. Todo ocurre en tu navegador: no subimos tu texto.',
   tool_text_diff_clear: 'Borrar',
   tool_text_diff_compare: 'Comparar',
+  tool_text_diff_desc:
+    'Comprueba las diferencias entre dos textos pegando ambos lados en el navegador, sin subir nada.',
   tool_text_diff_description:
-    'Compara dos textos online y ve qué cambió. Proceso: pega el texto original y el revisado, elige comparar por línea, por palabra o por carácter, opcionalmente ignora espacios o unifica saltos Windows (CRLF→LF), y marca añadidos y eliminados en el navegador. Ejemplo: cambia "hola mundo" por "hola amigo" — en modo palabra verás un solo cambio.',
+    'Comprobar diferencias entre dos textos en el navegador. Proceso: pega original y revisión (también se busca como comparar textos online o diff checker), elige línea, palabra o carácter, ignora espacios o iguala CRLF y LF, y marca añadidos y borrados. Los archivos se quedan en tu dispositivo y no se suben. Ejemplo: cambia "hola mundo" por "hola amigo" — en modo palabra verás un solo cambio. Esta página es solo pegar texto; Word, Excel y JSON tienen otras páginas.',
+  tool_text_diff_title: 'Comprobar diferencias entre dos textos',
   tool_text_diff_empty_hint: 'Pega texto en uno o ambos lados y pulsa Comparar.',
   tool_text_diff_example:
     'Ejemplo (modo palabra): A = "Hola mundo", B = "Hola amigo" → un cambio (mundo → amigo). Si solo cambia la línea del medio en un bloque de tres, el modo línea marca esa línea.',
@@ -18,11 +21,15 @@ const es: SiteLangDict = {
   tool_text_diff_faq_a2:
     'Tu texto pegado no se sube ni se guarda en nuestros servidores: la comparación corre en el navegador. La página puede cargar jsdiff (open source) desde un CDN; eso no envía tu texto a nuestros servidores.',
   tool_text_diff_faq_a3: 'Windows usa CRLF y Unix/Mac suelen usar LF. Activa “Igualar CRLF y LF” antes de comparar.',
-  tool_text_diff_faq_a4: 'No. Solo texto plano.',
+  tool_text_diff_faq_a4:
+    'No. Esta página es solo texto pegado: ni imágenes, ZIP, Word, Excel ni JSON estructurado. Para abrir .txt, .docx o hojas, usa la página de ese formato.',
+  tool_text_diff_faq_a5:
+    'Sí: mucha gente busca comparar textos online o diff checker. Aquí se hace pegando dos textos. El titular usa la frase más concreta «comprobar diferencias entre dos textos».',
   tool_text_diff_faq_q1: '¿Comparar por línea o por palabra?',
   tool_text_diff_faq_q2: '¿Se sube mi texto a un servidor?',
   tool_text_diff_faq_q3: '¿Por qué un cambio de salto de línea pone toda la línea en rojo?',
-  tool_text_diff_faq_q4: '¿Puedo comparar imágenes o archivos binarios?',
+  tool_text_diff_faq_q4: '¿Puedo comparar imágenes, Word o archivos binarios?',
+  tool_text_diff_faq_q5: '¿Es lo mismo que un diff checker online?',
   tool_text_diff_how_body:
     'Pega dos versiones, elige si quieres ver cambios por línea, palabra o carácter, y revisa en verde lo añadido y en rojo lo borrado. Tu texto pegado no se sube ni se guarda en nuestros servidores. La página puede cargar la librería open-source jsdiff desde un CDN para poder comparar en el navegador.',
   tool_text_diff_how_title: 'Cómo usarlo',

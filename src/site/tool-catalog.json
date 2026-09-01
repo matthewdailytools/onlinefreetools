@@ -212,6 +212,28 @@
     "launchedAt": "2026-08-08T17:55:12+08:00"
   },
   {
+    "slug": "chatgpt-export-to-markdown",
+    "path": "/tools/chatgpt-export-to-markdown",
+    "updatedAt": "2026-09-01T09:20:00.000Z",
+    "launchedAt": "2026-09-01T09:20:00.000Z",
+    "category": "developer",
+    "primaryTopic": "dev-data",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_chatgpt_export_to_markdown_title",
+    "homeTitleKey": "tool_chatgpt_export_to_markdown_title",
+    "homeDescKey": "tool_chatgpt_export_to_markdown_desc",
+    "faqPrefix": "tool_chatgpt_export_to_markdown",
+    "related": [
+      "yaml-json",
+      "markdown-to-html"
+    ],
+    "logo": "/icons/tools/chatgpt-export-to-markdown.svg",
+    "localProcessing": true,
+    "scenario": "developer",
+    "subject": "text"
+  },
+  {
     "slug": "cidr-cheat-sheet",
     "path": "/tools/cidr-cheat-sheet",
     "updatedAt": "2026-08-31T03:10:00.000Z",
@@ -279,6 +301,56 @@
     "scenario": "design",
     "subject": "color",
     "launchedAt": "2026-08-08T12:24:02+08:00"
+  },
+  {
+    "slug": "compare-two-text-files-online",
+    "path": "/tools/compare-two-text-files-online",
+    "updatedAt": "2026-09-01T08:40:00.000Z",
+    "launchedAt": "2026-09-01T08:40:00.000Z",
+    "category": "developer",
+    "primaryTopic": "text-compare",
+    "secondaryTopics": [
+      "dev-data"
+    ],
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_compare_two_text_files_online_title",
+    "homeTitleKey": "tool_compare_two_text_files_online_title",
+    "homeDescKey": "tool_compare_two_text_files_online_desc",
+    "faqPrefix": "tool_compare_two_text_files_online",
+    "related": [
+      "text-diff",
+      "yaml-json"
+    ],
+    "logo": "/icons/tools/compare-two-text-files-online.svg",
+    "localProcessing": true,
+    "scenario": "developer",
+    "subject": "text"
+  },
+  {
+    "slug": "compare-two-word-documents-for-differences",
+    "path": "/tools/compare-two-word-documents-for-differences",
+    "updatedAt": "2026-09-01T08:41:00.000Z",
+    "launchedAt": "2026-09-01T08:41:00.000Z",
+    "category": "developer",
+    "primaryTopic": "text-compare",
+    "secondaryTopics": [
+      "pdf-docs"
+    ],
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_compare_two_word_documents_for_differences_title",
+    "homeTitleKey": "tool_compare_two_word_documents_for_differences_title",
+    "homeDescKey": "tool_compare_two_word_documents_for_differences_desc",
+    "faqPrefix": "tool_compare_two_word_documents_for_differences",
+    "related": [
+      "text-diff",
+      "compare-two-text-files-online"
+    ],
+    "logo": "/icons/tools/compare-two-word-documents-for-differences.svg",
+    "localProcessing": true,
+    "scenario": "documents",
+    "subject": "text"
   },
   {
     "slug": "compress-pdf",
@@ -397,6 +469,31 @@
     "launchedAt": "2026-08-06T14:58:37Z"
   },
   {
+    "slug": "curl-to-fetch",
+    "path": "/tools/curl-to-fetch",
+    "updatedAt": "2026-09-01T10:11:26.112Z",
+    "launchedAt": "2026-09-01T10:04:00.000Z",
+    "category": "developer",
+    "primaryTopic": "dev-data",
+    "secondaryTopics": [
+      "security-ids"
+    ],
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_curl_to_fetch_title",
+    "homeTitleKey": "tool_curl_to_fetch_title",
+    "homeDescKey": "tool_curl_to_fetch_desc",
+    "faqPrefix": "tool_curl_to_fetch",
+    "related": [
+      "website-headers",
+      "jwt-decoder"
+    ],
+    "logo": "/icons/tools/curl-to-fetch.svg",
+    "localProcessing": true,
+    "scenario": "developer",
+    "subject": "text"
+  },
+  {
     "slug": "domain-lookup",
     "path": "/tools/domain-lookup",
     "updatedAt": "2026-08-09T00:00:00.000Z",
@@ -418,6 +515,32 @@
     "scenario": "seo",
     "subject": "network",
     "launchedAt": "2026-08-08T21:33:07+08:00"
+  },
+  {
+    "slug": "excel-compare-files",
+    "path": "/tools/excel-compare-files",
+    "updatedAt": "2026-09-01T08:43:00.000Z",
+    "launchedAt": "2026-09-01T08:43:00.000Z",
+    "category": "developer",
+    "primaryTopic": "text-compare",
+    "secondaryTopics": [
+      "dev-data"
+    ],
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_excel_compare_files_title",
+    "homeTitleKey": "tool_excel_compare_files_title",
+    "homeDescKey": "tool_excel_compare_files_desc",
+    "faqPrefix": "tool_excel_compare_files",
+    "related": [
+      "csv-json",
+      "text-diff",
+      "compare-two-text-files-online"
+    ],
+    "logo": "/icons/tools/excel-compare-files.svg",
+    "localProcessing": true,
+    "scenario": "documents",
+    "subject": "data"
   },
   {
     "slug": "file-hash",
@@ -443,6 +566,31 @@
     "scenario": "developer",
     "subject": "data",
     "launchedAt": "2026-08-08T19:34:20+08:00"
+  },
+  {
+    "slug": "file-metadata-analyzer",
+    "path": "/tools/file-metadata-analyzer",
+    "updatedAt": "2026-09-01T10:30:00.000Z",
+    "launchedAt": "2026-09-01T10:30:00.000Z",
+    "category": "developer",
+    "primaryTopic": "security-ids",
+    "secondaryTopics": [
+      "files-archives"
+    ],
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_file_metadata_analyzer_title",
+    "homeTitleKey": "tool_file_metadata_analyzer_title",
+    "homeDescKey": "tool_file_metadata_analyzer_desc",
+    "faqPrefix": "tool_file_metadata_analyzer",
+    "related": [
+      "image-exif",
+      "file-hash"
+    ],
+    "logo": "/icons/tools/file-metadata-analyzer.svg",
+    "localProcessing": true,
+    "scenario": "developer",
+    "subject": "file"
   },
   {
     "slug": "flip-image",
@@ -2285,6 +2433,72 @@
     "launchedAt": "2026-08-07T07:20:17+08:00"
   },
   {
+    "slug": "instagram-post-size",
+    "path": "/tools/instagram-post-size",
+    "updatedAt": "2026-09-01T09:00:00.000Z",
+    "launchedAt": "2026-09-01T09:00:00.000Z",
+    "category": "image",
+    "primaryTopic": "image-media",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_instagram_post_size_title",
+    "homeTitleKey": "tool_instagram_post_size_title",
+    "homeDescKey": "tool_instagram_post_size_desc",
+    "faqPrefix": "tool_instagram_post_size",
+    "related": [
+      "instagram-story-size",
+      "open-graph-image-size"
+    ],
+    "logo": "/icons/tools/instagram-post-size.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "image"
+  },
+  {
+    "slug": "instagram-story-size",
+    "path": "/tools/instagram-story-size",
+    "updatedAt": "2026-09-01T08:20:00.000Z",
+    "launchedAt": "2026-09-01T08:20:00.000Z",
+    "category": "image",
+    "primaryTopic": "image-media",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_instagram_story_size_title",
+    "homeTitleKey": "tool_instagram_story_size_title",
+    "homeDescKey": "tool_instagram_story_size_desc",
+    "faqPrefix": "tool_instagram_story_size",
+    "related": [
+      "linkedin-banner-size",
+      "open-graph-image-size"
+    ],
+    "logo": "/icons/tools/instagram-story-size.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "image"
+  },
+  {
+    "slug": "ios-app-icon-size",
+    "path": "/tools/ios-app-icon-size",
+    "updatedAt": "2026-09-01T05:40:00.000Z",
+    "launchedAt": "2026-09-01T05:40:00.000Z",
+    "category": "image",
+    "primaryTopic": "image-media",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_ios_app_icon_size_title",
+    "homeTitleKey": "tool_ios_app_icon_size_title",
+    "homeDescKey": "tool_ios_app_icon_size_desc",
+    "faqPrefix": "tool_ios_app_icon_size",
+    "related": [
+      "iphone-app-store-screenshot",
+      "apple-touch-icon"
+    ],
+    "logo": "/icons/tools/ios-app-icon-size.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "image"
+  },
+  {
     "slug": "ip-address",
     "path": "/tools/ip-address",
     "updatedAt": "2026-08-09T00:00:00.000Z",
@@ -2376,6 +2590,32 @@
     "subject": "network"
   },
   {
+    "slug": "json-diff-checker-online",
+    "path": "/tools/json-diff-checker-online",
+    "updatedAt": "2026-09-01T08:42:00.000Z",
+    "launchedAt": "2026-09-01T08:42:00.000Z",
+    "category": "developer",
+    "primaryTopic": "text-compare",
+    "secondaryTopics": [
+      "dev-data"
+    ],
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_json_diff_checker_online_title",
+    "homeTitleKey": "tool_json_diff_checker_online_title",
+    "homeDescKey": "tool_json_diff_checker_online_desc",
+    "faqPrefix": "tool_json_diff_checker_online",
+    "related": [
+      "json-schema-validator",
+      "yaml-json",
+      "text-diff"
+    ],
+    "logo": "/icons/tools/json-diff-checker-online.svg",
+    "localProcessing": true,
+    "scenario": "developer",
+    "subject": "data"
+  },
+  {
     "slug": "json-schema-validator",
     "path": "/tools/json-schema-validator",
     "updatedAt": "2026-08-09T00:00:00.000Z",
@@ -2421,6 +2661,28 @@
     "scenario": "developer",
     "subject": "text",
     "launchedAt": "2026-08-08T19:34:20+08:00"
+  },
+  {
+    "slug": "linkedin-banner-size",
+    "path": "/tools/linkedin-banner-size",
+    "updatedAt": "2026-09-01T05:55:00.000Z",
+    "launchedAt": "2026-09-01T05:55:00.000Z",
+    "category": "image",
+    "primaryTopic": "image-media",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_linkedin_banner_size_title",
+    "homeTitleKey": "tool_linkedin_banner_size_title",
+    "homeDescKey": "tool_linkedin_banner_size_desc",
+    "faqPrefix": "tool_linkedin_banner_size",
+    "related": [
+      "open-graph-image-size",
+      "image-crop"
+    ],
+    "logo": "/icons/tools/linkedin-banner-size.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "image"
   },
   {
     "slug": "magnet-link-decoder",
@@ -2834,6 +3096,28 @@
     "subject": "network"
   },
   {
+    "slug": "prompt-template-builder",
+    "path": "/tools/prompt-template-builder",
+    "updatedAt": "2026-09-01T10:12:00.000Z",
+    "launchedAt": "2026-09-01T10:12:00.000Z",
+    "category": "developer",
+    "primaryTopic": "dev-data",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_prompt_template_builder_title",
+    "homeTitleKey": "tool_prompt_template_builder_title",
+    "homeDescKey": "tool_prompt_template_builder_desc",
+    "faqPrefix": "tool_prompt_template_builder",
+    "related": [
+      "chatgpt-export-to-markdown",
+      "json-schema-validator"
+    ],
+    "logo": "/icons/tools/prompt-template-builder.svg",
+    "localProcessing": true,
+    "scenario": "developer",
+    "subject": "text"
+  },
+  {
     "slug": "protect-pdf",
     "path": "/tools/protect-pdf",
     "updatedAt": "2026-08-09T00:00:00.000Z",
@@ -3030,6 +3314,31 @@
     "launchedAt": "2026-01-15T10:21:13+08:00"
   },
   {
+    "slug": "svg-optimizer",
+    "path": "/tools/svg-optimizer",
+    "updatedAt": "2026-09-01T09:46:00.000Z",
+    "launchedAt": "2026-09-01T09:46:00.000Z",
+    "category": "image",
+    "primaryTopic": "image-media",
+    "secondaryTopics": [
+      "seo-growth"
+    ],
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_svg_optimizer_title",
+    "homeTitleKey": "tool_svg_optimizer_title",
+    "homeDescKey": "tool_svg_optimizer_desc",
+    "faqPrefix": "tool_svg_optimizer",
+    "related": [
+      "image-optimizer",
+      "html-entity"
+    ],
+    "logo": "/icons/tools/svg-optimizer.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "image"
+  },
+  {
     "slug": "terraform-cidrsubnet",
     "path": "/tools/terraform-cidrsubnet",
     "updatedAt": "2026-08-28T10:44:02.953Z",
@@ -3059,9 +3368,12 @@
   {
     "slug": "text-diff",
     "path": "/tools/text-diff",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-09-01T09:35:30.825Z",
     "category": "developer",
-    "primaryTopic": "dev-data",
+    "primaryTopic": "text-compare",
+    "secondaryTopics": [
+      "dev-data"
+    ],
     "featured": true,
     "ymyl": false,
     "i18nKey": "tool_text_diff_title",
@@ -3069,10 +3381,10 @@
     "homeDescKey": "tool_text_diff_desc",
     "faqPrefix": "tool_text_diff",
     "related": [
-      "markdown-to-html",
-      "yaml-json",
-      "html-entity",
-      "website-headers"
+      "compare-two-text-files-online",
+      "compare-two-word-documents-for-differences",
+      "json-diff-checker-online",
+      "excel-compare-files"
     ],
     "logo": "/icons/tools/text-diff.svg",
     "localProcessing": true,
@@ -3330,5 +3642,27 @@
     "scenario": "developer",
     "subject": "text",
     "launchedAt": "2026-08-06T21:38:35+08:00"
+  },
+  {
+    "slug": "youtube-thumbnail-size",
+    "path": "/tools/youtube-thumbnail-size",
+    "updatedAt": "2026-09-01T08:30:00.000Z",
+    "launchedAt": "2026-09-01T08:30:00.000Z",
+    "category": "image",
+    "primaryTopic": "image-media",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_youtube_thumbnail_size_title",
+    "homeTitleKey": "tool_youtube_thumbnail_size_title",
+    "homeDescKey": "tool_youtube_thumbnail_size_desc",
+    "faqPrefix": "tool_youtube_thumbnail_size",
+    "related": [
+      "open-graph-image-size",
+      "instagram-story-size"
+    ],
+    "logo": "/icons/tools/youtube-thumbnail-size.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "image"
   }
 ]

@@ -21,6 +21,7 @@ export const TOOL_TOPIC_ORDER = [
   'seo-growth',
   'network-ip',
   'dev-data',
+  'text-compare',
   'security-ids',
   'files-archives',
 ];

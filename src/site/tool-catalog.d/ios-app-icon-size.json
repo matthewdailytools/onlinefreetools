@@ -1,0 +1,27 @@
+{
+  "slug": "ios-app-icon-size",
+  "path": "/tools/ios-app-icon-size",
+  "updatedAt": "2026-09-01T05:40:00.000Z",
+  "launchedAt": "2026-09-01T05:40:00.000Z",
+  "category": "image",
+  "primaryTopic": "image-media",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_ios_app_icon_size_title",
+  "homeTitleKey": "tool_ios_app_icon_size_title",
+  "homeDescKey": "tool_ios_app_icon_size_desc",
+  "faqPrefix": "tool_ios_app_icon_size",
+  "related": [
+    "iphone-app-store-screenshot",
+    "apple-touch-icon"
+  ],
+  "logo": "/icons/tools/ios-app-icon-size.svg",
+  "page": {
+    "module": "../pages/iosAppIconSizePage",
+    "export": "renderIosAppIconSizePage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "image"
+}

@@ -1,0 +1,27 @@
+{
+  "slug": "prompt-template-builder",
+  "path": "/tools/prompt-template-builder",
+  "updatedAt": "2026-09-01T10:12:00.000Z",
+  "launchedAt": "2026-09-01T10:12:00.000Z",
+  "category": "developer",
+  "primaryTopic": "dev-data",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_prompt_template_builder_title",
+  "homeTitleKey": "tool_prompt_template_builder_title",
+  "homeDescKey": "tool_prompt_template_builder_desc",
+  "faqPrefix": "tool_prompt_template_builder",
+  "related": [
+    "chatgpt-export-to-markdown",
+    "json-schema-validator"
+  ],
+  "logo": "/icons/tools/prompt-template-builder.svg",
+  "page": {
+    "module": "../pages/promptTemplateBuilderPage",
+    "export": "renderPromptTemplateBuilderPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "developer",
+  "subject": "text"
+}

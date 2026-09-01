@@ -7,8 +7,10 @@ const fr: SiteLangDict = {
     'Outil gratuit pour comparer deux textes côte à côte. Mode ligne pour configs et code ; mode mot pour rédaction et prompts ; mode caractère pour les coquilles. Tout reste dans votre navigateur — rien n’est envoyé.',
   tool_text_diff_clear: 'Effacer',
   tool_text_diff_compare: 'Comparer',
+  tool_text_diff_desc:
+    'Vérifier les différences entre deux textes en collant les deux côtés dans le navigateur, sans envoi.',
   tool_text_diff_description:
-    'Comparez deux textes en ligne et voyez ce qui a changé. Processus : collez l’original et la version modifiée, choisissez ligne, mot ou caractère, ignorez éventuellement les espaces ou unifiez les fins de ligne Windows (CRLF→LF), puis surlignez ajouts et suppressions dans le navigateur. Exemple : passez de « bonjour monde » à « bonjour ami » — le mode mot montre un seul remplacement.',
+    'Vérifier les différences entre deux textes dans le navigateur. Processus : collez l’original et la version modifiée (on cherche aussi comparer deux textes ou diff checker), choisissez ligne, mot ou caractère, ignorez éventuellement les espaces ou unifiez CRLF et LF, puis surlignez ajouts et suppressions. Les fichiers restent sur l’appareil et ne sont pas envoyés. Exemple : « bonjour monde » → « bonjour ami » — le mode mot montre un seul remplacement. Cette page est du collage seul ; Word, Excel et JSON ont d’autres pages.',
   tool_text_diff_empty_hint: 'Collez du texte d’un côté ou des deux, puis comparez.',
   tool_text_diff_example:
     'Exemple (mode mot) : A = « Bonjour monde », B = « Bonjour ami » → un changement (monde → ami). Si seule la ligne du milieu change dans un bloc de trois, le mode ligne la marque.',
@@ -19,11 +21,15 @@ const fr: SiteLangDict = {
     'Votre texte collé n’est ni envoyé ni stocké chez nous — la comparaison se fait dans le navigateur. La page peut charger jsdiff (open source) via un CDN ; cela n’envoie pas votre texte à nos serveurs.',
   tool_text_diff_faq_a3:
     'Windows utilise souvent CRLF, macOS/Linux LF. Activez « Traiter CRLF et LF de la même façon » puis comparez.',
-  tool_text_diff_faq_a4: 'Non. Texte brut uniquement.',
+  tool_text_diff_faq_a4:
+    'Non. Uniquement du texte collé — pas d’images, ZIP, Word, Excel ni JSON structuré. Pour ouvrir des .txt, .docx ou tableurs, utilisez la page correspondante.',
+  tool_text_diff_faq_a5:
+    'Oui : beaucoup cherchent comparer des textes ou un diff checker. Ici on le fait en collant deux textes. Le titre reprend la formulation plus précise « vérifier les différences entre deux textes ».',
   tool_text_diff_faq_q1: 'Comparer par ligne ou par mot ?',
   tool_text_diff_faq_q2: 'Mon texte est-il envoyé sur un serveur ?',
   tool_text_diff_faq_q3: 'Pourquoi un simple saut de ligne met toute la ligne en rouge ?',
-  tool_text_diff_faq_q4: 'Puis-je comparer des images ou des fichiers binaires ?',
+  tool_text_diff_faq_q4: 'Puis-je comparer des images, Word ou des fichiers binaires ?',
+  tool_text_diff_faq_q5: 'Est-ce la même chose qu’un diff checker en ligne ?',
   tool_text_diff_how_body:
     'Collez deux versions, choisissez la finesse (ligne, mot ou caractère), puis regardez les ajouts en vert et les suppressions en rouge. Votre texte collé n’est ni envoyé ni stocké chez nous. La page peut charger la bibliothèque open-source jsdiff via un CDN pour comparer dans le navigateur.',
   tool_text_diff_how_title: 'Comment ça marche',
@@ -62,5 +68,6 @@ const fr: SiteLangDict = {
   tool_text_diff_usecase_2: 'Retoucher un prompt : mode mot pour voir les formulations ajoutées ou retirées.',
   tool_text_diff_usecase_3: 'Relire un texte ou une traduction : confirmez que seules les phrases voulues ont changé.',
   tool_text_diff_usecases_title: 'Cas concrets',
+  tool_text_diff_title: 'Vérifier les différences entre deux textes',
 };
 export default fr;

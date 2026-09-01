@@ -1,0 +1,30 @@
+{
+  "slug": "svg-optimizer",
+  "path": "/tools/svg-optimizer",
+  "updatedAt": "2026-09-01T09:46:00.000Z",
+  "launchedAt": "2026-09-01T09:46:00.000Z",
+  "category": "image",
+  "primaryTopic": "image-media",
+  "secondaryTopics": [
+    "seo-growth"
+  ],
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_svg_optimizer_title",
+  "homeTitleKey": "tool_svg_optimizer_title",
+  "homeDescKey": "tool_svg_optimizer_desc",
+  "faqPrefix": "tool_svg_optimizer",
+  "related": [
+    "image-optimizer",
+    "html-entity"
+  ],
+  "logo": "/icons/tools/svg-optimizer.svg",
+  "page": {
+    "module": "../pages/svgOptimizerPage",
+    "export": "renderSvgOptimizerPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "image"
+}

@@ -6,19 +6,23 @@ const ja: SiteLangDict = {
   tool_text_diff_article: '無料のテキスト差分比較。設定やコードは行単位、文章やプロンプトは単語単位、細かい誤字は文字単位が向いています。処理はブラウザ内のみで、入力内容はサーバーに送りません。',
   tool_text_diff_clear: 'クリア',
   tool_text_diff_compare: '比較する',
+  tool_text_diff_desc:
+    '2つのテキストの差分を確認：左右に貼り付けて追加と削除を色分け。ファイルは端末に残り、サーバーへ送りません。',
   tool_text_diff_description:
-    '2つのテキストをオンラインで比較し、どこが変わったか確認できます。手順: 原文と修正後を貼り付け、行・単語・文字のどれで比べるか選び、必要なら空白を無視したり Windows の改行（CRLF→LF）を揃えたりして、ブラウザ内で追加と削除を色分け表示。例: 「こんにちは世界」を「こんにちは友人」に変えると、単語モードでは1か所の置換だけが分かります。',
+    '2つのテキストの差分を確認できます。手順: 原文と修正後を貼り付け（テキスト比較や diff checker とも呼ばれます）、行・単語・文字のどれで比べるか選び、必要なら空白を無視したり Windows の改行（CRLF→LF）を揃えたりして、ブラウザ内で追加と削除を色分け。ファイルは端末に残り、サーバーへ送りません。例: 「こんにちは世界」を「こんにちは友人」に変えると、単語モードでは1か所の置換だけ。このページは貼り付け専用です。Word・表・JSON は別ページです。',
   tool_text_diff_empty_hint: '片方または両方にテキストを貼り付けてから比較してください。',
   tool_text_diff_example: '例（単語モード）: A = 「こんにちは世界」, B = 「こんにちは友人」→ 変更は1か所（世界 → 友人）。3行のうち真ん中だけ変えた場合、行モードではその行だけがマークされます。',
   tool_text_diff_example_title: '例',
   tool_text_diff_faq_a1: 'コードや設定は行。文章・メール・プロンプトは単語 — 変わった単語だけが目立ちます。',
   tool_text_diff_faq_a2: '貼り付けた本文は当社へ送信・保存しません。比較はブラウザ内で行います。ページが CDN から jsdiff（オープンソース）を読み込むことがありますが、本文は当社サーバーには送られません。',
   tool_text_diff_faq_a3: 'Windows は CRLF、Mac/Linux は LF が多いためです。「CRLF と LF を同じに扱う」をオンにしてから比較してください。',
-  tool_text_diff_faq_a4: 'いいえ。プレーンテキスト専用です。',
+  tool_text_diff_faq_a4: 'いいえ。貼り付けのプレーンテキストだけです。画像、ZIP、Word、Excel、構造化 JSON は扱えません。txt や Word を開くなら、その専用ページを使ってください。',
+  tool_text_diff_faq_a5: 'はい。テキスト比較や diff checker で探す人も多いです。ここでは2つの文章を貼り付けて同じ作業をします。見出しはより具体的な「2つのテキストの差分を確認」です。',
   tool_text_diff_faq_q1: '行と単語、どちらで比べる？',
   tool_text_diff_faq_q2: '入力したテキストはサーバーに送られますか？',
   tool_text_diff_faq_q3: '改行だけ違うのに行全体が赤くなるのはなぜ？',
-  tool_text_diff_faq_q4: '画像やバイナリも比較できますか？',
+  tool_text_diff_faq_q4: '画像や Word、バイナリも比較できますか？',
+  tool_text_diff_faq_q5: 'オンラインの diff checker と同じですか？',
   tool_text_diff_how_body:
     '2つの版を貼り付け、行・単語・文字のどれで見るかを選び、緑の追加と赤の削除を確認します。貼り付けた本文は当社へ送信・保存しません。比較のため、ページが CDN からオープンソースの jsdiff を読み込む場合があります。',
   tool_text_diff_how_title: '使い方',
@@ -53,5 +57,6 @@ const ja: SiteLangDict = {
   tool_text_diff_usecase_2: 'プロンプトの修正前後: 単語単位で、どの言い回しが増減したかを見る。',
   tool_text_diff_usecase_3: '校正・翻訳チェック: 意図した文だけが変わっているか確認する。',
   tool_text_diff_usecases_title: 'こんなときに',
+  tool_text_diff_title: '2つのテキストの差分を確認',
 };
 export default ja;

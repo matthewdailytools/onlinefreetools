@@ -1,0 +1,27 @@
+{
+  "slug": "instagram-story-size",
+  "path": "/tools/instagram-story-size",
+  "updatedAt": "2026-09-01T08:20:00.000Z",
+  "launchedAt": "2026-09-01T08:20:00.000Z",
+  "category": "image",
+  "primaryTopic": "image-media",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_instagram_story_size_title",
+  "homeTitleKey": "tool_instagram_story_size_title",
+  "homeDescKey": "tool_instagram_story_size_desc",
+  "faqPrefix": "tool_instagram_story_size",
+  "related": [
+    "linkedin-banner-size",
+    "open-graph-image-size"
+  ],
+  "logo": "/icons/tools/instagram-story-size.svg",
+  "page": {
+    "module": "../pages/instagramStorySizePage",
+    "export": "renderInstagramStorySizePage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "image"
+}

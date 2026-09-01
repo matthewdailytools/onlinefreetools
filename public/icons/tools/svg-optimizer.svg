@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img">
+  <!-- tool icon: svg optimizer -->
+  <rect width="32" height="32" rx="8" fill="#5b21b6"/>
+  <!-- vector path -->
+  <path d="M8 22 L16 8 L24 22 Z" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="16" cy="18" r="2.5" fill="#fff"/>
+  <!-- shrink arrow -->
+  <path d="M22 10 h4 v4 M24 10 L20 14" fill="none" stroke="#c4b5fd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

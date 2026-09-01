@@ -1,0 +1,27 @@
+{
+  "slug": "instagram-post-size",
+  "path": "/tools/instagram-post-size",
+  "updatedAt": "2026-09-01T09:00:00.000Z",
+  "launchedAt": "2026-09-01T09:00:00.000Z",
+  "category": "image",
+  "primaryTopic": "image-media",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_instagram_post_size_title",
+  "homeTitleKey": "tool_instagram_post_size_title",
+  "homeDescKey": "tool_instagram_post_size_desc",
+  "faqPrefix": "tool_instagram_post_size",
+  "related": [
+    "instagram-story-size",
+    "open-graph-image-size"
+  ],
+  "logo": "/icons/tools/instagram-post-size.svg",
+  "page": {
+    "module": "../pages/instagramPostSizePage",
+    "export": "renderInstagramPostSizePage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "image"
+}

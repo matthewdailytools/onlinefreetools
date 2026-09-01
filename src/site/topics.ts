@@ -26,6 +26,7 @@ export type ToolTopic =
 	| 'seo-growth'
 	| 'network-ip'
 	| 'dev-data'
+	| 'text-compare'
 	| 'security-ids'
 	| 'files-archives';
 
@@ -45,6 +46,7 @@ export const TOOL_TOPIC_ORDER: ToolTopic[] = [
 	'seo-growth',
 	'network-ip',
 	'dev-data',
+	'text-compare',
 	'security-ids',
 	'files-archives',
 ];

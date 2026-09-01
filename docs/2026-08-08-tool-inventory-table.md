@@ -57,6 +57,7 @@
 | 旧清单 slug | 处理 |
 |---|---|
 | `json-schema-validator`、`unzip-file`、`archive-extractor` | catalog 已有 |
+| `ios-app-icon-size`、`linkedin-banner-size`、`instagram-story-size`、`youtube-thumbnail-size`、`instagram-post-size`、`chatgpt-export-to-markdown`、`svg-optimizer`、`curl-to-fetch`、`prompt-template-builder`、`file-metadata-analyzer` | 2026-09-01 catalog 已上线 |
 | `extract-archive` | **absorb** → `archive-extractor`（导出 ZIP 模式） |
 | `cidr-calculator` | **已覆盖** → `cidr-to-ip-range` 簇（禁再注册该头词 slug） |
 | `wcag-contrast-checker`、`brand-color-token-pack`、设计师/PDF/计算器 §9 已上线项 | 见分节「已上线」行 |
@@ -77,18 +78,7 @@
 
 ### P1（紧随；场景句，待 SERP）
 
-| 建议 slug | 使用场景 | absorb / 边界 |
-|---|---|---|
-| `ios-app-icon-size` | 1024 Logo → **iOS App 图标**倍率 | Play 图标若规则不同可同页芯片，勿先拆 `google-play-asset-pack` |
-| `linkedin-banner-size` | LinkedIn **个人背景横幅** + 安全区 | FB 封面、X header、YT 频道图芯片；`youtube-channel-art-pack` 不独立 |
-| `instagram-story-size` | IG **Story** 9:16 | Reels / TikTok / Shorts 封面 |
-| `youtube-thumbnail-size` | YouTube **视频缩略图** | 勿与 OG 链接卡混 H1 |
-| `instagram-post-size` | IG **方图发帖** | 4:5、FB 动态配图 |
-| `chatgpt-export-to-markdown` | 把 ChatGPT/Claude **导出**打成 MD/JSON | 旧 `chat-export-converter` |
-| `svg-optimizer` | 压缩 SVG 并看体积对比 | 对标 SVGOMG 交互 |
-| `curl-to-fetch` | 把 **cURL** 转成 fetch | — |
-| `prompt-template-builder` | 把一段 Prompt **固化成**角色/任务模板 | — |
-| `file-metadata-analyzer` | 看本地文件 **分辨率/时长/容器字段** | Aconvert P1；不插队 P0 |
+> **2026-09-01**：§0 P1 队列已全部上线；下表待新 SERP 批次再填。
 
 `qr-code-generator`：头词生成器，**不进 P1 进攻** → P2。  
 `color-converter` → absorb `brand-color-token-pack`。  
@@ -144,15 +134,16 @@
 | 11 | JSON Schema 校验器 | B1/B4/B5；C-V1 | `json-schema-validator` | 用 Schema 校验 JSON，定位路径错误 | developer | AI 工程、后端、电商 feed | Schema + JSON | 通过/失败 + JSON Pointer | 已上线 |
 | 12 | Safe Paste 清理 | B1；漏斗 defer | `safe-paste-cleaner` | 清除零宽/隐藏字符等脏粘贴 | developer | Prompt 工程师、AI 用户 | 脏文本 | 干净文本 + 清除项说明 | 未开始 · P2 |
 | 13 | AI Token 计数 | B1；漏斗 defer | `ai-token-counter` | 估算 Prompt token 与费用 | developer | AI 开发者、产品 | Prompt 文本 + 模型/价表假设 | token 数与费用估算 | 未开始 · P2 |
-| 14 | Prompt 模板构建 | B1 | `prompt-template-builder` | 把自由文本固化为角色/任务/约束模板 | developer | AI 应用开发者 | 自由文本或字段 | 结构化 Prompt 模板 | 未开始 · P1 |
-| 15 | 聊天导出转 Markdown | B2 RAG；§3.3 H | `chatgpt-export-to-markdown`（旧 `chat-export-converter`） | 把 ChatGPT/Claude 导出打成 MD/JSON/CSV | developer | 数据工程、AI 训练准备 | Chat 导出文件/文本 | MD / JSON / CSV | 未开始 · P1 |
+| 14 | Prompt 模板构建 | B1 | `prompt-template-builder` | 把自由文本固化为角色/任务/约束模板 | developer | AI 应用开发者 | 自由文本或字段 | 结构化 Prompt 模板 | 已上线 |
+| 15 | 聊天导出转 Markdown | B2 RAG；§3.3 H | `chatgpt-export-to-markdown`（旧 `chat-export-converter`） | 把 ChatGPT/Claude 导出打成 MD/JSON/CSV | developer | 数据工程、AI 训练准备 | Chat 导出文件/文本 | MD / JSON / CSV | 已上线 |
 | 16 | SQL 格式化 | A.1 | `sql-formatter` | SQL 美化/缩进 | developer | 后端、数据分析 | SQL 文本 | 格式化 SQL | 未开始 · P2 |
-| 17 | cURL → fetch | A.10；B5 | `curl-to-fetch` | 把 cURL 命令转为 fetch 代码 | developer | 前端、全栈 | cURL 字符串 | JavaScript fetch 片段 | 未开始 · P1 |
+| 17 | cURL → fetch | A.10；B5 | `curl-to-fetch` | 把 cURL 命令转为 fetch 代码 | developer | 前端、全栈 | cURL 字符串 | JavaScript fetch 片段 | 已上线 |
 | 18 | CIDR 单块展开 | A.10；已覆盖 | `cidr-to-ip-range`（**勿**再注册 `cidr-calculator`） | 前缀 → 网段/广播/主机 | developer | 运维、网络工程 | CIDR / IP+掩码 | 网络范围与主机数 | 已上线 |
 | 19 | JWT 解码 | A.6；C-V1 | `jwt-decoder` | Base64url 解码 JWT（不验签） | developer | 后端、安全调试 | JWT 字符串 | Header/Payload JSON + 免责声明 | 已上线 |
 | 20 | 文件/文本哈希 | A.6 | `file-hash` | 计算 MD5/SHA 等摘要 | developer | 开发者、发布校验 | 文件或文本 | 哈希十六进制 | 已上线 |
-| 21 | Base64 编解码 | A.6 | `base64` | Base64 编码/解码 | developer | 开发者 | 文本或文件字节 | Base64 或还原内容 | 已上线 |
-| 22 | UUID / ULID 生成 | A.6 | `uuid-generator` | 生成 UUID/ULID | developer | 后端、全栈 | 类型选项 | ID 字符串 | 已上线 |
+| 21 | 文件元数据分析 | A.2/A.6；Aconvert P1 | `file-metadata-analyzer` | 看本地文件分辨率/时长/容器字段 | developer | 开发者、运营、创作者 | 1 个本地文件 | 元数据表（name/size/MIME/尺寸/时长） | 已上线 |
+| 22 | Base64 编解码 | A.6 | `base64` | Base64 编码/解码 | developer | 开发者 | 文本或文件字节 | Base64 或还原内容 | 已上线 |
+| 23 | UUID / ULID 生成 | A.6 | `uuid-generator` | 生成 UUID/ULID | developer | 后端、全栈 | 类型选项 | ID 字符串 | 已上线 |
 | 23 | 随机密码生成 | A.6 | `password-generator` | 按规则生成随机密码 | developer | 全体用户 | 长度/字符集 | 密码字符串 | 已上线 |
 | 24 | Unix 时间戳转换 | A.8 | `unix-timestamp` | 时间戳 ↔ 可读时间 | developer | 开发者、运维 | 时间戳或日期时间 | 互转结果 | 已上线 |
 | 25 | 时区转换 | A.8 | `timezone-converter` | 跨时区时间对照 | developer | 远程协作、运维 | 时间点 + 源/目标时区 | 各时区时间 | 已上线 |
@@ -227,7 +218,7 @@
 | 64 | WCAG 对比度检测 | A.9；D P0 | `wcag-contrast-checker` | 前景/背景对比度 → AA/AAA | design | UI 设计师、前端、无障碍 | 前景色 + 背景色 | 比率、等级、建议配对色 | 已上线 · P0 |
 | 65 | 品牌色色阶生成 | A.9；B.3 1→N；D P0 | `brand-color-token-pack` | 1 主色 → 多色空间 + 色阶 + 对比配对 | design | 品牌设计、前端 | 1 个主色 | HEX/RGB/HSL/OKLCH、色阶、配对 | 已上线 · P0 |
 | 66 | 字阶 Token 包 | B.3；D P2 | `type-scale-token-pack` | 基准字号 → 模块化字阶表 | design | UI 设计师、前端 | 基准字号/比例 | 字阶表 + 可选 CSS 变量 | 未开始 · P2 |
-| 67 | SVG 优化 | D；对标 SVGOMG | `svg-optimizer` | SVGO 选项可视化压缩 | design | 前端、设计师 | SVG 文本/文件 | 优化 SVG + 体积对比 | 未开始 · P1 |
+| 67 | SVG 优化 | D；对标 SVGOMG | `svg-optimizer` | SVGO 选项可视化压缩 | design | 前端、设计师 | SVG 文本/文件 | 优化 SVG + 体积对比 | 已上线 |
 | 68 | CSS 阴影生成 | A.9；D P2 | `css-shadow-generator` | 可视化生成 box/text-shadow | design | 前端、设计师 | 阴影参数 | 可复制 CSS | 未开始 · P2 |
 | 69 | CSS 渐变生成器 | A.9；D（**非** `how-to-calculate-gradient`） | `css-gradient-generator` | 颜色/角度 → CSS `linear-gradient` / `radial-gradient` | design | 前端、设计师 | 颜色停靠点、角度/类型 | 可复制 CSS | 未开始 · P2 |
 | 70 | QR 码生成 | A.9；头词 | `qr-code-generator` | 文本/URL → QR 图 | design | 运营、线下活动 | 文本或 URL | QR 图片 | 未开始 · P2 |
@@ -260,7 +251,7 @@
 | 序号 | 工具名称 | 工具场景/渠道 | 工具 slug | 工具功能 | 工具分类 | 工具用户角色 | 工具输入 | 工具输出 | 开发进度 |
 |---|---|---|---|---|---|---|---|---|---|
 | 81 | iPhone App Store 截图 | B6；§0 P0 | `iphone-app-store-screenshot`（旧 `ios-app-screenshot-resizer`） | 当期 iPhone 截图套装；iPad 芯片 | image | iOS 开发者、外包 PM | 1 张截图源 | 多尺寸截图 ZIP | 未开始 · P0 |
-| 82 | iOS App 图标 | B6；§0 P1 | `ios-app-icon-size`（旧 `app-icon-generator-pack`） | 1024 Logo → iOS 图标倍率；Play 可芯片 | image | 移动开发者、设计师 | 1 张方 Logo | 多尺寸 Icon ZIP | 未开始 · P1 |
+| 82 | iOS App 图标 | B6；§0 P1 | `ios-app-icon-size`（旧 `app-icon-generator-pack`） | 1024 Logo → iOS 图标倍率；Play 可芯片 | image | 移动开发者、设计师 | 1 张方 Logo | 多尺寸 Icon ZIP | 已上线 |
 | 83 | Google Play 素材 | B6 | absorb → `ios-app-icon-size` / 截图页芯片（勿先独立 `google-play-asset-pack`） | Icon + Feature Graphic + 截图 | image | Android 开发者、PM | 1–2 张图 | Play 素材 ZIP | 未开始 · P1（芯片） |
 | 84 | apple-touch / Favicon | B8；§0 P0 | `apple-touch-icon`（旧 `favicon-and-pwa-icon-pack`） | Logo → apple-touch、favicon、PWA | image | 站长、前端、设计师 | 1 张方 Logo | 图标套装 + manifest 示例 | 未开始 · P0 |
 | 85 | 链接分享卡图 | B9；§0 P0 | `open-graph-image-size`（**废止** `social-share-image-pack`） | OG ~1200×630；其它链接卡芯片 | image | 运营、站长 | 1 张主视觉 | 该场景规范图 | 未开始 · P0 · 待 SERP |
@@ -490,7 +481,7 @@
 | Omni 全量归档 | ~3867 en（无 zh） |
 | 已上线 | 以 catalog 为准（计算器 §9 已全部上线；归档解压/JSON Schema 已上线） |
 | 未开始 · P0 | **5** 条主 URL：`create-zip-file`、`amazon-main-image-size`、`iphone-app-store-screenshot`、`apple-touch-icon`、`open-graph-image-size`（见 §0） |
-| 未开始 · P1 | 约 10 条场景 URL（图标/社交其余作业类型/导出 MD/SVG/cURL/Prompt/文件元数据） |
+| 未开始 · P1 | **0**（§0 P1 队列 2026-09-01 已全部上线；芯片/absorb 见分节表） |
 | 未开始 · P2 | 生成器、漏斗 defer、站长增强、薄规格包 |
 | 待 POC | 3（`local-bg-removal`、`ocr-to-text`、`audio-wav-mp3`） |
 

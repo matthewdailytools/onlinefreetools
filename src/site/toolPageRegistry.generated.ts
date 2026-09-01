@@ -12,16 +12,22 @@ import { renderAwsVpcCidrPlannerPage } from '../pages/awsVpcCidrPlannerPage';
 import { renderBase64Page } from '../pages/base64Page';
 import { renderBrandColorTokenPackPage } from '../pages/brandColorTokenPackPage';
 import { renderBrandStyleGuidePage } from '../pages/brandStyleGuidePage';
+import { renderChatgptExportToMarkdownPage } from '../pages/chatgptExportToMarkdownPage';
 import { renderCidrCheatSheetPage } from '../pages/cidrCheatSheetPage';
 import { renderCidrToIpRangePage } from '../pages/cidrToIpRangePage';
 import { renderColorFromImagePage } from '../pages/colorFromImagePage';
+import { renderCompareTwoTextFilesOnlinePage } from '../pages/compareTwoTextFilesOnlinePage';
+import { renderCompareTwoWordDocumentsForDifferencesPage } from '../pages/compareTwoWordDocumentsForDifferencesPage';
 import { renderCompressPdfPage } from '../pages/compressPdfPage';
 import { renderCoreWebVitalsCheckerPage } from '../pages/coreWebVitalsCheckerPage';
 import { renderCreateZipFilePage } from '../pages/createZipFilePage';
 import { renderCropPdfPage } from '../pages/cropPdfPage';
 import { renderCsvJsonPage } from '../pages/csvJsonPage';
+import { renderCurlToFetchPage } from '../pages/curlToFetchPage';
 import { renderDomainLookupPage } from '../pages/domainLookupPage';
+import { renderExcelCompareFilesPage } from '../pages/excelCompareFilesPage';
 import { renderFileHashPage } from '../pages/fileHashPage';
+import { renderFileMetadataAnalyzerPage } from '../pages/fileMetadataAnalyzerPage';
 import { renderFlipImagePage } from '../pages/flipImagePage';
 import { renderHowToCalculateAccelerationPage } from '../pages/howToCalculateAccelerationPage';
 import { renderHowToCalculateAgePage } from '../pages/howToCalculateAgePage';
@@ -100,12 +106,17 @@ import { renderImagesToPdfPage } from '../pages/imagesToPdfPage';
 import { renderImagesToPptPage } from '../pages/imagesToPptPage';
 import { renderImagesToWordPage } from '../pages/imagesToWordPage';
 import { renderIndexNowPage } from '../pages/indexNowPage';
+import { renderInstagramPostSizePage } from '../pages/instagramPostSizePage';
+import { renderInstagramStorySizePage } from '../pages/instagramStorySizePage';
+import { renderIosAppIconSizePage } from '../pages/iosAppIconSizePage';
 import { renderIpAddressPage } from '../pages/ipAddressPage';
 import { renderIpRangeToCidrPage } from '../pages/ipRangeToCidrPage';
 import { renderIphoneAppStoreScreenshotPage } from '../pages/iphoneAppStoreScreenshotPage';
 import { renderIpv6CidrPage } from '../pages/ipv6CidrPage';
+import { renderJsonDiffCheckerOnlinePage } from '../pages/jsonDiffCheckerOnlinePage';
 import { renderJsonSchemaValidatorPage } from '../pages/jsonSchemaValidatorPage';
 import { renderJwtDecoderPage } from '../pages/jwtDecoderPage';
+import { renderLinkedinBannerSizePage } from '../pages/linkedinBannerSizePage';
 import { renderMagnetLinkDecoderPage } from '../pages/magnetLinkDecoderPage';
 import { renderMarkdownToHtmlPage } from '../pages/markdownToHtmlPage';
 import { renderMeasuringMagneticFieldsPage } from '../pages/measuringMagneticFieldsPage';
@@ -123,6 +134,7 @@ import { renderPdfToJpgPage } from '../pages/pdfToJpgPage';
 import { renderPdfToMarkdownPage } from '../pages/pdfToMarkdownPage';
 import { renderPdfWatermarkPage } from '../pages/pdfWatermarkPage';
 import { renderPrivateCidrRangesPage } from '../pages/privateCidrRangesPage';
+import { renderPromptTemplateBuilderPage } from '../pages/promptTemplateBuilderPage';
 import { renderProtectPdfPage } from '../pages/protectPdfPage';
 import { renderRobotsTxtGeneratorPage } from '../pages/robotsTxtGeneratorPage';
 import { renderRotatePdfPage } from '../pages/rotatePdfPage';
@@ -131,6 +143,7 @@ import { renderSitemapXmlGeneratorPage } from '../pages/sitemapXmlGeneratorPage'
 import { renderSmartWebsiteColorSchemePage } from '../pages/smartWebsiteColorSchemePage';
 import { renderSplitPdfPage } from '../pages/splitPdfPage';
 import { renderSquareFeetPage } from '../pages/squareFeetPage';
+import { renderSvgOptimizerPage } from '../pages/svgOptimizerPage';
 import { renderTerraformCidrsubnetPage } from '../pages/terraformCidrsubnetPage';
 import { renderTextDiffPage } from '../pages/textDiffPage';
 import { renderTimezoneConverterPage } from '../pages/timezoneConverterPage';
@@ -143,6 +156,7 @@ import { renderUuidGeneratorPage } from '../pages/uuidGeneratorPage';
 import { renderWcagContrastCheckerPage } from '../pages/wcagContrastCheckerPage';
 import { renderWebsiteHeadersPage } from '../pages/websiteHeadersPage';
 import { renderYamlJsonPage } from '../pages/yamlJsonPage';
+import { renderYoutubeThumbnailSizePage } from '../pages/youtubeThumbnailSizePage';
 
 export type ToolPageRenderFn = (
 	lang: SiteLang,
@@ -161,16 +175,22 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'base64': (lang, defaultLang, enabled) => renderBase64Page({ lang, defaultLang, enabledLangs: enabled }),
 	'brand-color-token-pack': (lang, defaultLang, enabled) => renderBrandColorTokenPackPage({ lang, defaultLang, enabledLangs: enabled }),
 	'brand-style-guide': (lang, defaultLang, enabled) => renderBrandStyleGuidePage({ lang, defaultLang, enabledLangs: enabled }),
+	'chatgpt-export-to-markdown': (lang, defaultLang, enabled) => renderChatgptExportToMarkdownPage({ lang, defaultLang, enabledLangs: enabled }),
 	'cidr-cheat-sheet': (lang, defaultLang, enabled) => renderCidrCheatSheetPage({ lang, defaultLang, enabledLangs: enabled }),
 	'cidr-to-ip-range': (lang, defaultLang, enabled) => renderCidrToIpRangePage({ lang, defaultLang, enabledLangs: enabled }),
 	'color-from-image': (lang, defaultLang, enabled) => renderColorFromImagePage({ lang, defaultLang, enabledLangs: enabled }),
+	'compare-two-text-files-online': (lang, defaultLang, enabled) => renderCompareTwoTextFilesOnlinePage({ lang, defaultLang, enabledLangs: enabled }),
+	'compare-two-word-documents-for-differences': (lang, defaultLang, enabled) => renderCompareTwoWordDocumentsForDifferencesPage({ lang, defaultLang, enabledLangs: enabled }),
 	'compress-pdf': (lang, defaultLang, enabled) => renderCompressPdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'core-web-vitals-checker': (lang, defaultLang, enabled) => renderCoreWebVitalsCheckerPage({ lang, defaultLang, enabledLangs: enabled }),
 	'create-zip-file': (lang, defaultLang, enabled) => renderCreateZipFilePage({ lang, defaultLang, enabledLangs: enabled }),
 	'crop-pdf': (lang, defaultLang, enabled) => renderCropPdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'csv-json': (lang, defaultLang, enabled) => renderCsvJsonPage({ lang, defaultLang, enabledLangs: enabled }),
+	'curl-to-fetch': (lang, defaultLang, enabled) => renderCurlToFetchPage({ lang, defaultLang, enabledLangs: enabled }),
 	'domain-lookup': (lang, defaultLang, _enabled) => renderDomainLookupPage(lang, defaultLang),
+	'excel-compare-files': (lang, defaultLang, enabled) => renderExcelCompareFilesPage({ lang, defaultLang, enabledLangs: enabled }),
 	'file-hash': (lang, defaultLang, enabled) => renderFileHashPage({ lang, defaultLang, enabledLangs: enabled }),
+	'file-metadata-analyzer': (lang, defaultLang, enabled) => renderFileMetadataAnalyzerPage({ lang, defaultLang, enabledLangs: enabled }),
 	'flip-image': (lang, defaultLang, enabled) => renderFlipImagePage({ lang, defaultLang, enabledLangs: enabled }),
 	'how-to-calculate-acceleration': (lang, defaultLang, enabled) => renderHowToCalculateAccelerationPage({ lang, defaultLang, enabledLangs: enabled }),
 	'how-to-calculate-age': (lang, defaultLang, enabled) => renderHowToCalculateAgePage({ lang, defaultLang, enabledLangs: enabled }),
@@ -249,12 +269,17 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'images-to-ppt': (lang, defaultLang, enabled) => renderImagesToPptPage({ lang, defaultLang, enabledLangs: enabled }),
 	'images-to-word': (lang, defaultLang, enabled) => renderImagesToWordPage({ lang, defaultLang, enabledLangs: enabled }),
 	'indexnow': (lang, defaultLang, enabled) => renderIndexNowPage({ lang, defaultLang, enabledLangs: enabled }),
+	'instagram-post-size': (lang, defaultLang, enabled) => renderInstagramPostSizePage({ lang, defaultLang, enabledLangs: enabled }),
+	'instagram-story-size': (lang, defaultLang, enabled) => renderInstagramStorySizePage({ lang, defaultLang, enabledLangs: enabled }),
+	'ios-app-icon-size': (lang, defaultLang, enabled) => renderIosAppIconSizePage({ lang, defaultLang, enabledLangs: enabled }),
 	'ip-address': (lang, defaultLang, _enabled) => renderIpAddressPage(lang, defaultLang),
 	'ip-range-to-cidr': (lang, defaultLang, enabled) => renderIpRangeToCidrPage({ lang, defaultLang, enabledLangs: enabled }),
 	'iphone-app-store-screenshot': (lang, defaultLang, enabled) => renderIphoneAppStoreScreenshotPage({ lang, defaultLang, enabledLangs: enabled }),
 	'ipv6-cidr': (lang, defaultLang, enabled) => renderIpv6CidrPage({ lang, defaultLang, enabledLangs: enabled }),
+	'json-diff-checker-online': (lang, defaultLang, enabled) => renderJsonDiffCheckerOnlinePage({ lang, defaultLang, enabledLangs: enabled }),
 	'json-schema-validator': (lang, defaultLang, enabled) => renderJsonSchemaValidatorPage({ lang, defaultLang, enabledLangs: enabled }),
 	'jwt-decoder': (lang, defaultLang, enabled) => renderJwtDecoderPage({ lang, defaultLang, enabledLangs: enabled }),
+	'linkedin-banner-size': (lang, defaultLang, enabled) => renderLinkedinBannerSizePage({ lang, defaultLang, enabledLangs: enabled }),
 	'magnet-link-decoder': (lang, defaultLang, enabled) => renderMagnetLinkDecoderPage({ lang, defaultLang, enabledLangs: enabled }),
 	'markdown-to-html': (lang, defaultLang, enabled) => renderMarkdownToHtmlPage({ lang, defaultLang, enabledLangs: enabled }),
 	'measuring-magnetic-fields': (lang, defaultLang, enabled) => renderMeasuringMagneticFieldsPage({ lang, defaultLang, enabledLangs: enabled }),
@@ -272,6 +297,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'pdf-to-markdown': (lang, defaultLang, enabled) => renderPdfToMarkdownPage({ lang, defaultLang, enabledLangs: enabled }),
 	'pdf-watermark': (lang, defaultLang, enabled) => renderPdfWatermarkPage({ lang, defaultLang, enabledLangs: enabled }),
 	'private-cidr-ranges': (lang, defaultLang, enabled) => renderPrivateCidrRangesPage({ lang, defaultLang, enabledLangs: enabled }),
+	'prompt-template-builder': (lang, defaultLang, enabled) => renderPromptTemplateBuilderPage({ lang, defaultLang, enabledLangs: enabled }),
 	'protect-pdf': (lang, defaultLang, enabled) => renderProtectPdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'robots-txt-generator': (lang, defaultLang, enabled) => renderRobotsTxtGeneratorPage({ lang, defaultLang, enabledLangs: enabled }),
 	'rotate-pdf': (lang, defaultLang, enabled) => renderRotatePdfPage({ lang, defaultLang, enabledLangs: enabled }),
@@ -280,6 +306,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'smart-website-color-scheme': (lang, defaultLang, enabled) => renderSmartWebsiteColorSchemePage({ lang, defaultLang, enabledLangs: enabled }),
 	'split-pdf': (lang, defaultLang, enabled) => renderSplitPdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'square-feet': (lang, defaultLang, enabled) => renderSquareFeetPage({ lang, defaultLang, enabledLangs: enabled }),
+	'svg-optimizer': (lang, defaultLang, enabled) => renderSvgOptimizerPage({ lang, defaultLang, enabledLangs: enabled }),
 	'terraform-cidrsubnet': (lang, defaultLang, enabled) => renderTerraformCidrsubnetPage({ lang, defaultLang, enabledLangs: enabled }),
 	'text-diff': (lang, defaultLang, enabled) => renderTextDiffPage({ lang, defaultLang, enabledLangs: enabled }),
 	'timezone-converter': (lang, defaultLang, enabled) => renderTimezoneConverterPage({ lang, defaultLang, enabledLangs: enabled }),
@@ -292,4 +319,5 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'wcag-contrast-checker': (lang, defaultLang, enabled) => renderWcagContrastCheckerPage({ lang, defaultLang, enabledLangs: enabled }),
 	'website-headers': (lang, defaultLang, _enabled) => renderWebsiteHeadersPage(lang, defaultLang),
 	'yaml-json': (lang, defaultLang, enabled) => renderYamlJsonPage({ lang, defaultLang, enabledLangs: enabled }),
+	'youtube-thumbnail-size': (lang, defaultLang, enabled) => renderYoutubeThumbnailSizePage({ lang, defaultLang, enabledLangs: enabled }),
 };

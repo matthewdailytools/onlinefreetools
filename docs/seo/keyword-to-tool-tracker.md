@@ -44,11 +44,11 @@
 
 | 字段 | 值 |
 |---|---|
-| 最近更新 | 2026-08-31 |
-| 最近批次 | [keywords/p0-scene/2026-08-31-p0-scene-longtail-selection.md](./keywords/p0-scene/2026-08-31-p0-scene-longtail-selection.md)（P0 Bing SERP + 用户也搜）。社交草案仍见 [keywords/social-share/](./keywords/social-share/)；CIDR 见 [keywords/cidr/](./keywords/cidr/) |
-| 池内 `build` 候选 | CIDR 簇已上线；P0 五条 **未**入周进攻（`head`/`mid_covered`/`defer`）。产品待办见 [工具清单 §0](../2026-08-08-tool-inventory-table.md) |
-| 本周新建工具页 | 3（`ipv6-cidr`、`cidr-cheat-sheet`、`aws-vpc-cidr-planner`） |
-| 阻塞 | VLSM defer；P0 须点名才开 work-tasks；CN Bing 对本批品牌词不可靠，立项前补 Google 前 10 |
+| 最近更新 | 2026-09-01 |
+| 最近批次 | [keywords/text-compare/2026-09-01-text-compare-topic.md](./keywords/text-compare/2026-09-01-text-compare-topic.md)（长尾 H1 + 分场景 URL）。SERP 仍见 [keywords/text-diff/](./keywords/text-diff/) |
+| 池内 `build` 候选 | 用户点名：`compare-two-text-files-online`、`compare-two-word-documents-for-differences`、`json-diff-checker-online`、`excel-compare-files`。收割 `text-diff` H1=Check difference between two texts |
+| 本周新建工具页 | 进行中（text-compare topic） |
+| 阻塞 | YAML/XML P2；头词不进 H1 |
 
 ---
 
@@ -135,6 +135,8 @@
 | 2026-08-31 | 澄清 §3.3 H **不是**「只适用于平台」：拓宽为全站使用场景表；社交平台拆法仅为示例。同步漏斗 / Skill / work-tasks / 覆盖门禁表述。 | 用户要求规则拓宽 |
 | 2026-08-31 | 重梳产品待办 P0/P1/P2（清单 §0）：P0=`create-zip-file`、`amazon-main-image-size`、`iphone-app-store-screenshot`、`apple-touch-icon`、`open-graph-image-size`。`safe-paste-cleaner`/`ai-token-counter` 降为 P2 defer。废止 pack 名作进攻 slug。 | 用户要求按使用场景重排优先级 |
 | 2026-08-31 | P0 Bing SERP×种子/长尾/改写三批；CN 国际版大量劫持且 Related 为空。人工选词：H1=`Open Graph image size`、`apple-touch-icon 180×180`、`Amazon main image size`（2000×2000 为 title_gap）、`iPhone 6.9 screenshot size`（弃 6.7）；`zip files online`/`apple-touch-icon generator` 标 head 不进攻。词池 10 行均为 defer/drop，**未**建 work-tasks。 | 用户要求为 P0 跑 Bing SERP 并用用户也搜选长尾 |
+| 2026-09-01 | Compare-Text（733）+ text-diff（491）Planner 按使用场景聚类；Bing SERP×15 全 `usable`。收割页保持 `/tools/text-diff`（H1=Compare Two Texts Online）。Word/JSON/Excel 记 defer 建议 slug，**不占周 build**。禁止 `compare-text` 近义 URL。词池 +10 行；**未**建 work-tasks。 | 用户要求场景细化 slug、关键词归属、bing_serp、统一 SEO 策略 |
+| 2026-09-01 | 用户点名 **text-compare topic**：保留 `/tools/text-diff`，H1 改为 **Check difference between two texts**；分场景建 `compare-two-text-files-online`、`compare-two-word-documents-for-differences`、`json-diff-checker-online`、`excel-compare-files`。H1=Planner 长尾原句。权威表 `keywords/text-compare/`。 | 明确立项并实现；细化操作场景、少控件 |
 
 ---
 

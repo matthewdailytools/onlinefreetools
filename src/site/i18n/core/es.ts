@@ -109,6 +109,7 @@ const es: SiteLangDict = {
   topic_seo_growth: "SEO y crecimiento",
   topic_network_ip: "Red e IP",
   topic_dev_data: "Dev y datos",
+  topic_text_compare: "Comparar texto",
   topic_security_ids: "Seguridad e IDs",
   topic_files_archives: "Archivos y comprimidos",
   // --- end topic labels ---

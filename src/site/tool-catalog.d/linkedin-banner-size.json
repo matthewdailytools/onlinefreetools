@@ -1,0 +1,27 @@
+{
+  "slug": "linkedin-banner-size",
+  "path": "/tools/linkedin-banner-size",
+  "updatedAt": "2026-09-01T05:55:00.000Z",
+  "launchedAt": "2026-09-01T05:55:00.000Z",
+  "category": "image",
+  "primaryTopic": "image-media",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_linkedin_banner_size_title",
+  "homeTitleKey": "tool_linkedin_banner_size_title",
+  "homeDescKey": "tool_linkedin_banner_size_desc",
+  "faqPrefix": "tool_linkedin_banner_size",
+  "related": [
+    "open-graph-image-size",
+    "image-crop"
+  ],
+  "logo": "/icons/tools/linkedin-banner-size.svg",
+  "page": {
+    "module": "../pages/linkedinBannerSizePage",
+    "export": "renderLinkedinBannerSizePage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "image"
+}

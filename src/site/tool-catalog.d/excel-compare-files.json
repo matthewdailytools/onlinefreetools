@@ -1,0 +1,29 @@
+{
+  "slug": "excel-compare-files",
+  "path": "/tools/excel-compare-files",
+  "updatedAt": "2026-09-01T08:43:00.000Z",
+  "launchedAt": "2026-09-01T08:43:00.000Z",
+  "category": "developer",
+  "primaryTopic": "text-compare",
+  "secondaryTopics": ["dev-data"],
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_excel_compare_files_title",
+  "homeTitleKey": "tool_excel_compare_files_title",
+  "homeDescKey": "tool_excel_compare_files_desc",
+  "faqPrefix": "tool_excel_compare_files",
+  "related": [
+    "csv-json",
+    "text-diff",
+    "compare-two-text-files-online"
+  ],
+  "logo": "/icons/tools/excel-compare-files.svg",
+  "page": {
+    "module": "../pages/excelCompareFilesPage",
+    "export": "renderExcelCompareFilesPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "documents",
+  "subject": "data"
+}

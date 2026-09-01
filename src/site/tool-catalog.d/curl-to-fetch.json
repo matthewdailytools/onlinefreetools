@@ -1,0 +1,30 @@
+{
+  "slug": "curl-to-fetch",
+  "path": "/tools/curl-to-fetch",
+  "updatedAt": "2026-09-01T10:11:26.112Z",
+  "launchedAt": "2026-09-01T10:04:00.000Z",
+  "category": "developer",
+  "primaryTopic": "dev-data",
+  "secondaryTopics": [
+    "security-ids"
+  ],
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_curl_to_fetch_title",
+  "homeTitleKey": "tool_curl_to_fetch_title",
+  "homeDescKey": "tool_curl_to_fetch_desc",
+  "faqPrefix": "tool_curl_to_fetch",
+  "related": [
+    "website-headers",
+    "jwt-decoder"
+  ],
+  "logo": "/icons/tools/curl-to-fetch.svg",
+  "page": {
+    "module": "../pages/curlToFetchPage",
+    "export": "renderCurlToFetchPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "developer",
+  "subject": "text"
+}

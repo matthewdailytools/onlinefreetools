@@ -1,0 +1,29 @@
+{
+  "slug": "json-diff-checker-online",
+  "path": "/tools/json-diff-checker-online",
+  "updatedAt": "2026-09-01T08:42:00.000Z",
+  "launchedAt": "2026-09-01T08:42:00.000Z",
+  "category": "developer",
+  "primaryTopic": "text-compare",
+  "secondaryTopics": ["dev-data"],
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_json_diff_checker_online_title",
+  "homeTitleKey": "tool_json_diff_checker_online_title",
+  "homeDescKey": "tool_json_diff_checker_online_desc",
+  "faqPrefix": "tool_json_diff_checker_online",
+  "related": [
+    "json-schema-validator",
+    "yaml-json",
+    "text-diff"
+  ],
+  "logo": "/icons/tools/json-diff-checker-online.svg",
+  "page": {
+    "module": "../pages/jsonDiffCheckerOnlinePage",
+    "export": "renderJsonDiffCheckerOnlinePage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "developer",
+  "subject": "data"
+}

@@ -7,8 +7,10 @@ const id: SiteLangDict = {
     'Alat gratis untuk membandingkan dua teks berdampingan. Mode baris untuk config dan kode; mode kata untuk tulisan dan prompt; mode karakter untuk typo kecil. Semua di browser — teks Anda tidak diunggah.',
   tool_text_diff_clear: 'Kosongkan',
   tool_text_diff_compare: 'Bandingkan',
+  tool_text_diff_desc:
+    'Periksa perbedaan antara dua teks dengan menempel kedua sisi di browser — file tidak diunggah.',
   tool_text_diff_description:
-    'Bandingkan dua teks online dan lihat apa yang berubah. Proses: tempel teks asli dan revisi, pilih per baris, per kata, atau per karakter, opsional abaikan spasi atau samakan baris baru Windows (CRLF→LF), lalu sorot penambahan dan penghapusan di browser. Contoh: ubah "halo dunia" menjadi "halo kawan" — mode kata menampilkan satu penggantian.',
+    'Periksa perbedaan antara dua teks di browser. Proses: tempel teks asli dan revisi (orang juga mencari bandingkan teks online atau diff checker), pilih per baris, per kata, atau per karakter, opsional abaikan spasi atau samakan CRLF dan LF, lalu sorot penambahan dan penghapusan. File tetap di perangkat dan tidak diunggah. Contoh: ubah "halo dunia" menjadi "halo kawan" — mode kata menampilkan satu penggantian. Halaman ini hanya tempel teks; Word, Excel, dan JSON punya halaman sendiri.',
   tool_text_diff_empty_hint: 'Tempel teks di satu atau kedua sisi, lalu bandingkan.',
   tool_text_diff_example:
     'Contoh (mode kata): A = "Halo dunia", B = "Halo teman" → satu perubahan (dunia → teman). Jika hanya baris tengah dari tiga baris yang berubah, mode baris menandai baris itu.',
@@ -19,11 +21,15 @@ const id: SiteLangDict = {
     'Teks yang Anda tempel tidak diunggah atau disimpan oleh kami — perbandingan berjalan di browser. Halaman dapat memuat jsdiff (open source) dari CDN; itu tidak mengirim teks Anda ke server kami.',
   tool_text_diff_faq_a3:
     'Windows sering memakai CRLF; Mac/Linux biasanya LF. Aktifkan “Samakan CRLF dan LF” lalu bandingkan lagi.',
-  tool_text_diff_faq_a4: 'Tidak. Hanya teks biasa.',
+  tool_text_diff_faq_a4:
+    'Tidak. Hanya teks yang ditempel — bukan gambar, ZIP, Word, Excel, atau JSON terstruktur. Untuk membuka .txt, .docx, atau spreadsheet, pakai halaman format itu.',
+  tool_text_diff_faq_a5:
+    'Ya: banyak orang mencari bandingkan teks online atau diff checker. Di sini pekerjaannya dengan menempel dua teks. Judul memakai frasa yang lebih spesifik «periksa perbedaan antara dua teks».',
   tool_text_diff_faq_q1: 'Bandingkan per baris atau per kata?',
   tool_text_diff_faq_q2: 'Apakah teks saya diunggah ke server?',
   tool_text_diff_faq_q3: 'Mengapa hanya beda baris baru membuat seluruh baris merah?',
-  tool_text_diff_faq_q4: 'Bisakah membandingkan gambar atau file biner?',
+  tool_text_diff_faq_q4: 'Bisakah membandingkan gambar, Word, atau file biner?',
+  tool_text_diff_faq_q5: 'Apakah ini sama dengan diff checker online?',
   tool_text_diff_how_body:
     'Tempel dua versi, pilih ketelitian (baris, kata, atau karakter), lalu lihat tambahan hijau dan penghapusan merah. Teks yang Anda tempel tidak diunggah atau disimpan oleh kami. Halaman dapat memuat pustaka open-source jsdiff dari CDN agar perbandingan berjalan di browser.',
   tool_text_diff_how_title: 'Cara memakai',
@@ -62,5 +68,6 @@ const id: SiteLangDict = {
   tool_text_diff_usecase_2: 'Revisi prompt: mode kata untuk melihat frasa yang ditambah atau dihapus.',
   tool_text_diff_usecase_3: 'Koreksi teks atau terjemahan: pastikan hanya kalimat yang dimaksud yang berubah.',
   tool_text_diff_usecases_title: 'Kapan dipakai',
+  tool_text_diff_title: 'Periksa perbedaan antara dua teks',
 };
 export default id;
