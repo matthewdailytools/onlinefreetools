@@ -3109,6 +3109,7 @@
     "homeDescKey": "tool_prompt_template_builder_desc",
     "faqPrefix": "tool_prompt_template_builder",
     "related": [
+      "writing-prompt-generator",
       "chatgpt-export-to-markdown",
       "json-schema-validator"
     ],
@@ -3618,6 +3619,28 @@
     "scenario": "seo",
     "subject": "network",
     "launchedAt": "2026-01-10T23:02:44+08:00"
+  },
+  {
+    "slug": "writing-prompt-generator",
+    "path": "/tools/writing-prompt-generator",
+    "updatedAt": "2026-09-02T16:30:00.000Z",
+    "launchedAt": "2026-09-02T16:30:00.000Z",
+    "category": "developer",
+    "primaryTopic": "dev-data",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_writing_prompt_generator_title",
+    "homeTitleKey": "tool_writing_prompt_generator_title",
+    "homeDescKey": "tool_writing_prompt_generator_desc",
+    "faqPrefix": "tool_writing_prompt_generator",
+    "related": [
+      "prompt-template-builder",
+      "chatgpt-export-to-markdown"
+    ],
+    "logo": "/icons/tools/writing-prompt-generator.svg",
+    "localProcessing": true,
+    "scenario": "writing",
+    "subject": "text"
   },
   {
     "slug": "yaml-json",

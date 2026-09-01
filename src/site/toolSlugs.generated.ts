@@ -155,6 +155,7 @@ export const TOOL_SLUGS = [
 	"uuid-generator",
 	"wcag-contrast-checker",
 	"website-headers",
+	"writing-prompt-generator",
 	"yaml-json",
 	"youtube-thumbnail-size"
 ] as const;

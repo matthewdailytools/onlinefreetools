@@ -55,6 +55,7 @@
 - [SVG 优化器](https://onlinefreetools.org/zh/tools/svg-optimizer) - 粘贴或拖放 SVG，选项芯片清理并对比优化前后字节与预览；文件留在设备、不上传服务器
 - [curl 转 fetch](https://onlinefreetools.org/zh/tools/curl-to-fetch) - 粘贴 cURL 命令，生成 JavaScript fetch 代码；支持方法、请求头、JSON 正文与 Basic 认证；命令留在设备、不上传服务器
 - [Prompt 模板构建器](https://onlinefreetools.org/zh/tools/prompt-template-builder) - 把草稿 Prompt 整理成 Role/Task/Constraints/Output 可复用模板（Markdown/JSON）；纯本地、不调用模型 API；文本留在本机、不上传服务器
+- [写作 Prompt 生成器](https://onlinefreetools.org/zh/tools/writing-prompt-generator) - 对白/角色/剧本/随机写作 Prompt 本地组装（Markdown/JSON）；含 random prompt generator 模式；文本留在本机、不上传服务器
 - [Open Graph 图片尺寸](https://onlinefreetools.org/zh/tools/open-graph-image-size) - 把图 cover 导出为 1200×630 分享卡 JPEG；文件留在设备、不上传服务器
 - [图片优化](https://onlinefreetools.org/zh/tools/image-optimizer) - 本地 MozJPEG / WebP / AVIF / OxiPNG 编码器优化，滑动对照后下载
 - [图片裁剪与改尺寸](https://onlinefreetools.org/zh/tools/image-crop) - 本地框选裁剪、比例与常用像素预设，导出 JPEG/WebP/PNG
@@ -212,6 +213,7 @@ Below are our available online tools with their links (English version):
 - [SVG optimizer](https://onlinefreetools.org/tools/svg-optimizer) - Paste or drop SVG, toggle cleanup options, compare bytes with preview — stays on the device, not uploaded
 - [curl to fetch](https://onlinefreetools.org/tools/curl-to-fetch) - Paste a cURL command, get a JavaScript fetch snippet — method, headers, JSON body, Basic auth; stays on the device, not uploaded
 - [Prompt template builder](https://onlinefreetools.org/tools/prompt-template-builder) - Turn draft prompt text into a reusable Role/Task/Constraints/Output template (Markdown/JSON chips) — client-only, no LLM; stays on the device, not uploaded
+- [Writing prompt generator](https://onlinefreetools.org/tools/writing-prompt-generator) - Assemble dialogue, character, script, or random writing prompts locally (Markdown/JSON) — random prompt generator on the same page; stays on the device, not uploaded
 - [Open Graph image size](https://onlinefreetools.org/tools/open-graph-image-size) - Cover-fill a photo to 1200×630 share-card JPEG — stays on the device, not uploaded
 - [Image Optimizer](https://onlinefreetools.org/tools/image-optimizer) - Optimize with MozJPEG, WebP, AVIF, or OxiPNG locally — compare with a slider, then download
 - [Crop & Resize Image](https://onlinefreetools.org/tools/image-crop) - Crop with aspect presets and common output sizes — runs locally in your browser

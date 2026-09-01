@@ -1,0 +1,27 @@
+{
+  "slug": "writing-prompt-generator",
+  "path": "/tools/writing-prompt-generator",
+  "updatedAt": "2026-09-02T16:30:00.000Z",
+  "launchedAt": "2026-09-02T16:30:00.000Z",
+  "category": "developer",
+  "primaryTopic": "dev-data",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_writing_prompt_generator_title",
+  "homeTitleKey": "tool_writing_prompt_generator_title",
+  "homeDescKey": "tool_writing_prompt_generator_desc",
+  "faqPrefix": "tool_writing_prompt_generator",
+  "related": [
+    "prompt-template-builder",
+    "chatgpt-export-to-markdown"
+  ],
+  "logo": "/icons/tools/writing-prompt-generator.svg",
+  "page": {
+    "module": "../pages/writingPromptGeneratorPage",
+    "export": "renderWritingPromptGeneratorPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "writing",
+  "subject": "text"
+}

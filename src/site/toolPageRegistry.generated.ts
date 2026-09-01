@@ -155,6 +155,7 @@ import { renderUtmBuilderPage } from '../pages/utmBuilderPage';
 import { renderUuidGeneratorPage } from '../pages/uuidGeneratorPage';
 import { renderWcagContrastCheckerPage } from '../pages/wcagContrastCheckerPage';
 import { renderWebsiteHeadersPage } from '../pages/websiteHeadersPage';
+import { renderWritingPromptGeneratorPage } from '../pages/writingPromptGeneratorPage';
 import { renderYamlJsonPage } from '../pages/yamlJsonPage';
 import { renderYoutubeThumbnailSizePage } from '../pages/youtubeThumbnailSizePage';
 
@@ -318,6 +319,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'uuid-generator': (lang, defaultLang, enabled) => renderUuidGeneratorPage({ lang, defaultLang, enabledLangs: enabled }),
 	'wcag-contrast-checker': (lang, defaultLang, enabled) => renderWcagContrastCheckerPage({ lang, defaultLang, enabledLangs: enabled }),
 	'website-headers': (lang, defaultLang, _enabled) => renderWebsiteHeadersPage(lang, defaultLang),
+	'writing-prompt-generator': (lang, defaultLang, enabled) => renderWritingPromptGeneratorPage({ lang, defaultLang, enabledLangs: enabled }),
 	'yaml-json': (lang, defaultLang, enabled) => renderYamlJsonPage({ lang, defaultLang, enabledLangs: enabled }),
 	'youtube-thumbnail-size': (lang, defaultLang, enabled) => renderYoutubeThumbnailSizePage({ lang, defaultLang, enabledLangs: enabled }),
 };
