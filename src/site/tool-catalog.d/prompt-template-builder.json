@@ -12,6 +12,7 @@
   "homeDescKey": "tool_prompt_template_builder_desc",
   "faqPrefix": "tool_prompt_template_builder",
   "related": [
+    "writing-prompt-generator",
     "chatgpt-export-to-markdown",
     "json-schema-validator"
   ],
