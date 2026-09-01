@@ -915,6 +915,20 @@ body.is-tool-page .tool-lead {
   position: relative;
 }
 
+/** 顶栏 Buy Me a Coffee 打赏链接 */
+.nav-support-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nav-support-link .nav-support-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
 /* fixed-top 仍需 absolute 伪元素相对 navbar 定位；overflow 保持可见以免再裁下拉 */
 .navbar.site-navbar.fixed-top {
   position: fixed;

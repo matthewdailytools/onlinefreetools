@@ -55,6 +55,7 @@ const zh: SiteLangDict = {
   nav_categories: '分类',
   nav_devlogs: '开发日志',
   nav_home: '首页',
+  nav_support: '打赏',
   nav_use_cases: "用在哪",
   nav_tool_type: "工具类型",
     nav_tools: '工具',

@@ -4,6 +4,21 @@
 import { siteConfig, withExplicitLangPath, withLangPath } from '../config.mjs';
 import { t } from '../i18n.mjs';
 
+/** Buy Me a Coffee 打赏页（外链，新标签打开） */
+const BUY_ME_A_COFFEE_URL = 'https://buymeacoffee.com/matthewxuax';
+
+/**
+ * 顶栏右侧打赏链接（Buy Me a Coffee）。
+ * @param {string} lang 当前页面语言
+ */
+const renderSupportLink = (lang) => {
+  const label = t(lang, 'nav_support');
+  return `<a class="btn btn-outline-secondary btn-sm nav-support-link" href="${BUY_ME_A_COFFEE_URL}" target="_blank" rel="noopener noreferrer" title="${label}">
+              <span class="nav-support-icon" aria-hidden="true">☕</span>
+              <span class="d-none d-md-inline">${label}</span>
+            </a>`;
+};
+
 /**
  * 语言下拉。
  * @param {{lang:string,langAlternates?:Record<string,string>}} opts
@@ -156,9 +171,10 @@ export const renderHeader = ({
         </button>
         <div class="collapse navbar-collapse" id="topNav">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">${navHtml}</ul>
-          <div class="d-flex align-items-center gap-2">
+          <div class="d-flex align-items-center gap-2 ms-lg-2">
             ${pageSettingsSwitcher}
             ${showLangSwitcher ? renderLangSwitcher({ lang, langAlternates }) : ''}
+            ${renderSupportLink(lang)}
           </div>
         </div>
       </div>

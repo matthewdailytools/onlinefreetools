@@ -55,6 +55,7 @@ const pt: SiteLangDict = {
   nav_categories: 'Categorias',
   nav_devlogs: 'Registros de Desenvolvimento',
   nav_home: 'Início',
+  nav_support: 'Me pague um café',
   nav_use_cases: "Onde usar",
   nav_tool_type: "Tipos de ferramenta",
     nav_tools: 'Ferramentas',

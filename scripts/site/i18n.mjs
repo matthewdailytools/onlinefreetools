@@ -16,6 +16,7 @@ const translations = {
     home_description:
       'OnlineFreeTools.org learning project: a collection of small online utilities for mobile and desktop.',
     nav_home: 'Home',
+    nav_support: 'Buy me a coffee',
     nav_tools: 'Tools',
     nav_devlogs: 'Dev Logs',
     nav_featured: 'Featured',
@@ -194,6 +195,7 @@ const translations = {
     home_title: '免费在线工具，不上传数据，无需注册 | OnlineFreeTools.org',
     home_description: 'OnlineFreeTools.org 学习项目，聚合多类在线小工具，支持移动与桌面访问。',
     nav_home: '首页',
+    nav_support: '打赏',
     nav_tools: '工具',
     nav_devlogs: '开发日志',
     nav_featured: '推荐',
@@ -375,6 +377,7 @@ const translations = {
     home_description:
       'Proyecto de aprendizaje de OnlineFreeTools.org: una colección de pequeñas utilidades en línea para móvil y escritorio.',
     nav_home: 'Inicio',
+    nav_support: 'Invítame un café',
     nav_tools: 'Herramientas',
     nav_devlogs: 'Registros',
     nav_featured: 'Destacados',
@@ -552,6 +555,7 @@ const translations = {
     home_description:
       'مشروع تعليمي: مجموعة أدوات صغيرة عبر الإنترنت للهواتف والكمبيوتر.',
     nav_home: 'الرئيسية',
+    nav_support: 'ادعمني',
     nav_tools: 'الأدوات',
     nav_devlogs: 'سجلات التطوير',
     nav_featured: 'مميز',
@@ -730,6 +734,7 @@ const translations = {
     home_description:
       'Projeto de aprendizado: uma coleção de pequenas utilidades online para mobile e desktop.',
     nav_home: 'Início',
+    nav_support: 'Me pague um café',
     nav_tools: 'Ferramentas',
     nav_devlogs: 'Logs',
     nav_featured: 'Destaques',
@@ -907,6 +912,7 @@ const translations = {
     home_description:
       'Proyek pembelajaran: kumpulan utilitas online kecil untuk mobile dan desktop.',
     nav_home: 'Beranda',
+    nav_support: 'Traktir kopi',
     nav_tools: 'Alat',
     nav_devlogs: 'Log Dev',
     nav_featured: 'Unggulan',
@@ -1084,6 +1090,7 @@ const translations = {
     home_description:
       'Projet d’apprentissage : une collection de petits outils en ligne pour mobile et ordinateur.',
     nav_home: 'Accueil',
+    nav_support: 'Offrez-moi un café',
     nav_tools: 'Outils',
     nav_devlogs: 'Journal',
     nav_featured: 'À la une',
@@ -1260,6 +1267,7 @@ const translations = {
     home_title: '無料オンラインツール、データ非アップロード、登録不要 | OnlineFreeTools.org',
     home_description: '学習プロジェクト：モバイルとデスクトップ向けの小さなオンラインツール集。',
     nav_home: 'ホーム',
+    nav_support: 'コーヒーを奢る',
     nav_tools: 'ツール',
     nav_devlogs: '開発ログ',
     nav_featured: 'おすすめ',
@@ -1438,6 +1446,7 @@ const translations = {
     home_description:
       'Учебный проект: набор небольших онлайн‑инструментов для мобильных и настольных устройств.',
     nav_home: 'Главная',
+    nav_support: 'Угостите кофе',
     nav_tools: 'Инструменты',
     nav_devlogs: 'Логи',
     nav_featured: 'Избранное',
@@ -1616,6 +1625,7 @@ const translations = {
     home_description:
       'Lernprojekt: eine Sammlung kleiner Online‑Tools für Mobilgeräte und Desktop.',
     nav_home: 'Start',
+    nav_support: 'Spendier mir einen Kaffee',
     nav_tools: 'Werkzeuge',
     nav_devlogs: 'Dev-Logs',
     nav_featured: 'Empfohlen',

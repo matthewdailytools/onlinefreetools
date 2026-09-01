@@ -55,6 +55,7 @@ const ar: SiteLangDict = {
   nav_categories: 'التصنيفات',
   nav_devlogs: 'سجلات التطوير',
   nav_home: 'الرئيسية',
+  nav_support: 'ادعمني',
   nav_use_cases: "أين تستخدم",
   nav_tool_type: "أنواع الأدوات",
     nav_tools: 'الأدوات',

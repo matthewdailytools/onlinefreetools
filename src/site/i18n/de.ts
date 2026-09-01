@@ -52,6 +52,7 @@ const de: SiteLangDict = {
   nav_categories: 'Kategorien',
   nav_devlogs: 'Entwicklungsprotokolle',
   nav_home: 'Startseite',
+  nav_support: 'Spendier mir einen Kaffee',
   nav_tool_type: 'Tool-Typen',
   nav_tools: 'Werkzeuge',
   nav_topics: 'Tool-Themen',

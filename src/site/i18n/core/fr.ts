@@ -59,6 +59,7 @@ const fr: SiteLangDict = {
   nav_categories: 'Catégories',
   nav_devlogs: 'Journaux de développement',
   nav_home: 'Accueil',
+  nav_support: 'Offrez-moi un café',
   nav_use_cases: "Où utiliser",
   nav_tool_type: "Types d’outil",
     nav_tools: 'Outils',

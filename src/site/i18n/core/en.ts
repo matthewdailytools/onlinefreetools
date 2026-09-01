@@ -59,6 +59,7 @@ const en: SiteLangDict = {
   nav_categories: 'Categories',
   nav_devlogs: 'Dev Logs',
   nav_home: 'Home',
+  nav_support: 'Buy me a coffee',
   nav_use_cases: "where2use",
   nav_tool_type: "Tool types",
     nav_tools: 'Tools',

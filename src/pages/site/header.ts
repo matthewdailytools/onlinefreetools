@@ -10,6 +10,21 @@ import type { NavItem } from './nav';
 const newTabAttrs = (openInNewTab?: boolean) =>
 	openInNewTab ? ' target="_blank" rel="noopener noreferrer"' : '';
 
+/** Buy Me a Coffee 打赏页（外链，新标签打开） */
+const BUY_ME_A_COFFEE_URL = 'https://buymeacoffee.com/matthewxuax';
+
+/**
+ * 顶栏右侧打赏链接（Buy Me a Coffee）。
+ * @param lang 当前页面语言
+ */
+const renderSupportLink = (lang: SiteLang): string => {
+	const label = t(lang, 'nav_support');
+	return `<a class="btn btn-outline-secondary btn-sm nav-support-link" href="${BUY_ME_A_COFFEE_URL}" target="_blank" rel="noopener noreferrer" title="${escapeHtml(label)}">
+              <span class="nav-support-icon" aria-hidden="true">☕</span>
+              <span class="d-none d-md-inline">${escapeHtml(label)}</span>
+            </a>`;
+};
+
 /**
  * 将顶栏导航项渲染为 Bootstrap navbar HTML（链接 / 下拉 / 巨型菜单）。
  * @param items 导航项列表
@@ -150,6 +165,7 @@ export const renderHeader = (opts: {
           </div>`
 					: ''
 			}
+            ${renderSupportLink(opts.lang)}
           </div>
         </div>
       </div>

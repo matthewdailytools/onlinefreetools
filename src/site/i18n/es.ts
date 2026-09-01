@@ -55,6 +55,7 @@ const es: SiteLangDict = {
   nav_categories: 'Categorías',
   nav_devlogs: 'Registros de Desarrollo',
   nav_home: 'Inicio',
+  nav_support: 'Invítame un café',
   nav_tool_type: 'Tipos de herramienta',
   nav_tools: 'Herramientas',
   nav_topics: 'Temas de herramientas',

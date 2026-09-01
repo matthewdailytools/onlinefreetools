@@ -55,6 +55,7 @@ const ru: SiteLangDict = {
   nav_categories: 'Категории',
   nav_devlogs: 'Журналы разработки',
   nav_home: 'Главная',
+  nav_support: 'Угостите кофе',
   nav_tool_type: 'Типы инструментов',
   nav_tools: 'Инструменты',
   nav_topics: 'Темы инструментов',

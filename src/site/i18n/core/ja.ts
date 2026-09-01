@@ -54,6 +54,7 @@ const ja: SiteLangDict = {
   nav_categories: 'カテゴリ',
   nav_devlogs: '開発ログ',
   nav_home: 'ホーム',
+  nav_support: 'コーヒーを奢る',
   nav_use_cases: "どこで使う",
   nav_tool_type: "ツールタイプ",
     nav_tools: 'ツール',
