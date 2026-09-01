@@ -23,6 +23,15 @@ _WIKI_HOSTS = (
     "britannica.com",
 )
 
+# 词典站：标题常含 online 等词，不能当成交互工具
+_DICT_HOSTS = (
+    "cambridge.org",
+    "merriam-webster.com",
+    "dictionary.com",
+    "ldoceonline.com",
+    "collinsdictionary.com",
+)
+
 # 文档 / 云厂商 / RFC 类
 _DOCS_HOSTS = (
     "docs.aws.amazon.com",
@@ -115,7 +124,7 @@ def classify_result_type(row: dict[str, Any]) -> str:
     title = row.get("title") or ""
     url = (row.get("url") or "").lower()
 
-    if _host_matches(domain, _WIKI_HOSTS):
+    if _host_matches(domain, _WIKI_HOSTS) or _host_matches(domain, _DICT_HOSTS):
         return "wiki"
     if _host_matches(domain, _DOCS_HOSTS) or "/docs/" in url or "/documentation" in url:
         return "docs"
@@ -238,19 +247,36 @@ def draft_competition_tier(
     }
 
 
-def analyze_query_serp(query: str, organic: list[dict[str, Any]]) -> dict[str, Any]:
+def analyze_query_serp(
+    query: str,
+    organic: list[dict[str, Any]],
+    *,
+    cn_detect: dict[str, Any] | None = None,
+    challenge: dict[str, Any] | None = None,
+) -> dict[str, Any]:
     """
-    对单查询的有机结果做完整分析包装。
+    对单查询的有机结果做完整分析包装（含污染门禁）。
 
     参数
     ----
     query:
-        搜索词。
+        **实际发出**的搜索词（可能是用户搜法变体）。
     organic:
         ``parse_organic_results`` 产出。
+    cn_detect:
+        可选；传给污染评分（国内站占比）。
+    challenge:
+        可选；验证码页。
 
     返回
     ----
-    ``draft_competition_tier`` 的结果（含 typed organic）。
+    ``draft_competition_tier`` 结果 + ``serp_usable`` / ``pollution``。
+    污染时 ``competition_tier=unusable``，禁止当 long_gap 入池。
     """
-    return draft_competition_tier(query, organic)
+    from query_strategy import apply_pollution_gate, score_serp_pollution
+
+    drafted = draft_competition_tier(query, organic)
+    pollution = score_serp_pollution(
+        query, organic, cn_detect=cn_detect, challenge=challenge
+    )
+    return apply_pollution_gate(drafted, pollution)

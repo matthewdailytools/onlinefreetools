@@ -82,6 +82,7 @@ def load_queries(
     queries: list[str] | None = None,
     file_path: str | Path | None = None,
     column: str | None = None,
+    keep_quotes: bool = False,
 ) -> list[str]:
     """
     合并 CLI 词表与文件词表，去重保序。
@@ -95,6 +96,9 @@ def load_queries(
     column:
         表格列名；默认尝试 ``关键词`` / ``keyword`` / ``candidate`` / ``query``，
         否则取第二列（Bing Planner）或第一列。
+    keep_quotes:
+        True 时保留词表里的引号（实验用）。默认 False：用户搜工具不加引号，
+        剥掉以免误以为「加引号能防污染」。
 
     返回
     ----
@@ -104,8 +108,10 @@ def load_queries(
     seen: set[str] = set()
 
     def _add(raw: str) -> None:
-        # 去掉首尾空白与包围引号
-        q = (raw or "").strip().strip('"').strip("'")
+        # 去掉首尾空白；默认再剥包围引号（用户习惯）
+        q = (raw or "").strip()
+        if not keep_quotes:
+            q = q.strip('"').strip("'")
         if not q or q.startswith("#"):
             return
         key = q.lower()
@@ -259,17 +265,21 @@ def render_batch_markdown(
         "",
         "## Candidates (from Bing SERP)",
         "",
-        "| candidate | top domains | SERP types | competition_tier (draft) | gap (draft) |",
-        "|---|---|---|---|---|",
+        "| candidate | issued_as | usable | top domains | SERP types | competition_tier (draft) | gap (draft) |",
+        "|---|---|---|---|---|---|---|",
     ]
     for row in rows:
         q = row.get("query", "")
+        issued = row.get("issued_query") or q
         analysis = row.get("analysis") or {}
+        usable = "yes" if analysis.get("serp_usable", True) else "NO"
         domains = ", ".join(analysis.get("top_domains") or [])[:120]
         types = analysis.get("serp_type_summary") or ""
         tier = analysis.get("competition_tier") or ""
         gap = (analysis.get("gap_notes") or "").replace("|", "/")
-        lines.append(f"| {q} | {domains} | {types} | {tier} | {gap} |")
+        lines.append(
+            f"| {q} | {issued} | {usable} | {domains} | {types} | {tier} | {gap} |"
+        )
 
     lines.extend(
         [
@@ -280,7 +290,11 @@ def render_batch_markdown(
     )
     for row in rows:
         q = row.get("query", "")
-        lines.append(f"### `{q}`")
+        issued = row.get("issued_query") or q
+        if issued != q:
+            lines.append(f"### `{q}` (issued: `{issued}`)")
+        else:
+            lines.append(f"### `{q}`")
         lines.append("")
         organic = (row.get("analysis") or {}).get("organic_typed") or row.get("organic") or []
         if not organic:
@@ -309,6 +323,7 @@ def render_batch_markdown(
             "## Next steps",
             "",
             "- 人工 / Agent 复核 ``competition_tier`` 后，抽约 10 条写入 ``keyword-daily-pool.tsv``",
+            "- ``usable=NO`` / ``unusable``：§3.3 D/I 噪声 SERP，禁止当 ``long_gap`` 入池",
             "- 禁止把本摘要中的竞品标题套路成空壳工具页",
             "- 开 ``work-tasks/`` 须另决议，本脚本不创建工具",
             "",

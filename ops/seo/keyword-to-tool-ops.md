@@ -40,7 +40,7 @@ python ops/seo/bing_serp/run_bing_serp.py --theme cidr --queries "terraform cidr
 python ops/seo/bing_serp/run_bing_serp.py --theme cidr --file docs/seo/keywords/cidr/Cidr_KeywordPlanner_bing.csv --column 关键词 --limit-queries 20 --write-batch-md --batch-id YYYY-MM-DD-cidr-...
 ```
 
-说明见 [`bing_serp/README.md`](./bing_serp/README.md)。JSON 在 `.cache/serp/bing/`；`--theme` + `--write-batch-md` 写入 `docs/seo/keywords/{theme}/`。脚本给出的 `competition_tier` 是草稿，入池前仍走下方 Agent 分析。
+说明见 [`bing_serp/README.md`](./bing_serp/README.md)。JSON 在 `.cache/serp/bing/`；`--theme` + `--write-batch-md` 写入 `docs/seo/keywords/{theme}/`。脚本给出的 `competition_tier` 是草稿：`unusable` 表示 SERP 污染（§3.3 I），入池前仍走下方 Agent 分析，**不得**把污染行当 `long_gap`。
 
 ### 2.2 触发分析（对 Agent 说清）
 

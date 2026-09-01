@@ -20,7 +20,7 @@
 python ops/seo/bing_serp/run_bing_serp.py --theme cidr --write-batch-md --batch-id YYYY-MM-DD-cidr-longtail-serp ...
 ```
 
-`--theme` 会把 Markdown 写到 `docs/seo/keywords/{theme}/`。
+`--theme` 会把 Markdown 写到 `docs/seo/keywords/{theme}/`。默认搜法见策略 §3.3 I 与 [`ops/seo/bing_serp/README.md`](../../../ops/seo/bing_serp/README.md)（去引号、搜索框、每词新会话、污染变体）。
 
 ## 现有主题
 
@@ -28,5 +28,7 @@ python ops/seo/bing_serp/run_bing_serp.py --theme cidr --write-batch-md --batch-
 |---|---|
 | [`cidr/`](./cidr/) | CIDR / 子网 / Terraform cidrsubnet 等 |
 | [`measuring-magnet-fields/`](./measuring-magnet-fields/) | 磁场测量词表 |
+| [`social-share/`](./social-share/) | 社交/OG 图使用场景聚类（§3.3 H 的**渠道类示例**；规则本身全站适用） |
+| [`p0-scene/`](./p0-scene/) | 产品待办 P0 五条场景 slug 的 Bing SERP / 长尾选词（2026-08-31） |
 
 漏斗说明：[`../keyword-to-tool-funnel.md`](../keyword-to-tool-funnel.md) · 运维：[`../../ops/seo/keyword-to-tool-ops.md`](../../ops/seo/keyword-to-tool-ops.md)

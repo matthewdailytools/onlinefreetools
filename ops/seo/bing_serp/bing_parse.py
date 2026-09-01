@@ -11,7 +11,7 @@ from __future__ import annotations
 import logging
 import re
 from typing import Any
-from urllib.parse import parse_qs, unquote, urlparse
+from urllib.parse import parse_qs, parse_qsl, quote_plus, unquote, urlencode, urlparse, urlunparse
 
 # 日志
 logger = logging.getLogger("bing_serp.parse")
@@ -36,6 +36,34 @@ _CN_DOMAIN_MARKERS = (
     "huaweicloud.com",
 )
 
+# 会把上一词带进本词排名的查询参数（P0 会话串味）
+_SESSION_BLEED_KEYS = frozenset(
+    {
+        "pq",
+        "cvid",
+        "sid",
+        "iqccid",
+        "sc",
+        "sk",
+        "gh",
+        "ajaxhist",
+        "ajaxserp",
+    }
+)
+
+# 人机验证 / 拦截页文案
+_CHALLENGE_MARKERS = (
+    "unusual traffic",
+    "verify you are a human",
+    "verify you are human",
+    "our systems have detected",
+    "captcha",
+    "hcaptcha",
+    "人机验证",
+    "安全验证",
+    "请完成验证",
+)
+
 # 页面上常见的中文 Bing UI 文案
 _CN_UI_MARKERS = (
     "国际版",
@@ -47,6 +75,52 @@ _CN_UI_MARKERS = (
     "词典",
     "地图",
 )
+
+
+def bing_index_lock_query(
+    *,
+    mkt: str = "en-US",
+    international: bool = False,
+    count: int | None = None,
+) -> str:
+    """
+    技术层锁定市场 / 索引的查询串（不含 ``q=``）。
+
+    - ``setmkt`` + ``mkt``：双写市场，减少只靠 Cookie 被踢回 CN。
+    - ``qs=n`` / ``sp=-1`` / ``lq=0``：关掉建议改写与本地化连带（不改用户查询正文）。
+    - ``ensearch=1``：CN 主机上的国际索引开关。
+
+    参数
+    ----
+    mkt:
+        目标市场。
+    international:
+        True 时锁 en-US 并带国际版开关。
+    count:
+        可选；首页不传，搜索页传期望条数。
+
+    返回
+    ----
+    已 ``&`` 拼接的查询串。
+    """
+    effective_mkt = "en-US" if international else mkt
+    lang = effective_mkt.split("-")[0] if "-" in effective_mkt else effective_mkt
+    cc = effective_mkt.split("-")[-1].upper() if "-" in effective_mkt else "US"
+    parts = [
+        "form=QBLH",
+        f"mkt={effective_mkt}",
+        f"setmkt={effective_mkt}",
+        f"setlang={lang}",
+        f"cc={cc}",
+        "qs=n",
+        "sp=-1",
+        "lq=0",
+    ]
+    if count is not None:
+        parts.append(f"count={int(count)}")
+    if international:
+        parts.append("ensearch=1")
+    return "&".join(parts)
 
 
 def build_bing_search_url(
@@ -77,19 +151,158 @@ def build_bing_search_url(
     ----
     完整搜索 URL 字符串。
     """
-    from urllib.parse import quote_plus
-
-    # setlang：界面语言；cc：国家代码（取 mkt 后半段）
-    effective_mkt = "en-US" if international else mkt
-    lang = effective_mkt.split("-")[0] if "-" in effective_mkt else effective_mkt
-    cc = effective_mkt.split("-")[-1].upper() if "-" in effective_mkt else "US"
     q = quote_plus(query)
-    # ensearch=1：在被重定向到 cn.bing.com 时仍请求国际索引
-    ensearch = "&ensearch=1" if international else ""
-    return (
-        f"https://{host}/search?q={q}"
-        f"&setlang={lang}&cc={cc}&count={int(count)}{ensearch}"
+    lock = bing_index_lock_query(mkt=mkt, international=international, count=count)
+    return f"https://{host}/search?q={q}&{lock}"
+
+
+def build_bing_home_url(
+    *,
+    mkt: str = "en-US",
+    international: bool = False,
+    host: str = "www.bing.com",
+) -> str:
+    """
+    构造 Bing 首页 URL，供「先打开首页再在搜索框输入」（用户习惯）。
+
+    参数
+    ----
+    mkt:
+        市场代码。
+    international:
+        True 时带 ``ensearch=1`` 并偏向 en-US。
+    host:
+        主机名。
+
+    返回
+    ----
+    首页 URL。
+    """
+    lock = bing_index_lock_query(mkt=mkt, international=international, count=None)
+    return f"https://{host}/?{lock}"
+
+
+def serp_url_has_session_bleed(url: str) -> bool:
+    """
+    当前 SERP URL 是否带上一词会话参数（``pq`` / ``cvid`` 等）。
+
+    参数
+    ----
+    url:
+        ``page.url``。
+    """
+    try:
+        qs = parse_qsl(urlparse(url or "").query, keep_blank_values=True)
+    except Exception:
+        return False
+    return any(k.lower() in _SESSION_BLEED_KEYS for k, _v in qs)
+
+
+def relock_bing_serp_url(
+    url: str,
+    *,
+    mkt: str = "en-US",
+    international: bool = False,
+) -> str | None:
+    """
+    去掉会话串味参数，并补上市场/国际版锁。
+
+    搜索框提交常丢掉 ``ensearch=1``、带上 ``pq=上一词``；需要重载时返回新 URL，
+    无需改动则返回 ``None``。
+
+    参数
+    ----
+    url:
+        当前结果页 URL。
+    mkt:
+        目标市场。
+    international:
+        是否锁国际索引。
+
+    返回
+    ----
+    需要 ``goto`` 的新 URL，或 ``None``。
+    """
+    raw = url or ""
+    if not raw.startswith("http"):
+        return None
+    parsed = urlparse(raw)
+    host = (parsed.netloc or "").lower()
+    if "bing.com" not in host:
+        return None
+    qs_list = parse_qsl(parsed.query, keep_blank_values=True)
+    query_text = ""
+    kept: list[tuple[str, str]] = []
+    had_bleed = False
+    for key, val in qs_list:
+        low = key.lower()
+        if low in _SESSION_BLEED_KEYS:
+            had_bleed = True
+            continue
+        if low == "q":
+            query_text = val
+            continue
+        # 锁参数下面统一重写，先丢掉旧的以免重复
+        if low in {
+            "form",
+            "mkt",
+            "setmkt",
+            "setlang",
+            "cc",
+            "qs",
+            "sp",
+            "lq",
+            "ensearch",
+            "count",
+        }:
+            continue
+        kept.append((key, val))
+    if not query_text:
+        return None
+    missing_lock = international and "ensearch=1" not in raw.lower()
+    missing_setmkt = "setmkt=" not in raw.lower()
+    if not had_bleed and not missing_lock and not missing_setmkt:
+        return None
+    lock = bing_index_lock_query(mkt=mkt, international=international, count=10)
+    new_query = f"q={quote_plus(query_text)}&{lock}"
+    extra = urlencode(kept, doseq=True)
+    if extra:
+        new_query = f"{new_query}&{extra}"
+    return urlunparse(
+        (parsed.scheme or "https", parsed.netloc, parsed.path or "/search", "", new_query, "")
     )
+
+
+def detect_bing_challenge(page: Any) -> dict[str, Any]:
+    """
+    检测验证码 / 流量异常拦截页（解析有机结果会得到空或乱码）。
+
+    参数
+    ----
+    page:
+        已加载的 Playwright Page。
+
+    返回
+    ----
+    ``is_challenge`` / ``reasons``。
+    """
+    reasons: list[str] = []
+    final_url = ""
+    try:
+        final_url = (page.url or "").lower()
+    except Exception:
+        final_url = ""
+    if "captcha" in final_url or "challenge" in final_url:
+        reasons.append(f"url={urlparse(final_url).path}")
+    try:
+        sample = (page.inner_text("body") or "")[:2000].lower()
+    except Exception:
+        sample = ""
+    for marker in _CHALLENGE_MARKERS:
+        if marker in sample:
+            reasons.append(f"text:{marker}")
+            break
+    return {"is_challenge": bool(reasons), "reasons": reasons}
 
 
 def is_cn_bing_host(url: str) -> bool:
@@ -301,13 +514,33 @@ def parse_organic_results(page: Any, *, limit: int = 10) -> list[dict[str, Any]]
     字典列表，每项含 ``rank`` / ``title`` / ``url`` / ``domain`` / ``snippet``。
     """
     results: list[dict[str, Any]] = []
-    # Bing 经典有机块
+    # Bing 经典有机块；多取一些再过滤广告包
     items = page.query_selector_all("li.b_algo")
     if not items:
         logger.warning("no li.b_algo found; Bing markup may have changed")
         return results
 
-    for idx, item in enumerate(items[: max(1, int(limit))], start=1):
+    cap = max(1, int(limit))
+    for item in items:
+        if len(results) >= cap:
+            break
+        # 跳过广告 / 侧栏包装的伪有机块
+        try:
+            is_pack = bool(
+                item.evaluate(
+                    """el => {
+                        const cls = ((el.getAttribute('class') || '') + ' ' +
+                            ((el.parentElement && el.parentElement.className) || '')).toLowerCase();
+                        if (cls.includes('b_ad')) return true;
+                        if (el.closest('#b_context, .b_ad, #b_ads, #b_topw .b_ads')) return true;
+                        return false;
+                    }"""
+                )
+            )
+        except Exception:
+            is_pack = False
+        if is_pack:
+            continue
         # 标题与链接
         title = ""
         href = ""
@@ -333,9 +566,13 @@ def parse_organic_results(page: Any, *, limit: int = 10) -> list[dict[str, Any]]
         title = re.sub(r"\s+", " ", title)[:300]
         if not title and not href:
             continue
+        # 相关搜索链混进 b_algo 时丢掉
+        href_l = (href or "").lower()
+        if "bing.com/search" in href_l and "q=" in href_l:
+            continue
         results.append(
             {
-                "rank": idx,
+                "rank": len(results) + 1,
                 "title": title,
                 "url": href,
                 "domain": _domain_of(href),
@@ -362,20 +599,42 @@ def parse_related_searches(page: Any, *, limit: int = 12) -> list[str]:
     """
     texts: list[str] = []
     seen: set[str] = set()
-    # 常见相关搜索容器
+    # 页底 Related searches / 相关搜索；CN 国际版类名常变，多选择器兜底
     selectors = [
         ".b_rs a",
         "#brsv3 a",
+        "#b_context .b_rs a",
+        ".b_rrsr a",
+        "#brs_section a",
+        "[aria-label*='Related'] a",
+        "[aria-label*='related'] a",
         ".b_vList a",
         "[class*='related'] a",
+        "h2 + ul a[href*='/search']",
+        "a[href*='/search?q='][class*='rs']",
     ]
+    skip = {
+        "related searches",
+        "people also search for",
+        "related",
+        "相关搜索",
+        "其他人还搜索了",
+        "images",
+        "videos",
+        "maps",
+        "news",
+    }
     for sel in selectors:
         for el in page.query_selector_all(sel):
             t = re.sub(r"\s+", " ", (el.inner_text() or "").strip())
             if not t or len(t) > 120:
                 continue
             key = t.lower()
-            if key in seen:
+            if key in seen or key in skip:
+                continue
+            href = (el.get_attribute("href") or "").lower()
+            looks_like_query = (" " in t) or ("-" in t) or (len(t) >= 8)
+            if href and "/search" not in href and "q=" not in href and not looks_like_query:
                 continue
             seen.add(key)
             texts.append(t)

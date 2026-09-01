@@ -134,7 +134,7 @@ flowchart TD
 | 来源 | 用来做什么 | 不要用来做什么 |
 |---|---|---|
 | **Google**（GSC / 相关搜索 / PAA / 有机 SERP） | 真实需求与 CTR 收割；验证意图是否「算/转/生成/校验」；AI Overview 只要求页已 indexed + snippet-eligible，**不为 AI 堆 schema/`llms.txt`** | 以「大词月搜」或 AI Overview 出现与否作为立项理由 |
-| **Bing**（Keyword Planner 量级带 + Bing 有机 SERP） | 词表展开与量级分桶；交叉验证前排类型（工具/文档/UGC）；本站脚本默认国际版 `en-US` | 把 Planner「100–1k / 1k+」当成必须进攻；CN Bing 噪声当缺口 |
+| **Bing**（Keyword Planner 量级带 + Bing 有机 SERP） | 词表展开与量级分桶；交叉验证前排类型（工具/文档/UGC）；本站脚本默认国际版 `en-US`、**用户搜法**（去引号、搜索框、每词新会话、污染则变体） | 把 Planner「100–1k / 1k+」当成必须进攻；CN Bing 噪声当缺口；**不要**默认加引号或把品牌挪到句尾 |
 
 **交叉规则**：同一候选须 **至少一侧 SERP（优先 Google；本仓运维默认 Bing 国际版可先跑）** 人工看过前 5–10；草稿 `competition_tier` 不可直接立项。Google 与 Bing 结论冲突时：以 **用户任务是否一致** 为准；任一侧出现「前排工具站密集」→ 倾向 `head`/`mid_covered`，不上周 `build`。
 
@@ -180,7 +180,7 @@ CIDR 实证：≥100 补扫 **无新增 P0**；P0 多来自 **任务句长尾**�
 - 意图 = 定义 / 全称 / 「what is」且无交互增量 → FAQ absorb，禁独立 URL  
 - 品牌导航（`mxtoolbox …`）、竞品站名、购买/本地服务  
 - 同形词/错领域（如兽医 CIDR）  
-- SERP 严重污染且无法确认意图（百度壳、what-is-my-ip 误匹配等）→ 重抓或 `defer`，**不**标 `long_gap` 立项  
+- SERP 严重污染且无法确认意图（百度壳、what-is-my-ip 误匹配、品牌首页吞任务词、会话串味）→ 按 **§3.3 I** 换用户搜法重抓或 `defer`，**不**标 `long_gap` 立项  
 - 仅 Planner 高量、未做 SERP → **不得**入周 `build`
 
 #### E. `absorb` vs `build`（选定长尾之后）
@@ -196,10 +196,12 @@ CIDR 实证：≥100 补扫 **无新增 P0**；P0 多来自 **任务句长尾**�
 ```text
 [ ] 量级带已标；1k+ 未当唯一 H1
 [ ] 用户任务一句；可交互 = yes
-[ ] Google 和/或 Bing 前 5–10 已看；tier 人工确认
+[ ] slug 已落到真实使用场景（情境+动作+结果）；平台只是情境的一种；无品类/-pack 工程名
+[ ] 默认预设 = H1 场景（一步到位）
+[ ] Google 和/或 Bing 前 5–10 已看；tier 人工确认；Bing 用用户搜法（§3.3 I），`unusable` 未当缺口
 [ ] 缺口 ≥2 条或明确 mid/head
 [ ] 若 head 工具占位：是否跑 §3.3 G title_gap_fallback（长尾 title 字面缺口 → slug/H1）
-[ ] IG 草稿 ≥3；同簇合并计划写明
+[ ] IG 草稿 ≥3；同簇合并计划写明（作业类型，非标签拆页）
 [ ] verdict = absorb | build | defer | drop；build 仅 long_gap/locale_gap
 ```
 
@@ -288,6 +290,133 @@ CIDR 实证：≥100 补扫 **无新增 P0**；P0 多来自 **任务句长尾**�
 | `cidr calculator` | `cidr to ip range` / 叙事 `IPv4 CIDR to host range` | 前排多为 “Subnet Calculator - CIDR…” 泛标题 | slug=`cidr-host-range`，H1=`IPv4 CIDR to host range`（不占周进攻） |
 | `cidr calculator` | `terraform cidrsubnet` | 前排多为 HashiCorp docs，少有同名求值器 title | **不是**本兜底主路径 → 独立 `long_gap` 工具（任务已不同） |
 | `cidr notation` | `what is cidr` | 教育页 title 常含问法 | 定义簇 → FAQ absorb，**不**建工具 URL |
+
+#### H. 使用场景任务句定 slug（全站；平台只是例子）
+
+**适用范围**：所有候选 slug（计算器、开发者零件、文件工具、1→N 渠道包、SEO 生成器）。**不是**只适用于社交平台。
+
+**问题**：用品类名 / 工程名当 slug（`cidr-calculator`、`social-share-image-pack`、`pdf-tools`），用户不会搜这个词；进页后还要再选一次「我到底要办哪件事」，需求无法一步到位。
+
+**思路**：slug / H1 必须是用户**实际使用时会搜、打开就要办成的那一件事**（使用场景任务句）。把场景拆到足够具体：对象、约束、方向、工作流位置——直到默认控件能对准这一次任务。同**作业类型**的相邻场景作页内一键预设（一带多场景），**禁止**按标签近义拆 URL。
+
+「平台 + 该平台用途」（如 LinkedIn 个人背景横幅）只是渠道类工具的**一种拆法**。其它域同样要拆场景，例如：Terraform `cidrsubnet` 求值 ≠ 泛 CIDR 计算器；已知密码解锁 PDF ≠ 合并 PDF；EMI 月供 ≠ 「贷款计算器包」。
+
+与 **§3.3 G** 的关系：G 解决「头词被占 → 用 title 缺口长尾当 H1」；H 解决「候选必须细到真实使用场景」。先 H 列出场景，再 G 选哪一条当主 slug。
+
+##### H.1 任务句公式（缺一层则 slug 不合格）
+
+```text
+用户任务句 = 使用情境（对象 / 约束 / 工作流位置） + 这一次要做的动作 + 可观察结果
+slug / H1   = 该任务句的检索向说法（kebab / 口语）
+禁止当主词 = 品类头词、工程后缀（-pack / -generator / -tool / -utils）、空「多功能」
+```
+
+情境从哪来（按工具域选用，**不要求每页都有平台名**）：
+
+| 情境维度 | 问什么 | 例子（合格场景） | 反例（太粗） |
+|---|---|---|---|
+| 渠道 / 平台 | 在哪个产品里交付 | LinkedIn 个人横幅、Amazon **主图**、YouTube **视频**缩略图 | 「社交」「电商」 |
+| 对象 / 材料 | 处理的是什么 | IPv6 前缀、ZIP（不是 RAR）、文本层 PDF | 「网络」「压缩包」「文档」 |
+| 方向 / 逆向 | 从哪到哪 | IP 段 → CIDR；含税 → 未税 | 「CIDR 计算器」「VAT 工具」 |
+| 工作流约束 | 哪条流水线 / 哪条规则 | Terraform `cidrsubnet`、已知用户密码解锁、WCAG 正文对比 | 「子网」「PDF 安全」「配色」 |
+| 岗位触发点 | 谁在何时用 | 上架前改主图、发帖前出 Story、粘贴 Prompt 前清零宽 | 「设计师工具」「AI 工具」 |
+
+| 层 | 要回答 | 合格 | 不合格 |
+|---|---|---|---|
+| 情境 | 用户处在哪一次具体使用里 | 见上表任一层已落到可命名的一次任务 | 只写品类 |
+| 动作 | 这一次做哪件事 | 求值、裁到规范、解密、对照时区 | 「处理」「生成包」 |
+| 结果 | 无参打开页立刻处于什么状态 | 样例已算完 / 画布已是该场景尺寸 / 模式已选中 | 空白万能台 + 「请先选择…」 |
+
+**一步到位（交互硬条件）**：H1 场景 = 进页默认预设（模式、样例、尺寸、规则）。同簇其它场景用芯片/Tab 切换，**不得**默认态为「请先选择场景」。可用 `?scene=` 深链；主 URL 无参进入必须已是 H1 场景。
+
+##### H.2 何时拆独立 URL（作业类型，不是标签）
+
+只看**主控件 / 约束 / 失败模式是否不同**，不看品牌名、近义词、平台名是否不同。
+
+| 可拆（须仍过 §3.3 硬条件） | 不可拆（doorway） |
+|---|---|
+| 任务实质不同：逆向转换、不同对象、不同规则集（cidrsubnet 求值 vs 单块展开；OG 链接卡 vs 封面安全区 vs 9:16 Story） | 仅换同义词或品牌名（facebook-cover vs linkedin-banner 若同为超宽封面+安全区；unzip-zip vs unzip-file） |
+| 官方/协议导致失败模式能写成可见 Rules 且与邻页不同 | 按广告位、文件后缀、近义问法铺 URL |
+| 用户搜该词会期望**另一套主控件** | 同一套缩放/同一公式只改 H1 |
+
+同簇：一页默认对准选用场景；其余 = 芯片 / FAQ / Use cases。**禁止**「每一条场景标签 × 一 URL」。
+
+##### H.3 废止品类 / 工程包名作主 slug
+
+| 避免当唯一 slug/H1 | 改为（场景任务句；须再过 SERP） |
+|---|---|
+| `social-share-image-pack` | 使用场景长尾，如 `open-graph-image-size`、`linkedin-banner-size`（社交域示例见 [`keywords/social-share/`](./keywords/social-share/README.md)） |
+| `cidr-calculator` | 已用场景句：`cidr-to-ip-range`、`terraform-cidrsubnet`、`ip-range-to-cidr` |
+| `marketplace-image-pack` | 如 `amazon-main-image-size`；同「主图合规」的其它店芯片 absorb |
+| `pdf-tools` / 万能转换器 | 已有 `merge-pdf`、`unlock-pdf`（已知密码）等按使用场景拆 |
+
+旧包名可作内部簇 ID，**不**注册为 `/tools/{pack}`。
+
+##### H.4 立项前必交「使用场景」表
+
+主题夹或 `02` 覆盖表须列出该意图下用户**实际会用到的场景**（渠道类可含平台列，计算器/开发者工具用对象/方向/约束列）：
+
+| 使用场景 | 用户搜法（草稿） | 作业类型 | 独立 URL？ | 默认 / absorb |
+|---|---|---|---|---|
+| LinkedIn 个人背景横幅 | linkedin banner size | 封面安全区 | 否（若作 H1 则本页默认） | 默认 |
+| Facebook 主页封面 | facebook cover photo size | 封面安全区 | 否 | 芯片 |
+| Terraform cidrsubnet 求值 | terraform cidrsubnet | 云配置函数求值 | 是（控件与泛 CIDR 不同） | 已上线示例 |
+| 已知密码打开 PDF | unlock pdf | 解密（非破解） | 是（与 merge 不同） | 已上线示例 |
+
+无此表不得把候选标 `build`，不得开 `work-tasks/`。1→N 渠道页无「情境落到具名用途」同样不合格。
+
+##### H.5 操作清单（场景专用）
+
+```text
+[ ] 每个候选能写出「情境 + 动作 + 结果」一句（平台只是情境的一种）
+[ ] slug/H1 = 该句检索向说法；无品类头词、无 -pack 工程名
+[ ] 已按作业类型聚类；近义标签未拆 URL
+[ ] 默认预设 = H1 场景（一步到位）
+[ ] 同簇其它真实使用场景有芯片/FAQ/Use cases 落点
+[ ] 已与 catalog 邻近页划界
+```
+
+#### I. Bing 查询怎么搜（用户习惯，防污染）
+
+**问题**：CN Bing 国际版会对「不像用户那样搜」的句子严重污染——品牌打头只出官网、`create`/`make` 绑到游戏/自动化品牌、`og` 进俚语、数字打头进专利/编辑器；同一浏览器 page 连续搜还会整页串成农商银行 / 135 编辑器 / GTA 模组（P0 2026-08-31 实证）。加引号、把品牌挪到句尾**不是**用户习惯，也挡不住劫持。
+
+**思路**：按用户搜在线工具的方式发查询；污染则换一条用户也会搜的说法再抓；仍脏则标不可用，禁止 `long_gap`。
+
+脚本默认（`ops/seo/bing_serp` v0.3+）：
+
+**搜法（§3.3 I）**：去引号、完整任务句、污染则用户搜法变体。  
+**技术层（§3.3 I.2）**：每词独立 BrowserContext；`setmkt`+`ensearch=1`+`qs=n` 锁国际索引；搜索框提交后剥掉 `pq`/`cvid` 并补锁；可点「国际版」；英文查询多数中文 title / 验证码 → `unusable`。习惯变体仍脏时再试 `language:en`（只用于重抓，不作 H1）。
+
+| 做 | 不要做 |
+|---|---|
+| 完整任务句、不加引号：`open graph image size` | `"quoted"`、`og image`、`product image size amazon` |
+| 专名按用户复制法：`apple-touch-icon` | 短动词打头硬搜：`create zip file`（改 `zip files online`） |
+| 对象 + 约束：`size` / `online` / `requirements` | 用噪声 SERP 的脚本 `long_gap` 立项 |
+| 每词新 **context**；Related 空时不要把错误意图页的相关搜当「用户也搜」 | 整批复用一张 page / 同一个 context（会话串味） |
+
+变体顺序（脚本 `habit_query_variants`）：规范化原句（去引号、`og`→`open graph`）→ 专名连写 / 尺寸挪到句尾 / 歧义动词改「对象 + online」→ 仍脏则 `language:en` 技术锁 → 再脏标 `unusable`。
+
+##### I.1 操作清单（搜法专用）
+
+```text
+[ ] 种子是用户会打的任务句，不是引号/品牌倒置实验
+[ ] 批次用默认防污染策略（或文档写明为何关闭）
+[ ] usable=NO / unusable 未写入 long_gap
+[ ] 相关搜索只采用与主任务同簇的句子
+```
+
+##### I.2 技术层（采集，不改查询正文）
+
+| 手段 | 作用 |
+|---|---|
+| 独立 `BrowserContext` + `Accept-Language: en-US` + 美东时区/定位 | 切断 `MUID` / 上一词存储 |
+| URL：`setmkt` `ensearch=1` `qs=n` `sp=-1` `lq=0` | 锁市场、减少建议改写 |
+| 提交后剥 `pq`/`cvid` 再补锁重载 | 搜索框常丢掉国际版参数并带上上一词 |
+| 点击「国际版」 | 比只改 Cookie 更接近官方切换 |
+| 跳过 `b_ad`；英文查询 CJK title 占比过高 → 污染 | 广告包/中文垂类不当缺口 |
+| `language:en` 仅作最后一次重抓 | 不写进 slug/H1 |
+
+关闭：`--reuse-page`（同时关隔离）、`--no-lang-lock`。
 
 ---
 

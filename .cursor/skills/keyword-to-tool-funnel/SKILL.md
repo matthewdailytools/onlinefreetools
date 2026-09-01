@@ -35,7 +35,8 @@ description: >-
 | `drop` | 不可做成工具、重复、无增量，或纯 `head` 且无本站展示 | 留池注明理由即可 |
 
 默认优先 **`absorb` 丰富已有**，再谈 `build`。周 `build` 名额只给缺口类，不给 `head`。  
-头词已被工具占位时：按策略 **§3.3 G**（`title_gap_fallback`）——同簇长尾若在该长尾 SERP 的 organic **title 中未出现**，用该长尾作工具 **slug/H1**（一簇一 URL；满 IG；默认不占周进攻，除非任务实质不同）。
+头词已被工具占位时：按策略 **§3.3 G**（`title_gap_fallback`）——同簇长尾若在该长尾 SERP 的 organic **title 中未出现**，用该长尾作工具 **slug/H1**（一簇一 URL；满 IG；默认不占周进攻，除非任务实质不同）。  
+另须 **§3.3 H（全站）**：slug/H1 = 用户**实际使用场景**（情境+动作+结果），不是品类/`*-pack`；进页默认即该场景。平台只是情境的一种（如 LinkedIn 横幅）。只按作业类型拆 URL。无「使用场景」表不得标 `build`。
 
 ## 强制流程
 
@@ -47,15 +48,16 @@ description: >-
 
 ### 2) 每条候选必答
 
-1. 用户任务？（算 / 转 / 生成 / 校验）能否交互？  
+1. 用户任务？（算 / 转 / 生成 / 校验）能否交互？须写成**实际使用场景**（情境+动作+结果）；进页默认即该场景。平台只是情境的一种  
 2. SERP 缺什么？能否 ≥3 条 IG？  
 3. 是否已有 slug 同意图？→ **`absorb`**  
-4. 是否近义换词？→ 禁止拆页，进 Use cases / FAQ  
+4. 是否近义换词（含仅换平台名/同义词、同一套控件）？→ 禁止拆页，进芯片 / Use cases / FAQ  
 5. YMYL？→ 倾向 `defer` 或加重 disclaimer 成本  
 6. **竞品覆盖**：谁占位？→ 填 `competition_tier`（`head` / `mid_covered` / `long_gap` / `locale_gap`）+ `gap_notes`  
 
 对照 catalog：`src/site/tool-catalog.json`；可行性：`docs/2026-07-28-tool-direction.md`。  
-选题细则：`docs/seo/2026-08-20-long-tail-gap-strategy.md`（含 **§3.3 选长尾词策略标准：Google + Bing**）。种子可含大词，**入池以向下展开的长尾缺口为主**（建议每批缺口类 ≥6/10）。
+选题细则：`docs/seo/2026-08-20-long-tail-gap-strategy.md`（含 **§3.3 选长尾词策略标准：Google + Bing**，**§3.3 I Bing 用户搜法防污染**）。种子可含大词，**入池以向下展开的长尾缺口为主**（建议每批缺口类 ≥6/10）。  
+Bing 采集默认：国际版优先、每词独立 BrowserContext、搜索框提交、剥 `pq` 串词、污染则用户搜法变体（仍脏再 `language:en`）；`unusable` / `serp_usable=false` 不得当 `long_gap`。禁止默认加引号或品牌倒置。
 
 ### 3A) `absorb` → 丰富已有工具
 

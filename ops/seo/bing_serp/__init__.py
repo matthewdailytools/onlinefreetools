@@ -21,4 +21,4 @@ Bing SERP 采集与分析公用包（CloakBrowser）。
 from __future__ import annotations
 
 # 包版本：行为变更时递增，写入每次运行的 meta
-__version__ = "0.1.2"
+__version__ = "0.3.0"

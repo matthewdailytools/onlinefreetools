@@ -43,7 +43,9 @@ if str(_PKG_DIR) not in sys.path:
 
 from analyze import analyze_query_serp  # noqa: E402
 from bing_parse import (  # noqa: E402
+    build_bing_home_url,
     build_bing_search_url,
+    detect_bing_challenge,
     detect_cn_bing,
     parse_organic_results,
     parse_people_also_ask,
@@ -51,9 +53,21 @@ from bing_parse import (  # noqa: E402
 )
 from browser_util import (  # noqa: E402
     apply_bing_international_cookies,
+    click_bing_international_toggle,
+    close_session,
+    dismiss_bing_consent,
     goto_with_wait,
     human_pause,
     launch_cloak_browser,
+    open_fresh_session,
+    relock_serp_after_navigation,
+    reset_bing_tracking_cookies,
+    submit_query_in_search_box,
+)
+from query_strategy import (  # noqa: E402
+    habit_query_variants,
+    score_serp_pollution,
+    technical_lang_lock_query,
 )
 from io_util import (  # noqa: E402
     DEFAULT_CACHE_DIR,
@@ -70,7 +84,7 @@ from io_util import (  # noqa: E402
 try:
     from __init__ import __version__
 except Exception:  # pragma: no cover
-    __version__ = "0.1.0"
+    __version__ = "0.3.0"
 
 # 根日志配置在 main 里完成
 logger = logging.getLogger("bing_serp")
@@ -158,6 +172,38 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         help="允许保留 CN Bing 结果（默认：检测到 CN 则自动切国际版重搜）",
     )
     p.add_argument(
+        "--no-habit-retry",
+        action="store_true",
+        help="关闭用户搜法变体：污染后不再改写重搜（调试用）",
+    )
+    p.add_argument(
+        "--max-variants",
+        type=int,
+        default=3,
+        help="含规范化种子在内，最多试几条用户搜法变体（默认 3）",
+    )
+    p.add_argument(
+        "--search-mode",
+        choices=("auto", "box", "url"),
+        default="auto",
+        help="auto=首页搜索框（失败回退 URL）；box=只走搜索框；url=只构造 /search",
+    )
+    p.add_argument(
+        "--reuse-page",
+        action="store_true",
+        help="整批共用一张 page（旧行为；默认每词新 page 防会话串味）",
+    )
+    p.add_argument(
+        "--keep-quotes",
+        action="store_true",
+        help="保留词表引号（默认剥掉：用户不加引号，引号不能防污染）",
+    )
+    p.add_argument(
+        "--no-lang-lock",
+        action="store_true",
+        help="关闭技术兜底 language:en（习惯变体仍污染时默认会再搜一次）",
+    )
+    p.add_argument(
         "-v",
         "--verbose",
         action="store_true",
@@ -182,6 +228,49 @@ def _mkt_wants_international(mkt: str) -> bool:
     return True
 
 
+def _parse_serp_page(page: Any, *, results_per_query: int, query: str) -> tuple[list, list, list]:
+    """
+    从已加载的结果页解析有机结果 / 相关搜索 / PAA。
+
+    参数
+    ----
+    page:
+        Playwright Page。
+    results_per_query:
+        有机结果上限。
+    query:
+        仅用于日志。
+
+    返回
+    ----
+    ``(organic, related, paa)``。
+    """
+    organic: list = []
+    related: list = []
+    paa: list = []
+    for attempt in range(2):
+        try:
+            organic = parse_organic_results(page, limit=results_per_query)
+            related = parse_related_searches(page)
+            paa = parse_people_also_ask(page)
+            if not related:
+                logger.warning("no related searches parsed for %r", query)
+            break
+        except Exception as exc:
+            msg = str(exc).lower()
+            if attempt == 0 and "context" in msg:
+                logger.warning("parse interrupted by navigation; wait and retry once")
+                human_pause(1.0, 2.0)
+                try:
+                    page.wait_for_load_state("domcontentloaded", timeout=15000)
+                    page.wait_for_selector("li.b_algo, #b_results", timeout=15000)
+                except Exception:
+                    pass
+                continue
+            raise
+    return organic, related, paa
+
+
 def fetch_serp_once(
     page: Any,
     query: str,
@@ -190,9 +279,13 @@ def fetch_serp_once(
     results_per_query: int,
     international: bool,
     prefer_cn_host: bool = False,
+    search_mode: str = "auto",
 ) -> dict:
     """
     打开一次 Bing 搜索并解析当前页。
+
+    默认先打开首页再在搜索框输入（用户习惯）；搜索框失败时回退 ``/search?q=``。
+    目标国际市场时**第一次就带** ``ensearch=1``，避免先打国内版再重搜污染会话。
 
     参数
     ----
@@ -208,6 +301,8 @@ def fetch_serp_once(
         是否带 ``ensearch=1`` 国际版参数。
     prefer_cn_host:
         True 时在 ``cn.bing.com`` 上请求（国内站点「国际版」官方路径）。
+    search_mode:
+        ``auto`` / ``box`` / ``url``。
 
     返回
     ----
@@ -223,33 +318,44 @@ def fetch_serp_once(
         international=international,
         host=host,
     )
-    goto_with_wait(page, url)
+    used_box = False
+    mode = (search_mode or "auto").lower()
+    if mode in ("auto", "box"):
+        home = build_bing_home_url(mkt=mkt, international=international, host=host)
+        goto_with_wait(page, home, expect_serp=False)
+        dismiss_bing_consent(page)
+        if international:
+            click_bing_international_toggle(page)
+        human_pause(0.4, 0.9)
+        used_box = submit_query_in_search_box(page, query)
+        if not used_box:
+            if mode == "box":
+                logger.warning("search box missing; still falling back to URL for %r", query)
+            goto_with_wait(page, url, expect_serp=True)
+        else:
+            relock_serp_after_navigation(
+                page, mkt=mkt, international=international
+            )
+            if international:
+                click_bing_international_toggle(page)
+    else:
+        goto_with_wait(page, url, expect_serp=True)
     human_pause(0.8, 1.8)
+    # 相关搜索多在页底；不滚到底时 CN 国际版常解析为空
+    try:
+        page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
+        human_pause(0.6, 1.2)
+    except Exception:
+        pass
 
-    # 解析可能撞上二次导航；最多重试一次
-    organic: list = []
-    related: list = []
-    paa: list = []
-    for attempt in range(2):
-        try:
-            organic = parse_organic_results(page, limit=results_per_query)
-            related = parse_related_searches(page)
-            paa = parse_people_also_ask(page)
-            break
-        except Exception as exc:
-            msg = str(exc).lower()
-            if attempt == 0 and "context" in msg:
-                logger.warning("parse interrupted by navigation; wait and retry once")
-                human_pause(1.0, 2.0)
-                try:
-                    page.wait_for_load_state("domcontentloaded", timeout=15000)
-                    page.wait_for_selector("li.b_algo, #b_results", timeout=15000)
-                except Exception:
-                    pass
-                continue
-            raise
+    organic, related, paa = _parse_serp_page(
+        page, results_per_query=results_per_query, query=query
+    )
 
     cn_detect = detect_cn_bing(page, organic, mkt=mkt)
+    challenge = detect_bing_challenge(page)
+    if challenge.get("is_challenge"):
+        logger.warning("Bing challenge page for %r: %s", query, challenge.get("reasons"))
     try:
         final_url = page.url or url
     except Exception:
@@ -261,13 +367,102 @@ def fetch_serp_once(
         "related_searches": related,
         "people_also_ask": paa,
         "cn_detect": cn_detect,
+        "challenge": challenge,
         "international": international,
+        "used_search_box": used_box,
     }
+
+
+def _new_session(browser: Any, args: argparse.Namespace, *, want_intl: bool) -> dict[str, Any]:
+    """
+    按 CLI 打开新会话（默认独立 context）。
+    """
+    reuse_page = bool(getattr(args, "reuse_page", False))
+    return open_fresh_session(
+        browser,
+        apply_intl_cookies=want_intl,
+        isolate_context=not reuse_page,
+        mkt=args.mkt,
+    )
+
+
+def _fetch_international_once(
+    page: Any,
+    issued: str,
+    args: argparse.Namespace,
+    *,
+    want_intl: bool,
+) -> tuple[Any, dict, int]:
+    """
+    搜一次；若仍是国内版索引则换 cn.bing.com + ensearch 再搜。
+
+    国际市场第一次就带 ``ensearch=1``，不再先打国内版。
+
+    参数
+    ----
+    page:
+        当前 Page。
+    issued:
+        实际发出的查询。
+    args:
+        CLI 参数。
+    want_intl:
+        是否强制国际索引。
+
+    返回
+    ----
+    ``(page, fetched, intl_retry_delta)``；page 可能已被换成新实例。
+    """
+    search_mode = getattr(args, "search_mode", "auto")
+    fetched = fetch_serp_once(
+        page,
+        issued,
+        mkt=args.mkt,
+        results_per_query=args.results_per_query,
+        international=want_intl,
+        prefer_cn_host=False,
+        search_mode=search_mode,
+    )
+    intl_retry = 0
+    cn = fetched["cn_detect"]
+    if cn.get("is_cn") and want_intl:
+        logger.warning(
+            "CN Bing detected for %r (%s); retry international host",
+            issued,
+            "; ".join(cn.get("reasons") or []),
+        )
+        prefer_cn = "cn.bing.com" in (cn.get("final_url") or "")
+        apply_bing_international_cookies(page)
+        human_pause(0.4, 0.9)
+        fetched = fetch_serp_once(
+            page,
+            issued,
+            mkt=args.mkt,
+            results_per_query=args.results_per_query,
+            international=True,
+            prefer_cn_host=prefer_cn,
+            search_mode=search_mode,
+        )
+        intl_retry = 1
+        post = fetched["cn_detect"]
+        still_cn_host = "cn.bing.com" in (fetched.get("final_url") or "")
+        still_heavy_cn = float(post.get("cn_organic_ratio") or 0) >= 0.5
+        if still_cn_host and still_heavy_cn and "ensearch=1" not in (
+            fetched.get("final_url") or ""
+        ):
+            logger.warning(
+                "still CN-like after international retry: %s",
+                post.get("reasons"),
+            )
+    return page, fetched, intl_retry
 
 
 def run_batch(args: argparse.Namespace) -> int:
     """
     执行整批 Bing SERP 采集与分析。
+
+    默认：国际版优先、每词独立 BrowserContext、搜索框提交、
+    污染则用户搜法变体，仍脏再试 ``language:en`` 技术锁。
 
     参数
     ----
@@ -284,6 +479,7 @@ def run_batch(args: argparse.Namespace) -> int:
         queries=cli_queries,
         file_path=args.file or None,
         column=args.column or None,
+        keep_quotes=bool(getattr(args, "keep_quotes", False)),
     )
     if args.limit_queries and args.limit_queries > 0:
         query_list = query_list[: int(args.limit_queries)]
@@ -295,143 +491,214 @@ def run_batch(args: argparse.Namespace) -> int:
     batch_id = args.batch_id.strip() or datetime.now().strftime("%Y-%m-%d-%H%M-bing")
     run_dir = ensure_run_dir(Path(args.out_dir), batch_id)
 
+    # 国际市场：第一次就走国际索引，避免国内版 SERP 污染会话
+    want_intl = _mkt_wants_international(args.mkt) and not args.allow_cn
+    habit_retry = not bool(getattr(args, "no_habit_retry", False))
+    max_variants = int(getattr(args, "max_variants", 3) or 3)
+    reuse_page = bool(getattr(args, "reuse_page", False))
+    lang_lock_on = not bool(getattr(args, "no_lang_lock", False))
+
     logger.info(
-        "batch=%s queries=%d out=%s mkt=%s",
+        "batch=%s queries=%d out=%s mkt=%s intl=%s habit_retry=%s search_mode=%s isolate=%s",
         batch_id,
         len(query_list),
         run_dir,
         args.mkt,
+        want_intl,
+        habit_retry,
+        getattr(args, "search_mode", "auto"),
+        not reuse_page,
     )
 
-    # 启动浏览器
+    # 启动浏览器（locale 锁 en-US，避免系统中文头）
     browser = launch_cloak_browser(
         headless=not args.headed,
         humanize=bool(args.humanize),
-        locale=args.mkt,
+        locale="en-US" if want_intl else args.mkt,
     )
-    # 单 page 复用，减少启动开销
-    page = browser.new_page()
-    # 目标为国际市场时预先写国际版 Cookie，降低首次就被踢到 cn.bing 的概率
-    if _mkt_wants_international(args.mkt) and not args.allow_cn:
-        apply_bing_international_cookies(page)
+    session: dict[str, Any] | None = None
 
     row_summaries: list[dict] = []
     errors: list[dict] = []
-    # 统计本批因 CN 检测而重搜的次数
     intl_retry_count = 0
+    habit_retry_count = 0
+    lang_lock_count = 0
 
     try:
-        for i, query in enumerate(query_list):
-            logger.info("[%d/%d] search: %s", i + 1, len(query_list), query)
+        for i, seed in enumerate(query_list):
+            logger.info("[%d/%d] seed: %s", i + 1, len(query_list), seed)
             try:
-                fetched = fetch_serp_once(
-                    page,
-                    query,
-                    mkt=args.mkt,
-                    results_per_query=args.results_per_query,
-                    international=False,
-                )
-                cn = fetched["cn_detect"]
-                # 检测到 CN Bing 且目标不是大陆市场 → 切国际版重搜一次
-                if (
-                    cn.get("is_cn")
-                    and _mkt_wants_international(args.mkt)
-                    and not args.allow_cn
-                ):
-                    logger.warning(
-                        "CN Bing detected for %r (%s); retry international",
-                        query,
-                        "; ".join(cn.get("reasons") or []),
+                if (not reuse_page) or (session is None):
+                    close_session(session)
+                    session = _new_session(browser, args, want_intl=want_intl)
+                elif reuse_page:
+                    reset_bing_tracking_cookies(
+                        session["page"], apply_intl_cookies=want_intl
                     )
-                    apply_bing_international_cookies(page)
-                    human_pause(0.5, 1.2)
-                    # 已在 cn.bing.com 时优先走 cn 主机 + ensearch=1（官方国际版）
-                    prefer_cn = "cn.bing.com" in (cn.get("final_url") or "")
-                    fetched = fetch_serp_once(
-                        page,
-                        query,
-                        mkt=args.mkt,
-                        results_per_query=args.results_per_query,
-                        international=True,
-                        prefer_cn_host=prefer_cn,
-                    )
-                    intl_retry_count += 1
-                    # 重试后：仅当主机仍是 cn 且未带 ensearch、且国内站占比仍高，才告警
-                    post = fetched["cn_detect"]
-                    still_cn_host = "cn.bing.com" in (fetched.get("final_url") or "")
-                    still_heavy_cn = float(post.get("cn_organic_ratio") or 0) >= 0.5
-                    if still_cn_host and still_heavy_cn and "ensearch=1" not in (
-                        fetched.get("final_url") or ""
-                    ):
-                        logger.warning(
-                            "still CN-like after international retry: %s",
-                            post.get("reasons"),
-                        )
+                page = session["page"]
 
-                organic = fetched["organic"]
-                related = fetched["related_searches"]
-                paa = fetched["people_also_ask"]
-                analysis = analyze_query_serp(query, organic)
+                variants = (
+                    habit_query_variants(seed, max_variants=max_variants)
+                    if habit_retry
+                    else [seed]
+                )
+                tried: list[dict] = []
+                issued = variants[0]
+                fetched: dict = {}
+                pollution: dict = {}
+                for vi, candidate in enumerate(variants):
+                    if vi > 0:
+                        habit_retry_count += 1
+                        logger.warning(
+                            "polluted SERP; habit variant %d/%d for %r → %r",
+                            vi + 1,
+                            len(variants),
+                            seed,
+                            candidate,
+                        )
+                        if not reuse_page:
+                            close_session(session)
+                            session = _new_session(
+                                browser, args, want_intl=want_intl
+                            )
+                            page = session["page"]
+                        human_pause(0.8, 1.6)
+                    page, fetched, delta = _fetch_international_once(
+                        page, candidate, args, want_intl=want_intl
+                    )
+                    if session is not None:
+                        session["page"] = page
+                    intl_retry_count += delta
+                    pollution = score_serp_pollution(
+                        candidate,
+                        fetched.get("organic") or [],
+                        cn_detect=fetched.get("cn_detect"),
+                        challenge=fetched.get("challenge"),
+                    )
+                    tried.append(
+                        {
+                            "query": candidate,
+                            "polluted": bool(pollution.get("polluted")),
+                            "reasons": pollution.get("reasons") or [],
+                        }
+                    )
+                    issued = candidate
+                    if not pollution.get("polluted"):
+                        break
+
+                # 习惯变体仍污染：技术兜底 language:en（不写入工具 H1）
+                if pollution.get("polluted") and lang_lock_on:
+                    locked = technical_lang_lock_query(issued)
+                    if locked:
+                        lang_lock_count += 1
+                        logger.warning(
+                            "polluted after habit variants; tech lang-lock %r",
+                            locked,
+                        )
+                        if not reuse_page:
+                            close_session(session)
+                            session = _new_session(
+                                browser, args, want_intl=want_intl
+                            )
+                            page = session["page"]
+                        human_pause(0.8, 1.6)
+                        page, fetched, delta = _fetch_international_once(
+                            page, locked, args, want_intl=want_intl
+                        )
+                        if session is not None:
+                            session["page"] = page
+                        intl_retry_count += delta
+                        pollution = score_serp_pollution(
+                            locked,
+                            fetched.get("organic") or [],
+                            cn_detect=fetched.get("cn_detect"),
+                            challenge=fetched.get("challenge"),
+                        )
+                        tried.append(
+                            {
+                                "query": locked,
+                                "polluted": bool(pollution.get("polluted")),
+                                "reasons": pollution.get("reasons") or [],
+                                "tech": "language:en",
+                            }
+                        )
+                        issued = locked
+
+                organic = fetched.get("organic") or []
+                related = fetched.get("related_searches") or []
+                paa = fetched.get("people_also_ask") or []
+                analysis = analyze_query_serp(
+                    issued,
+                    organic,
+                    cn_detect=fetched.get("cn_detect"),
+                    challenge=fetched.get("challenge"),
+                )
+                analysis_out = {
+                    "competition_tier": analysis["competition_tier"],
+                    "gap_notes": analysis["gap_notes"],
+                    "serp_type_summary": analysis["serp_type_summary"],
+                    "top_domains": analysis["top_domains"],
+                    "has_interactive_tool_signal": analysis[
+                        "has_interactive_tool_signal"
+                    ],
+                    "type_counts": analysis["type_counts"],
+                    "organic_typed": analysis["organic_typed"],
+                    "serp_usable": analysis.get("serp_usable", True),
+                    "pollution": analysis.get("pollution") or pollution,
+                }
                 payload = {
-                    "query": query,
+                    "query": seed,
+                    "issued_query": issued,
+                    "variants_tried": tried,
                     "mkt": args.mkt,
-                    "search_url": fetched["search_url"],
-                    "final_url": fetched["final_url"],
-                    "international": fetched["international"],
-                    "cn_detect": fetched["cn_detect"],
+                    "search_url": fetched.get("search_url"),
+                    "final_url": fetched.get("final_url"),
+                    "international": fetched.get("international"),
+                    "used_search_box": fetched.get("used_search_box"),
+                    "cn_detect": fetched.get("cn_detect"),
+                    "challenge": fetched.get("challenge"),
                     "fetched_at": datetime.now().isoformat(timespec="seconds"),
                     "organic": organic,
                     "related_searches": related,
                     "people_also_ask": paa,
-                    "analysis": {
-                        "competition_tier": analysis["competition_tier"],
-                        "gap_notes": analysis["gap_notes"],
-                        "serp_type_summary": analysis["serp_type_summary"],
-                        "top_domains": analysis["top_domains"],
-                        "has_interactive_tool_signal": analysis[
-                            "has_interactive_tool_signal"
-                        ],
-                        "type_counts": analysis["type_counts"],
-                        "organic_typed": analysis["organic_typed"],
-                    },
+                    "analysis": analysis_out,
                     "tool_version": __version__,
                 }
-                write_query_json(run_dir, query, payload)
+                write_query_json(run_dir, seed, payload)
                 row_summaries.append(
                     {
-                        "query": query,
+                        "query": seed,
+                        "issued_query": issued,
                         "organic": organic,
                         "related_searches": related,
                         "people_also_ask": paa,
                         "analysis": payload["analysis"],
-                        "international": fetched["international"],
-                        "cn_detect": fetched["cn_detect"],
+                        "international": fetched.get("international"),
+                        "cn_detect": fetched.get("cn_detect"),
                     }
                 )
             except Exception as exc:
-                logger.exception("query failed: %s", query)
-                errors.append({"query": query, "error": str(exc)})
-                # 失败也写一份最小 JSON，便于排查
+                logger.exception("query failed: %s", seed)
+                errors.append({"query": seed, "error": str(exc)})
                 write_query_json(
                     run_dir,
-                    query,
+                    seed,
                     {
-                        "query": query,
+                        "query": seed,
                         "error": str(exc),
                         "fetched_at": datetime.now().isoformat(timespec="seconds"),
                     },
                 )
 
-            # 词间等待（最后一词可跳过）
             if i < len(query_list) - 1:
                 human_pause(args.delay_min, args.delay_max)
     finally:
+        close_session(session)
         try:
             browser.close()
         except Exception:
             logger.warning("browser.close() failed", exc_info=True)
 
-    # 清单
     manifest = {
         "batch_id": batch_id,
         "mkt": args.mkt,
@@ -440,7 +707,12 @@ def run_batch(args: argparse.Namespace) -> int:
         "ok_count": len(row_summaries),
         "error_count": len(errors),
         "intl_retry_count": intl_retry_count,
+        "habit_retry_count": habit_retry_count,
+        "lang_lock_count": lang_lock_count,
         "allow_cn": bool(args.allow_cn),
+        "search_mode": getattr(args, "search_mode", "auto"),
+        "habit_retry": habit_retry,
+        "isolate_context": not reuse_page,
         "errors": errors,
         "queries": [r["query"] for r in row_summaries],
         "finished_at": datetime.now().isoformat(timespec="seconds"),
@@ -448,10 +720,10 @@ def run_batch(args: argparse.Namespace) -> int:
     }
     write_run_manifest(run_dir, manifest)
 
-    # 可选：脱敏批次 md（优先主题夹）
     if args.write_batch_md:
         method = (
             f"CloakBrowser {__version__} Bing scrape; "
+            "isolated context; index lock; user-habit box search; "
             "organic title/url/snippet only; no full HTML committed"
         )
         body = render_batch_markdown(
@@ -475,7 +747,6 @@ def run_batch(args: argparse.Namespace) -> int:
         run_dir,
     )
     return 0 if not errors else (0 if row_summaries else 1)
-
 
 def main(argv: list[str] | None = None) -> int:
     """
