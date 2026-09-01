@@ -13,47 +13,60 @@ const zh: SiteLangDict = {
 	tool_prompt_template_builder_constraints_ph: '语气限制、范围、避免事项…',
 	tool_prompt_template_builder_copy: '复制',
 	tool_prompt_template_builder_desc:
-		'面向 ChatGPT、Gemini、Claude、DeepSeek 的 Prompt 模板构建器（Markdown/JSON）；文本留在本机，不上传服务器。',
+		'Prompt 模板构建器 — 默认本地组装，可选 Cloudflare AI 扩写/润色（Turnstile）；Markdown/JSON 留在本机。',
 	tool_prompt_template_builder_description:
-		'面向 ChatGPT、Gemini、Claude、DeepSeek 的 Prompt 模板构建器：把 Role、Task、Constraints、Output 合并为可复用模板。场景芯片含代码审查、电影、短剧、Android、iOS。示例：进页自动展示代码审查 Agent 样例。默认 Markdown；JSON 输出 {role,task,constraints,output}。只在本标签页解析——不是 LLM。文本不出本机，不上传服务器。',
+		'步骤与示例：Prompt 模板构建器 — 本地 + 可选 AI：面向 ChatGPT、Gemini、Claude、DeepSeek，默认在本浏览器本地组装 Prompt，可选 Cloudflare Workers AI 扩写/润色（须 Turnstile、有频率限制）。进页自动展示样例。默认 Markdown；JSON 便于流水线。不用 AI 时文本不出本机。',
 	tool_prompt_template_builder_download: '下载',
 	tool_prompt_template_builder_empty: '请先填写自由文本或至少一个字段。',
 	tool_prompt_template_builder_example:
 		'加载示例会填入代码审查 Agent 预设并生成 Markdown。也可点电影、短剧、Android、iOS 芯片切换默认场景。',
 	tool_prompt_template_builder_example_title: '示例',
 	tool_prompt_template_builder_faq_a1:
-		'默认只在本浏览器标签页本地构建模板。可选「AI 扩写/润色」仅把该次点击提交的文字发往 Cloudflare Workers AI，不会从我们的服务器调用 OpenAI、Google、Anthropic 或 DeepSeek。',
+		'默认只在本浏览器标签页本地组装。可选「AI 扩写/润色」仅把该次点击提交的文字发往 Cloudflare Workers AI，不会从我们的服务器调用 OpenAI、Google、Anthropic 或 DeepSeek。',
 	tool_prompt_template_builder_faq_a2:
-		'本地模式只在本标签页整理文字，不调用 ChatGPT、Gemini、Claude、DeepSeek 或任何模型 API。可选 AI 使用 Cloudflare Workers AI（见下方 FAQ）。',
+		'本地模式只在本标签页整理字段，不调用 ChatGPT、Gemini、Claude、DeepSeek API。可选 AI 使用 Cloudflare Workers AI（须 Turnstile）。',
 	tool_prompt_template_builder_faq_a3:
 		'ChatGPT 导出转 Markdown 是把对话导出变成可读文件。本页是把草稿整理成可复用的系统 Prompt——归档对话后可再用本页提炼模板。',
 	tool_prompt_template_builder_faq_a4:
-		'可以。JSON 芯片输出 {role,task,constraints,output}，便于配置或测试。需要 Schema 校验时可配合 JSON Schema 校验器。',
+		'可以。使用 Expand/Polish 前须在可选 AI 面板完成 Turnstile；无有效 token 时 AI 按钮报错，本地模式仍可用。',
 	tool_prompt_template_builder_faq_a5: '自由文本框里以 Role:、Task:、Constraints:、Output: 开头的行会分段；显式字段优先于解析结果。',
 	tool_prompt_template_builder_faq_a6:
 		'可以。构建完成后复制到 ChatGPT、Gemini、Claude 或 DeepSeek 即可——四字段结构在各聊天界面通用。我们不按平台拆独立 URL，因为任务是整理文本，不是代调用 API。',
 	tool_prompt_template_builder_faq_q1: 'Prompt 会上传吗？',
 	tool_prompt_template_builder_faq_q2: '会调用大模型吗？',
 	tool_prompt_template_builder_faq_q3: '和 ChatGPT 导出转 Markdown 有何不同？',
-	tool_prompt_template_builder_faq_q4: '能输出 JSON 吗？',
+	tool_prompt_template_builder_faq_q4:
+		'为什么可选 AI 需要 Turnstile？',
 	tool_prompt_template_builder_faq_q5: '自由文本如何分段？',
 	tool_prompt_template_builder_faq_q6: '能在 ChatGPT、Gemini、Claude、DeepSeek 里用吗？',
-	tool_prompt_template_builder_faq_q7: '本地模式与可选 Cloudflare AI 有何区别？',
+	tool_prompt_template_builder_faq_q7:
+		'本地模式与可选 Cloudflare AI 有何区别？',
 	tool_prompt_template_builder_faq_a7:
-		'本地模式只在本标签页整理文字，不上传。可选「AI 扩写/润色」仅把该次点击提交的文字发往 Cloudflare Workers AI（须 Turnstile、有频率限制）。失败或超额时继续用本地模式。我们不承诺无限 AI。',
-	tool_prompt_template_builder_ai_expand: 'AI 扩写',
-	tool_prompt_template_builder_ai_polish: 'AI 润色',
-	tool_prompt_template_builder_ai_panel_label: '可选 Cloudflare AI',
-	tool_prompt_template_builder_ai_consent_title: '发送到 Cloudflare Workers AI？',
+		'本地模式只在本标签页整理文字，不上传。可选 Expand/Polish 发往 Cloudflare Workers AI（须 Turnstile、有频率限制）。失败或超额时继续用本地模式。',
+	tool_prompt_template_builder_ai_expand:
+		'AI 扩写',
+	tool_prompt_template_builder_ai_polish:
+		'AI 润色',
+	tool_prompt_template_builder_ai_panel_label:
+		'可选 Cloudflare AI（Turnstile）',
+	tool_prompt_template_builder_ai_consent_title:
+		'发送到 Cloudflare Workers AI？',
 	tool_prompt_template_builder_ai_consent_body:
-		'此可选步骤会把当前草稿发往 Cloudflare Workers AI 推理；不会从我们的服务器调用 OpenAI、Google、Anthropic 或 DeepSeek。不用 AI 也能本地组装。',
-	tool_prompt_template_builder_ai_consent_ok: '继续',
-	tool_prompt_template_builder_ai_consent_cancel: '取消',
-	tool_prompt_template_builder_ai_working: 'Cloudflare AI 处理中…',
-	tool_prompt_template_builder_ai_done: '已应用 AI 建议，复制前请核对。',
-	tool_prompt_template_builder_ai_err_generic: 'AI 失败，本地模板未改。',
-	tool_prompt_template_builder_ai_err_rate: 'AI 配额已满，请用本地模式或明日（UTC）再试。',
-	tool_prompt_template_builder_ai_err_turnstile: '使用 AI 前请完成 Turnstile 验证。',
+		'此可选步骤会把当前草稿发往 Cloudflare Workers AI；不会从我们的服务器调用 OpenAI、Google、Anthropic 或 DeepSeek。不用 AI 也能本地组装。',
+	tool_prompt_template_builder_ai_consent_ok:
+		'继续',
+	tool_prompt_template_builder_ai_consent_cancel:
+		'取消',
+	tool_prompt_template_builder_ai_working:
+		'Cloudflare AI 处理中…',
+	tool_prompt_template_builder_ai_done:
+		'已应用 AI 建议，复制前请核对。',
+	tool_prompt_template_builder_ai_err_generic:
+		'AI 失败，本地 Prompt 未改。',
+	tool_prompt_template_builder_ai_err_rate:
+		'AI 配额已满，请用本地模式或明日（UTC）再试。',
+	tool_prompt_template_builder_ai_err_turnstile:
+		'使用 AI 前请完成 Turnstile 验证。',
 	tool_prompt_template_builder_fmt_json: 'JSON',
 	tool_prompt_template_builder_fmt_label: '输出格式',
 	tool_prompt_template_builder_fmt_md: 'Markdown',
@@ -95,7 +108,8 @@ const zh: SiteLangDict = {
 	tool_prompt_template_builder_status_working: '正在构建模板…',
 	tool_prompt_template_builder_task_label: '任务 Task',
 	tool_prompt_template_builder_task_ph: '要完成的步骤…',
-	tool_prompt_template_builder_title: 'Prompt 模板构建器',
+	tool_prompt_template_builder_title:
+		'Prompt 模板构建器 — 本地 + 可选 AI',
 	tool_prompt_template_builder_usecase_1: '产出可粘贴到 ChatGPT、Gemini、Claude 或 DeepSeek 的代码审查 Agent 系统 Prompt。',
 	tool_prompt_template_builder_usecase_2: '在接任意聊天 API 前，把会议记录整理成 Role/Task/Constraints 块。',
 	tool_prompt_template_builder_usecase_3: '导出 JSON 后，用 JSON Schema 校验器检查下游配置文件。',

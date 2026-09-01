@@ -1,7 +1,7 @@
 # Prompt AI 部署清单（S0 Expand/Polish）
 
-- date: **2026-09-01**
-- 范围：`prompt-template-builder` 可选 Cloudflare Workers AI
+- date: **2026-09-02**
+- 范围：**9 个** prompt 簇工具（`PROMPT_AI_SLUGS`）可选 Cloudflare Workers AI
 - 决策记录：[`../work-tasks/prompt-template-builder/notes-ai-infra.md`](../work-tasks/prompt-template-builder/notes-ai-infra.md)
 - 接入手册：[`cloudflare-workers-ai-access.md`](./cloudflare-workers-ai-access.md)
 - 发版总览：[`worker-r2-ops.md`](./worker-r2-ops.md)
@@ -112,6 +112,18 @@ curl -s https://onlinefreetools.org/api/tools/prompt-template-builder/ai/health 
 ```
 
 - [ ] `hasRateLimitKv: true`（若为 false，KV id 未生效或未部署）
+## 5. 生产验证（每个 slug 可选抽查）
+
+```bash
+# 通用 health（任选 slug）
+curl -s https://onlinefreetools.org/api/tools/writing-prompt-generator/ai/health | jq
+
+# 全簇冒烟（9 slug）
+for s in prompt-template-builder writing-prompt-generator midjourney-prompt-builder sketch-prompt-generator film-prompt-builder short-drama-prompt-generator product-design-prompt-builder android-prompt-builder ios-prompt-builder; do
+  curl -s "https://onlinefreetools.org/api/tools/$s/ai/health" | jq -c "{slug:\"$s\",ok:.ok,enabled:.enabled}"
+done
+```
+
 - [ ] 生产 Turnstile + Expand/Polish 各测 **1 次**（短 prompt，省 Neurons）
 - [ ] Dashboard **Neurons** 有少量增量
 

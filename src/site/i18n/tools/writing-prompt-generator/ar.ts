@@ -23,9 +23,9 @@ const ar: SiteLangDict = {
 	tool_writing_prompt_generator_clear: 'مسح',
 	tool_writing_prompt_generator_copy: 'نسخ',
 	tool_writing_prompt_generator_desc:
-		'مولّد prompts الكتابة للحوار والشخصية والسيناريو والعشوائي — Markdown/JSON؛ يبقى على الجهاز.',
+		'مولّد prompts للكتابة — local por defecto + Expand/Polish opcional Cloudflare AI (Turnstile); Markdown/JSON en el dispositivo.',
 	tool_writing_prompt_generator_description:
-		'مولّد prompts الكتابة لـ ChatGPT وGemini وClaude وDeepSeek: يجمّع محليًا prompts حوار أو شخصية أو سيناريو أو قصة عشوائية. الوضع العشوائي يسحب النوع والمكان والشيء والصراع في الصفحة نفسها — مولّد prompts عشوائي مدمج. مثال: مشهد حوار في مقهى ليلي يُعرض عند الفتح. Markdown افتراضي؛ JSON يُخرج {mode,fields,role,task,constraints,output}. ليس LLM — يبقى النص على جهازك ولا يُرفع إلى خادم.',
+		'عملية ومثال: مولّد prompts للكتابة — Local + IA opcional para ChatGPT, Gemini, Claude y DeepSeek: ensambla prompts localmente por defecto y opcionalmente Expand/Polish con Cloudflare Workers AI (Turnstile obligatorio, límite de uso). Ejemplo al abrir. Markdown por defecto; JSON para pipelines. Texto en el dispositivo salvo que uses IA.',
 	tool_writing_prompt_generator_dlg_characters_label: 'الشخصيات',
 	tool_writing_prompt_generator_dlg_characters_ph: 'الأسماء + دور في سطر…',
 	tool_writing_prompt_generator_dlg_conflict_label: 'الصراع',
@@ -42,13 +42,13 @@ const ar: SiteLangDict = {
 		'تحميل المثال يختار وضع الحوار، يملأ مشهد مقهى ليلي، ينشئ Markdown بأقسام Role/Task/Constraints/Output ويفعّل النسخ. جرّب شرائح الشخصية أو السيناريو أو العشوائي لقيم افتراضية أخرى.',
 	tool_writing_prompt_generator_example_title: 'مثال',
 	tool_writing_prompt_generator_faq_a1:
-		'لا. تُجمّع prompts في تبويب المتصفح هذا. لا يُرفع شيء إلى OpenAI أو Google أو Anthropic أو DeepSeek أو خوادمنا.',
+		'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
 	tool_writing_prompt_generator_faq_a2:
-		'لا. هذه الصفحة تنسّق brief الكتابة في كتل prompt فقط. لا تستدعي ChatGPT أو Gemini أو Claude أو DeepSeek ولا أي واجهة نموذج أخرى.',
+		'Modo local solo formatea aquí. Expand/Polish opcional usa Cloudflare Workers AI tras Turnstile — no llama APIs de chat.',
 	tool_writing_prompt_generator_faq_a3:
 		'منشئ قوالب Prompt ينظم قوالب Role/Task/Constraints/Output عامة. هذه الصفحة تركز على أوضاع الكتابة — حقول حوار، بطاقات شخصية، beats سيناريو، ومولّد prompts عشوائي على لوحة واحدة.',
 	tool_writing_prompt_generator_faq_a4:
-		'نعم. الوضع العشوائي يسحب النوع والمكان والشيء والعاطفة والصراع. seed رقمي اختياري يكرّر نفس السحب. المخرجات العشوائية للإلهام فقط — دون ضمان جودة.',
+		'Sí. Completa Turnstile en el panel de IA antes de Expand o Polish.',
 	tool_writing_prompt_generator_faq_a5:
 		'نعم. شريحة JSON تُخرج {mode,fields,role,task,constraints,output} للاختبار أو الإعداد. Markdown يستخدم عناوين ## Role / Task / Constraints / Output.',
 	tool_writing_prompt_generator_faq_a6:
@@ -56,7 +56,8 @@ const ar: SiteLangDict = {
 	tool_writing_prompt_generator_faq_q1: 'هل يُرفع prompt الكتابة؟',
 	tool_writing_prompt_generator_faq_q2: 'هل يستدعي LLM؟',
 	tool_writing_prompt_generator_faq_q3: 'ما الفرق عن منشئ قوالب Prompt؟',
-	tool_writing_prompt_generator_faq_q4: 'هل يعمل هنا مولّد prompts عشوائي؟',
+	tool_writing_prompt_generator_faq_q4:
+		'¿Por qué Turnstile para IA opcional?',
 	tool_writing_prompt_generator_faq_q5: 'هل يمكن الحصول على JSON؟',
 	tool_writing_prompt_generator_faq_q6: 'هل يمكن استخدامه مع ChatGPT وGemini وClaude وDeepSeek؟',
 	tool_writing_prompt_generator_fmt_json: 'JSON',
@@ -108,7 +109,8 @@ const ar: SiteLangDict = {
 	tool_writing_prompt_generator_status_copied: 'نُسخ إلى الحافظة.',
 	tool_writing_prompt_generator_status_done: 'Prompt جاهز.',
 	tool_writing_prompt_generator_status_working: 'جارٍ إنشاء prompt…',
-	tool_writing_prompt_generator_title: 'مولّد prompts الكتابة',
+	tool_writing_prompt_generator_title:
+		'مولّد prompts للكتابة — محلي + ذكاء اصطناعي اختياري',
 	tool_writing_prompt_generator_usecase_1:
 		'صِغ prompt مشهد حوار لمجموعة كتاب — الصقه في ChatGPT أو Claude لاقتراحات beats، لا نثرًا كاملًا.',
 	tool_writing_prompt_generator_usecase_2:
@@ -118,6 +120,34 @@ const ar: SiteLangDict = {
 	tool_writing_prompt_generator_usecase_4:
 		'ارسم مخطط beats سيناريو قصير محليًا قبل نقل prompt إلى Gemini لقراءات طاولة.',
 	tool_writing_prompt_generator_usecases_title: 'حالات مناسبة',
+	tool_writing_prompt_generator_ai_expand:
+		'Expandir con IA',
+	tool_writing_prompt_generator_ai_polish:
+		'Pulir con IA',
+	tool_writing_prompt_generator_ai_panel_label:
+		'Cloudflare AI opcional (Turnstile)',
+	tool_writing_prompt_generator_ai_consent_title:
+		'¿Enviar texto a Cloudflare Workers AI?',
+	tool_writing_prompt_generator_ai_consent_body:
+		'Este paso opcional envía tu borrador a Cloudflare Workers AI. No va a OpenAI, Google, Anthropic ni DeepSeek desde nuestros servidores.',
+	tool_writing_prompt_generator_ai_consent_ok:
+		'Continuar',
+	tool_writing_prompt_generator_ai_consent_cancel:
+		'Cancelar',
+	tool_writing_prompt_generator_ai_working:
+		'Cloudflare AI trabajando…',
+	tool_writing_prompt_generator_ai_done:
+		'Sugerencia de IA aplicada. Revisa antes de copiar.',
+	tool_writing_prompt_generator_ai_err_generic:
+		'La IA falló. Tu prompt local no cambió.',
+	tool_writing_prompt_generator_ai_err_rate:
+		'Cuota de IA agotada. Modo local o prueba mañana (UTC).',
+	tool_writing_prompt_generator_ai_err_turnstile:
+		'Completa Turnstile antes de usar IA.',
+	tool_writing_prompt_generator_faq_q7:
+		'¿Diferencia entre local y Cloudflare AI opcional?',
+	tool_writing_prompt_generator_faq_a7:
+		'Local: solo esta pestaña, sin subida. Expand/Polish opcional a Cloudflare Workers AI (Turnstile, límite).',
 };
 
 export default ar;

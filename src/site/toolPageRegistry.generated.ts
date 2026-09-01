@@ -6,6 +6,7 @@ import type { SiteLang } from './i18n';
 import { renderAddWatermarkPage } from '../pages/addWatermarkPage';
 import { renderAddWwwToDnsPage } from '../pages/addWwwToDnsPage';
 import { renderAmazonMainImageSizePage } from '../pages/amazonMainImageSizePage';
+import { renderAndroidPromptBuilderPage } from '../pages/androidPromptBuilderPage';
 import { renderAppleTouchIconPage } from '../pages/appleTouchIconPage';
 import { renderArchiveExtractorPage } from '../pages/archiveExtractorPage';
 import { renderAwsVpcCidrPlannerPage } from '../pages/awsVpcCidrPlannerPage';
@@ -28,6 +29,7 @@ import { renderDomainLookupPage } from '../pages/domainLookupPage';
 import { renderExcelCompareFilesPage } from '../pages/excelCompareFilesPage';
 import { renderFileHashPage } from '../pages/fileHashPage';
 import { renderFileMetadataAnalyzerPage } from '../pages/fileMetadataAnalyzerPage';
+import { renderFilmPromptBuilderPage } from '../pages/filmPromptBuilderPage';
 import { renderFlipImagePage } from '../pages/flipImagePage';
 import { renderHowToCalculateAccelerationPage } from '../pages/howToCalculateAccelerationPage';
 import { renderHowToCalculateAgePage } from '../pages/howToCalculateAgePage';
@@ -109,6 +111,7 @@ import { renderIndexNowPage } from '../pages/indexNowPage';
 import { renderInstagramPostSizePage } from '../pages/instagramPostSizePage';
 import { renderInstagramStorySizePage } from '../pages/instagramStorySizePage';
 import { renderIosAppIconSizePage } from '../pages/iosAppIconSizePage';
+import { renderIosPromptBuilderPage } from '../pages/iosPromptBuilderPage';
 import { renderIpAddressPage } from '../pages/ipAddressPage';
 import { renderIpRangeToCidrPage } from '../pages/ipRangeToCidrPage';
 import { renderIphoneAppStoreScreenshotPage } from '../pages/iphoneAppStoreScreenshotPage';
@@ -123,6 +126,7 @@ import { renderMeasuringMagneticFieldsPage } from '../pages/measuringMagneticFie
 import { renderMergePdfPage } from '../pages/mergePdfPage';
 import { renderMetaSerpPreviewPage } from '../pages/metaSerpPreviewPage';
 import { renderMetaTagGeneratorPage } from '../pages/metaTagGeneratorPage';
+import { renderMidjourneyPromptBuilderPage } from '../pages/midjourneyPromptBuilderPage';
 import { renderOnPageSeoCheckerPage } from '../pages/onPageSeoCheckerPage';
 import { renderOpenGraphImageSizePage } from '../pages/openGraphImageSizePage';
 import { renderOpenGraphPreviewPage } from '../pages/openGraphPreviewPage';
@@ -134,12 +138,15 @@ import { renderPdfToJpgPage } from '../pages/pdfToJpgPage';
 import { renderPdfToMarkdownPage } from '../pages/pdfToMarkdownPage';
 import { renderPdfWatermarkPage } from '../pages/pdfWatermarkPage';
 import { renderPrivateCidrRangesPage } from '../pages/privateCidrRangesPage';
+import { renderProductDesignPromptBuilderPage } from '../pages/productDesignPromptBuilderPage';
 import { renderPromptTemplateBuilderPage } from '../pages/promptTemplateBuilderPage';
 import { renderProtectPdfPage } from '../pages/protectPdfPage';
 import { renderRobotsTxtGeneratorPage } from '../pages/robotsTxtGeneratorPage';
 import { renderRotatePdfPage } from '../pages/rotatePdfPage';
 import { renderSchemaJsonldGeneratorPage } from '../pages/schemaJsonldGeneratorPage';
+import { renderShortDramaPromptGeneratorPage } from '../pages/shortDramaPromptGeneratorPage';
 import { renderSitemapXmlGeneratorPage } from '../pages/sitemapXmlGeneratorPage';
+import { renderSketchPromptGeneratorPage } from '../pages/sketchPromptGeneratorPage';
 import { renderSmartWebsiteColorSchemePage } from '../pages/smartWebsiteColorSchemePage';
 import { renderSplitPdfPage } from '../pages/splitPdfPage';
 import { renderSquareFeetPage } from '../pages/squareFeetPage';
@@ -170,6 +177,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'add-watermark': (lang, defaultLang, enabled) => renderAddWatermarkPage({ lang, defaultLang, enabledLangs: enabled }),
 	'add-www-to-dns': (lang, defaultLang, enabled) => renderAddWwwToDnsPage({ lang, defaultLang, enabledLangs: enabled }),
 	'amazon-main-image-size': (lang, defaultLang, enabled) => renderAmazonMainImageSizePage({ lang, defaultLang, enabledLangs: enabled }),
+	'android-prompt-builder': (lang, defaultLang, enabled) => renderAndroidPromptBuilderPage({ lang, defaultLang, enabledLangs: enabled }),
 	'apple-touch-icon': (lang, defaultLang, enabled) => renderAppleTouchIconPage({ lang, defaultLang, enabledLangs: enabled }),
 	'archive-extractor': (lang, defaultLang, enabled) => renderArchiveExtractorPage({ lang, defaultLang, enabledLangs: enabled }),
 	'aws-vpc-cidr-planner': (lang, defaultLang, enabled) => renderAwsVpcCidrPlannerPage({ lang, defaultLang, enabledLangs: enabled }),
@@ -192,6 +200,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'excel-compare-files': (lang, defaultLang, enabled) => renderExcelCompareFilesPage({ lang, defaultLang, enabledLangs: enabled }),
 	'file-hash': (lang, defaultLang, enabled) => renderFileHashPage({ lang, defaultLang, enabledLangs: enabled }),
 	'file-metadata-analyzer': (lang, defaultLang, enabled) => renderFileMetadataAnalyzerPage({ lang, defaultLang, enabledLangs: enabled }),
+	'film-prompt-builder': (lang, defaultLang, enabled) => renderFilmPromptBuilderPage({ lang, defaultLang, enabledLangs: enabled }),
 	'flip-image': (lang, defaultLang, enabled) => renderFlipImagePage({ lang, defaultLang, enabledLangs: enabled }),
 	'how-to-calculate-acceleration': (lang, defaultLang, enabled) => renderHowToCalculateAccelerationPage({ lang, defaultLang, enabledLangs: enabled }),
 	'how-to-calculate-age': (lang, defaultLang, enabled) => renderHowToCalculateAgePage({ lang, defaultLang, enabledLangs: enabled }),
@@ -273,6 +282,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'instagram-post-size': (lang, defaultLang, enabled) => renderInstagramPostSizePage({ lang, defaultLang, enabledLangs: enabled }),
 	'instagram-story-size': (lang, defaultLang, enabled) => renderInstagramStorySizePage({ lang, defaultLang, enabledLangs: enabled }),
 	'ios-app-icon-size': (lang, defaultLang, enabled) => renderIosAppIconSizePage({ lang, defaultLang, enabledLangs: enabled }),
+	'ios-prompt-builder': (lang, defaultLang, enabled) => renderIosPromptBuilderPage({ lang, defaultLang, enabledLangs: enabled }),
 	'ip-address': (lang, defaultLang, _enabled) => renderIpAddressPage(lang, defaultLang),
 	'ip-range-to-cidr': (lang, defaultLang, enabled) => renderIpRangeToCidrPage({ lang, defaultLang, enabledLangs: enabled }),
 	'iphone-app-store-screenshot': (lang, defaultLang, enabled) => renderIphoneAppStoreScreenshotPage({ lang, defaultLang, enabledLangs: enabled }),
@@ -287,6 +297,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'merge-pdf': (lang, defaultLang, enabled) => renderMergePdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'meta-serp-preview': (lang, defaultLang, enabled) => renderMetaSerpPreviewPage({ lang, defaultLang, enabledLangs: enabled }),
 	'meta-tag-generator': (lang, defaultLang, enabled) => renderMetaTagGeneratorPage({ lang, defaultLang, enabledLangs: enabled }),
+	'midjourney-prompt-builder': (lang, defaultLang, enabled) => renderMidjourneyPromptBuilderPage({ lang, defaultLang, enabledLangs: enabled }),
 	'on-page-seo-checker': (lang, defaultLang, enabled) => renderOnPageSeoCheckerPage({ lang, defaultLang, enabledLangs: enabled }),
 	'open-graph-image-size': (lang, defaultLang, enabled) => renderOpenGraphImageSizePage({ lang, defaultLang, enabledLangs: enabled }),
 	'open-graph-preview': (lang, defaultLang, enabled) => renderOpenGraphPreviewPage({ lang, defaultLang, enabledLangs: enabled }),
@@ -298,12 +309,15 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'pdf-to-markdown': (lang, defaultLang, enabled) => renderPdfToMarkdownPage({ lang, defaultLang, enabledLangs: enabled }),
 	'pdf-watermark': (lang, defaultLang, enabled) => renderPdfWatermarkPage({ lang, defaultLang, enabledLangs: enabled }),
 	'private-cidr-ranges': (lang, defaultLang, enabled) => renderPrivateCidrRangesPage({ lang, defaultLang, enabledLangs: enabled }),
+	'product-design-prompt-builder': (lang, defaultLang, enabled) => renderProductDesignPromptBuilderPage({ lang, defaultLang, enabledLangs: enabled }),
 	'prompt-template-builder': (lang, defaultLang, enabled) => renderPromptTemplateBuilderPage({ lang, defaultLang, enabledLangs: enabled }),
 	'protect-pdf': (lang, defaultLang, enabled) => renderProtectPdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'robots-txt-generator': (lang, defaultLang, enabled) => renderRobotsTxtGeneratorPage({ lang, defaultLang, enabledLangs: enabled }),
 	'rotate-pdf': (lang, defaultLang, enabled) => renderRotatePdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'schema-jsonld-generator': (lang, defaultLang, enabled) => renderSchemaJsonldGeneratorPage({ lang, defaultLang, enabledLangs: enabled }),
+	'short-drama-prompt-generator': (lang, defaultLang, enabled) => renderShortDramaPromptGeneratorPage({ lang, defaultLang, enabledLangs: enabled }),
 	'sitemap-xml-generator': (lang, defaultLang, enabled) => renderSitemapXmlGeneratorPage({ lang, defaultLang, enabledLangs: enabled }),
+	'sketch-prompt-generator': (lang, defaultLang, enabled) => renderSketchPromptGeneratorPage({ lang, defaultLang, enabledLangs: enabled }),
 	'smart-website-color-scheme': (lang, defaultLang, enabled) => renderSmartWebsiteColorSchemePage({ lang, defaultLang, enabledLangs: enabled }),
 	'split-pdf': (lang, defaultLang, enabled) => renderSplitPdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'square-feet': (lang, defaultLang, enabled) => renderSquareFeetPage({ lang, defaultLang, enabledLangs: enabled }),

@@ -23,9 +23,9 @@ const zh: SiteLangDict = {
 	tool_writing_prompt_generator_clear: '清空',
 	tool_writing_prompt_generator_copy: '复制',
 	tool_writing_prompt_generator_desc:
-		'写作 Prompt 生成器：对话、人物、剧本与随机模式 — Markdown/JSON；文本留在本机。',
+		'写作 Prompt 生成器 — 默认本地组装，可选 Cloudflare AI 扩写/润色（Turnstile）；Markdown/JSON 留在本机。',
 	tool_writing_prompt_generator_description:
-		'面向 ChatGPT、Gemini、Claude、DeepSeek 的写作 Prompt 生成器：在本页本地组装对话、人物、剧本或随机故事 Prompt。随机模式在同一页摇出体裁、场景、物件与冲突，相当于内置随机 Prompt 生成器。示例：进页自动展示深夜 diner 对话场景。默认 Markdown；JSON 输出 {mode,fields,role,task,constraints,output}。不是 LLM — 文本不出本机，不上传服务器。',
+		'步骤与示例：写作 Prompt 生成器 — 本地 + 可选 AI：面向 ChatGPT、Gemini、Claude、DeepSeek，默认在本浏览器本地组装 Prompt，可选 Cloudflare Workers AI 扩写/润色（须 Turnstile、有频率限制）。进页自动展示样例。默认 Markdown；JSON 便于流水线。不用 AI 时文本不出本机。',
 	tool_writing_prompt_generator_dlg_characters_label: '出场人物',
 	tool_writing_prompt_generator_dlg_characters_ph: '姓名 + 一行角色定位…',
 	tool_writing_prompt_generator_dlg_conflict_label: '冲突',
@@ -42,23 +42,29 @@ const zh: SiteLangDict = {
 		'加载示例会选中对话模式，填入深夜 diner 场景，生成带 Role/Task/Constraints/Output 四段的 Markdown 并启用复制。可点人物、剧本或随机芯片切换其他预设。',
 	tool_writing_prompt_generator_example_title: '示例',
 	tool_writing_prompt_generator_faq_a1:
-		'不会。Prompt 只在本浏览器标签页组装。不会上传到 OpenAI、Google、Anthropic、DeepSeek 或我们的服务器。',
+		'默认只在本浏览器标签页本地组装。可选「AI 扩写/润色」仅把该次点击提交的文字发往 Cloudflare Workers AI，不会从我们的服务器调用 OpenAI、Google、Anthropic 或 DeepSeek。',
 	tool_writing_prompt_generator_faq_a2:
-		'不会。本页只把你的写作 brief 格式化成 Prompt 块，不调用 ChatGPT、Gemini、Claude、DeepSeek 或任何模型 API。',
+		'本地模式只在本标签页整理字段，不调用 ChatGPT、Gemini、Claude、DeepSeek API。可选 AI 使用 Cloudflare Workers AI（须 Turnstile）。',
 	tool_writing_prompt_generator_faq_a3:
 		'Prompt 模板构建器侧重通用 Role/Task/Constraints/Output 模板。本页默认写作模式 — 对话字段、人物表、剧本节拍，以及同一画布上的随机 Prompt 生成器。',
-	tool_writing_prompt_generator_faq_a4:
-		'可以。随机模式摇出体裁、场景、物件、情绪与冲突。可选数字 seed 可复现同一组结果。随机输出仅供灵感，不保证质量。',
-	tool_writing_prompt_generator_faq_a5:
-		'可以。JSON 芯片输出 {mode,fields,role,task,constraints,output}，便于测试或配置。Markdown 使用 ## Role / Task / Constraints / Output 标题。',
-	tool_writing_prompt_generator_faq_a6:
-		'可以。把成品 Prompt 复制到 ChatGPT、Gemini、Claude 或 DeepSeek。我们不按平台拆独立 URL，因为任务是整理文本，不是代调用 API。',
 	tool_writing_prompt_generator_faq_q1: '写作 Prompt 会上传吗？',
 	tool_writing_prompt_generator_faq_q2: '会调用大模型吗？',
 	tool_writing_prompt_generator_faq_q3: '和 Prompt 模板构建器有何不同？',
-	tool_writing_prompt_generator_faq_q4: '这里有随机 Prompt 生成器吗？',
-	tool_writing_prompt_generator_faq_q5: '能输出 JSON 吗？',
-	tool_writing_prompt_generator_faq_q6: '能在 ChatGPT、Gemini、Claude、DeepSeek 里用吗？',
+	tool_writing_prompt_generator_faq_a4:
+		'可以。随机模式摇出体裁、场景、物件、情绪与冲突；可选数字 seed 可重复同一组结果。随机输出仅供灵感，不保证质量。',
+	tool_writing_prompt_generator_faq_a5:
+		'可以。使用 Expand/Polish 前须在可选 AI 面板完成 Turnstile；无有效 token 时 AI 按钮报错，本地模式仍可用。',
+	tool_writing_prompt_generator_faq_a6:
+		'可以。JSON 芯片输出 {mode,fields,role,task,constraints,output}，便于测试或配置。Markdown 使用 ## Role / Task / Constraints / Output 标题。',
+	tool_writing_prompt_generator_faq_a7:
+		'可以。把成品 Prompt 复制到 ChatGPT、Gemini、Claude 或 DeepSeek。我们不按平台拆独立 URL，因为任务是整理文本，不是代调用 API。',
+	tool_writing_prompt_generator_faq_a8:
+		'本地模式只在本标签页整理写作字段，不上传。可选 Expand/Polish 发往 Cloudflare Workers AI（须 Turnstile、有频率限制）。失败或超额时继续用本地模式。',
+	tool_writing_prompt_generator_faq_q4: '随机 Prompt 生成器在本页能用吗？',
+	tool_writing_prompt_generator_faq_q5: '为什么可选 AI 需要 Turnstile？',
+	tool_writing_prompt_generator_faq_q6: '能输出 JSON 吗？',
+	tool_writing_prompt_generator_faq_q7: '能在 ChatGPT、Gemini、Claude、DeepSeek 里用吗？',
+	tool_writing_prompt_generator_faq_q8: '本地模式与可选 Cloudflare AI 有何区别？',
 	tool_writing_prompt_generator_fmt_json: 'JSON',
 	tool_writing_prompt_generator_fmt_label: '输出格式',
 	tool_writing_prompt_generator_fmt_md: 'Markdown',
@@ -108,7 +114,8 @@ const zh: SiteLangDict = {
 	tool_writing_prompt_generator_status_copied: '已复制到剪贴板。',
 	tool_writing_prompt_generator_status_done: 'Prompt 已就绪。',
 	tool_writing_prompt_generator_status_working: '正在生成 Prompt…',
-	tool_writing_prompt_generator_title: '写作 Prompt 生成器',
+	tool_writing_prompt_generator_title:
+		'写作 Prompt 生成器 — 本地 + 可选 AI',
 	tool_writing_prompt_generator_usecase_1:
 		'为写作小组起草一场对话场景的 Prompt — 粘贴到 ChatGPT 或 Claude 要节拍建议，而非完整正文。',
 	tool_writing_prompt_generator_usecase_2:
@@ -118,6 +125,30 @@ const zh: SiteLangDict = {
 	tool_writing_prompt_generator_usecase_4:
 		'在本地先搭好短剧本节拍表，再把 Prompt 放进 Gemini 做围读。',
 	tool_writing_prompt_generator_usecases_title: '适用场景',
+	tool_writing_prompt_generator_ai_expand:
+		'AI 扩写',
+	tool_writing_prompt_generator_ai_polish:
+		'AI 润色',
+	tool_writing_prompt_generator_ai_panel_label:
+		'可选 Cloudflare AI（Turnstile）',
+	tool_writing_prompt_generator_ai_consent_title:
+		'发送到 Cloudflare Workers AI？',
+	tool_writing_prompt_generator_ai_consent_body:
+		'此可选步骤会把当前草稿发往 Cloudflare Workers AI；不会从我们的服务器调用 OpenAI、Google、Anthropic 或 DeepSeek。不用 AI 也能本地组装。',
+	tool_writing_prompt_generator_ai_consent_ok:
+		'继续',
+	tool_writing_prompt_generator_ai_consent_cancel:
+		'取消',
+	tool_writing_prompt_generator_ai_working:
+		'Cloudflare AI 处理中…',
+	tool_writing_prompt_generator_ai_done:
+		'已应用 AI 建议，复制前请核对。',
+	tool_writing_prompt_generator_ai_err_generic:
+		'AI 失败，本地 Prompt 未改。',
+	tool_writing_prompt_generator_ai_err_rate:
+		'AI 配额已满，请用本地模式或明日（UTC）再试。',
+	tool_writing_prompt_generator_ai_err_turnstile:
+		'使用 AI 前请完成 Turnstile 验证。',
 };
 
 export default zh;

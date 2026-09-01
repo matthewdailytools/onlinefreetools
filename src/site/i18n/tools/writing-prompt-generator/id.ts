@@ -23,9 +23,9 @@ const id: SiteLangDict = {
 	tool_writing_prompt_generator_clear: 'Hapus',
 	tool_writing_prompt_generator_copy: 'Salin',
 	tool_writing_prompt_generator_desc:
-		'Generator prompt menulis untuk dialog, karakter, skrip & acak — Markdown/JSON; tetap di perangkat.',
+		'Generator prompt menulis — local por defecto + Expand/Polish opcional Cloudflare AI (Turnstile); Markdown/JSON en el dispositivo.',
 	tool_writing_prompt_generator_description:
-		'Generator prompt menulis untuk ChatGPT, Gemini, Claude, dan DeepSeek: rakit prompt dialog, karakter, skrip, atau cerita acak secara lokal. Mode acak mengocok genre, setting, objek, dan konflik di halaman yang sama — generator prompt acak terintegrasi. Contoh: adegan dialog diner malam tampil saat halaman dibuka. Default Markdown; JSON mengeluarkan {mode,fields,role,task,constraints,output}. Bukan LLM — teks tetap di perangkat dan tidak diunggah ke server.',
+		'Proses dan contoh: Generator prompt menulis — Local + IA opcional para ChatGPT, Gemini, Claude y DeepSeek: ensambla prompts localmente por defecto y opcionalmente Expand/Polish con Cloudflare Workers AI (Turnstile obligatorio, límite de uso). Ejemplo al abrir. Markdown por defecto; JSON para pipelines. Texto en el dispositivo salvo que uses IA.',
 	tool_writing_prompt_generator_dlg_characters_label: 'Karakter',
 	tool_writing_prompt_generator_dlg_characters_ph: 'Nama + peran satu baris…',
 	tool_writing_prompt_generator_dlg_conflict_label: 'Konflik',
@@ -42,13 +42,13 @@ const id: SiteLangDict = {
 		'Muat contoh memilih mode Dialog, mengisi adegan diner malam, menghasilkan Markdown dengan bagian Role/Task/Constraints/Output, dan mengaktifkan Salin. Coba chip Karakter, Skrip, atau Acak untuk preset lain.',
 	tool_writing_prompt_generator_example_title: 'Contoh',
 	tool_writing_prompt_generator_faq_a1:
-		'Tidak. Prompt dirakit di tab browser ini. Tidak ada yang diunggah ke OpenAI, Google, Anthropic, DeepSeek, atau server kami.',
+		'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
 	tool_writing_prompt_generator_faq_a2:
-		'Tidak. Halaman ini hanya memformat brief menulis Anda menjadi blok prompt. Tidak memanggil ChatGPT, Gemini, Claude, DeepSeek, atau API model lain.',
+		'Modo local solo formatea aquí. Expand/Polish opcional usa Cloudflare Workers AI tras Turnstile — no llama APIs de chat.',
 	tool_writing_prompt_generator_faq_a3:
 		'Pembangun template Prompt menyusun template Role/Task/Constraints/Output generik. Halaman ini fokus mode menulis — field dialog, lembar karakter, beat skrip, dan generator prompt acak dalam satu kanvas.',
 	tool_writing_prompt_generator_faq_a4:
-		'Ya. Mode acak mengocok genre, setting, objek, emosi, dan konflik. Seed numerik opsional mengulang hasil yang sama. Output acak hanya inspirasi — tanpa jaminan kualitas.',
+		'Sí. Completa Turnstile en el panel de IA antes de Expand o Polish.',
 	tool_writing_prompt_generator_faq_a5:
 		'Ya. Chip JSON mengeluarkan {mode,fields,role,task,constraints,output} untuk uji atau konfigurasi. Markdown memakai heading ## Role / Task / Constraints / Output.',
 	tool_writing_prompt_generator_faq_a6:
@@ -56,7 +56,8 @@ const id: SiteLangDict = {
 	tool_writing_prompt_generator_faq_q1: 'Apakah prompt menulis saya diunggah?',
 	tool_writing_prompt_generator_faq_q2: 'Apakah ini memanggil LLM?',
 	tool_writing_prompt_generator_faq_q3: 'Bedanya dengan Pembangun template Prompt?',
-	tool_writing_prompt_generator_faq_q4: 'Apakah generator prompt acak ada di sini?',
+	tool_writing_prompt_generator_faq_q4:
+		'¿Por qué Turnstile para IA opcional?',
 	tool_writing_prompt_generator_faq_q5: 'Bisa dapat output JSON?',
 	tool_writing_prompt_generator_faq_q6: 'Bisa dipakai dengan ChatGPT, Gemini, Claude, atau DeepSeek?',
 	tool_writing_prompt_generator_fmt_json: 'JSON',
@@ -108,7 +109,8 @@ const id: SiteLangDict = {
 	tool_writing_prompt_generator_status_copied: 'Disalin ke clipboard.',
 	tool_writing_prompt_generator_status_done: 'Prompt siap.',
 	tool_writing_prompt_generator_status_working: 'Membuat prompt…',
-	tool_writing_prompt_generator_title: 'Generator prompt menulis',
+	tool_writing_prompt_generator_title:
+		'Generator prompt menulis — Lokal + AI opsional',
 	tool_writing_prompt_generator_usecase_1:
 		'Buat draf prompt adegan dialog untuk kelompok penulis — tempel ke ChatGPT atau Claude untuk saran beat, bukan prosa utuh.',
 	tool_writing_prompt_generator_usecase_2:
@@ -118,6 +120,34 @@ const id: SiteLangDict = {
 	tool_writing_prompt_generator_usecase_4:
 		'Gariskan beat skrip pendek secara lokal sebelum membawa prompt ke Gemini untuk table read.',
 	tool_writing_prompt_generator_usecases_title: 'Cocok untuk',
+	tool_writing_prompt_generator_ai_expand:
+		'Expandir con IA',
+	tool_writing_prompt_generator_ai_polish:
+		'Pulir con IA',
+	tool_writing_prompt_generator_ai_panel_label:
+		'Cloudflare AI opcional (Turnstile)',
+	tool_writing_prompt_generator_ai_consent_title:
+		'¿Enviar texto a Cloudflare Workers AI?',
+	tool_writing_prompt_generator_ai_consent_body:
+		'Este paso opcional envía tu borrador a Cloudflare Workers AI. No va a OpenAI, Google, Anthropic ni DeepSeek desde nuestros servidores.',
+	tool_writing_prompt_generator_ai_consent_ok:
+		'Continuar',
+	tool_writing_prompt_generator_ai_consent_cancel:
+		'Cancelar',
+	tool_writing_prompt_generator_ai_working:
+		'Cloudflare AI trabajando…',
+	tool_writing_prompt_generator_ai_done:
+		'Sugerencia de IA aplicada. Revisa antes de copiar.',
+	tool_writing_prompt_generator_ai_err_generic:
+		'La IA falló. Tu prompt local no cambió.',
+	tool_writing_prompt_generator_ai_err_rate:
+		'Cuota de IA agotada. Modo local o prueba mañana (UTC).',
+	tool_writing_prompt_generator_ai_err_turnstile:
+		'Completa Turnstile antes de usar IA.',
+	tool_writing_prompt_generator_faq_q7:
+		'¿Diferencia entre local y Cloudflare AI opcional?',
+	tool_writing_prompt_generator_faq_a7:
+		'Local: solo esta pestaña, sin subida. Expand/Polish opcional a Cloudflare Workers AI (Turnstile, límite).',
 };
 
 export default id;

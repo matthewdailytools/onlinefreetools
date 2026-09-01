@@ -16,9 +16,21 @@ import {
 	renderToolReferencesSection,
 	buildToolJsonLd,
 } from './site/toolContent';
+import {
+	buildPromptAiLabels,
+	renderPromptAiPanelHtml,
+	renderPromptAiClientScript,
+	PROMPT_AI_TURNSTILE_SCRIPT,
+} from './site/promptAiPanel';
 
 /** 本工具 i18n 键前缀，与 catalog faqPrefix 一致。 */
 const PREFIX = 'tool_writing_prompt_generator';
+
+/** catalog slug（API + Turnstile action）。 */
+const SLUG = 'writing-prompt-generator';
+
+/** DOM / 脚本 id 前缀。 */
+const DOM_PREFIX = 'wpg';
 
 /**
  * 为路径加上语言前缀（默认语无前缀）。
@@ -97,7 +109,7 @@ export const renderWritingPromptGeneratorPage = (opts: {
 		groups: buildToolSidebarItems({
 			lang: opts.lang,
 			defaultLang: opts.defaultLang,
-			currentSlug: 'writing-prompt-generator',
+			currentSlug: SLUG,
 			currentAnchor: '#builder',
 		}),
 		id: 'toolNav',
@@ -105,6 +117,17 @@ export const renderWritingPromptGeneratorPage = (opts: {
 
 	/** 页脚 HTML。 */
 	const footerHtml = renderFooter({ lang: opts.lang });
+
+	const aiLabels = buildPromptAiLabels((suffix) => tx(opts.lang, suffix));
+	const aiLabelsJson = JSON.stringify({
+		empty: tx(opts.lang, 'empty'),
+		ai_err_generic: aiLabels.ai_err_generic,
+		ai_err_rate: aiLabels.ai_err_rate,
+		ai_err_turnstile: aiLabels.ai_err_turnstile,
+		ai_consent_body: aiLabels.ai_consent_body,
+		ai_working: aiLabels.ai_working,
+		ai_done: aiLabels.ai_done,
+	});
 
 	/** 页面 scoped CSS。 */
 	const extraHeadHtml = `
@@ -185,6 +208,8 @@ export const renderWritingPromptGeneratorPage = (opts: {
         <button type="button" id="wpgBtnClear" class="btn btn-outline-secondary btn-sm">${escapeHtml(tx(opts.lang, 'clear'))}</button>
       </div>
 
+      ${renderPromptAiPanelHtml({ prefix: DOM_PREFIX, slug: SLUG, labels: aiLabels })}
+
       <p id="wpgError" class="alert alert-danger py-2 small mb-2" style="display:none;" role="alert"></p>
       <p id="wpgStatus" class="wpg-meta mb-2" role="status"></p>
       <label class="form-label" for="wpgResult">${escapeHtml(tx(opts.lang, 'result_label'))}</label>
@@ -217,6 +242,14 @@ export const renderWritingPromptGeneratorPage = (opts: {
 	});
 
 	/** 浏览器内组装写作 Prompt；进页自动 loadSample()。 */
+	const promptAiScript = renderPromptAiClientScript({
+		prefix: DOM_PREFIX,
+		slug: SLUG,
+		labelsJson: 'aiLabelsJson',
+		setErrorFn: 'setError',
+		setStatusFn: 'setStatus',
+	});
+
 	const extraBodyHtml = `
   <script>
     (function () {
@@ -229,6 +262,7 @@ export const renderWritingPromptGeneratorPage = (opts: {
       var btnDownload = document.getElementById('wpgBtnDownload');
       var btnClear = document.getElementById('wpgBtnClear');
       var btnRoll = document.getElementById('wpgBtnRoll');
+      var aiLabelsJson = ${aiLabelsJson};
 
       var msg = {
         empty: ${JSON.stringify(tx(opts.lang, 'empty'))},
@@ -586,16 +620,41 @@ export const renderWritingPromptGeneratorPage = (opts: {
         URL.revokeObjectURL(url);
       });
 
+      window.promptAiAssembleInput = function (action) {
+        if (action === 'polish' && lastOut) return lastOut;
+        if (currentMode === 'random') return lastOut || '';
+        var f = collectFields();
+        if (isEmpty(f)) return '';
+        var b = buildBlocks(currentMode, f);
+        return currentFmt() === 'json' ? toJson(currentMode, f, b) : toMarkdown(b);
+      };
+
+      window.promptAiApplyText = function (action, text) {
+        if (action === 'polish') {
+          showResult(text, currentFmt() === 'json' ? 'json' : 'md');
+          return;
+        }
+        var firstLine = (text || '').split('\\n')[0] || '';
+        if (currentMode === 'dialogue') {
+          var g = document.getElementById('wpgDlgGenre');
+          if (g && firstLine) g.value = firstLine.slice(0, 500);
+        }
+        buildPrompt();
+      };
+
+` + promptAiScript + `
+
       if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', loadSample);
       } else {
         loadSample();
       }
     })();
-  </script>`;
+  </script>
+` + PROMPT_AI_TURNSTILE_SCRIPT;
 
 	/** catalog 元数据。 */
-	const toolMeta = getToolBySlug('writing-prompt-generator');
+	const toolMeta = getToolBySlug(SLUG);
 	/** FAQ / related。 */
 	const toolSeoHtml = toolMeta
 		? renderToolExtraSections({ lang: opts.lang, defaultLang: opts.defaultLang, tool: toolMeta })

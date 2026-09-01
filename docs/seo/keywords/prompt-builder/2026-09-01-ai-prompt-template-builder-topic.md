@@ -66,23 +66,24 @@
 
 `ai prompt generator` 等头词：**FAQ 划界 + 链到本页**，不作独立 generator URL。
 
-### 3.2 场景页（建议新建 · 按控件差）
+### 3.2 场景页（独立 slug · 2026-09-02 定稿）
 
-| 优先级 | 场景 | H1（Planner 原句） | slug | 进页默认 | 控件差 |
-| --- | --- | --- | --- | --- | --- |
-| **P1** | S2+S3 写作/随机 | **Writing prompt generator**（主打）；**Random prompt generator** absorb 同页 | `writing-prompt-generator` | 写作芯片（对白/角色/剧本/大纲）+ **Random 模式** + 输出块；样例自动跑 | 随机器 + 写作维度 |
-| **P1** | S1 图像 | **Midjourney prompt builder** | `midjourney-prompt-builder` | subject/style/lighting/aspect + MJ 参数提示；样例 | 图像参数字段 |
-| **P2** | S1 延伸 | **Sketch prompt generator** | absorb → `midjourney-prompt-builder` 芯片「sketch」 | 同上 | 不单独 URL |
-| **—** | S4 text-to | **Text to prompt generator** | absorb → S0 Use case + 芯片 | 正文框 → 四字段 | 同 S0 流水线 |
-| **—** | S5 Copilot/Chat | **Copilot prompt builder** / chat… | absorb → S0 芯片 | Copilot 系统 Prompt 预设 | 同 S0 |
-| **—** | S6 website | **Website prompt generator** | absorb → S0 芯片 | 网站文案场景预设 | 同 S0 |
-| **P1** | S8 电影 | **Feature film / screenplay beats** | absorb → S0 **电影芯片** | 三幕节拍预设；样例自动跑 | 同 S0 四字段 |
-| **P1** | S9 短剧 | **Short drama serial outline** | absorb → S0 **短剧芯片** | 分集钩子 / cliffhanger | 同 S0 |
-| **P1** | S10 Android | **Android coding agent template** | absorb → S0 **Android 芯片** | Kotlin/Compose 预设 | 同 S0 |
-| **P1** | S11 iOS | **iOS coding agent template** | absorb → S0 **iOS 芯片** | Swift/SwiftUI 预设 | 同 S0 |
-| **—** | S12 四平台 | ChatGPT / Gemini / Claude / DeepSeek | absorb → S0 **description + 首屏 + FAQ** | 点名四平台；**不拆 URL** | 同 S0 |
+| 优先级 | 场景 | H1 | slug | 主控件差 |
+| --- | --- | --- | --- | --- |
+| P0 | S0 收割 | Prompt template builder | `prompt-template-builder` | 四字段 + 场景芯片 |
+| P1 | 写作/随机 | Writing prompt generator | `writing-prompt-generator` | 对白/角色/剧本/Random |
+| P1 | 图像 | Midjourney prompt builder | `midjourney-prompt-builder` | MJ 参数字段 |
+| P1 | 线稿 | Sketch prompt generator | `sketch-prompt-generator` | 媒介/线稿/构图 |
+| P1 | 电影 | Film prompt builder | `film-prompt-builder` | logline/三幕/场景 |
+| P1 | 短剧 | Short drama prompt generator | `short-drama-prompt-generator` | 分集/钩子/cliffhanger |
+| P1 | 产品设计 | Product design prompt builder | `product-design-prompt-builder` | persona/线框/设计令牌 |
+| P1 | Android | Android prompt builder | `android-prompt-builder` | Kotlin/Compose Agent |
+| P1 | iOS | iOS prompt builder | `ios-prompt-builder` | Swift/SwiftUI Agent |
 
-**本 topic 目标 URL 数（建议）**：**1 收割 + 2 场景 = 3 工具页**（+ topic hub）。电影/短剧/移动代码/四平台均在 S0 absorb。
+**S0 芯片保留**（用户定稿）：各场景仍有独立 URL；芯片作快速预填并链到专用页。  
+**全簇双模式**：本地默认 + 可选 CF AI Expand/Polish + Turnstile（见 `src/pages/site/promptAiPanel.ts`）。
+
+**本 topic URL 数**：**9 工具 + 1 hub**。
 
 ### 3.3 仍不建（与 SERP 无关 · 产品规则）
 
@@ -171,10 +172,10 @@
 
 ## 8. 实现检查
 
-- [ ] Topic id `ai-prompt-template-builder`  
-- [ ] Slug 清单：`prompt-template-builder`（强化）、`writing-prompt-generator`、`midjourney-prompt-builder`  
-- [ ] 每 slug：`work-tasks/` + IG 表 + 自动样例  
-- [ ] Related 簇内互链  
+- [x] Topic id `ai-prompt-template-builder`
+- [x] Slug 清单：9 工具（见 `work-tasks/ai-prompt-template-builder/03-cluster-slugs.md`）
+- [x] 每 slug：`work-tasks/` + IG 表 + 自动样例 + AI 面板
+- [x] Related 簇内互链  
 
 ---
 

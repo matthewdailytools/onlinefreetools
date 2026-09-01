@@ -1,0 +1,28 @@
+{
+  "slug": "ios-prompt-builder",
+  "path": "/tools/ios-prompt-builder",
+  "updatedAt": "2026-09-02T17:30:00.000Z",
+  "launchedAt": "2026-09-02T17:00:00.000Z",
+  "category": "developer",
+  "primaryTopic": "ai-prompt-template-builder",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_ios_prompt_builder_title",
+  "homeTitleKey": "tool_ios_prompt_builder_title",
+  "homeDescKey": "tool_ios_prompt_builder_desc",
+  "faqPrefix": "tool_ios_prompt_builder",
+  "related": [
+    "prompt-template-builder",
+    "android-prompt-builder",
+    "product-design-prompt-builder"
+  ],
+  "logo": "/icons/tools/ios-prompt-builder.svg",
+  "page": {
+    "module": "../pages/iosPromptBuilderPage",
+    "export": "renderIosPromptBuilderPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "developer",
+  "subject": "text"
+}

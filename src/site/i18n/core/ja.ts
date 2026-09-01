@@ -104,6 +104,7 @@ const ja: SiteLangDict = {
   topic_seo_growth: "SEO・成長",
   topic_network_ip: "ネットワーク・IP",
   topic_dev_data: "開発・データ",
+  topic_ai_prompt_template_builder: "AIプロンプトツール",
   topic_text_compare: "テキスト比較",
   topic_security_ids: "セキュリティ・ID",
   topic_files_archives: "ファイル・アーカイブ",

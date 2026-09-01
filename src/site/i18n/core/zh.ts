@@ -114,6 +114,7 @@ const zh: SiteLangDict = {
   topic_seo_growth: "SEO 与增长",
   topic_network_ip: "网络与 IP",
   topic_dev_data: "开发与数据",
+  topic_ai_prompt_template_builder: "AI Prompt 工具",
   topic_text_compare: "文本对比",
   topic_security_ids: "安全与标识",
   topic_files_archives: "文件与压缩包",

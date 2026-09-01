@@ -106,6 +106,7 @@ const id: SiteLangDict = {
   topic_seo_growth: "SEO & pertumbuhan",
   topic_network_ip: "Jaringan & IP",
   topic_dev_data: "Dev & data",
+  topic_ai_prompt_template_builder: "Alat prompt AI",
   topic_text_compare: "Bandingkan teks",
   topic_security_ids: "Keamanan & ID",
   topic_files_archives: "File & arsip",

@@ -23,9 +23,9 @@ const ja: SiteLangDict = {
 	tool_writing_prompt_generator_clear: 'クリア',
 	tool_writing_prompt_generator_copy: 'コピー',
 	tool_writing_prompt_generator_desc:
-		'対話・キャラ・脚本・ランダム向けライティングプロンプト生成 — Markdown/JSON、端末内完結。',
+		'ライティングPromptジェネレーター — ローカル既定、任意 Cloudflare AI 拡張/推敲（Turnstile）；Markdown/JSON は端末内。',
 	tool_writing_prompt_generator_description:
-		'ChatGPT、Gemini、Claude、DeepSeek 向けライティングプロンプト生成：対話、キャラ、脚本、ランダム物語 prompt をローカルで組み立て。ランダムモードは同じページでジャンル・舞台・小道具・葛藤を振り出し — ランダムプロンプト生成を内蔵。例：深夜ダイナーの対話シーンが初回表示で実行。既定 Markdown；JSON は {mode,fields,role,task,constraints,output} を出力。LLM ではありません — テキストは端末内に留まり、サーバーにアップロードされません。',
+		'手順と例：ライティングPromptジェネレーター — ローカル + オプションAI（ChatGPT/Gemini/Claude/DeepSeek）：既定はブラウザ内ローカル組み立て、任意で Cloudflare Workers AI Expand/Polish（Turnstile 必須・レート制限）。初回表示でサンプル。Markdown 既定。AI 未使用時は端末外に出ません。',
 	tool_writing_prompt_generator_dlg_characters_label: '登場人物',
 	tool_writing_prompt_generator_dlg_characters_ph: '名前 + 一行の役割…',
 	tool_writing_prompt_generator_dlg_conflict_label: '葛藤',
@@ -42,13 +42,13 @@ const ja: SiteLangDict = {
 		'サンプル読込で対話モードを選び、深夜ダイナーのシーンを入れ、Role/Task/Constraints/Output 四段の Markdown を生成し、コピーを有効化。キャラ、脚本、ランダムチップで他の既定値も試せます。',
 	tool_writing_prompt_generator_example_title: '例',
 	tool_writing_prompt_generator_faq_a1:
-		'いいえ。prompt はこのブラウザタブ内で組み立てます。OpenAI、Google、Anthropic、DeepSeek、当社サーバーへは送信しません。',
+		'既定はこのタブ内ローカル。任意 Expand/Polish はそのクリック分のみ Cloudflare Workers AI へ。',
 	tool_writing_prompt_generator_faq_a2:
-		'いいえ。執筆 brief を prompt ブロックに整形するだけです。ChatGPT、Gemini、Claude、DeepSeek や他のモデル API は呼びません。',
+		'ローカルはこのタブのみ。任意 AI は Turnstile 後 Cloudflare Workers AI — チャット API は呼びません。',
 	tool_writing_prompt_generator_faq_a3:
 		'Prompt テンプレートビルダーは汎用 Role/Task/Constraints/Output テンプレート向け。本ページは執筆モード優先 — 対話フィールド、キャラシート、脚本ビート、同一キャンバスのランダムプロンプト生成。',
 	tool_writing_prompt_generator_faq_a4:
-		'はい。ランダムモードはジャンル、舞台、小道具、感情、葛藤を振り出します。任意の数値 seed で同じ結果を再現。ランダム出力はインスピレーションのみ — 品質保証なし。',
+		'はい。Expand/Polish 前に Turnstile を完了してください。',
 	tool_writing_prompt_generator_faq_a5:
 		'はい。JSON チップで {mode,fields,role,task,constraints,output} を出力。テストや設定用。Markdown は ## Role / Task / Constraints / Output 見出し。',
 	tool_writing_prompt_generator_faq_a6:
@@ -56,7 +56,8 @@ const ja: SiteLangDict = {
 	tool_writing_prompt_generator_faq_q1: 'ライティング prompt はアップロードされますか？',
 	tool_writing_prompt_generator_faq_q2: 'LLM を呼び出しますか？',
 	tool_writing_prompt_generator_faq_q3: 'Prompt テンプレートビルダーとの違いは？',
-	tool_writing_prompt_generator_faq_q4: 'ランダムプロンプト生成はここで使えますか？',
+	tool_writing_prompt_generator_faq_q4:
+		'任意 AI に Turnstile が必要な理由は？',
 	tool_writing_prompt_generator_faq_q5: 'JSON 出力はできますか？',
 	tool_writing_prompt_generator_faq_q6: 'ChatGPT、Gemini、Claude、DeepSeek で使えますか？',
 	tool_writing_prompt_generator_fmt_json: 'JSON',
@@ -108,7 +109,8 @@ const ja: SiteLangDict = {
 	tool_writing_prompt_generator_status_copied: 'クリップボードにコピーしました。',
 	tool_writing_prompt_generator_status_done: 'Prompt 準備完了。',
 	tool_writing_prompt_generator_status_working: 'Prompt 作成中…',
-	tool_writing_prompt_generator_title: 'ライティングプロンプト生成',
+	tool_writing_prompt_generator_title:
+		'ライティングPromptジェネレーター — ローカル + オプションAI',
 	tool_writing_prompt_generator_usecase_1:
 		'作家グループ向けに対話シーン prompt を起草 — ChatGPT や Claude にビート提案を求め、全文ではなく。',
 	tool_writing_prompt_generator_usecase_2:
@@ -118,6 +120,34 @@ const ja: SiteLangDict = {
 	tool_writing_prompt_generator_usecase_4:
 		'短編脚本のビート表をローカルで組み、Gemini でテーブルリードする前に prompt を整える。',
 	tool_writing_prompt_generator_usecases_title: '向いている用途',
+	tool_writing_prompt_generator_ai_expand:
+		'AI で拡張',
+	tool_writing_prompt_generator_ai_polish:
+		'AI で推敲',
+	tool_writing_prompt_generator_ai_panel_label:
+		'任意 Cloudflare AI（Turnstile）',
+	tool_writing_prompt_generator_ai_consent_title:
+		'Cloudflare Workers AI に送信しますか？',
+	tool_writing_prompt_generator_ai_consent_body:
+		'任意のステップで下書きを Cloudflare Workers AI に送ります。当サーバーから OpenAI 等には送りません。',
+	tool_writing_prompt_generator_ai_consent_ok:
+		'続行',
+	tool_writing_prompt_generator_ai_consent_cancel:
+		'キャンセル',
+	tool_writing_prompt_generator_ai_working:
+		'Cloudflare AI 処理中…',
+	tool_writing_prompt_generator_ai_done:
+		'AI 提案を適用しました。コピー前に確認してください。',
+	tool_writing_prompt_generator_ai_err_generic:
+		'AI 失敗。ローカル Prompt は変更されていません。',
+	tool_writing_prompt_generator_ai_err_rate:
+		'AI クォータ到達。ローカルモードか明日（UTC）再試行。',
+	tool_writing_prompt_generator_ai_err_turnstile:
+		'AI 利用前に Turnstile を完了してください。',
+	tool_writing_prompt_generator_faq_q7:
+		'ローカルと任意 Cloudflare AI の違いは？',
+	tool_writing_prompt_generator_faq_a7:
+		'ローカルはこのタブのみ非アップロード。任意 Expand/Polish は Cloudflare Workers AI（Turnstile・制限）。',
 };
 
 export default ja;

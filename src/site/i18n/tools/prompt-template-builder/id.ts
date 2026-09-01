@@ -14,22 +14,22 @@ const id: SiteLangDict = {
 	tool_prompt_template_builder_constraints_ph: 'Batas nada, ruang lingkup, yang dihindari…',
 	tool_prompt_template_builder_copy: 'Salin',
 	tool_prompt_template_builder_desc:
-		'Pembuat templat Prompt untuk ChatGPT, Gemini, Claude & DeepSeek — Markdown/JSON; tetap di perangkat.',
+		'Pembuat templat Prompt — local por defecto + Expand/Polish opcional Cloudflare AI (Turnstile); Markdown/JSON en el dispositivo.',
 	tool_prompt_template_builder_description:
-		'Pembuat templat Prompt untuk ChatGPT, Gemini, Claude, dan DeepSeek: gabungkan Role, Task, Constraints, dan Output menjadi templat yang bisa dipakai ulang. Chip adegan mencakup review kode, film layar lebar, drama pendek, Android, dan iOS. Contoh: preset Agent review kode berjalan saat halaman dibuka. Markdown default; JSON mengeluarkan {role,task,constraints,output}. Parsing di tab ini — bukan LLM. Teks tetap di perangkat dan tidak diunggah ke server.',
+		'Proses dan contoh: Pembuat templat Prompt — Local + IA opcional para ChatGPT, Gemini, Claude y DeepSeek: ensambla prompts localmente por defecto y opcionalmente Expand/Polish con Cloudflare Workers AI (Turnstile obligatorio, límite de uso). Ejemplo al abrir. Markdown por defecto; JSON para pipelines. Texto en el dispositivo salvo que uses IA.',
 	tool_prompt_template_builder_download: 'Unduh',
 	tool_prompt_template_builder_empty: 'Tambahkan teks bebas atau minimal satu kolom sebelum membuat.',
 	tool_prompt_template_builder_example:
 		'Muat contoh mengisi preset Agent review kode, membuat Markdown dengan empat bagian ##, dan mengaktifkan Salin serta Unduh. Coba chip Film, Drama pendek, Android, atau iOS untuk default lain.',
 	tool_prompt_template_builder_example_title: 'Contoh',
 	tool_prompt_template_builder_faq_a1:
-		'Tidak. Templat dibuat di tab browser ini. Tidak diunggah ke OpenAI, Google, Anthropic, DeepSeek, atau server kami.',
+		'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
 	tool_prompt_template_builder_faq_a2:
-		'Tidak. Halaman ini hanya memformat teks Anda menjadi blok. Tidak memanggil ChatGPT, Gemini, Claude, DeepSeek, atau API model lain.',
+		'Modo local solo formatea aquí. Expand/Polish opcional usa Cloudflare Workers AI tras Turnstile — no llama APIs de chat.',
 	tool_prompt_template_builder_faq_a3:
 		'ChatGPT export to Markdown mengubah ekspor chat jadi file yang bisa dibaca. Di sini Anda menyusun system prompt yang bisa dipakai ulang — gunakan keduanya saat arsip chat lalu perhalus templat.',
 	tool_prompt_template_builder_faq_a4:
-		'Ya. Chip JSON mengeluarkan {role,task,constraints,output} untuk config atau tes. Gabungkan dengan validator JSON Schema jika perlu.',
+		'Sí. Completa Turnstile en el panel de IA antes de Expand o Polish.',
 	tool_prompt_template_builder_faq_a5:
 		'Baris yang diawali Role:, Task:, Constraints:, atau Output: di kotak bebas dipisah jadi bagian. Kolom eksplisit lebih diutamakan.',
 	tool_prompt_template_builder_faq_a6:
@@ -37,25 +37,38 @@ const id: SiteLangDict = {
 	tool_prompt_template_builder_faq_q1: 'Apakah prompt diunggah?',
 	tool_prompt_template_builder_faq_q2: 'Apakah memanggil LLM?',
 	tool_prompt_template_builder_faq_q3: 'Bedanya dengan ekspor ChatGPT ke Markdown?',
-	tool_prompt_template_builder_faq_q4: 'Bisa dapat JSON?',
+	tool_prompt_template_builder_faq_q4:
+		'¿Por qué Turnstile para IA opcional?',
 	tool_prompt_template_builder_faq_q5: 'Bagaimana parsing teks bebas?',
 	tool_prompt_template_builder_faq_q6: 'Bisa dipakai dengan ChatGPT, Gemini, Claude, atau DeepSeek?',
-	tool_prompt_template_builder_faq_q7: 'Bedanya mode lokal vs Cloudflare AI opsional?',
+	tool_prompt_template_builder_faq_q7:
+		'¿Diferencia entre local y Cloudflare AI opcional?',
 	tool_prompt_template_builder_faq_a7:
-		'Mode lokal hanya memformat di tab ini—tidak diunggah. Expand/Polish opsional mengirim teks klik itu ke Cloudflare Workers AI (terbatas, Turnstile). Jika gagal atau kuota habis, tetap pakai mode lokal. Kami tidak menjanjikan AI tanpa batas.',
-	tool_prompt_template_builder_ai_expand: 'Perluas dengan AI',
-	tool_prompt_template_builder_ai_polish: 'Poles dengan AI',
-	tool_prompt_template_builder_ai_panel_label: 'Cloudflare AI opsional',
-	tool_prompt_template_builder_ai_consent_title: 'Kirim teks ke Cloudflare Workers AI?',
+		'Local: solo esta pestaña, sin subida. Expand/Polish opcional a Cloudflare Workers AI (Turnstile, límite).',
+	tool_prompt_template_builder_ai_expand:
+		'Expandir con IA',
+	tool_prompt_template_builder_ai_polish:
+		'Pulir con IA',
+	tool_prompt_template_builder_ai_panel_label:
+		'Cloudflare AI opcional (Turnstile)',
+	tool_prompt_template_builder_ai_consent_title:
+		'¿Enviar texto a Cloudflare Workers AI?',
 	tool_prompt_template_builder_ai_consent_body:
-		'Langkah opsional ini mengirim draf Anda ke Cloudflare Workers AI. Bukan ke OpenAI, Google, Anthropic, atau DeepSeek dari server kami. Perakitan lokal tetap jalan tanpa AI.',
-	tool_prompt_template_builder_ai_consent_ok: 'Lanjut',
-	tool_prompt_template_builder_ai_consent_cancel: 'Batal',
-	tool_prompt_template_builder_ai_working: 'Cloudflare AI bekerja…',
-	tool_prompt_template_builder_ai_done: 'Saran AI diterapkan. Tinjau sebelum menyalin.',
-	tool_prompt_template_builder_ai_err_generic: 'AI gagal. Template lokal tidak berubah.',
-	tool_prompt_template_builder_ai_err_rate: 'Kuota AI habis. Pakai mode lokal atau coba besok (UTC).',
-	tool_prompt_template_builder_ai_err_turnstile: 'Selesaikan Turnstile sebelum memakai AI.',
+		'Este paso opcional envía tu borrador a Cloudflare Workers AI. No va a OpenAI, Google, Anthropic ni DeepSeek desde nuestros servidores.',
+	tool_prompt_template_builder_ai_consent_ok:
+		'Continuar',
+	tool_prompt_template_builder_ai_consent_cancel:
+		'Cancelar',
+	tool_prompt_template_builder_ai_working:
+		'Cloudflare AI trabajando…',
+	tool_prompt_template_builder_ai_done:
+		'Sugerencia de IA aplicada. Revisa antes de copiar.',
+	tool_prompt_template_builder_ai_err_generic:
+		'La IA falló. Tu prompt local no cambió.',
+	tool_prompt_template_builder_ai_err_rate:
+		'Cuota de IA agotada. Modo local o prueba mañana (UTC).',
+	tool_prompt_template_builder_ai_err_turnstile:
+		'Completa Turnstile antes de usar IA.',
 	tool_prompt_template_builder_fmt_json: 'JSON',
 	tool_prompt_template_builder_fmt_label: 'Format keluaran',
 	tool_prompt_template_builder_fmt_md: 'Markdown',
@@ -101,7 +114,8 @@ const id: SiteLangDict = {
 	tool_prompt_template_builder_status_working: 'Membuat templat…',
 	tool_prompt_template_builder_task_label: 'Task',
 	tool_prompt_template_builder_task_ph: 'Langkah yang harus dilakukan…',
-	tool_prompt_template_builder_title: 'pembuat templat Prompt',
+	tool_prompt_template_builder_title:
+		'Pembuat templat Prompt — Lokal + AI opsional',
 	tool_prompt_template_builder_usecase_1:
 		'Bagikan system prompt Agent review kode yang tim bisa tempel ke ChatGPT, Gemini, Claude, atau DeepSeek.',
 	tool_prompt_template_builder_usecase_2:

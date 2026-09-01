@@ -33,9 +33,10 @@ import {
 	handleIndexnowSubmit,
 } from "./endpoints/indexnow";
 import {
-	handlePromptTemplateBuilderAi,
-	handlePromptTemplateBuilderAiHealth,
-} from "./endpoints/promptTemplateBuilderAi";
+	handlePromptToolAi,
+	handlePromptToolAiHealth,
+} from "./endpoints/promptToolAi";
+import { PROMPT_AI_SLUGS } from "./lib/promptAiSlugs";
 
 type Env = PagesBindings & {
 	SITE_DEFAULT_LANG?: string;
@@ -453,8 +454,10 @@ app.get("/api/tools/indexnow/check-key", handleIndexnowCheckKey);
 app.post("/api/tools/indexnow/resolve-urls", handleIndexnowResolveUrls);
 app.post("/api/tools/indexnow/submit", handleIndexnowSubmit);
 
-app.get("/api/tools/prompt-template-builder/ai/health", handlePromptTemplateBuilderAiHealth);
-app.post("/api/tools/prompt-template-builder/ai", handlePromptTemplateBuilderAi);
+for (const slug of PROMPT_AI_SLUGS) {
+	app.get(`/api/tools/${slug}/ai/health`, handlePromptToolAiHealth);
+	app.post(`/api/tools/${slug}/ai`, handlePromptToolAi);
+}
 
 /**
  * 运维：返回 Worker 侧 PAGES_CACHE_VERSION，供 deploy 后与 R2 `_meta/pages-build.json` 对齐校验。

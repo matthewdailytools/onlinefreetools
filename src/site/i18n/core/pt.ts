@@ -106,6 +106,7 @@ const pt: SiteLangDict = {
   topic_seo_growth: "SEO e crescimento",
   topic_network_ip: "Rede e IP",
   topic_dev_data: "Dev e dados",
+  topic_ai_prompt_template_builder: "Ferramentas de prompts IA",
   topic_text_compare: "Comparar texto",
   topic_security_ids: "Segurança e IDs",
   topic_files_archives: "Ficheiros e arquivos",

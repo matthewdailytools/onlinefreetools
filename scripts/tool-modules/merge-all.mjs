@@ -151,6 +151,7 @@ const TOOL_TOPIC_IDS = new Set([
 	'seo-growth',
 	'network-ip',
 	'dev-data',
+	'ai-prompt-template-builder',
 	'text-compare',
 	'security-ids',
 	'files-archives',

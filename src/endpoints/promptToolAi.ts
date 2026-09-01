@@ -1,35 +1,41 @@
 /**
- * Prompt template builder — 可选 Cloudflare Workers AI（Expand / Polish）。
- * 路由：`POST /api/tools/prompt-template-builder/ai`
- *       `GET  /api/tools/prompt-template-builder/ai/health`
+ * Prompt 工具簇 — 可选 Cloudflare Workers AI（Expand / Polish）。
+ * 路由：`GET|POST /api/tools/:slug/ai`（`:slug` 须在 PROMPT_AI_SLUGS 白名单）
+ * 兼容：`GET|POST /api/tools/prompt-template-builder/ai`（旧路径保留）
  */
 import type { Context } from 'hono';
 import { isAllowedSiteRequest, parseAllowedOrigins } from '../lib/allowedSiteOrigin';
 import { allowMinuteRate, checkPromptAiDailyLimits } from '../lib/promptAiRateLimit';
+import {
+	isPromptAiSlug,
+	promptAiDomainHint,
+	type PromptAiSlug,
+} from '../lib/promptAiSlugs';
 import { verifyTurnstileToken } from './turnstileSiteverify';
 
-/** 允许的 action 白名单 */
+/** 允许的 action 白名单。 */
 const ACTIONS = new Set(['expand', 'polish']);
 
-/** Worker 推理硬超时（毫秒） */
+/** Worker 推理硬超时（毫秒）。 */
 const AI_TIMEOUT_MS = 25_000;
 
-/** 默认模型（可被 env.PROMPT_AI_MODEL 覆盖） */
+/** 默认模型（可被 env.PROMPT_AI_MODEL 覆盖）。 */
 const DEFAULT_MODEL = '@cf/meta/llama-3.2-1b-instruct';
 
-/** JSON 错误响应体 */
+/** JSON 错误响应体。 */
 interface AiErrorBody {
 	ok: false;
 	code: string;
 	message: string;
 }
 
-/** JSON 成功响应体 */
+/** JSON 成功响应体。 */
 interface AiOkBody {
 	ok: true;
 	text: string;
 	model: string;
 	action: string;
+	slug: string;
 }
 
 /**
@@ -67,6 +73,19 @@ export const isPromptAiEnabled = (raw: string | undefined): boolean => {
 };
 
 /**
+ * 从路由或 query 解析 slug 并校验白名单。
+ * @param c Hono 上下文
+ */
+const resolveSlug = (c: Context): PromptAiSlug | null => {
+	const fromParam = c.req.param('slug')?.trim();
+	if (fromParam && isPromptAiSlug(fromParam)) return fromParam;
+	const path = c.req.path;
+	const m = path.match(/\/api\/tools\/([^/]+)\/ai/);
+	if (m?.[1] && isPromptAiSlug(m[1])) return m[1];
+	return null;
+};
+
+/**
  * 从 Workers AI 响应中提取文本。
  * @param result env.AI.run 返回值
  */
@@ -88,33 +107,42 @@ const extractAiText = (result: unknown): string => {
 };
 
 /**
- * 构建 Expand / Polish 的 system 提示。
+ * 构建 Expand / Polish 的 system 提示（含场景 domain hint）。
  * @param action expand | polish
+ * @param slug 白名单 slug
  */
-const systemPromptFor = (action: string): string => {
+const systemPromptFor = (action: string, slug: PromptAiSlug): string => {
+	const hint = promptAiDomainHint(slug);
 	if (action === 'polish') {
 		return [
 			'You rewrite user text into a clearer, reusable AI prompt.',
 			'Keep Role, Task, Constraints, and Output structure when present.',
 			'Output only the improved prompt text — no preamble.',
+			hint,
 		].join(' ');
 	}
 	return [
-		'You expand a short draft into structured prompt fields.',
+		'You expand a short draft into structured prompt fields or a complete prompt block.',
 		'Output plain text with lines starting Role:, Task:, Constraints:, Output: when possible.',
 		'No markdown fences; no commentary.',
+		hint,
 	].join(' ');
 };
 
 /**
- * GET /api/tools/prompt-template-builder/ai/health — 不调用模型。
+ * GET /api/tools/:slug/ai/health — 不调用模型。
  */
-export const handlePromptTemplateBuilderAiHealth = async (c: Context) => {
+export const handlePromptToolAiHealth = async (c: Context) => {
+	const slug = resolveSlug(c);
+	if (!slug) {
+		return c.json({ ok: false, code: 'bad_slug', message: 'Unknown or missing prompt tool slug.' }, 404);
+	}
 	const enabled = isPromptAiEnabled(c.env.PROMPT_AI_ENABLED);
 	const hasAi = Boolean(c.env.AI);
 	const hasKv = Boolean(c.env.RATE_LIMIT_KV);
 	return c.json({
 		ok: true,
+		slug,
 		enabled,
 		hasAiBinding: hasAi,
 		hasRateLimitKv: hasKv,
@@ -123,10 +151,18 @@ export const handlePromptTemplateBuilderAiHealth = async (c: Context) => {
 };
 
 /**
- * POST /api/tools/prompt-template-builder/ai
+ * POST /api/tools/:slug/ai
  * Body: { action, input, turnstile?, locale?, maxTokens? }
  */
-export const handlePromptTemplateBuilderAi = async (c: Context) => {
+export const handlePromptToolAi = async (c: Context) => {
+	const slug = resolveSlug(c);
+	if (!slug) {
+		return c.json<AiErrorBody>(
+			{ ok: false, code: 'bad_slug', message: 'Unknown or missing prompt tool slug.' },
+			404,
+		);
+	}
+
 	if (!isPromptAiEnabled(c.env.PROMPT_AI_ENABLED)) {
 		return c.json<AiErrorBody>(
 			{ ok: false, code: 'disabled', message: 'Prompt AI is temporarily disabled.' },
@@ -249,7 +285,7 @@ export const handlePromptTemplateBuilderAi = async (c: Context) => {
 	try {
 		const result = await c.env.AI.run(model, {
 			messages: [
-				{ role: 'system', content: systemPromptFor(action) },
+				{ role: 'system', content: systemPromptFor(action, slug) },
 				{ role: 'user', content: input },
 			],
 			max_tokens: maxTokens,
@@ -263,7 +299,7 @@ export const handlePromptTemplateBuilderAi = async (c: Context) => {
 			);
 		}
 
-		return c.json<AiOkBody>({ ok: true, text, model, action });
+		return c.json<AiOkBody>({ ok: true, text, model, action, slug });
 	} catch (err) {
 		const msg = err instanceof Error ? err.message : String(err);
 		const lower = msg.toLowerCase();
@@ -293,3 +329,9 @@ export const handlePromptTemplateBuilderAi = async (c: Context) => {
 		clearTimeout(timer);
 	}
 };
+
+/** @deprecated 保留旧导出别名，供 index 兼容注册。 */
+export const handlePromptTemplateBuilderAiHealth = handlePromptToolAiHealth;
+
+/** @deprecated 保留旧导出别名，供 index 兼容注册。 */
+export const handlePromptTemplateBuilderAi = handlePromptToolAi;

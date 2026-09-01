@@ -1,10 +1,11 @@
 # 02 — 工具信息定稿
 
-**状态**：`draft`  
+**状态**：`ready`  
 **slug**：`midjourney-prompt-builder`  
 **路径**：`/tools/midjourney-prompt-builder`  
 **主方向**：B  
 **YMYL**：否  
+**Topic**：`ai-prompt-template-builder`
 
 ---
 
@@ -12,38 +13,55 @@
 
 | 场景 | 进页默认 | 说明 |
 |---|---|---|
-| Midjourney prompt 组装 | **是** | H1 |
-| Sketch 风格 | 芯片 absorb | 不拆 URL |
-| 云端图像生成 | — | **有意不满足** |
+| Midjourney prompt builder | **是** | H1 |
+| 通用四字段模板 | — | **有意不满足**（链到 prompt-template-builder） |
+| 云端代写全文 | — | **有意不满足** |
 
 ---
 
-## IG 预审（topic §4.3）
+## 清单前检索覆盖优化
 
-| # | 维度 | 本页如何体现 |
-|---|---|---|
-| 1 | 规则 | 主体/风格/光线/画幅 → MJ 参数映射 |
-| 2 | 边界 | 本地组装；不替代官方客户端 |
-| 3 | 对照 | vs S0 通用 builder |
-| 4 | 样例 | 完整 MJ prompt 进页自动 |
+| 项 | 结论 / 落点 |
+|---|---|
+| 日期 | 2026-09-02 |
+| slug | 保留 `midjourney-prompt-builder` |
+| 主检索词 → H1 | **Midjourney prompt builder** |
+| 次词 | Midjourney --ar/--v mapping → rules table + FAQ q3; sketch style → desc |
+| 用户习惯 | 搜 midjourney prompt builder 要进页即用字段 + 样例 + 本地组装 |
+| 优化摘要 | H1 锁定 Midjourney prompt builder — Local + Optional AI；次词落 desc/FAQ/use cases；vs prompt-template-builder FAQ 划界 |
+| [x] coverage:gate 0b | 2026-09-02 |
+| [x] 已回写上方 SEO 卡片 Title / Description 与建议 slug | |
 
----
+## 用户意图审查
 
-## 开发 / SEO 卡片（草稿）
+| 项 | 结论 |
+|---|---|
+| 日期 | 2026-09-02 |
+| 总判 | **满足**：场景字段 + 进页样例 + 本地组装 + 可选 AI/Turnstile |
+| 主任务 | midjourney prompt builder 本地组装并粘贴到 ChatGPT 等 |
+| 超出 / 边界 | 不代写全文、不调用 ChatGPT API；AI 可选且 rate-limited |
+| [x] 已回写 How / FAQ / desc | |
+
+## 开发 / SEO 卡片
 
 | 字段 | 内容 |
 |---|---|
-| Title (en) / H1 | **Midjourney prompt builder** |
-| `localProcessing` | **true** |
-| related | `prompt-template-builder`, `writing-prompt-generator` |
-| [ ] coverage:gate 0b | 未跑 |
+| Title (en) / H1 | **Midjourney prompt builder — Local + Optional AI** |
+| `localProcessing` | **true**（可选 AI 须 consent + Turnstile） |
+| `page.style` | **opts** |
+| `primaryTopic` | **ai-prompt-template-builder** |
+| related | `prompt-template-builder`, `sketch-prompt-generator`, `writing-prompt-generator` |
+| DOM 前缀 | `mpb` |
 
 ## 交互规格
 
-- 字段：subject, style, lighting, aspect ratio, optional MJ flags
-- **进页样例**：`loadSample()` 输出一条完整 prompt
-- DOM 前缀：待定（如 `mpb`）
+- 字段：subject, style, lighting, aspect, mj_flags
+- 输出：Markdown（Role/Task/Constraints/Output）或 JSON
+- **进页样例**：`loadSample()` 默认预设
+- 可选 AI：Expand/Polish + Turnstile（共享 promptAiPanel）
 
 ## 页面模块清单
 
-- [ ] 全部 — 待 ready
+- [x] H1 + 首屏交互 + loadSample
+- [x] How / Rules / Example / Use cases / FAQ / Related / References
+- [x] Optional AI panel + Turnstile

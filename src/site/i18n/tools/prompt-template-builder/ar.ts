@@ -14,22 +14,22 @@ const ar: SiteLangDict = {
 	tool_prompt_template_builder_constraints_ph: 'حدود النبرة، النطاق، ما يجب تجنبه…',
 	tool_prompt_template_builder_copy: 'نسخ',
 	tool_prompt_template_builder_desc:
-		'منشئ قوالب Prompt لـ ChatGPT وGemini وClaude وDeepSeek — Markdown/JSON؛ يبقى على الجهاز.',
+		'منشئ قوالب Prompt — local por defecto + Expand/Polish opcional Cloudflare AI (Turnstile); Markdown/JSON en el dispositivo.',
 	tool_prompt_template_builder_description:
-		'منشئ قوالب Prompt لـ ChatGPT وGemini وClaude وDeepSeek: يدمج Role وTask وConstraints وOutput في قالب قابل لإعادة الاستخدام. شرائح المشهد تشمل مراجعة الكود والفيلم الروائي والدراما القصيرة وAndroid وiOS. مثال: preset وكيل مراجعة الكود يعمل عند فتح الصفحة. Markdown افتراضي؛ JSON يُخرج {role,task,constraints,output}. التحليل في هذا التبويب — ليس LLM. يبقى النص على جهازك ولا يُرفع إلى خادم.',
+		'عملية ومثال: منشئ قوالب Prompt — Local + IA opcional para ChatGPT, Gemini, Claude y DeepSeek: ensambla prompts localmente por defecto y opcionalmente Expand/Polish con Cloudflare Workers AI (Turnstile obligatorio, límite de uso). Ejemplo al abrir. Markdown por defecto; JSON para pipelines. Texto en el dispositivo salvo que uses IA.',
 	tool_prompt_template_builder_download: 'تنزيل',
 	tool_prompt_template_builder_empty: 'أضف نصًا حرًا أو حقلًا واحدًا على الأقل قبل الإنشاء.',
 	tool_prompt_template_builder_example:
 		'تحميل المثال يملأ preset وكيل مراجعة الكود، وينشئ Markdown بأربعة أقسام ## ويفعّل النسخ والتنزيل. جرّب شرائح فيلم أو دراما قصيرة أو Android أو iOS لقيم افتراضية أخرى.',
 	tool_prompt_template_builder_example_title: 'مثال',
 	tool_prompt_template_builder_faq_a1:
-		'لا. تُبنى القوالب في تبويب المتصفح هذا. لا يُرفع شيء إلى OpenAI أو Google أو Anthropic أو DeepSeek أو خوادمنا.',
+		'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
 	tool_prompt_template_builder_faq_a2:
-		'لا. هذه الصفحة تنسّق نصك فقط في كتل. لا تستدعي ChatGPT أو Gemini أو Claude أو DeepSeek ولا أي واجهة نموذج أخرى.',
+		'Modo local solo formatea aquí. Expand/Polish opcional usa Cloudflare Workers AI tras Turnstile — no llama APIs de chat.',
 	tool_prompt_template_builder_faq_a3:
 		'تصدير ChatGPT إلى Markdown يحوّل ملفات المحادثة إلى ملفات مقروءة. هنا تنظم system prompt قابل لإعادة الاستخدام — استخدمهما معًا عند أرشفة المحادثات ثم refine القالب.',
 	tool_prompt_template_builder_faq_a4:
-		'نعم. شريحة JSON تُخرج {role,task,constraints,output} للإعدادات أو الاختبارات. ادمجها مع مدقق JSON Schema عند الحاجة.',
+		'Sí. Completa Turnstile en el panel de IA antes de Expand o Polish.',
 	tool_prompt_template_builder_faq_a5:
 		'الأسطر التي تبدأ بـ Role: أو Task: أو Constraints: أو Output: في المربع الحر تُقسَّم إلى أقسام. الحقول الصريحة لها الأولوية.',
 	tool_prompt_template_builder_faq_a6:
@@ -37,25 +37,38 @@ const ar: SiteLangDict = {
 	tool_prompt_template_builder_faq_q1: 'هل يُرفع الـ prompt؟',
 	tool_prompt_template_builder_faq_q2: 'هل يستدعي LLM؟',
 	tool_prompt_template_builder_faq_q3: 'ما الفرق عن تصدير ChatGPT إلى Markdown؟',
-	tool_prompt_template_builder_faq_q4: 'هل يمكن الحصول على JSON؟',
+	tool_prompt_template_builder_faq_q4:
+		'¿Por qué Turnstile para IA opcional?',
 	tool_prompt_template_builder_faq_q5: 'كيف يعمل تحليل النص الحر؟',
 	tool_prompt_template_builder_faq_q6: 'هل يمكن استخدامه مع ChatGPT أو Gemini أو Claude أو DeepSeek؟',
-	tool_prompt_template_builder_faq_q7: 'ما الفرق بين الوضع المحلي وCloudflare AI الاختياري؟',
+	tool_prompt_template_builder_faq_q7:
+		'¿Diferencia entre local y Cloudflare AI opcional?',
 	tool_prompt_template_builder_faq_a7:
-		'الوضع المحلي ينسّق في هذا التبويب فقط—لا رفع. التوسيع/الصقل الاختياري يرسل نص ذلك النقر إلى Cloudflare Workers AI (محدود، Turnstile). عند الفشل أو نفاد الحصة، استمر محلياً. لا نعد بذكاء اصطناعي غير محدود.',
-	tool_prompt_template_builder_ai_expand: 'توسيع بالذكاء الاصطناعي',
-	tool_prompt_template_builder_ai_polish: 'صقل بالذكاء الاصطناعي',
-	tool_prompt_template_builder_ai_panel_label: 'Cloudflare AI اختياري',
-	tool_prompt_template_builder_ai_consent_title: 'إرسال النص إلى Cloudflare Workers AI؟',
+		'Local: solo esta pestaña, sin subida. Expand/Polish opcional a Cloudflare Workers AI (Turnstile, límite).',
+	tool_prompt_template_builder_ai_expand:
+		'Expandir con IA',
+	tool_prompt_template_builder_ai_polish:
+		'Pulir con IA',
+	tool_prompt_template_builder_ai_panel_label:
+		'Cloudflare AI opcional (Turnstile)',
+	tool_prompt_template_builder_ai_consent_title:
+		'¿Enviar texto a Cloudflare Workers AI?',
 	tool_prompt_template_builder_ai_consent_body:
-		'هذه الخطوة الاختيارية ترسل مسودتك إلى Cloudflare Workers AI. لا إلى OpenAI أو Google أو Anthropic أو DeepSeek من خوادمنا. التجميع المحلي يعمل بدون AI.',
-	tool_prompt_template_builder_ai_consent_ok: 'متابعة',
-	tool_prompt_template_builder_ai_consent_cancel: 'إلغاء',
-	tool_prompt_template_builder_ai_working: 'Cloudflare AI يعمل…',
-	tool_prompt_template_builder_ai_done: 'تم تطبيق اقتراح AI. راجع قبل النسخ.',
-	tool_prompt_template_builder_ai_err_generic: 'فشل AI. القالب المحلي لم يتغير.',
-	tool_prompt_template_builder_ai_err_rate: 'نفدت حصة AI. استخدم الوضع المحلي أو جرّب غداً (UTC).',
-	tool_prompt_template_builder_ai_err_turnstile: 'أكمل Turnstile قبل استخدام AI.',
+		'Este paso opcional envía tu borrador a Cloudflare Workers AI. No va a OpenAI, Google, Anthropic ni DeepSeek desde nuestros servidores.',
+	tool_prompt_template_builder_ai_consent_ok:
+		'Continuar',
+	tool_prompt_template_builder_ai_consent_cancel:
+		'Cancelar',
+	tool_prompt_template_builder_ai_working:
+		'Cloudflare AI trabajando…',
+	tool_prompt_template_builder_ai_done:
+		'Sugerencia de IA aplicada. Revisa antes de copiar.',
+	tool_prompt_template_builder_ai_err_generic:
+		'La IA falló. Tu prompt local no cambió.',
+	tool_prompt_template_builder_ai_err_rate:
+		'Cuota de IA agotada. Modo local o prueba mañana (UTC).',
+	tool_prompt_template_builder_ai_err_turnstile:
+		'Completa Turnstile antes de usar IA.',
 	tool_prompt_template_builder_fmt_json: 'JSON',
 	tool_prompt_template_builder_fmt_label: 'صيغة الإخراج',
 	tool_prompt_template_builder_fmt_md: 'Markdown',
@@ -101,7 +114,8 @@ const ar: SiteLangDict = {
 	tool_prompt_template_builder_status_working: 'جاري إنشاء القالب…',
 	tool_prompt_template_builder_task_label: 'Task',
 	tool_prompt_template_builder_task_ph: 'ماذا تفعل خطوة بخطوة…',
-	tool_prompt_template_builder_title: 'منشئ قوالب Prompt',
+	tool_prompt_template_builder_title:
+		'منشئ قوالب Prompt — محلي + ذكاء اصطناعي اختياري',
 	tool_prompt_template_builder_usecase_1:
 		'انشر system prompt لوكيل مراجعة الكود يمكن للفريق لصقه في ChatGPT أو Gemini أو Claude أو DeepSeek.',
 	tool_prompt_template_builder_usecase_2:

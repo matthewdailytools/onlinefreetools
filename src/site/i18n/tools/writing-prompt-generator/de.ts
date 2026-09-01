@@ -23,9 +23,9 @@ const de: SiteLangDict = {
 	tool_writing_prompt_generator_clear: 'Leeren',
 	tool_writing_prompt_generator_copy: 'Kopieren',
 	tool_writing_prompt_generator_desc:
-		'Schreib-Prompt-Generator für Dialog, Figur, Drehbuch & Zufall — Markdown/JSON; bleibt auf dem Gerät.',
+		'Schreib-Prompt-Generator — local por defecto + Expand/Polish opcional Cloudflare AI (Turnstile); Markdown/JSON en el dispositivo.',
 	tool_writing_prompt_generator_description:
-		'Schreib-Prompt-Generator für ChatGPT, Gemini, Claude und DeepSeek: Dialog-, Charakter-, Drehbuch- oder Zufalls-Story-Prompts lokal zusammenstellen. Der Zufallsmodus würfelt Genre, Schauplatz, Objekt und Konflikt auf derselben Seite — integrierter Zufalls-Prompt-Generator. Beispiel: Eine Dialogszene im Nacht-Diner läuft beim ersten Laden. Standard Markdown; JSON liefert {mode,fields,role,task,constraints,output}. Kein LLM — der Text bleibt auf dem Gerät und wird nicht auf einen Server hochgeladen.',
+		'Prozess und Beispiel: Schreib-Prompt-Generator — Local + IA opcional para ChatGPT, Gemini, Claude y DeepSeek: ensambla prompts localmente por defecto y opcionalmente Expand/Polish con Cloudflare Workers AI (Turnstile obligatorio, límite de uso). Ejemplo al abrir. Markdown por defecto; JSON para pipelines. Texto en el dispositivo salvo que uses IA.',
 	tool_writing_prompt_generator_dlg_characters_label: 'Figuren',
 	tool_writing_prompt_generator_dlg_characters_ph: 'Namen + Rollen in einer Zeile…',
 	tool_writing_prompt_generator_dlg_conflict_label: 'Konflikt',
@@ -42,13 +42,13 @@ const de: SiteLangDict = {
 		'Beispiel laden wählt den Modus Dialog, füllt eine Nacht-Diner-Szene, erzeugt Markdown mit Role/Task/Constraints/Output-Abschnitten und aktiviert Kopieren. Probieren Sie die Chips Figur, Drehbuch oder Zufall für andere Voreinstellungen.',
 	tool_writing_prompt_generator_example_title: 'Beispiel',
 	tool_writing_prompt_generator_faq_a1:
-		'Nein. Prompts werden in diesem Browser-Tab zusammengestellt. Nichts wird an OpenAI, Google, Anthropic, DeepSeek oder unsere Server gesendet.',
+		'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
 	tool_writing_prompt_generator_faq_a2:
-		'Nein. Diese Seite formatiert nur Ihr Schreib-Brief in Prompt-Blöcke. Sie ruft ChatGPT, Gemini, Claude, DeepSeek oder keine andere Modell-API auf.',
+		'Modo local solo formatea aquí. Expand/Polish opcional usa Cloudflare Workers AI tras Turnstile — no llama APIs de chat.',
 	tool_writing_prompt_generator_faq_a3:
 		'Der Prompt-Vorlagen-Builder strukturiert generische Role/Task/Constraints/Output-Vorlagen. Diese Seite fokussiert Schreibmodi — Dialogfelder, Charakterbögen, Drehbuch-Beats und einen Zufalls-Prompt-Generator auf einer Leinwand.',
 	tool_writing_prompt_generator_faq_a4:
-		'Ja. Der Zufallsmodus würfelt Genre, Schauplatz, Objekt, Emotion und Konflikt. Optionaler numerischer Seed wiederholt denselben Wurf. Zufallsausgabe ist nur Inspiration — ohne Qualitätsgarantie.',
+		'Sí. Completa Turnstile en el panel de IA antes de Expand o Polish.',
 	tool_writing_prompt_generator_faq_a5:
 		'Ja. Der JSON-Chip liefert {mode,fields,role,task,constraints,output} für Tests oder Configs. Markdown nutzt ## Role / Task / Constraints / Output-Überschriften.',
 	tool_writing_prompt_generator_faq_a6:
@@ -56,7 +56,8 @@ const de: SiteLangDict = {
 	tool_writing_prompt_generator_faq_q1: 'Wird mein Schreib-Prompt hochgeladen?',
 	tool_writing_prompt_generator_faq_q2: 'Ruft das einen LLM auf?',
 	tool_writing_prompt_generator_faq_q3: 'Worin unterscheidet es sich vom Prompt-Vorlagen-Builder?',
-	tool_writing_prompt_generator_faq_q4: 'Funktioniert hier ein Zufalls-Prompt-Generator?',
+	tool_writing_prompt_generator_faq_q4:
+		'¿Por qué Turnstile para IA opcional?',
 	tool_writing_prompt_generator_faq_q5: 'Kann ich JSON erhalten?',
 	tool_writing_prompt_generator_faq_q6: 'Kann ich es mit ChatGPT, Gemini, Claude oder DeepSeek nutzen?',
 	tool_writing_prompt_generator_fmt_json: 'JSON',
@@ -108,7 +109,8 @@ const de: SiteLangDict = {
 	tool_writing_prompt_generator_status_copied: 'In die Zwischenablage kopiert.',
 	tool_writing_prompt_generator_status_done: 'Prompt bereit.',
 	tool_writing_prompt_generator_status_working: 'Prompt wird erstellt…',
-	tool_writing_prompt_generator_title: 'Schreib-Prompt-Generator',
+	tool_writing_prompt_generator_title:
+		'Schreib-Prompt-Generator — Lokal + optionale KI',
 	tool_writing_prompt_generator_usecase_1:
 		'Entwerfen Sie einen Dialogszenen-Prompt für eine Schreibgruppe — fügen Sie ihn in ChatGPT oder Claude für Beat-Vorschläge ein, nicht für vollständige Prosa.',
 	tool_writing_prompt_generator_usecase_2:
@@ -118,6 +120,34 @@ const de: SiteLangDict = {
 	tool_writing_prompt_generator_usecase_4:
 		'Skizzieren Sie lokal ein Kurzdrehbuch-Beat-Sheet, bevor Sie den Prompt in Gemini für Table Reads übernehmen.',
 	tool_writing_prompt_generator_usecases_title: 'Gute Einsatzfälle',
+	tool_writing_prompt_generator_ai_expand:
+		'Expandir con IA',
+	tool_writing_prompt_generator_ai_polish:
+		'Pulir con IA',
+	tool_writing_prompt_generator_ai_panel_label:
+		'Cloudflare AI opcional (Turnstile)',
+	tool_writing_prompt_generator_ai_consent_title:
+		'¿Enviar texto a Cloudflare Workers AI?',
+	tool_writing_prompt_generator_ai_consent_body:
+		'Este paso opcional envía tu borrador a Cloudflare Workers AI. No va a OpenAI, Google, Anthropic ni DeepSeek desde nuestros servidores.',
+	tool_writing_prompt_generator_ai_consent_ok:
+		'Continuar',
+	tool_writing_prompt_generator_ai_consent_cancel:
+		'Cancelar',
+	tool_writing_prompt_generator_ai_working:
+		'Cloudflare AI trabajando…',
+	tool_writing_prompt_generator_ai_done:
+		'Sugerencia de IA aplicada. Revisa antes de copiar.',
+	tool_writing_prompt_generator_ai_err_generic:
+		'La IA falló. Tu prompt local no cambió.',
+	tool_writing_prompt_generator_ai_err_rate:
+		'Cuota de IA agotada. Modo local o prueba mañana (UTC).',
+	tool_writing_prompt_generator_ai_err_turnstile:
+		'Completa Turnstile antes de usar IA.',
+	tool_writing_prompt_generator_faq_q7:
+		'¿Diferencia entre local y Cloudflare AI opcional?',
+	tool_writing_prompt_generator_faq_a7:
+		'Local: solo esta pestaña, sin subida. Expand/Polish opcional a Cloudflare Workers AI (Turnstile, límite).',
 };
 
 export default de;

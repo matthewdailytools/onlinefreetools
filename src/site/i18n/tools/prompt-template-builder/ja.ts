@@ -14,22 +14,22 @@ const ja: SiteLangDict = {
 	tool_prompt_template_builder_constraints_ph: 'トーン、範囲、避けること…',
 	tool_prompt_template_builder_copy: 'コピー',
 	tool_prompt_template_builder_desc:
-		'ChatGPT、Gemini、Claude、DeepSeek 向け Prompt テンプレートビルダー — Markdown/JSON、端末内完結。',
+		'Promptテンプレートビルダー — ローカル既定、任意 Cloudflare AI 拡張/推敲（Turnstile）；Markdown/JSON は端末内。',
 	tool_prompt_template_builder_description:
-		'ChatGPT、Gemini、Claude、DeepSeek 向け Prompt テンプレートビルダー：Role・Task・Constraints・Output を統合し、再利用可能なテンプレートにします。シーンチップはコードレビュー、長編映画、ショートドラマ、Android、iOS に対応。例：コードレビュー Agent プリセットが初回表示で実行。既定は Markdown；JSON は {role,task,constraints,output} を出力。解析はこのタブ内 — LLM ではありません。テキストは端末内に留まり、サーバーにアップロードされません。',
+		'手順と例：Promptテンプレートビルダー — ローカル + オプションAI（ChatGPT/Gemini/Claude/DeepSeek）：既定はブラウザ内ローカル組み立て、任意で Cloudflare Workers AI Expand/Polish（Turnstile 必須・レート制限）。初回表示でサンプル。Markdown 既定。AI 未使用時は端末外に出ません。',
 	tool_prompt_template_builder_download: 'ダウンロード',
 	tool_prompt_template_builder_empty: '自由入力またはいずれかのフィールドを入力してから作成してください。',
 	tool_prompt_template_builder_example:
 		'サンプル読込でコードレビュー Agent プリセットを入れ、## 見出し四つの Markdown を生成し、コピーとダウンロードを有効にします。映画、ショートドラマ、Android、iOS チップで他のデフォルトも試せます。',
 	tool_prompt_template_builder_example_title: '例',
 	tool_prompt_template_builder_faq_a1:
-		'いいえ。テンプレートはこのブラウザタブ内で組み立てます。OpenAI、Google、Anthropic、DeepSeek、当社サーバーへは送信しません。',
+		'既定はこのタブ内ローカル。任意 Expand/Polish はそのクリック分のみ Cloudflare Workers AI へ。',
 	tool_prompt_template_builder_faq_a2:
-		'いいえ。テキストをブロックに整形するだけです。ChatGPT、Gemini、Claude、DeepSeek や他のモデル API は呼びません。',
+		'ローカルはこのタブのみ。任意 AI は Turnstile 後 Cloudflare Workers AI — チャット API は呼びません。',
 	tool_prompt_template_builder_faq_a3:
 		'ChatGPT export to Markdown は会話エクスポートを読みやすいファイルにします。ここでは再利用可能な system prompt を構造化 — チャット保存後にテンプレート化する際に併用できます。',
 	tool_prompt_template_builder_faq_a4:
-		'はい。JSON チップで {role,task,constraints,output} を出力。設定やテスト用。必要なら JSON Schema バリデータと組み合わせてください。',
+		'はい。Expand/Polish 前に Turnstile を完了してください。',
 	tool_prompt_template_builder_faq_a5:
 		'自由入力で Role: / Task: / Constraints: / Output: で始まる行はセクションに分割。明示フィールドが優先されます。',
 	tool_prompt_template_builder_faq_a6:
@@ -37,25 +37,38 @@ const ja: SiteLangDict = {
 	tool_prompt_template_builder_faq_q1: 'Prompt はアップロードされますか？',
 	tool_prompt_template_builder_faq_q2: 'LLM を呼び出しますか？',
 	tool_prompt_template_builder_faq_q3: 'ChatGPT エクスポート→Markdown との違いは？',
-	tool_prompt_template_builder_faq_q4: 'JSON 出力はできますか？',
+	tool_prompt_template_builder_faq_q4:
+		'任意 AI に Turnstile が必要な理由は？',
 	tool_prompt_template_builder_faq_q5: '自由入力の解析はどう動きますか？',
 	tool_prompt_template_builder_faq_q6: 'ChatGPT、Gemini、Claude、DeepSeek で使えますか？',
-	tool_prompt_template_builder_faq_q7: 'ローカルと任意の Cloudflare AI の違いは？',
+	tool_prompt_template_builder_faq_q7:
+		'ローカルと任意 Cloudflare AI の違いは？',
 	tool_prompt_template_builder_faq_a7:
-		'ローカルはこのタブ内だけで整形—アップロードなし。任意の拡張/推敲はそのクリックで送ったテキストを Cloudflare Workers AI へ（制限・Turnstile あり）。失敗や上限時はローカル継続。無制限 AI は約束しません。',
-	tool_prompt_template_builder_ai_expand: 'AI で拡張',
-	tool_prompt_template_builder_ai_polish: 'AI で推敲',
-	tool_prompt_template_builder_ai_panel_label: '任意の Cloudflare AI',
-	tool_prompt_template_builder_ai_consent_title: 'Cloudflare Workers AI に送信しますか？',
+		'ローカルはこのタブのみ非アップロード。任意 Expand/Polish は Cloudflare Workers AI（Turnstile・制限）。',
+	tool_prompt_template_builder_ai_expand:
+		'AI で拡張',
+	tool_prompt_template_builder_ai_polish:
+		'AI で推敲',
+	tool_prompt_template_builder_ai_panel_label:
+		'任意 Cloudflare AI（Turnstile）',
+	tool_prompt_template_builder_ai_consent_title:
+		'Cloudflare Workers AI に送信しますか？',
 	tool_prompt_template_builder_ai_consent_body:
-		'この任意ステップは下書きを Cloudflare Workers AI に送ります。当サーバーから OpenAI/Google/Anthropic/DeepSeek には送りません。AI なしでもローカル組み立ては可能です。',
-	tool_prompt_template_builder_ai_consent_ok: '続行',
-	tool_prompt_template_builder_ai_consent_cancel: 'キャンセル',
-	tool_prompt_template_builder_ai_working: 'Cloudflare AI 処理中…',
-	tool_prompt_template_builder_ai_done: 'AI 提案を適用しました。コピー前に確認してください。',
-	tool_prompt_template_builder_ai_err_generic: 'AI に失敗。ローカルテンプレートは変更されていません。',
-	tool_prompt_template_builder_ai_err_rate: 'AI 上限に達しました。ローカルか明日（UTC）再試行。',
-	tool_prompt_template_builder_ai_err_turnstile: 'AI 利用前に Turnstile を完了してください。',
+		'任意のステップで下書きを Cloudflare Workers AI に送ります。当サーバーから OpenAI 等には送りません。',
+	tool_prompt_template_builder_ai_consent_ok:
+		'続行',
+	tool_prompt_template_builder_ai_consent_cancel:
+		'キャンセル',
+	tool_prompt_template_builder_ai_working:
+		'Cloudflare AI 処理中…',
+	tool_prompt_template_builder_ai_done:
+		'AI 提案を適用しました。コピー前に確認してください。',
+	tool_prompt_template_builder_ai_err_generic:
+		'AI 失敗。ローカル Prompt は変更されていません。',
+	tool_prompt_template_builder_ai_err_rate:
+		'AI クォータ到達。ローカルモードか明日（UTC）再試行。',
+	tool_prompt_template_builder_ai_err_turnstile:
+		'AI 利用前に Turnstile を完了してください。',
 	tool_prompt_template_builder_fmt_json: 'JSON',
 	tool_prompt_template_builder_fmt_label: '出力形式',
 	tool_prompt_template_builder_fmt_md: 'Markdown',
@@ -101,7 +114,8 @@ const ja: SiteLangDict = {
 	tool_prompt_template_builder_status_working: 'テンプレート作成中…',
 	tool_prompt_template_builder_task_label: 'Task',
 	tool_prompt_template_builder_task_ph: '段階的に行うこと…',
-	tool_prompt_template_builder_title: 'Promptテンプレートビルダー',
+	tool_prompt_template_builder_title:
+		'Promptテンプレートビルダー — ローカル + オプションAI',
 	tool_prompt_template_builder_usecase_1:
 		'チームが ChatGPT、Gemini、Claude、DeepSeek に貼れるコードレビュー Agent の system prompt を共有。',
 	tool_prompt_template_builder_usecase_2:
