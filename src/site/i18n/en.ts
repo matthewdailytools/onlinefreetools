@@ -441,7 +441,7 @@ const en: SiteLangDict = {
   tool_android_prompt_builder_download: 'Download',
   tool_android_prompt_builder_empty: 'Fill at least one field before building.',
   tool_android_prompt_builder_example:
-    'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+    'Input: Feature = offline reading list + share-sheet save + FTS search + swipe archive with undo; Stack = Kotlin 2.0, Compose, Room FTS4, Hilt, WorkManager; UI = LazyColumn + SwipeToDismissBox; Gradle = minSdk 26, :app + :core:data. Output (Markdown): ## Role → senior Android engineer; ## Task → Feature / Kotlin / Compose / Gradle lines.',
   tool_android_prompt_builder_example_title: 'Example',
   tool_android_prompt_builder_faq_a1:
     'Local assembly runs in this browser tab — nothing is uploaded by default. Optional Expand/Polish sends only the text you submit for that click to Cloudflare Workers AI, not to OpenAI, Google, Anthropic, or DeepSeek from our servers.',
@@ -3024,7 +3024,7 @@ const en: SiteLangDict = {
   tool_film_prompt_builder_download: 'Download',
   tool_film_prompt_builder_empty: 'Fill at least one field before building.',
   tool_film_prompt_builder_example:
-    'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+    'Input: Logline = two rival food-truck owners share one kitchen for 30 days after a permit error; Act II = festival rush + blogger recipe feud; Scene list = six numbered beats; Arc = Pride → grudging teamwork → co-owners. Output (Markdown): ## Task block lists Logline, Act1–3, Scene / List, Character / Arc — same text Load sample writes on first paint.',
   tool_film_prompt_builder_example_title: 'Example',
   tool_film_prompt_builder_faq_a1:
     'Local assembly runs in this browser tab — nothing is uploaded by default. Optional Expand/Polish sends only the text you submit for that click to Cloudflare Workers AI, not to OpenAI, Google, Anthropic, or DeepSeek from our servers.',
@@ -4879,7 +4879,7 @@ const en: SiteLangDict = {
   tool_ios_prompt_builder_download: 'Download',
   tool_ios_prompt_builder_empty: 'Fill at least one field before building.',
   tool_ios_prompt_builder_example:
-    'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+    'Input: Feature = HealthKit step trends + resting HR band with permission rationale; Stack = Swift 5.10, SwiftUI, SwiftData cache; UI = NavigationStack + Charts + permission sheet; HIG = Dynamic Type XXL, VoiceOver on chart points, no force-unwrap. Output (Markdown): ## Task → Feature / Swift / SwiftUI / HIG constraint lines.',
   tool_ios_prompt_builder_example_title: 'Example',
   tool_ios_prompt_builder_faq_a1:
     'Local assembly runs in this browser tab — nothing is uploaded by default. Optional Expand/Polish sends only the text you submit for that click to Cloudflare Workers AI, not to OpenAI, Google, Anthropic, or DeepSeek from our servers.',
@@ -6170,7 +6170,7 @@ const en: SiteLangDict = {
   tool_midjourney_prompt_builder_download: 'Download',
   tool_midjourney_prompt_builder_empty: 'Fill at least one field before building.',
   tool_midjourney_prompt_builder_example:
-    'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+    'Input: Subject = samurai mid-draw on mossy bridge; Style = cinematic ink wash, teal/charcoal; Lighting = sunrise rim + fog; Flags = --v 6.1 --style raw --stylize 120 --chaos 8. Output (Markdown): ## Task includes a suggested MJ line with subject, style, lighting, and --ar 16:9. JSON chip adds structured fields for pipelines.',
   tool_midjourney_prompt_builder_example_title: 'Example',
   tool_midjourney_prompt_builder_faq_a1:
     'Local assembly runs in this browser tab — nothing is uploaded by default. Optional Expand/Polish sends only the text you submit for that click to Cloudflare Workers AI, not to OpenAI, Google, Anthropic, or DeepSeek from our servers.',
@@ -7514,7 +7514,7 @@ const en: SiteLangDict = {
   tool_product_design_prompt_builder_download: 'Download',
   tool_product_design_prompt_builder_empty: 'Fill at least one field before building.',
   tool_product_design_prompt_builder_example:
-    'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+    'Input: Persona = co-parents on mixed Android/iPhone; Problem = noisy calendars, need custody-color week view + handoff notes; Wireframe = 3 screens (week strip, detail sheet, SMS invite); Tokens = 8pt grid, #2563eb primary, WCAG AA. Output (Markdown): ## Task → Persona / Problem / Wireframe / Design tokens lines for UX briefs.',
   tool_product_design_prompt_builder_example_title: 'Example',
   tool_product_design_prompt_builder_faq_a1:
     'Local assembly runs in this browser tab — nothing is uploaded by default. Optional Expand/Polish sends only the text you submit for that click to Cloudflare Workers AI, not to OpenAI, Google, Anthropic, or DeepSeek from our servers.',
@@ -7650,7 +7650,7 @@ const en: SiteLangDict = {
   tool_prompt_template_builder_download: 'Download',
   tool_prompt_template_builder_empty: 'Add free text or at least one field before building.',
   tool_prompt_template_builder_example:
-    'Load sample fills the code-review Agent preset, builds Markdown with four ## sections, and enables Copy and Download. Try Movie, Short drama, Android, or iOS chips for other defaults.',
+    'Input (Load sample, Code chip): Role = senior code reviewer (security + readability); Task = review the PR diff I paste next; Constraints = max 12 bullets, flag secrets. Output (Markdown): ## Role / ## Task / ## Constraints / ## Output format — four sections ready to copy into ChatGPT or Claude. Matches first paint on the canvas.',
   tool_prompt_template_builder_example_title: 'Example',
   tool_prompt_template_builder_faq_a1:
     'Local assembly runs in this browser tab — nothing is uploaded by default. Optional Expand/Polish sends only the text you submit for that click to Cloudflare Workers AI, not to OpenAI, Google, Anthropic, or DeepSeek from our servers.',
@@ -8416,7 +8416,7 @@ const en: SiteLangDict = {
   tool_short_drama_prompt_generator_episodes_label: 'Episodes',
   tool_short_drama_prompt_generator_episodes_ph: 'Sample episodes…',
   tool_short_drama_prompt_generator_example:
-    'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+    'Input: 12 × 75s episodes; Hook = intern payroll leak + CEO recognizes custody voicemail voice; Cliffhanger = Ep 6 delete mid-playback → Ep 7 elevator stare-down; Format = 9:16 + burnt-in captions. Output (Markdown): ## Task lists Episodes, Hook, Cliffhanger, Vertical / Format, Genre for vertical serial prompts.',
   tool_short_drama_prompt_generator_example_title: 'Example',
   tool_short_drama_prompt_generator_faq_a1:
     'Local assembly runs in this browser tab — nothing is uploaded by default. Optional Expand/Polish sends only the text you submit for that click to Cloudflare Workers AI, not to OpenAI, Google, Anthropic, or DeepSeek from our servers.',
@@ -8613,7 +8613,7 @@ const en: SiteLangDict = {
   tool_sketch_prompt_generator_download: 'Download',
   tool_sketch_prompt_generator_empty: 'Fill at least one field before building.',
   tool_sketch_prompt_generator_example:
-    'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+    'Input: Medium = graphite on warm gray toned paper; Stroke = cross-hatching + clean face contour; Composition = three-quarter portrait, negative space right; Ref = Kim Jung Gi line economy (not a copy). Output (Markdown): ## Role → art-direction assistant; ## Task → labeled Medium / Stroke / Composition / Artist lines.',
   tool_sketch_prompt_generator_example_title: 'Example',
   tool_sketch_prompt_generator_faq_a1:
     'Local assembly runs in this browser tab — nothing is uploaded by default. Optional Expand/Polish sends only the text you submit for that click to Cloudflare Workers AI, not to OpenAI, Google, Anthropic, or DeepSeek from our servers.',
@@ -10016,7 +10016,7 @@ const en: SiteLangDict = {
   tool_writing_prompt_generator_download: 'Download',
   tool_writing_prompt_generator_empty: 'Fill at least one field in this mode before building.',
   tool_writing_prompt_generator_example:
-    'Load sample selects Dialogue mode, fills a late-night diner scene, builds Markdown with Role/Task/Constraints/Output sections, and enables Copy. Try Character, Script, or Random chips for other defaults.',
+    'Input (Dialogue, Load sample): Genre = Contemporary drama; Characters = Maya (barista) + Jonah (musician); Conflict = Maya recognizes Jonah\'s song about her ex over the last slice of pie. Output (Markdown): ## Role → creative writing coach; ## Task → labeled lines for genre, characters, setting, conflict, tone. Script mode uses a lighthouse weather-fax mystery — not the food-truck film sample.',
   tool_writing_prompt_generator_example_title: 'Example',
   tool_writing_prompt_generator_faq_a1:
     'Local assembly runs in this browser tab — nothing is uploaded by default. Optional Expand/Polish sends only the text you submit for that click to Cloudflare Workers AI, not to OpenAI, Google, Anthropic, or DeepSeek from our servers.',

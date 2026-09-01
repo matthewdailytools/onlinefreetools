@@ -22,7 +22,7 @@ const ar: SiteLangDict = {
 	tool_ios_prompt_builder_empty:
 		'املأ حقلًا واحدًا على الأقل قبل الإنشاء.',
 	tool_ios_prompt_builder_example:
-		'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+		'المدخلات: Feature = HealthKit للخطوات؛ Stack = Swift وSwiftUI؛ HIG = Dynamic Type وVoiceOver. المخرجات (Markdown): ## Task → Feature / Swift / SwiftUI / HIG.',
 	tool_ios_prompt_builder_example_title:
 		'مثال',
 	tool_ios_prompt_builder_faq_a1:

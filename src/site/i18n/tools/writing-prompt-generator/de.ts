@@ -39,7 +39,7 @@ const de: SiteLangDict = {
 	tool_writing_prompt_generator_download: 'Herunterladen',
 	tool_writing_prompt_generator_empty: 'Füllen Sie in diesem Modus mindestens ein Feld aus, bevor Sie erstellen.',
 	tool_writing_prompt_generator_example:
-		'Beispiel laden wählt den Modus Dialog, füllt eine Nacht-Diner-Szene, erzeugt Markdown mit Role/Task/Constraints/Output-Abschnitten und aktiviert Kopieren. Probieren Sie die Chips Figur, Drehbuch oder Zufall für andere Voreinstellungen.',
+		'Eingabe (Dialog, Beispiel): Genre = zeitgenössisches Drama; Characters = Maya (Barista) & Jonah (Musiker); Conflict = Maya erkennt das Lied über den Ex. Ausgabe (Markdown): ## Role → Schreibcoach; ## Task → genre/characters/setting/conflict/tone. Drehbuch = Leuchtturm-Fax-Rätsel — nicht der Food-Truck aus Film.',
 	tool_writing_prompt_generator_example_title: 'Beispiel',
 	tool_writing_prompt_generator_faq_a1:
 		'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',

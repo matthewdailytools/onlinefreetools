@@ -22,7 +22,7 @@ const ru: SiteLangDict = {
 	tool_midjourney_prompt_builder_empty:
 		'Заполните хотя бы одно поле перед сборкой.',
 	tool_midjourney_prompt_builder_example:
-		'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+		'Ввод: Subject = самурай на мосту; Style = cinematic ink wash; Flags = --v 6.1 --style raw --chaos 8. Вывод (Markdown): ## Task с MJ-строкой и --ar 16:9; JSON для pipeline.',
 	tool_midjourney_prompt_builder_example_title:
 		'Пример',
 	tool_midjourney_prompt_builder_faq_a1:

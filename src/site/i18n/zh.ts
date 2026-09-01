@@ -404,7 +404,8 @@ const zh: SiteLangDict = {
     '步骤与示例：Android Prompt 构建器 — 本地 + 可选 AI：面向 ChatGPT、Gemini、Claude、DeepSeek，默认在本浏览器本地组装 Prompt，可选 Cloudflare Workers AI 扩写/润色（须 Turnstile、有频率限制）。进页自动展示样例。默认 Markdown；JSON 便于流水线。不用 AI 时文本不出本机。',
   tool_android_prompt_builder_download: '下载',
   tool_android_prompt_builder_empty: '请至少填写一个字段后再构建。',
-  tool_android_prompt_builder_example: '加载示例填入默认预设、生成 Markdown 并启用复制。可选 AI 在 Turnstile 后仅发送该次点击的文本。',
+  tool_android_prompt_builder_example:
+    '输入：Feature = 离线阅读清单 + Share 保存 + FTS + 滑动归档可撤销；Stack = Kotlin 2.0、Compose、Room FTS4、Hilt；Gradle = minSdk 26。输出（Markdown）：## Task → Feature / Kotlin / Compose / Gradle 行。',
   tool_android_prompt_builder_example_title: '示例',
   tool_android_prompt_builder_faq_a1:
     '默认只在本浏览器标签页本地组装。可选「AI 扩写/润色」仅把该次点击提交的文字发往 Cloudflare Workers AI，不会从我们的服务器调用 OpenAI、Google、Anthropic 或 DeepSeek。',
@@ -2639,7 +2640,8 @@ const zh: SiteLangDict = {
     '步骤与示例：电影 Prompt 构建器 — 本地 + 可选 AI：面向 ChatGPT、Gemini、Claude、DeepSeek，默认在本浏览器本地组装 Prompt，可选 Cloudflare Workers AI 扩写/润色（须 Turnstile、有频率限制）。进页自动展示样例。默认 Markdown；JSON 便于流水线。不用 AI 时文本不出本机。',
   tool_film_prompt_builder_download: '下载',
   tool_film_prompt_builder_empty: '请至少填写一个字段后再构建。',
-  tool_film_prompt_builder_example: '加载示例填入默认预设、生成 Markdown 并启用复制。可选 AI 在 Turnstile 后仅发送该次点击的文本。',
+  tool_film_prompt_builder_example:
+    '输入：Logline = 餐车 rival 因许可错误共用厨房 30 天；Act II = 音乐节 rush + 博主配方乌龙；Scene list = 6 场；Arc = 骄傲 → 勉强合作 → 共同经营。输出（Markdown）：## Task 含 Logline、Act1–3、Scene / List、Character / Arc — 与加载样例首屏一致。',
   tool_film_prompt_builder_example_title: '示例',
   tool_film_prompt_builder_faq_a1:
     '默认只在本浏览器标签页本地组装。可选「AI 扩写/润色」仅把该次点击提交的文字发往 Cloudflare Workers AI，不会从我们的服务器调用 OpenAI、Google、Anthropic 或 DeepSeek。',
@@ -4304,7 +4306,8 @@ const zh: SiteLangDict = {
     '步骤与示例：iOS Prompt 构建器 — 本地 + 可选 AI：面向 ChatGPT、Gemini、Claude、DeepSeek，默认在本浏览器本地组装 Prompt，可选 Cloudflare Workers AI 扩写/润色（须 Turnstile、有频率限制）。进页自动展示样例。默认 Markdown；JSON 便于流水线。不用 AI 时文本不出本机。',
   tool_ios_prompt_builder_download: '下载',
   tool_ios_prompt_builder_empty: '请至少填写一个字段后再构建。',
-  tool_ios_prompt_builder_example: '加载示例填入默认预设、生成 Markdown 并启用复制。可选 AI 在 Turnstile 后仅发送该次点击的文本。',
+  tool_ios_prompt_builder_example:
+    '输入：Feature = HealthKit 步数趋势 + 静息心率 + 权限说明；Stack = Swift 5.10、SwiftUI、SwiftData；UI = NavigationStack + Charts；HIG = Dynamic Type XXL、VoiceOver。输出（Markdown）：## Task → Feature / Swift / SwiftUI / HIG 行。',
   tool_ios_prompt_builder_example_title: '示例',
   tool_ios_prompt_builder_faq_a1:
     '默认只在本浏览器标签页本地组装。可选「AI 扩写/润色」仅把该次点击提交的文字发往 Cloudflare Workers AI，不会从我们的服务器调用 OpenAI、Google、Anthropic 或 DeepSeek。',
@@ -5420,7 +5423,8 @@ const zh: SiteLangDict = {
     '步骤与示例：Midjourney Prompt 构建器 — 本地 + 可选 AI：面向 ChatGPT、Gemini、Claude、DeepSeek，默认在本浏览器本地组装 Prompt，可选 Cloudflare Workers AI 扩写/润色（须 Turnstile、有频率限制）。进页自动展示样例。默认 Markdown；JSON 便于流水线。不用 AI 时文本不出本机。',
   tool_midjourney_prompt_builder_download: '下载',
   tool_midjourney_prompt_builder_empty: '请至少填写一个字段后再构建。',
-  tool_midjourney_prompt_builder_example: '加载示例填入默认预设、生成 Markdown 并启用复制。可选 AI 在 Turnstile 后仅发送该次点击的文本。',
+  tool_midjourney_prompt_builder_example:
+    '输入：Subject = 苔桥拔刀武士；Style = 电影水墨、青灰调色；Lighting = 日出轮廓光与雾；Flags = --v 6.1 --style raw --stylize 120 --chaos 8。输出（Markdown）：## Task 含建议 MJ 一行与 --ar 16:9；JSON 芯片导出结构化字段。',
   tool_midjourney_prompt_builder_example_title: '示例',
   tool_midjourney_prompt_builder_faq_a1:
     '默认只在本浏览器标签页本地组装。可选「AI 扩写/润色」仅把该次点击提交的文字发往 Cloudflare Workers AI，不会从我们的服务器调用 OpenAI、Google、Anthropic 或 DeepSeek。',
@@ -6594,7 +6598,8 @@ const zh: SiteLangDict = {
   tool_product_design_prompt_builder_design_tokens_ph: '设计 token…',
   tool_product_design_prompt_builder_download: '下载',
   tool_product_design_prompt_builder_empty: '请至少填写一个字段后再构建。',
-  tool_product_design_prompt_builder_example: '加载示例填入默认预设、生成 Markdown 并启用复制。可选 AI 在 Turnstile 后仅发送该次点击的文本。',
+  tool_product_design_prompt_builder_example:
+    '输入：Persona = 混合 Android/iPhone 的 co-parent；Problem = 日历太吵、要 custody 色 week view + handoff；Wireframe = 3 屏；Tokens = 8pt 网格、#2563eb、WCAG AA。输出（Markdown）：## Task → Persona / Problem / Wireframe / Design tokens。',
   tool_product_design_prompt_builder_example_title: '示例',
   tool_product_design_prompt_builder_faq_a1:
     '默认只在本浏览器标签页本地组装。可选「AI 扩写/润色」仅把该次点击提交的文字发往 Cloudflare Workers AI，不会从我们的服务器调用 OpenAI、Google、Anthropic 或 DeepSeek。',
@@ -6720,7 +6725,8 @@ const zh: SiteLangDict = {
     '步骤与示例：Prompt 模板构建器 — 本地 + 可选 AI：面向 ChatGPT、Gemini、Claude、DeepSeek，默认在本浏览器本地组装 Prompt，可选 Cloudflare Workers AI 扩写/润色（须 Turnstile、有频率限制）。进页自动展示样例。默认 Markdown；JSON 便于流水线。不用 AI 时文本不出本机。',
   tool_prompt_template_builder_download: '下载',
   tool_prompt_template_builder_empty: '请先填写自由文本或至少一个字段。',
-  tool_prompt_template_builder_example: '加载示例会填入代码审查 Agent 预设并生成 Markdown。也可点电影、短剧、Android、iOS 芯片切换默认场景。',
+  tool_prompt_template_builder_example:
+    '输入（加载样例 · 代码芯片）：Role = 资深代码审查（安全与可读性）；Task = 审查我接下来粘贴的 PR diff；Constraints = 最多 12 条、标出密钥风险。输出（Markdown）：## Role / ## Task / ## Constraints / ## Output format 四段，可直接复制到 ChatGPT 或 Claude。与首屏画布一致。',
   tool_prompt_template_builder_example_title: '示例',
   tool_prompt_template_builder_faq_a1:
     '默认只在本浏览器标签页本地组装。可选「AI 扩写/润色」仅把该次点击提交的文字发往 Cloudflare Workers AI，不会从我们的服务器调用 OpenAI、Google、Anthropic 或 DeepSeek。',
@@ -7398,7 +7404,8 @@ const zh: SiteLangDict = {
   tool_short_drama_prompt_generator_empty: '请至少填写一个字段后再构建。',
   tool_short_drama_prompt_generator_episodes_label: '集数',
   tool_short_drama_prompt_generator_episodes_ph: '集数/时长…',
-  tool_short_drama_prompt_generator_example: '加载示例填入默认预设、生成 Markdown 并启用复制。可选 AI 在 Turnstile 后仅发送该次点击的文本。',
+  tool_short_drama_prompt_generator_example:
+    '输入：12 集 × 75s；Hook = 实习生曝光 payroll + CEO 听出 custody 语音；Cliffhanger = 第 6 集删语音 → 第 7 集电梯对峙；Format = 9:16 烧录字幕。输出（Markdown）：## Task 列出 Episodes / Hook / Cliffhanger / Vertical / Genre。',
   tool_short_drama_prompt_generator_example_title: '示例',
   tool_short_drama_prompt_generator_faq_a1:
     '默认只在本浏览器标签页本地组装。可选「AI 扩写/润色」仅把该次点击提交的文字发往 Cloudflare Workers AI，不会从我们的服务器调用 OpenAI、Google、Anthropic 或 DeepSeek。',
@@ -7573,7 +7580,8 @@ const zh: SiteLangDict = {
     '步骤与示例：素描 Prompt 生成器 — 本地 + 可选 AI：面向 ChatGPT、Gemini、Claude、DeepSeek，默认在本浏览器本地组装 Prompt，可选 Cloudflare Workers AI 扩写/润色（须 Turnstile、有频率限制）。进页自动展示样例。默认 Markdown；JSON 便于流水线。不用 AI 时文本不出本机。',
   tool_sketch_prompt_generator_download: '下载',
   tool_sketch_prompt_generator_empty: '请至少填写一个字段后再构建。',
-  tool_sketch_prompt_generator_example: '加载示例填入默认预设、生成 Markdown 并启用复制。可选 AI 在 Turnstile 后仅发送该次点击的文本。',
+  tool_sketch_prompt_generator_example:
+    '输入：Medium = 暖灰色调纸石墨；Stroke = 交叉排线 + 清晰面部轮廓；Composition = 四分之三肖像、右侧留白；Ref = Kim Jung Gi 线稿节奏（非临摹）。输出（Markdown）：## Task 列出 Medium / Stroke / Composition / Artist 行。',
   tool_sketch_prompt_generator_example_title: '示例',
   tool_sketch_prompt_generator_faq_a1:
     '默认只在本浏览器标签页本地组装。可选「AI 扩写/润色」仅把该次点击提交的文字发往 Cloudflare Workers AI，不会从我们的服务器调用 OpenAI、Google、Anthropic 或 DeepSeek。',
@@ -8800,7 +8808,8 @@ const zh: SiteLangDict = {
   tool_writing_prompt_generator_dlg_tone_ph: '潜台词、斗嘴、极简…',
   tool_writing_prompt_generator_download: '下载',
   tool_writing_prompt_generator_empty: '请在本模式下至少填写一个字段后再生成。',
-  tool_writing_prompt_generator_example: '加载示例会选中对话模式，填入深夜 diner 场景，生成带 Role/Task/Constraints/Output 四段的 Markdown 并启用复制。可点人物、剧本或随机芯片切换其他预设。',
+  tool_writing_prompt_generator_example:
+    '输入（对白模式 · 加载样例）：Genre = 当代戏剧；Characters = Maya（咖啡师）与 Jonah（音乐人）；Conflict = Maya 听出 Jonah 歌里写的是前任，两人都不说破。输出（Markdown）：## Role → 写作教练；## Task → genre/characters/setting/conflict/tone 各行。剧本模式为灯塔传真预言谜题，与电影页的餐车样例不重复。',
   tool_writing_prompt_generator_example_title: '示例',
   tool_writing_prompt_generator_faq_a1:
     '默认只在本浏览器标签页本地组装。可选「AI 扩写/润色」仅把该次点击提交的文字发往 Cloudflare Workers AI，不会从我们的服务器调用 OpenAI、Google、Anthropic 或 DeepSeek。',

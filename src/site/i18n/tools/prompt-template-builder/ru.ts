@@ -20,7 +20,7 @@ const ru: SiteLangDict = {
 	tool_prompt_template_builder_download: 'Скачать',
 	tool_prompt_template_builder_empty: 'Добавьте свободный текст или хотя бы одно поле перед сборкой.',
 	tool_prompt_template_builder_example:
-		'Загрузка примера заполняет preset Agent code review, создаёт Markdown с четырьмя разделами ## и включает Копировать и Скачать. Попробуйте чипы Фильм, Короткая драма, Android или iOS для других значений по умолчанию.',
+		'Ввод (Загрузить пример, чип Code): Role = senior code reviewer (безопасность и читаемость); Task = ревью diff PR; Constraints = до 12 пунктов. Вывод (Markdown): ## Role / ## Task / ## Constraints / ## Output format — четыре секции для ChatGPT или Claude.',
 	tool_prompt_template_builder_example_title: 'Пример',
 	tool_prompt_template_builder_faq_a1:
 		'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',

@@ -398,7 +398,8 @@ const ja: SiteLangDict = {
     '手順と例：Android Promptビルダー — ローカル + オプションAI（ChatGPT/Gemini/Claude/DeepSeek）：既定はブラウザ内ローカル組み立て、任意で Cloudflare Workers AI Expand/Polish（Turnstile 必須・レート制限）。初回表示でサンプル。Markdown 既定。AI 未使用時は端末外に出ません。',
   tool_android_prompt_builder_download: 'ダウンロード',
   tool_android_prompt_builder_empty: '作成前に少なくとも1項目を入力してください。',
-  tool_android_prompt_builder_example: 'サンプル読込でプリセット投入・Markdown 生成・コピー有効。任意 AI は Turnstile 後そのクリック分のみ送信。',
+  tool_android_prompt_builder_example:
+    '入力：Feature = オフライン読書リスト + FTS；Stack = Kotlin 2.0, Compose, Room FTS4；Gradle = minSdk 26。出力（Markdown）：## Task → Feature / Kotlin / Compose / Gradle。',
   tool_android_prompt_builder_example_title: '例',
   tool_android_prompt_builder_faq_a1: '既定はこのタブ内ローカル。任意 Expand/Polish はそのクリック分のみ Cloudflare Workers AI へ。',
   tool_android_prompt_builder_faq_a2: 'ローカルはこのタブのみ。任意 AI は Turnstile 後 Cloudflare Workers AI — チャット API は呼びません。',
@@ -2661,7 +2662,8 @@ const ja: SiteLangDict = {
     '手順と例：映画Promptビルダー — ローカル + オプションAI（ChatGPT/Gemini/Claude/DeepSeek）：既定はブラウザ内ローカル組み立て、任意で Cloudflare Workers AI Expand/Polish（Turnstile 必須・レート制限）。初回表示でサンプル。Markdown 既定。AI 未使用時は端末外に出ません。',
   tool_film_prompt_builder_download: 'ダウンロード',
   tool_film_prompt_builder_empty: '作成前に少なくとも1項目を入力してください。',
-  tool_film_prompt_builder_example: 'サンプル読込でプリセット投入・Markdown 生成・コピー有効。任意 AI は Turnstile 後そのクリック分のみ送信。',
+  tool_film_prompt_builder_example:
+    '入力：Logline = ライバル餐車が30日キッチン共有；Act II = フェス + レシピ騒動；6シーン；Arc = プライド → 協力 → 共同経営。出力（Markdown）：## Task → Logline, Act1–3, Scene / List, Character / Arc。',
   tool_film_prompt_builder_example_title: '例',
   tool_film_prompt_builder_faq_a1: '既定はこのタブ内ローカル。任意 Expand/Polish はそのクリック分のみ Cloudflare Workers AI へ。',
   tool_film_prompt_builder_faq_a2: 'ローカルはこのタブのみ。任意 AI は Turnstile 後 Cloudflare Workers AI — チャット API は呼びません。',
@@ -4344,7 +4346,8 @@ const ja: SiteLangDict = {
     '手順と例：iOS Promptビルダー — ローカル + オプションAI（ChatGPT/Gemini/Claude/DeepSeek）：既定はブラウザ内ローカル組み立て、任意で Cloudflare Workers AI Expand/Polish（Turnstile 必須・レート制限）。初回表示でサンプル。Markdown 既定。AI 未使用時は端末外に出ません。',
   tool_ios_prompt_builder_download: 'ダウンロード',
   tool_ios_prompt_builder_empty: '作成前に少なくとも1項目を入力してください。',
-  tool_ios_prompt_builder_example: 'サンプル読込でプリセット投入・Markdown 生成・コピー有効。任意 AI は Turnstile 後そのクリック分のみ送信。',
+  tool_ios_prompt_builder_example:
+    '入力：Feature = HealthKit歩数 + 心拍；Stack = Swift 5.10, SwiftUI；UI = NavigationStack + Charts；HIG = Dynamic Type, VoiceOver。出力（Markdown）：## Task → Feature / Swift / SwiftUI / HIG。',
   tool_ios_prompt_builder_example_title: '例',
   tool_ios_prompt_builder_faq_a1: '既定はこのタブ内ローカル。任意 Expand/Polish はそのクリック分のみ Cloudflare Workers AI へ。',
   tool_ios_prompt_builder_faq_a2: 'ローカルはこのタブのみ。任意 AI は Turnstile 後 Cloudflare Workers AI — チャット API は呼びません。',
@@ -5469,7 +5472,8 @@ const ja: SiteLangDict = {
     '手順と例：Midjourney Promptビルダー — ローカル + オプションAI（ChatGPT/Gemini/Claude/DeepSeek）：既定はブラウザ内ローカル組み立て、任意で Cloudflare Workers AI Expand/Polish（Turnstile 必須・レート制限）。初回表示でサンプル。Markdown 既定。AI 未使用時は端末外に出ません。',
   tool_midjourney_prompt_builder_download: 'ダウンロード',
   tool_midjourney_prompt_builder_empty: '作成前に少なくとも1項目を入力してください。',
-  tool_midjourney_prompt_builder_example: 'サンプル読込でプリセット投入・Markdown 生成・コピー有効。任意 AI は Turnstile 後そのクリック分のみ送信。',
+  tool_midjourney_prompt_builder_example:
+    '入力：Subject = 苔むした橋の武士；Style = シネマティック水墨；Flags = --v 6.1 --style raw --chaos 8。出力（Markdown）：## Task にMJ行と --ar 16:9；JSONチップで構造化。',
   tool_midjourney_prompt_builder_example_title: '例',
   tool_midjourney_prompt_builder_faq_a1: '既定はこのタブ内ローカル。任意 Expand/Polish はそのクリック分のみ Cloudflare Workers AI へ。',
   tool_midjourney_prompt_builder_faq_a2: 'ローカルはこのタブのみ。任意 AI は Turnstile 後 Cloudflare Workers AI — チャット API は呼びません。',
@@ -6649,7 +6653,8 @@ const ja: SiteLangDict = {
   tool_product_design_prompt_builder_design_tokens_ph: 'Sample design tokens…',
   tool_product_design_prompt_builder_download: 'ダウンロード',
   tool_product_design_prompt_builder_empty: '作成前に少なくとも1項目を入力してください。',
-  tool_product_design_prompt_builder_example: 'サンプル読込でプリセット投入・Markdown 生成・コピー有効。任意 AI は Turnstile 後そのクリック分のみ送信。',
+  tool_product_design_prompt_builder_example:
+    '入力：Persona = 共同親；Problem = カレンダーが煩雑 + handoff；Wireframe = 3画面；Tokens = 8pt, #2563eb, WCAG AA。出力（Markdown）：## Task → Persona / Problem / Wireframe / Design tokens。',
   tool_product_design_prompt_builder_example_title: '例',
   tool_product_design_prompt_builder_faq_a1: '既定はこのタブ内ローカル。任意 Expand/Polish はそのクリック分のみ Cloudflare Workers AI へ。',
   tool_product_design_prompt_builder_faq_a2: 'ローカルはこのタブのみ。任意 AI は Turnstile 後 Cloudflare Workers AI — チャット API は呼びません。',
@@ -6775,7 +6780,7 @@ const ja: SiteLangDict = {
   tool_prompt_template_builder_download: 'ダウンロード',
   tool_prompt_template_builder_empty: '自由入力またはいずれかのフィールドを入力してから作成してください。',
   tool_prompt_template_builder_example:
-    'サンプル読込でコードレビュー Agent プリセットを入れ、## 見出し四つの Markdown を生成し、コピーとダウンロードを有効にします。映画、ショートドラマ、Android、iOS チップで他のデフォルトも試せます。',
+    '入力（サンプル読込・Codeチップ）：Role = シニアコードレビュアー（セキュリティと可読性）；Task = 貼り付けたPR diffをレビュー；Constraints = 最大12項目。出力（Markdown）：## Role / ## Task / ## Constraints / ## Output format の4セクション。ChatGPTやClaudeにそのままコピー可能。',
   tool_prompt_template_builder_example_title: '例',
   tool_prompt_template_builder_faq_a1: '既定はこのタブ内ローカル。任意 Expand/Polish はそのクリック分のみ Cloudflare Workers AI へ。',
   tool_prompt_template_builder_faq_a2: 'ローカルはこのタブのみ。任意 AI は Turnstile 後 Cloudflare Workers AI — チャット API は呼びません。',
@@ -7458,7 +7463,8 @@ const ja: SiteLangDict = {
   tool_short_drama_prompt_generator_empty: '作成前に少なくとも1項目を入力してください。',
   tool_short_drama_prompt_generator_episodes_label: 'Episodes',
   tool_short_drama_prompt_generator_episodes_ph: 'Sample episodes…',
-  tool_short_drama_prompt_generator_example: 'サンプル読込でプリセット投入・Markdown 生成・コピー有効。任意 AI は Turnstile 後そのクリック分のみ送信。',
+  tool_short_drama_prompt_generator_example:
+    '入力：12 × 75s；Hook = 給与漏洩 + CEOが音声認識；Cliffhanger = 6話で削除 → 7話エレベーター；Format = 9:16。出力（Markdown）：## Task → Episodes / Hook / Cliffhanger / Vertical / Genre。',
   tool_short_drama_prompt_generator_example_title: '例',
   tool_short_drama_prompt_generator_faq_a1: '既定はこのタブ内ローカル。任意 Expand/Polish はそのクリック分のみ Cloudflare Workers AI へ。',
   tool_short_drama_prompt_generator_faq_a2: 'ローカルはこのタブのみ。任意 AI は Turnstile 後 Cloudflare Workers AI — チャット API は呼びません。',
@@ -7633,7 +7639,8 @@ const ja: SiteLangDict = {
     '手順と例：スケッチPromptジェネレーター — ローカル + オプションAI（ChatGPT/Gemini/Claude/DeepSeek）：既定はブラウザ内ローカル組み立て、任意で Cloudflare Workers AI Expand/Polish（Turnstile 必須・レート制限）。初回表示でサンプル。Markdown 既定。AI 未使用時は端末外に出ません。',
   tool_sketch_prompt_generator_download: 'ダウンロード',
   tool_sketch_prompt_generator_empty: '作成前に少なくとも1項目を入力してください。',
-  tool_sketch_prompt_generator_example: 'サンプル読込でプリセット投入・Markdown 生成・コピー有効。任意 AI は Turnstile 後そのクリック分のみ送信。',
+  tool_sketch_prompt_generator_example:
+    '入力：Medium = 暖色グレー紙の石墨；Stroke = カケ打ち；Composition = 3/4ポートレート；Ref = Kim Jung Gi。出力（Markdown）：## Task → Medium / Stroke / Composition / Artist。',
   tool_sketch_prompt_generator_example_title: '例',
   tool_sketch_prompt_generator_faq_a1: '既定はこのタブ内ローカル。任意 Expand/Polish はそのクリック分のみ Cloudflare Workers AI へ。',
   tool_sketch_prompt_generator_faq_a2: 'ローカルはこのタブのみ。任意 AI は Turnstile 後 Cloudflare Workers AI — チャット API は呼びません。',
@@ -8871,7 +8878,7 @@ const ja: SiteLangDict = {
   tool_writing_prompt_generator_download: 'ダウンロード',
   tool_writing_prompt_generator_empty: 'このモードで少なくとも1フィールドを入力してから作成してください。',
   tool_writing_prompt_generator_example:
-    'サンプル読込で対話モードを選び、深夜ダイナーのシーンを入れ、Role/Task/Constraints/Output 四段の Markdown を生成し、コピーを有効化。キャラ、脚本、ランダムチップで他の既定値も試せます。',
+    '入力（対話・サンプル）：Genre = 現代ドラマ；Characters = Maya（バリスタ）とJonah（音楽家）；Conflict = 元カレの歌だと気づく。出力（Markdown）：## Role → ライティングコーチ；## Task → genre/characters/setting/conflict/tone。脚本モードは灯台FAX謎 — 映画のフードトラック例とは別。',
   tool_writing_prompt_generator_example_title: '例',
   tool_writing_prompt_generator_faq_a1: '既定はこのタブ内ローカル。任意 Expand/Polish はそのクリック分のみ Cloudflare Workers AI へ。',
   tool_writing_prompt_generator_faq_a2: 'ローカルはこのタブのみ。任意 AI は Turnstile 後 Cloudflare Workers AI — チャット API は呼びません。',

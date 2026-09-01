@@ -22,7 +22,7 @@ const zh: SiteLangDict = {
 	tool_product_design_prompt_builder_empty:
 		'请至少填写一个字段后再构建。',
 	tool_product_design_prompt_builder_example:
-		'加载示例填入默认预设、生成 Markdown 并启用复制。可选 AI 在 Turnstile 后仅发送该次点击的文本。',
+		'输入：Persona = 混合 Android/iPhone 的 co-parent；Problem = 日历太吵、要 custody 色 week view + handoff；Wireframe = 3 屏；Tokens = 8pt 网格、#2563eb、WCAG AA。输出（Markdown）：## Task → Persona / Problem / Wireframe / Design tokens。',
 	tool_product_design_prompt_builder_example_title:
 		'示例',
 	tool_product_design_prompt_builder_faq_a1:

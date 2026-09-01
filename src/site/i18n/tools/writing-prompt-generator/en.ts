@@ -37,7 +37,7 @@ const en: SiteLangDict = {
 	tool_writing_prompt_generator_download: 'Download',
 	tool_writing_prompt_generator_empty: 'Fill at least one field in this mode before building.',
 	tool_writing_prompt_generator_example:
-		'Load sample selects Dialogue mode, fills a late-night diner scene, builds Markdown with Role/Task/Constraints/Output sections, and enables Copy. Try Character, Script, or Random chips for other defaults.',
+		'Input (Dialogue, Load sample): Genre = Contemporary drama; Characters = Maya (barista) + Jonah (musician); Conflict = Maya recognizes Jonah\'s song about her ex over the last slice of pie. Output (Markdown): ## Role → creative writing coach; ## Task → labeled lines for genre, characters, setting, conflict, tone. Script mode uses a lighthouse weather-fax mystery — not the food-truck film sample.',
 	tool_writing_prompt_generator_example_title: 'Example',
 	tool_writing_prompt_generator_faq_a1:
 		'Local assembly runs in this browser tab — nothing is uploaded by default. Optional Expand/Polish sends only the text you submit for that click to Cloudflare Workers AI, not to OpenAI, Google, Anthropic, or DeepSeek from our servers.',

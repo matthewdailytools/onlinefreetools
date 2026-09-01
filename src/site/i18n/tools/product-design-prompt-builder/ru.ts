@@ -22,7 +22,7 @@ const ru: SiteLangDict = {
 	tool_product_design_prompt_builder_empty:
 		'Заполните хотя бы одно поле перед сборкой.',
 	tool_product_design_prompt_builder_example:
-		'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+		'Ввод: Persona = co-parents; Problem = шумный календарь + handoff; Wireframe = 3 экрана; Tokens = 8pt, #2563eb, WCAG AA. Вывод (Markdown): ## Task → Persona / Problem / Wireframe / Design tokens.',
 	tool_product_design_prompt_builder_example_title:
 		'Пример',
 	tool_product_design_prompt_builder_faq_a1:

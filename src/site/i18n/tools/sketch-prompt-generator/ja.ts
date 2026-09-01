@@ -22,7 +22,7 @@ const ja: SiteLangDict = {
 	tool_sketch_prompt_generator_empty:
 		'作成前に少なくとも1項目を入力してください。',
 	tool_sketch_prompt_generator_example:
-		'サンプル読込でプリセット投入・Markdown 生成・コピー有効。任意 AI は Turnstile 後そのクリック分のみ送信。',
+		'入力：Medium = 暖色グレー紙の石墨；Stroke = カケ打ち；Composition = 3/4ポートレート；Ref = Kim Jung Gi。出力（Markdown）：## Task → Medium / Stroke / Composition / Artist。',
 	tool_sketch_prompt_generator_example_title:
 		'例',
 	tool_sketch_prompt_generator_faq_a1:

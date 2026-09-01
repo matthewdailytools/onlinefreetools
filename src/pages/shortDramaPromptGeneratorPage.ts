@@ -22,6 +22,7 @@ import {
 	renderPromptAiClientScript,
 	PROMPT_AI_TURNSTILE_SCRIPT,
 } from './site/promptAiPanel';
+import { SHORT_DRAMA_PROMPT_PRESET } from './site/promptClusterPresets';
 
 /** 本工具 i18n 键前缀，与 catalog faqPrefix 一致。 */
 const PREFIX = 'tool_short_drama_prompt_generator';
@@ -217,7 +218,7 @@ export const renderShortDramaPromptGeneratorPage = (opts: {
 
       var lastOut = '';
       var lastExt = 'md';
-      var PRESET = {"episodes":"10","hook":"CEO discovers the intern is their estranged sibling","cliffhanger":"Episode ends on a leaked voice memo; next episode opens mid-confrontation","vertical_format":"9:16 mobile, 60–90s per episode, on-screen captions","genre":"Modern workplace melodrama"};
+      var PRESET = ${JSON.stringify(SHORT_DRAMA_PROMPT_PRESET)};
 
       function setError(text) {
         errEl.textContent = text || '';
@@ -253,14 +254,14 @@ export const renderShortDramaPromptGeneratorPage = (opts: {
 
       function buildBlocks(f) {
         var taskParts = '';
-        if (f.episodes) taskParts += 'Episodes: ' + f.episodes + '\n';
-        if (f.hook) taskParts += 'Hook: ' + f.hook + '\n';
-        if (f.cliffhanger) taskParts += 'Cliffhanger: ' + f.cliffhanger + '\n';
-        if (f.vertical_format) taskParts += 'Vertical / Format: ' + f.vertical_format + '\n';
-        if (f.genre) taskParts += 'Genre: ' + f.genre + '\n';
+        if (f.episodes) taskParts += 'Episodes: ' + f.episodes + '\\n';
+        if (f.hook) taskParts += 'Hook: ' + f.hook + '\\n';
+        if (f.cliffhanger) taskParts += 'Cliffhanger: ' + f.cliffhanger + '\\n';
+        if (f.vertical_format) taskParts += 'Vertical / Format: ' + f.vertical_format + '\\n';
+        if (f.genre) taskParts += 'Genre: ' + f.genre + '\\n';
         return {
           role: 'You are a vertical short-drama serial editor for episodic hooks.',
-          task: 'Assemble a structured prompt from these inputs:\n' + (taskParts || '(unspecified)'),
+          task: 'Assemble a structured prompt from these inputs:\\n' + (taskParts || '(unspecified)'),
           constraints: 'Stay factual. Do not execute tools or APIs. Keep paste-ready for chat UIs.',
           output: 'Markdown sections: Role, Task, Constraints, Output — plus a one-paragraph summary block.'
         };

@@ -22,7 +22,7 @@ const pt: SiteLangDict = {
 	tool_film_prompt_builder_empty:
 		'Preencha pelo menos um campo antes de criar.',
 	tool_film_prompt_builder_example:
-		'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+		'Entrada: Logline = food trucks rivais dividem cozinha 30 dias; Act II = festival + receita errada; 6 cenas; Arc = orgulho → parceria → co-donos. Saída (Markdown): ## Task com Logline, Act1–3, Scene / List, Character / Arc.',
 	tool_film_prompt_builder_example_title:
 		'Exemplo',
 	tool_film_prompt_builder_faq_a1:

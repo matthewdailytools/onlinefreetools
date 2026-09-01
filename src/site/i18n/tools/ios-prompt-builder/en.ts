@@ -17,7 +17,7 @@ const en: SiteLangDict = {
 	tool_ios_prompt_builder_download: 'Download',
 	tool_ios_prompt_builder_empty: 'Fill at least one field before building.',
 	tool_ios_prompt_builder_example:
-		'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+		'Input: Feature = HealthKit step trends + resting HR band with permission rationale; Stack = Swift 5.10, SwiftUI, SwiftData cache; UI = NavigationStack + Charts + permission sheet; HIG = Dynamic Type XXL, VoiceOver on chart points, no force-unwrap. Output (Markdown): ## Task → Feature / Swift / SwiftUI / HIG constraint lines.',
 	tool_ios_prompt_builder_example_title: 'Example',
 	tool_ios_prompt_builder_faq_a1:
 		'Local assembly runs in this browser tab — nothing is uploaded by default. Optional Expand/Polish sends only the text you submit for that click to Cloudflare Workers AI, not to OpenAI, Google, Anthropic, or DeepSeek from our servers.',

@@ -22,7 +22,7 @@ const zh: SiteLangDict = {
 	tool_android_prompt_builder_empty:
 		'请至少填写一个字段后再构建。',
 	tool_android_prompt_builder_example:
-		'加载示例填入默认预设、生成 Markdown 并启用复制。可选 AI 在 Turnstile 后仅发送该次点击的文本。',
+		'输入：Feature = 离线阅读清单 + Share 保存 + FTS + 滑动归档可撤销；Stack = Kotlin 2.0、Compose、Room FTS4、Hilt；Gradle = minSdk 26。输出（Markdown）：## Task → Feature / Kotlin / Compose / Gradle 行。',
 	tool_android_prompt_builder_example_title:
 		'示例',
 	tool_android_prompt_builder_faq_a1:

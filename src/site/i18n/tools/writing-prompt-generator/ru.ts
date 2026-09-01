@@ -39,7 +39,7 @@ const ru: SiteLangDict = {
 	tool_writing_prompt_generator_download: 'Скачать',
 	tool_writing_prompt_generator_empty: 'Заполните хотя бы одно поле в этом режиме перед сборкой.',
 	tool_writing_prompt_generator_example:
-		'Загрузить пример выбирает режим Диалог, заполняет ночную сцену в diner, создаёт Markdown с разделами Role/Task/Constraints/Output и включает Копировать. Попробуйте чипы Персонаж, Сценарий или Случайный для других пресетов.',
+		'Ввод (Диалог): Genre = современная дrama; Characters = Maya и Jonah; Conflict = Maya узнаёт песню об ex. Вывод (Markdown): ## Role → writing coach; ## Task → genre/characters/setting/conflict/tone. Режим сценария — загадка с факсом маяка, не food-truck из фильма.',
 	tool_writing_prompt_generator_example_title: 'Пример',
 	tool_writing_prompt_generator_faq_a1:
 		'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',

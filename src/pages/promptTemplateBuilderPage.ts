@@ -16,6 +16,7 @@ import {
 	renderToolReferencesSection,
 	buildToolJsonLd,
 } from './site/toolContent';
+import { PROMPT_TEMPLATE_PRESETS } from './site/promptClusterPresets';
 
 /** 本工具 i18n 键前缀，与 catalog faqPrefix 一致。 */
 const PREFIX = 'tool_prompt_template_builder';
@@ -438,43 +439,7 @@ export const renderPromptTemplateBuilderPage = (opts: {
       }).catch(function () { /* keep panel */ });
 
       /** 场景预设：代码审查 / 电影 / 短剧 / Android / iOS。 */
-      var PRESETS = {
-        code: {
-          free: '',
-          role: 'You are a senior code reviewer focused on security and readability.',
-          task: 'Review the pull request diff. List blocking issues first, then suggestions. Reference file and line when possible.',
-          constraints: 'Stay factual. Do not rewrite the whole patch. Max 12 bullet points.',
-          output: 'Markdown with sections: Blocking, Suggestions, Questions.'
-        },
-        movie: {
-          free: '',
-          role: 'You are a feature-film screenwriting consultant.',
-          task: 'From the logline in my next message, draft a three-act beat sheet with scene headings, turning points, and character goals.',
-          constraints: 'Show do not tell. One protagonist arc. Keep under 900 words unless I ask for more.',
-          output: 'Markdown: Logline recap, Act I/II/III beats, optional dialogue seed for the midpoint.'
-        },
-        shortDrama: {
-          free: '',
-          role: 'You are a vertical short-drama (1–3 minute episodes) story editor.',
-          task: 'Turn my premise into a serial outline: episode hooks, cliffhangers, and payoffs for binge-style mobile viewing.',
-          constraints: 'Fast dialogue. 8–12 episodes by default. Each episode ends on a visual or emotional hook.',
-          output: 'Markdown table: Episode #, Hook, Core conflict, Cliffhanger.'
-        },
-        android: {
-          free: '',
-          role: 'You are a senior Android engineer (Kotlin, Jetpack Compose, Material 3).',
-          task: 'Implement the feature I describe in the next message with production-minded structure and tests in mind.',
-          constraints: 'MVVM or MVI. No deprecated APIs. Call out Gradle/module boundaries when relevant.',
-          output: 'Kotlin snippets + brief package layout + one unit-test sketch.'
-        },
-        ios: {
-          free: '',
-          role: 'You are a senior iOS engineer (Swift, SwiftUI, iOS 17+).',
-          task: 'Implement the feature I describe in the next message following Apple HIG and modern concurrency.',
-          constraints: 'Prefer async/await. Mention target + test targets. No force-unwrap in sample code.',
-          output: 'Swift snippets + file layout + PreviewProvider or test stub.'
-        }
-      };
+      var PRESETS = ${JSON.stringify(PROMPT_TEMPLATE_PRESETS)};
 
       /** 最近一次输出文本。 */
       var lastOut = '';

@@ -20,7 +20,7 @@ const ja: SiteLangDict = {
 	tool_prompt_template_builder_download: 'ダウンロード',
 	tool_prompt_template_builder_empty: '自由入力またはいずれかのフィールドを入力してから作成してください。',
 	tool_prompt_template_builder_example:
-		'サンプル読込でコードレビュー Agent プリセットを入れ、## 見出し四つの Markdown を生成し、コピーとダウンロードを有効にします。映画、ショートドラマ、Android、iOS チップで他のデフォルトも試せます。',
+		'入力（サンプル読込・Codeチップ）：Role = シニアコードレビュアー（セキュリティと可読性）；Task = 貼り付けたPR diffをレビュー；Constraints = 最大12項目。出力（Markdown）：## Role / ## Task / ## Constraints / ## Output format の4セクション。ChatGPTやClaudeにそのままコピー可能。',
 	tool_prompt_template_builder_example_title: '例',
 	tool_prompt_template_builder_faq_a1:
 		'既定はこのタブ内ローカル。任意 Expand/Polish はそのクリック分のみ Cloudflare Workers AI へ。',

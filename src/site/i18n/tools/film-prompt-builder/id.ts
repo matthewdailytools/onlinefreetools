@@ -22,7 +22,7 @@ const id: SiteLangDict = {
 	tool_film_prompt_builder_empty:
 		'Isi minimal satu bidang sebelum membuat.',
 	tool_film_prompt_builder_example:
-		'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+		'Input: Logline = rival food truck berbagi dapur 30 hari; Act II = festival + resep salah; 6 adegan; Arc = pride → teamwork → co-owner. Output (Markdown): ## Task → Logline, Act1–3, Scene / List, Character / Arc.',
 	tool_film_prompt_builder_example_title:
 		'Contoh',
 	tool_film_prompt_builder_faq_a1:

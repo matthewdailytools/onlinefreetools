@@ -22,6 +22,7 @@ import {
 	renderPromptAiClientScript,
 	PROMPT_AI_TURNSTILE_SCRIPT,
 } from './site/promptAiPanel';
+import { WRITING_PROMPT_PRESETS, WRITING_PROMPT_RANDOM } from './site/promptClusterPresets';
 
 /** 本工具 i18n 键前缀，与 catalog faqPrefix 一致。 */
 const PREFIX = 'tool_writing_prompt_generator';
@@ -279,35 +280,9 @@ export const renderWritingPromptGeneratorPage = (opts: {
       var lastOut = '';
       var lastExt = 'md';
 
-      var PRESETS = {
-        dialogue: {
-          genre: 'Contemporary drama',
-          characters: 'Maya (barista, guarded) and Jonah (musician, optimistic)',
-          setting: 'Rainy late-night diner, neon sign flickering',
-          conflict: 'Maya recognizes Jonah\'s song about her ex; neither admits it',
-          tone: 'Subtext-heavy, naturalistic dialogue, no exposition dumps'
-        },
-        character: {
-          name: 'Elena Voss',
-          traits: 'Meticulous archivist, dry humor, afraid of irrelevance',
-          goal: 'Prove a forged letter is real before the museum gala',
-          flaw: 'Trusts documents over people',
-          voice: 'Short sentences, precise vocabulary, occasional self-deprecation'
-        },
-        script: {
-          premise: 'Two rival food-truck owners must share a kitchen after a city permit mix-up',
-          structure: 'Three-act outline: setup rivalry, forced partnership, public cook-off finale',
-          notes: '8–10 scene beats; each scene ends on a reversible choice'
-        }
-      };
+      var PRESETS = ${JSON.stringify(WRITING_PROMPT_PRESETS)};
 
-      var RANDOM = {
-        genres: ['Literary fiction', 'Cozy mystery', 'Near-future sci-fi', 'Rom-com', 'Southern gothic', 'YA adventure'],
-        settings: ['Abandoned subway platform', 'Community garden at dawn', 'Storm-lashed lighthouse', 'VR arcade after hours', 'Small-town library basement'],
-        objects: ['A locked diary', 'A wrong-number voicemail', 'A half-finished map', 'A borrowed wedding ring', 'A dog that will not leave'],
-        emotions: ['Bittersweet hope', 'Slow-burn dread', 'Giddy embarrassment', 'Quiet defiance', 'Nostalgic guilt'],
-        conflicts: ['A secret debt comes due', 'Two truths cannot both be public', 'A promise made to the wrong person', 'Success would betray a friend']
-      };
+      var RANDOM = ${JSON.stringify(WRITING_PROMPT_RANDOM)};
 
       /**
        * 显示或隐藏错误。

@@ -39,7 +39,7 @@ const zh: SiteLangDict = {
 	tool_writing_prompt_generator_download: '下载',
 	tool_writing_prompt_generator_empty: '请在本模式下至少填写一个字段后再生成。',
 	tool_writing_prompt_generator_example:
-		'加载示例会选中对话模式，填入深夜 diner 场景，生成带 Role/Task/Constraints/Output 四段的 Markdown 并启用复制。可点人物、剧本或随机芯片切换其他预设。',
+		'输入（对白模式 · 加载样例）：Genre = 当代戏剧；Characters = Maya（咖啡师）与 Jonah（音乐人）；Conflict = Maya 听出 Jonah 歌里写的是前任，两人都不说破。输出（Markdown）：## Role → 写作教练；## Task → genre/characters/setting/conflict/tone 各行。剧本模式为灯塔传真预言谜题，与电影页的餐车样例不重复。',
 	tool_writing_prompt_generator_example_title: '示例',
 	tool_writing_prompt_generator_faq_a1:
 		'默认只在本浏览器标签页本地组装。可选「AI 扩写/润色」仅把该次点击提交的文字发往 Cloudflare Workers AI，不会从我们的服务器调用 OpenAI、Google、Anthropic 或 DeepSeek。',

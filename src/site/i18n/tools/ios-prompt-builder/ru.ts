@@ -22,7 +22,7 @@ const ru: SiteLangDict = {
 	tool_ios_prompt_builder_empty:
 		'Заполните хотя бы одно поле перед сборкой.',
 	tool_ios_prompt_builder_example:
-		'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+		'Ввод: Feature = HealthKit шаги + пульс; Stack = Swift 5.10, SwiftUI; UI = NavigationStack + Charts; HIG = Dynamic Type, VoiceOver. Вывод (Markdown): ## Task → Feature / Swift / SwiftUI / HIG.',
 	tool_ios_prompt_builder_example_title:
 		'Пример',
 	tool_ios_prompt_builder_faq_a1:

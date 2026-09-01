@@ -22,7 +22,7 @@ const ar: SiteLangDict = {
 	tool_film_prompt_builder_empty:
 		'املأ حقلًا واحدًا على الأقل قبل الإنشاء.',
 	tool_film_prompt_builder_example:
-		'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+		'المدخلات: Logline = شاحنتا طعام تتشاركان مطبخًا 30 يومًا؛ Act II = مهرجان + خلاف وصفة؛ 6 مشاهد. المخرجات (Markdown): ## Task مع Logline وAct1–3 وScene / List وCharacter / Arc.',
 	tool_film_prompt_builder_example_title:
 		'مثال',
 	tool_film_prompt_builder_faq_a1:

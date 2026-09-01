@@ -39,7 +39,7 @@ const ar: SiteLangDict = {
 	tool_writing_prompt_generator_download: 'تنزيل',
 	tool_writing_prompt_generator_empty: 'املأ حقلًا واحدًا على الأقل في هذا الوضع قبل الإنشاء.',
 	tool_writing_prompt_generator_example:
-		'تحميل المثال يختار وضع الحوار، يملأ مشهد مقهى ليلي، ينشئ Markdown بأقسام Role/Task/Constraints/Output ويفعّل النسخ. جرّب شرائح الشخصية أو السيناريو أو العشوائي لقيم افتراضية أخرى.',
+		'المدخلات (حوار): Genre = دراما معاصرة؛ Characters = Maya وJonah؛ Conflict = Maya تتعرف على أغنية عن حبيبها السابق. المخرجات (Markdown): ## Role → مدرب كتابة؛ ## Task → genre/characters/setting/conflict/tone. وضع السيناريو يستخدم لغز فاكس المنارة — مختلف عن عينة السينما.',
 	tool_writing_prompt_generator_example_title: 'مثال',
 	tool_writing_prompt_generator_faq_a1:
 		'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',

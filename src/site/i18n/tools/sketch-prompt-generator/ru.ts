@@ -22,7 +22,7 @@ const ru: SiteLangDict = {
 	tool_sketch_prompt_generator_empty:
 		'Заполните хотя бы одно поле перед сборкой.',
 	tool_sketch_prompt_generator_example:
-		'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+		'Ввод: Medium = graphite on toned paper; Stroke = cross-hatching; Composition = три четверти; Ref = Kim Jung Gi. Вывод (Markdown): ## Task → Medium / Stroke / Composition / Artist.',
 	tool_sketch_prompt_generator_example_title:
 		'Пример',
 	tool_sketch_prompt_generator_faq_a1:

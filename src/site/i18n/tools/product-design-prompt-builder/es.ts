@@ -22,7 +22,7 @@ const es: SiteLangDict = {
 	tool_product_design_prompt_builder_empty:
 		'Rellena al menos un campo antes de crear.',
 	tool_product_design_prompt_builder_example:
-		'Cargar ejemplo rellena el preset, crea Markdown y habilita Copiar. IA opcional envía solo ese clic tras Turnstile.',
+		'Entrada: Persona = co-parents mixtos; Problem = calendario ruidoso + handoff; Wireframe = 3 pantallas; Tokens = 8pt, #2563eb, WCAG AA. Salida (Markdown): ## Task → Persona / Problem / Wireframe / Design tokens.',
 	tool_product_design_prompt_builder_example_title:
 		'Ejemplo',
 	tool_product_design_prompt_builder_faq_a1:

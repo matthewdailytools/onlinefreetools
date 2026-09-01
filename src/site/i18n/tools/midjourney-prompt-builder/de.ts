@@ -22,7 +22,7 @@ const de: SiteLangDict = {
 	tool_midjourney_prompt_builder_empty:
 		'Mindestens ein Feld ausfüllen, bevor Sie erstellen.',
 	tool_midjourney_prompt_builder_example:
-		'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+		'Eingabe: Subject = Samurai auf Moosbrücke; Style = cinematic ink wash; Flags = --v 6.1 --style raw --chaos 8. Ausgabe (Markdown): ## Task mit MJ-Zeile und --ar 16:9; JSON-Chip.',
 	tool_midjourney_prompt_builder_example_title:
 		'Beispiel',
 	tool_midjourney_prompt_builder_faq_a1:

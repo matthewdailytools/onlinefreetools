@@ -22,7 +22,7 @@ const ru: SiteLangDict = {
 	tool_short_drama_prompt_generator_empty:
 		'Заполните хотя бы одно поле перед сборкой.',
 	tool_short_drama_prompt_generator_example:
-		'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+		'Ввод: 12 × 75s; Hook = утечка payroll + CEO узнаёт голос; Cliffhanger = ep.6 удаляет voicemail; Format = 9:16. Вывод (Markdown): ## Task → Episodes / Hook / Cliffhanger / Vertical / Genre.',
 	tool_short_drama_prompt_generator_example_title:
 		'Пример',
 	tool_short_drama_prompt_generator_faq_a1:

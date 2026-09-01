@@ -39,7 +39,7 @@ const ja: SiteLangDict = {
 	tool_writing_prompt_generator_download: 'ダウンロード',
 	tool_writing_prompt_generator_empty: 'このモードで少なくとも1フィールドを入力してから作成してください。',
 	tool_writing_prompt_generator_example:
-		'サンプル読込で対話モードを選び、深夜ダイナーのシーンを入れ、Role/Task/Constraints/Output 四段の Markdown を生成し、コピーを有効化。キャラ、脚本、ランダムチップで他の既定値も試せます。',
+		'入力（対話・サンプル）：Genre = 現代ドラマ；Characters = Maya（バリスタ）とJonah（音楽家）；Conflict = 元カレの歌だと気づく。出力（Markdown）：## Role → ライティングコーチ；## Task → genre/characters/setting/conflict/tone。脚本モードは灯台FAX謎 — 映画のフードトラック例とは別。',
 	tool_writing_prompt_generator_example_title: '例',
 	tool_writing_prompt_generator_faq_a1:
 		'既定はこのタブ内ローカル。任意 Expand/Polish はそのクリック分のみ Cloudflare Workers AI へ。',

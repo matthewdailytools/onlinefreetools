@@ -22,6 +22,7 @@ import {
 	renderPromptAiClientScript,
 	PROMPT_AI_TURNSTILE_SCRIPT,
 } from './site/promptAiPanel';
+import { ANDROID_PROMPT_PRESET } from './site/promptClusterPresets';
 
 /** 本工具 i18n 键前缀，与 catalog faqPrefix 一致。 */
 const PREFIX = 'tool_android_prompt_builder';
@@ -216,7 +217,7 @@ export const renderAndroidPromptBuilderPage = (opts: {
 
       var lastOut = '';
       var lastExt = 'md';
-      var PRESET = {"feature_spec":"Offline-first bookmark list with swipe-to-archive and share sheet export","kotlin_stack":"Kotlin 2.0, Jetpack Compose, Material 3, Room, Hilt","compose_ui":"LazyColumn, SwipeToDismiss, ModalBottomSheet for share targets","gradle_constraints":"minSdk 26, targetSdk 35, single module app + :core:data"};
+      var PRESET = ${JSON.stringify(ANDROID_PROMPT_PRESET)};
 
       function setError(text) {
         errEl.textContent = text || '';
@@ -251,13 +252,13 @@ export const renderAndroidPromptBuilderPage = (opts: {
 
       function buildBlocks(f) {
         var taskParts = '';
-        if (f.feature_spec) taskParts += 'Feature / Spec: ' + f.feature_spec + '\n';
-        if (f.kotlin_stack) taskParts += 'Kotlin / Stack: ' + f.kotlin_stack + '\n';
-        if (f.compose_ui) taskParts += 'Compose / Ui: ' + f.compose_ui + '\n';
-        if (f.gradle_constraints) taskParts += 'Gradle / Constraints: ' + f.gradle_constraints + '\n';
+        if (f.feature_spec) taskParts += 'Feature / Spec: ' + f.feature_spec + '\\n';
+        if (f.kotlin_stack) taskParts += 'Kotlin / Stack: ' + f.kotlin_stack + '\\n';
+        if (f.compose_ui) taskParts += 'Compose / Ui: ' + f.compose_ui + '\\n';
+        if (f.gradle_constraints) taskParts += 'Gradle / Constraints: ' + f.gradle_constraints + '\\n';
         return {
           role: 'You are a senior Android engineer (Kotlin, Jetpack Compose).',
-          task: 'Assemble a structured prompt from these inputs:\n' + (taskParts || '(unspecified)'),
+          task: 'Assemble a structured prompt from these inputs:\\n' + (taskParts || '(unspecified)'),
           constraints: 'Stay factual. Do not execute tools or APIs. Keep paste-ready for chat UIs.',
           output: 'Markdown sections: Role, Task, Constraints, Output — plus a one-paragraph summary block.'
         };

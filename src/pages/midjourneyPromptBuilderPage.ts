@@ -22,6 +22,7 @@ import {
 	renderPromptAiClientScript,
 	PROMPT_AI_TURNSTILE_SCRIPT,
 } from './site/promptAiPanel';
+import { MIDJOURNEY_PROMPT_PRESET } from './site/promptClusterPresets';
 
 /** 本工具 i18n 键前缀，与 catalog faqPrefix 一致。 */
 const PREFIX = 'tool_midjourney_prompt_builder';
@@ -230,7 +231,7 @@ export const renderMidjourneyPromptBuilderPage = (opts: {
 
       var lastOut = '';
       var lastExt = 'md';
-      var PRESET = {"subject":"A lone samurai on a misty bridge at dawn","style":"Cinematic ink wash, muted teal palette","lighting":"Soft rim light, volumetric fog","aspect":"16:9","mj_flags":"--v 6.1 --style raw --stylize 120"};
+      var PRESET = ${JSON.stringify(MIDJOURNEY_PROMPT_PRESET)};
 
       function setError(text) {
         errEl.textContent = text || '';

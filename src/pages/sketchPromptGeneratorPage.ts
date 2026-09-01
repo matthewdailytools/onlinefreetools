@@ -22,6 +22,7 @@ import {
 	renderPromptAiClientScript,
 	PROMPT_AI_TURNSTILE_SCRIPT,
 } from './site/promptAiPanel';
+import { SKETCH_PROMPT_PRESET } from './site/promptClusterPresets';
 
 /** 本工具 i18n 键前缀，与 catalog faqPrefix 一致。 */
 const PREFIX = 'tool_sketch_prompt_generator';
@@ -216,7 +217,7 @@ export const renderSketchPromptGeneratorPage = (opts: {
 
       var lastOut = '';
       var lastExt = 'md';
-      var PRESET = {"medium":"Graphite on toned paper","stroke":"Loose cross-hatching, visible construction lines","composition":"Three-quarter portrait, negative space on the left","artist_ref":"Inspired by Kim Jung Gi line economy, not a copy"};
+      var PRESET = ${JSON.stringify(SKETCH_PROMPT_PRESET)};
 
       function setError(text) {
         errEl.textContent = text || '';
@@ -251,13 +252,13 @@ export const renderSketchPromptGeneratorPage = (opts: {
 
       function buildBlocks(f) {
         var taskParts = '';
-        if (f.medium) taskParts += 'Medium: ' + f.medium + '\n';
-        if (f.stroke) taskParts += 'Stroke: ' + f.stroke + '\n';
-        if (f.composition) taskParts += 'Composition: ' + f.composition + '\n';
-        if (f.artist_ref) taskParts += 'Artist / Ref: ' + f.artist_ref + '\n';
+        if (f.medium) taskParts += 'Medium: ' + f.medium + '\\n';
+        if (f.stroke) taskParts += 'Stroke: ' + f.stroke + '\\n';
+        if (f.composition) taskParts += 'Composition: ' + f.composition + '\\n';
+        if (f.artist_ref) taskParts += 'Artist / Ref: ' + f.artist_ref + '\\n';
         return {
           role: 'You are an art-direction assistant for hand-drawn sketch prompts.',
-          task: 'Assemble a structured prompt from these inputs:\n' + (taskParts || '(unspecified)'),
+          task: 'Assemble a structured prompt from these inputs:\\n' + (taskParts || '(unspecified)'),
           constraints: 'Stay factual. Do not execute tools or APIs. Keep paste-ready for chat UIs.',
           output: 'Markdown sections: Role, Task, Constraints, Output — plus a one-paragraph summary block.'
         };

@@ -22,7 +22,7 @@ const ja: SiteLangDict = {
 	tool_short_drama_prompt_generator_empty:
 		'作成前に少なくとも1項目を入力してください。',
 	tool_short_drama_prompt_generator_example:
-		'サンプル読込でプリセット投入・Markdown 生成・コピー有効。任意 AI は Turnstile 後そのクリック分のみ送信。',
+		'入力：12 × 75s；Hook = 給与漏洩 + CEOが音声認識；Cliffhanger = 6話で削除 → 7話エレベーター；Format = 9:16。出力（Markdown）：## Task → Episodes / Hook / Cliffhanger / Vertical / Genre。',
 	tool_short_drama_prompt_generator_example_title:
 		'例',
 	tool_short_drama_prompt_generator_faq_a1:

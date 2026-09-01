@@ -39,7 +39,7 @@ const id: SiteLangDict = {
 	tool_writing_prompt_generator_download: 'Unduh',
 	tool_writing_prompt_generator_empty: 'Isi minimal satu field di mode ini sebelum membuat.',
 	tool_writing_prompt_generator_example:
-		'Muat contoh memilih mode Dialog, mengisi adegan diner malam, menghasilkan Markdown dengan bagian Role/Task/Constraints/Output, dan mengaktifkan Salin. Coba chip Karakter, Skrip, atau Acak untuk preset lain.',
+		'Input (Dialog, Muat contoh): Genre = drama kontemporer; Characters = Maya (barista) & Jonah (musisi); Conflict = Maya mengenali lagu tentang mantan. Output (Markdown): ## Role → pelatih menulis; ## Task → baris genre/characters/setting/conflict/tone. Mode Skrip = misteri faks cuaca mercusuar — bukan food-truck film.',
 	tool_writing_prompt_generator_example_title: 'Contoh',
 	tool_writing_prompt_generator_faq_a1:
 		'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',

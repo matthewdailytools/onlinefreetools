@@ -22,7 +22,7 @@ const fr: SiteLangDict = {
 	tool_product_design_prompt_builder_empty:
 		'Remplissez au moins un champ avant de créer.',
 	tool_product_design_prompt_builder_example:
-		'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+		'Entrée : Persona = co-parents ; Problem = calendrier bruyant + handoff ; Wireframe = 3 écrans ; Tokens = 8pt, #2563eb, WCAG AA. Sortie (Markdown) : ## Task → Persona / Problem / Wireframe / Design tokens.',
 	tool_product_design_prompt_builder_example_title:
 		'Exemple',
 	tool_product_design_prompt_builder_faq_a1:

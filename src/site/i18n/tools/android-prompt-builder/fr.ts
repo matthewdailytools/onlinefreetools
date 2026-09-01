@@ -22,7 +22,7 @@ const fr: SiteLangDict = {
 	tool_android_prompt_builder_empty:
 		'Remplissez au moins un champ avant de créer.',
 	tool_android_prompt_builder_example:
-		'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+		'Entrée : Feature = liste offline + FTS ; Stack = Kotlin 2.0, Compose, Room FTS4 ; Gradle = minSdk 26. Sortie (Markdown) : ## Task → Feature / Kotlin / Compose / Gradle.',
 	tool_android_prompt_builder_example_title:
 		'Exemple',
 	tool_android_prompt_builder_faq_a1:

@@ -39,7 +39,7 @@ const es: SiteLangDict = {
 	tool_writing_prompt_generator_download: 'Descargar',
 	tool_writing_prompt_generator_empty: 'Rellena al menos un campo en este modo antes de crear.',
 	tool_writing_prompt_generator_example:
-		'Cargar ejemplo selecciona el modo Diálogo, rellena una escena de diner nocturno, genera Markdown con secciones Role/Task/Constraints/Output y habilita Copiar. Prueba los chips Personaje, Guion o Aleatorio para otros valores predeterminados.',
+		'Entrada (Diálogo, Cargar ejemplo): Genre = drama contemporáneo; Characters = Maya (barista) y Jonah (músico); Conflict = Maya reconoce la canción sobre su ex. Salida (Markdown): ## Role → coach de escritura; ## Task → líneas genre/characters/setting/conflict/tone. El modo Guion usa un misterio del faro — no el food-truck del cine.',
 	tool_writing_prompt_generator_example_title: 'Ejemplo',
 	tool_writing_prompt_generator_faq_a1:
 		'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',

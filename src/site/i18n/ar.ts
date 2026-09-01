@@ -410,7 +410,7 @@ const ar: SiteLangDict = {
   tool_android_prompt_builder_download: 'تنزيل',
   tool_android_prompt_builder_empty: 'املأ حقلًا واحدًا على الأقل قبل الإنشاء.',
   tool_android_prompt_builder_example:
-    'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+    'المدخلات: Feature = قائمة قراءة offline؛ Stack = Kotlin وCompose وRoom؛ Gradle = minSdk 26. المخرجات (Markdown): ## Task → Feature / Kotlin / Compose / Gradle.',
   tool_android_prompt_builder_example_title: 'مثال',
   tool_android_prompt_builder_faq_a1:
     'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
@@ -2803,7 +2803,7 @@ const ar: SiteLangDict = {
   tool_film_prompt_builder_download: 'تنزيل',
   tool_film_prompt_builder_empty: 'املأ حقلًا واحدًا على الأقل قبل الإنشاء.',
   tool_film_prompt_builder_example:
-    'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+    'المدخلات: Logline = شاحنتا طعام تتشاركان مطبخًا 30 يومًا؛ Act II = مهرجان + خلاف وصفة؛ 6 مشاهد. المخرجات (Markdown): ## Task مع Logline وAct1–3 وScene / List وCharacter / Arc.',
   tool_film_prompt_builder_example_title: 'مثال',
   tool_film_prompt_builder_faq_a1:
     'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
@@ -4551,7 +4551,7 @@ const ar: SiteLangDict = {
   tool_ios_prompt_builder_download: 'تنزيل',
   tool_ios_prompt_builder_empty: 'املأ حقلًا واحدًا على الأقل قبل الإنشاء.',
   tool_ios_prompt_builder_example:
-    'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+    'المدخلات: Feature = HealthKit للخطوات؛ Stack = Swift وSwiftUI؛ HIG = Dynamic Type وVoiceOver. المخرجات (Markdown): ## Task → Feature / Swift / SwiftUI / HIG.',
   tool_ios_prompt_builder_example_title: 'مثال',
   tool_ios_prompt_builder_faq_a1:
     'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
@@ -5747,7 +5747,7 @@ const ar: SiteLangDict = {
   tool_midjourney_prompt_builder_download: 'تنزيل',
   tool_midjourney_prompt_builder_empty: 'املأ حقلًا واحدًا على الأقل قبل الإنشاء.',
   tool_midjourney_prompt_builder_example:
-    'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+    'المدخلات: Subject = سامurai على جسر؛ Style = حبر سينمائي؛ Flags = --v 6.1 --style raw. المخرجات (Markdown): ## Task مع سطر MJ مقترح و --ar 16:9؛ JSON للحقول المنظمة.',
   tool_midjourney_prompt_builder_example_title: 'مثال',
   tool_midjourney_prompt_builder_faq_a1:
     'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
@@ -6993,7 +6993,7 @@ const ar: SiteLangDict = {
   tool_product_design_prompt_builder_download: 'تنزيل',
   tool_product_design_prompt_builder_empty: 'املأ حقلًا واحدًا على الأقل قبل الإنشاء.',
   tool_product_design_prompt_builder_example:
-    'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+    'المدخلات: Persona = co-parents؛ Problem = تقويم مزدحم؛ Wireframe = 3 شاشات؛ Tokens = 8pt و#2563eb. المخرجات (Markdown): ## Task → Persona / Problem / Wireframe / Design tokens.',
   tool_product_design_prompt_builder_example_title: 'مثال',
   tool_product_design_prompt_builder_faq_a1:
     'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
@@ -7126,7 +7126,7 @@ const ar: SiteLangDict = {
   tool_prompt_template_builder_download: 'تنزيل',
   tool_prompt_template_builder_empty: 'أضف نصًا حرًا أو حقلًا واحدًا على الأقل قبل الإنشاء.',
   tool_prompt_template_builder_example:
-    'تحميل المثال يملأ preset وكيل مراجعة الكود، وينشئ Markdown بأربعة أقسام ## ويفعّل النسخ والتنزيل. جرّب شرائح فيلم أو دراما قصيرة أو Android أو iOS لقيم افتراضية أخرى.',
+    'المدخلات (تحميل العينة، شريحة Code): Role = مراجع كود أول (أمان وقابلية قراءة)；Task = مراجعة diff الـ PR؛Constraints = 12 نقطة كحد أقصى. المخرجات (Markdown): أقسام ## Role و## Task و## Constraints و## Output format — جاهزة للنسخ إلى ChatGPT أو Claude.',
   tool_prompt_template_builder_example_title: 'مثال',
   tool_prompt_template_builder_faq_a1:
     'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
@@ -7844,7 +7844,7 @@ const ar: SiteLangDict = {
   tool_short_drama_prompt_generator_episodes_label: 'Episodes',
   tool_short_drama_prompt_generator_episodes_ph: 'Sample episodes…',
   tool_short_drama_prompt_generator_example:
-    'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+    'المدخلات: 12 × 75s؛ Hook = تسريب رواتب + CEO يتعرف على الصوت؛ Cliffhanger = حذف رسالة؛ Format = 9:16. المخرجات (Markdown): ## Task مع Episodes / Hook / Cliffhanger / Vertical / Genre.',
   tool_short_drama_prompt_generator_example_title: 'مثال',
   tool_short_drama_prompt_generator_faq_a1:
     'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
@@ -8035,7 +8035,7 @@ const ar: SiteLangDict = {
   tool_sketch_prompt_generator_download: 'تنزيل',
   tool_sketch_prompt_generator_empty: 'املأ حقلًا واحدًا على الأقل قبل الإنشاء.',
   tool_sketch_prompt_generator_example:
-    'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+    'المدخلات: Medium = graphite؛ Stroke = cross-hatching؛ Composition = بورتريه؛ Ref = Kim Jung Gi. المخرجات (Markdown): ## Task مع Medium / Stroke / Composition / Artist.',
   tool_sketch_prompt_generator_example_title: 'مثال',
   tool_sketch_prompt_generator_faq_a1:
     'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
@@ -9357,7 +9357,7 @@ const ar: SiteLangDict = {
   tool_writing_prompt_generator_download: 'تنزيل',
   tool_writing_prompt_generator_empty: 'املأ حقلًا واحدًا على الأقل في هذا الوضع قبل الإنشاء.',
   tool_writing_prompt_generator_example:
-    'تحميل المثال يختار وضع الحوار، يملأ مشهد مقهى ليلي، ينشئ Markdown بأقسام Role/Task/Constraints/Output ويفعّل النسخ. جرّب شرائح الشخصية أو السيناريو أو العشوائي لقيم افتراضية أخرى.',
+    'المدخلات (حوار): Genre = دراما معاصرة؛ Characters = Maya وJonah؛ Conflict = Maya تتعرف على أغنية عن حبيبها السابق. المخرجات (Markdown): ## Role → مدرب كتابة؛ ## Task → genre/characters/setting/conflict/tone. وضع السيناريو يستخدم لغز فاكس المنارة — مختلف عن عينة السينما.',
   tool_writing_prompt_generator_example_title: 'مثال',
   tool_writing_prompt_generator_faq_a1:
     'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',

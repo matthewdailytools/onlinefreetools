@@ -17,7 +17,7 @@ const en: SiteLangDict = {
 	tool_midjourney_prompt_builder_download: 'Download',
 	tool_midjourney_prompt_builder_empty: 'Fill at least one field before building.',
 	tool_midjourney_prompt_builder_example:
-		'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+		'Input: Subject = samurai mid-draw on mossy bridge; Style = cinematic ink wash, teal/charcoal; Lighting = sunrise rim + fog; Flags = --v 6.1 --style raw --stylize 120 --chaos 8. Output (Markdown): ## Task includes a suggested MJ line with subject, style, lighting, and --ar 16:9. JSON chip adds structured fields for pipelines.',
 	tool_midjourney_prompt_builder_example_title: 'Example',
 	tool_midjourney_prompt_builder_faq_a1:
 		'Local assembly runs in this browser tab — nothing is uploaded by default. Optional Expand/Polish sends only the text you submit for that click to Cloudflare Workers AI, not to OpenAI, Google, Anthropic, or DeepSeek from our servers.',

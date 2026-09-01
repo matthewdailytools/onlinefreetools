@@ -22,7 +22,7 @@ const es: SiteLangDict = {
 	tool_sketch_prompt_generator_empty:
 		'Rellena al menos un campo antes de crear.',
 	tool_sketch_prompt_generator_example:
-		'Cargar ejemplo rellena el preset, crea Markdown y habilita Copiar. IA opcional envía solo ese clic tras Turnstile.',
+		'Entrada: Medium = grafito en papel gris; Stroke = sombreado cruzado; Composition = retrato tres cuartos; Ref = economía de línea tipo Kim Jung Gi. Salida (Markdown): ## Task con líneas Medium / Stroke / Composition / Artist.',
 	tool_sketch_prompt_generator_example_title:
 		'Ejemplo',
 	tool_sketch_prompt_generator_faq_a1:

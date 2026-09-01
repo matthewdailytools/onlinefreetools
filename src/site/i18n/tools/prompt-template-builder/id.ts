@@ -20,7 +20,7 @@ const id: SiteLangDict = {
 	tool_prompt_template_builder_download: 'Unduh',
 	tool_prompt_template_builder_empty: 'Tambahkan teks bebas atau minimal satu kolom sebelum membuat.',
 	tool_prompt_template_builder_example:
-		'Muat contoh mengisi preset Agent review kode, membuat Markdown dengan empat bagian ##, dan mengaktifkan Salin serta Unduh. Coba chip Film, Drama pendek, Android, atau iOS untuk default lain.',
+		'Input (Muat contoh, chip Code): Role = reviewer senior (keamanan & keterbacaan); Task = tinjau diff PR yang ditempel; Constraints = maks. 12 poin. Output (Markdown): ## Role / ## Task / ## Constraints / ## Output format — empat bagian siap salin ke ChatGPT atau Claude.',
 	tool_prompt_template_builder_example_title: 'Contoh',
 	tool_prompt_template_builder_faq_a1:
 		'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',

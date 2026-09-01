@@ -11,9 +11,11 @@
  * 1) catalog `page.style` 与 Page export 形参一致（opts ↔ 单对象；pair ↔ lang, defaultLang）
  * 2) Page 源码中 `extraBodyHtml` 类模板里，占位正则须写 `\\w`（文件里两层反斜杠），禁止单层 `\w`
  * 3) 若已有预渲染 HTML：禁止出现字面 `/{(w+)}/`；须含 `loadSample`（可用 --require-html 强制存在）
+ * 4) 含 loadSample 的内联 script 须通过 `node --check`（防 extraBodyHtml 里 `\n` 被吃掉）
  */
 import fs from 'node:fs';
 import path from 'node:path';
+import { spawnSync } from 'node:child_process';
 import { ROOT, CATALOG_DIR, kebabToCamel, defaultPageMeta, readJson } from './tool-modules/lib.mjs';
 
 const args = process.argv.slice(2);
@@ -169,6 +171,22 @@ function validateSlug(slug) {
 			`${slug}: prerendered HTML has no loadSample — interactive tools must auto-run a sample (see tool-creation.mdc)`,
 			errs
 		);
+	}
+	/** 内联工具 script 语法（典型：`extraBodyHtml` 模板里写 `+ '\\n'` 误成 `+ '\n'`）。 */
+	if (html.includes('function loadSample') || html.includes('loadSample()')) {
+		const scriptBodies = [...html.matchAll(/<script>([\s\S]*?)<\/script>/g)].map((m) => m[1]);
+		const toolScript = scriptBodies.find((s) => s.includes('function loadSample') || /\bloadSample\s*\(/.test(s));
+		if (toolScript) {
+			const cacheDir = path.join(ROOT, '.cache');
+			fs.mkdirSync(cacheDir, { recursive: true });
+			const tmp = path.join(cacheDir, `lint-tool-script-${slug}.js`);
+			fs.writeFileSync(tmp, toolScript);
+			const check = spawnSync(process.execPath, ['--check', tmp], { encoding: 'utf8' });
+			if (check.status !== 0) {
+				const detail = (check.stderr || check.stdout || 'syntax error').trim().split('\n').slice(-2).join(' ');
+				fail(`${slug}: prerendered inline script syntax error — ${detail}`, errs);
+			}
+		}
 	}
 	return errs;
 }

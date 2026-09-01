@@ -22,7 +22,7 @@ const ja: SiteLangDict = {
 	tool_android_prompt_builder_empty:
 		'作成前に少なくとも1項目を入力してください。',
 	tool_android_prompt_builder_example:
-		'サンプル読込でプリセット投入・Markdown 生成・コピー有効。任意 AI は Turnstile 後そのクリック分のみ送信。',
+		'入力：Feature = オフライン読書リスト + FTS；Stack = Kotlin 2.0, Compose, Room FTS4；Gradle = minSdk 26。出力（Markdown）：## Task → Feature / Kotlin / Compose / Gradle。',
 	tool_android_prompt_builder_example_title:
 		'例',
 	tool_android_prompt_builder_faq_a1:

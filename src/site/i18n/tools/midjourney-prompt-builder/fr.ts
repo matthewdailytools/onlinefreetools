@@ -22,7 +22,7 @@ const fr: SiteLangDict = {
 	tool_midjourney_prompt_builder_empty:
 		'Remplissez au moins un champ avant de créer.',
 	tool_midjourney_prompt_builder_example:
-		'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+		'Entrée : Subject = samouraï sur pont mousseux ; Style = encre ciné ; Flags = --v 6.1 --style raw --chaos 8. Sortie (Markdown) : ## Task avec ligne MJ et --ar 16:9 ; JSON structuré.',
 	tool_midjourney_prompt_builder_example_title:
 		'Exemple',
 	tool_midjourney_prompt_builder_faq_a1:

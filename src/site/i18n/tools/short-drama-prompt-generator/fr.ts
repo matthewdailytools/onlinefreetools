@@ -22,7 +22,7 @@ const fr: SiteLangDict = {
 	tool_short_drama_prompt_generator_empty:
 		'Remplissez au moins un champ avant de créer.',
 	tool_short_drama_prompt_generator_example:
-		'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+		'Entrée : 12 × 75s ; Hook = fuite payroll + CEO reconnaît la voix ; Cliffhanger = ep.6 efface le message ; Format = 9:16. Sortie (Markdown) : ## Task → Episodes / Hook / Cliffhanger / Vertical / Genre.',
 	tool_short_drama_prompt_generator_example_title:
 		'Exemple',
 	tool_short_drama_prompt_generator_faq_a1:

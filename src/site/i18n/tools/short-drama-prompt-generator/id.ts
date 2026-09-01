@@ -22,7 +22,7 @@ const id: SiteLangDict = {
 	tool_short_drama_prompt_generator_empty:
 		'Isi minimal satu bidang sebelum membuat.',
 	tool_short_drama_prompt_generator_example:
-		'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+		'Input: 12 × 75s; Hook = bocor payroll + CEO kenali suara; Cliffhanger = ep.6 hapus voicemail; Format = 9:16. Output (Markdown): ## Task → Episodes / Hook / Cliffhanger / Vertical / Genre.',
 	tool_short_drama_prompt_generator_example_title:
 		'Contoh',
 	tool_short_drama_prompt_generator_faq_a1:

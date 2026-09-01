@@ -17,7 +17,7 @@ const en: SiteLangDict = {
 	tool_android_prompt_builder_download: 'Download',
 	tool_android_prompt_builder_empty: 'Fill at least one field before building.',
 	tool_android_prompt_builder_example:
-		'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+		'Input: Feature = offline reading list + share-sheet save + FTS search + swipe archive with undo; Stack = Kotlin 2.0, Compose, Room FTS4, Hilt, WorkManager; UI = LazyColumn + SwipeToDismissBox; Gradle = minSdk 26, :app + :core:data. Output (Markdown): ## Role → senior Android engineer; ## Task → Feature / Kotlin / Compose / Gradle lines.',
 	tool_android_prompt_builder_example_title: 'Example',
 	tool_android_prompt_builder_faq_a1:
 		'Local assembly runs in this browser tab — nothing is uploaded by default. Optional Expand/Polish sends only the text you submit for that click to Cloudflare Workers AI, not to OpenAI, Google, Anthropic, or DeepSeek from our servers.',

@@ -20,7 +20,7 @@ const es: SiteLangDict = {
 	tool_prompt_template_builder_download: 'Descargar',
 	tool_prompt_template_builder_empty: 'Añade texto libre o al menos un campo antes de crear.',
 	tool_prompt_template_builder_example:
-		'Cargar ejemplo rellena el preset Agent de revisión de código, genera Markdown con cuatro secciones ## y habilita Copiar y Descargar. Prueba los chips Película, Drama corto, Android o iOS para otros valores predeterminados.',
+		'Entrada (Cargar ejemplo, chip Código): Role = revisor senior (seguridad y legibilidad); Task = revisar el diff del PR que pegue; Constraints = máx. 12 viñetas. Salida (Markdown): ## Role / ## Task / ## Constraints / ## Output format — cuatro secciones listas para ChatGPT o Claude. Coincide con la primera carga.',
 	tool_prompt_template_builder_example_title: 'Ejemplo',
 	tool_prompt_template_builder_faq_a1:
 		'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',

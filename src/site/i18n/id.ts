@@ -412,7 +412,7 @@ const id: SiteLangDict = {
   tool_android_prompt_builder_download: 'Unduh',
   tool_android_prompt_builder_empty: 'Isi minimal satu bidang sebelum membuat.',
   tool_android_prompt_builder_example:
-    'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+    'Input: Feature = daftar baca offline + FTS; Stack = Kotlin 2.0, Compose, Room FTS4; Gradle = minSdk 26. Output (Markdown): ## Task → Feature / Kotlin / Compose / Gradle.',
   tool_android_prompt_builder_example_title: 'Contoh',
   tool_android_prompt_builder_faq_a1:
     'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
@@ -2884,7 +2884,7 @@ const id: SiteLangDict = {
   tool_film_prompt_builder_download: 'Unduh',
   tool_film_prompt_builder_empty: 'Isi minimal satu bidang sebelum membuat.',
   tool_film_prompt_builder_example:
-    'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+    'Input: Logline = rival food truck berbagi dapur 30 hari; Act II = festival + resep salah; 6 adegan; Arc = pride → teamwork → co-owner. Output (Markdown): ## Task → Logline, Act1–3, Scene / List, Character / Arc.',
   tool_film_prompt_builder_example_title: 'Contoh',
   tool_film_prompt_builder_faq_a1:
     'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
@@ -4654,7 +4654,7 @@ const id: SiteLangDict = {
   tool_ios_prompt_builder_download: 'Unduh',
   tool_ios_prompt_builder_empty: 'Isi minimal satu bidang sebelum membuat.',
   tool_ios_prompt_builder_example:
-    'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+    'Input: Feature = HealthKit langkah + HR; Stack = Swift 5.10, SwiftUI; UI = NavigationStack + Charts; HIG = Dynamic Type, VoiceOver. Output (Markdown): ## Task → Feature / Swift / SwiftUI / HIG.',
   tool_ios_prompt_builder_example_title: 'Contoh',
   tool_ios_prompt_builder_faq_a1:
     'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
@@ -5889,7 +5889,7 @@ const id: SiteLangDict = {
   tool_midjourney_prompt_builder_download: 'Unduh',
   tool_midjourney_prompt_builder_empty: 'Isi minimal satu bidang sebelum membuat.',
   tool_midjourney_prompt_builder_example:
-    'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+    'Input: Subject = samurai di jembatan lumut; Style = tinta sinematik; Flags = --v 6.1 --style raw --chaos 8. Output (Markdown): ## Task + baris MJ dan --ar 16:9; chip JSON untuk pipeline.',
   tool_midjourney_prompt_builder_example_title: 'Contoh',
   tool_midjourney_prompt_builder_faq_a1:
     'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
@@ -7180,7 +7180,7 @@ const id: SiteLangDict = {
   tool_product_design_prompt_builder_download: 'Unduh',
   tool_product_design_prompt_builder_empty: 'Isi minimal satu bidang sebelum membuat.',
   tool_product_design_prompt_builder_example:
-    'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+    'Input: Persona = co-parent; Problem = kalender ramai + handoff; Wireframe = 3 layar; Tokens = 8pt, #2563eb, WCAG AA. Output (Markdown): ## Task → Persona / Problem / Wireframe / Design tokens.',
   tool_product_design_prompt_builder_example_title: 'Contoh',
   tool_product_design_prompt_builder_faq_a1:
     'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
@@ -7313,7 +7313,7 @@ const id: SiteLangDict = {
   tool_prompt_template_builder_download: 'Unduh',
   tool_prompt_template_builder_empty: 'Tambahkan teks bebas atau minimal satu kolom sebelum membuat.',
   tool_prompt_template_builder_example:
-    'Muat contoh mengisi preset Agent review kode, membuat Markdown dengan empat bagian ##, dan mengaktifkan Salin serta Unduh. Coba chip Film, Drama pendek, Android, atau iOS untuk default lain.',
+    'Input (Muat contoh, chip Code): Role = reviewer senior (keamanan & keterbacaan); Task = tinjau diff PR yang ditempel; Constraints = maks. 12 poin. Output (Markdown): ## Role / ## Task / ## Constraints / ## Output format — empat bagian siap salin ke ChatGPT atau Claude.',
   tool_prompt_template_builder_example_title: 'Contoh',
   tool_prompt_template_builder_faq_a1:
     'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
@@ -8057,7 +8057,7 @@ const id: SiteLangDict = {
   tool_short_drama_prompt_generator_episodes_label: 'Episodes',
   tool_short_drama_prompt_generator_episodes_ph: 'Sample episodes…',
   tool_short_drama_prompt_generator_example:
-    'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+    'Input: 12 × 75s; Hook = bocor payroll + CEO kenali suara; Cliffhanger = ep.6 hapus voicemail; Format = 9:16. Output (Markdown): ## Task → Episodes / Hook / Cliffhanger / Vertical / Genre.',
   tool_short_drama_prompt_generator_example_title: 'Contoh',
   tool_short_drama_prompt_generator_faq_a1:
     'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
@@ -8251,7 +8251,7 @@ const id: SiteLangDict = {
   tool_sketch_prompt_generator_download: 'Unduh',
   tool_sketch_prompt_generator_empty: 'Isi minimal satu bidang sebelum membuat.',
   tool_sketch_prompt_generator_example:
-    'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+    'Input: Medium = grafit di kertas abu; Stroke = cross-hatching; Composition = potret tiga perempat; Ref = Kim Jung Gi. Output (Markdown): ## Task → Medium / Stroke / Composition / Artist.',
   tool_sketch_prompt_generator_example_title: 'Contoh',
   tool_sketch_prompt_generator_faq_a1:
     'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
@@ -9610,7 +9610,7 @@ const id: SiteLangDict = {
   tool_writing_prompt_generator_download: 'Unduh',
   tool_writing_prompt_generator_empty: 'Isi minimal satu field di mode ini sebelum membuat.',
   tool_writing_prompt_generator_example:
-    'Muat contoh memilih mode Dialog, mengisi adegan diner malam, menghasilkan Markdown dengan bagian Role/Task/Constraints/Output, dan mengaktifkan Salin. Coba chip Karakter, Skrip, atau Acak untuk preset lain.',
+    'Input (Dialog, Muat contoh): Genre = drama kontemporer; Characters = Maya (barista) & Jonah (musisi); Conflict = Maya mengenali lagu tentang mantan. Output (Markdown): ## Role → pelatih menulis; ## Task → baris genre/characters/setting/conflict/tone. Mode Skrip = misteri faks cuaca mercusuar — bukan food-truck film.',
   tool_writing_prompt_generator_example_title: 'Contoh',
   tool_writing_prompt_generator_faq_a1:
     'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',

@@ -22,7 +22,7 @@ const ja: SiteLangDict = {
 	tool_ios_prompt_builder_empty:
 		'作成前に少なくとも1項目を入力してください。',
 	tool_ios_prompt_builder_example:
-		'サンプル読込でプリセット投入・Markdown 生成・コピー有効。任意 AI は Turnstile 後そのクリック分のみ送信。',
+		'入力：Feature = HealthKit歩数 + 心拍；Stack = Swift 5.10, SwiftUI；UI = NavigationStack + Charts；HIG = Dynamic Type, VoiceOver。出力（Markdown）：## Task → Feature / Swift / SwiftUI / HIG。',
 	tool_ios_prompt_builder_example_title:
 		'例',
 	tool_ios_prompt_builder_faq_a1:

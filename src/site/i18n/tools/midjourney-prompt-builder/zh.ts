@@ -22,7 +22,7 @@ const zh: SiteLangDict = {
 	tool_midjourney_prompt_builder_empty:
 		'请至少填写一个字段后再构建。',
 	tool_midjourney_prompt_builder_example:
-		'加载示例填入默认预设、生成 Markdown 并启用复制。可选 AI 在 Turnstile 后仅发送该次点击的文本。',
+		'输入：Subject = 苔桥拔刀武士；Style = 电影水墨、青灰调色；Lighting = 日出轮廓光与雾；Flags = --v 6.1 --style raw --stylize 120 --chaos 8。输出（Markdown）：## Task 含建议 MJ 一行与 --ar 16:9；JSON 芯片导出结构化字段。',
 	tool_midjourney_prompt_builder_example_title:
 		'示例',
 	tool_midjourney_prompt_builder_faq_a1:

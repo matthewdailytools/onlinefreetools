@@ -22,7 +22,7 @@ const zh: SiteLangDict = {
 	tool_ios_prompt_builder_empty:
 		'请至少填写一个字段后再构建。',
 	tool_ios_prompt_builder_example:
-		'加载示例填入默认预设、生成 Markdown 并启用复制。可选 AI 在 Turnstile 后仅发送该次点击的文本。',
+		'输入：Feature = HealthKit 步数趋势 + 静息心率 + 权限说明；Stack = Swift 5.10、SwiftUI、SwiftData；UI = NavigationStack + Charts；HIG = Dynamic Type XXL、VoiceOver。输出（Markdown）：## Task → Feature / Swift / SwiftUI / HIG 行。',
 	tool_ios_prompt_builder_example_title:
 		'示例',
 	tool_ios_prompt_builder_faq_a1:

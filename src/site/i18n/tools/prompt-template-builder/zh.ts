@@ -19,7 +19,7 @@ const zh: SiteLangDict = {
 	tool_prompt_template_builder_download: '下载',
 	tool_prompt_template_builder_empty: '请先填写自由文本或至少一个字段。',
 	tool_prompt_template_builder_example:
-		'加载示例会填入代码审查 Agent 预设并生成 Markdown。也可点电影、短剧、Android、iOS 芯片切换默认场景。',
+		'输入（加载样例 · 代码芯片）：Role = 资深代码审查（安全与可读性）；Task = 审查我接下来粘贴的 PR diff；Constraints = 最多 12 条、标出密钥风险。输出（Markdown）：## Role / ## Task / ## Constraints / ## Output format 四段，可直接复制到 ChatGPT 或 Claude。与首屏画布一致。',
 	tool_prompt_template_builder_example_title: '示例',
 	tool_prompt_template_builder_faq_a1:
 		'默认只在本浏览器标签页本地组装。可选「AI 扩写/润色」仅把该次点击提交的文字发往 Cloudflare Workers AI，不会从我们的服务器调用 OpenAI、Google、Anthropic 或 DeepSeek。',

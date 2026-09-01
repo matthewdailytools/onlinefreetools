@@ -17,7 +17,7 @@ const en: SiteLangDict = {
 	tool_sketch_prompt_generator_download: 'Download',
 	tool_sketch_prompt_generator_empty: 'Fill at least one field before building.',
 	tool_sketch_prompt_generator_example:
-		'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+		'Input: Medium = graphite on warm gray toned paper; Stroke = cross-hatching + clean face contour; Composition = three-quarter portrait, negative space right; Ref = Kim Jung Gi line economy (not a copy). Output (Markdown): ## Role → art-direction assistant; ## Task → labeled Medium / Stroke / Composition / Artist lines.',
 	tool_sketch_prompt_generator_example_title: 'Example',
 	tool_sketch_prompt_generator_faq_a1:
 		'Local assembly runs in this browser tab — nothing is uploaded by default. Optional Expand/Polish sends only the text you submit for that click to Cloudflare Workers AI, not to OpenAI, Google, Anthropic, or DeepSeek from our servers.',

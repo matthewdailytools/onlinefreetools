@@ -22,7 +22,7 @@ const es: SiteLangDict = {
 	tool_midjourney_prompt_builder_empty:
 		'Rellena al menos un campo antes de crear.',
 	tool_midjourney_prompt_builder_example:
-		'Cargar ejemplo rellena el preset, crea Markdown y habilita Copiar. IA opcional envía solo ese clic tras Turnstile.',
+		'Entrada: Subject = samurái en puente musgoso; Style = tinta cinematográfica; Lighting = luz de borde al amanecer; Flags = --v 6.1 --style raw --stylize 120 --chaos 8. Salida (Markdown): ## Task con línea MJ sugerida y --ar 16:9; JSON para pipelines.',
 	tool_midjourney_prompt_builder_example_title:
 		'Ejemplo',
 	tool_midjourney_prompt_builder_faq_a1:

@@ -420,7 +420,7 @@ const fr: SiteLangDict = {
   tool_android_prompt_builder_download: 'Télécharger',
   tool_android_prompt_builder_empty: 'Remplissez au moins un champ avant de créer.',
   tool_android_prompt_builder_example:
-    'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+    'Entrée : Feature = liste offline + FTS ; Stack = Kotlin 2.0, Compose, Room FTS4 ; Gradle = minSdk 26. Sortie (Markdown) : ## Task → Feature / Kotlin / Compose / Gradle.',
   tool_android_prompt_builder_example_title: 'Exemple',
   tool_android_prompt_builder_faq_a1:
     'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
@@ -2947,7 +2947,7 @@ const fr: SiteLangDict = {
   tool_film_prompt_builder_download: 'Télécharger',
   tool_film_prompt_builder_empty: 'Remplissez au moins un champ avant de créer.',
   tool_film_prompt_builder_example:
-    'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+    'Entrée : Logline = food trucks rivaux partagent une cuisine 30 jours ; Act II = festival + recette ; 6 scènes ; Arc = fierté → coopération → co-propriétaires. Sortie (Markdown) : ## Task → Logline, Act1–3, Scene / List, Character / Arc.',
   tool_film_prompt_builder_example_title: 'Exemple',
   tool_film_prompt_builder_faq_a1:
     'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
@@ -4734,7 +4734,7 @@ const fr: SiteLangDict = {
   tool_ios_prompt_builder_download: 'Télécharger',
   tool_ios_prompt_builder_empty: 'Remplissez au moins un champ avant de créer.',
   tool_ios_prompt_builder_example:
-    'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+    'Entrée : Feature = HealthKit pas + FC ; Stack = Swift 5.10, SwiftUI ; UI = NavigationStack + Charts ; HIG = Dynamic Type, VoiceOver. Sortie (Markdown) : ## Task → Feature / Swift / SwiftUI / HIG.',
   tool_ios_prompt_builder_example_title: 'Exemple',
   tool_ios_prompt_builder_faq_a1:
     'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
@@ -5985,7 +5985,7 @@ const fr: SiteLangDict = {
   tool_midjourney_prompt_builder_download: 'Télécharger',
   tool_midjourney_prompt_builder_empty: 'Remplissez au moins un champ avant de créer.',
   tool_midjourney_prompt_builder_example:
-    'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+    'Entrée : Subject = samouraï sur pont mousseux ; Style = encre ciné ; Flags = --v 6.1 --style raw --chaos 8. Sortie (Markdown) : ## Task avec ligne MJ et --ar 16:9 ; JSON structuré.',
   tool_midjourney_prompt_builder_example_title: 'Exemple',
   tool_midjourney_prompt_builder_faq_a1:
     'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
@@ -7313,7 +7313,7 @@ const fr: SiteLangDict = {
   tool_product_design_prompt_builder_download: 'Télécharger',
   tool_product_design_prompt_builder_empty: 'Remplissez au moins un champ avant de créer.',
   tool_product_design_prompt_builder_example:
-    'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+    'Entrée : Persona = co-parents ; Problem = calendrier bruyant + handoff ; Wireframe = 3 écrans ; Tokens = 8pt, #2563eb, WCAG AA. Sortie (Markdown) : ## Task → Persona / Problem / Wireframe / Design tokens.',
   tool_product_design_prompt_builder_example_title: 'Exemple',
   tool_product_design_prompt_builder_faq_a1:
     'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
@@ -7446,7 +7446,7 @@ const fr: SiteLangDict = {
   tool_prompt_template_builder_download: 'Télécharger',
   tool_prompt_template_builder_empty: 'Ajoutez du texte libre ou au moins un champ avant de créer.',
   tool_prompt_template_builder_example:
-    'Charger l’exemple remplit le preset Agent de revue de code, génère Markdown avec quatre sections ## et active Copier et Télécharger. Essayez les puces Film, Drame court, Android ou iOS pour d’autres valeurs par défaut.',
+    'Entrée (Charger l’exemple, puce Code) : Role = relecteur senior (sécurité et lisibilité) ; Task = relire le diff PR collé ; Constraints = 12 puces max. Sortie (Markdown) : ## Role / ## Task / ## Constraints / ## Output format — quatre sections prêtes pour ChatGPT ou Claude.',
   tool_prompt_template_builder_example_title: 'Exemple',
   tool_prompt_template_builder_faq_a1:
     'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
@@ -8208,7 +8208,7 @@ const fr: SiteLangDict = {
   tool_short_drama_prompt_generator_episodes_label: 'Episodes',
   tool_short_drama_prompt_generator_episodes_ph: 'Sample episodes…',
   tool_short_drama_prompt_generator_example:
-    'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+    'Entrée : 12 × 75s ; Hook = fuite payroll + CEO reconnaît la voix ; Cliffhanger = ep.6 efface le message ; Format = 9:16. Sortie (Markdown) : ## Task → Episodes / Hook / Cliffhanger / Vertical / Genre.',
   tool_short_drama_prompt_generator_example_title: 'Exemple',
   tool_short_drama_prompt_generator_faq_a1:
     'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
@@ -8404,7 +8404,7 @@ const fr: SiteLangDict = {
   tool_sketch_prompt_generator_download: 'Télécharger',
   tool_sketch_prompt_generator_empty: 'Remplissez au moins un champ avant de créer.',
   tool_sketch_prompt_generator_example:
-    'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+    'Entrée : Medium = graphite sur papier gris ; Stroke = hachures croisées ; Composition = portrait trois quarts ; Ref = Kim Jung Gi. Sortie (Markdown) : ## Task → Medium / Stroke / Composition / Artist.',
   tool_sketch_prompt_generator_example_title: 'Exemple',
   tool_sketch_prompt_generator_faq_a1:
     'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
@@ -9786,7 +9786,7 @@ const fr: SiteLangDict = {
   tool_writing_prompt_generator_download: 'Télécharger',
   tool_writing_prompt_generator_empty: 'Remplissez au moins un champ dans ce mode avant de créer.',
   tool_writing_prompt_generator_example:
-    'Charger l\'exemple sélectionne le mode Dialogue, remplit une scène de diner nocturne, génère un Markdown avec sections Role/Task/Constraints/Output et active Copier. Essayez les puces Personnage, Scénario ou Aléatoire pour d\'autres valeurs par défaut.',
+    'Entrée (Dialogue, Charger l’exemple) : Genre = drame contemporain ; Characters = Maya (barista) et Jonah (musicien) ; Conflict = Maya reconnaît la chanson sur son ex. Sortie (Markdown) : ## Role → coach d’écriture ; ## Task → lignes genre/characters/setting/conflict/tone. Scénario = mystère du fax du phare — pas le food-truck du film.',
   tool_writing_prompt_generator_example_title: 'Exemple',
   tool_writing_prompt_generator_faq_a1:
     'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',

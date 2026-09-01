@@ -417,7 +417,7 @@ const ru: SiteLangDict = {
   tool_android_prompt_builder_download: 'Скачать',
   tool_android_prompt_builder_empty: 'Заполните хотя бы одно поле перед сборкой.',
   tool_android_prompt_builder_example:
-    'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+    'Ввод: Feature = offline reading list + FTS; Stack = Kotlin 2.0, Compose, Room FTS4; Gradle = minSdk 26. Вывод (Markdown): ## Task → Feature / Kotlin / Compose / Gradle.',
   tool_android_prompt_builder_example_title: 'Пример',
   tool_android_prompt_builder_faq_a1:
     'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
@@ -2889,7 +2889,7 @@ const ru: SiteLangDict = {
   tool_film_prompt_builder_download: 'Скачать',
   tool_film_prompt_builder_empty: 'Заполните хотя бы одно поле перед сборкой.',
   tool_film_prompt_builder_example:
-    'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+    'Ввод: Logline = соперничающие food trucks делят кухню 30 дней; Act II = фестиваль + рецепт; 6 сцен; Arc = гордость → teamwork → co-owners. Вывод (Markdown): ## Task → Logline, Act1–3, Scene / List, Character / Arc.',
   tool_film_prompt_builder_example_title: 'Пример',
   tool_film_prompt_builder_faq_a1:
     'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
@@ -4659,7 +4659,7 @@ const ru: SiteLangDict = {
   tool_ios_prompt_builder_download: 'Скачать',
   tool_ios_prompt_builder_empty: 'Заполните хотя бы одно поле перед сборкой.',
   tool_ios_prompt_builder_example:
-    'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+    'Ввод: Feature = HealthKit шаги + пульс; Stack = Swift 5.10, SwiftUI; UI = NavigationStack + Charts; HIG = Dynamic Type, VoiceOver. Вывод (Markdown): ## Task → Feature / Swift / SwiftUI / HIG.',
   tool_ios_prompt_builder_example_title: 'Пример',
   tool_ios_prompt_builder_faq_a1:
     'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
@@ -5905,7 +5905,7 @@ const ru: SiteLangDict = {
   tool_midjourney_prompt_builder_download: 'Скачать',
   tool_midjourney_prompt_builder_empty: 'Заполните хотя бы одно поле перед сборкой.',
   tool_midjourney_prompt_builder_example:
-    'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+    'Ввод: Subject = самурай на мосту; Style = cinematic ink wash; Flags = --v 6.1 --style raw --chaos 8. Вывод (Markdown): ## Task с MJ-строкой и --ar 16:9; JSON для pipeline.',
   tool_midjourney_prompt_builder_example_title: 'Пример',
   tool_midjourney_prompt_builder_faq_a1:
     'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
@@ -7208,7 +7208,7 @@ const ru: SiteLangDict = {
   tool_product_design_prompt_builder_download: 'Скачать',
   tool_product_design_prompt_builder_empty: 'Заполните хотя бы одно поле перед сборкой.',
   tool_product_design_prompt_builder_example:
-    'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+    'Ввод: Persona = co-parents; Problem = шумный календарь + handoff; Wireframe = 3 экрана; Tokens = 8pt, #2563eb, WCAG AA. Вывод (Markdown): ## Task → Persona / Problem / Wireframe / Design tokens.',
   tool_product_design_prompt_builder_example_title: 'Пример',
   tool_product_design_prompt_builder_faq_a1:
     'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
@@ -7341,7 +7341,7 @@ const ru: SiteLangDict = {
   tool_prompt_template_builder_download: 'Скачать',
   tool_prompt_template_builder_empty: 'Добавьте свободный текст или хотя бы одно поле перед сборкой.',
   tool_prompt_template_builder_example:
-    'Загрузка примера заполняет preset Agent code review, создаёт Markdown с четырьмя разделами ## и включает Копировать и Скачать. Попробуйте чипы Фильм, Короткая драма, Android или iOS для других значений по умолчанию.',
+    'Ввод (Загрузить пример, чип Code): Role = senior code reviewer (безопасность и читаемость); Task = ревью diff PR; Constraints = до 12 пунктов. Вывод (Markdown): ## Role / ## Task / ## Constraints / ## Output format — четыре секции для ChatGPT или Claude.',
   tool_prompt_template_builder_example_title: 'Пример',
   tool_prompt_template_builder_faq_a1:
     'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
@@ -8089,7 +8089,7 @@ const ru: SiteLangDict = {
   tool_short_drama_prompt_generator_episodes_label: 'Episodes',
   tool_short_drama_prompt_generator_episodes_ph: 'Sample episodes…',
   tool_short_drama_prompt_generator_example:
-    'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+    'Ввод: 12 × 75s; Hook = утечка payroll + CEO узнаёт голос; Cliffhanger = ep.6 удаляет voicemail; Format = 9:16. Вывод (Markdown): ## Task → Episodes / Hook / Cliffhanger / Vertical / Genre.',
   tool_short_drama_prompt_generator_example_title: 'Пример',
   tool_short_drama_prompt_generator_faq_a1:
     'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
@@ -8283,7 +8283,7 @@ const ru: SiteLangDict = {
   tool_sketch_prompt_generator_download: 'Скачать',
   tool_sketch_prompt_generator_empty: 'Заполните хотя бы одно поле перед сборкой.',
   tool_sketch_prompt_generator_example:
-    'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+    'Ввод: Medium = graphite on toned paper; Stroke = cross-hatching; Composition = три четверти; Ref = Kim Jung Gi. Вывод (Markdown): ## Task → Medium / Stroke / Composition / Artist.',
   tool_sketch_prompt_generator_example_title: 'Пример',
   tool_sketch_prompt_generator_faq_a1:
     'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
@@ -9643,7 +9643,7 @@ const ru: SiteLangDict = {
   tool_writing_prompt_generator_download: 'Скачать',
   tool_writing_prompt_generator_empty: 'Заполните хотя бы одно поле в этом режиме перед сборкой.',
   tool_writing_prompt_generator_example:
-    'Загрузить пример выбирает режим Диалог, заполняет ночную сцену в diner, создаёт Markdown с разделами Role/Task/Constraints/Output и включает Копировать. Попробуйте чипы Персонаж, Сценарий или Случайный для других пресетов.',
+    'Ввод (Диалог): Genre = современная дrama; Characters = Maya и Jonah; Conflict = Maya узнаёт песню об ex. Вывод (Markdown): ## Role → writing coach; ## Task → genre/characters/setting/conflict/tone. Режим сценария — загадка с факсом маяка, не food-truck из фильма.',
   tool_writing_prompt_generator_example_title: 'Пример',
   tool_writing_prompt_generator_faq_a1:
     'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',

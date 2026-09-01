@@ -22,7 +22,7 @@ const zh: SiteLangDict = {
 	tool_sketch_prompt_generator_empty:
 		'请至少填写一个字段后再构建。',
 	tool_sketch_prompt_generator_example:
-		'加载示例填入默认预设、生成 Markdown 并启用复制。可选 AI 在 Turnstile 后仅发送该次点击的文本。',
+		'输入：Medium = 暖灰色调纸石墨；Stroke = 交叉排线 + 清晰面部轮廓；Composition = 四分之三肖像、右侧留白；Ref = Kim Jung Gi 线稿节奏（非临摹）。输出（Markdown）：## Task 列出 Medium / Stroke / Composition / Artist 行。',
 	tool_sketch_prompt_generator_example_title:
 		'示例',
 	tool_sketch_prompt_generator_faq_a1:

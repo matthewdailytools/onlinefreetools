@@ -17,7 +17,7 @@ const en: SiteLangDict = {
 	tool_film_prompt_builder_download: 'Download',
 	tool_film_prompt_builder_empty: 'Fill at least one field before building.',
 	tool_film_prompt_builder_example:
-		'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+		'Input: Logline = two rival food-truck owners share one kitchen for 30 days after a permit error; Act II = festival rush + blogger recipe feud; Scene list = six numbered beats; Arc = Pride → grudging teamwork → co-owners. Output (Markdown): ## Task block lists Logline, Act1–3, Scene / List, Character / Arc — same text Load sample writes on first paint.',
 	tool_film_prompt_builder_example_title: 'Example',
 	tool_film_prompt_builder_faq_a1:
 		'Local assembly runs in this browser tab — nothing is uploaded by default. Optional Expand/Polish sends only the text you submit for that click to Cloudflare Workers AI, not to OpenAI, Google, Anthropic, or DeepSeek from our servers.',

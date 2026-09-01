@@ -22,7 +22,7 @@ const zh: SiteLangDict = {
 	tool_film_prompt_builder_empty:
 		'请至少填写一个字段后再构建。',
 	tool_film_prompt_builder_example:
-		'加载示例填入默认预设、生成 Markdown 并启用复制。可选 AI 在 Turnstile 后仅发送该次点击的文本。',
+		'输入：Logline = 餐车 rival 因许可错误共用厨房 30 天；Act II = 音乐节 rush + 博主配方乌龙；Scene list = 6 场；Arc = 骄傲 → 勉强合作 → 共同经营。输出（Markdown）：## Task 含 Logline、Act1–3、Scene / List、Character / Arc — 与加载样例首屏一致。',
 	tool_film_prompt_builder_example_title:
 		'示例',
 	tool_film_prompt_builder_faq_a1:

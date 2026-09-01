@@ -22,6 +22,7 @@ import {
 	renderPromptAiClientScript,
 	PROMPT_AI_TURNSTILE_SCRIPT,
 } from './site/promptAiPanel';
+import { PRODUCT_DESIGN_PROMPT_PRESET } from './site/promptClusterPresets';
 
 /** 本工具 i18n 键前缀，与 catalog faqPrefix 一致。 */
 const PREFIX = 'tool_product_design_prompt_builder';
@@ -216,7 +217,7 @@ export const renderProductDesignPromptBuilderPage = (opts: {
 
       var lastOut = '';
       var lastExt = 'md';
-      var PRESET = {"persona":"Busy parents scheduling kids' activities on mobile","problem":"Calendar apps feel noisy; they need one-tap week view and shared custody handoffs","wireframe_scope":"Home week strip, event detail sheet, invite co-parent flow (3 screens max)","design_tokens":"8pt grid, primary #2563eb, rounded-lg cards, WCAG AA contrast"};
+      var PRESET = ${JSON.stringify(PRODUCT_DESIGN_PROMPT_PRESET)};
 
       function setError(text) {
         errEl.textContent = text || '';
@@ -251,13 +252,13 @@ export const renderProductDesignPromptBuilderPage = (opts: {
 
       function buildBlocks(f) {
         var taskParts = '';
-        if (f.persona) taskParts += 'Persona: ' + f.persona + '\n';
-        if (f.problem) taskParts += 'Problem: ' + f.problem + '\n';
-        if (f.wireframe_scope) taskParts += 'Wireframe / Scope: ' + f.wireframe_scope + '\n';
-        if (f.design_tokens) taskParts += 'Design / Tokens: ' + f.design_tokens + '\n';
+        if (f.persona) taskParts += 'Persona: ' + f.persona + '\\n';
+        if (f.problem) taskParts += 'Problem: ' + f.problem + '\\n';
+        if (f.wireframe_scope) taskParts += 'Wireframe / Scope: ' + f.wireframe_scope + '\\n';
+        if (f.design_tokens) taskParts += 'Design / Tokens: ' + f.design_tokens + '\\n';
         return {
           role: 'You are a UX/product design prompt coach for wireframe briefs.',
-          task: 'Assemble a structured prompt from these inputs:\n' + (taskParts || '(unspecified)'),
+          task: 'Assemble a structured prompt from these inputs:\\n' + (taskParts || '(unspecified)'),
           constraints: 'Stay factual. Do not execute tools or APIs. Keep paste-ready for chat UIs.',
           output: 'Markdown sections: Role, Task, Constraints, Output — plus a one-paragraph summary block.'
         };

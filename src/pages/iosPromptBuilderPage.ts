@@ -22,6 +22,7 @@ import {
 	renderPromptAiClientScript,
 	PROMPT_AI_TURNSTILE_SCRIPT,
 } from './site/promptAiPanel';
+import { IOS_PROMPT_PRESET } from './site/promptClusterPresets';
 
 /** 本工具 i18n 键前缀，与 catalog faqPrefix 一致。 */
 const PREFIX = 'tool_ios_prompt_builder';
@@ -216,7 +217,7 @@ export const renderIosPromptBuilderPage = (opts: {
 
       var lastOut = '';
       var lastExt = 'md';
-      var PRESET = {"feature_spec":"Health dashboard with weekly step trends and HealthKit read permissions","swift_stack":"Swift 5.10, SwiftUI, iOS 17+, async/await, SwiftData cache","swiftui_ui":"NavigationStack, Charts framework, permission gate sheet","hig_constraints":"Dynamic Type, VoiceOver labels on chart points, no force-unwrap in samples"};
+      var PRESET = ${JSON.stringify(IOS_PROMPT_PRESET)};
 
       function setError(text) {
         errEl.textContent = text || '';
@@ -251,13 +252,13 @@ export const renderIosPromptBuilderPage = (opts: {
 
       function buildBlocks(f) {
         var taskParts = '';
-        if (f.feature_spec) taskParts += 'Feature / Spec: ' + f.feature_spec + '\n';
-        if (f.swift_stack) taskParts += 'Swift / Stack: ' + f.swift_stack + '\n';
-        if (f.swiftui_ui) taskParts += 'Swiftui / Ui: ' + f.swiftui_ui + '\n';
-        if (f.hig_constraints) taskParts += 'Hig / Constraints: ' + f.hig_constraints + '\n';
+        if (f.feature_spec) taskParts += 'Feature / Spec: ' + f.feature_spec + '\\n';
+        if (f.swift_stack) taskParts += 'Swift / Stack: ' + f.swift_stack + '\\n';
+        if (f.swiftui_ui) taskParts += 'Swiftui / Ui: ' + f.swiftui_ui + '\\n';
+        if (f.hig_constraints) taskParts += 'Hig / Constraints: ' + f.hig_constraints + '\\n';
         return {
           role: 'You are a senior iOS engineer (Swift, SwiftUI, Apple HIG).',
-          task: 'Assemble a structured prompt from these inputs:\n' + (taskParts || '(unspecified)'),
+          task: 'Assemble a structured prompt from these inputs:\\n' + (taskParts || '(unspecified)'),
           constraints: 'Stay factual. Do not execute tools or APIs. Keep paste-ready for chat UIs.',
           output: 'Markdown sections: Role, Task, Constraints, Output — plus a one-paragraph summary block.'
         };

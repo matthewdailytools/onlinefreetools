@@ -22,6 +22,7 @@ import {
 	renderPromptAiClientScript,
 	PROMPT_AI_TURNSTILE_SCRIPT,
 } from './site/promptAiPanel';
+import { FILM_PROMPT_PRESET } from './site/promptClusterPresets';
 
 /** 本工具 i18n 键前缀，与 catalog faqPrefix 一致。 */
 const PREFIX = 'tool_film_prompt_builder';
@@ -218,7 +219,7 @@ export const renderFilmPromptBuilderPage = (opts: {
 
       var lastOut = '';
       var lastExt = 'md';
-      var PRESET = {"logline":"Two rival food-truck owners must share a kitchen after a permit mix-up.","act1":"Meet rivals, city inspection threat, forced partnership proposal.","act2":"Shared service night succeeds; secret ingredient feud resurfaces at festival.","act3":"Public cook-off; they merge menus and split the permit fairly.","scene_list":"1. Alley argument 2. Health inspector 3. First joint shift 4. Festival fallout 5. Finale cook-off","character_arc":"Pride → reluctant respect → co-owners"};
+      var PRESET = ${JSON.stringify(FILM_PROMPT_PRESET)};
 
       function setError(text) {
         errEl.textContent = text || '';
@@ -255,15 +256,15 @@ export const renderFilmPromptBuilderPage = (opts: {
 
       function buildBlocks(f) {
         var taskParts = '';
-        if (f.logline) taskParts += 'Logline: ' + f.logline + '\n';
-        if (f.act1) taskParts += 'Act1: ' + f.act1 + '\n';
-        if (f.act2) taskParts += 'Act2: ' + f.act2 + '\n';
-        if (f.act3) taskParts += 'Act3: ' + f.act3 + '\n';
-        if (f.scene_list) taskParts += 'Scene / List: ' + f.scene_list + '\n';
-        if (f.character_arc) taskParts += 'Character / Arc: ' + f.character_arc + '\n';
+        if (f.logline) taskParts += 'Logline: ' + f.logline + '\\n';
+        if (f.act1) taskParts += 'Act1: ' + f.act1 + '\\n';
+        if (f.act2) taskParts += 'Act2: ' + f.act2 + '\\n';
+        if (f.act3) taskParts += 'Act3: ' + f.act3 + '\\n';
+        if (f.scene_list) taskParts += 'Scene / List: ' + f.scene_list + '\\n';
+        if (f.character_arc) taskParts += 'Character / Arc: ' + f.character_arc + '\\n';
         return {
           role: 'You are a feature-film screenwriting consultant for beat-sheet prompts.',
-          task: 'Assemble a structured prompt from these inputs:\n' + (taskParts || '(unspecified)'),
+          task: 'Assemble a structured prompt from these inputs:\\n' + (taskParts || '(unspecified)'),
           constraints: 'Stay factual. Do not execute tools or APIs. Keep paste-ready for chat UIs.',
           output: 'Markdown sections: Role, Task, Constraints, Output — plus a one-paragraph summary block.'
         };

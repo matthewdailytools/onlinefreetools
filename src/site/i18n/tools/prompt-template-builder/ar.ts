@@ -20,7 +20,7 @@ const ar: SiteLangDict = {
 	tool_prompt_template_builder_download: 'تنزيل',
 	tool_prompt_template_builder_empty: 'أضف نصًا حرًا أو حقلًا واحدًا على الأقل قبل الإنشاء.',
 	tool_prompt_template_builder_example:
-		'تحميل المثال يملأ preset وكيل مراجعة الكود، وينشئ Markdown بأربعة أقسام ## ويفعّل النسخ والتنزيل. جرّب شرائح فيلم أو دراما قصيرة أو Android أو iOS لقيم افتراضية أخرى.',
+		'المدخلات (تحميل العينة، شريحة Code): Role = مراجع كود أول (أمان وقابلية قراءة)；Task = مراجعة diff الـ PR؛Constraints = 12 نقطة كحد أقصى. المخرجات (Markdown): أقسام ## Role و## Task و## Constraints و## Output format — جاهزة للنسخ إلى ChatGPT أو Claude.',
 	tool_prompt_template_builder_example_title: 'مثال',
 	tool_prompt_template_builder_faq_a1:
 		'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',

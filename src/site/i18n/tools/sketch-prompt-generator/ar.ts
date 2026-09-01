@@ -22,7 +22,7 @@ const ar: SiteLangDict = {
 	tool_sketch_prompt_generator_empty:
 		'املأ حقلًا واحدًا على الأقل قبل الإنشاء.',
 	tool_sketch_prompt_generator_example:
-		'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+		'المدخلات: Medium = graphite؛ Stroke = cross-hatching؛ Composition = بورتريه؛ Ref = Kim Jung Gi. المخرجات (Markdown): ## Task مع Medium / Stroke / Composition / Artist.',
 	tool_sketch_prompt_generator_example_title:
 		'مثال',
 	tool_sketch_prompt_generator_faq_a1:

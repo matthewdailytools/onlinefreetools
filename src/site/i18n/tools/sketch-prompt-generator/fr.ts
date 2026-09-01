@@ -22,7 +22,7 @@ const fr: SiteLangDict = {
 	tool_sketch_prompt_generator_empty:
 		'Remplissez au moins un champ avant de créer.',
 	tool_sketch_prompt_generator_example:
-		'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+		'Entrée : Medium = graphite sur papier gris ; Stroke = hachures croisées ; Composition = portrait trois quarts ; Ref = Kim Jung Gi. Sortie (Markdown) : ## Task → Medium / Stroke / Composition / Artist.',
 	tool_sketch_prompt_generator_example_title:
 		'Exemple',
 	tool_sketch_prompt_generator_faq_a1:

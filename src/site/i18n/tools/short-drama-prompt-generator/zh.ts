@@ -22,7 +22,7 @@ const zh: SiteLangDict = {
 	tool_short_drama_prompt_generator_empty:
 		'请至少填写一个字段后再构建。',
 	tool_short_drama_prompt_generator_example:
-		'加载示例填入默认预设、生成 Markdown 并启用复制。可选 AI 在 Turnstile 后仅发送该次点击的文本。',
+		'输入：12 集 × 75s；Hook = 实习生曝光 payroll + CEO 听出 custody 语音；Cliffhanger = 第 6 集删语音 → 第 7 集电梯对峙；Format = 9:16 烧录字幕。输出（Markdown）：## Task 列出 Episodes / Hook / Cliffhanger / Vertical / Genre。',
 	tool_short_drama_prompt_generator_example_title:
 		'示例',
 	tool_short_drama_prompt_generator_faq_a1:

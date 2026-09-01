@@ -22,7 +22,7 @@ const es: SiteLangDict = {
 	tool_ios_prompt_builder_empty:
 		'Rellena al menos un campo antes de crear.',
 	tool_ios_prompt_builder_example:
-		'Cargar ejemplo rellena el preset, crea Markdown y habilita Copiar. IA opcional envía solo ese clic tras Turnstile.',
+		'Entrada: Feature = HealthKit pasos + HR; Stack = Swift 5.10, SwiftUI, SwiftData; UI = NavigationStack + Charts; HIG = Dynamic Type, VoiceOver. Salida (Markdown): ## Task → Feature / Swift / SwiftUI / HIG.',
 	tool_ios_prompt_builder_example_title:
 		'Ejemplo',
 	tool_ios_prompt_builder_faq_a1:

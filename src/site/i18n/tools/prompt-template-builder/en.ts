@@ -20,7 +20,7 @@ const en: SiteLangDict = {
 	tool_prompt_template_builder_download: 'Download',
 	tool_prompt_template_builder_empty: 'Add free text or at least one field before building.',
 	tool_prompt_template_builder_example:
-		'Load sample fills the code-review Agent preset, builds Markdown with four ## sections, and enables Copy and Download. Try Movie, Short drama, Android, or iOS chips for other defaults.',
+		'Input (Load sample, Code chip): Role = senior code reviewer (security + readability); Task = review the PR diff I paste next; Constraints = max 12 bullets, flag secrets. Output (Markdown): ## Role / ## Task / ## Constraints / ## Output format — four sections ready to copy into ChatGPT or Claude. Matches first paint on the canvas.',
 	tool_prompt_template_builder_example_title: 'Example',
 	tool_prompt_template_builder_faq_a1:
 		'Local assembly runs in this browser tab — nothing is uploaded by default. Optional Expand/Polish sends only the text you submit for that click to Cloudflare Workers AI, not to OpenAI, Google, Anthropic, or DeepSeek from our servers.',

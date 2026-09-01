@@ -22,7 +22,7 @@ const ja: SiteLangDict = {
 	tool_midjourney_prompt_builder_empty:
 		'作成前に少なくとも1項目を入力してください。',
 	tool_midjourney_prompt_builder_example:
-		'サンプル読込でプリセット投入・Markdown 生成・コピー有効。任意 AI は Turnstile 後そのクリック分のみ送信。',
+		'入力：Subject = 苔むした橋の武士；Style = シネマティック水墨；Flags = --v 6.1 --style raw --chaos 8。出力（Markdown）：## Task にMJ行と --ar 16:9；JSONチップで構造化。',
 	tool_midjourney_prompt_builder_example_title:
 		'例',
 	tool_midjourney_prompt_builder_faq_a1:

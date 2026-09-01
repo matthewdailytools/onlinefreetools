@@ -22,7 +22,7 @@ const ja: SiteLangDict = {
 	tool_product_design_prompt_builder_empty:
 		'作成前に少なくとも1項目を入力してください。',
 	tool_product_design_prompt_builder_example:
-		'サンプル読込でプリセット投入・Markdown 生成・コピー有効。任意 AI は Turnstile 後そのクリック分のみ送信。',
+		'入力：Persona = 共同親；Problem = カレンダーが煩雑 + handoff；Wireframe = 3画面；Tokens = 8pt, #2563eb, WCAG AA。出力（Markdown）：## Task → Persona / Problem / Wireframe / Design tokens。',
 	tool_product_design_prompt_builder_example_title:
 		'例',
 	tool_product_design_prompt_builder_faq_a1:

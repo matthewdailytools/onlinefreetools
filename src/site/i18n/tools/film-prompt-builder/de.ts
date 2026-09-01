@@ -22,7 +22,7 @@ const de: SiteLangDict = {
 	tool_film_prompt_builder_empty:
 		'Mindestens ein Feld ausfüllen, bevor Sie erstellen.',
 	tool_film_prompt_builder_example:
-		'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+		'Eingabe: Logline = rivalisierende Food-Trucks teilen Küche 30 Tage; Act II = Festival + Rezept-Streit; 6 Szenen; Arc = Stolz → Teamwork → Co-Owner. Ausgabe (Markdown): ## Task → Logline, Act1–3, Scene / List, Character / Arc.',
 	tool_film_prompt_builder_example_title:
 		'Beispiel',
 	tool_film_prompt_builder_faq_a1:

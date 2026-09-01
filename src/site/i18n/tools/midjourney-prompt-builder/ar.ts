@@ -22,7 +22,7 @@ const ar: SiteLangDict = {
 	tool_midjourney_prompt_builder_empty:
 		'املأ حقلًا واحدًا على الأقل قبل الإنشاء.',
 	tool_midjourney_prompt_builder_example:
-		'Load sample fills the default preset, builds Markdown, and enables Copy. Optional AI sends only the text you submit for that click after Turnstile.',
+		'المدخلات: Subject = سامurai على جسر؛ Style = حبر سينمائي؛ Flags = --v 6.1 --style raw. المخرجات (Markdown): ## Task مع سطر MJ مقترح و --ar 16:9؛ JSON للحقول المنظمة.',
 	tool_midjourney_prompt_builder_example_title:
 		'مثال',
 	tool_midjourney_prompt_builder_faq_a1:
