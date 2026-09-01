@@ -590,7 +590,7 @@
     "logo": "/icons/tools/file-metadata-analyzer.svg",
     "localProcessing": true,
     "scenario": "developer",
-    "subject": "file"
+    "subject": "data"
   },
   {
     "slug": "flip-image",
