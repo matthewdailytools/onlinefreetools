@@ -1,0 +1,17 @@
+# web-check Bing SERP seeds (one query per line; # comments ignored)
+# User-habit wording; no quotes; no brand inversion.
+whois lookup
+dns lookup
+http headers checker
+security headers checker
+redirect checker
+ssl checker
+ssl certificate checker
+dmarc checker
+spf record lookup
+robots.txt checker
+sitemap checker
+security.txt checker
+open graph preview
+hsts preload check
+website analyzer

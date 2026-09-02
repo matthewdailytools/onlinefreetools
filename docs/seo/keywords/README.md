@@ -35,5 +35,6 @@ python ops/seo/bing_serp/run_bing_serp.py --theme cidr --write-batch-md --batch-
 | [`social-share/`](./social-share/) | 社交/OG 图使用场景聚类（§3.3 H 渠道类示例） |
 | [`text-compare/`](./text-compare/) | **权威**：分场景 slug + 长尾 H1（2026-09-01 用户点名） |
 | [`text-diff/`](./text-diff/) | Planner CSV + Bing SERP；场景结论以 `text-compare/` 为准 |
+| [`web-check/`](./web-check/) | 竞品 lissy93/web-check；Bing×15 **0 long_gap** |
 
 枢纽：[`../README.md`](../README.md) · 漏斗：[`../keyword-to-tool-funnel.md`](../keyword-to-tool-funnel.md) · 运维：[`../../ops/seo/keyword-to-tool-ops.md`](../../ops/seo/keyword-to-tool-ops.md)

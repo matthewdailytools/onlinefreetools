@@ -30,14 +30,14 @@ description: >-
 
 | `verdict` | 含义 | 下一步 |
 |---|---|---|
-| **`build`** | 新意图 + 浏览器可做 + ≥3 条 IG + **`competition_tier` 为 `long_gap`/`locale_gap`**（禁止纯大词进攻） | **仅记入词池**；开 `work-tasks/{slug}/` **须用户明确要创建该工具** |
-| **`absorb`** | 与已有 catalog slug 同一主意图 / 近义长尾 | **更新已有工具**：title/description、FAQ、Use cases、Example/IG；**不新建 URL** |
-| `defer` | 意图成立但主打词/产能/YMYL/SERP 未钉死，或 `mid_covered` 暂不硬刚 | **仍须写覆盖落点**；留池，决策日志一行 |
-| `drop` | 不可做成工具、重复、无增量，或纯 `head` 且无本站展示 | 留池注明理由即可 |
+| **`build`** | **本站未实现**该作业（或主控件不同）+ 浏览器可做 + ≥3 条 IG；须写实现规格 | **仅记入词池**；开 `work-tasks/{slug}/` **须用户明确要创建该工具**。周进攻 KPI 优先 `long_gap`/`locale_gap`；`head` 可建但 **H1 禁硬刚头词**（用场景/G 长尾） |
+| **`absorb`** | 已有 catalog slug **已能办成**同一主意图（同主控件）/ 近义长尾 | **更新已有工具**：title/description、FAQ、Use cases、Example/IG；**不新建 URL**。**禁止**对未实现作业标 absorb（含：生成器页「覆盖」校验） |
+| `defer` | 意图成立但主打词/产能/YMYL/SERP 未钉死，或上线节奏靠后 | **仍须写实现/覆盖落点**（控件差 + 建议 slug）；留池；**不是**不做 |
+| `drop` | 不可做成工具、重复、无增量，或 §4 服务/品牌/同形 | 留池注明理由即可 |
 
-默认优先 **`absorb` 丰富已有**，再谈 `build`。周 `build` 名额只给缺口类，不给 `head`。  
-**Planner 细分场景须全覆盖**（文案+能力落点）；差别在 **slug / title / 主打关键词**，见 [keyword-planner-analysis-rules.md](../../docs/seo/keyword-planner-analysis-rules.md) §0；`defer`≠不做。  
-头词已被工具占位时：按策略 **§3.3 G**（`title_gap_fallback`）——同簇长尾若在该长尾 SERP 的 organic **title 中未出现**，用该长尾作工具 **slug/H1**（一簇一 URL；满 IG；默认不占周进攻，除非任务实质不同）。  
+默认：已实现 → **`absorb`**；未实现 → **`build`/`defer`（须实现）**，差别在关键词 / title / 文案 / IG。  
+**Planner 细分场景须全覆盖**（**能力**+文案落点）；见 [keyword-planner-analysis-rules.md](../../docs/seo/keyword-planner-analysis-rules.md) §0；`defer`≠不做；**生成≠校验**。  
+头词已被工具占位时：按策略 **§3.3 G**（`title_gap_fallback`）——同簇长尾若在该长尾 SERP 的 organic **title 中未出现**，用该长尾作工具 **slug/H1**（一簇一 URL；满 IG）；**仍须实现能力**，默认不把头词当进攻 KPI。  
 另须 **§3.3 H（全站）**：slug/H1 = 用户**实际使用场景**（情境+动作+结果），不是品类/`*-pack`；进页默认即该场景。平台只是情境的一种（如 LinkedIn 横幅）。只按作业类型拆 URL。无「使用场景」表不得标 `build`。
 
 ## 强制流程
@@ -51,12 +51,13 @@ description: >-
 
 ### 2) 每条候选必答
 
-1. 用户任务？（算 / 转 / 生成 / 校验）能否交互？须写成**实际使用场景**（情境+动作+结果）；进页默认即该场景。平台只是情境的一种  
-2. SERP 缺什么？能否 ≥3 条 IG？  
-3. 是否已有 slug 同意图？→ **`absorb`**  
-4. 是否近义换词（含仅换平台名/同义词、同一套控件）？→ 禁止拆页，进芯片 / Use cases / FAQ  
-5. YMYL？→ 倾向 `defer` 或加重 disclaimer 成本  
-6. **竞品覆盖**：谁占位？→ 填 `competition_tier`（`head` / `mid_covered` / `long_gap` / `locale_gap`）+ `gap_notes`  
+1. 用户任务？（算 / 转 / **生成** / **校验**）能否交互？须写成**实际使用场景**（情境+动作+结果）；进页默认即该场景。平台只是情境的一种  
+2. **本站是否已实现该作业？** 未实现 → 必须实现；差别只在关键词 / title / 文案 / IG。生成器**不能**冒充 checker  
+3. SERP 缺什么？能否 ≥3 条 IG？  
+4. 已有 slug **且已能办成**同意图？→ **`absorb`**；仅有近邻页/FAQ → 不算  
+5. 是否近义换词（含仅换平台名/同义词、同一套控件）？→ 禁止拆页，进芯片 / Use cases / FAQ  
+6. YMYL？→ 倾向 `defer` 或加重 disclaimer 成本  
+7. **竞品覆盖**：谁占位？→ 填 `competition_tier` + `gap_notes`；`head` = 禁硬刚 H1，**≠** 不做工具 
 
 对照 catalog：`src/site/tool-catalog.json`；可行性：`docs/2026-07-28-tool-direction.md`。  
 选题细则：`docs/seo/2026-08-20-long-tail-gap-strategy.md`（含 **§3.3 选长尾词策略标准：Google + Bing**，**§3.3 I Bing 用户搜法防污染**）。种子可含大词，**入池以向下展开的长尾缺口为主**（建议本批缺口类 `long_gap`/`locale_gap` **占多数**；不设入池条数上限）。  
@@ -72,8 +73,8 @@ Bing 采集默认：国际版优先、每词独立 BrowserContext、搜索框提
 
 ### 3B) `build` → 仅候选；创建工具另决议
 
-1. 词池 `verdict=build`，且 `competition_tier` 为 `long_gap` 或 `locale_gap`；`notes` 可写建议 slug  
-2. 若实为 `head` 进攻 → 改为 `drop`/`defer`，或仅在有 GSC 展示时走既有页 CTR 收割  
+1. 词池 `verdict=build`（未实现 + 可交互）；`notes` 写建议 slug + 实现规格；周进攻优先 `long_gap`/`locale_gap`  
+2. `competition_tier=head`：**禁止**用该头词当唯一进攻 H1；改为场景/G 长尾承接，**仍可**记 `build`（能力必做）；有 GSC 展示的头词另可 CTR 收割  
 3. **禁止**因跑本 Skill / 跟进事项而自动 `mkdir work-tasks/...`  
 4. 用户明确「创建 / 立项 / 实现 {slug}」之后：  
    - 复制 `work-tasks/_template/` → `work-tasks/{slug}/`  
@@ -91,11 +92,11 @@ Bing 采集默认：国际版优先、每词独立 BrowserContext、搜索框提
 - 不一词一 URL 日更  
 - 不把本 Skill 待办只写进某次 GSC `03-todo` 而不回写 tracker  
 - 不跳过 `tool-coverage-pass` 直接灌十语上线新工具  
-- **不把已占位大词当作周 build 进攻队列**（搜索量 ≠ 立项理由）  
+- **不把已占位大词当作周进攻 KPI / 唯一 H1**（搜索量 ≠ 用头词硬刚；未实现能力仍须实现并用场景/G 承接） 
 
 ## 验收自检
 
 - [ ] 本批有 serp-batches 摘要 + 词池行  
-- [ ] 每条有 `verdict` 与 `competition_tier`；`absorb` 已指向真实 slug 或已说明暂缓改文案  
-- [ ] `build` 均为缺口类；未擅自建 work-tasks（除非用户本回合明确要求创建该工具）  
-- [ ] tracker 快照 / 决策日志已更新  
+- [ ] 每条有 `verdict` 与 `competition_tier`；`absorb` 仅指向**已能办成**同一作业的真实 slug（生成器未冒充 checker）  
+- [ ] `build` 均有实现规格；`head` 未当进攻唯一 H1（可用场景/G）；未擅自建 work-tasks（除非用户本回合明确要求创建该工具）  
+- [ ] tracker 快照 / 决策日志已更新 

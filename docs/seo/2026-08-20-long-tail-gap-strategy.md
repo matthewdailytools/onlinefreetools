@@ -185,11 +185,15 @@ CIDR 实证：≥100 补扫 **无新增 P0**；P0 多来自 **任务句长尾**�
 
 #### E. `absorb` vs `build`（选定长尾之后）
 
+**先问能力**：本站是否已实现该作业（用户能办成事）？未实现 → **必须实现**；差别在关键词 / title / 文案 / IG，不是「并进别的页假装覆盖」。
+
 | 情况 | 标准 |
 |---|---|
-| 与 catalog **同主意图** 或近义换词 | **`absorb`**（默认优先）：改 title/FAQ/Use cases/模式，不新建 URL |
-| 用户搜该词会期望 **不同主控件/不同对象**（如 IPv6 vs IPv4；cidrsubnet 求值 vs 单块计算） | 可 **`build`** 独立 slug，仍须硬条件全过 |
-| 量级高但任务 = 头词邻接 | 启用 **§3.3 G title_gap_fallback**：用 title 未出现的长尾作 slug/H1；**不**占周进攻名额（除非任务实质不同且过硬条件） |
+| catalog **已实现**同主意图（同主控件）或近义换词 | **`absorb`**（默认优先）：改 title/FAQ/Use cases/模式，不新建 URL |
+| **未实现**，或用户期望 **不同主控件/不同对象**（如校验线上 robots.txt vs 生成 robots.txt；IPv6 vs IPv4；cidrsubnet 求值 vs 单块计算） | **`build`**（或 `defer` 仅表节奏）：独立实现；禁止用生成器/近邻页 FAQ 代替 |
+| 量级高但任务 = 头词邻接 | 仍须实现能力；启用 **§3.3 G title_gap_fallback** 选 slug/H1；**不**用头词硬刚当唯一 H1；默认不占「抢大词」周进攻 KPI |
+
+**反例（错误 absorb）**：把 `robots.txt checker` / `sitemap checker` 标成「并进 generator 页」——生成与校验主控件不同，checker 未实现则覆盖失败。
 
 #### F. 操作清单（每条候选 30 秒自检）
 
@@ -202,7 +206,7 @@ CIDR 实证：≥100 补扫 **无新增 P0**；P0 多来自 **任务句长尾**�
 [ ] 缺口 ≥2 条或明确 mid/head
 [ ] 若 head 工具占位：是否跑 §3.3 G title_gap_fallback（长尾 title 字面缺口 → slug/H1）
 [ ] IG 草稿 ≥3；同簇合并计划写明（作业类型，非标签拆页）
-[ ] verdict = absorb | build | defer | drop；build 仅 long_gap/locale_gap
+[ ] verdict = absorb | build | defer | drop；absorb 仅已实现同意图；未实现须 build/defer+实现规格；head 禁硬刚 H1
 ```
 
 落地文件：主题夹 `docs/seo/keywords/{theme}/` + `keyword-daily-pool.tsv`；Bing 采集：`ops/seo/bing_serp`（`--theme`）。  
@@ -338,6 +342,7 @@ slug / H1   = 该任务句的检索向说法（kebab / 口语）
 | 可拆（须仍过 §3.3 硬条件） | 不可拆（doorway） |
 |---|---|
 | 任务实质不同：逆向转换、不同对象、不同规则集（cidrsubnet 求值 vs 单块展开；OG 链接卡 vs 封面安全区 vs 9:16 Story） | 仅换同义词或品牌名（facebook-cover vs linkedin-banner 若同为超宽封面+安全区；unzip-zip vs unzip-file） |
+| **生成 vs 校验**：写出 robots.txt / sitemap.xml vs 拉取并检查线上文件 | 在生成器页加一句「也可检查」FAQ 却无 fetch 控件 |
 | 官方/协议导致失败模式能写成可见 Rules 且与邻页不同 | 按广告位、文件后缀、近义问法铺 URL |
 | 用户搜该词会期望**另一套主控件** | 同一套缩放/同一公式只改 H1 |
 

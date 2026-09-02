@@ -44,11 +44,11 @@
 
 | 字段 | 值 |
 |---|---|
-| 最近更新 | 2026-09-01 |
-| 最近批次 | [keywords/prompt-builder/…](./keywords/prompt-builder/)：场景修订（命名须 ai/prompt/builder\|generator；按 Planner 搜法：S0 结构化 / S1 图像 / S2 写作 / S3 随机…）；Google+Bing SERP **0 long_gap** |
-| 池内 `build` 候选 | text-compare 点名四 slug；prompt-builder **无** build |
-| 本周新建工具页 | text-compare topic 进行中；prompt-template-builder 仅 absorb（场景 FAQ 待补） |
-| 阻塞 | CloakBrowser/Bing 补采可选；YAML/XML P2 |
+| 最近更新 | 2026-09-02 |
+| 最近批次 | [keywords/web-check/…](./keywords/web-check/)：Bing×15；**能力先判订正**——生成≠校验；未实现 checker 记 `build`（须实现）；**0 long_gap** 进攻 KPI |
+| 池内 `build` 候选 | text-compare 点名四 slug；web-check 实现队列：robots-txt-checker / sitemap-checker / security.txt / SSL / DMARC（均 head→场景 H1，未开 work-tasks） |
+| 本周新建工具页 | text-compare topic 进行中；web-check **未**自动立项 |
+| 阻塞 | YAML/XML P2；web-check 实现队列待用户点名 + 场景/G 选 H1 |
 
 ---
 
@@ -146,6 +146,9 @@
 | 2026-09-01 | 本地+CF AI **二合一方案** + 独立 **Workers AI 免费/付费接入**手册（未实现 binding） | 用户要求两份文档 |
 | 2026-09-01 | **Topic 分析**：`2026-09-01-ai-prompt-template-builder-topic.md` — 可分场景+IG+进页即用；禁 Feedough 换皮 | 用户问竞品分场景与新 topic |
 | 2026-09-01 | prompt-builder topic **修订：立项不看 SERP**；建议 3 工具页（S0 强化 + writing-prompt-generator + midjourney-prompt-builder） | 用户明确无需考虑 SERP |
+| 2026-09-02 | 调研 lissy93/web-check：看板≠搜索作业。WHOIS/DNS/头/跳转/OG absorb 现页；SSL/DMARC defer（头词+未 SERP）；端口/WAF/威胁/碳排/Wayback drop。**0 build**，未建 work-tasks。 | 用户要求工具分析+搜索词分析 |
+| 2026-09-02 | CloakBrowser Bing×15（web-check 主题）：15 usable；Related 全空。人工 **0 long_gap**。whois/headers 草稿 mid→head；security.txt 专用检查器墙→head（库存长尾猜测作废）；ssl certificate **G 不触发**。未建 work-tasks。 | 用户要求调用 cloakbrowser bing serp |
+| 2026-09-02 | **能力先判**：未实现必须实现；生成≠校验；absorb 仅已能办成同一作业。订正 robots/sitemap/security.txt/SSL/DMARC 为 `build`（须实现）+ 场景/G H1；禁并进 generator。同步 playbook §0 / 策略 §E / Skill / rule。未建 work-tasks。 | 用户指出判断逻辑错误 |
 
 ---
 

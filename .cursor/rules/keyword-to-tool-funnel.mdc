@@ -13,4 +13,4 @@ alwaysApply: false
 3. **`work-tasks/` 只为创建工具**；分析进池 ≠ 自动立项夹
 4. 两条路径：`build`（新工具，须另确认再建夹）或 `absorb`（更新已有工具文案/IG，不拆 URL）
 
-权威策略展开：`docs/seo/keyword-to-tool-funnel.md`。选题叠加：`docs/seo/2026-08-20-long-tail-gap-strategy.md`（回避大词、主攻未覆盖长尾；**§3.3 H 使用场景任务句定 slug，全站适用，平台只是例子**；**§3.3 I Bing 按用户搜法采集，污染 SERP 不得 long_gap**）。Planner CSV 固定步骤：`docs/seo/keyword-planner-analysis-rules.md`（**细分场景全覆盖**；差异在 slug/title/主打词；`defer`≠不做）。合规不得放宽 `seo-google-policy` / `tool-i18n-seo`。禁止品类/`*-pack` 当主 slug；须「使用场景」表。
+权威策略展开：`docs/seo/keyword-to-tool-funnel.md`。选题叠加：`docs/seo/2026-08-20-long-tail-gap-strategy.md`（回避大词硬刚 H1、主攻未覆盖长尾；**§3.3 H 使用场景任务句定 slug**；**§3.3 I Bing 用户搜法**；**§3.3 E 能力先判：未实现必须实现；生成≠校验**）。Planner CSV：`docs/seo/keyword-planner-analysis-rules.md`（**能力先判 + 场景全覆盖**；差异在 slug/title/主打词/IG；`absorb` 仅已实现同意图；`defer`≠不做）。合规不得放宽 `seo-google-policy` / `tool-i18n-seo`。禁止品类/`*-pack` 当主 slug；须「使用场景」表。
