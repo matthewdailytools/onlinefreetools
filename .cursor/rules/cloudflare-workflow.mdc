@@ -18,8 +18,9 @@ alwaysApply: false
 详见 [`ops/README.md`](../../ops/README.md)。
 
 ```bash
-npm run start:dev          # build:site + 本地 R2 seed（失败则退出）+ wrangler；Ready 后探测最新工具页
+npm run start:dev          # build:site + 本地 R2 seed（失败则退出）+ wrangler --local（无 Workers AI）；Ready 后探测最新工具页
 npm run start:dev -- --no-build   # 跳过构建，仍灌本地 R2（新增工具后勿长期使用；须另跑 build:site 才刷新首页/_pages）
+npm run start:dev -- --remote-bindings  # 本机试 Workers AI（须能访问 Cloudflare）
 npm run build:site         # 全量：刷新共享页/sitemap/vendor，并预渲染所有工具页 + gzip
 npm run build:site:full    # 同 build:site，保留为显式全量别名
 npm run tool:touch -- --slug=<slug[,slug]> # 工具内容改动后刷新 catalog updatedAt

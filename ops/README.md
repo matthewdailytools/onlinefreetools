@@ -89,10 +89,11 @@ R2_HTTPS_PROXY=socks5h://127.0.0.1:8888 npm run upload:r2
 ### 3.1 后台启停（推荐日常）
 
 ```bash
-npm run start:dev                 # build:site + 本地 R2 seed（失败则退出）+ 后台 wrangler + 最新工具页探测 + Ops UI
+npm run start:dev                 # build:site + 本地 R2 seed（失败则退出）+ 后台 wrangler --local + 最新工具页探测 + Ops UI
 npm run start:dev -- --no-build   # 跳过构建，仍会灌本地 R2（磁盘上须已有 public/_pages）
 npm run start:dev -- --no-seed-r2 # 跳过本地 R2 灌桶（预渲染 HTML 将 404，除非桶已有对象）
 npm run start:dev -- --no-ops-ui  # 不启动 Ops / sitemap 操作页
+npm run start:dev -- --remote-bindings  # 本机试 Workers AI（须能访问 Cloudflare）
 npm run start:dev -- --port 8787  # 指定 wrangler 端口
 npm run stop:dev                  # 停止 wrangler 与 Ops UI
 npm run status:dev                # 首页 + 最新工具页 + Ops UI；首页 OK 而工具页 FAIL 即灌桶问题
@@ -115,6 +116,7 @@ npm run restart:dev               # 重启
 .\ops\dev\start-dev.ps1 -NoBuild
 .\ops\dev\start-dev.ps1 -NoOpsUi
 .\ops\dev\start-dev.ps1 -NoSeedR2
+.\ops\dev\start-dev.ps1 -RemoteBindings
 .\ops\dev\stop-dev.ps1
 ```
 

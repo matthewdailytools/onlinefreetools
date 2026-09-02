@@ -473,6 +473,8 @@ const DEV_LOG_FATAL_NEEDLES = [
   'Address already in use',
   'failed: ::bind(sockfd',
   'Specify a different port with --port',
+  'was not found',
+  'entry-point file',
 ];
 
 /**
@@ -542,6 +544,14 @@ export const hasNoBuildFlag = (argv) => argv.includes('--no-build');
  * @returns {boolean}
  */
 export const hasNoSeedR2Flag = (argv) => argv.includes('--no-seed-r2');
+
+/**
+ * 是否包含 --remote-bindings（允许 wrangler 为 Workers AI 开 Cloudflare preview session）。
+ * 默认关闭：本机直连 `*.workers.dev` 超时时 start:dev 会卡死。
+ * @param {string[]} argv
+ * @returns {boolean}
+ */
+export const hasRemoteBindingsFlag = (argv) => argv.includes('--remote-bindings');
 
 /**
  * 是否包含 --no-ops-ui 标志（不启动本地 Ops / sitemap UI）。

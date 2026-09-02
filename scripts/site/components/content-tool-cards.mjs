@@ -68,12 +68,12 @@ export const renderToolEntryCard = ({
  * @param {string} lang
  * @param {object} tool
  * @param {string} [cta]
- * @param {{logoEager?: boolean}} [opts] logoEager=true 时首屏优先拉取图标
+ * @param {{logoEager?: boolean, desc?: string}} [opts] logoEager=true 时首屏优先拉取图标；desc 覆盖首页 homeDesc
  */
 export const renderToolCard = (lang, tool, cta, opts = {}) =>
   renderToolEntryCard({
     title: t(lang, tool.homeTitleKey),
-    desc: t(lang, tool.homeDescKey),
+    desc: opts.desc || t(lang, tool.homeDescKey),
     href: withLangPath(lang, tool.path),
     logo: getToolLogoUrl(tool),
     cta: cta || t(lang, 'home_open'),

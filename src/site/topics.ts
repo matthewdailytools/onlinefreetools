@@ -65,9 +65,9 @@ export type TopicI18nKeys = {
 	blurbKey: string;
 	/** Leaf 导语（给谁、解决什么 job） */
 	introKey: string;
-	/** 「如何选用」H2 */
+/** 「如何选用」H2（叶子页不再渲染；决策表取代） */
 	chooseTitleKey: string;
-	/** 「如何选用」正文 */
+	/** 「如何选用」正文（叶子页不再渲染） */
 	chooseBodyKey: string;
 	/** 「边界 / 注意」H2 */
 	limitsTitleKey: string;
@@ -108,6 +108,7 @@ export const TOPIC_I18N_KEYS: Record<ToolTopic, TopicI18nKeys> = Object.fromEntr
 				descKey: `topic_${f}_desc`,
 				blurbKey: `topic_${f}_blurb`,
 				introKey: `topic_${f}_intro`,
+				/** 旧「如何挑选」段落；叶子页改决策表后不再渲染 */
 				chooseTitleKey: `topic_${f}_choose_title`,
 				chooseBodyKey: `topic_${f}_choose_body`,
 				limitsTitleKey: `topic_${f}_limits_title`,
@@ -120,6 +121,7 @@ export const TOPIC_I18N_KEYS: Record<ToolTopic, TopicI18nKeys> = Object.fromEntr
 				faqA3Key: `topic_${f}_faq_a3`,
 				faqQ4Key: `topic_${f}_faq_q4`,
 				faqA4Key: `topic_${f}_faq_a4`,
+				/** 旧指南正文；叶子页改决策表后不再渲染 */
 				guideTitleKey: `topic_${f}_guide_title`,
 				guideBodyKey: `topic_${f}_guide_body`,
 			} satisfies TopicI18nKeys,

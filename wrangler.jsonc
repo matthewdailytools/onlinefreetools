@@ -75,6 +75,8 @@
 	],
 	/**
 	 * Workers AI：Prompt template builder Expand/Polish（见 ops/cloudflare-workers-ai-access.md）。
+	 * 该绑定在 wrangler 里属于 always-remote；本地灌桶 / start:dev 默认 remoteBindings:false + wrangler --local，
+	 * 避免本机直连 workers.dev 超时。本机试 AI 用 `start:dev -- --remote-bindings`。
 	 */
 	"ai": {
 		"binding": "AI"

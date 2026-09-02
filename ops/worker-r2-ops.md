@@ -243,7 +243,7 @@ R2_PROXY_DEBUG=1 R2_HTTPS_PROXY=socks5h://127.0.0.1:8888 npm run upload:r2 -- --
 - Cursor 注入了已关闭的 `HTTPS_PROXY=http://127.0.0.1:xxxxx` → 用 **`R2_HTTPS_PROXY`** 覆盖，或 `unset HTTPS_PROXY HTTP_PROXY ALL_PROXY` 后再 export 正确值。
 - `--wrangler` 回退路径**不**走本节 S3 代理注入；网络不通时请用默认 S3 + `R2_HTTPS_PROXY`，不要强制 wrangler。
 
-本地 `upload:r2:local` / `start:dev` 写模拟桶，**不需要**连 Cloudflare，不必设代理。
+本地 `upload:r2:local` / `start:dev` 写模拟桶，**默认不连 Cloudflare**。做法：从 `wrangler.jsonc` 去掉 Workers AI 绑定后走临时配置（`.cache/wrangler.no-ai.json`），再 `getPlatformProxy({ persist: true, remoteBindings: false })`；wrangler 带 `--local -c` 同一份配置。wrangler 4.58 上 AI 是 always-remote，仅关 `remoteBindings` 仍会建 preview session，本机直连 `*.workers.dev` 超时就会让灌桶失败。需要本机试 Prompt AI 时：`npm run start:dev -- --remote-bindings`（须能访问 Cloudflare，可配 `R2_HTTPS_PROXY`）。
 
 #### 3.1.6 少量工具改动路径
 
@@ -358,10 +358,11 @@ curl -sS -o /dev/null -w '%{http_code}\n' https://onlinefreetools.org/google2cb4
 ## 5. 本地开发
 
 ```bash
-npm run start:dev                    # build:site + 灌本地 R2（失败则退出）+ wrangler + 最新工具页探测 + Ops UI
+npm run start:dev                    # build:site + 灌本地 R2（失败则退出）+ wrangler --local + 最新工具页探测 + Ops UI
 npm run start:dev -- --no-seed-r2    # 不灌本地 R2（预渲染 HTML 将 404，除非桶里已有对象）
 npm run start:dev -- --no-build      # 跳过构建，仍会灌本地 R2（gzip/清单可能过期）
-npm run upload:r2:local              # 单独灌本地模拟桶（含 _meta/pages-build.json）
+npm run start:dev -- --remote-bindings  # 允许 Workers AI 远程 preview（须能访问 Cloudflare）
+npm run upload:r2:local              # 单独灌本地模拟桶（含 _meta/pages-build.json；不连 CF）
 npm run verify:r2 -- --local         # 校验本地模拟桶 ↔ wrangler 版本
 npm run status:dev                   # 首页 + 最新工具页；新工具 404 会 FAIL
 ```

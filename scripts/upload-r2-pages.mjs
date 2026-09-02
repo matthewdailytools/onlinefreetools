@@ -6,7 +6,7 @@
  * 用法：
  *   npm run upload:r2                 # 远程：优先 S3 API；无凭据则回退 wrangler
  *   npm run upload:r2:changed         # 按上次成功上传 manifest 的 fileHashes 增量上传（仍重写 meta）
- *   npm run upload:r2:local           # 本地模拟桶（getPlatformProxy）
+ *   npm run upload:r2:local           # 本地模拟桶（getPlatformProxy，关闭远程 AI 绑定）
  *   npm run upload:r2 -- --dry-run
  *   npm run upload:r2 -- --s3         # 强制 S3（缺凭据则失败）
  *   npm run upload:r2 -- --wrangler   # 强制逐文件 wrangler put（慢）
@@ -19,6 +19,7 @@ import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import { spawn } from 'node:child_process';
 import { loadProjectEnvSync } from './lib/load-dotenv.mjs';
+import { getLocalPlatformProxy } from './lib/local-r2-platform-proxy.mjs';
 import {
 	LOCAL_PAGES_BUILD_META_PATH,
 	PAGES_BUILD_META_KEY,
@@ -220,13 +221,12 @@ const uploadMeta = async (meta, hooks) => {
 };
 
 /**
- * 本地：经 wrangler getPlatformProxy 写入模拟 R2。
+ * 本地：经 wrangler getPlatformProxy（remoteBindings:false）写入模拟 R2。
  * @param {string[]} filesAbs 待上传绝对路径
  * @param {object} meta
  */
 const uploadLocal = async (filesAbs, meta) => {
-	const { getPlatformProxy } = await import('wrangler');
-	const proxy = await getPlatformProxy({ persist: true });
+	const proxy = await getLocalPlatformProxy();
 	try {
 		const bucketBinding = proxy.env.PAGES_BUCKET;
 		if (!bucketBinding) {
@@ -358,8 +358,7 @@ const main = async () => {
 		let getRemoteMetaText;
 		if (local) {
 			getRemoteMetaText = async () => {
-				const { getPlatformProxy } = await import('wrangler');
-				const proxy = await getPlatformProxy({ persist: true });
+				const proxy = await getLocalPlatformProxy();
 				try {
 					const obj = await proxy.env.PAGES_BUCKET?.get(PAGES_BUILD_META_KEY);
 					return obj ? await obj.text() : null;

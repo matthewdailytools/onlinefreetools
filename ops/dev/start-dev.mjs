@@ -9,6 +9,7 @@
  *   node ops/dev/start-dev.mjs --no-build
  *   node ops/dev/start-dev.mjs --no-seed-r2
  *   node ops/dev/start-dev.mjs --no-ops-ui
+ *   node ops/dev/start-dev.mjs --remote-bindings
  *   node ops/dev/start-dev.mjs --port 8787
  *
  * 灌桶失败会直接退出、不启动 wrangler（首页 Assets 200 不能证明新工具页在本地 R2）。
@@ -19,6 +20,10 @@
 import { spawn, execSync } from 'node:child_process';
 import { openSync, unlinkSync } from 'node:fs';
 import path from 'node:path';
+import {
+  writeWranglerConfigWithoutRemoteBindings,
+  WRANGLER_PERSIST_TO,
+} from '../../scripts/lib/local-r2-platform-proxy.mjs';
 import {
   assertNewestToolPageServed,
   cleanupDevServer,
@@ -35,6 +40,7 @@ import {
   hasNoBuildFlag,
   hasNoSeedR2Flag,
   hasNoOpsUiFlag,
+  hasRemoteBindingsFlag,
   isDevServerHealthy,
   isOpsUiHealthy,
   logFilePath,
@@ -84,6 +90,11 @@ const skipBuild = hasNoBuildFlag(argv);
 const skipSeedR2 = hasNoSeedR2Flag(argv);
 /** 是否跳过本地 Ops / sitemap UI */
 const skipOpsUi = hasNoOpsUiFlag(argv);
+/**
+ * 是否允许 wrangler 连 Cloudflare 远程绑定（Workers AI）。
+ * 默认 false：灌桶与 HTML 预览不需要 AI；直连超时会让 start:dev 失败。
+ */
+const enableRemoteBindings = hasRemoteBindingsFlag(argv);
 /** Ops UI 端口（与 SITEMAP_UI_PORT / sitemap-ui.mjs 一致） */
 const opsUiPort = defaultOpsUiPort;
 
@@ -144,7 +155,21 @@ const spawnWrangler = async () => {
   const logFd = openTruncatedLogFd(logFilePath);
 
   const wranglerBin = path.join(projectRoot, 'node_modules', 'wrangler', 'bin', 'wrangler.js');
-  const args = ['dev', '--port', String(port), '--ip', defaultDevHost];
+  /** persist 钉在仓库 `.wrangler/state`，避免 `-c .cache/...` 用空模拟桶导致工具页 404 */
+  const args = [
+    'dev',
+    '--port',
+    String(port),
+    '--ip',
+    defaultDevHost,
+    '--persist-to',
+    WRANGLER_PERSIST_TO,
+  ];
+  if (!enableRemoteBindings) {
+    /** 去掉 AI binding + `--local`：4.58 上仅 remoteBindings:false 仍会连 workers.dev */
+    const localConfig = writeWranglerConfigWithoutRemoteBindings();
+    args.push('--local', '-c', localConfig);
+  }
 
   const child = spawn(process.execPath, [wranglerBin, ...args], {
     cwd: projectRoot,

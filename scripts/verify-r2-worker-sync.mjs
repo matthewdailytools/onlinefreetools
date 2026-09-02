@@ -26,6 +26,7 @@ import {
 	hasR2S3Credentials,
 	s3GetObjectText,
 } from './lib/r2-s3-client.mjs';
+import { getLocalPlatformProxy } from './lib/local-r2-platform-proxy.mjs';
 
 const argv = process.argv.slice(2);
 const local = argv.includes('--local');
@@ -108,8 +109,7 @@ const getRemoteS3ObjectText = (client, key) => s3GetObjectText(client, { bucket,
  * @returns {Promise<string|null>}
  */
 const getLocalObjectText = async (key) => {
-	const { getPlatformProxy } = await import('wrangler');
-	const proxy = await getPlatformProxy({ persist: true });
+	const proxy = await getLocalPlatformProxy();
 	try {
 		const obj = await proxy.env.PAGES_BUCKET.get(key);
 		if (!obj) return null;
@@ -133,8 +133,7 @@ const remoteKeyExists = async (key) => {
  * @param {string} key
  */
 const localKeyExists = async (key) => {
-	const { getPlatformProxy } = await import('wrangler');
-	const proxy = await getPlatformProxy({ persist: true });
+	const proxy = await getLocalPlatformProxy();
 	try {
 		const obj = await proxy.env.PAGES_BUCKET.get(key);
 		return !!obj;

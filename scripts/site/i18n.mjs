@@ -2,6 +2,8 @@ import { sitePageTranslations } from './i18n-site-pages.mjs';
 import { taxonomyTranslations } from './i18n-taxonomy.mjs';
 import { topicTranslations } from './i18n-topics.mjs';
 import { topicGuideTranslations } from './i18n-topics-guides.mjs';
+/** 叶子页决策表 / 工作流 / FAQ 覆盖（build:topic-ig 生成） */
+import { topicIgTranslations } from './i18n-topic-ig.mjs';
 import { toolHomeTranslations } from './i18n-tools.generated.mjs';
 
 const translations = {
@@ -1783,18 +1785,23 @@ const translations = {
 };
 
 /**
- * 查文案：主表 → 站点信息页表 → en/zh 回退 → 返回 key。
+ * 查文案：工具首页分片 → 主表 → 站点信息页 → taxonomy → topic（guides 后被 topic IG 覆盖 title/desc/FAQ）→ en/zh 回退 → 返回 key。
  * @param {string} lang 语言代码
  * @param {string} key 文案键
  * @returns {string}
  */
 export const t = (lang, key) => {
+  /** 该语种主 chrome 表 */
   const table = translations[lang] || translations.en || translations.zh;
+  /** 关于/隐私等站点页 */
   const siteTable = sitePageTranslations[lang] || sitePageTranslations.en || {};
+  /** where-to-use / tool-type 目录 */
   const taxonomyTable = taxonomyTranslations[lang] || taxonomyTranslations.en || {};
+  /** 主题枢纽：基础键 + 旧 guide + IG（后写覆盖 H1/desc/FAQ） */
   const topicTable = {
     ...(topicTranslations[lang] || topicTranslations.en || {}),
     ...(topicGuideTranslations[lang] || topicGuideTranslations.en || {}),
+    ...(topicIgTranslations[lang] || topicIgTranslations.en || {}),
   };
   /** Prefer generated tool-home shards over legacy duplicates in `translations`. */
   const toolHome = toolHomeTranslations[lang] || toolHomeTranslations.en || {};
@@ -1808,11 +1815,13 @@ export const t = (lang, key) => {
     (translations.en && translations.en[key]) ||
     (sitePageTranslations.en && sitePageTranslations.en[key]) ||
     (taxonomyTranslations.en && taxonomyTranslations.en[key]) ||
+    (topicIgTranslations.en && topicIgTranslations.en[key]) ||
     (topicTranslations.en && topicTranslations.en[key]) ||
     (toolHomeTranslations.zh && toolHomeTranslations.zh[key]) ||
     translations.zh[key] ||
     (sitePageTranslations.zh && sitePageTranslations.zh[key]) ||
     (taxonomyTranslations.zh && taxonomyTranslations.zh[key]) ||
+    (topicIgTranslations.zh && topicIgTranslations.zh[key]) ||
     (topicTranslations.zh && topicTranslations.zh[key]) ||
     key
   );

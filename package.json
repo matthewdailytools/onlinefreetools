@@ -14,6 +14,7 @@
     "split:tools": "node scripts/tool-modules/split-once.mjs",
     "merge:tools": "node scripts/tool-modules/merge-all.mjs",
     "tool:touch": "node scripts/bump-tool-updated-at.mjs",
+    "build:topic-ig": "node scripts/site/build-topic-ig.mjs",
     "build:site": "npm run merge:tools && node scripts/build-site.mjs --full",
     "build:site:changed": "npm run merge:tools && node scripts/build-site.mjs --full",
     "build:site:full": "npm run merge:tools && node scripts/build-site.mjs --full",

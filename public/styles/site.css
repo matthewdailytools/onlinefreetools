@@ -84,6 +84,8 @@
   --header-h-multirow: 7.25rem;
   --sidebar-w: 248px;
   --home-max: 1370px;
+  /** 工具页正文上限：窄于首页卡片栅格，避免表单/说明被拉成超宽一行 */
+  --tool-max: 960px;
   --content-max: 100%;
   --home-card-min: 240px;
   --home-card-min-featured: 260px;
@@ -310,10 +312,15 @@ body.is-home-page #content.p-4 {
 }
 
 /**
- * 工具页 / 信息页正文：左右 gutter 与首页 --page-pad-x 一致；
- * 总宽上限对齐 --home-max，避免超宽屏一行过长。
+ * 工具页正文：左右 gutter 与 --page-pad-x 一致；宽度上限 --tool-max（窄于首页 --home-max）。
+ * 信息页仍对齐首页总宽，便于长文与首页视觉一致。
  */
-body.is-tool-page #content,
+body.is-tool-page #content {
+  max-width: calc(var(--tool-max) + 2 * var(--page-pad-x));
+  margin-inline: auto;
+  width: 100%;
+}
+
 body.is-info-page #content {
   max-width: calc(var(--home-max) + 2 * var(--page-pad-x));
   margin-inline: auto;
@@ -548,6 +555,16 @@ body.is-tool-page .tool-lead {
     border: 1px solid color-mix(in srgb, var(--brand) 18%, var(--border));
     border-radius: var(--radius-sm);
     box-shadow: 0 10px 32px rgba(15, 23, 42, 0.14);
+  }
+
+  /**
+   * 工具页巨型菜单不要铺满整条顶栏（left+right 贴边会在宽屏上过宽）。
+   * 首页无此面板，规则只作用 is-tool-page。
+   */
+  body.is-tool-page .tools-mega-panel {
+    left: 0.75rem;
+    right: auto;
+    width: min(64rem, calc(100% - 1.5rem));
   }
 
   /* 不可见热区：盖住顶栏底边到面板顶之间的缝 */
@@ -2230,6 +2247,54 @@ textarea.form-control,
   background: var(--accent-soft) !important;
   color: var(--accent) !important;
   font-weight: 600;
+}
+
+/* Topic leaf IG：决策表横向滚动，避免窄屏挤扁单元格 */
+.topic-ig-table-wrap {
+  overflow-x: auto;
+  margin-bottom: 1.25rem;
+  -webkit-overflow-scrolling: touch;
+}
+.topic-ig-table {
+  width: 100%;
+  min-width: 36rem;
+  border-collapse: collapse;
+  font-size: var(--fs-body);
+}
+.topic-ig-table th,
+.topic-ig-table td {
+  border: 1px solid var(--border, rgba(0, 0, 0, 0.12));
+  padding: 0.55rem 0.7rem;
+  vertical-align: top;
+  text-align: start;
+}
+.topic-ig-table th {
+  font-weight: 600;
+  color: var(--text-strong);
+  background: var(--accent-soft, rgba(0, 0, 0, 0.04));
+}
+.topic-ig-table td.topic-ig-tool {
+  /* 工具名列保持单行，避免把 slug 标题折成多行难扫 */
+  white-space: nowrap;
+}
+.topic-ig-flow {
+  padding-left: 1.2rem;
+}
+.topic-ig-flow li {
+  margin-bottom: 0.4rem;
+}
+.topic-ig-related,
+.topic-ig-refs {
+  /* 跨主题与权威链接做成横向 chip 列表，不占竖向篇幅 */
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+}
+.topic-ig-group-title {
+  font-size: 1.05rem;
+  margin: 1.1rem 0 0.5rem;
 }
 
 @media (max-width: 640px) {

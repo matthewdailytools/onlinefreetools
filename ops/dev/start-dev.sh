@@ -6,6 +6,7 @@
 #   ./ops/dev/start-dev.sh --no-build
 #   ./ops/dev/start-dev.sh --no-ops-ui
 #   ./ops/dev/start-dev.sh --no-seed-r2
+#   ./ops/dev/start-dev.sh --remote-bindings
 #   ./ops/dev/start-dev.sh --port 8788
 #   ./ops/dev/start-dev.sh -p 8788
 #   ./ops/dev/start-dev.sh 8788
@@ -46,6 +47,7 @@ while [[ $# -gt 0 ]]; do
   ./ops/dev/start-dev.sh --no-build
   ./ops/dev/start-dev.sh --no-ops-ui
   ./ops/dev/start-dev.sh --no-seed-r2
+  ./ops/dev/start-dev.sh --remote-bindings
   ./ops/dev/start-dev.sh --port 8788
   ./ops/dev/start-dev.sh -p 8788
   ./ops/dev/start-dev.sh 8788
@@ -59,6 +61,7 @@ while [[ $# -gt 0 ]]; do
   --no-build    跳过完整 build:site（仍会 merge:tools + vendor，仍会灌本地 R2）
   --no-ops-ui   不启动 Ops / sitemap 操作页
   --no-seed-r2  跳过本地 R2 灌桶（预渲染 HTML 将 404，除非桶已有对象）
+  --remote-bindings  允许 Workers AI 远程 preview（须能访问 Cloudflare）
   --port|-p N   wrangler 端口（默认 8787）
 EOF
       exit 0

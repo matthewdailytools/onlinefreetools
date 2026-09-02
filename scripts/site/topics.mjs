@@ -45,6 +45,7 @@ export const TOPIC_I18N_KEYS = Object.fromEntries(
         descKey: `topic_${f}_desc`,
         blurbKey: `topic_${f}_blurb`,
         introKey: `topic_${f}_intro`,
+        /** 旧「如何挑选」段落；叶子页改决策表后不再渲染 */
         chooseTitleKey: `topic_${f}_choose_title`,
         chooseBodyKey: `topic_${f}_choose_body`,
         limitsTitleKey: `topic_${f}_limits_title`,
@@ -58,6 +59,7 @@ export const TOPIC_I18N_KEYS = Object.fromEntries(
         faqQ4Key: `topic_${f}_faq_q4`,
         faqA4Key: `topic_${f}_faq_a4`,
         guideTitleKey: `topic_${f}_guide_title`,
+        /** 旧指南正文；叶子页改决策表后不再渲染 */
         guideBodyKey: `topic_${f}_guide_body`,
       },
     ];
