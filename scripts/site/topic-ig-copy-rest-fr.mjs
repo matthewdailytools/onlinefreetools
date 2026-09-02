@@ -608,7 +608,7 @@ export const buildFrTopics = (expand) => ({
     cites: {},
   }),
   'ai-prompt-template-builder': expand({
-    title: 'Écriture, Midjourney ou agent iOS : quelle page de prompt ?',
+    title: 'Générateurs et constructeurs de prompts : écriture, Midjourney, croquis, film, drama court, design produit, Android et iOS',
     desc: 'Chaque page a des champs différents : les beats de scénario ne sont pas des paramètres Midjourney. Le build local reste sur l’appareil ; l’IA optionnelle utilise Turnstile. Pas d’URL par modèle.',
     intro: 'Pour qui a besoin d’un prompt prêt à coller dans ChatGPT, Gemini, Claude ou DeepSeek. Choisissez la page qui colle à l’artefact, pas à la marque du modèle.',
     tableTitle: 'Associez l’artefact — pas le nom du modèle',

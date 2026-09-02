@@ -8,6 +8,8 @@ import { getToolsByPrimaryTopic, getToolsBySecondaryTopicOnly } from './tool-cat
 import { TOPIC_IG, topicIgSlugKey } from './topic-ig.mjs';
 import { chrome as chromeEn, topics as topicsEn } from './topic-ig-copy-en.mjs';
 import { chrome as chromeZh, topics as topicsZh } from './topic-ig-copy-zh.mjs';
+/** 叶子 H1：禁止 page 当产品名；prompt 簇须写全场景 */
+import { checkTopicLeafTitle } from '../lib/topic-title-heuristics.mjs';
 
 /** @type {Record<string, {chrome: Record<string,string>, topics: typeof topicsEn}>} */
 const PACKS = {
@@ -108,6 +110,8 @@ const validate = (lang, topics) => {
       const n = String(copy.desc || '').length;
       if (n < 120 || n > 160) errors.push(`${lang} ${id}: desc length ${n} (want 120–160)`);
     }
+    // H1：产品类型≠page；prompt 簇须写全场景（见 tool-i18n-localization.mdc）
+    errors.push(...checkTopicLeafTitle(lang, id, copy.title));
   }
   return errors;
 };

@@ -608,7 +608,7 @@ export const buildJaTopics = (expand) => ({
     cites: {},
   }),
   'ai-prompt-template-builder': expand({
-    title: '執筆、Midjourney、iOSエージェント、どのプロンプトページ？',
+    title: '執筆・Midjourney・線画・映画・短編ドラマ・プロダクトデザイン・Android・iOS向けプロンプトビルダーとジェネレーター',
     desc: '各ページの欄は違います。シナリオのビートはMidjourneyパラメータではありません。端末内の組み立ては端末に残り、任意のAIはTurnstileを使います。モデルごとのURLはありません。',
     intro: 'ChatGPT・Gemini・Claude・DeepSeekに貼れるプロンプトが必要な人向けです。モデル名ではなく成果物に合うページを選んでください。',
     tableTitle: '成果物に合わせる — モデル名ではありません',

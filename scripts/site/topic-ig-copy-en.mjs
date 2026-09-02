@@ -1,5 +1,5 @@
 /**
- * Topic leaf IG 英文母版：决策问句 H1、表单元格（须含首页卡片没有的输入/失败事实）、工作流、簇级例、次要理由、FAQ。
+ * Topic leaf IG 英文母版：H1 写用户任务 + 产品类型 + 完整场景（禁止 which X page），表单元格（须含首页卡片没有的输入/失败事实）、工作流、簇级例、次要理由、FAQ。
  * 由 build-topic-ig.mjs 扁平化；勿在生成物里改。
  */
 
@@ -1426,10 +1426,10 @@ export const topics = {
     cites: {},
   },
   'ai-prompt-template-builder': {
-    title: 'Writing, Midjourney, or iOS agent: which prompt page',
+    title: 'AI prompt builders and generators for writing, Midjourney, sketch, film, short drama, product design, Android, and iOS',
     desc: 'Each page has different fields: screenplay beats are not Midjourney parameters. Local Build stays on-device; optional AI uses Turnstile. No per-model URLs.',
     intro:
-      'For creators who need a paste-ready prompt for ChatGPT, Gemini, Claude, or DeepSeek. Pick the page that matches the artifact, not the model brand.',
+      'For creators who need a paste-ready prompt for ChatGPT, Gemini, Claude, or DeepSeek. Pick the builder or generator that matches the artifact, not the model brand.',
     tableTitle: 'Match the artifact—not the model name',
     groups: {
       template: 'Reusable four-field templates',
@@ -1516,7 +1516,7 @@ export const topics = {
     cites: {},
   },
   'text-compare': {
-    title: 'Paste, files, Word, JSON, or Excel: which compare page',
+    title: 'Paste, files, Word, JSON, or Excel compare tools',
     desc: 'Match the object you have: paste, .txt, Word prose, JSON paths, or Excel cells. Do not paste .xlsx into the text-diff box. Local when marked.',
     intro:
       'For reviewers who need to see what changed. Each page loads one kind of input. Prefer no-upload pages for confidential drafts.',

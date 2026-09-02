@@ -608,7 +608,7 @@ export const buildIdTopics = (expand) => ({
     cites: {},
   }),
   'ai-prompt-template-builder': expand({
-    title: 'Tulisan, Midjourney, atau agen iOS: halaman prompt yang mana?',
+    title: 'Pembuat dan generator prompt untuk tulisan, Midjourney, sketsa, film, drama pendek, desain produk, Android, dan iOS',
     desc: 'Setiap halaman punya bidang berbeda: ketukan skenario bukan parameter Midjourney. Build lokal tetap di perangkat; AI opsional memakai Turnstile. Tidak ada URL per model.',
     intro: 'Untuk yang butuh prompt siap tempel ke ChatGPT, Gemini, Claude, atau DeepSeek. Pilih halaman yang cocok dengan artefak, bukan merek model.',
     tableTitle: 'Cocokkan artefak — bukan nama model',

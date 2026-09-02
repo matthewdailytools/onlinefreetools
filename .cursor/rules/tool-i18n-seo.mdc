@@ -1,6 +1,6 @@
 ---
 description: 工具 i18n 必填字段、Information Gain、FAQ 与 meta description 校验
-globs: src/site/i18n/*.ts,scripts/validate-tool-seo.mjs,docs/SEO*.md
+globs: src/site/i18n/*.ts,scripts/validate-tool-seo.mjs,scripts/site/topic-ig-copy*.mjs,scripts/site/i18n-topic-ig.mjs,docs/SEO*.md
 alwaysApply: false
 ---
 
@@ -33,6 +33,14 @@ alwaysApply: false
 
 1. **落入文案**：主词 → H1（`tool_*_title`）；次词 → `description` / FAQ / Use cases 自然句。禁止页上「相关关键词」列表。  
 2. **按语重跑**：每语按当地用户搜索习惯重定 3–5 词并回写落点；禁止英模关键词表直搬/直译验收。
+
+## Title / H1：产品类型与场景（工具页 + topic 叶子）
+
+与 `tool-i18n-localization.mdc`「产品类型用检索词」同条，摘要：
+
+- 用户搜的是 **工具类型**（builder、generator、calculator、compare），不是「哪张 page」。
+- Topic 叶子若对应多场景 URL：H1 须覆盖全部独立场景（或完整分组），禁止为「决策问句」模板只点 3 个。
+- 机器门禁：`lint:seo` → `validate-topic-leaf-titles.mjs`（chrome 名词 + prompt 簇场景覆盖）。
 
 ## Information Gain 最低配额（上线硬性）
 

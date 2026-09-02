@@ -1433,10 +1433,10 @@ export const topics = {
     cites: {},
   },
   'ai-prompt-template-builder': {
-    title: '写作、Midjourney，还是 iOS 智能体：选哪张提示词页',
+    title: '写作、Midjourney、线稿、电影、短剧、产品设计、Android 与 iOS 的 Prompt 构建器与生成器',
     desc: '每页字段不同：剧本节拍不是 Midjourney 参数。本地拼装留在本机；可选人工智能要过 Turnstile。不按模型各开一页。',
     intro:
-      '给需要可粘贴提示词的创作者，面向 ChatGPT、Gemini、Claude 或 DeepSeek。按成品选页，不要按模型牌子选。',
+      '给需要可粘贴提示词的创作者，面向 ChatGPT、Gemini、Claude 或 DeepSeek。按成品选构建器或生成器，不要按模型牌子选。',
     tableTitle: '按成品对齐——不要按模型名',
     groups: {
       template: '可复用的四字段模板',
@@ -1523,7 +1523,7 @@ export const topics = {
     cites: {},
   },
   'text-compare': {
-    title: '粘贴、文件、Word、JSON 还是 Excel：选哪张对比页',
+    title: '粘贴、文件、Word、JSON 与 Excel 文本对比工具',
     desc: '按手头对象选：粘贴、txt、Word 正文、JSON 路径或 Excel 单元格。不要把 xlsx 粘进文本差异框。标明本地时在本机处理。',
     intro:
       '审稿要看改了什么时用。每页只加载一类输入。机密草稿优先不上传页。',

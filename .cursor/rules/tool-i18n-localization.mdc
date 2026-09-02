@@ -1,6 +1,6 @@
 ---
-description: 工具多语言须按检索习惯本地化；Title 禁参数枚举目录腔；稳妥常态工作流；禁止脚本批量同构机翻；≥3 轮核查
-globs: src/site/i18n/*.ts,scripts/site/i18n.mjs,work-tasks/**/*
+description: 工具与 topic 多语言须按检索习惯本地化；Title 禁参数枚举、禁 page 当产品名、场景须写全；禁止脚本批量同构机翻；≥3 轮核查
+globs: src/site/i18n/*.ts,scripts/site/i18n.mjs,scripts/site/topic-ig-copy*.mjs,scripts/site/i18n-topics*.mjs,scripts/site/i18n-topic-ig.mjs,work-tasks/**/*
 alwaysApply: false
 ---
 
@@ -145,6 +145,13 @@ Agent 提示应类似：`Write {lang} copy for users who search: …`（附该�
   - **反例（机械）**：`图片压缩 — 最长边、质量与目标体积（本地处理）`；`Image Compressor — Max Edge, Quality & Target Size Local`
   - **正例（自然）**：`图片压缩 — 缩小尺寸与文件体积，不上传服务器`；`Image Compressor — Shrink photos on your device`
   - 自检：删掉副标题后，主词是否仍是当地人会搜的说法？副标题读起来像不像产品说明书目录？
+- **产品类型用检索词，不用站点 chrome（强制 · 工具页与 `/topics/{id}` 叶子 H1 均适用）**：
+  - Title/H1 写用户会搜的**产品类型**（prompt **builder / generator**、计算器、对比工具、压缩器），**禁止**用 `page` / `页` / `página` / `Seite` / `страница` / `halaman` / `ページ` 当产品名（「which prompt page」「选哪张提示词页」= 机翻 + 站内导航问句，不是检索向）。
+  - 决策表/流程里可以用「这页」指具体 URL；**H1 与 `<title>` 不行**。
+  - 场景簇（多 slug 对应不同控件/产物）：H1 须把**独立场景说全**，或用能覆盖全集的分组（写作 / Midjourney / 线稿 / 电影 / 短剧 / 产品设计 / Android / iOS）。**禁止**为套「A、B, or C」模板只抽 3 个场景。
+  - **禁止**先写中文「选哪张 X 页」再逐语填空；他语须按当地人搜 builder/generator 的说法独立重写。
+  - 反例：`Writing, Midjourney, or iOS agent: which prompt page`；正例：`AI prompt builders and generators for writing, Midjourney, sketch, film, short drama, product design, Android, and iOS`。
+  - Topic 叶子 H1 **不是**强制「决策问句」；问句仅当问的是用户任务（先算 BMI 还是 TDEE），不是「选哪张站内页」。
 - **「本地处理 / 不上传」隐私表述（强制）**：凡声明浏览器内处理的工具（文件、粘贴、PDF、图片等），**desc / FAQ / `home_cat_*_blurb` / 首页 `_desc`** 须用该语用户能立刻听懂的说法，说清「文件留在设备/浏览器」且「不上服务器」。详见下节。
 - **UI 短词本地说**；示例可本地化；技术专名（CRLF、`.env`、Markdown、HTML）可保留。
 - **首页** `scripts/site/i18n.mjs` 主词与工具页一致。
@@ -227,6 +234,7 @@ Agent 提示应类似：`Write {lang} copy for users who search: …`（附该�
 7. **跳过检索覆盖优化**：未做「清单前」slug/title/关键词/desc 分析（步 0b），或 title/description 已生成却未执行步 2 / 步 4，就勾工程/上线清单或标 `i18n-done`。
 8. **跳过用户意图审查**：未对照主词搜索者任务判断满足/超出并回写 How/交互，就标 `02`=`ready`（覆盖表绿 ≠ 意图已对齐）。
 9. **含糊本地/隐私表述**：文件类工具用 `local` / `本地处理` / 半截 `no upload` 等，未按「隐私本地处理表述」说清设备与服务器边界。
+10. **H1 用 page 当产品名 / 场景抽签**：工具或 topic 叶子 title 写成 `which X page` / 「选哪张 X 页」，或场景簇只点 3 个成员套「A、B or C」模板（见写法 · 产品类型）。
 
 **收紧后的通过标准**：
 
@@ -256,6 +264,8 @@ Agent 提示应类似：`Write {lang} copy for users who search: …`（附该�
 | 库名当卖点 | 面向用户写「经典 js-yaml 行为」「用 papaparse」作主张 | 描述可观察行为（如「未加引号的值会被判定类型」）；库名留 References |
 | **关键词列表 SEO** | 页上「相关关键词」块、标签云、无语境词串 | 主词→H1；次词→desc/FAQ/Use cases 自然句 |
 | **英模关键词直搬** | 他语沿用 en 词表不做当地检索重跑 | 每语 brief 3–5 当地词 + 步 3/4 重跑落点 |
+| **page 当产品名** | `which prompt page`；「选哪张提示词页」；`quelle page de prompt` | 当地检索类型：prompt builder / generator、构建器与生成器 |
+| **场景抽签 H1** | 九个场景只写 Writing、Midjourney、iOS 套「A, B, or C」 | 独立场景说全，或用能覆盖全集的分组 |
 
 技术词（diff、JSON、CRLF）在开发者工具中**可以**保留，但不可代替本地主 title。
 
@@ -271,6 +281,7 @@ Agent 提示应类似：`Write {lang} copy for users who search: …`（附该�
 
 - [ ] 每语有 brief（**该语**检索词 3–5 + title 方向 + 按钮说法）
 - [ ] title/H1 为结果或场景向口语，**非**「参数A、参数B、参数C」目录腔（见写法 · Title 自然口语）
+- [ ] title/H1 产品类型是用户搜法（builder/generator 等），**不是** page/页；场景簇已写全，非「A、B or C」抽三个
 - [ ] **相关关键词已落入** H1 / description / FAQ / Use cases（能指出每词所在句）；无关键词列表模块
 - [ ] **每语已按当地检索习惯重跑**关键词（非 en 直译/直搬）
 - [ ] **已做清单前检索覆盖优化**（步 0b：slug/title/关键词/desc；`02`/`notes` 有覆盖表含逐词落点）

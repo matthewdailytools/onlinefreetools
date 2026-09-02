@@ -1,6 +1,7 @@
 /**
  * SEO 校验：description 关键词、长度、FAQ 成对、YMYL disclaimer；
- * 工具图标 SVG；title 参数枚举启发式 + work-tasks 清单前覆盖表门禁。
+ * 工具图标 SVG；title 参数枚举启发式 + work-tasks 清单前覆盖表门禁；
+ * topic 叶子 H1（page 当产品名 / prompt 簇场景覆盖）。
  * 启发式检查，失败时以非零退出码提示 CI。
  * 注意：本脚本通过 ≠ 本地化步 2/4 实质检索判断已完成（见 tool-i18n-localization.mdc）。
  */
@@ -12,6 +13,7 @@ import { validateToolIcons } from './validate-tool-icons.mjs';
 import { validateToolTitleCoverage } from './validate-tool-title-coverage.mjs';
 import { validateAllToolsWithCoverageSection } from './validate-tool-coverage-rounds.mjs';
 import { validateToolLinks } from './validate-tool-links.mjs';
+import { validateTopicLeafTitles } from './validate-topic-leaf-titles.mjs';
 
 const require = createRequire(import.meta.url);
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -187,6 +189,17 @@ if (roundErrs.length === 0) {
   for (const e of roundErrs) console.warn(`[COVER-FAIL] ${e}`);
   console.log(
     `Coverage rounds validator: ${roundErrs.length} issue(s). Run: npm run coverage:gate -- --slug=<slug> --phase=all`
+  );
+  exitCode = exitCode || 2;
+}
+
+const topicTitleErrs = validateTopicLeafTitles();
+if (topicTitleErrs.length === 0) {
+  console.log('Topic leaf title validator: OK — no page-as-product H1; prompt cluster names scenes');
+} else {
+  for (const e of topicTitleErrs) console.warn(`[TOPIC-TITLE] ${e}`);
+  console.log(
+    `Topic leaf title validator: ${topicTitleErrs.length} issue(s). See tool-i18n-localization.mdc 「产品类型用检索词」。`
   );
   exitCode = exitCode || 2;
 }

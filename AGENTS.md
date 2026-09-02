@@ -21,6 +21,8 @@ Read additional rules based on the work area:
   `.cursor/rules/tool-i18n-seo.mdc`, `.cursor/rules/seo-html-defaults.mdc`
 - Tool localization or multilingual copy:
   `.cursor/rules/tool-i18n-localization.mdc`
+- Topic hub/leaf copy (`/topics/{id}`, `scripts/site/topic-ig-copy-*.mjs`):
+  `.cursor/rules/tool-i18n-localization.mdc`, `.cursor/rules/tool-i18n-seo.mdc`
 - New-tool briefs in `work-tasks/`:
   `.cursor/rules/work-tasks-tool-brief.mdc`
 - Cloudflare, Wrangler, vendor assets, deploy scripts, Workers, R2, or Pages:

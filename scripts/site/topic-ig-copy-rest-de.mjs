@@ -608,7 +608,7 @@ export const buildDeTopics = (expand) => ({
     cites: {},
   }),
   'ai-prompt-template-builder': expand({
-    title: 'Schreiben, Midjourney oder iOS-Agent: welche Prompt-Seite?',
+    title: 'Prompt-Builder und -Generatoren für Schreiben, Midjourney, Skizze, Film, Kurzdrama, Produktdesign, Android und iOS',
     desc: 'Jede Seite hat andere Felder: Szenenbeats sind keine Midjourney-Parameter. Lokales Build bleibt auf dem Gerät; optionale KI nutzt Turnstile. Keine URL pro Modell.',
     intro: 'Für alle, die einen Prompt brauchen, den sie in ChatGPT, Gemini, Claude oder DeepSeek kleben. Die Seite wählen, die zum Artefakt passt, nicht zur Modellmarke.',
     tableTitle: 'Das Artefakt zuordnen — nicht den Modellnamen',

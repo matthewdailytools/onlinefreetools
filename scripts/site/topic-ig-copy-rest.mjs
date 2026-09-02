@@ -1426,7 +1426,7 @@ const topicsEs = {
     cites: {},
   },
   'ai-prompt-template-builder': {
-    title: '¿Escritura, Midjourney o agente iOS: qué página de prompt?',
+    title: 'Constructores y generadores de prompts para escritura, Midjourney, boceto, cine, drama corto, diseño de producto, Android e iOS',
     desc: 'Cada página tiene campos distintos: los beats de guion no son parámetros de Midjourney. Build local se queda en el dispositivo; la IA opcional usa Turnstile. No hay una URL por modelo.',
     intro:
       'Para quien necesita un prompt listo para pegar en ChatGPT, Gemini, Claude o DeepSeek. Elige la página que coincide con el artefacto, no con la marca del modelo.',
