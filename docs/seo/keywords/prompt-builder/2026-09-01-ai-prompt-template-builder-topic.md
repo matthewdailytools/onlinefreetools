@@ -73,7 +73,7 @@
 | P0 | S0 收割 | Prompt template builder | `prompt-template-builder` | 四字段 + 场景芯片 |
 | P1 | 写作/随机 | Writing prompt generator | `writing-prompt-generator` | 对白/角色/剧本/Random |
 | P1 | 图像 | Midjourney prompt builder | `midjourney-prompt-builder` | MJ 参数字段 |
-| P1 | 线稿 | Sketch prompt generator | `sketch-prompt-generator` | 媒介/线稿/构图 |
+| P1 | Sketch.app 操作 | Sketch.app prompt generator | `sketch-prompt-generator` | 目标/Artboard/Symbol/导出（非线稿文生图） |
 | P1 | 电影 | Film prompt builder | `film-prompt-builder` | logline/三幕/场景 |
 | P1 | 短剧 | Short drama prompt generator | `short-drama-prompt-generator` | 分集/钩子/cliffhanger |
 | P1 | 产品设计 | Product design prompt builder | `product-design-prompt-builder` | persona/线框/设计令牌 |

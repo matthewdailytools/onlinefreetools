@@ -257,6 +257,52 @@
     "subject": "text"
   },
   {
+    "slug": "check-robots-txt-url-blocked",
+    "path": "/tools/check-robots-txt-url-blocked",
+    "updatedAt": "2026-09-02T13:45:20.949Z",
+    "launchedAt": "2026-09-02T21:00:00.000Z",
+    "category": "developer",
+    "primaryTopic": "seo-growth",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_check_robots_txt_url_blocked_title",
+    "homeTitleKey": "tool_check_robots_txt_url_blocked_title",
+    "homeDescKey": "tool_check_robots_txt_url_blocked_desc",
+    "faqPrefix": "tool_check_robots_txt_url_blocked",
+    "related": [
+      "robots-txt-generator",
+      "website-headers",
+      "on-page-seo-checker"
+    ],
+    "logo": "/icons/tools/check-robots-txt-url-blocked.svg",
+    "localProcessing": false,
+    "scenario": "seo",
+    "subject": "network"
+  },
+  {
+    "slug": "check-ssl-certificate-expiration",
+    "path": "/tools/check-ssl-certificate-expiration",
+    "updatedAt": "2026-09-02T21:03:00.000Z",
+    "launchedAt": "2026-09-02T21:03:00.000Z",
+    "category": "developer",
+    "primaryTopic": "seo-growth",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_check_ssl_certificate_expiration_title",
+    "homeTitleKey": "tool_check_ssl_certificate_expiration_title",
+    "homeDescKey": "tool_check_ssl_certificate_expiration_desc",
+    "faqPrefix": "tool_check_ssl_certificate_expiration",
+    "related": [
+      "website-headers",
+      "domain-lookup",
+      "private-cidr-ranges"
+    ],
+    "logo": "/icons/tools/check-ssl-certificate-expiration.svg",
+    "localProcessing": false,
+    "scenario": "seo",
+    "subject": "network"
+  },
+  {
     "slug": "cidr-cheat-sheet",
     "path": "/tools/cidr-cheat-sheet",
     "updatedAt": "2026-08-31T03:10:00.000Z",
@@ -519,7 +565,7 @@
   {
     "slug": "domain-lookup",
     "path": "/tools/domain-lookup",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-09-02T13:06:44.000Z",
     "category": "developer",
     "primaryTopic": "network-ip",
     "featured": true,
@@ -531,7 +577,9 @@
     "related": [
       "add-www-to-dns",
       "website-headers",
-      "ip-address"
+      "ip-address",
+      "spf-dkim-dmarc-checker",
+      "check-ssl-certificate-expiration"
     ],
     "logo": "/icons/tools/domain-lookup.svg",
     "localProcessing": false,
@@ -637,6 +685,29 @@
     "localProcessing": true,
     "scenario": "developer",
     "subject": "text"
+  },
+  {
+    "slug": "find-and-validate-xml-sitemap",
+    "path": "/tools/find-and-validate-xml-sitemap",
+    "updatedAt": "2026-09-02T21:01:00.000Z",
+    "launchedAt": "2026-09-02T21:01:00.000Z",
+    "category": "developer",
+    "primaryTopic": "seo-growth",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_find_and_validate_xml_sitemap_title",
+    "homeTitleKey": "tool_find_and_validate_xml_sitemap_title",
+    "homeDescKey": "tool_find_and_validate_xml_sitemap_desc",
+    "faqPrefix": "tool_find_and_validate_xml_sitemap",
+    "related": [
+      "sitemap-xml-generator",
+      "indexnow",
+      "on-page-seo-checker"
+    ],
+    "logo": "/icons/tools/find-and-validate-xml-sitemap.svg",
+    "localProcessing": false,
+    "scenario": "seo",
+    "subject": "network"
   },
   {
     "slug": "flip-image",
@@ -2926,7 +2997,7 @@
   {
     "slug": "on-page-seo-checker",
     "path": "/tools/on-page-seo-checker",
-    "updatedAt": "2026-08-11T00:00:00.000Z",
+    "updatedAt": "2026-09-02T13:06:44.000Z",
     "category": "developer",
     "primaryTopic": "seo-growth",
     "featured": false,
@@ -2939,7 +3010,9 @@
       "meta-serp-preview",
       "meta-tag-generator",
       "website-headers",
-      "schema-jsonld-generator"
+      "schema-jsonld-generator",
+      "check-robots-txt-url-blocked",
+      "find-and-validate-xml-sitemap"
     ],
     "logo": "/icons/tools/on-page-seo-checker.svg",
     "localProcessing": false,
@@ -2972,7 +3045,7 @@
   {
     "slug": "open-graph-preview",
     "path": "/tools/open-graph-preview",
-    "updatedAt": "2026-08-11T00:00:00.000Z",
+    "updatedAt": "2026-09-02T13:06:44.000Z",
     "category": "developer",
     "primaryTopic": "seo-growth",
     "secondaryTopics": [
@@ -2987,7 +3060,8 @@
     "related": [
       "meta-tag-generator",
       "meta-serp-preview",
-      "on-page-seo-checker"
+      "on-page-seo-checker",
+      "validate-security-txt"
     ],
     "logo": "/icons/tools/open-graph-preview.svg",
     "localProcessing": false,
@@ -3261,7 +3335,7 @@
   {
     "slug": "robots-txt-generator",
     "path": "/tools/robots-txt-generator",
-    "updatedAt": "2026-08-11T00:00:00.000Z",
+    "updatedAt": "2026-09-02T13:06:44.000Z",
     "category": "developer",
     "primaryTopic": "seo-growth",
     "featured": false,
@@ -3273,7 +3347,8 @@
     "related": [
       "sitemap-xml-generator",
       "website-headers",
-      "indexnow"
+      "indexnow",
+      "check-robots-txt-url-blocked"
     ],
     "logo": "/icons/tools/robots-txt-generator.svg",
     "localProcessing": true,
@@ -3356,7 +3431,7 @@
   {
     "slug": "sitemap-xml-generator",
     "path": "/tools/sitemap-xml-generator",
-    "updatedAt": "2026-08-11T00:00:00.000Z",
+    "updatedAt": "2026-09-02T13:06:44.000Z",
     "category": "developer",
     "primaryTopic": "seo-growth",
     "featured": false,
@@ -3369,7 +3444,8 @@
       "indexnow",
       "robots-txt-generator",
       "website-headers",
-      "hreflang-generator"
+      "hreflang-generator",
+      "find-and-validate-xml-sitemap"
     ],
     "logo": "/icons/tools/sitemap-xml-generator.svg",
     "localProcessing": true,
@@ -3380,7 +3456,7 @@
   {
     "slug": "sketch-prompt-generator",
     "path": "/tools/sketch-prompt-generator",
-    "updatedAt": "2026-09-02T17:30:00.000Z",
+    "updatedAt": "2026-09-02T13:35:36.518Z",
     "launchedAt": "2026-09-02T17:00:00.000Z",
     "category": "developer",
     "primaryTopic": "ai-prompt-template-builder",
@@ -3391,9 +3467,9 @@
     "homeDescKey": "tool_sketch_prompt_generator_desc",
     "faqPrefix": "tool_sketch_prompt_generator",
     "related": [
+      "product-design-prompt-builder",
       "prompt-template-builder",
-      "midjourney-prompt-builder",
-      "film-prompt-builder"
+      "midjourney-prompt-builder"
     ],
     "logo": "/icons/tools/sketch-prompt-generator.svg",
     "localProcessing": true,
@@ -3425,6 +3501,28 @@
     "scenario": "design",
     "subject": "color",
     "launchedAt": "2026-08-08T17:19:34+08:00"
+  },
+  {
+    "slug": "spf-dkim-dmarc-checker",
+    "path": "/tools/spf-dkim-dmarc-checker",
+    "updatedAt": "2026-09-02T21:04:00.000Z",
+    "launchedAt": "2026-09-02T21:04:00.000Z",
+    "category": "developer",
+    "primaryTopic": "seo-growth",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_spf_dkim_dmarc_checker_title",
+    "homeTitleKey": "tool_spf_dkim_dmarc_checker_title",
+    "homeDescKey": "tool_spf_dkim_dmarc_checker_desc",
+    "faqPrefix": "tool_spf_dkim_dmarc_checker",
+    "related": [
+      "domain-lookup",
+      "website-headers"
+    ],
+    "logo": "/icons/tools/spf-dkim-dmarc-checker.svg",
+    "localProcessing": false,
+    "scenario": "seo",
+    "subject": "network"
   },
   {
     "slug": "split-pdf",
@@ -3727,6 +3825,29 @@
     "launchedAt": "2026-08-08T19:34:20+08:00"
   },
   {
+    "slug": "validate-security-txt",
+    "path": "/tools/validate-security-txt",
+    "updatedAt": "2026-09-02T21:02:00.000Z",
+    "launchedAt": "2026-09-02T21:02:00.000Z",
+    "category": "developer",
+    "primaryTopic": "seo-growth",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_validate_security_txt_title",
+    "homeTitleKey": "tool_validate_security_txt_title",
+    "homeDescKey": "tool_validate_security_txt_desc",
+    "faqPrefix": "tool_validate_security_txt",
+    "related": [
+      "website-headers",
+      "on-page-seo-checker",
+      "open-graph-preview"
+    ],
+    "logo": "/icons/tools/validate-security-txt.svg",
+    "localProcessing": false,
+    "scenario": "seo",
+    "subject": "network"
+  },
+  {
     "slug": "wcag-contrast-checker",
     "path": "/tools/wcag-contrast-checker",
     "updatedAt": "2026-08-09T00:00:00.000Z",
@@ -3755,7 +3876,7 @@
   {
     "slug": "website-headers",
     "path": "/tools/website-headers",
-    "updatedAt": "2026-08-11T00:00:00.000Z",
+    "updatedAt": "2026-09-02T13:07:05.000Z",
     "category": "developer",
     "primaryTopic": "network-ip",
     "secondaryTopics": [
@@ -3769,11 +3890,11 @@
     "faqPrefix": "tool_headers",
     "related": [
       "ip-address",
-      "add-www-to-dns",
-      "indexnow",
-      "markdown-to-html",
-      "text-diff",
-      "core-web-vitals-checker"
+      "domain-lookup",
+      "validate-security-txt",
+      "check-ssl-certificate-expiration",
+      "on-page-seo-checker",
+      "check-robots-txt-url-blocked"
     ],
     "logo": "/icons/tools/website-headers.svg",
     "localProcessing": false,

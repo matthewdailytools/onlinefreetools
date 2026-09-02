@@ -1,0 +1,28 @@
+{
+  "slug": "validate-security-txt",
+  "path": "/tools/validate-security-txt",
+  "updatedAt": "2026-09-02T21:02:00.000Z",
+  "launchedAt": "2026-09-02T21:02:00.000Z",
+  "category": "developer",
+  "primaryTopic": "seo-growth",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_validate_security_txt_title",
+  "homeTitleKey": "tool_validate_security_txt_title",
+  "homeDescKey": "tool_validate_security_txt_desc",
+  "faqPrefix": "tool_validate_security_txt",
+  "related": [
+    "website-headers",
+    "on-page-seo-checker",
+    "open-graph-preview"
+  ],
+  "logo": "/icons/tools/validate-security-txt.svg",
+  "page": {
+    "module": "../pages/validateSecurityTxtPage",
+    "export": "renderValidateSecurityTxtPage",
+    "style": "opts"
+  },
+  "localProcessing": false,
+  "scenario": "seo",
+  "subject": "network"
+}

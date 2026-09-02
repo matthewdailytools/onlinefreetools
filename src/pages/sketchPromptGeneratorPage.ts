@@ -1,5 +1,6 @@
 /**
- * Sketch prompt generator：场景字段本地组装 + 可选 Cloudflare AI（Turnstile）。
+ * Sketch.app prompt generator：组装「让 AI 操作 Sketch.app」的可粘贴 Prompt + 可选 Cloudflare AI（Turnstile）。
+ * 意图：Mac 设计软件 Sketch.app 的 Artboard / Symbol / 导出步骤——不是铅笔线稿文生图。
  * slug: sketch-prompt-generator；见 work-tasks/sketch-prompt-generator/02-tool-info.md。
  */
 import type { SiteLang } from '../site/i18n';
@@ -52,7 +53,7 @@ const withLangPrefix = (lang: SiteLang, pathname: string, defaultLang: SiteLang)
 const tx = (lang: SiteLang, suffix: string) => t(lang, `${PREFIX}_${suffix}` as Parameters<typeof t>[1]);
 
 /**
- * 渲染 Sketch prompt generator 工具页。
+ * 渲染 Sketch.app prompt generator 工具页。
  * @param opts.lang 当前 UI 语言
  * @param opts.defaultLang 默认（无前缀）语言
  * @param opts.enabledLangs 启用语言列表
@@ -131,10 +132,10 @@ export const renderSketchPromptGeneratorPage = (opts: {
 
     <div class="tool-panel">
       <div class="row g-3 mb-3">
-          <div class="col-md-6"><label class="form-label" for="skgMedium">${escapeHtml(tx(opts.lang, 'medium_label'))}</label><input id="skgMedium" class="form-control skg-field" type="text" spellcheck="false" placeholder="${escapeHtml(tx(opts.lang, 'medium_ph'))}"></input></div>
-          <div class="col-md-6"><label class="form-label" for="skgStroke">${escapeHtml(tx(opts.lang, 'stroke_label'))}</label><input id="skgStroke" class="form-control skg-field" type="text" spellcheck="false" placeholder="${escapeHtml(tx(opts.lang, 'stroke_ph'))}"></input></div>
-          <div class="col-md-6"><label class="form-label" for="skgComposition">${escapeHtml(tx(opts.lang, 'composition_label'))}</label><input id="skgComposition" class="form-control skg-field" type="text" spellcheck="false" placeholder="${escapeHtml(tx(opts.lang, 'composition_ph'))}"></input></div>
-          <div class="col-md-6"><label class="form-label" for="skgArtistRef">${escapeHtml(tx(opts.lang, 'artist_ref_label'))}</label><input id="skgArtistRef" class="form-control skg-field" type="text" spellcheck="false" placeholder="${escapeHtml(tx(opts.lang, 'artist_ref_ph'))}"></input></div>
+          <div class="col-md-6"><label class="form-label" for="skgGoal">${escapeHtml(tx(opts.lang, 'goal_label'))}</label><input id="skgGoal" class="form-control skg-field" type="text" spellcheck="false" placeholder="${escapeHtml(tx(opts.lang, 'goal_ph'))}"></input></div>
+          <div class="col-md-6"><label class="form-label" for="skgArtboard">${escapeHtml(tx(opts.lang, 'artboard_label'))}</label><input id="skgArtboard" class="form-control skg-field" type="text" spellcheck="false" placeholder="${escapeHtml(tx(opts.lang, 'artboard_ph'))}"></input></div>
+          <div class="col-md-6"><label class="form-label" for="skgSymbols">${escapeHtml(tx(opts.lang, 'symbols_label'))}</label><input id="skgSymbols" class="form-control skg-field" type="text" spellcheck="false" placeholder="${escapeHtml(tx(opts.lang, 'symbols_ph'))}"></input></div>
+          <div class="col-md-6"><label class="form-label" for="skgExport">${escapeHtml(tx(opts.lang, 'export_label'))}</label><input id="skgExport" class="form-control skg-field" type="text" spellcheck="false" placeholder="${escapeHtml(tx(opts.lang, 'export_ph'))}"></input></div>
       </div>
 
 
@@ -173,12 +174,12 @@ export const renderSketchPromptGeneratorPage = (opts: {
 		lang: opts.lang,
 		links: [
 			{
-				label: 'OpenAI — Prompt engineering guide',
-				href: 'https://platform.openai.com/docs/guides/prompt-engineering',
+				label: 'Sketch — Documentation',
+				href: 'https://www.sketch.com/docs/',
 			},
 			{
-				label: 'Anthropic — Prompt engineering overview',
-				href: 'https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview',
+				label: 'Sketch Developer — Platform overview',
+				href: 'https://developer.sketch.com/',
 			},
 		],
 	});
@@ -239,10 +240,10 @@ export const renderSketchPromptGeneratorPage = (opts: {
 
       function collectFields() {
         return {
-          medium: val(document.getElementById('skgMedium')),
-          stroke: val(document.getElementById('skgStroke')),
-          composition: val(document.getElementById('skgComposition')),
-          artist_ref: val(document.getElementById('skgArtistRef'))
+          goal: val(document.getElementById('skgGoal')),
+          artboard: val(document.getElementById('skgArtboard')),
+          symbols: val(document.getElementById('skgSymbols')),
+          export_ops: val(document.getElementById('skgExport'))
         };
       }
 
@@ -252,15 +253,15 @@ export const renderSketchPromptGeneratorPage = (opts: {
 
       function buildBlocks(f) {
         var taskParts = '';
-        if (f.medium) taskParts += 'Medium: ' + f.medium + '\\n';
-        if (f.stroke) taskParts += 'Stroke: ' + f.stroke + '\\n';
-        if (f.composition) taskParts += 'Composition: ' + f.composition + '\\n';
-        if (f.artist_ref) taskParts += 'Artist / Ref: ' + f.artist_ref + '\\n';
+        if (f.goal) taskParts += 'Goal: ' + f.goal + '\\n';
+        if (f.artboard) taskParts += 'Artboards: ' + f.artboard + '\\n';
+        if (f.symbols) taskParts += 'Symbols / styles: ' + f.symbols + '\\n';
+        if (f.export_ops) taskParts += 'Export / handoff: ' + f.export_ops + '\\n';
         return {
-          role: 'You are an art-direction assistant for hand-drawn sketch prompts.',
-          task: 'Assemble a structured prompt from these inputs:\\n' + (taskParts || '(unspecified)'),
-          constraints: 'Stay factual. Do not execute tools or APIs. Keep paste-ready for chat UIs.',
-          output: 'Markdown sections: Role, Task, Constraints, Output — plus a one-paragraph summary block.'
+          role: 'You are an assistant that writes numbered steps for operating Sketch.app (the Mac UI/design tool by Sketch B.V.). Cover Pages, Artboards, Symbols, Shared Styles, Libraries, and Export. Do not write Midjourney or pencil line-art image prompts.',
+          task: 'From these inputs, produce a paste-ready brief so a chat AI can guide a human (or Sketch plugin author) through Sketch.app:\\n' + (taskParts || '(unspecified)'),
+          constraints: 'Assume Sketch.app on macOS. Prefer built-in features over third-party plugins unless named. Do not claim you can remote-control Sketch from this browser. Stay paste-ready for chat UIs.',
+          output: 'Markdown: Role, Task, Constraints, Output — include an ordered checklist of Sketch.app clicks/menus plus export filenames.'
         };
       }
 
@@ -297,10 +298,10 @@ export const renderSketchPromptGeneratorPage = (opts: {
 
       function applyPreset() {
         var preset = PRESET;
-        document.getElementById('skgMedium').value = preset.medium || '';
-        document.getElementById('skgStroke').value = preset.stroke || '';
-        document.getElementById('skgComposition').value = preset.composition || '';
-        document.getElementById('skgArtistRef').value = preset.artist_ref || '';
+        document.getElementById('skgGoal').value = preset.goal || '';
+        document.getElementById('skgArtboard').value = preset.artboard || '';
+        document.getElementById('skgSymbols').value = preset.symbols || '';
+        document.getElementById('skgExport').value = preset.export_ops || '';
         var mdRadio = document.getElementById('skgFmtMd');
         if (mdRadio) mdRadio.checked = true;
         buildPrompt();
@@ -335,8 +336,8 @@ export const renderSketchPromptGeneratorPage = (opts: {
           return;
         }
         var firstLine = (text || '').split('\\n')[0] || '';
-        var subj = document.getElementById('skgMedium');
-        if (subj && firstLine) subj.value = firstLine.slice(0, 500);
+        var goalEl = document.getElementById('skgGoal');
+        if (goalEl && firstLine) goalEl.value = firstLine.slice(0, 500);
         buildPrompt();
       };
 

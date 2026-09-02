@@ -1,160 +1,105 @@
 /**
  * i18n tool shard (sketch-prompt-generator / ja).
- * 检索向独立重写；title 含「本地 + 可选 AI」；description 含本地默认与 Cloudflare AI Expand/Polish + Turnstile。
+ * H1: Sketch.appプロンプトジェネレーター（Macデザインソフト操作。鉛筆線画の文生図ではない）。
  */
 import type { SiteLangDict } from '../../../types';
 
 const ja: SiteLangDict = {
 	tool_sketch_prompt_generator_article:
-		'このページで スケッチPromptジェネレーター 用 Prompt を作成。項目入力後 Markdown/JSON を ChatGPT/Gemini/Claude/DeepSeek へ。既定ローカル；任意 Expand/Polish は Cloudflare Workers AI（Turnstile）。',
-	tool_sketch_prompt_generator_build:
-		'Prompt を作成',
-	tool_sketch_prompt_generator_clear:
-		'クリア',
-	tool_sketch_prompt_generator_copy:
-		'コピー',
+		'ChatGPT / Gemini / Claude / DeepSeek に Sketch.app の操作手順（アートボード・シンボル・共有スタイル・書き出し）を案内させるためのプロンプトを、このページで組み立てます。フィールド入力後に Markdown / JSON をコピー。既定は端末内組み立て。任意の Expand/Polish は Turnstile 付き Cloudflare Workers AI。AI を使わなければテキストは端末内のままです。',
+	tool_sketch_prompt_generator_build: 'プロンプトを作成',
+	tool_sketch_prompt_generator_clear: 'クリア',
+	tool_sketch_prompt_generator_copy: 'コピー',
 	tool_sketch_prompt_generator_desc:
-		'スケッチPromptジェネレーター — ローカル既定、任意 Cloudflare AI 拡張/推敲（Turnstile）；Markdown/JSON は端末内。',
+		'Sketch.appプロンプトジェネレーター — 既定はローカル、任意で Cloudflare AI の Expand/Polish（Turnstile）。Markdown/JSON は端末内。',
 	tool_sketch_prompt_generator_description:
-		'手順と例：スケッチPromptジェネレーター — ローカル + オプションAI（ChatGPT/Gemini/Claude/DeepSeek）：既定はブラウザ内ローカル組み立て、任意で Cloudflare Workers AI Expand/Polish（Turnstile 必須・レート制限）。初回表示でサンプル。Markdown 既定。AI 未使用時は端末外に出ません。',
-	tool_sketch_prompt_generator_download:
-		'ダウンロード',
-	tool_sketch_prompt_generator_empty:
-		'作成前に少なくとも1項目を入力してください。',
+		'Sketch.appプロンプトジェネレーター — ローカル + オプションAI：ChatGPT・Gemini・Claude・DeepSeek向けに、Sketch.app の設計手順（アートボード、シンボル、書き出し）を構造化プロンプトとしてブラウザ内で組み立て。任意で Cloudflare Workers AI の Expand/Polish（Turnstile必須・上限あり）。初回表示でサンプル実行。既定 Markdown、パイプライン向け JSON。AI を使わない限りテキストはサーバーに上がりません。',
+	tool_sketch_prompt_generator_download: 'ダウンロード',
+	tool_sketch_prompt_generator_empty: '作成前に少なくとも1つの欄を入力してください。',
 	tool_sketch_prompt_generator_example:
-		'入力：Medium = 暖色グレー紙の石墨；Stroke = カケ打ち；Composition = 3/4ポートレート；Ref = Kim Jung Gi。出力（Markdown）：## Task → Medium / Stroke / Composition / Artist。',
-	tool_sketch_prompt_generator_example_title:
-		'例',
+		'入力：目標 = Sketch.app のログイン画面、アートボード = iPhone 14 390×844、シンボル = Button/Primary + Input、書き出し = 1x/2x/3x PNG + PDF。出力（Markdown）：## Role → Sketch.app 操作アシスタント、## Task → 番号付きチェックリスト。',
+	tool_sketch_prompt_generator_example_title: '例',
 	tool_sketch_prompt_generator_faq_a1:
-		'既定はこのタブ内ローカル。任意 Expand/Polish はそのクリック分のみ Cloudflare Workers AI へ。',
+		'ローカル組み立てはこのタブ内のみで、既定ではアップロードしません。任意の Expand/Polish はそのクリック分のテキストだけを Cloudflare Workers AI に送り、当サーバーから OpenAI / Google / Anthropic / DeepSeek には送りません。',
 	tool_sketch_prompt_generator_faq_a2:
-		'ローカルはこのタブのみ。任意 AI は Turnstile 後 Cloudflare Workers AI — チャット API は呼びません。',
+		'ローカルは欄の整形のみ。任意 AI は Turnstile 後に Cloudflare Workers AI を使い、チャット API 呼び出しや Sketch.app の遠隔操作はしません。',
 	tool_sketch_prompt_generator_faq_a3:
-		'Promptテンプレートビルダー covers generic Role/Task/Constraints/Output templates. This page focuses on sketch prompt generator fields with a dedicated sample and rules for this scenario.',
+		'Promptテンプレートビルダーは汎用4欄。本ページは Sketch.app の目標・アートボード・シンボル／スタイル・書き出しに特化します。',
 	tool_sketch_prompt_generator_faq_a4:
-		'はい。Expand/Polish 前に Turnstile を完了してください。',
+		'いいえ。Midjourney 向けはラスター画像スタイル用。ここは Mac のデザインソフト Sketch.app の操作手順用です。鉛筆線画の画像プロンプトは Midjourney ページを使ってください。',
 	tool_sketch_prompt_generator_faq_a5:
-		'Yes. The JSON chip emits structured fields plus assembled prompt text for tests or config pipelines.',
-	tool_sketch_prompt_generator_faq_a6:
-		'Yes. Copy the finished prompt into ChatGPT, Gemini, Claude, or DeepSeek. We do not split URLs per platform because the job is formatting text, not calling APIs.',
-	tool_sketch_prompt_generator_faq_q1:
-		'Is my prompt uploaded?',
-	tool_sketch_prompt_generator_faq_q2:
-		'Does this call ChatGPT or other LLM APIs?',
-	tool_sketch_prompt_generator_faq_q3:
-		'How is this different from Promptテンプレートビルダー?',
-	tool_sketch_prompt_generator_faq_q4:
-		'任意 AI に Turnstile が必要な理由は？',
-	tool_sketch_prompt_generator_faq_q5:
-		'Can I get JSON output?',
-	tool_sketch_prompt_generator_faq_q6:
-		'Can I use this with ChatGPT, Gemini, Claude, or DeepSeek?',
-	tool_sketch_prompt_generator_faq_q7:
-		'ローカルと任意 Cloudflare AI の違いは？',
+		'はい。Expand / Polish の前に任意 AI パネルで Turnstile を完了してください。トークンが無いと AI はエラーになり、ローカルは引き続き使えます。',
+	tool_sketch_prompt_generator_faq_a6: 'はい。JSON チップは構造化フィールドと組み立て済みプロンプトを出します。',
 	tool_sketch_prompt_generator_faq_a7:
-		'ローカルはこのタブのみ非アップロード。任意 Expand/Polish は Cloudflare Workers AI（Turnstile・制限）。',
-	tool_sketch_prompt_generator_ai_expand:
-		'AI で拡張',
-	tool_sketch_prompt_generator_ai_polish:
-		'AI で推敲',
-	tool_sketch_prompt_generator_ai_panel_label:
-		'任意 Cloudflare AI（Turnstile）',
-	tool_sketch_prompt_generator_ai_consent_title:
-		'Cloudflare Workers AI に送信しますか？',
+		'はい。完成プロンプトを ChatGPT などに貼り、Sketch.app のメニュー操作を案内させられます。テキスト整形のみで、Sketch 自体は実行しません。',
+	tool_sketch_prompt_generator_faq_a8:
+		'ローカルはタブ内整形のみ（非アップロード）。任意 Expand/Polish は Cloudflare Workers AI（Turnstile・上限）。失敗時はローカルを継続。',
+	tool_sketch_prompt_generator_faq_q1: 'プロンプトはアップロードされますか？',
+	tool_sketch_prompt_generator_faq_q2: 'ChatGPT 呼び出しや Sketch.app の遠隔操作はしますか？',
+	tool_sketch_prompt_generator_faq_q3: 'Promptテンプレートビルダーとの違いは？',
+	tool_sketch_prompt_generator_faq_q4: '鉛筆スケッチや Midjourney 線画プロンプト用ですか？',
+	tool_sketch_prompt_generator_faq_q5: '任意 AI に Turnstile が必要な理由は？',
+	tool_sketch_prompt_generator_faq_q6: 'JSON 出力はできますか？',
+	tool_sketch_prompt_generator_faq_q7: 'ChatGPT / Gemini / Claude / DeepSeek で使えますか？',
+	tool_sketch_prompt_generator_faq_q8: 'ローカルと任意 Cloudflare AI の違いは？',
+	tool_sketch_prompt_generator_ai_expand: 'AIで拡充',
+	tool_sketch_prompt_generator_ai_polish: 'AIで整える',
+	tool_sketch_prompt_generator_ai_panel_label: '任意の Cloudflare AI（Turnstile）',
+	tool_sketch_prompt_generator_ai_consent_title: 'Cloudflare Workers AI にテキストを送りますか？',
 	tool_sketch_prompt_generator_ai_consent_body:
-		'任意のステップで下書きを Cloudflare Workers AI に送ります。当サーバーから OpenAI 等には送りません。',
-	tool_sketch_prompt_generator_ai_consent_ok:
-		'続行',
-	tool_sketch_prompt_generator_ai_consent_cancel:
-		'キャンセル',
-	tool_sketch_prompt_generator_ai_working:
-		'Cloudflare AI 処理中…',
-	tool_sketch_prompt_generator_ai_done:
-		'AI 提案を適用しました。コピー前に確認してください。',
-	tool_sketch_prompt_generator_ai_err_generic:
-		'AI 失敗。ローカル Prompt は変更されていません。',
-	tool_sketch_prompt_generator_ai_err_rate:
-		'AI クォータ到達。ローカルモードか明日（UTC）再試行。',
-	tool_sketch_prompt_generator_ai_err_turnstile:
-		'AI 利用前に Turnstile を完了してください。',
-	tool_sketch_prompt_generator_fmt_json:
-		'JSON',
-	tool_sketch_prompt_generator_fmt_label:
-		'出力形式',
-	tool_sketch_prompt_generator_fmt_md:
-		'Markdown',
-	tool_sketch_prompt_generator_medium_label:
-		'Medium',
-	tool_sketch_prompt_generator_medium_ph:
-		'Sample medium…',
-	tool_sketch_prompt_generator_stroke_label:
-		'Stroke',
-	tool_sketch_prompt_generator_stroke_ph:
-		'Sample stroke…',
-	tool_sketch_prompt_generator_composition_label:
-		'Composition',
-	tool_sketch_prompt_generator_composition_ph:
-		'Sample composition…',
-	tool_sketch_prompt_generator_artist_ref_label:
-		'Artist / Ref',
-	tool_sketch_prompt_generator_artist_ref_ph:
-		'Sample artist ref…',
+		'この任意ステップは下書きを Cloudflare Workers AI に送ります。当サーバーから OpenAI / Google / Anthropic / DeepSeek には送りません。AI なしでもローカル組み立ては使えます。',
+	tool_sketch_prompt_generator_ai_consent_ok: '続ける',
+	tool_sketch_prompt_generator_ai_consent_cancel: 'キャンセル',
+	tool_sketch_prompt_generator_ai_working: 'Cloudflare AI 処理中…',
+	tool_sketch_prompt_generator_ai_done: 'AI 提案を適用しました。コピー前に確認してください。',
+	tool_sketch_prompt_generator_ai_err_generic: 'AI に失敗しました。ローカルプロンプトは変更されていません。',
+	tool_sketch_prompt_generator_ai_err_rate: 'AI 上限に達しました。ローカルを使うか明日（UTC）再試行してください。',
+	tool_sketch_prompt_generator_ai_err_turnstile: 'AI 利用前に Turnstile を完了してください。',
+	tool_sketch_prompt_generator_fmt_json: 'JSON',
+	tool_sketch_prompt_generator_fmt_label: '出力形式',
+	tool_sketch_prompt_generator_fmt_md: 'Markdown',
+	tool_sketch_prompt_generator_goal_label: '目標 / 成果物',
+	tool_sketch_prompt_generator_goal_ph: '例: Sketch.app でログイン画面…',
+	tool_sketch_prompt_generator_artboard_label: 'アートボード / ページ',
+	tool_sketch_prompt_generator_artboard_ph: '例: iPhone 14 390×844、Page Auth…',
+	tool_sketch_prompt_generator_symbols_label: 'シンボル / スタイル / ライブラリ',
+	tool_sketch_prompt_generator_symbols_ph: '例: Button/Primary、Shared Styles…',
+	tool_sketch_prompt_generator_export_label: '書き出し / 引き渡し',
+	tool_sketch_prompt_generator_export_ph: '例: 1x/2x/3x PNG、PDF レビュー…',
 	tool_sketch_prompt_generator_how_body:
-		'スケッチPromptジェネレーター の項目を入力し、ローカルで Prompt を組み立て、任意で Turnstile 後に Expand/Polish、ChatGPT/Gemini/Claude/DeepSeek へ貼り付け。',
-	tool_sketch_prompt_generator_how_item_1:
-		'ページ表示時にサンプルが自動実行済み（サンプルを読み込む）。',
-	tool_sketch_prompt_generator_how_item_2:
-		'Edit fields, click Build prompt, or switch to JSON if you need structured export.',
-	tool_sketch_prompt_generator_how_item_3:
-		'任意：Turnstile 完了後、Cloudflare Workers AI で拡張/推敲。',
-	tool_sketch_prompt_generator_how_item_4:
-		'コピー/ダウンロードし、ChatGPT/Gemini/Claude/DeepSeek に貼り付け。',
-	tool_sketch_prompt_generator_how_title:
-		'使い方',
-	tool_sketch_prompt_generator_load_sample:
-		'サンプルを読み込む',
+		'Sketch.app 用フィールドを埋め、ローカルでプロンプトを作り、任意で Turnstile 後に Expand/Polishし、チャット AI に貼って Sketch.app 手順を案内させます。',
+	tool_sketch_prompt_generator_how_item_1: '初回表示でログイン画面のサンプルが既に入っています。',
+	tool_sketch_prompt_generator_how_item_2: '目標・アートボード・シンボル・書き出しを編集し「プロンプトを作成」、または JSON に切替。',
+	tool_sketch_prompt_generator_how_item_3: '任意: Turnstile 完了後、Cloudflare Workers AI で拡充または整形。',
+	tool_sketch_prompt_generator_how_item_4: 'コピーまたはダウンロードし、チャットに貼って Sketch.app チェックリストに従う。',
+	tool_sketch_prompt_generator_how_title: '使い方',
+	tool_sketch_prompt_generator_load_sample: 'サンプルを読み込む',
 	tool_sketch_prompt_generator_platforms_lead:
-		'ChatGPT、Gemini、Claude、DeepSeek 向け — 完成 Prompt を任意のチャット UI に貼り付け。',
-	tool_sketch_prompt_generator_result_label:
-		'Prompt 出力',
+		'ChatGPT / Gemini / Claude / DeepSeek 向け — 完成プロンプトをコピーして Sketch.app 操作を案内させます。',
+	tool_sketch_prompt_generator_result_label: 'プロンプト出力',
 	tool_sketch_prompt_generator_rules_body:
-		'スケッチPromptジェネレーター：既定ローカル；任意 Cloudflare AI はレート制限＋Turnstile。',
-	tool_sketch_prompt_generator_rules_item_1:
-		'Structured fields map to Role/Task/Constraints/Output blocks in Markdown export.',
-	tool_sketch_prompt_generator_rules_item_2:
-		'Default export is Markdown. JSON is a chip on the same canvas.',
-	tool_sketch_prompt_generator_rules_item_3:
-		'任意 Cloudflare AI はローカルを置き換えない — コピー前に確認。',
+		'欄は Sketch.app の成果物・アートボード・シンボル・書き出しに対応。既定はローカル。任意 AI は Turnstile と上限あり。本ページは Sketch.app を起動しません。',
+	tool_sketch_prompt_generator_rules_item_1: '構造化フィールドは Markdown の Role/Task/Constraints/Output に対応。',
+	tool_sketch_prompt_generator_rules_item_2: '既定は Markdown。同じ画面で JSON も選択可。',
+	tool_sketch_prompt_generator_rules_item_3: '任意 Cloudflare AI はローカルの代替ではない — コピー前に確認。',
 	tool_sketch_prompt_generator_rules_item_4:
-		'This tool assembles text only; it does not run sketch prompt generator engines or call chat APIs locally.',
-	tool_sketch_prompt_generator_rules_title:
-		'知っておくルール',
-	tool_sketch_prompt_generator_sec_constraints:
-		'Constraints',
-	tool_sketch_prompt_generator_sec_output:
-		'Output format',
-	tool_sketch_prompt_generator_sec_role:
-		'Role',
-	tool_sketch_prompt_generator_sec_task:
-		'Task',
-	tool_sketch_prompt_generator_status_copied:
-		'クリップボードにコピーしました。',
-	tool_sketch_prompt_generator_status_done:
-		'Prompt 準備完了。',
-	tool_sketch_prompt_generator_status_working:
-		'Prompt を作成中…',
-	tool_sketch_prompt_generator_title:
-		'スケッチPromptジェネレーター — ローカル + オプションAI',
+		'テキスト組み立てのみ。Sketch.app・プラグイン・Midjourney・チャット API はローカルでは実行しません。',
+	tool_sketch_prompt_generator_rules_title: '想定されるルール',
+	tool_sketch_prompt_generator_sec_constraints: '制約',
+	tool_sketch_prompt_generator_sec_output: '出力形式',
+	tool_sketch_prompt_generator_sec_role: '役割',
+	tool_sketch_prompt_generator_sec_task: 'タスク',
+	tool_sketch_prompt_generator_status_copied: 'クリップボードにコピーしました。',
+	tool_sketch_prompt_generator_status_done: 'プロンプト準備完了。',
+	tool_sketch_prompt_generator_status_working: '作成中…',
+	tool_sketch_prompt_generator_title: 'Sketch.appプロンプトジェネレーター — ローカル + オプションAI',
 	tool_sketch_prompt_generator_usecase_1:
-		'ChatGPT/Gemini/Claude/DeepSeek 用に スケッチPromptジェネレーター ブリーフをチーム共有。',
-	tool_sketch_prompt_generator_usecase_2:
-		'Export JSON for a pipeline test, then refine with optional Cloudflare AI after Turnstile.',
+		'アートボード寸法とシンボル名をチームのチャット AI に渡し、Sketch.app で画面を再現させる。',
+	tool_sketch_prompt_generator_usecase_2: 'デザイン QA 前に PNG / PDF 書き出しチェックリストを用意する。',
 	tool_sketch_prompt_generator_usecase_3:
-		'Compare with Prompt template builder when you need generic four-field templates instead of this scenario.',
-	tool_sketch_prompt_generator_usecase_4:
-		'機密下書きはローカル — 同意後のみ AI。',
-	tool_sketch_prompt_generator_usecases_title:
-		'向いている用途',
+		'ペルソナ／ワイヤーの製品思考が主目的なら Product design prompt builder と比較。',
+	tool_sketch_prompt_generator_usecase_4: '機微な下書きはローカルに留め、同意後だけ AI を使う。',
+	tool_sketch_prompt_generator_usecases_title: '向いている場面',
 };
 
 export default ja;

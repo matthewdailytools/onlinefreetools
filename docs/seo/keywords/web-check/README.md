@@ -9,6 +9,9 @@
 | [`2026-09-02-web-check-tools-inventory.md`](./2026-09-02-web-check-tools-inventory.md) | 能力清单、用户作业、搜索词 |
 | [`2026-09-02-web-check-bing-queries.txt`](./2026-09-02-web-check-bing-queries.txt) | Bing 词表（15） |
 | [`2026-09-02-web-check-bing-serp.md`](./2026-09-02-web-check-bing-serp.md) | **权威 SERP**：CloakBrowser Bing×15；人工 **0 long_gap** |
+| [`2026-09-02-web-check-related-longtail.md`](./2026-09-02-web-check-related-longtail.md) | CloakBrowser×5 头词（Related 空） |
+| [`2026-09-02-web-check-related-longtail-expand.md`](./2026-09-02-web-check-related-longtail-expand.md) | CloakBrowser×20 长尾变体（Related 空） |
+| [`2026-09-02-web-check-related-longtail-selection.md`](./2026-09-02-web-check-related-longtail-selection.md) | **实现队列 H1/slug 选词**（Related 空 → 有机 title 代理） |
 
 全站操作规则：[`../../keyword-planner-analysis-rules.md`](../../keyword-planner-analysis-rules.md)。  
 漏斗：[`../../keyword-to-tool-funnel.md`](../../keyword-to-tool-funnel.md)。

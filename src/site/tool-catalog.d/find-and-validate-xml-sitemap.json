@@ -1,0 +1,28 @@
+{
+  "slug": "find-and-validate-xml-sitemap",
+  "path": "/tools/find-and-validate-xml-sitemap",
+  "updatedAt": "2026-09-02T21:01:00.000Z",
+  "launchedAt": "2026-09-02T21:01:00.000Z",
+  "category": "developer",
+  "primaryTopic": "seo-growth",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_find_and_validate_xml_sitemap_title",
+  "homeTitleKey": "tool_find_and_validate_xml_sitemap_title",
+  "homeDescKey": "tool_find_and_validate_xml_sitemap_desc",
+  "faqPrefix": "tool_find_and_validate_xml_sitemap",
+  "related": [
+    "sitemap-xml-generator",
+    "indexnow",
+    "on-page-seo-checker"
+  ],
+  "logo": "/icons/tools/find-and-validate-xml-sitemap.svg",
+  "page": {
+    "module": "../pages/findAndValidateXmlSitemapPage",
+    "export": "renderFindAndValidateXmlSitemapPage",
+    "style": "opts"
+  },
+  "localProcessing": false,
+  "scenario": "seo",
+  "subject": "network"
+}

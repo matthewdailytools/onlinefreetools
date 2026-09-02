@@ -1,7 +1,7 @@
 {
   "slug": "on-page-seo-checker",
   "path": "/tools/on-page-seo-checker",
-  "updatedAt": "2026-08-11T00:00:00.000Z",
+  "updatedAt": "2026-09-02T13:06:44.000Z",
   "category": "developer",
   "primaryTopic": "seo-growth",
   "featured": false,
@@ -14,7 +14,9 @@
     "meta-serp-preview",
     "meta-tag-generator",
     "website-headers",
-    "schema-jsonld-generator"
+    "schema-jsonld-generator",
+    "check-robots-txt-url-blocked",
+    "find-and-validate-xml-sitemap"
   ],
   "logo": "/icons/tools/on-page-seo-checker.svg",
   "page": {

@@ -27,13 +27,18 @@ export const MIDJOURNEY_PROMPT_PRESET = {
 	mj_flags: '--v 6.1 --style raw --stylize 120 --chaos 8',
 } as const;
 
-/** Sketch prompt generator 默认样例。 */
+/**
+ * Sketch.app prompt generator 默认样例。
+ * 面向「让 AI 写出在 Sketch.app（Mac 设计软件）里可执行的建稿/导出步骤」，非铅笔线稿文生图。
+ */
 export const SKETCH_PROMPT_PRESET = {
-	medium: 'Graphite on warm gray toned paper, kneaded eraser highlights',
-	stroke:
-		'Loose cross-hatching on shadows; clean contour on face; visible construction lines kept in background',
-	composition: 'Three-quarter portrait, gaze off-frame left, negative space for title on right third',
-	artist_ref: 'Line economy inspired by Kim Jung Gi — dynamic but not a copy of any single work',
+	goal: 'Build a mobile login screen set in Sketch.app: email + password fields, primary CTA, and a forgot-password text link',
+	artboard:
+		'iPhone 14 artboard 390×844 pt; 8pt grid; safe area respected; one Page named Auth',
+	symbols:
+		'Create Symbols: Button/Primary, Input/TextField, Text/Link; Shared Styles for Title/Body; pull colors from a Document Library if present',
+	export_ops:
+		'Mark CTA + logo for 1x/2x/3x PNG export; Export Artboard to PDF for review; list layer rename checklist before handoff',
 } as const;
 
 /** Short drama prompt generator 默认样例。 */

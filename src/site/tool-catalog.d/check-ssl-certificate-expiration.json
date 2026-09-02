@@ -1,0 +1,28 @@
+{
+  "slug": "check-ssl-certificate-expiration",
+  "path": "/tools/check-ssl-certificate-expiration",
+  "updatedAt": "2026-09-02T21:03:00.000Z",
+  "launchedAt": "2026-09-02T21:03:00.000Z",
+  "category": "developer",
+  "primaryTopic": "seo-growth",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_check_ssl_certificate_expiration_title",
+  "homeTitleKey": "tool_check_ssl_certificate_expiration_title",
+  "homeDescKey": "tool_check_ssl_certificate_expiration_desc",
+  "faqPrefix": "tool_check_ssl_certificate_expiration",
+  "related": [
+    "website-headers",
+    "domain-lookup",
+    "private-cidr-ranges"
+  ],
+  "logo": "/icons/tools/check-ssl-certificate-expiration.svg",
+  "page": {
+    "module": "../pages/checkSslCertificateExpirationPage",
+    "export": "renderCheckSslCertificateExpirationPage",
+    "style": "opts"
+  },
+  "localProcessing": false,
+  "scenario": "seo",
+  "subject": "network"
+}

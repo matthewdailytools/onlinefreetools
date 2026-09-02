@@ -1,7 +1,7 @@
 {
   "slug": "website-headers",
   "path": "/tools/website-headers",
-  "updatedAt": "2026-08-11T00:00:00.000Z",
+  "updatedAt": "2026-09-02T13:07:05.000Z",
   "category": "developer",
   "primaryTopic": "network-ip",
   "secondaryTopics": [
@@ -15,11 +15,11 @@
   "faqPrefix": "tool_headers",
   "related": [
     "ip-address",
-    "add-www-to-dns",
-    "indexnow",
-    "markdown-to-html",
-    "text-diff",
-    "core-web-vitals-checker"
+    "domain-lookup",
+    "validate-security-txt",
+    "check-ssl-certificate-expiration",
+    "on-page-seo-checker",
+    "check-robots-txt-url-blocked"
   ],
   "logo": "/icons/tools/website-headers.svg",
   "page": {

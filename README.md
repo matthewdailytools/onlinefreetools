@@ -57,7 +57,7 @@
 - [Prompt 模板构建器](https://onlinefreetools.org/zh/tools/prompt-template-builder) - Role/Task/Constraints/Output 可复用模板（Markdown/JSON）；默认本地 + 可选 Cloudflare AI 扩写/润色（Turnstile 防刷）
 - [写作 Prompt 生成器](https://onlinefreetools.org/zh/tools/writing-prompt-generator) - 对白/角色/剧本/随机写作 Prompt；默认本地 + 可选 AI（Turnstile）
 - [Midjourney Prompt 构建器](https://onlinefreetools.org/zh/tools/midjourney-prompt-builder) - 图像 Prompt 本地组装（主体/风格/光线/画幅/MJ 参数）；可选 AI
-- [线稿 Prompt 生成器](https://onlinefreetools.org/zh/tools/sketch-prompt-generator) - 线稿/素描图像 Prompt（媒介/笔触/构图）；可选 AI
+- [Sketch.app Prompt 生成器](https://onlinefreetools.org/zh/tools/sketch-prompt-generator) - 让 AI 按步骤操作 Sketch.app（Artboard/Symbol/导出）；可选 AI
 - [电影 Prompt 构建器](https://onlinefreetools.org/zh/tools/film-prompt-builder) - 长片 logline/三幕节拍/场景列表；可选 AI
 - [短剧 Prompt 生成器](https://onlinefreetools.org/zh/tools/short-drama-prompt-generator) - 竖屏连载分集/钩子/cliffhanger；可选 AI
 - [产品设计 Prompt 构建器](https://onlinefreetools.org/zh/tools/product-design-prompt-builder) - UX 简报（Persona/问题/线框/设计令牌）；可选 AI
@@ -102,7 +102,12 @@
 - [Core Web Vitals 检测](https://onlinefreetools.org/zh/tools/core-web-vitals-checker) - 粘贴 LCP/INP/CLS，按公开阈值评级并给出与 Clarity 对齐的成因与改进
 - [Meta SERP 预览](https://onlinefreetools.org/zh/tools/meta-serp-preview) - 预估 title/description 字符与像素截断，预览桌面/移动 SERP 外观
 - [Schema JSON-LD 生成](https://onlinefreetools.org/zh/tools/schema-jsonld-generator) - 生成 FAQ/Article/Breadcrumb/Organization 的 JSON-LD（与可见内容一致）
+- [检查网址是否被 robots.txt 屏蔽](https://onlinefreetools.org/zh/tools/check-robots-txt-url-blocked) - 粘贴页面网址，经边缘拉取 /robots.txt，判断路径对 Googlebot 等是否被屏蔽并显示命中规则
 - [robots.txt 生成](https://onlinefreetools.org/zh/tools/robots-txt-generator) - 生成 robots.txt，含 AI 爬虫（GPTBot 等）User-agent 规则
+- [查找并验证 XML 站点地图](https://onlinefreetools.org/zh/tools/find-and-validate-xml-sitemap) - 输入站点网址，经 robots.txt /sitemap.xml 发现并校验 XML 结构、类型与样例 loc（不做生成）
+- [验证 security.txt](https://onlinefreetools.org/zh/tools/validate-security-txt) - 输入域名，拉取 /.well-known/security.txt 并按 RFC 9116 检查 Contact、Expires 等字段
+- [检查 SSL 证书过期时间](https://onlinefreetools.org/zh/tools/check-ssl-certificate-expiration) - 输入主机名，经 crt.sh 证书透明度查询最新证书过期日（非实时 TLS 握手）
+- [SPF DKIM DMARC 检查器](https://onlinefreetools.org/zh/tools/spf-dkim-dmarc-checker) - 输入域名与 DKIM 选择器，经 DoH 查询 SPF/DKIM/DMARC 并说明 ~all/-all 与 p= 策略
 - [XML Sitemap 生成](https://onlinefreetools.org/zh/tools/sitemap-xml-generator) - 从 URL 列表生成 sitemap.xml（lastmod/changefreq/priority）
 - [On-Page SEO 检测](https://onlinefreetools.org/zh/tools/on-page-seo-checker) - 粘贴 HTML 或抓取 URL，检查 title、H1、canonical、robots、OG 与 JSON-LD 标签问题
 - [Open Graph 预览](https://onlinefreetools.org/zh/tools/open-graph-preview) - 粘贴 og/twitter 标签或抓取 URL，预览 Facebook / X / WhatsApp 分享卡片与字段缺失
@@ -223,7 +228,7 @@ Below are our available online tools with their links (English version):
 - [Prompt template builder](https://onlinefreetools.org/tools/prompt-template-builder) - Role/Task/Constraints/Output templates (Markdown/JSON); local default + optional Cloudflare AI Expand/Polish (Turnstile)
 - [Writing prompt generator](https://onlinefreetools.org/tools/writing-prompt-generator) - Dialogue/character/script/random writing prompts; local + optional AI (Turnstile)
 - [Midjourney prompt builder](https://onlinefreetools.org/tools/midjourney-prompt-builder) - Image prompts (subject/style/lighting/aspect/MJ flags); local + optional AI
-- [Sketch prompt generator](https://onlinefreetools.org/tools/sketch-prompt-generator) - Line-art/sketch image prompts; local + optional AI
+- [Sketch.app prompt generator](https://onlinefreetools.org/tools/sketch-prompt-generator) - Prompts for AI-guided Sketch.app design steps; local + optional AI
 - [Film prompt builder](https://onlinefreetools.org/tools/film-prompt-builder) - Screenplay logline/three-act beats/scene list; local + optional AI
 - [Short drama prompt generator](https://onlinefreetools.org/tools/short-drama-prompt-generator) - Vertical serial hooks/cliffhangers; local + optional AI
 - [Product design prompt builder](https://onlinefreetools.org/tools/product-design-prompt-builder) - UX briefs (persona/problem/wireframe/tokens); local + optional AI
@@ -268,7 +273,12 @@ Below are our available online tools with their links (English version):
 - [Core Web Vitals Checker](https://onlinefreetools.org/tools/core-web-vitals-checker) - Grade pasted LCP/INP/CLS against public thresholds with Clarity-aligned causes and fixes
 - [Meta SERP Preview](https://onlinefreetools.org/tools/meta-serp-preview) - Estimate title/description character and pixel truncation with desktop/mobile SERP preview
 - [Schema JSON-LD Generator](https://onlinefreetools.org/tools/schema-jsonld-generator) - Generate FAQ/Article/Breadcrumb/Organization JSON-LD matching visible content
+- [Check if a URL is blocked by robots.txt](https://onlinefreetools.org/tools/check-robots-txt-url-blocked) - Paste a page URL; edge-fetch /robots.txt and see if that path is blocked for Googlebot and other agents
 - [Robots.txt Generator](https://onlinefreetools.org/tools/robots-txt-generator) - Build robots.txt with AI crawler user-agents (GPTBot and more)
+- [Find and validate XML sitemap](https://onlinefreetools.org/tools/find-and-validate-xml-sitemap) - Discover a site’s sitemap via robots.txt or /sitemap.xml and validate structure, type, and sample locs (not a generator)
+- [Validate security.txt](https://onlinefreetools.org/tools/validate-security-txt) - Enter a domain, fetch /.well-known/security.txt, and check Contact/Expires fields per RFC 9116
+- [Check SSL certificate expiration](https://onlinefreetools.org/tools/check-ssl-certificate-expiration) - Enter a hostname; query crt.sh Certificate Transparency for newest cert expiry (not a live TLS handshake)
+- [SPF DKIM DMARC checker](https://onlinefreetools.org/tools/spf-dkim-dmarc-checker) - Enter a domain and DKIM selector; DoH-lookup SPF/DKIM/DMARC and explain ~all/-all and p= policy
 - [XML Sitemap Generator](https://onlinefreetools.org/tools/sitemap-xml-generator) - Turn a URL list into sitemap.xml with lastmod/changefreq/priority
 - [On-Page SEO Checker](https://onlinefreetools.org/tools/on-page-seo-checker) - Paste HTML or fetch a URL to audit title, H1, canonical, robots, OG and JSON-LD tag issues
 - [Open Graph Preview](https://onlinefreetools.org/tools/open-graph-preview) - Paste og/twitter tags or fetch a URL to preview Facebook / X / WhatsApp cards and missing fields

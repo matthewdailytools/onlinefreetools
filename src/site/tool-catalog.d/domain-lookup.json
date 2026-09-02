@@ -1,7 +1,7 @@
 {
   "slug": "domain-lookup",
   "path": "/tools/domain-lookup",
-  "updatedAt": "2026-08-09T00:00:00.000Z",
+  "updatedAt": "2026-09-02T13:06:44.000Z",
   "category": "developer",
   "primaryTopic": "network-ip",
   "featured": true,
@@ -13,7 +13,9 @@
   "related": [
     "add-www-to-dns",
     "website-headers",
-    "ip-address"
+    "ip-address",
+    "spf-dkim-dmarc-checker",
+    "check-ssl-certificate-expiration"
   ],
   "logo": "/icons/tools/domain-lookup.svg",
   "page": {

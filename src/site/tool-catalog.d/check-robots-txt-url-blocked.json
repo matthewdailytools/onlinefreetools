@@ -1,0 +1,28 @@
+{
+  "slug": "check-robots-txt-url-blocked",
+  "path": "/tools/check-robots-txt-url-blocked",
+  "updatedAt": "2026-09-02T13:45:20.949Z",
+  "launchedAt": "2026-09-02T21:00:00.000Z",
+  "category": "developer",
+  "primaryTopic": "seo-growth",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_check_robots_txt_url_blocked_title",
+  "homeTitleKey": "tool_check_robots_txt_url_blocked_title",
+  "homeDescKey": "tool_check_robots_txt_url_blocked_desc",
+  "faqPrefix": "tool_check_robots_txt_url_blocked",
+  "related": [
+    "robots-txt-generator",
+    "website-headers",
+    "on-page-seo-checker"
+  ],
+  "logo": "/icons/tools/check-robots-txt-url-blocked.svg",
+  "page": {
+    "module": "../pages/checkRobotsTxtUrlBlockedPage",
+    "export": "renderCheckRobotsTxtUrlBlockedPage",
+    "style": "opts"
+  },
+  "localProcessing": false,
+  "scenario": "seo",
+  "subject": "network"
+}

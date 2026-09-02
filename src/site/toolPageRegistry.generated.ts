@@ -14,6 +14,8 @@ import { renderBase64Page } from '../pages/base64Page';
 import { renderBrandColorTokenPackPage } from '../pages/brandColorTokenPackPage';
 import { renderBrandStyleGuidePage } from '../pages/brandStyleGuidePage';
 import { renderChatgptExportToMarkdownPage } from '../pages/chatgptExportToMarkdownPage';
+import { renderCheckRobotsTxtUrlBlockedPage } from '../pages/checkRobotsTxtUrlBlockedPage';
+import { renderCheckSslCertificateExpirationPage } from '../pages/checkSslCertificateExpirationPage';
 import { renderCidrCheatSheetPage } from '../pages/cidrCheatSheetPage';
 import { renderCidrToIpRangePage } from '../pages/cidrToIpRangePage';
 import { renderColorFromImagePage } from '../pages/colorFromImagePage';
@@ -30,6 +32,7 @@ import { renderExcelCompareFilesPage } from '../pages/excelCompareFilesPage';
 import { renderFileHashPage } from '../pages/fileHashPage';
 import { renderFileMetadataAnalyzerPage } from '../pages/fileMetadataAnalyzerPage';
 import { renderFilmPromptBuilderPage } from '../pages/filmPromptBuilderPage';
+import { renderFindAndValidateXmlSitemapPage } from '../pages/findAndValidateXmlSitemapPage';
 import { renderFlipImagePage } from '../pages/flipImagePage';
 import { renderHowToCalculateAccelerationPage } from '../pages/howToCalculateAccelerationPage';
 import { renderHowToCalculateAgePage } from '../pages/howToCalculateAgePage';
@@ -148,6 +151,7 @@ import { renderShortDramaPromptGeneratorPage } from '../pages/shortDramaPromptGe
 import { renderSitemapXmlGeneratorPage } from '../pages/sitemapXmlGeneratorPage';
 import { renderSketchPromptGeneratorPage } from '../pages/sketchPromptGeneratorPage';
 import { renderSmartWebsiteColorSchemePage } from '../pages/smartWebsiteColorSchemePage';
+import { renderSpfDkimDmarcCheckerPage } from '../pages/spfDkimDmarcCheckerPage';
 import { renderSplitPdfPage } from '../pages/splitPdfPage';
 import { renderSquareFeetPage } from '../pages/squareFeetPage';
 import { renderSvgOptimizerPage } from '../pages/svgOptimizerPage';
@@ -160,6 +164,7 @@ import { renderUnlockPdfPage } from '../pages/unlockPdfPage';
 import { renderUnzipFilePage } from '../pages/unzipFilePage';
 import { renderUtmBuilderPage } from '../pages/utmBuilderPage';
 import { renderUuidGeneratorPage } from '../pages/uuidGeneratorPage';
+import { renderValidateSecurityTxtPage } from '../pages/validateSecurityTxtPage';
 import { renderWcagContrastCheckerPage } from '../pages/wcagContrastCheckerPage';
 import { renderWebsiteHeadersPage } from '../pages/websiteHeadersPage';
 import { renderWritingPromptGeneratorPage } from '../pages/writingPromptGeneratorPage';
@@ -185,6 +190,8 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'brand-color-token-pack': (lang, defaultLang, enabled) => renderBrandColorTokenPackPage({ lang, defaultLang, enabledLangs: enabled }),
 	'brand-style-guide': (lang, defaultLang, enabled) => renderBrandStyleGuidePage({ lang, defaultLang, enabledLangs: enabled }),
 	'chatgpt-export-to-markdown': (lang, defaultLang, enabled) => renderChatgptExportToMarkdownPage({ lang, defaultLang, enabledLangs: enabled }),
+	'check-robots-txt-url-blocked': (lang, defaultLang, enabled) => renderCheckRobotsTxtUrlBlockedPage({ lang, defaultLang, enabledLangs: enabled }),
+	'check-ssl-certificate-expiration': (lang, defaultLang, enabled) => renderCheckSslCertificateExpirationPage({ lang, defaultLang, enabledLangs: enabled }),
 	'cidr-cheat-sheet': (lang, defaultLang, enabled) => renderCidrCheatSheetPage({ lang, defaultLang, enabledLangs: enabled }),
 	'cidr-to-ip-range': (lang, defaultLang, enabled) => renderCidrToIpRangePage({ lang, defaultLang, enabledLangs: enabled }),
 	'color-from-image': (lang, defaultLang, enabled) => renderColorFromImagePage({ lang, defaultLang, enabledLangs: enabled }),
@@ -201,6 +208,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'file-hash': (lang, defaultLang, enabled) => renderFileHashPage({ lang, defaultLang, enabledLangs: enabled }),
 	'file-metadata-analyzer': (lang, defaultLang, enabled) => renderFileMetadataAnalyzerPage({ lang, defaultLang, enabledLangs: enabled }),
 	'film-prompt-builder': (lang, defaultLang, enabled) => renderFilmPromptBuilderPage({ lang, defaultLang, enabledLangs: enabled }),
+	'find-and-validate-xml-sitemap': (lang, defaultLang, enabled) => renderFindAndValidateXmlSitemapPage({ lang, defaultLang, enabledLangs: enabled }),
 	'flip-image': (lang, defaultLang, enabled) => renderFlipImagePage({ lang, defaultLang, enabledLangs: enabled }),
 	'how-to-calculate-acceleration': (lang, defaultLang, enabled) => renderHowToCalculateAccelerationPage({ lang, defaultLang, enabledLangs: enabled }),
 	'how-to-calculate-age': (lang, defaultLang, enabled) => renderHowToCalculateAgePage({ lang, defaultLang, enabledLangs: enabled }),
@@ -319,6 +327,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'sitemap-xml-generator': (lang, defaultLang, enabled) => renderSitemapXmlGeneratorPage({ lang, defaultLang, enabledLangs: enabled }),
 	'sketch-prompt-generator': (lang, defaultLang, enabled) => renderSketchPromptGeneratorPage({ lang, defaultLang, enabledLangs: enabled }),
 	'smart-website-color-scheme': (lang, defaultLang, enabled) => renderSmartWebsiteColorSchemePage({ lang, defaultLang, enabledLangs: enabled }),
+	'spf-dkim-dmarc-checker': (lang, defaultLang, enabled) => renderSpfDkimDmarcCheckerPage({ lang, defaultLang, enabledLangs: enabled }),
 	'split-pdf': (lang, defaultLang, enabled) => renderSplitPdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'square-feet': (lang, defaultLang, enabled) => renderSquareFeetPage({ lang, defaultLang, enabledLangs: enabled }),
 	'svg-optimizer': (lang, defaultLang, enabled) => renderSvgOptimizerPage({ lang, defaultLang, enabledLangs: enabled }),
@@ -331,6 +340,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'unzip-file': (lang, defaultLang, enabled) => renderUnzipFilePage({ lang, defaultLang, enabledLangs: enabled }),
 	'utm-builder': (lang, defaultLang, enabled) => renderUtmBuilderPage({ lang, defaultLang, enabledLangs: enabled }),
 	'uuid-generator': (lang, defaultLang, enabled) => renderUuidGeneratorPage({ lang, defaultLang, enabledLangs: enabled }),
+	'validate-security-txt': (lang, defaultLang, enabled) => renderValidateSecurityTxtPage({ lang, defaultLang, enabledLangs: enabled }),
 	'wcag-contrast-checker': (lang, defaultLang, enabled) => renderWcagContrastCheckerPage({ lang, defaultLang, enabledLangs: enabled }),
 	'website-headers': (lang, defaultLang, _enabled) => renderWebsiteHeadersPage(lang, defaultLang),
 	'writing-prompt-generator': (lang, defaultLang, enabled) => renderWritingPromptGeneratorPage({ lang, defaultLang, enabledLangs: enabled }),

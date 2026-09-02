@@ -37,6 +37,13 @@ import {
 	handlePromptToolAiHealth,
 } from "./endpoints/promptToolAi";
 import { PROMPT_AI_SLUGS } from "./lib/promptAiSlugs";
+import {
+	handleCheckRobotsTxtUrlBlocked,
+	handleCheckSslCertificateExpiration,
+	handleFindAndValidateXmlSitemap,
+	handleSpfDkimDmarcChecker,
+	handleValidateSecurityTxt,
+} from "./tools/webCheckApis";
 
 type Env = PagesBindings & {
 	SITE_DEFAULT_LANG?: string;
@@ -453,6 +460,11 @@ app.get("/api/tools/domain-lookup", handleDomainLookup);
 app.get("/api/tools/indexnow/check-key", handleIndexnowCheckKey);
 app.post("/api/tools/indexnow/resolve-urls", handleIndexnowResolveUrls);
 app.post("/api/tools/indexnow/submit", handleIndexnowSubmit);
+app.get("/api/tools/check-robots-txt-url-blocked", handleCheckRobotsTxtUrlBlocked);
+app.get("/api/tools/find-and-validate-xml-sitemap", handleFindAndValidateXmlSitemap);
+app.get("/api/tools/validate-security-txt", handleValidateSecurityTxt);
+app.get("/api/tools/check-ssl-certificate-expiration", handleCheckSslCertificateExpiration);
+app.get("/api/tools/spf-dkim-dmarc-checker", handleSpfDkimDmarcChecker);
 
 for (const slug of PROMPT_AI_SLUGS) {
 	app.get(`/api/tools/${slug}/ai/health`, handlePromptToolAiHealth);

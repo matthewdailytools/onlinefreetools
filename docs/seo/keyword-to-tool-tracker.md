@@ -45,10 +45,10 @@
 | 字段 | 值 |
 |---|---|
 | 最近更新 | 2026-09-02 |
-| 最近批次 | [keywords/web-check/…](./keywords/web-check/)：Bing×15；**能力先判订正**——生成≠校验；未实现 checker 记 `build`（须实现）；**0 long_gap** 进攻 KPI |
-| 池内 `build` 候选 | text-compare 点名四 slug；web-check 实现队列：robots-txt-checker / sitemap-checker / security.txt / SSL / DMARC（均 head→场景 H1，未开 work-tasks） |
-| 本周新建工具页 | text-compare topic 进行中；web-check **未**自动立项 |
-| 阻塞 | YAML/XML P2；web-check 实现队列待用户点名 + 场景/G 选 H1 |
+| 最近批次 | web-check 实现队列 **已立项并实现** 五工具（见 selection.md + catalog） |
+| 池内 `build` 候选 | web-check 五 slug **已上线 catalog**（边缘 API + 十语）；YAML/XML P2 仍 defer |
+| 本周新建工具页 | `check-robots-txt-url-blocked` · `find-and-validate-xml-sitemap` · `validate-security-txt` · `check-ssl-certificate-expiration` · `spf-dkim-dmarc-checker` |
+| 阻塞 | 发版：`npm run deploy` / upload:r2 + git push；SSL 为 crt.sh CT 非握手 |
 
 ---
 
@@ -149,6 +149,8 @@
 | 2026-09-02 | 调研 lissy93/web-check：看板≠搜索作业。WHOIS/DNS/头/跳转/OG absorb 现页；SSL/DMARC defer（头词+未 SERP）；端口/WAF/威胁/碳排/Wayback drop。**0 build**，未建 work-tasks。 | 用户要求工具分析+搜索词分析 |
 | 2026-09-02 | CloakBrowser Bing×15（web-check 主题）：15 usable；Related 全空。人工 **0 long_gap**。whois/headers 草稿 mid→head；security.txt 专用检查器墙→head（库存长尾猜测作废）；ssl certificate **G 不触发**。未建 work-tasks。 | 用户要求调用 cloakbrowser bing serp |
 | 2026-09-02 | **能力先判**：未实现必须实现；生成≠校验；absorb 仅已能办成同一作业。订正 robots/sitemap/security.txt/SSL/DMARC 为 `build`（须实现）+ 场景/G H1；禁并进 generator。同步 playbook §0 / 策略 §E / Skill / rule。未建 work-tasks。 | 用户指出判断逻辑错误 |
+| 2026-09-02 | CloakBrowser Bing Related 选 H1：头词×5 + 长尾×20；**Related/PAA 全空**。按有机 title 代理定实现队列 H1/slug（见 `keywords/web-check/2026-09-02-web-check-related-longtail-selection.md`）。未建 work-tasks。 | 用户要求用 Bing 侧栏关联长尾定词 |
+| 2026-09-02 | 用户点名「按照建议立项工具和实现」：开 work-tasks 并实现五工具（opts + Worker API + 十语 + build:site）。SSL 用 crt.sh CT（Workers 无对端证书）。未自动 deploy。 | 明确立项并实现 |
 
 ---
 

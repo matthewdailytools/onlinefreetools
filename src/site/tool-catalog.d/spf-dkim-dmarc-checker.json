@@ -1,0 +1,27 @@
+{
+  "slug": "spf-dkim-dmarc-checker",
+  "path": "/tools/spf-dkim-dmarc-checker",
+  "updatedAt": "2026-09-02T21:04:00.000Z",
+  "launchedAt": "2026-09-02T21:04:00.000Z",
+  "category": "developer",
+  "primaryTopic": "seo-growth",
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_spf_dkim_dmarc_checker_title",
+  "homeTitleKey": "tool_spf_dkim_dmarc_checker_title",
+  "homeDescKey": "tool_spf_dkim_dmarc_checker_desc",
+  "faqPrefix": "tool_spf_dkim_dmarc_checker",
+  "related": [
+    "domain-lookup",
+    "website-headers"
+  ],
+  "logo": "/icons/tools/spf-dkim-dmarc-checker.svg",
+  "page": {
+    "module": "../pages/spfDkimDmarcCheckerPage",
+    "export": "renderSpfDkimDmarcCheckerPage",
+    "style": "opts"
+  },
+  "localProcessing": false,
+  "scenario": "seo",
+  "subject": "network"
+}
