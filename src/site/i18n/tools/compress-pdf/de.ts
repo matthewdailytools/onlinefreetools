@@ -20,7 +20,7 @@ const de: SiteLangDict = {
   tool_compress_pdf_err_load: 'PDF konnte nicht gelesen werden (beschädigt oder nicht unterstützt). Andere Datei versuchen.',
   tool_compress_pdf_example:
     'Muster lädt ein Zwei-Seiten-PDF mit Farbblöcken und eingebettetem JPEG, wendet Mittel-Kompression an, zeigt Größe vor/nachher mit Prozent Ersparnis und aktiviert Download von compressed.pdf.',
-  tool_compress_pdf_example_title: 'Beispiel',
+  tool_compress_pdf_example_title: 'PDF-Dateigröße verkleinern',
   tool_compress_pdf_faq_a1:
     'Nein. pdf.js und die PDF-Bibliothek laufen in Ihrem Tab (Bibliotheken ggf. vom CDN). Ihr PDF wird nicht auf unsere Server hochgeladen.',
   tool_compress_pdf_faq_a2:
@@ -57,7 +57,7 @@ const de: SiteLangDict = {
   tool_compress_pdf_stats_tpl: '{from} → {to} · {pct} % gespart',
   tool_compress_pdf_status_done: 'Fertig — Download klicken für compressed.pdf.',
   tool_compress_pdf_status_working: 'PDF wird komprimiert…',
-  tool_compress_pdf_title: 'PDF komprimieren — Dateigröße im Browser verringern',
+  tool_compress_pdf_title: 'PDF-Dateigröße verringern',
   tool_compress_pdf_usecase_1: 'Büro: Scan verkleinern vor E-Mail-Anhangslimit.',
   tool_compress_pdf_usecase_2: 'Studierende: foto-lastiges PDF für Upload-Formular verkleinern.',
   tool_compress_pdf_usecase_3: 'Webmaster: Marketing-PDF leichter teilen, wenn Rasterqualität reicht.',

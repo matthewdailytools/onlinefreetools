@@ -23,7 +23,7 @@ const en: SiteLangDict = {
   tool_protect_pdf_err_protect: 'Encryption failed. Check the file and password, then retry.',
   tool_protect_pdf_example:
     'Sample builds a one-page PDF, encrypts it with password sample, enables Download for protected.pdf, and shows sample in the status line.',
-  tool_protect_pdf_example_title: 'Example',
+  tool_protect_pdf_example_title: 'Password-protect a PDF',
   tool_protect_pdf_faq_a1:
     'No. The PDF library runs in your tab (scripts may load from a CDN). Your PDF is not uploaded to our servers.',
   tool_protect_pdf_faq_a2:
@@ -58,7 +58,7 @@ const en: SiteLangDict = {
   tool_protect_pdf_status_done: 'Done — click Download to save protected.pdf.',
   tool_protect_pdf_status_sample_pwd: 'Sample ready — password is "{pwd}". Download protected.pdf to try it.',
   tool_protect_pdf_status_working: 'Encrypting PDF…',
-  tool_protect_pdf_title: 'Protect PDF — Password-Encrypt in Your Browser',
+  tool_protect_pdf_title: 'Password-protect a PDF',
   tool_protect_pdf_usecase_1: 'Office: add an open password before emailing a contract or payroll export.',
   tool_protect_pdf_usecase_2: 'Ops: lock a one-off report PDF before sending it to a client portal.',
   tool_protect_pdf_usecase_3: 'Students: protect a scanned assignment with a password only your instructor knows.',

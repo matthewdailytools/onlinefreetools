@@ -21,7 +21,7 @@ const ja: SiteLangDict = {
   tool_pdf_to_jpg_err_pdfjs: 'PDF レンダラーの読み込みに失敗しました。ネットワークを確認してください。',
   tool_pdf_to_jpg_example:
     'サンプルは 2 ページの PDF を作成し、各ページを変換して page-1.jpg と page-2.jpg の ZIP をダウンロード可能にします。',
-  tool_pdf_to_jpg_example_title: '例',
+  tool_pdf_to_jpg_example_title: 'PDF の各ページを JPG に変換',
   tool_pdf_to_jpg_faq_a1:
     'いいえ。ページ描画 と ZIP ライブラリ はタブ内で動作します（スクリプトは CDN から読み込まれる場合があります）。PDF は当社サーバーに送られません。',
   tool_pdf_to_jpg_faq_a2:
@@ -52,7 +52,7 @@ const ja: SiteLangDict = {
   tool_pdf_to_jpg_stats_tpl: '{n} ページ · {bytes}',
   tool_pdf_to_jpg_status_converting: 'ページを JPG に変換中…',
   tool_pdf_to_jpg_status_done: '完了 — ダウンロードをクリックして保存。',
-  tool_pdf_to_jpg_title: 'PDFをJPGに — ブラウザでページを画像に',
+  tool_pdf_to_jpg_title: 'PDF ページを JPG に変換',
   tool_pdf_to_jpg_usecase_1: '仕事：スライドや署名ページをチャット用 JPG に。',
   tool_pdf_to_jpg_usecase_2: 'マーケ：カタログ PDF からサムネ JPG を抽出。',
   tool_pdf_to_jpg_usecase_3: '学生：講義 PDF のページをノートアプリ用画像に。',

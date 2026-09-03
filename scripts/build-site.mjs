@@ -266,7 +266,14 @@ export const buildDevLogs = async () => {
   for (const name of existingOut) {
     if (!name.endsWith('.html')) continue;
     if (expectedHtmlNames.has(name)) continue;
-    await fs.unlink(path.join(outDir, name));
+    try {
+      await fs.unlink(path.join(outDir, name));
+    } catch (err) {
+      // 并发构建/重复运行时可能出现：文件已被其他任务清理，从而 unlink 抛 ENOENT。
+      // 站点构建“清理孤儿 HTML”是非关键步骤，忽略不存在即可继续。
+      if (err && err.code === 'ENOENT') continue;
+      throw err;
+    }
   }
 
   const totalPages = devlogsTotalPages(items.length, DEVLOGS_PAGE_SIZE);

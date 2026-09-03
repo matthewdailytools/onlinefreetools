@@ -21,7 +21,7 @@ const ja: SiteLangDict = {
   tool_unlock_pdf_err_unlock: '解除に失敗しました。ファイルとパスワードを確認して再試行してください。',
   tool_unlock_pdf_example:
     'サンプルは 1 ページ PDF を password sample で暗号化し、パスワードを自動入力、解除後 unlocked.pdf のダウンロードを有効にします。',
-  tool_unlock_pdf_example_title: '例',
+  tool_unlock_pdf_example_title: 'PDF のパスワードを解除',
   tool_unlock_pdf_faq_a1:
     'いいえ。正しい開くパスワードを入力した場合のみ保護を外します。クラック・総当たり・未知のパスワード復元は行いません。',
   tool_unlock_pdf_faq_a2:
@@ -50,7 +50,7 @@ const ja: SiteLangDict = {
   tool_unlock_pdf_status_done: '完了 — ダウンロードで unlocked.pdf を保存。',
   tool_unlock_pdf_status_sample_pwd: 'サンプル準備完了 — パスワードは「{pwd}」。unlocked.pdf をダウンロードして試せます。',
   tool_unlock_pdf_status_working: 'PDF を解除中…',
-  tool_unlock_pdf_title: 'PDFロック解除 — 知っているパスワードで保護を外す',
+  tool_unlock_pdf_title: 'PDF のロックを解除',
   tool_unlock_pdf_unlock: '解除',
   tool_unlock_pdf_usecase_1: 'オフィス：自分で付けたパスワードを外し、他アプリで結合・印刷。',
   tool_unlock_pdf_usecase_2: '運用：以前暗号化したクライアント PDF をポータル提出前に解除。',

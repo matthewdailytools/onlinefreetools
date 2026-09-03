@@ -21,7 +21,7 @@ const ja: SiteLangDict = {
   tool_protect_pdf_err_protect: '暗号化に失敗しました。ファイルとパスワードを確認して再試行してください。',
   tool_protect_pdf_example:
     'サンプルは 1 ページを作成し sample で暗号化、protected.pdf の DL を有効化し、状態行にパスワードを表示します。',
-  tool_protect_pdf_example_title: '例',
+  tool_protect_pdf_example_title: 'PDF にパスワードを設定',
   tool_protect_pdf_faq_a1:
     'いいえ。PDF ライブラリ はタブ内で動作（スクリプトは CDN から読み込む場合あり）。PDF は当社サーバーに送られません。',
   tool_protect_pdf_faq_a2:
@@ -49,7 +49,7 @@ const ja: SiteLangDict = {
   tool_protect_pdf_status_done: '完了 — ダウンロードで protected.pdf を保存。',
   tool_protect_pdf_status_sample_pwd: 'サンプル準備完了 — パスワードは「{pwd}」。protected.pdf を DL して試せます。',
   tool_protect_pdf_status_working: 'PDF を暗号化中…',
-  tool_protect_pdf_title: 'PDFを保護 — ブラウザでパスワード暗号化',
+  tool_protect_pdf_title: 'PDF にパスワード保護を設定',
   tool_protect_pdf_usecase_1: 'オフィス：契約書をメールする前に開くパスワードを設定。',
   tool_protect_pdf_usecase_2: '運用：クライアント向けレポート PDF を一時的にロック。',
   tool_protect_pdf_usecase_3: '学生：提出用スキャンに担当教員だけが知るパスワードを設定。',

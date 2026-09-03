@@ -24,7 +24,7 @@ const ru: SiteLangDict = {
   tool_unlock_pdf_err_unlock: 'Не удалось разблокировать. Проверьте файл и пароль и повторите.',
   tool_unlock_pdf_example:
     'Пример создаёт одностраничный PDF с паролем sample, заполняет поле, разблокирует и включает Скачать unlocked.pdf.',
-  tool_unlock_pdf_example_title: 'Пример',
+  tool_unlock_pdf_example_title: 'Разблокировать мой PDF',
   tool_unlock_pdf_faq_a1:
     'Нет. Снимает защиту только при правильном пароле открытия. Без взлома, перебора и восстановления неизвестных паролей.',
   tool_unlock_pdf_faq_a2:
@@ -55,7 +55,7 @@ const ru: SiteLangDict = {
   tool_unlock_pdf_status_done: 'Готово — нажмите Скачать, чтобы сохранить unlocked.pdf.',
   tool_unlock_pdf_status_sample_pwd: 'Пример готов — пароль «{pwd}». Скачайте unlocked.pdf для проверки.',
   tool_unlock_pdf_status_working: 'Разблокировка PDF…',
-  tool_unlock_pdf_title: 'Разблокировать PDF — снимите пароль, который вы знаете',
+  tool_unlock_pdf_title: 'Разблокировать мой PDF',
   tool_unlock_pdf_unlock: 'Разблокировать',
   tool_unlock_pdf_usecase_1: 'Офис: снимите свой пароль, чтобы объединить или распечатать в другом приложении.',
   tool_unlock_pdf_usecase_2: 'Операции: разблокируйте экспорт, который зашифровали раньше, перед загрузкой на портал.',

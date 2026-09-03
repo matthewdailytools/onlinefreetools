@@ -1,0 +1,30 @@
+{
+  "slug": "edit-pdf-text-online",
+  "path": "/tools/edit-pdf-text-online",
+  "updatedAt": "2026-09-03T23:38:34.286Z",
+  "launchedAt": "2026-09-04T00:00:00.000Z",
+  "category": "pdf",
+  "primaryTopic": "pdf-docs",
+  "secondaryTopics": [
+    "dev-data"
+  ],
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_edit_pdf_text_online_title",
+  "homeTitleKey": "tool_edit_pdf_text_online_title",
+  "homeDescKey": "tool_edit_pdf_text_online_desc",
+  "faqPrefix": "tool_edit_pdf_text_online",
+  "related": [
+    "add-text-to-pdf-file",
+    "extract-text-from-pdf"
+  ],
+  "logo": "/icons/tools/edit-pdf-text-online.svg",
+  "page": {
+    "module": "../pages/editPdfTextOnlinePage",
+    "export": "renderEditPdfTextOnlinePage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "documents",
+  "subject": "pdf"
+}

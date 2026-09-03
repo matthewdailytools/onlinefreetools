@@ -45,7 +45,7 @@
 | 字段 | 值 |
 |---|---|
 | 最近更新 | 2026-09-03 |
-| 最近批次 | [pdf Keyword Planner](./keywords/pdf/2026-09-03-pdf-keyword-planner.md)（1333 词；62% 品牌/下载 drop；16 slug absorb；编辑/Word 转换 defer；**未 SERP**） |
+| 最近批次 | [pdf 分场景 slug](./keywords/pdf/2026-09-03-pdf-keyword-planner.md)（意图可细分即独立 URL；9 absorb + 22 新 slug defer；禁 editor/converter 壳；**未 SERP**） |
 | 池内 `build` 候选 | web-check 五 slug **已上线 catalog**；YAML/XML P2 仍 defer；bulk-batch P0 在本提交实现 |
 | 本周新建工具页 | web-check 五工具 + bulk/batch P0（compress / convert jpg·png·webp / watermark / pdf email / checksum） |
 | 阻塞 | 发版：`npm run deploy` / upload:r2；SSL 为 crt.sh CT 非握手 |
@@ -155,6 +155,7 @@
 | 2026-09-03 | 批量转换**按目标格式拆 URL**：`bulk-convert-images-to-jpg` / `-png` / `-webp`；进页即该格式、无下拉。用户不熟编码器，搜的是 jpg/png 结果文件。png→jpg、heic→jpg absorb 进 JPG 页。禁万能 `bulk-image-converter`。AVIF defer 仍用独立 slug。未建 work-tasks。 | 用户指出 to-webp 一页不够，须区分格式 slug |
 | 2026-09-03 | 批量**压缩**可做三条独立 URL：商品图（jpg/照片）、PNG 保格式、PDF；GIF 后排。禁万能 compressor、禁与 convert 合并。 | 用户问批量压缩 slug 哪些可做 |
 | 2026-09-03 | PDF Planner 批（1333 词，Adobe 种子）：~62% 品牌/下载/安装 → drop；16 已有 PDF slug **absorb**（merge/compress/pdf-to-jpg 等头词禁 H1）；**未实现**编辑/填表/签名/Word↔PDF/HTML→PDF → **defer**（须实现规格+场景 H1）；**未 SERP → 0 long_gap / 0 周 build**；未建 work-tasks。 | 用户要求分析 keywords/pdf Planner |
+| 2026-09-03 | PDF Planner **按用户细分场景重拆**：对象/方向/约束能分开就独立 slug（对照 text-compare / bulk 按输出拆）。9 条 absorb 现页；**22 条新 slug defer**（混文件合成、Word↔PDF、HTML、改字/盖字、编域/填表/做可填/建表、手写签/证书签、浏览打开、在线撰写、可编辑化、PDF/A 转与校、对比、抽文本、翻页书、打印、DWG）。**禁** `online-pdf-editor` / `pdf-converter` / `pdf-maker` 壳页（改 FAQ 分发）。未 SERP → 0 周 build；未建 work-tasks。 | 用户要求意图可细分即单独 slug |
 
 ---
 

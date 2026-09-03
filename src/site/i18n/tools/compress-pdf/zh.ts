@@ -19,7 +19,7 @@ const zh: SiteLangDict = {
   tool_compress_pdf_err_load: '无法读取 PDF（损坏或格式不受支持）。请换一份再试。',
   tool_compress_pdf_example:
     '样例会加载两页带渐变块与嵌入 JPEG 的 PDF，用「中」档压缩，显示前后体积与节省百分比，并启用下载 compressed.pdf。',
-  tool_compress_pdf_example_title: '示例',
+  tool_compress_pdf_example_title: '缩小 PDF 文件体积',
   tool_compress_pdf_faq_a1: '不会。pdf.js 与 处理在当前标签页内完成（库可能从 CDN 加载），PDF 不会上传到我们的服务器。',
   tool_compress_pdf_faq_a2: '本工具把每页栅格化成 JPEG 再重建 PDF。纯文字或已高度优化的文件可能几乎不变，甚至略变大。不同于服务端对嵌入流的再压缩。',
   tool_compress_pdf_faq_a3: '不会。页面在浏览器里重画成图片，没有云端重编码步骤——文件字节不离开设备。',
@@ -46,7 +46,7 @@ const zh: SiteLangDict = {
   tool_compress_pdf_stats_tpl: '{from} → {to} · 节省 {pct}%',
   tool_compress_pdf_status_done: '完成 — 点击下载保存 compressed.pdf。',
   tool_compress_pdf_status_working: '正在压缩 PDF…',
-  tool_compress_pdf_title: '压缩 PDF — 在浏览器里缩小文件',
+  tool_compress_pdf_title: '缩小 PDF 文件体积',
   tool_compress_pdf_usecase_1: '办公：邮件附件超限前先把扫描包压小。',
   tool_compress_pdf_usecase_2: '学生：附图多的作业 PDF 压到表单上传限制内。',
   tool_compress_pdf_usecase_3: '站长：可接受栅格画质时，把宣传 PDF 压小便于转发。',

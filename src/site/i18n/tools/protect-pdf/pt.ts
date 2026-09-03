@@ -21,7 +21,7 @@ const pt: SiteLangDict = {
   tool_protect_pdf_err_protect: 'Falha na criptografia. Verifique arquivo e senha e tente de novo.',
   tool_protect_pdf_example:
     'A amostra cria uma página, cifra com sample, habilita Baixar protected.pdf e mostra a senha no status.',
-  tool_protect_pdf_example_title: 'Exemplo',
+  tool_protect_pdf_example_title: 'Proteger PDF com senha',
   tool_protect_pdf_faq_a1:
     'Não. a biblioteca PDF roda na sua aba (scripts podem vir de CDN). Seu PDF não é enviado aos nossos servidores.',
   tool_protect_pdf_faq_a2:
@@ -49,7 +49,7 @@ const pt: SiteLangDict = {
   tool_protect_pdf_status_done: 'Pronto — clique Baixar para salvar protected.pdf.',
   tool_protect_pdf_status_sample_pwd: 'Exemplo pronto — senha: «{pwd}». Baixe protected.pdf para testar.',
   tool_protect_pdf_status_working: 'Cifrando PDF…',
-  tool_protect_pdf_title: 'Proteger PDF — criptografe com senha no navegador',
+  tool_protect_pdf_title: 'Proteger PDF com senha',
   tool_protect_pdf_usecase_1: 'Escritório: senha de abertura antes de enviar contrato por e-mail.',
   tool_protect_pdf_usecase_2: 'Operações: trancar relatório pontual antes do portal do cliente.',
   tool_protect_pdf_usecase_3: 'Estudantes: proteger digitalização com senha só para o professor.',

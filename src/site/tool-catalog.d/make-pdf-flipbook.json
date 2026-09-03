@@ -1,0 +1,30 @@
+{
+  "slug": "make-pdf-flipbook",
+  "path": "/tools/make-pdf-flipbook",
+  "updatedAt": "2026-09-03T16:51:45.638Z",
+  "launchedAt": "2026-09-03T14:00:00.000Z",
+  "category": "pdf",
+  "primaryTopic": "pdf-docs",
+  "secondaryTopics": [
+    "dev-data"
+  ],
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_make_pdf_flipbook_title",
+  "homeTitleKey": "tool_make_pdf_flipbook_title",
+  "homeDescKey": "tool_make_pdf_flipbook_desc",
+  "faqPrefix": "tool_make_pdf_flipbook",
+  "related": [
+    "open-pdf-in-browser",
+    "pdf-to-jpg"
+  ],
+  "logo": "/icons/tools/make-pdf-flipbook.svg",
+  "page": {
+    "module": "../pages/makePdfFlipbookPage",
+    "export": "renderMakePdfFlipbookPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "documents",
+  "subject": "pdf"
+}

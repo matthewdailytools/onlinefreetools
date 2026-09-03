@@ -1,0 +1,32 @@
+{
+  "slug": "add-text-to-pdf-file",
+  "path": "/tools/add-text-to-pdf-file",
+  "updatedAt": "2026-09-03T16:51:45.638Z",
+  "launchedAt": "2026-09-03T14:00:00.000Z",
+  "category": "pdf",
+  "primaryTopic": "pdf-docs",
+  "secondaryTopics": [
+    "dev-data"
+  ],
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_add_text_to_pdf_file_title",
+  "homeTitleKey": "tool_add_text_to_pdf_file_title",
+  "homeDescKey": "tool_add_text_to_pdf_file_desc",
+  "faqPrefix": "tool_add_text_to_pdf_file",
+  "related": [
+    "pdf-watermark",
+    "write-pdf-document-online",
+    "edit-pdf-text-online",
+    "edit-pdf-form-fields"
+  ],
+  "logo": "/icons/tools/add-text-to-pdf-file.svg",
+  "page": {
+    "module": "../pages/addTextToPdfFilePage",
+    "export": "renderAddTextToPdfFilePage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "documents",
+  "subject": "pdf"
+}

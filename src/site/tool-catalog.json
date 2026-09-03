@@ -1,5 +1,57 @@
 [
   {
+    "slug": "add-digital-signature-to-pdf",
+    "path": "/tools/add-digital-signature-to-pdf",
+    "updatedAt": "2026-09-03T23:38:34.286Z",
+    "launchedAt": "2026-09-04T00:00:00.000Z",
+    "category": "pdf",
+    "primaryTopic": "pdf-docs",
+    "secondaryTopics": [
+      "security-ids"
+    ],
+    "featured": false,
+    "ymyl": true,
+    "i18nKey": "tool_add_digital_signature_to_pdf_title",
+    "homeTitleKey": "tool_add_digital_signature_to_pdf_title",
+    "homeDescKey": "tool_add_digital_signature_to_pdf_desc",
+    "faqPrefix": "tool_add_digital_signature_to_pdf",
+    "related": [
+      "sign-pdf-document",
+      "protect-pdf"
+    ],
+    "logo": "/icons/tools/add-digital-signature-to-pdf.svg",
+    "localProcessing": true,
+    "scenario": "documents",
+    "subject": "pdf"
+  },
+  {
+    "slug": "add-text-to-pdf-file",
+    "path": "/tools/add-text-to-pdf-file",
+    "updatedAt": "2026-09-03T16:51:45.638Z",
+    "launchedAt": "2026-09-03T14:00:00.000Z",
+    "category": "pdf",
+    "primaryTopic": "pdf-docs",
+    "secondaryTopics": [
+      "dev-data"
+    ],
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_add_text_to_pdf_file_title",
+    "homeTitleKey": "tool_add_text_to_pdf_file_title",
+    "homeDescKey": "tool_add_text_to_pdf_file_desc",
+    "faqPrefix": "tool_add_text_to_pdf_file",
+    "related": [
+      "pdf-watermark",
+      "write-pdf-document-online",
+      "edit-pdf-text-online",
+      "edit-pdf-form-fields"
+    ],
+    "logo": "/icons/tools/add-text-to-pdf-file.svg",
+    "localProcessing": true,
+    "scenario": "documents",
+    "subject": "pdf"
+  },
+  {
     "slug": "add-watermark",
     "path": "/tools/add-watermark",
     "updatedAt": "2026-08-09T00:00:00.000Z",
@@ -443,6 +495,33 @@
     "subject": "text"
   },
   {
+    "slug": "check-pdf-a-compliance",
+    "path": "/tools/check-pdf-a-compliance",
+    "updatedAt": "2026-09-03T16:51:45.638Z",
+    "launchedAt": "2026-09-03T14:00:00.000Z",
+    "category": "pdf",
+    "primaryTopic": "pdf-docs",
+    "secondaryTopics": [
+      "dev-data"
+    ],
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_check_pdf_a_compliance_title",
+    "homeTitleKey": "tool_check_pdf_a_compliance_title",
+    "homeDescKey": "tool_check_pdf_a_compliance_desc",
+    "faqPrefix": "tool_check_pdf_a_compliance",
+    "related": [
+      "compress-pdf",
+      "convert-html-to-pdf",
+      "extract-text-from-pdf",
+      "convert-pdf-to-pdf-a"
+    ],
+    "logo": "/icons/tools/check-pdf-a-compliance.svg",
+    "localProcessing": true,
+    "scenario": "documents",
+    "subject": "pdf"
+  },
+  {
     "slug": "check-robots-txt-url-blocked",
     "path": "/tools/check-robots-txt-url-blocked",
     "updatedAt": "2026-09-02T13:45:20.949Z",
@@ -558,6 +637,56 @@
     "launchedAt": "2026-08-08T12:24:02+08:00"
   },
   {
+    "slug": "combine-files-into-one-pdf",
+    "path": "/tools/combine-files-into-one-pdf",
+    "updatedAt": "2026-09-03T16:51:45.638Z",
+    "launchedAt": "2026-09-03T14:00:00.000Z",
+    "category": "pdf",
+    "primaryTopic": "pdf-docs",
+    "secondaryTopics": [
+      "dev-data"
+    ],
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_combine_files_into_one_pdf_title",
+    "homeTitleKey": "tool_combine_files_into_one_pdf_title",
+    "homeDescKey": "tool_combine_files_into_one_pdf_desc",
+    "faqPrefix": "tool_combine_files_into_one_pdf",
+    "related": [
+      "merge-pdf",
+      "images-to-pdf"
+    ],
+    "logo": "/icons/tools/combine-files-into-one-pdf.svg",
+    "localProcessing": true,
+    "scenario": "documents",
+    "subject": "pdf"
+  },
+  {
+    "slug": "compare-two-pdfs",
+    "path": "/tools/compare-two-pdfs",
+    "updatedAt": "2026-09-03T16:51:45.638Z",
+    "launchedAt": "2026-09-03T14:00:00.000Z",
+    "category": "pdf",
+    "primaryTopic": "pdf-docs",
+    "secondaryTopics": [
+      "dev-data"
+    ],
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_compare_two_pdfs_title",
+    "homeTitleKey": "tool_compare_two_pdfs_title",
+    "homeDescKey": "tool_compare_two_pdfs_desc",
+    "faqPrefix": "tool_compare_two_pdfs",
+    "related": [
+      "text-diff",
+      "extract-text-from-pdf"
+    ],
+    "logo": "/icons/tools/compare-two-pdfs.svg",
+    "localProcessing": true,
+    "scenario": "documents",
+    "subject": "pdf"
+  },
+  {
     "slug": "compare-two-text-files-online",
     "path": "/tools/compare-two-text-files-online",
     "updatedAt": "2026-09-01T08:40:00.000Z",
@@ -610,7 +739,7 @@
   {
     "slug": "compress-pdf",
     "path": "/tools/compress-pdf",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-09-03T23:45:43.415Z",
     "category": "pdf",
     "primaryTopic": "pdf-docs",
     "featured": true,
@@ -629,6 +758,107 @@
     "scenario": "documents",
     "subject": "pdf",
     "launchedAt": "2026-08-08T21:33:07+08:00"
+  },
+  {
+    "slug": "convert-html-to-pdf",
+    "path": "/tools/convert-html-to-pdf",
+    "updatedAt": "2026-09-03T16:51:45.638Z",
+    "launchedAt": "2026-09-03T14:00:00.000Z",
+    "category": "pdf",
+    "primaryTopic": "pdf-docs",
+    "secondaryTopics": [
+      "dev-data"
+    ],
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_convert_html_to_pdf_title",
+    "homeTitleKey": "tool_convert_html_to_pdf_title",
+    "homeDescKey": "tool_convert_html_to_pdf_desc",
+    "faqPrefix": "tool_convert_html_to_pdf",
+    "related": [
+      "markdown-to-html",
+      "write-pdf-document-online",
+      "convert-word-document-to-pdf"
+    ],
+    "logo": "/icons/tools/convert-html-to-pdf.svg",
+    "localProcessing": true,
+    "scenario": "documents",
+    "subject": "pdf"
+  },
+  {
+    "slug": "convert-pdf-to-dwg",
+    "path": "/tools/convert-pdf-to-dwg",
+    "updatedAt": "2026-09-03T23:38:34.286Z",
+    "launchedAt": "2026-09-04T00:00:00.000Z",
+    "category": "pdf",
+    "primaryTopic": "pdf-docs",
+    "secondaryTopics": [
+      "dev-data"
+    ],
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_convert_pdf_to_dwg_title",
+    "homeTitleKey": "tool_convert_pdf_to_dwg_title",
+    "homeDescKey": "tool_convert_pdf_to_dwg_desc",
+    "faqPrefix": "tool_convert_pdf_to_dwg",
+    "related": [
+      "pdf-to-jpg",
+      "extract-text-from-pdf"
+    ],
+    "logo": "/icons/tools/convert-pdf-to-dwg.svg",
+    "localProcessing": true,
+    "scenario": "documents",
+    "subject": "pdf"
+  },
+  {
+    "slug": "convert-pdf-to-pdf-a",
+    "path": "/tools/convert-pdf-to-pdf-a",
+    "updatedAt": "2026-09-03T23:38:34.286Z",
+    "launchedAt": "2026-09-04T00:00:00.000Z",
+    "category": "pdf",
+    "primaryTopic": "pdf-docs",
+    "secondaryTopics": [
+      "dev-data"
+    ],
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_convert_pdf_to_pdf_a_title",
+    "homeTitleKey": "tool_convert_pdf_to_pdf_a_title",
+    "homeDescKey": "tool_convert_pdf_to_pdf_a_desc",
+    "faqPrefix": "tool_convert_pdf_to_pdf_a",
+    "related": [
+      "check-pdf-a-compliance",
+      "compress-pdf"
+    ],
+    "logo": "/icons/tools/convert-pdf-to-pdf-a.svg",
+    "localProcessing": true,
+    "scenario": "documents",
+    "subject": "pdf"
+  },
+  {
+    "slug": "convert-word-document-to-pdf",
+    "path": "/tools/convert-word-document-to-pdf",
+    "updatedAt": "2026-09-03T23:38:34.286Z",
+    "launchedAt": "2026-09-04T00:00:00.000Z",
+    "category": "pdf",
+    "primaryTopic": "pdf-docs",
+    "secondaryTopics": [
+      "dev-data"
+    ],
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_convert_word_document_to_pdf_title",
+    "homeTitleKey": "tool_convert_word_document_to_pdf_title",
+    "homeDescKey": "tool_convert_word_document_to_pdf_desc",
+    "faqPrefix": "tool_convert_word_document_to_pdf",
+    "related": [
+      "convert-html-to-pdf",
+      "write-pdf-document-online"
+    ],
+    "logo": "/icons/tools/convert-word-document-to-pdf.svg",
+    "localProcessing": true,
+    "scenario": "documents",
+    "subject": "pdf"
   },
   {
     "slug": "core-web-vitals-checker",
@@ -655,6 +885,31 @@
     "scenario": "seo",
     "subject": "number",
     "launchedAt": "2026-08-09T21:03:55+08:00"
+  },
+  {
+    "slug": "create-pdf-form",
+    "path": "/tools/create-pdf-form",
+    "updatedAt": "2026-09-03T23:38:34.286Z",
+    "launchedAt": "2026-09-04T00:00:00.000Z",
+    "category": "pdf",
+    "primaryTopic": "pdf-docs",
+    "secondaryTopics": [
+      "dev-data"
+    ],
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_create_pdf_form_title",
+    "homeTitleKey": "tool_create_pdf_form_title",
+    "homeDescKey": "tool_create_pdf_form_desc",
+    "faqPrefix": "tool_create_pdf_form",
+    "related": [
+      "make-pdf-fillable",
+      "fill-out-pdf-form"
+    ],
+    "logo": "/icons/tools/create-pdf-form.svg",
+    "localProcessing": true,
+    "scenario": "documents",
+    "subject": "pdf"
   },
   {
     "slug": "create-zip-file",
@@ -775,6 +1030,56 @@
     "launchedAt": "2026-08-08T21:33:07+08:00"
   },
   {
+    "slug": "edit-pdf-form-fields",
+    "path": "/tools/edit-pdf-form-fields",
+    "updatedAt": "2026-09-03T23:38:34.286Z",
+    "launchedAt": "2026-09-04T00:00:00.000Z",
+    "category": "pdf",
+    "primaryTopic": "pdf-docs",
+    "secondaryTopics": [
+      "dev-data"
+    ],
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_edit_pdf_form_fields_title",
+    "homeTitleKey": "tool_edit_pdf_form_fields_title",
+    "homeDescKey": "tool_edit_pdf_form_fields_desc",
+    "faqPrefix": "tool_edit_pdf_form_fields",
+    "related": [
+      "fill-out-pdf-form",
+      "make-pdf-fillable"
+    ],
+    "logo": "/icons/tools/edit-pdf-form-fields.svg",
+    "localProcessing": true,
+    "scenario": "documents",
+    "subject": "pdf"
+  },
+  {
+    "slug": "edit-pdf-text-online",
+    "path": "/tools/edit-pdf-text-online",
+    "updatedAt": "2026-09-03T23:38:34.286Z",
+    "launchedAt": "2026-09-04T00:00:00.000Z",
+    "category": "pdf",
+    "primaryTopic": "pdf-docs",
+    "secondaryTopics": [
+      "dev-data"
+    ],
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_edit_pdf_text_online_title",
+    "homeTitleKey": "tool_edit_pdf_text_online_title",
+    "homeDescKey": "tool_edit_pdf_text_online_desc",
+    "faqPrefix": "tool_edit_pdf_text_online",
+    "related": [
+      "add-text-to-pdf-file",
+      "extract-text-from-pdf"
+    ],
+    "logo": "/icons/tools/edit-pdf-text-online.svg",
+    "localProcessing": true,
+    "scenario": "documents",
+    "subject": "pdf"
+  },
+  {
     "slug": "excel-compare-files",
     "path": "/tools/excel-compare-files",
     "updatedAt": "2026-09-01T08:43:00.000Z",
@@ -799,6 +1104,32 @@
     "localProcessing": true,
     "scenario": "documents",
     "subject": "data"
+  },
+  {
+    "slug": "extract-text-from-pdf",
+    "path": "/tools/extract-text-from-pdf",
+    "updatedAt": "2026-09-03T16:51:45.638Z",
+    "launchedAt": "2026-09-03T14:00:00.000Z",
+    "category": "pdf",
+    "primaryTopic": "pdf-docs",
+    "secondaryTopics": [
+      "dev-data"
+    ],
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_extract_text_from_pdf_title",
+    "homeTitleKey": "tool_extract_text_from_pdf_title",
+    "homeDescKey": "tool_extract_text_from_pdf_desc",
+    "faqPrefix": "tool_extract_text_from_pdf",
+    "related": [
+      "pdf-to-markdown",
+      "merge-pdf",
+      "turn-pdf-into-word-document"
+    ],
+    "logo": "/icons/tools/extract-text-from-pdf.svg",
+    "localProcessing": true,
+    "scenario": "documents",
+    "subject": "pdf"
   },
   {
     "slug": "file-hash",
@@ -849,6 +1180,32 @@
     "localProcessing": true,
     "scenario": "developer",
     "subject": "data"
+  },
+  {
+    "slug": "fill-out-pdf-form",
+    "path": "/tools/fill-out-pdf-form",
+    "updatedAt": "2026-09-03T23:38:34.286Z",
+    "launchedAt": "2026-09-04T00:00:00.000Z",
+    "category": "pdf",
+    "primaryTopic": "pdf-docs",
+    "secondaryTopics": [
+      "dev-data"
+    ],
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_fill_out_pdf_form_title",
+    "homeTitleKey": "tool_fill_out_pdf_form_title",
+    "homeDescKey": "tool_fill_out_pdf_form_desc",
+    "faqPrefix": "tool_fill_out_pdf_form",
+    "related": [
+      "make-pdf-fillable",
+      "create-pdf-form",
+      "edit-pdf-form-fields"
+    ],
+    "logo": "/icons/tools/fill-out-pdf-form.svg",
+    "localProcessing": true,
+    "scenario": "documents",
+    "subject": "pdf"
   },
   {
     "slug": "film-prompt-builder",
@@ -2637,7 +2994,7 @@
   {
     "slug": "images-to-pdf",
     "path": "/tools/images-to-pdf",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-09-03T23:45:43.415Z",
     "category": "image",
     "primaryTopic": "image-media",
     "secondaryTopics": [
@@ -3038,6 +3395,56 @@
     "launchedAt": "2026-08-14T08:10:27+08:00"
   },
   {
+    "slug": "make-pdf-fillable",
+    "path": "/tools/make-pdf-fillable",
+    "updatedAt": "2026-09-03T23:38:34.286Z",
+    "launchedAt": "2026-09-04T00:00:00.000Z",
+    "category": "pdf",
+    "primaryTopic": "pdf-docs",
+    "secondaryTopics": [
+      "dev-data"
+    ],
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_make_pdf_fillable_title",
+    "homeTitleKey": "tool_make_pdf_fillable_title",
+    "homeDescKey": "tool_make_pdf_fillable_desc",
+    "faqPrefix": "tool_make_pdf_fillable",
+    "related": [
+      "create-pdf-form",
+      "fill-out-pdf-form"
+    ],
+    "logo": "/icons/tools/make-pdf-fillable.svg",
+    "localProcessing": true,
+    "scenario": "documents",
+    "subject": "pdf"
+  },
+  {
+    "slug": "make-pdf-flipbook",
+    "path": "/tools/make-pdf-flipbook",
+    "updatedAt": "2026-09-03T16:51:45.638Z",
+    "launchedAt": "2026-09-03T14:00:00.000Z",
+    "category": "pdf",
+    "primaryTopic": "pdf-docs",
+    "secondaryTopics": [
+      "dev-data"
+    ],
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_make_pdf_flipbook_title",
+    "homeTitleKey": "tool_make_pdf_flipbook_title",
+    "homeDescKey": "tool_make_pdf_flipbook_desc",
+    "faqPrefix": "tool_make_pdf_flipbook",
+    "related": [
+      "open-pdf-in-browser",
+      "pdf-to-jpg"
+    ],
+    "logo": "/icons/tools/make-pdf-flipbook.svg",
+    "localProcessing": true,
+    "scenario": "documents",
+    "subject": "pdf"
+  },
+  {
     "slug": "markdown-to-html",
     "path": "/tools/markdown-to-html",
     "updatedAt": "2026-08-09T00:00:00.000Z",
@@ -3090,7 +3497,7 @@
   {
     "slug": "merge-pdf",
     "path": "/tools/merge-pdf",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-09-03T23:45:43.415Z",
     "category": "pdf",
     "primaryTopic": "pdf-docs",
     "featured": true,
@@ -3257,6 +3664,31 @@
     "launchedAt": "2026-08-09T22:33:39+08:00"
   },
   {
+    "slug": "open-pdf-in-browser",
+    "path": "/tools/open-pdf-in-browser",
+    "updatedAt": "2026-09-03T16:51:45.638Z",
+    "launchedAt": "2026-09-03T14:00:00.000Z",
+    "category": "pdf",
+    "primaryTopic": "pdf-docs",
+    "secondaryTopics": [
+      "dev-data"
+    ],
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_open_pdf_in_browser_title",
+    "homeTitleKey": "tool_open_pdf_in_browser_title",
+    "homeDescKey": "tool_open_pdf_in_browser_desc",
+    "faqPrefix": "tool_open_pdf_in_browser",
+    "related": [
+      "print-pdf",
+      "pdf-to-jpg"
+    ],
+    "logo": "/icons/tools/open-pdf-in-browser.svg",
+    "localProcessing": true,
+    "scenario": "documents",
+    "subject": "pdf"
+  },
+  {
     "slug": "organize-pdf",
     "path": "/tools/organize-pdf",
     "updatedAt": "2026-09-03T14:06:51.440Z",
@@ -3352,7 +3784,7 @@
   {
     "slug": "pdf-to-jpg",
     "path": "/tools/pdf-to-jpg",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-09-03T23:45:43.415Z",
     "category": "image",
     "primaryTopic": "pdf-docs",
     "secondaryTopics": [
@@ -3368,7 +3800,8 @@
       "images-to-pdf",
       "image-format-converter",
       "pdf-page-to-image-sizes",
-      "pdf-to-markdown"
+      "pdf-to-markdown",
+      "convert-pdf-to-dwg"
     ],
     "logo": "/icons/tools/pdf-to-jpg.svg",
     "localProcessing": true,
@@ -3425,6 +3858,31 @@
     "scenario": "documents",
     "subject": "pdf",
     "launchedAt": "2026-08-08T21:33:07+08:00"
+  },
+  {
+    "slug": "print-pdf",
+    "path": "/tools/print-pdf",
+    "updatedAt": "2026-09-03T16:51:45.638Z",
+    "launchedAt": "2026-09-03T14:00:00.000Z",
+    "category": "pdf",
+    "primaryTopic": "pdf-docs",
+    "secondaryTopics": [
+      "dev-data"
+    ],
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_print_pdf_title",
+    "homeTitleKey": "tool_print_pdf_title",
+    "homeDescKey": "tool_print_pdf_desc",
+    "faqPrefix": "tool_print_pdf",
+    "related": [
+      "open-pdf-in-browser",
+      "compress-pdf"
+    ],
+    "logo": "/icons/tools/print-pdf.svg",
+    "localProcessing": true,
+    "scenario": "documents",
+    "subject": "pdf"
   },
   {
     "slug": "private-cidr-ranges",
@@ -3497,7 +3955,7 @@
   {
     "slug": "protect-pdf",
     "path": "/tools/protect-pdf",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-09-03T23:45:43.415Z",
     "category": "pdf",
     "primaryTopic": "pdf-docs",
     "secondaryTopics": [
@@ -3616,6 +4074,32 @@
     "subject": "text"
   },
   {
+    "slug": "sign-pdf-document",
+    "path": "/tools/sign-pdf-document",
+    "updatedAt": "2026-09-03T23:38:34.286Z",
+    "launchedAt": "2026-09-04T00:00:00.000Z",
+    "category": "pdf",
+    "primaryTopic": "pdf-docs",
+    "secondaryTopics": [
+      "security-ids"
+    ],
+    "featured": false,
+    "ymyl": true,
+    "i18nKey": "tool_sign_pdf_document_title",
+    "homeTitleKey": "tool_sign_pdf_document_title",
+    "homeDescKey": "tool_sign_pdf_document_desc",
+    "faqPrefix": "tool_sign_pdf_document",
+    "related": [
+      "add-digital-signature-to-pdf",
+      "protect-pdf",
+      "fill-out-pdf-form"
+    ],
+    "logo": "/icons/tools/sign-pdf-document.svg",
+    "localProcessing": true,
+    "scenario": "documents",
+    "subject": "pdf"
+  },
+  {
     "slug": "sitemap-xml-generator",
     "path": "/tools/sitemap-xml-generator",
     "updatedAt": "2026-09-02T13:06:44.000Z",
@@ -3714,7 +4198,7 @@
   {
     "slug": "split-pdf",
     "path": "/tools/split-pdf",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-09-03T23:45:43.415Z",
     "category": "pdf",
     "primaryTopic": "pdf-docs",
     "featured": true,
@@ -3865,6 +4349,57 @@
     "launchedAt": "2026-08-08T19:34:20+08:00"
   },
   {
+    "slug": "turn-pdf-into-editable-document",
+    "path": "/tools/turn-pdf-into-editable-document",
+    "updatedAt": "2026-09-03T23:38:34.286Z",
+    "launchedAt": "2026-09-04T00:00:00.000Z",
+    "category": "pdf",
+    "primaryTopic": "pdf-docs",
+    "secondaryTopics": [
+      "dev-data"
+    ],
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_turn_pdf_into_editable_document_title",
+    "homeTitleKey": "tool_turn_pdf_into_editable_document_title",
+    "homeDescKey": "tool_turn_pdf_into_editable_document_desc",
+    "faqPrefix": "tool_turn_pdf_into_editable_document",
+    "related": [
+      "edit-pdf-text-online",
+      "extract-text-from-pdf",
+      "write-pdf-document-online"
+    ],
+    "logo": "/icons/tools/turn-pdf-into-editable-document.svg",
+    "localProcessing": true,
+    "scenario": "documents",
+    "subject": "pdf"
+  },
+  {
+    "slug": "turn-pdf-into-word-document",
+    "path": "/tools/turn-pdf-into-word-document",
+    "updatedAt": "2026-09-03T23:38:34.286Z",
+    "launchedAt": "2026-09-04T00:00:00.000Z",
+    "category": "pdf",
+    "primaryTopic": "pdf-docs",
+    "secondaryTopics": [
+      "dev-data"
+    ],
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_turn_pdf_into_word_document_title",
+    "homeTitleKey": "tool_turn_pdf_into_word_document_title",
+    "homeDescKey": "tool_turn_pdf_into_word_document_desc",
+    "faqPrefix": "tool_turn_pdf_into_word_document",
+    "related": [
+      "extract-text-from-pdf",
+      "pdf-to-markdown"
+    ],
+    "logo": "/icons/tools/turn-pdf-into-word-document.svg",
+    "localProcessing": true,
+    "scenario": "documents",
+    "subject": "pdf"
+  },
+  {
     "slug": "unit-converter",
     "path": "/tools/unit-converter",
     "updatedAt": "2026-08-09T00:00:00.000Z",
@@ -3917,7 +4452,7 @@
   {
     "slug": "unlock-pdf",
     "path": "/tools/unlock-pdf",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-09-03T23:45:43.415Z",
     "category": "pdf",
     "primaryTopic": "pdf-docs",
     "secondaryTopics": [
@@ -4088,6 +4623,32 @@
     "scenario": "seo",
     "subject": "network",
     "launchedAt": "2026-01-10T23:02:44+08:00"
+  },
+  {
+    "slug": "write-pdf-document-online",
+    "path": "/tools/write-pdf-document-online",
+    "updatedAt": "2026-09-03T16:51:45.638Z",
+    "launchedAt": "2026-09-03T14:00:00.000Z",
+    "category": "pdf",
+    "primaryTopic": "pdf-docs",
+    "secondaryTopics": [
+      "dev-data"
+    ],
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_write_pdf_document_online_title",
+    "homeTitleKey": "tool_write_pdf_document_online_title",
+    "homeDescKey": "tool_write_pdf_document_online_desc",
+    "faqPrefix": "tool_write_pdf_document_online",
+    "related": [
+      "add-text-to-pdf-file",
+      "convert-html-to-pdf",
+      "turn-pdf-into-editable-document"
+    ],
+    "logo": "/icons/tools/write-pdf-document-online.svg",
+    "localProcessing": true,
+    "scenario": "documents",
+    "subject": "pdf"
   },
   {
     "slug": "writing-prompt-generator",

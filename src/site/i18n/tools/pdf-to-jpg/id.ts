@@ -21,7 +21,7 @@ const id: SiteLangDict = {
   tool_pdf_to_jpg_err_pdfjs: 'Gagal memuat perender PDF. Periksa jaringan dan coba lagi.',
   tool_pdf_to_jpg_example:
     'Sampel membuat PDF dua halaman, mengonversi tiap halaman, dan mengaktifkan Unduh ZIP berisi page-1.jpg dan page-2.jpg.',
-  tool_pdf_to_jpg_example_title: 'Contoh',
+  tool_pdf_to_jpg_example_title: 'Ubah halaman PDF ke JPG',
   tool_pdf_to_jpg_faq_a1:
     'Tidak. perender halaman dan pustaka ZIP berjalan di tab Anda (skrip mungkin dimuat dari CDN). PDF tidak diunggah ke server kami.',
   tool_pdf_to_jpg_faq_a2:
@@ -53,7 +53,7 @@ const id: SiteLangDict = {
   tool_pdf_to_jpg_stats_tpl: '{n} halaman · {bytes}',
   tool_pdf_to_jpg_status_converting: 'Mengonversi halaman ke JPG…',
   tool_pdf_to_jpg_status_done: 'Selesai — klik Unduh untuk simpan.',
-  tool_pdf_to_jpg_title: 'PDF ke JPG — ubah halaman jadi gambar di browser',
+  tool_pdf_to_jpg_title: 'Ubah halaman PDF jadi JPG',
   tool_pdf_to_jpg_usecase_1: 'Kantor: ekspor slide atau halaman tanda tangan untuk chat.',
   tool_pdf_to_jpg_usecase_2: 'Marketing: ambil thumbnail JPG dari katalog PDF.',
   tool_pdf_to_jpg_usecase_3: 'Pelajar: simpan halaman PDF sebagai gambar catatan.',

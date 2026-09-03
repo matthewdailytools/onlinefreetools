@@ -21,7 +21,7 @@ const ar: SiteLangDict = {
   tool_pdf_to_jpg_err_pdfjs: 'تعذّر تحميل عارض PDF. تحقق من الشبكة وأعد المحاولة.',
   tool_pdf_to_jpg_example:
     'العيّنة تنشئ PDF من صفحتين، تحوّل كل صفحة، وتفعّل التنزيل كـ ZIP يحتوي page-1.jpg و page-2.jpg.',
-  tool_pdf_to_jpg_example_title: 'مثال',
+  tool_pdf_to_jpg_example_title: 'تحويل صفحات PDF إلى JPG',
   tool_pdf_to_jpg_faq_a1:
     'لا. يعمل مُصيّر الصفحات و مكتبة ZIP في تبويبك (قد تُحمَّل السكربتات من CDN). PDF لا يُرفع إلى خوادمنا.',
   tool_pdf_to_jpg_faq_a2:
@@ -53,7 +53,7 @@ const ar: SiteLangDict = {
   tool_pdf_to_jpg_stats_tpl: '{n} صفحة · {bytes}',
   tool_pdf_to_jpg_status_converting: 'جارٍ تحويل الصفحات إلى JPG…',
   tool_pdf_to_jpg_status_done: 'تم — اضغط تنزيل للحفظ.',
-  tool_pdf_to_jpg_title: 'PDF إلى JPG — حوّل الصفحات إلى صور في المتصفح',
+  tool_pdf_to_jpg_title: 'تحويل صفحات PDF إلى JPG',
   tool_pdf_to_jpg_usecase_1: 'مكتب: صدّر شريحة أو صفحة موقّعة للصقها في الدردشة.',
   tool_pdf_to_jpg_usecase_2: 'تسويق: استخرج صور مصغّرة JPG من كatalog PDF.',
   tool_pdf_to_jpg_usecase_3: 'طلاب: احفظ صفحات PDF كصور للملاحظات.',

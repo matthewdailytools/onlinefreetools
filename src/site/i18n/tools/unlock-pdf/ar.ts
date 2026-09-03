@@ -21,7 +21,7 @@ const ar: SiteLangDict = {
   tool_unlock_pdf_err_unlock: 'فشل إلغاء القفل. تحقق من الملف وكلمة المرور ثم أعد المحاولة.',
   tool_unlock_pdf_example:
     'المثال ينشئ PDF صفحة واحدة مشفرًا بكلمة sample، يملأ كلمة المرور، يفتحه ويُمكّن تنزيل unlocked.pdf.',
-  tool_unlock_pdf_example_title: 'مثال',
+  tool_unlock_pdf_example_title: 'إلغاء قفل PDF',
   tool_unlock_pdf_faq_a1:
     'لا. يزيل الحماية فقط عند إدخال كلمة الفتح الصحيحة. لا كسر ولا brute force ولا استرجاع كلمات مجهولة.',
   tool_unlock_pdf_faq_a2:
@@ -50,7 +50,7 @@ const ar: SiteLangDict = {
   tool_unlock_pdf_status_done: 'تم — اضغط تنزيل لحفظ unlocked.pdf.',
   tool_unlock_pdf_status_sample_pwd: 'المثال جاهز — كلمة المرور «{pwd}». نزّل unlocked.pdf للتجربة.',
   tool_unlock_pdf_status_working: 'جارٍ فتح PDF…',
-  tool_unlock_pdf_title: 'إلغاء قفل PDF — أزل كلمة مرور تعرفها مسبقًا',
+  tool_unlock_pdf_title: 'إلغاء قفل ملف PDF',
   tool_unlock_pdf_unlock: 'إلغاء القفل',
   tool_unlock_pdf_usecase_1: 'مكتب: أزل كلمة الفتح الخاصة بك لدمج أو طباعة في تطبيق آخر.',
   tool_unlock_pdf_usecase_2: 'عمليات: افتح تصديرًا شفّرته سابقًا قبل رفعه لبوابة.',

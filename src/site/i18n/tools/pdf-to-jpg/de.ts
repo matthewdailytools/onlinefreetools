@@ -21,7 +21,7 @@ const de: SiteLangDict = {
   tool_pdf_to_jpg_err_pdfjs: 'PDF-Renderer konnte nicht geladen werden. Netzwerk prüfen.',
   tool_pdf_to_jpg_example:
     'Die Vorschau erstellt eine Zwei-Seiten-PDF, konvertiert jede Seite und aktiviert Download als ZIP mit page-1.jpg und page-2.jpg.',
-  tool_pdf_to_jpg_example_title: 'Beispiel',
+  tool_pdf_to_jpg_example_title: 'PDF-Seiten in JPG umwandeln',
   tool_pdf_to_jpg_faq_a1:
     'Nein. der Seitenrenderer und die ZIP-Bibliothek laufen in Ihrem Tab (Skripte ggf. vom CDN). Ihre PDF wird nicht auf unsere Server hochgeladen.',
   tool_pdf_to_jpg_faq_a2:
@@ -53,7 +53,7 @@ const de: SiteLangDict = {
   tool_pdf_to_jpg_stats_tpl: '{n} Seite(n) · {bytes}',
   tool_pdf_to_jpg_status_converting: 'Seiten werden in JPG konvertiert…',
   tool_pdf_to_jpg_status_done: 'Fertig — Download klicken zum Speichern.',
-  tool_pdf_to_jpg_title: 'PDF zu JPG — Seiten im Browser als Bilder speichern',
+  tool_pdf_to_jpg_title: 'PDF-Seiten in JPG umwandeln',
   tool_pdf_to_jpg_usecase_1: 'Büro: Folie oder Unterschriftsseite als JPG für Chat exportieren.',
   tool_pdf_to_jpg_usecase_2: 'Marketing: JPG-Vorschaubilder aus Katalog-PDF ziehen.',
   tool_pdf_to_jpg_usecase_3: 'Studium: PDF-Vorlesungsseiten als Bilder für Notizen.',

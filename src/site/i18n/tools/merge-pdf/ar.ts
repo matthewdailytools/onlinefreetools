@@ -18,7 +18,7 @@ const ar: SiteLangDict = {
   tool_merge_pdf_err_merge: 'فشل الدمج. تحقق من الملفات وأعد المحاولة.',
   tool_merge_pdf_example:
     'يُحمّل المثال ملفين من صفحة واحدة (A وB)، يدمجهما حسب ترتيب القائمة، ويفعّل التنزيل لملف merged.pdf من صفحتين.',
-  tool_merge_pdf_example_title: 'مثال',
+  tool_merge_pdf_example_title: 'دمج ملفات PDF في ملف واحد',
   tool_merge_pdf_faq_a1:
     'لا. يعمل pdf-lib في تبويبك (قد تُحمَّل المكتبة من CDN). لا نرفع ملفاتك إلى خوادمنا.',
   tool_merge_pdf_faq_a2:
@@ -50,7 +50,7 @@ const ar: SiteLangDict = {
   tool_merge_pdf_stats_tpl: '{n} ملفات → {pages} صفحات · {bytes}',
   tool_merge_pdf_status_done: 'تم — اضغط تنزيل لحفظ merged.pdf.',
   tool_merge_pdf_status_merging: 'جارٍ دمج PDF…',
-  tool_merge_pdf_title: 'دمج PDF — اجمع الملفات في المتصفح',
+  tool_merge_pdf_title: 'دمج ملفات PDF في ملف واحد',
   tool_merge_pdf_usecase_1: 'مكتبي: جمع صفحات التوقيع والمرفقات في حزمة واحدة.',
   tool_merge_pdf_usecase_2: 'طلابي: ضم فصول الواجب قبل التسليم.',
   tool_merge_pdf_usecase_3: 'تشغيلي: تسليم الملخصات والمواصفات في PDF واحد.',

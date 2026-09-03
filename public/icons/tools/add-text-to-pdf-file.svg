@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="PDF to Markdown">
+  <rect width="32" height="32" rx="8" fill="#8e44ad"/>
+  <rect x="6" y="7" width="13" height="18" rx="1.5" fill="#fff" opacity=".95"/>
+  <rect x="17" y="9" width="9" height="14" rx="1.5" fill="#fff" opacity=".9"/>
+  <path d="M19 13h5M19 16h5M19 19h3" stroke="#8e44ad" stroke-width="1.2" stroke-linecap="round"/>
+  <path d="M9 12h6M9 15h6M9 18h4" stroke="#8e44ad" stroke-width="1" stroke-linecap="round" opacity=".7"/>
+</svg>

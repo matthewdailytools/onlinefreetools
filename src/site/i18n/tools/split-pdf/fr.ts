@@ -20,7 +20,7 @@ const fr: SiteLangDict = {
   tool_split_pdf_err_split: 'Échec du découpage. Vérifiez le fichier et les plages, puis réessayez.',
   tool_split_pdf_example:
     'L’exemple crée un PDF de trois pages, le découpe page par page et active Télécharger pour un ZIP avec page-1.pdf, page-2.pdf et page-3.pdf.',
-  tool_split_pdf_example_title: 'Exemple',
+  tool_split_pdf_example_title: 'Découper mon PDF',
   tool_split_pdf_faq_a1:
     'Non. pdf-lib et fflate s’exécutent dans votre onglet (les scripts peuvent venir d’un CDN). Votre PDF n’est pas envoyé sur nos serveurs.',
   tool_split_pdf_faq_a2:
@@ -61,7 +61,7 @@ const fr: SiteLangDict = {
   tool_split_pdf_stats_tpl: '{n} fichier(s) · {bytes}',
   tool_split_pdf_status_done: 'Terminé — cliquez Télécharger pour enregistrer.',
   tool_split_pdf_status_splitting: 'Découpage du PDF…',
-  tool_split_pdf_title: 'Découper un PDF — extrayez les pages en local',
+  tool_split_pdf_title: 'Découper mon PDF',
   tool_split_pdf_usecase_1: 'Bureau : extraire une page signée d’un long contrat.',
   tool_split_pdf_usecase_2: 'Enseignement : découper un PDF de diapositives en fiches par page.',
   tool_split_pdf_usecase_3: 'Ops : archiver chaque page scannée comme fichier distinct.',

@@ -18,7 +18,7 @@ const ja: SiteLangDict = {
   tool_merge_pdf_err_merge: '結合に失敗しました。ファイルを確認して再試行してください。',
   tool_merge_pdf_example:
     'サンプルは1ページのPDFを2つ（AとB）読み込み、リスト順に結合し、2ページのmerged.pdfをダウンロードできるようにします。',
-  tool_merge_pdf_example_title: '例',
+  tool_merge_pdf_example_title: '複数の PDF を1つにまとめる',
   tool_merge_pdf_faq_a1:
     'いいえ。pdf-lib はタブ内で動作します（ライブラリはCDNから読み込む場合があります）。PDFはサーバーに送られません。',
   tool_merge_pdf_faq_a2:
@@ -50,7 +50,7 @@ const ja: SiteLangDict = {
   tool_merge_pdf_stats_tpl: '{n} ファイル → {pages} ページ · {bytes}',
   tool_merge_pdf_status_done: '完了 — ダウンロードで merged.pdf を保存できます。',
   tool_merge_pdf_status_merging: 'PDFを結合しています…',
-  tool_merge_pdf_title: 'PDF結合 — ブラウザで複数ファイルを1つに',
+  tool_merge_pdf_title: '複数の PDF を1つに結合',
   tool_merge_pdf_usecase_1: '事務：署名ページと添付を1つの束にまとめる。',
   tool_merge_pdf_usecase_2: '学生：提出前に課題の章を結合する。',
   tool_merge_pdf_usecase_3: '運用：仕様書とアセットを1つのPDFで渡す。',

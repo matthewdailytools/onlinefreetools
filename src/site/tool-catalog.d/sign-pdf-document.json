@@ -1,0 +1,31 @@
+{
+  "slug": "sign-pdf-document",
+  "path": "/tools/sign-pdf-document",
+  "updatedAt": "2026-09-03T23:38:34.286Z",
+  "launchedAt": "2026-09-04T00:00:00.000Z",
+  "category": "pdf",
+  "primaryTopic": "pdf-docs",
+  "secondaryTopics": [
+    "security-ids"
+  ],
+  "featured": false,
+  "ymyl": true,
+  "i18nKey": "tool_sign_pdf_document_title",
+  "homeTitleKey": "tool_sign_pdf_document_title",
+  "homeDescKey": "tool_sign_pdf_document_desc",
+  "faqPrefix": "tool_sign_pdf_document",
+  "related": [
+    "add-digital-signature-to-pdf",
+    "protect-pdf",
+    "fill-out-pdf-form"
+  ],
+  "logo": "/icons/tools/sign-pdf-document.svg",
+  "page": {
+    "module": "../pages/signPdfDocumentPage",
+    "export": "renderSignPdfDocumentPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "documents",
+  "subject": "pdf"
+}

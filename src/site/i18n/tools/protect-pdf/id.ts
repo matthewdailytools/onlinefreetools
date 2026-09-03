@@ -21,7 +21,7 @@ const id: SiteLangDict = {
   tool_protect_pdf_err_protect: 'Enkripsi gagal. Periksa file dan sandi lalu coba lagi.',
   tool_protect_pdf_example:
     'Sampel membuat satu halaman, enkripsi dengan sample, aktifkan Unduh protected.pdf, dan tampilkan sandi di status.',
-  tool_protect_pdf_example_title: 'Contoh',
+  tool_protect_pdf_example_title: 'Lindungi PDF dengan kata sandi',
   tool_protect_pdf_faq_a1:
     'Tidak. pustaka PDF berjalan di tab Anda (skrip mungkin dari CDN). PDF tidak diunggah ke server kami.',
   tool_protect_pdf_faq_a2:
@@ -49,7 +49,7 @@ const id: SiteLangDict = {
   tool_protect_pdf_status_done: 'Selesai — klik Unduh untuk simpan protected.pdf.',
   tool_protect_pdf_status_sample_pwd: 'Contoh siap — sandi: «{pwd}». Unduh protected.pdf untuk coba.',
   tool_protect_pdf_status_working: 'Mengenkripsi PDF…',
-  tool_protect_pdf_title: 'Lindungi PDF — enkripsi dengan kata sandi di browser',
+  tool_protect_pdf_title: 'Lindungi PDF dengan kata sandi',
   tool_protect_pdf_usecase_1: 'Kantor: sandi buka sebelum kirim kontrak lewat email.',
   tool_protect_pdf_usecase_2: 'Operasi: kunci laporan sekali pakai sebelum portal klien.',
   tool_protect_pdf_usecase_3: 'Pelajar: lindungi scan tugas dengan sandi hanya untuk dosen.',

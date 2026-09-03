@@ -1,0 +1,31 @@
+{
+  "slug": "convert-html-to-pdf",
+  "path": "/tools/convert-html-to-pdf",
+  "updatedAt": "2026-09-03T16:51:45.638Z",
+  "launchedAt": "2026-09-03T14:00:00.000Z",
+  "category": "pdf",
+  "primaryTopic": "pdf-docs",
+  "secondaryTopics": [
+    "dev-data"
+  ],
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_convert_html_to_pdf_title",
+  "homeTitleKey": "tool_convert_html_to_pdf_title",
+  "homeDescKey": "tool_convert_html_to_pdf_desc",
+  "faqPrefix": "tool_convert_html_to_pdf",
+  "related": [
+    "markdown-to-html",
+    "write-pdf-document-online",
+    "convert-word-document-to-pdf"
+  ],
+  "logo": "/icons/tools/convert-html-to-pdf.svg",
+  "page": {
+    "module": "../pages/convertHtmlToPdfPage",
+    "export": "renderConvertHtmlToPdfPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "documents",
+  "subject": "pdf"
+}

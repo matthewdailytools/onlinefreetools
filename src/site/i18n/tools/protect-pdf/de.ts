@@ -21,7 +21,7 @@ const de: SiteLangDict = {
   tool_protect_pdf_err_protect: 'Verschlüsselung fehlgeschlagen. Datei und Passwort prüfen.',
   tool_protect_pdf_example:
     'Muster erstellt eine Seite, verschlüsselt mit sample, aktiviert Download protected.pdf und zeigt das Passwort im Status.',
-  tool_protect_pdf_example_title: 'Beispiel',
+  tool_protect_pdf_example_title: 'PDF mit Passwort schützen',
   tool_protect_pdf_faq_a1:
     'Nein. die PDF-Bibliothek läuft in Ihrem Tab (Skripte ggf. von CDN). Ihr PDF wird nicht auf unsere Server hochgeladen.',
   tool_protect_pdf_faq_a2:
@@ -49,7 +49,7 @@ const de: SiteLangDict = {
   tool_protect_pdf_status_done: 'Fertig — Download für protected.pdf klicken.',
   tool_protect_pdf_status_sample_pwd: 'Beispiel bereit — Passwort: «{pwd}». protected.pdf zum Testen laden.',
   tool_protect_pdf_status_working: 'PDF wird verschlüsselt…',
-  tool_protect_pdf_title: 'PDF schützen — im Browser mit Passwort verschlüsseln',
+  tool_protect_pdf_title: 'PDF mit Passwort schützen',
   tool_protect_pdf_usecase_1: 'Büro: Öffnungspasswort vor E-Mail mit Vertrag.',
   tool_protect_pdf_usecase_2: 'Ops: Einmalbericht vor Kundenportal sperren.',
   tool_protect_pdf_usecase_3: 'Studierende: Scan mit Passwort nur für die Lehrkraft schützen.',

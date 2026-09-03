@@ -18,7 +18,7 @@ const de: SiteLangDict = {
   tool_merge_pdf_err_merge: 'Zusammenfügen fehlgeschlagen. Dateien prüfen und erneut versuchen.',
   tool_merge_pdf_example:
     'Das Beispiel lädt zwei einseitige PDFs (A und B), fügt sie in Listenreihenfolge zusammen und aktiviert Download für ein zweiseitiges merged.pdf.',
-  tool_merge_pdf_example_title: 'Beispiel',
+  tool_merge_pdf_example_title: 'PDF-Dateien zu einer Datei kombinieren',
   tool_merge_pdf_faq_a1:
     'Nein. pdf-lib läuft in Ihrem Tab (die Bibliothek kann von einem CDN kommen). PDFs werden nicht auf unsere Server hochgeladen.',
   tool_merge_pdf_faq_a2:
@@ -55,7 +55,7 @@ const de: SiteLangDict = {
   tool_merge_pdf_stats_tpl: '{n} Dateien → {pages} Seiten · {bytes}',
   tool_merge_pdf_status_done: 'Fertig — Download speichert merged.pdf.',
   tool_merge_pdf_status_merging: 'PDFs werden zusammengefügt…',
-  tool_merge_pdf_title: 'PDF zusammenfügen — Dateien im Browser kombinieren',
+  tool_merge_pdf_title: 'PDF-Dateien zu einer zusammenfügen',
   tool_merge_pdf_usecase_1: 'Büro: Unterschriften und Anhänge zu einem Paket bündeln.',
   tool_merge_pdf_usecase_2: 'Studium: Kapitel einer Arbeit vor Abgabe zusammenfügen.',
   tool_merge_pdf_usecase_3: 'Ops: Briefings und Specs als ein PDF übergeben.',

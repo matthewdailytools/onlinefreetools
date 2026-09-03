@@ -20,7 +20,7 @@ const de: SiteLangDict = {
   tool_split_pdf_err_split: 'Teilen fehlgeschlagen. Datei und Bereiche prüfen und erneut versuchen.',
   tool_split_pdf_example:
     'Das Beispiel erzeugt ein dreiseitiges PDF, teilt jede Seite und aktiviert Download für ein ZIP mit page-1.pdf, page-2.pdf und page-3.pdf.',
-  tool_split_pdf_example_title: 'Beispiel',
+  tool_split_pdf_example_title: 'Mein PDF aufteilen',
   tool_split_pdf_faq_a1:
     'Nein. pdf-lib und fflate laufen in Ihrem Tab (Skripte können von einem CDN kommen). Ihr PDF wird nicht hochgeladen.',
   tool_split_pdf_faq_a2:
@@ -61,7 +61,7 @@ const de: SiteLangDict = {
   tool_split_pdf_stats_tpl: '{n} Datei(en) · {bytes}',
   tool_split_pdf_status_done: 'Fertig — Download speichert das Ergebnis.',
   tool_split_pdf_status_splitting: 'PDF wird geteilt…',
-  tool_split_pdf_title: 'PDF teilen — Seiten lokal extrahieren',
+  tool_split_pdf_title: 'Meine PDF teilen',
   tool_split_pdf_usecase_1: 'Büro: eine unterschriebene Seite aus einem langen Vertrag holen.',
   tool_split_pdf_usecase_2: 'Lehre: Folien-PDF in Seiten-Handouts zerlegen.',
   tool_split_pdf_usecase_3: 'Ops: jede gescannte Seite als eigene Datei ablegen.',

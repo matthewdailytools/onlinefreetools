@@ -1,0 +1,32 @@
+{
+  "slug": "check-pdf-a-compliance",
+  "path": "/tools/check-pdf-a-compliance",
+  "updatedAt": "2026-09-03T16:51:45.638Z",
+  "launchedAt": "2026-09-03T14:00:00.000Z",
+  "category": "pdf",
+  "primaryTopic": "pdf-docs",
+  "secondaryTopics": [
+    "dev-data"
+  ],
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_check_pdf_a_compliance_title",
+  "homeTitleKey": "tool_check_pdf_a_compliance_title",
+  "homeDescKey": "tool_check_pdf_a_compliance_desc",
+  "faqPrefix": "tool_check_pdf_a_compliance",
+  "related": [
+    "compress-pdf",
+    "convert-html-to-pdf",
+    "extract-text-from-pdf",
+    "convert-pdf-to-pdf-a"
+  ],
+  "logo": "/icons/tools/check-pdf-a-compliance.svg",
+  "page": {
+    "module": "../pages/checkPdfACompliancePage",
+    "export": "renderCheckPdfACompliancePage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "documents",
+  "subject": "pdf"
+}

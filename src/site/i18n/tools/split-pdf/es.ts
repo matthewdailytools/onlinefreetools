@@ -20,7 +20,7 @@ const es: SiteLangDict = {
   tool_split_pdf_err_split: 'La división falló. Revisa el archivo y los rangos e inténtalo de nuevo.',
   tool_split_pdf_example:
     'El ejemplo crea un PDF de tres páginas, lo divide por página y activa Descargar para un ZIP con page-1.pdf, page-2.pdf y page-3.pdf.',
-  tool_split_pdf_example_title: 'Ejemplo',
+  tool_split_pdf_example_title: 'Dividir mi PDF',
   tool_split_pdf_faq_a1:
     'No. pdf-lib y fflate corren en tu pestaña (los scripts pueden cargar desde un CDN). No subimos tu PDF.',
   tool_split_pdf_faq_a2:
@@ -61,7 +61,7 @@ const es: SiteLangDict = {
   tool_split_pdf_stats_tpl: '{n} archivo(s) · {bytes}',
   tool_split_pdf_status_done: 'Listo — pulsa Descargar para guardar.',
   tool_split_pdf_status_splitting: 'Dividiendo PDF…',
-  tool_split_pdf_title: 'Dividir PDF — extrae páginas en tu dispositivo',
+  tool_split_pdf_title: 'Dividir mi PDF',
   tool_split_pdf_usecase_1: 'Oficina: sacar una página firmada de un contrato largo.',
   tool_split_pdf_usecase_2: 'Docencia: partir un PDF de diapositivas en folletos por página.',
   tool_split_pdf_usecase_3: 'Ops: archivar cada página escaneada como archivo propio.',

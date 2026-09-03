@@ -21,7 +21,7 @@ const ru: SiteLangDict = {
   tool_pdf_to_jpg_err_pdfjs: 'Не удалось загрузить движок PDF. Проверьте сеть.',
   tool_pdf_to_jpg_example:
     'Образец создаёт PDF из двух страниц, конвертирует каждую и включает Скачать ZIP с page-1.jpg и page-2.jpg.',
-  tool_pdf_to_jpg_example_title: 'Пример',
+  tool_pdf_to_jpg_example_title: 'Конвертировать страницы PDF в JPG',
   tool_pdf_to_jpg_faq_a1:
     'Нет. рендерер страниц и библиотека ZIP работают во вкладке (скрипты могут грузиться с CDN). PDF не отправляется на наши серверы.',
   tool_pdf_to_jpg_faq_a2:
@@ -53,7 +53,7 @@ const ru: SiteLangDict = {
   tool_pdf_to_jpg_stats_tpl: '{n} стр. · {bytes}',
   tool_pdf_to_jpg_status_converting: 'Конвертация страниц в JPG…',
   tool_pdf_to_jpg_status_done: 'Готово — нажмите Скачать.',
-  tool_pdf_to_jpg_title: 'PDF в JPG — сохраните страницы как изображения',
+  tool_pdf_to_jpg_title: 'Конвертировать страницы PDF в JPG',
   tool_pdf_to_jpg_usecase_1: 'Офис: экспорт слайда или подписанной страницы в чат.',
   tool_pdf_to_jpg_usecase_2: 'Маркетинг: миниатюры JPG из каталога PDF.',
   tool_pdf_to_jpg_usecase_3: 'Студенты: страницы лекций PDF как картинки для заметок.',

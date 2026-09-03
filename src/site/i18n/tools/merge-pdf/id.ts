@@ -18,7 +18,7 @@ const id: SiteLangDict = {
   tool_merge_pdf_err_merge: 'Penggabungan gagal. Periksa file dan coba lagi.',
   tool_merge_pdf_example:
     'Sampel memuat dua PDF satu halaman (A dan B), menggabung sesuai urutan daftar, dan mengaktifkan Unduh untuk merged.pdf dua halaman.',
-  tool_merge_pdf_example_title: 'Contoh',
+  tool_merge_pdf_example_title: 'Gabungkan file PDF jadi satu',
   tool_merge_pdf_faq_a1:
     'Tidak. pdf-lib berjalan di tab Anda (pustaka bisa dimuat dari CDN). PDF tidak diunggah ke server kami.',
   tool_merge_pdf_faq_a2:
@@ -55,7 +55,7 @@ const id: SiteLangDict = {
   tool_merge_pdf_stats_tpl: '{n} file → {pages} halaman · {bytes}',
   tool_merge_pdf_status_done: 'Selesai — klik Unduh untuk menyimpan merged.pdf.',
   tool_merge_pdf_status_merging: 'Menggabungkan PDF…',
-  tool_merge_pdf_title: 'Gabung PDF — satukan file di browser',
+  tool_merge_pdf_title: 'Gabungkan file PDF menjadi satu',
   tool_merge_pdf_usecase_1: 'Kantor: gabungkan halaman tanda tangan dan lampiran jadi satu paket.',
   tool_merge_pdf_usecase_2: 'Mahasiswa: satukan bab tugas sebelum dikumpulkan.',
   tool_merge_pdf_usecase_3: 'Ops: kemas brief dan spek jadi satu PDF serah terima.',

@@ -24,7 +24,7 @@ const id: SiteLangDict = {
   tool_unlock_pdf_err_unlock: 'Gagal membuka kunci. Periksa file dan kata sandi lalu coba lagi.',
   tool_unlock_pdf_example:
     'Contoh membuat PDF satu halaman terenkripsi dengan kata sandi sample, mengisi sandi, membuka kunci, dan mengaktifkan Unduh unlocked.pdf.',
-  tool_unlock_pdf_example_title: 'Contoh',
+  tool_unlock_pdf_example_title: 'Buka kunci PDF saya',
   tool_unlock_pdf_faq_a1:
     'Tidak. Hanya menghapus proteksi jika Anda memasukkan kata sandi buka yang benar. Tanpa crack, brute force, atau memulihkan sandi yang tidak diketahui.',
   tool_unlock_pdf_faq_a2:
@@ -55,7 +55,7 @@ const id: SiteLangDict = {
   tool_unlock_pdf_status_done: 'Selesai — klik Unduh untuk menyimpan unlocked.pdf.',
   tool_unlock_pdf_status_sample_pwd: 'Contoh siap — kata sandi «{pwd}». Unduh unlocked.pdf untuk coba.',
   tool_unlock_pdf_status_working: 'Membuka kunci PDF…',
-  tool_unlock_pdf_title: 'Buka Kunci PDF — hapus kata sandi yang sudah Anda tahu',
+  tool_unlock_pdf_title: 'Buka kunci PDF saya',
   tool_unlock_pdf_unlock: 'Buka kunci',
   tool_unlock_pdf_usecase_1: 'Kantor: hapus sandi buka sendiri agar bisa digabung atau dicetak di app lain.',
   tool_unlock_pdf_usecase_2: 'Operasi: buka kunci ekspor klien yang Anda enkripsi sebelum unggah ke portal.',

@@ -18,7 +18,7 @@ const es: SiteLangDict = {
   tool_merge_pdf_err_merge: 'La unión falló. Revisa los archivos e inténtalo de nuevo.',
   tool_merge_pdf_example:
     'El ejemplo carga dos PDF de una página (A y B), los une en el orden de la lista y activa Descargar para un merged.pdf de dos páginas.',
-  tool_merge_pdf_example_title: 'Ejemplo',
+  tool_merge_pdf_example_title: 'Combinar archivos PDF en uno',
   tool_merge_pdf_faq_a1:
     'No. pdf-lib corre en tu pestaña (la librería puede cargar desde un CDN). No subimos tus PDF a nuestros servidores.',
   tool_merge_pdf_faq_a2:
@@ -55,7 +55,7 @@ const es: SiteLangDict = {
   tool_merge_pdf_stats_tpl: '{n} archivos → {pages} páginas · {bytes}',
   tool_merge_pdf_status_done: 'Listo — pulsa Descargar para guardar merged.pdf.',
   tool_merge_pdf_status_merging: 'Uniendo PDF…',
-  tool_merge_pdf_title: 'Unir PDF — combina varios archivos en el navegador',
+  tool_merge_pdf_title: 'Combinar archivos PDF en uno',
   tool_merge_pdf_usecase_1: 'Oficina: juntar firmas y anexos en un solo paquete.',
   tool_merge_pdf_usecase_2: 'Estudios: unir capítulos de un trabajo antes de entregarlo.',
   tool_merge_pdf_usecase_3: 'Operaciones: empaquetar briefs y especificaciones en un PDF.',

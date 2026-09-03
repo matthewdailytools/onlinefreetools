@@ -20,7 +20,7 @@ const id: SiteLangDict = {
   tool_compress_pdf_err_load: 'PDF tidak bisa dibaca (rusak atau tidak didukung). Coba file lain.',
   tool_compress_pdf_example:
     'Sampel memuat PDF dua halaman dengan blok warna dan JPEG tertanam, menjalankan kompresi Sedang, menampilkan ukuran sebelum/sesudah dengan persen hemat, dan mengaktifkan unduh compressed.pdf.',
-  tool_compress_pdf_example_title: 'Contoh',
+  tool_compress_pdf_example_title: 'Perkecil ukuran file PDF',
   tool_compress_pdf_faq_a1:
     'Tidak. pdf.js dan pustaka PDF berjalan di tab Anda (pustaka mungkin dimuat dari CDN). PDF tidak diunggah ke server kami.',
   tool_compress_pdf_faq_a2:
@@ -57,7 +57,7 @@ const id: SiteLangDict = {
   tool_compress_pdf_stats_tpl: '{from} → {to} · hemat {pct}%',
   tool_compress_pdf_status_done: 'Selesai — klik Unduh untuk menyimpan compressed.pdf.',
   tool_compress_pdf_status_working: 'Mengompres PDF…',
-  tool_compress_pdf_title: 'Kompres PDF — kecilkan ukuran di browser',
+  tool_compress_pdf_title: 'Perkecil ukuran file PDF',
   tool_compress_pdf_usecase_1: 'Kantor: kecilkan scan sebelum batas lampiran email.',
   tool_compress_pdf_usecase_2: 'Pelajar: perkecil PDF berisi foto untuk formulir unggah.',
   tool_compress_pdf_usecase_3: 'Pemilik situs: ringankan PDF marketing untuk dibagikan jika kualitas raster cukup.',

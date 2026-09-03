@@ -1,0 +1,30 @@
+{
+  "slug": "make-pdf-fillable",
+  "path": "/tools/make-pdf-fillable",
+  "updatedAt": "2026-09-03T23:38:34.286Z",
+  "launchedAt": "2026-09-04T00:00:00.000Z",
+  "category": "pdf",
+  "primaryTopic": "pdf-docs",
+  "secondaryTopics": [
+    "dev-data"
+  ],
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_make_pdf_fillable_title",
+  "homeTitleKey": "tool_make_pdf_fillable_title",
+  "homeDescKey": "tool_make_pdf_fillable_desc",
+  "faqPrefix": "tool_make_pdf_fillable",
+  "related": [
+    "create-pdf-form",
+    "fill-out-pdf-form"
+  ],
+  "logo": "/icons/tools/make-pdf-fillable.svg",
+  "page": {
+    "module": "../pages/makePdfFillablePage",
+    "export": "renderMakePdfFillablePage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "documents",
+  "subject": "pdf"
+}

@@ -21,7 +21,7 @@ const en: SiteLangDict = {
   tool_pdf_to_jpg_err_pdfjs: 'PDF renderer failed to load. Check your network and retry.',
   tool_pdf_to_jpg_example:
     'Sample builds a two-page PDF, converts every page, and enables Download for a ZIP with page-1.jpg and page-2.jpg.',
-  tool_pdf_to_jpg_example_title: 'Example',
+  tool_pdf_to_jpg_example_title: 'Convert PDF pages to JPG',
   tool_pdf_to_jpg_faq_a1:
     'No. the page renderer and the ZIP library run in your tab (scripts may load from a CDN). Your PDF is not uploaded to our servers.',
   tool_pdf_to_jpg_faq_a2:
@@ -56,7 +56,7 @@ const en: SiteLangDict = {
   tool_pdf_to_jpg_stats_tpl: '{n} page(s) · {bytes}',
   tool_pdf_to_jpg_status_converting: 'Converting pages to JPG…',
   tool_pdf_to_jpg_status_done: 'Done — click Download to save.',
-  tool_pdf_to_jpg_title: 'PDF to JPG — Convert Pages to Images in Your Browser',
+  tool_pdf_to_jpg_title: 'Convert PDF pages to JPG',
   tool_pdf_to_jpg_usecase_1: 'Office: export a slide or signed page to paste into chat or email.',
   tool_pdf_to_jpg_usecase_2: 'Marketing: pull product pages from a catalog PDF as JPG thumbnails.',
   tool_pdf_to_jpg_usecase_3: 'Students: save lecture PDF pages as images for notes apps.',

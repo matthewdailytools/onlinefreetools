@@ -3,6 +3,8 @@
  * Source of truth: src/site/tool-catalog.d/{slug}.json → page.module / page.export / page.style
  */
 import type { SiteLang } from './i18n';
+import { renderAddDigitalSignatureToPdfPage } from '../pages/addDigitalSignatureToPdfPage';
+import { renderAddTextToPdfFilePage } from '../pages/addTextToPdfFilePage';
 import { renderAddWatermarkPage } from '../pages/addWatermarkPage';
 import { renderAddWwwToDnsPage } from '../pages/addWwwToDnsPage';
 import { renderAmazonMainImageSizePage } from '../pages/amazonMainImageSizePage';
@@ -22,23 +24,35 @@ import { renderBulkConvertImagesToJpgPage } from '../pages/bulkConvertImagesToJp
 import { renderBulkConvertImagesToPngPage } from '../pages/bulkConvertImagesToPngPage';
 import { renderBulkConvertImagesToWebpPage } from '../pages/bulkConvertImagesToWebpPage';
 import { renderChatgptExportToMarkdownPage } from '../pages/chatgptExportToMarkdownPage';
+import { renderCheckPdfACompliancePage } from '../pages/checkPdfACompliancePage';
 import { renderCheckRobotsTxtUrlBlockedPage } from '../pages/checkRobotsTxtUrlBlockedPage';
 import { renderCheckSslCertificateExpirationPage } from '../pages/checkSslCertificateExpirationPage';
 import { renderCidrCheatSheetPage } from '../pages/cidrCheatSheetPage';
 import { renderCidrToIpRangePage } from '../pages/cidrToIpRangePage';
 import { renderColorFromImagePage } from '../pages/colorFromImagePage';
+import { renderCombineFilesIntoOnePdfPage } from '../pages/combineFilesIntoOnePdfPage';
+import { renderCompareTwoPdfsPage } from '../pages/compareTwoPdfsPage';
 import { renderCompareTwoTextFilesOnlinePage } from '../pages/compareTwoTextFilesOnlinePage';
 import { renderCompareTwoWordDocumentsForDifferencesPage } from '../pages/compareTwoWordDocumentsForDifferencesPage';
 import { renderCompressPdfPage } from '../pages/compressPdfPage';
+import { renderConvertHtmlToPdfPage } from '../pages/convertHtmlToPdfPage';
+import { renderConvertPdfToDwgPage } from '../pages/convertPdfToDwgPage';
+import { renderConvertPdfToPdfAPage } from '../pages/convertPdfToPdfAPage';
+import { renderConvertWordDocumentToPdfPage } from '../pages/convertWordDocumentToPdfPage';
 import { renderCoreWebVitalsCheckerPage } from '../pages/coreWebVitalsCheckerPage';
+import { renderCreatePdfFormPage } from '../pages/createPdfFormPage';
 import { renderCreateZipFilePage } from '../pages/createZipFilePage';
 import { renderCropPdfPage } from '../pages/cropPdfPage';
 import { renderCsvJsonPage } from '../pages/csvJsonPage';
 import { renderCurlToFetchPage } from '../pages/curlToFetchPage';
 import { renderDomainLookupPage } from '../pages/domainLookupPage';
+import { renderEditPdfFormFieldsPage } from '../pages/editPdfFormFieldsPage';
+import { renderEditPdfTextOnlinePage } from '../pages/editPdfTextOnlinePage';
 import { renderExcelCompareFilesPage } from '../pages/excelCompareFilesPage';
+import { renderExtractTextFromPdfPage } from '../pages/extractTextFromPdfPage';
 import { renderFileHashPage } from '../pages/fileHashPage';
 import { renderFileMetadataAnalyzerPage } from '../pages/fileMetadataAnalyzerPage';
+import { renderFillOutPdfFormPage } from '../pages/fillOutPdfFormPage';
 import { renderFilmPromptBuilderPage } from '../pages/filmPromptBuilderPage';
 import { renderFindAndValidateXmlSitemapPage } from '../pages/findAndValidateXmlSitemapPage';
 import { renderFlipImagePage } from '../pages/flipImagePage';
@@ -132,6 +146,8 @@ import { renderJsonSchemaValidatorPage } from '../pages/jsonSchemaValidatorPage'
 import { renderJwtDecoderPage } from '../pages/jwtDecoderPage';
 import { renderLinkedinBannerSizePage } from '../pages/linkedinBannerSizePage';
 import { renderMagnetLinkDecoderPage } from '../pages/magnetLinkDecoderPage';
+import { renderMakePdfFillablePage } from '../pages/makePdfFillablePage';
+import { renderMakePdfFlipbookPage } from '../pages/makePdfFlipbookPage';
 import { renderMarkdownToHtmlPage } from '../pages/markdownToHtmlPage';
 import { renderMeasuringMagneticFieldsPage } from '../pages/measuringMagneticFieldsPage';
 import { renderMergePdfPage } from '../pages/mergePdfPage';
@@ -141,6 +157,7 @@ import { renderMidjourneyPromptBuilderPage } from '../pages/midjourneyPromptBuil
 import { renderOnPageSeoCheckerPage } from '../pages/onPageSeoCheckerPage';
 import { renderOpenGraphImageSizePage } from '../pages/openGraphImageSizePage';
 import { renderOpenGraphPreviewPage } from '../pages/openGraphPreviewPage';
+import { renderOpenPdfInBrowserPage } from '../pages/openPdfInBrowserPage';
 import { renderOrganizePdfPage } from '../pages/organizePdfPage';
 import { renderPasswordGeneratorPage } from '../pages/passwordGeneratorPage';
 import { renderPdfPageNumbersPage } from '../pages/pdfPageNumbersPage';
@@ -148,6 +165,7 @@ import { renderPdfPageToImageSizesPage } from '../pages/pdfPageToImageSizesPage'
 import { renderPdfToJpgPage } from '../pages/pdfToJpgPage';
 import { renderPdfToMarkdownPage } from '../pages/pdfToMarkdownPage';
 import { renderPdfWatermarkPage } from '../pages/pdfWatermarkPage';
+import { renderPrintPdfPage } from '../pages/printPdfPage';
 import { renderPrivateCidrRangesPage } from '../pages/privateCidrRangesPage';
 import { renderProductDesignPromptBuilderPage } from '../pages/productDesignPromptBuilderPage';
 import { renderPromptTemplateBuilderPage } from '../pages/promptTemplateBuilderPage';
@@ -156,6 +174,7 @@ import { renderRobotsTxtGeneratorPage } from '../pages/robotsTxtGeneratorPage';
 import { renderRotatePdfPage } from '../pages/rotatePdfPage';
 import { renderSchemaJsonldGeneratorPage } from '../pages/schemaJsonldGeneratorPage';
 import { renderShortDramaPromptGeneratorPage } from '../pages/shortDramaPromptGeneratorPage';
+import { renderSignPdfDocumentPage } from '../pages/signPdfDocumentPage';
 import { renderSitemapXmlGeneratorPage } from '../pages/sitemapXmlGeneratorPage';
 import { renderSketchPromptGeneratorPage } from '../pages/sketchPromptGeneratorPage';
 import { renderSmartWebsiteColorSchemePage } from '../pages/smartWebsiteColorSchemePage';
@@ -166,6 +185,8 @@ import { renderSvgOptimizerPage } from '../pages/svgOptimizerPage';
 import { renderTerraformCidrsubnetPage } from '../pages/terraformCidrsubnetPage';
 import { renderTextDiffPage } from '../pages/textDiffPage';
 import { renderTimezoneConverterPage } from '../pages/timezoneConverterPage';
+import { renderTurnPdfIntoEditableDocumentPage } from '../pages/turnPdfIntoEditableDocumentPage';
+import { renderTurnPdfIntoWordDocumentPage } from '../pages/turnPdfIntoWordDocumentPage';
 import { renderUnitConverterPage } from '../pages/unitConverterPage';
 import { renderUnixTimestampPage } from '../pages/unixTimestampPage';
 import { renderUnlockPdfPage } from '../pages/unlockPdfPage';
@@ -175,6 +196,7 @@ import { renderUuidGeneratorPage } from '../pages/uuidGeneratorPage';
 import { renderValidateSecurityTxtPage } from '../pages/validateSecurityTxtPage';
 import { renderWcagContrastCheckerPage } from '../pages/wcagContrastCheckerPage';
 import { renderWebsiteHeadersPage } from '../pages/websiteHeadersPage';
+import { renderWritePdfDocumentOnlinePage } from '../pages/writePdfDocumentOnlinePage';
 import { renderWritingPromptGeneratorPage } from '../pages/writingPromptGeneratorPage';
 import { renderYamlJsonPage } from '../pages/yamlJsonPage';
 import { renderYoutubeThumbnailSizePage } from '../pages/youtubeThumbnailSizePage';
@@ -187,6 +209,8 @@ export type ToolPageRenderFn = (
 
 /** slug → render function for registerToolPage */
 export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
+	'add-digital-signature-to-pdf': (lang, defaultLang, enabled) => renderAddDigitalSignatureToPdfPage({ lang, defaultLang, enabledLangs: enabled }),
+	'add-text-to-pdf-file': (lang, defaultLang, enabled) => renderAddTextToPdfFilePage({ lang, defaultLang, enabledLangs: enabled }),
 	'add-watermark': (lang, defaultLang, enabled) => renderAddWatermarkPage({ lang, defaultLang, enabledLangs: enabled }),
 	'add-www-to-dns': (lang, defaultLang, enabled) => renderAddWwwToDnsPage({ lang, defaultLang, enabledLangs: enabled }),
 	'amazon-main-image-size': (lang, defaultLang, enabled) => renderAmazonMainImageSizePage({ lang, defaultLang, enabledLangs: enabled }),
@@ -206,23 +230,35 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'bulk-convert-images-to-png': (lang, defaultLang, enabled) => renderBulkConvertImagesToPngPage({ lang, defaultLang, enabledLangs: enabled }),
 	'bulk-convert-images-to-webp': (lang, defaultLang, enabled) => renderBulkConvertImagesToWebpPage({ lang, defaultLang, enabledLangs: enabled }),
 	'chatgpt-export-to-markdown': (lang, defaultLang, enabled) => renderChatgptExportToMarkdownPage({ lang, defaultLang, enabledLangs: enabled }),
+	'check-pdf-a-compliance': (lang, defaultLang, enabled) => renderCheckPdfACompliancePage({ lang, defaultLang, enabledLangs: enabled }),
 	'check-robots-txt-url-blocked': (lang, defaultLang, enabled) => renderCheckRobotsTxtUrlBlockedPage({ lang, defaultLang, enabledLangs: enabled }),
 	'check-ssl-certificate-expiration': (lang, defaultLang, enabled) => renderCheckSslCertificateExpirationPage({ lang, defaultLang, enabledLangs: enabled }),
 	'cidr-cheat-sheet': (lang, defaultLang, enabled) => renderCidrCheatSheetPage({ lang, defaultLang, enabledLangs: enabled }),
 	'cidr-to-ip-range': (lang, defaultLang, enabled) => renderCidrToIpRangePage({ lang, defaultLang, enabledLangs: enabled }),
 	'color-from-image': (lang, defaultLang, enabled) => renderColorFromImagePage({ lang, defaultLang, enabledLangs: enabled }),
+	'combine-files-into-one-pdf': (lang, defaultLang, enabled) => renderCombineFilesIntoOnePdfPage({ lang, defaultLang, enabledLangs: enabled }),
+	'compare-two-pdfs': (lang, defaultLang, enabled) => renderCompareTwoPdfsPage({ lang, defaultLang, enabledLangs: enabled }),
 	'compare-two-text-files-online': (lang, defaultLang, enabled) => renderCompareTwoTextFilesOnlinePage({ lang, defaultLang, enabledLangs: enabled }),
 	'compare-two-word-documents-for-differences': (lang, defaultLang, enabled) => renderCompareTwoWordDocumentsForDifferencesPage({ lang, defaultLang, enabledLangs: enabled }),
 	'compress-pdf': (lang, defaultLang, enabled) => renderCompressPdfPage({ lang, defaultLang, enabledLangs: enabled }),
+	'convert-html-to-pdf': (lang, defaultLang, enabled) => renderConvertHtmlToPdfPage({ lang, defaultLang, enabledLangs: enabled }),
+	'convert-pdf-to-dwg': (lang, defaultLang, enabled) => renderConvertPdfToDwgPage({ lang, defaultLang, enabledLangs: enabled }),
+	'convert-pdf-to-pdf-a': (lang, defaultLang, enabled) => renderConvertPdfToPdfAPage({ lang, defaultLang, enabledLangs: enabled }),
+	'convert-word-document-to-pdf': (lang, defaultLang, enabled) => renderConvertWordDocumentToPdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'core-web-vitals-checker': (lang, defaultLang, enabled) => renderCoreWebVitalsCheckerPage({ lang, defaultLang, enabledLangs: enabled }),
+	'create-pdf-form': (lang, defaultLang, enabled) => renderCreatePdfFormPage({ lang, defaultLang, enabledLangs: enabled }),
 	'create-zip-file': (lang, defaultLang, enabled) => renderCreateZipFilePage({ lang, defaultLang, enabledLangs: enabled }),
 	'crop-pdf': (lang, defaultLang, enabled) => renderCropPdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'csv-json': (lang, defaultLang, enabled) => renderCsvJsonPage({ lang, defaultLang, enabledLangs: enabled }),
 	'curl-to-fetch': (lang, defaultLang, enabled) => renderCurlToFetchPage({ lang, defaultLang, enabledLangs: enabled }),
 	'domain-lookup': (lang, defaultLang, _enabled) => renderDomainLookupPage(lang, defaultLang),
+	'edit-pdf-form-fields': (lang, defaultLang, enabled) => renderEditPdfFormFieldsPage({ lang, defaultLang, enabledLangs: enabled }),
+	'edit-pdf-text-online': (lang, defaultLang, enabled) => renderEditPdfTextOnlinePage({ lang, defaultLang, enabledLangs: enabled }),
 	'excel-compare-files': (lang, defaultLang, enabled) => renderExcelCompareFilesPage({ lang, defaultLang, enabledLangs: enabled }),
+	'extract-text-from-pdf': (lang, defaultLang, enabled) => renderExtractTextFromPdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'file-hash': (lang, defaultLang, enabled) => renderFileHashPage({ lang, defaultLang, enabledLangs: enabled }),
 	'file-metadata-analyzer': (lang, defaultLang, enabled) => renderFileMetadataAnalyzerPage({ lang, defaultLang, enabledLangs: enabled }),
+	'fill-out-pdf-form': (lang, defaultLang, enabled) => renderFillOutPdfFormPage({ lang, defaultLang, enabledLangs: enabled }),
 	'film-prompt-builder': (lang, defaultLang, enabled) => renderFilmPromptBuilderPage({ lang, defaultLang, enabledLangs: enabled }),
 	'find-and-validate-xml-sitemap': (lang, defaultLang, enabled) => renderFindAndValidateXmlSitemapPage({ lang, defaultLang, enabledLangs: enabled }),
 	'flip-image': (lang, defaultLang, enabled) => renderFlipImagePage({ lang, defaultLang, enabledLangs: enabled }),
@@ -316,6 +352,8 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'jwt-decoder': (lang, defaultLang, enabled) => renderJwtDecoderPage({ lang, defaultLang, enabledLangs: enabled }),
 	'linkedin-banner-size': (lang, defaultLang, enabled) => renderLinkedinBannerSizePage({ lang, defaultLang, enabledLangs: enabled }),
 	'magnet-link-decoder': (lang, defaultLang, enabled) => renderMagnetLinkDecoderPage({ lang, defaultLang, enabledLangs: enabled }),
+	'make-pdf-fillable': (lang, defaultLang, enabled) => renderMakePdfFillablePage({ lang, defaultLang, enabledLangs: enabled }),
+	'make-pdf-flipbook': (lang, defaultLang, enabled) => renderMakePdfFlipbookPage({ lang, defaultLang, enabledLangs: enabled }),
 	'markdown-to-html': (lang, defaultLang, enabled) => renderMarkdownToHtmlPage({ lang, defaultLang, enabledLangs: enabled }),
 	'measuring-magnetic-fields': (lang, defaultLang, enabled) => renderMeasuringMagneticFieldsPage({ lang, defaultLang, enabledLangs: enabled }),
 	'merge-pdf': (lang, defaultLang, enabled) => renderMergePdfPage({ lang, defaultLang, enabledLangs: enabled }),
@@ -325,6 +363,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'on-page-seo-checker': (lang, defaultLang, enabled) => renderOnPageSeoCheckerPage({ lang, defaultLang, enabledLangs: enabled }),
 	'open-graph-image-size': (lang, defaultLang, enabled) => renderOpenGraphImageSizePage({ lang, defaultLang, enabledLangs: enabled }),
 	'open-graph-preview': (lang, defaultLang, enabled) => renderOpenGraphPreviewPage({ lang, defaultLang, enabledLangs: enabled }),
+	'open-pdf-in-browser': (lang, defaultLang, enabled) => renderOpenPdfInBrowserPage({ lang, defaultLang, enabledLangs: enabled }),
 	'organize-pdf': (lang, defaultLang, enabled) => renderOrganizePdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'password-generator': (lang, defaultLang, enabled) => renderPasswordGeneratorPage({ lang, defaultLang, enabledLangs: enabled }),
 	'pdf-page-numbers': (lang, defaultLang, enabled) => renderPdfPageNumbersPage({ lang, defaultLang, enabledLangs: enabled }),
@@ -332,6 +371,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'pdf-to-jpg': (lang, defaultLang, enabled) => renderPdfToJpgPage({ lang, defaultLang, enabledLangs: enabled }),
 	'pdf-to-markdown': (lang, defaultLang, enabled) => renderPdfToMarkdownPage({ lang, defaultLang, enabledLangs: enabled }),
 	'pdf-watermark': (lang, defaultLang, enabled) => renderPdfWatermarkPage({ lang, defaultLang, enabledLangs: enabled }),
+	'print-pdf': (lang, defaultLang, enabled) => renderPrintPdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'private-cidr-ranges': (lang, defaultLang, enabled) => renderPrivateCidrRangesPage({ lang, defaultLang, enabledLangs: enabled }),
 	'product-design-prompt-builder': (lang, defaultLang, enabled) => renderProductDesignPromptBuilderPage({ lang, defaultLang, enabledLangs: enabled }),
 	'prompt-template-builder': (lang, defaultLang, enabled) => renderPromptTemplateBuilderPage({ lang, defaultLang, enabledLangs: enabled }),
@@ -340,6 +380,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'rotate-pdf': (lang, defaultLang, enabled) => renderRotatePdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'schema-jsonld-generator': (lang, defaultLang, enabled) => renderSchemaJsonldGeneratorPage({ lang, defaultLang, enabledLangs: enabled }),
 	'short-drama-prompt-generator': (lang, defaultLang, enabled) => renderShortDramaPromptGeneratorPage({ lang, defaultLang, enabledLangs: enabled }),
+	'sign-pdf-document': (lang, defaultLang, enabled) => renderSignPdfDocumentPage({ lang, defaultLang, enabledLangs: enabled }),
 	'sitemap-xml-generator': (lang, defaultLang, enabled) => renderSitemapXmlGeneratorPage({ lang, defaultLang, enabledLangs: enabled }),
 	'sketch-prompt-generator': (lang, defaultLang, enabled) => renderSketchPromptGeneratorPage({ lang, defaultLang, enabledLangs: enabled }),
 	'smart-website-color-scheme': (lang, defaultLang, enabled) => renderSmartWebsiteColorSchemePage({ lang, defaultLang, enabledLangs: enabled }),
@@ -350,6 +391,8 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'terraform-cidrsubnet': (lang, defaultLang, enabled) => renderTerraformCidrsubnetPage({ lang, defaultLang, enabledLangs: enabled }),
 	'text-diff': (lang, defaultLang, enabled) => renderTextDiffPage({ lang, defaultLang, enabledLangs: enabled }),
 	'timezone-converter': (lang, defaultLang, enabled) => renderTimezoneConverterPage({ lang, defaultLang, enabledLangs: enabled }),
+	'turn-pdf-into-editable-document': (lang, defaultLang, enabled) => renderTurnPdfIntoEditableDocumentPage({ lang, defaultLang, enabledLangs: enabled }),
+	'turn-pdf-into-word-document': (lang, defaultLang, enabled) => renderTurnPdfIntoWordDocumentPage({ lang, defaultLang, enabledLangs: enabled }),
 	'unit-converter': (lang, defaultLang, enabled) => renderUnitConverterPage({ lang, defaultLang, enabledLangs: enabled }),
 	'unix-timestamp': (lang, defaultLang, enabled) => renderUnixTimestampPage({ lang, defaultLang, enabledLangs: enabled }),
 	'unlock-pdf': (lang, defaultLang, enabled) => renderUnlockPdfPage({ lang, defaultLang, enabledLangs: enabled }),
@@ -359,6 +402,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'validate-security-txt': (lang, defaultLang, enabled) => renderValidateSecurityTxtPage({ lang, defaultLang, enabledLangs: enabled }),
 	'wcag-contrast-checker': (lang, defaultLang, enabled) => renderWcagContrastCheckerPage({ lang, defaultLang, enabledLangs: enabled }),
 	'website-headers': (lang, defaultLang, _enabled) => renderWebsiteHeadersPage(lang, defaultLang),
+	'write-pdf-document-online': (lang, defaultLang, enabled) => renderWritePdfDocumentOnlinePage({ lang, defaultLang, enabledLangs: enabled }),
 	'writing-prompt-generator': (lang, defaultLang, enabled) => renderWritingPromptGeneratorPage({ lang, defaultLang, enabledLangs: enabled }),
 	'yaml-json': (lang, defaultLang, enabled) => renderYamlJsonPage({ lang, defaultLang, enabledLangs: enabled }),
 	'youtube-thumbnail-size': (lang, defaultLang, enabled) => renderYoutubeThumbnailSizePage({ lang, defaultLang, enabledLangs: enabled }),

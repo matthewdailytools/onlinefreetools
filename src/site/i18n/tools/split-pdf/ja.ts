@@ -20,7 +20,7 @@ const ja: SiteLangDict = {
   tool_split_pdf_err_split: '分割に失敗しました。ファイルと範囲を確認して再試行してください。',
   tool_split_pdf_example:
     'サンプルは3ページのPDFを作り、1ページごとに分割し、page-1.pdf〜page-3.pdf のZIPをダウンロードできるようにします。',
-  tool_split_pdf_example_title: '例',
+  tool_split_pdf_example_title: 'PDF をページ分割',
   tool_split_pdf_faq_a1:
     'いいえ。pdf-lib と fflate はタブ内で動作します（スクリプトはCDNから読み込む場合があります）。PDFはサーバーに送られません。',
   tool_split_pdf_faq_a2:
@@ -56,7 +56,7 @@ const ja: SiteLangDict = {
   tool_split_pdf_stats_tpl: '{n} ファイル · {bytes}',
   tool_split_pdf_status_done: '完了 — ダウンロードで保存できます。',
   tool_split_pdf_status_splitting: 'PDFを分割しています…',
-  tool_split_pdf_title: 'PDF分割 — ページを端末内で取り出す',
+  tool_split_pdf_title: 'PDF を分割する',
   tool_split_pdf_usecase_1: '事務：長い契約書から署名ページだけ取り出す。',
   tool_split_pdf_usecase_2: '教材：スライドPDFをページごとの配布資料に分ける。',
   tool_split_pdf_usecase_3: '運用：スキャンをページ単位で個別保存する。',

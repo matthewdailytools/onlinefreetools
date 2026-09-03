@@ -1,0 +1,31 @@
+{
+  "slug": "write-pdf-document-online",
+  "path": "/tools/write-pdf-document-online",
+  "updatedAt": "2026-09-03T16:51:45.638Z",
+  "launchedAt": "2026-09-03T14:00:00.000Z",
+  "category": "pdf",
+  "primaryTopic": "pdf-docs",
+  "secondaryTopics": [
+    "dev-data"
+  ],
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_write_pdf_document_online_title",
+  "homeTitleKey": "tool_write_pdf_document_online_title",
+  "homeDescKey": "tool_write_pdf_document_online_desc",
+  "faqPrefix": "tool_write_pdf_document_online",
+  "related": [
+    "add-text-to-pdf-file",
+    "convert-html-to-pdf",
+    "turn-pdf-into-editable-document"
+  ],
+  "logo": "/icons/tools/write-pdf-document-online.svg",
+  "page": {
+    "module": "../pages/writePdfDocumentOnlinePage",
+    "export": "renderWritePdfDocumentOnlinePage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "documents",
+  "subject": "pdf"
+}

@@ -20,7 +20,7 @@ const pt: SiteLangDict = {
   tool_split_pdf_err_split: 'A separação falhou. Verifique o ficheiro e os intervalos e tente novamente.',
   tool_split_pdf_example:
     'O exemplo cria um PDF de três páginas, separa cada página e ativa Descarregar para um ZIP com page-1.pdf, page-2.pdf e page-3.pdf.',
-  tool_split_pdf_example_title: 'Exemplo',
+  tool_split_pdf_example_title: 'Dividir meu PDF',
   tool_split_pdf_faq_a1:
     'Não. pdf-lib e fflate correm no seu separador (os scripts podem vir de um CDN). O PDF não é enviado para os nossos servidores.',
   tool_split_pdf_faq_a2:
@@ -61,7 +61,7 @@ const pt: SiteLangDict = {
   tool_split_pdf_stats_tpl: '{n} ficheiro(s) · {bytes}',
   tool_split_pdf_status_done: 'Concluído — clique em Descarregar para guardar.',
   tool_split_pdf_status_splitting: 'A separar PDF…',
-  tool_split_pdf_title: 'Separar PDF — extraia páginas no navegador',
+  tool_split_pdf_title: 'Dividir meu PDF',
   tool_split_pdf_usecase_1: 'Escritório: retirar uma página assinada de um contrato longo.',
   tool_split_pdf_usecase_2: 'Ensino: dividir um PDF de slides em folhetos por página.',
   tool_split_pdf_usecase_3: 'Ops: arquivar cada página digitalizada como ficheiro próprio.',

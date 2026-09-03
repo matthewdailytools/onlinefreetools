@@ -20,7 +20,7 @@ const en: SiteLangDict = {
   tool_split_pdf_err_split: 'Split failed. Check the file and ranges, then retry.',
   tool_split_pdf_example:
     'Sample builds a three-page PDF, splits every page, and enables Download for a ZIP with page-1.pdf, page-2.pdf, and page-3.pdf.',
-  tool_split_pdf_example_title: 'Example',
+  tool_split_pdf_example_title: 'Split my PDF',
   tool_split_pdf_faq_a1:
     'No. pdf-lib and fflate run in your tab (scripts may load from a CDN). Your PDF is not uploaded to our servers.',
   tool_split_pdf_faq_a2:
@@ -61,7 +61,7 @@ const en: SiteLangDict = {
   tool_split_pdf_stats_tpl: '{n} file(s) · {bytes}',
   tool_split_pdf_status_done: 'Done — click Download to save.',
   tool_split_pdf_status_splitting: 'Splitting PDF…',
-  tool_split_pdf_title: 'Split PDF — Extract Pages Locally',
+  tool_split_pdf_title: 'Split my PDF',
   tool_split_pdf_usecase_1: 'Office: pull one signed page out of a long contract PDF.',
   tool_split_pdf_usecase_2: 'Teaching: split a slide deck PDF into per-page handouts.',
   tool_split_pdf_usecase_3: 'Ops: archive each scanned page as its own file.',

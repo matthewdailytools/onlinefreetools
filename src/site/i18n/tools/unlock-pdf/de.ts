@@ -24,7 +24,7 @@ const de: SiteLangDict = {
   tool_unlock_pdf_err_unlock: 'Entsperren fehlgeschlagen. Datei und Passwort prüfen und erneut versuchen.',
   tool_unlock_pdf_example:
     'Das Beispiel erstellt ein einseitiges PDF mit Passwort sample, füllt das Feld, entsperrt und aktiviert Download unlocked.pdf.',
-  tool_unlock_pdf_example_title: 'Beispiel',
+  tool_unlock_pdf_example_title: 'Mein PDF entsperren',
   tool_unlock_pdf_faq_a1:
     'Nein. Entfernt Schutz nur bei korrektem Öffnerpasswort. Kein Knacken, Brute Force oder Wiederherstellen unbekannter Passwörter.',
   tool_unlock_pdf_faq_a2:
@@ -55,7 +55,7 @@ const de: SiteLangDict = {
   tool_unlock_pdf_status_done: 'Fertig — Download klicken, um unlocked.pdf zu speichern.',
   tool_unlock_pdf_status_sample_pwd: 'Beispiel bereit — Passwort ist «{pwd}». unlocked.pdf herunterladen zum Testen.',
   tool_unlock_pdf_status_working: 'PDF wird entsperrt…',
-  tool_unlock_pdf_title: 'PDF entsperren — Passwort entfernen, das Sie kennen',
+  tool_unlock_pdf_title: 'Meine PDF entsperren',
   tool_unlock_pdf_unlock: 'Entsperren',
   tool_unlock_pdf_usecase_1: 'Büro: eigenes Öffnerpasswort entfernen, um in anderer App zu mergen oder zu drucken.',
   tool_unlock_pdf_usecase_2: 'Betrieb: zuvor verschlüsselten Kundenexport vor Portal-Upload entsperren.',

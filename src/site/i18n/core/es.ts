@@ -72,6 +72,11 @@ const es: SiteLangDict = {
   result_title: 'Resultado',
   sqft_unit: 'sq ft',
   status_label: 'Estado',
+  pdf_work_preview: 'Vista previa del PDF',
+  pdf_work_progress: 'Progreso',
+  pdf_work_page: 'Página {n} / {total}',
+  pdf_work_prev: 'Anterior',
+  pdf_work_next: 'Siguiente',
   tool_category_design: 'Herramientas de diseño',
   tool_category_pdf: 'Herramientas PDF',
   tool_feedback_body:

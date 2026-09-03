@@ -86,21 +86,43 @@
 - [图片加边框](https://onlinefreetools.org/zh/tools/image-border) - 本地外扩彩色边框
 - [图片 ↔ Base64](https://onlinefreetools.org/zh/tools/image-to-base64) - 本地图片与 Base64 互转
 - [文字水印](https://onlinefreetools.org/zh/tools/add-watermark) - 本地文字水印（透明度/旋转/位置）
-- [合并 PDF](https://onlinefreetools.org/zh/tools/merge-pdf) - 浏览器内按顺序合并多个 PDF，不上传
-- [拆分 PDF](https://onlinefreetools.org/zh/tools/split-pdf) - 浏览器内按页或范围拆分 PDF，多文件时打包 ZIP
+- [把多个 PDF 合并成一份](https://onlinefreetools.org/zh/tools/merge-pdf) - 浏览器内按顺序合并多个 PDF，不上传
+- [拆分我的 PDF](https://onlinefreetools.org/zh/tools/split-pdf) - 浏览器内按页或范围拆分 PDF，多文件时打包 ZIP
 - [整理 PDF](https://onlinefreetools.org/zh/tools/organize-pdf) - 浏览器内删页或重排，不上传
 - [PDF 水印](https://onlinefreetools.org/zh/tools/pdf-watermark) - 浏览器内给每一页盖文字/可选图章水印，不上传
 - [PDF 页码](https://onlinefreetools.org/zh/tools/pdf-page-numbers) - 浏览器内给每一页加页码，可选位置与起始数字，不上传
 - [旋转 PDF](https://onlinefreetools.org/zh/tools/rotate-pdf) - 浏览器内把页面转正，全部页或指定范围，不上传
 - [裁切 PDF](https://onlinefreetools.org/zh/tools/crop-pdf) - 浏览器内按 pt 裁切页边距，非拖拽像素编辑，不上传
-- [压缩 PDF](https://onlinefreetools.org/zh/tools/compress-pdf) - 浏览器内缩小 PDF 体积，不上传
+- [缩小 PDF 文件体积](https://onlinefreetools.org/zh/tools/compress-pdf) - 浏览器内缩小 PDF 体积，不上传
 - [批量压缩 PDF 以便发邮件](https://onlinefreetools.org/zh/tools/batch-compress-pdfs-for-email) - 批量压缩 PDF 以便发邮件 — 各自压小打 ZIP、不合并；文件留在本机、不上传服务器
-- [保护 PDF](https://onlinefreetools.org/zh/tools/protect-pdf) - 浏览器内给 PDF 加打开密码，不上传
-- [解锁 PDF](https://onlinefreetools.org/zh/tools/unlock-pdf) - 用已知密码去掉 PDF 保护，非破解，不上传
+- [给 PDF 加密码保护](https://onlinefreetools.org/zh/tools/protect-pdf) - 浏览器内给 PDF 加打开密码，不上传
+- [解锁我的 PDF](https://onlinefreetools.org/zh/tools/unlock-pdf) - 用已知密码去掉 PDF 保护，非破解，不上传
 - [PDF 页多尺寸导出](https://onlinefreetools.org/zh/tools/pdf-page-to-image-sizes) - 浏览器内把 PDF 一页导出为多平台 JPEG 尺寸包（ZIP），不上传
-- [PDF 转 JPG](https://onlinefreetools.org/zh/tools/pdf-to-jpg) - 浏览器内把 PDF 每页导出为 JPG，多页 ZIP
+- [把 PDF 页面转成 JPG](https://onlinefreetools.org/zh/tools/pdf-to-jpg) - 浏览器内把 PDF 每页导出为 JPG，多页 ZIP
 - [PDF 转 Markdown](https://onlinefreetools.org/zh/tools/pdf-to-markdown) - 浏览器内从 PDF 文本层导出 Markdown，无 OCR，不上传
-- [多图转 PDF](https://onlinefreetools.org/zh/tools/images-to-pdf) - 本地多图合成多页 PDF
+- [把 JPG 转成 PDF](https://onlinefreetools.org/zh/tools/images-to-pdf) - 本地多图合成多页 PDF
+- [合并文件成一个 PDF](https://onlinefreetools.org/zh/tools/combine-files-into-one-pdf) - 队列中的 PDF 与图片在浏览器内合并为一份；文件留在本机
+- [从 PDF 提取文本](https://onlinefreetools.org/zh/tools/extract-text-from-pdf) - 浏览器内抽取 PDF 文本层并下载 .txt；无 OCR，不上传
+- [在浏览器中打开 PDF](https://onlinefreetools.org/zh/tools/open-pdf-in-browser) - pdf.js 画布分页预览 PDF；文件留在本机
+- [打印 PDF](https://onlinefreetools.org/zh/tools/print-pdf) - 本地预览并调起系统打印；不上传
+- [在线写 PDF 文档](https://onlinefreetools.org/zh/tools/write-pdf-document-online) - 文本框多页导出 PDF；文件留在本机
+- [对比两份 PDF](https://onlinefreetools.org/zh/tools/compare-two-pdfs) - 抽取文本层并高亮差异；不是像素对照
+- [检查 PDF/A 合规](https://onlinefreetools.org/zh/tools/check-pdf-a-compliance) - 浏览器内轻量特征检查；非 veraPDF 认证
+- [给 PDF 加文字](https://onlinefreetools.org/zh/tools/add-text-to-pdf-file) - 在每页指定坐标绘制文本；文件留在本机
+- [HTML 转 PDF](https://onlinefreetools.org/zh/tools/convert-html-to-pdf) - 粘贴 HTML 导出 PDF；文件留在本机
+- [制作 PDF 翻页书](https://onlinefreetools.org/zh/tools/make-pdf-flipbook) - 按页渲染可翻页预览；文件留在本机
+- [Word 文档转 PDF](https://onlinefreetools.org/zh/tools/convert-word-document-to-pdf) - 上传 .docx 在浏览器转 PDF；版式有边界，不上传
+- [PDF 转 Word 文档](https://onlinefreetools.org/zh/tools/turn-pdf-into-word-document) - 抽取文本层导出 .docx；无 OCR，不上传
+- [在线编辑 PDF 文字](https://onlinefreetools.org/zh/tools/edit-pdf-text-online) - 编辑文本层后重排导出；扫描件无字层会失败
+- [编辑 PDF 表单域](https://onlinefreetools.org/zh/tools/edit-pdf-form-fields) - 列出并增删/改名 AcroForm 域；文件留在本机
+- [填写 PDF 表单](https://onlinefreetools.org/zh/tools/fill-out-pdf-form) - 识别可填域并填写下载；无域则提示做成可填
+- [把 PDF 做成可填](https://onlinefreetools.org/zh/tools/make-pdf-fillable) - 给静态 PDF 加上文本域；文件留在本机
+- [创建 PDF 表单](https://onlinefreetools.org/zh/tools/create-pdf-form) - 空白页加命名域导出可填 PDF
+- [签署 PDF 文档](https://onlinefreetools.org/zh/tools/sign-pdf-document) - 手写或打字签名盖到页面；非证书数字签
+- [给 PDF 加数字签名标记](https://onlinefreetools.org/zh/tools/add-digital-signature-to-pdf) - SHA-256 + 可见标记；非 PKCS#7 证书签
+- [把 PDF 变成可编辑文档](https://onlinefreetools.org/zh/tools/turn-pdf-into-editable-document) - 文本层可改后重导出 PDF；无 OCR
+- [PDF 转 PDF/A](https://onlinefreetools.org/zh/tools/convert-pdf-to-pdf-a) - 浏览器尽力写出归档向 PDF；非 veraPDF 认证
+- [PDF 转 DWG（DXF）](https://onlinefreetools.org/zh/tools/convert-pdf-to-dwg) - 导出 AutoCAD 可开的 ASCII DXF；非专有 DWG 二进制
 - [多图转 Word](https://onlinefreetools.org/zh/tools/images-to-word) - 本地多图导出 DOCX
 - [多图转 GIF](https://onlinefreetools.org/zh/tools/images-to-gif) - 本地多帧合成动画 GIF
 - [多图转 PPT](https://onlinefreetools.org/zh/tools/images-to-ppt) - 本地多图导出 PPTX
@@ -265,21 +287,43 @@ Below are our available online tools with their links (English version):
 - [Image Border](https://onlinefreetools.org/tools/image-border) - Add a colored outer border locally
 - [Image ↔ Base64](https://onlinefreetools.org/tools/image-to-base64) - Encode/decode images and Base64 locally
 - [Text Watermark](https://onlinefreetools.org/tools/add-watermark) - Stamp typed text watermarks locally
-- [Merge PDF](https://onlinefreetools.org/tools/merge-pdf) - Combine multiple PDFs in order in your browser — no upload
-- [Split PDF](https://onlinefreetools.org/tools/split-pdf) - Extract pages locally; ZIP when there are multiple outputs
+- [Combine PDF files into one](https://onlinefreetools.org/tools/merge-pdf) - Combine multiple PDFs in order in your browser — no upload
+- [Split my PDF](https://onlinefreetools.org/tools/split-pdf) - Extract pages locally; ZIP when there are multiple outputs
 - [Organize PDF](https://onlinefreetools.org/tools/organize-pdf) - Reorder or remove pages in your browser — no upload
 - [PDF Watermark](https://onlinefreetools.org/tools/pdf-watermark) - Stamp text on every PDF page locally — optional logo, no upload
 - [Add Page Numbers to PDF](https://onlinefreetools.org/tools/pdf-page-numbers) - Stamp page numbers on every page locally — position and start number, no upload
 - [Rotate PDF](https://onlinefreetools.org/tools/rotate-pdf) - Fix page orientation locally — all pages or ranges, no upload
 - [Crop PDF](https://onlinefreetools.org/tools/crop-pdf) - Trim page margins in points locally — not a drag pixel editor, no upload
-- [Compress PDF](https://onlinefreetools.org/tools/compress-pdf) - Shrink PDF file size in your browser — no upload
+- [Reduce PDF file size](https://onlinefreetools.org/tools/compress-pdf) - Shrink PDF file size in your browser — no upload
 - [Batch compress PDFs for email](https://onlinefreetools.org/tools/batch-compress-pdfs-for-email) - Batch compress PDFs for email — separate files in a ZIP, not a merge — stays on the device, not uploaded to a server
-- [Protect PDF](https://onlinefreetools.org/tools/protect-pdf) - Password-protect a PDF locally in your browser — no upload
-- [Unlock PDF](https://onlinefreetools.org/tools/unlock-pdf) - Remove PDF open password you already know — not cracking, no upload
+- [Password-protect a PDF](https://onlinefreetools.org/tools/protect-pdf) - Password-protect a PDF locally in your browser — no upload
+- [Unlock my PDF](https://onlinefreetools.org/tools/unlock-pdf) - Remove PDF open password you already know — not cracking, no upload
 - [PDF Page to Image Sizes](https://onlinefreetools.org/tools/pdf-page-to-image-sizes) - Export one PDF page as a multi-size JPEG pack locally — ZIP, no upload
-- [PDF to JPG](https://onlinefreetools.org/tools/pdf-to-jpg) - Export PDF pages as JPG images locally; ZIP for multi-page
+- [Convert PDF pages to JPG](https://onlinefreetools.org/tools/pdf-to-jpg) - Export PDF pages as JPG images locally; ZIP for multi-page
 - [PDF to Markdown](https://onlinefreetools.org/tools/pdf-to-markdown) - Extract PDF text layer to Markdown locally — no OCR, no upload
-- [Images to PDF](https://onlinefreetools.org/tools/images-to-pdf) - Combine photos into a multi-page PDF locally
+- [Turn JPG into PDF](https://onlinefreetools.org/tools/images-to-pdf) - Combine photos into a multi-page PDF locally
+- [Combine files into one PDF](https://onlinefreetools.org/tools/combine-files-into-one-pdf) - Queue images and PDFs, merge into one download in the browser — stays on device
+- [Extract text from a PDF](https://onlinefreetools.org/tools/extract-text-from-pdf) - Extract the PDF text layer and download .txt — no OCR, no upload
+- [Open a PDF in the browser](https://onlinefreetools.org/tools/open-pdf-in-browser) - pdf.js canvas page preview — stays on device
+- [Print a PDF](https://onlinefreetools.org/tools/print-pdf) - Local preview and system print dialog — no upload
+- [Write a PDF document online](https://onlinefreetools.org/tools/write-pdf-document-online) - Type multi-page text and export a PDF — stays on device
+- [Compare two PDFs](https://onlinefreetools.org/tools/compare-two-pdfs) - Extract text layers and highlight differences — not a pixel diff
+- [Check PDF/A compliance](https://onlinefreetools.org/tools/check-pdf-a-compliance) - Lightweight client-side feature checks — not veraPDF certification
+- [Add text to a PDF file](https://onlinefreetools.org/tools/add-text-to-pdf-file) - Draw text at X/Y on each page — stays on device
+- [Convert HTML to PDF](https://onlinefreetools.org/tools/convert-html-to-pdf) - Paste HTML and export a PDF — stays on device
+- [Make a PDF flipbook](https://onlinefreetools.org/tools/make-pdf-flipbook) - Page-by-page flipbook preview — stays on device
+- [Convert Word document to PDF](https://onlinefreetools.org/tools/convert-word-document-to-pdf) - Upload .docx and convert in the browser — layout limits, no upload
+- [Turn PDF into Word document](https://onlinefreetools.org/tools/turn-pdf-into-word-document) - Extract text layer to .docx — no OCR, no upload
+- [Edit PDF text online](https://onlinefreetools.org/tools/edit-pdf-text-online) - Edit the text layer and re-export — scanned PDFs without text fail
+- [Edit PDF form fields](https://onlinefreetools.org/tools/edit-pdf-form-fields) - List, rename, or remove AcroForm fields — stays on device
+- [Fill out a PDF form](https://onlinefreetools.org/tools/fill-out-pdf-form) - Detect fillable fields, fill, download — no fields prompts make-fillable
+- [Make a PDF fillable](https://onlinefreetools.org/tools/make-pdf-fillable) - Add text fields to a static PDF — stays on device
+- [Create a PDF form](https://onlinefreetools.org/tools/create-pdf-form) - Blank page plus named fields → fillable PDF
+- [Sign a PDF document](https://onlinefreetools.org/tools/sign-pdf-document) - Handwrite or type a signature stamp — not certificate PKI
+- [Add a digital signature to a PDF](https://onlinefreetools.org/tools/add-digital-signature-to-pdf) - SHA-256 plus visible mark — not PKCS#7 certificate signing
+- [Turn PDF into an editable document](https://onlinefreetools.org/tools/turn-pdf-into-editable-document) - Edit text layer and re-export PDF — no OCR
+- [Convert PDF to PDF/A](https://onlinefreetools.org/tools/convert-pdf-to-pdf-a) - Best-effort archival-oriented PDF in the browser — not veraPDF certified
+- [Convert PDF to DWG (DXF)](https://onlinefreetools.org/tools/convert-pdf-to-dwg) - Export ASCII DXF AutoCAD can open — not proprietary DWG binary
 - [Images to Word](https://onlinefreetools.org/tools/images-to-word) - Export photos to a DOCX locally
 - [Images to GIF](https://onlinefreetools.org/tools/images-to-gif) - Build an animated GIF from frames locally
 - [Images to PowerPoint](https://onlinefreetools.org/tools/images-to-ppt) - Export photos to a PPTX locally

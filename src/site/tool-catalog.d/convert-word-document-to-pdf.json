@@ -1,0 +1,30 @@
+{
+  "slug": "convert-word-document-to-pdf",
+  "path": "/tools/convert-word-document-to-pdf",
+  "updatedAt": "2026-09-03T23:38:34.286Z",
+  "launchedAt": "2026-09-04T00:00:00.000Z",
+  "category": "pdf",
+  "primaryTopic": "pdf-docs",
+  "secondaryTopics": [
+    "dev-data"
+  ],
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_convert_word_document_to_pdf_title",
+  "homeTitleKey": "tool_convert_word_document_to_pdf_title",
+  "homeDescKey": "tool_convert_word_document_to_pdf_desc",
+  "faqPrefix": "tool_convert_word_document_to_pdf",
+  "related": [
+    "convert-html-to-pdf",
+    "write-pdf-document-online"
+  ],
+  "logo": "/icons/tools/convert-word-document-to-pdf.svg",
+  "page": {
+    "module": "../pages/convertWordDocumentToPdfPage",
+    "export": "renderConvertWordDocumentToPdfPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "documents",
+  "subject": "pdf"
+}

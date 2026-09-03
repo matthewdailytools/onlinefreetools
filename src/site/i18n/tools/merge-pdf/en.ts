@@ -19,7 +19,7 @@ const en: SiteLangDict = {
   tool_merge_pdf_err_merge: 'Merge failed. Check files and retry.',
   tool_merge_pdf_example:
     'Sample loads two one-page PDFs labeled A and B, merges in list order, and enables Download for a two-page merged.pdf.',
-  tool_merge_pdf_example_title: 'Example',
+  tool_merge_pdf_example_title: 'Combine PDF files into one',
   tool_merge_pdf_faq_a1:
     'No. pdf-lib runs in your tab (the library may load from a CDN). Your PDFs are not uploaded to our servers.',
   tool_merge_pdf_faq_a2:
@@ -56,7 +56,7 @@ const en: SiteLangDict = {
   tool_merge_pdf_stats_tpl: '{n} files → {pages} pages · {bytes}',
   tool_merge_pdf_status_done: 'Done — click Download to save merged.pdf.',
   tool_merge_pdf_status_merging: 'Merging PDFs…',
-  tool_merge_pdf_title: 'Merge PDF — Combine Files in Your Browser',
+  tool_merge_pdf_title: 'Combine PDF files into one',
   tool_merge_pdf_usecase_1: 'Office: combine signed pages and attachments into one packet.',
   tool_merge_pdf_usecase_2: 'Students: stitch homework chapters before submission.',
   tool_merge_pdf_usecase_3: 'Ops: pack brand assets and specs into a single PDF handoff.',

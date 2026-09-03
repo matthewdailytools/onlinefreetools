@@ -20,7 +20,7 @@ const fr: SiteLangDict = {
   tool_compress_pdf_err_load: 'Impossible de lire le PDF (endommagé ou non pris en charge). Essayez un autre fichier.',
   tool_compress_pdf_example:
     'L\'échantillon charge un PDF de deux pages avec blocs colorés et JPEG intégrés, applique la compression Moyenne, affiche taille avant/après avec pourcentage économisé et active le téléchargement de compressed.pdf.',
-  tool_compress_pdf_example_title: 'Exemple',
+  tool_compress_pdf_example_title: 'Réduire la taille d\'un PDF',
   tool_compress_pdf_faq_a1:
     'Non. pdf.js et la bibliothèque PDF s\\\'exécutent dans votre onglet (bibliothèques parfois chargées depuis un CDN). Le PDF n\\\'est pas envoyé à nos serveurs.',
   tool_compress_pdf_faq_a2:
@@ -57,7 +57,7 @@ const fr: SiteLangDict = {
   tool_compress_pdf_stats_tpl: '{from} → {to} · {pct} % économisés',
   tool_compress_pdf_status_done: 'Terminé — cliquez Télécharger pour enregistrer compressed.pdf.',
   tool_compress_pdf_status_working: 'Compression du PDF…',
-  tool_compress_pdf_title: 'Compresser un PDF — réduisez la taille dans le navigateur',
+  tool_compress_pdf_title: 'Réduire la taille du PDF',
   tool_compress_pdf_usecase_1: 'Bureau : réduire une numérisation avant la limite de pièce jointe.',
   tool_compress_pdf_usecase_2: 'Étudiants : alléger un PDF avec photos pour un formulaire.',
   tool_compress_pdf_usecase_3: 'Webmasters : alléger un PDF marketing à partager quand la qualité raster suffit.',

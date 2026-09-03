@@ -24,7 +24,7 @@ const pt: SiteLangDict = {
   tool_unlock_pdf_err_unlock: 'Falha ao desbloquear. Verifique arquivo e senha e tente de novo.',
   tool_unlock_pdf_example:
     'O exemplo cria um PDF de uma página criptografado com senha sample, preenche a senha, desbloqueia e habilita Baixar unlocked.pdf.',
-  tool_unlock_pdf_example_title: 'Exemplo',
+  tool_unlock_pdf_example_title: 'Desbloquear meu PDF',
   tool_unlock_pdf_faq_a1:
     'Não. Só remove a proteção se você informar a senha correta. Sem crackear, força bruta ou recuperar senhas desconhecidas.',
   tool_unlock_pdf_faq_a2:
@@ -55,7 +55,7 @@ const pt: SiteLangDict = {
   tool_unlock_pdf_status_done: 'Pronto — clique Baixar para salvar unlocked.pdf.',
   tool_unlock_pdf_status_sample_pwd: 'Exemplo pronto — senha «{pwd}». Baixe unlocked.pdf para testar.',
   tool_unlock_pdf_status_working: 'Desbloqueando PDF…',
-  tool_unlock_pdf_title: 'Desbloquear PDF — remova uma senha que você já sabe',
+  tool_unlock_pdf_title: 'Desbloquear meu PDF',
   tool_unlock_pdf_unlock: 'Desbloquear',
   tool_unlock_pdf_usecase_1: 'Escritório: remova sua senha para mesclar ou imprimir em outro app.',
   tool_unlock_pdf_usecase_2: 'Operações: desbloqueie export que você criptografou antes de enviar a um portal.',

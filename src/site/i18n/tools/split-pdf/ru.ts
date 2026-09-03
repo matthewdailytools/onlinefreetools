@@ -20,7 +20,7 @@ const ru: SiteLangDict = {
   tool_split_pdf_err_split: 'Разделение не удалось. Проверьте файл и диапазоны и повторите.',
   tool_split_pdf_example:
     'Пример создаёт трёхстраничный PDF, делит каждую страницу и включает «Скачать» для ZIP с page-1.pdf, page-2.pdf и page-3.pdf.',
-  tool_split_pdf_example_title: 'Пример',
+  tool_split_pdf_example_title: 'Разделить мой PDF',
   tool_split_pdf_faq_a1:
     'Нет. pdf-lib и fflate работают во вкладке (скрипты могут грузиться с CDN). PDF не отправляется на наши серверы.',
   tool_split_pdf_faq_a2:
@@ -61,7 +61,7 @@ const ru: SiteLangDict = {
   tool_split_pdf_stats_tpl: '{n} файл(ов) · {bytes}',
   tool_split_pdf_status_done: 'Готово — нажмите «Скачать», чтобы сохранить.',
   tool_split_pdf_status_splitting: 'Разделение PDF…',
-  tool_split_pdf_title: 'Разделить PDF — извлеките страницы локально',
+  tool_split_pdf_title: 'Разделить мой PDF',
   tool_split_pdf_usecase_1: 'Офис: вытащить подписанную страницу из длинного договора.',
   tool_split_pdf_usecase_2: 'Обучение: разбить PDF слайдов на раздатки по страницам.',
   tool_split_pdf_usecase_3: 'Операции: архивировать каждую отсканированную страницу отдельным файлом.',

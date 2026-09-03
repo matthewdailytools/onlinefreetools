@@ -20,7 +20,7 @@ const id: SiteLangDict = {
   tool_split_pdf_err_split: 'Pemisahan gagal. Periksa file dan rentang, lalu coba lagi.',
   tool_split_pdf_example:
     'Sampel membuat PDF tiga halaman, memisah tiap halaman, dan mengaktifkan Unduh untuk ZIP berisi page-1.pdf, page-2.pdf, dan page-3.pdf.',
-  tool_split_pdf_example_title: 'Contoh',
+  tool_split_pdf_example_title: 'Pisah PDF saya',
   tool_split_pdf_faq_a1:
     'Tidak. pdf-lib dan fflate berjalan di tab Anda (skrip bisa dimuat dari CDN). PDF tidak diunggah ke server kami.',
   tool_split_pdf_faq_a2:
@@ -61,7 +61,7 @@ const id: SiteLangDict = {
   tool_split_pdf_stats_tpl: '{n} file · {bytes}',
   tool_split_pdf_status_done: 'Selesai — klik Unduh untuk menyimpan.',
   tool_split_pdf_status_splitting: 'Memisahkan PDF…',
-  tool_split_pdf_title: 'Pisah PDF — ekstrak halaman di browser',
+  tool_split_pdf_title: 'Pisahkan PDF saya',
   tool_split_pdf_usecase_1: 'Kantor: ambil satu halaman bertanda tangan dari kontrak panjang.',
   tool_split_pdf_usecase_2: 'Pengajaran: pecah PDF slide menjadi handout per halaman.',
   tool_split_pdf_usecase_3: 'Ops: arsipkan setiap halaman hasil pindaian sebagai file sendiri.',

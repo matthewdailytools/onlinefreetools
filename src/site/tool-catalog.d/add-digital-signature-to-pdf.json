@@ -1,0 +1,30 @@
+{
+  "slug": "add-digital-signature-to-pdf",
+  "path": "/tools/add-digital-signature-to-pdf",
+  "updatedAt": "2026-09-03T23:38:34.286Z",
+  "launchedAt": "2026-09-04T00:00:00.000Z",
+  "category": "pdf",
+  "primaryTopic": "pdf-docs",
+  "secondaryTopics": [
+    "security-ids"
+  ],
+  "featured": false,
+  "ymyl": true,
+  "i18nKey": "tool_add_digital_signature_to_pdf_title",
+  "homeTitleKey": "tool_add_digital_signature_to_pdf_title",
+  "homeDescKey": "tool_add_digital_signature_to_pdf_desc",
+  "faqPrefix": "tool_add_digital_signature_to_pdf",
+  "related": [
+    "sign-pdf-document",
+    "protect-pdf"
+  ],
+  "logo": "/icons/tools/add-digital-signature-to-pdf.svg",
+  "page": {
+    "module": "../pages/addDigitalSignatureToPdfPage",
+    "export": "renderAddDigitalSignatureToPdfPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "documents",
+  "subject": "pdf"
+}

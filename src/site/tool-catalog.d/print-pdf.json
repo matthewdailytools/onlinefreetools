@@ -1,0 +1,30 @@
+{
+  "slug": "print-pdf",
+  "path": "/tools/print-pdf",
+  "updatedAt": "2026-09-03T16:51:45.638Z",
+  "launchedAt": "2026-09-03T14:00:00.000Z",
+  "category": "pdf",
+  "primaryTopic": "pdf-docs",
+  "secondaryTopics": [
+    "dev-data"
+  ],
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_print_pdf_title",
+  "homeTitleKey": "tool_print_pdf_title",
+  "homeDescKey": "tool_print_pdf_desc",
+  "faqPrefix": "tool_print_pdf",
+  "related": [
+    "open-pdf-in-browser",
+    "compress-pdf"
+  ],
+  "logo": "/icons/tools/print-pdf.svg",
+  "page": {
+    "module": "../pages/printPdfPage",
+    "export": "renderPrintPdfPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "documents",
+  "subject": "pdf"
+}

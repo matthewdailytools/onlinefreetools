@@ -1,0 +1,30 @@
+{
+  "slug": "compare-two-pdfs",
+  "path": "/tools/compare-two-pdfs",
+  "updatedAt": "2026-09-03T16:51:45.638Z",
+  "launchedAt": "2026-09-03T14:00:00.000Z",
+  "category": "pdf",
+  "primaryTopic": "pdf-docs",
+  "secondaryTopics": [
+    "dev-data"
+  ],
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_compare_two_pdfs_title",
+  "homeTitleKey": "tool_compare_two_pdfs_title",
+  "homeDescKey": "tool_compare_two_pdfs_desc",
+  "faqPrefix": "tool_compare_two_pdfs",
+  "related": [
+    "text-diff",
+    "extract-text-from-pdf"
+  ],
+  "logo": "/icons/tools/compare-two-pdfs.svg",
+  "page": {
+    "module": "../pages/compareTwoPdfsPage",
+    "export": "renderCompareTwoPdfsPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "documents",
+  "subject": "pdf"
+}

@@ -20,7 +20,7 @@ const ar: SiteLangDict = {
   tool_split_pdf_err_split: 'فشل التقسيم. تحقق من الملف والنطاقات ثم أعد المحاولة.',
   tool_split_pdf_example:
     'المثال ينشئ PDF من ثلاث صفحات، يقسّمه صفحة بصفحة، ويفعّل التنزيل لـ ZIP يحوي page-1.pdf وpage-2.pdf وpage-3.pdf.',
-  tool_split_pdf_example_title: 'مثال',
+  tool_split_pdf_example_title: 'تقسيم ملف PDF',
   tool_split_pdf_faq_a1:
     'لا. يعمل pdf-lib وfflate في تبويبك (قد تُحمَّل السكربتات من CDN). لا نرفع ملفك إلى خوادمنا.',
   tool_split_pdf_faq_a2:
@@ -56,7 +56,7 @@ const ar: SiteLangDict = {
   tool_split_pdf_stats_tpl: '{n} ملف/ملفات · {bytes}',
   tool_split_pdf_status_done: 'تم — اضغط تنزيل للحفظ.',
   tool_split_pdf_status_splitting: 'جارٍ تقسيم PDF…',
-  tool_split_pdf_title: 'تقسيم PDF — استخرج الصفحات محلياً',
+  tool_split_pdf_title: 'تقسيم ملف PDF الخاص بي',
   tool_split_pdf_usecase_1: 'مكتبي: استخراج صفحة توقيع من عقد طويل.',
   tool_split_pdf_usecase_2: 'تعليمي: تقسيم PDF شرائح إلى منشورات لكل صفحة.',
   tool_split_pdf_usecase_3: 'تشغيلي: أرشفة كل صفحة ممسوحة كملف مستقل.',

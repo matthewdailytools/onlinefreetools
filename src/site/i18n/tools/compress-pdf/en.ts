@@ -20,7 +20,7 @@ const en: SiteLangDict = {
   tool_compress_pdf_err_load: 'Could not read the PDF (damaged or unsupported). Try another file.',
   tool_compress_pdf_example:
     'Sample loads a two-page PDF with gradient blocks and embedded JPEG pages, runs Medium compression, shows before/after size with percent saved, and enables Download for compressed.pdf.',
-  tool_compress_pdf_example_title: 'Example',
+  tool_compress_pdf_example_title: 'Reduce PDF file size',
   tool_compress_pdf_faq_a1:
     'No. pdf.js and the PDF library run in your tab (libraries may load from a CDN). Your PDF is not uploaded to our servers.',
   tool_compress_pdf_faq_a2:
@@ -58,7 +58,7 @@ const en: SiteLangDict = {
   tool_compress_pdf_stats_tpl: '{from} → {to} · {pct}% saved',
   tool_compress_pdf_status_done: 'Done — click Download to save compressed.pdf.',
   tool_compress_pdf_status_working: 'Compressing PDF…',
-  tool_compress_pdf_title: 'Compress PDF — Shrink File Size in Your Browser',
+  tool_compress_pdf_title: 'Reduce PDF file size',
   tool_compress_pdf_usecase_1: 'Office: shrink a scan packet before email attachment limits.',
   tool_compress_pdf_usecase_2: 'Students: reduce a photo-heavy assignment PDF for upload forms.',
   tool_compress_pdf_usecase_3: 'Site owners: trim a marketing PDF for faster sharing—when raster quality is acceptable.',

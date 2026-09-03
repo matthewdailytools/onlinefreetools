@@ -18,7 +18,7 @@ const fr: SiteLangDict = {
   tool_merge_pdf_err_merge: 'Échec de la fusion. Vérifiez les fichiers et réessayez.',
   tool_merge_pdf_example:
     'L’exemple charge deux PDF d’une page (A et B), les fusionne dans l’ordre de la liste et active Télécharger pour un merged.pdf de deux pages.',
-  tool_merge_pdf_example_title: 'Exemple',
+  tool_merge_pdf_example_title: 'Combiner des fichiers PDF en un seul',
   tool_merge_pdf_faq_a1:
     'Non. pdf-lib s’exécute dans votre onglet (la bibliothèque peut se charger depuis un CDN). Vos PDF ne sont pas envoyés sur nos serveurs.',
   tool_merge_pdf_faq_a2:
@@ -55,7 +55,7 @@ const fr: SiteLangDict = {
   tool_merge_pdf_stats_tpl: '{n} fichiers → {pages} pages · {bytes}',
   tool_merge_pdf_status_done: 'Terminé — cliquez Télécharger pour enregistrer merged.pdf.',
   tool_merge_pdf_status_merging: 'Fusion des PDF…',
-  tool_merge_pdf_title: 'Fusionner des PDF — combinez dans le navigateur',
+  tool_merge_pdf_title: 'Combiner des fichiers PDF en un',
   tool_merge_pdf_usecase_1: 'Bureau : regrouper signatures et pièces jointes en un seul dossier.',
   tool_merge_pdf_usecase_2: 'Études : assembler les chapitres d’un devoir avant rendu.',
   tool_merge_pdf_usecase_3: 'Ops : livrer briefs et specs dans un seul PDF.',

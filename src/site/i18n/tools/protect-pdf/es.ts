@@ -22,7 +22,7 @@ const es: SiteLangDict = {
   tool_protect_pdf_err_protect: 'Falló el cifrado. Revise archivo y contraseña e intente de nuevo.',
   tool_protect_pdf_example:
     'La muestra crea una página, la cifra con sample, habilita Descargar protected.pdf y muestra la clave en el estado.',
-  tool_protect_pdf_example_title: 'Ejemplo',
+  tool_protect_pdf_example_title: 'Proteger un PDF con contraseña',
   tool_protect_pdf_faq_a1:
     'No. la biblioteca PDF corre en su pestaña (los scripts pueden cargarse desde una CDN). Su PDF no se sube a nuestros servidores.',
   tool_protect_pdf_faq_a2:
@@ -52,7 +52,7 @@ const es: SiteLangDict = {
   tool_protect_pdf_status_done: 'Listo — pulse Descargar para guardar protected.pdf.',
   tool_protect_pdf_status_sample_pwd: 'Ejemplo listo — contraseña: «{pwd}». Descargue protected.pdf para probar.',
   tool_protect_pdf_status_working: 'Cifrando PDF…',
-  tool_protect_pdf_title: 'Proteger PDF — cifre con contraseña en el navegador',
+  tool_protect_pdf_title: 'Proteger un PDF con contraseña',
   tool_protect_pdf_usecase_1: 'Oficina: contraseña de apertura antes de enviar un contrato por correo.',
   tool_protect_pdf_usecase_2: 'Operaciones: bloquee un informe puntual antes del portal del cliente.',
   tool_protect_pdf_usecase_3: 'Estudiantes: proteja un escaneo con clave solo para el profesor.',

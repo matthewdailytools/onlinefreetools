@@ -20,7 +20,7 @@ const es: SiteLangDict = {
   tool_compress_pdf_err_load: 'No se pudo leer el PDF (dañado o no compatible). Prueba otro archivo.',
   tool_compress_pdf_example:
     'La muestra carga un PDF de dos páginas con bloques de color y JPEG incrustados, aplica compresión Media, muestra tamaño antes/después con porcentaje ahorrado y habilita la descarga de compressed.pdf.',
-  tool_compress_pdf_example_title: 'Ejemplo',
+  tool_compress_pdf_example_title: 'Reducir el tamaño del PDF',
   tool_compress_pdf_faq_a1:
     'No. pdf.js y la biblioteca PDF corren en tu pestaña (las librerías pueden cargar desde un CDN). El PDF no se sube a nuestros servidores.',
   tool_compress_pdf_faq_a2:
@@ -57,7 +57,7 @@ const es: SiteLangDict = {
   tool_compress_pdf_stats_tpl: '{from} → {to} · {pct}% ahorrado',
   tool_compress_pdf_status_done: 'Listo — pulsa Descargar para guardar compressed.pdf.',
   tool_compress_pdf_status_working: 'Comprimiendo PDF…',
-  tool_compress_pdf_title: 'Comprimir PDF — reduce el tamaño en el navegador',
+  tool_compress_pdf_title: 'Reducir el tamaño del PDF',
   tool_compress_pdf_usecase_1: 'Oficina: reduce un escaneo antes del límite del correo.',
   tool_compress_pdf_usecase_2: 'Estudiantes: achica un PDF con fotos para subirlo a un formulario.',
   tool_compress_pdf_usecase_3: 'Webmasters: recorta un PDF de marketing para compartir más rápido cuando la calidad raster basta.',

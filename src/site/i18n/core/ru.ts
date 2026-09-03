@@ -72,6 +72,11 @@ const ru: SiteLangDict = {
   result_title: 'Результат',
   sqft_unit: 'sq ft',
   status_label: 'Статус',
+  pdf_work_preview: 'Предпросмотр PDF',
+  pdf_work_progress: 'Прогресс',
+  pdf_work_page: 'Страница {n} / {total}',
+  pdf_work_prev: 'Назад',
+  pdf_work_next: 'Далее',
   tool_category_design: 'Инструменты дизайна',
   tool_category_pdf: 'PDF-инструменты',
   tool_feedback_body:

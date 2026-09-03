@@ -1,7 +1,7 @@
 {
   "slug": "pdf-to-jpg",
   "path": "/tools/pdf-to-jpg",
-  "updatedAt": "2026-08-09T00:00:00.000Z",
+  "updatedAt": "2026-09-03T23:45:43.415Z",
   "category": "image",
   "primaryTopic": "pdf-docs",
   "secondaryTopics": [
@@ -17,7 +17,8 @@
     "images-to-pdf",
     "image-format-converter",
     "pdf-page-to-image-sizes",
-    "pdf-to-markdown"
+    "pdf-to-markdown",
+    "convert-pdf-to-dwg"
   ],
   "logo": "/icons/tools/pdf-to-jpg.svg",
   "page": {

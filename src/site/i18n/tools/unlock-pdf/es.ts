@@ -24,7 +24,7 @@ const es: SiteLangDict = {
   tool_unlock_pdf_err_unlock: 'Falló el desbloqueo. Revisa archivo y contraseña e inténtalo de nuevo.',
   tool_unlock_pdf_example:
     'El ejemplo crea un PDF de una página cifrado con contraseña sample, autocompleta la clave, lo desbloquea y habilita Descargar unlocked.pdf.',
-  tool_unlock_pdf_example_title: 'Ejemplo',
+  tool_unlock_pdf_example_title: 'Desbloquear mi PDF',
   tool_unlock_pdf_faq_a1:
     'No. Solo quita la protección si introduces la contraseña correcta. No crackea, fuerza bruta ni recupera contraseñas desconocidas.',
   tool_unlock_pdf_faq_a2:
@@ -56,7 +56,7 @@ const es: SiteLangDict = {
   tool_unlock_pdf_status_done: 'Listo — pulsa Descargar para guardar unlocked.pdf.',
   tool_unlock_pdf_status_sample_pwd: 'Ejemplo listo — contraseña «{pwd}». Descarga unlocked.pdf para probar.',
   tool_unlock_pdf_status_working: 'Desbloqueando PDF…',
-  tool_unlock_pdf_title: 'Desbloquear PDF — quita una contraseña que ya conoces',
+  tool_unlock_pdf_title: 'Desbloquear mi PDF',
   tool_unlock_pdf_unlock: 'Desbloquear',
   tool_unlock_pdf_usecase_1: 'Oficina: quita tu propia contraseña para fusionar o imprimir en otra app.',
   tool_unlock_pdf_usecase_2: 'Operaciones: desbloquea un export que cifraste antes de subirlo a un portal.',

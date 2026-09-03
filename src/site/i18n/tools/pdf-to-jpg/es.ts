@@ -21,7 +21,7 @@ const es: SiteLangDict = {
   tool_pdf_to_jpg_err_pdfjs: 'No se pudo cargar el renderizador PDF. Comprueba la red e inténtalo otra vez.',
   tool_pdf_to_jpg_example:
     'La muestra crea un PDF de dos páginas, convierte cada una y habilita Descargar con un ZIP que incluye page-1.jpg y page-2.jpg.',
-  tool_pdf_to_jpg_example_title: 'Ejemplo',
+  tool_pdf_to_jpg_example_title: 'Convertir páginas PDF a JPG',
   tool_pdf_to_jpg_faq_a1:
     'No. el renderizador de páginas y la biblioteca ZIP se ejecutan en tu pestaña (los scripts pueden cargarse desde un CDN). Tu PDF no se sube a nuestros servidores.',
   tool_pdf_to_jpg_faq_a2:
@@ -54,7 +54,7 @@ const es: SiteLangDict = {
   tool_pdf_to_jpg_stats_tpl: '{n} página(s) · {bytes}',
   tool_pdf_to_jpg_status_converting: 'Convirtiendo páginas a JPG…',
   tool_pdf_to_jpg_status_done: 'Listo — pulsa Descargar para guardar.',
-  tool_pdf_to_jpg_title: 'PDF a JPG — convierte páginas en imágenes en el navegador',
+  tool_pdf_to_jpg_title: 'Convertir páginas PDF a JPG',
   tool_pdf_to_jpg_usecase_1: 'Oficina: exporta una diapositiva o página firmada para pegarla en el chat.',
   tool_pdf_to_jpg_usecase_2: 'Marketing: saca miniaturas JPG de un catálogo en PDF.',
   tool_pdf_to_jpg_usecase_3: 'Estudiantes: guarda páginas de apuntes PDF como imágenes.',

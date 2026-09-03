@@ -23,7 +23,7 @@ const en: SiteLangDict = {
   tool_unlock_pdf_err_unlock: 'Unlock failed. Check the file and password, then retry.',
   tool_unlock_pdf_example:
     'Sample builds a one-page encrypted PDF with password sample, auto-fills the password, unlocks it, enables Download for unlocked.pdf, and shows sample in the status line.',
-  tool_unlock_pdf_example_title: 'Example',
+  tool_unlock_pdf_example_title: 'Unlock my PDF',
   tool_unlock_pdf_faq_a1:
     'No. This tool only removes protection when you supply the correct open password. It does not crack, brute force, or recover unknown passwords.',
   tool_unlock_pdf_faq_a2:
@@ -57,7 +57,7 @@ const en: SiteLangDict = {
   tool_unlock_pdf_status_done: 'Done — click Download to save unlocked.pdf.',
   tool_unlock_pdf_status_sample_pwd: 'Sample ready — password is "{pwd}". Download unlocked.pdf to try it.',
   tool_unlock_pdf_status_working: 'Unlocking PDF…',
-  tool_unlock_pdf_title: 'Unlock PDF — Remove Password You Already Know',
+  tool_unlock_pdf_title: 'Unlock my PDF',
   tool_unlock_pdf_unlock: 'Unlock',
   tool_unlock_pdf_usecase_1: 'Office: remove your own open password so a PDF can merge or print in another app.',
   tool_unlock_pdf_usecase_2: 'Ops: unlock a client export you encrypted earlier before uploading to a portal.',

@@ -18,7 +18,7 @@ const ru: SiteLangDict = {
   tool_merge_pdf_err_merge: 'Объединение не удалось. Проверьте файлы и повторите.',
   tool_merge_pdf_example:
     'Пример загружает два одностраничных PDF (A и B), объединяет в порядке списка и включает «Скачать» для двухстраничного merged.pdf.',
-  tool_merge_pdf_example_title: 'Пример',
+  tool_merge_pdf_example_title: 'Объединить PDF-файлы в один',
   tool_merge_pdf_faq_a1:
     'Нет. pdf-lib работает во вкладке (библиотека может грузиться с CDN). PDF не отправляются на наши серверы.',
   tool_merge_pdf_faq_a2:
@@ -55,7 +55,7 @@ const ru: SiteLangDict = {
   tool_merge_pdf_stats_tpl: '{n} файлов → {pages} стр. · {bytes}',
   tool_merge_pdf_status_done: 'Готово — нажмите «Скачать», чтобы сохранить merged.pdf.',
   tool_merge_pdf_status_merging: 'Объединение PDF…',
-  tool_merge_pdf_title: 'Объединить PDF — склейте файлы в браузере',
+  tool_merge_pdf_title: 'Объединить PDF-файлы в один',
   tool_merge_pdf_usecase_1: 'Офис: собрать подписи и вложения в один пакет.',
   tool_merge_pdf_usecase_2: 'Учёба: склеить главы работы перед сдачей.',
   tool_merge_pdf_usecase_3: 'Операции: передать брифы и спецификации одним PDF.',

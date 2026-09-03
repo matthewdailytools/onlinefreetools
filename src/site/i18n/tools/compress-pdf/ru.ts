@@ -20,7 +20,7 @@ const ru: SiteLangDict = {
   tool_compress_pdf_err_load: 'Не удалось прочитать PDF (повреждён или не поддерживается). Попробуйте другой файл.',
   tool_compress_pdf_example:
     'Образец загружает двухстраничный PDF с цветными блоками и встроенным JPEG, применяет Среднее сжатие, показывает размер до/после с процентом экономии и включает скачивание compressed.pdf.',
-  tool_compress_pdf_example_title: 'Пример',
+  tool_compress_pdf_example_title: 'Уменьшить размер PDF',
   tool_compress_pdf_faq_a1:
     'Нет. pdf.js и библиотека PDF работают во вкладке (библиотеки могут грузиться с CDN). PDF не загружается на наши серверы.',
   tool_compress_pdf_faq_a2:
@@ -57,7 +57,7 @@ const ru: SiteLangDict = {
   tool_compress_pdf_stats_tpl: '{from} → {to} · экономия {pct}%',
   tool_compress_pdf_status_done: 'Готово — нажмите «Скачать» для compressed.pdf.',
   tool_compress_pdf_status_working: 'Сжатие PDF…',
-  tool_compress_pdf_title: 'Сжать PDF — уменьшите размер в браузере',
+  tool_compress_pdf_title: 'Уменьшить размер PDF',
   tool_compress_pdf_usecase_1: 'Офис: уменьшить скан перед лимитом вложения.',
   tool_compress_pdf_usecase_2: 'Студенты: ужать PDF с фото под форму загрузки.',
   tool_compress_pdf_usecase_3: 'Владельцы сайтов: облегчить маркетинговый PDF для рассылки, если хватает растрового качества.',

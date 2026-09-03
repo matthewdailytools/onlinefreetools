@@ -24,7 +24,7 @@ const fr: SiteLangDict = {
   tool_unlock_pdf_err_unlock: 'Échec du déverrouillage. Vérifiez le fichier et le mot de passe puis réessayez.',
   tool_unlock_pdf_example:
     'L’exemple crée un PDF d’une page chiffré avec le mot de passe sample, remplit le champ, déverrouille et active Télécharger unlocked.pdf.',
-  tool_unlock_pdf_example_title: 'Exemple',
+  tool_unlock_pdf_example_title: 'Déverrouiller mon PDF',
   tool_unlock_pdf_faq_a1:
     'Non. Retire la protection uniquement si vous fournissez le bon mot de passe. Pas de crackage, brute force ni récupération de mots inconnus.',
   tool_unlock_pdf_faq_a2:
@@ -55,7 +55,7 @@ const fr: SiteLangDict = {
   tool_unlock_pdf_status_done: 'Terminé — cliquez Télécharger pour enregistrer unlocked.pdf.',
   tool_unlock_pdf_status_sample_pwd: 'Exemple prêt — mot de passe « {pwd} ». Téléchargez unlocked.pdf pour essayer.',
   tool_unlock_pdf_status_working: 'Déverrouillage du PDF…',
-  tool_unlock_pdf_title: 'Déverrouiller un PDF — retirez un mot de passe que vous connaissez',
+  tool_unlock_pdf_title: 'Déverrouiller mon PDF',
   tool_unlock_pdf_unlock: 'Déverrouiller',
   tool_unlock_pdf_usecase_1: 'Bureau : retirez votre mot de passe pour fusionner ou imprimer dans une autre app.',
   tool_unlock_pdf_usecase_2: 'Ops : déverrouillez un export chiffré avant envoi sur un portail.',

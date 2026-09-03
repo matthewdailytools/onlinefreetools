@@ -21,7 +21,7 @@ const ru: SiteLangDict = {
   tool_protect_pdf_err_protect: 'Шифрование не удалось. Проверьте файл и пароль.',
   tool_protect_pdf_example:
     'Образец создаёт одну страницу, шифрует паролем sample, включает скачивание protected.pdf и показывает пароль в статусе.',
-  tool_protect_pdf_example_title: 'Пример',
+  tool_protect_pdf_example_title: 'Защитить PDF паролем',
   tool_protect_pdf_faq_a1:
     'Нет. библиотека PDF работает во вкладке (скрипты могут грузиться с CDN). PDF не отправляется на наши серверы.',
   tool_protect_pdf_faq_a2:
@@ -49,7 +49,7 @@ const ru: SiteLangDict = {
   tool_protect_pdf_status_done: 'Готово — нажмите Скачать для protected.pdf.',
   tool_protect_pdf_status_sample_pwd: 'Образец готов — пароль: «{pwd}». Скачайте protected.pdf для проверки.',
   tool_protect_pdf_status_working: 'Шифрование PDF…',
-  tool_protect_pdf_title: 'Защитить PDF — зашифруйте паролем в браузере',
+  tool_protect_pdf_title: 'Защитить PDF паролем',
   tool_protect_pdf_usecase_1: 'Офис: пароль открытия перед отправкой договора по почте.',
   tool_protect_pdf_usecase_2: 'Операции: заблокировать разовый отчёт перед порталом клиента.',
   tool_protect_pdf_usecase_3: 'Студенты: защитить скан работы паролем только для преподавателя.',

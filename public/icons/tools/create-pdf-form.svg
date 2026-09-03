@@ -1,0 +1,9 @@
+<!-- Create PDF form: blank page with named field boxes -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Create a PDF form">
+  <rect width="32" height="32" rx="8" fill="#1e8449"/>
+  <rect x="8" y="6" width="16" height="20" rx="1.6" fill="#fff" opacity=".95"/>
+  <rect x="10.5" y="10" width="11" height="3.2" rx=".6" fill="none" stroke="#1e8449" stroke-width="1.2"/>
+  <rect x="10.5" y="15.2" width="11" height="3.2" rx=".6" fill="none" stroke="#1e8449" stroke-width="1.2"/>
+  <rect x="10.5" y="20.4" width="4" height="3" rx=".5" fill="none" stroke="#1e8449" stroke-width="1.2"/>
+  <path d="M12 21.9l1 1 1.8-1.9" fill="none" stroke="#1e8449" stroke-width="1.1" stroke-linecap="round"/>
+</svg>

@@ -21,7 +21,7 @@ const fr: SiteLangDict = {
   tool_protect_pdf_err_protect: 'Échec du chiffrement. Vérifiez fichier et mot de passe puis réessayez.',
   tool_protect_pdf_example:
     'L’exemple crée une page, la chiffre avec sample, active Télécharger protected.pdf et affiche le mot de passe.',
-  tool_protect_pdf_example_title: 'Exemple',
+  tool_protect_pdf_example_title: 'Protéger un PDF par mot de passe',
   tool_protect_pdf_faq_a1:
     'Non. la bibliothèque PDF s’exécute dans votre onglet (scripts éventuellement depuis un CDN). Votre PDF n’est pas envoyé à nos serveurs.',
   tool_protect_pdf_faq_a2:
@@ -49,7 +49,7 @@ const fr: SiteLangDict = {
   tool_protect_pdf_status_done: 'Terminé — cliquez Télécharger pour enregistrer protected.pdf.',
   tool_protect_pdf_status_sample_pwd: 'Exemple prêt — mot de passe : « {pwd} ». Téléchargez protected.pdf pour essayer.',
   tool_protect_pdf_status_working: 'Chiffrement du PDF…',
-  tool_protect_pdf_title: 'Protéger un PDF — chiffrez par mot de passe dans le navigateur',
+  tool_protect_pdf_title: 'Protéger un PDF par mot de passe',
   tool_protect_pdf_usecase_1: 'Bureau : mot de passe d’ouverture avant d’envoyer un contrat par e-mail.',
   tool_protect_pdf_usecase_2: 'Ops : verrouiller un rapport ponctuel avant le portail client.',
   tool_protect_pdf_usecase_3: 'Étudiants : protéger un scan avec mot de passe connu du professeur seulement.',

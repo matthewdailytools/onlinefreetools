@@ -20,7 +20,7 @@ const ar: SiteLangDict = {
   tool_compress_pdf_err_load: 'تعذر قراءة PDF (تالف أو غير مدعوم). جرّب ملفاً آخر.',
   tool_compress_pdf_example:
     'العيّنة تحمّل PDF من صفحتين بكتل لونية وJPEG مضمّن، تضغط بجودة متوسطة، تعرض الحجم قبل/بعد مع نسبة التوفير، وتفعّل تنزيل compressed.pdf.',
-  tool_compress_pdf_example_title: 'مثال',
+  tool_compress_pdf_example_title: 'تصغير حجم ملف PDF',
   tool_compress_pdf_faq_a1:
     'لا. pdf.js و مكتبة PDF يعملان في تبويبك (قد تُحمّل المكتبات من CDN). PDF لا يُرفع إلى خوادمنا.',
   tool_compress_pdf_faq_a2:
@@ -57,7 +57,7 @@ const ar: SiteLangDict = {
   tool_compress_pdf_stats_tpl: '{from} → {to} · وفّرت {pct}%',
   tool_compress_pdf_status_done: 'تم — انقر تنزيل لحفظ compressed.pdf.',
   tool_compress_pdf_status_working: 'جارٍ ضغط PDF…',
-  tool_compress_pdf_title: 'ضغط PDF — صغّر الملف في المتصفح',
+  tool_compress_pdf_title: 'تقليل حجم ملف PDF',
   tool_compress_pdf_usecase_1: 'مكتب: صغّر مسحاً قبل حد مرفق البريد.',
   tool_compress_pdf_usecase_2: 'طلاب: قلّص PDF فيه صور لحد رفع النموذج.',
   tool_compress_pdf_usecase_3: 'أصحاب مواقع: خفّف PDF تسويقي للمشاركة عندما تكفي جودة الصورة.',

@@ -68,6 +68,11 @@ const id: SiteLangDict = {
   result_title: 'Hasil',
   sqft_unit: 'sq ft',
   status_label: 'Status',
+  pdf_work_preview: 'Pratinjau PDF',
+  pdf_work_progress: 'Progres',
+  pdf_work_page: 'Halaman {n} / {total}',
+  pdf_work_prev: 'Sebelumnya',
+  pdf_work_next: 'Berikutnya',
   tool_category_design: 'Alat desain',
   tool_category_pdf: 'Alat PDF',
   tool_feedback_body:

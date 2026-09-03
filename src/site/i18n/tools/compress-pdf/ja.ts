@@ -20,7 +20,7 @@ const ja: SiteLangDict = {
   tool_compress_pdf_err_load: 'PDF を読み込めません（破損または非対応）。別ファイルをお試しください。',
   tool_compress_pdf_example:
     'サンプルはグラデーション付き JPEG ページ 2 枚の PDF を読み込み、「中」画質で圧縮、前後サイズと節約率を表示し、compressed.pdf のダウンロードを有効にします。',
-  tool_compress_pdf_example_title: '例',
+  tool_compress_pdf_example_title: 'PDF のファイルサイズを小さく',
   tool_compress_pdf_faq_a1:
     'いいえ。pdf.js と PDF ライブラリ はタブ内で動作します（ライブラリは CDN から読み込む場合あり）。PDF は当社サーバーにアップロードされません。',
   tool_compress_pdf_faq_a2:
@@ -57,7 +57,7 @@ const ja: SiteLangDict = {
   tool_compress_pdf_stats_tpl: '{from} → {to} · {pct}% 節約',
   tool_compress_pdf_status_done: '完了 — ダウンロードで compressed.pdf を保存。',
   tool_compress_pdf_status_working: 'PDF を圧縮中…',
-  tool_compress_pdf_title: 'PDF圧縮 — ブラウザでファイルを小さく',
+  tool_compress_pdf_title: 'PDF のファイルサイズを縮小',
   tool_compress_pdf_usecase_1: 'オフィス：メール添付上限前にスキャン PDF を縮小。',
   tool_compress_pdf_usecase_2: '学生：写真入り課題 PDF をフォーム上限内に。',
   tool_compress_pdf_usecase_3: 'サイト運営：ラスター画質で足りる場合、共有用 PDF を軽量化。',

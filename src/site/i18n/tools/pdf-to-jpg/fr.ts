@@ -21,7 +21,7 @@ const fr: SiteLangDict = {
   tool_pdf_to_jpg_err_pdfjs: 'Échec du chargement du moteur PDF. Vérifiez le réseau.',
   tool_pdf_to_jpg_example:
     'L’échantillon crée un PDF de deux pages, convertit chaque page et active Télécharger avec un ZIP contenant page-1.jpg et page-2.jpg.',
-  tool_pdf_to_jpg_example_title: 'Exemple',
+  tool_pdf_to_jpg_example_title: 'Convertir des pages PDF en JPG',
   tool_pdf_to_jpg_faq_a1:
     'Non. le moteur de rendu et la bibliothèque ZIP s’exécutent dans votre onglet (scripts éventuellement depuis un CDN). Votre PDF n’est pas envoyé à nos serveurs.',
   tool_pdf_to_jpg_faq_a2:
@@ -53,7 +53,7 @@ const fr: SiteLangDict = {
   tool_pdf_to_jpg_stats_tpl: '{n} page(s) · {bytes}',
   tool_pdf_to_jpg_status_converting: 'Conversion des pages en JPG…',
   tool_pdf_to_jpg_status_done: 'Terminé — cliquez Télécharger pour enregistrer.',
-  tool_pdf_to_jpg_title: 'PDF en JPG — convertissez les pages en images',
+  tool_pdf_to_jpg_title: 'Convertir les pages PDF en JPG',
   tool_pdf_to_jpg_usecase_1: 'Bureau : exportez une diapo ou page signée pour le chat.',
   tool_pdf_to_jpg_usecase_2: 'Marketing : extrayez des vignettes JPG d’un catalogue PDF.',
   tool_pdf_to_jpg_usecase_3: 'Étudiants : enregistrez des pages PDF comme images de notes.',

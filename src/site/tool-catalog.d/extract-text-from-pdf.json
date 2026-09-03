@@ -1,0 +1,31 @@
+{
+  "slug": "extract-text-from-pdf",
+  "path": "/tools/extract-text-from-pdf",
+  "updatedAt": "2026-09-03T16:51:45.638Z",
+  "launchedAt": "2026-09-03T14:00:00.000Z",
+  "category": "pdf",
+  "primaryTopic": "pdf-docs",
+  "secondaryTopics": [
+    "dev-data"
+  ],
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_extract_text_from_pdf_title",
+  "homeTitleKey": "tool_extract_text_from_pdf_title",
+  "homeDescKey": "tool_extract_text_from_pdf_desc",
+  "faqPrefix": "tool_extract_text_from_pdf",
+  "related": [
+    "pdf-to-markdown",
+    "merge-pdf",
+    "turn-pdf-into-word-document"
+  ],
+  "logo": "/icons/tools/extract-text-from-pdf.svg",
+  "page": {
+    "module": "../pages/extractTextFromPdfPage",
+    "export": "renderExtractTextFromPdfPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "documents",
+  "subject": "pdf"
+}

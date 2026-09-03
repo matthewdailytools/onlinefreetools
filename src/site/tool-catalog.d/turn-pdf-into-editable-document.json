@@ -1,0 +1,31 @@
+{
+  "slug": "turn-pdf-into-editable-document",
+  "path": "/tools/turn-pdf-into-editable-document",
+  "updatedAt": "2026-09-03T23:38:34.286Z",
+  "launchedAt": "2026-09-04T00:00:00.000Z",
+  "category": "pdf",
+  "primaryTopic": "pdf-docs",
+  "secondaryTopics": [
+    "dev-data"
+  ],
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_turn_pdf_into_editable_document_title",
+  "homeTitleKey": "tool_turn_pdf_into_editable_document_title",
+  "homeDescKey": "tool_turn_pdf_into_editable_document_desc",
+  "faqPrefix": "tool_turn_pdf_into_editable_document",
+  "related": [
+    "edit-pdf-text-online",
+    "extract-text-from-pdf",
+    "write-pdf-document-online"
+  ],
+  "logo": "/icons/tools/turn-pdf-into-editable-document.svg",
+  "page": {
+    "module": "../pages/turnPdfIntoEditableDocumentPage",
+    "export": "renderTurnPdfIntoEditableDocumentPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "documents",
+  "subject": "pdf"
+}
