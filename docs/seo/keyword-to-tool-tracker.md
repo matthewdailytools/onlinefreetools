@@ -44,11 +44,11 @@
 
 | 字段 | 值 |
 |---|---|
-| 最近更新 | 2026-09-02 |
-| 最近批次 | web-check 实现队列 **已立项并实现** 五工具（见 selection.md + catalog） |
-| 池内 `build` 候选 | web-check 五 slug **已上线 catalog**（边缘 API + 十语）；YAML/XML P2 仍 defer |
+| 最近更新 | 2026-09-03 |
+| 最近批次 | web-check 五工具已立项并实现；另见 [keywords/bulk-batch/2026-09-03-bulk-vs-batch-tool-split.md](./keywords/bulk-batch/2026-09-03-bulk-vs-batch-tool-split.md)（独立 slug + IG；当时未 SERP → 0 long_gap） |
+| 池内 `build` 候选 | web-check 五 slug **已上线 catalog**（边缘 API + 十语）；YAML/XML P2 仍 defer；bulk-batch P0 当时未开 work-tasks |
 | 本周新建工具页 | `check-robots-txt-url-blocked` · `find-and-validate-xml-sitemap` · `validate-security-txt` · `check-ssl-certificate-expiration` · `spf-dkim-dmarc-checker` |
-| 阻塞 | 发版：`npm run deploy` / upload:r2 + git push；SSL 为 crt.sh CT 非握手 |
+| 阻塞 | 发版：`npm run deploy` / upload:r2；SSL 为 crt.sh CT 非握手；bulk-batch 待用户点名后开 brief |
 
 ---
 
@@ -151,6 +151,7 @@
 | 2026-09-02 | **能力先判**：未实现必须实现；生成≠校验；absorb 仅已能办成同一作业。订正 robots/sitemap/security.txt/SSL/DMARC 为 `build`（须实现）+ 场景/G H1；禁并进 generator。同步 playbook §0 / 策略 §E / Skill / rule。未建 work-tasks。 | 用户指出判断逻辑错误 |
 | 2026-09-02 | CloakBrowser Bing Related 选 H1：头词×5 + 长尾×20；**Related/PAA 全空**。按有机 title 代理定实现队列 H1/slug（见 `keywords/web-check/2026-09-02-web-check-related-longtail-selection.md`）。未建 work-tasks。 | 用户要求用 Bing 侧栏关联长尾定词 |
 | 2026-09-02 | 用户点名「按照建议立项工具和实现」：开 work-tasks 并实现五工具（opts + Worker API + 十语 + build:site）。SSL 用 crt.sh CT（Workers 无对端证书）。未自动 deploy。 | 明确立项并实现 |
+| 2026-09-03 | 批量能力改为**独立工具**：新 slug（含 bulk **或** batch，按搜法二选一）、独立 IG、单独 brief。按作业类型聚类；P0 五条场景 slug。单文件页不加 multiple 冒充覆盖。**未**跑 Planner/SERP，**未**建 work-tasks，不占周 long_gap。 | 用户要求单独立项+独立 slug，并评估 bulk/batch 搜法 |
 
 ---
 
