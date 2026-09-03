@@ -4,14 +4,14 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Dev Logs (25/25) | OnlineFreeTools.org</title>
-  <meta name="description" content="Curated project development notes with reusable decisions and fixes, organized by month. (25/25)" />
+  <title>Removed all server language auto-redirects (including cookie-based); /en/ no longer chains to /zh/; hint bar auto-hide is 10s. | Dev Logs</title>
+  <meta name="description" content="Removed all server language auto-redirects (including cookie-based); /en/ no longer chains to /zh/; hint bar auto-hide is 10s." />
   
-  <link rel="canonical" href="https://onlinefreetools.org/devlogs/page-25.html" />
-  <meta property="og:title" content="Dev Logs (25/25) | OnlineFreeTools.org" />
-  <meta property="og:description" content="Curated project development notes with reusable decisions and fixes, organized by month. (25/25)" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://onlinefreetools.org/devlogs/page-25.html" />
+  <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-09-03-21-03-drop-all-lang-auto-redirects.html" />
+  <meta property="og:title" content="Removed all server language auto-redirects (including cookie-based); /en/ no longer chains to /zh/; hint bar auto-hide is 10s. | Dev Logs" />
+  <meta property="og:description" content="Removed all server language auto-redirects (including cookie-based); /en/ no longer chains to /zh/; hint bar auto-hide is 10s." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-09-03-21-03-drop-all-lang-auto-redirects.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
   
@@ -47,8 +47,8 @@
   else window.addEventListener('load', schedule, { once: true });
 })();
 </script>
-  <link rel="prev" href="https://onlinefreetools.org/devlogs/page-24.html" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Dev Logs (25/25)","url":"https://onlinefreetools.org/devlogs/page-25.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://onlinefreetools.org/"},{"@type":"ListItem","position":2,"name":"Dev Logs","item":"https://onlinefreetools.org/devlogs/"}]}}</script>
+  
+  
 </head>
 <body class="is-home-page">
   
@@ -159,56 +159,63 @@
       <div class="list-group list-group-flush small" id="navList"><a class="list-group-item list-group-item-action" href="/"><span class="sidebar-tool-label">Home</span></a></div>
     </aside>
     <main id="content" class="p-4">
-    <section>
-      <div class="d-flex justify-content-between align-items-start gap-3 mb-3">
-        <div>
-          <h1 class="h4 mb-1">Dev Logs</h1>
-          <p class="text-muted mb-0">
-            Browse Q&A and implementation notes by month.
-            <a class="ms-1 text-decoration-none" href="https://github.com/matthewdailytools/onlinefreetools" target="_blank" rel="noopener noreferrer">GitHub</a>
-          </p>
+      <section class="mb-3">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h1 class="h4 mb-0">Removed all server language auto-redirects (including cookie-based); /en/ no longer chains to /zh/; hint bar auto-hide is 10s. | Dev Logs</h1>
+          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
-        <a class="btn btn-outline-secondary btn-sm flex-shrink-0" href="/">Back to Home</a>
-      </div>
-      
-      <div class="mb-4">
-        <h2 class="h5 text-muted mb-2">2026-01</h2>
-        <ul class="list-group shadow-sm">
-          
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-01-08-更新日志字段规则.html" class="text-decoration-none">更新日志字段规则</a>
-            <span class="badge text-bg-secondary">2026-01-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-01-08-更新不记录AI末尾提问规则.html" class="text-decoration-none">更新不记录AI末尾提问规则</a>
-            <span class="badge text-bg-secondary">2026-01-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-01-08-更新README中英文.html" class="text-decoration-none">更新README中英文</a>
-            <span class="badge text-bg-secondary">2026-01-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-01-08-删除历史中的文件夹.html" class="text-decoration-none">删除历史中的文件夹</a>
-            <span class="badge text-bg-secondary">2026-01-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-01-08-初始化Cloudflare项目.html" class="text-decoration-none">初始化Cloudflare项目</a>
-            <span class="badge text-bg-secondary">2026-01-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-01-08-创建开发日志文件夹.html" class="text-decoration-none">创建开发日志文件夹</a>
-            <span class="badge text-bg-secondary">2026-01-08</span>
-          </li>
-        </ul>
-      </div>
-      
-      <nav class="d-flex flex-wrap justify-content-between align-items-center gap-2 mt-4" aria-label="Dev Logs">
-        <a class="btn btn-outline-secondary btn-sm" href="/devlogs/page-24.html" rel="prev">Previous</a>
-        <span class="small text-muted">Page 25 of 25</span>
-        <span class="btn btn-outline-secondary btn-sm disabled" aria-disabled="true">Next</span>
-      </nav>
-    </section>
-  </main>
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-03 21:03
+Summary: Removed all server language auto-redirects (including cookie-based); /en/ no longer chains to /zh/; hint bar auto-hide is 10s.
+Visibility: people</p>
+<p>[question]
+<a href="http://localhost:8788/en/">http://localhost:8788/en/</a> 还是自动被跳转到了 <a href="http://localhost:8788/zh/">http://localhost:8788/zh/</a> ；删除所有的语言自动跳转，只依赖用户选择语言偏好，另外顶栏下方提示条消失时间改为10秒</p>
+<p>[try to solve]</p>
+<h2>Context</h2>
+<p>Visiting <code>/en/</code> still ended on <code>/zh/</code> when an old <code>oft_lang=zh</code> cookie was present. Product ask: remove <strong>all</strong> automatic language redirects; language changes only via user choice (switcher / hint Switch). Hint bar timeout → 10 seconds.</p>
+<h2>Process</h2>
+<ol>
+<li>Reproduced the chain: <code>/en/</code> → 301 <code>/</code> + <code>Set-Cookie: oft_lang=en</code>, then <code>/</code> still saw request Cookie <code>oft_lang=zh</code> and 302’d to <code>/zh/</code> (cookie preference middleware).</li>
+<li>Removed cookie-based redirects from <code>GET /</code>, the unprefixed <code>app.use(&quot;/*&quot;)</code> negotiation middleware (deleted), and the catch-all.</li>
+<li>Kept only <code>/en/*</code> → 301 unprefixed canonical + <code>Set-Cookie oft_lang=en</code> (SEO URL consolidation, not a cross-language jump).</li>
+<li>Hint bar <code>setTimeout(hide, 10000)</code> in both headers; rebuilt homes; <code>PAGES_CACHE_VERSION</code> 4.10 → 4.11.</li>
+</ol>
+<h2>Root cause / analysis</h2>
+<p>“Remember preference” via cookie redirect fought “select English via <code>/en/</code>”: the follow-up request to <code>/</code> could still carry the previous <code>oft_lang=zh</code> and override the intended English landing. URL-only navigation (user clicks) is the reliable preference signal.</p>
+<h2>Solution</h2>
+<p>Verified:</p>
+<table>
+<thead>
+<tr>
+<th>Request</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>/en/</code> + <code>Cookie: oft_lang=zh</code></td>
+<td>301 → <code>/</code> (Set-Cookie en); follow → <strong>200</strong> <code>/</code> (not <code>/zh/</code>)</td>
+</tr>
+<tr>
+<td><code>/tools/...</code> + <code>Cookie: oft_lang=zh</code></td>
+<td><strong>200</strong> English (no 302)</td>
+</tr>
+<tr>
+<td>Home script</td>
+<td><code>setTimeout(hide,10000)</code></td>
+</tr>
+</tbody></table>
+<p>Language now changes only when the user clicks the switcher or the hint “Switch” button (those set <code>oft_lang</code> and navigate). Cookie no longer drives server redirects.</p>
+<h2>Notes / boundaries</h2>
+<ul>
+<li>Paths: <code>src/index.ts</code>, both headers, <code>wrangler.jsonc</code> cache version.</li>
+<li>Clear old cookies in the browser if testing leftover state; server no longer auto-jumps on them.</li>
+</ul>
+<p>[actions]</p>
+<ul>
+<li>Removed cookie/AL language redirects; <code>/en/</code>→<code>/</code> only; hint auto-hide 10s; cache version 4.11</li>
+</ul>
+</article>
+      </section>
+    </main>
   </div>
   
   <footer class="site-footer border-top text-center py-3">

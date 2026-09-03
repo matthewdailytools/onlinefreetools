@@ -4,14 +4,14 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Dev Logs (25/25) | OnlineFreeTools.org</title>
-  <meta name="description" content="Curated project development notes with reusable decisions and fixes, organized by month. (25/25)" />
+  <title>Lang hint bar copy (message + buttons) now renders in the detected browser language, not the current page language. | Dev Logs</title>
+  <meta name="description" content="Lang hint bar copy (message + buttons) now renders in the detected browser language, not the current page language." />
   
-  <link rel="canonical" href="https://onlinefreetools.org/devlogs/page-25.html" />
-  <meta property="og:title" content="Dev Logs (25/25) | OnlineFreeTools.org" />
-  <meta property="og:description" content="Curated project development notes with reusable decisions and fixes, organized by month. (25/25)" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://onlinefreetools.org/devlogs/page-25.html" />
+  <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-09-03-21-16-lang-hint-copy-in-detected-lang.html" />
+  <meta property="og:title" content="Lang hint bar copy (message + buttons) now renders in the detected browser language, not the current page language. | Dev Logs" />
+  <meta property="og:description" content="Lang hint bar copy (message + buttons) now renders in the detected browser language, not the current page language." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-09-03-21-16-lang-hint-copy-in-detected-lang.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
   
@@ -47,8 +47,8 @@
   else window.addEventListener('load', schedule, { once: true });
 })();
 </script>
-  <link rel="prev" href="https://onlinefreetools.org/devlogs/page-24.html" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Dev Logs (25/25)","url":"https://onlinefreetools.org/devlogs/page-25.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://onlinefreetools.org/"},{"@type":"ListItem","position":2,"name":"Dev Logs","item":"https://onlinefreetools.org/devlogs/"}]}}</script>
+  
+  
 </head>
 <body class="is-home-page">
   
@@ -159,56 +159,32 @@
       <div class="list-group list-group-flush small" id="navList"><a class="list-group-item list-group-item-action" href="/"><span class="sidebar-tool-label">Home</span></a></div>
     </aside>
     <main id="content" class="p-4">
-    <section>
-      <div class="d-flex justify-content-between align-items-start gap-3 mb-3">
-        <div>
-          <h1 class="h4 mb-1">Dev Logs</h1>
-          <p class="text-muted mb-0">
-            Browse Q&A and implementation notes by month.
-            <a class="ms-1 text-decoration-none" href="https://github.com/matthewdailytools/onlinefreetools" target="_blank" rel="noopener noreferrer">GitHub</a>
-          </p>
+      <section class="mb-3">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h1 class="h4 mb-0">Lang hint bar copy (message + buttons) now renders in the detected browser language, not the current page language. | Dev Logs</h1>
+          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
-        <a class="btn btn-outline-secondary btn-sm flex-shrink-0" href="/">Back to Home</a>
-      </div>
-      
-      <div class="mb-4">
-        <h2 class="h5 text-muted mb-2">2026-01</h2>
-        <ul class="list-group shadow-sm">
-          
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-01-08-更新日志字段规则.html" class="text-decoration-none">更新日志字段规则</a>
-            <span class="badge text-bg-secondary">2026-01-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-01-08-更新不记录AI末尾提问规则.html" class="text-decoration-none">更新不记录AI末尾提问规则</a>
-            <span class="badge text-bg-secondary">2026-01-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-01-08-更新README中英文.html" class="text-decoration-none">更新README中英文</a>
-            <span class="badge text-bg-secondary">2026-01-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-01-08-删除历史中的文件夹.html" class="text-decoration-none">删除历史中的文件夹</a>
-            <span class="badge text-bg-secondary">2026-01-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-01-08-初始化Cloudflare项目.html" class="text-decoration-none">初始化Cloudflare项目</a>
-            <span class="badge text-bg-secondary">2026-01-08</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-01-08-创建开发日志文件夹.html" class="text-decoration-none">创建开发日志文件夹</a>
-            <span class="badge text-bg-secondary">2026-01-08</span>
-          </li>
-        </ul>
-      </div>
-      
-      <nav class="d-flex flex-wrap justify-content-between align-items-center gap-2 mt-4" aria-label="Dev Logs">
-        <a class="btn btn-outline-secondary btn-sm" href="/devlogs/page-24.html" rel="prev">Previous</a>
-        <span class="small text-muted">Page 25 of 25</span>
-        <span class="btn btn-outline-secondary btn-sm disabled" aria-disabled="true">Next</span>
-      </nav>
-    </section>
-  </main>
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-03 21:16
+Summary: Lang hint bar copy (message + buttons) now renders in the detected browser language, not the current page language.
+Visibility: people</p>
+<p>[question]
+显示条描述所用的语言应该使用检测到的语言</p>
+<p>[try to solve]</p>
+<h2>Context</h2>
+<p>The hint bar previously filled text from the <strong>current page</strong> locale (<code>t(pageLang, ...)</code>). On English <code>/</code> with Chinese preferred, users still saw English “We detected…”.</p>
+<h2>Process</h2>
+<p>Embedded <code>data-i18n</code> JSON for all enabled langs (<code>message</code> / <code>switch</code> / <code>dismiss</code>) on <code>#langHintBar</code>. On show, the script selects <code>i18n[detected]</code> and writes text + button labels; sets <code>dir=rtl</code> when detected is <code>ar</code>.</p>
+<h2>Solution</h2>
+<p>Updated both headers; rebuilt homes/tools; <code>PAGES_CACHE_VERSION</code> 4.13. On English home with zh-first <code>navigator.languages</code>, the bar should read「检测到你的语言是 中文，是否跳转？」with「跳转」/「关闭」.</p>
+<h2>Notes / boundaries</h2>
+<p>Clear <code>oft_lang</code> / <code>oft_lang_hint_n</code> when retesting. Hard-refresh after cache bump.</p>
+<p>[actions]</p>
+<ul>
+<li>Hint UI copy follows detected language; cache 4.13</li>
+</ul>
+</article>
+      </section>
+    </main>
   </div>
   
   <footer class="site-footer border-top text-center py-3">

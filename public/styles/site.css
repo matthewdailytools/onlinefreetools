@@ -913,14 +913,15 @@ body.is-tool-page .tool-lead {
 
 /**
  * 顶栏下方语言提示条：检测到浏览器语言与当前页不同时由脚本显示。
- * fixed 贴在 navbar 下方；高度写入 --lang-hint-h 以推动正文。
+ * fixed 贴在 navbar 下方；须高于 Bootstrap .fixed-top(1030)，低于下拉(1050)。
+ * 高度写入 --lang-hint-h 以推动正文；top 由脚本按实测 navbar 高度写入，避免被挡住。
  */
 .lang-hint-bar {
   position: fixed;
   top: var(--header-h);
   left: 0;
   right: 0;
-  z-index: 1025;
+  z-index: 1035;
   background: color-mix(in srgb, var(--brand) 10%, var(--surface));
   border-bottom: 1px solid color-mix(in srgb, var(--brand) 22%, var(--border));
   box-shadow: 0 1px 0 color-mix(in srgb, var(--brand) 8%, transparent);

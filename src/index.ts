@@ -9,9 +9,7 @@ import {
 	getEnabledLangs,
 	getDefaultLang,
 	getExplicitLangFromPath,
-	withLangPrefix,
 	stripLangPrefix,
-	resolvePreferredLang,
 	buildLangPrefSetCookie,
 } from "./site/lang";
 import { registerToolPages } from "./site/toolRegistrar";
@@ -107,9 +105,9 @@ const isGoogleSiteVerificationPath = (pathname: string) => pathname === GOOGLE_S
 const isIndexNowKeyPath = (pathname: string) => pathname === INDEXNOW_KEY_PATH;
 
 /**
- * 语言偏好 Cookie 相关响应的 Vary（仅 Cookie，不再按 Accept-Language 跳转）。
+ * 默认语显式前缀 URL 301 时的 Vary（写入语言偏好 Cookie，不做语言协商跳转）。
  */
-const LANG_NEGOTIATE_VARY = "Cookie";
+const LANG_CANONICAL_VARY = "Cookie";
 
 /**
  * 将默认语显式前缀 URL（如 `/en/tools/x`）301 到无前缀规范 URL，并写入语言偏好 Cookie。
@@ -122,7 +120,7 @@ const redirectDefaultLangCanonical = (c: any, strippedPath: string, defaultLang:
 	url.pathname = strippedPath.startsWith("/") ? strippedPath : `/${strippedPath}`;
 	const secure = url.protocol === "https:";
 	c.header("Set-Cookie", buildLangPrefSetCookie(defaultLang, { secure }));
-	c.header("Vary", LANG_NEGOTIATE_VARY);
+	c.header("Vary", LANG_CANONICAL_VARY);
 	return c.redirect(url.toString(), 301);
 };
 
@@ -289,27 +287,13 @@ app.use("*", async (c, next) => {
 	return redirectDefaultLangCanonical(c, stripLangPrefix(pathname), defaultLang);
 });
 
-// 首页：Assets 常规路径 `public/index.html`；仅 Cookie 偏好可跳非默认语，不做 Accept-Language 自动跳转
+// 首页：Assets 常规路径 `public/index.html`。语言只随用户点击切换器/提示条走 URL，不做 Cookie/AL 自动跳转。
 app.get("/", async (c) => {
 	const accept = c.req.header("accept") || "";
 	if (!accept.includes("text/html")) return c.notFound();
 
 	const enabled = getEnabledLangs(c.env);
 	const defaultLang = getDefaultLang(c.env, enabled);
-	const preferred = resolvePreferredLang({
-		cookieHeader: c.req.header("cookie"),
-		enabled,
-		defaultLang,
-	});
-
-	if (preferred !== defaultLang) {
-		const url = new URL(c.req.url);
-		url.pathname = withLangPrefix(preferred, "/", defaultLang);
-		c.header("Vary", LANG_NEGOTIATE_VARY);
-		return c.redirect(url.toString(), 302);
-	}
-
-	c.header("Vary", LANG_NEGOTIATE_VARY);
 	return serveLangHomeHtml(c, defaultLang);
 });
 
@@ -443,71 +427,6 @@ app.get("/devlogs", (c) => c.redirect("/devlogs/", 301));
 app.get("/devlogs/", async (c) => {
 	const res = await fetchAsset(c, "/devlogs/index.html");
 	return res;
-});
-
-app.use("/*", async (c, next) => {
-	const url = new URL(c.req.url);
-	const pathname = url.pathname;
-
-	// Global (non-localized) pages.
-	if (pathname === "/devlogs" || pathname.startsWith("/devlogs/")) return next();
-	// 无语言前缀的静态信息页（默认语规范 URL）不做 Cookie 语言偏好跳转。
-	if (
-		pathname === '/about' ||
-		pathname.startsWith('/about/') ||
-		pathname === '/privacy' ||
-		pathname.startsWith('/privacy/') ||
-		pathname === '/terms' ||
-		pathname.startsWith('/terms/') ||
-		pathname === '/contact' ||
-		pathname.startsWith('/contact/') ||
-		pathname === '/where-to-use-tools' ||
-		pathname.startsWith('/where-to-use-tools/') ||
-		pathname === '/tool-type' ||
-		pathname.startsWith('/tool-type/') ||
-		pathname === '/topics' ||
-		pathname.startsWith('/topics/') ||
-		pathname === '/use-cases' ||
-		pathname.startsWith('/use-cases/') ||
-		pathname === '/subjects' ||
-		pathname.startsWith('/subjects/')
-	) {
-		return next();
-	}
-	if (pathname === "/tools/markdown-to-html.html") return next();
-	// 谷歌验证文件不得做语言前缀跳转。
-	if (isGoogleSiteVerificationPath(pathname)) return next();
-	// IndexNow 验证文件不得做语言前缀跳转。
-	if (isIndexNowKeyPath(pathname)) return next();
-
-	// Do not interfere with APIs, docs, or obvious static assets.
-	const isStaticAsset = /\.(css|js|png|jpg|jpeg|gif|webp|avif|svg|ico|map|woff2?|ttf|eot|xml|txt|webmanifest)$/i.test(
-		pathname
-	);
-	if (pathname.startsWith("/api/") || pathname === "/api" || pathname.startsWith("/docs") || isStaticAsset) {
-		return next();
-	}
-	if (c.req.method !== "GET") return next();
-
-	const accept = c.req.header("accept") || "";
-	if (!accept.includes("text/html")) return next();
-
-	const enabled = getEnabledLangs(c.env);
-	const explicit = getExplicitLangFromPath(pathname, enabled);
-	if (explicit) return next();
-
-	const defaultLang = getDefaultLang(c.env, enabled);
-	/** 仅 Cookie 显式偏好可跳非默认语；Accept-Language 改由顶栏提示条处理。 */
-	const preferred = resolvePreferredLang({
-		cookieHeader: c.req.header("cookie"),
-		enabled,
-		defaultLang,
-	});
-	if (preferred === defaultLang) return next();
-
-	url.pathname = withLangPrefix(preferred, pathname === "/" ? "/" : pathname, defaultLang);
-	c.header("Vary", LANG_NEGOTIATE_VARY);
-	return c.redirect(url.toString(), 302);
 });
 
 // Setup OpenAPI registry
@@ -656,42 +575,9 @@ app.get("/tools/markdown-to-html.html", (c) => c.redirect("/tools/markdown-to-ht
 // 工具页：预渲染 HTML（R2 / Assets），不再在 Worker 内 SSR 全量 Page 模块
 registerToolPages(app as any);
 
-// Catch-all (GET): Cookie 语言偏好跳转后再回落 Assets；不做 Accept-Language 自动跳转。
+// Catch-all (GET): 不做语言自动跳转；未匹配路由交由 Assets。
 app.get("/*", (c) => {
-	const url = new URL(c.req.url);
-	const pathname = url.pathname;
-
-	// Global (non-localized) pages.
-	if (pathname === "/devlogs" || pathname.startsWith("/devlogs/")) return c.notFound();
-	if (pathname === "/tools/markdown-to-html.html") return c.notFound();
-	// 回退到 Assets 前放行验证文件（正常应由上方显式路由处理）。
-	if (isGoogleSiteVerificationPath(pathname)) return c.notFound();
-	if (isIndexNowKeyPath(pathname)) return c.notFound();
-	const isStaticAsset = /\.(css|js|png|jpg|jpeg|gif|webp|avif|svg|ico|map|woff2?|ttf|eot|xml|txt|webmanifest)$/i.test(
-		pathname
-	);
-	if (pathname.startsWith("/api/") || pathname === "/api" || pathname.startsWith("/docs") || isStaticAsset) {
-		return c.notFound();
-	}
-
-	const accept = c.req.header("accept") || "";
-	if (!accept.includes("text/html")) return c.notFound();
-
-	const enabled = getEnabledLangs(c.env);
-	const explicit = getExplicitLangFromPath(pathname, enabled);
-	if (explicit) return c.notFound();
-
-	const defaultLang = getDefaultLang(c.env, enabled);
-	const preferred = resolvePreferredLang({
-		cookieHeader: c.req.header("cookie"),
-		enabled,
-		defaultLang,
-	});
-	if (preferred === defaultLang) return c.notFound();
-
-	url.pathname = withLangPrefix(preferred, pathname === "/" ? "/" : pathname, defaultLang);
-	c.header("Vary", LANG_NEGOTIATE_VARY);
-	return c.redirect(url.toString(), 302);
+	return c.notFound();
 });
 
 // You may also register routes for non OpenAPI directly on Hono

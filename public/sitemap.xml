@@ -38411,4 +38411,19 @@
     <lastmod>2026-09-03</lastmod>
     <priority>0.4</priority>
   </url>
+  <url>
+    <loc>https://onlinefreetools.org/devlogs/2026-09-03-21-03-drop-all-lang-auto-redirects.html</loc>
+    <lastmod>2026-09-03</lastmod>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/devlogs/2026-09-03-21-15-lang-hint-prefer-top-browser-lang.html</loc>
+    <lastmod>2026-09-03</lastmod>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/devlogs/2026-09-03-21-16-lang-hint-copy-in-detected-lang.html</loc>
+    <lastmod>2026-09-03</lastmod>
+    <priority>0.4</priority>
+  </url>
 </urlset>

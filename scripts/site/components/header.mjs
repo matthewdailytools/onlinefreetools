@@ -64,7 +64,8 @@ const renderLangSwitcher = ({ lang, langAlternates }) => {
 };
 
 /**
- * 点击语言菜单时写入 `oft_lang` Cookie；浏览器语言与页面不一致时展示提示条（最多 3 次，5 秒自动消失）。
+ * 点击语言菜单时写入 `oft_lang` Cookie；浏览器语言与页面不一致时展示提示条（最多 3 次，10 秒自动消失）。
+ * 提示条文案使用「检测到的语言」，不是当前页语言。
  * Cookie 名与 `src/site/lang.ts` 的 LANG_PREF_COOKIE / LANG_HINT_COUNT_COOKIE 一致。
  */
 const LANG_CHROME_SCRIPT = `<script>(function(){
@@ -88,14 +89,17 @@ const LANG_CHROME_SCRIPT = `<script>(function(){
     try{enabled=JSON.parse(bar.getAttribute('data-enabled')||'[]');}catch(e){}
     var labels={};
     try{labels=JSON.parse(bar.getAttribute('data-labels')||'{}');}catch(e){}
-    var msgT=bar.getAttribute('data-msg')||'';
+    var i18n={};
+    try{i18n=JSON.parse(bar.getAttribute('data-i18n')||'{}');}catch(e){}
     var nav=navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language];
-    var detected=null;
+    /** 取浏览器偏好列表中第一个受支持语言。 */
+    var preferred=null;
     for(var i=0;i<nav.length;i++){
       var p=String(nav[i]||'').toLowerCase().split('-')[0];
-      if(p&&enabled.indexOf(p)>=0&&p!==pageLang){detected=p;break;}
+      if(p&&enabled.indexOf(p)>=0){preferred=p;break;}
     }
-    if(!detected)return;
+    if(!preferred||preferred===pageLang)return;
+    var detected=preferred;
     var href='';
     var link=document.querySelector('link[rel="alternate"][hreflang="'+detected+'"]');
     if(link)href=link.getAttribute('href')||'';
@@ -107,21 +111,37 @@ const LANG_CHROME_SCRIPT = `<script>(function(){
       href=detected==='en'?path:('/'+detected+(path==='/'?'/':path));
     }
     setC(COUNT,String(shown+1));
+    var copy=i18n[detected]||i18n[pageLang]||{};
     var label=labels[detected]||detected;
+    var msgT=copy.message||'';
     var textEl=bar.querySelector('[data-lang-hint-text]');
-    if(textEl)textEl.textContent=msgT.split('{lang}').join(label);
+    if(textEl)textEl.textContent=String(msgT).split('{lang}').join(label);
+    var go=bar.querySelector('[data-lang-hint-switch]');
+    var dismiss=bar.querySelector('[data-lang-hint-dismiss]');
+    if(go&&copy.switch)go.textContent=copy.switch;
+    if(dismiss&&copy.dismiss)dismiss.textContent=copy.dismiss;
     bar.hidden=false;
     bar.setAttribute('aria-hidden','false');
-    document.documentElement.style.setProperty('--lang-hint-h',bar.offsetHeight+'px');
-    var timer=setTimeout(hide,5000);
+    if(detected==='ar')bar.setAttribute('dir','rtl');
+    else bar.removeAttribute('dir');
+    /** 用实测顶栏高度定位，避免 CSS --header-h 偏小或 z-index 低于 fixed-top 时被挡住。 */
+    var navEl=document.querySelector('.navbar.site-navbar');
+    var navH=navEl?Math.ceil(navEl.getBoundingClientRect().height):60;
+    bar.style.top=navH+'px';
+    document.body.style.setProperty('--header-h',navH+'px');
+    var hintH=Math.ceil(bar.getBoundingClientRect().height)||bar.offsetHeight;
+    document.documentElement.style.setProperty('--lang-hint-h',hintH+'px');
+    document.body.style.setProperty('--lang-hint-h',hintH+'px');
+    var timer=setTimeout(hide,10000);
     function hide(){
       clearTimeout(timer);
       bar.hidden=true;
       bar.setAttribute('aria-hidden','true');
+      bar.style.top='';
+      document.body.style.removeProperty('--header-h');
+      document.body.style.removeProperty('--lang-hint-h');
       document.documentElement.style.setProperty('--lang-hint-h','0px');
     }
-    var dismiss=bar.querySelector('[data-lang-hint-dismiss]');
-    var go=bar.querySelector('[data-lang-hint-switch]');
     if(dismiss)dismiss.addEventListener('click',hide);
     if(go)go.addEventListener('click',function(){setC(PREF,detected);location.href=href;});
   }
@@ -131,11 +151,23 @@ const LANG_CHROME_SCRIPT = `<script>(function(){
 
 /**
  * 渲染浏览器语言提示条（默认 hidden，由脚本按需显示）。
+ * data-i18n 含各语文案；展示时用「检测到的语言」渲染，而非当前页语言。
  * @param {{lang:string,enabled:string[]}} opts
  */
 const renderLangHintBar = ({ lang, enabled }) => {
   const labels = Object.fromEntries(
     (siteConfig.languages || []).map((l) => [l.code, l.label])
+  );
+  /** 各语言提示条文案：message / switch / dismiss */
+  const i18nByLang = Object.fromEntries(
+    enabled.map((code) => [
+      code,
+      {
+        message: t(code, 'lang_hint_message'),
+        switch: t(code, 'lang_hint_switch'),
+        dismiss: t(code, 'lang_hint_dismiss'),
+      },
+    ])
   );
   const esc = (s) =>
     String(s)
@@ -147,12 +179,12 @@ const renderLangHintBar = ({ lang, enabled }) => {
     data-page-lang="${esc(lang)}"
     data-enabled="${esc(JSON.stringify(enabled))}"
     data-labels="${esc(JSON.stringify(labels))}"
-    data-msg="${esc(t(lang, 'lang_hint_message'))}">
+    data-i18n="${esc(JSON.stringify(i18nByLang))}">
     <div class="lang-hint-bar__inner">
       <p class="lang-hint-bar__text mb-0" data-lang-hint-text></p>
       <div class="lang-hint-bar__actions">
-        <button type="button" class="btn btn-sm btn-primary" data-lang-hint-switch>${esc(t(lang, 'lang_hint_switch'))}</button>
-        <button type="button" class="btn btn-sm btn-outline-secondary" data-lang-hint-dismiss>${esc(t(lang, 'lang_hint_dismiss'))}</button>
+        <button type="button" class="btn btn-sm btn-primary" data-lang-hint-switch></button>
+        <button type="button" class="btn btn-sm btn-outline-secondary" data-lang-hint-dismiss></button>
       </div>
     </div>
   </div>`;

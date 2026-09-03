@@ -163,12 +163,12 @@
     data-page-lang="ja"
     data-enabled="[&quot;en&quot;,&quot;zh&quot;,&quot;es&quot;,&quot;ar&quot;,&quot;pt&quot;,&quot;id&quot;,&quot;fr&quot;,&quot;ja&quot;,&quot;ru&quot;,&quot;de&quot;]"
     data-labels="{&quot;en&quot;:&quot;English&quot;,&quot;zh&quot;:&quot;中文&quot;,&quot;es&quot;:&quot;Español&quot;,&quot;ar&quot;:&quot;العربية&quot;,&quot;pt&quot;:&quot;Português&quot;,&quot;id&quot;:&quot;Bahasa Indonesia&quot;,&quot;fr&quot;:&quot;Français&quot;,&quot;ja&quot;:&quot;日本語&quot;,&quot;ru&quot;:&quot;Русский&quot;,&quot;de&quot;:&quot;Deutsch&quot;}"
-    data-msg="ご利用の言語は{lang}のようです。切り替えますか？">
+    data-i18n="{&quot;en&quot;:{&quot;message&quot;:&quot;We detected your language is {lang}. Switch?&quot;,&quot;switch&quot;:&quot;Switch&quot;,&quot;dismiss&quot;:&quot;Dismiss&quot;},&quot;zh&quot;:{&quot;message&quot;:&quot;检测到你的语言是 {lang}，是否跳转？&quot;,&quot;switch&quot;:&quot;跳转&quot;,&quot;dismiss&quot;:&quot;关闭&quot;},&quot;es&quot;:{&quot;message&quot;:&quot;Detectamos que tu idioma es {lang}. ¿Cambiar?&quot;,&quot;switch&quot;:&quot;Cambiar&quot;,&quot;dismiss&quot;:&quot;Cerrar&quot;},&quot;ar&quot;:{&quot;message&quot;:&quot;اكتشفنا أن لغتك هي {lang}. هل تريد التبديل؟&quot;,&quot;switch&quot;:&quot;تبديل&quot;,&quot;dismiss&quot;:&quot;إغلاق&quot;},&quot;pt&quot;:{&quot;message&quot;:&quot;Detectámos que o seu idioma é {lang}. Mudar?&quot;,&quot;switch&quot;:&quot;Mudar&quot;,&quot;dismiss&quot;:&quot;Fechar&quot;},&quot;id&quot;:{&quot;message&quot;:&quot;Kami mendeteksi bahasa Anda adalah {lang}. Beralih?&quot;,&quot;switch&quot;:&quot;Beralih&quot;,&quot;dismiss&quot;:&quot;Tutup&quot;},&quot;fr&quot;:{&quot;message&quot;:&quot;Nous avons détecté que votre langue est {lang}. Changer ?&quot;,&quot;switch&quot;:&quot;Changer&quot;,&quot;dismiss&quot;:&quot;Fermer&quot;},&quot;ja&quot;:{&quot;message&quot;:&quot;ご利用の言語は{lang}のようです。切り替えますか？&quot;,&quot;switch&quot;:&quot;切り替える&quot;,&quot;dismiss&quot;:&quot;閉じる&quot;},&quot;ru&quot;:{&quot;message&quot;:&quot;Похоже, ваш язык — {lang}. Перейти?&quot;,&quot;switch&quot;:&quot;Перейти&quot;,&quot;dismiss&quot;:&quot;Закрыть&quot;},&quot;de&quot;:{&quot;message&quot;:&quot;Wir haben Ihre Sprache als {lang} erkannt. Wechseln?&quot;,&quot;switch&quot;:&quot;Wechseln&quot;,&quot;dismiss&quot;:&quot;Schließen&quot;}}">
     <div class="lang-hint-bar__inner">
       <p class="lang-hint-bar__text mb-0" data-lang-hint-text></p>
       <div class="lang-hint-bar__actions">
-        <button type="button" class="btn btn-sm btn-primary" data-lang-hint-switch>切り替える</button>
-        <button type="button" class="btn btn-sm btn-outline-secondary" data-lang-hint-dismiss>閉じる</button>
+        <button type="button" class="btn btn-sm btn-primary" data-lang-hint-switch></button>
+        <button type="button" class="btn btn-sm btn-outline-secondary" data-lang-hint-dismiss></button>
       </div>
     </div>
   </div>
@@ -194,14 +194,17 @@
     try{enabled=JSON.parse(bar.getAttribute('data-enabled')||'[]');}catch(e){}
     var labels={};
     try{labels=JSON.parse(bar.getAttribute('data-labels')||'{}');}catch(e){}
-    var msgT=bar.getAttribute('data-msg')||'';
+    var i18n={};
+    try{i18n=JSON.parse(bar.getAttribute('data-i18n')||'{}');}catch(e){}
     var nav=navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language];
-    var detected=null;
+    /** 取浏览器偏好列表中第一个受支持语言。 */
+    var preferred=null;
     for(var i=0;i<nav.length;i++){
       var p=String(nav[i]||'').toLowerCase().split('-')[0];
-      if(p&&enabled.indexOf(p)>=0&&p!==pageLang){detected=p;break;}
+      if(p&&enabled.indexOf(p)>=0){preferred=p;break;}
     }
-    if(!detected)return;
+    if(!preferred||preferred===pageLang)return;
+    var detected=preferred;
     var href='';
     var link=document.querySelector('link[rel="alternate"][hreflang="'+detected+'"]');
     if(link)href=link.getAttribute('href')||'';
@@ -213,21 +216,37 @@
       href=detected==='en'?path:('/'+detected+(path==='/'?'/':path));
     }
     setC(COUNT,String(shown+1));
+    var copy=i18n[detected]||i18n[pageLang]||{};
     var label=labels[detected]||detected;
+    var msgT=copy.message||'';
     var textEl=bar.querySelector('[data-lang-hint-text]');
-    if(textEl)textEl.textContent=msgT.split('{lang}').join(label);
+    if(textEl)textEl.textContent=String(msgT).split('{lang}').join(label);
+    var go=bar.querySelector('[data-lang-hint-switch]');
+    var dismiss=bar.querySelector('[data-lang-hint-dismiss]');
+    if(go&&copy.switch)go.textContent=copy.switch;
+    if(dismiss&&copy.dismiss)dismiss.textContent=copy.dismiss;
     bar.hidden=false;
     bar.setAttribute('aria-hidden','false');
-    document.documentElement.style.setProperty('--lang-hint-h',bar.offsetHeight+'px');
-    var timer=setTimeout(hide,5000);
+    if(detected==='ar')bar.setAttribute('dir','rtl');
+    else bar.removeAttribute('dir');
+    /** 用实测顶栏高度定位，避免 CSS --header-h 偏小或 z-index 低于 fixed-top 时被挡住。 */
+    var navEl=document.querySelector('.navbar.site-navbar');
+    var navH=navEl?Math.ceil(navEl.getBoundingClientRect().height):60;
+    bar.style.top=navH+'px';
+    document.body.style.setProperty('--header-h',navH+'px');
+    var hintH=Math.ceil(bar.getBoundingClientRect().height)||bar.offsetHeight;
+    document.documentElement.style.setProperty('--lang-hint-h',hintH+'px');
+    document.body.style.setProperty('--lang-hint-h',hintH+'px');
+    var timer=setTimeout(hide,10000);
     function hide(){
       clearTimeout(timer);
       bar.hidden=true;
       bar.setAttribute('aria-hidden','true');
+      bar.style.top='';
+      document.body.style.removeProperty('--header-h');
+      document.body.style.removeProperty('--lang-hint-h');
       document.documentElement.style.setProperty('--lang-hint-h','0px');
     }
-    var dismiss=bar.querySelector('[data-lang-hint-dismiss]');
-    var go=bar.querySelector('[data-lang-hint-switch]');
     if(dismiss)dismiss.addEventListener('click',hide);
     if(go)go.addEventListener('click',function(){setC(PREF,detected);location.href=href;});
   }

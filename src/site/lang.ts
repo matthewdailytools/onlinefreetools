@@ -165,8 +165,8 @@ export const buildLangPrefSetCookie = (
 };
 
 /**
- * 解析用户显式语言偏好：仅读 Cookie；无 Cookie 时返回默认语。
- * Accept-Language 不再触发服务端跳转（改由顶栏提示条客户端处理）。
+ * 解析用户显式语言偏好 Cookie；无 Cookie 时返回默认语。
+ * 服务端不再据此做自动跳转；Cookie 仅供顶栏提示条与客户端记住选择。
  * @param opts.cookieHeader `Cookie` 请求头
  * @param opts.enabled 启用语言
  * @param opts.defaultLang 默认（无前缀）语言
