@@ -17,6 +17,7 @@ import {
 	renderToolReferencesSection,
 	buildToolJsonLd,
 } from './site/toolContent';
+import { hasToolOgImage, resolveToolOgImageUrl } from './site/ogImage';
 
 /** 非默认语言时为路径加语言前缀。 */
 const withLangPrefix = (lang: SiteLang, pathname: string, defaultLang: SiteLang) => {
@@ -39,6 +40,9 @@ export const renderOrganizePdfPage = (opts: {
 	const canonicalPath = withLangPrefix(opts.lang, toolPath, opts.defaultLang);
 	const title = `${t(opts.lang, 'tool_organize_pdf_title')} | ${t(opts.lang, 'brand')}`;
 	const description = t(opts.lang, 'tool_organize_pdf_description');
+	/** per-slug OG 图（存在 public/og/tools/{slug}.* 时启用） */
+	const ogImageUrl = resolveToolOgImageUrl('organize-pdf');
+	const ogImagePath = ogImageUrl.replace('https://onlinefreetools.org', '');
 
 	const navItems = buildToolPageNavItems(opts.lang, opts.defaultLang);
 
@@ -117,7 +121,15 @@ export const renderOrganizePdfPage = (opts: {
     <p id="organizePdfStatus" class="small text-muted mb-2" role="status"></p>
     <p id="organizePdfStats" class="small text-muted mb-3" style="display:none;"></p>
 
-    <p class="tool-lead mb-4">${escapeHtml(description)}</p>`;
+    <p class="tool-lead mb-4">${escapeHtml(description)}</p>
+    ${hasToolOgImage('organize-pdf')
+			? `
+    <figure class="tool-preview-figure mb-4">
+      <img src="${escapeHtml(ogImagePath)}" width="1280" height="720"
+        alt="${escapeHtml(t(opts.lang, 'tool_organize_pdf_title'))}"
+        class="img-fluid rounded border w-100" loading="lazy" decoding="async" />
+    </figure>`
+			: ''}`;
 
 	const igHtml = renderToolIgSections({
 		lang: opts.lang,
@@ -526,6 +538,7 @@ export const renderOrganizePdfPage = (opts: {
 				name: t(opts.lang, toolMeta.i18nKey as any),
 				description,
 				canonicalPath,
+				imageUrl: hasToolOgImage('organize-pdf') ? ogImageUrl : undefined,
 			})
 		: '';
 
@@ -534,7 +547,7 @@ export const renderOrganizePdfPage = (opts: {
 		title,
 		description,
 		canonicalPath,
-		ogImageUrl: 'https://onlinefreetools.org/og-image.png',
+		ogImageUrl,
 		ogType: 'website',
 		alternates,
 		headerHtml,

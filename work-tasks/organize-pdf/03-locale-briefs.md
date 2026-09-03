@@ -41,8 +41,8 @@
 - 按钮：Aplicar / Baixar / Exemplo
 
 ### id
-- 检索词：atur pdf, hapus halaman pdf
-- Title：Atur PDF — urut ulang atau hapus halaman di browser
+- 检索词：urut halaman pdf, urutkan dan hapus pdf, cara ubah urutan pdf, hapus halaman pdf
+- Title：Urut Halaman PDF — Urutkan, Hapus & Ubah Urutan di Browser
 - 按钮：Terapkan / Unduh / Contoh
 
 ### fr

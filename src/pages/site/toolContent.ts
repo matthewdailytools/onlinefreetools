@@ -570,6 +570,8 @@ export const buildToolJsonLd = (opts: {
 	name: string;
 	description: string;
 	canonicalPath: string;
+	/** 与 og:image 同 URL 的偏好图（可选） */
+	imageUrl?: string;
 }) => {
 	const base = 'https://onlinefreetools.org';
 	const pageUrl = `${base}${opts.canonicalPath}`;
@@ -630,13 +632,32 @@ export const buildToolJsonLd = (opts: {
 				itemListElement: breadcrumbItems,
 			},
 			{
+				'@type': 'WebPage',
+				'@id': `${pageUrl}#webpage`,
+				url: pageUrl,
+				name: opts.name,
+				description: opts.description,
+				inLanguage: opts.lang,
+				...(opts.imageUrl
+					? {
+							primaryImageOfPage: {
+								'@type': 'ImageObject',
+								url: opts.imageUrl,
+							},
+						}
+					: {}),
+				mainEntity: { '@id': `${pageUrl}#app` },
+			},
+			{
 				'@type': 'WebApplication',
+				'@id': `${pageUrl}#app`,
 				name: opts.name,
 				url: pageUrl,
 				description: opts.description,
 				applicationCategory,
 				operatingSystem: 'Any',
 				inLanguage: opts.lang,
+				...(opts.imageUrl ? { image: opts.imageUrl } : {}),
 				offers: {
 					'@type': 'Offer',
 					price: '0',

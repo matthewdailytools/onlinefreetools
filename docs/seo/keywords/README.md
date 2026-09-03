@@ -37,5 +37,6 @@ python ops/seo/bing_serp/run_bing_serp.py --theme cidr --write-batch-md --batch-
 | [`text-diff/`](./text-diff/) | Planner CSV + Bing SERP；场景结论以 `text-compare/` 为准 |
 | [`web-check/`](./web-check/) | 竞品 lissy93/web-check；Bing×15 **0 long_gap** |
 | [`bulk-batch/`](./bulk-batch/) | 存量单文件工具的**独立批量页**清单；`bulk` vs `batch` 搜法选型；**未 SERP** |
+| [`pdf/`](./pdf/) | PDF Planner **1333** 词（Adobe 种子偏置）；16 已有 slug absorb；编辑/Word 转换 defer；**未 SERP** |
 
 枢纽：[`../README.md`](../README.md) · 漏斗：[`../keyword-to-tool-funnel.md`](../keyword-to-tool-funnel.md) · 运维：[`../../ops/seo/keyword-to-tool-ops.md`](../../ops/seo/keyword-to-tool-ops.md)

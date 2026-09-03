@@ -313,6 +313,7 @@ export const renderLayout = (opts: {
   <meta property="og:url" content="${escapeHtml(canonical)}" />
   <meta property="og:image" content="${ogImageUrl}" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="${ogImageUrl}" />
   ${alternateLinks}
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
