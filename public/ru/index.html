@@ -66,8 +66,8 @@
   <link href="/vendor/fonts/plus-jakarta-sans.css" rel="stylesheet" />
   <link href="/styles/site.css" rel="stylesheet" />
   <style>
-    body { min-height: 100vh; padding-top: var(--header-h, 56px); }
-    .layout { display: flex; min-height: calc(100vh - var(--header-h, 56px)); }
+    body { min-height: 100vh; padding-top: calc(var(--header-h, 56px) + var(--lang-hint-h, 0px)); }
+    .layout { display: flex; min-height: calc(100vh - var(--header-h, 56px) - var(--lang-hint-h, 0px)); }
   </style>
   
 <script>
@@ -137,7 +137,7 @@
           <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ru/topics/pdf-docs">Смотреть всё в этой теме</a></li><li><a class="dropdown-item" href="/ru/tools/batch-compress-pdfs-for-email" target="_blank" rel="noopener noreferrer">Сжать PDF для почты пакетом</a></li><li><a class="dropdown-item" href="/ru/tools/compress-pdf" target="_blank" rel="noopener noreferrer">Сжать PDF — уменьшите размер в браузере</a></li><li><a class="dropdown-item" href="/ru/tools/crop-pdf" target="_blank" rel="noopener noreferrer">Обрезать PDF — подрежьте поля в браузере</a></li><li><a class="dropdown-item" href="/ru/tools/merge-pdf" target="_blank" rel="noopener noreferrer">Объединить PDF — склейте файлы в браузере</a></li><li><a class="dropdown-item" href="/ru/tools/organize-pdf" target="_blank" rel="noopener noreferrer">Организовать PDF — удалите или переставьте страницы</a></li><li><a class="dropdown-item" href="/ru/tools/pdf-page-numbers" target="_blank" rel="noopener noreferrer">Нумерация страниц PDF — добавьте в браузере</a></li><li><a class="dropdown-item" href="/ru/tools/pdf-page-to-image-sizes" target="_blank" rel="noopener noreferrer">Страница PDF в несколько размеров — пакет экспорта</a></li><li><a class="dropdown-item" href="/ru/tools/pdf-to-jpg" target="_blank" rel="noopener noreferrer">PDF в JPG — сохраните страницы как изображения</a></li><li><a class="dropdown-item" href="/ru/tools/pdf-to-markdown" target="_blank" rel="noopener noreferrer">PDF в Markdown — извлеките текст для заметок в браузере</a></li><li><a class="dropdown-item" href="/ru/tools/pdf-watermark" target="_blank" rel="noopener noreferrer">Водяной знак PDF — поставьте текст на каждую страницу в браузере</a></li><li><a class="dropdown-item" href="/ru/tools/protect-pdf" target="_blank" rel="noopener noreferrer">Защитить PDF — зашифруйте паролем в браузере</a></li><li><a class="dropdown-item" href="/ru/tools/rotate-pdf" target="_blank" rel="noopener noreferrer">Повернуть PDF — исправьте ориентацию страниц</a></li><li><a class="dropdown-item" href="/ru/tools/split-pdf" target="_blank" rel="noopener noreferrer">Разделить PDF — извлеките страницы локально</a></li><li><a class="dropdown-item" href="/ru/tools/unlock-pdf" target="_blank" rel="noopener noreferrer">Разблокировать PDF — снимите пароль, который вы знаете</a></li></ul>
         </li><li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Изображения и медиа</a>
-          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ru/topics/image-media">Смотреть всё в этой теме</a></li><li><a class="dropdown-item" href="/ru/tools/add-watermark" target="_blank" rel="noopener noreferrer">Текстовый водяной знак — в браузере</a></li><li><a class="dropdown-item" href="/ru/tools/amazon-main-image-size" target="_blank" rel="noopener noreferrer">Размер главного изображения Amazon</a></li><li><a class="dropdown-item" href="/ru/tools/apple-touch-icon" target="_blank" rel="noopener noreferrer">apple-touch-icon 180×180</a></li><li><a class="dropdown-item" href="/ru/tools/batch-watermark-product-photos" target="_blank" rel="noopener noreferrer">Водяной знак на фото товаров пакетом</a></li><li><a class="dropdown-item" href="/ru/tools/bulk-compress-png-images" target="_blank" rel="noopener noreferrer">Сжать PNG-изображения пакетом</a></li><li><a class="dropdown-item" href="/ru/tools/bulk-compress-product-photos" target="_blank" rel="noopener noreferrer">Сжать фото товаров пакетом</a></li><li><a class="dropdown-item" href="/ru/tools/bulk-convert-images-to-jpg" target="_blank" rel="noopener noreferrer">Конвертировать изображения в JPG пакетом</a></li><li><a class="dropdown-item" href="/ru/tools/bulk-convert-images-to-png" target="_blank" rel="noopener noreferrer">Конвертировать изображения в PNG пакетом</a></li><li><a class="dropdown-item" href="/ru/tools/bulk-convert-images-to-webp" target="_blank" rel="noopener noreferrer">Конвертировать изображения в WebP пакетом</a></li><li><a class="dropdown-item" href="/ru/tools/color-from-image" target="_blank" rel="noopener noreferrer">Извлечь цвета из фото — палитра и выбор кликом</a></li><li><a class="dropdown-item" href="/ru/tools/flip-image" target="_blank" rel="noopener noreferrer">Отразить изображение — горизонт./верт.</a></li><li><a class="dropdown-item" href="/ru/tools/image-border" target="_blank" rel="noopener noreferrer">Рамка для фото — цвет и толщина</a></li><li><a class="dropdown-item" href="/ru/tools/image-compress" target="_blank" rel="noopener noreferrer">Сжатие изображений — длинная сторона, качество и целевой размер (локально)</a></li><li><a class="dropdown-item" href="/ru/tools/image-crop" target="_blank" rel="noopener noreferrer">Обрезка и изменение размера — локально</a></li><li><a class="dropdown-item" href="/ru/tools/image-exif" target="_blank" rel="noopener noreferrer">Просмотр и удаление EXIF с фото — GPS, камера, локально</a></li><li><a class="dropdown-item" href="/ru/tools/image-format-converter" target="_blank" rel="noopener noreferrer">Конвертер форматов изображений — PNG JPEG WebP AVIF BMP GIF ICO SVG</a></li><li><a class="dropdown-item" href="/ru/tools/image-grayscale" target="_blank" rel="noopener noreferrer">Оттенки серого — локально</a></li><li><a class="dropdown-item" href="/ru/tools/image-merge" target="_blank" rel="noopener noreferrer">Склеить фото онлайн — объединить изображения в коллаж</a></li><li><a class="dropdown-item" href="/ru/tools/image-optimizer" target="_blank" rel="noopener noreferrer">Оптимизация изображений — WebP, AVIF и MozJPEG локально</a></li><li><a class="dropdown-item" href="/ru/tools/image-overlay" target="_blank" rel="noopener noreferrer">Наложить лого — на фото в браузере</a></li><li><a class="dropdown-item" href="/ru/tools/image-to-base64" target="_blank" rel="noopener noreferrer">Изображение ↔ Base64</a></li><li><a class="dropdown-item" href="/ru/tools/images-to-gif" target="_blank" rel="noopener noreferrer">Изображения в GIF — короткая анимация</a></li><li><a class="dropdown-item" href="/ru/tools/images-to-pdf" target="_blank" rel="noopener noreferrer">Изображения в PDF — по странице на фото</a></li><li><a class="dropdown-item" href="/ru/tools/images-to-ppt" target="_blank" rel="noopener noreferrer">Изображения в PowerPoint — слайд на фото</a></li><li><a class="dropdown-item" href="/ru/tools/images-to-word" target="_blank" rel="noopener noreferrer">Изображения в Word — локальный DOCX</a></li><li><a class="dropdown-item" href="/ru/tools/instagram-post-size" target="_blank" rel="noopener noreferrer">размер поста Instagram</a></li><li><a class="dropdown-item" href="/ru/tools/instagram-story-size" target="_blank" rel="noopener noreferrer">размер сторис Instagram</a></li><li><a class="dropdown-item" href="/ru/tools/ios-app-icon-size" target="_blank" rel="noopener noreferrer">размер иконки iOS приложения</a></li><li><a class="dropdown-item" href="/ru/tools/iphone-app-store-screenshot" target="_blank" rel="noopener noreferrer">Размер скриншота iPhone 6.9</a></li><li><a class="dropdown-item" href="/ru/tools/linkedin-banner-size" target="_blank" rel="noopener noreferrer">размер баннера LinkedIn</a></li><li><a class="dropdown-item" href="/ru/tools/open-graph-image-size" target="_blank" rel="noopener noreferrer">Размер изображения Open Graph</a></li><li><a class="dropdown-item" href="/ru/tools/svg-optimizer" target="_blank" rel="noopener noreferrer">Оптимизатор SVG</a></li><li><a class="dropdown-item" href="/ru/tools/youtube-thumbnail-size" target="_blank" rel="noopener noreferrer">размер превью YouTube</a></li></ul>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ru/topics/image-media">Смотреть всё в этой теме</a></li><li><a class="dropdown-item" href="/ru/tools/add-watermark" target="_blank" rel="noopener noreferrer">Текстовый водяной знак — в браузере</a></li><li><a class="dropdown-item" href="/ru/tools/amazon-main-image-size" target="_blank" rel="noopener noreferrer">Размер главного изображения Amazon</a></li><li><a class="dropdown-item" href="/ru/tools/apple-touch-icon" target="_blank" rel="noopener noreferrer">apple-touch-icon 180×180</a></li><li><a class="dropdown-item" href="/ru/tools/batch-watermark-product-photos" target="_blank" rel="noopener noreferrer">Водяной знак на фото товаров пакетом</a></li><li><a class="dropdown-item" href="/ru/tools/bulk-compress-png-images" target="_blank" rel="noopener noreferrer">Сжать PNG-изображения пакетом</a></li><li><a class="dropdown-item" href="/ru/tools/bulk-compress-product-photos" target="_blank" rel="noopener noreferrer">Сжать фото товаров пакетом (JPEG, PNG, WebP)</a></li><li><a class="dropdown-item" href="/ru/tools/bulk-convert-images-to-jpg" target="_blank" rel="noopener noreferrer">Конвертировать изображения в JPG пакетом</a></li><li><a class="dropdown-item" href="/ru/tools/bulk-convert-images-to-png" target="_blank" rel="noopener noreferrer">Конвертировать изображения в PNG пакетом</a></li><li><a class="dropdown-item" href="/ru/tools/bulk-convert-images-to-webp" target="_blank" rel="noopener noreferrer">Конвертировать изображения в WebP пакетом</a></li><li><a class="dropdown-item" href="/ru/tools/color-from-image" target="_blank" rel="noopener noreferrer">Извлечь цвета из фото — палитра и выбор кликом</a></li><li><a class="dropdown-item" href="/ru/tools/flip-image" target="_blank" rel="noopener noreferrer">Отразить изображение — горизонт./верт.</a></li><li><a class="dropdown-item" href="/ru/tools/image-border" target="_blank" rel="noopener noreferrer">Рамка для фото — цвет и толщина</a></li><li><a class="dropdown-item" href="/ru/tools/image-compress" target="_blank" rel="noopener noreferrer">Сжатие изображений — длинная сторона, качество и целевой размер (локально)</a></li><li><a class="dropdown-item" href="/ru/tools/image-crop" target="_blank" rel="noopener noreferrer">Обрезка и изменение размера — локально</a></li><li><a class="dropdown-item" href="/ru/tools/image-exif" target="_blank" rel="noopener noreferrer">Просмотр и удаление EXIF с фото — GPS, камера, локально</a></li><li><a class="dropdown-item" href="/ru/tools/image-format-converter" target="_blank" rel="noopener noreferrer">Конвертер форматов изображений — PNG JPEG WebP AVIF BMP GIF ICO SVG</a></li><li><a class="dropdown-item" href="/ru/tools/image-grayscale" target="_blank" rel="noopener noreferrer">Оттенки серого — локально</a></li><li><a class="dropdown-item" href="/ru/tools/image-merge" target="_blank" rel="noopener noreferrer">Склеить фото онлайн — объединить изображения в коллаж</a></li><li><a class="dropdown-item" href="/ru/tools/image-optimizer" target="_blank" rel="noopener noreferrer">Оптимизация изображений — WebP, AVIF и MozJPEG локально</a></li><li><a class="dropdown-item" href="/ru/tools/image-overlay" target="_blank" rel="noopener noreferrer">Наложить лого — на фото в браузере</a></li><li><a class="dropdown-item" href="/ru/tools/image-to-base64" target="_blank" rel="noopener noreferrer">Изображение ↔ Base64</a></li><li><a class="dropdown-item" href="/ru/tools/images-to-gif" target="_blank" rel="noopener noreferrer">Изображения в GIF — короткая анимация</a></li><li><a class="dropdown-item" href="/ru/tools/images-to-pdf" target="_blank" rel="noopener noreferrer">Изображения в PDF — по странице на фото</a></li><li><a class="dropdown-item" href="/ru/tools/images-to-ppt" target="_blank" rel="noopener noreferrer">Изображения в PowerPoint — слайд на фото</a></li><li><a class="dropdown-item" href="/ru/tools/images-to-word" target="_blank" rel="noopener noreferrer">Изображения в Word — локальный DOCX</a></li><li><a class="dropdown-item" href="/ru/tools/instagram-post-size" target="_blank" rel="noopener noreferrer">размер поста Instagram</a></li><li><a class="dropdown-item" href="/ru/tools/instagram-story-size" target="_blank" rel="noopener noreferrer">размер сторис Instagram</a></li><li><a class="dropdown-item" href="/ru/tools/ios-app-icon-size" target="_blank" rel="noopener noreferrer">размер иконки iOS приложения</a></li><li><a class="dropdown-item" href="/ru/tools/iphone-app-store-screenshot" target="_blank" rel="noopener noreferrer">Размер скриншота iPhone 6.9</a></li><li><a class="dropdown-item" href="/ru/tools/linkedin-banner-size" target="_blank" rel="noopener noreferrer">размер баннера LinkedIn</a></li><li><a class="dropdown-item" href="/ru/tools/open-graph-image-size" target="_blank" rel="noopener noreferrer">Размер изображения Open Graph</a></li><li><a class="dropdown-item" href="/ru/tools/svg-optimizer" target="_blank" rel="noopener noreferrer">Оптимизатор SVG</a></li><li><a class="dropdown-item" href="/ru/tools/youtube-thumbnail-size" target="_blank" rel="noopener noreferrer">размер превью YouTube</a></li></ul>
         </li><li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Дизайн и бренд</a>
           <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ru/topics/design-brand">Смотреть всё в этой теме</a></li><li><a class="dropdown-item" href="/ru/tools/brand-color-token-pack" target="_blank" rel="noopener noreferrer">Сгенерировать шкалу цвета бренда — палитра 50–950 и CSS‑токены</a></li><li><a class="dropdown-item" href="/ru/tools/brand-style-guide" target="_blank" rel="noopener noreferrer">Гайд по стилю бренда — модульный черновик, который можно править</a></li><li><a class="dropdown-item" href="/ru/tools/smart-website-color-scheme" target="_blank" rel="noopener noreferrer">Цветовая схема сайта — семантические CSS-токены</a></li><li><a class="dropdown-item" href="/ru/tools/wcag-contrast-checker" target="_blank" rel="noopener noreferrer">Проверка контраста WCAG — коэффициент AA/AAA</a></li></ul>
@@ -178,11 +178,11 @@
               </ul>
             </div>
             
-    <div class="dropdown">
+    <div class="dropdown js-lang-switcher">
       <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
         Русский
       </button>
-      <ul class="dropdown-menu dropdown-menu-end"><li><a class="dropdown-item" href="/en/">English</a></li><li><a class="dropdown-item" href="/zh/">中文</a></li><li><a class="dropdown-item" href="/es/">Español</a></li><li><a class="dropdown-item" href="/ar/">العربية</a></li><li><a class="dropdown-item" href="/pt/">Português</a></li><li><a class="dropdown-item" href="/id/">Bahasa Indonesia</a></li><li><a class="dropdown-item" href="/fr/">Français</a></li><li><a class="dropdown-item" href="/ja/">日本語</a></li><li><span class="dropdown-item active" aria-current="true">Русский</span></li><li><a class="dropdown-item" href="/de/">Deutsch</a></li></ul>
+      <ul class="dropdown-menu dropdown-menu-end"><li><a class="dropdown-item" href="/en/" data-lang-pref="en">English</a></li><li><a class="dropdown-item" href="/zh/" data-lang-pref="zh">中文</a></li><li><a class="dropdown-item" href="/es/" data-lang-pref="es">Español</a></li><li><a class="dropdown-item" href="/ar/" data-lang-pref="ar">العربية</a></li><li><a class="dropdown-item" href="/pt/" data-lang-pref="pt">Português</a></li><li><a class="dropdown-item" href="/id/" data-lang-pref="id">Bahasa Indonesia</a></li><li><a class="dropdown-item" href="/fr/" data-lang-pref="fr">Français</a></li><li><a class="dropdown-item" href="/ja/" data-lang-pref="ja">日本語</a></li><li><span class="dropdown-item active" aria-current="true">Русский</span></li><li><a class="dropdown-item" href="/de/" data-lang-pref="de">Deutsch</a></li></ul>
     </div>
             <a class="btn btn-outline-secondary btn-sm nav-support-link" href="https://buymeacoffee.com/matthewxuax" target="_blank" rel="noopener noreferrer" title="Угостите кофе">
               <span class="nav-support-icon" aria-hidden="true">☕</span>
@@ -192,7 +192,81 @@
         </div>
       </div>
     </nav>
+    <div id="langHintBar" class="lang-hint-bar" hidden aria-hidden="true" role="status"
+    data-page-lang="ru"
+    data-enabled="[&quot;en&quot;,&quot;zh&quot;,&quot;es&quot;,&quot;ar&quot;,&quot;pt&quot;,&quot;id&quot;,&quot;fr&quot;,&quot;ja&quot;,&quot;ru&quot;,&quot;de&quot;]"
+    data-labels="{&quot;en&quot;:&quot;English&quot;,&quot;zh&quot;:&quot;中文&quot;,&quot;es&quot;:&quot;Español&quot;,&quot;ar&quot;:&quot;العربية&quot;,&quot;pt&quot;:&quot;Português&quot;,&quot;id&quot;:&quot;Bahasa Indonesia&quot;,&quot;fr&quot;:&quot;Français&quot;,&quot;ja&quot;:&quot;日本語&quot;,&quot;ru&quot;:&quot;Русский&quot;,&quot;de&quot;:&quot;Deutsch&quot;}"
+    data-msg="Похоже, ваш язык — {lang}. Перейти?">
+    <div class="lang-hint-bar__inner">
+      <p class="lang-hint-bar__text mb-0" data-lang-hint-text></p>
+      <div class="lang-hint-bar__actions">
+        <button type="button" class="btn btn-sm btn-primary" data-lang-hint-switch>Перейти</button>
+        <button type="button" class="btn btn-sm btn-outline-secondary" data-lang-hint-dismiss>Закрыть</button>
+      </div>
+    </div>
+  </div>
   </header>
+  <script>(function(){
+  var PREF='oft_lang', COUNT='oft_lang_hint_n', MAX=3, MAX_AGE=31536000;
+  function secure(){return location.protocol==='https:'?'; Secure':'';}
+  function getC(n){try{var m=document.cookie.match(new RegExp('(?:^|; )'+n+'=([^;]*)'));return m?decodeURIComponent(m[1]):'';}catch(e){return '';}}
+  function setC(n,v){try{document.cookie=n+'='+encodeURIComponent(v)+'; Path=/; Max-Age='+MAX_AGE+'; SameSite=Lax'+secure();}catch(e){}}
+  document.addEventListener('click',function(e){
+    var t=e.target;if(!t||!t.closest)return;
+    var a=t.closest('a[data-lang-pref]');
+    if(a){var lang=a.getAttribute('data-lang-pref');if(lang)setC(PREF,lang);}
+  },true);
+  function runHint(){
+    if(getC(PREF))return;
+    var shown=parseInt(getC(COUNT)||'0',10)||0;
+    if(shown>=MAX)return;
+    var bar=document.getElementById('langHintBar');
+    if(!bar)return;
+    var pageLang=bar.getAttribute('data-page-lang')||'';
+    var enabled=[];
+    try{enabled=JSON.parse(bar.getAttribute('data-enabled')||'[]');}catch(e){}
+    var labels={};
+    try{labels=JSON.parse(bar.getAttribute('data-labels')||'{}');}catch(e){}
+    var msgT=bar.getAttribute('data-msg')||'';
+    var nav=navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language];
+    var detected=null;
+    for(var i=0;i<nav.length;i++){
+      var p=String(nav[i]||'').toLowerCase().split('-')[0];
+      if(p&&enabled.indexOf(p)>=0&&p!==pageLang){detected=p;break;}
+    }
+    if(!detected)return;
+    var href='';
+    var link=document.querySelector('link[rel="alternate"][hreflang="'+detected+'"]');
+    if(link)href=link.getAttribute('href')||'';
+    if(href){
+      try{var u=new URL(href,location.href);href=u.pathname+u.search+u.hash;}catch(e){}
+    }
+    if(!href){
+      var path=location.pathname.replace(/^\/(en|zh|es|ar|pt|id|fr|ja|ru|de)(?=\/|$)/,'')||'/';
+      href=detected==='en'?path:('/'+detected+(path==='/'?'/':path));
+    }
+    setC(COUNT,String(shown+1));
+    var label=labels[detected]||detected;
+    var textEl=bar.querySelector('[data-lang-hint-text]');
+    if(textEl)textEl.textContent=msgT.split('{lang}').join(label);
+    bar.hidden=false;
+    bar.setAttribute('aria-hidden','false');
+    document.documentElement.style.setProperty('--lang-hint-h',bar.offsetHeight+'px');
+    var timer=setTimeout(hide,5000);
+    function hide(){
+      clearTimeout(timer);
+      bar.hidden=true;
+      bar.setAttribute('aria-hidden','true');
+      document.documentElement.style.setProperty('--lang-hint-h','0px');
+    }
+    var dismiss=bar.querySelector('[data-lang-hint-dismiss]');
+    var go=bar.querySelector('[data-lang-hint-switch]');
+    if(dismiss)dismiss.addEventListener('click',hide);
+    if(go)go.addEventListener('click',function(){setC(PREF,detected);location.href=href;});
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',runHint);
+  else runHint();
+})();</script>
   <div class="layout layout-no-sidebar" id="layoutRoot">
     
     <main id="content" class="p-4">
@@ -373,7 +447,7 @@
           <img class="tool-card-logo" src="/icons/tools/bulk-compress-product-photos.svg" width="32" height="32" alt="" decoding="async" loading="eager" fetchpriority="high" />
           <div class="tool-card-head-text">
             <h3 class="card-title home-card-title mb-0">
-              <a class="home-card-title-link" href="/ru/tools/bulk-compress-product-photos" target="_blank" rel="noopener noreferrer">Сжать фото товаров пакетом</a>
+              <a class="home-card-title-link" href="/ru/tools/bulk-compress-product-photos" target="_blank" rel="noopener noreferrer">Сжать фото товаров пакетом (JPEG, PNG, WebP)</a>
             </h3>
             <a class="tool-no-upload-tag" href="/ru/privacy#local" aria-label="На устройстве — без загрузки на сервер. Подробнее о конфиденциальности" target="_blank" rel="noopener noreferrer">Без загрузки</a>
           </div>
@@ -492,7 +566,7 @@
           <img class="tool-card-logo" src="/icons/tools/bulk-compress-product-photos.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <div class="tool-card-head-text">
             <h3 class="card-title home-card-title mb-0">
-              <a class="home-card-title-link" href="/ru/tools/bulk-compress-product-photos" target="_blank" rel="noopener noreferrer">Сжать фото товаров пакетом</a>
+              <a class="home-card-title-link" href="/ru/tools/bulk-compress-product-photos" target="_blank" rel="noopener noreferrer">Сжать фото товаров пакетом (JPEG, PNG, WebP)</a>
             </h3>
             <a class="tool-no-upload-tag" href="/ru/privacy#local" aria-label="На устройстве — без загрузки на сервер. Подробнее о конфиденциальности" target="_blank" rel="noopener noreferrer">Без загрузки</a>
           </div>

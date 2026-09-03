@@ -61,7 +61,7 @@
 | 场景与行业 | 电商商品**照片**批量有损压小 |
 | 技术（包、Tier、本地处理） | Canvas toBlob；fflate ZIP；Tier 0；`localProcessing: true` |
 | Catalog `page.style` | **opts** |
-| Title (en) | **Bulk compress product photos**（选用长尾原句；勿写成「最长边、质量与目标体积」目录腔） |
+| Title (en) | **Bulk compress product photos (JPEG, PNG, WebP)**（H1 点明输出格式；默认仍 JPEG） |
 | Description 要点（步骤/公式 + 示例；≥120 字落地时再写满） | Add a folder of product photos, share one longest-edge and a 200 KB cap, encode JPEG or WebP in this tab, skip files that fail, download a ZIP. Example: two listing shots toward 200 KB. Files stay on the device; they are not uploaded to a server. |
 | Schema | WebApplication + BreadcrumbList（与可见文案一致） |
 | FAQ 要点（≥3） | 图会不会上传？每张都能到 200KB 吗？jpg 和 jpeg 要不要两个工具？PNG 透明 logo 该用哪页？动画 GIF？ |
@@ -79,7 +79,7 @@
 |---|---|
 | 日期 | 2026-09-03 |
 | slug 结论 | 保留 `bulk-compress-product-photos`（场景句 + 选型词 bulk；不用 `bulk-image-compress` 品类头词，不拆 `bulk-compress-jpg`） |
-| 主检索词 → title/H1 | 英文 H1 原句 **Bulk compress product photos**；zh 等他语用当地「批量压缩商品图/照片」检索句，不把 bulk 硬塞进中文 H1 |
+| 主检索词 → title/H1 | 英文 H1 **Bulk compress product photos (JPEG, PNG, WebP)**；zh **批量压缩商品图（支持 JPEG / PNG / WebP）**；格式写在括号里，不把最长边/画质堆进 H1 |
 | 次要关键词 → desc / FAQ / Use cases | compress images in bulk → desc / How；compress jpg → 默认输出 JPEG + FAQ；jpeg → FAQ 不拆 URL；reduce photo size → Use case；compress to 200kb → 默认目标与芯片 |
 | 用户搜索习惯判断 | 英语用户说 in bulk / compress jpg，不先想编码器；中文搜「批量压缩图片/商品图」。H1 跟场景结果，不跟参数目录 |
 | 优化摘要 | 相对「bulk image compressor」品类头词初稿：H1 改为商品照片场景句；200KB/jpg/jpeg 降为默认控件与 FAQ；PNG 保透明与改后缀从本页划出 |

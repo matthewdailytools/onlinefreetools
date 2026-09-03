@@ -1,5 +1,6 @@
 /**
- * 批量压缩商品照片工具页：多张商品图共享最长边 / 质量 / 目标 KB，串行有损编码后打 ZIP。
+ * 批量压缩商品照片工具页：多张商品图共享尺寸规则 / 输出格式 / 质量 / 目标 KB，串行编码后打 ZIP。
+ * 尺寸规则：最长边 / 最大宽 / 最大高；输出：JPEG（默认）/ WebP / PNG。
  * slug: bulk-compress-product-photos；规格见 work-tasks/bulk-compress-product-photos/02-tool-info.md。
  */
 import type { SiteLang } from '../site/i18n';
@@ -105,16 +106,16 @@ export const renderBulkCompressProductPhotosPage = (opts: {
 	/** 页脚 HTML。 */
 	const footerHtml = renderFooter({ lang: opts.lang });
 
-	/** 本页局部样式：结果表与 JPEG 垫底行。 */
+	/** 本页局部样式：结果表、JPEG 垫底、目标体积与尺寸数值行。 */
 	const extraHeadHtml = `
   <style>
-    #bcpJpegBgRow[hidden], #bcpTargetRow[hidden] { display: none !important; }
+    #bcpJpegBgRow[hidden], #bcpTargetRow[hidden], #bcpSizeValueRow[hidden] { display: none !important; }
     .bcp-table { font-size: .875rem; }
     .bcp-table td, .bcp-table th { vertical-align: middle; }
     #bcpQuality[disabled] { opacity: .5; }
   </style>`;
 
-	/** 首屏交互区：多选、共享参数、芯片、汇总表、ZIP。 */
+	/** 首屏交互区：多选、格式、尺寸规则/预设、芯片、汇总表、ZIP。 */
 	const contentHtml = `
     <div id="compressor" class="tool-hero">
       <h1 class="tool-title">${escapeHtml(tx(opts.lang, 'title'))}</h1>
@@ -123,7 +124,7 @@ export const renderBulkCompressProductPhotosPage = (opts: {
 
     <div class="tool-panel">
       <label class="tool-dropzone mb-3" id="bcpDrop" for="bcpFile">
-        <input type="file" id="bcpFile" accept="image/png,image/jpeg,image/webp,image/gif,image/bmp,image/*" multiple>
+        <input type="file" id="bcpFile" accept="image/png,image/jpeg,image/jpg,image/webp,image/gif,image/bmp,image/avif,image/*" multiple>
         <span class="tool-dropzone-title">${escapeHtml(tx(opts.lang, 'choose_files'))}</span>
         <span class="tool-dropzone-hint">${escapeHtml(tx(opts.lang, 'drop_hint'))}</span>
         <span id="bcpFileCount" class="tool-dropzone-file"></span>
@@ -131,8 +132,11 @@ export const renderBulkCompressProductPhotosPage = (opts: {
 
       <div class="d-flex align-items-center tools-bar mb-2 flex-wrap gap-2">
         <button type="button" id="bcpChip200" class="btn btn-outline-secondary btn-sm">${escapeHtml(tx(opts.lang, 'chip_200kb'))}</button>
+        <button type="button" id="bcpChip100" class="btn btn-outline-secondary btn-sm">${escapeHtml(tx(opts.lang, 'chip_100kb'))}</button>
         <button type="button" id="bcpChipJpg" class="btn btn-outline-secondary btn-sm">${escapeHtml(tx(opts.lang, 'chip_jpg'))}</button>
         <button type="button" id="bcpChipJpeg" class="btn btn-outline-secondary btn-sm">${escapeHtml(tx(opts.lang, 'chip_jpeg'))}</button>
+        <button type="button" id="bcpChipWebp" class="btn btn-outline-secondary btn-sm">${escapeHtml(tx(opts.lang, 'chip_webp'))}</button>
+        <button type="button" id="bcpChipPng" class="btn btn-outline-secondary btn-sm">${escapeHtml(tx(opts.lang, 'chip_png'))}</button>
         <button type="button" id="bcpBtnCompress" class="btn btn-primary btn-sm">${escapeHtml(tx(opts.lang, 'compress'))}</button>
         <button type="button" id="bcpBtnZip" class="btn btn-outline-primary btn-sm" disabled>${escapeHtml(tx(opts.lang, 'download_zip'))}</button>
         <button type="button" id="bcpBtnSample" class="btn btn-outline-secondary btn-sm">${escapeHtml(tx(opts.lang, 'sample'))}</button>
@@ -140,20 +144,62 @@ export const renderBulkCompressProductPhotosPage = (opts: {
       </div>
 
       <div class="d-flex align-items-center opt-group mb-2 flex-wrap gap-2">
+        <label class="form-label mb-0" for="bcpPreset">${escapeHtml(tx(opts.lang, 'preset_label'))}</label>
+        <select id="bcpPreset" class="form-select form-select-sm" style="width:auto;max-width:18rem;">
+          <option value="">${escapeHtml(tx(opts.lang, 'preset_custom'))}</option>
+          <optgroup label="${escapeHtml(tx(opts.lang, 'preset_group_combo'))}">
+            <option value="combo:max_edge:1920:0:80">${escapeHtml(tx(opts.lang, 'preset_listing_hd'))}</option>
+            <option value="combo:max_edge:1280:200:80">${escapeHtml(tx(opts.lang, 'preset_listing'))}</option>
+            <option value="combo:max_edge:1280:100:75">${escapeHtml(tx(opts.lang, 'preset_email'))}</option>
+            <option value="combo:max_edge:1080:150:80">${escapeHtml(tx(opts.lang, 'preset_social'))}</option>
+            <option value="combo:max_width:800:50:75">${escapeHtml(tx(opts.lang, 'preset_thumb'))}</option>
+            <option value="combo:max_height:512:30:70">${escapeHtml(tx(opts.lang, 'preset_tiny'))}</option>
+          </optgroup>
+          <optgroup label="${escapeHtml(tx(opts.lang, 'preset_group_edge'))}">
+            <option value="size:max_edge:1920">1920 px</option>
+            <option value="size:max_edge:1280">1280 px</option>
+            <option value="size:max_edge:1200">1200 px</option>
+            <option value="size:max_edge:1080">1080 px</option>
+            <option value="size:max_width:800">800 px ${escapeHtml(tx(opts.lang, 'size_rule_max_width'))}</option>
+            <option value="size:max_height:640">640 px ${escapeHtml(tx(opts.lang, 'size_rule_max_height'))}</option>
+          </optgroup>
+          <optgroup label="${escapeHtml(tx(opts.lang, 'preset_group_kb'))}">
+            <option value="kb:500">500 KB</option>
+            <option value="kb:200">200 KB</option>
+            <option value="kb:100">100 KB</option>
+            <option value="kb:50">50 KB</option>
+            <option value="kb:30">30 KB</option>
+          </optgroup>
+        </select>
+        <span class="small text-muted">${escapeHtml(tx(opts.lang, 'preset_hint'))}</span>
+      </div>
+
+      <div class="d-flex align-items-center opt-group mb-2 flex-wrap gap-2">
         <label class="form-label mb-0" for="bcpOutput">${escapeHtml(tx(opts.lang, 'output_label'))}</label>
         <select id="bcpOutput" class="form-select form-select-sm" style="width:auto;">
           <option value="image/jpeg" selected>${escapeHtml(tx(opts.lang, 'format_jpeg'))}</option>
           <option value="image/webp">${escapeHtml(tx(opts.lang, 'format_webp'))}</option>
+          <option value="image/png">${escapeHtml(tx(opts.lang, 'format_png'))}</option>
         </select>
         <div class="form-check mb-0">
           <input class="form-check-input" type="checkbox" id="bcpResizeOn" checked>
           <label class="form-check-label" for="bcpResizeOn">${escapeHtml(tx(opts.lang, 'resize_on'))}</label>
         </div>
-        <label class="form-label mb-0" for="bcpMaxEdge">${escapeHtml(tx(opts.lang, 'max_edge_label'))}</label>
-        <input type="number" id="bcpMaxEdge" class="form-control form-control-sm" style="width:5.5rem;" min="64" max="8192" value="1920">
+        <label class="form-label mb-0" for="bcpSizeRule">${escapeHtml(tx(opts.lang, 'size_rule_label'))}</label>
+        <select id="bcpSizeRule" class="form-select form-select-sm" style="width:auto;">
+          <option value="max_edge" selected>${escapeHtml(tx(opts.lang, 'size_rule_max_edge'))}</option>
+          <option value="max_width">${escapeHtml(tx(opts.lang, 'size_rule_max_width'))}</option>
+          <option value="max_height">${escapeHtml(tx(opts.lang, 'size_rule_max_height'))}</option>
+        </select>
+        <span id="bcpSizeValueRow" class="d-flex align-items-center gap-2 flex-wrap">
+          <label class="form-label mb-0" for="bcpSizePx" id="bcpSizePxLabel">${escapeHtml(tx(opts.lang, 'max_edge_label'))}</label>
+          <input type="number" id="bcpSizePx" class="form-control form-control-sm" style="width:5.5rem;" min="64" max="8192" value="1920">
+          <span class="small text-muted">px</span>
+        </span>
         <label class="form-label mb-0" for="bcpQuality">${escapeHtml(tx(opts.lang, 'quality_label'))}</label>
         <input type="range" id="bcpQuality" min="50" max="100" value="80">
         <span id="bcpQualityVal" class="small text-muted">0.80</span>
+        <span id="bcpQualityHint" class="small text-muted"></span>
       </div>
 
       <div class="d-flex align-items-center opt-group mb-2 flex-wrap gap-2" id="bcpTargetRow">
@@ -233,7 +279,7 @@ export const renderBulkCompressProductPhotosPage = (opts: {
 	});
 
 	/**
-	 * 客户端脚本：串行解码编码、目标 KB 二分、失败跳过、ZIP。
+	 * 客户端脚本：串行解码编码、尺寸规则、目标 KB 二分、失败跳过、ZIP。
 	 * 进页自动 loadSample()。
 	 */
 	const extraBodyHtml = `
@@ -255,16 +301,26 @@ export const renderBulkCompressProductPhotosPage = (opts: {
       var fileInput = document.getElementById('bcpFile');
       /** 队列计数文案。 */
       var fileCountEl = document.getElementById('bcpFileCount');
+      /** 场景 / 尺寸 / 体积预设。 */
+      var presetEl = document.getElementById('bcpPreset');
       /** 输出 MIME 选择。 */
       var outputSel = document.getElementById('bcpOutput');
-      /** 是否限制最长边。 */
+      /** 是否启用尺寸限制。 */
       var resizeOn = document.getElementById('bcpResizeOn');
-      /** 最长边像素输入。 */
-      var maxEdgeEl = document.getElementById('bcpMaxEdge');
+      /** 尺寸规则：最长边 / 最大宽 / 最大高。 */
+      var sizeRuleEl = document.getElementById('bcpSizeRule');
+      /** 尺寸数值行（含标签与输入）。 */
+      var sizeValueRow = document.getElementById('bcpSizeValueRow');
+      /** 尺寸像素输入标签。 */
+      var sizePxLabel = document.getElementById('bcpSizePxLabel');
+      /** 尺寸像素数值。 */
+      var sizePxEl = document.getElementById('bcpSizePx');
       /** 质量滑杆（50–100）。 */
       var qualityEl = document.getElementById('bcpQuality');
       /** 质量数值展示。 */
       var qualityVal = document.getElementById('bcpQualityVal');
+      /** PNG 时画质提示。 */
+      var qualityHint = document.getElementById('bcpQualityHint');
       /** 是否启用目标 KB。 */
       var targetOn = document.getElementById('bcpTargetOn');
       /** 目标 KB 行。 */
@@ -285,10 +341,16 @@ export const renderBulkCompressProductPhotosPage = (opts: {
       var btnClear = document.getElementById('bcpBtnClear');
       /** 200 KB 芯片。 */
       var chip200 = document.getElementById('bcpChip200');
+      /** 100 KB 芯片。 */
+      var chip100 = document.getElementById('bcpChip100');
       /** .jpg 芯片。 */
       var chipJpg = document.getElementById('bcpChipJpg');
       /** JPEG 芯片（与 .jpg 同一输出）。 */
       var chipJpeg = document.getElementById('bcpChipJpeg');
+      /** WebP 芯片。 */
+      var chipWebp = document.getElementById('bcpChipWebp');
+      /** PNG 芯片。 */
+      var chipPng = document.getElementById('bcpChipPng');
       /** 警告条。 */
       var warnEl = document.getElementById('bcpWarn');
       /** 错误条。 */
@@ -311,13 +373,18 @@ export const renderBulkCompressProductPhotosPage = (opts: {
         large: ${JSON.stringify(tx(opts.lang, 'warn_large'))},
         edge: ${JSON.stringify(tx(opts.lang, 'warn_edge'))},
         anim: ${JSON.stringify(tx(opts.lang, 'warn_anim'))},
+        pngHard: ${JSON.stringify(tx(opts.lang, 'warn_png'))},
+        qualityPng: ${JSON.stringify(tx(opts.lang, 'quality_hint_png'))},
         compressing: ${JSON.stringify(tx(opts.lang, 'status_compressing'))},
         done: ${JSON.stringify(tx(opts.lang, 'status_done'))},
         hit: ${JSON.stringify(tx(opts.lang, 'status_hit'))},
         miss: ${JSON.stringify(tx(opts.lang, 'status_miss'))},
         skip: ${JSON.stringify(tx(opts.lang, 'status_skip'))},
         countTpl: ${JSON.stringify(tx(opts.lang, 'file_count_tpl'))},
-        summaryTpl: ${JSON.stringify(tx(opts.lang, 'summary_tpl'))}
+        summaryTpl: ${JSON.stringify(tx(opts.lang, 'summary_tpl'))},
+        labelMaxEdge: ${JSON.stringify(tx(opts.lang, 'max_edge_label'))},
+        labelMaxWidth: ${JSON.stringify(tx(opts.lang, 'size_px_width'))},
+        labelMaxHeight: ${JSON.stringify(tx(opts.lang, 'size_px_height'))}
       };
 
       /**
@@ -391,6 +458,7 @@ export const renderBulkCompressProductPhotosPage = (opts: {
         mime = normalizeMime(mime);
         if (mime === 'image/jpeg') return 'jpg';
         if (mime === 'image/webp') return 'webp';
+        if (mime === 'image/png') return 'png';
         return 'bin';
       }
 
@@ -414,19 +482,46 @@ export const renderBulkCompressProductPhotosPage = (opts: {
       }
 
       /**
-       * 按输出格式同步垫底行与质量展示。
+       * 按尺寸规则同步数值标签文案。
+       */
+      function syncSizeLabel() {
+        var rule = sizeRuleEl.value;
+        if (rule === 'max_width') sizePxLabel.textContent = msg.labelMaxWidth;
+        else if (rule === 'max_height') sizePxLabel.textContent = msg.labelMaxHeight;
+        else sizePxLabel.textContent = msg.labelMaxEdge;
+      }
+
+      /**
+       * 手动改控件时清空预设下拉（避免显示过期预设名）。
+       */
+      function clearPresetSelect() {
+        if (presetEl) presetEl.value = '';
+      }
+
+      /**
+       * 按输出格式同步垫底行、目标体积、画质与尺寸控件。
        */
       function syncOptionsUi() {
         var mime = outputSel.value;
         var isJpeg = mime === 'image/jpeg';
-        maxEdgeEl.disabled = !resizeOn.checked;
-        targetRow.hidden = !targetOn.checked;
+        var isPng = mime === 'image/png';
+        sizeRuleEl.disabled = !resizeOn.checked;
+        sizePxEl.disabled = !resizeOn.checked;
+        sizeValueRow.hidden = !resizeOn.checked;
+        syncSizeLabel();
+        targetRow.hidden = !targetOn.checked || isPng;
+        qualityEl.disabled = isPng;
         qualityVal.textContent = quality01().toFixed(2);
+        qualityHint.textContent = isPng ? msg.qualityPng : '';
         jpegBgRow.hidden = !isJpeg;
         var webpOpt = outputSel.querySelector('option[value="image/webp"]');
         if (webpOpt && encodeSupport['image/webp'] === false) {
           webpOpt.disabled = true;
           webpOpt.title = msg.webpOff;
+        }
+        var pngOpt = outputSel.querySelector('option[value="image/png"]');
+        if (pngOpt && encodeSupport['image/png'] === false) {
+          pngOpt.disabled = true;
         }
       }
 
@@ -445,19 +540,20 @@ export const renderBulkCompressProductPhotosPage = (opts: {
             if (!c.toBlob) { resolve(false); return; }
             c.toBlob(function (blob) {
               resolve(!!blob && normalizeMime(blob.type) === normalizeMime(mime));
-            }, mime, 0.8);
+            }, mime, mime === 'image/png' ? undefined : 0.8);
           } catch (e) { resolve(false); }
         });
       }
 
       /**
-       * 探测 JPEG / WebP 编码支持并必要时回退。
+       * 探测 JPEG / WebP / PNG 编码支持并必要时回退。
        * @returns {Promise<void>}
        */
       function probeAll() {
         return Promise.all([
           probeEncode('image/webp').then(function (ok) { encodeSupport['image/webp'] = ok; }),
-          probeEncode('image/jpeg').then(function (ok) { encodeSupport['image/jpeg'] = ok; })
+          probeEncode('image/jpeg').then(function (ok) { encodeSupport['image/jpeg'] = ok; }),
+          probeEncode('image/png').then(function (ok) { encodeSupport['image/png'] = ok; })
         ]).then(function () {
           syncOptionsUi();
           if (encodeSupport['image/webp'] === false && outputSel.value === 'image/webp') {
@@ -469,7 +565,7 @@ export const renderBulkCompressProductPhotosPage = (opts: {
       }
 
       /**
-       * 解码图片为位图。
+       * 解码图片为位图（浏览器能解码的格式均可作为输入）。
        * @param {Blob} blob 源文件
        * @returns {Promise<{bitmap: ImageBitmap|HTMLImageElement, w: number, h: number}>}
        */
@@ -498,7 +594,7 @@ export const renderBulkCompressProductPhotosPage = (opts: {
        * Canvas 导出 Blob，并核对返回 MIME。
        * @param {HTMLCanvasElement} canvas 画布
        * @param {string} mime 目标 MIME
-       * @param {number} q 质量
+       * @param {number|undefined} q 质量（PNG 传 undefined）
        * @returns {Promise<Blob>}
        */
       function canvasToBlob(canvas, mime, q) {
@@ -516,17 +612,27 @@ export const renderBulkCompressProductPhotosPage = (opts: {
       }
 
       /**
-       * 按最长边限制计算输出宽高（不放大）。
+       * 按当前尺寸规则计算输出宽高（不放大）。
        * @param {number} srcW 源宽
        * @param {number} srcH 源高
        * @returns {{w: number, h: number}}
        */
       function scaledSize(srcW, srcH) {
         if (!resizeOn.checked) return { w: srcW, h: srcH };
-        var maxE = Math.max(64, Math.min(SOFT_EDGE, Number(maxEdgeEl.value) || 1920));
-        var long = Math.max(srcW, srcH);
-        if (long <= maxE) return { w: srcW, h: srcH };
-        var scale = maxE / long;
+        var limit = Math.max(64, Math.min(SOFT_EDGE, Number(sizePxEl.value) || 1920));
+        var rule = sizeRuleEl.value;
+        var scale = 1;
+        if (rule === 'max_width') {
+          if (srcW <= limit) return { w: srcW, h: srcH };
+          scale = limit / srcW;
+        } else if (rule === 'max_height') {
+          if (srcH <= limit) return { w: srcW, h: srcH };
+          scale = limit / srcH;
+        } else {
+          var long = Math.max(srcW, srcH);
+          if (long <= limit) return { w: srcW, h: srcH };
+          scale = limit / long;
+        }
         return { w: Math.max(1, Math.round(srcW * scale)), h: Math.max(1, Math.round(srcH * scale)) };
       }
 
@@ -552,7 +658,8 @@ export const renderBulkCompressProductPhotosPage = (opts: {
           ctx.fillRect(0, 0, size.w, size.h);
         }
         ctx.drawImage(bitmap, 0, 0, size.w, size.h);
-        return canvasToBlob(canvas, mime, q).then(function (blob) {
+        var qArg = mime === 'image/png' ? undefined : q;
+        return canvasToBlob(canvas, mime, qArg).then(function (blob) {
           return { blob: blob, w: size.w, h: size.h };
         });
       }
@@ -660,6 +767,54 @@ export const renderBulkCompressProductPhotosPage = (opts: {
       }
 
       /**
+       * 若输出为 PNG 且目标体积开启，切回有损格式以便逼近 KB。
+       */
+      function preferLossyForTarget() {
+        if (outputSel.value === 'image/png') {
+          outputSel.value = encodeSupport['image/webp'] === false ? 'image/jpeg' : 'image/webp';
+        }
+      }
+
+      /**
+       * 应用预设：写入尺寸规则、像素、目标 KB、画质。
+       * @param {string} val 预设 value
+       */
+      function applyPreset(val) {
+        if (!val) return;
+        if (val.indexOf('size:') === 0) {
+          var sizeParts = val.split(':');
+          var rule = sizeParts[1] || 'max_edge';
+          var px = Math.max(64, Math.min(SOFT_EDGE, Number(sizeParts[2]) || 1920));
+          resizeOn.checked = true;
+          sizeRuleEl.value = rule;
+          sizePxEl.value = String(px);
+        } else if (val.indexOf('kb:') === 0) {
+          var kb = Math.max(10, Math.min(5000, Number(val.slice(3)) || 200));
+          targetOn.checked = true;
+          targetKbEl.value = String(kb);
+          preferLossyForTarget();
+        } else if (val.indexOf('combo:') === 0) {
+          var parts = val.split(':');
+          var comboRule = parts[1] || 'max_edge';
+          var e = Math.max(64, Math.min(SOFT_EDGE, Number(parts[2]) || 1920));
+          var tKb = Number(parts[3]) || 0;
+          var qPct = Math.max(50, Math.min(100, Number(parts[4]) || 80));
+          resizeOn.checked = true;
+          sizeRuleEl.value = comboRule;
+          sizePxEl.value = String(e);
+          qualityEl.value = String(qPct);
+          if (tKb > 0) {
+            targetOn.checked = true;
+            targetKbEl.value = String(tKb);
+            preferLossyForTarget();
+          } else {
+            targetOn.checked = false;
+          }
+        }
+        syncOptionsUi();
+      }
+
+      /**
        * 压缩队列中的一张（失败则 skip）。
        * @param {File} file 源文件
        * @param {string} mime 输出 MIME
@@ -669,7 +824,7 @@ export const renderBulkCompressProductPhotosPage = (opts: {
       function compressOne(file, mime, usedNames) {
         var q = quality01();
         var bg = jpegBg();
-        var wantTarget = targetOn.checked;
+        var wantTarget = targetOn.checked && mime !== 'image/png';
         var targetBytes = Math.max(10, Number(targetKbEl.value) || 200) * 1024;
         return decodeImage(file)
           .then(function (dec) {
@@ -691,8 +846,12 @@ export const renderBulkCompressProductPhotosPage = (opts: {
             return pack.result.blob.arrayBuffer().then(function (buf) {
               var ext = extFor(mime);
               var zipName = uniqueZipName(usedNames, file.name, ext);
+              var kind = pack.hit ? 'hit' : 'miss';
+              if (mime === 'image/png' && pack.result.blob.size >= file.size) {
+                setWarn((warnEl.textContent ? warnEl.textContent + ' ' : '') + msg.pngHard);
+              }
               return {
-                kind: pack.hit ? 'hit' : 'miss',
+                kind: kind,
                 zipName: zipName,
                 bytes: new Uint8Array(buf),
                 before: file.size,
@@ -870,21 +1029,53 @@ export const renderBulkCompressProductPhotosPage = (opts: {
       fileInput.addEventListener('change', function () {
         if (fileInput.files && fileInput.files.length) addFiles(fileInput.files);
       });
-      outputSel.addEventListener('change', syncOptionsUi);
-      qualityEl.addEventListener('input', syncOptionsUi);
-      resizeOn.addEventListener('change', syncOptionsUi);
-      targetOn.addEventListener('change', syncOptionsUi);
+      if (presetEl) {
+        presetEl.addEventListener('change', function () { applyPreset(presetEl.value); });
+      }
+      outputSel.addEventListener('change', function () { clearPresetSelect(); syncOptionsUi(); });
+      qualityEl.addEventListener('input', function () { clearPresetSelect(); syncOptionsUi(); });
+      resizeOn.addEventListener('change', function () { clearPresetSelect(); syncOptionsUi(); });
+      sizeRuleEl.addEventListener('change', function () { clearPresetSelect(); syncOptionsUi(); });
+      sizePxEl.addEventListener('input', clearPresetSelect);
+      targetOn.addEventListener('change', function () { clearPresetSelect(); syncOptionsUi(); });
+      targetKbEl.addEventListener('input', clearPresetSelect);
       chip200.addEventListener('click', function () {
         targetOn.checked = true;
         targetKbEl.value = '200';
+        preferLossyForTarget();
+        clearPresetSelect();
+        syncOptionsUi();
+      });
+      chip100.addEventListener('click', function () {
+        targetOn.checked = true;
+        targetKbEl.value = '100';
+        preferLossyForTarget();
+        clearPresetSelect();
         syncOptionsUi();
       });
       chipJpg.addEventListener('click', function () {
         outputSel.value = 'image/jpeg';
+        clearPresetSelect();
         syncOptionsUi();
       });
       chipJpeg.addEventListener('click', function () {
         outputSel.value = 'image/jpeg';
+        clearPresetSelect();
+        syncOptionsUi();
+      });
+      chipWebp.addEventListener('click', function () {
+        if (encodeSupport['image/webp'] === false) {
+          setWarn(msg.webpOff);
+          outputSel.value = 'image/jpeg';
+        } else {
+          outputSel.value = 'image/webp';
+        }
+        clearPresetSelect();
+        syncOptionsUi();
+      });
+      chipPng.addEventListener('click', function () {
+        outputSel.value = 'image/png';
+        clearPresetSelect();
         syncOptionsUi();
       });
       btnCompress.addEventListener('click', function () { compressAll(); });

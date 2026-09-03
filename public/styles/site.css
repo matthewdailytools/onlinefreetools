@@ -80,6 +80,8 @@
   --shadow: none;
   --shadow-sm: none;
   --header-h: 60px;
+  /** 顶栏下方语言提示条高度；脚本显示时写入实测 px，隐藏时为 0 */
+  --lang-hint-h: 0px;
   /* 首页多行主题下拉占位；工具页单行不使用 */
   --header-h-multirow: 7.25rem;
   --sidebar-w: 248px;
@@ -185,7 +187,7 @@ a:hover {
 /* —— Layout chrome —— */
 body {
   min-height: 100vh;
-  padding-top: var(--header-h);
+  padding-top: calc(var(--header-h) + var(--lang-hint-h));
   box-sizing: border-box;
 }
 
@@ -196,15 +198,15 @@ body.is-tool-page {
 
 .layout {
   display: flex;
-  min-height: calc(100vh - var(--header-h));
+  min-height: calc(100vh - var(--header-h) - var(--lang-hint-h));
 }
 
 #sidebar {
   width: var(--sidebar-w);
   transition: margin-left 0.2s ease;
   position: sticky;
-  top: var(--header-h);
-  height: calc(100vh - var(--header-h));
+  top: calc(var(--header-h) + var(--lang-hint-h));
+  height: calc(100vh - var(--header-h) - var(--lang-hint-h));
   overflow-x: hidden;
   overflow-y: auto;
   background: var(--surface);
@@ -406,7 +408,7 @@ body.is-tool-page .tool-lead {
   #sidebar {
     position: fixed;
     z-index: 1020;
-    top: var(--header-h);
+    top: calc(var(--header-h) + var(--lang-hint-h));
     bottom: 0;
     height: auto;
   }
@@ -907,6 +909,49 @@ body.is-tool-page .tool-lead {
   -webkit-backdrop-filter: none;
   border-bottom: 1px solid color-mix(in srgb, var(--brand) 18%, var(--border)) !important;
   box-shadow: 0 1px 0 color-mix(in srgb, var(--brand) 8%, transparent);
+}
+
+/**
+ * 顶栏下方语言提示条：检测到浏览器语言与当前页不同时由脚本显示。
+ * fixed 贴在 navbar 下方；高度写入 --lang-hint-h 以推动正文。
+ */
+.lang-hint-bar {
+  position: fixed;
+  top: var(--header-h);
+  left: 0;
+  right: 0;
+  z-index: 1025;
+  background: color-mix(in srgb, var(--brand) 10%, var(--surface));
+  border-bottom: 1px solid color-mix(in srgb, var(--brand) 22%, var(--border));
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--brand) 8%, transparent);
+}
+
+.lang-hint-bar[hidden] {
+  display: none !important;
+}
+
+.lang-hint-bar__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  max-width: var(--home-max);
+  margin: 0 auto;
+  padding: 0.55rem var(--page-pad-x);
+}
+
+.lang-hint-bar__text {
+  font-size: var(--fs-muted);
+  color: var(--text);
+  flex: 1 1 12rem;
+}
+
+.lang-hint-bar__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  flex: 0 0 auto;
 }
 
 .navbar.site-navbar::after {

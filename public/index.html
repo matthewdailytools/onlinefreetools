@@ -66,8 +66,8 @@
   <link href="/vendor/fonts/plus-jakarta-sans.css" rel="stylesheet" />
   <link href="/styles/site.css" rel="stylesheet" />
   <style>
-    body { min-height: 100vh; padding-top: var(--header-h, 56px); }
-    .layout { display: flex; min-height: calc(100vh - var(--header-h, 56px)); }
+    body { min-height: 100vh; padding-top: calc(var(--header-h, 56px) + var(--lang-hint-h, 0px)); }
+    .layout { display: flex; min-height: calc(100vh - var(--header-h, 56px) - var(--lang-hint-h, 0px)); }
   </style>
   
 <script>
@@ -137,7 +137,7 @@
           <ul class="dropdown-menu"><li><a class="dropdown-item" href="/topics/pdf-docs">View all in this topic</a></li><li><a class="dropdown-item" href="/tools/batch-compress-pdfs-for-email" target="_blank" rel="noopener noreferrer">Batch compress PDFs for email</a></li><li><a class="dropdown-item" href="/tools/compress-pdf" target="_blank" rel="noopener noreferrer">Compress PDF — Shrink File Size in Your Browser</a></li><li><a class="dropdown-item" href="/tools/crop-pdf" target="_blank" rel="noopener noreferrer">Crop PDF — Trim Page Margins in Your Browser</a></li><li><a class="dropdown-item" href="/tools/merge-pdf" target="_blank" rel="noopener noreferrer">Merge PDF — Combine Files in Your Browser</a></li><li><a class="dropdown-item" href="/tools/organize-pdf" target="_blank" rel="noopener noreferrer">Organize PDF — Reorder or Remove Pages in Your Browser</a></li><li><a class="dropdown-item" href="/tools/pdf-page-numbers" target="_blank" rel="noopener noreferrer">Add Page Numbers to PDF — In Your Browser</a></li><li><a class="dropdown-item" href="/tools/pdf-page-to-image-sizes" target="_blank" rel="noopener noreferrer">PDF Page to Image Sizes — Multi-Size Export Pack</a></li><li><a class="dropdown-item" href="/tools/pdf-to-jpg" target="_blank" rel="noopener noreferrer">PDF to JPG — Convert Pages to Images in Your Browser</a></li><li><a class="dropdown-item" href="/tools/pdf-to-markdown" target="_blank" rel="noopener noreferrer">PDF to Markdown — Extract Text for Notes in Your Browser</a></li><li><a class="dropdown-item" href="/tools/pdf-watermark" target="_blank" rel="noopener noreferrer">PDF Watermark — Stamp Text on Every Page in Your Browser</a></li><li><a class="dropdown-item" href="/tools/protect-pdf" target="_blank" rel="noopener noreferrer">Protect PDF — Password-Encrypt in Your Browser</a></li><li><a class="dropdown-item" href="/tools/rotate-pdf" target="_blank" rel="noopener noreferrer">Rotate PDF — Fix Page Orientation in Your Browser</a></li><li><a class="dropdown-item" href="/tools/split-pdf" target="_blank" rel="noopener noreferrer">Split PDF — Extract Pages Locally</a></li><li><a class="dropdown-item" href="/tools/unlock-pdf" target="_blank" rel="noopener noreferrer">Unlock PDF — Remove Password You Already Know</a></li></ul>
         </li><li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Image & media</a>
-          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/topics/image-media">View all in this topic</a></li><li><a class="dropdown-item" href="/tools/add-watermark" target="_blank" rel="noopener noreferrer">Add Text Watermark to Photo — Local Browser Tool</a></li><li><a class="dropdown-item" href="/tools/amazon-main-image-size" target="_blank" rel="noopener noreferrer">Amazon main image size</a></li><li><a class="dropdown-item" href="/tools/apple-touch-icon" target="_blank" rel="noopener noreferrer">Apple-touch-icon 180×180</a></li><li><a class="dropdown-item" href="/tools/batch-watermark-product-photos" target="_blank" rel="noopener noreferrer">Batch watermark product photos</a></li><li><a class="dropdown-item" href="/tools/bulk-compress-png-images" target="_blank" rel="noopener noreferrer">Bulk compress PNG images</a></li><li><a class="dropdown-item" href="/tools/bulk-compress-product-photos" target="_blank" rel="noopener noreferrer">Bulk compress product photos</a></li><li><a class="dropdown-item" href="/tools/bulk-convert-images-to-jpg" target="_blank" rel="noopener noreferrer">Bulk convert images to JPG</a></li><li><a class="dropdown-item" href="/tools/bulk-convert-images-to-png" target="_blank" rel="noopener noreferrer">Bulk convert images to PNG</a></li><li><a class="dropdown-item" href="/tools/bulk-convert-images-to-webp" target="_blank" rel="noopener noreferrer">Bulk convert images to WebP</a></li><li><a class="dropdown-item" href="/tools/color-from-image" target="_blank" rel="noopener noreferrer">Extract Colors from Image — Palette & Click Pick</a></li><li><a class="dropdown-item" href="/tools/flip-image" target="_blank" rel="noopener noreferrer">Flip Image — Mirror Horizontally or Vertically</a></li><li><a class="dropdown-item" href="/tools/image-border" target="_blank" rel="noopener noreferrer">Add Border to Image — Color & Width Online</a></li><li><a class="dropdown-item" href="/tools/image-compress" target="_blank" rel="noopener noreferrer">Image Compressor — Resize, Quality & Target Size Local</a></li><li><a class="dropdown-item" href="/tools/image-crop" target="_blank" rel="noopener noreferrer">Crop & Resize Image — Local Aspect Presets</a></li><li><a class="dropdown-item" href="/tools/image-exif" target="_blank" rel="noopener noreferrer">Photo EXIF Viewer & Remover — GPS, Camera & Local Strip</a></li><li><a class="dropdown-item" href="/tools/image-format-converter" target="_blank" rel="noopener noreferrer">Image Format Converter — PNG JPEG WebP AVIF BMP GIF ICO SVG</a></li><li><a class="dropdown-item" href="/tools/image-grayscale" target="_blank" rel="noopener noreferrer">Convert Image to Grayscale — Black & White Online</a></li><li><a class="dropdown-item" href="/tools/image-merge" target="_blank" rel="noopener noreferrer">Merge Images — Combine Photos into One Collage</a></li><li><a class="dropdown-item" href="/tools/image-optimizer" target="_blank" rel="noopener noreferrer">Image Optimizer — WebP, AVIF & MozJPEG Local</a></li><li><a class="dropdown-item" href="/tools/image-overlay" target="_blank" rel="noopener noreferrer">Overlay Images — Put a Logo on a Photo</a></li><li><a class="dropdown-item" href="/tools/image-to-base64" target="_blank" rel="noopener noreferrer">Image to Base64 Converter — Encode & Decode Locally</a></li><li><a class="dropdown-item" href="/tools/images-to-gif" target="_blank" rel="noopener noreferrer">Images to GIF — Make an Animated GIF Locally</a></li><li><a class="dropdown-item" href="/tools/images-to-pdf" target="_blank" rel="noopener noreferrer">Images to PDF — Combine Photos into One File</a></li><li><a class="dropdown-item" href="/tools/images-to-ppt" target="_blank" rel="noopener noreferrer">Images to PowerPoint — Photos to PPTX Slides</a></li><li><a class="dropdown-item" href="/tools/images-to-word" target="_blank" rel="noopener noreferrer">Images to Word — Build a DOCX from Photos</a></li><li><a class="dropdown-item" href="/tools/instagram-post-size" target="_blank" rel="noopener noreferrer">Instagram post size</a></li><li><a class="dropdown-item" href="/tools/instagram-story-size" target="_blank" rel="noopener noreferrer">Instagram story size</a></li><li><a class="dropdown-item" href="/tools/ios-app-icon-size" target="_blank" rel="noopener noreferrer">iOS app icon size</a></li><li><a class="dropdown-item" href="/tools/iphone-app-store-screenshot" target="_blank" rel="noopener noreferrer">iPhone 6.9 screenshot size</a></li><li><a class="dropdown-item" href="/tools/linkedin-banner-size" target="_blank" rel="noopener noreferrer">LinkedIn banner size</a></li><li><a class="dropdown-item" href="/tools/open-graph-image-size" target="_blank" rel="noopener noreferrer">Open Graph image size</a></li><li><a class="dropdown-item" href="/tools/svg-optimizer" target="_blank" rel="noopener noreferrer">SVG optimizer</a></li><li><a class="dropdown-item" href="/tools/youtube-thumbnail-size" target="_blank" rel="noopener noreferrer">YouTube thumbnail size</a></li></ul>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/topics/image-media">View all in this topic</a></li><li><a class="dropdown-item" href="/tools/add-watermark" target="_blank" rel="noopener noreferrer">Add Text Watermark to Photo — Local Browser Tool</a></li><li><a class="dropdown-item" href="/tools/amazon-main-image-size" target="_blank" rel="noopener noreferrer">Amazon main image size</a></li><li><a class="dropdown-item" href="/tools/apple-touch-icon" target="_blank" rel="noopener noreferrer">Apple-touch-icon 180×180</a></li><li><a class="dropdown-item" href="/tools/batch-watermark-product-photos" target="_blank" rel="noopener noreferrer">Batch watermark product photos</a></li><li><a class="dropdown-item" href="/tools/bulk-compress-png-images" target="_blank" rel="noopener noreferrer">Bulk compress PNG images</a></li><li><a class="dropdown-item" href="/tools/bulk-compress-product-photos" target="_blank" rel="noopener noreferrer">Bulk compress product photos (JPEG, PNG, WebP)</a></li><li><a class="dropdown-item" href="/tools/bulk-convert-images-to-jpg" target="_blank" rel="noopener noreferrer">Bulk convert images to JPG</a></li><li><a class="dropdown-item" href="/tools/bulk-convert-images-to-png" target="_blank" rel="noopener noreferrer">Bulk convert images to PNG</a></li><li><a class="dropdown-item" href="/tools/bulk-convert-images-to-webp" target="_blank" rel="noopener noreferrer">Bulk convert images to WebP</a></li><li><a class="dropdown-item" href="/tools/color-from-image" target="_blank" rel="noopener noreferrer">Extract Colors from Image — Palette & Click Pick</a></li><li><a class="dropdown-item" href="/tools/flip-image" target="_blank" rel="noopener noreferrer">Flip Image — Mirror Horizontally or Vertically</a></li><li><a class="dropdown-item" href="/tools/image-border" target="_blank" rel="noopener noreferrer">Add Border to Image — Color & Width Online</a></li><li><a class="dropdown-item" href="/tools/image-compress" target="_blank" rel="noopener noreferrer">Image Compressor — Resize, Quality & Target Size Local</a></li><li><a class="dropdown-item" href="/tools/image-crop" target="_blank" rel="noopener noreferrer">Crop & Resize Image — Local Aspect Presets</a></li><li><a class="dropdown-item" href="/tools/image-exif" target="_blank" rel="noopener noreferrer">Photo EXIF Viewer & Remover — GPS, Camera & Local Strip</a></li><li><a class="dropdown-item" href="/tools/image-format-converter" target="_blank" rel="noopener noreferrer">Image Format Converter — PNG JPEG WebP AVIF BMP GIF ICO SVG</a></li><li><a class="dropdown-item" href="/tools/image-grayscale" target="_blank" rel="noopener noreferrer">Convert Image to Grayscale — Black & White Online</a></li><li><a class="dropdown-item" href="/tools/image-merge" target="_blank" rel="noopener noreferrer">Merge Images — Combine Photos into One Collage</a></li><li><a class="dropdown-item" href="/tools/image-optimizer" target="_blank" rel="noopener noreferrer">Image Optimizer — WebP, AVIF & MozJPEG Local</a></li><li><a class="dropdown-item" href="/tools/image-overlay" target="_blank" rel="noopener noreferrer">Overlay Images — Put a Logo on a Photo</a></li><li><a class="dropdown-item" href="/tools/image-to-base64" target="_blank" rel="noopener noreferrer">Image to Base64 Converter — Encode & Decode Locally</a></li><li><a class="dropdown-item" href="/tools/images-to-gif" target="_blank" rel="noopener noreferrer">Images to GIF — Make an Animated GIF Locally</a></li><li><a class="dropdown-item" href="/tools/images-to-pdf" target="_blank" rel="noopener noreferrer">Images to PDF — Combine Photos into One File</a></li><li><a class="dropdown-item" href="/tools/images-to-ppt" target="_blank" rel="noopener noreferrer">Images to PowerPoint — Photos to PPTX Slides</a></li><li><a class="dropdown-item" href="/tools/images-to-word" target="_blank" rel="noopener noreferrer">Images to Word — Build a DOCX from Photos</a></li><li><a class="dropdown-item" href="/tools/instagram-post-size" target="_blank" rel="noopener noreferrer">Instagram post size</a></li><li><a class="dropdown-item" href="/tools/instagram-story-size" target="_blank" rel="noopener noreferrer">Instagram story size</a></li><li><a class="dropdown-item" href="/tools/ios-app-icon-size" target="_blank" rel="noopener noreferrer">iOS app icon size</a></li><li><a class="dropdown-item" href="/tools/iphone-app-store-screenshot" target="_blank" rel="noopener noreferrer">iPhone 6.9 screenshot size</a></li><li><a class="dropdown-item" href="/tools/linkedin-banner-size" target="_blank" rel="noopener noreferrer">LinkedIn banner size</a></li><li><a class="dropdown-item" href="/tools/open-graph-image-size" target="_blank" rel="noopener noreferrer">Open Graph image size</a></li><li><a class="dropdown-item" href="/tools/svg-optimizer" target="_blank" rel="noopener noreferrer">SVG optimizer</a></li><li><a class="dropdown-item" href="/tools/youtube-thumbnail-size" target="_blank" rel="noopener noreferrer">YouTube thumbnail size</a></li></ul>
         </li><li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Design & brand</a>
           <ul class="dropdown-menu"><li><a class="dropdown-item" href="/topics/design-brand">View all in this topic</a></li><li><a class="dropdown-item" href="/tools/brand-color-token-pack" target="_blank" rel="noopener noreferrer">Generate Brand Color Scale — 50–950 Palette & CSS Tokens</a></li><li><a class="dropdown-item" href="/tools/brand-style-guide" target="_blank" rel="noopener noreferrer">Brand Style Guide — Generate a Modular Draft You Can Edit</a></li><li><a class="dropdown-item" href="/tools/smart-website-color-scheme" target="_blank" rel="noopener noreferrer">Smart Website Color Scheme — Semantic CSS Tokens</a></li><li><a class="dropdown-item" href="/tools/wcag-contrast-checker" target="_blank" rel="noopener noreferrer">WCAG Contrast Checker — AA/AAA Ratio Online</a></li></ul>
@@ -178,11 +178,11 @@
               </ul>
             </div>
             
-    <div class="dropdown">
+    <div class="dropdown js-lang-switcher">
       <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
         English
       </button>
-      <ul class="dropdown-menu dropdown-menu-end"><li><span class="dropdown-item active" aria-current="true">English</span></li><li><a class="dropdown-item" href="/zh/">中文</a></li><li><a class="dropdown-item" href="/es/">Español</a></li><li><a class="dropdown-item" href="/ar/">العربية</a></li><li><a class="dropdown-item" href="/pt/">Português</a></li><li><a class="dropdown-item" href="/id/">Bahasa Indonesia</a></li><li><a class="dropdown-item" href="/fr/">Français</a></li><li><a class="dropdown-item" href="/ja/">日本語</a></li><li><a class="dropdown-item" href="/ru/">Русский</a></li><li><a class="dropdown-item" href="/de/">Deutsch</a></li></ul>
+      <ul class="dropdown-menu dropdown-menu-end"><li><span class="dropdown-item active" aria-current="true">English</span></li><li><a class="dropdown-item" href="/zh/" data-lang-pref="zh">中文</a></li><li><a class="dropdown-item" href="/es/" data-lang-pref="es">Español</a></li><li><a class="dropdown-item" href="/ar/" data-lang-pref="ar">العربية</a></li><li><a class="dropdown-item" href="/pt/" data-lang-pref="pt">Português</a></li><li><a class="dropdown-item" href="/id/" data-lang-pref="id">Bahasa Indonesia</a></li><li><a class="dropdown-item" href="/fr/" data-lang-pref="fr">Français</a></li><li><a class="dropdown-item" href="/ja/" data-lang-pref="ja">日本語</a></li><li><a class="dropdown-item" href="/ru/" data-lang-pref="ru">Русский</a></li><li><a class="dropdown-item" href="/de/" data-lang-pref="de">Deutsch</a></li></ul>
     </div>
             <a class="btn btn-outline-secondary btn-sm nav-support-link" href="https://buymeacoffee.com/matthewxuax" target="_blank" rel="noopener noreferrer" title="Buy me a coffee">
               <span class="nav-support-icon" aria-hidden="true">☕</span>
@@ -192,7 +192,81 @@
         </div>
       </div>
     </nav>
+    <div id="langHintBar" class="lang-hint-bar" hidden aria-hidden="true" role="status"
+    data-page-lang="en"
+    data-enabled="[&quot;en&quot;,&quot;zh&quot;,&quot;es&quot;,&quot;ar&quot;,&quot;pt&quot;,&quot;id&quot;,&quot;fr&quot;,&quot;ja&quot;,&quot;ru&quot;,&quot;de&quot;]"
+    data-labels="{&quot;en&quot;:&quot;English&quot;,&quot;zh&quot;:&quot;中文&quot;,&quot;es&quot;:&quot;Español&quot;,&quot;ar&quot;:&quot;العربية&quot;,&quot;pt&quot;:&quot;Português&quot;,&quot;id&quot;:&quot;Bahasa Indonesia&quot;,&quot;fr&quot;:&quot;Français&quot;,&quot;ja&quot;:&quot;日本語&quot;,&quot;ru&quot;:&quot;Русский&quot;,&quot;de&quot;:&quot;Deutsch&quot;}"
+    data-msg="We detected your language is {lang}. Switch?">
+    <div class="lang-hint-bar__inner">
+      <p class="lang-hint-bar__text mb-0" data-lang-hint-text></p>
+      <div class="lang-hint-bar__actions">
+        <button type="button" class="btn btn-sm btn-primary" data-lang-hint-switch>Switch</button>
+        <button type="button" class="btn btn-sm btn-outline-secondary" data-lang-hint-dismiss>Dismiss</button>
+      </div>
+    </div>
+  </div>
   </header>
+  <script>(function(){
+  var PREF='oft_lang', COUNT='oft_lang_hint_n', MAX=3, MAX_AGE=31536000;
+  function secure(){return location.protocol==='https:'?'; Secure':'';}
+  function getC(n){try{var m=document.cookie.match(new RegExp('(?:^|; )'+n+'=([^;]*)'));return m?decodeURIComponent(m[1]):'';}catch(e){return '';}}
+  function setC(n,v){try{document.cookie=n+'='+encodeURIComponent(v)+'; Path=/; Max-Age='+MAX_AGE+'; SameSite=Lax'+secure();}catch(e){}}
+  document.addEventListener('click',function(e){
+    var t=e.target;if(!t||!t.closest)return;
+    var a=t.closest('a[data-lang-pref]');
+    if(a){var lang=a.getAttribute('data-lang-pref');if(lang)setC(PREF,lang);}
+  },true);
+  function runHint(){
+    if(getC(PREF))return;
+    var shown=parseInt(getC(COUNT)||'0',10)||0;
+    if(shown>=MAX)return;
+    var bar=document.getElementById('langHintBar');
+    if(!bar)return;
+    var pageLang=bar.getAttribute('data-page-lang')||'';
+    var enabled=[];
+    try{enabled=JSON.parse(bar.getAttribute('data-enabled')||'[]');}catch(e){}
+    var labels={};
+    try{labels=JSON.parse(bar.getAttribute('data-labels')||'{}');}catch(e){}
+    var msgT=bar.getAttribute('data-msg')||'';
+    var nav=navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language];
+    var detected=null;
+    for(var i=0;i<nav.length;i++){
+      var p=String(nav[i]||'').toLowerCase().split('-')[0];
+      if(p&&enabled.indexOf(p)>=0&&p!==pageLang){detected=p;break;}
+    }
+    if(!detected)return;
+    var href='';
+    var link=document.querySelector('link[rel="alternate"][hreflang="'+detected+'"]');
+    if(link)href=link.getAttribute('href')||'';
+    if(href){
+      try{var u=new URL(href,location.href);href=u.pathname+u.search+u.hash;}catch(e){}
+    }
+    if(!href){
+      var path=location.pathname.replace(/^\/(en|zh|es|ar|pt|id|fr|ja|ru|de)(?=\/|$)/,'')||'/';
+      href=detected==='en'?path:('/'+detected+(path==='/'?'/':path));
+    }
+    setC(COUNT,String(shown+1));
+    var label=labels[detected]||detected;
+    var textEl=bar.querySelector('[data-lang-hint-text]');
+    if(textEl)textEl.textContent=msgT.split('{lang}').join(label);
+    bar.hidden=false;
+    bar.setAttribute('aria-hidden','false');
+    document.documentElement.style.setProperty('--lang-hint-h',bar.offsetHeight+'px');
+    var timer=setTimeout(hide,5000);
+    function hide(){
+      clearTimeout(timer);
+      bar.hidden=true;
+      bar.setAttribute('aria-hidden','true');
+      document.documentElement.style.setProperty('--lang-hint-h','0px');
+    }
+    var dismiss=bar.querySelector('[data-lang-hint-dismiss]');
+    var go=bar.querySelector('[data-lang-hint-switch]');
+    if(dismiss)dismiss.addEventListener('click',hide);
+    if(go)go.addEventListener('click',function(){setC(PREF,detected);location.href=href;});
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',runHint);
+  else runHint();
+})();</script>
   <div class="layout layout-no-sidebar" id="layoutRoot">
     
     <main id="content" class="p-4">
@@ -373,7 +447,7 @@
           <img class="tool-card-logo" src="/icons/tools/bulk-compress-product-photos.svg" width="32" height="32" alt="" decoding="async" loading="eager" fetchpriority="high" />
           <div class="tool-card-head-text">
             <h3 class="card-title home-card-title mb-0">
-              <a class="home-card-title-link" href="/tools/bulk-compress-product-photos" target="_blank" rel="noopener noreferrer">Bulk compress product photos</a>
+              <a class="home-card-title-link" href="/tools/bulk-compress-product-photos" target="_blank" rel="noopener noreferrer">Bulk compress product photos (JPEG, PNG, WebP)</a>
             </h3>
             <a class="tool-no-upload-tag" href="/privacy#local" aria-label="Runs on your device — not uploaded to a server. Privacy details" target="_blank" rel="noopener noreferrer">No upload</a>
           </div>
@@ -492,7 +566,7 @@
           <img class="tool-card-logo" src="/icons/tools/bulk-compress-product-photos.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <div class="tool-card-head-text">
             <h3 class="card-title home-card-title mb-0">
-              <a class="home-card-title-link" href="/tools/bulk-compress-product-photos" target="_blank" rel="noopener noreferrer">Bulk compress product photos</a>
+              <a class="home-card-title-link" href="/tools/bulk-compress-product-photos" target="_blank" rel="noopener noreferrer">Bulk compress product photos (JPEG, PNG, WebP)</a>
             </h3>
             <a class="tool-no-upload-tag" href="/privacy#local" aria-label="Runs on your device — not uploaded to a server. Privacy details" target="_blank" rel="noopener noreferrer">No upload</a>
           </div>

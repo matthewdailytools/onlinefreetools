@@ -3,7 +3,13 @@
  */
 import type { Hono } from 'hono';
 import { isSupportedLang } from './i18n';
-import { getEnabledLangs, getDefaultLang, withLangPrefix } from './lang';
+import {
+	buildLangPrefSetCookie,
+	getDefaultLang,
+	getEnabledLangs,
+	stripLangPrefix,
+	withLangPrefix,
+} from './lang';
 import { TOOL_SLUG_SET } from './toolSlugs.generated';
 import { servePrerenderedHtml, type PagesBindings } from './r2Pages';
 
@@ -37,6 +43,15 @@ export const registerToolPages = (app: App) => {
 		const defaultLang = getDefaultLang(c.env, enabled);
 		if (!isSupportedLang(langParam)) {
 			return c.redirect(withLangPrefix(defaultLang, `/tools/${slug}`, defaultLang), 302);
+		}
+		/** 默认语显式前缀兜底：301 到无前缀并写入偏好 Cookie（主路径由全局中间件处理）。 */
+		if (langParam === defaultLang) {
+			const url = new URL(c.req.url);
+			url.pathname = stripLangPrefix(url.pathname);
+			const secure = url.protocol === 'https:';
+			c.header('Set-Cookie', buildLangPrefSetCookie(defaultLang, { secure }));
+			c.header('Vary', 'Cookie');
+			return c.redirect(url.toString(), 301);
 		}
 		const accept = c.req.header('accept') || '';
 		if (!accept.includes('text/html')) return c.notFound();

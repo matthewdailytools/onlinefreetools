@@ -112,12 +112,97 @@ export const renderHeader = (opts: {
 					if (!href) {
 						return `<li><span class="dropdown-item active" aria-current="true">${escapeHtml(label)}</span></li>`;
 					}
-					return `<li><a class="dropdown-item" href="${escapeHtml(href)}">${escapeHtml(label)}</a></li>`;
+					return `<li><a class="dropdown-item" href="${escapeHtml(href)}" data-lang-pref="${escapeHtml(code)}">${escapeHtml(label)}</a></li>`;
 				})
 				.join('')
 		: '';
 
 	const currentLabel = getLangLabel(opts.lang);
+
+	/**
+	 * 点击语言菜单写入 `oft_lang`；浏览器语言与页面不一致时展示提示条（最多 3 次，5 秒自动消失）。
+	 * Cookie 名与 `src/site/lang.ts` 的 LANG_PREF_COOKIE / LANG_HINT_COUNT_COOKIE 一致。
+	 */
+	const langChromeScript = showLangSwitcher
+		? `<script>(function(){
+  var PREF='oft_lang', COUNT='oft_lang_hint_n', MAX=3, MAX_AGE=31536000;
+  function secure(){return location.protocol==='https:'?'; Secure':'';}
+  function getC(n){try{var m=document.cookie.match(new RegExp('(?:^|; )'+n+'=([^;]*)'));return m?decodeURIComponent(m[1]):'';}catch(e){return '';}}
+  function setC(n,v){try{document.cookie=n+'='+encodeURIComponent(v)+'; Path=/; Max-Age='+MAX_AGE+'; SameSite=Lax'+secure();}catch(e){}}
+  document.addEventListener('click',function(e){
+    var t=e.target;if(!t||!t.closest)return;
+    var a=t.closest('a[data-lang-pref]');
+    if(a){var lang=a.getAttribute('data-lang-pref');if(lang)setC(PREF,lang);}
+  },true);
+  function runHint(){
+    if(getC(PREF))return;
+    var shown=parseInt(getC(COUNT)||'0',10)||0;
+    if(shown>=MAX)return;
+    var bar=document.getElementById('langHintBar');
+    if(!bar)return;
+    var pageLang=bar.getAttribute('data-page-lang')||'';
+    var enabled=[];
+    try{enabled=JSON.parse(bar.getAttribute('data-enabled')||'[]');}catch(e){}
+    var labels={};
+    try{labels=JSON.parse(bar.getAttribute('data-labels')||'{}');}catch(e){}
+    var msgT=bar.getAttribute('data-msg')||'';
+    var nav=navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language];
+    var detected=null;
+    for(var i=0;i<nav.length;i++){
+      var p=String(nav[i]||'').toLowerCase().split('-')[0];
+      if(p&&enabled.indexOf(p)>=0&&p!==pageLang){detected=p;break;}
+    }
+    if(!detected)return;
+    var href='';
+    var link=document.querySelector('link[rel="alternate"][hreflang="'+detected+'"]');
+    if(link)href=link.getAttribute('href')||'';
+    if(href){
+      try{var u=new URL(href,location.href);href=u.pathname+u.search+u.hash;}catch(e){}
+    }
+    if(!href){
+      var path=location.pathname.replace(/^\\/(en|zh|es|ar|pt|id|fr|ja|ru|de)(?=\\/|$)/,'')||'/';
+      href=detected==='en'?path:('/'+detected+(path==='/'?'/':path));
+    }
+    setC(COUNT,String(shown+1));
+    var label=labels[detected]||detected;
+    var textEl=bar.querySelector('[data-lang-hint-text]');
+    if(textEl)textEl.textContent=msgT.split('{lang}').join(label);
+    bar.hidden=false;
+    bar.setAttribute('aria-hidden','false');
+    document.documentElement.style.setProperty('--lang-hint-h',bar.offsetHeight+'px');
+    var timer=setTimeout(hide,5000);
+    function hide(){
+      clearTimeout(timer);
+      bar.hidden=true;
+      bar.setAttribute('aria-hidden','true');
+      document.documentElement.style.setProperty('--lang-hint-h','0px');
+    }
+    var dismiss=bar.querySelector('[data-lang-hint-dismiss]');
+    var go=bar.querySelector('[data-lang-hint-switch]');
+    if(dismiss)dismiss.addEventListener('click',hide);
+    if(go)go.addEventListener('click',function(){setC(PREF,detected);location.href=href;});
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',runHint);
+  else runHint();
+})();</script>`
+		: '';
+
+	const labelsJson = Object.fromEntries(enabled.map((code) => [code, getLangLabel(code)]));
+	const langHintBar = showLangSwitcher
+		? `<div id="langHintBar" class="lang-hint-bar" hidden aria-hidden="true" role="status"
+    data-page-lang="${escapeHtml(opts.lang)}"
+    data-enabled="${escapeHtml(JSON.stringify(enabled))}"
+    data-labels="${escapeHtml(JSON.stringify(labelsJson))}"
+    data-msg="${escapeHtml(t(opts.lang, 'lang_hint_message'))}">
+    <div class="lang-hint-bar__inner">
+      <p class="lang-hint-bar__text mb-0" data-lang-hint-text></p>
+      <div class="lang-hint-bar__actions">
+        <button type="button" class="btn btn-sm btn-primary" data-lang-hint-switch>${escapeHtml(t(opts.lang, 'lang_hint_switch'))}</button>
+        <button type="button" class="btn btn-sm btn-outline-secondary" data-lang-hint-dismiss>${escapeHtml(t(opts.lang, 'lang_hint_dismiss'))}</button>
+      </div>
+    </div>
+  </div>`
+		: '';
 
 	/** 页面设置：四套品牌配色（原「页面主题」）。 */
 	const pageSettingsSwitcher = `
@@ -157,7 +242,7 @@ export const renderHeader = (opts: {
             ${
 				showLangSwitcher
 					? `
-          <div class="dropdown">
+          <div class="dropdown js-lang-switcher">
             <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
               ${escapeHtml(currentLabel)}
             </button>
@@ -170,5 +255,7 @@ export const renderHeader = (opts: {
         </div>
       </div>
     </nav>
-  </header>`;
+    ${langHintBar}
+  </header>
+  ${langChromeScript}`;
 };

@@ -14,6 +14,9 @@ const translations = {
     theme_green: 'Forest',
     theme_amber: 'Amber',
     theme_navy: 'Ink navy',
+    lang_hint_message: 'We detected your language is {lang}. Switch?',
+    lang_hint_switch: 'Switch',
+    lang_hint_dismiss: 'Dismiss',
 
     home_title: 'Free Online Tools — No Upload, No Signup | OnlineFreeTools.org',
     home_description:
@@ -194,6 +197,9 @@ const translations = {
     theme_green: '森绿',
     theme_amber: '琥珀橙',
     theme_navy: '墨青',
+    lang_hint_message: '检测到你的语言是 {lang}，是否跳转？',
+    lang_hint_switch: '跳转',
+    lang_hint_dismiss: '关闭',
 
     home_title: '免费在线工具，不上传数据，无需注册 | OnlineFreeTools.org',
     home_description: 'OnlineFreeTools.org 学习项目，聚合多类在线小工具，支持移动与桌面访问。',
@@ -375,6 +381,9 @@ const translations = {
     theme_green: 'Verde bosque',
     theme_amber: 'Ámbar',
     theme_navy: 'Azul tinta',
+    lang_hint_message: 'Detectamos que tu idioma es {lang}. ¿Cambiar?',
+    lang_hint_switch: 'Cambiar',
+    lang_hint_dismiss: 'Cerrar',
 
     home_title: 'Herramientas online gratis, sin subir datos, sin registro | OnlineFreeTools.org',
     home_description:
@@ -553,6 +562,9 @@ const translations = {
     theme_green: 'أخضر غابة',
     theme_amber: 'كهرماني',
     theme_navy: 'أزرق حبري',
+    lang_hint_message: 'اكتشفنا أن لغتك هي {lang}. هل تريد التبديل؟',
+    lang_hint_switch: 'تبديل',
+    lang_hint_dismiss: 'إغلاق',
 
     home_title: 'أدوات مجانية عبر الإنترنت، بلا رفع بيانات، بلا تسجيل | OnlineFreeTools.org',
     home_description:
@@ -732,6 +744,9 @@ const translations = {
     theme_green: 'Verde floresta',
     theme_amber: 'Âmbar',
     theme_navy: 'Azul-tinta',
+    lang_hint_message: 'Detectámos que o seu idioma é {lang}. Mudar?',
+    lang_hint_switch: 'Mudar',
+    lang_hint_dismiss: 'Fechar',
 
     home_title: 'Ferramentas online grátis, sem enviar dados, sem cadastro | OnlineFreeTools.org',
     home_description:
@@ -910,6 +925,9 @@ const translations = {
     theme_green: 'Hijau hutan',
     theme_amber: 'Ambar',
     theme_navy: 'Biru tinta',
+    lang_hint_message: 'Kami mendeteksi bahasa Anda adalah {lang}. Beralih?',
+    lang_hint_switch: 'Beralih',
+    lang_hint_dismiss: 'Tutup',
 
     home_title: 'Alat online gratis, tanpa unggah data, tanpa daftar | OnlineFreeTools.org',
     home_description:
@@ -1088,6 +1106,9 @@ const translations = {
     theme_green: 'Vert forêt',
     theme_amber: 'Ambre',
     theme_navy: 'Bleu encre',
+    lang_hint_message: 'Nous avons détecté que votre langue est {lang}. Changer ?',
+    lang_hint_switch: 'Changer',
+    lang_hint_dismiss: 'Fermer',
 
     home_title: 'Outils en ligne gratuits, sans envoi de données, sans inscription | OnlineFreeTools.org',
     home_description:
@@ -1266,6 +1287,9 @@ const translations = {
     theme_green: 'フォレスト',
     theme_amber: 'アンバー',
     theme_navy: 'インクネイビー',
+    lang_hint_message: 'ご利用の言語は{lang}のようです。切り替えますか？',
+    lang_hint_switch: '切り替える',
+    lang_hint_dismiss: '閉じる',
 
     home_title: '無料オンラインツール、データ非アップロード、登録不要 | OnlineFreeTools.org',
     home_description: '学習プロジェクト：モバイルとデスクトップ向けの小さなオンラインツール集。',
@@ -1444,6 +1468,9 @@ const translations = {
     theme_green: 'Лесной зелёный',
     theme_amber: 'Янтарный',
     theme_navy: 'Чернильный',
+    lang_hint_message: 'Похоже, ваш язык — {lang}. Перейти?',
+    lang_hint_switch: 'Перейти',
+    lang_hint_dismiss: 'Закрыть',
 
     home_title: 'Бесплатные онлайн-инструменты — без загрузки данных, без регистрации | OnlineFreeTools.org',
     home_description:
@@ -1623,6 +1650,9 @@ const translations = {
     theme_green: 'Waldgrün',
     theme_amber: 'Bernstein',
     theme_navy: 'Tintenblau',
+    lang_hint_message: 'Wir haben Ihre Sprache als {lang} erkannt. Wechseln?',
+    lang_hint_switch: 'Wechseln',
+    lang_hint_dismiss: 'Schließen',
 
     home_title: 'Kostenlose Online-Tools — kein Daten-Upload, keine Anmeldung | OnlineFreeTools.org',
     home_description:

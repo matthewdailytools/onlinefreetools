@@ -32,6 +32,10 @@ const en: SiteLangDict = {
   theme_green: 'Forest',
   theme_amber: 'Amber',
   theme_navy: 'Ink navy',
+  /** 浏览器语言与当前页不一致时的顶栏提示条文案；{lang} 为检测到的语言名。 */
+  lang_hint_message: 'We detected your language is {lang}. Switch?',
+  lang_hint_switch: 'Switch',
+  lang_hint_dismiss: 'Dismiss',
   error_prefix: 'Error: ',
   fetch_button: 'Fetch headers',
   fetch_ip_button: 'Refresh',

@@ -114,8 +114,8 @@ export const renderLayout = ({
 
   /** 布局行为已迁入 /styles/site.css；此处仅保留极薄兜底以防 CSS 未加载 */
   const sidebarCss = `
-    body { min-height: 100vh; padding-top: var(--header-h, 56px); }
-    .layout { display: flex; min-height: calc(100vh - var(--header-h, 56px)); }
+    body { min-height: 100vh; padding-top: calc(var(--header-h, 56px) + var(--lang-hint-h, 0px)); }
+    .layout { display: flex; min-height: calc(100vh - var(--header-h, 56px) - var(--lang-hint-h, 0px)); }
   `;
 
   /** 侧栏内任意链接点击后收起移动端抽屉。 */

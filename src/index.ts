@@ -8,9 +8,11 @@ import {
 	DEFAULT_LANGS,
 	getEnabledLangs,
 	getDefaultLang,
-	pickLang,
 	getExplicitLangFromPath,
 	withLangPrefix,
+	stripLangPrefix,
+	resolvePreferredLang,
+	buildLangPrefSetCookie,
 } from "./site/lang";
 import { registerToolPages } from "./site/toolRegistrar";
 import {
@@ -103,6 +105,26 @@ const isGoogleSiteVerificationPath = (pathname: string) => pathname === GOOGLE_S
  * @param pathname 请求路径
  */
 const isIndexNowKeyPath = (pathname: string) => pathname === INDEXNOW_KEY_PATH;
+
+/**
+ * 语言偏好 Cookie 相关响应的 Vary（仅 Cookie，不再按 Accept-Language 跳转）。
+ */
+const LANG_NEGOTIATE_VARY = "Cookie";
+
+/**
+ * 将默认语显式前缀 URL（如 `/en/tools/x`）301 到无前缀规范 URL，并写入语言偏好 Cookie。
+ * @param c Hono context
+ * @param strippedPath 去掉默认语前缀后的路径
+ * @param defaultLang 默认语言码（写入 Cookie）
+ */
+const redirectDefaultLangCanonical = (c: any, strippedPath: string, defaultLang: ReturnType<typeof getDefaultLang>) => {
+	const url = new URL(c.req.url);
+	url.pathname = strippedPath.startsWith("/") ? strippedPath : `/${strippedPath}`;
+	const secure = url.protocol === "https:";
+	c.header("Set-Cookie", buildLangPrefSetCookie(defaultLang, { secure }));
+	c.header("Vary", LANG_NEGOTIATE_VARY);
+	return c.redirect(url.toString(), 301);
+};
 
 type CachePurgePayload = {
 	url?: unknown;
@@ -240,30 +262,58 @@ app.get(INDEXNOW_KEY_PATH, () => {
 	});
 });
 
-// 首页：Assets 常规路径 `public/index.html`；`run_worker_first` 含 `/` 以保留语言协商
+/**
+ * 默认语显式前缀（如 `/en/`、`/en/tools/...`）一律 301 到无前缀规范 URL，并 Set-Cookie 记住英语偏好。
+ * 须注册在各 `/{lang}/...` 与工具路由之前，以便优先拦截。
+ */
+app.use("*", async (c, next) => {
+	if (c.req.method !== "GET" && c.req.method !== "HEAD") return next();
+
+	const url = new URL(c.req.url);
+	const pathname = url.pathname;
+
+	if (pathname === "/devlogs" || pathname.startsWith("/devlogs/")) return next();
+	if (isGoogleSiteVerificationPath(pathname) || isIndexNowKeyPath(pathname)) return next();
+
+	const isStaticAsset =
+		/\.(css|js|png|jpg|jpeg|gif|webp|avif|svg|ico|map|woff2?|ttf|eot|xml|txt|webmanifest)$/i.test(pathname);
+	if (pathname.startsWith("/api/") || pathname === "/api" || pathname.startsWith("/docs") || isStaticAsset) {
+		return next();
+	}
+
+	const enabled = getEnabledLangs(c.env);
+	const defaultLang = getDefaultLang(c.env, enabled);
+	const explicit = getExplicitLangFromPath(pathname, enabled);
+	if (explicit !== defaultLang) return next();
+
+	return redirectDefaultLangCanonical(c, stripLangPrefix(pathname), defaultLang);
+});
+
+// 首页：Assets 常规路径 `public/index.html`；仅 Cookie 偏好可跳非默认语，不做 Accept-Language 自动跳转
 app.get("/", async (c) => {
 	const accept = c.req.header("accept") || "";
 	if (!accept.includes("text/html")) return c.notFound();
 
 	const enabled = getEnabledLangs(c.env);
-	const acceptLanguage = c.req.header("accept-language");
 	const defaultLang = getDefaultLang(c.env, enabled);
+	const preferred = resolvePreferredLang({
+		cookieHeader: c.req.header("cookie"),
+		enabled,
+		defaultLang,
+	});
 
-	if (acceptLanguage) {
-		const picked = pickLang(acceptLanguage, enabled, defaultLang);
-		if (picked !== defaultLang) {
-			const url = new URL(c.req.url);
-			url.pathname = withLangPrefix(picked, "/", defaultLang);
-			c.header("Vary", "Accept-Language, Accept");
-			return c.redirect(url.toString(), 302);
-		}
+	if (preferred !== defaultLang) {
+		const url = new URL(c.req.url);
+		url.pathname = withLangPrefix(preferred, "/", defaultLang);
+		c.header("Vary", LANG_NEGOTIATE_VARY);
+		return c.redirect(url.toString(), 302);
 	}
 
-	c.header("Vary", "Accept-Language, Accept");
+	c.header("Vary", LANG_NEGOTIATE_VARY);
 	return serveLangHomeHtml(c, defaultLang);
 });
 
-// 各语首页；默认语显式前缀 `/en/` 亦 200（语言切换器）。SEO canonical 仍用无前缀。
+// 各语首页与信息页。默认语显式前缀由上方中间件 301 剥离；此处保留路由作兜底。
 for (const code of DEFAULT_LANGS) {
 	app.get(`/${code}`, (c) => c.redirect(`/${code}/`, 308));
 	app.get(`/${code}/`, async (c) => {
@@ -271,7 +321,10 @@ for (const code of DEFAULT_LANGS) {
 		if (!accept.includes('text/html')) return c.notFound();
 		const enabled = getEnabledLangs(c.env);
 		const defaultLang = getDefaultLang(c.env, enabled);
-		return serveLangHomeHtml(c, code, { explicitPrefix: code === defaultLang });
+		if (code === defaultLang) {
+			return redirectDefaultLangCanonical(c, '/', defaultLang);
+		}
+		return serveLangHomeHtml(c, code);
 	});
 	// 静态信息页（含默认语显式前缀）：about / privacy / terms / contact
 	for (const page of ['about', 'privacy', 'terms', 'contact'] as const) {
@@ -279,6 +332,11 @@ for (const code of DEFAULT_LANGS) {
 		app.get(`/${code}/${page}/`, async (c) => {
 			const accept = c.req.header('accept') || '';
 			if (!accept.includes('text/html')) return c.notFound();
+			const enabled = getEnabledLangs(c.env);
+			const defaultLang = getDefaultLang(c.env, enabled);
+			if (code === defaultLang) {
+				return redirectDefaultLangCanonical(c, `/${page}`, defaultLang);
+			}
 			return servePagesHtml(c, `/_pages/${code}/${page}.html`);
 		});
 	}
@@ -289,6 +347,11 @@ for (const code of DEFAULT_LANGS) {
 		app.get(`/${code}/${hub}/`, async (c) => {
 			const accept = c.req.header('accept') || '';
 			if (!accept.includes('text/html')) return c.notFound();
+			const enabled = getEnabledLangs(c.env);
+			const defaultLang = getDefaultLang(c.env, enabled);
+			if (code === defaultLang) {
+				return redirectDefaultLangCanonical(c, `/${hub}`, defaultLang);
+			}
 			return servePagesHtml(c, `/_pages/${code}/${hub}/index.html`);
 		});
 		app.get(`/${code}/${hub}/:id`, (c) => {
@@ -298,7 +361,12 @@ for (const code of DEFAULT_LANGS) {
 		app.get(`/${code}/${hub}/:id/`, async (c) => {
 			const accept = c.req.header('accept') || '';
 			if (!accept.includes('text/html')) return c.notFound();
+			const enabled = getEnabledLangs(c.env);
+			const defaultLang = getDefaultLang(c.env, enabled);
 			const id = c.req.param('id');
+			if (code === defaultLang) {
+				return redirectDefaultLangCanonical(c, `/${hub}/${id}`, defaultLang);
+			}
 			return servePagesHtml(c, `/_pages/${code}/${hub}/${id}.html`);
 		});
 	}
@@ -383,7 +451,7 @@ app.use("/*", async (c, next) => {
 
 	// Global (non-localized) pages.
 	if (pathname === "/devlogs" || pathname.startsWith("/devlogs/")) return next();
-	// 无语言前缀的静态信息页（默认语规范 URL）不做 Accept-Language 跳转。
+	// 无语言前缀的静态信息页（默认语规范 URL）不做 Cookie 语言偏好跳转。
 	if (
 		pathname === '/about' ||
 		pathname.startsWith('/about/') ||
@@ -428,15 +496,17 @@ app.use("/*", async (c, next) => {
 	const explicit = getExplicitLangFromPath(pathname, enabled);
 	if (explicit) return next();
 
-	const acceptLanguage = c.req.header("accept-language");
-	if (!acceptLanguage) return next();
-
 	const defaultLang = getDefaultLang(c.env, enabled);
-	const picked = pickLang(acceptLanguage, enabled, defaultLang);
-	if (picked === defaultLang) return next();
+	/** 仅 Cookie 显式偏好可跳非默认语；Accept-Language 改由顶栏提示条处理。 */
+	const preferred = resolvePreferredLang({
+		cookieHeader: c.req.header("cookie"),
+		enabled,
+		defaultLang,
+	});
+	if (preferred === defaultLang) return next();
 
-	url.pathname = withLangPrefix(picked, pathname === "/" ? "/" : pathname, defaultLang);
-	c.header("Vary", "Accept-Language, Accept");
+	url.pathname = withLangPrefix(preferred, pathname === "/" ? "/" : pathname, defaultLang);
+	c.header("Vary", LANG_NEGOTIATE_VARY);
 	return c.redirect(url.toString(), 302);
 });
 
@@ -586,7 +656,7 @@ app.get("/tools/markdown-to-html.html", (c) => c.redirect("/tools/markdown-to-ht
 // 工具页：预渲染 HTML（R2 / Assets），不再在 Worker 内 SSR 全量 Page 模块
 registerToolPages(app as any);
 
-// Catch-all (GET): perform language negotiation before falling back to static assets.
+// Catch-all (GET): Cookie 语言偏好跳转后再回落 Assets；不做 Accept-Language 自动跳转。
 app.get("/*", (c) => {
 	const url = new URL(c.req.url);
 	const pathname = url.pathname;
@@ -611,15 +681,16 @@ app.get("/*", (c) => {
 	const explicit = getExplicitLangFromPath(pathname, enabled);
 	if (explicit) return c.notFound();
 
-	const acceptLanguage = c.req.header("accept-language");
-	if (!acceptLanguage) return c.notFound();
-
 	const defaultLang = getDefaultLang(c.env, enabled);
-	const picked = pickLang(acceptLanguage, enabled, defaultLang);
-	if (picked === defaultLang) return c.notFound();
+	const preferred = resolvePreferredLang({
+		cookieHeader: c.req.header("cookie"),
+		enabled,
+		defaultLang,
+	});
+	if (preferred === defaultLang) return c.notFound();
 
-	url.pathname = withLangPrefix(picked, pathname === "/" ? "/" : pathname, defaultLang);
-	c.header("Vary", "Accept-Language, Accept");
+	url.pathname = withLangPrefix(preferred, pathname === "/" ? "/" : pathname, defaultLang);
+	c.header("Vary", LANG_NEGOTIATE_VARY);
 	return c.redirect(url.toString(), 302);
 });
 

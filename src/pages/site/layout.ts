@@ -98,8 +98,8 @@ export const absoluteUrl = (pathnameOrUrl: string) => {
 
 /** 布局行为已迁入 /styles/site.css；此处仅保留极薄兜底 */
 const sidebarCss = `
-  body { min-height: 100vh; padding-top: var(--header-h, 56px); box-sizing: border-box; }
-  .layout { display: flex; min-height: calc(100vh - var(--header-h, 56px)); }
+  body { min-height: 100vh; padding-top: calc(var(--header-h, 56px) + var(--lang-hint-h, 0px)); box-sizing: border-box; }
+  .layout { display: flex; min-height: calc(100vh - var(--header-h, 56px) - var(--lang-hint-h, 0px)); }
 `;
 
 export type HreflangAlternate = { lang: SiteLang; href: string };

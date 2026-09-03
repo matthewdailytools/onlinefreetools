@@ -86,6 +86,7 @@ export const withLangPath = (lang, pathname) => {
 
 // Explicit language URLs for user-selected language switching.
 // Always includes `/<lang>` prefix, even for the default language.
+// Worker 对默认语（en）的显式前缀会 301 到无前缀规范 URL，并 Set-Cookie `oft_lang`.
 export const withExplicitLangPath = (lang, pathname) => {
   const safeLang = String(lang || '').trim();
   const safePath = pathname.startsWith('/') ? pathname : `/${pathname}`;

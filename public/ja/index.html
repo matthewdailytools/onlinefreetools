@@ -66,8 +66,8 @@
   <link href="/vendor/fonts/plus-jakarta-sans.css" rel="stylesheet" />
   <link href="/styles/site.css" rel="stylesheet" />
   <style>
-    body { min-height: 100vh; padding-top: var(--header-h, 56px); }
-    .layout { display: flex; min-height: calc(100vh - var(--header-h, 56px)); }
+    body { min-height: 100vh; padding-top: calc(var(--header-h, 56px) + var(--lang-hint-h, 0px)); }
+    .layout { display: flex; min-height: calc(100vh - var(--header-h, 56px) - var(--lang-hint-h, 0px)); }
   </style>
   
 <script>
@@ -137,7 +137,7 @@
           <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ja/topics/pdf-docs">このトピックをすべて見る</a></li><li><a class="dropdown-item" href="/ja/tools/batch-compress-pdfs-for-email" target="_blank" rel="noopener noreferrer">メール用に PDF を一括圧縮</a></li><li><a class="dropdown-item" href="/ja/tools/compress-pdf" target="_blank" rel="noopener noreferrer">PDF圧縮 — ブラウザでファイルを小さく</a></li><li><a class="dropdown-item" href="/ja/tools/crop-pdf" target="_blank" rel="noopener noreferrer">PDFを裁断 — ブラウザで余白をトリミング</a></li><li><a class="dropdown-item" href="/ja/tools/merge-pdf" target="_blank" rel="noopener noreferrer">PDF結合 — ブラウザで複数ファイルを1つに</a></li><li><a class="dropdown-item" href="/ja/tools/organize-pdf" target="_blank" rel="noopener noreferrer">PDF整理 — ブラウザでページ削除・並べ替え</a></li><li><a class="dropdown-item" href="/ja/tools/pdf-page-numbers" target="_blank" rel="noopener noreferrer">PDFにページ番号 — ブラウザで追加</a></li><li><a class="dropdown-item" href="/ja/tools/pdf-page-to-image-sizes" target="_blank" rel="noopener noreferrer">PDFページの複数サイズ書き出し — マルチサイズパック</a></li><li><a class="dropdown-item" href="/ja/tools/pdf-to-jpg" target="_blank" rel="noopener noreferrer">PDFをJPGに — ブラウザでページを画像に</a></li><li><a class="dropdown-item" href="/ja/tools/pdf-to-markdown" target="_blank" rel="noopener noreferrer">PDFをMarkdownに — 端末内でテキスト抽出</a></li><li><a class="dropdown-item" href="/ja/tools/pdf-watermark" target="_blank" rel="noopener noreferrer">PDF透かし — 端末内で全ページに文字を入れる</a></li><li><a class="dropdown-item" href="/ja/tools/protect-pdf" target="_blank" rel="noopener noreferrer">PDFを保護 — ブラウザでパスワード暗号化</a></li><li><a class="dropdown-item" href="/ja/tools/rotate-pdf" target="_blank" rel="noopener noreferrer">PDF回転 — ブラウザでページの向きを直す</a></li><li><a class="dropdown-item" href="/ja/tools/split-pdf" target="_blank" rel="noopener noreferrer">PDF分割 — ページを端末内で取り出す</a></li><li><a class="dropdown-item" href="/ja/tools/unlock-pdf" target="_blank" rel="noopener noreferrer">PDFロック解除 — 知っているパスワードで保護を外す</a></li></ul>
         </li><li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">画像・メディア</a>
-          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ja/topics/image-media">このトピックをすべて見る</a></li><li><a class="dropdown-item" href="/ja/tools/add-watermark" target="_blank" rel="noopener noreferrer">文字透かしを追加 — ブラウザ完結</a></li><li><a class="dropdown-item" href="/ja/tools/amazon-main-image-size" target="_blank" rel="noopener noreferrer">Amazon メイン画像サイズ</a></li><li><a class="dropdown-item" href="/ja/tools/apple-touch-icon" target="_blank" rel="noopener noreferrer">apple-touch-icon 180×180</a></li><li><a class="dropdown-item" href="/ja/tools/batch-watermark-product-photos" target="_blank" rel="noopener noreferrer">商品画像に一括で透かし</a></li><li><a class="dropdown-item" href="/ja/tools/bulk-compress-png-images" target="_blank" rel="noopener noreferrer">PNG 画像を一括圧縮</a></li><li><a class="dropdown-item" href="/ja/tools/bulk-compress-product-photos" target="_blank" rel="noopener noreferrer">商品画像を一括圧縮</a></li><li><a class="dropdown-item" href="/ja/tools/bulk-convert-images-to-jpg" target="_blank" rel="noopener noreferrer">画像を JPG に一括変換</a></li><li><a class="dropdown-item" href="/ja/tools/bulk-convert-images-to-png" target="_blank" rel="noopener noreferrer">画像を PNG に一括変換</a></li><li><a class="dropdown-item" href="/ja/tools/bulk-convert-images-to-webp" target="_blank" rel="noopener noreferrer">画像を WebP に一括変換</a></li><li><a class="dropdown-item" href="/ja/tools/color-from-image" target="_blank" rel="noopener noreferrer">画像から色を抽出 — パレットとクリック取色</a></li><li><a class="dropdown-item" href="/ja/tools/flip-image" target="_blank" rel="noopener noreferrer">画像を反転 — 左右・上下</a></li><li><a class="dropdown-item" href="/ja/tools/image-border" target="_blank" rel="noopener noreferrer">画像に枠を追加 — 色と幅</a></li><li><a class="dropdown-item" href="/ja/tools/image-compress" target="_blank" rel="noopener noreferrer">画像圧縮 — 長辺・画質・目標サイズ（端末内）</a></li><li><a class="dropdown-item" href="/ja/tools/image-crop" target="_blank" rel="noopener noreferrer">画像の切り抜きとサイズ変更（端末内）</a></li><li><a class="dropdown-item" href="/ja/tools/image-exif" target="_blank" rel="noopener noreferrer">写真の EXIF 表示と削除（GPS・カメラ情報・端末内）</a></li><li><a class="dropdown-item" href="/ja/tools/image-format-converter" target="_blank" rel="noopener noreferrer">画像フォーマット変換 — PNG JPEG WebP AVIF BMP GIF ICO SVG ローカル</a></li><li><a class="dropdown-item" href="/ja/tools/image-grayscale" target="_blank" rel="noopener noreferrer">グレースケール変換 — ローカルで白黒に</a></li><li><a class="dropdown-item" href="/ja/tools/image-merge" target="_blank" rel="noopener noreferrer">画像結合 — 複数写真を1枚のコラージュに</a></li><li><a class="dropdown-item" href="/ja/tools/image-optimizer" target="_blank" rel="noopener noreferrer">画像最適化 — WebP / AVIF / MozJPEG（端末内）</a></li><li><a class="dropdown-item" href="/ja/tools/image-overlay" target="_blank" rel="noopener noreferrer">画像に重ねる — 写真へロゴを配置</a></li><li><a class="dropdown-item" href="/ja/tools/image-to-base64" target="_blank" rel="noopener noreferrer">画像↔Base64 — ブラウザで変換</a></li><li><a class="dropdown-item" href="/ja/tools/images-to-gif" target="_blank" rel="noopener noreferrer">画像からGIF — 短いアニメ</a></li><li><a class="dropdown-item" href="/ja/tools/images-to-pdf" target="_blank" rel="noopener noreferrer">画像をPDFに — 1枚1ページ</a></li><li><a class="dropdown-item" href="/ja/tools/images-to-ppt" target="_blank" rel="noopener noreferrer">画像をPowerPointに — 1枚1スライド</a></li><li><a class="dropdown-item" href="/ja/tools/images-to-word" target="_blank" rel="noopener noreferrer">画像をWordに — ローカルDOCX</a></li><li><a class="dropdown-item" href="/ja/tools/instagram-post-size" target="_blank" rel="noopener noreferrer">Instagram投稿サイズ</a></li><li><a class="dropdown-item" href="/ja/tools/instagram-story-size" target="_blank" rel="noopener noreferrer">Instagramストーリーサイズ</a></li><li><a class="dropdown-item" href="/ja/tools/ios-app-icon-size" target="_blank" rel="noopener noreferrer">iOSアプリアイコンサイズ</a></li><li><a class="dropdown-item" href="/ja/tools/iphone-app-store-screenshot" target="_blank" rel="noopener noreferrer">iPhone 6.9のスクリーンショットサイズ</a></li><li><a class="dropdown-item" href="/ja/tools/linkedin-banner-size" target="_blank" rel="noopener noreferrer">LinkedInバナーサイズ</a></li><li><a class="dropdown-item" href="/ja/tools/open-graph-image-size" target="_blank" rel="noopener noreferrer">Open Graph画像サイズ</a></li><li><a class="dropdown-item" href="/ja/tools/svg-optimizer" target="_blank" rel="noopener noreferrer">SVGオプティマイザー</a></li><li><a class="dropdown-item" href="/ja/tools/youtube-thumbnail-size" target="_blank" rel="noopener noreferrer">YouTubeサムネイルサイズ</a></li></ul>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ja/topics/image-media">このトピックをすべて見る</a></li><li><a class="dropdown-item" href="/ja/tools/add-watermark" target="_blank" rel="noopener noreferrer">文字透かしを追加 — ブラウザ完結</a></li><li><a class="dropdown-item" href="/ja/tools/amazon-main-image-size" target="_blank" rel="noopener noreferrer">Amazon メイン画像サイズ</a></li><li><a class="dropdown-item" href="/ja/tools/apple-touch-icon" target="_blank" rel="noopener noreferrer">apple-touch-icon 180×180</a></li><li><a class="dropdown-item" href="/ja/tools/batch-watermark-product-photos" target="_blank" rel="noopener noreferrer">商品画像に一括で透かし</a></li><li><a class="dropdown-item" href="/ja/tools/bulk-compress-png-images" target="_blank" rel="noopener noreferrer">PNG 画像を一括圧縮</a></li><li><a class="dropdown-item" href="/ja/tools/bulk-compress-product-photos" target="_blank" rel="noopener noreferrer">商品画像を一括圧縮（JPEG / PNG / WebP対応）</a></li><li><a class="dropdown-item" href="/ja/tools/bulk-convert-images-to-jpg" target="_blank" rel="noopener noreferrer">画像を JPG に一括変換</a></li><li><a class="dropdown-item" href="/ja/tools/bulk-convert-images-to-png" target="_blank" rel="noopener noreferrer">画像を PNG に一括変換</a></li><li><a class="dropdown-item" href="/ja/tools/bulk-convert-images-to-webp" target="_blank" rel="noopener noreferrer">画像を WebP に一括変換</a></li><li><a class="dropdown-item" href="/ja/tools/color-from-image" target="_blank" rel="noopener noreferrer">画像から色を抽出 — パレットとクリック取色</a></li><li><a class="dropdown-item" href="/ja/tools/flip-image" target="_blank" rel="noopener noreferrer">画像を反転 — 左右・上下</a></li><li><a class="dropdown-item" href="/ja/tools/image-border" target="_blank" rel="noopener noreferrer">画像に枠を追加 — 色と幅</a></li><li><a class="dropdown-item" href="/ja/tools/image-compress" target="_blank" rel="noopener noreferrer">画像圧縮 — 長辺・画質・目標サイズ（端末内）</a></li><li><a class="dropdown-item" href="/ja/tools/image-crop" target="_blank" rel="noopener noreferrer">画像の切り抜きとサイズ変更（端末内）</a></li><li><a class="dropdown-item" href="/ja/tools/image-exif" target="_blank" rel="noopener noreferrer">写真の EXIF 表示と削除（GPS・カメラ情報・端末内）</a></li><li><a class="dropdown-item" href="/ja/tools/image-format-converter" target="_blank" rel="noopener noreferrer">画像フォーマット変換 — PNG JPEG WebP AVIF BMP GIF ICO SVG ローカル</a></li><li><a class="dropdown-item" href="/ja/tools/image-grayscale" target="_blank" rel="noopener noreferrer">グレースケール変換 — ローカルで白黒に</a></li><li><a class="dropdown-item" href="/ja/tools/image-merge" target="_blank" rel="noopener noreferrer">画像結合 — 複数写真を1枚のコラージュに</a></li><li><a class="dropdown-item" href="/ja/tools/image-optimizer" target="_blank" rel="noopener noreferrer">画像最適化 — WebP / AVIF / MozJPEG（端末内）</a></li><li><a class="dropdown-item" href="/ja/tools/image-overlay" target="_blank" rel="noopener noreferrer">画像に重ねる — 写真へロゴを配置</a></li><li><a class="dropdown-item" href="/ja/tools/image-to-base64" target="_blank" rel="noopener noreferrer">画像↔Base64 — ブラウザで変換</a></li><li><a class="dropdown-item" href="/ja/tools/images-to-gif" target="_blank" rel="noopener noreferrer">画像からGIF — 短いアニメ</a></li><li><a class="dropdown-item" href="/ja/tools/images-to-pdf" target="_blank" rel="noopener noreferrer">画像をPDFに — 1枚1ページ</a></li><li><a class="dropdown-item" href="/ja/tools/images-to-ppt" target="_blank" rel="noopener noreferrer">画像をPowerPointに — 1枚1スライド</a></li><li><a class="dropdown-item" href="/ja/tools/images-to-word" target="_blank" rel="noopener noreferrer">画像をWordに — ローカルDOCX</a></li><li><a class="dropdown-item" href="/ja/tools/instagram-post-size" target="_blank" rel="noopener noreferrer">Instagram投稿サイズ</a></li><li><a class="dropdown-item" href="/ja/tools/instagram-story-size" target="_blank" rel="noopener noreferrer">Instagramストーリーサイズ</a></li><li><a class="dropdown-item" href="/ja/tools/ios-app-icon-size" target="_blank" rel="noopener noreferrer">iOSアプリアイコンサイズ</a></li><li><a class="dropdown-item" href="/ja/tools/iphone-app-store-screenshot" target="_blank" rel="noopener noreferrer">iPhone 6.9のスクリーンショットサイズ</a></li><li><a class="dropdown-item" href="/ja/tools/linkedin-banner-size" target="_blank" rel="noopener noreferrer">LinkedInバナーサイズ</a></li><li><a class="dropdown-item" href="/ja/tools/open-graph-image-size" target="_blank" rel="noopener noreferrer">Open Graph画像サイズ</a></li><li><a class="dropdown-item" href="/ja/tools/svg-optimizer" target="_blank" rel="noopener noreferrer">SVGオプティマイザー</a></li><li><a class="dropdown-item" href="/ja/tools/youtube-thumbnail-size" target="_blank" rel="noopener noreferrer">YouTubeサムネイルサイズ</a></li></ul>
         </li><li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">デザイン・ブランド</a>
           <ul class="dropdown-menu"><li><a class="dropdown-item" href="/ja/topics/design-brand">このトピックをすべて見る</a></li><li><a class="dropdown-item" href="/ja/tools/brand-color-token-pack" target="_blank" rel="noopener noreferrer">ブランド色スケールを生成 — 50–950パレットとCSSトークン</a></li><li><a class="dropdown-item" href="/ja/tools/brand-style-guide" target="_blank" rel="noopener noreferrer">ブランドスタイルガイド — 自動下書きを手直しできる</a></li><li><a class="dropdown-item" href="/ja/tools/smart-website-color-scheme" target="_blank" rel="noopener noreferrer">サイト配色方案 — 貼れるセマンティック CSS トークン</a></li><li><a class="dropdown-item" href="/ja/tools/wcag-contrast-checker" target="_blank" rel="noopener noreferrer">WCAGコントラストチェッカー — AA/AAA比率</a></li></ul>
@@ -178,11 +178,11 @@
               </ul>
             </div>
             
-    <div class="dropdown">
+    <div class="dropdown js-lang-switcher">
       <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
         日本語
       </button>
-      <ul class="dropdown-menu dropdown-menu-end"><li><a class="dropdown-item" href="/en/">English</a></li><li><a class="dropdown-item" href="/zh/">中文</a></li><li><a class="dropdown-item" href="/es/">Español</a></li><li><a class="dropdown-item" href="/ar/">العربية</a></li><li><a class="dropdown-item" href="/pt/">Português</a></li><li><a class="dropdown-item" href="/id/">Bahasa Indonesia</a></li><li><a class="dropdown-item" href="/fr/">Français</a></li><li><span class="dropdown-item active" aria-current="true">日本語</span></li><li><a class="dropdown-item" href="/ru/">Русский</a></li><li><a class="dropdown-item" href="/de/">Deutsch</a></li></ul>
+      <ul class="dropdown-menu dropdown-menu-end"><li><a class="dropdown-item" href="/en/" data-lang-pref="en">English</a></li><li><a class="dropdown-item" href="/zh/" data-lang-pref="zh">中文</a></li><li><a class="dropdown-item" href="/es/" data-lang-pref="es">Español</a></li><li><a class="dropdown-item" href="/ar/" data-lang-pref="ar">العربية</a></li><li><a class="dropdown-item" href="/pt/" data-lang-pref="pt">Português</a></li><li><a class="dropdown-item" href="/id/" data-lang-pref="id">Bahasa Indonesia</a></li><li><a class="dropdown-item" href="/fr/" data-lang-pref="fr">Français</a></li><li><span class="dropdown-item active" aria-current="true">日本語</span></li><li><a class="dropdown-item" href="/ru/" data-lang-pref="ru">Русский</a></li><li><a class="dropdown-item" href="/de/" data-lang-pref="de">Deutsch</a></li></ul>
     </div>
             <a class="btn btn-outline-secondary btn-sm nav-support-link" href="https://buymeacoffee.com/matthewxuax" target="_blank" rel="noopener noreferrer" title="コーヒーを奢る">
               <span class="nav-support-icon" aria-hidden="true">☕</span>
@@ -192,7 +192,81 @@
         </div>
       </div>
     </nav>
+    <div id="langHintBar" class="lang-hint-bar" hidden aria-hidden="true" role="status"
+    data-page-lang="ja"
+    data-enabled="[&quot;en&quot;,&quot;zh&quot;,&quot;es&quot;,&quot;ar&quot;,&quot;pt&quot;,&quot;id&quot;,&quot;fr&quot;,&quot;ja&quot;,&quot;ru&quot;,&quot;de&quot;]"
+    data-labels="{&quot;en&quot;:&quot;English&quot;,&quot;zh&quot;:&quot;中文&quot;,&quot;es&quot;:&quot;Español&quot;,&quot;ar&quot;:&quot;العربية&quot;,&quot;pt&quot;:&quot;Português&quot;,&quot;id&quot;:&quot;Bahasa Indonesia&quot;,&quot;fr&quot;:&quot;Français&quot;,&quot;ja&quot;:&quot;日本語&quot;,&quot;ru&quot;:&quot;Русский&quot;,&quot;de&quot;:&quot;Deutsch&quot;}"
+    data-msg="ご利用の言語は{lang}のようです。切り替えますか？">
+    <div class="lang-hint-bar__inner">
+      <p class="lang-hint-bar__text mb-0" data-lang-hint-text></p>
+      <div class="lang-hint-bar__actions">
+        <button type="button" class="btn btn-sm btn-primary" data-lang-hint-switch>切り替える</button>
+        <button type="button" class="btn btn-sm btn-outline-secondary" data-lang-hint-dismiss>閉じる</button>
+      </div>
+    </div>
+  </div>
   </header>
+  <script>(function(){
+  var PREF='oft_lang', COUNT='oft_lang_hint_n', MAX=3, MAX_AGE=31536000;
+  function secure(){return location.protocol==='https:'?'; Secure':'';}
+  function getC(n){try{var m=document.cookie.match(new RegExp('(?:^|; )'+n+'=([^;]*)'));return m?decodeURIComponent(m[1]):'';}catch(e){return '';}}
+  function setC(n,v){try{document.cookie=n+'='+encodeURIComponent(v)+'; Path=/; Max-Age='+MAX_AGE+'; SameSite=Lax'+secure();}catch(e){}}
+  document.addEventListener('click',function(e){
+    var t=e.target;if(!t||!t.closest)return;
+    var a=t.closest('a[data-lang-pref]');
+    if(a){var lang=a.getAttribute('data-lang-pref');if(lang)setC(PREF,lang);}
+  },true);
+  function runHint(){
+    if(getC(PREF))return;
+    var shown=parseInt(getC(COUNT)||'0',10)||0;
+    if(shown>=MAX)return;
+    var bar=document.getElementById('langHintBar');
+    if(!bar)return;
+    var pageLang=bar.getAttribute('data-page-lang')||'';
+    var enabled=[];
+    try{enabled=JSON.parse(bar.getAttribute('data-enabled')||'[]');}catch(e){}
+    var labels={};
+    try{labels=JSON.parse(bar.getAttribute('data-labels')||'{}');}catch(e){}
+    var msgT=bar.getAttribute('data-msg')||'';
+    var nav=navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language];
+    var detected=null;
+    for(var i=0;i<nav.length;i++){
+      var p=String(nav[i]||'').toLowerCase().split('-')[0];
+      if(p&&enabled.indexOf(p)>=0&&p!==pageLang){detected=p;break;}
+    }
+    if(!detected)return;
+    var href='';
+    var link=document.querySelector('link[rel="alternate"][hreflang="'+detected+'"]');
+    if(link)href=link.getAttribute('href')||'';
+    if(href){
+      try{var u=new URL(href,location.href);href=u.pathname+u.search+u.hash;}catch(e){}
+    }
+    if(!href){
+      var path=location.pathname.replace(/^\/(en|zh|es|ar|pt|id|fr|ja|ru|de)(?=\/|$)/,'')||'/';
+      href=detected==='en'?path:('/'+detected+(path==='/'?'/':path));
+    }
+    setC(COUNT,String(shown+1));
+    var label=labels[detected]||detected;
+    var textEl=bar.querySelector('[data-lang-hint-text]');
+    if(textEl)textEl.textContent=msgT.split('{lang}').join(label);
+    bar.hidden=false;
+    bar.setAttribute('aria-hidden','false');
+    document.documentElement.style.setProperty('--lang-hint-h',bar.offsetHeight+'px');
+    var timer=setTimeout(hide,5000);
+    function hide(){
+      clearTimeout(timer);
+      bar.hidden=true;
+      bar.setAttribute('aria-hidden','true');
+      document.documentElement.style.setProperty('--lang-hint-h','0px');
+    }
+    var dismiss=bar.querySelector('[data-lang-hint-dismiss]');
+    var go=bar.querySelector('[data-lang-hint-switch]');
+    if(dismiss)dismiss.addEventListener('click',hide);
+    if(go)go.addEventListener('click',function(){setC(PREF,detected);location.href=href;});
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',runHint);
+  else runHint();
+})();</script>
   <div class="layout layout-no-sidebar" id="layoutRoot">
     
     <main id="content" class="p-4">
@@ -373,7 +447,7 @@
           <img class="tool-card-logo" src="/icons/tools/bulk-compress-product-photos.svg" width="32" height="32" alt="" decoding="async" loading="eager" fetchpriority="high" />
           <div class="tool-card-head-text">
             <h3 class="card-title home-card-title mb-0">
-              <a class="home-card-title-link" href="/ja/tools/bulk-compress-product-photos" target="_blank" rel="noopener noreferrer">商品画像を一括圧縮</a>
+              <a class="home-card-title-link" href="/ja/tools/bulk-compress-product-photos" target="_blank" rel="noopener noreferrer">商品画像を一括圧縮（JPEG / PNG / WebP対応）</a>
             </h3>
             <a class="tool-no-upload-tag" href="/ja/privacy#local" aria-label="端末内で処理し、サーバーにアップロードしません。プライバシー詳細" target="_blank" rel="noopener noreferrer">非アップロード</a>
           </div>
@@ -492,7 +566,7 @@
           <img class="tool-card-logo" src="/icons/tools/bulk-compress-product-photos.svg" width="32" height="32" alt="" decoding="async" loading="lazy" />
           <div class="tool-card-head-text">
             <h3 class="card-title home-card-title mb-0">
-              <a class="home-card-title-link" href="/ja/tools/bulk-compress-product-photos" target="_blank" rel="noopener noreferrer">商品画像を一括圧縮</a>
+              <a class="home-card-title-link" href="/ja/tools/bulk-compress-product-photos" target="_blank" rel="noopener noreferrer">商品画像を一括圧縮（JPEG / PNG / WebP対応）</a>
             </h3>
             <a class="tool-no-upload-tag" href="/ja/privacy#local" aria-label="端末内で処理し、サーバーにアップロードしません。プライバシー詳細" target="_blank" rel="noopener noreferrer">非アップロード</a>
           </div>
