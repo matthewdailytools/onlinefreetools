@@ -4109,7 +4109,7 @@
     ],
     "logo": "/icons/tools/writing-prompt-generator.svg",
     "localProcessing": true,
-    "scenario": "writing",
+    "scenario": "developer",
     "subject": "text"
   },
   {

@@ -23,6 +23,6 @@
     "style": "opts"
   },
   "localProcessing": true,
-  "scenario": "writing",
+  "scenario": "developer",
   "subject": "text"
 }
