@@ -1,0 +1,27 @@
+{
+  "slug": "bulk-convert-images-to-webp",
+  "path": "/tools/bulk-convert-images-to-webp",
+  "updatedAt": "2026-09-03T08:55:00.000Z",
+  "launchedAt": "2026-09-03T08:55:00.000Z",
+  "category": "image",
+  "primaryTopic": "image-media",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_bulk_convert_images_to_webp_title",
+  "homeTitleKey": "tool_bulk_convert_images_to_webp_title",
+  "homeDescKey": "tool_bulk_convert_images_to_webp_desc",
+  "faqPrefix": "tool_bulk_convert_images_to_webp",
+  "related": [
+    "image-format-converter",
+    "bulk-convert-images-to-png"
+  ],
+  "logo": "/icons/tools/bulk-convert-images-to-webp.svg",
+  "page": {
+    "module": "../pages/bulkConvertImagesToWebpPage",
+    "export": "renderBulkConvertImagesToWebpPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "image"
+}

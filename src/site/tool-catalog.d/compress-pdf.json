@@ -12,7 +12,8 @@
   "faqPrefix": "tool_compress_pdf",
   "related": [
     "organize-pdf",
-    "merge-pdf"
+    "merge-pdf",
+    "batch-compress-pdfs-for-email"
   ],
   "logo": "/icons/tools/compress-pdf.svg",
   "page": {

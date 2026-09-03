@@ -14,7 +14,7 @@
     "related": [
       "image-overlay",
       "image-exif",
-      "image-border"
+      "batch-watermark-product-photos"
     ],
     "logo": "/icons/tools/add-watermark.svg",
     "localProcessing": true,
@@ -188,6 +188,75 @@
     "launchedAt": "2026-08-08T19:34:20+08:00"
   },
   {
+    "slug": "batch-checksum-release-files",
+    "path": "/tools/batch-checksum-release-files",
+    "updatedAt": "2026-09-03T10:20:00.000Z",
+    "launchedAt": "2026-09-03T10:20:00.000Z",
+    "category": "developer",
+    "primaryTopic": "security-ids",
+    "secondaryTopics": [
+      "files-archives"
+    ],
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_batch_checksum_release_files_title",
+    "homeTitleKey": "tool_batch_checksum_release_files_title",
+    "homeDescKey": "tool_batch_checksum_release_files_desc",
+    "faqPrefix": "tool_batch_checksum_release_files",
+    "related": [
+      "file-hash",
+      "file-metadata-analyzer"
+    ],
+    "logo": "/icons/tools/batch-checksum-release-files.svg",
+    "localProcessing": true,
+    "scenario": "developer",
+    "subject": "data"
+  },
+  {
+    "slug": "batch-compress-pdfs-for-email",
+    "path": "/tools/batch-compress-pdfs-for-email",
+    "updatedAt": "2026-09-03T10:10:00.000Z",
+    "launchedAt": "2026-09-03T10:10:00.000Z",
+    "category": "pdf",
+    "primaryTopic": "pdf-docs",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_batch_compress_pdfs_for_email_title",
+    "homeTitleKey": "tool_batch_compress_pdfs_for_email_title",
+    "homeDescKey": "tool_batch_compress_pdfs_for_email_desc",
+    "faqPrefix": "tool_batch_compress_pdfs_for_email",
+    "related": [
+      "compress-pdf",
+      "merge-pdf"
+    ],
+    "logo": "/icons/tools/batch-compress-pdfs-for-email.svg",
+    "localProcessing": true,
+    "scenario": "documents",
+    "subject": "pdf"
+  },
+  {
+    "slug": "batch-watermark-product-photos",
+    "path": "/tools/batch-watermark-product-photos",
+    "updatedAt": "2026-09-03T09:55:00.000Z",
+    "launchedAt": "2026-09-03T09:55:00.000Z",
+    "category": "image",
+    "primaryTopic": "image-media",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_batch_watermark_product_photos_title",
+    "homeTitleKey": "tool_batch_watermark_product_photos_title",
+    "homeDescKey": "tool_batch_watermark_product_photos_desc",
+    "faqPrefix": "tool_batch_watermark_product_photos",
+    "related": [
+      "add-watermark",
+      "bulk-compress-product-photos"
+    ],
+    "logo": "/icons/tools/batch-watermark-product-photos.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "image"
+  },
+  {
     "slug": "brand-color-token-pack",
     "path": "/tools/brand-color-token-pack",
     "updatedAt": "2026-08-09T00:00:00.000Z",
@@ -233,6 +302,123 @@
     "scenario": "design",
     "subject": "color",
     "launchedAt": "2026-08-08T17:55:12+08:00"
+  },
+  {
+    "slug": "bulk-compress-png-images",
+    "path": "/tools/bulk-compress-png-images",
+    "updatedAt": "2026-09-03T08:21:00.000Z",
+    "launchedAt": "2026-09-03T08:21:00.000Z",
+    "category": "image",
+    "primaryTopic": "image-media",
+    "secondaryTopics": [
+      "seo-growth"
+    ],
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_bulk_compress_png_images_title",
+    "homeTitleKey": "tool_bulk_compress_png_images_title",
+    "homeDescKey": "tool_bulk_compress_png_images_desc",
+    "faqPrefix": "tool_bulk_compress_png_images",
+    "related": [
+      "image-compress",
+      "bulk-compress-product-photos"
+    ],
+    "logo": "/icons/tools/bulk-compress-png-images.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "image"
+  },
+  {
+    "slug": "bulk-compress-product-photos",
+    "path": "/tools/bulk-compress-product-photos",
+    "updatedAt": "2026-09-03T07:34:00.000Z",
+    "launchedAt": "2026-09-03T07:34:00.000Z",
+    "category": "image",
+    "primaryTopic": "image-media",
+    "secondaryTopics": [
+      "seo-growth"
+    ],
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_bulk_compress_product_photos_title",
+    "homeTitleKey": "tool_bulk_compress_product_photos_title",
+    "homeDescKey": "tool_bulk_compress_product_photos_desc",
+    "faqPrefix": "tool_bulk_compress_product_photos",
+    "related": [
+      "image-compress",
+      "image-format-converter"
+    ],
+    "logo": "/icons/tools/bulk-compress-product-photos.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "image"
+  },
+  {
+    "slug": "bulk-convert-images-to-jpg",
+    "path": "/tools/bulk-convert-images-to-jpg",
+    "updatedAt": "2026-09-03T08:37:00.000Z",
+    "launchedAt": "2026-09-03T08:37:00.000Z",
+    "category": "image",
+    "primaryTopic": "image-media",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_bulk_convert_images_to_jpg_title",
+    "homeTitleKey": "tool_bulk_convert_images_to_jpg_title",
+    "homeDescKey": "tool_bulk_convert_images_to_jpg_desc",
+    "faqPrefix": "tool_bulk_convert_images_to_jpg",
+    "related": [
+      "image-format-converter",
+      "bulk-compress-product-photos"
+    ],
+    "logo": "/icons/tools/bulk-convert-images-to-jpg.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "image"
+  },
+  {
+    "slug": "bulk-convert-images-to-png",
+    "path": "/tools/bulk-convert-images-to-png",
+    "updatedAt": "2026-09-03T08:50:00.000Z",
+    "launchedAt": "2026-09-03T08:50:00.000Z",
+    "category": "image",
+    "primaryTopic": "image-media",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_bulk_convert_images_to_png_title",
+    "homeTitleKey": "tool_bulk_convert_images_to_png_title",
+    "homeDescKey": "tool_bulk_convert_images_to_png_desc",
+    "faqPrefix": "tool_bulk_convert_images_to_png",
+    "related": [
+      "image-format-converter",
+      "bulk-convert-images-to-jpg",
+      "bulk-convert-images-to-webp"
+    ],
+    "logo": "/icons/tools/bulk-convert-images-to-png.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "image"
+  },
+  {
+    "slug": "bulk-convert-images-to-webp",
+    "path": "/tools/bulk-convert-images-to-webp",
+    "updatedAt": "2026-09-03T08:55:00.000Z",
+    "launchedAt": "2026-09-03T08:55:00.000Z",
+    "category": "image",
+    "primaryTopic": "image-media",
+    "featured": true,
+    "ymyl": false,
+    "i18nKey": "tool_bulk_convert_images_to_webp_title",
+    "homeTitleKey": "tool_bulk_convert_images_to_webp_title",
+    "homeDescKey": "tool_bulk_convert_images_to_webp_desc",
+    "faqPrefix": "tool_bulk_convert_images_to_webp",
+    "related": [
+      "image-format-converter",
+      "bulk-convert-images-to-png"
+    ],
+    "logo": "/icons/tools/bulk-convert-images-to-webp.svg",
+    "localProcessing": true,
+    "scenario": "media",
+    "subject": "image"
   },
   {
     "slug": "chatgpt-export-to-markdown",
@@ -435,7 +621,8 @@
     "faqPrefix": "tool_compress_pdf",
     "related": [
       "organize-pdf",
-      "merge-pdf"
+      "merge-pdf",
+      "batch-compress-pdfs-for-email"
     ],
     "logo": "/icons/tools/compress-pdf.svg",
     "localProcessing": true,
@@ -630,7 +817,7 @@
     "faqPrefix": "tool_file_hash",
     "related": [
       "base64",
-      "text-diff"
+      "batch-checksum-release-files"
     ],
     "logo": "/icons/tools/file-hash.svg",
     "localProcessing": true,

@@ -1,0 +1,27 @@
+{
+  "slug": "batch-compress-pdfs-for-email",
+  "path": "/tools/batch-compress-pdfs-for-email",
+  "updatedAt": "2026-09-03T10:10:00.000Z",
+  "launchedAt": "2026-09-03T10:10:00.000Z",
+  "category": "pdf",
+  "primaryTopic": "pdf-docs",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_batch_compress_pdfs_for_email_title",
+  "homeTitleKey": "tool_batch_compress_pdfs_for_email_title",
+  "homeDescKey": "tool_batch_compress_pdfs_for_email_desc",
+  "faqPrefix": "tool_batch_compress_pdfs_for_email",
+  "related": [
+    "compress-pdf",
+    "merge-pdf"
+  ],
+  "logo": "/icons/tools/batch-compress-pdfs-for-email.svg",
+  "page": {
+    "module": "../pages/batchCompressPdfsForEmailPage",
+    "export": "renderBatchCompressPdfsForEmailPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "documents",
+  "subject": "pdf"
+}

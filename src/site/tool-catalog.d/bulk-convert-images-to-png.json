@@ -1,0 +1,28 @@
+{
+  "slug": "bulk-convert-images-to-png",
+  "path": "/tools/bulk-convert-images-to-png",
+  "updatedAt": "2026-09-03T08:50:00.000Z",
+  "launchedAt": "2026-09-03T08:50:00.000Z",
+  "category": "image",
+  "primaryTopic": "image-media",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_bulk_convert_images_to_png_title",
+  "homeTitleKey": "tool_bulk_convert_images_to_png_title",
+  "homeDescKey": "tool_bulk_convert_images_to_png_desc",
+  "faqPrefix": "tool_bulk_convert_images_to_png",
+  "related": [
+    "image-format-converter",
+    "bulk-convert-images-to-jpg",
+    "bulk-convert-images-to-webp"
+  ],
+  "logo": "/icons/tools/bulk-convert-images-to-png.svg",
+  "page": {
+    "module": "../pages/bulkConvertImagesToPngPage",
+    "export": "renderBulkConvertImagesToPngPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "image"
+}

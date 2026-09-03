@@ -1,0 +1,96 @@
+/**
+ * Фрагмент i18n (bulk-compress-product-photos / ru).
+ * H1 поиска: сжать фото товаров пакетом.
+ */
+import type { SiteLangDict } from '../../../types';
+
+/** Русский текст инструмента: карточки товара, не калька с английского. */
+const ru: SiteLangDict = {
+	tool_bulk_compress_product_photos_article:
+		'Сожмите набор фото карточки в этой вкладке, с общим лимитом размера, пропустите сбои и скачайте ZIP. Файлы остаются на устройстве, без загрузки на сервер.',
+	tool_bulk_compress_product_photos_chip_200kb: '200 КБ',
+	tool_bulk_compress_product_photos_chip_jpeg: 'JPEG',
+	tool_bulk_compress_product_photos_chip_jpg: '.jpg',
+	tool_bulk_compress_product_photos_choose_files: 'Выбрать фото товаров',
+	tool_bulk_compress_product_photos_clear: 'Очистить',
+	tool_bulk_compress_product_photos_col_after: 'После',
+	tool_bulk_compress_product_photos_col_before: 'До',
+	tool_bulk_compress_product_photos_col_name: 'Файл',
+	tool_bulk_compress_product_photos_col_status: 'Статус',
+	tool_bulk_compress_product_photos_compress: 'Сжать все',
+	tool_bulk_compress_product_photos_desc:
+		'Сжать фото товаров примерно до 200 КБ и скачать ZIP; остаются на устройстве, без загрузки на сервер.',
+	tool_bulk_compress_product_photos_description:
+		'Сжать фото товаров пакетом: добавьте снимки карточки, задайте длинную сторону и потолок 200 КБ, перекодируйте в JPEG или WebP здесь, пропустите сбои, скачайте ZIP. Шаги: наберите очередь, оставьте чип 200 КБ если канал так просит, сожмите всё, смотрите попадание или промах. Пример: при открытии уже сжимаются два образца. Файлы остаются на устройстве, без загрузки на сервер.',
+	tool_bulk_compress_product_photos_download_zip: 'Скачать ZIP',
+	tool_bulk_compress_product_photos_drop_hint: 'Перетащите JPEG, PNG или WebP (до 20). Сжатие не покидает вкладку.',
+	tool_bulk_compress_product_photos_empty: 'Сначала добавьте фото товаров.',
+	tool_bulk_compress_product_photos_err_decode: 'Это фото не удалось прочитать — пропущено.',
+	tool_bulk_compress_product_photos_err_encode: 'Это фото не удалось сжать — пропущено.',
+	tool_bulk_compress_product_photos_err_fflate: 'Браузер не собрал ZIP. Попробуйте более новый.',
+	tool_bulk_compress_product_photos_err_too_many: 'Не больше 20 фото. Лишние не добавлены.',
+	tool_bulk_compress_product_photos_err_webp: 'Браузер не пишет WebP. Выбран JPEG (.jpg).',
+	tool_bulk_compress_product_photos_example:
+		'Загрузить пример кладёт два фото, сжимает JPEG на 200 КБ, заполняет таблицу и включает ZIP. Дубликаты становятся name (2).jpg.',
+	tool_bulk_compress_product_photos_example_title: 'Пример',
+	tool_bulk_compress_product_photos_faq_a1:
+		'Нет. Всё в этой вкладке. Файлы остаются на устройстве, без загрузки на сервер. Скрипт ZIP может прийти с CDN; ваши фото не уходят.',
+	tool_bulk_compress_product_photos_faq_a2:
+		'Не всегда. Если при качестве 0.5 лимит всё ещё превышен, строка помечается промахом, но ближайший файл остаётся в архиве.',
+	tool_bulk_compress_product_photos_faq_a3:
+		'Вторая страница не нужна. JPEG и JPG — один вывод с расширением .jpg.',
+	tool_bulk_compress_product_photos_faq_a4:
+		'Прозрачный PNG, который должен остаться PNG, — на страницу сжатия PNG. Здесь облегчают фото каталога.',
+	tool_bulk_compress_product_photos_faq_a5:
+		'Нет. Сжимается только первый кадр как статичный снимок.',
+	tool_bulk_compress_product_photos_faq_q1: 'Фото товаров загружаются на сервер?',
+	tool_bulk_compress_product_photos_faq_q2: 'Каждое фото уложится в 200 КБ?',
+	tool_bulk_compress_product_photos_faq_q3: 'Нужен отдельный инструмент JPEG кроме JPG?',
+	tool_bulk_compress_product_photos_faq_q4: 'Подойдёт для прозрачного PNG-логотипа?',
+	tool_bulk_compress_product_photos_faq_q5: 'Анимированный GIF останется живым?',
+	tool_bulk_compress_product_photos_file_count_tpl: 'В очереди {n} фото',
+	tool_bulk_compress_product_photos_format_jpeg: 'JPEG (.jpg)',
+	tool_bulk_compress_product_photos_format_webp: 'WebP',
+	tool_bulk_compress_product_photos_how_body:
+		'Соберите фото карточки, задайте общий лимит, сожмите здесь и заберите ZIP удачных файлов.',
+	tool_bulk_compress_product_photos_how_item_1: 'Выберите фото товаров, которые должны стать легче.',
+	tool_bulk_compress_product_photos_how_item_2: 'Оставьте чип 200 КБ, если так просит площадка. По умолчанию JPEG (.jpg).',
+	tool_bulk_compress_product_photos_how_item_3: 'Если телефон снимает огромно, сначала ограничьте длинную сторону.',
+	tool_bulk_compress_product_photos_how_item_4: 'Нажмите «Сжать все» и смотрите попадание, промах или пропуск.',
+	tool_bulk_compress_product_photos_how_item_5: 'Скачайте ZIP, если удался хотя бы один файл. Пример уже отработал при открытии.',
+	tool_bulk_compress_product_photos_how_title: 'Как пользоваться',
+	tool_bulk_compress_product_photos_jpeg_bg_black: 'Чёрный',
+	tool_bulk_compress_product_photos_jpeg_bg_custom: 'Свой',
+	tool_bulk_compress_product_photos_jpeg_bg_label: 'Фон JPEG',
+	tool_bulk_compress_product_photos_jpeg_bg_white: 'Белый',
+	tool_bulk_compress_product_photos_max_edge_label: 'Длинная сторона',
+	tool_bulk_compress_product_photos_output_label: 'Выход',
+	tool_bulk_compress_product_photos_quality_label: 'Качество',
+	tool_bulk_compress_product_photos_resize_on: 'Ограничить длинную сторону',
+	tool_bulk_compress_product_photos_rules_body:
+		'Одни настройки на весь пакет. Промах по лимиту виден в таблице, а не в ложном «всё готово».',
+	tool_bulk_compress_product_photos_rules_item_1: 'Длинная сторона только уменьшается, без увеличения.',
+	tool_bulk_compress_product_photos_rules_item_2: 'Качество действует на JPEG и WebP. Потолок 200 КБ снижают до 0.5.',
+	tool_bulk_compress_product_photos_rules_item_3: 'Ошибка чтения пропускает только эту строку. Дубли в ZIP — name (2).jpg.',
+	tool_bulk_compress_product_photos_rules_item_4: 'Файлы остаются на устройстве, без загрузки на сервер. EXIF обычно пропадает.',
+	tool_bulk_compress_product_photos_rules_title: 'Правила и границы',
+	tool_bulk_compress_product_photos_sample: 'Загрузить пример',
+	tool_bulk_compress_product_photos_status_compressing: 'Сжимаем пакет…',
+	tool_bulk_compress_product_photos_status_done: 'Готово — смотрите таблицу и скачивайте ZIP.',
+	tool_bulk_compress_product_photos_status_hit: 'В лимите',
+	tool_bulk_compress_product_photos_status_miss: 'Сверх лимита',
+	tool_bulk_compress_product_photos_status_skip: 'Пропущено',
+	tool_bulk_compress_product_photos_summary_tpl: '{ok} готовы · {miss} сверх лимита · {skip} пропущены',
+	tool_bulk_compress_product_photos_target_kb_label: 'Макс. размер',
+	tool_bulk_compress_product_photos_target_on: 'Целиться в размер',
+	tool_bulk_compress_product_photos_title: 'Сжать фото товаров пакетом',
+	tool_bulk_compress_product_photos_usecase_1: 'День выкладки: ужать SKU-фото к потолку 200 КБ.',
+	tool_bulk_compress_product_photos_usecase_2: 'Отправить покупателю пачку снимков, не уперевшись в вложение.',
+	tool_bulk_compress_product_photos_usecase_3: 'Отдать дизайнеру лёгкий ZIP той же съёмки.',
+	tool_bulk_compress_product_photos_usecases_title: 'Когда подходит',
+	tool_bulk_compress_product_photos_warn_anim: 'Анимация: сжимается только первый кадр.',
+	tool_bulk_compress_product_photos_warn_edge: 'Есть фото шире 8192 px — будет медленно.',
+	tool_bulk_compress_product_photos_warn_large: 'Есть файл больше 25 МБ — вкладке может не хватить памяти.',
+};
+
+export default ru;

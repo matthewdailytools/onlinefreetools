@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img">
+  <rect width="32" height="32" rx="8" fill="#1c83a8"/>
+  <!-- stacked photo frames -->
+  <rect x="6" y="10" width="11" height="8" rx="1.2" fill="none" stroke="#fff" stroke-width="1.5"/>
+  <rect x="8" y="8" width="11" height="8" rx="1.2" fill="none" stroke="#fff" stroke-width="1.5"/>
+  <circle cx="11.2" cy="10.6" r="0.9" fill="#fff"/>
+  <!-- compress arrows -->
+  <path d="M22 9h6M22 9l2-2M22 9l2 2" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M28 23h-6M28 23l-2-2M28 23l-2 2" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M21 13v6M21 13l-1.6 1.4M21 13l1.6 1.4M21 19l-1.6-1.4M21 19l1.6-1.4" fill="none" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

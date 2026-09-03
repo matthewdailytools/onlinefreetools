@@ -1,0 +1,97 @@
+/**
+ * Fragmento i18n (bulk-compress-product-photos / es).
+ * H1 de búsqueda: comprimir fotos de producto en lote.
+ */
+import type { SiteLangDict } from '../../../types';
+
+/** Castellano de herramienta: fichas de producto, no calco del inglés. */
+const es: SiteLangDict = {
+	tool_bulk_compress_product_photos_article:
+		'Reduce un lote de fotos de ficha en esta pestaña, comparte un techo de peso, omite las que fallen y baja un ZIP. Las fotos se quedan en el dispositivo y no se suben al servidor.',
+	tool_bulk_compress_product_photos_chip_200kb: '200 KB',
+	tool_bulk_compress_product_photos_chip_jpeg: 'JPEG',
+	tool_bulk_compress_product_photos_chip_jpg: '.jpg',
+	tool_bulk_compress_product_photos_choose_files: 'Elegir fotos de producto',
+	tool_bulk_compress_product_photos_clear: 'Borrar',
+	tool_bulk_compress_product_photos_col_after: 'Después',
+	tool_bulk_compress_product_photos_col_before: 'Antes',
+	tool_bulk_compress_product_photos_col_name: 'Archivo',
+	tool_bulk_compress_product_photos_col_status: 'Estado',
+	tool_bulk_compress_product_photos_compress: 'Comprimir todo',
+	tool_bulk_compress_product_photos_desc:
+		'Comprime fotos de producto hacia 200 KB y descarga un ZIP; no salen del dispositivo ni se suben al servidor.',
+	tool_bulk_compress_product_photos_description:
+		'Comprimir fotos de producto en lote: añade las fotos del anuncio, comparte el lado más largo y un tope de 200 KB, recodifica a JPEG o WebP aquí, omite fallos y descarga el ZIP. Pasos: carga el lote, deja el chip de 200 KB si el canal lo pide, comprime y lee acierto o fallo. Ejemplo: al abrir ya se comprimen dos fotos de muestra. Los archivos se quedan en el dispositivo y no se suben al servidor.',
+	tool_bulk_compress_product_photos_download_zip: 'Descargar ZIP',
+	tool_bulk_compress_product_photos_drop_hint:
+		'Suelta JPEG, PNG o WebP (hasta 20). La compresión no sale de esta pestaña.',
+	tool_bulk_compress_product_photos_empty: 'Añade fotos de producto primero.',
+	tool_bulk_compress_product_photos_err_decode: 'No se pudo leer esta foto; se omitió.',
+	tool_bulk_compress_product_photos_err_encode: 'No se pudo comprimir esta foto; se omitió.',
+	tool_bulk_compress_product_photos_err_fflate: 'Este navegador no pudo armar el ZIP. Prueba uno actual.',
+	tool_bulk_compress_product_photos_err_too_many: 'Como máximo 20 fotos. Las demás no se añadieron.',
+	tool_bulk_compress_product_photos_err_webp: 'Este navegador no escribe WebP. Se eligió JPEG (.jpg).',
+	tool_bulk_compress_product_photos_example:
+		'Cargar ejemplo mete dos fotos de ficha, las comprime a 200 KB JPEG, llena la tabla y activa Descargar ZIP. Los nombres repetidos pasan a name (2).jpg.',
+	tool_bulk_compress_product_photos_example_title: 'Ejemplo',
+	tool_bulk_compress_product_photos_faq_a1:
+		'No. Todo ocurre en la pestaña. Las fotos se quedan en el dispositivo y no se suben al servidor. El script del ZIP puede venir de un CDN; tus archivos no viajan.',
+	tool_bulk_compress_product_photos_faq_a2:
+		'No siempre. Si el suelo de calidad 0.5 sigue por encima del tope, la fila marca fallo pero guarda el archivo más cercano.',
+	tool_bulk_compress_product_photos_faq_a3:
+		'No hace falta otra página. JPEG y JPG son la misma salida; el nombre usa .jpg.',
+	tool_bulk_compress_product_photos_faq_a4:
+		'Si el PNG debe seguir transparente, usa una página de comprimir PNG. Aquí el trabajo es aligerar fotos de catálogo.',
+	tool_bulk_compress_product_photos_faq_a5:
+		'No. Solo se comprime el primer fotograma y se avisa en la alerta.',
+	tool_bulk_compress_product_photos_faq_q1: '¿Se suben las fotos a un servidor?',
+	tool_bulk_compress_product_photos_faq_q2: '¿Todas caben en 200 KB?',
+	tool_bulk_compress_product_photos_faq_q3: '¿JPEG pide otra herramienta distinta de JPG?',
+	tool_bulk_compress_product_photos_faq_q4: '¿Sirve para un logo PNG transparente?',
+	tool_bulk_compress_product_photos_faq_q5: '¿Un GIF animado sigue en movimiento?',
+	tool_bulk_compress_product_photos_file_count_tpl: '{n} fotos en la cola',
+	tool_bulk_compress_product_photos_format_jpeg: 'JPEG (.jpg)',
+	tool_bulk_compress_product_photos_format_webp: 'WebP',
+	tool_bulk_compress_product_photos_how_body:
+		'Elige el lote del anuncio, comparte un tope de peso, comprime aquí y llévate el ZIP de lo que sí salió.',
+	tool_bulk_compress_product_photos_how_item_1: 'Reúne las fotos de producto que deben pesar menos.',
+	tool_bulk_compress_product_photos_how_item_2: 'Deja el chip de 200 KB si el marketplace lo exige; JPEG (.jpg) es el formato por defecto.',
+	tool_bulk_compress_product_photos_how_item_3: 'Si el móvil dispara a enorme resolución, recorta primero el lado más largo.',
+	tool_bulk_compress_product_photos_how_item_4: 'Pulsa Comprimir todo y lee acierto, fallo de tope u omisión.',
+	tool_bulk_compress_product_photos_how_item_5: 'Descarga el ZIP cuando haya al menos un éxito. El ejemplo ya corrió al abrir.',
+	tool_bulk_compress_product_photos_how_title: 'Cómo hacerlo',
+	tool_bulk_compress_product_photos_jpeg_bg_black: 'Negro',
+	tool_bulk_compress_product_photos_jpeg_bg_custom: 'Personalizado',
+	tool_bulk_compress_product_photos_jpeg_bg_label: 'Fondo JPEG',
+	tool_bulk_compress_product_photos_jpeg_bg_white: 'Blanco',
+	tool_bulk_compress_product_photos_max_edge_label: 'Lado máximo',
+	tool_bulk_compress_product_photos_output_label: 'Salida',
+	tool_bulk_compress_product_photos_quality_label: 'Calidad',
+	tool_bulk_compress_product_photos_resize_on: 'Limitar el lado más largo',
+	tool_bulk_compress_product_photos_rules_body:
+		'Los mismos controles valen para todo el lote. Si una foto no entra en el tope, la tabla lo dice.',
+	tool_bulk_compress_product_photos_rules_item_1: 'El lado más largo solo reduce; nunca agranda.',
+	tool_bulk_compress_product_photos_rules_item_2: 'La calidad vale para JPEG y WebP. El tope de 200 KB baja hasta 0.5.',
+	tool_bulk_compress_product_photos_rules_item_3: 'Un fallo de lectura omite esa fila. Los duplicados en el ZIP se llaman name (2).jpg.',
+	tool_bulk_compress_product_photos_rules_item_4: 'Las fotos se quedan en el dispositivo y no se suben al servidor. Suele perderse el EXIF.',
+	tool_bulk_compress_product_photos_rules_title: 'Reglas a tener en cuenta',
+	tool_bulk_compress_product_photos_sample: 'Cargar ejemplo',
+	tool_bulk_compress_product_photos_status_compressing: 'Comprimiendo el lote…',
+	tool_bulk_compress_product_photos_status_done: 'Lote listo: mira la tabla y descarga el ZIP.',
+	tool_bulk_compress_product_photos_status_hit: 'Dentro',
+	tool_bulk_compress_product_photos_status_miss: 'Fuera de tope',
+	tool_bulk_compress_product_photos_status_skip: 'Omitida',
+	tool_bulk_compress_product_photos_summary_tpl: '{ok} listas · {miss} fuera de tope · {skip} omitidas',
+	tool_bulk_compress_product_photos_target_kb_label: 'Peso máximo',
+	tool_bulk_compress_product_photos_target_on: 'Apuntar a un tamaño',
+	tool_bulk_compress_product_photos_title: 'Comprimir fotos de producto en lote',
+	tool_bulk_compress_product_photos_usecase_1: 'Día de alta: bajar las fotos SKU hacia el tope de 200 KB del canal.',
+	tool_bulk_compress_product_photos_usecase_2: 'Enviar al comprador un paquete de fotos sin rebotar el correo.',
+	tool_bulk_compress_product_photos_usecase_3: 'Pasar al diseño un ZIP ligero del mismo shooting.',
+	tool_bulk_compress_product_photos_usecases_title: 'Cuándo encaja',
+	tool_bulk_compress_product_photos_warn_anim: 'En animaciones solo se comprime el primer fotograma.',
+	tool_bulk_compress_product_photos_warn_edge: 'Hay una foto de más de 8192 px: puede ir lento.',
+	tool_bulk_compress_product_photos_warn_large: 'Hay un archivo de más de 25 MB: esta pestaña puede quedarse sin memoria.',
+};
+
+export default es;

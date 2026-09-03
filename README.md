@@ -22,6 +22,7 @@
 - [JSON Schema 校验器](https://onlinefreetools.org/zh/tools/json-schema-validator) - 浏览器内用 draft-07 Schema 校验 JSON，并以 JSON Pointer 定位错误
 - [HTML 实体编解码](https://onlinefreetools.org/zh/tools/html-entity) - 浏览器内 HTML 实体编码与解码：范围、命名/数字形式、严格解码
 - [文件哈希校验](https://onlinefreetools.org/zh/tools/file-hash) - 在浏览器内校验文本或文件的 MD5、SHA 等十六进制摘要
+- [批量计算发版文件校验和](https://onlinefreetools.org/zh/tools/batch-checksum-release-files) - 批量计算发版文件校验和 — SHA-256 表、SUMS 对照、CSV 导出，不打原文件 ZIP；文件留在本机、不上传服务器
 - [文件元数据分析器](https://onlinefreetools.org/zh/tools/file-metadata-analyzer) - 本地查看文件大小、MIME、修改时间，以及图片尺寸或音视频时长；文件留在设备、不上传服务器
 - [在线解压 ZIP](https://onlinefreetools.org/zh/tools/unzip-file) - 浏览器内查看 ZIP 文件树、预览文本/图片，并下载单个文件或导出全部，不上传服务器
 - [创建 zip 文件](https://onlinefreetools.org/zh/tools/create-zip-file) - 在浏览器里把多个文件打成 ZIP 下载；可保留文件夹路径；文件留在设备、不上传服务器
@@ -43,6 +44,12 @@
 - [图片格式转换](https://onlinefreetools.org/zh/tools/image-format-converter) - 浏览器内 PNG / JPEG / WebP / AVIF 互转：质量、透明底色与本地处理
 - [图片 EXIF 查看与清除](https://onlinefreetools.org/zh/tools/image-exif) - 本地查看 GPS/相机等元数据，并重编码清除后下载
 - [图片压缩](https://onlinefreetools.org/zh/tools/image-compress) - 本地按最长边、质量与目标体积压缩图片（JPEG/WebP/PNG）
+- [批量压缩商品图](https://onlinefreetools.org/zh/tools/bulk-compress-product-photos) - 一次压多张上架照片到约 200 KB 并下载 ZIP；文件留在本机、不上传服务器
+- [批量压缩 PNG](https://onlinefreetools.org/zh/tools/bulk-compress-png-images) - 保透明、可选最长边、ZIP；文件留在本机、不上传服务器
+- [批量把图片转成 JPG](https://onlinefreetools.org/zh/tools/bulk-convert-images-to-jpg) - 批量把图片转成 JPG — 透明垫底、失败跳过、ZIP；文件留在本机、不上传服务器
+- [批量把图片转成 PNG](https://onlinefreetools.org/zh/tools/bulk-convert-images-to-png) - 批量把图片转成 PNG — 保透明、体积变大会标出、ZIP；文件留在本机、不上传服务器
+- [批量把图片转成 WebP](https://onlinefreetools.org/zh/tools/bulk-convert-images-to-webp) - 批量把图片转成 WebP — 有损画质、保透明、失败跳过、ZIP；文件留在本机、不上传服务器
+- [批量给商品图加水印](https://onlinefreetools.org/zh/tools/batch-watermark-product-photos) - 批量给商品图加水印 — 短边百分比、先预览再全部套用、ZIP；文件留在本机、不上传服务器
 - [Amazon 主图尺寸](https://onlinefreetools.org/zh/tools/amazon-main-image-size) - 把商品图导出为 2000×2000 白底主图 JPEG，并提示 1000px 缩放下限；文件留在设备、不上传服务器
 - [iPhone 6.9 截图尺寸](https://onlinefreetools.org/zh/tools/iphone-app-store-screenshot) - 把截图 cover 导出为 1320×2868 等 6.9 必传档；文件留在设备、不上传服务器
 - [apple-touch-icon 180×180](https://onlinefreetools.org/zh/tools/apple-touch-icon) - 把 logo 导出为不透明 180×180 PNG，可选 32/192/512 ZIP；文件留在设备、不上传服务器
@@ -87,6 +94,7 @@
 - [旋转 PDF](https://onlinefreetools.org/zh/tools/rotate-pdf) - 浏览器内把页面转正，全部页或指定范围，不上传
 - [裁切 PDF](https://onlinefreetools.org/zh/tools/crop-pdf) - 浏览器内按 pt 裁切页边距，非拖拽像素编辑，不上传
 - [压缩 PDF](https://onlinefreetools.org/zh/tools/compress-pdf) - 浏览器内缩小 PDF 体积，不上传
+- [批量压缩 PDF 以便发邮件](https://onlinefreetools.org/zh/tools/batch-compress-pdfs-for-email) - 批量压缩 PDF 以便发邮件 — 各自压小打 ZIP、不合并；文件留在本机、不上传服务器
 - [保护 PDF](https://onlinefreetools.org/zh/tools/protect-pdf) - 浏览器内给 PDF 加打开密码，不上传
 - [解锁 PDF](https://onlinefreetools.org/zh/tools/unlock-pdf) - 用已知密码去掉 PDF 保护，非破解，不上传
 - [PDF 页多尺寸导出](https://onlinefreetools.org/zh/tools/pdf-page-to-image-sizes) - 浏览器内把 PDF 一页导出为多平台 JPEG 尺寸包（ZIP），不上传
@@ -193,6 +201,7 @@ Below are our available online tools with their links (English version):
 - [JSON Schema Validator](https://onlinefreetools.org/tools/json-schema-validator) - Validate JSON against draft-07 Schema with JSON Pointer error paths — local in the browser
 - [HTML Entity Encoder & Decoder](https://onlinefreetools.org/tools/html-entity) - Encode and decode HTML entities with scope, named/decimal/hex output, and strict decode — all in-browser
 - [File Hash Checker](https://onlinefreetools.org/tools/file-hash) - Verify MD5 and SHA hex digests for pasted text or local files in your browser
+- [Batch checksum release files](https://onlinefreetools.org/tools/batch-checksum-release-files) - Batch checksum release files — SHA-256 table, SHA256SUMS compare, CSV/SUMS export, not a ZIP of the binaries — stays on the device, not uploaded to a server
 - [File metadata analyzer](https://onlinefreetools.org/tools/file-metadata-analyzer) - Inspect local file size, MIME, modified time, plus image dimensions or A/V duration — stays on the device, not uploaded
 - [Unzip File Online](https://onlinefreetools.org/tools/unzip-file) - Inspect ZIP contents, preview text/images, and download one file or export all in your browser — no server upload
 - [Create zip file](https://onlinefreetools.org/tools/create-zip-file) - Pack several files into a ZIP in your browser, keep folder paths when the browser provides them — stays on the device, not uploaded
@@ -214,6 +223,12 @@ Below are our available online tools with their links (English version):
 - [Image Format Converter](https://onlinefreetools.org/tools/image-format-converter) - Convert PNG, JPEG, WebP, and AVIF locally with quality, JPEG matte, and MIME checks
 - [EXIF Viewer & Remover](https://onlinefreetools.org/tools/image-exif) - View GPS/camera metadata locally and download a stripped re-encoded copy
 - [Image Compressor](https://onlinefreetools.org/tools/image-compress) - Resize, set quality or a target file size, and download — runs locally in your browser
+- [Bulk compress product photos](https://onlinefreetools.org/tools/bulk-compress-product-photos) - Shrink a folder of listing photos toward 200 KB and download a ZIP — stays on the device, not uploaded to a server
+- [Bulk compress PNG images](https://onlinefreetools.org/tools/bulk-compress-png-images) - keep alpha, optional longest edge, ZIP — stays on the device, not uploaded to a server
+- [Bulk convert images to JPG](https://onlinefreetools.org/tools/bulk-convert-images-to-jpg) - Bulk convert images to JPG — shared matte, skip failures, ZIP — stays on the device, not uploaded to a server
+- [Bulk convert images to PNG](https://onlinefreetools.org/tools/bulk-convert-images-to-png) - Bulk convert images to PNG — keep alpha, mark when larger, ZIP — stays on the device, not uploaded to a server
+- [Bulk convert images to WebP](https://onlinefreetools.org/tools/bulk-convert-images-to-webp) - Bulk convert images to WebP — lossy quality, keep alpha, skip failures, ZIP — stays on the device, not uploaded to a server
+- [Batch watermark product photos](https://onlinefreetools.org/tools/batch-watermark-product-photos) - Batch watermark product photos — short-edge stamp, preview one, apply all, ZIP — stays on the device, not uploaded to a server
 - [Amazon main image size](https://onlinefreetools.org/tools/amazon-main-image-size) - Export a 2000×2000 white-background main image and check the 1000px zoom floor — stays on the device, not uploaded
 - [iPhone 6.9 screenshot size](https://onlinefreetools.org/tools/iphone-app-store-screenshot) - Cover-fill a screenshot to 1320×2868 (and the other 6.9 pairs) — stays on the device, not uploaded
 - [Apple-touch-icon 180×180](https://onlinefreetools.org/tools/apple-touch-icon) - Export an opaque 180×180 PNG (optional 32 / 192 / 512 ZIP) — stays on the device, not uploaded
@@ -258,6 +273,7 @@ Below are our available online tools with their links (English version):
 - [Rotate PDF](https://onlinefreetools.org/tools/rotate-pdf) - Fix page orientation locally — all pages or ranges, no upload
 - [Crop PDF](https://onlinefreetools.org/tools/crop-pdf) - Trim page margins in points locally — not a drag pixel editor, no upload
 - [Compress PDF](https://onlinefreetools.org/tools/compress-pdf) - Shrink PDF file size in your browser — no upload
+- [Batch compress PDFs for email](https://onlinefreetools.org/tools/batch-compress-pdfs-for-email) - Batch compress PDFs for email — separate files in a ZIP, not a merge — stays on the device, not uploaded to a server
 - [Protect PDF](https://onlinefreetools.org/tools/protect-pdf) - Password-protect a PDF locally in your browser — no upload
 - [Unlock PDF](https://onlinefreetools.org/tools/unlock-pdf) - Remove PDF open password you already know — not cracking, no upload
 - [PDF Page to Image Sizes](https://onlinefreetools.org/tools/pdf-page-to-image-sizes) - Export one PDF page as a multi-size JPEG pack locally — ZIP, no upload

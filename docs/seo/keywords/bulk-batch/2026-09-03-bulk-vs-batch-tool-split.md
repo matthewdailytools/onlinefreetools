@@ -17,7 +17,7 @@
 
 | 选型 | 用户怎么搜 | 本批用在 |
 |---|---|---|
-| **bulk** | `in bulk`、`bulk compress/convert/resize`：强调一次很多份（电商图、资源夹） | 商品图压缩、转 WebP、SVG 图标集、Amazon 主图套规格、剥 EXIF、灰化扫描件 |
+| **bulk** | `in bulk`、`bulk compress/convert/resize`：强调一次很多份（电商图、资源夹） | 商品图压缩、按目标格式批量转换、SVG 图标集、Amazon 主图套规格、剥 EXIF、灰化扫描件 |
 | **batch** | `batch watermark`、`batch compress pdf`、`batch checksum`：同一流程跑一个集合（办公/发版） | 图片水印、PDF 压缩/水印/加密/解锁、发版校验和、转正扫描 PDF |
 
 规则：
@@ -25,6 +25,30 @@
 1. 每个 slug **只出现其中一个词**；落选词只进 FAQ / description。  
 2. 头词如 `bulk image compressor` 被 iLoveIMG 类站占位 → H1 用**场景句**（§3.3 G），不硬刚品类。  
 3. 中文搜法（批量压缩图片、批量水印）在十语 brief 里按当地习惯写，不把 bulk/batch 硬塞进 zh H1。
+
+### 0.1 批量「转换」按目标格式拆 URL（2026-09-03）
+
+用户一般**不按编码器思考**（不会先打开万能转换器再选 WebP）。搜法是「要哪种结果文件」：`转成 jpg`、`png to jpg`、`heic to jpg`、`转 png`、少数才是 `to webp`。
+
+因此 **禁止** 单页 `bulk-convert-images-to-webp` 用芯片改 JPEG/PNG/AVIF。按**输出格式**拆独立 slug；进页即该格式，无格式下拉。方向对（png→jpg）是同一输出作业，absorb 进目标格式页。
+
+拆页成立是因为 **Rules/失败模式不同**（JPG 必须垫底丢透明；PNG 保透明且常变大；WebP 有损+透明且部分客户端不认），不是换 title。AVIF 用户更不熟且编码慢 → 独立 slug 但 defer。
+
+### 0.2 批量「压缩」按对象拆 URL（不是万能 compressor）
+
+搜法是「把哪类文件变小」，不是打开 `bulk-image-compress` 再选。和转换簇对齐：用户认 **JPG / PNG / PDF**，不认 MozJPEG/OxiPNG。
+
+| 可做独立 slug | 用户搜法 | 作业（须与邻页不同） | 不做的近义 |
+|---|---|---|---|
+| `bulk-compress-product-photos` | compress images in bulk; compress jpg; reduce photo size; compress to 200kb | 照片有损变小（输出 JPEG 或 WebP、目标 KB、最长边） | `bulk-compress-jpg` 第二页；jpeg vs jpg |
+| `bulk-compress-png-images` | compress png; compress png in bulk; tinypng 类意图 | **仍是 PNG**：保透明、调色/重编码，体积常不如转 JPG 小 | 并进商品图页（那一页会劝你改 JPEG，和 TinyPNG 意图相反） |
+| `batch-compress-pdfs-for-email` | batch compress pdf; compress pdfs | 多 PDF 栅格/降质打 ZIP，**不合并** | `bulk-compress-pdf` 近义页；扫描/文本只做芯片 |
+
+后排（可以做，但产能后）：`bulk-compress-gif-images`（须保动画，失败模式与静帧不同）；SVG 用已定的 `bulk-optimize-svg-icon-set`（搜 compress svg absorb 该页，不另开 compress-svg）。
+
+明确不做：视频压缩、ZIP 当「压缩」（已有 `create-zip-file`）、`bulk-compress-webp`（与商品图/optimizer 重叠）、目标体积单独 URL（200KB 是芯片）、万能 `bulk-image-compress`。
+
+压缩 ≠ 转换：压 JPG 仍是 JPG/WebP 变小；`bulk-convert-images-to-jpg` 是改后缀。两套 URL 都要。
 
 ---
 
@@ -34,8 +58,12 @@
 
 | 使用场景 | 用户搜法（草稿） | 作业类型 | 独立 URL？ | 建议 slug / H1 | 默认 / absorb |
 |---|---|---|---|---|---|
-| 上架前压一批商品图到体积上限 | bulk compress images; compress images in bulk; compress product photos | 多图同参有损压缩 → ZIP | **是** | `bulk-compress-product-photos` / Bulk compress product photos | 默认；email 200KB、最长边 1920 为芯片 |
-| 资源夹整批转 WebP | bulk convert images to webp; bulk image converter | 多图同输出编码 → ZIP | **是** | `bulk-convert-images-to-webp` / Bulk convert images to WebP | 默认 WebP；JPEG/PNG/AVIF 芯片 |
+| 上架前压一批商品图到体积上限 | bulk compress images; compress jpg; compress to 200kb | 多照片有损变小 → ZIP | **是** | `bulk-compress-product-photos` / Bulk compress product photos | 默认照片；200KB/最长边芯片；**不**拆 jpg 第二 URL |
+| 一批 PNG 仍要 PNG（logo/UI） | compress png; compress png in bulk | 多 PNG 保透明变小 → ZIP | **是** | `bulk-compress-png-images` / Bulk compress PNG images | 与商品图页划界：不默认转 JPEG |
+| 表单/邮件/打印要 JPG | bulk convert images to jpg; png to jpg; heic to jpg | 多图 → **JPEG** ZIP | **是** | `bulk-convert-images-to-jpg` / Bulk convert images to JPG | 默认 JPG；png/heic→jpg 搜法 absorb 本页，**不**做格式下拉改 PNG/WebP |
+| 要透明底（logo/截图） | bulk convert images to png; jpg to png | 多图 → **PNG** ZIP | **是** | `bulk-convert-images-to-png` / Bulk convert images to PNG | 默认 PNG；与 JPG 页失败模式不同（保 alpha、无垫底） |
+| 站点资源要更小的有损+透明 | bulk convert images to webp; png to webp | 多图 → **WebP** ZIP | **是** | `bulk-convert-images-to-webp` / Bulk convert images to WebP | 默认 WebP；不熟格式的用户不会先搜这个，故不得当唯一转换页 |
+| 转 AVIF | bulk convert to avif | 多图 → AVIF ZIP | 后排 | `bulk-convert-images-to-avif` | defer：编码慢、用户更不熟 |
 | 同一版权字盖一整拍商品图 | batch watermark photos; batch watermark images | 多图同水印模板 → ZIP | **是** | `batch-watermark-product-photos` / Batch watermark product photos | 默认；DRAFT 斜铺为芯片 |
 | 一叠 PDF 过邮箱体积闸 | batch compress pdf; batch pdf compressor | 多 PDF 同档压缩 → ZIP | **是** | `batch-compress-pdfs-for-email` / Batch compress PDFs for email | 默认邮件档；打印/最大压缩芯片 |
 | 发版目录出校验和表 | batch checksum; hash multiple files | 多文件哈希 → 表/CSV | **是** | `batch-checksum-release-files` / Batch checksum release files | 默认 SHA-256；MD5 对照芯片 |
@@ -68,14 +96,36 @@
 1. 共享目标 KB 的整批命中/未命中汇总（单页只有一张图的二分查找）。  
 2. 串行解码、条数/内存上限、超限拒绝续加。  
 3. ZIP 内重名（`name (2).webp`）规则。  
-4. 单张解码失败跳过，不中止整批。
+4. 单张解码失败跳过，不中止整批。  
+5. `compress jpg` / `jpeg` / `200kb` 只作芯片或 FAQ，不另开 URL。
 
-**`bulk-convert-images-to-webp`**（近邻 `image-format-converter`）
+**`bulk-compress-png-images`**（近邻仍是 `image-compress`，但默认输出与失败模式不同）
 
-1. 每文件「可转/不可转」格式矩阵。  
-2. 扩展名替换与大小写规则。  
-3. 透明 → 有损时的垫底色（整批同一垫底）。  
-4. 失败文件留在报告，不进 ZIP。
+1. 输出保持 PNG + alpha；禁止进页默认垫底转 JPEG。  
+2. 照片型 PNG 压完仍可能很大：报告写「要更小请去商品图压缩（会变成 JPG/WebP）」。  
+3. 索引色/条带伪影说明。  
+4. 与 `bulk-convert-images-to-png` 划界：那页是改成 PNG，这页是 PNG 变小。
+
+**`bulk-convert-images-to-jpg`**（近邻 `image-format-converter`；**转换簇默认先进这一页**）
+
+1. 透明输入必须垫底（整批同一白/黑/自定义），否则拒绝并记失败——这是 JPG 独有规则，不能藏在「选格式」里。  
+2. 质量档与表单/邮件「必须是 .jpg」体积对照。  
+3. 扩展名统一 `.jpg`（搜 jpeg 只进 FAQ，不拆第二 URL）。  
+4. HEIC/PNG→JPG 作为本页场景芯片，不另开 `heic-to-jpg` / `png-to-jpg` 批量页。
+
+**`bulk-convert-images-to-png`**
+
+1. 保 alpha；禁止套用 JPG 垫底控件。  
+2. 无损导致体积往往变大：报告里写「比原 JPEG 更大」警告。  
+3. 动画 GIF 只取第一帧并标明。  
+4. related 链到 JPG/WebP 页，页内**无**输出格式切换（避免三页同一套下拉）。
+
+**`bulk-convert-images-to-webp`**
+
+1. 有损质量 + 可保透明（与 JPG 垫底、PNG 无损都不同）。  
+2. 浏览器/平台不认 WebP 时的失败说明（邮件客户端、部分 CMS）。  
+3. 相对 PNG 照片的体积差示例。  
+4. 不把 JPG/PNG 当本页芯片改输出。
 
 **`batch-watermark-product-photos`**（近邻 `add-watermark`）
 
@@ -104,7 +154,8 @@
 - SVG 图标集：损坏跳过；不跨文件改 ID。  
 - Amazon 主图批量：cover 规则 + 分辨率不足警告；其它平台只做芯片。  
 - 剥 EXIF：字段清单 + GPS 有无汇总。  
-- WASM hero：取消后已完成项仍可打包。
+- WASM hero：取消后已完成项仍可打包。  
+- **`bulk-convert-images-to-avif`**：编码慢、搜法少；独立 slug，产能后。
 
 ---
 
@@ -112,8 +163,11 @@
 
 | 批量新页 | related 至少链到 |
 |---|---|
-| `bulk-compress-product-photos` | `image-compress`、`bulk-convert-images-to-webp` |
-| `bulk-convert-images-to-webp` | `image-format-converter`、`bulk-compress-product-photos` |
+| `bulk-compress-product-photos` | `image-compress`、`bulk-compress-png-images`、`bulk-convert-images-to-jpg` |
+| `bulk-compress-png-images` | `image-compress`、`bulk-compress-product-photos`、`bulk-convert-images-to-png` |
+| `bulk-convert-images-to-jpg` | `image-format-converter`、`bulk-convert-images-to-png`、`bulk-convert-images-to-webp` |
+| `bulk-convert-images-to-png` | `image-format-converter`、`bulk-convert-images-to-jpg` |
+| `bulk-convert-images-to-webp` | `image-format-converter`、`bulk-convert-images-to-jpg` |
 | `batch-watermark-product-photos` | `add-watermark`、`bulk-compress-product-photos` |
 | `batch-compress-pdfs-for-email` | `compress-pdf`、`merge-pdf`（划界：不合并） |
 | `batch-checksum-release-files` | `file-hash`、`file-metadata-analyzer` |
@@ -128,6 +182,10 @@
 - `image-crop`、`image-overlay`、compare、解压、ChatGPT export。  
 - `bulk-grayscale` + `bulk-flip` + `bulk-border` 三 URL（同像素变换作业）。  
 - 六个 `bulk-instagram-*` 近义（规格差用芯片）。  
+- **一个** `bulk-convert-images` / `bulk-image-converter` 下拉选格式（用户不熟格式，进页应对准已搜的目标后缀）。  
+- **一个** `bulk-image-compress` 下拉选 JPG/PNG/PDF。  
+- `png-to-jpg` 与 `heic-to-jpg` 各拆批量 URL（同意图=输出 JPEG；absorb 进 `bulk-convert-images-to-jpg`）。  
+- `jpg` 与 `jpeg` 两 URL。  
 - 计算器、prompt、网络探测。
 
 ---
@@ -139,4 +197,4 @@
 - `week_attack`：否，直到 Planner + 人工 SERP。  
 - 开 `work-tasks/{slug}/`：**仅当用户点名该 slug**。
 
-建议开工顺序：`bulk-compress-product-photos` → `bulk-convert-images-to-webp` → `batch-watermark-product-photos` → `batch-compress-pdfs-for-email` 与 `batch-checksum-release-files`。
+建议开工顺序：`bulk-compress-product-photos` → `bulk-compress-png-images` → **`bulk-convert-images-to-jpg`（转换簇先做，用户最熟）** → `bulk-convert-images-to-png` → `bulk-convert-images-to-webp` → `batch-compress-pdfs-for-email` → `batch-watermark-product-photos` → `batch-checksum-release-files`。

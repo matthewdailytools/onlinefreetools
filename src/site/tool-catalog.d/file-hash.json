@@ -15,7 +15,7 @@
   "faqPrefix": "tool_file_hash",
   "related": [
     "base64",
-    "text-diff"
+    "batch-checksum-release-files"
   ],
   "logo": "/icons/tools/file-hash.svg",
   "page": {

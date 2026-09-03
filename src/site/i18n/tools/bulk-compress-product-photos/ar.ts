@@ -1,0 +1,96 @@
+/**
+ * جزء ترجمة الأداة (bulk-compress-product-photos / ar).
+ * عنوان البحث: ضغط صور المنتجات بالجملة.
+ */
+import type { SiteLangDict } from '../../../types';
+
+/** عربية أداة: صور عرض السلعة، ليست ترجمة حرفية للإنجليزية. */
+const ar: SiteLangDict = {
+	tool_bulk_compress_product_photos_article:
+		'اضغط مجموعة صور العرض في هذا التبويب، بحد حجم واحد، وتجاوز الملفات الفاشلة ثم نزّل ZIP. تبقى الصور على جهازك دون رفع إلى خادم.',
+	tool_bulk_compress_product_photos_chip_200kb: '200 كيلوبايت',
+	tool_bulk_compress_product_photos_chip_jpeg: 'JPEG',
+	tool_bulk_compress_product_photos_chip_jpg: '.jpg',
+	tool_bulk_compress_product_photos_choose_files: 'اختر صور المنتجات',
+	tool_bulk_compress_product_photos_clear: 'مسح',
+	tool_bulk_compress_product_photos_col_after: 'بعد',
+	tool_bulk_compress_product_photos_col_before: 'قبل',
+	tool_bulk_compress_product_photos_col_name: 'الملف',
+	tool_bulk_compress_product_photos_col_status: 'الحالة',
+	tool_bulk_compress_product_photos_compress: 'ضغط الكل',
+	tool_bulk_compress_product_photos_desc:
+		'ضغط صور المنتجات نحو 200 كيلوبايت وتنزيل ZIP؛ تبقى على جهازك دون رفع إلى خادم.',
+	tool_bulk_compress_product_photos_description:
+		'ضغط صور المنتجات بالجملة: أضف صور العرض، وشارك أطول ضلع وحدّ 200 كيلوبايت، وأعد الترميز إلى JPEG أو WebP هنا، وتجاوز الفاشل ثم نزّل ZIP. الخطوات: اختر الدفعة، أبقِ شريحة 200 كيلوبايت إن طلب المتجر ذلك، اضغط الكل، واقرأ إصابة أو تفويت. مثال: عند الفتح تُضغط صورتان تجريبيتان. تبقى الملفات على جهازك دون رفع إلى خادم.',
+	tool_bulk_compress_product_photos_download_zip: 'تنزيل ZIP',
+	tool_bulk_compress_product_photos_drop_hint: 'أسقط JPEG أو PNG أو WebP (حتى 20). الضغط يبقى في هذا التبويب.',
+	tool_bulk_compress_product_photos_empty: 'أضف صور المنتجات أولاً.',
+	tool_bulk_compress_product_photos_err_decode: 'تعذّر قراءة هذه الصورة فتم تجاوزها.',
+	tool_bulk_compress_product_photos_err_encode: 'تعذّر ضغط هذه الصورة فتم تجاوزها.',
+	tool_bulk_compress_product_photos_err_fflate: 'تعذّر إنشاء ZIP في هذا المتصفح. جرّب متصفحاً أحدث.',
+	tool_bulk_compress_product_photos_err_too_many: 'الحد 20 صورة. لم تُضف البقية.',
+	tool_bulk_compress_product_photos_err_webp: 'هذا المتصفح لا يكتب WebP. تم اختيار JPEG (.jpg).',
+	tool_bulk_compress_product_photos_example:
+		'تحميل المثال يضع صورتين، يضغطهما بحد 200 كيلوبايت JPEG، يملأ الجدول ويفعّل تنزيل ZIP. الأسماء المكررة تصبح name (2).jpg.',
+	tool_bulk_compress_product_photos_example_title: 'مثال',
+	tool_bulk_compress_product_photos_faq_a1:
+		'لا. الفك والترميز في هذا التبويب. تبقى الصور على جهازك دون رفع إلى خادم. قد يُحمَّل سكربت ZIP من CDN لكن ملفاتك لا تُرسل.',
+	tool_bulk_compress_product_photos_faq_a2:
+		'ليس دائماً. إن بقي الحجم فوق الحد عند جودة 0.5 تُعلَّم الصف كتفويت مع الإبقاء على أقرب ملف.',
+	tool_bulk_compress_product_photos_faq_a3:
+		'لا حاجة لصفحة ثانية. JPEG وJPG نفس المخرج وامتداد .jpg.',
+	tool_bulk_compress_product_photos_faq_a4:
+		'إن وجب بقاء PNG شفافاً فاستخدم صفحة ضغط PNG. هنا العمل تصغير صور الكتالوج.',
+	tool_bulk_compress_product_photos_faq_a5:
+		'لا. تُضغط الإطار الأول فقط كصورة ثابتة.',
+	tool_bulk_compress_product_photos_faq_q1: 'هل تُرفع صور المنتجات إلى خادم؟',
+	tool_bulk_compress_product_photos_faq_q2: 'هل تبلغ كل صورة 200 كيلوبايت؟',
+	tool_bulk_compress_product_photos_faq_q3: 'هل أحتاج أداة JPEG منفصلة عن JPG؟',
+	tool_bulk_compress_product_photos_faq_q4: 'هل تصلح لشعار PNG شفاف؟',
+	tool_bulk_compress_product_photos_faq_q5: 'هل يبقى GIF المتحرّك متحرّكاً؟',
+	tool_bulk_compress_product_photos_file_count_tpl: '{n} صور في الصف',
+	tool_bulk_compress_product_photos_format_jpeg: 'JPEG ‏(.jpg)',
+	tool_bulk_compress_product_photos_format_webp: 'WebP',
+	tool_bulk_compress_product_photos_how_body:
+		'اجمع صور العرض، شارك حد الحجم، اضغط هنا، وخذ ZIP للناجح فقط.',
+	tool_bulk_compress_product_photos_how_item_1: 'اختر صور المنتجات التي يجب أن تصغر.',
+	tool_bulk_compress_product_photos_how_item_2: 'أبقِ شريحة 200 كيلوبايت إن طلب المتجر ذلك. الافتراضي JPEG ‏(.jpg).',
+	tool_bulk_compress_product_photos_how_item_3: 'إن كانت لقطة الهاتف ضخمة فقلّص أطول ضلع أولاً.',
+	tool_bulk_compress_product_photos_how_item_4: 'اضغط «ضغط الكل» واقرأ إصابة أو تفويت أو تجاوز.',
+	tool_bulk_compress_product_photos_how_item_5: 'نزّل ZIP إن نجح ملف واحد على الأقل. المثال يعمل عند الفتح.',
+	tool_bulk_compress_product_photos_how_title: 'طريقة العمل',
+	tool_bulk_compress_product_photos_jpeg_bg_black: 'أسود',
+	tool_bulk_compress_product_photos_jpeg_bg_custom: 'مخصص',
+	tool_bulk_compress_product_photos_jpeg_bg_label: 'خلفية JPEG',
+	tool_bulk_compress_product_photos_jpeg_bg_white: 'أبيض',
+	tool_bulk_compress_product_photos_max_edge_label: 'أطول ضلع',
+	tool_bulk_compress_product_photos_output_label: 'المخرج',
+	tool_bulk_compress_product_photos_quality_label: 'الجودة',
+	tool_bulk_compress_product_photos_resize_on: 'تقييد أطول ضلع',
+	tool_bulk_compress_product_photos_rules_body:
+		'الإعدادات مشتركة للدفع. إن فوّتت صورة الحد فالجدول يوضح ذلك.',
+	tool_bulk_compress_product_photos_rules_item_1: 'أطول ضلع يُصغَّر ولا يُكبَّر.',
+	tool_bulk_compress_product_photos_rules_item_2: 'الجودة لـ JPEG وWebP. حد 200 كيلوبايت ينزل حتى 0.5.',
+	tool_bulk_compress_product_photos_rules_item_3: 'فشل القراءة يتجاوز ذلك الصف. المكرر في ZIP يصبح name (2).jpg.',
+	tool_bulk_compress_product_photos_rules_item_4: 'تبقى الصور على جهازك دون رفع إلى خادم. غالباً يُحذف EXIF.',
+	tool_bulk_compress_product_photos_rules_title: 'قواعد متوقعة',
+	tool_bulk_compress_product_photos_sample: 'تحميل مثال',
+	tool_bulk_compress_product_photos_status_compressing: 'جارٍ ضغط الدفعة…',
+	tool_bulk_compress_product_photos_status_done: 'انتهت الدفعة — راجع الجدول ثم نزّل ZIP.',
+	tool_bulk_compress_product_photos_status_hit: 'ضمن الحد',
+	tool_bulk_compress_product_photos_status_miss: 'فوق الحد',
+	tool_bulk_compress_product_photos_status_skip: 'تم التجاوز',
+	tool_bulk_compress_product_photos_summary_tpl: '{ok} جاهزة · {miss} فوق الحد · {skip} متجاوزة',
+	tool_bulk_compress_product_photos_target_kb_label: 'الحجم الأقصى',
+	tool_bulk_compress_product_photos_target_on: 'استهدف حجماً',
+	tool_bulk_compress_product_photos_title: 'ضغط صور المنتجات بالجملة',
+	tool_bulk_compress_product_photos_usecase_1: 'يوم الإدراج: تصغير صور SKU نحو حد 200 كيلوبايت.',
+	tool_bulk_compress_product_photos_usecase_2: 'إرسال صور للمشتري دون ارتداد المرفق.',
+	tool_bulk_compress_product_photos_usecase_3: 'تسليم المصمم ZIP خفيفاً من نفس الجلسة.',
+	tool_bulk_compress_product_photos_usecases_title: 'حالات مناسبة',
+	tool_bulk_compress_product_photos_warn_anim: 'الملفات المتحركة: يُضغط الإطار الأول فقط.',
+	tool_bulk_compress_product_photos_warn_edge: 'صورة أطول من 8192 بكسل — قد تبطئ.',
+	tool_bulk_compress_product_photos_warn_large: 'ملف أكبر من 25 ميغابايت — قد تنفد الذاكرة.',
+};
+
+export default ar;

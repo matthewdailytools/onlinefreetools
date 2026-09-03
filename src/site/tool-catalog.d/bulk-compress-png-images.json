@@ -1,0 +1,30 @@
+{
+  "slug": "bulk-compress-png-images",
+  "path": "/tools/bulk-compress-png-images",
+  "updatedAt": "2026-09-03T08:21:00.000Z",
+  "launchedAt": "2026-09-03T08:21:00.000Z",
+  "category": "image",
+  "primaryTopic": "image-media",
+  "secondaryTopics": [
+    "seo-growth"
+  ],
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_bulk_compress_png_images_title",
+  "homeTitleKey": "tool_bulk_compress_png_images_title",
+  "homeDescKey": "tool_bulk_compress_png_images_desc",
+  "faqPrefix": "tool_bulk_compress_png_images",
+  "related": [
+    "image-compress",
+    "bulk-compress-product-photos"
+  ],
+  "logo": "/icons/tools/bulk-compress-png-images.svg",
+  "page": {
+    "module": "../pages/bulkCompressPngImagesPage",
+    "export": "renderBulkCompressPngImagesPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "image"
+}

@@ -1,0 +1,27 @@
+{
+  "slug": "bulk-convert-images-to-jpg",
+  "path": "/tools/bulk-convert-images-to-jpg",
+  "updatedAt": "2026-09-03T08:37:00.000Z",
+  "launchedAt": "2026-09-03T08:37:00.000Z",
+  "category": "image",
+  "primaryTopic": "image-media",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_bulk_convert_images_to_jpg_title",
+  "homeTitleKey": "tool_bulk_convert_images_to_jpg_title",
+  "homeDescKey": "tool_bulk_convert_images_to_jpg_desc",
+  "faqPrefix": "tool_bulk_convert_images_to_jpg",
+  "related": [
+    "image-format-converter",
+    "bulk-compress-product-photos"
+  ],
+  "logo": "/icons/tools/bulk-convert-images-to-jpg.svg",
+  "page": {
+    "module": "../pages/bulkConvertImagesToJpgPage",
+    "export": "renderBulkConvertImagesToJpgPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "image"
+}

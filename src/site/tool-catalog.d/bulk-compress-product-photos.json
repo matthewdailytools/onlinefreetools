@@ -1,0 +1,30 @@
+{
+  "slug": "bulk-compress-product-photos",
+  "path": "/tools/bulk-compress-product-photos",
+  "updatedAt": "2026-09-03T07:34:00.000Z",
+  "launchedAt": "2026-09-03T07:34:00.000Z",
+  "category": "image",
+  "primaryTopic": "image-media",
+  "secondaryTopics": [
+    "seo-growth"
+  ],
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_bulk_compress_product_photos_title",
+  "homeTitleKey": "tool_bulk_compress_product_photos_title",
+  "homeDescKey": "tool_bulk_compress_product_photos_desc",
+  "faqPrefix": "tool_bulk_compress_product_photos",
+  "related": [
+    "image-compress",
+    "image-format-converter"
+  ],
+  "logo": "/icons/tools/bulk-compress-product-photos.svg",
+  "page": {
+    "module": "../pages/bulkCompressProductPhotosPage",
+    "export": "renderBulkCompressProductPhotosPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "media",
+  "subject": "image"
+}

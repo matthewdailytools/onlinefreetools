@@ -13,7 +13,7 @@
   "related": [
     "image-overlay",
     "image-exif",
-    "image-border"
+    "batch-watermark-product-photos"
   ],
   "logo": "/icons/tools/add-watermark.svg",
   "page": {

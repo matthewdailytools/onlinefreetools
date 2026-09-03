@@ -11,6 +11,9 @@
 | slug | H1 | 选型词 |
 |---|---|---|
 | `bulk-compress-product-photos` | Bulk compress product photos | bulk |
+| `bulk-compress-png-images` | Bulk compress PNG images | bulk |
+| `bulk-convert-images-to-jpg` | Bulk convert images to JPG | bulk |
+| `bulk-convert-images-to-png` | Bulk convert images to PNG | bulk |
 | `bulk-convert-images-to-webp` | Bulk convert images to WebP | bulk |
 | `batch-watermark-product-photos` | Batch watermark product photos | batch |
 | `batch-compress-pdfs-for-email` | Batch compress PDFs for email | batch |

@@ -11,8 +11,16 @@ import { renderAppleTouchIconPage } from '../pages/appleTouchIconPage';
 import { renderArchiveExtractorPage } from '../pages/archiveExtractorPage';
 import { renderAwsVpcCidrPlannerPage } from '../pages/awsVpcCidrPlannerPage';
 import { renderBase64Page } from '../pages/base64Page';
+import { renderBatchChecksumReleaseFilesPage } from '../pages/batchChecksumReleaseFilesPage';
+import { renderBatchCompressPdfsForEmailPage } from '../pages/batchCompressPdfsForEmailPage';
+import { renderBatchWatermarkProductPhotosPage } from '../pages/batchWatermarkProductPhotosPage';
 import { renderBrandColorTokenPackPage } from '../pages/brandColorTokenPackPage';
 import { renderBrandStyleGuidePage } from '../pages/brandStyleGuidePage';
+import { renderBulkCompressPngImagesPage } from '../pages/bulkCompressPngImagesPage';
+import { renderBulkCompressProductPhotosPage } from '../pages/bulkCompressProductPhotosPage';
+import { renderBulkConvertImagesToJpgPage } from '../pages/bulkConvertImagesToJpgPage';
+import { renderBulkConvertImagesToPngPage } from '../pages/bulkConvertImagesToPngPage';
+import { renderBulkConvertImagesToWebpPage } from '../pages/bulkConvertImagesToWebpPage';
 import { renderChatgptExportToMarkdownPage } from '../pages/chatgptExportToMarkdownPage';
 import { renderCheckRobotsTxtUrlBlockedPage } from '../pages/checkRobotsTxtUrlBlockedPage';
 import { renderCheckSslCertificateExpirationPage } from '../pages/checkSslCertificateExpirationPage';
@@ -187,8 +195,16 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'archive-extractor': (lang, defaultLang, enabled) => renderArchiveExtractorPage({ lang, defaultLang, enabledLangs: enabled }),
 	'aws-vpc-cidr-planner': (lang, defaultLang, enabled) => renderAwsVpcCidrPlannerPage({ lang, defaultLang, enabledLangs: enabled }),
 	'base64': (lang, defaultLang, enabled) => renderBase64Page({ lang, defaultLang, enabledLangs: enabled }),
+	'batch-checksum-release-files': (lang, defaultLang, enabled) => renderBatchChecksumReleaseFilesPage({ lang, defaultLang, enabledLangs: enabled }),
+	'batch-compress-pdfs-for-email': (lang, defaultLang, enabled) => renderBatchCompressPdfsForEmailPage({ lang, defaultLang, enabledLangs: enabled }),
+	'batch-watermark-product-photos': (lang, defaultLang, enabled) => renderBatchWatermarkProductPhotosPage({ lang, defaultLang, enabledLangs: enabled }),
 	'brand-color-token-pack': (lang, defaultLang, enabled) => renderBrandColorTokenPackPage({ lang, defaultLang, enabledLangs: enabled }),
 	'brand-style-guide': (lang, defaultLang, enabled) => renderBrandStyleGuidePage({ lang, defaultLang, enabledLangs: enabled }),
+	'bulk-compress-png-images': (lang, defaultLang, enabled) => renderBulkCompressPngImagesPage({ lang, defaultLang, enabledLangs: enabled }),
+	'bulk-compress-product-photos': (lang, defaultLang, enabled) => renderBulkCompressProductPhotosPage({ lang, defaultLang, enabledLangs: enabled }),
+	'bulk-convert-images-to-jpg': (lang, defaultLang, enabled) => renderBulkConvertImagesToJpgPage({ lang, defaultLang, enabledLangs: enabled }),
+	'bulk-convert-images-to-png': (lang, defaultLang, enabled) => renderBulkConvertImagesToPngPage({ lang, defaultLang, enabledLangs: enabled }),
+	'bulk-convert-images-to-webp': (lang, defaultLang, enabled) => renderBulkConvertImagesToWebpPage({ lang, defaultLang, enabledLangs: enabled }),
 	'chatgpt-export-to-markdown': (lang, defaultLang, enabled) => renderChatgptExportToMarkdownPage({ lang, defaultLang, enabledLangs: enabled }),
 	'check-robots-txt-url-blocked': (lang, defaultLang, enabled) => renderCheckRobotsTxtUrlBlockedPage({ lang, defaultLang, enabledLangs: enabled }),
 	'check-ssl-certificate-expiration': (lang, defaultLang, enabled) => renderCheckSslCertificateExpirationPage({ lang, defaultLang, enabledLangs: enabled }),
