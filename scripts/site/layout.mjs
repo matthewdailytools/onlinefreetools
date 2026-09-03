@@ -50,55 +50,15 @@ export const renderLayout = ({
     robotsMetaContent = robotsNofollow ? 'noindex, nofollow' : 'noindex';
   }
 
-  const enabledLangs = Array.isArray(alternates)
-    ? Array.from(
-        new Set(
-          alternates
-            .filter((a) => a && a.lang)
-            .map((a) => String(a.lang).trim())
-            .filter(Boolean)
-        )
-      )
-    : [lang];
-
-  const clientLangRedirectScript = `
-  <script>
-    (function () {
-      try {
-        var enabled = ${JSON.stringify(enabledLangs)};
-        var defaultLang = ${JSON.stringify(siteConfig.defaultLang)};
-        var fallback = defaultLang;
-        var path = window.location.pathname || '/';
-
-        // If the URL already contains a language prefix (including defaultLang), respect it.
-        var hasPrefix = enabled.some(function (l) {
-          return l && (path === '/' + l || path.indexOf('/' + l + '/') === 0);
-        });
-        if (hasPrefix) return;
-
-        var langs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language])
-          .filter(Boolean)
-          .map(function (x) { return String(x).toLowerCase().split('-')[0]; });
-
-        var picked = null;
-        for (var i = 0; i < langs.length; i++) {
-          if (enabled.indexOf(langs[i]) !== -1) { picked = langs[i]; break; }
-        }
-        if (!picked) picked = enabled.indexOf(fallback) !== -1 ? fallback : (enabled[0] || fallback);
-
-        if (picked === ${JSON.stringify(lang)}) return;
-        var targetPath = path;
-        if (picked !== defaultLang) {
-          targetPath = ('/' + picked + path).replace(/\\/{2,}/g, '/');
-        }
-        window.location.replace(targetPath + window.location.search + window.location.hash);
-      } catch (e) {}
-    })();
-  </script>`;
-
   const alternateItems = Array.isArray(alternates)
     ? alternates.filter((a) => a && a.lang && a.href)
     : [];
+  /**
+   * 不再注入按 navigator.languages 自动跳转的脚本。
+   * 与 Worker 一致：语言跳转只看 `oft_lang` Cookie；浏览器语言差异由顶栏提示条处理。
+   * 否则访问 /en/ → 301 / + Set-Cookie oft_lang=en 后，中文浏览器仍会被本脚本打回 /zh/。
+   */
+  const clientLangRedirectScript = '';
   const xDefaultHref =
     (alternateItems.find((a) => a.lang === siteConfig.defaultLang) || {}).href ||
     (alternateItems.find((a) => a.lang === 'en') || {}).href ||
