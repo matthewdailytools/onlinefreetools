@@ -16,7 +16,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright-core';
-import sharp from 'sharp';
+import { stampOgWatermark } from './stamp-og-watermark.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '../..');
@@ -163,10 +163,8 @@ const captureOne = async (page, slug) => {
 		},
 	});
 
-	await sharp(pngBuf)
-		.resize(1280, 720, { fit: 'cover', position: 'top' })
-		.webp({ quality: 82 })
-		.toFile(outPath);
+	const stamped = await stampOgWatermark(pngBuf, slug);
+	fs.writeFileSync(outPath, stamped);
 
 	const st = fs.statSync(outPath);
 	console.log(`[ok] ${slug} → ${path.relative(ROOT, outPath)} (${st.size} bytes)`);

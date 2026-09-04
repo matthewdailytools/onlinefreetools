@@ -43,6 +43,7 @@
     "vendor:site-chrome": "node scripts/copy-site-chrome-vendor.mjs",
     "lint:seo": "node scripts/validate-tool-seo.mjs",
     "seo:capture-og": "node scripts/seo/capture-tool-og-images.mjs",
+    "seo:stamp-og-watermark": "node scripts/seo/stamp-og-watermark.mjs",
     "lint:taxonomy": "node scripts/validate-taxonomy.mjs",
     "coverage:gate": "node scripts/validate-tool-coverage-rounds.mjs",
     "lint:vendor": "node scripts/validate-vendor-tracked.mjs",

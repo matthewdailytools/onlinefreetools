@@ -218,7 +218,7 @@ export const renderLayout = (opts: {
 		: '';
 
 	const includeToggle = opts.includeSidebarToggleScript !== false;
-	/** 工具页「工具」菜单：两级主题面板 + 桌面延时关闭 + 窄屏点击。 */
+	/** 工具页「工具」菜单：点击展开/收起；桌面亦可悬停。 */
 	const toolsMegaScript = `
   <script>
     (function () {
@@ -299,13 +299,13 @@ export const renderLayout = (opts: {
         scheduleClose();
       });
 
+      /** 点击「工具」展开/收起（桌面与窄屏相同）；桌面仍可悬停打开。 */
       toggle.addEventListener('click', function (e) {
-        if (mq.matches) return;
         e.preventDefault();
+        clearCloseTimer();
         setOpen(!item.classList.contains('is-open'));
       });
       document.addEventListener('click', function (e) {
-        if (mq.matches) return;
         if (!item.contains(e.target)) setOpen(false);
       });
     })();

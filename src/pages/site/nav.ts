@@ -1,6 +1,5 @@
 /**
- * 工具页顶栏导航项构建（slug 工具页 / 信息页共用 buildToolPageNavItems）。
- * 首页导航在 scripts/site/nav.mjs 的 buildHomeNavItems：同样用单个「工具」巨型菜单，另保留应用场景入口。
+ * 工具页顶栏导航项构建（slug 工具页 / 信息页 / 首页共用同一套菜单）。
  */
 import type { SiteLang } from '../../site/i18n';
 import { t } from '../../site/i18n';

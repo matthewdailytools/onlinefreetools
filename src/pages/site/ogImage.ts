@@ -55,15 +55,8 @@ export const hasToolOgImage = (slug: string): boolean =>
 export const toolOgImagePathFromUrl = (absoluteUrl: string): string => absoluteUrl;
 
 /**
- * 将工具 slug 转为页内预览水印文案：连字符换成空格，不改源图文件。
- * @param slug 工具 catalog slug（kebab-case）
- */
-export const toolOgWatermarkLabel = (slug: string): string =>
-	String(slug || '').replace(/-/g, ' ');
-
-/**
  * 渲染 SERP 偏好图可见 `<figure>`（仅应在 hasToolOgImage 为真时调用）。
- * 源图仍为 1280×720；页内按 logo 缩小显示在 H1 前，图中央叠 slug 水印。
+ * 源图 1280×720（水印已烧进位图）；页内按 logo 缩小显示在 H1 前。
  * @param slug 工具 catalog slug
  * @param alt 图片 alt（通常为工具 H1/title，禁止堆砌关键词）
  */
@@ -80,13 +73,10 @@ export const renderToolPreferredImageHtml = (slug: string, alt: string): string 
 			.replace(/"/g, '&quot;');
 	const safeAlt = escapeAttr(alt || slug);
 	const safeSrc = escapeAttr(src);
-	/** 水印字符：slug 中 '-' 换成空格（如 organize-pdf → organize pdf） */
-	const safeWatermark = escapeAttr(toolOgWatermarkLabel(slug));
 	return `
     <figure class="tool-preview-figure tool-preview-logo">
       <img src="${safeSrc}" width="1280" height="720"
         alt="${safeAlt}"
         class="tool-preview-logo-img" loading="eager" decoding="async" />
-      <span class="tool-preview-watermark" aria-hidden="true">${safeWatermark}</span>
     </figure>`;
 };

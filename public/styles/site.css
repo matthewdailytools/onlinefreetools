@@ -351,7 +351,7 @@ body.is-tool-page .tool-lead {
 }
 
 /**
- * 工具页 SERP 截图：源图 1280×720 不改；页内缩成 H1 前 logo，中央叠 slug 水印。
+ * 工具页 SERP 截图：1280×720 位图（水印已烧进文件）；页内缩成 H1 前 logo。
  */
 .tool-h1-with-logo {
   display: flex;
@@ -384,38 +384,6 @@ body.is-tool-page .tool-lead {
   height: 100%;
   object-fit: cover;
   object-position: top center;
-}
-/** 压暗截图，避免看起来像当前页可操作区 */
-.tool-preview-figure.tool-preview-logo::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: rgba(15, 23, 42, 0.32);
-  pointer-events: none;
-}
-.tool-preview-watermark {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.2rem 0.28rem;
-  margin: 0;
-  font-size: calc(var(--tool-preview-logo-h) * 0.28);
-  font-weight: 800;
-  letter-spacing: 0.01em;
-  line-height: 1.08;
-  text-align: center;
-  color: rgba(255, 255, 255, 0.94);
-  text-shadow:
-    0 0 4px rgba(0, 0, 0, 0.85),
-    0 1px 2px rgba(0, 0, 0, 0.75);
-  pointer-events: none;
-  overflow: hidden;
-  word-break: break-word;
-  hyphens: auto;
 }
 
 /**
@@ -494,6 +462,11 @@ body.is-tool-page .tool-lead {
 @media (min-width: 768px) {
   .navbar {
     min-height: var(--header-h);
+    overflow: visible;
+  }
+  .navbar.site-navbar {
+    position: relative;
+    overflow: visible;
   }
   .navbar .container-fluid {
     align-items: center;

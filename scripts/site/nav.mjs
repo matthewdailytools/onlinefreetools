@@ -1,7 +1,6 @@
 /**
  * 静态站点顶栏导航项。
- * - 首页与工具页共用「工具」巨型菜单（悬停按主题展开右侧工具列表）
- * - 首页额外保留应用场景入口；工具页为首页 + 巨型菜单 + 主题/类型 + 开发日志
+ * 首页与工具页共用同一套：首页 + 「工具」巨型菜单 + 主题/类型 + 开发日志。
  */
 import { t } from './i18n.mjs';
 import { withLangPath } from './config.mjs';
@@ -27,7 +26,7 @@ export const buildToolsMegaNavItem = (lang) => ({
       },
       items: tools.map((tool) => ({
         href: withLangPath(lang, tool.path),
-        label: t(lang, tool.homeTitleKey),
+        label: t(lang, tool.i18nKey),
         openInNewTab: true,
       })),
     };
@@ -74,12 +73,7 @@ export const buildToolPageNavItems = (lang) => [
 ];
 
 /**
- * 首页顶栏：与工具页相同的单个「工具」巨型菜单，并保留应用场景入口。
+ * 首页顶栏：与工具页完全同一套菜单（Home → Tools mega → topics / tool-type → Dev Logs）。
  * @param {string} lang 当前语言
  */
-export const buildHomeNavItems = (lang) => [
-  { href: withLangPath(lang, '/'), label: t(lang, 'nav_home') },
-  buildToolsMegaNavItem(lang),
-  ...buildHomeTaxonomyNavLinks(lang),
-  buildDevlogsNavLink(lang),
-];
+export const buildHomeNavItems = (lang) => buildToolPageNavItems(lang);

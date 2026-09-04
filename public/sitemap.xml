@@ -3,7 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://onlinefreetools.org/</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/" />
     <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/" />
@@ -19,7 +19,7 @@
   </url>
   <url>
     <loc>https://onlinefreetools.org/zh/</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/" />
     <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/" />
@@ -35,7 +35,7 @@
   </url>
   <url>
     <loc>https://onlinefreetools.org/es/</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/" />
     <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/" />
@@ -51,7 +51,7 @@
   </url>
   <url>
     <loc>https://onlinefreetools.org/ar/</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/" />
     <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/" />
@@ -67,7 +67,7 @@
   </url>
   <url>
     <loc>https://onlinefreetools.org/pt/</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/" />
     <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/" />
@@ -83,7 +83,7 @@
   </url>
   <url>
     <loc>https://onlinefreetools.org/id/</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/" />
     <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/" />
@@ -99,7 +99,7 @@
   </url>
   <url>
     <loc>https://onlinefreetools.org/fr/</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/" />
     <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/" />
@@ -115,7 +115,7 @@
   </url>
   <url>
     <loc>https://onlinefreetools.org/ja/</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/" />
     <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/" />
@@ -131,7 +131,7 @@
   </url>
   <url>
     <loc>https://onlinefreetools.org/ru/</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/" />
     <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/" />
@@ -147,7 +147,7 @@
   </url>
   <url>
     <loc>https://onlinefreetools.org/de/</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://onlinefreetools.org/" />
     <xhtml:link rel="alternate" hreflang="zh" href="https://onlinefreetools.org/zh/" />
@@ -41998,6 +41998,16 @@
   </url>
   <url>
     <loc>https://onlinefreetools.org/devlogs/2026-09-04-20-10-deploy-site-template-literal-backticks.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/devlogs/2026-09-04-20-26-homepage-tools-mega-nav.html</loc>
+    <lastmod>2026-09-04</lastmod>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/devlogs/2026-09-04-20-39-tool-og-logo-watermark.html</loc>
     <lastmod>2026-09-04</lastmod>
     <priority>0.4</priority>
   </url>
