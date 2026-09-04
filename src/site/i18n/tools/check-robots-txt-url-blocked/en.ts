@@ -12,7 +12,7 @@ const en: SiteLangDict = {
 		'Paste a page URL and see if robots.txt blocks it for Googlebot or other crawlers.',
 	tool_check_robots_txt_url_blocked_title: 'Check if a URL is blocked by robots.txt',
 	tool_check_robots_txt_url_blocked_description:
-		'Paste a page URL to test whether robots.txt blocks that path for Googlebot, *, Bingbot, or GPTBot. Edge fetch shows matched Allow/Disallow. Sample: /admin.',
+		'Paste a page URL to test whether robots.txt blocks that path for Googlebot, *, Bingbot, or GPTBot. Edge fetch shows matched Allow/Disallow. Sample: /admin Process steps and an example are shown on this page.',
 	tool_check_robots_txt_url_blocked_url_label: 'Page URL',
 	tool_check_robots_txt_url_blocked_url_ph: 'https://www.bing.com/search',
 	tool_check_robots_txt_url_blocked_ua_label: 'User-agent',

@@ -12,7 +12,7 @@ const zh: SiteLangDict = {
 		'查看主机名在证书透明度（crt.sh）中最新证书的过期时间——不是实时 TLS 握手。',
 	tool_check_ssl_certificate_expiration_title: '检查 SSL 证书过期时间',
 	tool_check_ssl_certificate_expiration_description:
-		'输入主机名做 SSL 证书到期检查：经 crt.sh 查询证书透明度，展示最新匹配证书的 notBefore、notAfter、颁发者与剩余天数。不是实时 TLS 握手。示例：example.com。',
+		'输入主机名做 SSL 证书到期检查：经 crt.sh 查询证书透明度，展示最新匹配证书的 notBefore、notAfter、颁发者与剩余天数。不是实时 TLS 握手。示例：example.com。 本页展示过程、步骤和示例。 本页展示过程、步骤和示例。',
 	tool_check_ssl_certificate_expiration_host_label: '主机名',
 	tool_check_ssl_certificate_expiration_host_ph: 'example.com',
 	tool_check_ssl_certificate_expiration_check: '检查',

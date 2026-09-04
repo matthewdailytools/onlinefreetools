@@ -9,7 +9,7 @@ const en: SiteLangDict = {
 	tool_spf_dkim_dmarc_checker_desc:
 		'Check SPF, DKIM, and DMARC DNS for a domain; read ~all/-all and p= policy in plain language.',
 	tool_spf_dkim_dmarc_checker_description:
-		'Enter a sending domain and optional DKIM selector (default google). DoH looks up SPF, _dmarc, and selector._domainkey, then explains ~all/-all and DMARC p=. Sample: google.com.',
+		'Enter a sending domain and optional DKIM selector (default google). DoH looks up SPF, _dmarc, and selector._domainkey, then explains ~all/-all and DMARC p=. Sample: google.com Process steps and an example are shown on this page.',
 	tool_spf_dkim_dmarc_checker_domain_label: 'Domain',
 	tool_spf_dkim_dmarc_checker_domain_ph: 'google.com',
 	tool_spf_dkim_dmarc_checker_selector_label: 'DKIM selector',

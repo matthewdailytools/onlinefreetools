@@ -64,13 +64,14 @@ wrangler dev                 # 本地开发
 - 远端通常**不跑**本地 `predeploy`。凡页面引用的 `/vendor/*` 必须**已提交进仓库**，否则线上 404（曾导致全站 Bootstrap 样式错位）。
 - `public/vendor/`（bootstrap、fonts、jsquash、gifenc、wasm-feature-detect）**禁止再写入 `.gitignore`**；由 `vendor:site-chrome` / `vendor:image-optimizer`（含在 `build:site`）生成后 **commit**。
 - `public/_pages/` 整树 gitignore；生产靠 `upload:r2`。
+- `public/og/tools/` **入库 Git**（截图源），但 `public/.assetsignore` 排除该目录：GitHub → Cloudflare **不会**把这些图打进 Worker Assets。公开 URL 为 `https://assets.onlinefreetools.org/og/tools/{slug}.webp`；发版用 `npm run upload:r2:og`（`deploy` 已包含）。
 - 发版前跑 `npm run lint:vendor`（`predeploy` 已包含）：校验关键路径落盘、被 git 跟踪、且未被 ignore。
 - 若 CF 控制台配置了 Build command，可用 `npm ci && npm run build:site && npm run upload:r2` 作双保险，但仍以「vendor 入库」为准。
 
 ## 发版前
 
 ```bash
-npm run deploy                 # 全量 build + lint + hash 增量 upload + verify，然后按提示 git push
+npm run deploy                 # 全量 build + lint + hash 增量 upload HTML + OG 图 + verify，然后按提示 git push
 npm run deploy:full            # 需要重建/重传全部 R2 HTML 时使用
 npm run commit:tools:changed -- --slug=<slug[,slug]> -m "tools: update <slug>"
 # 等 Cloudflare 部署成功

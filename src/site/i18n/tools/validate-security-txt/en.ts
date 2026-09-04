@@ -12,7 +12,7 @@ const en: SiteLangDict = {
 		'Check whether a site publishes a valid security.txt with Contact and Expires fields.',
 	tool_validate_security_txt_title: 'Validate security.txt',
 	tool_validate_security_txt_description:
-		'Enter a domain or URL to run a security.txt checker: fetch /.well-known/security.txt (fallback /security.txt), parse Contact and Expires, and flag missing required fields. Sample: google.com.',
+		'Enter a domain or URL to run a security.txt checker: fetch /.well-known/security.txt (fallback /security.txt), parse Contact and Expires, and flag missing required fields. Sample: google.com Process steps and an example are shown on this page.',
 	tool_validate_security_txt_url_label: 'Domain or URL',
 	tool_validate_security_txt_url_ph: 'https://www.google.com/ or example.com',
 	tool_validate_security_txt_check: 'Validate',

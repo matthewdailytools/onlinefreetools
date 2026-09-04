@@ -12,7 +12,7 @@ const zh: SiteLangDict = {
 		'检查站点是否发布含 Contact、Expires 等字段的合法 security.txt。',
 	tool_validate_security_txt_title: '验证 security.txt',
 	tool_validate_security_txt_description:
-		'输入域名或网址做 security.txt 检查：拉取 /.well-known/security.txt（回退 /security.txt），解析 Contact 与 Expires，标出缺失必填项。示例：google.com。',
+		'输入域名或网址做 security.txt 检查：拉取 /.well-known/security.txt（回退 /security.txt），解析 Contact 与 Expires，标出缺失必填项。示例：google.com。 本页展示过程、步骤和示例。',
 	tool_validate_security_txt_url_label: '域名或网址',
 	tool_validate_security_txt_url_ph: 'https://www.google.com/ 或 example.com',
 	tool_validate_security_txt_check: '验证',

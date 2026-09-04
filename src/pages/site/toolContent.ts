@@ -7,6 +7,7 @@ import { t } from '../../site/i18n';
 import { escapeHtml } from './layout';
 import { getToolBySlug, getToolLogoUrl, type ToolPageMeta } from '../../site/tools';
 import { TOPIC_I18N_KEYS, topicLeafPath } from '../../site/topics';
+import { hasToolOgImage, resolveToolOgImageUrl } from './ogImage';
 
 /** 站长咨询 / 反馈邮箱（公开联系方式） */
 const TOOL_CONTACT_EMAIL = 'dailyonetools@outlook.com';
@@ -575,6 +576,10 @@ export const buildToolJsonLd = (opts: {
 }) => {
 	const base = 'https://onlinefreetools.org';
 	const pageUrl = `${base}${opts.canonicalPath}`;
+	/** 显式传入优先；否则自动解析 per-slug OG（与 layout og:image 对齐）。 */
+	const imageUrl =
+		opts.imageUrl ||
+		(hasToolOgImage(opts.tool.slug) ? resolveToolOgImageUrl(opts.tool.slug) : undefined);
 	const homePath = withToolLangPrefix(opts.lang, '/', opts.defaultLang);
 	const topic = opts.tool.primaryTopic;
 	const topicMeta = topic ? TOPIC_I18N_KEYS[topic] : undefined;
@@ -638,11 +643,11 @@ export const buildToolJsonLd = (opts: {
 				name: opts.name,
 				description: opts.description,
 				inLanguage: opts.lang,
-				...(opts.imageUrl
+				...(imageUrl
 					? {
 							primaryImageOfPage: {
 								'@type': 'ImageObject',
-								url: opts.imageUrl,
+								url: imageUrl,
 							},
 						}
 					: {}),
@@ -657,7 +662,7 @@ export const buildToolJsonLd = (opts: {
 				applicationCategory,
 				operatingSystem: 'Any',
 				inLanguage: opts.lang,
-				...(opts.imageUrl ? { image: opts.imageUrl } : {}),
+				...(imageUrl ? { image: imageUrl } : {}),
 				offers: {
 					'@type': 'Offer',
 					price: '0',

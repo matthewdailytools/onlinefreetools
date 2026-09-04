@@ -3,7 +3,8 @@
  * 生产发版编排：upload R2 → 校验版本一致 →（Worker/Assets 由 GitHub push 触发 Cloudflare）→ 可选线上再校验。
  *
  * 通常由 `npm run deploy` 调用；其前会跑 npm `predeploy`（全量 build:site + lint）。
- * 远程 upload 优先读仓库根 `.env` 的 R2 S3 凭据（见 ops/worker-r2-ops.md §3.1）；默认 hash 增量 `upload:r2`。
+ * 远程 upload 优先读仓库根 `.env` 的 R2 S3 凭据（见 ops/worker-r2-ops.md §3.1）；
+ * 默认 hash 增量 `upload:r2`，随后 `upload:r2:og`（公开 OG 图 → 桶 `assets`）。
  *
  * 用法：
  *   node scripts/deploy-site.mjs                  # 默认只上传变化的 .html.gz
@@ -56,6 +57,7 @@ const printGithubDeployNextSteps = () => {
 === [deploy] Worker + Assets：请用 GitHub push（Cloudflare 拉仓库部署）===
 
 1. 确认本机改动已 commit（含 wrangler.jsonc / vendor / Worker 源码；*_pages HTML.gz 不入库）
+   OG 位图可入库 Git，但 `.assetsignore` 会排除 `og/tools/`，CF 部署不会带上这些图
    少量工具改动可用：npm run commit:tools:changed -- --slug=<slug[,slug]> -m "tools: update <slug>"
 2. git push 到 Cloudflare 已绑定的分支
 3. 在 Cloudflare Dashboard 等本次部署成功
@@ -72,6 +74,10 @@ const main = () => {
 		run(changedUpload ? 'upload changed R2 objects' : 'upload all R2 objects', 'npm', [
 			'run',
 			changedUpload ? 'upload:r2' : 'upload:r2:full',
+		]);
+		run(changedUpload ? 'upload changed OG assets' : 'upload all OG assets', 'npm', [
+			'run',
+			changedUpload ? 'upload:r2:og' : 'upload:r2:og:full',
 		]);
 	} else {
 		console.log('[deploy] skip upload (--skip-upload)');

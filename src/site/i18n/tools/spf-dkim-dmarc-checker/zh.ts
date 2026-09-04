@@ -9,7 +9,7 @@ const zh: SiteLangDict = {
 	tool_spf_dkim_dmarc_checker_desc:
 		'一次检查域名的 SPF、DKIM、DMARC DNS，并用白话说明 ~all/-all 与 p= 策略。',
 	tool_spf_dkim_dmarc_checker_description:
-		'输入发信域名与可选 DKIM 选择器（默认 google）。经 DoH 查询 SPF、_dmarc、selector._domainkey，解释 ~all/-all 与 DMARC p=。示例：google.com。',
+		'输入发信域名与可选 DKIM 选择器（默认 google）。经 DoH 查询 SPF、_dmarc、selector._domainkey，解释 ~all/-all 与 DMARC p=。示例：google.com。 本页展示过程、步骤和示例。',
 	tool_spf_dkim_dmarc_checker_domain_label: '域名',
 	tool_spf_dkim_dmarc_checker_domain_ph: 'google.com',
 	tool_spf_dkim_dmarc_checker_selector_label: 'DKIM 选择器',

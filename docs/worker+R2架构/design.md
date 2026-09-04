@@ -6,11 +6,12 @@
 
 | 层 | 内容 |
 |---|---|
-| Assets（`public/`，经 `.assetsignore`） | css / js / vendor / icons / sitemap / robots / **首页** `index.html`、`{lang}/index.html` |
+| Assets（`public/`，经 `.assetsignore`） | css / js / vendor / icons / sitemap / robots / **首页** `index.html`、`{lang}/index.html`（**不含** `og/tools/`） |
 | R2（`PAGES_BUCKET`） | 预渲染 HTML（含首页备份）：`_pages/{lang}/**/*.html.gz` |
+| R2 公开桶 `assets` + 自定义域 `assets.onlinefreetools.org` | 工具 OG 位图：`og/tools/{slug}.webp`（源文件仍在 Git `public/og/tools/`） |
 | Worker | 路由、语言协商、301/验证直出、API；首页 Cache→Assets→R2；其它页 Cache→R2 |
 
-`public/.assetsignore` 排除 `_pages/` 与 `*.html.gz`。首页不在 `_pages` 例外里，而在公开路径；`run_worker_first` 含 `/` 与各 `/{lang}/`，避免 Assets 抢先跳过 Accept-Language。
+`public/.assetsignore` 排除 `_pages/`、`*.html.gz` 与 `og/tools/`。首页不在 `_pages` 例外里，而在公开路径；`run_worker_first` 含 `/` 与各 `/{lang}/`，避免 Assets 抢先跳过 Accept-Language。OG 图走 `https://assets.onlinefreetools.org/og/tools/…`（`npm run upload:r2:og`）。
 
 ## R2 object key
 
@@ -69,6 +70,7 @@ npm run build:site          # 全量：静态共享页刷新，并预渲染所�
 npm run build:site:full     # 同 build:site，保留为显式全量别名
 npm run tool:touch -- --slug=<slug> # 工具内容改动后刷新 catalog updatedAt
 npm run upload:r2           # 默认 hash 增量：按上次成功上传 manifest 的 fileHashes，只上传变化 .html.gz；仍重写 meta
+npm run upload:r2:og        # 增量同步 public/og/tools → 公开桶 assets（自定义域 assets.onlinefreetools.org）
 npm run upload:r2:full      # 强制全量同步 .html.gz + 写 _meta/pages-build.json（优先 S3 API）
 npm run verify:r2           # R2 ↔ wrangler PAGES_CACHE_VERSION / contentHash
 npm run deploy              # 全量 build + hash 增量 upload:r2 → verify → 提示 git push（CF）；live 另跑

@@ -12,7 +12,7 @@ const zh: SiteLangDict = {
 		'从 robots.txt 或 /sitemap.xml 发现站点地图，检查 XML 结构、类型与样例 loc。',
 	tool_find_and_validate_xml_sitemap_title: '查找并验证 XML 站点地图',
 	tool_find_and_validate_xml_sitemap_description:
-		'输入站点网址，经 robots.txt 的 Sitemap: 行或 /sitemap.xml 查找 XML 站点地图，校验结构、统计 loc，并区分 urlset 与 sitemapindex。不做生成。示例：sitemaps.org。',
+		'输入站点网址，经 robots.txt 的 Sitemap: 行或 /sitemap.xml 查找 XML 站点地图，校验结构、统计 loc，并区分 urlset 与 sitemapindex。不做生成。示例：sitemaps.org。 本页展示过程、步骤和示例。',
 	tool_find_and_validate_xml_sitemap_url_label: '站点网址',
 	tool_find_and_validate_xml_sitemap_url_ph: 'https://www.sitemaps.org/',
 	tool_find_and_validate_xml_sitemap_check: '查找并验证',

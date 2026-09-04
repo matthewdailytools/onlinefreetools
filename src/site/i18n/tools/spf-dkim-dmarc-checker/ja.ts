@@ -9,7 +9,7 @@ const ja: SiteLangDict = {
 	tool_spf_dkim_dmarc_checker_desc:
 		'ドメインの SPF・DKIM・DMARC を DNS で確認し、~all/-all と p= ポリシーを平易に説明します。',
 	tool_spf_dkim_dmarc_checker_description:
-		'送信ドメインと任意の DKIMセレクタ（既定 google）を入力。DoH で SPF・_dmarc・selector._domainkey を照会し、~all/-all と DMARC p= を説明します。例: google.com。',
+		'送信ドメインと任意の DKIMセレクタ（既定 google）を入力。DoH で SPF・_dmarc・selector._domainkey を照会し、~all/-all と DMARC p= を説明します。例: google.com。 このページではプロセス、手順、例を示します。',
 	tool_spf_dkim_dmarc_checker_domain_label: 'ドメイン',
 	tool_spf_dkim_dmarc_checker_domain_ph: 'google.com',
 	tool_spf_dkim_dmarc_checker_selector_label: 'DKIMセレクタ',

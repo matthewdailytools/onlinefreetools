@@ -2,6 +2,11 @@ import type { SiteLang } from '../../site/i18n';
 import { t } from '../../site/i18n';
 import { getToolBySlug } from '../../site/tools';
 import { TOPIC_I18N_KEYS, topicLeafPath } from '../../site/topics';
+import {
+	hasToolOgImage,
+	renderToolPreferredImageHtml,
+	resolveToolOgImageUrl,
+} from './ogImage';
 
 const SITE_BASE_URL = 'https://onlinefreetools.org';
 const DEFAULT_LANG: SiteLang = 'en';
@@ -125,7 +130,16 @@ export const renderLayout = (opts: {
 	const title = escapeHtml(opts.title);
 	const description = escapeHtml(opts.description);
 	const ogType = escapeHtml(opts.ogType || 'website');
-	const ogImageUrl = escapeHtml(opts.ogImageUrl);
+	/** 工具页优先 per-slug OG；无资产时回退调用方传入的默认站图。 */
+	const toolSlugMatch = opts.canonicalPath.match(/\/tools\/([^/]+)\/?$/);
+	const toolSlug = toolSlugMatch?.[1] || '';
+	const resolvedOgImageUrl = toolSlug ? resolveToolOgImageUrl(toolSlug) : opts.ogImageUrl;
+	const ogImageUrl = escapeHtml(resolvedOgImageUrl);
+	/** 可索引工具页允许大图预览（SERP 缩略图资格）。 */
+	const robotsMaxImagePreview =
+		toolSlug && !String(opts.extraHeadHtml || '').includes('noindex')
+			? `<meta name="robots" content="max-image-preview:large" />`
+			: '';
 
 	const alternateItems = (opts.alternates || []).filter((a) => a && a.lang && a.href);
 	const xDefaultHref =
@@ -143,14 +157,32 @@ export const renderLayout = (opts: {
 	 * 若内容已含 tool-topic-breadcrumb 则跳过，防止重复。
 	 */
 	let mainContentHtml = opts.contentHtml;
-	const toolSlugMatch = opts.canonicalPath.match(/\/tools\/([^/]+)\/?$/);
-	if (toolSlugMatch && !opts.contentHtml.includes('tool-topic-breadcrumb')) {
-		const slug = toolSlugMatch[1];
-		const tool = getToolBySlug(slug);
+	if (toolSlug && !opts.contentHtml.includes('tool-topic-breadcrumb')) {
+		const tool = getToolBySlug(toolSlug);
 		if (tool?.primaryTopic) {
 			const toolName = t(opts.lang, tool.i18nKey as keyof typeof import('../../site/i18n/en').default);
 			mainContentHtml =
-				renderAutoToolBreadcrumb(opts.lang, DEFAULT_LANG, slug, toolName) + opts.contentHtml;
+				renderAutoToolBreadcrumb(opts.lang, DEFAULT_LANG, toolSlug, toolName) + opts.contentHtml;
+		}
+	}
+
+	/**
+	 * 有 per-slug OG 资产时注入可见偏好图（与 og:image / JSON-LD 同 URL）。
+	 * 若页面已含 tool-preview-figure（如 organize-pdf 试点）则跳过，避免重复。
+	 */
+	if (toolSlug && hasToolOgImage(toolSlug) && !mainContentHtml.includes('tool-preview-figure')) {
+		const tool = getToolBySlug(toolSlug);
+		const alt = tool
+			? t(opts.lang, tool.i18nKey as keyof typeof import('../../site/i18n/en').default)
+			: toolSlug;
+		const figureHtml = renderToolPreferredImageHtml(toolSlug, alt);
+		if (/<p class="tool-lead\b[^"]*"[^>]*>[\s\S]*?<\/p>/.test(mainContentHtml)) {
+			mainContentHtml = mainContentHtml.replace(
+				/(<p class="tool-lead\b[^"]*"[^>]*>[\s\S]*?<\/p>)/,
+				`$1\n${figureHtml}`
+			);
+		} else {
+			mainContentHtml = `${mainContentHtml}\n${figureHtml}`;
 		}
 	}
 
@@ -314,6 +346,7 @@ export const renderLayout = (opts: {
   <meta property="og:image" content="${ogImageUrl}" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="${ogImageUrl}" />
+  ${robotsMaxImagePreview}
   ${alternateLinks}
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />

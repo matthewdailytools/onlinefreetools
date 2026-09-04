@@ -12,7 +12,7 @@ const fr: SiteLangDict = {
 		'Collez l’URL d’une page pour voir si robots.txt bloque ce chemin pour Googlebot ou d’autres bots.',
 	tool_check_robots_txt_url_blocked_title: 'Vérifier si une URL est bloquée par robots.txt',
 	tool_check_robots_txt_url_blocked_description:
-		'Collez une URL et testez en ligne si robots.txt bloque ce chemin pour Googlebot, *, Bingbot ou GPTBot. Fetch edge + règle correspondante. Ex. : /admin.',
+		'Collez une URL et testez en ligne si robots.txt bloque ce chemin pour Googlebot, *, Bingbot ou GPTBot. Fetch edge + règle correspondante. Ex. : /admin Inclut un processus, des étapes et un exemple sur la page.',
 	tool_check_robots_txt_url_blocked_url_label: 'URL de la page',
 	tool_check_robots_txt_url_blocked_url_ph: 'https://www.bing.com/search',
 	tool_check_robots_txt_url_blocked_ua_label: 'Agent',

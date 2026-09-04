@@ -47,9 +47,9 @@
 | 决策 | 锁定 |
 |---|---|
 | 偏好图信号 | **三信号全开**：`og:image` + `WebApplication.image` + `WebPage.primaryImageOfPage`（`@graph` 内 `WebPage.mainEntity` ↔ `WebApplication`） |
-| 资产存放 | `public/og/tools/{slug}.webp` **提交 Git**（同 vendor：Cloudflare 拉 Git 部署无本地 predeploy） |
-| 与 Worker+R2 | **解耦**：OG 图走 ASSETS/`public/`；不进 R2。R2/四层缓存只服务 HTML，不背 SERP 图 |
-| URL 解析 | 中心函数 `resolveToolOgImageUrl(slug)`：有文件 → 绝对 URL；否则回退默认 `og-image.png` |
+| 资产存放 | `public/og/tools/{slug}.webp` **提交 Git**（截图源）。**不进** Worker Assets（`.assetsignore`）；`npm run upload:r2:og` 同步到 R2 桶 `assets` |
+| 与 Worker+R2 | HTML 仍走 `onlinefreetools-pages`；OG 图走公开桶 `assets` + 自定义域 `assets.onlinefreetools.org`。GitHub→CF 部署不携带这些位图 |
+| URL 解析 | 中心函数 `resolveToolOgImageUrl(slug)`：有文件 → `https://assets.onlinefreetools.org/og/tools/{slug}.webp`；否则回退默认 `og-image.png` |
 | 可见 `<img>` | **仅当**存在 per-slug webp 时插入；回退默认站图时 **不**把站标/小 logo 当「工具 UI 可见主图」 |
 | 注入点 | `og`/`twitter`/`robots` → `layout.ts`；JSON-LD + 可见图 → `toolContent.ts`；各页只改传 `resolveToolOgImageUrl(slug)` |
 | 截图 | Playwright；**仅 en** URL；浅色主题；视口 **1280×720**；进页等 `loadSample()` 结果稳定后截 `main` 内工具区 |
@@ -75,9 +75,9 @@
 | 尺寸 | 宽 **≥ 1200px**；默认产出 **1280×720**（≥ 约 300K 像素，兼顾 Discover 建议） |
 | 比例 | 避免极端窄/宽；优先约 **16:9** 或接近 1.91:1 |
 | 内容 | **少字**；避免大字标题堆砌的「营销 OG 卡」作为 Search 偏好图 |
-| 格式 | WebP（首选）或 PNG；路径 `/og/tools/{slug}.webp` |
+| 格式 | WebP（首选）或 PNG；路径 `og/tools/{slug}.webp`（R2 key 与自定义域路径一致） |
 | 可见性 | 同一 URL 出现在正文 `<img src>`（交互区下方、How/Example 前）；`alt` 描述界面，禁堆砌关键词；可用 `loading="lazy"`，须真实 `src`，禁纯 CSS 背景 |
-| 稳定 URL | `https://onlinefreetools.org/og/tools/{slug}.webp`（跨语言共用） |
+| 稳定 URL | `https://assets.onlinefreetools.org/og/tools/{slug}.webp`（跨语言共用） |
 | 回退 | 无 per-slug 资产 → meta 回退 `og-image.png`；**不**插可见「假 UI 图」 |
 
 ### 4.3 不可用：工具列表 / 首页 logo
@@ -106,13 +106,15 @@
 ### 5.1 目标数据流
 
 ```text
-public/og/tools/{slug}.webp  (Git ASSETS)
+public/og/tools/{slug}.webp  (Git 源；.assetsignore 排除)
         │
+        ├─ npm run upload:r2:og → R2 桶 assets
+        │         └─ https://assets.onlinefreetools.org/og/tools/{slug}.webp
         ▼
 resolveToolOgImageUrl(slug)
         ├─► layout.ts     → og:image + twitter:image + max-image-preview:large
         ├─► buildToolJsonLd → WebApplication.image + WebPage.primaryImageOfPage
-        └─► toolContent   → 可见 <img>（仅 per-slug 存在时）
+        └─► layout / organize-pdf → 可见 <img>（仅 per-slug 存在时）
 ```
 
 ### 5.2 Phase A — 基建（无新图也可合入）

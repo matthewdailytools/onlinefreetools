@@ -40,9 +40,8 @@ export const renderOrganizePdfPage = (opts: {
 	const canonicalPath = withLangPrefix(opts.lang, toolPath, opts.defaultLang);
 	const title = `${t(opts.lang, 'tool_organize_pdf_title')} | ${t(opts.lang, 'brand')}`;
 	const description = t(opts.lang, 'tool_organize_pdf_description');
-	/** per-slug OG 图（存在 public/og/tools/{slug}.* 时启用） */
+	/** per-slug OG 图（本地 public/og/tools/{slug}.*；公开 URL 走 assets 自定义域） */
 	const ogImageUrl = resolveToolOgImageUrl('organize-pdf');
-	const ogImagePath = ogImageUrl.replace('https://onlinefreetools.org', '');
 
 	const navItems = buildToolPageNavItems(opts.lang, opts.defaultLang);
 
@@ -125,7 +124,7 @@ export const renderOrganizePdfPage = (opts: {
     ${hasToolOgImage('organize-pdf')
 			? `
     <figure class="tool-preview-figure mb-4">
-      <img src="${escapeHtml(ogImagePath)}" width="1280" height="720"
+      <img src="${escapeHtml(ogImageUrl)}" width="1280" height="720"
         alt="${escapeHtml(t(opts.lang, 'tool_organize_pdf_title'))}"
         class="img-fluid rounded border w-100" loading="lazy" decoding="async" />
     </figure>`

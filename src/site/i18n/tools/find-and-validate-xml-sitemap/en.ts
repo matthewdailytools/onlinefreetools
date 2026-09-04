@@ -12,7 +12,7 @@ const en: SiteLangDict = {
 		'Discover a site’s sitemap from robots.txt or /sitemap.xml and check XML structure, type, and sample locs.',
 	tool_find_and_validate_xml_sitemap_title: 'Find and validate XML sitemap',
 	tool_find_and_validate_xml_sitemap_description:
-		'Enter a site URL to find its XML sitemap via robots.txt Sitemap: lines or /sitemap.xml, then validate structure, count locs, and flag urlset vs sitemapindex. Not a generator. Sample: sitemaps.org.',
+		'Enter a site URL to find its XML sitemap via robots.txt Sitemap: lines or /sitemap.xml, then validate structure, count locs, and flag urlset vs sitemapindex. Not a generator. Sample: sitemaps.org Process steps and an example are shown on this page.',
 	tool_find_and_validate_xml_sitemap_url_label: 'Site URL',
 	tool_find_and_validate_xml_sitemap_url_ph: 'https://www.sitemaps.org/',
 	tool_find_and_validate_xml_sitemap_check: 'Find & validate',

@@ -398,7 +398,7 @@ npm run verify:r2:live
 R2_HTTPS_PROXY=socks5h://127.0.0.1:8888 npm run deploy
 ```
 
-**Git 自动部署（Cloudflare 拉 GitHub）**：这是当前 **Worker + Assets** 的默认路径。远端通常**不跑** `predeploy` / **不**灌 R2——须先本地（或 CI）`upload:r2`。`public/vendor/` 必须已提交；**整个 `public/_pages/` 已 gitignore**。仅 push、未 upload → **预渲染 HTML 易 404**。
+**Git 自动部署（Cloudflare 拉 GitHub）**：这是当前 **Worker + Assets** 的默认路径。远端通常**不跑** `predeploy` / **不**灌 R2——须先本地（或 CI）`upload:r2` 与 `upload:r2:og`。`public/vendor/` 必须已提交；**整个 `public/_pages/` 已 gitignore**；`public/og/tools/` 入库 Git 但 `.assetsignore` 排除，不会进 Worker Assets。仅 push、未 upload → **预渲染 HTML 易 404**；OG 图则须 `upload:r2:og` 才能在 `assets.onlinefreetools.org` 访问。
 **部署后建议**：
 
 1. 打开生产首页与 1–2 个**工具页**抽检；确认 `/vendor/bootstrap/bootstrap.min.css` 与 `/vendor/fonts/plus-jakarta-sans.css` 为 **200**
@@ -407,6 +407,7 @@ R2_HTTPS_PROXY=socks5h://127.0.0.1:8888 npm run deploy
 4. 新工具确认各语言 URL 与 hreflang
 5. 确认 IndexNow key 可访问：`https://onlinefreetools.org/{key}.txt`；日常用 `npm run indexnow -- --since-git origin/main --require-live-key` 或 `npm run indexnow:incremental`（见 §4.1）
 6. HTML 更新后若边缘仍旧：递增 `PAGES_CACHE_VERSION` 或见 R2 手册 §6
+7. 工具 OG 图抽检：`https://assets.onlinefreetools.org/og/tools/{slug}.webp` 为 **200**；主域 `/og/tools/` 在 `.assetsignore` 生效后应为 miss/404
 
 ---
 

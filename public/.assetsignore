@@ -1,5 +1,8 @@
 # 预渲染 HTML（_pages）不进 Workers Static Assets，走 R2 gzip。
 # 各语言首页写在常规路径：`index.html`、`{lang}/index.html`（随 build 进 Assets）。
+# OG 位图仍提交 Git，但不进 Worker Assets：公开 URL 走 R2 桶 `assets`
+#（https://assets.onlinefreetools.org/og/tools/…）。见 ops/worker-r2-ops.md §3.2
 # 见 docs/worker+R2架构/design.md、ops/worker-r2-ops.md
 _pages/
 **/*.html.gz
+og/tools/

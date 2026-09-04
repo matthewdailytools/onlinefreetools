@@ -2,7 +2,8 @@
 
 工具 / taxonomy / about 等 HTML 以 **gzip** 存 R2；Worker：**Cache → R2**（未命中 **404**）。  
 **各语言首页**由 `build:site` 写入 **常规路径** `public/index.html` 与 `public/{lang}/index.html`（进 Static Assets）；Worker：**Cache → Assets → R2 `_pages/...` 兜底**。`wrangler` 对 `/` 与各 `/{lang}/` 设 `run_worker_first`，保留 Accept-Language。须 **commit + git push** 更新首页。  
-其它静态资源（css/js/vendor/sitemap/robots/icons）同走 Assets。
+其它静态资源（css/js/vendor/sitemap/robots/icons）同走 Assets。  
+工具 OG 位图源文件在 `public/og/tools/`（入库 Git），**不进** Worker Assets（`public/.assetsignore`）；公开 URL 走 R2 桶 `assets` 的自定义域 `https://assets.onlinefreetools.org`（`npm run upload:r2:og`）。
 
 架构设计（键规范、URL 映射）：[`docs/worker+R2架构/design.md`](../docs/worker+R2架构/design.md)  
 思路原文：[`docs/worker+R2架构/初始思路.md`](../docs/worker+R2架构/初始思路.md)  
@@ -12,7 +13,7 @@
 
 | 步骤 | 谁做 | 说明 |
 |---|---|---|
-| `npm run deploy` | 本机 | 全量 `predeploy` build + lint → `upload:r2`（hash 增量）→ `verify:r2`；**不**本机 `wrangler deploy` |
+| `npm run deploy` | 本机 | 全量 `predeploy` build + lint → `upload:r2`（HTML hash 增量）→ `upload:r2:og`（OG 图增量）→ `verify:r2`；**不**本机 `wrangler deploy` |
 | `git push` | 本机 → GitHub | Cloudflare **拉仓库**部署 Worker + Assets |
 | `npm run verify:r2:live` | 本机（CF 成功后） | 生产 `/api/ops/pages-build` 与 R2 对齐 |
 
@@ -28,7 +29,8 @@
 | Worker | `wrangler.jsonc` → `name: onlinefreetools`，`main: src/index.ts` | 路由、语言协商、API、Cache→R2 HTML |
 | R2 | binding `PAGES_BUCKET` → 桶 `onlinefreetools-pages` | 预渲染 HTML（`.html.gz`；首页亦上传作兜底） |
 | R2 预览 | `onlinefreetools-pages-preview` | 本地 / preview 用（可选单独创建） |
-| Assets | `assets.directory: ./public/` + `public/.assetsignore` | vendor、sitemap、**首页** `index.html` / `{lang}/index.html` |
+| R2 公开媒体 | 桶 `assets`（**无** Worker binding）+ 自定义域 `assets.onlinefreetools.org` | 工具 OG 位图 `og/tools/{slug}.webp` |
+| Assets | `assets.directory: ./public/` + `public/.assetsignore` | vendor、sitemap、**首页** `index.html` / `{lang}/index.html`（**不含** `og/tools/`） |
 | 缓存版本 | var `PAGES_CACHE_VERSION` | 改值可使 HTML Cache API key 失效（须随 Worker 一起经 **git push** 上线） |
 
 R2 object key 示例：`_pages/en/tools/text-diff.html.gz`（**不是**公开 URL）。
@@ -43,6 +45,7 @@ R2 object key 示例：`_pages/en/tools/text-diff.html.gz`（**不是**公开 UR
 ```bash
 npx wrangler r2 bucket create onlinefreetools-pages
 npx wrangler r2 bucket create onlinefreetools-pages-preview   # 可选
+npx wrangler r2 bucket create assets                         # 公开 OG 图；Dashboard 绑自定义域 assets.onlinefreetools.org
 ```
 
 3. 确认 `wrangler.jsonc` 中 `r2_buckets` 的 `bucket_name` / `preview_bucket_name` 与上一致。
@@ -67,6 +70,8 @@ npx wrangler r2 bucket create onlinefreetools-pages-preview   # 可选
 | `npm run gzip:pages:full` | 强制重压全部 `_pages/**/*.html` |
 | `npm run upload:r2` | 默认增量：按上次成功上传 manifest 的 `fileHashes` 比较，只上传 hash 不同的 `.html.gz`，并重写 `_meta/pages-build.json` |
 | `npm run upload:r2:full` | 强制全量上传 `_pages/**/*.html.gz` |
+| `npm run upload:r2:og` | 默认增量：把 `public/og/tools/*` 同步到公开桶 `assets`（自定义域 `assets.onlinefreetools.org`） |
+| `npm run upload:r2:og:full` | 强制全量上传 OG 位图 |
 | `npm run upload:r2:local` | 同步到**本地** wrangler 模拟桶（`getPlatformProxy`） |
 | `npm run verify:r2` | 校验 R2 清单与 `PAGES_CACHE_VERSION` / 本地 contentHash 一致；有 S3 凭据时与 `upload:r2` 一样优先走 S3 读取 |
 | `npm run verify:r2:live` | 同上 + 请求生产 `/api/ops/pages-build`（**等 CF 部署完成后再跑**） |
@@ -86,7 +91,8 @@ npx wrangler r2 bucket create onlinefreetools-pages-preview   # 可选
 
 | 变量 | 默认 | 说明 |
 |---|---|---|
-| `R2_PAGES_BUCKET` | `onlinefreetools-pages` | 上传目标桶名 |
+| `R2_PAGES_BUCKET` | `onlinefreetools-pages` | HTML gzip 上传目标桶名 |
+| `R2_ASSETS_BUCKET` | `assets` | OG 位图公开桶名（自定义域 `assets.onlinefreetools.org`） |
 | `R2_UPLOAD_CONCURRENCY` | S3=`32` / wrangler=`6` | 并发 put 数 |
 | `R2_ACCOUNT_ID` / `CLOUDFLARE_ACCOUNT_ID` | — | S3 endpoint 用账户 ID |
 | `R2_ACCESS_KEY_ID` / `AWS_ACCESS_KEY_ID` | — | R2 S3 API Access Key |
@@ -110,6 +116,7 @@ npx wrangler r2 bucket create onlinefreetools-pages-preview   # 可选
 | `R2_ACCESS_KEY_ID` | S3 路径必填 | 见下 **§3.1.2** 创建 R2 API Token 后页面上的 **Access Key ID**（只显示一次，立刻复制） | 粘贴进 `.env`；**无法**从 wrangler / 仓库反查已有 Secret |
 | `R2_SECRET_ACCESS_KEY` | S3 路径必填 | 同上页的 **Secret Access Key**（只显示一次；丢失只能重新建 token） | 粘贴进 `.env`；勿写入 git / 聊天 / 截图仓库 |
 | `R2_PAGES_BUCKET` | 可选 | Dashboard → **R2** → 桶列表中的名称 | 默认 `onlinefreetools-pages`（与 `wrangler.jsonc` `r2_buckets` 一致）；本机一般不用改 |
+| `R2_ASSETS_BUCKET` | 可选 | Dashboard → **R2** → 桶 `assets` | 默认 `assets`；OG 图公开桶，一般不用改 |
 | `R2_UPLOAD_CONCURRENCY` | 可选 | — | 本机调并发；S3 默认 `32`，wrangler 回退默认 `6` |
 | `R2_S3_ENDPOINT` | 可选 | 默认拼 `https://<AccountID>.r2.cloudflarestorage.com`（见 [R2 Authentication](https://developers.cloudflare.com/r2/api/tokens/)）；EU / FedRAMP 管辖桶用对应 jurisdiction endpoint | 仅当桶有 jurisdiction 或要用自定义 endpoint 时写入 `.env` |
 | `R2_HTTPS_PROXY` | 可选 | — | 本机 HTTP/SOCKS 隧道，见 **§3.1.3** |
@@ -126,7 +133,7 @@ npx wrangler r2 bucket create onlinefreetools-pages-preview   # 可选
 2. 左侧进入 **R2** → **Overview**（对象存储总览）。
 3. 在 **Account Details**（账户详情）区域，点 **API Tokens** 旁的 **Manage**（管理）。
 4. 选择 **Create Account API token** 或 **Create User API token**（个人常用 User；账号级仅 Super Administrator 可管）。
-5. **Permissions（权限）**选 **Object Read & Write**（对象读与写）。可 **Apply to specific buckets only**，勾选 `onlinefreetools-pages`（及若需要的 preview 桶）。
+5. **Permissions（权限）**选 **Object Read & Write**（对象读与写）。可 **Apply to specific buckets only**，勾选 `onlinefreetools-pages`（及若需要的 preview 桶）**以及** 公开媒体桶 `assets`（否则 `upload:r2:og` 会 403）。
 6. 创建成功后页面会显示：
    - **Access Key ID** → 写入 `.env` 的 `R2_ACCESS_KEY_ID`
    - **Secret Access Key** → 写入 `.env` 的 `R2_SECRET_ACCESS_KEY`  
@@ -260,6 +267,26 @@ git push
 
 `build:site` / `deploy` 不看 git 工作树，且构建总是全量。编辑工具时仍应把对应 `src/site/tool-catalog.d/{slug}.json` 的 `updatedAt` 改为本次编辑时间（建议 UTC ISO，例如 `2026-08-14T12:00:00.000Z`），用于可见更新时间、sitemap/SEO 元数据和 `commit:tools:changed` 等工具路径辅助。
 
+### 3.2 公开 OG 图（R2 桶 `assets`）
+
+工具 SERP/OG 位图源文件仍在 `public/og/tools/` 并**提交 Git**（截图脚本产出）。它们 **不** 随 GitHub → Cloudflare 进 Worker Static Assets：`public/.assetsignore` 排除 `og/tools/`。
+
+公开 URL 由自定义域提供：
+
+`https://assets.onlinefreetools.org/og/tools/{slug}.webp`
+
+对应 object key：`og/tools/{slug}.webp`。页面 `og:image` / 正文 `<img>` / JSON-LD 由 `resolveToolOgImageUrl` 指向该域。默认站图 `og-image.png` 仍在主域 Assets。
+
+```bash
+npm run upload:r2:og              # 默认增量（sha256 vs `_meta/og-tools-manifest.json`）
+npm run upload:r2:og:full         # 强制全量
+npm run upload:r2:og -- --dry-run
+```
+
+`npm run deploy` 会在 HTML `upload:r2` 之后自动跑 `upload:r2:og`。截完新图后也可单独上传，不必等全站 deploy。
+
+S3 Token 若限定了桶，必须包含 `assets`，否则 PutObject 403。脚本会自动回退 `wrangler r2 object put`（较慢）。本机代理与 HTML 上传相同（`R2_HTTPS_PROXY`）；wrangler 回退路径走 Cloudflare API，不一定走同一 SOCKS。
+
 ---
 
 ## 4. 标准发版流程
@@ -280,9 +307,10 @@ npm run verify:r2:live
 
 1. （npm `predeploy`）`build:site`（全量）+ `lint:seo` + `lint:vendor`
 2. `upload:r2` — 默认只上传 `.html.gz` hash 不同的对象（S3 优先），成功后写入 R2 `_meta/pages-build.json`（`pagesCacheVersion` + `contentHash` + 全量 `fileHashes`）
-3. `verify:r2` — R2 清单 ↔ `wrangler.jsonc` 的 `PAGES_CACHE_VERSION` + 本地哈希；抽样 object 存在；有 S3 凭据时优先用 S3 读取，避免与 wrangler 登录账号不一致
-4. **Worker + Assets**：默认 **注释掉** 本机 `wrangler deploy`；打印 **git push** 步骤
-5. `verify:r2:live` — **默认跳过**；CF 成功后单独跑，或 `node scripts/deploy-site.mjs --live`
+3. `upload:r2:og` — 把变化的 `public/og/tools/*` 同步到公开桶 `assets`（GitHub push **不会**把这些图打进 Worker Assets）
+4. `verify:r2` — R2 清单 ↔ `wrangler.jsonc` 的 `PAGES_CACHE_VERSION` + 本地哈希；抽样 object 存在；有 S3 凭据时优先用 S3 读取，避免与 wrangler 登录账号不一致
+5. **Worker + Assets**：默认 **注释掉** 本机 `wrangler deploy`；打印 **git push** 步骤
+6. `verify:r2:live` — **默认跳过**；CF 成功后单独跑，或 `node scripts/deploy-site.mjs --live`
 
 可选：
 

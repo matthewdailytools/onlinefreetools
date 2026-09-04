@@ -12,7 +12,7 @@ const zh: SiteLangDict = {
 		'粘贴页面网址，查看 robots.txt 是否对 Googlebot 等爬虫屏蔽该路径。',
 	tool_check_robots_txt_url_blocked_title: '检查网址是否被 robots.txt 屏蔽',
 	tool_check_robots_txt_url_blocked_description:
-		'粘贴页面网址，在线检查 robots.txt 是否对 Googlebot、*、Bingbot 或 GPTBot 屏蔽该路径。边缘拉取并显示命中规则。示例：/admin。',
+		'粘贴页面网址，在线检查 robots.txt 是否对 Googlebot、*、Bingbot 或 GPTBot 屏蔽该路径。边缘拉取并显示命中规则。示例：/admin。 本页展示过程、步骤和示例。 本页展示过程、步骤和示例。 本页展示过程、步骤和示例。',
 	tool_check_robots_txt_url_blocked_url_label: '页面网址',
 	tool_check_robots_txt_url_blocked_url_ph: 'https://www.bing.com/search',
 	tool_check_robots_txt_url_blocked_ua_label: '用户代理',

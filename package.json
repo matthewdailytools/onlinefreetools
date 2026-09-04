@@ -28,6 +28,8 @@
     "upload:r2:changed": "node scripts/upload-r2-pages.mjs --changed-only",
     "upload:r2:full": "node scripts/upload-r2-pages.mjs",
     "upload:r2:local": "node scripts/upload-r2-pages.mjs --local --changed-only",
+    "upload:r2:og": "node scripts/upload-r2-og-assets.mjs --changed-only",
+    "upload:r2:og:full": "node scripts/upload-r2-og-assets.mjs",
     "verify:r2": "node scripts/verify-r2-worker-sync.mjs",
     "verify:r2:live": "node scripts/verify-r2-worker-sync.mjs --live",
     "deploy": "node scripts/deploy-site.mjs",
@@ -40,6 +42,7 @@
     "vendor:image-optimizer": "node scripts/copy-image-optimizer-vendor.mjs",
     "vendor:site-chrome": "node scripts/copy-site-chrome-vendor.mjs",
     "lint:seo": "node scripts/validate-tool-seo.mjs",
+    "seo:capture-og": "node scripts/seo/capture-tool-og-images.mjs",
     "lint:taxonomy": "node scripts/validate-taxonomy.mjs",
     "coverage:gate": "node scripts/validate-tool-coverage-rounds.mjs",
     "lint:vendor": "node scripts/validate-vendor-tracked.mjs",
@@ -84,6 +87,7 @@
     "esbuild": "^0.25.12",
     "https-proxy-agent": "^9.1.0",
     "marked": "^11.1.1",
+    "playwright-core": "^1.49.1",
     "socks-proxy-agent": "^10.1.0",
     "wrangler": "^4.58.0"
   }

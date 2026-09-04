@@ -12,7 +12,7 @@ const ja: SiteLangDict = {
 		'ページURLを貼り、robots.txtがそのパスをブロックするか確認できます。',
 	tool_check_robots_txt_url_blocked_title: 'URLがrobots.txtでブロックされているか確認',
 	tool_check_robots_txt_url_blocked_description:
-		'ページURLを貼り、Googlebot・*・Bingbot・GPTBot向けにrobots.txtがそのパスをブロックするかオンラインで確認。一致ルールを表示。例: /admin。',
+		'ページURLを貼り、Googlebot・*・Bingbot・GPTBot向けにrobots.txtがそのパスをブロックするかオンラインで確認。一致ルールを表示。例: /admin。 このページではプロセス、手順、例を示します。 このページではプロセス、手順、例を示します。',
 	tool_check_robots_txt_url_blocked_url_label: 'ページURL',
 	tool_check_robots_txt_url_blocked_url_ph: 'https://www.bing.com/search',
 	tool_check_robots_txt_url_blocked_ua_label: 'UA',

@@ -186,7 +186,13 @@ export const createR2S3Client = () => {
 /**
  * S3 PutObject 上传单个对象。
  * @param {S3Client} client
- * @param {{ bucket: string, key: string, body: Buffer|Uint8Array|string, contentType?: string }} opts
+ * @param {{
+ *   bucket: string,
+ *   key: string,
+ *   body: Buffer|Uint8Array|string,
+ *   contentType?: string,
+ *   cacheControl?: string,
+ * }} opts
  * @returns {Promise<void>}
  */
 export const s3PutObject = async (client, opts) => {
@@ -196,6 +202,7 @@ export const s3PutObject = async (client, opts) => {
 			Key: opts.key,
 			Body: opts.body,
 			ContentType: opts.contentType || 'application/octet-stream',
+			...(opts.cacheControl ? { CacheControl: opts.cacheControl } : {}),
 		})
 	);
 };
