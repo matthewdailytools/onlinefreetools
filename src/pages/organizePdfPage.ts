@@ -120,15 +120,7 @@ export const renderOrganizePdfPage = (opts: {
     <p id="organizePdfStatus" class="small text-muted mb-2" role="status"></p>
     <p id="organizePdfStats" class="small text-muted mb-3" style="display:none;"></p>
 
-    <p class="tool-lead mb-4">${escapeHtml(description)}</p>
-    ${hasToolOgImage('organize-pdf')
-			? `
-    <figure class="tool-preview-figure mb-4">
-      <img src="${escapeHtml(ogImageUrl)}" width="1280" height="720"
-        alt="${escapeHtml(t(opts.lang, 'tool_organize_pdf_title'))}"
-        class="img-fluid rounded border w-100" loading="lazy" decoding="async" />
-    </figure>`
-			: ''}`;
+    <p class="tool-lead mb-4">${escapeHtml(description)}</p>`;
 
 	const igHtml = renderToolIgSections({
 		lang: opts.lang,

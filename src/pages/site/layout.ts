@@ -168,7 +168,8 @@ export const renderLayout = (opts: {
 
 	/**
 	 * 有 per-slug OG 资产时注入可见偏好图（与 og:image / JSON-LD 同 URL）。
-	 * 若页面已含 tool-preview-figure（如 organize-pdf 试点）则跳过，避免重复。
+	 * 插在首个 H1 前并与标题同一行，避免大图占满正文、看起来像当前页截图。
+	 * 若页面已含 tool-preview-figure 则跳过，防止重复。
 	 */
 	if (toolSlug && hasToolOgImage(toolSlug) && !mainContentHtml.includes('tool-preview-figure')) {
 		const tool = getToolBySlug(toolSlug);
@@ -176,13 +177,13 @@ export const renderLayout = (opts: {
 			? t(opts.lang, tool.i18nKey as keyof typeof import('../../site/i18n/en').default)
 			: toolSlug;
 		const figureHtml = renderToolPreferredImageHtml(toolSlug, alt);
-		if (/<p class="tool-lead\b[^"]*"[^>]*>[\s\S]*?<\/p>/.test(mainContentHtml)) {
+		if (/<h1\b/i.test(mainContentHtml)) {
 			mainContentHtml = mainContentHtml.replace(
-				/(<p class="tool-lead\b[^"]*"[^>]*>[\s\S]*?<\/p>)/,
-				`$1\n${figureHtml}`
+				/(<h1\b[^>]*>[\s\S]*?<\/h1>)/i,
+				`<div class="tool-h1-with-logo">${figureHtml}$1</div>`
 			);
 		} else {
-			mainContentHtml = `${mainContentHtml}\n${figureHtml}`;
+			mainContentHtml = `${figureHtml}\n${mainContentHtml}`;
 		}
 	}
 

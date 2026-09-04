@@ -11,7 +11,7 @@ import { buildHomeNavItems } from '../nav.mjs';
  * @param {string} lang
  */
 export const getHomePageModel = (lang) => {
-  /** 首页顶栏分类下拉 + 场景/类型 + 开发日志（保持原样，不用巨型「工具」菜单） */
+  /** 首页顶栏：单个「工具」巨型菜单 + 主题/场景/类型 + 开发日志 */
   const navItems = buildHomeNavItems(lang);
   /** 首页 title（SEO） */
   const title = t(lang, 'home_title');

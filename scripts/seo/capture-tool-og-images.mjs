@@ -78,6 +78,7 @@ const waitForToolReady = async (page) => {
 	await page.addStyleTag({
 		content: `
       #langHintBar, .lang-hint, [data-lang-hint] { display: none !important; }
+      .tool-preview-figure, .tool-h1-with-logo > .tool-preview-figure { display: none !important; }
       body { padding-top: 56px !important; }
     `,
 	});

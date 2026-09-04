@@ -82,8 +82,6 @@
   --header-h: 60px;
   /** 顶栏下方语言提示条高度；脚本显示时写入实测 px，隐藏时为 0 */
   --lang-hint-h: 0px;
-  /* 首页多行主题下拉占位；工具页单行不使用 */
-  --header-h-multirow: 7.25rem;
   --sidebar-w: 248px;
   --home-max: 1370px;
   /** 工具页正文上限：窄于首页卡片栅格，避免表单/说明被拉成超宽一行 */
@@ -353,6 +351,74 @@ body.is-tool-page .tool-lead {
 }
 
 /**
+ * 工具页 SERP 截图：源图 1280×720 不改；页内缩成 H1 前 logo，中央叠 slug 水印。
+ */
+.tool-h1-with-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  min-width: 0;
+}
+.tool-h1-with-logo > h1,
+.tool-h1-with-logo > h1.h4 {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin-bottom: 0 !important;
+}
+.tool-preview-figure.tool-preview-logo {
+  /** logo 显示高度；宽按 16:9 推，不拉伸源图像素 */
+  --tool-preview-logo-h: 4.75rem;
+  position: relative;
+  flex: 0 0 auto;
+  width: calc(var(--tool-preview-logo-h) * 16 / 9);
+  height: var(--tool-preview-logo-h);
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  border: 1px solid color-mix(in srgb, var(--brand) 18%, var(--border));
+  background: var(--surface);
+}
+.tool-preview-logo-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+/** 压暗截图，避免看起来像当前页可操作区 */
+.tool-preview-figure.tool-preview-logo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(15, 23, 42, 0.32);
+  pointer-events: none;
+}
+.tool-preview-watermark {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem 0.28rem;
+  margin: 0;
+  font-size: calc(var(--tool-preview-logo-h) * 0.28);
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  line-height: 1.08;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.94);
+  text-shadow:
+    0 0 4px rgba(0, 0, 0, 0.85),
+    0 1px 2px rgba(0, 0, 0, 0.75);
+  pointer-events: none;
+  overflow: hidden;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+/**
  * 大拖放/选择区：首屏任务优先（学竞品上传区体量，保持本站单色 token）。
  * 各图片工具在既有 *-drop 类上叠加 .tool-dropzone。
  */
@@ -443,97 +509,8 @@ body.is-tool-page .tool-lead {
 }
 
 /**
- * 首页 lg+：恢复多行主题下拉（body.is-home-page）。
- * 工具页不带此 class，保持单行顶栏。
- */
-@media (min-width: 992px) {
-  body.is-home-page {
-    --header-h: var(--header-h-multirow);
-  }
-
-  body.is-home-page .navbar.site-navbar {
-    min-height: var(--header-h);
-  }
-
-  body.is-home-page .navbar.site-navbar .container-fluid {
-    flex-wrap: nowrap;
-    min-width: 0;
-    align-items: flex-start;
-  }
-
-  body.is-home-page .navbar.site-navbar .navbar-collapse {
-    display: flex !important;
-    flex-wrap: nowrap;
-    align-items: flex-start;
-    min-width: 0;
-    flex: 1 1 auto;
-  }
-
-  body.is-home-page .navbar.site-navbar .navbar-nav {
-    position: relative;
-    flex: 1 1 auto;
-    flex-wrap: wrap;
-    align-content: flex-start;
-    min-width: 0;
-    overflow: visible;
-    row-gap: 0.1rem;
-  }
-
-  body.is-home-page .navbar.site-navbar .navbar-nav > .dropdown {
-    position: static;
-  }
-
-  body.is-home-page .navbar.site-navbar .navbar-nav > .dropdown > .dropdown-menu {
-    left: 0;
-    right: 0;
-    width: auto;
-    max-width: none;
-    padding: 0.45rem 0.5rem;
-    max-height: calc(100vh - var(--header-h) - 8px);
-    overflow-x: hidden;
-    overflow-y: auto;
-  }
-
-  body.is-home-page .navbar.site-navbar .navbar-nav > .dropdown > .dropdown-menu.show {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: flex-start;
-  }
-
-  body.is-home-page .navbar.site-navbar .navbar-nav > .dropdown > .dropdown-menu > li {
-    flex: 0 0 50%;
-    min-width: 0;
-  }
-
-  body.is-home-page .navbar.site-navbar .navbar-nav .nav-link {
-    white-space: nowrap;
-    padding-top: 0.35rem;
-    padding-bottom: 0.35rem;
-  }
-
-  body.is-home-page .navbar.site-navbar .navbar-collapse > .d-flex {
-    flex: 0 0 auto;
-    margin-left: 0.75rem;
-    align-self: flex-start;
-    padding-top: 0.25rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  body.is-home-page .navbar.site-navbar .navbar-nav > .dropdown > .dropdown-menu > li {
-    flex: 0 0 33.333%;
-  }
-}
-
-@media (min-width: 1400px) {
-  body.is-home-page .navbar.site-navbar .navbar-nav > .dropdown > .dropdown-menu > li {
-    flex: 0 0 25%;
-  }
-}
-
-/**
  * 「工具」巨型菜单：悬停「工具」展开两级面板（左主题 / 右工具）。
- * 默认收起；面板相对整条 navbar 铺开，::before 热区桥接空隙。
+ * 首页与工具页共用；默认收起；::before 热区桥接顶栏与面板空隙。
  */
 @media (min-width: 992px) {
   .nav-item--tools-mega {
@@ -544,8 +521,9 @@ body.is-tool-page .tool-lead {
     position: absolute;
     z-index: 1050;
     top: calc(100% - 4px);
-    left: 0.5rem;
-    right: 0.5rem;
+    left: 0.75rem;
+    right: auto;
+    width: min(64rem, calc(100% - 1.5rem));
     display: none;
     grid-template-columns: minmax(11rem, 15rem) minmax(0, 1fr);
     gap: 0;
@@ -557,16 +535,6 @@ body.is-tool-page .tool-lead {
     border: 1px solid color-mix(in srgb, var(--brand) 18%, var(--border));
     border-radius: var(--radius-sm);
     box-shadow: 0 10px 32px rgba(15, 23, 42, 0.14);
-  }
-
-  /**
-   * 工具页巨型菜单不要铺满整条顶栏（left+right 贴边会在宽屏上过宽）。
-   * 首页无此面板，规则只作用 is-tool-page。
-   */
-  body.is-tool-page .tools-mega-panel {
-    left: 0.75rem;
-    right: auto;
-    width: min(64rem, calc(100% - 1.5rem));
   }
 
   /* 不可见热区：盖住顶栏底边到面板顶之间的缝 */
@@ -680,15 +648,15 @@ body.is-tool-page .tool-lead {
 }
 
 /**
- * 工具页 lg+：单行顶栏（与首页多行主题下拉分离）。
+ * lg+：全站单行顶栏（首页已改为与工具页相同的「工具」巨型菜单）。
  */
 @media (min-width: 992px) {
-  body.is-tool-page .navbar.site-navbar .container-fluid {
+  .navbar.site-navbar .container-fluid {
     flex-wrap: nowrap;
     align-items: center;
   }
 
-  body.is-tool-page .navbar.site-navbar .navbar-collapse {
+  .navbar.site-navbar .navbar-collapse {
     display: flex !important;
     flex-wrap: nowrap;
     align-items: center;
@@ -696,7 +664,7 @@ body.is-tool-page .tool-lead {
     flex: 1 1 auto;
   }
 
-  body.is-tool-page .navbar.site-navbar .navbar-nav {
+  .navbar.site-navbar .navbar-nav {
     flex: 1 1 auto;
     flex-wrap: nowrap;
     align-items: center;
@@ -704,11 +672,11 @@ body.is-tool-page .tool-lead {
     overflow: visible;
   }
 
-  body.is-tool-page .navbar.site-navbar .navbar-nav .nav-link {
+  .navbar.site-navbar .navbar-nav .nav-link {
     white-space: nowrap;
   }
 
-  body.is-tool-page .navbar.site-navbar .navbar-collapse > .d-flex {
+  .navbar.site-navbar .navbar-collapse > .d-flex {
     flex: 0 0 auto;
     margin-left: 0.75rem;
   }
