@@ -74,6 +74,10 @@ const fr: SiteLangDict = {
 	tool_onpage_how_title: 'Comment ça marche',
 	tool_onpage_how_body:
 		'Le vérificateur analyse le balisage que vous collez (ou le HTML récupéré d’une URL) et évalue une liste fixe de vérifications SEO on-page. Chaque vérification lit un type de balise : title, meta description, H1, canonical, balise robots, champs Open Graph, blocs JSON-LD, contenu mixte et ressources bloquant le rendu. Le mode coller s’exécute entièrement dans votre navigateur ; le mode URL récupère la page une fois via notre worker et ne la stocke pas.',
+	tool_onpage_how_item_1: 'Restez sur Coller le HTML ou passez à Récupérer l’URL pour une page en ligne.',
+	tool_onpage_how_item_2: 'Collez le markup ou saisissez une URL https.',
+	tool_onpage_how_item_3: 'Cliquez sur Vérifier la page (ou Exemple pour une démo).',
+	tool_onpage_how_item_4: 'Passez en revue chaque statut et corrigez les balises signalées.',
 	tool_onpage_rules_title: 'Règles suivies par les vérifications',
 	tool_onpage_rules_body:
 		'Voici à quoi chaque vérification se compare, et avec quel degré de certitude. Le comportement des balises (robots, canonical, contenu mixte) suit Google Search Central et la spécification HTML. Les conseils sur la longueur et les titres sont des repères d’affichage ou de lisibilité, pas des règles de classement.',

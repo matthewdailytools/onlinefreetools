@@ -45,6 +45,10 @@ const pt: SiteLangDict = {
   tool_csv_json_header: 'Primeira linha é cabeçalho',
   tool_csv_json_how_body:
     'Escolha CSV → JSON ou JSON → CSV; a análise e a geração acontecem aqui com o Papa Parse. No CSV você escolhe o separador (ou detecção automática), se a primeira linha é cabeçalho e se infere números/booleanos. No JSON, objetos aninhados viram colunas com caminho por pontos e as colunas são a união de todas as chaves.',
+  tool_csv_json_how_item_1: 'Escolha CSV → JSON ou JSON → CSV.',
+  tool_csv_json_how_item_2: 'Cole a entrada e defina delimitador / cabeçalho para CSV.',
+  tool_csv_json_how_item_3: 'Clique em Converter (JSON aninhado vira colunas ao exportar CSV).',
+  tool_csv_json_how_item_4: 'Copie ou descarregue o resultado.',
   tool_csv_json_how_title: 'Como funciona',
   tool_csv_json_indent_2: '2 espaços',
   tool_csv_json_indent_4: '4 espaços',

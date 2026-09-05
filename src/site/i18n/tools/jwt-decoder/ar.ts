@@ -47,6 +47,10 @@ const ar: SiteLangDict = {
   tool_jwt_decoder_header_label: 'Header (JSON)',
   tool_jwt_decoder_how_body:
     'الصق JWT كاملًا (header.payload.signature). الصفحة تقسم بالنقاط، تفك Base64url للمقطعين الأولين وتنسّق JSON. exp و iat و nbf الرقمية تعرض UTC والوقت المحلي. التوقيع يُعرض كنص خام فقط — بلا تحقق.',
+  tool_jwt_decoder_how_item_1: 'الصق JWT كاملًا (header.payload.signature).',
+  tool_jwt_decoder_how_item_2: 'انقر «فك» (أو «تحميل مثال» لرمز تجريبي).',
+  tool_jwt_decoder_how_item_3: 'راجع JSON المنسّق للـ Header والـ Payload.',
+  tool_jwt_decoder_how_item_4: 'تحقق من أوقات exp / iat / nbf المعروضة.',
   tool_jwt_decoder_how_title: 'كيف يعمل',
   tool_jwt_decoder_input_label: 'إدخال JWT',
   tool_jwt_decoder_input_placeholder: 'الصق access token أو ID token…',

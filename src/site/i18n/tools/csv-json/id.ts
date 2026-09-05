@@ -45,6 +45,10 @@ const id: SiteLangDict = {
   tool_csv_json_header: 'Baris pertama sebagai header',
   tool_csv_json_how_body:
     'Pilih CSV → JSON atau JSON → CSV; penguraian dan pembuatan berjalan di tab ini dengan Papa Parse. Untuk CSV, pilih pemisah (atau deteksi otomatis), apakah baris pertama header, dan apakah angka/boolean dideteksi. Untuk JSON, objek bersarang menjadi kolom jalur titik dan kolom adalah gabungan semua kunci.',
+  tool_csv_json_how_item_1: 'Pilih CSV → JSON atau JSON → CSV.',
+  tool_csv_json_how_item_2: 'Tempel input dan atur delimiter / opsi header untuk CSV.',
+  tool_csv_json_how_item_3: 'Klik Konversi (JSON bersarang diratakan ke kolom saat ekspor CSV).',
+  tool_csv_json_how_item_4: 'Salin atau unduh hasilnya.',
   tool_csv_json_how_title: 'Cara kerja',
   tool_csv_json_indent_2: '2 spasi',
   tool_csv_json_indent_4: '4 spasi',

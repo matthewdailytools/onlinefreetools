@@ -32,6 +32,10 @@ const fr: SiteLangDict = {
 	tool_robots_how_title: 'Comment ça marche',
 	tool_robots_how_body:
 		'Sélectionnez les robots ciblés, ajoutez des chemins Allow et Disallow pour chaque groupe, éventuellement une ligne Sitemap, puis cliquez sur Générer. La page assemble le fichier en texte brut selon le format RFC 9309 : une ligne User-agent par groupe, ses lignes Allow/Disallow dessous, une ligne vide entre les groupes et la ligne Sitemap à la fin. Copiez le résultat à la racine de votre site dans /robots.txt.',
+	tool_robots_how_item_1: 'Cochez ou ajoutez les user-agents à contrôler.',
+	tool_robots_how_item_2: 'Saisissez les chemins Allow et Disallow pour chaque groupe (un chemin par ligne).',
+	tool_robots_how_item_3: 'Ajoutez éventuellement une URL Sitemap.',
+	tool_robots_how_item_4: 'Cliquez sur Générer, puis copiez ou téléchargez robots.txt.',
 	tool_robots_rules_title: 'Règles de syntaxe importantes',
 	tool_robots_rules_body:
 		'Les règles de robots.txt sont des préfixes de chemin, pas des motifs, et un robot n’applique qu’un seul groupe : celui dont le User-agent le désigne le plus précisément. Voici les règles suivies par ce générateur.',

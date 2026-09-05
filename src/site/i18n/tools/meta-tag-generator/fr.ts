@@ -46,6 +46,10 @@ const fr: SiteLangDict = {
 	tool_meta_how_title: 'Comment ça marche',
 	tool_meta_how_body:
 		'Le générateur prend vos champs et construit les balises de head correspondantes. Les champs facultatifs vides sont ignorés, donc la sortie ne contient que ce que vous avez rempli. Chaque valeur est échappée en HTML : une esperluette devient &amp; et un signe inférieur devient &lt;, ce qui garde les balises valides dans votre page. Les indications de longueur vous préviennent quand le titre ou la description dépasse les limites courantes, sans couper votre texte.',
+	tool_meta_how_item_1: 'Renseignez le titre, la description et les champs optionnels dont vous avez besoin.',
+	tool_meta_how_item_2: 'Ajoutez canonical, robots et les valeurs Open Graph le cas échéant.',
+	tool_meta_how_item_3: 'Cliquez sur Générer pour construire les balises head échappées.',
+	tool_meta_how_item_4: 'Copiez la sortie et collez-la dans le <head> de votre page.',
 	tool_meta_rules_title: 'Règles utilisées par le générateur',
 	tool_meta_rules_body: 'Ces règles suivent les recommandations de Google Search Central sur les meta tags, les title links et les URLs canoniques.',
 	tool_meta_rules_item_1:

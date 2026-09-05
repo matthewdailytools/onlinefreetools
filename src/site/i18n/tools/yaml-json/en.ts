@@ -36,6 +36,10 @@ const en: SiteLangDict = {
   tool_yaml_json_faq_q5: 'Where do error line numbers come from?',
   tool_yaml_json_how_body:
     'Choose YAML → JSON or JSON → YAML. Conversion runs with js-yaml in this tab. Multi-document streams separated by --- become a JSON array; a single document stays a single JSON value. Errors from YAML include line and column when the parser provides a mark.',
+	tool_yaml_json_how_item_1: 'Choose YAML → JSON or JSON → YAML.',
+	tool_yaml_json_how_item_2: 'Paste input in the left box (multi-document YAML may use --- separators).',
+	tool_yaml_json_how_item_3: 'Optionally enable JSON-safe types or change JSON indent.',
+	tool_yaml_json_how_item_4: 'Click Convert, then copy or download the output.',
   tool_yaml_json_how_title: 'How it works',
   tool_yaml_json_indent_2: '2 spaces',
   tool_yaml_json_indent_4: '4 spaces',

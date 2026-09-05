@@ -46,6 +46,10 @@ const en: SiteLangDict = {
 	tool_meta_how_title: 'How it works',
 	tool_meta_how_body:
 		'The generator takes your fields and builds the corresponding head tags. Empty optional fields are skipped, so the output contains only what you filled in. Every value is HTML-escaped: an ampersand becomes &amp; and a less-than sign becomes &lt;, keeping the tags valid inside your page. Length hints warn you when the title or description exceeds the commonly used limits, without cutting your text.',
+	tool_meta_how_item_1: 'Fill title, description, and any optional fields you need.',
+	tool_meta_how_item_2: 'Add canonical, robots, and Open Graph values when relevant.',
+	tool_meta_how_item_3: 'Click Generate to build escaped head tags.',
+	tool_meta_how_item_4: 'Copy the output and paste it into your page <head>.',
 	tool_meta_rules_title: 'Rules used by the generator',
 	tool_meta_rules_body:
 		'These rules follow Google Search Central guidance on meta tags, title links and canonical URLs.',

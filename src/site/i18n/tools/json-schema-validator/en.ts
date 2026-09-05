@@ -37,6 +37,10 @@ const en: SiteLangDict = {
   tool_json_schema_validator_faq_q5: 'How do I check LLM structured output?',
   tool_json_schema_validator_how_body:
     'Paste a JSON Schema on the left and an instance on the right. Validation compiles the Schema with Ajv (draft-07), runs the instance, and lists every error with a JSON Pointer into the instance. Failing and valid samples are one click away; the page loads a failing sample on entry so you see real paths immediately.',
+	tool_json_schema_validator_how_item_1: 'Paste a JSON Schema (draft-07) on the left.',
+	tool_json_schema_validator_how_item_2: 'Paste the JSON instance on the right.',
+	tool_json_schema_validator_how_item_3: 'Click Validate.',
+	tool_json_schema_validator_how_item_4: 'Fix each listed error using the JSON Pointer path.',
   tool_json_schema_validator_how_title: 'How it works',
   tool_json_schema_validator_instance_label: 'Instance JSON',
   tool_json_schema_validator_instance_placeholder: '{ "sku": "A-1", "price": 9.5 }',

@@ -36,6 +36,10 @@ const ru: SiteLangDict = {
 	tool_hreflang_how_title: 'Как это работает',
 	tool_hreflang_how_body:
 		'Генератор разбирает каждую строку на код языка и URL, затем выводит один и тот же набор связей в трёх формах. Форма <link> вставляется в <head> каждой страницы. Форма заголовка HTTP Link отправляется в ответе сервера. Форма sitemap встраивает <xhtml:link> внутрь каждого блока <url>. Каждый URL получает аннотацию hreflang-самоссылки, чтобы каждая языковая версия указывала на себя, а необязательная запись x-default покрывает посетителей, чей язык не указан.',
+	tool_hreflang_how_item_1: 'Вставьте пары язык|URL (по одной паре в строке).',
+	tool_hreflang_how_item_2: 'При желании добавьте URL x-default.',
+	tool_hreflang_how_item_3: 'Выберите теги <link>, заголовок HTTP Link или разметку sitemap xhtml:link.',
+	tool_hreflang_how_item_4: 'Нажмите «Создать» и скопируйте разметку для выбранного формата.',
 	tool_hreflang_rules_title: 'Правила генератора',
 	tool_hreflang_rules_body: 'Эти правила взяты из Google Search Central и стандарта языковых тегов BCP 47.',
 	tool_hreflang_rules_item_1:

@@ -57,6 +57,10 @@ const en: SiteLangDict = {
 	tool_utm_how_title: 'How it works',
 	tool_utm_how_body:
 		'The builder parses your base URL, keeps its existing query parameters and appends the UTM parameters with & separators. Each value is percent-encoded so spaces, Chinese characters and special symbols survive in the link. If the URL has a hash, it is moved after all parameters. The five UTM parameters are what Google Analytics reads to attribute the visit to a source, medium and campaign.',
+	tool_utm_how_item_1: 'Enter the base landing URL.',
+	tool_utm_how_item_2: 'Fill utm_source, utm_medium, and utm_campaign (plus optional terms).',
+	tool_utm_how_item_3: 'Click Build to append percent-encoded UTM parameters.',
+	tool_utm_how_item_4: 'Copy the finished tracking URL.',
 	tool_utm_rules_title: 'Rules used by the builder',
 	tool_utm_rules_body:
 		'These are the UTM parameter definitions and encoding rules from the Google Analytics documentation.',

@@ -36,6 +36,10 @@ const ar: SiteLangDict = {
 	tool_hreflang_how_title: 'كيف يعمل',
 	tool_hreflang_how_body:
 		'يحلل المولّد كل سطر إلى رمز لغة وعنوان URL، ثم يعرض مجموعة العلاقات نفسها بثلاث صيغ. صيغة <link> توضع داخل <head> لكل صفحة. صيغة رأس HTTP Link تُرسل مع استجابة الخادم. صيغة sitemap تدمج <xhtml:link> داخل كل كتلة <url>. يحصل كل عنوان على وسم hreflang ذاتي المرجع كي تشير كل نسخة إلى نفسها، وتغطي إضافة x-default الاختيارية الزوار الذين لا تظهر لغتهم.',
+	tool_hreflang_how_item_1: 'الصق أزواج language|URL (زوج واحد في كل سطر).',
+	tool_hreflang_how_item_2: 'يمكنك إضافة URL لـ x-default.',
+	tool_hreflang_how_item_3: 'اختر وسوم <link> أو ترويسة HTTP Link أو مخرجات sitemap xhtml:link.',
+	tool_hreflang_how_item_4: 'انقر «إنشاء» وانسخ الترميز لذلك الشكل.',
 	tool_hreflang_rules_title: 'القواعد التي يتبعها المولّد',
 	tool_hreflang_rules_body: 'تأتي هذه القواعد من Google Search Central ومعيار BCP 47 لوسوم اللغة.',
 	tool_hreflang_rules_item_1:

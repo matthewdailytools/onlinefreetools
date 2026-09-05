@@ -153,7 +153,8 @@ export const renderUtmBuilderPage = (opts: {
       </div>
     </div>
 
-    ${renderToolIgSections({ lang: opts.lang, prefix: 'tool_utm', mode: 'rules', ruleItemCount: 5 })}`;
+    ${renderToolIgSections({ lang: opts.lang, prefix: 'tool_utm', mode: 'rules', ruleItemCount: 5,
+		howItemCount: 4 })}`;
 
 	const referencesHtml = renderToolReferencesSection({
 		lang: opts.lang,

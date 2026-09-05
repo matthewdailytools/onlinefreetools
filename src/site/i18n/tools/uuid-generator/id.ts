@@ -33,6 +33,10 @@ const id: SiteLangDict = {
   tool_uuid_generator_generate: 'Generate',
   tool_uuid_generator_how_body:
     'Pilih UUID v4 untuk UUID acak standar atau ULID untuk ID 26 karakter sortable waktu. Atur jumlah (1–100) lalu Generate. Salin semua = satu ID per baris. Byte acak dari CSPRNG browser.',
+  tool_uuid_generator_how_item_1: 'Pilih UUID v4 atau ULID.',
+  tool_uuid_generator_how_item_2: 'Atur jumlah ID (1–100).',
+  tool_uuid_generator_how_item_3: 'Klik Generate (atau Muat contoh untuk ID demo tetap).',
+  tool_uuid_generator_how_item_4: 'Salin semua — satu ID per baris ke clipboard.',
   tool_uuid_generator_how_title: 'Cara kerja',
   tool_uuid_generator_output_label: 'ID yang dihasilkan',
   tool_uuid_generator_rules_body:

@@ -57,6 +57,10 @@ const de: SiteLangDict = {
 	tool_og_how_title: 'So funktioniert es',
 	tool_og_how_body:
 		'Die Vorschau parst die eingefügten og:/twitter:-Tags (oder extrahiert sie aus dem für eine URL geladenen HTML) und zeichnet drei Karten. Facebook zeigt das 1.91:1-Bild links, darunter Titel, Beschreibung und Domain. X folgt twitter:card: summary_large_image zeigt ein großes Bild oben, summary ein kleines neben dem Text. Messaging-Apps wie WhatsApp zeigen eine große Karte. Die Feldtabelle markiert die vier vom Protokoll geforderten Felder und listet die optionalen auf.',
+	tool_og_how_item_1: 'og:/twitter:-Meta-Tags einfügen oder URL laden.',
+	tool_og_how_item_2: 'Klicke auf Vorschau (oder Beispiel).',
+	tool_og_how_item_3: 'Vergleiche die Karten für Facebook, X und Messenger.',
+	tool_og_how_item_4: 'Behebe fehlende protokollpflichtige Felder in der Tabelle.',
 	tool_og_rules_title: 'Regeln der Vorschau',
 	tool_og_rules_body: 'Das sind die Bildgrößen und Fallbacks der Plattformen, laut Open-Graph-Protokoll und der X-Cards-Dokumentation.',
 	tool_og_rules_item_1: 'Vom Open-Graph-Protokoll gefordert: og:title, og:type, og:image und og:url. og:description ist laut Spezifikation optional, wird aber von jeder großen Plattform angezeigt – fehlt es, schreibt die Plattform selbst eine Zusammenfassung aus dem Seitentext.',

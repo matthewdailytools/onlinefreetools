@@ -31,6 +31,10 @@ const ar: SiteLangDict = {
   tool_markdown_full_doc: 'إنشاء مستند HTML كامل',
   tool_markdown_how_body:
     'التبويب يحدد الاتجاه. أدخل يسارًا والنتيجة يمينًا محليًا. HTML: جزء أو مستند بسيط؛ Markdown: نص للمحرر أو النموذج.',
+  tool_markdown_how_item_1: 'اختر تبويب Markdown → HTML أو HTML → Markdown.',
+  tool_markdown_how_item_2: 'الصق المدخلات يسارًا (أو «تحميل مثال»).',
+  tool_markdown_how_item_3: 'في Markdown → HTML يمكنك اختياريًا لف مستند HTML بسيط.',
+  tool_markdown_how_item_4: 'انسخ أو حمّل المخرجات المحوّلة على اليمين.',
   tool_markdown_how_title: 'خطوات سريعة',
   tool_markdown_html_input_label: 'إدخال HTML',
   tool_markdown_html_placeholder: '<h1>العنوان</h1>\n<p>مرحبا <strong>بالعالم</strong></p>',

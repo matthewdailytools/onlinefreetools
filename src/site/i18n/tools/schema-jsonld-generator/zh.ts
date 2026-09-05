@@ -50,6 +50,10 @@ const zh: SiteLangDict = {
 	tool_schema_how_title: '怎么用',
 	tool_schema_how_body:
 		'选一个 Schema 类型，填好表单字段，点「生成」。页面会构建 Schema.org JSON-LD 对象，检查必填字段是否齐全，并把格式化结果包进 script 标签，方便直接粘到页面头部。输出前会先做语法校验；必填字段缺失时会列出提示，而不是悄悄产出残缺标记。',
+	tool_schema_how_item_1: '从列表中选择 Schema.org 类型。',
+	tool_schema_how_item_2: '填写该类型的必填字段。',
+	tool_schema_how_item_3: '点击「生成」构建 JSON-LD。',
+	tool_schema_how_item_4: '将 script 块复制到页面，并与可见内容保持一致。',
 	tool_schema_rules_title: '生成器会检查什么',
 	tool_schema_rules_body:
 		'每种类型都有最小的合法结构。生成器会校验 JSON 是否格式正确、必填字段是否为空并给出提示，但无法判断标记是否与页面可见内容一致。',

@@ -35,6 +35,10 @@ const ja: SiteLangDict = {
 	tool_serp_how_title: '使い方',
 	tool_serp_how_body:
 		'タイトル・説明文・任意の URL を入力または貼り付けます。フォント幅の近似計算で各行の文字数とおおよそのピクセル幅を求め（全角かな・漢字は約 1em、半角英数字は約 0.55em として計算）、デスクトップ用とモバイル用の Google 風スニペットを描画します。推定ビューポート幅を超えた行には切れ目マークが付きます。',
+	tool_serp_how_item_1: 'タイトルと meta description を入力する（表示 URL は任意）。',
+	tool_serp_how_item_2: '両方のプレビューが重要ならデスクトップ/モバイル表示を切り替える。',
+	tool_serp_how_item_3: '編集しながら文字数とピクセルヒントを確認する。',
+	tool_serp_how_item_4: 'プレビューがきれいに切れるまで文言を調整する。',
 	tool_serp_rules_title: 'プレビューで分かること',
 	tool_serp_rules_body:
 		'ピクセル上限は目安です。Google は文字数ではなく描画幅で切り捨てるため、文字が密な言語や幅の広い文字は少ない文字数で切れます。',

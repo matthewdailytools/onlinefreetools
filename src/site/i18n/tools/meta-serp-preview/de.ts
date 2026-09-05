@@ -35,6 +35,10 @@ const de: SiteLangDict = {
 	tool_serp_how_title: 'So funktioniert es',
 	tool_serp_how_body:
 		'Gib Titel, Beschreibung und optionale URL ein oder füge sie ein. Das Tool schätzt, wie viele Zeichen und ungefähre Pixel jede Zeile belegt, anhand einer Schriftsatz-Näherung (breite CJK-Glyphen zählen mehr als schmale ASCII-Buchstaben), und zeichnet dann einen Google-artigen Snippet für Desktop und einen für Mobil. Zeilen, die breiter als der geschätzte Viewport sind, erhalten eine Kürzungsmarkierung.',
+	tool_serp_how_item_1: 'Gib Titel und Meta-Description ein (optionale Anzeige-URL).',
+	tool_serp_how_item_2: 'Wechsle zwischen Desktop- und Mobile-Schätzung, wenn beide wichtig sind.',
+	tool_serp_how_item_3: 'Beobachte Längen- und Pixelhinweise beim Bearbeiten.',
+	tool_serp_how_item_4: 'Formuliere um, bis die Vorschau sauber abgeschnitten wird.',
 	tool_serp_rules_title: 'Was die Vorschau zeigt',
 	tool_serp_rules_body:
 		'Die Pixel-Limits sind Näherungswerte. Google misst die gerenderte Breite, nicht die Zeichenanzahl. Dichte Sprachen und breite Glyphen kürzen daher bei weniger Zeichen.',

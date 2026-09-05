@@ -37,6 +37,10 @@ const fr: SiteLangDict = {
   tool_json_schema_validator_faq_q5: 'Comment contrôler une sortie structurée de LLM ?',
   tool_json_schema_validator_how_body:
     'Collez le Schema à gauche et l’instance à droite. Ajv (draft-07) compile, valide et liste chaque erreur avec un JSON Pointer. Des exemples en échec et valides sont disponibles ; la page charge l’exemple en échec à l’ouverture.',
+  tool_json_schema_validator_how_item_1: 'Collez un JSON Schema (draft-07) à gauche.',
+  tool_json_schema_validator_how_item_2: 'Collez l’instance JSON à droite.',
+  tool_json_schema_validator_how_item_3: 'Cliquez sur Valider.',
+  tool_json_schema_validator_how_item_4: 'Corrigez chaque erreur via le chemin JSON Pointer.',
   tool_json_schema_validator_how_title: 'Fonctionnement',
   tool_json_schema_validator_instance_label: 'JSON d’instance',
   tool_json_schema_validator_instance_placeholder: '{ "sku": "A-1", "price": 9.5 }',

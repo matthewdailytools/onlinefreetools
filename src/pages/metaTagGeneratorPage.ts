@@ -169,7 +169,8 @@ export const renderMetaTagGeneratorPage = (opts: {
       </div>
     </div>
 
-    ${renderToolIgSections({ lang: opts.lang, prefix: 'tool_meta', mode: 'rules', ruleItemCount: 5 })}`;
+    ${renderToolIgSections({ lang: opts.lang, prefix: 'tool_meta', mode: 'rules', ruleItemCount: 5,
+		howItemCount: 4 })}`;
 
 	const referencesHtml = renderToolReferencesSection({
 		lang: opts.lang,

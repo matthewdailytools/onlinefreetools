@@ -45,6 +45,10 @@ const en: SiteLangDict = {
   tool_csv_json_header: 'First row is header',
   tool_csv_json_how_body:
     'Choose CSV → JSON or JSON → CSV. Parsing and serialization run with Papa Parse in this tab. For CSV, pick a delimiter (or auto-detect), say whether the first row is a header, and optionally infer numeric/boolean types. For JSON, nested objects flatten to dot-path columns and the column set is the union of all record keys.',
+	tool_csv_json_how_item_1: 'Choose CSV → JSON or JSON → CSV.',
+	tool_csv_json_how_item_2: 'Paste input and set delimiter / header options for CSV.',
+	tool_csv_json_how_item_3: 'Click Convert (nested JSON flattens to columns on CSV export).',
+	tool_csv_json_how_item_4: 'Copy or download the result.',
   tool_csv_json_how_title: 'How it works',
   tool_csv_json_indent_2: '2 spaces',
   tool_csv_json_indent_4: '4 spaces',

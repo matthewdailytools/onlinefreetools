@@ -36,6 +36,10 @@ const ja: SiteLangDict = {
 	tool_hreflang_how_title: '仕組み',
 	tool_hreflang_how_body:
 		'生成ツールは各行を言語コードと URL に分解し、同じ対応関係を 3 つの形式で出力します。<link> 形式は各ページの <head> に置きます。HTTP Link ヘッダー形式はサーバーが応答時に返します。sitemap 形式は各 <url> ブロック内に <xhtml:link> を埋め込みます。各 URL には自分自身を指す自己参照 hreflang が付き、言語版同士が互いを指し合います。任意の x-default は、一覧にない言語の訪問者をカバーします。',
+	tool_hreflang_how_item_1: 'language|URL のペアを貼り付ける（1 行 1 ペア）。',
+	tool_hreflang_how_item_2: '必要なら x-default URL を追加する。',
+	tool_hreflang_how_item_3: 'HTML link タグ、HTTP Link ヘッダー、sitemap xhtml:link の出力を選ぶ。',
+	tool_hreflang_how_item_4: '「生成」をクリックし、その形式のマークアップをコピーする。',
 	tool_hreflang_rules_title: '生成ツールが使うルール',
 	tool_hreflang_rules_body: 'これらのルールは Google Search Central と BCP 47 言語タグ標準に基づきます。',
 	tool_hreflang_rules_item_1:

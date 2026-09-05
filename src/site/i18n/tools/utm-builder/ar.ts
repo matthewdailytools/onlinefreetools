@@ -57,6 +57,10 @@ const ar: SiteLangDict = {
 	tool_utm_how_title: 'كيف يعمل',
 	tool_utm_how_body:
 		'يحلل المنشئ عنوان URL الأساسي، ويحفظ معاملات الاستعلام الموجودة، ثم يضيف معاملات UTM بفاصل &. تُرمَّز كل قيمة بنسبة مئوية حتى تبقى المسافات والأحرف غير اللاتينية والرموز سليمة في الرابط. إذا كان للرابط تجزئة (hash)، تُنقل بعد كل المعاملات. هذه المعاملات الخمسة هي ما يقرؤه Google Analytics ليعزو الزيارة إلى مصدر ووسيط وحملة.',
+	tool_utm_how_item_1: 'أدخل URL الأساس لصفحة الهبوط.',
+	tool_utm_how_item_2: 'املأ utm_source وutm_medium وutm_campaign (ومعاملات اختيارية).',
+	tool_utm_how_item_3: 'انقر «إنشاء» لإلحاق معاملات UTM مشفّرة.',
+	tool_utm_how_item_4: 'انسخ رابط التتبع النهائي.',
 	tool_utm_rules_title: 'قواعد المنشئ',
 	tool_utm_rules_body: 'هذه تعريفات معاملات UTM وقواعد الترميز وفقًا لتوثيق Google Analytics.',
 	tool_utm_rules_item_1: 'يحدد utm_source مكان ظهور الرابط، وutm_medium طريقة إيصاله. كلاهما مطلوب للإسناد.',

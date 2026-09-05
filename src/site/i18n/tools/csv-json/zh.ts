@@ -39,6 +39,10 @@ const zh: SiteLangDict = {
   tool_csv_json_header: '首行为表头',
   tool_csv_json_how_body:
     '选择 CSV → JSON 或 JSON → CSV，解析与生成都在本页用 Papa Parse 完成。CSV 方向可选分隔符（或自动识别）、是否首行表头、是否推断数字/布尔类型；JSON 方向会把嵌套对象按点号路径拆成列，列取所有记录键的并集。',
+  tool_csv_json_how_item_1: '选择 CSV → JSON 或 JSON → CSV。',
+  tool_csv_json_how_item_2: '粘贴输入并为 CSV 设置分隔符 / 表头选项。',
+  tool_csv_json_how_item_3: '点击「转换」（嵌套 JSON 导出 CSV 时会展平为列）。',
+  tool_csv_json_how_item_4: '复制或下载结果。',
   tool_csv_json_how_title: '工作原理',
   tool_csv_json_indent_2: '2 空格',
   tool_csv_json_indent_4: '4 空格',

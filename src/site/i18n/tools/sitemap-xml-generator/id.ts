@@ -28,6 +28,10 @@ const id: SiteLangDict = {
 	tool_sitemap_how_title: 'Cara kerjanya',
 	tool_sitemap_how_body:
 		'Tempel daftar URL, satu per baris. Setelah garis vertikal Anda dapat menambahkan lastmod (yyyy-MM-dd), changefreq, dan priority. Halaman mem-parsing tiap baris, meng-escape karakter cadangan, memastikan URL diawali http(s), lalu menyusun urlset sesuai protokol. Salin XML ke root situs, lalu rujuk dari robots.txt atau kirim di Search Console.',
+	tool_sitemap_how_item_1: 'Tempel satu URL per baris (opsional lastmod|changefreq|priority setelah |).',
+	tool_sitemap_how_item_2: 'Klik Buat untuk menyusun urlset yang valid.',
+	tool_sitemap_how_item_3: 'Tinjau peringatan non-https atau daftar terlalu besar.',
+	tool_sitemap_how_item_4: 'Salin atau unduh sitemap.xml ke root situs.',
 	tool_sitemap_rules_title: 'Aturan dan batas protokol',
 	tool_sitemap_rules_body: 'Ini aturan dari protokol sitemap dan Google yang diikuti pembuat ini.',
 	tool_sitemap_rules_item_1:

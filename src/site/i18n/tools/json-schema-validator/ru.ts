@@ -37,6 +37,10 @@ const ru: SiteLangDict = {
   tool_json_schema_validator_faq_q5: 'Как проверить структурированный вывод LLM?',
   tool_json_schema_validator_how_body:
     'Слева Schema, справа экземпляр. Ajv (draft-07) компилирует Schema, проверяет экземпляр и перечисляет ошибки с JSON Pointer. Есть ошибочный и верный примеры; при входе загружается ошибочный, чтобы сразу показать реальные пути.',
+  tool_json_schema_validator_how_item_1: 'Вставьте JSON Schema (draft-07) слева.',
+  tool_json_schema_validator_how_item_2: 'Вставьте JSON-экземпляр справа.',
+  tool_json_schema_validator_how_item_3: 'Нажмите «Проверить».',
+  tool_json_schema_validator_how_item_4: 'Исправьте каждую ошибку по пути JSON Pointer.',
   tool_json_schema_validator_how_title: 'Как это работает',
   tool_json_schema_validator_instance_label: 'JSON экземпляра',
   tool_json_schema_validator_instance_placeholder: '{ "sku": "A-1", "price": 9.5 }',

@@ -46,6 +46,10 @@ const ja: SiteLangDict = {
 	tool_meta_how_title: '仕組み',
 	tool_meta_how_body:
 		'生成ツールは入力されたフィールドから対応する head タグを組み立てます。空の任意フィールドはスキップされるので、出力には入力した内容だけが含まれます。すべての値は HTML エスケープされ、& は &amp; に、< は &lt; になり、ページ内でタグが常に有効に保たれます。文字数ヒントは、タイトルやディスクリプションがよく使われる上限を超えたときに知らせますが、テキストは切り詰めません。',
+	tool_meta_how_item_1: 'タイトル、説明、必要な任意項目を入力する。',
+	tool_meta_how_item_2: '必要に応じて canonical、robots、Open Graph の値を追加する。',
+	tool_meta_how_item_3: '「生成」をクリックしてエスケープ済み head タグを組み立てる。',
+	tool_meta_how_item_4: '出力をコピーし、ページの <head> に貼り付ける。',
 	tool_meta_rules_title: '生成ツールが使うルール',
 	tool_meta_rules_body: 'これらのルールは、Google Search Central のメタタグ・タイトルリンク・canonical URL の指針に従います。',
 	tool_meta_rules_item_1:

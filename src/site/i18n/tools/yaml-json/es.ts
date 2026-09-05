@@ -36,6 +36,10 @@ const es: SiteLangDict = {
   tool_yaml_json_faq_q5: '¿De dónde salen línea y columna en el error?',
   tool_yaml_json_how_body:
     'Pegá YAML o JSON y elegí la pestaña. js-yaml corre en esta pestaña. Varios bloques separados por --- pasan por loadAll: un documento → un valor JSON; dos o más → array. Si el parser YAML marca el error, verás línea y columna.',
+  tool_yaml_json_how_item_1: 'Elige YAML → JSON o JSON → YAML.',
+  tool_yaml_json_how_item_2: 'Pega la entrada en el cuadro izquierdo (varios documentos YAML pueden usar ---).',
+  tool_yaml_json_how_item_3: 'Opcionalmente activa tipos seguros o cambia la indentación JSON.',
+  tool_yaml_json_how_item_4: 'Pulsa Convertir, luego copia o descarga la salida.',
   tool_yaml_json_how_title: 'Pasos rápidos',
   tool_yaml_json_indent_2: '2 espacios',
   tool_yaml_json_indent_4: '4 espacios',

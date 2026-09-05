@@ -33,6 +33,10 @@ const ar: SiteLangDict = {
   tool_uuid_generator_generate: 'توليد',
   tool_uuid_generator_how_body:
     'اختر UUID v4 للمعرّفات العشوائية القياسية أو ULID لـ 26 حرفًا قابلة للترتيب زمنيًا. حدّد العدد (1–100) ثم توليد. نسخ الكل يضع معرّفًا لكل سطر. البايتات العشوائية من CSPRNG المتصفح.',
+  tool_uuid_generator_how_item_1: 'اختر UUID v4 أو ULID.',
+  tool_uuid_generator_how_item_2: 'حدد عدد المعرّفات (1–100).',
+  tool_uuid_generator_how_item_3: 'انقر «توليد» (أو «تحميل مثال» لمعرّفات تجريبية ثابتة).',
+  tool_uuid_generator_how_item_4: 'انسخ الكل — معرّف واحد في كل سطر.',
   tool_uuid_generator_how_title: 'كيف يعمل',
   tool_uuid_generator_output_label: 'المعرّفات المُولَّدة',
   tool_uuid_generator_rules_body:

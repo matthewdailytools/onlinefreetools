@@ -50,6 +50,10 @@ const ja: SiteLangDict = {
 	tool_schema_how_title: '使い方',
 	tool_schema_how_body:
 		'スキーマのタイプを選び、フォームに入力して「生成」を押します。ページが Schema.org の JSON-LD オブジェクトを組み立て、必須フィールドを確認し、整形した結果を script タグで包んで表示するので、ページの `<head>` にそのまま貼り付けられます。出力前に構文チェックが走り、必須フィールドの不足は黙って欠けたマークアップを作る代わりに一覧で表示されます。',
+	tool_schema_how_item_1: 'リストから Schema.org タイプを選ぶ。',
+	tool_schema_how_item_2: 'そのタイプの必須項目を入力する。',
+	tool_schema_how_item_3: '「生成」をクリックして JSON-LD を組み立てる。',
+	tool_schema_how_item_4: 'script ブロックをページにコピーし、表示内容と一致させる。',
 	tool_schema_rules_title: '生成ツールが確認すること',
 	tool_schema_rules_body:
 		'各タイプには最小限の有効な構造があります。このツールは JSON が正しい形式か、必須フィールドが空でないかを検証して通知しますが、マークアップがページの可視コンテンツと一致するかどうかは判断できません。',

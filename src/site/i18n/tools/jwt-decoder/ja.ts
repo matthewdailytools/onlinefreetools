@@ -47,6 +47,10 @@ const ja: SiteLangDict = {
   tool_jwt_decoder_header_label: 'Header（JSON）',
   tool_jwt_decoder_how_body:
     '完全な JWT（header.payload.signature）を貼り付けます。ドットで分割し、最初の 2 セグメントを Base64url デコードして JSON を整形。exp/iat/nbf が数値なら UTC とローカル時刻も表示。3 番目の Signature は生文字列のみ — 検証しません。',
+  tool_jwt_decoder_how_item_1: '完全な JWT（header.payload.signature）を貼り付けます。',
+  tool_jwt_decoder_how_item_2: '「デコード」を押します（または「サンプル」でデモ token）。',
+  tool_jwt_decoder_how_item_3: '整形された Header と Payload の JSON を確認します。',
+  tool_jwt_decoder_how_item_4: '表示された exp / iat / nbf の時刻を確認します。',
   tool_jwt_decoder_how_title: '使い方',
   tool_jwt_decoder_input_label: 'JWT 入力',
   tool_jwt_decoder_input_placeholder: 'access token または ID token を貼り付け…',

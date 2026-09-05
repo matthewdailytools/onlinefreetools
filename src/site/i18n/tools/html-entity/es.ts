@@ -36,6 +36,10 @@ const es: SiteLangDict = {
   tool_html_entity_form_named: 'Nombre si existe',
   tool_html_entity_how_body:
     'Elige Codificar para convertir caracteres en entidades HTML, o Decodificar para revertirlas. La codificación recorre carácter a carácter; elige alcance y forma (&copy;, &#169;, &#xA9;). La decodificación usa un textarea seguro; la vista previa es solo texto plano.',
+  tool_html_entity_how_item_1: 'Elige Codificar o Decodificar.',
+  tool_html_entity_how_item_2: 'Pega el texto fuente y elige qué caracteres escapar al codificar.',
+  tool_html_entity_how_item_3: 'Al decodificar, elige una pasada o hasta estable para entidades anidadas.',
+  tool_html_entity_how_item_4: 'Pulsa Convertir y copia el resultado.',
   tool_html_entity_how_title: 'Cómo funciona',
   tool_html_entity_input_label: 'Entrada',
   tool_html_entity_input_placeholder: 'Pega texto plano o entidades…',

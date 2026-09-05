@@ -47,6 +47,10 @@ const de: SiteLangDict = {
   tool_jwt_decoder_header_label: 'Header (JSON)',
   tool_jwt_decoder_how_body:
     'Vollständigen JWT einfügen (header.payload.signature). Die Seite teilt an Punkten, dekodiert Base64url der ersten zwei Segmente und formatiert JSON. Numerische exp, iat, nbf zeigen UTC und Ortszeit. Signatur nur als Rohtext — ohne Prüfung.',
+  tool_jwt_decoder_how_item_1: 'Fügen Sie ein vollständiges JWT ein (header.payload.signature).',
+  tool_jwt_decoder_how_item_2: 'Klicken Sie auf Dekodieren (oder Beispiel laden für ein Demo-Token).',
+  tool_jwt_decoder_how_item_3: 'Prüfen Sie das formatierte Header- und Payload-JSON.',
+  tool_jwt_decoder_how_item_4: 'Kontrollieren Sie die angezeigten Zeiten exp / iat / nbf.',
   tool_jwt_decoder_how_title: 'So funktioniert es',
   tool_jwt_decoder_input_label: 'JWT-Eingabe',
   tool_jwt_decoder_input_placeholder: 'Access Token oder ID Token einfügen…',

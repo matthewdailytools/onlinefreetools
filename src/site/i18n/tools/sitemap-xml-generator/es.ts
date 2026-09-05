@@ -28,6 +28,10 @@ const es: SiteLangDict = {
 	tool_sitemap_how_title: 'Cómo funciona',
 	tool_sitemap_how_body:
 		'Pega tu lista de URLs, una por línea. Tras una barra vertical puedes añadir lastmod (yyyy-MM-dd), changefreq y priority. La página analiza cada línea, escapa los caracteres reservados, comprueba que la URL empiece por http(s) y construye un urlset según el protocolo. Copia el XML a la raíz del sitio y refiérelo desde robots.txt o envíalo en Search Console.',
+	tool_sitemap_how_item_1: 'Pega una URL por línea (opcional lastmod|changefreq|priority tras una barra vertical).',
+	tool_sitemap_how_item_2: 'Haz clic en Generar para construir un urlset válido.',
+	tool_sitemap_how_item_3: 'Revisa avisos por listas no https o demasiado grandes.',
+	tool_sitemap_how_item_4: 'Copia o descarga sitemap.xml a la raíz de tu sitio.',
 	tool_sitemap_rules_title: 'Reglas y límites del protocolo',
 	tool_sitemap_rules_body: 'Estas son las reglas del protocolo sitemap y de Google que sigue este generador.',
 	tool_sitemap_rules_item_1:

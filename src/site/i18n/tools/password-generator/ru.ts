@@ -40,6 +40,10 @@ const ru: SiteLangDict = {
   tool_password_generator_generate: 'Сгенерировать',
   tool_password_generator_how_body:
     'Настройте длину, выберите классы символов, при необходимости исключите неоднозначные глифы, задайте количество и Сгенерировать. Каждый символ выбирается crypto.getRandomValues из объединённого пула. Скопируйте список — после ухода со страницы ничего не остаётся.',
+  tool_password_generator_how_item_1: 'Задайте длину ползунком.',
+  tool_password_generator_how_item_2: 'Отметьте нужные классы символов; при желании исключите похожие символы.',
+  tool_password_generator_how_item_3: 'Укажите количество паролей и нажмите «Сгенерировать».',
+  tool_password_generator_how_item_4: 'Скопируйте одну строку или все и сохраните в менеджере паролей.',
   tool_password_generator_how_title: 'Как это работает',
   tool_password_generator_length_label: 'Длина',
   tool_password_generator_lower: 'Строчные',

@@ -35,6 +35,10 @@ const pt: SiteLangDict = {
   tool_yaml_json_faq_q5: 'De onde vêm linha e coluna no erro?',
   tool_yaml_json_how_body:
     'Na mesma página: escolha YAML → JSON ou o inverso. A conversão usa js-yaml nesta aba. Blocos separados por --- passam por loadAll — um documento vira um valor JSON; dois ou mais, um array. Erros de YAML podem trazer linha e coluna quando o parser marca o ponto.',
+  tool_yaml_json_how_item_1: 'Escolha YAML → JSON ou JSON → YAML.',
+  tool_yaml_json_how_item_2: 'Cole a entrada na caixa da esquerda (YAML multidocumento pode usar ---).',
+  tool_yaml_json_how_item_3: 'Opcionalmente ative tipos seguros ou altere a indentação JSON.',
+  tool_yaml_json_how_item_4: 'Clique em Converter, depois copie ou descarregue a saída.',
   tool_yaml_json_how_title: 'Fluxo',
   tool_yaml_json_indent_2: '2 espaços',
   tool_yaml_json_indent_4: '4 espaços',

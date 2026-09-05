@@ -35,6 +35,10 @@ const zh: SiteLangDict = {
   tool_password_generator_generate: '生成',
   tool_password_generator_how_body:
     '滑动长度、勾选字符类、可选排除易混字符、设数量后生成。每个字符从合并字符池用 crypto.getRandomValues 选取。复制即可 — 离开页面后不保留。',
+  tool_password_generator_how_item_1: '用滑块设置密码长度。',
+  tool_password_generator_how_item_2: '勾选需要的字符类；可选排除易混字符。',
+  tool_password_generator_how_item_3: '设置生成数量，然后点击「生成」。',
+  tool_password_generator_how_item_4: '复制单行或「全部复制」，存入密码管理器。',
   tool_password_generator_how_title: '使用方法',
   tool_password_generator_length_label: '长度',
   tool_password_generator_lower: '小写',

@@ -46,6 +46,10 @@ const zh: SiteLangDict = {
 	tool_meta_how_title: '工作原理',
 	tool_meta_how_body:
 		'生成器把你填写的字段拼成对应的头部标签。空的选填字段会被跳过，所以输出里只有你填过的内容。每个值都会做 HTML 转义：& 变成 &amp;，< 变成 &lt;，保证标签在页面里始终合法。长度提示会在标题或描述超过常用上限时提醒你，但不会截断你的文字。',
+	tool_meta_how_item_1: '填写标题、描述以及需要的可选字段。',
+	tool_meta_how_item_2: '按需补充 canonical、robots 与 Open Graph 值。',
+	tool_meta_how_item_3: '点击「生成」构建已转义的头部标签。',
+	tool_meta_how_item_4: '复制输出并粘贴到页面的 <head> 中。',
 	tool_meta_rules_title: '生成器遵循的规则',
 	tool_meta_rules_body: '以下规则来自 Google Search Central 关于 meta 标签、标题链接与 canonical 的说明。',
 	tool_meta_rules_item_1:

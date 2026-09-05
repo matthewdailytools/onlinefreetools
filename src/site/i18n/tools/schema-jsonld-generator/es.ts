@@ -51,6 +51,10 @@ const es: SiteLangDict = {
 	tool_schema_how_title: 'Cómo funciona',
 	tool_schema_how_body:
 		'Elige un tipo de esquema, rellena el formulario y pulsa Generar. La página construye un objeto JSON-LD de Schema.org, comprueba que los campos obligatorios estén presentes y muestra el resultado formateado envuelto en una etiqueta script para pegarlo en el <head> de tu página. Antes de renderizar el resultado se hace una comprobación de sintaxis; los campos obligatorios que falten se listan en vez de producir un marcado roto en silencio.',
+	tool_schema_how_item_1: 'Elige un tipo de Schema.org de la lista.',
+	tool_schema_how_item_2: 'Rellena los campos obligatorios de ese tipo.',
+	tool_schema_how_item_3: 'Haz clic en Generar para construir JSON-LD.',
+	tool_schema_how_item_4: 'Copia el bloque script a tu página y mantén coherencia con el contenido visible.',
 	tool_schema_rules_title: 'Qué comprueba el generador',
 	tool_schema_rules_body:
 		'Cada tipo tiene una forma mínima válida. El generador valida que el JSON esté bien formado y señala los campos obligatorios vacíos, pero no puede saber si el marcado coincide con el contenido visible de tu página.',

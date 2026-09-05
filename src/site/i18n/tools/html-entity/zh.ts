@@ -33,6 +33,10 @@ const zh: SiteLangDict = {
   tool_html_entity_form_named: '命名实体（可用时）',
   tool_html_entity_how_body:
     '选「编码」把字符转成 HTML 字符引用，选「解码」做反向还原。编码按字符逐位处理，可选范围与输出形式（如 &copy;、&#169;、&#xA9;）。解码用安全的 textarea 解析；预览区只显示纯文本，不会渲染 HTML。',
+  tool_html_entity_how_item_1: '选择「编码」或「解码」。',
+  tool_html_entity_how_item_2: '粘贴源文本，编码时选择要转义的字符范围。',
+  tool_html_entity_how_item_3: '解码时选「一次」或「直到稳定」，处理嵌套实体。',
+  tool_html_entity_how_item_4: '点击「转换」并复制结果。',
   tool_html_entity_how_title: '怎么用',
   tool_html_entity_input_label: '输入',
   tool_html_entity_input_placeholder: '粘贴纯文本或实体字符串…',

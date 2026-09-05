@@ -31,6 +31,10 @@ const ar: SiteLangDict = {
 	tool_robots_how_title: 'كيف يعمل',
 	tool_robots_how_body:
 		'اختر الزاحف المستهدف، أضف مسارات Allow و Disallow لكل مجموعة، واختياريًا سطر Sitemap، ثم اضغط «توليد». تجمع الصفحة الملف النصي وفق تخطيط RFC 9309: سطر User-agent لكل مجموعة، أسفله سطور Allow/Disallow، سطر فارغ بين المجموعات، وسطر Sitemap في النهاية. انسخ النتيجة إلى جذر موقعك /robots.txt.',
+	tool_robots_how_item_1: 'حدّد أو أضف user-agents التي تريد التحكم بها.',
+	tool_robots_how_item_2: 'أدخل مسارات Allow وDisallow لكل مجموعة (مسار واحد في كل سطر).',
+	tool_robots_how_item_3: 'يمكنك إضافة URL لـ Sitemap.',
+	tool_robots_how_item_4: 'انقر «إنشاء»، ثم انسخ robots.txt أو نزّله.',
 	tool_robots_rules_title: 'قواعد صياغة مهمة',
 	tool_robots_rules_body:
 		'قواعد robots.txt بادئات مسار وليست أنماطًا، والزاحف يتبع مجموعة واحدة فقط: المجموعة التي يطابق سطر User-agent فيها اسمه بأكبر قدر من التحديد. هذه القواعد التي يتبعها المولّد.',

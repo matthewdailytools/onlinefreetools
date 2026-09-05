@@ -33,6 +33,10 @@ const ru: SiteLangDict = {
   tool_uuid_generator_generate: 'Сгенерировать',
   tool_uuid_generator_how_body:
     'Выберите UUID v4 для стандартных случайных UUID или ULID для 26-символьных ID с сортировкой по времени. Задайте количество (1–100) и Сгенерировать. Копировать все — по одному ID на строку. Случайные байты из CSPRNG браузера.',
+  tool_uuid_generator_how_item_1: 'Выберите UUID v4 или ULID.',
+  tool_uuid_generator_how_item_2: 'Укажите количество ID (1–100).',
+  tool_uuid_generator_how_item_3: 'Нажмите «Сгенерировать» (или «Загрузить пример» для фиксированных demo ID).',
+  tool_uuid_generator_how_item_4: '«Копировать все» — по одному ID в строке в буфер обмена.',
   tool_uuid_generator_how_title: 'Как это работает',
   tool_uuid_generator_output_label: 'Сгенерированные ID',
   tool_uuid_generator_rules_body:

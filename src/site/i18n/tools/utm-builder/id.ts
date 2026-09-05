@@ -57,6 +57,10 @@ const id: SiteLangDict = {
 	tool_utm_how_title: 'Cara kerja',
 	tool_utm_how_body:
 		'Pembuat mem-parsing URL dasar Anda, mempertahankan parameter kueri yang ada, lalu menambahkan parameter UTM dengan pemisah &. Setiap nilai di-encode persen sehingga spasi, karakter Tionghoa, dan simbol tetap aman di dalam link. Jika URL punya hash, hash dipindah ke belakang semua parameter. Lima parameter UTM inilah yang dibaca Google Analytics untuk mengatribusikan kunjungan ke sumber, medium, dan kampanye.',
+	tool_utm_how_item_1: 'Masukkan URL dasar landing page.',
+	tool_utm_how_item_2: 'Isi utm_source, utm_medium, dan utm_campaign (serta parameter opsional).',
+	tool_utm_how_item_3: 'Klik Buat untuk menambahkan parameter UTM yang di-encode.',
+	tool_utm_how_item_4: 'Salin URL pelacakan yang sudah jadi.',
 	tool_utm_rules_title: 'Aturan yang dipakai pembuat',
 	tool_utm_rules_body: 'Berikut definisi dan aturan encoding parameter UTM menurut dokumentasi Google Analytics.',
 	tool_utm_rules_item_1: 'utm_source mengidentifikasi di mana link dilihat; utm_medium mengidentifikasi bagaimana link dikirim. Keduanya wajib untuk atribusi.',

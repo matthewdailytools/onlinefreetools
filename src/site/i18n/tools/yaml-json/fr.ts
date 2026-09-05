@@ -36,6 +36,10 @@ const fr: SiteLangDict = {
   tool_yaml_json_faq_q5: 'D’où viennent les numéros de ligne d’erreur ?',
   tool_yaml_json_how_body:
     'js-yaml tourne dans cet onglet : basculez YAML → JSON ou l’inverse, collez, convertissez. Un flux multi-document découpé par --- devient un tableau JSON dès qu’il y a au moins deux documents ; un seul document reste une valeur JSON unique. Les erreurs YAML affichent ligne et colonne lorsque le parseur fournit un mark.',
+  tool_yaml_json_how_item_1: 'Choisissez YAML → JSON ou JSON → YAML.',
+  tool_yaml_json_how_item_2: 'Collez l’entrée dans la zone de gauche (YAML multi-documents : séparateurs ---).',
+  tool_yaml_json_how_item_3: 'Activez éventuellement les types sûrs ou changez l’indentation JSON.',
+  tool_yaml_json_how_item_4: 'Cliquez sur Convertir, puis copiez ou téléchargez la sortie.',
   tool_yaml_json_how_title: 'En pratique',
   tool_yaml_json_indent_2: '2 espaces',
   tool_yaml_json_indent_4: '4 espaces',

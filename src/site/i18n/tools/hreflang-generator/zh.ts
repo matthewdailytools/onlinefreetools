@@ -36,6 +36,10 @@ const zh: SiteLangDict = {
 	tool_hreflang_how_title: '工作原理',
 	tool_hreflang_how_body:
 		'生成器逐行解析语言码与 URL，然后把同一组对应关系渲染成三种形态。<link> 形态放在每个页面的 <head> 中；HTTP Link 响应头形态由服务器在响应时返回；sitemap 形态在每个 <url> 块内嵌入 <xhtml:link>。每个 URL 都会生成指向自身的自引用标注，保证各语言版本互相指回，可选的 x-default 则覆盖未列出的语言访客。',
+	tool_hreflang_how_item_1: '粘贴 language|URL 配对（每行一对）。',
+	tool_hreflang_how_item_2: '可选添加 x-default URL。',
+	tool_hreflang_how_item_3: '选择 <link> 标签、HTTP Link 响应头或 sitemap xhtml:link 输出。',
+	tool_hreflang_how_item_4: '点击「生成」并复制对应交付形式的标记。',
 	tool_hreflang_rules_title: '生成器遵循的规则',
 	tool_hreflang_rules_body: '以下规则来自 Google Search Central 与 BCP 47 语言标签标准。',
 	tool_hreflang_rules_item_1:

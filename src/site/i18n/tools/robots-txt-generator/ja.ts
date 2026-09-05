@@ -31,6 +31,10 @@ const ja: SiteLangDict = {
 	tool_robots_how_title: '使い方',
 	tool_robots_how_body:
 		'対象のクローラーを選び、グループごとに Allow と Disallow パスを追加し、必要なら Sitemap 行を入れて「生成」を押します。ページが RFC 9309 のレイアウトに沿ってテキストを組み立てます：グループごとに User-agent 行、その下に Allow/Disallow 行、グループ間は空行、末尾に Sitemap 行。結果をサイトのルート /robots.txt に配置してください。',
+	tool_robots_how_item_1: '制御したい user-agent にチェックを入れるか追加する。',
+	tool_robots_how_item_2: '各グループに Allow と Disallow のパスを入力する（1 行 1 パス）。',
+	tool_robots_how_item_3: '必要なら Sitemap URL を追加する。',
+	tool_robots_how_item_4: '「生成」をクリックし、robots.txt をコピーまたはダウンロードする。',
 	tool_robots_rules_title: '押さえておきたい構文ルール',
 	tool_robots_rules_body:
 		'robots.txt のルールはパスの前方一致で、パターンマッチではありません。クローラーが従うグループはひとつだけで、自分の User-agent に最も具体的に一致するグループです。このツールが従うルールは次のとおりです。',

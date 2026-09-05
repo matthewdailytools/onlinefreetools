@@ -37,6 +37,10 @@ const pt: SiteLangDict = {
   tool_json_schema_validator_faq_q5: 'Como checar saída estruturada de um LLM?',
   tool_json_schema_validator_how_body:
     'Cole o Schema à esquerda e a instância à direita. O Ajv (draft-07) compila, valida e lista cada erro com JSON Pointer. Há amostras com erro e válidas; a página abre com a amostra com erro.',
+  tool_json_schema_validator_how_item_1: 'Cole um JSON Schema (draft-07) à esquerda.',
+  tool_json_schema_validator_how_item_2: 'Cole a instância JSON à direita.',
+  tool_json_schema_validator_how_item_3: 'Clique em Validar.',
+  tool_json_schema_validator_how_item_4: 'Corrija cada erro usando o caminho JSON Pointer.',
   tool_json_schema_validator_how_title: 'Como funciona',
   tool_json_schema_validator_instance_label: 'JSON da instância',
   tool_json_schema_validator_instance_placeholder: '{ "sku": "A-1", "price": 9.5 }',

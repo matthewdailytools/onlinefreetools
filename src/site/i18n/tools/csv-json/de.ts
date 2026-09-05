@@ -45,6 +45,10 @@ const de: SiteLangDict = {
   tool_csv_json_header: 'Erste Zeile ist Kopfzeile',
   tool_csv_json_how_body:
     'Wählen Sie CSV → JSON oder JSON → CSV; Parsen und Erzeugen laufen hier mit Papa Parse. Bei CSV wählen Sie Trennzeichen (oder automatisch), ob die erste Zeile eine Kopfzeile ist und ob Zahlen/Booleans erkannt werden. Bei JSON werden verschachtelte Objekte über Punktpfade zu Spalten, und die Spalten sind die Vereinigung aller Schlüssel.',
+  tool_csv_json_how_item_1: 'Wählen Sie CSV → JSON oder JSON → CSV.',
+  tool_csv_json_how_item_2: 'Eingabe einfügen und Trennzeichen / Kopfzeile für CSV setzen.',
+  tool_csv_json_how_item_3: 'Auf Umwandeln klicken (verschachteltes JSON wird beim CSV-Export in Spalten geflatet).',
+  tool_csv_json_how_item_4: 'Ergebnis kopieren oder herunterladen.',
   tool_csv_json_how_title: 'So funktioniert es',
   tool_csv_json_indent_2: '2 Leerzeichen',
   tool_csv_json_indent_4: '4 Leerzeichen',

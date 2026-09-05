@@ -36,6 +36,10 @@ const id: SiteLangDict = {
 	tool_hreflang_how_title: 'Cara kerja',
 	tool_hreflang_how_body:
 		'Pembuat mengurai setiap baris menjadi kode bahasa dan URL, lalu menampilkan rangkaian relasi yang sama dalam tiga bentuk. Bentuk <link> masuk ke <head> setiap halaman. Bentuk header HTTP Link dikirim dalam respons server. Bentuk sitemap menyematkan <xhtml:link> di dalam setiap blok <url>. Setiap URL mendapat anotasi hreflang referensi diri agar setiap versi bahasa menunjuk ke dirinya sendiri, dan entri x-default opsional mencakup pengunjung yang bahasanya tidak tercantum.',
+	tool_hreflang_how_item_1: 'Tempel pasangan language|URL (satu pasang per baris).',
+	tool_hreflang_how_item_2: 'Opsional: tambahkan URL x-default.',
+	tool_hreflang_how_item_3: 'Pilih tag <link>, header HTTP Link, atau output sitemap xhtml:link.',
+	tool_hreflang_how_item_4: 'Klik Buat dan salin markup untuk format tersebut.',
 	tool_hreflang_rules_title: 'Aturan yang dipakai pembuat',
 	tool_hreflang_rules_body: 'Aturan ini berasal dari Google Search Central dan standar tag bahasa BCP 47.',
 	tool_hreflang_rules_item_1:

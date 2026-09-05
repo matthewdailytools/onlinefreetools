@@ -57,6 +57,10 @@ const fr: SiteLangDict = {
 	tool_utm_how_title: 'Comment ça marche',
 	tool_utm_how_body:
 		'Le générateur analyse votre URL de base, conserve ses paramètres de requête existants puis ajoute les paramètres UTM avec un séparateur &. Chaque valeur est encodée en pourcentage afin que les espaces, les caractères chinois et les symboles survivent dans le lien. Si l’URL a un hash, il est déplacé après tous les paramètres. Les cinq paramètres UTM sont ce que Google Analytics lit pour attribuer la visite à une source, un support et une campagne.',
+	tool_utm_how_item_1: 'Saisissez l’URL de base de la landing.',
+	tool_utm_how_item_2: 'Renseignez utm_source, utm_medium et utm_campaign (plus paramètres optionnels).',
+	tool_utm_how_item_3: 'Cliquez sur Générer pour ajouter les paramètres UTM encodés.',
+	tool_utm_how_item_4: 'Copiez l’URL de suivi finalisée.',
 	tool_utm_rules_title: 'Règles du générateur',
 	tool_utm_rules_body: 'Voici les définitions et règles d’encodage des paramètres UTM, selon la documentation Google Analytics.',
 	tool_utm_rules_item_1: 'utm_source identifie où le lien a été vu ; utm_medium identifie comment il a été diffusé. Les deux sont obligatoires pour l’attribution.',

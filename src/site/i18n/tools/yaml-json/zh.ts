@@ -30,6 +30,10 @@ const zh: SiteLangDict = {
   tool_yaml_json_faq_q5: '报错行号从哪来？',
   tool_yaml_json_how_body:
     '先选 YAML → JSON 或反过来。本页用 js-yaml 在当前标签页转换。用 --- 隔开的多文档会进 loadAll：一篇变成单个 JSON 值，两篇及以上变成 JSON 数组。YAML 语法错时，解析器若带 mark 会给出行号列号。',
+  tool_yaml_json_how_item_1: '选择 YAML → JSON 或 JSON → YAML。',
+  tool_yaml_json_how_item_2: '在左侧框粘贴输入（多文档 YAML 可用 --- 分隔）。',
+  tool_yaml_json_how_item_3: '可选勾选「安全类型」或调整 JSON 缩进。',
+  tool_yaml_json_how_item_4: '点击「转换」，然后复制或下载输出。',
   tool_yaml_json_how_title: '怎么用',
   tool_yaml_json_indent_2: '2 空格',
   tool_yaml_json_indent_4: '4 空格',

@@ -33,6 +33,10 @@ const id: SiteLangDict = {
   tool_html_entity_form_named: 'Nama jika ada',
   tool_html_entity_how_body:
     'Pilih Encode untuk mengubah karakter jadi entity HTML, atau Decode untuk membalikkan. Encode per karakter; pratinjau hanya teks biasa.',
+  tool_html_entity_how_item_1: 'Pilih Encode atau Decode.',
+  tool_html_entity_how_item_2: 'Tempel teks sumber dan pilih karakter yang di-escape saat encode.',
+  tool_html_entity_how_item_3: 'Saat decode, pilih sekali atau sampai stabil untuk entitas bersarang.',
+  tool_html_entity_how_item_4: 'Klik Konversi dan salin hasilnya.',
   tool_html_entity_how_title: 'Cara kerja',
   tool_html_entity_input_label: 'Masukan',
   tool_html_entity_input_placeholder: 'Tempel teks biasa atau entity…',

@@ -172,6 +172,7 @@ export const renderCsvJsonPage = (opts: {
 		mode: 'rules',
 		usecaseCount: 3,
 		ruleItemCount: 4,
+		howItemCount: 4,
 	});
 
 	const referencesHtml = renderToolReferencesSection({

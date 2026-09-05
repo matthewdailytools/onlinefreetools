@@ -32,6 +32,10 @@ const pt: SiteLangDict = {
 	tool_robots_how_title: 'Como funciona',
 	tool_robots_how_body:
 		'Selecione os rastreadores que você quer atingir, adicione caminhos Allow e Disallow para cada grupo, opcionalmente uma linha Sitemap e clique em Gerar. A página monta o arquivo em texto puro seguindo o layout do RFC 9309: uma linha User-agent por grupo, suas linhas Allow/Disallow abaixo, linha em branco entre grupos e a linha Sitemap no fim. Copie o resultado para a raiz do seu site em /robots.txt.',
+	tool_robots_how_item_1: 'Marque ou adicione os user-agents que deseja controlar.',
+	tool_robots_how_item_2: 'Informe caminhos Allow e Disallow para cada grupo (um caminho por linha).',
+	tool_robots_how_item_3: 'Opcionalmente adicione uma URL de Sitemap.',
+	tool_robots_how_item_4: 'Clique em Gerar e depois copie ou baixe o robots.txt.',
 	tool_robots_rules_title: 'Regras de sintaxe importantes',
 	tool_robots_rules_body:
 		'As regras de robots.txt são prefixos de caminho, não padrões, e um rastreador obedece a um único grupo: aquele cujo User-agent corresponde a ele de forma mais específica. Estas são as regras que este gerador segue.',

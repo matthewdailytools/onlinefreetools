@@ -46,6 +46,10 @@ const de: SiteLangDict = {
 	tool_meta_how_title: 'So funktioniert es',
 	tool_meta_how_body:
 		'Der Generator nimmt deine Felder und baut die passenden Head-Tags. Leere optionale Felder werden übersprungen, sodass die Ausgabe nur das enthält, was du ausgefüllt hast. Jeder Wert wird HTML-escaped: Ein & wird zu &amp; und ein Kleiner-als-Zeichen zu &lt;, damit die Tags in deiner Seite gültig bleiben. Längenhinweise warnen, wenn Titel oder Description die üblichen Grenzen überschreiten, ohne deinen Text zu beschneiden.',
+	tool_meta_how_item_1: 'Fülle Titel, Description und die optionalen Felder aus, die du brauchst.',
+	tool_meta_how_item_2: 'Ergänze bei Bedarf Canonical, Robots und Open-Graph-Werte.',
+	tool_meta_how_item_3: 'Klicke auf Generieren, um escapte Head-Tags zu erzeugen.',
+	tool_meta_how_item_4: 'Kopiere die Ausgabe und füge sie in das <head> deiner Seite ein.',
 	tool_meta_rules_title: 'Regeln des Generators',
 	tool_meta_rules_body: 'Diese Regeln folgen den Leitlinien von Google Search Central zu Meta-Tags, Title-Links und Canonical-URLs.',
 	tool_meta_rules_item_1:

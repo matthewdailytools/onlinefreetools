@@ -32,6 +32,10 @@ const de: SiteLangDict = {
   tool_markdown_full_doc: 'Vollständiges HTML-Dokument erzeugen',
   tool_markdown_how_body:
     'Tabs steuern die Richtung. Links Eingabe, rechts lokales Ergebnis. HTML: Fragment oder schlankes Gesamtdokument; Markdown: Klartext für Editor/LLM.',
+  tool_markdown_how_item_1: 'Register Markdown → HTML oder HTML → Markdown wählen.',
+  tool_markdown_how_item_2: 'Eingabe links einfügen (oder Beispiel laden).',
+  tool_markdown_how_item_3: 'Bei Markdown → HTML optional minimales HTML-Dokument erzeugen.',
+  tool_markdown_how_item_4: 'Konvertierte Ausgabe rechts kopieren oder herunterladen.',
   tool_markdown_how_title: 'Ablauf',
   tool_markdown_html_input_label: 'HTML-Eingabe',
   tool_markdown_html_placeholder: '<h1>Titel</h1>\n<p>Hallo <strong>Welt</strong></p>',

@@ -32,6 +32,10 @@ const ru: SiteLangDict = {
   tool_html_entity_form_named: 'Имя, если есть',
   tool_html_entity_how_body:
     'Кодирование превращает символы в сущности HTML, декодирование — обратно. Предпросмотр только plain text.',
+  tool_html_entity_how_item_1: 'Выберите «Кодировать» или «Декодировать».',
+  tool_html_entity_how_item_2: 'Вставьте исходный текст и при кодировании выберите, какие символы экранировать.',
+  tool_html_entity_how_item_3: 'При декодировании выберите один проход или «до стабильности» для вложенных сущностей.',
+  tool_html_entity_how_item_4: 'Нажмите «Преобразовать» и скопируйте результат.',
   tool_html_entity_how_title: 'Как это работает',
   tool_html_entity_input_label: 'Ввод',
   tool_html_entity_input_placeholder: 'Вставьте текст или сущности…',

@@ -46,6 +46,10 @@ const id: SiteLangDict = {
 	tool_meta_how_title: 'Cara kerja',
 	tool_meta_how_body:
 		'Pembuat mengambil kolom Anda dan membangun tag head yang sesuai. Kolom opsional kosong dilewati, sehingga keluaran hanya berisi yang Anda isi. Setiap nilai di-escape HTML: ampersand menjadi &amp; dan tanda kurang dari menjadi &lt;, menjaga tag tetap valid di dalam halaman Anda. Petunjuk panjang memperingatkan saat judul atau deskripsi melewati batas umum, tanpa memotong teks Anda.',
+	tool_meta_how_item_1: 'Isi judul, deskripsi, dan bidang opsional yang Anda perlukan.',
+	tool_meta_how_item_2: 'Tambahkan canonical, robots, dan nilai Open Graph bila relevan.',
+	tool_meta_how_item_3: 'Klik Buat untuk menyusun tag head yang di-escape.',
+	tool_meta_how_item_4: 'Salin output dan tempel ke <head> halaman Anda.',
 	tool_meta_rules_title: 'Aturan yang dipakai pembuat',
 	tool_meta_rules_body: 'Aturan ini mengikuti panduan Google Search Central tentang meta tag, title link, dan URL kanonik.',
 	tool_meta_rules_item_1:

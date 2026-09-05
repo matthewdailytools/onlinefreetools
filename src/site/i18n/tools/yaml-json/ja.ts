@@ -30,6 +30,10 @@ const ja: SiteLangDict = {
   tool_yaml_json_faq_q5: 'エラーの行番号はどこから？',
   tool_yaml_json_how_body:
     'YAML → JSON か JSON → YAML を選びます。変換はこのタブ内の js-yaml で行います。--- 区切りの複数ドキュメントは JSON 配列になり、単一ドキュメントはそのまま1つの JSON 値です。YAML のエラーは、パーサが mark を返すとき行と列を示します。',
+  tool_yaml_json_how_item_1: 'YAML → JSON または JSON → YAML を選びます。',
+  tool_yaml_json_how_item_2: '左の欄に入力を貼り付けます（複数ドキュメントは --- で区切れます）。',
+  tool_yaml_json_how_item_3: '必要なら JSON-safe types を有効にするか JSON インデントを変更します。',
+  tool_yaml_json_how_item_4: '「変換」を押し、出力をコピーまたはダウンロードします。',
   tool_yaml_json_how_title: '使い方',
   tool_yaml_json_indent_2: 'スペース2',
   tool_yaml_json_indent_4: 'スペース4',

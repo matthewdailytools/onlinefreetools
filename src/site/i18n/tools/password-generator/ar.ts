@@ -40,6 +40,10 @@ const ar: SiteLangDict = {
   tool_password_generator_generate: 'توليد',
   tool_password_generator_how_body:
     'اضبط الطول، اختر فئات الأحرف، اختياري استبعد الرموز الملتبسة، حدّد العدد ثم توليد. كل حرف يُختار بـ crypto.getRandomValues من المجموعة المدمجة. انسخ القائمة — لا شيء يبقى بعد مغادرة الصفحة.',
+  tool_password_generator_how_item_1: 'اضبط الطول بالشريط.',
+  tool_password_generator_how_item_2: 'حدّد فئات الأحرف؛ اختياريًا استبعد الأحرف المتشابهة.',
+  tool_password_generator_how_item_3: 'حدد عدد كلمات المرور ثم انقر «توليد».',
+  tool_password_generator_how_item_4: 'انسخ صفًا واحدًا أو الكل واحفظها في مدير كلمات مرور.',
   tool_password_generator_how_title: 'كيف يعمل',
   tool_password_generator_length_label: 'الطول',
   tool_password_generator_lower: 'أحرف صغيرة',

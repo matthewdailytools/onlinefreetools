@@ -74,6 +74,10 @@ const id: SiteLangDict = {
 	tool_onpage_how_title: 'Cara kerjanya',
 	tool_onpage_how_body:
 		'Pemeriksa mengurai markup yang Anda tempel (atau HTML yang diambil dari URL) dan mengevaluasi daftar tetap pemeriksaan SEO on-page. Setiap pemeriksaan membaca satu jenis tag: title, meta description, H1, canonical, robots meta, kolom Open Graph, blok JSON-LD, konten campuran, dan sumber daya yang memblokir render. Mode tempel sepenuhnya di browser Anda; mode URL mengambil halaman sekali melalui worker kami dan tidak menyimpannya.',
+	tool_onpage_how_item_1: 'Tetap di Tempel HTML, atau beralih ke Ambil URL untuk halaman live.',
+	tool_onpage_how_item_2: 'Tempel markup atau masukkan URL https.',
+	tool_onpage_how_item_3: 'Klik Periksa halaman (atau Contoh untuk dokumen demo).',
+	tool_onpage_how_item_4: 'Tinjau status setiap pemeriksaan dan perbaiki tag yang dilaporkan.',
 	tool_onpage_rules_title: 'Aturan yang diikuti pemeriksaan',
 	tool_onpage_rules_body:
 		'Berikut acuan pembanding tiap pemeriksaan dan seberapa mengikat sifatnya. Perilaku tag (robots, canonical, konten campuran) mengikuti Google Search Central dan spesifikasi HTML. Saran soal panjang dan judul hanyalah patokan tampilan atau keterbacaan, bukan aturan peringkat.',

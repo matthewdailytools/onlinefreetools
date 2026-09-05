@@ -47,6 +47,10 @@ const fr: SiteLangDict = {
   tool_jwt_decoder_header_label: 'En-tête (JSON)',
   tool_jwt_decoder_how_body:
     'Collez un JWT complet (header.payload.signature). La page sépare par points, décode Base64url sur les deux premiers segments et formate le JSON. exp, iat et nbf numériques affichent UTC et heure locale. La signature n’est montrée qu’en texte brut — sans vérification.',
+  tool_jwt_decoder_how_item_1: 'Collez un JWT complet (header.payload.signature).',
+  tool_jwt_decoder_how_item_2: 'Cliquez sur Décoder (ou Charger l’exemple pour un jeton de démo).',
+  tool_jwt_decoder_how_item_3: 'Consultez le JSON formaté de l’en-tête et du payload.',
+  tool_jwt_decoder_how_item_4: 'Vérifiez les horodatages exp / iat / nbf affichés.',
   tool_jwt_decoder_how_title: 'Fonctionnement',
   tool_jwt_decoder_input_label: 'Saisie JWT',
   tool_jwt_decoder_input_placeholder: 'Collez access token ou ID token…',

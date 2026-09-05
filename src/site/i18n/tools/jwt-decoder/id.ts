@@ -47,6 +47,10 @@ const id: SiteLangDict = {
   tool_jwt_decoder_header_label: 'Header (JSON)',
   tool_jwt_decoder_how_body:
     'Tempel JWT lengkap (header.payload.signature). Halaman memisah per titik, decode Base64url pada dua segmen pertama, lalu format JSON. exp, iat, nbf numerik menampilkan UTC dan waktu lokal. Segmen signature hanya teks mentah — tidak diverifikasi.',
+  tool_jwt_decoder_how_item_1: 'Tempel JWT lengkap (header.payload.signature).',
+  tool_jwt_decoder_how_item_2: 'Klik Decode (atau Muat contoh untuk token demo).',
+  tool_jwt_decoder_how_item_3: 'Tinjau JSON header dan payload yang diformat.',
+  tool_jwt_decoder_how_item_4: 'Periksa waktu exp / iat / nbf yang ditampilkan.',
   tool_jwt_decoder_how_title: 'Cara kerja',
   tool_jwt_decoder_input_label: 'Input JWT',
   tool_jwt_decoder_input_placeholder: 'Tempel access token atau ID token…',

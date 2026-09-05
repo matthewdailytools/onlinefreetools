@@ -30,6 +30,10 @@ const zh: SiteLangDict = {
   tool_uuid_generator_generate: '生成',
   tool_uuid_generator_how_body:
     '选 UUID v4 为标准随机 UUID，或 ULID 为 26 字符可时间排序 ID。设置数量（1–100）后生成；全部复制为每行一条。随机字节来自浏览器 CSPRNG。',
+  tool_uuid_generator_how_item_1: '选择 UUID v4 或 ULID。',
+  tool_uuid_generator_how_item_2: '设置生成数量（1–100）。',
+  tool_uuid_generator_how_item_3: '点击「生成」（或「加载示例」填入固定演示 ID）。',
+  tool_uuid_generator_how_item_4: '点「全部复制」，每行一个 ID 到剪贴板。',
   tool_uuid_generator_how_title: '使用方法',
   tool_uuid_generator_output_label: '生成的 ID',
   tool_uuid_generator_rules_body: '格式差异与实用限制，便于写入代码或数据库。',

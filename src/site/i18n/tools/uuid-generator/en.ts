@@ -33,6 +33,10 @@ const en: SiteLangDict = {
   tool_uuid_generator_generate: 'Generate',
   tool_uuid_generator_how_body:
     'Choose UUID v4 for standard random UUIDs, or ULID for time-sortable 26-character IDs. Set how many you need (1–100) and Generate. Copy all puts one ID per line on the clipboard. Random bytes come from the browser CSPRNG.',
+	tool_uuid_generator_how_item_1: 'Choose UUID v4 or ULID.',
+	tool_uuid_generator_how_item_2: 'Set how many IDs to generate (1–100).',
+	tool_uuid_generator_how_item_3: 'Click Generate (or Load sample for fixed demo IDs).',
+	tool_uuid_generator_how_item_4: 'Copy all to put one ID per line on the clipboard.',
   tool_uuid_generator_how_title: 'How it works',
   tool_uuid_generator_output_label: 'Generated IDs',
   tool_uuid_generator_rules_body:

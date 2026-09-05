@@ -31,6 +31,10 @@ const zh: SiteLangDict = {
 	tool_robots_how_title: '怎么用',
 	tool_robots_how_body:
 		'选好要针对的爬虫，为每个分组添加 Allow 与 Disallow 路径，可选地加一行 Sitemap，然后点「生成」。页面按 RFC 9309 的布局组装纯文本：每个分组一行 User-agent，下方是它的 Allow/Disallow 行，分组之间空一行，Sitemap 行放在末尾。复制后放到站点根目录 /robots.txt 即可。',
+	tool_robots_how_item_1: '勾选或添加要控制的 user-agent。',
+	tool_robots_how_item_2: '为每组填写 Allow 与 Disallow 路径（每行一条）。',
+	tool_robots_how_item_3: '可选填写 Sitemap URL。',
+	tool_robots_how_item_4: '点击「生成」，然后复制或下载 robots.txt。',
 	tool_robots_rules_title: '需要记住的语法规则',
 	tool_robots_rules_body:
 		'robots.txt 的规则是路径前缀而非正则；一个爬虫只遵守一组规则——User-agent 与它匹配得最具体的那一组。以下是本生成器遵循的规则。',

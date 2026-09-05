@@ -32,6 +32,10 @@ const fr: SiteLangDict = {
   tool_html_entity_form_named: 'Nom si disponible',
   tool_html_entity_how_body:
     'Choisissez Encoder pour obtenir des entités HTML, ou Décoder pour l’inverse. L’aperçu n’affiche que du texte brut.',
+  tool_html_entity_how_item_1: 'Choisissez Encoder ou Décoder.',
+  tool_html_entity_how_item_2: 'Collez le texte source et choisissez les caractères à échapper à l’encodage.',
+  tool_html_entity_how_item_3: 'Au décodage, choisissez une passe ou « jusqu’à stable » pour les entités imbriquées.',
+  tool_html_entity_how_item_4: 'Cliquez sur Convertir et copiez le résultat.',
   tool_html_entity_how_title: 'Fonctionnement',
   tool_html_entity_input_label: 'Entrée',
   tool_html_entity_input_placeholder: 'Collez du texte ou des entités…',

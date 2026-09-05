@@ -46,6 +46,10 @@ const ar: SiteLangDict = {
 	tool_meta_how_title: 'كيف يعمل',
 	tool_meta_how_body:
 		'يبني المولّد وسوم الرأس المقابلة من حقولك. تُتجاهل الحقول الاختيارية الفارغة، فيحتوي الناتج على ما ملأته فقط. يُرمَّز كل قيمة في HTML: تتحول & إلى &amp; و< إلى &lt;، فتبقى الوسوم سليمة داخل صفحتك. تحذرك تلميحات الطول عندما يتجاوز العنوان أو الوصف الحدود الشائعة، دون قطع نصك.',
+	tool_meta_how_item_1: 'املأ العنوان والوصف وأي حقول اختيارية تحتاجها.',
+	tool_meta_how_item_2: 'أضف canonical وrobots وقيم Open Graph عند الحاجة.',
+	tool_meta_how_item_3: 'انقر «إنشاء» لبناء وسوم head مُهَرْبَة.',
+	tool_meta_how_item_4: 'انسخ المخرجات والصقها داخل <head> في صفحتك.',
 	tool_meta_rules_title: 'القواعد التي يتبعها المولّد',
 	tool_meta_rules_body: 'تتبع هذه القواعد إرشادات Google Search Central حول وسوم الميتا وروابط العنوان وعناوين canonical.',
 	tool_meta_rules_item_1:

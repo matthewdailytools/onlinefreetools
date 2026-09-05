@@ -182,7 +182,6 @@ export const renderAddTextToPdfFilePage = (opts: {
         encrypted: ${JSON.stringify(t(opts.lang, prefix + '_err_encrypted'))},
         loadFail: ${JSON.stringify(t(opts.lang, prefix + '_err_load'))},
         applyFail: ${JSON.stringify(t(opts.lang, prefix + '_err_convert'))},
-        notext: ${JSON.stringify(t(opts.lang, prefix + '_err_notext'))},
         large: ${JSON.stringify(t(opts.lang, prefix + '_warn_large'))},
         working: ${JSON.stringify(t(opts.lang, prefix + '_status_working'))},
         done: ${JSON.stringify(t(opts.lang, prefix + '_status_done'))},

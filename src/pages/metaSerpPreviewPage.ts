@@ -144,7 +144,8 @@ export const renderMetaSerpPreviewPage = (opts: {
       </div>
     </div>
 
-    ${renderToolIgSections({ lang: opts.lang, prefix: 'tool_serp', mode: 'rules', ruleItemCount: 4 })}`;
+    ${renderToolIgSections({ lang: opts.lang, prefix: 'tool_serp', mode: 'rules', ruleItemCount: 4,
+		howItemCount: 4 })}`;
 
 	const referencesHtml = renderToolReferencesSection({
 		lang: opts.lang,

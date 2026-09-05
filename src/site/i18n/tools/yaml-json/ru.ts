@@ -36,6 +36,10 @@ const ru: SiteLangDict = {
   tool_yaml_json_faq_q5: 'Откуда берутся номера строк в ошибках?',
   tool_yaml_json_how_body:
     'Выберите YAML → JSON или JSON → YAML. Преобразование идёт через js-yaml во вкладке. Потоки из нескольких документов, разделённых ---, становятся JSON-массивом; один документ остаётся одним JSON-значением. Ошибки YAML показывают строку и столбец, если парсер отдаёт mark.',
+  tool_yaml_json_how_item_1: 'Выберите YAML → JSON или JSON → YAML.',
+  tool_yaml_json_how_item_2: 'Вставьте вход в левое поле (несколько YAML-документов — через ---).',
+  tool_yaml_json_how_item_3: 'При необходимости включите безопасные типы или измените отступ JSON.',
+  tool_yaml_json_how_item_4: 'Нажмите «Преобразовать», затем скопируйте или скачайте результат.',
   tool_yaml_json_how_title: 'Как пользоваться',
   tool_yaml_json_indent_2: '2 пробела',
   tool_yaml_json_indent_4: '4 пробела',

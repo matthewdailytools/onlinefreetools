@@ -35,6 +35,10 @@ const ar: SiteLangDict = {
   tool_yaml_json_faq_q5: 'هل يمكن الذهاب والإياب بلا فقدان؟',
   tool_yaml_json_how_body:
     'اختر YAML → JSON أو العكس. يعمل التحويل عبر js-yaml في هذا التبويب. التيارات متعددة المستندات المفصولة بـ --- تصبح مصفوفة JSON؛ مستند واحد يبقى قيمة JSON واحدة. أخطاء YAML تعرض السطر والعمود عندما يوفّر المحلّل علامة.',
+  tool_yaml_json_how_item_1: 'اختر YAML → JSON أو JSON → YAML.',
+  tool_yaml_json_how_item_2: 'الصق المدخلات في المربع الأيسر (YAML متعدد المستندات قد يستخدم ---).',
+  tool_yaml_json_how_item_3: 'اختياريًا فعّل الأنواع الآمنة أو غيّر مسافة JSON.',
+  tool_yaml_json_how_item_4: 'انقر «تحويل»، ثم انسخ المخرجات أو حمّلها.',
   tool_yaml_json_how_title: 'مسار العمل',
   tool_yaml_json_indent_2: 'مسافتان',
   tool_yaml_json_indent_4: 'أربع مسافات',

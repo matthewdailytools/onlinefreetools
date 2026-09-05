@@ -75,6 +75,10 @@ const en: SiteLangDict = {
 	tool_onpage_how_title: 'How it works',
 	tool_onpage_how_body:
 		'The checker parses the markup you paste (or the HTML fetched from a URL) and evaluates a fixed list of on-page SEO checks. Each check reads a single kind of tag: the title, the meta description, H1 tags, the canonical link, robots meta, Open Graph fields, JSON-LD blocks, mixed content and render-blocking resources. Paste mode runs entirely in your browser; URL mode fetches the page once through our worker and does not store it.',
+	tool_onpage_how_item_1: 'Stay on Paste HTML, or switch to Fetch URL for a live page.',
+	tool_onpage_how_item_2: 'Paste markup or enter an https URL.',
+	tool_onpage_how_item_3: 'Click Check page (or Load sample for a demo document).',
+	tool_onpage_how_item_4: 'Review each check status and fix the reported tags.',
 	tool_onpage_rules_title: 'Rules the checks follow',
 	tool_onpage_rules_body:
 		'What each check compares against, and how firm it is. Tag behaviour (robots, canonical, mixed content) follows Google Search Central and the HTML specification. Length and heading advice are display or readability heuristics, not ranking rules.',

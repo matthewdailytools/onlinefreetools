@@ -32,6 +32,10 @@ const pt: SiteLangDict = {
   tool_markdown_full_doc: 'Gerar documento HTML completo',
   tool_markdown_how_body:
     'Use as abas. Entrada à esquerda, resultado à direita. No sentido HTML dá para copiar trecho ou documento simples; no sentido Markdown sai texto para Git ou LLM.',
+  tool_markdown_how_item_1: 'Escolha o separador Markdown → HTML ou HTML → Markdown.',
+  tool_markdown_how_item_2: 'Cole a entrada à esquerda (ou clique em Carregar exemplo).',
+  tool_markdown_how_item_3: 'Em Markdown → HTML, opcionalmente envolva um documento HTML mínimo.',
+  tool_markdown_how_item_4: 'Copie ou descarregue a saída convertida à direita.',
   tool_markdown_how_title: 'Fluxo',
   tool_markdown_html_input_label: 'Entrada HTML',
   tool_markdown_html_placeholder: '<h1>Título</h1>\n<p>Olá <strong>mundo</strong></p>',

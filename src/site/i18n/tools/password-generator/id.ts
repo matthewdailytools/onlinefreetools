@@ -40,6 +40,10 @@ const id: SiteLangDict = {
   tool_password_generator_generate: 'Generate',
   tool_password_generator_how_body:
     'Atur panjang, pilih kelas karakter, opsional kecualikan glif ambigu, set jumlah lalu Generate. Setiap karakter dipilih dengan crypto.getRandomValues dari pool gabungan. Salin daftar — tidak ada yang tersisa setelah Anda tinggalkan halaman.',
+  tool_password_generator_how_item_1: 'Atur panjang dengan slider.',
+  tool_password_generator_how_item_2: 'Centang kelas karakter yang diperlukan; opsional kecualikan glif ambigu.',
+  tool_password_generator_how_item_3: 'Atur jumlah password, lalu klik Generate.',
+  tool_password_generator_how_item_4: 'Salin satu baris atau salin semua, lalu simpan di password manager.',
   tool_password_generator_how_title: 'Cara kerja',
   tool_password_generator_length_label: 'Panjang',
   tool_password_generator_lower: 'Huruf kecil',

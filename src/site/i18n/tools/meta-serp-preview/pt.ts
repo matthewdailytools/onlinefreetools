@@ -35,6 +35,10 @@ const pt: SiteLangDict = {
 	tool_serp_how_title: 'Como funciona',
 	tool_serp_how_body:
 		'Digite ou cole o título, a descrição e uma URL opcional. A ferramenta estima quantos caracteres e pixels aproximados cada linha ocupa usando uma aproximação de métricas de fonte (glifos largos CJK contam mais que letras ASCII estreitas) e desenha um trecho estilo Google para desktop e outro para mobile. Linhas mais largas que o viewport estimado recebem uma marca de corte.',
+	tool_serp_how_item_1: 'Informe título e meta description (URL de exibição opcional).',
+	tool_serp_how_item_2: 'Alterne entre estimativa desktop ou mobile se ambas importarem.',
+	tool_serp_how_item_3: 'Acompanhe dicas de comprimento e pixels enquanto edita.',
+	tool_serp_how_item_4: 'Revise o texto até a prévia truncar de forma limpa.',
 	tool_serp_rules_title: 'O que a prévia mostra',
 	tool_serp_rules_body:
 		'Os limites de pixels são aproximados. O Google mede a largura renderizada, não a contagem de caracteres, então idiomas densos e glifos largos cortam com menos caracteres.',

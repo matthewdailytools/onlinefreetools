@@ -57,6 +57,10 @@ const zh: SiteLangDict = {
 	tool_utm_how_title: '工作原理',
 	tool_utm_how_body:
 		'生成器会解析基础 URL，保留其已有的查询参数，再用 & 拼接 UTM 参数。每个值都会被百分号编码，空格、中文与特殊符号都能安全存在于链接中。若 URL 带 hash，会把它挪到所有参数之后。这五个 UTM 参数就是 Google Analytics 用来把访问归因到来源、媒介与活动的依据。',
+	tool_utm_how_item_1: '输入落地页基础 URL。',
+	tool_utm_how_item_2: '填写 utm_source、utm_medium 和 utm_campaign（以及可选参数）。',
+	tool_utm_how_item_3: '点击「生成」追加 percent-encoded 的 UTM 参数。',
+	tool_utm_how_item_4: '复制完成的追踪 URL。',
 	tool_utm_rules_title: '生成器遵循的规则',
 	tool_utm_rules_body: '以下是 Google Analytics 文档中的 UTM 参数定义与编码规则。',
 	tool_utm_rules_item_1: 'utm_source 标识链接在哪里被看到，utm_medium 标识如何送达。两者对归因都是必填。',

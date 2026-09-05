@@ -35,6 +35,10 @@ const zh: SiteLangDict = {
 	tool_serp_how_title: '怎么用',
 	tool_serp_how_body:
 		'输入或粘贴标题、描述与可选网址。工具用浏览器字体宽度近似估算每一行占多少字符与多少像素（中文等宽字按约 1em、半角字母数字按约 0.55em 计算），再画出一套桌面与一套移动端的 Google 风格摘要。超出估算视口宽度的行会显示截断标记。',
+	tool_serp_how_item_1: '输入标题与 meta 描述（可选显示 URL）。',
+	tool_serp_how_item_2: '若两种预览都重要，切换桌面端或移动端估算。',
+	tool_serp_how_item_3: '编辑时留意字符数与像素提示。',
+	tool_serp_how_item_4: '调整措辞直到预览截断自然。',
 	tool_serp_rules_title: '预览展示什么',
 	tool_serp_rules_body:
 		'像素上限是近似值。Google 按渲染后的宽度截断，而不是字符数，所以密集语言与宽字符会在更少的字符数时被截断。',

@@ -51,6 +51,10 @@ const id: SiteLangDict = {
 	tool_schema_how_title: 'Cara kerja',
 	tool_schema_how_body:
 		'Pilih tipe skema, isi kolom form, lalu tekan Buat. Halaman menyusun objek JSON-LD Schema.org, memeriksa kolom wajib terisi, lalu menampilkan hasil rapi yang dibungkus tag script untuk ditempel ke bagian head halaman Anda. Sebelum keluaran dirender, sintaks JSON diperiksa; kolom wajib yang kosong dilaporkan sebagai daftar, bukan diam-diam membuat markup yang cacat.',
+	tool_schema_how_item_1: 'Pilih tipe Schema.org dari daftar.',
+	tool_schema_how_item_2: 'Isi bidang wajib untuk tipe tersebut.',
+	tool_schema_how_item_3: 'Klik Buat untuk menyusun JSON-LD.',
+	tool_schema_how_item_4: 'Salin blok script ke halaman dan selaraskan dengan konten yang terlihat.',
 	tool_schema_rules_title: 'Yang dicek pembuat',
 	tool_schema_rules_body:
 		'Setiap tipe punya bentuk minimal yang valid. Pembuat memastikan JSON terbentuk benar dan menandai kolom wajib yang kosong, tetapi tidak bisa menilai apakah markup cocok dengan konten halaman Anda yang terlihat.',

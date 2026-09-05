@@ -33,6 +33,10 @@ const es: SiteLangDict = {
   tool_markdown_full_doc: 'Generar documento HTML completo',
   tool_markdown_how_body:
     'Una pestaña por sentido. Escribes a la izquierda y ves el resultado a la derecha sin subir el texto. En HTML puedes llevarte un fragmento o un documento mínimo; en Markdown obtienes texto plano.',
+  tool_markdown_how_item_1: 'Elige la pestaña Markdown → HTML o HTML → Markdown.',
+  tool_markdown_how_item_2: 'Pega la entrada a la izquierda (o pulsa Cargar ejemplo).',
+  tool_markdown_how_item_3: 'En Markdown → HTML, opcionalmente envuelve un documento HTML mínimo.',
+  tool_markdown_how_item_4: 'Copia o descarga la salida convertida a la derecha.',
   tool_markdown_how_title: 'Pasos rápidos',
   tool_markdown_html_input_label: 'Entrada HTML',
   tool_markdown_html_placeholder: '<h1>Título</h1>\n<p>Hola <strong>mundo</strong></p>',

@@ -46,6 +46,10 @@ const es: SiteLangDict = {
 	tool_meta_how_title: 'Cómo funciona',
 	tool_meta_how_body:
 		'El generador toma tus campos y construye las etiquetas de head correspondientes. Los campos opcionales vacíos se omiten, así que la salida solo contiene lo que rellenaste. Cada valor se escapa en HTML: un ampersand se convierte en &amp; y un signo menor que en &lt;, manteniendo las etiquetas válidas dentro de tu página. Las pistas de longitud avisan cuando el título o la descripción superan los límites habituales, sin cortar tu texto.',
+	tool_meta_how_item_1: 'Rellena título, descripción y los campos opcionales que necesites.',
+	tool_meta_how_item_2: 'Añade canonical, robots y valores de Open Graph cuando corresponda.',
+	tool_meta_how_item_3: 'Haz clic en Generar para construir las etiquetas de head escapadas.',
+	tool_meta_how_item_4: 'Copia la salida y pégala en el <head> de tu página.',
 	tool_meta_rules_title: 'Reglas usadas por el generador',
 	tool_meta_rules_body: 'Estas reglas siguen las indicaciones de Google Search Central sobre meta tags, title links y URLs canónicas.',
 	tool_meta_rules_item_1:

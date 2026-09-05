@@ -36,6 +36,10 @@ const es: SiteLangDict = {
 	tool_hreflang_how_title: 'Cómo funciona',
 	tool_hreflang_how_body:
 		'El generador analiza cada línea en un código de idioma y una URL, y luego renderiza el mismo conjunto de relaciones en tres formas. La forma <link> va en el <head> de cada página. La forma de cabecera HTTP Link se envía en la respuesta del servidor. La forma sitemap incrusta <xhtml:link> dentro de cada bloque <url>. Cada URL recibe una anotación hreflang de autorreferencia para que cada versión de idioma apunte a sí misma, y la entrada x-default opcional cubre a los visitantes cuyo idioma no aparece.',
+	tool_hreflang_how_item_1: 'Pega pares idioma|URL (un par por línea).',
+	tool_hreflang_how_item_2: 'Opcionalmente añade una URL x-default.',
+	tool_hreflang_how_item_3: 'Elige etiquetas <link>, cabecera HTTP Link o salida sitemap xhtml:link.',
+	tool_hreflang_how_item_4: 'Haz clic en Generar y copia el marcado de ese formato.',
 	tool_hreflang_rules_title: 'Reglas usadas por el generador',
 	tool_hreflang_rules_body: 'Estas reglas provienen de Google Search Central y del estándar de etiquetas BCP 47.',
 	tool_hreflang_rules_item_1:

@@ -40,6 +40,10 @@ const pt: SiteLangDict = {
   tool_password_generator_generate: 'Gerar',
   tool_password_generator_how_body:
     'Ajuste comprimento, escolha classes, opcionalmente exclua glifos ambíguos, defina quantidade e Gerar. Cada caractere vem de crypto.getRandomValues do pool combinado. Copie a lista — nada persiste ao sair da página.',
+  tool_password_generator_how_item_1: 'Defina o comprimento com o cursor.',
+  tool_password_generator_how_item_2: 'Marque as classes de caracteres; opcionalmente exclua glifos ambíguos.',
+  tool_password_generator_how_item_3: 'Defina quantas palavras-passe gerar e clique em Gerar.',
+  tool_password_generator_how_item_4: 'Copie uma linha ou copie tudo e guarde num gestor de palavras-passe.',
   tool_password_generator_how_title: 'Como funciona',
   tool_password_generator_length_label: 'Comprimento',
   tool_password_generator_lower: 'Minúsculas',

@@ -31,28 +31,28 @@ const es: SiteLangDict = {
   tool_pdf_to_markdown_faq_a3:
     'No reconstruye títulos ni tablas: exporta líneas de texto plano agrupadas por posición.',
   tool_pdf_to_markdown_faq_a4:
-    'Markdown a HTML convierte sintaxis Markdown en una página web. Esta herramienta saca texto del PDF a un .md editable.',
+    'Extraer texto de PDF descarga .txt plano con líneas en blanco entre páginas. Esta herramienta envuelve cada página como ## Page N y separa con --- para editores Markdown.',
   tool_pdf_to_markdown_faq_a5:
     'PDF a JPG rasteriza cada página como imagen. Usa esta herramienta cuando necesites texto editable de un PDF digital.',
   tool_pdf_to_markdown_faq_q1: '¿Se sube mi PDF?',
   tool_pdf_to_markdown_faq_q2: '¿Por qué falla mi PDF escaneado?',
   tool_pdf_to_markdown_faq_q3: '¿Conserva encabezados o tablas?',
-  tool_pdf_to_markdown_faq_q4: '¿En qué se diferencia de Markdown a HTML?',
+  tool_pdf_to_markdown_faq_q4: '¿En qué se diferencia de Extraer texto de PDF?',
   tool_pdf_to_markdown_faq_q5: '¿Cuándo usar PDF a JPG?',
   tool_pdf_to_markdown_how_body:
-    'Elige un PDF, pulsa Convertir, revisa la vista previa y descarga .md. Las líneas se agrupan por posición vertical; las páginas se separan con ---. Todo local tras cargar las librerías.',
-  tool_pdf_to_markdown_how_item_1: "Selecciona la entrada con «Elegir un PDF»",
-  tool_pdf_to_markdown_how_item_2: "Ajusta las opciones y pulsa «Convertir»",
-  tool_pdf_to_markdown_how_item_3: "Revisa la vista previa, el número de páginas o el estado",
-  tool_pdf_to_markdown_how_item_4: "Pulsa «Descargar .md» para guardar el resultado",
+    'Elige un PDF con capa de texto, conviértelo, revisa el borrador Markdown con encabezados por página y descarga .md. Páginas escaneadas sin texto fallan claramente — sin OCR.',
+  tool_pdf_to_markdown_how_item_1: "Elige o suelta un PDF con capa de texto (o Cargar ejemplo)",
+  tool_pdf_to_markdown_how_item_2: "Pulsa Convertir para crear el borrador Markdown",
+  tool_pdf_to_markdown_how_item_3: "Revisa secciones ## Page N y separadores --- en la vista previa",
+  tool_pdf_to_markdown_how_item_4: "Pulsa Descargar .md para guardar el borrador",
   tool_pdf_to_markdown_how_title: 'Cómo funciona',
   tool_pdf_to_markdown_pages_label: 'Páginas',
   tool_pdf_to_markdown_preview_label: 'Vista previa Markdown',
   tool_pdf_to_markdown_rules_body:
     'Extracción de capa de texto, separadores de página, sin OCR, privacidad y casos de fallo.',
   tool_pdf_to_markdown_rules_item_1:
-    'Motor: getTextContent por página; ítems con y similar se unen en líneas con espacios.',
-  tool_pdf_to_markdown_rules_item_2: 'Páginas: salida unida con línea en blanco, --- y otra línea en blanco.',
+    'Cada página pasa a ## Page N más sus líneas de texto; páginas separadas con --- para editores Markdown.',
+  tool_pdf_to_markdown_rules_item_2: 'A diferencia de Extraer texto de PDF (.txt), esta descarga es un borrador .md para editores — no conversión fiel al diseño.',
   tool_pdf_to_markdown_rules_item_3:
     'Sin OCR: si el texto recortado está vacío, la conversión falla con un mensaje legible.',
   tool_pdf_to_markdown_rules_item_4:

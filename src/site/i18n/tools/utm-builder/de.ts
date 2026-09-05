@@ -57,6 +57,10 @@ const de: SiteLangDict = {
 	tool_utm_how_title: 'So funktioniert es',
 	tool_utm_how_body:
 		'Der Builder parst deine Basis-URL, behält ihre vorhandenen Query-Parameter und hängt die UTM-Parameter mit & an. Jeder Wert wird prozentkodiert, sodass Leerzeichen, chinesische Zeichen und Sonderzeichen im Link überleben. Hat die URL einen Hash, wird er hinter alle Parameter verschoben. Die fünf UTM-Parameter sind das, was Google Analytics liest, um den Besuch einer Quelle, einem Medium und einer Kampagne zuzuordnen.',
+	tool_utm_how_item_1: 'Gib die Basis-Landing-URL ein.',
+	tool_utm_how_item_2: 'Fülle utm_source, utm_medium und utm_campaign aus (plus optionale Parameter).',
+	tool_utm_how_item_3: 'Klicke auf Erstellen, um percent-encoded UTM-Parameter anzuhängen.',
+	tool_utm_how_item_4: 'Kopiere die fertige Tracking-URL.',
 	tool_utm_rules_title: 'Regeln des Builders',
 	tool_utm_rules_body: 'Das sind die Definitionen und Kodierungsregeln der UTM-Parameter laut Google-Analytics-Dokumentation.',
 	tool_utm_rules_item_1: 'utm_source zeigt, wo der Link gesehen wurde; utm_medium zeigt, wie er ausgeliefert wurde. Beide sind für die Zuordnung Pflicht.',

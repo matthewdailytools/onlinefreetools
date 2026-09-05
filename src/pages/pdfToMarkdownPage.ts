@@ -319,7 +319,15 @@ export const renderPdfToMarkdownPage = (opts: {
             })(p);
           }
           return chain.then(function () {
-            return pageTexts.join('\\n\\n---\\n\\n');
+            /**
+             * 与「提取 PDF 文本」的差异：每页加 ## Page N 标题，页间用 --- 分隔，
+             * 便于粘进 Markdown 编辑器当草稿；仍不重建标题层级或表格（无 OCR）。
+             */
+            return pageTexts
+              .map(function (pageText, idx) {
+                return '## Page ' + (idx + 1) + '\\n\\n' + pageText;
+              })
+              .join('\\n\\n---\\n\\n');
           });
         });
       }

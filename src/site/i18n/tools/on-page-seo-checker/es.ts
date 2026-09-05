@@ -74,6 +74,10 @@ const es: SiteLangDict = {
 	tool_onpage_how_title: 'Cómo funciona',
 	tool_onpage_how_body:
 		'El verificador analiza el marcado que pegas (o el HTML obtenido de una URL) y evalúa una lista fija de comprobaciones SEO on-page. Cada comprobación lee un tipo de etiqueta: title, meta description, H1, canonical, robots meta, campos Open Graph, bloques JSON-LD, contenido mixto y recursos que bloquean el renderizado. El modo pegar ocurre del todo en tu navegador; el modo URL obtiene la página una vez a través de nuestro worker y no la almacena.',
+	tool_onpage_how_item_1: 'Quédate en Pegar HTML o cambia a Obtener URL para una página en vivo.',
+	tool_onpage_how_item_2: 'Pega el markup o introduce una URL https.',
+	tool_onpage_how_item_3: 'Haz clic en Comprobar página (o Ejemplo para un documento demo).',
+	tool_onpage_how_item_4: 'Revisa cada estado y corrige las etiquetas señaladas.',
 	tool_onpage_rules_title: 'Reglas que siguen las comprobaciones',
 	tool_onpage_rules_body:
 		'Con qué compara cada comprobación y hasta qué punto el criterio es firme. El comportamiento de las etiquetas (robots, canonical, contenido mixto) sigue a Google Search Central y a la especificación HTML; los consejos de longitud y de encabezados son heurísticas de visualización y legibilidad, no reglas de posicionamiento.',

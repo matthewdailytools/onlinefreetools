@@ -48,6 +48,10 @@ const en: SiteLangDict = {
   tool_magnet_link_decoder_field_web_seeds: 'Web seeds (ws)',
   tool_magnet_link_decoder_how_body:
     'Paste one complete magnet URI and choose Decode. The parser separates the query into ordered key-value pairs, decodes percent escapes and plus signs, groups repeated keys, classifies exact topics, validates common URL and size fields, then builds a normalized URI and a JSON view. Malformed encoded values stay visible so you can diagnose the source string.',
+	tool_magnet_link_decoder_how_item_1: 'Paste one complete magnet URI.',
+	tool_magnet_link_decoder_how_item_2: 'Click Decode (or Load sample).',
+	tool_magnet_link_decoder_how_item_3: 'Review infohash, display name, size, and tracker list.',
+	tool_magnet_link_decoder_how_item_4: 'Copy JSON or the normalized URI when you need them elsewhere.',
   tool_magnet_link_decoder_how_title: 'How it works',
   tool_magnet_link_decoder_input_label: 'Magnet URI',
   tool_magnet_link_decoder_input_placeholder: 'magnet:?xt=urn:btih:...&dn=...&tr=...',

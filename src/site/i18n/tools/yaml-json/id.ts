@@ -36,6 +36,10 @@ const id: SiteLangDict = {
   tool_yaml_json_faq_q5: 'Dari mana nomor baris error?',
   tool_yaml_json_how_body:
     'Konversi berjalan di tab ini lewat js-yaml. Pilih YAML → JSON atau sebaliknya, tempel teks, lalu salin atau unduh hasilnya. Aliran multi-dokumen dipisah ---: satu dokumen → satu nilai JSON; dua atau lebih → array JSON. Kesalahan YAML bisa menampilkan baris dan kolom jika parser memberi mark.',
+  tool_yaml_json_how_item_1: 'Pilih YAML → JSON atau JSON → YAML.',
+  tool_yaml_json_how_item_2: 'Tempel input di kotak kiri (YAML multi-dokumen bisa pakai ---).',
+  tool_yaml_json_how_item_3: 'Opsional aktifkan tipe aman JSON atau ubah indent JSON.',
+  tool_yaml_json_how_item_4: 'Klik Konversi, lalu salin atau unduh output.',
   tool_yaml_json_how_title: 'Cara pakai',
   tool_yaml_json_indent_2: '2 spasi',
   tool_yaml_json_indent_4: '4 spasi',

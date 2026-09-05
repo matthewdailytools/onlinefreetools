@@ -36,6 +36,10 @@ const de: SiteLangDict = {
   tool_yaml_json_faq_q5: 'Woher kommen Zeilennummern in Fehlern?',
   tool_yaml_json_how_body:
     'Die Umwandlung läuft mit js-yaml lokal in diesem Tab. Richtung wählen, Text einfügen, Ergebnis kopieren oder herunterladen. Mehrere mit --- getrennte Dokumente landen als JSON-Array, sobald es zwei oder mehr sind; ein einzelnes Dokument bleibt ein einzelner JSON-Wert. YAML-Fehler nennen Zeile und Spalte, wenn der Parser ein Mark liefert.',
+  tool_yaml_json_how_item_1: 'Wählen Sie YAML → JSON oder JSON → YAML.',
+  tool_yaml_json_how_item_2: 'Eingabe links einfügen (mehrere YAML-Dokumente mit --- trennen).',
+  tool_yaml_json_how_item_3: 'Optional sichere Typen aktivieren oder JSON-Einzug ändern.',
+  tool_yaml_json_how_item_4: 'Auf Umwandeln klicken, dann Ausgabe kopieren oder herunterladen.',
   tool_yaml_json_how_title: 'Ablauf',
   tool_yaml_json_indent_2: '2 Leerzeichen',
   tool_yaml_json_indent_4: '4 Leerzeichen',

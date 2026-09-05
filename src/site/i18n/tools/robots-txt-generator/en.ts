@@ -32,6 +32,10 @@ const en: SiteLangDict = {
 	tool_robots_how_title: 'How it works',
 	tool_robots_how_body:
 		'Select the crawlers you target, add Allow and Disallow paths for each group, optionally add a Sitemap line, then Generate. The page assembles the plain-text file following the RFC 9309 layout: one User-agent line per group, its Allow/Disallow lines underneath, a blank line between groups, and the Sitemap line at the end. Copy it to the root of your site at /robots.txt.',
+	tool_robots_how_item_1: 'Tick or add the user-agents you want to control.',
+	tool_robots_how_item_2: 'Enter Allow and Disallow paths for each group (one path per line).',
+	tool_robots_how_item_3: 'Optionally add a Sitemap URL.',
+	tool_robots_how_item_4: 'Click Generate, then copy or download robots.txt.',
 	tool_robots_rules_title: 'Syntax rules that matter',
 	tool_robots_rules_body:
 		'robots.txt rules are path prefixes, not patterns, and a crawler follows exactly one group — the one whose User-agent matches it most specifically. These are the rules this generator follows.',

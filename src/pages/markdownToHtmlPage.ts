@@ -133,7 +133,13 @@ export const renderMarkdownToHtmlPage = (opts: {
 
     <section class="mt-4" id="how-it-works" aria-labelledby="how-heading">
       <h2 class="h5" id="how-heading">${escapeHtml(t(opts.lang, 'tool_markdown_how_title'))}</h2>
-      <p class="text-muted">${escapeHtml(t(opts.lang, 'tool_markdown_how_body'))}</p>
+      <p class="text-muted mb-2">${escapeHtml(t(opts.lang, 'tool_markdown_how_body'))}</p>
+      <ol class="text-muted mb-0">
+        <li>${escapeHtml(t(opts.lang, 'tool_markdown_how_item_1'))}</li>
+        <li>${escapeHtml(t(opts.lang, 'tool_markdown_how_item_2'))}</li>
+        <li>${escapeHtml(t(opts.lang, 'tool_markdown_how_item_3'))}</li>
+        <li>${escapeHtml(t(opts.lang, 'tool_markdown_how_item_4'))}</li>
+      </ol>
     </section>
 
     <section class="mt-4" id="rules" aria-labelledby="rules-heading">

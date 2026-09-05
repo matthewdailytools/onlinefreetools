@@ -38,6 +38,10 @@ const en: SiteLangDict = {
   tool_markdown_full_doc: 'Generate full HTML document',
   tool_markdown_how_body:
     'Pick a tab. Left side is input; right side updates in the browser. Markdown → HTML can copy a fragment or wrap a minimal full document. HTML → Markdown yields plain text for editors and LLMs. CDN loads ≠ uploading your paste.',
+	tool_markdown_how_item_1: 'Pick the Markdown → HTML or HTML → Markdown tab.',
+	tool_markdown_how_item_2: 'Paste input on the left (or click Load sample).',
+	tool_markdown_how_item_3: 'For Markdown → HTML, optionally wrap a minimal full HTML document.',
+	tool_markdown_how_item_4: 'Copy or download the converted output on the right.',
   tool_markdown_how_title: 'How it works',
   tool_markdown_html_input_label: 'HTML input',
   tool_markdown_html_placeholder: '<h1>Title</h1>\n<p>Hello <strong>world</strong></p>',

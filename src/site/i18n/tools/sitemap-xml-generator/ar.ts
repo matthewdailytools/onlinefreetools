@@ -28,6 +28,10 @@ const ar: SiteLangDict = {
 	tool_sitemap_how_title: 'كيف يعمل',
 	tool_sitemap_how_body:
 		'الصق قائمتك، رابطًا في كل سطر. بعد رمز الفاصلة العمودية يمكن إضافة lastmod (yyyy-MM-dd) وchangefreq وpriority. تحلل الصفحة كل سطر، تهرب الرموز المحجوزة، تتحقق أن الرابط يبدأ بـ http(s)، وتبني urlset وفق البروتوكول. انسخ XML إلى جذر الموقع، واربطه من robots.txt أو أرسله في Search Console.',
+	tool_sitemap_how_item_1: 'الصق URL واحدًا في كل سطر (اختياريًا lastmod|changefreq|priority بعد |).',
+	tool_sitemap_how_item_2: 'انقر «توليد» لبناء urlset صالح.',
+	tool_sitemap_how_item_3: 'راجع التحذيرات الخاصة بـ https أو القوائم الكبيرة.',
+	tool_sitemap_how_item_4: 'انسخ sitemap.xml أو نزّله إلى جذر موقعك.',
 	tool_sitemap_rules_title: 'قواعد البروتوكول وحدوده',
 	tool_sitemap_rules_body: 'هذه قواعد بروتوكول sitemap وGoogle التي يتبعها هذا المولّد.',
 	tool_sitemap_rules_item_1: 'إلزامي: كل <url> يجب أن يحتوي على <loc> بالعنوان الكامل. lastmod وchangefreq وpriority اختيارية.',

@@ -32,6 +32,10 @@ const de: SiteLangDict = {
 	tool_robots_how_title: 'So funktioniert es',
 	tool_robots_how_body:
 		'Wähle die Ziel-Crawler aus, füge für jede Gruppe Allow- und Disallow-Pfade hinzu, optional eine Sitemap-Zeile, und drücke Generieren. Die Seite setzt die Textdatei nach dem RFC-9309-Layout zusammen: eine User-Agent-Zeile pro Gruppe, darunter ihre Allow-/Disallow-Zeilen, eine Leerzeile zwischen Gruppen und die Sitemap-Zeile am Ende. Kopiere das Ergebnis in das Stammverzeichnis deiner Seite unter /robots.txt.',
+	tool_robots_how_item_1: 'Hake die user-agents an, die du steuern willst, oder füge welche hinzu.',
+	tool_robots_how_item_2: 'Gib Allow- und Disallow-Pfade pro Gruppe ein (ein Pfad pro Zeile).',
+	tool_robots_how_item_3: 'Optional eine Sitemap-URL hinzufügen.',
+	tool_robots_how_item_4: 'Klicke auf Generieren und kopiere oder lade robots.txt herunter.',
 	tool_robots_rules_title: 'Wichtige Syntaxregeln',
 	tool_robots_rules_body:
 		'robots.txt-Regeln sind Pfad-Präfixe, keine Muster, und ein Crawler befolgt genau eine Gruppe: die, deren User-Agent am genauesten auf ihn passt. Das sind die Regeln, denen dieser Generator folgt.',

@@ -40,6 +40,10 @@ const de: SiteLangDict = {
   tool_password_generator_generate: 'Generieren',
   tool_password_generator_how_body:
     'Länge schieben, Zeichenklassen wählen, optional mehrdeutige Glyphen ausschließen, Anzahl setzen, dann Generieren. Jedes Zeichen wird mit crypto.getRandomValues aus dem kombinierten Pool gewählt. Liste kopieren — nach Verlassen der Seite bleibt nichts.',
+  tool_password_generator_how_item_1: 'Länge mit dem Schieberegler einstellen.',
+  tool_password_generator_how_item_2: 'Zeichenklassen ankreuzen; optional mehrdeutige Zeichen ausschließen.',
+  tool_password_generator_how_item_3: 'Anzahl festlegen, dann auf Generieren klicken.',
+  tool_password_generator_how_item_4: 'Eine Zeile oder alles kopieren und im Passwort-Manager speichern.',
   tool_password_generator_how_title: 'So funktioniert es',
   tool_password_generator_length_label: 'Länge',
   tool_password_generator_lower: 'Kleinbuchstaben',

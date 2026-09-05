@@ -36,6 +36,10 @@ const zh: SiteLangDict = {
   tool_json_schema_validator_faq_q5: '如何检查大模型的结构化输出？',
   tool_json_schema_validator_how_body:
     '左侧贴 Schema，右侧贴实例。Ajv（draft-07）编译 Schema 后校验实例，并用 JSON Pointer 列出每条错误。可一键载入失败/合法样例；进页默认跑失败样例，立刻看到真实路径。',
+  tool_json_schema_validator_how_item_1: '在左侧粘贴 JSON Schema（draft-07）。',
+  tool_json_schema_validator_how_item_2: '在右侧粘贴 JSON 实例。',
+  tool_json_schema_validator_how_item_3: '点击「校验」。',
+  tool_json_schema_validator_how_item_4: '按 JSON Pointer 路径逐条修正错误。',
   tool_json_schema_validator_how_title: '怎么用',
   tool_json_schema_validator_instance_label: '实例 JSON',
   tool_json_schema_validator_instance_placeholder: '{ "sku": "A-1", "price": 9.5 }',

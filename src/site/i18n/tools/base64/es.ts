@@ -37,6 +37,10 @@ const es: SiteLangDict = {
   tool_base64_file_loaded: 'Archivo codificado: {name} ({size} bytes).',
   tool_base64_how_body:
     'Codificar convierte UTF-8 o bytes de archivo a Base64; Decodificar hace lo contrario. Unicode pasa por UTF-8. Base64url usa - y _ en lugar de + y /.',
+  tool_base64_how_item_1: 'Elige Codificar o Decodificar.',
+  tool_base64_how_item_2: 'Para codificar, pega texto o elige un archivo; para decodificar, pega Base64.',
+  tool_base64_how_item_3: 'Activa Base64url si necesitas - y _ al estilo JWT, sin padding.',
+  tool_base64_how_item_4: 'Pulsa Convertir, luego copia o descarga el resultado.',
   tool_base64_how_title: 'Cómo funciona',
   tool_base64_input_label: 'Entrada',
   tool_base64_input_placeholder: 'Pega texto o cadena Base64…',

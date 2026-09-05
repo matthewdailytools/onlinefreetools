@@ -74,6 +74,10 @@ const zh: SiteLangDict = {
 	tool_onpage_how_title: '工作原理',
 	tool_onpage_how_body:
 		'检查器会解析你粘贴的标记（或从 URL 抓取的 HTML），对一组固定的页面 SEO 检查项逐项评估。每项只读取一类标签：标题、meta 描述、H1、canonical、robots meta、Open Graph 字段、JSON-LD、混合内容与渲染阻塞资源。粘贴模式完全在浏览器本地进行；URL 模式通过本站 Worker 拉取页面一次，不存储内容。',
+	tool_onpage_how_item_1: '留在「粘贴 HTML」，或切换到「抓取 URL」检查线上页面。',
+	tool_onpage_how_item_2: '粘贴 markup 或输入 https URL。',
+	tool_onpage_how_item_3: '点击「检查页面」（或「加载样例」查看演示文档）。',
+	tool_onpage_how_item_4: '逐条查看检查状态并修复报告中的标签。',
 	tool_onpage_rules_title: '检查项依据的规则',
 	tool_onpage_rules_body:
 		'每项检查对照的标准，以及这条标准有多硬。标签行为（robots、canonical、混合内容）依据 Google Search Central 与 HTML 规范；长度和标题数量的建议只是展示效果与可读性上的经验值，不是排名规则。',

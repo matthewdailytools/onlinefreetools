@@ -36,6 +36,10 @@ const de: SiteLangDict = {
 	tool_hreflang_how_title: 'So funktioniert es',
 	tool_hreflang_how_body:
 		'Der Generator zerlegt jede Zeile in einen Sprachcode und eine URL und gibt dieselbe Relationenmenge in drei Formen aus. Die <link>-Form kommt in den <head> jeder Seite. Die HTTP-Link-Header-Form wird in der Serverantwort gesendet. Die Sitemap-Form bettet <xhtml:link> in jeden <url>-Block ein. Jede URL erhält einen Self-Referencing-Hreflang, damit jede Sprachversion auf sich selbst zeigt; der optionale x-default-Eintrag deckt Besucher ab, deren Sprache nicht gelistet ist.',
+	tool_hreflang_how_item_1: 'language|URL-Paare einfügen (ein Paar pro Zeile).',
+	tool_hreflang_how_item_2: 'Optional eine x-default-URL hinzufügen.',
+	tool_hreflang_how_item_3: 'HTML-<link>-Tags, HTTP-Link-Header oder Sitemap-xhtml:link wählen.',
+	tool_hreflang_how_item_4: 'Klicke auf Erstellen und kopiere das Markup für dieses Ausgabeformat.',
 	tool_hreflang_rules_title: 'Regeln des Generators',
 	tool_hreflang_rules_body: 'Diese Regeln stammen aus Google Search Central und dem BCP-47-Standard für Sprach-Tags.',
 	tool_hreflang_rules_item_1:

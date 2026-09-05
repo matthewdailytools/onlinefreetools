@@ -47,6 +47,10 @@ const ru: SiteLangDict = {
   tool_jwt_decoder_header_label: 'Header (JSON)',
   tool_jwt_decoder_how_body:
     'Вставьте полный JWT (header.payload.signature). Страница делит по точкам, декодирует Base64url первых двух сегментов и форматирует JSON. Числовые exp, iat, nbf показывают UTC и локальное время. Сегмент подписи — только сырой текст, без проверки.',
+  tool_jwt_decoder_how_item_1: 'Вставьте полный JWT (header.payload.signature).',
+  tool_jwt_decoder_how_item_2: 'Нажмите «Декодировать» (или «Загрузить пример» для демо-токена).',
+  tool_jwt_decoder_how_item_3: 'Просмотрите отформатированный JSON header и payload.',
+  tool_jwt_decoder_how_item_4: 'Проверьте показанные времена exp / iat / nbf.',
   tool_jwt_decoder_how_title: 'Как это работает',
   tool_jwt_decoder_input_label: 'Ввод JWT',
   tool_jwt_decoder_input_placeholder: 'Вставьте access token или ID token…',

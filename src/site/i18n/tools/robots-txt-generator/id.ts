@@ -31,6 +31,10 @@ const id: SiteLangDict = {
 	tool_robots_how_title: 'Cara kerja',
 	tool_robots_how_body:
 		'Pilih perayap yang ditargetkan, tambahkan jalur Allow dan Disallow untuk setiap grup, opsional baris Sitemap, lalu tekan Buat. Halaman menyusun file teks polos mengikuti tata letak RFC 9309: satu baris User-agent per grup, baris Allow/Disallow di bawahnya, baris kosong antar grup, dan baris Sitemap di akhir. Salin hasilnya ke akar situs Anda di /robots.txt.',
+	tool_robots_how_item_1: 'Centang atau tambahkan user-agent yang ingin Anda kendalikan.',
+	tool_robots_how_item_2: 'Masukkan path Allow dan Disallow untuk setiap grup (satu path per baris).',
+	tool_robots_how_item_3: 'Opsional: tambahkan URL Sitemap.',
+	tool_robots_how_item_4: 'Klik Buat, lalu salin atau unduh robots.txt.',
 	tool_robots_rules_title: 'Aturan sintaks yang penting',
 	tool_robots_rules_body:
 		'Aturan robots.txt adalah awalan jalur, bukan pola, dan perayap hanya mengikuti satu grup: grup yang User-agent-nya paling spesifik cocok dengannya. Ini aturan yang diikuti pembuat ini.',

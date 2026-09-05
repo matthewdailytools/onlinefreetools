@@ -42,6 +42,10 @@ const ja: SiteLangDict = {
   tool_csv_json_header: '先頭行をヘッダーにする',
   tool_csv_json_how_body:
     'CSV → JSON か JSON → CSV を選ぶと、解析と生成はこのタブ内で Papa Parse により行われます。CSV では区切り文字（または自動判定）、先頭行をヘッダーにするか、数値/真偽を推定するかを選べます。JSON では入れ子オブジェクトをドットパスの列に平坦化し、列はすべてのキーの和集合になります。',
+  tool_csv_json_how_item_1: 'CSV → JSON または JSON → CSV を選びます。',
+  tool_csv_json_how_item_2: '入力を貼り、CSV の区切り / ヘッダー設定を行います。',
+  tool_csv_json_how_item_3: '「変換」を押します（ネスト JSON は CSV 出力時に列へ展開）。',
+  tool_csv_json_how_item_4: '結果をコピーまたはダウンロードします。',
   tool_csv_json_how_title: '仕組み',
   tool_csv_json_indent_2: 'スペース2',
   tool_csv_json_indent_4: 'スペース4',

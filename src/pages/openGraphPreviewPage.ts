@@ -149,7 +149,8 @@ export const renderOpenGraphPreviewPage = (opts: {
       </div>
     </div>
 
-    ${renderToolIgSections({ lang: opts.lang, prefix: 'tool_og', mode: 'rules', ruleItemCount: 5 })}`;
+    ${renderToolIgSections({ lang: opts.lang, prefix: 'tool_og', mode: 'rules', ruleItemCount: 5,
+		howItemCount: 4 })}`;
 
 	const referencesHtml = renderToolReferencesSection({
 		lang: opts.lang,

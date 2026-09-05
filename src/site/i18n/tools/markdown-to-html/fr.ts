@@ -32,6 +32,10 @@ const fr: SiteLangDict = {
   tool_markdown_full_doc: 'Générer un document HTML complet',
   tool_markdown_how_body:
     'Onglets = sens. Saisie à gauche, rendu local à droite. Côté HTML : fragment ou coquille minimale ; côté Markdown : texte pour dépôt ou LLM.',
+  tool_markdown_how_item_1: 'Choisissez l’onglet Markdown → HTML ou HTML → Markdown.',
+  tool_markdown_how_item_2: 'Collez l’entrée à gauche (ou Charger un exemple).',
+  tool_markdown_how_item_3: 'Pour Markdown → HTML, enveloppez éventuellement un document HTML minimal.',
+  tool_markdown_how_item_4: 'Copiez ou téléchargez la sortie convertie à droite.',
   tool_markdown_how_title: 'En pratique',
   tool_markdown_html_input_label: 'Entrée HTML',
   tool_markdown_html_placeholder: '<h1>Titre</h1>\n<p>Bonjour <strong>le monde</strong></p>',

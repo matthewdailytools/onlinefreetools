@@ -40,6 +40,10 @@ const en: SiteLangDict = {
   tool_password_generator_generate: 'Generate',
   tool_password_generator_how_body:
     'Slide length, pick character classes, optionally exclude ambiguous glyphs, set count, then Generate. Each character is picked with crypto.getRandomValues from the combined pool. Copy the list — nothing is persisted after you leave the page.',
+	tool_password_generator_how_item_1: 'Set password length with the slider.',
+	tool_password_generator_how_item_2: 'Tick the character classes you need; optionally exclude ambiguous glyphs.',
+	tool_password_generator_how_item_3: 'Set how many passwords to generate, then click Generate.',
+	tool_password_generator_how_item_4: 'Copy a single row or copy all, then store them in a password manager.',
   tool_password_generator_how_title: 'How it works',
   tool_password_generator_length_label: 'Length',
   tool_password_generator_lower: 'Lowercase',

@@ -74,6 +74,10 @@ const ja: SiteLangDict = {
 	tool_onpage_how_title: '仕組み',
 	tool_onpage_how_body:
 		'チェッカーは貼り付けたマークアップ（または URL から取得した HTML）を解析し、固定のオンページ SEO チェック項目を評価します。各チェックは 1 種類のタグだけを読み取ります：title、meta description、H1、canonical、robots meta、Open Graph フィールド、JSON-LD、混合コンテンツ、レンダリングブロック要因。貼り付けモードはすべてブラウザ内で完結し、URL モードは Worker 経由でページを一度だけ取得し保存しません。',
+	tool_onpage_how_item_1: '「HTML を貼り付け」のままにするか、「URL を取得」で公開ページを確認する。',
+	tool_onpage_how_item_2: 'マークアップを貼るか https URL を入力する。',
+	tool_onpage_how_item_3: '「ページをチェック」（または「サンプル」）をクリックする。',
+	tool_onpage_how_item_4: '各チェック結果を確認し、指摘されたタグを修正する。',
 	tool_onpage_rules_title: 'チェックが基準にするルール',
 	tool_onpage_rules_body:
 		'各チェックが何と比較し、どこまで強い根拠があるかをまとめました。タグの挙動（robots、canonical、混合コンテンツ）は Google Search Central と HTML 仕様に沿います。文字数や見出しに関する助言は表示と読みやすさの目安で、順位を決めるルールではありません。',

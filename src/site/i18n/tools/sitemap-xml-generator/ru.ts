@@ -28,6 +28,10 @@ const ru: SiteLangDict = {
 	tool_sitemap_how_title: 'Как это работает',
 	tool_sitemap_how_body:
 		'Вставьте список URL, по одному в строку. Через вертикальную черту можно добавить lastmod (yyyy-MM-dd), changefreq и priority. Страница разбирает каждую строку, экранирует зарезервированные символы, проверяет, что URL начинается с http(s), и собирает urlset по протоколу. Скопируйте XML в корень сайта и укажите его в robots.txt или отправьте в Search Console.',
+	tool_sitemap_how_item_1: 'Вставьте по одному URL в строке (после | — необязательно lastmod|changefreq|priority).',
+	tool_sitemap_how_item_2: 'Нажмите «Сгенерировать», чтобы собрать корректный urlset.',
+	tool_sitemap_how_item_3: 'Проверьте предупреждения о не-https или слишком длинных списках.',
+	tool_sitemap_how_item_4: 'Скопируйте или скачайте sitemap.xml в корень сайта.',
 	tool_sitemap_rules_title: 'Правила и лимиты протокола',
 	tool_sitemap_rules_body: 'Это правила протокола sitemap и Google, которым следует генератор.',
 	tool_sitemap_rules_item_1: 'Обязательно: каждый <url> должен содержать <loc> с полным URL. lastmod, changefreq и priority необязательны.',

@@ -57,6 +57,10 @@ const fr: SiteLangDict = {
 	tool_og_how_title: 'Comment ça marche',
 	tool_og_how_body:
 		'L’aperçu analyse les balises og:/twitter: que vous collez (ou les extrait du HTML récupéré pour une URL) et dessine trois cartes. Facebook affiche l’image 1.91:1 à gauche avec titre, description et domaine dessous. X suit twitter:card : summary_large_image montre une grande image en haut, summary une petite à côté du texte. Les applis de messagerie comme WhatsApp montrent une grande carte. Le tableau des champs signale les quatre champs exigés par le protocole et liste ceux qui restent facultatifs.',
+	tool_og_how_item_1: 'Collez les meta og:/twitter: ou récupérez une URL.',
+	tool_og_how_item_2: 'Cliquez sur Aperçu (ou Exemple).',
+	tool_og_how_item_3: 'Comparez les cartes Facebook, X et messagerie.',
+	tool_og_how_item_4: 'Corrigez les champs obligatoires manquants dans le tableau.',
 	tool_og_rules_title: 'Règles suivies par l’aperçu',
 	tool_og_rules_body: 'Voici les tailles et replis utilisés par les plateformes, selon le protocole Open Graph et la documentation X Cards.',
 	tool_og_rules_item_1: 'Obligatoires selon le protocole Open Graph : og:title, og:type, og:image et og:url. og:description est facultatif dans la spécification, mais toutes les grandes plateformes l’affichent : sans elle, la plateforme rédige son propre résumé à partir du texte de la page.',

@@ -37,6 +37,10 @@ const id: SiteLangDict = {
   tool_json_schema_validator_faq_q5: 'Bagaimana memeriksa keluaran terstruktur LLM?',
   tool_json_schema_validator_how_body:
     'Tempel Schema di kiri dan instance di kanan. Ajv (draft-07) mengompilasi, memvalidasi, dan mencantumkan setiap error dengan JSON Pointer. Ada contoh gagal dan valid; halaman membuka contoh gagal agar path langsung terlihat.',
+  tool_json_schema_validator_how_item_1: 'Tempel JSON Schema (draft-07) di kiri.',
+  tool_json_schema_validator_how_item_2: 'Tempel instance JSON di kanan.',
+  tool_json_schema_validator_how_item_3: 'Klik Validasi.',
+  tool_json_schema_validator_how_item_4: 'Perbaiki setiap error memakai path JSON Pointer.',
   tool_json_schema_validator_how_title: 'Cara kerja',
   tool_json_schema_validator_instance_label: 'JSON instance',
   tool_json_schema_validator_instance_placeholder: '{ "sku": "A-1", "price": 9.5 }',

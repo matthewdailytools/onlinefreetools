@@ -74,6 +74,10 @@ const de: SiteLangDict = {
 	tool_onpage_how_title: 'So funktioniert es',
 	tool_onpage_how_body:
 		'Die Prüfung parst das eingefügte Markup (oder das von einer URL geladene HTML) und bewertet eine feste Liste von On-Page-SEO-Prüfungen. Jede Prüfung liest eine Art von Tag: title, Meta-Description, H1, canonical, Robots-Meta, Open-Graph-Felder, JSON-LD-Blöcke, gemischte Inhalte und renderblockierende Ressourcen. Der Einfüge-Modus läuft komplett im Browser; der URL-Modus ruft die Seite einmal über unseren Worker ab und speichert sie nicht.',
+	tool_onpage_how_item_1: 'Bleibe bei HTML einfügen oder wechsle zu URL laden für eine Live-Seite.',
+	tool_onpage_how_item_2: 'Füge Markup ein oder gib eine https-URL ein.',
+	tool_onpage_how_item_3: 'Klicke auf Seite prüfen (oder Beispiel für ein Demo-Dokument).',
+	tool_onpage_how_item_4: 'Prüfe jeden Check-Status und behebe die gemeldeten Tags.',
 	tool_onpage_rules_title: 'Regeln der Prüfungen',
 	tool_onpage_rules_body:
 		'Woran jede Prüfung misst – und wie verbindlich das ist. Das Verhalten der Tags (robots, canonical, gemischte Inhalte) folgt Google Search Central und der HTML-Spezifikation. Empfehlungen zu Länge und Überschriften sind Darstellungs- und Lesbarkeitsheuristiken, keine Ranking-Regeln.',

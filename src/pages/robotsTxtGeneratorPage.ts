@@ -133,7 +133,8 @@ export const renderRobotsTxtGeneratorPage = (opts: {
         </div>
       </div>
 
-      ${renderToolIgSections({ lang: opts.lang, prefix: 'tool_robots', mode: 'rules', ruleItemCount: 4 })}`;
+      ${renderToolIgSections({ lang: opts.lang, prefix: 'tool_robots', mode: 'rules', ruleItemCount: 4,
+		howItemCount: 4 })}`;
 
 	const referencesHtml = renderToolReferencesSection({
 		lang: opts.lang,

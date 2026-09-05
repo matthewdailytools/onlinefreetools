@@ -46,6 +46,10 @@ const zh: SiteLangDict = {
   tool_jwt_decoder_header_label: 'Header（JSON）',
   tool_jwt_decoder_how_body:
     '粘贴完整 JWT（header.payload.signature）。页面按点拆分，对前两段做 Base64url 解码并格式化 JSON；若 payload 含 exp/iat/nbf 数字，会额外显示 UTC 与本地时间。第三段 Signature 仅原文展示，不做验证。',
+  tool_jwt_decoder_how_item_1: '粘贴完整 JWT（header.payload.signature）。',
+  tool_jwt_decoder_how_item_2: '点击「解码」（或点「加载示例」查看演示 token）。',
+  tool_jwt_decoder_how_item_3: '查看格式化后的 Header 与 Payload JSON。',
+  tool_jwt_decoder_how_item_4: '核对 exp / iat / nbf 等声明时间。',
   tool_jwt_decoder_how_title: '怎么用',
   tool_jwt_decoder_input_label: 'JWT 输入',
   tool_jwt_decoder_input_placeholder: '粘贴 access token 或 ID token…',

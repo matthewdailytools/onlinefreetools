@@ -74,6 +74,10 @@ const pt: SiteLangDict = {
 	tool_onpage_how_title: 'Como funciona',
 	tool_onpage_how_body:
 		'O verificador analisa o código que você cola (ou o HTML buscado de uma URL) e avalia uma lista fixa de verificações SEO on-page. Cada verificação lê um tipo de tag: title, meta description, H1, canonical, robots meta, campos Open Graph, blocos JSON-LD, conteúdo misto e recursos que bloqueiam renderização. O modo colar roda inteiramente no seu navegador; o modo URL busca a página uma vez pelo nosso worker e não a armazena.',
+	tool_onpage_how_item_1: 'Fique em Colar HTML ou mude para Buscar URL para uma página ao vivo.',
+	tool_onpage_how_item_2: 'Cole o markup ou informe uma URL https.',
+	tool_onpage_how_item_3: 'Clique em Verificar página (ou Exemplo para um documento demo).',
+	tool_onpage_how_item_4: 'Revise cada status e corrija as tags reportadas.',
 	tool_onpage_rules_title: 'Regras seguidas pelas verificações',
 	tool_onpage_rules_body:
 		'Com o que cada verificação compara e quão rígido é o critério. O comportamento das tags (robots, canonical, conteúdo misto) segue o Google Search Central e a especificação HTML; as recomendações de tamanho e de cabeçalhos são heurísticas de exibição e legibilidade, não regras de ranqueamento.',

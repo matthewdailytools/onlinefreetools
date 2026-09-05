@@ -46,6 +46,10 @@ const en: SiteLangDict = {
   tool_jwt_decoder_header_label: 'Header (JSON)',
   tool_jwt_decoder_how_body:
     'Paste a complete JWT string (header.payload.signature). The page splits on dots, Base64url-decodes the first two segments, and pretty-prints JSON. exp, iat, and nbf numeric claims also show UTC and local times. The signature segment is shown as raw text only — we never verify it.',
+	tool_jwt_decoder_how_item_1: 'Paste a complete JWT (header.payload.signature).',
+	tool_jwt_decoder_how_item_2: 'Click Decode (or Load sample for a demo token).',
+	tool_jwt_decoder_how_item_3: 'Review the pretty-printed header and payload JSON.',
+	tool_jwt_decoder_how_item_4: 'Check exp / iat / nbf times shown for claim timestamps.',
   tool_jwt_decoder_how_title: 'How it works',
   tool_jwt_decoder_input_label: 'JWT input',
   tool_jwt_decoder_input_placeholder: 'Paste access token or ID token…',

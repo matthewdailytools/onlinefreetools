@@ -57,6 +57,10 @@ const es: SiteLangDict = {
 	tool_utm_how_title: 'Cómo funciona',
 	tool_utm_how_body:
 		'El creador analiza tu URL base, conserva sus parámetros de consulta existentes y añade los parámetros UTM con separador &. Cada valor se codifica en porcentaje para que espacios, caracteres chinos y símbolos sobrevivan en el enlace. Si la URL tiene un hash, se coloca después de todos los parámetros. Los cinco parámetros UTM son lo que lee Google Analytics para atribuir la visita a una fuente, medio y campaña.',
+	tool_utm_how_item_1: 'Introduce la URL base de destino.',
+	tool_utm_how_item_2: 'Rellena utm_source, utm_medium y utm_campaign (más términos opcionales).',
+	tool_utm_how_item_3: 'Haz clic en Generar para añadir parámetros UTM codificados.',
+	tool_utm_how_item_4: 'Copia la URL de seguimiento final.',
 	tool_utm_rules_title: 'Reglas del creador',
 	tool_utm_rules_body: 'Estas son las definiciones y reglas de codificación de los parámetros UTM según la documentación de Google Analytics.',
 	tool_utm_rules_item_1: 'utm_source identifica dónde se vio el enlace; utm_medium identifica cómo se entregó. Ambos son obligatorios para la atribución.',

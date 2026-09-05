@@ -35,6 +35,10 @@ const en: SiteLangDict = {
 	tool_serp_how_title: 'How it works',
 	tool_serp_how_body:
 		'Type or paste the title, description, and optional URL. The tool estimates how many characters and approximate pixels each line occupies using a browser font-metric approximation (wide CJK glyphs count more than narrow ASCII letters), then draws a desktop and a mobile Google-style snippet. Lines wider than the estimated viewport get a truncation marker.',
+	tool_serp_how_item_1: 'Enter the title and meta description (optional display URL).',
+	tool_serp_how_item_2: 'Switch desktop or mobile estimate if both previews matter.',
+	tool_serp_how_item_3: 'Watch the length and pixel hints while you edit.',
+	tool_serp_how_item_4: 'Revise wording until the preview truncates cleanly.',
 	tool_serp_rules_title: 'What the preview shows',
 	tool_serp_rules_body:
 		'Pixel limits are approximate. Google measures rendered width, not character count, so dense languages and wide glyphs truncate at fewer characters.',

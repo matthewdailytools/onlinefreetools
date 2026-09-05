@@ -40,6 +40,10 @@ const ja: SiteLangDict = {
   tool_password_generator_generate: '生成',
   tool_password_generator_how_body:
     '長さを調整し、文字クラスを選び、必要なら紛らわしい字形を除外、件数を設定して生成。各文字は結合プールから crypto.getRandomValues で選択。リストをコピー — ページを離れると残りません。',
+  tool_password_generator_how_item_1: 'スライダーでパスワード長を設定します。',
+  tool_password_generator_how_item_2: '必要な文字種にチェック；必要なら紛らわしい文字を除外します。',
+  tool_password_generator_how_item_3: '生成数を設定し「生成」を押します。',
+  tool_password_generator_how_item_4: '1 行コピーまたはすべてコピーし、パスワード管理ツールに保存します。',
   tool_password_generator_how_title: '使い方',
   tool_password_generator_length_label: '長さ',
   tool_password_generator_lower: '小文字',

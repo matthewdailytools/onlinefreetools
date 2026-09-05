@@ -27,6 +27,10 @@ const zh: SiteLangDict = {
 	tool_sitemap_how_title: '工作原理',
 	tool_sitemap_how_body:
 		'粘贴 URL 列表，每行一条。可用竖线追加可选元数据：lastmod（yyyy-MM-dd）、changefreq 与 priority。页面逐行解析，转义保留字符，检查每个 URL 是否以 http(s) 开头，再按 sitemap 协议拼出 urlset。把 XML 复制到站点根目录，在 robots.txt 中引用或在 Search Console 提交即可。',
+	tool_sitemap_how_item_1: '每行粘贴一个 URL（可在竖线后加 lastmod|changefreq|priority）。',
+	tool_sitemap_how_item_2: '点击「生成」构建有效的 urlset。',
+	tool_sitemap_how_item_3: '查看非 https 或列表过大的警告。',
+	tool_sitemap_how_item_4: '复制或下载 sitemap.xml 到站点根目录。',
 	tool_sitemap_rules_title: '协议规则与限制',
 	tool_sitemap_rules_body: '以下为 sitemap 协议与 Google 的要求，本工具按此生成。',
 	tool_sitemap_rules_item_1: '必需项：每个 <url> 必须包含 <loc> 完整地址；lastmod、changefreq、priority 均为可选。',

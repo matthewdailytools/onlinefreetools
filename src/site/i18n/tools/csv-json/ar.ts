@@ -45,6 +45,10 @@ const ar: SiteLangDict = {
   tool_csv_json_header: 'الصف الأول رؤوس',
   tool_csv_json_how_body:
     'اختر CSV → JSON أو JSON → CSV؛ يتم التحليل والإنشاء هنا عبر Papa Parse. في CSV تختار الفاصل (أو الكشف التلقائي)، وهل الصف الأول رؤوس، وهل تُستنتج الأرقام/القيم المنطقية. في JSON تُسطَّح الكائنات المتداخلة إلى أعمدة بمسار نقطي، والأعمدة هي اتحاد كل المفاتيح.',
+  tool_csv_json_how_item_1: 'اختر CSV → JSON أو JSON → CSV.',
+  tool_csv_json_how_item_2: 'الصق المدخلات واضبط الفاصل / خيارات الرأس لـ CSV.',
+  tool_csv_json_how_item_3: 'انقر «تحويل» (JSON المتداخل يُسطّح إلى أعمدة عند تصدير CSV).',
+  tool_csv_json_how_item_4: 'انسخ النتيجة أو حمّلها.',
   tool_csv_json_how_title: 'كيف يعمل',
   tool_csv_json_indent_2: 'مسافتان',
   tool_csv_json_indent_4: '4 مسافات',

@@ -57,6 +57,10 @@ const es: SiteLangDict = {
 	tool_og_how_title: 'Cómo funciona',
 	tool_og_how_body:
 		'La vista previa analiza las etiquetas og:/twitter: que pegas (o las extrae del HTML cargado de una URL) y dibuja tres tarjetas. Facebook usa la imagen 1.91:1 a la izquierda con título, descripción y dominio debajo. X sigue twitter:card: summary_large_image muestra una imagen grande arriba, summary una pequeña junto al texto. Las apps de mensajería como WhatsApp muestran una tarjeta grande. La tabla señala los cuatro campos que exige el protocolo y lista los opcionales.',
+	tool_og_how_item_1: 'Pega etiquetas meta og:/twitter: o carga una URL.',
+	tool_og_how_item_2: 'Haz clic en Vista previa (o Ejemplo).',
+	tool_og_how_item_3: 'Compara las tarjetas de Facebook, X y mensajería.',
+	tool_og_how_item_4: 'Corrige en la tabla los campos obligatorios que falten.',
 	tool_og_rules_title: 'Reglas que usa la vista previa',
 	tool_og_rules_body: 'Estos son los tamaños y respaldos que usan las plataformas, según el protocolo Open Graph y la documentación de X Cards.',
 	tool_og_rules_item_1: 'El protocolo Open Graph exige og:title, og:type, og:image y og:url. og:description es opcional en la especificación, pero todas las plataformas grandes lo muestran: si lo omites, la plataforma redacta su propio resumen con el texto de la página.',

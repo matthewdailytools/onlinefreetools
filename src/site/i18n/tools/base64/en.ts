@@ -38,6 +38,10 @@ const en: SiteLangDict = {
   tool_base64_file_loaded: 'Encoded file: {name} ({size} bytes). Output shows Base64 only.',
   tool_base64_how_body:
     'Choose Encode to turn UTF-8 text or file bytes into Base64, or Decode to reverse it. Unicode is handled via UTF-8 bytes before btoa. Enable Base64url for JWT-style output (- and _ instead of + and /, no padding). File input reads bytes locally — no upload.',
+	tool_base64_how_item_1: 'Choose Encode or Decode.',
+	tool_base64_how_item_2: 'Paste text or pick a file for Encode; paste Base64 for Decode.',
+	tool_base64_how_item_3: 'Turn on Base64url when you need JWT-style - and _ without padding.',
+	tool_base64_how_item_4: 'Click Encode/Decode, then copy or download the result.',
   tool_base64_how_title: 'How it works',
   tool_base64_input_label: 'Input',
   tool_base64_input_placeholder: 'Paste plain text or Base64 string…',

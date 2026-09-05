@@ -45,6 +45,10 @@ const fr: SiteLangDict = {
   tool_csv_json_header: 'Première ligne = en-têtes',
   tool_csv_json_how_body:
     'Choisissez CSV → JSON ou JSON → CSV ; l’analyse et la génération se font ici avec Papa Parse. En CSV, choisissez le séparateur (ou détection auto), si la première ligne est un en-tête et si les nombres/booléens sont inférés. En JSON, les objets imbriqués deviennent des colonnes en chemin pointé et les colonnes sont l’union de toutes les clés.',
+  tool_csv_json_how_item_1: 'Choisissez CSV → JSON ou JSON → CSV.',
+  tool_csv_json_how_item_2: 'Collez l’entrée et réglez délimiteur / en-tête pour le CSV.',
+  tool_csv_json_how_item_3: 'Cliquez sur Convertir (JSON imbriqué aplati en colonnes à l’export CSV).',
+  tool_csv_json_how_item_4: 'Copiez ou téléchargez le résultat.',
   tool_csv_json_how_title: 'Comment ça marche',
   tool_csv_json_indent_2: '2 espaces',
   tool_csv_json_indent_4: '4 espaces',

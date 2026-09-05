@@ -57,6 +57,10 @@ const ja: SiteLangDict = {
 	tool_utm_how_title: '仕組み',
 	tool_utm_how_body:
 		'ビルダーはベース URL を解析し、既存のクエリパラメータを保持してから & 区切りで UTM パラメータを追加します。各値はパーセントエンコードされ、スペース・日本語・特殊記号もリンク内で正しく残ります。URL にハッシュがある場合は、すべてのパラメータの後ろに移動します。5 つの UTM パラメータは、Google Analytics がアクセスをソース・メディア・キャンペーンに帰属させるための情報です。',
+	tool_utm_how_item_1: 'ランディングページのベース URL を入力する。',
+	tool_utm_how_item_2: 'utm_source、utm_medium、utm_campaign（および任意項目）を入力する。',
+	tool_utm_how_item_3: '「生成」をクリックして UTM パラメータをパーセントエンコードで付加する。',
+	tool_utm_how_item_4: '完成したトラッキング URL をコピーする。',
 	tool_utm_rules_title: 'ビルダーが使うルール',
 	tool_utm_rules_body: '以下は Google Analytics のドキュメントにある UTM パラメータの定義とエンコード規則です。',
 	tool_utm_rules_item_1: 'utm_source はリンクが表示された場所、utm_medium は配信方法を示します。帰属にはどちらも必須です。',

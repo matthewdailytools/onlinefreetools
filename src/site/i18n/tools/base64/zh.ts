@@ -38,6 +38,10 @@ const zh: SiteLangDict = {
   tool_base64_file_loaded: '已编码文件：{name}（{size} 字节）。输出区仅显示 Base64。',
   tool_base64_how_body:
     '选「编码」把 UTF-8 文本或文件字节转为 Base64，选「解码」做反向。Unicode 经 UTF-8 字节再 btoa。勾选 Base64url 可输出 JWT 风格（- _ 替代 + /，无 padding）。文件在本地读取，不上传。',
+  tool_base64_how_item_1: '选择「编码」或「解码」。',
+  tool_base64_how_item_2: '编码时粘贴文本或选择文件；解码时粘贴 Base64。',
+  tool_base64_how_item_3: '需要 JWT 风格的 - 和 _（无 padding）时勾选 Base64url。',
+  tool_base64_how_item_4: '点击「转换」，然后复制或下载结果。',
   tool_base64_how_title: '怎么用',
   tool_base64_input_label: '输入',
   tool_base64_input_placeholder: '粘贴纯文本或 Base64 字符串…',

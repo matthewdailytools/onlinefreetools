@@ -30,6 +30,10 @@ const ja: SiteLangDict = {
   tool_uuid_generator_generate: '生成',
   tool_uuid_generator_how_body:
     'UUID v4 で標準ランダム UUID、ULID で 26 文字の時間ソート可能 ID。件数（1–100）を設定して生成。すべてコピーで 1 行 1 ID。乱数はブラウザ CSPRNG から。',
+  tool_uuid_generator_how_item_1: 'UUID v4 または ULID を選びます。',
+  tool_uuid_generator_how_item_2: '生成数を 1–100 で設定します。',
+  tool_uuid_generator_how_item_3: '「生成」を押します（または「サンプル」で固定デモ ID）。',
+  tool_uuid_generator_how_item_4: '「すべてコピー」で 1 行 1 ID をクリップボードへ。',
   tool_uuid_generator_how_title: '使い方',
   tool_uuid_generator_output_label: '生成された ID',
   tool_uuid_generator_rules_body:

@@ -40,6 +40,10 @@ const en: SiteLangDict = {
   tool_html_entity_form_named: 'Named when available',
   tool_html_entity_how_body:
     'Choose Encode to turn characters into HTML character references, or Decode to reverse them. Encoding runs character-by-character in this tab — pick a scope (which characters to escape) and an output form (named like &copy;, decimal &#169;, or hex &#xA9;). Decoding uses a safe textarea parse; the preview shows plain text only, never rendered HTML.',
+	tool_html_entity_how_item_1: 'Choose Encode or Decode.',
+	tool_html_entity_how_item_2: 'Paste the source text and pick which characters to escape when encoding.',
+	tool_html_entity_how_item_3: 'For Decode, choose once or until stable for nested entities.',
+	tool_html_entity_how_item_4: 'Click Encode/Decode and copy the result.',
   tool_html_entity_how_title: 'How it works',
   tool_html_entity_input_label: 'Input',
   tool_html_entity_input_placeholder: 'Paste plain text or entity string…',

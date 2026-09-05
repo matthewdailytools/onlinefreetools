@@ -34,6 +34,10 @@ const ar: SiteLangDict = {
   tool_html_entity_form_named: 'اسم إن وُجد',
   tool_html_entity_how_body:
     'اختر ترميزًا لتحويل الأحرف إلى كيانات HTML، أو فكّ ترميز للعكس. الترميز حرفًا بحرف؛ اختر النطاق والصيغة. فك الترميز عبر textarea آمن؛ المعاينة نص عادي فقط.',
+  tool_html_entity_how_item_1: 'اختر «ترميز» أو «فك».',
+  tool_html_entity_how_item_2: 'الصق النص المصدر واختر الأحرف المراد تهريبها عند الترميز.',
+  tool_html_entity_how_item_3: 'عند الفك، اختر مرة واحدة أو «حتى الاستقرار» للكيانات المتداخلة.',
+  tool_html_entity_how_item_4: 'انقر «تحويل» وانسخ النتيجة.',
   tool_html_entity_how_title: 'كيف يعمل',
   tool_html_entity_input_label: 'الإدخال',
   tool_html_entity_input_placeholder: 'الصق نصًا عاديًا أو كيانات…',

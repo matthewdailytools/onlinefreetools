@@ -37,6 +37,10 @@ const de: SiteLangDict = {
   tool_json_schema_validator_faq_q5: 'Wie prüfe ich strukturierte LLM-Ausgabe?',
   tool_json_schema_validator_how_body:
     'Links Schema, rechts Instanz einfügen. Ajv (draft-07) kompiliert, prüft und listet jeden Fehler mit JSON Pointer. Es gibt Fehler- und gültige Beispiele; beim Öffnen läuft das Fehlerbeispiel, damit echte Pfade sofort sichtbar sind.',
+  tool_json_schema_validator_how_item_1: 'JSON Schema (draft-07) links einfügen.',
+  tool_json_schema_validator_how_item_2: 'JSON-Instanz rechts einfügen.',
+  tool_json_schema_validator_how_item_3: 'Auf Prüfen klicken.',
+  tool_json_schema_validator_how_item_4: 'Jeden Fehler über den JSON-Pointer-Pfad beheben.',
   tool_json_schema_validator_how_title: 'So funktioniert’s',
   tool_json_schema_validator_instance_label: 'Instanz-JSON',
   tool_json_schema_validator_instance_placeholder: '{ "sku": "A-1", "price": 9.5 }',

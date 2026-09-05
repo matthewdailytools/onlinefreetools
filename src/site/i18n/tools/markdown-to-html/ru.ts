@@ -32,6 +32,10 @@ const ru: SiteLangDict = {
   tool_markdown_full_doc: 'Создать полный HTML-документ',
   tool_markdown_how_body:
     'Вкладки задают направление. Слева ввод, справа локальный результат. HTML — фрагмент или простой документ; Markdown — текст для репозитория или LLM.',
+  tool_markdown_how_item_1: 'Выберите вкладку Markdown → HTML или HTML → Markdown.',
+  tool_markdown_how_item_2: 'Вставьте вход слева (или «Загрузить пример»).',
+  tool_markdown_how_item_3: 'Для Markdown → HTML при необходимости оберните в минимальный HTML-документ.',
+  tool_markdown_how_item_4: 'Скопируйте или скачайте результат справа.',
   tool_markdown_how_title: 'Как пользоваться',
   tool_markdown_html_input_label: 'Ввод HTML',
   tool_markdown_html_placeholder: '<h1>Заголовок</h1>\n<p>Привет <strong>мир</strong></p>',

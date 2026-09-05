@@ -37,6 +37,10 @@ const ar: SiteLangDict = {
   tool_json_schema_validator_faq_q5: 'كيف أفحص مخرجات LLM المنظمة؟',
   tool_json_schema_validator_how_body:
     'الصق Schema يسارًا والمثيل يمينًا. يجمع Ajv (draft-07) الـ Schema ويتحقق ويعرض كل خطأ بـ JSON Pointer. تتوفر عينة فاشلة وصالحة؛ تُحمَّل العينة الفاشلة عند الدخول لترى مسارات حقيقية فورًا.',
+  tool_json_schema_validator_how_item_1: 'الصق JSON Schema (draft-07) يسارًا.',
+  tool_json_schema_validator_how_item_2: 'الصق مثيل JSON يمينًا.',
+  tool_json_schema_validator_how_item_3: 'انقر «تحقق».',
+  tool_json_schema_validator_how_item_4: 'أصلح كل خطأ باستخدام مسار JSON Pointer.',
   tool_json_schema_validator_how_title: 'كيف يعمل',
   tool_json_schema_validator_instance_label: 'JSON المثيل',
   tool_json_schema_validator_instance_placeholder: '{ "sku": "A-1", "price": 9.5 }',

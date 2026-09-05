@@ -57,6 +57,10 @@ const ja: SiteLangDict = {
 	tool_og_how_title: '仕組み',
 	tool_og_how_body:
 		'プレビューは貼り付けた og:/twitter: タグ（または URL から取得した HTML から抽出したタグ）を解析し、3 枚の共有カードを描画します。Facebook は左に 1.91:1 の画像、下にタイトル・説明・ドメインを表示します。X は twitter:card に従い、summary_large_image は上に大きな画像、summary は本文の横に小さい画像を表示します。WhatsApp などのメッセージアプリは大きなカードを 1 枚表示します。フィールド表ではプロトコルが必須とする 4 つのフィールドを示し、任意項目も列挙します。',
+	tool_og_how_item_1: 'og:/twitter: meta タグを貼るか URL を取得する。',
+	tool_og_how_item_2: '「プレビュー」（または「サンプル」）をクリックする。',
+	tool_og_how_item_3: 'Facebook、X、メッセージアプリのカードを比較する。',
+	tool_og_how_item_4: '表で不足している必須フィールドを修正する。',
 	tool_og_rules_title: 'プレビューで使うルール',
 	tool_og_rules_body: '以下は各プラットフォームが使う画像サイズとフォールバックです。Open Graph プロトコルと X Cards のドキュメントに基づきます。',
 	tool_og_rules_item_1: 'Open Graph プロトコルが必須とするのは og:title、og:type、og:image、og:url の 4 つです。og:description は仕様上は任意ですが主要プラットフォームはどこでも表示するため、書かないとプラットフォームがページ本文から独自の要約を作ります。',

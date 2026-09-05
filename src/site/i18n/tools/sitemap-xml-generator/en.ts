@@ -28,6 +28,10 @@ const en: SiteLangDict = {
 	tool_sitemap_how_title: 'How it works',
 	tool_sitemap_how_body:
 		'Paste your URL list, one per line. You can add optional metadata after a pipe: lastmod (yyyy-MM-dd), changefreq and priority. The page parses each line, escapes reserved characters, checks that every URL starts with http(s), and builds a urlset following the sitemap protocol. Copy the XML to your site root, then reference it from robots.txt or submit it in Search Console.',
+	tool_sitemap_how_item_1: 'Paste one URL per line (optional lastmod|changefreq|priority after a pipe).',
+	tool_sitemap_how_item_2: 'Click Generate to build a valid urlset.',
+	tool_sitemap_how_item_3: 'Review warnings for non-https or oversize lists.',
+	tool_sitemap_how_item_4: 'Copy or download sitemap.xml to your site root.',
 	tool_sitemap_rules_title: 'Protocol rules and limits',
 	tool_sitemap_rules_body:
 		'These are the rules from the sitemap protocol and Google that this generator follows.',

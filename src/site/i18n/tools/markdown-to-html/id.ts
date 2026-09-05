@@ -32,6 +32,10 @@ const id: SiteLangDict = {
   tool_markdown_full_doc: 'Buat dokumen HTML lengkap',
   tool_markdown_how_body:
     'Tab menentukan arah. Kiri input, kanan hasil lokal. HTML bisa fragmen atau dokumen sederhana; Markdown siap untuk editor/LLM.',
+  tool_markdown_how_item_1: 'Pilih tab Markdown → HTML atau HTML → Markdown.',
+  tool_markdown_how_item_2: 'Tempel input di kiri (atau Muat contoh).',
+  tool_markdown_how_item_3: 'Untuk Markdown → HTML, opsional bungkus dokumen HTML minimal.',
+  tool_markdown_how_item_4: 'Salin atau unduh output yang dikonversi di kanan.',
   tool_markdown_how_title: 'Alur singkat',
   tool_markdown_html_input_label: 'Input HTML',
   tool_markdown_html_placeholder: '<h1>Judul</h1>\n<p>Halo <strong>dunia</strong></p>',

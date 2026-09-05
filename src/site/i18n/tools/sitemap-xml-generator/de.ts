@@ -28,6 +28,10 @@ const de: SiteLangDict = {
 	tool_sitemap_how_title: 'So funktioniert es',
 	tool_sitemap_how_body:
 		'Fügen Sie Ihre URL-Liste ein, eine pro Zeile. Hinter einem senkrechten Strich lassen sich lastmod (yyyy-MM-dd), changefreq und priority ergänzen. Die Seite parst jede Zeile, maskiert reservierte Zeichen, prüft, dass die URL mit http(s) beginnt, und baut ein urlset nach Protokoll. Kopieren Sie das XML ins Site-Verzeichnis und referenzieren Sie es in robots.txt oder senden Sie es in der Search Console.',
+	tool_sitemap_how_item_1: 'Eine URL pro Zeile einfügen (optional lastmod|changefreq|priority nach einem Pipe).',
+	tool_sitemap_how_item_2: 'Klicke auf Generieren, um ein gültiges urlset zu erzeugen.',
+	tool_sitemap_how_item_3: 'Prüfe Warnungen zu Nicht-HTTPS oder zu großen Listen.',
+	tool_sitemap_how_item_4: 'Kopiere oder lade sitemap.xml in das Site-Root herunter.',
 	tool_sitemap_rules_title: 'Protokollregeln und Grenzen',
 	tool_sitemap_rules_body: 'Diese Regeln des Sitemap-Protokolls und von Google befolgt der Generator.',
 	tool_sitemap_rules_item_1: 'Pflicht: jedes <url> muss ein <loc> mit der vollständigen URL enthalten. lastmod, changefreq und priority sind optional.',

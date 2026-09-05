@@ -51,6 +51,10 @@ const en: SiteLangDict = {
 	tool_schema_how_title: 'How it works',
 	tool_schema_how_body:
 		'Pick a schema type, fill the form fields, and press Generate. The page builds a Schema.org JSON-LD object, checks that required fields are present, and shows the pretty-printed result wrapped in a script tag so you can paste it into your page head. A syntax check runs before the output renders; missing required fields are listed instead of silently producing broken markup.',
+	tool_schema_how_item_1: 'Pick a Schema.org type from the list.',
+	tool_schema_how_item_2: 'Fill the required fields for that type.',
+	tool_schema_how_item_3: 'Click Generate to build JSON-LD.',
+	tool_schema_how_item_4: 'Copy the script block into your page and keep it consistent with visible content.',
 	tool_schema_rules_title: 'What the generator checks',
 	tool_schema_rules_body:
 		'Each type has a minimal valid shape. The generator validates the JSON is well-formed and flags required fields that are empty, but it cannot tell whether the markup matches your visible page content.',

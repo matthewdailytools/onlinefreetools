@@ -37,6 +37,10 @@ const ja: SiteLangDict = {
   tool_json_schema_validator_faq_q5: 'LLM の構造化出力をどう確認しますか？',
   tool_json_schema_validator_how_body:
     '左に Schema、右にインスタンスを貼ります。Ajv（draft-07）がコンパイルと検証を行い、各エラーを JSON Pointer 付きで一覧します。失敗／成功サンプルがあり、入場時は失敗サンプルで実パスをすぐ見せます。',
+  tool_json_schema_validator_how_item_1: '左に JSON Schema（draft-07）を貼り付けます。',
+  tool_json_schema_validator_how_item_2: '右に JSON インスタンスを貼り付けます。',
+  tool_json_schema_validator_how_item_3: '「検証」を押します。',
+  tool_json_schema_validator_how_item_4: 'JSON Pointer パスに従い各エユーザーを修正します。',
   tool_json_schema_validator_how_title: '使い方',
   tool_json_schema_validator_instance_label: 'インスタンス JSON',
   tool_json_schema_validator_instance_placeholder: '{ "sku": "A-1", "price": 9.5 }',

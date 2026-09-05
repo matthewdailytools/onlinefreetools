@@ -27,6 +27,10 @@ const ja: SiteLangDict = {
 	tool_sitemap_how_title: '仕組み',
 	tool_sitemap_how_body:
 		'URL リストを 1 行 1 つで貼り付けます。パイプの後に lastmod（yyyy-MM-dd）、changefreq、priority を任意で追加。ページが各行を解析し、予約文字をエスケープし、http(s) で始まるか確認し、sitemap プロトコルに沿って urlset を組み立てます。XML をサイトのルートにコピーし、robots.txt から参照するか Search Console に送信します。',
+	tool_sitemap_how_item_1: '1 行 1 URL を貼り付ける（パイプの後に lastmod|changefreq|priority を任意で追加）。',
+	tool_sitemap_how_item_2: '「生成」をクリックして有効な urlset を組み立てる。',
+	tool_sitemap_how_item_3: '非 https やサイズ超過の警告を確認する。',
+	tool_sitemap_how_item_4: 'sitemap.xml をコピーまたはダウンロードし、サイトルートに置く。',
 	tool_sitemap_rules_title: 'プロトコルのルールと上限',
 	tool_sitemap_rules_body: 'この生成ツールが従う、sitemap プロトコルと Google のルールです。',
 	tool_sitemap_rules_item_1: '必須：各 <url> に完全な URL の <loc> を含めること。lastmod・changefreq・priority は任意。',

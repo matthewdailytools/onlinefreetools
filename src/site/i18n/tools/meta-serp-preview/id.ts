@@ -35,6 +35,10 @@ const id: SiteLangDict = {
 	tool_serp_how_title: 'Cara kerja',
 	tool_serp_how_body:
 		'Ketik atau tempel judul, deskripsi, dan URL opsional. Alat memperkirakan berapa karakter dan piksel perkiraan setiap baris memakai pendekatan metrik font (glif CJK yang lebar dihitung lebih banyak daripada huruf ASCII yang sempit), lalu menggambar cuplikan gaya Google untuk desktop dan ponsel. Baris yang lebih lebar dari viewport perkiraan diberi tanda potong.',
+	tool_serp_how_item_1: 'Masukkan judul dan meta description (URL tampilan opsional).',
+	tool_serp_how_item_2: 'Beralih estimasi desktop atau mobile jika keduanya penting.',
+	tool_serp_how_item_3: 'Perhatikan petunjuk panjang dan piksel saat mengedit.',
+	tool_serp_how_item_4: 'Revisi wording hingga pratinjau terpotong rapi.',
 	tool_serp_rules_title: 'Yang ditampilkan pratinjau',
 	tool_serp_rules_body:
 		'Batas piksel bersifat perkiraan. Google mengukur lebar render, bukan jumlah karakter, jadi bahasa padat dan glif lebar terpotong pada jumlah karakter lebih sedikit.',
