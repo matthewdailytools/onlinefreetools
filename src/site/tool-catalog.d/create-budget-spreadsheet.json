@@ -1,0 +1,27 @@
+{
+  "slug": "create-budget-spreadsheet",
+  "path": "/tools/create-budget-spreadsheet",
+  "updatedAt": "2026-09-05T12:22:00.000Z",
+  "launchedAt": "2026-09-04T14:10:00.000Z",
+  "category": "calculator",
+  "primaryTopic": "business-finance",
+  "featured": true,
+  "ymyl": true,
+  "i18nKey": "tool_create_budget_spreadsheet_title",
+  "homeTitleKey": "tool_create_budget_spreadsheet_title",
+  "homeDescKey": "tool_create_budget_spreadsheet_desc",
+  "faqPrefix": "tool_create_budget_spreadsheet",
+  "related": [
+    "create-invoice-spreadsheet",
+    "create-excel-timesheet"
+  ],
+  "logo": "/icons/tools/create-budget-spreadsheet.svg",
+  "page": {
+    "module": "../pages/createBudgetSpreadsheetPage",
+    "export": "renderCreateBudgetSpreadsheetPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "documents",
+  "subject": "data"
+}

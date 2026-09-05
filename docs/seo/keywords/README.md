@@ -38,5 +38,6 @@ python ops/seo/bing_serp/run_bing_serp.py --theme cidr --write-batch-md --batch-
 | [`web-check/`](./web-check/) | 竞品 lissy93/web-check；Bing×15 **0 long_gap** |
 | [`bulk-batch/`](./bulk-batch/) | 存量单文件工具的**独立批量页**清单；`bulk` vs `batch` 搜法选型；**未 SERP** |
 | [`pdf/`](./pdf/) | PDF Planner **1333** 词；**分场景独立 slug**（9 absorb + 22 defer）；禁 editor/converter 壳页；**未 SERP** |
+| [`excel/`](./excel/) | Excel Planner **1162** 词（软件品牌种子）；约七成 drop；公式/发票·预算·工时 **8** 页在 catalog；N9–N12 出图/看板/透视/打开已下线；禁 online-excel 壳；**未 SERP** |
 
 枢纽：[`../README.md`](../README.md) · 漏斗：[`../keyword-to-tool-funnel.md`](../keyword-to-tool-funnel.md) · 运维：[`../../ops/seo/keyword-to-tool-ops.md`](../../ops/seo/keyword-to-tool-ops.md)

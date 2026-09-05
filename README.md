@@ -17,6 +17,14 @@
 - [对比两份 Word 文档的差异](https://onlinefreetools.org/zh/tools/compare-two-word-documents-for-differences) - 选两份 docx，抽出可见文字再看增删；不是审阅窗格；文件留在本机
 - [在线 JSON 差异检查](https://onlinefreetools.org/zh/tools/json-diff-checker-online) - 按路径对比两份 JSON，默认忽略键顺序；内容留在本机、不上传
 - [对比 Excel 文件](https://onlinefreetools.org/zh/tools/excel-compare-files) - 选两个表格，按当前工作表对格子；文件留在本机、不上传
+- [写出 Excel 嵌套 IF 公式](https://onlinefreetools.org/zh/tools/write-nested-if-formula-for-excel) - 按等于/包含/空白条件写出嵌套 IF，可试算；输入留在本机
+- [写出 Excel 的 IFS 公式](https://onlinefreetools.org/zh/tools/write-ifs-formula-in-excel) - 同一套条件表生成 IFS()（Excel 2019 / Microsoft 365+）；输入留在本机
+- [用 IFNA 包住公式](https://onlinefreetools.org/zh/tools/wrap-formula-with-ifna) - 把内部公式包进 IFNA，只替换 #N/A；输入留在本机
+- [写出 Excel 的 COUNTIF 公式](https://onlinefreetools.org/zh/tools/write-countif-formula-in-excel) - 一个区域一个条件，支持 * ?；输入留在本机
+- [复制常用 Excel 公式](https://onlinefreetools.org/zh/tools/excel-formulas-cheat-sheet) - 筛选并复制常用公式卡片，不是条件生成器
+- [做出一份发票电子表](https://onlinefreetools.org/zh/tools/create-invoice-spreadsheet) - 填买卖方与明细，下载 xlsx；不是法定发票；文件留在本机
+- [做出一份预算表](https://onlinefreetools.org/zh/tools/create-budget-spreadsheet) - 按类别合计金额并下载 xlsx；不是总账；文件留在本机
+- [做出一份 Excel 工时表](https://onlinefreetools.org/zh/tools/create-excel-timesheet) - 按日期/项目记小时并下载 xlsx；不是发薪；文件留在本机
 - [YAML ↔ JSON](https://onlinefreetools.org/zh/tools/yaml-json) - 浏览器内 YAML 与 JSON 双向转换：类型规则、多文档与本地处理
 - [CSV ↔ JSON](https://onlinefreetools.org/zh/tools/csv-json) - 浏览器内 CSV 与 JSON 双向转换：分隔符、表头、类型推断与嵌套扁平化
 - [JSON Schema 校验器](https://onlinefreetools.org/zh/tools/json-schema-validator) - 浏览器内用 draft-07 Schema 校验 JSON，并以 JSON Pointer 定位错误
@@ -218,6 +226,14 @@ Below are our available online tools with their links (English version):
 - [Compare two Word documents for differences](https://onlinefreetools.org/tools/compare-two-word-documents-for-differences) - Extract visible text from two .docx files and highlight wording changes — not Word Review Compare
 - [JSON diff checker online](https://onlinefreetools.org/tools/json-diff-checker-online) - Compare two JSON values by path, ignore key order by default — paste stays on the device
 - [Excel compare files](https://onlinefreetools.org/tools/excel-compare-files) - Compare two spreadsheets cell by cell on the current sheet — stays on the device, not uploaded
+- [Write a nested IF formula for Excel](https://onlinefreetools.org/tools/write-nested-if-formula-for-excel) - Emit nested IF from equals/contains/blank rows with a trial — stays on the device
+- [Write an IFS formula in Excel](https://onlinefreetools.org/tools/write-ifs-formula-in-excel) - Same condition table → IFS() for Excel 2019 / Microsoft 365+ — stays on the device
+- [Wrap a formula with IFNA](https://onlinefreetools.org/tools/wrap-formula-with-ifna) - Wrap an inner formula so #N/A becomes your alternate — stays on the device
+- [Write a COUNTIF formula in Excel](https://onlinefreetools.org/tools/write-countif-formula-in-excel) - One range, one criterion, optional * ? — stays on the device
+- [Copy common Excel formulas](https://onlinefreetools.org/tools/excel-formulas-cheat-sheet) - Filter and copy common formula cards; not a nested-IF builder
+- [Create an invoice spreadsheet](https://onlinefreetools.org/tools/create-invoice-spreadsheet) - Parties, lines, tax, download xlsx — not a legal e-invoice; stays on the device
+- [Create a budget spreadsheet](https://onlinefreetools.org/tools/create-budget-spreadsheet) - Category totals to xlsx — not a ledger; stays on the device
+- [Create an Excel timesheet](https://onlinefreetools.org/tools/create-excel-timesheet) - Date/project/hours grid to xlsx — not payroll; stays on the device
 - [YAML ↔ JSON](https://onlinefreetools.org/tools/yaml-json) - Convert YAML ↔ JSON with typing rules, multi-doc arrays, and local paste
 - [CSV ↔ JSON](https://onlinefreetools.org/tools/csv-json) - Convert CSV ↔ JSON with delimiter, header, type inference, and nested flattening
 - [JSON Schema Validator](https://onlinefreetools.org/tools/json-schema-validator) - Validate JSON against draft-07 Schema with JSON Pointer error paths — local in the browser

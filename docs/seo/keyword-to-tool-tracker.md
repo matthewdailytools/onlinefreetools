@@ -44,10 +44,10 @@
 
 | 字段 | 值 |
 |---|---|
-| 最近更新 | 2026-09-03 |
-| 最近批次 | [pdf 分场景 slug](./keywords/pdf/2026-09-03-pdf-keyword-planner.md)（意图可细分即独立 URL；9 absorb + 22 新 slug defer；禁 editor/converter 壳；**未 SERP**） |
-| 池内 `build` 候选 | web-check 五 slug **已上线 catalog**；YAML/XML P2 仍 defer；bulk-batch P0 在本提交实现 |
-| 本周新建工具页 | web-check 五工具 + bulk/batch P0（compress / convert jpg·png·webp / watermark / pdf email / checksum） |
+| 最近更新 | 2026-09-04 |
+| 最近批次 | [excel Planner](./keywords/excel/2026-09-04-excel-keyword-planner.md)（软件品牌种子 1162 词；约七成 drop；0 absorb；场景 slug 现 **8** 页在 catalog：公式+发票/预算/工时；**N9–N12 已下线**；禁 online-excel 壳；**未 SERP**） |
+| 池内 `build` 候选 | Excel 公式/模板 8 slug 在 catalog；N9–N12 用户下线；YAML/XML P2 仍 defer |
+| 本周新建工具页 | Excel 场景保留 8 slug（嵌套 IF / IFS / IFNA / COUNTIF / 公式速查 / 发票·预算·工时表） |
 | 阻塞 | 发版：`npm run deploy` / upload:r2；SSL 为 crt.sh CT 非握手 |
 
 ---
@@ -156,6 +156,9 @@
 | 2026-09-03 | 批量**压缩**可做三条独立 URL：商品图（jpg/照片）、PNG 保格式、PDF；GIF 后排。禁万能 compressor、禁与 convert 合并。 | 用户问批量压缩 slug 哪些可做 |
 | 2026-09-03 | PDF Planner 批（1333 词，Adobe 种子）：~62% 品牌/下载/安装 → drop；16 已有 PDF slug **absorb**（merge/compress/pdf-to-jpg 等头词禁 H1）；**未实现**编辑/填表/签名/Word↔PDF/HTML→PDF → **defer**（须实现规格+场景 H1）；**未 SERP → 0 long_gap / 0 周 build**；未建 work-tasks。 | 用户要求分析 keywords/pdf Planner |
 | 2026-09-03 | PDF Planner **按用户细分场景重拆**：对象/方向/约束能分开就独立 slug（对照 text-compare / bulk 按输出拆）。9 条 absorb 现页；**22 条新 slug defer**（混文件合成、Word↔PDF、HTML、改字/盖字、编域/填表/做可填/建表、手写签/证书签、浏览打开、在线撰写、可编辑化、PDF/A 转与校、对比、抽文本、翻页书、打印、DWG）。**禁** `online-pdf-editor` / `pdf-converter` / `pdf-maker` 壳页（改 FAQ 分发）。未 SERP → 0 周 build；未建 work-tasks。 | 用户要求意图可细分即单独 slug |
+| 2026-09-04 | Excel Planner 批（1162 词，Microsoft Excel 软件种子）：约七成品牌/下载/教程/版本/拼写 → drop。本批 **0** 条可 absorb 进 `excel-compare-files`/`csv-json`（无 compare、无 csv 转换搜法）。抽出 **12** 条场景 slug **defer**（嵌套 IF / IFS / IFNA / COUNTIF、公式速查、发票/预算/工时表、出图/看板/透视、浏览器打开）。**禁** `online-excel` 套件壳。文件作业（xlsx↔csv、合并、Excel→PDF）本 CSV **0 命中**，不臆造 slug。未 SERP → 0 周 build；未建 work-tasks。 | 用户要求分析 keywords/excel Planner |
+| 2026-09-04 | 用户确认对 Excel 批 **12 条 defer 新 slug 立项并实现**：`work-tasks/` + catalog/i18n/Page；场景 H1；发票/预算 `ymyl`；禁 `online excel` / `IFS Excel` / `Pivot table Excel` 头词进攻。一次 `build:site` 进首页与 sitemap。 | 用户要求以效率优化模式逐条立项并实现 |
+| 2026-09-04 | 用户要求**下线** Excel N9–N12：`create-graph-from-spreadsheet-data`、`create-excel-dashboard`、`build-pivot-table-from-spreadsheet`、`open-excel-file-in-browser`（catalog/i18n/Page/icon/work-tasks/README）。公式与发票·预算·工时 8 页保留。词池四行改 `drop`。 | 用户要求删除出图/看板/透视/浏览器打开 |
 
 ---
 

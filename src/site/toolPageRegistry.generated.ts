@@ -40,6 +40,9 @@ import { renderConvertPdfToDwgPage } from '../pages/convertPdfToDwgPage';
 import { renderConvertPdfToPdfAPage } from '../pages/convertPdfToPdfAPage';
 import { renderConvertWordDocumentToPdfPage } from '../pages/convertWordDocumentToPdfPage';
 import { renderCoreWebVitalsCheckerPage } from '../pages/coreWebVitalsCheckerPage';
+import { renderCreateBudgetSpreadsheetPage } from '../pages/createBudgetSpreadsheetPage';
+import { renderCreateExcelTimesheetPage } from '../pages/createExcelTimesheetPage';
+import { renderCreateInvoiceSpreadsheetPage } from '../pages/createInvoiceSpreadsheetPage';
 import { renderCreatePdfFormPage } from '../pages/createPdfFormPage';
 import { renderCreateZipFilePage } from '../pages/createZipFilePage';
 import { renderCropPdfPage } from '../pages/cropPdfPage';
@@ -49,6 +52,7 @@ import { renderDomainLookupPage } from '../pages/domainLookupPage';
 import { renderEditPdfFormFieldsPage } from '../pages/editPdfFormFieldsPage';
 import { renderEditPdfTextOnlinePage } from '../pages/editPdfTextOnlinePage';
 import { renderExcelCompareFilesPage } from '../pages/excelCompareFilesPage';
+import { renderExcelFormulasCheatSheetPage } from '../pages/excelFormulasCheatSheetPage';
 import { renderExtractTextFromPdfPage } from '../pages/extractTextFromPdfPage';
 import { renderFileHashPage } from '../pages/fileHashPage';
 import { renderFileMetadataAnalyzerPage } from '../pages/fileMetadataAnalyzerPage';
@@ -196,6 +200,10 @@ import { renderUuidGeneratorPage } from '../pages/uuidGeneratorPage';
 import { renderValidateSecurityTxtPage } from '../pages/validateSecurityTxtPage';
 import { renderWcagContrastCheckerPage } from '../pages/wcagContrastCheckerPage';
 import { renderWebsiteHeadersPage } from '../pages/websiteHeadersPage';
+import { renderWrapFormulaWithIfnaPage } from '../pages/wrapFormulaWithIfnaPage';
+import { renderWriteCountifFormulaInExcelPage } from '../pages/writeCountifFormulaInExcelPage';
+import { renderWriteIfsFormulaInExcelPage } from '../pages/writeIfsFormulaInExcelPage';
+import { renderWriteNestedIfFormulaForExcelPage } from '../pages/writeNestedIfFormulaForExcelPage';
 import { renderWritePdfDocumentOnlinePage } from '../pages/writePdfDocumentOnlinePage';
 import { renderWritingPromptGeneratorPage } from '../pages/writingPromptGeneratorPage';
 import { renderYamlJsonPage } from '../pages/yamlJsonPage';
@@ -246,6 +254,9 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'convert-pdf-to-pdf-a': (lang, defaultLang, enabled) => renderConvertPdfToPdfAPage({ lang, defaultLang, enabledLangs: enabled }),
 	'convert-word-document-to-pdf': (lang, defaultLang, enabled) => renderConvertWordDocumentToPdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'core-web-vitals-checker': (lang, defaultLang, enabled) => renderCoreWebVitalsCheckerPage({ lang, defaultLang, enabledLangs: enabled }),
+	'create-budget-spreadsheet': (lang, defaultLang, enabled) => renderCreateBudgetSpreadsheetPage({ lang, defaultLang, enabledLangs: enabled }),
+	'create-excel-timesheet': (lang, defaultLang, enabled) => renderCreateExcelTimesheetPage({ lang, defaultLang, enabledLangs: enabled }),
+	'create-invoice-spreadsheet': (lang, defaultLang, enabled) => renderCreateInvoiceSpreadsheetPage({ lang, defaultLang, enabledLangs: enabled }),
 	'create-pdf-form': (lang, defaultLang, enabled) => renderCreatePdfFormPage({ lang, defaultLang, enabledLangs: enabled }),
 	'create-zip-file': (lang, defaultLang, enabled) => renderCreateZipFilePage({ lang, defaultLang, enabledLangs: enabled }),
 	'crop-pdf': (lang, defaultLang, enabled) => renderCropPdfPage({ lang, defaultLang, enabledLangs: enabled }),
@@ -255,6 +266,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'edit-pdf-form-fields': (lang, defaultLang, enabled) => renderEditPdfFormFieldsPage({ lang, defaultLang, enabledLangs: enabled }),
 	'edit-pdf-text-online': (lang, defaultLang, enabled) => renderEditPdfTextOnlinePage({ lang, defaultLang, enabledLangs: enabled }),
 	'excel-compare-files': (lang, defaultLang, enabled) => renderExcelCompareFilesPage({ lang, defaultLang, enabledLangs: enabled }),
+	'excel-formulas-cheat-sheet': (lang, defaultLang, enabled) => renderExcelFormulasCheatSheetPage({ lang, defaultLang, enabledLangs: enabled }),
 	'extract-text-from-pdf': (lang, defaultLang, enabled) => renderExtractTextFromPdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'file-hash': (lang, defaultLang, enabled) => renderFileHashPage({ lang, defaultLang, enabledLangs: enabled }),
 	'file-metadata-analyzer': (lang, defaultLang, enabled) => renderFileMetadataAnalyzerPage({ lang, defaultLang, enabledLangs: enabled }),
@@ -402,6 +414,10 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'validate-security-txt': (lang, defaultLang, enabled) => renderValidateSecurityTxtPage({ lang, defaultLang, enabledLangs: enabled }),
 	'wcag-contrast-checker': (lang, defaultLang, enabled) => renderWcagContrastCheckerPage({ lang, defaultLang, enabledLangs: enabled }),
 	'website-headers': (lang, defaultLang, _enabled) => renderWebsiteHeadersPage(lang, defaultLang),
+	'wrap-formula-with-ifna': (lang, defaultLang, enabled) => renderWrapFormulaWithIfnaPage({ lang, defaultLang, enabledLangs: enabled }),
+	'write-countif-formula-in-excel': (lang, defaultLang, enabled) => renderWriteCountifFormulaInExcelPage({ lang, defaultLang, enabledLangs: enabled }),
+	'write-ifs-formula-in-excel': (lang, defaultLang, enabled) => renderWriteIfsFormulaInExcelPage({ lang, defaultLang, enabledLangs: enabled }),
+	'write-nested-if-formula-for-excel': (lang, defaultLang, enabled) => renderWriteNestedIfFormulaForExcelPage({ lang, defaultLang, enabledLangs: enabled }),
 	'write-pdf-document-online': (lang, defaultLang, enabled) => renderWritePdfDocumentOnlinePage({ lang, defaultLang, enabledLangs: enabled }),
 	'writing-prompt-generator': (lang, defaultLang, enabled) => renderWritingPromptGeneratorPage({ lang, defaultLang, enabledLangs: enabled }),
 	'yaml-json': (lang, defaultLang, enabled) => renderYamlJsonPage({ lang, defaultLang, enabledLangs: enabled }),

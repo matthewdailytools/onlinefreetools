@@ -1,0 +1,27 @@
+{
+  "slug": "write-nested-if-formula-for-excel",
+  "path": "/tools/write-nested-if-formula-for-excel",
+  "updatedAt": "2026-09-05T12:22:00.000Z",
+  "launchedAt": "2026-09-04T14:10:00.000Z",
+  "category": "developer",
+  "primaryTopic": "dev-data",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_write_nested_if_formula_for_excel_title",
+  "homeTitleKey": "tool_write_nested_if_formula_for_excel_title",
+  "homeDescKey": "tool_write_nested_if_formula_for_excel_desc",
+  "faqPrefix": "tool_write_nested_if_formula_for_excel",
+  "related": [
+    "write-ifs-formula-in-excel",
+    "excel-formulas-cheat-sheet"
+  ],
+  "logo": "/icons/tools/write-nested-if-formula-for-excel.svg",
+  "page": {
+    "module": "../pages/writeNestedIfFormulaForExcelPage",
+    "export": "renderWriteNestedIfFormulaForExcelPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "documents",
+  "subject": "data"
+}

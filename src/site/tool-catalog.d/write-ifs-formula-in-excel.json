@@ -1,0 +1,27 @@
+{
+  "slug": "write-ifs-formula-in-excel",
+  "path": "/tools/write-ifs-formula-in-excel",
+  "updatedAt": "2026-09-05T12:22:00.000Z",
+  "launchedAt": "2026-09-04T14:10:00.000Z",
+  "category": "developer",
+  "primaryTopic": "dev-data",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_write_ifs_formula_in_excel_title",
+  "homeTitleKey": "tool_write_ifs_formula_in_excel_title",
+  "homeDescKey": "tool_write_ifs_formula_in_excel_desc",
+  "faqPrefix": "tool_write_ifs_formula_in_excel",
+  "related": [
+    "write-nested-if-formula-for-excel",
+    "wrap-formula-with-ifna"
+  ],
+  "logo": "/icons/tools/write-ifs-formula-in-excel.svg",
+  "page": {
+    "module": "../pages/writeIfsFormulaInExcelPage",
+    "export": "renderWriteIfsFormulaInExcelPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "documents",
+  "subject": "data"
+}

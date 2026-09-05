@@ -1,0 +1,27 @@
+{
+  "slug": "excel-formulas-cheat-sheet",
+  "path": "/tools/excel-formulas-cheat-sheet",
+  "updatedAt": "2026-09-05T12:22:00.000Z",
+  "launchedAt": "2026-09-04T14:10:00.000Z",
+  "category": "developer",
+  "primaryTopic": "dev-data",
+  "featured": true,
+  "ymyl": false,
+  "i18nKey": "tool_excel_formulas_cheat_sheet_title",
+  "homeTitleKey": "tool_excel_formulas_cheat_sheet_title",
+  "homeDescKey": "tool_excel_formulas_cheat_sheet_desc",
+  "faqPrefix": "tool_excel_formulas_cheat_sheet",
+  "related": [
+    "write-nested-if-formula-for-excel",
+    "write-ifs-formula-in-excel"
+  ],
+  "logo": "/icons/tools/excel-formulas-cheat-sheet.svg",
+  "page": {
+    "module": "../pages/excelFormulasCheatSheetPage",
+    "export": "renderExcelFormulasCheatSheetPage",
+    "style": "opts"
+  },
+  "localProcessing": true,
+  "scenario": "documents",
+  "subject": "data"
+}
