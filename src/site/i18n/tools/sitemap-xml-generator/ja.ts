@@ -6,10 +6,10 @@ import type { SiteLangDict } from '../../../types';
 
 const ja: SiteLangDict = {
 	tool_sitemap_home_title: 'XML sitemap 生成ツール',
-	tool_sitemap_home_desc: 'Google にページの発見とインデックスを促す——URL リストから lastmod・changefreq・priority 付きの正しい sitemap.xml を、ブラウザ内で生成。',
+	tool_sitemap_home_desc: '内部リンクだけでは辿り着けないページを Google に見つけてもらう——URL リストから lastmod・changefreq・priority 付きの正しい sitemap.xml を、ブラウザ内で生成。',
 	tool_sitemap_title: 'XML sitemap 生成ツール — URL リストから sitemap.xml を作成',
 	tool_sitemap_description:
-		'sitemap は Google の発見とインデックスを早めます。https URL を貼り（任意で lastmod）、正しい sitemap.xml をプレビューしてルートへコピーします。アップロードなし。例：3 URL → 3 エントリ。',
+		'sitemap は内部リンクの弱いページも含めて、どの URL があるかを Google に伝えます。https URL を貼れば正しい sitemap.xml をプレビューでき、そのままルートへコピー。入力は端末内で処理しサーバーへ送りません。例：3 URL → 3 エントリ。',
 	tool_sitemap_generate: '生成',
 	tool_sitemap_sample: 'サンプル',
 	tool_sitemap_clear: 'クリア',
@@ -38,7 +38,7 @@ const ja: SiteLangDict = {
 		'サンプル入力：https://example.com/ と、lastmod 2026-08-01 の https://example.com/products、さらに https://example.com/about —— 出力は 3 つの url 要素を持つ urlset で、真ん中が lastmod を持ちます。',
 	tool_sitemap_usecases_title: 'こんな場面で',
 	tool_sitemap_usecase_1: '新サイト：URL リストから最初の sitemap.xml を生成し、Search Console に送信。',
-	tool_sitemap_usecase_2: '更新コンテンツ：最近変更したページに lastmod を付けて、鮮度のシグナルをクローラーに届ける。',
+	tool_sitemap_usecase_2: '更新コンテンツ：本当に変更したページにだけ lastmod を付ける。Google が lastmod を参照するのはファイル全体で日付が一貫して正確なときだけなので、全 URL に今日の日付を入れると項目ごと無視されます。',
 	tool_sitemap_usecase_3: '発見性：robots.txt に sitemap の URL を書けば、送信を待たずにクローラーが辿り着ける。',
 	tool_sitemap_faq_q1: '1 つの sitemap の URL 上限は？',
 	tool_sitemap_faq_a1: '50,000 URL または 50MB（非圧縮）。リストが 50,000 を超えると警告が出るので、分割して sitemap index で各ファイルをまとめます。',

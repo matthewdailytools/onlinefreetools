@@ -6,18 +6,18 @@ import type { SiteLangDict } from '../../../types';
 
 const id: SiteLangDict = {
 	tool_sketch_prompt_generator_article:
-		'Susun prompt siap tempel agar ChatGPT, Gemini, Claude, atau DeepSeek memandu pengoperasian Sketch.app — Artboard, Symbol, Shared Style, dan ekspor. Isi bidang, salin Markdown atau JSON. Perakitan lokal tetap di browser; Expand/Polish opsional memakai Cloudflare Workers AI dengan Turnstile. Teks tetap di perangkat kecuali Anda memakai AI.',
+		'Susun prompt siap tempel agar ChatGPT, Gemini, Claude, atau DeepSeek memandu pengoperasian Sketch.app — Artboard, Symbol, Shared Style, dan ekspor. Isi bidang, salin Markdown atau JSON. Secara default prompt dirakit di peramban Anda; hanya saat menekan Perluas atau Rapikan draf yang sedang aktif dikirim ke Cloudflare Workers AI (perlu Turnstile, ada batas laju dan kuota), dan jawabannya menggantikan seluruh isi kotak hasil.',
 	tool_sketch_prompt_generator_build: 'Buat prompt',
 	tool_sketch_prompt_generator_clear: 'Hapus',
 	tool_sketch_prompt_generator_copy: 'Salin',
 	tool_sketch_prompt_generator_desc:
-		'Generator prompt Sketch.app — lokal secara default + Expand/Polish opsional Cloudflare AI (Turnstile); Markdown/JSON di perangkat.',
+		'Generator prompt Sketch.app — rakit Artboard, Symbol, dan langkah ekspor di peramban; Perluas/Rapikan opsional lewat Cloudflare AI (Turnstile).',
 	tool_sketch_prompt_generator_description:
-		'Generator prompt Sketch.app — Lokal + AI opsional untuk ChatGPT, Gemini, Claude, dan DeepSeek: rakit prompt terstruktur untuk langkah desain Sketch.app (Artboard, Symbol, ekspor) di browser; Expand/Polish opsional lewat Cloudflare Workers AI (Turnstile, kuota). Contoh saat buka. Markdown default; JSON untuk pipeline. Teks lokal kecuali AI.',
+		'Generator prompt Sketch.app — Lokal + AI opsional untuk ChatGPT, Gemini, Claude, dan DeepSeek: isi tujuan, Artboard, Symbol, dan ekspor, lalu peramban merakit prompt terstruktur berisi langkah kerja di Sketch.app. Saat dibuka sudah ada contoh yang bisa diedit; setelah itu Anda boleh Perluas atau Rapikan lewat Cloudflare Workers AI (perlu Turnstile, ada kuota). Markdown default; JSON untuk pipeline.',
 	tool_sketch_prompt_generator_download: 'Unduh',
 	tool_sketch_prompt_generator_empty: 'Isi setidaknya satu bidang sebelum membuat.',
 	tool_sketch_prompt_generator_example:
-		'Input: Tujuan = layar login di Sketch.app; Artboard = iPhone 14 390×844; Symbol = Button/Primary + Input; Ekspor = PNG 1x/2x/3x + PDF. Output (Markdown): ## Role → asisten Sketch.app; ## Task → daftar bernomor.',
+		'Input: Tujuan = layar login di Sketch.app; Artboard = iPhone 14 390×844; Symbol = Button/Primary + Input; Ekspor = PNG 1x/2x/3x + PDF. Output (Markdown): ## Peran → asisten Sketch.app; ## Tugas → daftar bernomor.',
 	tool_sketch_prompt_generator_example_title: 'Contoh',
 	tool_sketch_prompt_generator_faq_a1:
 		'Perakitan lokal berjalan di tab ini — tidak diunggah secara default. Expand/Polish opsional hanya mengirim teks klik itu ke Cloudflare Workers AI, bukan ke OpenAI, Google, Anthropic, atau DeepSeek dari server kami.',
@@ -33,7 +33,7 @@ const id: SiteLangDict = {
 	tool_sketch_prompt_generator_faq_a7:
 		'Ya. Tempel prompt ke ChatGPT, Gemini, Claude, atau DeepSeek agar chat memandu menu Sketch.app. Kami hanya memformat teks; Sketch tidak dijalankan di sini.',
 	tool_sketch_prompt_generator_faq_a8:
-		'Lokal memformat di tab tanpa unggah. Expand/Polish ke Cloudflare Workers AI (kuota + Turnstile). Jika gagal, lanjut lokal.',
+		'Di mode lokal semuanya diformat di tab ini dan tidak ada yang keluar. Perluas/Rapikan mengirim draf ke Cloudflare Workers AI (Turnstile dan kuota harian), lalu jawabannya menggantikan seluruh kotak hasil. Kalau gagal atau kuota habis, lanjutkan dengan mode lokal.',
 	tool_sketch_prompt_generator_faq_q1: 'Apakah prompt saya diunggah?',
 	tool_sketch_prompt_generator_faq_q2: 'Apakah ini memanggil ChatGPT atau mengendalikan Sketch.app jarak jauh?',
 	tool_sketch_prompt_generator_faq_q3: 'Apa bedanya dengan pembuat templat Prompt?',
@@ -51,7 +51,7 @@ const id: SiteLangDict = {
 	tool_sketch_prompt_generator_ai_consent_ok: 'Lanjut',
 	tool_sketch_prompt_generator_ai_consent_cancel: 'Batal',
 	tool_sketch_prompt_generator_ai_working: 'Cloudflare AI sedang bekerja…',
-	tool_sketch_prompt_generator_ai_done: 'Saran AI diterapkan. Tinjau sebelum menyalin.',
+	tool_sketch_prompt_generator_ai_done: 'Teks AI ditulis utuh ke kotak hasil. Periksa dulu sebelum menyalin.',
 	tool_sketch_prompt_generator_ai_err_generic: 'AI gagal. Prompt lokal tidak berubah.',
 	tool_sketch_prompt_generator_ai_err_rate: 'Kuota AI habis. Pakai lokal atau coba besok (UTC).',
 	tool_sketch_prompt_generator_ai_err_turnstile: 'Selesaikan Turnstile sebelum memakai AI.',

@@ -10,7 +10,7 @@ const ja: SiteLangDict = {
 		'検索順位を下げるページのタグ問題を発見：ブラウザ上で title・H1・meta description・canonical・Open Graph・JSON-LD をチェック。',
 	tool_onpage_title: 'オンページ SEO チェッカー — ページのタグ問題を見つけて直す',
 	tool_onpage_description:
-		'弱いタイトル、欠ける meta、重複 H1、誤った canonical は順位を損ないます。URL か HTML を貼り、修正案付きで監査します。貼り付けは端末内、URL は一度だけ取得。例：二重 H1 と http 画像。手順は明確で例もあります。',
+		'title・meta description・H1・canonical・robots・Open Graph・JSON-LD を一括チェック。URL か HTML を貼るだけで、直し方も表示。貼り付けは端末内で処理し、サーバーには送りません。例：H1 が 2 つのページ。',
 	tool_onpage_url_tab: 'URL を取得',
 	tool_onpage_html_tab: 'HTML を貼り付け',
 	tool_onpage_url_ph: 'https://example.com/page',
@@ -40,18 +40,18 @@ const ja: SiteLangDict = {
 	tool_onpage_title_long: 'タイトルが {n} 文字あり、検索結果で切れる可能性が高いです。50〜60 文字程度を目指しましょう。',
 	tool_onpage_title_short: 'タイトルが {n} 文字しかありません。ページの焦点を具体的に足すと分かりやすくなります。',
 	tool_onpage_desc_check: 'メタディスクリプション',
-	tool_onpage_desc_missing: 'meta description がありません。ページ内容に合った 140〜160 文字の要約を書きましょう。',
+	tool_onpage_desc_missing: 'meta description がありません。この場合 Google はページ本文からスニペットを作ります。文面を自分で決めたいときだけ要約を書きましょう。',
 	tool_onpage_desc_ok: '説明文は {n} 文字。140〜160 文字の範囲は多くのスニペットでよく表示されます。',
 	tool_onpage_desc_long: '説明文が {n} 文字あり、スニペットは約 160 文字で切れることが多いです。',
 	tool_onpage_desc_short: '説明文が {n} 文字しかありません。ページの提供価値をまとめる文字数を増やしましょう。',
 	tool_onpage_h1_check: 'H1',
-	tool_onpage_h1_missing: 'H1 が見つかりません。ページの主題を示す H1 を 1 つだけ使いましょう。',
-	tool_onpage_h1_multiple: 'H1 が {n} 個見つかりました。ページごとに H1 は 1 つにし、セクションは H2〜H6 を使いましょう。',
+	tool_onpage_h1_missing: 'H1 が見つかりません。ページの主題を示す最上位の見出しを追加しましょう。スクリーンリーダーも検索結果の見出しもこれを手がかりにします。',
+	tool_onpage_h1_multiple: 'H1 が {n} 個見つかりました。Google は H1 の数に関係なくページを評価するので、これはペナルティではありません。それでも H1 を 1 つにして H2〜H6 で区切ったほうが、スクリーンリーダーには読みやすくなります。',
 	tool_onpage_h1_ok: 'H1 が 1 つあり、<body> 内にあります。',
 	tool_onpage_canonical_check: 'Canonical',
 	tool_onpage_canonical_missing: 'canonical が未設定です。同じ内容が複数の URL で見られる場合は <link rel="canonical"> を追加してください。',
 	tool_onpage_canonical_ok: '自己参照の canonical を確認できました。',
-	tool_onpage_canonical_other: 'canonical が別の URL を指しています。このページが対象のコピーでない限り、自己参照 canonical を使いましょう。',
+	tool_onpage_canonical_other: 'canonical が別の URL を指しています。これは「このページはそちらの重複」と Google に伝える指定です。本当に重複のときだけ残してください。canonical はヒントなので、Google が別の URL を選ぶこともあります。',
 	tool_onpage_robots_check: 'Robots meta',
 	tool_onpage_robots_missing: 'robots meta がありません。既定は index,follow で、多くの公開ページでは適切です。',
 	tool_onpage_robots_noindex: 'ページが noindex に設定されており、Google 検索に表示されません。インデックスさせる場合は削除してください。',
@@ -76,13 +76,13 @@ const ja: SiteLangDict = {
 		'チェッカーは貼り付けたマークアップ（または URL から取得した HTML）を解析し、固定のオンページ SEO チェック項目を評価します。各チェックは 1 種類のタグだけを読み取ります：title、meta description、H1、canonical、robots meta、Open Graph フィールド、JSON-LD、混合コンテンツ、レンダリングブロック要因。貼り付けモードはすべてブラウザ内で完結し、URL モードは Worker 経由でページを一度だけ取得し保存しません。',
 	tool_onpage_rules_title: 'チェックが基準にするルール',
 	tool_onpage_rules_body:
-		'各チェックが比較する基準は以下のとおりです。Google Search Central と HTML 仕様に基づいています。',
+		'各チェックが何と比較し、どこまで強い根拠があるかをまとめました。タグの挙動（robots、canonical、混合コンテンツ）は Google Search Central と HTML 仕様に沿います。文字数や見出しに関する助言は表示と読みやすさの目安で、順位を決めるルールではありません。',
 	tool_onpage_rules_item_1:
 		'タイトル：ページには説明的な <title> を 1 つ。Google が書き換える場合もありますが、50〜60 文字前後の簡潔なタイトルは表示されやすい傾向があります。',
 	tool_onpage_rules_item_2:
-		'H1：ページの主題を示す H1 を 1 つだけ使い、残りは H2〜H6 で論理的な構成にします。',
+		'H1：ページには主題を示す見出しが必要です。Google は理想的な見出しの数を定めておらず、H1 が余分にあっても減点しません。複数を警告として出すのは、構成の見通しとアクセシビリティのためだけです。',
 	tool_onpage_rules_item_3:
-		'Canonical：重複がある場合、自己参照 canonical で Google に優先 URL を伝えます。Link rel="canonical" は <head> に置きます。',
+		'Canonical：<head> 内の <link rel="canonical"> は重複の中で優先したい URL を示すヒントで、命令ではありません。Google はリダイレクト・サイトマップ・内部リンクと合わせて検討したうえで、正規 URL を自分で決めます。',
 	tool_onpage_rules_item_4:
 		'混合コンテンツ：https ページが http:// リソースを参照するとブラウザにブロックされます。このチェックは警告として列挙します。',
 	tool_onpage_rules_item_5:
@@ -100,12 +100,12 @@ const ja: SiteLangDict = {
 	tool_onpage_faq_q1: 'オンページ SEO チェッカーは何を見るのですか？',
 	tool_onpage_faq_a1:
 		'ページ自身が制御できるタグを確認します：title、meta description、H1、canonical、robots meta、Open Graph、JSON-LD 構造化データ、混合コンテンツ、レンダリングブロック要因。順位や被リンクは測定しません。',
-	tool_onpage_faq_q2: 'なぜ H1 は 1 つだけにすべきですか？',
+	tool_onpage_faq_q2: 'H1 が複数あると SEO に悪影響ですか？',
 	tool_onpage_faq_a2:
-		'H1 を 1 つにするとページの主題が読者にも検索エンジンにも明確に伝わります。H1 が複数あると構成がぼやけるため、1 つの H1 と H2〜H6 で構造化しましょう。',
+		'いいえ。Google は「理想的な見出しの数はない」と明言しており、H1 がゼロでも 1 つでも複数でもページを評価します。それでも H1 を 1 つにしておく理由は、アクセシビリティと構成の分かりやすさ、そして検索結果の見出しに自分の H1 が使われやすくなることです。',
 	tool_onpage_faq_q3: 'canonical は自分自身を指す必要がありますか？',
 	tool_onpage_faq_a3:
-		'順位付けしたいページなら、はい。自己参照 canonical が最も明確なシグナルです。別 URL を指す canonical は「このページは重複」と伝えるため、本当に重複の場合だけ使います。',
+		'必須ではありませんが、そのページ自体を検索結果に出したいなら自己参照 canonical がいちばん明確なシグナルです。別 URL を指すと「このページは重複」という宣言になります。どちらの場合も Google は canonical をヒントとして扱い、別の URL を正規と判断することがあります。',
 	tool_onpage_faq_q4: 'なぜ http:// リソースが混合コンテンツと判定されるのですか？',
 	tool_onpage_faq_a4:
 		'https で配信しているページが http:// の画像・スクリプト・スタイルを参照すると、ブラウザは既定でリクエストをブロックします。このチェックは https への変更を促すため警告として列挙します。',

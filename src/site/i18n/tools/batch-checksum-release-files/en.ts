@@ -36,7 +36,7 @@ const en: SiteLangDict = {
 	tool_batch_checksum_release_files_faq_a3:
 		'File Hash is one file or a paste. This page hashes a release set, compares a pasted SHA256SUMS list, and exports CSV plus SUMS.',
 	tool_batch_checksum_release_files_faq_a4:
-		'Turn on Also MD5. SHA-256 always runs. MD5 is extra for older lists; it is not a second URL.',
+		'Turn on Also MD5. SHA-256 always runs. MD5 is an extra digest for older release lists that still expect it.',
 	tool_batch_checksum_release_files_faq_a5:
 		'The path column prefers webkitRelativePath. Duplicate names in the queue get a numeric suffix so SUMS lines stay unique.',
 	tool_batch_checksum_release_files_faq_q1: 'Are my files uploaded to a server?',

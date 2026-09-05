@@ -122,3 +122,7 @@
 - [x] `03-locale-briefs.md` 已填（实现十语前）
 - [x] README 工具清单文案改为双向
 - [x] **不**注册独立 `html-to-markdown` slug
+
+## 复审修正（2026-09-05）
+
+- 样例初始化抽出为具名 loadSample()，满足进页自动跑样例的工程门禁；行为不变（填两侧样例后走 applyDirUi() → render()）。

@@ -49,7 +49,7 @@ const id: SiteLangDict = {
   tool_password_generator_rules_item_1:
     'Pool: A–Z, a–z, 0–9, dan simbol default. Minimal satu pool harus tersisa setelah toggle dan pengecualian ambigu.',
   tool_password_generator_rules_item_2:
-    'Indeks random memakai byte crypto.getRandomValues — bukan Math.random.',
+    'Indeks acak memakai byte crypto.getRandomValues, bukan Math.random. Byte yang membuat modulo bias dibuang lalu diambil ulang, jadi setiap karakter dalam kumpulan punya peluang sama.',
   tool_password_generator_rules_item_3:
     'Bukan enforcement komposisi NIST (tanpa aturan «satu per kelas»). Aktifkan set yang Anda butuhkan manual.',
   tool_password_generator_rules_item_4:

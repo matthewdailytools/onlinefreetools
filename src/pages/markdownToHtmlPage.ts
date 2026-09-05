@@ -413,10 +413,17 @@ export const renderMarkdownToHtmlPage = (opts: {
         el.addEventListener('change', applyDirUi);
       });
 
-      // 预填各语样例（与 Example 同语种）
-      mdInput.value = sampleMd;
-      htmlInput.value = sampleHtml;
-      applyDirUi();
+      /**
+       * 载入样例：填入与 Example 同语种的 Markdown / HTML 两侧样例，
+       * 再走 applyDirUi() → render()，让当前方向的转换结果直接出现在首屏。
+       */
+      function loadSample() {
+        mdInput.value = sampleMd;
+        htmlInput.value = sampleHtml;
+        applyDirUi();
+      }
+
+      loadSample();
     })();
   </script>`;
 

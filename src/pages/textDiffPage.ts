@@ -10,7 +10,12 @@ import { buildToolPageNavItems } from './site/nav';
 import { renderLayout, type HreflangAlternate, escapeHtml } from './site/layout';
 import { renderSidebar, buildToolSidebarItems } from './site/sidebar';
 import { getToolBySlug } from '../site/tools';
-import { renderToolExtraSections, buildToolJsonLd, renderToolReferencesSection } from './site/toolContent';
+import {
+	renderToolExtraSections,
+	renderToolIgSections,
+	buildToolJsonLd,
+	renderToolReferencesSection,
+} from './site/toolContent';
 
 /** 为路径加上语言前缀（默认语无前缀）。 */
 const withLangPrefix = (lang: SiteLang, pathname: string, defaultLang: SiteLang) => {
@@ -104,6 +109,7 @@ export const renderTextDiffPage = (opts: {
         <label class="form-check-label" for="normEol">${escapeHtml(t(opts.lang, 'tool_text_diff_normalize_eol'))}</label>
       </div>
       <button type="button" id="btnCompare" class="btn btn-primary btn-sm">${escapeHtml(t(opts.lang, 'tool_text_diff_compare'))}</button>
+      <button type="button" id="btnSample" class="btn btn-outline-secondary btn-sm">${escapeHtml(t(opts.lang, 'tool_text_diff_load_sample'))}</button>
       <button type="button" id="btnSwap" class="btn btn-outline-secondary btn-sm">${escapeHtml(t(opts.lang, 'tool_text_diff_swap'))}</button>
       <button type="button" id="btnClear" class="btn btn-outline-secondary btn-sm">${escapeHtml(t(opts.lang, 'tool_text_diff_clear'))}</button>
     </div>
@@ -122,37 +128,17 @@ export const renderTextDiffPage = (opts: {
     <p id="diffSummary" class="small text-muted mb-2" aria-live="polite"></p>
     <p id="diffWarn" class="small text-warning mb-2" style="display:none;"></p>
     <p class="small text-muted mb-1">${escapeHtml(t(opts.lang, 'tool_text_diff_legend'))}</p>
-    <div id="diffOut" class="mb-4" aria-label="${escapeHtml(t(opts.lang, 'tool_text_diff_result_label'))}"></div>
+    <div id="diffOut" class="mb-4" aria-label="${escapeHtml(t(opts.lang, 'tool_text_diff_result_label'))}"></div>`;
 
-    <section class="mt-4" id="how-it-works" aria-labelledby="how-heading">
-      <h2 class="h5" id="how-heading">${escapeHtml(t(opts.lang, 'tool_text_diff_how_title'))}</h2>
-      <p class="text-muted">${escapeHtml(t(opts.lang, 'tool_text_diff_how_body'))}</p>
-    </section>
-
-    <section class="mt-4" id="rules" aria-labelledby="rules-heading">
-      <h2 class="h5" id="rules-heading">${escapeHtml(t(opts.lang, 'tool_text_diff_rules_title'))}</h2>
-      <p class="text-muted">${escapeHtml(t(opts.lang, 'tool_text_diff_rules_intro'))}</p>
-      <ul class="text-muted">
-        <li>${escapeHtml(t(opts.lang, 'tool_text_diff_rules_item_lines'))}</li>
-        <li>${escapeHtml(t(opts.lang, 'tool_text_diff_rules_item_words'))}</li>
-        <li>${escapeHtml(t(opts.lang, 'tool_text_diff_rules_item_chars'))}</li>
-      </ul>
-      <p class="text-muted mb-0">${escapeHtml(t(opts.lang, 'tool_text_diff_rules_options'))}</p>
-    </section>
-
-    <section class="mt-4" id="example" aria-labelledby="example-heading">
-      <h2 class="h5" id="example-heading">${escapeHtml(t(opts.lang, 'tool_text_diff_example_title'))}</h2>
-      <p class="text-muted mb-0">${escapeHtml(t(opts.lang, 'tool_text_diff_example'))}</p>
-    </section>
-
-    <section class="mt-4" id="use-cases" aria-labelledby="usecases-heading">
-      <h2 class="h5" id="usecases-heading">${escapeHtml(t(opts.lang, 'tool_text_diff_usecases_title'))}</h2>
-      <ul class="text-muted mb-0">
-        <li>${escapeHtml(t(opts.lang, 'tool_text_diff_usecase_1'))}</li>
-        <li>${escapeHtml(t(opts.lang, 'tool_text_diff_usecase_2'))}</li>
-        <li>${escapeHtml(t(opts.lang, 'tool_text_diff_usecase_3'))}</li>
-      </ul>
-    </section>`;
+	/** How、Rules、Example 与 Use cases 使用统一的可见 IG 区块。 */
+	const igHtml = renderToolIgSections({
+		lang: opts.lang,
+		prefix: 'tool_text_diff',
+		mode: 'rules',
+		usecaseCount: 3,
+		ruleItemCount: 4,
+		howItemCount: 4,
+	});
 
 	/** 权威说明 + 实现库。 */
 	const referencesHtml = renderToolReferencesSection({
@@ -178,6 +164,7 @@ export const renderTextDiffPage = (opts: {
       var ignoreWs = document.getElementById('ignoreWs');
       var normEol = document.getElementById('normEol');
       var btnCompare = document.getElementById('btnCompare');
+      var btnSample = document.getElementById('btnSample');
       var btnSwap = document.getElementById('btnSwap');
       var btnClear = document.getElementById('btnClear');
 
@@ -191,6 +178,16 @@ export const renderTextDiffPage = (opts: {
       function getMode() {
         var el = document.querySelector('input[name="diffMode"]:checked');
         return el ? el.value : 'lines';
+      }
+
+      /**
+       * 同步当前模式可用的选项。
+       * 字符比较不支持忽略空白，切入时关闭并禁用该复选框，避免静默无效。
+       */
+      function syncModeOptions() {
+        var characterMode = getMode() === 'chars';
+        if (characterMode) ignoreWs.checked = false;
+        ignoreWs.disabled = characterMode;
       }
 
       /** 规范化换行：CRLF / CR → LF */
@@ -242,7 +239,9 @@ export const renderTextDiffPage = (opts: {
         var mode = getMode();
         var opts = { ignoreWhitespace: !!ignoreWs.checked };
         var parts;
-        if (mode === 'words') parts = Diff.diffWords(a, b, opts);
+        if (mode === 'words') {
+          parts = ignoreWs.checked ? Diff.diffWords(a, b) : Diff.diffWordsWithSpace(a, b);
+        }
         else if (mode === 'chars') parts = Diff.diffChars(a, b);
         else parts = Diff.diffLines(a, b, opts);
 
@@ -267,7 +266,17 @@ export const renderTextDiffPage = (opts: {
         }
       }
 
+      /**
+       * 载入本地化样例，并通过与主按钮相同的比较路径输出结果。
+       */
+      function loadSample() {
+        textA.value = ${JSON.stringify(t(opts.lang, 'tool_text_diff_sample_a'))};
+        textB.value = ${JSON.stringify(t(opts.lang, 'tool_text_diff_sample_b'))};
+        runDiff();
+      }
+
       btnCompare.addEventListener('click', runDiff);
+      btnSample.addEventListener('click', loadSample);
       btnSwap.addEventListener('click', function () {
         var tmp = textA.value;
         textA.value = textB.value;
@@ -286,13 +295,14 @@ export const renderTextDiffPage = (opts: {
         normEol.addEventListener(evt, runDiff);
       });
       document.querySelectorAll('input[name="diffMode"]').forEach(function (el) {
-        el.addEventListener('change', runDiff);
+        el.addEventListener('change', function () {
+          syncModeOptions();
+          runDiff();
+        });
       });
 
-      // 预填各语本地化样例，便于首屏即见 Diff（与 Example 同语种）
-      textA.value = ${JSON.stringify(t(opts.lang, 'tool_text_diff_sample_a'))};
-      textB.value = ${JSON.stringify(t(opts.lang, 'tool_text_diff_sample_b'))};
-      runDiff();
+      syncModeOptions();
+      loadSample();
     })();
   </script>`;
 
@@ -321,7 +331,7 @@ export const renderTextDiffPage = (opts: {
 		alternates,
 		headerHtml,
 		sidebarHtml,
-		contentHtml: `${contentHtml}${toolSeoHtml}${referencesHtml}`,
+		contentHtml: `${contentHtml}${igHtml}${toolSeoHtml}${referencesHtml}`,
 		footerHtml,
 		extraHeadHtml: `${extraHeadHtml}${toolJsonLd}`,
 		extraBodyHtml,

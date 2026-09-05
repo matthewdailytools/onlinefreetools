@@ -1,14 +1,16 @@
 /**
  * i18n tool shard (writing-prompt-generator / ar).
- * Search H1: مولّد prompts الكتابة — حوار، شخصية، سيناريو، عشوائي؛ تجميع محلي.
- * Platforms ChatGPT / Gemini / Claude / DeepSeek in description; random prompt generator absorbed in FAQ.
+ * عنوان H1 بحثي: مولّد برومبتات الكتابة — حوار، شخصية، سيناريو، عشوائي.
+ * التجميع يتم داخل المتصفح؛ التوسيع/التحسين خيار إضافي عبر Cloudflare Workers AI
+ * (يتطلب Turnstile وله حصة)، ويحل ردّه محل صندوق النتيجة بالكامل.
+ * ChatGPT / Gemini / Claude / DeepSeek تظهر في الوصف وفي الشاشة الأولى.
  */
 import type { SiteLangDict } from '../../../types';
 
-/** مولّد prompts الكتابة — شظية النص العربية */
+/** مولّد برومبتات الكتابة — شظية النص العربية */
 const ar: SiteLangDict = {
 	tool_writing_prompt_generator_article:
-		'جمّع prompts كتابة جاهزة للنسخ: مشاهد حوار، دراسات شخصية، مخططات سيناريو أو بدايات قصص عشوائية. اختر وضعًا، املأ الحقول أو اختر عشوائيًا، ثم انسخ Markdown أو JSON إلى ChatGPT أو Gemini أو Claude أو DeepSeek. لا يتم استدعاء أي واجهة نموذج. يبقى النص على جهازك ولا يُرفع إلى خادم.',
+		'جمّع prompts كتابة جاهزة للنسخ: مشاهد حوار، دراسات شخصية، مخططات سيناريو أو بدايات قصص عشوائية. اختر وضعًا، املأ الحقول أو اختر عشوائيًا، ثم انسخ Markdown أو JSON إلى ChatGPT أو Gemini أو Claude أو DeepSeek. افتراضيًا يُبنى البرومبت داخل متصفحك ولا نستدعي واجهة أي دردشة نيابة عنك؛ وعند الضغط على «توسيع» أو «تحسين» فقط تُرسَل المسودة الحالية إلى Cloudflare Workers AI (يلزم Turnstile، وهناك حدود للمعدّل والحصة).',
 	tool_writing_prompt_generator_build: 'إنشاء prompt',
 	tool_writing_prompt_generator_char_flaw_label: 'عيب / نقطة ضعف',
 	tool_writing_prompt_generator_char_flaw_ph: 'ما الذي يعيقه…',
@@ -23,9 +25,9 @@ const ar: SiteLangDict = {
 	tool_writing_prompt_generator_clear: 'مسح',
 	tool_writing_prompt_generator_copy: 'نسخ',
 	tool_writing_prompt_generator_desc:
-		'مولّد prompts للكتابة — local por defecto + Expand/Polish opcional Cloudflare AI (Turnstile); Markdown/JSON en el dispositivo.',
+		'مولّد برومبتات الكتابة — أوضاع الحوار والشخصية والسيناريو والعشوائي؛ التجميع داخل المتصفح وذكاء Cloudflare اختياري.',
 	tool_writing_prompt_generator_description:
-		'عملية ومثال: مولّد prompts للكتابة — Local + IA opcional para ChatGPT, Gemini, Claude y DeepSeek: ensambla prompts localmente por defecto y opcionalmente Expand/Polish con Cloudflare Workers AI (Turnstile obligatorio, límite de uso). Ejemplo al abrir. Markdown por defecto; JSON para pipelines. Texto en el dispositivo salvo que uses IA.',
+		'مولّد برومبتات الكتابة: اختر وضعًا — حوار أو شخصية أو سيناريو أو عشوائي — واملأ الحقول عبر خطوات قصيرة لتحصل على برومبت جاهز للصق في ChatGPT أو Gemini أو Claude أو DeepSeek. عند فتح الصفحة يعمل مثال حوار؛ وفي الوضع العشوائي تسحب بداية قصة ويعيد الـ seed السحبة نفسها. التصدير Markdown أو JSON، والتجميع داخل المتصفح مع ذكاء Cloudflare الاختياري.',
 	tool_writing_prompt_generator_dlg_characters_label: 'الشخصيات',
 	tool_writing_prompt_generator_dlg_characters_ph: 'الأسماء + دور في سطر…',
 	tool_writing_prompt_generator_dlg_conflict_label: 'الصراع',
@@ -39,29 +41,29 @@ const ar: SiteLangDict = {
 	tool_writing_prompt_generator_download: 'تنزيل',
 	tool_writing_prompt_generator_empty: 'املأ حقلًا واحدًا على الأقل في هذا الوضع قبل الإنشاء.',
 	tool_writing_prompt_generator_example:
-		'المدخلات (حوار): Genre = دراما معاصرة؛ Characters = Maya وJonah؛ Conflict = Maya تتعرف على أغنية عن حبيبها السابق. المخرجات (Markdown): ## Role → مدرب كتابة؛ ## Task → genre/characters/setting/conflict/tone. وضع السيناريو يستخدم لغز فاكس المنارة — مختلف عن عينة السينما.',
+		'المدخلات (حوار): Genre = دراما معاصرة؛ Characters = Maya وJonah؛ Conflict = Maya تتعرف على أغنية عن حبيبها السابق. المخرجات (Markdown): ## الدور → مدرب كتابة؛ ## المهمة → genre/characters/setting/conflict/tone. وضع السيناريو يستخدم لغز فاكس المنارة — مختلف عن عينة السينما.',
 	tool_writing_prompt_generator_example_title: 'مثال',
 	tool_writing_prompt_generator_faq_a1:
-		'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
+		'افتراضيًا يُبنى البرومبت داخل هذه التبويبة ولا يغادرها شيء. «توسيع/تحسين» وحده يرسل نص تلك الضغطة إلى Cloudflare Workers AI؛ ولا يذهب من خوادمنا شيء إلى OpenAI أو Google أو Anthropic أو DeepSeek.',
 	tool_writing_prompt_generator_faq_a2:
-		'Modo local solo formatea aquí. Expand/Polish opcional usa Cloudflare Workers AI tras Turnstile — no llama APIs de chat.',
+		'الوضع المحلي ينسّق حقول الكتابة داخل هذه التبويبة فقط. أما «توسيع/تحسين» فيستخدم Cloudflare Workers AI بعد اجتياز Turnstile — ولا نفتح ChatGPT أو Gemini أو Claude أو DeepSeek بالنيابة عنك.',
 	tool_writing_prompt_generator_faq_a3:
 		'منشئ قوالب Prompt ينظم قوالب Role/Task/Constraints/Output عامة. هذه الصفحة تركز على أوضاع الكتابة — حقول حوار، بطاقات شخصية، beats سيناريو، ومولّد prompts عشوائي على لوحة واحدة.',
 	tool_writing_prompt_generator_faq_a4:
-		'Sí. Completa Turnstile en el panel de IA antes de Expand o Polish.',
+		'نعم. الوضع العشوائي يسحب النوع والمكان والشيء والعاطفة والصراع. وإدخال seed رقمي يعيد السحبة نفسها تمامًا. ما يخرج مادة للإلهام، وليس ضمانًا للجودة.',
 	tool_writing_prompt_generator_faq_a5:
-		'نعم. شريحة JSON تُخرج {mode,fields,role,task,constraints,output} للاختبار أو الإعداد. Markdown يستخدم عناوين ## Role / Task / Constraints / Output.',
+		'نعم. أكمل أداة Turnstile في لوحة الذكاء الاصطناعي قبل «توسيع» أو «تحسين»؛ فبدون رمز صالح يعطي الزر خطأً، ويبقى البناء المحلي شغّالًا.',
 	tool_writing_prompt_generator_faq_a6:
-		'نعم. انسخ prompt الجاهز إلى ChatGPT أو Gemini أو Claude أو DeepSeek. لا نفصل URLs حسب المنصة لأن المهمة تنسيق نص، وليس استدعاء APIs.',
+		'نعم. شريحة JSON تُخرج {mode,fields,role,task,constraints,output} للاختبار أو الإعداد. Markdown يستخدم عناوين ## الدور / المهمة / القيود / تنسيق الإخراج.',
 	tool_writing_prompt_generator_faq_q1: 'هل يُرفع prompt الكتابة؟',
 	tool_writing_prompt_generator_faq_q2: 'هل يستدعي LLM؟',
 	tool_writing_prompt_generator_faq_q3: 'ما الفرق عن منشئ قوالب Prompt؟',
 	tool_writing_prompt_generator_faq_q4:
-		'¿Por qué Turnstile para IA opcional?',
-	tool_writing_prompt_generator_faq_q5: 'هل يمكن الحصول على JSON؟',
-	tool_writing_prompt_generator_faq_q6: 'هل يمكن استخدامه مع ChatGPT وGemini وClaude وDeepSeek؟',
+		'هل يعمل مولّد البرومبتات العشوائي هنا؟',
+	tool_writing_prompt_generator_faq_q5: 'لماذا يطلب الذكاء الاختياري اجتياز Turnstile؟',
+	tool_writing_prompt_generator_faq_q6: 'هل يمكن الحصول على JSON؟',
 	tool_writing_prompt_generator_fmt_json: 'JSON',
-	tool_writing_prompt_generator_fmt_label: 'صيغة الإخراج',
+	tool_writing_prompt_generator_fmt_label: 'تنسيق الإخراج',
 	tool_writing_prompt_generator_fmt_md: 'Markdown',
 	tool_writing_prompt_generator_how_body:
 		'اختر وضع كتابة، املأ الحقول أو اسحب عشوائيًا، أنشئ كتلة prompt، ثم الصق في ChatGPT أو Gemini أو Claude أو DeepSeek.',
@@ -86,15 +88,15 @@ const ar: SiteLangDict = {
 	tool_writing_prompt_generator_random_seed_ph: 'مثل 42',
 	tool_writing_prompt_generator_result_label: 'prompt الكتابة',
 	tool_writing_prompt_generator_rules_body:
-		'prompts الكتابة تحتاج حقولًا حسب الوضع، حدودًا صادقة للعشوائي، ونفس الخصوصية المحلية كأدوات البناء الأخرى.',
+		'برومبتات الكتابة تحتاج حقولًا تختلف باختلاف الوضع، وكلامًا صريحًا عن حدود ما يخرجه السحب العشوائي، ونفس مبدأ التجميع داخل المتصفح المتبع في بقية أدوات البناء.',
 	tool_writing_prompt_generator_rules_item_1:
 		'أربع كتل في المخرجات: Role وTask وConstraints وOutput — متوافقة مع قوالب prompt منظمة.',
 	tool_writing_prompt_generator_rules_item_2:
-		'الوضع العشوائي يدمج مولّد prompts عشوائي في هذا الرابط — دون صفحة منفصلة.',
+		'الوضع العشوائي موجود على اللوحة نفسها: يسحب النوع والمكان والشيء والعاطفة والصراع، ومع seed تعيد السحبة ذاتها.',
 	tool_writing_prompt_generator_rules_item_3:
 		'التصدير الافتراضي Markdown. JSON شريحة على اللوحة نفسها.',
 	tool_writing_prompt_generator_rules_item_4:
-		'هذه الأداة تجمع نصًا فقط. لا تولّد قصصًا جاهزة ولا تستدعي نماذج سحابية.',
+		'ذكاء Cloudflare الاختياري لا يحل محل الوضع المحلي أبدًا — راجع نصه قبل النسخ. هذه الأداة تجمّع البرومبت فقط، ولا تكتب لك القصة كاملة.',
 	tool_writing_prompt_generator_rules_title: 'ما يجب توقعه',
 	tool_writing_prompt_generator_scr_notes_label: 'ملاحظات beats',
 	tool_writing_prompt_generator_scr_notes_ph: 'عدد المشاهد، الإيقاع، POV…',
@@ -102,10 +104,10 @@ const ar: SiteLangDict = {
 	tool_writing_prompt_generator_scr_premise_ph: 'إعداد في فقرة…',
 	tool_writing_prompt_generator_scr_structure_label: 'البنية',
 	tool_writing_prompt_generator_scr_structure_ph: 'ثلاث فصول، save the cat، حلقات…',
-	tool_writing_prompt_generator_sec_constraints: 'Constraints',
-	tool_writing_prompt_generator_sec_output: 'Output format',
-	tool_writing_prompt_generator_sec_role: 'Role',
-	tool_writing_prompt_generator_sec_task: 'Task',
+	tool_writing_prompt_generator_sec_constraints: 'القيود',
+	tool_writing_prompt_generator_sec_output: 'تنسيق الإخراج',
+	tool_writing_prompt_generator_sec_role: 'الدور',
+	tool_writing_prompt_generator_sec_task: 'المهمة',
 	tool_writing_prompt_generator_status_copied: 'نُسخ إلى الحافظة.',
 	tool_writing_prompt_generator_status_done: 'Prompt جاهز.',
 	tool_writing_prompt_generator_status_working: 'جارٍ إنشاء prompt…',
@@ -121,33 +123,37 @@ const ar: SiteLangDict = {
 		'ارسم مخطط beats سيناريو قصير محليًا قبل نقل prompt إلى Gemini لقراءات طاولة.',
 	tool_writing_prompt_generator_usecases_title: 'حالات مناسبة',
 	tool_writing_prompt_generator_ai_expand:
-		'Expandir con IA',
+		'توسيع بالذكاء الاصطناعي',
 	tool_writing_prompt_generator_ai_polish:
-		'Pulir con IA',
+		'تحسين بالذكاء الاصطناعي',
 	tool_writing_prompt_generator_ai_panel_label:
-		'Cloudflare AI opcional (Turnstile)',
+		'ذكاء Cloudflare اختياري (Turnstile)',
 	tool_writing_prompt_generator_ai_consent_title:
-		'¿Enviar texto a Cloudflare Workers AI?',
+		'إرسال النص إلى Cloudflare Workers AI؟',
 	tool_writing_prompt_generator_ai_consent_body:
-		'Este paso opcional envía tu borrador a Cloudflare Workers AI. No va a OpenAI, Google, Anthropic ni DeepSeek desde nuestros servidores.',
+		'هذه الخطوة الاختيارية ترسل مسودتك الحالية إلى Cloudflare Workers AI للاستدلال. ولا يذهب من خوادمنا شيء إلى OpenAI أو Google أو Anthropic أو DeepSeek. وبدون الذكاء الاصطناعي يبقى البناء المحلي كما هو.',
 	tool_writing_prompt_generator_ai_consent_ok:
-		'Continuar',
+		'متابعة',
 	tool_writing_prompt_generator_ai_consent_cancel:
-		'Cancelar',
+		'إلغاء',
 	tool_writing_prompt_generator_ai_working:
-		'Cloudflare AI trabajando…',
+		'ذكاء Cloudflare قيد المعالجة…',
 	tool_writing_prompt_generator_ai_done:
-		'Sugerencia de IA aplicada. Revisa antes de copiar.',
+		'كُتب نص الذكاء الاصطناعي كاملًا في صندوق النتيجة. راجعه قبل النسخ.',
 	tool_writing_prompt_generator_ai_err_generic:
-		'La IA falló. Tu prompt local no cambió.',
+		'تعذّر الذكاء الاصطناعي. برومبتك المحلي كما هو دون تغيير.',
 	tool_writing_prompt_generator_ai_err_rate:
-		'Cuota de IA agotada. Modo local o prueba mañana (UTC).',
+		'نفدت حصة الذكاء الاصطناعي. استخدم الوضع المحلي أو جرّب غدًا (UTC).',
 	tool_writing_prompt_generator_ai_err_turnstile:
-		'Completa Turnstile antes de usar IA.',
+		'أكمل Turnstile قبل استخدام الذكاء الاصطناعي.',
 	tool_writing_prompt_generator_faq_q7:
-		'¿Diferencia entre local y Cloudflare AI opcional?',
+		'هل يمكن استخدامه مع ChatGPT وGemini وClaude وDeepSeek؟',
 	tool_writing_prompt_generator_faq_a7:
-		'Local: solo esta pestaña, sin subida. Expand/Polish opcional a Cloudflare Workers AI (Turnstile, límite).',
+		'نعم. انسخ prompt الجاهز إلى ChatGPT أو Gemini أو Claude أو DeepSeek. هذه الصفحة تجهّز النص فقط، ولا تسجّل الدخول ولا تستدعي أي واجهة برمجية.',
+	tool_writing_prompt_generator_faq_q8:
+		'ما الفرق بين الوضع المحلي وذكاء Cloudflare الاختياري؟',
+	tool_writing_prompt_generator_faq_a8:
+		'محليًا: كل شيء يُبنى في هذه التبويبة دون إرسال. أما «توسيع/تحسين» فيرسل المسودة إلى Cloudflare Workers AI (مع Turnstile وحصة يومية)، ويحلّ الرد محل صندوق النتيجة بالكامل. وعند الفشل أو نفاد الحصة تابع بالوضع المحلي.',
 };
 
 export default ar;

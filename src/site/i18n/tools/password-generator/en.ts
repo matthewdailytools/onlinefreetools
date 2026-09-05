@@ -49,7 +49,7 @@ const en: SiteLangDict = {
   tool_password_generator_rules_item_1:
     'Pools: A–Z, a–z, 0–9, and a default symbol set. At least one pool must remain after toggles and ambiguous exclusion.',
   tool_password_generator_rules_item_2:
-    'Random index uses crypto.getRandomValues bytes — never Math.random.',
+    'Random index uses crypto.getRandomValues bytes — never Math.random. Bytes that would skew the modulo are discarded, so every character in the pool stays equally likely.',
   tool_password_generator_rules_item_3:
     'This is not NIST-certified composition enforcement (no forced “one of each class” rule). Enable the sets you need manually.',
   tool_password_generator_rules_item_4:

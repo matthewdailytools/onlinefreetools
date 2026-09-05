@@ -47,7 +47,7 @@ const zh: SiteLangDict = {
 	tool_hreflang_rules_item_4:
 		'x-default 指向没有列出的语言匹配时的展示页，通常是英文根页面。Google 会把它作为所有未识别语言的兜底。',
 	tool_hreflang_rules_item_5:
-		'同一组页面只选一种投放形态：HTML 中的 <link> 标签、HTTP Link 响应头或 sitemap 的 xhtml:link。混用可能让信号互相矛盾。',
+		'Google 把三种形态视为等价，也允许同时用，但明说这样对搜索并没有额外收益。建议每组页面只挑一种：三套实现会各自漂移，互相矛盾的注解会被忽略。',
 	tool_hreflang_example_title: '示例',
 	tool_hreflang_example:
 		'样例列出了同一页面的三个版本：https://example.com/（en）、https://example.com/es/（es）和 https://example.com/ja/（ja）。生成的 <link> 标签为每种语言都带自引用，还可选 x-default 指向英文根页面。',

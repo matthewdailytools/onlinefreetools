@@ -57,7 +57,7 @@ const fr: SiteLangDict = {
   tool_jwt_decoder_rules_item_1:
     'Structure : un JWT signé (JWS compact) a trois segments Base64url — header (alg, typ), payload (claims), signature (octets, pas JSON).',
   tool_jwt_decoder_rules_item_2:
-    'Base64url : -→+, _→/, compléter le padding jusqu’à longueur %4, puis atob et JSON.parse. Les erreurs ciblent header ou payload.',
+    'Base64url : -→+, _→/, compléter le padding jusqu’à longueur %4, puis atob, relire ces octets en UTF-8 et JSON.parse — les claims accentués ou CJK restent lisibles. Les erreurs ciblent header ou payload.',
   tool_jwt_decoder_rules_item_3:
     'Claims enregistrés : exp, iat et nbf sont des secondes Unix UTC. Lire le JSON ne prouve pas que le jeton est fiable.',
   tool_jwt_decoder_rules_item_4:

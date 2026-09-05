@@ -10,7 +10,7 @@ const zh: SiteLangDict = {
 		'揪出拖累搜索表现的页面标签问题：在浏览器里检查标题、H1、meta 描述、canonical、Open Graph 与 JSON-LD。',
 	tool_onpage_title: '页面 SEO 检查器 — 找出并修复页面标签问题',
 	tool_onpage_description:
-		'弱标题、缺 meta、重复 H1 或错误 canonical 会拖累搜索排名。粘贴 URL 或 HTML 逐项检查并给出修复建议。粘贴内容本地解析；URL 仅抓取一次。示例：双 H1 加一张 http 图片。步骤清晰，含示例说明。隐私友好，正文不上传。',
+		'检查 title、meta description、H1、canonical、robots、Open Graph 与 JSON-LD 标签，说明每项会怎样影响搜索结果的显示。粘贴 URL 或 HTML 即可，粘贴内容在浏览器内解析，不上传服务器。示例：两个 H1 加一处 http 图片。',
 	tool_onpage_url_tab: '抓取 URL',
 	tool_onpage_html_tab: '粘贴 HTML',
 	tool_onpage_url_ph: 'https://example.com/page',
@@ -40,18 +40,18 @@ const zh: SiteLangDict = {
 	tool_onpage_title_long: '标题有 {n} 个字符，在搜索结果中很可能被截断，建议控制在 50–60 字符左右。',
 	tool_onpage_title_short: '标题只有 {n} 个字符。可以补充页面核心信息，让标题更有价值。',
 	tool_onpage_desc_check: 'Meta 描述',
-	tool_onpage_desc_missing: '未找到 meta description。请写一段 140–160 字符、与页面内容一致的摘要。',
+	tool_onpage_desc_missing: '未找到 meta description。Google 会改用页面正文来生成摘要。想自己决定这段措辞，就补一段描述。',
 	tool_onpage_desc_ok: '描述共 {n} 个字符。140–160 字符在大多数搜索结果片段中展示完整。',
 	tool_onpage_desc_long: '描述有 {n} 个字符，搜索片段通常会在 160 字符左右截断。',
 	tool_onpage_desc_short: '描述只有 {n} 个字符。可以多写几句页面提供的价值。',
 	tool_onpage_h1_check: 'H1',
-	tool_onpage_h1_missing: '未找到 H1。请使用一个能概括页面主题的 H1。',
-	tool_onpage_h1_multiple: '发现 {n} 个 H1。每页只保留一个 H1，小节标题使用 H2–H6。',
+	tool_onpage_h1_missing: '未找到 H1。请加一个点明页面主题的顶级标题——屏幕阅读器和搜索结果里的标题链接都依赖它。',
+	tool_onpage_h1_multiple: '发现 {n} 个 H1。Google 对任意数量 H1 的页面都照常排名，这不是扣分项。不过一个 H1 加 H2–H6 小节，读起来层次更清楚，对屏幕阅读器也更友好。',
 	tool_onpage_h1_ok: '已找到一个 H1，且位于 <body> 内。',
 	tool_onpage_canonical_check: 'Canonical',
 	tool_onpage_canonical_missing: '未设置 canonical。当同一内容可通过多个 URL 访问时，应添加 <link rel="canonical">。',
 	tool_onpage_canonical_ok: '已找到自引用 canonical。',
-	tool_onpage_canonical_other: 'Canonical 指向了其他 URL。除非本页确实是目标页的副本，否则应使用自引用 canonical。',
+	tool_onpage_canonical_other: 'Canonical 指向了另一个 URL，等于告诉 Google 本页是那一页的副本。确属如此再保留；canonical 只是提示，Google 仍可能选别的网址。',
 	tool_onpage_robots_check: 'Robots meta',
 	tool_onpage_robots_missing: '未设置 robots meta。默认即 index,follow，对大多数公开页面是合适的。',
 	tool_onpage_robots_noindex: '页面设置了 noindex，将不会出现在 Google 搜索结果中。如果页面需要被收录，请移除该设置。',
@@ -76,13 +76,13 @@ const zh: SiteLangDict = {
 		'检查器会解析你粘贴的标记（或从 URL 抓取的 HTML），对一组固定的页面 SEO 检查项逐项评估。每项只读取一类标签：标题、meta 描述、H1、canonical、robots meta、Open Graph 字段、JSON-LD、混合内容与渲染阻塞资源。粘贴模式完全在浏览器本地进行；URL 模式通过本站 Worker 拉取页面一次，不存储内容。',
 	tool_onpage_rules_title: '检查项依据的规则',
 	tool_onpage_rules_body:
-		'以下是每项检查对照的标准，来源为 Google Search Central 与 HTML 规范。',
+		'每项检查对照的标准，以及这条标准有多硬。标签行为（robots、canonical、混合内容）依据 Google Search Central 与 HTML 规范；长度和标题数量的建议只是展示效果与可读性上的经验值，不是排名规则。',
 	tool_onpage_rules_item_1:
 		'标题：每页应有一个描述性的 <title>。Google 可能改写标题，但 50–60 字符左右的简洁标题通常展示较好。',
 	tool_onpage_rules_item_2:
-		'H1：每个页面只使用一个能概括主题的 H1，其余标题用 H2–H6 形成清晰的层级。',
+		'H1：页面需要一个点明主题的标题。Google 没有理想的标题数量，也不会因为多写了 H1 而扣分；这里把多个 H1 列为警告，只是为了大纲清晰和可访问性。',
 	tool_onpage_rules_item_3:
-		'Canonical：当存在重复内容时，自引用 canonical 告诉 Google 哪个 URL 是首选。<link rel="canonical"> 放在 <head> 中。',
+		'Canonical：放在 <head> 里的 <link rel="canonical"> 是在重复内容中表明首选网址的提示，不是指令。Google 会结合重定向、sitemap 与内部链接，再自己决定用哪个 URL。',
 	tool_onpage_rules_item_4:
 		'混合内容：https 页面引用 http:// 资源会被浏览器默认拦截。本项把这些引用列为警告。',
 	tool_onpage_rules_item_5:
@@ -100,12 +100,12 @@ const zh: SiteLangDict = {
 	tool_onpage_faq_q1: '页面 SEO 检查器都查什么？',
 	tool_onpage_faq_a1:
 		'它检查页面自己能控制的标签：标题、meta 描述、H1、canonical、robots meta、Open Graph、JSON-LD 结构化数据、混合内容与渲染阻塞资源。它不测量排名，也不检查外链。',
-	tool_onpage_faq_q2: '为什么每页只应有一个 H1？',
+	tool_onpage_faq_q2: '一个页面有多个 H1 会影响 SEO 吗？',
 	tool_onpage_faq_a2:
-		'单个 H1 能清晰地向读者和搜索引擎表达页面主题。多个 H1 会让层级变得模糊；用一个 H1，其余用 H2–H6 组织。',
+		'不会。Google 明确说过没有理想的标题数量，页面有零个、一个还是好几个 H1，都照常参与排名。保留单个 H1 的理由是可访问性和大纲清晰，另外 Google 也更可能直接拿你的标题当搜索结果的标题链接。',
 	tool_onpage_faq_q3: 'Canonical 必须指向自己吗？',
 	tool_onpage_faq_a3:
-		'对需要参与排名的页面，是的——自引用 canonical 是最清晰的信号。把 canonical 指向其他 URL 是在告诉 Google 本页是重复页，只有确属如此时才该这样做。',
+		'不一定。但对一个要独立参与排名的页面，自引用 canonical 是最清晰的信号；指向别处等于声明本页是重复页。两种写法下 Google 都只把 canonical 当提示，最终仍可能挑另一个 URL。',
 	tool_onpage_faq_q4: '为什么检查器把 http:// 资源标记为混合内容？',
 	tool_onpage_faq_a4:
 		'当页面通过 https 提供，却引用了 http:// 的图片、脚本或样式时，浏览器会默认拦截这些请求。本项把这些引用列为警告，方便你改成 https。',

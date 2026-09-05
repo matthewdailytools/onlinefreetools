@@ -13,7 +13,7 @@ const en: SiteLangDict = {
 	tool_sketch_prompt_generator_desc:
 		'Sketch.app prompt generator — local default + optional Cloudflare AI Expand/Polish (Turnstile); Markdown/JSON on device.',
 	tool_sketch_prompt_generator_description:
-		'Sketch.app prompt generator — Local + Optional AI for ChatGPT, Gemini, Claude, and DeepSeek: assemble structured prompts that guide Sketch.app design steps (Artboards, Symbols, exports) locally by default, then optionally Expand/Polish via Cloudflare Workers AI (Turnstile required, rate-limited). Example runs on first paint. Markdown default; JSON for pipelines. Local text stays on your device unless you use optional AI.',
+		'Sketch.app prompt generator — Local + Optional AI for ChatGPT, Gemini, Claude, and DeepSeek: assemble structured prompts that guide Sketch.app design steps (Artboards, Symbols, exports) locally by default, then optionally Expand/Polish via Cloudflare Workers AI (Turnstile required, rate-limited). Markdown default; JSON for pipelines. Local text stays on your device unless you use optional AI.',
 	tool_sketch_prompt_generator_download: 'Download',
 	tool_sketch_prompt_generator_empty: 'Fill at least one field before building.',
 	tool_sketch_prompt_generator_example:
@@ -69,7 +69,7 @@ const en: SiteLangDict = {
 	tool_sketch_prompt_generator_export_ph: 'e.g. 1x/2x/3x PNG, PDF review…',
 	tool_sketch_prompt_generator_how_body:
 		'Fill Sketch.app fields (goal, Artboards, Symbols, export), build a prompt locally, optionally Expand/Polish with Turnstile, then paste into ChatGPT, Gemini, Claude, or DeepSeek so the AI can guide Sketch.app steps.',
-	tool_sketch_prompt_generator_how_item_1: 'Load sample already ran the default Sketch.app login-screen preset on first paint.',
+	tool_sketch_prompt_generator_how_item_1: 'Click Load sample for the default Sketch.app login-screen preset.',
 	tool_sketch_prompt_generator_how_item_2: 'Edit Goal, Artboards, Symbols, and Export, then click Build prompt (or switch to JSON).',
 	tool_sketch_prompt_generator_how_item_3: 'Optional: complete Turnstile, then Expand or Polish via Cloudflare Workers AI.',
 	tool_sketch_prompt_generator_how_item_4: 'Copy or download, paste into your chat AI, and follow the Sketch.app checklist it returns.',

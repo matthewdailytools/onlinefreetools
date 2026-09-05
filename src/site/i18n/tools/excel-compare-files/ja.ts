@@ -16,7 +16,7 @@ const ja: SiteLangDict = {
 	tool_excel_compare_files_desc:
 		'Excelファイルを比較：2つの表を選び、いまのシートをセル単位で。端末内処理、サーバーにアップロードしません。',
 	tool_excel_compare_files_description:
-		'Excelファイルを比較します。手順：xlsx か csv を2つ選び、いまのシート（既定は先頭シート）を指定し、値が違うセルを並べます。ファイルは端末内に留まり、サーバーにアップロードしません。例：3行の表で B3 が 2 から 9 に変わる場合。見出しに online は書きません。列がずれたときは見出し名ではなくアドレスで合わせます。',
+		'Excelファイルを比較します。手順：xlsx か csv を2つ選び、いまのシート（既定は先頭シート）を指定し、値が違うセルを並べます。ファイルは端末内に留まり、サーバーにアップロードしません。例：3行の表で B3 が 2 から 9 に変わる場合。列がずれたときは見出し名ではなくアドレスで合わせます。',
 	tool_excel_compare_files_empty: '先に表ファイルを2つ選ぶか、サンプルを読み込んでください。',
 	tool_excel_compare_files_err_read:
 		'表を読めませんでした。xlsx か csv を試し、保護されたブックは先に解除してください。',
@@ -28,9 +28,11 @@ const ja: SiteLangDict = {
 	tool_excel_compare_files_faq_a2:
 		'既定では先頭シートが選ばれます。同じファイルの別タブが要るときはシート一覧を使います。選んでいないシートは比べません。',
 	tool_excel_compare_files_faq_a3:
-		'できます。CSV は1枚のシートとして読みます。「2つの csv を比較」もこのページで足ります。',
+		"できます。CSV は1枚のシートとして読み込むため、2つの CSV 同士や、CSV 書き出しと Excel シートをセル番地で比較できます。",
 	tool_excel_compare_files_faq_a4:
 		'欠けたセルも空セルも空文字です。列がずれても A1 は A1 同士です。「Name 列」という見出し合わせはしません。見出しが動くと黙って食い違うのを避けるためです。',
+	tool_excel_compare_files_faq_q5: "数式や書式も比較しますか、それとも表示値だけですか？",
+	tool_excel_compare_files_faq_a5: "各セルから読み取った表示テキストを比較します。数式そのもの、書式、コメント、列幅、ブック構造は別に比較しません。同じキャッシュ表示値を持つ数式変更は差分なしに見える場合があります。",
 	tool_excel_compare_files_faq_q1: 'Excel ファイルはアップロードされますか？',
 	tool_excel_compare_files_faq_q2: '先頭シートだけ比べますか？',
 	tool_excel_compare_files_faq_q3: '2つの CSV もここで比べられますか？',
@@ -39,7 +41,7 @@ const ja: SiteLangDict = {
 	tool_excel_compare_files_how_item_1: '1つ目の表（xlsx、xls、csv）を選ぶ。',
 	tool_excel_compare_files_how_item_2: '2つ目の表を選ぶ。',
 	tool_excel_compare_files_how_item_3: '別タブが要るとき以外は先頭シートのままにする。',
-	tool_excel_compare_files_how_item_4: '比較は違うセルを出します。サンプル読込は初回表示ですでに実行済みです。',
+	tool_excel_compare_files_how_item_4: "「比較」を押し、選んだ2枚のシートで表示テキストが異なるセルを一覧にします。",
 	tool_excel_compare_files_how_title: '使い方',
 	tool_excel_compare_files_label_a: '1つ目の表',
 	tool_excel_compare_files_label_b: '2つ目の表',

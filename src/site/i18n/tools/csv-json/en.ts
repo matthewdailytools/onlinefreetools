@@ -4,7 +4,7 @@
 import type { SiteLangDict } from '../../../types';
 const en: SiteLangDict = {
   tool_csv_json_article:
-    'Bidirectional CSV ↔ JSON with explicit type-inference, delimiter and quoting rules, plus how nested JSON flattens to columns. Built for spreadsheet ↔ API interchange, not a second thin URL.',
+    'Bidirectional CSV ↔ JSON with explicit type-inference, delimiter and quoting rules, plus how nested JSON flattens to columns.',
   tool_csv_json_clear: 'Clear',
   tool_csv_json_convert: 'Convert',
   tool_csv_json_copy_csv: 'Copy CSV',

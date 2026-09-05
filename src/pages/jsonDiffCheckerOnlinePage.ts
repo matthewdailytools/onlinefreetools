@@ -177,8 +177,8 @@ export const renderJsonDiffCheckerOnlinePage = (opts: {
       var elB = document.getElementById('jsonB');
       /** 忽略键序。 */
       var ignoreKeys = document.getElementById('jsonIgnoreKeys');
-      /** 数组当集合。 */
-      var arraySet = document.getElementById('jsonArraySet');
+      /** 忽略数组顺序；重复项仍保留。 */
+      var ignoreArrayOrder = document.getElementById('jsonArraySet');
       /** 对比。 */
       var btnCompare = document.getElementById('jsonBtnCompare');
       /** 样例。 */
@@ -226,19 +226,20 @@ export const renderJsonDiffCheckerOnlinePage = (opts: {
        * 规范化值：可选排序对象键、可选排序数组元素。
        * @param {*} v JSON 值
        * @param {boolean} sortKeys 忽略键序
-       * @param {boolean} asSet 数组当集合
+       * @param {boolean} ignoreOrder 是否忽略数组顺序但保留重复项
        */
-      function canon(v, sortKeys, asSet) {
+      function canon(v, sortKeys, ignoreOrder) {
         if (v === null || typeof v !== 'object') return v;
         if (Array.isArray(v)) {
-          var items = v.map(function (x) { return canon(x, sortKeys, asSet); });
-          if (asSet) items = items.slice().sort(function (a, b) { return JSON.stringify(a).localeCompare(JSON.stringify(b)); });
+          var items = v.map(function (x) { return canon(x, sortKeys, ignoreOrder); });
+          if (ignoreOrder) items = items.slice().sort(function (a, b) { return JSON.stringify(a).localeCompare(JSON.stringify(b)); });
           return items;
         }
         var keys = Object.keys(v);
         if (sortKeys) keys.sort();
-        var o = {};
-        for (var i = 0; i < keys.length; i++) o[keys[i]] = canon(v[keys[i]], sortKeys, asSet);
+        /** 不继承 Object.prototype，确保 __proto__ 等合法 JSON 键不会改写原型。 */
+        var o = Object.create(null);
+        for (var i = 0; i < keys.length; i++) o[keys[i]] = canon(v[keys[i]], sortKeys, ignoreOrder);
         return o;
       }
 
@@ -273,13 +274,33 @@ export const renderJsonDiffCheckerOnlinePage = (opts: {
           for (var i = 0; i < n; i++) walk(a[i], b[i], path + '/' + i, out);
           return;
         }
-        var keySet = {};
-        Object.keys(a).forEach(function (k) { keySet[k] = 1; });
-        Object.keys(b).forEach(function (k) { keySet[k] = 1; });
+        /** 两侧对象键的原始顺序；仅在未规范化键序时可能不同。 */
+        var keysA = Object.keys(a);
+        /** 右侧对象键的原始顺序。 */
+        var keysB = Object.keys(b);
+        /** 左侧键的排序副本。 */
+        var sortedKeysA = keysA.slice().sort();
+        /** 右侧键的排序副本。 */
+        var sortedKeysB = keysB.slice().sort();
+        /** 排序后是否为同一组键，用于避免与新增/删除键重复报告。 */
+        var sameKeySet =
+          sortedKeysA.length === sortedKeysB.length &&
+          sortedKeysA.every(function (key, index) { return key === sortedKeysB[index]; });
+        if (sameKeySet && JSON.stringify(keysA) !== JSON.stringify(keysB)) {
+          out.push({ op: 'changed', path: path + '/@key-order', a: keysA, b: keysB });
+        }
+        /** 两侧自有键的无原型并集。 */
+        var keySet = Object.create(null);
+        keysA.forEach(function (k) { keySet[k] = 1; });
+        keysB.forEach(function (k) { keySet[k] = 1; });
         Object.keys(keySet).sort().forEach(function (k) {
           var seg = path + '/' + String(k).replace(/~/g, '~0').replace(/\\//g, '~1');
-          if (!(k in a)) out.push({ op: 'added', path: seg, b: b[k] });
-          else if (!(k in b)) out.push({ op: 'removed', path: seg, a: a[k] });
+          /** 左侧是否实际包含该自有键。 */
+          var hasA = Object.prototype.hasOwnProperty.call(a, k);
+          /** 右侧是否实际包含该自有键。 */
+          var hasB = Object.prototype.hasOwnProperty.call(b, k);
+          if (!hasA) out.push({ op: 'added', path: seg, b: b[k] });
+          else if (!hasB) out.push({ op: 'removed', path: seg, a: a[k] });
           else walk(a[k], b[k], seg, out);
         });
       }
@@ -296,9 +317,10 @@ export const renderJsonDiffCheckerOnlinePage = (opts: {
         try { va = JSON.parse(sa || 'null'); } catch (e) { showErr(msg.badA); outEl.textContent = ''; summaryEl.textContent = ''; return; }
         try { vb = JSON.parse(sb || 'null'); } catch (e) { showErr(msg.badB); outEl.textContent = ''; summaryEl.textContent = ''; return; }
         var sortKeys = !!ignoreKeys.checked;
-        var asSet = !!arraySet.checked;
-        var ca = canon(va, sortKeys, asSet);
-        var cb = canon(vb, sortKeys, asSet);
+        /** 是否忽略数组顺序，同时保留重复项。 */
+        var ignoreOrder = !!ignoreArrayOrder.checked;
+        var ca = canon(va, sortKeys, ignoreOrder);
+        var cb = canon(vb, sortKeys, ignoreOrder);
         var diffs = [];
         walk(ca, cb, '', diffs);
         if (!diffs.length) { outEl.textContent = ''; summaryEl.textContent = msg.noDiff; return; }
@@ -335,7 +357,7 @@ export const renderJsonDiffCheckerOnlinePage = (opts: {
         elA.value = ''; elB.value = ''; outEl.innerHTML = ''; summaryEl.textContent = msg.empty; showErr('');
       });
       ignoreKeys.addEventListener('change', runCompare);
-      arraySet.addEventListener('change', runCompare);
+      ignoreArrayOrder.addEventListener('change', runCompare);
       if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', loadSample);
       else loadSample();
     })();

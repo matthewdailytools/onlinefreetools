@@ -10,7 +10,7 @@ const pt: SiteLangDict = {
   tool_text_diff_desc:
     'Verificar diferenças entre dois textos colando os dois lados no navegador, sem enviar arquivos.',
   tool_text_diff_description:
-    'Verificar diferenças entre dois textos no navegador. Processo: cole o original e a revisão (também se busca comparar dois textos online ou diff checker), escolha linha, palavra ou caractere, ignore espaços ou unifique CRLF e LF, e destaque adições e remoções. Os arquivos ficam no dispositivo e não são enviados. Exemplo: mude "olá mundo" para "olá amigo" — o modo palavra mostra uma substituição. Esta página é só colar texto; Word, Excel e JSON têm outras páginas.',
+    'Verificar diferenças entre dois textos no navegador. Processo: cole o original e a revisão, escolha linha, palavra ou caractere, em linha ou palavra, ignore espaços ou unifique CRLF e LF, e destaque adições e remoções. Os arquivos ficam no dispositivo e não são enviados. Exemplo: mude "olá mundo" para "olá amigo" — o modo palavra mostra uma substituição. A entrada é texto colado, não arquivos Word, Excel ou JSON estruturado.',
   tool_text_diff_empty_hint: 'Cole texto em um ou ambos os lados e compare.',
   tool_text_diff_example:
     'Exemplo (modo palavra): A = "Olá mundo", B = "Olá amigo" → uma alteração (mundo → amigo). Se só a linha do meio muda num bloco de três, o modo linha marca essa linha.',
@@ -22,14 +22,19 @@ const pt: SiteLangDict = {
   tool_text_diff_faq_a4:
     'Não. Só texto colado — sem imagens, ZIP, Word, Excel ou JSON estruturado. Para abrir .txt, .docx ou planilhas, use a página desse formato.',
   tool_text_diff_faq_a5:
-    'Sim: muita gente busca comparar textos online ou diff checker. Aqui isso se faz colando dois textos. O título usa a frase mais específica «verificar diferenças entre dois textos».',
+    "Não. O modo caractere compara cada caractere e desativa essa opção. Use linha ou palavra para omitir alterações apenas de espaços.",
   tool_text_diff_faq_q1: 'Comparar por linha ou por palavra?',
   tool_text_diff_faq_q2: 'Meu texto vai para um servidor?',
   tool_text_diff_faq_q3: 'Por que só a quebra de linha deixa a linha toda vermelha?',
   tool_text_diff_faq_q4: 'Posso comparar imagens, Word ou arquivos binários?',
-  tool_text_diff_faq_q5: 'É o mesmo que um diff checker online?',
+  tool_text_diff_faq_q5: "Ignorar espaços funciona no modo caractere?",
   tool_text_diff_how_body:
-    'Cole duas versões, escolha linha, palavra ou caractere, e veja adições em verde e remoções em vermelho. O texto colado não é enviado nem guardado por nós. A página pode carregar a biblioteca open-source jsdiff via CDN para comparar no browser.',
+    "Cole o texto original à esquerda e a revisão à direita, escolha linha, palavra ou caractere e confira adições verdes e remoções vermelhas. O texto fica no seu dispositivo e não é enviado ao servidor.",
+  tool_text_diff_load_sample: "Carregar exemplo",
+  tool_text_diff_how_item_1: "Cole o texto original à esquerda.",
+  tool_text_diff_how_item_2: "Cole a versão revisada à direita.",
+  tool_text_diff_how_item_3: "Escolha linha, palavra ou caractere e ajuste espaços e quebras quando as opções estiverem disponíveis.",
+  tool_text_diff_how_item_4: "Clique em Comparar e confira as adições e remoções destacadas.",
   tool_text_diff_how_title: 'Como funciona',
   tool_text_diff_ignore_ws: 'Ignorar espaços',
   tool_text_diff_label_a: 'Texto original',
@@ -47,16 +52,16 @@ const pt: SiteLangDict = {
   tool_text_diff_placeholder_b: 'Cole o texto revisado…',
   tool_text_diff_result_label: 'Diferenças',
   tool_text_diff_rules_body:
-    'A ferramenta procura uma lista curta de edições de A para B (diff clássico / abordagem Myers com jsdiff). Modo linha: configs e código. Modo palavra: frases e prompts. Modo caractere: erros pequenos, mas mais barulho. Ignorar espaços esconde só indentação. Tratar CRLF e LF iguais evita linha inteira vermelha só por causa da quebra.',
+    "O modo escolhido define a unidade de mudança. No modo caractere, Ignorar espaços fica desativado porque essa opção só vale para linhas e palavras.",
   tool_text_diff_rules_intro:
     'A ferramenta procura uma lista curta de edições para passar do texto A ao B (diff clássico / abordagem Myers com jsdiff). Escolha o modo conforme a tarefa:',
-  tool_text_diff_rules_item_chars: 'Caractere — ideal para typos pequenos; o mais preciso, mas ruidoso em edições longas.',
-  tool_text_diff_rules_item_lines:
+  tool_text_diff_rules_item_3: 'Caractere — ideal para typos pequenos; o mais preciso, mas ruidoso em edições longas.',
+  tool_text_diff_rules_item_1:
     'Linha — ideal para .env, YAML e código; uma linha alterada fica toda marcada. Rápido de ler, mas uma só palavra também marca a linha inteira.',
-  tool_text_diff_rules_item_words:
+  tool_text_diff_rules_item_2:
     'Palavra — ideal para frases, e-mails e prompts; destaca palavras. Mais claro em prosa; pontuação pode fragmentar o resultado.',
-  tool_text_diff_rules_options:
-    'Ignorar espaços esconde mudanças só de indentação. Tratar CRLF e LF iguais evita que uma linha inteira fique vermelha só pelo tipo de quebra (Windows vs Unix).',
+  tool_text_diff_rules_item_4:
+    "Ignorar espaços vale apenas para linha e palavra. Tratar CRLF e LF como iguais normaliza quebras de Windows e Unix em todos os modos.",
   tool_text_diff_rules_title: 'Como as diferenças são calculadas',
   tool_text_diff_sample_a: 'Olá mundo\nsegunda linha\nterceira linha',
   tool_text_diff_sample_b: 'Olá amigo\nsegunda linha\nterceira linha',

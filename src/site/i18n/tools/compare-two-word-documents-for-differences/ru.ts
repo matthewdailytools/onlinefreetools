@@ -29,7 +29,7 @@ const ru: SiteLangDict = {
 	tool_compare_two_word_documents_for_differences_faq_a3:
 		'Если извлечение не удалось — часто пароль, порча или не OOXML. Страницы только с картинками дают пустой текст.',
 	tool_compare_two_word_documents_for_differences_faq_a4:
-		'Ищут и «сравнить Word онлайн» — та же задача для двух .docx. Если «сравнить два документа» имело в виду PDF, это не эта страница.',
+		"Сравниваются слова, извлечённые из двух .docx. PDF и старые .doc не разбираются, форматирование и история исправлений Word в результат не входят.",
 	tool_compare_two_word_documents_for_differences_faq_q1: 'Загружаются ли мои файлы Word?',
 	tool_compare_two_word_documents_for_differences_faq_q2: 'Это то же самое, что «Рецензирование → Сравнить» в Word?',
 	tool_compare_two_word_documents_for_differences_faq_q3: 'Почему извлечение не удалось или нет колонтитулов?',
@@ -39,7 +39,7 @@ const ru: SiteLangDict = {
 	tool_compare_two_word_documents_for_differences_how_item_1: 'Выберите первый .docx (исходник).',
 	tool_compare_two_word_documents_for_differences_how_item_2: 'Выберите второй .docx (правка).',
 	tool_compare_two_word_documents_for_differences_how_item_3:
-		'Сравнение само извлекает видимый текст; загрузка примера уже выполнена при первом показе.',
+		"Нажмите «Сравнить», чтобы извлечь видимый текст и запустить сравнение формулировок.",
 	tool_compare_two_word_documents_for_differences_how_item_4: 'Зелёным — добавления, красным — удаления.',
 	tool_compare_two_word_documents_for_differences_how_title: 'Как пользоваться',
 	tool_compare_two_word_documents_for_differences_label_a: 'Первый документ Word',

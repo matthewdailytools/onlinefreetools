@@ -499,10 +499,16 @@ export const renderMagnetLinkDecoderPage = (opts: {
       btnCopyNormalized.addEventListener('click', function () {
         copyText(lastResult ? lastResult.normalizedUri : '', btnCopyNormalized);
       });
-      btnSample.addEventListener('click', function () {
+      /**
+       * 载入样例：填入带 btih / dn / xl / 双 tracker 的样例磁力链并立即解析。
+       * 进页与「Load sample」按钮共用同一条路径。
+       */
+      function loadSample() {
         input.value = SAMPLE;
         decode();
-      });
+      }
+
+      btnSample.addEventListener('click', loadSample);
       btnClear.addEventListener('click', function () {
         input.value = '';
         clearOutput();
@@ -511,8 +517,7 @@ export const renderMagnetLinkDecoderPage = (opts: {
         if ((input.value || '').length < 20000) decode();
       });
 
-      input.value = SAMPLE;
-      decode();
+      loadSample();
     })();
   </script>`;
 

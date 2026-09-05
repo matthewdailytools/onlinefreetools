@@ -49,7 +49,7 @@ const pt: SiteLangDict = {
   tool_password_generator_rules_item_1:
     'Pools: A–Z, a–z, 0–9 e símbolos padrão. Pelo menos um pool deve restar após toggles e exclusão ambígua.',
   tool_password_generator_rules_item_2:
-    'Índice aleatório usa bytes de crypto.getRandomValues — nunca Math.random.',
+    'O índice aleatório usa bytes de crypto.getRandomValues, nunca Math.random. Bytes que enviesariam o módulo são descartados, então todo caractere do conjunto tem a mesma chance.',
   tool_password_generator_rules_item_3:
     'Não é composição NIST certificada (sem regra forçada de «um de cada classe»). Ative os sets manualmente.',
   tool_password_generator_rules_item_4:

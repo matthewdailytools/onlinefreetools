@@ -122,3 +122,7 @@
 - [x] References ≥1
 - [ ] Disclaimer（YMYL 必备）
 - [x] `03-locale-briefs.md` 已填（实现十语前）
+
+## 复审修正（2026-09-05）
+
+- FAQ 去掉「没有第二个 URL」这类站点结构元叙事，改为说明 Claude 的 chat_messages 由同一转换器解析，一次粘贴同时支持两种导出。

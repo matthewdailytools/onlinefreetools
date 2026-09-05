@@ -329,15 +329,8 @@ export const renderAndroidPromptBuilderPage = (opts: {
         return toMarkdown(b);
       };
 
-      window.promptAiApplyText = function (action, text) {
-        if (action === 'polish') {
-          showResult(text, currentFmt() === 'json' ? 'json' : 'md');
-          return;
-        }
-        var firstLine = (text || '').split('\\n')[0] || '';
-        var subj = document.getElementById('adbFeatureSpec');
-        if (subj && firstLine) subj.value = firstLine.slice(0, 500);
-        buildPrompt();
+      window.promptAiApplyText = function (_action, text) {
+        showResult(text, 'md');
       };
 
       btnBuild.addEventListener('click', buildPrompt);

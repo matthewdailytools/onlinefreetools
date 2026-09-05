@@ -210,6 +210,8 @@ export const renderJwtDecoderPage = (opts: {
 
       /**
        * Base64url 解码为 UTF-8 字符串。
+       * RFC 7519 的 header/payload 是 UTF-8 JSON，atob 只给出字节串，
+       * 因此须再经 TextDecoder 还原，否则非 ASCII claim（如 José、姓名）会乱码。
        * @param {string} segment Base64url 段
        * @returns {string} 解码后文本
        */
@@ -217,7 +219,10 @@ export const renderJwtDecoderPage = (opts: {
         var b64 = segment.replace(/-/g, '+').replace(/_/g, '/');
         var pad = b64.length % 4;
         if (pad) b64 += '===='.slice(pad);
-        return atob(b64);
+        var binary = atob(b64);
+        var bytes = new Uint8Array(binary.length);
+        for (var i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+        return new TextDecoder('utf-8').decode(bytes);
       }
 
       /**

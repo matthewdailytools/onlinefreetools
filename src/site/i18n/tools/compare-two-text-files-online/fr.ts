@@ -12,10 +12,11 @@ const fr: SiteLangDict = {
 	tool_compare_two_text_files_online_desc:
 		'Comparer deux fichiers texte en ligne : prenez deux .txt, lisez le diff dans le navigateur, rien n’est envoyé.',
 	tool_compare_two_text_files_online_description:
-		'Comparer deux fichiers texte en ligne dans le navigateur. Processus : choisissez le fichier d’origine et la version révisée, décodage UTF-8 (BOM retiré), refus des octets binaires, puis surbrillance des ajouts et suppressions par ligne. Les fichiers restent sur votre appareil et ne sont pas téléversés. Exemple : notes-a.txt face à notes-b.txt, seule la ligne du milieu change. Word, Excel et JSON ont d’autres pages ; ici, uniquement des fichiers texte. Comparer txt relève du même geste.',
+		"Comparez deux fichiers texte en ligne dans le navigateur. Choisissez les .txt d’origine et révisé : décodage UTF-8 strict, retrait du BOM initial et refus d’un encodage invalide ou d’un contenu binaire avant de surligner les ajouts et suppressions par ligne. Les fichiers restent sur l’appareil et ne sont pas envoyés au serveur. Exemple : notes-a.txt et notes-b.txt ne diffèrent que sur la ligne centrale. Les fichiers Word, tableur et JSON structuré ne sont pas analysés.",
 	tool_compare_two_text_files_online_empty: 'Choisissez d’abord deux fichiers texte, ou chargez l’exemple.',
 	tool_compare_two_text_files_online_err_binary:
 		'Un fichier semble binaire (octets nuls). Cette page ne compare que du texte brut, par exemple .txt.',
+	tool_compare_two_text_files_online_err_encoding: "Un fichier n’est pas un UTF-8 valide. Enregistrez-le ou convertissez-le en UTF-8, puis recommencez.",
 	tool_compare_two_text_files_online_err_too_large:
 		'Un fichier dépasse environ 1 Mo. Coupez un extrait pour que l’onglet reste réactif.',
 	tool_compare_two_text_files_online_example:
@@ -24,11 +25,11 @@ const fr: SiteLangDict = {
 	tool_compare_two_text_files_online_faq_a1:
 		'Non. FileReader lit les octets dans cet onglet. jsdiff peut arriver via un CDN comme bibliothèque ; vos fichiers ne partent pas vers nos serveurs.',
 	tool_compare_two_text_files_online_faq_a2:
-		'Décodage UTF-8. Un BOM en tête est retiré pour que la première ligne ne soit pas marquée uniquement à cause de ce signe. D’autres encodages peuvent être illisibles : enregistrez d’abord en UTF-8.',
+		"Les fichiers sont décodés en UTF-8 strict et le BOM initial est retiré. Un UTF-8 invalide est refusé plutôt qu’affiché avec des caractères de remplacement ; convertissez d’abord les anciens encodages comme Windows-1252.",
 	tool_compare_two_text_files_online_faq_a3:
 		'Un octet nul est traité comme binaire et refusé. Utilisez un outil hexadécimal ou d’archive. Word et Excel ont leurs propres pages de comparaison.',
 	tool_compare_two_text_files_online_faq_a4:
-		'Cette page vise .txt / .text. Comparer txt ou un diff de fichiers en ligne, c’est souvent le même besoin. Si « comparer deux fichiers » visait Word ou un tableur, prenez ces pages. Coller deux textes sans fichiers : « Vérifier les différences entre deux textes ».',
+		"Cet outil accepte les fichiers .txt / .text décodés en UTF-8. Sans fichier, utilisez la comparaison par collage ; pour .docx, xlsx, xls ou csv, prenez le comparateur Word ou tableur.",
 	tool_compare_two_text_files_online_faq_q1: 'Mes fichiers sont-ils envoyés ?',
 	tool_compare_two_text_files_online_faq_q2: 'Quelles règles d’encodage et de BOM ?',
 	tool_compare_two_text_files_online_faq_q3: 'Puis-je comparer du binaire, Word ou Excel ici ?',
@@ -38,7 +39,7 @@ const fr: SiteLangDict = {
 	tool_compare_two_text_files_online_how_item_1: 'Choisissez le premier fichier texte (export ou version d’origine).',
 	tool_compare_two_text_files_online_how_item_2: 'Choisissez le second fichier texte (version révisée).',
 	tool_compare_two_text_files_online_how_item_3:
-		'La comparaison se lance dès que les deux sont choisis ; Charger un exemple l’a déjà fait au premier affichage.',
+		"Cliquez sur Comparer pour actualiser les écarts par ligne ; le choix des deux fichiers lance aussi le calcul automatiquement.",
 	tool_compare_two_text_files_online_how_item_4: 'Le vert indique les ajouts, le rouge les suppressions. Effacer retire les deux fichiers de cet onglet.',
 	tool_compare_two_text_files_online_how_title: 'Comment ça marche',
 	tool_compare_two_text_files_online_label_a: 'Premier fichier texte',

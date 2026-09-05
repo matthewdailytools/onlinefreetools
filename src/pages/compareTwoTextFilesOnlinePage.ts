@@ -210,6 +210,7 @@ export const renderCompareTwoTextFilesOnlinePage = (opts: {
         empty: ${JSON.stringify(tx(opts.lang, 'empty'))},
         needLib: ${JSON.stringify(tx(opts.lang, 'need_lib'))},
         binary: ${JSON.stringify(tx(opts.lang, 'err_binary'))},
+        encoding: ${JSON.stringify(tx(opts.lang, 'err_encoding'))},
         tooLarge: ${JSON.stringify(tx(opts.lang, 'err_too_large'))},
         noDiff: ${JSON.stringify(tx(opts.lang, 'no_diff'))},
         summary: ${JSON.stringify(tx(opts.lang, 'summary'))},
@@ -272,8 +273,13 @@ export const renderCompareTwoTextFilesOnlinePage = (opts: {
             var err = new Error('too-large');
             throw err;
           }
-          var dec = new TextDecoder('utf-8', { fatal: false });
-          return stripBom(dec.decode(buf));
+          try {
+            /** 严格 UTF-8 解码器；无效字节不以替换字符静默掩盖。 */
+            var dec = new TextDecoder('utf-8', { fatal: true });
+            return stripBom(dec.decode(buf));
+          } catch (e) {
+            throw new Error('invalid-encoding');
+          }
         });
       }
 
@@ -340,7 +346,9 @@ export const renderCompareTwoTextFilesOnlinePage = (opts: {
                 .replace('{removed}', String(removed));
           })
           .catch(function (e) {
-            showErr(e && e.message === 'too-large' ? msg.tooLarge : msg.binary);
+            /** 文件读取失败类型，用于选择可操作的本地化提示。 */
+            var reason = e && e.message;
+            showErr(reason === 'too-large' ? msg.tooLarge : reason === 'invalid-encoding' ? msg.encoding : msg.binary);
             outEl.textContent = '';
             summaryEl.textContent = '';
           });

@@ -10,7 +10,7 @@ const fr: SiteLangDict = {
 		'Repérez les balises qui freinent votre page dans Google : vérifiez title, H1, meta description, canonical, Open Graph et JSON-LD depuis votre navigateur.',
 	tool_onpage_title: 'Audit SEO On-Page — détectez et corrigez les balises de la page',
 	tool_onpage_description:
-		'Titres faibles, meta manquante, H1 en double ou canonical erroné nuisent au ranking. Collez URL ou HTML pour auditer. Collage local. Exemple : deux H1.',
+		'Auditez title, meta description, H1, canonical, robots, Open Graph et JSON-LD. Collez le HTML : il reste sur votre appareil. Exemple : deux H1 détectés.',
 	tool_onpage_url_tab: 'Récupérer l’URL',
 	tool_onpage_html_tab: 'Coller le HTML',
 	tool_onpage_url_ph: 'https://example.com/page',
@@ -40,18 +40,18 @@ const fr: SiteLangDict = {
 	tool_onpage_title_long: 'Le title fait {n} caractères et sera probablement tronqué dans les résultats. Visez environ 50–60 caractères.',
 	tool_onpage_title_short: 'Le title ne fait que {n} caractères. Ajoutez le focus précis de la page pour le rendre plus utile.',
 	tool_onpage_desc_check: 'Meta description',
-	tool_onpage_desc_missing: 'Aucune meta description. Rédigez un résumé de 140–160 caractères correspondant au contenu.',
+	tool_onpage_desc_missing: 'Aucune meta description. Google composera alors l’extrait à partir du texte de la page. Rédigez la vôtre si vous voulez maîtriser cette formulation.',
 	tool_onpage_desc_ok: 'Description de {n} caractères. La plage 140–160 caractères s’affiche bien dans la plupart des extraits.',
 	tool_onpage_desc_long: 'La description fait {n} caractères ; les extraits coupent souvent autour de 160.',
 	tool_onpage_desc_short: 'La description ne fait que {n} caractères. Utilisez l’espace pour résumer ce que propose la page.',
 	tool_onpage_h1_check: 'H1',
-	tool_onpage_h1_missing: 'Aucun H1 trouvé. Utilisez un seul H1 qui énonce le sujet de la page.',
-	tool_onpage_h1_multiple: '{n} balises H1 trouvées. Gardez un seul H1 par page et utilisez H2–H6 pour les sections.',
+	tool_onpage_h1_missing: 'Aucun H1 trouvé. Ajoutez un titre de premier niveau qui énonce le sujet de la page : les lecteurs d’écran comme le titre de l’extrait s’appuient dessus.',
+	tool_onpage_h1_multiple: '{n} balises H1 trouvées. Google positionne les pages quel que soit le nombre de H1 : ce n’est donc pas une pénalité. Un seul H1 avec des sections H2–H6 reste plus lisible pour les lecteurs d’écran.',
 	tool_onpage_h1_ok: 'Un H1 trouvé, situé dans <body>.',
 	tool_onpage_canonical_check: 'Canonical',
 	tool_onpage_canonical_missing: 'Aucune URL canonique définie. Ajoutez <link rel="canonical"> lorsque le même contenu est accessible via plusieurs URL.',
 	tool_onpage_canonical_ok: 'Canonical auto-référent trouvé.',
-	tool_onpage_canonical_other: 'Le canonical pointe vers une autre URL. Utilisez un canonical auto-référent, sauf si cette page est une copie de la cible.',
+	tool_onpage_canonical_other: 'Le canonical pointe vers une autre URL : vous déclarez ainsi que cette page en est un doublon. Ne le gardez que si c’est le cas ; le canonical reste une indication, et Google peut retenir une autre URL.',
 	tool_onpage_robots_check: 'Balise robots',
 	tool_onpage_robots_missing: 'Pas de balise robots. La valeur par défaut index,follow convient à la plupart des pages publiques.',
 	tool_onpage_robots_noindex: 'La page définit noindex et n’apparaîtra pas dans Google. Retirez-le si la page doit être indexée.',
@@ -76,13 +76,13 @@ const fr: SiteLangDict = {
 		'Le vérificateur analyse le balisage que vous collez (ou le HTML récupéré d’une URL) et évalue une liste fixe de vérifications SEO on-page. Chaque vérification lit un type de balise : title, meta description, H1, canonical, balise robots, champs Open Graph, blocs JSON-LD, contenu mixte et ressources bloquant le rendu. Le mode coller s’exécute entièrement dans votre navigateur ; le mode URL récupère la page une fois via notre worker et ne la stocke pas.',
 	tool_onpage_rules_title: 'Règles suivies par les vérifications',
 	tool_onpage_rules_body:
-		'Voici les critères comparés par chaque vérification, issus de Google Search Central et de la spécification HTML.',
+		'Voici à quoi chaque vérification se compare, et avec quel degré de certitude. Le comportement des balises (robots, canonical, contenu mixte) suit Google Search Central et la spécification HTML. Les conseils sur la longueur et les titres sont des repères d’affichage ou de lisibilité, pas des règles de classement.',
 	tool_onpage_rules_item_1:
 		'Title : une page doit avoir un <title> descriptif. Google peut le réécrire, mais un titre concis proche de 50–60 caractères s’affiche généralement bien.',
 	tool_onpage_rules_item_2:
-		'H1 : utilisez exactement un H1 qui énonce le sujet. Les autres titres doivent être H2–H6 et former un plan logique.',
+		'H1 : la page a besoin d’un titre qui énonce son sujet. Google n’impose aucun nombre idéal de titres et ne pénalise pas les H1 supplémentaires ; les H1 multiples ne sont donc signalés que pour la clarté du plan et l’accessibilité.',
 	tool_onpage_rules_item_3:
-		'Canonical : un canonical auto-référent indique à Google l’URL préférée en cas de doublons. Le Link rel="canonical" va dans <head>.',
+		'Canonical : <link rel="canonical"> dans <head> est une indication sur l’URL préférée parmi des doublons, pas une directive. Google la pèse avec les redirections, les sitemaps et les liens internes avant de trancher.',
 	tool_onpage_rules_item_4:
 		'Contenu mixte : une page https qui référence des ressources http:// est bloquée par les navigateurs. Cette vérification les liste comme avertissements.',
 	tool_onpage_rules_item_5:
@@ -100,12 +100,12 @@ const fr: SiteLangDict = {
 	tool_onpage_faq_q1: 'Que vérifie un audit SEO on-page ?',
 	tool_onpage_faq_a1:
 		'Il vérifie les balises que la page contrôle : title, meta description, H1, canonical, balise robots, champs Open Graph, données structurées JSON-LD, contenu mixte et ressources bloquant le rendu. Il ne mesure ni le classement ni les backlinks.',
-	tool_onpage_faq_q2: 'Pourquoi une page doit-elle avoir exactement un H1 ?',
+	tool_onpage_faq_q2: 'Plusieurs balises H1 nuisent-elles au SEO ?',
 	tool_onpage_faq_a2:
-		'Un seul H1 énonce clairement le sujet pour les lecteurs comme pour les moteurs. Plusieurs H1 brouillent le plan ; utilisez un H1 et structurez le reste en H2–H6.',
+		'Non. Google indique qu’il n’existe pas de nombre idéal de titres et positionne des pages qui en ont zéro, un ou plusieurs. Garder un seul H1 sert l’accessibilité et la clarté du plan, et augmente les chances que Google reprenne votre titre comme titre de l’extrait.',
 	tool_onpage_faq_q3: 'Le canonical doit-il pointer vers lui-même ?',
 	tool_onpage_faq_a3:
-		'Pour la page à positionner, oui : un canonical auto-référent est le signal le plus clair. Pointer vers une autre URL indique à Google que la page est un doublon, utile uniquement si c’est vrai.',
+		'Pas forcément, mais un canonical auto-référent est le signal le plus clair pour une page qui doit se positionner par elle-même. Le pointer ailleurs revient à déclarer cette page comme un doublon. Dans les deux cas, Google traite le canonical comme une indication et peut retenir une autre URL.',
 	tool_onpage_faq_q4: 'Pourquoi le vérificateur signale les ressources http:// comme contenu mixte ?',
 	tool_onpage_faq_a4:
 		'Lorsqu’une page est servie en https et référence des images, scripts ou styles http://, le navigateur bloque la requête par défaut. Cette vérification les liste en avertissements pour que vous passiez en https.',

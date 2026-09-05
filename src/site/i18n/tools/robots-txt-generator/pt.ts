@@ -34,15 +34,15 @@ const pt: SiteLangDict = {
 		'Selecione os rastreadores que você quer atingir, adicione caminhos Allow e Disallow para cada grupo, opcionalmente uma linha Sitemap e clique em Gerar. A página monta o arquivo em texto puro seguindo o layout do RFC 9309: uma linha User-agent por grupo, suas linhas Allow/Disallow abaixo, linha em branco entre grupos e a linha Sitemap no fim. Copie o resultado para a raiz do seu site em /robots.txt.',
 	tool_robots_rules_title: 'Regras de sintaxe importantes',
 	tool_robots_rules_body:
-		'As regras de robots.txt são prefixos de caminho, não padrões, e um rastreador aplica o último grupo que o corresponder no arquivo. Estas são as regras que este gerador segue.',
+		'As regras de robots.txt são prefixos de caminho, não padrões, e um rastreador obedece a um único grupo: aquele cujo User-agent corresponde a ele de forma mais específica. Estas são as regras que este gerador segue.',
 	tool_robots_rules_item_1:
-		'Ordem dos grupos: uma linha User-agent começa um grupo para aquele rastreador; uma linha em branco o termina. O último grupo que corresponde a um rastreador vence.',
+		'Escolha do grupo: o rastreador obedece ao grupo com a correspondência de User-agent mais específica — o próprio nome dele ganha do *, e a ordem no arquivo não decide. Várias linhas User-agent do mesmo rastreador são fundidas em um só grupo (RFC 9309).',
 	tool_robots_rules_item_2:
 		'Correspondência por prefixo: Allow e Disallow correspondem a prefixos de caminho, não substrings nem regex. Apenas * e $ são especiais (RFC 9309).',
 	tool_robots_rules_item_3:
-		'Disallow: / bloqueia esse agente em todo o site. Disallow com valor vazio permite tudo para esse agente.',
+		'Prioridade dentro do grupo: vence o caminho correspondente mais longo e, quando um Allow e um Disallow têm o mesmo comprimento, o Allow vence. Assim, Disallow: /admin/ com Allow: /admin/public/ mantém a subpasta pública rastreável.',
 	tool_robots_rules_item_4:
-		'Sitemap é uma extensão, não parte do RFC 9309. Não diferencia maiúsculas e pode ir em qualquer lugar, embora seja usual colocá-lo no fim.',
+		'Site inteiro e linha Sitemap: Disallow: / bloqueia esse agente em todas as URLs, enquanto um Disallow com valor vazio libera tudo. Sitemap: é uma extensão fora do RFC 9309, não diferencia maiúsculas e pode ir em qualquer lugar — este gerador a coloca no fim.',
 	tool_robots_example_title: 'Exemplo',
 	tool_robots_example:
 		'Muestra: Googlebot com Allow: / (totalmente habilitado), GPTBot com Disallow: / (bloqueado) e uma linha Sitemap apontando para /sitemap.xml. A saída reflete esse layout: um grupo por rastreador, linha em branco entre grupos e sitemap no fim.',
@@ -50,12 +50,12 @@ const pt: SiteLangDict = {
 	tool_robots_usecase_1:
 		'Sites novos: gere um robots.txt inicial que mantém os buscadores habilitados e oculta caminhos de staging privados.',
 	tool_robots_usecase_2:
-		'Controle de rastreadores de IA: bloqueie GPTBot, ClaudeBot, Google-Extended, CCBot ou PerplexityBot para treinamento ou extração de resumos sem tocar no Googlebot.',
+		'Controle de rastreadores de IA: dê a GPTBot, ClaudeBot, Google-Extended, CCBot ou PerplexityBot um grupo próprio com Disallow enquanto o Googlebot continua rastreando. Repare que o Google-Extended cobre o Gemini e o grounding do Vertex AI: as visões gerais criadas por IA na Busca continuam usando o Googlebot.',
 	tool_robots_usecase_3:
 		'Descoberta: combine robots.txt com uma linha Sitemap para que os rastreadores encontrem seu sitemap.',
 	tool_robots_faq_q1: 'O que acontece se eu escrever Disallow: / ?',
 	tool_robots_faq_a1:
-		'Ele diz àquele rastreador para não buscar nenhuma URL sob a raiz do site. Se o Googlebot receber Disallow: /, suas páginas podem sumir do Google Search. Para um caminho de staging use Disallow: /private/ em vez disso.',
+		'Ele diz àquele rastreador para não buscar nenhuma URL sob a raiz do site. Se o Googlebot receber Disallow: /, suas páginas podem sumir do Google Search. Atenção: o Disallow barra o rastreamento, não a indexação; uma URL bloqueada que outros sites linkam ainda pode aparecer listada sem descrição, então, para tirá-la do índice, deixe a página rastreável e use noindex. Para um caminho de staging use Disallow: /private/ em vez disso.',
 	tool_robots_faq_q2: 'Como bloqueio rastreadores de IA como o GPTBot?',
 	tool_robots_faq_a2:
 		'Crie um grupo com o User-agent do rastreador (por exemplo GPTBot, ClaudeBot, Google-Extended, CCBot, PerplexityBot) e adicione Disallow: /. Consulte a documentação oficial do rastreador, pois rastreadores de IA atualizam seus user-agents e faixas de IP de tempos em tempos.',

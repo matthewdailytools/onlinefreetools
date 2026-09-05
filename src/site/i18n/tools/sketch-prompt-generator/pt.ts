@@ -6,18 +6,18 @@ import type { SiteLangDict } from '../../../types';
 
 const pt: SiteLangDict = {
 	tool_sketch_prompt_generator_article:
-		'Monte prompts prontos para colar que orientem ChatGPT, Gemini, Claude ou DeepSeek a operar o Sketch.app — Artboards, Symbols, estilos compartilhados e exportação. Preencha os campos e copie Markdown ou JSON. A montagem local fica no navegador; Expand/Polish opcional usa Cloudflare Workers AI com Turnstile. O texto permanece no dispositivo salvo se você usar IA.',
+		'Monte prompts prontos para colar que orientem ChatGPT, Gemini, Claude ou DeepSeek a operar o Sketch.app — Artboards, Symbols, estilos compartilhados e exportação. Preencha os campos e copie Markdown ou JSON. Por padrão o prompt é montado no seu navegador; só ao clicar em Expandir ou Refinar o rascunho atual vai para o Cloudflare Workers AI (com Turnstile e limites de uso), e a resposta substitui todo o bloco de saída.',
 	tool_sketch_prompt_generator_build: 'Gerar prompt',
 	tool_sketch_prompt_generator_clear: 'Limpar',
 	tool_sketch_prompt_generator_copy: 'Copiar',
 	tool_sketch_prompt_generator_desc:
-		'Gerador de prompts Sketch.app — local por padrão + Expand/Polish opcional com Cloudflare AI (Turnstile); Markdown/JSON no dispositivo.',
+		'Gerador de prompts Sketch.app — monte Artboards, Symbols e passos de exportação no navegador; Expandir/Refinar opcional com Cloudflare AI (Turnstile).',
 	tool_sketch_prompt_generator_description:
-		'Gerador de prompts Sketch.app — Local + IA opcional para ChatGPT, Gemini, Claude e DeepSeek: monte prompts estruturados para passos no Sketch.app (Artboards, Symbols, exportação) no navegador; Expand/Polish opcional via Cloudflare Workers AI (Turnstile, limite). Exemplo ao abrir. Markdown padrão; JSON para pipelines. Texto no dispositivo sem IA.',
+		'Gerador de prompts Sketch.app — Local + IA opcional para ChatGPT, Gemini, Claude e DeepSeek: preencha objetivo, Artboards, Symbols e exportação e o navegador monta um prompt estruturado com os passos de trabalho no Sketch.app. Ao abrir já roda um exemplo editável; depois dá para Expandir ou Refinar via Cloudflare Workers AI (exige Turnstile e tem cota). Markdown por padrão; JSON para pipelines.',
 	tool_sketch_prompt_generator_download: 'Baixar',
 	tool_sketch_prompt_generator_empty: 'Preencha pelo menos um campo antes de gerar.',
 	tool_sketch_prompt_generator_example:
-		'Entrada: Objetivo = tela de login no Sketch.app; Artboards = iPhone 14 390×844; Symbols = Button/Primary + Input; Exportação = PNG 1x/2x/3x + PDF. Saída (Markdown): ## Role → assistente Sketch.app; ## Task → checklist numerada.',
+		'Entrada: Objetivo = tela de login no Sketch.app; Artboards = iPhone 14 390×844; Symbols = Button/Primary + Input; Exportação = PNG 1x/2x/3x + PDF. Saída (Markdown): ## Papel → assistente Sketch.app; ## Tarefa → checklist numerada.',
 	tool_sketch_prompt_generator_example_title: 'Exemplo',
 	tool_sketch_prompt_generator_faq_a1:
 		'A montagem local roda nesta aba — nada é enviado por padrão. Expand/Polish opcional envia só o texto daquele clique ao Cloudflare Workers AI, não a OpenAI, Google, Anthropic ou DeepSeek a partir dos nossos servidores.',
@@ -33,7 +33,7 @@ const pt: SiteLangDict = {
 	tool_sketch_prompt_generator_faq_a7:
 		'Sim. Cole o prompt no ChatGPT, Gemini, Claude ou DeepSeek para o chat guiar menus do Sketch.app. Só formatamos texto; não executamos o Sketch.',
 	tool_sketch_prompt_generator_faq_a8:
-		'Local formata na aba sem upload. Expand/Polish vai ao Cloudflare Workers AI (limite + Turnstile). Se falhar, continue no local.',
+		'No local tudo é formatado nesta aba e nada é enviado. Expandir/Refinar manda o rascunho ao Cloudflare Workers AI (Turnstile e cota diária) e a resposta substitui todo o bloco de saída. Se falhar ou a cota acabar, siga no local.',
 	tool_sketch_prompt_generator_faq_q1: 'Meu prompt é enviado?',
 	tool_sketch_prompt_generator_faq_q2: 'Isso chama ChatGPT ou controla o Sketch.app remotamente?',
 	tool_sketch_prompt_generator_faq_q3: 'Qual a diferença do construtor de modelos Prompt?',
@@ -51,7 +51,7 @@ const pt: SiteLangDict = {
 	tool_sketch_prompt_generator_ai_consent_ok: 'Continuar',
 	tool_sketch_prompt_generator_ai_consent_cancel: 'Cancelar',
 	tool_sketch_prompt_generator_ai_working: 'Cloudflare AI em andamento…',
-	tool_sketch_prompt_generator_ai_done: 'Sugestão de IA aplicada. Revise antes de copiar.',
+	tool_sketch_prompt_generator_ai_done: 'O texto da IA foi escrito inteiro na saída. Revise antes de copiar.',
 	tool_sketch_prompt_generator_ai_err_generic: 'IA falhou. O prompt local não mudou.',
 	tool_sketch_prompt_generator_ai_err_rate: 'Cota de IA esgotada. Use o local ou tente amanhã (UTC).',
 	tool_sketch_prompt_generator_ai_err_turnstile: 'Conclua o Turnstile antes de usar a IA.',
@@ -60,7 +60,7 @@ const pt: SiteLangDict = {
 	tool_sketch_prompt_generator_fmt_md: 'Markdown',
 	tool_sketch_prompt_generator_goal_label: 'Objetivo / entregável',
 	tool_sketch_prompt_generator_goal_ph: 'ex.: tela de login no Sketch.app…',
-	tool_sketch_prompt_generator_artboard_label: 'Artboards / páginas',
+	tool_sketch_prompt_generator_artboard_label: 'Artboards / páginas do documento',
 	tool_sketch_prompt_generator_artboard_ph: 'ex.: iPhone 14 390×844, Page Auth…',
 	tool_sketch_prompt_generator_symbols_label: 'Symbols / estilos / bibliotecas',
 	tool_sketch_prompt_generator_symbols_ph: 'ex.: Button/Primary, Shared Styles…',

@@ -6,18 +6,18 @@ import type { SiteLangDict } from '../../../types';
 
 const ja: SiteLangDict = {
 	tool_sketch_prompt_generator_article:
-		'ChatGPT / Gemini / Claude / DeepSeek に Sketch.app の操作手順（アートボード・シンボル・共有スタイル・書き出し）を案内させるためのプロンプトを、このページで組み立てます。フィールド入力後に Markdown / JSON をコピー。既定は端末内組み立て。任意の Expand/Polish は Turnstile 付き Cloudflare Workers AI。AI を使わなければテキストは端末内のままです。',
+		'ChatGPT / Gemini / Claude / DeepSeek に Sketch.app の操作手順（アートボード・シンボル・共有スタイル・書き出し）を案内させるためのプロンプトを、このページで組み立てます。フィールド入力後に Markdown / JSON をコピー。既定ではブラウザ内で組み立て、「AIで拡充／整える」を押したときだけ、その時点の下書きが Cloudflare Workers AI に送られます（Turnstile 必須、レート・上限あり）。返ってきた文章は結果欄をまるごと置き換えます。',
 	tool_sketch_prompt_generator_build: 'プロンプトを作成',
 	tool_sketch_prompt_generator_clear: 'クリア',
 	tool_sketch_prompt_generator_copy: 'コピー',
 	tool_sketch_prompt_generator_desc:
-		'Sketch.appプロンプトジェネレーター — 既定はローカル、任意で Cloudflare AI の Expand/Polish（Turnstile）。Markdown/JSON は端末内。',
+		'Sketch.appプロンプトジェネレーター — アートボード・シンボル・書き出し手順をブラウザ内で組み立て、任意で Cloudflare AI の拡充／整形（Turnstile）。',
 	tool_sketch_prompt_generator_description:
-		'Sketch.appプロンプトジェネレーター — ローカル + オプションAI：ChatGPT・Gemini・Claude・DeepSeek向けに、Sketch.app の設計手順（アートボード、シンボル、書き出し）を構造化プロンプトとしてブラウザ内で組み立て。任意で Cloudflare Workers AI の Expand/Polish（Turnstile必須・上限あり）。初回表示でサンプル実行。既定 Markdown、パイプライン向け JSON。AI を使わない限りテキストはサーバーに上がりません。',
+		'Sketch.appプロンプトジェネレーター — ローカル + オプションAI：ChatGPT・Gemini・Claude・DeepSeek 向けに、目標・アートボード・シンボル・書き出しを入力すると、Sketch.app の作業手順を示す構造化プロンプトをブラウザ内で組み立てます。初回表示から編集できる例が入っており、その後は任意で Cloudflare Workers AI の拡充／整形（Turnstile 必須・上限あり）。既定は Markdown、パイプライン向けに JSON も選べます。',
 	tool_sketch_prompt_generator_download: 'ダウンロード',
 	tool_sketch_prompt_generator_empty: '作成前に少なくとも1つの欄を入力してください。',
 	tool_sketch_prompt_generator_example:
-		'入力：目標 = Sketch.app のログイン画面、アートボード = iPhone 14 390×844、シンボル = Button/Primary + Input、書き出し = 1x/2x/3x PNG + PDF。出力（Markdown）：## Role → Sketch.app 操作アシスタント、## Task → 番号付きチェックリスト。',
+		'入力：目標 = Sketch.app のログイン画面、アートボード = iPhone 14 390×844、シンボル = Button/Primary + Input、書き出し = 1x/2x/3x PNG + PDF。出力（Markdown）：## 役割 → Sketch.app 操作アシスタント、## タスク → 番号付きチェックリスト。',
 	tool_sketch_prompt_generator_example_title: '例',
 	tool_sketch_prompt_generator_faq_a1:
 		'ローカル組み立てはこのタブ内のみで、既定ではアップロードしません。任意の Expand/Polish はそのクリック分のテキストだけを Cloudflare Workers AI に送り、当サーバーから OpenAI / Google / Anthropic / DeepSeek には送りません。',
@@ -33,7 +33,7 @@ const ja: SiteLangDict = {
 	tool_sketch_prompt_generator_faq_a7:
 		'はい。完成プロンプトを ChatGPT などに貼り、Sketch.app のメニュー操作を案内させられます。テキスト整形のみで、Sketch 自体は実行しません。',
 	tool_sketch_prompt_generator_faq_a8:
-		'ローカルはタブ内整形のみ（非アップロード）。任意 Expand/Polish は Cloudflare Workers AI（Turnstile・上限）。失敗時はローカルを継続。',
+		'ローカルはこのタブ内で整形するだけで、どこにも送信しません。任意の拡充／整形は下書きを Cloudflare Workers AI に送り（Turnstile と1日の上限あり）、返答が結果欄をまるごと置き換えます。失敗時や上限到達時はローカルのまま作業を続けられます。',
 	tool_sketch_prompt_generator_faq_q1: 'プロンプトはアップロードされますか？',
 	tool_sketch_prompt_generator_faq_q2: 'ChatGPT 呼び出しや Sketch.app の遠隔操作はしますか？',
 	tool_sketch_prompt_generator_faq_q3: 'Promptテンプレートビルダーとの違いは？',
@@ -51,7 +51,7 @@ const ja: SiteLangDict = {
 	tool_sketch_prompt_generator_ai_consent_ok: '続ける',
 	tool_sketch_prompt_generator_ai_consent_cancel: 'キャンセル',
 	tool_sketch_prompt_generator_ai_working: 'Cloudflare AI 処理中…',
-	tool_sketch_prompt_generator_ai_done: 'AI 提案を適用しました。コピー前に確認してください。',
+	tool_sketch_prompt_generator_ai_done: 'AI の文章を結果欄にそのまま書き込みました。コピー前に確認してください。',
 	tool_sketch_prompt_generator_ai_err_generic: 'AI に失敗しました。ローカルプロンプトは変更されていません。',
 	tool_sketch_prompt_generator_ai_err_rate: 'AI 上限に達しました。ローカルを使うか明日（UTC）再試行してください。',
 	tool_sketch_prompt_generator_ai_err_turnstile: 'AI 利用前に Turnstile を完了してください。',

@@ -10,7 +10,7 @@ const en: SiteLangDict = {
   tool_text_diff_desc:
     'Check the difference between two texts by pasting both sides — line, word, or character, in the browser.',
   tool_text_diff_description:
-    'Check the difference between two texts in your browser. Process: paste original and revised text (also called compare two texts online or a diff checker), pick line, word, or character mode, optionally ignore spaces or treat Windows newlines (CRLF) like LF, then highlight adds and deletes. Files stay on your device and are not uploaded. Example: change "hello world" to "hello there" — word mode shows one replacement. This page is paste-only; Word, Excel, and JSON files have their own tools.',
+    'Check the difference between two texts in your browser. Process: paste original and revised text, pick line, word, or character mode, in line or word mode, optionally ignore spaces or treat Windows newlines (CRLF) like LF, then highlight adds and deletes. Files stay on your device and are not uploaded. Example: change "hello world" to "hello there" — word mode shows one replacement. It accepts pasted plain text rather than Word, Excel, or structured JSON files.',
   tool_text_diff_empty_hint: 'Paste text on one or both sides, then compare.',
   tool_text_diff_example:
     'Example (word mode): A = "Hello world", B = "Hello there" → one change (world → there). Line mode on three lines where only the middle line differs marks that line as changed.',
@@ -27,11 +27,16 @@ const en: SiteLangDict = {
   tool_text_diff_faq_q1: 'Should I compare by line or by word?',
   tool_text_diff_faq_q2: 'Is my text uploaded to a server?',
   tool_text_diff_faq_q3: 'Why does a newline-only change mark a whole line red?',
-  tool_text_diff_faq_q5: 'Is this the same as an online diff checker?',
+  tool_text_diff_faq_q5: "Does Ignore spaces work in character mode?",
   tool_text_diff_faq_a5:
-    'Yes — people also search text compare online and diff checker. This page does that job by pasting two texts. The heading uses the more specific phrase “check difference between two texts.”',
+    "No. Character mode compares every character, so the option is disabled there. Use line or word mode when whitespace-only edits should be ignored.",
   tool_text_diff_how_body:
-    'Paste two versions of a text, pick how fine the comparison should be (line, word, or character), then review green additions and red deletions. Your pasted text stays in the browser and is not uploaded or stored by us. The page may load the open-source jsdiff library from a CDN so the checker can run.',
+    "Paste the original and revised text, choose line, word, or character comparison, then review green additions and red deletions. The text stays on your device and is not uploaded to a server.",
+  tool_text_diff_load_sample: "Load sample",
+  tool_text_diff_how_item_1: "Paste the original text on the left.",
+  tool_text_diff_how_item_2: "Paste the revised text on the right.",
+  tool_text_diff_how_item_3: "Choose line, word, or character mode, then set whitespace and newline options when available.",
+  tool_text_diff_how_item_4: "Select Compare and review the highlighted additions and deletions.",
   tool_text_diff_how_title: 'How it works',
   tool_text_diff_ignore_ws: 'Ignore spaces',
   tool_text_diff_label_a: 'Original text',
@@ -49,16 +54,16 @@ const en: SiteLangDict = {
   tool_text_diff_placeholder_b: 'Paste the revised text…',
   tool_text_diff_result_label: 'Differences',
   tool_text_diff_rules_body:
-    'The checker finds a short list of edits that turn text A into text B (classic diff / Myers-style matching via jsdiff). Line mode is best for .env files and code. Word mode is best for sentences and prompts. Character mode catches tiny typos but can look noisy. Ignoring spaces hides indent-only edits. Treating CRLF and LF the same stops whole lines lighting up when only the newline style changed.',
+    "The selected mode controls what counts as one change. Character mode disables Ignore spaces because that option only applies to line and word comparison.",
   tool_text_diff_rules_intro:
     'The checker finds a short list of edits that turn text A into text B (classic diff / Myers-style matching via jsdiff). Pick a mode that matches your task:',
-  tool_text_diff_rules_item_chars: 'Character — best for tiny typos; most precise, but noisy on longer edits.',
-  tool_text_diff_rules_item_lines:
+  tool_text_diff_rules_item_3: 'Character — best for tiny typos; most precise, but noisy on longer edits.',
+  tool_text_diff_rules_item_1:
     'Line — best for .env, YAML, and code; one changed line lights up as a whole. Fast and easy to scan, but a single-word edit still marks the entire line.',
-  tool_text_diff_rules_item_words:
+  tool_text_diff_rules_item_2:
     'Word — best for sentences, emails, and AI prompts; highlights individual words. Clearer for prose, but can split awkwardly on punctuation.',
-  tool_text_diff_rules_options:
-    'Ignore spaces hides indent-only edits. Treat CRLF and LF the same stops whole lines lighting up when only the newline style (Windows vs Unix) changed.',
+  tool_text_diff_rules_item_4:
+    "Ignore spaces applies to line and word modes only. Treat CRLF and LF the same normalizes Windows and Unix newlines in every mode.",
   tool_text_diff_rules_title: 'How the comparison works',
   tool_text_diff_sample_a: 'Hello world\nline two\nline three',
   tool_text_diff_sample_b: 'Hello there\nline two\nline three',

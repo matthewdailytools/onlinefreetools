@@ -277,7 +277,11 @@ export const renderCompareTwoWordDocumentsForDifferencesPage = (opts: {
        */
       function extractText(file) {
         var lower = (file.name || '').toLowerCase();
-        if (lower && lower.indexOf('.docx') === -1 && file.type.indexOf('wordprocessingml') === -1) {
+        /** 有文件名时必须以 .docx 结尾，避免把 report.docx.exe 等伪装文件交给解析器。 */
+        var invalidNamedFile = lower && !lower.endsWith('.docx');
+        /** 无文件名时退回 MIME 类型判断。 */
+        var invalidUnnamedFile = !lower && file.type.indexOf('wordprocessingml') === -1;
+        if (invalidNamedFile || invalidUnnamedFile) {
           return Promise.reject(new Error('not-docx'));
         }
         return file.arrayBuffer().then(function (buf) {

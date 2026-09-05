@@ -29,7 +29,7 @@ const ar: SiteLangDict = {
 	tool_compare_two_word_documents_for_differences_faq_a3:
 		'إن فشل الاستخراج فغالباً الملف محمي بكلمة مرور أو تالف أو ليس OOXML. الصفحات ذات الصور فقط تعطي نصاً فارغاً.',
 	tool_compare_two_word_documents_for_differences_faq_a4:
-		'يبحث بعضهم عن مقارنة وورد عبر الإنترنت: نفس المهمة إن كان المقصود ملفين .docx. إن كان المقصود PDF فهذه الصفحة ليست لذلك.',
+		"تقبل المقارنة ملفي .docx وتفحص النص المستخرج. لا تُحلل ملفات PDF أو .doc القديمة، ولا تشمل النتيجة التنسيق أو سجل مراجعات وورد.",
 	tool_compare_two_word_documents_for_differences_faq_q1: 'هل تُرفع ملفات وورد الخاصة بي؟',
 	tool_compare_two_word_documents_for_differences_faq_q2: 'هل هذا مطابق لـ «مراجعة ← مقارنة» في وورد؟',
 	tool_compare_two_word_documents_for_differences_faq_q3: 'لماذا يفشل الاستخراج أو تختفي الرؤوس؟',
@@ -39,7 +39,7 @@ const ar: SiteLangDict = {
 	tool_compare_two_word_documents_for_differences_how_item_1: 'اختر أول .docx (الأصل).',
 	tool_compare_two_word_documents_for_differences_how_item_2: 'اختر ثاني .docx (المعدَّل).',
 	tool_compare_two_word_documents_for_differences_how_item_3:
-		'المقارنة تستخرج النص الظاهر تلقائياً؛ تحميل المثال سبق أن عمل عند أول عرض.',
+		"اضغط «قارن» لاستخراج النص الظاهر وتشغيل مقارنة الصياغة.",
 	tool_compare_two_word_documents_for_differences_how_item_4: 'اقرأ الأخضر للإضافة والأحمر للحذف.',
 	tool_compare_two_word_documents_for_differences_how_title: 'طريقة الاستخدام',
 	tool_compare_two_word_documents_for_differences_label_a: 'مستند وورد الأول',

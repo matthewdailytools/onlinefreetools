@@ -7,10 +7,10 @@ import type { SiteLangDict } from '../../../types';
 const ar: SiteLangDict = {
 	tool_sitemap_home_title: 'مولّد خريطة الموقع XML',
 	tool_sitemap_home_desc:
-		'ساعد جوجل على اكتشاف صفحاتك وفهرستها بشكل أسرع — حوّل قائمة عناوين URL إلى sitemap.xml صالحة مع lastmod وchangefreq وpriority، داخل المتصفح دون رفع أي شيء.',
+		'ساعد جوجل على اكتشاف الصفحات التي لا تصل إليها روابطك الداخلية — حوّل قائمة عناوين URL إلى sitemap.xml صالحة مع lastmod وchangefreq وpriority، داخل المتصفح دون رفع أي شيء.',
 	tool_sitemap_title: 'مولّد خريطة الموقع XML — أنشئ sitemap.xml من الروابط',
 	tool_sitemap_description:
-		'خريطة الموقع تساعد Google على الاكتشاف والفهرسة أسرع. الصق روابط https، عاين sitemap.xml صالحًا وانسخه للجذر. مثال: 3 روابط → 3 إدخالات.',
+		'خريطة الموقع تخبر جوجل بالروابط الموجودة لديك، خصوصًا ما تخفيه الروابط الداخلية الضعيفة. الصق روابط https، عاين sitemap.xml صالحًا وانسخه إلى الجذر. مثال: 3 روابط → 3 إدخالات.',
 	tool_sitemap_generate: 'توليد',
 	tool_sitemap_sample: 'مثال',
 	tool_sitemap_clear: 'مسح',
@@ -39,7 +39,7 @@ const ar: SiteLangDict = {
 		'إدخال نموذجي: https://example.com/ وhttps://example.com/products مع lastmod 2026-08-01، بالإضافة إلى https://example.com/about — المخرجات urlset بثلاثة عناصر url، والوسط منها يحمل lastmod.',
 	tool_sitemap_usecases_title: 'حالات مناسبة',
 	tool_sitemap_usecase_1: 'مواقع جديدة: أنشئ أول sitemap.xml من قائمتك وأرسله في Search Console.',
-	tool_sitemap_usecase_2: 'محتوى محدّث: أضف lastmod للصفحات التي تغيّرت مؤخرًا ليلتقط الزاحف إشارة الحداثة.',
+	tool_sitemap_usecase_2: 'محتوى محدّث: أضف lastmod للصفحات التي تغيّرت فعلًا. لا تعتمد جوجل هذا الحقل إلا إذا كان التاريخ دقيقًا ومتسقًا في الملف كله، فوضع تاريخ اليوم لكل الروابط يجعلها تتجاهله تمامًا.',
 	tool_sitemap_usecase_3: 'الاكتشاف: أشر من robots.txt إلى عنوان sitemap ليجدها الزاحف دون انتظار الإرسال.',
 	tool_sitemap_faq_q1: 'ما حد عدد الروابط في خريطة موقع واحدة؟',
 	tool_sitemap_faq_a1: '50,000 رابط أو 50MB (قبل الضغط). يحذرك المولّد عندما تتجاوز القائمة 50,000 لتقسيمها واستخدام sitemap index يضم كل جزء.',

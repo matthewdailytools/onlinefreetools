@@ -57,7 +57,7 @@ const ja: SiteLangDict = {
   tool_jwt_decoder_rules_item_1:
     '構造：署名付き JWT（JWS コンパクト形式）は Base64url の 3 セグメント — Header（alg, typ）、Payload（claims）、Signature（バイナリ、JSON ではない）。',
   tool_jwt_decoder_rules_item_2:
-    'Base64url：-→+、_→/、長さ %4 になるよう padding を補い、atob と JSON.parse。エラーは Header か Payload を明示。',
+    'Base64url：-→+、_→/、長さ %4 になるよう padding を補い、atob で得たバイト列を UTF-8 として復元してから JSON.parse。日本語やアクセント付きのクレームも文字化けしません。エラーは Header か Payload を明示。',
   tool_jwt_decoder_rules_item_3:
     '登録クレーム：exp（失効）、iat（発行）、nbf（有効開始）は UTC の Unix 秒。JSON が読めても token が信頼できるとは限りません。',
   tool_jwt_decoder_rules_item_4:

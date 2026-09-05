@@ -7,10 +7,10 @@ import type { SiteLangDict } from '../../../types';
 const pt: SiteLangDict = {
 	tool_sitemap_home_title: 'Gerador de sitemap XML',
 	tool_sitemap_home_desc:
-		'Ajude o Google a descobrir e indexar cada página que você quer rankear: transforme uma lista de URLs em um sitemap.xml válido com lastmod, changefreq e priority, direto no navegador.',
+		'Ajude o Google a descobrir as páginas que seus links internos não alcançam: transforme uma lista de URLs em um sitemap.xml válido com lastmod, changefreq e priority, direto no navegador.',
 	tool_sitemap_title: 'Gerador de sitemap XML — crie sitemap.xml a partir de URLs',
 	tool_sitemap_description:
-		'O sitemap ajuda o Google a descobrir e indexar mais rápido. Cole URLs https, visualize sitemap.xml válido e copie para a raiz. Exemplo: 3 URLs → 3 entradas.',
+		'O sitemap diz ao Google quais URLs existem, sobretudo as que o link interno fraco esconde. Cole URLs https, veja o sitemap.xml válido e copie para a raiz. Exemplo: 3 URLs → 3 entradas.',
 	tool_sitemap_generate: 'Gerar',
 	tool_sitemap_sample: 'Exemplo',
 	tool_sitemap_clear: 'Limpar',
@@ -45,7 +45,7 @@ const pt: SiteLangDict = {
 	tool_sitemap_usecase_1:
 		'Sites novos: gere seu primeiro sitemap.xml a partir da lista de URLs e envie no Search Console.',
 	tool_sitemap_usecase_2:
-		'Conteúdo atualizado: adicione lastmod a páginas recém-mudadas para o rastreador captar o sinal de frescor.',
+		'Conteúdo atualizado: coloque lastmod só nas páginas que mudaram de fato. O Google usa lastmod apenas quando ele é consistente e verdadeiro no arquivo inteiro, então carimbar a data de hoje em toda URL faz o campo ser ignorado.',
 	tool_sitemap_usecase_3:
 		'Descoberta: aponte o robots.txt para o sitemap e os rastreadores o encontram sem esperar o envio.',
 	tool_sitemap_faq_q1: 'Qual é o limite de URLs de um sitemap?',

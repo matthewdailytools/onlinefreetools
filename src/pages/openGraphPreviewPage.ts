@@ -204,11 +204,11 @@ export const renderOpenGraphPreviewPage = (opts: {
       /** 字段表定义：必填/可选 + 各字段展示名。 */
       var FIELD_DEFS = [
         { key: 'og:title', required: true, label: ${JSON.stringify(t(opts.lang, 'tool_og_field_og_title'))} },
-        { key: 'og:description', required: true, label: ${JSON.stringify(t(opts.lang, 'tool_og_field_og_description'))} },
+        { key: 'og:description', required: false, label: ${JSON.stringify(t(opts.lang, 'tool_og_field_og_description'))} },
         { key: 'og:image', required: true, label: ${JSON.stringify(t(opts.lang, 'tool_og_field_og_image'))} },
-        { key: 'og:url', required: false, label: ${JSON.stringify(t(opts.lang, 'tool_og_field_og_url'))} },
+        { key: 'og:url', required: true, label: ${JSON.stringify(t(opts.lang, 'tool_og_field_og_url'))} },
         { key: 'og:site_name', required: false, label: ${JSON.stringify(t(opts.lang, 'tool_og_field_og_site_name'))} },
-        { key: 'og:type', required: false, label: ${JSON.stringify(t(opts.lang, 'tool_og_field_og_type'))} },
+        { key: 'og:type', required: true, label: ${JSON.stringify(t(opts.lang, 'tool_og_field_og_type'))} },
         { key: 'twitter:card', required: false, label: ${JSON.stringify(t(opts.lang, 'tool_og_field_twitter_card'))} },
         { key: 'twitter:title', required: false, label: ${JSON.stringify(t(opts.lang, 'tool_og_field_twitter_title'))} },
         { key: 'twitter:description', required: false, label: ${JSON.stringify(t(opts.lang, 'tool_og_field_twitter_description'))} },

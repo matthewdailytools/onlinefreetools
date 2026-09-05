@@ -29,7 +29,7 @@ const de: SiteLangDict = {
 	tool_compare_two_word_documents_for_differences_faq_a3:
 		'Scheitert die Extraktion, ist die Datei oft passwortgeschützt, beschädigt oder kein OOXML. Nur-Bild-Seiten liefern leeren Text.',
 	tool_compare_two_word_documents_for_differences_faq_a4:
-		'Manche suchen „Word online vergleichen“ — dieselbe Aufgabe bei zwei .docx. Meinte „zwei Dokumente vergleichen“ ein PDF, ist das nicht diese Seite.',
+		"Verglichen wird der extrahierte Wortlaut aus zwei .docx. PDF und ältere .doc werden nicht geparst; Formatierung und Word-Überarbeitungshistorie gehören nicht zum Ergebnis.",
 	tool_compare_two_word_documents_for_differences_faq_q1: 'Werden meine Word-Dateien hochgeladen?',
 	tool_compare_two_word_documents_for_differences_faq_q2: 'Ist das dasselbe wie Überprüfen → Vergleichen in Word?',
 	tool_compare_two_word_documents_for_differences_faq_q3: 'Warum schlägt die Extraktion fehl oder fehlen Kopfzeilen?',
@@ -39,7 +39,7 @@ const de: SiteLangDict = {
 	tool_compare_two_word_documents_for_differences_how_item_1: 'Erste .docx wählen (Original).',
 	tool_compare_two_word_documents_for_differences_how_item_2: 'Zweite .docx wählen (überarbeitet).',
 	tool_compare_two_word_documents_for_differences_how_item_3:
-		'Vergleichen zieht sichtbaren Text automatisch; Beispiel laden lief schon beim ersten Anzeigen.',
+		"Klicken Sie auf Vergleichen, um den sichtbaren Text zu extrahieren und den Wortlaut zu vergleichen.",
 	tool_compare_two_word_documents_for_differences_how_item_4: 'Grün sind Ergänzungen, rot Streichungen.',
 	tool_compare_two_word_documents_for_differences_how_title: 'So gehen Sie vor',
 	tool_compare_two_word_documents_for_differences_label_a: 'Erstes Word-Dokument',

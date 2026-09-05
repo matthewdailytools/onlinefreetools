@@ -59,12 +59,12 @@ const en: SiteLangDict = {
 		'No twitter:card set — platforms infer a summary card from the og: tags.',
 	tool_og_how_title: 'How it works',
 	tool_og_how_body:
-		'The preview parses the og:/twitter: tags you paste (or extracts them from the HTML fetched for a URL) and renders three share cards. Facebook uses the 1.91:1 image on the left with title, description and domain below. X follows twitter:card: summary_large_image shows a big image on top, summary shows a small one beside the text. Messaging apps such as WhatsApp show one large card. A field table marks og:title, og:description and og:image as required and lists optional fields.',
+		'The preview parses the og:/twitter: tags you paste (or extracts them from the HTML fetched for a URL) and renders three share cards. Facebook uses the 1.91:1 image on the left with title, description and domain below. X follows twitter:card: summary_large_image shows a big image on top, summary shows a small one beside the text. Messaging apps such as WhatsApp show one large card. A field table marks the four protocol-required fields and lists the optional ones.',
 	tool_og_rules_title: 'Rules used by the preview',
 	tool_og_rules_body:
 		'These are the image sizes and fallbacks the platforms use, based on the Open Graph protocol and the X Cards docs.',
 	tool_og_rules_item_1:
-		'Required fields: og:title, og:description and og:image. Missing ones are marked so you can fix them before publishing.',
+		'Required by the Open Graph protocol: og:title, og:type, og:image and og:url. og:description is optional in the spec, but every major platform renders it — omit it and the platform writes its own summary from page text.',
 	tool_og_rules_item_2:
 		'og:image at 1200×630 px (1.91:1) works on all major platforms. Facebook now also accepts 2:1 and 1:1 crops; smaller images are often compressed.',
 	tool_og_rules_item_3:
@@ -85,7 +85,7 @@ const en: SiteLangDict = {
 		'After a CMS or theme update, fetch the live URL and verify that the og: tags still match the page.',
 	tool_og_faq_q1: 'What happens if a page has no Open Graph tags?',
 	tool_og_faq_a1:
-		'Facebook, X and WhatsApp build the preview from the HTML title, meta description and the first image of the page. The card can be incomplete or show the wrong image, which is why the required og: fields exist.',
+		'Facebook, X and WhatsApp fall back to the HTML title, meta description and an image found on the page. Fallbacks differ per platform and change over time, so the card may be incomplete or pick the wrong image — that is why the og: fields exist.',
 	tool_og_faq_q2: 'How large should og:image be?',
 	tool_og_faq_a2:
 		'The safe size is 1200×630 px, a 1.91:1 ratio that all major platforms accept. Facebook now also supports 2:1 and 1:1 crops. Very small images are often upscaled and look blurry.',

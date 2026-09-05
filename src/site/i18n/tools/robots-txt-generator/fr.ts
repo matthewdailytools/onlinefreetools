@@ -34,15 +34,15 @@ const fr: SiteLangDict = {
 		'Sélectionnez les robots ciblés, ajoutez des chemins Allow et Disallow pour chaque groupe, éventuellement une ligne Sitemap, puis cliquez sur Générer. La page assemble le fichier en texte brut selon le format RFC 9309 : une ligne User-agent par groupe, ses lignes Allow/Disallow dessous, une ligne vide entre les groupes et la ligne Sitemap à la fin. Copiez le résultat à la racine de votre site dans /robots.txt.',
 	tool_robots_rules_title: 'Règles de syntaxe importantes',
 	tool_robots_rules_body:
-		'Les règles de robots.txt sont des préfixes de chemin, pas des motifs, et un robot applique le dernier groupe qui lui correspond dans le fichier. Voici les règles suivies par ce générateur.',
+		'Les règles de robots.txt sont des préfixes de chemin, pas des motifs, et un robot n’applique qu’un seul groupe : celui dont le User-agent le désigne le plus précisément. Voici les règles suivies par ce générateur.',
 	tool_robots_rules_item_1:
-		'Ordre des groupes : une ligne User-agent commence un groupe pour ce robot ; une ligne vide le termine. Le dernier groupe correspondant à un robot prime.',
+		'Choix du groupe : un robot obéit au groupe dont le User-agent lui correspond le plus précisément — son propre nom l’emporte sur *, et l’ordre dans le fichier ne tranche rien. Plusieurs lignes User-agent portant le même robot sont fusionnées en un seul groupe (RFC 9309).',
 	tool_robots_rules_item_2:
 		'Correspondance par préfixe : Allow et Disallow correspondent à des préfixes de chemin, pas à des sous-chaînes ni des regex. Seuls * et $ sont spéciaux (RFC 9309).',
 	tool_robots_rules_item_3:
-		'Disallow: / bloque cet agent sur tout le site. Disallow avec une valeur vide autorise tout pour cet agent.',
+		'Priorité des règles dans un groupe : le chemin correspondant le plus long l’emporte, et à longueur égale entre un Allow et un Disallow, c’est Allow qui gagne. Ainsi Disallow: /admin/ avec Allow: /admin/public/ laisse le sous-dossier public explorable.',
 	tool_robots_rules_item_4:
-		'Sitemap est une extension, pas une partie de RFC 9309. Elle est insensible à la casse et peut apparaître n’importe où, même si elle est en général placée à la fin.',
+		'Site entier et ligne Sitemap : Disallow: / bloque cet agent sur toutes les URL, tandis qu’un Disallow à valeur vide autorise tout. Sitemap: est une extension hors RFC 9309, insensible à la casse et acceptée n’importe où — ce générateur la place en dernier.',
 	tool_robots_example_title: 'Exemple',
 	tool_robots_example:
 		'Exemple : Googlebot avec Allow: / (entièrement actif), GPTBot avec Disallow: / (bloqué) et une ligne Sitemap pointant vers /sitemap.xml. La sortie reflète ce format : un groupe par robot, ligne vide entre les groupes, sitemap en dernier.',
@@ -50,12 +50,12 @@ const fr: SiteLangDict = {
 	tool_robots_usecase_1:
 		'Sites neufs : générez un robots.txt de départ qui garde les moteurs actifs et masque des chemins de staging privés.',
 	tool_robots_usecase_2:
-		'Contrôle des robots d’IA : bloquez GPTBot, ClaudeBot, Google-Extended, CCBot ou PerplexityBot pour l’entraînement ou l’extraction de résumés sans toucher à Googlebot.',
+		'Contrôle des robots d’IA : donnez à GPTBot, ClaudeBot, Google-Extended, CCBot ou PerplexityBot leur propre groupe Disallow pendant que Googlebot continue d’explorer. Google-Extended couvre Gemini et l’ancrage Vertex AI ; les AI Overviews de la recherche passent toujours par Googlebot.',
 	tool_robots_usecase_3:
 		'Découverte : associez robots.txt à une ligne Sitemap pour que les robots trouvent votre sitemap.',
 	tool_robots_faq_q1: 'Que se passe-t-il si j’écris Disallow: / ?',
 	tool_robots_faq_a1:
-		'Cela dit à ce robot de ne récupérer aucune URL sous la racine du site. Si Googlebot reçoit Disallow: /, vos pages peuvent disparaître de la recherche Google. Pour un chemin de staging, utilisez plutôt Disallow: /private/.',
+		'Cela dit à ce robot de ne récupérer aucune URL sous la racine du site. Si Googlebot reçoit Disallow: /, vos pages peuvent disparaître de la recherche Google. Disallow bloque l’exploration, pas l’indexation : une URL bloquée mais citée par des liens externes peut encore être listée, sans extrait. Pour la faire vraiment disparaître, laissez la page explorable et ajoutez-y noindex. Pour un chemin de staging, utilisez plutôt Disallow: /private/.',
 	tool_robots_faq_q2: 'Comment bloquer les robots d’IA comme GPTBot ?',
 	tool_robots_faq_a2:
 		'Créez un groupe avec le User-agent du robot (par exemple GPTBot, ClaudeBot, Google-Extended, CCBot, PerplexityBot) et ajoutez Disallow: /. Consultez la documentation officielle du robot, car les robots d’IA mettent régulièrement à jour leurs user-agents et plages IP.',

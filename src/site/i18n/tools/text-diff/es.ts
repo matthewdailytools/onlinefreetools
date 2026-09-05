@@ -10,7 +10,7 @@ const es: SiteLangDict = {
   tool_text_diff_desc:
     'Comprueba las diferencias entre dos textos pegando ambos lados en el navegador, sin subir nada.',
   tool_text_diff_description:
-    'Comprobar diferencias entre dos textos en el navegador. Proceso: pega original y revisión (también se busca como comparar textos online o diff checker), elige línea, palabra o carácter, ignora espacios o iguala CRLF y LF, y marca añadidos y borrados. Los archivos se quedan en tu dispositivo y no se suben. Ejemplo: cambia "hola mundo" por "hola amigo" — en modo palabra verás un solo cambio. Esta página es solo pegar texto; Word, Excel y JSON tienen otras páginas.',
+    'Comprobar diferencias entre dos textos en el navegador. Proceso: pega original y revisión, elige línea, palabra o carácter, en línea o palabra, ignora espacios o iguala CRLF y LF, y marca añadidos y borrados. Los archivos se quedan en tu dispositivo y no se suben. Ejemplo: cambia "hola mundo" por "hola amigo" — en modo palabra verás un solo cambio. Acepta texto pegado, no archivos Word, Excel ni JSON estructurado.',
   tool_text_diff_title: 'Comprobar diferencias entre dos textos',
   tool_text_diff_empty_hint: 'Pega texto en uno o ambos lados y pulsa Comparar.',
   tool_text_diff_example:
@@ -24,14 +24,19 @@ const es: SiteLangDict = {
   tool_text_diff_faq_a4:
     'No. Esta página es solo texto pegado: ni imágenes, ZIP, Word, Excel ni JSON estructurado. Para abrir .txt, .docx o hojas, usa la página de ese formato.',
   tool_text_diff_faq_a5:
-    'Sí: mucha gente busca comparar textos online o diff checker. Aquí se hace pegando dos textos. El titular usa la frase más concreta «comprobar diferencias entre dos textos».',
+    "No. El modo carácter compara cada carácter y desactiva esa opción. Usa líneas o palabras si quieres omitir cambios que solo afectan a espacios.",
   tool_text_diff_faq_q1: '¿Comparar por línea o por palabra?',
   tool_text_diff_faq_q2: '¿Se sube mi texto a un servidor?',
   tool_text_diff_faq_q3: '¿Por qué un cambio de salto de línea pone toda la línea en rojo?',
   tool_text_diff_faq_q4: '¿Puedo comparar imágenes, Word o archivos binarios?',
-  tool_text_diff_faq_q5: '¿Es lo mismo que un diff checker online?',
+  tool_text_diff_faq_q5: "¿Ignorar espacios funciona al comparar caracteres?",
   tool_text_diff_how_body:
-    'Pega dos versiones, elige si quieres ver cambios por línea, palabra o carácter, y revisa en verde lo añadido y en rojo lo borrado. Tu texto pegado no se sube ni se guarda en nuestros servidores. La página puede cargar la librería open-source jsdiff desde un CDN para poder comparar en el navegador.',
+    "Pega el texto original a la izquierda y la revisión a la derecha, elige líneas, palabras o caracteres y revisa las adiciones verdes y eliminaciones rojas. El texto permanece en tu dispositivo y no se sube al servidor.",
+  tool_text_diff_load_sample: "Cargar ejemplo",
+  tool_text_diff_how_item_1: "Pega el texto original a la izquierda.",
+  tool_text_diff_how_item_2: "Pega la versión revisada a la derecha.",
+  tool_text_diff_how_item_3: "Elige líneas, palabras o caracteres y ajusta las opciones de espacios y saltos cuando estén disponibles.",
+  tool_text_diff_how_item_4: "Pulsa Comparar y revisa las adiciones y eliminaciones resaltadas.",
   tool_text_diff_how_title: 'Cómo usarlo',
   tool_text_diff_ignore_ws: 'Ignorar espacios',
   tool_text_diff_label_a: 'Texto original',
@@ -49,16 +54,16 @@ const es: SiteLangDict = {
   tool_text_diff_placeholder_b: 'Pega el texto revisado…',
   tool_text_diff_result_label: 'Diferencias',
   tool_text_diff_rules_body:
-    'La herramienta busca una lista corta de ediciones para pasar del texto A al B (diff clásico / estilo Myers con jsdiff). Modo línea: configs y código. Modo palabra: frases y prompts. Modo carácter: erratas finas, pero más ruido. Ignorar espacios oculta cambios solo de sangría. Igualar CRLF y LF evita que toda una línea se ponga roja solo por el tipo de salto.',
+    "El modo elegido determina qué cuenta como un cambio. En caracteres se desactiva Ignorar espacios porque esa opción solo funciona por líneas o palabras.",
   tool_text_diff_rules_intro:
     'La herramienta busca una lista corta de ediciones para pasar del texto A al B (diff clásico / estilo Myers con jsdiff). Elige el modo según la tarea:',
-  tool_text_diff_rules_item_chars: 'Carácter — ideal para erratas finas; más preciso, pero ruidoso en ediciones largas.',
-  tool_text_diff_rules_item_lines:
+  tool_text_diff_rules_item_3: 'Carácter — ideal para erratas finas; más preciso, pero ruidoso en ediciones largas.',
+  tool_text_diff_rules_item_1:
     'Línea — ideal para .env, YAML y código; una línea cambiada se marca entera. Rápido de leer, pero un solo cambio de palabra también enrojece toda la línea.',
-  tool_text_diff_rules_item_words:
+  tool_text_diff_rules_item_2:
     'Palabra — ideal para frases, correos y prompts; resalta palabras sueltas. Más claro en prosa; la puntuación puede fragmentar el resultado.',
-  tool_text_diff_rules_options:
-    'Ignorar espacios oculta cambios solo de sangría. Igualar CRLF y LF evita que toda una línea se ponga roja solo por el tipo de salto (Windows vs Unix).',
+  tool_text_diff_rules_item_4:
+    "Ignorar espacios solo se aplica a líneas y palabras. Igualar CRLF y LF normaliza los saltos de Windows y Unix en todos los modos.",
   tool_text_diff_rules_title: 'Cómo se calculan las diferencias',
   tool_text_diff_sample_a: 'Hola mundo\nsegunda línea\ntercera línea',
   tool_text_diff_sample_b: 'Hola amigo\nsegunda línea\ntercera línea',

@@ -16,7 +16,7 @@ const es: SiteLangDict = {
 	tool_excel_compare_files_desc:
 		'Comparar archivos de Excel: elige dos tablas, compara la hoja actual celda a celda; se quedan en el dispositivo, sin subir al servidor.',
 	tool_excel_compare_files_description:
-		'Comparar archivos de Excel en el navegador. Proceso: elige dos xlsx o csv, selecciona la hoja actual (la primera por defecto) y lista las celdas con valor distinto. Los archivos no salen del dispositivo y no se suben al servidor. Ejemplo: dos tablas de 3 filas donde B3 pasa de 2 a 9. “Online” describe cómo corre, no el título. Un desplazamiento de columnas se compara por dirección, no por nombre de encabezado.',
+		'Comparar archivos de Excel en el navegador. Proceso: elige dos xlsx o csv, selecciona la hoja actual (la primera por defecto) y lista las celdas con valor distinto. Los archivos no salen del dispositivo y no se suben al servidor. Ejemplo: dos tablas de 3 filas donde B3 pasa de 2 a 9. Un desplazamiento de columnas se compara por dirección, no por nombre de encabezado.',
 	tool_excel_compare_files_empty: 'Primero elige dos archivos de hoja, o carga el ejemplo.',
 	tool_excel_compare_files_err_read:
 		'No se pudo leer la hoja. Prueba xlsx o csv y desprotege el libro si hace falta.',
@@ -28,9 +28,11 @@ const es: SiteLangDict = {
 	tool_excel_compare_files_faq_a2:
 		'Sí: la primera hoja queda seleccionada por defecto. Usa las listas si necesitas otra pestaña del mismo archivo. El resto no se compara hasta que las elijas.',
 	tool_excel_compare_files_faq_a3:
-		'Sí. El CSV se lee como una sola hoja. Quien busca comparar dos csv usa esta misma página, sin otra URL.',
+		"Sí. El CSV se lee como una sola hoja, de modo que puedes comparar dos CSV o un CSV exportado con una hoja de Excel por dirección de celda.",
 	tool_excel_compare_files_faq_a4:
 		'Celdas ausentes y vacías se tratan como cadena vacía. Una columna desplazada sigue alineando A1 con A1, no “la columna Name” por encabezado, para no emparejar mal si se mueve el título.',
+	tool_excel_compare_files_faq_q5: "¿Compara fórmulas y formato o solo valores mostrados?",
+	tool_excel_compare_files_faq_a5: "Compara el texto mostrado que se lee de cada celda. No contrasta por separado fórmulas, estilos, comentarios, anchos de columna ni la estructura del libro; una fórmula distinta con el mismo valor guardado puede parecer igual.",
 	tool_excel_compare_files_faq_q1: '¿Se suben mis archivos de Excel?',
 	tool_excel_compare_files_faq_q2: '¿Solo compara la primera hoja?',
 	tool_excel_compare_files_faq_q3: '¿Puedo comparar dos CSV aquí?',
@@ -39,7 +41,7 @@ const es: SiteLangDict = {
 	tool_excel_compare_files_how_item_1: 'Elige el primer archivo (xlsx, xls o csv).',
 	tool_excel_compare_files_how_item_2: 'Elige el segundo archivo.',
 	tool_excel_compare_files_how_item_3: 'Deja la primera hoja salvo que necesites otra pestaña.',
-	tool_excel_compare_files_how_item_4: 'Comparar lista celdas distintas; Cargar ejemplo ya se ejecutó al abrir.',
+	tool_excel_compare_files_how_item_4: "Pulsa Comparar para listar las celdas cuyo texto mostrado difiere entre las hojas elegidas.",
 	tool_excel_compare_files_how_title: 'Cómo usarlo',
 	tool_excel_compare_files_label_a: 'Primera hoja de cálculo',
 	tool_excel_compare_files_label_b: 'Segunda hoja de cálculo',

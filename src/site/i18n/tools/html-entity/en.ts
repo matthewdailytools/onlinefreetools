@@ -56,7 +56,7 @@ const en: SiteLangDict = {
   tool_html_entity_rules_item_2:
     'Named (&copy;), decimal (&#169;), and hex (&#xA9;) forms decode to the same character. When encoding with “Named when available”, common symbols use names; others fall back to numeric entities.',
   tool_html_entity_rules_item_3:
-    'Double encoding happens if you encode already-escaped text — & becomes &amp;amp;. Use Decode → “Until stable” once if you suspect double escaping. Attribute values in real HTML may also need quotes escaped even when text nodes do not.',
+    'Double encoding happens if you encode already-escaped text — & becomes &amp;amp;. Use Decode → “Until stable” once if you suspect double escaping; raw < and > in your input are kept literally across passes instead of being read as markup. Attribute values in real HTML may also need quotes escaped even when text nodes do not.',
   tool_html_entity_rules_item_4:
     'Privacy: your paste is not uploaded. This tool uses zero external libraries — conversion stays entirely in the browser.',
   tool_html_entity_rules_title: 'Rules you should expect',

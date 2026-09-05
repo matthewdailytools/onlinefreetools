@@ -1,82 +1,86 @@
 /**
  * i18n tool shard (short-drama-prompt-generator / pt).
- * 检索向独立重写；title 含「本地 + 可选 AI」；description 含本地默认与 Cloudflare AI Expand/Polish + Turnstile。
+ * Reescrito para quem procura «gerador de prompt para microdrama vertical» ou «gancho por episódio com IA»:
+ * o termo principal fica no H1; «gancho de virada», «formato 9:16 com legenda queimada» e «exportar em JSON»
+ * entram na descrição, nas perguntas frequentes e nos casos de uso.
+ * Limites reais: o prompt é montado no navegador; só Ampliar/Refinar manda o rascunho para a Cloudflare Workers AI
+ * (Turnstile e cota). Aqui não se gera vídeo.
  */
 import type { SiteLangDict } from '../../../types';
 
 const pt: SiteLangDict = {
 	tool_short_drama_prompt_generator_article:
-		'Gerador de prompts de drama curto — Local + IA opcional para ChatGPT, Gemini, Claude e DeepSeek: monta prompts localmente por padrão e opcionalmente Expand/Polish via Cloudflare Workers AI (Turnstile obrigatório, com limite). O exemplo roda ao abrir. Markdown padrão; JSON para pipelines. Texto fica no dispositivo salvo se usar IA.',
+		'Diga quantos episódios e com que duração, o gancho de abertura, a virada que fecha cada episódio, o formato vertical e o gênero: a página organiza tudo no navegador e devolve um prompt pronto para entregar ao modelo, em Markdown ou JSON, que você cola no ChatGPT, Gemini, Claude ou DeepSeek para escrever episódio a episódio. Por padrão nada é enviado; o rascunho só vai para a Cloudflare Workers AI se você clicar em Ampliar ou Refinar, depois do Turnstile. Aqui só sai texto, não vídeo.',
 	tool_short_drama_prompt_generator_build:
-		'Criar prompt',
+		'Gerar prompt',
 	tool_short_drama_prompt_generator_clear:
 		'Limpar',
 	tool_short_drama_prompt_generator_copy:
 		'Copiar',
 	tool_short_drama_prompt_generator_desc:
-		'Gerador de prompts de drama curto — local por defecto + Expand/Polish opcional Cloudflare AI (Turnstile); Markdown/JSON en el dispositivo.',
+		'Gerador de prompt para microdrama vertical: episódios, gancho, virada e formato 9:16 organizados em Markdown ou JSON no navegador; IA da Cloudflare opcional com Turnstile.',
 	tool_short_drama_prompt_generator_description:
-		'Processo e exemplo: Gerador de prompts de drama curto — Local + IA opcional para ChatGPT, Gemini, Claude y DeepSeek: ensambla prompts localmente por defecto y opcionalmente Expand/Polish con Cloudflare Workers AI (Turnstile obligatorio, límite de uso). Ejemplo al abrir. Markdown por defecto; JSON para pipelines. Texto en el dispositivo salvo que uses IA.',
+		'Gerador de prompt para microdrama vertical: você preenche quantidade e duração dos episódios, o gancho dos dois primeiros segundos, a virada que encerra cada episódio, o formato vertical e o gênero, e a página distribui isso nos blocos Role, Task, Constraints e Output para que ChatGPT, Gemini, Claude ou DeepSeek escrevam no ritmo de capítulos. Markdown por padrão e JSON para a sua planilha de episódios; ao abrir já rodou o exemplo de 12 × 75 s com um segredo de trabalho. Se um gancho ficar fraco, Ampliar ou Refinar manda o rascunho para a Cloudflare Workers AI (Turnstile e cota).',
 	tool_short_drama_prompt_generator_download:
 		'Baixar',
 	tool_short_drama_prompt_generator_empty:
-		'Preencha pelo menos um campo antes de criar.',
+		'Preencha pelo menos um campo antes de gerar o prompt.',
 	tool_short_drama_prompt_generator_example:
-		'Entrada: 12 × 75s; Hook = vazamento payroll + CEO reconhece voz; Cliffhanger = ep.6 apaga áudio; Format = 9:16. Saída (Markdown): ## Task → Episodes / Hook / Cliffhanger / Vertical / Genre.',
+		'Entrada: episódios = 12 × 75 s; gancho = uma estagiária expõe um vazamento da folha de pagamento e o chefe reconhece a voz dela num recado de dez anos atrás sobre uma guarda; virada = o episódio 6 fecha com o chefe apagando o recado no meio da escuta e o 7 abre com um encarada muda no elevador; formato = 9:16 com legenda queimada e abertura que segura o dedo nos dois primeiros segundos. Saída (Markdown): o bloco ## Task lista Episodes, Hook, Cliffhanger, Vertical / Format e Genre para uma série vertical.',
 	tool_short_drama_prompt_generator_example_title:
 		'Exemplo',
 	tool_short_drama_prompt_generator_faq_a1:
-		'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
+		'O texto é organizado nesta aba do navegador, então por padrão nada sai daqui. Só quando você clica em Ampliar ou Refinar o rascunho atual é enviado para a Cloudflare Workers AI; não repassamos esse texto dos nossos servidores para OpenAI, Google, Anthropic ou DeepSeek.',
 	tool_short_drama_prompt_generator_faq_a2:
-		'Modo local solo formatea aquí. Expand/Polish opcional usa Cloudflare Workers AI tras Turnstile — no llama APIs de chat.',
+		'No modo local nenhum modelo é chamado: episódios, gancho, virada, formato e gênero só são distribuídos nos blocos Role, Task, Constraints e Output. Ampliar e Refinar usam a Cloudflare Workers AI depois do Turnstile e não acionam as APIs do ChatGPT, Gemini, Claude ou DeepSeek pelos nossos servidores.',
 	tool_short_drama_prompt_generator_faq_a3:
-		'Gerador de prompts de drama curto covers generic Role/Task/Constraints/Output templates. This page focuses on short drama prompt generator fields with a dedicated sample and rules for this scenario.',
+		'O gerador de modelos de prompt entrega a estrutura genérica de quatro blocos, para qualquer tema. Aqui os campos são de série vertical — episódios e duração, gancho, virada, formato e gênero —, com um exemplo completo na abertura e regras voltadas ao que costuma falhar no consumo por capítulos.',
 	tool_short_drama_prompt_generator_faq_a4:
-		'Sí. Completa Turnstile en el panel de IA antes de Expand o Polish.',
+		'O Turnstile segura os scripts automáticos para que a cota gratuita fique com quem é gente. Resolva o desafio no painel de IA antes de clicar em Ampliar ou Refinar; sem um token válido esses botões dão erro e a montagem no navegador continua funcionando.',
 	tool_short_drama_prompt_generator_faq_a5:
-		'Yes. The JSON chip emits structured fields plus assembled prompt text for tests or config pipelines.',
+		'Sim. Ao trocar para JSON a mesma saída traz os campos estruturados e o prompt já montado — bom para guardar cada episódio numa planilha e conferir se ganchos e viradas estão se repetindo.',
 	tool_short_drama_prompt_generator_faq_a6:
-		'Yes. Copy the finished prompt into ChatGPT, Gemini, Claude, or DeepSeek. We do not split URLs per platform because the job is formatting text, not calling APIs.',
+		'Sim. Copie o resultado e cole no chat que você usa. Esta página só organiza a estrutura por episódios e não chama API nenhuma, por isso não existe um endereço diferente para cada plataforma.',
 	tool_short_drama_prompt_generator_faq_q1:
-		'Is my prompt uploaded?',
+		'A trama que eu escrevo é enviada para algum servidor?',
 	tool_short_drama_prompt_generator_faq_q2:
-		'Does this call ChatGPT or other LLM APIs?',
+		'Esta página chama a API do ChatGPT ou de outros modelos?',
 	tool_short_drama_prompt_generator_faq_q3:
-		'How is this different from Gerador de prompts de drama curto?',
+		'Qual a diferença em relação ao gerador de modelos de prompt?',
 	tool_short_drama_prompt_generator_faq_q4:
-		'¿Por qué Turnstile para IA opcional?',
+		'Por que preciso passar pelo Turnstile para usar a IA?',
 	tool_short_drama_prompt_generator_faq_q5:
-		'Can I get JSON output?',
+		'Consigo a saída em JSON?',
 	tool_short_drama_prompt_generator_faq_q6:
-		'Can I use this with ChatGPT, Gemini, Claude, or DeepSeek?',
+		'Funciona com ChatGPT, Gemini, Claude ou DeepSeek?',
 	tool_short_drama_prompt_generator_faq_q7:
-		'¿Diferencia entre local y Cloudflare AI opcional?',
+		'Qual a diferença entre o modo local e a IA opcional da Cloudflare?',
 	tool_short_drama_prompt_generator_faq_a7:
-		'Local: solo esta pestaña, sin subida. Expand/Polish opcional a Cloudflare Workers AI (Turnstile, límite).',
+		'No modo local tudo é organizado nesta aba, sem sair do navegador. Ampliar ou Refinar manda o rascunho para a Cloudflare Workers AI (precisa de Turnstile e há limite de frequência e de cota diária) e o texto que volta é escrito por inteiro na saída, sobre o rascunho que você estava vendo — leia antes de copiar, para que uma reescrita não troque a sua ordem de viradas. Se der erro ou a cota acabar, siga no modo local.',
 	tool_short_drama_prompt_generator_ai_expand:
-		'Expandir con IA',
+		'Ampliar com IA',
 	tool_short_drama_prompt_generator_ai_polish:
-		'Pulir con IA',
+		'Refinar com IA',
 	tool_short_drama_prompt_generator_ai_panel_label:
-		'Cloudflare AI opcional (Turnstile)',
+		'Opcional: Cloudflare AI (exige Turnstile)',
 	tool_short_drama_prompt_generator_ai_consent_title:
-		'¿Enviar texto a Cloudflare Workers AI?',
+		'Enviar o rascunho para a Cloudflare Workers AI?',
 	tool_short_drama_prompt_generator_ai_consent_body:
-		'Este paso opcional envía tu borrador a Cloudflare Workers AI. No va a OpenAI, Google, Anthropic ni DeepSeek desde nuestros servidores.',
+		'Este passo é opcional: envia o rascunho que está agora nos campos para a Cloudflare Workers AI fazer uma inferência. Não repassamos esse texto dos nossos servidores para OpenAI, Google, Anthropic ou DeepSeek. Sem a IA, o prompt continua sendo montado no seu navegador.',
 	tool_short_drama_prompt_generator_ai_consent_ok:
 		'Continuar',
 	tool_short_drama_prompt_generator_ai_consent_cancel:
 		'Cancelar',
 	tool_short_drama_prompt_generator_ai_working:
-		'Cloudflare AI trabajando…',
+		'A Cloudflare AI está processando…',
 	tool_short_drama_prompt_generator_ai_done:
-		'Sugerencia de IA aplicada. Revisa antes de copiar.',
+		'O texto da IA foi escrito por inteiro na saída. Confira antes de copiar.',
 	tool_short_drama_prompt_generator_ai_err_generic:
-		'La IA falló. Tu prompt local no cambió.',
+		'A IA não respondeu desta vez; a saída ficou como estava.',
 	tool_short_drama_prompt_generator_ai_err_rate:
-		'Cuota de IA agotada. Modo local o prueba mañana (UTC).',
+		'A cota de IA acabou. Continue montando o prompt aqui ou tente amanhã (UTC).',
 	tool_short_drama_prompt_generator_ai_err_turnstile:
-		'Completa Turnstile antes de usar IA.',
+		'Resolva a verificação do Turnstile antes de usar a IA.',
 	tool_short_drama_prompt_generator_fmt_json:
 		'JSON',
 	tool_short_drama_prompt_generator_fmt_label:
@@ -84,81 +88,82 @@ const pt: SiteLangDict = {
 	tool_short_drama_prompt_generator_fmt_md:
 		'Markdown',
 	tool_short_drama_prompt_generator_episodes_label:
-		'Episodes',
+		'Episódios e duração',
 	tool_short_drama_prompt_generator_episodes_ph:
-		'Sample episodes…',
+		'Por exemplo: 12 × 75 s…',
 	tool_short_drama_prompt_generator_hook_label:
-		'Hook',
+		'Gancho de abertura',
 	tool_short_drama_prompt_generator_hook_ph:
-		'Sample hook…',
+		'Por exemplo: estagiária expõe vazamento da folha de pagamento…',
 	tool_short_drama_prompt_generator_cliffhanger_label:
-		'Cliffhanger',
+		'Virada de fim de episódio',
 	tool_short_drama_prompt_generator_cliffhanger_ph:
-		'Sample cliffhanger…',
+		'Por exemplo: episódio 6 fecha apagando o recado…',
 	tool_short_drama_prompt_generator_vertical_format_label:
-		'Vertical / Format',
+		'Formato em pé / 9:16',
 	tool_short_drama_prompt_generator_vertical_format_ph:
-		'Sample vertical format…',
+		'Por exemplo: 9:16, legenda queimada, abertura em 2 s…',
 	tool_short_drama_prompt_generator_genre_label:
-		'Genre',
+		'Gênero',
 	tool_short_drama_prompt_generator_genre_ph:
-		'Sample genre…',
+		'Por exemplo: melodrama de escritório com segredo de família…',
+
 	tool_short_drama_prompt_generator_how_body:
-		'Fill Gerador de prompts de drama curto fields, build a prompt locally, optionally Expand/Polish with Turnstile, then paste into ChatGPT, Gemini, Claude, or DeepSeek.',
+		'Preencha episódios, gancho e virada, gere o prompt e cole no ChatGPT, Gemini, Claude ou DeepSeek para escrever capítulo a capítulo; se um gancho ficar fraco, use Ampliar ou Refinar com a IA opcional da Cloudflare.',
 	tool_short_drama_prompt_generator_how_item_1:
-		'Load sample already ran the default preset on first paint.',
+		'Clique em Carregar exemplo para o preset padrão.',
 	tool_short_drama_prompt_generator_how_item_2:
-		'Edit fields, click Build prompt, or switch to JSON if you need structured export.',
+		'Troque episódios e duração, gancho, virada, formato vertical e gênero e clique em Gerar prompt; mude para JSON se precisar estruturado.',
 	tool_short_drama_prompt_generator_how_item_3:
-		'Optional: complete Turnstile, then Expand or Polish via Cloudflare Workers AI.',
+		'Opcional: resolva o Turnstile no painel de IA e clique em Ampliar ou Refinar; o texto que voltar é escrito na saída.',
 	tool_short_drama_prompt_generator_how_item_4:
-		'Copy or download, then paste into ChatGPT, Gemini, Claude, or DeepSeek.',
+		'Copie ou baixe e cole no ChatGPT, Gemini, Claude ou DeepSeek para o modelo seguir com essa divisão por episódios.',
 	tool_short_drama_prompt_generator_how_title:
-		'Como funciona',
+		'Como usar',
 	tool_short_drama_prompt_generator_load_sample:
 		'Carregar exemplo',
 	tool_short_drama_prompt_generator_platforms_lead:
-		'Para ChatGPT, Gemini, Claude e DeepSeek — copie o prompt pronto para qualquer chat.',
+		'A saída pode ser colada como está no chat do ChatGPT, Gemini, Claude ou DeepSeek.',
 	tool_short_drama_prompt_generator_result_label:
-		'Saída do prompt',
+		'Prompt gerado',
 	tool_short_drama_prompt_generator_rules_body:
-		'Episodic hooks and cliffhangers for vertical binge. Local assembly is default; optional AI is rate-limited and requires Turnstile.',
+		'A organização segue o ritmo do consumo vertical: episódios e duração definem a capacidade, o gancho decide se o dedo para nos dois primeiros segundos, a virada empurra para o próximo capítulo, e o formato deixa claro o enquadramento e a legenda. A montagem no navegador é o comportamento padrão; a IA opcional tem limite de uso e pede Turnstile.',
 	tool_short_drama_prompt_generator_rules_item_1:
-		'Structured fields map to Role/Task/Constraints/Output blocks in Markdown export.',
+		'Cada campo do formulário cai em um dos blocos Papel, Tarefa, Restrições e Formato de saída do Markdown.',
 	tool_short_drama_prompt_generator_rules_item_2:
-		'Default export is Markdown. JSON is a chip on the same canvas.',
+		'A exportação padrão é Markdown; JSON é um botão sobre a mesma saída.',
 	tool_short_drama_prompt_generator_rules_item_3:
-		'Optional Cloudflare AI never replaces local mode — review AI output before copying.',
+		'A IA opcional é um passo a mais, não uma troca: o modo local continua disponível e o texto da IA substitui inteiramente o que havia na saída, então confira antes de copiar.',
 	tool_short_drama_prompt_generator_rules_item_4:
-		'This tool assembles text only; it does not run short drama prompt generator engines or call chat APIs locally.',
+		'Esta página só monta texto: não gera vídeo nem roda modelo ou API de chat no seu navegador.',
 	tool_short_drama_prompt_generator_rules_title:
-		'Regras esperadas',
+		'O que ela faz e o que não faz',
 	tool_short_drama_prompt_generator_sec_constraints:
-		'Constraints',
+		'Restrições',
 	tool_short_drama_prompt_generator_sec_output:
-		'Output format',
+		'Formato de saída',
 	tool_short_drama_prompt_generator_sec_role:
-		'Role',
+		'Papel',
 	tool_short_drama_prompt_generator_sec_task:
-		'Task',
+		'Tarefa',
 	tool_short_drama_prompt_generator_status_copied:
-		'Copiado.',
+		'Copiado para a área de transferência.',
 	tool_short_drama_prompt_generator_status_done:
 		'Prompt pronto.',
 	tool_short_drama_prompt_generator_status_working:
-		'Criando prompt…',
+		'Gerando o prompt…',
 	tool_short_drama_prompt_generator_title:
-		'Gerador de prompts de drama curto — Local + IA opcional',
+		'Gerador de prompt para microdrama vertical — ganchos e viradas no navegador',
 	tool_short_drama_prompt_generator_usecase_1:
-		'Ship a paste-ready short drama prompt generator brief for your team chat in ChatGPT, Gemini, Claude, or DeepSeek.',
+		'Antes de uma reunião, deixar episódios, gancho e viradas num prompt que se cola direto no ChatGPT, Gemini, Claude ou DeepSeek.',
 	tool_short_drama_prompt_generator_usecase_2:
-		'Export JSON for a pipeline test, then refine with optional Cloudflare AI after Turnstile.',
+		'Exportar o JSON e guardar o gancho e a virada de cada episódio como campos numa planilha, para checar se o mesmo recurso está se repetindo.',
 	tool_short_drama_prompt_generator_usecase_3:
-		'Compare with Prompt template builder when you need generic four-field templates instead of this scenario.',
+		'Se o que você quer é o modelo genérico de quatro blocos e não os campos de uma série vertical, use o gerador de modelos de prompt.',
 	tool_short_drama_prompt_generator_usecase_4:
-		'Keep sensitive draft text local — only opt into AI when you accept the consent modal.',
+		'Com projeto que ainda não estreou, fique no modo local: o texto só sai do navegador se você aceitar o aviso da IA.',
 	tool_short_drama_prompt_generator_usecases_title:
-		'Bons casos de uso',
+		'Quando vale a pena',
 };
 
 export default pt;

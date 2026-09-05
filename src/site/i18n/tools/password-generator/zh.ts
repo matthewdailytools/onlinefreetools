@@ -42,7 +42,7 @@ const zh: SiteLangDict = {
   tool_password_generator_rules_body: '字符集规则、随机源与诚实限制 — 用于真实账号前请先阅读。',
   tool_password_generator_rules_item_1:
     '字符池：A–Z、a–z、0–9 与默认符号集。勾选与排除后至少保留一类。',
-  tool_password_generator_rules_item_2: '索引用 crypto.getRandomValues 字节 — 绝不用 Math.random。',
+  tool_password_generator_rules_item_2: '索引取自 crypto.getRandomValues 字节，绝不用 Math.random；会造成取模偏置的字节直接丢弃重取，字符池里每个字符概率相同。',
   tool_password_generator_rules_item_3: '不强制「每类至少一个字符」；请手动勾选需要的类。',
   tool_password_generator_rules_item_4: '隐私：仅本地生成；共用电脑用完后请清空输出。',
   tool_password_generator_rules_title: '规则说明',

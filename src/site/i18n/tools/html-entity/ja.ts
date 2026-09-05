@@ -43,7 +43,7 @@ const ja: SiteLangDict = {
   tool_html_entity_rules_body: '範囲の違いと名前・数値参照の関係。',
   tool_html_entity_rules_item_1: '最小は & < > " \' のみ。非 ASCII は ASCII 以外を変換。全部は両方。',
   tool_html_entity_rules_item_2: '&copy;、&#169;、&#xA9; は同じ © にデコード。名前形式は一般的な記号に使用。',
-  tool_html_entity_rules_item_3: '既にエスケープ済みを再エンコードすると &amp;amp; に。安定までで解除可能。',
+  tool_html_entity_rules_item_3: '既にエスケープ済みを再エンコードすると &amp;amp; に。「安定まで」で解除でき、各パスで裸の < と > はそのまま残り、タグとして解釈されません。',
   tool_html_entity_rules_item_4: 'プライバシー：外部ライブラリなし、ローカルのみ。',
   tool_html_entity_rules_title: 'ルール',
   tool_html_entity_sample: 'サンプル',

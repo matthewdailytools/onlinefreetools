@@ -171,3 +171,7 @@
 | `jwt-decoder` | JWT 三段与 claims | 同类“结构化解码但不验证/不联网”的 UX 参考 |
 | `magnet-to-torrent` | 不下载 metadata，不生成 `.torrent` | FAQ 解释为什么解析器不能凭空生成 torrent 文件 |
 | `torrent-downloader` | 不做下载、不连 tracker/DHT/peer | 只检查链接字段和格式 |
+
+## 复审修正（2026-09-05）
+
+- 样例初始化抽出为具名 loadSample()，进页与 Load sample 按钮共用同一条路径。

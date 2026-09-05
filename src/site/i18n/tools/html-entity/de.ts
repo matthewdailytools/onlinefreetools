@@ -43,7 +43,7 @@ const de: SiteLangDict = {
   tool_html_entity_rules_body: 'Unterschiede der Umfänge und Namen vs. Zahlen.',
   tool_html_entity_rules_item_1: 'Minimal escaped & < > " \'. Nicht-ASCII nur oberhalb ASCII. Alle kombiniert.',
   tool_html_entity_rules_item_2: '&copy;, &#169;, &#xA9; dekodieren gleich zu ©. Name nutzt gängige Bezeichner.',
-  tool_html_entity_rules_item_3: 'Bereits escaped Text erneut kodieren → &amp;amp;. Bis stabil bei Verdacht.',
+  tool_html_entity_rules_item_3: 'Bereits escaped Text erneut kodieren → &amp;amp;. Bei Verdacht „Bis stabil“ nutzen: rohe < und > bleiben in jedem Durchgang wörtlich und werden nicht als Markup gelesen.',
   tool_html_entity_rules_item_4: 'Datenschutz: kein Upload, keine externen Bibliotheken.',
   tool_html_entity_rules_title: 'Erwartete Regeln',
   tool_html_entity_sample: 'Beispiel laden',

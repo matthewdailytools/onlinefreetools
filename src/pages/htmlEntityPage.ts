@@ -340,12 +340,14 @@ export const renderHtmlEntityPage = (opts: {
       }
 
       /**
-       * 单次 decode（textarea 技巧，不注入页面 DOM）。
+       * 单次 decode（游离 textarea，不注入页面 DOM）。
+       * 先把裸 '<' 转成 &lt;，避免输入里的 '</textarea>' 提前结束 RCDATA 解析、
+       * 导致后续文本被当作标记而丢失（stable 多轮时尤为明显）。
        * @param {string} text 含实体的文本
        */
       function decodeOnce(text) {
         var ta = document.createElement('textarea');
-        ta.innerHTML = text;
+        ta.innerHTML = String(text).replace(/</g, '&lt;');
         return ta.value;
       }
 

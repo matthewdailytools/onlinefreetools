@@ -7,10 +7,10 @@ import type { SiteLangDict } from '../../../types';
 const fr: SiteLangDict = {
 	tool_sitemap_home_title: 'Générateur de sitemap XML',
 	tool_sitemap_home_desc:
-		'Aidez Google à découvrir et indexer chaque page que vous voulez positionner : transformez une liste d’URL en sitemap.xml valide avec lastmod, changefreq et priority, directement dans le navigateur.',
+		'Aidez Google à découvrir les pages que vos liens internes laissent de côté : transformez une liste d’URL en sitemap.xml valide avec lastmod, changefreq et priority, directement dans le navigateur.',
 	tool_sitemap_title: 'Générateur de sitemap XML — créez sitemap.xml à partir d’URLs',
 	tool_sitemap_description:
-		'Un sitemap aide Google à découvrir et indexer plus vite. Collez des URL https, prévisualisez un sitemap.xml valide, copiez à la racine. Exemple : 3 URL.',
+		'Un sitemap indique à Google quelles URL existent, surtout celles que des liens internes faibles cachent. Collez des URL https, prévisualisez le sitemap.xml, copiez-le à la racine. Exemple : 3 URL.',
 	tool_sitemap_generate: 'Générer',
 	tool_sitemap_sample: 'Exemple',
 	tool_sitemap_clear: 'Effacer',
@@ -45,7 +45,7 @@ const fr: SiteLangDict = {
 	tool_sitemap_usecase_1:
 		'Nouveaux sites : générez un premier sitemap.xml depuis votre liste d’URLs et envoyez-le dans Search Console.',
 	tool_sitemap_usecase_2:
-		'Contenu mis à jour : ajoutez lastmod aux pages récemment modifiées pour que les robots captent le signal de fraîcheur.',
+		'Contenu mis à jour : ajoutez lastmod uniquement aux pages qui ont réellement changé. Google ne s’en sert que si la date reste fiable dans tout le fichier ; mettre la date du jour sur chaque URL lui fait ignorer le champ.',
 	tool_sitemap_usecase_3:
 		'Découverte : pointez robots.txt vers l’URL du sitemap pour que les robots le trouvent sans attendre l’envoi.',
 	tool_sitemap_faq_q1: 'Quelle est la limite d’URLs d’un sitemap ?',

@@ -13,7 +13,7 @@ const en: SiteLangDict = {
 	tool_midjourney_prompt_builder_desc:
 		'Midjourney prompt builder — local default + optional Cloudflare AI Expand/Polish (Turnstile); Markdown/JSON on device.',
 	tool_midjourney_prompt_builder_description:
-		'Midjourney prompt builder — Local + Optional AI for ChatGPT, Gemini, Claude, and DeepSeek: assemble structured prompts locally by default, then optionally Expand/Polish via Cloudflare Workers AI (Turnstile required, rate-limited). Example runs on first paint. Markdown default; JSON for pipelines. Local text stays on your device unless you use optional AI.',
+		'Midjourney prompt builder — Local + Optional AI for ChatGPT, Gemini, Claude, and DeepSeek: assemble structured prompts locally by default, then optionally Expand/Polish via Cloudflare Workers AI (Turnstile required, rate-limited). Markdown default; JSON for pipelines. Local text stays on your device unless you use optional AI. Example: click Load sample for a ready preset, then Build or optionally Expand/Polish.',
 	tool_midjourney_prompt_builder_download: 'Download',
 	tool_midjourney_prompt_builder_empty: 'Fill at least one field before building.',
 	tool_midjourney_prompt_builder_example:
@@ -93,7 +93,7 @@ const en: SiteLangDict = {
 	tool_midjourney_prompt_builder_rules_map_4_flag: '--v 6.1',
 	tool_midjourney_prompt_builder_how_body:
 		'Fill midjourney prompt builder fields, build a prompt locally, optionally Expand/Polish with Turnstile, then paste into ChatGPT, Gemini, Claude, or DeepSeek.',
-	tool_midjourney_prompt_builder_how_item_1: 'Load sample already ran the default preset on first paint.',
+	tool_midjourney_prompt_builder_how_item_1: 'Click Load sample for the default preset.',
 	tool_midjourney_prompt_builder_how_item_2: 'Edit fields, click Build prompt, or switch to JSON if you need structured export.',
 	tool_midjourney_prompt_builder_how_item_3: 'Optional: complete Turnstile, then Expand or Polish via Cloudflare Workers AI.',
 	tool_midjourney_prompt_builder_how_item_4: 'Copy or download, then paste into ChatGPT, Gemini, Claude, or DeepSeek.',

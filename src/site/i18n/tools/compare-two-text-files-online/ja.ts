@@ -12,10 +12,11 @@ const ja: SiteLangDict = {
 	tool_compare_two_text_files_online_desc:
 		'テキストファイルをオンラインで比較：2つの txt を選び、ブラウザ上で行差分を見る。アップロードなし。',
 	tool_compare_two_text_files_online_description:
-		'2つのテキストファイルをオンラインで比較します。手順：元ファイルと改訂ファイルを選び、UTF-8 で読み（先頭 BOM は除去）、バイナリは拒否し、行の追加と削除を色分けします。ファイルは端末に留まり、アップロードしません。例：notes-a.txt と notes-b.txt で真ん中の1行だけ違う場合。Word・表計算・JSON は別ページ。txt 比較やファイル diff も同じ作業です。',
+		"2つのテキストファイルをオンラインで比較します。元と修正版の .txt を選ぶと、厳密な UTF-8 として読み、先頭 BOM を除き、不正なエンコーディングやバイナリを拒否してから行ごとの追加と削除を色分けします。ファイルは端末内に残り、サーバーへアップロードされません。例：notes-a.txt と notes-b.txt は中央の1行だけが違います。Word・表計算・構造化 JSON ファイルは解析しません。",
 	tool_compare_two_text_files_online_empty: '先に2つのテキストファイルを選ぶか、サンプルを読み込んでください。',
 	tool_compare_two_text_files_online_err_binary:
 		'いずれかがバイナリに見えます（ヌルバイト）。このページは .txt などのプレーンテキスト専用です。',
+	tool_compare_two_text_files_online_err_encoding: "UTF-8 として正しくないファイルがあります。UTF-8 で保存または変換してから、もう一度比較してください。",
 	tool_compare_two_text_files_online_err_too_large:
 		'ファイルがおよそ 1 MB を超えています。タブが重くならないよう、短い抜粋で試してください。',
 	tool_compare_two_text_files_online_example:
@@ -24,11 +25,11 @@ const ja: SiteLangDict = {
 	tool_compare_two_text_files_online_faq_a1:
 		'送りません。バイトは FileReader でこのタブ内だけ読みます。jsdiff は CDN からライブラリとして来る場合がありますが、あなたのファイルは当サイトのサーバーへ上がりません。',
 	tool_compare_two_text_files_online_faq_a2:
-		'UTF-8 でデコードします。先頭 BOM は外すので、それだけで1行目が差分扱いされません。別エンコーディングは文字化けします。先に UTF-8 で保存してください。',
+		"ファイルは厳密な UTF-8 として読み込み、先頭の BOM は除きます。不正な UTF-8 は代替文字でごまかさずエラーにします。Windows-1252 などの旧エンコーディングは先に変換してください。",
 	tool_compare_two_text_files_online_faq_a3:
 		'ヌルバイトがあればバイナリとして拒否します。16進ダンプや書庫ツールを使ってください。Word と Excel は専用の比較ページへ。',
 	tool_compare_two_text_files_online_faq_a4:
-		'対象は .txt / .text です。txt 比較やオンラインのファイル diff も同じ仕事です。「2つのファイルを比較」が Word や表なら、そちらのページへ。貼り付け専用は「2つのテキストの差分を確認」です。',
+		"UTF-8 として読める .txt / .text が対象です。ファイルなしなら貼り付け比較を使い、.docx、xlsx、xls、csv は Word または表計算の比較ツールを使ってください。",
 	tool_compare_two_text_files_online_faq_q1: 'ファイルはアップロードされますか？',
 	tool_compare_two_text_files_online_faq_q2: '文字コードと BOM はどう扱いますか？',
 	tool_compare_two_text_files_online_faq_q3: 'バイナリや Word、Excel もここで比べられますか？',
@@ -38,7 +39,7 @@ const ja: SiteLangDict = {
 	tool_compare_two_text_files_online_how_item_1: '1つ目のテキストファイルを選ぶ（元のスナップショットや書き出し）。',
 	tool_compare_two_text_files_online_how_item_2: '2つ目のテキストファイルを選ぶ（改訂版）。',
 	tool_compare_two_text_files_online_how_item_3:
-		'両方選ぶと自動で比較が走ります。サンプルを読み込むは初回描画ですでに実行済みです。',
+		"「比較する」を押して行差分を更新します。2つのファイルを選び終えた時点でも自動実行されます。",
 	tool_compare_two_text_files_online_how_item_4: '緑が追加、赤が削除です。クリアでこのタブから両方のファイルを外します。',
 	tool_compare_two_text_files_online_how_title: '使い方',
 	tool_compare_two_text_files_online_label_a: '1つ目のテキストファイル',

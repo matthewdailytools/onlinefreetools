@@ -56,10 +56,10 @@ const de: SiteLangDict = {
 	tool_og_twitter_inferred: 'Kein twitter:card gesetzt – die Plattformen leiten eine summary-Karte aus den og:-Tags ab.',
 	tool_og_how_title: 'So funktioniert es',
 	tool_og_how_body:
-		'Die Vorschau parst die eingefügten og:/twitter:-Tags (oder extrahiert sie aus dem für eine URL geladenen HTML) und zeichnet drei Karten. Facebook zeigt das 1.91:1-Bild links, darunter Titel, Beschreibung und Domain. X folgt twitter:card: summary_large_image zeigt ein großes Bild oben, summary ein kleines neben dem Text. Messaging-Apps wie WhatsApp zeigen eine große Karte. Die Tabelle markiert og:title, og:description und og:image als Pflicht und listet optionale Felder.',
+		'Die Vorschau parst die eingefügten og:/twitter:-Tags (oder extrahiert sie aus dem für eine URL geladenen HTML) und zeichnet drei Karten. Facebook zeigt das 1.91:1-Bild links, darunter Titel, Beschreibung und Domain. X folgt twitter:card: summary_large_image zeigt ein großes Bild oben, summary ein kleines neben dem Text. Messaging-Apps wie WhatsApp zeigen eine große Karte. Die Feldtabelle markiert die vier vom Protokoll geforderten Felder und listet die optionalen auf.',
 	tool_og_rules_title: 'Regeln der Vorschau',
 	tool_og_rules_body: 'Das sind die Bildgrößen und Fallbacks der Plattformen, laut Open-Graph-Protokoll und der X-Cards-Dokumentation.',
-	tool_og_rules_item_1: 'Pflichtfelder: og:title, og:description und og:image. Fehlende werden markiert, damit du sie vor dem Veröffentlichen ergänzt.',
+	tool_og_rules_item_1: 'Vom Open-Graph-Protokoll gefordert: og:title, og:type, og:image und og:url. og:description ist laut Spezifikation optional, wird aber von jeder großen Plattform angezeigt – fehlt es, schreibt die Plattform selbst eine Zusammenfassung aus dem Seitentext.',
 	tool_og_rules_item_2: 'og:image mit 1200×630 px (1.91:1) funktioniert auf allen großen Plattformen. Facebook unterstützt inzwischen auch 2:1- und 1:1-Zuschnitte; sehr kleine Bilder werden oft vergrößert und wirken unscharf.',
 	tool_og_rules_item_3: 'twitter:card summary_large_image passt zu einem großen Bild, summary zu einem kleinen. Ohne twitter:card leiten die Plattformen eine summary-Karte aus den og:-Tags ab.',
 	tool_og_rules_item_4: 'Fehlen og:title oder og:image, verwenden die Plattformen den HTML-Titel, die Meta-Description und das erste Bild der Seite.',
@@ -76,7 +76,7 @@ const de: SiteLangDict = {
 		'Nach einem CMS- oder Theme-Update die Live-URL laden und prüfen, ob die og:-Tags noch zur Seite passen.',
 	tool_og_faq_q1: 'Was passiert, wenn eine Seite keine Open-Graph-Tags hat?',
 	tool_og_faq_a1:
-		'Facebook, X und WhatsApp bauen die Vorschau aus HTML-Titel, Meta-Description und dem ersten Bild der Seite. Die Karte kann unvollständig sein oder das falsche Bild zeigen – genau deshalb gibt es die Pflicht-felder og:.',
+		'Facebook, X und WhatsApp greifen auf den HTML-Titel, die Meta-Description und ein Bild aus der Seite zurück. Dieses Rückfallverhalten unterscheidet sich je nach Plattform und ändert sich mit der Zeit, deshalb wird die Karte leicht unvollständig oder zeigt das falsche Bild – genau dafür gibt es die og:-Tags.',
 	tool_og_faq_q2: 'Wie groß sollte og:image sein?',
 	tool_og_faq_a2:
 		'Die sichere Größe ist 1200×630 px, ein 1.91:1-Format, das alle großen Plattformen akzeptieren. Facebook unterstützt inzwischen auch 2:1- und 1:1-Zuschnitte. Sehr kleine Bilder werden oft vergrößert und wirken unscharf.',

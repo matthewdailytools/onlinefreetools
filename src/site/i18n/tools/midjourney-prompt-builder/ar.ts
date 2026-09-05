@@ -1,188 +1,191 @@
 /**
  * i18n tool shard (midjourney-prompt-builder / ar).
- * 检索向独立重写；title 含「本地 + 可选 AI」；description 含本地默认与 Cloudflare AI Expand/Polish + Turnstile。
+ * إعادة كتابة وفق ما يبحث عنه المستخدم العربي: «منشئ برومبت Midjourney»، «كيف أكتب برومبت ميدجورني»،
+ * «معامل --ar»، «تصدير البرومبت بصيغة JSON». المصطلح الرئيسي في العنوان الأول، والبقية في الوصف والأسئلة وحالات الاستخدام.
+ * الحدود الواقعية: التركيب يجري داخل المتصفح افتراضياً، ولا يُرسل المسوّد إلى Cloudflare Workers AI إلا عند الضغط على
+ * «توسيع» أو «تنقيح» (بعد Turnstile وبحدود استخدام). لا تُنتج هذه الصفحة صوراً ولا تستدعي Midjourney.
  */
 import type { SiteLangDict } from '../../../types';
 
 const ar: SiteLangDict = {
 	tool_midjourney_prompt_builder_article:
-		'منشئ prompts Midjourney — محلي + ذكاء اصطناعي اختياري لـ ChatGPT وGemini وClaude وDeepSeek: تجميع محلي افتراضيًا ثم توسيع/صقل اختياري عبر Cloudflare Workers AI (Turnstile مطلوب، محدود المعدل). يعمل المثال عند الفتح. Markdown افتراضي؛ JSON للمسارات. النص يبقى على جهازك ما لم تستخدم الذكاء الاصطناعي.',
+		'ركّب هنا برومبت Midjourney قبل أن تشغّله: اكتب الموضوع والأسلوب والإضاءة ونسبة الأبعاد ومعاملات MJ، فتجمعها الصفحة داخل المتصفح في صيغة Markdown أو JSON جاهزة للّصق في ChatGPT أو Gemini أو Claude أو DeepSeek. ما تنتجه هذه الصفحة نصٌّ فقط: لا تولّد صوراً ولا تستدعي Midjourney. افتراضياً لا يُرسل شيء؛ وعند الضغط على «توسيع» أو «تنقيح» يذهب المسوّد إلى Cloudflare Workers AI بعد فحص Turnstile.',
 	tool_midjourney_prompt_builder_build:
-		'إنشاء prompt',
+		'أنشئ البرومبت',
 	tool_midjourney_prompt_builder_clear:
-		'مسح',
+		'تفريغ',
 	tool_midjourney_prompt_builder_copy:
 		'نسخ',
 	tool_midjourney_prompt_builder_desc:
-		'منشئ prompts Midjourney — local por defecto + Expand/Polish opcional Cloudflare AI (Turnstile); Markdown/JSON en el dispositivo.',
+		'منشئ برومبت Midjourney: اكتب الموضوع والأسلوب والإضاءة ونسبة الأبعاد فتجمعها الصفحة في Markdown أو JSON؛ ذكاء Cloudflare اختياري مع Turnstile.',
 	tool_midjourney_prompt_builder_description:
-		'عملية ومثال: منشئ prompts Midjourney — Local + IA opcional para ChatGPT, Gemini, Claude y DeepSeek: ensambla prompts localmente por defecto y opcionalmente Expand/Polish con Cloudflare Workers AI (Turnstile obligatorio, límite de uso). Ejemplo al abrir. Markdown por defecto; JSON para pipelines. Texto en el dispositivo salvo que uses IA.',
+		'منشئ برومبت Midjourney: تكتب الموضوع والأسلوب والإضاءة ونسبة الأبعاد ومعاملات MJ، فتجمعها الصفحة في سطر واحد جاهز للّصق؛ تتحول نسبة الأبعاد إلى --ar، وإن لم تُحدَّد الإصدارة يُضاف --v 6.1. الصيغة الافتراضية Markdown، وهناك JSON لسكربتاتك، ومثال الساموراي على الجسر يعمل بمجرد فتح الصفحة. وإن أردت وصفاً أدقّ يرسل «توسيع» أو «تنقيح» المسوّد إلى Cloudflare Workers AI (يلزم Turnstile وهناك حدود). نصٌّ فقط: لا صور تُولَّد هنا.',
 	tool_midjourney_prompt_builder_download:
 		'تنزيل',
 	tool_midjourney_prompt_builder_empty:
-		'املأ حقلًا واحدًا على الأقل قبل الإنشاء.',
+		'املأ حقلاً واحداً على الأقل قبل إنشاء البرومبت.',
 	tool_midjourney_prompt_builder_example:
-		'المدخلات: Subject = سامurai على جسر؛ Style = حبر سينمائي؛ Flags = --v 6.1 --style raw. المخرجات (Markdown): ## Task مع سطر MJ مقترح و --ar 16:9؛ JSON للحقول المنظمة.',
+		'المُدخل: الموضوع = ساموراي يستلّ سيفه على جسر مغطى بالطحلب، رذاذ مطر، بوابة تُوري في الخلفية؛ الأسلوب = حبر سينمائي بدرجات فيروزية وفحمية وحُبيبات ناعمة؛ الإضاءة = ضوء خلفي عند الشروق مع ضباب حجمي؛ نسبة الأبعاد = 16:9؛ المعاملات = --v 6.1 --style raw --stylize 120 --chaos 8. المُخرج (Markdown): يضم قسم ## Task سطر Midjourney الذي يجمع الموضوع والأسلوب والإضاءة وينتهي بـ --ar 16:9. وبالتبديل إلى JSON تصل البيانات نفسها في حقول.',
 	tool_midjourney_prompt_builder_example_title:
 		'مثال',
 	tool_midjourney_prompt_builder_faq_a1:
-		'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
+		'التركيب يجري داخل هذا التبويب، فلا يُرسل شيء افتراضياً. الإرسال يحدث فقط عند الضغط على «توسيع» أو «تنقيح»، ووجهته Cloudflare Workers AI وحدها؛ ولا نمرّر النص من خوادمنا إلى OpenAI أو Google أو Anthropic أو DeepSeek.',
 	tool_midjourney_prompt_builder_faq_a2:
-		'Modo local solo formatea aquí. Expand/Polish opcional usa Cloudflare Workers AI tras Turnstile — no llama APIs de chat.',
+		'في الوضع المحلي لا يُستدعى أي نموذج، فالصفحة ترتّب حقولك في أقسام Role وTask وConstraints وOutput. أما «توسيع» و«تنقيح» فيعملان عبر Cloudflare Workers AI بعد فحص Turnstile، ولا يستدعيان واجهات ChatGPT أو Gemini أو Claude أو DeepSeek من خوادمنا.',
 	tool_midjourney_prompt_builder_faq_a3:
-		'منشئ prompts Midjourney covers generic Role/Task/Constraints/Output templates. This page focuses on منشئ prompts Midjourney fields with a dedicated sample and rules for this scenario.',
+		'منشئ قوالب البرومبت يعطي هيكلاً عاماً من أربعة أقسام يصلح لأي موضوع. أما هنا فالحقول مخصّصة لـ Midjourney — الموضوع والأسلوب والإضاءة ونسبة الأبعاد والمعاملات — مع مثال جاهز عند الفتح وجدول مقابلات خاص بهذه الحالة.',
 	tool_midjourney_prompt_builder_faq_a4:
-		'Sí. Completa Turnstile en el panel de IA antes de Expand o Polish.',
+		'يمنع Turnstile السكربتات الآلية حتى تبقى الحصة المجانية للمستخدمين الحقيقيين. أكمل الفحص في لوحة الذكاء الاصطناعي قبل الضغط على «توسيع» أو «تنقيح»؛ فبدون رمز صالح تُظهر هذه الأزرار خطأً، ويبقى التركيب داخل المتصفح متاحاً كما هو.',
 	tool_midjourney_prompt_builder_faq_a5:
-		'Yes. The JSON chip emits structured fields plus assembled prompt text for tests or config pipelines.',
+		'نعم. عند التبديل إلى JSON يعرض حقل المُخرج نفسه البيانات في حقول مع نص البرومبت المجمَّع، فتستخدمه في سكربت لسلسلة صور أو في اختبار أو في ملف إعدادات.',
 	tool_midjourney_prompt_builder_faq_a6:
-		'Yes. Copy the finished prompt into ChatGPT, Gemini, Claude, or DeepSeek. We do not split URLs per platform because the job is formatting text, not calling APIs.',
+		'نعم. انسخ الناتج والصقه في أي محادثة تستخدمها، أو في Midjourney مباشرة. الصفحة تنسّق النص فحسب ولا تستدعي أي واجهة، ولذلك لا يوجد عنوان منفصل لكل منصة.',
 	tool_midjourney_prompt_builder_faq_q1:
-		'Is my prompt uploaded?',
+		'هل يُرسل ما أكتبه إلى أي خادم؟',
 	tool_midjourney_prompt_builder_faq_q2:
-		'Does this call ChatGPT or other LLM APIs?',
+		'هل تستدعي هذه الصفحة واجهة ChatGPT أو نماذج أخرى؟',
 	tool_midjourney_prompt_builder_faq_q3:
-		'How is this different from منشئ prompts Midjourney?',
+		'ما الفرق بينها وبين منشئ قوالب البرومبت؟',
 	tool_midjourney_prompt_builder_faq_q4:
-		'¿Por qué Turnstile para IA opcional?',
+		'لماذا يلزم Turnstile لاستخدام الذكاء الاصطناعي؟',
 	tool_midjourney_prompt_builder_faq_q5:
-		'Can I get JSON output?',
+		'هل أحصل على المُخرج بصيغة JSON؟',
 	tool_midjourney_prompt_builder_faq_q6:
-		'Can I use this with ChatGPT, Gemini, Claude, or DeepSeek?',
+		'هل تعمل مع ChatGPT وGemini وClaude وDeepSeek؟',
 	tool_midjourney_prompt_builder_faq_q7:
-		'¿Diferencia entre local y Cloudflare AI opcional?',
+		'ما الفرق بين الوضع المحلي وذكاء Cloudflare الاختياري؟',
 	tool_midjourney_prompt_builder_faq_a7:
-		'Local: solo esta pestaña, sin subida. Expand/Polish opcional a Cloudflare Workers AI (Turnstile, límite).',
+		'في الوضع المحلي يُجمَّع كل شيء داخل هذا التبويب ولا يخرج من المتصفح. أما «توسيع» أو «تنقيح» فيرسل المسوّد الحالي إلى Cloudflare Workers AI (يلزم Turnstile، وهناك حد للتكرار وحصة يومية)، والنص العائد يُكتب كاملاً في حقل المُخرج فوق المسوّد الذي كنت تراه — فراجعه قبل النسخ. وعند الفشل أو نفاد الحصة تابع بالوضع المحلي.',
 	tool_midjourney_prompt_builder_ai_expand:
-		'Expandir con IA',
+		'توسيع بالذكاء الاصطناعي',
 	tool_midjourney_prompt_builder_ai_polish:
-		'Pulir con IA',
+		'تنقيح بالذكاء الاصطناعي',
 	tool_midjourney_prompt_builder_ai_panel_label:
-		'Cloudflare AI opcional (Turnstile)',
+		'اختياري: Cloudflare AI (يلزم Turnstile)',
 	tool_midjourney_prompt_builder_ai_consent_title:
-		'¿Enviar texto a Cloudflare Workers AI?',
+		'هل تريد إرسال المسوّد إلى Cloudflare Workers AI؟',
 	tool_midjourney_prompt_builder_ai_consent_body:
-		'Este paso opcional envía tu borrador a Cloudflare Workers AI. No va a OpenAI, Google, Anthropic ni DeepSeek desde nuestros servidores.',
+		'هذه الخطوة اختيارية: ترسل المسوّد الموجود الآن في الحقول إلى Cloudflare Workers AI لتشغيل واحد. ولا نمرّره من خوادمنا إلى OpenAI أو Google أو Anthropic أو DeepSeek. وبدون الذكاء الاصطناعي يبقى البرومبت يُجمَّع في متصفحك.',
 	tool_midjourney_prompt_builder_ai_consent_ok:
-		'Continuar',
+		'متابعة',
 	tool_midjourney_prompt_builder_ai_consent_cancel:
-		'Cancelar',
+		'إلغاء',
 	tool_midjourney_prompt_builder_ai_working:
-		'Cloudflare AI trabajando…',
+		'يعمل Cloudflare AI الآن…',
 	tool_midjourney_prompt_builder_ai_done:
-		'Sugerencia de IA aplicada. Revisa antes de copiar.',
+		'كُتب نص الذكاء الاصطناعي كاملاً في حقل المُخرج. راجعه قبل النسخ.',
 	tool_midjourney_prompt_builder_ai_err_generic:
-		'La IA falló. Tu prompt local no cambió.',
+		'لم يستجب الذكاء الاصطناعي هذه المرة؛ ومحتوى المُخرج كما هو.',
 	tool_midjourney_prompt_builder_ai_err_rate:
-		'Cuota de IA agotada. Modo local o prueba mañana (UTC).',
+		'نفدت حصة الذكاء الاصطناعي. تابع التركيب هنا أو جرّب غداً بتوقيت UTC.',
 	tool_midjourney_prompt_builder_ai_err_turnstile:
-		'Completa Turnstile antes de usar IA.',
+		'أكمل فحص Turnstile قبل استخدام الذكاء الاصطناعي.',
 	tool_midjourney_prompt_builder_fmt_json:
 		'JSON',
 	tool_midjourney_prompt_builder_fmt_label:
-		'صيغة الإخراج',
+		'صيغة المُخرج',
 	tool_midjourney_prompt_builder_fmt_md:
 		'Markdown',
 	tool_midjourney_prompt_builder_subject_label:
-		'Subject',
+		'الموضوع',
 	tool_midjourney_prompt_builder_subject_ph:
-		'Sample subject…',
+		'مثلاً: ساموراي يستلّ سيفه على جسر…',
 	tool_midjourney_prompt_builder_style_label:
-		'Style',
+		'الأسلوب',
 	tool_midjourney_prompt_builder_style_ph:
-		'Sample style…',
+		'مثلاً: حبر سينمائي بدرجات فحمية…',
 	tool_midjourney_prompt_builder_lighting_label:
-		'Lighting',
+		'الإضاءة',
 	tool_midjourney_prompt_builder_lighting_ph:
-		'Sample lighting…',
+		'مثلاً: ضوء خلفي عند الشروق مع ضباب…',
 	tool_midjourney_prompt_builder_aspect_label:
-		'Aspect',
+		'نسبة الأبعاد',
 	tool_midjourney_prompt_builder_aspect_ph:
-		'Sample aspect…',
+		'مثلاً 16:9 أو 9:16 أو 1:1…',
 	tool_midjourney_prompt_builder_mj_flags_label:
-		'Mj / Flags',
+		'معاملات MJ',
 	tool_midjourney_prompt_builder_mj_flags_ph:
-		'Sample mj flags…',
+		'مثلاً --v 6.1 --style raw --stylize 120…',
 	tool_midjourney_prompt_builder_rules_table_title:
-		'Midjourney flag mapping',
+		'جدول مقابلات معاملات Midjourney',
 	tool_midjourney_prompt_builder_rules_table_ar:
-		'Aspect → --ar',
+		'نسبة الأبعاد → --ar',
 	tool_midjourney_prompt_builder_rules_table_v:
-		'Version → --v',
+		'الإصدارة → --v',
 	tool_midjourney_prompt_builder_rules_table_note:
-		'Append flags from the table when aspect or version is set.',
+		'إذا كتبت نسبة أبعاد تحولت إلى --ar في آخر السطر؛ وإن لم تحتوِ المعاملات على إصدارة يُضاف --v 6.1.',
 	tool_midjourney_prompt_builder_rules_map_1_label:
-		'1:1 square',
+		'1:1 مربّع',
 	tool_midjourney_prompt_builder_rules_map_1_flag:
 		'--ar 1:1',
 	tool_midjourney_prompt_builder_rules_map_2_label:
-		'16:9 landscape',
+		'16:9 أفقي',
 	tool_midjourney_prompt_builder_rules_map_2_flag:
 		'--ar 16:9',
 	tool_midjourney_prompt_builder_rules_map_3_label:
-		'9:16 vertical',
+		'9:16 رأسي',
 	tool_midjourney_prompt_builder_rules_map_3_flag:
 		'--ar 9:16',
 	tool_midjourney_prompt_builder_rules_map_4_label:
-		'MJ v6 default',
+		'إصدارة MJ v6 الافتراضية',
 	tool_midjourney_prompt_builder_rules_map_4_flag:
 		'--v 6.1',
 	tool_midjourney_prompt_builder_how_body:
-		'Fill منشئ prompts Midjourney fields, build a prompt locally, optionally Expand/Polish with Turnstile, then paste into ChatGPT, Gemini, Claude, or DeepSeek.',
+		'املأ الحقول وأنشئ البرومبت ثم الصقه في ChatGPT أو Gemini أو Claude أو DeepSeek؛ وإن احتجت وصفاً أدقّ استعن بـ «توسيع» أو «تنقيح» عبر ذكاء Cloudflare الاختياري.',
 	tool_midjourney_prompt_builder_how_item_1:
-		'Load sample already ran the default preset on first paint.',
+		'انقر «تحميل عيّنة» لإدخال الإعداد الافتراضي.',
 	tool_midjourney_prompt_builder_how_item_2:
-		'Edit fields, click Build prompt, or switch to JSON if you need structured export.',
+		'عدّل الموضوع والأسلوب والإضاءة ونسبة الأبعاد والمعاملات واضغط «أنشئ البرومبت»؛ وبدّل إلى JSON إن أردت تصديراً في حقول.',
 	tool_midjourney_prompt_builder_how_item_3:
-		'Optional: complete Turnstile, then Expand or Polish via Cloudflare Workers AI.',
+		'اختياري: أكمل Turnstile في لوحة الذكاء الاصطناعي ثم اضغط «توسيع» أو «تنقيح»، فيُكتب النص العائد في حقل المُخرج.',
 	tool_midjourney_prompt_builder_how_item_4:
-		'Copy or download, then paste into ChatGPT, Gemini, Claude, or DeepSeek.',
+		'انسخ أو نزّل، ثم الصق في ChatGPT أو Gemini أو Claude أو DeepSeek لمواصلة الضبط، أو في Midjourney مباشرة.',
 	tool_midjourney_prompt_builder_how_title:
-		'كيف يعمل',
+		'طريقة الاستخدام',
 	tool_midjourney_prompt_builder_load_sample:
-		'تحميل مثال',
+		'تحميل المثال',
 	tool_midjourney_prompt_builder_platforms_lead:
-		'لـ ChatGPT وGemini وClaude وDeepSeek — انسخ الـ prompt إلى أي واجهة دردشة.',
+		'المُخرج يُلصق كما هو في محادثة ChatGPT أو Gemini أو Claude أو DeepSeek.',
 	tool_midjourney_prompt_builder_result_label:
-		'مخرجات Prompt',
+		'البرومبت الناتج',
 	tool_midjourney_prompt_builder_rules_body:
-		'MJ parameter mapping table for --ar and --v. Local assembly is default; optional AI is rate-limited and requires Turnstile.',
+		'كيف تُترجم المعاملات: نسبة الأبعاد تصبح --ar، وبدون إصدارة مذكورة يُضاف --v 6.1. التركيب داخل المتصفح هو السلوك الافتراضي، أما الذكاء الاصطناعي الاختياري فمحدود الاستخدام ويطلب Turnstile.',
 	tool_midjourney_prompt_builder_rules_item_1:
-		'Structured fields map to Role/Task/Constraints/Output blocks in Markdown export.',
+		'كل حقل في النموذج يستقرّ في أحد أقسام Markdown: Role أو Task أو Constraints أو Output.',
 	tool_midjourney_prompt_builder_rules_item_2:
-		'Default export is Markdown. JSON is a chip on the same canvas.',
+		'التصدير الافتراضي Markdown، وJSON زرّ فوق حقل المُخرج نفسه.',
 	tool_midjourney_prompt_builder_rules_item_3:
-		'Optional Cloudflare AI never replaces local mode — review AI output before copying.',
+		'الذكاء الاصطناعي الاختياري خطوة إضافية لا بديل: الوضع المحلي متاح دائماً، ونص الذكاء الاصطناعي يستبدل محتوى المُخرج بالكامل، فراجعه قبل النسخ.',
 	tool_midjourney_prompt_builder_rules_item_4:
-		'This tool assembles text only; it does not run midjourney prompt builder engines or call chat APIs locally.',
+		'هذه الصفحة تجمع نصاً فقط: لا تولّد صوراً ولا تستدعي Midjourney ولا أي واجهة محادثة.',
 	tool_midjourney_prompt_builder_rules_title:
-		'قواعد يجب أن تعرفها',
+		'ما تفعله وما لا تفعله',
 	tool_midjourney_prompt_builder_sec_constraints:
 		'Constraints',
 	tool_midjourney_prompt_builder_sec_output:
-		'Output format',
+		'Output',
 	tool_midjourney_prompt_builder_sec_role:
 		'Role',
 	tool_midjourney_prompt_builder_sec_task:
 		'Task',
 	tool_midjourney_prompt_builder_status_copied:
-		'تم النسخ.',
+		'تم النسخ إلى الحافظة.',
 	tool_midjourney_prompt_builder_status_done:
-		'Prompt جاهز.',
+		'البرومبت جاهز.',
 	tool_midjourney_prompt_builder_status_working:
-		'جاري الإنشاء…',
+		'جارٍ التركيب…',
 	tool_midjourney_prompt_builder_title:
-		'منشئ prompts Midjourney — محلي + ذكاء اصطناعي اختياري',
+		'منشئ برومبت Midjourney — تركيب داخل المتصفح والذكاء الاصطناعي اختياري',
 	tool_midjourney_prompt_builder_usecase_1:
-		'Ship a paste-ready midjourney prompt builder brief for your team chat in ChatGPT, Gemini, Claude, or DeepSeek.',
+		'تسليم فريقك برومبت Midjourney جاهزاً للّصق في المحادثة، بدل إملاء المعاملات رسالة بعد رسالة.',
 	tool_midjourney_prompt_builder_usecase_2:
-		'Export JSON for a pipeline test, then refine with optional Cloudflare AI after Turnstile.',
+		'تصدير JSON قبل جلسة توليد متعددة، والاحتفاظ بالموضوع والأسلوب ونسبة الأبعاد كحقول في سكربتك أو جدولك.',
 	tool_midjourney_prompt_builder_usecase_3:
-		'Compare with Prompt template builder when you need generic four-field templates instead of this scenario.',
+		'إن كان المطلوب الهيكل العام من أربعة أقسام لا صورة، فاستخدم منشئ قوالب البرومبت.',
 	tool_midjourney_prompt_builder_usecase_4:
-		'Keep sensitive draft text local — only opt into AI when you accept the consent modal.',
+		'مع مسوّدات مشروع لم يُعلن بعد، ابقَ في الوضع المحلي: لن يخرج النص من المتصفح إلا بموافقتك في نافذة الذكاء الاصطناعي.',
 	tool_midjourney_prompt_builder_usecases_title:
-		'حالات مناسبة',
+		'متى تفيدك',
 };
 
 export default ar;

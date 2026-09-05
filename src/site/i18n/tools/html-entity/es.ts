@@ -49,7 +49,7 @@ const es: SiteLangDict = {
   tool_html_entity_rules_item_1: 'Mínimo escapa & < > " \'. Solo no ASCII deja el ASCII intacto. Todo combina ambos.',
   tool_html_entity_rules_item_2: '&copy;, &#169; y &#xA9; decodifican igual. Al codificar, “Nombre si existe” usa nombres comunes.',
   tool_html_entity_rules_item_3:
-    'Codificar texto ya escapado produce doble escape (&amp;amp;). Usa Decodificar → Hasta estable si lo sospechas.',
+    'Codificar texto ya escapado produce doble escape (&amp;amp;). Usa Decodificar → Hasta estable si lo sospechas: los < y > sueltos se conservan tal cual en cada pasada, no se leen como etiquetas.',
   tool_html_entity_rules_item_4: 'Privacidad: no se sube tu pegado; sin librerías externas.',
   tool_html_entity_rules_title: 'Reglas que debes conocer',
   tool_html_entity_sample: 'Cargar ejemplo',

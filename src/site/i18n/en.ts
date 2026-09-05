@@ -568,7 +568,7 @@ const en: SiteLangDict = {
   tool_android_prompt_builder_desc:
     'Android prompt builder — local default + optional Cloudflare AI Expand/Polish (Turnstile); Markdown/JSON on device.',
   tool_android_prompt_builder_description:
-    'Android prompt builder — Local + Optional AI for ChatGPT, Gemini, Claude, and DeepSeek: assemble structured prompts locally by default, then optionally Expand/Polish via Cloudflare Workers AI (Turnstile required, rate-limited). Example runs on first paint. Markdown default; JSON for pipelines. Local text stays on your device unless you use optional AI.',
+    'Android prompt builder — Local + Optional AI for ChatGPT, Gemini, Claude, and DeepSeek: assemble structured prompts locally by default, then optionally Expand/Polish via Cloudflare Workers AI (Turnstile required, rate-limited). Markdown default; JSON for pipelines. Local text stays on your device unless you use optional AI. Example: click Load sample for a ready preset, then Build or optionally Expand/Polish.',
   tool_android_prompt_builder_download: 'Download',
   tool_android_prompt_builder_empty: 'Fill at least one field before building.',
   tool_android_prompt_builder_example:
@@ -603,7 +603,7 @@ const en: SiteLangDict = {
   tool_android_prompt_builder_gradle_constraints_ph: 'Sample gradle constraints…',
   tool_android_prompt_builder_how_body:
     'Fill android prompt builder fields, build a prompt locally, optionally Expand/Polish with Turnstile, then paste into ChatGPT, Gemini, Claude, or DeepSeek.',
-  tool_android_prompt_builder_how_item_1: 'Load sample already ran the default preset on first paint.',
+  tool_android_prompt_builder_how_item_1: 'Click Load sample for the default preset.',
   tool_android_prompt_builder_how_item_2: 'Edit fields, click Build prompt, or switch to JSON if you need structured export.',
   tool_android_prompt_builder_how_item_3: 'Optional: complete Turnstile, then Expand or Polish via Cloudflare Workers AI.',
   tool_android_prompt_builder_how_item_4: 'Copy or download, then paste into ChatGPT, Gemini, Claude, or DeepSeek.',
@@ -1005,7 +1005,8 @@ const en: SiteLangDict = {
     'No. Exports are a checksum table as CSV and a SHA256SUMS text file. Packing the binaries is Create ZIP — a different job.',
   tool_batch_checksum_release_files_faq_a3:
     'File Hash is one file or a paste. This page hashes a release set, compares a pasted SHA256SUMS list, and exports CSV plus SUMS.',
-  tool_batch_checksum_release_files_faq_a4: 'Turn on Also MD5. SHA-256 always runs. MD5 is extra for older lists; it is not a second URL.',
+  tool_batch_checksum_release_files_faq_a4:
+    'Turn on Also MD5. SHA-256 always runs. MD5 is an extra digest for older release lists that still expect it.',
   tool_batch_checksum_release_files_faq_a5:
     'The path column prefers webkitRelativePath. Duplicate names in the queue get a numeric suffix so SUMS lines stay unique.',
   tool_batch_checksum_release_files_faq_q1: 'Are my files uploaded to a server?',
@@ -1168,7 +1169,7 @@ const en: SiteLangDict = {
   tool_batch_watermark_product_photos_faq_a4:
     'Add text watermark is one photo with pixel tweaks. This page shares one stamp across a shoot, previews one, then applies all into a ZIP.',
   tool_batch_watermark_product_photos_faq_a5:
-    'People also search “watermark photos in bulk”. On this site that job lives here under batch — there is no second bulk-watermark URL.',
+    'Watermark a folder of listing photos in one pass: same stamp, opacity, and corner for every file, then download the batch.',
   tool_batch_watermark_product_photos_faq_q1: 'Are my photos uploaded to a server?',
   tool_batch_watermark_product_photos_faq_q2: 'Will landscape and portrait marks drift?',
   tool_batch_watermark_product_photos_faq_q3: 'Can I watermark a PDF here?',
@@ -2129,7 +2130,7 @@ const en: SiteLangDict = {
   tool_chatgpt_export_to_markdown_copy: 'Copy',
   tool_chatgpt_export_to_markdown_desc: 'Convert a ChatGPT export to Markdown (JSON/CSV chips) — stays on your device, not uploaded.',
   tool_chatgpt_export_to_markdown_description:
-    'ChatGPT export to Markdown: drop or paste an export JSON, map user/assistant turns, and download Markdown. Example: the sample conversation becomes Markdown on first paint. JSON and CSV are output chips. Claude chat_messages exports are detected on the same page. Files stay on your device and are not uploaded to a server. This is not a token counter and not a cloud sync tool.',
+    'ChatGPT export to Markdown: drop or paste an export JSON, map user/assistant turns, and download Markdown. Example: Load sample turns a short conversation into Markdown. JSON and CSV are output chips. Claude chat_messages exports are detected on the same page. Files stay on your device and are not uploaded to a server. This is not a token counter and not a cloud sync tool.',
   tool_chatgpt_export_to_markdown_download: 'Download',
   tool_chatgpt_export_to_markdown_drop_hint: 'Drop a conversations JSON or paste below. Parsing stays in this tab.',
   tool_chatgpt_export_to_markdown_empty: 'Paste or choose an export file first.',
@@ -2141,10 +2142,12 @@ const en: SiteLangDict = {
   tool_chatgpt_export_to_markdown_faq_a1: 'No. The export is read in this tab. Nothing is uploaded to OpenAI, Anthropic, or our servers.',
   tool_chatgpt_export_to_markdown_faq_a2:
     'ChatGPT data-export conversations with a mapping tree are the main path. Flat role/content arrays and Claude chat_messages are also accepted.',
-  tool_chatgpt_export_to_markdown_faq_a3: 'Yes. Claude-style chat_messages (sender + text) are absorbed here. There is no second URL.',
+  tool_chatgpt_export_to_markdown_faq_a3:
+    'Yes. Claude-style chat_messages arrays (sender + text) are parsed by the same converter, so one paste handles both ChatGPT and Claude exports.',
   tool_chatgpt_export_to_markdown_faq_a4:
     'Empty system nodes and tool shells without text are skipped. Attachments and images are not reconstructed as files.',
-  tool_chatgpt_export_to_markdown_faq_a5: 'Token counting is a different job (deferred). Keep this H1 on export → Markdown.',
+  tool_chatgpt_export_to_markdown_faq_a5:
+    'Token counting is a different job and is not built into this converter. Use a dedicated token counter when you need it.',
   tool_chatgpt_export_to_markdown_faq_q1: 'Is my chat uploaded?',
   tool_chatgpt_export_to_markdown_faq_q2: 'Which export shapes work?',
   tool_chatgpt_export_to_markdown_faq_q3: 'Does Claude export work here?',
@@ -2159,7 +2162,7 @@ const en: SiteLangDict = {
   tool_chatgpt_export_to_markdown_how_item_1: 'Get a ChatGPT data export (or Claude JSON) — the job is ChatGPT export to Markdown.',
   tool_chatgpt_export_to_markdown_how_item_2: 'Drop the file or paste the JSON into the box.',
   tool_chatgpt_export_to_markdown_how_item_3: 'Leave Markdown selected unless you need the JSON or CSV chip.',
-  tool_chatgpt_export_to_markdown_how_item_4: 'Copy or download. Load sample already ran on first paint.',
+  tool_chatgpt_export_to_markdown_how_item_4: 'Copy or download. Click Load sample to fill the demo.',
   tool_chatgpt_export_to_markdown_how_title: 'How it works',
   tool_chatgpt_export_to_markdown_input_label: 'Export JSON',
   tool_chatgpt_export_to_markdown_input_ph: 'Paste conversations JSON here…',
@@ -2169,11 +2172,10 @@ const en: SiteLangDict = {
   tool_chatgpt_export_to_markdown_role_system: 'System',
   tool_chatgpt_export_to_markdown_role_tool: 'Tool',
   tool_chatgpt_export_to_markdown_role_user: 'User',
-  tool_chatgpt_export_to_markdown_rules_body:
-    'Export conversion needs a field map, a Markdown default, and clear privacy — not a second converter URL per vendor.',
+  tool_chatgpt_export_to_markdown_rules_body: 'Export conversion needs a field map, a Markdown default, and clear privacy about local processing.',
   tool_chatgpt_export_to_markdown_rules_item_1: 'Default output is Markdown with ## User / ## Assistant sections and an optional # title.',
   tool_chatgpt_export_to_markdown_rules_item_2: 'ChatGPT mapping trees, flat role/content arrays, and Claude chat_messages are parsed on one page.',
-  tool_chatgpt_export_to_markdown_rules_item_3: 'JSON and CSV chips re-emit the same turns. They do not change the H1.',
+  tool_chatgpt_export_to_markdown_rules_item_3: 'JSON and CSV chips re-emit the same turns for pipelines or spreadsheets.',
   tool_chatgpt_export_to_markdown_rules_item_4: 'Vendor formats change. If parsing fails, paste the raw JSON and check the mapping FAQ.',
   tool_chatgpt_export_to_markdown_rules_title: 'Rules you should expect',
   tool_chatgpt_export_to_markdown_status_copied: 'Copied to clipboard.',
@@ -2182,7 +2184,7 @@ const en: SiteLangDict = {
   tool_chatgpt_export_to_markdown_title: 'ChatGPT export to Markdown',
   tool_chatgpt_export_to_markdown_usecase_1: 'Archive today’s ChatGPT export as Markdown before you delete the thread.',
   tool_chatgpt_export_to_markdown_usecase_2: 'Switch to CSV when you need role/content columns for a spreadsheet.',
-  tool_chatgpt_export_to_markdown_usecase_3: 'Drop a Claude chat_messages JSON on the same page — no second tool.',
+  tool_chatgpt_export_to_markdown_usecase_3: 'Drop a Claude chat_messages JSON here; the same converter maps those turns to Markdown.',
   tool_chatgpt_export_to_markdown_usecases_title: 'Good fits',
   tool_check_pdf_a_compliance_article:
     'Inspect five PDF/A-related indicators locally before using a standards validator. This screening cannot certify conformance.',
@@ -2783,9 +2785,10 @@ const en: SiteLangDict = {
   tool_compare_two_text_files_online_desc:
     'Compare two text files online: pick two .txt files, see line diffs in the browser — nothing is uploaded.',
   tool_compare_two_text_files_online_description:
-    'Compare two text files online in your browser. Process: choose the original file and the revised file, decode as UTF-8 (BOM is stripped), reject binary bytes, then highlight line adds and deletes. Files stay on your device and are not uploaded. Example: notes-a.txt vs notes-b.txt where only the middle line changes. Word, Excel, and JSON have other pages; this page is text files only.',
+    'Compare two text files online in your browser. Choose the original and revised .txt files; each is decoded strictly as UTF-8, its leading BOM is removed, and invalid encoding or binary content is rejected before line additions and deletions are highlighted. Files stay on your device and are not uploaded to a server. Example: notes-a.txt and notes-b.txt differ only on the middle line. Word, spreadsheet, and structured JSON files are not parsed.',
   tool_compare_two_text_files_online_empty: 'Choose two text files first, or load the sample.',
   tool_compare_two_text_files_online_err_binary: 'One file looks binary (null bytes). This page only compares plain text such as .txt.',
+  tool_compare_two_text_files_online_err_encoding: 'A file is not valid UTF-8. Save or convert it as UTF-8, then compare again.',
   tool_compare_two_text_files_online_err_too_large: 'A file is larger than about 1 MB. Try a shorter excerpt so the tab stays responsive.',
   tool_compare_two_text_files_online_example:
     'Load sample compares notes-a.txt (“alpha / second line / third”) with notes-b.txt where the middle line is “changed line”. Line mode marks only that line. First paint already shows this result.',
@@ -2793,11 +2796,11 @@ const en: SiteLangDict = {
   tool_compare_two_text_files_online_faq_a1:
     'No. Bytes are read in this tab with FileReader. jsdiff may load from a CDN as library code; your files are not uploaded to our servers.',
   tool_compare_two_text_files_online_faq_a2:
-    'Files are decoded as UTF-8. A leading BOM is removed so the first line is not marked as changed only because of that mark. Other encodings may look garbled — save as UTF-8 first.',
+    'Files are decoded strictly as UTF-8. A leading BOM is removed; invalid UTF-8 is rejected instead of being shown with replacement characters. Convert legacy encodings such as Windows-1252 first.',
   tool_compare_two_text_files_online_faq_a3:
     'If the file contains a null byte it is treated as binary and refused. Use a hex or archive tool for those. Word and Excel files belong on their own compare pages.',
   tool_compare_two_text_files_online_faq_a4:
-    'This page is for .txt / .text. People also search txt compare or file diff online — same job. A generic “compare two files” search that meant Word or spreadsheets should use those dedicated pages. Paste-only text lives on Check difference between two texts.',
+    'This tool accepts .txt / .text files decoded as UTF-8. Use the paste comparer when there are no files, and the dedicated Word or spreadsheet comparers for .docx, xlsx, xls, or csv.',
   tool_compare_two_text_files_online_faq_q1: 'Are my files uploaded?',
   tool_compare_two_text_files_online_faq_q2: 'What encoding and BOM rules apply?',
   tool_compare_two_text_files_online_faq_q3: 'Can I compare binary, Word, or Excel here?',
@@ -2806,7 +2809,7 @@ const en: SiteLangDict = {
     'Pick two text files you already have on disk, then read the highlighted lines. There is no large paste box on this first screen.',
   tool_compare_two_text_files_online_how_item_1: 'Choose the first text file (original snapshot or export).',
   tool_compare_two_text_files_online_how_item_2: 'Choose the second text file (revised snapshot).',
-  tool_compare_two_text_files_online_how_item_3: 'Compare runs automatically after both files are chosen; Load sample already did this on first paint.',
+  tool_compare_two_text_files_online_how_item_3: 'Select Compare to refresh the line diff; choosing both files also runs it automatically.',
   tool_compare_two_text_files_online_how_item_4: 'Read green adds and red deletes. Clear removes both files from this tab.',
   tool_compare_two_text_files_online_how_title: 'How it works',
   tool_compare_two_text_files_online_label_a: 'First text file',
@@ -2858,7 +2861,7 @@ const en: SiteLangDict = {
   tool_compare_two_word_documents_for_differences_faq_a3:
     'If extract fails, the file may be password-protected, corrupt, or not OOXML. Image-only pages yield empty text.',
   tool_compare_two_word_documents_for_differences_faq_a4:
-    'People also search word compare online. Same job if they meant two .docx files. A generic “compare two documents online” search that meant PDF is not this page.',
+    'This comparison accepts two .docx files and checks extracted wording. PDF and legacy .doc files are not parsed, and formatting or Word revision history is outside the result.',
   tool_compare_two_word_documents_for_differences_faq_q1: 'Are my Word files uploaded?',
   tool_compare_two_word_documents_for_differences_faq_q2: 'Is this the same as Word Review → Compare?',
   tool_compare_two_word_documents_for_differences_faq_q3: 'Why did extraction fail or miss headers?',
@@ -2866,7 +2869,7 @@ const en: SiteLangDict = {
   tool_compare_two_word_documents_for_differences_how_body: 'Pick two Word files and read the wording diff. This page does not open the Review pane.',
   tool_compare_two_word_documents_for_differences_how_item_1: 'Choose the first .docx (original).',
   tool_compare_two_word_documents_for_differences_how_item_2: 'Choose the second .docx (revised).',
-  tool_compare_two_word_documents_for_differences_how_item_3: 'Compare extracts visible text automatically; Load sample already ran on first paint.',
+  tool_compare_two_word_documents_for_differences_how_item_3: 'Select Compare to extract the visible text and run the wording diff.',
   tool_compare_two_word_documents_for_differences_how_item_4: 'Read green adds and red deletes in the extracted text.',
   tool_compare_two_word_documents_for_differences_how_title: 'How it works',
   tool_compare_two_word_documents_for_differences_label_a: 'First Word document',
@@ -3824,7 +3827,7 @@ const en: SiteLangDict = {
   tool_crop_pdf_warn_large: 'File larger than ~25 MB — cropping may be slow or fail in some browsers.',
   tool_crop_pdf_warn_pdflib: 'PDF library failed to load. Check your network and retry.',
   tool_csv_json_article:
-    'Bidirectional CSV ↔ JSON with explicit type-inference, delimiter and quoting rules, plus how nested JSON flattens to columns. Built for spreadsheet ↔ API interchange, not a second thin URL.',
+    'Bidirectional CSV ↔ JSON with explicit type-inference, delimiter and quoting rules, plus how nested JSON flattens to columns.',
   tool_csv_json_clear: 'Clear',
   tool_csv_json_convert: 'Convert',
   tool_csv_json_copy_csv: 'Copy CSV',
@@ -4498,7 +4501,7 @@ const en: SiteLangDict = {
   tool_excel_compare_files_desc:
     'Excel compare files: pick two spreadsheets, compare the current sheet cell by cell — stays on the device, not uploaded.',
   tool_excel_compare_files_description:
-    'Excel compare files in your browser. Process: choose two xlsx or csv files, pick the current sheet (first sheet by default), then list cells whose values differ. Files stay on your device and are not uploaded. Example: two 3-row tables where B3 changes from 2 to 9. “Online” is how it runs, not the heading. Column shifts are compared by address, not by header name.',
+    'Excel compare files in your browser. Process: choose two xlsx or csv files, pick the current sheet (first sheet by default), then list cells whose values differ. Files stay on your device and are not uploaded. Example: two 3-row tables where B3 changes from 2 to 9. Column shifts are compared by address, not by header name.',
   tool_excel_compare_files_empty: 'Choose two spreadsheet files first, or load the sample.',
   tool_excel_compare_files_err_read: 'Could not read a spreadsheet. Try xlsx or csv, and unlock protected workbooks first.',
   tool_excel_compare_files_example:
@@ -4508,18 +4511,22 @@ const en: SiteLangDict = {
     'No. Bytes are read in this tab with SheetJS. The library may load from a CDN; your files are not uploaded to our servers.',
   tool_excel_compare_files_faq_a2:
     'Yes. The first sheet is selected by default. Use the sheet lists if you need another tab in the same file. Other sheets are not compared until you select them.',
-  tool_excel_compare_files_faq_a3: 'Yes. CSV is read as a single sheet. People also search compare two csv — same page, no extra URL.',
+  tool_excel_compare_files_faq_a3:
+    'Yes. CSV is read as a single sheet, so you can compare two CSV files or compare a CSV export with an Excel sheet by cell address.',
   tool_excel_compare_files_faq_a4:
     'Missing cells and empty cells are both treated as a blank string. A shifted column still compares A1 to A1, not “the Name column” by header. That avoids silent mismatches when headers move.',
+  tool_excel_compare_files_faq_a5:
+    'It compares the displayed text SheetJS reads for each cell. Formula expressions, styles, comments, column widths, and workbook structure are not compared separately. A formula change with the same cached display value can therefore look unchanged.',
   tool_excel_compare_files_faq_q1: 'Are my Excel files uploaded?',
   tool_excel_compare_files_faq_q2: 'Does it only compare the first sheet?',
   tool_excel_compare_files_faq_q3: 'Can I compare two CSV files here?',
   tool_excel_compare_files_faq_q4: 'How are empty cells and shifted columns handled?',
+  tool_excel_compare_files_faq_q5: 'Does it compare formulas, formatting, or only displayed values?',
   tool_excel_compare_files_how_body: 'Pick two tables and read which cell addresses differ on the current sheets.',
   tool_excel_compare_files_how_item_1: 'Choose the first spreadsheet (xlsx, xls, or csv).',
   tool_excel_compare_files_how_item_2: 'Choose the second spreadsheet.',
   tool_excel_compare_files_how_item_3: 'Leave the first sheet selected unless you need another tab.',
-  tool_excel_compare_files_how_item_4: 'Compare lists differing cells; Load sample already ran on first paint.',
+  tool_excel_compare_files_how_item_4: 'Select Compare to list cells whose displayed text differs on the two selected sheets.',
   tool_excel_compare_files_how_title: 'How it works',
   tool_excel_compare_files_label_a: 'First spreadsheet',
   tool_excel_compare_files_label_b: 'Second spreadsheet',
@@ -4946,11 +4953,11 @@ const en: SiteLangDict = {
   tool_film_prompt_builder_desc:
     'Film prompt builder — local default + optional Cloudflare AI Expand/Polish (Turnstile); Markdown/JSON on device.',
   tool_film_prompt_builder_description:
-    'Film prompt builder — Local + Optional AI for ChatGPT, Gemini, Claude, and DeepSeek: assemble structured prompts locally by default, then optionally Expand/Polish via Cloudflare Workers AI (Turnstile required, rate-limited). Example runs on first paint. Markdown default; JSON for pipelines. Local text stays on your device unless you use optional AI.',
+    'Film prompt builder — Local + Optional AI for ChatGPT, Gemini, Claude, and DeepSeek: assemble structured prompts locally by default, then optionally Expand/Polish via Cloudflare Workers AI (Turnstile required, rate-limited). Markdown default; JSON for pipelines. Local text stays on your device unless you use optional AI. Example: click Load sample for a ready preset, then Build or optionally Expand/Polish.',
   tool_film_prompt_builder_download: 'Download',
   tool_film_prompt_builder_empty: 'Fill at least one field before building.',
   tool_film_prompt_builder_example:
-    'Input: Logline = two rival food-truck owners share one kitchen for 30 days after a permit error; Act II = festival rush + blogger recipe feud; Scene list = six numbered beats; Arc = Pride → grudging teamwork → co-owners. Output (Markdown): ## Task block lists Logline, Act1–3, Scene / List, Character / Arc — same text Load sample writes on first paint.',
+    'Input: Logline = two rival food-truck owners share one kitchen for 30 days after a permit error; Act II = festival rush + blogger recipe feud; Scene list = six numbered beats; Arc = Pride → grudging teamwork → co-owners. Output (Markdown): ## Task block lists Logline, Act1–3, Scene / List, Character / Arc — same text Load sample writes on the canvas.',
   tool_film_prompt_builder_example_title: 'Example',
   tool_film_prompt_builder_faq_a1:
     'Local assembly runs in this browser tab — nothing is uploaded by default. Optional Expand/Polish sends only the text you submit for that click to Cloudflare Workers AI, not to OpenAI, Google, Anthropic, or DeepSeek from our servers.',
@@ -4962,7 +4969,7 @@ const en: SiteLangDict = {
     'Yes. Complete the Turnstile widget in the optional AI panel before Expand or Polish. Without a valid token, AI buttons show an error and local mode still works.',
   tool_film_prompt_builder_faq_a5: 'Yes. The JSON chip emits structured fields plus assembled prompt text for tests or config pipelines.',
   tool_film_prompt_builder_faq_a6:
-    'Yes. Copy the finished prompt into ChatGPT, Gemini, Claude, or DeepSeek. We do not split URLs per platform because the job is formatting text, not calling APIs.',
+    'Yes. The output is plain prompt text, so the same block pastes into ChatGPT, Gemini, Claude, or DeepSeek without per-platform edits.',
   tool_film_prompt_builder_faq_a7:
     'Local mode formats your fields in this tab only — nothing is uploaded. Optional Expand/Polish sends the text you submit for that click to Cloudflare Workers AI (rate-limited, Turnstile required). On failure or quota, keep using local mode.',
   tool_film_prompt_builder_faq_q1: 'Is my prompt uploaded?',
@@ -4977,7 +4984,7 @@ const en: SiteLangDict = {
   tool_film_prompt_builder_fmt_md: 'Markdown',
   tool_film_prompt_builder_how_body:
     'Fill film prompt builder fields, build a prompt locally, optionally Expand/Polish with Turnstile, then paste into ChatGPT, Gemini, Claude, or DeepSeek.',
-  tool_film_prompt_builder_how_item_1: 'Load sample already ran the default preset on first paint.',
+  tool_film_prompt_builder_how_item_1: 'Click Load sample for the default preset.',
   tool_film_prompt_builder_how_item_2: 'Edit fields, click Build prompt, or switch to JSON if you need structured export.',
   tool_film_prompt_builder_how_item_3: 'Optional: complete Turnstile, then Expand or Polish via Cloudflare Workers AI.',
   tool_film_prompt_builder_how_item_4: 'Copy or download, then paste into ChatGPT, Gemini, Claude, or DeepSeek.',
@@ -5455,7 +5462,7 @@ const en: SiteLangDict = {
   tool_hreflang_rules_item_4:
     'x-default points to the page shown when no listed language matches, for example an English root page. Google may use it as a fallback for all undetected languages.',
   tool_hreflang_rules_item_5:
-    'Choose one delivery form per set: the <link> tags in HTML, the HTTP Link header, or sitemap xhtml:link. Do not mix forms for the same page set, or signals can contradict.',
+    'Google treats the three forms as equivalent and does allow all three at once, but says there is no Search benefit. Pick one per page set: three implementations drift apart, and contradictory annotations get ignored.',
   tool_hreflang_rules_title: 'Rules used by the generator',
   tool_hreflang_sample: 'Load sample',
   tool_hreflang_tab_http: 'HTTP Link header',
@@ -5527,7 +5534,7 @@ const en: SiteLangDict = {
   tool_html_entity_rules_item_2:
     'Named (&copy;), decimal (&#169;), and hex (&#xA9;) forms decode to the same character. When encoding with “Named when available”, common symbols use names; others fall back to numeric entities.',
   tool_html_entity_rules_item_3:
-    'Double encoding happens if you encode already-escaped text — & becomes &amp;amp;. Use Decode → “Until stable” once if you suspect double escaping. Attribute values in real HTML may also need quotes escaped even when text nodes do not.',
+    'Double encoding happens if you encode already-escaped text — & becomes &amp;amp;. Use Decode → “Until stable” once if you suspect double escaping; raw < and > in your input are kept literally across passes instead of being read as markup. Attribute values in real HTML may also need quotes escaped even when text nodes do not.',
   tool_html_entity_rules_item_4:
     'Privacy: your paste is not uploaded. This tool uses zero external libraries — conversion stays entirely in the browser.',
   tool_html_entity_rules_title: 'Rules you should expect',
@@ -6878,7 +6885,7 @@ const en: SiteLangDict = {
   tool_ios_prompt_builder_desc:
     'iOS prompt builder — local default + optional Cloudflare AI Expand/Polish (Turnstile); Markdown/JSON on device.',
   tool_ios_prompt_builder_description:
-    'iOS prompt builder — Local + Optional AI for ChatGPT, Gemini, Claude, and DeepSeek: assemble structured prompts locally by default, then optionally Expand/Polish via Cloudflare Workers AI (Turnstile required, rate-limited). Example runs on first paint. Markdown default; JSON for pipelines. Local text stays on your device unless you use optional AI.',
+    'iOS prompt builder — Local + Optional AI for ChatGPT, Gemini, Claude, and DeepSeek: assemble structured prompts locally by default, then optionally Expand/Polish via Cloudflare Workers AI (Turnstile required, rate-limited). Markdown default; JSON for pipelines. Local text stays on your device unless you use optional AI. Example: click Load sample for a ready preset, then Build or optionally Expand/Polish.',
   tool_ios_prompt_builder_download: 'Download',
   tool_ios_prompt_builder_empty: 'Fill at least one field before building.',
   tool_ios_prompt_builder_example:
@@ -6913,7 +6920,7 @@ const en: SiteLangDict = {
   tool_ios_prompt_builder_hig_constraints_ph: 'Sample hig constraints…',
   tool_ios_prompt_builder_how_body:
     'Fill ios prompt builder fields, build a prompt locally, optionally Expand/Polish with Turnstile, then paste into ChatGPT, Gemini, Claude, or DeepSeek.',
-  tool_ios_prompt_builder_how_item_1: 'Load sample already ran the default preset on first paint.',
+  tool_ios_prompt_builder_how_item_1: 'Click Load sample for the default preset.',
   tool_ios_prompt_builder_how_item_2: 'Edit fields, click Build prompt, or switch to JSON if you need structured export.',
   tool_ios_prompt_builder_how_item_3: 'Optional: complete Turnstile, then Expand or Polish via Cloudflare Workers AI.',
   tool_ios_prompt_builder_how_item_4: 'Copy or download, then paste into ChatGPT, Gemini, Claude, or DeepSeek.',
@@ -7231,7 +7238,7 @@ const en: SiteLangDict = {
   tool_irr_usecase_2: 'Compare with NPV at a hurdle rate.',
   tool_irr_usecase_3: 'Sketch before talking to an advisor — not a substitute.',
   tool_irr_usecases_title: 'When to use it',
-  tool_json_diff_checker_online_array_as_set: 'Treat arrays as sets (order ignored)',
+  tool_json_diff_checker_online_array_as_set: 'Ignore array order (duplicates still count)',
   tool_json_diff_checker_online_article:
     'Paste two JSON values and list path-level adds, deletes, and changes. Key order is ignored by default. Paste stays on your device and is not uploaded. YAML and XML are not parsed here.',
   tool_json_diff_checker_online_clear: 'Clear',
@@ -7250,9 +7257,9 @@ const en: SiteLangDict = {
   tool_json_diff_checker_online_faq_a2:
     'By default, {"a":1,"b":2} and {"b":2,"a":1} are treated as the same object. Turn off “Ignore key order” if you care about the written order of keys.',
   tool_json_diff_checker_online_faq_a3:
-    'Arrays are lists by index. [1,2] vs [2,1] is a change. Enable “Treat arrays as sets” only when order should not matter.',
+    'Arrays compare by index by default. When order is ignored, normalized items are sorted, duplicates still count, and reported indexes refer to that sorted order. Objects are not matched by an id field.',
   tool_json_diff_checker_online_faq_a4:
-    'People also search json diff checker without “online”. Same job. YAML or XML needs another page (convert YAML first if you must).',
+    'Only valid JSON is parsed. YAML and XML syntax is not accepted; convert YAML to JSON first or use a format-specific comparer.',
   tool_json_diff_checker_online_faq_q1: 'Is my JSON uploaded?',
   tool_json_diff_checker_online_faq_q2: 'Does key order count as a difference?',
   tool_json_diff_checker_online_faq_q3: 'How are arrays compared?',
@@ -7261,7 +7268,7 @@ const en: SiteLangDict = {
   tool_json_diff_checker_online_how_item_1: 'Paste the original JSON on the left.',
   tool_json_diff_checker_online_how_item_2: 'Paste the revised JSON on the right.',
   tool_json_diff_checker_online_how_item_3: 'Leave Ignore key order on unless you need written key order.',
-  tool_json_diff_checker_online_how_item_4: 'Compare lists paths; Load sample already ran on first paint.',
+  tool_json_diff_checker_online_how_item_4: 'Select Compare to list added, removed, and changed paths under the current options.',
   tool_json_diff_checker_online_how_title: 'How it works',
   tool_json_diff_checker_online_ignore_keys: 'Ignore object key order',
   tool_json_diff_checker_online_label_a: 'Original JSON',
@@ -7277,7 +7284,8 @@ const en: SiteLangDict = {
   tool_json_diff_checker_online_rules_item_1:
     'Invalid JSON is reported per side. Duplicate keys follow JSON.parse (last key wins in engines that allow it).',
   tool_json_diff_checker_online_rules_item_2: 'Ignore key order (default on) sorts object keys before walking paths.',
-  tool_json_diff_checker_online_rules_item_3: 'Arrays are index lists unless you treat them as sets (then elements are sorted by JSON stringify).',
+  tool_json_diff_checker_online_rules_item_3:
+    'Ignoring array order sorts normalized items but keeps duplicates. Result indexes then refer to sorted comparison order, not original positions.',
   tool_json_diff_checker_online_rules_item_4: 'YAML and XML are not parsed. Convert YAML on the related YAML ↔ JSON page first if needed.',
   tool_json_diff_checker_online_rules_title: 'Rules you should expect',
   tool_json_diff_checker_online_sample_a: '{\n  "sku": "A-1",\n  "price": 9.5\n}',
@@ -7405,7 +7413,7 @@ const en: SiteLangDict = {
   tool_jwt_decoder_rules_item_1:
     'Structure: a signed JWT (JWS compact form) has three Base64url segments — header (alg, typ), payload (claims), signature (bytes, not JSON).',
   tool_jwt_decoder_rules_item_2:
-    'Base64url decode: replace -→+, _→/, pad to length % 4, then atob and JSON.parse. Malformed segments fail with a specific header/payload error.',
+    'Base64url decode: replace -→+, _→/, pad to length % 4, then atob, decode those bytes as UTF-8, and JSON.parse — so accented or CJK claim values stay readable. Malformed segments fail with a specific header/payload error.',
   tool_jwt_decoder_rules_item_3:
     'Registered claims: exp (expiry), iat (issued at), nbf (not before) are numeric Unix seconds in UTC. Decoding them does not prove the token is trustworthy.',
   tool_jwt_decoder_rules_item_4:
@@ -8197,7 +8205,7 @@ const en: SiteLangDict = {
   tool_meta_desc_len_warn: 'Description: {n} characters — over 160, may be truncated.',
   tool_meta_desc_ph: 'Generate ready-to-paste head meta tags with length hints, robots values and OG fields.',
   tool_meta_description:
-    'Title and meta description are your Google card; bad canonical splits signals. Fill fields for paste-ready head tags and length hints. Example: canonical + og.',
+    'Title and meta description shape your search snippet; canonical picks the URL among duplicates. Fill fields for paste-ready head tags and length hints. Example: canonical + og.',
   tool_meta_error_prefix: 'Error: ',
   tool_meta_example:
     'The sample fills the title, description, canonical, robots and three Open Graph fields. The generated snippet outputs a <title> tag, the meta description, the canonical link, the robots meta and the og: tags that were filled in.',
@@ -8291,7 +8299,7 @@ const en: SiteLangDict = {
   tool_midjourney_prompt_builder_desc:
     'Midjourney prompt builder — local default + optional Cloudflare AI Expand/Polish (Turnstile); Markdown/JSON on device.',
   tool_midjourney_prompt_builder_description:
-    'Midjourney prompt builder — Local + Optional AI for ChatGPT, Gemini, Claude, and DeepSeek: assemble structured prompts locally by default, then optionally Expand/Polish via Cloudflare Workers AI (Turnstile required, rate-limited). Example runs on first paint. Markdown default; JSON for pipelines. Local text stays on your device unless you use optional AI.',
+    'Midjourney prompt builder — Local + Optional AI for ChatGPT, Gemini, Claude, and DeepSeek: assemble structured prompts locally by default, then optionally Expand/Polish via Cloudflare Workers AI (Turnstile required, rate-limited). Markdown default; JSON for pipelines. Local text stays on your device unless you use optional AI. Example: click Load sample for a ready preset, then Build or optionally Expand/Polish.',
   tool_midjourney_prompt_builder_download: 'Download',
   tool_midjourney_prompt_builder_empty: 'Fill at least one field before building.',
   tool_midjourney_prompt_builder_example:
@@ -8322,7 +8330,7 @@ const en: SiteLangDict = {
   tool_midjourney_prompt_builder_fmt_md: 'Markdown',
   tool_midjourney_prompt_builder_how_body:
     'Fill midjourney prompt builder fields, build a prompt locally, optionally Expand/Polish with Turnstile, then paste into ChatGPT, Gemini, Claude, or DeepSeek.',
-  tool_midjourney_prompt_builder_how_item_1: 'Load sample already ran the default preset on first paint.',
+  tool_midjourney_prompt_builder_how_item_1: 'Click Load sample for the default preset.',
   tool_midjourney_prompt_builder_how_item_2: 'Edit fields, click Build prompt, or switch to JSON if you need structured export.',
   tool_midjourney_prompt_builder_how_item_3: 'Optional: complete Turnstile, then Expand or Polish via Cloudflare Workers AI.',
   tool_midjourney_prompt_builder_how_item_4: 'Copy or download, then paste into ChatGPT, Gemini, Claude, or DeepSeek.',
@@ -8444,7 +8452,7 @@ const en: SiteLangDict = {
     'The sample tags describe a blog post with a 1200×630 og:image and twitter:card summary_large_image. The preview shows a Facebook card with the image on the left, a large X card, a WhatsApp-style card, and a tag table where every required field is present.',
   tool_og_example_title: 'Example',
   tool_og_faq_a1:
-    'Facebook, X and WhatsApp build the preview from the HTML title, meta description and the first image of the page. The card can be incomplete or show the wrong image, which is why the required og: fields exist.',
+    'Facebook, X and WhatsApp fall back to the HTML title, meta description and an image found on the page. Fallbacks differ per platform and change over time, so the card may be incomplete or pick the wrong image — that is why the og: fields exist.',
   tool_og_faq_a2:
     'The safe size is 1200×630 px, a 1.91:1 ratio that all major platforms accept. Facebook now also supports 2:1 and 1:1 crops. Very small images are often upscaled and look blurry.',
   tool_og_faq_a3:
@@ -8477,7 +8485,7 @@ const en: SiteLangDict = {
     'Make every social share of your page earn clicks — preview how it looks on Facebook, X and messaging apps from your browser.',
   tool_og_home_title: 'Open Graph Preview',
   tool_og_how_body:
-    'The preview parses the og:/twitter: tags you paste (or extracts them from the HTML fetched for a URL) and renders three share cards. Facebook uses the 1.91:1 image on the left with title, description and domain below. X follows twitter:card: summary_large_image shows a big image on top, summary shows a small one beside the text. Messaging apps such as WhatsApp show one large card. A field table marks og:title, og:description and og:image as required and lists optional fields.',
+    'The preview parses the og:/twitter: tags you paste (or extracts them from the HTML fetched for a URL) and renders three share cards. Facebook uses the 1.91:1 image on the left with title, description and domain below. X follows twitter:card: summary_large_image shows a big image on top, summary shows a small one beside the text. Messaging apps such as WhatsApp show one large card. A field table marks the four protocol-required fields and lists the optional ones.',
   tool_og_how_title: 'How it works',
   tool_og_missing_label: 'Missing',
   tool_og_no_tags: 'No OG tags detected',
@@ -8499,7 +8507,7 @@ const en: SiteLangDict = {
   tool_og_rules_body:
     'These are the image sizes and fallbacks the platforms use, based on the Open Graph protocol and the X Cards docs.',
   tool_og_rules_item_1:
-    'Required fields: og:title, og:description and og:image. Missing ones are marked so you can fix them before publishing.',
+    'Required by the Open Graph protocol: og:title, og:type, og:image and og:url. og:description is optional in the spec, but every major platform renders it — omit it and the platform writes its own summary from page text.',
   tool_og_rules_item_2:
     'og:image at 1200×630 px (1.91:1) works on all major platforms. Facebook now also accepts 2:1 and 1:1 crops; smaller images are often compressed.',
   tool_og_rules_item_3:
@@ -8610,18 +8618,19 @@ const en: SiteLangDict = {
   tool_onpage_canonical_missing: 'No canonical URL set. Add <link rel="canonical"> when the same content is reachable at several URLs.',
   tool_onpage_canonical_ok: 'Self-referencing canonical found.',
   tool_onpage_canonical_other:
-    'Canonical points to a different URL. Use a self-referencing canonical unless the page is a copy of the target.',
+    'Canonical points to a different URL, which tells Google this page duplicates that one. Keep it only when that is true; canonical is a hint, so Google may still pick another URL.',
   tool_onpage_check: 'Check page',
   tool_onpage_clear: 'Clear',
   tool_onpage_copied: 'Copied',
   tool_onpage_copy: 'Copy',
   tool_onpage_desc_check: 'Meta description',
   tool_onpage_desc_long: 'Description is {n} characters — snippets usually cut around 160 characters.',
-  tool_onpage_desc_missing: 'No meta description found. Write a 140–160 character summary that matches the page content.',
+  tool_onpage_desc_missing:
+    'No meta description found. Google will then build the snippet from page text. Write your own summary if you want to control that wording.',
   tool_onpage_desc_ok: 'Description found at {n} characters. The 140–160 character range shows well in most snippets.',
   tool_onpage_desc_short: 'Description is only {n} characters. Use the space to summarize what the page offers.',
   tool_onpage_description:
-    'Weak titles, missing meta, duplicate H1s, or bad canonicals hurt rankings. Paste URL or HTML for checks and fixes. Paste local; URL once. Example: two H1s.',
+    'Audit title, meta description, H1, canonical, robots, Open Graph and JSON-LD tags. Paste URL or HTML for checks and fixes. Paste local; URL once. Example: two H1s.',
   tool_onpage_error_prefix: 'Error: ',
   tool_onpage_example:
     'Sample input is a page with a 71-character title, no meta description, two H1 tags, a canonical to another URL, one og:image, a valid JSON-LD block and one http:// image. The checker reports the title as likely truncated, H1 as a warning, canonical as non-self-referencing, and mixed content as a warning, matching what the tool shows when you load the sample.',
@@ -8629,9 +8638,9 @@ const en: SiteLangDict = {
   tool_onpage_faq_a1:
     'It checks the tags a page controls itself: the title, meta description, H1, canonical, robots meta, Open Graph fields, JSON-LD structured data, mixed content and render-blocking resources. It does not measure rankings or backlinks.',
   tool_onpage_faq_a2:
-    'A single H1 states the topic of the page clearly for both readers and search engines. Multiple H1s blur the outline; use one H1 and structure the rest with H2–H6.',
+    'No. Google states there is no ideal number of headings and ranks pages with none, one or several H1s. The reasons to keep a single H1 are accessibility and a clear outline, plus a better chance that Google reuses your heading as the snippet title.',
   tool_onpage_faq_a3:
-    'For the page that should rank, yes — a self-referencing canonical is the clearest signal. Pointing canonical at another URL tells Google that page is a duplicate, which is useful only when that is true.',
+    'Not necessarily, but a self-referencing canonical is the clearest signal for a page that should rank on its own. Pointing it elsewhere declares this page a duplicate. Either way Google treats canonical as a hint and may choose a different URL.',
   tool_onpage_faq_a4:
     'When a page is served over https and references http:// images, scripts or styles, browsers block the request by default. This check lists those references as warnings so you can switch them to https.',
   tool_onpage_faq_a5:
@@ -8639,15 +8648,17 @@ const en: SiteLangDict = {
   tool_onpage_faq_a6:
     'No. When you paste HTML, parsing happens on your device and nothing is sent to a server. URL mode fetches the page once through our worker and does not store it.',
   tool_onpage_faq_q1: 'What does an on-page SEO checker look for?',
-  tool_onpage_faq_q2: 'Why should a page have exactly one H1?',
+  tool_onpage_faq_q2: 'Do multiple H1 tags hurt SEO?',
   tool_onpage_faq_q3: 'Does canonical have to point to itself?',
   tool_onpage_faq_q4: 'Why does the checker flag http:// resources as mixed content?',
   tool_onpage_faq_q5: 'Does the JSON-LD check test validation?',
   tool_onpage_faq_q6: 'Is my HTML uploaded anywhere?',
   tool_onpage_fetch_failed: 'Could not fetch the URL. It may be offline, block bots, or return non-HTML content.',
   tool_onpage_h1_check: 'H1',
-  tool_onpage_h1_missing: 'No H1 found. Use exactly one H1 that states the page topic.',
-  tool_onpage_h1_multiple: '{n} H1 tags found. Keep a single H1 per page and use H2–H6 for sections.',
+  tool_onpage_h1_missing:
+    'No H1 found. Add a top-level heading that states the page topic — screen readers and snippet titles both rely on it.',
+  tool_onpage_h1_multiple:
+    '{n} H1 tags found. Google ranks pages with any number of H1s, so this is not a penalty. One H1 plus H2–H6 sections still reads more clearly for screen readers.',
   tool_onpage_h1_ok: 'One H1 found and it is inside <body>.',
   tool_onpage_home_desc:
     'Catch the tag issues that hold your page back in search: audit title, H1, meta description, canonical, Open Graph and JSON-LD in your browser.',
@@ -8686,13 +8697,13 @@ const en: SiteLangDict = {
     'The page sets noindex — it will not appear in Google Search. Remove it when the page should be indexed.',
   tool_onpage_robots_ok: 'Robots meta allows indexing and following.',
   tool_onpage_rules_body:
-    'These are the standards each check compares against. They come from Google Search Central and the HTML specification.',
+    'What each check compares against, and how firm it is. Tag behaviour (robots, canonical, mixed content) follows Google Search Central and the HTML specification. Length and heading advice are display or readability heuristics, not ranking rules.',
   tool_onpage_rules_item_1:
     'Title: a page should have one descriptive <title>. Google may rewrite it, but a concise title near 50–60 characters usually displays well.',
   tool_onpage_rules_item_2:
-    'H1: use exactly one H1 that states the page topic. Additional headings should be H2–H6 and form a logical outline.',
+    'H1: a page needs a heading that states its topic. Google has no ideal heading count and does not penalise extra H1s, so multiple H1s are flagged for outline clarity and accessibility only.',
   tool_onpage_rules_item_3:
-    'Canonical: a self-referencing canonical tells Google which URL is the preferred one when duplicates exist. Link rel="canonical" goes in <head>.',
+    'Canonical: <link rel="canonical"> in <head> is a hint about the preferred URL among duplicates, not a directive. Google weighs it with redirects, sitemaps and internal links before choosing.',
   tool_onpage_rules_item_4:
     'Mixed content: an https page referencing http:// resources is blocked by browsers. This check lists those references as warnings.',
   tool_onpage_rules_item_5:
@@ -9076,7 +9087,8 @@ const en: SiteLangDict = {
   tool_password_generator_rules_body: 'Charset rules, randomness source, and honest limits — read before using output on a real account.',
   tool_password_generator_rules_item_1:
     'Pools: A–Z, a–z, 0–9, and a default symbol set. At least one pool must remain after toggles and ambiguous exclusion.',
-  tool_password_generator_rules_item_2: 'Random index uses crypto.getRandomValues bytes — never Math.random.',
+  tool_password_generator_rules_item_2:
+    'Random index uses crypto.getRandomValues bytes — never Math.random. Bytes that would skew the modulo are discarded, so every character in the pool stays equally likely.',
   tool_password_generator_rules_item_3:
     'This is not NIST-certified composition enforcement (no forced “one of each class” rule). Enable the sets you need manually.',
   tool_password_generator_rules_item_4: 'Privacy: local-only generation; clear the output when done on shared machines.',
@@ -9760,7 +9772,7 @@ const en: SiteLangDict = {
   tool_product_design_prompt_builder_desc:
     'Product design prompt builder — local default + optional Cloudflare AI Expand/Polish (Turnstile); Markdown/JSON on device.',
   tool_product_design_prompt_builder_description:
-    'Product design prompt builder — Local + Optional AI for ChatGPT, Gemini, Claude, and DeepSeek: assemble structured prompts locally by default, then optionally Expand/Polish via Cloudflare Workers AI (Turnstile required, rate-limited). Example runs on first paint. Markdown default; JSON for pipelines. Local text stays on your device unless you use optional AI.',
+    'Product design prompt builder — Local + Optional AI for ChatGPT, Gemini, Claude, and DeepSeek: assemble structured prompts locally by default, then optionally Expand/Polish via Cloudflare Workers AI (Turnstile required, rate-limited). Markdown default; JSON for pipelines. Local text stays on your device unless you use optional AI. Example: click Load sample for a ready preset, then Build or optionally Expand/Polish.',
   tool_product_design_prompt_builder_design_tokens_label: 'Design / Tokens',
   tool_product_design_prompt_builder_design_tokens_ph: 'Sample design tokens…',
   tool_product_design_prompt_builder_download: 'Download',
@@ -9793,7 +9805,7 @@ const en: SiteLangDict = {
   tool_product_design_prompt_builder_fmt_md: 'Markdown',
   tool_product_design_prompt_builder_how_body:
     'Fill product design prompt builder fields, build a prompt locally, optionally Expand/Polish with Turnstile, then paste into ChatGPT, Gemini, Claude, or DeepSeek.',
-  tool_product_design_prompt_builder_how_item_1: 'Load sample already ran the default preset on first paint.',
+  tool_product_design_prompt_builder_how_item_1: 'Click Load sample to load the default preset.',
   tool_product_design_prompt_builder_how_item_2: 'Edit fields, click Build prompt, or switch to JSON if you need structured export.',
   tool_product_design_prompt_builder_how_item_3: 'Optional: complete Turnstile, then Expand or Polish via Cloudflare Workers AI.',
   tool_product_design_prompt_builder_how_item_4: 'Copy or download, then paste into ChatGPT, Gemini, Claude, or DeepSeek.',
@@ -9898,11 +9910,11 @@ const en: SiteLangDict = {
   tool_prompt_template_builder_desc:
     'Prompt template builder — local default + optional Cloudflare AI Expand/Polish (Turnstile); Markdown/JSON on device.',
   tool_prompt_template_builder_description:
-    'Prompt template builder — Local + Optional AI for ChatGPT, Gemini, Claude, and DeepSeek: assemble structured prompts locally by default, then optionally Expand/Polish via Cloudflare Workers AI (Turnstile required, rate-limited). Example runs on first paint. Markdown default; JSON for pipelines. Local text stays on your device unless you use optional AI.',
+    'Prompt template builder — Local + Optional AI for ChatGPT, Gemini, Claude, and DeepSeek: assemble structured prompts locally by default, then optionally Expand/Polish via Cloudflare Workers AI (Turnstile required, rate-limited). Markdown default; JSON for pipelines. Local text stays on your device unless you use optional AI. Example: click Load sample for a ready preset, then Build or optionally Expand/Polish.',
   tool_prompt_template_builder_download: 'Download',
   tool_prompt_template_builder_empty: 'Add free text or at least one field before building.',
   tool_prompt_template_builder_example:
-    'Input (Load sample, Code chip): Role = senior code reviewer (security + readability); Task = review the PR diff I paste next; Constraints = max 12 bullets, flag secrets. Output (Markdown): ## Role / ## Task / ## Constraints / ## Output format — four sections ready to copy into ChatGPT or Claude. Matches first paint on the canvas.',
+    'Input (Load sample, Code chip): Role = senior code reviewer (security + readability); Task = review the PR diff I paste next; Constraints = max 12 bullets, flag secrets. Output (Markdown): ## Role / ## Task / ## Constraints / ## Output format — four sections ready to copy into ChatGPT or Claude. Matches what Load sample writes on the canvas.',
   tool_prompt_template_builder_example_title: 'Example',
   tool_prompt_template_builder_faq_a1:
     'Local assembly runs in this browser tab — nothing is uploaded by default. Optional Expand/Polish sends only the text you submit for that click to Cloudflare Workers AI, not to OpenAI, Google, Anthropic, or DeepSeek from our servers.',
@@ -9933,7 +9945,7 @@ const en: SiteLangDict = {
   tool_prompt_template_builder_how_body:
     'Pick a scene chip or draft your own text, fill Role / Task / Constraints / Output, build a template, then paste into ChatGPT, Gemini, Claude, or DeepSeek.',
   tool_prompt_template_builder_how_item_1: 'Choose Code review, Movie, Short drama, Android, or iOS — or paste your own draft in the free box.',
-  tool_prompt_template_builder_how_item_2: 'Click Build template (Load sample already ran the code-review preset on first paint).',
+  tool_prompt_template_builder_how_item_2: 'Click Build template (Click Load sample for the code-review preset).',
   tool_prompt_template_builder_how_item_3: 'Switch to JSON if you need {role,task,constraints,output} for code or config.',
   tool_prompt_template_builder_how_item_4: 'Copy or download, then paste into ChatGPT, Gemini, Claude, or DeepSeek.',
   tool_prompt_template_builder_how_title: 'How it works',
@@ -10148,7 +10160,7 @@ const en: SiteLangDict = {
     'Sample: Googlebot has Allow: / (fully enabled), GPTBot has Disallow: / (blocked), and a Sitemap line points to /sitemap.xml. The output mirrors this layout: one group per crawler, blank line between groups, sitemap last.',
   tool_robots_example_title: 'Example',
   tool_robots_faq_a1:
-    'It tells that crawler not to fetch any URL under the site root. If Googlebot gets Disallow: /, your pages can disappear from Google Search. For a staging path use Disallow: /private/ instead.',
+    'It tells that crawler not to fetch any URL under the site root. If Googlebot gets Disallow: /, your pages can disappear from Google Search. Disallow blocks crawling, not indexing — a blocked URL that others link to can still be listed without a snippet, so use noindex on a crawlable page when you need it gone. For a staging path use Disallow: /private/ instead.',
   tool_robots_faq_a2:
     'Create a group with the crawler’s User-agent (for example GPTBot, ClaudeBot, Google-Extended, CCBot, PerplexityBot) and add Disallow: /. Check the crawler’s official documentation, since AI crawlers update their user-agents and IP ranges from time to time.',
   tool_robots_faq_a3:
@@ -10175,15 +10187,15 @@ const en: SiteLangDict = {
   tool_robots_references:
     'RFC 9309 Robots Exclusion Protocol; Google Search Central — robots.txt; Google Search Central — Manage AI crawlers.',
   tool_robots_rules_body:
-    'robots.txt rules are path prefixes, not patterns, and a crawler applies the last matching group in the file. These are the rules this generator follows.',
+    'robots.txt rules are path prefixes, not patterns, and a crawler follows exactly one group — the one whose User-agent matches it most specifically. These are the rules this generator follows.',
   tool_robots_rules_item_1:
-    'Group order: a User-agent line starts a group that applies to that crawler; a blank line ends it. The last group matching a crawler wins.',
+    'Group selection: a crawler obeys the group with the most specific User-agent match — its own name beats *, and file order does not decide. Several User-agent lines for the same crawler are merged into one group (RFC 9309).',
   tool_robots_rules_item_2:
     'Prefix matching: Allow and Disallow match path prefixes, not substrings or regex. Only * and $ are special (RFC 9309).',
   tool_robots_rules_item_3:
-    'Disallow: / blocks that agent from the whole site. Disallow with an empty value allows everything for that agent.',
+    'Rule precedence inside a group: the longest matching path wins, and when an Allow and a Disallow match the same length, Allow wins. So Disallow: /admin/ with Allow: /admin/public/ keeps the public subfolder crawlable.',
   tool_robots_rules_item_4:
-    'Sitemap: is an extension, not part of RFC 9309. It is case-insensitive and may appear anywhere, though it is usually placed at the end.',
+    'Whole-site and sitemap lines: Disallow: / blocks the agent from every URL, while an empty Disallow value allows everything. Sitemap: is an extension outside RFC 9309, case-insensitive, and may appear anywhere — this generator puts it last.',
   tool_robots_rules_title: 'Syntax rules that matter',
   tool_robots_sample: 'Load sample',
   tool_robots_sitemap_label: 'Sitemap URL (optional)',
@@ -10192,7 +10204,7 @@ const en: SiteLangDict = {
   tool_robots_usecase_1:
     'New sites: generate a starting robots.txt that keeps search engines enabled and hides private staging paths.',
   tool_robots_usecase_2:
-    'AI crawler control: block GPTBot, ClaudeBot, Google-Extended, CCBot or PerplexityBot from training or summary extraction without touching Googlebot.',
+    'AI crawler control: give GPTBot, ClaudeBot, Google-Extended, CCBot or PerplexityBot their own Disallow group while Googlebot keeps crawling. Note Google-Extended covers Gemini and Vertex AI grounding — AI Overviews in Search still use Googlebot.',
   tool_robots_usecase_3: 'Discovery: pair robots.txt with a Sitemap line so crawlers can find your sitemap URL.',
   tool_robots_usecases_title: 'Good fits',
   tool_roi_article:
@@ -10595,12 +10607,12 @@ const en: SiteLangDict = {
   tool_serp_faq_a2:
     'No. Desktop and mobile viewports vary by device and font. This tool uses the commonly cited ~600px desktop and ~460px mobile title limits as an estimate for planning, not a guarantee of how Google will render your page.',
   tool_serp_faq_a3:
-    'It is a local estimate in the same direction. For the final look, open your live page in Search Console URL inspection or the Rich Results test, which render against Google’s real environment.',
+    'No. URL Inspection reports crawl and index status with a rendered page screenshot, and the Rich Results Test checks structured-data eligibility — neither previews the text snippet. Google also rewrites title links when the page title fits the query poorly, so the only real check is searching for the live URL.',
   tool_serp_faq_a4:
     'No. All text stays in your browser tab and is never sent to a server. Close the tab and everything is gone.',
   tool_serp_faq_q1: 'Why does a 30-character CJK title truncate before a 60-character English one?',
   tool_serp_faq_q2: 'Are the pixel limits exact?',
-  tool_serp_faq_q3: 'Does this match the mobile preview in Search Console?',
+  tool_serp_faq_q3: 'Can any Google tool show the final snippet?',
   tool_serp_faq_q4: 'Is my title uploaded anywhere?',
   tool_serp_fit: 'Fits within the viewport',
   tool_serp_home_desc: 'Titles that get cut off cost clicks in search — check the truncation before you publish.',
@@ -10670,7 +10682,7 @@ const en: SiteLangDict = {
   tool_short_drama_prompt_generator_desc:
     'Short drama prompt generator — local default + optional Cloudflare AI Expand/Polish (Turnstile); Markdown/JSON on device.',
   tool_short_drama_prompt_generator_description:
-    'Short drama prompt generator — Local + Optional AI for ChatGPT, Gemini, Claude, and DeepSeek: assemble structured prompts locally by default, then optionally Expand/Polish via Cloudflare Workers AI (Turnstile required, rate-limited). Example runs on first paint. Markdown default; JSON for pipelines. Local text stays on your device unless you use optional AI.',
+    'Short drama prompt generator — Local + Optional AI for ChatGPT, Gemini, Claude, and DeepSeek: assemble structured prompts locally by default, then optionally Expand/Polish via Cloudflare Workers AI (Turnstile required, rate-limited). Markdown default; JSON for pipelines. Local text stays on your device unless you use optional AI. Example: click Load sample for a ready preset, then Build or optionally Expand/Polish.',
   tool_short_drama_prompt_generator_download: 'Download',
   tool_short_drama_prompt_generator_empty: 'Fill at least one field before building.',
   tool_short_drama_prompt_generator_episodes_label: 'Episodes',
@@ -10707,7 +10719,7 @@ const en: SiteLangDict = {
   tool_short_drama_prompt_generator_hook_ph: 'Sample hook…',
   tool_short_drama_prompt_generator_how_body:
     'Fill short drama prompt generator fields, build a prompt locally, optionally Expand/Polish with Turnstile, then paste into ChatGPT, Gemini, Claude, or DeepSeek.',
-  tool_short_drama_prompt_generator_how_item_1: 'Load sample already ran the default preset on first paint.',
+  tool_short_drama_prompt_generator_how_item_1: 'Click Load sample to load the default preset.',
   tool_short_drama_prompt_generator_how_item_2: 'Edit fields, click Build prompt, or switch to JSON if you need structured export.',
   tool_short_drama_prompt_generator_how_item_3: 'Optional: complete Turnstile, then Expand or Polish via Cloudflare Workers AI.',
   tool_short_drama_prompt_generator_how_item_4: 'Copy or download, then paste into ChatGPT, Gemini, Claude, or DeepSeek.',
@@ -10858,7 +10870,7 @@ const en: SiteLangDict = {
   tool_sitemap_copied: 'Copied',
   tool_sitemap_copy: 'Copy',
   tool_sitemap_description:
-    'A sitemap helps Google discover and index pages faster. Paste https URLs, preview valid sitemap.xml, copy to root. Example: three URLs → three entries.',
+    'A sitemap tells Google which URLs exist, especially ones weak internal linking hides. Paste https URLs, preview valid sitemap.xml, copy to root. Example: three URLs → three entries.',
   tool_sitemap_download: 'Download',
   tool_sitemap_example:
     'Sample input: https://example.com/ and https://example.com/products with lastmod 2026-08-01, plus https://example.com/about — the output is a urlset with three url entries, the middle one carrying a lastmod element.',
@@ -10879,7 +10891,7 @@ const en: SiteLangDict = {
     'Each line: URL, or URL | lastmod (yyyy-MM-dd), or URL | lastmod | changefreq | priority. Example: https://example.com/page | 2026-08-01 | weekly | 0.8',
   tool_sitemap_generate: 'Generate',
   tool_sitemap_home_desc:
-    'Help Google discover and index every page you want ranked — turn a URL list into a valid sitemap.xml with lastmod, changefreq and priority in your browser.',
+    'Help Google discover the pages your internal links miss — turn a URL list into a valid sitemap.xml with lastmod, changefreq and priority in your browser.',
   tool_sitemap_home_title: 'XML Sitemap Generator',
   tool_sitemap_how_body:
     'Paste your URL list, one per line. You can add optional metadata after a pipe: lastmod (yyyy-MM-dd), changefreq and priority. The page parses each line, escapes reserved characters, checks that every URL starts with http(s), and builds a urlset following the sitemap protocol. Copy the XML to your site root, then reference it from robots.txt or submit it in Search Console.',
@@ -10904,7 +10916,7 @@ const en: SiteLangDict = {
   tool_sitemap_urls_ph: 'https://example.com/page',
   tool_sitemap_usecase_1: 'New sites: generate a first sitemap.xml from your URL list and submit it in Search Console.',
   tool_sitemap_usecase_2:
-    'Updated content: add lastmod for pages that changed recently so crawlers can pick up the freshness signal.',
+    'Updated content: add lastmod for pages that really changed. Google uses lastmod only when it is consistently accurate across the file, so a blanket today for every URL makes it ignore the field.',
   tool_sitemap_usecase_3:
     'Discovery: point robots.txt at your sitemap URL so crawlers find it without waiting for a submission.',
   tool_sitemap_usecases_title: 'Good fits',
@@ -10934,7 +10946,7 @@ const en: SiteLangDict = {
   tool_sketch_prompt_generator_desc:
     'Sketch.app prompt generator — local default + optional Cloudflare AI Expand/Polish (Turnstile); Markdown/JSON on device.',
   tool_sketch_prompt_generator_description:
-    'Sketch.app prompt generator — Local + Optional AI for ChatGPT, Gemini, Claude, and DeepSeek: assemble structured prompts that guide Sketch.app design steps (Artboards, Symbols, exports) locally by default, then optionally Expand/Polish via Cloudflare Workers AI (Turnstile required, rate-limited). Example runs on first paint. Markdown default; JSON for pipelines. Local text stays on your device unless you use optional AI.',
+    'Sketch.app prompt generator — Local + Optional AI for ChatGPT, Gemini, Claude, and DeepSeek: assemble structured prompts that guide Sketch.app design steps (Artboards, Symbols, exports) locally by default, then optionally Expand/Polish via Cloudflare Workers AI (Turnstile required, rate-limited). Markdown default; JSON for pipelines. Local text stays on your device unless you use optional AI.',
   tool_sketch_prompt_generator_download: 'Download',
   tool_sketch_prompt_generator_empty: 'Fill at least one field before building.',
   tool_sketch_prompt_generator_example:
@@ -10972,7 +10984,7 @@ const en: SiteLangDict = {
   tool_sketch_prompt_generator_goal_ph: 'e.g. Login screen set in Sketch.app…',
   tool_sketch_prompt_generator_how_body:
     'Fill Sketch.app fields (goal, Artboards, Symbols, export), build a prompt locally, optionally Expand/Polish with Turnstile, then paste into ChatGPT, Gemini, Claude, or DeepSeek so the AI can guide Sketch.app steps.',
-  tool_sketch_prompt_generator_how_item_1: 'Load sample already ran the default Sketch.app login-screen preset on first paint.',
+  tool_sketch_prompt_generator_how_item_1: 'Click Load sample for the default Sketch.app login-screen preset.',
   tool_sketch_prompt_generator_how_item_2: 'Edit Goal, Artboards, Symbols, and Export, then click Build prompt (or switch to JSON).',
   tool_sketch_prompt_generator_how_item_3: 'Optional: complete Turnstile, then Expand or Polish via Cloudflare Workers AI.',
   tool_sketch_prompt_generator_how_item_4: 'Copy or download, paste into your chat AI, and follow the Sketch.app checklist it returns.',
@@ -11551,7 +11563,7 @@ const en: SiteLangDict = {
   tool_text_diff_desc:
     'Check the difference between two texts by pasting both sides — line, word, or character, in the browser.',
   tool_text_diff_description:
-    'Check the difference between two texts in your browser. Process: paste original and revised text (also called compare two texts online or a diff checker), pick line, word, or character mode, optionally ignore spaces or treat Windows newlines (CRLF) like LF, then highlight adds and deletes. Files stay on your device and are not uploaded. Example: change "hello world" to "hello there" — word mode shows one replacement. This page is paste-only; Word, Excel, and JSON files have their own tools.',
+    'Check the difference between two texts in your browser. Process: paste original and revised text, pick line, word, or character mode, in line or word mode, optionally ignore spaces or treat Windows newlines (CRLF) like LF, then highlight adds and deletes. Files stay on your device and are not uploaded. Example: change "hello world" to "hello there" — word mode shows one replacement. It accepts pasted plain text rather than Word, Excel, or structured JSON files.',
   tool_text_diff_empty_hint: 'Paste text on one or both sides, then compare.',
   tool_text_diff_example:
     'Example (word mode): A = "Hello world", B = "Hello there" → one change (world → there). Line mode on three lines where only the middle line differs marks that line as changed.',
@@ -11565,20 +11577,25 @@ const en: SiteLangDict = {
   tool_text_diff_faq_a4:
     'No. This page is paste-only plain text — not images, ZIP, Word, Excel, or structured JSON. Use a dedicated compare page if you need to open .txt files, .docx, JSON objects, or spreadsheets.',
   tool_text_diff_faq_a5:
-    'Yes — people also search text compare online and diff checker. This page does that job by pasting two texts. The heading uses the more specific phrase “check difference between two texts.”',
+    'No. Character mode compares every character, so the option is disabled there. Use line or word mode when whitespace-only edits should be ignored.',
   tool_text_diff_faq_q1: 'Should I compare by line or by word?',
   tool_text_diff_faq_q2: 'Is my text uploaded to a server?',
   tool_text_diff_faq_q3: 'Why does a newline-only change mark a whole line red?',
   tool_text_diff_faq_q4: 'Can I compare images, Word, or binary files?',
-  tool_text_diff_faq_q5: 'Is this the same as an online diff checker?',
+  tool_text_diff_faq_q5: 'Does Ignore spaces work in character mode?',
   tool_text_diff_how_body:
-    'Paste two versions of a text, pick how fine the comparison should be (line, word, or character), then review green additions and red deletions. Your pasted text stays in the browser and is not uploaded or stored by us. The page may load the open-source jsdiff library from a CDN so the checker can run.',
+    'Paste the original and revised text, choose line, word, or character comparison, then review green additions and red deletions. The text stays on your device and is not uploaded to a server.',
+  tool_text_diff_how_item_1: 'Paste the original text on the left.',
+  tool_text_diff_how_item_2: 'Paste the revised text on the right.',
+  tool_text_diff_how_item_3: 'Choose line, word, or character mode, then set whitespace and newline options when available.',
+  tool_text_diff_how_item_4: 'Select Compare and review the highlighted additions and deletions.',
   tool_text_diff_how_title: 'How it works',
   tool_text_diff_ignore_ws: 'Ignore spaces',
   tool_text_diff_label_a: 'Original text',
   tool_text_diff_label_b: 'Revised text',
   tool_text_diff_large_warn: 'Very large paste (>100k characters). Comparison may feel slow — try a shorter excerpt.',
   tool_text_diff_legend: 'Green = added · Red = removed',
+  tool_text_diff_load_sample: 'Load sample',
   tool_text_diff_mode_chars: 'Character',
   tool_text_diff_mode_label: 'Compare by',
   tool_text_diff_mode_lines: 'Line',
@@ -11590,16 +11607,16 @@ const en: SiteLangDict = {
   tool_text_diff_placeholder_b: 'Paste the revised text…',
   tool_text_diff_result_label: 'Differences',
   tool_text_diff_rules_body:
-    'The checker finds a short list of edits that turn text A into text B (classic diff / Myers-style matching via jsdiff). Line mode is best for .env files and code. Word mode is best for sentences and prompts. Character mode catches tiny typos but can look noisy. Ignoring spaces hides indent-only edits. Treating CRLF and LF the same stops whole lines lighting up when only the newline style changed.',
+    'The selected mode controls what counts as one change. Character mode disables Ignore spaces because that option only applies to line and word comparison.',
   tool_text_diff_rules_intro:
     'The checker finds a short list of edits that turn text A into text B (classic diff / Myers-style matching via jsdiff). Pick a mode that matches your task:',
-  tool_text_diff_rules_item_chars: 'Character — best for tiny typos; most precise, but noisy on longer edits.',
-  tool_text_diff_rules_item_lines:
+  tool_text_diff_rules_item_1:
     'Line — best for .env, YAML, and code; one changed line lights up as a whole. Fast and easy to scan, but a single-word edit still marks the entire line.',
-  tool_text_diff_rules_item_words:
+  tool_text_diff_rules_item_2:
     'Word — best for sentences, emails, and AI prompts; highlights individual words. Clearer for prose, but can split awkwardly on punctuation.',
-  tool_text_diff_rules_options:
-    'Ignore spaces hides indent-only edits. Treat CRLF and LF the same stops whole lines lighting up when only the newline style (Windows vs Unix) changed.',
+  tool_text_diff_rules_item_3: 'Character — best for tiny typos; most precise, but noisy on longer edits.',
+  tool_text_diff_rules_item_4:
+    'Ignore spaces applies to line and word modes only. Treat CRLF and LF the same normalizes Windows and Unix newlines in every mode.',
   tool_text_diff_rules_title: 'How the comparison works',
   tool_text_diff_sample_a: 'Hello world\nline two\nline three',
   tool_text_diff_sample_b: 'Hello there\nline two\nline three',
@@ -12954,7 +12971,7 @@ const en: SiteLangDict = {
   tool_writing_prompt_generator_desc:
     'Writing prompt generator — local default + optional Cloudflare AI Expand/Polish (Turnstile); Markdown/JSON on device.',
   tool_writing_prompt_generator_description:
-    'Writing prompt generator — Local + Optional AI for ChatGPT, Gemini, Claude, and DeepSeek: assemble structured prompts locally by default, then optionally Expand/Polish via Cloudflare Workers AI (Turnstile required, rate-limited). Example runs on first paint. Markdown default; JSON for pipelines. Local text stays on your device unless you use optional AI.',
+    'Writing prompt generator — Local + Optional AI for ChatGPT, Gemini, Claude, and DeepSeek: assemble structured prompts locally by default, then optionally Expand/Polish via Cloudflare Workers AI (Turnstile required, rate-limited). Markdown default; JSON for pipelines. Local text stays on your device unless you use optional AI. Example: click Load sample for a ready preset, then Build or optionally Expand/Polish.',
   tool_writing_prompt_generator_dlg_characters_label: 'Characters',
   tool_writing_prompt_generator_dlg_characters_ph: 'Names + one-line roles…',
   tool_writing_prompt_generator_dlg_conflict_label: 'Conflict',
@@ -12999,8 +13016,7 @@ const en: SiteLangDict = {
   tool_writing_prompt_generator_fmt_md: 'Markdown',
   tool_writing_prompt_generator_how_body:
     'Pick a writing mode, fill the fields or roll random, build a prompt block, then paste into ChatGPT, Gemini, Claude, or DeepSeek.',
-  tool_writing_prompt_generator_how_item_1:
-    'Choose Dialogue, Character, Script, or Random — Load sample already ran the dialogue preset on first paint.',
+  tool_writing_prompt_generator_how_item_1: 'Choose Dialogue, Character, Script, or Random — Click Load sample for the dialogue preset.',
   tool_writing_prompt_generator_how_item_2: 'Fill mode-specific fields (or enter a seed and Roll random).',
   tool_writing_prompt_generator_how_item_3:
     'Click Build prompt (Random: Roll random), or optionally complete Turnstile and Expand/Polish with Cloudflare Workers AI.',
@@ -13051,7 +13067,7 @@ const en: SiteLangDict = {
   tool_writing_prompt_generator_usecase_4: 'Outline a short script beat sheet locally before you move the prompt into Gemini for table reads.',
   tool_writing_prompt_generator_usecases_title: 'Good fits',
   tool_yaml_json_article:
-    'Bidirectional YAML ↔ JSON with explicit typing rules, multi-document policy, and honest local-processing notes. Built for config interchange, not a second thin URL.',
+    'Bidirectional YAML ↔ JSON with explicit typing rules, multi-document policy, and honest local-processing notes.',
   tool_yaml_json_clear: 'Clear',
   tool_yaml_json_convert: 'Convert',
   tool_yaml_json_copy_done: 'Copied',

@@ -58,9 +58,9 @@ const es: SiteLangDict = {
 	tool_serp_faq_q2: '¿Son exactos los límites de píxeles?',
 	tool_serp_faq_a2:
 		'No. Los viewports de escritorio y móvil varían por dispositivo y fuente. Esta herramienta usa los límites comunes de ~600px en escritorio y ~460px en móvil como estimación para planificar, no como garantía de cómo Google renderizará tu página.',
-	tool_serp_faq_q3: '¿Coincide con la vista móvil de Search Console?',
+	tool_serp_faq_q3: '¿Alguna herramienta de Google enseña el snippet definitivo?',
 	tool_serp_faq_a3:
-		'Es una estimación local en la misma dirección. Para ver el resultado final, abre tu página en la inspección de URLs de Search Console o en la prueba de resultados enriquecidos, que renderizan con el entorno real de Google.',
+		'No. La inspección de URLs informa del estado de rastreo e indexación con una captura de la página renderizada, y la prueba de resultados enriquecidos comprueba la elegibilidad de los datos estructurados: ninguna previsualiza el texto del snippet. Además Google reescribe el título del enlace cuando encaja mal con la consulta, así que la única comprobación real es buscar la URL ya publicada.',
 	tool_serp_faq_q4: '¿Se sube mi título a algún sitio?',
 	tool_serp_faq_a4:
 		'No. Todo el texto se queda en la pestaña de tu navegador y nunca se envía a un servidor. Al cerrar la pestaña, todo desaparece.',

@@ -1,11 +1,13 @@
 {
   "slug": "compare-two-text-files-online",
   "path": "/tools/compare-two-text-files-online",
-  "updatedAt": "2026-09-01T08:40:00.000Z",
+  "updatedAt": "2026-09-05T13:52:22.595Z",
   "launchedAt": "2026-09-01T08:40:00.000Z",
   "category": "developer",
   "primaryTopic": "text-compare",
-  "secondaryTopics": ["dev-data"],
+  "secondaryTopics": [
+    "dev-data"
+  ],
   "featured": true,
   "ymyl": false,
   "i18nKey": "tool_compare_two_text_files_online_title",

@@ -111,3 +111,7 @@
 - [x] References ≥1
 - [ ] Disclaimer（YMYL 必备）
 - [x] `03-locale-briefs.md` 已填（实现十语前）
+
+## 复审修正（2026-09-05）
+
+- 去掉 description 中的营销确定性（「你的 Google 卡片」「坏 canonical 会分散权重」），改为标题与 meta description 决定摘要样式、canonical 在重复内容中挑选网址。

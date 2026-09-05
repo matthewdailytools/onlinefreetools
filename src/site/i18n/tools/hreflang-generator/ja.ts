@@ -47,7 +47,7 @@ const ja: SiteLangDict = {
 	tool_hreflang_rules_item_4:
 		'x-default は、一覧にない言語に一致したときに表示するページ（通常は英語のルートページ）を指します。Google は未検出のすべての言語のフォールバックとして使えます。',
 	tool_hreflang_rules_item_5:
-		'同じページセットには 1 つの配信形式を選びます：HTML の <link> タグ、HTTP Link ヘッダー、または sitemap の xhtml:link。混在させるとシグナルが矛盾することがあります。',
+		'Google は HTML の <link> タグ、HTTP Link ヘッダー、sitemap の xhtml:link という 3 形式を同等に扱い、同時に使うことも認めていますが、検索上のメリットはないとしています。ページセットごとに 1 つを選びましょう。3 系統を並行運用すると内容が次第にずれ、矛盾したアノテーションは無視されます。',
 	tool_hreflang_example_title: '例',
 	tool_hreflang_example:
 		'サンプルは 1 ページの 3 バージョン：https://example.com/（en）、https://example.com/es/（es）、https://example.com/ja/（ja）。生成される <link> タグは各言語の自己参照を含み、必要に応じて英語ルートを指す x-default も追加できます。',

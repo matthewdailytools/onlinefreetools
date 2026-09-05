@@ -29,7 +29,7 @@ const pt: SiteLangDict = {
 	tool_compare_two_word_documents_for_differences_faq_a3:
 		'Se a extração falhar, costuma ser senha, arquivo corrompido ou não OOXML. Páginas só com imagem geram texto vazio.',
 	tool_compare_two_word_documents_for_differences_faq_a4:
-		'Também se busca comparar Word online: o mesmo trabalho se eram dois .docx. Se “comparar dois documentos” era PDF, esta página não serve.',
+		"A comparação aceita dois .docx e verifica o texto extraído. PDF e .doc antigo não são analisados, e formatação ou histórico de revisão do Word ficam fora do resultado.",
 	tool_compare_two_word_documents_for_differences_faq_q1: 'Meus arquivos Word são enviados?',
 	tool_compare_two_word_documents_for_differences_faq_q2: 'É o mesmo que Revisão → Comparar no Word?',
 	tool_compare_two_word_documents_for_differences_faq_q3: 'Por que a extração falha ou faltam cabeçalhos?',
@@ -39,7 +39,7 @@ const pt: SiteLangDict = {
 	tool_compare_two_word_documents_for_differences_how_item_1: 'Escolher o primeiro .docx (original).',
 	tool_compare_two_word_documents_for_differences_how_item_2: 'Escolher o segundo .docx (revisado).',
 	tool_compare_two_word_documents_for_differences_how_item_3:
-		'Comparar extrai o texto visível sozinho; Carregar exemplo já rodou na abertura.',
+		"Clique em Comparar para extrair o texto visível e calcular as diferenças de redação.",
 	tool_compare_two_word_documents_for_differences_how_item_4: 'Ler o verde (acrescentado) e o vermelho (apagado).',
 	tool_compare_two_word_documents_for_differences_how_title: 'Como usar',
 	tool_compare_two_word_documents_for_differences_label_a: 'Primeiro documento Word',

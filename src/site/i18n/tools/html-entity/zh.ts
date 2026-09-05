@@ -45,7 +45,7 @@ const zh: SiteLangDict = {
   tool_html_entity_rules_body: '编码/解码时各选项的含义，以及命名实体与数字实体的对应关系。',
   tool_html_entity_rules_item_1: '最小范围只转义 & < > " \'，适合一般 HTML 文本。仅非 ASCII 保留英文与符号，把中文、emoji 等转成实体。全部 = 最小 + 非 ASCII。',
   tool_html_entity_rules_item_2: '命名（&copy;）、十进制（&#169;）、十六进制（&#xA9;）解码结果相同。编码选「命名」时常见符号用名称，其余用数字形式。',
-  tool_html_entity_rules_item_3: '对已转义文本再编码会产生双重编码（& → &amp;amp;）。怀疑双重编码时可用「直到稳定」解码。真实 HTML 属性值有时还需额外转义引号。',
+  tool_html_entity_rules_item_3: '对已转义文本再编码会产生双重编码（& → &amp;amp;）。怀疑双重编码时可用「直到稳定」解码；多轮解码时输入里的裸 < 与 > 按字面保留，不会被当成标签吞掉。真实 HTML 属性值有时还需额外转义引号。',
   tool_html_entity_rules_item_4: '隐私：粘贴不上传；本工具零外部库，转换全在浏览器完成。',
   tool_html_entity_rules_title: '规则说明',
   tool_html_entity_sample: '载入示例',

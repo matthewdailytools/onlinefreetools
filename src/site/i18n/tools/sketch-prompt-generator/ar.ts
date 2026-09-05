@@ -6,18 +6,18 @@ import type { SiteLangDict } from '../../../types';
 
 const ar: SiteLangDict = {
 	tool_sketch_prompt_generator_article:
-		'أنشئ prompts جاهزة للصق تُرشد ChatGPT أو Gemini أو Claude أو DeepSeek لتشغيل Sketch.app — اللوحات والرموز والأنماط المشتركة والتصدير. املأ الحقول وانسخ Markdown أو JSON. التجميع المحلي يبقى في المتصفح؛ Expand/Polish الاختياري يستخدم Cloudflare Workers AI مع Turnstile. يبقى النص على جهازك ما لم تفعّل الذكاء الاصطناعي.',
+		'أنشئ prompts جاهزة للصق تُرشد ChatGPT أو Gemini أو Claude أو DeepSeek لتشغيل Sketch.app — اللوحات والرموز والأنماط المشتركة والتصدير. املأ الحقول وانسخ Markdown أو JSON. افتراضيًا يُجمَّع الـ prompt داخل متصفحك؛ وعند الضغط على «توسيع» أو «صقل» فقط تُرسَل المسودة الحالية إلى Cloudflare Workers AI (يلزم Turnstile، وهناك حدود للمعدّل والحصة)، ويحل الرد محل صندوق النتيجة بالكامل.',
 	tool_sketch_prompt_generator_build: 'إنشاء الـ Prompt',
 	tool_sketch_prompt_generator_clear: 'مسح',
 	tool_sketch_prompt_generator_copy: 'نسخ',
 	tool_sketch_prompt_generator_desc:
-		'مولّد prompts لـ Sketch.app — محلي افتراضيًا + Expand/Polish اختياري عبر Cloudflare AI (Turnstile)؛ Markdown/JSON على الجهاز.',
+		'مولّد prompts لـ Sketch.app — جمّع اللوحات والرموز وخطوات التصدير داخل المتصفح، مع توسيع/صقل اختياري عبر Cloudflare AI (Turnstile).',
 	tool_sketch_prompt_generator_description:
-		'مولّد prompts لـ Sketch.app — محلي + ذكاء اصطناعي اختياري لـ ChatGPT وGemini وClaude وDeepSeek: جمّع prompts منظمة لخطوات التصميم في Sketch.app (لوحات، رموز، تصدير) في المتصفح؛ Expand/Polish اختياري عبر Cloudflare Workers AI (Turnstile وحدّ استخدام). مثال عند الفتح. Markdown افتراضي؛ JSON للأنابيب. النص يبقى على الجهاز دون الذكاء الاصطناعي.',
+		'مولّد prompts لـ Sketch.app — محلي + ذكاء اصطناعي اختياري لـ ChatGPT وGemini وClaude وDeepSeek: املأ الهدف واللوحات والرموز والتصدير، فيجمّع المتصفح prompt منظمًا يشرح خطوات العمل داخل Sketch.app. عند الفتح يعمل مثال قابل للتعديل، ثم يمكنك التوسيع أو الصقل عبر Cloudflare Workers AI (يلزم Turnstile وهناك حصة). Markdown افتراضيًا، وJSON لخطوط المعالجة.',
 	tool_sketch_prompt_generator_download: 'تنزيل',
 	tool_sketch_prompt_generator_empty: 'املأ حقلًا واحدًا على الأقل قبل الإنشاء.',
 	tool_sketch_prompt_generator_example:
-		'المدخل: الهدف = شاشة تسجيل دخول في Sketch.app؛ اللوحات = iPhone 14 390×844؛ الرموز = Button/Primary + Input؛ التصدير = PNG 1x/2x/3x + PDF. المخرج (Markdown): ## Role → مساعد Sketch.app؛ ## Task → قائمة مرقّمة.',
+		'المدخل: الهدف = شاشة تسجيل دخول في Sketch.app؛ اللوحات = iPhone 14 390×844؛ الرموز = Button/Primary + Input؛ التصدير = PNG 1x/2x/3x + PDF. المخرج (Markdown): ## الدور → مساعد Sketch.app؛ ## المهمة → قائمة مرقّمة.',
 	tool_sketch_prompt_generator_example_title: 'مثال',
 	tool_sketch_prompt_generator_faq_a1:
 		'التجميع المحلي يعمل في هذا التبويب — لا يُرفع شيء افتراضيًا. Expand/Polish الاختياري يرسل فقط نص تلك النقرة إلى Cloudflare Workers AI، وليس إلى OpenAI أو Google أو Anthropic أو DeepSeek من خوادمنا.',
@@ -33,7 +33,7 @@ const ar: SiteLangDict = {
 	tool_sketch_prompt_generator_faq_a7:
 		'نعم. الصق الـ prompt في ChatGPT أو Gemini أو Claude أو DeepSeek ليرشدك عبر قوائم Sketch.app. ننسّق النص فقط؛ لا نشغّل Sketch هنا.',
 	tool_sketch_prompt_generator_faq_a8:
-		'المحلي ينسّق في التبويب دون رفع. Expand/Polish يذهب إلى Cloudflare Workers AI (حدّ + Turnstile). عند الفشل واصل محليًا.',
+		'محليًا يُنسَّق كل شيء داخل هذا التبويب ولا يغادره شيء. أما التوسيع/الصقل فيرسل المسودة إلى Cloudflare Workers AI (مع Turnstile وحصة يومية)، ويحل الرد محل صندوق النتيجة بالكامل. وعند الفشل أو نفاد الحصة تابع بالوضع المحلي.',
 	tool_sketch_prompt_generator_faq_q1: 'هل يُرفع الـ prompt؟',
 	tool_sketch_prompt_generator_faq_q2: 'هل يستدعي ChatGPT أو يتحكم في Sketch.app عن بُعد؟',
 	tool_sketch_prompt_generator_faq_q3: 'ما الفرق عن منشئ قوالب Prompt؟',
@@ -51,7 +51,7 @@ const ar: SiteLangDict = {
 	tool_sketch_prompt_generator_ai_consent_ok: 'متابعة',
 	tool_sketch_prompt_generator_ai_consent_cancel: 'إلغاء',
 	tool_sketch_prompt_generator_ai_working: 'Cloudflare AI يعمل…',
-	tool_sketch_prompt_generator_ai_done: 'طُبّقت اقتراحات الذكاء الاصطناعي. راجع قبل النسخ.',
+	tool_sketch_prompt_generator_ai_done: 'كُتب نص الذكاء الاصطناعي كاملًا في صندوق النتيجة. راجعه قبل النسخ.',
 	tool_sketch_prompt_generator_ai_err_generic: 'فشل الذكاء الاصطناعي. الـ prompt المحلي لم يتغيّر.',
 	tool_sketch_prompt_generator_ai_err_rate: 'اكتملت حصة الذكاء الاصطناعي. استخدم المحلي أو حاول غدًا (UTC).',
 	tool_sketch_prompt_generator_ai_err_turnstile: 'أكمل Turnstile قبل استخدام الذكاء الاصطناعي.',

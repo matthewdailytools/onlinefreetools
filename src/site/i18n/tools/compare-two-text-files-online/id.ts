@@ -12,10 +12,11 @@ const id: SiteLangDict = {
 	tool_compare_two_text_files_online_desc:
 		'Bandingkan dua file teks secara online: pilih dua .txt, lihat diff baris di browser, tanpa unggah.',
 	tool_compare_two_text_files_online_description:
-		'Bandingkan dua file teks secara online di browser. Proses: pilih file asli dan file revisi, decode UTF-8 (BOM dilepas), tolak byte biner, lalu tandai penambahan dan penghapusan per baris. File tetap di perangkat Anda dan tidak diunggah. Contoh: notes-a.txt vs notes-b.txt, hanya baris tengah yang berubah. Word, Excel, dan JSON punya halaman lain; di sini hanya file teks. Bandingkan txt termasuk pekerjaan yang sama.',
+		"Bandingkan dua file teks secara online di browser. Pilih .txt asli dan revisi; keduanya didekode sebagai UTF-8 ketat, BOM awal dibuang, dan encoding tidak valid atau isi biner ditolak sebelum tambahan serta penghapusan per baris disorot. File tetap di perangkat dan tidak diunggah ke server. Contoh: notes-a.txt dan notes-b.txt hanya berbeda pada baris tengah. File Word, spreadsheet, dan JSON terstruktur tidak diuraikan.",
 	tool_compare_two_text_files_online_empty: 'Pilih dulu dua file teks, atau muat contoh.',
 	tool_compare_two_text_files_online_err_binary:
 		'Salah satu file tampak biner (byte null). Halaman ini hanya membandingkan teks polos seperti .txt.',
+	tool_compare_two_text_files_online_err_encoding: "Salah satu file bukan UTF-8 yang valid. Simpan atau konversikan ke UTF-8 lalu bandingkan lagi.",
 	tool_compare_two_text_files_online_err_too_large:
 		'Sebuah file lebih besar dari sekitar 1 MB. Potong cuplikan lebih pendek agar tab tetap ringan.',
 	tool_compare_two_text_files_online_example:
@@ -24,11 +25,11 @@ const id: SiteLangDict = {
 	tool_compare_two_text_files_online_faq_a1:
 		'Tidak. FileReader membaca byte di tab ini. jsdiff mungkin dimuat dari CDN sebagai pustaka; file Anda tidak dikirim ke server kami.',
 	tool_compare_two_text_files_online_faq_a2:
-		'Didekode sebagai UTF-8. BOM di awal dibuang supaya baris pertama tidak ditandai berubah hanya karena tanda itu. Encoding lain bisa berantakan — simpan dulu sebagai UTF-8.',
+		"File didekode sebagai UTF-8 ketat dan BOM awal dibuang. UTF-8 yang tidak valid ditolak, bukan ditampilkan sebagai karakter pengganti; konversikan encoding lama seperti Windows-1252 terlebih dahulu.",
 	tool_compare_two_text_files_online_faq_a3:
 		'Kalau ada byte null, file dianggap biner dan ditolak. Pakai alat hex atau arsip. Word dan Excel punya halaman banding sendiri.',
 	tool_compare_two_text_files_online_faq_a4:
-		'Halaman ini untuk .txt / .text. Orang yang mencari bandingkan txt atau file diff online biasanya butuh ini. Kalau «bandingkan dua file» maksudnya Word atau spreadsheet, pakai halaman itu. Tempel teks tanpa file ada di «Periksa perbedaan antara dua teks».',
+		"Alat ini menerima .txt / .text yang didekode sebagai UTF-8. Gunakan pembanding tempel tanpa file, serta pembanding Word atau spreadsheet untuk .docx, xlsx, xls, atau csv.",
 	tool_compare_two_text_files_online_faq_q1: 'Apakah file saya diunggah?',
 	tool_compare_two_text_files_online_faq_q2: 'Aturan encoding dan BOM apa yang dipakai?',
 	tool_compare_two_text_files_online_faq_q3: 'Bisa bandingkan biner, Word, atau Excel di sini?',
@@ -38,7 +39,7 @@ const id: SiteLangDict = {
 	tool_compare_two_text_files_online_how_item_1: 'Pilih file teks pertama (ekspor atau salinan asli).',
 	tool_compare_two_text_files_online_how_item_2: 'Pilih file teks kedua (versi yang sudah diubah).',
 	tool_compare_two_text_files_online_how_item_3:
-		'Perbandingan jalan otomatis setelah keduanya dipilih; Muat contoh sudah menjalankannya saat gambar pertama.',
+		"Tekan Bandingkan untuk memperbarui diff per baris; memilih kedua file juga menjalankannya otomatis.",
 	tool_compare_two_text_files_online_how_item_4: 'Hijau adalah tambahan, merah adalah hapusan. Hapus mengeluarkan kedua file dari tab ini.',
 	tool_compare_two_text_files_online_how_title: 'Cara memakai',
 	tool_compare_two_text_files_online_label_a: 'File teks pertama',

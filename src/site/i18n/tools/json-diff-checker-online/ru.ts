@@ -8,7 +8,7 @@ import type { SiteLangDict } from '../../../types';
 const ru: SiteLangDict = {
 	tool_json_diff_checker_online_article:
 		'Вставьте два значения JSON и получите добавления, удаления и изменения по путям. Порядок ключей по умолчанию игнорируется. Вставка остаётся на устройстве и не загружается. YAML и XML здесь не разбираются.',
-	tool_json_diff_checker_online_array_as_set: 'Считать массивы множествами (порядок не важен)',
+	tool_json_diff_checker_online_array_as_set: "Игнорировать порядок массива (повторы учитываются)",
 	tool_json_diff_checker_online_clear: 'Очистить',
 	tool_json_diff_checker_online_compare: 'Сравнить',
 	tool_json_diff_checker_online_desc:
@@ -26,9 +26,9 @@ const ru: SiteLangDict = {
 	tool_json_diff_checker_online_faq_a2:
 		'По умолчанию {"a":1,"b":2} и {"b":2,"a":1} — один объект. Выключите «Игнорировать порядок ключей», если важен порядок записи.',
 	tool_json_diff_checker_online_faq_a3:
-		'Массивы — списки по индексу. [1,2] против [2,1] — это изменение. «Считать массивы множествами» включайте, только если порядок не должен учитываться.',
+		"По умолчанию массивы сравниваются по индексам. При игнорировании порядка нормализованные элементы сортируются, повторы учитываются, а индексы относятся к этому порядку; объекты по полю id не сопоставляются.",
 	tool_json_diff_checker_online_faq_a4:
-		'Ищут и json diff checker без «онлайн» — та же задача. YAML или XML требуют другую страницу (сначала преобразуйте YAML при необходимости).',
+		"Разбирается только корректный JSON. Синтаксис YAML и XML не принимается: сначала преобразуйте YAML в JSON или используйте сравнение нужного формата.",
 	tool_json_diff_checker_online_faq_q1: 'Загружается ли мой JSON?',
 	tool_json_diff_checker_online_faq_q2: 'Считается ли порядок ключей различием?',
 	tool_json_diff_checker_online_faq_q3: 'Как сравниваются массивы?',
@@ -38,7 +38,7 @@ const ru: SiteLangDict = {
 	tool_json_diff_checker_online_how_item_1: 'Вставьте исходный JSON слева.',
 	tool_json_diff_checker_online_how_item_2: 'Вставьте изменённый JSON справа.',
 	tool_json_diff_checker_online_how_item_3: 'Оставьте «Игнорировать порядок ключей» включённым, если не нужен порядок записи.',
-	tool_json_diff_checker_online_how_item_4: 'Сравнение перечисляет пути; загрузка примера уже выполнена при первом показе.',
+	tool_json_diff_checker_online_how_item_4: "Нажмите «Сравнить», чтобы вывести добавленные, удалённые и изменённые пути с текущими параметрами.",
 	tool_json_diff_checker_online_how_title: 'Как пользоваться',
 	tool_json_diff_checker_online_ignore_keys: 'Игнорировать порядок ключей объекта',
 	tool_json_diff_checker_online_label_a: 'Исходный JSON',
@@ -56,7 +56,7 @@ const ru: SiteLangDict = {
 	tool_json_diff_checker_online_rules_item_2:
 		'Игнорирование порядка ключей (включено по умолчанию) сортирует ключи объекта перед обходом путей.',
 	tool_json_diff_checker_online_rules_item_3:
-		'Массивы — списки по индексу, пока вы не считаете их множествами (тогда элементы сортируются через JSON stringify).',
+		"Игнорирование порядка сортирует нормализованные элементы, но сохраняет повторы; индексы относятся к порядку сравнения, а не к исходным позициям.",
 	tool_json_diff_checker_online_rules_item_4:
 		'YAML и XML не разбираются. При необходимости сначала преобразуйте YAML на связанной странице YAML ↔ JSON.',
 	tool_json_diff_checker_online_rules_title: 'Какие правила ждать',

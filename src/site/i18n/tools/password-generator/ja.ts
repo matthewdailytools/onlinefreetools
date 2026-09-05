@@ -49,7 +49,7 @@ const ja: SiteLangDict = {
   tool_password_generator_rules_item_1:
     'プール：A–Z、a–z、0–9、デフォルト記号。トグルと除外後も最低 1 プール必要。',
   tool_password_generator_rules_item_2:
-    '乱数インデックスは crypto.getRandomValues のバイト — Math.random は使いません。',
+    '乱数インデックスは crypto.getRandomValues のバイトで、Math.random は使いません。剰余に偏りを生むバイトは捨てて引き直すため、文字プール内の各文字は等確率です。',
   tool_password_generator_rules_item_3:
     'NIST 認定の強制構成（各クラス 1 文字以上）ではありません。必要なセットを手動でオン。',
   tool_password_generator_rules_item_4:

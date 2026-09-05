@@ -6,18 +6,18 @@ import type { SiteLangDict } from '../../../types';
 
 const zh: SiteLangDict = {
 	tool_sketch_prompt_generator_article:
-		'在本页组装可粘贴 Prompt，让 ChatGPT、Gemini、Claude 或 DeepSeek 指导你在 Sketch.app 里建 Artboard、Symbol、Shared Style 并导出。填写字段后复制 Markdown 或 JSON。默认本地组装；可选扩写/润色走 Cloudflare Workers AI（须 Turnstile）。不用 AI 时文本留在本机。',
+		'在本页组装可粘贴 Prompt，让 ChatGPT、Gemini、Claude 或 DeepSeek 指导你在 Sketch.app 里建 Artboard、Symbol、Shared Style 并导出。填写字段后复制 Markdown 或 JSON。默认在浏览器本地组装；只有点击「AI 扩写/润色」时，当前草稿才会发往 Cloudflare Workers AI（须 Turnstile，有速率与配额限制），返回文本会完整替换结果区。',
 	tool_sketch_prompt_generator_build: '构建 Prompt',
 	tool_sketch_prompt_generator_clear: '清空',
 	tool_sketch_prompt_generator_copy: '复制',
 	tool_sketch_prompt_generator_desc:
-		'Sketch.app Prompt 生成器 — 默认本地组装，可选 Cloudflare AI 扩写/润色（Turnstile）；Markdown/JSON 留在本机。',
+		'Sketch.app Prompt 生成器 — 默认在浏览器组装 Artboard / Symbol / 导出步骤，可选 Cloudflare AI 扩写、润色（须 Turnstile）。',
 	tool_sketch_prompt_generator_description:
-		'步骤与示例：Sketch.app Prompt 生成器 — 本地 + 可选 AI：面向 ChatGPT、Gemini、Claude、DeepSeek，默认在本浏览器组装「操作 Sketch.app」的结构化 Prompt（目标稿、Artboard、Symbol、导出），可选 Cloudflare Workers AI 扩写/润色（须 Turnstile、有频率限制）。进页自动展示样例。默认 Markdown；JSON 便于流水线。不用 AI 时文本不出本机。',
+		'Sketch.app Prompt 生成器 — 本地 + 可选 AI：面向 ChatGPT、Gemini、Claude、DeepSeek，按目标稿、Artboard、Symbol、导出步骤四组字段依次填写，默认在浏览器本地组装「操作 Sketch.app」的结构化 Prompt。进页即有可改的示例；可选 Cloudflare Workers AI 扩写/润色（须 Turnstile、有配额）。默认 Markdown，JSON 便于流水线。',
 	tool_sketch_prompt_generator_download: '下载',
 	tool_sketch_prompt_generator_empty: '请至少填写一个字段后再构建。',
 	tool_sketch_prompt_generator_example:
-		'输入：目标 = Sketch.app 登录页；Artboard = iPhone 14 390×844；Symbol = Button/Primary + Input/TextField；导出 = 1x/2x/3x PNG + PDF 审阅。输出（Markdown）：## Role → Sketch.app 操作助手；## Task → Artboard / Symbol / 导出清单。',
+		'输入：目标 = Sketch.app 登录页；Artboard = iPhone 14 390×844；Symbol = Button/Primary + Input/TextField；导出 = 1x/2x/3x PNG + PDF 审阅。输出（Markdown）：## 角色 → Sketch.app 操作助手；## 任务 → Artboard / Symbol / 导出清单。',
 	tool_sketch_prompt_generator_example_title: '示例',
 	tool_sketch_prompt_generator_faq_a1:
 		'默认只在本浏览器标签页本地组装。可选「AI 扩写/润色」仅把该次点击提交的文字发往 Cloudflare Workers AI，不会从我们的服务器调用 OpenAI、Google、Anthropic 或 DeepSeek。',
@@ -33,7 +33,7 @@ const zh: SiteLangDict = {
 	tool_sketch_prompt_generator_faq_a7:
 		'可以。把成品 Prompt 粘到 ChatGPT、Gemini、Claude 或 DeepSeek，让对话 AI 逐步指导 Sketch.app 菜单操作或起草插件说明。我们只格式化文本，不会替你运行 Sketch。',
 	tool_sketch_prompt_generator_faq_a8:
-		'本地模式只在本标签页整理文字，不上传。可选扩写/润色发往 Cloudflare Workers AI（须 Turnstile、有频率限制）。失败或超额时继续用本地模式。',
+		'本地模式只在本标签页整理文字，不会发往服务器。可选扩写/润色会把当前草稿发往 Cloudflare Workers AI（须 Turnstile、有速率与配额限制），返回文本完整替换结果区。失败或超额时继续用本地模式。',
 	tool_sketch_prompt_generator_faq_q1: '我的 Prompt 会上传吗？',
 	tool_sketch_prompt_generator_faq_q2: '会调用 ChatGPT 或远程控制 Sketch.app 吗？',
 	tool_sketch_prompt_generator_faq_q3: '和 Prompt 模板构建器有何不同？',
@@ -51,7 +51,7 @@ const zh: SiteLangDict = {
 	tool_sketch_prompt_generator_ai_consent_ok: '继续',
 	tool_sketch_prompt_generator_ai_consent_cancel: '取消',
 	tool_sketch_prompt_generator_ai_working: 'Cloudflare AI 处理中…',
-	tool_sketch_prompt_generator_ai_done: '已应用 AI 建议，复制前请核对。',
+	tool_sketch_prompt_generator_ai_done: 'AI 返回文本已完整写入结果区，复制前请核对。',
 	tool_sketch_prompt_generator_ai_err_generic: 'AI 失败，本地 Prompt 未改。',
 	tool_sketch_prompt_generator_ai_err_rate: 'AI 配额已满，请用本地模式或明日（UTC）再试。',
 	tool_sketch_prompt_generator_ai_err_turnstile: '使用 AI 前请完成 Turnstile 验证。',

@@ -108,3 +108,7 @@
 - [x] References ≥1
 - [ ] Disclaimer — 非 YMYL
 - [x] `03-locale-briefs.md` 已填（实现十语前）
+
+## 复审修正（2026-09-05）
+
+- 去掉「让 Google 更快索引」的过度承诺，改为帮助发现内链覆盖不到的 URL；lastmod 说明补充 Google 仅在全站一致且真实时采用，全量填今天会让该字段被忽略。

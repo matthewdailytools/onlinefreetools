@@ -12,10 +12,11 @@ const es: SiteLangDict = {
 	tool_compare_two_text_files_online_desc:
 		'Comparar dos archivos de texto online: elige dos .txt y mira el diff de archivos en el navegador, sin subir nada.',
 	tool_compare_two_text_files_online_description:
-		'Comparar dos archivos de texto online desde el navegador. Proceso: elige el archivo original y el revisado, se decodifican como UTF-8 (se quita el BOM), se rechazan bytes binarios y se marcan altas y bajas por línea. Los archivos se quedan en tu dispositivo y no se suben. Ejemplo: notes-a.txt frente a notes-b.txt, con solo la línea del medio distinta. Word, Excel y JSON van en otras páginas; aquí solo hay archivos de texto. También cubre comparar txt y un diff de archivos sencillo.',
+		"Compara dos archivos de texto online en el navegador. Elige los .txt original y revisado: se decodifican como UTF-8 estricto, se quita el BOM inicial y se rechazan codificación inválida o contenido binario antes de marcar adiciones y eliminaciones por línea. Los archivos permanecen en el dispositivo y no se suben al servidor. Ejemplo: notes-a.txt y notes-b.txt solo difieren en la línea central. No analiza Word, hojas de cálculo ni JSON estructurado.",
 	tool_compare_two_text_files_online_empty: 'Elige primero dos archivos de texto, o carga el ejemplo.',
 	tool_compare_two_text_files_online_err_binary:
 		'Uno de los archivos parece binario (bytes nulos). Esta página solo compara texto plano, por ejemplo .txt.',
+	tool_compare_two_text_files_online_err_encoding: "Un archivo no es UTF-8 válido. Guárdalo o conviértelo a UTF-8 y vuelve a comparar.",
 	tool_compare_two_text_files_online_err_too_large:
 		'Un archivo supera unos 1 MB. Recorta un fragmento para que la pestaña no se cuelgue.',
 	tool_compare_two_text_files_online_example:
@@ -24,11 +25,11 @@ const es: SiteLangDict = {
 	tool_compare_two_text_files_online_faq_a1:
 		'No. FileReader lee los bytes en esta pestaña. Puede cargarse jsdiff desde un CDN como librería; tus archivos no se envían a nuestros servidores.',
 	tool_compare_two_text_files_online_faq_a2:
-		'Se decodifica como UTF-8. Un BOM al inicio se elimina para que la primera línea no salga como cambiada solo por esa marca. Otras codificaciones pueden verse rotas: guarda primero como UTF-8.',
+		"Los archivos se decodifican como UTF-8 estricto y se quita el BOM inicial. Un UTF-8 inválido se rechaza en vez de mostrar caracteres de sustitución; convierte antes codificaciones antiguas como Windows-1252.",
 	tool_compare_two_text_files_online_faq_a3:
 		'Si hay un byte nulo se trata como binario y se rechaza. Para eso usa un visor hexadecimal o un extractor. Word y Excel tienen sus propias páginas de comparación.',
 	tool_compare_two_text_files_online_faq_a4:
-		'Esta página es para .txt / .text. Quien busca comparar txt o un diff de archivos online suele querer esto. Si «comparar dos archivos» era Word o una hoja de cálculo, ve a esas páginas. Pegar dos textos sin archivos está en «Comprobar diferencias entre dos textos».',
+		"Acepta archivos .txt / .text decodificados como UTF-8. Usa el comparador de texto pegado si no hay archivos, y los comparadores de Word o de hojas para .docx, xlsx, xls o csv.",
 	tool_compare_two_text_files_online_faq_q1: '¿Se suben mis archivos?',
 	tool_compare_two_text_files_online_faq_q2: '¿Qué pasa con la codificación y el BOM?',
 	tool_compare_two_text_files_online_faq_q3: '¿Puedo comparar binarios, Word o Excel aquí?',
@@ -38,7 +39,7 @@ const es: SiteLangDict = {
 	tool_compare_two_text_files_online_how_item_1: 'Elige el primer archivo de texto (exportación o copia original).',
 	tool_compare_two_text_files_online_how_item_2: 'Elige el segundo archivo de texto (versión revisada).',
 	tool_compare_two_text_files_online_how_item_3:
-		'La comparación arranca sola cuando ambos están elegidos; Cargar ejemplo ya lo hizo al pintar la página.',
+		"Pulsa Comparar para actualizar el diff por líneas; al elegir ambos archivos también se ejecuta automáticamente.",
 	tool_compare_two_text_files_online_how_item_4: 'Verde son altas y rojo bajas. Borrar quita ambos archivos de esta pestaña.',
 	tool_compare_two_text_files_online_how_title: 'Cómo usarlo',
 	tool_compare_two_text_files_online_label_a: 'Primer archivo de texto',

@@ -110,3 +110,12 @@
 - [x] References ≥1
 - [ ] Disclaimer（YMYL 必备）
 - [x] `03-locale-briefs.md` 已填（实现十语前）
+
+## 复审修正（2026-09-05）
+
+- 与 on-page-seo-checker 共用 `fetchHtmlFollowingRedirects()`：逐跳校验主机名、上限 5 跳、返回真实最终 URL。
+
+## 复审修正（2026-09-05）
+
+- 字段表按 Open Graph 协议校正必填项：og:title / og:type / og:image / og:url 为必填，og:description 在协议中可选（但主流平台都会展示）。此前把 og:description 标为必填、og:type 与 og:url 标为可选。
+- 跳转抓取改用 onPageSeo.ts 的 fetchHtmlFollowingRedirects，逐跳校验主机名，避免公网域名重定向到内网地址。

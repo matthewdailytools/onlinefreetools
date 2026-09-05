@@ -49,7 +49,7 @@ const ru: SiteLangDict = {
   tool_password_generator_rules_item_1:
     'Пулы: A–Z, a–z, 0–9 и набор символов по умолчанию. После переключений и исключения должен остаться хотя бы один пул.',
   tool_password_generator_rules_item_2:
-    'Случайный индекс использует байты crypto.getRandomValues — никогда Math.random.',
+    'Случайный индекс берётся из байтов crypto.getRandomValues, а не Math.random. Байты, которые исказили бы остаток от деления, отбрасываются, поэтому все символы набора равновероятны.',
   tool_password_generator_rules_item_3:
     'Не NIST-certified composition (без принудительного «по одному из каждого класса»). Включайте нужные наборы вручную.',
   tool_password_generator_rules_item_4:

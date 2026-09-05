@@ -10,7 +10,7 @@ const pt: SiteLangDict = {
 		'Descubra as tags que seguram sua página no Google: confira title, H1, meta description, canonical, Open Graph e JSON-LD no navegador.',
 	tool_onpage_title: 'Verificador SEO On-Page — encontre e corrija problemas nas tags da página',
 	tool_onpage_description:
-		'Títulos fracos, meta ausente, H1 duplicados ou canonical errado prejudicam ranking. Cole URL ou HTML para checar e corrigir. Colagem local. Exemplo: dois H1.',
+		'Confira title, meta description, H1, canonical, robots, Open Graph e JSON-LD e como aparecem na busca. Cole URL ou HTML sem sair do navegador. Exemplo: dois H1.',
 	tool_onpage_url_tab: 'Buscar URL',
 	tool_onpage_html_tab: 'Colar HTML',
 	tool_onpage_url_ph: 'https://example.com/page',
@@ -40,18 +40,18 @@ const pt: SiteLangDict = {
 	tool_onpage_title_long: 'O title tem {n} caracteres e provavelmente será cortado nos resultados. Mire cerca de 50–60 caracteres.',
 	tool_onpage_title_short: 'O title tem apenas {n} caracteres. Adicione o foco específico da página para deixá-lo mais informativo.',
 	tool_onpage_desc_check: 'Meta description',
-	tool_onpage_desc_missing: 'Nenhuma meta description encontrada. Escreva um resumo de 140–160 caracteres que corresponda ao conteúdo.',
+	tool_onpage_desc_missing: 'Nenhuma meta description encontrada. O Google então monta o snippet com o texto da página. Escreva o seu resumo se quiser decidir essa redação.',
 	tool_onpage_desc_ok: 'Descrição com {n} caracteres. O intervalo de 140–160 caracteres aparece bem na maioria dos snippets.',
 	tool_onpage_desc_long: 'A descrição tem {n} caracteres; snippets costumam cortar por volta de 160.',
 	tool_onpage_desc_short: 'A descrição tem apenas {n} caracteres. Use o espaço para resumir o que a página oferece.',
 	tool_onpage_h1_check: 'H1',
-	tool_onpage_h1_missing: 'Nenhum H1 encontrado. Use exatamente um H1 que declare o tema da página.',
-	tool_onpage_h1_multiple: '{n} tags H1 encontradas. Mantenha um único H1 por página e use H2–H6 para as seções.',
+	tool_onpage_h1_missing: 'Nenhum H1 encontrado. Adicione um título principal que declare o tema da página — leitores de tela e o título do snippet dependem dele.',
+	tool_onpage_h1_multiple: '{n} tags H1 encontradas. O Google ranqueia páginas com qualquer quantidade de H1, então isso não é penalidade. Ainda assim, um H1 com seções H2–H6 fica mais claro para quem usa leitor de tela.',
 	tool_onpage_h1_ok: 'Um H1 encontrado, dentro de <body>.',
 	tool_onpage_canonical_check: 'Canonical',
 	tool_onpage_canonical_missing: 'Nenhuma URL canônica definida. Adicione <link rel="canonical"> quando o mesmo conteúdo for acessível por várias URLs.',
 	tool_onpage_canonical_ok: 'Canonical autorreferente encontrado.',
-	tool_onpage_canonical_other: 'O canonical aponta para outra URL. Use um canonical autorreferente, a menos que esta página seja cópia do destino.',
+	tool_onpage_canonical_other: 'O canonical aponta para outra URL, o que declara esta página como cópia daquela. Só mantenha se for verdade; o canonical é uma dica, então o Google ainda pode escolher outra URL.',
 	tool_onpage_robots_check: 'Robots meta',
 	tool_onpage_robots_missing: 'Sem robots meta. O padrão é index,follow, o que é adequado para a maioria das páginas públicas.',
 	tool_onpage_robots_noindex: 'A página define noindex e não aparecerá na busca do Google. Remova quando a página precisar ser indexada.',
@@ -76,13 +76,13 @@ const pt: SiteLangDict = {
 		'O verificador analisa o código que você cola (ou o HTML buscado de uma URL) e avalia uma lista fixa de verificações SEO on-page. Cada verificação lê um tipo de tag: title, meta description, H1, canonical, robots meta, campos Open Graph, blocos JSON-LD, conteúdo misto e recursos que bloqueiam renderização. O modo colar roda inteiramente no seu navegador; o modo URL busca a página uma vez pelo nosso worker e não a armazena.',
 	tool_onpage_rules_title: 'Regras seguidas pelas verificações',
 	tool_onpage_rules_body:
-		'Estes são os padrões contra os quais cada verificação compara, vindos do Google Search Central e da especificação HTML.',
+		'Com o que cada verificação compara e quão rígido é o critério. O comportamento das tags (robots, canonical, conteúdo misto) segue o Google Search Central e a especificação HTML; as recomendações de tamanho e de cabeçalhos são heurísticas de exibição e legibilidade, não regras de ranqueamento.',
 	tool_onpage_rules_item_1:
 		'Title: a página deve ter um <title> descritivo. O Google pode reescrevê-lo, mas um título conciso perto de 50–60 caracteres costuma exibir bem.',
 	tool_onpage_rules_item_2:
-		'H1: use exatamente um H1 que declare o tema. Os demais cabeçalhos devem ser H2–H6 e formar um roteiro lógico.',
+		'H1: a página precisa de um cabeçalho que declare o tema. O Google não tem número ideal de cabeçalhos nem penaliza H1 a mais, então vários H1 são sinalizados apenas por clareza do roteiro e acessibilidade.',
 	tool_onpage_rules_item_3:
-		'Canonical: um canonical autorreferente diz ao Google qual URL é a preferida quando há duplicatas. O Link rel="canonical" vai no <head>.',
+		'Canonical: <link rel="canonical"> no <head> é uma dica sobre a URL preferida entre duplicatas, não uma diretiva. O Google a pondera junto com redirecionamentos, sitemaps e links internos antes de decidir.',
 	tool_onpage_rules_item_4:
 		'Conteúdo misto: uma página https que referencia recursos http:// é bloqueada pelos navegadores. Esta verificação os lista como avisos.',
 	tool_onpage_rules_item_5:
@@ -100,12 +100,12 @@ const pt: SiteLangDict = {
 	tool_onpage_faq_q1: 'O que um verificador SEO on-page analisa?',
 	tool_onpage_faq_a1:
 		'Ele verifica as tags que a página controla: title, meta description, H1, canonical, robots meta, campos Open Graph, dados estruturados JSON-LD, conteúdo misto e recursos de bloqueio de renderização. Não mede posicionamento nem backlinks.',
-	tool_onpage_faq_q2: 'Por que a página deve ter exatamente um H1?',
+	tool_onpage_faq_q2: 'Vários H1 atrapalham o SEO?',
 	tool_onpage_faq_a2:
-		'Um único H1 declara o tema com clareza para leitores e mecanismos de busca. Vários H1 turvam a hierarquia; use um H1 e organize o restante com H2–H6.',
+		'Não. O Google afirma que não existe número ideal de cabeçalhos e ranqueia páginas com nenhum, com um ou com vários H1. Manter um único H1 compensa por acessibilidade e por um roteiro claro, além de aumentar a chance de o Google reaproveitar seu cabeçalho como título do snippet.',
 	tool_onpage_faq_q3: 'O canonical precisa apontar para si mesmo?',
 	tool_onpage_faq_a3:
-		'Para a página que deve ranquear, sim — um canonical autorreferente é o sinal mais claro. Apontar para outra URL diz ao Google que a página é duplicata, útil apenas quando isso é verdade.',
+		'Não necessariamente, mas um canonical autorreferente é o sinal mais claro para uma página que deve ranquear sozinha. Apontar para outra URL declara esta página como duplicata. Nos dois casos o Google trata o canonical como dica e pode ficar com outra URL.',
 	tool_onpage_faq_q4: 'Por que o verificador marca recursos http:// como conteúdo misto?',
 	tool_onpage_faq_a4:
 		'Quando uma página é servida por https e referencia imagens, scripts ou estilos http://, o navegador bloqueia a requisição por padrão. Esta verificação os lista como avisos para que você os troque por https.',

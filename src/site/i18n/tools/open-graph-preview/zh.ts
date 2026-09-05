@@ -56,10 +56,10 @@ const zh: SiteLangDict = {
 	tool_og_twitter_inferred: '未设置 twitter:card——平台会根据 og: 标签推断为 summary 卡片。',
 	tool_og_how_title: '工作原理',
 	tool_og_how_body:
-		'预览会解析你粘贴的 og:/twitter: 标签（或从抓取的 HTML 中提取），渲染三张分享卡片。Facebook 左侧显示 1.91:1 图片，下方是标题、描述与域名。X 依 twitter:card 而定：summary_large_image 顶部显示大图，summary 在文字旁显示小图。微信等即时通讯应用显示一张大卡片。字段状态表把 og:title、og:description 与 og:image 标为必备，并列出可选字段。',
+		'预览会解析你粘贴的 og:/twitter: 标签（或从抓取的 HTML 中提取），渲染三张分享卡片。Facebook 左侧显示 1.91:1 图片，下方是标题、描述与域名。X 依 twitter:card 而定：summary_large_image 顶部显示大图，summary 在文字旁显示小图。微信等即时通讯应用显示一张大卡片。字段状态表会标出协议必填的四个字段，并列出可选字段。',
 	tool_og_rules_title: '预览遵循的规则',
 	tool_og_rules_body: '以下是各平台使用的图片尺寸与回退规则，依据 Open Graph 协议与 X Cards 文档。',
-	tool_og_rules_item_1: '必备字段：og:title、og:description 与 og:image。缺失的会被标出，便于发布前补齐。',
+	tool_og_rules_item_1: 'Open Graph 协议必填的是 og:title、og:type、og:image 与 og:url。og:description 在协议里属于可选，但各大平台都会显示它——不写，平台就自己从正文里凑一段摘要。',
 	tool_og_rules_item_2: 'og:image 用 1200×630 像素（1.91:1）在所有主流平台都能正常显示。Facebook 现也支持 2:1 与 1:1 裁剪；过小的图常被放大而发虚。',
 	tool_og_rules_item_3: 'twitter:card 的 summary_large_image 配大图，summary 配小图。未设置 twitter:card 时，平台从 og: 标签推断为 summary 卡片。',
 	tool_og_rules_item_4: 'og:title 或 og:image 缺失时，平台回退到页面 HTML 的 title、meta description 与第一张图片。',
@@ -76,7 +76,7 @@ const zh: SiteLangDict = {
 		'升级 CMS 或主题后，抓取线上 URL，确认 og: 标签仍与页面匹配。',
 	tool_og_faq_q1: '页面没有 Open Graph 标签会怎样？',
 	tool_og_faq_a1:
-		'Facebook、X 与微信会用 HTML 标题、meta description 和页面第一张图片拼卡片。卡片可能不完整或显示错图，这正是 og: 必备字段存在的原因。',
+		'Facebook、X 与微信会退回去用 HTML 标题、meta description 和页面里找到的某张图片拼卡片。各平台的回退方式不一样，而且会变，卡片可能残缺或选错图——这正是要自己写 og: 字段的原因。',
 	tool_og_faq_q2: 'og:image 应该多大？',
 	tool_og_faq_a2:
 		'最稳妥的是 1200×630 像素，即 1.91:1，所有主流平台都接受。Facebook 现在还支持 2:1 与 1:1 裁剪。很小的图片常被放大而模糊。',

@@ -10,7 +10,7 @@ const es: SiteLangDict = {
 		'Escribe los title, description, canonical y etiquetas Open Graph que consiguen clics en Google: genera el head de tu página al completo desde el navegador.',
 	tool_meta_title: 'Generador de meta tags — genera el head de tu página al completo',
 	tool_meta_description:
-		'Title y meta description son tu tarjeta en Google; un canonical erróneo reparte señales. Rellena campos para etiquetas head listas. Ejemplo: canonical + og.',
+		'El title y la meta description dan forma al snippet; el canonical elige la URL entre duplicados. Rellena los campos y copia las etiquetas head listas, con aviso de longitud. Ejemplo: canonical + og.',
 	tool_meta_title_label: 'Meta title',
 	tool_meta_title_ph: 'Generador de meta tags — genera el head de tu página al completo',
 	tool_meta_title_hint: 'Mantenlo cerca de 60 caracteres. Los buscadores pueden reescribir títulos más largos.',

@@ -47,7 +47,7 @@ const id: SiteLangDict = {
 	tool_hreflang_rules_item_4:
 		'x-default menunjuk ke halaman yang ditampilkan saat tidak ada bahasa yang cocok, misalnya halaman akar berbahasa Inggris. Google dapat memakainya sebagai fallback untuk semua bahasa yang tidak terdeteksi.',
 	tool_hreflang_rules_item_5:
-		'Pilih satu bentuk pengiriman per rangkaian: tag <link> dalam HTML, header HTTP Link, atau xhtml:link dalam sitemap. Jangan mencampur bentuk untuk rangkaian yang sama, atau sinyal bisa saling bertentangan.',
+		'Google menganggap ketiga bentuk itu setara dan memang membolehkan ketiganya sekaligus, tetapi menyatakan tidak ada manfaatnya di penelusuran. Pilih satu saja per rangkaian halaman: tiga implementasi lama-lama menyimpang, dan anotasi yang saling bertentangan akan diabaikan.',
 	tool_hreflang_example_title: 'Contoh',
 	tool_hreflang_example:
 		'Contoh mencantumkan tiga versi satu halaman: https://example.com/ (en), https://example.com/es/ (es), dan https://example.com/ja/ (ja). Tag <link> yang dihasilkan menyertakan referensi diri untuk setiap bahasa plus x-default opsional yang menunjuk ke akar berbahasa Inggris.',

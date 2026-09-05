@@ -12,11 +12,11 @@
 - [在线查看 HTTP 响应头](https://onlinefreetools.org/zh/tools/website-headers) - 从边缘检查公开网址的 HTTP 响应头，含 Cache-Control / X-Robots-Tag / 重定向链的人话解读
 - [我的 IP 地址是什么？](https://onlinefreetools.org/zh/tools/ip-address) - 查看边缘节点看到的公网 IP，并说明代理/VPN 局限
 - [Markdown ↔ HTML](https://onlinefreetools.org/zh/tools/markdown-to-html) - 浏览器内 Markdown 与 HTML 双向转换：预览、安全清理与导出
-- [查看两段文本的差异](https://onlinefreetools.org/zh/tools/text-diff) - 左右粘贴两段纯文本，按行/词/字符高亮增删；文件留在本机、不上传
-- [在线对比两个文本文件](https://onlinefreetools.org/zh/tools/compare-two-text-files-online) - 选两个 txt，按行看增删；文件留在本机、不上传
+- [查看两段文本的差异](https://onlinefreetools.org/zh/tools/text-diff) - 左右粘贴两段纯文本，按行/词/字符高亮增删；按字符时不提供忽略空格
+- [在线对比两个文本文件](https://onlinefreetools.org/zh/tools/compare-two-text-files-online) - 选两个 UTF-8 txt，按行看增删；无效编码会明确报错
 - [对比两份 Word 文档的差异](https://onlinefreetools.org/zh/tools/compare-two-word-documents-for-differences) - 选两份 docx，抽出可见文字再看增删；不是审阅窗格；文件留在本机
-- [在线 JSON 差异检查](https://onlinefreetools.org/zh/tools/json-diff-checker-online) - 按路径对比两份 JSON，默认忽略键顺序；内容留在本机、不上传
-- [对比 Excel 文件](https://onlinefreetools.org/zh/tools/excel-compare-files) - 选两个表格，按当前工作表对格子；文件留在本机、不上传
+- [在线 JSON 差异检查](https://onlinefreetools.org/zh/tools/json-diff-checker-online) - 按路径对比两份 JSON；可检查键顺序或忽略数组顺序，重复项仍计数
+- [对比 Excel 文件](https://onlinefreetools.org/zh/tools/excel-compare-files) - 按当前工作表对比单元格显示值；不单独审计公式或格式
 - [写出 Excel 嵌套 IF 公式](https://onlinefreetools.org/zh/tools/write-nested-if-formula-for-excel) - 按等于/包含/空白条件写出嵌套 IF，可试算；输入留在本机
 - [写出 Excel 的 IFS 公式](https://onlinefreetools.org/zh/tools/write-ifs-formula-in-excel) - 同一套条件表生成 IFS()（Excel 2019 / Microsoft 365+）；输入留在本机
 - [用 IFNA 包住公式](https://onlinefreetools.org/zh/tools/wrap-formula-with-ifna) - 把内部公式包进 IFNA，只替换 #N/A；输入留在本机
@@ -221,11 +221,11 @@ Below are our available online tools with their links (English version):
 - [Check HTTP Response Headers](https://onlinefreetools.org/tools/website-headers) - Inspect response headers from the edge, with plain-language reads of Cache-Control, X-Robots-Tag and redirect chains
 - [What Is My IP Address?](https://onlinefreetools.org/tools/ip-address) - See the public IP our edge observes, with proxy/VPN limits explained
 - [Markdown ↔ HTML](https://onlinefreetools.org/tools/markdown-to-html) - Convert Markdown ↔ HTML with sanitize, preview, and export
-- [Check difference between two texts](https://onlinefreetools.org/tools/text-diff) - Paste two texts and highlight adds and deletes by line, word, or character — stays on the device, not uploaded
-- [Compare two text files online](https://onlinefreetools.org/tools/compare-two-text-files-online) - Choose two .txt files and highlight line adds and deletes — stays on the device, not uploaded
+- [Check difference between two texts](https://onlinefreetools.org/tools/text-diff) - Highlight additions and deletions by line, word, or character; character mode does not ignore whitespace
+- [Compare two text files online](https://onlinefreetools.org/tools/compare-two-text-files-online) - Compare two UTF-8 .txt files by line, with explicit errors for invalid encoding
 - [Compare two Word documents for differences](https://onlinefreetools.org/tools/compare-two-word-documents-for-differences) - Extract visible text from two .docx files and highlight wording changes — not Word Review Compare
-- [JSON diff checker online](https://onlinefreetools.org/tools/json-diff-checker-online) - Compare two JSON values by path, ignore key order by default — paste stays on the device
-- [Excel compare files](https://onlinefreetools.org/tools/excel-compare-files) - Compare two spreadsheets cell by cell on the current sheet — stays on the device, not uploaded
+- [JSON diff checker online](https://onlinefreetools.org/tools/json-diff-checker-online) - Compare paths, detect key-order changes, or ignore array order while preserving duplicates
+- [Excel compare files](https://onlinefreetools.org/tools/excel-compare-files) - Compare displayed cell values on selected sheets; formulas and formatting are not audited separately
 - [Write a nested IF formula for Excel](https://onlinefreetools.org/tools/write-nested-if-formula-for-excel) - Emit nested IF from equals/contains/blank rows with a trial — stays on the device
 - [Write an IFS formula in Excel](https://onlinefreetools.org/tools/write-ifs-formula-in-excel) - Same condition table → IFS() for Excel 2019 / Microsoft 365+ — stays on the device
 - [Wrap a formula with IFNA](https://onlinefreetools.org/tools/wrap-formula-with-ifna) - Wrap an inner formula so #N/A becomes your alternate — stays on the device

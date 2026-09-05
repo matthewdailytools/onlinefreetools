@@ -10,7 +10,7 @@ const id: SiteLangDict = {
   tool_text_diff_desc:
     'Periksa perbedaan antara dua teks dengan menempel kedua sisi di browser — file tidak diunggah.',
   tool_text_diff_description:
-    'Periksa perbedaan antara dua teks di browser. Proses: tempel teks asli dan revisi (orang juga mencari bandingkan teks online atau diff checker), pilih per baris, per kata, atau per karakter, opsional abaikan spasi atau samakan CRLF dan LF, lalu sorot penambahan dan penghapusan. File tetap di perangkat dan tidak diunggah. Contoh: ubah "halo dunia" menjadi "halo kawan" — mode kata menampilkan satu penggantian. Halaman ini hanya tempel teks; Word, Excel, dan JSON punya halaman sendiri.',
+    'Periksa perbedaan antara dua teks di browser. Proses: tempel teks asli dan revisi, pilih per baris, per kata, atau per karakter, pada mode baris atau kata, opsional abaikan spasi atau samakan CRLF dan LF, lalu sorot penambahan dan penghapusan. File tetap di perangkat dan tidak diunggah. Contoh: ubah "halo dunia" menjadi "halo kawan" — mode kata menampilkan satu penggantian. Masukannya berupa teks tempel, bukan file Word, Excel, atau JSON terstruktur.',
   tool_text_diff_empty_hint: 'Tempel teks di satu atau kedua sisi, lalu bandingkan.',
   tool_text_diff_example:
     'Contoh (mode kata): A = "Halo dunia", B = "Halo teman" → satu perubahan (dunia → teman). Jika hanya baris tengah dari tiga baris yang berubah, mode baris menandai baris itu.',
@@ -24,14 +24,19 @@ const id: SiteLangDict = {
   tool_text_diff_faq_a4:
     'Tidak. Hanya teks yang ditempel — bukan gambar, ZIP, Word, Excel, atau JSON terstruktur. Untuk membuka .txt, .docx, atau spreadsheet, pakai halaman format itu.',
   tool_text_diff_faq_a5:
-    'Ya: banyak orang mencari bandingkan teks online atau diff checker. Di sini pekerjaannya dengan menempel dua teks. Judul memakai frasa yang lebih spesifik «periksa perbedaan antara dua teks».',
+    "Tidak. Mode karakter membandingkan setiap karakter sehingga opsi tersebut dinonaktifkan. Gunakan mode baris atau kata untuk mengabaikan perubahan spasi saja.",
   tool_text_diff_faq_q1: 'Bandingkan per baris atau per kata?',
   tool_text_diff_faq_q2: 'Apakah teks saya diunggah ke server?',
   tool_text_diff_faq_q3: 'Mengapa hanya beda baris baru membuat seluruh baris merah?',
   tool_text_diff_faq_q4: 'Bisakah membandingkan gambar, Word, atau file biner?',
-  tool_text_diff_faq_q5: 'Apakah ini sama dengan diff checker online?',
+  tool_text_diff_faq_q5: "Apakah Abaikan spasi bekerja pada mode karakter?",
   tool_text_diff_how_body:
-    'Tempel dua versi, pilih ketelitian (baris, kata, atau karakter), lalu lihat tambahan hijau dan penghapusan merah. Teks yang Anda tempel tidak diunggah atau disimpan oleh kami. Halaman dapat memuat pustaka open-source jsdiff dari CDN agar perbandingan berjalan di browser.',
+    "Tempel teks asli di kiri dan revisi di kanan, pilih per baris, kata, atau karakter, lalu periksa tambahan hijau dan penghapusan merah. Teks tetap di perangkat dan tidak diunggah ke server.",
+  tool_text_diff_load_sample: "Muat contoh",
+  tool_text_diff_how_item_1: "Tempel teks asli di sisi kiri.",
+  tool_text_diff_how_item_2: "Tempel teks revisi di sisi kanan.",
+  tool_text_diff_how_item_3: "Pilih mode baris, kata, atau karakter lalu atur opsi spasi dan baris baru jika tersedia.",
+  tool_text_diff_how_item_4: "Tekan Bandingkan dan periksa tambahan serta penghapusan yang disorot.",
   tool_text_diff_how_title: 'Cara memakai',
   tool_text_diff_ignore_ws: 'Abaikan spasi',
   tool_text_diff_label_a: 'Teks asli',
@@ -49,16 +54,16 @@ const id: SiteLangDict = {
   tool_text_diff_placeholder_b: 'Tempel teks revisi…',
   tool_text_diff_result_label: 'Perbedaan',
   tool_text_diff_rules_body:
-    'Alat ini mencari daftar singkat perubahan dari teks A ke B (diff klasik / pendekatan Myers dengan jsdiff). Mode baris: config dan kode. Mode kata: kalimat dan prompt. Mode karakter: typo kecil, tapi lebih ramai. Abaikan spasi menyembunyikan perubahan indent saja. Samakan CRLF dan LF agar baris tidak merah hanya karena gaya baris baru.',
+    "Mode yang dipilih menentukan satuan perubahan. Mode karakter menonaktifkan Abaikan spasi karena opsi itu hanya berlaku untuk baris dan kata.",
   tool_text_diff_rules_intro:
     'Alat ini mencari daftar singkat suntingan untuk mengubah teks A menjadi B (diff klasik / pendekatan Myers dengan jsdiff). Pilih mode sesuai tugas:',
-  tool_text_diff_rules_item_chars: 'Karakter — cocok untuk typo kecil; paling teliti, tapi berisik pada suntingan panjang.',
-  tool_text_diff_rules_item_lines:
+  tool_text_diff_rules_item_3: 'Karakter — cocok untuk typo kecil; paling teliti, tapi berisik pada suntingan panjang.',
+  tool_text_diff_rules_item_1:
     'Baris — cocok untuk .env, YAML, dan kode; satu baris berubah ditandai utuh. Cepat dibaca, tapi satu kata saja tetap membuat seluruh baris merah.',
-  tool_text_diff_rules_item_words:
+  tool_text_diff_rules_item_2:
     'Kata — cocok untuk kalimat, email, dan prompt; menyorot kata. Lebih jelas untuk prosa; tanda baca bisa memecah hasil.',
-  tool_text_diff_rules_options:
-    'Abaikan spasi menyembunyikan perubahan indentasi saja. Samakan CRLF dan LF agar baris utuh tidak merah hanya karena gaya baris baru (Windows vs Unix).',
+  tool_text_diff_rules_item_4:
+    "Abaikan spasi hanya berlaku pada mode baris dan kata. Menyamakan CRLF dan LF menormalkan baris baru Windows dan Unix di semua mode.",
   tool_text_diff_rules_title: 'Cara perbedaan dihitung',
   tool_text_diff_sample_a: 'Halo dunia\nbaris dua\nbaris tiga',
   tool_text_diff_sample_b: 'Halo teman\nbaris dua\nbaris tiga',

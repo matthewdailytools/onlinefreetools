@@ -48,6 +48,57 @@ export const isBlockedHostname = (hostname: string) => {
   return false;
 };
 
+/** 单次抓取允许的最大重定向跳数。 */
+const MAX_REDIRECTS = 5;
+
+/**
+ * 逐跳跟随重定向，并对每一跳的主机名重新做私网/localhost 拦截。
+ * `redirect: 'follow'` 只校验首跳，公网页面可用 302 把请求带向内网地址。
+ *
+ * @param startUrl 起始 URL（调用方须已校验协议与主机名）
+ * @param userAgent 抓取时使用的 UA
+ * @param signal 超时中断信号
+ * @returns 最终（非重定向）响应与其对应的最终 URL
+ */
+export const fetchHtmlFollowingRedirects = async (
+  startUrl: URL,
+  userAgent: string,
+  signal: AbortSignal,
+): Promise<{ res: Response; finalUrl: string }> => {
+  let current = startUrl;
+  for (let hop = 0; hop <= MAX_REDIRECTS; hop++) {
+    const res = await fetch(current.toString(), {
+      method: 'GET',
+      redirect: 'manual',
+      signal,
+      headers: {
+        'user-agent': userAgent,
+        accept: 'text/html,application/xhtml+xml',
+      },
+    });
+
+    const location = res.headers.get('location');
+    if (!(res.status >= 300 && res.status < 400 && location)) {
+      return { res, finalUrl: current.toString() };
+    }
+
+    let next: URL;
+    try {
+      next = new URL(location, current);
+    } catch {
+      throw new Error('Invalid redirect target');
+    }
+    if (next.protocol !== 'http:' && next.protocol !== 'https:') {
+      throw new Error('Only http/https URLs are supported');
+    }
+    if (isBlockedHostname(next.hostname)) {
+      throw new Error('Blocked hostname');
+    }
+    current = next;
+  }
+  throw new Error('Too many redirects');
+};
+
 export const handleOnPageSeoApi = async (c: Context) => {
   const raw = (c.req.query('url') || '').trim();
   if (!raw) return c.json({ error: 'Missing url' }, 400);
@@ -66,15 +117,11 @@ export const handleOnPageSeoApi = async (c: Context) => {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort('timeout'), 10_000);
   try {
-    const res = await fetch(url.toString(), {
-      method: 'GET',
-      redirect: 'follow',
-      signal: controller.signal,
-      headers: {
-        'user-agent': 'onlinefreetools/on-page-seo-checker',
-        accept: 'text/html,application/xhtml+xml',
-      },
-    });
+    const { res, finalUrl } = await fetchHtmlFollowingRedirects(
+      url,
+      'onlinefreetools/on-page-seo-checker',
+      controller.signal,
+    );
 
     const contentType = (res.headers.get('content-type') || '').toLowerCase();
     if (!contentType.includes('html') && !contentType.includes('xml')) {
@@ -91,7 +138,7 @@ export const handleOnPageSeoApi = async (c: Context) => {
     const html = new TextDecoder('utf-8', { fatal: false }).decode(buf);
     return c.json({
       inputUrl: raw,
-      finalUrl: res.url,
+      finalUrl,
       status: res.status,
       html,
     });

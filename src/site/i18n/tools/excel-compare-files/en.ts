@@ -15,7 +15,7 @@ const en: SiteLangDict = {
 	tool_excel_compare_files_desc:
 		'Excel compare files: pick two spreadsheets, compare the current sheet cell by cell — stays on the device, not uploaded.',
 	tool_excel_compare_files_description:
-		'Excel compare files in your browser. Process: choose two xlsx or csv files, pick the current sheet (first sheet by default), then list cells whose values differ. Files stay on your device and are not uploaded. Example: two 3-row tables where B3 changes from 2 to 9. “Online” is how it runs, not the heading. Column shifts are compared by address, not by header name.',
+		'Excel compare files in your browser. Process: choose two xlsx or csv files, pick the current sheet (first sheet by default), then list cells whose values differ. Files stay on your device and are not uploaded. Example: two 3-row tables where B3 changes from 2 to 9. Column shifts are compared by address, not by header name.',
 	tool_excel_compare_files_empty: 'Choose two spreadsheet files first, or load the sample.',
 	tool_excel_compare_files_err_read: 'Could not read a spreadsheet. Try xlsx or csv, and unlock protected workbooks first.',
 	tool_excel_compare_files_example:
@@ -26,9 +26,11 @@ const en: SiteLangDict = {
 	tool_excel_compare_files_faq_a2:
 		'Yes. The first sheet is selected by default. Use the sheet lists if you need another tab in the same file. Other sheets are not compared until you select them.',
 	tool_excel_compare_files_faq_a3:
-		'Yes. CSV is read as a single sheet. People also search compare two csv — same page, no extra URL.',
+		"Yes. CSV is read as a single sheet, so you can compare two CSV files or compare a CSV export with an Excel sheet by cell address.",
 	tool_excel_compare_files_faq_a4:
 		'Missing cells and empty cells are both treated as a blank string. A shifted column still compares A1 to A1, not “the Name column” by header. That avoids silent mismatches when headers move.',
+	tool_excel_compare_files_faq_q5: "Does it compare formulas, formatting, or only displayed values?",
+	tool_excel_compare_files_faq_a5: "It compares the displayed text SheetJS reads for each cell. Formula expressions, styles, comments, column widths, and workbook structure are not compared separately. A formula change with the same cached display value can therefore look unchanged.",
 	tool_excel_compare_files_faq_q1: 'Are my Excel files uploaded?',
 	tool_excel_compare_files_faq_q2: 'Does it only compare the first sheet?',
 	tool_excel_compare_files_faq_q3: 'Can I compare two CSV files here?',
@@ -38,7 +40,7 @@ const en: SiteLangDict = {
 	tool_excel_compare_files_how_item_1: 'Choose the first spreadsheet (xlsx, xls, or csv).',
 	tool_excel_compare_files_how_item_2: 'Choose the second spreadsheet.',
 	tool_excel_compare_files_how_item_3: 'Leave the first sheet selected unless you need another tab.',
-	tool_excel_compare_files_how_item_4: 'Compare lists differing cells; Load sample already ran on first paint.',
+	tool_excel_compare_files_how_item_4: "Select Compare to list cells whose displayed text differs on the two selected sheets.",
 	tool_excel_compare_files_how_title: 'How it works',
 	tool_excel_compare_files_label_a: 'First spreadsheet',
 	tool_excel_compare_files_label_b: 'Second spreadsheet',

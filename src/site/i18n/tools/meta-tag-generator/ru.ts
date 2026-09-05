@@ -10,7 +10,7 @@ const ru: SiteLangDict = {
 		'Создайте title, description, canonical и Open Graph теги, которые приносят клики в поиске: сгенерируйте все head-теги страницы прямо в браузере.',
 	tool_meta_title: 'Генератор мета-тегов — создайте все head-теги страницы',
 	tool_meta_description:
-		'Title и meta description — визитка в Google; неверный canonical дробит сигналы. Заполните поля для готовых head-тегов. Пример: canonical + og.',
+		'Title и meta description формируют сниппет в поиске, а canonical выбирает URL среди дублей. Заполните поля — получите готовые head-теги и подсказки по длине. Пример: canonical + og.',
 	tool_meta_title_label: 'Meta title',
 	tool_meta_title_ph: 'Генератор мета-тегов — создайте все head-теги страницы',
 	tool_meta_title_hint: 'Держите в районе 60 символов. Поисковые системы могут переписывать более длинные заголовки.',

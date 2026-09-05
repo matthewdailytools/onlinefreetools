@@ -110,3 +110,13 @@
 - [x] References ≥1
 - [ ] Disclaimer（YMYL 必备）
 - [x] `03-locale-briefs.md` 已填（实现十语前）
+
+## 复审修正（2026-09-05）
+
+- URL 模式改为逐跳跟随重定向（上限 5 跳），每跳重新执行私网/localhost 拦截；原 `redirect: 'follow'` 只校验首跳，公网页面可用 302 把抓取带向内网地址。
+- `finalUrl` 改为返回实际最终 URL，canonical 自引用判断不再依赖 `res.url` 是否被填充。
+
+## 复审修正（2026-09-05）
+
+- `loadSample()` 抽出为具名函数，进页与 Load sample 按钮共用同一条路径，并统一停在 Paste HTML 模式——此前进页是 URL 标签页却显示粘贴样例的结果，标签与内容错位。
+- 纠正错误的规范性结论：多个 H1 不影响 Google 排名（官方明确无理想标题数量），改为按可访问性与大纲清晰度提示；缺 meta description 由 Issue 降为 Warning，并说明 Google 会改用正文生成摘要；canonical 改述为提示而非指令；Rules 引言区分「官方文档依据」与「展示启发式」。

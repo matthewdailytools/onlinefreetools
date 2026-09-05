@@ -34,15 +34,15 @@ const de: SiteLangDict = {
 		'Wähle die Ziel-Crawler aus, füge für jede Gruppe Allow- und Disallow-Pfade hinzu, optional eine Sitemap-Zeile, und drücke Generieren. Die Seite setzt die Textdatei nach dem RFC-9309-Layout zusammen: eine User-Agent-Zeile pro Gruppe, darunter ihre Allow-/Disallow-Zeilen, eine Leerzeile zwischen Gruppen und die Sitemap-Zeile am Ende. Kopiere das Ergebnis in das Stammverzeichnis deiner Seite unter /robots.txt.',
 	tool_robots_rules_title: 'Wichtige Syntaxregeln',
 	tool_robots_rules_body:
-		'robots.txt-Regeln sind Pfad-Präfixe, keine Muster, und ein Crawler wendet die letzte passende Gruppe in der Datei an. Das sind die Regeln, denen dieser Generator folgt.',
+		'robots.txt-Regeln sind Pfad-Präfixe, keine Muster, und ein Crawler befolgt genau eine Gruppe: die, deren User-Agent am genauesten auf ihn passt. Das sind die Regeln, denen dieser Generator folgt.',
 	tool_robots_rules_item_1:
-		'Gruppenreihenfolge: Eine User-Agent-Zeile beginnt eine Gruppe für diesen Crawler; eine Leerzeile beendet sie. Die letzte passende Gruppe gewinnt.',
+		'Gruppenauswahl: Ein Crawler hält sich an die Gruppe mit der genauesten User-Agent-Übereinstimmung – der eigene Name schlägt *, und die Reihenfolge in der Datei entscheidet nicht. Mehrere User-Agent-Zeilen für denselben Crawler werden zu einer Gruppe zusammengefasst (RFC 9309).',
 	tool_robots_rules_item_2:
 		'Präfix-Abgleich: Allow und Disallow matchen Pfad-Präfixe, keine Teilstrings oder Regex. Nur * und $ sind besonders (RFC 9309).',
 	tool_robots_rules_item_3:
-		'Disallow: / sperrt diesen Agenten auf der gesamten Seite. Disallow mit leerem Wert erlaubt diesem Agenten alles.',
+		'Regelvorrang innerhalb einer Gruppe: Der längste passende Pfad gewinnt, und sind Allow und Disallow gleich lang, gewinnt Allow. Disallow: /admin/ zusammen mit Allow: /admin/public/ hält den öffentlichen Unterordner also crawlbar.',
 	tool_robots_rules_item_4:
-		'Sitemap ist eine Erweiterung, kein Teil von RFC 9309. Sie ist unabhängig von Groß-/Kleinschreibung und darf überall stehen, wird aber üblicherweise ans Ende gesetzt.',
+		'Ganze Website und Sitemap-Zeile: Disallow: / sperrt den Agenten für jede URL, ein leerer Disallow-Wert erlaubt dagegen alles. Sitemap: ist eine Erweiterung außerhalb von RFC 9309, unabhängig von Groß-/Kleinschreibung und überall erlaubt – dieser Generator setzt sie ans Ende.',
 	tool_robots_example_title: 'Beispiel',
 	tool_robots_example:
 		'Beispiel: Googlebot mit Allow: / (vollständig aktiv), GPTBot mit Disallow: / (gesperrt) und eine Sitemap-Zeile, die auf /sitemap.xml zeigt. Die Ausgabe folgt diesem Layout: eine Gruppe pro Crawler, Leerzeile zwischen Gruppen, Sitemap zuletzt.',
@@ -50,12 +50,12 @@ const de: SiteLangDict = {
 	tool_robots_usecase_1:
 		'Neue Seiten: ein Start-robots.txt, das Suchmaschinen aktiviert lässt und private Staging-Pfade versteckt.',
 	tool_robots_usecase_2:
-		'KI-Crawler-Kontrolle: GPTBot, ClaudeBot, Google-Extended, CCBot oder PerplexityBot von Training oder Zusammenfassung aussperren, ohne Googlebot zu beeinflussen.',
+		'KI-Crawler steuern: GPTBot, ClaudeBot, Google-Extended, CCBot oder PerplexityBot eine eigene Disallow-Gruppe geben, während Googlebot weiter crawlt. Google-Extended betrifft Gemini und Vertex-AI-Grounding – die AI Overviews in der Google-Suche laufen weiterhin über Googlebot.',
 	tool_robots_usecase_3:
 		'Auffindbarkeit: robots.txt mit einer Sitemap-Zeile kombinieren, damit Crawler die Sitemap finden.',
 	tool_robots_faq_q1: 'Was passiert, wenn ich Disallow: / schreibe?',
 	tool_robots_faq_a1:
-		'Es sagt diesem Crawler, keine URL unter der Seitenwurzel abzurufen. Bekommt Googlebot Disallow: /, können deine Seiten aus der Google-Suche verschwinden. Für einen Staging-Pfad nimm stattdessen Disallow: /private/.',
+		'Es sagt diesem Crawler, keine URL unter der Seitenwurzel abzurufen. Bekommt Googlebot Disallow: /, können deine Seiten aus der Google-Suche verschwinden. Disallow blockiert das Crawling, nicht die Indexierung: Eine gesperrte URL, auf die andere verlinken, kann weiterhin ohne Snippet gelistet werden. Soll sie wirklich raus, lass die Seite crawlbar und setze noindex. Für einen Staging-Pfad nimm stattdessen Disallow: /private/.',
 	tool_robots_faq_q2: 'Wie sperre ich KI-Crawler wie GPTBot?',
 	tool_robots_faq_a2:
 		'Erstelle eine Gruppe mit dem User-Agent des Crawlers (z. B. GPTBot, ClaudeBot, Google-Extended, CCBot, PerplexityBot) und füge Disallow: / hinzu. Prüfe die offizielle Doku des Crawlers, da KI-Crawler ihre User-Agents und IP-Bereiche von Zeit zu Zeit aktualisieren.',

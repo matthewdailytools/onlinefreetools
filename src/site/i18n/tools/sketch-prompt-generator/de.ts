@@ -6,18 +6,18 @@ import type { SiteLangDict } from '../../../types';
 
 const de: SiteLangDict = {
 	tool_sketch_prompt_generator_article:
-		'Erstellen Sie kopierfertige Prompts, die ChatGPT, Gemini, Claude oder DeepSeek anleiten, Sketch.app zu bedienen — Artboards, Symbols, Shared Styles und Export. Felder ausfüllen, Markdown oder JSON kopieren. Lokaler Zusammenbau bleibt im Browser; optionales Expand/Polish nutzt Cloudflare Workers AI mit Turnstile. Text bleibt auf dem Gerät, außer Sie wählen KI.',
+		'Erstellen Sie kopierfertige Prompts, die ChatGPT, Gemini, Claude oder DeepSeek anleiten, Sketch.app zu bedienen — Artboards, Symbols, Shared Styles und Export. Felder ausfüllen, Markdown oder JSON kopieren. Standardmäßig entsteht der Prompt in Ihrem Browser; erst ein Klick auf Erweitern oder Glätten schickt den aktuellen Entwurf an Cloudflare Workers AI (Turnstile nötig, Rate- und Kontingentgrenzen), und die Antwort ersetzt den Ausgabeblock vollständig.',
 	tool_sketch_prompt_generator_build: 'Prompt erstellen',
 	tool_sketch_prompt_generator_clear: 'Leeren',
 	tool_sketch_prompt_generator_copy: 'Kopieren',
 	tool_sketch_prompt_generator_desc:
-		'Sketch.app-Prompt-Generator — lokal standardmäßig + optionales Cloudflare-AI Expand/Polish (Turnstile); Markdown/JSON auf dem Gerät.',
+		'Sketch.app-Prompt-Generator — Artboards, Symbols und Export-Schritte im Browser zusammenbauen; optional Erweitern/Glätten per Cloudflare AI (Turnstile).',
 	tool_sketch_prompt_generator_description:
-		'Sketch.app-Prompt-Generator — Lokal + optionale KI für ChatGPT, Gemini, Claude und DeepSeek: strukturierte Prompts für Sketch.app-Schritte (Artboards, Symbols, Export) lokal zusammenbauen; optional Expand/Polish über Cloudflare Workers AI (Turnstile, Limit). Beispiel beim Öffnen. Markdown standard; JSON für Pipelines. Text bleibt auf dem Gerät ohne KI.',
+		'Sketch.app-Prompt-Generator — Lokal + optionale KI für ChatGPT, Gemini, Claude und DeepSeek: Ziel, Artboards, Symbols und Export eintragen, und der Browser baut daraus einen strukturierten Prompt mit den Arbeitsschritten in Sketch.app. Beim Öffnen läuft bereits ein änderbares Beispiel; danach optional Erweitern oder Glätten über Cloudflare Workers AI (Turnstile nötig, Kontingent). Markdown als Standard, JSON für Pipelines.',
 	tool_sketch_prompt_generator_download: 'Herunterladen',
 	tool_sketch_prompt_generator_empty: 'Füllen Sie vor dem Erstellen mindestens ein Feld aus.',
 	tool_sketch_prompt_generator_example:
-		'Eingabe: Ziel = Login-Screen in Sketch.app; Artboards = iPhone 14 390×844; Symbols = Button/Primary + Input; Export = 1x/2x/3x PNG + PDF. Ausgabe (Markdown): ## Role → Sketch.app-Assistent; ## Task → nummerierte Checkliste.',
+		'Eingabe: Ziel = Login-Screen in Sketch.app; Artboards = iPhone 14 390×844; Symbols = Button/Primary + Input; Export = 1x/2x/3x PNG + PDF. Ausgabe (Markdown): ## Rolle → Sketch.app-Assistent; ## Aufgabe → nummerierte Checkliste.',
 	tool_sketch_prompt_generator_example_title: 'Beispiel',
 	tool_sketch_prompt_generator_faq_a1:
 		'Lokaler Zusammenbau läuft in diesem Tab — standardmäßig kein Upload. Optionales Expand/Polish sendet nur den Text dieses Klicks an Cloudflare Workers AI, nicht an OpenAI, Google, Anthropic oder DeepSeek von unseren Servern.',
@@ -33,7 +33,7 @@ const de: SiteLangDict = {
 	tool_sketch_prompt_generator_faq_a7:
 		'Ja. Prompt in ChatGPT, Gemini, Claude oder DeepSeek einfügen, damit der Chat durch Sketch.app-Menüs führt. Wir formatieren nur Text; Sketch läuft nicht bei uns.',
 	tool_sketch_prompt_generator_faq_a8:
-		'Lokal formatiert nur im Tab ohne Upload. Expand/Polish geht an Cloudflare Workers AI (Limit + Turnstile). Bei Fehler weiter lokal arbeiten.',
+		'Lokal wird alles in diesem Tab formatiert, nichts verlässt den Browser. Erweitern/Glätten schickt den Entwurf an Cloudflare Workers AI (Turnstile und Tageskontingent); die Antwort ersetzt den Ausgabeblock komplett. Bei Fehler oder erschöpftem Kontingent lokal weiterarbeiten.',
 	tool_sketch_prompt_generator_faq_q1: 'Wird mein Prompt hochgeladen?',
 	tool_sketch_prompt_generator_faq_q2: 'Ruft das ChatGPT auf oder steuert Sketch.app remote?',
 	tool_sketch_prompt_generator_faq_q3: 'Unterschied zum Prompt-Vorlagen-Builder?',
@@ -51,7 +51,7 @@ const de: SiteLangDict = {
 	tool_sketch_prompt_generator_ai_consent_ok: 'Weiter',
 	tool_sketch_prompt_generator_ai_consent_cancel: 'Abbrechen',
 	tool_sketch_prompt_generator_ai_working: 'Cloudflare AI arbeitet…',
-	tool_sketch_prompt_generator_ai_done: 'KI-Vorschlag übernommen. Vor dem Kopieren prüfen.',
+	tool_sketch_prompt_generator_ai_done: 'Der KI-Text steht vollständig im Ausgabefeld. Vor dem Kopieren prüfen.',
 	tool_sketch_prompt_generator_ai_err_generic: 'KI fehlgeschlagen. Lokaler Prompt unverändert.',
 	tool_sketch_prompt_generator_ai_err_rate: 'KI-Kontingent erreicht. Lokal nutzen oder morgen (UTC) erneut versuchen.',
 	tool_sketch_prompt_generator_ai_err_turnstile: 'Turnstile vor KI-Nutzung abschließen.',
@@ -75,7 +75,7 @@ const de: SiteLangDict = {
 	tool_sketch_prompt_generator_how_title: 'So funktioniert es',
 	tool_sketch_prompt_generator_load_sample: 'Beispiel laden',
 	tool_sketch_prompt_generator_platforms_lead:
-		'Für ChatGPT, Gemini, Claude und DeepSeek — Prompt kopieren, damit der Chat Sketch.app-Bedienung coach.',
+		'Für ChatGPT, Gemini, Claude und DeepSeek — Prompt kopieren, damit der Chat Sie durch die Sketch.app-Bedienung führt.',
 	tool_sketch_prompt_generator_result_label: 'Prompt-Ausgabe',
 	tool_sketch_prompt_generator_rules_body:
 		'Felder bilden Sketch.app-Arbeit ab. Lokal ist Standard; optionale KI braucht Turnstile und hat Limit. Diese Seite startet Sketch.app nicht.',

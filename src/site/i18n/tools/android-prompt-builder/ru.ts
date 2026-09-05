@@ -1,82 +1,83 @@
 /**
  * i18n tool shard (android-prompt-builder / ru).
- * 检索向独立重写；title 含「本地 + 可选 AI」；description 含本地默认与 Cloudflare AI Expand/Polish + Turnstile。
+ * Локальные запросы: «генератор промптов для Android», «промпт для ChatGPT разработка Android». Главный запрос — в H1; второстепенные (стек Kotlin, Compose, Gradle, minSdk, выгрузка JSON) — в description, FAQ и сценариях.
+ * Фактические границы: сборка в браузере без запросов; необязательные «Расширить/Отшлифовать» отправляют черновик в Cloudflare Workers AI (Turnstile, лимит), ответ полностью заменяет область результата.
  */
 import type { SiteLangDict } from '../../../types';
 
 const ru: SiteLangDict = {
 	tool_android_prompt_builder_article:
-		'Конструктор Android prompt — Локально + опциональный ИИ для ChatGPT, Gemini, Claude и DeepSeek: локальная сборка по умолчанию, опционально Expand/Polish через Cloudflare Workers AI (Turnstile, лимиты). Пример на первом экране. Markdown по умолчанию; JSON для пайплайнов. Текст на устройстве, пока не включите ИИ.',
+		'Здесь требование к Android-приложению превращается в готовый к вставке промпт: опишите функцию, стек Kotlin, экран на Compose и ограничения Gradle — страница соберёт текст в Markdown или JSON прямо в браузере. По умолчанию никаких запросов не уходит; черновик отправляется в Cloudflare Workers AI только после нажатия «Расширить» или «Отшлифовать» (нужен Turnstile, число обращений ограничено).',
 	tool_android_prompt_builder_build:
-		'Собрать prompt',
+		'Собрать промпт',
 	tool_android_prompt_builder_clear:
 		'Очистить',
 	tool_android_prompt_builder_copy:
 		'Копировать',
 	tool_android_prompt_builder_desc:
-		'Конструктор Android prompt — local por defecto + Expand/Polish opcional Cloudflare AI (Turnstile); Markdown/JSON en el dispositivo.',
+		'Генератор промптов для Android: заполните функцию, стек Kotlin, экран на Compose и ограничения Gradle — текст собирается в браузере в Markdown или JSON, ИИ по желанию.',
 	tool_android_prompt_builder_description:
-		'Процесс и пример: Конструктор Android prompt — Local + IA opcional para ChatGPT, Gemini, Claude y DeepSeek: ensambla prompts localmente por defecto y opcionalmente Expand/Polish con Cloudflare Workers AI (Turnstile obligatorio, límite de uso). Ejemplo al abrir. Markdown por defecto; JSON para pipelines. Texto en el dispositivo salvo que uses IA.',
+		'Генератор промптов для Android: укажите функцию, стек (Kotlin 2.0, Jetpack Compose, Room), экран и ограничения Gradle — страница разложит их по блокам Role / Task / Constraints / Output в Markdown или JSON, не выходя из браузера. Пример: «офлайн-список для чтения с полнотекстовым поиском и архивацией свайпом» превращается в задачу с minSdk 26. Кнопка «Загрузить пример» заполняет поля и сразу собирает промпт; «Расширить» и «Отшлифовать» через Cloudflare Workers AI — по желанию (Turnstile, суточный лимит).',
 	tool_android_prompt_builder_download:
 		'Скачать',
 	tool_android_prompt_builder_empty:
 		'Заполните хотя бы одно поле перед сборкой.',
 	tool_android_prompt_builder_example:
-		'Ввод: Feature = offline reading list + FTS; Stack = Kotlin 2.0, Compose, Room FTS4; Gradle = minSdk 26. Вывод (Markdown): ## Task → Feature / Kotlin / Compose / Gradle.',
+		'Ввод: Функция = офлайн-список для чтения, сохранение через share sheet, полнотекстовый поиск, архивация свайпом с отменой; Стек = Kotlin 2.0, Jetpack Compose, Room FTS4, Hilt; Compose = LazyColumn с прилипающими заголовками дат и SwipeToDismissBox; Gradle = minSdk 26, targetSdk 35, модуль :core:data. Вывод (Markdown): в ## Role описана роль опытного Android-разработчика, в ## Task — по строке на каждое поле.',
 	tool_android_prompt_builder_example_title:
 		'Пример',
 	tool_android_prompt_builder_faq_a1:
-		'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
+		'По умолчанию нет. Заполнение полей и кнопка «Собрать промпт» работают только в этой вкладке, без запросов. Черновик уходит лишь при нажатии «Расширить» или «Отшлифовать», и адресат — Cloudflare Workers AI; с наших серверов текст не пересылается в OpenAI, Google, Anthropic или DeepSeek.',
 	tool_android_prompt_builder_faq_a2:
-		'Modo local solo formatea aquí. Expand/Polish opcional usa Cloudflare Workers AI tras Turnstile — no llama APIs de chat.',
+		'Нет. Локальный режим просто раскладывает ваши поля по блокам Role / Task / Constraints / Output. Необязательный ИИ работает через Cloudflare Workers AI после Turnstile, а не через API ChatGPT, Gemini, Claude или DeepSeek.',
 	tool_android_prompt_builder_faq_a3:
-		'Конструктор Android prompt covers generic Role/Task/Constraints/Output templates. This page focuses on android prompt builder fields with a dedicated sample and rules for this scenario.',
+		'Конструктор шаблонов промптов даёт четыре универсальных блока Role / Task / Constraints / Output для любой темы. Здесь поля уже под Android-проект: функция, стек Kotlin, экран на Compose, minSdk и деление на модули Gradle, со своим примером и своими ограничениями.',
 	tool_android_prompt_builder_faq_a4:
-		'Sí. Completa Turnstile en el panel de IA antes de Expand o Polish.',
+		'Да. Пройдите Turnstile в блоке ИИ прежде, чем нажать «Расширить» или «Отшлифовать». Без действительного токена кнопки ИИ вернут ошибку, а локальный режим продолжит работать.',
 	tool_android_prompt_builder_faq_a5:
-		'Yes. The JSON chip emits structured fields plus assembled prompt text for tests or config pipelines.',
+		'Да. Переключите формат вывода на JSON: получите поля по отдельности плюс собранный текст промпта — удобно для тестов или конфигурационного конвейера.',
 	tool_android_prompt_builder_faq_a6:
-		'Yes. Copy the finished prompt into ChatGPT, Gemini, Claude, or DeepSeek. We do not split URLs per platform because the job is formatting text, not calling APIs.',
+		'Да. Результат — обычный текст: скопируйте и вставьте в ChatGPT, Gemini, Claude или DeepSeek. Страница не вызывает эти API за вас.',
 	tool_android_prompt_builder_faq_q1:
-		'Is my prompt uploaded?',
+		'Загружается ли куда-нибудь то, что я ввожу?',
 	tool_android_prompt_builder_faq_q2:
-		'Does this call ChatGPT or other LLM APIs?',
+		'Обращается ли страница к API ChatGPT или других моделей?',
 	tool_android_prompt_builder_faq_q3:
-		'How is this different from Конструктор Android prompt?',
+		'Чем это отличается от конструктора шаблонов промптов?',
 	tool_android_prompt_builder_faq_q4:
-		'¿Por qué Turnstile para IA opcional?',
+		'Зачем необязательному ИИ нужен Turnstile?',
 	tool_android_prompt_builder_faq_q5:
-		'Can I get JSON output?',
+		'Можно выгрузить в JSON?',
 	tool_android_prompt_builder_faq_q6:
-		'Can I use this with ChatGPT, Gemini, Claude, or DeepSeek?',
+		'Подходит для ChatGPT, Gemini, Claude и DeepSeek?',
 	tool_android_prompt_builder_faq_q7:
-		'¿Diferencia entre local y Cloudflare AI opcional?',
+		'Чем локальная сборка отличается от Cloudflare AI?',
 	tool_android_prompt_builder_faq_a7:
-		'Local: solo esta pestaña, sin subida. Expand/Polish opcional a Cloudflare Workers AI (Turnstile, límite).',
+		'Локальная сборка только раскладывает введённые поля: ни запросов, ни лимитов. «Расширить» и «Отшлифовать» отправляют черновик в Cloudflare Workers AI (нужен Turnstile, обращения ограничены), а полученный текст полностью заменяет область результата — прочитайте его перед копированием. При ошибке или исчерпанном лимите продолжайте локально.',
 	tool_android_prompt_builder_ai_expand:
-		'Expandir con IA',
+		'Расширить с ИИ',
 	tool_android_prompt_builder_ai_polish:
-		'Pulir con IA',
+		'Отшлифовать с ИИ',
 	tool_android_prompt_builder_ai_panel_label:
-		'Cloudflare AI opcional (Turnstile)',
+		'Необязательный Cloudflare AI (Turnstile)',
 	tool_android_prompt_builder_ai_consent_title:
-		'¿Enviar texto a Cloudflare Workers AI?',
+		'Отправить черновик в Cloudflare Workers AI?',
 	tool_android_prompt_builder_ai_consent_body:
-		'Este paso opcional envía tu borrador a Cloudflare Workers AI. No va a OpenAI, Google, Anthropic ni DeepSeek desde nuestros servidores.',
+		'Необязательный шаг: текущий черновик уйдёт в Cloudflare Workers AI для генерации. С наших серверов он не передаётся в OpenAI, Google, Anthropic или DeepSeek. Без ИИ сборка в браузере работает как обычно.',
 	tool_android_prompt_builder_ai_consent_ok:
-		'Continuar',
+		'Продолжить',
 	tool_android_prompt_builder_ai_consent_cancel:
-		'Cancelar',
+		'Отмена',
 	tool_android_prompt_builder_ai_working:
-		'Cloudflare AI trabajando…',
+		'Cloudflare AI работает…',
 	tool_android_prompt_builder_ai_done:
-		'Sugerencia de IA aplicada. Revisa antes de copiar.',
+		'Текст ИИ заменил результат. Проверьте перед копированием.',
 	tool_android_prompt_builder_ai_err_generic:
-		'La IA falló. Tu prompt local no cambió.',
+		'ИИ не сработал; результат остался прежним.',
 	tool_android_prompt_builder_ai_err_rate:
-		'Cuota de IA agotada. Modo local o prueba mañana (UTC).',
+		'Лимит ИИ исчерпан. Работайте локально или вернитесь завтра (UTC).',
 	tool_android_prompt_builder_ai_err_turnstile:
-		'Completa Turnstile antes de usar IA.',
+		'Сначала пройдите Turnstile, затем используйте ИИ.',
 	tool_android_prompt_builder_fmt_json:
 		'JSON',
 	tool_android_prompt_builder_fmt_label:
@@ -84,77 +85,77 @@ const ru: SiteLangDict = {
 	tool_android_prompt_builder_fmt_md:
 		'Markdown',
 	tool_android_prompt_builder_feature_spec_label:
-		'Feature / Spec',
+		'Функция / Требования',
 	tool_android_prompt_builder_feature_spec_ph:
-		'Sample feature spec…',
+		'Напр.: офлайн-список для чтения с поиском…',
 	tool_android_prompt_builder_kotlin_stack_label:
-		'Kotlin / Stack',
+		'Kotlin / Стек',
 	tool_android_prompt_builder_kotlin_stack_ph:
-		'Sample kotlin stack…',
+		'Напр.: Kotlin 2.0, Jetpack Compose, Room, Hilt…',
 	tool_android_prompt_builder_compose_ui_label:
-		'Compose / Ui',
+		'Compose / Экран',
 	tool_android_prompt_builder_compose_ui_ph:
-		'Sample compose ui…',
+		'Напр.: LazyColumn с прилипающими заголовками…',
 	tool_android_prompt_builder_gradle_constraints_label:
-		'Gradle / Constraints',
+		'Gradle / Ограничения',
 	tool_android_prompt_builder_gradle_constraints_ph:
-		'Sample gradle constraints…',
+		'Напр.: minSdk 26, targetSdk 35, модуль :core:data…',
 	tool_android_prompt_builder_how_body:
-		'Fill Конструктор Android prompt fields, build a prompt locally, optionally Expand/Polish with Turnstile, then paste into ChatGPT, Gemini, Claude, or DeepSeek.',
+		'Заполните четыре поля — страница соберёт из них Markdown (или JSON) в браузере; если нужно подробнее, попросите Cloudflare AI расширить текст и только потом вставляйте промпт в чат.',
 	tool_android_prompt_builder_how_item_1:
-		'Load sample already ran the default preset on first paint.',
+		'Нажмите «Загрузить пример»: поля заполнятся, промпт соберётся — правьте его под себя.',
 	tool_android_prompt_builder_how_item_2:
-		'Edit fields, click Build prompt, or switch to JSON if you need structured export.',
+		'Измените функцию, стек, экран и ограничения и нажмите «Собрать промпт»; для структурированного экспорта переключитесь на JSON.',
 	tool_android_prompt_builder_how_item_3:
-		'Optional: complete Turnstile, then Expand or Polish via Cloudflare Workers AI.',
+		'По желанию: пройдите Turnstile и нажмите «Расширить» или «Отшлифовать» — текст ИИ займёт область результата.',
 	tool_android_prompt_builder_how_item_4:
-		'Copy or download, then paste into ChatGPT, Gemini, Claude, or DeepSeek.',
+		'Скопируйте или скачайте результат и вставьте его в ChatGPT, Gemini, Claude или DeepSeek.',
 	tool_android_prompt_builder_how_title:
-		'Как это работает',
+		'Как пользоваться',
 	tool_android_prompt_builder_load_sample:
 		'Загрузить пример',
 	tool_android_prompt_builder_platforms_lead:
-		'Для ChatGPT, Gemini, Claude, DeepSeek — копируйте готовый prompt в любой чат.',
+		'Готовый промпт — обычный текст: он одинаково вставляется в ChatGPT, Gemini, Claude или DeepSeek.',
 	tool_android_prompt_builder_result_label:
-		'Вывод prompt',
+		'Готовый промпт',
 	tool_android_prompt_builder_rules_body:
-		'Kotlin/Compose/Gradle fields for mobile agent prompts. Local assembly is default; optional AI is rate-limited and requires Turnstile.',
+		'Страница только приводит требование в форму: она не компилирует код и не запускает Gradle. У необязательного ИИ есть лимит, и он требует Turnstile.',
 	tool_android_prompt_builder_rules_item_1:
-		'Structured fields map to Role/Task/Constraints/Output blocks in Markdown export.',
+		'Каждое поле попадает в свой блок Markdown: Role, Task, Constraints, Output.',
 	tool_android_prompt_builder_rules_item_2:
-		'Default export is Markdown. JSON is a chip on the same canvas.',
+		'По умолчанию выводится Markdown; та же область по переключателю показывает JSON с полями и собранным промптом.',
 	tool_android_prompt_builder_rules_item_3:
-		'Optional Cloudflare AI never replaces local mode — review AI output before copying.',
+		'Cloudflare AI не заменяет локальную сборку: его ответ занимает всю область результата, поэтому проверяйте текст перед копированием.',
 	tool_android_prompt_builder_rules_item_4:
-		'This tool assembles text only; it does not run android prompt builder engines or call chat APIs locally.',
+		'Инструмент только собирает текст: он не компилирует Kotlin, не запускает Gradle и не вызывает чат-API от вашего имени.',
 	tool_android_prompt_builder_rules_title:
-		'Ожидаемые правила',
+		'Границы, о которых стоит знать',
 	tool_android_prompt_builder_sec_constraints:
 		'Constraints',
 	tool_android_prompt_builder_sec_output:
-		'Output format',
+		'Output',
 	tool_android_prompt_builder_sec_role:
 		'Role',
 	tool_android_prompt_builder_sec_task:
 		'Task',
 	tool_android_prompt_builder_status_copied:
-		'Скопировано.',
+		'Скопировано в буфер обмена.',
 	tool_android_prompt_builder_status_done:
-		'Prompt готов.',
+		'Промпт готов.',
 	tool_android_prompt_builder_status_working:
-		'Сборка prompt…',
+		'Собираем промпт…',
 	tool_android_prompt_builder_title:
-		'Конструктор Android prompt — Локально + опциональный ИИ',
+		'Генератор промптов для Android — локально, ИИ по желанию',
 	tool_android_prompt_builder_usecase_1:
-		'Ship a paste-ready android prompt builder brief for your team chat in ChatGPT, Gemini, Claude, or DeepSeek.',
+		'Превратить требование, озвученное на планировании спринта, в промпт, который можно вставить в чат команды.',
 	tool_android_prompt_builder_usecase_2:
-		'Export JSON for a pipeline test, then refine with optional Cloudflare AI after Turnstile.',
+		'Выгрузить JSON, подключить поля к регрессионному тесту и при необходимости расширить текст через Cloudflare AI.',
 	tool_android_prompt_builder_usecase_3:
-		'Compare with Prompt template builder when you need generic four-field templates instead of this scenario.',
+		'Если поля Android не нужны и хватает универсального шаблона из четырёх блоков, переходите к конструктору шаблонов промптов.',
 	tool_android_prompt_builder_usecase_4:
-		'Keep sensitive draft text local — only opt into AI when you accept the consent modal.',
+		'Сформулировать внутреннее описание в браузере и лишь потом решить, отправлять ли его в необязательный ИИ.',
 	tool_android_prompt_builder_usecases_title:
-		'Хорошие сценарии',
+		'Когда пригодится',
 };
 
 export default ru;

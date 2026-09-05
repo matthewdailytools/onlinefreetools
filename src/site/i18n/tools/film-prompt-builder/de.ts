@@ -1,82 +1,86 @@
 /**
  * i18n tool shard (film-prompt-builder / de).
- * 检索向独立重写；title 含「本地 + 可选 AI」；description 含本地默认与 Cloudflare AI Expand/Polish + Turnstile。
+ * Neu geschrieben für Suchen wie „Prompt-Generator für Drehbücher“ oder „Drei-Akt-Struktur mit KI“:
+ * Hauptbegriff steht in der H1; „Szenenliste“, „Figurenentwicklung“ und „als JSON exportieren“ stehen in
+ * Beschreibung, FAQ und Anwendungsfällen.
+ * Sachliche Grenzen: Der Prompt entsteht im Browser; nur Erweitern/Verfeinern schickt den Entwurf an
+ * Cloudflare Workers AI (Turnstile, Kontingent). Die Seite schreibt das Drehbuch nicht für Sie.
  */
 import type { SiteLangDict } from '../../../types';
 
 const de: SiteLangDict = {
 	tool_film_prompt_builder_article:
-		'Film-Prompt-Builder — Lokal + optionale KI für ChatGPT, Gemini, Claude und DeepSeek: Prompts standardmäßig lokal, optional Expand/Polish via Cloudflare Workers AI (Turnstile, Rate-Limits). Beispiel beim ersten Laden. Markdown Standard; JSON für Pipelines. Text bleibt auf dem Gerät ohne KI.',
+		'Tragen Sie Logline, die drei Akte, die Szenenliste und die Figurenentwicklung ein: Die Seite ordnet das im Browser und gibt einen klar gegliederten Prompt in Markdown oder JSON zurück, den Sie in ChatGPT, Gemini, Claude oder DeepSeek einfügen und dort weiterschreiben. Standardmäßig wird nichts verschickt; der Entwurf geht erst nach einem Klick auf Erweitern oder Verfeinern — und nach dem Turnstile-Check — an Cloudflare Workers AI.',
 	tool_film_prompt_builder_build:
-		'Prompt erstellen',
+		'Prompt erzeugen',
 	tool_film_prompt_builder_clear:
 		'Leeren',
 	tool_film_prompt_builder_copy:
 		'Kopieren',
 	tool_film_prompt_builder_desc:
-		'Film-Prompt-Builder — local por defecto + Expand/Polish opcional Cloudflare AI (Turnstile); Markdown/JSON en el dispositivo.',
+		'Prompt-Generator für Drehbücher: Logline, drei Akte und Szenenliste werden im Browser zu Markdown oder JSON geordnet; Cloudflare-KI optional mit Turnstile.',
 	tool_film_prompt_builder_description:
-		'Prozess und Beispiel: Film-Prompt-Builder — Local + IA opcional para ChatGPT, Gemini, Claude y DeepSeek: ensambla prompts localmente por defecto y opcionalmente Expand/Polish con Cloudflare Workers AI (Turnstile obligatorio, límite de uso). Ejemplo al abrir. Markdown por defecto; JSON para pipelines. Texto en el dispositivo salvo que uses IA.',
+		'Prompt-Generator für Drehbücher: Sie füllen Logline, die Akte I bis III, die Szenenliste und die Figurenentwicklung aus, und die Seite verteilt alles auf die Blöcke Role, Task, Constraints und Output, damit ChatGPT, Gemini, Claude oder DeepSeek wissen, woran sie anschließen. Markdown ist Standard, JSON gibt es für Ihre Fassungsübersicht; das Beispiel mit den zwei Foodtrucks, die 30 Tage eine Küche teilen, ist beim Aufrufen schon durchgelaufen. Bleibt ein Akt dünn, schickt Erweitern oder Verfeinern den Entwurf an Cloudflare Workers AI (Turnstile, Kontingent).',
 	tool_film_prompt_builder_download:
 		'Herunterladen',
 	tool_film_prompt_builder_empty:
-		'Mindestens ein Feld ausfüllen, bevor Sie erstellen.',
+		'Füllen Sie mindestens ein Feld aus, bevor Sie den Prompt erzeugen.',
 	tool_film_prompt_builder_example:
-		'Eingabe: Logline = rivalisierende Food-Trucks teilen Küche 30 Tage; Act II = Festival + Rezept-Streit; 6 Szenen; Arc = Stolz → Teamwork → Co-Owner. Ausgabe (Markdown): ## Task → Logline, Act1–3, Scene / List, Character / Arc.',
+		'Eingabe: Logline = ein Formfehler bei der Genehmigung zwingt zwei verfeindete Foodtruck-Betreiber, 30 Tage dieselbe Küche zu teilen; Akt II = der Erfolg beim Festival kippt, als ein Blogger das Rezept falsch zuordnet und ein alter Familienstreit um Gewürze öffentlich wird; Szenenliste = sechs nummerierte Sequenzen; Entwicklung = Stolz → widerwillige Zusammenarbeit → Partner, die verhandeln. Ausgabe (Markdown): Der Block ## Task listet Logline, Act1–3, Scene / List und Character / Arc — genau wie das Beispiel beim Aufrufen.',
 	tool_film_prompt_builder_example_title:
 		'Beispiel',
 	tool_film_prompt_builder_faq_a1:
-		'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
+		'Geordnet wird in diesem Browser-Tab, standardmäßig verlässt also nichts Ihr Gerät. Nur wenn Sie Erweitern oder Verfeinern anklicken, geht der aktuelle Entwurf an Cloudflare Workers AI; wir leiten ihn nicht von unseren Servern an OpenAI, Google, Anthropic oder DeepSeek weiter.',
 	tool_film_prompt_builder_faq_a2:
-		'Modo local solo formatea aquí. Expand/Polish opcional usa Cloudflare Workers AI tras Turnstile — no llama APIs de chat.',
+		'Im lokalen Modus wird kein Modell angesprochen: Logline, Akte, Szenenliste und Figurenentwicklung werden nur auf die Blöcke Role, Task, Constraints und Output verteilt. Erweitern und Verfeinern laufen nach dem Turnstile-Check über Cloudflare Workers AI und rufen von unseren Servern keine API von ChatGPT, Gemini, Claude oder DeepSeek auf.',
 	tool_film_prompt_builder_faq_a3:
-		'Film-Prompt-Builder covers generic Role/Task/Constraints/Output templates. This page focuses on film prompt builder fields with a dedicated sample and rules for this scenario.',
+		'Der Prompt-Vorlagen-Generator liefert das allgemeine Vier-Block-Gerüst für jedes Thema. Hier sind die Felder die eines Langfilms — Logline, drei Akte, Szenenliste, Figurenentwicklung —, mit einem vollständigen Beispiel beim Aufrufen und Regeln zu den typischen Stolperstellen solcher Papiere.',
 	tool_film_prompt_builder_faq_a4:
-		'Sí. Completa Turnstile en el panel de IA antes de Expand o Polish.',
+		'Turnstile hält automatische Skripte fern, damit das kostenlose Kontingent bei echten Nutzern bleibt. Lösen Sie es im KI-Bereich, bevor Sie Erweitern oder Verfeinern anklicken; ohne gültiges Token melden diese Schaltflächen einen Fehler, und der Aufbau im Browser funktioniert weiter.',
 	tool_film_prompt_builder_faq_a5:
-		'Yes. The JSON chip emits structured fields plus assembled prompt text for tests or config pipelines.',
+		'Ja. Nach dem Umschalten auf JSON liefert dieselbe Ausgabe die strukturierten Felder plus den fertigen Prompt-Text — praktisch, um jede Fassung der Akte und der Szenenliste in einer Tabelle oder im Repository abzulegen und später zu vergleichen.',
 	tool_film_prompt_builder_faq_a6:
-		'Yes. Copy the finished prompt into ChatGPT, Gemini, Claude, or DeepSeek. We do not split URLs per platform because the job is formatting text, not calling APIs.',
+		'Ja. Kopieren Sie das Ergebnis und fügen Sie es in den Chat Ihrer Wahl ein. Diese Seite ordnet nur die Struktur und ruft keine API auf, deshalb gibt es keine eigene Adresse pro Plattform.',
 	tool_film_prompt_builder_faq_q1:
-		'Is my prompt uploaded?',
+		'Wird das eingetippte Drehbuchmaterial irgendwohin geschickt?',
 	tool_film_prompt_builder_faq_q2:
-		'Does this call ChatGPT or other LLM APIs?',
+		'Ruft diese Seite die API von ChatGPT oder anderen Modellen auf?',
 	tool_film_prompt_builder_faq_q3:
-		'How is this different from Film-Prompt-Builder?',
+		'Was ist der Unterschied zum Prompt-Vorlagen-Generator?',
 	tool_film_prompt_builder_faq_q4:
-		'¿Por qué Turnstile para IA opcional?',
+		'Warum brauche ich Turnstile für die optionale KI?',
 	tool_film_prompt_builder_faq_q5:
-		'Can I get JSON output?',
+		'Kann ich die Ausgabe als JSON bekommen?',
 	tool_film_prompt_builder_faq_q6:
-		'Can I use this with ChatGPT, Gemini, Claude, or DeepSeek?',
+		'Lässt sich das mit ChatGPT, Gemini, Claude oder DeepSeek nutzen?',
 	tool_film_prompt_builder_faq_q7:
-		'¿Diferencia entre local y Cloudflare AI opcional?',
+		'Worin unterscheiden sich der lokale Modus und die optionale Cloudflare-KI?',
 	tool_film_prompt_builder_faq_a7:
-		'Local: solo esta pestaña, sin subida. Expand/Polish opcional a Cloudflare Workers AI (Turnstile, límite).',
+		'Lokal wird alles in diesem Tab geordnet, ohne den Browser zu verlassen. Erweitern oder Verfeinern schickt den Entwurf an Cloudflare Workers AI (Turnstile nötig, mit Frequenz- und Tageskontingent); der zurückgegebene Text wird vollständig in die Ausgabe geschrieben und überschreibt den angezeigten Entwurf — lesen Sie ihn vor dem Kopieren, damit eine Umschreibung nicht versehentlich Ihre Aktfassung ersetzt. Bei Fehler oder erschöpftem Kontingent bleiben Sie beim lokalen Modus.',
 	tool_film_prompt_builder_ai_expand:
-		'Expandir con IA',
+		'Mit KI erweitern',
 	tool_film_prompt_builder_ai_polish:
-		'Pulir con IA',
+		'Mit KI verfeinern',
 	tool_film_prompt_builder_ai_panel_label:
-		'Cloudflare AI opcional (Turnstile)',
+		'Optional: Cloudflare AI (Turnstile erforderlich)',
 	tool_film_prompt_builder_ai_consent_title:
-		'¿Enviar texto a Cloudflare Workers AI?',
+		'Entwurf an Cloudflare Workers AI senden?',
 	tool_film_prompt_builder_ai_consent_body:
-		'Este paso opcional envía tu borrador a Cloudflare Workers AI. No va a OpenAI, Google, Anthropic ni DeepSeek desde nuestros servidores.',
+		'Dieser Schritt ist optional: Er schickt den Entwurf, der jetzt in den Feldern steht, für eine Inferenz an Cloudflare Workers AI. Wir leiten ihn nicht von unseren Servern an OpenAI, Google, Anthropic oder DeepSeek weiter. Ohne KI wird der Prompt weiterhin in Ihrem Browser gebaut.',
 	tool_film_prompt_builder_ai_consent_ok:
-		'Continuar',
+		'Weiter',
 	tool_film_prompt_builder_ai_consent_cancel:
-		'Cancelar',
+		'Abbrechen',
 	tool_film_prompt_builder_ai_working:
-		'Cloudflare AI trabajando…',
+		'Cloudflare AI arbeitet…',
 	tool_film_prompt_builder_ai_done:
-		'Sugerencia de IA aplicada. Revisa antes de copiar.',
+		'Der KI-Text steht vollständig in der Ausgabe. Vor dem Kopieren prüfen.',
 	tool_film_prompt_builder_ai_err_generic:
-		'La IA falló. Tu prompt local no cambió.',
+		'Die KI hat diesmal nicht geantwortet; die Ausgabe ist unverändert.',
 	tool_film_prompt_builder_ai_err_rate:
-		'Cuota de IA agotada. Modo local o prueba mañana (UTC).',
+		'KI-Kontingent erschöpft. Bauen Sie den Prompt hier weiter oder versuchen Sie es morgen (UTC).',
 	tool_film_prompt_builder_ai_err_turnstile:
-		'Completa Turnstile antes de usar IA.',
+		'Lösen Sie den Turnstile-Check, bevor Sie die KI nutzen.',
 	tool_film_prompt_builder_fmt_json:
 		'JSON',
 	tool_film_prompt_builder_fmt_label:
@@ -86,83 +90,84 @@ const de: SiteLangDict = {
 	tool_film_prompt_builder_logline_label:
 		'Logline',
 	tool_film_prompt_builder_logline_ph:
-		'Sample logline…',
+		'Zum Beispiel: zwei verfeindete Foodtrucks teilen eine Küche…',
 	tool_film_prompt_builder_act1_label:
-		'Act1',
+		'Akt I',
 	tool_film_prompt_builder_act1_ph:
-		'Sample act1…',
+		'Zum Beispiel: woher der Konflikt kommt und was zum Mitmachen zwingt…',
 	tool_film_prompt_builder_act2_label:
-		'Act2',
+		'Akt II',
 	tool_film_prompt_builder_act2_ph:
-		'Sample act2…',
+		'Zum Beispiel: kurzer Erfolg, dann läuft alles aus dem Ruder…',
 	tool_film_prompt_builder_act3_label:
-		'Act3',
+		'Akt III',
 	tool_film_prompt_builder_act3_ph:
-		'Sample act3…',
+		'Zum Beispiel: offene Auseinandersetzung und ein Kompromiss mit Preis…',
 	tool_film_prompt_builder_scene_list_label:
-		'Scene / List',
+		'Szenenliste',
 	tool_film_prompt_builder_scene_list_ph:
-		'Sample scene list…',
+		'Zum Beispiel: 1. Streit um den Stellplatz 2. Doppelte Kontrolle…',
 	tool_film_prompt_builder_character_arc_label:
-		'Character / Arc',
+		'Figurenentwicklung',
 	tool_film_prompt_builder_character_arc_ph:
-		'Sample character arc…',
+		'Zum Beispiel: Stolz → widerwillig kooperieren → Partner…',
+
 	tool_film_prompt_builder_how_body:
-		'Fill Film-Prompt-Builder fields, build a prompt locally, optionally Expand/Polish with Turnstile, then paste into ChatGPT, Gemini, Claude, or DeepSeek.',
+		'Logline, Akte und Szenenliste ausfüllen, Prompt erzeugen und in ChatGPT, Gemini, Claude oder DeepSeek weiterschreiben; bleibt ein Akt dünn, hilft Erweitern oder Verfeinern mit der optionalen Cloudflare-KI.',
 	tool_film_prompt_builder_how_item_1:
-		'Load sample already ran the default preset on first paint.',
+		'Klicken Sie auf Beispiel laden für das Standard-Preset.',
 	tool_film_prompt_builder_how_item_2:
-		'Edit fields, click Build prompt, or switch to JSON if you need structured export.',
+		'Logline, Akte, Szenenliste und Figurenentwicklung anpassen und auf Prompt erzeugen klicken; für strukturierten Export auf JSON umschalten.',
 	tool_film_prompt_builder_how_item_3:
-		'Optional: complete Turnstile, then Expand or Polish via Cloudflare Workers AI.',
+		'Optional: Turnstile im KI-Bereich lösen und Erweitern oder Verfeinern anklicken; der zurückgegebene Text landet in der Ausgabe.',
 	tool_film_prompt_builder_how_item_4:
-		'Copy or download, then paste into ChatGPT, Gemini, Claude, or DeepSeek.',
+		'Kopieren oder herunterladen und in ChatGPT, Gemini, Claude oder DeepSeek einfügen, damit das Modell dieser Gliederung folgt.',
 	tool_film_prompt_builder_how_title:
-		'So funktioniert es',
+		'So gehen Sie vor',
 	tool_film_prompt_builder_load_sample:
 		'Beispiel laden',
 	tool_film_prompt_builder_platforms_lead:
-		'Für ChatGPT, Gemini, Claude, DeepSeek — fertigen Prompt in jeden Chat kopieren.',
+		'Die Ausgabe lässt sich unverändert in ChatGPT, Gemini, Claude oder DeepSeek einfügen.',
 	tool_film_prompt_builder_result_label:
-		'Prompt-Ausgabe',
+		'Erzeugter Prompt',
 	tool_film_prompt_builder_rules_body:
-		'Three-act + scene list for feature film beats. Local assembly is default; optional AI is rate-limited and requires Turnstile.',
+		'Gegliedert wird so, wie man an einem Langfilm arbeitet: Die Logline setzt die Richtung, die drei Akte den Weg, die Szenenliste nummeriert die Sequenzen, und die Figurenentwicklung erklärt die Veränderung. Der Aufbau im Browser ist das Standardverhalten; die optionale KI ist in der Nutzung begrenzt und verlangt Turnstile.',
 	tool_film_prompt_builder_rules_item_1:
-		'Structured fields map to Role/Task/Constraints/Output blocks in Markdown export.',
+		'Jedes Formularfeld landet in einem der Markdown-Blöcke Role, Task, Constraints und Output.',
 	tool_film_prompt_builder_rules_item_2:
-		'Default export is Markdown. JSON is a chip on the same canvas.',
+		'Standardexport ist Markdown; JSON ist eine Schaltfläche über derselben Ausgabe.',
 	tool_film_prompt_builder_rules_item_3:
-		'Optional Cloudflare AI never replaces local mode — review AI output before copying.',
+		'Die optionale KI ist ein zusätzlicher Schritt, kein Ersatz: Der lokale Modus bleibt nutzbar, und der KI-Text überschreibt die Ausgabe komplett — deshalb vor dem Kopieren prüfen.',
 	tool_film_prompt_builder_rules_item_4:
-		'This tool assembles text only; it does not run film prompt builder engines or call chat APIs locally.',
+		'Diese Seite baut nur Text zusammen: Sie schreibt das Drehbuch nicht für Sie und führt in Ihrem Browser kein Modell und keine Chat-API aus.',
 	tool_film_prompt_builder_rules_title:
-		'Erwartete Regeln',
+		'Was sie tut und was nicht',
 	tool_film_prompt_builder_sec_constraints:
 		'Constraints',
 	tool_film_prompt_builder_sec_output:
-		'Output format',
+		'Output',
 	tool_film_prompt_builder_sec_role:
 		'Role',
 	tool_film_prompt_builder_sec_task:
 		'Task',
 	tool_film_prompt_builder_status_copied:
-		'In Zwischenablage kopiert.',
+		'In die Zwischenablage kopiert.',
 	tool_film_prompt_builder_status_done:
-		'Prompt bereit.',
+		'Prompt fertig.',
 	tool_film_prompt_builder_status_working:
-		'Prompt wird erstellt…',
+		'Prompt wird erzeugt…',
 	tool_film_prompt_builder_title:
-		'Film-Prompt-Builder — Lokal + optionale KI',
+		'Prompt-Generator für Drehbücher — drei Akte und Szenenliste im Browser',
 	tool_film_prompt_builder_usecase_1:
-		'Ship a paste-ready film prompt builder brief for your team chat in ChatGPT, Gemini, Claude, or DeepSeek.',
+		'Vor einer Besprechung die drei Akte und die Szenenliste in einem Prompt bündeln, der direkt in ChatGPT, Gemini, Claude oder DeepSeek passt.',
 	tool_film_prompt_builder_usecase_2:
-		'Export JSON for a pipeline test, then refine with optional Cloudflare AI after Turnstile.',
+		'Das JSON exportieren und Logline, Akte und Figurenentwicklung jeder Fassung als Felder in einer Tabelle oder im Repository festhalten, um sie zu vergleichen.',
 	tool_film_prompt_builder_usecase_3:
-		'Compare with Prompt template builder when you need generic four-field templates instead of this scenario.',
+		'Wenn Sie das allgemeine Vier-Block-Gerüst brauchen und nicht die Gliederung eines Langfilms, nehmen Sie den Prompt-Vorlagen-Generator.',
 	tool_film_prompt_builder_usecase_4:
-		'Keep sensitive draft text local — only opt into AI when you accept the consent modal.',
+		'Bei einem noch nicht abgeschlossenen Projekt beim lokalen Modus bleiben: Der Text verlässt den Browser nur, wenn Sie den KI-Hinweis bestätigen.',
 	tool_film_prompt_builder_usecases_title:
-		'Gute Einsätze',
+		'Wofür es sich lohnt',
 };
 
 export default de;

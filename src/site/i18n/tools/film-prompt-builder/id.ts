@@ -1,82 +1,85 @@
 /**
  * i18n tool shard (film-prompt-builder / id).
- * 检索向独立重写；title 含「本地 + 可选 AI」；description 含本地默认与 Cloudflare AI Expand/Polish + Turnstile。
+ * Ditulis ulang untuk pencarian bahasa Indonesia: «generator prompt skenario film», «struktur tiga babak»,
+ * «daftar adegan», «ekspor prompt ke JSON». Kata utama ada di H1; sisanya masuk deskripsi, tanya jawab, dan contoh pemakaian.
+ * Batas faktual: prompt dirangkai di peramban; hanya Perluas/Perhalus yang mengirim draf ke Cloudflare Workers AI
+ * (butuh Turnstile, ada batas kuota). Halaman ini tidak menulis skenarionya untuk Anda.
  */
 import type { SiteLangDict } from '../../../types';
 
 const id: SiteLangDict = {
 	tool_film_prompt_builder_article:
-		'Pembuat prompt film — Lokal + AI opsional untuk ChatGPT, Gemini, Claude, DeepSeek: rakit prompt lokal secara default, lalu Expand/Polish opsional via Cloudflare Workers AI (Turnstile wajib, dibatasi). Contoh jalan saat halaman dibuka. Markdown default; JSON untuk pipeline. Teks tetap di perangkat kecuali pakai AI.',
+		'Tulis logline, tiga babak, daftar adegan, dan perubahan tokoh: halaman ini menatanya di peramban lalu mengembalikan prompt berstruktur jelas dalam Markdown atau JSON, siap ditempel ke ChatGPT, Gemini, Claude, atau DeepSeek untuk melanjutkan skenarionya di sana. Secara bawaan tidak ada yang dikirim; draf baru berangkat ke Cloudflare Workers AI kalau Anda menekan Perluas atau Perhalus, setelah lolos Turnstile.',
 	tool_film_prompt_builder_build:
 		'Buat prompt',
 	tool_film_prompt_builder_clear:
-		'Hapus',
+		'Kosongkan',
 	tool_film_prompt_builder_copy:
 		'Salin',
 	tool_film_prompt_builder_desc:
-		'Pembuat prompt film — local por defecto + Expand/Polish opcional Cloudflare AI (Turnstile); Markdown/JSON en el dispositivo.',
+		'Generator prompt skenario film: logline, tiga babak, dan daftar adegan ditata jadi Markdown atau JSON di peramban; AI Cloudflare opsional dengan Turnstile.',
 	tool_film_prompt_builder_description:
-		'Proses dan contoh: Pembuat prompt film — Local + IA opcional para ChatGPT, Gemini, Claude y DeepSeek: ensambla prompts localmente por defecto y opcionalmente Expand/Polish con Cloudflare Workers AI (Turnstile obligatorio, límite de uso). Ejemplo al abrir. Markdown por defecto; JSON para pipelines. Texto en el dispositivo salvo que uses IA.',
+		'Generator prompt skenario film: Anda mengisi logline, babak satu sampai tiga, daftar adegan, dan perubahan tokoh, lalu halaman membagikannya ke blok Role, Task, Constraints, dan Output supaya ChatGPT, Gemini, Claude, atau DeepSeek tahu harus menyambung dari mana. Bawaannya Markdown, tersedia JSON untuk catatan versi Anda; contoh dua food truck yang berbagi satu dapur selama 30 hari sudah jalan begitu halaman terbuka. Kalau satu babak masih tipis, Perluas atau Perhalus mengirim draf ke Cloudflare Workers AI (butuh Turnstile, ada kuota).',
 	tool_film_prompt_builder_download:
 		'Unduh',
 	tool_film_prompt_builder_empty:
-		'Isi minimal satu bidang sebelum membuat.',
+		'Isi setidaknya satu kolom sebelum membuat prompt.',
 	tool_film_prompt_builder_example:
-		'Input: Logline = rival food truck berbagi dapur 30 hari; Act II = festival + resep salah; 6 adegan; Arc = pride → teamwork → co-owner. Output (Markdown): ## Task → Logline, Act1–3, Scene / List, Character / Arc.',
+		'Masukan: logline = salah tulis di izin memaksa dua pemilik food truck yang bersaing berbagi satu dapur selama 30 hari; babak II = sukses di festival berantakan waktu seorang blogger salah menyebut pemilik resep dan perselisihan lama keluarga soal rempah naik ke media sosial; daftar adegan = enam sekuens bernomor; perubahan tokoh = gengsi → kerja sama setengah hati → rekan yang mau berunding. Keluaran (Markdown): blok ## Task memuat Logline, Act1–3, Scene / List, dan Character / Arc — sama seperti contoh yang termuat saat halaman dibuka.',
 	tool_film_prompt_builder_example_title:
 		'Contoh',
 	tool_film_prompt_builder_faq_a1:
-		'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
+		'Penataannya terjadi di tab peramban ini, jadi secara bawaan tidak ada yang dikirim. Pengiriman hanya terjadi saat Anda menekan Perluas atau Perhalus, dan tujuannya Cloudflare Workers AI; kami tidak meneruskan teks itu dari server kami ke OpenAI, Google, Anthropic, atau DeepSeek.',
 	tool_film_prompt_builder_faq_a2:
-		'Modo local solo formatea aquí. Expand/Polish opcional usa Cloudflare Workers AI tras Turnstile — no llama APIs de chat.',
+		'Dalam mode lokal tidak ada model yang dipanggil: logline, babak, daftar adegan, dan perubahan tokoh cuma dibagi ke blok Role, Task, Constraints, dan Output. Perluas dan Perhalus memakai Cloudflare Workers AI setelah lolos Turnstile, dan tidak memanggil API ChatGPT, Gemini, Claude, atau DeepSeek dari server kami.',
 	tool_film_prompt_builder_faq_a3:
-		'Pembuat prompt film covers generic Role/Task/Constraints/Output templates. This page focuses on film prompt builder fields with a dedicated sample and rules for this scenario.',
+		'Generator templat prompt memberi kerangka umum empat blok untuk topik apa pun. Di sini kolomnya khas film panjang — logline, tiga babak, daftar adegan, perubahan tokoh — lengkap dengan contoh utuh saat dibuka dan aturan soal kesalahan yang sering muncul di dokumen semacam ini.',
 	tool_film_prompt_builder_faq_a4:
-		'Sí. Completa Turnstile en el panel de IA antes de Expand o Polish.',
+		'Turnstile menahan skrip otomatis supaya kuota gratis tetap untuk orang. Selesaikan dulu di panel AI sebelum menekan Perluas atau Perhalus; tanpa token yang sah tombol itu memberi galat, sementara penataan di peramban tetap jalan.',
 	tool_film_prompt_builder_faq_a5:
-		'Yes. The JSON chip emits structured fields plus assembled prompt text for tests or config pipelines.',
+		'Bisa. Setelah pindah ke JSON, kolom keluaran yang sama memuat data terstruktur plus teks prompt yang sudah dirangkai — enak untuk menyimpan setiap versi babak dan daftar adegan di lembar kerja atau repositori lalu membandingkannya.',
 	tool_film_prompt_builder_faq_a6:
-		'Yes. Copy the finished prompt into ChatGPT, Gemini, Claude, or DeepSeek. We do not split URLs per platform because the job is formatting text, not calling APIs.',
+		'Bisa. Salin hasilnya dan tempel ke obrolan yang Anda pakai. Halaman ini cuma menata struktur dan tidak memanggil API, jadi tidak ada alamat terpisah untuk tiap platform.',
 	tool_film_prompt_builder_faq_q1:
-		'Is my prompt uploaded?',
+		'Apakah materi skenario yang saya tulis dikirim ke server?',
 	tool_film_prompt_builder_faq_q2:
-		'Does this call ChatGPT or other LLM APIs?',
+		'Apakah halaman ini memanggil API ChatGPT atau model lain?',
 	tool_film_prompt_builder_faq_q3:
-		'How is this different from Pembuat prompt film?',
+		'Apa bedanya dengan generator templat prompt?',
 	tool_film_prompt_builder_faq_q4:
-		'¿Por qué Turnstile para IA opcional?',
+		'Kenapa harus lolos Turnstile untuk memakai AI?',
 	tool_film_prompt_builder_faq_q5:
-		'Can I get JSON output?',
+		'Bisakah keluarannya berbentuk JSON?',
 	tool_film_prompt_builder_faq_q6:
-		'Can I use this with ChatGPT, Gemini, Claude, or DeepSeek?',
+		'Cocok dipakai dengan ChatGPT, Gemini, Claude, atau DeepSeek?',
 	tool_film_prompt_builder_faq_q7:
-		'¿Diferencia entre local y Cloudflare AI opcional?',
+		'Apa bedanya mode lokal dan AI Cloudflare yang opsional?',
 	tool_film_prompt_builder_faq_a7:
-		'Local: solo esta pestaña, sin subida. Expand/Polish opcional a Cloudflare Workers AI (Turnstile, límite).',
+		'Di mode lokal semuanya ditata di tab ini dan tidak keluar dari peramban. Perluas atau Perhalus mengirim draf saat itu ke Cloudflare Workers AI (butuh Turnstile, ada batas frekuensi dan kuota harian), lalu teks yang kembali ditulis utuh ke kolom keluaran menimpa draf yang tadi tampil — baca dulu sebelum menyalin supaya versi babak Anda tidak tergeser tanpa sengaja. Kalau gagal atau kuota habis, lanjutkan saja di mode lokal.',
 	tool_film_prompt_builder_ai_expand:
-		'Expandir con IA',
+		'Perluas dengan AI',
 	tool_film_prompt_builder_ai_polish:
-		'Pulir con IA',
+		'Perhalus dengan AI',
 	tool_film_prompt_builder_ai_panel_label:
-		'Cloudflare AI opcional (Turnstile)',
+		'Opsional: Cloudflare AI (butuh Turnstile)',
 	tool_film_prompt_builder_ai_consent_title:
-		'¿Enviar texto a Cloudflare Workers AI?',
+		'Kirim draf ke Cloudflare Workers AI?',
 	tool_film_prompt_builder_ai_consent_body:
-		'Este paso opcional envía tu borrador a Cloudflare Workers AI. No va a OpenAI, Google, Anthropic ni DeepSeek desde nuestros servidores.',
+		'Langkah ini opsional: draf yang sekarang ada di kolom isian dikirim ke Cloudflare Workers AI untuk sekali proses. Kami tidak meneruskannya dari server kami ke OpenAI, Google, Anthropic, atau DeepSeek. Tanpa AI, prompt tetap dirangkai di peramban Anda.',
 	tool_film_prompt_builder_ai_consent_ok:
-		'Continuar',
+		'Lanjutkan',
 	tool_film_prompt_builder_ai_consent_cancel:
-		'Cancelar',
+		'Batal',
 	tool_film_prompt_builder_ai_working:
-		'Cloudflare AI trabajando…',
+		'Cloudflare AI sedang bekerja…',
 	tool_film_prompt_builder_ai_done:
-		'Sugerencia de IA aplicada. Revisa antes de copiar.',
+		'Teks dari AI ditulis utuh ke kolom keluaran. Periksa dulu sebelum menyalin.',
 	tool_film_prompt_builder_ai_err_generic:
-		'La IA falló. Tu prompt local no cambió.',
+		'Kali ini AI tidak menjawab; isi kolom keluaran tidak berubah.',
 	tool_film_prompt_builder_ai_err_rate:
-		'Cuota de IA agotada. Modo local o prueba mañana (UTC).',
+		'Kuota AI habis. Lanjutkan merangkai di sini atau coba besok (UTC).',
 	tool_film_prompt_builder_ai_err_turnstile:
-		'Completa Turnstile antes de usar IA.',
+		'Selesaikan pemeriksaan Turnstile sebelum memakai AI.',
 	tool_film_prompt_builder_fmt_json:
 		'JSON',
 	tool_film_prompt_builder_fmt_label:
@@ -86,83 +89,84 @@ const id: SiteLangDict = {
 	tool_film_prompt_builder_logline_label:
 		'Logline',
 	tool_film_prompt_builder_logline_ph:
-		'Sample logline…',
+		'Misalnya: dua food truck bersaing berbagi satu dapur…',
 	tool_film_prompt_builder_act1_label:
-		'Act1',
+		'Babak I',
 	tool_film_prompt_builder_act1_ph:
-		'Sample act1…',
+		'Misalnya: dari mana konfliknya dan apa yang memaksa mereka menerima…',
 	tool_film_prompt_builder_act2_label:
-		'Act2',
+		'Babak II',
 	tool_film_prompt_builder_act2_ph:
-		'Sample act2…',
+		'Misalnya: sukses sebentar lalu semuanya kacau…',
 	tool_film_prompt_builder_act3_label:
-		'Act3',
+		'Babak III',
 	tool_film_prompt_builder_act3_ph:
-		'Sample act3…',
+		'Misalnya: bentrok terbuka dan kesepakatan yang ada harganya…',
 	tool_film_prompt_builder_scene_list_label:
-		'Scene / List',
+		'Daftar adegan',
 	tool_film_prompt_builder_scene_list_ph:
-		'Sample scene list…',
+		'Misalnya: 1. Ribut soal lahan parkir 2. Inspeksi ganda…',
 	tool_film_prompt_builder_character_arc_label:
-		'Character / Arc',
+		'Perubahan tokoh',
 	tool_film_prompt_builder_character_arc_ph:
-		'Sample character arc…',
+		'Misalnya: gengsi → kerja sama setengah hati → rekan…',
+
 	tool_film_prompt_builder_how_body:
-		'Fill Pembuat prompt film fields, build a prompt locally, optionally Expand/Polish with Turnstile, then paste into ChatGPT, Gemini, Claude, or DeepSeek.',
+		'Isi logline, babak, dan daftar adegan, buat prompt, lalu tempel ke ChatGPT, Gemini, Claude, atau DeepSeek untuk melanjutkan tulisan; kalau satu babak terasa kering, pakai Perluas atau Perhalus lewat AI Cloudflare yang opsional.',
 	tool_film_prompt_builder_how_item_1:
-		'Load sample already ran the default preset on first paint.',
+		'Klik Muat contoh untuk preset bawaan.',
 	tool_film_prompt_builder_how_item_2:
-		'Edit fields, click Build prompt, or switch to JSON if you need structured export.',
+		'Ubah logline, babak, daftar adegan, dan perubahan tokoh lalu tekan Buat prompt; pindah ke JSON kalau butuh ekspor berkolom.',
 	tool_film_prompt_builder_how_item_3:
-		'Optional: complete Turnstile, then Expand or Polish via Cloudflare Workers AI.',
+		'Opsional: selesaikan Turnstile di panel AI lalu tekan Perluas atau Perhalus; teks yang kembali langsung masuk ke kolom keluaran.',
 	tool_film_prompt_builder_how_item_4:
-		'Copy or download, then paste into ChatGPT, Gemini, Claude, or DeepSeek.',
+		'Salin atau unduh, lalu tempel ke ChatGPT, Gemini, Claude, atau DeepSeek supaya modelnya menyambung mengikuti struktur itu.',
 	tool_film_prompt_builder_how_title:
-		'Cara kerja',
+		'Cara pakainya',
 	tool_film_prompt_builder_load_sample:
 		'Muat contoh',
 	tool_film_prompt_builder_platforms_lead:
-		'Untuk ChatGPT, Gemini, Claude, DeepSeek — salin prompt jadi ke chat UI mana pun.',
+		'Keluarannya bisa ditempel apa adanya ke obrolan ChatGPT, Gemini, Claude, atau DeepSeek.',
 	tool_film_prompt_builder_result_label:
-		'Keluaran prompt',
+		'Prompt yang jadi',
 	tool_film_prompt_builder_rules_body:
-		'Three-act + scene list for feature film beats. Local assembly is default; optional AI is rate-limited and requires Turnstile.',
+		'Susunannya mengikuti cara orang mengerjakan film panjang: logline menentukan arah, tiga babak menandai jalannya, daftar adegan menomori sekuens, dan perubahan tokoh menjelaskan apa yang bergeser. Perangkaian di peramban adalah perilaku bawaan; AI opsional dibatasi pemakaiannya dan meminta Turnstile.',
 	tool_film_prompt_builder_rules_item_1:
-		'Structured fields map to Role/Task/Constraints/Output blocks in Markdown export.',
+		'Setiap kolom isian jatuh ke salah satu blok Markdown: Role, Task, Constraints, atau Output.',
 	tool_film_prompt_builder_rules_item_2:
-		'Default export is Markdown. JSON is a chip on the same canvas.',
+		'Ekspor bawaannya Markdown; JSON adalah tombol di atas kolom keluaran yang sama.',
 	tool_film_prompt_builder_rules_item_3:
-		'Optional Cloudflare AI never replaces local mode — review AI output before copying.',
+		'AI opsional itu langkah tambahan, bukan pengganti: mode lokal selalu tersedia, dan teks AI menimpa seluruh isi kolom keluaran, jadi periksa dulu sebelum menyalin.',
 	tool_film_prompt_builder_rules_item_4:
-		'This tool assembles text only; it does not run film prompt builder engines or call chat APIs locally.',
+		'Halaman ini hanya merangkai teks: tidak menulis skenarionya untuk Anda dan tidak menjalankan model atau API obrolan di peramban Anda.',
 	tool_film_prompt_builder_rules_title:
-		'Aturan yang perlu diketahui',
+		'Yang dilakukan dan tidak dilakukan',
 	tool_film_prompt_builder_sec_constraints:
 		'Constraints',
 	tool_film_prompt_builder_sec_output:
-		'Output format',
+		'Output',
 	tool_film_prompt_builder_sec_role:
 		'Role',
 	tool_film_prompt_builder_sec_task:
 		'Task',
 	tool_film_prompt_builder_status_copied:
-		'Disalin.',
+		'Tersalin ke papan klip.',
 	tool_film_prompt_builder_status_done:
 		'Prompt siap.',
 	tool_film_prompt_builder_status_working:
-		'Membuat prompt…',
+		'Merangkai prompt…',
 	tool_film_prompt_builder_title:
-		'Pembuat prompt film — Lokal + AI opsional',
+		'Generator prompt skenario film — tiga babak dan daftar adegan di peramban',
 	tool_film_prompt_builder_usecase_1:
-		'Ship a paste-ready film prompt builder brief for your team chat in ChatGPT, Gemini, Claude, or DeepSeek.',
+		'Sebelum rapat, mengumpulkan tiga babak dan daftar adegan dalam satu prompt yang langsung bisa ditempel ke ChatGPT, Gemini, Claude, atau DeepSeek.',
 	tool_film_prompt_builder_usecase_2:
-		'Export JSON for a pipeline test, then refine with optional Cloudflare AI after Turnstile.',
+		'Mengekspor JSON dan menyimpan logline, babak, serta perubahan tokoh dari tiap versi sebagai kolom di lembar kerja atau repositori untuk dibandingkan.',
 	tool_film_prompt_builder_usecase_3:
-		'Compare with Prompt template builder when you need generic four-field templates instead of this scenario.',
+		'Kalau yang dibutuhkan kerangka umum empat blok dan bukan struktur film panjang, pakai generator templat prompt.',
 	tool_film_prompt_builder_usecase_4:
-		'Keep sensitive draft text local — only opt into AI when you accept the consent modal.',
+		'Untuk proyek yang kontraknya belum jalan, tetap di mode lokal: teks baru keluar dari peramban kalau Anda menyetujui pemberitahuan AI.',
 	tool_film_prompt_builder_usecases_title:
-		'Cocok untuk',
+		'Kapan berguna',
 };
 
 export default id;

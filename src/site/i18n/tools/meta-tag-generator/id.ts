@@ -10,7 +10,7 @@ const id: SiteLangDict = {
 		'Tulis tag judul, deskripsi, canonical, dan Open Graph yang mendatangkan klik di pencarian: buat tag head halaman secara lengkap dari browser.',
 	tool_meta_title: 'Pembuat meta tag — buat tag head halaman secara lengkap',
 	tool_meta_description:
-		'Title dan meta description adalah kartu Google; canonical salah memecah sinyal. Isi field untuk tag head siap tempel. Contoh: canonical + og.',
+		'Title dan meta description membentuk cuplikan pencarian Anda; canonical memilih URL di antara duplikat. Isi kolomnya untuk tag head siap tempel plus panduan panjang. Contoh: canonical + og.',
 	tool_meta_title_label: 'Meta title',
 	tool_meta_title_ph: 'Pembuat meta tag — buat tag head halaman secara lengkap',
 	tool_meta_title_hint: 'Pertahankan sekitar 60 karakter. Mesin pencari dapat menulis ulang judul yang lebih panjang.',

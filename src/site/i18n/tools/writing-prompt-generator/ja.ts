@@ -1,14 +1,16 @@
 /**
  * i18n tool shard (writing-prompt-generator / ja).
- * Search H1: ライティングプロンプト生成 — 対話・キャラ・脚本・ランダム；ローカル組み立て。
- * Platforms ChatGPT / Gemini / Claude / DeepSeek in description; random prompt generator absorbed in FAQ.
+ * 検索向け H1：ライティングプロンプト生成 — 対話・キャラ・脚本・ランダム。
+ * 既定はブラウザ内で組み立て、拡張/推敲は任意で Cloudflare Workers AI（Turnstile と利用枠あり）。
+ * AI の返答は結果欄をまるごと置き換える。
+ * ChatGPT / Gemini / Claude / DeepSeek は description と初回表示に登場。
  */
 import type { SiteLangDict } from '../../../types';
 
 /** ライティングプロンプト生成 — 日本語テキストシャード */
 const ja: SiteLangDict = {
 	tool_writing_prompt_generator_article:
-		'対話シーン、キャラ研究、脚本アウトライン、ランダムな物語のきっかけ向けに、貼り付け可能なライティング prompt をこのページで組み立てます。モードを選び、フィールドを埋めるかランダムを振り、Markdown か JSON を ChatGPT、Gemini、Claude、DeepSeek にコピー。モデル API は呼びません。テキストは端末内に留まり、サーバーにアップロードされません。',
+		'対話シーン、キャラ研究、脚本アウトライン、ランダムな物語のきっかけ向けに、貼り付け可能なライティング prompt をこのページで組み立てます。モードを選び、フィールドを埋めるかランダムを振り、Markdown か JSON を ChatGPT、Gemini、Claude、DeepSeek にコピー。既定ではブラウザ内で組み立てるだけで、チャットの API を代理で呼ぶことはありません。「AI で拡張」「AI で推敲」を押したときだけ、その時点の下書きが Cloudflare Workers AI に送られます（Turnstile 必須・回数と枠に上限あり）。',
 	tool_writing_prompt_generator_build: 'プロンプト作成',
 	tool_writing_prompt_generator_char_flaw_label: '欠点 / 弱点',
 	tool_writing_prompt_generator_char_flaw_ph: '何が足を引っ張るか…',
@@ -23,9 +25,9 @@ const ja: SiteLangDict = {
 	tool_writing_prompt_generator_clear: 'クリア',
 	tool_writing_prompt_generator_copy: 'コピー',
 	tool_writing_prompt_generator_desc:
-		'ライティングPromptジェネレーター — ローカル既定、任意 Cloudflare AI 拡張/推敲（Turnstile）；Markdown/JSON は端末内。',
+		'ライティングPromptジェネレーター — 対話・キャラ・脚本・ランダムの4モード。組み立てはブラウザ内、Cloudflare AI の拡張/推敲は任意。',
 	tool_writing_prompt_generator_description:
-		'手順と例：ライティングPromptジェネレーター — ローカル + オプションAI（ChatGPT/Gemini/Claude/DeepSeek）：既定はブラウザ内ローカル組み立て、任意で Cloudflare Workers AI Expand/Polish（Turnstile 必須・レート制限）。初回表示でサンプル。Markdown 既定。AI 未使用時は端末外に出ません。',
+		'ライティング Prompt ジェネレーター：対話・キャラ・脚本・ランダムからモードを選び、フィールドを埋める手順で、ChatGPT・Gemini・Claude・DeepSeek にそのまま貼れる prompt を作ります。開いた時点で対話の例が動き、ランダムでは物語のきっかけを振り出して seed で同じ結果を再現できます。Markdown と JSON を出力でき、Cloudflare AI の拡張/推敲は任意です。',
 	tool_writing_prompt_generator_dlg_characters_label: '登場人物',
 	tool_writing_prompt_generator_dlg_characters_ph: '名前 + 一行の役割…',
 	tool_writing_prompt_generator_dlg_conflict_label: '葛藤',
@@ -39,27 +41,27 @@ const ja: SiteLangDict = {
 	tool_writing_prompt_generator_download: 'ダウンロード',
 	tool_writing_prompt_generator_empty: 'このモードで少なくとも1フィールドを入力してから作成してください。',
 	tool_writing_prompt_generator_example:
-		'入力（対話・サンプル）：Genre = 現代ドラマ；Characters = Maya（バリスタ）とJonah（音楽家）；Conflict = 元カレの歌だと気づく。出力（Markdown）：## Role → ライティングコーチ；## Task → genre/characters/setting/conflict/tone。脚本モードは灯台FAX謎 — 映画のフードトラック例とは別。',
+		'入力（対話・サンプル）：Genre = 現代ドラマ；Characters = Maya（バリスタ）とJonah（音楽家）；Conflict = 元カレの歌だと気づく。出力（Markdown）：## 役割 → ライティングコーチ；## タスク → genre/characters/setting/conflict/tone。脚本モードは灯台FAX謎 — 映画のフードトラック例とは別。',
 	tool_writing_prompt_generator_example_title: '例',
 	tool_writing_prompt_generator_faq_a1:
-		'既定はこのタブ内ローカル。任意 Expand/Polish はそのクリック分のみ Cloudflare Workers AI へ。',
+		'既定ではこのタブ内で組み立てるだけで、どこにも送信しません。任意の拡張/推敲を押したときだけ、そのクリックで送った文面が Cloudflare Workers AI に渡ります。当方のサーバーから OpenAI・Google・Anthropic・DeepSeek へ回すことはありません。',
 	tool_writing_prompt_generator_faq_a2:
-		'ローカルはこのタブのみ。任意 AI は Turnstile 後 Cloudflare Workers AI — チャット API は呼びません。',
+		'ローカルモードは執筆用の入力欄を整形するだけです。任意の拡張/推敲は Turnstile 通過後に Cloudflare Workers AI を使います。ChatGPT・Gemini・Claude・DeepSeek の API を代理で呼ぶことはありません。',
 	tool_writing_prompt_generator_faq_a3:
 		'Prompt テンプレートビルダーは汎用 Role/Task/Constraints/Output テンプレート向け。本ページは執筆モード優先 — 対話フィールド、キャラシート、脚本ビート、同一キャンバスのランダムプロンプト生成。',
 	tool_writing_prompt_generator_faq_a4:
-		'はい。Expand/Polish 前に Turnstile を完了してください。',
+		'使えます。ランダムモードはジャンル・舞台・小道具・感情・葛藤を振り出します。数値の seed を入れれば同じ組み合わせを再現できます。出てくるのは着想のたたき台で、質は保証しません。',
 	tool_writing_prompt_generator_faq_a5:
-		'はい。JSON チップで {mode,fields,role,task,constraints,output} を出力。テストや設定用。Markdown は ## Role / Task / Constraints / Output 見出し。',
+		'必要です。任意 AI パネルの Turnstile を通してから拡張または推敲を押してください。トークンがないとボタンはエラーになりますが、ローカルの組み立てはそのまま使えます。',
 	tool_writing_prompt_generator_faq_a6:
-		'はい。完成 prompt を ChatGPT、Gemini、Claude、DeepSeek にコピー。テキスト整形が目的のためプラットフォーム別 URL は設けていません。',
+		'はい。JSON チップで {mode,fields,role,task,constraints,output} を出力。テストや設定用。Markdown は ## 役割 / タスク / 制約 / 出力形式 の見出しになります。',
 	tool_writing_prompt_generator_faq_q1: 'ライティング prompt はアップロードされますか？',
 	tool_writing_prompt_generator_faq_q2: 'LLM を呼び出しますか？',
 	tool_writing_prompt_generator_faq_q3: 'Prompt テンプレートビルダーとの違いは？',
 	tool_writing_prompt_generator_faq_q4:
-		'任意 AI に Turnstile が必要な理由は？',
-	tool_writing_prompt_generator_faq_q5: 'JSON 出力はできますか？',
-	tool_writing_prompt_generator_faq_q6: 'ChatGPT、Gemini、Claude、DeepSeek で使えますか？',
+		'ランダムプロンプト生成はここで使えますか？',
+	tool_writing_prompt_generator_faq_q5: '任意 AI に Turnstile が必要な理由は？',
+	tool_writing_prompt_generator_faq_q6: 'JSON 出力はできますか？',
 	tool_writing_prompt_generator_fmt_json: 'JSON',
 	tool_writing_prompt_generator_fmt_label: '出力形式',
 	tool_writing_prompt_generator_fmt_md: 'Markdown',
@@ -86,15 +88,15 @@ const ja: SiteLangDict = {
 	tool_writing_prompt_generator_random_seed_ph: '例：42',
 	tool_writing_prompt_generator_result_label: 'ライティング prompt',
 	tool_writing_prompt_generator_rules_body:
-		'ライティング prompt にはモード別フィールド、ランダムの正直な限界、他ビルダーと同じローカルプライバシーが必要。',
+		'ライティング prompt には、モードごとに違うフィールドと、ランダムで出るものの限界をごまかさない説明、そして他のビルダーと同じ「まずブラウザ内で組み立てる」前提が要ります。',
 	tool_writing_prompt_generator_rules_item_1:
 		'出力四ブロック：Role、Task、Constraints、Output — 構造化 prompt テンプレートに整合。',
 	tool_writing_prompt_generator_rules_item_2:
-		'ランダムモードはこの URL 内でランダムプロンプト生成を吸収 — 別ページ不要。',
+		'ランダムモードは同じ画面の中にあります。ジャンル・舞台・小道具・感情・葛藤を振り出し、seed を入れれば同じ結果を再現できます。',
 	tool_writing_prompt_generator_rules_item_3:
 		'既定エクスポートは Markdown。JSON は同一キャンバスのチップ。',
 	tool_writing_prompt_generator_rules_item_4:
-		'本ツールはテキスト組み立てのみ。完成物語の生成やクラウドモデル呼び出しはしません。',
+		'任意の Cloudflare AI はローカルモードの代わりにはなりません。コピー前に AI の文章を確認してください。本ツールは prompt を組み立てるだけで、完成した物語は書きません。',
 	tool_writing_prompt_generator_rules_title: '期待できるルール',
 	tool_writing_prompt_generator_scr_notes_label: 'ビートメモ',
 	tool_writing_prompt_generator_scr_notes_ph: 'シーン数、テンポ、POV…',
@@ -102,10 +104,10 @@ const ja: SiteLangDict = {
 	tool_writing_prompt_generator_scr_premise_ph: '一段落のセットアップ…',
 	tool_writing_prompt_generator_scr_structure_label: '構造',
 	tool_writing_prompt_generator_scr_structure_ph: '三幕、セーブ・ザ・キャット、エピソード型…',
-	tool_writing_prompt_generator_sec_constraints: 'Constraints',
-	tool_writing_prompt_generator_sec_output: 'Output format',
-	tool_writing_prompt_generator_sec_role: 'Role',
-	tool_writing_prompt_generator_sec_task: 'Task',
+	tool_writing_prompt_generator_sec_constraints: '制約',
+	tool_writing_prompt_generator_sec_output: '出力形式',
+	tool_writing_prompt_generator_sec_role: '役割',
+	tool_writing_prompt_generator_sec_task: 'タスク',
 	tool_writing_prompt_generator_status_copied: 'クリップボードにコピーしました。',
 	tool_writing_prompt_generator_status_done: 'Prompt 準備完了。',
 	tool_writing_prompt_generator_status_working: 'Prompt 作成中…',
@@ -129,7 +131,7 @@ const ja: SiteLangDict = {
 	tool_writing_prompt_generator_ai_consent_title:
 		'Cloudflare Workers AI に送信しますか？',
 	tool_writing_prompt_generator_ai_consent_body:
-		'任意のステップで下書きを Cloudflare Workers AI に送ります。当サーバーから OpenAI 等には送りません。',
+		'この任意の操作では、いまの下書きを Cloudflare Workers AI に送って推論します。当方のサーバーから OpenAI・Google・Anthropic・DeepSeek に渡すことはありません。AI を使わなくてもローカルの組み立ては動きます。',
 	tool_writing_prompt_generator_ai_consent_ok:
 		'続行',
 	tool_writing_prompt_generator_ai_consent_cancel:
@@ -137,7 +139,7 @@ const ja: SiteLangDict = {
 	tool_writing_prompt_generator_ai_working:
 		'Cloudflare AI 処理中…',
 	tool_writing_prompt_generator_ai_done:
-		'AI 提案を適用しました。コピー前に確認してください。',
+		'AI の文章を結果欄にそのまま書き出しました。コピー前に確認してください。',
 	tool_writing_prompt_generator_ai_err_generic:
 		'AI 失敗。ローカル Prompt は変更されていません。',
 	tool_writing_prompt_generator_ai_err_rate:
@@ -145,9 +147,13 @@ const ja: SiteLangDict = {
 	tool_writing_prompt_generator_ai_err_turnstile:
 		'AI 利用前に Turnstile を完了してください。',
 	tool_writing_prompt_generator_faq_q7:
-		'ローカルと任意 Cloudflare AI の違いは？',
+		'ChatGPT、Gemini、Claude、DeepSeek で使えますか？',
 	tool_writing_prompt_generator_faq_a7:
-		'ローカルはこのタブのみ非アップロード。任意 Expand/Polish は Cloudflare Workers AI（Turnstile・制限）。',
+		'使えます。完成した prompt を ChatGPT、Gemini、Claude、DeepSeek に貼り付けてください。このページは文面を整えるだけで、各サービスへのログインや API 呼び出しは行いません。',
+	tool_writing_prompt_generator_faq_q8:
+		'ローカルと任意 Cloudflare AI の違いは？',
+	tool_writing_prompt_generator_faq_a8:
+		'ローカルはこのタブ内だけで完結し、送信はありません。任意の拡張/推敲は下書きを Cloudflare Workers AI に送り（Turnstile 必須・1日の枠あり）、返ってきた文章が結果欄をまるごと置き換えます。失敗や枠切れのときはローカルのまま使い続けられます。',
 };
 
 export default ja;

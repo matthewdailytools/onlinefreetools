@@ -29,7 +29,7 @@ const ja: SiteLangDict = {
 	tool_compare_two_word_documents_for_differences_faq_a3:
 		'抽出失敗はパスワード付き、破損、OOXML 以外が典型です。画像だけのページは空文字になります。',
 	tool_compare_two_word_documents_for_differences_faq_a4:
-		'「Word をオンラインで比較」も同じ作業です（2つの .docx のとき）。「文書を比較」が PDF の意味なら、このページではありません。',
+		"2つの .docx から抽出した文言だけを比較します。PDF と旧形式の .doc は解析せず、書式や Word の変更履歴も結果に含みません。",
 	tool_compare_two_word_documents_for_differences_faq_q1: 'Word ファイルはアップロードされますか？',
 	tool_compare_two_word_documents_for_differences_faq_q2: 'Word の「校閲 → 比較」と同じですか？',
 	tool_compare_two_word_documents_for_differences_faq_q3: '抽出に失敗したりヘッダーが消えるのはなぜ？',
@@ -39,7 +39,7 @@ const ja: SiteLangDict = {
 	tool_compare_two_word_documents_for_differences_how_item_1: '1つ目の .docx（元稿）を選ぶ。',
 	tool_compare_two_word_documents_for_differences_how_item_2: '2つ目の .docx（改稿）を選ぶ。',
 	tool_compare_two_word_documents_for_differences_how_item_3:
-		'比較は見えるテキストを自動抽出します。サンプル読込は初回表示ですでに実行済みです。',
+		"「比較」を押し、見えるテキストを抽出して文言差分を実行します。",
 	tool_compare_two_word_documents_for_differences_how_item_4: '緑が追加、赤が削除です。',
 	tool_compare_two_word_documents_for_differences_how_title: '使い方',
 	tool_compare_two_word_documents_for_differences_label_a: '1つ目の Word 文書',

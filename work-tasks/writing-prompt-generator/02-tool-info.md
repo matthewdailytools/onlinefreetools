@@ -62,3 +62,10 @@
 
 - [x] H1 + 首屏交互 + loadSample
 - [x] How / Rules / Example / Use cases / FAQ / Related / References
+
+## 复审修正（2026-09-05）
+
+- catalog `localProcessing` 改为 `false`：可选 Expand/Polish 会经 Turnstile 把正文 POST 到 Workers AI，首页不得再标「不上传」。
+- AI 回写改为整段 Markdown（不再只取首行）。
+- Turnstile 校验绑定 `hostname` + `action={slug}-ai`。
+- 十语清理英文残留/西语污染；How 去掉「进页已自动跑样例」元叙事，改为可执行的 Load sample 动作。

@@ -8,7 +8,7 @@ import type { SiteLangDict } from '../../../types';
 const ja: SiteLangDict = {
 	tool_json_diff_checker_online_article:
 		'2つの JSON を貼り、パス単位の追加・削除・変更を並べます。既定ではキー順を無視します。貼り付けは端末内に留まり、サーバーにアップロードしません。YAML と XML はここでは解析しません。',
-	tool_json_diff_checker_online_array_as_set: '配列を集合として扱う（順不同）',
+	tool_json_diff_checker_online_array_as_set: "配列の順序を無視（重複は数える）",
 	tool_json_diff_checker_online_clear: 'クリア',
 	tool_json_diff_checker_online_compare: '比較',
 	tool_json_diff_checker_online_desc:
@@ -26,9 +26,9 @@ const ja: SiteLangDict = {
 	tool_json_diff_checker_online_faq_a2:
 		'既定では {"a":1,"b":2} と {"b":2,"a":1} は同じオブジェクトです。書いた順が大事なら「オブジェクトのキー順を無視」をオフにしてください。',
 	tool_json_diff_checker_online_faq_a3:
-		'配列は添字のリストです。[1,2] と [2,1] は差になります。順を問わないときだけ「集合として扱う」をオンにします。',
+		"通常は配列を添字ごとに比較します。順序を無視すると正規化した要素を並べ替えますが、重複は残ります。結果の添字は並べ替え後の順序で、id によるオブジェクト照合はしません。",
 	tool_json_diff_checker_online_faq_a4:
-		'「json diff checker」だけでも同じ作業です。YAML や XML は別ページです（必要なら先に YAML を変換）。',
+		"有効な JSON だけを解析します。YAML や XML の構文は受け付けないため、YAML は先に JSON へ変換するか、形式専用の比較ツールを使ってください。",
 	tool_json_diff_checker_online_faq_q1: 'JSON はアップロードされますか？',
 	tool_json_diff_checker_online_faq_q2: 'キーの並び順は差分になりますか？',
 	tool_json_diff_checker_online_faq_q3: '配列はどう比べますか？',
@@ -38,7 +38,7 @@ const ja: SiteLangDict = {
 	tool_json_diff_checker_online_how_item_1: '左に元の JSON を貼る。',
 	tool_json_diff_checker_online_how_item_2: '右に改訂後の JSON を貼る。',
 	tool_json_diff_checker_online_how_item_3: '書いたキー順が要るとき以外は、キー順無視をオンのままにする。',
-	tool_json_diff_checker_online_how_item_4: '比較はパスを出します。サンプル読込は初回表示ですでに実行済みです。',
+	tool_json_diff_checker_online_how_item_4: "「比較」を押し、現在の設定で追加・削除・変更されたパスを一覧にします。",
 	tool_json_diff_checker_online_how_title: '使い方',
 	tool_json_diff_checker_online_ignore_keys: 'オブジェクトのキー順を無視',
 	tool_json_diff_checker_online_label_a: '元の JSON',
@@ -56,7 +56,7 @@ const ja: SiteLangDict = {
 	tool_json_diff_checker_online_rules_item_2:
 		'キー順無視（既定オン）はパスを辿る前にオブジェクトのキーをソートします。',
 	tool_json_diff_checker_online_rules_item_3:
-		'配列は添字リストです。集合扱いにすると要素を JSON stringify でソートしてから比べます。',
+		"配列順を無視すると正規化した要素を並べ替えますが重複は保持します。結果の添字は元の位置ではなく比較時の順序です。",
 	tool_json_diff_checker_online_rules_item_4:
 		'YAML と XML は解析しません。必要なら関連の YAML ↔ JSON ページで先に変換してください。',
 	tool_json_diff_checker_online_rules_title: '比較の約束事',

@@ -10,7 +10,7 @@ const ja: SiteLangDict = {
 		'検索でクリックを生む title・description・canonical・Open Graph タグを作成——ページの head タグ一式をブラウザだけで生成。',
 	tool_meta_title: 'メタタグ生成ツール — ページの head タグ一式を作成',
 	tool_meta_description:
-		'タイトルと meta description は Google で見える名刺です。誤った canonical は評価を分散します。フィールドを埋めて貼り付け用 head タグを生成し、文字数目安を確認します。端末内。例：canonical と og。',
+		'タイトルと meta description は検索結果のスニペットの見え方を決め、canonical は重複の中から使う URL を選びます。フィールドを埋めれば貼り付け用の head タグと文字数の目安が出ます。入力は端末内で処理しサーバーへ送りません。例：canonical と og。',
 	tool_meta_title_label: 'Meta タイトル',
 	tool_meta_title_ph: 'メタタグ生成ツール — ページの head タグ一式を作成',
 	tool_meta_title_hint: '60 文字前後を目安に。長すぎると検索エンジンが書き換えることがあります。',

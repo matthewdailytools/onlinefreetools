@@ -137,3 +137,7 @@
 - [x] `03-locale-briefs.md` 已填（实现十语前）
 - [x] README 工具清单登记
 - [x] **不**注册独立 `json-to-yaml` / `yaml-to-json` slug
+
+## 复审修正（2026-09-05）
+
+- 去掉描述中的「不是再挂一个空壳长尾页」建站元叙事（en 与 zh）。

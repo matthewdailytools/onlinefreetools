@@ -48,7 +48,7 @@ const en: SiteLangDict = {
 	tool_hreflang_rules_item_4:
 		'x-default points to the page shown when no listed language matches, for example an English root page. Google may use it as a fallback for all undetected languages.',
 	tool_hreflang_rules_item_5:
-		'Choose one delivery form per set: the <link> tags in HTML, the HTTP Link header, or sitemap xhtml:link. Do not mix forms for the same page set, or signals can contradict.',
+		'Google treats the three forms as equivalent and does allow all three at once, but says there is no Search benefit. Pick one per page set: three implementations drift apart, and contradictory annotations get ignored.',
 	tool_hreflang_example_title: 'Example',
 	tool_hreflang_example:
 		'The sample lists three versions of one page: https://example.com/ (en), https://example.com/es/ (es) and https://example.com/ja/ (ja). The generated <link> tags include self-references for each language plus an optional x-default pointing to the English root.',

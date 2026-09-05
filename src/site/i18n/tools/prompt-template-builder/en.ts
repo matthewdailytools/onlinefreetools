@@ -16,11 +16,11 @@ const en: SiteLangDict = {
 	tool_prompt_template_builder_desc:
 		'Prompt template builder — local default + optional Cloudflare AI Expand/Polish (Turnstile); Markdown/JSON on device.',
 	tool_prompt_template_builder_description:
-		'Prompt template builder — Local + Optional AI for ChatGPT, Gemini, Claude, and DeepSeek: assemble structured prompts locally by default, then optionally Expand/Polish via Cloudflare Workers AI (Turnstile required, rate-limited). Example runs on first paint. Markdown default; JSON for pipelines. Local text stays on your device unless you use optional AI.',
+		'Prompt template builder — Local + Optional AI for ChatGPT, Gemini, Claude, and DeepSeek: assemble structured prompts locally by default, then optionally Expand/Polish via Cloudflare Workers AI (Turnstile required, rate-limited). Markdown default; JSON for pipelines. Local text stays on your device unless you use optional AI. Example: click Load sample for a ready preset, then Build or optionally Expand/Polish.',
 	tool_prompt_template_builder_download: 'Download',
 	tool_prompt_template_builder_empty: 'Add free text or at least one field before building.',
 	tool_prompt_template_builder_example:
-		'Input (Load sample, Code chip): Role = senior code reviewer (security + readability); Task = review the PR diff I paste next; Constraints = max 12 bullets, flag secrets. Output (Markdown): ## Role / ## Task / ## Constraints / ## Output format — four sections ready to copy into ChatGPT or Claude. Matches first paint on the canvas.',
+		'Input (Load sample, Code chip): Role = senior code reviewer (security + readability); Task = review the PR diff I paste next; Constraints = max 12 bullets, flag secrets. Output (Markdown): ## Role / ## Task / ## Constraints / ## Output format — four sections ready to copy into ChatGPT or Claude. Matches what Load sample writes on the canvas.',
 	tool_prompt_template_builder_example_title: 'Example',
 	tool_prompt_template_builder_faq_a1:
 		'Local assembly runs in this browser tab — nothing is uploaded by default. Optional Expand/Polish sends only the text you submit for that click to Cloudflare Workers AI, not to OpenAI, Google, Anthropic, or DeepSeek from our servers.',
@@ -78,7 +78,7 @@ const en: SiteLangDict = {
 		'Pick a scene chip or draft your own text, fill Role / Task / Constraints / Output, build a template, then paste into ChatGPT, Gemini, Claude, or DeepSeek.',
 	tool_prompt_template_builder_how_item_1:
 		'Choose Code review, Movie, Short drama, Android, or iOS — or paste your own draft in the free box.',
-	tool_prompt_template_builder_how_item_2: 'Click Build template (Load sample already ran the code-review preset on first paint).',
+	tool_prompt_template_builder_how_item_2: 'Click Build template (Click Load sample for the code-review preset).',
 	tool_prompt_template_builder_how_item_3: 'Switch to JSON if you need {role,task,constraints,output} for code or config.',
 	tool_prompt_template_builder_how_item_4: 'Copy or download, then paste into ChatGPT, Gemini, Claude, or DeepSeek.',
 	tool_prompt_template_builder_how_title: 'How it works',

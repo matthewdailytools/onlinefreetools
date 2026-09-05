@@ -25,9 +25,9 @@ const id: SiteLangDict = {
 	tool_chatgpt_export_to_markdown_example_title: 'Contoh',
 	tool_chatgpt_export_to_markdown_faq_a1: 'Tidak. Ekspor dibaca di tab ini. Tidak ada yang dikirim ke OpenAI, Anthropic, atau server kami.',
 	tool_chatgpt_export_to_markdown_faq_a2: 'Jalur utama adalah ekspor data ChatGPT dengan pohon mapping. Array role/content datar dan chat_messages Claude juga diterima.',
-	tool_chatgpt_export_to_markdown_faq_a3: 'Ya. chat_messages Claude (sender + text) diserap di sini. Tidak ada URL kedua.',
+	tool_chatgpt_export_to_markdown_faq_a3: 'Ya. Array chat_messages ala Claude (sender + text) diurai konverter yang sama, jadi satu kali tempel menangani ekspor ChatGPT maupun Claude.',
 	tool_chatgpt_export_to_markdown_faq_a4: 'Node system kosong dan cangkang tool tanpa teks dilewati. Lampiran dan gambar tidak dibangun ulang sebagai file.',
-	tool_chatgpt_export_to_markdown_faq_a5: 'Menghitung token adalah pekerjaan lain (ditunda). H1 ini untuk ekspor → Markdown.',
+	tool_chatgpt_export_to_markdown_faq_a5: 'Menghitung token adalah pekerjaan lain dan tidak ada di konverter ini. Pakai penghitung token khusus jika perlu.',
 	tool_chatgpt_export_to_markdown_faq_q1: 'Apakah chat saya diunggah?',
 	tool_chatgpt_export_to_markdown_faq_q2: 'Bentuk ekspor mana yang bekerja?',
 	tool_chatgpt_export_to_markdown_faq_q3: 'Apakah ekspor Claude bisa?',
@@ -53,10 +53,10 @@ const id: SiteLangDict = {
 	tool_chatgpt_export_to_markdown_role_tool: 'Alat',
 	tool_chatgpt_export_to_markdown_role_user: 'Pengguna',
 	tool_chatgpt_export_to_markdown_rules_body:
-		'Konversi ekspor butuh peta bidang, Markdown bawaan, dan privasi yang jelas — bukan URL konverter kedua per vendor.',
+		'Konversi ekspor butuh peta bidang, Markdown bawaan, dan privasi jelas tentang pemrosesan lokal.',
 	tool_chatgpt_export_to_markdown_rules_item_1: 'Keluaran bawaan adalah Markdown dengan bagian ## Pengguna / ## Asisten dan # judul opsional.',
 	tool_chatgpt_export_to_markdown_rules_item_2: 'Pohon mapping ChatGPT, array datar, dan chat_messages Claude diurai di satu halaman.',
-	tool_chatgpt_export_to_markdown_rules_item_3: 'Chip JSON dan CSV mengeluarkan giliran yang sama. H1 tidak berubah.',
+	tool_chatgpt_export_to_markdown_rules_item_3: 'Chip JSON dan CSV mengeluarkan giliran yang sama lagi untuk pipeline atau spreadsheet.',
 	tool_chatgpt_export_to_markdown_rules_item_4: 'Format vendor berubah. Jika gagal, tempel JSON mentah dan cek FAQ.',
 	tool_chatgpt_export_to_markdown_rules_title: 'Aturan yang perlu diantisipasi',
 	tool_chatgpt_export_to_markdown_status_copied: 'Disalin ke papan klip.',
@@ -65,7 +65,7 @@ const id: SiteLangDict = {
 	tool_chatgpt_export_to_markdown_title: 'ekspor ChatGPT ke Markdown',
 	tool_chatgpt_export_to_markdown_usecase_1: 'Arsipkan ekspor ChatGPT hari ini sebagai Markdown sebelum menghapus utas.',
 	tool_chatgpt_export_to_markdown_usecase_2: 'Pindah ke CSV saat butuh kolom role/content untuk spreadsheet.',
-	tool_chatgpt_export_to_markdown_usecase_3: 'Jatuhkan JSON chat_messages Claude di halaman yang sama — tanpa alat kedua.',
+	tool_chatgpt_export_to_markdown_usecase_3: 'Jatuhkan JSON chat_messages Claude di sini; konverter yang sama memetakan giliran itu ke Markdown.',
 	tool_chatgpt_export_to_markdown_usecases_title: 'Cocok untuk ini',
 };
 

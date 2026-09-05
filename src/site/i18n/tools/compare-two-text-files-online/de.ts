@@ -12,10 +12,11 @@ const de: SiteLangDict = {
 	tool_compare_two_text_files_online_desc:
 		'Zwei Textdateien online vergleichen: zwei .txt wählen, Zeilendifferenzen im Browser sehen — nichts wird hochgeladen.',
 	tool_compare_two_text_files_online_description:
-		'Zwei Textdateien online im Browser vergleichen. Ablauf: Originaldatei und überarbeitete Datei wählen, als UTF-8 dekodieren (BOM wird entfernt), Binärbytes ablehnen, dann Zeilen-Adds und -Deletes markieren. Die Dateien bleiben auf deinem Gerät und werden nicht hochgeladen. Beispiel: notes-a.txt gegen notes-b.txt, nur die mittlere Zeile ändert sich. Word, Excel und JSON haben eigene Seiten; hier geht es nur um Textdateien. Auch txt vergleichen fällt darunter.',
+		"Vergleichen Sie zwei Textdateien online im Browser. Wählen Sie die ursprüngliche und überarbeitete .txt-Datei: Beide werden strikt als UTF-8 decodiert, ein führendes BOM wird entfernt und ungültige Codierung oder Binärinhalt wird vor der Zeilenmarkierung abgelehnt. Die Dateien bleiben auf Ihrem Gerät und werden nicht auf einen Server hochgeladen. Beispiel: notes-a.txt und notes-b.txt unterscheiden sich nur in der mittleren Zeile. Word-, Tabellen- und strukturierte JSON-Dateien werden nicht geparst.",
 	tool_compare_two_text_files_online_empty: 'Zuerst zwei Textdateien wählen oder das Beispiel laden.',
 	tool_compare_two_text_files_online_err_binary:
 		'Eine Datei wirkt binär (Nullbytes). Diese Seite vergleicht nur Klartext wie .txt.',
+	tool_compare_two_text_files_online_err_encoding: "Eine Datei ist kein gültiges UTF-8. Speichern oder konvertieren Sie sie als UTF-8 und vergleichen Sie erneut.",
 	tool_compare_two_text_files_online_err_too_large:
 		'Eine Datei ist größer als etwa 1 MB. Nimm einen kürzeren Ausschnitt, damit der Tab flüssig bleibt.',
 	tool_compare_two_text_files_online_example:
@@ -24,11 +25,11 @@ const de: SiteLangDict = {
 	tool_compare_two_text_files_online_faq_a1:
 		'Nein. FileReader liest die Bytes in diesem Tab. jsdiff kann als Bibliothek per CDN kommen; deine Dateien gehen nicht auf unsere Server.',
 	tool_compare_two_text_files_online_faq_a2:
-		'Dekodierung als UTF-8. Ein führendes BOM fällt weg, damit die erste Zeile nicht nur deshalb als geändert gilt. Andere Kodierungen können Zeichensalat ergeben — speichere vorher als UTF-8.',
+		"Dateien werden strikt als UTF-8 decodiert; ein führendes BOM wird entfernt. Ungültiges UTF-8 wird abgelehnt statt mit Ersatzzeichen angezeigt. Ältere Codierungen wie Windows-1252 bitte zuerst konvertieren.",
 	tool_compare_two_text_files_online_faq_a3:
 		'Ein Nullbyte gilt als Binärdatei und wird abgelehnt. Dafür Hex- oder Archivwerkzeuge. Word und Excel gehören auf ihre eigenen Vergleichsseiten.',
 	tool_compare_two_text_files_online_faq_a4:
-		'Diese Seite ist für .txt / .text. Wer «txt vergleichen» oder einen Online-Dateivergleich sucht, meint oft genau das. Meinte «zwei Dateien vergleichen» Word oder Tabellen, nimm jene Seiten. Nur einfügen ohne Dateien: «Unterschied zwischen zwei Texten prüfen».',
+		"Das Tool verarbeitet .txt / .text als UTF-8. Ohne Dateien nutzen Sie den Einfügevergleich; für .docx, xlsx, xls oder csv den passenden Word- oder Tabellenvergleich.",
 	tool_compare_two_text_files_online_faq_q1: 'Werden meine Dateien hochgeladen?',
 	tool_compare_two_text_files_online_faq_q2: 'Welche Kodierung und welche BOM-Regel gelten?',
 	tool_compare_two_text_files_online_faq_q3: 'Kann ich hier Binärdateien, Word oder Excel vergleichen?',
@@ -38,7 +39,7 @@ const de: SiteLangDict = {
 	tool_compare_two_text_files_online_how_item_1: 'Erste Textdatei wählen (Originalstand oder Export).',
 	tool_compare_two_text_files_online_how_item_2: 'Zweite Textdatei wählen (überarbeiteter Stand).',
 	tool_compare_two_text_files_online_how_item_3:
-		'Sobald beide gewählt sind, läuft der Vergleich von selbst; Beispiel laden hat das beim ersten Zeichnen schon erledigt.',
+		"Klicken Sie auf Vergleichen, um den Zeilen-Diff zu aktualisieren; nach Auswahl beider Dateien läuft er ebenfalls automatisch.",
 	tool_compare_two_text_files_online_how_item_4: 'Grün sind Zugänge, rot Streichungen. Leeren nimmt beide Dateien aus diesem Tab.',
 	tool_compare_two_text_files_online_how_title: 'So funktioniert’s',
 	tool_compare_two_text_files_online_label_a: 'Erste Textdatei',

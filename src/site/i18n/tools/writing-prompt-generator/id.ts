@@ -1,14 +1,16 @@
 /**
  * i18n tool shard (writing-prompt-generator / id).
- * Search H1: generator prompt menulis — dialog, karakter, skrip, acak; perakitan lokal.
- * Platforms ChatGPT / Gemini / Claude / DeepSeek in description; random prompt generator absorbed in FAQ.
+ * H1 berorientasi pencarian: generator prompt menulis — dialog, karakter, skrip, acak.
+ * Penyusunan berjalan di peramban; Perluas/Perhalus opsional lewat Cloudflare Workers AI
+ * (butuh Turnstile + kuota) dan jawabannya menggantikan isi kotak hasil.
+ * ChatGPT / Gemini / Claude / DeepSeek muncul di description dan layar pertama.
  */
 import type { SiteLangDict } from '../../../types';
 
 /** Generator prompt menulis — shard teks Bahasa Indonesia */
 const id: SiteLangDict = {
 	tool_writing_prompt_generator_article:
-		'Susun prompt menulis siap tempel untuk adegan dialog, studi karakter, kerangka skrip, atau pembuka cerita acak. Pilih mode, isi field atau acak, lalu salin Markdown atau JSON ke ChatGPT, Gemini, Claude, atau DeepSeek. Tidak ada API model yang dipanggil. Teks tetap di perangkat Anda dan tidak diunggah ke server.',
+		'Susun prompt menulis siap tempel untuk adegan dialog, studi karakter, kerangka skrip, atau pembuka cerita acak. Pilih mode, isi field atau acak, lalu salin Markdown atau JSON ke ChatGPT, Gemini, Claude, atau DeepSeek. Secara default prompt disusun di peramban Anda dan kami tidak memanggil API chat mana pun untuk Anda; hanya saat Anda menekan Perluas atau Perhalus dengan AI, draf yang sedang aktif dikirim ke Cloudflare Workers AI (perlu Turnstile, ada batas laju dan kuota).',
 	tool_writing_prompt_generator_build: 'Buat prompt',
 	tool_writing_prompt_generator_char_flaw_label: 'Kelemahan / cacat',
 	tool_writing_prompt_generator_char_flaw_ph: 'Apa yang menghambatnya…',
@@ -23,9 +25,9 @@ const id: SiteLangDict = {
 	tool_writing_prompt_generator_clear: 'Hapus',
 	tool_writing_prompt_generator_copy: 'Salin',
 	tool_writing_prompt_generator_desc:
-		'Generator prompt menulis — local por defecto + Expand/Polish opcional Cloudflare AI (Turnstile); Markdown/JSON en el dispositivo.',
+		'Generator prompt menulis — mode dialog, karakter, skrip, dan acak; disusun langsung di peramban dengan AI Cloudflare opsional.',
 	tool_writing_prompt_generator_description:
-		'Proses dan contoh: Generator prompt menulis — Local + IA opcional para ChatGPT, Gemini, Claude y DeepSeek: ensambla prompts localmente por defecto y opcionalmente Expand/Polish con Cloudflare Workers AI (Turnstile obligatorio, límite de uso). Ejemplo al abrir. Markdown por defecto; JSON para pipelines. Texto en el dispositivo salvo que uses IA.',
+		'Generator prompt menulis: pilih mode — dialog, karakter, skrip, atau acak —, isi kolomnya lewat beberapa langkah, dan dapatkan prompt siap tempel ke ChatGPT, Gemini, Claude, atau DeepSeek. Saat dibuka sudah ada contoh dialog yang berjalan; di mode acak Anda mengacak pembuka cerita dan seed mengulang hasil yang sama. Ekspor Markdown atau JSON; penyusunan di peramban dan AI Cloudflare opsional.',
 	tool_writing_prompt_generator_dlg_characters_label: 'Karakter',
 	tool_writing_prompt_generator_dlg_characters_ph: 'Nama + peran satu baris…',
 	tool_writing_prompt_generator_dlg_conflict_label: 'Konflik',
@@ -39,29 +41,29 @@ const id: SiteLangDict = {
 	tool_writing_prompt_generator_download: 'Unduh',
 	tool_writing_prompt_generator_empty: 'Isi minimal satu field di mode ini sebelum membuat.',
 	tool_writing_prompt_generator_example:
-		'Input (Dialog, Muat contoh): Genre = drama kontemporer; Characters = Maya (barista) & Jonah (musisi); Conflict = Maya mengenali lagu tentang mantan. Output (Markdown): ## Role → pelatih menulis; ## Task → baris genre/characters/setting/conflict/tone. Mode Skrip = misteri faks cuaca mercusuar — bukan food-truck film.',
+		'Input (Dialog, Muat contoh): Genre = drama kontemporer; Characters = Maya (barista) & Jonah (musisi); Conflict = Maya mengenali lagu tentang mantan. Output (Markdown): ## Peran → pelatih menulis; ## Tugas → baris genre/characters/setting/conflict/tone. Mode Skrip = misteri faks cuaca mercusuar — bukan food-truck film.',
 	tool_writing_prompt_generator_example_title: 'Contoh',
 	tool_writing_prompt_generator_faq_a1:
-		'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
+		'Secara default prompt disusun di tab ini dan tidak ada yang keluar. Hanya Perluas/Perhalus yang mengirim teks pada klik tersebut ke Cloudflare Workers AI; dari server kami tidak ada yang diteruskan ke OpenAI, Google, Anthropic, atau DeepSeek.',
 	tool_writing_prompt_generator_faq_a2:
-		'Modo local solo formatea aquí. Expand/Polish opcional usa Cloudflare Workers AI tras Turnstile — no llama APIs de chat.',
+		'Mode lokal hanya memformat kolom menulis Anda di tab ini. Perluas/Perhalus memakai Cloudflare Workers AI setelah Turnstile — kami tidak membukakan ChatGPT, Gemini, Claude, atau DeepSeek untuk Anda.',
 	tool_writing_prompt_generator_faq_a3:
 		'Pembangun template Prompt menyusun template Role/Task/Constraints/Output generik. Halaman ini fokus mode menulis — field dialog, lembar karakter, beat skrip, dan generator prompt acak dalam satu kanvas.',
 	tool_writing_prompt_generator_faq_a4:
-		'Sí. Completa Turnstile en el panel de IA antes de Expand o Polish.',
+		'Bisa. Mode acak mengacak genre, setting, objek, emosi, dan konflik. Seed angka opsional mengulang persis hasil yang sama. Keluarannya bahan inspirasi, bukan jaminan mutu.',
 	tool_writing_prompt_generator_faq_a5:
-		'Ya. Chip JSON mengeluarkan {mode,fields,role,task,constraints,output} untuk uji atau konfigurasi. Markdown memakai heading ## Role / Task / Constraints / Output.',
+		'Ya. Selesaikan widget Turnstile di panel AI sebelum Perluas atau Perhalus; tanpa token yang sah tombolnya menampilkan galat, dan penyusunan lokal tetap jalan.',
 	tool_writing_prompt_generator_faq_a6:
-		'Ya. Salin prompt jadi ke ChatGPT, Gemini, Claude, atau DeepSeek. Kami tidak memisahkan URL per platform karena tugasnya memformat teks, bukan memanggil API.',
+		'Ya. Chip JSON mengeluarkan {mode,fields,role,task,constraints,output} untuk uji atau konfigurasi. Markdown memakai heading ## Peran / Tugas / Batasan / Format keluaran.',
 	tool_writing_prompt_generator_faq_q1: 'Apakah prompt menulis saya diunggah?',
 	tool_writing_prompt_generator_faq_q2: 'Apakah ini memanggil LLM?',
 	tool_writing_prompt_generator_faq_q3: 'Bedanya dengan Pembangun template Prompt?',
 	tool_writing_prompt_generator_faq_q4:
-		'¿Por qué Turnstile para IA opcional?',
-	tool_writing_prompt_generator_faq_q5: 'Bisa dapat output JSON?',
-	tool_writing_prompt_generator_faq_q6: 'Bisa dipakai dengan ChatGPT, Gemini, Claude, atau DeepSeek?',
+		'Apakah generator prompt acak jalan di sini?',
+	tool_writing_prompt_generator_faq_q5: 'Kenapa AI opsional minta Turnstile?',
+	tool_writing_prompt_generator_faq_q6: 'Bisa dapat output JSON?',
 	tool_writing_prompt_generator_fmt_json: 'JSON',
-	tool_writing_prompt_generator_fmt_label: 'Format output',
+	tool_writing_prompt_generator_fmt_label: 'Format keluaran',
 	tool_writing_prompt_generator_fmt_md: 'Markdown',
 	tool_writing_prompt_generator_how_body:
 		'Pilih mode menulis, isi field atau acak, buat blok prompt, lalu tempel ke ChatGPT, Gemini, Claude, atau DeepSeek.',
@@ -86,15 +88,15 @@ const id: SiteLangDict = {
 	tool_writing_prompt_generator_random_seed_ph: 'mis. 42',
 	tool_writing_prompt_generator_result_label: 'Prompt menulis',
 	tool_writing_prompt_generator_rules_body:
-		'Prompt menulis butuh field khusus mode, batas acak yang jujur, dan privasi lokal yang sama seperti builder lain.',
+		'Prompt menulis butuh kolom yang berbeda tiap mode, keterangan jujur soal batas hasil acak, dan pola penyusunan di peramban yang sama seperti builder lain.',
 	tool_writing_prompt_generator_rules_item_1:
 		'Empat blok output: Role, Task, Constraints, Output — selaras template prompt terstruktur.',
 	tool_writing_prompt_generator_rules_item_2:
-		'Mode acak menyerap generator prompt acak di URL ini — tanpa halaman terpisah.',
+		'Mode acak ada di kanvas yang sama: mengacak genre, setting, objek, emosi, dan konflik, dan dengan seed Anda mengulang hasilnya.',
 	tool_writing_prompt_generator_rules_item_3:
 		'Ekspor default Markdown. JSON adalah chip di kanvas yang sama.',
 	tool_writing_prompt_generator_rules_item_4:
-		'Alat ini hanya merakit teks. Tidak menghasilkan cerita jadi atau memanggil model cloud.',
+		'AI Cloudflare opsional tidak pernah menggantikan mode lokal — periksa teksnya sebelum menyalin. Alat ini merakit prompt, bukan menuliskan ceritanya sampai jadi.',
 	tool_writing_prompt_generator_rules_title: 'Aturan yang perlu diharapkan',
 	tool_writing_prompt_generator_scr_notes_label: 'Catatan beat',
 	tool_writing_prompt_generator_scr_notes_ph: 'Jumlah adegan, tempo, POV…',
@@ -102,11 +104,11 @@ const id: SiteLangDict = {
 	tool_writing_prompt_generator_scr_premise_ph: 'Setup satu paragraf…',
 	tool_writing_prompt_generator_scr_structure_label: 'Struktur',
 	tool_writing_prompt_generator_scr_structure_ph: 'Tiga babak, save the cat, episodik…',
-	tool_writing_prompt_generator_sec_constraints: 'Constraints',
-	tool_writing_prompt_generator_sec_output: 'Output format',
-	tool_writing_prompt_generator_sec_role: 'Role',
-	tool_writing_prompt_generator_sec_task: 'Task',
-	tool_writing_prompt_generator_status_copied: 'Disalin ke clipboard.',
+	tool_writing_prompt_generator_sec_constraints: 'Batasan',
+	tool_writing_prompt_generator_sec_output: 'Format keluaran',
+	tool_writing_prompt_generator_sec_role: 'Peran',
+	tool_writing_prompt_generator_sec_task: 'Tugas',
+	tool_writing_prompt_generator_status_copied: 'Disalin ke papan klip.',
 	tool_writing_prompt_generator_status_done: 'Prompt siap.',
 	tool_writing_prompt_generator_status_working: 'Membuat prompt…',
 	tool_writing_prompt_generator_title:
@@ -121,33 +123,37 @@ const id: SiteLangDict = {
 		'Gariskan beat skrip pendek secara lokal sebelum membawa prompt ke Gemini untuk table read.',
 	tool_writing_prompt_generator_usecases_title: 'Cocok untuk',
 	tool_writing_prompt_generator_ai_expand:
-		'Expandir con IA',
+		'Perluas dengan AI',
 	tool_writing_prompt_generator_ai_polish:
-		'Pulir con IA',
+		'Perhalus dengan AI',
 	tool_writing_prompt_generator_ai_panel_label:
-		'Cloudflare AI opcional (Turnstile)',
+		'AI Cloudflare opsional (Turnstile)',
 	tool_writing_prompt_generator_ai_consent_title:
-		'¿Enviar texto a Cloudflare Workers AI?',
+		'Kirim teks ke Cloudflare Workers AI?',
 	tool_writing_prompt_generator_ai_consent_body:
-		'Este paso opcional envía tu borrador a Cloudflare Workers AI. No va a OpenAI, Google, Anthropic ni DeepSeek desde nuestros servidores.',
+		'Langkah opsional ini mengirim draf Anda saat ini ke Cloudflare Workers AI untuk diproses. Dari server kami tidak ada yang diteruskan ke OpenAI, Google, Anthropic, atau DeepSeek. Tanpa AI, penyusunan lokal tetap berfungsi.',
 	tool_writing_prompt_generator_ai_consent_ok:
-		'Continuar',
+		'Lanjutkan',
 	tool_writing_prompt_generator_ai_consent_cancel:
-		'Cancelar',
+		'Batal',
 	tool_writing_prompt_generator_ai_working:
-		'Cloudflare AI trabajando…',
+		'AI Cloudflare sedang memproses…',
 	tool_writing_prompt_generator_ai_done:
-		'Sugerencia de IA aplicada. Revisa antes de copiar.',
+		'Teks AI ditulis utuh ke kotak hasil. Periksa dulu sebelum menyalin.',
 	tool_writing_prompt_generator_ai_err_generic:
-		'La IA falló. Tu prompt local no cambió.',
+		'AI gagal. Prompt lokal Anda tidak berubah.',
 	tool_writing_prompt_generator_ai_err_rate:
-		'Cuota de IA agotada. Modo local o prueba mañana (UTC).',
+		'Kuota AI habis. Pakai mode lokal atau coba lagi besok (UTC).',
 	tool_writing_prompt_generator_ai_err_turnstile:
-		'Completa Turnstile antes de usar IA.',
+		'Selesaikan Turnstile sebelum memakai AI.',
 	tool_writing_prompt_generator_faq_q7:
-		'¿Diferencia entre local y Cloudflare AI opcional?',
+		'Bisa dipakai dengan ChatGPT, Gemini, Claude, atau DeepSeek?',
 	tool_writing_prompt_generator_faq_a7:
-		'Local: solo esta pestaña, sin subida. Expand/Polish opcional a Cloudflare Workers AI (Turnstile, límite).',
+		'Bisa. Salin prompt jadi ke ChatGPT, Gemini, Claude, atau DeepSeek. Halaman ini hanya menyiapkan teks, tidak login dan tidak memanggil API apa pun.',
+	tool_writing_prompt_generator_faq_q8:
+		'Apa beda mode lokal dengan AI Cloudflare opsional?',
+	tool_writing_prompt_generator_faq_a8:
+		'Lokal: semuanya disusun di tab ini tanpa pengiriman. Perluas/Perhalus mengirim draf ke Cloudflare Workers AI (Turnstile dan kuota harian), lalu jawabannya menggantikan isi kotak hasil. Kalau gagal atau kuota habis, lanjutkan dengan mode lokal.',
 };
 
 export default id;

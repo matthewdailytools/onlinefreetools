@@ -25,9 +25,9 @@ const de: SiteLangDict = {
 	tool_chatgpt_export_to_markdown_example_title: 'Beispiel',
 	tool_chatgpt_export_to_markdown_faq_a1: 'Nein. Der Export wird in diesem Tab gelesen. Nichts geht zu OpenAI, Anthropic oder unseren Servern.',
 	tool_chatgpt_export_to_markdown_faq_a2: 'Hauptweg ist der ChatGPT-Datenexport mit Mapping-Baum. Flache role/content-Arrays und Claude-chat_messages werden ebenfalls akzeptiert.',
-	tool_chatgpt_export_to_markdown_faq_a3: 'Ja. Claude-chat_messages (sender + text) werden hier absorbiert. Keine zweite URL.',
+	tool_chatgpt_export_to_markdown_faq_a3: 'Ja. Claude-chat_messages-Arrays (sender + text) laufen durch denselben Konverter – ein Einfügen deckt ChatGPT- und Claude-Exporte ab.',
 	tool_chatgpt_export_to_markdown_faq_a4: 'Leere System-Knoten und Tool-Hüllen ohne Text werden übersprungen. Anhänge und Bilder werden nicht als Dateien rekonstruiert.',
-	tool_chatgpt_export_to_markdown_faq_a5: 'Token zählen ist ein anderer Job (zurückgestellt). Dieses H1 ist Export → Markdown.',
+	tool_chatgpt_export_to_markdown_faq_a5: 'Token zählen ist ein anderer Job und steckt nicht in diesem Konverter. Nutzen Sie bei Bedarf einen eigenen Token-Zähler.',
 	tool_chatgpt_export_to_markdown_faq_q1: 'Wird mein Chat hochgeladen?',
 	tool_chatgpt_export_to_markdown_faq_q2: 'Welche Exportformen funktionieren?',
 	tool_chatgpt_export_to_markdown_faq_q3: 'Funktioniert der Claude-Export?',
@@ -53,10 +53,10 @@ const de: SiteLangDict = {
 	tool_chatgpt_export_to_markdown_role_tool: 'Werkzeug',
 	tool_chatgpt_export_to_markdown_role_user: 'Nutzer',
 	tool_chatgpt_export_to_markdown_rules_body:
-		'Export-Umwandlung braucht Feldzuordnung, Markdown als Standard und klare Privatsphäre — keine zweite Converter-URL pro Anbieter.',
+		'Exportkonvertierung braucht eine Feldzuordnung, Markdown als Standard und klare Hinweise zur lokalen Verarbeitung.',
 	tool_chatgpt_export_to_markdown_rules_item_1: 'Standardausgabe ist Markdown mit ## Nutzer / ## Assistent und optionalem # Titel.',
 	tool_chatgpt_export_to_markdown_rules_item_2: 'ChatGPT-Mapping-Bäume, flache Arrays und Claude-chat_messages werden auf einer Seite geparst.',
-	tool_chatgpt_export_to_markdown_rules_item_3: 'JSON- und CSV-Chips geben dieselben Turns aus. Das H1 ändert sich nicht.',
+	tool_chatgpt_export_to_markdown_rules_item_3: 'JSON- und CSV-Chips geben dieselben Turns für Pipelines oder Tabellen erneut aus.',
 	tool_chatgpt_export_to_markdown_rules_item_4: 'Anbieterformate ändern sich. Bei Fehlern Roh-JSON einfügen und die FAQ prüfen.',
 	tool_chatgpt_export_to_markdown_rules_title: 'Regeln, die Sie erwarten sollten',
 	tool_chatgpt_export_to_markdown_status_copied: 'In die Zwischenablage kopiert.',
@@ -65,7 +65,7 @@ const de: SiteLangDict = {
 	tool_chatgpt_export_to_markdown_title: 'ChatGPT Export zu Markdown',
 	tool_chatgpt_export_to_markdown_usecase_1: 'Archivieren Sie den ChatGPT-Export von heute als Markdown, bevor Sie den Thread löschen.',
 	tool_chatgpt_export_to_markdown_usecase_2: 'Wechseln Sie zu CSV, wenn Sie role/content-Spalten für eine Tabelle brauchen.',
-	tool_chatgpt_export_to_markdown_usecase_3: 'Legen Sie Claude-chat_messages-JSON auf derselben Seite ab — kein zweites Tool.',
+	tool_chatgpt_export_to_markdown_usecase_3: 'Legen Sie Claude-chat_messages-JSON hier ab; derselbe Konverter mappt die Turns nach Markdown.',
 	tool_chatgpt_export_to_markdown_usecases_title: 'Gute Einsätze',
 };
 

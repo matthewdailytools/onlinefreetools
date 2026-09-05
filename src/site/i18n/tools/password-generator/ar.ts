@@ -49,7 +49,7 @@ const ar: SiteLangDict = {
   tool_password_generator_rules_item_1:
     'مجموعات: A–Z، a–z، 0–9 ورموز افتراضية. يجب أن تبقى مجموعة واحدة على الأقل بعد التبديل والاستبعاد.',
   tool_password_generator_rules_item_2:
-    'الفهرس العشوائي يستخدم بايتات crypto.getRandomValues — أبدًا Math.random.',
+    'الفهرس العشوائي يعتمد على بايتات crypto.getRandomValues لا على Math.random، ويجري تجاهل البايتات التي تُحدث انحيازًا في باقي القسمة، فتبقى احتمالية كل حرف في المجموعة متساوية.',
   tool_password_generator_rules_item_3:
     'ليس فرض تركيب NIST (بلا قاعدة «واحد من كل فئة»). فعّل المجموعات يدويًا.',
   tool_password_generator_rules_item_4:

@@ -1,82 +1,83 @@
 /**
  * i18n tool shard (ios-prompt-builder / fr).
- * 检索向独立重写；title 含「本地 + 可选 AI」；description 含本地默认与 Cloudflare AI Expand/Polish + Turnstile。
+ * Recherches locales : « générateur de prompt iOS », « prompt ChatGPT développement iOS ». Terme principal dans le H1 ; termes secondaires (stack Swift, SwiftUI, HIG, VoiceOver, export JSON) dans la description, la FAQ et les cas d’usage.
+ * Limites réelles : assemblage dans le navigateur sans requête ; Développer/Peaufiner envoie le brouillon à Cloudflare Workers AI (Turnstile, quota) et la réponse remplace toute la zone de résultat.
  */
 import type { SiteLangDict } from '../../../types';
 
 const fr: SiteLangDict = {
 	tool_ios_prompt_builder_article:
-		'Constructeur de prompts iOS — Local + IA optionnelle pour ChatGPT, Gemini, Claude et DeepSeek : assemblage local par défaut, puis Expand/Polish optionnel via Cloudflare Workers AI (Turnstile requis, quota). L’exemple s’exécute à l’ouverture. Markdown par défaut ; JSON pour pipelines. Le texte reste sur l’appareil sauf IA.',
+		'Mettez un besoin iOS sous forme de prompt prêt à coller : décrivez la fonctionnalité, la stack Swift, l’écran en SwiftUI et les règles d’accessibilité des HIG ; la page assemble le texte en Markdown ou en JSON directement dans le navigateur. Par défaut aucune requête ne part ; seul un clic sur Développer ou Peaufiner transmet le brouillon en cours à Cloudflare Workers AI (Turnstile requis, usage plafonné).',
 	tool_ios_prompt_builder_build:
-		'Créer le prompt',
+		'Générer le prompt',
 	tool_ios_prompt_builder_clear:
 		'Effacer',
 	tool_ios_prompt_builder_copy:
 		'Copier',
 	tool_ios_prompt_builder_desc:
-		'Constructeur de prompts iOS — local por defecto + Expand/Polish opcional Cloudflare AI (Turnstile); Markdown/JSON en el dispositivo.',
+		'Générateur de prompts iOS : renseignez la fonctionnalité, la stack Swift, l’écran SwiftUI et les règles des HIG ; le texte est assemblé dans le navigateur en Markdown ou JSON, IA en option.',
 	tool_ios_prompt_builder_description:
-		'Processus et exemple : Constructeur de prompts iOS — Local + IA opcional para ChatGPT, Gemini, Claude y DeepSeek: ensambla prompts localmente por defecto y opcionalmente Expand/Polish con Cloudflare Workers AI (Turnstile obligatorio, límite de uso). Ejemplo al abrir. Markdown por defecto; JSON para pipelines. Texto en el dispositivo salvo que uses IA.',
+		'Générateur de prompts iOS : indiquez la fonctionnalité, la stack (Swift 5.10, SwiftUI, iOS 17+, SwiftData), l’écran et les règles d’accessibilité des HIG, et la page les range en blocs Role / Task / Constraints / Output, en Markdown ou en JSON, sans quitter le navigateur. Exemple : « tendance hebdomadaire des pas HealthKit et plage de fréquence au repos » ressort avec Dynamic Type jusqu’à XXL et des libellés VoiceOver sur les points du graphique. Charger l’exemple remplit le préréglage et monte le prompt ; Développer ou Peaufiner via Cloudflare Workers AI reste optionnel (Turnstile, quota).',
 	tool_ios_prompt_builder_download:
 		'Télécharger',
 	tool_ios_prompt_builder_empty:
-		'Remplissez au moins un champ avant de créer.',
+		'Renseignez au moins un champ avant de générer.',
 	tool_ios_prompt_builder_example:
-		'Entrée : Feature = HealthKit pas + FC ; Stack = Swift 5.10, SwiftUI ; UI = NavigationStack + Charts ; HIG = Dynamic Type, VoiceOver. Sortie (Markdown) : ## Task → Feature / Swift / SwiftUI / HIG.',
+		'Entrée : Fonctionnalité = tendance hebdomadaire des pas HealthKit et plage de fréquence au repos, autorisations expliquées en langage clair ; Stack = Swift 5.10, SwiftUI, iOS 17+, async/await, cache SwiftData ; Écran = NavigationStack et Charts, feuille d’autorisation avant la première requête ; HIG = Dynamic Type jusqu’à XXL, libellés VoiceOver sur les points du graphique, pas de force-unwrap. Sortie (Markdown) : ## Role décrit le profil d’ingénieure iOS confirmée, ## Task reprend une ligne par champ.',
 	tool_ios_prompt_builder_example_title:
 		'Exemple',
 	tool_ios_prompt_builder_faq_a1:
-		'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
+		'Par défaut, non. Remplir les champs et cliquer sur Générer le prompt se passe uniquement dans cet onglet, sans requête. Le brouillon ne part que si vous cliquez sur Développer ou Peaufiner, et il va alors vers Cloudflare Workers AI ; nos serveurs ne le relaient pas vers OpenAI, Google, Anthropic ou DeepSeek.',
 	tool_ios_prompt_builder_faq_a2:
-		'Modo local solo formatea aquí. Expand/Polish opcional usa Cloudflare Workers AI tras Turnstile — no llama APIs de chat.',
+		'Non. Le mode local se contente de mettre vos champs en forme dans les blocs Role / Task / Constraints / Output. L’IA optionnelle passe par Cloudflare Workers AI après Turnstile, pas par les API de ChatGPT, Gemini, Claude ou DeepSeek.',
 	tool_ios_prompt_builder_faq_a3:
-		'Constructeur de prompts iOS covers generic Role/Task/Constraints/Output templates. This page focuses on ios prompt builder fields with a dedicated sample and rules for this scenario.',
+		'Le générateur de modèles de prompts fournit les quatre blocs génériques Role / Task / Constraints / Output, valables pour n’importe quel sujet. Ici les champs sont déjà ceux d’un projet iOS : fonctionnalité, stack Swift, navigation et graphiques en SwiftUI, règles des HIG sur Dynamic Type et VoiceOver, avec un exemple et des limites propres à ce cas.',
 	tool_ios_prompt_builder_faq_a4:
-		'Sí. Completa Turnstile en el panel de IA antes de Expand o Polish.',
+		'Oui. Validez le widget Turnstile du panneau IA avant de cliquer sur Développer ou Peaufiner. Sans jeton valide, les boutons renvoient une erreur et le mode local reste utilisable.',
 	tool_ios_prompt_builder_faq_a5:
-		'Yes. The JSON chip emits structured fields plus assembled prompt text for tests or config pipelines.',
+		'Oui. Passez le format de sortie sur JSON : vous récupérez chaque champ séparément plus le prompt assemblé, exploitable dans des cas XCTest ou une chaîne de configuration.',
 	tool_ios_prompt_builder_faq_a6:
-		'Yes. Copy the finished prompt into ChatGPT, Gemini, Claude, or DeepSeek. We do not split URLs per platform because the job is formatting text, not calling APIs.',
+		'Oui. Le résultat est du texte brut : copiez-le puis collez-le dans ChatGPT, Gemini, Claude ou DeepSeek. La page n’appelle pas ces API à votre place.',
 	tool_ios_prompt_builder_faq_q1:
-		'Is my prompt uploaded?',
+		'Ce que je saisis est-il envoyé quelque part ?',
 	tool_ios_prompt_builder_faq_q2:
-		'Does this call ChatGPT or other LLM APIs?',
+		'La page appelle-t-elle l’API de ChatGPT ou d’un autre modèle ?',
 	tool_ios_prompt_builder_faq_q3:
-		'How is this different from Constructeur de prompts iOS?',
+		'Quelle différence avec le générateur de modèles de prompts ?',
 	tool_ios_prompt_builder_faq_q4:
-		'¿Por qué Turnstile para IA opcional?',
+		'Pourquoi l’IA optionnelle demande-t-elle Turnstile ?',
 	tool_ios_prompt_builder_faq_q5:
-		'Can I get JSON output?',
+		'Puis-je exporter en JSON ?',
 	tool_ios_prompt_builder_faq_q6:
-		'Can I use this with ChatGPT, Gemini, Claude, or DeepSeek?',
+		'Est-ce utilisable avec ChatGPT, Gemini, Claude ou DeepSeek ?',
 	tool_ios_prompt_builder_faq_q7:
-		'¿Diferencia entre local y Cloudflare AI opcional?',
+		'Qu’est-ce qui change entre le mode local et l’IA Cloudflare ?',
 	tool_ios_prompt_builder_faq_a7:
-		'Local: solo esta pestaña, sin subida. Expand/Polish opcional a Cloudflare Workers AI (Turnstile, límite).',
+		'Le mode local se limite à ranger vos champs : aucune requête, aucun quota. Développer ou Peaufiner envoie le brouillon à Cloudflare Workers AI (Turnstile obligatoire, usage limité) et le texte renvoyé remplace entièrement la zone de résultat — relisez-le avant de copier. En cas d’échec ou de quota atteint, restez en mode local.',
 	tool_ios_prompt_builder_ai_expand:
-		'Expandir con IA',
+		'Développer avec l’IA',
 	tool_ios_prompt_builder_ai_polish:
-		'Pulir con IA',
+		'Peaufiner avec l’IA',
 	tool_ios_prompt_builder_ai_panel_label:
-		'Cloudflare AI opcional (Turnstile)',
+		'IA Cloudflare en option (Turnstile)',
 	tool_ios_prompt_builder_ai_consent_title:
-		'¿Enviar texto a Cloudflare Workers AI?',
+		'Envoyer le brouillon à Cloudflare Workers AI ?',
 	tool_ios_prompt_builder_ai_consent_body:
-		'Este paso opcional envía tu borrador a Cloudflare Workers AI. No va a OpenAI, Google, Anthropic ni DeepSeek desde nuestros servidores.',
+		'Étape optionnelle : votre brouillon actuel est envoyé à Cloudflare Workers AI pour l’inférence. Nos serveurs ne le transmettent pas à OpenAI, Google, Anthropic ni DeepSeek. Sans IA, l’assemblage dans le navigateur fonctionne toujours.',
 	tool_ios_prompt_builder_ai_consent_ok:
-		'Continuar',
+		'Continuer',
 	tool_ios_prompt_builder_ai_consent_cancel:
-		'Cancelar',
+		'Annuler',
 	tool_ios_prompt_builder_ai_working:
-		'Cloudflare AI trabajando…',
+		'Cloudflare AI travaille…',
 	tool_ios_prompt_builder_ai_done:
-		'Sugerencia de IA aplicada. Revisa antes de copiar.',
+		'Le texte de l’IA a remplacé le résultat. Relisez avant de copier.',
 	tool_ios_prompt_builder_ai_err_generic:
-		'La IA falló. Tu prompt local no cambió.',
+		'Échec de l’IA ; le résultat est inchangé.',
 	tool_ios_prompt_builder_ai_err_rate:
-		'Cuota de IA agotada. Modo local o prueba mañana (UTC).',
+		'Quota d’IA atteint. Restez en local ou revenez demain (UTC).',
 	tool_ios_prompt_builder_ai_err_turnstile:
-		'Completa Turnstile antes de usar IA.',
+		'Validez Turnstile avant d’utiliser l’IA.',
 	tool_ios_prompt_builder_fmt_json:
 		'JSON',
 	tool_ios_prompt_builder_fmt_label:
@@ -84,77 +85,77 @@ const fr: SiteLangDict = {
 	tool_ios_prompt_builder_fmt_md:
 		'Markdown',
 	tool_ios_prompt_builder_feature_spec_label:
-		'Feature / Spec',
+		'Fonctionnalité / Spéc.',
 	tool_ios_prompt_builder_feature_spec_ph:
-		'Sample feature spec…',
+		'Ex. : tendance des pas et fréquence au repos…',
 	tool_ios_prompt_builder_swift_stack_label:
-		'Swift / Stack',
+		'Swift / Stack technique',
 	tool_ios_prompt_builder_swift_stack_ph:
-		'Sample swift stack…',
+		'Ex. : Swift 5.10, SwiftUI, iOS 17+, SwiftData…',
 	tool_ios_prompt_builder_swiftui_ui_label:
-		'Swiftui / Ui',
+		'SwiftUI / Écran',
 	tool_ios_prompt_builder_swiftui_ui_ph:
-		'Sample swiftui ui…',
+		'Ex. : NavigationStack, Charts, feuille d’autorisation…',
 	tool_ios_prompt_builder_hig_constraints_label:
-		'Hig / Constraints',
+		'HIG / Accessibilité',
 	tool_ios_prompt_builder_hig_constraints_ph:
-		'Sample hig constraints…',
+		'Ex. : Dynamic Type XXL, VoiceOver, pas de force-unwrap…',
 	tool_ios_prompt_builder_how_body:
-		'Fill Constructeur de prompts iOS fields, build a prompt locally, optionally Expand/Polish with Turnstile, then paste into ChatGPT, Gemini, Claude, or DeepSeek.',
+		'Remplissez les quatre champs, laissez la page assembler le Markdown (ou le JSON) dans le navigateur, puis demandez si besoin un développement à Cloudflare AI avant de coller le prompt dans votre chat.',
 	tool_ios_prompt_builder_how_item_1:
-		'Load sample already ran the default preset on first paint.',
+		'Cliquez sur Charger l’exemple : le préréglage se remplit et un prompt est monté, partez de là.',
 	tool_ios_prompt_builder_how_item_2:
-		'Edit fields, click Build prompt, or switch to JSON if you need structured export.',
+		'Modifiez fonctionnalité, stack, écran et règles des HIG puis cliquez sur Générer le prompt ; basculez en JSON pour exporter les champs.',
 	tool_ios_prompt_builder_how_item_3:
-		'Optional: complete Turnstile, then Expand or Polish via Cloudflare Workers AI.',
+		'Facultatif : validez Turnstile puis cliquez sur Développer ou Peaufiner — le texte de l’IA occupe alors la zone de résultat.',
 	tool_ios_prompt_builder_how_item_4:
-		'Copy or download, then paste into ChatGPT, Gemini, Claude, or DeepSeek.',
+		'Copiez ou téléchargez le résultat, puis collez-le dans ChatGPT, Gemini, Claude ou DeepSeek.',
 	tool_ios_prompt_builder_how_title:
-		'Comment ça marche',
+		'Mode d’emploi',
 	tool_ios_prompt_builder_load_sample:
-		'Charger un exemple',
+		'Charger l’exemple',
 	tool_ios_prompt_builder_platforms_lead:
-		'Pour ChatGPT, Gemini, Claude et DeepSeek — copiez le prompt fini dans n’importe quel chat.',
+		'Le prompt final est du texte brut : il se colle tel quel dans ChatGPT, Gemini, Claude ou DeepSeek.',
 	tool_ios_prompt_builder_result_label:
-		'Sortie du prompt',
+		'Prompt produit',
 	tool_ios_prompt_builder_rules_body:
-		'Swift/SwiftUI/HIG fields for iOS agent prompts. Local assembly is default; optional AI is rate-limited and requires Turnstile.',
+		'La page se limite à mettre le besoin en forme : elle ne compile rien et ne lance pas Xcode. L’IA optionnelle est plafonnée et exige Turnstile.',
 	tool_ios_prompt_builder_rules_item_1:
-		'Structured fields map to Role/Task/Constraints/Output blocks in Markdown export.',
+		'Chaque champ alimente un bloc distinct du Markdown : Role, Task, Constraints, Output.',
 	tool_ios_prompt_builder_rules_item_2:
-		'Default export is Markdown. JSON is a chip on the same canvas.',
+		'La sortie par défaut est Markdown ; la même zone peut afficher le JSON avec les champs et le prompt assemblé.',
 	tool_ios_prompt_builder_rules_item_3:
-		'Optional Cloudflare AI never replaces local mode — review AI output before copying.',
+		'L’IA Cloudflare ne remplace pas le mode local : sa réponse occupe toute la zone de résultat, relisez-la avant de copier.',
 	tool_ios_prompt_builder_rules_item_4:
-		'This tool assembles text only; it does not run ios prompt builder engines or call chat APIs locally.',
+		'L’outil assemble seulement du texte : il ne compile pas Swift, ne lance pas Xcode et n’appelle pas les API de chat pour vous.',
 	tool_ios_prompt_builder_rules_title:
-		'Règles à connaître',
+		'Limites à connaître',
 	tool_ios_prompt_builder_sec_constraints:
 		'Constraints',
 	tool_ios_prompt_builder_sec_output:
-		'Output format',
+		'Output',
 	tool_ios_prompt_builder_sec_role:
 		'Role',
 	tool_ios_prompt_builder_sec_task:
 		'Task',
 	tool_ios_prompt_builder_status_copied:
-		'Copié.',
+		'Copié dans le presse-papiers.',
 	tool_ios_prompt_builder_status_done:
 		'Prompt prêt.',
 	tool_ios_prompt_builder_status_working:
-		'Création du prompt…',
+		'Assemblage du prompt…',
 	tool_ios_prompt_builder_title:
-		'Constructeur de prompts iOS — Local + IA optionnelle',
+		'Générateur de prompts iOS — local, avec IA en option',
 	tool_ios_prompt_builder_usecase_1:
-		'Ship a paste-ready ios prompt builder brief for your team chat in ChatGPT, Gemini, Claude, or DeepSeek.',
+		'Reprendre le besoin exposé en revue de conception sous forme de prompt collable dans le chat de l’équipe.',
 	tool_ios_prompt_builder_usecase_2:
-		'Export JSON for a pipeline test, then refine with optional Cloudflare AI after Turnstile.',
+		'Exporter le JSON pour transformer les règles d’accessibilité en liste de vérification, puis développer via Cloudflare AI si nécessaire.',
 	tool_ios_prompt_builder_usecase_3:
-		'Compare with Prompt template builder when you need generic four-field templates instead of this scenario.',
+		'Si les champs iOS sont inutiles et qu’un modèle générique à quatre blocs suffit, passez au générateur de modèles de prompts.',
 	tool_ios_prompt_builder_usecase_4:
-		'Keep sensitive draft text local — only opt into AI when you accept the consent modal.',
+		'Rédiger dans le navigateur la description d’une fonctionnalité non annoncée, puis décider si elle part vers l’IA optionnelle.',
 	tool_ios_prompt_builder_usecases_title:
-		'Bonnes utilisations',
+		'Quand c’est utile',
 };
 
 export default fr;

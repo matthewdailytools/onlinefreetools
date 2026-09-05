@@ -14,7 +14,7 @@ const en: SiteLangDict = {
 	tool_chatgpt_export_to_markdown_desc:
 		'Convert a ChatGPT export to Markdown (JSON/CSV chips) — stays on your device, not uploaded.',
 	tool_chatgpt_export_to_markdown_description:
-		'ChatGPT export to Markdown: drop or paste an export JSON, map user/assistant turns, and download Markdown. Example: the sample conversation becomes Markdown on first paint. JSON and CSV are output chips. Claude chat_messages exports are detected on the same page. Files stay on your device and are not uploaded to a server. This is not a token counter and not a cloud sync tool.',
+		'ChatGPT export to Markdown: drop or paste an export JSON, map user/assistant turns, and download Markdown. Example: Load sample turns a short conversation into Markdown. JSON and CSV are output chips. Claude chat_messages exports are detected on the same page. Files stay on your device and are not uploaded to a server. This is not a token counter and not a cloud sync tool.',
 	tool_chatgpt_export_to_markdown_download: 'Download',
 	tool_chatgpt_export_to_markdown_drop_hint: 'Drop a conversations JSON or paste below. Parsing stays in this tab.',
 	tool_chatgpt_export_to_markdown_empty: 'Paste or choose an export file first.',
@@ -28,11 +28,11 @@ const en: SiteLangDict = {
 	tool_chatgpt_export_to_markdown_faq_a2:
 		'ChatGPT data-export conversations with a mapping tree are the main path. Flat role/content arrays and Claude chat_messages are also accepted.',
 	tool_chatgpt_export_to_markdown_faq_a3:
-		'Yes. Claude-style chat_messages (sender + text) are absorbed here. There is no second URL.',
+		'Yes. Claude-style chat_messages arrays (sender + text) are parsed by the same converter, so one paste handles both ChatGPT and Claude exports.',
 	tool_chatgpt_export_to_markdown_faq_a4:
 		'Empty system nodes and tool shells without text are skipped. Attachments and images are not reconstructed as files.',
 	tool_chatgpt_export_to_markdown_faq_a5:
-		'Token counting is a different job (deferred). Keep this H1 on export → Markdown.',
+		'Token counting is a different job and is not built into this converter. Use a dedicated token counter when you need it.',
 	tool_chatgpt_export_to_markdown_faq_q1: 'Is my chat uploaded?',
 	tool_chatgpt_export_to_markdown_faq_q2: 'Which export shapes work?',
 	tool_chatgpt_export_to_markdown_faq_q3: 'Does Claude export work here?',
@@ -48,7 +48,7 @@ const en: SiteLangDict = {
 		'Get a ChatGPT data export (or Claude JSON) — the job is ChatGPT export to Markdown.',
 	tool_chatgpt_export_to_markdown_how_item_2: 'Drop the file or paste the JSON into the box.',
 	tool_chatgpt_export_to_markdown_how_item_3: 'Leave Markdown selected unless you need the JSON or CSV chip.',
-	tool_chatgpt_export_to_markdown_how_item_4: 'Copy or download. Load sample already ran on first paint.',
+	tool_chatgpt_export_to_markdown_how_item_4: 'Copy or download. Click Load sample to fill the demo.',
 	tool_chatgpt_export_to_markdown_how_title: 'How it works',
 	tool_chatgpt_export_to_markdown_input_label: 'Export JSON',
 	tool_chatgpt_export_to_markdown_input_ph: 'Paste conversations JSON here…',
@@ -59,13 +59,13 @@ const en: SiteLangDict = {
 	tool_chatgpt_export_to_markdown_role_tool: 'Tool',
 	tool_chatgpt_export_to_markdown_role_user: 'User',
 	tool_chatgpt_export_to_markdown_rules_body:
-		'Export conversion needs a field map, a Markdown default, and clear privacy — not a second converter URL per vendor.',
+		'Export conversion needs a field map, a Markdown default, and clear privacy about local processing.',
 	tool_chatgpt_export_to_markdown_rules_item_1:
 		'Default output is Markdown with ## User / ## Assistant sections and an optional # title.',
 	tool_chatgpt_export_to_markdown_rules_item_2:
 		'ChatGPT mapping trees, flat role/content arrays, and Claude chat_messages are parsed on one page.',
 	tool_chatgpt_export_to_markdown_rules_item_3:
-		'JSON and CSV chips re-emit the same turns. They do not change the H1.',
+		'JSON and CSV chips re-emit the same turns for pipelines or spreadsheets.',
 	tool_chatgpt_export_to_markdown_rules_item_4:
 		'Vendor formats change. If parsing fails, paste the raw JSON and check the mapping FAQ.',
 	tool_chatgpt_export_to_markdown_rules_title: 'Rules you should expect',
@@ -78,7 +78,7 @@ const en: SiteLangDict = {
 	tool_chatgpt_export_to_markdown_usecase_2:
 		'Switch to CSV when you need role/content columns for a spreadsheet.',
 	tool_chatgpt_export_to_markdown_usecase_3:
-		'Drop a Claude chat_messages JSON on the same page — no second tool.',
+		'Drop a Claude chat_messages JSON here; the same converter maps those turns to Markdown.',
 	tool_chatgpt_export_to_markdown_usecases_title: 'Good fits',
 };
 

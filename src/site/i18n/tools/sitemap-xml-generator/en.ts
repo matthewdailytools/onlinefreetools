@@ -7,10 +7,10 @@ import type { SiteLangDict } from '../../../types';
 const en: SiteLangDict = {
 	tool_sitemap_home_title: 'XML Sitemap Generator',
 	tool_sitemap_home_desc:
-		'Help Google discover and index every page you want ranked — turn a URL list into a valid sitemap.xml with lastmod, changefreq and priority in your browser.',
+		'Help Google discover the pages your internal links miss — turn a URL list into a valid sitemap.xml with lastmod, changefreq and priority in your browser.',
 	tool_sitemap_title: 'XML Sitemap Generator — Create sitemap.xml From URLs',
 	tool_sitemap_description:
-		'A sitemap helps Google discover and index pages faster. Paste https URLs, preview valid sitemap.xml, copy to root. Example: three URLs → three entries.',
+		'A sitemap tells Google which URLs exist, especially ones weak internal linking hides. Paste https URLs, preview valid sitemap.xml, copy to root. Example: three URLs → three entries.',
 	tool_sitemap_generate: 'Generate',
 	tool_sitemap_sample: 'Load sample',
 	tool_sitemap_clear: 'Clear',
@@ -46,7 +46,7 @@ const en: SiteLangDict = {
 	tool_sitemap_usecase_1:
 		'New sites: generate a first sitemap.xml from your URL list and submit it in Search Console.',
 	tool_sitemap_usecase_2:
-		'Updated content: add lastmod for pages that changed recently so crawlers can pick up the freshness signal.',
+		'Updated content: add lastmod for pages that really changed. Google uses lastmod only when it is consistently accurate across the file, so a blanket today for every URL makes it ignore the field.',
 	tool_sitemap_usecase_3:
 		'Discovery: point robots.txt at your sitemap URL so crawlers find it without waiting for a submission.',
 	tool_sitemap_faq_q1: 'What is the URL limit for one sitemap?',

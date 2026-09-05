@@ -88,10 +88,10 @@
 
 ## 交互规格（给实现用）
 
-- 输入：两个 file，accept `.docx`
+- 输入：两个 file，accept `.docx`；解析前按完整 `.docx` 后缀校验，拒绝 `report.docx.exe` 一类伪装名称
 - 输出：抽出的纯文本 diff 高亮
 - 核心：mammoth extractRawText → jsdiff
-- 失败：非 docx、加密/损坏、无文本、库失败
+- 失败：后缀不是 `.docx`、加密/损坏、无可抽取文本、库失败
 - **进页样例**：内存生成两份最小 OOXML 再 mammoth+diff
 - **实现防呆**：opts；`\\w`
 

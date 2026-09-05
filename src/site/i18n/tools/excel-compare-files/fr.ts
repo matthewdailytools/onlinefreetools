@@ -16,7 +16,7 @@ const fr: SiteLangDict = {
 	tool_excel_compare_files_desc:
 		'Comparer des fichiers Excel : deux tableurs, feuille courante cellule par cellule — restent sur l’appareil, sans envoi au serveur.',
 	tool_excel_compare_files_description:
-		'Comparer des fichiers Excel dans le navigateur. Processus : choisissez deux xlsx ou csv, prenez la feuille courante (la première par défaut), puis listez les cellules dont la valeur diffère. Les fichiers restent sur l’appareil et ne sont pas envoyés au serveur. Exemple : deux tableaux de 3 lignes où B3 passe de 2 à 9. « En ligne » décrit le fonctionnement, pas le titre. Un décalage de colonnes se compare par adresse, pas par nom d’en-tête.',
+		'Comparer des fichiers Excel dans le navigateur. Processus : choisissez deux xlsx ou csv, prenez la feuille courante (la première par défaut), puis listez les cellules dont la valeur diffère. Les fichiers restent sur l’appareil et ne sont pas envoyés au serveur. Exemple : deux tableaux de 3 lignes où B3 passe de 2 à 9. Un décalage de colonnes se compare par adresse, pas par nom d’en-tête.',
 	tool_excel_compare_files_empty: 'Choisissez d’abord deux fichiers tableur, ou chargez l’exemple.',
 	tool_excel_compare_files_err_read:
 		'Impossible de lire le tableur. Essayez xlsx ou csv, et déverrouillez d’abord un classeur protégé.',
@@ -28,9 +28,11 @@ const fr: SiteLangDict = {
 	tool_excel_compare_files_faq_a2:
 		'Oui : la première feuille est sélectionnée par défaut. Utilisez les listes si vous voulez un autre onglet du même fichier. Les autres feuilles ne sont comparées que lorsqu’on les choisit.',
 	tool_excel_compare_files_faq_a3:
-		'Oui. Le CSV est lu comme une seule feuille. Chercher « comparer deux csv » reste cette page, sans autre URL.',
+		"Oui. Le CSV est lu comme une seule feuille : vous pouvez comparer deux CSV ou un export CSV avec une feuille Excel selon l’adresse des cellules.",
 	tool_excel_compare_files_faq_a4:
 		'Cellules absentes et vides sont une chaîne vide. Une colonne décalée aligne encore A1 avec A1, pas « la colonne Name » par en-tête, pour éviter les appariements silencieux si les titres bougent.',
+	tool_excel_compare_files_faq_q5: "Compare-t-il les formules et la mise en forme ou seulement les valeurs affichées ?",
+	tool_excel_compare_files_faq_a5: "Il compare le texte affiché lu dans chaque cellule. Formules, styles, commentaires, largeurs de colonne et structure du classeur ne sont pas comparés séparément ; une formule modifiée avec la même valeur en cache peut sembler identique.",
 	tool_excel_compare_files_faq_q1: 'Mes fichiers Excel sont-ils envoyés ?',
 	tool_excel_compare_files_faq_q2: 'Compare-t-on seulement la première feuille ?',
 	tool_excel_compare_files_faq_q3: 'Puis-je comparer deux CSV ici ?',
@@ -40,7 +42,7 @@ const fr: SiteLangDict = {
 	tool_excel_compare_files_how_item_1: 'Choisir le premier tableur (xlsx, xls ou csv).',
 	tool_excel_compare_files_how_item_2: 'Choisir le second tableur.',
 	tool_excel_compare_files_how_item_3: 'Laisser la première feuille, sauf si un autre onglet est nécessaire.',
-	tool_excel_compare_files_how_item_4: 'Comparer liste les cellules différentes ; Charger l’exemple a déjà tourné à l’ouverture.',
+	tool_excel_compare_files_how_item_4: "Cliquez sur Comparer pour lister les cellules dont le texte affiché diffère entre les deux feuilles choisies.",
 	tool_excel_compare_files_how_title: 'Mode d’emploi',
 	tool_excel_compare_files_label_a: 'Premier tableur',
 	tool_excel_compare_files_label_b: 'Second tableur',

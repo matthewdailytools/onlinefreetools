@@ -7,7 +7,7 @@ import type { SiteLangDict } from '../../../types';
 const en: SiteLangDict = {
 	tool_json_diff_checker_online_article:
 		'Paste two JSON values and list path-level adds, deletes, and changes. Key order is ignored by default. Paste stays on your device and is not uploaded. YAML and XML are not parsed here.',
-	tool_json_diff_checker_online_array_as_set: 'Treat arrays as sets (order ignored)',
+	tool_json_diff_checker_online_array_as_set: "Ignore array order (duplicates still count)",
 	tool_json_diff_checker_online_clear: 'Clear',
 	tool_json_diff_checker_online_compare: 'Compare',
 	tool_json_diff_checker_online_desc:
@@ -25,9 +25,9 @@ const en: SiteLangDict = {
 	tool_json_diff_checker_online_faq_a2:
 		'By default, {"a":1,"b":2} and {"b":2,"a":1} are treated as the same object. Turn off “Ignore key order” if you care about the written order of keys.',
 	tool_json_diff_checker_online_faq_a3:
-		'Arrays are lists by index. [1,2] vs [2,1] is a change. Enable “Treat arrays as sets” only when order should not matter.',
+		"Arrays compare by index by default. When order is ignored, normalized items are sorted, duplicates still count, and reported indexes refer to that sorted order. Objects are not matched by an id field.",
 	tool_json_diff_checker_online_faq_a4:
-		'People also search json diff checker without “online”. Same job. YAML or XML needs another page (convert YAML first if you must).',
+		"Only valid JSON is parsed. YAML and XML syntax is not accepted; convert YAML to JSON first or use a format-specific comparer.",
 	tool_json_diff_checker_online_faq_q1: 'Is my JSON uploaded?',
 	tool_json_diff_checker_online_faq_q2: 'Does key order count as a difference?',
 	tool_json_diff_checker_online_faq_q3: 'How are arrays compared?',
@@ -37,7 +37,7 @@ const en: SiteLangDict = {
 	tool_json_diff_checker_online_how_item_1: 'Paste the original JSON on the left.',
 	tool_json_diff_checker_online_how_item_2: 'Paste the revised JSON on the right.',
 	tool_json_diff_checker_online_how_item_3: 'Leave Ignore key order on unless you need written key order.',
-	tool_json_diff_checker_online_how_item_4: 'Compare lists paths; Load sample already ran on first paint.',
+	tool_json_diff_checker_online_how_item_4: "Select Compare to list added, removed, and changed paths under the current options.",
 	tool_json_diff_checker_online_how_title: 'How it works',
 	tool_json_diff_checker_online_ignore_keys: 'Ignore object key order',
 	tool_json_diff_checker_online_label_a: 'Original JSON',
@@ -55,7 +55,7 @@ const en: SiteLangDict = {
 	tool_json_diff_checker_online_rules_item_2:
 		'Ignore key order (default on) sorts object keys before walking paths.',
 	tool_json_diff_checker_online_rules_item_3:
-		'Arrays are index lists unless you treat them as sets (then elements are sorted by JSON stringify).',
+		"Ignoring array order sorts normalized items but keeps duplicates. Result indexes then refer to sorted comparison order, not original positions.",
 	tool_json_diff_checker_online_rules_item_4:
 		'YAML and XML are not parsed. Convert YAML on the related YAML ↔ JSON page first if needed.',
 	tool_json_diff_checker_online_rules_title: 'Rules you should expect',

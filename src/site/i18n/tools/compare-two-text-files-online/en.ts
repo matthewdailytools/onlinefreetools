@@ -12,10 +12,11 @@ const en: SiteLangDict = {
 	tool_compare_two_text_files_online_desc:
 		'Compare two text files online: pick two .txt files, see line diffs in the browser — nothing is uploaded.',
 	tool_compare_two_text_files_online_description:
-		'Compare two text files online in your browser. Process: choose the original file and the revised file, decode as UTF-8 (BOM is stripped), reject binary bytes, then highlight line adds and deletes. Files stay on your device and are not uploaded. Example: notes-a.txt vs notes-b.txt where only the middle line changes. Word, Excel, and JSON have other pages; this page is text files only.',
+		"Compare two text files online in your browser. Choose the original and revised .txt files; each is decoded strictly as UTF-8, its leading BOM is removed, and invalid encoding or binary content is rejected before line additions and deletions are highlighted. Files stay on your device and are not uploaded to a server. Example: notes-a.txt and notes-b.txt differ only on the middle line. Word, spreadsheet, and structured JSON files are not parsed.",
 	tool_compare_two_text_files_online_empty: 'Choose two text files first, or load the sample.',
 	tool_compare_two_text_files_online_err_binary:
 		'One file looks binary (null bytes). This page only compares plain text such as .txt.',
+	tool_compare_two_text_files_online_err_encoding: "A file is not valid UTF-8. Save or convert it as UTF-8, then compare again.",
 	tool_compare_two_text_files_online_err_too_large:
 		'A file is larger than about 1 MB. Try a shorter excerpt so the tab stays responsive.',
 	tool_compare_two_text_files_online_example:
@@ -24,11 +25,11 @@ const en: SiteLangDict = {
 	tool_compare_two_text_files_online_faq_a1:
 		'No. Bytes are read in this tab with FileReader. jsdiff may load from a CDN as library code; your files are not uploaded to our servers.',
 	tool_compare_two_text_files_online_faq_a2:
-		'Files are decoded as UTF-8. A leading BOM is removed so the first line is not marked as changed only because of that mark. Other encodings may look garbled — save as UTF-8 first.',
+		"Files are decoded strictly as UTF-8. A leading BOM is removed; invalid UTF-8 is rejected instead of being shown with replacement characters. Convert legacy encodings such as Windows-1252 first.",
 	tool_compare_two_text_files_online_faq_a3:
 		'If the file contains a null byte it is treated as binary and refused. Use a hex or archive tool for those. Word and Excel files belong on their own compare pages.',
 	tool_compare_two_text_files_online_faq_a4:
-		'This page is for .txt / .text. People also search txt compare or file diff online — same job. A generic “compare two files” search that meant Word or spreadsheets should use those dedicated pages. Paste-only text lives on Check difference between two texts.',
+		"This tool accepts .txt / .text files decoded as UTF-8. Use the paste comparer when there are no files, and the dedicated Word or spreadsheet comparers for .docx, xlsx, xls, or csv.",
 	tool_compare_two_text_files_online_faq_q1: 'Are my files uploaded?',
 	tool_compare_two_text_files_online_faq_q2: 'What encoding and BOM rules apply?',
 	tool_compare_two_text_files_online_faq_q3: 'Can I compare binary, Word, or Excel here?',
@@ -37,7 +38,7 @@ const en: SiteLangDict = {
 		'Pick two text files you already have on disk, then read the highlighted lines. There is no large paste box on this first screen.',
 	tool_compare_two_text_files_online_how_item_1: 'Choose the first text file (original snapshot or export).',
 	tool_compare_two_text_files_online_how_item_2: 'Choose the second text file (revised snapshot).',
-	tool_compare_two_text_files_online_how_item_3: 'Compare runs automatically after both files are chosen; Load sample already did this on first paint.',
+	tool_compare_two_text_files_online_how_item_3: "Select Compare to refresh the line diff; choosing both files also runs it automatically.",
 	tool_compare_two_text_files_online_how_item_4: 'Read green adds and red deletes. Clear removes both files from this tab.',
 	tool_compare_two_text_files_online_how_title: 'How it works',
 	tool_compare_two_text_files_online_label_a: 'First text file',

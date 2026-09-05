@@ -47,7 +47,7 @@ const pt: SiteLangDict = {
 	tool_hreflang_rules_item_4:
 		'x-default aponta para a página mostrada quando nenhum idioma listado coincide, por exemplo uma raiz em inglês. O Google pode usá-la como fallback para todos os idiomas não detectados.',
 	tool_hreflang_rules_item_5:
-		'Escolha uma única forma de entrega por conjunto: as tags <link> no HTML, o cabeçalho HTTP Link ou xhtml:link no sitemap. Não misture formas no mesmo conjunto, ou os sinais podem se contradizer.',
+		'O Google considera as três formas equivalentes e até permite usar as três de uma vez, mas diz que isso não traz ganho na Busca. Fique com uma por conjunto de páginas: três implementações acabam se desencontrando e anotações contraditórias são ignoradas.',
 	tool_hreflang_example_title: 'Exemplo',
 	tool_hreflang_example:
 		'A amostra lista três versões de uma página: https://example.com/ (en), https://example.com/es/ (es) e https://example.com/ja/ (ja). As tags <link> geradas incluem autorreferências para cada idioma, além de um x-default opcional apontando para a raiz em inglês.',

@@ -22,7 +22,7 @@
     "export": "renderFilmPromptBuilderPage",
     "style": "opts"
   },
-  "localProcessing": true,
+  "localProcessing": false,
   "scenario": "developer",
   "subject": "text"
 }

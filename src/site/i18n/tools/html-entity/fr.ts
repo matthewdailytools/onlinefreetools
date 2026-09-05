@@ -44,7 +44,7 @@ const fr: SiteLangDict = {
   tool_html_entity_rules_body: 'Ce qui change selon la portée et le lien noms/nombres.',
   tool_html_entity_rules_item_1: 'Minimal échappe & < > " \'. Non-ASCII seulement au-delà de ASCII. Tout combine les deux.',
   tool_html_entity_rules_item_2: '&copy;, &#169; et &#xA9; décodent en ©. Nom utilise les libellés courants.',
-  tool_html_entity_rules_item_3: 'Encoder du texte déjà échappé → &amp;amp;. Utilisez Jusqu’à stable si besoin.',
+  tool_html_entity_rules_item_3: 'Encoder du texte déjà échappé → &amp;amp;. Utilisez Jusqu’à stable si besoin : les < et > bruts restent littéraux à chaque passe, jamais interprétés comme du balisage.',
   tool_html_entity_rules_item_4: 'Confidentialité : pas d’envoi ; aucune bibliothèque externe.',
   tool_html_entity_rules_title: 'Règles à connaître',
   tool_html_entity_sample: 'Charger un exemple',

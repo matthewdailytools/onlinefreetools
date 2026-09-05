@@ -10,7 +10,7 @@ const de: SiteLangDict = {
 		'Schreibe title, description, canonical und Open-Graph-Tags, die in der Suche Klicks bringen — erstelle die kompletten Head-Tags deiner Seite direkt im Browser.',
 	tool_meta_title: 'Meta-Tag-Generator — die kompletten Head-Tags deiner Seite erstellen',
 	tool_meta_description:
-		'Title und Meta-Description sind Ihre Google-Visitenkarte; falsches Canonical splittet Signale. Felder füllen für head-Tags. Beispiel: Canonical + og.',
+		'Title und Meta-Description prägen Ihr Such-Snippet; der Canonical wählt bei Duplikaten die maßgebliche URL. Felder ausfüllen und fertige head-Tags samt Längenhinweisen kopieren. Beispiel: Canonical + og.',
 	tool_meta_title_label: 'Meta-Title',
 	tool_meta_title_ph: 'Meta-Tag-Generator — die kompletten Head-Tags deiner Seite erstellen',
 	tool_meta_title_hint: 'Halte dich bei etwa 60 Zeichen. Suchmaschinen können längere Titel umschreiben.',

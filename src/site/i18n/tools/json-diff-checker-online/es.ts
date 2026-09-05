@@ -8,7 +8,7 @@ import type { SiteLangDict } from '../../../types';
 const es: SiteLangDict = {
 	tool_json_diff_checker_online_article:
 		'Pega dos valores JSON y lista añadidos, eliminados y cambios por ruta. Por defecto se ignora el orden de las claves. El pegado se queda en el dispositivo y no se sube. Aquí no se parsea YAML ni XML.',
-	tool_json_diff_checker_online_array_as_set: 'Tratar arrays como conjuntos (sin importar el orden)',
+	tool_json_diff_checker_online_array_as_set: "Ignorar el orden del array (los duplicados cuentan)",
 	tool_json_diff_checker_online_clear: 'Borrar',
 	tool_json_diff_checker_online_compare: 'Comparar',
 	tool_json_diff_checker_online_desc:
@@ -26,9 +26,9 @@ const es: SiteLangDict = {
 	tool_json_diff_checker_online_faq_a2:
 		'Por defecto, {"a":1,"b":2} y {"b":2,"a":1} son el mismo objeto. Desactiva “Ignorar orden de claves” si te importa el orden escrito.',
 	tool_json_diff_checker_online_faq_a3:
-		'Los arrays son listas por índice. [1,2] frente a [2,1] es un cambio. Activa “Tratar arrays como conjuntos” solo si el orden no debe contar.',
+		"Por defecto los arrays se comparan por índice. Al ignorar el orden se ordenan los elementos normalizados, los duplicados siguen contando y los índices del resultado pertenecen a ese orden; no se emparejan objetos por id.",
 	tool_json_diff_checker_online_faq_a4:
-		'También se busca json diff checker sin “online”: mismo trabajo. YAML o XML necesitan otra página (convierte YAML antes si hace falta).',
+		"Solo se analiza JSON válido. No acepta sintaxis YAML ni XML; convierte YAML a JSON primero o usa un comparador específico del formato.",
 	tool_json_diff_checker_online_faq_q1: '¿Se sube mi JSON?',
 	tool_json_diff_checker_online_faq_q2: '¿El orden de las claves cuenta como diferencia?',
 	tool_json_diff_checker_online_faq_q3: '¿Cómo se comparan los arrays?',
@@ -38,7 +38,7 @@ const es: SiteLangDict = {
 	tool_json_diff_checker_online_how_item_1: 'Pega el JSON original a la izquierda.',
 	tool_json_diff_checker_online_how_item_2: 'Pega el JSON revisado a la derecha.',
 	tool_json_diff_checker_online_how_item_3: 'Deja Ignorar orden de claves activo, salvo que quieras el orden escrito.',
-	tool_json_diff_checker_online_how_item_4: 'Comparar lista rutas; Cargar ejemplo ya se ejecutó al abrir.',
+	tool_json_diff_checker_online_how_item_4: "Pulsa Comparar para listar las rutas añadidas, eliminadas y modificadas con las opciones actuales.",
 	tool_json_diff_checker_online_how_title: 'Cómo usarlo',
 	tool_json_diff_checker_online_ignore_keys: 'Ignorar orden de claves del objeto',
 	tool_json_diff_checker_online_label_a: 'JSON original',
@@ -56,7 +56,7 @@ const es: SiteLangDict = {
 	tool_json_diff_checker_online_rules_item_2:
 		'Ignorar orden de claves (activado por defecto) ordena las claves antes de recorrer rutas.',
 	tool_json_diff_checker_online_rules_item_3:
-		'Los arrays son listas por índice, salvo que los trates como conjuntos (entonces se ordenan por stringify).',
+		"Ignorar el orden ordena los elementos normalizados pero conserva duplicados; los índices corresponden al orden comparado, no a la posición original.",
 	tool_json_diff_checker_online_rules_item_4:
 		'YAML y XML no se parsean. Si hace falta, convierte YAML en la página YAML ↔ JSON relacionada.',
 	tool_json_diff_checker_online_rules_title: 'Reglas de la comparación',

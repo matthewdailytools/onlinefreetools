@@ -6,10 +6,10 @@ import type { SiteLangDict } from '../../../types';
 
 const zh: SiteLangDict = {
 	tool_sitemap_home_title: 'XML Sitemap 生成器',
-	tool_sitemap_home_desc: '帮 Google 更快发现并收录你想排名的每个页面——把 URL 列表转成合法的 sitemap.xml，支持 lastmod、changefreq 与 priority，全程在浏览器内完成。',
+	tool_sitemap_home_desc: '帮 Google 发现内链走不到的页面——把 URL 列表转成合法的 sitemap.xml，支持 lastmod、changefreq 与 priority，全程在浏览器内完成。',
 	tool_sitemap_title: 'XML Sitemap 生成器 — 从 URL 列表生成 sitemap.xml',
 	tool_sitemap_description:
-		'sitemap 帮 Google 更快发现并收录页面。粘贴 https URL（可附 lastmod），预览合法 sitemap.xml 并复制到站点根目录。内容不上传服务器。示例：三条 URL 对应三个条目。步骤清晰，含示例说明。隐私友好，正文不上传。',
+		'sitemap 告诉 Google 站内有哪些 URL，尤其是内链薄弱、爬虫不容易走到的那些页面。粘贴 https URL（可附 lastmod），预览合法的 sitemap.xml 并复制到站点根目录，内容不上传服务器。示例：三条 URL 对应三个条目。',
 	tool_sitemap_generate: '生成',
 	tool_sitemap_sample: '加载样例',
 	tool_sitemap_clear: '清空',
@@ -38,7 +38,7 @@ const zh: SiteLangDict = {
 		'样例输入：https://example.com/ 与带 lastmod 2026-08-01 的 https://example.com/products，再加上 https://example.com/about——输出为包含三个 url 条目的 urlset，中间一条带 lastmod 元素。',
 	tool_sitemap_usecases_title: '适用场景',
 	tool_sitemap_usecase_1: '新站：把 URL 列表生成第一份 sitemap.xml，并在 Search Console 提交。',
-	tool_sitemap_usecase_2: '内容更新：为近期改动的页面补充 lastmod，让爬虫拿到新鲜度信号。',
+	tool_sitemap_usecase_2: '内容更新：只给真正改过的页面写 lastmod。Google 只有在整份文件里的 lastmod 都真实一致时才会采用这个字段，给所有 URL 一律填今天，反而会让它被忽略。',
 	tool_sitemap_usecase_3: '收录加速：在 robots.txt 里指向 sitemap 地址，无需等待提交即可被发现。',
 	tool_sitemap_faq_q1: '单个 sitemap 最多多少条 URL？',
 	tool_sitemap_faq_a1: '50,000 条 URL 或 50MB（未压缩）。列表超过 50,000 时工具会提示，方便你拆分成多个文件并用 sitemap index 汇总。',

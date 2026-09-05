@@ -1,168 +1,172 @@
 /**
  * i18n tool shard (film-prompt-builder / ar).
- * 检索向独立重写；title 含「本地 + 可选 AI」；description 含本地默认与 Cloudflare AI Expand/Polish + Turnstile。
+ * إعادة كتابة وفق ما يبحث عنه المستخدم العربي: «منشئ برومبت سيناريو سينمائي»، «البنية الثلاثية»،
+ * «قائمة المشاهد»، «تصدير البرومبت بصيغة JSON». المصطلح الرئيسي في العنوان الأول، والبقية في الوصف والأسئلة وحالات الاستخدام.
+ * الحدود الواقعية: الترتيب يجري داخل المتصفح افتراضياً، ولا يُرسل المسوّد إلى Cloudflare Workers AI إلا عند الضغط على
+ * «توسيع» أو «تنقيح» (بعد Turnstile وبحدود استخدام). ولا تكتب هذه الصفحة السيناريو عنك.
  */
 import type { SiteLangDict } from '../../../types';
 
 const ar: SiteLangDict = {
 	tool_film_prompt_builder_article:
-		'منشئ prompts للأفلام — محلي + ذكاء اصطناعي اختياري لـ ChatGPT وGemini وClaude وDeepSeek: تجميع محلي افتراضيًا ثم توسيع/صقل اختياري عبر Cloudflare Workers AI (Turnstile مطلوب، محدود المعدل). يعمل المثال عند الفتح. Markdown افتراضي؛ JSON للمسارات. النص يبقى على جهازك ما لم تستخدم الذكاء الاصطناعي.',
+		'اكتب الفكرة في سطر، والفصول الثلاثة، وقائمة المشاهد، ومسار تحوّل الشخصية: ترتّبها الصفحة داخل المتصفح وتعيد لك برومبتاً واضح البنية بصيغة Markdown أو JSON، جاهزاً للّصق في ChatGPT أو Gemini أو Claude أو DeepSeek لتكمل السيناريو هناك. افتراضياً لا يُرسل شيء؛ ولا يذهب المسوّد إلى Cloudflare Workers AI إلا إن ضغطت «توسيع» أو «تنقيح» بعد فحص Turnstile.',
 	tool_film_prompt_builder_build:
-		'إنشاء prompt',
+		'أنشئ البرومبت',
 	tool_film_prompt_builder_clear:
-		'مسح',
+		'تفريغ',
 	tool_film_prompt_builder_copy:
 		'نسخ',
 	tool_film_prompt_builder_desc:
-		'منشئ prompts للأفلام — local por defecto + Expand/Polish opcional Cloudflare AI (Turnstile); Markdown/JSON en el dispositivo.',
+		'منشئ برومبت سيناريو سينمائي: الفكرة في سطر والفصول الثلاثة وقائمة المشاهد مرتَّبة في Markdown أو JSON داخل المتصفح؛ ذكاء Cloudflare اختياري مع Turnstile.',
 	tool_film_prompt_builder_description:
-		'عملية ومثال: منشئ prompts للأفلام — Local + IA opcional para ChatGPT, Gemini, Claude y DeepSeek: ensambla prompts localmente por defecto y opcionalmente Expand/Polish con Cloudflare Workers AI (Turnstile obligatorio, límite de uso). Ejemplo al abrir. Markdown por defecto; JSON para pipelines. Texto en el dispositivo salvo que uses IA.',
+		'منشئ برومبت سيناريو سينمائي: تكتب الفكرة في سطر، والفصول من الأول إلى الثالث، وقائمة المشاهد، ومسار تحوّل الشخصية، فتوزّعها الصفحة على أقسام Role وTask وConstraints وOutput حتى يعرف ChatGPT أو Gemini أو Claude أو DeepSeek من أين يكمل. الصيغة الافتراضية Markdown، وهناك JSON لمتابعة المسوّدات، ومثال شاحنتَي الطعام التي تتقاسمان مطبخاً واحداً ثلاثين يوماً يعمل بمجرد فتح الصفحة. وإن جاء فصل شحيحاً أرسل «توسيع» أو «تنقيح» المسوّد إلى Cloudflare Workers AI (يلزم Turnstile وهناك حدود).',
 	tool_film_prompt_builder_download:
 		'تنزيل',
 	tool_film_prompt_builder_empty:
-		'املأ حقلًا واحدًا على الأقل قبل الإنشاء.',
+		'املأ حقلاً واحداً على الأقل قبل إنشاء البرومبت.',
 	tool_film_prompt_builder_example:
-		'المدخلات: Logline = شاحنتا طعام تتشاركان مطبخًا 30 يومًا؛ Act II = مهرجان + خلاف وصفة؛ 6 مشاهد. المخرجات (Markdown): ## Task مع Logline وAct1–3 وScene / List وCharacter / Arc.',
+		'المُدخل: الفكرة في سطر = خطأ في ورقة الترخيص يُلزم صاحبَي شاحنتَي طعام متنافستين بتقاسم مطبخ واحد ثلاثين يوماً؛ الفصل الثاني = نجاح المهرجان ينقلب حين ينسب مدوّن الوصفة إلى الطرف الخطأ فيتحول خلاف عائلي قديم على البهارات إلى مادة على الشبكات؛ قائمة المشاهد = ست متتاليات مرقّمة؛ مسار التحوّل = كبرياء ← تعاون على مضض ← شريكان يتفاوضان. المُخرج (Markdown): يسرد قسم ## Task عناصر Logline وAct1–3 وScene / List وCharacter / Arc، وهو النص نفسه الذي يحمّله المثال عند فتح الصفحة.',
 	tool_film_prompt_builder_example_title:
 		'مثال',
 	tool_film_prompt_builder_faq_a1:
-		'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
+		'الترتيب يجري داخل هذا التبويب، فلا يُرسل شيء افتراضياً. الإرسال يحدث فقط عند الضغط على «توسيع» أو «تنقيح»، ووجهته Cloudflare Workers AI وحدها؛ ولا نمرّر النص من خوادمنا إلى OpenAI أو Google أو Anthropic أو DeepSeek.',
 	tool_film_prompt_builder_faq_a2:
-		'Modo local solo formatea aquí. Expand/Polish opcional usa Cloudflare Workers AI tras Turnstile — no llama APIs de chat.',
+		'في الوضع المحلي لا يُستدعى أي نموذج: تُوزَّع الفكرة والفصول وقائمة المشاهد ومسار التحوّل على أقسام Role وTask وConstraints وOutput فقط. أما «توسيع» و«تنقيح» فيعملان عبر Cloudflare Workers AI بعد فحص Turnstile، ولا يستدعيان واجهات ChatGPT أو Gemini أو Claude أو DeepSeek من خوادمنا.',
 	tool_film_prompt_builder_faq_a3:
-		'منشئ prompts للأفلام covers generic Role/Task/Constraints/Output templates. This page focuses on film prompt builder fields with a dedicated sample and rules for this scenario.',
+		'منشئ قوالب البرومبت يعطي هيكلاً عاماً من أربعة أقسام يصلح لأي موضوع. أما الحقول هنا فهي حقول الفيلم الطويل — الفكرة في سطر والفصول الثلاثة وقائمة المشاهد ومسار التحوّل — مع مثال كامل عند الفتح وقواعد تخص العقبات المعتادة في هذا النوع من الأوراق.',
 	tool_film_prompt_builder_faq_a4:
-		'Sí. Completa Turnstile en el panel de IA antes de Expand o Polish.',
+		'يمنع Turnstile السكربتات الآلية حتى تبقى الحصة المجانية للمستخدمين الحقيقيين. أكمل الفحص في لوحة الذكاء الاصطناعي قبل الضغط على «توسيع» أو «تنقيح»؛ فبدون رمز صالح تُظهر هذه الأزرار خطأً، ويبقى الترتيب داخل المتصفح متاحاً كما هو.',
 	tool_film_prompt_builder_faq_a5:
-		'Yes. The JSON chip emits structured fields plus assembled prompt text for tests or config pipelines.',
+		'نعم. عند التبديل إلى JSON يعرض حقل المُخرج نفسه البيانات في حقول مع نص البرومبت المجمَّع، وهو مريح لحفظ كل نسخة من الفصول وقائمة المشاهد في جدول أو في مستودعك ثم مقارنتها.',
 	tool_film_prompt_builder_faq_a6:
-		'Yes. Copy the finished prompt into ChatGPT, Gemini, Claude, or DeepSeek. We do not split URLs per platform because the job is formatting text, not calling APIs.',
+		'نعم. انسخ الناتج والصقه في أي محادثة تستخدمها. الصفحة ترتّب البنية فحسب ولا تستدعي أي واجهة، ولذلك لا يوجد عنوان منفصل لكل منصة.',
 	tool_film_prompt_builder_faq_q1:
-		'Is my prompt uploaded?',
+		'هل تُرسل مادة السيناريو التي أكتبها إلى أي خادم؟',
 	tool_film_prompt_builder_faq_q2:
-		'Does this call ChatGPT or other LLM APIs?',
+		'هل تستدعي هذه الصفحة واجهة ChatGPT أو نماذج أخرى؟',
 	tool_film_prompt_builder_faq_q3:
-		'How is this different from منشئ prompts للأفلام?',
+		'ما الفرق بينها وبين منشئ قوالب البرومبت؟',
 	tool_film_prompt_builder_faq_q4:
-		'¿Por qué Turnstile para IA opcional?',
+		'لماذا يلزم Turnstile لاستخدام الذكاء الاصطناعي؟',
 	tool_film_prompt_builder_faq_q5:
-		'Can I get JSON output?',
+		'هل أحصل على المُخرج بصيغة JSON؟',
 	tool_film_prompt_builder_faq_q6:
-		'Can I use this with ChatGPT, Gemini, Claude, or DeepSeek?',
+		'هل تعمل مع ChatGPT وGemini وClaude وDeepSeek؟',
 	tool_film_prompt_builder_faq_q7:
-		'¿Diferencia entre local y Cloudflare AI opcional?',
+		'ما الفرق بين الوضع المحلي وذكاء Cloudflare الاختياري؟',
 	tool_film_prompt_builder_faq_a7:
-		'Local: solo esta pestaña, sin subida. Expand/Polish opcional a Cloudflare Workers AI (Turnstile, límite).',
+		'في الوضع المحلي يُرتَّب كل شيء داخل هذا التبويب ولا يخرج من المتصفح. أما «توسيع» أو «تنقيح» فيرسل المسوّد الحالي إلى Cloudflare Workers AI (يلزم Turnstile، وهناك حد للتكرار وحصة يومية)، والنص العائد يُكتب كاملاً في حقل المُخرج فوق المسوّد الذي كنت تراه — فاقرأه قبل النسخ حتى لا تحلّ صياغة معادة مكان نسختك من الفصول. وعند الفشل أو نفاد الحصة تابع بالوضع المحلي.',
 	tool_film_prompt_builder_ai_expand:
-		'Expandir con IA',
+		'توسيع بالذكاء الاصطناعي',
 	tool_film_prompt_builder_ai_polish:
-		'Pulir con IA',
+		'تنقيح بالذكاء الاصطناعي',
 	tool_film_prompt_builder_ai_panel_label:
-		'Cloudflare AI opcional (Turnstile)',
+		'اختياري: Cloudflare AI (يلزم Turnstile)',
 	tool_film_prompt_builder_ai_consent_title:
-		'¿Enviar texto a Cloudflare Workers AI?',
+		'هل تريد إرسال المسوّد إلى Cloudflare Workers AI؟',
 	tool_film_prompt_builder_ai_consent_body:
-		'Este paso opcional envía tu borrador a Cloudflare Workers AI. No va a OpenAI, Google, Anthropic ni DeepSeek desde nuestros servidores.',
+		'هذه الخطوة اختيارية: ترسل المسوّد الموجود الآن في الحقول إلى Cloudflare Workers AI لتشغيل واحد. ولا نمرّره من خوادمنا إلى OpenAI أو Google أو Anthropic أو DeepSeek. وبدون الذكاء الاصطناعي يبقى البرومبت يُجمَّع في متصفحك.',
 	tool_film_prompt_builder_ai_consent_ok:
-		'Continuar',
+		'متابعة',
 	tool_film_prompt_builder_ai_consent_cancel:
-		'Cancelar',
+		'إلغاء',
 	tool_film_prompt_builder_ai_working:
-		'Cloudflare AI trabajando…',
+		'يعمل Cloudflare AI الآن…',
 	tool_film_prompt_builder_ai_done:
-		'Sugerencia de IA aplicada. Revisa antes de copiar.',
+		'كُتب نص الذكاء الاصطناعي كاملاً في حقل المُخرج. راجعه قبل النسخ.',
 	tool_film_prompt_builder_ai_err_generic:
-		'La IA falló. Tu prompt local no cambió.',
+		'لم يستجب الذكاء الاصطناعي هذه المرة؛ ومحتوى المُخرج كما هو.',
 	tool_film_prompt_builder_ai_err_rate:
-		'Cuota de IA agotada. Modo local o prueba mañana (UTC).',
+		'نفدت حصة الذكاء الاصطناعي. تابع التركيب هنا أو جرّب غداً بتوقيت UTC.',
 	tool_film_prompt_builder_ai_err_turnstile:
-		'Completa Turnstile antes de usar IA.',
+		'أكمل فحص Turnstile قبل استخدام الذكاء الاصطناعي.',
 	tool_film_prompt_builder_fmt_json:
 		'JSON',
 	tool_film_prompt_builder_fmt_label:
-		'صيغة الإخراج',
+		'صيغة المُخرج',
 	tool_film_prompt_builder_fmt_md:
 		'Markdown',
 	tool_film_prompt_builder_logline_label:
-		'Logline',
+		'الفكرة في سطر',
 	tool_film_prompt_builder_logline_ph:
-		'Sample logline…',
+		'مثلاً: شاحنتا طعام متنافستان تتقاسمان مطبخاً واحداً…',
 	tool_film_prompt_builder_act1_label:
-		'Act1',
+		'الفصل الأول',
 	tool_film_prompt_builder_act1_ph:
-		'Sample act1…',
+		'مثلاً: منشأ الخلاف وما يجبرهما على القبول…',
 	tool_film_prompt_builder_act2_label:
-		'Act2',
+		'الفصل الثاني',
 	tool_film_prompt_builder_act2_ph:
-		'Sample act2…',
+		'مثلاً: نجاح قصير ثم انفلات الأمور…',
 	tool_film_prompt_builder_act3_label:
-		'Act3',
+		'الفصل الثالث',
 	tool_film_prompt_builder_act3_ph:
-		'Sample act3…',
+		'مثلاً: مواجهة مباشرة وتسوية لها ثمن…',
 	tool_film_prompt_builder_scene_list_label:
-		'Scene / List',
+		'قائمة المشاهد',
 	tool_film_prompt_builder_scene_list_ph:
-		'Sample scene list…',
+		'مثلاً: 1. خلاف على موقف السيارة 2. تفتيش مزدوج…',
 	tool_film_prompt_builder_character_arc_label:
-		'Character / Arc',
+		'مسار تحوّل الشخصية',
 	tool_film_prompt_builder_character_arc_ph:
-		'Sample character arc…',
+		'مثلاً: كبرياء ← تعاون على مضض ← شريكان…',
+
 	tool_film_prompt_builder_how_body:
-		'Fill منشئ prompts للأفلام fields, build a prompt locally, optionally Expand/Polish with Turnstile, then paste into ChatGPT, Gemini, Claude, or DeepSeek.',
+		'املأ الفكرة والفصول وقائمة المشاهد، وأنشئ البرومبت، ثم الصقه في ChatGPT أو Gemini أو Claude أو DeepSeek لتكمل الكتابة؛ وإن جاء فصل جافاً استعن بـ «توسيع» أو «تنقيح» عبر ذكاء Cloudflare الاختياري.',
 	tool_film_prompt_builder_how_item_1:
-		'Load sample already ran the default preset on first paint.',
+		'انقر «تحميل عيّنة» لإدخال الإعداد الافتراضي.',
 	tool_film_prompt_builder_how_item_2:
-		'Edit fields, click Build prompt, or switch to JSON if you need structured export.',
+		'عدّل الفكرة والفصول وقائمة المشاهد ومسار التحوّل واضغط «أنشئ البرومبت»؛ وبدّل إلى JSON إن أردت تصديراً في حقول.',
 	tool_film_prompt_builder_how_item_3:
-		'Optional: complete Turnstile, then Expand or Polish via Cloudflare Workers AI.',
+		'اختياري: أكمل Turnstile في لوحة الذكاء الاصطناعي ثم اضغط «توسيع» أو «تنقيح»، فيُكتب النص العائد في حقل المُخرج.',
 	tool_film_prompt_builder_how_item_4:
-		'Copy or download, then paste into ChatGPT, Gemini, Claude, or DeepSeek.',
+		'انسخ أو نزّل، ثم الصق في ChatGPT أو Gemini أو Claude أو DeepSeek ليكمل النموذج على هذه البنية.',
 	tool_film_prompt_builder_how_title:
-		'كيف يعمل',
+		'طريقة الاستخدام',
 	tool_film_prompt_builder_load_sample:
-		'تحميل مثال',
+		'تحميل المثال',
 	tool_film_prompt_builder_platforms_lead:
-		'لـ ChatGPT وGemini وClaude وDeepSeek — انسخ الـ prompt إلى أي واجهة دردشة.',
+		'المُخرج يُلصق كما هو في محادثة ChatGPT أو Gemini أو Claude أو DeepSeek.',
 	tool_film_prompt_builder_result_label:
-		'مخرجات Prompt',
+		'البرومبت الناتج',
 	tool_film_prompt_builder_rules_body:
-		'Three-act + scene list for feature film beats. Local assembly is default; optional AI is rate-limited and requires Turnstile.',
+		'الترتيب يحاكي طريقة العمل على فيلم طويل: الفكرة في سطر تحدد الاتجاه، والفصول الثلاثة ترسم المسار، وقائمة المشاهد ترقّم المتتاليات، ومسار التحوّل يوضح ما يتغير في الشخصية. التركيب داخل المتصفح هو السلوك الافتراضي، أما الذكاء الاصطناعي الاختياري فمحدود الاستخدام ويطلب Turnstile.',
 	tool_film_prompt_builder_rules_item_1:
-		'Structured fields map to Role/Task/Constraints/Output blocks in Markdown export.',
+		'كل حقل في النموذج يستقرّ في أحد أقسام Markdown: Role أو Task أو Constraints أو Output.',
 	tool_film_prompt_builder_rules_item_2:
-		'Default export is Markdown. JSON is a chip on the same canvas.',
+		'التصدير الافتراضي Markdown، وJSON زرّ فوق حقل المُخرج نفسه.',
 	tool_film_prompt_builder_rules_item_3:
-		'Optional Cloudflare AI never replaces local mode — review AI output before copying.',
+		'الذكاء الاصطناعي الاختياري خطوة إضافية لا بديل: الوضع المحلي متاح دائماً، ونص الذكاء الاصطناعي يستبدل محتوى المُخرج بالكامل، فراجعه قبل النسخ.',
 	tool_film_prompt_builder_rules_item_4:
-		'This tool assembles text only; it does not run film prompt builder engines or call chat APIs locally.',
+		'هذه الصفحة تجمع نصاً فقط: لا تكتب السيناريو عنك ولا تشغّل أي نموذج أو واجهة محادثة في متصفحك.',
 	tool_film_prompt_builder_rules_title:
-		'قواعد يجب أن تعرفها',
+		'ما تفعله وما لا تفعله',
 	tool_film_prompt_builder_sec_constraints:
 		'Constraints',
 	tool_film_prompt_builder_sec_output:
-		'Output format',
+		'Output',
 	tool_film_prompt_builder_sec_role:
 		'Role',
 	tool_film_prompt_builder_sec_task:
 		'Task',
 	tool_film_prompt_builder_status_copied:
-		'تم النسخ.',
+		'تم النسخ إلى الحافظة.',
 	tool_film_prompt_builder_status_done:
-		'Prompt جاهز.',
+		'البرومبت جاهز.',
 	tool_film_prompt_builder_status_working:
-		'جاري الإنشاء…',
+		'جارٍ التركيب…',
 	tool_film_prompt_builder_title:
-		'منشئ prompts للأفلام — محلي + ذكاء اصطناعي اختياري',
+		'منشئ برومبت سيناريو سينمائي — الفصول الثلاثة وقائمة المشاهد داخل المتصفح',
 	tool_film_prompt_builder_usecase_1:
-		'Ship a paste-ready film prompt builder brief for your team chat in ChatGPT, Gemini, Claude, or DeepSeek.',
+		'قبل الاجتماع، جمع الفصول الثلاثة وقائمة المشاهد في برومبت واحد يُلصق مباشرة في ChatGPT أو Gemini أو Claude أو DeepSeek.',
 	tool_film_prompt_builder_usecase_2:
-		'Export JSON for a pipeline test, then refine with optional Cloudflare AI after Turnstile.',
+		'تصدير JSON وحفظ الفكرة والفصول ومسار التحوّل في كل نسخة كحقول في جدول أو مستودع للمقارنة لاحقاً.',
 	tool_film_prompt_builder_usecase_3:
-		'Compare with Prompt template builder when you need generic four-field templates instead of this scenario.',
+		'إن كان المطلوب الهيكل العام من أربعة أقسام لا بنية فيلم طويل، فاستخدم منشئ قوالب البرومبت.',
 	tool_film_prompt_builder_usecase_4:
-		'Keep sensitive draft text local — only opt into AI when you accept the consent modal.',
+		'مع مشروع لم يُوقَّع عقده بعد، ابقَ في الوضع المحلي: لن يخرج النص من المتصفح إلا بموافقتك في نافذة الذكاء الاصطناعي.',
 	tool_film_prompt_builder_usecases_title:
-		'حالات مناسبة',
+		'متى تفيدك',
 };
 
 export default ar;

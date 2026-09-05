@@ -10,7 +10,7 @@ const id: SiteLangDict = {
 		'Tangkap masalah tag yang menahan peringkat halaman Anda: periksa title, H1, meta description, canonical, Open Graph, dan JSON-LD di browser.',
 	tool_onpage_title: 'Pemeriksa SEO On-Page — temukan dan perbaiki masalah tag halaman',
 	tool_onpage_description:
-		'Judul lemah, meta hilang, H1 ganda, atau canonical salah merusak ranking. Tempel URL atau HTML untuk cek dan saran. Tempel lokal. Contoh: dua H1.',
+		'Periksa title, meta description, H1, canonical, robots, Open Graph, dan JSON-LD. Tempel HTML: isinya tetap di perangkat Anda. Contoh: dua H1 ditandai.',
 	tool_onpage_url_tab: 'Ambil URL',
 	tool_onpage_html_tab: 'Tempel HTML',
 	tool_onpage_url_ph: 'https://example.com/page',
@@ -40,18 +40,18 @@ const id: SiteLangDict = {
 	tool_onpage_title_long: 'Title {n} karakter, kemungkinan terpotong di hasil pencarian. Targetkan sekitar 50–60 karakter.',
 	tool_onpage_title_short: 'Title hanya {n} karakter. Tambahkan fokus spesifik halaman agar lebih informatif.',
 	tool_onpage_desc_check: 'Meta description',
-	tool_onpage_desc_missing: 'Meta description tidak ditemukan. Tulis ringkasan 140–160 karakter yang sesuai isi halaman.',
+	tool_onpage_desc_missing: 'Meta description tidak ditemukan. Google akan menyusun snippet dari teks halaman. Tulis ringkasan sendiri jika Anda ingin mengendalikan kalimatnya.',
 	tool_onpage_desc_ok: 'Deskripsi {n} karakter. Rentang 140–160 karakter tampil baik di kebanyakan snippet.',
 	tool_onpage_desc_long: 'Deskripsi {n} karakter; snippet biasanya terpotong sekitar 160 karakter.',
 	tool_onpage_desc_short: 'Deskripsi hanya {n} karakter. Manfaatkan ruang untuk merangkum nilai halaman.',
 	tool_onpage_h1_check: 'H1',
-	tool_onpage_h1_missing: 'H1 tidak ditemukan. Gunakan satu H1 yang menyatakan topik halaman.',
-	tool_onpage_h1_multiple: 'Ditemukan {n} tag H1. Pertahankan satu H1 per halaman dan gunakan H2–H6 untuk bagian.',
+	tool_onpage_h1_missing: 'H1 tidak ditemukan. Tambahkan judul tingkat teratas yang menyatakan topik halaman — pembaca layar dan judul snippet sama-sama bersandar padanya.',
+	tool_onpage_h1_multiple: 'Ditemukan {n} tag H1. Google tetap merangking halaman dengan berapa pun jumlah H1, jadi ini bukan penalti. Satu H1 plus bagian H2–H6 tetap lebih jelas bagi pembaca layar.',
 	tool_onpage_h1_ok: 'Ditemukan satu H1 dan berada di dalam <body>.',
 	tool_onpage_canonical_check: 'Canonical',
 	tool_onpage_canonical_missing: 'Canonical belum diatur. Tambahkan <link rel="canonical"> saat konten yang sama dapat diakses dari beberapa URL.',
 	tool_onpage_canonical_ok: 'Canonical yang merujuk diri sendiri ditemukan.',
-	tool_onpage_canonical_other: 'Canonical menunjuk ke URL lain. Gunakan canonical referensi-diri kecuali halaman ini memang salinan target.',
+	tool_onpage_canonical_other: 'Canonical menunjuk ke URL lain, artinya Anda menyatakan halaman ini duplikat URL tersebut. Pertahankan hanya jika memang begitu; canonical bersifat petunjuk, jadi Google masih bisa memilih URL lain.',
 	tool_onpage_robots_check: 'Robots meta',
 	tool_onpage_robots_missing: 'Tidak ada robots meta. Standarnya index,follow, yang sesuai untuk sebagian besar halaman publik.',
 	tool_onpage_robots_noindex: 'Halaman menetapkan noindex sehingga tidak muncul di hasil Google. Hapus jika halaman perlu diindeks.',
@@ -76,13 +76,13 @@ const id: SiteLangDict = {
 		'Pemeriksa mengurai markup yang Anda tempel (atau HTML yang diambil dari URL) dan mengevaluasi daftar tetap pemeriksaan SEO on-page. Setiap pemeriksaan membaca satu jenis tag: title, meta description, H1, canonical, robots meta, kolom Open Graph, blok JSON-LD, konten campuran, dan sumber daya yang memblokir render. Mode tempel sepenuhnya di browser Anda; mode URL mengambil halaman sekali melalui worker kami dan tidak menyimpannya.',
 	tool_onpage_rules_title: 'Aturan yang diikuti pemeriksaan',
 	tool_onpage_rules_body:
-		'Berikut standar yang dibandingkan oleh setiap pemeriksaan, bersumber dari Google Search Central dan spesifikasi HTML.',
+		'Berikut acuan pembanding tiap pemeriksaan dan seberapa mengikat sifatnya. Perilaku tag (robots, canonical, konten campuran) mengikuti Google Search Central dan spesifikasi HTML. Saran soal panjang dan judul hanyalah patokan tampilan atau keterbacaan, bukan aturan peringkat.',
 	tool_onpage_rules_item_1:
 		'Title: halaman harus memiliki satu <title> deskriptif. Google dapat menulis ulang, tetapi title ringkas mendekati 50–60 karakter biasanya tampil baik.',
 	tool_onpage_rules_item_2:
-		'H1: gunakan tepat satu H1 yang menyatakan topik. Judul lainnya harus H2–H6 dan membentuk kerangka logis.',
+		'H1: halaman butuh judul yang menyatakan topiknya. Google tidak punya jumlah judul ideal dan tidak menghukum H1 tambahan, jadi H1 ganda ditandai semata demi kejelasan kerangka dan aksesibilitas.',
 	tool_onpage_rules_item_3:
-		'Canonical: canonical referensi-diri memberi tahu Google URL yang diutamakan saat ada duplikat. Link rel="canonical" diletakkan di <head>.',
+		'Canonical: <link rel="canonical"> di <head> adalah petunjuk soal URL yang diutamakan di antara duplikat, bukan perintah. Google menimbangnya bersama pengalihan, sitemap, dan tautan internal sebelum memutuskan.',
 	tool_onpage_rules_item_4:
 		'Konten campuran: halaman https yang merujuk sumber daya http:// diblokir browser. Pemeriksaan ini mencatatnya sebagai peringatan.',
 	tool_onpage_rules_item_5:
@@ -100,12 +100,12 @@ const id: SiteLangDict = {
 	tool_onpage_faq_q1: 'Apa yang diperiksa pemeriksa SEO on-page?',
 	tool_onpage_faq_a1:
 		'Ia memeriksa tag yang dikendalikan halaman: title, meta description, H1, canonical, robots meta, kolom Open Graph, data terstruktur JSON-LD, konten campuran, dan sumber daya pemblokir render. Tidak mengukur peringkat atau backlink.',
-	tool_onpage_faq_q2: 'Mengapa halaman harus memiliki tepat satu H1?',
+	tool_onpage_faq_q2: 'Apakah H1 ganda merusak SEO?',
 	tool_onpage_faq_a2:
-		'Satu H1 menyatakan topik dengan jelas bagi pembaca dan mesin pencari. Banyak H1 mengaburkan kerangka; gunakan satu H1 dan susun sisanya dengan H2–H6.',
+		'Tidak. Google menyatakan tidak ada jumlah judul yang ideal, dan tetap merangking halaman tanpa H1, dengan satu H1, maupun beberapa. Alasan mempertahankan satu H1 adalah aksesibilitas dan kerangka yang jelas, plus peluang lebih besar Google memakai judul Anda sebagai judul snippet.',
 	tool_onpage_faq_q3: 'Apakah canonical harus menunjuk ke dirinya sendiri?',
 	tool_onpage_faq_a3:
-		'Untuk halaman yang ingin dirangking, ya — canonical referensi-diri adalah sinyal paling jelas. Menunjuk ke URL lain memberi tahu Google halaman ini duplikat, hanya berguna jika memang demikian.',
+		'Tidak harus, tetapi canonical referensi-diri adalah sinyal paling jelas untuk halaman yang ingin dirangking sendiri. Menunjuk ke URL lain berarti menyatakan halaman ini duplikat. Bagaimanapun juga Google memperlakukan canonical sebagai petunjuk dan bisa memilih URL berbeda.',
 	tool_onpage_faq_q4: 'Mengapa pemeriksa menandai sumber daya http:// sebagai konten campuran?',
 	tool_onpage_faq_a4:
 		'Saat halaman disajikan via https dan merujuk gambar, skrip, atau gaya http://, browser memblokir permintaan secara bawaan. Pemeriksaan ini mencatatnya sebagai peringatan agar Anda beralih ke https.',

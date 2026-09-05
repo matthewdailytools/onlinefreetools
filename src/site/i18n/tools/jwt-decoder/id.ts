@@ -57,7 +57,7 @@ const id: SiteLangDict = {
   tool_jwt_decoder_rules_item_1:
     'Struktur: JWT bertanda tangan (JWS compact) punya tiga segmen Base64url — header (alg, typ), payload (claims), signature (byte, bukan JSON).',
   tool_jwt_decoder_rules_item_2:
-    'Base64url: -→+, _→/, padding sampai panjang %4, lalu atob dan JSON.parse. Error menyebut header atau payload.',
+    'Base64url: -→+, _→/, padding sampai panjang %4, lalu atob, baca byte-nya sebagai UTF-8, baru JSON.parse — claim beraksen atau CJK tetap terbaca. Error menyebut header atau payload.',
   tool_jwt_decoder_rules_item_3:
     'Claim terdaftar: exp, iat, nbf adalah detik Unix UTC. Bisa baca JSON ≠ token terpercaya.',
   tool_jwt_decoder_rules_item_4:

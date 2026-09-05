@@ -37,7 +37,7 @@ export const promptAiDomainHint = (slug: PromptAiSlug): string => {
 		'midjourney-prompt-builder':
 			'Context: Midjourney image prompt — subject, style, lighting, aspect ratio; include --ar or --v when relevant.',
 		'sketch-prompt-generator':
-			'Context: sketch or line-art image prompt — medium, stroke weight, composition, artist reference.',
+			'Context: Sketch.app design workflow prompt — artboards, Symbols, Shared Styles, libraries, layer naming, and export handoff steps.',
 		'film-prompt-builder':
 			'Context: feature film or screenplay — logline, three-act beats, scene list, character arc.',
 		'short-drama-prompt-generator':

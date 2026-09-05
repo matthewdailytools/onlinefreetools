@@ -10,7 +10,7 @@ const en: SiteLangDict = {
 		'Write the title, description, canonical and Open Graph tags that earn clicks in search — generate the complete page head from your browser.',
 	tool_meta_title: 'Meta Tag Generator — Generate complete page head tags',
 	tool_meta_description:
-		'Title and meta description are your Google card; bad canonical splits signals. Fill fields for paste-ready head tags and length hints. Example: canonical + og.',
+		'Title and meta description shape your search snippet; canonical picks the URL among duplicates. Fill fields for paste-ready head tags and length hints. Example: canonical + og.',
 	tool_meta_title_label: 'Meta title',
 	tool_meta_title_ph: 'Meta Tag Generator — Generate complete page head tags',
 	tool_meta_title_hint: 'Keep it around 60 characters. Search engines may rewrite longer titles.',

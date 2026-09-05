@@ -7,10 +7,10 @@ import type { SiteLangDict } from '../../../types';
 const ru: SiteLangDict = {
 	tool_sitemap_home_title: 'Генератор sitemap XML',
 	tool_sitemap_home_desc:
-		'Помогите Google быстрее находить и индексировать страницы, которые вы хотите продвигать: превратите список URL в корректный sitemap.xml с lastmod, changefreq и priority — прямо в браузере.',
+		'Помогите Google найти страницы, до которых не доходят внутренние ссылки: превратите список URL в корректный sitemap.xml с lastmod, changefreq и priority — прямо в браузере.',
 	tool_sitemap_title: 'Генератор sitemap XML — создайте sitemap.xml из списка URL',
 	tool_sitemap_description:
-		'Sitemap помогает Google быстрее находить и индексировать страницы. Вставьте https URL, просмотрите sitemap.xml и скопируйте в корень. Пример: 3 URL → 3 записи.',
+		'Sitemap сообщает Google, какие URL у вас есть, — особенно те, что прячет слабая перелинковка. Вставьте https URL, посмотрите готовый sitemap.xml и скопируйте в корень. Пример: 3 URL → 3 записи.',
 	tool_sitemap_generate: 'Сгенерировать',
 	tool_sitemap_sample: 'Пример',
 	tool_sitemap_clear: 'Очистить',
@@ -39,7 +39,7 @@ const ru: SiteLangDict = {
 		'Пример ввода: https://example.com/ и https://example.com/products с lastmod 2026-08-01, плюс https://example.com/about — на выходе urlset с тремя элементами url, средний несёт lastmod.',
 	tool_sitemap_usecases_title: 'Подходит для',
 	tool_sitemap_usecase_1: 'Новые сайты: создайте первый sitemap.xml из списка URL и отправьте его в Search Console.',
-	tool_sitemap_usecase_2: 'Обновлённый контент: добавьте lastmod недавно изменённым страницам, чтобы краулеры увидели сигнал свежести.',
+	tool_sitemap_usecase_2: 'Обновлённый контент: ставьте lastmod только тем страницам, которые действительно изменились. Google опирается на lastmod лишь тогда, когда дата достоверна по всему файлу, поэтому «сегодня» у каждого URL приводит к тому, что поле просто игнорируют.',
 	tool_sitemap_usecase_3: 'Обнаружение: укажите sitemap в robots.txt, чтобы краулеры нашли его без ожидания отправки.',
 	tool_sitemap_faq_q1: 'Каков лимит URL в одном sitemap?',
 	tool_sitemap_faq_a1: '50 000 URL или 50 МБ (без сжатия). Генератор предупреждает, когда список превышает 50 000, чтобы вы разделили его и использовали sitemap index.',

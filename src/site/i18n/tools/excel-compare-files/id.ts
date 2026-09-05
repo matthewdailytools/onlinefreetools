@@ -16,7 +16,7 @@ const id: SiteLangDict = {
 	tool_excel_compare_files_desc:
 		'Bandingkan file Excel: pilih dua tabel, bandingkan lembar saat ini sel demi sel — tetap di perangkat, tanpa unggah ke server.',
 	tool_excel_compare_files_description:
-		'Bandingkan file Excel di peramban. Proses: pilih dua xlsx atau csv, pilih lembar saat ini (lembar pertama secara default), lalu daftar sel yang nilainya berbeda. Berkas tetap di perangkat dan tidak diunggah ke server. Contoh: dua tabel 3 baris di mana B3 berubah dari 2 menjadi 9. “Online” menjelaskan cara jalan, bukan judul. Pergeseran kolom dibandingkan menurut alamat, bukan nama header.',
+		'Bandingkan file Excel di peramban. Proses: pilih dua xlsx atau csv, pilih lembar saat ini (lembar pertama secara default), lalu daftar sel yang nilainya berbeda. Berkas tetap di perangkat dan tidak diunggah ke server. Contoh: dua tabel 3 baris di mana B3 berubah dari 2 menjadi 9. Pergeseran kolom dibandingkan menurut alamat, bukan nama header.',
 	tool_excel_compare_files_empty: 'Pilih dulu dua berkas lembar kerja, atau muat contoh.',
 	tool_excel_compare_files_err_read:
 		'Lembar kerja tidak bisa dibaca. Coba xlsx atau csv, dan buka kunci buku kerja terlindungi.',
@@ -28,9 +28,11 @@ const id: SiteLangDict = {
 	tool_excel_compare_files_faq_a2:
 		'Ya: lembar pertama dipilih secara default. Gunakan daftar lembar jika butuh tab lain di berkas yang sama. Lembar lain tidak dibandingkan sampai Anda memilihnya.',
 	tool_excel_compare_files_faq_a3:
-		'Ya. CSV dibaca sebagai satu lembar. Mencari bandingkan dua csv tetap halaman ini, tanpa URL tambahan.',
+		"Ya. CSV dibaca sebagai satu lembar, jadi dua CSV atau ekspor CSV dan lembar Excel dapat dibandingkan menurut alamat sel.",
 	tool_excel_compare_files_faq_a4:
 		'Sel yang hilang dan sel kosong sama-sama string kosong. Kolom yang bergeser tetap membandingkan A1 dengan A1, bukan “kolom Name” menurut header, supaya tidak salah pasang diam-diam saat header pindah.',
+	tool_excel_compare_files_faq_q5: "Apakah rumus dan format dibandingkan, atau hanya nilai tampilan?",
+	tool_excel_compare_files_faq_a5: "Alat membandingkan teks tampilan yang dibaca dari tiap sel. Ekspresi rumus, gaya, komentar, lebar kolom, dan struktur workbook tidak dibandingkan terpisah; rumus berbeda dengan nilai cache sama bisa tampak cocok.",
 	tool_excel_compare_files_faq_q1: 'Apakah berkas Excel saya diunggah?',
 	tool_excel_compare_files_faq_q2: 'Apakah hanya lembar pertama yang dibandingkan?',
 	tool_excel_compare_files_faq_q3: 'Bisakah membandingkan dua CSV di sini?',
@@ -40,7 +42,7 @@ const id: SiteLangDict = {
 	tool_excel_compare_files_how_item_1: 'Pilih lembar kerja pertama (xlsx, xls, atau csv).',
 	tool_excel_compare_files_how_item_2: 'Pilih lembar kerja kedua.',
 	tool_excel_compare_files_how_item_3: 'Biarkan lembar pertama, kecuali Anda butuh tab lain.',
-	tool_excel_compare_files_how_item_4: 'Bandingkan mendaftar sel yang beda; Muat contoh sudah jalan saat pertama dibuka.',
+	tool_excel_compare_files_how_item_4: "Tekan Bandingkan untuk mencantumkan sel dengan teks tampilan berbeda pada dua lembar yang dipilih.",
 	tool_excel_compare_files_how_title: 'Cara pakai',
 	tool_excel_compare_files_label_a: 'Lembar kerja pertama',
 	tool_excel_compare_files_label_b: 'Lembar kerja kedua',

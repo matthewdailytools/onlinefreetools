@@ -160,6 +160,8 @@
 | 2026-09-04 | 用户确认对 Excel 批 **12 条 defer 新 slug 立项并实现**：`work-tasks/` + catalog/i18n/Page；场景 H1；发票/预算 `ymyl`；禁 `online excel` / `IFS Excel` / `Pivot table Excel` 头词进攻。一次 `build:site` 进首页与 sitemap。 | 用户要求以效率优化模式逐条立项并实现 |
 | 2026-09-04 | 用户要求**下线** Excel N9–N12：`create-graph-from-spreadsheet-data`、`create-excel-dashboard`、`build-pivot-table-from-spreadsheet`、`open-excel-file-in-browser`（catalog/i18n/Page/icon/work-tasks/README）。公式与发票·预算·工时 8 页保留。词池四行改 `drop`。 | 用户要求删除出图/看板/透视/浏览器打开 |
 | 2026-09-05 | PDF 工具能力复审后回写 N1–N22：19 项真实同意图作业已上线，词池由 `defer / implement_owed` 改为对应 slug 的 `absorb`；N12 证书 PKI/PAdES 签名、N17 profile-aware PDF/A 标准验证、N22 专有 DWG/矢量描图仍未实现，继续 `defer`，不得用可见哈希标记、五指标筛查或 ASCII DXF 文本导出冒充覆盖。 | PDF review-and-fix 能力边界校正 |
+| 2026-09-05 | 文本工具（subject=text）复审与修正：9 个 Prompt 工具 `localProcessing` 改为 false；Turnstile 绑定 hostname+action；html-entity/jwt/password/hreflang/SSRF 等实现边界校正；on-page-seo/robots/OG/hreflang/sitemap/meta-serp/meta-tag 纠正错误规范性结论；词池 text-compare 四行 live 工具由 `build` 回写 `absorb`；Prompt 簇十语污染清理进行中。 | Trust：工具不得教用户错误的 Google/RFC 规则；隐私标签须与可选 AI 上传一致。 |
+| 2026-09-05 | `text-compare` 五工具复审：保留既有 build/absorb 归属，不增 URL；修复 JSON 原型键与键序漏报、数组“集合”误称，Text Diff 空白选项、文本文件严格 UTF-8、Excel 公式/格式边界与 Word 后缀校验。 | SERP 对照显示竞品常见智能行匹配、公式审计、Word redline 等更强能力；本站以可验证的窄能力与失败边界提供 IG，不用文案冒充未实现功能。 |
 
 ---
 

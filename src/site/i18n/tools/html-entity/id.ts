@@ -45,7 +45,7 @@ const id: SiteLangDict = {
   tool_html_entity_rules_body: 'Perbedaan cakupan dan hubungan nama vs angka.',
   tool_html_entity_rules_item_1: 'Minimal meng-escape & < > " \'. Non-ASCII hanya di atas ASCII. Semua = keduanya.',
   tool_html_entity_rules_item_2: '&copy;, &#169;, &#xA9; decode sama jadi ©. Nama memakai label umum saat encode.',
-  tool_html_entity_rules_item_3: 'Encode teks yang sudah di-escape → &amp;amp;. Pakai Sampai stabil jika curiga double.',
+  tool_html_entity_rules_item_3: 'Encode teks yang sudah di-escape → &amp;amp;. Pakai Sampai stabil jika curiga double: < dan > mentah tetap literal di tiap putaran, tidak dibaca sebagai markup.',
   tool_html_entity_rules_item_4: 'Privasi: tidak upload; tanpa library eksternal.',
   tool_html_entity_rules_title: 'Aturan yang perlu diketahui',
   tool_html_entity_sample: 'Muat contoh',

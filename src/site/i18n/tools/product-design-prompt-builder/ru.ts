@@ -1,82 +1,83 @@
 /**
  * i18n tool shard (product-design-prompt-builder / ru).
- * 检索向独立重写；title 含「本地 + 可选 AI」；description 含本地默认与 Cloudflare AI Expand/Polish + Turnstile。
+ * Локальные запросы: «генератор промптов для продуктового дизайна», «промпт для UX-брифа». Главный запрос — в H1; второстепенные (персона, объём вайрфрейма, дизайн-токены, WCAG AA, выгрузка JSON) — в description, FAQ и сценариях.
+ * Фактические границы: сборка в браузере без запросов; необязательные «Расширить/Отшлифовать» отправляют черновик в Cloudflare Workers AI (Turnstile, лимит), ответ полностью заменяет область результата.
  */
 import type { SiteLangDict } from '../../../types';
 
 const ru: SiteLangDict = {
 	tool_product_design_prompt_builder_article:
-		'Конструктор product design prompt — Локально + опциональный ИИ для ChatGPT, Gemini, Claude и DeepSeek: локальная сборка по умолчанию, опционально Expand/Polish через Cloudflare Workers AI (Turnstile, лимиты). Пример на первом экране. Markdown по умолчанию; JSON для пайплайнов. Текст на устройстве, пока не включите ИИ.',
+		'Здесь задача по продуктовому дизайну превращается в готовый к вставке промпт: опишите персону, проблему, объём вайрфрейма и дизайн-токены — страница соберёт текст в Markdown или JSON прямо в браузере. По умолчанию никаких запросов не уходит; черновик отправляется в Cloudflare Workers AI только после нажатия «Расширить» или «Отшлифовать» (нужен Turnstile, число обращений ограничено).',
 	tool_product_design_prompt_builder_build:
-		'Собрать prompt',
+		'Собрать промпт',
 	tool_product_design_prompt_builder_clear:
 		'Очистить',
 	tool_product_design_prompt_builder_copy:
 		'Копировать',
 	tool_product_design_prompt_builder_desc:
-		'Конструктор product design prompt — local por defecto + Expand/Polish opcional Cloudflare AI (Turnstile); Markdown/JSON en el dispositivo.',
+		'Генератор промптов для продуктового дизайна: заполните персону, проблему, объём вайрфрейма и дизайн-токены — текст собирается в браузере в Markdown или JSON, ИИ по желанию.',
 	tool_product_design_prompt_builder_description:
-		'Процесс и пример: Конструктор product design prompt — Local + IA opcional para ChatGPT, Gemini, Claude y DeepSeek: ensambla prompts localmente por defecto y opcionalmente Expand/Polish con Cloudflare Workers AI (Turnstile obligatorio, límite de uso). Ejemplo al abrir. Markdown por defecto; JSON para pipelines. Texto en el dispositivo salvo que uses IA.',
+		'Генератор промптов для продуктового дизайна: опишите персону, проблему, объём вайрфрейма (сколько экранов и какие) и дизайн-токены (сетка, основной цвет, контраст) — страница разложит их по блокам Role / Task / Constraints / Output в Markdown или JSON, не выходя из браузера. Пример: «родители при совместной опеке, которым нужно видеть неделю передач» превращается в объём из трёх экранов с сеткой 8 pt и контрастом WCAG AA. Кнопка «Загрузить пример» заполняет поля и сразу собирает промпт; «Расширить» и «Отшлифовать» через Cloudflare Workers AI — по желанию (Turnstile, суточный лимит).',
 	tool_product_design_prompt_builder_download:
 		'Скачать',
 	tool_product_design_prompt_builder_empty:
 		'Заполните хотя бы одно поле перед сборкой.',
 	tool_product_design_prompt_builder_example:
-		'Ввод: Persona = co-parents; Problem = шумный календарь + handoff; Wireframe = 3 экрана; Tokens = 8pt, #2563eb, WCAG AA. Вывод (Markdown): ## Task → Persona / Problem / Wireframe / Design tokens.',
+		'Ввод: Персона = родители при недельной совместной опеке, один планирует, другой забирает, устройства Android и iPhone вперемешку; Проблема = календари перегружены, нужно видеть неделю передач сразу и оставлять заметки, без обязательной привязки аккаунтов; Вайрфрейм = недельная полоса с легендой опеки, лист детали с чек-листом передачи, приглашение по SMS (3 экрана); Токены = сетка 8 pt, основной #2563eb, #059669 для подтверждённых передач, контраст WCAG AA в подписях. Вывод (Markdown): в ## Role описан UX-коуч по промптам для вайрфрейм-брифов, в ## Task — по строке на каждое поле.',
 	tool_product_design_prompt_builder_example_title:
 		'Пример',
 	tool_product_design_prompt_builder_faq_a1:
-		'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
+		'По умолчанию нет. Заполнение полей и кнопка «Собрать промпт» работают только в этой вкладке, без запросов. Черновик уходит лишь при нажатии «Расширить» или «Отшлифовать», и адресат — Cloudflare Workers AI; с наших серверов текст не пересылается в OpenAI, Google, Anthropic или DeepSeek.',
 	tool_product_design_prompt_builder_faq_a2:
-		'Modo local solo formatea aquí. Expand/Polish opcional usa Cloudflare Workers AI tras Turnstile — no llama APIs de chat.',
+		'Нет. Локальный режим просто раскладывает ваши поля по блокам Role / Task / Constraints / Output. Необязательный ИИ работает через Cloudflare Workers AI после Turnstile, а не через API ChatGPT, Gemini, Claude или DeepSeek.',
 	tool_product_design_prompt_builder_faq_a3:
-		'Конструктор product design prompt covers generic Role/Task/Constraints/Output templates. This page focuses on product design prompt builder fields with a dedicated sample and rules for this scenario.',
+		'Конструктор шаблонов промптов даёт четыре универсальных блока Role / Task / Constraints / Output для любой темы. Здесь поля — как в UX-брифе: персона, проблема, сколько экранов охватывает вайрфрейм, какие дизайн-токены и контраст соблюдать, со своим примером и своими ограничениями.',
 	tool_product_design_prompt_builder_faq_a4:
-		'Sí. Completa Turnstile en el panel de IA antes de Expand o Polish.',
+		'Да. Пройдите Turnstile в блоке ИИ прежде, чем нажать «Расширить» или «Отшлифовать». Без действительного токена кнопки ИИ вернут ошибку, а локальный режим продолжит работать.',
 	tool_product_design_prompt_builder_faq_a5:
-		'Yes. The JSON chip emits structured fields plus assembled prompt text for tests or config pipelines.',
+		'Да. Переключите формат вывода на JSON: получите поля по отдельности плюс собранный текст промпта — удобно сохранить в репозиторий требований или в шаблон дизайн-ревью.',
 	tool_product_design_prompt_builder_faq_a6:
-		'Yes. Copy the finished prompt into ChatGPT, Gemini, Claude, or DeepSeek. We do not split URLs per platform because the job is formatting text, not calling APIs.',
+		'Да. Результат — обычный текст: скопируйте и вставьте в ChatGPT, Gemini, Claude или DeepSeek. Страница не вызывает эти API за вас.',
 	tool_product_design_prompt_builder_faq_q1:
-		'Is my prompt uploaded?',
+		'Загружается ли куда-нибудь то, что я ввожу?',
 	tool_product_design_prompt_builder_faq_q2:
-		'Does this call ChatGPT or other LLM APIs?',
+		'Обращается ли страница к API ChatGPT или других моделей?',
 	tool_product_design_prompt_builder_faq_q3:
-		'How is this different from Конструктор product design prompt?',
+		'Чем это отличается от конструктора шаблонов промптов?',
 	tool_product_design_prompt_builder_faq_q4:
-		'¿Por qué Turnstile para IA opcional?',
+		'Зачем необязательному ИИ нужен Turnstile?',
 	tool_product_design_prompt_builder_faq_q5:
-		'Can I get JSON output?',
+		'Можно выгрузить в JSON?',
 	tool_product_design_prompt_builder_faq_q6:
-		'Can I use this with ChatGPT, Gemini, Claude, or DeepSeek?',
+		'Подходит для ChatGPT, Gemini, Claude и DeepSeek?',
 	tool_product_design_prompt_builder_faq_q7:
-		'¿Diferencia entre local y Cloudflare AI opcional?',
+		'Чем локальная сборка отличается от Cloudflare AI?',
 	tool_product_design_prompt_builder_faq_a7:
-		'Local: solo esta pestaña, sin subida. Expand/Polish opcional a Cloudflare Workers AI (Turnstile, límite).',
+		'Локальная сборка только раскладывает введённые поля: ни запросов, ни лимитов. «Расширить» и «Отшлифовать» отправляют черновик в Cloudflare Workers AI (нужен Turnstile, обращения ограничены), а полученный текст полностью заменяет область результата — прочитайте его перед копированием. При ошибке или исчерпанном лимите продолжайте локально.',
 	tool_product_design_prompt_builder_ai_expand:
-		'Expandir con IA',
+		'Расширить с ИИ',
 	tool_product_design_prompt_builder_ai_polish:
-		'Pulir con IA',
+		'Отшлифовать с ИИ',
 	tool_product_design_prompt_builder_ai_panel_label:
-		'Cloudflare AI opcional (Turnstile)',
+		'Необязательный Cloudflare AI (Turnstile)',
 	tool_product_design_prompt_builder_ai_consent_title:
-		'¿Enviar texto a Cloudflare Workers AI?',
+		'Отправить черновик в Cloudflare Workers AI?',
 	tool_product_design_prompt_builder_ai_consent_body:
-		'Este paso opcional envía tu borrador a Cloudflare Workers AI. No va a OpenAI, Google, Anthropic ni DeepSeek desde nuestros servidores.',
+		'Необязательный шаг: текущий черновик уйдёт в Cloudflare Workers AI для генерации. С наших серверов он не передаётся в OpenAI, Google, Anthropic или DeepSeek. Без ИИ сборка в браузере работает как обычно.',
 	tool_product_design_prompt_builder_ai_consent_ok:
-		'Continuar',
+		'Продолжить',
 	tool_product_design_prompt_builder_ai_consent_cancel:
-		'Cancelar',
+		'Отмена',
 	tool_product_design_prompt_builder_ai_working:
-		'Cloudflare AI trabajando…',
+		'Cloudflare AI работает…',
 	tool_product_design_prompt_builder_ai_done:
-		'Sugerencia de IA aplicada. Revisa antes de copiar.',
+		'Текст ИИ заменил результат. Проверьте перед копированием.',
 	tool_product_design_prompt_builder_ai_err_generic:
-		'La IA falló. Tu prompt local no cambió.',
+		'ИИ не сработал; результат остался прежним.',
 	tool_product_design_prompt_builder_ai_err_rate:
-		'Cuota de IA agotada. Modo local o prueba mañana (UTC).',
+		'Лимит ИИ исчерпан. Работайте локально или вернитесь завтра (UTC).',
 	tool_product_design_prompt_builder_ai_err_turnstile:
-		'Completa Turnstile antes de usar IA.',
+		'Сначала пройдите Turnstile, затем используйте ИИ.',
 	tool_product_design_prompt_builder_fmt_json:
 		'JSON',
 	tool_product_design_prompt_builder_fmt_label:
@@ -84,77 +85,77 @@ const ru: SiteLangDict = {
 	tool_product_design_prompt_builder_fmt_md:
 		'Markdown',
 	tool_product_design_prompt_builder_persona_label:
-		'Persona',
+		'Персона / Профиль пользователя',
 	tool_product_design_prompt_builder_persona_ph:
-		'Sample persona…',
+		'Напр.: родители при недельной совместной опеке…',
 	tool_product_design_prompt_builder_problem_label:
-		'Problem',
+		'Какую проблему решаем',
 	tool_product_design_prompt_builder_problem_ph:
-		'Sample problem…',
+		'Напр.: календарь перегружен, нужна неделя одним взглядом…',
 	tool_product_design_prompt_builder_wireframe_scope_label:
-		'Wireframe / Scope',
+		'Вайрфрейм / Объём',
 	tool_product_design_prompt_builder_wireframe_scope_ph:
-		'Sample wireframe scope…',
+		'Напр.: недельная полоса, лист детали, приглашение по SMS…',
 	tool_product_design_prompt_builder_design_tokens_label:
-		'Design / Tokens',
+		'Дизайн / Токены',
 	tool_product_design_prompt_builder_design_tokens_ph:
-		'Sample design tokens…',
+		'Напр.: сетка 8 pt, основной #2563eb, WCAG AA…',
 	tool_product_design_prompt_builder_how_body:
-		'Fill Конструктор product design prompt fields, build a prompt locally, optionally Expand/Polish with Turnstile, then paste into ChatGPT, Gemini, Claude, or DeepSeek.',
+		'Заполните четыре поля — страница соберёт из них Markdown (или JSON) в браузере; если нужно подробнее, попросите Cloudflare AI расширить текст и только потом вставляйте промпт в чат.',
 	tool_product_design_prompt_builder_how_item_1:
-		'Load sample already ran the default preset on first paint.',
+		'Нажмите «Загрузить пример»: поля заполнятся, промпт соберётся — правьте его под себя.',
 	tool_product_design_prompt_builder_how_item_2:
-		'Edit fields, click Build prompt, or switch to JSON if you need structured export.',
+		'Измените персону, проблему, объём вайрфрейма и дизайн-токены и нажмите «Собрать промпт»; для структурированного экспорта переключитесь на JSON.',
 	tool_product_design_prompt_builder_how_item_3:
-		'Optional: complete Turnstile, then Expand or Polish via Cloudflare Workers AI.',
+		'По желанию: пройдите Turnstile и нажмите «Расширить» или «Отшлифовать» — текст ИИ займёт область результата.',
 	tool_product_design_prompt_builder_how_item_4:
-		'Copy or download, then paste into ChatGPT, Gemini, Claude, or DeepSeek.',
+		'Скопируйте или скачайте результат и вставьте его в ChatGPT, Gemini, Claude или DeepSeek.',
 	tool_product_design_prompt_builder_how_title:
-		'Как это работает',
+		'Как пользоваться',
 	tool_product_design_prompt_builder_load_sample:
 		'Загрузить пример',
 	tool_product_design_prompt_builder_platforms_lead:
-		'Для ChatGPT, Gemini, Claude, DeepSeek — копируйте готовый prompt в любой чат.',
+		'Готовый промпт — обычный текст: он одинаково вставляется в ChatGPT, Gemini, Claude или DeepSeek.',
 	tool_product_design_prompt_builder_result_label:
-		'Вывод prompt',
+		'Готовый промпт',
 	tool_product_design_prompt_builder_rules_body:
-		'Persona/problem/wireframe/tokens for UX briefs. Local assembly is default; optional AI is rate-limited and requires Turnstile.',
+		'Страница только приводит задачу в форму: она не рисует вайрфреймы и не выгружает файлы Figma. У необязательного ИИ есть лимит, и он требует Turnstile.',
 	tool_product_design_prompt_builder_rules_item_1:
-		'Structured fields map to Role/Task/Constraints/Output blocks in Markdown export.',
+		'Каждое поле попадает в свой блок Markdown: Role, Task, Constraints, Output.',
 	tool_product_design_prompt_builder_rules_item_2:
-		'Default export is Markdown. JSON is a chip on the same canvas.',
+		'По умолчанию выводится Markdown; та же область по переключателю показывает JSON с полями и собранным промптом.',
 	tool_product_design_prompt_builder_rules_item_3:
-		'Optional Cloudflare AI never replaces local mode — review AI output before copying.',
+		'Cloudflare AI не заменяет локальную сборку: его ответ занимает всю область результата, поэтому проверяйте текст перед копированием.',
 	tool_product_design_prompt_builder_rules_item_4:
-		'This tool assembles text only; it does not run product design prompt builder engines or call chat APIs locally.',
+		'Инструмент только собирает текст: он не рисует экраны, не читает ваши файлы макетов и не вызывает чат-API от вашего имени.',
 	tool_product_design_prompt_builder_rules_title:
-		'Ожидаемые правила',
+		'Границы, о которых стоит знать',
 	tool_product_design_prompt_builder_sec_constraints:
 		'Constraints',
 	tool_product_design_prompt_builder_sec_output:
-		'Output format',
+		'Output',
 	tool_product_design_prompt_builder_sec_role:
 		'Role',
 	tool_product_design_prompt_builder_sec_task:
 		'Task',
 	tool_product_design_prompt_builder_status_copied:
-		'Скопировано.',
+		'Скопировано в буфер обмена.',
 	tool_product_design_prompt_builder_status_done:
-		'Prompt готов.',
+		'Промпт готов.',
 	tool_product_design_prompt_builder_status_working:
-		'Сборка prompt…',
+		'Собираем промпт…',
 	tool_product_design_prompt_builder_title:
-		'Конструктор product design prompt — Локально + опциональный ИИ',
+		'Генератор промптов для продуктового дизайна — локально, ИИ по желанию',
 	tool_product_design_prompt_builder_usecase_1:
-		'Ship a paste-ready product design prompt builder brief for your team chat in ChatGPT, Gemini, Claude, or DeepSeek.',
+		'Превратить цель дизайна, озвученную на встрече по требованиям, в промпт, который можно вставить в чат команды.',
 	tool_product_design_prompt_builder_usecase_2:
-		'Export JSON for a pipeline test, then refine with optional Cloudflare AI after Turnstile.',
+		'Выгрузить JSON, сохранить персону и токены в репозиторий требований и при необходимости расширить текст через Cloudflare AI.',
 	tool_product_design_prompt_builder_usecase_3:
-		'Compare with Prompt template builder when you need generic four-field templates instead of this scenario.',
+		'Если поля UX не нужны и хватает универсального шаблона из четырёх блоков, переходите к конструктору шаблонов промптов.',
 	tool_product_design_prompt_builder_usecase_4:
-		'Keep sensitive draft text local — only opt into AI when you accept the consent modal.',
+		'Сформулировать ещё не объявленную продуктовую идею в браузере и лишь потом решить, отправлять ли её в необязательный ИИ.',
 	tool_product_design_prompt_builder_usecases_title:
-		'Хорошие сценарии',
+		'Когда пригодится',
 };
 
 export default ru;

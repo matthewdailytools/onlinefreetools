@@ -98,8 +98,8 @@
 
 - 输入：两个 `<input type=file>`，accept `.txt,.text,text/plain`；无首屏大 textarea
 - 输出：行级高亮 + 摘要
-- 核心规则：UTF-8 TextDecoder；去 BOM；含 NUL 则拒绝；jsdiff diffLines
-- 失败：未选齐、空文件、二进制、过大（软上限约 1MB/侧）、库未加载
+- 核心规则：严格 UTF-8 TextDecoder（`fatal: true`）；去 BOM；含 NUL 则拒绝；jsdiff diffLines
+- 失败：未选齐、空文件、无效 UTF-8、二进制、过大（硬上限约 1MB/侧）、库未加载
 - 示例：notes-a.txt vs notes-b.txt，第二行不同
 - **进页样例**：`loadSample()` 合成两个 File 并自动对比
 - **实现防呆**：opts；正则 `\\w`；B 后 lint:tool-page

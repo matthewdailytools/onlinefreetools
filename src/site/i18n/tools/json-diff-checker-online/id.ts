@@ -8,7 +8,7 @@ import type { SiteLangDict } from '../../../types';
 const id: SiteLangDict = {
 	tool_json_diff_checker_online_article:
 		'Tempel dua nilai JSON dan daftar tambah, hapus, serta perubahan per jalur. Urutan kunci diabaikan secara default. Tempelan tetap di perangkat dan tidak diunggah. YAML dan XML tidak diurai di sini.',
-	tool_json_diff_checker_online_array_as_set: 'Perlakukan array sebagai himpunan (urutan diabaikan)',
+	tool_json_diff_checker_online_array_as_set: "Abaikan urutan array (duplikat tetap dihitung)",
 	tool_json_diff_checker_online_clear: 'Hapus',
 	tool_json_diff_checker_online_compare: 'Bandingkan',
 	tool_json_diff_checker_online_desc:
@@ -26,9 +26,9 @@ const id: SiteLangDict = {
 	tool_json_diff_checker_online_faq_a2:
 		'Secara default, {"a":1,"b":2} dan {"b":2,"a":1} dianggap objek yang sama. Matikan “Abaikan urutan kunci” jika urutan tulisan penting.',
 	tool_json_diff_checker_online_faq_a3:
-		'Array adalah daftar menurut indeks. [1,2] vs [2,1] adalah perubahan. Nyalakan “Perlakukan array sebagai himpunan” hanya jika urutan tidak boleh dihitung.',
+		"Secara default array dibandingkan menurut indeks. Saat urutan diabaikan, item yang dinormalisasi diurutkan, duplikat tetap dihitung, dan indeks hasil merujuk urutan tersebut; objek tidak dicocokkan menurut id.",
 	tool_json_diff_checker_online_faq_a4:
-		'Orang juga mencari json diff checker tanpa “online”. Pekerjaan yang sama. YAML atau XML butuh halaman lain (konversi YAML dulu jika perlu).',
+		"Hanya JSON valid yang diuraikan. Sintaks YAML dan XML tidak diterima; konversikan YAML ke JSON lebih dulu atau gunakan pembanding khusus format.",
 	tool_json_diff_checker_online_faq_q1: 'Apakah JSON saya diunggah?',
 	tool_json_diff_checker_online_faq_q2: 'Apakah urutan kunci dihitung sebagai perbedaan?',
 	tool_json_diff_checker_online_faq_q3: 'Bagaimana array dibandingkan?',
@@ -38,7 +38,7 @@ const id: SiteLangDict = {
 	tool_json_diff_checker_online_how_item_1: 'Tempel JSON asli di kiri.',
 	tool_json_diff_checker_online_how_item_2: 'Tempel JSON revisi di kanan.',
 	tool_json_diff_checker_online_how_item_3: 'Biarkan Abaikan urutan kunci menyala, kecuali urutan tulisan diperlukan.',
-	tool_json_diff_checker_online_how_item_4: 'Bandingkan mendaftar jalur; Muat contoh sudah jalan saat pertama dibuka.',
+	tool_json_diff_checker_online_how_item_4: "Tekan Bandingkan untuk mencantumkan jalur yang ditambah, dihapus, dan diubah menurut opsi saat ini.",
 	tool_json_diff_checker_online_how_title: 'Cara pakai',
 	tool_json_diff_checker_online_ignore_keys: 'Abaikan urutan kunci objek',
 	tool_json_diff_checker_online_label_a: 'JSON asli',
@@ -56,7 +56,7 @@ const id: SiteLangDict = {
 	tool_json_diff_checker_online_rules_item_2:
 		'Abaikan urutan kunci (nyala secara default) mengurutkan kunci objek sebelum menelusuri jalur.',
 	tool_json_diff_checker_online_rules_item_3:
-		'Array adalah daftar indeks, kecuali Anda menganggapnya himpunan (lalu elemen diurutkan lewat JSON stringify).',
+		"Mengabaikan urutan array akan mengurutkan item yang dinormalisasi tetapi tetap menyimpan duplikat; indeks hasil bukan posisi aslinya.",
 	tool_json_diff_checker_online_rules_item_4:
 		'YAML dan XML tidak diurai. Konversi YAML dulu di halaman YAML ↔ JSON terkait jika perlu.',
 	tool_json_diff_checker_online_rules_title: 'Aturan yang perlu diketahui',

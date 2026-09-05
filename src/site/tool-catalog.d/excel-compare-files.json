@@ -1,11 +1,13 @@
 {
   "slug": "excel-compare-files",
   "path": "/tools/excel-compare-files",
-  "updatedAt": "2026-09-01T08:43:00.000Z",
+  "updatedAt": "2026-09-05T13:52:22.893Z",
   "launchedAt": "2026-09-01T08:43:00.000Z",
   "category": "developer",
   "primaryTopic": "text-compare",
-  "secondaryTopics": ["dev-data"],
+  "secondaryTopics": [
+    "dev-data"
+  ],
   "featured": true,
   "ymyl": false,
   "i18nKey": "tool_excel_compare_files_title",

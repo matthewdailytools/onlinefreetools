@@ -57,7 +57,7 @@ const ar: SiteLangDict = {
   tool_jwt_decoder_rules_item_1:
     'البنية: JWT موقّع (JWS مضغوط) له ثلاثة مقاطع Base64url — header (alg, typ)، payload (claims)، signature (بايتات، ليس JSON).',
   tool_jwt_decoder_rules_item_2:
-    'Base64url: -→+، _→/، إكمال padding حتى الطول %4، ثم atob و JSON.parse. الأخطاء تحدّد header أو payload.',
+    'Base64url: -→+، _→/، إكمال padding حتى الطول %4، ثم atob وقراءة البايتات على أنها UTF-8 قبل JSON.parse، فتظهر قيم claims العربية أو الآسيوية بشكل صحيح. الأخطاء تحدّد header أو payload.',
   tool_jwt_decoder_rules_item_3:
     'Claims مسجّلة: exp و iat و nbf ثوانٍ Unix UTC. قراءة JSON لا تعني أن الرمز موثوق.',
   tool_jwt_decoder_rules_item_4:

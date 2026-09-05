@@ -8,7 +8,7 @@ import type { SiteLangDict } from '../../../types';
 const ar: SiteLangDict = {
 	tool_json_diff_checker_online_article:
 		'الصق قيمتي JSON واعرض الإضافات والحذف والتغييرات حسب المسار. يُتجاهل ترتيب المفاتيح افتراضياً. يبقى اللصق على جهازك دون رفع. لا يُحلَّل YAML ولا XML هنا.',
-	tool_json_diff_checker_online_array_as_set: 'عامل المصفوفات كمجموعات (يُتجاهل الترتيب)',
+	tool_json_diff_checker_online_array_as_set: "تجاهل ترتيب المصفوفة (تُحسب العناصر المكررة)",
 	tool_json_diff_checker_online_clear: 'مسح',
 	tool_json_diff_checker_online_compare: 'قارن',
 	tool_json_diff_checker_online_desc:
@@ -26,9 +26,9 @@ const ar: SiteLangDict = {
 	tool_json_diff_checker_online_faq_a2:
 		'افتراضياً يُعدّ {"a":1,"b":2} و{"b":2,"a":1} الكائن نفسه. أوقف «تجاهل ترتيب المفاتيح» إن كان ترتيب الكتابة مهماً.',
 	tool_json_diff_checker_online_faq_a3:
-		'المصفوفات قوائم حسب الفهرس. [1,2] مقابل [2,1] تغيير. فعّل «عامل المصفوفات كمجموعات» فقط عندما لا يجب أن يُحسب الترتيب.',
+		"تُقارن المصفوفات بالفهرس افتراضياً. عند تجاهل الترتيب تُرتب العناصر الموحّدة مع إبقاء التكرارات، وتشير الفهارس الناتجة إلى الترتيب المرتب؛ ولا تتم مطابقة الكائنات بحقل id.",
 	tool_json_diff_checker_online_faq_a4:
-		'يبحث بعضهم عن json diff checker دون «عبر الإنترنت»: نفس المهمة. YAML أو XML يحتاج صفحة أخرى (حوّل YAML أولاً إن لزم).',
+		"تُحلل صيغة JSON الصالحة فقط، ولا تُقبل بنية YAML أو XML. حوّل YAML إلى JSON أولاً أو استخدم أداة مقارنة خاصة بالتنسيق.",
 	tool_json_diff_checker_online_faq_q1: 'هل يُرفع JSON الخاص بي؟',
 	tool_json_diff_checker_online_faq_q2: 'هل يُحسب ترتيب المفاتيح فرقاً؟',
 	tool_json_diff_checker_online_faq_q3: 'كيف تُقارن المصفوفات؟',
@@ -38,7 +38,7 @@ const ar: SiteLangDict = {
 	tool_json_diff_checker_online_how_item_1: 'الصق JSON الأصلي يساراً.',
 	tool_json_diff_checker_online_how_item_2: 'الصق JSON المعدَّل يميناً.',
 	tool_json_diff_checker_online_how_item_3: 'أبقِ تجاهل ترتيب المفاتيح مفعّلاً إلا إن احتجت ترتيب الكتابة.',
-	tool_json_diff_checker_online_how_item_4: 'المقارنة تسرد المسارات؛ تحميل المثال سبق أن عمل عند أول عرض.',
+	tool_json_diff_checker_online_how_item_4: "اضغط «قارن» لسرد المسارات المضافة والمحذوفة والمتغيرة وفق الخيارات الحالية.",
 	tool_json_diff_checker_online_how_title: 'طريقة الاستخدام',
 	tool_json_diff_checker_online_ignore_keys: 'تجاهل ترتيب مفاتيح الكائن',
 	tool_json_diff_checker_online_label_a: 'JSON الأصلي',
@@ -56,7 +56,7 @@ const ar: SiteLangDict = {
 	tool_json_diff_checker_online_rules_item_2:
 		'تجاهل ترتيب المفاتيح (مفعّل افتراضياً) يرتّب مفاتيح الكائن قبل السير على المسارات.',
 	tool_json_diff_checker_online_rules_item_3:
-		'المصفوفات قوائم فهرس ما لم تعاملها كمجموعات (عندها تُرتَّب العناصر عبر JSON stringify).',
+		"تجاهل ترتيب المصفوفة يرتب العناصر الموحّدة مع إبقاء التكرارات؛ وتشير الفهارس إلى ترتيب المقارنة لا المواضع الأصلية.",
 	tool_json_diff_checker_online_rules_item_4:
 		'لا يُحلَّل YAML ولا XML. إن لزم فحوّل YAML أولاً في صفحة YAML ↔ JSON المرتبطة.',
 	tool_json_diff_checker_online_rules_title: 'قواعد تتوقعها',

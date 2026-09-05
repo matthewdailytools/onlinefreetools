@@ -1,11 +1,13 @@
 {
   "slug": "compare-two-word-documents-for-differences",
   "path": "/tools/compare-two-word-documents-for-differences",
-  "updatedAt": "2026-09-01T08:41:00.000Z",
+  "updatedAt": "2026-09-05T13:52:23.040Z",
   "launchedAt": "2026-09-01T08:41:00.000Z",
   "category": "developer",
   "primaryTopic": "text-compare",
-  "secondaryTopics": ["pdf-docs"],
+  "secondaryTopics": [
+    "pdf-docs"
+  ],
   "featured": true,
   "ymyl": false,
   "i18nKey": "tool_compare_two_word_documents_for_differences_title",

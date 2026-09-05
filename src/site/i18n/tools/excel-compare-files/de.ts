@@ -16,7 +16,7 @@ const de: SiteLangDict = {
 	tool_excel_compare_files_desc:
 		'Excel-Dateien vergleichen: zwei Tabellen wählen, aktuelles Blatt Zelle für Zelle — bleibt auf dem Gerät, ohne Server-Upload.',
 	tool_excel_compare_files_description:
-		'Excel-Dateien vergleichen im Browser. Ablauf: zwei xlsx- oder csv-Dateien wählen, das aktuelle Blatt nehmen (standardmäßig das erste), dann Zellen mit abweichendem Wert listen. Dateien bleiben auf Ihrem Gerät und werden nicht auf einen Server hochgeladen. Beispiel: zwei 3-Zeilen-Tabellen, in denen B3 von 2 auf 9 wechselt. „Online“ beschreibt den Ablauf, nicht die Überschrift. Verschobene Spalten werden über die Adresse verglichen, nicht über den Kopftext.',
+		'Excel-Dateien vergleichen im Browser. Ablauf: zwei xlsx- oder csv-Dateien wählen, das aktuelle Blatt nehmen (standardmäßig das erste), dann Zellen mit abweichendem Wert listen. Dateien bleiben auf Ihrem Gerät und werden nicht auf einen Server hochgeladen. Beispiel: zwei 3-Zeilen-Tabellen, in denen B3 von 2 auf 9 wechselt. Verschobene Spalten werden über die Adresse verglichen, nicht über den Kopftext.',
 	tool_excel_compare_files_empty: 'Zuerst zwei Tabellendateien wählen oder das Beispiel laden.',
 	tool_excel_compare_files_err_read:
 		'Die Tabelle ließ sich nicht lesen. xlsx oder csv versuchen und geschützte Mappen zuerst entsperren.',
@@ -28,9 +28,11 @@ const de: SiteLangDict = {
 	tool_excel_compare_files_faq_a2:
 		'Ja: das erste Blatt ist standardmäßig gewählt. Über die Blattlisten ein anderes Register derselben Datei wählen. Andere Blätter werden erst verglichen, wenn Sie sie wählen.',
 	tool_excel_compare_files_faq_a3:
-		'Ja. CSV gilt als ein Blatt. Wer zwei csv vergleichen sucht, bleibt auf dieser Seite, ohne extra URL.',
+		"Ja. CSV wird als einzelnes Blatt gelesen. So lassen sich zwei CSV-Dateien oder ein CSV-Export und ein Excel-Blatt nach Zelladresse vergleichen.",
 	tool_excel_compare_files_faq_a4:
 		'Fehlende und leere Zellen sind beide eine leere Zeichenkette. Eine verschobene Spalte vergleicht weiter A1 mit A1, nicht „die Name-Spalte“ nach Kopf. So entstehen keine stillen Fehlzuordnungen, wenn Köpfe wandern.',
+	tool_excel_compare_files_faq_q5: "Werden Formeln und Formatierungen oder nur Anzeigewerte verglichen?",
+	tool_excel_compare_files_faq_a5: "Verglichen wird der gelesene Anzeigetext jeder Zelle. Formeln, Stile, Kommentare, Spaltenbreiten und Arbeitsmappenstruktur werden nicht separat geprüft; eine geänderte Formel mit gleichem Cachewert kann daher unverändert wirken.",
 	tool_excel_compare_files_faq_q1: 'Werden meine Excel-Dateien hochgeladen?',
 	tool_excel_compare_files_faq_q2: 'Wird nur das erste Blatt verglichen?',
 	tool_excel_compare_files_faq_q3: 'Kann ich hier zwei CSV-Dateien vergleichen?',
@@ -40,7 +42,7 @@ const de: SiteLangDict = {
 	tool_excel_compare_files_how_item_1: 'Erste Tabelle wählen (xlsx, xls oder csv).',
 	tool_excel_compare_files_how_item_2: 'Zweite Tabelle wählen.',
 	tool_excel_compare_files_how_item_3: 'Erstes Blatt belassen, außer Sie brauchen ein anderes Register.',
-	tool_excel_compare_files_how_item_4: 'Vergleichen listet abweichende Zellen; Beispiel laden lief schon beim ersten Anzeigen.',
+	tool_excel_compare_files_how_item_4: "Klicken Sie auf Vergleichen, um Zellen mit abweichendem Anzeigetext in den gewählten Blättern aufzulisten.",
 	tool_excel_compare_files_how_title: 'So gehen Sie vor',
 	tool_excel_compare_files_label_a: 'Erste Tabelle',
 	tool_excel_compare_files_label_b: 'Zweite Tabelle',

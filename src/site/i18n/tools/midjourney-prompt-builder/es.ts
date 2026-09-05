@@ -1,82 +1,86 @@
 /**
  * i18n tool shard (midjourney-prompt-builder / es).
- * 检索向独立重写；title 含「本地 + 可选 AI」；description 含本地默认与 Cloudflare AI Expand/Polish + Turnstile。
+ * Reescrito para quien busca «generador de prompts para Midjourney» o «cómo escribir un prompt de Midjourney»:
+ * el término principal va en el H1; «parámetro --ar», «exportar el prompt en JSON» y «prompt para ChatGPT»
+ * caen en la descripción, las FAQ y los casos de uso.
+ * Límites reales: el prompt se arma en el navegador; solo Ampliar/Pulir envía el borrador a Cloudflare Workers AI
+ * (con Turnstile y cuota); aquí no se generan imágenes ni se llama a Midjourney.
  */
 import type { SiteLangDict } from '../../../types';
 
 const es: SiteLangDict = {
 	tool_midjourney_prompt_builder_article:
-		'Crea prompts listos de Constructor de prompts Midjourney aquí. Rellena campos y copia Markdown o JSON a ChatGPT, Gemini, Claude o DeepSeek. Local por defecto; Expand/Polish opcional con Cloudflare Workers AI (Turnstile).',
+		'Monta aquí el prompt de Midjourney antes de usarlo: rellena sujeto, estilo, luz, proporción y parámetros, y la página lo arma en Markdown o JSON dentro del navegador para que lo copies en ChatGPT, Gemini, Claude o DeepSeek. Esta página solo produce texto: no genera imágenes ni llama a Midjourney. Por defecto no se sube nada; si pulsas Ampliar o Pulir, el borrador va a Cloudflare Workers AI pasando antes por Turnstile.',
 	tool_midjourney_prompt_builder_build:
-		'Crear prompt',
+		'Generar prompt',
 	tool_midjourney_prompt_builder_clear:
-		'Limpiar',
+		'Vaciar',
 	tool_midjourney_prompt_builder_copy:
 		'Copiar',
 	tool_midjourney_prompt_builder_desc:
-		'Constructor de prompts Midjourney — local por defecto + Expand/Polish opcional Cloudflare AI (Turnstile); Markdown/JSON en el dispositivo.',
+		'Generador de prompts para Midjourney: rellena sujeto, estilo, luz y proporción y la página los arma en Markdown o JSON; IA de Cloudflare opcional con Turnstile.',
 	tool_midjourney_prompt_builder_description:
-		'Proceso y ejemplo: Constructor de prompts Midjourney — Local + IA opcional para ChatGPT, Gemini, Claude y DeepSeek: ensambla prompts localmente por defecto y opcionalmente Expand/Polish con Cloudflare Workers AI (Turnstile obligatorio, límite de uso). Ejemplo al abrir. Markdown por defecto; JSON para pipelines. Texto en el dispositivo salvo que uses IA.',
+		'Generador de prompts para Midjourney: escribes sujeto, estilo, luz, proporción y parámetros, y la página los arma en una línea lista para pegar, con --ar según la proporción y --v 6.1 si no indicaste versión. Markdown por defecto y JSON para tus scripts; al entrar ya se ejecutó el ejemplo del samurái en el puente. Si necesitas más detalle, Ampliar o Pulir envía el borrador a Cloudflare Workers AI (Turnstile y cuota). Solo texto: aquí no se generan imágenes.',
 	tool_midjourney_prompt_builder_download:
 		'Descargar',
 	tool_midjourney_prompt_builder_empty:
-		'Rellena al menos un campo antes de crear.',
+		'Rellena al menos un campo antes de generar el prompt.',
 	tool_midjourney_prompt_builder_example:
-		'Entrada: Subject = samurái en puente musgoso; Style = tinta cinematográfica; Lighting = luz de borde al amanecer; Flags = --v 6.1 --style raw --stylize 120 --chaos 8. Salida (Markdown): ## Task con línea MJ sugerida y --ar 16:9; JSON para pipelines.',
+		'Entrada: sujeto = samurái desenvainando en un puente con musgo, bruma de lluvia, torii al fondo; estilo = tinta cinematográfica, verdeazulado y carbón, grano fino; luz = contraluz de amanecer con niebla volumétrica; proporción = 16:9; parámetros = --v 6.1 --style raw --stylize 120 --chaos 8. Salida (Markdown): el bloque ## Task trae la línea de Midjourney con sujeto, estilo y luz y termina en --ar 16:9. En JSON llegan los mismos datos como campos.',
 	tool_midjourney_prompt_builder_example_title:
 		'Ejemplo',
 	tool_midjourney_prompt_builder_faq_a1:
-		'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
+		'El montaje se hace en esta pestaña del navegador, así que por defecto no se sube nada. Solo cuando pulsas Ampliar o Pulir se envía el borrador actual a Cloudflare Workers AI; no lo reenviamos desde nuestros servidores a OpenAI, Google, Anthropic ni DeepSeek.',
 	tool_midjourney_prompt_builder_faq_a2:
-		'Modo local solo formatea aquí. Expand/Polish opcional usa Cloudflare Workers AI tras Turnstile — no llama APIs de chat.',
+		'El modo local no llama a ningún modelo: solo ordena tus campos en los bloques Role, Task, Constraints y Output. Ampliar y Pulir usan Cloudflare Workers AI después de pasar Turnstile, y no llaman a las APIs de ChatGPT, Gemini, Claude ni DeepSeek desde nuestros servidores.',
 	tool_midjourney_prompt_builder_faq_a3:
-		'Constructor de plantillas de Prompt covers generic Role/Task/Constraints/Output templates. This page focuses on midjourney prompt builder fields with a dedicated sample and rules for this scenario.',
+		'El generador de plantillas de prompts da la estructura genérica de cuatro bloques y sirve para cualquier tema. Aquí los campos ya son los de Midjourney —sujeto, estilo, luz, proporción y parámetros—, con un ejemplo cargado al entrar y una tabla de equivalencias propia de este caso.',
 	tool_midjourney_prompt_builder_faq_a4:
-		'Sí. Completa Turnstile en el panel de IA antes de Expand o Polish.',
+		'Turnstile frena los scripts automáticos para que la cuota gratuita quede para personas. Complétalo en el panel de IA antes de pulsar Ampliar o Pulir; sin un token válido esos botones dan error y el montaje en el navegador sigue funcionando.',
 	tool_midjourney_prompt_builder_faq_a5:
-		'Yes. The JSON chip emits structured fields plus assembled prompt text for tests or config pipelines.',
+		'Sí. Al cambiar a JSON la misma salida trae los campos estructurados y el prompt ya montado, listo para una tanda de imágenes, una prueba o un archivo de configuración.',
 	tool_midjourney_prompt_builder_faq_a6:
-		'Yes. Copy the finished prompt into ChatGPT, Gemini, Claude, or DeepSeek. We do not split URLs per platform because the job is formatting text, not calling APIs.',
+		'Sí. Copia el resultado y pégalo en el chat que uses, o directamente en Midjourney. Esta página solo da formato al texto y no llama a ninguna API, así que no hay una URL distinta por plataforma.',
 	tool_midjourney_prompt_builder_faq_q1:
-		'Is my prompt uploaded?',
+		'¿Se sube lo que escribo?',
 	tool_midjourney_prompt_builder_faq_q2:
-		'Does this call ChatGPT or other LLM APIs?',
+		'¿Esta página llama a la API de ChatGPT o de otros modelos?',
 	tool_midjourney_prompt_builder_faq_q3:
-		'How is this different from Constructor de plantillas de Prompt?',
+		'¿En qué se diferencia del generador de plantillas de prompts?',
 	tool_midjourney_prompt_builder_faq_q4:
-		'¿Por qué Turnstile para IA opcional?',
+		'¿Por qué hay que pasar Turnstile para usar la IA?',
 	tool_midjourney_prompt_builder_faq_q5:
-		'Can I get JSON output?',
+		'¿Puedo sacar la salida en JSON?',
 	tool_midjourney_prompt_builder_faq_q6:
-		'Can I use this with ChatGPT, Gemini, Claude, or DeepSeek?',
+		'¿Sirve con ChatGPT, Gemini, Claude o DeepSeek?',
 	tool_midjourney_prompt_builder_faq_q7:
-		'¿Diferencia entre local y Cloudflare AI opcional?',
+		'¿Qué diferencia hay entre el modo local y la IA opcional de Cloudflare?',
 	tool_midjourney_prompt_builder_faq_a7:
-		'Local: solo esta pestaña, sin subida. Expand/Polish opcional a Cloudflare Workers AI (Turnstile, límite).',
+		'En local todo se arma en esta pestaña, sin salir del navegador. Ampliar o Pulir manda el borrador a Cloudflare Workers AI (hace falta Turnstile y hay límites de frecuencia y de cuota diaria) y el texto que vuelve se escribe completo en la salida, encima del borrador que estabas viendo: revísalo antes de copiar. Si falla o se agota la cuota, sigue con el modo local.',
 	tool_midjourney_prompt_builder_ai_expand:
-		'Expandir con IA',
+		'Ampliar con IA',
 	tool_midjourney_prompt_builder_ai_polish:
 		'Pulir con IA',
 	tool_midjourney_prompt_builder_ai_panel_label:
-		'Cloudflare AI opcional (Turnstile)',
+		'Opcional: Cloudflare AI (requiere Turnstile)',
 	tool_midjourney_prompt_builder_ai_consent_title:
-		'¿Enviar texto a Cloudflare Workers AI?',
+		'¿Enviar el borrador a Cloudflare Workers AI?',
 	tool_midjourney_prompt_builder_ai_consent_body:
-		'Este paso opcional envía tu borrador a Cloudflare Workers AI. No va a OpenAI, Google, Anthropic ni DeepSeek desde nuestros servidores.',
+		'Este paso es opcional: envía el borrador que tienes ahora en los campos a Cloudflare Workers AI para una inferencia. No lo reenviamos desde nuestros servidores a OpenAI, Google, Anthropic ni DeepSeek. Sin usar la IA, el prompt se sigue montando en tu navegador.',
 	tool_midjourney_prompt_builder_ai_consent_ok:
 		'Continuar',
 	tool_midjourney_prompt_builder_ai_consent_cancel:
 		'Cancelar',
 	tool_midjourney_prompt_builder_ai_working:
-		'Cloudflare AI trabajando…',
+		'Cloudflare AI está trabajando…',
 	tool_midjourney_prompt_builder_ai_done:
-		'Sugerencia de IA aplicada. Revisa antes de copiar.',
+		'El texto de la IA se escribió completo en la salida. Revísalo antes de copiar.',
 	tool_midjourney_prompt_builder_ai_err_generic:
-		'La IA falló. Tu prompt local no cambió.',
+		'La IA falló esta vez; la salida sigue igual.',
 	tool_midjourney_prompt_builder_ai_err_rate:
-		'Cuota de IA agotada. Modo local o prueba mañana (UTC).',
+		'Se agotó la cuota de IA. Sigue montando el prompt aquí o vuelve mañana (UTC).',
 	tool_midjourney_prompt_builder_ai_err_turnstile:
-		'Completa Turnstile antes de usar IA.',
+		'Completa la verificación de Turnstile antes de usar la IA.',
 	tool_midjourney_prompt_builder_fmt_json:
 		'JSON',
 	tool_midjourney_prompt_builder_fmt_label:
@@ -86,81 +90,81 @@ const es: SiteLangDict = {
 	tool_midjourney_prompt_builder_subject_label:
 		'Sujeto',
 	tool_midjourney_prompt_builder_subject_ph:
-		'Sample subject…',
+		'Por ejemplo: samurái desenvainando en un puente…',
 	tool_midjourney_prompt_builder_style_label:
 		'Estilo',
 	tool_midjourney_prompt_builder_style_ph:
-		'Sample style…',
+		'Por ejemplo: tinta cinematográfica, tonos carbón…',
 	tool_midjourney_prompt_builder_lighting_label:
-		'Iluminación',
+		'Luz',
 	tool_midjourney_prompt_builder_lighting_ph:
-		'Sample lighting…',
+		'Por ejemplo: contraluz de amanecer con niebla…',
 	tool_midjourney_prompt_builder_aspect_label:
-		'Relación de aspecto',
+		'Proporción',
 	tool_midjourney_prompt_builder_aspect_ph:
-		'Sample aspect…',
+		'Por ejemplo 16:9, 9:16 o 1:1…',
 	tool_midjourney_prompt_builder_mj_flags_label:
-		'Mj / Flags',
+		'Parámetros de MJ',
 	tool_midjourney_prompt_builder_mj_flags_ph:
-		'Sample mj flags…',
+		'Por ejemplo --v 6.1 --style raw --stylize 120…',
 	tool_midjourney_prompt_builder_rules_table_title:
-		'Midjourney flag mapping',
+		'Equivalencias de parámetros de Midjourney',
 	tool_midjourney_prompt_builder_rules_table_ar:
-		'Aspect → --ar',
+		'Proporción → --ar',
 	tool_midjourney_prompt_builder_rules_table_v:
-		'Version → --v',
+		'Versión → --v',
 	tool_midjourney_prompt_builder_rules_table_note:
-		'Append flags from the table when aspect or version is set.',
+		'Si escribes una proporción, se convierte en --ar al final de la línea; si en los parámetros no hay versión, se añade --v 6.1.',
 	tool_midjourney_prompt_builder_rules_map_1_label:
-		'1:1 square',
+		'1:1 cuadrado',
 	tool_midjourney_prompt_builder_rules_map_1_flag:
 		'--ar 1:1',
 	tool_midjourney_prompt_builder_rules_map_2_label:
-		'16:9 landscape',
+		'16:9 horizontal',
 	tool_midjourney_prompt_builder_rules_map_2_flag:
 		'--ar 16:9',
 	tool_midjourney_prompt_builder_rules_map_3_label:
-		'9:16 vertical',
+		'9:16 en vertical',
 	tool_midjourney_prompt_builder_rules_map_3_flag:
 		'--ar 9:16',
 	tool_midjourney_prompt_builder_rules_map_4_label:
-		'MJ v6 default',
+		'Versión por defecto de MJ v6',
 	tool_midjourney_prompt_builder_rules_map_4_flag:
 		'--v 6.1',
 	tool_midjourney_prompt_builder_how_body:
-		'Rellena campos de Constructor de prompts Midjourney, crea el prompt localmente, opcionalmente Expand/Polish con Turnstile, y pégalo en ChatGPT, Gemini, Claude o DeepSeek.',
+		'Rellena los campos, genera el prompt y cópialo en ChatGPT, Gemini, Claude o DeepSeek; si te falta detalle, usa Ampliar o Pulir con la IA opcional de Cloudflare.',
 	tool_midjourney_prompt_builder_how_item_1:
-		'Al abrir, el ejemplo predeterminado ya se ejecutó (Cargar ejemplo).',
+		'Pulsa Cargar ejemplo para el preset por defecto.',
 	tool_midjourney_prompt_builder_how_item_2:
-		'Edit fields, click Build prompt, or switch to JSON if you need structured export.',
+		'Cambia sujeto, estilo, luz, proporción y parámetros y pulsa Generar prompt; pasa a JSON si lo necesitas estructurado.',
 	tool_midjourney_prompt_builder_how_item_3:
-		'Opcional: completa Turnstile y Expand/Polish con Cloudflare Workers AI.',
+		'Opcional: completa Turnstile en el panel de IA y pulsa Ampliar o Pulir; el texto que vuelva se escribe en la salida.',
 	tool_midjourney_prompt_builder_how_item_4:
-		'Copia o descarga y pega en ChatGPT, Gemini, Claude o DeepSeek.',
+		'Copia o descarga y pega en ChatGPT, Gemini, Claude o DeepSeek para seguir ajustando, o directamente en Midjourney.',
 	tool_midjourney_prompt_builder_how_title:
-		'Cómo funciona',
+		'Cómo se usa',
 	tool_midjourney_prompt_builder_load_sample:
 		'Cargar ejemplo',
 	tool_midjourney_prompt_builder_platforms_lead:
-		'Para ChatGPT, Gemini, Claude y DeepSeek — copia el prompt terminado en cualquier chat.',
+		'La salida se pega tal cual en el chat de ChatGPT, Gemini, Claude o DeepSeek.',
 	tool_midjourney_prompt_builder_result_label:
-		'Salida del prompt',
+		'Prompt generado',
 	tool_midjourney_prompt_builder_rules_body:
-		'Constructor de prompts Midjourney: ensamblaje local por defecto; IA opcional con límites y Turnstile.',
+		'Cómo se traducen los parámetros: la proporción pasa a --ar y, si no pones versión, se añade --v 6.1. El montaje en el navegador es lo que ocurre por defecto; la IA opcional tiene límites de uso y pide Turnstile.',
 	tool_midjourney_prompt_builder_rules_item_1:
-		'Structured fields map to Role/Task/Constraints/Output blocks in Markdown export.',
+		'Cada campo del formulario cae en uno de los bloques Role, Task, Constraints y Output del Markdown.',
 	tool_midjourney_prompt_builder_rules_item_2:
-		'Default export is Markdown. JSON is a chip on the same canvas.',
+		'La exportación por defecto es Markdown; JSON es un botón sobre la misma salida.',
 	tool_midjourney_prompt_builder_rules_item_3:
-		'La IA opcional no reemplaza el modo local — revisa antes de copiar.',
+		'La IA opcional es un paso añadido, no un sustituto: el modo local siempre funciona y el texto de la IA reemplaza por completo lo que había en la salida, así que revísalo antes de copiar.',
 	tool_midjourney_prompt_builder_rules_item_4:
-		'This tool assembles text only; it does not run midjourney prompt builder engines or call chat APIs locally.',
+		'Esta página solo arma texto: no genera imágenes ni llama a Midjourney ni a ninguna API de chat.',
 	tool_midjourney_prompt_builder_rules_title:
-		'Reglas que debes conocer',
+		'Lo que hace y lo que no',
 	tool_midjourney_prompt_builder_sec_constraints:
 		'Constraints',
 	tool_midjourney_prompt_builder_sec_output:
-		'Output format',
+		'Output',
 	tool_midjourney_prompt_builder_sec_role:
 		'Role',
 	tool_midjourney_prompt_builder_sec_task:
@@ -170,19 +174,19 @@ const es: SiteLangDict = {
 	tool_midjourney_prompt_builder_status_done:
 		'Prompt listo.',
 	tool_midjourney_prompt_builder_status_working:
-		'Creando prompt…',
+		'Generando el prompt…',
 	tool_midjourney_prompt_builder_title:
-		'Constructor de prompts Midjourney — Local + IA opcional',
+		'Generador de prompts para Midjourney — en el navegador, con IA opcional',
 	tool_midjourney_prompt_builder_usecase_1:
-		'Brief listo para pegar de Constructor de prompts Midjourney en ChatGPT, Gemini, Claude o DeepSeek.',
+		'Dejar un prompt de Midjourney listo para pegar en el chat del equipo, sin dictar los parámetros mensaje a mensaje.',
 	tool_midjourney_prompt_builder_usecase_2:
-		'Export JSON for a pipeline test, then refine with optional Cloudflare AI after Turnstile.',
+		'Exportar el JSON antes de una tanda de imágenes y guardar sujeto, estilo y proporción como campos de tu script u hoja de cálculo.',
 	tool_midjourney_prompt_builder_usecase_3:
-		'Compare with Prompt template builder when you need generic four-field templates instead of this scenario.',
+		'Si lo que necesitas es la plantilla genérica de cuatro bloques y no una imagen, usa el generador de plantillas de prompts.',
 	tool_midjourney_prompt_builder_usecase_4:
-		'Borradores sensibles en local — IA solo tras aceptar el modal.',
+		'Con borradores de un proyecto que aún no es público, quédate en el modo local: el texto solo sale de tu navegador si aceptas el aviso de la IA.',
 	tool_midjourney_prompt_builder_usecases_title:
-		'Buenos casos de uso',
+		'Cuándo viene bien',
 };
 
 export default es;

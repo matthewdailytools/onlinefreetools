@@ -229,6 +229,8 @@ export const renderPasswordGeneratorPage = (opts: {
 
       /**
        * 用 crypto.getRandomValues 生成单条密码。
+       * 采用拒绝采样：直接对随机字节取模会让字符池前若干个字符概率偏高
+       * （256 通常不是池长度的整数倍），这里丢弃落在最后不完整区间的字节。
        * @param {number} length 长度
        * @param {string} pool 字符池
        * @returns {string}
@@ -236,10 +238,15 @@ export const renderPasswordGeneratorPage = (opts: {
       function onePassword(length, pool) {
         var out = '';
         var poolLen = pool.length;
-        var bytes = new Uint8Array(length);
-        crypto.getRandomValues(bytes);
-        for (var i = 0; i < length; i++) {
-          out += pool[bytes[i] % poolLen];
+        /** 可用字节区间上界（不含），保证每个字符等概率。 */
+        var limit = 256 - (256 % poolLen);
+        while (out.length < length) {
+          var bytes = new Uint8Array(length - out.length);
+          crypto.getRandomValues(bytes);
+          for (var i = 0; i < bytes.length && out.length < length; i++) {
+            if (bytes[i] >= limit) continue;
+            out += pool[bytes[i] % poolLen];
+          }
         }
         return out;
       }

@@ -46,7 +46,7 @@ const ar: SiteLangDict = {
   tool_html_entity_rules_body: 'ما الذي يتغير حسب النطاق وكيف ترتبط الأسماء بالأرقام.',
   tool_html_entity_rules_item_1: 'الأدنى يهرب & < > " \'. غير ASCII يترك ASCII كما هو. الكل يجمع الاثنين.',
   tool_html_entity_rules_item_2: '&copy; و&#169; و&#xA9; تفك إلى ©. عند الترميز، «اسم إن وُجد» يستخدم أسماء شائعة.',
-  tool_html_entity_rules_item_3: 'ترميز نص مُرمّز مسبقًا يعطي &amp;amp;. استخدم «حتى الاستقرار» عند الشك.',
+  tool_html_entity_rules_item_3: 'ترميز نص مُرمّز مسبقًا يعطي &amp;amp;. استخدم «حتى الاستقرار» عند الشك؛ تبقى علامتا < و > المجردتان كما هما في كل جولة ولا تُقرأ كوسوم.',
   tool_html_entity_rules_item_4: 'الخصوصية: لا رفع؛ بدون مكتبات خارجية.',
   tool_html_entity_rules_title: 'قواعد متوقعة',
   tool_html_entity_sample: 'تحميل مثال',

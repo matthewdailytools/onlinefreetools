@@ -230,19 +230,35 @@ export const renderHreflangGeneratorPage = (opts: {
       }
 
       /**
+       * 标记语境下的属性转义。
+       * 带查询串的 URL（如 ?a=1&b=2）若原样写入 link 标签或 sitemap，
+       * XML 会因裸 & 解析失败，因此 link / sitemap 两种形态须转义；
+       * HTTP Link 响应头不是标记，保持原样。
+       * @param {string} s 原文
+       * @returns {string} 可安全写入标记的文本
+       */
+      function xmlAttr(s) {
+        return String(s)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;');
+      }
+
+      /**
        * 生成三种形态的标注文本。
        * @param {{lang:string, url:string}[]} rows
        * @returns {{link:string, http:string, sitemap:string}}
        */
       function buildAll(rows) {
         var link = rows.map(function (r) {
-          return '<link rel="alternate" hreflang="' + r.lang + '" href="' + r.url + '">';
+          return '<link rel="alternate" hreflang="' + xmlAttr(r.lang) + '" href="' + xmlAttr(r.url) + '">';
         }).join('\\n');
         var http = rows.map(function (r) {
           return '<' + r.url + '>; rel="alternate"; hreflang="' + r.lang + '"';
         }).join(', ');
         var sitemap = rows.map(function (r) {
-          return '<url>\\n  <loc>' + r.url + '</loc>\\n  <xhtml:link rel="alternate" hreflang="' + r.lang + '" href="' + r.url + '"/>\\n</url>';
+          return '<url>\\n  <loc>' + xmlAttr(r.url) + '</loc>\\n  <xhtml:link rel="alternate" hreflang="' + xmlAttr(r.lang) + '" href="' + xmlAttr(r.url) + '"/>\\n</url>';
         }).join('\\n');
         return { link: link, http: http, sitemap: sitemap };
       }

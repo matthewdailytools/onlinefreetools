@@ -249,6 +249,19 @@ export const renderExcelCompareFilesPage = (opts: {
       }
 
       /**
+       * 转义表格单元格文本，防止工作簿内容被浏览器解释为 HTML。
+       * @param {*} value 待展示的单元格值
+       */
+      function escapeCellText(value) {
+        return String(value)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#39;');
+      }
+
+      /**
        * 填充工作表下拉。
        * @param {HTMLSelectElement} sel 下拉
        * @param {string[]} names 表名
@@ -301,7 +314,7 @@ export const renderExcelCompareFilesPage = (opts: {
         var html = '<table class="table table-sm table-bordered mb-0"><thead><tr><th>' + msg.colAddr + '</th><th>' + msg.colA + '</th><th>' + msg.colB + '</th></tr></thead><tbody>';
         for (var i = 0; i < diffs.length; i++) {
           var d = diffs[i];
-          html += '<tr><td>' + d.addr + '</td><td>' + String(d.a).replace(/</g,'&lt;') + '</td><td>' + String(d.b).replace(/</g,'&lt;') + '</td></tr>';
+          html += '<tr><td>' + d.addr + '</td><td>' + escapeCellText(d.a) + '</td><td>' + escapeCellText(d.b) + '</td></tr>';
         }
         html += '</tbody></table>';
         outEl.innerHTML = html;

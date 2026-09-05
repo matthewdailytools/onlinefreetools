@@ -4,7 +4,7 @@
 import type { SiteLangDict } from '../../../types';
 const en: SiteLangDict = {
   tool_yaml_json_article:
-    'Bidirectional YAML ↔ JSON with explicit typing rules, multi-document policy, and honest local-processing notes. Built for config interchange, not a second thin URL.',
+    'Bidirectional YAML ↔ JSON with explicit typing rules, multi-document policy, and honest local-processing notes.',
   tool_yaml_json_clear: 'Clear',
   tool_yaml_json_convert: 'Convert',
   tool_yaml_json_copy_done: 'Copied',

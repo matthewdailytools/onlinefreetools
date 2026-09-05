@@ -47,7 +47,7 @@ const de: SiteLangDict = {
 	tool_hreflang_rules_item_4:
 		'x-default zeigt auf die Seite, die erscheint, wenn keine gelistete Sprache passt, etwa eine englische Root-Seite. Google kann sie als Fallback für alle nicht erkannten Sprachen nutzen.',
 	tool_hreflang_rules_item_5:
-		'Pro Menge genau eine Auslieferungsform wählen: die <link>-Tags im HTML, den HTTP-Link-Header oder das xhtml:link im Sitemap. Formen für dieselbe Menge nicht mischen, sonst können sich Signale widersprechen.',
+		'Google behandelt die drei Formen als gleichwertig und lässt auch alle drei gleichzeitig zu, sagt aber, dass das in der Suche nichts bringt. Wähle pro Seitenmenge eine: Drei Implementierungen laufen mit der Zeit auseinander, und widersprüchliche Annotationen werden ignoriert.',
 	tool_hreflang_example_title: 'Beispiel',
 	tool_hreflang_example:
 		'Das Beispiel listet drei Versionen einer Seite: https://example.com/ (en), https://example.com/es/ (es) und https://example.com/ja/ (ja). Die erzeugten <link>-Tags enthalten Self-References für jede Sprache plus ein optionales x-default auf die englische Root-Seite.',

@@ -1,68 +1,69 @@
 /**
- * i18n tool shard (ios-prompt-builder / zh).
- * 检索向独立重写；title 含「本地 + 可选 AI」；description 含本地默认与 Cloudflare AI Expand/Polish + Turnstile。
+ * i18n tool shard (ios-prompt-builder / zh)。
+ * 中文用户按「iOS 提示词生成器 / prompt 生成」检索；主词进 H1，次词（Swift 栈、SwiftUI、HIG、VoiceOver、JSON 导出）落在 description、FAQ 与适用场景。
+ * 事实边界：默认在浏览器内组装，不发请求；可选 AI 扩写/润色把当前草稿发到 Cloudflare Workers AI（须 Turnstile，有配额），返回文本整段替换结果区。
  */
 import type { SiteLangDict } from '../../../types';
 
 const zh: SiteLangDict = {
 	tool_ios_prompt_builder_article:
-		'在本页构建可粘贴的 iOS Prompt 构建器 Prompt。填写字段，复制 Markdown 或 JSON 到 ChatGPT、Gemini、Claude 或 DeepSeek。默认本地组装；可选 Expand/Polish 使用 Cloudflare Workers AI（Turnstile）。不用 AI 时文本留在本机。',
+		'在本页把 iOS 需求整理成能直接粘贴的提示词：填功能规格、Swift 技术栈、SwiftUI 界面与 HIG 无障碍约束，页面在浏览器里拼成 Markdown 或 JSON，复制后到 ChatGPT、Gemini、Claude 或 DeepSeek 提问。默认不发任何请求；只有点「AI 扩写」或「AI 润色」时，当前草稿才会发到 Cloudflare Workers AI（须完成 Turnstile，有频率与配额限制）。',
 	tool_ios_prompt_builder_build:
-		'构建 Prompt',
+		'生成 Prompt',
 	tool_ios_prompt_builder_clear:
 		'清空',
 	tool_ios_prompt_builder_copy:
 		'复制',
 	tool_ios_prompt_builder_desc:
-		'iOS Prompt 构建器 — 默认本地组装，可选 Cloudflare AI 扩写/润色（Turnstile）；Markdown/JSON 留在本机。',
+		'iOS 提示词生成器：填功能、Swift 栈、SwiftUI 界面与 HIG 约束，浏览器内拼成 Markdown 或 JSON；需要更详细时再用可选的 Cloudflare AI 扩写。',
 	tool_ios_prompt_builder_description:
-		'步骤与示例：iOS Prompt 构建器 — 本地 + 可选 AI：面向 ChatGPT、Gemini、Claude、DeepSeek，默认在本浏览器本地组装 Prompt，可选 Cloudflare Workers AI 扩写/润色（须 Turnstile、有频率限制）。进页自动展示样例。默认 Markdown；JSON 便于流水线。不用 AI 时文本不出本机。',
+		'把 iOS 需求写成能直接粘贴的提示词：填功能规格、Swift 与 SwiftUI 技术栈、界面结构和 HIG 无障碍约束，页面在浏览器内按 Role / Task / Constraints / Output 拼成 Markdown，也可切成 JSON。例如「HealthKit 步数趋势 + 静息心率区间」会展开成要求动态字体到 XXL、图表点可被 VoiceOver 朗读的任务段。点「加载样例」会一键填入预设并生成结果；需要写得更细时再点可选 AI 扩写/润色（Cloudflare Workers AI，须 Turnstile，有配额）。 示例：点「加载样例」填入默认预设，再生成或可选 AI 扩写/润色。',
 	tool_ios_prompt_builder_download:
 		'下载',
 	tool_ios_prompt_builder_empty:
-		'请至少填写一个字段后再构建。',
+		'至少填一个字段才能生成。',
 	tool_ios_prompt_builder_example:
-		'输入：Feature = HealthKit 步数趋势 + 静息心率 + 权限说明；Stack = Swift 5.10、SwiftUI、SwiftData；UI = NavigationStack + Charts；HIG = Dynamic Type XXL、VoiceOver。输出（Markdown）：## Task → Feature / Swift / SwiftUI / HIG 行。',
+		'输入：功能 = HealthKit 步数周趋势 + 静息心率区间，权限请求附白话说明；Swift 栈 = Swift 5.10、SwiftUI、iOS 17+、async/await、SwiftData 缓存；界面 = NavigationStack + Charts，首次查询前弹权限说明页；HIG = 动态字体到 XXL、图表点带 VoiceOver 标签、样例代码不用强解包。输出（Markdown）：## Role 写明高级 iOS 工程师身份，## Task 按功能、Swift 栈、SwiftUI、HIG 逐行列出。',
 	tool_ios_prompt_builder_example_title:
 		'示例',
 	tool_ios_prompt_builder_faq_a1:
-		'默认只在本浏览器标签页本地组装。可选「AI 扩写/润色」仅把该次点击提交的文字发往 Cloudflare Workers AI，不会从我们的服务器调用 OpenAI、Google、Anthropic 或 DeepSeek。',
+		'默认不会。填字段和点「生成 Prompt」都只在这个浏览器标签页里完成，不发请求。只有你点可选的「AI 扩写」或「AI 润色」，当前草稿才会发到 Cloudflare Workers AI；我们不会再从服务器转给 OpenAI、Google、Anthropic 或 DeepSeek。',
 	tool_ios_prompt_builder_faq_a2:
-		'本地模式只在本标签页整理字段，不调用 ChatGPT、Gemini、Claude、DeepSeek API。可选 AI 使用 Cloudflare Workers AI（须 Turnstile）。',
+		'不会。本地生成只是把你填的内容按 Role / Task / Constraints / Output 排版。可选 AI 走 Cloudflare Workers AI（先过 Turnstile），不经我们的服务器调用 ChatGPT、Gemini、Claude 或 DeepSeek 的接口。',
 	tool_ios_prompt_builder_faq_a3:
-		'Prompt 模板构建器 covers generic Role/Task/Constraints/Output templates. This page focuses on ios prompt builder fields with a dedicated sample and rules for this scenario.',
+		'Prompt 模板构建器给的是通用四段模板，任何主题都能套。本页把字段换成 iOS 开发真正要交代的东西——功能规格、Swift 与 SwiftUI 技术栈、导航与图表结构、HIG 的动态字体与 VoiceOver 约束，样例和边界也按这个场景写。',
 	tool_ios_prompt_builder_faq_a4:
-		'可以。使用 Expand/Polish 前须在可选 AI 面板完成 Turnstile；无有效 token 时 AI 按钮报错，本地模式仍可用。',
+		'需要。点「AI 扩写」或「AI 润色」前先在可选 AI 面板完成 Turnstile 验证；没有有效凭据时 AI 按钮会报错，本地生成照常可用。',
 	tool_ios_prompt_builder_faq_a5:
-		'Yes. The JSON chip emits structured fields plus assembled prompt text for tests or config pipelines.',
+		'可以。把输出格式切到 JSON，会同时给出各字段原文和拼好的 Prompt 文本，方便挂进 XCTest 的快照用例或提示词配置流水线。',
 	tool_ios_prompt_builder_faq_a6:
-		'Yes. Copy the finished prompt into ChatGPT, Gemini, Claude, or DeepSeek. We do not split URLs per platform because the job is formatting text, not calling APIs.',
+		'可以。生成的是纯文本，复制后粘到 ChatGPT、Gemini、Claude 或 DeepSeek 的对话框即可；本页不代你调用它们的接口。',
 	tool_ios_prompt_builder_faq_q1:
-		'Is my prompt uploaded?',
+		'我填的内容会上传吗？',
 	tool_ios_prompt_builder_faq_q2:
-		'Does this call ChatGPT or other LLM APIs?',
+		'这个页面会调用 ChatGPT 等大模型接口吗？',
 	tool_ios_prompt_builder_faq_q3:
-		'How is this different from Prompt 模板构建器?',
+		'和 Prompt 模板构建器有什么不同？',
 	tool_ios_prompt_builder_faq_q4:
-		'为什么可选 AI 需要 Turnstile？',
+		'可选 AI 为什么要过 Turnstile？',
 	tool_ios_prompt_builder_faq_q5:
-		'Can I get JSON output?',
+		'能导出 JSON 吗？',
 	tool_ios_prompt_builder_faq_q6:
-		'Can I use this with ChatGPT, Gemini, Claude, or DeepSeek?',
+		'能配合 ChatGPT、Gemini、Claude、DeepSeek 用吗？',
 	tool_ios_prompt_builder_faq_q7:
-		'本地模式与可选 Cloudflare AI 有何区别？',
+		'本地生成和可选 Cloudflare AI 有什么区别？',
 	tool_ios_prompt_builder_faq_a7:
-		'本地模式只在本标签页整理文字，不上传。可选 Expand/Polish 发往 Cloudflare Workers AI（须 Turnstile、有频率限制）。失败或超额时继续用本地模式。',
+		'本地生成只排版你填的字段，不发请求，也没有次数限制。可选 AI 扩写/润色会把当前草稿发到 Cloudflare Workers AI（须 Turnstile，有频率与配额限制），返回的文本会整段写入结果区、覆盖原来的草稿，复制前请核对。失败或配额用完时继续用本地生成。',
 	tool_ios_prompt_builder_ai_expand:
 		'AI 扩写',
 	tool_ios_prompt_builder_ai_polish:
 		'AI 润色',
 	tool_ios_prompt_builder_ai_panel_label:
-		'可选 Cloudflare AI（Turnstile）',
+		'可选 Cloudflare AI（需 Turnstile）',
 	tool_ios_prompt_builder_ai_consent_title:
-		'发送到 Cloudflare Workers AI？',
+		'把草稿发到 Cloudflare Workers AI？',
 	tool_ios_prompt_builder_ai_consent_body:
-		'此可选步骤会把当前草稿发往 Cloudflare Workers AI；不会从我们的服务器调用 OpenAI、Google、Anthropic 或 DeepSeek。不用 AI 也能本地组装。',
+		'这一步是可选的：会把当前草稿发到 Cloudflare Workers AI 做推理，不会从我们的服务器转给 OpenAI、Google、Anthropic 或 DeepSeek。不用 AI 也能在浏览器里把 Prompt 生成出来。',
 	tool_ios_prompt_builder_ai_consent_ok:
 		'继续',
 	tool_ios_prompt_builder_ai_consent_cancel:
@@ -70,13 +71,13 @@ const zh: SiteLangDict = {
 	tool_ios_prompt_builder_ai_working:
 		'Cloudflare AI 处理中…',
 	tool_ios_prompt_builder_ai_done:
-		'已应用 AI 建议，复制前请核对。',
+		'AI 返回的文本已整段替换结果区，复制前请核对。',
 	tool_ios_prompt_builder_ai_err_generic:
-		'AI 失败，本地 Prompt 未改。',
+		'AI 调用失败，结果区内容未改动。',
 	tool_ios_prompt_builder_ai_err_rate:
-		'AI 配额已满，请用本地模式或明日（UTC）再试。',
+		'AI 配额已用完，先用本地生成，或次日（UTC）再试。',
 	tool_ios_prompt_builder_ai_err_turnstile:
-		'使用 AI 前请完成 Turnstile 验证。',
+		'请先完成 Turnstile 验证再用 AI。',
 	tool_ios_prompt_builder_fmt_json:
 		'JSON',
 	tool_ios_prompt_builder_fmt_label:
@@ -86,53 +87,53 @@ const zh: SiteLangDict = {
 	tool_ios_prompt_builder_feature_spec_label:
 		'功能 / 规格',
 	tool_ios_prompt_builder_feature_spec_ph:
-		'功能说明…',
+		'例：HealthKit 步数趋势 + 静息心率区间…',
 	tool_ios_prompt_builder_swift_stack_label:
 		'Swift / 技术栈',
 	tool_ios_prompt_builder_swift_stack_ph:
-		'Swift 栈…',
+		'例：Swift 5.10、SwiftUI、iOS 17+、SwiftData…',
 	tool_ios_prompt_builder_swiftui_ui_label:
-		'SwiftUI / UI',
+		'SwiftUI / 界面',
 	tool_ios_prompt_builder_swiftui_ui_ph:
-		'SwiftUI 界面…',
+		'例：NavigationStack + Charts、权限说明页…',
 	tool_ios_prompt_builder_hig_constraints_label:
 		'HIG / 约束',
 	tool_ios_prompt_builder_hig_constraints_ph:
-		'HIG 约束…',
+		'例：动态字体 XXL、VoiceOver 标签、禁强解包…',
 	tool_ios_prompt_builder_how_body:
-		'填写 iOS Prompt 构建器 字段，本地构建 Prompt，可选 Turnstile 后 Expand/Polish，再粘贴到 ChatGPT、Gemini、Claude 或 DeepSeek。',
+		'把需求填进四个字段，页面在浏览器里拼成 Markdown（或 JSON）；需要写得更细再让 Cloudflare AI 扩写，最后复制到 ChatGPT、Gemini、Claude 或 DeepSeek。',
 	tool_ios_prompt_builder_how_item_1:
-		'进页已自动运行默认样例（Load sample）。',
+		'点「加载样例」填入默认预设并生成一份 Markdown Prompt，照着改最快。',
 	tool_ios_prompt_builder_how_item_2:
-		'Edit fields, click Build prompt, or switch to JSON if you need structured export.',
+		'改写功能、Swift 栈、SwiftUI 与 HIG 字段后点「生成 Prompt」；要结构化导出就切到 JSON。',
 	tool_ios_prompt_builder_how_item_3:
-		'可选：完成 Turnstile，再通过 Cloudflare Workers AI 扩写或润色。',
+		'（可选）完成 Turnstile 后点 AI 扩写或 AI 润色，返回文本会整段替换结果区。',
 	tool_ios_prompt_builder_how_item_4:
-		'复制或下载，粘贴到 ChatGPT、Gemini、Claude 或 DeepSeek。',
+		'复制或下载结果，粘贴到 ChatGPT、Gemini、Claude 或 DeepSeek 提问。',
 	tool_ios_prompt_builder_how_title:
 		'使用方法',
 	tool_ios_prompt_builder_load_sample:
-		'加载示例',
+		'加载样例',
 	tool_ios_prompt_builder_platforms_lead:
-		'适用于 ChatGPT、Gemini、Claude、DeepSeek — 复制成品 Prompt 到任意聊天界面。',
+		'生成的是纯文本提示词，ChatGPT、Gemini、Claude、DeepSeek 都能直接粘贴使用。',
 	tool_ios_prompt_builder_result_label:
 		'Prompt 输出',
 	tool_ios_prompt_builder_rules_body:
-		'iOS Prompt 构建器：默认本地组装；可选 Cloudflare AI 有频率限制且须 Turnstile。',
+		'本页只负责把 iOS 需求排版成提示词：不编译代码，也不运行 Xcode 构建。可选 AI 有频率与配额限制，且须先过 Turnstile。',
 	tool_ios_prompt_builder_rules_item_1:
-		'Structured fields map to Role/Task/Constraints/Output blocks in Markdown export.',
+		'四个字段会分别映射到 Markdown 的 Role、Task、Constraints、Output 段。',
 	tool_ios_prompt_builder_rules_item_2:
-		'Default export is Markdown. JSON is a chip on the same canvas.',
+		'默认导出 Markdown；同一结果区可切成 JSON，字段原文与拼好的文本一并输出。',
 	tool_ios_prompt_builder_rules_item_3:
-		'可选 Cloudflare AI 不取代本地模式 — 复制前请核对 AI 输出。',
+		'可选 Cloudflare AI 不替代本地生成；它返回的文本会整段覆盖结果区，请核对后再复制。',
 	tool_ios_prompt_builder_rules_item_4:
-		'This tool assembles text only; it does not run ios prompt builder engines or call chat APIs locally.',
+		'本工具只组装文字，不会编译 Swift、不会跑 Xcode，也不会代你调用聊天接口。',
 	tool_ios_prompt_builder_rules_title:
-		'规则说明',
+		'需要知道的边界',
 	tool_ios_prompt_builder_sec_constraints:
 		'Constraints',
 	tool_ios_prompt_builder_sec_output:
-		'Output format',
+		'Output',
 	tool_ios_prompt_builder_sec_role:
 		'Role',
 	tool_ios_prompt_builder_sec_task:
@@ -140,19 +141,19 @@ const zh: SiteLangDict = {
 	tool_ios_prompt_builder_status_copied:
 		'已复制到剪贴板。',
 	tool_ios_prompt_builder_status_done:
-		'Prompt 已就绪。',
+		'Prompt 已生成。',
 	tool_ios_prompt_builder_status_working:
-		'正在构建…',
+		'正在生成…',
 	tool_ios_prompt_builder_title:
-		'iOS Prompt 构建器 — 本地 + 可选 AI',
+		'iOS 提示词生成器 — 本地组装 Prompt，可选 AI 扩写',
 	tool_ios_prompt_builder_usecase_1:
-		'为团队在 ChatGPT、Gemini、Claude 或 DeepSeek 准备可粘贴的 iOS Prompt 构建器 简报。',
+		'把评审会上口述的 iOS 需求整理成一段可粘贴的提示词，发到团队群或直接问 ChatGPT。',
 	tool_ios_prompt_builder_usecase_2:
-		'Export JSON for a pipeline test, then refine with optional Cloudflare AI after Turnstile.',
+		'导出 JSON，把无障碍约束当成检查项接进用例或提示词配置，再按需用 Cloudflare AI 扩写。',
 	tool_ios_prompt_builder_usecase_3:
-		'Compare with Prompt template builder when you need generic four-field templates instead of this scenario.',
+		'只需要通用四段模板、不带 iOS 字段时，改用 Prompt 模板构建器。',
 	tool_ios_prompt_builder_usecase_4:
-		'敏感草稿保持本地 — 仅在同意弹窗后启用 AI。',
+		'未发布功能的描述先在浏览器里成型，确认可以外发后再决定要不要用可选 AI。',
 	tool_ios_prompt_builder_usecases_title:
 		'适用场景',
 };

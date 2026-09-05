@@ -45,7 +45,7 @@ const pt: SiteLangDict = {
   tool_html_entity_rules_body: 'O que muda com o escopo e como nomes e números se relacionam.',
   tool_html_entity_rules_item_1: 'Mínimo escapa & < > " \'. Só não ASCII preserva ASCII. Tudo combina os dois.',
   tool_html_entity_rules_item_2: '&copy;, &#169; e &#xA9; decodificam igual. Nome usa rótulos comuns ao codificar.',
-  tool_html_entity_rules_item_3: 'Codificar texto já escapado gera &amp;amp;. Use Até estável se suspeitar de duplo escape.',
+  tool_html_entity_rules_item_3: 'Codificar texto já escapado gera &amp;amp;. Use Até estável se suspeitar de duplo escape: < e > soltos ficam literais em cada passagem, sem virar marcação.',
   tool_html_entity_rules_item_4: 'Privacidade: sem upload; zero bibliotecas externas.',
   tool_html_entity_rules_title: 'Regras esperadas',
   tool_html_entity_sample: 'Carregar exemplo',

@@ -62,9 +62,9 @@ const en: SiteLangDict = {
 	tool_serp_faq_q2: 'Are the pixel limits exact?',
 	tool_serp_faq_a2:
 		'No. Desktop and mobile viewports vary by device and font. This tool uses the commonly cited ~600px desktop and ~460px mobile title limits as an estimate for planning, not a guarantee of how Google will render your page.',
-	tool_serp_faq_q3: 'Does this match the mobile preview in Search Console?',
+	tool_serp_faq_q3: 'Can any Google tool show the final snippet?',
 	tool_serp_faq_a3:
-		'It is a local estimate in the same direction. For the final look, open your live page in Search Console URL inspection or the Rich Results test, which render against Google’s real environment.',
+		'No. URL Inspection reports crawl and index status with a rendered page screenshot, and the Rich Results Test checks structured-data eligibility — neither previews the text snippet. Google also rewrites title links when the page title fits the query poorly, so the only real check is searching for the live URL.',
 	tool_serp_faq_q4: 'Is my title uploaded anywhere?',
 	tool_serp_faq_a4:
 		'No. All text stays in your browser tab and is never sent to a server. Close the tab and everything is gone.',

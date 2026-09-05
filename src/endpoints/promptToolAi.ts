@@ -231,7 +231,16 @@ export const handlePromptToolAi = async (c: Context) => {
 		'';
 
 	const secret = String(c.env.TURNSTILE_SECRET_KEY || '');
-	const captcha = await verifyTurnstileToken(secret, turnstileToken, clientIp(c));
+	/**
+	 * 将 token 绑定到当前 Prompt 工具的 widget action，避免其他表单的 token 被复用。
+	 * hostname 仅在生产域名下校验；本地开发用 localhost 时跳过，避免误伤。
+	 */
+	const requestHostname = new URL(c.req.url).hostname.toLowerCase();
+	const isLocalHost = requestHostname === 'localhost' || requestHostname === '127.0.0.1';
+	const captcha = await verifyTurnstileToken(secret, turnstileToken, clientIp(c), {
+		...(isLocalHost ? {} : { hostname: requestHostname }),
+		action: `${slug}-ai`,
+	});
 	if (!captcha.ok) {
 		const status = captcha.error === 'Turnstile is not configured' ? 503 : 403;
 		return c.json<AiErrorBody>(

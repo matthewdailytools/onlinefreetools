@@ -13,11 +13,11 @@ const en: SiteLangDict = {
 	tool_film_prompt_builder_desc:
 		'Film prompt builder — local default + optional Cloudflare AI Expand/Polish (Turnstile); Markdown/JSON on device.',
 	tool_film_prompt_builder_description:
-		'Film prompt builder — Local + Optional AI for ChatGPT, Gemini, Claude, and DeepSeek: assemble structured prompts locally by default, then optionally Expand/Polish via Cloudflare Workers AI (Turnstile required, rate-limited). Example runs on first paint. Markdown default; JSON for pipelines. Local text stays on your device unless you use optional AI.',
+		'Film prompt builder — Local + Optional AI for ChatGPT, Gemini, Claude, and DeepSeek: assemble structured prompts locally by default, then optionally Expand/Polish via Cloudflare Workers AI (Turnstile required, rate-limited). Markdown default; JSON for pipelines. Local text stays on your device unless you use optional AI. Example: click Load sample for a ready preset, then Build or optionally Expand/Polish.',
 	tool_film_prompt_builder_download: 'Download',
 	tool_film_prompt_builder_empty: 'Fill at least one field before building.',
 	tool_film_prompt_builder_example:
-		'Input: Logline = two rival food-truck owners share one kitchen for 30 days after a permit error; Act II = festival rush + blogger recipe feud; Scene list = six numbered beats; Arc = Pride → grudging teamwork → co-owners. Output (Markdown): ## Task block lists Logline, Act1–3, Scene / List, Character / Arc — same text Load sample writes on first paint.',
+		'Input: Logline = two rival food-truck owners share one kitchen for 30 days after a permit error; Act II = festival rush + blogger recipe feud; Scene list = six numbered beats; Arc = Pride → grudging teamwork → co-owners. Output (Markdown): ## Task block lists Logline, Act1–3, Scene / List, Character / Arc — same text Load sample writes on the canvas.',
 	tool_film_prompt_builder_example_title: 'Example',
 	tool_film_prompt_builder_faq_a1:
 		'Local assembly runs in this browser tab — nothing is uploaded by default. Optional Expand/Polish sends only the text you submit for that click to Cloudflare Workers AI, not to OpenAI, Google, Anthropic, or DeepSeek from our servers.',
@@ -30,7 +30,7 @@ const en: SiteLangDict = {
 	tool_film_prompt_builder_faq_a5:
 		'Yes. The JSON chip emits structured fields plus assembled prompt text for tests or config pipelines.',
 	tool_film_prompt_builder_faq_a6:
-		'Yes. Copy the finished prompt into ChatGPT, Gemini, Claude, or DeepSeek. We do not split URLs per platform because the job is formatting text, not calling APIs.',
+		'Yes. The output is plain prompt text, so the same block pastes into ChatGPT, Gemini, Claude, or DeepSeek without per-platform edits.',
 	tool_film_prompt_builder_faq_q1: 'Is my prompt uploaded?',
 	tool_film_prompt_builder_faq_q2: 'Does this call ChatGPT or other LLM APIs?',
 	tool_film_prompt_builder_faq_q3: 'How is this different from Prompt template builder?',
@@ -84,7 +84,7 @@ const en: SiteLangDict = {
 
 	tool_film_prompt_builder_how_body:
 		'Fill film prompt builder fields, build a prompt locally, optionally Expand/Polish with Turnstile, then paste into ChatGPT, Gemini, Claude, or DeepSeek.',
-	tool_film_prompt_builder_how_item_1: 'Load sample already ran the default preset on first paint.',
+	tool_film_prompt_builder_how_item_1: 'Click Load sample for the default preset.',
 	tool_film_prompt_builder_how_item_2: 'Edit fields, click Build prompt, or switch to JSON if you need structured export.',
 	tool_film_prompt_builder_how_item_3: 'Optional: complete Turnstile, then Expand or Polish via Cloudflare Workers AI.',
 	tool_film_prompt_builder_how_item_4: 'Copy or download, then paste into ChatGPT, Gemini, Claude, or DeepSeek.',

@@ -56,7 +56,7 @@ const en: SiteLangDict = {
   tool_jwt_decoder_rules_item_1:
     'Structure: a signed JWT (JWS compact form) has three Base64url segments — header (alg, typ), payload (claims), signature (bytes, not JSON).',
   tool_jwt_decoder_rules_item_2:
-    'Base64url decode: replace -→+, _→/, pad to length % 4, then atob and JSON.parse. Malformed segments fail with a specific header/payload error.',
+    'Base64url decode: replace -→+, _→/, pad to length % 4, then atob, decode those bytes as UTF-8, and JSON.parse — so accented or CJK claim values stay readable. Malformed segments fail with a specific header/payload error.',
   tool_jwt_decoder_rules_item_3:
     'Registered claims: exp (expiry), iat (issued at), nbf (not before) are numeric Unix seconds in UTC. Decoding them does not prove the token is trustworthy.',
   tool_jwt_decoder_rules_item_4:

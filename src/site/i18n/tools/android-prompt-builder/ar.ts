@@ -1,82 +1,83 @@
 /**
  * i18n tool shard (android-prompt-builder / ar).
- * 检索向独立重写；title 含「本地 + 可选 AI」；description 含本地默认与 Cloudflare AI Expand/Polish + Turnstile。
+ * عبارات البحث العربية: «أداة إنشاء برومبت Android»، «برومبت ChatGPT لتطوير أندرويد». العبارة الرئيسية في H1، والعبارات الفرعية (حزمة Kotlin، Compose، Gradle، minSdk، إخراج JSON) في الوصف والأسئلة الشائعة وحالات الاستخدام.
+ * الحدود الفعلية: التجميع داخل المتصفح بلا طلبات؛ «توسيع/تنقيح» الاختياري يرسل المسودة إلى Cloudflare Workers AI (يلزم Turnstile وهناك حد)، والجواب يستبدل منطقة النتيجة بالكامل.
  */
 import type { SiteLangDict } from '../../../types';
 
 const ar: SiteLangDict = {
 	tool_android_prompt_builder_article:
-		'منشئ prompts لـ Android — محلي + ذكاء اصطناعي اختياري لـ ChatGPT وGemini وClaude وDeepSeek: تجميع محلي افتراضيًا ثم توسيع/صقل اختياري عبر Cloudflare Workers AI (Turnstile مطلوب، محدود المعدل). يعمل المثال عند الفتح. Markdown افتراضي؛ JSON للمسارات. النص يبقى على جهازك ما لم تستخدم الذكاء الاصطناعي.',
+		'حوِّل متطلب تطبيق Android إلى برومبت جاهز للّصق: اكتب الميزة، وحزمة Kotlin التقنية، وشاشة Compose، وقيود Gradle، فتجمع الصفحة النص بصيغة Markdown أو JSON داخل المتصفح. لا يُرسل أي طلب افتراضياً؛ ولا تخرج المسودة إلا عند الضغط على «توسيع» أو «تنقيح»، وحينها تُرسل إلى Cloudflare Workers AI (يلزم Turnstile، وهناك حد للاستخدام).',
 	tool_android_prompt_builder_build:
-		'إنشاء prompt',
+		'إنشاء البرومبت',
 	tool_android_prompt_builder_clear:
-		'مسح',
+		'تفريغ',
 	tool_android_prompt_builder_copy:
 		'نسخ',
 	tool_android_prompt_builder_desc:
-		'منشئ prompts لـ Android — local por defecto + Expand/Polish opcional Cloudflare AI (Turnstile); Markdown/JSON en el dispositivo.',
+		'أداة إنشاء برومبت لتطوير Android: املأ الميزة وحزمة Kotlin وشاشة Compose وقيود Gradle، فيُجمَّع النص في المتصفح بصيغة Markdown أو JSON، والذكاء الاصطناعي اختياري.',
 	tool_android_prompt_builder_description:
-		'عملية ومثال: منشئ prompts لـ Android — Local + IA opcional para ChatGPT, Gemini, Claude y DeepSeek: ensambla prompts localmente por defecto y opcionalmente Expand/Polish con Cloudflare Workers AI (Turnstile obligatorio, límite de uso). Ejemplo al abrir. Markdown por defecto; JSON para pipelines. Texto en el dispositivo salvo que uses IA.',
+		'أداة إنشاء برومبت لتطوير Android: اكتب الميزة، والحزمة التقنية (Kotlin 2.0 و Jetpack Compose و Room)، والشاشة، وقيود Gradle، فترتّبها الصفحة في كتل Role / Task / Constraints / Output بصيغة Markdown أو JSON دون مغادرة المتصفح. مثال: «قائمة قراءة تعمل دون اتصال مع بحث نصي كامل وأرشفة بالسحب» تصبح مهمة مقيّدة بـ minSdk 26. زر «تحميل المثال» يملأ الحقول ويجمع البرومبت، و«توسيع» أو «تنقيح» عبر Cloudflare Workers AI اختياري (Turnstile وحد يومي).',
 	tool_android_prompt_builder_download:
 		'تنزيل',
 	tool_android_prompt_builder_empty:
-		'املأ حقلًا واحدًا على الأقل قبل الإنشاء.',
+		'املأ حقلاً واحداً على الأقل قبل الإنشاء.',
 	tool_android_prompt_builder_example:
-		'المدخلات: Feature = قائمة قراءة offline؛ Stack = Kotlin وCompose وRoom؛ Gradle = minSdk 26. المخرجات (Markdown): ## Task → Feature / Kotlin / Compose / Gradle.',
+		'الإدخال: الميزة = قائمة قراءة دون اتصال، حفظ من ورقة المشاركة، بحث نصي كامل، وأرشفة بالسحب مع تراجع؛ الحزمة = Kotlin 2.0 و Jetpack Compose و Room FTS4 و Hilt؛ Compose = LazyColumn برؤوس تاريخ ثابتة و SwipeToDismissBox؛ Gradle = minSdk 26 و targetSdk 35 ووحدة :core:data. الإخراج (Markdown): في ## Role دور مهندس Android خبير، وفي ## Task سطر لكل حقل.',
 	tool_android_prompt_builder_example_title:
 		'مثال',
 	tool_android_prompt_builder_faq_a1:
-		'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
+		'ليس افتراضياً. تعبئة الحقول والضغط على «إنشاء البرومبت» يحدث داخل هذا التبويب فقط ودون أي طلب شبكي. ولا تخرج المسودة إلا عند الضغط على «توسيع» أو «تنقيح»، وتذهب حينها إلى Cloudflare Workers AI؛ ولا تُمرَّر من خوادمنا إلى OpenAI أو Google أو Anthropic أو DeepSeek.',
 	tool_android_prompt_builder_faq_a2:
-		'Modo local solo formatea aquí. Expand/Polish opcional usa Cloudflare Workers AI tras Turnstile — no llama APIs de chat.',
+		'لا. الوضع المحلي يرتّب ما كتبته في كتل Role / Task / Constraints / Output فقط. أما الذكاء الاصطناعي الاختياري فيعمل عبر Cloudflare Workers AI بعد Turnstile، وليس عبر واجهات ChatGPT أو Gemini أو Claude أو DeepSeek.',
 	tool_android_prompt_builder_faq_a3:
-		'منشئ prompts لـ Android covers generic Role/Task/Constraints/Output templates. This page focuses on android prompt builder fields with a dedicated sample and rules for this scenario.',
+		'أداة قوالب البرومبت تمنحك الكتل الأربع العامة Role / Task / Constraints / Output وتصلح لأي موضوع. أما هنا فالحقول مخصّصة لمشروع Android: الميزة وحزمة Kotlin وشاشة Compose و minSdk وتقسيم وحدات Gradle، مع مثال وقيود خاصة بهذه الحالة.',
 	tool_android_prompt_builder_faq_a4:
-		'Sí. Completa Turnstile en el panel de IA antes de Expand o Polish.',
+		'نعم. أكمل عنصر Turnstile في لوحة الذكاء الاصطناعي قبل الضغط على «توسيع» أو «تنقيح». وبدون رمز صالح تُظهر الأزرار خطأ، ويبقى الوضع المحلي متاحاً.',
 	tool_android_prompt_builder_faq_a5:
-		'Yes. The JSON chip emits structured fields plus assembled prompt text for tests or config pipelines.',
+		'نعم. بدّل صيغة الإخراج إلى JSON فتحصل على الحقول منفصلة مع نص البرومبت المجمَّع، وهو مناسب للاختبارات أو لخط إعداد آلي.',
 	tool_android_prompt_builder_faq_a6:
-		'Yes. Copy the finished prompt into ChatGPT, Gemini, Claude, or DeepSeek. We do not split URLs per platform because the job is formatting text, not calling APIs.',
+		'نعم. الناتج نص عادي: انسخه والصقه في ChatGPT أو Gemini أو Claude أو DeepSeek. والصفحة لا تستدعي هذه الواجهات بالنيابة عنك.',
 	tool_android_prompt_builder_faq_q1:
-		'Is my prompt uploaded?',
+		'هل يُرفع ما أكتبه إلى خادم؟',
 	tool_android_prompt_builder_faq_q2:
-		'Does this call ChatGPT or other LLM APIs?',
+		'هل تستدعي الصفحة واجهة ChatGPT أو نماذج أخرى؟',
 	tool_android_prompt_builder_faq_q3:
-		'How is this different from منشئ prompts لـ Android?',
+		'ما الفرق عن أداة قوالب البرومبت؟',
 	tool_android_prompt_builder_faq_q4:
-		'¿Por qué Turnstile para IA opcional?',
+		'لماذا يطلب الذكاء الاصطناعي الاختياري Turnstile؟',
 	tool_android_prompt_builder_faq_q5:
-		'Can I get JSON output?',
+		'هل يمكن التصدير بصيغة JSON؟',
 	tool_android_prompt_builder_faq_q6:
-		'Can I use this with ChatGPT, Gemini, Claude, or DeepSeek?',
+		'هل تعمل مع ChatGPT و Gemini و Claude و DeepSeek؟',
 	tool_android_prompt_builder_faq_q7:
-		'¿Diferencia entre local y Cloudflare AI opcional?',
+		'ما الفرق بين التجميع المحلي و Cloudflare AI الاختياري؟',
 	tool_android_prompt_builder_faq_a7:
-		'Local: solo esta pestaña, sin subida. Expand/Polish opcional a Cloudflare Workers AI (Turnstile, límite).',
+		'التجميع المحلي يرتّب حقولك فحسب: بلا طلبات وبلا حدود استخدام. أما «توسيع» و«تنقيح» فيرسلان المسودة إلى Cloudflare Workers AI (يلزم Turnstile وهناك حد للاستخدام)، والنص العائد يستبدل منطقة النتيجة بالكامل، فراجعه قبل النسخ. وعند الفشل أو نفاد الحد تابع بالوضع المحلي.',
 	tool_android_prompt_builder_ai_expand:
-		'Expandir con IA',
+		'توسيع بالذكاء الاصطناعي',
 	tool_android_prompt_builder_ai_polish:
-		'Pulir con IA',
+		'تنقيح بالذكاء الاصطناعي',
 	tool_android_prompt_builder_ai_panel_label:
-		'Cloudflare AI opcional (Turnstile)',
+		'Cloudflare AI اختياري (Turnstile)',
 	tool_android_prompt_builder_ai_consent_title:
-		'¿Enviar texto a Cloudflare Workers AI?',
+		'إرسال المسودة إلى Cloudflare Workers AI؟',
 	tool_android_prompt_builder_ai_consent_body:
-		'Este paso opcional envía tu borrador a Cloudflare Workers AI. No va a OpenAI, Google, Anthropic ni DeepSeek desde nuestros servidores.',
+		'خطوة اختيارية: تُرسل مسودتك الحالية إلى Cloudflare Workers AI للاستدلال. ولا تُمرَّر من خوادمنا إلى OpenAI أو Google أو Anthropic أو DeepSeek. وبدون الذكاء الاصطناعي يظل التجميع داخل المتصفح متاحاً.',
 	tool_android_prompt_builder_ai_consent_ok:
-		'Continuar',
+		'متابعة',
 	tool_android_prompt_builder_ai_consent_cancel:
-		'Cancelar',
+		'إلغاء',
 	tool_android_prompt_builder_ai_working:
-		'Cloudflare AI trabajando…',
+		'Cloudflare AI يعمل…',
 	tool_android_prompt_builder_ai_done:
-		'Sugerencia de IA aplicada. Revisa antes de copiar.',
+		'استبدل نص الذكاء الاصطناعي محتوى النتيجة. راجعه قبل النسخ.',
 	tool_android_prompt_builder_ai_err_generic:
-		'La IA falló. Tu prompt local no cambió.',
+		'فشل الذكاء الاصطناعي، والنتيجة كما هي.',
 	tool_android_prompt_builder_ai_err_rate:
-		'Cuota de IA agotada. Modo local o prueba mañana (UTC).',
+		'نفد حد الذكاء الاصطناعي. استخدم الوضع المحلي أو عد غداً (UTC).',
 	tool_android_prompt_builder_ai_err_turnstile:
-		'Completa Turnstile antes de usar IA.',
+		'أكمل Turnstile قبل استخدام الذكاء الاصطناعي.',
 	tool_android_prompt_builder_fmt_json:
 		'JSON',
 	tool_android_prompt_builder_fmt_label:
@@ -84,77 +85,77 @@ const ar: SiteLangDict = {
 	tool_android_prompt_builder_fmt_md:
 		'Markdown',
 	tool_android_prompt_builder_feature_spec_label:
-		'Feature / Spec',
+		'الميزة / المواصفات',
 	tool_android_prompt_builder_feature_spec_ph:
-		'Sample feature spec…',
+		'مثال: قائمة قراءة دون اتصال مع بحث…',
 	tool_android_prompt_builder_kotlin_stack_label:
-		'Kotlin / Stack',
+		'Kotlin / الحزمة التقنية',
 	tool_android_prompt_builder_kotlin_stack_ph:
-		'Sample kotlin stack…',
+		'مثال: Kotlin 2.0، Jetpack Compose، Room، Hilt…',
 	tool_android_prompt_builder_compose_ui_label:
-		'Compose / Ui',
+		'Compose / الشاشة',
 	tool_android_prompt_builder_compose_ui_ph:
-		'Sample compose ui…',
+		'مثال: LazyColumn برؤوس ثابتة…',
 	tool_android_prompt_builder_gradle_constraints_label:
-		'Gradle / Constraints',
+		'Gradle / القيود',
 	tool_android_prompt_builder_gradle_constraints_ph:
-		'Sample gradle constraints…',
+		'مثال: minSdk 26، targetSdk 35، وحدة :core:data…',
 	tool_android_prompt_builder_how_body:
-		'Fill منشئ prompts لـ Android fields, build a prompt locally, optionally Expand/Polish with Turnstile, then paste into ChatGPT, Gemini, Claude, or DeepSeek.',
+		'املأ الحقول الأربعة فتجمع الصفحة منها Markdown (أو JSON) داخل المتصفح؛ وإن أردت تفصيلاً أكثر اطلب من Cloudflare AI توسيع النص، ثم الصق البرومبت في محادثتك.',
 	tool_android_prompt_builder_how_item_1:
-		'Load sample already ran the default preset on first paint.',
+		'اضغط «تحميل المثال» فتُملأ الحقول ويُجمَّع برومبت جاهز، ثم ابدأ التعديل منه.',
 	tool_android_prompt_builder_how_item_2:
-		'Edit fields, click Build prompt, or switch to JSON if you need structured export.',
+		'عدّل الميزة والحزمة والشاشة والقيود ثم اضغط «إنشاء البرومبت»؛ وللتصدير المهيكل بدّل إلى JSON.',
 	tool_android_prompt_builder_how_item_3:
-		'Optional: complete Turnstile, then Expand or Polish via Cloudflare Workers AI.',
+		'اختياري: أكمل Turnstile ثم اضغط «توسيع» أو «تنقيح»، فيحتل نص الذكاء الاصطناعي منطقة النتيجة.',
 	tool_android_prompt_builder_how_item_4:
-		'Copy or download, then paste into ChatGPT, Gemini, Claude, or DeepSeek.',
+		'انسخ النتيجة أو نزّلها، ثم الصقها في ChatGPT أو Gemini أو Claude أو DeepSeek.',
 	tool_android_prompt_builder_how_title:
-		'كيف يعمل',
+		'طريقة الاستخدام',
 	tool_android_prompt_builder_load_sample:
-		'تحميل مثال',
+		'تحميل المثال',
 	tool_android_prompt_builder_platforms_lead:
-		'لـ ChatGPT وGemini وClaude وDeepSeek — انسخ الـ prompt إلى أي واجهة دردشة.',
+		'البرومبت النهائي نص عادي، ويُلصق كما هو في ChatGPT أو Gemini أو Claude أو DeepSeek.',
 	tool_android_prompt_builder_result_label:
-		'مخرجات Prompt',
+		'ناتج البرومبت',
 	tool_android_prompt_builder_rules_body:
-		'Kotlin/Compose/Gradle fields for mobile agent prompts. Local assembly is default; optional AI is rate-limited and requires Turnstile.',
+		'الصفحة تصيغ المتطلب فقط: لا تترجم الشيفرة ولا تشغّل Gradle. والذكاء الاصطناعي الاختياري محدود الاستخدام ويشترط Turnstile.',
 	tool_android_prompt_builder_rules_item_1:
-		'Structured fields map to Role/Task/Constraints/Output blocks in Markdown export.',
+		'كل حقل يذهب إلى كتلة خاصة في Markdown: Role و Task و Constraints و Output.',
 	tool_android_prompt_builder_rules_item_2:
-		'Default export is Markdown. JSON is a chip on the same canvas.',
+		'الإخراج الافتراضي Markdown، ويمكن للمنطقة نفسها إظهار JSON بالحقول والبرومبت المجمَّع.',
 	tool_android_prompt_builder_rules_item_3:
-		'Optional Cloudflare AI never replaces local mode — review AI output before copying.',
+		'لا يغني Cloudflare AI عن التجميع المحلي: جوابه يشغل منطقة النتيجة بالكامل، فراجعه قبل النسخ.',
 	tool_android_prompt_builder_rules_item_4:
-		'This tool assembles text only; it does not run android prompt builder engines or call chat APIs locally.',
+		'الأداة تجمع النص فقط: لا تبني Kotlin ولا تشغّل Gradle ولا تستدعي واجهات المحادثة بالنيابة عنك.',
 	tool_android_prompt_builder_rules_title:
-		'قواعد يجب أن تعرفها',
+		'حدود ينبغي توقعها',
 	tool_android_prompt_builder_sec_constraints:
 		'Constraints',
 	tool_android_prompt_builder_sec_output:
-		'Output format',
+		'Output',
 	tool_android_prompt_builder_sec_role:
 		'Role',
 	tool_android_prompt_builder_sec_task:
 		'Task',
 	tool_android_prompt_builder_status_copied:
-		'تم النسخ.',
+		'تم النسخ إلى الحافظة.',
 	tool_android_prompt_builder_status_done:
-		'Prompt جاهز.',
+		'البرومبت جاهز.',
 	tool_android_prompt_builder_status_working:
-		'جاري الإنشاء…',
+		'يجري تجميع البرومبت…',
 	tool_android_prompt_builder_title:
-		'منشئ prompts لـ Android — محلي + ذكاء اصطناعي اختياري',
+		'أداة إنشاء برومبت لتطوير Android — تجميع محلي مع ذكاء اصطناعي اختياري',
 	tool_android_prompt_builder_usecase_1:
-		'Ship a paste-ready android prompt builder brief for your team chat in ChatGPT, Gemini, Claude, or DeepSeek.',
+		'تحويل المتطلب الذي ذُكر شفهياً في اجتماع التخطيط إلى برومبت يمكن لصقه في محادثة الفريق.',
 	tool_android_prompt_builder_usecase_2:
-		'Export JSON for a pipeline test, then refine with optional Cloudflare AI after Turnstile.',
+		'تصدير JSON لربط الحقول باختبار انحدار، ثم توسيع النص عبر Cloudflare AI عند الحاجة.',
 	tool_android_prompt_builder_usecase_3:
-		'Compare with Prompt template builder when you need generic four-field templates instead of this scenario.',
+		'إن لم تحتج حقول Android وكفاك قالب عام من أربع كتل، فانتقل إلى أداة قوالب البرومبت.',
 	tool_android_prompt_builder_usecase_4:
-		'Keep sensitive draft text local — only opt into AI when you accept the consent modal.',
+		'صُغ الوصف الداخلي في المتصفح أولاً، ثم قرر بعدها إن كان يصح إرساله إلى الذكاء الاصطناعي الاختياري.',
 	tool_android_prompt_builder_usecases_title:
-		'حالات مناسبة',
+		'متى تفيد',
 };
 
 export default ar;

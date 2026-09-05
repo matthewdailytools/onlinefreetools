@@ -29,7 +29,7 @@ const id: SiteLangDict = {
 	tool_compare_two_word_documents_for_differences_faq_a3:
 		'Jika ekstraksi gagal, biasanya berkas berpassword, rusak, atau bukan OOXML. Halaman hanya gambar menghasilkan teks kosong.',
 	tool_compare_two_word_documents_for_differences_faq_a4:
-		'Orang juga mencari bandingkan Word online. Pekerjaan yang sama jika maksudnya dua .docx. Pencarian “bandingkan dua dokumen” yang berarti PDF bukan halaman ini.',
+		"Perbandingan menerima dua .docx dan memeriksa teks hasil ekstraksi. PDF dan .doc lama tidak diuraikan, sedangkan format serta riwayat revisi Word tidak termasuk hasil.",
 	tool_compare_two_word_documents_for_differences_faq_q1: 'Apakah berkas Word saya diunggah?',
 	tool_compare_two_word_documents_for_differences_faq_q2: 'Apakah ini sama dengan Tinjau → Bandingkan di Word?',
 	tool_compare_two_word_documents_for_differences_faq_q3: 'Mengapa ekstraksi gagal atau header hilang?',
@@ -39,7 +39,7 @@ const id: SiteLangDict = {
 	tool_compare_two_word_documents_for_differences_how_item_1: 'Pilih .docx pertama (asli).',
 	tool_compare_two_word_documents_for_differences_how_item_2: 'Pilih .docx kedua (revisi).',
 	tool_compare_two_word_documents_for_differences_how_item_3:
-		'Bandingkan menarik teks terlihat sendiri; Muat contoh sudah jalan saat pertama dibuka.',
+		"Tekan Bandingkan untuk mengekstrak teks yang terlihat dan menjalankan diff kata.",
 	tool_compare_two_word_documents_for_differences_how_item_4: 'Baca hijau (ditambah) dan merah (dihapus).',
 	tool_compare_two_word_documents_for_differences_how_title: 'Cara pakai',
 	tool_compare_two_word_documents_for_differences_label_a: 'Dokumen Word pertama',

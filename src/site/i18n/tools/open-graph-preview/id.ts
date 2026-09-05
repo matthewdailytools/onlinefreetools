@@ -56,10 +56,10 @@ const id: SiteLangDict = {
 	tool_og_twitter_inferred: 'twitter:card tidak diatur — platform menyimpulkan kartu summary dari tag og:.',
 	tool_og_how_title: 'Cara kerja',
 	tool_og_how_body:
-		'Pratinjau mengurai tag og:/twitter: yang Anda tempel (atau mengekstraknya dari HTML yang diambil dari URL) lalu menggambar tiga kartu. Facebook menampilkan gambar 1.91:1 di kiri dengan judul, deskripsi, dan domain di bawahnya. X mengikuti twitter:card: summary_large_image menampilkan gambar besar di atas, summary menampilkan yang kecil di samping teks. Aplikasi pesan seperti WhatsApp menampilkan satu kartu besar. Tabel menandai og:title, og:description, dan og:image sebagai wajib dan mencantumkan kolom opsional.',
+		'Pratinjau mengurai tag og:/twitter: yang Anda tempel (atau mengekstraknya dari HTML yang diambil dari URL) lalu menggambar tiga kartu. Facebook menampilkan gambar 1.91:1 di kiri dengan judul, deskripsi, dan domain di bawahnya. X mengikuti twitter:card: summary_large_image menampilkan gambar besar di atas, summary menampilkan yang kecil di samping teks. Aplikasi pesan seperti WhatsApp menampilkan satu kartu besar. Tabel kolom menandai empat kolom yang diwajibkan protokol dan mencantumkan kolom opsionalnya.',
 	tool_og_rules_title: 'Aturan yang dipakai pratinjau',
 	tool_og_rules_body: 'Berikut ukuran gambar dan fallback yang dipakai platform, berdasarkan protokol Open Graph dan dokumentasi X Cards.',
-	tool_og_rules_item_1: 'Kolom wajib: og:title, og:description, dan og:image. Yang hilang ditandai agar diperbaiki sebelum publikasi.',
+	tool_og_rules_item_1: 'Diwajibkan protokol Open Graph: og:title, og:type, og:image, dan og:url. og:description bersifat opsional dalam spesifikasi, tetapi semua platform besar menampilkannya — bila dikosongkan, platform menyusun ringkasannya sendiri dari teks halaman.',
 	tool_og_rules_item_2: 'og:image 1200×630 px (1.91:1) berfungsi di semua platform utama. Facebook kini juga menerima potongan 2:1 dan 1:1; gambar kecil sering diperbesar dan tampak buram.',
 	tool_og_rules_item_3: 'twitter:card summary_large_image cocok dengan gambar besar; summary dengan yang kecil. Tanpa twitter:card, platform menyimpulkan kartu summary dari tag og:.',
 	tool_og_rules_item_4: 'Saat og:title atau og:image hilang, platform memakai judul HTML, meta description, dan gambar pertama halaman.',
@@ -76,7 +76,7 @@ const id: SiteLangDict = {
 		'Setelah memperbarui CMS atau tema, ambil URL langsung dan pastikan tag og: masih sesuai dengan halaman.',
 	tool_og_faq_q1: 'Apa yang terjadi jika halaman tidak punya tag Open Graph?',
 	tool_og_faq_a1:
-		'Facebook, X, dan WhatsApp menyusun pratinjau dari judul HTML, meta description, dan gambar pertama halaman. Kartunya bisa tidak lengkap atau menampilkan gambar yang salah, karena itulah kolom og: wajib ada.',
+		'Facebook, X, dan WhatsApp beralih ke judul HTML, meta description, dan gambar yang ditemukan di halaman. Perilaku cadangan ini berbeda-beda antarplatform dan berubah seiring waktu, jadi kartunya bisa tidak lengkap atau memilih gambar yang salah — untuk itulah tag og: ada.',
 	tool_og_faq_q2: 'Seberapa besar sebaiknya og:image?',
 	tool_og_faq_a2:
 		'Ukuran aman adalah 1200×630 px, rasio 1.91:1 yang diterima semua platform utama. Facebook kini juga mendukung potongan 2:1 dan 1:1. Gambar yang sangat kecil sering diperbesar dan tampak buram.',

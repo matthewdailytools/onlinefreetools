@@ -44,7 +44,7 @@ const ru: SiteLangDict = {
   tool_html_entity_rules_body: 'Различия областей и связь имён с числами.',
   tool_html_entity_rules_item_1: 'Минимум экранирует & < > " \'. Не-ASCII — всё выше ASCII. Всё — оба.',
   tool_html_entity_rules_item_2: '&copy;, &#169;, &#xA9; декодируются в ©. Имя — для частых символов.',
-  tool_html_entity_rules_item_3: 'Повторное кодирование → &amp;amp;. «До стабильности» при двойном escape.',
+  tool_html_entity_rules_item_3: 'Повторное кодирование → &amp;amp;. «До стабильности» помогает при двойном escape: одиночные < и > на каждом проходе остаются буквальными и не читаются как разметка.',
   tool_html_entity_rules_item_4: 'Приватность: без CDN и внешних библиотек.',
   tool_html_entity_rules_title: 'Правила',
   tool_html_entity_sample: 'Пример',

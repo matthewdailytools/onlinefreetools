@@ -12,10 +12,11 @@ const ar: SiteLangDict = {
 	tool_compare_two_text_files_online_desc:
 		'مقارنة ملفين نصيين عبر الإنترنت: اختر ملفين txt وشاهد فرق الأسطر في المتصفح دون رفع.',
 	tool_compare_two_text_files_online_description:
-		'مقارنة ملفين نصيين عبر الإنترنت داخل المتصفح. العملية: اختر الملف الأصلي والنسخة المعدّلة، فك الترميز UTF-8 (يُزال BOM)، تُرفض البايتات الثنائية، ثم تُلوَّن إضافات الأسطر وحذفها. الملفات تبقى على جهازك ولا تُرفع. مثال: notes-a.txt مقابل notes-b.txt حيث يتغير السطر الأوسط فقط. وورد وإكسل وJSON لها صفحات أخرى؛ هذه الصفحة للملفات النصية فقط. مقارنة txt تدخل في المهمة نفسها.',
+		"قارن ملفين نصيين عبر الإنترنت داخل المتصفح. اختر ملفي .txt الأصلي والمعدّل؛ يُفك ترميزهما بصرامة كـ UTF-8 ويُزال BOM من البداية، وتُرفض البنية غير الصالحة أو الثنائية قبل تلوين إضافات الأسطر وحذفها. تبقى الملفات على جهازك ولا تُرفع إلى خادم. مثال: يختلف notes-a.txt وnotes-b.txt في السطر الأوسط فقط. لا تُحلل ملفات وورد أو الجداول أو JSON المنظم.",
 	tool_compare_two_text_files_online_empty: 'اختر ملفين نصيين أولاً، أو حمّل المثال.',
 	tool_compare_two_text_files_online_err_binary:
 		'أحد الملفين يبدو ثنائياً (بايتات فارغة). هذه الصفحة تقارن النص الصريح فقط مثل .txt.',
+	tool_compare_two_text_files_online_err_encoding: "أحد الملفين ليس UTF-8 صالحاً. احفظه أو حوّله إلى UTF-8 ثم أعد المقارنة.",
 	tool_compare_two_text_files_online_err_too_large:
 		'ملف أكبر من نحو 1 ميغابايت. جرّب مقطعاً أقصر حتى لا يتجمّد التبويب.',
 	tool_compare_two_text_files_online_example:
@@ -24,11 +25,11 @@ const ar: SiteLangDict = {
 	tool_compare_two_text_files_online_faq_a1:
 		'لا. FileReader يقرأ البايتات داخل هذا التبويب. قد يُحمَّل jsdiff من شبكة توصيل كمكتبة؛ ملفاتك لا تُرسل إلى خوادمنا.',
 	tool_compare_two_text_files_online_faq_a2:
-		'يُفك الترميز كـ UTF-8. يُزال BOM في البداية حتى لا يُحسب السطر الأول متغيراً بسبب تلك العلامة وحدها. ترميزات أخرى قد تظهر مشوّهة — احفظ أولاً كـ UTF-8.',
+		"يُفك الملف بترميز UTF-8 صارم ويُزال BOM من البداية. يُرفض UTF-8 غير الصالح بدلاً من إظهار رموز بديلة؛ حوّل الترميزات القديمة مثل Windows-1252 أولاً.",
 	tool_compare_two_text_files_online_faq_a3:
 		'وجود بايت فارغ يعني ملفاً ثنائياً فيُرفض. استخدم أداة سداسية أو أرشيف. وورد وإكسل لهما صفحات مقارنة خاصة.',
 	tool_compare_two_text_files_online_faq_a4:
-		'هذه الصفحة لـ .txt / .text. من يبحث عن مقارنة txt أو فرق ملفات أونلاين غالباً يريد هذا. إن كان «مقارنة ملفين» يعني وورد أو جدولاً فانتقل لتلك الصفحات. لصق نصين بلا ملفات في «تحقق من الفرق بين نصين».',
+		"تقبل الأداة ملفات .txt و.text المفكوكة بترميز UTF-8. استخدم مقارنة النص الملصق بلا ملفات، وأداة وورد أو الجداول لملفات .docx وxlsx وxls وcsv.",
 	tool_compare_two_text_files_online_faq_q1: 'هل تُرفع ملفاتي؟',
 	tool_compare_two_text_files_online_faq_q2: 'ما قواعد الترميز وBOM؟',
 	tool_compare_two_text_files_online_faq_q3: 'هل أقارن ملفات ثنائية أو وورد أو إكسل هنا؟',
@@ -38,7 +39,7 @@ const ar: SiteLangDict = {
 	tool_compare_two_text_files_online_how_item_1: 'اختر الملف النصي الأول (لقطة أصلية أو تصدير).',
 	tool_compare_two_text_files_online_how_item_2: 'اختر الملف النصي الثاني (النسخة المعدّلة).',
 	tool_compare_two_text_files_online_how_item_3:
-		'المقارنة تعمل تلقائياً بعد اختيار الاثنين؛ حمّل مثالاً نفّذ ذلك مسبقاً عند أول رسم.',
+		"اضغط «قارن» لتحديث فرق الأسطر؛ ويعمل أيضاً تلقائياً بعد اختيار الملفين.",
 	tool_compare_two_text_files_online_how_item_4: 'الأخضر إضافة والأحمر حذف. امسح يزيل الملفين من هذا التبويب.',
 	tool_compare_two_text_files_online_how_title: 'طريقة الاستخدام',
 	tool_compare_two_text_files_online_label_a: 'الملف النصي الأول',

@@ -12,10 +12,11 @@ const pt: SiteLangDict = {
 	tool_compare_two_text_files_online_desc:
 		'Comparar dois arquivos de texto online: escolha dois .txt e veja o diff no navegador, sem enviar nada.',
 	tool_compare_two_text_files_online_description:
-		'Comparar dois arquivos de texto online no navegador. Processo: escolha o arquivo original e o revisado, decode UTF-8 (BOM é removido), recuse bytes binários e destaque inclusões e exclusões por linha. Os arquivos ficam no seu dispositivo e não são enviados. Exemplo: notes-a.txt contra notes-b.txt, só a linha do meio muda. Word, Excel e JSON têm outras páginas; aqui só arquivos de texto. Comparar txt entra no mesmo uso.',
+		"Compare dois arquivos de texto online no navegador. Escolha os .txt original e revisado: a decodificação é UTF-8 estrita, o BOM inicial é removido e encoding inválido ou conteúdo binário é recusado antes de destacar inclusões e exclusões por linha. Os arquivos ficam no dispositivo e não são enviados ao servidor. Exemplo: notes-a.txt e notes-b.txt diferem só na linha central. Word, planilhas e JSON estruturado não são analisados.",
 	tool_compare_two_text_files_online_empty: 'Escolha primeiro dois arquivos de texto, ou carregue o exemplo.',
 	tool_compare_two_text_files_online_err_binary:
 		'Um arquivo parece binário (bytes nulos). Esta página só compara texto simples, como .txt.',
+	tool_compare_two_text_files_online_err_encoding: "Um arquivo não é UTF-8 válido. Salve ou converta para UTF-8 e compare novamente.",
 	tool_compare_two_text_files_online_err_too_large:
 		'Um arquivo passa de cerca de 1 MB. Use um trecho menor para a aba não travar.',
 	tool_compare_two_text_files_online_example:
@@ -24,11 +25,11 @@ const pt: SiteLangDict = {
 	tool_compare_two_text_files_online_faq_a1:
 		'Não. O FileReader lê os bytes nesta aba. O jsdiff pode vir de um CDN como biblioteca; seus arquivos não sobem para os nossos servidores.',
 	tool_compare_two_text_files_online_faq_a2:
-		'Decodificação UTF-8. Um BOM no começo é retirado para a primeira linha não parecer alterada só por essa marca. Outras encodings podem sair ilegíveis — salve antes como UTF-8.',
+		"Os arquivos são decodificados como UTF-8 estrito e o BOM inicial é removido. UTF-8 inválido é recusado em vez de virar caracteres de substituição; converta antes encodings antigos como Windows-1252.",
 	tool_compare_two_text_files_online_faq_a3:
 		'Byte nulo vira binário e é recusado. Use um visualizador hex ou um extrator. Word e Excel têm páginas próprias de comparação.',
 	tool_compare_two_text_files_online_faq_a4:
-		'Esta página é para .txt / .text. Quem busca comparar txt ou um diff de arquivos online costuma querer isso. Se «comparar dois arquivos» era Word ou planilha, use aquelas páginas. Colar dois textos sem arquivos: «Verificar diferenças entre dois textos».',
+		"Aceita arquivos .txt / .text decodificados como UTF-8. Use o comparador por colagem quando não houver arquivos e os comparadores de Word ou planilhas para .docx, xlsx, xls ou csv.",
 	tool_compare_two_text_files_online_faq_q1: 'Meus arquivos são enviados?',
 	tool_compare_two_text_files_online_faq_q2: 'Como ficam a encoding e o BOM?',
 	tool_compare_two_text_files_online_faq_q3: 'Dá para comparar binário, Word ou Excel aqui?',
@@ -38,7 +39,7 @@ const pt: SiteLangDict = {
 	tool_compare_two_text_files_online_how_item_1: 'Escolha o primeiro arquivo de texto (exportação ou cópia original).',
 	tool_compare_two_text_files_online_how_item_2: 'Escolha o segundo arquivo de texto (versão revisada).',
 	tool_compare_two_text_files_online_how_item_3:
-		'A comparação roda sozinha quando os dois estão escolhidos; Carregar exemplo já fez isso na primeira pintura.',
+		"Clique em Comparar para atualizar o diff por linha; escolher os dois arquivos também inicia a comparação automaticamente.",
 	tool_compare_two_text_files_online_how_item_4: 'Verde é inclusão, vermelho é exclusão. Limpar tira os dois arquivos desta aba.',
 	tool_compare_two_text_files_online_how_title: 'Como funciona',
 	tool_compare_two_text_files_online_label_a: 'Primeiro arquivo de texto',

@@ -111,3 +111,8 @@
 - [x] References ≥1
 - [ ] Disclaimer（YMYL 必备）
 - [x] `03-locale-briefs.md` 已填（实现十语前）
+
+## 复审修正（2026-09-05）
+
+- `buildAll()` 新增 `xmlAttr()`：link 标签与 sitemap 形态对 URL / 语言码做 `& < > "` 转义。带查询串的 URL（`?a=1&b=2`）原样写入时会让 XML sitemap 解析失败。
+- HTTP `Link` 响应头形态刻意不转义——它不是标记语境。

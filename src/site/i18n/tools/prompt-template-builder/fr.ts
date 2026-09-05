@@ -1,74 +1,75 @@
 /**
  * i18n tool shard (prompt-template-builder / fr).
- * Master H1: générateur de modèles de Prompt; not an LLM — structured Role/Task/Constraints/Output.
- * Platforms ChatGPT / Gemini / Claude / DeepSeek appear in description and first screen.
+ * H1 orienté recherche : générateur de modèles de prompt ; la page met en forme le texte, elle
+ * n'appelle l'API d'aucun chat. ChatGPT / Gemini / Claude / DeepSeek figurent dans la description
+ * et au premier écran. Développer/Peaufiner est optionnel via Cloudflare Workers AI (Turnstile + quota).
  */
 import type { SiteLangDict } from '../../../types';
 
 const fr: SiteLangDict = {
 	tool_prompt_template_builder_article:
-		'Transformez un brouillon de prompt en modèle réutilisable Role / Task / Constraints / Output sur cette page. Collez du texte libre ou remplissez les champs, puis copiez Markdown ou JSON dans ChatGPT, Gemini, Claude ou DeepSeek. Aucun appel à une API de modèle. Le texte reste sur l’appareil et n’est pas envoyé au serveur.',
+		'Transformez un brouillon de prompt en modèle réutilisable Role / Task / Constraints / Output sur cette page. Collez du texte libre ou remplissez les champs, puis copiez Markdown ou JSON dans ChatGPT, Gemini, Claude ou DeepSeek. Par défaut le modèle est assemblé dans votre navigateur et nous n’appelons l’API d’aucun chat à votre place ; ce n’est qu’en cliquant sur Développer ou Peaufiner avec l’IA que le brouillon en cours part vers Cloudflare Workers AI (Turnstile obligatoire, quota limité).',
 	tool_prompt_template_builder_build: 'Créer le modèle',
 	tool_prompt_template_builder_clear: 'Effacer',
 	tool_prompt_template_builder_constraints_label: 'Contraintes',
 	tool_prompt_template_builder_constraints_ph: 'Limites de ton, périmètre, à éviter…',
 	tool_prompt_template_builder_copy: 'Copier',
 	tool_prompt_template_builder_desc:
-		'Générateur de modèles de Prompt — local por defecto + Expand/Polish opcional Cloudflare AI (Turnstile); Markdown/JSON en el dispositivo.',
+		'Générateur de modèles de prompt — assemblage local dans le navigateur, avec Développer/Peaufiner en option via l’IA Cloudflare (Turnstile requis).',
 	tool_prompt_template_builder_description:
-		'Processus et exemple : Générateur de modèles de Prompt — Local + IA opcional para ChatGPT, Gemini, Claude y DeepSeek: ensambla prompts localmente por defecto y opcionalmente Expand/Polish con Cloudflare Workers AI (Turnstile obligatorio, límite de uso). Ejemplo al abrir. Markdown por defecto; JSON para pipelines. Texto en el dispositivo salvo que uses IA.',
+		'Générateur de modèles de prompt : mettez votre brouillon en forme en quatre étapes — Role, Task, Constraints, Output — puis collez-le dans ChatGPT, Gemini, Claude ou DeepSeek. Un exemple de revue de code tourne dès l’ouverture ; export Markdown par défaut, JSON pour vos pipelines. L’assemblage est local et l’IA Cloudflare (Développer/Peaufiner) reste optionnelle et limitée par un quota.',
 	tool_prompt_template_builder_download: 'Télécharger',
 	tool_prompt_template_builder_empty: 'Ajoutez du texte libre ou au moins un champ avant de créer.',
 	tool_prompt_template_builder_example:
-		'Entrée (Charger l’exemple, puce Code) : Role = relecteur senior (sécurité et lisibilité) ; Task = relire le diff PR collé ; Constraints = 12 puces max. Sortie (Markdown) : ## Role / ## Task / ## Constraints / ## Output format — quatre sections prêtes pour ChatGPT ou Claude.',
+		'Entrée (Charger l’exemple, puce Code) : Role = relecteur senior (sécurité et lisibilité) ; Task = relire le diff PR collé ; Constraints = 12 puces max. Sortie (Markdown) : ## Rôle / ## Tâche / ## Contraintes / ## Format de sortie — quatre sections prêtes pour ChatGPT ou Claude.',
 	tool_prompt_template_builder_example_title: 'Exemple',
 	tool_prompt_template_builder_faq_a1:
-		'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
+		'Par défaut, le modèle est assemblé dans cet onglet et rien n’en sort. Seul Développer/Peaufiner envoie le texte de ce clic vers Cloudflare Workers AI ; depuis nos serveurs, rien ne part vers OpenAI, Google, Anthropic ou DeepSeek.',
 	tool_prompt_template_builder_faq_a2:
-		'Modo local solo formatea aquí. Expand/Polish opcional usa Cloudflare Workers AI tras Turnstile — no llama APIs de chat.',
+		'Le mode local se contente de mettre vos champs en forme dans cet onglet. Développer/Peaufiner passe par Cloudflare Workers AI après le Turnstile : nous n’ouvrons ni ChatGPT, ni Gemini, ni Claude, ni DeepSeek à votre place.',
 	tool_prompt_template_builder_faq_a3:
 		'ChatGPT export to Markdown transforme des exports de chat en fichiers lisibles. Ici vous structurez un system prompt réutilisable — utilisez les deux après archivage puis affinage.',
 	tool_prompt_template_builder_faq_a4:
-		'Sí. Completa Turnstile en el panel de IA antes de Expand o Polish.',
+		'Oui. Validez le widget Turnstile du panneau IA avant Développer ou Peaufiner ; sans jeton valide le bouton renvoie une erreur, et l’assemblage local continue de fonctionner.',
 	tool_prompt_template_builder_faq_a5:
 		'Les lignes commençant par Role:, Task:, Constraints: ou Output: dans le champ libre deviennent des sections. Les champs explicites priment.',
 	tool_prompt_template_builder_faq_a6:
-		'Oui. Copiez le modèle créé dans ChatGPT, Gemini, Claude ou DeepSeek — la même structure à quatre champs fonctionne dans chaque UI de chat. Nous ne maintenons pas d’URL séparées par plateforme car le travail est de formater du texte, pas d’appeler des APIs.',
+		'Oui. Copiez le modèle créé dans ChatGPT, Gemini, Claude ou DeepSeek : la même structure à quatre champs fonctionne dans chacun de ces chats. Cette page prépare seulement le texte, elle ne se connecte à aucun service et n’appelle aucune API.',
 	tool_prompt_template_builder_faq_q1: 'Mon prompt est-il envoyé ?',
 	tool_prompt_template_builder_faq_q2: 'Est-ce qu’un LLM est appelé ?',
 	tool_prompt_template_builder_faq_q3: 'Différence avec l’export ChatGPT vers Markdown ?',
 	tool_prompt_template_builder_faq_q4:
-		'¿Por qué Turnstile para IA opcional?',
+		'Pourquoi l’IA optionnelle demande-t-elle un Turnstile ?',
 	tool_prompt_template_builder_faq_q5: 'Comment fonctionne l’analyse du texte libre ?',
 	tool_prompt_template_builder_faq_q6: 'Puis-je l’utiliser avec ChatGPT, Gemini, Claude ou DeepSeek ?',
 	tool_prompt_template_builder_faq_q7:
-		'¿Diferencia entre local y Cloudflare AI opcional?',
+		'Quelle différence entre le mode local et l’IA Cloudflare optionnelle ?',
 	tool_prompt_template_builder_faq_a7:
-		'Local: solo esta pestaña, sin subida. Expand/Polish opcional a Cloudflare Workers AI (Turnstile, límite).',
+		'Local : tout est assemblé dans cet onglet, sans envoi. Développer/Peaufiner transmet le brouillon à Cloudflare Workers AI (Turnstile et quota journalier) et la réponse remplace le bloc de résultat. En cas d’échec ou de quota atteint, restez en mode local.',
 	tool_prompt_template_builder_ai_expand:
-		'Expandir con IA',
+		'Développer avec l’IA',
 	tool_prompt_template_builder_ai_polish:
-		'Pulir con IA',
+		'Peaufiner avec l’IA',
 	tool_prompt_template_builder_ai_panel_label:
-		'Cloudflare AI opcional (Turnstile)',
+		'IA Cloudflare optionnelle (Turnstile)',
 	tool_prompt_template_builder_ai_consent_title:
-		'¿Enviar texto a Cloudflare Workers AI?',
+		'Envoyer le texte à Cloudflare Workers AI ?',
 	tool_prompt_template_builder_ai_consent_body:
-		'Este paso opcional envía tu borrador a Cloudflare Workers AI. No va a OpenAI, Google, Anthropic ni DeepSeek desde nuestros servidores.',
+		'Cette étape optionnelle envoie votre brouillon actuel à Cloudflare Workers AI pour inférence. Depuis nos serveurs, rien ne part vers OpenAI, Google, Anthropic ou DeepSeek. Sans IA, l’assemblage local fonctionne toujours.',
 	tool_prompt_template_builder_ai_consent_ok:
-		'Continuar',
+		'Continuer',
 	tool_prompt_template_builder_ai_consent_cancel:
-		'Cancelar',
+		'Annuler',
 	tool_prompt_template_builder_ai_working:
-		'Cloudflare AI trabajando…',
+		'L’IA Cloudflare travaille…',
 	tool_prompt_template_builder_ai_done:
-		'Sugerencia de IA aplicada. Revisa antes de copiar.',
+		'Le texte de l’IA a été écrit en entier dans le résultat. Relisez-le avant de copier.',
 	tool_prompt_template_builder_ai_err_generic:
-		'La IA falló. Tu prompt local no cambió.',
+		'Échec de l’IA. Votre prompt local est inchangé.',
 	tool_prompt_template_builder_ai_err_rate:
-		'Cuota de IA agotada. Modo local o prueba mañana (UTC).',
+		'Quota IA atteint. Restez en mode local ou réessayez demain (UTC).',
 	tool_prompt_template_builder_ai_err_turnstile:
-		'Completa Turnstile antes de usar IA.',
+		'Validez le Turnstile avant d’utiliser l’IA.',
 	tool_prompt_template_builder_fmt_json: 'JSON',
 	tool_prompt_template_builder_fmt_label: 'Format de sortie',
 	tool_prompt_template_builder_fmt_md: 'Markdown',
@@ -78,7 +79,7 @@ const fr: SiteLangDict = {
 		'Choisissez une puce scène ou rédigez votre brouillon, remplissez Role / Task / Constraints / Output, créez le modèle, puis collez dans ChatGPT, Gemini, Claude ou DeepSeek.',
 	tool_prompt_template_builder_how_item_1:
 		'Choisissez Revue de code, Film, Drame court, Android ou iOS — ou collez votre brouillon dans le champ libre.',
-	tool_prompt_template_builder_how_item_2: 'Cliquez sur Créer le modèle (Charger l’exemple a déjà exécuté le preset revue de code à l’ouverture).',
+	tool_prompt_template_builder_how_item_2: 'Cliquez sur Créer le modèle (cliquez sur Charger l’exemple pour le préréglage revue de code).',
 	tool_prompt_template_builder_how_item_3: 'Passez en JSON si vous avez besoin de {role,task,constraints,output} pour le code ou la config.',
 	tool_prompt_template_builder_how_item_4: 'Copiez ou téléchargez, puis collez dans ChatGPT, Gemini, Claude ou DeepSeek.',
 	tool_prompt_template_builder_how_title: 'Comment ça marche',
@@ -91,13 +92,13 @@ const fr: SiteLangDict = {
 	tool_prompt_template_builder_role_label: 'Role',
 	tool_prompt_template_builder_role_ph: 'Qui le modèle doit incarner…',
 	tool_prompt_template_builder_rules_body:
-		'Un modèle réutilisable exige des blocs clairs, une priorité des champs et des limites honnêtes — pas un second produit générateur.',
+		'Un modèle réutilisable exige des blocs clairs, un ordre de priorité entre les champs et de dire franchement ce que cette page ne fait pas.',
 	tool_prompt_template_builder_rules_item_1:
 		'Quatre blocs : Role, Task, Constraints, Output. Les vides sont omis du Markdown.',
 	tool_prompt_template_builder_rules_item_2: 'Les champs explicites l’emportent sur le texte libre parsé.',
 	tool_prompt_template_builder_rules_item_3: 'Sortie par défaut : Markdown avec ##. JSON est une puce sur la même page.',
 	tool_prompt_template_builder_rules_item_4:
-		'Les puces scène préremplissent les champs pour cinéma, drame court et code mobile — même générateur, sans URL séparées par plateforme.',
+		'Les puces scène préremplissent les champs habituels du cinéma, du drame court et du code mobile ; vous pouvez ensuite tout retoucher à la main.',
 	tool_prompt_template_builder_rules_title: 'Règles attendues',
 	tool_prompt_template_builder_scene_android: 'Code Android',
 	tool_prompt_template_builder_scene_code: 'Revue de code',
@@ -105,10 +106,10 @@ const fr: SiteLangDict = {
 	tool_prompt_template_builder_scene_label: 'Preset scène',
 	tool_prompt_template_builder_scene_movie: 'Long-métrage',
 	tool_prompt_template_builder_scene_short_drama: 'Drame court',
-	tool_prompt_template_builder_sec_constraints: 'Constraints',
-	tool_prompt_template_builder_sec_output: 'Output format',
-	tool_prompt_template_builder_sec_role: 'Role',
-	tool_prompt_template_builder_sec_task: 'Task',
+	tool_prompt_template_builder_sec_constraints: 'Contraintes',
+	tool_prompt_template_builder_sec_output: 'Format de sortie',
+	tool_prompt_template_builder_sec_role: 'Rôle',
+	tool_prompt_template_builder_sec_task: 'Tâche',
 	tool_prompt_template_builder_status_copied: 'Copié dans le presse-papiers.',
 	tool_prompt_template_builder_status_done: 'Modèle prêt.',
 	tool_prompt_template_builder_status_working: 'Création du modèle…',
@@ -127,7 +128,7 @@ const fr: SiteLangDict = {
 	tool_prompt_template_builder_usecase_5:
 		'Chargez Drame court pour accroches et cliffhangers de série verticale — épisodes mobiles style binge.',
 	tool_prompt_template_builder_usecase_6:
-		'Chargez Android ou iOS pour des modèles d’agent de code Kotlin/Swift sans ouvrir quatre pages spécifiques par plateforme.',
+		'Chargez Android ou iOS pour des modèles d’agent de code aux conventions Kotlin/Swift, puis ajoutez le style de votre équipe.',
 	tool_prompt_template_builder_usecases_title: 'Bonnes situations',
 };
 

@@ -47,7 +47,7 @@ const fr: SiteLangDict = {
 	tool_hreflang_rules_item_4:
 		'x-default pointe vers la page affichée quand aucune langue listée ne correspond, par exemple une racine anglaise. Google peut l’utiliser comme repli pour toutes les langues non détectées.',
 	tool_hreflang_rules_item_5:
-		'Choisissez une seule forme de diffusion par ensemble : les balises <link> dans le HTML, l’en-tête HTTP Link ou le xhtml:link dans le sitemap. Ne mélangez pas les formes pour le même ensemble, sinon les signaux peuvent se contredire.',
+		'Google considère les trois formes comme équivalentes et accepte même de les voir cohabiter, mais précise que cela n’apporte aucun bénéfice en recherche. Retenez-en une par ensemble de pages : trois implémentations finissent par diverger, et des annotations contradictoires sont ignorées.',
 	tool_hreflang_example_title: 'Exemple',
 	tool_hreflang_example:
 		'L’exemple liste trois versions d’une page : https://example.com/ (en), https://example.com/es/ (es) et https://example.com/ja/ (ja). Les balises <link> générées incluent les autoréférences de chaque langue, plus un x-default facultatif pointant vers la racine anglaise.',

@@ -7,10 +7,10 @@ import type { SiteLangDict } from '../../../types';
 const de: SiteLangDict = {
 	tool_sitemap_home_title: 'XML-Sitemap-Generator',
 	tool_sitemap_home_desc:
-		'Hilf Google, jede Seite, die du ranken willst, schneller zu entdecken und zu indexieren — erstelle aus einer URL-Liste eine gültige sitemap.xml mit lastmod, changefreq und priority, direkt im Browser.',
+		'Hilf Google, die Seiten zu finden, die deine interne Verlinkung übersieht — erstelle aus einer URL-Liste eine gültige sitemap.xml mit lastmod, changefreq und priority, direkt im Browser.',
 	tool_sitemap_title: 'XML-Sitemap-Generator — sitemap.xml aus URLs erstellen',
 	tool_sitemap_description:
-		'Eine Sitemap hilft Google, Seiten schneller zu finden und zu indexieren. https-URLs einfügen, gültiges sitemap.xml prüfen, Root kopieren. Beispiel: 3 URLs.',
+		'Eine Sitemap nennt Google die vorhandenen URLs, vor allem jene, die eine schwache interne Verlinkung verdeckt. https-URLs einfügen, sitemap.xml prüfen, in den Root kopieren. Beispiel: 3 URLs.',
 	tool_sitemap_generate: 'Generieren',
 	tool_sitemap_sample: 'Beispiel',
 	tool_sitemap_clear: 'Leeren',
@@ -39,7 +39,7 @@ const de: SiteLangDict = {
 		'Beispiel-Eingabe: https://example.com/ und https://example.com/products mit lastmod 2026-08-01 sowie https://example.com/about – die Ausgabe ist ein urlset mit drei url-Elementen, das mittlere trägt lastmod.',
 	tool_sitemap_usecases_title: 'Gut geeignet für',
 	tool_sitemap_usecase_1: 'Neue Websites: erste sitemap.xml aus der URL-Liste erzeugen und in der Search Console senden.',
-	tool_sitemap_usecase_2: 'Aktualisierte Inhalte: lastmod für kürzlich geänderte Seiten ergänzen, damit Crawler das Aktualitätssignal aufnehmen.',
+	tool_sitemap_usecase_2: 'Aktualisierte Inhalte: lastmod nur für Seiten setzen, die sich wirklich geändert haben. Google nutzt lastmod nur, wenn der Wert in der ganzen Datei verlässlich ist – steht überall das heutige Datum, ignoriert Google das Feld.',
 	tool_sitemap_usecase_3: 'Auffindbarkeit: robots.txt auf die Sitemap-URL zeigen lassen, damit Crawler sie ohne Sendung finden.',
 	tool_sitemap_faq_q1: 'Wie viele URLs passen in eine Sitemap?',
 	tool_sitemap_faq_a1: '50.000 URLs oder 50 MB (unkomprimiert). Der Generator warnt, wenn die Liste 50.000 übersteigt, damit Sie aufteilen und einen Sitemap-Index nutzen.',

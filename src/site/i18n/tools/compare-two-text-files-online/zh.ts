@@ -11,9 +11,10 @@ const zh: SiteLangDict = {
 	tool_compare_two_text_files_online_compare: '开始对比',
 	tool_compare_two_text_files_online_desc: '在线对比两个文本文件：选两个 txt，在浏览器里看行差，文件不上服务器。',
 	tool_compare_two_text_files_online_description:
-		'在线对比两个文本文件。步骤：选原文文件和改稿文件，按 UTF-8 解码（去掉 BOM），二进制会拒绝，再按行标出新增和删除。文件留在本机、不上传服务器。示例：notes-a.txt 和 notes-b.txt 只改中间一行。Word、表格、JSON 请用别的页；本页只管文本文件。',
+		"在线对比两个文本文件：选择原文与改稿 .txt，工具会严格按 UTF-8 解码、移除开头 BOM，并在按行标出新增和删除前拒绝无效编码或二进制内容。文件留在本机浏览器内，不上传服务器。示例：notes-a.txt 与 notes-b.txt 只改中间一行。这里不解析 Word、表格或结构化 JSON 文件。",
 	tool_compare_two_text_files_online_empty: '请先选两个文本文件，或载入样例。',
 	tool_compare_two_text_files_online_err_binary: '有一个文件像是二进制（含空字节）。本页只比纯文本，例如 .txt。',
+	tool_compare_two_text_files_online_err_encoding: "文件不是有效的 UTF-8。请先另存或转换为 UTF-8，再重新对比。",
 	tool_compare_two_text_files_online_err_too_large: '有文件大约超过 1 MB。请截一段再比，以免标签页卡住。',
 	tool_compare_two_text_files_online_example:
 		'载入样例会对比 notes-a.txt（alpha / 第二行 / 第三）和中间行改成「changed line」的 notes-b.txt。按行只标那一行。进页就会看到这个结果。',
@@ -21,11 +22,11 @@ const zh: SiteLangDict = {
 	tool_compare_two_text_files_online_faq_a1:
 		'不会。字节在这个标签页里用 FileReader 读。页面可能从 CDN 加载 jsdiff 库代码；你的文件不会传到我们的服务器。',
 	tool_compare_two_text_files_online_faq_a2:
-		'按 UTF-8 解码。开头的 BOM 会去掉，避免第一行只因为 BOM 被标红。其他编码可能乱码，请先另存为 UTF-8。',
+		"文件会按严格 UTF-8 解码，并移除开头的 BOM。无效 UTF-8 会直接报错，不会用乱码替代字符掩盖；Windows-1252 等旧编码请先转换。",
 	tool_compare_two_text_files_online_faq_a3:
 		'文件里有空字节就当二进制拒绝。Word、Excel 请用对应对比页。',
 	tool_compare_two_text_files_online_faq_a4:
-		'本页面向 .txt / .text。搜 txt 对比或在线文件 diff 也是这件事。如果「对比两个文件」其实是 Word 或表格，请用那些专用页。只粘贴文字请用「查看两段文本的差异」。',
+		"这里只读取按 UTF-8 解码的 .txt / .text。没有文件时可用粘贴文本对比；.docx、xlsx、xls 或 csv 请交给对应的 Word 或表格对比工具。",
 	tool_compare_two_text_files_online_faq_q1: '文件会上传吗？',
 	tool_compare_two_text_files_online_faq_q2: '编码和 BOM 怎么处理？',
 	tool_compare_two_text_files_online_faq_q3: '能比二进制、Word 或 Excel 吗？',
@@ -33,7 +34,7 @@ const zh: SiteLangDict = {
 	tool_compare_two_text_files_online_how_body: '选磁盘上已有的两个文本文件，再看高亮的行。首屏没有大粘贴框。',
 	tool_compare_two_text_files_online_how_item_1: '选择第一个文本文件（原稿或导出）。',
 	tool_compare_two_text_files_online_how_item_2: '选择第二个文本文件（改过的版本）。',
-	tool_compare_two_text_files_online_how_item_3: '两个都选好后会自动对比；载入样例在进页时已经跑过。',
+	tool_compare_two_text_files_online_how_item_3: "点击“开始对比”刷新行级差异；两个文件选齐后也会自动运行。",
 	tool_compare_two_text_files_online_how_item_4: '绿色是新增，红色是删除。清空会从本页拿掉这两个文件。',
 	tool_compare_two_text_files_online_how_title: '怎么用',
 	tool_compare_two_text_files_online_label_a: '第一个文本文件',

@@ -1,82 +1,86 @@
 /**
  * i18n tool shard (short-drama-prompt-generator / de).
- * 检索向独立重写；title 含「本地 + 可选 AI」；description 含本地默认与 Cloudflare AI Expand/Polish + Turnstile。
+ * Neu geschrieben für Suchen wie „Prompt-Generator für vertikale Kurzserien“ oder „Aufhänger pro Folge mit KI“:
+ * Hauptbegriff steht in der H1; „Cliffhanger am Folgenende“, „9:16 mit eingebrannten Untertiteln“ und
+ * „als JSON exportieren“ stehen in Beschreibung, FAQ und Anwendungsfällen.
+ * Sachliche Grenzen: Der Prompt entsteht im Browser; nur Erweitern/Verfeinern schickt den Entwurf an
+ * Cloudflare Workers AI (Turnstile, Kontingent). Video entsteht hier nicht.
  */
 import type { SiteLangDict } from '../../../types';
 
 const de: SiteLangDict = {
 	tool_short_drama_prompt_generator_article:
-		'Kurzdrama-Prompt-Generator — Lokal + optionale KI für ChatGPT, Gemini, Claude und DeepSeek: Prompts standardmäßig lokal, optional Expand/Polish via Cloudflare Workers AI (Turnstile, Rate-Limits). Beispiel beim ersten Laden. Markdown Standard; JSON für Pipelines. Text bleibt auf dem Gerät ohne KI.',
+		'Geben Sie an, wie viele Folgen und wie lang, was in den ersten Sekunden hängen bleibt, welcher Cliffhanger jede Folge schließt, welches Hochformat und welches Genre: Die Seite ordnet das im Browser und gibt einen direkt verwendbaren Prompt in Markdown oder JSON zurück, den Sie in ChatGPT, Gemini, Claude oder DeepSeek einfügen, um Folge für Folge zu schreiben. Standardmäßig wird nichts verschickt; der Entwurf geht erst nach einem Klick auf Erweitern oder Verfeinern — und nach Turnstile — an Cloudflare Workers AI. Hier entsteht Text, kein Video.',
 	tool_short_drama_prompt_generator_build:
-		'Prompt erstellen',
+		'Prompt erzeugen',
 	tool_short_drama_prompt_generator_clear:
 		'Leeren',
 	tool_short_drama_prompt_generator_copy:
 		'Kopieren',
 	tool_short_drama_prompt_generator_desc:
-		'Kurzdrama-Prompt-Generator — local por defecto + Expand/Polish opcional Cloudflare AI (Turnstile); Markdown/JSON en el dispositivo.',
+		'Prompt-Generator für vertikale Kurzserien: Folgen, Aufhänger, Cliffhanger und 9:16-Format werden im Browser zu Markdown oder JSON geordnet; Cloudflare-KI optional mit Turnstile.',
 	tool_short_drama_prompt_generator_description:
-		'Prozess und Beispiel: Kurzdrama-Prompt-Generator — Local + IA opcional para ChatGPT, Gemini, Claude y DeepSeek: ensambla prompts localmente por defecto y opcionalmente Expand/Polish con Cloudflare Workers AI (Turnstile obligatorio, límite de uso). Ejemplo al abrir. Markdown por defecto; JSON para pipelines. Texto en el dispositivo salvo que uses IA.',
+		'Prompt-Generator für vertikale Kurzserien: Sie tragen Anzahl und Länge der Folgen, den Aufhänger für die ersten zwei Sekunden, den Cliffhanger jedes Folgenendes, das Hochformat und das Genre ein, und die Seite verteilt alles auf die Blöcke Role, Task, Constraints und Output, damit ChatGPT, Gemini, Claude oder DeepSeek im Folgenrhythmus schreiben. Markdown ist Standard, JSON gibt es für Ihre Folgenübersicht; das Beispiel mit 12 × 75 s und einem Geheimnis aus dem Job ist beim Aufrufen schon durchgelaufen. Bleibt ein Aufhänger schwach, schickt Erweitern oder Verfeinern den Entwurf an Cloudflare Workers AI (Turnstile, Kontingent).',
 	tool_short_drama_prompt_generator_download:
 		'Herunterladen',
 	tool_short_drama_prompt_generator_empty:
-		'Mindestens ein Feld ausfüllen, bevor Sie erstellen.',
+		'Füllen Sie mindestens ein Feld aus, bevor Sie den Prompt erzeugen.',
 	tool_short_drama_prompt_generator_example:
-		'Eingabe: 12 × 75s; Hook = Payroll-Leak + CEO erkennt Stimme; Cliffhanger = Ep.6 löscht Voicemail; Format = 9:16. Ausgabe (Markdown): ## Task → Episodes / Hook / Cliffhanger / Vertical / Genre.',
+		'Eingabe: Folgen = 12 × 75 s; Aufhänger = eine Praktikantin deckt ein Leck bei den Lohnabrechnungen auf, und der Chef erkennt ihre Stimme aus einer zehn Jahre alten Sprachnachricht zum Sorgerecht; Cliffhanger = Folge 6 endet damit, dass der Chef die Nachricht mitten im Abspielen löscht, Folge 7 beginnt mit einem stummen Blickduell im Aufzug; Format = 9:16, eingebrannte Untertitel, ein Einstieg, der in zwei Sekunden den Daumen stoppt. Ausgabe (Markdown): Der Block ## Task listet Episodes, Hook, Cliffhanger, Vertical / Format und Genre für eine vertikale Serie.',
 	tool_short_drama_prompt_generator_example_title:
 		'Beispiel',
 	tool_short_drama_prompt_generator_faq_a1:
-		'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
+		'Geordnet wird in diesem Browser-Tab, standardmäßig verlässt also nichts Ihr Gerät. Nur wenn Sie Erweitern oder Verfeinern anklicken, geht der aktuelle Entwurf an Cloudflare Workers AI; wir leiten ihn nicht von unseren Servern an OpenAI, Google, Anthropic oder DeepSeek weiter.',
 	tool_short_drama_prompt_generator_faq_a2:
-		'Modo local solo formatea aquí. Expand/Polish opcional usa Cloudflare Workers AI tras Turnstile — no llama APIs de chat.',
+		'Im lokalen Modus wird kein Modell angesprochen: Folgen, Aufhänger, Cliffhanger, Format und Genre werden nur auf die Blöcke Role, Task, Constraints und Output verteilt. Erweitern und Verfeinern laufen nach dem Turnstile-Check über Cloudflare Workers AI und rufen von unseren Servern keine API von ChatGPT, Gemini, Claude oder DeepSeek auf.',
 	tool_short_drama_prompt_generator_faq_a3:
-		'Kurzdrama-Prompt-Generator covers generic Role/Task/Constraints/Output templates. This page focuses on short drama prompt generator fields with a dedicated sample and rules for this scenario.',
+		'Der Prompt-Vorlagen-Generator liefert das allgemeine Vier-Block-Gerüst für jedes Thema. Hier sind die Felder die einer vertikalen Serie — Folgen und Länge, Aufhänger, Cliffhanger, Format, Genre —, mit einem vollständigen Beispiel beim Aufrufen und Regeln zu dem, was beim Schauen Folge für Folge typischerweise schiefgeht.',
 	tool_short_drama_prompt_generator_faq_a4:
-		'Sí. Completa Turnstile en el panel de IA antes de Expand o Polish.',
+		'Turnstile hält automatische Skripte fern, damit das kostenlose Kontingent bei echten Nutzern bleibt. Lösen Sie es im KI-Bereich, bevor Sie Erweitern oder Verfeinern anklicken; ohne gültiges Token melden diese Schaltflächen einen Fehler, und der Aufbau im Browser funktioniert weiter.',
 	tool_short_drama_prompt_generator_faq_a5:
-		'Yes. The JSON chip emits structured fields plus assembled prompt text for tests or config pipelines.',
+		'Ja. Nach dem Umschalten auf JSON liefert dieselbe Ausgabe die strukturierten Felder plus den fertigen Prompt-Text — praktisch, um jede Folge in einer Tabelle festzuhalten und zu prüfen, ob sich Aufhänger und Cliffhanger wiederholen.',
 	tool_short_drama_prompt_generator_faq_a6:
-		'Yes. Copy the finished prompt into ChatGPT, Gemini, Claude, or DeepSeek. We do not split URLs per platform because the job is formatting text, not calling APIs.',
+		'Ja. Kopieren Sie das Ergebnis und fügen Sie es in den Chat Ihrer Wahl ein. Diese Seite ordnet nur die Aufteilung nach Folgen und ruft keine API auf, deshalb gibt es keine eigene Adresse pro Plattform.',
 	tool_short_drama_prompt_generator_faq_q1:
-		'Is my prompt uploaded?',
+		'Wird die eingetippte Handlung irgendwohin geschickt?',
 	tool_short_drama_prompt_generator_faq_q2:
-		'Does this call ChatGPT or other LLM APIs?',
+		'Ruft diese Seite die API von ChatGPT oder anderen Modellen auf?',
 	tool_short_drama_prompt_generator_faq_q3:
-		'How is this different from Kurzdrama-Prompt-Generator?',
+		'Was ist der Unterschied zum Prompt-Vorlagen-Generator?',
 	tool_short_drama_prompt_generator_faq_q4:
-		'¿Por qué Turnstile para IA opcional?',
+		'Warum brauche ich Turnstile für die optionale KI?',
 	tool_short_drama_prompt_generator_faq_q5:
-		'Can I get JSON output?',
+		'Kann ich die Ausgabe als JSON bekommen?',
 	tool_short_drama_prompt_generator_faq_q6:
-		'Can I use this with ChatGPT, Gemini, Claude, or DeepSeek?',
+		'Lässt sich das mit ChatGPT, Gemini, Claude oder DeepSeek nutzen?',
 	tool_short_drama_prompt_generator_faq_q7:
-		'¿Diferencia entre local y Cloudflare AI opcional?',
+		'Worin unterscheiden sich der lokale Modus und die optionale Cloudflare-KI?',
 	tool_short_drama_prompt_generator_faq_a7:
-		'Local: solo esta pestaña, sin subida. Expand/Polish opcional a Cloudflare Workers AI (Turnstile, límite).',
+		'Lokal wird alles in diesem Tab geordnet, ohne den Browser zu verlassen. Erweitern oder Verfeinern schickt den Entwurf an Cloudflare Workers AI (Turnstile nötig, mit Frequenz- und Tageskontingent); der zurückgegebene Text wird vollständig in die Ausgabe geschrieben und überschreibt den angezeigten Entwurf — lesen Sie ihn vor dem Kopieren, damit eine Umschreibung Ihre Cliffhanger-Reihenfolge nicht durcheinanderbringt. Bei Fehler oder erschöpftem Kontingent bleiben Sie beim lokalen Modus.',
 	tool_short_drama_prompt_generator_ai_expand:
-		'Expandir con IA',
+		'Mit KI erweitern',
 	tool_short_drama_prompt_generator_ai_polish:
-		'Pulir con IA',
+		'Mit KI verfeinern',
 	tool_short_drama_prompt_generator_ai_panel_label:
-		'Cloudflare AI opcional (Turnstile)',
+		'Optional: Cloudflare AI (Turnstile erforderlich)',
 	tool_short_drama_prompt_generator_ai_consent_title:
-		'¿Enviar texto a Cloudflare Workers AI?',
+		'Entwurf an Cloudflare Workers AI senden?',
 	tool_short_drama_prompt_generator_ai_consent_body:
-		'Este paso opcional envía tu borrador a Cloudflare Workers AI. No va a OpenAI, Google, Anthropic ni DeepSeek desde nuestros servidores.',
+		'Dieser Schritt ist optional: Er schickt den Entwurf, der jetzt in den Feldern steht, für eine Inferenz an Cloudflare Workers AI. Wir leiten ihn nicht von unseren Servern an OpenAI, Google, Anthropic oder DeepSeek weiter. Ohne KI wird der Prompt weiterhin in Ihrem Browser gebaut.',
 	tool_short_drama_prompt_generator_ai_consent_ok:
-		'Continuar',
+		'Weiter',
 	tool_short_drama_prompt_generator_ai_consent_cancel:
-		'Cancelar',
+		'Abbrechen',
 	tool_short_drama_prompt_generator_ai_working:
-		'Cloudflare AI trabajando…',
+		'Cloudflare AI arbeitet…',
 	tool_short_drama_prompt_generator_ai_done:
-		'Sugerencia de IA aplicada. Revisa antes de copiar.',
+		'Der KI-Text steht vollständig in der Ausgabe. Vor dem Kopieren prüfen.',
 	tool_short_drama_prompt_generator_ai_err_generic:
-		'La IA falló. Tu prompt local no cambió.',
+		'Die KI hat diesmal nicht geantwortet; die Ausgabe ist unverändert.',
 	tool_short_drama_prompt_generator_ai_err_rate:
-		'Cuota de IA agotada. Modo local o prueba mañana (UTC).',
+		'KI-Kontingent erschöpft. Bauen Sie den Prompt hier weiter oder versuchen Sie es morgen (UTC).',
 	tool_short_drama_prompt_generator_ai_err_turnstile:
-		'Completa Turnstile antes de usar IA.',
+		'Lösen Sie den Turnstile-Check, bevor Sie die KI nutzen.',
 	tool_short_drama_prompt_generator_fmt_json:
 		'JSON',
 	tool_short_drama_prompt_generator_fmt_label:
@@ -84,81 +88,82 @@ const de: SiteLangDict = {
 	tool_short_drama_prompt_generator_fmt_md:
 		'Markdown',
 	tool_short_drama_prompt_generator_episodes_label:
-		'Episodes',
+		'Folgen und Länge',
 	tool_short_drama_prompt_generator_episodes_ph:
-		'Sample episodes…',
+		'Zum Beispiel: 12 × 75 s…',
 	tool_short_drama_prompt_generator_hook_label:
-		'Hook',
+		'Aufhänger zum Einstieg',
 	tool_short_drama_prompt_generator_hook_ph:
-		'Sample hook…',
+		'Zum Beispiel: Praktikantin deckt ein Lohn-Leck auf…',
 	tool_short_drama_prompt_generator_cliffhanger_label:
-		'Cliffhanger',
+		'Cliffhanger am Folgenende',
 	tool_short_drama_prompt_generator_cliffhanger_ph:
-		'Sample cliffhanger…',
+		'Zum Beispiel: Folge 6 endet mit dem Löschen der Nachricht…',
 	tool_short_drama_prompt_generator_vertical_format_label:
-		'Vertical / Format',
+		'Hochformat',
 	tool_short_drama_prompt_generator_vertical_format_ph:
-		'Sample vertical format…',
+		'Zum Beispiel: 9:16, eingebrannte Untertitel, Einstieg in 2 s…',
 	tool_short_drama_prompt_generator_genre_label:
 		'Genre',
 	tool_short_drama_prompt_generator_genre_ph:
-		'Sample genre…',
+		'Zum Beispiel: Büro-Melodram mit Familiengeheimnis…',
+
 	tool_short_drama_prompt_generator_how_body:
-		'Fill Kurzdrama-Prompt-Generator fields, build a prompt locally, optionally Expand/Polish with Turnstile, then paste into ChatGPT, Gemini, Claude, or DeepSeek.',
+		'Folgen, Aufhänger und Cliffhanger ausfüllen, Prompt erzeugen und in ChatGPT, Gemini, Claude oder DeepSeek Folge für Folge weiterschreiben; bleibt ein Aufhänger schwach, hilft Erweitern oder Verfeinern mit der optionalen Cloudflare-KI.',
 	tool_short_drama_prompt_generator_how_item_1:
-		'Load sample already ran the default preset on first paint.',
+		'Klicken Sie auf Beispiel laden für das Standard-Preset.',
 	tool_short_drama_prompt_generator_how_item_2:
-		'Edit fields, click Build prompt, or switch to JSON if you need structured export.',
+		'Folgen und Länge, Aufhänger, Cliffhanger, Hochformat und Genre anpassen und auf Prompt erzeugen klicken; für strukturierten Export auf JSON umschalten.',
 	tool_short_drama_prompt_generator_how_item_3:
-		'Optional: complete Turnstile, then Expand or Polish via Cloudflare Workers AI.',
+		'Optional: Turnstile im KI-Bereich lösen und Erweitern oder Verfeinern anklicken; der zurückgegebene Text landet in der Ausgabe.',
 	tool_short_drama_prompt_generator_how_item_4:
-		'Copy or download, then paste into ChatGPT, Gemini, Claude, or DeepSeek.',
+		'Kopieren oder herunterladen und in ChatGPT, Gemini, Claude oder DeepSeek einfügen, damit das Modell dieser Folgenaufteilung folgt.',
 	tool_short_drama_prompt_generator_how_title:
-		'So funktioniert es',
+		'So gehen Sie vor',
 	tool_short_drama_prompt_generator_load_sample:
 		'Beispiel laden',
 	tool_short_drama_prompt_generator_platforms_lead:
-		'Für ChatGPT, Gemini, Claude, DeepSeek — fertigen Prompt in jeden Chat kopieren.',
+		'Die Ausgabe lässt sich unverändert in ChatGPT, Gemini, Claude oder DeepSeek einfügen.',
 	tool_short_drama_prompt_generator_result_label:
-		'Prompt-Ausgabe',
+		'Erzeugter Prompt',
 	tool_short_drama_prompt_generator_rules_body:
-		'Episodic hooks and cliffhangers for vertical binge. Local assembly is default; optional AI is rate-limited and requires Turnstile.',
+		'Gegliedert wird nach dem Rhythmus des vertikalen Schauens: Zahl und Länge der Folgen setzen den Rahmen, der Aufhänger entscheidet, ob der Daumen in den ersten zwei Sekunden stehen bleibt, der Cliffhanger treibt in die nächste Folge, und das Format klärt Bildausschnitt und Untertitel. Der Aufbau im Browser ist das Standardverhalten; die optionale KI ist in der Nutzung begrenzt und verlangt Turnstile.',
 	tool_short_drama_prompt_generator_rules_item_1:
-		'Structured fields map to Role/Task/Constraints/Output blocks in Markdown export.',
+		'Jedes Formularfeld landet in einem der Markdown-Blöcke Rolle, Aufgabe, Einschränkungen und Ausgabeformat.',
 	tool_short_drama_prompt_generator_rules_item_2:
-		'Default export is Markdown. JSON is a chip on the same canvas.',
+		'Standardexport ist Markdown; JSON ist eine Schaltfläche über derselben Ausgabe.',
 	tool_short_drama_prompt_generator_rules_item_3:
-		'Optional Cloudflare AI never replaces local mode — review AI output before copying.',
+		'Die optionale KI ist ein zusätzlicher Schritt, kein Ersatz: Der lokale Modus bleibt nutzbar, und der KI-Text überschreibt die Ausgabe komplett — deshalb vor dem Kopieren prüfen.',
 	tool_short_drama_prompt_generator_rules_item_4:
-		'This tool assembles text only; it does not run short drama prompt generator engines or call chat APIs locally.',
+		'Diese Seite baut nur Text zusammen: Sie erzeugt kein Video und führt in Ihrem Browser kein Modell und keine Chat-API aus.',
 	tool_short_drama_prompt_generator_rules_title:
-		'Erwartete Regeln',
+		'Was sie tut und was nicht',
 	tool_short_drama_prompt_generator_sec_constraints:
-		'Constraints',
+		'Einschränkungen',
 	tool_short_drama_prompt_generator_sec_output:
-		'Output format',
+		'Ausgabeformat',
 	tool_short_drama_prompt_generator_sec_role:
-		'Role',
+		'Rolle',
 	tool_short_drama_prompt_generator_sec_task:
-		'Task',
+		'Aufgabe',
 	tool_short_drama_prompt_generator_status_copied:
-		'In Zwischenablage kopiert.',
+		'In die Zwischenablage kopiert.',
 	tool_short_drama_prompt_generator_status_done:
-		'Prompt bereit.',
+		'Prompt fertig.',
 	tool_short_drama_prompt_generator_status_working:
-		'Prompt wird erstellt…',
+		'Prompt wird erzeugt…',
 	tool_short_drama_prompt_generator_title:
-		'Kurzdrama-Prompt-Generator — Lokal + optionale KI',
+		'Prompt-Generator für vertikale Kurzserien — Aufhänger und Cliffhanger im Browser',
 	tool_short_drama_prompt_generator_usecase_1:
-		'Ship a paste-ready short drama prompt generator brief for your team chat in ChatGPT, Gemini, Claude, or DeepSeek.',
+		'Vor einer Besprechung Folgen, Aufhänger und Cliffhanger in einem Prompt bündeln, der direkt in ChatGPT, Gemini, Claude oder DeepSeek passt.',
 	tool_short_drama_prompt_generator_usecase_2:
-		'Export JSON for a pipeline test, then refine with optional Cloudflare AI after Turnstile.',
+		'Das JSON exportieren und Aufhänger und Cliffhanger jeder Folge als Felder in einer Tabelle festhalten, um wiederkehrende Muster zu erkennen.',
 	tool_short_drama_prompt_generator_usecase_3:
-		'Compare with Prompt template builder when you need generic four-field templates instead of this scenario.',
+		'Wenn Sie das allgemeine Vier-Block-Gerüst brauchen und nicht die Felder einer vertikalen Serie, nehmen Sie den Prompt-Vorlagen-Generator.',
 	tool_short_drama_prompt_generator_usecase_4:
-		'Keep sensitive draft text local — only opt into AI when you accept the consent modal.',
+		'Bei einem noch nicht veröffentlichten Projekt beim lokalen Modus bleiben: Der Text verlässt den Browser nur, wenn Sie den KI-Hinweis bestätigen.',
 	tool_short_drama_prompt_generator_usecases_title:
-		'Gute Einsätze',
+		'Wofür es sich lohnt',
 };
 
 export default de;

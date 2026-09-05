@@ -142,7 +142,7 @@
       "product-design-prompt-builder"
     ],
     "logo": "/icons/tools/android-prompt-builder.svg",
-    "localProcessing": true,
+    "localProcessing": false,
     "scenario": "developer",
     "subject": "text"
   },
@@ -475,7 +475,7 @@
   {
     "slug": "chatgpt-export-to-markdown",
     "path": "/tools/chatgpt-export-to-markdown",
-    "updatedAt": "2026-09-01T09:20:00.000Z",
+    "updatedAt": "2026-09-05T16:22:08.926Z",
     "launchedAt": "2026-09-01T09:20:00.000Z",
     "category": "developer",
     "primaryTopic": "dev-data",
@@ -689,7 +689,7 @@
   {
     "slug": "compare-two-text-files-online",
     "path": "/tools/compare-two-text-files-online",
-    "updatedAt": "2026-09-01T08:40:00.000Z",
+    "updatedAt": "2026-09-05T13:52:22.595Z",
     "launchedAt": "2026-09-01T08:40:00.000Z",
     "category": "developer",
     "primaryTopic": "text-compare",
@@ -714,7 +714,7 @@
   {
     "slug": "compare-two-word-documents-for-differences",
     "path": "/tools/compare-two-word-documents-for-differences",
-    "updatedAt": "2026-09-01T08:41:00.000Z",
+    "updatedAt": "2026-09-05T13:52:23.040Z",
     "launchedAt": "2026-09-01T08:41:00.000Z",
     "category": "developer",
     "primaryTopic": "text-compare",
@@ -1025,7 +1025,7 @@
   {
     "slug": "csv-json",
     "path": "/tools/csv-json",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-09-05T16:22:09.041Z",
     "category": "developer",
     "primaryTopic": "dev-data",
     "featured": true,
@@ -1148,7 +1148,7 @@
   {
     "slug": "excel-compare-files",
     "path": "/tools/excel-compare-files",
-    "updatedAt": "2026-09-01T08:43:00.000Z",
+    "updatedAt": "2026-09-05T13:52:22.893Z",
     "launchedAt": "2026-09-01T08:43:00.000Z",
     "category": "developer",
     "primaryTopic": "text-compare",
@@ -1314,7 +1314,7 @@
       "writing-prompt-generator"
     ],
     "logo": "/icons/tools/film-prompt-builder.svg",
-    "localProcessing": true,
+    "localProcessing": false,
     "scenario": "developer",
     "subject": "text"
   },
@@ -2767,7 +2767,7 @@
   {
     "slug": "hreflang-generator",
     "path": "/tools/hreflang-generator",
-    "updatedAt": "2026-08-11T00:00:00.000Z",
+    "updatedAt": "2026-09-05T16:22:08.562Z",
     "category": "developer",
     "primaryTopic": "seo-growth",
     "featured": false,
@@ -2791,7 +2791,7 @@
   {
     "slug": "html-entity",
     "path": "/tools/html-entity",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-09-05T16:22:09.267Z",
     "category": "developer",
     "primaryTopic": "dev-data",
     "featured": true,
@@ -3266,7 +3266,7 @@
       "product-design-prompt-builder"
     ],
     "logo": "/icons/tools/ios-prompt-builder.svg",
-    "localProcessing": true,
+    "localProcessing": false,
     "scenario": "developer",
     "subject": "text"
   },
@@ -3364,7 +3364,7 @@
   {
     "slug": "json-diff-checker-online",
     "path": "/tools/json-diff-checker-online",
-    "updatedAt": "2026-09-01T08:42:00.000Z",
+    "updatedAt": "2026-09-05T13:52:22.743Z",
     "launchedAt": "2026-09-01T08:42:00.000Z",
     "category": "developer",
     "primaryTopic": "text-compare",
@@ -3412,7 +3412,7 @@
   {
     "slug": "jwt-decoder",
     "path": "/tools/jwt-decoder",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-09-05T16:22:09.383Z",
     "category": "developer",
     "primaryTopic": "dev-data",
     "secondaryTopics": [
@@ -3459,7 +3459,7 @@
   {
     "slug": "magnet-link-decoder",
     "path": "/tools/magnet-link-decoder",
-    "updatedAt": "2026-08-14T00:00:00.000Z",
+    "updatedAt": "2026-09-05T16:22:08.788Z",
     "category": "developer",
     "primaryTopic": "files-archives",
     "secondaryTopics": [
@@ -3535,7 +3535,7 @@
   {
     "slug": "markdown-to-html",
     "path": "/tools/markdown-to-html",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-09-05T16:22:08.674Z",
     "category": "developer",
     "primaryTopic": "dev-data",
     "secondaryTopics": [
@@ -3609,7 +3609,7 @@
   {
     "slug": "meta-serp-preview",
     "path": "/tools/meta-serp-preview",
-    "updatedAt": "2026-08-11T00:00:00.000Z",
+    "updatedAt": "2026-09-05T16:22:08.221Z",
     "category": "developer",
     "primaryTopic": "seo-growth",
     "featured": false,
@@ -3633,7 +3633,7 @@
   {
     "slug": "meta-tag-generator",
     "path": "/tools/meta-tag-generator",
-    "updatedAt": "2026-08-11T00:00:00.000Z",
+    "updatedAt": "2026-09-05T16:22:08.333Z",
     "category": "developer",
     "primaryTopic": "seo-growth",
     "featured": false,
@@ -3672,14 +3672,14 @@
       "writing-prompt-generator"
     ],
     "logo": "/icons/tools/midjourney-prompt-builder.svg",
-    "localProcessing": true,
+    "localProcessing": false,
     "scenario": "developer",
     "subject": "text"
   },
   {
     "slug": "on-page-seo-checker",
     "path": "/tools/on-page-seo-checker",
-    "updatedAt": "2026-09-02T13:06:44.000Z",
+    "updatedAt": "2026-09-05T16:22:07.872Z",
     "category": "developer",
     "primaryTopic": "seo-growth",
     "featured": false,
@@ -3727,7 +3727,7 @@
   {
     "slug": "open-graph-preview",
     "path": "/tools/open-graph-preview",
-    "updatedAt": "2026-09-02T13:06:44.000Z",
+    "updatedAt": "2026-09-05T16:22:08.109Z",
     "category": "developer",
     "primaryTopic": "seo-growth",
     "secondaryTopics": [
@@ -3803,7 +3803,7 @@
   {
     "slug": "password-generator",
     "path": "/tools/password-generator",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-09-05T16:22:09.498Z",
     "category": "developer",
     "primaryTopic": "security-ids",
     "featured": true,
@@ -4013,7 +4013,7 @@
       "ios-prompt-builder"
     ],
     "logo": "/icons/tools/product-design-prompt-builder.svg",
-    "localProcessing": true,
+    "localProcessing": false,
     "scenario": "developer",
     "subject": "text"
   },
@@ -4036,7 +4036,7 @@
       "film-prompt-builder"
     ],
     "logo": "/icons/tools/prompt-template-builder.svg",
-    "localProcessing": true,
+    "localProcessing": false,
     "scenario": "developer",
     "subject": "text"
   },
@@ -4068,7 +4068,7 @@
   {
     "slug": "robots-txt-generator",
     "path": "/tools/robots-txt-generator",
-    "updatedAt": "2026-09-02T13:06:44.000Z",
+    "updatedAt": "2026-09-05T16:22:07.989Z",
     "category": "developer",
     "primaryTopic": "seo-growth",
     "featured": false,
@@ -4157,7 +4157,7 @@
       "writing-prompt-generator"
     ],
     "logo": "/icons/tools/short-drama-prompt-generator.svg",
-    "localProcessing": true,
+    "localProcessing": false,
     "scenario": "developer",
     "subject": "text"
   },
@@ -4190,7 +4190,7 @@
   {
     "slug": "sitemap-xml-generator",
     "path": "/tools/sitemap-xml-generator",
-    "updatedAt": "2026-09-02T13:06:44.000Z",
+    "updatedAt": "2026-09-05T16:22:08.449Z",
     "category": "developer",
     "primaryTopic": "seo-growth",
     "featured": false,
@@ -4231,7 +4231,7 @@
       "midjourney-prompt-builder"
     ],
     "logo": "/icons/tools/sketch-prompt-generator.svg",
-    "localProcessing": true,
+    "localProcessing": false,
     "scenario": "developer",
     "subject": "text"
   },
@@ -4387,7 +4387,7 @@
   {
     "slug": "text-diff",
     "path": "/tools/text-diff",
-    "updatedAt": "2026-09-01T09:35:30.825Z",
+    "updatedAt": "2026-09-05T13:52:22.435Z",
     "category": "developer",
     "primaryTopic": "text-compare",
     "secondaryTopics": [
@@ -4845,14 +4845,14 @@
       "short-drama-prompt-generator"
     ],
     "logo": "/icons/tools/writing-prompt-generator.svg",
-    "localProcessing": true,
+    "localProcessing": false,
     "scenario": "developer",
     "subject": "text"
   },
   {
     "slug": "yaml-json",
     "path": "/tools/yaml-json",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-09-05T16:22:09.154Z",
     "category": "developer",
     "primaryTopic": "dev-data",
     "featured": true,

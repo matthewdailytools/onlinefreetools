@@ -42,7 +42,7 @@
 | Catalog `page.style` | opts |
 | Title (en) / H1 | **Excel compare files** |
 | Description 要点 | Choose two spreadsheets, compare the current sheet cell by cell. Process + example B2. Files stay on the device and are not uploaded. Online 不进 H1。 |
-| FAQ | 上传？只第一张表？CSV？空格子？列错位？ |
+| FAQ | 上传？只第一张表？CSV？空格子/列错位？公式、显示值与格式边界？ |
 | related | csv-json, text-diff |
 
 ## 清单前检索覆盖优化（生成页面模块清单前必做）
@@ -85,8 +85,8 @@
 ## 交互规格（给实现用）
 
 - 输入：两个 file，xlsx/xls/csv；sheet 下拉默认第一张
-- 输出：不同单元格列表（地址 + 左右值）
-- 核心：SheetJS 读 sheet_to_json header:1；缺格当 ''
+- 输出：不同单元格列表（地址 + 左右显示文本）；输出统一 HTML 转义，工作簿文本不会被解释为标签
+- 核心：SheetJS 读 `sheet_to_json({ header: 1, raw: false })`；缺格当 `''`；不单独比较公式表达式、样式、批注、列宽或工作簿结构
 - 失败：非表、加密、空表、库失败
 - **进页样例**：两个 CSV File 自动比
 - **实现防呆**：opts；`\\w`

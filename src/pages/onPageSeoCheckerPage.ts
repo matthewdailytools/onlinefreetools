@@ -301,8 +301,9 @@ export const renderOnPageSeoCheckerPage = (opts: {
           /** meta description 检查 */
           var descEl = head.querySelector('meta[name="description" i]');
           var descText = descEl ? (descEl.getAttribute('content') || '').trim() : '';
+          // 缺 meta description 不是排名问题（Google 用它生成摘要），故降为 warn 而非 Issue。
           if (!descText) {
-            counts[addResult(I.descCheck, 'err', I.descMissing)]++;
+            counts[addResult(I.descCheck, 'warn', I.descMissing)]++;
           } else if (descText.length > 160) {
             counts[addResult(I.descCheck, 'warn', I.descLong.replace('{n}', String(descText.length)))]++;
           } else if (descText.length < 70) {
@@ -311,7 +312,11 @@ export const renderOnPageSeoCheckerPage = (opts: {
             counts[addResult(I.descCheck, 'ok', I.descOk.replace('{n}', String(descText.length)))]++;
           }
 
-          /** H1 检查 */
+          /**
+         * H1 检查。
+         * 多个 H1 不是 Google 排名问题（官方明确无理想标题数量），
+         * 因此只按可访问性与大纲清晰度给 warn；缺 H1 才是实质缺口。
+         */
           var h1s = body.querySelectorAll('h1');
           if (!h1s.length) {
             counts[addResult(I.h1Check, 'err', I.h1Missing)]++;
@@ -464,11 +469,17 @@ export const renderOnPageSeoCheckerPage = (opts: {
           }
         });
 
-        document.getElementById('onpageSample').addEventListener('click', function () {
+        /**
+         * 载入样例：切到 Paste HTML 模式、填入样例文档并立即跑检查。
+         * 进页与「Load sample」按钮共用同一条路径，保证首屏所见即按钮所得。
+         */
+        function loadSample() {
           setMode('html');
           htmlInput.value = sampleHtml();
           runChecks(htmlInput.value);
-        });
+        }
+
+        document.getElementById('onpageSample').addEventListener('click', loadSample);
 
         document.getElementById('onpageClear').addEventListener('click', function () {
           htmlInput.value = '';
@@ -477,11 +488,11 @@ export const renderOnPageSeoCheckerPage = (opts: {
           summaryEl.innerHTML = '';
         });
 
-        /** 进页默认「抓取 URL」模式；同时自动加载样例 HTML 并运行检查，让样例结果默认展现。 */
-        setMode('url');
-        urlInput.focus();
-        htmlInput.value = sampleHtml();
-        runChecks(htmlInput.value);
+        /**
+         * 进页即跑样例：停在 Paste HTML 模式，避免出现「URL 标签页 + 粘贴结果」的错位。
+         * 需要抓取线上页面时点 Fetch URL 切换即可。
+         */
+        loadSample();
       })();
     </script>`;
 

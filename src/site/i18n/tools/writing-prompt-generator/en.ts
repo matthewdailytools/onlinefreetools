@@ -23,7 +23,7 @@ const en: SiteLangDict = {
 	tool_writing_prompt_generator_desc:
 		'Writing prompt generator — local default + optional Cloudflare AI Expand/Polish (Turnstile); Markdown/JSON on device.',
 	tool_writing_prompt_generator_description:
-		'Writing prompt generator — Local + Optional AI for ChatGPT, Gemini, Claude, and DeepSeek: assemble structured prompts locally by default, then optionally Expand/Polish via Cloudflare Workers AI (Turnstile required, rate-limited). Example runs on first paint. Markdown default; JSON for pipelines. Local text stays on your device unless you use optional AI.',
+		'Writing prompt generator — Local + Optional AI for ChatGPT, Gemini, Claude, and DeepSeek: assemble structured prompts locally by default, then optionally Expand/Polish via Cloudflare Workers AI (Turnstile required, rate-limited). Markdown default; JSON for pipelines. Local text stays on your device unless you use optional AI. Example: click Load sample for a ready preset, then Build or optionally Expand/Polish.',
 	tool_writing_prompt_generator_dlg_characters_label: 'Characters',
 	tool_writing_prompt_generator_dlg_characters_ph: 'Names + one-line roles…',
 	tool_writing_prompt_generator_dlg_conflict_label: 'Conflict',
@@ -82,7 +82,7 @@ const en: SiteLangDict = {
 	tool_writing_prompt_generator_how_body:
 		'Pick a writing mode, fill the fields or roll random, build a prompt block, then paste into ChatGPT, Gemini, Claude, or DeepSeek.',
 	tool_writing_prompt_generator_how_item_1:
-		'Choose Dialogue, Character, Script, or Random — Load sample already ran the dialogue preset on first paint.',
+		'Choose Dialogue, Character, Script, or Random — Click Load sample for the dialogue preset.',
 	tool_writing_prompt_generator_how_item_2: 'Fill mode-specific fields (or enter a seed and Roll random).',
 	tool_writing_prompt_generator_how_item_3: 'Click Build prompt (Random: Roll random), or optionally complete Turnstile and Expand/Polish with Cloudflare Workers AI.',
 	tool_writing_prompt_generator_how_item_4: 'Copy or download Markdown/JSON and paste into your chat UI.',

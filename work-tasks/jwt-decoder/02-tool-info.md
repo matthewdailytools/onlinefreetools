@@ -151,3 +151,8 @@
 | `base64` | 通用文本/文件 Base64 编解码 | JWT 三段子 + claims + 不验签声明 |
 | `unix-timestamp` | 通用时间戳↔日期互转 | 解读 payload 内 `exp`/`iat` 并互链 |
 | jwt.io 类验签 | HMAC/RSA 签名验证 | 仅解码；Disclaimer 说明 |
+
+## 复审修正（2026-09-05）
+
+- Base64url 解码补 UTF-8 还原：`atob` 只产出字节串，之前带重音或 CJK 的 claim 会乱码；现在经 `TextDecoder('utf-8')` 再 `JSON.parse`。
+- `rules_item_2` 十语同步说明该解码链路。

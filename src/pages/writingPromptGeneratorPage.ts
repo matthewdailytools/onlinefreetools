@@ -604,17 +604,8 @@ export const renderWritingPromptGeneratorPage = (opts: {
         return currentFmt() === 'json' ? toJson(currentMode, f, b) : toMarkdown(b);
       };
 
-      window.promptAiApplyText = function (action, text) {
-        if (action === 'polish') {
-          showResult(text, currentFmt() === 'json' ? 'json' : 'md');
-          return;
-        }
-        var firstLine = (text || '').split('\\n')[0] || '';
-        if (currentMode === 'dialogue') {
-          var g = document.getElementById('wpgDlgGenre');
-          if (g && firstLine) g.value = firstLine.slice(0, 500);
-        }
-        buildPrompt();
+      window.promptAiApplyText = function (_action, text) {
+        showResult(text, 'md');
       };
 
 ` + promptAiScript + `

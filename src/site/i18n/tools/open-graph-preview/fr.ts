@@ -56,10 +56,10 @@ const fr: SiteLangDict = {
 	tool_og_twitter_inferred: 'Aucun twitter:card défini — les plateformes déduisent une carte summary des balises og:.',
 	tool_og_how_title: 'Comment ça marche',
 	tool_og_how_body:
-		'L’aperçu analyse les balises og:/twitter: que vous collez (ou les extrait du HTML récupéré pour une URL) et dessine trois cartes. Facebook affiche l’image 1.91:1 à gauche avec titre, description et domaine dessous. X suit twitter:card : summary_large_image montre une grande image en haut, summary une petite à côté du texte. Les applis de messagerie comme WhatsApp montrent une grande carte. Le tableau marque og:title, og:description et og:image comme obligatoires et liste les champs optionnels.',
+		'L’aperçu analyse les balises og:/twitter: que vous collez (ou les extrait du HTML récupéré pour une URL) et dessine trois cartes. Facebook affiche l’image 1.91:1 à gauche avec titre, description et domaine dessous. X suit twitter:card : summary_large_image montre une grande image en haut, summary une petite à côté du texte. Les applis de messagerie comme WhatsApp montrent une grande carte. Le tableau des champs signale les quatre champs exigés par le protocole et liste ceux qui restent facultatifs.',
 	tool_og_rules_title: 'Règles suivies par l’aperçu',
 	tool_og_rules_body: 'Voici les tailles et replis utilisés par les plateformes, selon le protocole Open Graph et la documentation X Cards.',
-	tool_og_rules_item_1: 'Champs obligatoires : og:title, og:description et og:image. Les manquants sont signalés pour être corrigés avant publication.',
+	tool_og_rules_item_1: 'Obligatoires selon le protocole Open Graph : og:title, og:type, og:image et og:url. og:description est facultatif dans la spécification, mais toutes les grandes plateformes l’affichent : sans elle, la plateforme rédige son propre résumé à partir du texte de la page.',
 	tool_og_rules_item_2: 'og:image en 1200×630 px (1.91:1) fonctionne sur toutes les grandes plateformes. Facebook accepte aussi les recadrages 2:1 et 1:1 ; les petites images sont souvent agrandies et floues.',
 	tool_og_rules_item_3: 'twitter:card summary_large_image va avec une grande image ; summary avec une petite. Sans twitter:card, les plateformes déduisent une carte summary des balises og:.',
 	tool_og_rules_item_4: 'Quand og:title ou og:image manque, les plateformes utilisent le titre HTML, la meta description et la première image de la page.',
@@ -76,7 +76,7 @@ const fr: SiteLangDict = {
 		'Après une mise à jour de CMS ou de thème, récupérez l’URL en direct et vérifiez que les balises og: correspondent toujours à la page.',
 	tool_og_faq_q1: 'Que se passe-t-il si une page n’a pas de balises Open Graph ?',
 	tool_og_faq_a1:
-		'Facebook, X et WhatsApp construisent l’aperçu avec le titre HTML, la meta description et la première image de la page. La carte peut être incomplète ou montrer la mauvaise image, d’où l’existence des champs og: obligatoires.',
+		'Facebook, X et WhatsApp se rabattent sur le titre HTML, la meta description et une image trouvée dans la page. Ces solutions de repli diffèrent selon la plateforme et évoluent avec le temps : la carte peut donc être incomplète ou retenir la mauvaise image, d’où l’intérêt des balises og:.',
 	tool_og_faq_q2: 'Quelle taille pour og:image ?',
 	tool_og_faq_a2:
 		'La taille sûre est 1200×630 px, un ratio 1.91:1 accepté par toutes les grandes plateformes. Facebook prend désormais aussi en charge les recadrages 2:1 et 1:1. Les images très petites sont souvent agrandies et deviennent floues.',

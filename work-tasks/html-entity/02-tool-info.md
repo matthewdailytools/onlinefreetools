@@ -151,3 +151,8 @@
 - [ ] README 工具清单登记（中英各一条，与 `tool-catalog.json` 一致）
 - [ ] `tool-catalog.json` 注册（`faqPrefix: tool_html_entity`；`related` ≥ 2）
 - [ ] **不**注册独立 `html-entity-encoder` / `html-entity-decoder` / `html-escape` slug
+
+## 复审修正（2026-09-05）
+
+- `decodeOnce()` 在写入游离 textarea 前先把裸 `<` 转成 `&lt;`：否则输入含 `</textarea>` 时 RCDATA 解析提前结束，「直到稳定」多轮解码会静默丢弃后续文本。
+- `rules_item_3` 十语补充「裸 < > 按字面保留」。

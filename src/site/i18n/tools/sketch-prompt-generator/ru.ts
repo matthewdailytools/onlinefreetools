@@ -6,18 +6,18 @@ import type { SiteLangDict } from '../../../types';
 
 const ru: SiteLangDict = {
 	tool_sketch_prompt_generator_article:
-		'Соберите готовый к вставке промпт, который подскажет ChatGPT, Gemini, Claude или DeepSeek, как работать в Sketch.app — артборды, Symbols, Shared Styles и экспорт. Заполните поля, скопируйте Markdown или JSON. Локальная сборка остаётся в браузере; опциональный Expand/Polish идёт через Cloudflare Workers AI с Turnstile. Текст остаётся на устройстве, пока вы не включите ИИ.',
+		'Соберите готовый к вставке промпт, который подскажет ChatGPT, Gemini, Claude или DeepSeek, как работать в Sketch.app — артборды, Symbols, Shared Styles и экспорт. Заполните поля, скопируйте Markdown или JSON. По умолчанию промпт собирается прямо в браузере; только по нажатию «Расширить» или «Отполировать» текущий черновик уходит в Cloudflare Workers AI (нужен Turnstile, есть ограничения по частоте и квоте), и ответ целиком заменяет блок результата.',
 	tool_sketch_prompt_generator_build: 'Собрать промпт',
 	tool_sketch_prompt_generator_clear: 'Очистить',
 	tool_sketch_prompt_generator_copy: 'Копировать',
 	tool_sketch_prompt_generator_desc:
-		'Генератор промптов Sketch.app — локально по умолчанию + опциональный Expand/Polish Cloudflare AI (Turnstile); Markdown/JSON на устройстве.',
+		'Генератор промптов Sketch.app — собирайте артборды, Symbols и шаги экспорта в браузере; опционально «Расширить/Отполировать» через Cloudflare AI (Turnstile).',
 	tool_sketch_prompt_generator_description:
-		'Генератор промптов Sketch.app — Локально + опциональный ИИ для ChatGPT, Gemini, Claude и DeepSeek: собирайте структурированные промпты для шагов в Sketch.app (артборды, Symbols, экспорт) в браузере; опционально Expand/Polish через Cloudflare Workers AI (Turnstile, лимит). Пример при открытии. Markdown по умолчанию; JSON для пайплайнов. Текст на устройстве без ИИ.',
+		'Генератор промптов Sketch.app — Локально + опциональный ИИ для ChatGPT, Gemini, Claude и DeepSeek: заполните цель, артборды, Symbols и экспорт, и браузер соберёт структурированный промпт с шагами работы в Sketch.app. При открытии уже отрабатывает пример, который можно править; дальше по желанию «Расширить» или «Отполировать» через Cloudflare Workers AI (нужен Turnstile, есть квота). По умолчанию Markdown, для пайплайнов — JSON.',
 	tool_sketch_prompt_generator_download: 'Скачать',
 	tool_sketch_prompt_generator_empty: 'Заполните хотя бы одно поле перед сборкой.',
 	tool_sketch_prompt_generator_example:
-		'Ввод: Цель = экран входа в Sketch.app; Артборды = iPhone 14 390×844; Symbols = Button/Primary + Input; Экспорт = PNG 1x/2x/3x + PDF. Вывод (Markdown): ## Role → ассистент Sketch.app; ## Task → нумерованный чеклист.',
+		'Ввод: Цель = экран входа в Sketch.app; Артборды = iPhone 14 390×844; Symbols = Button/Primary + Input; Экспорт = PNG 1x/2x/3x + PDF. Вывод (Markdown): ## Роль → ассистент Sketch.app; ## Задача → нумерованный чеклист.',
 	tool_sketch_prompt_generator_example_title: 'Пример',
 	tool_sketch_prompt_generator_faq_a1:
 		'Локальная сборка идёт во вкладке — по умолчанию ничего не загружается. Опциональный Expand/Polish отправляет только текст этого клика в Cloudflare Workers AI, не в OpenAI, Google, Anthropic или DeepSeek с наших серверов.',
@@ -33,7 +33,7 @@ const ru: SiteLangDict = {
 	tool_sketch_prompt_generator_faq_a7:
 		'Да. Вставьте промпт в ChatGPT, Gemini, Claude или DeepSeek, чтобы чат провёл по меню Sketch.app. Мы только форматируем текст; Sketch здесь не запускается.',
 	tool_sketch_prompt_generator_faq_a8:
-		'Локально — форматирование во вкладке без загрузки. Expand/Polish — Cloudflare Workers AI (лимит + Turnstile). При сбое продолжайте локально.',
+		'Локально всё форматируется в этой вкладке и никуда не уходит. «Расширить/Отполировать» передаёт черновик в Cloudflare Workers AI (Turnstile и дневная квота), а ответ целиком заменяет блок результата. При сбое или исчерпанной квоте остаётся локальный режим.',
 	tool_sketch_prompt_generator_faq_q1: 'Загружается ли мой промпт?',
 	tool_sketch_prompt_generator_faq_q2: 'Вызываете ChatGPT или управляете Sketch.app удалённо?',
 	tool_sketch_prompt_generator_faq_q3: 'Чем это отличается от конструктора шаблонов Prompt?',
@@ -51,7 +51,7 @@ const ru: SiteLangDict = {
 	tool_sketch_prompt_generator_ai_consent_ok: 'Продолжить',
 	tool_sketch_prompt_generator_ai_consent_cancel: 'Отмена',
 	tool_sketch_prompt_generator_ai_working: 'Cloudflare AI работает…',
-	tool_sketch_prompt_generator_ai_done: 'Предложение ИИ применено. Проверьте перед копированием.',
+	tool_sketch_prompt_generator_ai_done: 'Текст ИИ полностью записан в блок результата. Проверьте его перед копированием.',
 	tool_sketch_prompt_generator_ai_err_generic: 'ИИ не удалось. Локальный промпт не изменён.',
 	tool_sketch_prompt_generator_ai_err_rate: 'Квота ИИ исчерпана. Используйте локальный режим или попробуйте завтра (UTC).',
 	tool_sketch_prompt_generator_ai_err_turnstile: 'Пройдите Turnstile перед использованием ИИ.',

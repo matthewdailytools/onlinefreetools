@@ -51,7 +51,7 @@ const en: SiteLangDict = {
 	tool_batch_watermark_product_photos_faq_a4:
 		'Add text watermark is one photo with pixel tweaks. This page shares one stamp across a shoot, previews one, then applies all into a ZIP.',
 	tool_batch_watermark_product_photos_faq_a5:
-		'People also search “watermark photos in bulk”. On this site that job lives here under batch — there is no second bulk-watermark URL.',
+		'Watermark a folder of listing photos in one pass: same stamp, opacity, and corner for every file, then download the batch.',
 	tool_batch_watermark_product_photos_faq_q1: 'Are my photos uploaded to a server?',
 	tool_batch_watermark_product_photos_faq_q2: 'Will landscape and portrait marks drift?',
 	tool_batch_watermark_product_photos_faq_q3: 'Can I watermark a PDF here?',

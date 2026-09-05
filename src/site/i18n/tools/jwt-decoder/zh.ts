@@ -56,7 +56,7 @@ const zh: SiteLangDict = {
   tool_jwt_decoder_rules_item_1:
     '结构：JWS 紧凑格式分三段 Base64url——Header（alg、typ 等）、Payload（声明）、Signature（二进制，非 JSON）。',
   tool_jwt_decoder_rules_item_2:
-    'Base64url：-→+、_→/，补齐 padding 至长度 %4，再 atob 与 JSON.parse；哪段出错会单独提示 Header 或 Payload。',
+    'Base64url：-→+、_→/，补齐 padding 至长度 %4，再 atob 得到字节、按 UTF-8 还原后 JSON.parse，含中文或带重音的 claim 不会乱码；哪段出错会单独提示 Header 或 Payload。',
   tool_jwt_decoder_rules_item_3:
     '注册声明：exp（过期）、iat（签发）、nbf（生效）为 UTC Unix 秒；能读懂 JSON 不等于 token 可信。',
   tool_jwt_decoder_rules_item_4:

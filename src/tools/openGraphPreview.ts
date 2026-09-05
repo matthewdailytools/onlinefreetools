@@ -4,7 +4,7 @@
  * slug: open-graph-preview（见 work-tasks/open-graph-preview/02-tool-info.md）。
  */
 import type { Context } from 'hono';
-import { parseUrlOrThrow, isBlockedHostname } from './onPageSeo';
+import { parseUrlOrThrow, isBlockedHostname, fetchHtmlFollowingRedirects } from './onPageSeo';
 
 /**
  * 拉取 URL 并返回 HTML。
@@ -29,15 +29,11 @@ export const handleOpenGraphPreviewApi = async (c: Context) => {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort('timeout'), 10_000);
   try {
-    const res = await fetch(url.toString(), {
-      method: 'GET',
-      redirect: 'follow',
-      signal: controller.signal,
-      headers: {
-        'user-agent': 'onlinefreetools/open-graph-preview',
-        accept: 'text/html,application/xhtml+xml',
-      },
-    });
+    const { res, finalUrl } = await fetchHtmlFollowingRedirects(
+      url,
+      'onlinefreetools/open-graph-preview',
+      controller.signal,
+    );
 
     const contentType = (res.headers.get('content-type') || '').toLowerCase();
     if (!contentType.includes('html') && !contentType.includes('xml')) {
@@ -54,7 +50,7 @@ export const handleOpenGraphPreviewApi = async (c: Context) => {
     const html = new TextDecoder('utf-8', { fatal: false }).decode(buf);
     return c.json({
       inputUrl: raw,
-      finalUrl: res.url,
+      finalUrl,
       status: res.status,
       html,
     });

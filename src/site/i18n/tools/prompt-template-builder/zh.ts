@@ -6,20 +6,20 @@ import type { SiteLangDict } from '../../../types';
 
 const zh: SiteLangDict = {
 	tool_prompt_template_builder_article:
-		'在本页把草稿 Prompt 整理成可复用的 Role / Task / Constraints / Output 模板。可粘贴自由文本或填写字段，再复制 Markdown 或 JSON 到 ChatGPT、Gemini、Claude 或 DeepSeek。不调用任何模型 API。文本留在本机，不上传服务器。',
+		'在本页把草稿 Prompt 整理成可复用的 Role / Task / Constraints / Output 模板。可粘贴自由文本或填写字段，再复制 Markdown 或 JSON 到 ChatGPT、Gemini、Claude 或 DeepSeek。默认只在浏览器里组装，不代你调用聊天模型 API；只有当你点「AI 扩写」或「AI 润色」时，当前草稿才会发往 Cloudflare Workers AI（须过 Turnstile，有频率与配额上限）。',
 	tool_prompt_template_builder_build: '构建模板',
 	tool_prompt_template_builder_clear: '清空',
 	tool_prompt_template_builder_constraints_label: '约束',
 	tool_prompt_template_builder_constraints_ph: '语气限制、范围、避免事项…',
 	tool_prompt_template_builder_copy: '复制',
 	tool_prompt_template_builder_desc:
-		'Prompt 模板构建器 — 默认本地组装，可选 Cloudflare AI 扩写/润色（Turnstile）；Markdown/JSON 留在本机。',
+		'Prompt 模板构建器 — 默认在浏览器本地组装 Markdown/JSON，可选 Cloudflare AI 扩写/润色（须 Turnstile）。',
 	tool_prompt_template_builder_description:
-		'步骤与示例：Prompt 模板构建器 — 本地 + 可选 AI：面向 ChatGPT、Gemini、Claude、DeepSeek，默认在本浏览器本地组装 Prompt，可选 Cloudflare Workers AI 扩写/润色（须 Turnstile、有频率限制）。进页自动展示样例。默认 Markdown；JSON 便于流水线。不用 AI 时文本不出本机。',
+		'Prompt 模板构建器：按 Role / Task / Constraints / Output 四步把草稿整理成可复用模板，复制到 ChatGPT、Gemini、Claude 或 DeepSeek。进页自动跑代码审查示例；默认导出 Markdown，需要接流水线可切 JSON。默认在浏览器本地组装，可选 Cloudflare Workers AI 扩写/润色（须过 Turnstile，有配额）。',
 	tool_prompt_template_builder_download: '下载',
 	tool_prompt_template_builder_empty: '请先填写自由文本或至少一个字段。',
 	tool_prompt_template_builder_example:
-		'输入（加载样例 · 代码芯片）：Role = 资深代码审查（安全与可读性）；Task = 审查我接下来粘贴的 PR diff；Constraints = 最多 12 条、标出密钥风险。输出（Markdown）：## Role / ## Task / ## Constraints / ## Output format 四段，可直接复制到 ChatGPT 或 Claude。与首屏画布一致。',
+		'输入（加载样例 · 代码芯片）：Role = 资深代码审查（安全与可读性）；Task = 审查我接下来粘贴的 PR diff；Constraints = 最多 12 条、标出密钥风险。输出（Markdown）：## 角色 / ## 任务 / ## 约束 / ## 输出格式 四段，可直接复制到 ChatGPT 或 Claude。与首屏画布一致。',
 	tool_prompt_template_builder_example_title: '示例',
 	tool_prompt_template_builder_faq_a1:
 		'默认只在本浏览器标签页本地组装。可选「AI 扩写/润色」仅把该次点击提交的文字发往 Cloudflare Workers AI，不会从我们的服务器调用 OpenAI、Google、Anthropic 或 DeepSeek。',
@@ -31,7 +31,7 @@ const zh: SiteLangDict = {
 		'可以。使用 Expand/Polish 前须在可选 AI 面板完成 Turnstile；无有效 token 时 AI 按钮报错，本地模式仍可用。',
 	tool_prompt_template_builder_faq_a5: '自由文本框里以 Role:、Task:、Constraints:、Output: 开头的行会分段；显式字段优先于解析结果。',
 	tool_prompt_template_builder_faq_a6:
-		'可以。构建完成后复制到 ChatGPT、Gemini、Claude 或 DeepSeek 即可——四字段结构在各聊天界面通用。我们不按平台拆独立 URL，因为任务是整理文本，不是代调用 API。',
+		'可以。构建完成后复制到 ChatGPT、Gemini、Claude 或 DeepSeek 即可——四字段结构在各聊天界面通用。本页只负责把文字整理成模板，不代你登录或调用任何一家的 API。',
 	tool_prompt_template_builder_faq_q1: 'Prompt 会上传吗？',
 	tool_prompt_template_builder_faq_q2: '会调用大模型吗？',
 	tool_prompt_template_builder_faq_q3: '和 ChatGPT 导出转 Markdown 有何不同？',
@@ -60,7 +60,7 @@ const zh: SiteLangDict = {
 	tool_prompt_template_builder_ai_working:
 		'Cloudflare AI 处理中…',
 	tool_prompt_template_builder_ai_done:
-		'已应用 AI 建议，复制前请核对。',
+		'AI 返回的文本已整段写入结果区，复制前请核对。',
 	tool_prompt_template_builder_ai_err_generic:
 		'AI 失败，本地 Prompt 未改。',
 	tool_prompt_template_builder_ai_err_rate:
@@ -75,7 +75,7 @@ const zh: SiteLangDict = {
 	tool_prompt_template_builder_how_body:
 		'选场景芯片或自行写草稿，填 Role / Task / Constraints / Output，构建模板，再粘贴到 ChatGPT、Gemini、Claude 或 DeepSeek。',
 	tool_prompt_template_builder_how_item_1: '选代码审查、电影、短剧、Android 或 iOS 芯片，或在自由框粘贴草稿。',
-	tool_prompt_template_builder_how_item_2: '点「构建模板」（进页已自动跑过代码审查示例）。',
+	tool_prompt_template_builder_how_item_2: '点「构建模板」（需要默认预设时先点「加载样例」载入代码审查示例）。',
 	tool_prompt_template_builder_how_item_3: '需要 {role,task,constraints,output} 时可切到 JSON。',
 	tool_prompt_template_builder_how_item_4: '复制或下载后，粘贴到 ChatGPT、Gemini、Claude 或 DeepSeek。',
 	tool_prompt_template_builder_how_title: '怎么用',
@@ -87,11 +87,11 @@ const zh: SiteLangDict = {
 	tool_prompt_template_builder_result_label: '模板',
 	tool_prompt_template_builder_role_label: '角色 Role',
 	tool_prompt_template_builder_role_ph: '模型应扮演谁…',
-	tool_prompt_template_builder_rules_body: '可复用模板需要清晰分块、字段优先级和诚实边界——不是第二个生成器产品。',
+	tool_prompt_template_builder_rules_body: '可复用模板需要清晰分块、明确的字段优先级，以及说清楚哪些事这页不做。',
 	tool_prompt_template_builder_rules_item_1: '四块：Role、Task、Constraints、Output。空块不出现在 Markdown 里。',
 	tool_prompt_template_builder_rules_item_2: '显式字段优先于自由文本解析。',
 	tool_prompt_template_builder_rules_item_3: '默认 Markdown，## 标题；JSON 是同页芯片。',
-	tool_prompt_template_builder_rules_item_4: '场景芯片预设电影、短剧、移动开发字段——同一构建器，不按平台拆 URL。',
+	tool_prompt_template_builder_rules_item_4: '场景芯片会预填电影、短剧、Android/iOS 的常用字段，换芯片后仍可继续手改。',
 	tool_prompt_template_builder_rules_title: '使用规则',
 	tool_prompt_template_builder_scene_android: 'Android 代码',
 	tool_prompt_template_builder_scene_code: '代码审查',
@@ -99,10 +99,10 @@ const zh: SiteLangDict = {
 	tool_prompt_template_builder_scene_label: '场景预设',
 	tool_prompt_template_builder_scene_movie: '电影剧本',
 	tool_prompt_template_builder_scene_short_drama: '短剧',
-	tool_prompt_template_builder_sec_constraints: 'Constraints',
-	tool_prompt_template_builder_sec_output: 'Output format',
-	tool_prompt_template_builder_sec_role: 'Role',
-	tool_prompt_template_builder_sec_task: 'Task',
+	tool_prompt_template_builder_sec_constraints: '约束',
+	tool_prompt_template_builder_sec_output: '输出格式',
+	tool_prompt_template_builder_sec_role: '角色',
+	tool_prompt_template_builder_sec_task: '任务',
 	tool_prompt_template_builder_status_copied: '已复制到剪贴板。',
 	tool_prompt_template_builder_status_done: '模板已就绪。',
 	tool_prompt_template_builder_status_working: '正在构建模板…',
@@ -115,7 +115,7 @@ const zh: SiteLangDict = {
 	tool_prompt_template_builder_usecase_3: '导出 JSON 后，用 JSON Schema 校验器检查下游配置文件。',
 	tool_prompt_template_builder_usecase_4: '点「电影剧本」芯片，生成三幕节拍表再粘贴到常用聊天界面。',
 	tool_prompt_template_builder_usecase_5: '点「短剧」芯片，为竖屏连载写钩子与 cliffhanger 大纲。',
-	tool_prompt_template_builder_usecase_6: '点 Android 或 iOS 芯片，得到 Kotlin/Swift 编码 Agent 模板，无需开四个平台专页。',
+	tool_prompt_template_builder_usecase_6: '点 Android 或 iOS 芯片，得到带 Kotlin/Swift 约定的编码 Agent 模板，可再补公司代码规范。',
 	tool_prompt_template_builder_usecases_title: '适用场景',
 };
 

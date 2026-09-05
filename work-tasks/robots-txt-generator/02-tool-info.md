@@ -108,3 +108,8 @@
 - [x] References ≥1
 - [ ] Disclaimer — 非 YMYL
 - [x] `03-locale-briefs.md` 已填（实现十语前）
+
+## 复审修正（2026-09-05）
+
+- 纠正匹配规则错误：原文写「文件中最后一组获胜」，实际按 RFC 9309 是 user-agent 最具体匹配的组获胜，同名组合并，文件顺序不决定。
+- 补充组内优先级（最长匹配路径胜出，等长时 Allow 胜出）与「Disallow 阻止抓取而非索引」的边界；Google-Extended 的范围限定为 Gemini 与 Vertex AI grounding，AI Overviews 仍走 Googlebot。

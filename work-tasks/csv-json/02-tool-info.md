@@ -142,3 +142,7 @@
 - [ ] README 工具清单登记（中英各一条，与 `tool-catalog.json` 一致）
 - [ ] `tool-catalog.json` 注册（`faqPrefix: tool_csv_json`；`related` ≥ 2）
 - [ ] **不**注册独立 `json-to-csv` / `excel-to-json` / `tsv-to-json` slug
+
+## 复审修正（2026-09-05）
+
+- 去掉描述中的「不是另一个薄内容 URL」建站元叙事。

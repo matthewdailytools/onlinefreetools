@@ -49,7 +49,7 @@ const fr: SiteLangDict = {
   tool_password_generator_rules_item_1:
     'Pools : A–Z, a–z, 0–9 et symboles par défaut. Au moins un pool doit rester après toggles et exclusion ambiguë.',
   tool_password_generator_rules_item_2:
-    'L\'index aléatoire utilise des octets crypto.getRandomValues — jamais Math.random.',
+    'L\'index aléatoire utilise des octets crypto.getRandomValues, jamais Math.random. Les octets qui fausseraient le modulo sont écartés : chaque caractère du jeu garde la même probabilité.',
   tool_password_generator_rules_item_3:
     'Pas de composition NIST certifiée (pas de règle forcée « un de chaque classe »). Activez manuellement les jeux nécessaires.',
   tool_password_generator_rules_item_4:

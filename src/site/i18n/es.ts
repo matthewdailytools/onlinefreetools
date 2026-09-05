@@ -523,93 +523,103 @@ const es: SiteLangDict = {
   tool_amazon_main_image_size_zoom_label: 'Umbral de zoom',
   tool_amazon_main_image_size_zoom_ok: 'El lado más largo cumple el umbral de zoom de 1000 px.',
   tool_android_prompt_builder_ai_consent_body:
-    'Este paso opcional envía tu borrador a Cloudflare Workers AI. No va a OpenAI, Google, Anthropic ni DeepSeek desde nuestros servidores.',
+    'Este paso es opcional: envía el borrador actual a Cloudflare Workers AI para la inferencia. Desde nuestros servidores no se reenvía a OpenAI, Google, Anthropic ni DeepSeek. Sin IA puedes seguir montando el prompt en el navegador.',
   tool_android_prompt_builder_ai_consent_cancel: 'Cancelar',
   tool_android_prompt_builder_ai_consent_ok: 'Continuar',
-  tool_android_prompt_builder_ai_consent_title: '¿Enviar texto a Cloudflare Workers AI?',
-  tool_android_prompt_builder_ai_done: 'Sugerencia de IA aplicada. Revisa antes de copiar.',
-  tool_android_prompt_builder_ai_err_generic: 'La IA falló. Tu prompt local no cambió.',
-  tool_android_prompt_builder_ai_err_rate: 'Cuota de IA agotada. Modo local o prueba mañana (UTC).',
-  tool_android_prompt_builder_ai_err_turnstile: 'Completa Turnstile antes de usar IA.',
-  tool_android_prompt_builder_ai_expand: 'Expandir con IA',
+  tool_android_prompt_builder_ai_consent_title: '¿Enviar el borrador a Cloudflare Workers AI?',
+  tool_android_prompt_builder_ai_done: 'El texto de la IA sustituyó el resultado. Revísalo antes de copiar.',
+  tool_android_prompt_builder_ai_err_generic: 'La IA falló; el resultado no ha cambiado.',
+  tool_android_prompt_builder_ai_err_rate: 'Cuota de IA agotada. Usa el modo local o vuelve mañana (UTC).',
+  tool_android_prompt_builder_ai_err_turnstile: 'Completa Turnstile antes de usar la IA.',
+  tool_android_prompt_builder_ai_expand: 'Ampliar con IA',
   tool_android_prompt_builder_ai_panel_label: 'Cloudflare AI opcional (Turnstile)',
   tool_android_prompt_builder_ai_polish: 'Pulir con IA',
-  tool_android_prompt_builder_ai_working: 'Cloudflare AI trabajando…',
+  tool_android_prompt_builder_ai_working: 'Cloudflare AI está trabajando…',
   tool_android_prompt_builder_article:
-    'Crea prompts listos de Constructor de prompts Android aquí. Rellena campos y copia Markdown o JSON a ChatGPT, Gemini, Claude o DeepSeek. Local por defecto; Expand/Polish opcional con Cloudflare Workers AI (Turnstile).',
-  tool_android_prompt_builder_build: 'Crear prompt',
-  tool_android_prompt_builder_clear: 'Limpiar',
-  tool_android_prompt_builder_compose_ui_label: 'Compose / Ui',
-  tool_android_prompt_builder_compose_ui_ph: 'Sample compose ui…',
+    'Convierte un requisito de Android en un prompt listo para pegar: describe la función, el stack de Kotlin, la pantalla en Compose y los límites de Gradle, y la página arma el texto en Markdown o JSON dentro del navegador. Por defecto no se envía ninguna petición; solo al pulsar Ampliar o Pulir el borrador actual va a Cloudflare Workers AI (hace falta Turnstile y el uso está limitado).',
+  tool_android_prompt_builder_build: 'Generar prompt',
+  tool_android_prompt_builder_clear: 'Vaciar',
+  tool_android_prompt_builder_compose_ui_label: 'Compose / Pantalla',
+  tool_android_prompt_builder_compose_ui_ph: 'Ej.: LazyColumn con cabeceras fijas…',
   tool_android_prompt_builder_copy: 'Copiar',
   tool_android_prompt_builder_desc:
-    'Constructor de prompts Android — local por defecto + Expand/Polish opcional Cloudflare AI (Turnstile); Markdown/JSON en el dispositivo.',
+    'Generador de prompts para Android: rellena función, stack de Kotlin, pantalla en Compose y límites de Gradle; el texto se arma en el navegador como Markdown o JSON, con IA opcional.',
   tool_android_prompt_builder_description:
-    'Proceso y ejemplo: Constructor de prompts Android — Local + IA opcional para ChatGPT, Gemini, Claude y DeepSeek: ensambla prompts localmente por defecto y opcionalmente Expand/Polish con Cloudflare Workers AI (Turnstile obligatorio, límite de uso). Ejemplo al abrir. Markdown por defecto; JSON para pipelines. Texto en el dispositivo salvo que uses IA.',
+    'Generador de prompts para Android: escribe la función, el stack (Kotlin 2.0, Jetpack Compose, Room), la pantalla y las restricciones de Gradle, y la página lo ordena en bloques Role / Task / Constraints / Output en Markdown o JSON sin salir del navegador. Ejemplo: «lista de lectura offline con búsqueda y archivar deslizando» sale como una tarea con minSdk 26. Con «Cargar ejemplo» rellenas el preajuste y ves el prompt montado; Ampliar o Pulir con Cloudflare Workers AI es opcional (Turnstile, cuota diaria).',
   tool_android_prompt_builder_download: 'Descargar',
-  tool_android_prompt_builder_empty: 'Rellena al menos un campo antes de crear.',
+  tool_android_prompt_builder_empty: 'Rellena al menos un campo antes de generar.',
   tool_android_prompt_builder_example:
-    'Entrada: Feature = lista offline + share + FTS; Stack = Kotlin 2.0, Compose, Room FTS4, Hilt; Gradle = minSdk 26. Salida (Markdown): ## Task → Feature / Kotlin / Compose / Gradle.',
+    'Entrada: Función = lista de lectura offline, guardar desde el share sheet, búsqueda de texto completo y archivar deslizando con deshacer; Stack = Kotlin 2.0, Jetpack Compose, Room FTS4, Hilt; Compose = LazyColumn con cabeceras fijas y SwipeToDismissBox; Gradle = minSdk 26, targetSdk 35, módulo :core:data. Salida (Markdown): ## Role con el perfil de ingeniero Android sénior y ## Task con una línea por campo.',
   tool_android_prompt_builder_example_title: 'Ejemplo',
   tool_android_prompt_builder_faq_a1:
-    'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
+    'Por defecto no. Rellenar los campos y pulsar Generar prompt ocurre solo en esta pestaña, sin ninguna petición. El borrador únicamente sale cuando pulsas Ampliar o Pulir, y entonces va a Cloudflare Workers AI; desde nuestros servidores no se reenvía a OpenAI, Google, Anthropic ni DeepSeek.',
   tool_android_prompt_builder_faq_a2:
-    'Modo local solo formatea aquí. Expand/Polish opcional usa Cloudflare Workers AI tras Turnstile — no llama APIs de chat.',
+    'No. El modo local solo maqueta lo que escribes en los bloques Role / Task / Constraints / Output. La IA opcional pasa por Cloudflare Workers AI después de Turnstile, no por las API de ChatGPT, Gemini, Claude o DeepSeek.',
   tool_android_prompt_builder_faq_a3:
-    'Constructor de plantillas de Prompt covers generic Role/Task/Constraints/Output templates. This page focuses on android prompt builder fields with a dedicated sample and rules for this scenario.',
-  tool_android_prompt_builder_faq_a4: 'Sí. Completa Turnstile en el panel de IA antes de Expand o Polish.',
-  tool_android_prompt_builder_faq_a5: 'Yes. The JSON chip emits structured fields plus assembled prompt text for tests or config pipelines.',
+    'El generador de plantillas de prompts entrega los cuatro bloques genéricos Role / Task / Constraints / Output y sirve para cualquier tema. Aquí los campos ya son los de un proyecto Android: función, stack de Kotlin, pantalla en Compose, minSdk y módulos de Gradle, con su propio ejemplo y sus límites.',
+  tool_android_prompt_builder_faq_a4:
+    'Sí. Completa el widget de Turnstile del panel de IA antes de pulsar Ampliar o Pulir. Sin un token válido los botones devuelven error y el modo local sigue funcionando igual.',
+  tool_android_prompt_builder_faq_a5:
+    'Sí. Cambia el formato de salida a JSON y obtendrás los campos por separado más el prompt ya montado, listo para pruebas o para un pipeline de configuración.',
   tool_android_prompt_builder_faq_a6:
-    'Yes. Copy the finished prompt into ChatGPT, Gemini, Claude, or DeepSeek. We do not split URLs per platform because the job is formatting text, not calling APIs.',
+    'Sí. El resultado es texto plano: cópialo y pégalo en ChatGPT, Gemini, Claude o DeepSeek. La página no llama a esas API en tu nombre.',
   tool_android_prompt_builder_faq_a7:
-    'Local: solo esta pestaña, sin subida. Expand/Polish opcional a Cloudflare Workers AI (Turnstile, límite).',
-  tool_android_prompt_builder_faq_q1: 'Is my prompt uploaded?',
-  tool_android_prompt_builder_faq_q2: 'Does this call ChatGPT or other LLM APIs?',
-  tool_android_prompt_builder_faq_q3: 'How is this different from Constructor de plantillas de Prompt?',
-  tool_android_prompt_builder_faq_q4: '¿Por qué Turnstile para IA opcional?',
-  tool_android_prompt_builder_faq_q5: 'Can I get JSON output?',
-  tool_android_prompt_builder_faq_q6: 'Can I use this with ChatGPT, Gemini, Claude, or DeepSeek?',
-  tool_android_prompt_builder_faq_q7: '¿Diferencia entre local y Cloudflare AI opcional?',
-  tool_android_prompt_builder_feature_spec_label: 'Función / spec',
-  tool_android_prompt_builder_feature_spec_ph: 'Sample feature spec…',
+    'El modo local solo ordena tus campos, no hace peticiones y no tiene cuota. Ampliar o Pulir envía el borrador a Cloudflare Workers AI (Turnstile obligatorio, uso limitado) y el texto que devuelve sustituye por completo el área de resultado: revísalo antes de copiar. Si falla o se agota la cuota, sigue con el modo local.',
+  tool_android_prompt_builder_faq_q1: '¿Se sube lo que escribo?',
+  tool_android_prompt_builder_faq_q2: '¿La página llama a ChatGPT u otras API de modelos?',
+  tool_android_prompt_builder_faq_q3: '¿En qué se diferencia del generador de plantillas de prompts?',
+  tool_android_prompt_builder_faq_q4: '¿Por qué la IA opcional pide Turnstile?',
+  tool_android_prompt_builder_faq_q5: '¿Puedo exportar en JSON?',
+  tool_android_prompt_builder_faq_q6: '¿Sirve con ChatGPT, Gemini, Claude o DeepSeek?',
+  tool_android_prompt_builder_faq_q7: '¿Qué cambia entre el modo local y la IA de Cloudflare?',
+  tool_android_prompt_builder_feature_spec_label: 'Función / Especificación',
+  tool_android_prompt_builder_feature_spec_ph: 'Ej.: lista de lectura offline con búsqueda…',
   tool_android_prompt_builder_fmt_json: 'JSON',
   tool_android_prompt_builder_fmt_label: 'Formato de salida',
   tool_android_prompt_builder_fmt_md: 'Markdown',
-  tool_android_prompt_builder_gradle_constraints_label: 'Gradle / Constraints',
-  tool_android_prompt_builder_gradle_constraints_ph: 'Sample gradle constraints…',
+  tool_android_prompt_builder_gradle_constraints_label: 'Gradle / Límites',
+  tool_android_prompt_builder_gradle_constraints_ph: 'Ej.: minSdk 26, targetSdk 35, módulo :core:data…',
   tool_android_prompt_builder_how_body:
-    'Rellena campos de Constructor de prompts Android, crea el prompt localmente, opcionalmente Expand/Polish con Turnstile, y pégalo en ChatGPT, Gemini, Claude o DeepSeek.',
-  tool_android_prompt_builder_how_item_1: 'Al abrir, el ejemplo predeterminado ya se ejecutó (Cargar ejemplo).',
-  tool_android_prompt_builder_how_item_2: 'Edit fields, click Build prompt, or switch to JSON if you need structured export.',
-  tool_android_prompt_builder_how_item_3: 'Opcional: completa Turnstile y Expand/Polish con Cloudflare Workers AI.',
-  tool_android_prompt_builder_how_item_4: 'Copia o descarga y pega en ChatGPT, Gemini, Claude o DeepSeek.',
-  tool_android_prompt_builder_how_title: 'Cómo funciona',
-  tool_android_prompt_builder_kotlin_stack_label: 'Kotlin / Stack',
-  tool_android_prompt_builder_kotlin_stack_ph: 'Sample kotlin stack…',
+    'Rellena los cuatro campos, deja que la página los monte en Markdown (o JSON) dentro del navegador y, si quieres más detalle, pide una ampliación a Cloudflare AI antes de pegar el prompt en tu chat.',
+  tool_android_prompt_builder_how_item_1: 'Pulsa Cargar ejemplo para rellenar el preajuste y ver un prompt montado que puedes editar.',
+  tool_android_prompt_builder_how_item_2:
+    'Cambia función, stack, pantalla y límites y pulsa Generar prompt; pasa a JSON si necesitas exportar los campos.',
+  tool_android_prompt_builder_how_item_3:
+    'Opcional: completa Turnstile y pulsa Ampliar o Pulir; el texto que devuelve la IA reemplaza el resultado.',
+  tool_android_prompt_builder_how_item_4: 'Copia o descarga el resultado y pégalo en ChatGPT, Gemini, Claude o DeepSeek.',
+  tool_android_prompt_builder_how_title: 'Cómo se usa',
+  tool_android_prompt_builder_kotlin_stack_label: 'Kotlin / Stack técnico',
+  tool_android_prompt_builder_kotlin_stack_ph: 'Ej.: Kotlin 2.0, Jetpack Compose, Room, Hilt…',
   tool_android_prompt_builder_load_sample: 'Cargar ejemplo',
-  tool_android_prompt_builder_platforms_lead: 'Para ChatGPT, Gemini, Claude y DeepSeek — copia el prompt terminado en cualquier chat.',
-  tool_android_prompt_builder_result_label: 'Salida del prompt',
-  tool_android_prompt_builder_rules_body: 'Constructor de prompts Android: ensamblaje local por defecto; IA opcional con límites y Turnstile.',
-  tool_android_prompt_builder_rules_item_1: 'Structured fields map to Role/Task/Constraints/Output blocks in Markdown export.',
-  tool_android_prompt_builder_rules_item_2: 'Default export is Markdown. JSON is a chip on the same canvas.',
-  tool_android_prompt_builder_rules_item_3: 'La IA opcional no reemplaza el modo local — revisa antes de copiar.',
+  tool_android_prompt_builder_platforms_lead: 'El prompt final es texto plano: se pega igual en ChatGPT, Gemini, Claude o DeepSeek.',
+  tool_android_prompt_builder_result_label: 'Prompt generado',
+  tool_android_prompt_builder_rules_body:
+    'La página solo maqueta el requisito: no compila código ni ejecuta Gradle. La IA opcional tiene cuota limitada y exige Turnstile.',
+  tool_android_prompt_builder_rules_item_1: 'Cada campo cae en un bloque distinto del Markdown: Role, Task, Constraints y Output.',
+  tool_android_prompt_builder_rules_item_2:
+    'La salida por defecto es Markdown; el mismo panel puede mostrar JSON con los campos y el prompt montado.',
+  tool_android_prompt_builder_rules_item_3:
+    'La IA de Cloudflare no sustituye al modo local: su respuesta ocupa todo el área de resultado, así que revísala antes de copiar.',
   tool_android_prompt_builder_rules_item_4:
-    'This tool assembles text only; it does not run android prompt builder engines or call chat APIs locally.',
-  tool_android_prompt_builder_rules_title: 'Reglas que debes conocer',
+    'Esta herramienta solo arma texto: no compila Kotlin, no lanza Gradle ni llama por ti a las API de chat.',
+  tool_android_prompt_builder_rules_title: 'Límites que conviene saber',
   tool_android_prompt_builder_sec_constraints: 'Constraints',
-  tool_android_prompt_builder_sec_output: 'Output format',
+  tool_android_prompt_builder_sec_output: 'Output',
   tool_android_prompt_builder_sec_role: 'Role',
   tool_android_prompt_builder_sec_task: 'Task',
   tool_android_prompt_builder_status_copied: 'Copiado al portapapeles.',
   tool_android_prompt_builder_status_done: 'Prompt listo.',
-  tool_android_prompt_builder_status_working: 'Creando prompt…',
-  tool_android_prompt_builder_title: 'Constructor de prompts Android — Local + IA opcional',
-  tool_android_prompt_builder_usecase_1: 'Brief listo para pegar de Constructor de prompts Android en ChatGPT, Gemini, Claude o DeepSeek.',
-  tool_android_prompt_builder_usecase_2: 'Export JSON for a pipeline test, then refine with optional Cloudflare AI after Turnstile.',
+  tool_android_prompt_builder_status_working: 'Generando el prompt…',
+  tool_android_prompt_builder_title: 'Generador de prompts para Android — local, con IA opcional',
+  tool_android_prompt_builder_usecase_1:
+    'Pasar el requisito que se contó en la reunión de sprint a un prompt que se pueda pegar en el chat del equipo.',
+  tool_android_prompt_builder_usecase_2:
+    'Exportar JSON para conectar los campos a una prueba de regresión y luego ampliar con Cloudflare AI si hace falta.',
   tool_android_prompt_builder_usecase_3:
-    'Compare with Prompt template builder when you need generic four-field templates instead of this scenario.',
-  tool_android_prompt_builder_usecase_4: 'Borradores sensibles en local — IA solo tras aceptar el modal.',
-  tool_android_prompt_builder_usecases_title: 'Buenos casos de uso',
+    'Si no necesitas campos de Android y te vale la plantilla genérica de cuatro bloques, usa el generador de plantillas de prompts.',
+  tool_android_prompt_builder_usecase_4:
+    'Redactar en el navegador una descripción interna y decidir después si merece la pena mandarla a la IA opcional.',
+  tool_android_prompt_builder_usecases_title: 'Cuándo viene bien',
   tool_apple_touch_icon_article:
     'Convierte el logo en el icono apple-touch que iOS usa al añadir el sitio a inicio: PNG opaco 180×180. Si el manifiesto pide más, el ZIP puede llevar favicon 32 y PWA 192/512. El archivo no sale del dispositivo ni se sube al servidor.',
   tool_apple_touch_icon_bg_label: 'Fondo opaco',
@@ -2093,10 +2103,12 @@ const es: SiteLangDict = {
   tool_chatgpt_export_to_markdown_faq_a1: 'No. La exportación se lee en esta pestaña. Nada va a OpenAI, Anthropic ni a nuestros servidores.',
   tool_chatgpt_export_to_markdown_faq_a2:
     'La vía principal es conversations de ChatGPT con árbol mapping. También valen arrays role/content y chat_messages de Claude.',
-  tool_chatgpt_export_to_markdown_faq_a3: 'Sí. chat_messages de Claude (sender + text) se absorben aquí. No hay otra URL.',
+  tool_chatgpt_export_to_markdown_faq_a3:
+    'Sí. El mismo conversor interpreta los arrays chat_messages de Claude (sender + text), así que con un solo pegado resuelves exportaciones de ChatGPT y de Claude.',
   tool_chatgpt_export_to_markdown_faq_a4:
     'Se omiten nodos system vacíos y shells de tool sin texto. Adjuntos e imágenes no se reconstruyen como archivos.',
-  tool_chatgpt_export_to_markdown_faq_a5: 'Contar tokens es otro trabajo (aplazado). Este H1 es exportación → Markdown.',
+  tool_chatgpt_export_to_markdown_faq_a5:
+    'Contar tokens es otro trabajo y no forma parte de este conversor. Usa un contador de tokens dedicado cuando lo necesites.',
   tool_chatgpt_export_to_markdown_faq_q1: '¿Se sube mi chat?',
   tool_chatgpt_export_to_markdown_faq_q2: '¿Qué formas de exportación funcionan?',
   tool_chatgpt_export_to_markdown_faq_q3: '¿Funciona la exportación de Claude?',
@@ -2122,10 +2134,10 @@ const es: SiteLangDict = {
   tool_chatgpt_export_to_markdown_role_tool: 'Herramienta',
   tool_chatgpt_export_to_markdown_role_user: 'Usuario',
   tool_chatgpt_export_to_markdown_rules_body:
-    'La conversión de exportaciones necesita mapa de campos, Markdown por defecto y privacidad clara — no una segunda URL por proveedor.',
+    'La conversión de exportaciones necesita mapa de campos, Markdown por defecto y una privacidad clara sobre el procesamiento local.',
   tool_chatgpt_export_to_markdown_rules_item_1: 'La salida por defecto es Markdown con secciones ## Usuario / ## Asistente y un # título opcional.',
   tool_chatgpt_export_to_markdown_rules_item_2: 'Árboles mapping de ChatGPT, arrays planos y chat_messages de Claude se analizan en una página.',
-  tool_chatgpt_export_to_markdown_rules_item_3: 'Los chips JSON y CSV reemiten los mismos turnos. No cambian el H1.',
+  tool_chatgpt_export_to_markdown_rules_item_3: 'Los chips JSON y CSV reemiten los mismos turnos para pipelines u hojas de cálculo.',
   tool_chatgpt_export_to_markdown_rules_item_4: 'Los formatos cambian. Si falla el análisis, pega el JSON crudo y revisa el FAQ.',
   tool_chatgpt_export_to_markdown_rules_title: 'Reglas que debes esperar',
   tool_chatgpt_export_to_markdown_status_copied: 'Copiado al portapapeles.',
@@ -2134,7 +2146,7 @@ const es: SiteLangDict = {
   tool_chatgpt_export_to_markdown_title: 'exportar ChatGPT a Markdown',
   tool_chatgpt_export_to_markdown_usecase_1: 'Archiva la exportación de ChatGPT de hoy como Markdown antes de borrar el hilo.',
   tool_chatgpt_export_to_markdown_usecase_2: 'Pasa a CSV cuando necesites columnas role/content en una hoja.',
-  tool_chatgpt_export_to_markdown_usecase_3: 'Suelta un JSON chat_messages de Claude en la misma página — sin segunda herramienta.',
+  tool_chatgpt_export_to_markdown_usecase_3: 'Suelta un JSON chat_messages de Claude aquí; el mismo conversor mapea esos turnos a Markdown.',
   tool_chatgpt_export_to_markdown_usecases_title: 'Buenos encajes',
   tool_check_pdf_a_compliance_article:
     'Examina cinco indicadores relacionados con PDF/A antes de usar un validador de normas; esta revisión no certifica conformidad.',
@@ -2727,10 +2739,11 @@ const es: SiteLangDict = {
   tool_compare_two_text_files_online_desc:
     'Comparar dos archivos de texto online: elige dos .txt y mira el diff de archivos en el navegador, sin subir nada.',
   tool_compare_two_text_files_online_description:
-    'Comparar dos archivos de texto online desde el navegador. Proceso: elige el archivo original y el revisado, se decodifican como UTF-8 (se quita el BOM), se rechazan bytes binarios y se marcan altas y bajas por línea. Los archivos se quedan en tu dispositivo y no se suben. Ejemplo: notes-a.txt frente a notes-b.txt, con solo la línea del medio distinta. Word, Excel y JSON van en otras páginas; aquí solo hay archivos de texto. También cubre comparar txt y un diff de archivos sencillo.',
+    'Compara dos archivos de texto online en el navegador. Elige los .txt original y revisado: se decodifican como UTF-8 estricto, se quita el BOM inicial y se rechazan codificación inválida o contenido binario antes de marcar adiciones y eliminaciones por línea. Los archivos permanecen en el dispositivo y no se suben al servidor. Ejemplo: notes-a.txt y notes-b.txt solo difieren en la línea central. No analiza Word, hojas de cálculo ni JSON estructurado.',
   tool_compare_two_text_files_online_empty: 'Elige primero dos archivos de texto, o carga el ejemplo.',
   tool_compare_two_text_files_online_err_binary:
     'Uno de los archivos parece binario (bytes nulos). Esta página solo compara texto plano, por ejemplo .txt.',
+  tool_compare_two_text_files_online_err_encoding: 'Un archivo no es UTF-8 válido. Guárdalo o conviértelo a UTF-8 y vuelve a comparar.',
   tool_compare_two_text_files_online_err_too_large: 'Un archivo supera unos 1 MB. Recorta un fragmento para que la pestaña no se cuelgue.',
   tool_compare_two_text_files_online_example:
     'Cargar ejemplo enfrenta notes-a.txt (alpha / segunda línea / tercera) con notes-b.txt, donde el medio dice «línea cambiada». El modo por líneas marca solo esa. Al abrir la página ya ves ese resultado.',
@@ -2738,11 +2751,11 @@ const es: SiteLangDict = {
   tool_compare_two_text_files_online_faq_a1:
     'No. FileReader lee los bytes en esta pestaña. Puede cargarse jsdiff desde un CDN como librería; tus archivos no se envían a nuestros servidores.',
   tool_compare_two_text_files_online_faq_a2:
-    'Se decodifica como UTF-8. Un BOM al inicio se elimina para que la primera línea no salga como cambiada solo por esa marca. Otras codificaciones pueden verse rotas: guarda primero como UTF-8.',
+    'Los archivos se decodifican como UTF-8 estricto y se quita el BOM inicial. Un UTF-8 inválido se rechaza en vez de mostrar caracteres de sustitución; convierte antes codificaciones antiguas como Windows-1252.',
   tool_compare_two_text_files_online_faq_a3:
     'Si hay un byte nulo se trata como binario y se rechaza. Para eso usa un visor hexadecimal o un extractor. Word y Excel tienen sus propias páginas de comparación.',
   tool_compare_two_text_files_online_faq_a4:
-    'Esta página es para .txt / .text. Quien busca comparar txt o un diff de archivos online suele querer esto. Si «comparar dos archivos» era Word o una hoja de cálculo, ve a esas páginas. Pegar dos textos sin archivos está en «Comprobar diferencias entre dos textos».',
+    'Acepta archivos .txt / .text decodificados como UTF-8. Usa el comparador de texto pegado si no hay archivos, y los comparadores de Word o de hojas para .docx, xlsx, xls o csv.',
   tool_compare_two_text_files_online_faq_q1: '¿Se suben mis archivos?',
   tool_compare_two_text_files_online_faq_q2: '¿Qué pasa con la codificación y el BOM?',
   tool_compare_two_text_files_online_faq_q3: '¿Puedo comparar binarios, Word o Excel aquí?',
@@ -2752,7 +2765,7 @@ const es: SiteLangDict = {
   tool_compare_two_text_files_online_how_item_1: 'Elige el primer archivo de texto (exportación o copia original).',
   tool_compare_two_text_files_online_how_item_2: 'Elige el segundo archivo de texto (versión revisada).',
   tool_compare_two_text_files_online_how_item_3:
-    'La comparación arranca sola cuando ambos están elegidos; Cargar ejemplo ya lo hizo al pintar la página.',
+    'Pulsa Comparar para actualizar el diff por líneas; al elegir ambos archivos también se ejecuta automáticamente.',
   tool_compare_two_text_files_online_how_item_4: 'Verde son altas y rojo bajas. Borrar quita ambos archivos de esta pestaña.',
   tool_compare_two_text_files_online_how_title: 'Cómo usarlo',
   tool_compare_two_text_files_online_label_a: 'Primer archivo de texto',
@@ -2804,7 +2817,7 @@ const es: SiteLangDict = {
   tool_compare_two_word_documents_for_differences_faq_a3:
     'Si falla la extracción, suele ser contraseña, archivo corrupto o no OOXML. Las páginas solo con imagen dan texto vacío.',
   tool_compare_two_word_documents_for_differences_faq_a4:
-    'También se busca comparar Word online: mismo trabajo si eran dos .docx. Si “comparar dos documentos” era un PDF, esta página no sirve.',
+    'Acepta dos .docx y compara el texto extraído. No analiza PDF ni el formato .doc antiguo, y el resultado no incluye formato ni historial de revisiones de Word.',
   tool_compare_two_word_documents_for_differences_faq_q1: '¿Se suben mis archivos Word?',
   tool_compare_two_word_documents_for_differences_faq_q2: '¿Es lo mismo que Revisar → Comparar en Word?',
   tool_compare_two_word_documents_for_differences_faq_q3: '¿Por qué falla la extracción o faltan encabezados?',
@@ -2812,7 +2825,7 @@ const es: SiteLangDict = {
   tool_compare_two_word_documents_for_differences_how_body: 'Mira la diferencia de redacción entre dos Word. Esta página no abre el panel de revisión.',
   tool_compare_two_word_documents_for_differences_how_item_1: 'Elige el primer .docx (original).',
   tool_compare_two_word_documents_for_differences_how_item_2: 'Elige el segundo .docx (revisado).',
-  tool_compare_two_word_documents_for_differences_how_item_3: 'Comparar extrae el texto visible solo; Cargar ejemplo ya se ejecutó al abrir.',
+  tool_compare_two_word_documents_for_differences_how_item_3: 'Pulsa Comparar para extraer el texto visible y calcular las diferencias de redacción.',
   tool_compare_two_word_documents_for_differences_how_item_4: 'Lee en verde lo añadido y en rojo lo borrado.',
   tool_compare_two_word_documents_for_differences_how_title: 'Cómo usarlo',
   tool_compare_two_word_documents_for_differences_label_a: 'Primer documento Word',
@@ -4400,7 +4413,7 @@ const es: SiteLangDict = {
   tool_excel_compare_files_desc:
     'Comparar archivos de Excel: elige dos tablas, compara la hoja actual celda a celda; se quedan en el dispositivo, sin subir al servidor.',
   tool_excel_compare_files_description:
-    'Comparar archivos de Excel en el navegador. Proceso: elige dos xlsx o csv, selecciona la hoja actual (la primera por defecto) y lista las celdas con valor distinto. Los archivos no salen del dispositivo y no se suben al servidor. Ejemplo: dos tablas de 3 filas donde B3 pasa de 2 a 9. “Online” describe cómo corre, no el título. Un desplazamiento de columnas se compara por dirección, no por nombre de encabezado.',
+    'Comparar archivos de Excel en el navegador. Proceso: elige dos xlsx o csv, selecciona la hoja actual (la primera por defecto) y lista las celdas con valor distinto. Los archivos no salen del dispositivo y no se suben al servidor. Ejemplo: dos tablas de 3 filas donde B3 pasa de 2 a 9. Un desplazamiento de columnas se compara por dirección, no por nombre de encabezado.',
   tool_excel_compare_files_empty: 'Primero elige dos archivos de hoja, o carga el ejemplo.',
   tool_excel_compare_files_err_read: 'No se pudo leer la hoja. Prueba xlsx o csv y desprotege el libro si hace falta.',
   tool_excel_compare_files_example:
@@ -4411,18 +4424,21 @@ const es: SiteLangDict = {
   tool_excel_compare_files_faq_a2:
     'Sí: la primera hoja queda seleccionada por defecto. Usa las listas si necesitas otra pestaña del mismo archivo. El resto no se compara hasta que las elijas.',
   tool_excel_compare_files_faq_a3:
-    'Sí. El CSV se lee como una sola hoja. Quien busca comparar dos csv usa esta misma página, sin otra URL.',
+    'Sí. El CSV se lee como una sola hoja, de modo que puedes comparar dos CSV o un CSV exportado con una hoja de Excel por dirección de celda.',
   tool_excel_compare_files_faq_a4:
     'Celdas ausentes y vacías se tratan como cadena vacía. Una columna desplazada sigue alineando A1 con A1, no “la columna Name” por encabezado, para no emparejar mal si se mueve el título.',
+  tool_excel_compare_files_faq_a5:
+    'Compara el texto mostrado que se lee de cada celda. No contrasta por separado fórmulas, estilos, comentarios, anchos de columna ni la estructura del libro; una fórmula distinta con el mismo valor guardado puede parecer igual.',
   tool_excel_compare_files_faq_q1: '¿Se suben mis archivos de Excel?',
   tool_excel_compare_files_faq_q2: '¿Solo compara la primera hoja?',
   tool_excel_compare_files_faq_q3: '¿Puedo comparar dos CSV aquí?',
   tool_excel_compare_files_faq_q4: '¿Cómo se tratan celdas vacías y columnas desplazadas?',
+  tool_excel_compare_files_faq_q5: '¿Compara fórmulas y formato o solo valores mostrados?',
   tool_excel_compare_files_how_body: 'Elige dos tablas y mira qué direcciones de celda diferencian en las hojas actuales.',
   tool_excel_compare_files_how_item_1: 'Elige el primer archivo (xlsx, xls o csv).',
   tool_excel_compare_files_how_item_2: 'Elige el segundo archivo.',
   tool_excel_compare_files_how_item_3: 'Deja la primera hoja salvo que necesites otra pestaña.',
-  tool_excel_compare_files_how_item_4: 'Comparar lista celdas distintas; Cargar ejemplo ya se ejecutó al abrir.',
+  tool_excel_compare_files_how_item_4: 'Pulsa Comparar para listar las celdas cuyo texto mostrado difiere entre las hojas elegidas.',
   tool_excel_compare_files_how_title: 'Cómo usarlo',
   tool_excel_compare_files_label_a: 'Primera hoja de cálculo',
   tool_excel_compare_files_label_b: 'Segunda hoja de cálculo',
@@ -4807,98 +4823,108 @@ const es: SiteLangDict = {
   tool_fill_out_pdf_form_usecase_3: 'Contratos sensibles que no deben salir del dispositivo.',
   tool_fill_out_pdf_form_usecases_title: 'Para qué sirve',
   tool_fill_out_pdf_form_warn_large: 'Archivo grande: puede ir lento.',
-  tool_film_prompt_builder_act1_label: 'Act1',
-  tool_film_prompt_builder_act1_ph: 'Sample act1…',
-  tool_film_prompt_builder_act2_label: 'Act2',
-  tool_film_prompt_builder_act2_ph: 'Sample act2…',
-  tool_film_prompt_builder_act3_label: 'Act3',
-  tool_film_prompt_builder_act3_ph: 'Sample act3…',
+  tool_film_prompt_builder_act1_label: 'Acto I',
+  tool_film_prompt_builder_act1_ph: 'Por ejemplo: de dónde sale el conflicto y qué obliga a aceptarlo…',
+  tool_film_prompt_builder_act2_label: 'Acto II',
+  tool_film_prompt_builder_act2_ph: 'Por ejemplo: un éxito breve y luego todo se descontrola…',
+  tool_film_prompt_builder_act3_label: 'Acto III',
+  tool_film_prompt_builder_act3_ph: 'Por ejemplo: enfrentamiento final y acuerdo con su precio…',
   tool_film_prompt_builder_ai_consent_body:
-    'Este paso opcional envía tu borrador a Cloudflare Workers AI. No va a OpenAI, Google, Anthropic ni DeepSeek desde nuestros servidores.',
+    'Este paso es opcional: envía el borrador que tienes ahora en los campos a Cloudflare Workers AI para una inferencia. No lo reenviamos desde nuestros servidores a OpenAI, Google, Anthropic ni DeepSeek. Sin usar la IA, el prompt se sigue montando en tu navegador.',
   tool_film_prompt_builder_ai_consent_cancel: 'Cancelar',
   tool_film_prompt_builder_ai_consent_ok: 'Continuar',
-  tool_film_prompt_builder_ai_consent_title: '¿Enviar texto a Cloudflare Workers AI?',
-  tool_film_prompt_builder_ai_done: 'Sugerencia de IA aplicada. Revisa antes de copiar.',
-  tool_film_prompt_builder_ai_err_generic: 'La IA falló. Tu prompt local no cambió.',
-  tool_film_prompt_builder_ai_err_rate: 'Cuota de IA agotada. Modo local o prueba mañana (UTC).',
-  tool_film_prompt_builder_ai_err_turnstile: 'Completa Turnstile antes de usar IA.',
-  tool_film_prompt_builder_ai_expand: 'Expandir con IA',
-  tool_film_prompt_builder_ai_panel_label: 'Cloudflare AI opcional (Turnstile)',
+  tool_film_prompt_builder_ai_consent_title: '¿Enviar el borrador a Cloudflare Workers AI?',
+  tool_film_prompt_builder_ai_done: 'El texto de la IA se escribió completo en la salida. Revísalo antes de copiar.',
+  tool_film_prompt_builder_ai_err_generic: 'La IA falló esta vez; la salida sigue igual.',
+  tool_film_prompt_builder_ai_err_rate: 'Se agotó la cuota de IA. Sigue montando el prompt aquí o vuelve mañana (UTC).',
+  tool_film_prompt_builder_ai_err_turnstile: 'Completa la verificación de Turnstile antes de usar la IA.',
+  tool_film_prompt_builder_ai_expand: 'Ampliar con IA',
+  tool_film_prompt_builder_ai_panel_label: 'Opcional: Cloudflare AI (requiere Turnstile)',
   tool_film_prompt_builder_ai_polish: 'Pulir con IA',
-  tool_film_prompt_builder_ai_working: 'Cloudflare AI trabajando…',
+  tool_film_prompt_builder_ai_working: 'Cloudflare AI está trabajando…',
   tool_film_prompt_builder_article:
-    'Crea prompts listos de Constructor de prompts de cine aquí. Rellena campos y copia Markdown o JSON a ChatGPT, Gemini, Claude o DeepSeek. Local por defecto; Expand/Polish opcional con Cloudflare Workers AI (Turnstile).',
-  tool_film_prompt_builder_build: 'Crear prompt',
-  tool_film_prompt_builder_character_arc_label: 'Character / Arc',
-  tool_film_prompt_builder_character_arc_ph: 'Sample character arc…',
-  tool_film_prompt_builder_clear: 'Limpiar',
+    'Escribe la premisa, los tres actos, la escaleta y el arco del personaje: la página los ordena en el navegador y te devuelve un prompt con estructura clara en Markdown o JSON, listo para pegar en ChatGPT, Gemini, Claude o DeepSeek y seguir desarrollando el guion allí. Por defecto no se sube nada; solo si pulsas Ampliar o Pulir el borrador viaja a Cloudflare Workers AI, después de pasar Turnstile.',
+  tool_film_prompt_builder_build: 'Generar prompt',
+  tool_film_prompt_builder_character_arc_label: 'Arco del personaje',
+  tool_film_prompt_builder_character_arc_ph: 'Por ejemplo: orgullo → colaborar a regañadientes → socios…',
+  tool_film_prompt_builder_clear: 'Vaciar',
   tool_film_prompt_builder_copy: 'Copiar',
   tool_film_prompt_builder_desc:
-    'Constructor de prompts de cine — local por defecto + Expand/Polish opcional Cloudflare AI (Turnstile); Markdown/JSON en el dispositivo.',
+    'Generador de prompts para guiones de cine: premisa, tres actos y escaleta ordenados en Markdown o JSON dentro del navegador; IA de Cloudflare opcional con Turnstile.',
   tool_film_prompt_builder_description:
-    'Proceso y ejemplo: Constructor de prompts de cine — Local + IA opcional para ChatGPT, Gemini, Claude y DeepSeek: ensambla prompts localmente por defecto y opcionalmente Expand/Polish con Cloudflare Workers AI (Turnstile obligatorio, límite de uso). Ejemplo al abrir. Markdown por defecto; JSON para pipelines. Texto en el dispositivo salvo que uses IA.',
+    'Generador de prompts para guiones de cine: rellenas la premisa, los actos primero a tercero, la escaleta y el arco del personaje, y la página los reparte en los bloques Role, Task, Constraints y Output para que ChatGPT, Gemini, Claude o DeepSeek sepan por dónde continuar. Markdown por defecto y JSON para tu propia hoja de seguimiento; al entrar ya se cargó el ejemplo de las dos food trucks que comparten cocina 30 días. Si un acto se queda corto, Ampliar o Pulir manda el borrador a Cloudflare Workers AI (Turnstile y cuota).',
   tool_film_prompt_builder_download: 'Descargar',
-  tool_film_prompt_builder_empty: 'Rellena al menos un campo antes de crear.',
+  tool_film_prompt_builder_empty: 'Rellena al menos un campo antes de generar el prompt.',
   tool_film_prompt_builder_example:
-    'Entrada: Logline = food-trucks rivales comparten cocina 30 días; Act II = festival + conflicto de receta; 6 escenas; Arc = orgullo → teamwork → co-dueños. Salida (Markdown): ## Task con Logline, Act1–3, Scene / List, Character / Arc.',
+    'Entrada: premisa = un error administrativo obliga a dos dueños rivales de food truck a compartir la misma cocina durante 30 días; acto II = el éxito en el festival se rompe cuando un bloguero atribuye mal la receta y la vieja pelea familiar por las especias salta a las redes; escaleta = seis secuencias numeradas; arco = orgullo → colaboración a regañadientes → socios que negocian. Salida (Markdown): el bloque ## Task enumera Logline, Act1–3, Scene / List y Character / Arc, igual que el ejemplo cargado al entrar.',
   tool_film_prompt_builder_example_title: 'Ejemplo',
   tool_film_prompt_builder_faq_a1:
-    'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
+    'El texto se ordena en esta pestaña del navegador, así que por defecto no se sube nada. Solo cuando pulsas Ampliar o Pulir se envía el borrador actual a Cloudflare Workers AI; no lo reenviamos desde nuestros servidores a OpenAI, Google, Anthropic ni DeepSeek.',
   tool_film_prompt_builder_faq_a2:
-    'Modo local solo formatea aquí. Expand/Polish opcional usa Cloudflare Workers AI tras Turnstile — no llama APIs de chat.',
+    'El modo local no llama a ningún modelo: reparte la premisa, los actos, la escaleta y el arco en los bloques Role, Task, Constraints y Output. Ampliar y Pulir usan Cloudflare Workers AI después de pasar Turnstile, y no llaman a las APIs de ChatGPT, Gemini, Claude ni DeepSeek desde nuestros servidores.',
   tool_film_prompt_builder_faq_a3:
-    'Constructor de plantillas de Prompt covers generic Role/Task/Constraints/Output templates. This page focuses on film prompt builder fields with a dedicated sample and rules for this scenario.',
-  tool_film_prompt_builder_faq_a4: 'Sí. Completa Turnstile en el panel de IA antes de Expand o Polish.',
-  tool_film_prompt_builder_faq_a5: 'Yes. The JSON chip emits structured fields plus assembled prompt text for tests or config pipelines.',
+    'El generador de plantillas de prompts da la estructura genérica de cuatro bloques, sirva el tema que sea. Aquí los campos son los de un largometraje —premisa, tres actos, escaleta y arco—, con un ejemplo completo al entrar y unas reglas centradas en los tropiezos típicos de este tipo de documento.',
+  tool_film_prompt_builder_faq_a4:
+    'Turnstile frena los scripts automáticos para que la cuota gratuita quede para personas. Complétalo en el panel de IA antes de pulsar Ampliar o Pulir; sin un token válido esos botones dan error y el montaje en el navegador sigue funcionando.',
+  tool_film_prompt_builder_faq_a5:
+    'Sí. Al cambiar a JSON la misma salida trae los campos estructurados y el prompt ya montado, cómodo para guardar cada versión de los actos y la escaleta en una hoja o en tu repositorio y compararlas después.',
   tool_film_prompt_builder_faq_a6:
-    'Yes. Copy the finished prompt into ChatGPT, Gemini, Claude, or DeepSeek. We do not split URLs per platform because the job is formatting text, not calling APIs.',
+    'Sí. Copia el resultado y pégalo en el chat que uses. Esta página solo ordena la estructura y no llama a ninguna API, así que no hay una URL distinta por plataforma.',
   tool_film_prompt_builder_faq_a7:
-    'Local: solo esta pestaña, sin subida. Expand/Polish opcional a Cloudflare Workers AI (Turnstile, límite).',
-  tool_film_prompt_builder_faq_q1: 'Is my prompt uploaded?',
-  tool_film_prompt_builder_faq_q2: 'Does this call ChatGPT or other LLM APIs?',
-  tool_film_prompt_builder_faq_q3: 'How is this different from Constructor de plantillas de Prompt?',
-  tool_film_prompt_builder_faq_q4: '¿Por qué Turnstile para IA opcional?',
-  tool_film_prompt_builder_faq_q5: 'Can I get JSON output?',
-  tool_film_prompt_builder_faq_q6: 'Can I use this with ChatGPT, Gemini, Claude, or DeepSeek?',
-  tool_film_prompt_builder_faq_q7: '¿Diferencia entre local y Cloudflare AI opcional?',
+    'En local todo se ordena en esta pestaña, sin salir del navegador. Ampliar o Pulir manda el borrador a Cloudflare Workers AI (hace falta Turnstile y hay límites de frecuencia y de cuota diaria) y el texto que vuelve se escribe completo en la salida, encima del borrador que estabas viendo: léelo antes de copiar para que una reescritura no sustituya sin querer tu versión de los actos. Si falla o se agota la cuota, sigue con el modo local.',
+  tool_film_prompt_builder_faq_q1: '¿Se sube el material del guion que escribo?',
+  tool_film_prompt_builder_faq_q2: '¿Esta página llama a la API de ChatGPT o de otros modelos?',
+  tool_film_prompt_builder_faq_q3: '¿En qué se diferencia del generador de plantillas de prompts?',
+  tool_film_prompt_builder_faq_q4: '¿Por qué hay que pasar Turnstile para usar la IA?',
+  tool_film_prompt_builder_faq_q5: '¿Puedo sacar la salida en JSON?',
+  tool_film_prompt_builder_faq_q6: '¿Sirve con ChatGPT, Gemini, Claude o DeepSeek?',
+  tool_film_prompt_builder_faq_q7: '¿Qué diferencia hay entre el modo local y la IA opcional de Cloudflare?',
   tool_film_prompt_builder_fmt_json: 'JSON',
   tool_film_prompt_builder_fmt_label: 'Formato de salida',
   tool_film_prompt_builder_fmt_md: 'Markdown',
   tool_film_prompt_builder_how_body:
-    'Rellena campos de Constructor de prompts de cine, crea el prompt localmente, opcionalmente Expand/Polish con Turnstile, y pégalo en ChatGPT, Gemini, Claude o DeepSeek.',
-  tool_film_prompt_builder_how_item_1: 'Al abrir, el ejemplo predeterminado ya se ejecutó (Cargar ejemplo).',
-  tool_film_prompt_builder_how_item_2: 'Edit fields, click Build prompt, or switch to JSON if you need structured export.',
-  tool_film_prompt_builder_how_item_3: 'Opcional: completa Turnstile y Expand/Polish con Cloudflare Workers AI.',
-  tool_film_prompt_builder_how_item_4: 'Copia o descarga y pega en ChatGPT, Gemini, Claude o DeepSeek.',
-  tool_film_prompt_builder_how_title: 'Cómo funciona',
+    'Rellena premisa, actos y escaleta, genera el prompt y pégalo en ChatGPT, Gemini, Claude o DeepSeek para seguir escribiendo; si un acto queda seco, usa Ampliar o Pulir con la IA opcional de Cloudflare.',
+  tool_film_prompt_builder_how_item_1: 'Pulsa Cargar ejemplo para el preset por defecto.',
+  tool_film_prompt_builder_how_item_2:
+    'Cambia premisa, actos, escaleta y arco del personaje y pulsa Generar prompt; pasa a JSON si lo necesitas estructurado.',
+  tool_film_prompt_builder_how_item_3:
+    'Opcional: completa Turnstile en el panel de IA y pulsa Ampliar o Pulir; el texto que vuelva se escribe en la salida.',
+  tool_film_prompt_builder_how_item_4:
+    'Copia o descarga y pega en ChatGPT, Gemini, Claude o DeepSeek para que el modelo continúe con esa estructura.',
+  tool_film_prompt_builder_how_title: 'Cómo se usa',
   tool_film_prompt_builder_load_sample: 'Cargar ejemplo',
-  tool_film_prompt_builder_logline_label: 'Logline',
-  tool_film_prompt_builder_logline_ph: 'Sample logline…',
-  tool_film_prompt_builder_platforms_lead: 'Para ChatGPT, Gemini, Claude y DeepSeek — copia el prompt terminado en cualquier chat.',
-  tool_film_prompt_builder_result_label: 'Salida del prompt',
-  tool_film_prompt_builder_rules_body: 'Constructor de prompts de cine: ensamblaje local por defecto; IA opcional con límites y Turnstile.',
-  tool_film_prompt_builder_rules_item_1: 'Structured fields map to Role/Task/Constraints/Output blocks in Markdown export.',
-  tool_film_prompt_builder_rules_item_2: 'Default export is Markdown. JSON is a chip on the same canvas.',
-  tool_film_prompt_builder_rules_item_3: 'La IA opcional no reemplaza el modo local — revisa antes de copiar.',
+  tool_film_prompt_builder_logline_label: 'Premisa',
+  tool_film_prompt_builder_logline_ph: 'Por ejemplo: dos food trucks rivales comparten cocina…',
+  tool_film_prompt_builder_platforms_lead: 'La salida se pega tal cual en el chat de ChatGPT, Gemini, Claude o DeepSeek.',
+  tool_film_prompt_builder_result_label: 'Prompt generado',
+  tool_film_prompt_builder_rules_body:
+    'Se organiza como se trabaja un largometraje: la premisa fija el rumbo, los tres actos el recorrido, la escaleta numera las secuencias y el arco explica el cambio del personaje. El montaje en el navegador es lo que ocurre por defecto; la IA opcional tiene límites de uso y pide Turnstile.',
+  tool_film_prompt_builder_rules_item_1: 'Cada campo del formulario cae en uno de los bloques Role, Task, Constraints y Output del Markdown.',
+  tool_film_prompt_builder_rules_item_2: 'La exportación por defecto es Markdown; JSON es un botón sobre la misma salida.',
+  tool_film_prompt_builder_rules_item_3:
+    'La IA opcional es un paso añadido, no un sustituto: el modo local siempre funciona y el texto de la IA reemplaza por completo lo que había en la salida, así que revísalo antes de copiar.',
   tool_film_prompt_builder_rules_item_4:
-    'This tool assembles text only; it does not run film prompt builder engines or call chat APIs locally.',
-  tool_film_prompt_builder_rules_title: 'Reglas que debes conocer',
-  tool_film_prompt_builder_scene_list_label: 'Scene / List',
-  tool_film_prompt_builder_scene_list_ph: 'Sample scene list…',
+    'Esta página solo arma texto: no escribe el guion por ti ni ejecuta ningún modelo o API de chat en tu navegador.',
+  tool_film_prompt_builder_rules_title: 'Lo que hace y lo que no',
+  tool_film_prompt_builder_scene_list_label: 'Escaleta',
+  tool_film_prompt_builder_scene_list_ph: 'Por ejemplo: 1. Pelea por el aparcamiento 2. Doble inspección…',
   tool_film_prompt_builder_sec_constraints: 'Constraints',
-  tool_film_prompt_builder_sec_output: 'Output format',
+  tool_film_prompt_builder_sec_output: 'Output',
   tool_film_prompt_builder_sec_role: 'Role',
   tool_film_prompt_builder_sec_task: 'Task',
   tool_film_prompt_builder_status_copied: 'Copiado al portapapeles.',
   tool_film_prompt_builder_status_done: 'Prompt listo.',
-  tool_film_prompt_builder_status_working: 'Creando prompt…',
-  tool_film_prompt_builder_title: 'Constructor de prompts de cine — Local + IA opcional',
-  tool_film_prompt_builder_usecase_1: 'Brief listo para pegar de Constructor de prompts de cine en ChatGPT, Gemini, Claude o DeepSeek.',
-  tool_film_prompt_builder_usecase_2: 'Export JSON for a pipeline test, then refine with optional Cloudflare AI after Turnstile.',
+  tool_film_prompt_builder_status_working: 'Generando el prompt…',
+  tool_film_prompt_builder_title: 'Generador de prompts para guiones de cine — tres actos y escaleta en el navegador',
+  tool_film_prompt_builder_usecase_1:
+    'Antes de una reunión, dejar los tres actos y la escaleta en un prompt que se pega directo en ChatGPT, Gemini, Claude o DeepSeek.',
+  tool_film_prompt_builder_usecase_2:
+    'Exportar el JSON y guardar la premisa, los actos y el arco de cada versión como campos en una hoja o en tu repositorio para compararlos.',
   tool_film_prompt_builder_usecase_3:
-    'Compare with Prompt template builder when you need generic four-field templates instead of this scenario.',
-  tool_film_prompt_builder_usecase_4: 'Borradores sensibles en local — IA solo tras aceptar el modal.',
-  tool_film_prompt_builder_usecases_title: 'Buenos casos de uso',
+    'Si lo que necesitas es la plantilla genérica de cuatro bloques y no la estructura de un largometraje, usa el generador de plantillas de prompts.',
+  tool_film_prompt_builder_usecase_4:
+    'Con un proyecto que todavía no está firmado, quédate en el modo local: el texto solo sale de tu navegador si aceptas el aviso de la IA.',
+  tool_film_prompt_builder_usecases_title: 'Cuándo viene bien',
   tool_find_and_validate_xml_sitemap_check: 'Buscar y validar',
   tool_find_and_validate_xml_sitemap_clear: 'Limpiar',
   tool_find_and_validate_xml_sitemap_col_kind: 'Tipo',
@@ -5332,7 +5358,7 @@ const es: SiteLangDict = {
   tool_hreflang_rules_item_4:
     'x-default apunta a la página mostrada cuando ningún idioma listado coincide, por ejemplo una raíz en inglés. Google puede usarla como respaldo para todos los idiomas no detectados.',
   tool_hreflang_rules_item_5:
-    'Elige una sola forma de entrega por conjunto: las etiquetas <link> en HTML, la cabecera HTTP Link o xhtml:link en sitemap. No mezcles formas en el mismo conjunto, o las señales pueden contradecirse.',
+    'Google considera las tres formas equivalentes y sí permite usarlas a la vez, aunque avisa de que no aporta nada en Búsqueda. Quédate con una por conjunto de páginas: tres implementaciones acaban desincronizándose y las anotaciones contradictorias se ignoran.',
   tool_hreflang_rules_title: 'Reglas usadas por el generador',
   tool_hreflang_sample: 'Cargar ejemplo',
   tool_hreflang_tab_http: 'Cabecera HTTP Link',
@@ -5397,7 +5423,7 @@ const es: SiteLangDict = {
   tool_html_entity_rules_item_1: 'Mínimo escapa & < > " \'. Solo no ASCII deja el ASCII intacto. Todo combina ambos.',
   tool_html_entity_rules_item_2: '&copy;, &#169; y &#xA9; decodifican igual. Al codificar, “Nombre si existe” usa nombres comunes.',
   tool_html_entity_rules_item_3:
-    'Codificar texto ya escapado produce doble escape (&amp;amp;). Usa Decodificar → Hasta estable si lo sospechas.',
+    'Codificar texto ya escapado produce doble escape (&amp;amp;). Usa Decodificar → Hasta estable si lo sospechas: los < y > sueltos se conservan tal cual en cada pasada, no se leen como etiquetas.',
   tool_html_entity_rules_item_4: 'Privacidad: no se sube tu pegado; sin librerías externas.',
   tool_html_entity_rules_title: 'Reglas que debes conocer',
   tool_html_entity_sample: 'Cargar ejemplo',
@@ -6691,92 +6717,103 @@ const es: SiteLangDict = {
   tool_ios_app_icon_size_usecase_3: 'Ficha de Play: usa el chip 512 sin abrir otra URL de pack.',
   tool_ios_app_icon_size_usecases_title: 'Buenos encajes',
   tool_ios_prompt_builder_ai_consent_body:
-    'Este paso opcional envía tu borrador a Cloudflare Workers AI. No va a OpenAI, Google, Anthropic ni DeepSeek desde nuestros servidores.',
+    'Este paso es opcional: envía el borrador actual a Cloudflare Workers AI para la inferencia. Desde nuestros servidores no se reenvía a OpenAI, Google, Anthropic ni DeepSeek. Sin IA puedes seguir montando el prompt en el navegador.',
   tool_ios_prompt_builder_ai_consent_cancel: 'Cancelar',
   tool_ios_prompt_builder_ai_consent_ok: 'Continuar',
-  tool_ios_prompt_builder_ai_consent_title: '¿Enviar texto a Cloudflare Workers AI?',
-  tool_ios_prompt_builder_ai_done: 'Sugerencia de IA aplicada. Revisa antes de copiar.',
-  tool_ios_prompt_builder_ai_err_generic: 'La IA falló. Tu prompt local no cambió.',
-  tool_ios_prompt_builder_ai_err_rate: 'Cuota de IA agotada. Modo local o prueba mañana (UTC).',
-  tool_ios_prompt_builder_ai_err_turnstile: 'Completa Turnstile antes de usar IA.',
-  tool_ios_prompt_builder_ai_expand: 'Expandir con IA',
+  tool_ios_prompt_builder_ai_consent_title: '¿Enviar el borrador a Cloudflare Workers AI?',
+  tool_ios_prompt_builder_ai_done: 'El texto de la IA sustituyó el resultado. Revísalo antes de copiar.',
+  tool_ios_prompt_builder_ai_err_generic: 'La IA falló; el resultado no ha cambiado.',
+  tool_ios_prompt_builder_ai_err_rate: 'Cuota de IA agotada. Usa el modo local o vuelve mañana (UTC).',
+  tool_ios_prompt_builder_ai_err_turnstile: 'Completa Turnstile antes de usar la IA.',
+  tool_ios_prompt_builder_ai_expand: 'Ampliar con IA',
   tool_ios_prompt_builder_ai_panel_label: 'Cloudflare AI opcional (Turnstile)',
   tool_ios_prompt_builder_ai_polish: 'Pulir con IA',
-  tool_ios_prompt_builder_ai_working: 'Cloudflare AI trabajando…',
+  tool_ios_prompt_builder_ai_working: 'Cloudflare AI está trabajando…',
   tool_ios_prompt_builder_article:
-    'Crea prompts listos de Constructor de prompts iOS aquí. Rellena campos y copia Markdown o JSON a ChatGPT, Gemini, Claude o DeepSeek. Local por defecto; Expand/Polish opcional con Cloudflare Workers AI (Turnstile).',
-  tool_ios_prompt_builder_build: 'Crear prompt',
-  tool_ios_prompt_builder_clear: 'Limpiar',
+    'Convierte un requisito de iOS en un prompt listo para pegar: describe la función, el stack de Swift, la pantalla en SwiftUI y las reglas de accesibilidad de las HIG, y la página arma el texto en Markdown o JSON dentro del navegador. Por defecto no se envía ninguna petición; solo al pulsar Ampliar o Pulir el borrador actual va a Cloudflare Workers AI (hace falta Turnstile y el uso está limitado).',
+  tool_ios_prompt_builder_build: 'Generar prompt',
+  tool_ios_prompt_builder_clear: 'Vaciar',
   tool_ios_prompt_builder_copy: 'Copiar',
   tool_ios_prompt_builder_desc:
-    'Constructor de prompts iOS — local por defecto + Expand/Polish opcional Cloudflare AI (Turnstile); Markdown/JSON en el dispositivo.',
+    'Generador de prompts para iOS: rellena función, stack de Swift, pantalla en SwiftUI y reglas de las HIG; el texto se arma en el navegador como Markdown o JSON, con IA opcional.',
   tool_ios_prompt_builder_description:
-    'Proceso y ejemplo: Constructor de prompts iOS — Local + IA opcional para ChatGPT, Gemini, Claude y DeepSeek: ensambla prompts localmente por defecto y opcionalmente Expand/Polish con Cloudflare Workers AI (Turnstile obligatorio, límite de uso). Ejemplo al abrir. Markdown por defecto; JSON para pipelines. Texto en el dispositivo salvo que uses IA.',
+    'Generador de prompts para iOS: escribe la función, el stack (Swift 5.10, SwiftUI, iOS 17+, SwiftData), la pantalla y las reglas de accesibilidad de las HIG, y la página lo ordena en bloques Role / Task / Constraints / Output en Markdown o JSON sin salir del navegador. Ejemplo: «tendencia semanal de pasos de HealthKit y banda de pulso en reposo» sale con Dynamic Type hasta XXL y etiquetas VoiceOver en los puntos del gráfico. Con «Cargar ejemplo» rellenas el preajuste y ves el prompt montado; Ampliar o Pulir con Cloudflare Workers AI es opcional (Turnstile, cuota diaria).',
   tool_ios_prompt_builder_download: 'Descargar',
-  tool_ios_prompt_builder_empty: 'Rellena al menos un campo antes de crear.',
+  tool_ios_prompt_builder_empty: 'Rellena al menos un campo antes de generar.',
   tool_ios_prompt_builder_example:
-    'Entrada: Feature = HealthKit pasos + HR; Stack = Swift 5.10, SwiftUI, SwiftData; UI = NavigationStack + Charts; HIG = Dynamic Type, VoiceOver. Salida (Markdown): ## Task → Feature / Swift / SwiftUI / HIG.',
+    'Entrada: Función = tendencia semanal de pasos de HealthKit y banda de pulso en reposo, con permisos explicados en lenguaje llano; Stack = Swift 5.10, SwiftUI, iOS 17+, async/await, caché con SwiftData; Pantalla = NavigationStack y Charts, hoja de permisos antes de la primera consulta; HIG = Dynamic Type hasta XXL, etiquetas VoiceOver en los puntos del gráfico, sin force-unwrap. Salida (Markdown): ## Role con el perfil de ingeniera iOS sénior y ## Task con una línea por campo.',
   tool_ios_prompt_builder_example_title: 'Ejemplo',
   tool_ios_prompt_builder_faq_a1:
-    'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
+    'Por defecto no. Rellenar los campos y pulsar Generar prompt ocurre solo en esta pestaña, sin ninguna petición. El borrador únicamente sale cuando pulsas Ampliar o Pulir, y entonces va a Cloudflare Workers AI; desde nuestros servidores no se reenvía a OpenAI, Google, Anthropic ni DeepSeek.',
   tool_ios_prompt_builder_faq_a2:
-    'Modo local solo formatea aquí. Expand/Polish opcional usa Cloudflare Workers AI tras Turnstile — no llama APIs de chat.',
+    'No. El modo local solo maqueta lo que escribes en los bloques Role / Task / Constraints / Output. La IA opcional pasa por Cloudflare Workers AI después de Turnstile, no por las API de ChatGPT, Gemini, Claude o DeepSeek.',
   tool_ios_prompt_builder_faq_a3:
-    'Constructor de plantillas de Prompt covers generic Role/Task/Constraints/Output templates. This page focuses on ios prompt builder fields with a dedicated sample and rules for this scenario.',
-  tool_ios_prompt_builder_faq_a4: 'Sí. Completa Turnstile en el panel de IA antes de Expand o Polish.',
-  tool_ios_prompt_builder_faq_a5: 'Yes. The JSON chip emits structured fields plus assembled prompt text for tests or config pipelines.',
+    'El generador de plantillas de prompts entrega los cuatro bloques genéricos Role / Task / Constraints / Output y sirve para cualquier tema. Aquí los campos ya son los de un proyecto iOS: función, stack de Swift, navegación y gráficos en SwiftUI, y las reglas de las HIG sobre Dynamic Type y VoiceOver, con su propio ejemplo y sus límites.',
+  tool_ios_prompt_builder_faq_a4:
+    'Sí. Completa el widget de Turnstile del panel de IA antes de pulsar Ampliar o Pulir. Sin un token válido los botones devuelven error y el modo local sigue funcionando igual.',
+  tool_ios_prompt_builder_faq_a5:
+    'Sí. Cambia el formato de salida a JSON y obtendrás los campos por separado más el prompt ya montado, útil para casos de XCTest o para un pipeline de configuración.',
   tool_ios_prompt_builder_faq_a6:
-    'Yes. Copy the finished prompt into ChatGPT, Gemini, Claude, or DeepSeek. We do not split URLs per platform because the job is formatting text, not calling APIs.',
+    'Sí. El resultado es texto plano: cópialo y pégalo en ChatGPT, Gemini, Claude o DeepSeek. La página no llama a esas API en tu nombre.',
   tool_ios_prompt_builder_faq_a7:
-    'Local: solo esta pestaña, sin subida. Expand/Polish opcional a Cloudflare Workers AI (Turnstile, límite).',
-  tool_ios_prompt_builder_faq_q1: 'Is my prompt uploaded?',
-  tool_ios_prompt_builder_faq_q2: 'Does this call ChatGPT or other LLM APIs?',
-  tool_ios_prompt_builder_faq_q3: 'How is this different from Constructor de plantillas de Prompt?',
-  tool_ios_prompt_builder_faq_q4: '¿Por qué Turnstile para IA opcional?',
-  tool_ios_prompt_builder_faq_q5: 'Can I get JSON output?',
-  tool_ios_prompt_builder_faq_q6: 'Can I use this with ChatGPT, Gemini, Claude, or DeepSeek?',
-  tool_ios_prompt_builder_faq_q7: '¿Diferencia entre local y Cloudflare AI opcional?',
-  tool_ios_prompt_builder_feature_spec_label: 'Función / spec',
-  tool_ios_prompt_builder_feature_spec_ph: 'Sample feature spec…',
+    'El modo local solo ordena tus campos, no hace peticiones y no tiene cuota. Ampliar o Pulir envía el borrador a Cloudflare Workers AI (Turnstile obligatorio, uso limitado) y el texto que devuelve sustituye por completo el área de resultado: revísalo antes de copiar. Si falla o se agota la cuota, sigue con el modo local.',
+  tool_ios_prompt_builder_faq_q1: '¿Se sube lo que escribo?',
+  tool_ios_prompt_builder_faq_q2: '¿La página llama a ChatGPT u otras API de modelos?',
+  tool_ios_prompt_builder_faq_q3: '¿En qué se diferencia del generador de plantillas de prompts?',
+  tool_ios_prompt_builder_faq_q4: '¿Por qué la IA opcional pide Turnstile?',
+  tool_ios_prompt_builder_faq_q5: '¿Puedo exportar en JSON?',
+  tool_ios_prompt_builder_faq_q6: '¿Sirve con ChatGPT, Gemini, Claude o DeepSeek?',
+  tool_ios_prompt_builder_faq_q7: '¿Qué cambia entre el modo local y la IA de Cloudflare?',
+  tool_ios_prompt_builder_feature_spec_label: 'Función / Especificación',
+  tool_ios_prompt_builder_feature_spec_ph: 'Ej.: tendencia de pasos y pulso en reposo…',
   tool_ios_prompt_builder_fmt_json: 'JSON',
   tool_ios_prompt_builder_fmt_label: 'Formato de salida',
   tool_ios_prompt_builder_fmt_md: 'Markdown',
-  tool_ios_prompt_builder_hig_constraints_label: 'Hig / Constraints',
-  tool_ios_prompt_builder_hig_constraints_ph: 'Sample hig constraints…',
+  tool_ios_prompt_builder_hig_constraints_label: 'HIG / Accesibilidad',
+  tool_ios_prompt_builder_hig_constraints_ph: 'Ej.: Dynamic Type XXL, VoiceOver, sin force-unwrap…',
   tool_ios_prompt_builder_how_body:
-    'Rellena campos de Constructor de prompts iOS, crea el prompt localmente, opcionalmente Expand/Polish con Turnstile, y pégalo en ChatGPT, Gemini, Claude o DeepSeek.',
-  tool_ios_prompt_builder_how_item_1: 'Al abrir, el ejemplo predeterminado ya se ejecutó (Cargar ejemplo).',
-  tool_ios_prompt_builder_how_item_2: 'Edit fields, click Build prompt, or switch to JSON if you need structured export.',
-  tool_ios_prompt_builder_how_item_3: 'Opcional: completa Turnstile y Expand/Polish con Cloudflare Workers AI.',
-  tool_ios_prompt_builder_how_item_4: 'Copia o descarga y pega en ChatGPT, Gemini, Claude o DeepSeek.',
-  tool_ios_prompt_builder_how_title: 'Cómo funciona',
+    'Rellena los cuatro campos, deja que la página los monte en Markdown (o JSON) dentro del navegador y, si quieres más detalle, pide una ampliación a Cloudflare AI antes de pegar el prompt en tu chat.',
+  tool_ios_prompt_builder_how_item_1: 'Pulsa Cargar ejemplo para rellenar el preajuste y ver un prompt montado que puedes editar.',
+  tool_ios_prompt_builder_how_item_2:
+    'Cambia función, stack, pantalla y reglas de las HIG y pulsa Generar prompt; pasa a JSON si necesitas exportar los campos.',
+  tool_ios_prompt_builder_how_item_3:
+    'Opcional: completa Turnstile y pulsa Ampliar o Pulir; el texto que devuelve la IA reemplaza el resultado.',
+  tool_ios_prompt_builder_how_item_4: 'Copia o descarga el resultado y pégalo en ChatGPT, Gemini, Claude o DeepSeek.',
+  tool_ios_prompt_builder_how_title: 'Cómo se usa',
   tool_ios_prompt_builder_load_sample: 'Cargar ejemplo',
-  tool_ios_prompt_builder_platforms_lead: 'Para ChatGPT, Gemini, Claude y DeepSeek — copia el prompt terminado en cualquier chat.',
-  tool_ios_prompt_builder_result_label: 'Salida del prompt',
-  tool_ios_prompt_builder_rules_body: 'Constructor de prompts iOS: ensamblaje local por defecto; IA opcional con límites y Turnstile.',
-  tool_ios_prompt_builder_rules_item_1: 'Structured fields map to Role/Task/Constraints/Output blocks in Markdown export.',
-  tool_ios_prompt_builder_rules_item_2: 'Default export is Markdown. JSON is a chip on the same canvas.',
-  tool_ios_prompt_builder_rules_item_3: 'La IA opcional no reemplaza el modo local — revisa antes de copiar.',
-  tool_ios_prompt_builder_rules_item_4: 'This tool assembles text only; it does not run ios prompt builder engines or call chat APIs locally.',
-  tool_ios_prompt_builder_rules_title: 'Reglas que debes conocer',
+  tool_ios_prompt_builder_platforms_lead: 'El prompt final es texto plano: se pega igual en ChatGPT, Gemini, Claude o DeepSeek.',
+  tool_ios_prompt_builder_result_label: 'Prompt generado',
+  tool_ios_prompt_builder_rules_body:
+    'La página solo maqueta el requisito: no compila código ni ejecuta Xcode. La IA opcional tiene cuota limitada y exige Turnstile.',
+  tool_ios_prompt_builder_rules_item_1: 'Cada campo cae en un bloque distinto del Markdown: Role, Task, Constraints y Output.',
+  tool_ios_prompt_builder_rules_item_2:
+    'La salida por defecto es Markdown; el mismo panel puede mostrar JSON con los campos y el prompt montado.',
+  tool_ios_prompt_builder_rules_item_3:
+    'La IA de Cloudflare no sustituye al modo local: su respuesta ocupa todo el área de resultado, así que revísala antes de copiar.',
+  tool_ios_prompt_builder_rules_item_4:
+    'Esta herramienta solo arma texto: no compila Swift, no lanza Xcode ni llama por ti a las API de chat.',
+  tool_ios_prompt_builder_rules_title: 'Límites que conviene saber',
   tool_ios_prompt_builder_sec_constraints: 'Constraints',
-  tool_ios_prompt_builder_sec_output: 'Output format',
+  tool_ios_prompt_builder_sec_output: 'Output',
   tool_ios_prompt_builder_sec_role: 'Role',
   tool_ios_prompt_builder_sec_task: 'Task',
   tool_ios_prompt_builder_status_copied: 'Copiado al portapapeles.',
   tool_ios_prompt_builder_status_done: 'Prompt listo.',
-  tool_ios_prompt_builder_status_working: 'Creando prompt…',
-  tool_ios_prompt_builder_swift_stack_label: 'Swift / Stack',
-  tool_ios_prompt_builder_swift_stack_ph: 'Sample swift stack…',
-  tool_ios_prompt_builder_swiftui_ui_label: 'Swiftui / Ui',
-  tool_ios_prompt_builder_swiftui_ui_ph: 'Sample swiftui ui…',
-  tool_ios_prompt_builder_title: 'Constructor de prompts iOS — Local + IA opcional',
-  tool_ios_prompt_builder_usecase_1: 'Brief listo para pegar de Constructor de prompts iOS en ChatGPT, Gemini, Claude o DeepSeek.',
-  tool_ios_prompt_builder_usecase_2: 'Export JSON for a pipeline test, then refine with optional Cloudflare AI after Turnstile.',
+  tool_ios_prompt_builder_status_working: 'Generando el prompt…',
+  tool_ios_prompt_builder_swift_stack_label: 'Swift / Stack técnico',
+  tool_ios_prompt_builder_swift_stack_ph: 'Ej.: Swift 5.10, SwiftUI, iOS 17+, SwiftData…',
+  tool_ios_prompt_builder_swiftui_ui_label: 'SwiftUI / Pantalla',
+  tool_ios_prompt_builder_swiftui_ui_ph: 'Ej.: NavigationStack, Charts, hoja de permisos…',
+  tool_ios_prompt_builder_title: 'Generador de prompts para iOS — local, con IA opcional',
+  tool_ios_prompt_builder_usecase_1:
+    'Pasar el requisito que se contó en la revisión de diseño a un prompt que se pueda pegar en el chat del equipo.',
+  tool_ios_prompt_builder_usecase_2:
+    'Exportar JSON para llevar las reglas de accesibilidad a una lista de comprobación y luego ampliar con Cloudflare AI si hace falta.',
   tool_ios_prompt_builder_usecase_3:
-    'Compare with Prompt template builder when you need generic four-field templates instead of this scenario.',
-  tool_ios_prompt_builder_usecase_4: 'Borradores sensibles en local — IA solo tras aceptar el modal.',
-  tool_ios_prompt_builder_usecases_title: 'Buenos casos de uso',
+    'Si no necesitas campos de iOS y te vale la plantilla genérica de cuatro bloques, usa el generador de plantillas de prompts.',
+  tool_ios_prompt_builder_usecase_4:
+    'Redactar en el navegador la descripción de una función aún sin anunciar y decidir después si va a la IA opcional.',
+  tool_ios_prompt_builder_usecases_title: 'Cuándo viene bien',
   tool_ip_address_article:
     'Muestra IP de salida pública más región aproximada y nombre de red del edge (sin geo externa). Sirve para VPN, soporte y allowlists. No es geolocalización precisa, consulta de facturación del operador ni «buscar la IP de otro».',
   tool_ip_address_description:
@@ -7051,7 +7088,7 @@ const es: SiteLangDict = {
   tool_irr_usecase_2: 'Quick sketch.',
   tool_irr_usecase_3: 'Sketch before talking to an advisor — not a substitute.',
   tool_irr_usecases_title: 'Cuándo usarlo',
-  tool_json_diff_checker_online_array_as_set: 'Tratar arrays como conjuntos (sin importar el orden)',
+  tool_json_diff_checker_online_array_as_set: 'Ignorar el orden del array (los duplicados cuentan)',
   tool_json_diff_checker_online_article:
     'Pega dos valores JSON y lista añadidos, eliminados y cambios por ruta. Por defecto se ignora el orden de las claves. El pegado se queda en el dispositivo y no se sube. Aquí no se parsea YAML ni XML.',
   tool_json_diff_checker_online_clear: 'Borrar',
@@ -7070,9 +7107,9 @@ const es: SiteLangDict = {
   tool_json_diff_checker_online_faq_a2:
     'Por defecto, {"a":1,"b":2} y {"b":2,"a":1} son el mismo objeto. Desactiva “Ignorar orden de claves” si te importa el orden escrito.',
   tool_json_diff_checker_online_faq_a3:
-    'Los arrays son listas por índice. [1,2] frente a [2,1] es un cambio. Activa “Tratar arrays como conjuntos” solo si el orden no debe contar.',
+    'Por defecto los arrays se comparan por índice. Al ignorar el orden se ordenan los elementos normalizados, los duplicados siguen contando y los índices del resultado pertenecen a ese orden; no se emparejan objetos por id.',
   tool_json_diff_checker_online_faq_a4:
-    'También se busca json diff checker sin “online”: mismo trabajo. YAML o XML necesitan otra página (convierte YAML antes si hace falta).',
+    'Solo se analiza JSON válido. No acepta sintaxis YAML ni XML; convierte YAML a JSON primero o usa un comparador específico del formato.',
   tool_json_diff_checker_online_faq_q1: '¿Se sube mi JSON?',
   tool_json_diff_checker_online_faq_q2: '¿El orden de las claves cuenta como diferencia?',
   tool_json_diff_checker_online_faq_q3: '¿Cómo se comparan los arrays?',
@@ -7081,7 +7118,7 @@ const es: SiteLangDict = {
   tool_json_diff_checker_online_how_item_1: 'Pega el JSON original a la izquierda.',
   tool_json_diff_checker_online_how_item_2: 'Pega el JSON revisado a la derecha.',
   tool_json_diff_checker_online_how_item_3: 'Deja Ignorar orden de claves activo, salvo que quieras el orden escrito.',
-  tool_json_diff_checker_online_how_item_4: 'Comparar lista rutas; Cargar ejemplo ya se ejecutó al abrir.',
+  tool_json_diff_checker_online_how_item_4: 'Pulsa Comparar para listar las rutas añadidas, eliminadas y modificadas con las opciones actuales.',
   tool_json_diff_checker_online_how_title: 'Cómo usarlo',
   tool_json_diff_checker_online_ignore_keys: 'Ignorar orden de claves del objeto',
   tool_json_diff_checker_online_label_a: 'JSON original',
@@ -7097,7 +7134,7 @@ const es: SiteLangDict = {
     'El JSON inválido se avisa por lado. Claves duplicadas siguen JSON.parse (en motores que lo permiten, gana la última).',
   tool_json_diff_checker_online_rules_item_2: 'Ignorar orden de claves (activado por defecto) ordena las claves antes de recorrer rutas.',
   tool_json_diff_checker_online_rules_item_3:
-    'Los arrays son listas por índice, salvo que los trates como conjuntos (entonces se ordenan por stringify).',
+    'Ignorar el orden ordena los elementos normalizados pero conserva duplicados; los índices corresponden al orden comparado, no a la posición original.',
   tool_json_diff_checker_online_rules_item_4: 'YAML y XML no se parsean. Si hace falta, convierte YAML en la página YAML ↔ JSON relacionada.',
   tool_json_diff_checker_online_rules_title: 'Reglas de la comparación',
   tool_json_diff_checker_online_sample_a: '{\n  "sku": "A-1",\n  "price": 9.5\n}',
@@ -7220,7 +7257,7 @@ const es: SiteLangDict = {
   tool_jwt_decoder_rules_item_1:
     'Estructura: un JWT firmado (JWS compacto) tiene tres segmentos Base64url — header (alg, typ), payload (claims), firma (bytes, no JSON).',
   tool_jwt_decoder_rules_item_2:
-    'Base64url: -→+, _→/, rellena padding hasta longitud %4, luego atob y JSON.parse. Errores indican header o payload.',
+    'Base64url: -→+, _→/, rellena padding hasta longitud %4, luego atob, interpreta esos bytes como UTF-8 y JSON.parse, así los claims con acentos o CJK se leen bien. Los errores indican header o payload.',
   tool_jwt_decoder_rules_item_3:
     'Claims registrados: exp, iat y nbf son segundos Unix UTC. Leer JSON no prueba que el token sea fiable.',
   tool_jwt_decoder_rules_item_4:
@@ -7985,7 +8022,7 @@ const es: SiteLangDict = {
   tool_meta_desc_len_warn: 'Descripción: {n} caracteres — supera 160, puede truncarse.',
   tool_meta_desc_ph: 'Genera meta tags de head listas para pegar, con pistas de longitud, valores de robots y campos OG.',
   tool_meta_description:
-    'Title y meta description son tu tarjeta en Google; un canonical erróneo reparte señales. Rellena campos para etiquetas head listas. Ejemplo: canonical + og.',
+    'El title y la meta description dan forma al snippet; el canonical elige la URL entre duplicados. Rellena los campos y copia las etiquetas head listas, con aviso de longitud. Ejemplo: canonical + og.',
   tool_meta_error_prefix: 'Error: ',
   tool_meta_example:
     'La muestra rellena el título, la descripción, el canonical, los robots y tres campos Open Graph. El fragmento generado emite una etiqueta <title>, la meta description, el enlace canónico, el robots meta y las etiquetas og: rellenadas.',
@@ -8058,108 +8095,117 @@ const es: SiteLangDict = {
     'Antes de publicar, genera las etiquetas y compáralas con una vista previa del resultado de búsqueda para que el título y la descripción coincidan con la página visible.',
   tool_meta_usecases_title: 'Buenos usos',
   tool_midjourney_prompt_builder_ai_consent_body:
-    'Este paso opcional envía tu borrador a Cloudflare Workers AI. No va a OpenAI, Google, Anthropic ni DeepSeek desde nuestros servidores.',
+    'Este paso es opcional: envía el borrador que tienes ahora en los campos a Cloudflare Workers AI para una inferencia. No lo reenviamos desde nuestros servidores a OpenAI, Google, Anthropic ni DeepSeek. Sin usar la IA, el prompt se sigue montando en tu navegador.',
   tool_midjourney_prompt_builder_ai_consent_cancel: 'Cancelar',
   tool_midjourney_prompt_builder_ai_consent_ok: 'Continuar',
-  tool_midjourney_prompt_builder_ai_consent_title: '¿Enviar texto a Cloudflare Workers AI?',
-  tool_midjourney_prompt_builder_ai_done: 'Sugerencia de IA aplicada. Revisa antes de copiar.',
-  tool_midjourney_prompt_builder_ai_err_generic: 'La IA falló. Tu prompt local no cambió.',
-  tool_midjourney_prompt_builder_ai_err_rate: 'Cuota de IA agotada. Modo local o prueba mañana (UTC).',
-  tool_midjourney_prompt_builder_ai_err_turnstile: 'Completa Turnstile antes de usar IA.',
-  tool_midjourney_prompt_builder_ai_expand: 'Expandir con IA',
-  tool_midjourney_prompt_builder_ai_panel_label: 'Cloudflare AI opcional (Turnstile)',
+  tool_midjourney_prompt_builder_ai_consent_title: '¿Enviar el borrador a Cloudflare Workers AI?',
+  tool_midjourney_prompt_builder_ai_done: 'El texto de la IA se escribió completo en la salida. Revísalo antes de copiar.',
+  tool_midjourney_prompt_builder_ai_err_generic: 'La IA falló esta vez; la salida sigue igual.',
+  tool_midjourney_prompt_builder_ai_err_rate: 'Se agotó la cuota de IA. Sigue montando el prompt aquí o vuelve mañana (UTC).',
+  tool_midjourney_prompt_builder_ai_err_turnstile: 'Completa la verificación de Turnstile antes de usar la IA.',
+  tool_midjourney_prompt_builder_ai_expand: 'Ampliar con IA',
+  tool_midjourney_prompt_builder_ai_panel_label: 'Opcional: Cloudflare AI (requiere Turnstile)',
   tool_midjourney_prompt_builder_ai_polish: 'Pulir con IA',
-  tool_midjourney_prompt_builder_ai_working: 'Cloudflare AI trabajando…',
+  tool_midjourney_prompt_builder_ai_working: 'Cloudflare AI está trabajando…',
   tool_midjourney_prompt_builder_article:
-    'Crea prompts listos de Constructor de prompts Midjourney aquí. Rellena campos y copia Markdown o JSON a ChatGPT, Gemini, Claude o DeepSeek. Local por defecto; Expand/Polish opcional con Cloudflare Workers AI (Turnstile).',
-  tool_midjourney_prompt_builder_aspect_label: 'Relación de aspecto',
-  tool_midjourney_prompt_builder_aspect_ph: 'Sample aspect…',
-  tool_midjourney_prompt_builder_build: 'Crear prompt',
-  tool_midjourney_prompt_builder_clear: 'Limpiar',
+    'Monta aquí el prompt de Midjourney antes de usarlo: rellena sujeto, estilo, luz, proporción y parámetros, y la página lo arma en Markdown o JSON dentro del navegador para que lo copies en ChatGPT, Gemini, Claude o DeepSeek. Esta página solo produce texto: no genera imágenes ni llama a Midjourney. Por defecto no se sube nada; si pulsas Ampliar o Pulir, el borrador va a Cloudflare Workers AI pasando antes por Turnstile.',
+  tool_midjourney_prompt_builder_aspect_label: 'Proporción',
+  tool_midjourney_prompt_builder_aspect_ph: 'Por ejemplo 16:9, 9:16 o 1:1…',
+  tool_midjourney_prompt_builder_build: 'Generar prompt',
+  tool_midjourney_prompt_builder_clear: 'Vaciar',
   tool_midjourney_prompt_builder_copy: 'Copiar',
   tool_midjourney_prompt_builder_desc:
-    'Constructor de prompts Midjourney — local por defecto + Expand/Polish opcional Cloudflare AI (Turnstile); Markdown/JSON en el dispositivo.',
+    'Generador de prompts para Midjourney: rellena sujeto, estilo, luz y proporción y la página los arma en Markdown o JSON; IA de Cloudflare opcional con Turnstile.',
   tool_midjourney_prompt_builder_description:
-    'Proceso y ejemplo: Constructor de prompts Midjourney — Local + IA opcional para ChatGPT, Gemini, Claude y DeepSeek: ensambla prompts localmente por defecto y opcionalmente Expand/Polish con Cloudflare Workers AI (Turnstile obligatorio, límite de uso). Ejemplo al abrir. Markdown por defecto; JSON para pipelines. Texto en el dispositivo salvo que uses IA.',
+    'Generador de prompts para Midjourney: escribes sujeto, estilo, luz, proporción y parámetros, y la página los arma en una línea lista para pegar, con --ar según la proporción y --v 6.1 si no indicaste versión. Markdown por defecto y JSON para tus scripts; al entrar ya se ejecutó el ejemplo del samurái en el puente. Si necesitas más detalle, Ampliar o Pulir envía el borrador a Cloudflare Workers AI (Turnstile y cuota). Solo texto: aquí no se generan imágenes.',
   tool_midjourney_prompt_builder_download: 'Descargar',
-  tool_midjourney_prompt_builder_empty: 'Rellena al menos un campo antes de crear.',
+  tool_midjourney_prompt_builder_empty: 'Rellena al menos un campo antes de generar el prompt.',
   tool_midjourney_prompt_builder_example:
-    'Entrada: Subject = samurái en puente musgoso; Style = tinta cinematográfica; Lighting = luz de borde al amanecer; Flags = --v 6.1 --style raw --stylize 120 --chaos 8. Salida (Markdown): ## Task con línea MJ sugerida y --ar 16:9; JSON para pipelines.',
+    'Entrada: sujeto = samurái desenvainando en un puente con musgo, bruma de lluvia, torii al fondo; estilo = tinta cinematográfica, verdeazulado y carbón, grano fino; luz = contraluz de amanecer con niebla volumétrica; proporción = 16:9; parámetros = --v 6.1 --style raw --stylize 120 --chaos 8. Salida (Markdown): el bloque ## Task trae la línea de Midjourney con sujeto, estilo y luz y termina en --ar 16:9. En JSON llegan los mismos datos como campos.',
   tool_midjourney_prompt_builder_example_title: 'Ejemplo',
   tool_midjourney_prompt_builder_faq_a1:
-    'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
+    'El montaje se hace en esta pestaña del navegador, así que por defecto no se sube nada. Solo cuando pulsas Ampliar o Pulir se envía el borrador actual a Cloudflare Workers AI; no lo reenviamos desde nuestros servidores a OpenAI, Google, Anthropic ni DeepSeek.',
   tool_midjourney_prompt_builder_faq_a2:
-    'Modo local solo formatea aquí. Expand/Polish opcional usa Cloudflare Workers AI tras Turnstile — no llama APIs de chat.',
+    'El modo local no llama a ningún modelo: solo ordena tus campos en los bloques Role, Task, Constraints y Output. Ampliar y Pulir usan Cloudflare Workers AI después de pasar Turnstile, y no llaman a las APIs de ChatGPT, Gemini, Claude ni DeepSeek desde nuestros servidores.',
   tool_midjourney_prompt_builder_faq_a3:
-    'Constructor de plantillas de Prompt covers generic Role/Task/Constraints/Output templates. This page focuses on midjourney prompt builder fields with a dedicated sample and rules for this scenario.',
-  tool_midjourney_prompt_builder_faq_a4: 'Sí. Completa Turnstile en el panel de IA antes de Expand o Polish.',
-  tool_midjourney_prompt_builder_faq_a5: 'Yes. The JSON chip emits structured fields plus assembled prompt text for tests or config pipelines.',
+    'El generador de plantillas de prompts da la estructura genérica de cuatro bloques y sirve para cualquier tema. Aquí los campos ya son los de Midjourney —sujeto, estilo, luz, proporción y parámetros—, con un ejemplo cargado al entrar y una tabla de equivalencias propia de este caso.',
+  tool_midjourney_prompt_builder_faq_a4:
+    'Turnstile frena los scripts automáticos para que la cuota gratuita quede para personas. Complétalo en el panel de IA antes de pulsar Ampliar o Pulir; sin un token válido esos botones dan error y el montaje en el navegador sigue funcionando.',
+  tool_midjourney_prompt_builder_faq_a5:
+    'Sí. Al cambiar a JSON la misma salida trae los campos estructurados y el prompt ya montado, listo para una tanda de imágenes, una prueba o un archivo de configuración.',
   tool_midjourney_prompt_builder_faq_a6:
-    'Yes. Copy the finished prompt into ChatGPT, Gemini, Claude, or DeepSeek. We do not split URLs per platform because the job is formatting text, not calling APIs.',
+    'Sí. Copia el resultado y pégalo en el chat que uses, o directamente en Midjourney. Esta página solo da formato al texto y no llama a ninguna API, así que no hay una URL distinta por plataforma.',
   tool_midjourney_prompt_builder_faq_a7:
-    'Local: solo esta pestaña, sin subida. Expand/Polish opcional a Cloudflare Workers AI (Turnstile, límite).',
-  tool_midjourney_prompt_builder_faq_q1: 'Is my prompt uploaded?',
-  tool_midjourney_prompt_builder_faq_q2: 'Does this call ChatGPT or other LLM APIs?',
-  tool_midjourney_prompt_builder_faq_q3: 'How is this different from Constructor de plantillas de Prompt?',
-  tool_midjourney_prompt_builder_faq_q4: '¿Por qué Turnstile para IA opcional?',
-  tool_midjourney_prompt_builder_faq_q5: 'Can I get JSON output?',
-  tool_midjourney_prompt_builder_faq_q6: 'Can I use this with ChatGPT, Gemini, Claude, or DeepSeek?',
-  tool_midjourney_prompt_builder_faq_q7: '¿Diferencia entre local y Cloudflare AI opcional?',
+    'En local todo se arma en esta pestaña, sin salir del navegador. Ampliar o Pulir manda el borrador a Cloudflare Workers AI (hace falta Turnstile y hay límites de frecuencia y de cuota diaria) y el texto que vuelve se escribe completo en la salida, encima del borrador que estabas viendo: revísalo antes de copiar. Si falla o se agota la cuota, sigue con el modo local.',
+  tool_midjourney_prompt_builder_faq_q1: '¿Se sube lo que escribo?',
+  tool_midjourney_prompt_builder_faq_q2: '¿Esta página llama a la API de ChatGPT o de otros modelos?',
+  tool_midjourney_prompt_builder_faq_q3: '¿En qué se diferencia del generador de plantillas de prompts?',
+  tool_midjourney_prompt_builder_faq_q4: '¿Por qué hay que pasar Turnstile para usar la IA?',
+  tool_midjourney_prompt_builder_faq_q5: '¿Puedo sacar la salida en JSON?',
+  tool_midjourney_prompt_builder_faq_q6: '¿Sirve con ChatGPT, Gemini, Claude o DeepSeek?',
+  tool_midjourney_prompt_builder_faq_q7: '¿Qué diferencia hay entre el modo local y la IA opcional de Cloudflare?',
   tool_midjourney_prompt_builder_fmt_json: 'JSON',
   tool_midjourney_prompt_builder_fmt_label: 'Formato de salida',
   tool_midjourney_prompt_builder_fmt_md: 'Markdown',
   tool_midjourney_prompt_builder_how_body:
-    'Rellena campos de Constructor de prompts Midjourney, crea el prompt localmente, opcionalmente Expand/Polish con Turnstile, y pégalo en ChatGPT, Gemini, Claude o DeepSeek.',
-  tool_midjourney_prompt_builder_how_item_1: 'Al abrir, el ejemplo predeterminado ya se ejecutó (Cargar ejemplo).',
-  tool_midjourney_prompt_builder_how_item_2: 'Edit fields, click Build prompt, or switch to JSON if you need structured export.',
-  tool_midjourney_prompt_builder_how_item_3: 'Opcional: completa Turnstile y Expand/Polish con Cloudflare Workers AI.',
-  tool_midjourney_prompt_builder_how_item_4: 'Copia o descarga y pega en ChatGPT, Gemini, Claude o DeepSeek.',
-  tool_midjourney_prompt_builder_how_title: 'Cómo funciona',
-  tool_midjourney_prompt_builder_lighting_label: 'Iluminación',
-  tool_midjourney_prompt_builder_lighting_ph: 'Sample lighting…',
+    'Rellena los campos, genera el prompt y cópialo en ChatGPT, Gemini, Claude o DeepSeek; si te falta detalle, usa Ampliar o Pulir con la IA opcional de Cloudflare.',
+  tool_midjourney_prompt_builder_how_item_1: 'Pulsa Cargar ejemplo para el preset por defecto.',
+  tool_midjourney_prompt_builder_how_item_2:
+    'Cambia sujeto, estilo, luz, proporción y parámetros y pulsa Generar prompt; pasa a JSON si lo necesitas estructurado.',
+  tool_midjourney_prompt_builder_how_item_3:
+    'Opcional: completa Turnstile en el panel de IA y pulsa Ampliar o Pulir; el texto que vuelva se escribe en la salida.',
+  tool_midjourney_prompt_builder_how_item_4:
+    'Copia o descarga y pega en ChatGPT, Gemini, Claude o DeepSeek para seguir ajustando, o directamente en Midjourney.',
+  tool_midjourney_prompt_builder_how_title: 'Cómo se usa',
+  tool_midjourney_prompt_builder_lighting_label: 'Luz',
+  tool_midjourney_prompt_builder_lighting_ph: 'Por ejemplo: contraluz de amanecer con niebla…',
   tool_midjourney_prompt_builder_load_sample: 'Cargar ejemplo',
-  tool_midjourney_prompt_builder_mj_flags_label: 'Mj / Flags',
-  tool_midjourney_prompt_builder_mj_flags_ph: 'Sample mj flags…',
-  tool_midjourney_prompt_builder_platforms_lead: 'Para ChatGPT, Gemini, Claude y DeepSeek — copia el prompt terminado en cualquier chat.',
-  tool_midjourney_prompt_builder_result_label: 'Salida del prompt',
+  tool_midjourney_prompt_builder_mj_flags_label: 'Parámetros de MJ',
+  tool_midjourney_prompt_builder_mj_flags_ph: 'Por ejemplo --v 6.1 --style raw --stylize 120…',
+  tool_midjourney_prompt_builder_platforms_lead: 'La salida se pega tal cual en el chat de ChatGPT, Gemini, Claude o DeepSeek.',
+  tool_midjourney_prompt_builder_result_label: 'Prompt generado',
   tool_midjourney_prompt_builder_rules_body:
-    'Constructor de prompts Midjourney: ensamblaje local por defecto; IA opcional con límites y Turnstile.',
-  tool_midjourney_prompt_builder_rules_item_1: 'Structured fields map to Role/Task/Constraints/Output blocks in Markdown export.',
-  tool_midjourney_prompt_builder_rules_item_2: 'Default export is Markdown. JSON is a chip on the same canvas.',
-  tool_midjourney_prompt_builder_rules_item_3: 'La IA opcional no reemplaza el modo local — revisa antes de copiar.',
-  tool_midjourney_prompt_builder_rules_item_4:
-    'This tool assembles text only; it does not run midjourney prompt builder engines or call chat APIs locally.',
+    'Cómo se traducen los parámetros: la proporción pasa a --ar y, si no pones versión, se añade --v 6.1. El montaje en el navegador es lo que ocurre por defecto; la IA opcional tiene límites de uso y pide Turnstile.',
+  tool_midjourney_prompt_builder_rules_item_1: 'Cada campo del formulario cae en uno de los bloques Role, Task, Constraints y Output del Markdown.',
+  tool_midjourney_prompt_builder_rules_item_2: 'La exportación por defecto es Markdown; JSON es un botón sobre la misma salida.',
+  tool_midjourney_prompt_builder_rules_item_3:
+    'La IA opcional es un paso añadido, no un sustituto: el modo local siempre funciona y el texto de la IA reemplaza por completo lo que había en la salida, así que revísalo antes de copiar.',
+  tool_midjourney_prompt_builder_rules_item_4: 'Esta página solo arma texto: no genera imágenes ni llama a Midjourney ni a ninguna API de chat.',
   tool_midjourney_prompt_builder_rules_map_1_flag: '--ar 1:1',
-  tool_midjourney_prompt_builder_rules_map_1_label: '1:1 square',
+  tool_midjourney_prompt_builder_rules_map_1_label: '1:1 cuadrado',
   tool_midjourney_prompt_builder_rules_map_2_flag: '--ar 16:9',
-  tool_midjourney_prompt_builder_rules_map_2_label: '16:9 landscape',
+  tool_midjourney_prompt_builder_rules_map_2_label: '16:9 horizontal',
   tool_midjourney_prompt_builder_rules_map_3_flag: '--ar 9:16',
-  tool_midjourney_prompt_builder_rules_map_3_label: '9:16 vertical',
+  tool_midjourney_prompt_builder_rules_map_3_label: '9:16 en vertical',
   tool_midjourney_prompt_builder_rules_map_4_flag: '--v 6.1',
-  tool_midjourney_prompt_builder_rules_map_4_label: 'MJ v6 default',
-  tool_midjourney_prompt_builder_rules_table_ar: 'Aspect → --ar',
-  tool_midjourney_prompt_builder_rules_table_note: 'Append flags from the table when aspect or version is set.',
-  tool_midjourney_prompt_builder_rules_table_title: 'Midjourney flag mapping',
-  tool_midjourney_prompt_builder_rules_table_v: 'Version → --v',
-  tool_midjourney_prompt_builder_rules_title: 'Reglas que debes conocer',
+  tool_midjourney_prompt_builder_rules_map_4_label: 'Versión por defecto de MJ v6',
+  tool_midjourney_prompt_builder_rules_table_ar: 'Proporción → --ar',
+  tool_midjourney_prompt_builder_rules_table_note:
+    'Si escribes una proporción, se convierte en --ar al final de la línea; si en los parámetros no hay versión, se añade --v 6.1.',
+  tool_midjourney_prompt_builder_rules_table_title: 'Equivalencias de parámetros de Midjourney',
+  tool_midjourney_prompt_builder_rules_table_v: 'Versión → --v',
+  tool_midjourney_prompt_builder_rules_title: 'Lo que hace y lo que no',
   tool_midjourney_prompt_builder_sec_constraints: 'Constraints',
-  tool_midjourney_prompt_builder_sec_output: 'Output format',
+  tool_midjourney_prompt_builder_sec_output: 'Output',
   tool_midjourney_prompt_builder_sec_role: 'Role',
   tool_midjourney_prompt_builder_sec_task: 'Task',
   tool_midjourney_prompt_builder_status_copied: 'Copiado al portapapeles.',
   tool_midjourney_prompt_builder_status_done: 'Prompt listo.',
-  tool_midjourney_prompt_builder_status_working: 'Creando prompt…',
+  tool_midjourney_prompt_builder_status_working: 'Generando el prompt…',
   tool_midjourney_prompt_builder_style_label: 'Estilo',
-  tool_midjourney_prompt_builder_style_ph: 'Sample style…',
+  tool_midjourney_prompt_builder_style_ph: 'Por ejemplo: tinta cinematográfica, tonos carbón…',
   tool_midjourney_prompt_builder_subject_label: 'Sujeto',
-  tool_midjourney_prompt_builder_subject_ph: 'Sample subject…',
-  tool_midjourney_prompt_builder_title: 'Constructor de prompts Midjourney — Local + IA opcional',
-  tool_midjourney_prompt_builder_usecase_1: 'Brief listo para pegar de Constructor de prompts Midjourney en ChatGPT, Gemini, Claude o DeepSeek.',
-  tool_midjourney_prompt_builder_usecase_2: 'Export JSON for a pipeline test, then refine with optional Cloudflare AI after Turnstile.',
+  tool_midjourney_prompt_builder_subject_ph: 'Por ejemplo: samurái desenvainando en un puente…',
+  tool_midjourney_prompt_builder_title: 'Generador de prompts para Midjourney — en el navegador, con IA opcional',
+  tool_midjourney_prompt_builder_usecase_1:
+    'Dejar un prompt de Midjourney listo para pegar en el chat del equipo, sin dictar los parámetros mensaje a mensaje.',
+  tool_midjourney_prompt_builder_usecase_2:
+    'Exportar el JSON antes de una tanda de imágenes y guardar sujeto, estilo y proporción como campos de tu script u hoja de cálculo.',
   tool_midjourney_prompt_builder_usecase_3:
-    'Compare with Prompt template builder when you need generic four-field templates instead of this scenario.',
-  tool_midjourney_prompt_builder_usecase_4: 'Borradores sensibles en local — IA solo tras aceptar el modal.',
-  tool_midjourney_prompt_builder_usecases_title: 'Buenos casos de uso',
+    'Si lo que necesitas es la plantilla genérica de cuatro bloques y no una imagen, usa el generador de plantillas de prompts.',
+  tool_midjourney_prompt_builder_usecase_4:
+    'Con borradores de un proyecto que aún no es público, quédate en el modo local: el texto solo sale de tu navegador si aceptas el aviso de la IA.',
+  tool_midjourney_prompt_builder_usecases_title: 'Cuándo viene bien',
   tool_npv_article:
     'El valor actual neto descuenta los flujos futuros a una tasa anual elegida y resta la inversión inicial. Un VAN positivo solo indica que, bajo tus supuestos, las entradas descontadas superan la salida; no es un pronóstico ni una recomendación de compra.',
   tool_npv_calculate: 'Calcular',
@@ -8226,7 +8272,7 @@ const es: SiteLangDict = {
     'Las etiquetas de ejemplo describen un post con og:image de 1200×630 y twitter:card summary_large_image. La vista previa muestra la tarjeta de Facebook con la imagen a la izquierda, una tarjeta grande de X, una tarjeta estilo WhatsApp y una tabla con todos los campos obligatorios presentes.',
   tool_og_example_title: 'Ejemplo',
   tool_og_faq_a1:
-    'Facebook, X y WhatsApp construyen la vista previa con el título HTML, la meta description y la primera imagen. La tarjeta puede quedar incompleta o con una imagen equivocada; por eso existen los campos og: obligatorios.',
+    'Facebook, X y WhatsApp tiran del título HTML, de la meta description y de alguna imagen que encuentren en la página. Cada plataforma improvisa a su manera y eso cambia con el tiempo, así que la tarjeta puede salir incompleta o con la imagen equivocada: por eso conviene escribir los campos og:.',
   tool_og_faq_a2:
     'El tamaño seguro es 1200×630 px, proporción 1.91:1 que aceptan todas las plataformas. Facebook ahora admite también recortes 2:1 y 1:1. Las imágenes muy pequeñas suelen ampliarse y verse borrosas.',
   tool_og_faq_a3:
@@ -8259,7 +8305,7 @@ const es: SiteLangDict = {
     'Haz que cada vez que compartan tu página genere clics: previsualiza cómo se verá al compartirla en Facebook, X y apps de mensajería, desde el navegador.',
   tool_og_home_title: 'Vista previa de Open Graph',
   tool_og_how_body:
-    'La vista previa analiza las etiquetas og:/twitter: que pegas (o las extrae del HTML cargado de una URL) y dibuja tres tarjetas. Facebook usa la imagen 1.91:1 a la izquierda con título, descripción y dominio debajo. X sigue twitter:card: summary_large_image muestra una imagen grande arriba, summary una pequeña junto al texto. Las apps de mensajería como WhatsApp muestran una tarjeta grande. La tabla marca og:title, og:description y og:image como obligatorios y lista los opcionales.',
+    'La vista previa analiza las etiquetas og:/twitter: que pegas (o las extrae del HTML cargado de una URL) y dibuja tres tarjetas. Facebook usa la imagen 1.91:1 a la izquierda con título, descripción y dominio debajo. X sigue twitter:card: summary_large_image muestra una imagen grande arriba, summary una pequeña junto al texto. Las apps de mensajería como WhatsApp muestran una tarjeta grande. La tabla señala los cuatro campos que exige el protocolo y lista los opcionales.',
   tool_og_how_title: 'Cómo funciona',
   tool_og_missing_label: 'Falta',
   tool_og_no_tags: 'No se detectaron etiquetas OG',
@@ -8281,7 +8327,7 @@ const es: SiteLangDict = {
   tool_og_rules_body:
     'Estos son los tamaños y respaldos que usan las plataformas, según el protocolo Open Graph y la documentación de X Cards.',
   tool_og_rules_item_1:
-    'Campos obligatorios: og:title, og:description y og:image. Los que falten se marcan para corregirlos antes de publicar.',
+    'El protocolo Open Graph exige og:title, og:type, og:image y og:url. og:description es opcional en la especificación, pero todas las plataformas grandes lo muestran: si lo omites, la plataforma redacta su propio resumen con el texto de la página.',
   tool_og_rules_item_2:
     'og:image a 1200×630 px (1.91:1) funciona en todas las plataformas importantes. Facebook también acepta recortes 2:1 y 1:1; las imágenes pequeñas suelen agrandarse y verse borrosas.',
   tool_og_rules_item_3:
@@ -8392,19 +8438,20 @@ const es: SiteLangDict = {
   tool_onpage_canonical_missing: 'No hay canonical. Añade <link rel="canonical"> cuando el mismo contenido se alcanza por varias URLs.',
   tool_onpage_canonical_ok: 'Se encontró un canonical autoreferente.',
   tool_onpage_canonical_other:
-    'El canonical apunta a otra URL. Usa un canonical autoreferente salvo que esta página sea copia del destino.',
+    'El canonical apunta a otra URL, con lo que declaras esta página como copia de aquella. Mantenlo solo si es cierto; el canonical es una pista, así que Google todavía puede elegir otra URL.',
   tool_onpage_check: 'Comprobar página',
   tool_onpage_clear: 'Limpiar',
   tool_onpage_copied: 'Copiado',
   tool_onpage_copy: 'Copiar',
   tool_onpage_desc_check: 'Meta description',
   tool_onpage_desc_long: 'La descripción tiene {n} caracteres; los snippets suelen cortar alrededor de 160.',
-  tool_onpage_desc_missing: 'No hay meta description. Escribe un resumen de 140–160 caracteres que coincida con el contenido.',
+  tool_onpage_desc_missing:
+    'No hay meta description. Google armará entonces el snippet con el texto de la página. Escribe tu propio resumen si quieres decidir esa redacción.',
   tool_onpage_desc_ok:
     'Descripción de {n} caracteres. El rango de 140–160 caracteres se ve bien en la mayoría de los snippets.',
   tool_onpage_desc_short: 'La descripción solo tiene {n} caracteres. Aprovecha el espacio para resumir lo que ofrece la página.',
   tool_onpage_description:
-    'Títulos débiles, meta faltante, H1 duplicados o canonicals malos bajan ranking. Pega URL o HTML para revisar y corregir. Pegado local. Ejemplo: dos H1.',
+    'Revisa title, meta description, H1, canonical, robots, Open Graph y JSON-LD y cómo se ven en Google. Pega URL o HTML sin salir del navegador. Ejemplo: dos H1.',
   tool_onpage_error_prefix: 'Error: ',
   tool_onpage_example:
     'La entrada de ejemplo es una página con un title de 71 caracteres, sin meta description, dos H1, un canonical a otra URL, un og:image, un bloque JSON-LD válido y una imagen http://. El verificador reporta el title como probable truncado, el H1 como aviso, el canonical como no autoreferente y el contenido mixto como aviso, igual que muestra la herramienta al cargar el ejemplo.',
@@ -8412,9 +8459,9 @@ const es: SiteLangDict = {
   tool_onpage_faq_a1:
     'Comprueba las etiquetas que la página controla por sí misma: title, meta description, H1, canonical, robots meta, campos Open Graph, datos estructurados JSON-LD, contenido mixto y recursos que bloquean el renderizado. No mide posiciones ni backlinks.',
   tool_onpage_faq_a2:
-    'Un solo H1 expresa el tema de forma clara tanto para lectores como para buscadores. Varios H1 difuminan el esquema; usa un H1 y estructura el resto con H2–H6.',
+    'No. Google afirma que no existe un número ideal de encabezados y posiciona páginas con ninguno, con uno o con varios H1. Dejar un único H1 compensa por accesibilidad y por un esquema claro, y aumenta la probabilidad de que Google reutilice tu encabezado como título del snippet.',
   tool_onpage_faq_a3:
-    'Para la página que debe posicionar, sí: un canonical autoreferente es la señal más clara. Apuntar el canonical a otra URL dice a Google que esta página es un duplicado, útil solo cuando eso es cierto.',
+    'No necesariamente, pero un canonical autoreferente es la señal más clara para una página que debe posicionar por sí misma. Apuntarlo a otra URL declara esta página como duplicado. En ambos casos Google lo toma como una pista y puede quedarse con otra URL.',
   tool_onpage_faq_a4:
     'Cuando una página se sirve por https y referencia imágenes, scripts o estilos http://, el navegador bloquea la petición por defecto. Esta comprobación los lista como avisos para que los cambies a https.',
   tool_onpage_faq_a5:
@@ -8422,15 +8469,17 @@ const es: SiteLangDict = {
   tool_onpage_faq_a6:
     'No. Al pegar HTML, el análisis ocurre en tu dispositivo y no se envía nada a un servidor. El modo URL obtiene la página una vez a través de nuestro worker y no la almacena.',
   tool_onpage_faq_q1: '¿Qué mira un verificador SEO on-page?',
-  tool_onpage_faq_q2: '¿Por qué una página debe tener exactamente un H1?',
+  tool_onpage_faq_q2: '¿Tener varios H1 perjudica al SEO?',
   tool_onpage_faq_q3: '¿El canonical tiene que apuntar a sí mismo?',
   tool_onpage_faq_q4: '¿Por qué el verificador marca los recursos http:// como contenido mixto?',
   tool_onpage_faq_q5: '¿La comprobación JSON-LD valida el esquema?',
   tool_onpage_faq_q6: '¿Mi HTML se sube a algún sitio?',
   tool_onpage_fetch_failed: 'No se pudo obtener la URL. Puede estar fuera de línea, bloquear bots o no devolver HTML.',
   tool_onpage_h1_check: 'H1',
-  tool_onpage_h1_missing: 'No se encontró H1. Usa un único H1 que exprese el tema de la página.',
-  tool_onpage_h1_multiple: 'Se encontraron {n} H1. Mantén un solo H1 por página y usa H2–H6 para las secciones.',
+  tool_onpage_h1_missing:
+    'No se encontró H1. Añade un encabezado principal que diga el tema de la página: de él dependen los lectores de pantalla y el título del snippet.',
+  tool_onpage_h1_multiple:
+    'Se encontraron {n} H1. Google posiciona páginas con cualquier cantidad de H1, así que esto no es una penalización. Aun así, un H1 con secciones H2–H6 se sigue mejor con lector de pantalla.',
   tool_onpage_h1_ok: 'Hay un H1 y está dentro de <body>.',
   tool_onpage_home_desc:
     'Detecta las etiquetas que frenan tu página en Google: audita title, H1, meta description, canonical, Open Graph y JSON-LD desde tu navegador.',
@@ -8470,13 +8519,13 @@ const es: SiteLangDict = {
   tool_onpage_robots_noindex: 'La página fija noindex y no aparecerá en Google. Elimínalo cuando la página deba indexarse.',
   tool_onpage_robots_ok: 'El robots meta permite indexar y seguir enlaces.',
   tool_onpage_rules_body:
-    'Estos son los criterios contra los que compara cada comprobación, tomados de Google Search Central y de la especificación HTML.',
+    'Con qué compara cada comprobación y hasta qué punto el criterio es firme. El comportamiento de las etiquetas (robots, canonical, contenido mixto) sigue a Google Search Central y a la especificación HTML; los consejos de longitud y de encabezados son heurísticas de visualización y legibilidad, no reglas de posicionamiento.',
   tool_onpage_rules_item_1:
     'Title: una página debe tener un <title> descriptivo. Google puede reescribirlo, pero un título conciso cerca de 50–60 caracteres suele mostrarse bien.',
   tool_onpage_rules_item_2:
-    'H1: usa exactamente un H1 que exprese el tema. Los encabezados restantes deben ser H2–H6 y formar un esquema lógico.',
+    'H1: la página necesita un encabezado que exprese su tema. Google no tiene un número ideal de encabezados ni penaliza los H1 de más, así que varios H1 se marcan solo por claridad del esquema y accesibilidad.',
   tool_onpage_rules_item_3:
-    'Canonical: un canonical autoreferente indica a Google qué URL es la preferida cuando hay duplicados. Link rel="canonical" va en <head>.',
+    'Canonical: <link rel="canonical"> en <head> es una pista sobre la URL preferida entre duplicados, no una directiva. Google la sopesa junto con redirecciones, sitemaps y enlaces internos antes de decidir.',
   tool_onpage_rules_item_4:
     'Contenido mixto: una página https que referencia recursos http:// es bloqueada por los navegadores. Esta comprobación los lista como avisos.',
   tool_onpage_rules_item_5:
@@ -8857,7 +8906,8 @@ const es: SiteLangDict = {
     'Reglas de charset, fuente de aleatoriedad y límites honestos — léelo antes de usar la salida en una cuenta real.',
   tool_password_generator_rules_item_1:
     'Pools: A–Z, a–z, 0–9 y un set de símbolos por defecto. Al menos un pool debe quedar tras toggles y exclusión ambigua.',
-  tool_password_generator_rules_item_2: 'El índice aleatorio usa bytes de crypto.getRandomValues — nunca Math.random.',
+  tool_password_generator_rules_item_2:
+    'El índice aleatorio usa bytes de crypto.getRandomValues, nunca Math.random. Los bytes que sesgarían el módulo se descartan, así cada carácter del conjunto tiene la misma probabilidad.',
   tool_password_generator_rules_item_3:
     'No es composición NIST certificada (sin regla forzada de «uno de cada clase»). Activa manualmente los sets que necesites.',
   tool_password_generator_rules_item_4: 'Privacidad: generación solo local; borra la salida en equipos compartidos al terminar.',
@@ -9494,95 +9544,103 @@ const es: SiteLangDict = {
   tool_private_cidr_ranges_usecase_3: 'Revisar ULA IPv6 o 2001:db8 antes de tratarlos como producción.',
   tool_private_cidr_ranges_usecases_title: 'Cuándo ayuda',
   tool_product_design_prompt_builder_ai_consent_body:
-    'Este paso opcional envía tu borrador a Cloudflare Workers AI. No va a OpenAI, Google, Anthropic ni DeepSeek desde nuestros servidores.',
+    'Este paso es opcional: envía el borrador actual a Cloudflare Workers AI para la inferencia. Desde nuestros servidores no se reenvía a OpenAI, Google, Anthropic ni DeepSeek. Sin IA puedes seguir montando el prompt en el navegador.',
   tool_product_design_prompt_builder_ai_consent_cancel: 'Cancelar',
   tool_product_design_prompt_builder_ai_consent_ok: 'Continuar',
-  tool_product_design_prompt_builder_ai_consent_title: '¿Enviar texto a Cloudflare Workers AI?',
-  tool_product_design_prompt_builder_ai_done: 'Sugerencia de IA aplicada. Revisa antes de copiar.',
-  tool_product_design_prompt_builder_ai_err_generic: 'La IA falló. Tu prompt local no cambió.',
-  tool_product_design_prompt_builder_ai_err_rate: 'Cuota de IA agotada. Modo local o prueba mañana (UTC).',
-  tool_product_design_prompt_builder_ai_err_turnstile: 'Completa Turnstile antes de usar IA.',
-  tool_product_design_prompt_builder_ai_expand: 'Expandir con IA',
+  tool_product_design_prompt_builder_ai_consent_title: '¿Enviar el borrador a Cloudflare Workers AI?',
+  tool_product_design_prompt_builder_ai_done: 'El texto de la IA sustituyó el resultado. Revísalo antes de copiar.',
+  tool_product_design_prompt_builder_ai_err_generic: 'La IA falló; el resultado no ha cambiado.',
+  tool_product_design_prompt_builder_ai_err_rate: 'Cuota de IA agotada. Usa el modo local o vuelve mañana (UTC).',
+  tool_product_design_prompt_builder_ai_err_turnstile: 'Completa Turnstile antes de usar la IA.',
+  tool_product_design_prompt_builder_ai_expand: 'Ampliar con IA',
   tool_product_design_prompt_builder_ai_panel_label: 'Cloudflare AI opcional (Turnstile)',
   tool_product_design_prompt_builder_ai_polish: 'Pulir con IA',
-  tool_product_design_prompt_builder_ai_working: 'Cloudflare AI trabajando…',
+  tool_product_design_prompt_builder_ai_working: 'Cloudflare AI está trabajando…',
   tool_product_design_prompt_builder_article:
-    'Crea prompts listos de Constructor de prompts de diseño de producto aquí. Rellena campos y copia Markdown o JSON a ChatGPT, Gemini, Claude o DeepSeek. Local por defecto; Expand/Polish opcional con Cloudflare Workers AI (Turnstile).',
-  tool_product_design_prompt_builder_build: 'Crear prompt',
-  tool_product_design_prompt_builder_clear: 'Limpiar',
+    'Convierte un encargo de diseño de producto en un prompt listo para pegar: describe a la persona usuaria, el problema, el alcance del wireframe y los design tokens, y la página arma el texto en Markdown o JSON dentro del navegador. Por defecto no se envía ninguna petición; solo al pulsar Ampliar o Pulir el borrador actual va a Cloudflare Workers AI (hace falta Turnstile y el uso está limitado).',
+  tool_product_design_prompt_builder_build: 'Generar prompt',
+  tool_product_design_prompt_builder_clear: 'Vaciar',
   tool_product_design_prompt_builder_copy: 'Copiar',
   tool_product_design_prompt_builder_desc:
-    'Constructor de prompts de diseño de producto — local por defecto + Expand/Polish opcional Cloudflare AI (Turnstile); Markdown/JSON en el dispositivo.',
+    'Generador de prompts de diseño de producto: rellena persona, problema, alcance del wireframe y design tokens; el texto se arma en el navegador como Markdown o JSON, con IA opcional.',
   tool_product_design_prompt_builder_description:
-    'Proceso y ejemplo: Constructor de prompts de diseño de producto — Local + IA opcional para ChatGPT, Gemini, Claude y DeepSeek: ensambla prompts localmente por defecto y opcionalmente Expand/Polish con Cloudflare Workers AI (Turnstile obligatorio, límite de uso). Ejemplo al abrir. Markdown por defecto; JSON para pipelines. Texto en el dispositivo salvo que uses IA.',
-  tool_product_design_prompt_builder_design_tokens_label: 'Design / Tokens',
-  tool_product_design_prompt_builder_design_tokens_ph: 'Sample design tokens…',
+    'Generador de prompts de diseño de producto: describe a la persona usuaria, el problema, el alcance del wireframe (cuántas pantallas y cuáles) y los design tokens (rejilla, color principal, contraste), y la página lo ordena en bloques Role / Task / Constraints / Output en Markdown o JSON sin salir del navegador. Ejemplo: «madres y padres con custodia compartida que necesitan ver la semana de entregas» sale como un alcance de tres pantallas con rejilla de 8 pt y contraste WCAG AA. Con «Cargar ejemplo» rellenas el preajuste y ves el prompt montado; Ampliar o Pulir con Cloudflare Workers AI es opcional (Turnstile, cuota diaria).',
+  tool_product_design_prompt_builder_design_tokens_label: 'Diseño / Design tokens',
+  tool_product_design_prompt_builder_design_tokens_ph: 'Ej.: rejilla de 8 pt, principal #2563eb, WCAG AA…',
   tool_product_design_prompt_builder_download: 'Descargar',
-  tool_product_design_prompt_builder_empty: 'Rellena al menos un campo antes de crear.',
+  tool_product_design_prompt_builder_empty: 'Rellena al menos un campo antes de generar.',
   tool_product_design_prompt_builder_example:
-    'Entrada: Persona = co-parents mixtos; Problem = calendario ruidoso + handoff; Wireframe = 3 pantallas; Tokens = 8pt, #2563eb, WCAG AA. Salida (Markdown): ## Task → Persona / Problem / Wireframe / Design tokens.',
+    'Entrada: Persona = madres y padres con custodia compartida por semanas, uno organiza y el otro recoge, con Android y iPhone mezclados; Problema = las agendas son ruidosas y quieren ver la semana de entregas de un vistazo con notas, sin obligar a vincular cuentas; Wireframe = tira semanal con leyenda de custodia, hoja de detalle con lista de entrega e invitación por SMS (3 pantallas); Tokens = rejilla de 8 pt, principal #2563eb, #059669 para entregas confirmadas, contraste WCAG AA en los pies de texto. Salida (Markdown): ## Role define a un coach de prompts de UX para briefs de wireframe y ## Task recoge una línea por campo.',
   tool_product_design_prompt_builder_example_title: 'Ejemplo',
   tool_product_design_prompt_builder_faq_a1:
-    'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
+    'Por defecto no. Rellenar los campos y pulsar Generar prompt ocurre solo en esta pestaña, sin ninguna petición. El borrador únicamente sale cuando pulsas Ampliar o Pulir, y entonces va a Cloudflare Workers AI; desde nuestros servidores no se reenvía a OpenAI, Google, Anthropic ni DeepSeek.',
   tool_product_design_prompt_builder_faq_a2:
-    'Modo local solo formatea aquí. Expand/Polish opcional usa Cloudflare Workers AI tras Turnstile — no llama APIs de chat.',
+    'No. El modo local solo maqueta lo que escribes en los bloques Role / Task / Constraints / Output. La IA opcional pasa por Cloudflare Workers AI después de Turnstile, no por las API de ChatGPT, Gemini, Claude o DeepSeek.',
   tool_product_design_prompt_builder_faq_a3:
-    'Constructor de plantillas de Prompt covers generic Role/Task/Constraints/Output templates. This page focuses on product design prompt builder fields with a dedicated sample and rules for this scenario.',
-  tool_product_design_prompt_builder_faq_a4: 'Sí. Completa Turnstile en el panel de IA antes de Expand o Polish.',
-  tool_product_design_prompt_builder_faq_a5: 'Yes. The JSON chip emits structured fields plus assembled prompt text for tests or config pipelines.',
+    'El generador de plantillas de prompts entrega los cuatro bloques genéricos Role / Task / Constraints / Output y sirve para cualquier tema. Aquí los campos son los de un brief de UX: persona usuaria, problema, cuántas pantallas cubre el wireframe y qué design tokens y contraste hay que respetar, con su propio ejemplo y sus límites.',
+  tool_product_design_prompt_builder_faq_a4:
+    'Sí. Completa el widget de Turnstile del panel de IA antes de pulsar Ampliar o Pulir. Sin un token válido los botones devuelven error y el modo local sigue funcionando igual.',
+  tool_product_design_prompt_builder_faq_a5:
+    'Sí. Cambia el formato de salida a JSON y obtendrás los campos por separado más el prompt ya montado, útil para guardarlo en el repositorio de requisitos o en una plantilla de revisión de diseño.',
   tool_product_design_prompt_builder_faq_a6:
-    'Yes. Copy the finished prompt into ChatGPT, Gemini, Claude, or DeepSeek. We do not split URLs per platform because the job is formatting text, not calling APIs.',
+    'Sí. El resultado es texto plano: cópialo y pégalo en ChatGPT, Gemini, Claude o DeepSeek. La página no llama a esas API en tu nombre.',
   tool_product_design_prompt_builder_faq_a7:
-    'Local: solo esta pestaña, sin subida. Expand/Polish opcional a Cloudflare Workers AI (Turnstile, límite).',
-  tool_product_design_prompt_builder_faq_q1: 'Is my prompt uploaded?',
-  tool_product_design_prompt_builder_faq_q2: 'Does this call ChatGPT or other LLM APIs?',
-  tool_product_design_prompt_builder_faq_q3: 'How is this different from Constructor de plantillas de Prompt?',
-  tool_product_design_prompt_builder_faq_q4: '¿Por qué Turnstile para IA opcional?',
-  tool_product_design_prompt_builder_faq_q5: 'Can I get JSON output?',
-  tool_product_design_prompt_builder_faq_q6: 'Can I use this with ChatGPT, Gemini, Claude, or DeepSeek?',
-  tool_product_design_prompt_builder_faq_q7: '¿Diferencia entre local y Cloudflare AI opcional?',
+    'El modo local solo ordena tus campos, no hace peticiones y no tiene cuota. Ampliar o Pulir envía el borrador a Cloudflare Workers AI (Turnstile obligatorio, uso limitado) y el texto que devuelve sustituye por completo el área de resultado: revísalo antes de copiar. Si falla o se agota la cuota, sigue con el modo local.',
+  tool_product_design_prompt_builder_faq_q1: '¿Se sube lo que escribo?',
+  tool_product_design_prompt_builder_faq_q2: '¿La página llama a ChatGPT u otras API de modelos?',
+  tool_product_design_prompt_builder_faq_q3: '¿En qué se diferencia del generador de plantillas de prompts?',
+  tool_product_design_prompt_builder_faq_q4: '¿Por qué la IA opcional pide Turnstile?',
+  tool_product_design_prompt_builder_faq_q5: '¿Puedo exportar en JSON?',
+  tool_product_design_prompt_builder_faq_q6: '¿Sirve con ChatGPT, Gemini, Claude o DeepSeek?',
+  tool_product_design_prompt_builder_faq_q7: '¿Qué cambia entre el modo local y la IA de Cloudflare?',
   tool_product_design_prompt_builder_fmt_json: 'JSON',
   tool_product_design_prompt_builder_fmt_label: 'Formato de salida',
   tool_product_design_prompt_builder_fmt_md: 'Markdown',
   tool_product_design_prompt_builder_how_body:
-    'Rellena campos de Constructor de prompts de diseño de producto, crea el prompt localmente, opcionalmente Expand/Polish con Turnstile, y pégalo en ChatGPT, Gemini, Claude o DeepSeek.',
-  tool_product_design_prompt_builder_how_item_1: 'Al abrir, el ejemplo predeterminado ya se ejecutó (Cargar ejemplo).',
-  tool_product_design_prompt_builder_how_item_2: 'Edit fields, click Build prompt, or switch to JSON if you need structured export.',
-  tool_product_design_prompt_builder_how_item_3: 'Opcional: completa Turnstile y Expand/Polish con Cloudflare Workers AI.',
-  tool_product_design_prompt_builder_how_item_4: 'Copia o descarga y pega en ChatGPT, Gemini, Claude o DeepSeek.',
-  tool_product_design_prompt_builder_how_title: 'Cómo funciona',
+    'Rellena los cuatro campos, deja que la página los monte en Markdown (o JSON) dentro del navegador y, si quieres más detalle, pide una ampliación a Cloudflare AI antes de pegar el prompt en tu chat.',
+  tool_product_design_prompt_builder_how_item_1: 'Pulsa Cargar ejemplo para rellenar el preajuste y ver un prompt montado que puedes editar.',
+  tool_product_design_prompt_builder_how_item_2:
+    'Cambia persona, problema, alcance del wireframe y design tokens y pulsa Generar prompt; pasa a JSON si necesitas exportar los campos.',
+  tool_product_design_prompt_builder_how_item_3:
+    'Opcional: completa Turnstile y pulsa Ampliar o Pulir; el texto que devuelve la IA reemplaza el resultado.',
+  tool_product_design_prompt_builder_how_item_4: 'Copia o descarga el resultado y pégalo en ChatGPT, Gemini, Claude o DeepSeek.',
+  tool_product_design_prompt_builder_how_title: 'Cómo se usa',
   tool_product_design_prompt_builder_load_sample: 'Cargar ejemplo',
-  tool_product_design_prompt_builder_persona_label: 'Persona',
-  tool_product_design_prompt_builder_persona_ph: 'Sample persona…',
-  tool_product_design_prompt_builder_platforms_lead: 'Para ChatGPT, Gemini, Claude y DeepSeek — copia el prompt terminado en cualquier chat.',
-  tool_product_design_prompt_builder_problem_label: 'Problema',
-  tool_product_design_prompt_builder_problem_ph: 'Sample problem…',
-  tool_product_design_prompt_builder_result_label: 'Salida del prompt',
+  tool_product_design_prompt_builder_persona_label: 'Persona / Perfil de usuario',
+  tool_product_design_prompt_builder_persona_ph: 'Ej.: familias con custodia compartida por semanas…',
+  tool_product_design_prompt_builder_platforms_lead: 'El prompt final es texto plano: se pega igual en ChatGPT, Gemini, Claude o DeepSeek.',
+  tool_product_design_prompt_builder_problem_label: 'Problema a resolver',
+  tool_product_design_prompt_builder_problem_ph: 'Ej.: agendas ruidosas, quieren ver la semana de un vistazo…',
+  tool_product_design_prompt_builder_result_label: 'Prompt generado',
   tool_product_design_prompt_builder_rules_body:
-    'Constructor de prompts de diseño de producto: ensamblaje local por defecto; IA opcional con límites y Turnstile.',
-  tool_product_design_prompt_builder_rules_item_1: 'Structured fields map to Role/Task/Constraints/Output blocks in Markdown export.',
-  tool_product_design_prompt_builder_rules_item_2: 'Default export is Markdown. JSON is a chip on the same canvas.',
-  tool_product_design_prompt_builder_rules_item_3: 'La IA opcional no reemplaza el modo local — revisa antes de copiar.',
+    'La página solo maqueta el encargo: no dibuja wireframes ni exporta archivos de Figma. La IA opcional tiene cuota limitada y exige Turnstile.',
+  tool_product_design_prompt_builder_rules_item_1: 'Cada campo cae en un bloque distinto del Markdown: Role, Task, Constraints y Output.',
+  tool_product_design_prompt_builder_rules_item_2:
+    'La salida por defecto es Markdown; el mismo panel puede mostrar JSON con los campos y el prompt montado.',
+  tool_product_design_prompt_builder_rules_item_3:
+    'La IA de Cloudflare no sustituye al modo local: su respuesta ocupa todo el área de resultado, así que revísala antes de copiar.',
   tool_product_design_prompt_builder_rules_item_4:
-    'This tool assembles text only; it does not run product design prompt builder engines or call chat APIs locally.',
-  tool_product_design_prompt_builder_rules_title: 'Reglas que debes conocer',
+    'Esta herramienta solo arma texto: no genera pantallas, no lee tus archivos de diseño ni llama por ti a las API de chat.',
+  tool_product_design_prompt_builder_rules_title: 'Límites que conviene saber',
   tool_product_design_prompt_builder_sec_constraints: 'Constraints',
-  tool_product_design_prompt_builder_sec_output: 'Output format',
+  tool_product_design_prompt_builder_sec_output: 'Output',
   tool_product_design_prompt_builder_sec_role: 'Role',
   tool_product_design_prompt_builder_sec_task: 'Task',
   tool_product_design_prompt_builder_status_copied: 'Copiado al portapapeles.',
   tool_product_design_prompt_builder_status_done: 'Prompt listo.',
-  tool_product_design_prompt_builder_status_working: 'Creando prompt…',
-  tool_product_design_prompt_builder_title: 'Constructor de prompts de diseño de producto — Local + IA opcional',
+  tool_product_design_prompt_builder_status_working: 'Generando el prompt…',
+  tool_product_design_prompt_builder_title: 'Generador de prompts de diseño de producto — local, con IA opcional',
   tool_product_design_prompt_builder_usecase_1:
-    'Brief listo para pegar de Constructor de prompts de diseño de producto en ChatGPT, Gemini, Claude o DeepSeek.',
-  tool_product_design_prompt_builder_usecase_2: 'Export JSON for a pipeline test, then refine with optional Cloudflare AI after Turnstile.',
+    'Pasar el objetivo de diseño que se contó en la reunión de requisitos a un prompt que se pueda pegar en el chat del equipo.',
+  tool_product_design_prompt_builder_usecase_2:
+    'Exportar JSON para guardar persona y tokens en el repositorio de requisitos y luego ampliar con Cloudflare AI si hace falta.',
   tool_product_design_prompt_builder_usecase_3:
-    'Compare with Prompt template builder when you need generic four-field templates instead of this scenario.',
-  tool_product_design_prompt_builder_usecase_4: 'Borradores sensibles en local — IA solo tras aceptar el modal.',
-  tool_product_design_prompt_builder_usecases_title: 'Buenos casos de uso',
-  tool_product_design_prompt_builder_wireframe_scope_label: 'Wireframe / Scope',
-  tool_product_design_prompt_builder_wireframe_scope_ph: 'Sample wireframe scope…',
+    'Si no necesitas campos de UX y te vale la plantilla genérica de cuatro bloques, usa el generador de plantillas de prompts.',
+  tool_product_design_prompt_builder_usecase_4:
+    'Redactar en el navegador una idea de producto aún sin publicar y decidir después si va a la IA opcional.',
+  tool_product_design_prompt_builder_usecases_title: 'Cuándo viene bien',
+  tool_product_design_prompt_builder_wireframe_scope_label: 'Wireframe / Alcance',
+  tool_product_design_prompt_builder_wireframe_scope_ph: 'Ej.: tira semanal, hoja de detalle, invitación por SMS…',
   tool_profit_margin_article: 'Calculadora de margen de beneficio — Neto u operativo',
   tool_profit_margin_calculate: 'Calcular',
   tool_profit_margin_clear: 'Limpiar',
@@ -9627,11 +9685,11 @@ const es: SiteLangDict = {
   tool_profit_margin_usecase_3: 'Contrastar con margen bruto.',
   tool_profit_margin_usecases_title: 'Cuándo usarlo',
   tool_prompt_template_builder_ai_consent_body:
-    'Este paso opcional envía tu borrador a Cloudflare Workers AI. No va a OpenAI, Google, Anthropic ni DeepSeek desde nuestros servidores.',
+    'Este paso opcional envía tu borrador actual a Cloudflare Workers AI. Desde nuestros servidores no va a OpenAI, Google, Anthropic ni DeepSeek. Sin IA el montaje local sigue funcionando igual.',
   tool_prompt_template_builder_ai_consent_cancel: 'Cancelar',
   tool_prompt_template_builder_ai_consent_ok: 'Continuar',
   tool_prompt_template_builder_ai_consent_title: '¿Enviar texto a Cloudflare Workers AI?',
-  tool_prompt_template_builder_ai_done: 'Sugerencia de IA aplicada. Revisa antes de copiar.',
+  tool_prompt_template_builder_ai_done: 'El texto de la IA se escribió completo en el resultado. Revísalo antes de copiar.',
   tool_prompt_template_builder_ai_err_generic: 'La IA falló. Tu prompt local no cambió.',
   tool_prompt_template_builder_ai_err_rate: 'Cuota de IA agotada. Modo local o prueba mañana (UTC).',
   tool_prompt_template_builder_ai_err_turnstile: 'Completa Turnstile antes de usar IA.',
@@ -9640,34 +9698,35 @@ const es: SiteLangDict = {
   tool_prompt_template_builder_ai_polish: 'Pulir con IA',
   tool_prompt_template_builder_ai_working: 'Cloudflare AI trabajando…',
   tool_prompt_template_builder_article:
-    'Convierte un borrador de prompt en una plantilla reutilizable Role / Task / Constraints / Output en esta página. Pega texto libre o rellena los campos, luego copia Markdown o JSON en ChatGPT, Gemini, Claude o DeepSeek. No se llama a ninguna API de modelo. El texto permanece en tu dispositivo y no se sube al servidor.',
+    'Convierte un borrador de prompt en una plantilla reutilizable Role / Task / Constraints / Output en esta página. Pega texto libre o rellena los campos, luego copia Markdown o JSON en ChatGPT, Gemini, Claude o DeepSeek. Por defecto la plantilla se monta en tu navegador y no llamamos a ninguna API de chat por ti; solo si pulsas Expandir o Pulir con IA se envía el borrador actual a Cloudflare Workers AI (con Turnstile y con cuota limitada).',
   tool_prompt_template_builder_build: 'Crear plantilla',
   tool_prompt_template_builder_clear: 'Limpiar',
   tool_prompt_template_builder_constraints_label: 'Restricciones',
   tool_prompt_template_builder_constraints_ph: 'Límites de tono, alcance, qué evitar…',
   tool_prompt_template_builder_copy: 'Copiar',
   tool_prompt_template_builder_desc:
-    'Constructor de plantillas de Prompt — local por defecto + Expand/Polish opcional Cloudflare AI (Turnstile); Markdown/JSON en el dispositivo.',
+    'Constructor de plantillas de prompt — montaje local en el navegador, con Expandir/Pulir opcional de Cloudflare AI (requiere Turnstile).',
   tool_prompt_template_builder_description:
-    'Proceso y ejemplo: Constructor de plantillas de Prompt — Local + IA opcional para ChatGPT, Gemini, Claude y DeepSeek: ensambla prompts localmente por defecto y opcionalmente Expand/Polish con Cloudflare Workers AI (Turnstile obligatorio, límite de uso). Ejemplo al abrir. Markdown por defecto; JSON para pipelines. Texto en el dispositivo salvo que uses IA.',
+    'Constructor de plantillas de prompt: ordena tu borrador en cuatro pasos —Role, Task, Constraints, Output— y cópialo en ChatGPT, Gemini, Claude o DeepSeek. Al abrir ya corre un ejemplo de revisión de código; exporta Markdown o cambia a JSON para pipelines. El montaje es local en el navegador y la IA de Cloudflare (Expandir/Pulir) es opcional y con cuota.',
   tool_prompt_template_builder_download: 'Descargar',
   tool_prompt_template_builder_empty: 'Añade texto libre o al menos un campo antes de crear.',
   tool_prompt_template_builder_example:
-    'Entrada (Cargar ejemplo, chip Código): Role = revisor senior (seguridad y legibilidad); Task = revisar el diff del PR que pegue; Constraints = máx. 12 viñetas. Salida (Markdown): ## Role / ## Task / ## Constraints / ## Output format — cuatro secciones listas para ChatGPT o Claude. Coincide con la primera carga.',
+    'Entrada (Cargar ejemplo, chip Código): Role = revisor senior (seguridad y legibilidad); Task = revisar el diff del PR que pegue; Constraints = máx. 12 viñetas. Salida (Markdown): ## Rol / ## Tarea / ## Restricciones / ## Formato de salida — cuatro secciones listas para ChatGPT o Claude. Coincide con la primera carga.',
   tool_prompt_template_builder_example_title: 'Ejemplo',
   tool_prompt_template_builder_faq_a1:
-    'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
+    'Por defecto la plantilla se monta en esta pestaña y no sale nada. Solo Expandir/Pulir envía el texto de ese clic a Cloudflare Workers AI; desde nuestros servidores no va a OpenAI, Google, Anthropic ni DeepSeek.',
   tool_prompt_template_builder_faq_a2:
-    'Modo local solo formatea aquí. Expand/Polish opcional usa Cloudflare Workers AI tras Turnstile — no llama APIs de chat.',
+    'El modo local solo da formato a tus campos en esta pestaña. Expandir/Pulir usa Cloudflare Workers AI tras pasar Turnstile: no abrimos ChatGPT, Gemini, Claude ni DeepSeek por ti.',
   tool_prompt_template_builder_faq_a3:
     'ChatGPT export to Markdown convierte exportaciones de chat en archivos legibles. Aquí estructuras un system prompt reutilizable — úsalos juntos cuando archives chats y luego refinés la plantilla.',
-  tool_prompt_template_builder_faq_a4: 'Sí. Completa Turnstile en el panel de IA antes de Expand o Polish.',
+  tool_prompt_template_builder_faq_a4:
+    'Sí. Completa el widget Turnstile del panel de IA antes de Expandir o Pulir; sin token válido el botón devuelve error y el modo local sigue funcionando.',
   tool_prompt_template_builder_faq_a5:
     'Las líneas que empiezan por Role:, Task:, Constraints: u Output: en el cuadro libre se separan en secciones. Los campos explícitos tienen prioridad.',
   tool_prompt_template_builder_faq_a6:
-    'Sí. Copia la plantilla creada en ChatGPT, Gemini, Claude o DeepSeek — la misma estructura de cuatro campos funciona en cada interfaz de chat. No mantenemos URLs separadas por plataforma porque el trabajo es formatear texto, no llamar APIs.',
+    'Sí. Copia la plantilla creada en ChatGPT, Gemini, Claude o DeepSeek: la misma estructura de cuatro campos funciona en cualquiera de esos chats. Esta página solo prepara el texto; no inicia sesión ni llama a la API de ninguno.',
   tool_prompt_template_builder_faq_a7:
-    'Local: solo esta pestaña, sin subida. Expand/Polish opcional a Cloudflare Workers AI (Turnstile, límite).',
+    'Local: todo se arma en esta pestaña, sin envío. Expandir/Pulir manda el borrador a Cloudflare Workers AI (Turnstile y cuota diaria) y su respuesta reemplaza el bloque de resultado. Si falla o se agota la cuota, sigue con el modo local.',
   tool_prompt_template_builder_faq_q1: '¿Se sube mi prompt?',
   tool_prompt_template_builder_faq_q2: '¿Llama a un LLM?',
   tool_prompt_template_builder_faq_q3: '¿En qué se diferencia de exportar ChatGPT a Markdown?',
@@ -9684,7 +9743,7 @@ const es: SiteLangDict = {
     'Elige un chip de escena o redacta tu propio texto, rellena Role / Task / Constraints / Output, crea la plantilla y pégala en ChatGPT, Gemini, Claude o DeepSeek.',
   tool_prompt_template_builder_how_item_1:
     'Elige Revisión de código, Película, Drama corto, Android o iOS — o pega tu borrador en el cuadro libre.',
-  tool_prompt_template_builder_how_item_2: 'Pulsa Crear plantilla (Cargar ejemplo ya ejecutó el preset de revisión de código al abrir).',
+  tool_prompt_template_builder_how_item_2: 'Pulsa Crear plantilla (pulsa Cargar ejemplo para el preset de revisión de código).',
   tool_prompt_template_builder_how_item_3: 'Cambia a JSON si necesitas {role,task,constraints,output} para código o config.',
   tool_prompt_template_builder_how_item_4: 'Copia o descarga, luego pega en ChatGPT, Gemini, Claude o DeepSeek.',
   tool_prompt_template_builder_how_title: 'Cómo funciona',
@@ -9697,12 +9756,12 @@ const es: SiteLangDict = {
   tool_prompt_template_builder_role_label: 'Role',
   tool_prompt_template_builder_role_ph: 'Quién debe actuar el modelo…',
   tool_prompt_template_builder_rules_body:
-    'Una plantilla reutilizable necesita bloques claros, precedencia de campos y límites honestos — no un segundo producto generador.',
+    'Una plantilla reutilizable necesita bloques claros, un orden de prioridad entre campos y decir sin rodeos qué no hace esta página.',
   tool_prompt_template_builder_rules_item_1: 'Cuatro bloques: Role, Task, Constraints, Output. Los vacíos no aparecen en Markdown.',
   tool_prompt_template_builder_rules_item_2: 'Los campos explícitos ganan sobre las líneas parseadas del texto libre.',
   tool_prompt_template_builder_rules_item_3: 'Salida por defecto: Markdown con ##. JSON es un chip en la misma página.',
   tool_prompt_template_builder_rules_item_4:
-    'Los chips de escena presetean campos para cine, drama corto y código móvil — mismo constructor, sin URLs separadas por plataforma.',
+    'Los chips de escena rellenan campos típicos de cine, drama corto y código móvil; después puedes seguir editándolos a mano.',
   tool_prompt_template_builder_rules_title: 'Reglas que debes esperar',
   tool_prompt_template_builder_scene_android: 'Código Android',
   tool_prompt_template_builder_scene_code: 'Revisión de código',
@@ -9710,10 +9769,10 @@ const es: SiteLangDict = {
   tool_prompt_template_builder_scene_label: 'Preset de escena',
   tool_prompt_template_builder_scene_movie: 'Largometraje',
   tool_prompt_template_builder_scene_short_drama: 'Drama corto',
-  tool_prompt_template_builder_sec_constraints: 'Constraints',
-  tool_prompt_template_builder_sec_output: 'Output format',
-  tool_prompt_template_builder_sec_role: 'Role',
-  tool_prompt_template_builder_sec_task: 'Task',
+  tool_prompt_template_builder_sec_constraints: 'Restricciones',
+  tool_prompt_template_builder_sec_output: 'Formato de salida',
+  tool_prompt_template_builder_sec_role: 'Rol',
+  tool_prompt_template_builder_sec_task: 'Tarea',
   tool_prompt_template_builder_status_copied: 'Copiado al portapapeles.',
   tool_prompt_template_builder_status_done: 'Plantilla lista.',
   tool_prompt_template_builder_status_working: 'Creando plantilla…',
@@ -9729,7 +9788,7 @@ const es: SiteLangDict = {
     'Carga el chip Película para una hoja de beats en tres actos que pegues en tu interfaz de chat preferida.',
   tool_prompt_template_builder_usecase_5: 'Carga Drama corto para ganchos y cliffhangers de serie vertical — episodios móviles estilo binge.',
   tool_prompt_template_builder_usecase_6:
-    'Carga Android o iOS para plantillas de agente de código Kotlin/Swift sin abrir cuatro páginas específicas por plataforma.',
+    'Carga Android o iOS para plantillas de agente de código con convenciones Kotlin/Swift, y añade encima el estilo de tu equipo.',
   tool_prompt_template_builder_usecases_title: 'Buenos encajes',
   tool_protect_pdf_article:
     'Proteja un PDF con contraseña en el navegador antes de enviar adjuntos sensibles. El archivo no sale del dispositivo.',
@@ -9895,7 +9954,7 @@ const es: SiteLangDict = {
     'Muestra: Googlebot con Allow: / (totalmente habilitado), GPTBot con Disallow: / (bloqueado) y una línea Sitemap apuntando a /sitemap.xml. La salida refleja este formato: un grupo por rastreador, línea en blanco entre grupos y sitemap al final.',
   tool_robots_example_title: 'Ejemplo',
   tool_robots_faq_a1:
-    'Le indica a ese rastreador no buscar ninguna URL bajo la raíz del sitio. Si Googlebot recibe Disallow: /, tus páginas pueden desaparecer de Google Search. Para una ruta de staging usa Disallow: /private/ en su lugar.',
+    'Le indica a ese rastreador que no busque ninguna URL bajo la raíz del sitio. Si Googlebot recibe Disallow: /, tus páginas pueden desaparecer de Google Search. Ojo: Disallow frena el rastreo, no la indexación; una URL bloqueada a la que otros enlazan todavía puede listarse sin descripción, así que para sacarla del índice deja la página rastreable y añade noindex. Para una ruta de staging usa Disallow: /private/ en su lugar.',
   tool_robots_faq_a2:
     'Crea un grupo con el User-agent del rastreador (por ejemplo GPTBot, ClaudeBot, Google-Extended, CCBot, PerplexityBot) y añade Disallow: /. Consulta la documentación oficial del rastreador, ya que los rastreadores de IA actualizan sus user-agents y rangos IP de vez en cuando.',
   tool_robots_faq_a3:
@@ -9922,15 +9981,15 @@ const es: SiteLangDict = {
   tool_robots_references:
     'RFC 9309 Protocolo de exclusión de robots; Google Search Central — robots.txt; Google Search Central — Gestionar rastreadores de IA.',
   tool_robots_rules_body:
-    'Las reglas de robots.txt son prefijos de ruta, no patrones, y un rastreador aplica el último grupo que coincide en el archivo. Estas son las reglas que sigue este generador.',
+    'Las reglas de robots.txt son prefijos de ruta, no patrones, y un rastreador obedece un solo grupo: aquel cuyo User-agent coincide de forma más específica. Estas son las reglas que sigue este generador.',
   tool_robots_rules_item_1:
-    'Orden de grupos: una línea User-agent comienza un grupo para ese rastreador; una línea en blanco lo termina. El último grupo que coincide con un rastreador manda.',
+    'Elección de grupo: el rastreador obedece al grupo con la coincidencia de User-agent más específica; su propio nombre gana a *, y el orden en el archivo no decide. Varias líneas User-agent del mismo rastreador se fusionan en un único grupo (RFC 9309).',
   tool_robots_rules_item_2:
     'Coincidencia por prefijo: Allow y Disallow coinciden con prefijos de ruta, no subcadenas ni regex. Solo * y $ son especiales (RFC 9309).',
   tool_robots_rules_item_3:
-    'Disallow: / bloquea a ese agente en todo el sitio. Disallow con valor vacío permite todo para ese agente.',
+    'Prioridad dentro del grupo: gana la ruta coincidente más larga y, cuando un Allow y un Disallow coinciden con la misma longitud, gana Allow. Así, Disallow: /admin/ junto a Allow: /admin/public/ deja rastreable la subcarpeta pública.',
   tool_robots_rules_item_4:
-    'Sitemap es una extensión, no parte de RFC 9309. No distingue mayúsculas y puede ir en cualquier lugar, aunque se suele colocar al final.',
+    'Sitio completo y línea Sitemap: Disallow: / bloquea a ese agente en todas las URLs, mientras que un Disallow con valor vacío lo permite todo. Sitemap: es una extensión ajena a RFC 9309, no distingue mayúsculas y puede ir en cualquier lugar; este generador la coloca al final.',
   tool_robots_rules_title: 'Reglas de sintaxis importantes',
   tool_robots_sample: 'Ejemplo',
   tool_robots_sitemap_label: 'URL de Sitemap (opcional)',
@@ -9939,7 +9998,7 @@ const es: SiteLangDict = {
   tool_robots_usecase_1:
     'Sitios nuevos: genera un robots.txt inicial que mantiene habilitados los buscadores y oculta rutas de staging privadas.',
   tool_robots_usecase_2:
-    'Control de rastreadores de IA: bloquea GPTBot, ClaudeBot, Google-Extended, CCBot o PerplexityBot para entrenamiento o extracción de resúmenes sin tocar Googlebot.',
+    'Control de rastreadores de IA: da a GPTBot, ClaudeBot, Google-Extended, CCBot o PerplexityBot su propio grupo con Disallow mientras Googlebot sigue rastreando. Ten en cuenta que Google-Extended cubre Gemini y el grounding de Vertex AI: las vistas creadas por IA en la Búsqueda siguen usando Googlebot.',
   tool_robots_usecase_3:
     'Descubrimiento: combina robots.txt con una línea Sitemap para que los rastreadores encuentren tu sitemap.',
   tool_robots_usecases_title: 'Para qué sirve',
@@ -10338,12 +10397,12 @@ const es: SiteLangDict = {
   tool_serp_faq_a2:
     'No. Los viewports de escritorio y móvil varían por dispositivo y fuente. Esta herramienta usa los límites comunes de ~600px en escritorio y ~460px en móvil como estimación para planificar, no como garantía de cómo Google renderizará tu página.',
   tool_serp_faq_a3:
-    'Es una estimación local en la misma dirección. Para ver el resultado final, abre tu página en la inspección de URLs de Search Console o en la prueba de resultados enriquecidos, que renderizan con el entorno real de Google.',
+    'No. La inspección de URLs informa del estado de rastreo e indexación con una captura de la página renderizada, y la prueba de resultados enriquecidos comprueba la elegibilidad de los datos estructurados: ninguna previsualiza el texto del snippet. Además Google reescribe el título del enlace cuando encaja mal con la consulta, así que la única comprobación real es buscar la URL ya publicada.',
   tool_serp_faq_a4:
     'No. Todo el texto se queda en la pestaña de tu navegador y nunca se envía a un servidor. Al cerrar la pestaña, todo desaparece.',
   tool_serp_faq_q1: '¿Por qué un título CJK de 30 caracteres se corta antes que uno en inglés de 60?',
   tool_serp_faq_q2: '¿Son exactos los límites de píxeles?',
-  tool_serp_faq_q3: '¿Coincide con la vista móvil de Search Console?',
+  tool_serp_faq_q3: '¿Alguna herramienta de Google enseña el snippet definitivo?',
   tool_serp_faq_q4: '¿Se sube mi título a algún sitio?',
   tool_serp_fit: 'Cabe en el viewport',
   tool_serp_home_desc: 'Un título que se corta te hace perder clics en Google — compruébalo antes de publicar.',
@@ -10392,96 +10451,104 @@ const es: SiteLangDict = {
   tool_share_networks_label: 'Compartir en',
   tool_share_title: 'Comparte esta herramienta',
   tool_short_drama_prompt_generator_ai_consent_body:
-    'Este paso opcional envía tu borrador a Cloudflare Workers AI. No va a OpenAI, Google, Anthropic ni DeepSeek desde nuestros servidores.',
+    'Este paso es opcional: envía el borrador que tienes ahora en los campos a Cloudflare Workers AI para una inferencia. No lo reenviamos desde nuestros servidores a OpenAI, Google, Anthropic ni DeepSeek. Sin usar la IA, el prompt se sigue montando en tu navegador.',
   tool_short_drama_prompt_generator_ai_consent_cancel: 'Cancelar',
   tool_short_drama_prompt_generator_ai_consent_ok: 'Continuar',
-  tool_short_drama_prompt_generator_ai_consent_title: '¿Enviar texto a Cloudflare Workers AI?',
-  tool_short_drama_prompt_generator_ai_done: 'Sugerencia de IA aplicada. Revisa antes de copiar.',
-  tool_short_drama_prompt_generator_ai_err_generic: 'La IA falló. Tu prompt local no cambió.',
-  tool_short_drama_prompt_generator_ai_err_rate: 'Cuota de IA agotada. Modo local o prueba mañana (UTC).',
-  tool_short_drama_prompt_generator_ai_err_turnstile: 'Completa Turnstile antes de usar IA.',
-  tool_short_drama_prompt_generator_ai_expand: 'Expandir con IA',
-  tool_short_drama_prompt_generator_ai_panel_label: 'Cloudflare AI opcional (Turnstile)',
+  tool_short_drama_prompt_generator_ai_consent_title: '¿Enviar el borrador a Cloudflare Workers AI?',
+  tool_short_drama_prompt_generator_ai_done: 'El texto de la IA se escribió completo en la salida. Revísalo antes de copiar.',
+  tool_short_drama_prompt_generator_ai_err_generic: 'La IA falló esta vez; la salida sigue igual.',
+  tool_short_drama_prompt_generator_ai_err_rate: 'Se agotó la cuota de IA. Sigue montando el prompt aquí o vuelve mañana (UTC).',
+  tool_short_drama_prompt_generator_ai_err_turnstile: 'Completa la verificación de Turnstile antes de usar la IA.',
+  tool_short_drama_prompt_generator_ai_expand: 'Ampliar con IA',
+  tool_short_drama_prompt_generator_ai_panel_label: 'Opcional: Cloudflare AI (requiere Turnstile)',
   tool_short_drama_prompt_generator_ai_polish: 'Pulir con IA',
-  tool_short_drama_prompt_generator_ai_working: 'Cloudflare AI trabajando…',
+  tool_short_drama_prompt_generator_ai_working: 'Cloudflare AI está trabajando…',
   tool_short_drama_prompt_generator_article:
-    'Crea prompts listos de Generador de prompts de drama corto aquí. Rellena campos y copia Markdown o JSON a ChatGPT, Gemini, Claude o DeepSeek. Local por defecto; Expand/Polish opcional con Cloudflare Workers AI (Turnstile).',
-  tool_short_drama_prompt_generator_build: 'Crear prompt',
-  tool_short_drama_prompt_generator_clear: 'Limpiar',
+    'Indica cuántos episodios y de qué duración, el gancho de apertura, el cliffhanger de cada cierre, el formato vertical y el género: la página lo ordena en el navegador y devuelve un prompt listo para dar de comer al modelo, en Markdown o JSON, que copias en ChatGPT, Gemini, Claude o DeepSeek para que escriba episodio a episodio. Por defecto no se sube nada; el borrador solo viaja a Cloudflare Workers AI si pulsas Ampliar o Pulir, tras pasar Turnstile. Aquí no se genera vídeo, solo texto.',
+  tool_short_drama_prompt_generator_build: 'Generar prompt',
+  tool_short_drama_prompt_generator_clear: 'Vaciar',
   tool_short_drama_prompt_generator_cliffhanger_label: 'Cliffhanger',
-  tool_short_drama_prompt_generator_cliffhanger_ph: 'Sample cliffhanger…',
+  tool_short_drama_prompt_generator_cliffhanger_ph: 'Por ejemplo: el episodio 6 cierra borrando el mensaje…',
   tool_short_drama_prompt_generator_copy: 'Copiar',
   tool_short_drama_prompt_generator_desc:
-    'Generador de prompts de drama corto — local por defecto + Expand/Polish opcional Cloudflare AI (Turnstile); Markdown/JSON en el dispositivo.',
+    'Generador de prompts para microdramas verticales: episodios, gancho, cliffhanger y formato 9:16 ordenados en Markdown o JSON en el navegador; IA de Cloudflare opcional con Turnstile.',
   tool_short_drama_prompt_generator_description:
-    'Proceso y ejemplo: Generador de prompts de drama corto — Local + IA opcional para ChatGPT, Gemini, Claude y DeepSeek: ensambla prompts localmente por defecto y opcionalmente Expand/Polish con Cloudflare Workers AI (Turnstile obligatorio, límite de uso). Ejemplo al abrir. Markdown por defecto; JSON para pipelines. Texto en el dispositivo salvo que uses IA.',
+    'Generador de prompts para microdramas verticales: rellenas número y duración de episodios, el gancho de los dos primeros segundos, el cliffhanger de cada cierre, el formato vertical y el género, y la página lo reparte en los bloques Role, Task, Constraints y Output para que ChatGPT, Gemini, Claude o DeepSeek escriban con ritmo por capítulos. Markdown por defecto y JSON para tu hoja de episodios; al entrar ya se cargó el ejemplo de 12 × 75 s con un secreto laboral. Si un gancho queda flojo, Ampliar o Pulir manda el borrador a Cloudflare Workers AI (Turnstile y cuota).',
   tool_short_drama_prompt_generator_download: 'Descargar',
-  tool_short_drama_prompt_generator_empty: 'Rellena al menos un campo antes de crear.',
-  tool_short_drama_prompt_generator_episodes_label: 'Episodes',
-  tool_short_drama_prompt_generator_episodes_ph: 'Sample episodes…',
+  tool_short_drama_prompt_generator_empty: 'Rellena al menos un campo antes de generar el prompt.',
+  tool_short_drama_prompt_generator_episodes_label: 'Episodios y duración',
+  tool_short_drama_prompt_generator_episodes_ph: 'Por ejemplo: 12 × 75 s…',
   tool_short_drama_prompt_generator_example:
-    'Entrada: 12 × 75s; Hook = filtración payroll + CEO reconoce voz; Cliffhanger = ep.6 borra audio → ep.7 ascensor; Format = 9:16. Salida (Markdown): ## Task con Episodes / Hook / Cliffhanger / Vertical / Genre.',
+    'Entrada: episodios = 12 × 75 s; gancho = una becaria destapa una filtración de nóminas y el jefe reconoce su voz en un mensaje de hace diez años sobre una custodia; cliffhanger = el episodio 6 cierra con el jefe borrando el mensaje a medio escuchar y el 7 abre con una mirada muda en el ascensor; formato = 9:16 con subtítulos incrustados y una apertura que frene el dedo en los dos primeros segundos. Salida (Markdown): el bloque ## Task enumera Episodes, Hook, Cliffhanger, Vertical / Format y Genre para una serie vertical.',
   tool_short_drama_prompt_generator_example_title: 'Ejemplo',
   tool_short_drama_prompt_generator_faq_a1:
-    'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
+    'El texto se ordena en esta pestaña del navegador, así que por defecto no se sube nada. Solo cuando pulsas Ampliar o Pulir se envía el borrador actual a Cloudflare Workers AI; no lo reenviamos desde nuestros servidores a OpenAI, Google, Anthropic ni DeepSeek.',
   tool_short_drama_prompt_generator_faq_a2:
-    'Modo local solo formatea aquí. Expand/Polish opcional usa Cloudflare Workers AI tras Turnstile — no llama APIs de chat.',
+    'El modo local no llama a ningún modelo: reparte los episodios, el gancho, el cliffhanger, el formato y el género en los bloques Role, Task, Constraints y Output. Ampliar y Pulir usan Cloudflare Workers AI después de pasar Turnstile, y no llaman a las APIs de ChatGPT, Gemini, Claude ni DeepSeek desde nuestros servidores.',
   tool_short_drama_prompt_generator_faq_a3:
-    'Constructor de plantillas de Prompt covers generic Role/Task/Constraints/Output templates. This page focuses on short drama prompt generator fields with a dedicated sample and rules for this scenario.',
-  tool_short_drama_prompt_generator_faq_a4: 'Sí. Completa Turnstile en el panel de IA antes de Expand o Polish.',
-  tool_short_drama_prompt_generator_faq_a5: 'Yes. The JSON chip emits structured fields plus assembled prompt text for tests or config pipelines.',
+    'El generador de plantillas de prompts da la estructura genérica de cuatro bloques, sirva el tema que sea. Aquí los campos son los de una serie vertical —episodios y duración, gancho, cliffhanger, formato y género—, con un ejemplo completo al entrar y unas reglas centradas en lo que falla en el consumo por capítulos.',
+  tool_short_drama_prompt_generator_faq_a4:
+    'Turnstile frena los scripts automáticos para que la cuota gratuita quede para personas. Complétalo en el panel de IA antes de pulsar Ampliar o Pulir; sin un token válido esos botones dan error y el montaje en el navegador sigue funcionando.',
+  tool_short_drama_prompt_generator_faq_a5:
+    'Sí. Al cambiar a JSON la misma salida trae los campos estructurados y el prompt ya montado, cómodo para guardar cada episodio en una hoja y revisar si los ganchos y los cliffhangers se repiten.',
   tool_short_drama_prompt_generator_faq_a6:
-    'Yes. Copy the finished prompt into ChatGPT, Gemini, Claude, or DeepSeek. We do not split URLs per platform because the job is formatting text, not calling APIs.',
+    'Sí. Copia el resultado y pégalo en el chat que uses. Esta página solo ordena la estructura por episodios y no llama a ninguna API, así que no hay una URL distinta por plataforma.',
   tool_short_drama_prompt_generator_faq_a7:
-    'Local: solo esta pestaña, sin subida. Expand/Polish opcional a Cloudflare Workers AI (Turnstile, límite).',
-  tool_short_drama_prompt_generator_faq_q1: 'Is my prompt uploaded?',
-  tool_short_drama_prompt_generator_faq_q2: 'Does this call ChatGPT or other LLM APIs?',
-  tool_short_drama_prompt_generator_faq_q3: 'How is this different from Constructor de plantillas de Prompt?',
-  tool_short_drama_prompt_generator_faq_q4: '¿Por qué Turnstile para IA opcional?',
-  tool_short_drama_prompt_generator_faq_q5: 'Can I get JSON output?',
-  tool_short_drama_prompt_generator_faq_q6: 'Can I use this with ChatGPT, Gemini, Claude, or DeepSeek?',
-  tool_short_drama_prompt_generator_faq_q7: '¿Diferencia entre local y Cloudflare AI opcional?',
+    'En local todo se ordena en esta pestaña, sin salir del navegador. Ampliar o Pulir manda el borrador a Cloudflare Workers AI (hace falta Turnstile y hay límites de frecuencia y de cuota diaria) y el texto que vuelve se escribe completo en la salida, encima del borrador que estabas viendo: léelo antes de copiar para que una reescritura no te cambie el orden de los cliffhangers. Si falla o se agota la cuota, sigue con el modo local.',
+  tool_short_drama_prompt_generator_faq_q1: '¿Se sube la trama que escribo?',
+  tool_short_drama_prompt_generator_faq_q2: '¿Esta página llama a la API de ChatGPT o de otros modelos?',
+  tool_short_drama_prompt_generator_faq_q3: '¿En qué se diferencia del generador de plantillas de prompts?',
+  tool_short_drama_prompt_generator_faq_q4: '¿Por qué hay que pasar Turnstile para usar la IA?',
+  tool_short_drama_prompt_generator_faq_q5: '¿Puedo sacar la salida en JSON?',
+  tool_short_drama_prompt_generator_faq_q6: '¿Sirve con ChatGPT, Gemini, Claude o DeepSeek?',
+  tool_short_drama_prompt_generator_faq_q7: '¿Qué diferencia hay entre el modo local y la IA opcional de Cloudflare?',
   tool_short_drama_prompt_generator_fmt_json: 'JSON',
   tool_short_drama_prompt_generator_fmt_label: 'Formato de salida',
   tool_short_drama_prompt_generator_fmt_md: 'Markdown',
   tool_short_drama_prompt_generator_genre_label: 'Género',
-  tool_short_drama_prompt_generator_genre_ph: 'Sample genre…',
-  tool_short_drama_prompt_generator_hook_label: 'Gancho',
-  tool_short_drama_prompt_generator_hook_ph: 'Sample hook…',
+  tool_short_drama_prompt_generator_genre_ph: 'Por ejemplo: melodrama de oficina con secreto familiar…',
+  tool_short_drama_prompt_generator_hook_label: 'Gancho de apertura',
+  tool_short_drama_prompt_generator_hook_ph: 'Por ejemplo: una becaria destapa una filtración de nóminas…',
   tool_short_drama_prompt_generator_how_body:
-    'Rellena campos de Generador de prompts de drama corto, crea el prompt localmente, opcionalmente Expand/Polish con Turnstile, y pégalo en ChatGPT, Gemini, Claude o DeepSeek.',
-  tool_short_drama_prompt_generator_how_item_1: 'Al abrir, el ejemplo predeterminado ya se ejecutó (Cargar ejemplo).',
-  tool_short_drama_prompt_generator_how_item_2: 'Edit fields, click Build prompt, or switch to JSON if you need structured export.',
-  tool_short_drama_prompt_generator_how_item_3: 'Opcional: completa Turnstile y Expand/Polish con Cloudflare Workers AI.',
-  tool_short_drama_prompt_generator_how_item_4: 'Copia o descarga y pega en ChatGPT, Gemini, Claude o DeepSeek.',
-  tool_short_drama_prompt_generator_how_title: 'Cómo funciona',
+    'Rellena episodios, gancho y cliffhanger, genera el prompt y pégalo en ChatGPT, Gemini, Claude o DeepSeek para que escriba capítulo a capítulo; si un gancho queda flojo, usa Ampliar o Pulir con la IA opcional de Cloudflare.',
+  tool_short_drama_prompt_generator_how_item_1: 'Pulsa Cargar ejemplo para el preset por defecto.',
+  tool_short_drama_prompt_generator_how_item_2:
+    'Cambia episodios y duración, gancho, cliffhanger, formato vertical y género y pulsa Generar prompt; pasa a JSON si lo necesitas estructurado.',
+  tool_short_drama_prompt_generator_how_item_3:
+    'Opcional: completa Turnstile en el panel de IA y pulsa Ampliar o Pulir; el texto que vuelva se escribe en la salida.',
+  tool_short_drama_prompt_generator_how_item_4:
+    'Copia o descarga y pega en ChatGPT, Gemini, Claude o DeepSeek para que el modelo continúe con ese reparto por episodios.',
+  tool_short_drama_prompt_generator_how_title: 'Cómo se usa',
   tool_short_drama_prompt_generator_load_sample: 'Cargar ejemplo',
-  tool_short_drama_prompt_generator_platforms_lead: 'Para ChatGPT, Gemini, Claude y DeepSeek — copia el prompt terminado en cualquier chat.',
-  tool_short_drama_prompt_generator_result_label: 'Salida del prompt',
+  tool_short_drama_prompt_generator_platforms_lead: 'La salida se pega tal cual en el chat de ChatGPT, Gemini, Claude o DeepSeek.',
+  tool_short_drama_prompt_generator_result_label: 'Prompt generado',
   tool_short_drama_prompt_generator_rules_body:
-    'Generador de prompts de drama corto: ensamblaje local por defecto; IA opcional con límites y Turnstile.',
-  tool_short_drama_prompt_generator_rules_item_1: 'Structured fields map to Role/Task/Constraints/Output blocks in Markdown export.',
-  tool_short_drama_prompt_generator_rules_item_2: 'Default export is Markdown. JSON is a chip on the same canvas.',
-  tool_short_drama_prompt_generator_rules_item_3: 'La IA opcional no reemplaza el modo local — revisa antes de copiar.',
-  tool_short_drama_prompt_generator_rules_item_4:
-    'This tool assembles text only; it does not run short drama prompt generator engines or call chat APIs locally.',
-  tool_short_drama_prompt_generator_rules_title: 'Reglas que debes conocer',
+    'Se organiza con el ritmo del consumo vertical: los episodios y su duración fijan la capacidad, el gancho decide si el dedo se detiene en los dos primeros segundos, el cliffhanger empuja al capítulo siguiente y el formato deja claros el encuadre y los subtítulos. El montaje en el navegador es lo que ocurre por defecto; la IA opcional tiene límites de uso y pide Turnstile.',
+  tool_short_drama_prompt_generator_rules_item_1: 'Cada campo del formulario cae en uno de los bloques Role, Task, Constraints y Output del Markdown.',
+  tool_short_drama_prompt_generator_rules_item_2: 'La exportación por defecto es Markdown; JSON es un botón sobre la misma salida.',
+  tool_short_drama_prompt_generator_rules_item_3:
+    'La IA opcional es un paso añadido, no un sustituto: el modo local siempre funciona y el texto de la IA reemplaza por completo lo que había en la salida, así que revísalo antes de copiar.',
+  tool_short_drama_prompt_generator_rules_item_4: 'Esta página solo arma texto: no genera vídeo ni ejecuta ningún modelo o API de chat en tu navegador.',
+  tool_short_drama_prompt_generator_rules_title: 'Lo que hace y lo que no',
   tool_short_drama_prompt_generator_sec_constraints: 'Constraints',
-  tool_short_drama_prompt_generator_sec_output: 'Output format',
+  tool_short_drama_prompt_generator_sec_output: 'Output',
   tool_short_drama_prompt_generator_sec_role: 'Role',
   tool_short_drama_prompt_generator_sec_task: 'Task',
   tool_short_drama_prompt_generator_status_copied: 'Copiado al portapapeles.',
   tool_short_drama_prompt_generator_status_done: 'Prompt listo.',
-  tool_short_drama_prompt_generator_status_working: 'Creando prompt…',
-  tool_short_drama_prompt_generator_title: 'Generador de prompts de drama corto — Local + IA opcional',
-  tool_short_drama_prompt_generator_usecase_1: 'Brief listo para pegar de Generador de prompts de drama corto en ChatGPT, Gemini, Claude o DeepSeek.',
-  tool_short_drama_prompt_generator_usecase_2: 'Export JSON for a pipeline test, then refine with optional Cloudflare AI after Turnstile.',
+  tool_short_drama_prompt_generator_status_working: 'Generando el prompt…',
+  tool_short_drama_prompt_generator_title: 'Generador de prompts para microdramas verticales — ganchos y cliffhangers en el navegador',
+  tool_short_drama_prompt_generator_usecase_1:
+    'Antes de una reunión, dejar los episodios, el gancho y los cliffhangers en un prompt que se pega directo en ChatGPT, Gemini, Claude o DeepSeek.',
+  tool_short_drama_prompt_generator_usecase_2:
+    'Exportar el JSON y guardar el gancho y el cliffhanger de cada episodio como campos en una hoja, para revisar si se repite el mismo recurso.',
   tool_short_drama_prompt_generator_usecase_3:
-    'Compare with Prompt template builder when you need generic four-field templates instead of this scenario.',
-  tool_short_drama_prompt_generator_usecase_4: 'Borradores sensibles en local — IA solo tras aceptar el modal.',
-  tool_short_drama_prompt_generator_usecases_title: 'Buenos casos de uso',
-  tool_short_drama_prompt_generator_vertical_format_label: 'Vertical / Format',
-  tool_short_drama_prompt_generator_vertical_format_ph: 'Sample vertical format…',
+    'Si lo que necesitas es la plantilla genérica de cuatro bloques y no los campos de una serie vertical, usa el generador de plantillas de prompts.',
+  tool_short_drama_prompt_generator_usecase_4:
+    'Con un proyecto que todavía no se ha estrenado, quédate en el modo local: el texto solo sale de tu navegador si aceptas el aviso de la IA.',
+  tool_short_drama_prompt_generator_usecases_title: 'Cuándo viene bien',
+  tool_short_drama_prompt_generator_vertical_format_label: 'Formato vertical',
+  tool_short_drama_prompt_generator_vertical_format_ph: 'Por ejemplo: 9:16, subtítulos incrustados, arranque en 2 s…',
   tool_sign_pdf_document_apply: 'Sellar y previsualizar',
   tool_sign_pdf_document_article:
     'Sella un nombre dibujado o escrito en una página PDF. Los archivos no salen del dispositivo; no se suben al servidor.',
@@ -10598,7 +10665,7 @@ const es: SiteLangDict = {
   tool_sitemap_copied: 'Copiado',
   tool_sitemap_copy: 'Copiar',
   tool_sitemap_description:
-    'El sitemap ayuda a Google a descubrir e indexar más rápido. Pega URLs https, previsualiza sitemap.xml válido y cópialo a la raíz. Ejemplo: 3 URLs → 3 entradas.',
+    'El sitemap le dice a Google qué URLs existen, sobre todo las que el enlazado interno esconde. Pega URLs https, previsualiza el sitemap.xml y cópialo a la raíz. Ejemplo: 3 URLs → 3 entradas.',
   tool_sitemap_download: 'Descargar',
   tool_sitemap_example:
     'Entrada de muestra: https://example.com/ y https://example.com/products con lastmod 2026-08-01, más https://example.com/about — la salida es un urlset con tres elementos url, el del medio con lastmod.',
@@ -10619,7 +10686,7 @@ const es: SiteLangDict = {
     'Cada línea: URL, o URL | lastmod (yyyy-MM-dd), o URL | lastmod | changefreq | priority. Ejemplo: https://example.com/page | 2026-08-01 | weekly | 0.8',
   tool_sitemap_generate: 'Generar',
   tool_sitemap_home_desc:
-    'Ayuda a Google a descubrir e indexar cada página que quieres posicionar: convierte una lista de URLs en un sitemap.xml válido con lastmod, changefreq y priority, sin salir del navegador.',
+    'Ayuda a Google a descubrir las páginas a las que tus enlaces internos no llegan: convierte una lista de URLs en un sitemap.xml válido con lastmod, changefreq y priority, sin salir del navegador.',
   tool_sitemap_home_title: 'Generador de sitemap XML',
   tool_sitemap_how_body:
     'Pega tu lista de URLs, una por línea. Tras una barra vertical puedes añadir lastmod (yyyy-MM-dd), changefreq y priority. La página analiza cada línea, escapa los caracteres reservados, comprueba que la URL empiece por http(s) y construye un urlset según el protocolo. Copia el XML a la raíz del sitio y refiérelo desde robots.txt o envíalo en Search Console.',
@@ -10644,7 +10711,7 @@ const es: SiteLangDict = {
   tool_sitemap_urls_ph: 'https://example.com/page',
   tool_sitemap_usecase_1: 'Sitios nuevos: genera tu primer sitemap.xml desde la lista de URLs y envíalo en Search Console.',
   tool_sitemap_usecase_2:
-    'Contenido actualizado: añade lastmod a páginas recién cambiadas para que los rastreadores recojan la señal de frescura.',
+    'Contenido actualizado: pon lastmod solo en las páginas que cambiaron de verdad. Google se fía de lastmod únicamente cuando es coherente y exacto en todo el archivo, así que estampar la fecha de hoy en cada URL hace que ignore el campo.',
   tool_sitemap_usecase_3:
     'Descubrimiento: apunta robots.txt a tu sitemap para que los rastreadores lo encuentren sin esperar el envío.',
   tool_sitemap_usecases_title: 'Casos de uso',
@@ -10656,7 +10723,7 @@ const es: SiteLangDict = {
   tool_sketch_prompt_generator_ai_consent_cancel: 'Cancelar',
   tool_sketch_prompt_generator_ai_consent_ok: 'Continuar',
   tool_sketch_prompt_generator_ai_consent_title: '¿Enviar texto a Cloudflare Workers AI?',
-  tool_sketch_prompt_generator_ai_done: 'Sugerencia de IA aplicada. Revísala antes de copiar.',
+  tool_sketch_prompt_generator_ai_done: 'El texto de la IA se escribió entero en la salida. Revísalo antes de copiar.',
   tool_sketch_prompt_generator_ai_err_generic: 'Falló la IA. El prompt local no cambió.',
   tool_sketch_prompt_generator_ai_err_rate: 'Cuota de IA agotada. Usa modo local o prueba mañana (UTC).',
   tool_sketch_prompt_generator_ai_err_turnstile: 'Completa Turnstile antes de usar la IA.',
@@ -10667,18 +10734,18 @@ const es: SiteLangDict = {
   tool_sketch_prompt_generator_artboard_label: 'Artboards / páginas',
   tool_sketch_prompt_generator_artboard_ph: 'p. ej. iPhone 14 390×844, Page Auth…',
   tool_sketch_prompt_generator_article:
-    'Arma prompts listos para pegar que indiquen a ChatGPT, Gemini, Claude o DeepSeek cómo operar Sketch.app: Artboards, Symbols, estilos compartidos y exportación. Completa los campos y copia Markdown o JSON. El ensamblado local permanece en el navegador; Expand/Polish opcional usa Cloudflare Workers AI con Turnstile. El texto no sale del dispositivo salvo que actives IA.',
+    'Arma prompts listos para pegar que indiquen a ChatGPT, Gemini, Claude o DeepSeek cómo operar Sketch.app: Artboards, Symbols, estilos compartidos y exportación. Completa los campos y copia Markdown o JSON. Por defecto el prompt se arma en tu navegador; solo al pulsar Ampliar o Pulir se envía el borrador actual a Cloudflare Workers AI (con Turnstile y límites de uso), y su respuesta reemplaza por completo el bloque de salida.',
   tool_sketch_prompt_generator_build: 'Generar prompt',
   tool_sketch_prompt_generator_clear: 'Limpiar',
   tool_sketch_prompt_generator_copy: 'Copiar',
   tool_sketch_prompt_generator_desc:
-    'Generador de prompts Sketch.app — local por defecto + Expand/Polish opcional con Cloudflare AI (Turnstile); Markdown/JSON en el dispositivo.',
+    'Generador de prompts Sketch.app — arma Artboards, Symbols y pasos de exportación en el navegador; Ampliar/Pulir opcional con Cloudflare AI (Turnstile).',
   tool_sketch_prompt_generator_description:
-    'Generador de prompts Sketch.app — Local + IA opcional para ChatGPT, Gemini, Claude y DeepSeek: ensambla prompts estructurados para pasos de diseño en Sketch.app (Artboards, Symbols, exportación) en el navegador; opcionalmente Expand/Polish con Cloudflare Workers AI (Turnstile, límite). Ejemplo al abrir. Markdown por defecto; JSON para pipelines. El texto queda en el dispositivo salvo IA.',
+    'Generador de prompts Sketch.app — Local + IA opcional para ChatGPT, Gemini, Claude y DeepSeek: rellena objetivo, Artboards, Symbols y exportación, y el navegador ensambla un prompt estructurado con los pasos de diseño en Sketch.app. Al abrir ya corre un ejemplo editable; después puedes Ampliar o Pulir con Cloudflare Workers AI (requiere Turnstile y tiene cuota). Markdown por defecto; JSON para pipelines.',
   tool_sketch_prompt_generator_download: 'Descargar',
   tool_sketch_prompt_generator_empty: 'Rellena al menos un campo antes de generar.',
   tool_sketch_prompt_generator_example:
-    'Entrada: Objetivo = pantalla de login en Sketch.app; Artboards = iPhone 14 390×844; Symbols = Button/Primary + Input; Exportación = PNG 1x/2x/3x + PDF. Salida (Markdown): ## Role → asistente de Sketch.app; ## Task → checklist numerada.',
+    'Entrada: Objetivo = pantalla de login en Sketch.app; Artboards = iPhone 14 390×844; Symbols = Button/Primary + Input; Exportación = PNG 1x/2x/3x + PDF. Salida (Markdown): ## Rol → asistente de Sketch.app; ## Tarea → checklist numerada.',
   tool_sketch_prompt_generator_example_title: 'Ejemplo',
   tool_sketch_prompt_generator_export_label: 'Exportación / entrega',
   tool_sketch_prompt_generator_export_ph: 'p. ej. PNG 1x/2x/3x, revisión PDF…',
@@ -10696,7 +10763,7 @@ const es: SiteLangDict = {
   tool_sketch_prompt_generator_faq_a7:
     'Sí. Copia el prompt a ChatGPT, Gemini, Claude o DeepSeek para que el chat te guíe por menús de Sketch.app. Solo formateamos texto; no ejecutamos Sketch.',
   tool_sketch_prompt_generator_faq_a8:
-    'Local formatea en la pestaña sin subir. Expand/Polish envía el texto a Cloudflare Workers AI (límite + Turnstile). Si falla la cuota, sigue en local.',
+    'En local todo se formatea en esta pestaña y no sale nada. Ampliar/Pulir manda el borrador a Cloudflare Workers AI (Turnstile y cuota diaria) y su respuesta reemplaza entero el bloque de salida. Si falla o se agota la cuota, sigue en local.',
   tool_sketch_prompt_generator_faq_q1: '¿Se sube mi prompt?',
   tool_sketch_prompt_generator_faq_q2: '¿Llama a ChatGPT o controla Sketch.app a distancia?',
   tool_sketch_prompt_generator_faq_q3: '¿En qué se diferencia del constructor de plantillas Prompt?',
@@ -11278,7 +11345,7 @@ const es: SiteLangDict = {
   tool_text_diff_compare: 'Comparar',
   tool_text_diff_desc: 'Comprueba las diferencias entre dos textos pegando ambos lados en el navegador, sin subir nada.',
   tool_text_diff_description:
-    'Comprobar diferencias entre dos textos en el navegador. Proceso: pega original y revisión (también se busca como comparar textos online o diff checker), elige línea, palabra o carácter, ignora espacios o iguala CRLF y LF, y marca añadidos y borrados. Los archivos se quedan en tu dispositivo y no se suben. Ejemplo: cambia "hola mundo" por "hola amigo" — en modo palabra verás un solo cambio. Esta página es solo pegar texto; Word, Excel y JSON tienen otras páginas.',
+    'Comprobar diferencias entre dos textos en el navegador. Proceso: pega original y revisión, elige línea, palabra o carácter, en línea o palabra, ignora espacios o iguala CRLF y LF, y marca añadidos y borrados. Los archivos se quedan en tu dispositivo y no se suben. Ejemplo: cambia "hola mundo" por "hola amigo" — en modo palabra verás un solo cambio. Acepta texto pegado, no archivos Word, Excel ni JSON estructurado.',
   tool_text_diff_empty_hint: 'Pega texto en uno o ambos lados y pulsa Comparar.',
   tool_text_diff_example:
     'Ejemplo (modo palabra): A = "Hola mundo", B = "Hola amigo" → un cambio (mundo → amigo). Si solo cambia la línea del medio en un bloque de tres, el modo línea marca esa línea.',
@@ -11291,20 +11358,26 @@ const es: SiteLangDict = {
   tool_text_diff_faq_a4:
     'No. Esta página es solo texto pegado: ni imágenes, ZIP, Word, Excel ni JSON estructurado. Para abrir .txt, .docx o hojas, usa la página de ese formato.',
   tool_text_diff_faq_a5:
-    'Sí: mucha gente busca comparar textos online o diff checker. Aquí se hace pegando dos textos. El titular usa la frase más concreta «comprobar diferencias entre dos textos».',
+    'No. El modo carácter compara cada carácter y desactiva esa opción. Usa líneas o palabras si quieres omitir cambios que solo afectan a espacios.',
   tool_text_diff_faq_q1: '¿Comparar por línea o por palabra?',
   tool_text_diff_faq_q2: '¿Se sube mi texto a un servidor?',
   tool_text_diff_faq_q3: '¿Por qué un cambio de salto de línea pone toda la línea en rojo?',
   tool_text_diff_faq_q4: '¿Puedo comparar imágenes, Word o archivos binarios?',
-  tool_text_diff_faq_q5: '¿Es lo mismo que un diff checker online?',
+  tool_text_diff_faq_q5: '¿Ignorar espacios funciona al comparar caracteres?',
   tool_text_diff_how_body:
-    'Pega dos versiones, elige si quieres ver cambios por línea, palabra o carácter, y revisa en verde lo añadido y en rojo lo borrado. Tu texto pegado no se sube ni se guarda en nuestros servidores. La página puede cargar la librería open-source jsdiff desde un CDN para poder comparar en el navegador.',
+    'Pega el texto original a la izquierda y la revisión a la derecha, elige líneas, palabras o caracteres y revisa las adiciones verdes y eliminaciones rojas. El texto permanece en tu dispositivo y no se sube al servidor.',
+  tool_text_diff_how_item_1: 'Pega el texto original a la izquierda.',
+  tool_text_diff_how_item_2: 'Pega la versión revisada a la derecha.',
+  tool_text_diff_how_item_3:
+    'Elige líneas, palabras o caracteres y ajusta las opciones de espacios y saltos cuando estén disponibles.',
+  tool_text_diff_how_item_4: 'Pulsa Comparar y revisa las adiciones y eliminaciones resaltadas.',
   tool_text_diff_how_title: 'Cómo usarlo',
   tool_text_diff_ignore_ws: 'Ignorar espacios',
   tool_text_diff_label_a: 'Texto original',
   tool_text_diff_label_b: 'Texto revisado',
   tool_text_diff_large_warn: 'Pegado muy grande (>100k caracteres). Puede ir lento; prueba un trozo más corto.',
   tool_text_diff_legend: 'Verde = añadido · Rojo = eliminado',
+  tool_text_diff_load_sample: 'Cargar ejemplo',
   tool_text_diff_mode_chars: 'Carácter',
   tool_text_diff_mode_label: 'Comparar por',
   tool_text_diff_mode_lines: 'Línea',
@@ -11316,16 +11389,16 @@ const es: SiteLangDict = {
   tool_text_diff_placeholder_b: 'Pega el texto revisado…',
   tool_text_diff_result_label: 'Diferencias',
   tool_text_diff_rules_body:
-    'La herramienta busca una lista corta de ediciones para pasar del texto A al B (diff clásico / estilo Myers con jsdiff). Modo línea: configs y código. Modo palabra: frases y prompts. Modo carácter: erratas finas, pero más ruido. Ignorar espacios oculta cambios solo de sangría. Igualar CRLF y LF evita que toda una línea se ponga roja solo por el tipo de salto.',
+    'El modo elegido determina qué cuenta como un cambio. En caracteres se desactiva Ignorar espacios porque esa opción solo funciona por líneas o palabras.',
   tool_text_diff_rules_intro:
     'La herramienta busca una lista corta de ediciones para pasar del texto A al B (diff clásico / estilo Myers con jsdiff). Elige el modo según la tarea:',
-  tool_text_diff_rules_item_chars: 'Carácter — ideal para erratas finas; más preciso, pero ruidoso en ediciones largas.',
-  tool_text_diff_rules_item_lines:
+  tool_text_diff_rules_item_1:
     'Línea — ideal para .env, YAML y código; una línea cambiada se marca entera. Rápido de leer, pero un solo cambio de palabra también enrojece toda la línea.',
-  tool_text_diff_rules_item_words:
+  tool_text_diff_rules_item_2:
     'Palabra — ideal para frases, correos y prompts; resalta palabras sueltas. Más claro en prosa; la puntuación puede fragmentar el resultado.',
-  tool_text_diff_rules_options:
-    'Ignorar espacios oculta cambios solo de sangría. Igualar CRLF y LF evita que toda una línea se ponga roja solo por el tipo de salto (Windows vs Unix).',
+  tool_text_diff_rules_item_3: 'Carácter — ideal para erratas finas; más preciso, pero ruidoso en ediciones largas.',
+  tool_text_diff_rules_item_4:
+    'Ignorar espacios solo se aplica a líneas y palabras. Igualar CRLF y LF normaliza los saltos de Windows y Unix en todos los modos.',
   tool_text_diff_rules_title: 'Cómo se calculan las diferencias',
   tool_text_diff_sample_a: 'Hola mundo\nsegunda línea\ntercera línea',
   tool_text_diff_sample_b: 'Hola amigo\nsegunda línea\ntercera línea',
@@ -12606,11 +12679,11 @@ const es: SiteLangDict = {
   tool_write_pdf_document_online_usecases_title: 'Casos de uso',
   tool_write_pdf_document_online_warn_large: 'Large file — may be slow.',
   tool_writing_prompt_generator_ai_consent_body:
-    'Este paso opcional envía tu borrador a Cloudflare Workers AI. No va a OpenAI, Google, Anthropic ni DeepSeek desde nuestros servidores.',
+    'Este paso opcional envía tu borrador actual a Cloudflare Workers AI. Desde nuestros servidores no va a OpenAI, Google, Anthropic ni DeepSeek. Sin IA el montaje local sigue funcionando igual.',
   tool_writing_prompt_generator_ai_consent_cancel: 'Cancelar',
   tool_writing_prompt_generator_ai_consent_ok: 'Continuar',
   tool_writing_prompt_generator_ai_consent_title: '¿Enviar texto a Cloudflare Workers AI?',
-  tool_writing_prompt_generator_ai_done: 'Sugerencia de IA aplicada. Revisa antes de copiar.',
+  tool_writing_prompt_generator_ai_done: 'El texto de la IA se escribió completo en el resultado. Revísalo antes de copiar.',
   tool_writing_prompt_generator_ai_err_generic: 'La IA falló. Tu prompt local no cambió.',
   tool_writing_prompt_generator_ai_err_rate: 'Cuota de IA agotada. Modo local o prueba mañana (UTC).',
   tool_writing_prompt_generator_ai_err_turnstile: 'Completa Turnstile antes de usar IA.',
@@ -12619,7 +12692,7 @@ const es: SiteLangDict = {
   tool_writing_prompt_generator_ai_polish: 'Pulir con IA',
   tool_writing_prompt_generator_ai_working: 'Cloudflare AI trabajando…',
   tool_writing_prompt_generator_article:
-    'Monta prompts de escritura listos para pegar: escenas de diálogo, fichas de personaje, esquemas de guion o arranques aleatorios. Elige un modo, rellena campos o tira al azar, y copia Markdown o JSON en ChatGPT, Gemini, Claude o DeepSeek. No se llama a ninguna API de modelo. El texto permanece en tu dispositivo y no se sube al servidor.',
+    'Monta prompts de escritura listos para pegar: escenas de diálogo, fichas de personaje, esquemas de guion o arranques aleatorios. Elige un modo, rellena campos o tira al azar, y copia Markdown o JSON en ChatGPT, Gemini, Claude o DeepSeek. Por defecto el prompt se arma en tu navegador y no llamamos a ninguna API de chat por ti; solo si pulsas Expandir o Pulir con IA se envía el borrador actual a Cloudflare Workers AI (con Turnstile y cuota limitada).',
   tool_writing_prompt_generator_build: 'Crear prompt',
   tool_writing_prompt_generator_char_flaw_label: 'Defecto / debilidad',
   tool_writing_prompt_generator_char_flaw_ph: 'Qué lo frena…',
@@ -12634,9 +12707,9 @@ const es: SiteLangDict = {
   tool_writing_prompt_generator_clear: 'Limpiar',
   tool_writing_prompt_generator_copy: 'Copiar',
   tool_writing_prompt_generator_desc:
-    'Generador de prompts de escritura — local por defecto + Expand/Polish opcional Cloudflare AI (Turnstile); Markdown/JSON en el dispositivo.',
+    'Generador de prompts de escritura — modos diálogo, personaje, guion y aleatorio; montaje local en el navegador y IA de Cloudflare opcional.',
   tool_writing_prompt_generator_description:
-    'Proceso y ejemplo: Generador de prompts de escritura — Local + IA opcional para ChatGPT, Gemini, Claude y DeepSeek: ensambla prompts localmente por defecto y opcionalmente Expand/Polish con Cloudflare Workers AI (Turnstile obligatorio, límite de uso). Ejemplo al abrir. Markdown por defecto; JSON para pipelines. Texto en el dispositivo salvo que uses IA.',
+    'Generador de prompts de escritura: elige modo —diálogo, personaje, guion o aleatorio—, rellena los campos y obtén un prompt listo para pegar en ChatGPT, Gemini, Claude o DeepSeek. Al abrir corre un ejemplo de diálogo; en aleatorio tiras un arranque de historia y un seed repite la misma tirada. Exporta Markdown o JSON; el montaje es local y la IA de Cloudflare es opcional.',
   tool_writing_prompt_generator_dlg_characters_label: 'Personajes',
   tool_writing_prompt_generator_dlg_characters_ph: 'Nombres + rol en una línea…',
   tool_writing_prompt_generator_dlg_conflict_label: 'Conflicto',
@@ -12650,28 +12723,32 @@ const es: SiteLangDict = {
   tool_writing_prompt_generator_download: 'Descargar',
   tool_writing_prompt_generator_empty: 'Rellena al menos un campo en este modo antes de crear.',
   tool_writing_prompt_generator_example:
-    'Entrada (Diálogo, Cargar ejemplo): Genre = drama contemporáneo; Characters = Maya (barista) y Jonah (músico); Conflict = Maya reconoce la canción sobre su ex. Salida (Markdown): ## Role → coach de escritura; ## Task → líneas genre/characters/setting/conflict/tone. El modo Guion usa un misterio del faro — no el food-truck del cine.',
+    'Entrada (Diálogo, Cargar ejemplo): Genre = drama contemporáneo; Characters = Maya (barista) y Jonah (músico); Conflict = Maya reconoce la canción sobre su ex. Salida (Markdown): ## Rol → coach de escritura; ## Tarea → líneas genre/characters/setting/conflict/tone. El modo Guion usa un misterio del faro — no el food-truck del cine.',
   tool_writing_prompt_generator_example_title: 'Ejemplo',
   tool_writing_prompt_generator_faq_a1:
-    'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
+    'Por defecto el prompt se arma en esta pestaña y no sale nada. Solo Expandir/Pulir envía el texto de ese clic a Cloudflare Workers AI; desde nuestros servidores no va a OpenAI, Google, Anthropic ni DeepSeek.',
   tool_writing_prompt_generator_faq_a2:
-    'Modo local solo formatea aquí. Expand/Polish opcional usa Cloudflare Workers AI tras Turnstile — no llama APIs de chat.',
+    'El modo local solo da formato a tus campos de escritura en esta pestaña. Expandir/Pulir usa Cloudflare Workers AI tras pasar Turnstile: no abrimos ChatGPT, Gemini, Claude ni DeepSeek por ti.',
   tool_writing_prompt_generator_faq_a3:
     'El constructor de plantillas de Prompt estructura plantillas genéricas Role/Task/Constraints/Output. Esta página prioriza modos de escritura — campos de diálogo, fichas de personaje, beats de guion y un generador de prompts aleatorio en un solo lienzo.',
-  tool_writing_prompt_generator_faq_a4: 'Sí. Completa Turnstile en el panel de IA antes de Expand o Polish.',
+  tool_writing_prompt_generator_faq_a4:
+    'Sí. El modo aleatorio tira género, escenario, objeto, emoción y conflicto. Un seed numérico opcional repite exactamente la misma tirada. Lo que sale es material de inspiración: no garantiza calidad.',
   tool_writing_prompt_generator_faq_a5:
-    'Sí. El chip JSON emite {mode,fields,role,task,constraints,output} para pruebas o configs. Markdown usa encabezados ## Role / Task / Constraints / Output.',
+    'Sí. Completa el widget Turnstile del panel de IA antes de Expandir o Pulir; sin token válido el botón devuelve error y el modo local sigue funcionando.',
   tool_writing_prompt_generator_faq_a6:
-    'Sí. Copia el prompt terminado en ChatGPT, Gemini, Claude o DeepSeek. No mantenemos URLs separadas por plataforma porque el trabajo es formatear texto, no llamar APIs.',
+    'Sí. El chip JSON emite {mode,fields,role,task,constraints,output} para pruebas o configs. Markdown usa los encabezados ## Rol / Tarea / Restricciones / Formato de salida.',
   tool_writing_prompt_generator_faq_a7:
-    'Local: solo esta pestaña, sin subida. Expand/Polish opcional a Cloudflare Workers AI (Turnstile, límite).',
+    'Sí. Copia el prompt terminado en ChatGPT, Gemini, Claude o DeepSeek. Esta página solo prepara el texto; no inicia sesión ni llama a la API de ninguno de ellos.',
+  tool_writing_prompt_generator_faq_a8:
+    'Local: todo se arma en esta pestaña, sin envío. Expandir/Pulir manda el borrador a Cloudflare Workers AI (Turnstile y cuota diaria) y su respuesta reemplaza el bloque de resultado. Si falla o se agota la cuota, sigue con el modo local.',
   tool_writing_prompt_generator_faq_q1: '¿Se sube mi prompt de escritura?',
   tool_writing_prompt_generator_faq_q2: '¿Llama a un LLM?',
   tool_writing_prompt_generator_faq_q3: '¿En qué se diferencia del constructor de plantillas de Prompt?',
-  tool_writing_prompt_generator_faq_q4: '¿Por qué Turnstile para IA opcional?',
-  tool_writing_prompt_generator_faq_q5: '¿Puedo obtener JSON?',
-  tool_writing_prompt_generator_faq_q6: '¿Puedo usarlo con ChatGPT, Gemini, Claude o DeepSeek?',
-  tool_writing_prompt_generator_faq_q7: '¿Diferencia entre local y Cloudflare AI opcional?',
+  tool_writing_prompt_generator_faq_q4: '¿Funciona aquí el generador de prompts aleatorio?',
+  tool_writing_prompt_generator_faq_q5: '¿Por qué Turnstile para IA opcional?',
+  tool_writing_prompt_generator_faq_q6: '¿Puedo obtener JSON?',
+  tool_writing_prompt_generator_faq_q7: '¿Puedo usarlo con ChatGPT, Gemini, Claude o DeepSeek?',
+  tool_writing_prompt_generator_faq_q8: '¿Diferencia entre local y Cloudflare AI opcional?',
   tool_writing_prompt_generator_fmt_json: 'JSON',
   tool_writing_prompt_generator_fmt_label: 'Formato de salida',
   tool_writing_prompt_generator_fmt_md: 'Markdown',
@@ -12698,12 +12775,14 @@ const es: SiteLangDict = {
   tool_writing_prompt_generator_random_seed_ph: 'p. ej. 42',
   tool_writing_prompt_generator_result_label: 'Prompt de escritura',
   tool_writing_prompt_generator_rules_body:
-    'Los prompts de escritura necesitan campos por modo, límites honestos del azar y la misma privacidad local que otros constructores.',
+    'Los prompts de escritura necesitan campos propios de cada modo, límites honestos sobre lo que da el azar y el mismo montaje local que los demás constructores.',
   tool_writing_prompt_generator_rules_item_1:
     'Cuatro bloques en la salida: Role, Task, Constraints, Output — alineados con plantillas estructuradas.',
-  tool_writing_prompt_generator_rules_item_2: 'El modo aleatorio integra el generador de prompts aleatorio en esta URL — sin página aparte.',
+  tool_writing_prompt_generator_rules_item_2:
+    'El modo aleatorio vive en este mismo lienzo: tira género, escenario, objeto, emoción y conflicto, y con un seed repites la tirada.',
   tool_writing_prompt_generator_rules_item_3: 'La exportación predeterminada es Markdown. JSON es un chip en el mismo lienzo.',
-  tool_writing_prompt_generator_rules_item_4: 'Esta herramienta solo ensambla texto. No genera historias terminadas ni llama modelos en la nube.',
+  tool_writing_prompt_generator_rules_item_4:
+    'La IA opcional de Cloudflare nunca sustituye al modo local: revisa su texto antes de copiar. Esta herramienta solo monta el prompt, no escribe la historia terminada.',
   tool_writing_prompt_generator_rules_title: 'Qué debes esperar',
   tool_writing_prompt_generator_scr_notes_label: 'Notas de beats',
   tool_writing_prompt_generator_scr_notes_ph: 'Número de escenas, ritmo, POV…',
@@ -12711,10 +12790,10 @@ const es: SiteLangDict = {
   tool_writing_prompt_generator_scr_premise_ph: 'Configuración en un párrafo…',
   tool_writing_prompt_generator_scr_structure_label: 'Estructura',
   tool_writing_prompt_generator_scr_structure_ph: 'Tres actos, save the cat, episódico…',
-  tool_writing_prompt_generator_sec_constraints: 'Constraints',
-  tool_writing_prompt_generator_sec_output: 'Output format',
-  tool_writing_prompt_generator_sec_role: 'Role',
-  tool_writing_prompt_generator_sec_task: 'Task',
+  tool_writing_prompt_generator_sec_constraints: 'Restricciones',
+  tool_writing_prompt_generator_sec_output: 'Formato de salida',
+  tool_writing_prompt_generator_sec_role: 'Rol',
+  tool_writing_prompt_generator_sec_task: 'Tarea',
   tool_writing_prompt_generator_status_copied: 'Copiado al portapapeles.',
   tool_writing_prompt_generator_status_done: 'Prompt listo.',
   tool_writing_prompt_generator_status_working: 'Creando prompt…',

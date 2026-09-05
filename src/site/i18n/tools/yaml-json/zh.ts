@@ -3,7 +3,7 @@
  */
 import type { SiteLangDict } from '../../../types';
 const zh: SiteLangDict = {
-  tool_yaml_json_article: '一页完成 YAML JSON 互转：讲清默认类型规则、多文档策略，以及本地处理边界。面向配置互换，不是再挂一个空壳长尾页。',
+  tool_yaml_json_article: '一页完成 YAML JSON 互转：讲清默认类型规则、多文档策略，以及本地处理边界。',
   tool_yaml_json_clear: '清空',
   tool_yaml_json_convert: '转换',
   tool_yaml_json_copy_done: '已复制',

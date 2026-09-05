@@ -7,10 +7,10 @@ import type { SiteLangDict } from '../../../types';
 const id: SiteLangDict = {
 	tool_sitemap_home_title: 'Pembuat sitemap XML',
 	tool_sitemap_home_desc:
-		'Bantu Google menemukan dan mengindeks setiap halaman yang ingin Anda rangking: ubah daftar URL menjadi sitemap.xml yang valid dengan lastmod, changefreq, dan priority, langsung di browser.',
+		'Bantu Google menemukan halaman yang terlewat oleh tautan internal Anda: ubah daftar URL menjadi sitemap.xml yang valid dengan lastmod, changefreq, dan priority, langsung di browser.',
 	tool_sitemap_title: 'Pembuat sitemap XML — buat sitemap.xml dari daftar URL',
 	tool_sitemap_description:
-		'Sitemap membantu Google menemukan dan mengindeks lebih cepat. Tempel URL https, pratinjau sitemap.xml valid, salin ke root. Contoh: 3 URL → 3 entri.',
+		'Sitemap memberi tahu Google URL mana saja yang ada, terutama yang tertutup tautan internal lemah. Tempel URL https, pratinjau sitemap.xml valid, salin ke root. Contoh: 3 URL → 3 entri.',
 	tool_sitemap_generate: 'Buat',
 	tool_sitemap_sample: 'Contoh',
 	tool_sitemap_clear: 'Bersihkan',
@@ -45,7 +45,7 @@ const id: SiteLangDict = {
 	tool_sitemap_usecase_1:
 		'Situs baru: buat sitemap.xml pertama dari daftar URL dan kirim di Search Console.',
 	tool_sitemap_usecase_2:
-		'Konten diperbarui: tambahkan lastmod pada halaman yang baru berubah agar crawler menangkap sinyal kesegaran.',
+		'Konten diperbarui: isi lastmod hanya untuk halaman yang benar-benar berubah. Google memakai lastmod hanya bila tanggalnya akurat dan konsisten di seluruh file, jadi menaruh tanggal hari ini pada semua URL justru membuat kolom itu diabaikan.',
 	tool_sitemap_usecase_3:
 		'Discovery: arahkan robots.txt ke URL sitemap agar crawler menemukannya tanpa menunggu pengiriman.',
 	tool_sitemap_faq_q1: 'Berapa batas URL untuk satu sitemap?',

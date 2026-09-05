@@ -1,12 +1,13 @@
 /**
  * i18n tool shard (product-design-prompt-builder / de).
- * 检索向独立重写；title 含「本地 + 可选 AI」；description 含本地默认与 Cloudflare AI Expand/Polish + Turnstile。
+ * Lokale Suchbegriffe: „Prompt Generator Produktdesign“, „Prompt für UX-Brief“. Hauptbegriff im H1; Nebenbegriffe (Persona, Wireframe-Umfang, Design-Tokens, WCAG AA, JSON-Export) in Description, FAQ und Einsatzfällen.
+ * Tatsächliche Grenzen: Zusammenbau im Browser ohne Anfrage; optionales Erweitern/Feinschliff sendet den Entwurf an Cloudflare Workers AI (Turnstile, Kontingent), die Antwort ersetzt den Ergebnisbereich vollständig.
  */
 import type { SiteLangDict } from '../../../types';
 
 const de: SiteLangDict = {
 	tool_product_design_prompt_builder_article:
-		'Produktdesign-Prompt-Builder — Lokal + optionale KI für ChatGPT, Gemini, Claude und DeepSeek: Prompts standardmäßig lokal, optional Expand/Polish via Cloudflare Workers AI (Turnstile, Rate-Limits). Beispiel beim ersten Laden. Markdown Standard; JSON für Pipelines. Text bleibt auf dem Gerät ohne KI.',
+		'Aus einem Produktdesign-Auftrag wird hier ein Prompt zum Einfügen: Persona, Problem, Wireframe-Umfang und Design-Tokens eintragen — die Seite baut den Text im Browser als Markdown oder JSON zusammen. Standardmäßig geht keine Anfrage raus; erst ein Klick auf Erweitern oder Feinschliff schickt den aktuellen Entwurf an Cloudflare Workers AI (Turnstile nötig, Kontingent begrenzt).',
 	tool_product_design_prompt_builder_build:
 		'Prompt erstellen',
 	tool_product_design_prompt_builder_clear:
@@ -14,69 +15,69 @@ const de: SiteLangDict = {
 	tool_product_design_prompt_builder_copy:
 		'Kopieren',
 	tool_product_design_prompt_builder_desc:
-		'Produktdesign-Prompt-Builder — local por defecto + Expand/Polish opcional Cloudflare AI (Turnstile); Markdown/JSON en el dispositivo.',
+		'Prompt-Generator für Produktdesign: Persona, Problem, Wireframe-Umfang und Design-Tokens eintragen; der Text entsteht im Browser als Markdown oder JSON, KI ist optional.',
 	tool_product_design_prompt_builder_description:
-		'Prozess und Beispiel: Produktdesign-Prompt-Builder — Local + IA opcional para ChatGPT, Gemini, Claude y DeepSeek: ensambla prompts localmente por defecto y opcionalmente Expand/Polish con Cloudflare Workers AI (Turnstile obligatorio, límite de uso). Ejemplo al abrir. Markdown por defecto; JSON para pipelines. Texto en el dispositivo salvo que uses IA.',
+		'Prompt-Generator für Produktdesign: Persona, Problem, Wireframe-Umfang (wie viele Screens und welche) und Design-Tokens (Raster, Primärfarbe, Kontrast) eintragen — die Seite sortiert sie im Browser in die Blöcke Role / Task / Constraints / Output, als Markdown oder JSON. Beispiel: „Eltern im Wechselmodell, die die Übergabewoche auf einen Blick sehen wollen“ wird zu einem Umfang von drei Screens mit 8-pt-Raster und WCAG-AA-Kontrast. Über Beispiel laden füllen Sie das Preset und sehen den fertigen Prompt; Erweitern oder Feinschliff über Cloudflare Workers AI bleibt optional (Turnstile, Tageskontingent).',
 	tool_product_design_prompt_builder_download:
 		'Herunterladen',
 	tool_product_design_prompt_builder_empty:
-		'Mindestens ein Feld ausfüllen, bevor Sie erstellen.',
+		'Füllen Sie mindestens ein Feld aus, bevor Sie erstellen.',
 	tool_product_design_prompt_builder_example:
-		'Eingabe: Persona = Co-Parents; Problem = lauter Kalender + Handoff; Wireframe = 3 Screens; Tokens = 8pt, #2563eb, WCAG AA. Ausgabe (Markdown): ## Task → Persona / Problem / Wireframe / Design tokens.',
+		'Eingabe: Persona = Eltern im wöchentlichen Wechselmodell, eine Person plant, die andere holt ab, Android und iPhone gemischt; Problem = überfüllte Kalender, gewünscht ist die Übergabewoche auf einen Blick samt Notizen, ohne Kontozwang; Wireframe = Wochenleiste mit Übergabelegende, Detail-Sheet mit Übergabe-Checkliste, Einladung per SMS (3 Screens); Tokens = 8-pt-Raster, Primärfarbe #2563eb, #059669 für bestätigte Übergaben, WCAG-AA-Kontrast bei Bildtexten. Ausgabe (Markdown): ## Role beschreibt einen UX-Prompt-Coach für Wireframe-Briefs, ## Task listet pro Feld eine Zeile.',
 	tool_product_design_prompt_builder_example_title:
 		'Beispiel',
 	tool_product_design_prompt_builder_faq_a1:
-		'Por defecto el ensamblaje es local en esta pestaña. Expand/Polish opcional envía solo el texto de ese clic a Cloudflare Workers AI.',
+		'Standardmäßig nicht. Felder ausfüllen und „Prompt erstellen“ klicken passiert nur in diesem Tab, ohne Anfrage. Der Entwurf verlässt die Seite erst, wenn Sie Erweitern oder Feinschliff anklicken — dann geht er an Cloudflare Workers AI; von unseren Servern wird er nicht an OpenAI, Google, Anthropic oder DeepSeek weitergegeben.',
 	tool_product_design_prompt_builder_faq_a2:
-		'Modo local solo formatea aquí. Expand/Polish opcional usa Cloudflare Workers AI tras Turnstile — no llama APIs de chat.',
+		'Nein. Der lokale Modus formatiert nur Ihre Eingaben in die Blöcke Role / Task / Constraints / Output. Die optionale KI läuft nach Turnstile über Cloudflare Workers AI, nicht über die APIs von ChatGPT, Gemini, Claude oder DeepSeek.',
 	tool_product_design_prompt_builder_faq_a3:
-		'Produktdesign-Prompt-Builder covers generic Role/Task/Constraints/Output templates. This page focuses on product design prompt builder fields with a dedicated sample and rules for this scenario.',
+		'Der Prompt-Vorlagen-Generator liefert die vier allgemeinen Blöcke Role / Task / Constraints / Output für beliebige Themen. Hier sind die Felder die eines UX-Briefs: Persona, Problem, wie viele Screens das Wireframe abdeckt und welche Design-Tokens und Kontrastwerte gelten — mit eigenem Beispiel und eigenen Grenzen.',
 	tool_product_design_prompt_builder_faq_a4:
-		'Sí. Completa Turnstile en el panel de IA antes de Expand o Polish.',
+		'Ja. Lösen Sie das Turnstile-Widget im KI-Bereich, bevor Sie Erweitern oder Feinschliff drücken. Ohne gültiges Token melden die KI-Schaltflächen einen Fehler, der lokale Modus arbeitet weiter.',
 	tool_product_design_prompt_builder_faq_a5:
-		'Yes. The JSON chip emits structured fields plus assembled prompt text for tests or config pipelines.',
+		'Ja. Stellen Sie das Ausgabeformat auf JSON: Sie erhalten die Felder einzeln plus den fertigen Prompt-Text — praktisch für ein Anforderungs-Repository oder eine Vorlage fürs Design-Review.',
 	tool_product_design_prompt_builder_faq_a6:
-		'Yes. Copy the finished prompt into ChatGPT, Gemini, Claude, or DeepSeek. We do not split URLs per platform because the job is formatting text, not calling APIs.',
+		'Ja. Das Ergebnis ist reiner Text — kopieren und in ChatGPT, Gemini, Claude oder DeepSeek einfügen. Die Seite ruft diese APIs nicht für Sie auf.',
 	tool_product_design_prompt_builder_faq_q1:
-		'Is my prompt uploaded?',
+		'Werden meine Eingaben hochgeladen?',
 	tool_product_design_prompt_builder_faq_q2:
-		'Does this call ChatGPT or other LLM APIs?',
+		'Ruft die Seite die API von ChatGPT oder anderen Modellen auf?',
 	tool_product_design_prompt_builder_faq_q3:
-		'How is this different from Produktdesign-Prompt-Builder?',
+		'Wodurch unterscheidet sich das vom Prompt-Vorlagen-Generator?',
 	tool_product_design_prompt_builder_faq_q4:
-		'¿Por qué Turnstile para IA opcional?',
+		'Warum verlangt die optionale KI Turnstile?',
 	tool_product_design_prompt_builder_faq_q5:
-		'Can I get JSON output?',
+		'Kann ich JSON exportieren?',
 	tool_product_design_prompt_builder_faq_q6:
-		'Can I use this with ChatGPT, Gemini, Claude, or DeepSeek?',
+		'Funktioniert das mit ChatGPT, Gemini, Claude und DeepSeek?',
 	tool_product_design_prompt_builder_faq_q7:
-		'¿Diferencia entre local y Cloudflare AI opcional?',
+		'Was unterscheidet den lokalen Modus von der Cloudflare-KI?',
 	tool_product_design_prompt_builder_faq_a7:
-		'Local: solo esta pestaña, sin subida. Expand/Polish opcional a Cloudflare Workers AI (Turnstile, límite).',
+		'Lokal wird nur sortiert, was Sie eingetippt haben: keine Anfrage, kein Kontingent. Erweitern oder Feinschliff schickt den Entwurf an Cloudflare Workers AI (Turnstile nötig, begrenztes Kontingent); der zurückkommende Text ersetzt den Ergebnisbereich vollständig — vor dem Kopieren prüfen. Bei Fehler oder erschöpftem Kontingent bleibt der lokale Modus.',
 	tool_product_design_prompt_builder_ai_expand:
-		'Expandir con IA',
+		'Mit KI erweitern',
 	tool_product_design_prompt_builder_ai_polish:
-		'Pulir con IA',
+		'Mit KI feinschleifen',
 	tool_product_design_prompt_builder_ai_panel_label:
-		'Cloudflare AI opcional (Turnstile)',
+		'Optionale Cloudflare-KI (Turnstile)',
 	tool_product_design_prompt_builder_ai_consent_title:
-		'¿Enviar texto a Cloudflare Workers AI?',
+		'Entwurf an Cloudflare Workers AI senden?',
 	tool_product_design_prompt_builder_ai_consent_body:
-		'Este paso opcional envía tu borrador a Cloudflare Workers AI. No va a OpenAI, Google, Anthropic ni DeepSeek desde nuestros servidores.',
+		'Optionaler Schritt: Ihr aktueller Entwurf geht zur Inferenz an Cloudflare Workers AI. Von unseren Servern wird er nicht an OpenAI, Google, Anthropic oder DeepSeek weitergereicht. Ohne KI funktioniert das Zusammenbauen im Browser weiterhin.',
 	tool_product_design_prompt_builder_ai_consent_ok:
-		'Continuar',
+		'Weiter',
 	tool_product_design_prompt_builder_ai_consent_cancel:
-		'Cancelar',
+		'Abbrechen',
 	tool_product_design_prompt_builder_ai_working:
-		'Cloudflare AI trabajando…',
+		'Cloudflare AI arbeitet…',
 	tool_product_design_prompt_builder_ai_done:
-		'Sugerencia de IA aplicada. Revisa antes de copiar.',
+		'Der KI-Text hat das Ergebnis ersetzt. Vor dem Kopieren prüfen.',
 	tool_product_design_prompt_builder_ai_err_generic:
-		'La IA falló. Tu prompt local no cambió.',
+		'KI fehlgeschlagen; das Ergebnis ist unverändert.',
 	tool_product_design_prompt_builder_ai_err_rate:
-		'Cuota de IA agotada. Modo local o prueba mañana (UTC).',
+		'KI-Kontingent erschöpft. Lokal weiterarbeiten oder morgen (UTC) erneut versuchen.',
 	tool_product_design_prompt_builder_ai_err_turnstile:
-		'Completa Turnstile antes de usar IA.',
+		'Bitte erst Turnstile lösen, dann die KI nutzen.',
 	tool_product_design_prompt_builder_fmt_json:
 		'JSON',
 	tool_product_design_prompt_builder_fmt_label:
@@ -84,77 +85,77 @@ const de: SiteLangDict = {
 	tool_product_design_prompt_builder_fmt_md:
 		'Markdown',
 	tool_product_design_prompt_builder_persona_label:
-		'Persona',
+		'Persona / Nutzerprofil',
 	tool_product_design_prompt_builder_persona_ph:
-		'Sample persona…',
+		'z. B. Eltern im wöchentlichen Wechselmodell…',
 	tool_product_design_prompt_builder_problem_label:
-		'Problem',
+		'Problem / Bedarf',
 	tool_product_design_prompt_builder_problem_ph:
-		'Sample problem…',
+		'z. B. überfüllte Kalender, Woche auf einen Blick…',
 	tool_product_design_prompt_builder_wireframe_scope_label:
-		'Wireframe / Scope',
+		'Wireframe / Umfang',
 	tool_product_design_prompt_builder_wireframe_scope_ph:
-		'Sample wireframe scope…',
+		'z. B. Wochenleiste, Detail-Sheet, SMS-Einladung…',
 	tool_product_design_prompt_builder_design_tokens_label:
-		'Design / Tokens',
+		'Design / Design-Tokens',
 	tool_product_design_prompt_builder_design_tokens_ph:
-		'Sample design tokens…',
+		'z. B. 8-pt-Raster, Primärfarbe #2563eb, WCAG AA…',
 	tool_product_design_prompt_builder_how_body:
-		'Fill Produktdesign-Prompt-Builder fields, build a prompt locally, optionally Expand/Polish with Turnstile, then paste into ChatGPT, Gemini, Claude, or DeepSeek.',
+		'Vier Felder ausfüllen, die Seite baut daraus im Browser Markdown (oder JSON); wer es ausführlicher braucht, lässt Cloudflare AI erweitern und fügt den Prompt danach in den Chat ein.',
 	tool_product_design_prompt_builder_how_item_1:
-		'Load sample already ran the default preset on first paint.',
+		'Auf Beispiel laden klicken: Das Preset wird gefüllt und ein Prompt steht bereit, an dem Sie weiterarbeiten.',
 	tool_product_design_prompt_builder_how_item_2:
-		'Edit fields, click Build prompt, or switch to JSON if you need structured export.',
+		'Persona, Problem, Wireframe-Umfang und Design-Tokens anpassen, dann „Prompt erstellen“ klicken; für strukturierten Export auf JSON umstellen.',
 	tool_product_design_prompt_builder_how_item_3:
-		'Optional: complete Turnstile, then Expand or Polish via Cloudflare Workers AI.',
+		'Optional: Turnstile lösen, dann Erweitern oder Feinschliff — der KI-Text füllt anschließend den Ergebnisbereich.',
 	tool_product_design_prompt_builder_how_item_4:
-		'Copy or download, then paste into ChatGPT, Gemini, Claude, or DeepSeek.',
+		'Ergebnis kopieren oder herunterladen und in ChatGPT, Gemini, Claude oder DeepSeek einfügen.',
 	tool_product_design_prompt_builder_how_title:
 		'So funktioniert es',
 	tool_product_design_prompt_builder_load_sample:
 		'Beispiel laden',
 	tool_product_design_prompt_builder_platforms_lead:
-		'Für ChatGPT, Gemini, Claude, DeepSeek — fertigen Prompt in jeden Chat kopieren.',
+		'Der fertige Prompt ist reiner Text und lässt sich unverändert in ChatGPT, Gemini, Claude oder DeepSeek einfügen.',
 	tool_product_design_prompt_builder_result_label:
 		'Prompt-Ausgabe',
 	tool_product_design_prompt_builder_rules_body:
-		'Persona/problem/wireframe/tokens for UX briefs. Local assembly is default; optional AI is rate-limited and requires Turnstile.',
+		'Die Seite bringt den Auftrag nur in Form: Sie zeichnet keine Wireframes und exportiert keine Figma-Dateien. Die optionale KI ist kontingentiert und verlangt Turnstile.',
 	tool_product_design_prompt_builder_rules_item_1:
-		'Structured fields map to Role/Task/Constraints/Output blocks in Markdown export.',
+		'Jedes Feld landet in einem eigenen Markdown-Block: Role, Task, Constraints, Output.',
 	tool_product_design_prompt_builder_rules_item_2:
-		'Default export is Markdown. JSON is a chip on the same canvas.',
+		'Standardausgabe ist Markdown; derselbe Bereich zeigt auf Wunsch JSON mit Feldern und fertigem Prompt.',
 	tool_product_design_prompt_builder_rules_item_3:
-		'Optional Cloudflare AI never replaces local mode — review AI output before copying.',
+		'Die Cloudflare-KI ersetzt den lokalen Modus nicht: Ihre Antwort füllt den gesamten Ergebnisbereich, also vor dem Kopieren prüfen.',
 	tool_product_design_prompt_builder_rules_item_4:
-		'This tool assembles text only; it does not run product design prompt builder engines or call chat APIs locally.',
+		'Das Werkzeug setzt nur Text zusammen: es erzeugt keine Screens, liest Ihre Designdateien nicht und ruft keine Chat-APIs in Ihrem Namen auf.',
 	tool_product_design_prompt_builder_rules_title:
-		'Erwartete Regeln',
+		'Erwartbare Grenzen',
 	tool_product_design_prompt_builder_sec_constraints:
 		'Constraints',
 	tool_product_design_prompt_builder_sec_output:
-		'Output format',
+		'Output',
 	tool_product_design_prompt_builder_sec_role:
 		'Role',
 	tool_product_design_prompt_builder_sec_task:
 		'Task',
 	tool_product_design_prompt_builder_status_copied:
-		'In Zwischenablage kopiert.',
+		'In die Zwischenablage kopiert.',
 	tool_product_design_prompt_builder_status_done:
-		'Prompt bereit.',
+		'Prompt fertig.',
 	tool_product_design_prompt_builder_status_working:
-		'Prompt wird erstellt…',
+		'Prompt wird gebaut…',
 	tool_product_design_prompt_builder_title:
-		'Produktdesign-Prompt-Builder — Lokal + optionale KI',
+		'Prompt-Generator für Produktdesign — lokal, mit optionaler KI',
 	tool_product_design_prompt_builder_usecase_1:
-		'Ship a paste-ready product design prompt builder brief for your team chat in ChatGPT, Gemini, Claude, or DeepSeek.',
+		'Das im Kick-off mündlich genannte Designziel als einfügbaren Prompt für den Team-Chat festhalten.',
 	tool_product_design_prompt_builder_usecase_2:
-		'Export JSON for a pipeline test, then refine with optional Cloudflare AI after Turnstile.',
+		'JSON exportieren, Persona und Tokens im Anforderungs-Repository ablegen und bei Bedarf mit Cloudflare AI erweitern.',
 	tool_product_design_prompt_builder_usecase_3:
-		'Compare with Prompt template builder when you need generic four-field templates instead of this scenario.',
+		'Wenn UX-Felder überflüssig sind und eine allgemeine Vier-Block-Vorlage genügt, den Prompt-Vorlagen-Generator nehmen.',
 	tool_product_design_prompt_builder_usecase_4:
-		'Keep sensitive draft text local — only opt into AI when you accept the consent modal.',
+		'Eine noch unveröffentlichte Produktidee erst im Browser formulieren und danach über die optionale KI entscheiden.',
 	tool_product_design_prompt_builder_usecases_title:
-		'Gute Einsätze',
+		'Passende Fälle',
 };
 
 export default de;

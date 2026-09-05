@@ -8,7 +8,7 @@ import type { SiteLangDict } from '../../../types';
 const de: SiteLangDict = {
 	tool_json_diff_checker_online_article:
 		'Zwei JSON-Werte einfügen und Pfad-Änderungen auflisten. Die Schlüsselreihenfolge wird standardmäßig ignoriert. Der Text bleibt auf Ihrem Gerät und wird nicht hochgeladen. YAML und XML werden hier nicht geparst.',
-	tool_json_diff_checker_online_array_as_set: 'Arrays als Mengen behandeln (Reihenfolge egal)',
+	tool_json_diff_checker_online_array_as_set: "Array-Reihenfolge ignorieren (Duplikate zählen)",
 	tool_json_diff_checker_online_clear: 'Leeren',
 	tool_json_diff_checker_online_compare: 'Vergleichen',
 	tool_json_diff_checker_online_desc:
@@ -26,9 +26,9 @@ const de: SiteLangDict = {
 	tool_json_diff_checker_online_faq_a2:
 		'Standardmäßig gelten {"a":1,"b":2} und {"b":2,"a":1} als dasselbe Objekt. „Schlüsselreihenfolge ignorieren“ abschalten, wenn die Schreibreihenfolge zählt.',
 	tool_json_diff_checker_online_faq_a3:
-		'Arrays sind Listen nach Index. [1,2] gegen [2,1] ist eine Änderung. „Arrays als Mengen“ nur, wenn die Reihenfolge egal sein soll.',
+		"Standardmäßig werden Arrays nach Index verglichen. Beim Ignorieren der Reihenfolge werden normalisierte Elemente sortiert, Duplikate zählen weiter und Ergebnisindizes beziehen sich auf diese Sortierung; Objekte werden nicht per id zugeordnet.",
 	tool_json_diff_checker_online_faq_a4:
-		'Manche suchen json diff checker ohne „online“ — dieselbe Aufgabe. YAML oder XML braucht eine andere Seite (YAML zuerst umwandeln, falls nötig).',
+		"Es wird nur gültiges JSON geparst. YAML- und XML-Syntax werden nicht akzeptiert; YAML vorher in JSON umwandeln oder einen formatspezifischen Vergleich nutzen.",
 	tool_json_diff_checker_online_faq_q1: 'Wird mein JSON hochgeladen?',
 	tool_json_diff_checker_online_faq_q2: 'Zählt die Schlüsselreihenfolge als Unterschied?',
 	tool_json_diff_checker_online_faq_q3: 'Wie werden Arrays verglichen?',
@@ -38,7 +38,7 @@ const de: SiteLangDict = {
 	tool_json_diff_checker_online_how_item_1: 'Original-JSON links einfügen.',
 	tool_json_diff_checker_online_how_item_2: 'Überarbeitetes JSON rechts einfügen.',
 	tool_json_diff_checker_online_how_item_3: 'Schlüsselreihenfolge ignorieren anlassen, außer Sie brauchen die Schreibreihenfolge.',
-	tool_json_diff_checker_online_how_item_4: 'Vergleichen listet Pfade; Beispiel laden lief schon beim ersten Anzeigen.',
+	tool_json_diff_checker_online_how_item_4: "Klicken Sie auf Vergleichen, um mit den aktuellen Optionen hinzugefügte, entfernte und geänderte Pfade aufzulisten.",
 	tool_json_diff_checker_online_how_title: 'So gehen Sie vor',
 	tool_json_diff_checker_online_ignore_keys: 'Objektschlüssel-Reihenfolge ignorieren',
 	tool_json_diff_checker_online_label_a: 'Original-JSON',
@@ -56,7 +56,7 @@ const de: SiteLangDict = {
 	tool_json_diff_checker_online_rules_item_2:
 		'Schlüsselreihenfolge ignorieren (standardmäßig an) sortiert Objektschlüssel vor dem Pfadgang.',
 	tool_json_diff_checker_online_rules_item_3:
-		'Arrays sind Indexlisten, außer Sie behandeln sie als Mengen (dann Sortierung per JSON-stringify).',
+		"Das Ignorieren der Array-Reihenfolge sortiert normalisierte Elemente, behält aber Duplikate; Indizes beziehen sich dann auf die Vergleichsreihenfolge statt auf ursprüngliche Positionen.",
 	tool_json_diff_checker_online_rules_item_4:
 		'YAML und XML werden nicht geparst. YAML bei Bedarf zuerst auf der verwandten YAML-↔-JSON-Seite umwandeln.',
 	tool_json_diff_checker_online_rules_title: 'Regeln des Vergleichs',

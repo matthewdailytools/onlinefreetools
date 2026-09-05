@@ -124,11 +124,11 @@
 
 ## 交互规格（给实现用）
 
-- 输入：左侧 Text A、右侧 Text B；模式：Lines / Words / Chars；Ignore whitespace；规范化换行（CRLF→LF，默认开）
+- 输入：左侧 Text A、右侧 Text B；模式：Lines / Words / Chars；Ignore whitespace（仅 Lines / Words，Chars 时禁用）；规范化换行（CRLF→LF，默认开）
 - 输出：统一视图高亮（绿增 / 红删）+ 图例；摘要 added/removed 块计数；交换 A/B；清空
-- 核心规则：`Diff.diffLines` / `diffWords` / `diffChars`；忽略空白走库选项
+- 核心规则：`Diff.diffLines`；Word 模式按 Ignore whitespace 在 `diffWords` / `diffWordsWithSpace` 间切换；`diffChars` 不支持忽略空白，UI 会明确禁用该选项
 - 失败与边界：两侧空 → 提示；超软上限 → 警告仍可试；完全相同 → No differences；库未加载 → 提示刷新
-- 示例 / 预填：各语 `sample_a` / `sample_b`（与 Example 文案同语种）
+- 示例 / 预填：各语 `sample_a` / `sample_b`（与 Example 文案同语种）；Load sample 按钮与进页初始化共用 `loadSample()`
 
 ## 页面模块清单（与 tool-creation 对齐）
 

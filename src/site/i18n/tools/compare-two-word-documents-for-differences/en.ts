@@ -27,7 +27,7 @@ const en: SiteLangDict = {
 	tool_compare_two_word_documents_for_differences_faq_a3:
 		'If extract fails, the file may be password-protected, corrupt, or not OOXML. Image-only pages yield empty text.',
 	tool_compare_two_word_documents_for_differences_faq_a4:
-		'People also search word compare online. Same job if they meant two .docx files. A generic “compare two documents online” search that meant PDF is not this page.',
+		"This comparison accepts two .docx files and checks extracted wording. PDF and legacy .doc files are not parsed, and formatting or Word revision history is outside the result.",
 	tool_compare_two_word_documents_for_differences_faq_q1: 'Are my Word files uploaded?',
 	tool_compare_two_word_documents_for_differences_faq_q2: 'Is this the same as Word Review → Compare?',
 	tool_compare_two_word_documents_for_differences_faq_q3: 'Why did extraction fail or miss headers?',
@@ -36,7 +36,7 @@ const en: SiteLangDict = {
 		'Pick two Word files and read the wording diff. This page does not open the Review pane.',
 	tool_compare_two_word_documents_for_differences_how_item_1: 'Choose the first .docx (original).',
 	tool_compare_two_word_documents_for_differences_how_item_2: 'Choose the second .docx (revised).',
-	tool_compare_two_word_documents_for_differences_how_item_3: 'Compare extracts visible text automatically; Load sample already ran on first paint.',
+	tool_compare_two_word_documents_for_differences_how_item_3: "Select Compare to extract the visible text and run the wording diff.",
 	tool_compare_two_word_documents_for_differences_how_item_4: 'Read green adds and red deletes in the extracted text.',
 	tool_compare_two_word_documents_for_differences_how_title: 'How it works',
 	tool_compare_two_word_documents_for_differences_label_a: 'First Word document',

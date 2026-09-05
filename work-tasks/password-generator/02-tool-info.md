@@ -68,3 +68,8 @@
 - [x] `03` 已填
 - [x] README/catalog 实现时
 - [x] 不拆 strong-password 薄页
+
+## 复审修正（2026-09-05）
+
+- `onePassword()` 改用拒绝采样：直接 `byte % poolLen` 在池长不整除 256 时让前若干字符概率偏高；现在丢弃越界字节重取。
+- `rules_item_2` 十语补充等概率这一可验证增量。

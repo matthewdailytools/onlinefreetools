@@ -57,7 +57,7 @@ const ru: SiteLangDict = {
   tool_jwt_decoder_rules_item_1:
     'Структура: подписанный JWT (компактный JWS) — три сегмента Base64url: header (alg, typ), payload (claims), signature (байты, не JSON).',
   tool_jwt_decoder_rules_item_2:
-    'Base64url: -→+, _→/, дополнение padding до длины %4, затем atob и JSON.parse. Ошибки указывают header или payload.',
+    'Base64url: -→+, _→/, дополнение padding до длины %4, затем atob, чтение полученных байтов как UTF-8 и JSON.parse — кириллица и CJK в claims читаются корректно. Ошибки указывают header или payload.',
   tool_jwt_decoder_rules_item_3:
     'Зарегистрированные claims: exp, iat, nbf — секунды Unix UTC. Прочитать JSON ≠ доверять токену.',
   tool_jwt_decoder_rules_item_4:
