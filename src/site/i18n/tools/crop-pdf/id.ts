@@ -39,6 +39,10 @@ const id: SiteLangDict = {
   tool_crop_pdf_faq_q4: 'Bagaimana PDF terenkripsi?',
   tool_crop_pdf_how_body:
     'Pilih PDF, atur margin poin (seragam atau per tepi), klik Potong lalu Unduh. CropBox dan MediaBox mengecil; penampil dan cetak menghormati batas baru. Semua di tab ini setelah pustaka dimuat—file tidak diunggah ke server.',
+  tool_crop_pdf_how_item_1: "Pilih masukan dengan “Pilih PDF”",
+  tool_crop_pdf_how_item_2: "Atur opsi lalu klik “Potong”",
+  tool_crop_pdf_how_item_3: "Periksa pratinjau, jumlah halaman, atau status",
+  tool_crop_pdf_how_item_4: "Klik “Unduh” untuk menyimpan hasil",
   tool_crop_pdf_how_title: 'Cara kerja',
   tool_crop_pdf_left_label: 'Kiri (pt)',
   tool_crop_pdf_margins_title: 'Margin yang dipangkas (poin)',

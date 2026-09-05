@@ -39,6 +39,10 @@ const fr: SiteLangDict = {
   tool_pdf_watermark_faq_q5: 'Puis-je ajouter un logo ?',
   tool_pdf_watermark_how_body:
     'Choisissez un PDF, saisissez le tampon, réglez opacité et rotation, position, logo PNG/JPG optionnel, cliquez Appliquer puis Télécharger. Chaque page reçoit la même couche.',
+  tool_pdf_watermark_how_item_1: "Sélectionnez l’entrée avec « Choisir un PDF »",
+  tool_pdf_watermark_how_item_2: "Réglez les options puis cliquez sur « Appliquer »",
+  tool_pdf_watermark_how_item_3: "Vérifiez l’aperçu, le nombre de pages ou le statut",
+  tool_pdf_watermark_how_item_4: "Cliquez sur « Télécharger » pour enregistrer le résultat",
   tool_pdf_watermark_how_title: 'Fonctionnement',
   tool_pdf_watermark_image_hint: 'Logo PNG/JPG optionnel (même position que le texte).',
   tool_pdf_watermark_image_label: 'Filigrane image (optionnel)',

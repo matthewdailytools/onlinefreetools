@@ -41,6 +41,10 @@ const en: SiteLangDict = {
   tool_pdf_to_markdown_faq_q5: 'When should I use PDF to JPG instead?',
   tool_pdf_to_markdown_how_body:
     'Choose one PDF, click Convert, review the preview, then Download .md. Text is grouped into lines by vertical position; pages are separated with ---. Everything runs in this tab after the libraries load—your file is not uploaded to a server.',
+  tool_pdf_to_markdown_how_item_1: "Select the input with “Choose a PDF”",
+  tool_pdf_to_markdown_how_item_2: "Set the available options, then click “Convert”",
+  tool_pdf_to_markdown_how_item_3: "Review the preview, page count, or status message",
+  tool_pdf_to_markdown_how_item_4: "Click “Download .md” to save the result",
   tool_pdf_to_markdown_how_title: 'How it works',
   tool_pdf_to_markdown_pages_label: 'Pages',
   tool_pdf_to_markdown_preview_label: 'Markdown preview',

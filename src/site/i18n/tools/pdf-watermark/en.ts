@@ -39,6 +39,10 @@ const en: SiteLangDict = {
   tool_pdf_watermark_faq_q5: 'Can I add a logo image?',
   tool_pdf_watermark_how_body:
     'Choose one PDF, enter stamp text, adjust opacity and rotation, pick a position, optionally attach a PNG/JPG logo, click Apply, then Download. Every page gets the same overlay. Libraries load on first use.',
+  tool_pdf_watermark_how_item_1: "Select the input with “Choose PDF”",
+  tool_pdf_watermark_how_item_2: "Set the available options, then click “Apply watermark”",
+  tool_pdf_watermark_how_item_3: "Review the preview, page count, or status message",
+  tool_pdf_watermark_how_item_4: "Click “Download” to save the result",
   tool_pdf_watermark_how_title: 'How it works',
   tool_pdf_watermark_image_hint: 'Optional PNG/JPG logo (same position as text).',
   tool_pdf_watermark_image_label: 'Image watermark (optional)',

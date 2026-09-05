@@ -38,6 +38,10 @@ const id: SiteLangDict = {
   tool_split_pdf_faq_q5: 'Bedanya dengan Gabung PDF?',
   tool_split_pdf_how_body:
     'Pilih satu PDF, pilih setiap halaman atau rentang, klik Pisah, lalu Unduh. Beberapa keluaran jadi ZIP; satu keluaran jadi PDF. Semuanya lokal setelah pustaka dimuat.',
+  tool_split_pdf_how_item_1: "Pilih masukan dengan “Pilih PDF”",
+  tool_split_pdf_how_item_2: "Atur opsi lalu klik “Pisah”",
+  tool_split_pdf_how_item_3: "Periksa pratinjau, jumlah halaman, atau status",
+  tool_split_pdf_how_item_4: "Klik “Unduh” untuk menyimpan hasil",
   tool_split_pdf_how_title: 'Cara kerja',
   tool_split_pdf_mode_every: 'Setiap halaman (satu file per halaman)',
   tool_split_pdf_mode_label: 'Mode pemisahan',

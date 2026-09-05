@@ -358,16 +358,16 @@ export const renderAddTextToPdfFilePage = (opts: {
       btnSample.addEventListener('click', function () {
         setErr('');
         setWarn('');
-        loadSamplePdf();
+        loadSample();
       });
 
       btnClear.addEventListener('click', function () {
         clearAll();
-        loadSamplePdf();
+        loadSample();
       });
 
       // 初始化：自动加载样例并生成可下载结果
-      loadSamplePdf();
+      loadSample();
     })();
   </script>`;
 

@@ -37,6 +37,10 @@ const de: SiteLangDict = {
   tool_compress_pdf_faq_q5: 'Welche Qualitätsstufe wählen?',
   tool_compress_pdf_how_body:
     'PDF wählen, Mittel oder Niedrig wählen, Komprimieren klicken, dann Download. Jede Seite wird als JPEG im neuen PDF gespeichert. Statistik zeigt Originalgröße, neue Größe und Prozentänderung. Bibliotheken laden beim ersten Mal.',
+  tool_compress_pdf_how_item_1: "Wählen Sie die Eingabe mit „PDF wählen“",
+  tool_compress_pdf_how_item_2: "Optionen einstellen und „Komprimieren“ anklicken",
+  tool_compress_pdf_how_item_3: "Vorschau, Seitenzahl oder Statusmeldung prüfen",
+  tool_compress_pdf_how_item_4: "Mit „Download“ das Ergebnis speichern",
   tool_compress_pdf_how_title: 'So funktioniert es',
   tool_compress_pdf_pages_label: 'Seiten',
   tool_compress_pdf_quality_label: 'Qualität',

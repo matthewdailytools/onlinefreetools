@@ -36,6 +36,10 @@ const id: SiteLangDict = {
   tool_rotate_pdf_faq_q4: 'Bagaimana dengan PDF terenkripsi?',
   tool_rotate_pdf_how_body:
     'Pilih PDF, semua halaman atau rentang, pilih sudut, klik Putar lalu Unduh. Rotasi ditambahkan ke sudut halaman saat ini. Semua di tab ini setelah pustaka dimuat—file tidak diunggah ke server.',
+  tool_rotate_pdf_how_item_1: "Pilih masukan dengan “Pilih PDF”",
+  tool_rotate_pdf_how_item_2: "Atur opsi lalu klik “Putar”",
+  tool_rotate_pdf_how_item_3: "Periksa pratinjau, jumlah halaman, atau status",
+  tool_rotate_pdf_how_item_4: "Klik “Unduh” untuk menyimpan hasil",
   tool_rotate_pdf_how_title: 'Cara kerja',
   tool_rotate_pdf_mode_all: 'Semua halaman',
   tool_rotate_pdf_mode_label: 'Halaman untuk diputar',

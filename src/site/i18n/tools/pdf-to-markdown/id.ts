@@ -40,6 +40,10 @@ const id: SiteLangDict = {
   tool_pdf_to_markdown_faq_q5: 'Kapan pakai PDF ke JPG?',
   tool_pdf_to_markdown_how_body:
     'Pilih PDF, Konversi, tinjau pratinjau, unduh .md. Baris dikelompokkan menurut posisi vertikal; halaman dipisah ---. Semua di tab ini setelah pustaka dimuat—file tidak diunggah ke server.',
+  tool_pdf_to_markdown_how_item_1: "Pilih masukan dengan “Pilih PDF”",
+  tool_pdf_to_markdown_how_item_2: "Atur opsi lalu klik “Konversi”",
+  tool_pdf_to_markdown_how_item_3: "Periksa pratinjau, jumlah halaman, atau status",
+  tool_pdf_to_markdown_how_item_4: "Klik “Unduh .md” untuk menyimpan hasil",
   tool_pdf_to_markdown_how_title: 'Cara kerja',
   tool_pdf_to_markdown_pages_label: 'Halaman',
   tool_pdf_to_markdown_preview_label: 'Pratinjau Markdown',

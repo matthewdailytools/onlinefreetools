@@ -11,7 +11,7 @@ const en: SiteLangDict = {
   tool_protect_pdf_desc:
     'Add an open password to a PDF on your device—nothing uploaded to a server.',
   tool_protect_pdf_description:
-    'Password-protect a PDF in your browser before you email or share it—nothing is uploaded to a server. Steps: choose a PDF, enter and confirm a password (empty passwords are rejected), click Protect, then Download protected.pdf. Example: a one-page sample is encrypted with password sample and Download is enabled. This is standard user-password encryption—not military-grade; opening later needs that password (see Unlock PDF when we ship it). Files over ~25 MB may be slow.',
+    'Password-protect a PDF in your browser before you email or share it—nothing is uploaded to a server. Steps: choose a PDF, enter and confirm a password (empty passwords are rejected), click Protect, then Download protected.pdf. Example: a one-page sample is encrypted with password sample and Download is enabled. This is standard user-password encryption—not military-grade; opening later needs that password. Use the available Unlock PDF tool with the password you set. Files over ~25 MB may be slow.',
   tool_protect_pdf_download: 'Download',
   tool_protect_pdf_drop_hint: 'Or drop one PDF here. Processing stays in this tab.',
   tool_protect_pdf_empty: 'Choose a PDF file first.',
@@ -29,7 +29,7 @@ const en: SiteLangDict = {
   tool_protect_pdf_faq_a2:
     'It applies normal PDF user-password encryption so viewers must enter the password to open. It is not marketed as military-grade—pick a strong password you will remember.',
   tool_protect_pdf_faq_a3:
-    'You need the same password you set here. When our Unlock PDF tool is available, use it with the password you chose—this site does not crack or bypass passwords.',
+    'You need the same password you set here. Use our Unlock PDF tool with that password—this site does not crack or bypass passwords.',
   tool_protect_pdf_faq_a4:
     'Already encrypted files usually fail to load. Remove the old password with a tool you trust, then add your new password here.',
   tool_protect_pdf_faq_q1: 'Is my PDF uploaded?',
@@ -38,6 +38,10 @@ const en: SiteLangDict = {
   tool_protect_pdf_faq_q4: 'What if the PDF is already protected?',
   tool_protect_pdf_how_body:
     'Choose one PDF, type a password twice so they match, click Protect, then Download. Encryption runs in this tab after the PDF library loads. Reject empty passwords before encrypting.',
+  tool_protect_pdf_how_item_1: "Select the input with “Choose a PDF”",
+  tool_protect_pdf_how_item_2: "Set the available options, then click “Protect”",
+  tool_protect_pdf_how_item_3: "Review the preview, page count, or status message",
+  tool_protect_pdf_how_item_4: "Click “Download” to save the result",
   tool_protect_pdf_how_title: 'How it works',
   tool_protect_pdf_pages_label: 'Pages in file',
   tool_protect_pdf_password_label: 'Password',

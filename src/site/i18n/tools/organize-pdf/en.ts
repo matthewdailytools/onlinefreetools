@@ -37,6 +37,10 @@ const en: SiteLangDict = {
   tool_organize_pdf_faq_q5: 'How do I delete pages?',
   tool_organize_pdf_how_body:
     'Choose one PDF, reorder or remove pages in the list, click Apply, then Download. Output page order follows the list. Everything runs in this tab after the PDF library loads.',
+  tool_organize_pdf_how_item_1: "Select the input with “Choose PDF”",
+  tool_organize_pdf_how_item_2: "Set the available options, then click “Apply”",
+  tool_organize_pdf_how_item_3: "Review the preview, page count, or status message",
+  tool_organize_pdf_how_item_4: "Click “Download” to save the result",
   tool_organize_pdf_how_title: 'How it works',
   tool_organize_pdf_include: 'Include',
   tool_organize_pdf_move_down: 'Down',

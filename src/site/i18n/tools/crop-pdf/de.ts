@@ -39,6 +39,10 @@ const de: SiteLangDict = {
   tool_crop_pdf_faq_q4: 'Was ist mit verschlüsselten PDFs?',
   tool_crop_pdf_how_body:
     'PDF wählen, Ränder in Punkten setzen (alle Seiten oder je Kante), Zuschneiden klicken, dann Download. Zuschneide- und Medienrahmen schrumpfen; Viewer und Druck respektieren die neuen Grenzen. Alles im Tab nach dem Laden der Bibliothek—keine Datei geht an einen Server.',
+  tool_crop_pdf_how_item_1: "Wählen Sie die Eingabe mit „PDF wählen“",
+  tool_crop_pdf_how_item_2: "Optionen einstellen und „Zuschneiden“ anklicken",
+  tool_crop_pdf_how_item_3: "Vorschau, Seitenzahl oder Statusmeldung prüfen",
+  tool_crop_pdf_how_item_4: "Mit „Download“ das Ergebnis speichern",
   tool_crop_pdf_how_title: 'So funktioniert es',
   tool_crop_pdf_left_label: 'Links (pt)',
   tool_crop_pdf_margins_title: 'Zu trimmende Ränder (Punkte)',

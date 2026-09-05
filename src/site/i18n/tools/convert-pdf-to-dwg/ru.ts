@@ -49,7 +49,7 @@ const ru: SiteLangDict = {
   tool_convert_pdf_to_dwg_sample: "Загрузить пример",
   tool_convert_pdf_to_dwg_status_done: "Готово.",
   tool_convert_pdf_to_dwg_status_working: "Работаем…",
-  tool_convert_pdf_to_dwg_title: "Конвертировать PDF в DWG",
+  tool_convert_pdf_to_dwg_title: "Экспортировать текст PDF в DXF для AutoCAD",
   tool_convert_pdf_to_dwg_usecase_1: "Перенести текст штампа в AutoCAD как TEXT",
   tool_convert_pdf_to_dwg_usecase_2: "Отдать DXF-обмен коллеге, который просил DWG",
   tool_convert_pdf_to_dwg_usecase_3: "Оставить план PDF на устройстве и экспортировать CAD-читаемый текст",

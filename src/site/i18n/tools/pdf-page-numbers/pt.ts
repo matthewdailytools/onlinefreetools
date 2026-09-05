@@ -40,6 +40,10 @@ const pt: SiteLangDict = {
   tool_pdf_page_numbers_format_page_n_tpl: 'Página {n}',
   tool_pdf_page_numbers_how_body:
     'Escolha um PDF, posição (centro inferior padrão), primeiro número, margem e tamanho, clique Numerar e Baixar. Números desenhados em cada página. Biblioteca carrega no primeiro uso.',
+  tool_pdf_page_numbers_how_item_1: "Selecione a entrada com “Escolher PDF”",
+  tool_pdf_page_numbers_how_item_2: "Ajuste as opções e clique em “Numerar”",
+  tool_pdf_page_numbers_how_item_3: "Confira a prévia, a contagem de páginas ou o status",
+  tool_pdf_page_numbers_how_item_4: "Clique em “Baixar” para salvar o resultado",
   tool_pdf_page_numbers_how_title: 'Como funciona',
   tool_pdf_page_numbers_margin_label: 'Margem (pt)',
   tool_pdf_page_numbers_pages_label: 'Páginas',

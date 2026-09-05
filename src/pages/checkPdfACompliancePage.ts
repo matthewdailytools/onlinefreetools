@@ -1,5 +1,5 @@
 /**
- * Check PDF/A compliance 工具页：在浏览器端对 PDF/A 关键规则做“可解释的检查”（非严格 PDF/A 验证器）。
+ * PDF/A 指标检查工具页：在浏览器端筛查可见归档标记，不作合规认证。
  * slug: check-pdf-a-compliance
  */
 import type { SiteLang } from '../site/i18n';
@@ -99,6 +99,7 @@ export const renderCheckPdfACompliancePage = (opts: {
     <div id="converter" class="tool-page-heading mb-3">
       <h1 class="h4 mb-0">${escapeHtml(t(opts.lang, prefix + '_title'))}</h1>
     </div>
+    <p class="alert alert-warning small" role="note">${escapeHtml(t(opts.lang, prefix + '_warn'))}</p>
 
     <label class="tool-dropzone mb-3" id="checkPdfADrop" for="checkPdfAFile">
       <input type="file" id="checkPdfAFile" accept="application/pdf,.pdf">
@@ -108,14 +109,8 @@ export const renderCheckPdfACompliancePage = (opts: {
 
     <div class="d-flex align-items-center tools-bar mb-2 flex-wrap">
       <button type="button" id="checkPdfABtnCheck" class="btn btn-primary btn-sm">${escapeHtml(t(opts.lang, prefix + '_check'))}</button>
-      <button type="button" id="checkPdfABtnSample" class="btn btn-outline-secondary btn-sm">${escapeHtml(
-				opts.lang,
-				prefix + '_sample'
-			)}</button>
-      <button type="button" id="checkPdfABtnClear" class="btn btn-outline-secondary btn-sm">${escapeHtml(
-				opts.lang,
-				prefix + '_clear'
-			)}</button>
+      <button type="button" id="checkPdfABtnSample" class="btn btn-outline-secondary btn-sm">${escapeHtml(t(opts.lang, prefix + '_sample'))}</button>
+      <button type="button" id="checkPdfABtnClear" class="btn btn-outline-secondary btn-sm">${escapeHtml(t(opts.lang, prefix + '_clear'))}</button>
     </div>
 
     <p id="checkPdfAError" class="small text-danger mb-2" style="display:none;" role="alert"></p>
@@ -138,8 +133,8 @@ export const renderCheckPdfACompliancePage = (opts: {
 	const referencesHtml = renderToolReferencesSection({
 		lang: opts.lang,
 		links: [
-			{ label: 'PDF/A', href: 'https://en.wikipedia.org/wiki/PDF/A' },
-			{ label: 'pdf-lib', href: 'https://pdf-lib.js.org/' },
+			{ label: 'veraPDF validation', href: 'https://docs.verapdf.org/validation/' },
+			{ label: 'PDF Association — PDF/A', href: 'https://pdfa.org/resource/iso-19005-pdfa/' },
 		],
 	});
 
@@ -168,9 +163,14 @@ export const renderCheckPdfACompliancePage = (opts: {
         notext: ${JSON.stringify(t(opts.lang, prefix + '_err_notext'))},
         working: ${JSON.stringify(t(opts.lang, prefix + '_status_working'))},
         done: ${JSON.stringify(t(opts.lang, prefix + '_status_done'))},
-        pass: ${JSON.stringify(t(opts.lang, prefix + '_pass'))},
-        fail: ${JSON.stringify(t(opts.lang, prefix + '_fail'))},
+        found: ${JSON.stringify(t(opts.lang, prefix + '_pass'))},
+        missing: ${JSON.stringify(t(opts.lang, prefix + '_fail'))},
         warn: ${JSON.stringify(t(opts.lang, prefix + '_warn'))},
+        indicatorHeader: ${JSON.stringify(t(opts.lang, prefix + '_indicator_header'))},
+        indicatorPdfaId: ${JSON.stringify(t(opts.lang, prefix + '_indicator_pdfa_id'))},
+        indicatorOutputIntent: ${JSON.stringify(t(opts.lang, prefix + '_indicator_output_intent'))},
+        indicatorEmbeddedFont: ${JSON.stringify(t(opts.lang, prefix + '_indicator_embedded_font'))},
+        indicatorNoEncryption: ${JSON.stringify(t(opts.lang, prefix + '_indicator_no_encryption'))},
       };
 
       function setErr(text) {
@@ -190,7 +190,7 @@ export const renderCheckPdfACompliancePage = (opts: {
           var left = document.createElement('span');
           left.textContent = r.label;
           var right = document.createElement('span');
-          right.textContent = r.ok ? msg.pass : msg.fail;
+          right.textContent = r.ok ? msg.found : msg.missing;
           right.className = r.ok ? 'check-pass' : 'check-fail';
           li.appendChild(left);
           li.appendChild(right);
@@ -199,7 +199,8 @@ export const renderCheckPdfACompliancePage = (opts: {
       }
 
       /**
-       * PDF/A 规则检查（轻量版）：不做完整 Verapdf 校验，只做可解释的“关键特征”检查。
+       * 筛查五个可从原始字节观察到的 PDF/A 相关指标。
+       * 这不是解析全部对象、色彩空间、字体或 PDF/A profile 的验证器。
        * @param {Uint8Array} bytes
        * @returns {Array<{label: string, ok: boolean}>}
        */
@@ -219,24 +220,26 @@ export const renderCheckPdfACompliancePage = (opts: {
 
         var results = [];
 
-        // 1) PDF 版本：%PDF-1.x
+        // 1) PDF 文件头：只证明输入看起来像 PDF，不证明 PDF/A。
         var verMatch = text.match(/%PDF-(\\d+\\.\\d+)/i);
         var pdfVersion = verMatch ? verMatch[1] : '';
-        results.push({ label: 'PDF version present (%PDF-...)', ok: Boolean(pdfVersion) });
+        results.push({ label: msg.indicatorHeader, ok: Boolean(pdfVersion) });
 
-        // 2) Linearized（快视图）特征
-        // 注意：是否允许/要求不同 PDF/A profile，这里只做“发现与否”检查。
-        var isLinearized = /Linearized/i.test(text);
-        results.push({ label: 'Linearized hint detected', ok: isLinearized === false });
+        // 2) 未压缩 XMP 中的 PDF/A part/conformance 标识。
+        var hasPdfaId = /pdfaid:(part|conformance)/i.test(text);
+        results.push({ label: msg.indicatorPdfaId, ok: hasPdfaId });
 
-        // 3) 元数据：检查是否出现 /Type /Metadata 或 XMP
-        var hasMetadataObj = /\\/Type\\s*\\/Metadata/i.test(text);
-        var hasXmp = /XMP/i.test(text);
-        results.push({ label: 'XMP / Metadata object markers', ok: Boolean(hasMetadataObj || hasXmp) });
+        // 3) 输出意图是 PDF/A 色彩管理的重要指标。
+        var hasOutputIntent = /\\/OutputIntents?/i.test(text) && /GTS_PDFA1/i.test(text);
+        results.push({ label: msg.indicatorOutputIntent, ok: hasOutputIntent });
 
-        // 4) 字体引用：检查是否出现 /Font（粗粒度）
-        var hasFontRefs = /\\/Font/i.test(text);
-        results.push({ label: 'Font references (/Font)', ok: hasFontRefs });
+        // 4) 字体文件流标记仅是嵌入字体的粗略信号，不覆盖逐字体验证。
+        var hasEmbeddedFont = /\\/FontFile(?:2|3)?\\b/i.test(text);
+        results.push({ label: msg.indicatorEmbeddedFont, ok: hasEmbeddedFont });
+
+        // 5) PDF/A 不允许加密；未发现 /Encrypt 是有利指标，但仍非证明。
+        var hasEncryption = /\\/Encrypt\\b/i.test(text);
+        results.push({ label: msg.indicatorNoEncryption, ok: !hasEncryption });
 
         return results;
       }

@@ -35,6 +35,10 @@ const ar: SiteLangDict = {
   tool_merge_pdf_faq_q5: 'هل تُفتح النتيجة في Acrobat أو المعاينة؟',
   tool_merge_pdf_how_body:
     'أضف ملفين أو أكثر، رتّب إن لزم، اضغط دمج ثم تنزيل. ترتيب الصفحات يتبع القائمة. كل شيء محلي بعد تحميل المكتبة.',
+  tool_merge_pdf_how_item_1: "اختر الإدخال عبر «اختر ملفات PDF»",
+  tool_merge_pdf_how_item_2: "اضبط الخيارات ثم اضغط «دمج»",
+  tool_merge_pdf_how_item_3: "راجع المعاينة أو عدد الصفحات أو رسالة الحالة",
+  tool_merge_pdf_how_item_4: "اضغط «تنزيل» لحفظ النتيجة",
   tool_merge_pdf_how_title: 'طريقة العمل',
   tool_merge_pdf_merge: 'دمج',
   tool_merge_pdf_move_down: 'أسفل',

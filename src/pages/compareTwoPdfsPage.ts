@@ -202,6 +202,18 @@ export const renderCompareTwoPdfsPage = (opts: {
       }
       function setStatus(text) { statusEl.textContent = text || ''; }
 
+      /**
+       * 将 PDF 提取文本转义为安全 HTML 文本，避免差异预览解释原文标记。
+       * @param {unknown} value PDF.js 返回的文本片段
+       * @returns {string} 可安全拼接到差异 HTML 的文本
+       */
+      function escapeDiffText(value) {
+        return String(value == null ? '' : value)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;');
+      }
+
       function setResult(html, changeBlocksCount) {
         resultHtml = html;
         resultEl.innerHTML = html;
@@ -310,9 +322,10 @@ export const renderCompareTwoPdfsPage = (opts: {
             var changeBlocks = 0;
             var blocks = Diff.diffWordsWithSpace(textA, textB);
             var html = blocks.map(function (b) {
-              if (b.added) { changeBlocks += 1; return '<span class=\"diff-added\">' + b.value.replace(/</g, '&lt;') + '</span>'; }
-              if (b.removed) { changeBlocks += 1; return '<span class=\"diff-removed\">' + b.value.replace(/</g, '&lt;') + '</span>'; }
-              return '<span class=\"diff-neutral\">' + b.value.replace(/</g, '&lt;') + '</span>';
+              var safeValue = escapeDiffText(b.value);
+              if (b.added) { changeBlocks += 1; return '<span class=\"diff-added\">' + safeValue + '</span>'; }
+              if (b.removed) { changeBlocks += 1; return '<span class=\"diff-removed\">' + safeValue + '</span>'; }
+              return '<span class=\"diff-neutral\">' + safeValue + '</span>';
             }).join('');
 
             setResult(html, changeBlocks);

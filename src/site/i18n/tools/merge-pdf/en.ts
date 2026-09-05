@@ -36,6 +36,10 @@ const en: SiteLangDict = {
   tool_merge_pdf_faq_q5: 'Will the result open in Acrobat or Preview?',
   tool_merge_pdf_how_body:
     'Add two or more PDFs, reorder with Up/Down if needed, click Merge, then Download. Page order follows the list. Everything runs locally after the PDF library loads.',
+  tool_merge_pdf_how_item_1: "Select the input with “Choose PDFs”",
+  tool_merge_pdf_how_item_2: "Set the available options, then click “Merge”",
+  tool_merge_pdf_how_item_3: "Review the preview, page count, or status message",
+  tool_merge_pdf_how_item_4: "Click “Download” to save the result",
   tool_merge_pdf_how_title: 'How it works',
   tool_merge_pdf_merge: 'Merge',
   tool_merge_pdf_move_down: 'Down',

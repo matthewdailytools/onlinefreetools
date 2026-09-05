@@ -39,6 +39,10 @@ const de: SiteLangDict = {
   tool_unlock_pdf_faq_q4: 'Bezug zu PDF schützen?',
   tool_unlock_pdf_how_body:
     'Passwortgeschütztes PDF wählen, bekanntes Öffnerpasswort eingeben, Entsperren und Download. Entschlüsselung im Tab nach dem Laden der PDF-Bibliothek—ohne Server-Upload. Leeres Passwort wird abgelehnt, wenn nötig.',
+  tool_unlock_pdf_how_item_1: "Wählen Sie die Eingabe mit „Verschlüsseltes PDF wählen“",
+  tool_unlock_pdf_how_item_2: "Optionen einstellen und „Entsperren“ anklicken",
+  tool_unlock_pdf_how_item_3: "Vorschau, Seitenzahl oder Statusmeldung prüfen",
+  tool_unlock_pdf_how_item_4: "Mit „Download“ das Ergebnis speichern",
   tool_unlock_pdf_how_title: 'So funktioniert es',
   tool_unlock_pdf_pages_label: 'Seiten',
   tool_unlock_pdf_password_label: 'Öffnerpasswort',

@@ -40,6 +40,10 @@ const de: SiteLangDict = {
   tool_pdf_to_markdown_faq_q5: 'Wann PDF zu JPG nutzen?',
   tool_pdf_to_markdown_how_body:
     'PDF wählen, Konvertieren, Vorschau prüfen, .md laden. Zeilen nach vertikaler Position; Seiten mit --- getrennt. Alles im Tab nach dem Laden der Bibliotheken—keine Datei geht an einen Server.',
+  tool_pdf_to_markdown_how_item_1: "Wählen Sie die Eingabe mit „PDF wählen“",
+  tool_pdf_to_markdown_how_item_2: "Optionen einstellen und „Konvertieren“ anklicken",
+  tool_pdf_to_markdown_how_item_3: "Vorschau, Seitenzahl oder Statusmeldung prüfen",
+  tool_pdf_to_markdown_how_item_4: "Mit „.md herunterladen“ das Ergebnis speichern",
   tool_pdf_to_markdown_how_title: 'So funktioniert es',
   tool_pdf_to_markdown_pages_label: 'Seiten',
   tool_pdf_to_markdown_preview_label: 'Markdown-Vorschau',

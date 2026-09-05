@@ -36,6 +36,10 @@ const fr: SiteLangDict = {
   tool_rotate_pdf_faq_q4: 'Et les PDF chiffrés ?',
   tool_rotate_pdf_how_body:
     'Choisissez un PDF, toutes les pages ou des plages, choisissez l’angle, cliquez Pivoter puis Télécharger. La rotation s’ajoute à l’angle actuel. Tout est local après chargement de la bibliothèque.',
+  tool_rotate_pdf_how_item_1: "Sélectionnez l’entrée avec « Choisir un PDF »",
+  tool_rotate_pdf_how_item_2: "Réglez les options puis cliquez sur « Pivoter »",
+  tool_rotate_pdf_how_item_3: "Vérifiez l’aperçu, le nombre de pages ou le statut",
+  tool_rotate_pdf_how_item_4: "Cliquez sur « Télécharger » pour enregistrer le résultat",
   tool_rotate_pdf_how_title: 'Fonctionnement',
   tool_rotate_pdf_mode_all: 'Toutes les pages',
   tool_rotate_pdf_mode_label: 'Pages à pivoter',

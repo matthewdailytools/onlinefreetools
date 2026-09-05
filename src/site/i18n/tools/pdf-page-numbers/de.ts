@@ -40,6 +40,10 @@ const de: SiteLangDict = {
   tool_pdf_page_numbers_format_page_n_tpl: 'Seite {n}',
   tool_pdf_page_numbers_how_body:
     'PDF wählen, Position (Standard unten Mitte), Startzahl, Rand und Größe, Seitenzahlen klicken, dann Download. Zahlen werden auf jeder Seite gezeichnet. Bibliothek lädt beim ersten Mal.',
+  tool_pdf_page_numbers_how_item_1: "Wählen Sie die Eingabe mit „PDF wählen“",
+  tool_pdf_page_numbers_how_item_2: "Optionen einstellen und „Seitenzahlen“ anklicken",
+  tool_pdf_page_numbers_how_item_3: "Vorschau, Seitenzahl oder Statusmeldung prüfen",
+  tool_pdf_page_numbers_how_item_4: "Mit „Download“ das Ergebnis speichern",
   tool_pdf_page_numbers_how_title: 'So funktioniert es',
   tool_pdf_page_numbers_margin_label: 'Rand (pt)',
   tool_pdf_page_numbers_pages_label: 'Seiten',

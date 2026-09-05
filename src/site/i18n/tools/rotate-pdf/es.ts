@@ -39,6 +39,10 @@ const es: SiteLangDict = {
   tool_rotate_pdf_faq_q4: '¿Y los PDF cifrados?',
   tool_rotate_pdf_how_body:
     'Elige un PDF, todas las páginas o rangos, elige ángulo, pulsa Girar y Descargar. El giro se suma al ángulo actual. Todo local tras cargar la librería.',
+  tool_rotate_pdf_how_item_1: "Selecciona la entrada con «Elegir PDF»",
+  tool_rotate_pdf_how_item_2: "Ajusta las opciones y pulsa «Girar»",
+  tool_rotate_pdf_how_item_3: "Revisa la vista previa, el número de páginas o el estado",
+  tool_rotate_pdf_how_item_4: "Pulsa «Descargar» para guardar el resultado",
   tool_rotate_pdf_how_title: 'Cómo funciona',
   tool_rotate_pdf_mode_all: 'Todas las páginas',
   tool_rotate_pdf_mode_label: 'Páginas a girar',

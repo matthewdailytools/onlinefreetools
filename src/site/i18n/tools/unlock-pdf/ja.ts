@@ -36,6 +36,10 @@ const ja: SiteLangDict = {
   tool_unlock_pdf_faq_q4: 'PDF を保護 との関係は？',
   tool_unlock_pdf_how_body:
     'パスワード付き PDF を 1 つ選び、既知の開くパスワードを入力、解除してダウンロード。PDF ライブラリ 読み込み後はローカル処理。パスワード必須時は空欄を拒否します。',
+  tool_unlock_pdf_how_item_1: "「暗号化 PDF を選択」で入力ファイルを選択",
+  tool_unlock_pdf_how_item_2: "オプションを設定し「解除」を押す",
+  tool_unlock_pdf_how_item_3: "プレビュー、ページ数、ステータスを確認",
+  tool_unlock_pdf_how_item_4: "「ダウンロード」で結果を保存",
   tool_unlock_pdf_how_title: '使い方',
   tool_unlock_pdf_pages_label: 'ページ数',
   tool_unlock_pdf_password_label: '開くパスワード',

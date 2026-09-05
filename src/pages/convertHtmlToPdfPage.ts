@@ -143,6 +143,7 @@ export const renderConvertHtmlToPdfPage = (opts: {
 	const extraBodyHtml = `
   ${pdfWorkUiClientScript()}
   <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.5/purify.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdn.jsdelivr.net/npm/html2pdf.js@0.10.2/dist/html2pdf.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     (function () {
@@ -204,7 +205,11 @@ export const renderConvertHtmlToPdfPage = (opts: {
           try {
             var html = textarea.value || '';
             if (!html.trim()) return reject(new Error('empty'));
-            previewEl.innerHTML = html;
+            if (typeof DOMPurify === 'undefined') return reject(new Error('dompurify'));
+            // 在写入 DOM 和交给 html2canvas 之前移除脚本、事件属性和危险 URL。
+            previewEl.innerHTML = DOMPurify.sanitize(html, {
+              USE_PROFILES: { html: true },
+            });
 
             // html2pdf 的 options 以尽量稳定为目标
             var opt = {

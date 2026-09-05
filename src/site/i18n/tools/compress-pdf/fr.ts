@@ -37,6 +37,10 @@ const fr: SiteLangDict = {
   tool_compress_pdf_faq_q5: 'Quelle qualité choisir ?',
   tool_compress_pdf_how_body:
     'Choisissez un PDF, sélectionnez Moyen ou Faible, cliquez Compresser puis Télécharger. Chaque page est enregistrée en JPEG dans un nouveau PDF. Les stats montrent taille d\'origine, nouvelle et pourcentage. Les bibliothèques se chargent au premier usage.',
+  tool_compress_pdf_how_item_1: "Sélectionnez l’entrée avec « Choisir un PDF »",
+  tool_compress_pdf_how_item_2: "Réglez les options puis cliquez sur « Compresser »",
+  tool_compress_pdf_how_item_3: "Vérifiez l’aperçu, le nombre de pages ou le statut",
+  tool_compress_pdf_how_item_4: "Cliquez sur « Télécharger » pour enregistrer le résultat",
   tool_compress_pdf_how_title: 'Fonctionnement',
   tool_compress_pdf_pages_label: 'Pages',
   tool_compress_pdf_quality_label: 'Qualité',

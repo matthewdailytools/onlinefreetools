@@ -49,7 +49,7 @@ const ja: SiteLangDict = {
   tool_convert_pdf_to_dwg_sample: "サンプルを読み込む",
   tool_convert_pdf_to_dwg_status_done: "完了。",
   tool_convert_pdf_to_dwg_status_working: "処理中…",
-  tool_convert_pdf_to_dwg_title: "PDFをDWGに変換",
+  tool_convert_pdf_to_dwg_title: "PDF テキストを AutoCAD 用 DXF に出力",
   tool_convert_pdf_to_dwg_usecase_1: "図面枠の文字をTEXTとしてAutoCADへ渡す",
   tool_convert_pdf_to_dwg_usecase_2: "DWGを求められた同僚に、まずDXF交換ファイルを渡す",
   tool_convert_pdf_to_dwg_usecase_3: "平面図PDFを端末に残し、CADで読める文字だけ書き出す",

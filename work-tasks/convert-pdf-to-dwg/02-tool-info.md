@@ -47,7 +47,7 @@
 |---|---|
 | 日期 | 2026-09-03 |
 | slug 结论 | 保留 `convert-pdf-to-dwg` |
-| 主检索词 → title/H1 | **Convert PDF to DWG** |
+| 主检索词 → title/H1 | **Export PDF text to DXF for AutoCAD**；DWG 主词仅作未覆盖边界 |
 | 次要关键词 → desc / FAQ / Use cases | Planner 近义 absorb 进 FAQ（见 pdf keyword planner §5） |
 | 用户搜索习惯判断 | 场景句 H1；禁品类头词 |
 | 优化摘要 | 对齐 pdf planner 分场景 slug；跳过 SERP |
@@ -59,7 +59,7 @@
 
 | 长尾词（Planner） | 归属 | 文案落点 | 功能覆盖 | 不覆盖理由 |
 |---|---|---|---|---|
-| convert pdf to dwg | build 主词 | H1 | 进页默认该场景 | |
+| convert pdf to dwg | defer | FAQ/边界说明 | 未覆盖专有 DWG 转换 | 当前输出 ASCII DXF，只含 TEXT 与页框 LINE |
 | 近义 absorb | absorb | FAQ/desc | 同控件 | |
 
 - [x] 交互规格已按上表补齐能力
@@ -69,20 +69,20 @@
 | 项 | 结论 |
 |---|---|
 | 日期 | 2026-09-03 |
-| 总判 | 满足：进页即 convert pdf to dwg 场景 |
-| 主词搜索者任务 | Extract vector paths to SVG/DXF best-effort; CAD limits honest. |
-| Ads/Planner 长尾任务 | 主词能办成 |
-| 满足之处 | 单场景控件 + loadSample |
-| 超出 / 应划边界 | 不冒充邻页（FAQ 链出） |
-| 缺口与已做优化 | How 对齐任务句 |
+| 总判 | 不覆盖专有 DWG；页面仅办成 PDF 文本到 ASCII DXF 交换文件 |
+| 主词搜索者任务 | 将 PDF 图形、文字与几何转换为可编辑 DWG 或高保真 CAD。 |
+| Ads/Planner 长尾任务 | DWG 主词尚未办成，继续 defer |
+| 满足之处 | 从文本层生成 DXF TEXT，并为每页添加矩形 LINE 页框 |
+| 超出 / 应划边界 | 不写 DWG 二进制，不描摹矢量路径，不 OCR 扫描图 |
+| 缺口与已做优化 | 十语 H1 明示 DXF 与文本范围，FAQ 保留 DWG/扫描件边界 |
 | [x] 已按审查回写 How / 交互主次 / FAQ / desc | |
 
 ## 交互规格（给实现用）
 
-- 输入/输出：Extract vector paths to SVG/DXF best-effort; CAD limits honest.
-- 核心规则 / 算法：见 Page 实现
-- 失败与边界行为：加密/无文本/不支持格式 → 可读错误
-- 示例 Input → Output：loadSample 自动生成
+- 输入/输出：输入带文本层的 PDF；输出 AutoCAD 可打开的 ASCII `.dxf`。
+- 核心规则 / 算法：PDF.js 提取文字位置，写入 DXF TEXT；每页仅补一个矩形 LINE 页框。
+- 失败与边界行为：无文本层、加密或损坏文件 → 可读错误；不生成 DWG。
+- 示例 Input → Output：包含 “Hello PDF to DWG sample.” 的一页 PDF → ASCII DXF TEXT。
 - **进页样例**：loadSample() 自动跑出可见结果
 - **实现防呆**：opts；`\\w` 转义；lint:tool-page
 

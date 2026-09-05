@@ -38,6 +38,10 @@ const de: SiteLangDict = {
   tool_split_pdf_faq_q5: 'Unterschied zu PDF zusammenfügen?',
   tool_split_pdf_how_body:
     'Ein PDF wählen, jede Seite oder Bereiche wählen, Teilen, dann Download. Mehrere Ausgaben → ZIP; eine → PDF. Nach dem Laden der Bibliotheken alles lokal.',
+  tool_split_pdf_how_item_1: "Wählen Sie die Eingabe mit „PDF wählen“",
+  tool_split_pdf_how_item_2: "Optionen einstellen und „Teilen“ anklicken",
+  tool_split_pdf_how_item_3: "Vorschau, Seitenzahl oder Statusmeldung prüfen",
+  tool_split_pdf_how_item_4: "Mit „Download“ das Ergebnis speichern",
   tool_split_pdf_how_title: 'So funktioniert’s',
   tool_split_pdf_mode_every: 'Jede Seite (eine Datei pro Seite)',
   tool_split_pdf_mode_label: 'Teilungsmodus',

@@ -38,6 +38,10 @@ const fr: SiteLangDict = {
   tool_split_pdf_faq_q5: 'Différence avec Fusionner des PDF ?',
   tool_split_pdf_how_body:
     'Choisissez un PDF, sélectionnez chaque page ou des plages, cliquez Découper puis Télécharger. Plusieurs sorties → ZIP ; une seule → PDF. Tout reste local après chargement des bibliothèques.',
+  tool_split_pdf_how_item_1: "Sélectionnez l’entrée avec « Choisir un PDF »",
+  tool_split_pdf_how_item_2: "Réglez les options puis cliquez sur « Découper »",
+  tool_split_pdf_how_item_3: "Vérifiez l’aperçu, le nombre de pages ou le statut",
+  tool_split_pdf_how_item_4: "Cliquez sur « Télécharger » pour enregistrer le résultat",
   tool_split_pdf_how_title: 'Fonctionnement',
   tool_split_pdf_mode_every: 'Chaque page (un fichier par page)',
   tool_split_pdf_mode_label: 'Mode de découpe',

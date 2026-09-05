@@ -40,6 +40,10 @@ const en: SiteLangDict = {
   tool_pdf_page_numbers_format_page_n_tpl: 'Page {n}',
   tool_pdf_page_numbers_how_body:
     'Choose one PDF, pick a position (bottom-center by default), set the first page number, margin, and font size, click Add numbers, then Download. Numbers are drawn on every page with drawText. Libraries load on first use.',
+  tool_pdf_page_numbers_how_item_1: "Select the input with “Choose a PDF”",
+  tool_pdf_page_numbers_how_item_2: "Set the available options, then click “Add numbers”",
+  tool_pdf_page_numbers_how_item_3: "Review the preview, page count, or status message",
+  tool_pdf_page_numbers_how_item_4: "Click “Download” to save the result",
   tool_pdf_page_numbers_how_title: 'How it works',
   tool_pdf_page_numbers_margin_label: 'Margin (pt)',
   tool_pdf_page_numbers_pages_label: 'Pages in file',

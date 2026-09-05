@@ -39,6 +39,10 @@ const fr: SiteLangDict = {
   tool_unlock_pdf_faq_q4: 'Lien avec Protéger un PDF ?',
   tool_unlock_pdf_how_body:
     'Choisissez un PDF protégé, saisissez le mot de passe connu, cliquez Déverrouiller puis Télécharger. Déchiffrement local après chargement de la bibliothèque PDF. Mot de passe vide refusé si requis.',
+  tool_unlock_pdf_how_item_1: "Sélectionnez l’entrée avec « Choisir un PDF chiffré »",
+  tool_unlock_pdf_how_item_2: "Réglez les options puis cliquez sur « Déverrouiller »",
+  tool_unlock_pdf_how_item_3: "Vérifiez l’aperçu, le nombre de pages ou le statut",
+  tool_unlock_pdf_how_item_4: "Cliquez sur « Télécharger » pour enregistrer le résultat",
   tool_unlock_pdf_how_title: 'Fonctionnement',
   tool_unlock_pdf_pages_label: 'Pages',
   tool_unlock_pdf_password_label: 'Mot de passe d’ouverture',

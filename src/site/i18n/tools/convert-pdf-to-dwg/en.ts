@@ -49,7 +49,7 @@ const en: SiteLangDict = {
   tool_convert_pdf_to_dwg_sample: "Load sample",
   tool_convert_pdf_to_dwg_status_done: "Done.",
   tool_convert_pdf_to_dwg_status_working: "Working…",
-  tool_convert_pdf_to_dwg_title: "Convert PDF to DWG",
+  tool_convert_pdf_to_dwg_title: "Export PDF text to DXF for AutoCAD",
   tool_convert_pdf_to_dwg_usecase_1: "Get title-block wording into AutoCAD as TEXT",
   tool_convert_pdf_to_dwg_usecase_2: "Hand a DXF interchange file to a CAD teammate who asked for DWG",
   tool_convert_pdf_to_dwg_usecase_3: "Keep a plan PDF on the device while exporting CAD-readable text",

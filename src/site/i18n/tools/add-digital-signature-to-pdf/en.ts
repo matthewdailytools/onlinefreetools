@@ -51,7 +51,7 @@ const en: SiteLangDict = {
   tool_add_digital_signature_to_pdf_sample: "Load sample",
   tool_add_digital_signature_to_pdf_status_done: "Done.",
   tool_add_digital_signature_to_pdf_status_working: "Working…",
-  tool_add_digital_signature_to_pdf_title: "Add a digital signature to a PDF",
+  tool_add_digital_signature_to_pdf_title: "Add a visible integrity mark to a PDF",
   tool_add_digital_signature_to_pdf_usecase_1: "Office: show a local integrity mark before sharing a draft",
   tool_add_digital_signature_to_pdf_usecase_2: "Records: keep a visible timestamp + hash prefix on a copy",
   tool_add_digital_signature_to_pdf_usecase_3: "Privacy-sensitive PDFs that must stay on the device",

@@ -49,7 +49,7 @@ const fr: SiteLangDict = {
   tool_convert_pdf_to_dwg_sample: "Charger l’exemple",
   tool_convert_pdf_to_dwg_status_done: "Terminé.",
   tool_convert_pdf_to_dwg_status_working: "Traitement…",
-  tool_convert_pdf_to_dwg_title: "Convertir un PDF en DWG",
+  tool_convert_pdf_to_dwg_title: "Exporter le texte PDF en DXF pour AutoCAD",
   tool_convert_pdf_to_dwg_usecase_1: "Passer le texte du cartouche dans AutoCAD en TEXT",
   tool_convert_pdf_to_dwg_usecase_2: "Remettre un DXF d’échange à un collègue qui a demandé du DWG",
   tool_convert_pdf_to_dwg_usecase_3: "Garder le plan PDF sur l’appareil et n’exporter que le texte CAD",

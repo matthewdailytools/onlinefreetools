@@ -39,6 +39,10 @@ const de: SiteLangDict = {
   tool_pdf_watermark_faq_q5: 'Kann ich ein Logo hinzufügen?',
   tool_pdf_watermark_how_body:
     'PDF wählen, Stempeltext eingeben, Deckkraft und Drehung, Position setzen, optional PNG/JPG-Logo, Anwenden, Download. Jede Seite erhält dieselbe Schicht.',
+  tool_pdf_watermark_how_item_1: "Wählen Sie die Eingabe mit „PDF wählen“",
+  tool_pdf_watermark_how_item_2: "Optionen einstellen und „Anwenden“ anklicken",
+  tool_pdf_watermark_how_item_3: "Vorschau, Seitenzahl oder Statusmeldung prüfen",
+  tool_pdf_watermark_how_item_4: "Mit „Download“ das Ergebnis speichern",
   tool_pdf_watermark_how_title: 'So funktioniert es',
   tool_pdf_watermark_image_hint: 'Optionales PNG/JPG-Logo (gleiche Position wie Text).',
   tool_pdf_watermark_image_label: 'Bild-Wasserzeichen (optional)',

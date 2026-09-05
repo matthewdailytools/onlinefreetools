@@ -36,6 +36,10 @@ const ar: SiteLangDict = {
   tool_rotate_pdf_faq_q4: 'ماذا عن PDF المشفّر؟',
   tool_rotate_pdf_how_body:
     'اختر PDF، كل الصفحات أو نطاقات، اختر زاوية، اضغط تدوير ثم تنزيل. يُضاف التدوير إلى زاوية الصفحة الحالية. كل شيء محلي بعد تحميل المكتبة.',
+  tool_rotate_pdf_how_item_1: "اختر الإدخال عبر «اختر PDF»",
+  tool_rotate_pdf_how_item_2: "اضبط الخيارات ثم اضغط «تدوير»",
+  tool_rotate_pdf_how_item_3: "راجع المعاينة أو عدد الصفحات أو رسالة الحالة",
+  tool_rotate_pdf_how_item_4: "اضغط «تنزيل» لحفظ النتيجة",
   tool_rotate_pdf_how_title: 'كيف يعمل',
   tool_rotate_pdf_mode_all: 'كل الصفحات',
   tool_rotate_pdf_mode_label: 'الصفحات للتدوير',

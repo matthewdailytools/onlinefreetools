@@ -27,13 +27,17 @@ const de: SiteLangDict = {
   tool_protect_pdf_faq_a2:
     'Gängige PDF-Benutzerpasswort-Verschlüsselung — zum Öffnen nötig. Kein Militärniveau; starkes, merkbares Passwort wählen.',
   tool_protect_pdf_faq_a3:
-    'Dasselbe Passwort wie hier. Wenn Unlock PDF verfügbar ist, dort nutzen — wir knacken keine Passwörter.',
+    'Dasselbe Passwort wie hier. Nutzen Sie das vorhandene Werkzeug Unlock PDF mit diesem Passwort — wir knacken keine Passwörter.',
   tool_protect_pdf_faq_a4: 'Bereits verschlüsselte PDFs laden oft nicht. Altes Passwort mit vertrauenswürdigem Tool entfernen, dann neu schützen.',
   tool_protect_pdf_faq_q1: 'Wird mein PDF hochgeladen?',
   tool_protect_pdf_faq_q2: 'Wie stark ist die Verschlüsselung?',
   tool_protect_pdf_faq_q3: 'Wie öffne ich die Datei später?',
   tool_protect_pdf_faq_q4: 'Was, wenn schon geschützt?',
   tool_protect_pdf_how_body: 'PDF wählen, Passwort zweimal gleich eingeben, Schützen, Download. Verschlüsselung im Tab nach dem Laden der PDF-Bibliothek—ohne Server-Upload.',
+  tool_protect_pdf_how_item_1: "Wählen Sie die Eingabe mit „PDF wählen“",
+  tool_protect_pdf_how_item_2: "Optionen einstellen und „Schützen“ anklicken",
+  tool_protect_pdf_how_item_3: "Vorschau, Seitenzahl oder Statusmeldung prüfen",
+  tool_protect_pdf_how_item_4: "Mit „Download“ das Ergebnis speichern",
   tool_protect_pdf_how_title: 'So funktioniert es',
   tool_protect_pdf_pages_label: 'Seiten',
   tool_protect_pdf_password_label: 'Passwort',

@@ -35,6 +35,10 @@ const es: SiteLangDict = {
   tool_merge_pdf_faq_q5: '¿Se abre en Acrobat o en el visor del sistema?',
   tool_merge_pdf_how_body:
     'Añade dos o más PDF, reordena si hace falta, pulsa Unir y luego Descargar. El orden de páginas sigue la lista. Todo corre en local tras cargar la librería.',
+  tool_merge_pdf_how_item_1: "Selecciona la entrada con «Elegir PDF»",
+  tool_merge_pdf_how_item_2: "Ajusta las opciones y pulsa «Unir»",
+  tool_merge_pdf_how_item_3: "Revisa la vista previa, el número de páginas o el estado",
+  tool_merge_pdf_how_item_4: "Pulsa «Descargar» para guardar el resultado",
   tool_merge_pdf_how_title: 'Cómo funciona',
   tool_merge_pdf_merge: 'Unir',
   tool_merge_pdf_move_down: 'Bajar',

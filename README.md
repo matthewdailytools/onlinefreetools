@@ -115,10 +115,10 @@
 - [打印 PDF](https://onlinefreetools.org/zh/tools/print-pdf) - 本地预览并调起系统打印；不上传
 - [在线写 PDF 文档](https://onlinefreetools.org/zh/tools/write-pdf-document-online) - 文本框多页导出 PDF；文件留在本机
 - [对比两份 PDF](https://onlinefreetools.org/zh/tools/compare-two-pdfs) - 抽取文本层并高亮差异；不是像素对照
-- [检查 PDF/A 合规](https://onlinefreetools.org/zh/tools/check-pdf-a-compliance) - 浏览器内轻量特征检查；非 veraPDF 认证
+- [检查 PDF/A 指标](https://onlinefreetools.org/zh/tools/check-pdf-a-compliance) - 本地筛查五项归档线索；非 veraPDF 认证
 - [给 PDF 加文字](https://onlinefreetools.org/zh/tools/add-text-to-pdf-file) - 在每页指定坐标绘制文本；文件留在本机
 - [HTML 转 PDF](https://onlinefreetools.org/zh/tools/convert-html-to-pdf) - 粘贴 HTML 导出 PDF；文件留在本机
-- [制作 PDF 翻页书](https://onlinefreetools.org/zh/tools/make-pdf-flipbook) - 按页渲染可翻页预览；文件留在本机
+- [制作 PDF 翻页书](https://onlinefreetools.org/zh/tools/make-pdf-flipbook) - 翻页预览并导出独立 HTML 文件
 - [Word 文档转 PDF](https://onlinefreetools.org/zh/tools/convert-word-document-to-pdf) - 上传 .docx 在浏览器转 PDF；版式有边界，不上传
 - [PDF 转 Word 文档](https://onlinefreetools.org/zh/tools/turn-pdf-into-word-document) - 抽取文本层导出 .docx；无 OCR，不上传
 - [在线编辑 PDF 文字](https://onlinefreetools.org/zh/tools/edit-pdf-text-online) - 编辑文本层后重排导出；扫描件无字层会失败
@@ -127,10 +127,10 @@
 - [把 PDF 做成可填](https://onlinefreetools.org/zh/tools/make-pdf-fillable) - 给静态 PDF 加上文本域；文件留在本机
 - [创建 PDF 表单](https://onlinefreetools.org/zh/tools/create-pdf-form) - 空白页加命名域导出可填 PDF
 - [签署 PDF 文档](https://onlinefreetools.org/zh/tools/sign-pdf-document) - 手写或打字签名盖到页面；非证书数字签
-- [给 PDF 加数字签名标记](https://onlinefreetools.org/zh/tools/add-digital-signature-to-pdf) - SHA-256 + 可见标记；非 PKCS#7 证书签
-- [把 PDF 变成可编辑文档](https://onlinefreetools.org/zh/tools/turn-pdf-into-editable-document) - 文本层可改后重导出 PDF；无 OCR
+- [为 PDF 添加可见完整性标记](https://onlinefreetools.org/zh/tools/add-digital-signature-to-pdf) - SHA-256 + 可见标记；非 PKCS#7 证书签名
+- [把 PDF 变成可编辑文本文档](https://onlinefreetools.org/zh/tools/turn-pdf-into-editable-document) - 下载 UTF-8 TXT，可选重导出 PDF；无 OCR
 - [PDF 转 PDF/A](https://onlinefreetools.org/zh/tools/convert-pdf-to-pdf-a) - 浏览器尽力写出归档向 PDF；非 veraPDF 认证
-- [PDF 转 DWG（DXF）](https://onlinefreetools.org/zh/tools/convert-pdf-to-dwg) - 导出 AutoCAD 可开的 ASCII DXF；非专有 DWG 二进制
+- [将 PDF 文本导出为 AutoCAD 可用 DXF](https://onlinefreetools.org/zh/tools/convert-pdf-to-dwg) - 仅 ASCII DXF 文本与页框；非专有 DWG 二进制
 - [多图转 Word](https://onlinefreetools.org/zh/tools/images-to-word) - 本地多图导出 DOCX
 - [多图转 GIF](https://onlinefreetools.org/zh/tools/images-to-gif) - 本地多帧合成动画 GIF
 - [多图转 PPT](https://onlinefreetools.org/zh/tools/images-to-ppt) - 本地多图导出 PPTX
@@ -324,10 +324,10 @@ Below are our available online tools with their links (English version):
 - [Print a PDF](https://onlinefreetools.org/tools/print-pdf) - Local preview and system print dialog — no upload
 - [Write a PDF document online](https://onlinefreetools.org/tools/write-pdf-document-online) - Type multi-page text and export a PDF — stays on device
 - [Compare two PDFs](https://onlinefreetools.org/tools/compare-two-pdfs) - Extract text layers and highlight differences — not a pixel diff
-- [Check PDF/A compliance](https://onlinefreetools.org/tools/check-pdf-a-compliance) - Lightweight client-side feature checks — not veraPDF certification
+- [Inspect PDF/A indicators](https://onlinefreetools.org/tools/check-pdf-a-compliance) - Five local archival hints — not veraPDF certification
 - [Add text to a PDF file](https://onlinefreetools.org/tools/add-text-to-pdf-file) - Draw text at X/Y on each page — stays on device
 - [Convert HTML to PDF](https://onlinefreetools.org/tools/convert-html-to-pdf) - Paste HTML and export a PDF — stays on device
-- [Make a PDF flipbook](https://onlinefreetools.org/tools/make-pdf-flipbook) - Page-by-page flipbook preview — stays on device
+- [Make a PDF flipbook](https://onlinefreetools.org/tools/make-pdf-flipbook) - Page-turn preview plus standalone HTML export
 - [Convert Word document to PDF](https://onlinefreetools.org/tools/convert-word-document-to-pdf) - Upload .docx and convert in the browser — layout limits, no upload
 - [Turn PDF into Word document](https://onlinefreetools.org/tools/turn-pdf-into-word-document) - Extract text layer to .docx — no OCR, no upload
 - [Edit PDF text online](https://onlinefreetools.org/tools/edit-pdf-text-online) - Edit the text layer and re-export — scanned PDFs without text fail
@@ -336,10 +336,10 @@ Below are our available online tools with their links (English version):
 - [Make a PDF fillable](https://onlinefreetools.org/tools/make-pdf-fillable) - Add text fields to a static PDF — stays on device
 - [Create a PDF form](https://onlinefreetools.org/tools/create-pdf-form) - Blank page plus named fields → fillable PDF
 - [Sign a PDF document](https://onlinefreetools.org/tools/sign-pdf-document) - Handwrite or type a signature stamp — not certificate PKI
-- [Add a digital signature to a PDF](https://onlinefreetools.org/tools/add-digital-signature-to-pdf) - SHA-256 plus visible mark — not PKCS#7 certificate signing
-- [Turn PDF into an editable document](https://onlinefreetools.org/tools/turn-pdf-into-editable-document) - Edit text layer and re-export PDF — no OCR
+- [Add a visible integrity mark to a PDF](https://onlinefreetools.org/tools/add-digital-signature-to-pdf) - SHA-256 plus visible mark — not PKCS#7 certificate signing
+- [Turn PDF into an editable text document](https://onlinefreetools.org/tools/turn-pdf-into-editable-document) - Download UTF-8 TXT or optionally rebuild PDF — no OCR
 - [Convert PDF to PDF/A](https://onlinefreetools.org/tools/convert-pdf-to-pdf-a) - Best-effort archival-oriented PDF in the browser — not veraPDF certified
-- [Convert PDF to DWG (DXF)](https://onlinefreetools.org/tools/convert-pdf-to-dwg) - Export ASCII DXF AutoCAD can open — not proprietary DWG binary
+- [Export PDF text to DXF for AutoCAD](https://onlinefreetools.org/tools/convert-pdf-to-dwg) - ASCII DXF text and page border — not proprietary DWG binary
 - [Images to Word](https://onlinefreetools.org/tools/images-to-word) - Export photos to a DOCX locally
 - [Images to GIF](https://onlinefreetools.org/tools/images-to-gif) - Build an animated GIF from frames locally
 - [Images to PowerPoint](https://onlinefreetools.org/tools/images-to-ppt) - Export photos to a PPTX locally

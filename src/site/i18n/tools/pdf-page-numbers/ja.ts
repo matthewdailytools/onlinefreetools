@@ -40,6 +40,10 @@ const ja: SiteLangDict = {
   tool_pdf_page_numbers_format_page_n_tpl: 'Page {n}',
   tool_pdf_page_numbers_how_body:
     'PDF を選び、位置（既定は下中央）、開始番号、余白、文字サイズを設定し「番号を追加」→「ダウンロード」。各ページに drawText で描画。初回利用時にライブラリを読み込みます。',
+  tool_pdf_page_numbers_how_item_1: "「PDF を選択」で入力ファイルを選択",
+  tool_pdf_page_numbers_how_item_2: "オプションを設定し「番号を追加」を押す",
+  tool_pdf_page_numbers_how_item_3: "プレビュー、ページ数、ステータスを確認",
+  tool_pdf_page_numbers_how_item_4: "「ダウンロード」で結果を保存",
   tool_pdf_page_numbers_how_title: '使い方',
   tool_pdf_page_numbers_margin_label: '余白 (pt)',
   tool_pdf_page_numbers_pages_label: 'ページ数',

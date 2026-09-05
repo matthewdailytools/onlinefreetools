@@ -38,6 +38,10 @@ const en: SiteLangDict = {
   tool_compress_pdf_faq_q5: 'Which quality preset should I use?',
   tool_compress_pdf_how_body:
     'Choose one PDF, pick Medium or Low, click Compress, then Download. Each page is rendered and saved as JPEG inside a new PDF. Stats show original size, new size, and percent change. Libraries load on first use.',
+  tool_compress_pdf_how_item_1: "Select the input with “Choose PDF”",
+  tool_compress_pdf_how_item_2: "Set the available options, then click “Compress”",
+  tool_compress_pdf_how_item_3: "Review the preview, page count, or status message",
+  tool_compress_pdf_how_item_4: "Click “Download” to save the result",
   tool_compress_pdf_how_title: 'How it works',
   tool_compress_pdf_pages_label: 'Pages',
   tool_compress_pdf_quality_label: 'Quality',

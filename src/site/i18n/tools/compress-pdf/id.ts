@@ -37,6 +37,10 @@ const id: SiteLangDict = {
   tool_compress_pdf_faq_q5: 'Preset kualitas mana?',
   tool_compress_pdf_how_body:
     'Pilih PDF, pilih Sedang atau Rendah, klik Kompres lalu Unduh. Tiap halaman disimpan sebagai JPEG dalam PDF baru. Statistik menampilkan ukuran awal, baru, dan persen perubahan. Pustaka dimuat saat pertama kali dipakai.',
+  tool_compress_pdf_how_item_1: "Pilih masukan dengan “Pilih PDF”",
+  tool_compress_pdf_how_item_2: "Atur opsi lalu klik “Kompres”",
+  tool_compress_pdf_how_item_3: "Periksa pratinjau, jumlah halaman, atau status",
+  tool_compress_pdf_how_item_4: "Klik “Unduh” untuk menyimpan hasil",
   tool_compress_pdf_how_title: 'Cara kerja',
   tool_compress_pdf_pages_label: 'Halaman',
   tool_compress_pdf_quality_label: 'Kualitas',

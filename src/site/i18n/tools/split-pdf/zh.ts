@@ -32,6 +32,10 @@ const zh: SiteLangDict = {
   tool_split_pdf_faq_q5: '和「合并 PDF」有什么区别？',
   tool_split_pdf_how_body:
     '选择一份 PDF，选每页拆分或输入范围，点「拆分」再「下载」。多个输出打成 ZIP；单个输出是 PDF。库加载后全程本地。',
+  tool_split_pdf_how_item_1: "点击“选择 PDF”选择输入文件",
+  tool_split_pdf_how_item_2: "设置可用选项，然后点击“拆分”",
+  tool_split_pdf_how_item_3: "检查预览、页数或状态信息",
+  tool_split_pdf_how_item_4: "点击“下载”保存结果",
   tool_split_pdf_how_title: '怎么用',
   tool_split_pdf_mode_every: '每页一文件',
   tool_split_pdf_mode_label: '拆分方式',

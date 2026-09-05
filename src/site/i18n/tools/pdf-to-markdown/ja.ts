@@ -41,6 +41,10 @@ const ja: SiteLangDict = {
   tool_pdf_to_markdown_faq_q5: 'PDF→JPG を使うべきときは？',
   tool_pdf_to_markdown_how_body:
     'PDF を選び、変換、プレビュー確認、.md ダウンロード。縦位置で行を組み、ページ間は --- で区切ります。ライブラリ読込後はすべて端末内。',
+  tool_pdf_to_markdown_how_item_1: "「PDF を選ぶ」で入力ファイルを選択",
+  tool_pdf_to_markdown_how_item_2: "オプションを設定し「変換」を押す",
+  tool_pdf_to_markdown_how_item_3: "プレビュー、ページ数、ステータスを確認",
+  tool_pdf_to_markdown_how_item_4: "「.md をダウンロード」で結果を保存",
   tool_pdf_to_markdown_how_title: '使い方',
   tool_pdf_to_markdown_pages_label: 'ページ数',
   tool_pdf_to_markdown_preview_label: 'Markdown プレビュー',

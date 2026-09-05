@@ -39,6 +39,10 @@ const ru: SiteLangDict = {
   tool_pdf_watermark_faq_q5: 'Можно добавить логотип?',
   tool_pdf_watermark_how_body:
     'Выберите PDF, введите текст, настройте прозрачность и поворот, позицию, опционально PNG/JPG, нажмите Применить и Скачать. На каждой странице одинаковый слой.',
+  tool_pdf_watermark_how_item_1: "Выберите файл через «Выбрать PDF»",
+  tool_pdf_watermark_how_item_2: "Настройте параметры и нажмите «Применить»",
+  tool_pdf_watermark_how_item_3: "Проверьте предпросмотр, число страниц или статус",
+  tool_pdf_watermark_how_item_4: "Нажмите «Скачать», чтобы сохранить результат",
   tool_pdf_watermark_how_title: 'Как это работает',
   tool_pdf_watermark_image_hint: 'Логотип PNG/JPG по желанию (та же позиция, что у текста).',
   tool_pdf_watermark_image_label: 'Водяной знак-картинка (опционально)',

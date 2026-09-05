@@ -39,6 +39,10 @@ const fr: SiteLangDict = {
   tool_crop_pdf_faq_q4: 'Et les PDF chiffrés ?',
   tool_crop_pdf_how_body:
     'Choisissez un PDF, définissez marges en points (tous côtés ou chaque bord), cliquez Rogner puis Télécharger. CropBox et MediaBox se réduisent ; lecteurs et impression respectent les nouvelles limites. Tout est local après chargement de la bibliothèque.',
+  tool_crop_pdf_how_item_1: "Sélectionnez l’entrée avec « Choisir un PDF »",
+  tool_crop_pdf_how_item_2: "Réglez les options puis cliquez sur « Rogner »",
+  tool_crop_pdf_how_item_3: "Vérifiez l’aperçu, le nombre de pages ou le statut",
+  tool_crop_pdf_how_item_4: "Cliquez sur « Télécharger » pour enregistrer le résultat",
   tool_crop_pdf_how_title: 'Fonctionnement',
   tool_crop_pdf_left_label: 'Gauche (pt)',
   tool_crop_pdf_margins_title: 'Marges à rogner (points)',

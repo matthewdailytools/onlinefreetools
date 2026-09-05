@@ -38,6 +38,10 @@ const ja: SiteLangDict = {
   tool_split_pdf_faq_q5: 'PDF結合との違いは？',
   tool_split_pdf_how_body:
     'PDFを1つ選び、全ページまたは範囲を指定して「分割」→「ダウンロード」。複数出力はZIP、単一はPDF。ライブラリ読込後は端末内処理です。',
+  tool_split_pdf_how_item_1: "「PDFを選ぶ」で入力ファイルを選択",
+  tool_split_pdf_how_item_2: "オプションを設定し「分割」を押す",
+  tool_split_pdf_how_item_3: "プレビュー、ページ数、ステータスを確認",
+  tool_split_pdf_how_item_4: "「ダウンロード」で結果を保存",
   tool_split_pdf_how_title: '使い方',
   tool_split_pdf_mode_every: '1ページごと（ページごとに1ファイル）',
   tool_split_pdf_mode_label: '分割モード',

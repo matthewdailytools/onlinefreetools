@@ -39,6 +39,10 @@ const en: SiteLangDict = {
   tool_rotate_pdf_faq_q4: 'What about encrypted PDFs?',
   tool_rotate_pdf_how_body:
     'Choose one PDF, select all pages or enter ranges, pick a rotation angle, click Rotate, then Download. Rotation adds to any existing page angle. Everything runs in this tab after the libraries load—your file is not uploaded to a server.',
+  tool_rotate_pdf_how_item_1: "Select the input with “Choose a PDF”",
+  tool_rotate_pdf_how_item_2: "Set the available options, then click “Rotate”",
+  tool_rotate_pdf_how_item_3: "Review the preview, page count, or status message",
+  tool_rotate_pdf_how_item_4: "Click “Download” to save the result",
   tool_rotate_pdf_how_title: 'How it works',
   tool_rotate_pdf_mode_all: 'All pages',
   tool_rotate_pdf_mode_label: 'Pages to rotate',

@@ -37,6 +37,10 @@ const ja: SiteLangDict = {
   tool_rotate_pdf_faq_q4: '暗号化 PDF は？',
   tool_rotate_pdf_how_body:
     'PDF を選び、全ページまたは範囲を指定し、角度を選んで「回転」→「ダウンロード」。既存の回転角に加算されます。ライブラリ読込後はすべて端末内です。',
+  tool_rotate_pdf_how_item_1: "「PDF を選ぶ」で入力ファイルを選択",
+  tool_rotate_pdf_how_item_2: "オプションを設定し「回転」を押す",
+  tool_rotate_pdf_how_item_3: "プレビュー、ページ数、ステータスを確認",
+  tool_rotate_pdf_how_item_4: "「ダウンロード」で結果を保存",
   tool_rotate_pdf_how_title: '使い方',
   tool_rotate_pdf_mode_all: '全ページ',
   tool_rotate_pdf_mode_label: '回転するページ',

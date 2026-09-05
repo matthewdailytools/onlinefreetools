@@ -35,6 +35,10 @@ const ja: SiteLangDict = {
   tool_merge_pdf_faq_q5: 'Acrobatやプレビューで開けますか？',
   tool_merge_pdf_how_body:
     'PDFを2つ以上追加し、必要なら並べ替え、「結合」のあと「ダウンロード」。ページ順はリストどおりです。ライブラリ読込後は端末内処理です。',
+  tool_merge_pdf_how_item_1: "「PDFを選ぶ」で入力ファイルを選択",
+  tool_merge_pdf_how_item_2: "オプションを設定し「結合」を押す",
+  tool_merge_pdf_how_item_3: "プレビュー、ページ数、ステータスを確認",
+  tool_merge_pdf_how_item_4: "「ダウンロード」で結果を保存",
   tool_merge_pdf_how_title: '使い方',
   tool_merge_pdf_merge: '結合',
   tool_merge_pdf_move_down: '下へ',

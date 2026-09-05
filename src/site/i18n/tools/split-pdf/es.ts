@@ -38,6 +38,10 @@ const es: SiteLangDict = {
   tool_split_pdf_faq_q5: '¿En qué se diferencia de Unir PDF?',
   tool_split_pdf_how_body:
     'Elige un PDF, selecciona cada página o escribe rangos, pulsa Dividir y luego Descargar. Varias salidas van en un ZIP; una sola es PDF. Todo es local tras cargar las librerías.',
+  tool_split_pdf_how_item_1: "Selecciona la entrada con «Elegir un PDF»",
+  tool_split_pdf_how_item_2: "Ajusta las opciones y pulsa «Dividir»",
+  tool_split_pdf_how_item_3: "Revisa la vista previa, el número de páginas o el estado",
+  tool_split_pdf_how_item_4: "Pulsa «Descargar» para guardar el resultado",
   tool_split_pdf_how_title: 'Cómo funciona',
   tool_split_pdf_mode_every: 'Cada página (un archivo por página)',
   tool_split_pdf_mode_label: 'Modo de división',

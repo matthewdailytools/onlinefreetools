@@ -36,6 +36,10 @@ const pt: SiteLangDict = {
   tool_rotate_pdf_faq_q4: 'E PDFs criptografados?',
   tool_rotate_pdf_how_body:
     'Escolha um PDF, todas as páginas ou intervalos, escolha o ângulo, clique Girar e Baixar. A rotação soma ao ângulo atual. Tudo local após carregar a biblioteca.',
+  tool_rotate_pdf_how_item_1: "Selecione a entrada com “Escolher PDF”",
+  tool_rotate_pdf_how_item_2: "Ajuste as opções e clique em “Girar”",
+  tool_rotate_pdf_how_item_3: "Confira a prévia, a contagem de páginas ou o status",
+  tool_rotate_pdf_how_item_4: "Clique em “Baixar” para salvar o resultado",
   tool_rotate_pdf_how_title: 'Como funciona',
   tool_rotate_pdf_mode_all: 'Todas as páginas',
   tool_rotate_pdf_mode_label: 'Páginas a girar',

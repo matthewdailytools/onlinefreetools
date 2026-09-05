@@ -32,6 +32,10 @@ const zh: SiteLangDict = {
   tool_crop_pdf_faq_q4: '加密 PDF 怎么办？',
   tool_crop_pdf_how_body:
     '选择一份 PDF，设置 pt 边距（四边相同或分别设置），点「裁切」再「下载」。每页的 裁切框与页面框 向内收紧；阅读器与打印会按新边界显示。组件加载后全程在当前标签页完成，不上传服务器。',
+  tool_crop_pdf_how_item_1: "点击“选择 PDF”选择输入文件",
+  tool_crop_pdf_how_item_2: "设置可用选项，然后点击“裁切”",
+  tool_crop_pdf_how_item_3: "检查预览、页数或状态信息",
+  tool_crop_pdf_how_item_4: "点击“下载”保存结果",
   tool_crop_pdf_how_title: '怎么用',
   tool_crop_pdf_left_label: '左边 (pt)',
   tool_crop_pdf_margins_title: '要裁掉的边距（点 pt）',

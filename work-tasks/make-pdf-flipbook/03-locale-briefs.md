@@ -41,3 +41,4 @@
 | 2 按 brief 重写 | 2026-09-03 | 十语 i18n 分片 | 各语场景 title |
 | 2b 抽查语检索覆盖优化 | 2026-09-03 | en,zh,es,ja 再核 | 次词进 FAQ/desc |
 | 3 抽查+禁词+lint | 2026-09-03 | verify:tool | lint 绿 |
+| IG/能力修正复审 | 2026-09-05 | 增加真实 page-turn 动效与独立 HTML 导出；重写 en How/Rules/Example/FAQ，并清理十语 meta 污染与 OCR 错误 FAQ | 不再把普通 canvas 查看器冒充 flipbook 产物 |

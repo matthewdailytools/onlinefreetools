@@ -41,3 +41,4 @@
 | 2 按 brief 重写 | 2026-09-03 | 十语 i18n 分片 | 各语场景 title |
 | 2b 抽查语检索覆盖优化 | 2026-09-04 | en,zh,es,ja 再核 | 次词进 FAQ/desc |
 | 3 抽查+禁词+lint | 2026-09-03 | verify:tool | lint 绿 |
+| IG/重复意图修正 | 2026-09-05 | 十语 H1 明示 editable text document；新增 UTF-8 TXT 下载并保留可选重排 PDF | 与 edit-pdf-text-online 的“改字后返回 PDF”形成实质输出差异 |

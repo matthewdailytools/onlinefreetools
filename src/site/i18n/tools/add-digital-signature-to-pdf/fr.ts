@@ -51,7 +51,7 @@ const fr: SiteLangDict = {
   tool_add_digital_signature_to_pdf_sample: "Charger l’exemple",
   tool_add_digital_signature_to_pdf_status_done: "Terminé.",
   tool_add_digital_signature_to_pdf_status_working: "Traitement…",
-  tool_add_digital_signature_to_pdf_title: "Ajouter une signature numérique à un PDF",
+  tool_add_digital_signature_to_pdf_title: "Ajouter une marque visible d’intégrité à un PDF",
   tool_add_digital_signature_to_pdf_usecase_1: "Bureau : montrer une marque locale d’intégrité avant de partager un brouillon",
   tool_add_digital_signature_to_pdf_usecase_2: "Archives : garder horodatage et préfixe de hachage sur une copie",
   tool_add_digital_signature_to_pdf_usecase_3: "PDF privés qui doivent rester sur l’appareil",

@@ -70,19 +70,19 @@
 |---|---|
 | 日期 | 2026-09-03 |
 | 总判 | 满足：进页即 turn pdf into an editable document 场景 |
-| 主词搜索者任务 | Detect scan; OCR via Tesseract WASM when available else link N3/N5. |
+| 主词搜索者任务 | 把已有文本层提取为可编辑文档；扫描件 OCR 属未覆盖边界。 |
 | Ads/Planner 长尾任务 | 主词能办成 |
-| 满足之处 | 单场景控件 + loadSample |
-| 超出 / 应划边界 | 不冒充邻页（FAQ 链出） |
-| 缺口与已做优化 | How 对齐任务句 |
+| 满足之处 | 文本层进入编辑器，可下载 UTF-8 TXT，也可选择重建 PDF；有 loadSample |
+| 超出 / 应划边界 | 不 OCR、不输出 DOCX、不保留原字体、列与精确坐标 |
+| 缺口与已做优化 | 2026-09-05 新增可编辑 TXT 产物，与 edit-pdf-text-online 的 PDF 回传意图区分 |
 | [x] 已按审查回写 How / 交互主次 / FAQ / desc | |
 
 ## 交互规格（给实现用）
 
-- 输入/输出：Detect scan; OCR via Tesseract WASM when available else link N3/N5.
-- 核心规则 / 算法：见 Page 实现
-- 失败与边界行为：加密/无文本/不支持格式 → 可读错误
-- 示例 Input → Output：loadSample 自动生成
+- 输入/输出：输入带文本层的 PDF；输出可编辑 UTF-8 TXT，或可选简单重排 PDF。
+- 核心规则 / 算法：PDF.js 按页提取文本；纯文本直接下载；可选用基础字体和自动换行重建页面。
+- 失败与边界行为：扫描件无文本层、加密或损坏文件 → 可读错误；不运行 Tesseract/OCR。
+- 示例 Input → Output：“Hello editable PDF document sample.” → 编辑器、TXT 与可选重排 PDF。
 - **进页样例**：loadSample() 自动跑出可见结果
 - **实现防呆**：opts；`\\w` 转义；lint:tool-page
 

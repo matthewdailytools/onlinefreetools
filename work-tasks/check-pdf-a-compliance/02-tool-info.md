@@ -59,7 +59,7 @@
 
 | 长尾词（Planner） | 归属 | 文案落点 | 功能覆盖 | 不覆盖理由 |
 |---|---|---|---|---|
-| check pdf/a compliance | build 主词 | H1 | 进页默认该场景 | |
+| check pdf/a compliance | defer | FAQ/边界说明 | 未覆盖标准合规验证 | 当前仅筛查五项原始字节指标，不能替代 veraPDF |
 | 近义 absorb | absorb | FAQ/desc | 同控件 | |
 
 - [x] 交互规格已按上表补齐能力
@@ -69,20 +69,20 @@
 | 项 | 结论 |
 |---|---|
 | 日期 | 2026-09-03 |
-| 总判 | 满足：进页即 check pdf/a compliance 场景 |
-| 主词搜索者任务 | Parse PDF; run client-side rule checks (version, fonts, metadata); pdf check / verapdf intent. |
-| Ads/Planner 长尾任务 | 主词能办成 |
-| 满足之处 | 单场景控件 + loadSample |
-| 超出 / 应划边界 | 不冒充邻页（FAQ 链出） |
-| 缺口与已做优化 | How 对齐任务句 |
+| 总判 | 不覆盖“认证 PDF/A 合规”；页面定位为 PDF/A indicators screening |
+| 主词搜索者任务 | 使用 profile-aware 标准验证器判断 ISO 19005 合规并给出具体失败条款。 |
+| Ads/Planner 长尾任务 | 主词尚未办成，继续 defer |
+| 满足之处 | 本地筛查 PDF 文件头、未压缩 pdfaid、OutputIntent、FontFile 与 Encrypt 指标 |
+| 超出 / 应划边界 | 不解析全部压缩对象、色彩空间、逐字形字体、附件或 profile 专属规则 |
+| 缺口与已做优化 | H1、结果状态、FAQ、警告和参考资料均改为“指标筛查”，禁止 Pass/Fail 认证暗示 |
 | [x] 已按审查回写 How / 交互主次 / FAQ / desc | |
 
 ## 交互规格（给实现用）
 
-- 输入/输出：Parse PDF; run client-side rule checks (version, fonts, metadata); pdf check / verapdf intent.
-- 核心规则 / 算法：见 Page 实现
-- 失败与边界行为：加密/无文本/不支持格式 → 可读错误
-- 示例 Input → Output：loadSample 自动生成
+- 输入/输出：输入 PDF；输出五项“发现 / 未发现”指标，不输出合规总判。
+- 核心规则 / 算法：按原始字节筛查 `%PDF-*`、`pdfaid`、`GTS_PDFA1`、`/FontFile*` 与 `/Encrypt`。
+- 失败与边界行为：损坏或无法读取 → 可读错误；扫描件不依赖文本层；压缩对象可能导致指标未发现。
+- 示例 Input → Output：普通 PDF 样例发现文件头和未加密，通常不含 PDF/A XMP 与输出意图。
 - **进页样例**：loadSample() 自动跑出可见结果
 - **实现防呆**：opts；`\\w` 转义；lint:tool-page
 

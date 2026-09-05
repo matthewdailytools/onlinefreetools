@@ -37,6 +37,10 @@ const ja: SiteLangDict = {
   tool_compress_pdf_faq_q5: 'どの画質を選べばいい？',
   tool_compress_pdf_how_body:
     'PDF を選び、中または低画質を選んで「圧縮」→「ダウンロード」。各ページを JPEG として新 PDF に保存。統計で元サイズ・新サイズ・変化率を表示。ライブラリは初回使用時に読み込みます。',
+  tool_compress_pdf_how_item_1: "「PDF を選択」で入力ファイルを選択",
+  tool_compress_pdf_how_item_2: "オプションを設定し「圧縮」を押す",
+  tool_compress_pdf_how_item_3: "プレビュー、ページ数、ステータスを確認",
+  tool_compress_pdf_how_item_4: "「ダウンロード」で結果を保存",
   tool_compress_pdf_how_title: '使い方',
   tool_compress_pdf_pages_label: 'ページ数',
   tool_compress_pdf_quality_label: '画質',

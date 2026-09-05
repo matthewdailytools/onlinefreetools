@@ -33,6 +33,10 @@ const zh: SiteLangDict = {
   tool_rotate_pdf_faq_q4: '加密 PDF 怎么办？',
   tool_rotate_pdf_how_body:
     '选择一份 PDF，选全部页或输入范围，选角度，点「旋转」再「下载」。角度会在页面原有旋转基础上累加。组件加载后全程在当前标签页完成，不上传服务器。',
+  tool_rotate_pdf_how_item_1: "点击“选择 PDF”选择输入文件",
+  tool_rotate_pdf_how_item_2: "设置可用选项，然后点击“旋转”",
+  tool_rotate_pdf_how_item_3: "检查预览、页数或状态信息",
+  tool_rotate_pdf_how_item_4: "点击“下载”保存结果",
   tool_rotate_pdf_how_title: '怎么用',
   tool_rotate_pdf_mode_all: '全部页面',
   tool_rotate_pdf_mode_label: '要旋转的页',

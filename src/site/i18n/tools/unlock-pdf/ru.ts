@@ -39,6 +39,10 @@ const ru: SiteLangDict = {
   tool_unlock_pdf_faq_q4: 'Связь с Защитить PDF?',
   tool_unlock_pdf_how_body:
     'Выберите PDF с паролем, введите известный пароль открытия, нажмите Разблокировать и Скачать. Расшифровка во вкладке после загрузки библиотеки PDF—без загрузки на сервер. Пустой пароль отклоняется, если нужен.',
+  tool_unlock_pdf_how_item_1: "Выберите файл через «Выбрать зашифрованный PDF»",
+  tool_unlock_pdf_how_item_2: "Настройте параметры и нажмите «Разблокировать»",
+  tool_unlock_pdf_how_item_3: "Проверьте предпросмотр, число страниц или статус",
+  tool_unlock_pdf_how_item_4: "Нажмите «Скачать», чтобы сохранить результат",
   tool_unlock_pdf_how_title: 'Как это работает',
   tool_unlock_pdf_pages_label: 'Страниц',
   tool_unlock_pdf_password_label: 'Пароль открытия',

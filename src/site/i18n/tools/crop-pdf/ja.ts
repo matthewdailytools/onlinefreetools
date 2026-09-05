@@ -39,6 +39,10 @@ const ja: SiteLangDict = {
   tool_crop_pdf_faq_q4: '暗号化 PDF は？',
   tool_crop_pdf_how_body:
     'PDF を選び pt 余白（四辺共通または辺別）を設定し「裁断」→「ダウンロード」。各ページの CropBox と MediaBox が内側に縮み、ビューアと印刷が新境界を尊重します。ライブラリ読込後はすべてローカル。',
+  tool_crop_pdf_how_item_1: "「PDF を選択」で入力ファイルを選択",
+  tool_crop_pdf_how_item_2: "オプションを設定し「裁断」を押す",
+  tool_crop_pdf_how_item_3: "プレビュー、ページ数、ステータスを確認",
+  tool_crop_pdf_how_item_4: "「ダウンロード」で結果を保存",
   tool_crop_pdf_how_title: '使い方',
   tool_crop_pdf_left_label: '左 (pt)',
   tool_crop_pdf_margins_title: 'トリミングする余白（ポイント）',

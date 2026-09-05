@@ -39,6 +39,10 @@ const ja: SiteLangDict = {
   tool_pdf_watermark_faq_q5: 'ロゴ画像は使えますか？',
   tool_pdf_watermark_how_body:
     'PDF を選び、透かし文字を入力、不透明度と回転、位置を設定、必要なら PNG/JPG ロゴを添付、「適用」→「ダウンロード」。全ページに同じオーバーレイが入ります。',
+  tool_pdf_watermark_how_item_1: "「PDF を選択」で入力ファイルを選択",
+  tool_pdf_watermark_how_item_2: "オプションを設定し「適用」を押す",
+  tool_pdf_watermark_how_item_3: "プレビュー、ページ数、ステータスを確認",
+  tool_pdf_watermark_how_item_4: "「ダウンロード」で結果を保存",
   tool_pdf_watermark_how_title: '使い方',
   tool_pdf_watermark_image_hint: '任意の PNG/JPG ロゴ（文字と同じ位置）。',
   tool_pdf_watermark_image_label: '画像透かし（任意）',

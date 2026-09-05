@@ -39,6 +39,10 @@ const ar: SiteLangDict = {
   tool_pdf_watermark_faq_q5: 'هل يمكن إضافة شعار؟',
   tool_pdf_watermark_how_body:
     'اختر PDF، أدخل النص، اضبط الشفافية والدوران والموضع، أرفق شعار PNG/JPG اختياريًا، اضغط تطبيق ثم تنزيل. كل صفحة تحصل على نفس الطبقة.',
+  tool_pdf_watermark_how_item_1: "اختر الإدخال عبر «اختر PDF»",
+  tool_pdf_watermark_how_item_2: "اضبط الخيارات ثم اضغط «تطبيق»",
+  tool_pdf_watermark_how_item_3: "راجع المعاينة أو عدد الصفحات أو رسالة الحالة",
+  tool_pdf_watermark_how_item_4: "اضغط «تنزيل» لحفظ النتيجة",
   tool_pdf_watermark_how_title: 'كيف يعمل',
   tool_pdf_watermark_image_hint: 'شعار PNG/JPG اختياري (نفس موضع النص).',
   tool_pdf_watermark_image_label: 'علامة صورة (اختياري)',

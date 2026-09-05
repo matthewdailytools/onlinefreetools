@@ -51,7 +51,7 @@ const zh: SiteLangDict = {
   tool_add_digital_signature_to_pdf_sample: "加载样例",
   tool_add_digital_signature_to_pdf_status_done: "完成",
   tool_add_digital_signature_to_pdf_status_working: "处理中…",
-  tool_add_digital_signature_to_pdf_title: "为 PDF 添加数字标记",
+  tool_add_digital_signature_to_pdf_title: "为 PDF 添加可见完整性标记",
   tool_add_digital_signature_to_pdf_usecase_1: "办公：分享草稿前加一个本地完整性标记",
   tool_add_digital_signature_to_pdf_usecase_2: "存档：在副本上留下可见时间戳和哈希前缀",
   tool_add_digital_signature_to_pdf_usecase_3: "必须留在本机的敏感 PDF",

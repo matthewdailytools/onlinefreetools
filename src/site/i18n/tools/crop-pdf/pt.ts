@@ -39,6 +39,10 @@ const pt: SiteLangDict = {
   tool_crop_pdf_faq_q4: 'E PDF criptografado?',
   tool_crop_pdf_how_body:
     'Escolha um PDF, defina margens em pontos (todas iguais ou por borda), clique Cortar e Baixar. CropBox e MediaBox encolhem; leitores e impressão respeitam os novos limites. Tudo local após carregar a biblioteca.',
+  tool_crop_pdf_how_item_1: "Selecione a entrada com “Escolher PDF”",
+  tool_crop_pdf_how_item_2: "Ajuste as opções e clique em “Cortar”",
+  tool_crop_pdf_how_item_3: "Confira a prévia, a contagem de páginas ou o status",
+  tool_crop_pdf_how_item_4: "Clique em “Baixar” para salvar o resultado",
   tool_crop_pdf_how_title: 'Como funciona',
   tool_crop_pdf_left_label: 'Esquerda (pt)',
   tool_crop_pdf_margins_title: 'Margens a aparar (pontos)',

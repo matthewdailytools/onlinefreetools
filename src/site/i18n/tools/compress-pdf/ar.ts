@@ -37,6 +37,10 @@ const ar: SiteLangDict = {
   tool_compress_pdf_faq_q5: 'أي جودة أختار؟',
   tool_compress_pdf_how_body:
     'اختر PDF، حدّد متوسط أو منخفض، اضغط «ضغط» ثم «تنزيل». كل صفحة تُحفظ كـ JPEG في PDF جديد. الإحصائيات تعرض الحجم الأصلي والجديد ونسبة التغيير. المكتبات تُحمّل عند أول استخدام.',
+  tool_compress_pdf_how_item_1: "اختر الإدخال عبر «اختر PDF»",
+  tool_compress_pdf_how_item_2: "اضبط الخيارات ثم اضغط «ضغط»",
+  tool_compress_pdf_how_item_3: "راجع المعاينة أو عدد الصفحات أو رسالة الحالة",
+  tool_compress_pdf_how_item_4: "اضغط «تنزيل» لحفظ النتيجة",
   tool_compress_pdf_how_title: 'كيف يعمل',
   tool_compress_pdf_pages_label: 'صفحات',
   tool_compress_pdf_quality_label: 'الجودة',

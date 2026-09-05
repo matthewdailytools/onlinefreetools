@@ -72,17 +72,17 @@
 | 总判 | 满足：进页即 make a pdf flipbook 场景 |
 | 主词搜索者任务 | Render pages; CSS flipbook preview; optional HTML export. |
 | Ads/Planner 长尾任务 | 主词能办成 |
-| 满足之处 | 单场景控件 + loadSample |
-| 超出 / 应划边界 | 不冒充邻页（FAQ 链出） |
-| 缺口与已做优化 | How 对齐任务句 |
+| 满足之处 | canvas 翻页预览 + page-turn 动效 + 内嵌 PDF 的独立 HTML 导出 + loadSample |
+| 超出 / 应划边界 | 不提供托管链接、分析、音频、页面编辑或 SaaS 发布服务 |
+| 缺口与已做优化 | 2026-09-05 将原“仅预览并下载原 PDF”补成真实 HTML flipbook 导出 |
 | [x] 已按审查回写 How / 交互主次 / FAQ / desc | |
 
 ## 交互规格（给实现用）
 
-- 输入/输出：Render pages; CSS flipbook preview; optional HTML export.
-- 核心规则 / 算法：见 Page 实现
-- 失败与边界行为：加密/无文本/不支持格式 → 可读错误
-- 示例 Input → Output：loadSample 自动生成
+- 输入/输出：输入 PDF；输出带前后翻页控件的预览，并可下载内嵌 PDF 字节的独立 HTML。
+- 核心规则 / 算法：PDF.js canvas 渲染；CSS 短翻页动效；PDF 以 Base64 嵌入导出 HTML。
+- 失败与边界行为：加密/损坏文件 → 可读错误；扫描件可显示；导出文件打开时需联网加载 PDF.js。
+- 示例 Input → Output：一页 “Flipbook page one.” PDF → 可预览并下载 `pdf-flipbook.html`。
 - **进页样例**：loadSample() 自动跑出可见结果
 - **实现防呆**：opts；`\\w` 转义；lint:tool-page
 

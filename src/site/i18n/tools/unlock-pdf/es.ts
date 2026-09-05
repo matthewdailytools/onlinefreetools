@@ -39,6 +39,10 @@ const es: SiteLangDict = {
   tool_unlock_pdf_faq_q4: '¿Cómo se relaciona con Proteger PDF?',
   tool_unlock_pdf_how_body:
     'Elige un PDF con contraseña, escribe la clave que ya conoces, pulsa Desbloquear y Descargar. Todo local tras cargar la biblioteca PDF. Contraseña vacía se rechaza si el archivo la exige.',
+  tool_unlock_pdf_how_item_1: "Selecciona la entrada con «Elegir PDF cifrado»",
+  tool_unlock_pdf_how_item_2: "Ajusta las opciones y pulsa «Desbloquear»",
+  tool_unlock_pdf_how_item_3: "Revisa la vista previa, el número de páginas o el estado",
+  tool_unlock_pdf_how_item_4: "Pulsa «Descargar» para guardar el resultado",
   tool_unlock_pdf_how_title: 'Cómo funciona',
   tool_unlock_pdf_pages_label: 'Páginas',
   tool_unlock_pdf_password_label: 'Contraseña de apertura',

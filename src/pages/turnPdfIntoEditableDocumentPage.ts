@@ -121,6 +121,7 @@ export const renderTurnPdfIntoEditableDocumentPage = (opts: {
 
     <div class="d-flex align-items-center tools-bar mb-2 flex-wrap">
       <button type="button" id="tpedBtnMake" class="btn btn-primary btn-sm">${escapeHtml(t(opts.lang, (prefix + '_make_editable') as Parameters<typeof t>[1]))}</button>
+      <button type="button" id="tpedBtnDownloadText" class="btn btn-outline-primary btn-sm" disabled>${escapeHtml(t(opts.lang, (prefix + '_download_text') as Parameters<typeof t>[1]))}</button>
       <button type="button" id="tpedBtnExport" class="btn btn-outline-primary btn-sm" disabled>${escapeHtml(t(opts.lang, (prefix + '_export_pdf') as Parameters<typeof t>[1]))}</button>
       <button type="button" id="tpedBtnDownload" class="btn btn-outline-primary btn-sm" disabled>${escapeHtml(t(opts.lang, (prefix + '_download') as Parameters<typeof t>[1]))}</button>
       <button type="button" id="tpedBtnSample" class="btn btn-outline-secondary btn-sm">${escapeHtml(t(opts.lang, (prefix + '_sample') as Parameters<typeof t>[1]))}</button>
@@ -183,6 +184,8 @@ export const renderTurnPdfIntoEditableDocumentPage = (opts: {
       var btnMake = document.getElementById('tpedBtnMake');
       /** 导出重排 PDF。 */
       var btnExport = document.getElementById('tpedBtnExport');
+      /** 下载可继续编辑的纯文本文件。 */
+      var btnDownloadText = document.getElementById('tpedBtnDownloadText');
       /** 下载按钮。 */
       var btnDownload = document.getElementById('tpedBtnDownload');
       /** 样例按钮。 */
@@ -198,7 +201,7 @@ export const renderTurnPdfIntoEditableDocumentPage = (opts: {
       /** PDF 工作台绑定。 */
       var work = window.OftPdfWork.bind('tpedPdf');
       /** 忙碌时禁用的按钮组。 */
-      var busyBtns = [btnMake, btnExport, btnSample, btnClear, btnDownload];
+      var busyBtns = [btnMake, btnDownloadText, btnExport, btnSample, btnClear, btnDownload];
 
       /** 界面文案。 */
       var msg = {
@@ -467,12 +470,14 @@ export const renderTurnPdfIntoEditableDocumentPage = (opts: {
           .then(function (text) {
             if (!text || !String(text).trim()) throw new Error('notext');
             editorEl.value = text;
+            btnDownloadText.disabled = false;
             btnExport.disabled = false;
             work.setProgress(100);
             setStatus(msg.done);
           })
           .catch(function (err) {
             editorEl.value = '';
+            btnDownloadText.disabled = true;
             btnExport.disabled = true;
             var s = String(err && err.message || '');
             if (s === 'notext') setError(msg.noText);
@@ -543,6 +548,24 @@ export const renderTurnPdfIntoEditableDocumentPage = (opts: {
         URL.revokeObjectURL(url);
       }
 
+      /** 将编辑器当前内容下载为可继续编辑的 UTF-8 纯文本文件。 */
+      function downloadEditableText() {
+        var text = String(editorEl.value || '');
+        if (!text.trim()) {
+          setError(msg.noText);
+          return;
+        }
+        var blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = url;
+        a.download = ((source && source.name) || 'document.pdf').replace(/\\.pdf$/i, '') + '-editable.txt';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
+      }
+
       /**
        * 生成含文本层的样例 PDF。
        * @returns {Promise<File>}
@@ -588,6 +611,7 @@ export const renderTurnPdfIntoEditableDocumentPage = (opts: {
         source = null;
         if (resetInput !== false) fileInput.value = '';
         editorEl.value = '';
+        btnDownloadText.disabled = true;
         btnExport.disabled = true;
         refreshMeta();
         clearResult();
@@ -614,6 +638,7 @@ export const renderTurnPdfIntoEditableDocumentPage = (opts: {
       });
 
       btnMake.addEventListener('click', function () { makeEditable(); });
+      btnDownloadText.addEventListener('click', downloadEditableText);
       btnExport.addEventListener('click', exportPdf);
       btnDownload.addEventListener('click', downloadResult);
       btnSample.addEventListener('click', function () { loadSample(); });

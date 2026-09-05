@@ -39,6 +39,10 @@ const es: SiteLangDict = {
   tool_pdf_watermark_faq_q5: '¿Puedo añadir un logo?',
   tool_pdf_watermark_how_body:
     'Elige un PDF, escribe el sello, ajusta opacidad y rotación, elige posición, opcionalmente un logo PNG/JPG, pulsa Aplicar y Descargar. Cada página recibe la misma capa.',
+  tool_pdf_watermark_how_item_1: "Selecciona la entrada con «Elegir PDF»",
+  tool_pdf_watermark_how_item_2: "Ajusta las opciones y pulsa «Aplicar marca»",
+  tool_pdf_watermark_how_item_3: "Revisa la vista previa, el número de páginas o el estado",
+  tool_pdf_watermark_how_item_4: "Pulsa «Descargar» para guardar el resultado",
   tool_pdf_watermark_how_title: 'Cómo funciona',
   tool_pdf_watermark_image_hint: 'Logo PNG/JPG opcional (misma posición que el texto).',
   tool_pdf_watermark_image_label: 'Marca de imagen (opcional)',

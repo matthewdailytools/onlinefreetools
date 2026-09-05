@@ -40,6 +40,10 @@ const fr: SiteLangDict = {
   tool_pdf_page_numbers_format_page_n_tpl: 'Page {n}',
   tool_pdf_page_numbers_how_body:
     'Choisissez un PDF, position (bas-centre par défaut), premier numéro, marge et taille, cliquez Numéroter puis Télécharger. Numéros dessinés sur chaque page. Bibliothèque chargée au premier usage.',
+  tool_pdf_page_numbers_how_item_1: "Sélectionnez l’entrée avec « Choisir un PDF »",
+  tool_pdf_page_numbers_how_item_2: "Réglez les options puis cliquez sur « Numéroter »",
+  tool_pdf_page_numbers_how_item_3: "Vérifiez l’aperçu, le nombre de pages ou le statut",
+  tool_pdf_page_numbers_how_item_4: "Cliquez sur « Télécharger » pour enregistrer le résultat",
   tool_pdf_page_numbers_how_title: 'Fonctionnement',
   tool_pdf_page_numbers_margin_label: 'Marge (pt)',
   tool_pdf_page_numbers_pages_label: 'Pages',

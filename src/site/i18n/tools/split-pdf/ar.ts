@@ -38,6 +38,10 @@ const ar: SiteLangDict = {
   tool_split_pdf_faq_q5: 'ما الفرق عن دمج PDF؟',
   tool_split_pdf_how_body:
     'اختر PDF واحداً، اختر كل صفحة أو نطاقاً، اضغط تقسيم ثم تنزيل. مخرجات متعددة → ZIP؛ مخرج واحد → PDF. كل شيء محلي بعد تحميل المكتبات.',
+  tool_split_pdf_how_item_1: "اختر الإدخال عبر «اختر ملف PDF»",
+  tool_split_pdf_how_item_2: "اضبط الخيارات ثم اضغط «تقسيم»",
+  tool_split_pdf_how_item_3: "راجع المعاينة أو عدد الصفحات أو رسالة الحالة",
+  tool_split_pdf_how_item_4: "اضغط «تنزيل» لحفظ النتيجة",
   tool_split_pdf_how_title: 'طريقة العمل',
   tool_split_pdf_mode_every: 'كل صفحة (ملف لكل صفحة)',
   tool_split_pdf_mode_label: 'وضع التقسيم',

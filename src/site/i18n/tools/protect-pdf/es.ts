@@ -10,7 +10,7 @@ const es: SiteLangDict = {
   tool_protect_pdf_confirm_label: 'Confirmar contraseña',
   tool_protect_pdf_desc: 'Añada contraseña de apertura a un PDF en su dispositivo; sin subir al servidor.',
   tool_protect_pdf_description:
-    'Proteja un PDF con contraseña en el navegador antes de compartirlo: nada se sube al servidor. Pasos: elija un PDF, escriba y confirme la contraseña (se rechazan vacías), pulse Proteger y descargue protected.pdf. Ejemplo: una muestra de una página se cifra con sample y queda listo para descargar. Es cifrado estándar con contraseña de usuario, no grado militar; para abrirlo después necesita esa misma clave (use Desbloquear PDF cuando esté disponible; aquí no se rompen contraseñas). Archivos de ~25 MB o más pueden ir lentos.',
+    'Proteja un PDF con contraseña en el navegador antes de compartirlo: nada se sube al servidor. Pasos: elija un PDF, escriba y confirme la contraseña (se rechazan vacías), pulse Proteger y descargue protected.pdf. Ejemplo: una muestra de una página se cifra con sample y queda lista para descargar. Es cifrado estándar con contraseña de usuario, no grado militar; para abrirlo después necesita esa misma clave. Use la herramienta Desbloquear PDF disponible; aquí no se rompen contraseñas. Archivos de ~25 MB o más pueden ir lentos.',
   tool_protect_pdf_download: 'Descargar',
   tool_protect_pdf_drop_hint: 'O suelte un PDF aquí. Todo se procesa en esta pestaña.',
   tool_protect_pdf_empty: 'Primero elija un PDF.',
@@ -37,6 +37,10 @@ const es: SiteLangDict = {
   tool_protect_pdf_faq_q4: '¿Y si ya estaba protegido?',
   tool_protect_pdf_how_body:
     'Elija un PDF, escriba la contraseña dos veces igual, pulse Proteger y Descargar. El cifrado es local tras cargar la biblioteca PDF.',
+  tool_protect_pdf_how_item_1: "Selecciona la entrada con «Elegir PDF»",
+  tool_protect_pdf_how_item_2: "Ajusta las opciones y pulsa «Proteger»",
+  tool_protect_pdf_how_item_3: "Revisa la vista previa, el número de páginas o el estado",
+  tool_protect_pdf_how_item_4: "Pulsa «Descargar» para guardar el resultado",
   tool_protect_pdf_how_title: 'Cómo funciona',
   tool_protect_pdf_pages_label: 'Páginas',
   tool_protect_pdf_password_label: 'Contraseña',

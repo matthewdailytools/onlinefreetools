@@ -35,6 +35,10 @@ const de: SiteLangDict = {
   tool_merge_pdf_faq_q5: 'Öffnet sich das Ergebnis in Acrobat oder Vorschau?',
   tool_merge_pdf_how_body:
     'Mindestens zwei PDFs hinzufügen, bei Bedarf neu ordnen, Zusammenfügen, dann Download. Seitenreihenfolge folgt der Liste. Nach dem Laden der Bibliothek alles auf dem Gerät (kein Server-Upload).',
+  tool_merge_pdf_how_item_1: "Wählen Sie die Eingabe mit „PDFs wählen“",
+  tool_merge_pdf_how_item_2: "Optionen einstellen und „Zusammenfügen“ anklicken",
+  tool_merge_pdf_how_item_3: "Vorschau, Seitenzahl oder Statusmeldung prüfen",
+  tool_merge_pdf_how_item_4: "Mit „Download“ das Ergebnis speichern",
   tool_merge_pdf_how_title: 'So funktioniert’s',
   tool_merge_pdf_merge: 'Zusammenfügen',
   tool_merge_pdf_move_down: 'Runter',

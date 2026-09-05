@@ -51,7 +51,7 @@ const pt: SiteLangDict = {
   tool_add_digital_signature_to_pdf_sample: "Carregar amostra",
   tool_add_digital_signature_to_pdf_status_done: "Concluído.",
   tool_add_digital_signature_to_pdf_status_working: "Processando…",
-  tool_add_digital_signature_to_pdf_title: "Adicionar uma assinatura digital a um PDF",
+  tool_add_digital_signature_to_pdf_title: "Adicionar uma marca visível de integridade a um PDF",
   tool_add_digital_signature_to_pdf_usecase_1: "Escritório: mostrar uma marca local de integridade antes de partilhar um rascunho",
   tool_add_digital_signature_to_pdf_usecase_2: "Arquivo: deixar data e prefixo de hash visíveis numa cópia",
   tool_add_digital_signature_to_pdf_usecase_3: "PDFs privados que devem ficar no dispositivo",

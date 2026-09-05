@@ -51,7 +51,7 @@ const id: SiteLangDict = {
   tool_add_digital_signature_to_pdf_sample: "Muat sampel",
   tool_add_digital_signature_to_pdf_status_done: "Selesai.",
   tool_add_digital_signature_to_pdf_status_working: "Memproses…",
-  tool_add_digital_signature_to_pdf_title: "Tambahkan tanda tangan digital ke PDF",
+  tool_add_digital_signature_to_pdf_title: "Tambahkan penanda integritas terlihat ke PDF",
   tool_add_digital_signature_to_pdf_usecase_1: "Kantor: menampilkan tanda integritas lokal sebelum berbagi draf",
   tool_add_digital_signature_to_pdf_usecase_2: "Arsip: menyimpan cap waktu dan awalan hash pada salinan",
   tool_add_digital_signature_to_pdf_usecase_3: "PDF privat yang harus tetap di perangkat",

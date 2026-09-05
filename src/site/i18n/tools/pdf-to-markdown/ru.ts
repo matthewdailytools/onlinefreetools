@@ -40,6 +40,10 @@ const ru: SiteLangDict = {
   tool_pdf_to_markdown_faq_q5: 'Когда использовать PDF в JPG?',
   tool_pdf_to_markdown_how_body:
     'Выберите PDF, Конвертировать, проверьте предпросмотр, скачайте .md. Строки по вертикали; страницы через ---. Всё во вкладке после загрузки библиотек—файл не уходит на сервер.',
+  tool_pdf_to_markdown_how_item_1: "Выберите файл через «Выбрать PDF»",
+  tool_pdf_to_markdown_how_item_2: "Настройте параметры и нажмите «Конвертировать»",
+  tool_pdf_to_markdown_how_item_3: "Проверьте предпросмотр, число страниц или статус",
+  tool_pdf_to_markdown_how_item_4: "Нажмите «Скачать .md», чтобы сохранить результат",
   tool_pdf_to_markdown_how_title: 'Как это работает',
   tool_pdf_to_markdown_pages_label: 'Страницы',
   tool_pdf_to_markdown_preview_label: 'Предпросмотр Markdown',

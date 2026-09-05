@@ -35,6 +35,10 @@ const zh: SiteLangDict = {
   tool_pdf_page_numbers_format_page_n_tpl: '第 {n} 页',
   tool_pdf_page_numbers_how_body:
     '选择一份 PDF，选位置（默认底中），设起始页码、边距与字号，点「添加页码」再「下载」。页码用 drawText 画在每一页。库在首次使用时加载。',
+  tool_pdf_page_numbers_how_item_1: "点击“选择 PDF”选择输入文件",
+  tool_pdf_page_numbers_how_item_2: "设置可用选项，然后点击“添加页码”",
+  tool_pdf_page_numbers_how_item_3: "检查预览、页数或状态信息",
+  tool_pdf_page_numbers_how_item_4: "点击“下载”保存结果",
   tool_pdf_page_numbers_how_title: '怎么用',
   tool_pdf_page_numbers_margin_label: '边距 (pt)',
   tool_pdf_page_numbers_pages_label: '页数',

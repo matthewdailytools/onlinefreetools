@@ -49,7 +49,7 @@ const id: SiteLangDict = {
   tool_convert_pdf_to_dwg_sample: "Muat contoh",
   tool_convert_pdf_to_dwg_status_done: "Selesai.",
   tool_convert_pdf_to_dwg_status_working: "Memproses…",
-  tool_convert_pdf_to_dwg_title: "Konversi PDF ke DWG",
+  tool_convert_pdf_to_dwg_title: "Ekspor teks PDF ke DXF untuk AutoCAD",
   tool_convert_pdf_to_dwg_usecase_1: "Masukkan teks stempel judul ke AutoCAD sebagai TEXT",
   tool_convert_pdf_to_dwg_usecase_2: "Serahkan berkas tukar DXF ke rekan yang meminta DWG",
   tool_convert_pdf_to_dwg_usecase_3: "Biarkan denah PDF di perangkat dan ekspor teks yang bisa dibaca CAD",

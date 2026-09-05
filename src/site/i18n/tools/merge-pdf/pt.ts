@@ -35,6 +35,10 @@ const pt: SiteLangDict = {
   tool_merge_pdf_faq_q5: 'Abre no Acrobat ou no Pré-visualizador?',
   tool_merge_pdf_how_body:
     'Adicione dois ou mais PDFs, reordene se precisar, clique em Juntar e depois Descarregar. A ordem das páginas segue a lista. Tudo corre localmente após carregar a biblioteca.',
+  tool_merge_pdf_how_item_1: "Selecione a entrada com “Escolher PDFs”",
+  tool_merge_pdf_how_item_2: "Ajuste as opções e clique em “Juntar”",
+  tool_merge_pdf_how_item_3: "Confira a prévia, a contagem de páginas ou o status",
+  tool_merge_pdf_how_item_4: "Clique em “Descarregar” para salvar o resultado",
   tool_merge_pdf_how_title: 'Como funciona',
   tool_merge_pdf_merge: 'Juntar',
   tool_merge_pdf_move_down: 'Descer',

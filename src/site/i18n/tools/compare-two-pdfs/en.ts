@@ -3,13 +3,13 @@
  */
 import type { SiteLangDict } from '../../../types';
 const en: SiteLangDict = {
-  tool_compare_two_pdfs_article: "Compare two PDFs. Files stay on your device; not uploaded to a server.",
+  tool_compare_two_pdfs_article: "Extract selectable text from PDF A and PDF B, highlight added and removed words, and download the text comparison as HTML.",
   tool_compare_two_pdfs_choose_file: "Choose a PDF",
   tool_compare_two_pdfs_choose_files: "Choose files",
   tool_compare_two_pdfs_clear: "Clear",
   tool_compare_two_pdfs_compare: "Compare",
-  tool_compare_two_pdfs_desc: "Compare two PDFs in your browser — extract text from both files and highlight differences with jsdiff. Files stay on your device; not uploaded to a server.",
-  tool_compare_two_pdfs_description: "Compare two PDFs in your browser: extract text from both files and highlight differences with jsdiff. Files stay on your device; not uploaded to a server. Load sample on entry shows a real result. Encrypted or damaged files show a clear error Process steps and an example are shown on this page.",
+  tool_compare_two_pdfs_desc: "Compare selectable text from two PDFs locally, highlight added and removed words, and download the diff.",
+  tool_compare_two_pdfs_description: "Compare two PDFs by extracting their selectable text and highlighting added and removed word blocks. Preview both files, review the change count, and download an HTML diff. Scanned pages require OCR before this text comparison. For example, the sample compares “Version A text” with “Version B text” and highlights the changed word.",
   tool_compare_two_pdfs_download: "Download",
   tool_compare_two_pdfs_drop_hint: "Or drop here. Processing stays in this tab.",
   tool_compare_two_pdfs_empty: "Choose a file first.",
@@ -34,7 +34,7 @@ const en: SiteLangDict = {
   tool_compare_two_pdfs_file_b: "PDF B",
   tool_compare_two_pdfs_how_body: "Choose input, click the main button, review the result, then download if needed. Files stay on your device; not uploaded to a server.",
   tool_compare_two_pdfs_how_item_1: "Choose a PDF or enter content",
-  tool_compare_two_pdfs_how_item_2: "Click the main action button",
+  tool_compare_two_pdfs_how_item_2: "Click “Compare” to run the operation",
   tool_compare_two_pdfs_how_item_3: "Review the output area",
   tool_compare_two_pdfs_how_item_4: "Download or print when needed",
   tool_compare_two_pdfs_how_title: "How it works",

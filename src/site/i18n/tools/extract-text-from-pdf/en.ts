@@ -3,13 +3,13 @@
  */
 import type { SiteLangDict } from '../../../types';
 const en: SiteLangDict = {
-  tool_extract_text_from_pdf_article: "Extract text from a PDF. Files stay on your device; not uploaded to a server.",
+  tool_extract_text_from_pdf_article: "Extract selectable text from every PDF page, inspect page and character counts, then copy it or download a plain-text file.",
   tool_extract_text_from_pdf_choose_file: "Choose a PDF",
   tool_extract_text_from_pdf_choose_files: "Choose files",
   tool_extract_text_from_pdf_clear: "Clear",
   tool_extract_text_from_pdf_copy: "Copy",
-  tool_extract_text_from_pdf_desc: "Extract text from a PDF in your browser — pdf.js text extract. Files stay on your device; not uploaded to a server.",
-  tool_extract_text_from_pdf_description: "Extract text from a PDF in your browser: pdf.js text extract; copy or download .txt. Files stay on your device; not uploaded to a server. Load sample on entry shows a real result. Encrypted or damaged files show a clear error Process steps and an example are shown on this page.",
+  tool_extract_text_from_pdf_desc: "Extract selectable PDF text locally, preview it, copy it, or download a .txt file with page and character counts.",
+  tool_extract_text_from_pdf_description: "Extract selectable text from a PDF in your browser, review page and character counts, copy the result, or download a .txt file. Scanned image-only pages need OCR elsewhere, while the PDF itself stays on your device. For example, the sample extracts “Hello extract text sample” into the preview and .txt output.",
   tool_extract_text_from_pdf_download: "Download",
   tool_extract_text_from_pdf_drop_hint: "Or drop here. Processing stays in this tab.",
   tool_extract_text_from_pdf_empty: "Choose a file first.",
@@ -33,7 +33,7 @@ const en: SiteLangDict = {
   tool_extract_text_from_pdf_faq_q5: "Are large files supported?",
   tool_extract_text_from_pdf_how_body: "Choose input, click the main button, review the result, then download if needed. Files stay on your device; not uploaded to a server.",
   tool_extract_text_from_pdf_how_item_1: "Choose a PDF or enter content",
-  tool_extract_text_from_pdf_how_item_2: "Click the main action button",
+  tool_extract_text_from_pdf_how_item_2: "Click “Extract” to run the operation",
   tool_extract_text_from_pdf_how_item_3: "Review the output area",
   tool_extract_text_from_pdf_how_item_4: "Download or print when needed",
   tool_extract_text_from_pdf_how_title: "How it works",

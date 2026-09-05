@@ -162,6 +162,7 @@ export const renderConvertWordDocumentToPdfPage = (opts: {
   ${pdfWorkUiClientScript()}
   <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdn.jsdelivr.net/npm/mammoth@1.8.0/mammoth.browser.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.5/purify.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdn.jsdelivr.net/npm/html2pdf.js@0.10.2/dist/html2pdf.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     (function () {
@@ -298,13 +299,18 @@ export const renderConvertWordDocumentToPdfPage = (opts: {
        */
       function docxToHtml(bytes) {
         if (typeof mammoth === 'undefined' || !mammoth.convertToHtml) return Promise.reject(new Error('mammoth'));
+        if (typeof DOMPurify === 'undefined') return Promise.reject(new Error('dompurify'));
         var copy = bytes.slice(0);
         return mammoth.convertToHtml({ arrayBuffer: copy.buffer }).then(function (result) {
           var html = (result && result.value) ? String(result.value) : '';
           if (!html.trim()) throw new Error('empty');
-          lastHtml = html;
-          previewEl.innerHTML = html;
-          return html;
+          // DOCX 可包含外链、事件属性或脚本式标记；进入预览与 PDF 渲染前先消毒。
+          var safeHtml = DOMPurify.sanitize(html, {
+            USE_PROFILES: { html: true },
+          });
+          lastHtml = safeHtml;
+          previewEl.innerHTML = safeHtml;
+          return safeHtml;
         });
       }
 

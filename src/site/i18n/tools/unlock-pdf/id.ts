@@ -39,6 +39,10 @@ const id: SiteLangDict = {
   tool_unlock_pdf_faq_q4: 'Hubungannya dengan Lindungi PDF?',
   tool_unlock_pdf_how_body:
     'Pilih satu PDF berpassword, masukkan kata sandi buka yang sudah Anda tahu, klik Buka kunci lalu Unduh. Dekripsi di tab ini setelah pustaka PDF dimuat—tanpa unggah ke server. Sandi kosong ditolak jika wajib.',
+  tool_unlock_pdf_how_item_1: "Pilih masukan dengan “Pilih PDF terenkripsi”",
+  tool_unlock_pdf_how_item_2: "Atur opsi lalu klik “Buka kunci”",
+  tool_unlock_pdf_how_item_3: "Periksa pratinjau, jumlah halaman, atau status",
+  tool_unlock_pdf_how_item_4: "Klik “Unduh” untuk menyimpan hasil",
   tool_unlock_pdf_how_title: 'Cara kerja',
   tool_unlock_pdf_pages_label: 'Halaman',
   tool_unlock_pdf_password_label: 'Kata sandi buka',

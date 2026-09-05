@@ -38,6 +38,10 @@ const pt: SiteLangDict = {
   tool_split_pdf_faq_q5: 'Qual a diferença para Juntar PDF?',
   tool_split_pdf_how_body:
     'Escolha um PDF, selecione cada página ou intervalos, clique Separar e depois Descarregar. Várias saídas vão num ZIP; uma só é PDF. Tudo local após carregar as bibliotecas.',
+  tool_split_pdf_how_item_1: "Selecione a entrada com “Escolher um PDF”",
+  tool_split_pdf_how_item_2: "Ajuste as opções e clique em “Separar”",
+  tool_split_pdf_how_item_3: "Confira a prévia, a contagem de páginas ou o status",
+  tool_split_pdf_how_item_4: "Clique em “Descarregar” para salvar o resultado",
   tool_split_pdf_how_title: 'Como funciona',
   tool_split_pdf_mode_every: 'Cada página (um ficheiro por página)',
   tool_split_pdf_mode_label: 'Modo de separação',

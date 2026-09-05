@@ -30,6 +30,10 @@ const zh: SiteLangDict = {
   tool_merge_pdf_faq_q5: '结果能用 Acrobat 或预览打开吗？',
   tool_merge_pdf_how_body:
     '添加至少两份 PDF，必要时用上移/下移排序，点「合并」，再「下载」。页序跟列表一致。库加载后全程本地处理。',
+  tool_merge_pdf_how_item_1: "点击“选择 PDF”选择输入文件",
+  tool_merge_pdf_how_item_2: "设置可用选项，然后点击“合并”",
+  tool_merge_pdf_how_item_3: "检查预览、页数或状态信息",
+  tool_merge_pdf_how_item_4: "点击“下载”保存结果",
   tool_merge_pdf_how_title: '怎么用',
   tool_merge_pdf_merge: '合并',
   tool_merge_pdf_move_down: '下移',

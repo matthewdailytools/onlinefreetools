@@ -38,6 +38,10 @@ const en: SiteLangDict = {
   tool_split_pdf_faq_q5: 'How is this different from Merge PDF?',
   tool_split_pdf_how_body:
     'Choose one PDF, select every page or enter ranges, click Split, then Download. Multiple outputs pack into a ZIP; a single output is a PDF. Everything runs locally after the libraries load.',
+  tool_split_pdf_how_item_1: "Select the input with “Choose a PDF”",
+  tool_split_pdf_how_item_2: "Set the available options, then click “Split”",
+  tool_split_pdf_how_item_3: "Review the preview, page count, or status message",
+  tool_split_pdf_how_item_4: "Click “Download” to save the result",
   tool_split_pdf_how_title: 'How it works',
   tool_split_pdf_mode_every: 'Every page (one file per page)',
   tool_split_pdf_mode_label: 'Split mode',

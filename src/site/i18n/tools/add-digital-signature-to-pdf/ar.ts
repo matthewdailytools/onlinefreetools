@@ -51,7 +51,7 @@ const ar: SiteLangDict = {
   tool_add_digital_signature_to_pdf_sample: "تحميل عينة",
   tool_add_digital_signature_to_pdf_status_done: "تم.",
   tool_add_digital_signature_to_pdf_status_working: "جارٍ العمل…",
-  tool_add_digital_signature_to_pdf_title: "إضافة توقيع رقمي إلى PDF",
+  tool_add_digital_signature_to_pdf_title: "إضافة علامة تكامل مرئية إلى PDF",
   tool_add_digital_signature_to_pdf_usecase_1: "المكتب: إظهار علامة سلامة محلية قبل مشاركة مسودة",
   tool_add_digital_signature_to_pdf_usecase_2: "الأرشيف: إبقاء طابع زمني وبادئة تجزئة على نسخة",
   tool_add_digital_signature_to_pdf_usecase_3: "ملفات PDF خاصة يجب أن تبقى على الجهاز",

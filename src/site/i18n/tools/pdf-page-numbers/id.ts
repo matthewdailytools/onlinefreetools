@@ -40,6 +40,10 @@ const id: SiteLangDict = {
   tool_pdf_page_numbers_format_page_n_tpl: 'Halaman {n}',
   tool_pdf_page_numbers_how_body:
     'Pilih PDF, posisi (tengah bawah default), angka awal, margin dan ukuran, klik Tambah nomor lalu Unduh. Nomor digambar di setiap halaman. Library dimuat saat pertama dipakai.',
+  tool_pdf_page_numbers_how_item_1: "Pilih masukan dengan “Pilih PDF”",
+  tool_pdf_page_numbers_how_item_2: "Atur opsi lalu klik “Tambah nomor”",
+  tool_pdf_page_numbers_how_item_3: "Periksa pratinjau, jumlah halaman, atau status",
+  tool_pdf_page_numbers_how_item_4: "Klik “Unduh” untuk menyimpan hasil",
   tool_pdf_page_numbers_how_title: 'Cara kerja',
   tool_pdf_page_numbers_margin_label: 'Margin (pt)',
   tool_pdf_page_numbers_pages_label: 'Halaman',

@@ -90,6 +90,11 @@ export const renderMakePdfFlipbookPage = (opts: {
   <style>
     .tools-bar { gap: .5rem; }
     #flipCanvas { border: 1px solid #dee2e6; border-radius: .25rem; background: #fff; max-width: 100%; }
+    #flipCanvas.is-turning { animation: flip-page-turn .24s ease-out; transform-origin: left center; }
+    @keyframes flip-page-turn {
+      0% { opacity: .45; transform: perspective(900px) rotateY(-13deg); }
+      100% { opacity: 1; transform: perspective(900px) rotateY(0); }
+    }
     ${pdfWorkUiCss()}
   </style>`;
 
@@ -157,7 +162,7 @@ export const renderMakePdfFlipbookPage = (opts: {
       var source = null; // { bytes, name }
       var currentPage = 1;
       var totalPages = 0;
-      var resultBytes = null; // 本工具下载原 PDF（flipbook 是预览）
+      var resultBytes = null; // 当前 PDF 字节，用于导出独立的 HTML 翻页预览。
 
       var msg = {
         working: ${JSON.stringify(t(opts.lang, prefix + '_status_working'))},
@@ -189,6 +194,9 @@ export const renderMakePdfFlipbookPage = (opts: {
       }
 
       function renderPageToCanvas(bytes, pageNum, scale) {
+        canvas.classList.remove('is-turning');
+        void canvas.offsetWidth;
+        canvas.classList.add('is-turning');
         return ensurePdfJs().then(function (pdfjsLib) {
           return pdfjsLib.getDocument({ data: bytes.slice(0) }).promise;
         }).then(function (doc) {
@@ -219,13 +227,50 @@ export const renderMakePdfFlipbookPage = (opts: {
         });
       }
 
-      function downloadOriginal() {
+      /**
+       * 将 PDF 字节转换为 Base64；分块处理，避免大文件触发调用栈上限。
+       * @param {Uint8Array} bytes PDF 原始字节
+       * @returns {string} Base64 文本
+       */
+      function bytesToBase64(bytes) {
+        var chunkSize = 0x8000;
+        var binary = '';
+        for (var offset = 0; offset < bytes.length; offset += chunkSize) {
+          binary += String.fromCharCode.apply(null, bytes.subarray(offset, offset + chunkSize));
+        }
+        return btoa(binary);
+      }
+
+      /**
+       * 生成可独立保存的 HTML 翻页预览。
+       * 导出文件仍需联网加载 PDF.js，但 PDF 内容直接内嵌，不会上传。
+       * @param {Uint8Array} bytes PDF 原始字节
+       * @returns {string} 完整 HTML 文档
+       */
+      function buildFlipbookHtml(bytes) {
+        var encoded = bytesToBase64(bytes);
+        return '<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">' +
+          '<title>PDF Flipbook</title><style>body{font-family:system-ui;margin:0;background:#eef1f5;text-align:center}' +
+          'main{max-width:960px;margin:auto;padding:24px}canvas{max-width:100%;background:#fff;box-shadow:0 10px 30px #0002}' +
+          'canvas.turn{animation:turn .24s ease-out;transform-origin:left center}@keyframes turn{from{opacity:.45;transform:perspective(900px) rotateY(-13deg)}to{opacity:1;transform:none}}' +
+          'button{margin:12px 4px;padding:8px 14px}</style></head><body><main><canvas id="page"></canvas><div>' +
+          '<button id="prev" type="button">Previous</button><span id="info"></span><button id="next" type="button">Next</button>' +
+          '</div></main><script type="module">import * as pdfjsLib from "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.min.mjs";' +
+          'pdfjsLib.GlobalWorkerOptions.workerSrc="https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.worker.min.mjs";' +
+          'const raw=atob("' + encoded + '"),bytes=Uint8Array.from(raw,c=>c.charCodeAt(0)),doc=await pdfjsLib.getDocument({data:bytes}).promise;' +
+          'let n=1;const c=document.getElementById("page"),info=document.getElementById("info");async function render(){const p=await doc.getPage(n),v=p.getViewport({scale:1.35});c.width=v.width;c.height=v.height;c.classList.remove("turn");void c.offsetWidth;c.classList.add("turn");await p.render({canvasContext:c.getContext("2d"),viewport:v}).promise;info.textContent=" "+n+" / "+doc.numPages+" ";}' +
+          'document.getElementById("prev").onclick=()=>{if(n>1){n--;render()}};document.getElementById("next").onclick=()=>{if(n<doc.numPages){n++;render()}};render();' +
+          '<\\/script></body></html>';
+      }
+
+      /** 下载内嵌当前 PDF 的 HTML 翻页预览。 */
+      function downloadFlipbook() {
         if (!resultBytes) return;
-        var blob = new Blob([resultBytes], { type: 'application/pdf' });
+        var blob = new Blob([buildFlipbookHtml(resultBytes)], { type: 'text/html;charset=utf-8' });
         var url = URL.createObjectURL(blob);
         var a = document.createElement('a');
         a.href = url;
-        a.download = 'flipbook.pdf';
+        a.download = 'pdf-flipbook.html';
         document.body.appendChild(a);
         a.click();
         a.remove();
@@ -305,7 +350,7 @@ export const renderMakePdfFlipbookPage = (opts: {
         }
       });
 
-      btnDownload.addEventListener('click', downloadOriginal);
+      btnDownload.addEventListener('click', downloadFlipbook);
       btnSample.addEventListener('click', loadSample);
       btnClear.addEventListener('click', function () {
         source = null;

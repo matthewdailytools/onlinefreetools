@@ -40,6 +40,10 @@ const ar: SiteLangDict = {
   tool_pdf_to_markdown_faq_q5: 'متى أستخدم PDF إلى JPG؟',
   tool_pdf_to_markdown_how_body:
     'اختر PDF، تحويل، راجع المعاينة، ثم تنزيل .md. تُجمّع الأسطر حسب الموضع الرأسي؛ الصفحات تفصل بـ ---. كل شيء محلي بعد تحميل المكتبات.',
+  tool_pdf_to_markdown_how_item_1: "اختر الإدخال عبر «اختر PDF»",
+  tool_pdf_to_markdown_how_item_2: "اضبط الخيارات ثم اضغط «تحويل»",
+  tool_pdf_to_markdown_how_item_3: "راجع المعاينة أو عدد الصفحات أو رسالة الحالة",
+  tool_pdf_to_markdown_how_item_4: "اضغط «تنزيل .md» لحفظ النتيجة",
   tool_pdf_to_markdown_how_title: 'كيف يعمل',
   tool_pdf_to_markdown_pages_label: 'الصفحات',
   tool_pdf_to_markdown_preview_label: 'معاينة Markdown',

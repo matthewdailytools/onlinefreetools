@@ -35,6 +35,10 @@ const id: SiteLangDict = {
   tool_merge_pdf_faq_q5: 'Apakah hasilnya terbuka di Acrobat atau Preview?',
   tool_merge_pdf_how_body:
     'Tambah dua PDF atau lebih, susun ulang jika perlu, klik Gabung, lalu Unduh. Urutan halaman mengikuti daftar. Semuanya lokal setelah pustaka dimuat.',
+  tool_merge_pdf_how_item_1: "Pilih masukan dengan “Pilih PDF”",
+  tool_merge_pdf_how_item_2: "Atur opsi lalu klik “Gabung”",
+  tool_merge_pdf_how_item_3: "Periksa pratinjau, jumlah halaman, atau status",
+  tool_merge_pdf_how_item_4: "Klik “Unduh” untuk menyimpan hasil",
   tool_merge_pdf_how_title: 'Cara kerja',
   tool_merge_pdf_merge: 'Gabung',
   tool_merge_pdf_move_down: 'Turun',

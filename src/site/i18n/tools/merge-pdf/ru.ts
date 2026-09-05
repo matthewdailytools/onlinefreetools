@@ -35,6 +35,10 @@ const ru: SiteLangDict = {
   tool_merge_pdf_faq_q5: 'Откроется ли результат в Acrobat или Просмотре?',
   tool_merge_pdf_how_body:
     'Добавьте два или больше PDF, при необходимости переставьте, нажмите «Объединить», затем «Скачать». Порядок страниц следует списку. После загрузки библиотеки всё локально.',
+  tool_merge_pdf_how_item_1: "Выберите файл через «Выбрать PDF»",
+  tool_merge_pdf_how_item_2: "Настройте параметры и нажмите «Объединить»",
+  tool_merge_pdf_how_item_3: "Проверьте предпросмотр, число страниц или статус",
+  tool_merge_pdf_how_item_4: "Нажмите «Скачать», чтобы сохранить результат",
   tool_merge_pdf_how_title: 'Как это работает',
   tool_merge_pdf_merge: 'Объединить',
   tool_merge_pdf_move_down: 'Вниз',

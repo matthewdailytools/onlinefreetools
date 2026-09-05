@@ -35,6 +35,10 @@ const fr: SiteLangDict = {
   tool_merge_pdf_faq_q5: 'Le résultat s’ouvre-t-il dans Acrobat ou Aperçu ?',
   tool_merge_pdf_how_body:
     'Ajoutez au moins deux PDF, réordonnez si besoin, cliquez Fusionner puis Télécharger. L’ordre des pages suit la liste. Tout reste local après chargement de la bibliothèque.',
+  tool_merge_pdf_how_item_1: "Sélectionnez l’entrée avec « Choisir des PDF »",
+  tool_merge_pdf_how_item_2: "Réglez les options puis cliquez sur « Fusionner »",
+  tool_merge_pdf_how_item_3: "Vérifiez l’aperçu, le nombre de pages ou le statut",
+  tool_merge_pdf_how_item_4: "Cliquez sur « Télécharger » pour enregistrer le résultat",
   tool_merge_pdf_how_title: 'Fonctionnement',
   tool_merge_pdf_merge: 'Fusionner',
   tool_merge_pdf_move_down: 'Bas',

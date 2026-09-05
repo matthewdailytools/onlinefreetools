@@ -51,7 +51,7 @@ const ja: SiteLangDict = {
   tool_add_digital_signature_to_pdf_sample: "サンプルを読み込む",
   tool_add_digital_signature_to_pdf_status_done: "完了",
   tool_add_digital_signature_to_pdf_status_working: "処理中…",
-  tool_add_digital_signature_to_pdf_title: "PDF にデジタル署名を追加",
+  tool_add_digital_signature_to_pdf_title: "PDF に可視の整合性マークを追加",
   tool_add_digital_signature_to_pdf_usecase_1: "職場：下書き共有前に端末内の完全性マークを見せる",
   tool_add_digital_signature_to_pdf_usecase_2: "記録：コピーに見える時刻とハッシュ接頭辞を残す",
   tool_add_digital_signature_to_pdf_usecase_3: "端末から出したくない PDF",

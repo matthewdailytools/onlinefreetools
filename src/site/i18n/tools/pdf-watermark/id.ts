@@ -39,6 +39,10 @@ const id: SiteLangDict = {
   tool_pdf_watermark_faq_q5: 'Bisa tambah logo?',
   tool_pdf_watermark_how_body:
     'Pilih PDF, masukkan teks, atur opasitas dan rotasi, posisi, opsional logo PNG/JPG, klik Terapkan lalu Unduh. Setiap halaman dapat lapisan yang sama.',
+  tool_pdf_watermark_how_item_1: "Pilih masukan dengan “Pilih PDF”",
+  tool_pdf_watermark_how_item_2: "Atur opsi lalu klik “Terapkan”",
+  tool_pdf_watermark_how_item_3: "Periksa pratinjau, jumlah halaman, atau status",
+  tool_pdf_watermark_how_item_4: "Klik “Unduh” untuk menyimpan hasil",
   tool_pdf_watermark_how_title: 'Cara kerja',
   tool_pdf_watermark_image_hint: 'Logo PNG/JPG opsional (posisi sama dengan teks).',
   tool_pdf_watermark_image_label: 'Watermark gambar (opsional)',

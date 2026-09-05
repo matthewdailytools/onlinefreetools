@@ -38,6 +38,10 @@ const ru: SiteLangDict = {
   tool_split_pdf_faq_q5: 'Чем отличается от «Объединить PDF»?',
   tool_split_pdf_how_body:
     'Выберите один PDF, режим каждой страницы или диапазоны, нажмите «Разделить», затем «Скачать». Несколько результатов → ZIP; один → PDF. После загрузки библиотек всё локально.',
+  tool_split_pdf_how_item_1: "Выберите файл через «Выбрать PDF»",
+  tool_split_pdf_how_item_2: "Настройте параметры и нажмите «Разделить»",
+  tool_split_pdf_how_item_3: "Проверьте предпросмотр, число страниц или статус",
+  tool_split_pdf_how_item_4: "Нажмите «Скачать», чтобы сохранить результат",
   tool_split_pdf_how_title: 'Как это работает',
   tool_split_pdf_mode_every: 'Каждая страница (один файл на страницу)',
   tool_split_pdf_mode_label: 'Режим разделения',

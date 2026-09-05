@@ -51,7 +51,7 @@ const de: SiteLangDict = {
   tool_add_digital_signature_to_pdf_sample: "Beispiel laden",
   tool_add_digital_signature_to_pdf_status_done: "Fertig.",
   tool_add_digital_signature_to_pdf_status_working: "Verarbeitung…",
-  tool_add_digital_signature_to_pdf_title: "Digitale Signatur auf ein PDF setzen",
+  tool_add_digital_signature_to_pdf_title: "Sichtbaren Integritätsvermerk in ein PDF setzen",
   tool_add_digital_signature_to_pdf_usecase_1: "Büro: lokale Integritätsmarke vor dem Teilen eines Entwurfs zeigen",
   tool_add_digital_signature_to_pdf_usecase_2: "Ablage: sichtbaren Zeitstempel und Hash-Präfix auf einer Kopie lassen",
   tool_add_digital_signature_to_pdf_usecase_3: "Private PDFs, die auf dem Gerät bleiben müssen",

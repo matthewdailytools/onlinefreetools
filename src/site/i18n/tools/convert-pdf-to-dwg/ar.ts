@@ -49,7 +49,7 @@ const ar: SiteLangDict = {
   tool_convert_pdf_to_dwg_sample: "تحميل مثال",
   tool_convert_pdf_to_dwg_status_done: "تم.",
   tool_convert_pdf_to_dwg_status_working: "جارٍ العمل…",
-  tool_convert_pdf_to_dwg_title: "تحويل PDF إلى DWG",
+  tool_convert_pdf_to_dwg_title: "تصدير نص PDF إلى DXF لأوتوكاد",
   tool_convert_pdf_to_dwg_usecase_1: "نقل نص إطار العنوان إلى أوتوكاد كـ TEXT",
   tool_convert_pdf_to_dwg_usecase_2: "تسليم ملف تبادل DXF لزميل طلب DWG",
   tool_convert_pdf_to_dwg_usecase_3: "إبقاء مخطط PDF على الجهاز وتصدير نص يقرأه CAD",

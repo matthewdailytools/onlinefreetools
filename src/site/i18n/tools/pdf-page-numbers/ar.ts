@@ -40,6 +40,10 @@ const ar: SiteLangDict = {
   tool_pdf_page_numbers_format_page_n_tpl: 'صفحة {n}',
   tool_pdf_page_numbers_how_body:
     'اختر PDF، الموضع (أسفل الوسط افتراضيًا)، رقم البداية، الهامش والحجم، اضغط ترقيم ثم تنزيل. الأرقام تُرسم على كل صفحة. تُحمَّل المكتبة عند أول استخدام.',
+  tool_pdf_page_numbers_how_item_1: "اختر الإدخال عبر «اختر PDF»",
+  tool_pdf_page_numbers_how_item_2: "اضبط الخيارات ثم اضغط «ترقيم»",
+  tool_pdf_page_numbers_how_item_3: "راجع المعاينة أو عدد الصفحات أو رسالة الحالة",
+  tool_pdf_page_numbers_how_item_4: "اضغط «تنزيل» لحفظ النتيجة",
   tool_pdf_page_numbers_how_title: 'كيف يعمل',
   tool_pdf_page_numbers_margin_label: 'الهامش (pt)',
   tool_pdf_page_numbers_pages_label: 'عدد الصفحات',

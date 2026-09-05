@@ -49,7 +49,7 @@ const zh: SiteLangDict = {
   tool_convert_pdf_to_dwg_sample: "加载样例",
   tool_convert_pdf_to_dwg_status_done: "完成",
   tool_convert_pdf_to_dwg_status_working: "处理中…",
-  tool_convert_pdf_to_dwg_title: "将 PDF 转为 DWG",
+  tool_convert_pdf_to_dwg_title: "将 PDF 文本导出为 AutoCAD 可用 DXF",
   tool_convert_pdf_to_dwg_usecase_1: "把图签文字作为 TEXT 送进 AutoCAD",
   tool_convert_pdf_to_dwg_usecase_2: "同事要 DWG 时，先交一份 DXF 交换文件",
   tool_convert_pdf_to_dwg_usecase_3: "平面图 PDF 留在本机，只导出 CAD 可读文字",

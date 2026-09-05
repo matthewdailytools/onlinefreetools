@@ -37,6 +37,10 @@ const es: SiteLangDict = {
   tool_compress_pdf_faq_q5: '¿Qué calidad debo elegir?',
   tool_compress_pdf_how_body:
     'Elige un PDF, selecciona Medio o Bajo, pulsa Comprimir y Descargar. Cada página se renderiza y guarda como JPEG en un PDF nuevo. Las estadísticas muestran tamaño original, nuevo y porcentaje. Las librerías cargan al primer uso.',
+  tool_compress_pdf_how_item_1: "Selecciona la entrada con «Elegir PDF»",
+  tool_compress_pdf_how_item_2: "Ajusta las opciones y pulsa «Comprimir»",
+  tool_compress_pdf_how_item_3: "Revisa la vista previa, el número de páginas o el estado",
+  tool_compress_pdf_how_item_4: "Pulsa «Descargar» para guardar el resultado",
   tool_compress_pdf_how_title: 'Cómo funciona',
   tool_compress_pdf_pages_label: 'Páginas',
   tool_compress_pdf_quality_label: 'Calidad',

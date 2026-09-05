@@ -36,6 +36,10 @@ const de: SiteLangDict = {
   tool_rotate_pdf_faq_q4: 'Was ist mit verschlüsselten PDFs?',
   tool_rotate_pdf_how_body:
     'PDF wählen, alle Seiten oder Bereiche, Winkel wählen, Drehen und Download. Drehung addiert zum aktuellen Seitenwinkel. Nach dem Laden der Bibliothek läuft alles in diesem Tab—keine Datei geht an einen Server.',
+  tool_rotate_pdf_how_item_1: "Wählen Sie die Eingabe mit „PDF wählen“",
+  tool_rotate_pdf_how_item_2: "Optionen einstellen und „Drehen“ anklicken",
+  tool_rotate_pdf_how_item_3: "Vorschau, Seitenzahl oder Statusmeldung prüfen",
+  tool_rotate_pdf_how_item_4: "Mit „Download“ das Ergebnis speichern",
   tool_rotate_pdf_how_title: 'So funktioniert es',
   tool_rotate_pdf_mode_all: 'Alle Seiten',
   tool_rotate_pdf_mode_label: 'Zu drehende Seiten',

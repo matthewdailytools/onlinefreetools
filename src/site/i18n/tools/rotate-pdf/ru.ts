@@ -36,6 +36,10 @@ const ru: SiteLangDict = {
   tool_rotate_pdf_faq_q4: 'А зашифрованные PDF?',
   tool_rotate_pdf_how_body:
     'Выберите PDF, все страницы или диапазоны, угол, нажмите Повернуть и Скачать. Угол добавляется к текущему. После загрузки библиотеки всё во вкладке, без загрузки на сервер.',
+  tool_rotate_pdf_how_item_1: "Выберите файл через «Выбрать PDF»",
+  tool_rotate_pdf_how_item_2: "Настройте параметры и нажмите «Повернуть»",
+  tool_rotate_pdf_how_item_3: "Проверьте предпросмотр, число страниц или статус",
+  tool_rotate_pdf_how_item_4: "Нажмите «Скачать», чтобы сохранить результат",
   tool_rotate_pdf_how_title: 'Как это работает',
   tool_rotate_pdf_mode_all: 'Все страницы',
   tool_rotate_pdf_mode_label: 'Страницы для поворота',

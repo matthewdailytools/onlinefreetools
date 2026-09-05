@@ -39,6 +39,10 @@ const en: SiteLangDict = {
   tool_crop_pdf_faq_q4: 'What about encrypted PDFs?',
   tool_crop_pdf_how_body:
     'Choose one PDF, set margins in points (all sides or each edge), click Crop, then Download. Each page’s crop and media boxes shrink inward; viewers and printers respect the new bounds. Everything runs in this tab after the libraries load—your file is not uploaded to a server.',
+  tool_crop_pdf_how_item_1: "Select the input with “Choose a PDF”",
+  tool_crop_pdf_how_item_2: "Set the available options, then click “Crop”",
+  tool_crop_pdf_how_item_3: "Review the preview, page count, or status message",
+  tool_crop_pdf_how_item_4: "Click “Download” to save the result",
   tool_crop_pdf_how_title: 'How it works',
   tool_crop_pdf_left_label: 'Left (pt)',
   tool_crop_pdf_margins_title: 'Margins to trim (points)',

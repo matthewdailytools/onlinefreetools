@@ -40,6 +40,10 @@ const ru: SiteLangDict = {
   tool_pdf_page_numbers_format_page_n_tpl: 'Стр. {n}',
   tool_pdf_page_numbers_how_body:
     'Выберите PDF, позицию (низ по центру по умолчанию), первый номер, отступ и размер, нажмите Добавить номера и Скачать. Номера рисуются на каждой странице. Библиотека загружается при первом использовании.',
+  tool_pdf_page_numbers_how_item_1: "Выберите файл через «Выбрать PDF»",
+  tool_pdf_page_numbers_how_item_2: "Настройте параметры и нажмите «Добавить номера»",
+  tool_pdf_page_numbers_how_item_3: "Проверьте предпросмотр, число страниц или статус",
+  tool_pdf_page_numbers_how_item_4: "Нажмите «Скачать», чтобы сохранить результат",
   tool_pdf_page_numbers_how_title: 'Как это работает',
   tool_pdf_page_numbers_margin_label: 'Отступ (pt)',
   tool_pdf_page_numbers_pages_label: 'Страниц',

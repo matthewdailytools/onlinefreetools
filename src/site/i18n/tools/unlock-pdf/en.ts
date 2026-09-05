@@ -38,6 +38,10 @@ const en: SiteLangDict = {
   tool_unlock_pdf_faq_q4: 'How does this relate to Protect PDF?',
   tool_unlock_pdf_how_body:
     'Choose one password-protected PDF, enter the open password you already know, click Unlock, then Download. Decryption runs in this tab after the PDF library loads. Empty passwords are rejected when the file needs one.',
+  tool_unlock_pdf_how_item_1: "Select the input with “Choose an encrypted PDF”",
+  tool_unlock_pdf_how_item_2: "Set the available options, then click “Unlock”",
+  tool_unlock_pdf_how_item_3: "Review the preview, page count, or status message",
+  tool_unlock_pdf_how_item_4: "Click “Download” to save the result",
   tool_unlock_pdf_how_title: 'How it works',
   tool_unlock_pdf_pages_label: 'Pages in file',
   tool_unlock_pdf_password_label: 'Open password',

@@ -51,7 +51,7 @@ const ru: SiteLangDict = {
   tool_add_digital_signature_to_pdf_sample: "Загрузить образец",
   tool_add_digital_signature_to_pdf_status_done: "Готово.",
   tool_add_digital_signature_to_pdf_status_working: "Обработка…",
-  tool_add_digital_signature_to_pdf_title: "Добавить цифровую подпись на PDF",
+  tool_add_digital_signature_to_pdf_title: "Добавить видимую метку целостности в PDF",
   tool_add_digital_signature_to_pdf_usecase_1: "Офис: показать локальную отметку целостности перед отправкой черновика",
   tool_add_digital_signature_to_pdf_usecase_2: "Архив: оставить видимые время и префикс хеша на копии",
   tool_add_digital_signature_to_pdf_usecase_3: "Личные PDF, которые должны остаться на устройстве",

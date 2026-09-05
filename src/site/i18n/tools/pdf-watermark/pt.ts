@@ -39,6 +39,10 @@ const pt: SiteLangDict = {
   tool_pdf_watermark_faq_q5: 'Posso adicionar um logo?',
   tool_pdf_watermark_how_body:
     'Escolha um PDF, digite o carimbo, ajuste opacidade e rotação, posição, opcionalmente logo PNG/JPG, clique Aplicar e Baixar. Cada página recebe a mesma camada.',
+  tool_pdf_watermark_how_item_1: "Selecione a entrada com “Escolher PDF”",
+  tool_pdf_watermark_how_item_2: "Ajuste as opções e clique em “Aplicar”",
+  tool_pdf_watermark_how_item_3: "Confira a prévia, a contagem de páginas ou o status",
+  tool_pdf_watermark_how_item_4: "Clique em “Baixar” para salvar o resultado",
   tool_pdf_watermark_how_title: 'Como funciona',
   tool_pdf_watermark_image_hint: 'Logo PNG/JPG opcional (mesma posição do texto).',
   tool_pdf_watermark_image_label: 'Marca de imagem (opcional)',

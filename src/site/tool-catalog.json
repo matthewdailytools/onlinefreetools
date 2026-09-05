@@ -2,7 +2,7 @@
   {
     "slug": "add-digital-signature-to-pdf",
     "path": "/tools/add-digital-signature-to-pdf",
-    "updatedAt": "2026-09-03T23:38:34.286Z",
+    "updatedAt": "2026-09-05T12:58:23.264Z",
     "launchedAt": "2026-09-04T00:00:00.000Z",
     "category": "pdf",
     "primaryTopic": "pdf-docs",
@@ -27,7 +27,7 @@
   {
     "slug": "add-text-to-pdf-file",
     "path": "/tools/add-text-to-pdf-file",
-    "updatedAt": "2026-09-03T16:51:45.638Z",
+    "updatedAt": "2026-09-05T12:58:23.264Z",
     "launchedAt": "2026-09-03T14:00:00.000Z",
     "category": "pdf",
     "primaryTopic": "pdf-docs",
@@ -497,7 +497,7 @@
   {
     "slug": "check-pdf-a-compliance",
     "path": "/tools/check-pdf-a-compliance",
-    "updatedAt": "2026-09-03T16:51:45.638Z",
+    "updatedAt": "2026-09-05T12:58:23.264Z",
     "launchedAt": "2026-09-03T14:00:00.000Z",
     "category": "pdf",
     "primaryTopic": "pdf-docs",
@@ -639,7 +639,7 @@
   {
     "slug": "combine-files-into-one-pdf",
     "path": "/tools/combine-files-into-one-pdf",
-    "updatedAt": "2026-09-03T16:51:45.638Z",
+    "updatedAt": "2026-09-05T12:58:23.264Z",
     "launchedAt": "2026-09-03T14:00:00.000Z",
     "category": "pdf",
     "primaryTopic": "pdf-docs",
@@ -664,7 +664,7 @@
   {
     "slug": "compare-two-pdfs",
     "path": "/tools/compare-two-pdfs",
-    "updatedAt": "2026-09-03T16:51:45.638Z",
+    "updatedAt": "2026-09-05T12:58:23.264Z",
     "launchedAt": "2026-09-03T14:00:00.000Z",
     "category": "pdf",
     "primaryTopic": "pdf-docs",
@@ -739,7 +739,7 @@
   {
     "slug": "compress-pdf",
     "path": "/tools/compress-pdf",
-    "updatedAt": "2026-09-03T23:45:43.415Z",
+    "updatedAt": "2026-09-05T12:58:23.264Z",
     "category": "pdf",
     "primaryTopic": "pdf-docs",
     "featured": true,
@@ -762,7 +762,7 @@
   {
     "slug": "convert-html-to-pdf",
     "path": "/tools/convert-html-to-pdf",
-    "updatedAt": "2026-09-03T16:51:45.638Z",
+    "updatedAt": "2026-09-05T12:58:23.264Z",
     "launchedAt": "2026-09-03T14:00:00.000Z",
     "category": "pdf",
     "primaryTopic": "pdf-docs",
@@ -788,7 +788,7 @@
   {
     "slug": "convert-pdf-to-dwg",
     "path": "/tools/convert-pdf-to-dwg",
-    "updatedAt": "2026-09-03T23:38:34.286Z",
+    "updatedAt": "2026-09-05T12:58:23.264Z",
     "launchedAt": "2026-09-04T00:00:00.000Z",
     "category": "pdf",
     "primaryTopic": "pdf-docs",
@@ -838,7 +838,7 @@
   {
     "slug": "convert-word-document-to-pdf",
     "path": "/tools/convert-word-document-to-pdf",
-    "updatedAt": "2026-09-03T23:38:34.286Z",
+    "updatedAt": "2026-09-05T12:58:23.264Z",
     "launchedAt": "2026-09-04T00:00:00.000Z",
     "category": "pdf",
     "primaryTopic": "pdf-docs",
@@ -1003,7 +1003,7 @@
   {
     "slug": "crop-pdf",
     "path": "/tools/crop-pdf",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-09-05T12:58:23.264Z",
     "category": "pdf",
     "primaryTopic": "pdf-docs",
     "featured": true,
@@ -1196,7 +1196,7 @@
   {
     "slug": "extract-text-from-pdf",
     "path": "/tools/extract-text-from-pdf",
-    "updatedAt": "2026-09-03T16:51:45.638Z",
+    "updatedAt": "2026-09-05T12:58:23.264Z",
     "launchedAt": "2026-09-03T14:00:00.000Z",
     "category": "pdf",
     "primaryTopic": "pdf-docs",
@@ -3510,7 +3510,7 @@
   {
     "slug": "make-pdf-flipbook",
     "path": "/tools/make-pdf-flipbook",
-    "updatedAt": "2026-09-03T16:51:45.638Z",
+    "updatedAt": "2026-09-05T12:58:23.264Z",
     "launchedAt": "2026-09-03T14:00:00.000Z",
     "category": "pdf",
     "primaryTopic": "pdf-docs",
@@ -3585,7 +3585,7 @@
   {
     "slug": "merge-pdf",
     "path": "/tools/merge-pdf",
-    "updatedAt": "2026-09-03T23:45:43.415Z",
+    "updatedAt": "2026-09-05T12:58:23.264Z",
     "category": "pdf",
     "primaryTopic": "pdf-docs",
     "featured": true,
@@ -3754,7 +3754,7 @@
   {
     "slug": "open-pdf-in-browser",
     "path": "/tools/open-pdf-in-browser",
-    "updatedAt": "2026-09-03T16:51:45.638Z",
+    "updatedAt": "2026-09-05T12:58:23.264Z",
     "launchedAt": "2026-09-03T14:00:00.000Z",
     "category": "pdf",
     "primaryTopic": "pdf-docs",
@@ -3779,7 +3779,7 @@
   {
     "slug": "organize-pdf",
     "path": "/tools/organize-pdf",
-    "updatedAt": "2026-09-03T14:06:51.440Z",
+    "updatedAt": "2026-09-05T12:58:23.264Z",
     "category": "pdf",
     "primaryTopic": "pdf-docs",
     "featured": true,
@@ -3825,7 +3825,7 @@
   {
     "slug": "pdf-page-numbers",
     "path": "/tools/pdf-page-numbers",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-09-05T12:58:23.264Z",
     "category": "pdf",
     "primaryTopic": "pdf-docs",
     "featured": true,
@@ -3900,7 +3900,7 @@
   {
     "slug": "pdf-to-markdown",
     "path": "/tools/pdf-to-markdown",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-09-05T12:58:23.264Z",
     "category": "pdf",
     "primaryTopic": "pdf-docs",
     "secondaryTopics": [
@@ -3925,7 +3925,7 @@
   {
     "slug": "pdf-watermark",
     "path": "/tools/pdf-watermark",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-09-05T12:58:23.264Z",
     "category": "pdf",
     "primaryTopic": "pdf-docs",
     "secondaryTopics": [
@@ -3950,7 +3950,7 @@
   {
     "slug": "print-pdf",
     "path": "/tools/print-pdf",
-    "updatedAt": "2026-09-03T16:51:45.638Z",
+    "updatedAt": "2026-09-05T12:58:23.264Z",
     "launchedAt": "2026-09-03T14:00:00.000Z",
     "category": "pdf",
     "primaryTopic": "pdf-docs",
@@ -4043,7 +4043,7 @@
   {
     "slug": "protect-pdf",
     "path": "/tools/protect-pdf",
-    "updatedAt": "2026-09-03T23:45:43.415Z",
+    "updatedAt": "2026-09-05T12:58:23.264Z",
     "category": "pdf",
     "primaryTopic": "pdf-docs",
     "secondaryTopics": [
@@ -4092,7 +4092,7 @@
   {
     "slug": "rotate-pdf",
     "path": "/tools/rotate-pdf",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-09-05T12:58:23.264Z",
     "category": "pdf",
     "primaryTopic": "pdf-docs",
     "featured": true,
@@ -4286,7 +4286,7 @@
   {
     "slug": "split-pdf",
     "path": "/tools/split-pdf",
-    "updatedAt": "2026-09-03T23:45:43.415Z",
+    "updatedAt": "2026-09-05T12:58:23.264Z",
     "category": "pdf",
     "primaryTopic": "pdf-docs",
     "featured": true,
@@ -4439,7 +4439,7 @@
   {
     "slug": "turn-pdf-into-editable-document",
     "path": "/tools/turn-pdf-into-editable-document",
-    "updatedAt": "2026-09-03T23:38:34.286Z",
+    "updatedAt": "2026-09-05T13:09:33.626Z",
     "launchedAt": "2026-09-04T00:00:00.000Z",
     "category": "pdf",
     "primaryTopic": "pdf-docs",
@@ -4540,7 +4540,7 @@
   {
     "slug": "unlock-pdf",
     "path": "/tools/unlock-pdf",
-    "updatedAt": "2026-09-03T23:45:43.415Z",
+    "updatedAt": "2026-09-05T12:58:23.264Z",
     "category": "pdf",
     "primaryTopic": "pdf-docs",
     "secondaryTopics": [
@@ -4803,7 +4803,7 @@
   {
     "slug": "write-pdf-document-online",
     "path": "/tools/write-pdf-document-online",
-    "updatedAt": "2026-09-03T16:51:45.638Z",
+    "updatedAt": "2026-09-05T12:58:23.264Z",
     "launchedAt": "2026-09-03T14:00:00.000Z",
     "category": "pdf",
     "primaryTopic": "pdf-docs",

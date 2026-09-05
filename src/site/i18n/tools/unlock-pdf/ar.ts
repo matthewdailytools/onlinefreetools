@@ -36,6 +36,10 @@ const ar: SiteLangDict = {
   tool_unlock_pdf_faq_q4: 'ما علاقته بـ حماية PDF؟',
   tool_unlock_pdf_how_body:
     'اختر PDF محميًا، أدخل كلمة الفتح المعروفة، اضغط إلغاء القفل ثم تنزيل. فك التشفير محليًا بعد تحميل مكتبة PDF. يُرفض الفراغ إن لزم.',
+  tool_unlock_pdf_how_item_1: "اختر الإدخال عبر «اختر PDF مشفرًا»",
+  tool_unlock_pdf_how_item_2: "اضبط الخيارات ثم اضغط «إلغاء القفل»",
+  tool_unlock_pdf_how_item_3: "راجع المعاينة أو عدد الصفحات أو رسالة الحالة",
+  tool_unlock_pdf_how_item_4: "اضغط «تنزيل» لحفظ النتيجة",
   tool_unlock_pdf_how_title: 'كيف يعمل',
   tool_unlock_pdf_pages_label: 'الصفحات',
   tool_unlock_pdf_password_label: 'كلمة مرور الفتح',

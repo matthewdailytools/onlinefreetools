@@ -32,6 +32,10 @@ const ar: SiteLangDict = {
   tool_crop_pdf_faq_q4: 'ماذا عن PDF المشفّر؟',
   tool_crop_pdf_how_body:
     'اختر PDF، حدّد هوامش بالنقاط (موحّدة أو لكل حافة)، اضغط قص ثم تنزيل. CropBox وMediaBox يتقلصان؛ العارضات والطباعة تحترم الحدود الجديدة. كل شيء محلي بعد تحميل المكتبة.',
+  tool_crop_pdf_how_item_1: "اختر الإدخال عبر «اختر PDF»",
+  tool_crop_pdf_how_item_2: "اضبط الخيارات ثم اضغط «قص»",
+  tool_crop_pdf_how_item_3: "راجع المعاينة أو عدد الصفحات أو رسالة الحالة",
+  tool_crop_pdf_how_item_4: "اضغط «تنزيل» لحفظ النتيجة",
   tool_crop_pdf_how_title: 'كيف يعمل',
   tool_crop_pdf_left_label: 'يسار (pt)',
   tool_crop_pdf_margins_title: 'هوامش للقص (نقاط)',

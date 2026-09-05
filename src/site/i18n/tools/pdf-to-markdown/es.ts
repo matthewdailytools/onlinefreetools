@@ -41,6 +41,10 @@ const es: SiteLangDict = {
   tool_pdf_to_markdown_faq_q5: '¿Cuándo usar PDF a JPG?',
   tool_pdf_to_markdown_how_body:
     'Elige un PDF, pulsa Convertir, revisa la vista previa y descarga .md. Las líneas se agrupan por posición vertical; las páginas se separan con ---. Todo local tras cargar las librerías.',
+  tool_pdf_to_markdown_how_item_1: "Selecciona la entrada con «Elegir un PDF»",
+  tool_pdf_to_markdown_how_item_2: "Ajusta las opciones y pulsa «Convertir»",
+  tool_pdf_to_markdown_how_item_3: "Revisa la vista previa, el número de páginas o el estado",
+  tool_pdf_to_markdown_how_item_4: "Pulsa «Descargar .md» para guardar el resultado",
   tool_pdf_to_markdown_how_title: 'Cómo funciona',
   tool_pdf_to_markdown_pages_label: 'Páginas',
   tool_pdf_to_markdown_preview_label: 'Vista previa Markdown',

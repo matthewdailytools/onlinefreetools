@@ -37,6 +37,10 @@ const ru: SiteLangDict = {
   tool_compress_pdf_faq_q5: 'Какой профиль качества выбрать?',
   tool_compress_pdf_how_body:
     'Выберите PDF, укажите Средний или Низкий, нажмите «Сжать», затем «Скачать». Каждая страница сохраняется как JPEG в новом PDF. Статистика показывает исходный размер, новый и процент изменения. Библиотеки загружаются при первом использовании.',
+  tool_compress_pdf_how_item_1: "Выберите файл через «Выбрать PDF»",
+  tool_compress_pdf_how_item_2: "Настройте параметры и нажмите «Сжать»",
+  tool_compress_pdf_how_item_3: "Проверьте предпросмотр, число страниц или статус",
+  tool_compress_pdf_how_item_4: "Нажмите «Скачать», чтобы сохранить результат",
   tool_compress_pdf_how_title: 'Как это работает',
   tool_compress_pdf_pages_label: 'Страниц',
   tool_compress_pdf_quality_label: 'Качество',
