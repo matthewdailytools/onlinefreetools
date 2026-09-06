@@ -65,7 +65,7 @@ const zh: SiteLangDict = {
     '[\n  {"sku":"A-001","title":"Chair, oak","price":129.9},\n  {"sku":"A-002","title":"Desk","price":89}\n]',
   tool_csv_json_tab_csv_json: 'CSV → JSON',
   tool_csv_json_tab_json_csv: 'JSON → CSV',
-  tool_csv_json_title: 'CSV ↔ JSON 互转 — 类型、分隔符、本地处理',
+  tool_csv_json_title: 'CSV ↔ JSON 互转 — 在浏览器里转换表格，不上传服务器',
   tool_csv_json_typing: '推断类型（数字/布尔）',
   tool_csv_json_usecase_1: '电商：把导出的商品表（编号、名称、价格）转成 JSON 数组，喂给店铺或平台 API。',
   tool_csv_json_usecase_2: '开发者：把接口或工具输出的 JSON 转成 CSV，方便在表格里筛选、对账、交付。',

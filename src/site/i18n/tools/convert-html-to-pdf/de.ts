@@ -9,7 +9,7 @@ const de: SiteLangDict = {
   tool_convert_html_to_pdf_clear: "Leeren",
   tool_convert_html_to_pdf_convert: "Umwandeln",
   tool_convert_html_to_pdf_desc: "HTML einfügen oder URL laden und in diesem Tab als A4-PDF exportieren.",
-  tool_convert_html_to_pdf_description: "HTML zu PDF: Fragment einfügen oder Seiten-URL laden, Skripte und gefährliche Attribute entfernen, Vorschau prüfen, A4 herunterladen. Beim Laden einer URL holt der Server das HTML einmal und speichert es nicht; die Umwandlung bleibt im Tab. JavaScript-lastige Seiten, Druck-CSS und fremde Bilder können von der Live-Seite abweichen.",
+  tool_convert_html_to_pdf_description: "HTML zu PDF in wenigen Schritten: Fragment einfügen oder Seiten-URL laden, Skripte und gefährliche Attribute entfernen, Vorschau prüfen, A4 herunterladen. Beim Laden einer URL holt der Server das HTML einmal und speichert es nicht; die Umwandlung bleibt im Tab. Ein Beispiel ist eine Überschrift plus Absatz auf einer A4-Seite. JavaScript-lastige Seiten, Druck-CSS und fremde Bilder können von der Live-Seite abweichen.",
   tool_convert_html_to_pdf_download: "Herunterladen",
   tool_convert_html_to_pdf_drop_hint: "HTML können Sie auch direkt einfügen. Die Umwandlung bleibt in diesem Tab.",
   tool_convert_html_to_pdf_empty: "Zuerst HTML einfügen oder eine URL laden.",

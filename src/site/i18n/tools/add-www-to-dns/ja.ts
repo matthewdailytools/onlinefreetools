@@ -102,7 +102,7 @@ const ja: SiteLangDict = {
   tool_add_www_to_dns_scheme_2: 'Dual A/AAAA',
   tool_add_www_to_dns_scheme_3: 'CDN hostname',
   tool_add_www_to_dns_scheme_label: 'Record scheme',
-  tool_add_www_to_dns_title: 'DNS に WWW を追加 — A/CNAME と各社ガイド',
+  tool_add_www_to_dns_title: 'DNS に WWW を追加 — www をルートドメインに向ける',
   tool_add_www_to_dns_ttl_label: 'TTL (seconds)',
   tool_add_www_to_dns_usecase_1: '自前サーバ：www を CNAME で追加。',
   tool_add_www_to_dns_usecase_2: 'CDN：提供ホストへ CNAME。',

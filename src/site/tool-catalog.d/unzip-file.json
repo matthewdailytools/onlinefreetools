@@ -1,7 +1,7 @@
 {
   "slug": "unzip-file",
   "path": "/tools/unzip-file",
-  "updatedAt": "2026-08-14T14:15:19.108Z",
+  "updatedAt": "2026-09-06T09:37:59.139Z",
   "category": "developer",
   "primaryTopic": "files-archives",
   "featured": true,
@@ -14,7 +14,8 @@
     "file-hash",
     "split-pdf",
     "base64",
-    "archive-extractor"
+    "archive-extractor",
+    "create-zip-file"
   ],
   "logo": "/icons/tools/unzip-file.svg",
   "page": {

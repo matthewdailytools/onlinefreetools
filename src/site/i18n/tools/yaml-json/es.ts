@@ -67,7 +67,7 @@ const es: SiteLangDict = {
   tool_yaml_json_sample_yaml: 'nombre: demo\nactivo: true\nlista:\n  - a\n  - b',
   tool_yaml_json_tab_json_yaml: 'JSON → YAML',
   tool_yaml_json_tab_yaml_json: 'YAML → JSON',
-  tool_yaml_json_title: 'YAML a JSON (y al revés) — tipos, multi-doc, local',
+  tool_yaml_json_title: 'YAML a JSON (y al revés) — convertir configs en el navegador',
   tool_yaml_json_usecase_1: 'Desarrollo: pasar un payload JSON de API a YAML legible antes de editar a mano.',
   tool_yaml_json_usecase_2: 'DevOps: YAML multi-recurso de Kubernetes (separado por ---) → array JSON para scripts.',
   tool_yaml_json_usecase_3: 'Datos / IA: unir parámetros YAML editados a mano con herramientas que solo hablan JSON.',

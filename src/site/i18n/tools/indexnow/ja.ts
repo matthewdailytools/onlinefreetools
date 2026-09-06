@@ -91,7 +91,7 @@ const ja: SiteLangDict = {
   tool_indexnow_status_intro: 'What common IndexNow responses mean and what to do next.',
   tool_indexnow_status_title: 'HTTP ステータス',
   tool_indexnow_submit: 'URL 送信',
-  tool_indexnow_title: 'IndexNow — Bing URL 送信・キー確認・ステータスコード',
+  tool_indexnow_title: 'IndexNow — クロールを待たずに Bing へ URL を送信',
   tool_indexnow_urls_hint:
     'Same host only. Paste page URLs, a sitemap URL (we fetch and expand <loc>), or sitemap XML. Max 500 page URLs per submit.',
   tool_indexnow_urls_label: 'URL list, sitemap URL, or sitemap XML',

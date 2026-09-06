@@ -39652,6 +39652,11 @@
     <priority>0.4</priority>
   </url>
   <url>
+    <loc>https://onlinefreetools.org/devlogs/page-27.html</loc>
+    <lastmod>2026-09-06</lastmod>
+    <priority>0.4</priority>
+  </url>
+  <url>
     <loc>https://onlinefreetools.org/devlogs/2026-01-08-%E5%88%9B%E5%BB%BA%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E5%A4%B9.html</loc>
     <lastmod>2026-09-03</lastmod>
     <priority>0.4</priority>
@@ -43483,6 +43488,31 @@
   </url>
   <url>
     <loc>https://onlinefreetools.org/devlogs/2026-09-06-16-03-pdf-to-jpg-images-to-pdf-preview.html</loc>
+    <lastmod>2026-09-06</lastmod>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/devlogs/2026-09-06-16-29-edit-pdf-text-keep-images.html</loc>
+    <lastmod>2026-09-06</lastmod>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/devlogs/2026-09-06-16-56-pdf-download-button-no-response.html</loc>
+    <lastmod>2026-09-06</lastmod>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/devlogs/2026-09-06-17-14-sign-pdf-document-ink-color.html</loc>
+    <lastmod>2026-09-06</lastmod>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/devlogs/2026-09-06-17-15-batch-checksum-md5-option-default.html</loc>
+    <lastmod>2026-09-06</lastmod>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://onlinefreetools.org/devlogs/2026-09-06-17-18-sign-pdf-position-presets.html</loc>
     <lastmod>2026-09-06</lastmod>
     <priority>0.4</priority>
   </url>

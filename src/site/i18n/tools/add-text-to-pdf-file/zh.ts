@@ -10,7 +10,7 @@ const zh: SiteLangDict = {
   tool_add_text_to_pdf_file_choose_files: "选择文件",
   tool_add_text_to_pdf_file_clear: "清空",
   tool_add_text_to_pdf_file_desc: "在指定 X/Y 与字号下向 PDF 每页添加文字，预览后本地下载。",
-  tool_add_text_to_pdf_file_description: "在浏览器里向 PDF 添加文字：设置文案、X/Y 坐标和字号。同一段文字画在每一页上，不修改原有文字，再预览并本地下载。示例会在每页指定位置盖上“CONFIDENTIAL”。",
+  tool_add_text_to_pdf_file_description: "在浏览器里向 PDF 添加文字：设置文案、X/Y 坐标和字号。同一段文字画在每一页上，不修改原有文字，再预览并本地下载；文件留在本机，不上传服务器。示例会在每页指定位置盖上 CONFIDENTIAL，扫描页也可盖字，不依赖文本层或 OCR。",
   tool_add_text_to_pdf_file_download: "下载",
   tool_add_text_to_pdf_file_drop_hint: "或拖放到此处。处理在本标签页完成。",
   tool_add_text_to_pdf_file_empty: "请先选择 PDF 文件。",

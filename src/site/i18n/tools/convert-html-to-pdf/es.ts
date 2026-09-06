@@ -9,7 +9,7 @@ const es: SiteLangDict = {
   tool_convert_html_to_pdf_clear: "Borrar",
   tool_convert_html_to_pdf_convert: "Convertir",
   tool_convert_html_to_pdf_desc: "Pega HTML o carga una URL y exporta un PDF A4 en esta pestaña.",
-  tool_convert_html_to_pdf_description: "Pasa HTML a PDF: pega un fragmento o carga la URL de la página, quita scripts y atributos peligrosos, revisa la vista previa y descarga un A4. Si cargas una URL, el servidor recupera el HTML una vez y no lo guarda; la conversión sigue en tu pestaña. Sitios con mucho JavaScript, CSS de impresión e imágenes de otro origen pueden no coincidir con la página en vivo.",
+  tool_convert_html_to_pdf_description: "Pasa HTML a PDF en unos pasos: pega un fragmento o carga la URL de la página, quita scripts y atributos peligrosos, revisa la vista previa y descarga un A4. Si cargas una URL, el servidor recupera el HTML una vez y no lo guarda; la conversión sigue en tu pestaña. Un ejemplo es un título y un párrafo en una hoja A4; sitios con mucho JavaScript, CSS de impresión e imágenes de otro origen pueden no coincidir con la página en vivo.",
   tool_convert_html_to_pdf_download: "Descargar",
   tool_convert_html_to_pdf_drop_hint: "También puedes pegar HTML aquí. La conversión queda en esta pestaña.",
   tool_convert_html_to_pdf_empty: "Pega HTML o carga una URL primero.",

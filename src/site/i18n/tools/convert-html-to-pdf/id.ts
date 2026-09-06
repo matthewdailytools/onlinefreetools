@@ -9,7 +9,7 @@ const id: SiteLangDict = {
   tool_convert_html_to_pdf_clear: "Hapus",
   tool_convert_html_to_pdf_convert: "Konversi",
   tool_convert_html_to_pdf_desc: "Tempel HTML atau muat URL, lalu ekspor PDF A4 di tab ini.",
-  tool_convert_html_to_pdf_description: "Ubah HTML jadi PDF: tempel cuplikan atau muat alamat halaman, buang skrip dan atribut berbahaya, cek pratinjau, unduh A4. Memuat URL membuat server mengambil HTML sekali dan tidak menyimpannya; konversi tetap di tab. Situs yang banyak JavaScript, CSS cetak, dan gambar lintas domain bisa berbeda dari halaman asli.",
+  tool_convert_html_to_pdf_description: "Ubah HTML jadi PDF dengan beberapa langkah: tempel cuplikan atau muat alamat halaman, buang skrip dan atribut berbahaya, cek pratinjau, unduh A4. Memuat URL membuat server mengambil HTML sekali dan tidak menyimpannya; konversi tetap di tab. Contohnya, judul plus satu paragraf menjadi satu halaman A4; situs yang banyak JavaScript, CSS cetak, dan gambar lintas domain bisa berbeda dari halaman asli.",
   tool_convert_html_to_pdf_download: "Unduh",
   tool_convert_html_to_pdf_drop_hint: "HTML juga bisa ditempel di sini. Konversi tetap di tab ini.",
   tool_convert_html_to_pdf_empty: "Tempel HTML dulu atau muat URL.",

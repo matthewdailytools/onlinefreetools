@@ -76,7 +76,7 @@ const en: SiteLangDict = {
     '[\n  {"sku":"A-001","title":"Chair, oak","price":129.9},\n  {"sku":"A-002","title":"Desk","price":89}\n]',
   tool_csv_json_tab_csv_json: 'CSV → JSON',
   tool_csv_json_tab_json_csv: 'JSON → CSV',
-  tool_csv_json_title: 'CSV ↔ JSON Converter — Types, Delimiters & Local',
+  tool_csv_json_title: 'CSV ↔ JSON Converter — Convert tables in your browser',
   tool_csv_json_typing: 'Infer types (numbers/booleans)',
   tool_csv_json_usecase_1:
     'E-commerce: turn an exported product sheet (sku, title, price) into a JSON array for a store or marketplace API.',

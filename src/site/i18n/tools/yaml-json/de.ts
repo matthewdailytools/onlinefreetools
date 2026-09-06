@@ -68,7 +68,7 @@ const de: SiteLangDict = {
   tool_yaml_json_sample_yaml: 'Name: demo\naktiv: true\nEinträge:\n  - a\n  - b',
   tool_yaml_json_tab_json_yaml: 'JSON → YAML',
   tool_yaml_json_tab_yaml_json: 'YAML → JSON',
-  tool_yaml_json_title: 'YAML zu JSON — und zurück zu YAML (Typen, Multi-Doc)',
+  tool_yaml_json_title: 'YAML zu JSON — Konfigs im Browser umwandeln',
   tool_yaml_json_usecase_1: 'DevOps: Kubernetes-YAML mit mehreren Ressourcen (---) als JSON-Array für Skripte.',
   tool_yaml_json_usecase_2: 'Entwicklung: API-JSON zuerst als lesbares YAML ablegen, dann Config von Hand anpassen.',
   tool_yaml_json_usecase_3: 'Data-/KI-Pipelines: von Hand editierte YAML-Parameter an JSON-only-Werkzeuge anbinden.',

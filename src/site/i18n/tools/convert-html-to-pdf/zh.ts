@@ -9,7 +9,7 @@ const zh: SiteLangDict = {
   tool_convert_html_to_pdf_clear: "清空",
   tool_convert_html_to_pdf_convert: "转换",
   tool_convert_html_to_pdf_desc: "粘贴 HTML 或输入网址，转成 A4 PDF。粘贴不出本机；网址由服务器代抓一次。",
-  tool_convert_html_to_pdf_description: "将 HTML 转为 PDF：粘贴代码，或输入网页地址载入 HTML，清除脚本后再预览并导出 A4 PDF。粘贴内容留在本标签页；用网址载入时，服务器只代抓一次 HTML（不保存），转换仍在浏览器完成。复杂打印样式、需登录和靠脚本渲染的页面可能与线上不一致。",
+  tool_convert_html_to_pdf_description: "将 HTML 转为 PDF 的步骤是：粘贴代码，或输入网页地址载入 HTML，清除脚本后再预览并导出 A4 PDF。粘贴内容留在本标签页；用网址载入时，服务器只代抓一次 HTML（不保存），转换仍在浏览器完成。示例是标题加一段正文导出为一页 A4；复杂打印样式、需登录和靠脚本渲染的页面可能与线上不一致。",
   tool_convert_html_to_pdf_download: "下载",
   tool_convert_html_to_pdf_drop_hint: "也可直接粘贴 HTML。转换在本标签页完成。",
   tool_convert_html_to_pdf_empty: "请先粘贴 HTML，或输入网址载入。",

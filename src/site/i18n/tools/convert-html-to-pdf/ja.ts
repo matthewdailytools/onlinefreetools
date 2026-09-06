@@ -9,7 +9,7 @@ const ja: SiteLangDict = {
   tool_convert_html_to_pdf_clear: "クリア",
   tool_convert_html_to_pdf_convert: "変換",
   tool_convert_html_to_pdf_desc: "HTML を貼るか URL から読み込み、このタブで A4 PDF を書き出します。",
-  tool_convert_html_to_pdf_description: "HTML を PDF にするには、断片を貼るかページ URL を読み込み、スクリプトを除いてプレビューし、A4 で保存します。URL 読み込みはサーバーが HTML を一度だけ取得し、保存しません。変換はこのタブ内です。ログインが必要なページや JS で描画するサイト、印刷用 CSS は実ページと違うことがあります。",
+  tool_convert_html_to_pdf_description: "HTML を PDF にする手順は、断片を貼るかページ URL を読み込み、スクリプトを除いてプレビューし、A4 で保存することです。URL 読み込みはサーバーが HTML を一度だけ取得し、保存しません。変換はこのタブ内です。例として、見出しと一段落は 1 枚の A4 になります。ログインが必要なページや JS で描画するサイト、印刷用 CSS は実ページと違うことがあります。",
   tool_convert_html_to_pdf_download: "ダウンロード",
   tool_convert_html_to_pdf_drop_hint: "HTML を直接貼っても構いません。変換はこのタブ内です。",
   tool_convert_html_to_pdf_empty: "先に HTML を貼るか、URL を読み込んでください。",

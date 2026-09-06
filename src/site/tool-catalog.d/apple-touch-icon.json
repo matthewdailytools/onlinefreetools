@@ -1,7 +1,7 @@
 {
   "slug": "apple-touch-icon",
   "path": "/tools/apple-touch-icon",
-  "updatedAt": "2026-09-01T03:00:00.000Z",
+  "updatedAt": "2026-09-06T09:37:59.139Z",
   "launchedAt": "2026-09-01T03:00:00.000Z",
   "category": "image",
   "primaryTopic": "image-media",
@@ -13,7 +13,8 @@
   "faqPrefix": "tool_apple_touch_icon",
   "related": [
     "image-compress",
-    "image-crop"
+    "image-crop",
+    "ios-app-icon-size"
   ],
   "logo": "/icons/tools/apple-touch-icon.svg",
   "page": {

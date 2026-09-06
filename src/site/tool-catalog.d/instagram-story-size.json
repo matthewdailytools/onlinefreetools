@@ -1,7 +1,7 @@
 {
   "slug": "instagram-story-size",
   "path": "/tools/instagram-story-size",
-  "updatedAt": "2026-09-01T08:20:00.000Z",
+  "updatedAt": "2026-09-06T09:37:59.139Z",
   "launchedAt": "2026-09-01T08:20:00.000Z",
   "category": "image",
   "primaryTopic": "image-media",
@@ -13,7 +13,8 @@
   "faqPrefix": "tool_instagram_story_size",
   "related": [
     "linkedin-banner-size",
-    "open-graph-image-size"
+    "open-graph-image-size",
+    "instagram-post-size"
   ],
   "logo": "/icons/tools/instagram-story-size.svg",
   "page": {

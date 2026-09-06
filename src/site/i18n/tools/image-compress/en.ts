@@ -86,7 +86,7 @@ const en: SiteLangDict = {
   tool_image_compress_status_target_ok: 'Target size reached — download when ready.',
   tool_image_compress_target_kb_label: 'Max size',
   tool_image_compress_target_on: 'Aim for target size',
-  tool_image_compress_title: 'Image Compressor — Resize, Quality & Target Size Local',
+  tool_image_compress_title: 'Image Compressor — Shrink photos on your device',
   tool_image_compress_usecase_1: 'Web delivery: shrink hero or product photos before CMS/CDN upload.',
   tool_image_compress_usecase_2: 'Email or forms: aim near an attachment size limit with the target KB control.',
   tool_image_compress_usecase_3: 'Social posts: cap longest side and lower quality to reduce failed uploads.',

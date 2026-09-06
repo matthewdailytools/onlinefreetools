@@ -73,7 +73,7 @@ const es: SiteLangDict = {
   tool_image_optimizer_sample: 'Cargar ejemplo',
   tool_image_optimizer_stats_tpl: '{codec} · {w}×{h} · {bytes} · {ms} ms',
   tool_image_optimizer_status_done: 'Listo — revisa el deslizador y el tamaño, luego descarga.',
-  tool_image_optimizer_title: 'Optimizar imagen — WebP, AVIF y MozJPEG en tu dispositivo',
+  tool_image_optimizer_title: 'Optimizar imagen — archivos más ligeros en tu dispositivo',
   tool_image_optimizer_usecase_1: 'Publicar un hero o foto de producto en WebP/AVIF tras revisar el aspecto con el deslizador.',
   tool_image_optimizer_usecase_2: 'Seguir entregando JPEG, pero con MozJPEG cuando el JPEG del navegador sigue pesando demasiado.',
   tool_image_optimizer_usecase_3: 'Reducir PNG de UI con transparencia con OxiPNG o WebP casi sin pérdida antes de entregar.',

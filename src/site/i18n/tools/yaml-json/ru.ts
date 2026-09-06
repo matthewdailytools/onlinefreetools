@@ -68,7 +68,7 @@ const ru: SiteLangDict = {
   tool_yaml_json_sample_yaml: 'имя: demo\nвключено: true\nэлементы:\n  - a\n  - b',
   tool_yaml_json_tab_json_yaml: 'JSON → YAML',
   tool_yaml_json_tab_yaml_json: 'YAML → JSON',
-  tool_yaml_json_title: 'YAML в JSON и обратно — типы, multi-doc, локально',
+  tool_yaml_json_title: 'YAML в JSON и обратно — конфиги в браузере, без загрузки на сервер',
   tool_yaml_json_usecase_1: 'DevOps: превратить multi-resource Kubernetes YAML (через ---) в JSON-массив для скриптов.',
   tool_yaml_json_usecase_2: 'Разработка: переложить JSON-тело API в читаемый YAML перед ручной правкой конфига.',
   tool_yaml_json_usecase_3: 'Data / AI-пайплайны: связать YAML-параметры, которые правят люди, с инструментами только под JSON.',

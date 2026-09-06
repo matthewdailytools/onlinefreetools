@@ -79,7 +79,7 @@ const zh: SiteLangDict = {
   tool_indexnow_status_intro: '常见响应含义与下一步。',
   tool_indexnow_status_title: 'HTTP 状态码',
   tool_indexnow_submit: '提交 URL',
-  tool_indexnow_title: 'IndexNow — Bing URL 提交、密钥检查与状态码',
+  tool_indexnow_title: 'IndexNow — 向 Bing 提交网址，尽快被收录',
   tool_indexnow_urls_hint:
     '须同一 host。可粘贴页面 URL、sitemap 地址（自动拉取展开 <loc>）或 sitemap XML。单次最多 500 条页面 URL。',
   tool_indexnow_urls_label: 'URL 列表、sitemap 地址或 sitemap XML',

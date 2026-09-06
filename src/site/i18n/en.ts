@@ -435,7 +435,7 @@ const en: SiteLangDict = {
   tool_add_www_to_dns_scheme_2: 'Dual A/AAAA',
   tool_add_www_to_dns_scheme_3: 'CDN hostname',
   tool_add_www_to_dns_scheme_label: 'Record scheme',
-  tool_add_www_to_dns_title: 'Add WWW to DNS — A/CNAME, Apex Rules & Provider Guides',
+  tool_add_www_to_dns_title: 'Add WWW to DNS — Point www at your apex domain',
   tool_add_www_to_dns_ttl_label: 'TTL (seconds)',
   tool_add_www_to_dns_usecase_1: 'Self-hosted site: apex already has an A record — add www as CNAME to the apex.',
   tool_add_www_to_dns_usecase_2:
@@ -3205,7 +3205,7 @@ const en: SiteLangDict = {
   tool_convert_html_to_pdf_convert: 'Convert',
   tool_convert_html_to_pdf_desc: 'Paste HTML or load a page URL, then export an A4 PDF in this tab.',
   tool_convert_html_to_pdf_description:
-    'Convert HTML to PDF in your browser: paste an HTML fragment or load a page URL, strip scripts and dangerous attributes, preview the result, and download an A4 PDF. Fetching a URL asks our server to retrieve the HTML once (it is not stored); conversion stays in this tab. JavaScript-heavy sites, print CSS, and cross-origin images may not match the live page.',
+    'Convert HTML to PDF in a few steps: paste an HTML fragment or load a page URL, strip scripts and dangerous attributes, preview the result, and download an A4 PDF. Fetching a URL asks our server to retrieve the HTML once (it is not stored); conversion stays in this tab. For example, the sample heading and paragraph export as one A4 page; JavaScript-heavy sites, print CSS, and cross-origin images may not match the live page.',
   tool_convert_html_to_pdf_download: 'Download',
   tool_convert_html_to_pdf_drop_hint: 'Or paste HTML here. Conversion stays in this tab.',
   tool_convert_html_to_pdf_empty: 'Paste HTML or load a URL first.',
@@ -3923,7 +3923,7 @@ const en: SiteLangDict = {
     '[\n  {"sku":"A-001","title":"Chair, oak","price":129.9},\n  {"sku":"A-002","title":"Desk","price":89}\n]',
   tool_csv_json_tab_csv_json: 'CSV → JSON',
   tool_csv_json_tab_json_csv: 'JSON → CSV',
-  tool_csv_json_title: 'CSV ↔ JSON Converter — Types, Delimiters & Local',
+  tool_csv_json_title: 'CSV ↔ JSON Converter — Convert tables in your browser',
   tool_csv_json_typing: 'Infer types (numbers/booleans)',
   tool_csv_json_usecase_1:
     'E-commerce: turn an exported product sheet (sku, title, price) into a JSON array for a store or marketplace API.',
@@ -5785,7 +5785,7 @@ const en: SiteLangDict = {
   tool_image_compress_status_target_ok: 'Target size reached — download when ready.',
   tool_image_compress_target_kb_label: 'Max size',
   tool_image_compress_target_on: 'Aim for target size',
-  tool_image_compress_title: 'Image Compressor — Resize, Quality & Target Size Local',
+  tool_image_compress_title: 'Image Compressor — Shrink photos on your device',
   tool_image_compress_usecase_1: 'Web delivery: shrink hero or product photos before CMS/CDN upload.',
   tool_image_compress_usecase_2: 'Email or forms: aim near an attachment size limit with the target KB control.',
   tool_image_compress_usecase_3: 'Social posts: cap longest side and lower quality to reduce failed uploads.',
@@ -6253,7 +6253,7 @@ const en: SiteLangDict = {
   tool_image_optimizer_sample: 'Load sample',
   tool_image_optimizer_stats_tpl: '{codec} · {w}×{h} · {bytes} · {ms} ms',
   tool_image_optimizer_status_done: 'Done — check the slider and sizes, then download.',
-  tool_image_optimizer_title: 'Image Optimizer — WebP, AVIF & MozJPEG Local',
+  tool_image_optimizer_title: 'Image Optimizer — Smaller files with on-device encoders',
   tool_image_optimizer_usecase_1: 'Ship a hero or product shot as WebP/AVIF after checking look with the compare slider.',
   tool_image_optimizer_usecase_2: 'Keep JPEG delivery but use MozJPEG when browser-default JPEG still feels too heavy.',
   tool_image_optimizer_usecase_3: 'Shrink transparent UI PNGs with OxiPNG or near-lossless WebP before handing assets off.',
@@ -6687,7 +6687,7 @@ const en: SiteLangDict = {
   tool_indexnow_status_intro: 'What common IndexNow responses mean and what to do next.',
   tool_indexnow_status_title: 'HTTP status codes',
   tool_indexnow_submit: 'Submit URLs',
-  tool_indexnow_title: 'IndexNow — Bing URL Submit, Key Check & Status Codes',
+  tool_indexnow_title: 'IndexNow — Submit URLs to Bing without waiting for crawl',
   tool_indexnow_urls_hint:
     'Same host only. Paste page URLs, a sitemap URL (we fetch and expand <loc>), or sitemap XML. Max 500 page URLs per submit.',
   tool_indexnow_urls_label: 'URL list, sitemap URL, or sitemap XML',
@@ -7397,7 +7397,7 @@ const en: SiteLangDict = {
     '{"$schema":"http://json-schema.org/draft-07/schema#","type":"object","required":["sku","price"],"properties":{"sku":{"type":"string","minLength":1},"price":{"type":"number","minimum":0}},"additionalProperties":false}',
   tool_json_schema_validator_schema_label: 'JSON Schema',
   tool_json_schema_validator_schema_placeholder: '{ "type": "object", "required": ["sku"] }',
-  tool_json_schema_validator_title: 'JSON Schema Validator — Draft-07 Paths & Local',
+  tool_json_schema_validator_title: 'JSON Schema Validator — See path errors on your device',
   tool_json_schema_validator_usecase_1:
     'AI / agents: check whether model structured JSON is missing fields before you trust it in a pipeline.',
   tool_json_schema_validator_usecase_2: 'Commerce feeds: validate product JSON against a Schema before import or syndication.',
@@ -7781,7 +7781,7 @@ const en: SiteLangDict = {
   tool_make_pdf_flipbook_desc:
     'Make a PDF flipbook preview with previous/next controls and export an HTML viewer that embeds page images locally.',
   tool_make_pdf_flipbook_description:
-    'Make a PDF flipbook in your browser: choose a PDF, preview pages with a short page-turn effect, then download a standalone HTML viewer with each page embedded as an image. The file opens offline and does not upload the document. The sample is two A4 pages you can flip, then save at the same page size.',
+    'Make a PDF flipbook in your browser: choose a PDF, preview pages with a short page-turn effect, then download a standalone HTML viewer with each page embedded as an image. The file opens offline and does not upload the document. For example, the sample is two A4 pages you can flip, then save at the same page size.',
   tool_make_pdf_flipbook_download: 'Download HTML flipbook',
   tool_make_pdf_flipbook_drop_hint: 'Or drop here. Processing stays in this tab.',
   tool_make_pdf_flipbook_empty: 'Choose a file first.',
@@ -13239,7 +13239,7 @@ const en: SiteLangDict = {
   tool_yaml_json_sample_yaml: 'name: demo\nenabled: true\nitems:\n  - a\n  - b',
   tool_yaml_json_tab_json_yaml: 'JSON → YAML',
   tool_yaml_json_tab_yaml_json: 'YAML → JSON',
-  tool_yaml_json_title: 'YAML ↔ JSON Converter — Types, Multi-doc & Local',
+  tool_yaml_json_title: 'YAML ↔ JSON Converter — Convert configs in your browser',
   tool_yaml_json_usecase_1: 'DevOps: turn multi-resource Kubernetes YAML (--- separated) into a JSON array for scripts.',
   tool_yaml_json_usecase_2: 'Developers: reshape an API JSON payload into readable YAML before editing config by hand.',
   tool_yaml_json_usecase_3: 'Data / AI pipelines: bridge human-edited YAML parameters with JSON-only tooling.',

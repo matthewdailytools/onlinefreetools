@@ -9,7 +9,7 @@ const fr: SiteLangDict = {
   tool_convert_html_to_pdf_clear: "Effacer",
   tool_convert_html_to_pdf_convert: "Convertir",
   tool_convert_html_to_pdf_desc: "Collez du HTML ou chargez une URL, puis exportez un PDF A4 dans cet onglet.",
-  tool_convert_html_to_pdf_description: "Passez du HTML en PDF : collez un fragment ou chargez l’URL de la page, retirez scripts et attributs dangereux, vérifiez l’aperçu et téléchargez un A4. Charger une URL fait récupérer le HTML une fois par le serveur (sans le stocker) ; la conversion reste dans l’onglet. Les sites très JavaScript, le CSS d’impression et les images d’un autre domaine peuvent différer de la page réelle.",
+  tool_convert_html_to_pdf_description: "Passez du HTML en PDF en quelques étapes : collez un fragment ou chargez l’URL de la page, retirez scripts et attributs dangereux, vérifiez l’aperçu et téléchargez un A4. Charger une URL fait récupérer le HTML une fois par le serveur (sans le stocker) ; la conversion reste dans l’onglet. Un exemple : un titre et un paragraphe tiennent sur une page A4 ; les sites très JavaScript, le CSS d’impression et les images d’un autre domaine peuvent différer de la page réelle.",
   tool_convert_html_to_pdf_download: "Télécharger",
   tool_convert_html_to_pdf_drop_hint: "Vous pouvez aussi coller le HTML ici. La conversion reste dans cet onglet.",
   tool_convert_html_to_pdf_empty: "Collez d’abord du HTML ou chargez une URL.",

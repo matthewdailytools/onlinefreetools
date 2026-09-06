@@ -8,7 +8,7 @@ const zh: SiteLangDict = {
   tool_make_pdf_flipbook_choose_files: "选择文件",
   tool_make_pdf_flipbook_clear: "清空",
   tool_make_pdf_flipbook_desc: "制作 PDF 翻页书 — 文件留在本机，不上传服务器。",
-  tool_make_pdf_flipbook_description: "制作 PDF 翻页书：在浏览器里选择 PDF，用短翻页动画预览各页，再下载内嵌每一页图像的独立 HTML。导出文件可离线打开，不会上传文档。样例是两页 A4，可翻页，下载后的页面尺寸与原页一致。",
+  tool_make_pdf_flipbook_description: "制作 PDF 翻页书的步骤是：在浏览器里选择 PDF，用短翻页动画预览各页，再下载内嵌每一页图像的独立 HTML。导出文件可离线打开，文档不会上传到服务器。示例是两页 A4，可翻页预览，下载后的页面尺寸与原页一致，适合把讲义做成可翻页的 HTML。",
   tool_make_pdf_flipbook_download: "下载",
   tool_make_pdf_flipbook_drop_hint: "或拖放到此处。处理在本标签页完成。",
   tool_make_pdf_flipbook_empty: "请先选择文件。",

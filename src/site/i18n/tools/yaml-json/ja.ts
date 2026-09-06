@@ -57,7 +57,7 @@ const ja: SiteLangDict = {
   tool_yaml_json_sample_yaml: '名前: demo\n有効: true\n項目:\n  - a\n  - b',
   tool_yaml_json_tab_json_yaml: 'JSON → YAML',
   tool_yaml_json_tab_yaml_json: 'YAML → JSON',
-  tool_yaml_json_title: 'YAML と JSON を相互変換（型ルール・複数ドキュメント対応）',
+  tool_yaml_json_title: 'YAML と JSON を相互変換 — ブラウザ内で設定ファイルを変換',
   tool_yaml_json_usecase_1: 'DevOps：--- 区切りの Kubernetes 複数リソース YAML をスクリプト用の JSON 配列にする。',
   tool_yaml_json_usecase_2: '開発：API の JSON ペイロードを手編集しやすい YAML に直してから設定を直す。',
   tool_yaml_json_usecase_3: 'データ／AI パイプライン：人が書いた YAML パラメータと、JSON しか受けないツールをつなぐ。',

@@ -9,7 +9,7 @@ const en: SiteLangDict = {
   tool_convert_html_to_pdf_clear: "Clear",
   tool_convert_html_to_pdf_convert: "Convert",
   tool_convert_html_to_pdf_desc: "Paste HTML or load a page URL, then export an A4 PDF in this tab.",
-  tool_convert_html_to_pdf_description: "Convert HTML to PDF in your browser: paste an HTML fragment or load a page URL, strip scripts and dangerous attributes, preview the result, and download an A4 PDF. Fetching a URL asks our server to retrieve the HTML once (it is not stored); conversion stays in this tab. JavaScript-heavy sites, print CSS, and cross-origin images may not match the live page.",
+  tool_convert_html_to_pdf_description: "Convert HTML to PDF in a few steps: paste an HTML fragment or load a page URL, strip scripts and dangerous attributes, preview the result, and download an A4 PDF. Fetching a URL asks our server to retrieve the HTML once (it is not stored); conversion stays in this tab. For example, the sample heading and paragraph export as one A4 page; JavaScript-heavy sites, print CSS, and cross-origin images may not match the live page.",
   tool_convert_html_to_pdf_download: "Download",
   tool_convert_html_to_pdf_drop_hint: "Or paste HTML here. Conversion stays in this tab.",
   tool_convert_html_to_pdf_empty: "Paste HTML or load a URL first.",

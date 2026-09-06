@@ -75,7 +75,7 @@ const de: SiteLangDict = {
   tool_image_compress_status_target_ok: 'Zielgröße erreicht.',
   tool_image_compress_target_kb_label: 'Max. Größe',
   tool_image_compress_target_on: 'Zielgröße anstreben',
-  tool_image_compress_title: 'Bild komprimieren — längste Seite, Qualität & Zielgröße (lokal)',
+  tool_image_compress_title: 'Bild komprimieren — Größe und Dateigröße auf dem Gerät senken',
   tool_image_compress_usecase_1: 'Web: Fotos vor CMS/CDN verkleinern.',
   tool_image_compress_usecase_2: 'E-Mail/Formulare: Anhänge nahe dem Limit.',
   tool_image_compress_usecase_3: 'Social: Seite und Qualität begrenzen.',

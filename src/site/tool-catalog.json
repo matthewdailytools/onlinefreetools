@@ -27,7 +27,7 @@
   {
     "slug": "add-text-to-pdf-file",
     "path": "/tools/add-text-to-pdf-file",
-    "updatedAt": "2026-09-06T07:14:26.928Z",
+    "updatedAt": "2026-09-06T09:33:13.437Z",
     "launchedAt": "2026-09-03T14:00:00.000Z",
     "category": "pdf",
     "primaryTopic": "pdf-docs",
@@ -77,7 +77,7 @@
   {
     "slug": "add-www-to-dns",
     "path": "/tools/add-www-to-dns",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-09-06T09:37:59.139Z",
     "category": "developer",
     "primaryTopic": "network-ip",
     "secondaryTopics": [
@@ -149,7 +149,7 @@
   {
     "slug": "apple-touch-icon",
     "path": "/tools/apple-touch-icon",
-    "updatedAt": "2026-09-01T03:00:00.000Z",
+    "updatedAt": "2026-09-06T09:37:59.139Z",
     "launchedAt": "2026-09-01T03:00:00.000Z",
     "category": "image",
     "primaryTopic": "image-media",
@@ -161,7 +161,8 @@
     "faqPrefix": "tool_apple_touch_icon",
     "related": [
       "image-compress",
-      "image-crop"
+      "image-crop",
+      "ios-app-icon-size"
     ],
     "logo": "/icons/tools/apple-touch-icon.svg",
     "localProcessing": true,
@@ -383,7 +384,7 @@
   {
     "slug": "bulk-compress-product-photos",
     "path": "/tools/bulk-compress-product-photos",
-    "updatedAt": "2026-09-03T11:53:32.188Z",
+    "updatedAt": "2026-09-06T09:37:59.139Z",
     "launchedAt": "2026-09-03T07:34:00.000Z",
     "category": "image",
     "primaryTopic": "image-media",
@@ -398,7 +399,8 @@
     "faqPrefix": "tool_bulk_compress_product_photos",
     "related": [
       "image-compress",
-      "image-format-converter"
+      "image-format-converter",
+      "bulk-compress-png-images"
     ],
     "logo": "/icons/tools/bulk-compress-product-photos.svg",
     "localProcessing": true,
@@ -592,7 +594,7 @@
   {
     "slug": "cidr-to-ip-range",
     "path": "/tools/cidr-to-ip-range",
-    "updatedAt": "2026-08-28T15:37:04.616Z",
+    "updatedAt": "2026-09-06T09:37:59.139Z",
     "launchedAt": "2026-08-28T15:35:00.000Z",
     "category": "developer",
     "primaryTopic": "network-ip",
@@ -604,7 +606,8 @@
     "faqPrefix": "tool_cidr_to_ip_range",
     "related": [
       "ip-range-to-cidr",
-      "terraform-cidrsubnet"
+      "terraform-cidrsubnet",
+      "cidr-cheat-sheet"
     ],
     "logo": "/icons/tools/cidr-to-ip-range.svg",
     "localProcessing": true,
@@ -762,7 +765,7 @@
   {
     "slug": "convert-html-to-pdf",
     "path": "/tools/convert-html-to-pdf",
-    "updatedAt": "2026-09-06T05:08:06.882Z",
+    "updatedAt": "2026-09-06T09:33:13.437Z",
     "launchedAt": "2026-09-03T14:00:00.000Z",
     "category": "pdf",
     "primaryTopic": "pdf-docs",
@@ -1025,7 +1028,7 @@
   {
     "slug": "csv-json",
     "path": "/tools/csv-json",
-    "updatedAt": "2026-09-05T16:22:09.041Z",
+    "updatedAt": "2026-09-06T09:37:59.139Z",
     "category": "developer",
     "primaryTopic": "dev-data",
     "featured": true,
@@ -1174,7 +1177,7 @@
   {
     "slug": "excel-formulas-cheat-sheet",
     "path": "/tools/excel-formulas-cheat-sheet",
-    "updatedAt": "2026-09-05T12:22:00.000Z",
+    "updatedAt": "2026-09-06T09:37:59.139Z",
     "launchedAt": "2026-09-04T14:10:00.000Z",
     "category": "developer",
     "primaryTopic": "dev-data",
@@ -1186,7 +1189,8 @@
     "faqPrefix": "tool_excel_formulas_cheat_sheet",
     "related": [
       "write-nested-if-formula-for-excel",
-      "write-ifs-formula-in-excel"
+      "write-ifs-formula-in-excel",
+      "write-countif-formula-in-excel"
     ],
     "logo": "/icons/tools/excel-formulas-cheat-sheet.svg",
     "localProcessing": true,
@@ -1196,7 +1200,7 @@
   {
     "slug": "extract-text-from-pdf",
     "path": "/tools/extract-text-from-pdf",
-    "updatedAt": "2026-09-05T12:58:23.264Z",
+    "updatedAt": "2026-09-06T09:37:59.139Z",
     "launchedAt": "2026-09-03T14:00:00.000Z",
     "category": "pdf",
     "primaryTopic": "pdf-docs",
@@ -1212,7 +1216,8 @@
     "related": [
       "pdf-to-markdown",
       "merge-pdf",
-      "turn-pdf-into-word-document"
+      "turn-pdf-into-word-document",
+      "compare-two-pdfs"
     ],
     "logo": "/icons/tools/extract-text-from-pdf.svg",
     "localProcessing": true,
@@ -2139,7 +2144,7 @@
   {
     "slug": "how-to-calculate-ohms-law",
     "path": "/tools/how-to-calculate-ohms-law",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-09-06T09:37:59.139Z",
     "category": "calculator",
     "primaryTopic": "science-physics",
     "featured": false,
@@ -2150,7 +2155,8 @@
     "faqPrefix": "tool_ohms_law",
     "related": [
       "how-to-calculate-density",
-      "how-to-calculate-velocity"
+      "how-to-calculate-velocity",
+      "measuring-magnetic-fields"
     ],
     "logo": "/icons/tools/how-to-calculate-ohms-law.svg",
     "localProcessing": true,
@@ -2836,7 +2842,7 @@
   {
     "slug": "image-compress",
     "path": "/tools/image-compress",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-09-06T09:37:59.139Z",
     "category": "image",
     "primaryTopic": "image-media",
     "secondaryTopics": [
@@ -2863,7 +2869,7 @@
   {
     "slug": "image-crop",
     "path": "/tools/image-crop",
-    "updatedAt": "2026-08-21T03:37:49.698Z",
+    "updatedAt": "2026-09-06T09:37:59.139Z",
     "category": "image",
     "primaryTopic": "image-media",
     "featured": true,
@@ -2875,7 +2881,8 @@
     "related": [
       "image-compress",
       "image-format-converter",
-      "image-optimizer"
+      "image-optimizer",
+      "amazon-main-image-size"
     ],
     "logo": "/icons/tools/image-crop.svg",
     "localProcessing": true,
@@ -2984,7 +2991,7 @@
   {
     "slug": "image-optimizer",
     "path": "/tools/image-optimizer",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-09-06T09:37:59.139Z",
     "category": "image",
     "primaryTopic": "image-media",
     "secondaryTopics": [
@@ -3000,7 +3007,8 @@
       "image-compress",
       "image-format-converter",
       "image-exif",
-      "core-web-vitals-checker"
+      "core-web-vitals-checker",
+      "svg-optimizer"
     ],
     "logo": "/icons/tools/image-optimizer.svg",
     "localProcessing": true,
@@ -3162,7 +3170,7 @@
   {
     "slug": "indexnow",
     "path": "/tools/indexnow",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-09-06T09:37:59.139Z",
     "category": "developer",
     "primaryTopic": "seo-growth",
     "featured": true,
@@ -3206,7 +3214,7 @@
   {
     "slug": "instagram-story-size",
     "path": "/tools/instagram-story-size",
-    "updatedAt": "2026-09-01T08:20:00.000Z",
+    "updatedAt": "2026-09-06T09:37:59.139Z",
     "launchedAt": "2026-09-01T08:20:00.000Z",
     "category": "image",
     "primaryTopic": "image-media",
@@ -3218,7 +3226,8 @@
     "faqPrefix": "tool_instagram_story_size",
     "related": [
       "linkedin-banner-size",
-      "open-graph-image-size"
+      "open-graph-image-size",
+      "instagram-post-size"
     ],
     "logo": "/icons/tools/instagram-story-size.svg",
     "localProcessing": true,
@@ -3296,7 +3305,7 @@
   {
     "slug": "ip-range-to-cidr",
     "path": "/tools/ip-range-to-cidr",
-    "updatedAt": "2026-08-28T12:53:11.452Z",
+    "updatedAt": "2026-09-06T09:37:59.139Z",
     "launchedAt": "2026-08-28T12:40:00.000Z",
     "category": "developer",
     "primaryTopic": "network-ip",
@@ -3310,7 +3319,8 @@
       "terraform-cidrsubnet",
       "ip-address",
       "private-cidr-ranges",
-      "cidr-to-ip-range"
+      "cidr-to-ip-range",
+      "ipv6-cidr"
     ],
     "logo": "/icons/tools/ip-range-to-cidr.svg",
     "localProcessing": true,
@@ -3390,7 +3400,7 @@
   {
     "slug": "json-schema-validator",
     "path": "/tools/json-schema-validator",
-    "updatedAt": "2026-08-09T00:00:00.000Z",
+    "updatedAt": "2026-09-06T09:37:59.139Z",
     "category": "developer",
     "primaryTopic": "dev-data",
     "featured": true,
@@ -3412,7 +3422,7 @@
   {
     "slug": "jwt-decoder",
     "path": "/tools/jwt-decoder",
-    "updatedAt": "2026-09-05T16:22:09.383Z",
+    "updatedAt": "2026-09-06T09:37:59.139Z",
     "category": "developer",
     "primaryTopic": "dev-data",
     "secondaryTopics": [
@@ -3426,7 +3436,8 @@
     "faqPrefix": "tool_jwt_decoder",
     "related": [
       "base64",
-      "unix-timestamp"
+      "unix-timestamp",
+      "magnet-link-decoder"
     ],
     "logo": "/icons/tools/jwt-decoder.svg",
     "localProcessing": true,
@@ -3510,7 +3521,7 @@
   {
     "slug": "make-pdf-flipbook",
     "path": "/tools/make-pdf-flipbook",
-    "updatedAt": "2026-09-06T07:33:04.553Z",
+    "updatedAt": "2026-09-06T09:33:13.437Z",
     "launchedAt": "2026-09-03T14:00:00.000Z",
     "category": "pdf",
     "primaryTopic": "pdf-docs",
@@ -3535,7 +3546,7 @@
   {
     "slug": "markdown-to-html",
     "path": "/tools/markdown-to-html",
-    "updatedAt": "2026-09-05T16:22:08.674Z",
+    "updatedAt": "2026-09-06T09:37:59.139Z",
     "category": "developer",
     "primaryTopic": "dev-data",
     "secondaryTopics": [
@@ -3552,7 +3563,8 @@
       "yaml-json",
       "html-entity",
       "website-headers",
-      "pdf-to-markdown"
+      "pdf-to-markdown",
+      "chatgpt-export-to-markdown"
     ],
     "logo": "/icons/tools/markdown-to-html.svg",
     "localProcessing": true,
@@ -3585,7 +3597,7 @@
   {
     "slug": "merge-pdf",
     "path": "/tools/merge-pdf",
-    "updatedAt": "2026-09-05T12:58:23.264Z",
+    "updatedAt": "2026-09-06T09:37:59.139Z",
     "category": "pdf",
     "primaryTopic": "pdf-docs",
     "featured": true,
@@ -3598,7 +3610,8 @@
       "split-pdf",
       "organize-pdf",
       "images-to-pdf",
-      "compress-pdf"
+      "compress-pdf",
+      "combine-files-into-one-pdf"
     ],
     "logo": "/icons/tools/merge-pdf.svg",
     "localProcessing": true,
@@ -3705,7 +3718,7 @@
   {
     "slug": "open-graph-image-size",
     "path": "/tools/open-graph-image-size",
-    "updatedAt": "2026-09-01T03:10:00.000Z",
+    "updatedAt": "2026-09-06T09:37:59.139Z",
     "launchedAt": "2026-09-01T03:10:00.000Z",
     "category": "image",
     "primaryTopic": "image-media",
@@ -3717,7 +3730,8 @@
     "faqPrefix": "tool_open_graph_image_size",
     "related": [
       "open-graph-preview",
-      "image-crop"
+      "image-crop",
+      "youtube-thumbnail-size"
     ],
     "logo": "/icons/tools/open-graph-image-size.svg",
     "localProcessing": true,
@@ -3754,7 +3768,7 @@
   {
     "slug": "open-pdf-in-browser",
     "path": "/tools/open-pdf-in-browser",
-    "updatedAt": "2026-09-05T12:58:23.264Z",
+    "updatedAt": "2026-09-06T09:37:59.139Z",
     "launchedAt": "2026-09-03T14:00:00.000Z",
     "category": "pdf",
     "primaryTopic": "pdf-docs",
@@ -3769,7 +3783,8 @@
     "faqPrefix": "tool_open_pdf_in_browser",
     "related": [
       "print-pdf",
-      "pdf-to-jpg"
+      "pdf-to-jpg",
+      "make-pdf-flipbook"
     ],
     "logo": "/icons/tools/open-pdf-in-browser.svg",
     "localProcessing": true,
@@ -4360,7 +4375,7 @@
   {
     "slug": "terraform-cidrsubnet",
     "path": "/tools/terraform-cidrsubnet",
-    "updatedAt": "2026-08-28T10:44:02.953Z",
+    "updatedAt": "2026-09-06T09:37:59.139Z",
     "launchedAt": "2026-08-28T10:25:00.000Z",
     "category": "developer",
     "primaryTopic": "network-ip",
@@ -4377,7 +4392,8 @@
       "ip-address",
       "domain-lookup",
       "ip-range-to-cidr",
-      "private-cidr-ranges"
+      "private-cidr-ranges",
+      "aws-vpc-cidr-planner"
     ],
     "logo": "/icons/tools/terraform-cidrsubnet.svg",
     "localProcessing": true,
@@ -4565,7 +4581,7 @@
   {
     "slug": "unzip-file",
     "path": "/tools/unzip-file",
-    "updatedAt": "2026-08-14T14:15:19.108Z",
+    "updatedAt": "2026-09-06T09:37:59.139Z",
     "category": "developer",
     "primaryTopic": "files-archives",
     "featured": true,
@@ -4578,7 +4594,8 @@
       "file-hash",
       "split-pdf",
       "base64",
-      "archive-extractor"
+      "archive-extractor",
+      "create-zip-file"
     ],
     "logo": "/icons/tools/unzip-file.svg",
     "localProcessing": true,
@@ -4686,7 +4703,7 @@
   {
     "slug": "website-headers",
     "path": "/tools/website-headers",
-    "updatedAt": "2026-09-02T13:07:05.000Z",
+    "updatedAt": "2026-09-06T09:37:59.139Z",
     "category": "developer",
     "primaryTopic": "network-ip",
     "secondaryTopics": [
@@ -4704,7 +4721,8 @@
       "validate-security-txt",
       "check-ssl-certificate-expiration",
       "on-page-seo-checker",
-      "check-robots-txt-url-blocked"
+      "check-robots-txt-url-blocked",
+      "curl-to-fetch"
     ],
     "logo": "/icons/tools/website-headers.svg",
     "localProcessing": false,
@@ -4803,7 +4821,7 @@
   {
     "slug": "write-pdf-document-online",
     "path": "/tools/write-pdf-document-online",
-    "updatedAt": "2026-09-06T07:14:26.928Z",
+    "updatedAt": "2026-09-06T09:33:13.437Z",
     "launchedAt": "2026-09-03T14:00:00.000Z",
     "category": "pdf",
     "primaryTopic": "pdf-docs",
@@ -4852,7 +4870,7 @@
   {
     "slug": "yaml-json",
     "path": "/tools/yaml-json",
-    "updatedAt": "2026-09-05T16:22:09.154Z",
+    "updatedAt": "2026-09-06T09:37:59.139Z",
     "category": "developer",
     "primaryTopic": "dev-data",
     "featured": true,

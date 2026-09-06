@@ -62,7 +62,7 @@ const ja: SiteLangDict = {
   tool_image_optimizer_sample: 'サンプルを読み込む',
   tool_image_optimizer_stats_tpl: '{codec} · {w}×{h} · {bytes} · {ms} ms',
   tool_image_optimizer_status_done: '完了 — スライダーと容量を確認してからダウンロード。',
-  tool_image_optimizer_title: '画像最適化 — WebP / AVIF / MozJPEG（端末内）',
+  tool_image_optimizer_title: '画像最適化 — 端末内でファイルを小さくする',
   tool_image_optimizer_usecase_1: 'ヒーローや商品写真を WebP/AVIF にする前に、スライダーで見た目を確認してから確定する。',
   tool_image_optimizer_usecase_2: 'JPEG 配信は維持したいが、ブラウザ標準 JPEG ではまだ重いときに MozJPEG を使う。',
   tool_image_optimizer_usecase_3: '透明 UI の PNG を OxiPNG やほぼ可逆の WebP で軽くしてから渡す。',

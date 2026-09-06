@@ -102,7 +102,7 @@ const ru: SiteLangDict = {
   tool_add_www_to_dns_scheme_2: 'Dual A/AAAA',
   tool_add_www_to_dns_scheme_3: 'CDN hostname',
   tool_add_www_to_dns_scheme_label: 'Record scheme',
-  tool_add_www_to_dns_title: 'Добавить WWW в DNS — A/CNAME и гайды',
+  tool_add_www_to_dns_title: 'Добавить WWW в DNS — направить www на корневой домен',
   tool_add_www_to_dns_ttl_label: 'TTL (seconds)',
   tool_add_www_to_dns_usecase_1: 'Свой VPS: добавить CNAME www.',
   tool_add_www_to_dns_usecase_2: 'CDN: CNAME на хост провайдера.',

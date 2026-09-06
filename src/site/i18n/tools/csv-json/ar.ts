@@ -75,7 +75,7 @@ const ar: SiteLangDict = {
     '[\n  {"sku":"A-001","title":"Chair, oak","price":129.9},\n  {"sku":"A-002","title":"Desk","price":89}\n]',
   tool_csv_json_tab_csv_json: 'CSV → JSON',
   tool_csv_json_tab_json_csv: 'JSON → CSV',
-  tool_csv_json_title: 'محول CSV ↔ JSON — الأنواع والفواصل ومحليًا',
+  tool_csv_json_title: 'محول CSV ↔ JSON — تحويل الجداول في المتصفح دون رفع',
   tool_csv_json_typing: 'استنتاج الأنواع (أرقام/قيم منطقية)',
   tool_csv_json_usecase_1:
     'التجارة الإلكترونية: حوّل جدول منتجات مُصدَّر (sku، العنوان، السعر) إلى مصفوفة JSON لواجهة متجر أو سوق.',

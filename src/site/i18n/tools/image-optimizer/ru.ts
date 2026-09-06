@@ -71,7 +71,7 @@ const ru: SiteLangDict = {
   tool_image_optimizer_sample: 'Загрузить пример',
   tool_image_optimizer_stats_tpl: '{codec} · {w}×{h} · {bytes} · {ms} мс',
   tool_image_optimizer_status_done: 'Готово — проверьте ползунок и размер, затем скачайте.',
-  tool_image_optimizer_title: 'Оптимизация изображений — WebP, AVIF и MozJPEG локально',
+  tool_image_optimizer_title: 'Оптимизация изображений — меньше вес на устройстве',
   tool_image_optimizer_usecase_1: 'Выложить обложку или товар в WebP/AVIF после проверки вида ползунком.',
   tool_image_optimizer_usecase_2: 'Оставить JPEG, но через MozJPEG, если браузерный JPEG всё ещё тяжёлый.',
   tool_image_optimizer_usecase_3: 'Ужать прозрачные UI-PNG через OxiPNG или почти без потерь WebP перед передачей.',

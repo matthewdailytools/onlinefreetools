@@ -75,7 +75,7 @@ const ar: SiteLangDict = {
   tool_image_compress_status_target_ok: 'تم بلوغ الحجم المستهدف.',
   tool_image_compress_target_kb_label: 'الحد الأقصى',
   tool_image_compress_target_on: 'استهدف حجمًا',
-  tool_image_compress_title: 'ضغط الصور — البعد الأطول والجودة والحجم المستهدف (محليًا)',
+  tool_image_compress_title: 'ضغط الصور — تصغير الأبعاد والحجم على جهازك',
   tool_image_compress_usecase_1: 'الويب: تصغير الصور قبل CMS/CDN.',
   tool_image_compress_usecase_2: 'البريد/النماذج: الاقتراب من حد المرفق.',
   tool_image_compress_usecase_3: 'التواصل: تقييد الضلع والجودة.',

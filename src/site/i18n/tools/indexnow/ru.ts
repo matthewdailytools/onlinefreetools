@@ -91,7 +91,7 @@ const ru: SiteLangDict = {
   tool_indexnow_status_intro: 'What common IndexNow responses mean and what to do next.',
   tool_indexnow_status_title: 'Коды HTTP',
   tool_indexnow_submit: 'Отправить URL',
-  tool_indexnow_title: 'IndexNow — отправка URL в Bing, проверка ключа и коды',
+  tool_indexnow_title: 'IndexNow — отправить URL в Bing, не дожидаясь обхода',
   tool_indexnow_urls_hint:
     'Same host only. Paste page URLs, a sitemap URL (we fetch and expand <loc>), or sitemap XML. Max 500 page URLs per submit.',
   tool_indexnow_urls_label: 'URL list, sitemap URL, or sitemap XML',

@@ -91,7 +91,7 @@ const ar: SiteLangDict = {
   tool_indexnow_status_intro: 'What common IndexNow responses mean and what to do next.',
   tool_indexnow_status_title: 'رموز HTTP',
   tool_indexnow_submit: 'إرسال الروابط',
-  tool_indexnow_title: 'IndexNow — إرسال روابط Bing وفحص المفتاح ورموز الحالة',
+  tool_indexnow_title: 'IndexNow — إرسال الروابط إلى Bing دون انتظار الزحف',
   tool_indexnow_urls_hint:
     'Same host only. Paste page URLs, a sitemap URL (we fetch and expand <loc>), or sitemap XML. Max 500 page URLs per submit.',
   tool_indexnow_urls_label: 'URL list, sitemap URL, or sitemap XML',

@@ -91,7 +91,7 @@ const id: SiteLangDict = {
   tool_indexnow_status_intro: 'What common IndexNow responses mean and what to do next.',
   tool_indexnow_status_title: 'Kode HTTP',
   tool_indexnow_submit: 'Kirim URL',
-  tool_indexnow_title: 'IndexNow — kirim URL Bing, cek kunci & kode status',
+  tool_indexnow_title: 'IndexNow — kirim URL ke Bing tanpa menunggu crawl',
   tool_indexnow_urls_hint:
     'Same host only. Paste page URLs, a sitemap URL (we fetch and expand <loc>), or sitemap XML. Max 500 page URLs per submit.',
   tool_indexnow_urls_label: 'URL list, sitemap URL, or sitemap XML',

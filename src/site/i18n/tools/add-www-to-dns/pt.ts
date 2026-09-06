@@ -102,7 +102,7 @@ const pt: SiteLangDict = {
   tool_add_www_to_dns_scheme_2: 'Dual A/AAAA',
   tool_add_www_to_dns_scheme_3: 'CDN hostname',
   tool_add_www_to_dns_scheme_label: 'Record scheme',
-  tool_add_www_to_dns_title: 'Adicionar WWW ao DNS — A/CNAME e guias',
+  tool_add_www_to_dns_title: 'Adicionar WWW ao DNS — apontar www para o domínio raiz',
   tool_add_www_to_dns_ttl_label: 'TTL (seconds)',
   tool_add_www_to_dns_usecase_1: 'VPS: acrescente CNAME www.',
   tool_add_www_to_dns_usecase_2: 'CDN: CNAME para o host do provedor.',

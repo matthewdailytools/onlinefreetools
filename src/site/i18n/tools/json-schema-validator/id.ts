@@ -68,7 +68,7 @@ const id: SiteLangDict = {
     '{"$schema":"http://json-schema.org/draft-07/schema#","type":"object","required":["sku","price"],"properties":{"sku":{"type":"string","minLength":1},"price":{"type":"number","minimum":0}},"additionalProperties":false}',
   tool_json_schema_validator_schema_label: 'JSON Schema',
   tool_json_schema_validator_schema_placeholder: '{ "type": "object", "required": ["sku"] }',
-  tool_json_schema_validator_title: 'Validator JSON Schema — Path draft-07 & lokal',
+  tool_json_schema_validator_title: 'Validator JSON Schema — lihat error path di perangkat',
   tool_json_schema_validator_usecase_1:
     'AI / agen: cek apakah JSON terstruktur model kehilangan field sebelum dipercaya di pipeline.',
   tool_json_schema_validator_usecase_2:

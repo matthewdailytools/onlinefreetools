@@ -68,7 +68,7 @@ const ar: SiteLangDict = {
   tool_image_optimizer_sample: 'تحميل مثال',
   tool_image_optimizer_stats_tpl: '{codec} · {w}×{h} · {bytes} · {ms} ms',
   tool_image_optimizer_status_done: 'تم — راجع المنزلق والحجم ثم نزّل.',
-  tool_image_optimizer_title: 'تحسين الصور — WebP وAVIF وMozJPEG محليًا',
+  tool_image_optimizer_title: 'تحسين الصور — ملفات أصغر على جهازك',
   tool_image_optimizer_usecase_1: 'نشر صورة رئيسية أو منتج بصيغة WebP/AVIF بعد مراجعة المظهر بالمنزلق.',
   tool_image_optimizer_usecase_2: 'الإبقاء على JPEG مع MozJPEG عندما يبقى JPEG المتصفح ثقيلًا.',
   tool_image_optimizer_usecase_3: 'تصغير PNG للواجهة بشفافية عبر OxiPNG أو WebP شبه بلا فقدان قبل التسليم.',

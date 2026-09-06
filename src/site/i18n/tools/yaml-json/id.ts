@@ -67,7 +67,7 @@ const id: SiteLangDict = {
   tool_yaml_json_sample_yaml: 'nama: demo\naktif: true\ndaftar:\n  - a\n  - b',
   tool_yaml_json_tab_json_yaml: 'JSON → YAML',
   tool_yaml_json_tab_yaml_json: 'YAML → JSON',
-  tool_yaml_json_title: 'YAML ke JSON & sebaliknya — aturan tipe, multi-dokumen',
+  tool_yaml_json_title: 'YAML ke JSON & sebaliknya — ubah config di browser',
   tool_yaml_json_usecase_1: 'DevOps: ubah YAML Kubernetes multi-resource (dipisah ---) jadi array JSON untuk skrip.',
   tool_yaml_json_usecase_2: 'Pengembang: susun ulang payload JSON API jadi YAML terbaca sebelum mengedit config manual.',
   tool_yaml_json_usecase_3:

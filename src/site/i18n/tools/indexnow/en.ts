@@ -93,7 +93,7 @@ const en: SiteLangDict = {
   tool_indexnow_status_intro: 'What common IndexNow responses mean and what to do next.',
   tool_indexnow_status_title: 'HTTP status codes',
   tool_indexnow_submit: 'Submit URLs',
-  tool_indexnow_title: 'IndexNow — Bing URL Submit, Key Check & Status Codes',
+  tool_indexnow_title: 'IndexNow — Submit URLs to Bing without waiting for crawl',
   tool_indexnow_urls_hint:
     'Same host only. Paste page URLs, a sitemap URL (we fetch and expand <loc>), or sitemap XML. Max 500 page URLs per submit.',
   tool_indexnow_urls_label: 'URL list, sitemap URL, or sitemap XML',

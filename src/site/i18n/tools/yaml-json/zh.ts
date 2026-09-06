@@ -56,7 +56,7 @@ const zh: SiteLangDict = {
   tool_yaml_json_sample_yaml: '名称: 演示\n开关: true\n列表:\n  - a\n  - b',
   tool_yaml_json_tab_json_yaml: 'JSON → YAML',
   tool_yaml_json_tab_yaml_json: 'YAML → JSON',
-  tool_yaml_json_title: 'YAML ↔ JSON 互转 — 类型规则、多文档、本地处理',
+  tool_yaml_json_title: 'YAML ↔ JSON 互转 — 在浏览器里转换配置，不上传服务器',
   tool_yaml_json_usecase_1: '运维：把用 --- 分隔的 Kubernetes 多资源 YAML 转成 JSON 数组，方便脚本消费。',
   tool_yaml_json_usecase_2: '开发：把接口返回的 JSON 先铺成可读 YAML，再手工改配置。',
   tool_yaml_json_usecase_3: '数据 / AI 流水线：人工改的 YAML 参数，接到只吃 JSON 的工具链。',

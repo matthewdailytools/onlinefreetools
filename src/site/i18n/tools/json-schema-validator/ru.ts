@@ -68,7 +68,7 @@ const ru: SiteLangDict = {
     '{"$schema":"http://json-schema.org/draft-07/schema#","type":"object","required":["sku","price"],"properties":{"sku":{"type":"string","minLength":1},"price":{"type":"number","minimum":0}},"additionalProperties":false}',
   tool_json_schema_validator_schema_label: 'JSON Schema',
   tool_json_schema_validator_schema_placeholder: '{ "type": "object", "required": ["sku"] }',
-  tool_json_schema_validator_title: 'Валидатор JSON Schema — пути draft-07, локально',
+  tool_json_schema_validator_title: 'Валидатор JSON Schema — ошибки пути на устройстве',
   tool_json_schema_validator_usecase_1:
     'ИИ / агенты: проверить, не пропущены ли поля в структурированном JSON модели, прежде чем доверять ему.',
   tool_json_schema_validator_usecase_2:

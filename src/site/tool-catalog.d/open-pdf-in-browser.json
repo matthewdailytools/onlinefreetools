@@ -1,7 +1,7 @@
 {
   "slug": "open-pdf-in-browser",
   "path": "/tools/open-pdf-in-browser",
-  "updatedAt": "2026-09-05T12:58:23.264Z",
+  "updatedAt": "2026-09-06T09:37:59.139Z",
   "launchedAt": "2026-09-03T14:00:00.000Z",
   "category": "pdf",
   "primaryTopic": "pdf-docs",
@@ -16,7 +16,8 @@
   "faqPrefix": "tool_open_pdf_in_browser",
   "related": [
     "print-pdf",
-    "pdf-to-jpg"
+    "pdf-to-jpg",
+    "make-pdf-flipbook"
   ],
   "logo": "/icons/tools/open-pdf-in-browser.svg",
   "page": {

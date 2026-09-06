@@ -10,7 +10,7 @@ const zh: SiteLangDict = {
   tool_write_pdf_document_online_clear: "清空",
   tool_write_pdf_document_online_create: "生成 PDF",
   tool_write_pdf_document_online_desc: "在线用纯文本编写 PDF：字号、自动换行分页、预览与本地下载。",
-  tool_write_pdf_document_online_description: "在浏览器里用纯文本编写 PDF。设置字号，生成自动换行与分页的多页 PDF，预览后本地下载。这不是富文本或排版编辑器。示例会在首页写入两个普通段落。",
+  tool_write_pdf_document_online_description: "在浏览器里用纯文本编写 PDF：设置字号后生成自动换行与分页的多页文件，预览后本地下载；正文留在本标签页，不上传服务器。这不是富文本或排版编辑器，也不插入图片、表格和页眉。示例会在首页写入两个普通段落，可据此查看换行和分页；长文会继续排到后续页。",
   tool_write_pdf_document_online_download: "下载",
   tool_write_pdf_document_online_drop_hint: "或拖放到此处。处理在本标签页完成。",
   tool_write_pdf_document_online_empty: "请先输入文档正文。",

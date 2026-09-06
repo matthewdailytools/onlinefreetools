@@ -77,7 +77,7 @@ const de: SiteLangDict = {
     '[\n  {"sku":"A-001","title":"Chair, oak","price":129.9},\n  {"sku":"A-002","title":"Desk","price":89}\n]',
   tool_csv_json_tab_csv_json: 'CSV → JSON',
   tool_csv_json_tab_json_csv: 'JSON → CSV',
-  tool_csv_json_title: 'CSV ↔ JSON Konverter — Typen, Trennzeichen, lokal',
+  tool_csv_json_title: 'CSV ↔ JSON Konverter — Tabellen im Browser umwandeln',
   tool_csv_json_typing: 'Typen erkennen (Zahlen/Booleans)',
   tool_csv_json_usecase_1:
     'E-Commerce: eine exportierte Produkttabelle (sku, Titel, Preis) in ein JSON-Array für die API eines Shops oder Marktplatzes umwandeln.',

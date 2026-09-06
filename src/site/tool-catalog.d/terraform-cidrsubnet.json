@@ -1,7 +1,7 @@
 {
   "slug": "terraform-cidrsubnet",
   "path": "/tools/terraform-cidrsubnet",
-  "updatedAt": "2026-08-28T10:44:02.953Z",
+  "updatedAt": "2026-09-06T09:37:59.139Z",
   "launchedAt": "2026-08-28T10:25:00.000Z",
   "category": "developer",
   "primaryTopic": "network-ip",
@@ -18,7 +18,8 @@
     "ip-address",
     "domain-lookup",
     "ip-range-to-cidr",
-    "private-cidr-ranges"
+    "private-cidr-ranges",
+    "aws-vpc-cidr-planner"
   ],
   "logo": "/icons/tools/terraform-cidrsubnet.svg",
   "page": {

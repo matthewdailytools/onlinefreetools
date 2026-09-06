@@ -65,7 +65,7 @@ const ar: SiteLangDict = {
   tool_yaml_json_sample_yaml: 'الاسم: تجريبي\nمفعّل: true\nعناصر:\n  - a\n  - b',
   tool_yaml_json_tab_json_yaml: 'JSON → YAML',
   tool_yaml_json_tab_yaml_json: 'YAML → JSON',
-  tool_yaml_json_title: 'من YAML إلى JSON وبالعكس — قواعد الأنواع ومحليًا',
+  tool_yaml_json_title: 'من YAML إلى JSON وبالعكس — تحويل الإعدادات في المتصفح',
   tool_yaml_json_usecase_1: 'DevOps: حوّل YAML متعدد الموارد في Kubernetes (مفصول بـ ---) إلى مصفوفة JSON للسكربتات.',
   tool_yaml_json_usecase_2: 'مطوّرون: أعد تشكيل حمولة API بصيغة JSON إلى YAML مقروء قبل تعديل الإعداد يدويًا.',
   tool_yaml_json_usecase_3: 'خطوط بيانات / AI: اربط معاملات YAML المحرَّرة يدويًا بأدوات لا تقبل إلا JSON.',

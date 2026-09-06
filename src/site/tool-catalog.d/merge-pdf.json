@@ -1,7 +1,7 @@
 {
   "slug": "merge-pdf",
   "path": "/tools/merge-pdf",
-  "updatedAt": "2026-09-05T12:58:23.264Z",
+  "updatedAt": "2026-09-06T09:37:59.139Z",
   "category": "pdf",
   "primaryTopic": "pdf-docs",
   "featured": true,
@@ -14,7 +14,8 @@
     "split-pdf",
     "organize-pdf",
     "images-to-pdf",
-    "compress-pdf"
+    "compress-pdf",
+    "combine-files-into-one-pdf"
   ],
   "logo": "/icons/tools/merge-pdf.svg",
   "page": {

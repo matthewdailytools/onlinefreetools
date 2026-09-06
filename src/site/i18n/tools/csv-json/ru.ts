@@ -77,7 +77,7 @@ const ru: SiteLangDict = {
     '[\n  {"sku":"A-001","title":"Chair, oak","price":129.9},\n  {"sku":"A-002","title":"Desk","price":89}\n]',
   tool_csv_json_tab_csv_json: 'CSV → JSON',
   tool_csv_json_tab_json_csv: 'JSON → CSV',
-  tool_csv_json_title: 'Конвертер CSV ↔ JSON — типы, разделитель, локально',
+  tool_csv_json_title: 'Конвертер CSV ↔ JSON — таблицы в браузере, без загрузки на сервер',
   tool_csv_json_typing: 'Определять типы (числа/логические)',
   tool_csv_json_usecase_1:
     'E-commerce: превратите выгруженную таблицу товаров (sku, название, цена) в массив JSON для API магазина или маркетплейса.',

@@ -1,7 +1,7 @@
 {
   "slug": "jwt-decoder",
   "path": "/tools/jwt-decoder",
-  "updatedAt": "2026-09-05T16:22:09.383Z",
+  "updatedAt": "2026-09-06T09:37:59.139Z",
   "category": "developer",
   "primaryTopic": "dev-data",
   "secondaryTopics": [
@@ -15,7 +15,8 @@
   "faqPrefix": "tool_jwt_decoder",
   "related": [
     "base64",
-    "unix-timestamp"
+    "unix-timestamp",
+    "magnet-link-decoder"
   ],
   "logo": "/icons/tools/jwt-decoder.svg",
   "page": {

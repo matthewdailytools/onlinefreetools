@@ -75,7 +75,7 @@ const id: SiteLangDict = {
   tool_image_compress_status_target_ok: 'Ukuran target tercapai.',
   tool_image_compress_target_kb_label: 'Ukuran maks',
   tool_image_compress_target_on: 'Kejar ukuran target',
-  tool_image_compress_title: 'Kompres gambar — sisi terpanjang, kualitas & ukuran target (lokal)',
+  tool_image_compress_title: 'Kompres gambar — kecilkan ukuran di perangkat',
   tool_image_compress_usecase_1: 'Web: perkecil foto sebelum CMS/CDN.',
   tool_image_compress_usecase_2: 'Email/formulir: dekat batas lampiran.',
   tool_image_compress_usecase_3: 'Sosial: batasi sisi dan kualitas.',

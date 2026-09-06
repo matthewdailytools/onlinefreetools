@@ -8,7 +8,7 @@ const en: SiteLangDict = {
   tool_make_pdf_flipbook_choose_files: "Choose files",
   tool_make_pdf_flipbook_clear: "Clear",
   tool_make_pdf_flipbook_desc: "Make a PDF flipbook preview with previous/next controls and export an HTML viewer that embeds page images locally.",
-  tool_make_pdf_flipbook_description: "Make a PDF flipbook in your browser: choose a PDF, preview pages with a short page-turn effect, then download a standalone HTML viewer with each page embedded as an image. The file opens offline and does not upload the document. The sample is two A4 pages you can flip, then save at the same page size.",
+  tool_make_pdf_flipbook_description: "Make a PDF flipbook in your browser: choose a PDF, preview pages with a short page-turn effect, then download a standalone HTML viewer with each page embedded as an image. The file opens offline and does not upload the document. For example, the sample is two A4 pages you can flip, then save at the same page size.",
   tool_make_pdf_flipbook_download: "Download HTML flipbook",
   tool_make_pdf_flipbook_drop_hint: "Or drop here. Processing stays in this tab.",
   tool_make_pdf_flipbook_empty: "Choose a file first.",

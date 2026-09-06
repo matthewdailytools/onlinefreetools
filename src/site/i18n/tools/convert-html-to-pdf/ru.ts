@@ -9,7 +9,7 @@ const ru: SiteLangDict = {
   tool_convert_html_to_pdf_clear: "Очистить",
   tool_convert_html_to_pdf_convert: "Конвертировать",
   tool_convert_html_to_pdf_desc: "Вставьте HTML или загрузите URL и сохраните A4 PDF во вкладке.",
-  tool_convert_html_to_pdf_description: "HTML в PDF: вставьте фрагмент или загрузите адрес страницы, уберите скрипты и опасные атрибуты, проверьте предпросмотр и скачайте A4. При загрузке URL сервер один раз получает HTML и не сохраняет его; конвертация идёт в браузере. Сайты на JavaScript, print-CSS и чужие картинки могут не совпасть с живой страницей.",
+  tool_convert_html_to_pdf_description: "HTML в PDF за несколько шагов: вставьте фрагмент или загрузите адрес страницы, уберите скрипты и опасные атрибуты, проверьте предпросмотр и скачайте A4. При загрузке URL сервер один раз получает HTML и не сохраняет его; конвертация идёт в браузере. Пример — заголовок и абзац на одном листе A4. Сайты на JavaScript, print-CSS и чужие картинки могут не совпасть с живой страницей.",
   tool_convert_html_to_pdf_download: "Скачать",
   tool_convert_html_to_pdf_drop_hint: "HTML можно вставить прямо сюда. Конвертация остаётся во вкладке.",
   tool_convert_html_to_pdf_empty: "Сначала вставьте HTML или загрузите URL.",

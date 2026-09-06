@@ -108,7 +108,7 @@ const zh: SiteLangDict = {
   tool_add_www_to_dns_scheme_2: '双 A/AAAA',
   tool_add_www_to_dns_scheme_3: 'CDN 主机名',
   tool_add_www_to_dns_scheme_label: '记录方案',
-  tool_add_www_to_dns_title: '给域名添加 www DNS — 记录生成与各平台教程',
+  tool_add_www_to_dns_title: '给域名添加 www DNS — 让 www 指向主域名',
   tool_add_www_to_dns_ttl_label: 'TTL（秒）',
   tool_add_www_to_dns_usecase_1: '自建站：根域已有 A，再补 www 的 CNAME。',
   tool_add_www_to_dns_usecase_2: 'CDN/托管（Vercel、Netlify、Cloudflare）：www CNAME 到厂商主机名，根域用展平或 A。',

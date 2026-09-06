@@ -72,7 +72,7 @@ const id: SiteLangDict = {
   tool_image_optimizer_sample: 'Muat contoh',
   tool_image_optimizer_stats_tpl: '{codec} · {w}×{h} · {bytes} · {ms} ms',
   tool_image_optimizer_status_done: 'Selesai — cek slider dan ukuran, lalu unduh.',
-  tool_image_optimizer_title: 'Optimasi gambar — WebP, AVIF & MozJPEG di perangkat',
+  tool_image_optimizer_title: 'Optimasi gambar — berkas lebih kecil di perangkat',
   tool_image_optimizer_usecase_1: 'Kirim gambar hero atau produk sebagai WebP/AVIF setelah cek tampilan lewat slider.',
   tool_image_optimizer_usecase_2: 'Tetap kirim JPEG, tapi pakai MozJPEG saat JPEG bawaan browser masih terlalu berat.',
   tool_image_optimizer_usecase_3: 'Perkecil PNG UI transparan dengan OxiPNG atau WebP hampir lossless sebelum diserahkan.',

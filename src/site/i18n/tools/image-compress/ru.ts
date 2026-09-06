@@ -75,7 +75,7 @@ const ru: SiteLangDict = {
   tool_image_compress_status_target_ok: 'Целевой размер достигнут.',
   tool_image_compress_target_kb_label: 'Макс. размер',
   tool_image_compress_target_on: 'Целевой размер',
-  tool_image_compress_title: 'Сжатие изображений — длинная сторона, качество и целевой размер (локально)',
+  tool_image_compress_title: 'Сжатие изображений — уменьшить размер на устройстве',
   tool_image_compress_usecase_1: 'Сайт: уменьшить фото перед CMS/CDN.',
   tool_image_compress_usecase_2: 'Почта/формы: под лимит вложения.',
   tool_image_compress_usecase_3: 'Соцсети: ограничить сторону и качество.',

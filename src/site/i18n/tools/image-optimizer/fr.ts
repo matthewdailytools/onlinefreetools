@@ -75,7 +75,7 @@ const fr: SiteLangDict = {
   tool_image_optimizer_sample: 'Charger un exemple',
   tool_image_optimizer_stats_tpl: '{codec} · {w}×{h} · {bytes} · {ms} ms',
   tool_image_optimizer_status_done: 'Terminé — vérifiez le curseur et la taille, puis téléchargez.',
-  tool_image_optimizer_title: 'Optimiser une image — WebP, AVIF et MozJPEG en local',
+  tool_image_optimizer_title: 'Optimiser une image — fichiers plus légers sur l’appareil',
   tool_image_optimizer_usecase_1: 'Publier un hero ou une photo produit en WebP/AVIF après contrôle visuel au curseur.',
   tool_image_optimizer_usecase_2: 'Garder du JPEG, mais via MozJPEG quand le JPEG navigateur reste trop lourd.',
   tool_image_optimizer_usecase_3: 'Alléger des PNG d’UI transparents avec OxiPNG ou WebP quasi sans perte avant livraison.',

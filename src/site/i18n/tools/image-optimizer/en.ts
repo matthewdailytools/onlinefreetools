@@ -74,7 +74,7 @@ const en: SiteLangDict = {
   tool_image_optimizer_sample: 'Load sample',
   tool_image_optimizer_stats_tpl: '{codec} · {w}×{h} · {bytes} · {ms} ms',
   tool_image_optimizer_status_done: 'Done — check the slider and sizes, then download.',
-  tool_image_optimizer_title: 'Image Optimizer — WebP, AVIF & MozJPEG Local',
+  tool_image_optimizer_title: 'Image Optimizer — Smaller files with on-device encoders',
   tool_image_optimizer_usecase_1: 'Ship a hero or product shot as WebP/AVIF after checking look with the compare slider.',
   tool_image_optimizer_usecase_2: 'Keep JPEG delivery but use MozJPEG when browser-default JPEG still feels too heavy.',
   tool_image_optimizer_usecase_3: 'Shrink transparent UI PNGs with OxiPNG or near-lossless WebP before handing assets off.',

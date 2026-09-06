@@ -64,7 +64,7 @@ const zh: SiteLangDict = {
     '{"$schema":"http://json-schema.org/draft-07/schema#","type":"object","required":["sku","price"],"properties":{"sku":{"type":"string","minLength":1},"price":{"type":"number","minimum":0}},"additionalProperties":false}',
   tool_json_schema_validator_schema_label: 'JSON Schema',
   tool_json_schema_validator_schema_placeholder: '{ "type": "object", "required": ["sku"] }',
-  tool_json_schema_validator_title: 'JSON Schema 校验器 — 路径错误与本地处理',
+  tool_json_schema_validator_title: 'JSON Schema 校验器 — 在浏览器里查看路径错误',
   tool_json_schema_validator_usecase_1: 'AI / Agent：检查模型结构化 JSON 是否缺字段，再交给流水线。',
   tool_json_schema_validator_usecase_2: '电商 feed：商品 JSON 对照 Schema 后再导入或分发。',
   tool_json_schema_validator_usecase_3: '接口排查：把请求/响应体贴到从契约抽出的 Schema 片段上核对。',

@@ -1,7 +1,7 @@
 {
   "slug": "cidr-to-ip-range",
   "path": "/tools/cidr-to-ip-range",
-  "updatedAt": "2026-08-28T15:37:04.616Z",
+  "updatedAt": "2026-09-06T09:37:59.139Z",
   "launchedAt": "2026-08-28T15:35:00.000Z",
   "category": "developer",
   "primaryTopic": "network-ip",
@@ -13,7 +13,8 @@
   "faqPrefix": "tool_cidr_to_ip_range",
   "related": [
     "ip-range-to-cidr",
-    "terraform-cidrsubnet"
+    "terraform-cidrsubnet",
+    "cidr-cheat-sheet"
   ],
   "logo": "/icons/tools/cidr-to-ip-range.svg",
   "page": {

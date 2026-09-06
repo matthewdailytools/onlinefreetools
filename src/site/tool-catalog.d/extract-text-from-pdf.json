@@ -1,7 +1,7 @@
 {
   "slug": "extract-text-from-pdf",
   "path": "/tools/extract-text-from-pdf",
-  "updatedAt": "2026-09-05T12:58:23.264Z",
+  "updatedAt": "2026-09-06T09:37:59.139Z",
   "launchedAt": "2026-09-03T14:00:00.000Z",
   "category": "pdf",
   "primaryTopic": "pdf-docs",
@@ -17,7 +17,8 @@
   "related": [
     "pdf-to-markdown",
     "merge-pdf",
-    "turn-pdf-into-word-document"
+    "turn-pdf-into-word-document",
+    "compare-two-pdfs"
   ],
   "logo": "/icons/tools/extract-text-from-pdf.svg",
   "page": {

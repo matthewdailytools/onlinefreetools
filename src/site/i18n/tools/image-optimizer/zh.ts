@@ -62,7 +62,7 @@ const zh: SiteLangDict = {
   tool_image_optimizer_sample: '加载示例',
   tool_image_optimizer_stats_tpl: '{codec} · {w}×{h} · {bytes} · {ms} ms',
   tool_image_optimizer_status_done: '完成——请对照滑条与体积后再下载。',
-  tool_image_optimizer_title: '图片优化 — 更小体积，可调编码器，本地完成',
+  tool_image_optimizer_title: '图片优化 — 在设备上缩小图片体积',
   tool_image_optimizer_usecase_1: '上站前把首屏图或商品图优化成 WebP/AVIF，先滑动对照再定画质。',
   tool_image_optimizer_usecase_2: '仍需 JPEG 兼容时用 MozJPEG，而不是只靠浏览器默认 JPEG。',
   tool_image_optimizer_usecase_3: '透明 UI 图用 OxiPNG 或近无损 WebP 再交稿，先看体积是否可接受。',

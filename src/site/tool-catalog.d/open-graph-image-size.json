@@ -1,7 +1,7 @@
 {
   "slug": "open-graph-image-size",
   "path": "/tools/open-graph-image-size",
-  "updatedAt": "2026-09-01T03:10:00.000Z",
+  "updatedAt": "2026-09-06T09:37:59.139Z",
   "launchedAt": "2026-09-01T03:10:00.000Z",
   "category": "image",
   "primaryTopic": "image-media",
@@ -13,7 +13,8 @@
   "faqPrefix": "tool_open_graph_image_size",
   "related": [
     "open-graph-preview",
-    "image-crop"
+    "image-crop",
+    "youtube-thumbnail-size"
   ],
   "logo": "/icons/tools/open-graph-image-size.svg",
   "page": {

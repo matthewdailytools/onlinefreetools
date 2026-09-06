@@ -73,7 +73,7 @@ const ja: SiteLangDict = {
   tool_image_compress_status_target_ok: '目標サイズに到達しました。',
   tool_image_compress_target_kb_label: '上限',
   tool_image_compress_target_on: '目標サイズを使う',
-  tool_image_compress_title: '画像圧縮 — 長辺・画質・目標サイズ（端末内）',
+  tool_image_compress_title: '画像圧縮 — 端末内でサイズと容量を小さくする',
   tool_image_compress_usecase_1: 'Web：CMS/CDN 前にヒーローや商品写真を軽くする。',
   tool_image_compress_usecase_2: 'メール／フォーム：添付上限に寄せる。',
   tool_image_compress_usecase_3: 'SNS：長辺と画質を抑えてアップロード失敗を減らす。',

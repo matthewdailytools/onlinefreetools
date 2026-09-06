@@ -1,7 +1,7 @@
 {
   "slug": "image-optimizer",
   "path": "/tools/image-optimizer",
-  "updatedAt": "2026-08-09T00:00:00.000Z",
+  "updatedAt": "2026-09-06T09:37:59.139Z",
   "category": "image",
   "primaryTopic": "image-media",
   "secondaryTopics": [
@@ -17,7 +17,8 @@
     "image-compress",
     "image-format-converter",
     "image-exif",
-    "core-web-vitals-checker"
+    "core-web-vitals-checker",
+    "svg-optimizer"
   ],
   "logo": "/icons/tools/image-optimizer.svg",
   "page": {

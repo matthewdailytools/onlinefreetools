@@ -69,7 +69,7 @@ const ja: SiteLangDict = {
     '[\n  {"sku":"A-001","title":"Chair, oak","price":129.9},\n  {"sku":"A-002","title":"Desk","price":89}\n]',
   tool_csv_json_tab_csv_json: 'CSV → JSON',
   tool_csv_json_tab_json_csv: 'JSON → CSV',
-  tool_csv_json_title: 'CSV と JSON を相互変換 — 型・区切り文字・ローカル',
+  tool_csv_json_title: 'CSV と JSON を相互変換 — ブラウザ内で表を変換',
   tool_csv_json_typing: '型を推定（数値/真偽）',
   tool_csv_json_usecase_1: 'EC：書き出した商品表（sku・タイトル・価格）を、ストアやマーケットプレイスの API 用に JSON 配列へ変換。',
   tool_csv_json_usecase_2: '開発者：API/JSON の応答を、表計算・照合・受け渡し用に CSV へ整形。',
