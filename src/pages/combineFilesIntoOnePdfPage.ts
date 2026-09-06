@@ -169,6 +169,12 @@ export const renderCombineFilesIntoOnePdfPage = (opts: {
       /** 单项队列：{ name, kind:'pdf'|'image', imageKind:'png'|'jpg'|null, bytes: Uint8Array } */
       var items = [];
 
+      /**
+       * 队列世代：清空时递增。
+       * 用于丢弃清空过程中仍在读取的 addFiles 回调，避免把已清空的文件又追加回来。
+       */
+      var queueEpoch = 0;
+
       var msg = {
         empty: ${JSON.stringify(t(opts.lang, prefix + '_empty'))},
         encrypted: ${JSON.stringify(t(opts.lang, prefix + '_err_encrypted'))},
@@ -216,8 +222,9 @@ export const renderCombineFilesIntoOnePdfPage = (opts: {
         statusEl.textContent = text || '';
       }
 
-      /** 重置所有 UI 状态 */
+      /** 重置所有 UI 状态（仅由清空按钮、样例重置调用） */
       function clearAll(disableSample) {
+        queueEpoch += 1;
         resultBytes = null;
         items = [];
         listEl.innerHTML = '';
@@ -228,8 +235,21 @@ export const renderCombineFilesIntoOnePdfPage = (opts: {
         setErr('');
         setWarn('');
         setStatus('');
+        if (fileInput) fileInput.value = '';
         if (disableSample) btnSample.disabled = true;
         else btnSample.disabled = false;
+      }
+
+      /**
+       * 统计队列中已读入文件的总字节数（用于大型文件提示）。
+       * @returns {number}
+       */
+      function queueTotalBytes() {
+        var total = 0;
+        items.forEach(function (it) {
+          total += (it.bytes && it.bytes.byteLength) ? it.bytes.byteLength : 0;
+        });
+        return total;
       }
 
       /** 根据文件判断其类型：PDF 或图片 */
@@ -327,7 +347,11 @@ export const renderCombineFilesIntoOnePdfPage = (opts: {
         }
       });
 
-      /** 读取文件字节并加入 items 队列 */
+      /**
+       * 读取文件字节并追加到 items 队列。
+       * 不清空已有项：再次选择/拖入只追加；清空依赖用户点「清空」或逐项「移除」。
+       * @param {FileList|File[]} fileList 新选择或拖入的文件
+       */
       function addFiles(fileList) {
         if (!fileList || !fileList.length) return;
         setErr('');
@@ -336,16 +360,14 @@ export const renderCombineFilesIntoOnePdfPage = (opts: {
         resultBytes = null;
         btnDownload.disabled = true;
         work.clearPreview();
-        items = [];
 
-        /** 累计字节数（用于大型文件提示） */
-        var totalBytes = 0;
+        /** 本次追加开始时的队列世代；清空后丢弃本轮回调 */
+        var epoch = queueEpoch;
 
         var fileArr = Array.prototype.slice.call(fileList);
         var loadPromises = fileArr.map(function (f) {
           var kind = detectItemKind(f);
           if (!kind) return Promise.resolve(null);
-          totalBytes += (f.size || 0);
           return f.arrayBuffer().then(function (ab) {
             return {
               name: f.name || 'file',
@@ -358,16 +380,19 @@ export const renderCombineFilesIntoOnePdfPage = (opts: {
 
         Promise.all(loadPromises)
           .then(function (loaded) {
-            items = loaded.filter(Boolean);
+            if (epoch !== queueEpoch) return;
+            var added = loaded.filter(Boolean);
+            items = items.concat(added);
             if (items.length === 0) {
               setErr(msg.empty);
               btnCombine.disabled = true;
               return;
             }
-            if (totalBytes > SOFT_BYTES) setWarn(msg.large);
+            if (queueTotalBytes() > SOFT_BYTES) setWarn(msg.large);
             renderList();
           })
           .catch(function () {
+            if (epoch !== queueEpoch) return;
             setErr(msg.loadFail);
           });
       }
