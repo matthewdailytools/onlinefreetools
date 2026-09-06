@@ -7774,14 +7774,14 @@ const en: SiteLangDict = {
   tool_make_pdf_fillable_x_label: 'X',
   tool_make_pdf_fillable_y_label: 'Y',
   tool_make_pdf_flipbook_article:
-    'Turn a PDF into a paginated canvas flipbook preview, then export a standalone HTML viewer with the PDF embedded.',
+    'Turn a PDF into a paginated canvas flipbook preview, then export a standalone HTML viewer with each page embedded as an image.',
   tool_make_pdf_flipbook_choose_file: 'Choose a PDF',
   tool_make_pdf_flipbook_choose_files: 'Choose files',
   tool_make_pdf_flipbook_clear: 'Clear',
   tool_make_pdf_flipbook_desc:
-    'Make a PDF flipbook preview with previous/next controls and export an HTML viewer that embeds the PDF locally.',
+    'Make a PDF flipbook preview with previous/next controls and export an HTML viewer that embeds page images locally.',
   tool_make_pdf_flipbook_description:
-    'Make a PDF flipbook in your browser: choose a PDF, preview its pages with a short page-turn effect, then download a standalone HTML viewer containing the PDF bytes. The exported viewer needs internet access for PDF.js but does not upload the document. For example, the sample produces a one-page preview and an HTML file with that PDF embedded.',
+    'Make a PDF flipbook in your browser: choose a PDF, preview pages with a short page-turn effect, then download a standalone HTML viewer with each page embedded as an image. The file opens offline and does not upload the document. The sample is two A4 pages you can flip, then save at the same page size.',
   tool_make_pdf_flipbook_download: 'Download HTML flipbook',
   tool_make_pdf_flipbook_drop_hint: 'Or drop here. Processing stays in this tab.',
   tool_make_pdf_flipbook_empty: 'Choose a file first.',
@@ -7791,25 +7791,24 @@ const en: SiteLangDict = {
   tool_make_pdf_flipbook_err_notext: 'No selectable text found (no OCR).',
   tool_make_pdf_flipbook_err_pdfjs: 'PDF renderer failed to load.',
   tool_make_pdf_flipbook_example:
-    'Load sample builds a one-page PDF, renders it on the canvas, and enables an HTML flipbook download with the sample PDF embedded.',
+    'Load sample builds a two-page A4 PDF, renders it on the canvas, and enables an HTML flipbook download with those pages embedded as images.',
   tool_make_pdf_flipbook_example_title: 'Example',
   tool_make_pdf_flipbook_faq_a1:
     'No. Rendering runs in your tab (library scripts load from this site). Your PDF is not uploaded to our servers.',
   tool_make_pdf_flipbook_faq_a2: 'No. This operation does not depend on extracting a PDF text layer.',
   tool_make_pdf_flipbook_faq_a3:
-    'It downloads one HTML file with the PDF bytes embedded. The viewer loads PDF.js from this site when opened, so it needs internet access.',
+    'It downloads one HTML file with each page stored as an image. The viewer opens offline; nothing is uploaded.',
   tool_make_pdf_flipbook_faq_a4:
     'No. The export is a simple previous/next viewer, not a hosted publication, analytics service, or embeddable SaaS project.',
   tool_make_pdf_flipbook_faq_a5:
-    'The browser holds the PDF, rendered page, and Base64 export in memory. Large files can be slow and create substantially larger HTML files.',
+    'The browser holds the PDF and the rendered page images in memory. Large files can be slow and create substantially larger HTML files.',
   tool_make_pdf_flipbook_faq_q1: 'Is my file uploaded?',
   tool_make_pdf_flipbook_faq_q2: 'Does this require OCR or selectable PDF text?',
   tool_make_pdf_flipbook_faq_q3: 'What does the HTML download contain?',
   tool_make_pdf_flipbook_faq_q4: 'Does this create a hosted publication?',
   tool_make_pdf_flipbook_faq_q5: 'What happens with a large PDF?',
   tool_make_pdf_flipbook_flipbook_label: 'Flipbook preview',
-  tool_make_pdf_flipbook_how_body:
-    'Choose a PDF, move through the canvas preview, then export an HTML viewer with the original PDF embedded.',
+  tool_make_pdf_flipbook_how_body: 'Choose a PDF, move through the canvas preview, then export an HTML viewer with page images embedded.',
   tool_make_pdf_flipbook_how_item_1: 'Choose a PDF or load the built-in one-page sample',
   tool_make_pdf_flipbook_how_item_2: 'Use Previous and Next to check page order and rendering',
   tool_make_pdf_flipbook_how_item_3: 'Review the page-turn preview in the canvas',
@@ -7820,7 +7819,8 @@ const en: SiteLangDict = {
   tool_make_pdf_flipbook_rules_body: 'The page creates a local paginated preview and an HTML viewer; it does not publish or host your PDF.',
   tool_make_pdf_flipbook_rules_item_1: 'The canvas displays one page at a time with Previous, Next, and a short page-turn effect.',
   tool_make_pdf_flipbook_rules_item_2: 'Client-side only; files are not uploaded.',
-  tool_make_pdf_flipbook_rules_item_3: 'The HTML export embeds the original PDF as Base64 and loads PDF.js from this site when opened.',
+  tool_make_pdf_flipbook_rules_item_3:
+    'The HTML export embeds rendered pages as images and opens without extra libraries or an internet connection.',
   tool_make_pdf_flipbook_rules_item_4: 'No OCR, hosted URL, analytics, audio, or page editor is included.',
   tool_make_pdf_flipbook_rules_title: 'Rules you should expect',
   tool_make_pdf_flipbook_sample: 'Load sample',

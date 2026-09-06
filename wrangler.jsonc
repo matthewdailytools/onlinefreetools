@@ -50,7 +50,7 @@
 		"SITE_DEFAULT_LANG": "en",
 		"SITE_LANGS": "en,zh,es,ar,pt,id,fr,ja,ru,de",
 		/** 发版递增可使 HTML Cache API key 失效（见 src/site/r2Pages.ts）。 */
-		"PAGES_CACHE_VERSION": "4.46",
+		"PAGES_CACHE_VERSION": "4.49",
 		/** Prompt AI：false/0/off 关闭 API 与前端按钮 */
 		"PROMPT_AI_ENABLED": "true",
 		/** Workers AI 默认小模型（上线前核对 Free ACL） */

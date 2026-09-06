@@ -8,7 +8,7 @@ const ja: SiteLangDict = {
   tool_make_pdf_flipbook_choose_files: "ファイルを選択",
   tool_make_pdf_flipbook_clear: "クリア",
   tool_make_pdf_flipbook_desc: "PDF フリップブックを作成 — ファイルは端末内に留まり、サーバーにアップロードしません。",
-  tool_make_pdf_flipbook_description: "PDF フリップブックを作成. ファイルは端末内に留まり、サーバーにアップロードしません。 サンプルで実際の入力と出力を確認でき、手順と制限は本文で説明します。 手順は PDF を選び、前へ・次へで短いページめくり表示を確認し、PDF を内蔵した単体 HTML を保存します。例は1ページの flipbook です。出力 HTML は開くときに PDF.js を本サイトから読むためネット接続が必要ですが、文書は当サイトへ送信しません。",
+  tool_make_pdf_flipbook_description: "ブラウザで PDF めくり冊子を作ります。PDF を選び、短いページめくりで確認し、各ページを画像として埋め込んだ単体 HTML を保存します。出力はオフラインで開け、文書は送信しません。サンプルは A4 の 2 ページで、保存後も同じページサイズです。",
   tool_make_pdf_flipbook_download: "ダウンロード",
   tool_make_pdf_flipbook_drop_hint: "ここにドロップ。処理はこのタブ内で行われます。",
   tool_make_pdf_flipbook_empty: "先にファイルを選択してください。",

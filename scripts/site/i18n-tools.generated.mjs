@@ -226,7 +226,7 @@ export const toolHomeTranslations = {
     tool_magnet_link_decoder_title: 'Magnet Link Decoder — Parse Info Hash and Trackers Locally',
     tool_make_pdf_fillable_desc: 'Add text fields to a static PDF in your browser. Files stay on your device; not uploaded to a server.',
     tool_make_pdf_fillable_title: 'Make a PDF fillable',
-    tool_make_pdf_flipbook_desc: 'Make a PDF flipbook preview with previous/next controls and export an HTML viewer that embeds the PDF locally.',
+    tool_make_pdf_flipbook_desc: 'Make a PDF flipbook preview with previous/next controls and export an HTML viewer that embeds page images locally.',
     tool_make_pdf_flipbook_title: 'Make a PDF flipbook',
     tool_marginal_revenue_description: 'Learn how to calculate marginal revenue with MR = ΔTR / ΔQ. Process: enter quantity and total revenue at two points, subtract for ΔTR and ΔQ, then divide. Example: Q 10→11, TR 1000→1080 → MR = 80. Educational only — not pricing advice.',
     tool_marginal_revenue_title: 'How to Calculate Marginal Revenue — MR Calculator (ΔTR / ΔQ)',

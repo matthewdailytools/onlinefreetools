@@ -1,5 +1,5 @@
 /**
- * 工具页顶栏导航项构建（slug 工具页 / 信息页 / 首页共用同一套菜单）。
+ * 工具页顶栏导航项构建（slug 工具页共用；不含「工具」巨型菜单，改由侧栏提供）。
  */
 import type { SiteLang } from '../../site/i18n';
 import { t } from '../../site/i18n';
@@ -103,13 +103,13 @@ export const buildDevlogsNavLink = (lang: SiteLang): NavLinkItem => ({
 });
 
 /**
- * 工具页顶栏：首页 + 工具巨型菜单 + 主题/类型 + 开发日志。
+ * 工具页顶栏：首页 + 主题/类型 + 开发日志。
+ * 「工具」巨型菜单只出现在首页等静态页；工具页已有侧栏工具列表，顶栏不再重复。
  * @param lang 当前语言
  * @param defaultLang 站点默认语言
  */
 export const buildToolPageNavItems = (lang: SiteLang, defaultLang: SiteLang): NavItem[] => [
 	{ href: withLangPrefix(lang, '/', defaultLang), label: t(lang, 'nav_home') },
-	buildToolsMegaNavItem(lang, defaultLang, (toolPath) => withLangPrefix(lang, toolPath, defaultLang)),
 	...buildTaxonomyNavLinks(lang, defaultLang),
 	buildDevlogsNavLink(lang),
 ];
