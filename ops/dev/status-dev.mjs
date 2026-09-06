@@ -7,7 +7,6 @@
  * 等价 npm：npm run status:dev
  */
 import {
-  defaultDevPort,
   defaultOpsUiPort,
   devServerOrigin,
   findPidByPort,
@@ -17,21 +16,21 @@ import {
   opsUiLogFilePath,
   opsUiOrigin,
   opsUiPidFilePath,
-  parsePortArg,
   pidFilePath,
   probeNewestToolPage,
   readOpsUiPid,
   readPid,
+  resolveManagedDevPort,
 } from '../lib/dev-process.mjs';
 
 /** CLI 参数 */
 const argv = process.argv.slice(2);
-/** wrangler 端口 */
-const port = parsePortArg(argv, defaultDevPort);
 /** Ops UI 端口 */
 const opsUiPort = defaultOpsUiPort;
 
 const main = async () => {
+  /** 未传 --port 时对齐上次 start:dev 写入的端口文件 */
+  const port = await resolveManagedDevPort(argv);
   /** PID 文件中的 wrangler 进程号（可能已 stale） */
   const filePid = await readPid();
   /** 当前占用 wrangler 端口的监听 PID */

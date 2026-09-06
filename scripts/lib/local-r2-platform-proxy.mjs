@@ -65,6 +65,8 @@ export const writeWranglerConfigWithoutRemoteBindings = () => {
 	/** @type {Record<string, unknown>} */
 	const config = parseJsoncObject(source);
 	delete config.ai;
+	/** 本地 --local 不需要 observability 上报；避免启动阶段再连 Cloudflare */
+	delete config.observability;
 	const outDir = path.dirname(WRANGLER_NO_AI);
 	if (typeof config.main === 'string') {
 		config.main = rebaseToConfigDir(config.main, outDir);

@@ -14,25 +14,24 @@
 import {
   cleanupDevServer,
   cleanupOpsUi,
-  defaultDevPort,
   defaultOpsUiPort,
   describeOpsUiPortBlocker,
   describePortBlocker,
   findPidByPort,
   isProcessRunning,
-  parsePortArg,
   readOpsUiPid,
   readPid,
+  resolveManagedDevPort,
 } from '../lib/dev-process.mjs';
 
 /** CLI 参数 */
 const argv = process.argv.slice(2);
-/** wrangler 端口 */
-const port = parsePortArg(argv, defaultDevPort);
 /** Ops UI 端口 */
 const opsUiPort = defaultOpsUiPort;
 
 const main = async () => {
+  /** 未传 --port 时对齐上次 start:dev 写入的端口文件（例如 8799） */
+  const port = await resolveManagedDevPort(argv);
   const filePid = await readPid();
   const portPidBefore = findPidByPort(port);
   const opsUiFilePid = await readOpsUiPid();

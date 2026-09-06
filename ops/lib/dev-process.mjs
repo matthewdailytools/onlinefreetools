@@ -26,8 +26,20 @@ export const defaultDevHost = '127.0.0.1';
 /** PID 文件路径 */
 export const pidFilePath = path.join(runDir, 'wrangler-dev.pid');
 
+/**
+ * 上次 start:dev 实际使用的 wrangler 端口（供 stop:dev / status:dev 在未传 --port 时对齐）。
+ * 失败回滚会删掉；成功就绪后保留到 stop。
+ */
+export const portFilePath = path.join(runDir, 'wrangler-dev.port');
+
 /** 标准输出/错误日志路径 */
 export const logFilePath = path.join(runDir, 'wrangler-dev.log');
+
+/**
+ * wrangler 未指定时的默认 DevTools inspector 端口。
+ * 本机常被其他仓库的 workerd 占用，start:dev 改为 `--inspector-port 0`。
+ */
+export const defaultInspectorPort = 9229;
 
 /**
  * 本地 Ops UI（`ops/seo/sitemap-ui.mjs`，即 `npm run sitemap:ui` / `ops:ui`）默认端口。
@@ -97,6 +109,74 @@ export const clearPid = async () => {
     await fs.unlink(pidFilePath);
   } catch {
     // 已停止或未启动
+  }
+};
+
+/**
+ * 读取上次 start:dev 写入的 wrangler 端口；无效或不存在时返回 null。
+ * @returns {Promise<number|null>}
+ */
+export const readSavedDevPort = async () => {
+  try {
+    const raw = (await fs.readFile(portFilePath, 'utf-8')).trim();
+    const saved = Number.parseInt(raw, 10);
+    return Number.isFinite(saved) && saved > 0 ? saved : null;
+  } catch {
+    return null;
+  }
+};
+
+/**
+ * 写入本次 wrangler 监听端口，供无 --port 的 stop:dev / status:dev 使用。
+ * @param {number} port wrangler 端口
+ * @returns {Promise<void>}
+ */
+export const writeSavedDevPort = async (port) => {
+  await ensureRunDir();
+  await fs.writeFile(portFilePath, String(port), 'utf-8');
+};
+
+/**
+ * 删除端口文件（忽略不存在）。
+ * @returns {Promise<void>}
+ */
+export const clearSavedDevPort = async () => {
+  try {
+    await fs.unlink(portFilePath);
+  } catch {
+    // 未启动或已清理
+  }
+};
+
+/**
+ * 解析本仓库正在管理的 wrangler 端口：CLI `--port` 优先，否则读端口文件，再回退默认 8787。
+ * start:dev 仍应显式 parsePortArg（未传则用 8787，避免误复用旧端口）；stop/status 用本函数。
+ * @param {string[]} argv process.argv.slice(2)
+ * @returns {Promise<number>}
+ */
+export const resolveManagedDevPort = async (argv) => {
+  const fromCli = parsePortArg(argv, -1);
+  if (fromCli > 0) return fromCli;
+  const saved = await readSavedDevPort();
+  return saved ?? defaultDevPort;
+};
+
+/**
+ * 读取当前 shell 的 nofile soft limit（macOS GUI/Cursor 终端常见 256）。
+ * @returns {number|null}
+ */
+export const readSoftNofileLimit = () => {
+  if (process.platform === 'win32') return null;
+  try {
+    const raw = execSync('ulimit -n', {
+      encoding: 'utf-8',
+      shell: true,
+      stdio: ['ignore', 'pipe', 'ignore'],
+    }).trim();
+    const n = Number.parseInt(raw, 10);
+    return Number.isFinite(n) ? n : null;
+  } catch {
+    return null;
   }
 };
 
@@ -171,7 +251,11 @@ export const findPidByPort = (port, host = defaultDevHost) => {
       return null;
     }
 
-    const out = execSync(`lsof -ti tcp:${port} -sTCP:LISTEN`, { encoding: 'utf-8' }).trim();
+    /**
+     * `-i :PORT` 同时覆盖 127.0.0.1 / localhost / ::1。
+     * `tcp:PORT` 在部分 macOS 上会漏掉 `localhost:PORT` 的 workerd。
+     */
+    const out = execSync(`lsof -nP -i :${port} -sTCP:LISTEN -t`, { encoding: 'utf-8' }).trim();
     const pid = Number.parseInt(out.split('\n')[0], 10);
     return Number.isFinite(pid) && pid > 0 ? pid : null;
   } catch {
@@ -747,6 +831,7 @@ export const cleanupDevServer = async (port = defaultDevPort) => {
   if (filePid && filePid !== portPid) killProcessTree(filePid);
 
   await clearPid();
+  await clearSavedDevPort();
   await new Promise((resolve) => setTimeout(resolve, 800));
 };
 

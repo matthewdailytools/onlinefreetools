@@ -18,7 +18,7 @@
  * 等价 npm：npm run start:dev
  */
 import { spawn, execSync } from 'node:child_process';
-import { openSync, unlinkSync, statSync } from 'node:fs';
+import { closeSync, openSync, unlinkSync, statSync } from 'node:fs';
 import path from 'node:path';
 import {
   writeWranglerConfigWithoutRemoteBindings,
@@ -43,6 +43,8 @@ import {
   hasRemoteBindingsFlag,
   isDevServerHealthy,
   isOpsUiHealthy,
+  isProcessRunning,
+  defaultInspectorPort,
   logFilePath,
   opsUiEntryPath,
   opsUiLogFilePath,
@@ -50,10 +52,12 @@ import {
   parsePortArg,
   projectRoot,
   readDevLogFatalError,
+  readSoftNofileLimit,
   waitForDevReady,
   waitForOpsUiReady,
   writeOpsUiPid,
   writePid,
+  writeSavedDevPort,
 } from '../lib/dev-process.mjs';
 
 /**
@@ -148,6 +152,9 @@ const runSeedLocalR2 = () => {
 
 /**
  * 后台启动 wrangler dev（Node 直跑 wrangler.js，Windows 下日志与 detached 更稳定）。
+ * Unix 经 `/bin/sh` 先把 nofile 提到 65536：macOS GUI/Cursor 终端常见 soft limit=256，
+ * wrangler 监视 `public/` 会 EMFILE，stdout 不刷盘，start:dev 表现为空日志超时。
+ * `--inspector-port 0` 避免默认 9229 被其他仓库 workerd 占住后卡住。
  * @returns {Promise<number>} 子进程 PID
  */
 const spawnWrangler = async () => {
@@ -164,6 +171,9 @@ const spawnWrangler = async () => {
     defaultDevHost,
     '--persist-to',
     WRANGLER_PERSIST_TO,
+    /** 让 OS 分配空闲 inspector 端口，避开被占用的 9229 */
+    '--inspector-port',
+    '0',
   ];
   if (!enableRemoteBindings) {
     /** 去掉 AI binding + `--local`：4.58 上仅 remoteBindings:false 仍会连 workers.dev */
@@ -171,16 +181,50 @@ const spawnWrangler = async () => {
     args.push('--local', '-c', localConfig);
   }
 
-  const child = spawn(process.execPath, [wranglerBin, ...args], {
-    cwd: projectRoot,
-    detached: true,
-    stdio: ['ignore', logFd, logFd],
-    windowsHide: true,
-    env: { ...process.env },
-  });
+  /**
+   * CI=1 让 wrangler 在 stdin=ignore 时不要停在「是否上报错误」交互提示上。
+   * WRANGLER_SEND_METRICS=false 避免启动阶段再打 Cloudflare 遥测。
+   */
+  const env = {
+    ...process.env,
+    CI: '1',
+    WRANGLER_SEND_METRICS: 'false',
+  };
+
+  /** @type {import('node:child_process').ChildProcess} */
+  let child;
+  if (process.platform === 'win32') {
+    child = spawn(process.execPath, [wranglerBin, ...args], {
+      cwd: projectRoot,
+      detached: true,
+      stdio: ['ignore', logFd, logFd],
+      windowsHide: true,
+      env,
+    });
+  } else {
+    /**
+     * `$0` = node，`$@` = wrangler.js + CLI；`exec` 保持同一 PID，PID 文件仍指向 wrangler。
+     */
+    child = spawn(
+      '/bin/sh',
+      ['-c', 'ulimit -n 65536 2>/dev/null || true; exec "$0" "$@"', process.execPath, wranglerBin, ...args],
+      {
+        cwd: projectRoot,
+        detached: true,
+        stdio: ['ignore', logFd, logFd],
+        env,
+      }
+    );
+  }
 
   child.unref();
+  try {
+    closeSync(logFd);
+  } catch {
+    /* 父进程关掉副本；子进程仍持有写入端 */
+  }
   await writePid(child.pid);
+  await writeSavedDevPort(port);
   return child.pid;
 };
 
@@ -305,10 +349,27 @@ const main = async () => {
         const blocker = findPidByPort(port);
         console.error(`  Port ${port} may be blocked by PID ${blocker ?? 'unknown'}. Run: npm run stop:dev`);
       }
-      /** 空日志时补充诊断：常见是默认 8787 被其他仓库 wrangler 占用 */
+      /** 空日志：stdout 未刷盘、EMFILE、inspector 冲突、或进程已退出 */
       try {
         if (statSync(logFilePath).size === 0) {
-          console.error('  Log is empty — wrangler may not have started writing (spawn hang or wrong port).');
+          console.error(
+            '  Log is empty — wrangler produced no stdout before timeout (hang, EMFILE, inspector clash, or prompt).'
+          );
+          console.error(
+            `  Spawn PID ${childPid} still running: ${isProcessRunning(childPid) ? 'yes' : 'no (exited before Ready)'}`
+          );
+          const nofile = readSoftNofileLimit();
+          if (nofile !== null && nofile < 1024) {
+            console.error(
+              `  Shell nofile (ulimit -n) is ${nofile}; wrangler watching public/ often needs thousands of fds.`
+            );
+          }
+          const inspectorBlocker = describePortBlocker(defaultInspectorPort);
+          if (inspectorBlocker) {
+            console.error(
+              `  Default inspector port ${defaultInspectorPort} is held by PID ${inspectorBlocker.pid}; start:dev now uses --inspector-port 0.`
+            );
+          }
           const defaultBlocker = describePortBlocker(defaultDevPort);
           if (port !== defaultDevPort && defaultBlocker && !defaultBlocker.ours) {
             console.error(
@@ -319,6 +380,12 @@ const main = async () => {
             console.error(
               `  Port ${defaultDevPort} is used by another app (PID ${defaultBlocker.pid}). Try: npm run start:dev -- --port 8788`
             );
+          }
+          console.error(
+            `  Failed start already stops the process it spawned. stop:dev without --port looks at ${defaultDevPort} (or the last successful port file).`
+          );
+          if (port !== defaultDevPort) {
+            console.error(`  If a previous server is still up: npm run stop:dev -- --port ${port}`);
           }
         }
       } catch {
