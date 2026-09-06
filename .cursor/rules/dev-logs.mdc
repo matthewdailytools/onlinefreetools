@@ -40,7 +40,25 @@ alwaysApply: true
 4. **Solution** — 最终方案与验证
 5. **Notes / boundaries** — 边界与相关路径
 
-**Project 篇** 可较短，但仍须写清「记了什么、为何需要留档」，禁止无事实空壳。
+**凡本轮改动了工具页**（catalog / i18n 分片 / `src/pages/*Page.ts` / 预渲染工具 HTML）：在 **`[question]` 之后、`[try to solve]` 之前**增加 **Tool links (English)** 小节，列出**英文默认语**可点开的生产 URL（默认语无语言前缀）：
+
+```markdown
+[question]
+<user's original question; may keep original language>
+
+## Tool links (English)
+- https://onlinefreetools.org/tools/<slug>
+- https://onlinefreetools.org/tools/<slug-2>
+
+[try to solve]
+```
+
+- 只列本轮实际改动或需验收的 slug；多工具按 slug 字母序或交付优先级。
+- 使用 apex 生产域 `https://onlinefreetools.org`；**不要**写 `/en/tools/...`（英文默认路径无 `/en`）。
+- 若同时需要中文验收链接，可另起一行 `Chinese: https://onlinefreetools.org/zh/tools/<slug>`，但 **English 链接为必填**。
+- 纯运维/规则/无工具页改动的日志：省略本小节。
+
+**Project 篇** 可较短，但仍须写清「记了什么、为何需要留档」，禁止无事实空壳。涉及工具改动时同样附上 **Tool links (English)**（位置同上：紧跟 `[question]`）。
 
 ## 3. SEO 内容质量
 
@@ -68,6 +86,10 @@ Visibility: people
 [question]
 <user's original question; may keep original language>
 
+## Tool links (English)
+- https://onlinefreetools.org/tools/<slug>
+# （无工具页改动时可整节省略）
+
 [try to solve]
 ## Context
 ...
@@ -89,6 +111,8 @@ Visibility: people
 ```
 
 `Visibility` 可省略（默认 `people`）。等价写法：`Robots: noindex, nofollow`（构建同样按 project 处理）。别名：`internal` / `noindex` / `private` → project。
+
+工具改动日志须含 **Tool links (English)**（见 §2）；格式为 `https://onlinefreetools.org/tools/{slug}`。
 
 ## 6. 范围与可见性
 
