@@ -4,14 +4,14 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Dev Logs (12/27) | OnlineFreeTools.org</title>
-  <meta name="description" content="Curated project development notes with reusable decisions and fixes, organized by month. (12/27)" />
+  <title>Word→PDF looked blank because html2pdf snapped the small gray HTML preview box onto A4; capture now uses an isolated A4-ratio iframe document. | Dev Logs</title>
+  <meta name="description" content="Word→PDF looked blank because html2pdf snapped the small gray HTML preview box onto A4; capture now uses an isolated A4-ratio iframe document." />
   
-  <link rel="canonical" href="https://onlinefreetools.org/devlogs/page-12.html" />
-  <meta property="og:title" content="Dev Logs (12/27) | OnlineFreeTools.org" />
-  <meta property="og:description" content="Curated project development notes with reusable decisions and fixes, organized by month. (12/27)" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://onlinefreetools.org/devlogs/page-12.html" />
+  <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-09-06-14-28-word-to-pdf-blank-a4.html" />
+  <meta property="og:title" content="Word→PDF looked blank because html2pdf snapped the small gray HTML preview box onto A4; capture now uses an isolated A4-ratio iframe document. | Dev Logs" />
+  <meta property="og:description" content="Word→PDF looked blank because html2pdf snapped the small gray HTML preview box onto A4; capture now uses an isolated A4-ratio iframe document." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-09-06-14-28-word-to-pdf-blank-a4.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
   
@@ -47,9 +47,8 @@
   else window.addEventListener('load', schedule, { once: true });
 })();
 </script>
-  <link rel="prev" href="https://onlinefreetools.org/devlogs/page-11.html" />
-  <link rel="next" href="https://onlinefreetools.org/devlogs/page-13.html" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Dev Logs (12/27)","url":"https://onlinefreetools.org/devlogs/page-12.html","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://onlinefreetools.org/"},{"@type":"ListItem","position":2,"name":"Dev Logs","item":"https://onlinefreetools.org/devlogs/"}]}}</script>
+  
+  
 </head>
 <body class="is-home-page">
   
@@ -160,152 +159,56 @@
       <div class="list-group list-group-flush small" id="navList"><a class="list-group-item list-group-item-action" href="/"><span class="sidebar-tool-label">Home</span></a></div>
     </aside>
     <main id="content" class="p-4">
-    <section>
-      <div class="d-flex justify-content-between align-items-start gap-3 mb-3">
-        <div>
-          <h1 class="h4 mb-1">Dev Logs</h1>
-          <p class="text-muted mb-0">
-            Browse Q&A and implementation notes by month.
-            <a class="ms-1 text-decoration-none" href="https://github.com/matthewdailytools/onlinefreetools" target="_blank" rel="noopener noreferrer">GitHub</a>
-          </p>
+      <section class="mb-3">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h1 class="h4 mb-0">Word→PDF looked blank because html2pdf snapped the small gray HTML preview box onto A4; capture now uses an isolated A4-ratio iframe document. | Dev Logs</h1>
+          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
-        <a class="btn btn-outline-secondary btn-sm flex-shrink-0" href="/">Back to Home</a>
-      </div>
-      
-      <div class="mb-4">
-        <h2 class="h5 text-muted mb-2">2026-08</h2>
-        <ul class="list-group shadow-sm">
-          
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-09-18-33-core-web-vitals-checker.html" class="text-decoration-none">core-web-vitals-checker</a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-09-18-24-seo-where2use-modular-page.html" class="text-decoration-none">seo-where2use-modular-page</a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-09-17-48-seo-webmaster-tools-survey.html" class="text-decoration-none">seo-webmaster-tools-survey</a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-09-17-37-rules-coverage-keywords-in-copy-per-locale.html" class="text-decoration-none">rules-coverage-keywords-in-copy-per-locale</a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-09-17-33-coverage-keywords-already-in-copy.html" class="text-decoration-none">coverage-keywords-already-in-copy</a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-09-17-31-seo-coverage-keywords-display-advice.html" class="text-decoration-none">seo-coverage-keywords-display-advice</a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-09-17-29-ops-ui-handbook-tab.html" class="text-decoration-none">ops-ui-handbook-tab</a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-09-17-25-confirm-ops-sitemap-info-default.html" class="text-decoration-none">confirm-ops-sitemap-info-default</a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-09-17-24-sitemap-exclude-info-pages-by-default.html" class="text-decoration-none">sitemap-exclude-info-pages-by-default</a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-09-16-57-link-strategy-execution-landed.html" class="text-decoration-none">link-strategy-execution-landed</a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-09-16-42-internal-link-anchor-text-ranking.html" class="text-decoration-none">internal-link-anchor-text-ranking</a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-09-14-45-update-ops-docs-sitemap-section.html" class="text-decoration-none">update-ops-docs-sitemap-section</a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-09-14-11-fix-sitemap-ui-overwrite-main.html" class="text-decoration-none">fix-sitemap-ui-overwrite-main</a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-09-14-00-sitemap-filtered-generator-and-ops-ui.html" class="text-decoration-none">sitemap-filtered-generator-and-ops-ui</a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-09-12-02-browser-av-client-solutions.html" class="text-decoration-none">browser-av-client-solutions</a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-09-11-51-browser-ebook-client-solutions.html" class="text-decoration-none">browser-ebook-client-solutions</a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-09-11-29-ffmpeg-aconvert-av-ebook-alts.html" class="text-decoration-none">ffmpeg-aconvert-av-ebook-alts</a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-09-11-16-ffmpeg-calibre-wasm-sizes.html" class="text-decoration-none">ffmpeg-calibre-wasm-sizes</a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-09-11-04-browser-media-ebook-pilot-options.html" class="text-decoration-none">browser-media-ebook-pilot-options</a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-09-10-56-aconvert-competitor-seo-strategy.html" class="text-decoration-none">aconvert-competitor-seo-strategy</a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-09-10-44-rename-use-case-to-where2use.html" class="text-decoration-none">rename-use-case-to-where2use</a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-09-10-30-rename-taxonomy-nav-paths.html" class="text-decoration-none">rename-taxonomy-nav-paths</a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-09-10-08-scenario-subject-taxonomy-listing-pages.html" class="text-decoration-none">scenario-subject-taxonomy-listing-pages</a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-09-09-40-explore-tool-catalog-homepage.html" class="text-decoration-none">explore-tool-catalog-homepage</a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-09-09-29-fix-seo-desc-section12-batch.html" class="text-decoration-none">fix-seo-desc-section12-batch</a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-09-09-29-finish-omni-section12-remaining-tools.html" class="text-decoration-none">finish-omni-section12-remaining-tools</a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-09-09-26-ship-how-to-calculate-velocity.html" class="text-decoration-none">ship-how-to-calculate-velocity</a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-09-09-26-ship-how-to-calculate-ohms-law.html" class="text-decoration-none">ship-how-to-calculate-ohms-law</a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-09-09-26-ship-how-to-calculate-density.html" class="text-decoration-none">ship-how-to-calculate-density</a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/devlogs/2026-08-09-09-26-ship-how-to-calculate-acceleration.html" class="text-decoration-none">ship-how-to-calculate-acceleration</a>
-            <span class="badge text-bg-secondary">2026-08-09</span>
-          </li>
-        </ul>
-      </div>
-      
-      <nav class="d-flex flex-wrap justify-content-between align-items-center gap-2 mt-4" aria-label="Dev Logs">
-        <a class="btn btn-outline-secondary btn-sm" href="/devlogs/page-11.html" rel="prev">Previous</a>
-        <span class="small text-muted">Page 12 of 27</span>
-        <a class="btn btn-outline-secondary btn-sm" href="/devlogs/page-13.html" rel="next">Next</a>
-      </nav>
-    </section>
-  </main>
+        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-06 14:28
+Summary: Word→PDF looked blank because html2pdf snapped the small gray HTML preview box onto A4; capture now uses an isolated A4-ratio iframe document.
+Visibility: people</p>
+<p>[question]
+<a href="http://127.0.0.1:8788/zh/tools/convert-word-document-to-pdf">http://127.0.0.1:8788/zh/tools/convert-word-document-to-pdf</a>  转换后的pdf是空白的</p>
+<h2>Tool links (English)</h2>
+<ul>
+<li><a href="https://onlinefreetools.org/tools/convert-word-document-to-pdf">https://onlinefreetools.org/tools/convert-word-document-to-pdf</a>
+Chinese: <a href="https://onlinefreetools.org/zh/tools/convert-word-document-to-pdf">https://onlinefreetools.org/zh/tools/convert-word-document-to-pdf</a></li>
+</ul>
+<p>[try to solve]</p>
+<h2>Context</h2>
+<p>On the local preview (<code>http://127.0.0.1:8788/zh/tools/convert-word-document-to-pdf</code>) the sample <code>.docx</code> converted without an error (status「完成」, download enabled), but the PDF preview looked empty: a full A4 page with at most a thin gray strip at the top. The HTML preview still showed the sample sentence「用于转换的 Word 示例段落。」, so mammoth was not the failure.</p>
+<h2>Process</h2>
+<ol>
+<li>Confirmed html2pdf.bundle was already loaded (the earlier <code>jsPDF undefined</code> crash from 2026-09-06 09:39 was already fixed). Conversion reached <code>OftPdfWork.showPreview</code>.</li>
+<li>Playwright against Chrome measured the pdf.js canvas: 744×1052 (A4 at scale 1.25) with only ~126 dark pixels in an 180×12 box at the top-left, plus ~84k light-gray pixels. That matches a screenshot of <code>#wordPdfHtmlPreview</code> (gray 8rem min-height box) scaled to page width, not a missing PDF.</li>
+<li>Compared with Convert HTML to PDF: that tool snapshots a sandboxed iframe document. Word→PDF called <code>html2pdf().from(previewEl)</code> on the in-page preview div.</li>
+<li>Replaced the preview <code>&lt;div&gt;</code> with an iframe, wrote mammoth HTML as a full document (white background, <code>#111</code> text, CJK-capable fonts, Word-like padding), and captured <code>documentElement</code> with html2canvas <code>windowWidth</code>/<code>height</code> padded to whole A4-ratio pages so a short sample stays one page.</li>
+</ol>
+<h2>Root cause / analysis</h2>
+<p>html2pdf.js rasterizes the source node, then fits that bitmap to A4 width. The Word preview node was a short gray Bootstrap box (~960×128). Fitting it to 595pt made the paragraph ~9pt of ink on an otherwise white page—easy to read as “blank,” especially below the fold. A second blank page appeared when capture height was a few pixels taller than one A4 after width-fit (html2pdf sliced a sliver page).</p>
+<p>This is not a CJK font embedding issue: the pipeline already stores a JPEG of the canvas, so glyphs are pixels. Isolation from the tool page also avoids html2canvas failing on Bootstrap color functions.</p>
+<h2>Solution</h2>
+<ul>
+<li>Preview and PDF share one iframe document (<code>sandbox=&quot;allow-same-origin&quot;</code>), max-width 794px.</li>
+<li>Capture options: <code>backgroundColor: #ffffff</code>, <code>scrollX/Y: 0</code>, <code>pagebreak: css+legacy</code>, height rounded to <code>N × width × (841.89/595.28)</code>.</li>
+<li>Local verification (Playwright, cache <code>PAGES_CACHE_VERSION</code> 4.37): HTML iframe text matches the sample; PDF preview「第 1 / 1 页」; canvas shows the same sentence at the top-left with white margins; no pageerror.</li>
+</ul>
+<h2>Notes / boundaries</h2>
+<ul>
+<li>mammoth still flattens headers, text boxes, and complex Word layout; a file whose HTML preview is empty will still produce an empty PDF.</li>
+<li>Long documents paginate by screenshot height, not native Word page breaks.</li>
+<li>Production needs the usual <code>upload:r2</code> plus Worker <code>PAGES_CACHE_VERSION</code> 4.37 (or later) so cached HTML is not the old div-capture page.</li>
+</ul>
+<p>[actions]</p>
+<ul>
+<li><code>src/pages/convertWordDocumentToPdfPage.ts</code>: iframe preview + A4-ratio html2pdf capture</li>
+<li><code>src/site/tool-catalog.d/convert-word-document-to-pdf.json</code>: <code>updatedAt</code> via <code>tool:touch</code></li>
+<li><code>wrangler.jsonc</code>: <code>PAGES_CACHE_VERSION</code> 4.35 → 4.37</li>
+<li>prerender + gzip + local R2 upload for this slug</li>
+</ul>
+</article>
+      </section>
+    </main>
   </div>
   
   <footer class="site-footer border-top text-center py-3">

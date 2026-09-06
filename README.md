@@ -121,7 +121,7 @@
 - [制作 PDF 翻页书](https://onlinefreetools.org/zh/tools/make-pdf-flipbook) - 翻页预览并导出独立 HTML 文件
 - [Word 文档转 PDF](https://onlinefreetools.org/zh/tools/convert-word-document-to-pdf) - 上传 .docx 在浏览器转 PDF；版式有边界，不上传
 - [PDF 转 Word 文档](https://onlinefreetools.org/zh/tools/turn-pdf-into-word-document) - 抽取文本层导出 .docx；无 OCR，不上传
-- [在线编辑 PDF 文字](https://onlinefreetools.org/zh/tools/edit-pdf-text-online) - 编辑文本层后重排导出；扫描件无字层会失败
+- [在线编辑 PDF 文字](https://onlinefreetools.org/zh/tools/edit-pdf-text-online) - 在原页上改字，保留图片与版式；扫描件无字层会失败
 - [编辑 PDF 表单域](https://onlinefreetools.org/zh/tools/edit-pdf-form-fields) - 列出并增删/改名 AcroForm 域；文件留在本机
 - [填写 PDF 表单](https://onlinefreetools.org/zh/tools/fill-out-pdf-form) - 识别可填域并填写下载；无域则提示做成可填
 - [把 PDF 做成可填](https://onlinefreetools.org/zh/tools/make-pdf-fillable) - 给静态 PDF 加上文本域；文件留在本机
@@ -330,7 +330,7 @@ Below are our available online tools with their links (English version):
 - [Make a PDF flipbook](https://onlinefreetools.org/tools/make-pdf-flipbook) - Page-turn preview plus standalone HTML export
 - [Convert Word document to PDF](https://onlinefreetools.org/tools/convert-word-document-to-pdf) - Upload .docx and convert in the browser — layout limits, no upload
 - [Turn PDF into Word document](https://onlinefreetools.org/tools/turn-pdf-into-word-document) - Extract text layer to .docx — no OCR, no upload
-- [Edit PDF text online](https://onlinefreetools.org/tools/edit-pdf-text-online) - Edit the text layer and re-export — scanned PDFs without text fail
+- [Edit PDF text online](https://onlinefreetools.org/tools/edit-pdf-text-online) - Edit text on the original pages; photos and layout stay — scanned PDFs without text fail
 - [Edit PDF form fields](https://onlinefreetools.org/tools/edit-pdf-form-fields) - List, rename, or remove AcroForm fields — stays on device
 - [Fill out a PDF form](https://onlinefreetools.org/tools/fill-out-pdf-form) - Detect fillable fields, fill, download — no fields prompts make-fillable
 - [Make a PDF fillable](https://onlinefreetools.org/tools/make-pdf-fillable) - Add text fields to a static PDF — stays on device
