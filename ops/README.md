@@ -385,10 +385,10 @@ npm run deploy
 npm run verify:r2:live
 ```
 
-流程：`predeploy`（全量 `build:site` + lint）→ **`upload:r2`**（hash 增量；S3 优先，须本机 `.env`；见 [`worker-r2-ops.md`](./worker-r2-ops.md) §3.1；直连 CF 超时时见 §3.1.5）→ **`verify:r2`** → **git push**（Cloudflare 拉 GitHub 部署 Worker + Assets）→ **`verify:r2:live`**。
+流程：`predeploy`（全量 `build:site` + lint）→ **`upload:r2`**（hash 增量；S3 优先，须本机 `.env`；见 [`worker-r2-ops.md`](./worker-r2-ops.md) §3.1；直连 CF 超时时见 §3.1.5）→ **`upload:r2:og`**（OG 图增量；强制全量用 `upload:r2:og:full`，见 **§3.2**）→ **`verify:r2`** → **git push**（Cloudflare 拉 GitHub 部署 Worker + Assets）→ **`verify:r2:live`**。
 
 仅改少量 HTML 且不跑完整 `deploy` 时：`npm run upload:r2` → `npm run verify:r2` →（若需）push。  
-少量工具改动时：`npm run tool:touch -- --slug=<slug>` → `npm run build:site` → `npm run upload:r2` → `npm run verify:r2` → `npm run commit:tools:changed -- --slug=<slug> -m "tools: update <slug>"` → `git push`。构建总是全量；上传只看 `.html.gz` hash 与上次上传 manifest 的差异，不看 git 工作树、最新 commit 或最新 push。
+少量工具改动时：`npm run tool:touch -- --slug=<slug>` → `npm run build:site` → `npm run upload:r2` →（若改了 `public/og/tools`）`npm run upload:r2:og` → `npm run verify:r2` → `npm run commit:tools:changed -- --slug=<slug> -m "tools: update <slug>"` → `git push`。构建总是全量；HTML 上传只看 `.html.gz` hash；OG 上传只看位图 hash。不看 git 工作树、最新 commit 或最新 push。
 仅改 Worker、HTML 未变：`npm run deploy:skip-upload` 后再 push。  
 紧急本机直发：`npm run deploy:worker-only`（或 `node scripts/deploy-site.mjs --wrangler-deploy`）。裸 `npx wrangler deploy` **不**灌 R2、**不**做版本校验。
 

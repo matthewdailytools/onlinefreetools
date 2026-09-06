@@ -71,12 +71,15 @@ npx wrangler r2 bucket create assets                         # 公开 OG 图；D
 | `npm run upload:r2` | 默认增量：按上次成功上传 manifest 的 `fileHashes` 比较，只上传 hash 不同的 `.html.gz`，并重写 `_meta/pages-build.json` |
 | `npm run upload:r2:full` | 强制全量上传 `_pages/**/*.html.gz` |
 | `npm run upload:r2:og` | 默认增量：把 `public/og/tools/*` 同步到公开桶 `assets`（自定义域 `assets.onlinefreetools.org`） |
-| `npm run upload:r2:og:full` | 强制全量上传 OG 位图 |
+| `npm run upload:r2:og:full` | 强制全量上传 OG 位图（忽略 hash，全部再 Put） |
+| `npm run upload:r2:og -- --dry-run` | 只打印将上传的 OG object key，**不**写桶、**不**写本地 manifest |
+| `npm run upload:r2:og -- --s3` | 强制 S3（缺凭据或桶 403 则失败；不回退 wrangler） |
+| `npm run upload:r2:og -- --wrangler` | 强制逐文件 wrangler put（慢） |
 | `npm run upload:r2:local` | 同步到**本地** wrangler 模拟桶（`getPlatformProxy`） |
 | `npm run verify:r2` | 校验 R2 清单与 `PAGES_CACHE_VERSION` / 本地 contentHash 一致；有 S3 凭据时与 `upload:r2` 一样优先走 S3 读取 |
 | `npm run verify:r2:live` | 同上 + 请求生产 `/api/ops/pages-build`（**等 CF 部署完成后再跑**） |
-| `npm run deploy` | 默认：全量 build + lint → upload:r2（hash 增量）→ verify → **打印 git push 步骤**；默认不 live |
-| `npm run deploy:full` | 强制全量 build + 全量 upload + verify |
+| `npm run deploy` | 默认：全量 build + lint → upload:r2（hash 增量）→ upload:r2:og（hash 增量）→ verify → **打印 git push 步骤**；默认不 live |
+| `npm run deploy:full` | 强制全量 build + 全量 HTML upload + 全量 OG upload + verify |
 | `npm run deploy:skip-upload` | 跳过上传，仍 verify + 提示 push |
 | `npm run stage:tools:changed` | 只 stage 变更/新增工具相关路径；可加 `-- --slug=a,b` |
 | `npm run commit:tools:changed` | 只 commit 变更/新增工具相关路径；建议显式 `-- --slug=a,b -m "tools: update ..."` |
@@ -134,11 +137,12 @@ npx wrangler r2 bucket create assets                         # 公开 OG 图；D
 3. 在 **Account Details**（账户详情）区域，点 **API Tokens** 旁的 **Manage**（管理）。
 4. 选择 **Create Account API token** 或 **Create User API token**（个人常用 User；账号级仅 Super Administrator 可管）。
 5. **Permissions（权限）**选 **Object Read & Write**（对象读与写）。可 **Apply to specific buckets only**，勾选 `onlinefreetools-pages`（及若需要的 preview 桶）**以及** 公开媒体桶 `assets`（否则 `upload:r2:og` 会 403）。
-6. 创建成功后页面会显示：
+6. **不能改已有 Token 的桶范围或 Secret**：Dashboard 看不到第二次 Secret，也不能给旧 Token 加 `assets`。缺桶权限时必须 **Create** 一把新 Token（同时勾选 HTML 桶 + `assets`），把新 Access Key / Secret 写入 `.env`，确认 S3 路径可用后再 **Revoke** 旧 Token。详见 **§3.2.3**。
+7. 创建成功后页面会显示：
    - **Access Key ID** → 写入 `.env` 的 `R2_ACCESS_KEY_ID`
    - **Secret Access Key** → 写入 `.env` 的 `R2_SECRET_ACCESS_KEY`  
    Secret **只显示一次**，关掉页面后无法再看，务必当场保存到本机 `.env`。
-7. 同页或账户详情中确认 **Account ID**，写入 `R2_ACCOUNT_ID`（也可用本机 `wrangler whoami`，见下）。
+8. 同页或账户详情中确认 **Account ID**，写入 `R2_ACCOUNT_ID`（也可用本机 `wrangler whoami`，见下）。
 
 #### 3.1.3 在本机写入与校验
 
@@ -269,23 +273,101 @@ git push
 
 ### 3.2 公开 OG 图（R2 桶 `assets`）
 
-工具 SERP/OG 位图源文件仍在 `public/og/tools/` 并**提交 Git**（截图脚本产出）。它们 **不** 随 GitHub → Cloudflare 进 Worker Static Assets：`public/.assetsignore` 排除 `og/tools/`。
+工具 SERP/OG 位图源文件仍在 `public/og/tools/` 并**提交 Git**（截图脚本 `npm run seo:capture-og` 产出）。它们 **不** 随 GitHub → Cloudflare 进 Worker Static Assets：`public/.assetsignore` 排除 `og/tools/`。
 
-公开 URL 由自定义域提供：
+| 层 | 路径 / URL |
+|---|---|
+| 本地源（Git） | `public/og/tools/{slug}.webp`（亦支持 png/jpg/jpeg/avif） |
+| R2 object key | `og/tools/{slug}.webp`（桶名默认 `assets`，可用 `R2_ASSETS_BUCKET` 覆盖） |
+| 公开 URL | `https://assets.onlinefreetools.org/og/tools/{slug}.webp` |
+| 页面引用 | `resolveToolOgImageUrl` → `og:image` / `twitter:image` / 正文 `<img>` / JSON-LD，三者同一绝对 URL |
+| 无 per-slug 图 | 回退主域 Assets：`https://onlinefreetools.org/og-image.png` |
 
-`https://assets.onlinefreetools.org/og/tools/{slug}.webp`
+Worker **没有** 绑定这个桶；自定义域直接打到 R2。本地 `wrangler dev` 也不会从 Assets 提供 `/og/tools/`，页内 `<img>` 走生产 CDN。
 
-对应 object key：`og/tools/{slug}.webp`。页面 `og:image` / 正文 `<img>` / JSON-LD 由 `resolveToolOgImageUrl` 指向该域。默认站图 `og-image.png` 仍在主域 Assets。
+#### 3.2.1 命令：增量 vs 强制全量
 
 ```bash
-npm run upload:r2:og              # 默认增量（sha256 vs `_meta/og-tools-manifest.json`）
-npm run upload:r2:og:full         # 强制全量
-npm run upload:r2:og -- --dry-run
+npm run upload:r2:og              # 默认增量：只传 hash 变化或新增的文件
+npm run upload:r2:og:full         # 强制全量：public/og/tools 下全部再 Put
+npm run upload:r2:og -- --dry-run # 只打印 key，不写桶、不写 .cache 清单
+npm run upload:r2:og -- --s3      # 强制 S3（Token 未含 assets 会失败，不回退）
+npm run upload:r2:og -- --wrangler
 ```
 
-`npm run deploy` 会在 HTML `upload:r2` 之后自动跑 `upload:r2:og`。截完新图后也可单独上传，不必等全站 deploy。
+`upload:r2:og` 的 npm 脚本带 `--changed-only`。要强制全部上传，用 **`npm run upload:r2:og:full`**（不传该旗标），不要再给 `upload:r2:og` 加一个不存在的 `--full`。
 
-S3 Token 若限定了桶，必须包含 `assets`，否则 PutObject 403。脚本会自动回退 `wrangler r2 object put`（较慢）。本机代理与 HTML 上传相同（`R2_HTTPS_PROXY`）；wrangler 回退路径走 Cloudflare API，不一定走同一 SOCKS。
+增量对比：
+
+1. 计算每个本地文件的 sha256。
+2. 优先读远端 `assets` 桶 `_meta/og-tools-manifest.json` 的 `fileHashes`；GetObject 403/404 时回退本地 `.cache/og-tools-upload.json`（该文件 gitignore）。
+3. `--changed-only`：只上传 hash 不同或清单里没有的 key。
+4. 成功后重写远端 `_meta/og-tools-manifest.json`（`Cache-Control: no-store`）和本地 `.cache` 副本。清单公开可读，只含文件名与 hash。
+
+`--dry-run` **不会**把「假装已上传」写进本地 manifest（否则下一次增量会误判 hashes match、实际桶是空的）。
+
+`npm run deploy` 在 HTML `upload:r2` 之后自动跑 **增量** `upload:r2:og`。`npm run deploy:full` 跑 `:og:full`。截完新图也可单独 `upload:r2:og`，不必等全站 deploy。
+
+#### 3.2.2 发版顺序（避免主域 404）
+
+`.assetsignore` 随 Worker 部署生效后，`https://onlinefreetools.org/og/tools/…` 不再由 Assets 提供。因此：
+
+1. 先 `npm run upload:r2:og`（图已在自定义域）。
+2. 再 `npm run build:site` + `npm run upload:r2`（预渲染 HTML 里的 `og:image` / `<img>` 指向 `assets.onlinefreetools.org`）。
+3. 最后 `git push`（CF 拉仓库；OG 文件入库但不进 Worker Assets）。
+
+只改图、HTML 里 URL 已是 CDN：只需 `upload:r2:og`（或 `:full`），不必 push。  
+只改 `ogImage.ts` / 布局、图已在桶里：必须 `build:site` + `upload:r2`，否则线上仍是旧主域路径。
+
+#### 3.2.3 给 S3 Token 加上 `assets` 桶（不能改旧 Token）
+
+官方：[R2 API tokens](https://developers.cloudflare.com/r2/api/tokens/)。**不要**用 My Profile → API Tokens（那是 wrangler REST）。
+
+现有 Token 若创建时只勾了 `onlinefreetools-pages`，PutObject `assets` 会 **403**。脚本会探测一次 S3，失败则回退 `wrangler r2 object put`（并发最高 6，较慢）。要走快路径：
+
+1. Dashboard → **R2** → Overview → Account Details → **API Tokens → Manage**。
+2. **Create User API token**（或 Account token）。
+3. Permissions：**Object Read & Write**。
+4. **Apply to specific buckets only**，同时勾选：
+   - `onlinefreetools-pages`（HTML gzip；漏勾则原来的 `upload:r2` 会坏）
+   - `onlinefreetools-pages-preview`（若 preview 也用这把 Key）
+   - **`assets`**（OG 图）
+5. 把新 **Access Key ID** / **Secret Access Key** 写入仓库根 `.env` 的 `R2_ACCESS_KEY_ID` / `R2_SECRET_ACCESS_KEY`（勿加引号、勿提交）。`R2_ACCOUNT_ID` 不用改。
+6. 校验后再 Revoke 旧 Token。
+
+```bash
+npm run upload:r2:og -- --dry-run
+# 期望：transport=s3
+# 不应出现：S3 PutObject 403 / falling back to wrangler / remote manifest unread (AccessDenied)
+npm run upload:r2:og
+```
+
+本机代理与 HTML 上传相同（`R2_HTTPS_PROXY`，见 §3.1.5）。**wrangler 回退不走该 S3 代理**，走 Cloudflare API / wrangler 登录态。
+
+#### 3.2.4 校验与缓存
+
+```bash
+curl -sI "https://assets.onlinefreetools.org/og/tools/{slug}.webp"
+# 期望：HTTP 200、content-type: image/webp、cache-control: public, max-age=2592000
+```
+
+对象 Put 时带 `Cache-Control: public, max-age=2592000`（约 30 天，无 `immutable`）。**同 key 覆盖**后边缘可能仍旧：
+
+- Dashboard → **Caching** → Configuration，对 `assets.onlinefreetools.org` **Purge**（可按 URL 清单张）。
+- 或等 TTL；排障可给 URL 加无意义 query（仅浏览器，爬虫/OG 抓取通常不带）。
+
+主域抽检：`.assetsignore` 生效后 `https://onlinefreetools.org/og/tools/{slug}.webp` 应为 miss/404。
+
+#### 3.2.5 排障
+
+| 现象 | 处理 |
+|---|---|
+| `S3 PutObject 403` / `AccessDenied` | Token 未含桶 `assets` → §3.2.3 新建 Token；临时可 `--wrangler` 或等脚本自动回退 |
+| dry-run / 增量 `hashes match` 但 CDN 404 | 以前 dry-run 写过本地 manifest 的旧 bug 已修；删 `.cache/og-tools-upload.json` 后跑 `:full` |
+| `transport=wrangler` 且慢 | `.env` 无 S3 凭据，或 S3 探测 403 已回退；配齐 Token 含 `assets` |
+| 图已传、工具页仍主域 `/og/tools/` | 未 `build:site` + `upload:r2`，R2 里仍是旧 HTML |
+| 新图 URL 对但画面旧 | CDN 30 天缓存 → §3.2.4 Purge |
+| 截图后忘记上传 | `npm run seo:capture-og …` 只写本地；必须再 `upload:r2:og` |
 
 ---
 

@@ -18,7 +18,7 @@
  * 等价 npm：npm run start:dev
  */
 import { spawn, execSync } from 'node:child_process';
-import { openSync, unlinkSync } from 'node:fs';
+import { openSync, unlinkSync, statSync } from 'node:fs';
 import path from 'node:path';
 import {
   writeWranglerConfigWithoutRemoteBindings,
@@ -303,6 +303,25 @@ const main = async () => {
       if (fatal?.includes('Address already in use')) {
         const blocker = findPidByPort(port);
         console.error(`  Port ${port} may be blocked by PID ${blocker ?? 'unknown'}. Run: npm run stop:dev`);
+      }
+      /** 空日志时补充诊断：常见是默认 8787 被其他仓库 wrangler 占用 */
+      try {
+        if (statSync(logFilePath).size === 0) {
+          console.error('  Log is empty — wrangler may not have started writing (spawn hang or wrong port).');
+          const defaultBlocker = describePortBlocker(defaultDevPort);
+          if (port !== defaultDevPort && defaultBlocker && !defaultBlocker.ours) {
+            console.error(
+              `  Note: default port ${defaultDevPort} is held by another app (PID ${defaultBlocker.pid}). Keep using --port ${port}.`
+            );
+          }
+          if (port === defaultDevPort && defaultBlocker && !defaultBlocker.ours) {
+            console.error(
+              `  Port ${defaultDevPort} is used by another app (PID ${defaultBlocker.pid}). Try: npm run start:dev -- --port 8788`
+            );
+          }
+        }
+      } catch {
+        // 日志文件缺失
       }
       await cleanupDevServer(port);
       process.exit(1);

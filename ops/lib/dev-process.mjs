@@ -492,6 +492,8 @@ export const readDevLogFatalError = async () => {
 
 /**
  * 等待 wrangler 日志出现 Ready 且 HTTP 可访问。
+ * macOS/Linux 上 wrangler 可能打印 `127.0.0.1` 或 `localhost`；
+ * 若日志缓冲/重定向导致长时间为空，则以端口健康检查为准（避免误报超时）。
  * @param {number} port
  * @param {{ timeoutMs?: number, pollMs?: number, host?: string }} [opts]
  * @returns {Promise<boolean>}
@@ -499,19 +501,44 @@ export const readDevLogFatalError = async () => {
 export const waitForDevReady = async (port = defaultDevPort, opts = {}) => {
   const { timeoutMs = 90_000, pollMs = 500, host = defaultDevHost } = opts;
   const deadline = Date.now() + timeoutMs;
-  const readyNeedle = `Ready on http://${host}:${port}`;
+  /** wrangler 在不同 OS 上 Ready 行主机名不一致 */
+  const readyNeedles = [
+    `Ready on http://${host}:${port}`,
+    `Ready on http://127.0.0.1:${port}`,
+    `Ready on http://localhost:${port}`,
+  ];
+  /** 连续健康检查通过次数（防 workerd 刚 bind 尚未可服务） */
+  let healthyStreak = 0;
 
   while (Date.now() < deadline) {
     const fatal = await readDevLogFatalError();
     if (fatal) return false;
 
+    const healthy = await healthCheck(port, host);
+    if (healthy) {
+      healthyStreak += 1;
+    } else {
+      healthyStreak = 0;
+    }
+
     try {
       const log = await fs.readFile(logFilePath, 'utf-8');
-      if (log.includes(readyNeedle) && (await healthCheck(port, host))) {
+      const sawReady = readyNeedles.some((needle) => log.includes(needle));
+      if (sawReady && healthy) {
+        return true;
+      }
+      /**
+       * 日志为空或未刷出 Ready，但本机端口已连续可服务：
+       * detached + 共享 fd 偶发不写盘时，仍视为就绪。
+       */
+      if (healthyStreak >= 3) {
         return true;
       }
     } catch {
-      // 日志尚未创建
+      // 日志尚未创建：仅依赖健康检查 streak
+      if (healthyStreak >= 3) {
+        return true;
+      }
     }
     await new Promise((resolve) => setTimeout(resolve, pollMs));
   }

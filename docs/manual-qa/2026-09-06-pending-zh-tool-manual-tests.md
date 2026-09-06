@@ -1,0 +1,375 @@
+# 待手动测试 — 最近修改的中文工具页
+
+- **生成时间**：2026-09-06 01:30（本地）
+- **范围**：git `since=2026-09-04` 触及 `src/pages` / `src/site/i18n/tools` / catalog 的工具
+- **排序**：按最后提交时间倒序
+- **共**：84 个
+- **主测**：中文页 `/zh/tools/{slug}`
+- **对照**：英文页 `/tools/{slug}`（默认语无前缀）
+- **本地预览**（若 `start:dev --port 8788`）：把主机换成 `http://127.0.0.1:8788`
+
+## 检查项（每页）
+
+- [ ] 页面 200，H1 / 标题可读
+- [ ] How 有序步骤可执行（`how_item_*` 若有）
+- [ ] Load sample / 主按钮可跑通
+- [ ] 文案与真实能力一致（无 OCR / 选文件等模板污染）
+- [ ] FAQ / Rules 与邻近工具差异说得清
+
+
+## 2026-09-06
+
+- [ ] **向 PDF 文件添加文字**  
+  - 中文：https://onlinefreetools.org/zh/tools/add-text-to-pdf-file  
+  - 英文：https://onlinefreetools.org/tools/add-text-to-pdf-file  
+  - 提交：`a8417be9` 2026-09-06 01:15 — tools: add ordered how steps and fix PDF template pollution
+- [ ] **Base64 编解码 — 在浏览器内转换文本**  
+  - 中文：https://onlinefreetools.org/zh/tools/base64  
+  - 英文：https://onlinefreetools.org/tools/base64  
+  - 提交：`a8417be9` 2026-09-06 01:15 — tools: add ordered how steps and fix PDF template pollution
+- [ ] **CSV ↔ JSON 互转 — 类型、分隔符、本地处理**  
+  - 中文：https://onlinefreetools.org/zh/tools/csv-json  
+  - 英文：https://onlinefreetools.org/tools/csv-json  
+  - 提交：`a8417be9` 2026-09-06 01:15 — tools: add ordered how steps and fix PDF template pollution
+- [ ] **hreflang 标签生成器 — 为多语网站生成语言标注**  
+  - 中文：https://onlinefreetools.org/zh/tools/hreflang-generator  
+  - 英文：https://onlinefreetools.org/tools/hreflang-generator  
+  - 提交：`a8417be9` 2026-09-06 01:15 — tools: add ordered how steps and fix PDF template pollution
+- [ ] **HTML 实体编解码 — 转义、反转义、本地处理**  
+  - 中文：https://onlinefreetools.org/zh/tools/html-entity  
+  - 英文：https://onlinefreetools.org/tools/html-entity  
+  - 提交：`a8417be9` 2026-09-06 01:15 — tools: add ordered how steps and fix PDF template pollution
+- [ ] **JSON Schema 校验器 — 路径错误与本地处理**  
+  - 中文：https://onlinefreetools.org/zh/tools/json-schema-validator  
+  - 英文：https://onlinefreetools.org/tools/json-schema-validator  
+  - 提交：`a8417be9` 2026-09-06 01:15 — tools: add ordered how steps and fix PDF template pollution
+- [ ] **JWT 解码 — 本地查看 Header 与 Payload（不验签）**  
+  - 中文：https://onlinefreetools.org/zh/tools/jwt-decoder  
+  - 英文：https://onlinefreetools.org/tools/jwt-decoder  
+  - 提交：`a8417be9` 2026-09-06 01:15 — tools: add ordered how steps and fix PDF template pollution
+- [ ] **磁力链接解析 — 本地查看 info hash 与 tracker**  
+  - 中文：https://onlinefreetools.org/zh/tools/magnet-link-decoder  
+  - 英文：https://onlinefreetools.org/tools/magnet-link-decoder  
+  - 提交：`a8417be9` 2026-09-06 01:15 — tools: add ordered how steps and fix PDF template pollution
+- [ ] **Markdown ↔ HTML 转换 — 预览与安全清理**  
+  - 中文：https://onlinefreetools.org/zh/tools/markdown-to-html  
+  - 英文：https://onlinefreetools.org/tools/markdown-to-html  
+  - 提交：`a8417be9` 2026-09-06 01:15 — tools: add ordered how steps and fix PDF template pollution
+- [ ] **Google 搜索结果预览 — 查看标题与描述截断效果**  
+  - 中文：https://onlinefreetools.org/zh/tools/meta-serp-preview  
+  - 英文：https://onlinefreetools.org/tools/meta-serp-preview  
+  - 提交：`a8417be9` 2026-09-06 01:15 — tools: add ordered how steps and fix PDF template pollution
+- [ ] **Meta 标签生成器 — 一键生成完整的网页头部标签**  
+  - 中文：https://onlinefreetools.org/zh/tools/meta-tag-generator  
+  - 英文：https://onlinefreetools.org/tools/meta-tag-generator  
+  - 提交：`a8417be9` 2026-09-06 01:15 — tools: add ordered how steps and fix PDF template pollution
+- [ ] **页面 SEO 检查器 — 找出并修复页面标签问题**  
+  - 中文：https://onlinefreetools.org/zh/tools/on-page-seo-checker  
+  - 英文：https://onlinefreetools.org/tools/on-page-seo-checker  
+  - 提交：`a8417be9` 2026-09-06 01:15 — tools: add ordered how steps and fix PDF template pollution
+- [ ] **Open Graph 预览 — 检查社交分享卡片**  
+  - 中文：https://onlinefreetools.org/zh/tools/open-graph-preview  
+  - 英文：https://onlinefreetools.org/tools/open-graph-preview  
+  - 提交：`a8417be9` 2026-09-06 01:15 — tools: add ordered how steps and fix PDF template pollution
+- [ ] **随机密码生成 — 在浏览器内创建密码**  
+  - 中文：https://onlinefreetools.org/zh/tools/password-generator  
+  - 英文：https://onlinefreetools.org/tools/password-generator  
+  - 提交：`a8417be9` 2026-09-06 01:15 — tools: add ordered how steps and fix PDF template pollution
+- [ ] **PDF 转 Markdown — 在浏览器里抽出文本做笔记**  
+  - 中文：https://onlinefreetools.org/zh/tools/pdf-to-markdown  
+  - 英文：https://onlinefreetools.org/tools/pdf-to-markdown  
+  - 提交：`a8417be9` 2026-09-06 01:15 — tools: add ordered how steps and fix PDF template pollution
+- [ ] **Robots.txt 生成器 — 管理允许与禁止并配置 AI 爬虫**  
+  - 中文：https://onlinefreetools.org/zh/tools/robots-txt-generator  
+  - 英文：https://onlinefreetools.org/tools/robots-txt-generator  
+  - 提交：`a8417be9` 2026-09-06 01:15 — tools: add ordered how steps and fix PDF template pollution
+- [ ] **JSON-LD 生成器 — 生成 FAQ、文章与面包屑的结构化数据**  
+  - 中文：https://onlinefreetools.org/zh/tools/schema-jsonld-generator  
+  - 英文：https://onlinefreetools.org/tools/schema-jsonld-generator  
+  - 提交：`a8417be9` 2026-09-06 01:15 — tools: add ordered how steps and fix PDF template pollution
+- [ ] **XML Sitemap 生成器 — 从 URL 列表生成 sitemap.xml**  
+  - 中文：https://onlinefreetools.org/zh/tools/sitemap-xml-generator  
+  - 英文：https://onlinefreetools.org/tools/sitemap-xml-generator  
+  - 提交：`a8417be9` 2026-09-06 01:15 — tools: add ordered how steps and fix PDF template pollution
+- [ ] **UTM 链接生成器 — 创建活动追踪链接**  
+  - 中文：https://onlinefreetools.org/zh/tools/utm-builder  
+  - 英文：https://onlinefreetools.org/tools/utm-builder  
+  - 提交：`a8417be9` 2026-09-06 01:15 — tools: add ordered how steps and fix PDF template pollution
+- [ ] **UUID / ULID 生成 — 在浏览器内创建标识符**  
+  - 中文：https://onlinefreetools.org/zh/tools/uuid-generator  
+  - 英文：https://onlinefreetools.org/tools/uuid-generator  
+  - 提交：`a8417be9` 2026-09-06 01:15 — tools: add ordered how steps and fix PDF template pollution
+- [ ] **YAML ↔ JSON 互转 — 类型规则、多文档、本地处理**  
+  - 中文：https://onlinefreetools.org/zh/tools/yaml-json  
+  - 英文：https://onlinefreetools.org/tools/yaml-json  
+  - 提交：`a8417be9` 2026-09-06 01:15 — tools: add ordered how steps and fix PDF template pollution
+- [ ] **在线编辑 PDF 文本**  
+  - 中文：https://onlinefreetools.org/zh/tools/edit-pdf-text-online  
+  - 英文：https://onlinefreetools.org/tools/edit-pdf-text-online  
+  - 提交：`a8417be9` 2026-09-06 01:15 — tools: add ordered how steps and fix PDF template pollution
+- [ ] **从 PDF 提取文本**  
+  - 中文：https://onlinefreetools.org/zh/tools/extract-text-from-pdf  
+  - 英文：https://onlinefreetools.org/tools/extract-text-from-pdf  
+  - 提交：`a8417be9` 2026-09-06 01:15 — tools: add ordered how steps and fix PDF template pollution
+- [ ] **将 PDF 转为可编辑文本文档**  
+  - 中文：https://onlinefreetools.org/zh/tools/turn-pdf-into-editable-document  
+  - 英文：https://onlinefreetools.org/tools/turn-pdf-into-editable-document  
+  - 提交：`a8417be9` 2026-09-06 01:15 — tools: add ordered how steps and fix PDF template pollution
+- [ ] **在线编写 PDF 文档**  
+  - 中文：https://onlinefreetools.org/zh/tools/write-pdf-document-online  
+  - 英文：https://onlinefreetools.org/tools/write-pdf-document-online  
+  - 提交：`a8417be9` 2026-09-06 01:15 — tools: add ordered how steps and fix PDF template pollution
+- [ ] **Android 提示词生成器 — 本地组装 Prompt，可选 AI 扩写**  
+  - 中文：https://onlinefreetools.org/zh/tools/android-prompt-builder  
+  - 英文：https://onlinefreetools.org/tools/android-prompt-builder  
+  - 提交：`3d1d4d76` 2026-09-06 00:58 — text: correct capabilities, SEO facts, and prompt i18n
+- [ ] **在线对比两个文本文件**  
+  - 中文：https://onlinefreetools.org/zh/tools/compare-two-text-files-online  
+  - 英文：https://onlinefreetools.org/tools/compare-two-text-files-online  
+  - 提交：`3d1d4d76` 2026-09-06 00:58 — text: correct capabilities, SEO facts, and prompt i18n
+- [ ] **对比两份 Word 文档的差异**  
+  - 中文：https://onlinefreetools.org/zh/tools/compare-two-word-documents-for-differences  
+  - 英文：https://onlinefreetools.org/tools/compare-two-word-documents-for-differences  
+  - 提交：`3d1d4d76` 2026-09-06 00:58 — text: correct capabilities, SEO facts, and prompt i18n
+- [ ] **对比 Excel 文件**  
+  - 中文：https://onlinefreetools.org/zh/tools/excel-compare-files  
+  - 英文：https://onlinefreetools.org/tools/excel-compare-files  
+  - 提交：`3d1d4d76` 2026-09-06 00:58 — text: correct capabilities, SEO facts, and prompt i18n
+- [ ] **电影剧本提示词生成器 — 在浏览器拼装三幕分场提示词，可选 AI**  
+  - 中文：https://onlinefreetools.org/zh/tools/film-prompt-builder  
+  - 英文：https://onlinefreetools.org/tools/film-prompt-builder  
+  - 提交：`3d1d4d76` 2026-09-06 00:58 — text: correct capabilities, SEO facts, and prompt i18n
+- [ ] **iOS 提示词生成器 — 本地组装 Prompt，可选 AI 扩写**  
+  - 中文：https://onlinefreetools.org/zh/tools/ios-prompt-builder  
+  - 英文：https://onlinefreetools.org/tools/ios-prompt-builder  
+  - 提交：`3d1d4d76` 2026-09-06 00:58 — text: correct capabilities, SEO facts, and prompt i18n
+- [ ] **在线 JSON 差异检查**  
+  - 中文：https://onlinefreetools.org/zh/tools/json-diff-checker-online  
+  - 英文：https://onlinefreetools.org/tools/json-diff-checker-online  
+  - 提交：`3d1d4d76` 2026-09-06 00:58 — text: correct capabilities, SEO facts, and prompt i18n
+- [ ] **Midjourney 提示词生成器 — 浏览器内拼装，可选 AI 扩写**  
+  - 中文：https://onlinefreetools.org/zh/tools/midjourney-prompt-builder  
+  - 英文：https://onlinefreetools.org/tools/midjourney-prompt-builder  
+  - 提交：`3d1d4d76` 2026-09-06 00:58 — text: correct capabilities, SEO facts, and prompt i18n
+- [ ] **产品设计提示词生成器 — 本地组装 UX 简报，可选 AI 扩写**  
+  - 中文：https://onlinefreetools.org/zh/tools/product-design-prompt-builder  
+  - 英文：https://onlinefreetools.org/tools/product-design-prompt-builder  
+  - 提交：`3d1d4d76` 2026-09-06 00:58 — text: correct capabilities, SEO facts, and prompt i18n
+- [ ] **短剧提示词生成器 — 在浏览器拼装竖屏分集钩子提示词，可选 AI**  
+  - 中文：https://onlinefreetools.org/zh/tools/short-drama-prompt-generator  
+  - 英文：https://onlinefreetools.org/tools/short-drama-prompt-generator  
+  - 提交：`3d1d4d76` 2026-09-06 00:58 — text: correct capabilities, SEO facts, and prompt i18n
+- [ ] **Sketch.app Prompt 生成器 — 本地 + 可选 AI**  
+  - 中文：https://onlinefreetools.org/zh/tools/sketch-prompt-generator  
+  - 英文：https://onlinefreetools.org/tools/sketch-prompt-generator  
+  - 提交：`3d1d4d76` 2026-09-06 00:58 — text: correct capabilities, SEO facts, and prompt i18n
+- [ ] **查看两段文本的差异**  
+  - 中文：https://onlinefreetools.org/zh/tools/text-diff  
+  - 英文：https://onlinefreetools.org/tools/text-diff  
+  - 提交：`3d1d4d76` 2026-09-06 00:58 — text: correct capabilities, SEO facts, and prompt i18n
+- [ ] **写作 Prompt 生成器 — 本地 + 可选 AI**  
+  - 中文：https://onlinefreetools.org/zh/tools/writing-prompt-generator  
+  - 英文：https://onlinefreetools.org/tools/writing-prompt-generator  
+  - 提交：`3d1d4d76` 2026-09-06 00:58 — text: correct capabilities, SEO facts, and prompt i18n
+- [ ] **批量计算发版文件校验和**  
+  - 中文：https://onlinefreetools.org/zh/tools/batch-checksum-release-files  
+  - 英文：https://onlinefreetools.org/tools/batch-checksum-release-files  
+  - 提交：`3d1d4d76` 2026-09-06 00:58 — text: correct capabilities, SEO facts, and prompt i18n
+- [ ] **批量给商品图加水印**  
+  - 中文：https://onlinefreetools.org/zh/tools/batch-watermark-product-photos  
+  - 英文：https://onlinefreetools.org/tools/batch-watermark-product-photos  
+  - 提交：`3d1d4d76` 2026-09-06 00:58 — text: correct capabilities, SEO facts, and prompt i18n
+- [ ] **ChatGPT 导出转 Markdown**  
+  - 中文：https://onlinefreetools.org/zh/tools/chatgpt-export-to-markdown  
+  - 英文：https://onlinefreetools.org/tools/chatgpt-export-to-markdown  
+  - 提交：`3d1d4d76` 2026-09-06 00:58 — text: correct capabilities, SEO facts, and prompt i18n
+- [ ] **Prompt 模板构建器 — 本地 + 可选 AI**  
+  - 中文：https://onlinefreetools.org/zh/tools/prompt-template-builder  
+  - 英文：https://onlinefreetools.org/tools/prompt-template-builder  
+  - 提交：`3d1d4d76` 2026-09-06 00:58 — text: correct capabilities, SEO facts, and prompt i18n
+
+## 2026-09-05
+
+- [ ] **检查 PDF/A 指标**  
+  - 中文：https://onlinefreetools.org/zh/tools/check-pdf-a-compliance  
+  - 英文：https://onlinefreetools.org/tools/check-pdf-a-compliance  
+  - 提交：`122fdca3` 2026-09-05 21:40 — pdf: correct capabilities and information gain
+- [ ] **对比两个 PDF**  
+  - 中文：https://onlinefreetools.org/zh/tools/compare-two-pdfs  
+  - 英文：https://onlinefreetools.org/tools/compare-two-pdfs  
+  - 提交：`122fdca3` 2026-09-05 21:40 — pdf: correct capabilities and information gain
+- [ ] **将 HTML 转换为 PDF**  
+  - 中文：https://onlinefreetools.org/zh/tools/convert-html-to-pdf  
+  - 英文：https://onlinefreetools.org/tools/convert-html-to-pdf  
+  - 提交：`122fdca3` 2026-09-05 21:40 — pdf: correct capabilities and information gain
+- [ ] **将 Word 文档转换为 PDF**  
+  - 中文：https://onlinefreetools.org/zh/tools/convert-word-document-to-pdf  
+  - 英文：https://onlinefreetools.org/tools/convert-word-document-to-pdf  
+  - 提交：`122fdca3` 2026-09-05 21:40 — pdf: correct capabilities and information gain
+- [ ] **制作 PDF 翻页书**  
+  - 中文：https://onlinefreetools.org/zh/tools/make-pdf-flipbook  
+  - 英文：https://onlinefreetools.org/tools/make-pdf-flipbook  
+  - 提交：`122fdca3` 2026-09-05 21:40 — pdf: correct capabilities and information gain
+- [ ] **为 PDF 添加可见完整性标记**  
+  - 中文：https://onlinefreetools.org/zh/tools/add-digital-signature-to-pdf  
+  - 英文：https://onlinefreetools.org/tools/add-digital-signature-to-pdf  
+  - 提交：`122fdca3` 2026-09-05 21:40 — pdf: correct capabilities and information gain
+- [ ] **将文件合并为一个 PDF**  
+  - 中文：https://onlinefreetools.org/zh/tools/combine-files-into-one-pdf  
+  - 英文：https://onlinefreetools.org/tools/combine-files-into-one-pdf  
+  - 提交：`122fdca3` 2026-09-05 21:40 — pdf: correct capabilities and information gain
+- [ ] **缩小 PDF 文件体积**  
+  - 中文：https://onlinefreetools.org/zh/tools/compress-pdf  
+  - 英文：https://onlinefreetools.org/tools/compress-pdf  
+  - 提交：`122fdca3` 2026-09-05 21:40 — pdf: correct capabilities and information gain
+- [ ] **将 PDF 文本导出为 AutoCAD 可用 DXF**  
+  - 中文：https://onlinefreetools.org/zh/tools/convert-pdf-to-dwg  
+  - 英文：https://onlinefreetools.org/tools/convert-pdf-to-dwg  
+  - 提交：`122fdca3` 2026-09-05 21:40 — pdf: correct capabilities and information gain
+- [ ] **裁切 PDF — 在浏览器里修剪页边距**  
+  - 中文：https://onlinefreetools.org/zh/tools/crop-pdf  
+  - 英文：https://onlinefreetools.org/tools/crop-pdf  
+  - 提交：`122fdca3` 2026-09-05 21:40 — pdf: correct capabilities and information gain
+- [ ] **把多个 PDF 合并成一份**  
+  - 中文：https://onlinefreetools.org/zh/tools/merge-pdf  
+  - 英文：https://onlinefreetools.org/tools/merge-pdf  
+  - 提交：`122fdca3` 2026-09-05 21:40 — pdf: correct capabilities and information gain
+- [ ] **在浏览器中打开 PDF**  
+  - 中文：https://onlinefreetools.org/zh/tools/open-pdf-in-browser  
+  - 英文：https://onlinefreetools.org/tools/open-pdf-in-browser  
+  - 提交：`122fdca3` 2026-09-05 21:40 — pdf: correct capabilities and information gain
+- [ ] **整理 PDF — 在浏览器里删页或重排**  
+  - 中文：https://onlinefreetools.org/zh/tools/organize-pdf  
+  - 英文：https://onlinefreetools.org/tools/organize-pdf  
+  - 提交：`122fdca3` 2026-09-05 21:40 — pdf: correct capabilities and information gain
+- [ ] **给 PDF 加页码 — 在浏览器里完成**  
+  - 中文：https://onlinefreetools.org/zh/tools/pdf-page-numbers  
+  - 英文：https://onlinefreetools.org/tools/pdf-page-numbers  
+  - 提交：`122fdca3` 2026-09-05 21:40 — pdf: correct capabilities and information gain
+- [ ] **PDF 水印 — 在浏览器里给每一页盖上文字**  
+  - 中文：https://onlinefreetools.org/zh/tools/pdf-watermark  
+  - 英文：https://onlinefreetools.org/tools/pdf-watermark  
+  - 提交：`122fdca3` 2026-09-05 21:40 — pdf: correct capabilities and information gain
+- [ ] **打印 PDF**  
+  - 中文：https://onlinefreetools.org/zh/tools/print-pdf  
+  - 英文：https://onlinefreetools.org/tools/print-pdf  
+  - 提交：`122fdca3` 2026-09-05 21:40 — pdf: correct capabilities and information gain
+- [ ] **给 PDF 加密码保护**  
+  - 中文：https://onlinefreetools.org/zh/tools/protect-pdf  
+  - 英文：https://onlinefreetools.org/tools/protect-pdf  
+  - 提交：`122fdca3` 2026-09-05 21:40 — pdf: correct capabilities and information gain
+- [ ] **旋转 PDF — 在浏览器里把页面转正**  
+  - 中文：https://onlinefreetools.org/zh/tools/rotate-pdf  
+  - 英文：https://onlinefreetools.org/tools/rotate-pdf  
+  - 提交：`122fdca3` 2026-09-05 21:40 — pdf: correct capabilities and information gain
+- [ ] **拆分我的 PDF**  
+  - 中文：https://onlinefreetools.org/zh/tools/split-pdf  
+  - 英文：https://onlinefreetools.org/tools/split-pdf  
+  - 提交：`122fdca3` 2026-09-05 21:40 — pdf: correct capabilities and information gain
+- [ ] **解锁我的 PDF**  
+  - 中文：https://onlinefreetools.org/zh/tools/unlock-pdf  
+  - 英文：https://onlinefreetools.org/tools/unlock-pdf  
+  - 提交：`122fdca3` 2026-09-05 21:40 — pdf: correct capabilities and information gain
+- [ ] **做出一份预算表**  
+  - 中文：https://onlinefreetools.org/zh/tools/create-budget-spreadsheet  
+  - 英文：https://onlinefreetools.org/tools/create-budget-spreadsheet  
+  - 提交：`d22c00a9` 2026-09-05 20:44 — excel: ship and optimize eight scene tools
+- [ ] **做出一份 Excel 工时表**  
+  - 中文：https://onlinefreetools.org/zh/tools/create-excel-timesheet  
+  - 英文：https://onlinefreetools.org/tools/create-excel-timesheet  
+  - 提交：`d22c00a9` 2026-09-05 20:44 — excel: ship and optimize eight scene tools
+- [ ] **做出一份发票电子表**  
+  - 中文：https://onlinefreetools.org/zh/tools/create-invoice-spreadsheet  
+  - 英文：https://onlinefreetools.org/tools/create-invoice-spreadsheet  
+  - 提交：`d22c00a9` 2026-09-05 20:44 — excel: ship and optimize eight scene tools
+- [ ] **复制常用 Excel 公式**  
+  - 中文：https://onlinefreetools.org/zh/tools/excel-formulas-cheat-sheet  
+  - 英文：https://onlinefreetools.org/tools/excel-formulas-cheat-sheet  
+  - 提交：`d22c00a9` 2026-09-05 20:44 — excel: ship and optimize eight scene tools
+- [ ] **用 IFNA 包住公式**  
+  - 中文：https://onlinefreetools.org/zh/tools/wrap-formula-with-ifna  
+  - 英文：https://onlinefreetools.org/tools/wrap-formula-with-ifna  
+  - 提交：`d22c00a9` 2026-09-05 20:44 — excel: ship and optimize eight scene tools
+- [ ] **写出 Excel 的 COUNTIF 公式**  
+  - 中文：https://onlinefreetools.org/zh/tools/write-countif-formula-in-excel  
+  - 英文：https://onlinefreetools.org/tools/write-countif-formula-in-excel  
+  - 提交：`d22c00a9` 2026-09-05 20:44 — excel: ship and optimize eight scene tools
+- [ ] **写出 Excel 的 IFS 公式**  
+  - 中文：https://onlinefreetools.org/zh/tools/write-ifs-formula-in-excel  
+  - 英文：https://onlinefreetools.org/tools/write-ifs-formula-in-excel  
+  - 提交：`d22c00a9` 2026-09-05 20:44 — excel: ship and optimize eight scene tools
+- [ ] **写出 Excel 嵌套 IF 公式**  
+  - 中文：https://onlinefreetools.org/zh/tools/write-nested-if-formula-for-excel  
+  - 英文：https://onlinefreetools.org/tools/write-nested-if-formula-for-excel  
+  - 提交：`d22c00a9` 2026-09-05 20:44 — excel: ship and optimize eight scene tools
+
+## 2026-09-04
+
+- [ ] **检查网址是否被 robots.txt 屏蔽**  
+  - 中文：https://onlinefreetools.org/zh/tools/check-robots-txt-url-blocked  
+  - 英文：https://onlinefreetools.org/tools/check-robots-txt-url-blocked  
+  - 提交：`24b64ae5` 2026-09-04 20:09 — add og r2
+- [ ] **检查 SSL 证书过期时间**  
+  - 中文：https://onlinefreetools.org/zh/tools/check-ssl-certificate-expiration  
+  - 英文：https://onlinefreetools.org/tools/check-ssl-certificate-expiration  
+  - 提交：`24b64ae5` 2026-09-04 20:09 — add og r2
+- [ ] **查找并验证 XML 站点地图**  
+  - 中文：https://onlinefreetools.org/zh/tools/find-and-validate-xml-sitemap  
+  - 英文：https://onlinefreetools.org/tools/find-and-validate-xml-sitemap  
+  - 提交：`24b64ae5` 2026-09-04 20:09 — add og r2
+- [ ] **SPF DKIM DMARC 检查器**  
+  - 中文：https://onlinefreetools.org/zh/tools/spf-dkim-dmarc-checker  
+  - 英文：https://onlinefreetools.org/tools/spf-dkim-dmarc-checker  
+  - 提交：`24b64ae5` 2026-09-04 20:09 — add og r2
+- [ ] **验证 security.txt**  
+  - 中文：https://onlinefreetools.org/zh/tools/validate-security-txt  
+  - 英文：https://onlinefreetools.org/tools/validate-security-txt  
+  - 提交：`24b64ae5` 2026-09-04 20:09 — add og r2
+- [ ] **将 PDF 转为 PDF/A**  
+  - 中文：https://onlinefreetools.org/zh/tools/convert-pdf-to-pdf-a  
+  - 英文：https://onlinefreetools.org/tools/convert-pdf-to-pdf-a  
+  - 提交：`1a710350` 2026-09-04 07:50 — pdf: ship scene tools, work UI, and absorb H1s
+- [ ] **创建 PDF 表单**  
+  - 中文：https://onlinefreetools.org/zh/tools/create-pdf-form  
+  - 英文：https://onlinefreetools.org/tools/create-pdf-form  
+  - 提交：`1a710350` 2026-09-04 07:50 — pdf: ship scene tools, work UI, and absorb H1s
+- [ ] **编辑 PDF 表单字段**  
+  - 中文：https://onlinefreetools.org/zh/tools/edit-pdf-form-fields  
+  - 英文：https://onlinefreetools.org/tools/edit-pdf-form-fields  
+  - 提交：`1a710350` 2026-09-04 07:50 — pdf: ship scene tools, work UI, and absorb H1s
+- [ ] **填写 PDF 表单**  
+  - 中文：https://onlinefreetools.org/zh/tools/fill-out-pdf-form  
+  - 英文：https://onlinefreetools.org/tools/fill-out-pdf-form  
+  - 提交：`1a710350` 2026-09-04 07:50 — pdf: ship scene tools, work UI, and absorb H1s
+- [ ] **把 PDF 做成可填写表单**  
+  - 中文：https://onlinefreetools.org/zh/tools/make-pdf-fillable  
+  - 英文：https://onlinefreetools.org/tools/make-pdf-fillable  
+  - 提交：`1a710350` 2026-09-04 07:50 — pdf: ship scene tools, work UI, and absorb H1s
+- [ ] **在 PDF 文档上签名**  
+  - 中文：https://onlinefreetools.org/zh/tools/sign-pdf-document  
+  - 英文：https://onlinefreetools.org/tools/sign-pdf-document  
+  - 提交：`1a710350` 2026-09-04 07:50 — pdf: ship scene tools, work UI, and absorb H1s
+- [ ] **将 PDF 转为 Word 文档**  
+  - 中文：https://onlinefreetools.org/zh/tools/turn-pdf-into-word-document  
+  - 英文：https://onlinefreetools.org/tools/turn-pdf-into-word-document  
+  - 提交：`1a710350` 2026-09-04 07:50 — pdf: ship scene tools, work UI, and absorb H1s
+- [ ] **把 JPG 转成 PDF**  
+  - 中文：https://onlinefreetools.org/zh/tools/images-to-pdf  
+  - 英文：https://onlinefreetools.org/tools/images-to-pdf  
+  - 提交：`1a710350` 2026-09-04 07:50 — pdf: ship scene tools, work UI, and absorb H1s
+- [ ] **把 PDF 页面转成 JPG**  
+  - 中文：https://onlinefreetools.org/zh/tools/pdf-to-jpg  
+  - 英文：https://onlinefreetools.org/tools/pdf-to-jpg  
+  - 提交：`1a710350` 2026-09-04 07:50 — pdf: ship scene tools, work UI, and absorb H1s
+
+## 按提交分组（摘要）
+
+- `a8417be9` tools: add ordered how steps and fix PDF template pollution（25）
+- `3d1d4d76` text: correct capabilities, SEO facts, and prompt i18n（17）
+- `122fdca3` pdf: correct capabilities and information gain（20）
+- `d22c00a9` excel: ship and optimize eight scene tools（8）
+- `24b64ae5` add og r2（5）
+- `1a710350` pdf: ship scene tools, work UI, and absorb H1s（9）
+
+---
+测完后可在对应条目打勾；全部完成后可将本文件移到 `docs/manual-qa/_done/` 或注明完成日期。
