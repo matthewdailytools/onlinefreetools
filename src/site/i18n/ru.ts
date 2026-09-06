@@ -1688,7 +1688,7 @@ const ru: SiteLangDict = {
   tool_bulk_compress_product_photos_compress: 'Сжать все',
   tool_bulk_compress_product_photos_desc: 'Сжать фото товаров примерно до 200 КБ и скачать ZIP; остаются на устройстве, без загрузки на сервер.',
   tool_bulk_compress_product_photos_description:
-    'Сжать фото товаров пакетом: добавьте снимки карточки, задайте длинную сторону и потолок 200 КБ, перекодируйте в JPEG или WebP здесь, пропустите сбои, скачайте ZIP. Шаги: наберите очередь, оставьте чип 200 КБ если канал так просит, сожмите всё, смотрите попадание или промах. Пример: при открытии уже сжимаются два образца. Файлы остаются на устройстве, без загрузки на сервер.',
+    'Сжать фото товаров пакетом: добавьте снимки карточки, при необходимости выберите правило размера, потолок КБ и JPEG/WebP/PNG, перекодируйте здесь, пропустите сбои, скачайте ZIP. Шаги: наберите очередь; опции стартуют с «Не выбирать» и сохраняют формат и пиксели; чип 200 КБ только если канал так просит; сожмите всё, смотрите попадание или промах. Образцы появляются только по кнопке «Загрузить пример». Файлы остаются на устройстве, без загрузки на сервер.',
   tool_bulk_compress_product_photos_download_zip: 'Скачать ZIP',
   tool_bulk_compress_product_photos_drop_hint: 'Перетащите JPEG, PNG или WebP (до 20). Сжатие не покидает вкладку.',
   tool_bulk_compress_product_photos_empty: 'Сначала добавьте фото товаров.',
@@ -1698,7 +1698,7 @@ const ru: SiteLangDict = {
   tool_bulk_compress_product_photos_err_too_many: 'Не больше 20 фото. Лишние не добавлены.',
   tool_bulk_compress_product_photos_err_webp: 'Браузер не пишет WebP. Выбран JPEG (.jpg).',
   tool_bulk_compress_product_photos_example:
-    'Загрузить пример кладёт два фото, сжимает JPEG на 200 КБ, заполняет таблицу и включает ZIP. Дубликаты становятся name (2).jpg.',
+    'Загрузить пример кладёт два фото и сжимает их текущими опциями («Не выбирать» оставляет JPEG и не ищет КБ), заполняет таблицу и включает ZIP. Дубликаты становятся name (2).jpg.',
   tool_bulk_compress_product_photos_example_title: 'Пример',
   tool_bulk_compress_product_photos_faq_a1:
     'Нет. Всё в этой вкладке. Файлы остаются на устройстве, без загрузки на сервер. Скрипт ZIP может прийти с этого сайта; ваши фото не уходят.',
@@ -1719,16 +1719,21 @@ const ru: SiteLangDict = {
   tool_bulk_compress_product_photos_format_webp: 'WebP',
   tool_bulk_compress_product_photos_how_body: 'Соберите фото карточки, задайте общий лимит, сожмите здесь и заберите ZIP удачных файлов.',
   tool_bulk_compress_product_photos_how_item_1: 'Выберите фото товаров, которые должны стать легче.',
-  tool_bulk_compress_product_photos_how_item_2: 'Оставьте чип 200 КБ, если так просит площадка. По умолчанию JPEG (.jpg).',
-  tool_bulk_compress_product_photos_how_item_3: 'Если телефон снимает огромно, сначала ограничьте длинную сторону.',
+  tool_bulk_compress_product_photos_how_item_2:
+    'Формат, КБ и размер сначала «Не выбирать» — только перекодировка. Площадка просит JPEG или 200 КБ — включите чип или пресет. Есть и WebP, и PNG.',
+  tool_bulk_compress_product_photos_how_item_3:
+    'Если телефон снимает огромно, ограничьте длинную сторону, ширину или высоту. «Не выбирать» пиксели не трогает.',
   tool_bulk_compress_product_photos_how_item_4: 'Нажмите «Сжать все» и смотрите попадание, промах или пропуск.',
-  tool_bulk_compress_product_photos_how_item_5: 'Скачайте ZIP, если удался хотя бы один файл. Пример уже отработал при открытии.',
+  tool_bulk_compress_product_photos_how_item_5: 'Скачайте ZIP, если удался хотя бы один файл. Пример необязателен и сам не запускается.',
   tool_bulk_compress_product_photos_how_title: 'Как пользоваться',
   tool_bulk_compress_product_photos_jpeg_bg_black: 'Чёрный',
   tool_bulk_compress_product_photos_jpeg_bg_custom: 'Свой',
-  tool_bulk_compress_product_photos_jpeg_bg_label: 'Фон JPEG',
+  tool_bulk_compress_product_photos_jpeg_bg_hint:
+    'У JPEG нет альфы. Этим цветом заливаются только пустые пиксели; непрозрачные фото не меняются. «Не выбирать» — без подложки.',
+  tool_bulk_compress_product_photos_jpeg_bg_label: 'Заливка прозрачности',
   tool_bulk_compress_product_photos_jpeg_bg_white: 'Белый',
   tool_bulk_compress_product_photos_max_edge_label: 'Длинная сторона',
+  tool_bulk_compress_product_photos_opt_none: 'Не выбирать',
   tool_bulk_compress_product_photos_output_label: 'Выход',
   tool_bulk_compress_product_photos_preset_custom: 'Свой',
   tool_bulk_compress_product_photos_preset_email: 'Почта — 1280 px · 100 KB',
@@ -1743,6 +1748,7 @@ const ru: SiteLangDict = {
   tool_bulk_compress_product_photos_preset_thumb: 'Ширина миниатюры — 800 px · 50 KB',
   tool_bulk_compress_product_photos_preset_tiny: 'Минимальная высота — 512 px · 30 KB',
   tool_bulk_compress_product_photos_quality_hint_png: 'PNG без потерь — ползунок качества не уменьшает байты.',
+  tool_bulk_compress_product_photos_quality_hint_target: 'При потолке КБ ползунок — старт поиска, а не итоговое качество.',
   tool_bulk_compress_product_photos_quality_label: 'Качество',
   tool_bulk_compress_product_photos_resize_on: 'Ограничить размер выхода',
   tool_bulk_compress_product_photos_rules_body: 'Одни настройки на весь пакет. Промах по лимиту виден в таблице, а не в ложном «всё готово».',
@@ -1775,6 +1781,7 @@ const ru: SiteLangDict = {
   tool_bulk_compress_product_photos_warn_edge: 'Есть фото шире 8192 px — будет медленно.',
   tool_bulk_compress_product_photos_warn_large: 'Есть файл больше 25 МБ — вкладке может не хватить памяти.',
   tool_bulk_compress_product_photos_warn_png: 'PNG часто остаётся тяжёлым — для лимитов карточки лучше JPEG или WebP.',
+  tool_bulk_compress_product_photos_warn_png_target: 'PNG не ищет потолок КБ. Оставьте PNG или переключитесь на JPEG/WebP, если нужен лимит.',
   tool_bulk_convert_images_to_jpg_article:
     'Если вложение должно быть .jpg, прогоните пачку фото, PNG-логотипов и HEIC с телефона в этой вкладке: общая подложка под прозрачность, сбойные строки пропускаются, затем ZIP. Файлы остаются на устройстве, без загрузки на сервер.',
   tool_bulk_convert_images_to_jpg_chip_png: 'PNG → JPG',
@@ -8228,7 +8235,7 @@ const ru: SiteLangDict = {
   tool_og_home_title: 'Предпросмотр Open Graph',
   tool_og_how_body:
     'Просмотр разбирает теги og:/twitter:, которые вы вставляете (или извлекает их из HTML, загруженного по URL), и рисует три карточки. Facebook показывает изображение 1.91:1 слева, под ним — заголовок, описание и домен. X следует twitter:card: summary_large_image показывает большое изображение сверху, summary — маленькое рядом с текстом. Мессенджеры вроде WhatsApp показывают одну большую карточку. Таблица помечает четыре поля, обязательные по протоколу, и перечисляет необязательные.',
-  tool_og_how_item_1: 'Вставьте meta-теги og:/twitter: или загрузите URL.',
+  tool_og_how_item_1: 'Введите URL страницы и нажмите «Загрузить URL», или вставьте meta-теги og:/twitter:.',
   tool_og_how_item_2: 'Нажмите «Предпросмотр» (или «Пример»).',
   tool_og_how_item_3: 'Сравните карточки Facebook, X и мессенджеров.',
   tool_og_how_item_4: 'Исправьте отсутствующие обязательные поля в таблице.',

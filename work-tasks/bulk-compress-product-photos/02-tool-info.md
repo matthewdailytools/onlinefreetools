@@ -15,7 +15,7 @@
 
 | 使用场景 | 用户搜法 | 作业类型 | 本页默认 / 芯片 |
 |---|---|---|---|
-| 上架前压一批商品照片到体积上限 | compress images in bulk; bulk compress product photos; compress jpg; compress to 200kb | 多照片有损变小 → ZIP | **默认**：JPEG、目标 200 KB、可选最长边 1920 |
+| 上架前压一批商品照片到体积上限 | compress images in bulk; bulk compress product photos; compress jpg; compress to 200kb | 多照片有损变小 → ZIP | 进页默认全部「不选择」（保原格式/不缩边/不搜 KB）；需要时再点 JPEG、200 KB、最长边 |
 | 邮箱/表单附件一批图 | compress jpg; reduce photo size | 同上 | 芯片：100 KB / 1280 边 |
 | 只要 jpeg 写法 | jpeg compressor bulk | 同意图 | FAQ 一句；不拆第二 URL |
 | 一批 PNG 仍要 PNG | compress png in bulk | **另一作业** | 有意不满足 → 指向日后 `bulk-compress-png-images`；本页默认会垫底转 JPEG/WebP |
@@ -107,22 +107,22 @@
 | 项 | 结论 |
 |---|---|
 | 日期 | 2026-09-03 |
-| 总判 | 满足：进页样例即跑出多张压缩结果与 ZIP；默认就是商品照片有损压到 200 KB，不把 PNG 保透明或格式转换抢首屏 |
+| 总判 | 满足：可把一批商品照片有损压到 200 KB（需用户点芯片/预设）；进页默认全部不选择；Load sample 可演示多张压缩与 ZIP，进页不再自动预填 |
 | 主词搜索者任务 | 一次处理很多张商品照片，让文件变小到能上传，带走一整包，而不是在单张页里重复点 20 次 |
 | Ads/Planner 长尾任务 | 不适用 |
-| 满足之处 | How 先写「选出一批商品图、共用体积上限、失败跳过、下载 ZIP」；默认 JPEG + 目标 200 KB；结果表区分命中/未命中/跳过 |
+| 满足之处 | How 先写「选出一批商品图、按需体积上限、失败跳过、下载 ZIP」；选项默认不选择；结果表区分命中/未命中/跳过 |
 | 超出 / 应划边界 | 不做输出格式大下拉改 PNG 当主路径（PNG 仍可当输入，输出默认 JPEG/WebP）；desc 不写 doorway/slug/「我们为了 SEO 拆页」；不做视频、不做合并 PDF |
 | 缺口与已做优化 | How 步骤改为任务动词（选一批图 → 用 200KB 芯片或自定 → 压缩全部 → 看汇总 → 下 ZIP）；FAQ 补 jpeg 写法与「透明 PNG 请用 PNG 压缩页」；默认目标 KB 打开 |
 | [x] 已按审查回写 How / 交互主次 / FAQ / desc | |
 
 ## 交互规格（给实现用）
 
-- 输入：`input multiple`，JPEG/PNG/WebP/GIF/BMP；上限 **20** 个文件；超出拒绝续加并提示。共享参数：输出 JPEG（默认）或 WebP；可选限制最长边（默认开、1920）；质量（默认 0.8）；目标 KB（默认开、**200**）；JPEG 垫底白/黑/自定义。
+- 输入：`input multiple`，JPEG/PNG/WebP/GIF/BMP；上限 **20** 个文件；超出拒绝续加并提示。共享参数：输出 / 目标 KB / 尺寸规则 **进页默认「不选择」**（保 jpeg/webp/png 原格式，否则回退 JPEG；不缩边；不做 KB 二分）；质量滑杆仍 0.8。**透明像素垫底**仅在输出为 JPEG 时显示（默认也不选择）；PNG/WebP 保透明，不铺垫底。
 - 输出：逐张预览不必每张大图（避免卡）；**汇总表**（文件名、原体积、后体积、命中/未命中/跳过原因）；成功项打 **ZIP**；可选单张下载不是主路径。
-- 核心规则 / 算法：串行 `createImageBitmap`/`Image` 解码 → 等比缩到最长边（不放大）→ JPEG 先铺垫底再 `toBlob`；目标 KB 时对质量从当前值二分到 0.5；WebP 不支持则回退 JPEG 并记警告。动画只取能解码的静帧。ZIP 内重名：`stem (2).jpg`。
+- 核心规则 / 算法：串行 `createImageBitmap`/`Image` 解码 → 等比缩到最长边（不放大）→ **仅 JPEG 且选了垫底色时**先铺垫底再 `toBlob`；目标 KB 时对质量从当前值二分到 0.5（PNG 跳过、不改格式）；WebP 不支持则回退 JPEG 并记警告。动画只取能解码的静帧。ZIP 内重名：`stem (2).jpg`。
 - 失败与边界行为：单张解码/编码失败 → 该行 skip，继续；0 成功则禁用 ZIP；软内存/边长警告对齐单张压缩页量级（约 25 MB / 8192 px）。
-- 示例 Input → Output：进页两张合成商品色块图（不同文件名）→ 默认 200 KB JPEG ZIP，表上列出两行体积。
-- **进页样例（必填）**：`loadSample()` 生成两张 Canvas JPEG 当作队列并自动 `compressAll()`，ZIP 按钮可用、汇总非空；与 H2 Example 数字口径一致（两张样例、默认 200 KB）。
+- 示例 Input → Output：点 Load sample 放入两张合成商品色块图（不同文件名）→ 按**当前选项**压缩（默认不选择时为质量 0.8 的 JPEG、无 KB 搜索），表上列出两行体积。进页不自动预填。
+- **进页样例**：不自动跑。`loadSample()` 仍由「载入样例」按钮调用：生成两张 Canvas JPEG 入队并 `compressAll()`，ZIP 按钮可用、汇总非空；与 H2 Example 口径一致（两张样例、跟随当前芯片）。
 - **实现防呆**：Page 用 `opts` 签名；若有 `extraBodyHtml` 模板字符串，正则写 `\\w`；B 后跑 `npm run lint:tool-page -- --slug=bulk-compress-product-photos`
 
 ## 页面模块清单（与 tool-creation 对齐）
@@ -130,7 +130,7 @@
 > 勾选前须完成「清单前检索覆盖优化」与「用户意图审查」。
 
 - [x] H1 + 一句话摘要
-- [x] 首屏工具交互区（含进页自动样例结果）
+- [x] 首屏工具交互区（Load sample 可出结果；进页不自动预填）
 - [x] How it works
 - [x] Formula / Rules（计算与转换类）
 - [x] Example（固定文案，与默认样例一致）

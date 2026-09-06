@@ -21,7 +21,7 @@ const id: SiteLangDict = {
 	tool_bulk_compress_product_photos_desc:
 		'Kompres foto produk menuju 200 KB lalu unduh ZIP; tetap di perangkat, tanpa unggah ke server.',
 	tool_bulk_compress_product_photos_description:
-		'Kompres foto produk sekaligus: masukkan foto listing, bagikan sisi terpanjang dan batas 200 KB, encode JPEG atau WebP di tab ini, lewati yang gagal, unduh ZIP. Langkah: pilih antrean, biarkan chip 200 KB jika kanal membutuhkannya, kompres semua, baca lolos atau tidak. Contoh: saat dibuka, dua foto sampel langsung dikompres. File tetap di perangkat, tanpa unggah ke server.',
+		'Kompres foto produk sekaligus: masukkan foto listing, pilih aturan ukuran, batas KB, dan JPEG/WebP/PNG jika perlu, encode di tab ini, lewati yang gagal, unduh ZIP. Langkah: pilih antrean; opsi mulai dari Tidak memilih dan menjaga format plus piksel; chip 200 KB hanya jika kanal memintanya; kompres semua, baca lolos atau tidak. Foto contoh hanya masuk jika Anda menekan Muat contoh. File tetap di perangkat, tanpa unggah ke server.',
 	tool_bulk_compress_product_photos_download_zip: 'Unduh ZIP',
 	tool_bulk_compress_product_photos_drop_hint: 'Jatuhkan JPEG, PNG, atau WebP (maks 20). Kompresi tetap di tab ini.',
 	tool_bulk_compress_product_photos_empty: 'Tambahkan foto produk dulu.',
@@ -31,7 +31,7 @@ const id: SiteLangDict = {
 	tool_bulk_compress_product_photos_err_too_many: 'Maksimal 20 foto. Kelebihan tidak dimasukkan.',
 	tool_bulk_compress_product_photos_err_webp: 'Peramban ini tidak menulis WebP. JPEG (.jpg) dipilih.',
 	tool_bulk_compress_product_photos_example:
-		'Muat contoh menaruh dua foto, mengompres JPEG 200 KB, mengisi tabel, dan mengaktifkan Unduh ZIP. Nama ganda menjadi name (2).jpg.',
+		'Muat contoh menaruh dua foto dan mengompres sesuai opsi yang sedang dipilih (Tidak memilih menjaga JPEG, tanpa cari KB), mengisi tabel, dan mengaktifkan Unduh ZIP. Nama ganda menjadi name (2).jpg.',
 	tool_bulk_compress_product_photos_example_title: 'Contoh',
 	tool_bulk_compress_product_photos_faq_a1:
 		'Tidak. Decode dan encode di tab ini. File tetap di perangkat, tanpa unggah ke server. Skrip ZIP boleh dari situs ini; foto Anda tidak dikirim.',
@@ -68,6 +68,8 @@ const id: SiteLangDict = {
 	tool_bulk_compress_product_photos_preset_thumb: 'Lebar thumbnail — 800 px · 50 KB',
 	tool_bulk_compress_product_photos_preset_tiny: 'Tinggi kecil — 512 px · 30 KB',
 	tool_bulk_compress_product_photos_quality_hint_png: 'PNG lossless — slider kualitas tidak mengecilkan byte.',
+	tool_bulk_compress_product_photos_quality_hint_target:
+		'Kalau ada batas KB, slider adalah titik awal pencarian, bukan kualitas akhir.',
 	tool_bulk_compress_product_photos_size_px_height: 'Tinggi maks.',
 	tool_bulk_compress_product_photos_size_px_width: 'Lebar maks.',
 	tool_bulk_compress_product_photos_size_rule_label: 'Aturan ukuran',
@@ -75,19 +77,24 @@ const id: SiteLangDict = {
 	tool_bulk_compress_product_photos_size_rule_max_height: 'Tinggi maksimum',
 	tool_bulk_compress_product_photos_size_rule_max_width: 'Lebar maksimum',
 	tool_bulk_compress_product_photos_warn_png: 'Keluaran PNG sering tetap besar — untuk batas listing pilih JPEG atau WebP.',
+	tool_bulk_compress_product_photos_warn_png_target:
+		'PNG tidak mencari batas KB. Tetap PNG, atau ganti JPEG/WebP jika butuh batas.',
 	tool_bulk_compress_product_photos_how_body:
 		'Kumpulkan foto etalase, pakai satu batas ukuran, kompres di sini, bawa ZIP yang berhasil.',
 	tool_bulk_compress_product_photos_how_item_1: 'Pilih foto produk yang harus lebih kecil.',
-	tool_bulk_compress_product_photos_how_item_2: 'Biarkan chip 200 KB jika toko memintanya. Keluaran default JPEG (.jpg).',
-	tool_bulk_compress_product_photos_how_item_3: 'Jika foto HP sangat besar, batasi sisi terpanjang dulu.',
+	tool_bulk_compress_product_photos_how_item_2: 'Format, KB, dan ukuran mulai dari Tidak memilih: hanya re-encode. Toko minta JPEG atau 200 KB? Nyalakan chip atau preset. WebP dan PNG juga ada.',
+	tool_bulk_compress_product_photos_how_item_3: 'Jika foto HP sangat besar, pilih sisi terpanjang, lebar maks, atau tinggi maks. Tidak memilih tidak mengubah piksel.',
 	tool_bulk_compress_product_photos_how_item_4: 'Tekan Kompres semua lalu baca lolos, gagal batas, atau dilewati.',
-	tool_bulk_compress_product_photos_how_item_5: 'Unduh ZIP jika minimal satu berhasil. Contoh sudah jalan saat halaman dibuka.',
+	tool_bulk_compress_product_photos_how_item_5: 'Unduh ZIP jika minimal satu berhasil. Contoh bersifat opsional dan tidak jalan otomatis.',
 	tool_bulk_compress_product_photos_how_title: 'Cara kerja',
 	tool_bulk_compress_product_photos_jpeg_bg_black: 'Hitam',
 	tool_bulk_compress_product_photos_jpeg_bg_custom: 'Kustom',
-	tool_bulk_compress_product_photos_jpeg_bg_label: 'Latar JPEG',
+	tool_bulk_compress_product_photos_jpeg_bg_hint:
+		'JPEG tidak punya alpha. Hanya piksel kosong yang diisi warna ini; foto produk buram tidak berubah. Tidak memilih = tanpa alas.',
+	tool_bulk_compress_product_photos_jpeg_bg_label: 'Isi piksel transparan',
 	tool_bulk_compress_product_photos_jpeg_bg_white: 'Putih',
 	tool_bulk_compress_product_photos_max_edge_label: 'Sisi terpanjang',
+	tool_bulk_compress_product_photos_opt_none: 'Tidak memilih',
 	tool_bulk_compress_product_photos_output_label: 'Keluaran',
 	tool_bulk_compress_product_photos_quality_label: 'Mutu',
 	tool_bulk_compress_product_photos_resize_on: 'Batasi ukuran keluaran',

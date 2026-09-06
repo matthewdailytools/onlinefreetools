@@ -23,7 +23,7 @@ const en: SiteLangDict = {
 	tool_bulk_compress_product_photos_desc:
 		'Bulk compress product photos toward 200 KB and download a ZIP — files stay on your device.',
 	tool_bulk_compress_product_photos_description:
-		'Bulk compress product photos: add listing shots, share one size rule and a 200 KB cap, encode JPEG, WebP, or PNG in this tab, skip files that fail, then download a ZIP. Steps: choose a batch, pick a listing preset or keep the 200 KB chip, compress all, read hit or miss rows. Example: two sample photos run on first paint toward 200 KB. Files stay on your device and are not uploaded to a server.',
+		'Bulk compress product photos: add listing shots, optionally pick a size rule, a KB cap, and JPEG, WebP, or PNG, then encode in this tab, skip files that fail, and download a ZIP. Steps: choose a batch, leave options on None to keep each file’s format and pixels, or pick a listing preset such as 200 KB, compress all, read hit or miss rows. Use Load sample if you want two stand-in photos first. Files stay on your device and are not uploaded to a server.',
 	tool_bulk_compress_product_photos_download_zip: 'Download ZIP',
 	tool_bulk_compress_product_photos_drop_hint:
 		'Drop JPEG, PNG, WebP, GIF, BMP, or AVIF listing photos (up to 20). Compression stays in this tab.',
@@ -35,7 +35,7 @@ const en: SiteLangDict = {
 	tool_bulk_compress_product_photos_err_webp:
 		'This browser cannot encode WebP. JPEG (.jpg) is selected instead.',
 	tool_bulk_compress_product_photos_example:
-		'Load sample adds two stand-in listing photos, compresses them with the default 200 KB JPEG settings, fills the hit/miss table, and enables Download ZIP. Duplicate names in the ZIP become name (2).jpg.',
+		'Load sample adds two stand-in listing photos, compresses them with whatever options you currently have (None keeps JPEG and does not hunt a KB cap), fills the hit/miss table, and enables Download ZIP. Duplicate names in the ZIP become name (2).jpg.',
 	tool_bulk_compress_product_photos_example_title: 'Example',
 	tool_bulk_compress_product_photos_faq_a1:
 		'No. Decode, resize, and encode run in this tab. Your photos stay on the device and are not uploaded to a server. A ZIP helper script load from this site; your files still never leave the tab.',
@@ -44,7 +44,7 @@ const en: SiteLangDict = {
 	tool_bulk_compress_product_photos_faq_a3:
 		'Yes. JPEG and JPG are the same output here. Files are named .jpg. A search for jpeg bulk compress belongs on this page, not a second tool.',
 	tool_bulk_compress_product_photos_faq_a4:
-		'This page defaults to JPEG or WebP for listing size caps. PNG is available when you need lossless output, but photos rarely shrink under a KB target that way. Transparent UI PNG that must stay PNG belongs on a PNG compress page. Changing PNG into JPG as the main job belongs on a convert-to-JPG page.',
+		'Leave output on None to keep JPEG, WebP, or PNG as they arrived. Pick JPEG or WebP when you need a listing size cap. PNG is available for lossless output, but photos rarely shrink under a KB target that way. Transparent UI PNG that must stay PNG belongs on a PNG compress page. Changing PNG into JPG as the main job belongs on a convert-to-JPG page.',
 	tool_bulk_compress_product_photos_faq_a5:
 		'No. Only the first frame is compressed as a still image. Animated files are noted in the warning and in that row.',
 	tool_bulk_compress_product_photos_faq_q1: 'Are my product photos uploaded to a server?',
@@ -61,19 +61,22 @@ const en: SiteLangDict = {
 	tool_bulk_compress_product_photos_how_item_1:
 		'Choose the product photos you need smaller — that is the job, not one file at a time.',
 	tool_bulk_compress_product_photos_how_item_2:
-		'Keep the 200 KB chip or pick a listing preset. JPEG (.jpg) is the default listing format; WebP and PNG are also available.',
+		'Leave format, KB, and size on None if you only want a lighter re-encode. Turn on JPEG (.jpg) or a 200 KB chip when a marketplace asks for it; WebP and PNG are also available.',
 	tool_bulk_compress_product_photos_how_item_3:
-		'Choose a size rule: longest side, max width, or max height — then cap huge phone photos before quality does the rest.',
+		'If phone photos are huge, pick a size rule — longest side, max width, or max height — then cap pixels before quality does the rest. None leaves the pixel size unchanged.',
 	tool_bulk_compress_product_photos_how_item_4:
 		'Press Compress all and read hit, miss, or skip for each name. Miss still keeps the smallest attempt.',
 	tool_bulk_compress_product_photos_how_item_5:
-		'Download ZIP when at least one file succeeded. Load sample already ran on first paint.',
+		'Download ZIP when at least one file succeeded. Load sample is optional and is not run on first paint.',
 	tool_bulk_compress_product_photos_how_title: 'How it works',
 	tool_bulk_compress_product_photos_jpeg_bg_black: 'Black',
 	tool_bulk_compress_product_photos_jpeg_bg_custom: 'Custom',
-	tool_bulk_compress_product_photos_jpeg_bg_label: 'JPEG background',
+	tool_bulk_compress_product_photos_jpeg_bg_hint:
+		'JPEG has no transparency. Only empty pixels get this color; opaque listing photos are unchanged. Pick None if you do not want a matte.',
+	tool_bulk_compress_product_photos_jpeg_bg_label: 'Fill transparent pixels',
 	tool_bulk_compress_product_photos_jpeg_bg_white: 'White',
 	tool_bulk_compress_product_photos_max_edge_label: 'Max edge',
+	tool_bulk_compress_product_photos_opt_none: 'None',
 	tool_bulk_compress_product_photos_output_label: 'Output',
 	tool_bulk_compress_product_photos_preset_custom: 'Custom',
 	tool_bulk_compress_product_photos_preset_email: 'Email pack — 1280 px · 100 KB',
@@ -88,6 +91,8 @@ const en: SiteLangDict = {
 	tool_bulk_compress_product_photos_preset_thumb: 'Thumb width — 800 px · 50 KB',
 	tool_bulk_compress_product_photos_preset_tiny: 'Tiny height — 512 px · 30 KB',
 	tool_bulk_compress_product_photos_quality_hint_png: 'PNG is lossless — the quality slider does not shrink bytes.',
+	tool_bulk_compress_product_photos_quality_hint_target:
+		'A KB cap searches down from this quality; the slider is the start, not the final file.',
 	tool_bulk_compress_product_photos_quality_label: 'Quality',
 	tool_bulk_compress_product_photos_resize_on: 'Limit output size',
 	tool_bulk_compress_product_photos_rules_body:
@@ -128,6 +133,8 @@ const en: SiteLangDict = {
 	tool_bulk_compress_product_photos_warn_edge: 'A photo is wider or taller than 8192 px — expect it to be slow.',
 	tool_bulk_compress_product_photos_warn_large: 'A file is larger than 25 MB — this tab may run out of memory.',
 	tool_bulk_compress_product_photos_warn_png: 'PNG output often stays large — for listing caps prefer JPEG or WebP.',
+	tool_bulk_compress_product_photos_warn_png_target:
+		'PNG output skips the KB search. Keep PNG, or switch to JPEG or WebP if you need a size cap.',
 };
 
 export default en;

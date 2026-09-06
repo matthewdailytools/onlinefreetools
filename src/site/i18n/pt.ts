@@ -1697,7 +1697,7 @@ const pt: SiteLangDict = {
   tool_bulk_compress_product_photos_desc:
     'Comprima fotos de produto rumo a 200 KB e baixe um ZIP; ficam no dispositivo, sem enviar ao servidor.',
   tool_bulk_compress_product_photos_description:
-    'Comprimir fotos de produto em lote: junte as fotos do anúncio, compartilhe o lado mais longo e um teto de 200 KB, recodifique JPEG ou WebP aqui, pule falhas e baixe o ZIP. Passos: escolha o lote, mantenha o chip de 200 KB se o canal pedir, comprima e leia acerto ou falha. Exemplo: ao abrir, duas fotos de amostra já são comprimidas. Os arquivos ficam no dispositivo, sem enviar ao servidor.',
+    'Comprimir fotos de produto em lote: junte as fotos do anúncio, escolha se precisar uma regra de tamanho, um teto de KB e JPEG/WebP/PNG, recodifique aqui, pule falhas e baixe o ZIP. Passos: escolha o lote; as opções começam em Nenhum e mantêm formato e pixels; chip de 200 KB só se o canal pedir; comprima e leia acerto ou falha. As fotos de exemplo só entram se você clicar em Carregar exemplo. Os arquivos ficam no dispositivo, sem enviar ao servidor.',
   tool_bulk_compress_product_photos_download_zip: 'Baixar ZIP',
   tool_bulk_compress_product_photos_drop_hint: 'Solte JPEG, PNG ou WebP (até 20). A compactação fica nesta aba.',
   tool_bulk_compress_product_photos_empty: 'Adicione fotos de produto primeiro.',
@@ -1707,7 +1707,7 @@ const pt: SiteLangDict = {
   tool_bulk_compress_product_photos_err_too_many: 'No máximo 20 fotos. As extras não entraram.',
   tool_bulk_compress_product_photos_err_webp: 'Este navegador não grava WebP. JPEG (.jpg) foi selecionado.',
   tool_bulk_compress_product_photos_example:
-    'Carregar exemplo coloca duas fotos, comprime no JPEG de 200 KB, preenche a tabela e ativa Baixar ZIP. Nomes repetidos viram name (2).jpg.',
+    'Carregar exemplo coloca duas fotos e comprime com as opções atuais (Nenhum mantém JPEG, sem busca de KB), preenche a tabela e ativa Baixar ZIP. Nomes repetidos viram name (2).jpg.',
   tool_bulk_compress_product_photos_example_title: 'Exemplo',
   tool_bulk_compress_product_photos_faq_a1:
     'Não. Tudo roda nesta aba. Os arquivos ficam no dispositivo, sem enviar ao servidor. O script do ZIP pode vir deste site; suas fotos não viajam.',
@@ -1728,16 +1728,20 @@ const pt: SiteLangDict = {
   tool_bulk_compress_product_photos_format_webp: 'WebP',
   tool_bulk_compress_product_photos_how_body: 'Junte as fotos do anúncio, compartilhe um teto de peso, comprima aqui e leve o ZIP do que deu certo.',
   tool_bulk_compress_product_photos_how_item_1: 'Escolha as fotos de produto que precisam ficar menores.',
-  tool_bulk_compress_product_photos_how_item_2: 'Mantenha o chip de 200 KB se o marketplace pedir. O padrão é JPEG (.jpg).',
-  tool_bulk_compress_product_photos_how_item_3: 'Se o celular dispara enorme, limite primeiro o lado mais longo.',
+  tool_bulk_compress_product_photos_how_item_2:
+    'Formato, KB e tamanho começam em Nenhum: só recodificar. O marketplace pede JPEG ou 200 KB? Ligue o chip ou um preset. Também há WebP e PNG.',
+  tool_bulk_compress_product_photos_how_item_3: 'Se o celular dispara enorme, limite lado mais longo, largura ou altura. Nenhum não muda os pixels.',
   tool_bulk_compress_product_photos_how_item_4: 'Toque em Comprimir tudo e leia acerto, teto perdido ou ignorada.',
-  tool_bulk_compress_product_photos_how_item_5: 'Baixe o ZIP se pelo menos uma deu certo. O exemplo já rodou ao abrir.',
+  tool_bulk_compress_product_photos_how_item_5: 'Baixe o ZIP se pelo menos uma deu certo. O exemplo é opcional e não roda sozinho.',
   tool_bulk_compress_product_photos_how_title: 'Como usar',
   tool_bulk_compress_product_photos_jpeg_bg_black: 'Preto',
   tool_bulk_compress_product_photos_jpeg_bg_custom: 'Personalizado',
-  tool_bulk_compress_product_photos_jpeg_bg_label: 'Fundo JPEG',
+  tool_bulk_compress_product_photos_jpeg_bg_hint:
+    'JPEG não tem alfa. Só os buracos transparentes ganham esta cor; fotos opacas não mudam. Nenhum = sem fundo.',
+  tool_bulk_compress_product_photos_jpeg_bg_label: 'Preencher transparência',
   tool_bulk_compress_product_photos_jpeg_bg_white: 'Branco',
   tool_bulk_compress_product_photos_max_edge_label: 'Lado máximo',
+  tool_bulk_compress_product_photos_opt_none: 'Nenhum',
   tool_bulk_compress_product_photos_output_label: 'Saída',
   tool_bulk_compress_product_photos_preset_custom: 'Personalizado',
   tool_bulk_compress_product_photos_preset_email: 'E-mail — 1280 px · 100 KB',
@@ -1752,6 +1756,7 @@ const pt: SiteLangDict = {
   tool_bulk_compress_product_photos_preset_thumb: 'Largura miniatura — 800 px · 50 KB',
   tool_bulk_compress_product_photos_preset_tiny: 'Altura mínima — 512 px · 30 KB',
   tool_bulk_compress_product_photos_quality_hint_png: 'PNG é sem perdas — o controle de qualidade não reduz bytes.',
+  tool_bulk_compress_product_photos_quality_hint_target: 'Com teto de KB o controle é o início da busca, não a qualidade final.',
   tool_bulk_compress_product_photos_quality_label: 'Qualidade',
   tool_bulk_compress_product_photos_resize_on: 'Limitar tamanho de saída',
   tool_bulk_compress_product_photos_rules_body: 'Os mesmos controles valem para o lote. Se uma foto não entra no teto, a tabela mostra.',
@@ -1784,6 +1789,7 @@ const pt: SiteLangDict = {
   tool_bulk_compress_product_photos_warn_edge: 'Há foto com mais de 8192 px — pode ficar lento.',
   tool_bulk_compress_product_photos_warn_large: 'Há arquivo com mais de 25 MB — a aba pode ficar sem memória.',
   tool_bulk_compress_product_photos_warn_png: 'PNG costuma ficar grande; para limites de anúncio prefira JPEG ou WebP.',
+  tool_bulk_compress_product_photos_warn_png_target: 'PNG não busca um teto de KB. Fique no PNG, ou mude para JPEG/WebP se precisar do teto.',
   tool_bulk_convert_images_to_jpg_article:
     'Quando o anexo precisa ser .jpg, passe um lote de fotos, logos PNG e HEIC do celular nesta aba: um fundo compartilhado na transparência, pule o que falhar e baixe um ZIP. Ficam no dispositivo, sem enviar ao servidor.',
   tool_bulk_convert_images_to_jpg_chip_png: 'PNG → JPG',
@@ -8257,7 +8263,7 @@ const pt: SiteLangDict = {
   tool_og_home_title: 'Prévia de Open Graph',
   tool_og_how_body:
     'A prévia analisa as tags og:/twitter: que você cola (ou as extrai do HTML buscado de uma URL) e desenha três cards. O Facebook usa a imagem 1.91:1 à esquerda com título, descrição e domínio abaixo. O X segue twitter:card: summary_large_image mostra uma imagem grande em cima, summary mostra uma pequena ao lado do texto. Apps de mensagem como WhatsApp mostram um card grande. A tabela aponta os quatro campos exigidos pelo protocolo e lista os opcionais.',
-  tool_og_how_item_1: 'Cole tags meta og:/twitter: ou busque uma URL.',
+  tool_og_how_item_1: 'Digite a URL da página e clique em Buscar URL, ou cole as tags meta og:/twitter:.',
   tool_og_how_item_2: 'Clique em Prévia (ou Exemplo).',
   tool_og_how_item_3: 'Compare os cards do Facebook, X e mensagens.',
   tool_og_how_item_4: 'Corrija na tabela os campos obrigatórios ausentes.',

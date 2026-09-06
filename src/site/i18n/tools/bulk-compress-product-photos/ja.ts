@@ -21,7 +21,7 @@ const ja: SiteLangDict = {
 	tool_bulk_compress_product_photos_desc:
 		'商品画像を約 200 KB まで一括圧縮して ZIP にする。端末内で処理し、サーバーにアップロードしない。',
 	tool_bulk_compress_product_photos_description:
-		'商品画像を一括圧縮：出品写真をまとめ、最長辺と 200 KB 上限を共有し、このタブで JPEG または WebP にします。失敗は飛ばし、成功分を ZIP にします。手順：写真を入れ、200 KB チップを残し、すべて圧縮を押して当たり外れを見る。例：開いた時点でサンプル2枚が圧縮されます。ファイルは端末内に留まり、サーバーにはアップロードしません。',
+		'商品画像を一括圧縮：出品写真をまとめ、必要ならサイズ規則・KB 上限・JPEG/WebP/PNG を選び、このタブで再エンコードします。失敗は飛ばし、成功分を ZIP にします。手順：写真を入れ、初期は「指定しない」で形式と画素を維持、モールが 200 KB ならチップやプリセット、すべて圧縮で当たり外れを見る。サンプルは「サンプルを読み込む」を押したときだけ入ります。ファイルは端末内に留まり、サーバーにはアップロードしません。',
 	tool_bulk_compress_product_photos_download_zip: 'ZIP をダウンロード',
 	tool_bulk_compress_product_photos_drop_hint: 'JPEG / PNG / WebP をドロップ（最大 20）。圧縮はこのタブ内です。',
 	tool_bulk_compress_product_photos_empty: '先に商品画像を追加してください。',
@@ -31,7 +31,7 @@ const ja: SiteLangDict = {
 	tool_bulk_compress_product_photos_err_too_many: '一度に 20 枚までです。超えた分は入れていません。',
 	tool_bulk_compress_product_photos_err_webp: 'WebP を書けないブラウザです。JPEG（.jpg）に切り替えました。',
 	tool_bulk_compress_product_photos_example:
-		'サンプル読込は出品用のダミー2枚を入れ、既定の 200 KB JPEG で圧縮し、表を埋めて ZIP を有効にします。ZIP 内の同名は name (2).jpg になります。',
+		'サンプル読込は出品用のダミー2枚を入れ、いま選んでいる設定で圧縮します（「指定しない」なら JPEG のまま、KB 検索はしません）。表を埋めて ZIP を有効にします。ZIP 内の同名は name (2).jpg になります。',
 	tool_bulk_compress_product_photos_example_title: '例',
 	tool_bulk_compress_product_photos_faq_a1:
 		'いいえ。復号と再エンコードはこのタブ内です。ファイルは端末に留まり、サーバーにはアップロードしません。ZIP 用スクリプトはこのサイトから読みますが、写真自体は送りません。',
@@ -40,7 +40,7 @@ const ja: SiteLangDict = {
 	tool_bulk_compress_product_photos_faq_a3:
 		'別ページは不要です。JPEG も JPG も同じ出力で、拡張子は .jpg です。',
 	tool_bulk_compress_product_photos_faq_a4:
-		'透過 PNG のまま小さくしたいロゴは PNG 圧縮向けです。ここはカタログ写真を JPEG/WebP にする作業です。',
+		'透過 PNG のまま小さくしたいロゴは PNG 圧縮向けです。出力の初期は「指定しない」で、来た形式の JPEG/WebP/PNG を維持します。出品の体積制限なら JPEG か WebP を選んでください。',
 	tool_bulk_compress_product_photos_faq_a5:
 		'動きは残りません。最初のフレームだけを静止画として圧縮し、警告に出します。',
 	tool_bulk_compress_product_photos_faq_q1: '商品写真はサーバーに上がりますか？',
@@ -68,6 +68,8 @@ const ja: SiteLangDict = {
 	tool_bulk_compress_product_photos_preset_thumb: 'サムネ幅 — 800 px · 50 KB',
 	tool_bulk_compress_product_photos_preset_tiny: '高さ最小 — 512 px · 30 KB',
 	tool_bulk_compress_product_photos_quality_hint_png: 'PNG は可逆です。画質スライダーでは容量は減りません。',
+	tool_bulk_compress_product_photos_quality_hint_target:
+		'容量上限があるとき、スライダーは探索の起点であり最終画質ではありません。',
 	tool_bulk_compress_product_photos_size_px_height: '最大高さ',
 	tool_bulk_compress_product_photos_size_px_width: '最大幅',
 	tool_bulk_compress_product_photos_size_rule_label: 'サイズ規則',
@@ -75,19 +77,24 @@ const ja: SiteLangDict = {
 	tool_bulk_compress_product_photos_size_rule_max_height: '最大高さ',
 	tool_bulk_compress_product_photos_size_rule_max_width: '最大幅',
 	tool_bulk_compress_product_photos_warn_png: 'PNG 出力は大きく残りがちです。出品上限なら JPEG / WebP を優先。',
+	tool_bulk_compress_product_photos_warn_png_target:
+		'PNG は KB 上限を探しません。PNG のままにするか、上限が要るなら JPEG / WebP に切り替えてください。',
 	tool_bulk_compress_product_photos_how_body:
 		'出品したい写真をまとめ、容量上限を共有してここで圧縮し、できた分だけ ZIP で持ち帰ります。',
 	tool_bulk_compress_product_photos_how_item_1: '小さくしたい商品画像をまとめて選びます。',
-	tool_bulk_compress_product_photos_how_item_2: 'モールが 200 KB ならチップを残します。既定出力は JPEG（.jpg）です。',
-	tool_bulk_compress_product_photos_how_item_3: 'スマホ原版が巨大なら、先に最長辺を落とします。',
+	tool_bulk_compress_product_photos_how_item_2: '形式・KB・サイズは最初「指定しない」です。再エンコードだけならそのままで。モールが JPEG や 200 KB ならチップかプリセット。WebP と PNG も選べます。',
+	tool_bulk_compress_product_photos_how_item_3: 'スマホ原版が巨大なら最長辺・最大幅・最大高を選びます。「指定しない」なら画素は変えません。',
 	tool_bulk_compress_product_photos_how_item_4: 'すべて圧縮を押し、当たり・未達・スキップを行ごとに確認します。',
-	tool_bulk_compress_product_photos_how_item_5: '1枚でも成功すれば ZIP をダウンロードできます。開いた時点でサンプルは済んでいます。',
+	tool_bulk_compress_product_photos_how_item_5: '1枚でも成功すれば ZIP をダウンロードできます。サンプルは任意で、開いただけでは入りません。',
 	tool_bulk_compress_product_photos_how_title: '使い方',
 	tool_bulk_compress_product_photos_jpeg_bg_black: '黒',
 	tool_bulk_compress_product_photos_jpeg_bg_custom: '指定色',
-	tool_bulk_compress_product_photos_jpeg_bg_label: 'JPEG の背景',
+	tool_bulk_compress_product_photos_jpeg_bg_hint:
+		'JPEG に透明度はありません。空洞だけがこの色になり、不透明な商品写真はそのままです。不要なら「指定しない」。',
+	tool_bulk_compress_product_photos_jpeg_bg_label: '透明部分の下地',
 	tool_bulk_compress_product_photos_jpeg_bg_white: '白',
 	tool_bulk_compress_product_photos_max_edge_label: '最長辺',
+	tool_bulk_compress_product_photos_opt_none: '指定しない',
 	tool_bulk_compress_product_photos_output_label: '出力',
 	tool_bulk_compress_product_photos_quality_label: '画質',
 	tool_bulk_compress_product_photos_resize_on: '出力サイズを制限',

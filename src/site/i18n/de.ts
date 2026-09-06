@@ -1711,7 +1711,7 @@ const de: SiteLangDict = {
   tool_bulk_compress_product_photos_desc:
     'Produktfotos Richtung 200 KB komprimieren und ZIP laden; Dateien bleiben auf Ihrem Gerät, ohne Server-Upload.',
   tool_bulk_compress_product_photos_description:
-    'Produktfotos in Masse komprimieren: Listing-Fotos einfügen, längste Kante und 200-KB-Deckel teilen, hier als JPEG oder WebP neu kodieren, Fehler überspringen, ZIP laden. Schritte: Stapel wählen, 200-KB-Chip lassen wenn der Kanal das verlangt, alles komprimieren, Treffer oder Verfehlen lesen. Beispiel: Beim Öffnen laufen schon zwei Musterfotos. Dateien bleiben auf Ihrem Gerät, ohne Server-Upload.',
+    'Produktfotos in Masse komprimieren: Listing-Fotos einfügen, bei Bedarf Kantenregel, KB-Deckel und JPEG/WebP/PNG wählen, hier neu kodieren, Fehler überspringen, ZIP laden. Schritte: Stapel wählen; Optionen starten auf „Keine“ und behalten Format sowie Pixel; 200-KB-Chip nur wenn der Kanal das verlangt; alles komprimieren, Treffer oder Verfehlen lesen. Beispielbilder nur über „Beispiel laden“. Dateien bleiben auf Ihrem Gerät, ohne Server-Upload.',
   tool_bulk_compress_product_photos_download_zip: 'ZIP herunterladen',
   tool_bulk_compress_product_photos_drop_hint: 'JPEG, PNG oder WebP ablegen (max. 20). Die Kompression bleibt in diesem Tab.',
   tool_bulk_compress_product_photos_empty: 'Zuerst Produktfotos hinzufügen.',
@@ -1721,7 +1721,7 @@ const de: SiteLangDict = {
   tool_bulk_compress_product_photos_err_too_many: 'Höchstens 20 Fotos. Weitere wurden nicht übernommen.',
   tool_bulk_compress_product_photos_err_webp: 'Dieser Browser schreibt kein WebP. JPEG (.jpg) ist gewählt.',
   tool_bulk_compress_product_photos_example:
-    'Beispiel laden legt zwei Listing-Fotos an, komprimiert sie als 200-KB-JPEG, füllt die Tabelle und aktiviert ZIP. Doppelte Namen werden name (2).jpg.',
+    'Beispiel laden legt zwei Listing-Fotos an und komprimiert sie mit den gerade gewählten Optionen (Keine behält JPEG und sucht nicht nach KB), füllt die Tabelle und aktiviert ZIP. Doppelte Namen werden name (2).jpg.',
   tool_bulk_compress_product_photos_example_title: 'Beispiel',
   tool_bulk_compress_product_photos_faq_a1:
     'Nein. Alles läuft in diesem Tab. Dateien bleiben auf Ihrem Gerät, ohne Server-Upload. Das ZIP-Skript darf von dieser Website kommen; Ihre Fotos gehen nicht mit.',
@@ -1742,16 +1742,22 @@ const de: SiteLangDict = {
   tool_bulk_compress_product_photos_format_webp: 'WebP',
   tool_bulk_compress_product_photos_how_body: 'Listing-Fotos sammeln, eine Größengrenze teilen, hier komprimieren, ZIP der Treffer mitnehmen.',
   tool_bulk_compress_product_photos_how_item_1: 'Wählen Sie die Produktfotos, die kleiner werden sollen.',
-  tool_bulk_compress_product_photos_how_item_2: 'Lassen Sie den 200-KB-Chip, wenn der Shop das verlangt. Standard ist JPEG (.jpg).',
-  tool_bulk_compress_product_photos_how_item_3: 'Sind Handyfotos riesig, deckeln Sie zuerst die längste Kante.',
+  tool_bulk_compress_product_photos_how_item_2:
+    'Format, KB und Größe stehen zuerst auf „Keine“ — nur neu kodieren. Shop will JPEG oder 200 KB? Dann Chip oder Listing-Preset. WebP und PNG gehen auch.',
+  tool_bulk_compress_product_photos_how_item_3:
+    'Sind Handyfotos riesig, wählen Sie längste Kante, max. Breite oder Höhe. Keine lässt die Pixel unverändert.',
   tool_bulk_compress_product_photos_how_item_4: 'Alle komprimieren drücken und Treffer, Verfehlen oder Überspringen lesen.',
-  tool_bulk_compress_product_photos_how_item_5: 'ZIP laden, sobald mindestens eine Datei geklappt hat. Das Beispiel lief schon beim Öffnen.',
+  tool_bulk_compress_product_photos_how_item_5:
+    'ZIP laden, sobald mindestens eine Datei geklappt hat. Das Beispiel ist optional und läuft nicht automatisch.',
   tool_bulk_compress_product_photos_how_title: 'So geht’s',
   tool_bulk_compress_product_photos_jpeg_bg_black: 'Schwarz',
   tool_bulk_compress_product_photos_jpeg_bg_custom: 'Eigene Farbe',
-  tool_bulk_compress_product_photos_jpeg_bg_label: 'JPEG-Hintergrund',
+  tool_bulk_compress_product_photos_jpeg_bg_hint:
+    'JPEG kennt kein Alpha. Nur leere Pixel bekommen diese Farbe; opake Produktfotos bleiben gleich. Keine = keine Unterlage.',
+  tool_bulk_compress_product_photos_jpeg_bg_label: 'Transparente Pixel füllen',
   tool_bulk_compress_product_photos_jpeg_bg_white: 'Weiß',
   tool_bulk_compress_product_photos_max_edge_label: 'Längste Kante',
+  tool_bulk_compress_product_photos_opt_none: 'Keine',
   tool_bulk_compress_product_photos_output_label: 'Ausgabe',
   tool_bulk_compress_product_photos_preset_custom: 'Benutzerdefiniert',
   tool_bulk_compress_product_photos_preset_email: 'E-Mail — 1280 px · 100 KB',
@@ -1766,6 +1772,7 @@ const de: SiteLangDict = {
   tool_bulk_compress_product_photos_preset_thumb: 'Vorschaubreite — 800 px · 50 KB',
   tool_bulk_compress_product_photos_preset_tiny: 'Minimale Höhe — 512 px · 30 KB',
   tool_bulk_compress_product_photos_quality_hint_png: 'PNG ist verlustfrei — der Qualitätsregler verkleinert keine Bytes.',
+  tool_bulk_compress_product_photos_quality_hint_target: 'Beim KB-Deckel ist der Regler der Start der Suche, nicht die Endqualität.',
   tool_bulk_compress_product_photos_quality_label: 'Qualität',
   tool_bulk_compress_product_photos_resize_on: 'Ausgabegröße begrenzen',
   tool_bulk_compress_product_photos_rules_body:
@@ -1799,6 +1806,7 @@ const de: SiteLangDict = {
   tool_bulk_compress_product_photos_warn_edge: 'Ein Foto ist größer als 8192 px — das kann dauern.',
   tool_bulk_compress_product_photos_warn_large: 'Eine Datei ist größer als 25 MB — dem Tab kann der Speicher ausgehen.',
   tool_bulk_compress_product_photos_warn_png: 'PNG bleibt oft groß — für Listing-Limits JPEG oder WebP bevorzugen.',
+  tool_bulk_compress_product_photos_warn_png_target: 'PNG sucht nicht nach KB. Behalten Sie PNG, oder wechseln Sie zu JPEG/WebP für einen Deckel.',
   tool_bulk_convert_images_to_jpg_article:
     'Wenn der Anhang .jpg sein muss, wandeln Sie einen Stapel Fotos, PNG-Logos und Handy-HEIC in diesem Tab um: eine gemeinsame Unterlage für Transparenz, Fehler werden übersprungen, danach ein ZIP. Dateien bleiben auf Ihrem Gerät, ohne Server-Upload.',
   tool_bulk_convert_images_to_jpg_chip_png: 'PNG → JPG',
@@ -8320,7 +8328,7 @@ const de: SiteLangDict = {
   tool_og_home_title: 'Open-Graph-Vorschau',
   tool_og_how_body:
     'Die Vorschau parst die eingefügten og:/twitter:-Tags (oder extrahiert sie aus dem für eine URL geladenen HTML) und zeichnet drei Karten. Facebook zeigt das 1.91:1-Bild links, darunter Titel, Beschreibung und Domain. X folgt twitter:card: summary_large_image zeigt ein großes Bild oben, summary ein kleines neben dem Text. Messaging-Apps wie WhatsApp zeigen eine große Karte. Die Feldtabelle markiert die vier vom Protokoll geforderten Felder und listet die optionalen auf.',
-  tool_og_how_item_1: 'og:/twitter:-Meta-Tags einfügen oder URL laden.',
+  tool_og_how_item_1: 'Seiten-URL eintragen und auf URL laden klicken, oder og:/twitter:-Meta-Tags einfügen.',
   tool_og_how_item_2: 'Klicke auf Vorschau (oder Beispiel).',
   tool_og_how_item_3: 'Vergleiche die Karten für Facebook, X und Messenger.',
   tool_og_how_item_4: 'Behebe fehlende protokollpflichtige Felder in der Tabelle.',

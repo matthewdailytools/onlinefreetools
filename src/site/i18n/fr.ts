@@ -1722,7 +1722,7 @@ const fr: SiteLangDict = {
   tool_bulk_compress_product_photos_desc:
     'Compressez des photos produit vers 200 Ko et téléchargez un ZIP ; restent sur l\'appareil, sans envoi au serveur.',
   tool_bulk_compress_product_photos_description:
-    'Compresser des photos produit en lot : ajoutez les clichés de fiche, partagez le plus long côté et un plafond de 200 Ko, réencodez JPEG ou WebP ici, ignorez les échecs, téléchargez le ZIP. Étapes : chargez le lot, gardez la puce 200 Ko si le canal l\'exige, compressez, lisez succès ou dépassement. Exemple : à l\'ouverture, deux photos d\'exemple sont déjà compressées. Les fichiers restent sur l\'appareil, sans envoi au serveur.',
+    'Compresser des photos produit en lot : ajoutez les clichés de fiche, choisissez au besoin une règle de taille, un plafond Ko et JPEG/WebP/PNG, réencodez ici, ignorez les échecs, téléchargez le ZIP. Étapes : chargez le lot ; les options démarrent sur Aucun et gardent format et pixels ; puce 200 Ko seulement si le canal l\'exige ; compressez, lisez succès ou dépassement. Les photos d\'exemple ne partent que si vous cliquez sur Charger l\'exemple. Les fichiers restent sur l\'appareil, sans envoi au serveur.',
   tool_bulk_compress_product_photos_download_zip: 'Télécharger le ZIP',
   tool_bulk_compress_product_photos_drop_hint: 'Déposez des JPEG, PNG ou WebP (20 max). La compression reste dans cet onglet.',
   tool_bulk_compress_product_photos_empty: 'Ajoutez d\'abord des photos produit.',
@@ -1732,7 +1732,7 @@ const fr: SiteLangDict = {
   tool_bulk_compress_product_photos_err_too_many: '20 photos maximum. Les autres n\'ont pas été ajoutées.',
   tool_bulk_compress_product_photos_err_webp: 'Ce navigateur n\'écrit pas le WebP. JPEG (.jpg) a été choisi.',
   tool_bulk_compress_product_photos_example:
-    'Charger un exemple place deux photos, les compresse en JPEG 200 Ko, remplit le tableau et active le ZIP. Les doublons deviennent name (2).jpg.',
+    'Charger un exemple place deux photos et les compresse avec les options actuelles (Aucun garde le JPEG sans chasse au Ko), remplit le tableau et active le ZIP. Les doublons deviennent name (2).jpg.',
   tool_bulk_compress_product_photos_example_title: 'Exemple',
   tool_bulk_compress_product_photos_faq_a1:
     'Non. Tout se passe dans l\'onglet. Les fichiers restent sur l\'appareil, sans envoi au serveur. Le script ZIP peut venir de ce site ; vos photos ne partent pas.',
@@ -1754,16 +1754,21 @@ const fr: SiteLangDict = {
   tool_bulk_compress_product_photos_how_body:
     'Rassemblez les photos de fiche, partagez un plafond de poids, compressez ici, repartez avec le ZIP des réussites.',
   tool_bulk_compress_product_photos_how_item_1: 'Choisissez les photos produit à alléger.',
-  tool_bulk_compress_product_photos_how_item_2: 'Gardez la puce 200 Ko si la marketplace l\'impose. La sortie par défaut est JPEG (.jpg).',
-  tool_bulk_compress_product_photos_how_item_3: 'Si le téléphone sort un énorme cliché, limitez d\'abord le plus long côté.',
+  tool_bulk_compress_product_photos_how_item_2:
+    'Format, Ko et taille démarrent sur Aucun : simple réencodage. La marketplace veut du JPEG ou 200 Ko ? Activez la puce ou un préréglage. WebP et PNG aussi.',
+  tool_bulk_compress_product_photos_how_item_3:
+    'Si le téléphone sort un énorme cliché, limitez le plus long côté, la largeur ou la hauteur. Aucun ne touche pas aux pixels.',
   tool_bulk_compress_product_photos_how_item_4: 'Appuyez sur Tout compresser et lisez succès, dépassement ou ignorée.',
-  tool_bulk_compress_product_photos_how_item_5: 'Téléchargez le ZIP dès qu\'une photo a réussi. L\'exemple a déjà tourné à l\'ouverture.',
+  tool_bulk_compress_product_photos_how_item_5: 'Téléchargez le ZIP dès qu\'une photo a réussi. L\'exemple est facultatif et ne part pas tout seul.',
   tool_bulk_compress_product_photos_how_title: 'Mode d\'emploi',
   tool_bulk_compress_product_photos_jpeg_bg_black: 'Noir',
   tool_bulk_compress_product_photos_jpeg_bg_custom: 'Perso',
-  tool_bulk_compress_product_photos_jpeg_bg_label: 'Fond JPEG',
+  tool_bulk_compress_product_photos_jpeg_bg_hint:
+    'Le JPEG n’a pas d’alpha. Seuls les pixels vides prennent cette couleur ; les photos opaques ne changent pas. Aucun = pas de fond.',
+  tool_bulk_compress_product_photos_jpeg_bg_label: 'Remplir la transparence',
   tool_bulk_compress_product_photos_jpeg_bg_white: 'Blanc',
   tool_bulk_compress_product_photos_max_edge_label: 'Côté max',
+  tool_bulk_compress_product_photos_opt_none: 'Aucun',
   tool_bulk_compress_product_photos_output_label: 'Sortie',
   tool_bulk_compress_product_photos_preset_custom: 'Personnalisé',
   tool_bulk_compress_product_photos_preset_email: 'E-mail — 1280 px · 100 Ko',
@@ -1778,6 +1783,7 @@ const fr: SiteLangDict = {
   tool_bulk_compress_product_photos_preset_thumb: 'Largeur vignette — 800 px · 50 Ko',
   tool_bulk_compress_product_photos_preset_tiny: 'Hauteur mini — 512 px · 30 Ko',
   tool_bulk_compress_product_photos_quality_hint_png: 'Le PNG est sans perte — le curseur ne réduit pas les octets.',
+  tool_bulk_compress_product_photos_quality_hint_target: 'Avec un plafond Ko, le curseur est le départ de la recherche, pas la qualité finale.',
   tool_bulk_compress_product_photos_quality_label: 'Qualité',
   tool_bulk_compress_product_photos_resize_on: 'Limiter la taille de sortie',
   tool_bulk_compress_product_photos_rules_body:
@@ -1811,6 +1817,7 @@ const fr: SiteLangDict = {
   tool_bulk_compress_product_photos_warn_edge: 'Une photo dépasse 8192 px — attendez-vous à de la lenteur.',
   tool_bulk_compress_product_photos_warn_large: 'Un fichier dépasse 25 Mo — l\'onglet peut manquer de mémoire.',
   tool_bulk_compress_product_photos_warn_png: 'Le PNG reste souvent lourd ; pour les plafonds fiche préférez JPEG ou WebP.',
+  tool_bulk_compress_product_photos_warn_png_target: 'Le PNG n’approche pas un plafond Ko. Gardez le PNG, ou passez en JPEG/WebP pour un plafond.',
   tool_bulk_convert_images_to_jpg_article:
     'Quand la pièce jointe doit être un .jpg, passez un lot de photos, de logos PNG et de HEIC du téléphone dans cet onglet : un fond partagé sous la transparence, on saute les échecs, puis un ZIP. Les fichiers restent sur l\'appareil, sans envoi au serveur.',
   tool_bulk_convert_images_to_jpg_chip_png: 'PNG → JPG',
@@ -8364,7 +8371,7 @@ const fr: SiteLangDict = {
   tool_og_home_title: 'Aperçu Open Graph',
   tool_og_how_body:
     'L’aperçu analyse les balises og:/twitter: que vous collez (ou les extrait du HTML récupéré pour une URL) et dessine trois cartes. Facebook affiche l’image 1.91:1 à gauche avec titre, description et domaine dessous. X suit twitter:card : summary_large_image montre une grande image en haut, summary une petite à côté du texte. Les applis de messagerie comme WhatsApp montrent une grande carte. Le tableau des champs signale les quatre champs exigés par le protocole et liste ceux qui restent facultatifs.',
-  tool_og_how_item_1: 'Collez les meta og:/twitter: ou récupérez une URL.',
+  tool_og_how_item_1: 'Saisissez l’URL de la page et cliquez sur Récupérer l’URL, ou collez les meta og:/twitter:.',
   tool_og_how_item_2: 'Cliquez sur Aperçu (ou Exemple).',
   tool_og_how_item_3: 'Comparez les cartes Facebook, X et messagerie.',
   tool_og_how_item_4: 'Corrigez les champs obligatoires manquants dans le tableau.',

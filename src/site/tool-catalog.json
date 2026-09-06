@@ -384,7 +384,7 @@
   {
     "slug": "bulk-compress-product-photos",
     "path": "/tools/bulk-compress-product-photos",
-    "updatedAt": "2026-09-06T09:37:59.139Z",
+    "updatedAt": "2026-09-06T13:44:35.511Z",
     "launchedAt": "2026-09-03T07:34:00.000Z",
     "category": "image",
     "primaryTopic": "image-media",
@@ -3741,7 +3741,7 @@
   {
     "slug": "open-graph-preview",
     "path": "/tools/open-graph-preview",
-    "updatedAt": "2026-09-05T16:22:08.109Z",
+    "updatedAt": "2026-09-06T12:59:06.628Z",
     "category": "developer",
     "primaryTopic": "seo-growth",
     "secondaryTopics": [
