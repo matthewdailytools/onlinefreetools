@@ -60,7 +60,7 @@ const pt: SiteLangDict = {
   tool_convert_html_to_pdf_url_label: "URL da página",
   tool_convert_html_to_pdf_url_load: "Carregar URL",
   tool_convert_html_to_pdf_url_placeholder: "https://example.com",
-  tool_convert_html_to_pdf_wait_hint: "Segundos a mais depois que as imagens começam a carregar. O padrão é 3. Aumente se o PDF ficar com áreas de imagem em branco.",
+  tool_convert_html_to_pdf_wait_hint: "Segundos a mais depois que as imagens começam a carregar. O padrão é 1. Aumente se o PDF ficar com áreas de imagem em branco.",
   tool_convert_html_to_pdf_wait_label: "Espera de carga (s)",
   tool_convert_html_to_pdf_usecase_1: "Salvar uma página pública em PDF sem driver de impressora",
   tool_convert_html_to_pdf_usecase_2: "Colar HTML de e-mail ou campanha e exportar",

@@ -60,7 +60,7 @@ const ar: SiteLangDict = {
   tool_convert_html_to_pdf_url_label: "رابط الصفحة",
   tool_convert_html_to_pdf_url_load: "تحميل الرابط",
   tool_convert_html_to_pdf_url_placeholder: "https://example.com",
-  tool_convert_html_to_pdf_wait_hint: "ثوانٍ إضافية بعد بدء تحميل الصور. القيمة الافتراضية 3. ارفعها إذا ظهر في الـ PDF مربعات صور فارغة.",
+  tool_convert_html_to_pdf_wait_hint: "ثوانٍ إضافية بعد بدء تحميل الصور. القيمة الافتراضية 1. ارفعها إذا ظهر في الـ PDF مربعات صور فارغة.",
   tool_convert_html_to_pdf_wait_label: "انتظار التحميل (ث)",
   tool_convert_html_to_pdf_usecase_1: "حفظ صفحة عامة كـ PDF دون برنامج طابعة",
   tool_convert_html_to_pdf_usecase_2: "لصق HTML لرسالة أو حملة ثم تصديره",

@@ -60,7 +60,7 @@ const zh: SiteLangDict = {
   tool_convert_html_to_pdf_url_label: "网页地址",
   tool_convert_html_to_pdf_url_load: "载入网址",
   tool_convert_html_to_pdf_url_placeholder: "https://example.com",
-  tool_convert_html_to_pdf_wait_hint: "图片开始载入后再多等几秒再截图。默认 3 秒。PDF 里出现空白图块时请调高。",
+  tool_convert_html_to_pdf_wait_hint: "图片开始载入后再多等几秒再截图。默认 1 秒。PDF 里出现空白图块时请调高。",
   tool_convert_html_to_pdf_wait_label: "载入等待（秒）",
   tool_convert_html_to_pdf_usecase_1: "把公开网页存成 PDF，不必装虚拟打印机",
   tool_convert_html_to_pdf_usecase_2: "邮件模板、活动页：粘贴源码后先预览再导出",

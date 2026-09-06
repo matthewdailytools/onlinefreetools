@@ -60,7 +60,7 @@ const ja: SiteLangDict = {
   tool_convert_html_to_pdf_url_label: "ページ URL",
   tool_convert_html_to_pdf_url_load: "URL を読み込む",
   tool_convert_html_to_pdf_url_placeholder: "https://example.com",
-  tool_convert_html_to_pdf_wait_hint: "画像の読み込み開始後、さらに待つ秒数です。初期値は 3。PDF に白い画像枠が残るときは増やしてください。",
+  tool_convert_html_to_pdf_wait_hint: "画像の読み込み開始後、さらに待つ秒数です。初期値は 1。PDF に白い画像枠が残るときは増やしてください。",
   tool_convert_html_to_pdf_wait_label: "読み込み待ち（秒）",
   tool_convert_html_to_pdf_usecase_1: "公開ページをプリンタドライバなしで PDF 保存",
   tool_convert_html_to_pdf_usecase_2: "メールやキャンペーン HTML を貼ってから書き出す",

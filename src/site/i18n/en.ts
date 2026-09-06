@@ -3273,7 +3273,7 @@ const en: SiteLangDict = {
   tool_convert_html_to_pdf_usecase_3: 'Keep pasted source in-tab; fetch a URL only when you need the live HTML',
   tool_convert_html_to_pdf_usecases_title: 'Good fits',
   tool_convert_html_to_pdf_wait_hint:
-    'Extra seconds after images start loading so remote pictures can finish. Default is 3. Raise it if the PDF shows empty image boxes.',
+    'Extra seconds after images start loading so remote pictures can finish. Default is 1. Raise it if the PDF shows empty image boxes.',
   tool_convert_html_to_pdf_wait_label: 'Load wait (sec)',
   tool_convert_html_to_pdf_warn_large: 'Large file — may be slow.',
   tool_convert_pdf_to_dwg_article:

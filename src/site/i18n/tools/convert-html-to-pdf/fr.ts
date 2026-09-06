@@ -60,7 +60,7 @@ const fr: SiteLangDict = {
   tool_convert_html_to_pdf_url_label: "URL de la page",
   tool_convert_html_to_pdf_url_load: "Charger l’URL",
   tool_convert_html_to_pdf_url_placeholder: "https://example.com",
-  tool_convert_html_to_pdf_wait_hint: "Pause après le début du chargement des images. Valeur initiale : 3 s. Augmentez-la si le PDF a des zones d’image vides.",
+  tool_convert_html_to_pdf_wait_hint: "Pause après le début du chargement des images. Valeur initiale : 1 s. Augmentez-la si le PDF a des zones d’image vides.",
   tool_convert_html_to_pdf_wait_label: "Attente images (s)",
   tool_convert_html_to_pdf_usecase_1: "Enregistrer une page publique en PDF sans pilote d’imprimante",
   tool_convert_html_to_pdf_usecase_2: "Coller le HTML d’un e-mail ou d’une campagne puis l’exporter",

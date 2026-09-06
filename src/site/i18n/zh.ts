@@ -2855,7 +2855,7 @@ const zh: SiteLangDict = {
   tool_convert_html_to_pdf_usecase_2: '邮件模板、活动页：粘贴源码后先预览再导出',
   tool_convert_html_to_pdf_usecase_3: '源码可只留在本标签页；需要线上 HTML 时再填网址代抓',
   tool_convert_html_to_pdf_usecases_title: '适用场景',
-  tool_convert_html_to_pdf_wait_hint: '图片开始载入后再多等几秒再截图。默认 3 秒。PDF 里出现空白图块时请调高。',
+  tool_convert_html_to_pdf_wait_hint: '图片开始载入后再多等几秒再截图。默认 1 秒。PDF 里出现空白图块时请调高。',
   tool_convert_html_to_pdf_wait_label: '载入等待（秒）',
   tool_convert_html_to_pdf_warn_large: '文件较大，可能较慢。',
   tool_convert_pdf_to_dwg_article: '把 PDF 往 DWG 靠：导出 AutoCAD 能打开的 ASCII DXF，含文本实体和页框。浏览器写不出专有 DWG 二进制。文件留在本机，不上传服务器。',

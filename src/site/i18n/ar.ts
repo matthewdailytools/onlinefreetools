@@ -3023,7 +3023,7 @@ const ar: SiteLangDict = {
   tool_convert_html_to_pdf_usecase_2: 'لصق HTML لرسالة أو حملة ثم تصديره',
   tool_convert_html_to_pdf_usecase_3: 'إبقاء المصدر في التبويب وجلب الرابط عند الحاجة فقط',
   tool_convert_html_to_pdf_usecases_title: 'حالات مناسبة',
-  tool_convert_html_to_pdf_wait_hint: 'ثوانٍ إضافية بعد بدء تحميل الصور. القيمة الافتراضية 3. ارفعها إذا ظهر في الـ PDF مربعات صور فارغة.',
+  tool_convert_html_to_pdf_wait_hint: 'ثوانٍ إضافية بعد بدء تحميل الصور. القيمة الافتراضية 1. ارفعها إذا ظهر في الـ PDF مربعات صور فارغة.',
   tool_convert_html_to_pdf_wait_label: 'انتظار التحميل (ث)',
   tool_convert_html_to_pdf_warn_large: 'الملف الكبير قد يكون بطيئًا.',
   tool_convert_pdf_to_dwg_article:

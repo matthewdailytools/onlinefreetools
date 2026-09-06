@@ -60,7 +60,7 @@ const id: SiteLangDict = {
   tool_convert_html_to_pdf_url_label: "URL halaman",
   tool_convert_html_to_pdf_url_load: "Muat URL",
   tool_convert_html_to_pdf_url_placeholder: "https://example.com",
-  tool_convert_html_to_pdf_wait_hint: "Detik tambahan setelah gambar mulai dimuat. Nilai awal 3. Naikkan jika PDF masih punya kotak gambar kosong.",
+  tool_convert_html_to_pdf_wait_hint: "Detik tambahan setelah gambar mulai dimuat. Nilai awal 1. Naikkan jika PDF masih punya kotak gambar kosong.",
   tool_convert_html_to_pdf_wait_label: "Tunggu muat (dtk)",
   tool_convert_html_to_pdf_usecase_1: "Simpan halaman publik jadi PDF tanpa driver printer",
   tool_convert_html_to_pdf_usecase_2: "Tempel HTML email atau kampanye lalu ekspor",

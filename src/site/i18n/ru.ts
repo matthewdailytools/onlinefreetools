@@ -3148,7 +3148,7 @@ const ru: SiteLangDict = {
   tool_convert_html_to_pdf_usecase_3: 'Держать исходник во вкладке и запрашивать URL только при необходимости',
   tool_convert_html_to_pdf_usecases_title: 'Подходит для',
   tool_convert_html_to_pdf_wait_hint:
-    'Дополнительные секунды после начала загрузки картинок. По умолчанию 3. Увеличьте, если в PDF остаются пустые области вместо изображений.',
+    'Дополнительные секунды после начала загрузки картинок. По умолчанию 1. Увеличьте, если в PDF остаются пустые области вместо изображений.',
   tool_convert_html_to_pdf_wait_label: 'Пауза загрузки (с)',
   tool_convert_html_to_pdf_warn_large: 'Большой файл может обрабатываться медленно.',
   tool_convert_pdf_to_dwg_article:

@@ -3216,7 +3216,7 @@ const es: SiteLangDict = {
   tool_convert_html_to_pdf_usecase_3: 'Dejar el código en la pestaña y pedir la URL solo si hace falta',
   tool_convert_html_to_pdf_usecases_title: 'Casos de uso',
   tool_convert_html_to_pdf_wait_hint:
-    'Segundos extra tras empezar a cargar las imágenes. El valor inicial es 3. Súbelo si el PDF sale con recuadros vacíos.',
+    'Segundos extra tras empezar a cargar las imágenes. El valor inicial es 1. Súbelo si el PDF sale con recuadros vacíos.',
   tool_convert_html_to_pdf_wait_label: 'Espera de carga (s)',
   tool_convert_html_to_pdf_warn_large: 'Un archivo grande puede ir lento.',
   tool_convert_pdf_to_dwg_article:

@@ -3221,7 +3221,7 @@ const fr: SiteLangDict = {
   tool_convert_html_to_pdf_usecase_3: 'Garder le code dans l’onglet et n’appeler l’URL que si besoin',
   tool_convert_html_to_pdf_usecases_title: 'Bonnes utilisations',
   tool_convert_html_to_pdf_wait_hint:
-    'Pause après le début du chargement des images. Valeur initiale : 3 s. Augmentez-la si le PDF a des zones d’image vides.',
+    'Pause après le début du chargement des images. Valeur initiale : 1 s. Augmentez-la si le PDF a des zones d’image vides.',
   tool_convert_html_to_pdf_wait_label: 'Attente images (s)',
   tool_convert_html_to_pdf_warn_large: 'Un gros fichier peut être lent.',
   tool_convert_pdf_to_dwg_article:

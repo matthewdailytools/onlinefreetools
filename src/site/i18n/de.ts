@@ -3189,7 +3189,7 @@ const de: SiteLangDict = {
   tool_convert_html_to_pdf_usecase_3: 'Quelltext im Tab lassen und die URL nur bei Bedarf holen',
   tool_convert_html_to_pdf_usecases_title: 'Gute Einsätze',
   tool_convert_html_to_pdf_wait_hint:
-    'Zusätzliche Sekunden, nachdem Bilder zu laden beginnen. Vorgabe: 3. Erhöhen, wenn im PDF leere Bildflächen bleiben.',
+    'Zusätzliche Sekunden, nachdem Bilder zu laden beginnen. Vorgabe: 1. Erhöhen, wenn im PDF leere Bildflächen bleiben.',
   tool_convert_html_to_pdf_wait_label: 'Wartezeit (Sek.)',
   tool_convert_html_to_pdf_warn_large: 'Große Dateien können langsam sein.',
   tool_convert_pdf_to_dwg_article:

@@ -3136,7 +3136,7 @@ const id: SiteLangDict = {
   tool_convert_html_to_pdf_usecase_3: 'Biarkan sumber di tab dan ambil URL hanya jika perlu',
   tool_convert_html_to_pdf_usecases_title: 'Cocok untuk',
   tool_convert_html_to_pdf_wait_hint:
-    'Detik tambahan setelah gambar mulai dimuat. Nilai awal 3. Naikkan jika PDF masih punya kotak gambar kosong.',
+    'Detik tambahan setelah gambar mulai dimuat. Nilai awal 1. Naikkan jika PDF masih punya kotak gambar kosong.',
   tool_convert_html_to_pdf_wait_label: 'Tunggu muat (dtk)',
   tool_convert_html_to_pdf_warn_large: 'Berkas besar mungkin lambat.',
   tool_convert_pdf_to_dwg_article:

@@ -2873,7 +2873,7 @@ const ja: SiteLangDict = {
   tool_convert_html_to_pdf_usecase_2: 'メールやキャンペーン HTML を貼ってから書き出す',
   tool_convert_html_to_pdf_usecase_3: 'ソースはこのタブに残し、必要なときだけ URL を取得',
   tool_convert_html_to_pdf_usecases_title: '向いている用途',
-  tool_convert_html_to_pdf_wait_hint: '画像の読み込み開始後、さらに待つ秒数です。初期値は 3。PDF に白い画像枠が残るときは増やしてください。',
+  tool_convert_html_to_pdf_wait_hint: '画像の読み込み開始後、さらに待つ秒数です。初期値は 1。PDF に白い画像枠が残るときは増やしてください。',
   tool_convert_html_to_pdf_wait_label: '読み込み待ち（秒）',
   tool_convert_html_to_pdf_warn_large: '入力が大きいと遅くなることがあります。',
   tool_convert_pdf_to_dwg_article:

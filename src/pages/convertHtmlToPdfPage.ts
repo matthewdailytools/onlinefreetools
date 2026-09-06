@@ -87,8 +87,8 @@ export const renderConvertHtmlToPdfPage = (opts: {
 
 	/** 网页地址输入框的默认值（打开页面、加载样例、清空后都回填此项）。 */
 	const defaultPageUrl = 'https://example.com';
-	/** 截图前额外等待远程/懒加载图片的默认秒数。 */
-	const defaultLoadWaitSec = 3;
+	/** 截图前额外等待远程/懒加载图片的默认秒数（进页输入框初始值）。 */
+	const defaultLoadWaitSec = 1;
 	/** 载入等待允许的上限（秒）。 */
 	const maxLoadWaitSec = 30;
 	const pdfWorkLabels = pdfWorkUiLabels(opts.lang);

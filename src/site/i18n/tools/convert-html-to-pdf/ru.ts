@@ -60,7 +60,7 @@ const ru: SiteLangDict = {
   tool_convert_html_to_pdf_url_label: "URL страницы",
   tool_convert_html_to_pdf_url_load: "Загрузить URL",
   tool_convert_html_to_pdf_url_placeholder: "https://example.com",
-  tool_convert_html_to_pdf_wait_hint: "Дополнительные секунды после начала загрузки картинок. По умолчанию 3. Увеличьте, если в PDF остаются пустые области вместо изображений.",
+  tool_convert_html_to_pdf_wait_hint: "Дополнительные секунды после начала загрузки картинок. По умолчанию 1. Увеличьте, если в PDF остаются пустые области вместо изображений.",
   tool_convert_html_to_pdf_wait_label: "Пауза загрузки (с)",
   tool_convert_html_to_pdf_usecase_1: "Сохранить публичную страницу в PDF без драйвера принтера",
   tool_convert_html_to_pdf_usecase_2: "Вставить HTML письма или кампании и экспортировать",
