@@ -120,7 +120,7 @@ export const renderConvertPdfToDwgPage = (opts: {
 
     <div class="d-flex align-items-center tools-bar mb-2 flex-wrap">
       <button type="button" id="cpdBtnConvert" class="btn btn-primary btn-sm">${escapeHtml(t(opts.lang, (prefix + '_convert') as Parameters<typeof t>[1]))}</button>
-      <button type="button" id="cpdBtnDownload" class="btn btn-outline-primary btn-sm" disabled>${escapeHtml(t(opts.lang, (prefix + '_download') as Parameters<typeof t>[1]))} .dxf</button>
+      <a id="cpdBtnDownload" class="btn btn-outline-primary btn-sm disabled" href="#" aria-disabled="true" role="button">${escapeHtml(t(opts.lang, (prefix + '_download') as Parameters<typeof t>[1]))} .dxf</a>
       <button type="button" id="cpdBtnSample" class="btn btn-outline-secondary btn-sm">${escapeHtml(t(opts.lang, (prefix + '_sample') as Parameters<typeof t>[1]))}</button>
       <button type="button" id="cpdBtnClear" class="btn btn-outline-secondary btn-sm">${escapeHtml(t(opts.lang, (prefix + '_clear') as Parameters<typeof t>[1]))}</button>
     </div>
@@ -189,8 +189,12 @@ export const renderConvertPdfToDwgPage = (opts: {
       var statusEl = document.getElementById('cpdStatus');
       /** PDF 工作台绑定。 */
       var work = window.OftPdfWork.bind('cpdPdf');
-      /** 忙碌时禁用的按钮组。 */
-      var busyBtns = [btnConvert, btnSample, btnClear, btnDownload];
+      /**
+       * 忙碌时禁用的按钮组。
+       * 不含下载：setBusy(false) 会把组内按钮全部解开，若此时还没有 DXF，
+       * 「下载 .dxf」会看起来可点，实际 click 因 result 为空而静默无反应。
+       */
+      var busyBtns = [btnConvert, btnSample, btnClear];
 
       /** 界面文案。 */
       var msg = {
@@ -212,6 +216,8 @@ export const renderConvertPdfToDwgPage = (opts: {
       var source = null;
       /** @type {{ dxf: string, filename: string }|null} DXF 结果 */
       var result = null;
+      /** 当前下载用的 blob URL，换结果或清空时 revoke。 */
+      var downloadUrl = '';
 
       /** 显示/隐藏警告。 */
       function setWarn(text) {
@@ -244,10 +250,33 @@ export const renderConvertPdfToDwgPage = (opts: {
         return typeof PDFLib !== 'undefined' && PDFLib && typeof PDFLib.PDFDocument === 'function';
       }
 
+      /**
+       * 有结果时把 blob URL 挂到下载链接上，让用户点击走浏览器默认保存。
+       * @param {boolean} on 是否可下载
+       */
+      function setDownloadReady(on) {
+        if (downloadUrl) {
+          URL.revokeObjectURL(downloadUrl);
+          downloadUrl = '';
+        }
+        if (on && result && result.dxf) {
+          downloadUrl = URL.createObjectURL(new Blob([result.dxf], { type: 'application/octet-stream' }));
+          btnDownload.href = downloadUrl;
+          btnDownload.setAttribute('download', result.filename || 'drawing.dxf');
+          btnDownload.classList.remove('disabled');
+          btnDownload.setAttribute('aria-disabled', 'false');
+          return;
+        }
+        btnDownload.href = '#';
+        btnDownload.removeAttribute('download');
+        btnDownload.classList.add('disabled');
+        btnDownload.setAttribute('aria-disabled', 'true');
+      }
+
       /** 清空 DXF 结果。 */
       function clearResult() {
         result = null;
-        btnDownload.disabled = true;
+        setDownloadReady(false);
         dxfEl.value = '';
       }
 
@@ -436,6 +465,8 @@ export const renderConvertPdfToDwgPage = (opts: {
         }).finally(function () {
           work.setBusy(busyBtns, false);
           work.hideProgress();
+          /** 仅有预览、尚未转出 DXF 时保持下载不可点。 */
+          setDownloadReady(!!result);
         });
       }
 
@@ -460,7 +491,7 @@ export const renderConvertPdfToDwgPage = (opts: {
             var base = (source.name || 'document.pdf').replace(/\\.pdf$/i, '') || 'document';
             result = { dxf: dxf, filename: base + '.dxf' };
             dxfEl.value = dxf;
-            btnDownload.disabled = false;
+            setDownloadReady(true);
             work.setProgress(100);
             setStatus(msg.done);
           })
@@ -474,22 +505,18 @@ export const renderConvertPdfToDwgPage = (opts: {
           .finally(function () {
             work.setBusy(busyBtns, false);
             work.hideProgress();
-            btnDownload.disabled = !result;
+            setDownloadReady(!!result);
           });
       }
 
-      /** 下载 .dxf。 */
-      function downloadResult() {
-        if (!result) return;
-        var blob = new Blob([result.dxf], { type: 'application/dxf' });
-        var url = URL.createObjectURL(blob);
-        var a = document.createElement('a');
-        a.href = url;
-        a.download = result.filename;
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-        URL.revokeObjectURL(url);
+      /**
+       * 无结果时拦住 # 导航并提示；有结果时不 preventDefault，让 a[download] 走浏览器保存。
+       * @param {MouseEvent} e 点击事件
+       */
+      function onDownloadClick(e) {
+        if (result && result.dxf && btnDownload.getAttribute('aria-disabled') !== 'true') return;
+        e.preventDefault();
+        setError(source ? msg.convertFail : msg.empty);
       }
 
       /**
@@ -558,7 +585,7 @@ export const renderConvertPdfToDwgPage = (opts: {
       });
 
       btnConvert.addEventListener('click', convert);
-      btnDownload.addEventListener('click', downloadResult);
+      btnDownload.addEventListener('click', onDownloadClick);
       btnSample.addEventListener('click', function () { loadSample(); });
       btnClear.addEventListener('click', function () { clearAll(true); });
 

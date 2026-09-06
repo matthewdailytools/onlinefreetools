@@ -119,7 +119,7 @@ export const renderConvertPdfToPdfAPage = (opts: {
 
     <div class="d-flex align-items-center tools-bar mb-2 flex-wrap">
       <button type="button" id="cpaBtnConvert" class="btn btn-primary btn-sm">${escapeHtml(t(opts.lang, (prefix + '_convert') as Parameters<typeof t>[1]))}</button>
-      <button type="button" id="cpaBtnDownload" class="btn btn-outline-primary btn-sm" disabled>${escapeHtml(t(opts.lang, (prefix + '_download') as Parameters<typeof t>[1]))}</button>
+      <a id="cpaBtnDownload" class="btn btn-outline-primary btn-sm disabled" href="#" aria-disabled="true" role="button">${escapeHtml(t(opts.lang, (prefix + '_download') as Parameters<typeof t>[1]))}</a>
       <button type="button" id="cpaBtnSample" class="btn btn-outline-secondary btn-sm">${escapeHtml(t(opts.lang, (prefix + '_sample') as Parameters<typeof t>[1]))}</button>
       <button type="button" id="cpaBtnClear" class="btn btn-outline-secondary btn-sm">${escapeHtml(t(opts.lang, (prefix + '_clear') as Parameters<typeof t>[1]))}</button>
     </div>
@@ -183,8 +183,12 @@ export const renderConvertPdfToPdfAPage = (opts: {
       var statusEl = document.getElementById('cpaStatus');
       /** PDF 工作台绑定。 */
       var work = window.OftPdfWork.bind('cpaPdf');
-      /** 忙碌时禁用的按钮组。 */
-      var busyBtns = [btnConvert, btnSample, btnClear, btnDownload];
+      /**
+       * 忙碌时禁用的按钮组。
+       * 不含下载：setBusy(false) 会把组内按钮全部解开，若此时还没有转换结果，
+       * 「下载」会看起来可点，实际 click 因 resultBytes 为空而静默无反应。
+       */
+      var busyBtns = [btnConvert, btnSample, btnClear];
 
       /** 界面文案。 */
       var msg = {
@@ -206,6 +210,8 @@ export const renderConvertPdfToPdfAPage = (opts: {
       var source = null;
       /** @type {Uint8Array|null} 转换结果 */
       var resultBytes = null;
+      /** 当前下载用的 blob URL，换结果或清空时 revoke。 */
+      var downloadUrl = '';
 
       /** 显示/隐藏警告。 */
       function setWarn(text) {
@@ -238,10 +244,35 @@ export const renderConvertPdfToPdfAPage = (opts: {
         return typeof PDFLib !== 'undefined' && PDFLib && typeof PDFLib.PDFDocument === 'function';
       }
 
+      /**
+       * 有结果时把 blob URL 挂到下载链接上，让用户点击走浏览器默认保存（不用程序化 a.click）。
+       * @param {boolean} on 是否可下载
+       */
+      function setDownloadReady(on) {
+        if (downloadUrl) {
+          URL.revokeObjectURL(downloadUrl);
+          downloadUrl = '';
+        }
+        if (on && resultBytes && resultBytes.length) {
+          var copy = new Uint8Array(resultBytes.byteLength);
+          copy.set(resultBytes);
+          downloadUrl = URL.createObjectURL(new Blob([copy], { type: 'application/pdf' }));
+          btnDownload.href = downloadUrl;
+          btnDownload.setAttribute('download', ((source && source.name) || 'document.pdf').replace(/\\.pdf$/i, '') + '-pdfa.pdf');
+          btnDownload.classList.remove('disabled');
+          btnDownload.setAttribute('aria-disabled', 'false');
+          return;
+        }
+        btnDownload.href = '#';
+        btnDownload.removeAttribute('download');
+        btnDownload.classList.add('disabled');
+        btnDownload.setAttribute('aria-disabled', 'true');
+      }
+
       /** 清空转换结果。 */
       function clearResult() {
         resultBytes = null;
-        btnDownload.disabled = true;
+        setDownloadReady(false);
       }
 
       /** 刷新元信息。 */
@@ -309,6 +340,8 @@ export const renderConvertPdfToPdfAPage = (opts: {
         }).finally(function () {
           work.setBusy(busyBtns, false);
           work.hideProgress();
+          /** 仅有预览、尚未转出 PDF/A 时保持下载不可点。 */
+          setDownloadReady(!!resultBytes);
         });
       }
 
@@ -339,7 +372,7 @@ export const renderConvertPdfToPdfAPage = (opts: {
           })
           .then(function () {
             work.setProgress(100);
-            btnDownload.disabled = false;
+            setDownloadReady(true);
             setStatus(msg.done);
           })
           .catch(function (err) {
@@ -352,22 +385,18 @@ export const renderConvertPdfToPdfAPage = (opts: {
           .finally(function () {
             work.setBusy(busyBtns, false);
             work.hideProgress();
-            btnDownload.disabled = !resultBytes;
+            setDownloadReady(!!resultBytes);
           });
       }
 
-      /** 下载转换结果。 */
-      function downloadResult() {
-        if (!resultBytes) return;
-        var blob = new Blob([resultBytes], { type: 'application/pdf' });
-        var url = URL.createObjectURL(blob);
-        var a = document.createElement('a');
-        a.href = url;
-        a.download = ((source && source.name) || 'document.pdf').replace(/\\.pdf$/i, '') + '-pdfa.pdf';
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-        URL.revokeObjectURL(url);
+      /**
+       * 无结果时拦住 # 导航并提示；有结果时不 preventDefault，让 a[download] 走浏览器保存。
+       * @param {MouseEvent} e 点击事件
+       */
+      function onDownloadClick(e) {
+        if (resultBytes && resultBytes.length && btnDownload.getAttribute('aria-disabled') !== 'true') return;
+        e.preventDefault();
+        setError(source ? msg.convertFail : msg.empty);
       }
 
       /**
@@ -436,7 +465,7 @@ export const renderConvertPdfToPdfAPage = (opts: {
       });
 
       btnConvert.addEventListener('click', convert);
-      btnDownload.addEventListener('click', downloadResult);
+      btnDownload.addEventListener('click', onDownloadClick);
       btnSample.addEventListener('click', function () { loadSample(); });
       btnClear.addEventListener('click', function () { clearAll(true); });
 
