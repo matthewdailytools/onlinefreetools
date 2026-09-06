@@ -2,47 +2,47 @@
   "version": 1,
   "entries": {
     "https://onlinefreetools.org/": {
-      "hash": "03ea23138487fc1bdb69bb13601309f659bbb8b1dc9f12536f76df2e2fe21ec1",
+      "hash": "db2d43f7ff102b52ff3e693c151f946657b4ee320749f53a0170a4e426c1ddf3",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/": {
-      "hash": "7d10c69440040f14d184a81d8fa2bec36d21a11bd12c7ceefbe0816eae7a3b98",
+      "hash": "e605096420ffdc0d3f4bb23fa089a361b92de6a7b822dd68062c93081dc66c77",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/tool-type": {
-      "hash": "57d2bfc5dd4fe34a3dddc9a3b55a19caf04343a16fa8287e3d29b292387c106a",
+      "hash": "bca13b75b929006555a329cf7d2e159470c10e6c22814f15f6854e588f179647",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/tool-type/color": {
-      "hash": "57d2bfc5dd4fe34a3dddc9a3b55a19caf04343a16fa8287e3d29b292387c106a",
+      "hash": "bca13b75b929006555a329cf7d2e159470c10e6c22814f15f6854e588f179647",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/tool-type/data": {
-      "hash": "57d2bfc5dd4fe34a3dddc9a3b55a19caf04343a16fa8287e3d29b292387c106a",
+      "hash": "bca13b75b929006555a329cf7d2e159470c10e6c22814f15f6854e588f179647",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/tool-type/image": {
-      "hash": "57d2bfc5dd4fe34a3dddc9a3b55a19caf04343a16fa8287e3d29b292387c106a",
+      "hash": "bca13b75b929006555a329cf7d2e159470c10e6c22814f15f6854e588f179647",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/tool-type/network": {
-      "hash": "57d2bfc5dd4fe34a3dddc9a3b55a19caf04343a16fa8287e3d29b292387c106a",
+      "hash": "bca13b75b929006555a329cf7d2e159470c10e6c22814f15f6854e588f179647",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/tool-type/number": {
-      "hash": "57d2bfc5dd4fe34a3dddc9a3b55a19caf04343a16fa8287e3d29b292387c106a",
+      "hash": "bca13b75b929006555a329cf7d2e159470c10e6c22814f15f6854e588f179647",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/tool-type/pdf": {
-      "hash": "57d2bfc5dd4fe34a3dddc9a3b55a19caf04343a16fa8287e3d29b292387c106a",
+      "hash": "bca13b75b929006555a329cf7d2e159470c10e6c22814f15f6854e588f179647",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/tool-type/text": {
-      "hash": "57d2bfc5dd4fe34a3dddc9a3b55a19caf04343a16fa8287e3d29b292387c106a",
+      "hash": "bca13b75b929006555a329cf7d2e159470c10e6c22814f15f6854e588f179647",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/tool-type/unit": {
-      "hash": "57d2bfc5dd4fe34a3dddc9a3b55a19caf04343a16fa8287e3d29b292387c106a",
+      "hash": "bca13b75b929006555a329cf7d2e159470c10e6c22814f15f6854e588f179647",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/tools/add-digital-signature-to-pdf": {
@@ -50,7 +50,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/tools/add-text-to-pdf-file": {
-      "hash": "3dfa578c6498948c2a5e5e45ee8918fb5f3707678b9ec82adf6f9245f3f61e10",
+      "hash": "2d4e1413de60c63211423a37d20ce7254a5a044b4aa45a8d92ac76992603ba13",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/tools/add-watermark": {
@@ -58,8 +58,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/ar/tools/add-www-to-dns": {
-      "hash": "42a5df807b1ad9fdeee53a386bd33a52dc45fcdd261f82a5d409cf3017d7142d",
-      "lastmod": "2026-09-03"
+      "hash": "719e98934d7c8969e71bc3a955100fefd9f067c50db04b2613ac84d7e4de7755",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/tools/amazon-main-image-size": {
       "hash": "689ea937ca45442f3df0c1ef90dbd56a44d4c840e25f26ccc36ed1a236387b45",
@@ -70,7 +70,7 @@
       "lastmod": "2026-09-05"
     },
     "https://onlinefreetools.org/ar/tools/apple-touch-icon": {
-      "hash": "1a842083377c86094490661ce4322bd45b5adbd2eb4cd4e18b93d79b7d143f9c",
+      "hash": "8fcbc3b0024d83cea0d628d6bbce0be78b09399456c3310b72249e1bf2751d92",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/tools/archive-extractor": {
@@ -114,7 +114,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/tools/bulk-compress-product-photos": {
-      "hash": "f7e21f1eb1ee24b877780ddbb43e83cb38e993ff263e6a4d931ae10190da426e",
+      "hash": "72dfb94d1631065bf658b42db57071c4f1b62d74ff4a7edfe3882ebe3dcaaf86",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/tools/bulk-convert-images-to-jpg": {
@@ -150,8 +150,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/ar/tools/cidr-to-ip-range": {
-      "hash": "68a651de1294e066e34eaab2bf68dc66007d4649570fa207a743bcaa5cf05e79",
-      "lastmod": "2026-09-03"
+      "hash": "6da2da6a4aca780cd881d9bd256f0cdb6d4fc335808c2c3032eb9abd282db5c5",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/tools/color-from-image": {
       "hash": "3bf5191d62e053f95cd3fbf54a9171cb8f5a218b6d87ee6ce1d2bc34725fd317",
@@ -178,7 +178,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/tools/convert-html-to-pdf": {
-      "hash": "1cb330c09ae8b4fcf640d366222c8ca7cba88e4f89f785478c18465a98543ff6",
+      "hash": "5f6127eaecda71296fcef3d65bcd77c2230446e03447ecf98f7346e8c29a79fc",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/tools/convert-pdf-to-dwg": {
@@ -230,7 +230,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/tools/csv-json": {
-      "hash": "55e09e15b5f4ce6e5561e17ea710c51e92eda9148ea4790e18e24806fc8c1d51",
+      "hash": "0a3fdbc98345e1e6aea5351c8fcf85c67c0b63c29666e73bb677170c5dd22c48",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/tools/curl-to-fetch": {
@@ -254,11 +254,11 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/tools/excel-formulas-cheat-sheet": {
-      "hash": "146ae0a3f8202ccdd6701b51dcdd33f9fcec998892731325929a95d257763601",
-      "lastmod": "2026-09-04"
+      "hash": "df0fe6234c033bae755faa01e4518cfb2218892710fa5e051773be4a215854f5",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/tools/extract-text-from-pdf": {
-      "hash": "a6ccf2553a672b6107e8ff86d313928a1f77203ad2185d4bcbe79c00ef899a32",
+      "hash": "7a117b7308f8ac22cbdb39b8e7498a77050651ebbc0746685f97bad8181e6aaa",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/tools/file-hash": {
@@ -418,8 +418,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/ar/tools/how-to-calculate-ohms-law": {
-      "hash": "d1e0b3d1685e9d9350dc5c56834d60e4fe2e9509963983a23de9684b8c40fbfb",
-      "lastmod": "2026-09-03"
+      "hash": "fcb88646ec0f1dab4d0d3f1316e3653629484352c070c180360d99e22489a44a",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/tools/how-to-calculate-one-rep-max": {
       "hash": "d6738e33197c40d0d9ff5af9c8d927d60061891e888f5c8e1eecbc6e1ad9a666",
@@ -538,12 +538,12 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/ar/tools/image-compress": {
-      "hash": "f4e5c159c9ea9e7db694717bb211172aa53ef4f3e393e10ff6c68702f3410938",
-      "lastmod": "2026-09-03"
+      "hash": "e8a88f1b0d2f9ff5acbed0d9c31bc50afd92943fea8f2d6235f3ad68183007b5",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/tools/image-crop": {
-      "hash": "1815f8e34c2b7523f7460d6ccd46d79544419e9fed2f244b35976a3ffa55a9ed",
-      "lastmod": "2026-09-03"
+      "hash": "566679dc57e3aad47a782984edfaff49b32c3ea27414a1014101c9cccf11d396",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/tools/image-exif": {
       "hash": "96859170237d9c8a204661afbcff8e7ef1afbb6804f49ccac32c07cf33c2f76f",
@@ -562,8 +562,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/ar/tools/image-optimizer": {
-      "hash": "5dcef2a6b2e7a3a393ecddb6108aebe454154c7f7092a3ee9583754faeaf13ac",
-      "lastmod": "2026-09-03"
+      "hash": "700cfaba69363d60074067dcfe9645f2af4fa5ab3ce4144b6219c22e2e0056c2",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/tools/image-overlay": {
       "hash": "54bf8201063e1525cbc04ac06d375cdadf0d3d179734fad2ee3d1d552ebf384c",
@@ -590,16 +590,16 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/tools/indexnow": {
-      "hash": "564a2fc1977aae794b2737d326cb3963dcac68ae04333ad9f2caf11628466024",
-      "lastmod": "2026-09-03"
+      "hash": "8463108c75a3ab8a4d5085c20537b619450ca2694a4f9e6f0bc180025dbab7ce",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/tools/instagram-post-size": {
       "hash": "d8a18fe29343695ed8155bbd4eecef32f68c5189aeae64a8f618f36e5befd4bf",
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/ar/tools/instagram-story-size": {
-      "hash": "7a10dbc0643b033c54bf47a03966dcec0fc0930a0070ad3c3349d7f18da61ae9",
-      "lastmod": "2026-09-03"
+      "hash": "fe7f3e2c7629793bdb578b65ed737ef7c8b236aa0e0b1daf8b4c156d82fe4646",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/tools/ios-app-icon-size": {
       "hash": "3a4cc2c2b98f963796614652fbb742eab3b35e02edd6599582e3c69489b9fef3",
@@ -614,8 +614,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/ar/tools/ip-range-to-cidr": {
-      "hash": "d6ac02a6cb7755f1b99a49af0871285a598208c7899cb76aad9f820422d6891d",
-      "lastmod": "2026-09-03"
+      "hash": "a31e3ba9944dc24cc36c6525cda42c9e833c83098c2ed262c2dccc6d1f4e2e34",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/tools/iphone-app-store-screenshot": {
       "hash": "c1430c5ff9f85adbbad8cf746174e735a523b806227c183b5b7267dc1d95114f",
@@ -630,11 +630,11 @@
       "lastmod": "2026-09-05"
     },
     "https://onlinefreetools.org/ar/tools/json-schema-validator": {
-      "hash": "540022fa9a203eceae59a0fe44988b79a9f3945361f2a61f5f643f94a5f25134",
+      "hash": "9788771cadbb675c27b75e0b75d294960f8ee36d9877da58219185d40f8fc865",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/tools/jwt-decoder": {
-      "hash": "823eb1d045494275c491a7a9b6693b422182ead48509b02cd94233a54edab044",
+      "hash": "14965464bb1a8836664a25e94bb31c9ea847a6b1fdd4c511323811eb77ba69ba",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/tools/linkedin-banner-size": {
@@ -650,11 +650,11 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/tools/make-pdf-flipbook": {
-      "hash": "8ff0df726ecc5ca7f79eb74269dcdf1f91417686c119a016f4e3411070e6c4e2",
+      "hash": "efc0314fab851b2b72e215bbc09afe3aa139a9a6004bc49ccfe6d732d15a2568",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/tools/markdown-to-html": {
-      "hash": "45a899024102aac980076175dd2a6242ab10b051141b822fe8cf74fe95b871c0",
+      "hash": "e94df168a0e60196b49cb1bccdfdb03ffee64f76d2d81fcf0a6b95ad2a12e759",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/tools/measuring-magnetic-fields": {
@@ -662,7 +662,7 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/ar/tools/merge-pdf": {
-      "hash": "61d7d9688d54c5125024ff381c3bc2e786333ba5efb604a4e500fadc0a09c488",
+      "hash": "ddf1fb7c6791885efd692220f6325f21190c74989f83c983030cf492f441f6ce",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/tools/meta-serp-preview": {
@@ -686,15 +686,15 @@
       "lastmod": "2026-09-04"
     },
     "https://onlinefreetools.org/ar/tools/open-graph-image-size": {
-      "hash": "04c6644c63e2f1cbd5ecbaa553b8ead8ee39d5f80f3ad7da3fc5cc10858b52ff",
-      "lastmod": "2026-09-03"
+      "hash": "a9decfcf0deb934f5c0d993af672820805d115931905f339fc7b1a0f67edfce1",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/tools/open-graph-preview": {
       "hash": "2fdf8512be5f9d57abd6bd5bc17e771701354af8e96aa1914cc7915a7d6c0b19",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/tools/open-pdf-in-browser": {
-      "hash": "0d538fe1df0c40631e28f32d15b8942e6f487dfe85f50c8a679d0ac86694d043",
+      "hash": "6d8e54d2e3b67ab392a2c7bb8a3bf3b8152d6d58f187b03e3d5f8bc5da7902ac",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/tools/organize-pdf": {
@@ -794,8 +794,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/ar/tools/terraform-cidrsubnet": {
-      "hash": "5ba1d3483a213ba271cb21d29efed5e4fa5e6314549e66f93be59d757ad910b2",
-      "lastmod": "2026-09-03"
+      "hash": "d1faa0b67113efba0e3fcb768b0e7e6549238b020de92d297330e4d69552353f",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/tools/text-diff": {
       "hash": "fc727ec7076af3f8abb0dd263081698385a28028446b0c034ab2fb25e2a9eedb",
@@ -826,7 +826,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/tools/unzip-file": {
-      "hash": "a166c33ad48e90e8cad59d1b2123461b1d7ff32375adb7adc9d02458ca10ebef",
+      "hash": "5de8cc7a6a0a2e66bb77495be5b7de6088a2dc318e07aa07bc1e4ab627a4d965",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/tools/utm-builder": {
@@ -846,8 +846,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/ar/tools/website-headers": {
-      "hash": "4e9a877bc3aab9bc2531a65dcc14479d44ed419b026f2e3dc4aba05dfaa69b46",
-      "lastmod": "2026-09-03"
+      "hash": "d8abf6fae59184e06747067f6a29f33bb8932c4d948c4f63ff514c4b77d2a7f2",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/tools/wrap-formula-with-ifna": {
       "hash": "8271f26f65e866eb4cfa01064df40019a7e6822977588023f73869c8f6fcd3f1",
@@ -866,7 +866,7 @@
       "lastmod": "2026-09-04"
     },
     "https://onlinefreetools.org/ar/tools/write-pdf-document-online": {
-      "hash": "e8f33966f722b061897c19c5c066265f74ba9fae634de65287e6ad096054d8cb",
+      "hash": "7b5a2d19657a6d13c47513be5ebb76a05f34cfa225f7176e3e3acdf08461e3a7",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/tools/writing-prompt-generator": {
@@ -874,7 +874,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/tools/yaml-json": {
-      "hash": "6ffc240b5257d95ea36f671f4e40c2381404e68b954c52ef01a4ced25354079b",
+      "hash": "5175eafb68751bd909f74ab2e0e364fc013564736a006c477c69e2174174c663",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/tools/youtube-thumbnail-size": {
@@ -958,95 +958,95 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/where-to-use-tools": {
-      "hash": "57d2bfc5dd4fe34a3dddc9a3b55a19caf04343a16fa8287e3d29b292387c106a",
+      "hash": "bca13b75b929006555a329cf7d2e159470c10e6c22814f15f6854e588f179647",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/where-to-use-tools/construction": {
-      "hash": "57d2bfc5dd4fe34a3dddc9a3b55a19caf04343a16fa8287e3d29b292387c106a",
+      "hash": "bca13b75b929006555a329cf7d2e159470c10e6c22814f15f6854e588f179647",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/where-to-use-tools/design": {
-      "hash": "57d2bfc5dd4fe34a3dddc9a3b55a19caf04343a16fa8287e3d29b292387c106a",
+      "hash": "bca13b75b929006555a329cf7d2e159470c10e6c22814f15f6854e588f179647",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/where-to-use-tools/developer": {
-      "hash": "57d2bfc5dd4fe34a3dddc9a3b55a19caf04343a16fa8287e3d29b292387c106a",
+      "hash": "bca13b75b929006555a329cf7d2e159470c10e6c22814f15f6854e588f179647",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/where-to-use-tools/documents": {
-      "hash": "57d2bfc5dd4fe34a3dddc9a3b55a19caf04343a16fa8287e3d29b292387c106a",
+      "hash": "bca13b75b929006555a329cf7d2e159470c10e6c22814f15f6854e588f179647",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/where-to-use-tools/everyday": {
-      "hash": "57d2bfc5dd4fe34a3dddc9a3b55a19caf04343a16fa8287e3d29b292387c106a",
+      "hash": "bca13b75b929006555a329cf7d2e159470c10e6c22814f15f6854e588f179647",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/where-to-use-tools/finance": {
-      "hash": "57d2bfc5dd4fe34a3dddc9a3b55a19caf04343a16fa8287e3d29b292387c106a",
+      "hash": "bca13b75b929006555a329cf7d2e159470c10e6c22814f15f6854e588f179647",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/where-to-use-tools/health": {
-      "hash": "57d2bfc5dd4fe34a3dddc9a3b55a19caf04343a16fa8287e3d29b292387c106a",
+      "hash": "bca13b75b929006555a329cf7d2e159470c10e6c22814f15f6854e588f179647",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/where-to-use-tools/math": {
-      "hash": "57d2bfc5dd4fe34a3dddc9a3b55a19caf04343a16fa8287e3d29b292387c106a",
+      "hash": "bca13b75b929006555a329cf7d2e159470c10e6c22814f15f6854e588f179647",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/where-to-use-tools/media": {
-      "hash": "57d2bfc5dd4fe34a3dddc9a3b55a19caf04343a16fa8287e3d29b292387c106a",
+      "hash": "bca13b75b929006555a329cf7d2e159470c10e6c22814f15f6854e588f179647",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/where-to-use-tools/physics": {
-      "hash": "57d2bfc5dd4fe34a3dddc9a3b55a19caf04343a16fa8287e3d29b292387c106a",
+      "hash": "bca13b75b929006555a329cf7d2e159470c10e6c22814f15f6854e588f179647",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/where-to-use-tools/seo": {
-      "hash": "57d2bfc5dd4fe34a3dddc9a3b55a19caf04343a16fa8287e3d29b292387c106a",
+      "hash": "bca13b75b929006555a329cf7d2e159470c10e6c22814f15f6854e588f179647",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ar/where-to-use-tools/sports": {
-      "hash": "57d2bfc5dd4fe34a3dddc9a3b55a19caf04343a16fa8287e3d29b292387c106a",
+      "hash": "bca13b75b929006555a329cf7d2e159470c10e6c22814f15f6854e588f179647",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/": {
-      "hash": "92837e6adf3ef756b352fdbbd232bdaa13fd7d427197cf0e130482b3db9ecf76",
+      "hash": "98edf9f485a97769e91d26d43b67d23fdd04b3bdc7f414c20ec177cd1200e323",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/tool-type": {
-      "hash": "16d84902d250cf2fa234223eb7ea5934e11be2ef963e510ba5f35a161dce617e",
+      "hash": "3dd1930070f994ed04dbc484e20c1c74ceac0ce1061fd9eb18a0c29c5ec33dd8",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/tool-type/color": {
-      "hash": "16d84902d250cf2fa234223eb7ea5934e11be2ef963e510ba5f35a161dce617e",
+      "hash": "3dd1930070f994ed04dbc484e20c1c74ceac0ce1061fd9eb18a0c29c5ec33dd8",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/tool-type/data": {
-      "hash": "16d84902d250cf2fa234223eb7ea5934e11be2ef963e510ba5f35a161dce617e",
+      "hash": "3dd1930070f994ed04dbc484e20c1c74ceac0ce1061fd9eb18a0c29c5ec33dd8",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/tool-type/image": {
-      "hash": "16d84902d250cf2fa234223eb7ea5934e11be2ef963e510ba5f35a161dce617e",
+      "hash": "3dd1930070f994ed04dbc484e20c1c74ceac0ce1061fd9eb18a0c29c5ec33dd8",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/tool-type/network": {
-      "hash": "16d84902d250cf2fa234223eb7ea5934e11be2ef963e510ba5f35a161dce617e",
+      "hash": "3dd1930070f994ed04dbc484e20c1c74ceac0ce1061fd9eb18a0c29c5ec33dd8",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/tool-type/number": {
-      "hash": "16d84902d250cf2fa234223eb7ea5934e11be2ef963e510ba5f35a161dce617e",
+      "hash": "3dd1930070f994ed04dbc484e20c1c74ceac0ce1061fd9eb18a0c29c5ec33dd8",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/tool-type/pdf": {
-      "hash": "16d84902d250cf2fa234223eb7ea5934e11be2ef963e510ba5f35a161dce617e",
+      "hash": "3dd1930070f994ed04dbc484e20c1c74ceac0ce1061fd9eb18a0c29c5ec33dd8",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/tool-type/text": {
-      "hash": "16d84902d250cf2fa234223eb7ea5934e11be2ef963e510ba5f35a161dce617e",
+      "hash": "3dd1930070f994ed04dbc484e20c1c74ceac0ce1061fd9eb18a0c29c5ec33dd8",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/tool-type/unit": {
-      "hash": "16d84902d250cf2fa234223eb7ea5934e11be2ef963e510ba5f35a161dce617e",
+      "hash": "3dd1930070f994ed04dbc484e20c1c74ceac0ce1061fd9eb18a0c29c5ec33dd8",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/tools/add-digital-signature-to-pdf": {
@@ -1054,7 +1054,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/tools/add-text-to-pdf-file": {
-      "hash": "03356affe8a8fcdc4f11dadc0bc748e88cbfa788f34e741fa1fa381af39419f0",
+      "hash": "ea32d6a35d5734a340a8bd02de1e2b0da3c4456e2a93b833a5495acbc56c5bea",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/tools/add-watermark": {
@@ -1062,8 +1062,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/de/tools/add-www-to-dns": {
-      "hash": "907530cdc513c616c5e5705b9ffb2948d62efb92b723855cca7413ba8d561cb2",
-      "lastmod": "2026-09-03"
+      "hash": "b8883b8c670b2bd5c0090d1a06a6b40118a3095db0cb6a54dffbe2e88f41c54c",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/tools/amazon-main-image-size": {
       "hash": "a68ea2aaaa722e0470bf792bb3a9472f740cd666dc6bead4c8b8490c87d5d631",
@@ -1074,7 +1074,7 @@
       "lastmod": "2026-09-05"
     },
     "https://onlinefreetools.org/de/tools/apple-touch-icon": {
-      "hash": "fcca75e0fd77e780e8ffcce01bfc241594c2f1f0916f8677178c1dd3eeb581f3",
+      "hash": "edd8e3139e74a0d434bed33c7d0c386838945788f581392c4cd197010742008f",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/tools/archive-extractor": {
@@ -1118,7 +1118,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/tools/bulk-compress-product-photos": {
-      "hash": "3d0d8f7d50bbfcae98f688dab009f534e85ff9ed3cd1863ef08b7d1391912a7d",
+      "hash": "72e2ab8e1287d84517430b1690c5664cdcd2cbb5f0b6dd3f858288a7214971b2",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/tools/bulk-convert-images-to-jpg": {
@@ -1154,8 +1154,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/de/tools/cidr-to-ip-range": {
-      "hash": "b4e8b9f743370b78bd5ba2bcbfa984651f2deeae21a381613b312de510035216",
-      "lastmod": "2026-09-03"
+      "hash": "846df01653ff8c373d50d6e24b770cd506b2ce25921d19cf1770db4ad54047be",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/tools/color-from-image": {
       "hash": "a35efae7ae50affc1513083679f0518cd3e9c1ba17e4a849f3001ee3fed3c8fa",
@@ -1182,7 +1182,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/tools/convert-html-to-pdf": {
-      "hash": "e932554b81266e6d12a63f81aec651e74acc5061f27e6482bc44d50176238f44",
+      "hash": "401ee597b1aacc823c6750a1045c3ced692ee92d225251440489c3da50d47414",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/tools/convert-pdf-to-dwg": {
@@ -1234,7 +1234,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/tools/csv-json": {
-      "hash": "243414cb571611c62508642702befa216bba4750ba25ace1511d5f7c58809097",
+      "hash": "e636a3932352a7f32f190473c91e464eb6c2859c51e854bf4456d87e11ef5e00",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/tools/curl-to-fetch": {
@@ -1258,11 +1258,11 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/tools/excel-formulas-cheat-sheet": {
-      "hash": "994103b1fd42baf4841a4a44275022cc0365388bf10430ae1001a2be01d3a91c",
-      "lastmod": "2026-09-04"
+      "hash": "aff233a0e7a9e4d2ec420f930c1557264ceeeebc53bd22eb4f417bedc0813e71",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/tools/extract-text-from-pdf": {
-      "hash": "9097c7e563994b5f4aaa7cc257cc16504b602a8f723655abf1c71061838c6610",
+      "hash": "db73ed438eb62f9b5463ff242484070af32cb1281d5f4fb749337d8d65d71374",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/tools/file-hash": {
@@ -1422,8 +1422,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/de/tools/how-to-calculate-ohms-law": {
-      "hash": "7237ddd267a66add27b97d036f6808a3a050050e4731050da6a85184034fa797",
-      "lastmod": "2026-09-03"
+      "hash": "54678d99616ff22af5713f6b01707d5b1e13f1fbc9468739c7f4a4f696ea968a",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/tools/how-to-calculate-one-rep-max": {
       "hash": "f196cfcfea5aebfffb4c3946f8cf79da60e077573f0ce76246a959095ee09026",
@@ -1542,12 +1542,12 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/de/tools/image-compress": {
-      "hash": "c7adc42dc13b6e219db74b6c74e6f820ac59584a14f25e6dfa269850b9342e66",
-      "lastmod": "2026-09-03"
+      "hash": "b373ee163f59cc8145b5e9ce476064640f77c52f6c509579dc18beac3349ebfc",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/tools/image-crop": {
-      "hash": "4c76d64d3277f2e3a053f45bfdf230a46151e117f4a459d94528a23910f4f4ac",
-      "lastmod": "2026-09-03"
+      "hash": "985673bd303560e01e83a94d7180cd9c208303956e15e5b4a2c24a099742ed13",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/tools/image-exif": {
       "hash": "f62545f02b72a65bea20f155ad979b4ae337f2c26eecd1c623effb292ec28df0",
@@ -1566,8 +1566,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/de/tools/image-optimizer": {
-      "hash": "e3a598bc4ce65a06997f0b0243d32c1ce300c973e4633ddaf1ce10fb8ca4382b",
-      "lastmod": "2026-09-03"
+      "hash": "3b9567b945bba02027734d0317c67fc49298b8a1c540988a86d263a6dc8a68b3",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/tools/image-overlay": {
       "hash": "6140cddc1e9e8dba0894514f4baee28dd48f19702a327493f3493e5d5149c0d9",
@@ -1594,16 +1594,16 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/tools/indexnow": {
-      "hash": "0e3e35a84f2231226d6c3bd9c84d0e9495285f66afdb8e75a499dcd77ddd5cd3",
-      "lastmod": "2026-09-03"
+      "hash": "c9310039d9c3583c5092365df65ca2788011a3151cb818dceaf1973b0dda5d18",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/tools/instagram-post-size": {
       "hash": "237ea1038a18c6cdeed93963b8ba91829a1abac427131fbbfad4afd85a8bf3b7",
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/de/tools/instagram-story-size": {
-      "hash": "bbb9a0d4a3d614e3247c20e3ef88336967afc83375f4beec928a9e2a20a7da0a",
-      "lastmod": "2026-09-03"
+      "hash": "ddf34574660029bf834d1315b077b5efceef42adcc57239c41b96d843b0d836d",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/tools/ios-app-icon-size": {
       "hash": "eed2665676e282eb7e8bb1c82566fad69cefc36aacee33cd0c226f452482928f",
@@ -1618,8 +1618,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/de/tools/ip-range-to-cidr": {
-      "hash": "9d2c302c356e065a41e0bf8c48c7d69bc76e04421e60b149d14d6314491f2b6f",
-      "lastmod": "2026-09-03"
+      "hash": "a79009d3b7a67de2281ea1ce8bc8355be23d63b532a4dfcb4661c9bff79c90e9",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/tools/iphone-app-store-screenshot": {
       "hash": "e9853ea3ce74c2e0d3d29f8eaa34bc077139a5cf143d7e35f848d43327ce6b78",
@@ -1634,11 +1634,11 @@
       "lastmod": "2026-09-05"
     },
     "https://onlinefreetools.org/de/tools/json-schema-validator": {
-      "hash": "31a82da8fc6465670070ed2e686157a3b950fb4ac320a491e7dfe5b22cc7fdeb",
+      "hash": "61b35aaa54920b382534a44d5fdf6e0a2006f2e82ae3679f7f7afacbe9bfa52e",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/tools/jwt-decoder": {
-      "hash": "18ac66a91db40db3d9f64f6915b51d1d15536eb4dd0caf37c79c2ac139291332",
+      "hash": "6b5ceea0817ef913cf66795a715e62a28b8598b118751ae4087d6ecbbf2b4bcf",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/tools/linkedin-banner-size": {
@@ -1654,11 +1654,11 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/tools/make-pdf-flipbook": {
-      "hash": "5bbd9176411874f92ec3ea8e245d436b7cfa079a61a2d3b0602e834db8f9c31c",
+      "hash": "9ae179527111d8caddd554e049aa26545b339ad42b7dc483be4a8967b0651a4f",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/tools/markdown-to-html": {
-      "hash": "4c6405c25952252cf0e0aeab673deaae1d3d843d65b1617246dddd5ba9f1de3a",
+      "hash": "b386055dd810b0eaf09a906231d4b03eaab9677d7984b5ee8d8f56b72fb6480b",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/tools/measuring-magnetic-fields": {
@@ -1666,7 +1666,7 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/de/tools/merge-pdf": {
-      "hash": "7e4945f1c9a567bf6eb6f6c3a8edb56658be27251a89d0fef4bbf64c1a1664a0",
+      "hash": "edc4572c7137a4f63f1b812234c7668408fa2b9978021147dd75f5e2bf1db766",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/tools/meta-serp-preview": {
@@ -1690,15 +1690,15 @@
       "lastmod": "2026-09-04"
     },
     "https://onlinefreetools.org/de/tools/open-graph-image-size": {
-      "hash": "1d36ea61e506711eff7afe785abab5a3d0e86f499206dd8237166a4991d24fde",
-      "lastmod": "2026-09-03"
+      "hash": "5d71e94931166bb153c9acad2a15482d6a9d228eaa6a43bfb0ac65b9b2000d3a",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/tools/open-graph-preview": {
       "hash": "73e3c3ae86f11a6bcc23266c125ee3a22fb0dcbea6b640b239a29e10e6836ef3",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/tools/open-pdf-in-browser": {
-      "hash": "443a08d49c4e0c51535361adb3b54a3c33fe094a14149e2a99418ddadf9ab064",
+      "hash": "0846c2476608634a3eb731c0c33d8d0f8d2eb55c2b49993531d387d7ee7fe938",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/tools/organize-pdf": {
@@ -1798,8 +1798,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/de/tools/terraform-cidrsubnet": {
-      "hash": "759caadc54d837515a6157f8dbe8d26ffe0c6e1dc1feb2b99ab7154af0175fb9",
-      "lastmod": "2026-09-03"
+      "hash": "821d91cdd877f56b11a960003b653189fdcdc9bd81deb5d0251a53a4ad9f243a",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/tools/text-diff": {
       "hash": "c9a40d2de4990145aa2bb4e438eb802c54f8c4d637d5b61dd2d10e857fc732e3",
@@ -1830,7 +1830,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/tools/unzip-file": {
-      "hash": "6cc5f389d9185bf05dca93e206e746ae60e6b613035fd55f675c26f0f6c20050",
+      "hash": "be5c67f14077a3dc8c08cbebdaa07ab8ba3f018726c4d4cf30626df9266b5531",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/tools/utm-builder": {
@@ -1850,8 +1850,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/de/tools/website-headers": {
-      "hash": "9031f7e95ea6bd61d893d3b717aa449ccd902cf19008a2a0132e13570cee3536",
-      "lastmod": "2026-09-03"
+      "hash": "7a0ac10d61f31be28fda18ed869eaf09e26fac6f7b8d1d972f3eb722bc519f09",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/tools/wrap-formula-with-ifna": {
       "hash": "1abb292e390db563084611ea6c083303386fba12d00bacb450b8fa6e1d460014",
@@ -1870,7 +1870,7 @@
       "lastmod": "2026-09-04"
     },
     "https://onlinefreetools.org/de/tools/write-pdf-document-online": {
-      "hash": "dfcf4f3624b3d115b2778423cf3413f46fa216e582d713dda9fdc2581d90e8aa",
+      "hash": "0f67862270c1663361333d7dd3998d4c3420b18bbd7f3096db2def451077635d",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/tools/writing-prompt-generator": {
@@ -1878,7 +1878,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/tools/yaml-json": {
-      "hash": "3771847b70668af4c03465327d0a8b3a3acf8f6acd93a0652884c819cbbee3ac",
+      "hash": "95143f8e812b001415618575409729c0dba83ebd7dd9efd31e55c7b51db19cc2",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/tools/youtube-thumbnail-size": {
@@ -1962,59 +1962,59 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/where-to-use-tools": {
-      "hash": "16d84902d250cf2fa234223eb7ea5934e11be2ef963e510ba5f35a161dce617e",
+      "hash": "3dd1930070f994ed04dbc484e20c1c74ceac0ce1061fd9eb18a0c29c5ec33dd8",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/where-to-use-tools/construction": {
-      "hash": "16d84902d250cf2fa234223eb7ea5934e11be2ef963e510ba5f35a161dce617e",
+      "hash": "3dd1930070f994ed04dbc484e20c1c74ceac0ce1061fd9eb18a0c29c5ec33dd8",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/where-to-use-tools/design": {
-      "hash": "16d84902d250cf2fa234223eb7ea5934e11be2ef963e510ba5f35a161dce617e",
+      "hash": "3dd1930070f994ed04dbc484e20c1c74ceac0ce1061fd9eb18a0c29c5ec33dd8",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/where-to-use-tools/developer": {
-      "hash": "16d84902d250cf2fa234223eb7ea5934e11be2ef963e510ba5f35a161dce617e",
+      "hash": "3dd1930070f994ed04dbc484e20c1c74ceac0ce1061fd9eb18a0c29c5ec33dd8",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/where-to-use-tools/documents": {
-      "hash": "16d84902d250cf2fa234223eb7ea5934e11be2ef963e510ba5f35a161dce617e",
+      "hash": "3dd1930070f994ed04dbc484e20c1c74ceac0ce1061fd9eb18a0c29c5ec33dd8",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/where-to-use-tools/everyday": {
-      "hash": "16d84902d250cf2fa234223eb7ea5934e11be2ef963e510ba5f35a161dce617e",
+      "hash": "3dd1930070f994ed04dbc484e20c1c74ceac0ce1061fd9eb18a0c29c5ec33dd8",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/where-to-use-tools/finance": {
-      "hash": "16d84902d250cf2fa234223eb7ea5934e11be2ef963e510ba5f35a161dce617e",
+      "hash": "3dd1930070f994ed04dbc484e20c1c74ceac0ce1061fd9eb18a0c29c5ec33dd8",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/where-to-use-tools/health": {
-      "hash": "16d84902d250cf2fa234223eb7ea5934e11be2ef963e510ba5f35a161dce617e",
+      "hash": "3dd1930070f994ed04dbc484e20c1c74ceac0ce1061fd9eb18a0c29c5ec33dd8",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/where-to-use-tools/math": {
-      "hash": "16d84902d250cf2fa234223eb7ea5934e11be2ef963e510ba5f35a161dce617e",
+      "hash": "3dd1930070f994ed04dbc484e20c1c74ceac0ce1061fd9eb18a0c29c5ec33dd8",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/where-to-use-tools/media": {
-      "hash": "16d84902d250cf2fa234223eb7ea5934e11be2ef963e510ba5f35a161dce617e",
+      "hash": "3dd1930070f994ed04dbc484e20c1c74ceac0ce1061fd9eb18a0c29c5ec33dd8",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/where-to-use-tools/physics": {
-      "hash": "16d84902d250cf2fa234223eb7ea5934e11be2ef963e510ba5f35a161dce617e",
+      "hash": "3dd1930070f994ed04dbc484e20c1c74ceac0ce1061fd9eb18a0c29c5ec33dd8",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/where-to-use-tools/seo": {
-      "hash": "16d84902d250cf2fa234223eb7ea5934e11be2ef963e510ba5f35a161dce617e",
+      "hash": "3dd1930070f994ed04dbc484e20c1c74ceac0ce1061fd9eb18a0c29c5ec33dd8",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/de/where-to-use-tools/sports": {
-      "hash": "16d84902d250cf2fa234223eb7ea5934e11be2ef963e510ba5f35a161dce617e",
+      "hash": "3dd1930070f994ed04dbc484e20c1c74ceac0ce1061fd9eb18a0c29c5ec33dd8",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/devlogs/": {
-      "hash": "b37b4be4b0aea1d3c573f7ea972ac1655183c506896a9ce51db26c29e9daecfc",
+      "hash": "eaeda60d21a98b453e2f6435fd150cd4d2b1988a8ad6528a6226e357d9b2da77",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/devlogs/2026-01-08-%E5%88%9B%E5%BB%BA%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E5%A4%B9.html": {
@@ -5105,148 +5105,160 @@
       "hash": "d5e71ab6415d43e3f11014bf30c7100fbdccac2a8a64298fedf1c34a4a1ad44e",
       "lastmod": "2026-09-06"
     },
+    "https://onlinefreetools.org/devlogs/2026-09-06-17-26-lint-seo-warnings-vs-deploy.html": {
+      "hash": "1ad7689809c3698feaa75a2feeac308bec4cd7173844bf096da7b4c928a8d5aa",
+      "lastmod": "2026-09-06"
+    },
+    "https://onlinefreetools.org/devlogs/2026-09-06-17-33-seo-description-lint-fixes.html": {
+      "hash": "817a758e7896332b794e1ff4f251cc9de7cfc2479d5d67451c5969e74fa42987",
+      "lastmod": "2026-09-06"
+    },
+    "https://onlinefreetools.org/devlogs/2026-09-06-17-38-cover-warn-link-warn-clear.html": {
+      "hash": "694faf3fbbe0c39bfb1dce5044cdb23464a7dba270d643b5437c7ee983f2825e",
+      "lastmod": "2026-09-06"
+    },
     "https://onlinefreetools.org/devlogs/page-10.html": {
-      "hash": "b37b4be4b0aea1d3c573f7ea972ac1655183c506896a9ce51db26c29e9daecfc",
+      "hash": "eaeda60d21a98b453e2f6435fd150cd4d2b1988a8ad6528a6226e357d9b2da77",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/devlogs/page-11.html": {
-      "hash": "b37b4be4b0aea1d3c573f7ea972ac1655183c506896a9ce51db26c29e9daecfc",
+      "hash": "eaeda60d21a98b453e2f6435fd150cd4d2b1988a8ad6528a6226e357d9b2da77",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/devlogs/page-12.html": {
-      "hash": "b37b4be4b0aea1d3c573f7ea972ac1655183c506896a9ce51db26c29e9daecfc",
+      "hash": "eaeda60d21a98b453e2f6435fd150cd4d2b1988a8ad6528a6226e357d9b2da77",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/devlogs/page-13.html": {
-      "hash": "b37b4be4b0aea1d3c573f7ea972ac1655183c506896a9ce51db26c29e9daecfc",
+      "hash": "eaeda60d21a98b453e2f6435fd150cd4d2b1988a8ad6528a6226e357d9b2da77",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/devlogs/page-14.html": {
-      "hash": "b37b4be4b0aea1d3c573f7ea972ac1655183c506896a9ce51db26c29e9daecfc",
+      "hash": "eaeda60d21a98b453e2f6435fd150cd4d2b1988a8ad6528a6226e357d9b2da77",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/devlogs/page-15.html": {
-      "hash": "b37b4be4b0aea1d3c573f7ea972ac1655183c506896a9ce51db26c29e9daecfc",
+      "hash": "eaeda60d21a98b453e2f6435fd150cd4d2b1988a8ad6528a6226e357d9b2da77",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/devlogs/page-16.html": {
-      "hash": "b37b4be4b0aea1d3c573f7ea972ac1655183c506896a9ce51db26c29e9daecfc",
+      "hash": "eaeda60d21a98b453e2f6435fd150cd4d2b1988a8ad6528a6226e357d9b2da77",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/devlogs/page-17.html": {
-      "hash": "b37b4be4b0aea1d3c573f7ea972ac1655183c506896a9ce51db26c29e9daecfc",
+      "hash": "eaeda60d21a98b453e2f6435fd150cd4d2b1988a8ad6528a6226e357d9b2da77",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/devlogs/page-18.html": {
-      "hash": "b37b4be4b0aea1d3c573f7ea972ac1655183c506896a9ce51db26c29e9daecfc",
+      "hash": "eaeda60d21a98b453e2f6435fd150cd4d2b1988a8ad6528a6226e357d9b2da77",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/devlogs/page-19.html": {
-      "hash": "b37b4be4b0aea1d3c573f7ea972ac1655183c506896a9ce51db26c29e9daecfc",
+      "hash": "eaeda60d21a98b453e2f6435fd150cd4d2b1988a8ad6528a6226e357d9b2da77",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/devlogs/page-2.html": {
-      "hash": "b37b4be4b0aea1d3c573f7ea972ac1655183c506896a9ce51db26c29e9daecfc",
+      "hash": "eaeda60d21a98b453e2f6435fd150cd4d2b1988a8ad6528a6226e357d9b2da77",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/devlogs/page-20.html": {
-      "hash": "b37b4be4b0aea1d3c573f7ea972ac1655183c506896a9ce51db26c29e9daecfc",
+      "hash": "eaeda60d21a98b453e2f6435fd150cd4d2b1988a8ad6528a6226e357d9b2da77",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/devlogs/page-21.html": {
-      "hash": "b37b4be4b0aea1d3c573f7ea972ac1655183c506896a9ce51db26c29e9daecfc",
+      "hash": "eaeda60d21a98b453e2f6435fd150cd4d2b1988a8ad6528a6226e357d9b2da77",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/devlogs/page-22.html": {
-      "hash": "b37b4be4b0aea1d3c573f7ea972ac1655183c506896a9ce51db26c29e9daecfc",
+      "hash": "eaeda60d21a98b453e2f6435fd150cd4d2b1988a8ad6528a6226e357d9b2da77",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/devlogs/page-23.html": {
-      "hash": "b37b4be4b0aea1d3c573f7ea972ac1655183c506896a9ce51db26c29e9daecfc",
+      "hash": "eaeda60d21a98b453e2f6435fd150cd4d2b1988a8ad6528a6226e357d9b2da77",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/devlogs/page-24.html": {
-      "hash": "b37b4be4b0aea1d3c573f7ea972ac1655183c506896a9ce51db26c29e9daecfc",
+      "hash": "eaeda60d21a98b453e2f6435fd150cd4d2b1988a8ad6528a6226e357d9b2da77",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/devlogs/page-25.html": {
-      "hash": "b37b4be4b0aea1d3c573f7ea972ac1655183c506896a9ce51db26c29e9daecfc",
+      "hash": "eaeda60d21a98b453e2f6435fd150cd4d2b1988a8ad6528a6226e357d9b2da77",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/devlogs/page-26.html": {
-      "hash": "b37b4be4b0aea1d3c573f7ea972ac1655183c506896a9ce51db26c29e9daecfc",
+      "hash": "eaeda60d21a98b453e2f6435fd150cd4d2b1988a8ad6528a6226e357d9b2da77",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/devlogs/page-27.html": {
-      "hash": "b37b4be4b0aea1d3c573f7ea972ac1655183c506896a9ce51db26c29e9daecfc",
+      "hash": "eaeda60d21a98b453e2f6435fd150cd4d2b1988a8ad6528a6226e357d9b2da77",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/devlogs/page-3.html": {
-      "hash": "b37b4be4b0aea1d3c573f7ea972ac1655183c506896a9ce51db26c29e9daecfc",
+      "hash": "eaeda60d21a98b453e2f6435fd150cd4d2b1988a8ad6528a6226e357d9b2da77",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/devlogs/page-4.html": {
-      "hash": "b37b4be4b0aea1d3c573f7ea972ac1655183c506896a9ce51db26c29e9daecfc",
+      "hash": "eaeda60d21a98b453e2f6435fd150cd4d2b1988a8ad6528a6226e357d9b2da77",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/devlogs/page-5.html": {
-      "hash": "b37b4be4b0aea1d3c573f7ea972ac1655183c506896a9ce51db26c29e9daecfc",
+      "hash": "eaeda60d21a98b453e2f6435fd150cd4d2b1988a8ad6528a6226e357d9b2da77",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/devlogs/page-6.html": {
-      "hash": "b37b4be4b0aea1d3c573f7ea972ac1655183c506896a9ce51db26c29e9daecfc",
+      "hash": "eaeda60d21a98b453e2f6435fd150cd4d2b1988a8ad6528a6226e357d9b2da77",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/devlogs/page-7.html": {
-      "hash": "b37b4be4b0aea1d3c573f7ea972ac1655183c506896a9ce51db26c29e9daecfc",
+      "hash": "eaeda60d21a98b453e2f6435fd150cd4d2b1988a8ad6528a6226e357d9b2da77",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/devlogs/page-8.html": {
-      "hash": "b37b4be4b0aea1d3c573f7ea972ac1655183c506896a9ce51db26c29e9daecfc",
+      "hash": "eaeda60d21a98b453e2f6435fd150cd4d2b1988a8ad6528a6226e357d9b2da77",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/devlogs/page-9.html": {
-      "hash": "b37b4be4b0aea1d3c573f7ea972ac1655183c506896a9ce51db26c29e9daecfc",
+      "hash": "eaeda60d21a98b453e2f6435fd150cd4d2b1988a8ad6528a6226e357d9b2da77",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/": {
-      "hash": "765eed6c66a995d1fc92f9d3871770268431ac5d4610c09dd53f33d191bea3e8",
+      "hash": "48afbd00b79debd6581557ccfde837beccfd8d8af1d3de672bdf14624ba27e33",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/tool-type": {
-      "hash": "52f452c6078ab0e2a409ff0e00935796eec1e15c58f708e46189f7a395913845",
+      "hash": "754e6f3b5e92f27bfbeb6eb2e98bc41a0297dc2268964af4b8acb457b6c2c7a4",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/tool-type/color": {
-      "hash": "52f452c6078ab0e2a409ff0e00935796eec1e15c58f708e46189f7a395913845",
+      "hash": "754e6f3b5e92f27bfbeb6eb2e98bc41a0297dc2268964af4b8acb457b6c2c7a4",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/tool-type/data": {
-      "hash": "52f452c6078ab0e2a409ff0e00935796eec1e15c58f708e46189f7a395913845",
+      "hash": "754e6f3b5e92f27bfbeb6eb2e98bc41a0297dc2268964af4b8acb457b6c2c7a4",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/tool-type/image": {
-      "hash": "52f452c6078ab0e2a409ff0e00935796eec1e15c58f708e46189f7a395913845",
+      "hash": "754e6f3b5e92f27bfbeb6eb2e98bc41a0297dc2268964af4b8acb457b6c2c7a4",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/tool-type/network": {
-      "hash": "52f452c6078ab0e2a409ff0e00935796eec1e15c58f708e46189f7a395913845",
+      "hash": "754e6f3b5e92f27bfbeb6eb2e98bc41a0297dc2268964af4b8acb457b6c2c7a4",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/tool-type/number": {
-      "hash": "52f452c6078ab0e2a409ff0e00935796eec1e15c58f708e46189f7a395913845",
+      "hash": "754e6f3b5e92f27bfbeb6eb2e98bc41a0297dc2268964af4b8acb457b6c2c7a4",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/tool-type/pdf": {
-      "hash": "52f452c6078ab0e2a409ff0e00935796eec1e15c58f708e46189f7a395913845",
+      "hash": "754e6f3b5e92f27bfbeb6eb2e98bc41a0297dc2268964af4b8acb457b6c2c7a4",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/tool-type/text": {
-      "hash": "52f452c6078ab0e2a409ff0e00935796eec1e15c58f708e46189f7a395913845",
+      "hash": "754e6f3b5e92f27bfbeb6eb2e98bc41a0297dc2268964af4b8acb457b6c2c7a4",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/tool-type/unit": {
-      "hash": "52f452c6078ab0e2a409ff0e00935796eec1e15c58f708e46189f7a395913845",
+      "hash": "754e6f3b5e92f27bfbeb6eb2e98bc41a0297dc2268964af4b8acb457b6c2c7a4",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/tools/add-digital-signature-to-pdf": {
@@ -5254,7 +5266,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/tools/add-text-to-pdf-file": {
-      "hash": "2ebab878efcdf7047a2c4cbb0de98e20678ba5780d7992a2c506de514fb5e7f4",
+      "hash": "178349af0cdea9c6aea4efd9d3f43a3b4a78f5102b7e8187eb52c9b5152f86e1",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/tools/add-watermark": {
@@ -5262,8 +5274,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/es/tools/add-www-to-dns": {
-      "hash": "b1161de2dd9ee8129b0c7b2bf3c2f848094bbe3157e7059f10feb7c5e3ecbe61",
-      "lastmod": "2026-09-03"
+      "hash": "5f332d701dbeed3413f99352c640ea503694adbf14055063983a6ff2d9703994",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/tools/amazon-main-image-size": {
       "hash": "d4f9b94b0b17612010d442d306e0070e65d8c72e49779662acb7dab72dfd5446",
@@ -5274,7 +5286,7 @@
       "lastmod": "2026-09-05"
     },
     "https://onlinefreetools.org/es/tools/apple-touch-icon": {
-      "hash": "b868ae50f65970730810ac0d0e057c720b12d68792c2f5287b9c603c6df2169c",
+      "hash": "9ad35dd14cd70c3b870d00c80e40da6b27f447f31e6f5bcb918540a965a997ca",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/tools/archive-extractor": {
@@ -5318,7 +5330,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/tools/bulk-compress-product-photos": {
-      "hash": "c04ba803e0ec2b89e949d448aa5c32965261b85b94ac36ad7d9728eb99b50f3b",
+      "hash": "47876b53b1aea35495185d575db65f1308774fea8ba9c576f27db29ea69c923e",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/tools/bulk-convert-images-to-jpg": {
@@ -5354,8 +5366,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/es/tools/cidr-to-ip-range": {
-      "hash": "c6c5534625ccfbc1ee17d8249e24e5cd2a1a6dedf48ab5e16272843a72a41d97",
-      "lastmod": "2026-09-03"
+      "hash": "f994a5b37822a61eaa23877350c315df35f8392ecae9f8d14bd2298949048585",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/tools/color-from-image": {
       "hash": "96d3a3053eb9256f7bd89daf4fb3d22e424f383bf29cd26de677caa7198b7a29",
@@ -5382,7 +5394,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/tools/convert-html-to-pdf": {
-      "hash": "b6ef528b5d3fbefe77795f406e9e35991a9c2f44e6cf2c70b67bb8b94b701336",
+      "hash": "2735e7045c354655908dd0719fa789652c0ebb5daab72a158810d1d84e919bff",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/tools/convert-pdf-to-dwg": {
@@ -5434,7 +5446,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/tools/csv-json": {
-      "hash": "7a40b749dca3a8c324d48c68514c67311c9d9bdbdce211e3deb2dc1c9e6c1eb1",
+      "hash": "2c67a347736935cb99d96de23bd99453457fe3eae911670e767ee9a777ae97a6",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/tools/curl-to-fetch": {
@@ -5458,11 +5470,11 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/tools/excel-formulas-cheat-sheet": {
-      "hash": "45d331784a5ed4f970cc5bc917d7e76f873bfe7053f5e8f0bedbb1b22ad3969c",
-      "lastmod": "2026-09-04"
+      "hash": "39848cbae0ea58a6b0f688c75eea347a1f725c2e0aeb6d35552d19c95b6a8cad",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/tools/extract-text-from-pdf": {
-      "hash": "7da76dd9d0ff160a5d7db659e438711cf870ccd103f51090b2cffc17847048a9",
+      "hash": "cebe4bf1ddccee3a20965246f22e75e76c4f0336bd4e944c59023ee15643febd",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/tools/file-hash": {
@@ -5622,8 +5634,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/es/tools/how-to-calculate-ohms-law": {
-      "hash": "2a5a77961d30488dedc35ef9df9f106c9209c6444f8f664b34dbbdd0b0f4bd56",
-      "lastmod": "2026-09-03"
+      "hash": "f07501226f1c56eeb4f01840005ef25617d0a77ad045b4e806e6af3d9728af87",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/tools/how-to-calculate-one-rep-max": {
       "hash": "17d08865c9770a9d305e9a96355959e508acc76c283d0d2b37844eaca35c87a9",
@@ -5742,12 +5754,12 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/es/tools/image-compress": {
-      "hash": "59b97c3c7acc5b141ec25524cf9a794b4dcc2bc0cd941b13cc2c79f5412cd2d4",
-      "lastmod": "2026-09-03"
+      "hash": "9fb5ac60b515bf20b037edc33b07bbb223a70c2238037b74f8180d8c8a74d029",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/tools/image-crop": {
-      "hash": "d1085cf6d4ed8149267c2f9c15b85bf90d18e34288c9fc1a50b063e6f355d983",
-      "lastmod": "2026-09-03"
+      "hash": "97ce8989db2ca587fc67589844a2d55cb0630545650bdff6d9a2e46840134cee",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/tools/image-exif": {
       "hash": "1752769a9e28f4a7d380f6e1b1866ca8c2a365eb41dfb7f368cc0a6e1e473f60",
@@ -5766,8 +5778,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/es/tools/image-optimizer": {
-      "hash": "b13f5f68b519fdd2fa21ae7af84664cdf23d4d457cfc304b3fcdd275099985c9",
-      "lastmod": "2026-09-03"
+      "hash": "5fb9f9a506d00624c2a22716800f73d271fd706965c3a33a5e93c1b0c38fb0b1",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/tools/image-overlay": {
       "hash": "f884883a8433b385527c8263004211556d36129d8cabf38909d4e313db5ffa6d",
@@ -5794,16 +5806,16 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/tools/indexnow": {
-      "hash": "0c4bbba0bb0ea5da67daa0793db80eaa8eca570f83267704ab932c77ab1e889e",
-      "lastmod": "2026-09-03"
+      "hash": "10cc9511ae4bb459c8193ddf5fda29b2f60322d9e0e1c1d1ed8de6366be21699",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/tools/instagram-post-size": {
       "hash": "ca9226a38ecb3ba71131f7a673b4de5e7fe1611e9752a923f8e5d9ee6d3ef0da",
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/es/tools/instagram-story-size": {
-      "hash": "f3591a74e200a6dcaaba2fe8b880b191483ea97e9e10b981a3308216e36317df",
-      "lastmod": "2026-09-03"
+      "hash": "b2c4ee9982306041f2ccedbf611dea10fc292e007ad84be5d334f1ace555efc7",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/tools/ios-app-icon-size": {
       "hash": "52ea3a1c7af8676ca04db2e612847eef646be80ce40ccdba9a691c91bd0604ff",
@@ -5818,8 +5830,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/es/tools/ip-range-to-cidr": {
-      "hash": "ddcb35973fc9e930231a292427b4ba13e20154570d4532d45d67fe86ab8a1889",
-      "lastmod": "2026-09-03"
+      "hash": "9ab23882ae450ee2264aa756d64cda91e10cfa3aa51f7db5b0ccee2d42b6622a",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/tools/iphone-app-store-screenshot": {
       "hash": "a3190656771120ad32939d763577e48c6c1232e6ec70b13668bd488b62a1eb66",
@@ -5834,11 +5846,11 @@
       "lastmod": "2026-09-05"
     },
     "https://onlinefreetools.org/es/tools/json-schema-validator": {
-      "hash": "c8c2d1df512621464d9db44db8aa00c94e8b1851b69674c0587a3b262f6868c6",
+      "hash": "37fac7007a4a21b1dc69f2376643e467b68b9484ed9328e204d77042e17f239f",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/tools/jwt-decoder": {
-      "hash": "5c6cdd6a02cfa2b368aa03736b7f4f2238dc8e00670fe28be50e48b5dfb8d8bf",
+      "hash": "ed8829589122181d05b8a47ac041803d026a4f73853ef0bb4ad52038b7a6c67e",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/tools/linkedin-banner-size": {
@@ -5854,11 +5866,11 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/tools/make-pdf-flipbook": {
-      "hash": "59f3410b5d5138d16d020bace185f12f4afd7b1b4c700ff2000ead644e9c5580",
+      "hash": "2fe789502164a232b014ab56ac6d7a8c812df89e99ebf54b0ba3430f0c824da5",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/tools/markdown-to-html": {
-      "hash": "d87086ef49cd86dea63368c09924900831a55f5ab84ea97e78bd8a22649a5314",
+      "hash": "f3621e84bc4ee107cc815fa394a881a67d651e5235767752ff1f273ae9d36811",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/tools/measuring-magnetic-fields": {
@@ -5866,7 +5878,7 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/es/tools/merge-pdf": {
-      "hash": "94e56cc054cfcb5d0d069579acc1699fa385313ded12f84ea2228c9868d6fcdb",
+      "hash": "d6983ea1878ccb2793abba8368ead7f723302c57974214668f8fd42809aca4a4",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/tools/meta-serp-preview": {
@@ -5890,15 +5902,15 @@
       "lastmod": "2026-09-04"
     },
     "https://onlinefreetools.org/es/tools/open-graph-image-size": {
-      "hash": "629cf61889ca771becbd3a506df613932255459420540897b7ea4ee6b573d352",
-      "lastmod": "2026-09-03"
+      "hash": "fb294534304bdba6bd640f42525dc4981239fc635f420ffffefe9f34829b0a56",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/tools/open-graph-preview": {
       "hash": "2091f877d997853548d1d16172cfe612f2b9a60a8adbd3271b21507adccd1f06",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/tools/open-pdf-in-browser": {
-      "hash": "fb98c6a6ced5908736050f706805275c0bd3156232e881f80878c0acf44a69a6",
+      "hash": "0f0b3e1173f26e67eed388fc4d83ed0be81ae867debf51e7b0d73357ae0771cc",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/tools/organize-pdf": {
@@ -5998,8 +6010,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/es/tools/terraform-cidrsubnet": {
-      "hash": "85fd821c4b599169e92488f3b6d9ed27de1cadb09f2c524cd1fae2e34adf6fb7",
-      "lastmod": "2026-09-03"
+      "hash": "1ae91ec18367ed1ebd38b45d2d50eb4d06bf2799046c1b5cce451ec5b2140add",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/tools/text-diff": {
       "hash": "eeb2b687593d81f71848e32b71a91f55e19d574c2ac1d3df5e06a1dd4172a4d5",
@@ -6030,7 +6042,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/tools/unzip-file": {
-      "hash": "5e5ee30b7f4ede2b4ba8fd29bf2b43cfaf4e7343e5a2ebcc5132262dde8504e9",
+      "hash": "f070d1cccb4a089ce27638042ca872f9551292f146357cb9b8cc346b98f787b3",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/tools/utm-builder": {
@@ -6050,8 +6062,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/es/tools/website-headers": {
-      "hash": "55bd11d8b52c1582480be83859a5b2eebd8d753edfcd5542ee087cffcd53127c",
-      "lastmod": "2026-09-03"
+      "hash": "fb96a3c60b71085c4173c72e225e576eff57de560a3d5bf1b6748c4359c280bc",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/tools/wrap-formula-with-ifna": {
       "hash": "7ba9262ce2547e7910bf2610c4c10d05d6d51945fc77425d2d82a7c9cde36da3",
@@ -6070,7 +6082,7 @@
       "lastmod": "2026-09-04"
     },
     "https://onlinefreetools.org/es/tools/write-pdf-document-online": {
-      "hash": "f73affe033ed620b41dadb89dc476810e0844b3eacca17f40fdb056012918f80",
+      "hash": "bb38d5a2c9ab518536b1b23a66fb0face0dbea527ae3ad23ed791928a2edab5f",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/tools/writing-prompt-generator": {
@@ -6078,7 +6090,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/tools/yaml-json": {
-      "hash": "ddeda2980d1526820802782d58f08d334106543fb6112b70767b3ca5afb2a84c",
+      "hash": "b163573c7e73fdd0f6f8f5723cc555fa4621fbfe54c755b229bff31b7a5209c4",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/tools/youtube-thumbnail-size": {
@@ -6162,95 +6174,95 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/where-to-use-tools": {
-      "hash": "52f452c6078ab0e2a409ff0e00935796eec1e15c58f708e46189f7a395913845",
+      "hash": "754e6f3b5e92f27bfbeb6eb2e98bc41a0297dc2268964af4b8acb457b6c2c7a4",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/where-to-use-tools/construction": {
-      "hash": "52f452c6078ab0e2a409ff0e00935796eec1e15c58f708e46189f7a395913845",
+      "hash": "754e6f3b5e92f27bfbeb6eb2e98bc41a0297dc2268964af4b8acb457b6c2c7a4",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/where-to-use-tools/design": {
-      "hash": "52f452c6078ab0e2a409ff0e00935796eec1e15c58f708e46189f7a395913845",
+      "hash": "754e6f3b5e92f27bfbeb6eb2e98bc41a0297dc2268964af4b8acb457b6c2c7a4",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/where-to-use-tools/developer": {
-      "hash": "52f452c6078ab0e2a409ff0e00935796eec1e15c58f708e46189f7a395913845",
+      "hash": "754e6f3b5e92f27bfbeb6eb2e98bc41a0297dc2268964af4b8acb457b6c2c7a4",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/where-to-use-tools/documents": {
-      "hash": "52f452c6078ab0e2a409ff0e00935796eec1e15c58f708e46189f7a395913845",
+      "hash": "754e6f3b5e92f27bfbeb6eb2e98bc41a0297dc2268964af4b8acb457b6c2c7a4",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/where-to-use-tools/everyday": {
-      "hash": "52f452c6078ab0e2a409ff0e00935796eec1e15c58f708e46189f7a395913845",
+      "hash": "754e6f3b5e92f27bfbeb6eb2e98bc41a0297dc2268964af4b8acb457b6c2c7a4",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/where-to-use-tools/finance": {
-      "hash": "52f452c6078ab0e2a409ff0e00935796eec1e15c58f708e46189f7a395913845",
+      "hash": "754e6f3b5e92f27bfbeb6eb2e98bc41a0297dc2268964af4b8acb457b6c2c7a4",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/where-to-use-tools/health": {
-      "hash": "52f452c6078ab0e2a409ff0e00935796eec1e15c58f708e46189f7a395913845",
+      "hash": "754e6f3b5e92f27bfbeb6eb2e98bc41a0297dc2268964af4b8acb457b6c2c7a4",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/where-to-use-tools/math": {
-      "hash": "52f452c6078ab0e2a409ff0e00935796eec1e15c58f708e46189f7a395913845",
+      "hash": "754e6f3b5e92f27bfbeb6eb2e98bc41a0297dc2268964af4b8acb457b6c2c7a4",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/where-to-use-tools/media": {
-      "hash": "52f452c6078ab0e2a409ff0e00935796eec1e15c58f708e46189f7a395913845",
+      "hash": "754e6f3b5e92f27bfbeb6eb2e98bc41a0297dc2268964af4b8acb457b6c2c7a4",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/where-to-use-tools/physics": {
-      "hash": "52f452c6078ab0e2a409ff0e00935796eec1e15c58f708e46189f7a395913845",
+      "hash": "754e6f3b5e92f27bfbeb6eb2e98bc41a0297dc2268964af4b8acb457b6c2c7a4",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/where-to-use-tools/seo": {
-      "hash": "52f452c6078ab0e2a409ff0e00935796eec1e15c58f708e46189f7a395913845",
+      "hash": "754e6f3b5e92f27bfbeb6eb2e98bc41a0297dc2268964af4b8acb457b6c2c7a4",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/es/where-to-use-tools/sports": {
-      "hash": "52f452c6078ab0e2a409ff0e00935796eec1e15c58f708e46189f7a395913845",
+      "hash": "754e6f3b5e92f27bfbeb6eb2e98bc41a0297dc2268964af4b8acb457b6c2c7a4",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/": {
-      "hash": "fca820cdedb4d704653bbb3aadf46b11427549e4d1a6f2798e7a7f385595bdbc",
+      "hash": "fc8ecf8d05ae81a8b0db88b323870c594abced53056ad02f464a5f6bcf671f43",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/tool-type": {
-      "hash": "5cf3926741a74b2c3e479e6c36696ea9112beaa7b4cd38cb982308bb3f39ed93",
+      "hash": "67752148582d15667be5bd1142c3252d05c479bbcb68e91137746542ee93e879",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/tool-type/color": {
-      "hash": "5cf3926741a74b2c3e479e6c36696ea9112beaa7b4cd38cb982308bb3f39ed93",
+      "hash": "67752148582d15667be5bd1142c3252d05c479bbcb68e91137746542ee93e879",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/tool-type/data": {
-      "hash": "5cf3926741a74b2c3e479e6c36696ea9112beaa7b4cd38cb982308bb3f39ed93",
+      "hash": "67752148582d15667be5bd1142c3252d05c479bbcb68e91137746542ee93e879",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/tool-type/image": {
-      "hash": "5cf3926741a74b2c3e479e6c36696ea9112beaa7b4cd38cb982308bb3f39ed93",
+      "hash": "67752148582d15667be5bd1142c3252d05c479bbcb68e91137746542ee93e879",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/tool-type/network": {
-      "hash": "5cf3926741a74b2c3e479e6c36696ea9112beaa7b4cd38cb982308bb3f39ed93",
+      "hash": "67752148582d15667be5bd1142c3252d05c479bbcb68e91137746542ee93e879",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/tool-type/number": {
-      "hash": "5cf3926741a74b2c3e479e6c36696ea9112beaa7b4cd38cb982308bb3f39ed93",
+      "hash": "67752148582d15667be5bd1142c3252d05c479bbcb68e91137746542ee93e879",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/tool-type/pdf": {
-      "hash": "5cf3926741a74b2c3e479e6c36696ea9112beaa7b4cd38cb982308bb3f39ed93",
+      "hash": "67752148582d15667be5bd1142c3252d05c479bbcb68e91137746542ee93e879",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/tool-type/text": {
-      "hash": "5cf3926741a74b2c3e479e6c36696ea9112beaa7b4cd38cb982308bb3f39ed93",
+      "hash": "67752148582d15667be5bd1142c3252d05c479bbcb68e91137746542ee93e879",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/tool-type/unit": {
-      "hash": "5cf3926741a74b2c3e479e6c36696ea9112beaa7b4cd38cb982308bb3f39ed93",
+      "hash": "67752148582d15667be5bd1142c3252d05c479bbcb68e91137746542ee93e879",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/tools/add-digital-signature-to-pdf": {
@@ -6258,7 +6270,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/tools/add-text-to-pdf-file": {
-      "hash": "10f3174516c420319259e82178192da06179a5255401500dfaebd05935a6c8f2",
+      "hash": "221dd90d1862a5b626f9031299e722fd9a90822b9a5cba4d03d400f797846283",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/tools/add-watermark": {
@@ -6266,8 +6278,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/fr/tools/add-www-to-dns": {
-      "hash": "29d3f62f09e07210da3ae4c9ae792a604e8160fe4b7b73166fa4e9fc7a207843",
-      "lastmod": "2026-09-03"
+      "hash": "f18cfe99e7b2888c1773e4f917297fa089a019abee5d0a790be69ce11b39ecbe",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/tools/amazon-main-image-size": {
       "hash": "ed9740d03bfcbc373b63aa9356399188197f582dc06fb0ab5f4cb7bcb439ac58",
@@ -6278,7 +6290,7 @@
       "lastmod": "2026-09-05"
     },
     "https://onlinefreetools.org/fr/tools/apple-touch-icon": {
-      "hash": "0a1165a2ea9b567aab77f1976aa9bd6916e7477fc0c6d5438d6640ac02932c1d",
+      "hash": "93f4b91c20752c9f96ea33fcf75ba615c49298df24526ceabdda855627a6033c",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/tools/archive-extractor": {
@@ -6322,7 +6334,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/tools/bulk-compress-product-photos": {
-      "hash": "cd6a593ea795aa37dcd52105273d63c228caa7e97a125c00ea4837ca893a7ce2",
+      "hash": "4b98cb506dc6dae9df4536899fbccc54a80195830b9f7e81d0b220fe27617d1b",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/tools/bulk-convert-images-to-jpg": {
@@ -6358,8 +6370,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/fr/tools/cidr-to-ip-range": {
-      "hash": "081c088ee113abd6835686e29248d304038b76996c07994a19bf05ab27b8aa25",
-      "lastmod": "2026-09-03"
+      "hash": "a2cbae665804ec4132b8dcb8d1ce2668040109c3f41265165fde9b58c7723158",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/tools/color-from-image": {
       "hash": "65e12006a393776293ce8eaf495c675500942f06c0ca240abd916feca8e1d10a",
@@ -6386,7 +6398,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/tools/convert-html-to-pdf": {
-      "hash": "83c8657a78846f7d5984b3bce61443902da6d3be013356f965ee419f963a13d2",
+      "hash": "4e054f42967a4023b04a0813f8f974db2c11277e24d0ef20b71c801c3461594b",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/tools/convert-pdf-to-dwg": {
@@ -6438,7 +6450,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/tools/csv-json": {
-      "hash": "d0791ee23ccb375a3a2ac3b75fcd196b244fdbc3018b307794e5c54c5377c863",
+      "hash": "6b3ad7d58a282125bada3268b353279c7a218db628adf5b16b7cc2cac399a8f1",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/tools/curl-to-fetch": {
@@ -6462,11 +6474,11 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/tools/excel-formulas-cheat-sheet": {
-      "hash": "f9bb4ac818fc107d36bcf62d500a6327611cdbc769af3cee71a0adde1b19d815",
-      "lastmod": "2026-09-04"
+      "hash": "7fd8434dfda558a761974cb97a979bd4da68a598d2350b78b256fb7ad9e4295a",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/tools/extract-text-from-pdf": {
-      "hash": "112d8154cf087f6957ec8a601ff9304cd34dbe1264bc11dd73faf636d64e80b0",
+      "hash": "ec26d0e7619e92c60f3d7d6b1b2b8828d3ef68185871fd45c85e8f59733809bc",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/tools/file-hash": {
@@ -6626,8 +6638,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/fr/tools/how-to-calculate-ohms-law": {
-      "hash": "15a9673941d5f42fa159ed17bb3e5e928eaba8ab676ad64fbec48965cee541ac",
-      "lastmod": "2026-09-03"
+      "hash": "f7d465553521606be631f0604c314c6769115c30e98d564501e9d1d3b749bcfc",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/tools/how-to-calculate-one-rep-max": {
       "hash": "1ccfff518a97c3e4a23f799eee1e427f07d085d3123e7db00f2c5f26254d622a",
@@ -6746,12 +6758,12 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/fr/tools/image-compress": {
-      "hash": "457a2aa97af88a8a925a87dec4406de10acb02c3a5db59d973990fb02a1f463d",
-      "lastmod": "2026-09-03"
+      "hash": "a66f414a2faae43413dd6f26167b42f345d9f8a83a194413ac0c8fda2e12e3d5",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/tools/image-crop": {
-      "hash": "2d29efbbeea9efe928a8f02d9796bd293335552763f16ed4042ebee7a27565f6",
-      "lastmod": "2026-09-03"
+      "hash": "6129b8c8f85dec722850f98aa7b58e55881c6416a4baff7f9f2027abf830efe0",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/tools/image-exif": {
       "hash": "cb937070be7da92aa16aaf1672c0c6d136bb7113f6484c35188098be043af458",
@@ -6770,8 +6782,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/fr/tools/image-optimizer": {
-      "hash": "f157715c1d8632ba294ef4396968a6cc2fbb5971f90af13575f8f47d55058c86",
-      "lastmod": "2026-09-03"
+      "hash": "fed0847b31e3a16852c55196f50e78a5f5f2dfc85a4020b4408ef1f59bd47aef",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/tools/image-overlay": {
       "hash": "17607f5ec88ba66121d68ff93e14458d74cafb1801f1f570630f460b060cd029",
@@ -6798,16 +6810,16 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/tools/indexnow": {
-      "hash": "cfae4e9eb579efeb0a4e086ae4d1cc738b6992a05f7be9d31c3b857c555ed2fb",
-      "lastmod": "2026-09-03"
+      "hash": "877983d154a77cfc50f38de9124ce474d09e4e9ca38bc68b97f1f74db4ca9e5c",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/tools/instagram-post-size": {
       "hash": "cb49266d8a8ec1f663002a7e5f06999b26d06220b960e0cc4c8f1808e4ed2442",
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/fr/tools/instagram-story-size": {
-      "hash": "540ada3cdb43cb9eddacf44de82914797903f208b217a2c310d55d435577590b",
-      "lastmod": "2026-09-03"
+      "hash": "03a0d9a93a15c5e001bfac2afbae979838a252190d962f8e19a526c437bd67a8",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/tools/ios-app-icon-size": {
       "hash": "05ba6d6c9cb4d47d124c6642dd3eee75fcbe19a90cff19516ae660ed5e8331a5",
@@ -6822,8 +6834,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/fr/tools/ip-range-to-cidr": {
-      "hash": "ab4a31d4de5768332bcc9ffc69c2be4bb944d59fd690a2880bf8b20d3feace9e",
-      "lastmod": "2026-09-03"
+      "hash": "4625c2af20c7127c1e604235ebc6fca9e8e3ac5b3125da517123820775b39fa0",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/tools/iphone-app-store-screenshot": {
       "hash": "45ba857971efcabdbd08d06f5b0e95536e81a491008b0edb93638e3c1f477137",
@@ -6838,11 +6850,11 @@
       "lastmod": "2026-09-05"
     },
     "https://onlinefreetools.org/fr/tools/json-schema-validator": {
-      "hash": "c315882567b8207a767a14fb85896390a5685d38a0d6bb615a915860f55d702b",
+      "hash": "d07e0c9038e0ef78821bb6f37a6409967ca6e0d7f6397d4b64a4367b0cd55c44",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/tools/jwt-decoder": {
-      "hash": "f52858292a14539a9d9d6538af45e16eba911665509cd17faa273c8be36658d4",
+      "hash": "2439ecc3929b3a2068ab35d80120bc6492cb0717db1773a91e136d48318838af",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/tools/linkedin-banner-size": {
@@ -6858,11 +6870,11 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/tools/make-pdf-flipbook": {
-      "hash": "56374616130523165e622d2bfa12a7e7a46b8e14df04d9a0dec8d361b1e6fff9",
+      "hash": "d45017316808a40a0252aec921ddf9809989bdb8fdbec2b16bdd695570812beb",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/tools/markdown-to-html": {
-      "hash": "a33e4a6eeae4d7d21dd502f711b4b62495a8116980d4f77d2251a60cca869fe2",
+      "hash": "2ce9c6b2d8d1ec0d8f1e20263f989545d31802bac9b96a2443cbd8329bf65f86",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/tools/measuring-magnetic-fields": {
@@ -6870,7 +6882,7 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/fr/tools/merge-pdf": {
-      "hash": "1a9131f1725b93a7d24df0df9a065eec2b45b129e96ffc7ab032e4e0a6d1550c",
+      "hash": "c705e2af4cafb7c3207b93eddb6026df1931bc613d0761d431b9ac9371e5949e",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/tools/meta-serp-preview": {
@@ -6894,15 +6906,15 @@
       "lastmod": "2026-09-04"
     },
     "https://onlinefreetools.org/fr/tools/open-graph-image-size": {
-      "hash": "a5671f97cef7fb6f77e73eae006bc928db391f1cf4e96d4dbdad01d3b98a1eb7",
-      "lastmod": "2026-09-03"
+      "hash": "d294d4e4369b60104e91328b83651796696626658c78548860f2c3310bd8a52c",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/tools/open-graph-preview": {
       "hash": "c2e71ce8b5fcaf111951d4bfb490ded39adab7b9ef8388cbb0a9777f6effad04",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/tools/open-pdf-in-browser": {
-      "hash": "ff7b1caa7e2291a8afee33a923cdfe87610b5a074fcb928b24e8b9a29a835cb5",
+      "hash": "8f6b739526437155ac2a2ca999567c43f3d24a954a40c730bc0531e8cbaf5e77",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/tools/organize-pdf": {
@@ -7002,8 +7014,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/fr/tools/terraform-cidrsubnet": {
-      "hash": "ebd6a8d3b41e82c0f40b277d33bb73dd17e9d80f4b4bd131945fbaafbc85658e",
-      "lastmod": "2026-09-03"
+      "hash": "c82143b2418486e88f9bc85d6d490f3bb5f14192f5bdd8712a0a203ae8fd7831",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/tools/text-diff": {
       "hash": "7d0c7eea165d48c36b6f58c9c9105b88102e41c8d015f6a94879abb4493e9434",
@@ -7034,7 +7046,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/tools/unzip-file": {
-      "hash": "6df12d6989a66d03f322c5ca38874ebd9a11b3bfab0c7f0774c46623a0895879",
+      "hash": "d9473e993e899e0e426aff935f4ea23391551a634677dc3670c684d1f7a56419",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/tools/utm-builder": {
@@ -7054,8 +7066,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/fr/tools/website-headers": {
-      "hash": "2c41a526b9fc705e3f01b8a818d64d278b256ebb972c26311b5c5961bf091e0b",
-      "lastmod": "2026-09-03"
+      "hash": "737ae98440465ddc00a83d4d7095401b066873b89810eff985f8a83864757e2a",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/tools/wrap-formula-with-ifna": {
       "hash": "c67e243cd9e6510f718624898048e1fe9471cc269f435dbd5c3edecf1123e3f4",
@@ -7074,7 +7086,7 @@
       "lastmod": "2026-09-04"
     },
     "https://onlinefreetools.org/fr/tools/write-pdf-document-online": {
-      "hash": "50f79cc710dbcee6738a9702f912cbfef6ac9c9ad68f12653424007c9318ff69",
+      "hash": "60ec9ba0407bd27021d52a60adcb8c37182505a5b7ece412f8c7db899bad5508",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/tools/writing-prompt-generator": {
@@ -7082,7 +7094,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/tools/yaml-json": {
-      "hash": "e9469de018eed2a6592c4ca44bb21b3d4f3270c278341f79a56f62a1af76d921",
+      "hash": "28b50120fd61af6fc7b8a2e97483f18c01a0593b070694133afcc322dba4e650",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/tools/youtube-thumbnail-size": {
@@ -7166,95 +7178,95 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/where-to-use-tools": {
-      "hash": "5cf3926741a74b2c3e479e6c36696ea9112beaa7b4cd38cb982308bb3f39ed93",
+      "hash": "67752148582d15667be5bd1142c3252d05c479bbcb68e91137746542ee93e879",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/where-to-use-tools/construction": {
-      "hash": "5cf3926741a74b2c3e479e6c36696ea9112beaa7b4cd38cb982308bb3f39ed93",
+      "hash": "67752148582d15667be5bd1142c3252d05c479bbcb68e91137746542ee93e879",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/where-to-use-tools/design": {
-      "hash": "5cf3926741a74b2c3e479e6c36696ea9112beaa7b4cd38cb982308bb3f39ed93",
+      "hash": "67752148582d15667be5bd1142c3252d05c479bbcb68e91137746542ee93e879",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/where-to-use-tools/developer": {
-      "hash": "5cf3926741a74b2c3e479e6c36696ea9112beaa7b4cd38cb982308bb3f39ed93",
+      "hash": "67752148582d15667be5bd1142c3252d05c479bbcb68e91137746542ee93e879",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/where-to-use-tools/documents": {
-      "hash": "5cf3926741a74b2c3e479e6c36696ea9112beaa7b4cd38cb982308bb3f39ed93",
+      "hash": "67752148582d15667be5bd1142c3252d05c479bbcb68e91137746542ee93e879",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/where-to-use-tools/everyday": {
-      "hash": "5cf3926741a74b2c3e479e6c36696ea9112beaa7b4cd38cb982308bb3f39ed93",
+      "hash": "67752148582d15667be5bd1142c3252d05c479bbcb68e91137746542ee93e879",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/where-to-use-tools/finance": {
-      "hash": "5cf3926741a74b2c3e479e6c36696ea9112beaa7b4cd38cb982308bb3f39ed93",
+      "hash": "67752148582d15667be5bd1142c3252d05c479bbcb68e91137746542ee93e879",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/where-to-use-tools/health": {
-      "hash": "5cf3926741a74b2c3e479e6c36696ea9112beaa7b4cd38cb982308bb3f39ed93",
+      "hash": "67752148582d15667be5bd1142c3252d05c479bbcb68e91137746542ee93e879",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/where-to-use-tools/math": {
-      "hash": "5cf3926741a74b2c3e479e6c36696ea9112beaa7b4cd38cb982308bb3f39ed93",
+      "hash": "67752148582d15667be5bd1142c3252d05c479bbcb68e91137746542ee93e879",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/where-to-use-tools/media": {
-      "hash": "5cf3926741a74b2c3e479e6c36696ea9112beaa7b4cd38cb982308bb3f39ed93",
+      "hash": "67752148582d15667be5bd1142c3252d05c479bbcb68e91137746542ee93e879",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/where-to-use-tools/physics": {
-      "hash": "5cf3926741a74b2c3e479e6c36696ea9112beaa7b4cd38cb982308bb3f39ed93",
+      "hash": "67752148582d15667be5bd1142c3252d05c479bbcb68e91137746542ee93e879",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/where-to-use-tools/seo": {
-      "hash": "5cf3926741a74b2c3e479e6c36696ea9112beaa7b4cd38cb982308bb3f39ed93",
+      "hash": "67752148582d15667be5bd1142c3252d05c479bbcb68e91137746542ee93e879",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/fr/where-to-use-tools/sports": {
-      "hash": "5cf3926741a74b2c3e479e6c36696ea9112beaa7b4cd38cb982308bb3f39ed93",
+      "hash": "67752148582d15667be5bd1142c3252d05c479bbcb68e91137746542ee93e879",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/": {
-      "hash": "90b7afe3735289d869e1258b95ab04f0170983f5370c317d933b883fe7b9a8b2",
+      "hash": "4f9114ad75211532a90971930423767774bf306abd0fee36eaf2cc7f817f38fc",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/tool-type": {
-      "hash": "a5cf770546f6d2aaf5b134e2eaecb1aa43eef158aa28f64294ecc02ad621a1f2",
+      "hash": "aebfdeff708c986e5898ae32c7311cbe191679224043f14f5e2f768005eb8d28",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/tool-type/color": {
-      "hash": "a5cf770546f6d2aaf5b134e2eaecb1aa43eef158aa28f64294ecc02ad621a1f2",
+      "hash": "aebfdeff708c986e5898ae32c7311cbe191679224043f14f5e2f768005eb8d28",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/tool-type/data": {
-      "hash": "a5cf770546f6d2aaf5b134e2eaecb1aa43eef158aa28f64294ecc02ad621a1f2",
+      "hash": "aebfdeff708c986e5898ae32c7311cbe191679224043f14f5e2f768005eb8d28",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/tool-type/image": {
-      "hash": "a5cf770546f6d2aaf5b134e2eaecb1aa43eef158aa28f64294ecc02ad621a1f2",
+      "hash": "aebfdeff708c986e5898ae32c7311cbe191679224043f14f5e2f768005eb8d28",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/tool-type/network": {
-      "hash": "a5cf770546f6d2aaf5b134e2eaecb1aa43eef158aa28f64294ecc02ad621a1f2",
+      "hash": "aebfdeff708c986e5898ae32c7311cbe191679224043f14f5e2f768005eb8d28",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/tool-type/number": {
-      "hash": "a5cf770546f6d2aaf5b134e2eaecb1aa43eef158aa28f64294ecc02ad621a1f2",
+      "hash": "aebfdeff708c986e5898ae32c7311cbe191679224043f14f5e2f768005eb8d28",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/tool-type/pdf": {
-      "hash": "a5cf770546f6d2aaf5b134e2eaecb1aa43eef158aa28f64294ecc02ad621a1f2",
+      "hash": "aebfdeff708c986e5898ae32c7311cbe191679224043f14f5e2f768005eb8d28",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/tool-type/text": {
-      "hash": "a5cf770546f6d2aaf5b134e2eaecb1aa43eef158aa28f64294ecc02ad621a1f2",
+      "hash": "aebfdeff708c986e5898ae32c7311cbe191679224043f14f5e2f768005eb8d28",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/tool-type/unit": {
-      "hash": "a5cf770546f6d2aaf5b134e2eaecb1aa43eef158aa28f64294ecc02ad621a1f2",
+      "hash": "aebfdeff708c986e5898ae32c7311cbe191679224043f14f5e2f768005eb8d28",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/tools/add-digital-signature-to-pdf": {
@@ -7262,7 +7274,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/tools/add-text-to-pdf-file": {
-      "hash": "15f1872a2da4d94a1c73f600ade195a4fe18f396e888a45a6ba24b95ae17b98c",
+      "hash": "fe1fbb441524d875470cd6aa1b9a7c3b7ab83f5e1890bd9c31d5fedd5f41c9a2",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/tools/add-watermark": {
@@ -7270,8 +7282,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/id/tools/add-www-to-dns": {
-      "hash": "ecd497331d3ef2153c5e937095301157a0ce7770167281b47dd3406ea171fd37",
-      "lastmod": "2026-09-03"
+      "hash": "0da14784f7937c4b4a7af26d84a068d86080c395df8a16b50f3a5728af6db8ae",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/tools/amazon-main-image-size": {
       "hash": "efc1831d98ee96b27c5eca70db37df8c178f2a9caec7c17977f5de74305edc33",
@@ -7282,7 +7294,7 @@
       "lastmod": "2026-09-05"
     },
     "https://onlinefreetools.org/id/tools/apple-touch-icon": {
-      "hash": "3929087be824107a29efd8ddf2b2b4b0812bd225f1e18474417031d7ee04834f",
+      "hash": "52c529b091714050b994343ca4ad5fe35e6a9306bdee4c1159fe6bb567578ead",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/tools/archive-extractor": {
@@ -7326,7 +7338,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/tools/bulk-compress-product-photos": {
-      "hash": "dd38a467b4a3107e726e042c296376fcd6b9f381eaa8658745acb4a0e3786c33",
+      "hash": "9dd0c6f86fe4931d8a6ddb2bfad3b51fba3b19096e62440a8dc8f05d75e37c6c",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/tools/bulk-convert-images-to-jpg": {
@@ -7362,8 +7374,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/id/tools/cidr-to-ip-range": {
-      "hash": "e7e2ae84197832c63d54f9c0d07e7fc25e9510023765fef6a44251c4baca19f7",
-      "lastmod": "2026-09-03"
+      "hash": "cca506a22f35667f629481f5dfa49ff95235cc7732cdd4eb35b8f7fe6912d2bc",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/tools/color-from-image": {
       "hash": "443e6a6c2ab160c5c0561f0a06302fcbc282f98e0b34f416e7482c8babe2f5d8",
@@ -7390,7 +7402,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/tools/convert-html-to-pdf": {
-      "hash": "00cda849a3cb42f2631269fccfef35481987412ecad2c30b94315ddfde9962bd",
+      "hash": "417f127e741f4203a61527e7dee15a68db389cd746118631e00cf3f0ddd5d5ee",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/tools/convert-pdf-to-dwg": {
@@ -7442,7 +7454,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/tools/csv-json": {
-      "hash": "5bee28cd04ef04e365c05626d3adf312bf80dd803b5eb252d61fbea24ab46e6b",
+      "hash": "b9df6f48a55eb16efe2c34223221ddebeb773ee3421133cde78e82d750de0d52",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/tools/curl-to-fetch": {
@@ -7466,11 +7478,11 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/tools/excel-formulas-cheat-sheet": {
-      "hash": "507a7ecd0c790eb8f233b719efac812c93a26bed81c0ce96295fbeff78cb189d",
-      "lastmod": "2026-09-04"
+      "hash": "52dfd22657a777d844190ddc75eb5e0a1f767709ad5c979a56d1846175b5c57a",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/tools/extract-text-from-pdf": {
-      "hash": "1916c2d4d6140977358b1d2f971e697d3bf021101621390e6db56934ec17b022",
+      "hash": "365de590eb211c9027c98bad80278433f6db9e2a2b2ba74e9c7389ebf8058726",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/tools/file-hash": {
@@ -7630,8 +7642,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/id/tools/how-to-calculate-ohms-law": {
-      "hash": "e05e0cd9450254353bdefc6d6a40f58e1319cf510d3a769e4b5e20edf45ccec3",
-      "lastmod": "2026-09-03"
+      "hash": "361c38efc4a3f4f65c7a32c653f71c02aa54497d9a7c36f7a20a1381d5e2c848",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/tools/how-to-calculate-one-rep-max": {
       "hash": "ee002357738f7656befae65fcabac36b79aa612fa3f3fc3596f400d888713272",
@@ -7750,12 +7762,12 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/id/tools/image-compress": {
-      "hash": "1c1b914a0f0e94234d1e509f24bbe16796c6d8448358bb03dc4585482122a598",
-      "lastmod": "2026-09-03"
+      "hash": "dae8fc7da3cd37591d661acad4252cf93dab35e4b1bd3c28ce5d1fc73a9af278",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/tools/image-crop": {
-      "hash": "2986dac244d227b929a9a85322a5fcc6834d49674ccd8471da24e4ba0596aab0",
-      "lastmod": "2026-09-03"
+      "hash": "5d6af731de562c357564f6cdaaca69ae5a169b05eeb57f1f1fd6a03b99ebf18c",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/tools/image-exif": {
       "hash": "e3d1aee49148fe0d24d3f1516b02f899d460ffddb3b568eddbe33b738e37813e",
@@ -7774,8 +7786,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/id/tools/image-optimizer": {
-      "hash": "fedadb709fc4bb0abe2fd436e2611fd2bf57da6aec7cf17051add34cef512584",
-      "lastmod": "2026-09-03"
+      "hash": "b314bd0f9fa211d9a8fdc37ace0bd6e60ba44ee91f562824582909f67ce31e67",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/tools/image-overlay": {
       "hash": "cc8c2d076dabc69d6c3740a1c9a5da07d0d62d70db766da9f1d26264803abbc6",
@@ -7802,16 +7814,16 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/tools/indexnow": {
-      "hash": "ecc15663f6eb0289c36ff9e533313539385b7dda7a4942b775bfffb71c69b072",
-      "lastmod": "2026-09-03"
+      "hash": "223becb0872979f70219e17fd5488df100ae6698534aee46c87e86e016e70546",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/tools/instagram-post-size": {
       "hash": "5b538b52a797b7b130132512b00ca76d82302b108583535fb6512d6c0308d08d",
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/id/tools/instagram-story-size": {
-      "hash": "4441bd29b41150ac503d7fe17721e3eeb4c9d1aed55fe64f790c2f84a74edb64",
-      "lastmod": "2026-09-03"
+      "hash": "e138ec32e98c5a5eb994548d05a5396774d629356a9ab706822a7786519dfeec",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/tools/ios-app-icon-size": {
       "hash": "04b45b50fea8f860dac8b018f471e8dde418924ed51e7915833efcfb278dcc34",
@@ -7826,8 +7838,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/id/tools/ip-range-to-cidr": {
-      "hash": "645bcfb362cd63317d12275f7d91937234605cddf8ac5b50af6fcfb9585d1674",
-      "lastmod": "2026-09-03"
+      "hash": "54476e60dab217221f51228c04a98c18a263442989d0b7f773b895d5314a1e29",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/tools/iphone-app-store-screenshot": {
       "hash": "a7ffdfc34707fc3581c5f0e6acddcdbbc9d34dddf27c97406826cc6d73a8f45e",
@@ -7842,11 +7854,11 @@
       "lastmod": "2026-09-05"
     },
     "https://onlinefreetools.org/id/tools/json-schema-validator": {
-      "hash": "16d1ca0dfbf8423bbe44ddafdef33e9e234d1ffe9d20dfec5b3b9d887b2f9919",
+      "hash": "068fe35fb90e0b8ac5424a9f71452b8b3e9d1f2b37a41c676c0188a1768732a9",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/tools/jwt-decoder": {
-      "hash": "6458a570a218066512321afffa306520a358128d28e0168898b430f5e1b0732e",
+      "hash": "215e7381dfabd5f29a6aa8aca814eb2235cfea3f5c81c041e09c16f7e4b18e80",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/tools/linkedin-banner-size": {
@@ -7862,11 +7874,11 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/tools/make-pdf-flipbook": {
-      "hash": "515a893694698db312780f77baf86320918ab8cad899883f2834afd15d443be8",
+      "hash": "0d9f2433d28a82b864192e7272a079f8b06ebaf523db73b79d552a209ca775c2",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/tools/markdown-to-html": {
-      "hash": "fae40908128acc2b6ff7cf79909852fcc081b08bb0fdb758ded8757389a4c9f9",
+      "hash": "6272bc9d8b87bd92f9ae4525dd4de139092e6a83cc1eff107578a2c5351f7d85",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/tools/measuring-magnetic-fields": {
@@ -7874,7 +7886,7 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/id/tools/merge-pdf": {
-      "hash": "3a875ad1263cfcf0f42ced3c3ccf27c66a98c375cffe0479973166124235af66",
+      "hash": "a4fa1377f48c8560cce3b6acdc127061e2eaaed2faef84a9a804fdacf9bc0808",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/tools/meta-serp-preview": {
@@ -7898,15 +7910,15 @@
       "lastmod": "2026-09-04"
     },
     "https://onlinefreetools.org/id/tools/open-graph-image-size": {
-      "hash": "0eb1e6214fd64153a4f347e44c633b2caa6d5844f7342aab65fc42ca9e608562",
-      "lastmod": "2026-09-03"
+      "hash": "841a0fb7eac481171410374d128567c9e97952cbade236ff2e0b20c94319fef4",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/tools/open-graph-preview": {
       "hash": "283fd1c579114c26c1ded4dd41264a3f9a60bb24e0f44a12222f68ee7e92efad",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/tools/open-pdf-in-browser": {
-      "hash": "3533495dbe78968dc6ee4e3646139e4e3075ffe0aa118870797927cf94070e49",
+      "hash": "9ef87f2f761a6ef4a19779bcc3b091b399e7754679874586446d4432a5619173",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/tools/organize-pdf": {
@@ -8006,8 +8018,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/id/tools/terraform-cidrsubnet": {
-      "hash": "5df9c3dd386868da5de8e1a0cf53962e17902747e5ace6e16f8fc92e01e65d3c",
-      "lastmod": "2026-09-03"
+      "hash": "3b3418a6b750ad84023ab5d060813ea1f95935af1dca87ee2523a6944b1bfeb8",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/tools/text-diff": {
       "hash": "130e22e430628967abb6f6898fc8a2d4d9f3d93c6c57d24b3cd65f78c521da86",
@@ -8038,7 +8050,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/tools/unzip-file": {
-      "hash": "1a1e5d8e62f79b56773dea146562aff0b1e1aac9d220e14938af6aa95073ed46",
+      "hash": "3cd74b0c9f1ac8b441ba6940634a95ef7e52f0b162520b2951a8ca0f29c2d430",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/tools/utm-builder": {
@@ -8058,8 +8070,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/id/tools/website-headers": {
-      "hash": "d2db97132247dcb3348fdd616c7b4a142713fb32b19e2bf1e546345e127a7479",
-      "lastmod": "2026-09-03"
+      "hash": "4f71b9e02bf6e1094e44493b09ee4c66227f21f4c6c42564ed5473b4663d3cb2",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/tools/wrap-formula-with-ifna": {
       "hash": "7c1946d478d5740811d6ef38ca0baf9d6b1c8fd5592787e5a96a2d7cfe9c3511",
@@ -8078,7 +8090,7 @@
       "lastmod": "2026-09-04"
     },
     "https://onlinefreetools.org/id/tools/write-pdf-document-online": {
-      "hash": "4514fc0106b99f34a0424530b23c817451d6d2fb08bece69457ce01dae785737",
+      "hash": "731f4e8ce69b747f33b762eef9d21529ef58c84eb04c3789dee426ae6bef76f7",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/tools/writing-prompt-generator": {
@@ -8086,7 +8098,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/tools/yaml-json": {
-      "hash": "08ef624b59b6e059f4d1af65fa7285b19bd54aa54b7d77b11485c36cd3128850",
+      "hash": "1710fecaa13d012bea284e66c91260dc3743dbdbb020c840897340be2a39f6ea",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/tools/youtube-thumbnail-size": {
@@ -8170,95 +8182,95 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/where-to-use-tools": {
-      "hash": "a5cf770546f6d2aaf5b134e2eaecb1aa43eef158aa28f64294ecc02ad621a1f2",
+      "hash": "aebfdeff708c986e5898ae32c7311cbe191679224043f14f5e2f768005eb8d28",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/where-to-use-tools/construction": {
-      "hash": "a5cf770546f6d2aaf5b134e2eaecb1aa43eef158aa28f64294ecc02ad621a1f2",
+      "hash": "aebfdeff708c986e5898ae32c7311cbe191679224043f14f5e2f768005eb8d28",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/where-to-use-tools/design": {
-      "hash": "a5cf770546f6d2aaf5b134e2eaecb1aa43eef158aa28f64294ecc02ad621a1f2",
+      "hash": "aebfdeff708c986e5898ae32c7311cbe191679224043f14f5e2f768005eb8d28",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/where-to-use-tools/developer": {
-      "hash": "a5cf770546f6d2aaf5b134e2eaecb1aa43eef158aa28f64294ecc02ad621a1f2",
+      "hash": "aebfdeff708c986e5898ae32c7311cbe191679224043f14f5e2f768005eb8d28",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/where-to-use-tools/documents": {
-      "hash": "a5cf770546f6d2aaf5b134e2eaecb1aa43eef158aa28f64294ecc02ad621a1f2",
+      "hash": "aebfdeff708c986e5898ae32c7311cbe191679224043f14f5e2f768005eb8d28",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/where-to-use-tools/everyday": {
-      "hash": "a5cf770546f6d2aaf5b134e2eaecb1aa43eef158aa28f64294ecc02ad621a1f2",
+      "hash": "aebfdeff708c986e5898ae32c7311cbe191679224043f14f5e2f768005eb8d28",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/where-to-use-tools/finance": {
-      "hash": "a5cf770546f6d2aaf5b134e2eaecb1aa43eef158aa28f64294ecc02ad621a1f2",
+      "hash": "aebfdeff708c986e5898ae32c7311cbe191679224043f14f5e2f768005eb8d28",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/where-to-use-tools/health": {
-      "hash": "a5cf770546f6d2aaf5b134e2eaecb1aa43eef158aa28f64294ecc02ad621a1f2",
+      "hash": "aebfdeff708c986e5898ae32c7311cbe191679224043f14f5e2f768005eb8d28",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/where-to-use-tools/math": {
-      "hash": "a5cf770546f6d2aaf5b134e2eaecb1aa43eef158aa28f64294ecc02ad621a1f2",
+      "hash": "aebfdeff708c986e5898ae32c7311cbe191679224043f14f5e2f768005eb8d28",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/where-to-use-tools/media": {
-      "hash": "a5cf770546f6d2aaf5b134e2eaecb1aa43eef158aa28f64294ecc02ad621a1f2",
+      "hash": "aebfdeff708c986e5898ae32c7311cbe191679224043f14f5e2f768005eb8d28",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/where-to-use-tools/physics": {
-      "hash": "a5cf770546f6d2aaf5b134e2eaecb1aa43eef158aa28f64294ecc02ad621a1f2",
+      "hash": "aebfdeff708c986e5898ae32c7311cbe191679224043f14f5e2f768005eb8d28",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/where-to-use-tools/seo": {
-      "hash": "a5cf770546f6d2aaf5b134e2eaecb1aa43eef158aa28f64294ecc02ad621a1f2",
+      "hash": "aebfdeff708c986e5898ae32c7311cbe191679224043f14f5e2f768005eb8d28",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/id/where-to-use-tools/sports": {
-      "hash": "a5cf770546f6d2aaf5b134e2eaecb1aa43eef158aa28f64294ecc02ad621a1f2",
+      "hash": "aebfdeff708c986e5898ae32c7311cbe191679224043f14f5e2f768005eb8d28",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/": {
-      "hash": "dce62216b6adc45e5f1b70363740c471dcef7bffea5c7b8d4155b79ec940fbe0",
+      "hash": "074ebfd33ec3e3e0cd91a4a28b5aaf919b4b29af1881c43b1cb7c1ee60a141bf",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/tool-type": {
-      "hash": "64d58926c5cd8fa75239dbb6b15375ee96c300a2171ecd6fff55d68ede099246",
+      "hash": "65bdf5a937d7bba4f7d9afee20986f8008c7e5a63a509ce542c50331fb3ab303",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/tool-type/color": {
-      "hash": "64d58926c5cd8fa75239dbb6b15375ee96c300a2171ecd6fff55d68ede099246",
+      "hash": "65bdf5a937d7bba4f7d9afee20986f8008c7e5a63a509ce542c50331fb3ab303",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/tool-type/data": {
-      "hash": "64d58926c5cd8fa75239dbb6b15375ee96c300a2171ecd6fff55d68ede099246",
+      "hash": "65bdf5a937d7bba4f7d9afee20986f8008c7e5a63a509ce542c50331fb3ab303",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/tool-type/image": {
-      "hash": "64d58926c5cd8fa75239dbb6b15375ee96c300a2171ecd6fff55d68ede099246",
+      "hash": "65bdf5a937d7bba4f7d9afee20986f8008c7e5a63a509ce542c50331fb3ab303",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/tool-type/network": {
-      "hash": "64d58926c5cd8fa75239dbb6b15375ee96c300a2171ecd6fff55d68ede099246",
+      "hash": "65bdf5a937d7bba4f7d9afee20986f8008c7e5a63a509ce542c50331fb3ab303",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/tool-type/number": {
-      "hash": "64d58926c5cd8fa75239dbb6b15375ee96c300a2171ecd6fff55d68ede099246",
+      "hash": "65bdf5a937d7bba4f7d9afee20986f8008c7e5a63a509ce542c50331fb3ab303",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/tool-type/pdf": {
-      "hash": "64d58926c5cd8fa75239dbb6b15375ee96c300a2171ecd6fff55d68ede099246",
+      "hash": "65bdf5a937d7bba4f7d9afee20986f8008c7e5a63a509ce542c50331fb3ab303",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/tool-type/text": {
-      "hash": "64d58926c5cd8fa75239dbb6b15375ee96c300a2171ecd6fff55d68ede099246",
+      "hash": "65bdf5a937d7bba4f7d9afee20986f8008c7e5a63a509ce542c50331fb3ab303",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/tool-type/unit": {
-      "hash": "64d58926c5cd8fa75239dbb6b15375ee96c300a2171ecd6fff55d68ede099246",
+      "hash": "65bdf5a937d7bba4f7d9afee20986f8008c7e5a63a509ce542c50331fb3ab303",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/tools/add-digital-signature-to-pdf": {
@@ -8266,7 +8278,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/tools/add-text-to-pdf-file": {
-      "hash": "cb46bfad9bc994ce6a6632cc5a228efbf351f2abc33004a77532141fab8963d5",
+      "hash": "82a7713bdd0fdd34b98ff0cbc94f79ac491d77d1d15d8447fe8351de6beb2964",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/tools/add-watermark": {
@@ -8274,8 +8286,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/ja/tools/add-www-to-dns": {
-      "hash": "42769dc6e5e221fe8224f08d94292713cb96a88b00e83db3570d111635b2466a",
-      "lastmod": "2026-09-03"
+      "hash": "b89cb938a69a24aa153aa4167e804e26cb21dd50889133d550cbeda9342534f4",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/tools/amazon-main-image-size": {
       "hash": "a30839668f71b850bb7e20e829bc455a4d684104239a473c13be37c94e9e68fe",
@@ -8286,7 +8298,7 @@
       "lastmod": "2026-09-05"
     },
     "https://onlinefreetools.org/ja/tools/apple-touch-icon": {
-      "hash": "c415b5cc6dedd80d2618a640abf50334e12fefa923ae5ff13f54bef26fe6bc3d",
+      "hash": "6c94283d665c1d90894447fcd950ed3820eb3b1046f683ec1a21e2542cbbe199",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/tools/archive-extractor": {
@@ -8330,7 +8342,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/tools/bulk-compress-product-photos": {
-      "hash": "e2b6c4d500cecf1b9a37199d63d42e77fb09f7e0c6a1fcdffc788f24b928aef5",
+      "hash": "17f9e4a5dc2e5bb179ac369646d5760a0fd52a44256fd0ad2b51b45a0b0502b1",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/tools/bulk-convert-images-to-jpg": {
@@ -8366,8 +8378,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/ja/tools/cidr-to-ip-range": {
-      "hash": "d5bdbe4c666b8ab893604d5fbb5af51c2d925e20faf8fca2ddcbe85ab1110b92",
-      "lastmod": "2026-09-03"
+      "hash": "9e8106abbe3ce2e5497f8567ffd39bc0b711432d71c0b44665d12ba388690c22",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/tools/color-from-image": {
       "hash": "9f904696ef938d2512884dfdce7e6e9250e2b18a54681b68e5619b8ee9bb4177",
@@ -8394,7 +8406,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/tools/convert-html-to-pdf": {
-      "hash": "91b72f82f7212fb1ba41d3b42632909c9f878fdb734aaf3e6a27f3d5a6c55be2",
+      "hash": "0ceee6a72a924505c7e22057bb27c1262ff06be2f5e3a6b64210667038556c05",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/tools/convert-pdf-to-dwg": {
@@ -8446,7 +8458,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/tools/csv-json": {
-      "hash": "c170c67fbe9d1c5b0db1651a26597fd95d1cb162a7f83857a99f622e65fcc83e",
+      "hash": "713d3cdc9bd8acf6a4f99ee5074cc6c686ac6bb2790261016f8dce071ff1d4a2",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/tools/curl-to-fetch": {
@@ -8470,11 +8482,11 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/tools/excel-formulas-cheat-sheet": {
-      "hash": "d7da57139774cff7687b18fe08f70abad0d26ff4ab2b9f774b7cfcc5985ba984",
-      "lastmod": "2026-09-04"
+      "hash": "a55da4af3f4fb9a88ae61f429c3bfd8623e872767a2ab8e980fbd4ef2b0735a2",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/tools/extract-text-from-pdf": {
-      "hash": "fe13156a2efc4fb37c0a978bd055b07e914e0f78dcb5b7cee0e306c641bec5a5",
+      "hash": "4479f6ca569d7e80cd5a8a5b4f0ce90d0df7f5a9f1f6dd1ffdda69ea75a5fd91",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/tools/file-hash": {
@@ -8634,8 +8646,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/ja/tools/how-to-calculate-ohms-law": {
-      "hash": "ea6c02b6c9956ef4a4b2e4f6bacceef6d54816176a6fec9bc8e43b3125d808a6",
-      "lastmod": "2026-09-03"
+      "hash": "17ecd0766b6f415209d1c576ab8303d6330a8b4aa81c4283c861d9a1f8a832fc",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/tools/how-to-calculate-one-rep-max": {
       "hash": "bc538f561f0e289a379b82529e050d3bbf5299e19e7236316479db29a594c138",
@@ -8754,12 +8766,12 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/ja/tools/image-compress": {
-      "hash": "21775e5a90ea0c29287e52e9f96a85dba6a4370edcaca58ff2b4e4bd89b54fd8",
-      "lastmod": "2026-09-03"
+      "hash": "79cf86381dba6638254c58c44055b4266ef00286a995f84120af3a3aeab549d5",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/tools/image-crop": {
-      "hash": "f149ce048df177e9e21b6b81950b1d4f588ae9a8314517f09c2d73fb21e28467",
-      "lastmod": "2026-09-03"
+      "hash": "4752edb881efc1dafbdf91e31d14ed153d2063ca04824b7c5198ada70e6152ce",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/tools/image-exif": {
       "hash": "c4840ee4b00f5f723dea30103efa4d374234dec290b3ce528b4e3eb8b2850b31",
@@ -8778,8 +8790,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/ja/tools/image-optimizer": {
-      "hash": "6d5cc04ad6b41d391bbb33fe4918be6fa5b6a2b9198f554d40dbd93d83eeeb67",
-      "lastmod": "2026-09-03"
+      "hash": "646b6a32973d59b0bd6f7124799e75589b821f294740c0ab6d9c9c4d44796cec",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/tools/image-overlay": {
       "hash": "2e94c74138a8e78bb3c78c924a735438be9fc1275cecba23f2ff2aab40b6d6c6",
@@ -8806,16 +8818,16 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/tools/indexnow": {
-      "hash": "1b121103f5df02fbfa0c46c04c0a638536389c338f20e5d0a6ce57da2c9a41ec",
-      "lastmod": "2026-09-03"
+      "hash": "3a78e89daa56bdf2b10ea8b1403668ec8accef25105ac50d70c683b351d0fd0b",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/tools/instagram-post-size": {
       "hash": "984e9477321afca475ba08aebd47d981e810c96bfdbb9b7c40bb88d189da5399",
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/ja/tools/instagram-story-size": {
-      "hash": "36bf07e0af12ec60bd3522c2ee4994118c7bcb571fec7de2d3380c2191163438",
-      "lastmod": "2026-09-03"
+      "hash": "5cb1edb28cf7713f6c4b23cf4a9f776e0ac99f40be8d37f50bcf5008bce02957",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/tools/ios-app-icon-size": {
       "hash": "6ae5a990c77e3857abd88e60f71a92f263009dee6e880fed0154edc22f6134d8",
@@ -8830,8 +8842,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/ja/tools/ip-range-to-cidr": {
-      "hash": "df8aa34b404d509df96061354ae224ca64d996db6517e5ad515c147e09f83e94",
-      "lastmod": "2026-09-03"
+      "hash": "132ecb93f775a3ed29690ab70a6dbab162a234968034d4484c8af2b4f0d8d87e",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/tools/iphone-app-store-screenshot": {
       "hash": "404e437d03c56915545dc67fbe4ced5f8fef09fc05c850e0c15ff15a0aafaf4b",
@@ -8846,11 +8858,11 @@
       "lastmod": "2026-09-05"
     },
     "https://onlinefreetools.org/ja/tools/json-schema-validator": {
-      "hash": "85183982621a9ceb77e9b1d2dc887acf734ad67393eea6a75a2046b5cb249352",
+      "hash": "6bfa2af846146fbc2ab810fe91028e59706154b9d6436cabde966e4b7a827d29",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/tools/jwt-decoder": {
-      "hash": "3ec3dc7ab1559ff2cfc044aa6df14d2461c212ab0c0764777026cd0bbc11d8a0",
+      "hash": "bb5aa8b2c3415753691acc88d689fd20ed9000c9c26722a352e94e55a3cf4b37",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/tools/linkedin-banner-size": {
@@ -8866,11 +8878,11 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/tools/make-pdf-flipbook": {
-      "hash": "229a4ca558ab5e8fbe345417d93d36f97ba7b78d42cd77a27858b4fab922d427",
+      "hash": "d23823077bf31f2c11b5118d5b0eebedd480d9d0631463dfc4f2ff4bd2e5eb31",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/tools/markdown-to-html": {
-      "hash": "666d522b4d489b5f7811da12a6a714fc178880e9bfac19096ac453902b8c40d2",
+      "hash": "75461069ac0765aed9a6fc39bc2ede46999a6b872a2614795d155632c0cb7768",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/tools/measuring-magnetic-fields": {
@@ -8878,7 +8890,7 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/ja/tools/merge-pdf": {
-      "hash": "dc3aeaef591a3eafb9a71d0e0dc4709c1e72bd115746a0fa0202d12e205c2db5",
+      "hash": "10ab479e5bf471047aea8f5fb7e798337a85f05f68e5a315f258f95e5992c955",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/tools/meta-serp-preview": {
@@ -8902,15 +8914,15 @@
       "lastmod": "2026-09-04"
     },
     "https://onlinefreetools.org/ja/tools/open-graph-image-size": {
-      "hash": "c0789d34d3d8a3e82ba349ae86c1e0e2cf2dd980dd265f50681da516a35f5860",
-      "lastmod": "2026-09-03"
+      "hash": "44ceef5b31ba929eb19563d76e041ea6496a1163f94a7feeea94ef07ae680245",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/tools/open-graph-preview": {
       "hash": "13ddd341bf8a77d914c5aee9c9497252fc71eaee7ef6c8744d043ae0febf9021",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/tools/open-pdf-in-browser": {
-      "hash": "b0fe4c9a8bc0f8332dd49d87d3a6e10a07f9c21a5083646ee3f79499f1c57853",
+      "hash": "75dd60480f7cf997a1b1faaf4158c1ff7fc4eb1311e5527761829af95f7ae4fd",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/tools/organize-pdf": {
@@ -9010,8 +9022,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/ja/tools/terraform-cidrsubnet": {
-      "hash": "733480aecddcf3777129dc3b18d8fa51659279ddf644395d57734ef6125f977b",
-      "lastmod": "2026-09-03"
+      "hash": "7a28a2e098d2a217bd8d29de6ad6b9628fb549c134fe80a44594e0bae020f152",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/tools/text-diff": {
       "hash": "f23792b3ff218b20668197807465331077f9d967637785ca187c1a69fc690b6a",
@@ -9042,7 +9054,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/tools/unzip-file": {
-      "hash": "8318e51e5481cf6ab733312d1d91b542b5da1638cd0653690c13d5a0d46d3f68",
+      "hash": "7404e8fcd6a48898e823a5ab88d29e63f37a7cfe6be817df7ee3ac84188ebd37",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/tools/utm-builder": {
@@ -9062,8 +9074,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/ja/tools/website-headers": {
-      "hash": "9c1620bdef5b29a1f88a5b57d43d73e634b7c883a2182fbf9a30097ca0264aa1",
-      "lastmod": "2026-09-03"
+      "hash": "c4ef438a2a9151dcab02ab8e9b3c05b54a1a49de3cf1f0d1caa81d6b5b7e18ce",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/tools/wrap-formula-with-ifna": {
       "hash": "3c68c5839ed86ed8689108df886c559de88bbcf872ba17181ea0c99367042933",
@@ -9082,7 +9094,7 @@
       "lastmod": "2026-09-04"
     },
     "https://onlinefreetools.org/ja/tools/write-pdf-document-online": {
-      "hash": "29b3e1c4fbb2ced87f7e58e38127a3b1b9444d134d894bbdc58dddcaccf5f7f3",
+      "hash": "b905469036cdf91131ba59887b40f973eecdc6f0dda3c6970d9e40dc6fcf42c3",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/tools/writing-prompt-generator": {
@@ -9090,7 +9102,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/tools/yaml-json": {
-      "hash": "64003ce6d82a25c05e4cdadfec0102a4a7258cfdee1eee74c159be6b1bbd8d5e",
+      "hash": "84d59a28e6303d1e318f2dd11c7cb02da71efc6e67541120053fc5996a9f331b",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/tools/youtube-thumbnail-size": {
@@ -9174,95 +9186,95 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/where-to-use-tools": {
-      "hash": "64d58926c5cd8fa75239dbb6b15375ee96c300a2171ecd6fff55d68ede099246",
+      "hash": "65bdf5a937d7bba4f7d9afee20986f8008c7e5a63a509ce542c50331fb3ab303",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/where-to-use-tools/construction": {
-      "hash": "64d58926c5cd8fa75239dbb6b15375ee96c300a2171ecd6fff55d68ede099246",
+      "hash": "65bdf5a937d7bba4f7d9afee20986f8008c7e5a63a509ce542c50331fb3ab303",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/where-to-use-tools/design": {
-      "hash": "64d58926c5cd8fa75239dbb6b15375ee96c300a2171ecd6fff55d68ede099246",
+      "hash": "65bdf5a937d7bba4f7d9afee20986f8008c7e5a63a509ce542c50331fb3ab303",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/where-to-use-tools/developer": {
-      "hash": "64d58926c5cd8fa75239dbb6b15375ee96c300a2171ecd6fff55d68ede099246",
+      "hash": "65bdf5a937d7bba4f7d9afee20986f8008c7e5a63a509ce542c50331fb3ab303",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/where-to-use-tools/documents": {
-      "hash": "64d58926c5cd8fa75239dbb6b15375ee96c300a2171ecd6fff55d68ede099246",
+      "hash": "65bdf5a937d7bba4f7d9afee20986f8008c7e5a63a509ce542c50331fb3ab303",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/where-to-use-tools/everyday": {
-      "hash": "64d58926c5cd8fa75239dbb6b15375ee96c300a2171ecd6fff55d68ede099246",
+      "hash": "65bdf5a937d7bba4f7d9afee20986f8008c7e5a63a509ce542c50331fb3ab303",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/where-to-use-tools/finance": {
-      "hash": "64d58926c5cd8fa75239dbb6b15375ee96c300a2171ecd6fff55d68ede099246",
+      "hash": "65bdf5a937d7bba4f7d9afee20986f8008c7e5a63a509ce542c50331fb3ab303",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/where-to-use-tools/health": {
-      "hash": "64d58926c5cd8fa75239dbb6b15375ee96c300a2171ecd6fff55d68ede099246",
+      "hash": "65bdf5a937d7bba4f7d9afee20986f8008c7e5a63a509ce542c50331fb3ab303",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/where-to-use-tools/math": {
-      "hash": "64d58926c5cd8fa75239dbb6b15375ee96c300a2171ecd6fff55d68ede099246",
+      "hash": "65bdf5a937d7bba4f7d9afee20986f8008c7e5a63a509ce542c50331fb3ab303",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/where-to-use-tools/media": {
-      "hash": "64d58926c5cd8fa75239dbb6b15375ee96c300a2171ecd6fff55d68ede099246",
+      "hash": "65bdf5a937d7bba4f7d9afee20986f8008c7e5a63a509ce542c50331fb3ab303",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/where-to-use-tools/physics": {
-      "hash": "64d58926c5cd8fa75239dbb6b15375ee96c300a2171ecd6fff55d68ede099246",
+      "hash": "65bdf5a937d7bba4f7d9afee20986f8008c7e5a63a509ce542c50331fb3ab303",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/where-to-use-tools/seo": {
-      "hash": "64d58926c5cd8fa75239dbb6b15375ee96c300a2171ecd6fff55d68ede099246",
+      "hash": "65bdf5a937d7bba4f7d9afee20986f8008c7e5a63a509ce542c50331fb3ab303",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ja/where-to-use-tools/sports": {
-      "hash": "64d58926c5cd8fa75239dbb6b15375ee96c300a2171ecd6fff55d68ede099246",
+      "hash": "65bdf5a937d7bba4f7d9afee20986f8008c7e5a63a509ce542c50331fb3ab303",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/": {
-      "hash": "676f5078d48de0c7f78f2531313b283b94813ee46c8f4d3c8471fd0cb142369f",
+      "hash": "fd4f3a287fe25c128ae6b5f591b378e278d5dd969512a04dfa7bc8dbbd808f27",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/tool-type": {
-      "hash": "5adbd9c51f2008281e8b0ed5c6f0fe3703af7d60a1e6ce4a9ae5da78d0bf6a13",
+      "hash": "00f5eac07aa09ea2da3d3231d8eef6b66e604ae360081419db895f9e08a69b67",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/tool-type/color": {
-      "hash": "5adbd9c51f2008281e8b0ed5c6f0fe3703af7d60a1e6ce4a9ae5da78d0bf6a13",
+      "hash": "00f5eac07aa09ea2da3d3231d8eef6b66e604ae360081419db895f9e08a69b67",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/tool-type/data": {
-      "hash": "5adbd9c51f2008281e8b0ed5c6f0fe3703af7d60a1e6ce4a9ae5da78d0bf6a13",
+      "hash": "00f5eac07aa09ea2da3d3231d8eef6b66e604ae360081419db895f9e08a69b67",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/tool-type/image": {
-      "hash": "5adbd9c51f2008281e8b0ed5c6f0fe3703af7d60a1e6ce4a9ae5da78d0bf6a13",
+      "hash": "00f5eac07aa09ea2da3d3231d8eef6b66e604ae360081419db895f9e08a69b67",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/tool-type/network": {
-      "hash": "5adbd9c51f2008281e8b0ed5c6f0fe3703af7d60a1e6ce4a9ae5da78d0bf6a13",
+      "hash": "00f5eac07aa09ea2da3d3231d8eef6b66e604ae360081419db895f9e08a69b67",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/tool-type/number": {
-      "hash": "5adbd9c51f2008281e8b0ed5c6f0fe3703af7d60a1e6ce4a9ae5da78d0bf6a13",
+      "hash": "00f5eac07aa09ea2da3d3231d8eef6b66e604ae360081419db895f9e08a69b67",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/tool-type/pdf": {
-      "hash": "5adbd9c51f2008281e8b0ed5c6f0fe3703af7d60a1e6ce4a9ae5da78d0bf6a13",
+      "hash": "00f5eac07aa09ea2da3d3231d8eef6b66e604ae360081419db895f9e08a69b67",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/tool-type/text": {
-      "hash": "5adbd9c51f2008281e8b0ed5c6f0fe3703af7d60a1e6ce4a9ae5da78d0bf6a13",
+      "hash": "00f5eac07aa09ea2da3d3231d8eef6b66e604ae360081419db895f9e08a69b67",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/tool-type/unit": {
-      "hash": "5adbd9c51f2008281e8b0ed5c6f0fe3703af7d60a1e6ce4a9ae5da78d0bf6a13",
+      "hash": "00f5eac07aa09ea2da3d3231d8eef6b66e604ae360081419db895f9e08a69b67",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/tools/add-digital-signature-to-pdf": {
@@ -9270,7 +9282,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/tools/add-text-to-pdf-file": {
-      "hash": "650bbbba24775a321e9f684bc10283ff81d32658af6ebce7bba59d52eb6dd17a",
+      "hash": "ffa581ca7cd557661379df6e280d0979d73789f4e44015073ce482318d1397ac",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/tools/add-watermark": {
@@ -9278,8 +9290,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/pt/tools/add-www-to-dns": {
-      "hash": "1438cd37342133a5d9a18aee45d2839ba6bf7b2a50803f86a17f0d88e5dbb2a0",
-      "lastmod": "2026-09-03"
+      "hash": "248bb9073bc33d88dfcb887df3894802d13b98a4ce00205abce4b311a98b9869",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/tools/amazon-main-image-size": {
       "hash": "25bc4fd0f1c21675a1b5dcc2baf9774a9fdd8a1417e1aab238ce6cd5342effb4",
@@ -9290,7 +9302,7 @@
       "lastmod": "2026-09-05"
     },
     "https://onlinefreetools.org/pt/tools/apple-touch-icon": {
-      "hash": "f62a84579f350e034ce330fc84bd6facc5f4605d6fb0bfc6dbf7ba0590194f36",
+      "hash": "f8dc568ad2c2095556321dd8af714eccd8aeabd4295f8dcc19b91fc7c37b7470",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/tools/archive-extractor": {
@@ -9334,7 +9346,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/tools/bulk-compress-product-photos": {
-      "hash": "dbbbf4d54f43912b0b6ddd53760af9b8f66010650fb282e2c8bdcb0c92a6c267",
+      "hash": "499022b940fe163ab45a2ce09c556033d3b3781da273ab7e213138262bd703d4",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/tools/bulk-convert-images-to-jpg": {
@@ -9370,8 +9382,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/pt/tools/cidr-to-ip-range": {
-      "hash": "521b9ecb356091e5306f07237e35984d2e79849f536e83fb899f342a24842bb6",
-      "lastmod": "2026-09-03"
+      "hash": "c21a50e952d83a362c1a853a750fc154164d77be923b22c2f6aed83a537d6c05",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/tools/color-from-image": {
       "hash": "3532030ae9dc54ad99fd7f0ec35703087b94abab882868fafead4912f4d1ba73",
@@ -9398,7 +9410,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/tools/convert-html-to-pdf": {
-      "hash": "6d0b4378098a8d852724645fed662fb1676b8275894cb4e63fb27690cd37b69a",
+      "hash": "e4eaab87fcf2333db521bba49e67d1ecf6c4e3006f0b21e20097177621ba96cb",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/tools/convert-pdf-to-dwg": {
@@ -9450,7 +9462,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/tools/csv-json": {
-      "hash": "65dfdd901565d53bb68509e96674ebdfd536b126841da85c1b9b19796afe4263",
+      "hash": "b725ac08abae66d5778c23bd5199adf7878d02a6258c9ca169e9a2a354c3c8d6",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/tools/curl-to-fetch": {
@@ -9474,11 +9486,11 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/tools/excel-formulas-cheat-sheet": {
-      "hash": "2533660c390ac09480caba22865452f02d8d99d29861d7d46ad2cda7a5dee030",
-      "lastmod": "2026-09-04"
+      "hash": "351967f260ce5f597c68c963ceec92a2a86d8284c75f4e1adc2d9853c3615185",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/tools/extract-text-from-pdf": {
-      "hash": "bd3dffe470b2c35169904dea08a32345c8983ef4ac2615985b26bcbbb5effd26",
+      "hash": "3ef068e4fd9fc007325c11a3cb88f4c798f4fcce2f52637f5bb6094dad8ef7b0",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/tools/file-hash": {
@@ -9638,8 +9650,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/pt/tools/how-to-calculate-ohms-law": {
-      "hash": "920aa5f020b7063b83910d9e760c2af2b39bd6eaa0401ca88807eb8cb5391e16",
-      "lastmod": "2026-09-03"
+      "hash": "a308956f665480e33ec87cf3898f59b35a35c49f53c90ff29529bd6b2903af20",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/tools/how-to-calculate-one-rep-max": {
       "hash": "a2f009a62c969ab6c4ba19b51e05c60c16edcea5746d0e5a24bb5c8b91813957",
@@ -9758,12 +9770,12 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/pt/tools/image-compress": {
-      "hash": "996f1caebc248d103f6e12ef8d84a0493d4d97651b9697c1c3045e73bc440bf8",
-      "lastmod": "2026-09-03"
+      "hash": "288cceb2c7c5d8951a17487acf8c3c41fdf3e29ee9855c66e9341877e70c1f7e",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/tools/image-crop": {
-      "hash": "40f355256138899c6624b0e7cd7e2e89f177a1d8c7d7065c1b3ee7ff75917ecf",
-      "lastmod": "2026-09-03"
+      "hash": "4c7556642c308941cbf43cfecb3cb533a28fcb379697ec61c6d2632802b4c684",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/tools/image-exif": {
       "hash": "83d00dba547e768c0a89c3d7f6c72714a726635ce3d94e3eb296be08b1b725fc",
@@ -9782,8 +9794,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/pt/tools/image-optimizer": {
-      "hash": "bd843d3c63bedb36241355eda38a8dbf7c461e23e708d8f4a59d743c7d7b36ed",
-      "lastmod": "2026-09-03"
+      "hash": "6c132a9311bea14ad0eacc5d535d502ae81d66363476cb9341d95f7ae2a533ed",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/tools/image-overlay": {
       "hash": "13c17e28bcf6a3aa1fe796495b2bac3756e35b8b97d3b54989413ee7f6c706bc",
@@ -9810,16 +9822,16 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/tools/indexnow": {
-      "hash": "9b607ae6881837f3ebada9b9dce2f323f08d5a6e19fcb8fde9a404634362e1d5",
-      "lastmod": "2026-09-03"
+      "hash": "96cdc88110415549c514309656de89c6ab580d7ec2c5404b02e5f14fdef31345",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/tools/instagram-post-size": {
       "hash": "82ee07ab45389b5b79e01de5255d04dd3ddd69ab7f63e0ccc16ac49eda2e4213",
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/pt/tools/instagram-story-size": {
-      "hash": "9f897d25b92f9e0d43885fdd1222b3d6e7f57dfc96dbb994e14a11b026e776f6",
-      "lastmod": "2026-09-03"
+      "hash": "d834140f66cec73923d477b65f1c7b22c545d458c406f9dd770c6bcab2849baf",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/tools/ios-app-icon-size": {
       "hash": "a98ffbfd87cdb7b36e3b6efcc06e66f49136a53b779ebb86e054dfa5b38a7cc0",
@@ -9834,8 +9846,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/pt/tools/ip-range-to-cidr": {
-      "hash": "51858e4550ccfcec7a3a1ca7bdd6f826d4927842fcf0e6a70214b41152c69a71",
-      "lastmod": "2026-09-03"
+      "hash": "6be883ae36706dd9c06b7b3d4b66da4bd64b50e5b76a7218c65b5b85b07b9e4f",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/tools/iphone-app-store-screenshot": {
       "hash": "759a2d377de26b09a2b3ce5905311016cce797b62d04ead0f6802bae9a21960a",
@@ -9850,11 +9862,11 @@
       "lastmod": "2026-09-05"
     },
     "https://onlinefreetools.org/pt/tools/json-schema-validator": {
-      "hash": "235def6c0ba3f80a7449e998883a405d58c981667b06dec7f249ed71eed2b810",
+      "hash": "4a088554964a861b6159cee7c1f745cd79ba0d4853fc17292dc5f1ff49391bcd",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/tools/jwt-decoder": {
-      "hash": "e95602d50e8ab93c57ce71fe47c9f3164fd3c00807a157e4b5199303f2944795",
+      "hash": "2a0ce862e15c5ad2591a4ff25e5d045d0b58be1f2903daaa1188ce15147771ed",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/tools/linkedin-banner-size": {
@@ -9870,11 +9882,11 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/tools/make-pdf-flipbook": {
-      "hash": "0b203b34bbd2ae64316ce4e14371ad0d07b5b45834f485736d95d1176a84df34",
+      "hash": "7f4a97d2648392e01cc478cce2140b4694cd47a4d68128eb8a68942216d66fd5",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/tools/markdown-to-html": {
-      "hash": "db75d06ad1cb89844e2ee84e1b444a17c160d9f13da3cd4269f2017e159ed3e0",
+      "hash": "3a558ae3a507013d167525bb4f885a91289356aa3d845b3f4d77dfbfec09643b",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/tools/measuring-magnetic-fields": {
@@ -9882,7 +9894,7 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/pt/tools/merge-pdf": {
-      "hash": "a1f75c34845ab81e169ce630a4ab0c1d476a8fdf47f57cb33df8440bce590194",
+      "hash": "d5fb649de0349ddcd21f9df183a193a4e5ef7edfb7d1a6e4ab024e1db7a8e930",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/tools/meta-serp-preview": {
@@ -9906,15 +9918,15 @@
       "lastmod": "2026-09-04"
     },
     "https://onlinefreetools.org/pt/tools/open-graph-image-size": {
-      "hash": "768c40e4e34037886c31896dca4a87a959c75cd823878ec847f03791e72a12c2",
-      "lastmod": "2026-09-03"
+      "hash": "326139b69632d798a87528e5597600fbbabd01753be52d326284ef002ca9e40b",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/tools/open-graph-preview": {
       "hash": "2c571204c0b37daa86d6d551af7aa4b0b42e74042c79c087ef3a7bb959b6799d",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/tools/open-pdf-in-browser": {
-      "hash": "2a49430352b64c48fb7c0b6fee110c78308f9e2623efdc89240485b5be212386",
+      "hash": "0caca3397e50ed322cece4d9c9c3d8975f6b2e62fba1e4028f40a88ba880ddab",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/tools/organize-pdf": {
@@ -10014,8 +10026,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/pt/tools/terraform-cidrsubnet": {
-      "hash": "91a2b46c23ba023d338a5539482fee5a14140940ae54f7a374b3d7a7849051b5",
-      "lastmod": "2026-09-03"
+      "hash": "94cafcab1ed0fb8bd5d5cc1a6c7924f15111fc78979effd72732173166ace4e1",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/tools/text-diff": {
       "hash": "7b15138db3c48f1de27824304fc3c52ca08dcf03a5a6d8082ca4eb113edf26cf",
@@ -10046,7 +10058,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/tools/unzip-file": {
-      "hash": "60d646997051e021fcc4a8d47d2c1a51a1990d2b526d031f8e649ee67d7975e0",
+      "hash": "40b38e1528e5e9221b8980f6842c04985cf101299463712d162bfeaa9577824a",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/tools/utm-builder": {
@@ -10066,8 +10078,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/pt/tools/website-headers": {
-      "hash": "e7da96691b0b912f5752b706c0060bfdb1e4c588b8d321a65d5d264972883875",
-      "lastmod": "2026-09-03"
+      "hash": "73d543a92c0dc99d878f949812ef1637f865230fbd4b8e7b7d2616c2ef189710",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/tools/wrap-formula-with-ifna": {
       "hash": "c042c08834274dd4543af0e5fc4688362c106e895f618cd4ca4699385b9046b7",
@@ -10086,7 +10098,7 @@
       "lastmod": "2026-09-04"
     },
     "https://onlinefreetools.org/pt/tools/write-pdf-document-online": {
-      "hash": "2dc25ebb692a84b25af2a79da90877b5e33bcfe79df4c5397f53610433badeb2",
+      "hash": "be470360a9f4e096b1bbd6233c1040fe0fa0e0112c3fb750626537034c3590c3",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/tools/writing-prompt-generator": {
@@ -10094,7 +10106,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/tools/yaml-json": {
-      "hash": "0e323d43ccfa9dc96354d65d179b62c36d1a105a5b6210a5dcad032083361e74",
+      "hash": "be9860d5df72e0d6fecf23752e42beacefed377b07077536a6d478cb097b40db",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/tools/youtube-thumbnail-size": {
@@ -10178,95 +10190,95 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/where-to-use-tools": {
-      "hash": "5adbd9c51f2008281e8b0ed5c6f0fe3703af7d60a1e6ce4a9ae5da78d0bf6a13",
+      "hash": "00f5eac07aa09ea2da3d3231d8eef6b66e604ae360081419db895f9e08a69b67",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/where-to-use-tools/construction": {
-      "hash": "5adbd9c51f2008281e8b0ed5c6f0fe3703af7d60a1e6ce4a9ae5da78d0bf6a13",
+      "hash": "00f5eac07aa09ea2da3d3231d8eef6b66e604ae360081419db895f9e08a69b67",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/where-to-use-tools/design": {
-      "hash": "5adbd9c51f2008281e8b0ed5c6f0fe3703af7d60a1e6ce4a9ae5da78d0bf6a13",
+      "hash": "00f5eac07aa09ea2da3d3231d8eef6b66e604ae360081419db895f9e08a69b67",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/where-to-use-tools/developer": {
-      "hash": "5adbd9c51f2008281e8b0ed5c6f0fe3703af7d60a1e6ce4a9ae5da78d0bf6a13",
+      "hash": "00f5eac07aa09ea2da3d3231d8eef6b66e604ae360081419db895f9e08a69b67",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/where-to-use-tools/documents": {
-      "hash": "5adbd9c51f2008281e8b0ed5c6f0fe3703af7d60a1e6ce4a9ae5da78d0bf6a13",
+      "hash": "00f5eac07aa09ea2da3d3231d8eef6b66e604ae360081419db895f9e08a69b67",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/where-to-use-tools/everyday": {
-      "hash": "5adbd9c51f2008281e8b0ed5c6f0fe3703af7d60a1e6ce4a9ae5da78d0bf6a13",
+      "hash": "00f5eac07aa09ea2da3d3231d8eef6b66e604ae360081419db895f9e08a69b67",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/where-to-use-tools/finance": {
-      "hash": "5adbd9c51f2008281e8b0ed5c6f0fe3703af7d60a1e6ce4a9ae5da78d0bf6a13",
+      "hash": "00f5eac07aa09ea2da3d3231d8eef6b66e604ae360081419db895f9e08a69b67",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/where-to-use-tools/health": {
-      "hash": "5adbd9c51f2008281e8b0ed5c6f0fe3703af7d60a1e6ce4a9ae5da78d0bf6a13",
+      "hash": "00f5eac07aa09ea2da3d3231d8eef6b66e604ae360081419db895f9e08a69b67",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/where-to-use-tools/math": {
-      "hash": "5adbd9c51f2008281e8b0ed5c6f0fe3703af7d60a1e6ce4a9ae5da78d0bf6a13",
+      "hash": "00f5eac07aa09ea2da3d3231d8eef6b66e604ae360081419db895f9e08a69b67",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/where-to-use-tools/media": {
-      "hash": "5adbd9c51f2008281e8b0ed5c6f0fe3703af7d60a1e6ce4a9ae5da78d0bf6a13",
+      "hash": "00f5eac07aa09ea2da3d3231d8eef6b66e604ae360081419db895f9e08a69b67",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/where-to-use-tools/physics": {
-      "hash": "5adbd9c51f2008281e8b0ed5c6f0fe3703af7d60a1e6ce4a9ae5da78d0bf6a13",
+      "hash": "00f5eac07aa09ea2da3d3231d8eef6b66e604ae360081419db895f9e08a69b67",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/where-to-use-tools/seo": {
-      "hash": "5adbd9c51f2008281e8b0ed5c6f0fe3703af7d60a1e6ce4a9ae5da78d0bf6a13",
+      "hash": "00f5eac07aa09ea2da3d3231d8eef6b66e604ae360081419db895f9e08a69b67",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/pt/where-to-use-tools/sports": {
-      "hash": "5adbd9c51f2008281e8b0ed5c6f0fe3703af7d60a1e6ce4a9ae5da78d0bf6a13",
+      "hash": "00f5eac07aa09ea2da3d3231d8eef6b66e604ae360081419db895f9e08a69b67",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/": {
-      "hash": "f7c5a5a45587f974494cf8078c57bbe5ba4266f5d56340b8bc8f27b6e5b3c4f2",
+      "hash": "74b92179a0b1a8b5e28d0b68e7e1ff66cbec7b375f0c70dde794cffffc1b7e36",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/tool-type": {
-      "hash": "f950121ed44eb782f9a0dc1766e80a9f7763e6a40787839fa6a034e71aee7395",
+      "hash": "59babb0e226a91b0cb1b2c382d19b3fc7d29466f325e2cc1519d3cd28b70f19c",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/tool-type/color": {
-      "hash": "f950121ed44eb782f9a0dc1766e80a9f7763e6a40787839fa6a034e71aee7395",
+      "hash": "59babb0e226a91b0cb1b2c382d19b3fc7d29466f325e2cc1519d3cd28b70f19c",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/tool-type/data": {
-      "hash": "f950121ed44eb782f9a0dc1766e80a9f7763e6a40787839fa6a034e71aee7395",
+      "hash": "59babb0e226a91b0cb1b2c382d19b3fc7d29466f325e2cc1519d3cd28b70f19c",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/tool-type/image": {
-      "hash": "f950121ed44eb782f9a0dc1766e80a9f7763e6a40787839fa6a034e71aee7395",
+      "hash": "59babb0e226a91b0cb1b2c382d19b3fc7d29466f325e2cc1519d3cd28b70f19c",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/tool-type/network": {
-      "hash": "f950121ed44eb782f9a0dc1766e80a9f7763e6a40787839fa6a034e71aee7395",
+      "hash": "59babb0e226a91b0cb1b2c382d19b3fc7d29466f325e2cc1519d3cd28b70f19c",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/tool-type/number": {
-      "hash": "f950121ed44eb782f9a0dc1766e80a9f7763e6a40787839fa6a034e71aee7395",
+      "hash": "59babb0e226a91b0cb1b2c382d19b3fc7d29466f325e2cc1519d3cd28b70f19c",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/tool-type/pdf": {
-      "hash": "f950121ed44eb782f9a0dc1766e80a9f7763e6a40787839fa6a034e71aee7395",
+      "hash": "59babb0e226a91b0cb1b2c382d19b3fc7d29466f325e2cc1519d3cd28b70f19c",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/tool-type/text": {
-      "hash": "f950121ed44eb782f9a0dc1766e80a9f7763e6a40787839fa6a034e71aee7395",
+      "hash": "59babb0e226a91b0cb1b2c382d19b3fc7d29466f325e2cc1519d3cd28b70f19c",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/tool-type/unit": {
-      "hash": "f950121ed44eb782f9a0dc1766e80a9f7763e6a40787839fa6a034e71aee7395",
+      "hash": "59babb0e226a91b0cb1b2c382d19b3fc7d29466f325e2cc1519d3cd28b70f19c",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/tools/add-digital-signature-to-pdf": {
@@ -10274,7 +10286,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/tools/add-text-to-pdf-file": {
-      "hash": "41604668b9b39dc8d838d66f9d82cf64a16011a27da3cdc3e8b4714c1e4e9adf",
+      "hash": "6a868ad90af16bd1c043bf1d4c332dc2157245679ede4fe2a0e20c8c7c6be33a",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/tools/add-watermark": {
@@ -10282,8 +10294,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/ru/tools/add-www-to-dns": {
-      "hash": "735513288650b7e78e9eeb4bf0d726397e217548d3765195fbd2db396a2fd7f2",
-      "lastmod": "2026-09-03"
+      "hash": "b16b9ac4ad0c02a62afaf32fd4038cba52b16548b056a8eab698928c6d388e61",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/tools/amazon-main-image-size": {
       "hash": "3c5264da0608dace5a2cc81592d0864b6d5d1e8d31a43ec42dadafcb3f79e839",
@@ -10294,7 +10306,7 @@
       "lastmod": "2026-09-05"
     },
     "https://onlinefreetools.org/ru/tools/apple-touch-icon": {
-      "hash": "bb6c2d514609b3222dcc55531d53698790ec39a5f5df005c3e71813361c875d0",
+      "hash": "b26b4ae8719857972dd83830d0c945b2483911a32b96751ab2f84886605f1d83",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/tools/archive-extractor": {
@@ -10338,7 +10350,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/tools/bulk-compress-product-photos": {
-      "hash": "21dfcbf1af91606a85a18a38b21c88c83f94811348b9d509a220baac0029e457",
+      "hash": "725dff54791a4e06beee6d445809010a3160ea2f53eebb774bfd2edbf5c6cfa3",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/tools/bulk-convert-images-to-jpg": {
@@ -10374,8 +10386,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/ru/tools/cidr-to-ip-range": {
-      "hash": "4f979947b03a0e75181ce787441b66e8f12fccf1fa29b2c194f13591d2078739",
-      "lastmod": "2026-09-03"
+      "hash": "328b911a51e6430058b4a6d3593b410a93da182be4ce897e8ed14f8e1762ec0c",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/tools/color-from-image": {
       "hash": "fd2d5d46254a6724214ef516e4cb811aab74e4efbcb46456fb7987947c2c2ac5",
@@ -10402,7 +10414,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/tools/convert-html-to-pdf": {
-      "hash": "4b8863a3235e2a0011ac2be13273bec6444d542ff41722111e128a0e48b61d30",
+      "hash": "0e3093ff707b4314acb7b4405ee54edeca9fd1a6ad30988f3aa20a9562489431",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/tools/convert-pdf-to-dwg": {
@@ -10454,7 +10466,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/tools/csv-json": {
-      "hash": "10cec1a787d32db17939e1887e14ba50b885c34cc8dfac016af3c0a0170a7e6b",
+      "hash": "e1d89467936fc3d7e04b64b8072bb6530f4c66845b8b9655914bb7f84c25e817",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/tools/curl-to-fetch": {
@@ -10478,11 +10490,11 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/tools/excel-formulas-cheat-sheet": {
-      "hash": "7a47b54a1b021831482c9f74539d8b8dc077b00877a12297a114c78af1233e00",
-      "lastmod": "2026-09-04"
+      "hash": "14181377928b1f9e253ee6db8c5848acba85c0e7fb6a2272849a7f841bd97cf4",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/tools/extract-text-from-pdf": {
-      "hash": "11b584705ca2cc5f1a5843e7726194a6c05246c335db707ce002287c8714d708",
+      "hash": "854ff0b8b39cefdd1c54cd10ab232c40d03c04a23a49ce2982340a260b5f54a0",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/tools/file-hash": {
@@ -10642,8 +10654,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/ru/tools/how-to-calculate-ohms-law": {
-      "hash": "38cc5f213703bcf3021f77db267bd0dc213f80d0f836979fcb715d64f1a9ab82",
-      "lastmod": "2026-09-03"
+      "hash": "2d4691b50845cfe0a99307c443d4ea2f418f80c1066f6a4034959c7f363d1962",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/tools/how-to-calculate-one-rep-max": {
       "hash": "fbd7f355596635734accee97e60106d802f6162c508596dd7c3d66ceeb595a49",
@@ -10762,12 +10774,12 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/ru/tools/image-compress": {
-      "hash": "5f0f601937db54bbee07ca6417a9bd0c9b428c799a2d5921db5356fb82ca0257",
-      "lastmod": "2026-09-03"
+      "hash": "53daaa33892a1f07104c75ad93aeacd02963e523bfc04ce0da578a0ebd98ec41",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/tools/image-crop": {
-      "hash": "3174021914265fb4f6965dd82a441d158733bd61c604862bcc2b1b3218b81d49",
-      "lastmod": "2026-09-03"
+      "hash": "f24027afce7efad3948397ec06bdda74d93a2d23722708ffc903c91d2852457a",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/tools/image-exif": {
       "hash": "26f2151ab47516a403376dd34b48a9984e21db931f5dcbfcf5dfce67ca5ef133",
@@ -10786,8 +10798,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/ru/tools/image-optimizer": {
-      "hash": "e41f3b77a8081a673c60260b6ebfd86801b837b75c61f1bf0aca42d10e3a0499",
-      "lastmod": "2026-09-03"
+      "hash": "0ff536e7151d9033ab23ccb3098d49a651d888e0ec8d79d0d787f1b0f068b509",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/tools/image-overlay": {
       "hash": "c61fae7cb56bbaa3e7f54585e6391bb0187bcec4b11e2501b622ac502930075c",
@@ -10814,16 +10826,16 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/tools/indexnow": {
-      "hash": "c14a31c953e45f3b1254991204b63b6bad5fe7a1fa71e3369568966d2881679d",
-      "lastmod": "2026-09-03"
+      "hash": "93717bbe43f981223b63a74db26d4d2e8b2790a5aff3b0ed2fd8792831f199e0",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/tools/instagram-post-size": {
       "hash": "222ed1efec2693645b864e62fcc76ece416eaacd44d2f2575caadc09b06d7d2b",
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/ru/tools/instagram-story-size": {
-      "hash": "8f9c7bc93510d8e4f37830f94fdbdb81686ef01447672e962681136b866c0c75",
-      "lastmod": "2026-09-03"
+      "hash": "4c8675f1fad8d9a3576d0a05e818dfa2acb0bc54e4c2b24ae84c250f257142d1",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/tools/ios-app-icon-size": {
       "hash": "2438887b4e88da21cca5635da0332b43bf1ec96949316c6b19394545b2bd766b",
@@ -10838,8 +10850,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/ru/tools/ip-range-to-cidr": {
-      "hash": "4f100aa5c0be0c13954dd54ff22132205ba3d039ff56d2855987e8fffdc102d1",
-      "lastmod": "2026-09-03"
+      "hash": "45a46f65fb70a61a86b8580b41814ba01807a229b13dc53ed4ec43b68f600de7",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/tools/iphone-app-store-screenshot": {
       "hash": "bb67616374e07f7cf84d308c6c9b66a7df1044d7dde8c75749f2915195517e9a",
@@ -10854,11 +10866,11 @@
       "lastmod": "2026-09-05"
     },
     "https://onlinefreetools.org/ru/tools/json-schema-validator": {
-      "hash": "77ca948f2cebacdf43c77531ec9ca3411a00464e0a43517b7b82d8f4d59b07ce",
+      "hash": "9f17f4ef347193dbb1d73bd3761b83bda05ba0d110826631ba9810d82e5d8be2",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/tools/jwt-decoder": {
-      "hash": "e0ad720193b97981f14026d1f4c11a3d2d5c21f71e063b82d3159d527ce87a4b",
+      "hash": "832069b8e73b7b32c3003b7fff577b0efd704746291ab387e85dc7b57917d835",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/tools/linkedin-banner-size": {
@@ -10874,11 +10886,11 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/tools/make-pdf-flipbook": {
-      "hash": "399d6576f0a4adc352a5ebc35f0fd9544489b9221564b8d424908fd450223a4f",
+      "hash": "d1093eae0cbfae0292d31cb70dd43145125714eec91afa60d591c49ce2e91890",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/tools/markdown-to-html": {
-      "hash": "1f0f4c2ed9d33b5f998a661e28dc54e3a5ffb1e83e070ffd35d6c6e90c361e92",
+      "hash": "23030526e126109e16597709a18fedbf06d43830eaa4a2e9ede5dd9fa04fd062",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/tools/measuring-magnetic-fields": {
@@ -10886,7 +10898,7 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/ru/tools/merge-pdf": {
-      "hash": "a75290f37fa0b4a7e7e5c2e6431d9205a221bf014807748a3626f4c8b65a9821",
+      "hash": "954e8876287201aad1f98160837e24a14ebdd6e438a88447c4fc8edcda36eb3b",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/tools/meta-serp-preview": {
@@ -10910,15 +10922,15 @@
       "lastmod": "2026-09-04"
     },
     "https://onlinefreetools.org/ru/tools/open-graph-image-size": {
-      "hash": "6da2e43786823cfc70c6ec0c684dc3838369c3ec685bfa810576bdc1d5481f33",
-      "lastmod": "2026-09-03"
+      "hash": "f64a47564e428f0621c08400931470002586c4f6baa124f8c0ae2c92eebec130",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/tools/open-graph-preview": {
       "hash": "53c81a0339623572d5a9033c55243b3baaf1987a53f5bf43ab4f14e1e7a91dcf",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/tools/open-pdf-in-browser": {
-      "hash": "01091caeaffc8b7c4a365727ec68246437372a1afb2a2819f819bfc19e94a55d",
+      "hash": "04a589805a1ddb8ec3f1ed9c98198c6a2377a6232d52d44f2913ac0757a36533",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/tools/organize-pdf": {
@@ -11018,8 +11030,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/ru/tools/terraform-cidrsubnet": {
-      "hash": "3b81ff7fa7835a71578f1aaf2df901863689a730991029b8039f2b1497f1ed88",
-      "lastmod": "2026-09-03"
+      "hash": "cfd7e2030b2af3a31b8b75ad2762dbb740636a477e27e912f73d8cfd067df087",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/tools/text-diff": {
       "hash": "de60ba3709f039b8eeb48ed9ad35ab9169ae4727b295ee51f0281adce7e7a9d6",
@@ -11050,7 +11062,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/tools/unzip-file": {
-      "hash": "5934528f8e53b7302aaf47b64019aa976b4b8387b4a8ca3d2401376403a07026",
+      "hash": "b858e1356ebc1a372f96073780a6e34b2f2d41fa77ce66a3067e625ce9dc1499",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/tools/utm-builder": {
@@ -11070,8 +11082,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/ru/tools/website-headers": {
-      "hash": "b81db99c1e9b2fb342e59b0a57db68eb131866f4f5ae30fe9ccca5376a40aec5",
-      "lastmod": "2026-09-03"
+      "hash": "abed6df0c301de93a786b9b88e4d00a84f94632b158206be1c869e096e4eb87c",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/tools/wrap-formula-with-ifna": {
       "hash": "43a00ffd47b907ae2a7ca5f2f6eb478c0a07642f06f85004d0d3459668619a7f",
@@ -11090,7 +11102,7 @@
       "lastmod": "2026-09-04"
     },
     "https://onlinefreetools.org/ru/tools/write-pdf-document-online": {
-      "hash": "8ad3b43a3963094f16338f79ba6e7b446659b62fa6338b0275ddd2fa7dab4500",
+      "hash": "9c3e126b5bae0200e79e3be804ac5d59cbc04a27ea55ff7dc7842aaffd23892e",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/tools/writing-prompt-generator": {
@@ -11098,7 +11110,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/tools/yaml-json": {
-      "hash": "ff830bfbd6f1ec674331a1ec72c24f83154c0fe0cbb50d456ad732550601735f",
+      "hash": "6519f335533e80e234f910fafa9e869d8ee119bbe439e1121f9f6e9d7be12122",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/tools/youtube-thumbnail-size": {
@@ -11182,91 +11194,91 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/where-to-use-tools": {
-      "hash": "f950121ed44eb782f9a0dc1766e80a9f7763e6a40787839fa6a034e71aee7395",
+      "hash": "59babb0e226a91b0cb1b2c382d19b3fc7d29466f325e2cc1519d3cd28b70f19c",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/where-to-use-tools/construction": {
-      "hash": "f950121ed44eb782f9a0dc1766e80a9f7763e6a40787839fa6a034e71aee7395",
+      "hash": "59babb0e226a91b0cb1b2c382d19b3fc7d29466f325e2cc1519d3cd28b70f19c",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/where-to-use-tools/design": {
-      "hash": "f950121ed44eb782f9a0dc1766e80a9f7763e6a40787839fa6a034e71aee7395",
+      "hash": "59babb0e226a91b0cb1b2c382d19b3fc7d29466f325e2cc1519d3cd28b70f19c",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/where-to-use-tools/developer": {
-      "hash": "f950121ed44eb782f9a0dc1766e80a9f7763e6a40787839fa6a034e71aee7395",
+      "hash": "59babb0e226a91b0cb1b2c382d19b3fc7d29466f325e2cc1519d3cd28b70f19c",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/where-to-use-tools/documents": {
-      "hash": "f950121ed44eb782f9a0dc1766e80a9f7763e6a40787839fa6a034e71aee7395",
+      "hash": "59babb0e226a91b0cb1b2c382d19b3fc7d29466f325e2cc1519d3cd28b70f19c",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/where-to-use-tools/everyday": {
-      "hash": "f950121ed44eb782f9a0dc1766e80a9f7763e6a40787839fa6a034e71aee7395",
+      "hash": "59babb0e226a91b0cb1b2c382d19b3fc7d29466f325e2cc1519d3cd28b70f19c",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/where-to-use-tools/finance": {
-      "hash": "f950121ed44eb782f9a0dc1766e80a9f7763e6a40787839fa6a034e71aee7395",
+      "hash": "59babb0e226a91b0cb1b2c382d19b3fc7d29466f325e2cc1519d3cd28b70f19c",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/where-to-use-tools/health": {
-      "hash": "f950121ed44eb782f9a0dc1766e80a9f7763e6a40787839fa6a034e71aee7395",
+      "hash": "59babb0e226a91b0cb1b2c382d19b3fc7d29466f325e2cc1519d3cd28b70f19c",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/where-to-use-tools/math": {
-      "hash": "f950121ed44eb782f9a0dc1766e80a9f7763e6a40787839fa6a034e71aee7395",
+      "hash": "59babb0e226a91b0cb1b2c382d19b3fc7d29466f325e2cc1519d3cd28b70f19c",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/where-to-use-tools/media": {
-      "hash": "f950121ed44eb782f9a0dc1766e80a9f7763e6a40787839fa6a034e71aee7395",
+      "hash": "59babb0e226a91b0cb1b2c382d19b3fc7d29466f325e2cc1519d3cd28b70f19c",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/where-to-use-tools/physics": {
-      "hash": "f950121ed44eb782f9a0dc1766e80a9f7763e6a40787839fa6a034e71aee7395",
+      "hash": "59babb0e226a91b0cb1b2c382d19b3fc7d29466f325e2cc1519d3cd28b70f19c",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/where-to-use-tools/seo": {
-      "hash": "f950121ed44eb782f9a0dc1766e80a9f7763e6a40787839fa6a034e71aee7395",
+      "hash": "59babb0e226a91b0cb1b2c382d19b3fc7d29466f325e2cc1519d3cd28b70f19c",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/ru/where-to-use-tools/sports": {
-      "hash": "f950121ed44eb782f9a0dc1766e80a9f7763e6a40787839fa6a034e71aee7395",
+      "hash": "59babb0e226a91b0cb1b2c382d19b3fc7d29466f325e2cc1519d3cd28b70f19c",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/tool-type": {
-      "hash": "a45171a2688e21e32f049f7f032a8b4f24e9466d17bd87d2a64010bbb62fedd5",
+      "hash": "85b2ef8fa05a50c7859da62875c0ca6c14c3204033f8d2aaf6bf15800bfb33c8",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/tool-type/color": {
-      "hash": "a45171a2688e21e32f049f7f032a8b4f24e9466d17bd87d2a64010bbb62fedd5",
+      "hash": "85b2ef8fa05a50c7859da62875c0ca6c14c3204033f8d2aaf6bf15800bfb33c8",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/tool-type/data": {
-      "hash": "a45171a2688e21e32f049f7f032a8b4f24e9466d17bd87d2a64010bbb62fedd5",
+      "hash": "85b2ef8fa05a50c7859da62875c0ca6c14c3204033f8d2aaf6bf15800bfb33c8",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/tool-type/image": {
-      "hash": "a45171a2688e21e32f049f7f032a8b4f24e9466d17bd87d2a64010bbb62fedd5",
+      "hash": "85b2ef8fa05a50c7859da62875c0ca6c14c3204033f8d2aaf6bf15800bfb33c8",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/tool-type/network": {
-      "hash": "a45171a2688e21e32f049f7f032a8b4f24e9466d17bd87d2a64010bbb62fedd5",
+      "hash": "85b2ef8fa05a50c7859da62875c0ca6c14c3204033f8d2aaf6bf15800bfb33c8",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/tool-type/number": {
-      "hash": "a45171a2688e21e32f049f7f032a8b4f24e9466d17bd87d2a64010bbb62fedd5",
+      "hash": "85b2ef8fa05a50c7859da62875c0ca6c14c3204033f8d2aaf6bf15800bfb33c8",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/tool-type/pdf": {
-      "hash": "a45171a2688e21e32f049f7f032a8b4f24e9466d17bd87d2a64010bbb62fedd5",
+      "hash": "85b2ef8fa05a50c7859da62875c0ca6c14c3204033f8d2aaf6bf15800bfb33c8",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/tool-type/text": {
-      "hash": "a45171a2688e21e32f049f7f032a8b4f24e9466d17bd87d2a64010bbb62fedd5",
+      "hash": "85b2ef8fa05a50c7859da62875c0ca6c14c3204033f8d2aaf6bf15800bfb33c8",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/tool-type/unit": {
-      "hash": "a45171a2688e21e32f049f7f032a8b4f24e9466d17bd87d2a64010bbb62fedd5",
+      "hash": "85b2ef8fa05a50c7859da62875c0ca6c14c3204033f8d2aaf6bf15800bfb33c8",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/tools/add-digital-signature-to-pdf": {
@@ -11274,7 +11286,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/tools/add-text-to-pdf-file": {
-      "hash": "bac654cc71565b038f9d315f20aae297473a75f8486a2059db2d8aecb9f7d713",
+      "hash": "bd7596a38d586b7525c99d8f94e6dfe09c5991c4c8d69f77f5dfc4187d81ccbc",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/tools/add-watermark": {
@@ -11282,8 +11294,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/tools/add-www-to-dns": {
-      "hash": "e7259332c92cf8963320b65ffc6ecf4f29ce7df1624009915d66aba57b5daab3",
-      "lastmod": "2026-09-03"
+      "hash": "1b1d6a61f10685ebab777e7e8bf5d3ed6a55e74e8ab92d7c284c7ff267010ed2",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/tools/amazon-main-image-size": {
       "hash": "ca3faea487ac9a547f973c20a7604cd6196c4501cc760ea5a4d802f0d31d6e40",
@@ -11294,7 +11306,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/tools/apple-touch-icon": {
-      "hash": "8c00e7ba3d86bbdb2f6b1af451badf16b8417474f1bf710ca13a0a1bb9a22d3f",
+      "hash": "1adbe41e98a70e8ec1786f035cafa16fd66c65e1718f936ddc0cf6237857d998",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/tools/archive-extractor": {
@@ -11338,7 +11350,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/tools/bulk-compress-product-photos": {
-      "hash": "70a6edd6420d3d3f276a619746090208f53ee17643896f890585bccb9394106a",
+      "hash": "102a673a42d60ab3eeb078010bbf06191242aeabe0a4c851853fd268f7ef9ee5",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/tools/bulk-convert-images-to-jpg": {
@@ -11374,8 +11386,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/tools/cidr-to-ip-range": {
-      "hash": "ce96b9216e47dd314f208afe205b3a2785eb56c6f5ea2b79ad485f8035419eef",
-      "lastmod": "2026-09-03"
+      "hash": "298fff299b67d4d3d4adc8499e052ebcc9548b6a6d886fabc126354479b736a3",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/tools/color-from-image": {
       "hash": "5344515a2b612977ec143dbeb15aa86a2d565f058b8231a2897d037551a31a88",
@@ -11402,7 +11414,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/tools/convert-html-to-pdf": {
-      "hash": "6b8359c84cd9a1ce4afc8dd5f199dac94ee8ae1bfb895505c4265563f8589fa8",
+      "hash": "529fb4c46402363a332bbf5a8c8e52f9aa38f8a644ee8935414e369e27ede619",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/tools/convert-pdf-to-dwg": {
@@ -11454,7 +11466,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/tools/csv-json": {
-      "hash": "463c23a334cf20e79755a0b6682c469d387137a53078a5749842cd744ebbc7e0",
+      "hash": "eb09e4557cf8c3902bc51150faf30dd16089e60e3b5319f65499ae331c020ff0",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/tools/curl-to-fetch": {
@@ -11478,11 +11490,11 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/tools/excel-formulas-cheat-sheet": {
-      "hash": "b0babcd68d1fa1ee6771430725219e3c321a9651e3f4180e0ce62c545c95e6b9",
-      "lastmod": "2026-09-04"
+      "hash": "25dc0a328aa60381b7047faf69ee5e31f688b53a70260dac85bb92e82c77c984",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/tools/extract-text-from-pdf": {
-      "hash": "5211507f681aa066db710b9366d2b43fbb208dc56afb2f5920c2e90698ec5861",
+      "hash": "a403c6a60532bb2fd956cef7fad7e69cc5deeacf00046d26b8add5a5e5a48587",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/tools/file-hash": {
@@ -11642,8 +11654,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/tools/how-to-calculate-ohms-law": {
-      "hash": "5961ab45acd217857425fbab6f8e6b01a5e20c3a6b04e80a695e9a5e92b76f4d",
-      "lastmod": "2026-09-03"
+      "hash": "c4b56b9e311f4d04cac645ba9fb6b14357c603d778333fc81520bed7dcbc1f46",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/tools/how-to-calculate-one-rep-max": {
       "hash": "5a063a96acc3535744ed4144a43372437fce74051f4a9af4fe2e5621464f97d7",
@@ -11762,12 +11774,12 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/tools/image-compress": {
-      "hash": "006342ba799accead71fa146008ef9ba18fca4ec44dbda5a17c1306fae3a858e",
-      "lastmod": "2026-09-03"
+      "hash": "6c302df8bcc47b0aa11c1486380146f5f414be2113b275141a1e1e5580d39a98",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/tools/image-crop": {
-      "hash": "8b68089c365500c7d3dd56c1adcb4325979d12f245d7588057ad290bd9cd5680",
-      "lastmod": "2026-09-03"
+      "hash": "a7eadd93c4647e95cc3d41a6c53a2f1a6d97d438d0456f310a375134bd4dc191",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/tools/image-exif": {
       "hash": "02ff96f0cfa1ee7e4d3d457c30595c21c5c7380271c2b41d9e3218951f5f2796",
@@ -11786,8 +11798,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/tools/image-optimizer": {
-      "hash": "be0d00f2842c722099b44a5ccb5a39c29c6bb0e6f1501c091f8eff8c6033607a",
-      "lastmod": "2026-09-03"
+      "hash": "ba7035faa8371b208e8ad7abdf00f49e6051f9bcbb9a6a173683cb9ad9afbd95",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/tools/image-overlay": {
       "hash": "d6b7401421206feb992cccacbfbb3289e0c1e74e7b7a6b14105cc4168b324ece",
@@ -11814,16 +11826,16 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/tools/indexnow": {
-      "hash": "86c261252b857dd73ff9b1805723abd59448d105f16ed227b65a595fd0aeded7",
-      "lastmod": "2026-09-03"
+      "hash": "11d0709cd7e70acc5e9892b917d5934f858e3ef2c641bd7e371b220bacdcd8bf",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/tools/instagram-post-size": {
       "hash": "f1959e6088abad7fa4224b9f907f5f054b30890eb7d952c5b90c592a67f8443f",
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/tools/instagram-story-size": {
-      "hash": "e46a6f88b51ee491237a032c2f02f6c751bb9a077c242ba51c834c206f96a535",
-      "lastmod": "2026-09-03"
+      "hash": "fa164fe20fa008f59e02e2fda0aeecf3d6a8b3b5979584bc5600f7ac0e48ddc2",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/tools/ios-app-icon-size": {
       "hash": "86308db91ed374bd59b36010f3995673f7a236fe5e915eff5c75c5b0e76e9326",
@@ -11838,8 +11850,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/tools/ip-range-to-cidr": {
-      "hash": "44352b04b63ebc5ecf5f2e489ccee521f59ac394874adf56350d95d132f9e014",
-      "lastmod": "2026-09-03"
+      "hash": "77225af59d0d3ec36736764d03640a9c55c2d3adc99ace443f3e84158cdc0ba2",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/tools/iphone-app-store-screenshot": {
       "hash": "a8791e1a212394d537e697bafd9493f383f5e9c389955205638ac94bb19a2a8f",
@@ -11854,11 +11866,11 @@
       "lastmod": "2026-09-05"
     },
     "https://onlinefreetools.org/tools/json-schema-validator": {
-      "hash": "4b9dcafb03363ef57be75f610cee25187a1942863249f7704d74a5a551a7a7f1",
+      "hash": "0e6243c09f0aab28ee18e1a7dfa464c950ae6859c82b218b14c35def51f11a74",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/tools/jwt-decoder": {
-      "hash": "3e8f65fa97ad6d57bba9faf1c2f9641090afe4fcc4aa0bd74c8fc8c80cc808e4",
+      "hash": "0427d5d294329e1235a6166e13116dca2b2d270ff737ca9f3e03819ffffd0276",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/tools/linkedin-banner-size": {
@@ -11874,11 +11886,11 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/tools/make-pdf-flipbook": {
-      "hash": "f20aecefd9b9f91f31802f91e4f97a5969cdcf7cc6a061ed17b76da3be1b3866",
+      "hash": "20c61ac028c920e0528e71d5bdb2a085427d24576e90286487cb6a5ebce4672e",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/tools/markdown-to-html": {
-      "hash": "8ded2e661a0e1f91f0195f91c9d59cb407e2394dedfe8bec5133bf2b55e8618c",
+      "hash": "5f66e615c228bfcfec6adca94d3824586d597417c592ed58d7e3e3ef803c25c9",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/tools/measuring-magnetic-fields": {
@@ -11886,7 +11898,7 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/tools/merge-pdf": {
-      "hash": "7feafe7a5a2782a7d9e73ba766d3665cd83b0c7824afa64d71324852a775a208",
+      "hash": "ec17f289ce2804263e6b4d6b9bc1b5b4b46dd00249e49f4cd46e8d0a0edbf477",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/tools/meta-serp-preview": {
@@ -11910,15 +11922,15 @@
       "lastmod": "2026-09-04"
     },
     "https://onlinefreetools.org/tools/open-graph-image-size": {
-      "hash": "95d345e431a5fbbcca17b119770015963f3e909ab9a9747ead9cb2ce00655836",
-      "lastmod": "2026-09-03"
+      "hash": "b6e3b3cf555efeb72e7159f679bcbaac7e553b29d191c5007871347367828f3a",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/tools/open-graph-preview": {
       "hash": "f88923fca4ae511de964f68e00f0232e53113f928e9fa31b6bfb06df3d411e61",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/tools/open-pdf-in-browser": {
-      "hash": "9547723692302f13e778abcac733a4e9bc23332ea4ffdeb78d5705d9240ac830",
+      "hash": "0be910e48585a17fe769714838dbcc06d786137b9bfaa611839db63cb233d250",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/tools/organize-pdf": {
@@ -12018,8 +12030,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/tools/terraform-cidrsubnet": {
-      "hash": "7ad936ff93bf418d9ba491fc71790e68ebc7f58c1d81c09756f514c3d57db036",
-      "lastmod": "2026-09-03"
+      "hash": "6c5eb67615938cc2a12cc1a6f6a2c68440312b9310ef34f96b7ddd016b1cf6a8",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/tools/text-diff": {
       "hash": "42847b893e44385d344bd064f43aab10b607c397be024db2991976a9a3d0a831",
@@ -12050,7 +12062,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/tools/unzip-file": {
-      "hash": "9e691585e354925caa0b7eda0aa09382aac04ffd98d58bae70b55cc18dacf4a2",
+      "hash": "633e88c91d52a29f2234adcc10e353ce7e2badb4e6b83140cc8d6e973296b1bc",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/tools/utm-builder": {
@@ -12070,8 +12082,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/tools/website-headers": {
-      "hash": "24e132995309c5ee4154d549a81b7bb66756434541ed7b279317f81b8f7e8e0d",
-      "lastmod": "2026-09-03"
+      "hash": "bca82eee0f012645d1712618c601c4782d8c21e2f7ed1df0d4b82ff2c8175678",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/tools/wrap-formula-with-ifna": {
       "hash": "7de3d7234bf11c1fca5509cc3951ab4d78cecbefedf0421515f3d3000300ee15",
@@ -12090,7 +12102,7 @@
       "lastmod": "2026-09-04"
     },
     "https://onlinefreetools.org/tools/write-pdf-document-online": {
-      "hash": "744979825706d39696069eee7247bfd55101fe87a1651dc773ee370d1737c074",
+      "hash": "a34445b674efdff463742608171cda96e4037a3a26eee2cf9304c3c37950342a",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/tools/writing-prompt-generator": {
@@ -12098,7 +12110,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/tools/yaml-json": {
-      "hash": "67604cee88e2647463ea1fad685d9487f9860dd56d88cd698dd9129098748a33",
+      "hash": "8c5dae8263a3170dc04cc5d46cec573194171e49845a9f8fb26fce937b33c5d0",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/tools/youtube-thumbnail-size": {
@@ -12182,95 +12194,95 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/where-to-use-tools": {
-      "hash": "a45171a2688e21e32f049f7f032a8b4f24e9466d17bd87d2a64010bbb62fedd5",
+      "hash": "85b2ef8fa05a50c7859da62875c0ca6c14c3204033f8d2aaf6bf15800bfb33c8",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/where-to-use-tools/construction": {
-      "hash": "a45171a2688e21e32f049f7f032a8b4f24e9466d17bd87d2a64010bbb62fedd5",
+      "hash": "85b2ef8fa05a50c7859da62875c0ca6c14c3204033f8d2aaf6bf15800bfb33c8",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/where-to-use-tools/design": {
-      "hash": "a45171a2688e21e32f049f7f032a8b4f24e9466d17bd87d2a64010bbb62fedd5",
+      "hash": "85b2ef8fa05a50c7859da62875c0ca6c14c3204033f8d2aaf6bf15800bfb33c8",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/where-to-use-tools/developer": {
-      "hash": "a45171a2688e21e32f049f7f032a8b4f24e9466d17bd87d2a64010bbb62fedd5",
+      "hash": "85b2ef8fa05a50c7859da62875c0ca6c14c3204033f8d2aaf6bf15800bfb33c8",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/where-to-use-tools/documents": {
-      "hash": "a45171a2688e21e32f049f7f032a8b4f24e9466d17bd87d2a64010bbb62fedd5",
+      "hash": "85b2ef8fa05a50c7859da62875c0ca6c14c3204033f8d2aaf6bf15800bfb33c8",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/where-to-use-tools/everyday": {
-      "hash": "a45171a2688e21e32f049f7f032a8b4f24e9466d17bd87d2a64010bbb62fedd5",
+      "hash": "85b2ef8fa05a50c7859da62875c0ca6c14c3204033f8d2aaf6bf15800bfb33c8",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/where-to-use-tools/finance": {
-      "hash": "a45171a2688e21e32f049f7f032a8b4f24e9466d17bd87d2a64010bbb62fedd5",
+      "hash": "85b2ef8fa05a50c7859da62875c0ca6c14c3204033f8d2aaf6bf15800bfb33c8",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/where-to-use-tools/health": {
-      "hash": "a45171a2688e21e32f049f7f032a8b4f24e9466d17bd87d2a64010bbb62fedd5",
+      "hash": "85b2ef8fa05a50c7859da62875c0ca6c14c3204033f8d2aaf6bf15800bfb33c8",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/where-to-use-tools/math": {
-      "hash": "a45171a2688e21e32f049f7f032a8b4f24e9466d17bd87d2a64010bbb62fedd5",
+      "hash": "85b2ef8fa05a50c7859da62875c0ca6c14c3204033f8d2aaf6bf15800bfb33c8",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/where-to-use-tools/media": {
-      "hash": "a45171a2688e21e32f049f7f032a8b4f24e9466d17bd87d2a64010bbb62fedd5",
+      "hash": "85b2ef8fa05a50c7859da62875c0ca6c14c3204033f8d2aaf6bf15800bfb33c8",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/where-to-use-tools/physics": {
-      "hash": "a45171a2688e21e32f049f7f032a8b4f24e9466d17bd87d2a64010bbb62fedd5",
+      "hash": "85b2ef8fa05a50c7859da62875c0ca6c14c3204033f8d2aaf6bf15800bfb33c8",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/where-to-use-tools/seo": {
-      "hash": "a45171a2688e21e32f049f7f032a8b4f24e9466d17bd87d2a64010bbb62fedd5",
+      "hash": "85b2ef8fa05a50c7859da62875c0ca6c14c3204033f8d2aaf6bf15800bfb33c8",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/where-to-use-tools/sports": {
-      "hash": "a45171a2688e21e32f049f7f032a8b4f24e9466d17bd87d2a64010bbb62fedd5",
+      "hash": "85b2ef8fa05a50c7859da62875c0ca6c14c3204033f8d2aaf6bf15800bfb33c8",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/": {
-      "hash": "9899a9f816541558521bfc2069598c66c541bb764b093907f82dcff36642b401",
+      "hash": "0eba7f684c19f8ad3318f8b1e69519d34b6a56c76ea024aae2154708eaaa2468",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/tool-type": {
-      "hash": "d3b4ce653ecc35eda7ac5aa9725833a66c252adc782ea4fb37ef9d6c454afa96",
+      "hash": "1c1ca97a876d849ae92c8d1b77caa9978c3a00947ef72caeb1dbf3e0bdc21cc6",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/tool-type/color": {
-      "hash": "d3b4ce653ecc35eda7ac5aa9725833a66c252adc782ea4fb37ef9d6c454afa96",
+      "hash": "1c1ca97a876d849ae92c8d1b77caa9978c3a00947ef72caeb1dbf3e0bdc21cc6",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/tool-type/data": {
-      "hash": "d3b4ce653ecc35eda7ac5aa9725833a66c252adc782ea4fb37ef9d6c454afa96",
+      "hash": "1c1ca97a876d849ae92c8d1b77caa9978c3a00947ef72caeb1dbf3e0bdc21cc6",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/tool-type/image": {
-      "hash": "d3b4ce653ecc35eda7ac5aa9725833a66c252adc782ea4fb37ef9d6c454afa96",
+      "hash": "1c1ca97a876d849ae92c8d1b77caa9978c3a00947ef72caeb1dbf3e0bdc21cc6",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/tool-type/network": {
-      "hash": "d3b4ce653ecc35eda7ac5aa9725833a66c252adc782ea4fb37ef9d6c454afa96",
+      "hash": "1c1ca97a876d849ae92c8d1b77caa9978c3a00947ef72caeb1dbf3e0bdc21cc6",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/tool-type/number": {
-      "hash": "d3b4ce653ecc35eda7ac5aa9725833a66c252adc782ea4fb37ef9d6c454afa96",
+      "hash": "1c1ca97a876d849ae92c8d1b77caa9978c3a00947ef72caeb1dbf3e0bdc21cc6",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/tool-type/pdf": {
-      "hash": "d3b4ce653ecc35eda7ac5aa9725833a66c252adc782ea4fb37ef9d6c454afa96",
+      "hash": "1c1ca97a876d849ae92c8d1b77caa9978c3a00947ef72caeb1dbf3e0bdc21cc6",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/tool-type/text": {
-      "hash": "d3b4ce653ecc35eda7ac5aa9725833a66c252adc782ea4fb37ef9d6c454afa96",
+      "hash": "1c1ca97a876d849ae92c8d1b77caa9978c3a00947ef72caeb1dbf3e0bdc21cc6",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/tool-type/unit": {
-      "hash": "d3b4ce653ecc35eda7ac5aa9725833a66c252adc782ea4fb37ef9d6c454afa96",
+      "hash": "1c1ca97a876d849ae92c8d1b77caa9978c3a00947ef72caeb1dbf3e0bdc21cc6",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/tools/add-digital-signature-to-pdf": {
@@ -12278,7 +12290,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/tools/add-text-to-pdf-file": {
-      "hash": "067b4833cc6ed82b2c531380ae74553d8856bea3c19507b1fcd060172a8857ff",
+      "hash": "5e4ddd2c7eb4302eceacd0c43d83dd2b9f05b5b9c06a52c9a8c956468cc6950d",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/tools/add-watermark": {
@@ -12286,8 +12298,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/zh/tools/add-www-to-dns": {
-      "hash": "f5e004dd987b7486fe60bc660504971c96c407dc5114f16eda0a4caa071cdf2f",
-      "lastmod": "2026-09-03"
+      "hash": "8b20abd04986722e83f1a8634408b6b603483894d883e859fa50c25333e6f599",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/tools/amazon-main-image-size": {
       "hash": "109379ec81692a74371d8846cf46f266d24569d17534b27d19a405f2c62dca4a",
@@ -12298,7 +12310,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/tools/apple-touch-icon": {
-      "hash": "4a6662e76112322f219e83e341549ce75139465778d5073d13d3b1f1497738a1",
+      "hash": "472dd82faf33f7ff5934646d0df9b16a0179441adb031cbceaac9d1c21a6535b",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/tools/archive-extractor": {
@@ -12342,7 +12354,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/tools/bulk-compress-product-photos": {
-      "hash": "62e4841c6c470ccc15cc9168ad9ee628b8b42304d119bd7485665daf7cfc5cd4",
+      "hash": "062ac70e1ac6f0b7da8b2e6f3d39290a779ee22c998dcd5d3b2d1685b5697324",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/tools/bulk-convert-images-to-jpg": {
@@ -12378,8 +12390,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/zh/tools/cidr-to-ip-range": {
-      "hash": "72623550b00768cad2a82ea10e2b7f934027c4f60b370f83af260f791beca05e",
-      "lastmod": "2026-09-03"
+      "hash": "c2bf18a4d864bcfb5f798cf4b98a98ed506a3d5f5a2654827ba8fb96a55c3db5",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/tools/color-from-image": {
       "hash": "caf7531db331debf9c6839ce780301d590d0dfc7c624ad464646fcd53792a36d",
@@ -12406,7 +12418,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/tools/convert-html-to-pdf": {
-      "hash": "d6d18bc92df3cbb759d141ac632e90c913ba06968d8c1acd7bf578b70966e161",
+      "hash": "53f318bc5ca895656539adcde3be5a456bf7abf9fc39fe10be50d296f223ff61",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/tools/convert-pdf-to-dwg": {
@@ -12458,7 +12470,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/tools/csv-json": {
-      "hash": "7434e0dd43dd7276331ff0f59c5fa6055199c012c3277179f7cb6d2cf6edbafa",
+      "hash": "f259b95831cf7a7331aab9c178598ee112839c581db230c3ac11bf226b191976",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/tools/curl-to-fetch": {
@@ -12482,11 +12494,11 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/tools/excel-formulas-cheat-sheet": {
-      "hash": "b8d588d3a31332da95fe3289e5eeee77f44c8fb0158e2503ab4ea7fbd8defb7d",
-      "lastmod": "2026-09-04"
+      "hash": "135a37835fa232817b7d374280bfee5525f022155d012448c39074424c262cde",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/tools/extract-text-from-pdf": {
-      "hash": "075217837eb6255f41f946966e6fcf1809a842a9ecdf1e3323428ddab60d57cd",
+      "hash": "322b5f25a500ff3eeae71afca6cb71b0ad07a6b8272b7f1c21504c017d90e043",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/tools/file-hash": {
@@ -12646,8 +12658,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/zh/tools/how-to-calculate-ohms-law": {
-      "hash": "8352994ff92fd9d377e0456ecb9b9bf5c905e656b7ffd32d1effe9dea344333e",
-      "lastmod": "2026-09-03"
+      "hash": "089afb29a3867b477a205f32d2cc102cb536e3a0f31bf56eac69f0cd2614b3ff",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/tools/how-to-calculate-one-rep-max": {
       "hash": "b01ab1245056129ee7a0019ec6ba7b91956c1cfc653b6e6f2d86b121fe111502",
@@ -12766,12 +12778,12 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/zh/tools/image-compress": {
-      "hash": "bcbac29e73bbd552e2b61b08bffb458cb64ccda8632aae1bb18c4e5dfe8c81ca",
-      "lastmod": "2026-09-03"
+      "hash": "4f0cbfffec77348698b02571bc46b171a15dd0013b161c11bba7ecf6714770e6",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/tools/image-crop": {
-      "hash": "8e5c1da99c6041fabdda3d9605ff64966e46fc5b8c905d19f4a2de5d3914f167",
-      "lastmod": "2026-09-03"
+      "hash": "071e0839147d0589246085b4c7f7494baf5b70446f79bfbb1eccf7612a86e465",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/tools/image-exif": {
       "hash": "5acdec909a5345d5a443b30cb20cb6092f54c45b03d083ff97338f6c4a90c269",
@@ -12790,8 +12802,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/zh/tools/image-optimizer": {
-      "hash": "a261c7c6cb30bf97ad613858f5a933200ed079c169322d453717257004eff4e6",
-      "lastmod": "2026-09-03"
+      "hash": "d87c69b47ef34dd1edb315653f9a4a22e99d8d66f5c2dc1a0d19f3e0babbeb10",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/tools/image-overlay": {
       "hash": "647915988601412d87c464694ea10e77b9a4a6977293f1316eb0691dadc555a0",
@@ -12818,16 +12830,16 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/tools/indexnow": {
-      "hash": "9645f2785f87351704cf15a1e84fc485a47d081c99b12df35fdd474f7de99d60",
-      "lastmod": "2026-09-03"
+      "hash": "0e1ed2b2ce112464084443723bc6ef8dfae6ce5f6bfaa5a44b7d8d1d7edf93e7",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/tools/instagram-post-size": {
       "hash": "e622edd8e31c6f6981d9142a3f4a062212e94fc46f3aaa92266d7e01acbef85c",
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/zh/tools/instagram-story-size": {
-      "hash": "ac069ae4d0fa37fdf5692f00c12f1f933917bba5e03a43997bffd334430bdca2",
-      "lastmod": "2026-09-03"
+      "hash": "e35e5a44984a3606b277352dd7a4d6bd6791914d3151049aee008dcac9ff83bf",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/tools/ios-app-icon-size": {
       "hash": "c6029cf0311a30b61692187559e37a50a6c82f5153073cd8cd32a94de0b944f7",
@@ -12842,8 +12854,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/zh/tools/ip-range-to-cidr": {
-      "hash": "234e9aabd432adbc2f98b5b0af358e454c12532832c7ef3899bc12d6ae124dc0",
-      "lastmod": "2026-09-03"
+      "hash": "c2555a275f5722a54072eb8cf1a7b3f7f788229e73e6c2114ca14141e309253e",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/tools/iphone-app-store-screenshot": {
       "hash": "2675fd8b52a122aaf7ff47eeb74c8e9e31af8ef984d659fad08061d9ec29c387",
@@ -12858,11 +12870,11 @@
       "lastmod": "2026-09-05"
     },
     "https://onlinefreetools.org/zh/tools/json-schema-validator": {
-      "hash": "a2ceeb8a629c32720d4f8c733b2960580ef65ad1572040f71759bb1c8e6879fa",
+      "hash": "dd2cc9aac40dc90efa73fbf4f95b0cf609f0b1ec099a2f2647537b78d4738d2d",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/tools/jwt-decoder": {
-      "hash": "60a6c751b3bf83a081ec923e938c1b86b87854842ca33c888039715d5723d8a5",
+      "hash": "d6ba79b85c26e89f9fa3224c022b2b1bcd0611146de477902a19e9dda5ac6973",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/tools/linkedin-banner-size": {
@@ -12878,11 +12890,11 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/tools/make-pdf-flipbook": {
-      "hash": "d9dbb982f307c6cc8dd31e9730aa39bc728577d56bbb08fb8c71dc27d309e7a8",
+      "hash": "cfc2863d2119d36879ab9c3de66db7427d7c0b9b083b1c73b1465a94c4fce061",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/tools/markdown-to-html": {
-      "hash": "c245caae36ed1b2ab71729552bb9c3c12af33621c0e8e9a5b52980237ca8b6ed",
+      "hash": "6ea0388fe6e8b95bddb5de0dececfb51d2cc802559bde16e4f880d970bcbccb3",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/tools/measuring-magnetic-fields": {
@@ -12890,7 +12902,7 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/zh/tools/merge-pdf": {
-      "hash": "509d4ae2ed59b45f76ac3a2a907ead6b2910761fd8d30636eeb2a42491b423f5",
+      "hash": "b85dc37058336ef3ea34c25fa33e3b19a65741ee98e29bf3c373fe203d7346d8",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/tools/meta-serp-preview": {
@@ -12914,15 +12926,15 @@
       "lastmod": "2026-09-04"
     },
     "https://onlinefreetools.org/zh/tools/open-graph-image-size": {
-      "hash": "b60735edfa1c67f07a99f2bbbc416aa539ccf14df42e34e683b65fbb15c4e0c3",
-      "lastmod": "2026-09-03"
+      "hash": "c4c83014f4a5a0961f30caddceae63e5a240f95e089eb04df1c71b317001e82d",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/tools/open-graph-preview": {
       "hash": "8e8923c6b2e90ed0bb90783202f081fc0041a982fecbd5c44d1a2f0e248b4eae",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/tools/open-pdf-in-browser": {
-      "hash": "67431437a8a5242299805bc836908a2e48c4d4cb6f3c9882da076d2df3334a43",
+      "hash": "540e948ca34d1e3b1efc901521ccabb820711ae959ce10f1d838b8757a58b0db",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/tools/organize-pdf": {
@@ -13022,8 +13034,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/zh/tools/terraform-cidrsubnet": {
-      "hash": "225dee43f9eb3f6407c6cc0171f79a9d0f611bbed0be4ec39cb655013c431e5a",
-      "lastmod": "2026-09-03"
+      "hash": "b5949f42b61c072d2742465fa36ef1029adf871c9531d71711da0080f2f333aa",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/tools/text-diff": {
       "hash": "8f352a94312600ba4774b98f53cb4f24e5392c83c99fcc4b2b723c9a428d4042",
@@ -13054,7 +13066,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/tools/unzip-file": {
-      "hash": "72b3092312aaea56e9090a7d1d68638320fd3c5db834437b1513bfc16126fbdd",
+      "hash": "009c5d49249900713442dc88982db139b1dfcbc0cbcbcf9084f7246afb3089b7",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/tools/utm-builder": {
@@ -13074,8 +13086,8 @@
       "lastmod": "2026-09-03"
     },
     "https://onlinefreetools.org/zh/tools/website-headers": {
-      "hash": "66449f46abbed1a8f2d1a2e963b5e8fe77729a77d182c9411144c9f2c44d05a6",
-      "lastmod": "2026-09-03"
+      "hash": "0dcf0ee8d3a74ee33f4f93c2ed1dd5203eb086a266a6a120c188319f5944aa96",
+      "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/tools/wrap-formula-with-ifna": {
       "hash": "6e32dc88364322ba4cfb0ceb181895159e33e2fb43fa9ff0b95b33fe3cb6f386",
@@ -13094,7 +13106,7 @@
       "lastmod": "2026-09-04"
     },
     "https://onlinefreetools.org/zh/tools/write-pdf-document-online": {
-      "hash": "2628d44cebf61252e78c507ca7b80533d5f469f1c2ded151d3653e80122c8b57",
+      "hash": "651ffae9b9954ed0b31eff3339d757e9946ba0eb875edf92b42d779f86ffe05c",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/tools/writing-prompt-generator": {
@@ -13102,7 +13114,7 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/tools/yaml-json": {
-      "hash": "48f46308bd459bccc4d0f7becd6cda873b64fc512294ef68d0592859012d71fe",
+      "hash": "88195d26e0ec5dcb9c6aed2994834c4abe83f216b06a2588cea97b02f4e8f91f",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/tools/youtube-thumbnail-size": {
@@ -13186,55 +13198,55 @@
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/where-to-use-tools": {
-      "hash": "d3b4ce653ecc35eda7ac5aa9725833a66c252adc782ea4fb37ef9d6c454afa96",
+      "hash": "1c1ca97a876d849ae92c8d1b77caa9978c3a00947ef72caeb1dbf3e0bdc21cc6",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/where-to-use-tools/construction": {
-      "hash": "d3b4ce653ecc35eda7ac5aa9725833a66c252adc782ea4fb37ef9d6c454afa96",
+      "hash": "1c1ca97a876d849ae92c8d1b77caa9978c3a00947ef72caeb1dbf3e0bdc21cc6",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/where-to-use-tools/design": {
-      "hash": "d3b4ce653ecc35eda7ac5aa9725833a66c252adc782ea4fb37ef9d6c454afa96",
+      "hash": "1c1ca97a876d849ae92c8d1b77caa9978c3a00947ef72caeb1dbf3e0bdc21cc6",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/where-to-use-tools/developer": {
-      "hash": "d3b4ce653ecc35eda7ac5aa9725833a66c252adc782ea4fb37ef9d6c454afa96",
+      "hash": "1c1ca97a876d849ae92c8d1b77caa9978c3a00947ef72caeb1dbf3e0bdc21cc6",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/where-to-use-tools/documents": {
-      "hash": "d3b4ce653ecc35eda7ac5aa9725833a66c252adc782ea4fb37ef9d6c454afa96",
+      "hash": "1c1ca97a876d849ae92c8d1b77caa9978c3a00947ef72caeb1dbf3e0bdc21cc6",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/where-to-use-tools/everyday": {
-      "hash": "d3b4ce653ecc35eda7ac5aa9725833a66c252adc782ea4fb37ef9d6c454afa96",
+      "hash": "1c1ca97a876d849ae92c8d1b77caa9978c3a00947ef72caeb1dbf3e0bdc21cc6",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/where-to-use-tools/finance": {
-      "hash": "d3b4ce653ecc35eda7ac5aa9725833a66c252adc782ea4fb37ef9d6c454afa96",
+      "hash": "1c1ca97a876d849ae92c8d1b77caa9978c3a00947ef72caeb1dbf3e0bdc21cc6",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/where-to-use-tools/health": {
-      "hash": "d3b4ce653ecc35eda7ac5aa9725833a66c252adc782ea4fb37ef9d6c454afa96",
+      "hash": "1c1ca97a876d849ae92c8d1b77caa9978c3a00947ef72caeb1dbf3e0bdc21cc6",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/where-to-use-tools/math": {
-      "hash": "d3b4ce653ecc35eda7ac5aa9725833a66c252adc782ea4fb37ef9d6c454afa96",
+      "hash": "1c1ca97a876d849ae92c8d1b77caa9978c3a00947ef72caeb1dbf3e0bdc21cc6",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/where-to-use-tools/media": {
-      "hash": "d3b4ce653ecc35eda7ac5aa9725833a66c252adc782ea4fb37ef9d6c454afa96",
+      "hash": "1c1ca97a876d849ae92c8d1b77caa9978c3a00947ef72caeb1dbf3e0bdc21cc6",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/where-to-use-tools/physics": {
-      "hash": "d3b4ce653ecc35eda7ac5aa9725833a66c252adc782ea4fb37ef9d6c454afa96",
+      "hash": "1c1ca97a876d849ae92c8d1b77caa9978c3a00947ef72caeb1dbf3e0bdc21cc6",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/where-to-use-tools/seo": {
-      "hash": "d3b4ce653ecc35eda7ac5aa9725833a66c252adc782ea4fb37ef9d6c454afa96",
+      "hash": "1c1ca97a876d849ae92c8d1b77caa9978c3a00947ef72caeb1dbf3e0bdc21cc6",
       "lastmod": "2026-09-06"
     },
     "https://onlinefreetools.org/zh/where-to-use-tools/sports": {
-      "hash": "d3b4ce653ecc35eda7ac5aa9725833a66c252adc782ea4fb37ef9d6c454afa96",
+      "hash": "1c1ca97a876d849ae92c8d1b77caa9978c3a00947ef72caeb1dbf3e0bdc21cc6",
       "lastmod": "2026-09-06"
     }
   }
