@@ -15,6 +15,7 @@ import { renderAwsVpcCidrPlannerPage } from '../pages/awsVpcCidrPlannerPage';
 import { renderBase64Page } from '../pages/base64Page';
 import { renderBatchChecksumReleaseFilesPage } from '../pages/batchChecksumReleaseFilesPage';
 import { renderBatchCompressPdfsForEmailPage } from '../pages/batchCompressPdfsForEmailPage';
+import { renderBatchConvertWebPagesToPdfPage } from '../pages/batchConvertWebPagesToPdfPage';
 import { renderBatchWatermarkProductPhotosPage } from '../pages/batchWatermarkProductPhotosPage';
 import { renderBrandColorTokenPackPage } from '../pages/brandColorTokenPackPage';
 import { renderBrandStyleGuidePage } from '../pages/brandStyleGuidePage';
@@ -229,6 +230,7 @@ export const TOOL_PAGE_RENDERERS: Record<string, ToolPageRenderFn> = {
 	'base64': (lang, defaultLang, enabled) => renderBase64Page({ lang, defaultLang, enabledLangs: enabled }),
 	'batch-checksum-release-files': (lang, defaultLang, enabled) => renderBatchChecksumReleaseFilesPage({ lang, defaultLang, enabledLangs: enabled }),
 	'batch-compress-pdfs-for-email': (lang, defaultLang, enabled) => renderBatchCompressPdfsForEmailPage({ lang, defaultLang, enabledLangs: enabled }),
+	'batch-convert-web-pages-to-pdf': (lang, defaultLang, enabled) => renderBatchConvertWebPagesToPdfPage({ lang, defaultLang, enabledLangs: enabled }),
 	'batch-watermark-product-photos': (lang, defaultLang, enabled) => renderBatchWatermarkProductPhotosPage({ lang, defaultLang, enabledLangs: enabled }),
 	'brand-color-token-pack': (lang, defaultLang, enabled) => renderBrandColorTokenPackPage({ lang, defaultLang, enabledLangs: enabled }),
 	'brand-style-guide': (lang, defaultLang, enabled) => renderBrandStyleGuidePage({ lang, defaultLang, enabledLangs: enabled }),

@@ -1,0 +1,30 @@
+{
+  "slug": "batch-convert-web-pages-to-pdf",
+  "path": "/tools/batch-convert-web-pages-to-pdf",
+  "updatedAt": "2026-09-06T15:49:44.823Z",
+  "launchedAt": "2026-09-06T14:10:00.000Z",
+  "category": "pdf",
+  "primaryTopic": "pdf-docs",
+  "secondaryTopics": [
+    "dev-data"
+  ],
+  "featured": false,
+  "ymyl": false,
+  "i18nKey": "tool_batch_convert_web_pages_to_pdf_title",
+  "homeTitleKey": "tool_batch_convert_web_pages_to_pdf_title",
+  "homeDescKey": "tool_batch_convert_web_pages_to_pdf_desc",
+  "faqPrefix": "tool_batch_convert_web_pages_to_pdf",
+  "related": [
+    "convert-html-to-pdf",
+    "combine-files-into-one-pdf"
+  ],
+  "logo": "/icons/tools/batch-convert-web-pages-to-pdf.svg",
+  "page": {
+    "module": "../pages/batchConvertWebPagesToPdfPage",
+    "export": "renderBatchConvertWebPagesToPdfPage",
+    "style": "opts"
+  },
+  "localProcessing": false,
+  "scenario": "documents",
+  "subject": "pdf"
+}

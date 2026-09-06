@@ -36,6 +36,7 @@ docs/seo/
 | GSC 导出与三文档 | [`reviews/`](./reviews/README.md) |
 | 运维怎么跑一批词 | [`ops/seo/keyword-to-tool-ops.md`](../../ops/seo/keyword-to-tool-ops.md) |
 | Agent Skill | [`.cursor/skills/keyword-to-tool-funnel/SKILL.md`](../../.cursor/skills/keyword-to-tool-funnel/SKILL.md) |
+| 浏览器插件 × 商店/社交/SEO | [`docs/browser-extensions/`](../browser-extensions/README.md)（最多 3 个 listing；禁止 206 个扩展 URL） |
 
 **约定**：主题分析进 `keywords/{theme}/`（kebab-case）；不要把新主题再散落到 `serp-batches/` 或 `docs/seo/` 根目录。根目录策略文件路径被 Skill / rules 引用，**移动须同步全仓链接**。
 

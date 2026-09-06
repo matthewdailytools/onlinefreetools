@@ -301,17 +301,21 @@ export const renderConvertHtmlToPdfPage = (opts: {
 
       /**
        * 消毒整份文档：保留 head 中的 stylesheet / style，去掉脚本与嵌套 iframe。
+       * 写入前去掉 noscript / http-equiv=refresh，避免不执行脚本时被百度等站整页刷新走。
        * 必须 WHOLE_DOCUMENT，否则 link/style 只在 head 里，写入预览时会丢失。
        * @param {string} html 源 HTML
        * @returns {string} 可写入 iframe srcdoc 的 HTML
        */
       function sanitizeCapturedHtml(html) {
-        return DOMPurify.sanitize(html, {
+        var s = String(html || '');
+        s = s.replace(/<noscript\\b[\\s\\S]*?<\\/noscript>/gi, '');
+        s = s.replace(/<meta\\b[^>]*http-equiv\\s*=\\s*['"]?refresh['"]?[^>]*>/gi, '');
+        return DOMPurify.sanitize(s, {
           USE_PROFILES: { html: true },
           WHOLE_DOCUMENT: true,
           ADD_TAGS: ['link', 'meta', 'base'],
           ADD_ATTR: ['href', 'rel', 'media', 'type', 'sizes', 'as', 'crossorigin', 'charset', 'content', 'name', 'property', 'http-equiv', 'phone'],
-          FORBID_TAGS: ['script', 'iframe', 'object', 'embed', 'frame', 'frameset'],
+          FORBID_TAGS: ['script', 'iframe', 'object', 'embed', 'frame', 'frameset', 'noscript'],
         });
       }
 

@@ -1,0 +1,207 @@
+slug	category	primaryTopic	processing	featured	extension	role	rationale
+add-digital-signature-to-pdf	pdf	pdf-docs	local	no	web-only	stay-web	narrow/archival/certification; weak store intent; keep on site
+add-text-to-pdf-file	pdf	pdf-docs	local	no	E1-pdf-tools	v1.5-extra	same PDF purpose; ship after core capture/merge/compress
+add-watermark	image	image-media	local	yes	E2-image-tools	v1.5-extra	same image job (watermark/social sizes/exif)
+add-www-to-dns	developer	network-ip	local	yes	web-only	stay-web	domain/DNS/index APIs; no live-tab advantage
+amazon-main-image-size	image	image-media	local	yes	E2-image-tools	v1.5-extra	same image job (watermark/social sizes/exif)
+android-prompt-builder	developer	ai-prompt-template-builder	remote	no	web-only	stay-web	AI/Turnstile/templates; not a browsing companion
+apple-touch-icon	image	image-media	local	no	E2-image-tools	v1.5-extra	same image job (watermark/social sizes/exif)
+archive-extractor	developer	files-archives	local	yes	web-only	stay-web	file utilities; website is enough; permission-heavy
+aws-vpc-cidr-planner	developer	network-ip	local	no	web-only	stay-web	network calculators; no tab context
+base64	developer	dev-data	local	yes	later-E5-dev	later	classic snippet tools; crowded store; popup parity only
+batch-checksum-release-files	developer	security-ids	local	yes	web-only	stay-web	file utilities; website is enough; permission-heavy
+batch-compress-pdfs-for-email	pdf	pdf-docs	local	yes	E1-pdf-tools	v1.5-extra	same PDF purpose; ship after core capture/merge/compress
+batch-convert-web-pages-to-pdf	pdf	pdf-docs	remote	no	E1-pdf-tools	core	same PDF job; webpage capture is the browser-native spike
+batch-watermark-product-photos	image	image-media	local	yes	E2-image-tools	v1.5-extra	same image job (watermark/social sizes/exif)
+brand-color-token-pack	design	design-brand	local	yes	later-E4-color	later	design tokens; weak vs live-page eyedropper/contrast
+brand-style-guide	design	design-brand	local	yes	later-E4-color	later	design tokens; weak vs live-page eyedropper/contrast
+bulk-compress-png-images	image	image-media	local	yes	E2-image-tools	core	compress/convert/resize is the store search job
+bulk-compress-product-photos	image	image-media	local	yes	E2-image-tools	core	compress/convert/resize is the store search job
+bulk-convert-images-to-jpg	image	image-media	local	yes	E2-image-tools	core	compress/convert/resize is the store search job
+bulk-convert-images-to-png	image	image-media	local	yes	E2-image-tools	core	compress/convert/resize is the store search job
+bulk-convert-images-to-webp	image	image-media	local	yes	E2-image-tools	core	compress/convert/resize is the store search job
+chatgpt-export-to-markdown	developer	dev-data	local	no	web-only	stay-web	AI/Turnstile/templates; not a browsing companion
+check-pdf-a-compliance	pdf	pdf-docs	local	no	web-only	stay-web	narrow/archival/certification; weak store intent; keep on site
+check-robots-txt-url-blocked	developer	seo-growth	remote	no	E3-page-inspector	v1.5-extra	generate or check artifacts of the current page
+check-ssl-certificate-expiration	developer	seo-growth	remote	no	web-only	stay-web	domain/DNS/index APIs; no live-tab advantage
+cidr-cheat-sheet	developer	network-ip	local	no	web-only	stay-web	network calculators; no tab context
+cidr-to-ip-range	developer	network-ip	local	no	web-only	stay-web	network calculators; no tab context
+color-from-image	image	image-media	local	yes	E2-image-tools	v1.5-extra	same image job (watermark/social sizes/exif)
+combine-files-into-one-pdf	pdf	pdf-docs	local	no	E1-pdf-tools	v1.5-extra	same PDF purpose; ship after core capture/merge/compress
+compare-two-pdfs	pdf	pdf-docs	local	no	E1-pdf-tools	v1.5-extra	same PDF purpose; ship after core capture/merge/compress
+compare-two-text-files-online	developer	text-compare	local	yes	later-E5-dev	later	could select-text compare; low CWS distinctiveness
+compare-two-word-documents-for-differences	developer	text-compare	local	yes	later-E5-dev	later	could select-text compare; low CWS distinctiveness
+compress-pdf	pdf	pdf-docs	local	yes	E1-pdf-tools	core	same PDF job; webpage capture is the browser-native spike
+convert-html-to-pdf	pdf	pdf-docs	remote	no	E1-pdf-tools	core	same PDF job; webpage capture is the browser-native spike
+convert-pdf-to-dwg	pdf	pdf-docs	local	no	web-only	stay-web	narrow/archival/certification; weak store intent; keep on site
+convert-pdf-to-pdf-a	pdf	pdf-docs	local	no	web-only	stay-web	narrow/archival/certification; weak store intent; keep on site
+convert-word-document-to-pdf	pdf	pdf-docs	local	no	E1-pdf-tools	v1.5-extra	same PDF purpose; ship after core capture/merge/compress
+core-web-vitals-checker	developer	seo-growth	local	yes	E3-page-inspector	v1.5-extra	generate or check artifacts of the current page
+create-budget-spreadsheet	calculator	business-finance	local	yes	web-only	stay-web	no page context; Google SEO >> CWS search
+create-excel-timesheet	calculator	business-finance	local	yes	web-only	stay-web	no page context; Google SEO >> CWS search
+create-invoice-spreadsheet	calculator	business-finance	local	yes	web-only	stay-web	no page context; Google SEO >> CWS search
+create-pdf-form	pdf	pdf-docs	local	no	web-only	stay-web	narrow/archival/certification; weak store intent; keep on site
+create-zip-file	developer	files-archives	local	yes	web-only	stay-web	file utilities; website is enough; permission-heavy
+crop-pdf	pdf	pdf-docs	local	yes	E1-pdf-tools	core	same PDF job; webpage capture is the browser-native spike
+csv-json	developer	dev-data	local	yes	later-E5-dev	later	classic snippet tools; crowded store; popup parity only
+curl-to-fetch	developer	dev-data	local	yes	later-E5-dev	later	classic snippet tools; crowded store; popup parity only
+domain-lookup	developer	network-ip	remote	yes	web-only	stay-web	domain/DNS/index APIs; no live-tab advantage
+edit-pdf-form-fields	pdf	pdf-docs	local	no	web-only	stay-web	narrow/archival/certification; weak store intent; keep on site
+edit-pdf-text-online	pdf	pdf-docs	local	no	E1-pdf-tools	v1.5-extra	same PDF purpose; ship after core capture/merge/compress
+excel-compare-files	developer	text-compare	local	yes	later-E5-dev	later	could select-text compare; low CWS distinctiveness
+excel-formulas-cheat-sheet	developer	dev-data	local	yes	web-only	stay-web	Excel/sheet generators; no browsing companion
+extract-text-from-pdf	pdf	pdf-docs	local	no	E1-pdf-tools	v1.5-extra	same PDF purpose; ship after core capture/merge/compress
+file-hash	developer	security-ids	local	yes	later-E5-dev	later	classic snippet tools; crowded store; popup parity only
+file-metadata-analyzer	developer	security-ids	local	yes	web-only	stay-web	file utilities; website is enough; permission-heavy
+fill-out-pdf-form	pdf	pdf-docs	local	no	E1-pdf-tools	v1.5-extra	same PDF purpose; ship after core capture/merge/compress
+film-prompt-builder	developer	ai-prompt-template-builder	remote	no	web-only	stay-web	AI/Turnstile/templates; not a browsing companion
+find-and-validate-xml-sitemap	developer	seo-growth	remote	no	web-only	stay-web	domain/DNS/index APIs; no live-tab advantage
+flip-image	image	image-media	local	yes	E2-image-tools	v1.5-extra	same image job (watermark/social sizes/exif)
+how-to-calculate-acceleration	calculator	science-physics	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-age	calculator	time-calendar	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-aspect-ratio	calculator	geometry-measure	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-bmi	calculator	health-body	local	yes	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-bmr-tdee	calculator	health-body	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-body-fat	calculator	health-body	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-break-even	calculator	business-finance	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-cagr	calculator	personal-money	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-circle	calculator	geometry-measure	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-compound-interest	calculator	personal-money	local	yes	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-concrete	calculator	home-diy	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-confidence-interval	calculator	math-stats	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-contribution-margin	calculator	business-finance	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-date-difference	calculator	time-calendar	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-debt-payoff	calculator	personal-money	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-density	calculator	science-physics	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-discount	calculator	personal-money	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-emi	calculator	personal-money	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-exponent	calculator	math-stats	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-gpa	calculator	math-stats	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-gradient	calculator	geometry-measure	local	yes	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-gross-margin	calculator	business-finance	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-heart-rate	calculator	health-body	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-ideal-weight	calculator	health-body	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-inflation	calculator	personal-money	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-irr	calculator	business-finance	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-logarithm	calculator	math-stats	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-macros	calculator	health-body	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-marginal-revenue	calculator	business-finance	local	yes	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-markup	calculator	business-finance	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-mean	calculator	math-stats	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-median	calculator	math-stats	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-npv	calculator	business-finance	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-ohms-law	calculator	science-physics	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-one-rep-max	calculator	health-body	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-p-value	calculator	math-stats	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-pace	calculator	health-body	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-paint	calculator	home-diy	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-payback-period	calculator	business-finance	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-percentage-change	calculator	personal-money	local	yes	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-permutation-combination	calculator	math-stats	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-present-value	calculator	personal-money	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-profit-margin	calculator	business-finance	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-pythagorean-theorem	calculator	geometry-measure	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-quadratic-equation	calculator	math-stats	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-roi	calculator	business-finance	local	yes	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-rule-of-72	calculator	personal-money	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-salary-hourly	calculator	personal-money	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-sample-size	calculator	math-stats	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-scientific-notation	calculator	math-stats	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-significant-figures	calculator	math-stats	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-slope	calculator	geometry-measure	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-standard-deviation	calculator	math-stats	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-tile	calculator	home-diy	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-tip	calculator	personal-money	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-triangle-area	calculator	geometry-measure	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-vat	calculator	personal-money	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-velocity	calculator	science-physics	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-volume	calculator	geometry-measure	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+how-to-calculate-z-score	calculator	math-stats	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+hreflang-generator	developer	seo-growth	local	no	E3-page-inspector	v1.5-extra	generate or check artifacts of the current page
+html-entity	developer	dev-data	local	yes	later-E5-dev	later	classic snippet tools; crowded store; popup parity only
+image-border	image	image-media	local	yes	E2-image-tools	v1.5-extra	same image job (watermark/social sizes/exif)
+image-compress	image	image-media	local	yes	E2-image-tools	core	compress/convert/resize is the store search job
+image-crop	image	image-media	local	yes	E2-image-tools	core	compress/convert/resize is the store search job
+image-exif	image	image-media	local	yes	E2-image-tools	core	compress/convert/resize is the store search job
+image-format-converter	image	image-media	local	yes	E2-image-tools	core	compress/convert/resize is the store search job
+image-grayscale	image	image-media	local	yes	E2-image-tools	v1.5-extra	same image job (watermark/social sizes/exif)
+image-merge	image	image-media	local	yes	E2-image-tools	v1.5-extra	same image job (watermark/social sizes/exif)
+image-optimizer	image	image-media	local	yes	E2-image-tools	core	compress/convert/resize is the store search job
+image-overlay	image	image-media	local	yes	E2-image-tools	v1.5-extra	same image job (watermark/social sizes/exif)
+image-to-base64	image	image-media	local	yes	E2-image-tools	v1.5-extra	same image job (watermark/social sizes/exif)
+images-to-gif	image	image-media	local	yes	E2-image-tools	v1.5-extra	same image job (watermark/social sizes/exif)
+images-to-pdf	image	image-media	local	yes	E1-pdf-tools	v1.5-extra	same PDF purpose; ship after core capture/merge/compress
+images-to-ppt	image	image-media	local	yes	web-only	stay-web	document export not image-edit purpose
+images-to-word	image	image-media	local	yes	web-only	stay-web	document export not image-edit purpose
+indexnow	developer	seo-growth	remote	yes	web-only	stay-web	domain/DNS/index APIs; no live-tab advantage
+instagram-post-size	image	image-media	local	no	E2-image-tools	v1.5-extra	same image job (watermark/social sizes/exif)
+instagram-story-size	image	image-media	local	no	E2-image-tools	v1.5-extra	same image job (watermark/social sizes/exif)
+ios-app-icon-size	image	image-media	local	no	E2-image-tools	v1.5-extra	same image job (watermark/social sizes/exif)
+ios-prompt-builder	developer	ai-prompt-template-builder	remote	no	web-only	stay-web	AI/Turnstile/templates; not a browsing companion
+ip-address	developer	network-ip	remote	yes	web-only	stay-web	network calculators; no tab context
+ip-range-to-cidr	developer	network-ip	local	no	web-only	stay-web	network calculators; no tab context
+iphone-app-store-screenshot	image	image-media	local	yes	E2-image-tools	v1.5-extra	same image job (watermark/social sizes/exif)
+ipv6-cidr	developer	network-ip	local	no	web-only	stay-web	network calculators; no tab context
+json-diff-checker-online	developer	text-compare	local	yes	later-E5-dev	later	could select-text compare; low CWS distinctiveness
+json-schema-validator	developer	dev-data	local	yes	later-E5-dev	later	classic snippet tools; crowded store; popup parity only
+jwt-decoder	developer	dev-data	local	yes	later-E5-dev	later	classic snippet tools; crowded store; popup parity only
+linkedin-banner-size	image	image-media	local	no	E2-image-tools	v1.5-extra	same image job (watermark/social sizes/exif)
+magnet-link-decoder	developer	files-archives	local	yes	web-only	stay-web	no live-tab delta vs website
+make-pdf-fillable	pdf	pdf-docs	local	no	E1-pdf-tools	v1.5-extra	same PDF purpose; ship after core capture/merge/compress
+make-pdf-flipbook	pdf	pdf-docs	local	no	web-only	stay-web	narrow/archival/certification; weak store intent; keep on site
+markdown-to-html	developer	dev-data	local	yes	later-E5-dev	later	classic snippet tools; crowded store; popup parity only
+measuring-magnetic-fields	calculator	science-physics	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+merge-pdf	pdf	pdf-docs	local	yes	E1-pdf-tools	core	same PDF job; webpage capture is the browser-native spike
+meta-serp-preview	developer	seo-growth	local	no	E3-page-inspector	core	inspect the current tab
+meta-tag-generator	developer	seo-growth	local	no	E3-page-inspector	core	inspect the current tab
+midjourney-prompt-builder	developer	ai-prompt-template-builder	remote	no	web-only	stay-web	AI/Turnstile/templates; not a browsing companion
+on-page-seo-checker	developer	seo-growth	remote	no	E3-page-inspector	core	inspect the current tab
+open-graph-image-size	image	image-media	local	no	E2-image-tools	v1.5-extra	same image job (watermark/social sizes/exif)
+open-graph-preview	developer	seo-growth	remote	no	E3-page-inspector	core	inspect the current tab
+open-pdf-in-browser	pdf	pdf-docs	local	no	E1-pdf-tools	v1.5-extra	same PDF purpose; ship after core capture/merge/compress
+organize-pdf	pdf	pdf-docs	local	yes	E1-pdf-tools	core	same PDF job; webpage capture is the browser-native spike
+password-generator	developer	security-ids	local	yes	later-E5-dev	later	classic snippet tools; crowded store; popup parity only
+pdf-page-numbers	pdf	pdf-docs	local	yes	E1-pdf-tools	v1.5-extra	same PDF purpose; ship after core capture/merge/compress
+pdf-page-to-image-sizes	image	pdf-docs	local	yes	web-only	stay-web	document export not image-edit purpose
+pdf-to-jpg	image	pdf-docs	local	yes	E1-pdf-tools	v1.5-extra	same PDF purpose; ship after core capture/merge/compress
+pdf-to-markdown	pdf	pdf-docs	local	yes	E1-pdf-tools	v1.5-extra	same PDF purpose; ship after core capture/merge/compress
+pdf-watermark	pdf	pdf-docs	local	yes	E1-pdf-tools	core	same PDF job; webpage capture is the browser-native spike
+print-pdf	pdf	pdf-docs	local	no	E1-pdf-tools	core	same PDF job; webpage capture is the browser-native spike
+private-cidr-ranges	developer	network-ip	local	no	web-only	stay-web	network calculators; no tab context
+product-design-prompt-builder	developer	ai-prompt-template-builder	remote	no	web-only	stay-web	AI/Turnstile/templates; not a browsing companion
+prompt-template-builder	developer	ai-prompt-template-builder	remote	no	web-only	stay-web	AI/Turnstile/templates; not a browsing companion
+protect-pdf	pdf	pdf-docs	local	yes	E1-pdf-tools	core	same PDF job; webpage capture is the browser-native spike
+robots-txt-generator	developer	seo-growth	local	no	E3-page-inspector	v1.5-extra	generate or check artifacts of the current page
+rotate-pdf	pdf	pdf-docs	local	yes	E1-pdf-tools	core	same PDF job; webpage capture is the browser-native spike
+schema-jsonld-generator	developer	seo-growth	local	no	E3-page-inspector	v1.5-extra	generate or check artifacts of the current page
+short-drama-prompt-generator	developer	ai-prompt-template-builder	remote	no	web-only	stay-web	AI/Turnstile/templates; not a browsing companion
+sign-pdf-document	pdf	pdf-docs	local	no	E1-pdf-tools	v1.5-extra	same PDF purpose; ship after core capture/merge/compress
+sitemap-xml-generator	developer	seo-growth	local	no	web-only	stay-web	domain/DNS/index APIs; no live-tab advantage
+sketch-prompt-generator	developer	ai-prompt-template-builder	remote	no	web-only	stay-web	AI/Turnstile/templates; not a browsing companion
+smart-website-color-scheme	design	design-brand	local	yes	later-E4-color	later	design tokens; weak vs live-page eyedropper/contrast
+spf-dkim-dmarc-checker	developer	seo-growth	remote	no	web-only	stay-web	domain/DNS/index APIs; no live-tab advantage
+split-pdf	pdf	pdf-docs	local	yes	E1-pdf-tools	core	same PDF job; webpage capture is the browser-native spike
+square-feet	calculator	home-diy	local	yes	web-only	stay-web	no page context; Google SEO >> CWS search
+svg-optimizer	image	image-media	local	yes	E2-image-tools	v1.5-extra	same image job (watermark/social sizes/exif)
+terraform-cidrsubnet	developer	network-ip	local	no	web-only	stay-web	network calculators; no tab context
+text-diff	developer	text-compare	local	yes	later-E5-dev	later	could select-text compare; low CWS distinctiveness
+timezone-converter	developer	time-calendar	local	yes	later-E5-dev	later	classic snippet tools; crowded store; popup parity only
+turn-pdf-into-editable-document	pdf	pdf-docs	local	no	web-only	stay-web	narrow/archival/certification; weak store intent; keep on site
+turn-pdf-into-word-document	pdf	pdf-docs	local	no	E1-pdf-tools	v1.5-extra	same PDF purpose; ship after core capture/merge/compress
+unit-converter	calculator	geometry-measure	local	no	web-only	stay-web	no page context; Google SEO >> CWS search
+unix-timestamp	developer	time-calendar	local	yes	later-E5-dev	later	classic snippet tools; crowded store; popup parity only
+unlock-pdf	pdf	pdf-docs	local	yes	E1-pdf-tools	core	same PDF job; webpage capture is the browser-native spike
+unzip-file	developer	files-archives	local	yes	web-only	stay-web	file utilities; website is enough; permission-heavy
+utm-builder	developer	seo-growth	local	no	E3-page-inspector	v1.5-extra	generate or check artifacts of the current page
+uuid-generator	developer	security-ids	local	yes	later-E5-dev	later	classic snippet tools; crowded store; popup parity only
+validate-security-txt	developer	seo-growth	remote	no	web-only	stay-web	domain/DNS/index APIs; no live-tab advantage
+wcag-contrast-checker	design	design-brand	local	yes	E3-page-inspector	v1.5-extra	generate or check artifacts of the current page
+website-headers	developer	network-ip	remote	yes	E3-page-inspector	core	inspect the current tab
+wrap-formula-with-ifna	developer	dev-data	local	yes	web-only	stay-web	Excel/sheet generators; no browsing companion
+write-countif-formula-in-excel	developer	dev-data	local	yes	web-only	stay-web	Excel/sheet generators; no browsing companion
+write-ifs-formula-in-excel	developer	dev-data	local	yes	web-only	stay-web	Excel/sheet generators; no browsing companion
+write-nested-if-formula-for-excel	developer	dev-data	local	yes	web-only	stay-web	Excel/sheet generators; no browsing companion
+write-pdf-document-online	pdf	pdf-docs	local	no	web-only	stay-web	narrow/archival/certification; weak store intent; keep on site
+writing-prompt-generator	developer	ai-prompt-template-builder	remote	no	web-only	stay-web	AI/Turnstile/templates; not a browsing companion
+yaml-json	developer	dev-data	local	yes	later-E5-dev	later	classic snippet tools; crowded store; popup parity only
+youtube-thumbnail-size	image	image-media	local	no	E2-image-tools	v1.5-extra	same image job (watermark/social sizes/exif)

@@ -15,6 +15,7 @@ export const TOOL_SLUGS = [
 	"base64",
 	"batch-checksum-release-files",
 	"batch-compress-pdfs-for-email",
+	"batch-convert-web-pages-to-pdf",
 	"batch-watermark-product-photos",
 	"brand-color-token-pack",
 	"brand-style-guide",
