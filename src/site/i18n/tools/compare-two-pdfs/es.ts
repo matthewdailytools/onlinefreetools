@@ -20,7 +20,7 @@ const es: SiteLangDict = {
   tool_compare_two_pdfs_err_pdfjs: "PDF renderer failed to load.",
   tool_compare_two_pdfs_example: "Cargar ejemplo: Version A text.",
   tool_compare_two_pdfs_example_title: "Ejemplo",
-  tool_compare_two_pdfs_faq_a1: "No. El renderizado ocurre en tu pestaña (las bibliotecas pueden cargarse desde un CDN). Tu PDF no se sube a nuestros servidores.",
+  tool_compare_two_pdfs_faq_a1: "No. El renderizado ocurre en tu pestaña (las bibliotecas se cargan desde este sitio). Tu PDF no se sube a nuestros servidores.",
   tool_compare_two_pdfs_faq_a2: "Scanned PDFs are images without a text layer; this tool does not OCR.",
   tool_compare_two_pdfs_faq_a3: "Encrypted or damaged files show a clear error instead of failing silently.",
   tool_compare_two_pdfs_faq_a4: "Related PDF tools are listed at the bottom of the page.",

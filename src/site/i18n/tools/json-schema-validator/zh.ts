@@ -12,7 +12,7 @@ const zh: SiteLangDict = {
   tool_json_schema_validator_copy_errors: '复制错误',
   tool_json_schema_validator_desc: '用 Schema 校验 JSON，定位 JSON Pointer 错误——本地 draft-07。',
   tool_json_schema_validator_description:
-    '在浏览器内用 JSON Schema（draft-07）校验 JSON。步骤：粘贴 Schema 与实例、点校验、按 JSON Pointer 逐条改错。示例：商品对象缺少 price 会报 missingProperty。粘贴留在本标签页；Ajv 仅从 CDN 加载库代码，不会上传你的文本。',
+    '在浏览器内用 JSON Schema（draft-07）校验 JSON。步骤：粘贴 Schema 与实例、点校验、按 JSON Pointer 逐条改错。示例：商品对象缺少 price 会报 missingProperty。粘贴留在本标签页；Ajv 仅从本站加载库代码，不会上传你的文本。',
   tool_json_schema_validator_draft_note: '校验引擎：Ajv 8 · JSON Schema draft-07（默认）。',
   tool_json_schema_validator_empty: '请先粘贴 Schema 和实例 JSON。',
   tool_json_schema_validator_example:
@@ -26,7 +26,7 @@ const zh: SiteLangDict = {
   tool_json_schema_validator_faq_a3:
     '本页默认用 Ajv 的 draft-07。更新的 2019-09 / 2020-12 需另一套构建，此处不可切换。',
   tool_json_schema_validator_faq_a4:
-    'Schema 与 JSON 文本不会上传。CDN 只下载 Ajv 库代码，不是上传你的粘贴内容。',
+    'Schema 与 JSON 文本不会上传。本站只下载 Ajv 库代码，不是上传你的粘贴内容。',
   tool_json_schema_validator_faq_a5:
     '粘贴 Schema 与模型 JSON，校验后按 Pointer 改到通过——适合结构化输出进入下游前自检。',
   tool_json_schema_validator_faq_q1: '为什么校验失败？',
@@ -54,7 +54,7 @@ const zh: SiteLangDict = {
     '校验：Ajv allErrors 收集全部失败（不止第一条）。每行是 instancePath + message（缺字段时附 missingProperty）。',
   tool_json_schema_validator_rules_item_3: 'Draft：默认 draft-07。不要假定 2020-12 词汇在此可用。',
   tool_json_schema_validator_rules_item_4:
-    '隐私：粘贴留在标签页。CDN 只拉 Ajv 代码，不会上传 Schema 或实例。',
+    '隐私：粘贴留在标签页。本站只拉 Ajv 代码，不会上传 Schema 或实例。',
   tool_json_schema_validator_rules_title: '规则说明',
   tool_json_schema_validator_sample_fail: '失败样例',
   tool_json_schema_validator_sample_instance_fail: '{"sku":"A-1"}',

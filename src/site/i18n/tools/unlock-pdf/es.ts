@@ -28,7 +28,7 @@ const es: SiteLangDict = {
   tool_unlock_pdf_faq_a1:
     'No. Solo quita la protección si introduces la contraseña correcta. No crackea, fuerza bruta ni recupera contraseñas desconocidas.',
   tool_unlock_pdf_faq_a2:
-    'No. la biblioteca PDF corre en tu pestaña (scripts pueden cargarse desde CDN). Tu PDF no se sube a nuestros servidores.',
+    'No. la biblioteca PDF corre en tu pestaña (scripts se cargan desde este sitio). Tu PDF no se sube a nuestros servidores.',
   tool_unlock_pdf_faq_a3:
     'Verás un mensaje claro de contraseña incorrecta. Usa la misma clave que en Proteger PDF u otra app—no la adivinamos.',
   tool_unlock_pdf_faq_a4:

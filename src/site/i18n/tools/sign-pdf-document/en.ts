@@ -26,7 +26,7 @@ const en: SiteLangDict = {
   tool_sign_pdf_document_example: "Load sample builds a one-page “Sample agreement”, types “Jane Sample”, and stamps that PNG near X=72, Y=72.",
   tool_sign_pdf_document_example_title: "Example",
   tool_sign_pdf_document_faq_a1: "No. This page only stamps a picture of a name or handwriting. For an integrity appearance with a hash prefix, use Add a digital signature to a PDF — that is still not certificate PKI signing.",
-  tool_sign_pdf_document_faq_a2: "No. Stamping runs in this tab (libraries may load from a CDN). Your PDF is not uploaded to our servers.",
+  tool_sign_pdf_document_faq_a2: "No. Stamping runs in this tab (library scripts load from this site). Your PDF is not uploaded to our servers.",
   tool_sign_pdf_document_faq_a3: "No. Place the image with X/Y. For passwords, see Protect PDF. For extra words, see Add text to a PDF file.",
   tool_sign_pdf_document_faq_a4: "This browser tool cannot apply Adobe-style PKCS#7 / PAdES certificates. Use dedicated signing software.",
   tool_sign_pdf_document_faq_a5: "Large PDFs may be slow; try a desktop browser first.",

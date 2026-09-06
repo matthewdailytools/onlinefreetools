@@ -20,7 +20,7 @@ const fr: SiteLangDict = {
   tool_add_text_to_pdf_file_err_pdfjs: "PDF renderer failed to load.",
   tool_add_text_to_pdf_file_example: "Charger un exemple: CONFIDENTIAL",
   tool_add_text_to_pdf_file_example_title: "Exemple",
-  tool_add_text_to_pdf_file_faq_a1: "Non. Le rendu s’exécute dans votre onglet (bibliothèques éventuellement via CDN). Votre PDF n’est pas envoyé à nos serveurs.",
+  tool_add_text_to_pdf_file_faq_a1: "Non. Le rendu s’exécute dans votre onglet (bibliothèques depuis ce site). Votre PDF n’est pas envoyé à nos serveurs.",
   tool_add_text_to_pdf_file_faq_a2: "Non. Cette opération ne dépend pas de l’extraction de la couche texte du PDF.",
   tool_add_text_to_pdf_file_faq_a3: "Encrypted or damaged files show a clear error instead of failing silently.",
   tool_add_text_to_pdf_file_faq_a4: "Modifier le texte PDF change le libellé existant. Écrire un PDF crée un fichier neuf à partir de texte saisi. Cette page ne dessine qu’un tampon neuf en X/Y sur chaque page.",

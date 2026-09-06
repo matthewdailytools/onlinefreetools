@@ -185,7 +185,7 @@ export const renderIosAppIconSizePage = (opts: {
 
 	/** 浏览器内 contain + 不透明 PNG；ZIP 含倍率与 Play 512；进页自动 loadSample()。 */
 	const extraBodyHtml = `
-  <script src="https://cdn.jsdelivr.net/npm/fflate@0.8.2/umd/index.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/vendor/fflate/index.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     (function () {
       /** 预览芯片：默认 App Store 1024，其余 iPhone / iPad / Play。 */

@@ -24,7 +24,7 @@ const de: SiteLangDict = {
   tool_yaml_json_faq_a2:
     'Unter dem DEFAULT-Schema von js-yaml oft ja — nacktes yes/no/on/off kann Boolean werden. „JSON-sichere Typen“ behält diese Scalare als Strings, sofern sie nicht explizit typisiert sind.',
   tool_yaml_json_faq_a3:
-    'Die Umwandlung bleibt im Tab. Ein CDN kann js-yaml ausliefern; der Request lädt nur Code — kein Upload Ihres YAML- oder JSON-Texts.',
+    'Die Umwandlung bleibt im Tab. Diese Website kann js-yaml ausliefern; der Request lädt nur Code — kein Upload Ihres YAML- oder JSON-Texts.',
   tool_yaml_json_faq_a4:
     'Dokumente getrennt durch --- werden mit loadAll gelesen. Ein Dokument → ein JSON-Wert; zwei oder mehr → JSON-Array. Spätere Dokumente werden nicht verworfen.',
   tool_yaml_json_faq_a5:
@@ -61,7 +61,7 @@ const de: SiteLangDict = {
   tool_yaml_json_rules_item_3:
     'Roundtrip-Verluste: Kommentare verschwinden (JSON hat keine); Anker/Aliase expandieren zu doppelten Werten; Schlüsselreihenfolge und Stil können nach dem Dump anders sein.',
   tool_yaml_json_rules_item_4:
-    'Privatsphäre: Ihr Paste wird nicht hochgeladen. js-yaml vom CDN lädt nur Bibliothekscode, nicht Ihren Config-Text.',
+    'Privatsphäre: Ihr Paste wird nicht hochgeladen. js-yaml von dieser Website lädt nur Bibliothekscode, nicht Ihren Config-Text.',
   tool_yaml_json_rules_title: 'Feste Verhaltensregeln',
   tool_yaml_json_sample: 'Beispiel laden',
   tool_yaml_json_sample_json: '{\n  "titel": "Hallo",\n  "anzahl": 2\n}',

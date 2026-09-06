@@ -22,7 +22,7 @@ const es: SiteLangDict = {
     'El ejemplo crea un PDF de tres páginas, lo divide por página y activa Descargar para un ZIP con page-1.pdf, page-2.pdf y page-3.pdf.',
   tool_split_pdf_example_title: 'Dividir mi PDF',
   tool_split_pdf_faq_a1:
-    'No. pdf-lib y fflate corren en tu pestaña (los scripts pueden cargar desde un CDN). No subimos tu PDF.',
+    'No. pdf-lib y fflate corren en tu pestaña (los scripts se cargan desde este sitio). No subimos tu PDF.',
   tool_split_pdf_faq_a2:
     'Páginas desde 1: 1-3,5 significa las páginas 1–3 y la 5. Los espacios son opcionales. Valores vacíos o fuera de rango fallan.',
   tool_split_pdf_faq_a3:

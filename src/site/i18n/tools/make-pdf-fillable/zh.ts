@@ -19,7 +19,7 @@ const zh: SiteLangDict = {
   tool_make_pdf_fillable_err_no_name: "请先填写字段名。",
   tool_make_pdf_fillable_example: "加载样例会生成空白页，在 48,220 处放 220×22 的 FullName 文本框，显示预览并开放下载。",
   tool_make_pdf_fillable_example_title: "示例",
-  tool_make_pdf_fillable_faq_a1: "不会。放置在本标签页完成。脚本可能从 CDN 加载，PDF 不会发到我们的服务器。",
+  tool_make_pdf_fillable_faq_a1: "不会。放置在本标签页完成。脚本从本站加载，PDF 不会发到我们的服务器。",
   tool_make_pdf_fillable_faq_a2: "是。栏位就绪后，请到「填写 PDF 表单」输入内容。",
   tool_make_pdf_fillable_faq_a3: "用「添加 N 个字段」。它们会按固定间距排成 Field_1、Field_2…",
   tool_make_pdf_fillable_faq_a4: "「创建 PDF 表单」从空白页起步，可加文本或复选框。本页是在已有文件上叠栏。",

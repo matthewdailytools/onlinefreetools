@@ -21,7 +21,7 @@ const es: SiteLangDict = {
   tool_turn_pdf_into_word_document_err_pdfjs: "Falló la carga del visor PDF.",
   tool_turn_pdf_into_word_document_example: "Cargar ejemplo crea un PDF de una página con una frase, la extrae y genera un .docx con el mismo párrafo.",
   tool_turn_pdf_into_word_document_example_title: "Ejemplo",
-  tool_turn_pdf_into_word_document_faq_a1: "No. La extracción y el zip .docx ocurren en tu pestaña (las bibliotecas pueden venir de un CDN). El PDF no se envía a nuestros servidores.",
+  tool_turn_pdf_into_word_document_faq_a1: "No. La extracción y el zip .docx ocurren en tu pestaña (las bibliotecas se cargan desde este sitio). El PDF no se envía a nuestros servidores.",
   tool_turn_pdf_into_word_document_faq_a2: "Las páginas escaneadas son imágenes. No hay OCR. Usa Extraer texto de PDF si solo quieres un .txt de la capa de texto.",
   tool_turn_pdf_into_word_document_faq_a3: "No. Obtienes párrafos extraídos, no una reconstrucción píxel a píxel.",
   tool_turn_pdf_into_word_document_faq_a4: "Esta página escribe un .docx para Word. PDF a Markdown es para notas en un editor de texto.",

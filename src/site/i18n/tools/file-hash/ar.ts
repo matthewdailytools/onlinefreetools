@@ -5,14 +5,14 @@ import type { SiteLangDict } from '../../../types';
 const ar: SiteLangDict = {
   tool_file_hash_algo_label: 'الخوارزميات',
   tool_file_hash_article:
-    'احسب تجزئات hex من MD5 و SHA للنص الملصق أو ملف محلي. قارن checksums للإصدارات، بصمات الإعدادات، أو تحقق من التحميلات — التجزئة في متصفحك إلا جلب CDN لمرة واحدة عند اختيار MD5.',
+    'احسب تجزئات hex من MD5 و SHA للنص الملصق أو ملف محلي. قارن checksums للإصدارات، بصمات الإعدادات، أو تحقق من التحميلات — التجزئة في متصفحك إلا تنزيل مرة واحدة من هذا الموقع عند اختيار MD5.',
   tool_file_hash_clear: 'مسح',
   tool_file_hash_copy: 'نسخ الكل',
   tool_file_hash_copy_done: 'تم النسخ',
   tool_file_hash_desc:
     'تجزئة النص أو الملفات محليًا — تجزئات hex من MD5 و SHA-1 و SHA-256 و SHA-384 و SHA-512.',
   tool_file_hash_description:
-    'احسب hash للنص الملصق أو ملف محلي في متصفحك. خطوات: اختر نصًا أو ملفًا، حدّد MD5/SHA، اضغط تجزئة، انسخ hex بأحرف صغيرة. مثال: النص `hello` → SHA-256 `2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b0184`. الملفات تُقرأ محليًا؛ MD5 فقط يحمّل crypto-js من CDN عند التحديد.',
+    'احسب hash للنص الملصق أو ملف محلي في متصفحك. خطوات: اختر نصًا أو ملفًا، حدّد MD5/SHA، اضغط تجزئة، انسخ hex بأحرف صغيرة. مثال: النص `hello` → SHA-256 `2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b0184`. الملفات تُقرأ محليًا؛ MD5 فقط يحمّل crypto-js من هذا الموقع عند التحديد.',
   tool_file_hash_empty: 'الصق نصًا أو اختر ملفًا أولًا.',
   tool_file_hash_example:
     'نص `hello` مع SHA-256 → `2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b0184`. MD5 لنفس النص → `5d41402abc4b2a76b9719d911017c592`. النص ببايتات UTF-8؛ الملفات بالبايتات الخام.',
@@ -24,7 +24,7 @@ const ar: SiteLangDict = {
   tool_file_hash_faq_a3:
     'النص يُجزّأ كبايتات UTF-8. الملف يُجزّأ كتدفق بايتات خام. نفس الحروف في `.txt` قد تختلف عن النص الملصق إذا اختلفت الترميز أو نهايات السطر.',
   tool_file_hash_faq_a4:
-    'لا رفع. النص والملفات يبقيان على جهازك. SHA-* يستخدم Web Crypto. MD5 فقط يحمّل crypto-js من jsDelivr — المحتوى لا يُرسل إلى CDN.',
+    'لا رفع. النص والملفات يبقيان على جهازك. SHA-* يستخدم Web Crypto. MD5 فقط يحمّل crypto-js من هذا الموقع — المحتوى لا يُرسل إلى جهة خارجية.',
   tool_file_hash_faq_a5:
     'نخرج hex بأحرف صغيرة بلا بادئة `0x`، سطر لكل خوارزمية. يطابق `md5sum` / `sha256sum` الشائع على Linux و macOS.',
   tool_file_hash_faq_q1: 'متى أستخدم MD5 ومتى SHA-256؟',
@@ -41,7 +41,7 @@ const ar: SiteLangDict = {
   tool_file_hash_input_mode_label: 'وضع الإدخال',
   tool_file_hash_large_warn:
     'الملف أكبر من 100 MB. قد تكون التجزئة بطيئة أو تستهلك ذاكرة كبيرة — فكّر في أداة سطح مكتب للأرشيفات الضخمة.',
-  tool_file_hash_md5_fail: 'تعذّر تحميل مكتبة MD5 من CDN. جرّب SHA-256 أو تحقق من الشبكة.',
+  tool_file_hash_md5_fail: 'تعذّر تحميل مكتبة MD5 من هذا الموقع. جرّب SHA-256 أو تحقق من الشبكة.',
   tool_file_hash_no_algo: 'اختر خوارزمية واحدة على الأقل.',
   tool_file_hash_output_label: 'تجزئات hex',
   tool_file_hash_progress_label: 'جارٍ قراءة الملف…',
@@ -54,7 +54,7 @@ const ar: SiteLangDict = {
   tool_file_hash_rules_item_3:
     'نص فارغ أو ملف صفر بايت يعطي digest الإدخال الفارغ القياسي لكل خوارزمية (hex صالح).',
   tool_file_hash_rules_item_4:
-    'الخصوصية: لا رفع. MD5 فقط يجلب crypto-js من CDN؛ SHA-* يستخدم Web Crypto المدمج فقط.',
+    'الخصوصية: لا رفع. MD5 فقط يجلب crypto-js من هذا الموقع؛ SHA-* يستخدم Web Crypto المدمج فقط.',
   tool_file_hash_rules_title: 'قواعد يجب أن تتوقعها',
   tool_file_hash_sample: 'تحميل مثال',
   tool_file_hash_sample_text: 'hello',

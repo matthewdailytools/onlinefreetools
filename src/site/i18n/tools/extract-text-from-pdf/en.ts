@@ -21,7 +21,7 @@ const en: SiteLangDict = {
   tool_extract_text_from_pdf_example: "Load sample builds a one-page PDF, runs the main action, and shows the expected output for \"Hello extract text sample.\".",
   tool_extract_text_from_pdf_example_title: "Example",
   tool_extract_text_from_pdf_extract: "Extract",
-  tool_extract_text_from_pdf_faq_a1: "No. Rendering runs in your tab (libraries may load from a CDN). Your PDF is not uploaded to our servers.",
+  tool_extract_text_from_pdf_faq_a1: "No. Rendering runs in your tab (library scripts load from this site). Your PDF is not uploaded to our servers.",
   tool_extract_text_from_pdf_faq_a2: "Scanned PDFs are images without a text layer; this tool does not OCR.",
   tool_extract_text_from_pdf_faq_a3: "Encrypted or damaged files show a clear error instead of failing silently.",
   tool_extract_text_from_pdf_faq_a4: "PDF to Markdown adds ## Page N headings and --- separators for editors. This page keeps a plain .txt extract.",

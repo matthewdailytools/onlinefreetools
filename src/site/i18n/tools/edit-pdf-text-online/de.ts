@@ -23,7 +23,7 @@ const de: SiteLangDict = {
   tool_edit_pdf_text_online_err_pdfjs: "PDF-Renderer konnte nicht geladen werden.",
   tool_edit_pdf_text_online_example: "Beispiel laden erzeugt eine Seite mit „Hello edit PDF text sample.“, füllt den Editor und Übernehmen liefert ein herunterladbares PDF.",
   tool_edit_pdf_text_online_example_title: "Beispiel",
-  tool_edit_pdf_text_online_faq_a1: "Nein. Bibliotheken können per CDN kommen, Ihr PDF bleibt aber in diesem Tab und geht nicht auf unsere Server.",
+  tool_edit_pdf_text_online_faq_a1: "Nein. Bibliotheken können from this site kommen, Ihr PDF bleibt aber in diesem Tab und geht nicht auf unsere Server.",
   tool_edit_pdf_text_online_faq_a2: "Nein. Das ist keine Glyphenbearbeitung vor Ort. Text wird geholt, Sie ändern ihn, Seiten werden einfach neu gezeichnet. Schriften und exakte Spalten bleiben nicht.",
   tool_edit_pdf_text_online_faq_a3: "Gescannte PDFs sind Bilder ohne Textebene. Dieses Werkzeug macht kein OCR und scheitert mit einer klaren Meldung.",
   tool_edit_pdf_text_online_faq_a4: "Text hinzufügen stempelt eine Zeile bei X/Y. PDF bearbeitbar machen priorisiert Download von .txt (optional neu gebautes PDF). Hier ist der Hauptdownload das neu gebaute .pdf nach Bearbeitung der Textebene.",

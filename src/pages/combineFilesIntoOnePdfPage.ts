@@ -143,7 +143,7 @@ export const renderCombineFilesIntoOnePdfPage = (opts: {
 	 */
 	const extraBodyHtml = `
   ${pdfWorkUiClientScript()}
-  <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/vendor/pdf-lib/pdf-lib.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     (function () {
       /** 软警告阈值：超过该字节总和可能导致处理变慢。 */

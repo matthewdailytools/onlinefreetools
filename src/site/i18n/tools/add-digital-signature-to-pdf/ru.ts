@@ -24,7 +24,7 @@ const ru: SiteLangDict = {
   tool_add_digital_signature_to_pdf_example: "Загрузка образца создаёт «запись-образец», считает хеш и ставит «Цифровая отметка» с 16 hex около X=48, Y=48.",
   tool_add_digital_signature_to_pdf_example_title: "Пример",
   tool_add_digital_signature_to_pdf_faq_a1: "Нет. Страница хеширует PDF и рисует рамку. PKCS#7 / PAdES не встраивается. Для рукописного имени используйте «Подписать документ PDF».",
-  tool_add_digital_signature_to_pdf_faq_a2: "Нет. Хеш и штамп считаются во вкладке (библиотеки могут грузиться с CDN). Файл на наши серверы не уходит.",
+  tool_add_digital_signature_to_pdf_faq_a2: "Нет. Хеш и штамп считаются во вкладке (библиотеки грузятся с этого сайта). Файл на наши серверы не уходит.",
   tool_add_digital_signature_to_pdf_faq_a3: "Показанный SHA-256 — исходный файл до рамки. Сохранение добавляет байты, поэтому поздний хеш скачанного файла будет другим.",
   tool_add_digital_signature_to_pdf_faq_a4: "Нет. Для пароля используйте «Защитить PDF». Эта страница только добавляет видимую метку.",
   tool_add_digital_signature_to_pdf_faq_a5: "Крупный PDF может тормозить; сначала попробуйте настольный браузер.",

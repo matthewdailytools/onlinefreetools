@@ -36,7 +36,7 @@ const id: SiteLangDict = {
   tool_images_to_word_rules_body: 'Images are embedded as PNG runs; a page break follows each image except the last.',
   tool_images_to_word_rules_item_1: 'Width targets ~550px in the document flow.',
   tool_images_to_word_rules_item_2: 'Order follows the list.',
-  tool_images_to_word_rules_item_3: 'Libraries may load from CDN; files are not uploaded to us.',
+  tool_images_to_word_rules_item_3: 'Library scripts load from this site; files are not uploaded to us.',
   tool_images_to_word_rules_item_4: 'Very large images are scaled down for embedding.',
   tool_images_to_word_rules_title: 'Aturan',
   tool_images_to_word_sample: 'Muat contoh',

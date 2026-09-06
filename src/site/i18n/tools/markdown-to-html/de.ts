@@ -4,7 +4,7 @@
 import type { SiteLangDict } from '../../../types';
 const de: SiteLangDict = {
   tool_markdown_article:
-    'Beide Richtungen auf einer URL, mit klaren Grenzen von Bereinigung und Verlust. Einfügen bleibt im Tab; CDN nur für Bibliotheken.',
+    'Beide Richtungen auf einer URL, mit klaren Grenzen von Bereinigung und Verlust. Einfügen bleibt im Tab; nur Bibliotheken von dieser Website.',
   tool_markdown_clear: 'Leeren',
   tool_markdown_copy: 'HTML kopieren',
   tool_markdown_copy_done: 'Kopiert',
@@ -21,7 +21,7 @@ const de: SiteLangDict = {
   tool_markdown_export_title: 'Markdown-zu-HTML-Export',
   tool_markdown_faq_a1: 'Bei Markdown → HTML ja — DOMPurify vor Vorschau und Download.',
   tool_markdown_faq_a2: 'Meist nein. Ziel ist ein editierbarer Entwurf.',
-  tool_markdown_faq_a3: 'Umwandlung lokal. CDN liefert nur Bibliotheksdateien.',
+  tool_markdown_faq_a3: 'Umwandlung lokal. Diese Website liefert nur Bibliotheksdateien.',
   tool_markdown_faq_a4: 'Nicht zugesichert — bei Bedarf extern diffen.',
   tool_markdown_faq_a5: 'CommonMark-Basis; optional vollständiges HTML zum Offline-Teilen.',
   tool_markdown_faq_q1: 'Wird HTML von Skripten befreit?',
@@ -53,7 +53,7 @@ const de: SiteLangDict = {
   tool_markdown_rules_item_html_md: 'Nach Markdown: zuerst bereinigen, dann Turndown (ATX, fenced code).',
   tool_markdown_rules_item_loss: 'Styles, Skripte, knifflige Tabellen gehen oft verloren. Roundtrip ≠ Original.',
   tool_markdown_rules_item_md_html: 'Nach HTML: CommonMark parsen, danach DOMPurify vor Anzeige/Export.',
-  tool_markdown_rules_privacy: 'Eingefügter Text bleibt clientseitig. CDN-Download ist kein Upload Ihres Dokuments.',
+  tool_markdown_rules_privacy: 'Eingefügter Text bleibt clientseitig. Download von dieser Website ist kein Upload Ihres Dokuments.',
   tool_markdown_rules_title: 'Regeln je Richtung',
   tool_markdown_sample_html: '<h1>Titel</h1>\n<p>Hallo <strong>Welt</strong></p>',
   tool_markdown_sample_md:

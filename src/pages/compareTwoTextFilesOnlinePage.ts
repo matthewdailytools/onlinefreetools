@@ -175,7 +175,7 @@ export const renderCompareTwoTextFilesOnlinePage = (opts: {
 	 * 函数名必须是 loadSample，以满足 lint:tool-page --require-html。
 	 */
 	const extraBodyHtml = `
-  <script src="https://cdn.jsdelivr.net/npm/diff@5.2.0/dist/diff.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/vendor/diff/diff.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     (function () {
       /** 单侧软上限（字节），超出仍可读但提示卡顿。 */

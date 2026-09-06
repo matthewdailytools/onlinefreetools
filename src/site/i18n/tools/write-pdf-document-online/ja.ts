@@ -20,7 +20,7 @@ const ja: SiteLangDict = {
   tool_write_pdf_document_online_err_pdfjs: "PDF レンダラー読み込み失敗。",
   tool_write_pdf_document_online_example: "サンプルを読み込むと2段落が入り、「Create PDF」で1ページのプレビューが表示され、ダウンロードできます。",
   tool_write_pdf_document_online_example_title: "例",
-  tool_write_pdf_document_online_faq_a1: "いいえ。レンダリングはタブ内で行われます（ライブラリは CDN から読み込まれる場合があります）。PDF は当社サーバーに送られません。",
+  tool_write_pdf_document_online_faq_a1: "いいえ。レンダリングはタブ内で行われます（ライブラリは このサイトから読み込まれます）。PDF は当社サーバーに送られません。",
   tool_write_pdf_document_online_faq_a2: "いいえ。テキストエリアに新しい文字を入力し、pdf-lib で PDF を組み立てます。既存 PDF は開きません。",
   tool_write_pdf_document_online_faq_a3: "いいえ。既存ファイルは「PDF テキスト編集」または「テキストを追加」を使ってください。",
   tool_write_pdf_document_online_faq_a4: "「テキストを追加」は既存 PDF に重ね書きします。「PDF テキスト編集」はテキスト層の文言を変更します。このページは入力文字から新規 PDF のみ作成します。",

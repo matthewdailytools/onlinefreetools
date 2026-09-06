@@ -22,7 +22,7 @@ const ja: SiteLangDict = {
     'サンプルは3ページのPDFを作り、1ページごとに分割し、page-1.pdf〜page-3.pdf のZIPをダウンロードできるようにします。',
   tool_split_pdf_example_title: 'PDF をページ分割',
   tool_split_pdf_faq_a1:
-    'いいえ。pdf-lib と fflate はタブ内で動作します（スクリプトはCDNから読み込む場合があります）。PDFはサーバーに送られません。',
+    'いいえ。pdf-lib と fflate はタブ内で動作します（スクリプトはこのサイトから読みます）。PDFはサーバーに送られません。',
   tool_split_pdf_faq_a2:
     'ページ番号は1始まりです。1-3,5 は1〜3ページと5ページ。空白は任意。空や範囲外は失敗します。',
   tool_split_pdf_faq_a3:

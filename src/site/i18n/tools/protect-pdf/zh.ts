@@ -21,7 +21,7 @@ const zh: SiteLangDict = {
   tool_protect_pdf_err_protect: '加密失败。请检查文件与密码后重试。',
   tool_protect_pdf_example: '样例会生成单页 PDF，用密码 sample 加密，启用下载 protected.pdf，并在状态行显示样例密码。',
   tool_protect_pdf_example_title: '给 PDF 加密码保护',
-  tool_protect_pdf_faq_a1: '不会。处理在当前标签页内完成（脚本可能从 CDN 加载），PDF 不会上传到我们的服务器。',
+  tool_protect_pdf_faq_a1: '不会。处理在当前标签页内完成（脚本从本站加载），PDF 不会上传到我们的服务器。',
   tool_protect_pdf_faq_a2: '使用 PDF 常见的用户密码加密，打开时要输入密码。并非军用级——请设一个你能记住的强密码。',
   tool_protect_pdf_faq_a3: '需要你在本页设置的同一密码。上线「解锁 PDF」后，用该密码即可打开——本站不提供破解或绕过密码。',
   tool_protect_pdf_faq_a4: '已有密码的文件通常无法加载。请先用可信工具去掉旧密码，再在此设置新密码。',

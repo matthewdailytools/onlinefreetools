@@ -21,7 +21,7 @@ const de: SiteLangDict = {
   tool_turn_pdf_into_word_document_err_pdfjs: "PDF-Renderer konnte nicht geladen werden.",
   tool_turn_pdf_into_word_document_example: "Beispiel laden erzeugt eine PDF-Seite mit einem Satz, liest ihn aus und schreibt ein .docx mit demselben Absatz.",
   tool_turn_pdf_into_word_document_example_title: "Beispiel",
-  tool_turn_pdf_into_word_document_faq_a1: "Nein. Extraktion und .docx-Zip laufen in Ihrem Tab (Bibliotheken können vom CDN kommen). Das PDF geht nicht auf unsere Server.",
+  tool_turn_pdf_into_word_document_faq_a1: "Nein. Extraktion und .docx-Zip laufen in Ihrem Tab (Bibliotheken kommen von dieser Website). Das PDF geht nicht auf unsere Server.",
   tool_turn_pdf_into_word_document_faq_a2: "Scans sind Bilder. Es gibt kein OCR. Nutzen Sie Text aus PDF extrahieren, wenn Sie nur ein .txt der Textschicht brauchen.",
   tool_turn_pdf_into_word_document_faq_a3: "Nein. Sie erhalten extrahierte Absätze, keinen Pixel-Nachbau.",
   tool_turn_pdf_into_word_document_faq_a4: "Diese Seite schreibt ein .docx für Word. PDF nach Markdown ist für Notizen im Editor.",

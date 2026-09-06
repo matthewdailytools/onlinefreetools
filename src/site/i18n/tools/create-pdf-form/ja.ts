@@ -19,7 +19,7 @@ const ja: SiteLangDict = {
   tool_create_pdf_form_err_no_name: "先に欄の名前を入れてください。",
   tool_create_pdf_form_example: "サンプルは Name と Email の白紙を作り、両方の名前を一覧し、プレビューして pdf-form.pdf を有効にします。",
   tool_create_pdf_form_example_title: "例",
-  tool_create_pdf_form_faq_a1: "いいえ。白紙と欄はこのタブ内で作られます。CDN のスクリプトは読むことがありますが、フォームは当社サーバーに行きません。",
+  tool_create_pdf_form_faq_a1: "いいえ。白紙と欄はこのタブ内で作られます。本サイトのスクリプトは読むことがありますが、フォームは当社サーバーに行きません。",
   tool_create_pdf_form_faq_a2: "手元のファイルに欄を重ねるなら「PDFを入力可能なフォームにする」。このページは空から始めます。",
   tool_create_pdf_form_faq_a3: "種類でチェックを選び、名前を付けて「欄を追加」。枠は設定した X/Y サイズです。",
   tool_create_pdf_form_faq_a4: "「PDFフォームに入力」を開き、試し書きしてください。",

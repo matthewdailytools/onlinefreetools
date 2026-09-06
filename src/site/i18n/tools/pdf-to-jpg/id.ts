@@ -23,7 +23,7 @@ const id: SiteLangDict = {
     'Sampel membuat PDF dua halaman, mengonversi tiap halaman, dan mengaktifkan Unduh ZIP berisi page-1.jpg dan page-2.jpg.',
   tool_pdf_to_jpg_example_title: 'Ubah halaman PDF ke JPG',
   tool_pdf_to_jpg_faq_a1:
-    'Tidak. perender halaman dan pustaka ZIP berjalan di tab Anda (skrip mungkin dimuat dari CDN). PDF tidak diunggah ke server kami.',
+    'Tidak. perender halaman dan pustaka ZIP berjalan di tab Anda (skrip mungkin dimuat dari situs ini). PDF tidak diunggah ke server kami.',
   tool_pdf_to_jpg_faq_a2:
     'Lebih dari satu halaman → ZIP pdf-pages.zip dengan page-1.jpg, page-2.jpg, dst. Satu halaman → satu JPG langsung.',
   tool_pdf_to_jpg_faq_a3:

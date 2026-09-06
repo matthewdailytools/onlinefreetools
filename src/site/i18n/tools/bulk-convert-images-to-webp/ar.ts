@@ -33,7 +33,7 @@ const ar: SiteLangDict = {
 		'تحميل مثال يضع كتلة معتمة وشعارًا شفافًا، يكتب ملفين .webp ويفعّل تنزيل ZIP. يبقى ثقب الشعار.',
 	tool_bulk_convert_images_to_webp_example_title: 'مثال',
 	tool_bulk_convert_images_to_webp_faq_a1:
-		'لا. الفك والكتابة إلى WebP يجريان في هذا التبويب. تبقى على جهازك دون رفع إلى خادم. قد تُحمَّل أداة ZIP من CDN؛ صورك لا تغادر التبويب.',
+		'لا. الفك والكتابة إلى WebP يجريان في هذا التبويب. تبقى على جهازك دون رفع إلى خادم. قد تُحمَّل أداة ZIP من هذا الموقع؛ صورك لا تغادر التبويب.',
 	tool_bulk_convert_images_to_webp_faq_a2:
 		'نعم. png إلى webp هنا: اختر الملفات، أبقِ الجودة قرب 0.8، حوّل الكل. الثقوب تبقى إن كان PNG يملك شفافية.',
 	tool_bulk_convert_images_to_webp_faq_a3:

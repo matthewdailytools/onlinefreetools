@@ -22,7 +22,7 @@ const id: SiteLangDict = {
     'Sampel membuat PDF tiga halaman, memisah tiap halaman, dan mengaktifkan Unduh untuk ZIP berisi page-1.pdf, page-2.pdf, dan page-3.pdf.',
   tool_split_pdf_example_title: 'Pisah PDF saya',
   tool_split_pdf_faq_a1:
-    'Tidak. pdf-lib dan fflate berjalan di tab Anda (skrip bisa dimuat dari CDN). PDF tidak diunggah ke server kami.',
+    'Tidak. pdf-lib dan fflate berjalan di tab Anda (skrip bisa dimuat dari situs ini). PDF tidak diunggah ke server kami.',
   tool_split_pdf_faq_a2:
     'Halaman mulai dari 1: 1-3,5 berarti halaman 1–3 dan 5. Spasi opsional. Nilai kosong atau di luar jangkauan gagal.',
   tool_split_pdf_faq_a3:

@@ -21,7 +21,7 @@ const fr: SiteLangDict = {
   tool_check_pdf_a_compliance_example: "Charger un exemple: PDF/A check sample.",
   tool_check_pdf_a_compliance_example_title: "Exemple",
   tool_check_pdf_a_compliance_fail: "Non trouvé",
-  tool_check_pdf_a_compliance_faq_a1: "Non. Le rendu s’exécute dans votre onglet (bibliothèques éventuellement via CDN). Votre PDF n’est pas envoyé à nos serveurs.",
+  tool_check_pdf_a_compliance_faq_a1: "Non. Le rendu s’exécute dans votre onglet (bibliothèques depuis ce site). Votre PDF n’est pas envoyé à nos serveurs.",
   tool_check_pdf_a_compliance_faq_a2: "Non. Il recherche seulement cinq marqueurs dans les octets ; utilisez veraPDF pour valider un profil.",
   tool_check_pdf_a_compliance_faq_a3: "Encrypted or damaged files show a clear error instead of failing silently.",
   tool_check_pdf_a_compliance_faq_a4: "Related PDF tools are listed at the bottom of the page.",

@@ -44,7 +44,7 @@ const id: SiteLangDict = {
 		'Muat contoh menaruh blok lanskap dan potret, mengatur SAMPLE, mempratinjau yang pertama, menerapkan tanda relatif yang sama ke keduanya, dan mengaktifkan Unduh ZIP.',
 	tool_batch_watermark_product_photos_example_title: 'Contoh',
 	tool_batch_watermark_product_photos_faq_a1:
-		'Tidak. Pembacaan dan cap Canvas terjadi di tab ini. File tetap di perangkat, tidak diunggah ke server. Pembantu ZIP bisa dimuat dari CDN; foto Anda tetap di tab.',
+		'Tidak. Pembacaan dan cap Canvas terjadi di tab ini. File tetap di perangkat, tidak diunggah ke server. Pembantu ZIP bisa dimuat dari situs ini; foto Anda tetap di tab.',
 	tool_batch_watermark_product_photos_faq_a2:
 		'Tidak. Ukuran adalah persen sisi pendek dan sembilan jangkar adalah pecahan kanvas itu. Potret dan lanskap tetap di sudut relatif yang sama.',
 	tool_batch_watermark_product_photos_faq_a3:

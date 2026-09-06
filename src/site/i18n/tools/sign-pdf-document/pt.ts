@@ -26,7 +26,7 @@ const pt: SiteLangDict = {
   tool_sign_pdf_document_example: "Carregar amostra cria um “acordo de amostra”, digita Jane Sample e carimba o PNG perto de X=72, Y=72.",
   tool_sign_pdf_document_example_title: "Exemplo",
   tool_sign_pdf_document_faq_a1: "Não. Só carimba uma imagem. Para uma marca de integridade com prefixo de hash use Adicionar uma assinatura digital a um PDF — também não é PKI com certificado.",
-  tool_sign_pdf_document_faq_a2: "Não. O carimbo ocorre nesta aba (bibliotecas podem vir de um CDN). O PDF não vai aos nossos servidores.",
+  tool_sign_pdf_document_faq_a2: "Não. O carimbo ocorre nesta aba (bibliotecas vêm deste site). O PDF não vai aos nossos servidores.",
   tool_sign_pdf_document_faq_a3: "Não. Posicione a imagem com X/Y. Para senhas, Proteja PDF. Para mais texto, Adicionar texto a um PDF.",
   tool_sign_pdf_document_faq_a4: "Esta ferramenta não aplica certificados PKCS#7 / PAdES. Use software de assinatura dedicado.",
   tool_sign_pdf_document_faq_a5: "PDFs grandes podem ficar lentos; teste primeiro no navegador de desktop.",

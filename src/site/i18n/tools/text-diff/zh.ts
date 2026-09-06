@@ -13,7 +13,7 @@ const zh: SiteLangDict = {
   tool_text_diff_example: '示例（按词）：原文「你好世界」，修改后「你好朋友」→ 只改了一处（世界 → 朋友）。三行文字里只改中间一行时，按行对比会标红那一行。',
   tool_text_diff_example_title: '示例',
   tool_text_diff_faq_a1: '配置、代码用按行；邮件、文案、提示词用按词——按词只会标出变化的词，不会整行刷红。',
-  tool_text_diff_faq_a2: '你粘贴的文字不会上传或保存在我们这边，对比在浏览器里完成。页面可能会从 CDN 加载开源 jsdiff 库；这不会把你的正文发到我们的服务器。',
+  tool_text_diff_faq_a2: '你粘贴的文字不会上传或保存在我们这边，对比在浏览器里完成。页面可能会从本站加载开源 jsdiff 库；这不会把你的正文发到我们的服务器。',
   tool_text_diff_faq_a3: 'Windows 常用 CRLF，Mac/Linux 常用 LF，看起来一样其实字节不同。打开「忽略换行符差异」再比即可。',
   tool_text_diff_faq_a4: '不能。本页只粘贴纯文本，不能比图片、压缩包、Word、Excel 或结构化 JSON。要比两个 .txt、Word 或表格，请用对应的对比页。',
   tool_text_diff_faq_a5: "无效。按字符会逐个比较字符，因此切换到该模式时会停用此选项。需要略过纯空白改动时，请使用按行或按词。",

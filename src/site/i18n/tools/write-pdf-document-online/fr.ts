@@ -20,7 +20,7 @@ const fr: SiteLangDict = {
   tool_write_pdf_document_online_err_pdfjs: "PDF renderer failed to load.",
   tool_write_pdf_document_online_example: "Charger un exemple remplit deux paragraphes, clique sur Créer le PDF et affiche un aperçu d’une page prêt à télécharger.",
   tool_write_pdf_document_online_example_title: "Exemple",
-  tool_write_pdf_document_online_faq_a1: "Non. Le rendu s’exécute dans votre onglet (bibliothèques éventuellement via CDN). Votre PDF n’est pas envoyé à nos serveurs.",
+  tool_write_pdf_document_online_faq_a1: "Non. Le rendu s’exécute dans votre onglet (bibliothèques depuis ce site). Votre PDF n’est pas envoyé à nos serveurs.",
   tool_write_pdf_document_online_faq_a2: "Non. Vous saisissez du texte neuf dans une zone ; la page construit un PDF avec pdf-lib. Elle n’ouvre jamais un PDF existant.",
   tool_write_pdf_document_online_faq_a3: "Non. Pour des fichiers que vous avez déjà, utilisez Modifier le texte PDF ou Ajouter du texte.",
   tool_write_pdf_document_online_faq_a4: "Ajouter du texte tamponne sur un PDF existant. Modifier le texte PDF change le libellé de la couche texte. Cette page ne crée qu’un nouveau PDF à partir de texte saisi.",

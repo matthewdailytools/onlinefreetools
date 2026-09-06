@@ -21,7 +21,7 @@ const ar: SiteLangDict = {
   tool_convert_word_document_to_pdf_err_pdfjs: "فشل تحميل عارض PDF.",
   tool_convert_word_document_to_pdf_example: "تحميل العينة ينشئ .docx بفقرة واحدة، يعرض معاينة HTML، ثم يصدّر صفحة PDF.",
   tool_convert_word_document_to_pdf_example_title: "مثال",
-  tool_convert_word_document_to_pdf_faq_a1: "لا. التحويل يتم في تبويبك (قد تُحمَّل المكتبات من CDN). لا يصل الملف إلى خوادمنا.",
+  tool_convert_word_document_to_pdf_faq_a1: "لا. التحويل يتم في تبويبك (تُحمَّل المكتبات من هذا الموقع). لا يصل الملف إلى خوادمنا.",
   tool_convert_word_document_to_pdf_faq_a2: "المسار .docx ← HTML ← PDF. العناوين والكائنات العائمة تُبسَّط. إن كان لديك HTML فاستخدم تحويل HTML إلى PDF.",
   tool_convert_word_document_to_pdf_faq_a3: "لا. احفظه أولاً كـ .docx. هذه الصفحة تقبل حزمة Office Open XML فقط.",
   tool_convert_word_document_to_pdf_faq_a4: "هنا تبدأ من ملف وورد موجود. الكتابة عبر الإنترنت محرّر فارغ وليست محوّلاً.",

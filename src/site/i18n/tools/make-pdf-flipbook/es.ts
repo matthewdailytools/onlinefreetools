@@ -19,7 +19,7 @@ const es: SiteLangDict = {
   tool_make_pdf_flipbook_err_pdfjs: "PDF renderer failed to load.",
   tool_make_pdf_flipbook_example: "Cargar ejemplo: Flipbook page one.",
   tool_make_pdf_flipbook_example_title: "Ejemplo",
-  tool_make_pdf_flipbook_faq_a1: "No. El renderizado ocurre en tu pestaña (las bibliotecas pueden cargarse desde un CDN). Tu PDF no se sube a nuestros servidores.",
+  tool_make_pdf_flipbook_faq_a1: "No. El renderizado ocurre en tu pestaña (las bibliotecas se cargan desde este sitio). Tu PDF no se sube a nuestros servidores.",
   tool_make_pdf_flipbook_faq_a2: "No. Esta operación no depende de extraer la capa de texto del PDF.",
   tool_make_pdf_flipbook_faq_a3: "Encrypted or damaged files show a clear error instead of failing silently.",
   tool_make_pdf_flipbook_faq_a4: "Related PDF tools are listed at the bottom of the page.",

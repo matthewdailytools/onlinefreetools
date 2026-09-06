@@ -13,7 +13,7 @@ const ar: SiteLangDict = {
   tool_json_schema_validator_desc:
     'تحقق من JSON مقابل Schema مع أخطاء JSON Pointer — draft-07 محليًا.',
   tool_json_schema_validator_description:
-    'تحقق من JSON مقابل JSON Schema (draft-07) في المتصفح. الخطوات: الصق Schema والمثيل، تحقق، ثم اقرأ كل فشل عبر JSON Pointer. مثال: كائن منتج بلا price يفشل بـ missingProperty. النص يبقى في التبويب؛ يُحمَّل Ajv من CDN كرمز مكتبة فقط.',
+    'تحقق من JSON مقابل JSON Schema (draft-07) في المتصفح. الخطوات: الصق Schema والمثيل، تحقق، ثم اقرأ كل فشل عبر JSON Pointer. مثال: كائن منتج بلا price يفشل بـ missingProperty. النص يبقى في التبويب؛ يُحمَّل Ajv من هذا الموقع كرمز مكتبة فقط.',
   tool_json_schema_validator_draft_note: 'المحرك: Ajv 8 · JSON Schema draft-07 (الافتراضي).',
   tool_json_schema_validator_empty: 'الصق Schema وJSON المثيل أولًا.',
   tool_json_schema_validator_example:
@@ -27,7 +27,7 @@ const ar: SiteLangDict = {
   tool_json_schema_validator_faq_a3:
     'هذه الصفحة تستخدم لهجة draft-07 في Ajv. إصدارات 2019-09 / 2020-12 تحتاج بنى أخرى ولا تُختار هنا.',
   tool_json_schema_validator_faq_a4:
-    'لا يُرفع Schema أو JSON الخاص بك. CDN يحمّل كود Ajv فقط وليس لصقك.',
+    'لا يُرفع Schema أو JSON الخاص بك. هذا الموقع يحمّل كود Ajv فقط وليس لصقك.',
   tool_json_schema_validator_faq_a5:
     'الصق Schema وJSON النموذج، تحقق، ثم أصلح كل Pointer حتى النجاح — مفيد قبل إرسال مخرجات منظمة إلى المراحل التالية.',
   tool_json_schema_validator_faq_q1: 'لماذا فشل التحقق؟',
@@ -58,7 +58,7 @@ const ar: SiteLangDict = {
   tool_json_schema_validator_rules_item_3:
     'Draft: لهجة draft-07. لا تفترض كلمات 2020-12 هنا.',
   tool_json_schema_validator_rules_item_4:
-    'الخصوصية: اللصق يبقى في التبويب. CDN يحمّل كود Ajv فقط.',
+    'الخصوصية: اللصق يبقى في التبويب. هذا الموقع يحمّل كود Ajv فقط.',
   tool_json_schema_validator_rules_title: 'قواعد متوقعة',
   tool_json_schema_validator_sample_fail: 'عينة فاشلة',
   tool_json_schema_validator_sample_instance_fail: '{"sku":"A-1"}',

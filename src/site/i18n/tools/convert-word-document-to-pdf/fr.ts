@@ -21,7 +21,7 @@ const fr: SiteLangDict = {
   tool_convert_word_document_to_pdf_err_pdfjs: "Échec du chargement du moteur PDF.",
   tool_convert_word_document_to_pdf_example: "Charger l’exemple crée un .docx d’un paragraphe, affiche l’aperçu HTML, puis exporte un PDF d’une page.",
   tool_convert_word_document_to_pdf_example_title: "Exemple",
-  tool_convert_word_document_to_pdf_faq_a1: "Non. La conversion a lieu dans votre onglet (les bibliothèques peuvent venir d’un CDN). Le fichier n’est pas envoyé à nos serveurs.",
+  tool_convert_word_document_to_pdf_faq_a1: "Non. La conversion a lieu dans votre onglet (les bibliothèques viennent de ce site). Le fichier n’est pas envoyé à nos serveurs.",
   tool_convert_word_document_to_pdf_faq_a2: "Le flux est .docx → HTML → PDF. En-têtes et objets flottants s’aplatissent. Si vous avez déjà du HTML, utilisez Convertir HTML en PDF.",
   tool_convert_word_document_to_pdf_faq_a3: "Non. Enregistrez-le en .docx. Cette page n’accepte que le paquet Office Open XML.",
   tool_convert_word_document_to_pdf_faq_a4: "Ici vous partez d’un Word existant. Rédiger un PDF en ligne est un éditeur vide.",

@@ -13,7 +13,7 @@ const pt: SiteLangDict = {
   tool_json_schema_validator_desc:
     'Valide JSON com Schema e erros JSON Pointer — draft-07 local.',
   tool_json_schema_validator_description:
-    'Valide JSON contra um JSON Schema (draft-07) no navegador. Passos: cole Schema e instância, valide e leia cada falha com JSON Pointer. Exemplo: produto sem price falha com missingProperty. O texto fica na aba; o Ajv só carrega código da CDN.',
+    'Valide JSON contra um JSON Schema (draft-07) no navegador. Passos: cole Schema e instância, valide e leia cada falha com JSON Pointer. Exemplo: produto sem price falha com missingProperty. O texto fica na aba; o Ajv só carrega código deste site.',
   tool_json_schema_validator_draft_note: 'Motor: Ajv 8 · JSON Schema draft-07 (padrão).',
   tool_json_schema_validator_empty: 'Cole primeiro o Schema e o JSON da instância.',
   tool_json_schema_validator_example:
@@ -27,7 +27,7 @@ const pt: SiteLangDict = {
   tool_json_schema_validator_faq_a3:
     'Esta página usa draft-07 do Ajv. Drafts 2019-09 / 2020-12 precisam de outros builds e não são selecionados aqui.',
   tool_json_schema_validator_faq_a4:
-    'Seu Schema e JSON não são enviados. A CDN só baixa o código do Ajv.',
+    'Seu Schema e JSON não são enviados. Este site só baixa o código do Ajv.',
   tool_json_schema_validator_faq_a5:
     'Cole Schema e o JSON do modelo, valide e corrija cada Pointer até passar — útil antes de enviar saída estruturada adiante.',
   tool_json_schema_validator_faq_q1: 'Por que a validação falhou?',
@@ -58,7 +58,7 @@ const pt: SiteLangDict = {
   tool_json_schema_validator_rules_item_3:
     'Draft: dialeto draft-07. Não assuma keywords de 2020-12 aqui.',
   tool_json_schema_validator_rules_item_4:
-    'Privacidade: a colagem fica na aba. A CDN só traz código do Ajv.',
+    'Privacidade: a colagem fica na aba. Este site só traz código do Ajv.',
   tool_json_schema_validator_rules_title: 'Regras a esperar',
   tool_json_schema_validator_sample_fail: 'Amostra com erro',
   tool_json_schema_validator_sample_instance_fail: '{"sku":"A-1"}',

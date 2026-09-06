@@ -31,7 +31,7 @@ const en: SiteLangDict = {
 		'Load sample adds two transparent checkerboard PNGs, re-encodes them as PNG, fills the table, and enables Download ZIP. Duplicate names become name (2).png.',
 	tool_bulk_compress_png_images_example_title: 'Example',
 	tool_bulk_compress_png_images_faq_a1:
-		'No. Decode and PNG encode run in this tab. Files stay on the device and are not uploaded to a server. A ZIP helper may load from a CDN; your images still never leave the tab.',
+		'No. Decode and PNG encode run in this tab. Files stay on the device and are not uploaded to a server. A ZIP helper loads from this site; your images still never leave the tab.',
 	tool_bulk_compress_png_images_faq_a2:
 		'No. Output is always PNG. There is no JPEG matte. If you want smaller photo files and can accept JPEG, use Bulk compress product photos.',
 	tool_bulk_compress_png_images_faq_a3:

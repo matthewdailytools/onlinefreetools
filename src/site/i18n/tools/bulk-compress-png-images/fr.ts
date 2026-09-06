@@ -32,7 +32,7 @@ const fr: SiteLangDict = {
 		'Charger un exemple pose deux PNG en damier transparent, les réencode en PNG, remplit le tableau et active Télécharger le ZIP. Les doublons deviennent name (2).png.',
 	tool_bulk_compress_png_images_example_title: 'Exemple',
 	tool_bulk_compress_png_images_faq_a1:
-		'Non. Décodage et écriture PNG se font dans cet onglet. Les fichiers restent sur l\'appareil, sans envoi au serveur. L\'aide ZIP peut venir d\'un CDN ; vos images ne quittent pas l\'onglet.',
+		'Non. Décodage et écriture PNG se font dans cet onglet. Les fichiers restent sur l\'appareil, sans envoi au serveur. L\'aide ZIP peut venir de ce site ; vos images ne quittent pas l\'onglet.',
 	tool_bulk_compress_png_images_faq_a2:
 		'Non. La sortie est toujours du PNG. Pas de fond JPEG. Si un JPEG plus léger vous convient pour des photos produit, utilisez Compresser des photos produit en lot.',
 	tool_bulk_compress_png_images_faq_a3:

@@ -23,7 +23,7 @@ const de: SiteLangDict = {
 		'Beispiel laden legt notes.txt, ein kleines photo.png und docs/readme.md an und baut sample.zip. ZIP herunterladen ist auf dem ersten Bildschirm bereit.',
 	tool_create_zip_file_example_title: 'Beispiel',
 	tool_create_zip_file_faq_a1:
-		'Nein. Bytes werden in diesem Tab gelesen. Das Engine-Skript kann von einem CDN kommen, aber Ihre Dateien werden nicht auf unsere Server hochgeladen.',
+		'Nein. Bytes werden in diesem Tab gelesen. Das Engine-Skript kommt von dieser Website, aber Ihre Dateien werden nicht auf unsere Server hochgeladen.',
 	tool_create_zip_file_faq_a2:
 		'Meldet der Browser webkitRelativePath (Ordner-Drop oder Verzeichniswahl), werden diese Pfade nach Entfernen von ../ zu ZIP-Einträgen. Das ist die Aufgabe „Ordner zippen“ auf dieser Seite.',
 	tool_create_zip_file_faq_a3:

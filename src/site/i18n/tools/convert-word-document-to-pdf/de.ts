@@ -21,7 +21,7 @@ const de: SiteLangDict = {
   tool_convert_word_document_to_pdf_err_pdfjs: "PDF-Renderer konnte nicht geladen werden.",
   tool_convert_word_document_to_pdf_example: "Beispiel laden erzeugt eine einabsätzige .docx, zeigt die HTML-Vorschau und exportiert eine PDF-Seite.",
   tool_convert_word_document_to_pdf_example_title: "Beispiel",
-  tool_convert_word_document_to_pdf_faq_a1: "Nein. Die Umwandlung läuft in Ihrem Tab (Bibliotheken können vom CDN kommen). Die Datei geht nicht auf unsere Server.",
+  tool_convert_word_document_to_pdf_faq_a1: "Nein. Die Umwandlung läuft in Ihrem Tab (Bibliotheken kommen von dieser Website). Die Datei geht nicht auf unsere Server.",
   tool_convert_word_document_to_pdf_faq_a2: "Der Weg ist .docx → HTML → PDF. Kopfzeilen und Gleitobjekte verflachen. Haben Sie schon HTML, nutzen Sie HTML in PDF umwandeln.",
   tool_convert_word_document_to_pdf_faq_a3: "Nein. Speichern Sie zuerst als .docx. Diese Seite akzeptiert nur das Office-Open-XML-Paket.",
   tool_convert_word_document_to_pdf_faq_a4: "Hier starten Sie mit einer vorhandenen Word-Datei. Online schreiben ist ein leerer Editor.",

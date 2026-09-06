@@ -20,7 +20,7 @@ const zh: SiteLangDict = {
   tool_compress_pdf_example:
     '样例会加载两页带渐变块与嵌入 JPEG 的 PDF，用「中」档压缩，显示前后体积与节省百分比，并启用下载 compressed.pdf。',
   tool_compress_pdf_example_title: '缩小 PDF 文件体积',
-  tool_compress_pdf_faq_a1: '不会。pdf.js 与 处理在当前标签页内完成（库可能从 CDN 加载），PDF 不会上传到我们的服务器。',
+  tool_compress_pdf_faq_a1: '不会。pdf.js 与 处理在当前标签页内完成（库从本站加载），PDF 不会上传到我们的服务器。',
   tool_compress_pdf_faq_a2: '本工具把每页栅格化成 JPEG 再重建 PDF。纯文字或已高度优化的文件可能几乎不变，甚至略变大。不同于服务端对嵌入流的再压缩。',
   tool_compress_pdf_faq_a3: '不会。页面在浏览器里重画成图片，没有云端重编码步骤——文件字节不离开设备。',
   tool_compress_pdf_faq_a4: '带密码的 PDF 通常无法在此打开。请先去掉密码再压缩。',

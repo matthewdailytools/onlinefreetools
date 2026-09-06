@@ -21,7 +21,7 @@ const ar: SiteLangDict = {
   tool_check_pdf_a_compliance_example: "تحميل مثال: PDF/A check sample.",
   tool_check_pdf_a_compliance_example_title: "مثال",
   tool_check_pdf_a_compliance_fail: "غير موجود",
-  tool_check_pdf_a_compliance_faq_a1: "لا. العرض يعمل في تبويبك (قد تُحمَّل المكتبات من CDN). ملفك لا يُرفع إلى خوادمنا.",
+  tool_check_pdf_a_compliance_faq_a1: "لا. العرض يعمل في تبويبك (تُحمَّل المكتبات من هذا الموقع). ملفك لا يُرفع إلى خوادمنا.",
   tool_check_pdf_a_compliance_faq_a2: "لا. يبحث فقط عن خمسة مؤشرات في البايتات؛ استخدم veraPDF للتحقق من ملف تعريف معيّن.",
   tool_check_pdf_a_compliance_faq_a3: "Encrypted or damaged files show a clear error instead of failing silently.",
   tool_check_pdf_a_compliance_faq_a4: "Related PDF tools are listed at the bottom of the page.",

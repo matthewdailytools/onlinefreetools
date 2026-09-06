@@ -180,9 +180,9 @@ export const renderMarkdownToHtmlPage = (opts: {
 
 	/** 客户端：marked + DOMPurify + turndown；按方向切换面板与复制/下载行为。 */
 	const extraBodyHtml = `
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/11.1.1/marked.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.5/purify.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdn.jsdelivr.net/npm/turndown@7.2.0/dist/turndown.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/vendor/marked/marked.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/vendor/dompurify/purify.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/vendor/turndown/turndown.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     (function () {
       /** 粘贴软上限（字符），超出仍可转换但提示卡顿风险 */

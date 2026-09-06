@@ -35,7 +35,7 @@ const de: SiteLangDict = {
 		'Beispiel laden erzeugt zwei kurze PDFs mit einer Bildseite, wendet die E-Mail-Voreinstellung auf jede an, lässt zwei Dateien im ZIP und zeigt gesparte Bytes.',
 	tool_batch_compress_pdfs_for_email_example_title: 'Beispiel',
 	tool_batch_compress_pdfs_for_email_faq_a1:
-		'Nein. Rasterung und Neuaufbau laufen in diesem Tab. Die Dateien bleiben auf dem Gerät und werden nicht auf einen Server hochgeladen. pdf.js, pdf-lib und die ZIP-Hilfe können von einem CDN kommen; Ihre PDFs verlassen den Tab nicht.',
+		'Nein. Rasterung und Neuaufbau laufen in diesem Tab. Die Dateien bleiben auf dem Gerät und werden nicht auf einen Server hochgeladen. pdf.js, pdf-lib und die ZIP-Hilfe können von dieser Website kommen; Ihre PDFs verlassen den Tab nicht.',
 	tool_batch_compress_pdfs_for_email_faq_a2:
 		'Nein. Sie erhalten ein ZIP mit N PDFs. Zu einem Heft zusammenfügen ist PDF zusammenführen — eine andere Aufgabe, nicht diese Seite.',
 	tool_batch_compress_pdfs_for_email_faq_a3:

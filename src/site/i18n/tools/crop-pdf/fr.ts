@@ -26,7 +26,7 @@ const fr: SiteLangDict = {
     'L’échantillon crée un PDF d’une page, rogne 36 pt de chaque côté et active cropped.pdf avec statistiques de taille.',
   tool_crop_pdf_example_title: 'Exemple',
   tool_crop_pdf_faq_a1:
-    'Non. la bibliothèque PDF s’exécute dans votre onglet (scripts éventuellement depuis un CDN). Votre PDF n’est pas envoyé à nos serveurs.',
+    'Non. la bibliothèque PDF s’exécute dans votre onglet (scripts éventuellement depuis ce site). Votre PDF n’est pas envoyé à nos serveurs.',
   tool_crop_pdf_faq_a2:
     'Cet outil resserre les boîtes PDF par marges en points—pas de rectangle à glisser sur l’aperçu comme pour une image.',
   tool_crop_pdf_faq_a3:

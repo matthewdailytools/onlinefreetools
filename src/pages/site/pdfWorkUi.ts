@@ -112,9 +112,9 @@ export function pdfWorkUiClientScript(): string {
     (function (w) {
       if (w.OftPdfWork) return;
 
-      /** pdf.js ESM CDN（与现有 PDF 工具页同一版本）。 */
-      var PDFJS_URL = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.min.mjs';
-      var PDFJS_WORKER = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.worker.min.mjs';
+      /** pdf.js ESM（同域 /vendor/pdfjs，与现有 PDF 工具页同一版本）。 */
+      var PDFJS_URL = '/vendor/pdfjs/pdf.min.mjs';
+      var PDFJS_WORKER = '/vendor/pdfjs/pdf.worker.min.mjs';
 
       /**
        * 懒加载 pdf.js，并挂到 window.pdfjsLib 供同页其它脚本复用。

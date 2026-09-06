@@ -22,7 +22,7 @@ const es: SiteLangDict = {
   tool_edit_pdf_form_fields_err_no_fields: "Este PDF no tiene campos de formulario para editar.",
   tool_edit_pdf_form_fields_example: "Cargar ejemplo crea un PDF con Name y Email, lista ambas filas, muestra la vista previa y permite renombrar o borrar antes de descargar.",
   tool_edit_pdf_form_fields_example_title: "Ejemplo",
-  tool_edit_pdf_form_fields_faq_a1: "No. El listado y las ediciones ocurren en esta pestaña. Pueden cargarse bibliotecas de un CDN; tu PDF no va a nuestros servidores.",
+  tool_edit_pdf_form_fields_faq_a1: "No. El listado y las ediciones ocurren en esta pestaña. Pueden cargarse bibliotecas de este sitio; tu PDF no va a nuestros servidores.",
   tool_edit_pdf_form_fields_faq_a2: "Renombrar escribe un nombre interno nuevo. Eliminar quita el control. Los valores ya escritos pueden perderse al borrar.",
   tool_edit_pdf_form_fields_faq_a3: "Un PDF sin campos muestra un error que enlaza a Hacer un PDF rellenable.",
   tool_edit_pdf_form_fields_faq_a4: "Rellenar un formulario PDF escribe respuestas. Esta página solo cambia nombres o borra cajas.",

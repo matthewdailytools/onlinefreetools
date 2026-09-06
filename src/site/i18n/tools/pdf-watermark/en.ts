@@ -23,7 +23,7 @@ const en: SiteLangDict = {
     'Sample builds a two-page PDF, applies text DRAFT at center with 35% opacity and −45° rotation on every page, and enables Download for watermarked.pdf.',
   tool_pdf_watermark_example_title: 'Example',
   tool_pdf_watermark_faq_a1:
-    'No. The PDF library runs in your tab (scripts may load from a CDN). Your PDF is not uploaded to our servers.',
+    'No. The PDF library runs in your tab (scripts load from this site). Your PDF is not uploaded to our servers.',
   tool_pdf_watermark_faq_a2:
     'Add Watermark overlays text or logos on photos in the browser. This tool stamps every page of a PDF document—use both when you need image edits vs document drafts.',
   tool_pdf_watermark_faq_a3:

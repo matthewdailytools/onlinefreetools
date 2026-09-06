@@ -32,7 +32,7 @@ const en: SiteLangDict = {
 		'Load sample adds an opaque color block and a transparent logo, writes two .webp files, and enables Download ZIP. The logo keeps its hole.',
 	tool_bulk_convert_images_to_webp_example_title: 'Example',
 	tool_bulk_convert_images_to_webp_faq_a1:
-		'No. Decode and WebP encode run in this tab. Files stay on the device and are not uploaded to a server. A ZIP helper may load from a CDN; your images still never leave the tab.',
+		'No. Decode and WebP encode run in this tab. Files stay on the device and are not uploaded to a server. A ZIP helper loads from this site; your images still never leave the tab.',
 	tool_bulk_convert_images_to_webp_faq_a2:
 		'Yes. png to webp is this page: pick the files, keep quality near 0.8, convert all. Holes stay when the PNG had alpha.',
 	tool_bulk_convert_images_to_webp_faq_a3:

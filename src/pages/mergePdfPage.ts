@@ -135,7 +135,7 @@ export const renderMergePdfPage = (opts: {
 	 * 客户端脚本：加载 PDF、排序、copyPages 合并、样例自动跑通。
 	 */
 	const extraBodyHtml = `
-  <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/vendor/pdf-lib/pdf-lib.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     (function () {
       /** 单文件软警告阈值（字节）。 */

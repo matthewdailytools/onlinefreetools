@@ -31,7 +31,7 @@ const ja: SiteLangDict = {
   tool_archive_extractor_example_title: '例',
   tool_archive_extractor_exported_all: '安全なパスで新しい ZIP にまとめました。',
   tool_archive_extractor_faq_a1:
-    'いいえ。アーカイブはブラウザタブ内で読み込まれ、展開されたデータも端末内に残ります。補助スクリプトは CDN から読み込まれることがありますが、あなたのファイルは当サイトのサーバーへアップロードされません。',
+    'いいえ。アーカイブはブラウザタブ内で読み込まれ、展開されたデータも端末内に残ります。補助スクリプトはこのサイトから読みますが、あなたのファイルは当サイトのサーバーへアップロードされません。',
   tool_archive_extractor_faq_a2:
     'この版で実際に動くのは ZIP、TAR、TAR.GZ、TGZ です。RAR、7Z、ISO は、重い多形式エンジンが有効になるまで対応メモとして表示します。',
   tool_archive_extractor_faq_a3:

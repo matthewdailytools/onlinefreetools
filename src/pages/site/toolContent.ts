@@ -4,7 +4,7 @@
  */
 import type { SiteLang } from '../../site/i18n';
 import { t } from '../../site/i18n';
-import { escapeHtml } from './layout';
+import { escapeHtml, renderReportBugLink } from './layout';
 import { getToolBySlug, getToolLogoUrl, type ToolPageMeta } from '../../site/tools';
 import { TOPIC_I18N_KEYS, topicLeafPath } from '../../site/topics';
 import { hasToolOgImage, resolveToolOgImageUrl } from './ogImage';
@@ -274,6 +274,7 @@ export const renderToolShareSection = (lang: SiteLang, pageUrl: string, toolName
 
 /**
  * 渲染「邮件咨询 / 反馈」模块：仿写信界面（To / Subject / Message），提交时打开 mailto。
+ * GitHub 报缺陷入口在面包屑行尾（见 `renderReportBugLink`），不放在本模块。
  * @param lang 当前语言
  * @param pageUrl 本工具页绝对 URL（预填正文）
  * @param toolName 工具显示名（预填主题）
@@ -533,7 +534,7 @@ export const renderToolReferencesSection = (opts: {
 };
 
 /**
- * 可见面包屑：Home → primary topic hub → 当前工具。
+ * 可见面包屑：Home → primary topic hub → 当前工具；行尾附 GitHub 报缺陷链接。
  * @param opts.lang 当前语言
  * @param opts.defaultLang 默认语言
  * @param opts.tool 工具元数据（须含 primaryTopic）
@@ -551,6 +552,8 @@ export const renderToolPrimaryTopicBreadcrumb = (opts: {
 	const topicLabel = t(opts.lang, labelKey as keyof typeof import('../../site/i18n/en').default);
 	const homeHref = withToolLangPrefix(opts.lang, '/', opts.defaultLang);
 	const topicHref = withToolLangPrefix(opts.lang, topicLeafPath(topic), opts.defaultLang);
+	/** 预填 Issue 正文用的本页绝对 URL。 */
+	const pageUrl = `${SITE_ORIGIN}${withToolLangPrefix(opts.lang, opts.tool.path, opts.defaultLang)}`;
 	return `
 <nav class="mb-3 small tool-topic-breadcrumb" aria-label="breadcrumb">
   <ol class="breadcrumb mb-0">
@@ -558,6 +561,7 @@ export const renderToolPrimaryTopicBreadcrumb = (opts: {
     <li class="breadcrumb-item"><a href="${escapeHtml(topicHref)}">${escapeHtml(topicLabel)}</a></li>
     <li class="breadcrumb-item active" aria-current="page">${escapeHtml(opts.toolName)}</li>
   </ol>
+  ${renderReportBugLink(opts.lang, opts.toolName, pageUrl)}
 </nav>`;
 };
 

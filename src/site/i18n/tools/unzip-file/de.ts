@@ -21,7 +21,7 @@ const de: SiteLangDict = {
   tool_unzip_file_example_title: 'Beispiel',
   tool_unzip_file_exported_all: 'Die Dateien wurden mit sicheren Pfaden in eine neue ZIP-Datei gepackt.',
   tool_unzip_file_faq_a1:
-    'Nein. Die ZIP-Datei wird im Browser-Tab gelesen, und extrahierte Daten bleiben auf Ihrem Gerät. Das ZIP-Skript kann von einem CDN geladen werden, aber Ihr Archiv wird nicht an unsere Server gesendet.',
+    'Nein. Die ZIP-Datei wird im Browser-Tab gelesen, und extrahierte Daten bleiben auf Ihrem Gerät. Das ZIP-Skript wird von dieser Website geladen, aber Ihr Archiv wird nicht an unsere Server gesendet.',
   tool_unzip_file_faq_a2:
     'Diese Seite ist auf ZIP ausgelegt. RAR, 7Z, ISO und TAR.GZ benötigen eine schwerere Mehrformat-Engine und sollten von einem separaten Archiv-Extractor unterstützt werden, sobald diese Funktion existiert.',
   tool_unzip_file_faq_a3:

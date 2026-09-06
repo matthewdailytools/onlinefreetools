@@ -24,7 +24,7 @@ const es: SiteLangDict = {
   tool_edit_pdf_text_online_example: "Cargar ejemplo crea un PDF de una página con \"Hello edit PDF text sample.\", llena el editor y Aplicar genera un PDF descargable.",
   tool_edit_pdf_text_online_example_title: "Ejemplo",
   tool_edit_pdf_text_online_faq_a1: "Añadir texto estampa una línea en X/Y. Extraer texto solo copia el redactado. Esta página cambia el texto existente y rearma las páginas.",
-  tool_edit_pdf_text_online_faq_a2: "No. Las bibliotecas pueden llegar por CDN, pero tu PDF permanece en esta pestaña y no se sube a nuestros servidores.",
+  tool_edit_pdf_text_online_faq_a2: "No. Las bibliotecas se cargan desde este sitio, pero tu PDF permanece en esta pestaña y no se sube a nuestros servidores.",
   tool_edit_pdf_text_online_faq_a3: "No. No es edición de glifos en su sitio. Se extrae el texto, lo editas y se redibuja con un maquetado simple. No se conservan fuentes ni columnas exactas.",
   tool_edit_pdf_text_online_faq_a4: "Añadir texto estampa una línea en X/Y. Convertir PDF en documento editable prioriza Descargar .txt editable (PDF reconstruido opcional). Aquí la descarga principal es el .pdf reconstruido tras editar la capa de texto.",
   tool_edit_pdf_text_online_faq_a5: "Los archivos grandes pueden ir lentos; prueba primero en un navegador de escritorio.",

@@ -23,7 +23,7 @@ const es: SiteLangDict = {
 		'Cargar ejemplo genera dos .docx mínimos. El segundo cambia “meet at noon” por “meet at 3pm”. Al entrar ya ves esa diferencia de redacción.',
 	tool_compare_two_word_documents_for_differences_example_title: 'Ejemplo',
 	tool_compare_two_word_documents_for_differences_faq_a1:
-		'No. Se leen en esta pestaña. mammoth y jsdiff pueden llegar como código desde un CDN; tus documentos no se suben a nuestros servidores.',
+		'No. Se leen en esta pestaña. mammoth y jsdiff pueden llegar como código desde este sitio; tus documentos no se suben a nuestros servidores.',
 	tool_compare_two_word_documents_for_differences_faq_a2:
 		'No. Word sí compara formato y cambios registrados. Aquí solo se extrae el texto visible y se hace un diff de esa redacción. Encabezados, pies y estilos se tiran.',
 	tool_compare_two_word_documents_for_differences_faq_a3:

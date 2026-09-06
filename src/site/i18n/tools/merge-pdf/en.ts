@@ -21,7 +21,7 @@ const en: SiteLangDict = {
     'Sample loads two one-page PDFs labeled A and B, merges in list order, and enables Download for a two-page merged.pdf.',
   tool_merge_pdf_example_title: 'Combine PDF files into one',
   tool_merge_pdf_faq_a1:
-    'No. pdf-lib runs in your tab (the library may load from a CDN). Your PDFs are not uploaded to our servers.',
+    'No. pdf-lib runs in your tab (the library script loads from this site). Your PDFs are not uploaded to our servers.',
   tool_merge_pdf_faq_a2:
     'Images to PDF builds a PDF from photos. This tool joins existing PDF files into one document.',
   tool_merge_pdf_faq_a3:
@@ -52,7 +52,7 @@ const en: SiteLangDict = {
   tool_merge_pdf_rules_item_2:
     'Engine: pdf-lib loads each PDF and copyPages into a new document—no server round-trip for your files.',
   tool_merge_pdf_rules_item_3:
-    'Privacy: bytes stay in the browser tab. The library script may load from a CDN.',
+    'Privacy: bytes stay in the browser tab. The library script load from this site.',
   tool_merge_pdf_rules_item_4:
     'Limits: need ≥2 files; encrypted or corrupt PDFs fail with a readable error; very large sets may be slow in memory.',
   tool_merge_pdf_rules_title: 'Rules you should expect',

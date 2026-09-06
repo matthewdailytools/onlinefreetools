@@ -23,7 +23,7 @@ const id: SiteLangDict = {
   tool_edit_pdf_text_online_err_pdfjs: "Perender PDF gagal dimuat.",
   tool_edit_pdf_text_online_example: "Muat contoh membuat PDF satu halaman bertuliskan \"Hello edit PDF text sample.\", mengisi editor, lalu Terapkan menghasilkan PDF yang bisa diunduh.",
   tool_edit_pdf_text_online_example_title: "Contoh",
-  tool_edit_pdf_text_online_faq_a1: "Tidak. Pustaka bisa dimuat dari CDN, tetapi PDF Anda tetap di tab ini dan tidak diunggah ke server kami.",
+  tool_edit_pdf_text_online_faq_a1: "Tidak. Pustaka bisa dimuat dari situs ini, tetapi PDF Anda tetap di tab ini dan tidak diunggah ke server kami.",
   tool_edit_pdf_text_online_faq_a2: "Tidak. Ini bukan sunting glif di tempat. Teks diambil, Anda ubah, lalu halaman digambar ulang secara sederhana. Font dan kolom persis tidak dipertahankan.",
   tool_edit_pdf_text_online_faq_a3: "PDF pindaian adalah gambar tanpa lapisan teks. Alat ini tidak OCR dan gagal dengan pesan jelas.",
   tool_edit_pdf_text_online_faq_a4: "Tambah teks mencap baris di X/Y. Jadikan PDF bisa diedit mengutamakan unduhan .txt (PDF rebuild opsional). Di sini unduhan utama adalah .pdf yang dibangun ulang setelah mengedit lapisan teks.",

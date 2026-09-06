@@ -23,7 +23,7 @@ const es: SiteLangDict = {
     'La muestra crea un PDF de dos páginas, aplica DRAFT centrado con 35% de opacidad y −45° en cada página y habilita Descargar watermarked.pdf.',
   tool_pdf_watermark_example_title: 'Ejemplo',
   tool_pdf_watermark_faq_a1:
-    'No. la biblioteca PDF corre en tu pestaña (los scripts pueden cargarse desde CDN). Tu PDF no se sube a nuestros servidores.',
+    'No. la biblioteca PDF corre en tu pestaña (los scripts se cargan desde este sitio). Tu PDF no se sube a nuestros servidores.',
   tool_pdf_watermark_faq_a2:
     'Añadir marca de agua superpone texto o logos en fotos. Esta herramienta sella cada página de un documento PDF.',
   tool_pdf_watermark_faq_a3:

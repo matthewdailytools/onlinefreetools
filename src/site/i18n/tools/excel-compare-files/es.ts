@@ -24,7 +24,7 @@ const es: SiteLangDict = {
 		'Cargar ejemplo compara dos tablas CSV. Los encabezados Name/Qty coinciden; la cantidad de Gadget es 2 frente a 9, así que se lista B3. Al abrir ya ves esa celda.',
 	tool_excel_compare_files_example_title: 'Ejemplo',
 	tool_excel_compare_files_faq_a1:
-		'No. Los bytes se leen en esta pestaña con SheetJS. La biblioteca puede llegar desde un CDN; tus archivos no se suben a nuestros servidores.',
+		'No. Los bytes se leen en esta pestaña con SheetJS. La biblioteca puede llegar desde este sitio; tus archivos no se suben a nuestros servidores.',
 	tool_excel_compare_files_faq_a2:
 		'Sí: la primera hoja queda seleccionada por defecto. Usa las listas si necesitas otra pestaña del mismo archivo. El resto no se compara hasta que las elijas.',
 	tool_excel_compare_files_faq_a3:

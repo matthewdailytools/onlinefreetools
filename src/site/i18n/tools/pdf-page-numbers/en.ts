@@ -22,7 +22,7 @@ const en: SiteLangDict = {
     'Sample builds a three-page PDF, adds bottom-center numbers starting at 1 on every page, and enables Download for numbered.pdf.',
   tool_pdf_page_numbers_example_title: 'Example',
   tool_pdf_page_numbers_faq_a1:
-    'No. The PDF library runs in your tab (scripts may load from a CDN). Your PDF is not uploaded to our servers.',
+    'No. The PDF library runs in your tab (scripts load from this site). Your PDF is not uploaded to our servers.',
   tool_pdf_page_numbers_faq_a2:
     'Yes—set “Start at” to the number you want on page 1 (e.g. 0 for a cover that should not count, or 5 if earlier pages were removed elsewhere). Every following page increments by 1.',
   tool_pdf_page_numbers_faq_a3:

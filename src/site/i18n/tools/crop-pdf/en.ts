@@ -26,7 +26,7 @@ const en: SiteLangDict = {
     'Sample builds a one-page PDF, crops 36 pt on all sides, and enables Download for cropped.pdf with size stats.',
   tool_crop_pdf_example_title: 'Example',
   tool_crop_pdf_faq_a1:
-    'No. The PDF library runs in your tab (scripts may load from a CDN). Your PDF is not uploaded to our servers.',
+    'No. The PDF library runs in your tab (scripts load from this site). Your PDF is not uploaded to our servers.',
   tool_crop_pdf_faq_a2:
     'This tool trims PDF page boxes by point margins—it does not let you drag a rectangle on a page preview like an image cropper.',
   tool_crop_pdf_faq_a3:

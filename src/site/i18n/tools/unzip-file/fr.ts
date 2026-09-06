@@ -21,7 +21,7 @@ const fr: SiteLangDict = {
   tool_unzip_file_example_title: 'Exemple',
   tool_unzip_file_exported_all: 'Les fichiers ont été regroupés dans un nouveau ZIP avec des chemins sûrs.',
   tool_unzip_file_faq_a1:
-    "Non. Le ZIP est lu dans l'onglet du navigateur et les données extraites restent sur votre appareil. Le moteur ZIP peut se charger depuis un CDN, mais votre archive n'est pas envoyée à nos serveurs.",
+    "Non. Le ZIP est lu dans l'onglet du navigateur et les données extraites restent sur votre appareil. Le moteur ZIP peut se charger depuis ce site, mais votre archive n'est pas envoyée à nos serveurs.",
   tool_unzip_file_faq_a2:
     'Cette page vise d’abord ZIP. RAR, 7Z, ISO et TAR.GZ demandent un moteur multi-format plus lourd et devraient être traités par un extracteur d’archives séparé lorsque ce support existe.',
   tool_unzip_file_faq_a3:

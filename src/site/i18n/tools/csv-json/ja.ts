@@ -33,7 +33,7 @@ const ja: SiteLangDict = {
   tool_csv_json_faq_a3: 'RFC 4180 に従い二重引用符で囲み、内側の引用符は二重化します。そのため Chair, oak のようなタイトルは2列に分かれず1フィールドに収まります。',
   tool_csv_json_faq_a4: 'オブジェクトはドットパスの列に平坦化されます（dim.w、dim.h）。配列は1セル内の JSON 文字列になります。列はすべてのレコードのキーの和集合で、そのキーを持たないレコードは空欄です。',
   tool_csv_json_faq_a5:
-    'いいえ。解析はこのタブ内で行われ、選んだファイルもローカルで読み込みます。CDN が Papa Parse を配信することはありますが、それはコードのダウンロードであり、CSV や JSON のアップロードではありません。',
+    'いいえ。解析はこのタブ内で行われ、選んだファイルもローカルで読み込みます。このサイトが Papa Parse を配信することはありますが、それはコードのダウンロードであり、CSV や JSON のアップロードではありません。',
   tool_csv_json_faq_q1: 'セミコロンやタブにも対応しますか（カンマだけでなく）？',
   tool_csv_json_faq_q2: '数値・先頭ゼロ・ID はそのまま保たれますか？',
   tool_csv_json_faq_q3: 'カンマ・引用符・改行を含むフィールドはどう扱われますか？',
@@ -61,7 +61,7 @@ const ja: SiteLangDict = {
   tool_csv_json_rules_item_2:
     '区切り文字：カンマ、セミコロン（欧州の Excel で一般的）、タブ（TSV）に対応し、自動判定は本文から推測します。区切り文字・引用符・改行を含むフィールドは RFC 4180 に従い二重引用符で囲みます。',
   tool_csv_json_rules_item_3: 'JSON → CSV：オブジェクトはドットパスに平坦化（dim.w、dim.h）、配列は1セル内の JSON 文字列として書き出します。列はすべてのキーの和集合で、欠けた値は空欄になります。',
-  tool_csv_json_rules_item_4: 'プライバシー：貼り付けやファイルはアップロードされません。CDN から Papa Parse を取得してもライブラリのコードを落とすだけで、データは送られません。',
+  tool_csv_json_rules_item_4: 'プライバシー：貼り付けやファイルはアップロードされません。このサイトから Papa Parse を取得してもライブラリのコードを落とすだけで、データは送られません。',
   tool_csv_json_rules_title: '想定しておくルール',
   tool_csv_json_sample: 'サンプルを読み込む',
   tool_csv_json_sample_csv: 'sku,title,price\nA-001,"Chair, oak",129.9\nA-002,Desk,89',

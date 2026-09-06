@@ -26,7 +26,7 @@ const es: SiteLangDict = {
   tool_sign_pdf_document_example: "Cargar ejemplo crea un “acuerdo de muestra”, escribe Jane Sample y sella ese PNG cerca de X=72, Y=72.",
   tool_sign_pdf_document_example_title: "Ejemplo",
   tool_sign_pdf_document_faq_a1: "No. Solo sella una imagen. Para una marca de integridad con prefijo hash usa Añadir una firma digital a un PDF; tampoco es PKI con certificado.",
-  tool_sign_pdf_document_faq_a2: "No. El sellado ocurre en tu pestaña (las bibliotecas pueden venir de un CDN). El PDF no se envía a nuestros servidores.",
+  tool_sign_pdf_document_faq_a2: "No. El sellado ocurre en tu pestaña (las bibliotecas se cargan desde este sitio). El PDF no se envía a nuestros servidores.",
   tool_sign_pdf_document_faq_a3: "No. Coloca la imagen con X/Y. Para contraseñas, Protege PDF. Para más texto, Añadir texto a un PDF.",
   tool_sign_pdf_document_faq_a4: "Esta herramienta no aplica certificados PKCS#7 / PAdES. Usa software de firma dedicado.",
   tool_sign_pdf_document_faq_a5: "Los PDF grandes pueden ir lentos; prueba primero en un navegador de escritorio.",

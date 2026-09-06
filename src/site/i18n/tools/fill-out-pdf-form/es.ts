@@ -18,7 +18,7 @@ const es: SiteLangDict = {
   tool_fill_out_pdf_form_err_no_fields: "Este PDF no tiene campos rellenables.",
   tool_fill_out_pdf_form_example: "Cargar ejemplo crea un PDF con Name y Email, escribe Ada Lovelace / ada@example.com, muestra la vista previa y activa la descarga.",
   tool_fill_out_pdf_form_example_title: "Ejemplo",
-  tool_fill_out_pdf_form_faq_a1: "No. El relleno ocurre en esta pestaña. Las bibliotecas pueden venir de un CDN, pero tu PDF no va a nuestros servidores.",
+  tool_fill_out_pdf_form_faq_a1: "No. El relleno ocurre en esta pestaña. Las bibliotecas se cargan desde este sitio, pero tu PDF no va a nuestros servidores.",
   tool_fill_out_pdf_form_faq_a2: "Suele ser un escaneo o un PDF solo para imprimir. Añade campos en Hacer un PDF rellenable y vuelve.",
   tool_fill_out_pdf_form_faq_a3: "Sí. Las casillas aparecen como ticks; listas y radios, como una elección corta si el PDF expone opciones.",
   tool_fill_out_pdf_form_faq_a4: "Crear un formulario PDF parte de una página en blanco. Aquí solo se escriben valores en campos que ya existen.",

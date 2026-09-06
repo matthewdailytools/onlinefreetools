@@ -33,7 +33,7 @@ const ja: SiteLangDict = {
 		'サンプル読込は不透明な色面と透明ロゴを入れ、二つの .webp を書き、ZIP ダウンロードを有効にします。ロゴの穴は残ります。',
 	tool_bulk_convert_images_to_webp_example_title: '例',
 	tool_bulk_convert_images_to_webp_faq_a1:
-		'送りません。読み取りと WebP 書き出しはこのタブ内です。ファイルは端末に留まり、サーバーにアップロードしません。ZIP 用スクリプトが CDN から来ることはありますが、画像はタブを出ません。',
+		'送りません。読み取りと WebP 書き出しはこのタブ内です。ファイルは端末に留まり、サーバーにアップロードしません。ZIP 用スクリプトはこのサイトから読みますが、画像はタブを出ません。',
 	tool_bulk_convert_images_to_webp_faq_a2:
 		'ここでできます。png を webp にするにはファイルを選び、画質は 0.8 付近、すべて変換。PNG にアルファがあれば穴は残ります。',
 	tool_bulk_convert_images_to_webp_faq_a3:

@@ -142,7 +142,7 @@ const id: SiteLangDict = {
   tool_add_digital_signature_to_pdf_example_title: 'Contoh',
   tool_add_digital_signature_to_pdf_faq_a1:
     'Bukan. Halaman meng-hash PDF dan menggambar kotak. Tidak menyematkan PKCS#7 / PAdES. Untuk cap nama tangan, gunakan Tanda tangani dokumen PDF.',
-  tool_add_digital_signature_to_pdf_faq_a2: 'Tidak. Hash dan cap berjalan di tab Anda (pustaka bisa dari CDN). PDF tidak dikirim ke server kami.',
+  tool_add_digital_signature_to_pdf_faq_a2: 'Tidak. Hash dan cap berjalan di tab Anda (pustaka dari situs ini). PDF tidak dikirim ke server kami.',
   tool_add_digital_signature_to_pdf_faq_a3:
     'SHA-256 yang ditampilkan adalah berkas sumber sebelum kotak. Menyimpan menambah byte, jadi hash kemudian berbeda — itu wajar.',
   tool_add_digital_signature_to_pdf_faq_a4: 'Tidak. Gunakan Lindungi PDF untuk kata sandi. Halaman ini hanya menambah tanda terlihat.',
@@ -197,8 +197,7 @@ const id: SiteLangDict = {
   tool_add_text_to_pdf_file_err_pdfjs: 'PDF renderer failed to load.',
   tool_add_text_to_pdf_file_example: 'Muat contoh: CONFIDENTIAL',
   tool_add_text_to_pdf_file_example_title: 'Contoh',
-  tool_add_text_to_pdf_file_faq_a1:
-    'Tidak. Render berjalan di tab Anda (pustaka mungkin dari CDN). PDF Anda tidak diunggah ke server kami.',
+  tool_add_text_to_pdf_file_faq_a1: 'Tidak. Render berjalan di tab Anda (pustaka dari situs ini). PDF Anda tidak diunggah ke server kami.',
   tool_add_text_to_pdf_file_faq_a2: 'Tidak. Operasi ini tidak bergantung pada ekstraksi lapisan teks PDF.',
   tool_add_text_to_pdf_file_faq_a3: 'Encrypted or damaged files show a clear error instead of failing silently.',
   tool_add_text_to_pdf_file_faq_a4:
@@ -691,7 +690,7 @@ const id: SiteLangDict = {
   tool_archive_extractor_example_title: 'Contoh',
   tool_archive_extractor_exported_all: 'File dikemas ke ZIP baru dengan jalur aman.',
   tool_archive_extractor_faq_a1:
-    'Tidak. Arsip dibaca di tab browser dan byte hasil ekstrak tetap di perangkat Anda. Skrip pembantu dapat dimuat dari CDN, tetapi file Anda tidak diunggah ke server kami.',
+    'Tidak. Arsip dibaca di tab browser dan byte hasil ekstrak tetap di perangkat Anda. Skrip pembantu dapat dimuat dari situs ini, tetapi file Anda tidak diunggah ke server kami.',
   tool_archive_extractor_faq_a2:
     'Versi ini menjalankan ZIP, TAR, TAR.GZ, dan TGZ. RAR, 7Z, dan ISO ditampilkan sebagai format dengan catatan dukungan sampai mesin multi-format yang lebih berat diaktifkan.',
   tool_archive_extractor_faq_a3:
@@ -942,7 +941,7 @@ const id: SiteLangDict = {
   tool_batch_checksum_release_files_export_csv: 'Ekspor CSV',
   tool_batch_checksum_release_files_export_sums: 'Ekspor SUMS',
   tool_batch_checksum_release_files_faq_a1:
-    'Tidak. Hash terjadi di tab ini. File tetap di perangkat dan tidak diunggah ke server. SHA-256 memakai Web Crypto. MD5 bisa memuat crypto-js dari CDN; byte Anda tidak meninggalkan tab.',
+    'Tidak. Hash terjadi di tab ini. File tetap di perangkat dan tidak diunggah ke server. SHA-256 memakai Web Crypto. MD5 bisa memuat crypto-js dari situs ini; byte Anda tidak meninggalkan tab.',
   tool_batch_checksum_release_files_faq_a2: 'Tidak. Ekspor adalah tabel CSV dan SHA256SUMS. Mengemas biner adalah Buat ZIP — pekerjaan lain.',
   tool_batch_checksum_release_files_faq_a3:
     'Hash berkas menangani satu berkas atau tempelan. Halaman ini meng-hash set rilis, membandingkan SHA256SUMS yang ditempel, dan mengekspor CSV plus SUMS.',
@@ -967,7 +966,7 @@ const id: SiteLangDict = {
   tool_batch_checksum_release_files_md5_label: 'Hitung MD5 juga',
   tool_batch_checksum_release_files_rules_body:
     'SHA-256 memakai Web Crypto pada byte yang dibaca irisan 4 MiB lalu digabung. Keluaran tabel, CSV, dan SUMS, bukan ZIP asli.',
-  tool_batch_checksum_release_files_rules_item_1: 'SHA-256 selalu jalan. MD5 opsional dan memuat crypto-js dari CDN; byte tetap di tab.',
+  tool_batch_checksum_release_files_rules_item_1: 'SHA-256 selalu jalan. MD5 opsional dan memuat crypto-js dari situs ini; byte tetap di tab.',
   tool_batch_checksum_release_files_rules_item_2:
     'Baris SUMS mengikuti sha256sum GNU: hex, dua spasi atau spasi-bintang, lalu nama. Nama ekstra di tempelan tampil hilang.',
   tool_batch_checksum_release_files_rules_item_3:
@@ -1021,7 +1020,7 @@ const id: SiteLangDict = {
     'Muat contoh membuat dua PDF pendek berhalaman gambar, menjalankan preset email pada masing-masing, menjaga dua berkas di ZIP, dan menampilkan byte yang dihemat.',
   tool_batch_compress_pdfs_for_email_example_title: 'Contoh',
   tool_batch_compress_pdfs_for_email_faq_a1:
-    'Tidak. Raster dan penyusunan ulang terjadi di tab ini. File tetap di perangkat dan tidak diunggah ke server. pdf.js, pdf-lib, dan pembantu ZIP bisa dimuat dari CDN; PDF Anda tidak meninggalkan tab.',
+    'Tidak. Raster dan penyusunan ulang terjadi di tab ini. File tetap di perangkat dan tidak diunggah ke server. pdf.js, pdf-lib, dan pembantu ZIP bisa dimuat dari situs ini; PDF Anda tidak meninggalkan tab.',
   tool_batch_compress_pdfs_for_email_faq_a2:
     'Tidak. Anda mendapat ZIP berisi N PDF. Menggabungkan jadi satu buku adalah Gabung PDF — pekerjaan lain, bukan halaman ini.',
   tool_batch_compress_pdfs_for_email_faq_a3:
@@ -1103,7 +1102,7 @@ const id: SiteLangDict = {
     'Muat contoh menaruh blok lanskap dan potret, mengatur SAMPLE, mempratinjau yang pertama, menerapkan tanda relatif yang sama ke keduanya, dan mengaktifkan Unduh ZIP.',
   tool_batch_watermark_product_photos_example_title: 'Contoh',
   tool_batch_watermark_product_photos_faq_a1:
-    'Tidak. Pembacaan dan cap Canvas terjadi di tab ini. File tetap di perangkat, tidak diunggah ke server. Pembantu ZIP bisa dimuat dari CDN; foto Anda tetap di tab.',
+    'Tidak. Pembacaan dan cap Canvas terjadi di tab ini. File tetap di perangkat, tidak diunggah ke server. Pembantu ZIP bisa dimuat dari situs ini; foto Anda tetap di tab.',
   tool_batch_watermark_product_photos_faq_a2:
     'Tidak. Ukuran adalah persen sisi pendek dan sembilan jangkar adalah pecahan kanvas itu. Potret dan lanskap tetap di sudut relatif yang sama.',
   tool_batch_watermark_product_photos_faq_a3:
@@ -1616,7 +1615,7 @@ const id: SiteLangDict = {
     'Muat contoh menaruh dua PNG papan catur transparan, menulis ulang sebagai PNG, mengisi tabel, dan mengaktifkan Unduh ZIP. Nama ganda menjadi name (2).png.',
   tool_bulk_compress_png_images_example_title: 'Contoh',
   tool_bulk_compress_png_images_faq_a1:
-    'Tidak. Pembacaan dan penulisan PNG berjalan di tab ini. File tetap di perangkat, tanpa unggah ke server. Pembantu ZIP bisa dimuat dari CDN; gambar Anda tetap tidak meninggalkan tab.',
+    'Tidak. Pembacaan dan penulisan PNG berjalan di tab ini. File tetap di perangkat, tanpa unggah ke server. Pembantu ZIP bisa dimuat dari situs ini; gambar Anda tetap tidak meninggalkan tab.',
   tool_bulk_compress_png_images_faq_a2:
     'Tidak. Keluaran selalu PNG. Tidak ada alas JPEG. Jika foto produk boleh JPEG dan harus lebih kecil, pakai Kompres foto produk massal.',
   tool_bulk_compress_png_images_faq_a3: 'Ya. Piksel digambar tanpa latar padat lalu disimpan PNG, jadi lubang tetap lubang.',
@@ -1699,7 +1698,7 @@ const id: SiteLangDict = {
     'Muat contoh menaruh dua foto, mengompres JPEG 200 KB, mengisi tabel, dan mengaktifkan Unduh ZIP. Nama ganda menjadi name (2).jpg.',
   tool_bulk_compress_product_photos_example_title: 'Contoh',
   tool_bulk_compress_product_photos_faq_a1:
-    'Tidak. Decode dan encode di tab ini. File tetap di perangkat, tanpa unggah ke server. Skrip ZIP boleh dari CDN; foto Anda tidak dikirim.',
+    'Tidak. Decode dan encode di tab ini. File tetap di perangkat, tanpa unggah ke server. Skrip ZIP boleh dari situs ini; foto Anda tidak dikirim.',
   tool_bulk_compress_product_photos_faq_a2:
     'Tidak selalu. Jika mutu 0.5 masih di atas batas, baris ditandai gagal tetapi file terdekat tetap masuk ZIP.',
   tool_bulk_compress_product_photos_faq_a3: 'Tidak perlu halaman lain. JPEG dan JPG hasilnya sama, ekstensi .jpg.',
@@ -1799,7 +1798,7 @@ const id: SiteLangDict = {
     'Muat contoh menaruh blok buram dan logo transparan, mengecat keduanya di putih, menulis dua nama .jpg, dan mengaktifkan Unduh ZIP.',
   tool_bulk_convert_images_to_jpg_example_title: 'Contoh',
   tool_bulk_convert_images_to_jpg_faq_a1:
-    'Tidak. Membaca dan menulis .jpg terjadi di tab ini. Tetap di perangkat, tanpa unggah ke server. Pembantu ZIP bisa dimuat dari CDN; gambar Anda tidak keluar dari tab.',
+    'Tidak. Membaca dan menulis .jpg terjadi di tab ini. Tetap di perangkat, tanpa unggah ke server. Pembantu ZIP bisa dimuat dari situs ini; gambar Anda tidak keluar dari tab.',
   tool_bulk_convert_images_to_jpg_faq_a2: 'Ya. PNG ke JPG di sini: pilih berkas, biarkan latar putih agar lubang tidak jadi hitam, ubah semua.',
   tool_bulk_convert_images_to_jpg_faq_a3:
     'Kalau browser tidak membaca HEIC, baris itu dilewati dan sisanya masuk ZIP. Coba Safari atau ubah dulu di HP.',
@@ -1872,7 +1871,7 @@ const id: SiteLangDict = {
     'Muat contoh menaruh blok JPEG dan logo transparan, menulis dua .png, dan mengaktifkan Unduh ZIP. Baris JPEG sering menunjukkan PNG yang lebih besar.',
   tool_bulk_convert_images_to_png_example_title: 'Contoh',
   tool_bulk_convert_images_to_png_faq_a1:
-    'Tidak. Pembacaan dan penulisan PNG terjadi di tab ini. File tetap di perangkat, tidak diunggah ke server. Pembantu ZIP bisa dimuat dari CDN; gambar Anda tetap di tab.',
+    'Tidak. Pembacaan dan penulisan PNG terjadi di tab ini. File tetap di perangkat, tidak diunggah ke server. Pembantu ZIP bisa dimuat dari situs ini; gambar Anda tetap di tab.',
   tool_bulk_convert_images_to_png_faq_a2:
     'Tidak. JPEG tidak pernah menyimpan lubang. jpg ke png hanya membungkus PNG; latar tetap buram. Lubang sungguhan hanya bertahan jika sumber sudah punya alfa.',
   tool_bulk_convert_images_to_png_faq_a3:
@@ -1946,7 +1945,7 @@ const id: SiteLangDict = {
     'Muat contoh menaruh blok buram dan logo transparan, menulis dua .webp, dan mengaktifkan Unduh ZIP. Lubang logo tetap ada.',
   tool_bulk_convert_images_to_webp_example_title: 'Contoh',
   tool_bulk_convert_images_to_webp_faq_a1:
-    'Tidak. Pembacaan dan penulisan WebP terjadi di tab ini. File tetap di perangkat, tidak diunggah ke server. Pembantu ZIP bisa dimuat dari CDN; gambar Anda tetap di tab.',
+    'Tidak. Pembacaan dan penulisan WebP terjadi di tab ini. File tetap di perangkat, tidak diunggah ke server. Pembantu ZIP bisa dimuat dari situs ini; gambar Anda tetap di tab.',
   tool_bulk_convert_images_to_webp_faq_a2:
     'Ya. png ke webp adalah halaman ini: pilih berkas, biarkan kualitas dekat 0.8, ubah semua. Lubang tetap jika PNG punya alfa.',
   tool_bulk_convert_images_to_webp_faq_a3:
@@ -2128,8 +2127,7 @@ const id: SiteLangDict = {
   tool_check_pdf_a_compliance_example: 'Muat contoh: PDF/A check sample.',
   tool_check_pdf_a_compliance_example_title: 'Contoh',
   tool_check_pdf_a_compliance_fail: 'Tidak ditemukan',
-  tool_check_pdf_a_compliance_faq_a1:
-    'Tidak. Render berjalan di tab Anda (pustaka mungkin dari CDN). PDF Anda tidak diunggah ke server kami.',
+  tool_check_pdf_a_compliance_faq_a1: 'Tidak. Render berjalan di tab Anda (pustaka dari situs ini). PDF Anda tidak diunggah ke server kami.',
   tool_check_pdf_a_compliance_faq_a2: 'Tidak. Halaman hanya mencari lima penanda dalam byte; gunakan veraPDF untuk validasi profil.',
   tool_check_pdf_a_compliance_faq_a3: 'Encrypted or damaged files show a clear error instead of failing silently.',
   tool_check_pdf_a_compliance_faq_a4: 'Related PDF tools are listed at the bottom of the page.',
@@ -2580,8 +2578,7 @@ const id: SiteLangDict = {
   tool_combine_files_into_one_pdf_err_pdfjs: 'PDF renderer failed to load.',
   tool_combine_files_into_one_pdf_example: 'Muat contoh: Combine sample.',
   tool_combine_files_into_one_pdf_example_title: 'Contoh',
-  tool_combine_files_into_one_pdf_faq_a1:
-    'Tidak. Render berjalan di tab Anda (pustaka mungkin dari CDN). PDF Anda tidak diunggah ke server kami.',
+  tool_combine_files_into_one_pdf_faq_a1: 'Tidak. Render berjalan di tab Anda (pustaka dari situs ini). PDF Anda tidak diunggah ke server kami.',
   tool_combine_files_into_one_pdf_faq_a2: 'Tidak. Operasi ini tidak bergantung pada ekstraksi lapisan teks PDF.',
   tool_combine_files_into_one_pdf_faq_a3: 'Encrypted or damaged files show a clear error instead of failing silently.',
   tool_combine_files_into_one_pdf_faq_a4: 'Related PDF tools are listed at the bottom of the page.',
@@ -2633,8 +2630,7 @@ const id: SiteLangDict = {
   tool_compare_two_pdfs_err_pdfjs: 'PDF renderer failed to load.',
   tool_compare_two_pdfs_example: 'Muat contoh: Version A text.',
   tool_compare_two_pdfs_example_title: 'Contoh',
-  tool_compare_two_pdfs_faq_a1:
-    'Tidak. Render berjalan di tab Anda (pustaka mungkin dari CDN). PDF Anda tidak diunggah ke server kami.',
+  tool_compare_two_pdfs_faq_a1: 'Tidak. Render berjalan di tab Anda (pustaka dari situs ini). PDF Anda tidak diunggah ke server kami.',
   tool_compare_two_pdfs_faq_a2: 'Scanned PDFs are images without a text layer; this tool does not OCR.',
   tool_compare_two_pdfs_faq_a3: 'Encrypted or damaged files show a clear error instead of failing silently.',
   tool_compare_two_pdfs_faq_a4: 'Related PDF tools are listed at the bottom of the page.',
@@ -2684,7 +2680,7 @@ const id: SiteLangDict = {
     'Muat contoh membandingkan notes-a.txt (alpha / baris kedua / ketiga) dengan notes-b.txt yang tengahnya «baris diubah». Mode baris hanya menandai baris itu. Hasil ini sudah tampil sejak gambar pertama.',
   tool_compare_two_text_files_online_example_title: 'Contoh',
   tool_compare_two_text_files_online_faq_a1:
-    'Tidak. FileReader membaca byte di tab ini. jsdiff mungkin dimuat dari CDN sebagai pustaka; file Anda tidak dikirim ke server kami.',
+    'Tidak. FileReader membaca byte di tab ini. jsdiff mungkin dimuat dari situs ini sebagai pustaka; file Anda tidak dikirim ke server kami.',
   tool_compare_two_text_files_online_faq_a2:
     'File didekode sebagai UTF-8 ketat dan BOM awal dibuang. UTF-8 yang tidak valid ditolak, bukan ditampilkan sebagai karakter pengganti; konversikan encoding lama seperti Windows-1252 terlebih dahulu.',
   tool_compare_two_text_files_online_faq_a3:
@@ -2744,7 +2740,7 @@ const id: SiteLangDict = {
     'Muat contoh membuat dua .docx kecil. Memo kedua mengubah “meet at noon” menjadi “meet at 3pm”. Tampilan pertama sudah menunjukkan beda bunyi itu.',
   tool_compare_two_word_documents_for_differences_example_title: 'Contoh',
   tool_compare_two_word_documents_for_differences_faq_a1:
-    'Tidak. Berkas dibaca di tab ini. mammoth dan jsdiff bisa datang sebagai pustaka dari CDN; dokumen Anda tidak diunggah ke server kami.',
+    'Tidak. Berkas dibaca di tab ini. mammoth dan jsdiff bisa datang sebagai pustaka dari situs ini; dokumen Anda tidak diunggah ke server kami.',
   tool_compare_two_word_documents_for_differences_faq_a2:
     'Tidak. Word bisa membandingkan format dan revisi terlacak. Halaman ini hanya menarik teks terlihat lalu mem-diff bunyinya. Header, footer, dan gaya dibuang.',
   tool_compare_two_word_documents_for_differences_faq_a3:
@@ -2870,7 +2866,7 @@ const id: SiteLangDict = {
     'Sampel memuat PDF dua halaman dengan blok warna dan JPEG tertanam, menjalankan kompresi Sedang, menampilkan ukuran sebelum/sesudah dengan persen hemat, dan mengaktifkan unduh compressed.pdf.',
   tool_compress_pdf_example_title: 'Perkecil ukuran file PDF',
   tool_compress_pdf_faq_a1:
-    'Tidak. pdf.js dan pustaka PDF berjalan di tab Anda (pustaka mungkin dimuat dari CDN). PDF tidak diunggah ke server kami.',
+    'Tidak. pdf.js dan pustaka PDF berjalan di tab Anda (pustaka mungkin dimuat dari situs ini). PDF tidak diunggah ke server kami.',
   tool_compress_pdf_faq_a2:
     'Alat ini meraster setiap halaman ke JPEG lalu membangun ulang PDF. PDF berisi teks atau sudah optimal mungkin hampir tidak mengecil. Bukan re-kompresi cloud untuk aliran tertanam.',
   tool_compress_pdf_faq_a3:
@@ -3068,58 +3064,75 @@ const id: SiteLangDict = {
   tool_contribution_margin_usecases_title: 'Kapan dipakai',
   tool_contribution_margin_vc_label: 'Biaya variabel per unit',
   tool_contribution_margin_vc_ph: 'mis. 30',
-  tool_convert_html_to_pdf_article: 'Konversi HTML ke PDF. Berkas tetap di perangkat; tanpa unggah ke server.',
+  tool_convert_html_to_pdf_article: 'Tempel HTML atau muat URL halaman, buang skrip, lalu ekspor PDF A4.',
   tool_convert_html_to_pdf_choose_file: 'Pilih PDF',
   tool_convert_html_to_pdf_choose_files: 'Pilih berkas',
   tool_convert_html_to_pdf_clear: 'Hapus',
-  tool_convert_html_to_pdf_convert: 'Convert',
-  tool_convert_html_to_pdf_desc: 'Konversi HTML ke PDF — Berkas tetap di perangkat; tanpa unggah ke server.',
+  tool_convert_html_to_pdf_convert: 'Konversi',
+  tool_convert_html_to_pdf_desc: 'Tempel HTML atau muat URL, lalu ekspor PDF A4 di tab ini.',
   tool_convert_html_to_pdf_description:
-    'Konversi HTML ke PDF. Berkas tetap di perangkat; tanpa unggah ke server. Contoh memperlihatkan masukan dan keluaran nyata; langkah serta batas dijelaskan di halaman.',
+    'Ubah HTML jadi PDF: tempel cuplikan atau muat alamat halaman, buang skrip dan atribut berbahaya, cek pratinjau, unduh A4. Memuat URL membuat server mengambil HTML sekali dan tidak menyimpannya; konversi tetap di tab. Situs yang banyak JavaScript, CSS cetak, dan gambar lintas domain bisa berbeda dari halaman asli.',
   tool_convert_html_to_pdf_download: 'Unduh',
-  tool_convert_html_to_pdf_drop_hint: 'Atau jatuhkan di sini. Pemrosesan di tab ini.',
-  tool_convert_html_to_pdf_empty: 'Choose a file first.',
-  tool_convert_html_to_pdf_err_convert: 'Processing failed. Retry.',
-  tool_convert_html_to_pdf_err_encrypted: 'This PDF looks password-protected. Unlock it first.',
-  tool_convert_html_to_pdf_err_load: 'Could not read the file.',
-  tool_convert_html_to_pdf_err_notext: 'No selectable text found (no OCR).',
-  tool_convert_html_to_pdf_err_pdfjs: 'PDF renderer failed to load.',
+  tool_convert_html_to_pdf_drop_hint: 'HTML juga bisa ditempel di sini. Konversi tetap di tab ini.',
+  tool_convert_html_to_pdf_empty: 'Tempel HTML dulu atau muat URL.',
+  tool_convert_html_to_pdf_err_convert: 'Pemrosesan gagal. Coba lagi.',
+  tool_convert_html_to_pdf_err_encrypted: 'PDF ini tampaknya berpassword. Buka kuncinya dulu.',
+  tool_convert_html_to_pdf_err_load: 'Tidak bisa membaca sumber HTML.',
+  tool_convert_html_to_pdf_err_notext: 'Tidak ada teks yang bisa dipilih (tanpa OCR).',
+  tool_convert_html_to_pdf_err_paste: 'Clipboard tidak bisa dibaca. Izinkan tempel, atau tempel HTML ke kotak sendiri.',
+  tool_convert_html_to_pdf_err_pdfjs: 'Perender PDF gagal dimuat.',
+  tool_convert_html_to_pdf_err_url: 'URL itu tidak bisa dimuat. Periksa alamatnya, atau situsnya menolak pengambilan.',
+  tool_convert_html_to_pdf_err_url_empty: 'Isi URL halaman dulu.',
   tool_convert_html_to_pdf_example: 'Muat contoh: <h1>Hello HTML</h1><p>Sample paragraph f',
   tool_convert_html_to_pdf_example_title: 'Contoh',
   tool_convert_html_to_pdf_faq_a1:
-    'Tidak. Render berjalan di tab Anda (pustaka mungkin dari CDN). PDF Anda tidak diunggah ke server kami.',
-  tool_convert_html_to_pdf_faq_a2: 'Tidak. Operasi ini tidak bergantung pada ekstraksi lapisan teks PDF.',
-  tool_convert_html_to_pdf_faq_a3: 'Encrypted or damaged files show a clear error instead of failing silently.',
-  tool_convert_html_to_pdf_faq_a4: 'Related PDF tools are listed at the bottom of the page.',
-  tool_convert_html_to_pdf_faq_a5: 'Large files may be slow; try a desktop browser first.',
+    'HTML yang ditempel tetap di tab ini (pustaka dari situs ini). Jika Anda memuat URL, alamat dikirim ke server sekali agar HTML diambil; halaman tidak disimpan. PDF dibuat di peramban.',
+  tool_convert_html_to_pdf_faq_a2: 'Tidak. Operasi ini tidak mengekstrak lapisan teks PDF.',
+  tool_convert_html_to_pdf_faq_a3: 'Berkas terenkripsi atau rusak menampilkan error yang jelas, bukan gagal diam-diam.',
+  tool_convert_html_to_pdf_faq_a4: 'Alat PDF terkait ada di bagian bawah halaman.',
+  tool_convert_html_to_pdf_faq_a5: 'Masukan besar bisa lambat; coba dulu di peramban desktop.',
+  tool_convert_html_to_pdf_faq_a6: 'Ya. Masukkan alamat lalu klik Muat URL. CSS dan gambar jadi URL absolut. Skrip dibuang sebelum PDF.',
   tool_convert_html_to_pdf_faq_q1: 'Apakah berkas saya diunggah?',
   tool_convert_html_to_pdf_faq_q2: 'Apakah perlu OCR atau teks PDF yang dapat dipilih?',
-  tool_convert_html_to_pdf_faq_q3: 'What about encrypted files?',
-  tool_convert_html_to_pdf_faq_q4: 'How is this different from related tools?',
-  tool_convert_html_to_pdf_faq_q5: 'Are large files supported?',
-  tool_convert_html_to_pdf_how_body: 'Cara kerja: Berkas tetap di perangkat; tanpa unggah ke server.',
-  tool_convert_html_to_pdf_how_item_1: 'Choose a PDF or enter content',
-  tool_convert_html_to_pdf_how_item_2: 'Klik “Convert” untuk menjalankan proses',
-  tool_convert_html_to_pdf_how_item_3: 'Review the output area',
-  tool_convert_html_to_pdf_how_item_4: 'Download or print when needed',
+  tool_convert_html_to_pdf_faq_q3: 'Bagaimana dengan berkas terenkripsi?',
+  tool_convert_html_to_pdf_faq_q4: 'Apa bedanya dengan alat terkait?',
+  tool_convert_html_to_pdf_faq_q5: 'Apakah berkas besar didukung?',
+  tool_convert_html_to_pdf_faq_q6: 'Bisakah mengubah halaman web menjadi PDF dari URL-nya?',
+  tool_convert_html_to_pdf_how_body:
+    'Tempel HTML atau muat URL, konversi, cek pratinjau, unduh. Tempelan tetap di perangkat; pengambilan URL lewat server sekali.',
+  tool_convert_html_to_pdf_how_item_1: 'Tempel HTML, atau isi URL lalu klik Muat URL',
+  tool_convert_html_to_pdf_how_item_2: 'Klik Konversi untuk mengekspor PDF A4',
+  tool_convert_html_to_pdf_how_item_3: 'Tinjau area hasil',
+  tool_convert_html_to_pdf_how_item_4: 'Unduh atau cetak jika perlu',
   tool_convert_html_to_pdf_how_title: 'Cara kerja',
-  tool_convert_html_to_pdf_html_label: 'HTML source',
-  tool_convert_html_to_pdf_preview_label: 'Preview',
-  tool_convert_html_to_pdf_rules_body: 'Berkas tetap di perangkat; tanpa unggah ke server.',
-  tool_convert_html_to_pdf_rules_item_1: 'Konversi HTML ke PDF.',
-  tool_convert_html_to_pdf_rules_item_2: 'Client-side only; files are not uploaded.',
-  tool_convert_html_to_pdf_rules_item_3: 'No OCR for scanned image-only PDFs.',
-  tool_convert_html_to_pdf_rules_item_4: 'Encrypted or corrupt files fail with readable errors.',
+  tool_convert_html_to_pdf_html_label: 'Sumber HTML',
+  tool_convert_html_to_pdf_html_paste: 'Tempel HTML',
+  tool_convert_html_to_pdf_preview_label: 'Pratinjau',
+  tool_convert_html_to_pdf_rules_body:
+    'HTML yang ditempel tetap di perangkat. Memuat URL membuat server mengambil HTML sekali, tanpa menyimpannya.',
+  tool_convert_html_to_pdf_rules_item_1: 'Tempel HTML atau muat URL publik, lalu ekspor PDF.',
+  tool_convert_html_to_pdf_rules_item_2: 'Tempelan tetap di tab ini. Memuat URL mengirim alamat ke server sekali.',
+  tool_convert_html_to_pdf_rules_item_3: 'Tidak ada OCR untuk PDF hasil pindaian gambar saja.',
+  tool_convert_html_to_pdf_rules_item_4: 'Berkas terenkripsi atau rusak gagal dengan pesan yang bisa dibaca.',
   tool_convert_html_to_pdf_rules_title: 'Aturan dan batas',
   tool_convert_html_to_pdf_sample: 'Muat contoh',
-  tool_convert_html_to_pdf_status_done: 'Done.',
-  tool_convert_html_to_pdf_status_working: 'Working…',
+  tool_convert_html_to_pdf_status_done: 'Selesai.',
+  tool_convert_html_to_pdf_status_fetching: 'Mengambil HTML halaman…',
+  tool_convert_html_to_pdf_status_waiting: 'Menunggu gambar selesai dimuat…',
+  tool_convert_html_to_pdf_status_working: 'Memproses…',
   tool_convert_html_to_pdf_title: 'Konversi HTML ke PDF',
-  tool_convert_html_to_pdf_usecase_1: 'Office: quick PDF tasks without desktop software',
-  tool_convert_html_to_pdf_usecase_2: 'Students: local preview and export',
-  tool_convert_html_to_pdf_usecase_3: 'Privacy-sensitive files that must stay on device',
+  tool_convert_html_to_pdf_url_hint: 'Kami mengambil HTML sekali dan mengubah CSS/gambar jadi URL absolut. Skrip dibuang.',
+  tool_convert_html_to_pdf_url_label: 'URL halaman',
+  tool_convert_html_to_pdf_url_load: 'Muat URL',
+  tool_convert_html_to_pdf_url_placeholder: 'https://example.com',
+  tool_convert_html_to_pdf_usecase_1: 'Simpan halaman publik jadi PDF tanpa driver printer',
+  tool_convert_html_to_pdf_usecase_2: 'Tempel HTML email atau kampanye lalu ekspor',
+  tool_convert_html_to_pdf_usecase_3: 'Biarkan sumber di tab dan ambil URL hanya jika perlu',
   tool_convert_html_to_pdf_usecases_title: 'Cocok untuk',
-  tool_convert_html_to_pdf_warn_large: 'Large file — may be slow.',
+  tool_convert_html_to_pdf_wait_hint:
+    'Detik tambahan setelah gambar mulai dimuat. Nilai awal 3. Naikkan jika PDF masih punya kotak gambar kosong.',
+  tool_convert_html_to_pdf_wait_label: 'Tunggu muat (dtk)',
+  tool_convert_html_to_pdf_warn_large: 'Berkas besar mungkin lambat.',
   tool_convert_pdf_to_dwg_article:
     'Konversi PDF ke arah DWG dengan mengekspor DXF ASCII: entitas TEXT dan bingkai halaman yang bisa dibuka AutoCAD. Peramban tidak bisa menulis DWG proprietary. Berkas tetap di perangkat; tanpa unggah ke server.',
   tool_convert_pdf_to_dwg_choose_file: 'Pilih PDF',
@@ -3255,7 +3268,7 @@ const id: SiteLangDict = {
   tool_convert_word_document_to_pdf_example:
     'Muat sampel membuat .docx satu paragraf, menampilkan pratinjau HTML, lalu mengekspor PDF satu halaman.',
   tool_convert_word_document_to_pdf_example_title: 'Contoh',
-  tool_convert_word_document_to_pdf_faq_a1: 'Tidak. Konversi berjalan di tab Anda (pustaka bisa dari CDN). Berkas tidak dikirim ke server kami.',
+  tool_convert_word_document_to_pdf_faq_a1: 'Tidak. Konversi berjalan di tab Anda (pustaka dari situs ini). Berkas tidak dikirim ke server kami.',
   tool_convert_word_document_to_pdf_faq_a2:
     'Alurnya .docx → HTML → PDF. Kop dan objek mengambang merata. Jika sudah punya HTML, gunakan Ubah HTML menjadi PDF.',
   tool_convert_word_document_to_pdf_faq_a3: 'Tidak. Simpan dulu sebagai .docx. Halaman ini hanya menerima paket Office Open XML.',
@@ -3511,7 +3524,8 @@ const id: SiteLangDict = {
   tool_create_pdf_form_example:
     'Muat contoh membuat halaman kosong berisi Name dan Email, menampilkan keduanya, menampilkan pratinjau, dan mengaktifkan pdf-form.pdf.',
   tool_create_pdf_form_example_title: 'Contoh',
-  tool_create_pdf_form_faq_a1: 'Tidak. Halaman dan kolom dirakit di tab ini. Skrip CDN boleh dimuat; formulir tidak ke server kami.',
+  tool_create_pdf_form_faq_a1:
+    'Tidak. Halaman dan kolom dirakit di tab ini. Skrip situs ini boleh dimuat; formulir tidak ke server kami.',
   tool_create_pdf_form_faq_a2:
     'Pakai Jadikan PDF bisa diisi untuk menempel kolom pada berkas yang sudah ada. Halaman ini mulai kosong.',
   tool_create_pdf_form_faq_a3: 'Pilih centang pada jenis, beri nama, lalu Tambah kolom. Kotak memakai X/Y dan ukuran yang Anda atur.',
@@ -3569,7 +3583,7 @@ const id: SiteLangDict = {
     'Muat contoh menaruh notes.txt, photo.png kecil, dan docs/readme.md, lalu membuat sample.zip. Unduh ZIP siap di layar pertama.',
   tool_create_zip_file_example_title: 'Contoh',
   tool_create_zip_file_faq_a1:
-    'Tidak. Byte dibaca di tab ini. Skrip mesin ZIP mungkin dari CDN, tetapi file Anda tidak diunggah ke server kami.',
+    'Tidak. Byte dibaca di tab ini. Skrip mesin ZIP mungkin dari situs ini, tetapi file Anda tidak diunggah ke server kami.',
   tool_create_zip_file_faq_a2:
     'Jika peramban memberi webkitRelativePath (folder dijatuhkan atau pemilih direktori), path itu menjadi entri ZIP setelah ../ dibuang. Itulah tugas zip folder di halaman ini.',
   tool_create_zip_file_faq_a3: 'Halaman ini tidak membuat atau membobol ZIP AES di layar pertama. Zip berpassword hanya batas FAQ.',
@@ -3633,7 +3647,7 @@ const id: SiteLangDict = {
     'Sampel membuat PDF satu halaman, memotong 36 pt di semua sisi, dan mengaktifkan cropped.pdf dengan statistik ukuran.',
   tool_crop_pdf_example_title: 'Contoh',
   tool_crop_pdf_faq_a1:
-    'Tidak. pustaka PDF berjalan di tab Anda (skrip mungkin dimuat dari CDN). PDF tidak diunggah ke server kami.',
+    'Tidak. pustaka PDF berjalan di tab Anda (skrip mungkin dimuat dari situs ini). PDF tidak diunggah ke server kami.',
   tool_crop_pdf_faq_a2: 'Alat ini mengetatkan kotak PDF dengan margin poin—bukan menyeret kotak di pratinjau seperti gambar.',
   tool_crop_pdf_faq_a3: 'Benar. Hanya input poin; tanpa kotak bebas atau edit piksel—gunakan alat gambar jika perlu.',
   tool_crop_pdf_faq_a4: 'PDF bersandi biasanya tidak terbuka di sini. Hapus sandi dengan alat tepercaya lalu potong.',
@@ -3705,7 +3719,7 @@ const id: SiteLangDict = {
   tool_csv_json_faq_a4:
     'Objek diratakan menjadi kolom jalur titik (dim.w, dim.h). Array ditulis sebagai string JSON dalam satu sel. Kolom adalah gabungan kunci semua record, dan record tanpa kunci itu dibiarkan kosong.',
   tool_csv_json_faq_a5:
-    'Tidak. Penguraian tetap di tab ini dan file yang dipilih dibaca secara lokal. CDN mungkin menyediakan Papa Parse; permintaan itu hanya mengunduh kode, bukan mengunggah CSV atau JSON Anda.',
+    'Tidak. Penguraian tetap di tab ini dan file yang dipilih dibaca secara lokal. situs ini menyediakan Papa Parse; permintaan itu hanya mengunduh kode, bukan mengunggah CSV atau JSON Anda.',
   tool_csv_json_faq_q1: 'Apakah angka, nol di depan, dan ID tetap utuh?',
   tool_csv_json_faq_q2: 'Bisakah menangani titik koma atau tab, bukan hanya koma?',
   tool_csv_json_faq_q3: 'Bagaimana kolom berisi koma, tanda kutip, atau baris baru ditangani?',
@@ -3738,7 +3752,7 @@ const id: SiteLangDict = {
   tool_csv_json_rules_item_3:
     'JSON → CSV: objek diratakan dengan jalur titik (dim.w, dim.h); array ditulis sebagai string JSON dalam satu sel; kolom adalah gabungan semua kunci, yang kosong dibiarkan kosong.',
   tool_csv_json_rules_item_4:
-    'Privasi: teks dan file Anda tidak diunggah. Mengambil Papa Parse dari CDN hanya mengunduh kode pustaka, bukan data Anda.',
+    'Privasi: teks dan file Anda tidak diunggah. Mengambil Papa Parse dari situs ini hanya mengunduh kode pustaka, bukan data Anda.',
   tool_csv_json_rules_title: 'Aturan yang perlu diketahui',
   tool_csv_json_sample: 'Muat contoh',
   tool_csv_json_sample_csv: 'sku,title,price\nA-001,"Chair, oak",129.9\nA-002,Desk,89',
@@ -4145,7 +4159,8 @@ const id: SiteLangDict = {
   tool_edit_pdf_form_fields_example:
     'Muat contoh membuat PDF berisi Name dan Email, menampilkan dua baris, pratinjau, dan memungkinkan ganti nama atau hapus sebelum unduh.',
   tool_edit_pdf_form_fields_example_title: 'Contoh',
-  tool_edit_pdf_form_fields_faq_a1: 'Tidak. Daftar dan edit berjalan di tab ini. Pustaka CDN boleh dimuat; PDF tidak ke server kami.',
+  tool_edit_pdf_form_fields_faq_a1:
+    'Tidak. Daftar dan edit berjalan di tab ini. Pustaka situs ini boleh dimuat; PDF tidak ke server kami.',
   tool_edit_pdf_form_fields_faq_a2:
     'Ganti nama menulis nama internal baru. Hapus menghilangkan widget. Nilai yang sudah diketik bisa hilang saat dihapus.',
   tool_edit_pdf_form_fields_faq_a3: 'PDF tanpa kolom menampilkan error yang menaut ke Jadikan PDF bisa diisi.',
@@ -4203,7 +4218,7 @@ const id: SiteLangDict = {
     'Muat contoh membuat PDF satu halaman bertuliskan "Hello edit PDF text sample.", mengisi editor, lalu Terapkan menghasilkan PDF yang bisa diunduh.',
   tool_edit_pdf_text_online_example_title: 'Contoh',
   tool_edit_pdf_text_online_faq_a1:
-    'Tidak. Pustaka bisa dimuat dari CDN, tetapi PDF Anda tetap di tab ini dan tidak diunggah ke server kami.',
+    'Tidak. Pustaka bisa dimuat dari situs ini, tetapi PDF Anda tetap di tab ini dan tidak diunggah ke server kami.',
   tool_edit_pdf_text_online_faq_a2:
     'Tidak. Ini bukan sunting glif di tempat. Teks diambil, Anda ubah, lalu halaman digambar ulang secara sederhana. Font dan kolom persis tidak dipertahankan.',
   tool_edit_pdf_text_online_faq_a3: 'PDF pindaian adalah gambar tanpa lapisan teks. Alat ini tidak OCR dan gagal dengan pesan jelas.',
@@ -4335,7 +4350,7 @@ const id: SiteLangDict = {
     'Muat contoh membandingkan dua tabel CSV. Header Name/Qty cocok; jumlah Gadget 2 vs 9, jadi B3 terdaftar. Tampilan pertama sudah menunjukkan sel itu.',
   tool_excel_compare_files_example_title: 'Contoh',
   tool_excel_compare_files_faq_a1:
-    'Tidak. Byte dibaca di tab ini dengan SheetJS. Pustaka bisa datang dari CDN; berkas Anda tidak diunggah ke server kami.',
+    'Tidak. Byte dibaca di tab ini dengan SheetJS. Pustaka bisa datang dari situs ini; berkas Anda tidak diunggah ke server kami.',
   tool_excel_compare_files_faq_a2:
     'Ya: lembar pertama dipilih secara default. Gunakan daftar lembar jika butuh tab lain di berkas yang sama. Lembar lain tidak dibandingkan sampai Anda memilihnya.',
   tool_excel_compare_files_faq_a3:
@@ -4507,8 +4522,7 @@ const id: SiteLangDict = {
   tool_extract_text_from_pdf_example: 'Muat contoh: Hello extract text sample.',
   tool_extract_text_from_pdf_example_title: 'Contoh',
   tool_extract_text_from_pdf_extract: 'Extract',
-  tool_extract_text_from_pdf_faq_a1:
-    'Tidak. Render berjalan di tab Anda (pustaka mungkin dari CDN). PDF Anda tidak diunggah ke server kami.',
+  tool_extract_text_from_pdf_faq_a1: 'Tidak. Render berjalan di tab Anda (pustaka dari situs ini). PDF Anda tidak diunggah ke server kami.',
   tool_extract_text_from_pdf_faq_a2: 'Scanned PDFs are images without a text layer; this tool does not OCR.',
   tool_extract_text_from_pdf_faq_a3: 'Encrypted or damaged files show a clear error instead of failing silently.',
   tool_extract_text_from_pdf_faq_a4:
@@ -4550,19 +4564,20 @@ const id: SiteLangDict = {
   tool_feedback_email_label: 'Email',
   tool_feedback_message_label: 'Pesan',
   tool_feedback_message_placeholder: 'Jelaskan masalah atau saran…',
+  tool_feedback_report_bug: 'Laporkan bug ke GitHub',
   tool_feedback_subject: 'Masukan alat',
   tool_feedback_subject_label: 'Subjek',
   tool_feedback_title: 'Pertanyaan atau masukan',
   tool_feedback_to_label: 'Kepada',
   tool_file_hash_algo_label: 'Algoritma',
   tool_file_hash_article:
-    'Hitung ringkasan hex MD5 dan SHA untuk teks tempel atau file lokal. Bandingkan checksum rilis, sidik jari config, atau verifikasi unduhan — hashing di browser kecuali fetch CDN sekali saat memilih MD5.',
+    'Hitung ringkasan hex MD5 dan SHA untuk teks tempel atau file lokal. Bandingkan checksum rilis, sidik jari config, atau verifikasi unduhan — hashing di browser kecuali unduh sekali dari situs ini saat memilih MD5.',
   tool_file_hash_clear: 'Hapus',
   tool_file_hash_copy: 'Salin semua',
   tool_file_hash_copy_done: 'Disalin',
   tool_file_hash_desc: 'Hash teks atau file secara lokal — ringkasan hex MD5, SHA-1, SHA-256, SHA-384, SHA-512.',
   tool_file_hash_description:
-    'Hitung hash teks tempel atau file lokal di browser Anda. Langkah: pilih Teks atau File, centang MD5/SHA, klik Hash, salin hex huruf kecil. Contoh: teks `hello` → SHA-256 `2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b0184`. File dibaca lokal; MD5 hanya memuat crypto-js dari CDN jika dipilih.',
+    'Hitung hash teks tempel atau file lokal di browser Anda. Langkah: pilih Teks atau File, centang MD5/SHA, klik Hash, salin hex huruf kecil. Contoh: teks `hello` → SHA-256 `2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b0184`. File dibaca lokal; MD5 hanya memuat crypto-js dari situs ini jika dipilih.',
   tool_file_hash_empty: 'Tempel teks atau pilih file dulu.',
   tool_file_hash_example:
     'Teks `hello` dengan SHA-256 → `2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b0184`. MD5 string sama → `5d41402abc4b2a76b9719d911017c592`. Teks pakai byte UTF-8; file pakai byte mentah.',
@@ -4574,7 +4589,7 @@ const id: SiteLangDict = {
   tool_file_hash_faq_a3:
     'Teks di-hash sebagai byte UTF-8. File di-hash sebagai aliran byte mentah. Huruf sama di `.txt` bisa beda dari tempel jika encoding atau line ending berbeda.',
   tool_file_hash_faq_a4:
-    'Tanpa upload. Teks dan file tetap di perangkat Anda. SHA-* memakai Web Crypto browser. Hanya MD5 yang lazy-load crypto-js dari jsDelivr — konten tidak dikirim ke CDN.',
+    'Tanpa upload. Teks dan file tetap di perangkat Anda. SHA-* memakai Web Crypto browser. Hanya MD5 yang lazy-load crypto-js dari situs ini — konten tidak dikirim ke pihak ketiga.',
   tool_file_hash_faq_a5:
     'Keluaran hex huruf kecil tanpa prefiks `0x`, satu baris per algoritma. Sesuai `md5sum` / `sha256sum` umum di Linux dan macOS.',
   tool_file_hash_faq_q1: 'Kapan pakai MD5 vs SHA-256?',
@@ -4591,7 +4606,7 @@ const id: SiteLangDict = {
   tool_file_hash_input_mode_label: 'Mode input',
   tool_file_hash_large_warn:
     'File di atas 100 MB. Hashing bisa lambat atau boros memori — pertimbangkan alat desktop untuk arsip sangat besar.',
-  tool_file_hash_md5_fail: 'Gagal memuat library MD5 dari CDN. Coba SHA-256 atau periksa jaringan.',
+  tool_file_hash_md5_fail: 'Gagal memuat library MD5 dari situs ini. Coba SHA-256 atau periksa jaringan.',
   tool_file_hash_no_algo: 'Pilih minimal satu algoritma.',
   tool_file_hash_output_label: 'Ringkasan hex',
   tool_file_hash_progress_label: 'Membaca file…',
@@ -4604,7 +4619,7 @@ const id: SiteLangDict = {
   tool_file_hash_rules_item_3:
     'Teks kosong atau file nol byte tetap menghasilkan digest input kosong standar per algoritma (hex valid).',
   tool_file_hash_rules_item_4:
-    'Privasi: tanpa upload. MD5 satu-satunya jalur yang fetch crypto-js dari CDN; SHA-* hanya Web Crypto bawaan.',
+    'Privasi: tanpa upload. MD5 satu-satunya jalur yang fetch crypto-js dari situs ini; SHA-* hanya Web Crypto bawaan.',
   tool_file_hash_rules_title: 'Aturan yang perlu diharapkan',
   tool_file_hash_sample: 'Muat contoh',
   tool_file_hash_sample_text: 'hello',
@@ -4694,7 +4709,7 @@ const id: SiteLangDict = {
     'Muat contoh membuat PDF berisi Name dan Email, mengisi Ada Lovelace / ada@example.com, menampilkan pratinjau, dan mengaktifkan unduhan.',
   tool_fill_out_pdf_form_example_title: 'Contoh',
   tool_fill_out_pdf_form_faq_a1:
-    'Tidak. Pengisian berjalan di tab ini. Pustaka bisa dimuat dari CDN, tetapi PDF Anda tidak dikirim ke server kami.',
+    'Tidak. Pengisian berjalan di tab ini. Pustaka bisa dimuat dari situs ini, tetapi PDF Anda tidak dikirim ke server kami.',
   tool_fill_out_pdf_form_faq_a2: 'Biasanya pindaian atau PDF cetak saja. Tambah kolom di Jadikan PDF bisa diisi, lalu kembali.',
   tool_fill_out_pdf_form_faq_a3:
     'Ya. Kotak tampil sebagai centang; daftar dan radio tampil sebagai pilihan singkat jika PDF menyediakan opsi.',
@@ -6117,7 +6132,7 @@ const id: SiteLangDict = {
   tool_images_to_gif_err_encode: 'Could not export. Try a smaller image or another format.',
   tool_images_to_gif_example: 'Sample creates a three-frame looping GIF from color blocks.',
   tool_images_to_gif_example_title: 'Contoh',
-  tool_images_to_gif_faq_a1: 'No—encoding is local (library may load from CDN).',
+  tool_images_to_gif_faq_a1: 'No—encoding is local (library loads from this site).',
   tool_images_to_gif_faq_a2: 'Converter makes a still GIF from one image; this animates many frames.',
   tool_images_to_gif_faq_a3: 'GIF uses a limited palette—gradients may dither.',
   tool_images_to_gif_faq_a4: 'No audio in GIF.',
@@ -6170,7 +6185,7 @@ const id: SiteLangDict = {
   tool_images_to_pdf_err_encode: 'Could not export. Try a smaller image or another format.',
   tool_images_to_pdf_example: 'Sample builds a three-page PDF from three color blocks.',
   tool_images_to_pdf_example_title: 'Ubah JPG menjadi PDF',
-  tool_images_to_pdf_faq_a1: 'No—pdf-lib runs locally (library may load from CDN).',
+  tool_images_to_pdf_faq_a1: 'No—pdf-lib runs locally (library loads from this site).',
   tool_images_to_pdf_faq_a2: 'Merge makes one image; this makes multi-page PDF.',
   tool_images_to_pdf_faq_a3: 'Derived from orientation and fit rules on each image.',
   tool_images_to_pdf_faq_a4: 'Any PDF reader works.',
@@ -6243,7 +6258,7 @@ const id: SiteLangDict = {
   tool_images_to_ppt_rules_body: 'Each list item becomes one slide; images are centered with contain fit on 16:9.',
   tool_images_to_ppt_rules_item_1: 'Default layout is widescreen 16:9.',
   tool_images_to_ppt_rules_item_2: 'Order follows the list.',
-  tool_images_to_ppt_rules_item_3: 'CDN library load does not upload your files to us.',
+  tool_images_to_ppt_rules_item_3: 'Loading scripts from this site does not upload your files to us.',
   tool_images_to_ppt_rules_item_4: 'Huge images are scaled for slides.',
   tool_images_to_ppt_rules_title: 'Aturan',
   tool_images_to_ppt_sample: 'Muat contoh',
@@ -6291,7 +6306,7 @@ const id: SiteLangDict = {
   tool_images_to_word_rules_body: 'Images are embedded as PNG runs; a page break follows each image except the last.',
   tool_images_to_word_rules_item_1: 'Width targets ~550px in the document flow.',
   tool_images_to_word_rules_item_2: 'Order follows the list.',
-  tool_images_to_word_rules_item_3: 'Libraries may load from CDN; files are not uploaded to us.',
+  tool_images_to_word_rules_item_3: 'Library scripts load from this site; files are not uploaded to us.',
   tool_images_to_word_rules_item_4: 'Very large images are scaled down for embedding.',
   tool_images_to_word_rules_title: 'Aturan',
   tool_images_to_word_sample: 'Muat contoh',
@@ -7030,7 +7045,7 @@ const id: SiteLangDict = {
   tool_json_schema_validator_copy_errors: 'Salin error',
   tool_json_schema_validator_desc: 'Validasi JSON dengan Schema dan error JSON Pointer — draft-07 lokal.',
   tool_json_schema_validator_description:
-    'Validasi JSON terhadap JSON Schema (draft-07) di peramban. Langkah: tempel Schema dan instance, validasi, lalu baca setiap kegagalan lewat JSON Pointer. Contoh: objek produk tanpa price gagal dengan missingProperty. Teks tetap di tab; Ajv hanya memuat kode dari CDN.',
+    'Validasi JSON terhadap JSON Schema (draft-07) di peramban. Langkah: tempel Schema dan instance, validasi, lalu baca setiap kegagalan lewat JSON Pointer. Contoh: objek produk tanpa price gagal dengan missingProperty. Teks tetap di tab; Ajv hanya memuat kode dari situs ini.',
   tool_json_schema_validator_draft_note: 'Mesin: Ajv 8 · JSON Schema draft-07 (default).',
   tool_json_schema_validator_empty: 'Tempel Schema dan JSON instance terlebih dahulu.',
   tool_json_schema_validator_example:
@@ -7043,7 +7058,7 @@ const id: SiteLangDict = {
     'instancePath adalah JSON Pointer ke instance (kosong ditampilkan sebagai /). Jika required hilang, Ajv juga menyertakan missingProperty di params.',
   tool_json_schema_validator_faq_a3:
     'Halaman ini memakai dialek draft-07 Ajv. Draft 2019-09 / 2020-12 butuh build lain dan tidak dipilih di sini.',
-  tool_json_schema_validator_faq_a4: 'Schema dan JSON Anda tidak diunggah. CDN hanya mengunduh kode Ajv.',
+  tool_json_schema_validator_faq_a4: 'Schema dan JSON Anda tidak diunggah. situs ini hanya mengunduh kode Ajv.',
   tool_json_schema_validator_faq_a5:
     'Tempel Schema dan JSON model, validasi, lalu perbaiki tiap Pointer sampai lulus — berguna sebelum keluaran terstruktur diteruskan.',
   tool_json_schema_validator_faq_q1: 'Mengapa validasi gagal?',
@@ -7069,7 +7084,7 @@ const id: SiteLangDict = {
   tool_json_schema_validator_rules_item_2:
     'Validasi: allErrors mengumpulkan semua kegagalan. Setiap baris: instancePath + message (+ missingProperty bila relevan).',
   tool_json_schema_validator_rules_item_3: 'Draft: dialek draft-07. Jangan anggap keyword 2020-12 tersedia di sini.',
-  tool_json_schema_validator_rules_item_4: 'Privasi: tempelan tetap di tab. CDN hanya memuat kode Ajv.',
+  tool_json_schema_validator_rules_item_4: 'Privasi: tempelan tetap di tab. situs ini hanya memuat kode Ajv.',
   tool_json_schema_validator_rules_title: 'Aturan yang perlu diingat',
   tool_json_schema_validator_sample_fail: 'Contoh gagal',
   tool_json_schema_validator_sample_instance_fail: '{"sku":"A-1"}',
@@ -7401,7 +7416,7 @@ const id: SiteLangDict = {
   tool_make_pdf_fillable_example:
     'Muat contoh membuat halaman kosong, menambah FullName di 48,220 ukuran 220×22, menampilkan pratinjau, dan mengaktifkan unduhan.',
   tool_make_pdf_fillable_example_title: 'Contoh',
-  tool_make_pdf_fillable_faq_a1: 'Tidak. Penempatan di tab ini. Skrip CDN boleh dimuat; PDF tidak ke server kami.',
+  tool_make_pdf_fillable_faq_a1: 'Tidak. Penempatan di tab ini. Skrip situs ini boleh dimuat; PDF tidak ke server kami.',
   tool_make_pdf_fillable_faq_a2: 'Ya. Setelah kolom ada, pakai Isi formulir PDF.',
   tool_make_pdf_fillable_faq_a3: 'Pakai Tambah N kolom. Mereka menumpuk Field_1, Field_2… dengan jarak tetap.',
   tool_make_pdf_fillable_faq_a4:
@@ -7457,8 +7472,7 @@ const id: SiteLangDict = {
   tool_make_pdf_flipbook_err_pdfjs: 'PDF renderer failed to load.',
   tool_make_pdf_flipbook_example: 'Muat contoh: Flipbook page one.',
   tool_make_pdf_flipbook_example_title: 'Contoh',
-  tool_make_pdf_flipbook_faq_a1:
-    'Tidak. Render berjalan di tab Anda (pustaka mungkin dari CDN). PDF Anda tidak diunggah ke server kami.',
+  tool_make_pdf_flipbook_faq_a1: 'Tidak. Render berjalan di tab Anda (pustaka dari situs ini). PDF Anda tidak diunggah ke server kami.',
   tool_make_pdf_flipbook_faq_a2: 'Tidak. Operasi ini tidak bergantung pada ekstraksi lapisan teks PDF.',
   tool_make_pdf_flipbook_faq_a3: 'Encrypted or damaged files show a clear error instead of failing silently.',
   tool_make_pdf_flipbook_faq_a4: 'Related PDF tools are listed at the bottom of the page.',
@@ -7542,7 +7556,7 @@ const id: SiteLangDict = {
   tool_marginal_revenue_usecases_title: 'Kapan dipakai',
   tool_marginal_revenue_zero_dq: 'ΔQ = 0 — kuantitas harus berbeda antara dua titik.',
   tool_markdown_article:
-    'Satu halaman dua arah, dengan penjelasan apa yang dibersihkan dan apa yang hilang. Tempelan lokal; CDN hanya untuk pustaka.',
+    'Satu halaman dua arah, dengan penjelasan apa yang dibersihkan dan apa yang hilang. Tempelan lokal; situs ini hanya untuk pustaka.',
   tool_markdown_clear: 'Hapus',
   tool_markdown_copy: 'Salin HTML',
   tool_markdown_copy_done: 'Disalin',
@@ -7559,7 +7573,7 @@ const id: SiteLangDict = {
   tool_markdown_export_title: 'Ekspor Markdown ke HTML',
   tool_markdown_faq_a1: 'Pada arah Markdown → HTML, DOMPurify jalan sebelum pratinjau dan unduhan.',
   tool_markdown_faq_a2: 'Jarang. Anggap hasilnya draf yang bisa diedit.',
-  tool_markdown_faq_a3: 'Tidak. Konversi lokal; CDN hanya mengantar file pustaka.',
+  tool_markdown_faq_a3: 'Tidak. Konversi lokal; situs ini hanya mengantar file pustaka.',
   tool_markdown_faq_a4: 'Tidak dijamin. Diff jika Anda butuh sama persis.',
   tool_markdown_faq_a5: 'Dasar CommonMark; opsi dokumen HTML penuh untuk berbagi offline.',
   tool_markdown_faq_q1: 'Apakah output HTML aman dari skrip?',
@@ -7591,7 +7605,7 @@ const id: SiteLangDict = {
   tool_markdown_rules_item_html_md: 'Ke Markdown: bersihkan dulu, lalu Turndown (ATX + fenced).',
   tool_markdown_rules_item_loss: 'Gaya, skrip, tabel rumit sering hilang. Bolak-balik ≠ asli.',
   tool_markdown_rules_item_md_html: 'Ke HTML: parse lalu sanitasi sebelum tampil/unduh.',
-  tool_markdown_rules_privacy: 'Teks tetap di tab Anda; unduh CDN bukan unggah konten.',
+  tool_markdown_rules_privacy: 'Teks tetap di tab Anda; unduh skrip situs ini bukan unggah konten.',
   tool_markdown_rules_title: 'Aturan per arah',
   tool_markdown_sample_html: '<h1>Judul</h1>\n<p>Halo <strong>dunia</strong></p>',
   tool_markdown_sample_md:
@@ -7844,7 +7858,7 @@ const id: SiteLangDict = {
     'Sampel memuat dua PDF satu halaman (A dan B), menggabung sesuai urutan daftar, dan mengaktifkan Unduh untuk merged.pdf dua halaman.',
   tool_merge_pdf_example_title: 'Gabungkan file PDF jadi satu',
   tool_merge_pdf_faq_a1:
-    'Tidak. pdf-lib berjalan di tab Anda (pustaka bisa dimuat dari CDN). PDF tidak diunggah ke server kami.',
+    'Tidak. pdf-lib berjalan di tab Anda (pustaka dimuat dari situs ini). PDF tidak diunggah ke server kami.',
   tool_merge_pdf_faq_a2:
     'Gambar ke PDF membuat PDF dari foto. Alat ini menggabungkan file PDF yang sudah ada menjadi satu dokumen.',
   tool_merge_pdf_faq_a3: 'Ya—gunakan Naik/Turun di setiap baris. Urutan daftar dari atas ke bawah menjadi urutan halaman.',
@@ -7870,7 +7884,7 @@ const id: SiteLangDict = {
   tool_merge_pdf_rules_body: 'Urutan daftar, copyPages, privasi, dan kasus gagal saat menggabung PDF secara lokal.',
   tool_merge_pdf_rules_item_1: 'Urutan: halaman disalin sesuai daftar (file teratas dulu). Susun ulang sebelum Gabung.',
   tool_merge_pdf_rules_item_2: 'Mesin: pdf-lib memuat tiap PDF dan copyPages ke dokumen baru—tanpa mengirim file Anda ke server.',
-  tool_merge_pdf_rules_item_3: 'Privasi: byte tetap di tab browser. Skrip pustaka bisa dimuat dari CDN.',
+  tool_merge_pdf_rules_item_3: 'Privasi: byte tetap di tab browser. Skrip pustaka dimuat dari situs ini.',
   tool_merge_pdf_rules_item_4:
     'Batas: butuh ≥2 file; PDF terenkripsi/rusak gagal dengan error terbaca; set sangat besar bisa lambat di memori.',
   tool_merge_pdf_rules_title: 'Aturan yang perlu Anda tahu',
@@ -8515,8 +8529,7 @@ const id: SiteLangDict = {
   tool_open_pdf_in_browser_err_pdfjs: 'PDF renderer failed to load.',
   tool_open_pdf_in_browser_example: 'Muat contoh: Hello browser viewer sample.',
   tool_open_pdf_in_browser_example_title: 'Contoh',
-  tool_open_pdf_in_browser_faq_a1:
-    'Tidak. Render berjalan di tab Anda (pustaka mungkin dari CDN). PDF Anda tidak diunggah ke server kami.',
+  tool_open_pdf_in_browser_faq_a1: 'Tidak. Render berjalan di tab Anda (pustaka dari situs ini). PDF Anda tidak diunggah ke server kami.',
   tool_open_pdf_in_browser_faq_a2: 'Tidak. Operasi ini tidak bergantung pada ekstraksi lapisan teks PDF.',
   tool_open_pdf_in_browser_faq_a3: 'Encrypted or damaged files show a clear error instead of failing silently.',
   tool_open_pdf_in_browser_faq_a4: 'Related PDF tools are listed at the bottom of the page.',
@@ -8568,7 +8581,7 @@ const id: SiteLangDict = {
   tool_organize_pdf_example:
     'Sampel memuat PDF tiga halaman, menghapus halaman 2, menerapkan urutan baru, dan mengaktifkan unduhan organized.pdf dua halaman.',
   tool_organize_pdf_example_title: 'Contoh',
-  tool_organize_pdf_faq_a1: 'Tidak. pustaka PDF berjalan di tab Anda (pustaka bisa dari CDN). PDF tidak diunggah ke server kami.',
+  tool_organize_pdf_faq_a1: 'Tidak. pustaka PDF berjalan di tab Anda (pustaka dari situs ini). PDF tidak diunggah ke server kami.',
   tool_organize_pdf_faq_a2:
     'Gabung menyatukan beberapa PDF. Pecah mengekspor halaman ke beberapa file (atau ZIP). Atur mengubah urutan dalam satu PDF dan mengunduh satu file.',
   tool_organize_pdf_faq_a3:
@@ -8862,7 +8875,7 @@ const id: SiteLangDict = {
   tool_pdf_page_numbers_example: 'Sampel membuat PDF tiga halaman, menomori tengah bawah dari 1, dan mengaktifkan Unduh numbered.pdf.',
   tool_pdf_page_numbers_example_title: 'Contoh',
   tool_pdf_page_numbers_faq_a1:
-    'Tidak. pustaka PDF berjalan di tab Anda (skrip bisa dimuat dari CDN). PDF tidak diunggah ke server kami.',
+    'Tidak. pustaka PDF berjalan di tab Anda (skrip bisa dimuat dari situs ini). PDF tidak diunggah ke server kami.',
   tool_pdf_page_numbers_faq_a2:
     'Ya—«Mulai dari» adalah angka di halaman 1 (mis. 0 untuk sampul, atau 5 setelah hapus halaman). Setiap halaman +1.',
   tool_pdf_page_numbers_faq_a3: 'Angka saja (1, 2, 3…) atau label «Halaman N». Posisi, margin (pt), dan ukuran sama di semua halaman.',
@@ -8935,7 +8948,7 @@ const id: SiteLangDict = {
   tool_pdf_page_to_image_sizes_example_title: 'Contoh',
   tool_pdf_page_to_image_sizes_export: 'Ekspor',
   tool_pdf_page_to_image_sizes_faq_a1:
-    'Tidak. perender halaman, pustaka PDF, dan pustaka ZIP berjalan di tab Anda (skrip bisa dari CDN). PDF tidak diunggah ke server kami.',
+    'Tidak. perender halaman, pustaka PDF, dan pustaka ZIP berjalan di tab Anda (skrip bisa dari situs ini). PDF tidak diunggah ke server kami.',
   tool_pdf_page_to_image_sizes_faq_a2:
     'PDF ke JPG mengekspor setiap halaman dengan rasio asli. Alat ini memilih satu halaman dan menyesuaikannya ke ukuran platform tetap (contain, tengah, pinggir putih).',
   tool_pdf_page_to_image_sizes_faq_a3:
@@ -8991,7 +9004,7 @@ const id: SiteLangDict = {
     'Sampel membuat PDF dua halaman, mengonversi tiap halaman, dan mengaktifkan Unduh ZIP berisi page-1.jpg dan page-2.jpg.',
   tool_pdf_to_jpg_example_title: 'Ubah halaman PDF ke JPG',
   tool_pdf_to_jpg_faq_a1:
-    'Tidak. perender halaman dan pustaka ZIP berjalan di tab Anda (skrip mungkin dimuat dari CDN). PDF tidak diunggah ke server kami.',
+    'Tidak. perender halaman dan pustaka ZIP berjalan di tab Anda (skrip mungkin dimuat dari situs ini). PDF tidak diunggah ke server kami.',
   tool_pdf_to_jpg_faq_a2:
     'Lebih dari satu halaman → ZIP pdf-pages.zip dengan page-1.jpg, page-2.jpg, dst. Satu halaman → satu JPG langsung.',
   tool_pdf_to_jpg_faq_a3:
@@ -9046,7 +9059,7 @@ const id: SiteLangDict = {
     'Sampel membuat PDF satu halaman Helvetica, mengonversi, menampilkan kalimat di pratinjau, dan mengaktifkan Unduh .md.',
   tool_pdf_to_markdown_example_title: 'Contoh',
   tool_pdf_to_markdown_faq_a1:
-    'Tidak. perender halaman berjalan di tab Anda (skrip mungkin dari CDN). PDF tidak diunggah ke server kami.',
+    'Tidak. perender halaman berjalan di tab Anda (skrip dari situs ini). PDF tidak diunggah ke server kami.',
   tool_pdf_to_markdown_faq_a2: 'Scan biasanya gambar tanpa lapisan teks. Tanpa OCR ekstraksi kosong dan gagal dengan pesan jelas.',
   tool_pdf_to_markdown_faq_a3: 'Tidak membangun ulang heading atau tabel — teks biasa per posisi.',
   tool_pdf_to_markdown_faq_a4:
@@ -9102,7 +9115,7 @@ const id: SiteLangDict = {
   tool_pdf_watermark_example:
     'Sampel membuat PDF dua halaman, menerapkan DRAFT di tengah dengan opasitas 35% dan −45° di setiap halaman, lalu mengaktifkan Unduh watermarked.pdf.',
   tool_pdf_watermark_example_title: 'Contoh',
-  tool_pdf_watermark_faq_a1: 'Tidak. pustaka PDF berjalan di tab Anda (skrip mungkin dari CDN). PDF tidak diunggah ke server kami.',
+  tool_pdf_watermark_faq_a1: 'Tidak. pustaka PDF berjalan di tab Anda (skrip dari situs ini). PDF tidak diunggah ke server kami.',
   tool_pdf_watermark_faq_a2: 'Tambah watermark menempel teks/logo pada foto. Alat ini menstempel setiap halaman dokumen PDF.',
   tool_pdf_watermark_faq_a3: 'Tidak. Setelah unduh, watermark tertanam. Menghapus perlu file asli atau edit berat.',
   tool_pdf_watermark_faq_a4: 'PDF berpassword biasanya tidak terbuka di sini. Hapus password dengan alat tepercaya.',
@@ -9287,8 +9300,7 @@ const id: SiteLangDict = {
   tool_print_pdf_err_pdfjs: 'PDF renderer failed to load.',
   tool_print_pdf_example: 'Muat contoh: Hello print sample.',
   tool_print_pdf_example_title: 'Contoh',
-  tool_print_pdf_faq_a1:
-    'Tidak. Render berjalan di tab Anda (pustaka mungkin dari CDN). PDF Anda tidak diunggah ke server kami.',
+  tool_print_pdf_faq_a1: 'Tidak. Render berjalan di tab Anda (pustaka dari situs ini). PDF Anda tidak diunggah ke server kami.',
   tool_print_pdf_faq_a2: 'Tidak. Operasi ini tidak bergantung pada ekstraksi lapisan teks PDF.',
   tool_print_pdf_faq_a3: 'Encrypted or damaged files show a clear error instead of failing silently.',
   tool_print_pdf_faq_a4: 'Related PDF tools are listed at the bottom of the page.',
@@ -9675,7 +9687,7 @@ const id: SiteLangDict = {
   tool_protect_pdf_example:
     'Sampel membuat satu halaman, enkripsi dengan sample, aktifkan Unduh protected.pdf, dan tampilkan sandi di status.',
   tool_protect_pdf_example_title: 'Lindungi PDF dengan kata sandi',
-  tool_protect_pdf_faq_a1: 'Tidak. pustaka PDF berjalan di tab Anda (skrip mungkin dari CDN). PDF tidak diunggah ke server kami.',
+  tool_protect_pdf_faq_a1: 'Tidak. pustaka PDF berjalan di tab Anda (skrip dari situs ini). PDF tidak diunggah ke server kami.',
   tool_protect_pdf_faq_a2:
     'Enkripsi PDF umum: perlu sandi untuk membuka. Bukan tingkat militer — pilih sandi kuat yang Anda ingat.',
   tool_protect_pdf_faq_a3:
@@ -9940,7 +9952,7 @@ const id: SiteLangDict = {
     'Sampel membuat PDF dua halaman, memutar semua 90° searah jarum jam, dan mengaktifkan Unduh rotated.pdf.',
   tool_rotate_pdf_example_title: 'Contoh',
   tool_rotate_pdf_faq_a1:
-    'Tidak. pustaka PDF berjalan di tab Anda (skrip mungkin dimuat dari CDN). PDF tidak diunggah ke server kami.',
+    'Tidak. pustaka PDF berjalan di tab Anda (skrip mungkin dimuat dari situs ini). PDF tidak diunggah ke server kami.',
   tool_rotate_pdf_faq_a2: 'Ya—file unduhan menyimpan orientasi baru. Buka di penampil sebelum dibagikan.',
   tool_rotate_pdf_faq_a3: 'Halaman dari 1: 1-3,5 berarti halaman 1–3 dan 5. Spasi opsional. Kosong atau di luar rentang gagal.',
   tool_rotate_pdf_faq_a4: 'PDF berpassword biasanya tidak bisa dibuka di sini. Hapus password dengan alat tepercaya lalu putar.',
@@ -10445,7 +10457,7 @@ const id: SiteLangDict = {
   tool_sign_pdf_document_example_title: 'Contoh',
   tool_sign_pdf_document_faq_a1:
     'Bukan. Halaman ini hanya mencap gambar. Untuk tampilan integritas dengan awalan hash, gunakan Tambahkan tanda tangan digital ke PDF — itu juga bukan PKI bersertifikat.',
-  tool_sign_pdf_document_faq_a2: 'Tidak. Pencapan berjalan di tab Anda (pustaka bisa dari CDN). PDF tidak dikirim ke server kami.',
+  tool_sign_pdf_document_faq_a2: 'Tidak. Pencapan berjalan di tab Anda (pustaka dari situs ini). PDF tidak dikirim ke server kami.',
   tool_sign_pdf_document_faq_a3:
     'Tidak. Letakkan gambar dengan X/Y. Untuk kata sandi, lihat Lindungi PDF. Untuk teks tambahan, Tambahkan teks ke file PDF.',
   tool_sign_pdf_document_faq_a4:
@@ -10917,7 +10929,7 @@ const id: SiteLangDict = {
     'Sampel membuat PDF tiga halaman, memisah tiap halaman, dan mengaktifkan Unduh untuk ZIP berisi page-1.pdf, page-2.pdf, dan page-3.pdf.',
   tool_split_pdf_example_title: 'Pisah PDF saya',
   tool_split_pdf_faq_a1:
-    'Tidak. pdf-lib dan fflate berjalan di tab Anda (skrip bisa dimuat dari CDN). PDF tidak diunggah ke server kami.',
+    'Tidak. pdf-lib dan fflate berjalan di tab Anda (skrip bisa dimuat dari situs ini). PDF tidak diunggah ke server kami.',
   tool_split_pdf_faq_a2:
     'Halaman mulai dari 1: 1-3,5 berarti halaman 1–3 dan 5. Spasi opsional. Nilai kosong atau di luar jangkauan gagal.',
   tool_split_pdf_faq_a3: 'Jika hasil lebih dari satu file, Anda mendapat ZIP. Satu file keluaran diunduh sebagai PDF.',
@@ -11225,7 +11237,7 @@ const id: SiteLangDict = {
   tool_text_diff_faq_a1:
     'Baris untuk kode dan config. Kata untuk kalimat, email, dan prompt — hanya kata yang berubah yang disorot.',
   tool_text_diff_faq_a2:
-    'Teks yang Anda tempel tidak diunggah atau disimpan oleh kami — perbandingan berjalan di browser. Halaman dapat memuat jsdiff (open source) dari CDN; itu tidak mengirim teks Anda ke server kami.',
+    'Teks yang Anda tempel tidak diunggah atau disimpan oleh kami — perbandingan berjalan di browser. Halaman dapat memuat jsdiff (open source) dari situs ini; itu tidak mengirim teks Anda ke server kami.',
   tool_text_diff_faq_a3:
     'Windows sering memakai CRLF; Mac/Linux biasanya LF. Aktifkan “Samakan CRLF dan LF” lalu bandingkan lagi.',
   tool_text_diff_faq_a4:
@@ -11555,7 +11567,7 @@ const id: SiteLangDict = {
     'Muat sampel membuat PDF satu halaman berisi kalimat, mengekstraknya, dan membuat .docx dengan paragraf yang sama.',
   tool_turn_pdf_into_word_document_example_title: 'Contoh',
   tool_turn_pdf_into_word_document_faq_a1:
-    'Tidak. Ekstraksi dan zip .docx berjalan di tab Anda (pustaka bisa dari CDN). PDF tidak dikirim ke server kami.',
+    'Tidak. Ekstraksi dan zip .docx berjalan di tab Anda (pustaka dari situs ini). PDF tidak dikirim ke server kami.',
   tool_turn_pdf_into_word_document_faq_a2:
     'Halaman pindai adalah gambar. Tidak ada OCR. Gunakan Ekstrak teks dari PDF jika hanya butuh .txt lapisan teks.',
   tool_turn_pdf_into_word_document_faq_a3: 'Tidak. Anda mendapat paragraf terekstrak, bukan rekonstruksi piksel.',
@@ -11710,7 +11722,7 @@ const id: SiteLangDict = {
   tool_unlock_pdf_example_title: 'Buka kunci PDF saya',
   tool_unlock_pdf_faq_a1:
     'Tidak. Hanya menghapus proteksi jika Anda memasukkan kata sandi buka yang benar. Tanpa crack, brute force, atau memulihkan sandi yang tidak diketahui.',
-  tool_unlock_pdf_faq_a2: 'Tidak. pustaka PDF berjalan di tab Anda (skrip mungkin dari CDN). PDF tidak diunggah ke server kami.',
+  tool_unlock_pdf_faq_a2: 'Tidak. pustaka PDF berjalan di tab Anda (skrip dari situs ini). PDF tidak diunggah ke server kami.',
   tool_unlock_pdf_faq_a3:
     'Pesan kata sandi salah akan muncul jelas. Gunakan sandi yang sama dari Lindungi PDF atau app lain—kami tidak menebak.',
   tool_unlock_pdf_faq_a4:
@@ -11767,7 +11779,7 @@ const id: SiteLangDict = {
   tool_unzip_file_example_title: 'Contoh',
   tool_unzip_file_exported_all: 'File dikemas ke ZIP baru dengan jalur aman.',
   tool_unzip_file_faq_a1:
-    'Tidak. ZIP dibaca di tab browser dan byte hasil ekstrak tetap di perangkat Anda. Skrip mesin ZIP mungkin dimuat dari CDN, tetapi arsip Anda tidak diunggah ke server kami.',
+    'Tidak. ZIP dibaca di tab browser dan byte hasil ekstrak tetap di perangkat Anda. Skrip mesin ZIP mungkin dimuat dari situs ini, tetapi arsip Anda tidak diunggah ke server kami.',
   tool_unzip_file_faq_a2:
     'Halaman ini fokus pada ZIP. RAR, 7Z, ISO, dan TAR.GZ membutuhkan mesin arsip multi-format yang lebih berat dan sebaiknya ditangani oleh extractor arsip terpisah ketika dukungannya tersedia.',
   tool_unzip_file_faq_a3:
@@ -12505,8 +12517,7 @@ const id: SiteLangDict = {
   tool_write_pdf_document_online_err_pdfjs: 'PDF renderer failed to load.',
   tool_write_pdf_document_online_example: 'Muat contoh mengisi dua paragraf, klik Buat PDF, lalu menampilkan pratinjau satu halaman siap unduh.',
   tool_write_pdf_document_online_example_title: 'Contoh',
-  tool_write_pdf_document_online_faq_a1:
-    'Tidak. Render berjalan di tab Anda (pustaka mungkin dari CDN). PDF Anda tidak diunggah ke server kami.',
+  tool_write_pdf_document_online_faq_a1: 'Tidak. Render berjalan di tab Anda (pustaka dari situs ini). PDF Anda tidak diunggah ke server kami.',
   tool_write_pdf_document_online_faq_a2:
     'Tidak. Anda mengetik teks baru di textarea; halaman membangun PDF dengan pdf-lib. Tidak pernah membuka PDF yang sudah ada.',
   tool_write_pdf_document_online_faq_a3: 'Tidak. Untuk berkas yang sudah Anda punya, gunakan Edit teks PDF atau Tambah teks.',
@@ -12690,7 +12701,7 @@ const id: SiteLangDict = {
   tool_yaml_json_faq_a2:
     'Dokumen dipisah --- dibaca dengan loadAll. Satu dokumen → satu nilai JSON; dua atau lebih → array JSON. Dokumen setelah yang pertama tidak dibuang.',
   tool_yaml_json_faq_a3:
-    'Konversi tetap di tab. CDN boleh menyajikan js-yaml; permintaan itu hanya mengunduh kode — bukan mengunggah teks YAML atau JSON Anda.',
+    'Konversi tetap di tab. situs ini boleh menyajikan js-yaml; permintaan itu hanya mengunduh kode — bukan mengunggah teks YAML atau JSON Anda.',
   tool_yaml_json_faq_a4:
     'Sering ya di skema DEFAULT js-yaml — yes/no/on/off tanpa kutip bisa jadi boolean. Centang «Tipe aman JSON» agar skalar itu tetap string kecuali ditipekan eksplisit.',
   tool_yaml_json_faq_a5:
@@ -12726,7 +12737,7 @@ const id: SiteLangDict = {
   tool_yaml_json_rules_item_3:
     'Hilang saat bolak-balik: komentar tidak masuk JSON; anchor/alias mengembang jadi nilai duplikat; urutan kunci dan gaya bisa berubah setelah dump.',
   tool_yaml_json_rules_item_4:
-    'Privasi: tempelan tidak diunggah. Mengambil js-yaml dari CDN hanya mengunduh kode pustaka, bukan teks config Anda.',
+    'Privasi: tempelan tidak diunggah. Mengambil js-yaml dari situs ini hanya mengunduh kode pustaka, bukan teks config Anda.',
   tool_yaml_json_rules_title: 'Aturan yang perlu Anda tahu',
   tool_yaml_json_sample: 'Muat contoh',
   tool_yaml_json_sample_json: '{\n  "judul": "Halo",\n  "jumlah": 2\n}',

@@ -23,7 +23,7 @@ const ar: SiteLangDict = {
     'العيّنة تنشئ PDF من صفحتين، تطبّق DRAFT في الوسط بشفافية 35% وزاوية −45° على كل صفحة، وتفعّل تنزيل watermarked.pdf.',
   tool_pdf_watermark_example_title: 'مثال',
   tool_pdf_watermark_faq_a1:
-    'لا. مكتبة PDF يعمل في تبويبك (قد تُحمّل المكتبات من CDN). PDF لا يُرفع إلى خوادمنا.',
+    'لا. مكتبة PDF يعمل في تبويبك (قد تُحمّل المكتبات من هذا الموقع). PDF لا يُرفع إلى خوادمنا.',
   tool_pdf_watermark_faq_a2:
     'إضافة علامة مائية للصور تضع نصًا أو شعارًا على الصور. هذه الأداة تختم كل صفحة في مستند PDF.',
   tool_pdf_watermark_faq_a3:

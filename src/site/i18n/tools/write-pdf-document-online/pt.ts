@@ -20,7 +20,7 @@ const pt: SiteLangDict = {
   tool_write_pdf_document_online_err_pdfjs: "PDF renderer failed to load.",
   tool_write_pdf_document_online_example: "Carregar exemplo preenche dois parágrafos, clica em Criar PDF e mostra uma prévia de uma página pronta para baixar.",
   tool_write_pdf_document_online_example_title: "Exemplo",
-  tool_write_pdf_document_online_faq_a1: "Não. A renderização ocorre na sua aba (bibliotecas podem vir de CDN). Seu PDF não é enviado aos nossos servidores.",
+  tool_write_pdf_document_online_faq_a1: "Não. A renderização ocorre na sua aba (bibliotecas vêm deste site). Seu PDF não é enviado aos nossos servidores.",
   tool_write_pdf_document_online_faq_a2: "Não. Você digita texto novo em uma caixa; a página monta um PDF com pdf-lib. Nunca abre um PDF existente.",
   tool_write_pdf_document_online_faq_a3: "Não. Para arquivos que você já tem, use Editar texto do PDF ou Adicionar texto.",
   tool_write_pdf_document_online_faq_a4: "Adicionar texto carimba sobre um PDF existente. Editar texto do PDF altera o texto da camada. Esta página só cria um PDF novo a partir de texto digitado.",

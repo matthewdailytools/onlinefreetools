@@ -20,7 +20,7 @@ const id: SiteLangDict = {
   tool_compare_two_pdfs_err_pdfjs: "PDF renderer failed to load.",
   tool_compare_two_pdfs_example: "Muat contoh: Version A text.",
   tool_compare_two_pdfs_example_title: "Contoh",
-  tool_compare_two_pdfs_faq_a1: "Tidak. Render berjalan di tab Anda (pustaka mungkin dari CDN). PDF Anda tidak diunggah ke server kami.",
+  tool_compare_two_pdfs_faq_a1: "Tidak. Render berjalan di tab Anda (pustaka dari situs ini). PDF Anda tidak diunggah ke server kami.",
   tool_compare_two_pdfs_faq_a2: "Scanned PDFs are images without a text layer; this tool does not OCR.",
   tool_compare_two_pdfs_faq_a3: "Encrypted or damaged files show a clear error instead of failing silently.",
   tool_compare_two_pdfs_faq_a4: "Related PDF tools are listed at the bottom of the page.",

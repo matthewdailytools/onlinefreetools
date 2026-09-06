@@ -23,7 +23,7 @@ const es: SiteLangDict = {
 		'Cargar ejemplo mete notes.txt, un photo.png mínimo y docs/readme.md, y arma sample.zip. Descargar ZIP queda listo en la primera pantalla.',
 	tool_create_zip_file_example_title: 'Ejemplo',
 	tool_create_zip_file_faq_a1:
-		'No. Los bytes se leen en esta pestaña. El script del motor ZIP puede cargar desde un CDN, pero tus archivos no se suben a nuestros servidores.',
+		'No. Los bytes se leen en esta pestaña. El script del motor ZIP puede cargar desde este sitio, pero tus archivos no se suben a nuestros servidores.',
 	tool_create_zip_file_faq_a2:
 		'Si el navegador informa webkitRelativePath (carpeta soltada o selector de directorio), esas rutas se guardan como entradas ZIP tras quitar ../. Esa es la tarea de zippear una carpeta en esta página.',
 	tool_create_zip_file_faq_a3:

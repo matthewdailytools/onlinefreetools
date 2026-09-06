@@ -21,7 +21,7 @@ const id: SiteLangDict = {
   tool_unzip_file_example_title: 'Contoh',
   tool_unzip_file_exported_all: 'File dikemas ke ZIP baru dengan jalur aman.',
   tool_unzip_file_faq_a1:
-    'Tidak. ZIP dibaca di tab browser dan byte hasil ekstrak tetap di perangkat Anda. Skrip mesin ZIP mungkin dimuat dari CDN, tetapi arsip Anda tidak diunggah ke server kami.',
+    'Tidak. ZIP dibaca di tab browser dan byte hasil ekstrak tetap di perangkat Anda. Skrip mesin ZIP mungkin dimuat dari situs ini, tetapi arsip Anda tidak diunggah ke server kami.',
   tool_unzip_file_faq_a2:
     'Halaman ini fokus pada ZIP. RAR, 7Z, ISO, dan TAR.GZ membutuhkan mesin arsip multi-format yang lebih berat dan sebaiknya ditangani oleh extractor arsip terpisah ketika dukungannya tersedia.',
   tool_unzip_file_faq_a3:

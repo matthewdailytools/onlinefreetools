@@ -20,7 +20,7 @@ const id: SiteLangDict = {
     'Sampel memuat dua PDF satu halaman (A dan B), menggabung sesuai urutan daftar, dan mengaktifkan Unduh untuk merged.pdf dua halaman.',
   tool_merge_pdf_example_title: 'Gabungkan file PDF jadi satu',
   tool_merge_pdf_faq_a1:
-    'Tidak. pdf-lib berjalan di tab Anda (pustaka bisa dimuat dari CDN). PDF tidak diunggah ke server kami.',
+    'Tidak. pdf-lib berjalan di tab Anda (pustaka dimuat dari situs ini). PDF tidak diunggah ke server kami.',
   tool_merge_pdf_faq_a2:
     'Gambar ke PDF membuat PDF dari foto. Alat ini menggabungkan file PDF yang sudah ada menjadi satu dokumen.',
   tool_merge_pdf_faq_a3:
@@ -51,7 +51,7 @@ const id: SiteLangDict = {
   tool_merge_pdf_rules_item_2:
     'Mesin: pdf-lib memuat tiap PDF dan copyPages ke dokumen baru—tanpa mengirim file Anda ke server.',
   tool_merge_pdf_rules_item_3:
-    'Privasi: byte tetap di tab browser. Skrip pustaka bisa dimuat dari CDN.',
+    'Privasi: byte tetap di tab browser. Skrip pustaka dimuat dari situs ini.',
   tool_merge_pdf_rules_item_4:
     'Batas: butuh ≥2 file; PDF terenkripsi/rusak gagal dengan error terbaca; set sangat besar bisa lambat di memori.',
   tool_merge_pdf_rules_title: 'Aturan yang perlu Anda tahu',

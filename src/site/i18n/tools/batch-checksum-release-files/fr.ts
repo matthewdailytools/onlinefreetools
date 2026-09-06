@@ -31,7 +31,7 @@ const fr: SiteLangDict = {
 	tool_batch_checksum_release_files_export_csv: 'Exporter CSV',
 	tool_batch_checksum_release_files_export_sums: 'Exporter SUMS',
 	tool_batch_checksum_release_files_faq_a1:
-		'Non. Le hash se fait dans cet onglet. Les fichiers restent sur l\'appareil et ne sont pas envoyés vers un serveur. SHA-256 utilise Web Crypto. MD5 peut charger crypto-js depuis un CDN ; vos octets ne quittent pas l\'onglet.',
+		'Non. Le hash se fait dans cet onglet. Les fichiers restent sur l\'appareil et ne sont pas envoyés vers un serveur. SHA-256 utilise Web Crypto. MD5 peut charger crypto-js depuis ce site ; vos octets ne quittent pas l\'onglet.',
 	tool_batch_checksum_release_files_faq_a2:
 		'Non. Les exports sont un tableau CSV et un SHA256SUMS. Empaqueter les binaires, c\'est Créer un ZIP — un autre travail.',
 	tool_batch_checksum_release_files_faq_a3:
@@ -59,7 +59,7 @@ const fr: SiteLangDict = {
 	tool_batch_checksum_release_files_rules_body:
 		'SHA-256 utilise Web Crypto sur des octets lus par tranches de 4 Mio puis concaténés. La sortie est un tableau, un CSV et un SUMS, jamais un ZIP des originaux.',
 	tool_batch_checksum_release_files_rules_item_1:
-		'SHA-256 tourne toujours. MD5 est optionnel et charge crypto-js depuis un CDN ; les octets restent dans l\'onglet.',
+		'SHA-256 tourne toujours. MD5 est optionnel et charge crypto-js depuis ce site ; les octets restent dans l\'onglet.',
 	tool_batch_checksum_release_files_rules_item_2:
 		'Les lignes SUMS suivent sha256sum GNU : hex, deux espaces ou espace-étoile, puis le nom. Les noms en trop dans le collage apparaissent manquants.',
 	tool_batch_checksum_release_files_rules_item_3:

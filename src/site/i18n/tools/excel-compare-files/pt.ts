@@ -24,7 +24,7 @@ const pt: SiteLangDict = {
 		'Carregar exemplo compara duas tabelas CSV. Os cabeçalhos Name/Qty batem; a quantidade de Gadget é 2 versus 9, então B3 aparece. Na primeira pintura essa célula já está visível.',
 	tool_excel_compare_files_example_title: 'Exemplo',
 	tool_excel_compare_files_faq_a1:
-		'Não. Os bytes são lidos nesta aba com SheetJS. A biblioteca pode chegar via CDN; seus arquivos não são enviados aos nossos servidores.',
+		'Não. Os bytes são lidos nesta aba com SheetJS. A biblioteca pode chegar depuis ce site; seus arquivos não são enviados aos nossos servidores.',
 	tool_excel_compare_files_faq_a2:
 		'Sim: a primeira folha vem selecionada por padrão. Use as listas se precisar de outra aba do mesmo arquivo. As demais só entram quando você as escolhe.',
 	tool_excel_compare_files_faq_a3:

@@ -18,7 +18,7 @@ const en: SiteLangDict = {
   tool_text_diff_faq_a1:
     'Use line mode for code and config files. Use word mode for sentences, emails, and AI prompts — it highlights individual words instead of whole lines.',
   tool_text_diff_faq_a2:
-    'Your pasted text is not uploaded or stored by us — comparison runs in your browser. The page may load the open-source jsdiff library from a CDN; that does not send your text to our servers.',
+    'Your pasted text is not uploaded or stored by us — comparison runs in your browser. The page loads the open-source jsdiff library from this site; that does not send your text to our servers.',
   tool_text_diff_faq_a3:
     'Windows uses CRLF and Unix uses LF, so the same line can look different. Turn on “Treat CRLF and LF the same” before comparing.',
   tool_text_diff_faq_a4:

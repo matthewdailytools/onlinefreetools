@@ -76,6 +76,7 @@ const ja: SiteLangDict = {
   tool_category_pdf: 'PDFツール',
   tool_feedback_body: '分かりにくい点、不具合、不足があれば下にメッセージを書いてください。ツールに関する内容はすべて確認します。',
   tool_feedback_cta: 'メールアプリで開く',
+  tool_feedback_report_bug: 'GitHub で不具合を報告',
   tool_feedback_email_label: 'メール',
   tool_feedback_message_label: '本文',
   tool_feedback_message_placeholder: '問題や提案を書いてください…',

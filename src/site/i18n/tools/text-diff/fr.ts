@@ -18,7 +18,7 @@ const fr: SiteLangDict = {
   tool_text_diff_faq_a1:
     'Ligne pour le code et les configs. Mot pour les phrases, e-mails et prompts : seuls les mots modifiés sont surlignés.',
   tool_text_diff_faq_a2:
-    'Votre texte collé n’est ni envoyé ni stocké chez nous — la comparaison se fait dans le navigateur. La page peut charger jsdiff (open source) via un CDN ; cela n’envoie pas votre texte à nos serveurs.',
+    'Votre texte collé n’est ni envoyé ni stocké chez nous — la comparaison se fait dans le navigateur. La page peut charger jsdiff (open source) depuis ce site ; cela n’envoie pas votre texte à nos serveurs.',
   tool_text_diff_faq_a3:
     'Windows utilise souvent CRLF, macOS/Linux LF. Activez « Traiter CRLF et LF de la même façon » puis comparez.',
   tool_text_diff_faq_a4:

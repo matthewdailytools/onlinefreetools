@@ -24,7 +24,7 @@ const id: SiteLangDict = {
   tool_yaml_json_faq_a2:
     'Dokumen dipisah --- dibaca dengan loadAll. Satu dokumen → satu nilai JSON; dua atau lebih → array JSON. Dokumen setelah yang pertama tidak dibuang.',
   tool_yaml_json_faq_a3:
-    'Konversi tetap di tab. CDN boleh menyajikan js-yaml; permintaan itu hanya mengunduh kode — bukan mengunggah teks YAML atau JSON Anda.',
+    'Konversi tetap di tab. situs ini boleh menyajikan js-yaml; permintaan itu hanya mengunduh kode — bukan mengunggah teks YAML atau JSON Anda.',
   tool_yaml_json_faq_a4:
     'Sering ya di skema DEFAULT js-yaml — yes/no/on/off tanpa kutip bisa jadi boolean. Centang «Tipe aman JSON» agar skalar itu tetap string kecuali ditipekan eksplisit.',
   tool_yaml_json_faq_a5:
@@ -60,7 +60,7 @@ const id: SiteLangDict = {
   tool_yaml_json_rules_item_3:
     'Hilang saat bolak-balik: komentar tidak masuk JSON; anchor/alias mengembang jadi nilai duplikat; urutan kunci dan gaya bisa berubah setelah dump.',
   tool_yaml_json_rules_item_4:
-    'Privasi: tempelan tidak diunggah. Mengambil js-yaml dari CDN hanya mengunduh kode pustaka, bukan teks config Anda.',
+    'Privasi: tempelan tidak diunggah. Mengambil js-yaml dari situs ini hanya mengunduh kode pustaka, bukan teks config Anda.',
   tool_yaml_json_rules_title: 'Aturan yang perlu Anda tahu',
   tool_yaml_json_sample: 'Muat contoh',
   tool_yaml_json_sample_json: '{\n  "judul": "Halo",\n  "jumlah": 2\n}',

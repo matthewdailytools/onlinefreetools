@@ -22,7 +22,7 @@ const es: SiteLangDict = {
   tool_yaml_json_faq_a1:
     'Los documentos separados por --- se parsean con loadAll. Uno → un valor JSON; dos o más → un array. No descartamos lo que viene después del primero.',
   tool_yaml_json_faq_a2:
-    'Sí. Puede haber una petición CDN para bajar js-yaml; eso descarga código, no sube tu YAML ni tu JSON.',
+    'Sí. Puede haber una petición a este sitio para bajar js-yaml; eso descarga código, no sube tu YAML ni tu JSON.',
   tool_yaml_json_faq_a3:
     'Con el schema por defecto de js-yaml, a menudo sí. Marca “Tipos seguros JSON” para dejar esos escalares como string salvo tipado explícito.',
   tool_yaml_json_faq_a4:
@@ -60,7 +60,7 @@ const es: SiteLangDict = {
   tool_yaml_json_rules_item_3:
     'Ida y vuelta: los comentarios desaparecen (JSON no los tiene); anclas/alias se expanden; al volcar JSON a YAML pueden cambiar orden y estilo.',
   tool_yaml_json_rules_item_4:
-    'Privacidad: tu pegado no se sube. El CDN, si carga js-yaml, solo trae código de la librería, no tu texto de config.',
+    'Privacidad: tu pegado no se sube. Este sitio, si carga js-yaml, solo trae código de la librería, no tu texto de config.',
   tool_yaml_json_rules_title: 'Reglas que conviene conocer',
   tool_yaml_json_sample: 'Cargar ejemplo',
   tool_yaml_json_sample_json: '{\n  "titulo": "Hola",\n  "count": 2\n}',

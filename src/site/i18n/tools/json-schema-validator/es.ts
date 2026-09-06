@@ -13,7 +13,7 @@ const es: SiteLangDict = {
   tool_json_schema_validator_desc:
     'Valida JSON con un Schema y errores JSON Pointer — draft-07 local.',
   tool_json_schema_validator_description:
-    'Valida JSON frente a un JSON Schema (draft-07) en el navegador. Pasos: pega Schema e instancia, valida y lee cada fallo con su JSON Pointer. Ejemplo: un producto sin price falla por missingProperty. El texto no se sube; Ajv solo se descarga como librería desde un CDN.',
+    'Valida JSON frente a un JSON Schema (draft-07) en el navegador. Pasos: pega Schema e instancia, valida y lee cada fallo con su JSON Pointer. Ejemplo: un producto sin price falla por missingProperty. El texto no se sube; Ajv solo se descarga como librería desde este sitio.',
   tool_json_schema_validator_draft_note: 'Motor: Ajv 8 · JSON Schema draft-07 (predeterminado).',
   tool_json_schema_validator_empty: 'Pega primero el Schema y el JSON de instancia.',
   tool_json_schema_validator_example:
@@ -27,7 +27,7 @@ const es: SiteLangDict = {
   tool_json_schema_validator_faq_a3:
     'Esta página usa el dialecto draft-07 de Ajv. Drafts 2019-09 / 2020-12 requieren otros builds y no se eligen aquí.',
   tool_json_schema_validator_faq_a4:
-    'Tu Schema y JSON no se suben. El CDN solo descarga el código de Ajv, no tu pegado.',
+    'Tu Schema y JSON no se suben. Este sitio solo descarga el código de Ajv, no tu pegado.',
   tool_json_schema_validator_faq_a5:
     'Pega Schema y el JSON del modelo, valida y corrige cada Pointer hasta que pase — útil antes de enviar salida estructurada aguas abajo.',
   tool_json_schema_validator_faq_q1: '¿Por qué falló la validación?',
@@ -58,7 +58,7 @@ const es: SiteLangDict = {
   tool_json_schema_validator_rules_item_3:
     'Draft: dialecto draft-07. No asumas keywords de 2020-12 aquí.',
   tool_json_schema_validator_rules_item_4:
-    'Privacidad: el pegado queda en la pestaña. El CDN solo trae código de Ajv.',
+    'Privacidad: el pegado queda en la pestaña. Este sitio solo trae código de Ajv.',
   tool_json_schema_validator_rules_title: 'Reglas a esperar',
   tool_json_schema_validator_sample_fail: 'Ejemplo con error',
   tool_json_schema_validator_sample_instance_fail: '{"sku":"A-1"}',

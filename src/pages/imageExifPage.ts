@@ -151,7 +151,7 @@ export const renderImageExifPage = (opts: {
 	 * ????CDN ?? exifr????????Canvas ???????????????
 	 */
 	const extraBodyHtml = `
-  <script src="https://cdn.jsdelivr.net/npm/exifr@7.1.3/dist/full.umd.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/vendor/exifr/full.umd.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     (function () {
       /** ?????????? */

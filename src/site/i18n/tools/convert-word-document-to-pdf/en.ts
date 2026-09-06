@@ -21,7 +21,7 @@ const en: SiteLangDict = {
   tool_convert_word_document_to_pdf_err_pdfjs: "PDF renderer failed to load.",
   tool_convert_word_document_to_pdf_example: "Load sample builds a one-paragraph .docx (“Sample Word paragraph for conversion.”), shows the HTML preview, then exports a one-page PDF.",
   tool_convert_word_document_to_pdf_example_title: "Example",
-  tool_convert_word_document_to_pdf_faq_a1: "No. Mammoth and the PDF export run in this tab (libraries may load from a CDN). Your document is not uploaded to our servers.",
+  tool_convert_word_document_to_pdf_faq_a1: "No. Mammoth and the PDF export run in this tab (library scripts load from this site). Your document is not uploaded to our servers.",
   tool_convert_word_document_to_pdf_faq_a2: "The pipeline is .docx → HTML → PDF. Headers, floating objects, and some fonts flatten. Use Convert HTML to PDF if you already have markup.",
   tool_convert_word_document_to_pdf_faq_a3: "No. Save as .docx first. This page only accepts the Office Open XML package.",
   tool_convert_word_document_to_pdf_faq_a4: "This page starts from an existing Word file. Write a PDF document online is a blank editor, not a converter.",

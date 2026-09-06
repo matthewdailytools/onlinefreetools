@@ -23,7 +23,7 @@ const en: SiteLangDict = {
   tool_edit_pdf_text_online_err_pdfjs: "PDF renderer failed to load.",
   tool_edit_pdf_text_online_example: "Load sample builds a one-page PDF that says \"Hello edit PDF text sample.\", fills the editor, then Apply rebuilds a downloadable PDF.",
   tool_edit_pdf_text_online_example_title: "Example",
-  tool_edit_pdf_text_online_faq_a1: "No. Libraries may load from a CDN, but your PDF stays in this tab and is not uploaded to our servers.",
+  tool_edit_pdf_text_online_faq_a1: "No. Library scripts load from this site, but your PDF stays in this tab and is not uploaded to our servers.",
   tool_edit_pdf_text_online_faq_a2: "No. This is not in-place glyph editing. Text is extracted, you edit it, then pages are redrawn with a simple layout. Original fonts, columns, and exact positions are not preserved.",
   tool_edit_pdf_text_online_faq_a3: "Scanned PDFs are images without a text layer. This tool does not OCR, so those files fail with a clear error.",
   tool_edit_pdf_text_online_faq_a4: "Add text stamps a new line at X/Y. Turn PDF into editable document prioritizes Download editable .txt (optional rebuilt PDF). This page’s main download is the rebuilt .pdf after you edit the text layer.",

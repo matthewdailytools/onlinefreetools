@@ -18,7 +18,7 @@ const fr: SiteLangDict = {
   tool_fill_out_pdf_form_err_no_fields: "Ce PDF n’a pas de champs remplissables.",
   tool_fill_out_pdf_form_example: "Charger un exemple crée un PDF Name + Email, inscrit Ada Lovelace / ada@example.com, affiche l’aperçu et active le téléchargement.",
   tool_fill_out_pdf_form_example_title: "Exemple",
-  tool_fill_out_pdf_form_faq_a1: "Non. Le remplissage se fait dans cet onglet. Les bibliothèques peuvent venir d’un CDN, mais votre PDF n’est pas envoyé à nos serveurs.",
+  tool_fill_out_pdf_form_faq_a1: "Non. Le remplissage se fait dans cet onglet. Les bibliothèques viennent de ce site, mais votre PDF n’est pas envoyé à nos serveurs.",
   tool_fill_out_pdf_form_faq_a2: "Souvent un scan ou un PDF d’impression. Ajoutez des champs via Rendre un PDF remplissable, puis revenez.",
   tool_fill_out_pdf_form_faq_a3: "Oui. Les cases apparaissent comme des ticks ; listes et radios comme un choix court si le PDF expose des options.",
   tool_fill_out_pdf_form_faq_a4: "Créer un formulaire PDF part d’une page blanche. Ici on n’écrit que dans des champs déjà présents.",

@@ -25,7 +25,7 @@ const de: SiteLangDict = {
     'Beispiel erstellt einseitige Helvetica-PDF, konvertiert, zeigt den Satz in der Vorschau und aktiviert .md-Download.',
   tool_pdf_to_markdown_example_title: 'Beispiel',
   tool_pdf_to_markdown_faq_a1:
-    'Nein. der Seitenrenderer läuft in Ihrem Tab (Skripte ggf. per CDN). Ihre PDF wird nicht auf unsere Server hochgeladen.',
+    'Nein. der Seitenrenderer läuft in Ihrem Tab (Skripte ggf. from this site). Ihre PDF wird nicht auf unsere Server hochgeladen.',
   tool_pdf_to_markdown_faq_a2:
     'Scans sind meist Bilder ohne Textschicht. Ohne OCR bleibt die Extraktion leer — klare Fehlermeldung.',
   tool_pdf_to_markdown_faq_a3: 'Keine Wiederherstellung von Überschriften/Tabellen — einfache Zeilen nach Position.',

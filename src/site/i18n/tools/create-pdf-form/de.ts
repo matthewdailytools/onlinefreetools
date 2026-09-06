@@ -19,7 +19,7 @@ const de: SiteLangDict = {
   tool_create_pdf_form_err_no_name: "Zuerst einen Feldnamen vergeben.",
   tool_create_pdf_form_example: "Beispiel erzeugt eine leere Seite mit Name und Email, listet beide Namen, zeigt die Vorschau und aktiviert pdf-form.pdf.",
   tool_create_pdf_form_example_title: "Beispiel",
-  tool_create_pdf_form_faq_a1: "Nein. Seite und Felder entstehen in diesem Tab. CDN-Skripte können laden; Ihr Formular geht nicht auf unsere Server.",
+  tool_create_pdf_form_faq_a1: "Nein. Seite und Felder entstehen in diesem Tab. Skripte können von dieser Website laden; Ihr Formular geht nicht auf unsere Server.",
   tool_create_pdf_form_faq_a2: "Nutzen Sie PDF ausfüllbar machen, um Felder auf eine vorhandene Datei zu legen. Diese Seite startet leer.",
   tool_create_pdf_form_faq_a3: "Typ auf Kästchen stellen, benennen, Feld hinzufügen. Der Kasten nutzt Ihre X/Y-Größe.",
   tool_create_pdf_form_faq_a4: "Öffnen Sie PDF-Formular ausfüllen und tippen Sie Testdaten.",

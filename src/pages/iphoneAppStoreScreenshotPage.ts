@@ -183,7 +183,7 @@ export const renderIphoneAppStoreScreenshotPage = (opts: {
 
 	/** 浏览器内 cover 裁切；进页自动 loadSample()。 */
 	const extraBodyHtml = `
-  <script src="https://cdn.jsdelivr.net/npm/fflate@0.8.2/umd/index.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/vendor/fflate/index.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     (function () {
       /** 当期 iPhone 6.9 三档像素。 */

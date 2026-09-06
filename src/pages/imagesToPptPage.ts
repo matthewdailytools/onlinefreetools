@@ -236,7 +236,7 @@ export const renderImagesToPptPage = (opts: {
       }
 
       /**
-       * 从 CDN 加载 PptxGenJS UMD bundle。
+       * 从同域 /vendor/pptxgenjs 加载 PptxGenJS UMD bundle。
        * @returns {Promise<Function>} PptxGenJS 构造函数
        */
       function loadPptxLib() {
@@ -247,7 +247,7 @@ export const renderImagesToPptPage = (opts: {
             return;
           }
           var script = document.createElement('script');
-          script.src = 'https://cdn.jsdelivr.net/npm/pptxgenjs@3.12.0/dist/pptxgen.bundle.js';
+          script.src = '/vendor/pptxgenjs/pptxgen.bundle.js';
           script.async = true;
           script.onload = function () {
             if (window.PptxGenJS) resolve(window.PptxGenJS);

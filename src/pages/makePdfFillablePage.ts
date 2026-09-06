@@ -174,7 +174,7 @@ export const renderMakePdfFillablePage = (opts: {
 	/** 客户端脚本：上传、按坐标加域、预览、下载。 */
 	const extraBodyHtml = `
   ${pdfWorkUiClientScript()}
-  <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/vendor/pdf-lib/pdf-lib.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     (function () {
       /** 软限制：超过后仅警告。 */

@@ -20,7 +20,7 @@ const fr: SiteLangDict = {
     'L’exemple charge deux PDF d’une page (A et B), les fusionne dans l’ordre de la liste et active Télécharger pour un merged.pdf de deux pages.',
   tool_merge_pdf_example_title: 'Combiner des fichiers PDF en un seul',
   tool_merge_pdf_faq_a1:
-    'Non. pdf-lib s’exécute dans votre onglet (la bibliothèque peut se charger depuis un CDN). Vos PDF ne sont pas envoyés sur nos serveurs.',
+    'Non. pdf-lib s’exécute dans votre onglet (la bibliothèque peut se charger depuis ce site). Vos PDF ne sont pas envoyés sur nos serveurs.',
   tool_merge_pdf_faq_a2:
     'Images vers PDF crée un PDF à partir de photos. Cet outil assemble des fichiers PDF existants en un seul document.',
   tool_merge_pdf_faq_a3:
@@ -51,7 +51,7 @@ const fr: SiteLangDict = {
   tool_merge_pdf_rules_item_2:
     'Moteur : pdf-lib charge chaque PDF et utilise copyPages vers un nouveau document — sans envoi de vos fichiers.',
   tool_merge_pdf_rules_item_3:
-    'Confidentialité : les octets restent dans l’onglet. Le script de la bibliothèque peut venir d’un CDN.',
+    'Confidentialité : les octets restent dans l’onglet. Le script de la bibliothèque peut venir de ce site.',
   tool_merge_pdf_rules_item_4:
     'Limites : ≥2 fichiers ; PDF chiffrés ou corrompus échouent avec une erreur lisible ; très gros lots peuvent ralentir la mémoire.',
   tool_merge_pdf_rules_title: 'Règles à connaître',

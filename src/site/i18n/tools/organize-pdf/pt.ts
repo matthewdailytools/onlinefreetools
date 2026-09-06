@@ -17,7 +17,7 @@ const pt: SiteLangDict = {
   tool_organize_pdf_err_organize: "Falha ao organizar. Verifique o arquivo e a lista.",
   tool_organize_pdf_example: "A amostra carrega um PDF de três páginas, remove a 2, aplica a nova ordem e habilita o download de um organized.pdf de duas páginas.",
   tool_organize_pdf_example_title: "Exemplo",
-  tool_organize_pdf_faq_a1: "Não. O a biblioteca PDF roda na sua aba (a biblioteca pode vir de um CDN). O PDF não é enviado aos nossos servidores.",
+  tool_organize_pdf_faq_a1: "Não. O a biblioteca PDF roda na sua aba (a biblioteca pode vir deste site). O PDF não é enviado aos nossos servidores.",
   tool_organize_pdf_faq_a2: "Juntar combina vários PDFs. Dividir exporta páginas em vários arquivos (ou ZIP). Organizar muda a ordem num único PDF e baixa um arquivo.",
   tool_organize_pdf_faq_a3: "Sim—use Cima/Baixo. Aplicar copia na ordem da lista.",
   tool_organize_pdf_faq_a4: "PDFs com senha costumam falhar aqui. Remova a senha e tente de novo.",

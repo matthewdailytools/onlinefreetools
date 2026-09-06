@@ -3,7 +3,7 @@
  */
 import type { SiteLangDict } from '../../../types';
 const zh: SiteLangDict = {
-  tool_markdown_article: '一页搞定双向：有预览、能导出，并写清会清掉什么、转 MD 时会丢什么。内容不上传；开源库可能走 CDN。',
+  tool_markdown_article: '一页搞定双向：有预览、能导出，并写清会清掉什么、转 MD 时会丢什么。内容不上传；开源库从本站加载。',
   tool_markdown_clear: '清空',
   tool_markdown_copy: '复制 HTML',
   tool_markdown_copy_done: '已复制',
@@ -21,7 +21,7 @@ const zh: SiteLangDict = {
   tool_markdown_export_title: 'Markdown 转 HTML 导出',
   tool_markdown_faq_a1: 'Markdown → HTML 会先走 DOMPurify，常见脚本和危险属性会在预览/复制前去掉。',
   tool_markdown_faq_a2: '多半不能完整保留。把它当「能读能改的草稿」：脚本和重样式会没，复杂表可能变简单。',
-  tool_markdown_faq_a3: '转换在本地完成。若从 CDN 拉库，那是下载脚本，不是上传你的文章。',
+  tool_markdown_faq_a3: '转换在本地完成。若从本站 拉库，那是下载脚本，不是上传你的文章。',
   tool_markdown_faq_a4: '不能保证。空白和不支持的标签会漂。要字节级一致请自行 Diff。',
   tool_markdown_faq_a5: '常用 CommonMark：标题、列表、链接、强调、代码块。需要离线分享时可勾选生成完整 HTML 文档。',
   tool_markdown_faq_q1: '导出的 HTML 安全吗？',
@@ -30,7 +30,7 @@ const zh: SiteLangDict = {
   tool_markdown_faq_q4: '来回转换能完全一致吗？',
   tool_markdown_faq_q5: '语法和导出选项有哪些？',
   tool_markdown_full_doc: '生成完整 HTML 文档',
-  tool_markdown_how_body: '先选标签页。左边输入、右边浏览器内更新。转 HTML 时可复制片段或套一层简单整页；转 MD 得到纯文本，方便进 Git 或丢给大模型。加载 CDN 库 ≠ 上传你的粘贴。',
+  tool_markdown_how_body: '先选标签页。左边输入、右边浏览器内更新。转 HTML 时可复制片段或套一层简单整页；转 MD 得到纯文本，方便进 Git 或丢给大模型。加载本站库 ≠ 上传你的粘贴。',
   tool_markdown_how_item_1: '选择 Markdown → HTML 或 HTML → Markdown 标签页。',
   tool_markdown_how_item_2: '在左侧粘贴输入（或点「加载示例」）。',
   tool_markdown_how_item_3: 'Markdown → HTML 时可勾选生成完整 HTML 文档。',
@@ -50,7 +50,7 @@ const zh: SiteLangDict = {
   tool_markdown_rules_item_html_md: '往 MD：先清理再 Turndown；默认 ATX 标题和围栏代码，目标是好改的草稿，不是像素级还原。',
   tool_markdown_rules_item_loss: '会丢东西：样式、脚本、注释、复杂表格常被摊平。别默认来回转一圈还能对得上原文。',
   tool_markdown_rules_item_md_html: '往 HTML：marked 读 CommonMark 风格，DOMPurify 去掉危险脚本和属性后再给你看或保存。',
-  tool_markdown_rules_privacy: '粘贴留在浏览器。CDN 只是拉库文件，不会把正文传到我们的服务器。',
+  tool_markdown_rules_privacy: '粘贴留在浏览器。本站只是拉库文件，不会把正文传到我们的服务器。',
   tool_markdown_rules_title: '两边分别怎么转',
   tool_markdown_sample_html: '<h1>标题</h1>\n<p>你好 <strong>世界</strong></p>',
   tool_markdown_sample_md:

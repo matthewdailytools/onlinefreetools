@@ -21,7 +21,7 @@ const ja: SiteLangDict = {
   tool_unzip_file_example_title: '例',
   tool_unzip_file_exported_all: '安全なパスで新しいZIPにまとめました。',
   tool_unzip_file_faq_a1:
-    'いいえ。ZIPはブラウザタブ内で読み取られ、展開後のデータも端末内に残ります。ZIPエンジンのスクリプトはCDNから読み込まれる場合がありますが、アーカイブ自体はサーバーにアップロードされません。',
+    'いいえ。ZIPはブラウザタブ内で読み取られ、展開後のデータも端末内に残ります。ZIPエンジンのスクリプトはこのサイトから読みますが、アーカイブ自体はサーバーにアップロードされません。',
   tool_unzip_file_faq_a2:
     'このページはZIP向けです。RAR、7Z、ISO、TAR.GZ はより重いマルチ形式エンジンが必要なため、対応する場合は別のアーカイブ展開ツールで扱うのが適切です。',
   tool_unzip_file_faq_a3:

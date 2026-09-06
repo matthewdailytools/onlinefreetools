@@ -36,7 +36,7 @@ const de: SiteLangDict = {
   tool_csv_json_faq_a4:
     'Objekte werden zu Spalten mit Punktpfaden abgeflacht (dim.w, dim.h). Arrays werden als JSON-String in einer einzelnen Zelle geschrieben. Die Spalten sind die Vereinigung aller Schlüssel; fehlende Werte bleiben leer.',
   tool_csv_json_faq_a5:
-    'Nein. Das Parsen bleibt in diesem Tab und gewählte Dateien werden lokal gelesen. Ein CDN kann Papa Parse ausliefern; diese Anfrage lädt nur Code, kein Upload Ihres CSV oder JSON.',
+    'Nein. Das Parsen bleibt in diesem Tab und gewählte Dateien werden lokal gelesen. Diese Website kann Papa Parse ausliefern; diese Anfrage lädt nur Code, kein Upload Ihres CSV oder JSON.',
   tool_csv_json_faq_q1: 'Werden Semikolon oder Tab unterstützt, nicht nur Komma?',
   tool_csv_json_faq_q2: 'Bleiben Zahlen, führende Nullen und IDs erhalten?',
   tool_csv_json_faq_q3: 'Wie werden Felder mit Kommas, Anführungszeichen oder Zeilenumbrüchen behandelt?',
@@ -69,7 +69,7 @@ const de: SiteLangDict = {
   tool_csv_json_rules_item_3:
     'JSON → CSV: Objekte werden über Punktpfade abgeflacht (dim.w, dim.h); Arrays werden als JSON-String in einer Zelle geschrieben; Spalten sind die Vereinigung aller Schlüssel, Fehlendes bleibt leer.',
   tool_csv_json_rules_item_4:
-    'Datenschutz: Ihr Text und Ihre Dateien werden nicht hochgeladen. Das Laden von Papa Parse über ein CDN lädt nur Bibliothekscode, nicht Ihre Daten.',
+    'Datenschutz: Ihr Text und Ihre Dateien werden nicht hochgeladen. Das Laden von Papa Parse von dieser Website lädt nur Bibliothekscode, nicht Ihre Daten.',
   tool_csv_json_rules_title: 'Regeln, mit denen Sie rechnen sollten',
   tool_csv_json_sample: 'Beispiel laden',
   tool_csv_json_sample_csv: 'sku,title,price\nA-001,"Chair, oak",129.9\nA-002,Desk,89',

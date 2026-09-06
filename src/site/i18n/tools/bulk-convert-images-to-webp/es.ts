@@ -33,7 +33,7 @@ const es: SiteLangDict = {
 		'Cargar ejemplo pone un bloque opaco y un logo transparente, escribe dos .webp y activa Descargar ZIP. El logo conserva el agujero.',
 	tool_bulk_convert_images_to_webp_example_title: 'Ejemplo',
 	tool_bulk_convert_images_to_webp_faq_a1:
-		'No. La lectura y la escritura WebP ocurren en esta pestaña. No salen del dispositivo y no se suben al servidor. El ayudante del ZIP puede cargarse desde un CDN; tus fotos siguen en la pestaña.',
+		'No. La lectura y la escritura WebP ocurren en esta pestaña. No salen del dispositivo y no se suben al servidor. El ayudante del ZIP puede cargarse desde este sitio; tus fotos siguen en la pestaña.',
 	tool_bulk_convert_images_to_webp_faq_a2:
 		'Sí. png a webp es esta página: elige los archivos, deja la calidad cerca de 0.8, convierte todo. Los agujeros quedan si el PNG tenía alfa.',
 	tool_bulk_convert_images_to_webp_faq_a3:

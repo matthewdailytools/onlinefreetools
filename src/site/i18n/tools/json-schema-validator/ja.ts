@@ -13,7 +13,7 @@ const ja: SiteLangDict = {
   tool_json_schema_validator_desc:
     'Schema で JSON を検証し JSON Pointer で場所を示す — ローカル draft-07。',
   tool_json_schema_validator_description:
-    'ブラウザで JSON Schema（draft-07）に対して JSON を検証します。手順：Schema とインスタンスを貼り、検証し、失敗ごとに JSON Pointer を確認。例：price が無い商品オブジェクトは missingProperty で失敗します。貼り付けはタブ内に留まり、Ajv は CDN からライブラリだけ取得します。',
+    'ブラウザで JSON Schema（draft-07）に対して JSON を検証します。手順：Schema とインスタンスを貼り、検証し、失敗ごとに JSON Pointer を確認。例：price が無い商品オブジェクトは missingProperty で失敗します。貼り付けはタブ内に留まり、Ajv は このサイトからライブラリだけ取得します。',
   tool_json_schema_validator_draft_note: 'エンジン: Ajv 8 · JSON Schema draft-07（既定）。',
   tool_json_schema_validator_empty: '先に Schema とインスタンス JSON を貼ってください。',
   tool_json_schema_validator_example:
@@ -27,7 +27,7 @@ const ja: SiteLangDict = {
   tool_json_schema_validator_faq_a3:
     '本ページは Ajv の draft-07 を使います。2019-09 / 2020-12 は別ビルドが必要で、ここでは選べません。',
   tool_json_schema_validator_faq_a4:
-    'Schema と JSON はアップロードされません。CDN は Ajv のコードだけを取得します。',
+    'Schema と JSON はアップロードされません。このサイトは Ajv のコードだけを取得します。',
   tool_json_schema_validator_faq_a5:
     'Schema とモデル JSON を貼って検証し、各 Pointer を直して通るまで繰り返します。構造化出力を下流に渡す前の確認向きです。',
   tool_json_schema_validator_faq_q1: 'なぜ検証に失敗しますか？',
@@ -58,7 +58,7 @@ const ja: SiteLangDict = {
   tool_json_schema_validator_rules_item_3:
     'Draft：既定は draft-07。ここでは 2020-12 の語彙を前提にしないでください。',
   tool_json_schema_validator_rules_item_4:
-    'プライバシー：貼り付けはタブ内。CDN は Ajv コードのみ取得します。',
+    'プライバシー：貼り付けはタブ内。このサイトは Ajv コードのみ取得します。',
   tool_json_schema_validator_rules_title: '想定されるルール',
   tool_json_schema_validator_sample_fail: '失敗サンプル',
   tool_json_schema_validator_sample_instance_fail: '{"sku":"A-1"}',

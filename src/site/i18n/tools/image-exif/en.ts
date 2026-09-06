@@ -61,7 +61,7 @@ const en: SiteLangDict = {
   tool_image_exif_rules_item_3:
     'JPEG strip uses a high quality setting but is still a re-encode — not bit-perfect. Prefer strip when privacy matters more than byte identity.',
   tool_image_exif_rules_item_4:
-    'Privacy: your file is not uploaded. A CDN may load the open-source parser; that request is library code only.',
+    'Privacy: your file is not uploaded. This site may load the open-source parser; that request is library code only.',
   tool_image_exif_rules_title: 'Rules you should expect',
   tool_image_exif_sample: 'Load sample',
   tool_image_exif_status_analyzed: 'Metadata ready — review tags below.',

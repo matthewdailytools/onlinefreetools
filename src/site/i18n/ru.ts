@@ -147,7 +147,7 @@ const ru: SiteLangDict = {
   tool_add_digital_signature_to_pdf_faq_a1:
     'Нет. Страница хеширует PDF и рисует рамку. PKCS#7 / PAdES не встраивается. Для рукописного имени используйте «Подписать документ PDF».',
   tool_add_digital_signature_to_pdf_faq_a2:
-    'Нет. Хеш и штамп считаются во вкладке (библиотеки могут грузиться с CDN). Файл на наши серверы не уходит.',
+    'Нет. Хеш и штамп считаются во вкладке (библиотеки грузятся с этого сайта). Файл на наши серверы не уходит.',
   tool_add_digital_signature_to_pdf_faq_a3:
     'Показанный SHA-256 — исходный файл до рамки. Сохранение добавляет байты, поэтому поздний хеш скачанного файла будет другим.',
   tool_add_digital_signature_to_pdf_faq_a4: 'Нет. Для пароля используйте «Защитить PDF». Эта страница только добавляет видимую метку.',
@@ -203,7 +203,7 @@ const ru: SiteLangDict = {
   tool_add_text_to_pdf_file_example: 'Загрузить пример: CONFIDENTIAL',
   tool_add_text_to_pdf_file_example_title: 'Пример',
   tool_add_text_to_pdf_file_faq_a1:
-    'Нет. Рендеринг в вашей вкладке (библиотеки могут грузиться с CDN). PDF не отправляется на наши серверы.',
+    'Нет. Рендеринг в вашей вкладке (библиотеки грузятся с этого сайта). PDF не отправляется на наши серверы.',
   tool_add_text_to_pdf_file_faq_a2: 'Нет. Эта операция не зависит от извлечения текстового слоя PDF.',
   tool_add_text_to_pdf_file_faq_a3: 'Encrypted or damaged files show a clear error instead of failing silently.',
   tool_add_text_to_pdf_file_faq_a4:
@@ -698,7 +698,7 @@ const ru: SiteLangDict = {
   tool_archive_extractor_example_title: 'Пример',
   tool_archive_extractor_exported_all: 'Файлы упакованы в новый ZIP с безопасными путями.',
   tool_archive_extractor_faq_a1:
-    'Нет. Архив читается во вкладке браузера, а извлечённые байты остаются на вашем устройстве. Вспомогательный скрипт может загрузиться с CDN, но ваши файлы не отправляются на наши серверы.',
+    'Нет. Архив читается во вкладке браузера, а извлечённые байты остаются на вашем устройстве. Вспомогательный скрипт может загрузиться с этого сайта, но ваши файлы не отправляются на наши серверы.',
   tool_archive_extractor_faq_a2:
     'В этой версии работают ZIP, TAR, TAR.GZ и TGZ. RAR, 7Z и ISO отображаются как форматы с примечаниями поддержки, пока не подключён более тяжёлый многоформатный движок.',
   tool_archive_extractor_faq_a3:
@@ -950,7 +950,7 @@ const ru: SiteLangDict = {
   tool_batch_checksum_release_files_export_csv: 'Экспорт CSV',
   tool_batch_checksum_release_files_export_sums: 'Экспорт SUMS',
   tool_batch_checksum_release_files_faq_a1:
-    'Нет. Хеш считается на этой вкладке. Файлы остаются на устройстве и не загружаются на сервер. SHA-256 — Web Crypto. MD5 может грузить crypto-js с CDN; ваши байты вкладку не покидают.',
+    'Нет. Хеш считается на этой вкладке. Файлы остаются на устройстве и не загружаются на сервер. SHA-256 — Web Crypto. MD5 может грузить crypto-js с этого сайта; ваши байты вкладку не покидают.',
   tool_batch_checksum_release_files_faq_a2: 'Нет. Экспорт — таблица CSV и SHA256SUMS. Упаковать бинарники — это Создать ZIP, другая задача.',
   tool_batch_checksum_release_files_faq_a3:
     'Хеш файла — один файл или вставка. Эта страница хеширует набор релиза, сверяет вставленный SHA256SUMS и экспортирует CSV и SUMS.',
@@ -975,7 +975,8 @@ const ru: SiteLangDict = {
   tool_batch_checksum_release_files_md5_label: 'Считать также MD5',
   tool_batch_checksum_release_files_rules_body:
     'SHA-256 использует Web Crypto на байтах, прочитанных кусками по 4 МиБ и склеенных. На выходе таблица, CSV и SUMS, никогда ZIP оригиналов.',
-  tool_batch_checksum_release_files_rules_item_1: 'SHA-256 всегда идёт. MD5 по желанию и лениво грузит crypto-js с CDN; байты остаются на вкладке.',
+  tool_batch_checksum_release_files_rules_item_1:
+    'SHA-256 всегда идёт. MD5 по желанию и лениво грузит crypto-js с этого сайта; байты остаются на вкладке.',
   tool_batch_checksum_release_files_rules_item_2:
     'Строки SUMS как GNU sha256sum: hex, два пробела или пробел-звезда, затем имя. Лишние имена во вставке помечаются как отсутствующие.',
   tool_batch_checksum_release_files_rules_item_3:
@@ -1029,7 +1030,7 @@ const ru: SiteLangDict = {
     'Загрузить пример создаёт два коротких PDF со страницей-картинкой, прогоняет почтовый профиль по каждому, оставляет два файла в ZIP и показывает сэкономленные байты.',
   tool_batch_compress_pdfs_for_email_example_title: 'Пример',
   tool_batch_compress_pdfs_for_email_faq_a1:
-    'Нет. Растр и сборка идут на этой вкладке. Файлы остаются на устройстве и не загружаются на сервер. pdf.js, pdf-lib и помощник ZIP могут грузиться с CDN; ваши PDF вкладку не покидают.',
+    'Нет. Растр и сборка идут на этой вкладке. Файлы остаются на устройстве и не загружаются на сервер. pdf.js, pdf-lib и помощник ZIP могут грузиться с этого сайта; ваши PDF вкладку не покидают.',
   tool_batch_compress_pdfs_for_email_faq_a2:
     'Нет. Вы получаете ZIP из N PDF. Склеить в одну брошюру — это Объединить PDF, другая задача, не эта страница.',
   tool_batch_compress_pdfs_for_email_faq_a3:
@@ -1109,7 +1110,7 @@ const ru: SiteLangDict = {
     'Загрузить пример кладёт альбомный и портретный блоки, ставит SAMPLE, превью первого, применяет ту же относительную метку к обоим и включает «Скачать ZIP».',
   tool_batch_watermark_product_photos_example_title: 'Пример',
   tool_batch_watermark_product_photos_faq_a1:
-    'Нет. Чтение и штамп Canvas идут в этой вкладке. Файлы остаются на устройстве, без загрузки на сервер. Помощник ZIP может грузиться с CDN; ваши фото из вкладки не уходят.',
+    'Нет. Чтение и штамп Canvas идут в этой вкладке. Файлы остаются на устройстве, без загрузки на сервер. Помощник ZIP может грузиться с этого сайта; ваши фото из вкладки не уходят.',
   tool_batch_watermark_product_photos_faq_a2:
     'Нет. Размер — процент короткой стороны, девять якорей — доли этого холста. Портрет и альбом остаются в одном относительном углу.',
   tool_batch_watermark_product_photos_faq_a3:
@@ -1620,7 +1621,7 @@ const ru: SiteLangDict = {
     'Загрузить пример кладёт два прозрачных шахматных PNG, перекодирует их как PNG, заполняет таблицу и включает Скачать ZIP. Повторяющиеся имена становятся name (2).png.',
   tool_bulk_compress_png_images_example_title: 'Пример',
   tool_bulk_compress_png_images_faq_a1:
-    'Нет. Декодирование и запись PNG идут на этой вкладке. Файлы остаются на устройстве, без загрузки на сервер. Помощник ZIP может подгружаться с CDN; ваши картинки вкладку не покидают.',
+    'Нет. Декодирование и запись PNG идут на этой вкладке. Файлы остаются на устройстве, без загрузки на сервер. Помощник ZIP может подгружаться с этого сайта; ваши картинки вкладку не покидают.',
   tool_bulk_compress_png_images_faq_a2:
     'Нет. Выход всегда PNG. JPEG-подложки нет. Если можно JPEG и нужны меньше товарные фото — откройте пакетное сжатие товарных фото.',
   tool_bulk_compress_png_images_faq_a3: 'Да. Пиксели рисуются без сплошного фона и сохраняются как PNG, поэтому дыры остаются дырами.',
@@ -1701,7 +1702,7 @@ const ru: SiteLangDict = {
     'Загрузить пример кладёт два фото, сжимает JPEG на 200 КБ, заполняет таблицу и включает ZIP. Дубликаты становятся name (2).jpg.',
   tool_bulk_compress_product_photos_example_title: 'Пример',
   tool_bulk_compress_product_photos_faq_a1:
-    'Нет. Всё в этой вкладке. Файлы остаются на устройстве, без загрузки на сервер. Скрипт ZIP может прийти с CDN; ваши фото не уходят.',
+    'Нет. Всё в этой вкладке. Файлы остаются на устройстве, без загрузки на сервер. Скрипт ZIP может прийти с этого сайта; ваши фото не уходят.',
   tool_bulk_compress_product_photos_faq_a2:
     'Не всегда. Если при качестве 0.5 лимит всё ещё превышен, строка помечается промахом, но ближайший файл остаётся в архиве.',
   tool_bulk_compress_product_photos_faq_a3: 'Вторая страница не нужна. JPEG и JPG — один вывод с расширением .jpg.',
@@ -1801,7 +1802,7 @@ const ru: SiteLangDict = {
     'Загрузить пример кладёт непрозрачный блок и прозрачный логотип, рисует оба на белом, даёт два имени .jpg и включает Скачать ZIP.',
   tool_bulk_convert_images_to_jpg_example_title: 'Пример',
   tool_bulk_convert_images_to_jpg_faq_a1:
-    'Нет. Чтение и запись .jpg идут в этой вкладке. Файлы остаются на устройстве, без загрузки на сервер. Помощник ZIP может подгрузиться с CDN; ваши картинки вкладку не покидают.',
+    'Нет. Чтение и запись .jpg идут в этой вкладке. Файлы остаются на устройстве, без загрузки на сервер. Помощник ZIP может подгрузиться с этого сайта; ваши картинки вкладку не покидают.',
   tool_bulk_convert_images_to_jpg_faq_a2:
     'Да. PNG в JPG делается здесь: выберите файлы, оставьте белую подложку чтобы дыры не стали чёрными пятнами, конвертируйте все.',
   tool_bulk_convert_images_to_jpg_faq_a3:
@@ -1874,7 +1875,7 @@ const ru: SiteLangDict = {
     'Загрузить пример кладёт JPEG-блок и прозрачный логотип, пишет два .png и включает «Скачать ZIP». Строка JPEG часто показывает PNG крупнее.',
   tool_bulk_convert_images_to_png_example_title: 'Пример',
   tool_bulk_convert_images_to_png_faq_a1:
-    'Нет. Чтение и запись PNG идут в этой вкладке. Файлы остаются на устройстве, без загрузки на сервер. Помощник ZIP может грузиться с CDN; ваши картинки из вкладки не уходят.',
+    'Нет. Чтение и запись PNG идут в этой вкладке. Файлы остаются на устройстве, без загрузки на сервер. Помощник ZIP может грузиться с этого сайта; ваши картинки из вкладки не уходят.',
   tool_bulk_convert_images_to_png_faq_a2:
     'Нет. JPEG никогда не хранил дырки. jpg в png даёт обёртку PNG; фон остаётся непрозрачным. Настоящие дырки живут только если в исходнике уже был альфа-канал.',
   tool_bulk_convert_images_to_png_faq_a3:
@@ -1948,7 +1949,7 @@ const ru: SiteLangDict = {
     'Загрузить пример кладёт непрозрачный блок и прозрачный логотип, пишет два .webp и включает «Скачать ZIP». Дырка логотипа остаётся.',
   tool_bulk_convert_images_to_webp_example_title: 'Пример',
   tool_bulk_convert_images_to_webp_faq_a1:
-    'Нет. Чтение и запись WebP идут в этой вкладке. Файлы остаются на устройстве, без загрузки на сервер. Помощник ZIP может грузиться с CDN; ваши картинки из вкладки не уходят.',
+    'Нет. Чтение и запись WebP идут в этой вкладке. Файлы остаются на устройстве, без загрузки на сервер. Помощник ZIP может грузиться с этого сайта; ваши картинки из вкладки не уходят.',
   tool_bulk_convert_images_to_webp_faq_a2:
     'Да. png в webp — эта страница: выберите файлы, держите качество около 0.8, конвертируйте все. Дырки остаются, если у PNG была альфа.',
   tool_bulk_convert_images_to_webp_faq_a3:
@@ -2130,7 +2131,7 @@ const ru: SiteLangDict = {
   tool_check_pdf_a_compliance_example_title: 'Пример',
   tool_check_pdf_a_compliance_fail: 'Не найдено',
   tool_check_pdf_a_compliance_faq_a1:
-    'Нет. Рендеринг в вашей вкладке (библиотеки могут грузиться с CDN). PDF не отправляется на наши серверы.',
+    'Нет. Рендеринг в вашей вкладке (библиотеки грузятся с этого сайта). PDF не отправляется на наши серверы.',
   tool_check_pdf_a_compliance_faq_a2: 'Нет. Страница ищет только пять маркеров в байтах; для проверки профиля используйте veraPDF.',
   tool_check_pdf_a_compliance_faq_a3: 'Encrypted or damaged files show a clear error instead of failing silently.',
   tool_check_pdf_a_compliance_faq_a4: 'Related PDF tools are listed at the bottom of the page.',
@@ -2584,7 +2585,7 @@ const ru: SiteLangDict = {
   tool_combine_files_into_one_pdf_example: 'Загрузить пример: Combine sample.',
   tool_combine_files_into_one_pdf_example_title: 'Пример',
   tool_combine_files_into_one_pdf_faq_a1:
-    'Нет. Рендеринг в вашей вкладке (библиотеки могут грузиться с CDN). PDF не отправляется на наши серверы.',
+    'Нет. Рендеринг в вашей вкладке (библиотеки грузятся с этого сайта). PDF не отправляется на наши серверы.',
   tool_combine_files_into_one_pdf_faq_a2: 'Нет. Эта операция не зависит от извлечения текстового слоя PDF.',
   tool_combine_files_into_one_pdf_faq_a3: 'Encrypted or damaged files show a clear error instead of failing silently.',
   tool_combine_files_into_one_pdf_faq_a4: 'Related PDF tools are listed at the bottom of the page.',
@@ -2637,7 +2638,7 @@ const ru: SiteLangDict = {
   tool_compare_two_pdfs_example: 'Загрузить пример: Version A text.',
   tool_compare_two_pdfs_example_title: 'Пример',
   tool_compare_two_pdfs_faq_a1:
-    'Нет. Рендеринг в вашей вкладке (библиотеки могут грузиться с CDN). PDF не отправляется на наши серверы.',
+    'Нет. Рендеринг в вашей вкладке (библиотеки грузятся с этого сайта). PDF не отправляется на наши серверы.',
   tool_compare_two_pdfs_faq_a2: 'Scanned PDFs are images without a text layer; this tool does not OCR.',
   tool_compare_two_pdfs_faq_a3: 'Encrypted or damaged files show a clear error instead of failing silently.',
   tool_compare_two_pdfs_faq_a4: 'Related PDF tools are listed at the bottom of the page.',
@@ -2690,7 +2691,7 @@ const ru: SiteLangDict = {
     'Загрузить пример сопоставляет notes-a.txt (alpha / вторая строка / третья) с notes-b.txt, где середина — «изменённая строка». Построчный режим отмечает только её. Этот результат уже виден при первой отрисовке.',
   tool_compare_two_text_files_online_example_title: 'Пример',
   tool_compare_two_text_files_online_faq_a1:
-    'Нет. FileReader читает байты в этой вкладке. jsdiff может подгрузиться с CDN как библиотека; ваши файлы на наши серверы не уходят.',
+    'Нет. FileReader читает байты в этой вкладке. jsdiff может подгрузиться с этого сайта как библиотека; ваши файлы на наши серверы не уходят.',
   tool_compare_two_text_files_online_faq_a2:
     'Файлы строго декодируются как UTF-8, начальный BOM удаляется. Некорректный UTF-8 отклоняется, а не маскируется символами замены; старые кодировки вроде Windows-1252 сначала преобразуйте.',
   tool_compare_two_text_files_online_faq_a3:
@@ -2752,7 +2753,7 @@ const ru: SiteLangDict = {
     'Загрузка примера создаёт два крошечных .docx. Во второй записке «meet at noon» меняется на «meet at 3pm». Уже при первом показе видна эта разница формулировок.',
   tool_compare_two_word_documents_for_differences_example_title: 'Пример',
   tool_compare_two_word_documents_for_differences_faq_a1:
-    'Нет. Файлы читаются в этой вкладке. mammoth и jsdiff могут подгружаться как библиотеки с CDN; ваши документы не загружаются на наши серверы.',
+    'Нет. Файлы читаются в этой вкладке. mammoth и jsdiff могут подгружаться как библиотеки с этого сайта; ваши документы не загружаются на наши серверы.',
   tool_compare_two_word_documents_for_differences_faq_a2:
     'Нет. Word умеет сравнивать оформление и исправления. Здесь извлекается только видимый текст, затем строится diff этой формулировки. Колонтитулы и стили отбрасываются.',
   tool_compare_two_word_documents_for_differences_faq_a3:
@@ -2879,7 +2880,7 @@ const ru: SiteLangDict = {
     'Образец загружает двухстраничный PDF с цветными блоками и встроенным JPEG, применяет Среднее сжатие, показывает размер до/после с процентом экономии и включает скачивание compressed.pdf.',
   tool_compress_pdf_example_title: 'Уменьшить размер PDF',
   tool_compress_pdf_faq_a1:
-    'Нет. pdf.js и библиотека PDF работают во вкладке (библиотеки могут грузиться с CDN). PDF не загружается на наши серверы.',
+    'Нет. pdf.js и библиотека PDF работают во вкладке (библиотеки грузятся с этого сайта). PDF не загружается на наши серверы.',
   tool_compress_pdf_faq_a2:
     'Инструмент растеризует каждую страницу в JPEG и собирает новый PDF. Текстовые или уже оптимизированные файлы могут почти не уменьшиться. Это не облачная перекомпрессия встроенных потоков.',
   tool_compress_pdf_faq_a3:
@@ -3074,58 +3075,76 @@ const ru: SiteLangDict = {
   tool_contribution_margin_usecases_title: 'Когда использовать',
   tool_contribution_margin_vc_label: 'Переменные затраты на ед.',
   tool_contribution_margin_vc_ph: 'напр. 30',
-  tool_convert_html_to_pdf_article: 'Конвертировать HTML в PDF. Файлы остаются на устройстве; без загрузки на сервер.',
+  tool_convert_html_to_pdf_article: 'Вставьте HTML или загрузите URL страницы, уберите скрипты и сохраните A4 PDF.',
   tool_convert_html_to_pdf_choose_file: 'Выбрать PDF',
   tool_convert_html_to_pdf_choose_files: 'Выбрать файлы',
   tool_convert_html_to_pdf_clear: 'Очистить',
-  tool_convert_html_to_pdf_convert: 'Convert',
-  tool_convert_html_to_pdf_desc: 'Конвертировать HTML в PDF — Файлы остаются на устройстве; без загрузки на сервер.',
+  tool_convert_html_to_pdf_convert: 'Конвертировать',
+  tool_convert_html_to_pdf_desc: 'Вставьте HTML или загрузите URL и сохраните A4 PDF во вкладке.',
   tool_convert_html_to_pdf_description:
-    'Конвертировать HTML в PDF. Файлы остаются на устройстве; без загрузки на сервер. Пример показывает реальные входные и выходные данные; шаги и ограничения описаны на странице.',
+    'HTML в PDF: вставьте фрагмент или загрузите адрес страницы, уберите скрипты и опасные атрибуты, проверьте предпросмотр и скачайте A4. При загрузке URL сервер один раз получает HTML и не сохраняет его; конвертация идёт в браузере. Сайты на JavaScript, print-CSS и чужие картинки могут не совпасть с живой страницей.',
   tool_convert_html_to_pdf_download: 'Скачать',
-  tool_convert_html_to_pdf_drop_hint: 'Или перетащите сюда. Обработка в этой вкладке.',
-  tool_convert_html_to_pdf_empty: 'Choose a file first.',
-  tool_convert_html_to_pdf_err_convert: 'Processing failed. Retry.',
-  tool_convert_html_to_pdf_err_encrypted: 'This PDF looks password-protected. Unlock it first.',
-  tool_convert_html_to_pdf_err_load: 'Could not read the file.',
-  tool_convert_html_to_pdf_err_notext: 'No selectable text found (no OCR).',
-  tool_convert_html_to_pdf_err_pdfjs: 'PDF renderer failed to load.',
+  tool_convert_html_to_pdf_drop_hint: 'HTML можно вставить прямо сюда. Конвертация остаётся во вкладке.',
+  tool_convert_html_to_pdf_empty: 'Сначала вставьте HTML или загрузите URL.',
+  tool_convert_html_to_pdf_err_convert: 'Обработка не удалась. Повторите.',
+  tool_convert_html_to_pdf_err_encrypted: 'Похоже, PDF защищён паролем. Сначала разблокируйте.',
+  tool_convert_html_to_pdf_err_load: 'Не удалось прочитать HTML.',
+  tool_convert_html_to_pdf_err_notext: 'Нет выделяемого текста (без OCR).',
+  tool_convert_html_to_pdf_err_paste: 'Не удалось прочитать буфер обмена. Разрешите вставку или вставьте HTML в поле сами.',
+  tool_convert_html_to_pdf_err_pdfjs: 'Не загрузился PDF-рендерер.',
+  tool_convert_html_to_pdf_err_url: 'Не удалось загрузить этот URL. Проверьте адрес или сайт блокирует запросы.',
+  tool_convert_html_to_pdf_err_url_empty: 'Сначала укажите URL страницы.',
   tool_convert_html_to_pdf_example: 'Загрузить пример: <h1>Hello HTML</h1><p>Sample paragraph f',
   tool_convert_html_to_pdf_example_title: 'Пример',
   tool_convert_html_to_pdf_faq_a1:
-    'Нет. Рендеринг в вашей вкладке (библиотеки могут грузиться с CDN). PDF не отправляется на наши серверы.',
-  tool_convert_html_to_pdf_faq_a2: 'Нет. Эта операция не зависит от извлечения текстового слоя PDF.',
-  tool_convert_html_to_pdf_faq_a3: 'Encrypted or damaged files show a clear error instead of failing silently.',
-  tool_convert_html_to_pdf_faq_a4: 'Related PDF tools are listed at the bottom of the page.',
-  tool_convert_html_to_pdf_faq_a5: 'Large files may be slow; try a desktop browser first.',
+    'Вставленный HTML остаётся во вкладке (библиотеки грузятся с этого сайта). Если вы загружаете URL, адрес один раз уходит на сервер, чтобы получить HTML; страница не хранится. PDF собирается в браузере.',
+  tool_convert_html_to_pdf_faq_a2: 'Нет. Текстовый слой PDF не извлекается.',
+  tool_convert_html_to_pdf_faq_a3: 'Шифрование или повреждение дают понятную ошибку, а не тихий сбой.',
+  tool_convert_html_to_pdf_faq_a4: 'Соседние PDF-инструменты перечислены внизу страницы.',
+  tool_convert_html_to_pdf_faq_a5: 'Большой ввод может быть медленным; сначала попробуйте на компьютере.',
+  tool_convert_html_to_pdf_faq_a6:
+    'Да. Введите адрес и нажмите «Загрузить URL». CSS и картинки становятся абсолютными URL. Скрипты снимаются до PDF.',
   tool_convert_html_to_pdf_faq_q1: 'Загружается ли мой файл?',
   tool_convert_html_to_pdf_faq_q2: 'Нужен ли OCR или выделяемый текст PDF?',
-  tool_convert_html_to_pdf_faq_q3: 'What about encrypted files?',
-  tool_convert_html_to_pdf_faq_q4: 'How is this different from related tools?',
-  tool_convert_html_to_pdf_faq_q5: 'Are large files supported?',
-  tool_convert_html_to_pdf_how_body: 'Как это работает: Файлы остаются на устройстве; без загрузки на сервер.',
-  tool_convert_html_to_pdf_how_item_1: 'Choose a PDF or enter content',
-  tool_convert_html_to_pdf_how_item_2: 'Нажмите «Convert», чтобы выполнить операцию',
-  tool_convert_html_to_pdf_how_item_3: 'Review the output area',
-  tool_convert_html_to_pdf_how_item_4: 'Download or print when needed',
+  tool_convert_html_to_pdf_faq_q3: 'Что с зашифрованными файлами?',
+  tool_convert_html_to_pdf_faq_q4: 'Чем это отличается от соседних инструментов?',
+  tool_convert_html_to_pdf_faq_q5: 'Поддерживаются ли большие файлы?',
+  tool_convert_html_to_pdf_faq_q6: 'Можно ли сделать PDF по URL веб-страницы?',
+  tool_convert_html_to_pdf_how_body:
+    'Вставьте HTML или загрузите URL, конвертируйте, проверьте предпросмотр, скачайте. Вставка остаётся на устройстве; URL проходит через сервер один раз.',
+  tool_convert_html_to_pdf_how_item_1: 'Вставьте HTML или укажите URL и нажмите «Загрузить URL»',
+  tool_convert_html_to_pdf_how_item_2: 'Нажмите «Конвертировать», чтобы сохранить A4 PDF',
+  tool_convert_html_to_pdf_how_item_3: 'Проверьте область результата',
+  tool_convert_html_to_pdf_how_item_4: 'При необходимости скачайте или распечатайте',
   tool_convert_html_to_pdf_how_title: 'Как это работает',
-  tool_convert_html_to_pdf_html_label: 'HTML source',
-  tool_convert_html_to_pdf_preview_label: 'Preview',
-  tool_convert_html_to_pdf_rules_body: 'Файлы остаются на устройстве; без загрузки на сервер.',
-  tool_convert_html_to_pdf_rules_item_1: 'Конвертировать HTML в PDF.',
-  tool_convert_html_to_pdf_rules_item_2: 'Client-side only; files are not uploaded.',
-  tool_convert_html_to_pdf_rules_item_3: 'No OCR for scanned image-only PDFs.',
-  tool_convert_html_to_pdf_rules_item_4: 'Encrypted or corrupt files fail with readable errors.',
+  tool_convert_html_to_pdf_html_label: 'Исходный HTML',
+  tool_convert_html_to_pdf_html_paste: 'Вставить HTML',
+  tool_convert_html_to_pdf_preview_label: 'Предпросмотр',
+  tool_convert_html_to_pdf_rules_body:
+    'Вставленный HTML остаётся на устройстве. При загрузке URL сервер один раз получает HTML и не сохраняет его.',
+  tool_convert_html_to_pdf_rules_item_1: 'Вставьте HTML или загрузите публичный URL и сохраните PDF.',
+  tool_convert_html_to_pdf_rules_item_2: 'Вставка остаётся во вкладке. Загрузка URL один раз отправляет адрес на сервер.',
+  tool_convert_html_to_pdf_rules_item_3: 'Нет OCR для сканов без текстового слоя.',
+  tool_convert_html_to_pdf_rules_item_4: 'Шифрованные или битые файлы падают с читаемой ошибкой.',
   tool_convert_html_to_pdf_rules_title: 'Правила и ограничения',
   tool_convert_html_to_pdf_sample: 'Загрузить пример',
-  tool_convert_html_to_pdf_status_done: 'Done.',
-  tool_convert_html_to_pdf_status_working: 'Working…',
+  tool_convert_html_to_pdf_status_done: 'Готово.',
+  tool_convert_html_to_pdf_status_fetching: 'Загружаем HTML страницы…',
+  tool_convert_html_to_pdf_status_waiting: 'Ждём, пока догрузятся картинки…',
+  tool_convert_html_to_pdf_status_working: 'Обработка…',
   tool_convert_html_to_pdf_title: 'Конвертировать HTML в PDF',
-  tool_convert_html_to_pdf_usecase_1: 'Office: quick PDF tasks without desktop software',
-  tool_convert_html_to_pdf_usecase_2: 'Students: local preview and export',
-  tool_convert_html_to_pdf_usecase_3: 'Privacy-sensitive files that must stay on device',
+  tool_convert_html_to_pdf_url_hint: 'HTML забираем один раз; CSS и картинки — абсолютные URL. Скрипты снимаются.',
+  tool_convert_html_to_pdf_url_label: 'URL страницы',
+  tool_convert_html_to_pdf_url_load: 'Загрузить URL',
+  tool_convert_html_to_pdf_url_placeholder: 'https://example.com',
+  tool_convert_html_to_pdf_usecase_1: 'Сохранить публичную страницу в PDF без драйвера принтера',
+  tool_convert_html_to_pdf_usecase_2: 'Вставить HTML письма или кампании и экспортировать',
+  tool_convert_html_to_pdf_usecase_3: 'Держать исходник во вкладке и запрашивать URL только при необходимости',
   tool_convert_html_to_pdf_usecases_title: 'Подходит для',
-  tool_convert_html_to_pdf_warn_large: 'Large file — may be slow.',
+  tool_convert_html_to_pdf_wait_hint:
+    'Дополнительные секунды после начала загрузки картинок. По умолчанию 3. Увеличьте, если в PDF остаются пустые области вместо изображений.',
+  tool_convert_html_to_pdf_wait_label: 'Пауза загрузки (с)',
+  tool_convert_html_to_pdf_warn_large: 'Большой файл может обрабатываться медленно.',
   tool_convert_pdf_to_dwg_article:
     'Переведите PDF в сторону DWG, экспортировав ASCII DXF: сущности TEXT и рамка страницы, которые откроет AutoCAD. Браузер не пишет проприетарный DWG. Файлы остаются на устройстве; без загрузки на сервер.',
   tool_convert_pdf_to_dwg_choose_file: 'Выбрать PDF',
@@ -3262,7 +3281,7 @@ const ru: SiteLangDict = {
   tool_convert_word_document_to_pdf_example: 'Загрузка образца создаёт .docx с одним абзацем, показывает HTML и экспортирует одностраничный PDF.',
   tool_convert_word_document_to_pdf_example_title: 'Пример',
   tool_convert_word_document_to_pdf_faq_a1:
-    'Нет. Преобразование идёт во вкладке (библиотеки могут грузиться с CDN). Файл на наши серверы не уходит.',
+    'Нет. Преобразование идёт во вкладке (библиотеки грузятся с этого сайта). Файл на наши серверы не уходит.',
   tool_convert_word_document_to_pdf_faq_a2:
     'Цепочка .docx → HTML → PDF. Колонтитулы и плавающие объекты уплощаются. Если уже есть HTML, используйте «Преобразовать HTML в PDF».',
   tool_convert_word_document_to_pdf_faq_a3: 'Нет. Сначала сохраните как .docx. Страница принимает только пакет Office Open XML.',
@@ -3519,7 +3538,7 @@ const ru: SiteLangDict = {
     'Пример строит пустую страницу с Name и Email, показывает оба имени, предпросмотр и включает pdf-form.pdf.',
   tool_create_pdf_form_example_title: 'Пример',
   tool_create_pdf_form_faq_a1:
-    'Нет. Страница и поля собираются во вкладке. Скрипты CDN могут грузиться; форма на наши серверы не уходит.',
+    'Нет. Страница и поля собираются во вкладке. Скрипты этого сайта могут грузиться; форма на наши серверы не уходит.',
   tool_create_pdf_form_faq_a2: '«Сделать PDF заполняемым» накладывает поля на уже имеющийся файл. Эта страница стартует пустой.',
   tool_create_pdf_form_faq_a3: 'Выберите флажок в типе, назовите и «Добавить поле». Рамка берёт заданные X/Y и размер.',
   tool_create_pdf_form_faq_a4: 'Откройте «Заполнить PDF-форму» и введите пробные ответы.',
@@ -3576,7 +3595,7 @@ const ru: SiteLangDict = {
     'Загрузка примера кладёт notes.txt, крошечный photo.png и docs/readme.md и собирает sample.zip. Скачать ZIP доступно с первого экрана.',
   tool_create_zip_file_example_title: 'Пример',
   tool_create_zip_file_faq_a1:
-    'Нет. Байты читаются на этой вкладке. Скрипт движка ZIP может грузиться с CDN, но ваши файлы на наши серверы не уходят.',
+    'Нет. Байты читаются на этой вкладке. Скрипт движка ZIP может грузиться с этого сайта, но ваши файлы на наши серверы не уходят.',
   tool_create_zip_file_faq_a2:
     'Если браузер сообщает webkitRelativePath (сброс папки или выбор каталога), эти пути становятся записями ZIP после удаления ../. Это задача «zip папки» на этой странице.',
   tool_create_zip_file_faq_a3: 'Страница не создаёт и не взламывает AES-ZIP на первом экране. ZIP с паролем — только граница FAQ.',
@@ -3638,7 +3657,7 @@ const ru: SiteLangDict = {
     'Образец создаёт одностраничный PDF, обрезает 36 pt со всех сторон и включает cropped.pdf со статистикой.',
   tool_crop_pdf_example_title: 'Пример',
   tool_crop_pdf_faq_a1:
-    'Нет. библиотека PDF работает во вкладке (скрипты могут грузиться с CDN). PDF не отправляется на наши серверы.',
+    'Нет. библиотека PDF работает во вкладке (скрипты грузятся с этого сайта). PDF не отправляется на наши серверы.',
   tool_crop_pdf_faq_a2:
     'Инструмент сужает PDF-боксы отступами в пунктах—не перетаскиванием прямоугольника на превью, как у изображений.',
   tool_crop_pdf_faq_a3:
@@ -3714,7 +3733,7 @@ const ru: SiteLangDict = {
   tool_csv_json_faq_a4:
     'Объекты уплощаются в столбцы по точечному пути (dim.w, dim.h). Массивы записываются как строка JSON в одной ячейке. Столбцы — объединение ключей всех записей, а запись без ключа получает пустую ячейку.',
   tool_csv_json_faq_a5:
-    'Нет. Разбор остаётся в этой вкладке, а выбранные файлы читаются локально. CDN может отдавать Papa Parse, но этот запрос скачивает только код, а не загружает ваш CSV или JSON.',
+    'Нет. Разбор остаётся в этой вкладке, а выбранные файлы читаются локально. этот сайт может отдавать Papa Parse, но этот запрос скачивает только код, а не загружает ваш CSV или JSON.',
   tool_csv_json_faq_q1: 'Поддерживаются ли точка с запятой или табуляция, а не только запятая?',
   tool_csv_json_faq_q2: 'Останутся ли мои числа, ведущие нули и идентификаторы неизменными?',
   tool_csv_json_faq_q3: 'Как обрабатываются поля с запятыми, кавычками или переносами строк?',
@@ -3747,7 +3766,7 @@ const ru: SiteLangDict = {
   tool_csv_json_rules_item_3:
     'JSON → CSV: объекты уплощаются по точечным путям (dim.w, dim.h); массивы записываются как строка JSON в одной ячейке; столбцы — объединение всех ключей, отсутствующее остаётся пустым.',
   tool_csv_json_rules_item_4:
-    'Конфиденциальность: ваш текст и файлы не загружаются. Загрузка Papa Parse с CDN скачивает только код библиотеки, а не ваши данные.',
+    'Конфиденциальность: ваш текст и файлы не загружаются. Загрузка Papa Parse с этого сайта скачивает только код библиотеки, а не ваши данные.',
   tool_csv_json_rules_title: 'Правила, которые стоит ожидать',
   tool_csv_json_sample: 'Загрузить пример',
   tool_csv_json_sample_csv: 'sku,title,price\nA-001,"Chair, oak",129.9\nA-002,Desk,89',
@@ -4152,7 +4171,8 @@ const ru: SiteLangDict = {
   tool_edit_pdf_form_fields_example:
     'Пример создаёт PDF с Name и Email, показывает обе строки, предпросмотр и позволяет переименовать или удалить перед скачиванием.',
   tool_edit_pdf_form_fields_example_title: 'Пример',
-  tool_edit_pdf_form_fields_faq_a1: 'Нет. Список и правки во вкладке. Библиотеки CDN могут грузиться; PDF на наши серверы не уходит.',
+  tool_edit_pdf_form_fields_faq_a1:
+    'Нет. Список и правки во вкладке. Библиотеки этого сайта могут грузиться; PDF на наши серверы не уходит.',
   tool_edit_pdf_form_fields_faq_a2:
     'Переименование пишет новое внутреннее имя. Удаление снимает виджет. Уже введённые значения могут пропасть при удалении.',
   tool_edit_pdf_form_fields_faq_a3: 'PDF без полей показывает ошибку со ссылкой «Сделать PDF заполняемым».',
@@ -4209,7 +4229,7 @@ const ru: SiteLangDict = {
   tool_edit_pdf_text_online_example:
     'Загрузка примера создаёт одностраничный PDF с «Hello edit PDF text sample.», заполняет редактор, а Применить даёт скачиваемый PDF.',
   tool_edit_pdf_text_online_example_title: 'Пример',
-  tool_edit_pdf_text_online_faq_a1: 'Нет. Библиотеки могут прийти с CDN, но ваш PDF остаётся во вкладке и не уходит на наши серверы.',
+  tool_edit_pdf_text_online_faq_a1: 'Нет. Библиотеки грузятся с этого сайта, но ваш PDF остаётся во вкладке и не уходит на наши серверы.',
   tool_edit_pdf_text_online_faq_a2:
     'Нет. Это не правка глифов на месте. Текст извлекается, вы правите его, страницы рисуются заново простым макетом. Шрифты и точные колонки не сохраняются.',
   tool_edit_pdf_text_online_faq_a3: 'Сканы — картинки без текстового слоя. Инструмент не делает OCR и падает с понятной ошибкой.',
@@ -4341,7 +4361,7 @@ const ru: SiteLangDict = {
     'Загрузка примера сравнивает две CSV-таблицы. Заголовки Name/Qty совпадают; количество Gadget — 2 против 9, поэтому указан B3. Уже при первом показе видна эта ячейка.',
   tool_excel_compare_files_example_title: 'Пример',
   tool_excel_compare_files_faq_a1:
-    'Нет. Байты читаются в этой вкладке через SheetJS. Библиотека может подгружаться с CDN; ваши файлы не загружаются на наши серверы.',
+    'Нет. Байты читаются в этой вкладке через SheetJS. Библиотека может подгружаться с этого сайта; ваши файлы не загружаются на наши серверы.',
   tool_excel_compare_files_faq_a2:
     'Да: первый лист выбран по умолчанию. Списки листов нужны, если вкладка в том же файле другая. Остальные листы не сравниваются, пока вы их не выберете.',
   tool_excel_compare_files_faq_a3:
@@ -4515,7 +4535,7 @@ const ru: SiteLangDict = {
   tool_extract_text_from_pdf_example_title: 'Пример',
   tool_extract_text_from_pdf_extract: 'Extract',
   tool_extract_text_from_pdf_faq_a1:
-    'Нет. Рендеринг в вашей вкладке (библиотеки могут грузиться с CDN). PDF не отправляется на наши серверы.',
+    'Нет. Рендеринг в вашей вкладке (библиотеки грузятся с этого сайта). PDF не отправляется на наши серверы.',
   tool_extract_text_from_pdf_faq_a2: 'Scanned PDFs are images without a text layer; this tool does not OCR.',
   tool_extract_text_from_pdf_faq_a3: 'Encrypted or damaged files show a clear error instead of failing silently.',
   tool_extract_text_from_pdf_faq_a4:
@@ -4557,19 +4577,20 @@ const ru: SiteLangDict = {
   tool_feedback_email_label: 'Email',
   tool_feedback_message_label: 'Сообщение',
   tool_feedback_message_placeholder: 'Опишите проблему или предложение…',
+  tool_feedback_report_bug: 'Сообщить об ошибке на GitHub',
   tool_feedback_subject: 'Отзыв об инструменте',
   tool_feedback_subject_label: 'Тема',
   tool_feedback_title: 'Вопросы и отзывы',
   tool_feedback_to_label: 'Кому',
   tool_file_hash_algo_label: 'Алгоритмы',
   tool_file_hash_article:
-    'Вычисляйте hex-дайджесты MD5 и SHA для вставленного текста или локального файла. Сравнивайте checksum релизов, отпечатки конфигов или проверяйте загрузки — хеширование в браузере, кроме разовой загрузки CDN при выборе MD5.',
+    'Вычисляйте hex-дайджесты MD5 и SHA для вставленного текста или локального файла. Сравнивайте checksum релизов, отпечатки конфигов или проверяйте загрузки — хеширование в браузере, кроме разовой загрузки с этого сайта при выборе MD5.',
   tool_file_hash_clear: 'Очистить',
   tool_file_hash_copy: 'Копировать всё',
   tool_file_hash_copy_done: 'Скопировано',
   tool_file_hash_desc: 'Хеш текста или файлов локально — hex-дайджесты MD5, SHA-1, SHA-256, SHA-384, SHA-512.',
   tool_file_hash_description:
-    'Вычислите хеш вставленного текста или локального файла в браузере. Шаги: выберите Текст или Файл, отметьте MD5/SHA, нажмите Хеш, скопируйте hex в нижнем регистре. Пример: текст `hello` → SHA-256 `2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b0184`. Файлы читаются локально; MD5 загружает crypto-js с CDN только при выборе.',
+    'Вычислите хеш вставленного текста или локального файла в браузере. Шаги: выберите Текст или Файл, отметьте MD5/SHA, нажмите Хеш, скопируйте hex в нижнем регистре. Пример: текст `hello` → SHA-256 `2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b0184`. Файлы читаются локально; MD5 загружает crypto-js с этого сайта только при выборе.',
   tool_file_hash_empty: 'Сначала вставьте текст или выберите файл.',
   tool_file_hash_example:
     'Текст `hello` с SHA-256 → `2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b0184`. MD5 той же строки → `5d41402abc4b2a76b9719d911017c592`. Текст — байты UTF-8; файлы — сырые байты.',
@@ -4581,7 +4602,7 @@ const ru: SiteLangDict = {
   tool_file_hash_faq_a3:
     'Текст хешируется как байты UTF-8. Файл — как сырой поток байтов. Те же буквы в `.txt` могут отличаться от вставки при другой кодировке или переводах строк.',
   tool_file_hash_faq_a4:
-    'Без загрузки. Текст и файлы остаются на устройстве. SHA-* использует Web Crypto. Только MD5 подгружает crypto-js с jsDelivr — содержимое на CDN не отправляется.',
+    'Без загрузки. Текст и файлы остаются на устройстве. SHA-* использует Web Crypto. Только MD5 подгружает crypto-js с этого сайта — содержимое третьим лицам не отправляется.',
   tool_file_hash_faq_a5:
     'Выводим hex в нижнем регистре без префикса `0x`, по строке на алгоритм. Как в типичных `md5sum` / `sha256sum` на Linux и macOS.',
   tool_file_hash_faq_q1: 'Когда MD5, а когда SHA-256?',
@@ -4598,7 +4619,7 @@ const ru: SiteLangDict = {
   tool_file_hash_input_mode_label: 'Режим ввода',
   tool_file_hash_large_warn:
     'Файл больше 100 МБ. Хеширование может быть медленным или потреблять много памяти — для очень больших архивов рассмотрите desktop-инструмент.',
-  tool_file_hash_md5_fail: 'Не удалось загрузить библиотеку MD5 с CDN. Попробуйте SHA-256 или проверьте сеть.',
+  tool_file_hash_md5_fail: 'Не удалось загрузить библиотеку MD5 с этого сайта. Попробуйте SHA-256 или проверьте сеть.',
   tool_file_hash_no_algo: 'Выберите хотя бы один алгоритм.',
   tool_file_hash_output_label: 'Hex-дайджесты',
   tool_file_hash_progress_label: 'Чтение файла…',
@@ -4611,7 +4632,7 @@ const ru: SiteLangDict = {
   tool_file_hash_rules_item_3:
     'Пустой текст или файл нулевого размера даёт стандартный digest пустого ввода для каждого алгоритма (валидный hex).',
   tool_file_hash_rules_item_4:
-    'Конфиденциальность: без загрузки. MD5 — единственный путь с fetch crypto-js с CDN; SHA-* только встроенный Web Crypto.',
+    'Конфиденциальность: без загрузки. MD5 — единственный путь с fetch crypto-js с этого сайта; SHA-* только встроенный Web Crypto.',
   tool_file_hash_rules_title: 'Правила, которые стоит знать',
   tool_file_hash_sample: 'Загрузить пример',
   tool_file_hash_sample_text: 'hello',
@@ -4703,7 +4724,7 @@ const ru: SiteLangDict = {
     'Пример создаёт PDF с Name и Email, вписывает Ada Lovelace / ada@example.com, показывает предпросмотр и включает скачивание.',
   tool_fill_out_pdf_form_example_title: 'Пример',
   tool_fill_out_pdf_form_faq_a1:
-    'Нет. Заполнение идёт во вкладке. Библиотеки могут грузиться с CDN, но файл на наши серверы не уходит.',
+    'Нет. Заполнение идёт во вкладке. Библиотеки могут грузиться с этого сайта, но файл на наши серверы не уходит.',
   tool_fill_out_pdf_form_faq_a2: 'Часто это скан или файл только для печати. Добавьте поля в «Сделать PDF заполняемым» и вернитесь.',
   tool_fill_out_pdf_form_faq_a3: 'Да. Флажки — галочки; списки и радио — короткий выбор, если PDF отдаёт варианты.',
   tool_fill_out_pdf_form_faq_a4:
@@ -6122,7 +6143,7 @@ const ru: SiteLangDict = {
   tool_images_to_gif_err_encode: 'Could not export. Try a smaller image or another format.',
   tool_images_to_gif_example: 'Sample creates a three-frame looping GIF from color blocks.',
   tool_images_to_gif_example_title: 'Пример',
-  tool_images_to_gif_faq_a1: 'No—encoding is local (library may load from CDN).',
+  tool_images_to_gif_faq_a1: 'No—encoding is local (library loads from this site).',
   tool_images_to_gif_faq_a2: 'Converter makes a still GIF from one image; this animates many frames.',
   tool_images_to_gif_faq_a3: 'GIF uses a limited palette—gradients may dither.',
   tool_images_to_gif_faq_a4: 'No audio in GIF.',
@@ -6175,7 +6196,7 @@ const ru: SiteLangDict = {
   tool_images_to_pdf_err_encode: 'Could not export. Try a smaller image or another format.',
   tool_images_to_pdf_example: 'Sample builds a three-page PDF from three color blocks.',
   tool_images_to_pdf_example_title: 'Преобразовать JPG в PDF',
-  tool_images_to_pdf_faq_a1: 'No—pdf-lib runs locally (library may load from CDN).',
+  tool_images_to_pdf_faq_a1: 'No—pdf-lib runs locally (library loads from this site).',
   tool_images_to_pdf_faq_a2: 'Merge makes one image; this makes multi-page PDF.',
   tool_images_to_pdf_faq_a3: 'Derived from orientation and fit rules on each image.',
   tool_images_to_pdf_faq_a4: 'Any PDF reader works.',
@@ -6248,7 +6269,7 @@ const ru: SiteLangDict = {
   tool_images_to_ppt_rules_body: 'Each list item becomes one slide; images are centered with contain fit on 16:9.',
   tool_images_to_ppt_rules_item_1: 'Default layout is widescreen 16:9.',
   tool_images_to_ppt_rules_item_2: 'Order follows the list.',
-  tool_images_to_ppt_rules_item_3: 'CDN library load does not upload your files to us.',
+  tool_images_to_ppt_rules_item_3: 'Loading scripts from this site does not upload your files to us.',
   tool_images_to_ppt_rules_item_4: 'Huge images are scaled for slides.',
   tool_images_to_ppt_rules_title: 'Правила',
   tool_images_to_ppt_sample: 'Загрузить пример',
@@ -6296,7 +6317,7 @@ const ru: SiteLangDict = {
   tool_images_to_word_rules_body: 'Images are embedded as PNG runs; a page break follows each image except the last.',
   tool_images_to_word_rules_item_1: 'Width targets ~550px in the document flow.',
   tool_images_to_word_rules_item_2: 'Order follows the list.',
-  tool_images_to_word_rules_item_3: 'Libraries may load from CDN; files are not uploaded to us.',
+  tool_images_to_word_rules_item_3: 'Library scripts load from this site; files are not uploaded to us.',
   tool_images_to_word_rules_item_4: 'Very large images are scaled down for embedding.',
   tool_images_to_word_rules_title: 'Правила',
   tool_images_to_word_sample: 'Загрузить пример',
@@ -7040,7 +7061,7 @@ const ru: SiteLangDict = {
   tool_json_schema_validator_copy_errors: 'Копировать ошибки',
   tool_json_schema_validator_desc: 'Проверка JSON по Schema с ошибками JSON Pointer — локальный draft-07.',
   tool_json_schema_validator_description:
-    'Проверяйте JSON по JSON Schema (draft-07) в браузере. Шаги: вставьте Schema и экземпляр, проверьте, читайте каждый сбой по JSON Pointer. Пример: товар без price падает с missingProperty. Текст остаётся во вкладке; Ajv подгружается с CDN только как код библиотеки.',
+    'Проверяйте JSON по JSON Schema (draft-07) в браузере. Шаги: вставьте Schema и экземпляр, проверьте, читайте каждый сбой по JSON Pointer. Пример: товар без price падает с missingProperty. Текст остаётся во вкладке; Ajv подгружается с этого сайта только как код библиотеки.',
   tool_json_schema_validator_draft_note: 'Движок: Ajv 8 · JSON Schema draft-07 (по умолчанию).',
   tool_json_schema_validator_empty: 'Сначала вставьте Schema и JSON экземпляра.',
   tool_json_schema_validator_example:
@@ -7053,7 +7074,7 @@ const ru: SiteLangDict = {
     'instancePath — JSON Pointer в экземпляре (пустой показывается как /). При отсутствии required Ajv добавляет missingProperty в params.',
   tool_json_schema_validator_faq_a3:
     'Страница использует диалект draft-07 в Ajv. Drafts 2019-09 / 2020-12 требуют других сборок и здесь не выбираются.',
-  tool_json_schema_validator_faq_a4: 'Schema и JSON не загружаются на сервер. CDN скачивает только код Ajv.',
+  tool_json_schema_validator_faq_a4: 'Schema и JSON не загружаются на сервер. этот сайт отдаёт только код Ajv.',
   tool_json_schema_validator_faq_a5:
     'Вставьте Schema и JSON модели, проверьте и исправьте каждый Pointer до успеха — полезно перед передачей структурированного вывода дальше.',
   tool_json_schema_validator_faq_q1: 'Почему проверка не прошла?',
@@ -7081,7 +7102,7 @@ const ru: SiteLangDict = {
   tool_json_schema_validator_rules_item_2:
     'Проверка: allErrors собирает все сбои. Строка = instancePath + message (+ missingProperty при необходимости).',
   tool_json_schema_validator_rules_item_3: 'Draft: диалект draft-07. Не рассчитывайте на словарь 2020-12 здесь.',
-  tool_json_schema_validator_rules_item_4: 'Конфиденциальность: вставка остаётся во вкладке. CDN загружает только код Ajv.',
+  tool_json_schema_validator_rules_item_4: 'Конфиденциальность: вставка остаётся во вкладке. этот сайт загружает только код Ajv.',
   tool_json_schema_validator_rules_title: 'Ожидаемые правила',
   tool_json_schema_validator_sample_fail: 'Пример с ошибкой',
   tool_json_schema_validator_sample_instance_fail: '{"sku":"A-1"}',
@@ -7414,7 +7435,7 @@ const ru: SiteLangDict = {
   tool_make_pdf_fillable_example:
     'Пример создаёт пустую страницу, добавляет FullName в 48,220 размером 220×22, показывает предпросмотр и включает скачивание.',
   tool_make_pdf_fillable_example_title: 'Пример',
-  tool_make_pdf_fillable_faq_a1: 'Нет. Размещение во вкладке. Скрипты CDN могут грузиться; PDF на наши серверы не уходит.',
+  tool_make_pdf_fillable_faq_a1: 'Нет. Размещение во вкладке. Скрипты этого сайта могут грузиться; PDF на наши серверы не уходит.',
   tool_make_pdf_fillable_faq_a2: 'Да. Когда поля есть, откройте «Заполнить PDF-форму».',
   tool_make_pdf_fillable_faq_a3: '«Добавить N полей». Они встают Field_1, Field_2… с фиксированным шагом.',
   tool_make_pdf_fillable_faq_a4:
@@ -7471,7 +7492,7 @@ const ru: SiteLangDict = {
   tool_make_pdf_flipbook_example: 'Загрузить пример: Flipbook page one.',
   tool_make_pdf_flipbook_example_title: 'Пример',
   tool_make_pdf_flipbook_faq_a1:
-    'Нет. Рендеринг в вашей вкладке (библиотеки могут грузиться с CDN). PDF не отправляется на наши серверы.',
+    'Нет. Рендеринг в вашей вкладке (библиотеки грузятся с этого сайта). PDF не отправляется на наши серверы.',
   tool_make_pdf_flipbook_faq_a2: 'Нет. Эта операция не зависит от извлечения текстового слоя PDF.',
   tool_make_pdf_flipbook_faq_a3: 'Encrypted or damaged files show a clear error instead of failing silently.',
   tool_make_pdf_flipbook_faq_a4: 'Related PDF tools are listed at the bottom of the page.',
@@ -7558,7 +7579,7 @@ const ru: SiteLangDict = {
   tool_marginal_revenue_usecases_title: 'Когда пригодится',
   tool_marginal_revenue_zero_dq: 'ΔQ = 0 — количество должно отличаться между точками.',
   tool_markdown_article:
-    'Оба направления на одном URL, с явными пределами очистки и потерь. Вставка локальна; CDN только для библиотек.',
+    'Оба направления на одном URL, с явными пределами очистки и потерь. Вставка локальна; скрипты только с этого сайта.',
   tool_markdown_clear: 'Очистить',
   tool_markdown_copy: 'Копировать HTML',
   tool_markdown_copy_done: 'Скопировано',
@@ -7575,7 +7596,7 @@ const ru: SiteLangDict = {
   tool_markdown_export_title: 'Экспорт Markdown в HTML',
   tool_markdown_faq_a1: 'В направлении Markdown → HTML — да, DOMPurify до предпросмотра и скачивания.',
   tool_markdown_faq_a2: 'Обычно нет. Это читаемый черновик, не макет.',
-  tool_markdown_faq_a3: 'Преобразование локально. CDN лишь отдаёт файлы библиотек.',
+  tool_markdown_faq_a3: 'Преобразование локально. этот сайт отдаёт файлы библиотек.',
   tool_markdown_faq_a4: 'Не обещаем — сверьте diff при необходимости.',
   tool_markdown_faq_a5: 'Базовый CommonMark; опционально полный HTML для офлайн-передачи.',
   tool_markdown_faq_q1: 'HTML очищается от скриптов?',
@@ -7608,7 +7629,8 @@ const ru: SiteLangDict = {
   tool_markdown_rules_item_html_md: 'В Markdown: сначала очистка, затем Turndown (ATX и fenced-код).',
   tool_markdown_rules_item_loss: 'Стили, скрипты, сложные таблицы часто пропадают. Круговой путь ≠ исходник.',
   tool_markdown_rules_item_md_html: 'В HTML: разбор CommonMark, затем DOMPurify до показа/сохранения.',
-  tool_markdown_rules_privacy: 'Текст остаётся во вкладке. CDN не означает загрузку вашего документа на наш сервер.',
+  tool_markdown_rules_privacy:
+    'Текст остаётся во вкладке. загрузка скриптов этого сайта не означает загрузку вашего документа на наш сервер.',
   tool_markdown_rules_title: 'Правила по направлениям',
   tool_markdown_sample_html: '<h1>Заголовок</h1>\n<p>Привет <strong>мир</strong></p>',
   tool_markdown_sample_md:
@@ -7862,7 +7884,7 @@ const ru: SiteLangDict = {
     'Пример загружает два одностраничных PDF (A и B), объединяет в порядке списка и включает «Скачать» для двухстраничного merged.pdf.',
   tool_merge_pdf_example_title: 'Объединить PDF-файлы в один',
   tool_merge_pdf_faq_a1:
-    'Нет. pdf-lib работает во вкладке (библиотека может грузиться с CDN). PDF не отправляются на наши серверы.',
+    'Нет. pdf-lib работает во вкладке (библиотека может грузиться с этого сайта). PDF не отправляются на наши серверы.',
   tool_merge_pdf_faq_a2: '«Изображения в PDF» создаёт PDF из фото. Этот инструмент склеивает уже готовые PDF в один документ.',
   tool_merge_pdf_faq_a3: 'Да — кнопки Вверх/Вниз у каждой строки. Порядок списка сверху вниз — это порядок страниц.',
   tool_merge_pdf_faq_a4: 'PDF с паролем обычно не открываются здесь. Снимите пароль доверенным способом, затем объедините.',
@@ -7887,7 +7909,7 @@ const ru: SiteLangDict = {
   tool_merge_pdf_rules_item_1: 'Порядок: страницы копируются по списку (верхний файл первым). Переставьте перед объединением.',
   tool_merge_pdf_rules_item_2:
     'Движок: pdf-lib загружает каждый PDF и использует copyPages в новый документ — без отправки ваших файлов.',
-  tool_merge_pdf_rules_item_3: 'Приватность: байты остаются во вкладке. Скрипт библиотеки может прийти с CDN.',
+  tool_merge_pdf_rules_item_3: 'Приватность: байты остаются во вкладке. Скрипт библиотеки может прийти с этого сайта.',
   tool_merge_pdf_rules_item_4:
     'Ограничения: нужно ≥2 файла; зашифрованные/битые PDF падают с читаемой ошибкой; очень большие наборы могут тормозить память.',
   tool_merge_pdf_rules_title: 'Правила, которые стоит знать',
@@ -8537,7 +8559,7 @@ const ru: SiteLangDict = {
   tool_open_pdf_in_browser_example: 'Загрузить пример: Hello browser viewer sample.',
   tool_open_pdf_in_browser_example_title: 'Пример',
   tool_open_pdf_in_browser_faq_a1:
-    'Нет. Рендеринг в вашей вкладке (библиотеки могут грузиться с CDN). PDF не отправляется на наши серверы.',
+    'Нет. Рендеринг в вашей вкладке (библиотеки грузятся с этого сайта). PDF не отправляется на наши серверы.',
   tool_open_pdf_in_browser_faq_a2: 'Нет. Эта операция не зависит от извлечения текстового слоя PDF.',
   tool_open_pdf_in_browser_faq_a3: 'Encrypted or damaged files show a clear error instead of failing silently.',
   tool_open_pdf_in_browser_faq_a4: 'Related PDF tools are listed at the bottom of the page.',
@@ -8591,7 +8613,7 @@ const ru: SiteLangDict = {
     'Образец загружает трёхстраничный PDF, убирает страницу 2, применяет порядок и включает скачивание двухстраничного organized.pdf.',
   tool_organize_pdf_example_title: 'Пример',
   tool_organize_pdf_faq_a1:
-    'Нет. библиотека PDF работает во вкладке (библиотека может грузиться с CDN). PDF не загружается на наши серверы.',
+    'Нет. библиотека PDF работает во вкладке (библиотека может грузиться с этого сайта). PDF не загружается на наши серверы.',
   tool_organize_pdf_faq_a2:
     'Объединение склеивает несколько PDF. Разделение выносит страницы в отдельные файлы (или ZIP). Организация меняет порядок внутри одного PDF и скачивает один файл.',
   tool_organize_pdf_faq_a3: 'Да—кнопки Вверх/Вниз. «Применить» копирует в порядке списка.',
@@ -8883,7 +8905,7 @@ const ru: SiteLangDict = {
   tool_pdf_page_numbers_example: 'Образец создаёт PDF из 3 страниц, нумерует снизу по центру с 1 и включает скачивание numbered.pdf.',
   tool_pdf_page_numbers_example_title: 'Пример',
   tool_pdf_page_numbers_faq_a1:
-    'Нет. библиотека PDF работает во вкладке (скрипты могут грузиться с CDN). PDF не отправляется на наши серверы.',
+    'Нет. библиотека PDF работает во вкладке (скрипты грузятся с этого сайта). PDF не отправляется на наши серверы.',
   tool_pdf_page_numbers_faq_a2:
     'Да—«Начать с» — число на странице 1 (например 0 для обложки или 5 после удаления листов). Каждая следующая +1.',
   tool_pdf_page_numbers_faq_a3: 'Простые цифры (1, 2, 3…) или «Стр. N». Позиция, отступ (pt) и размер одинаковы на всех страницах.',
@@ -8956,7 +8978,7 @@ const ru: SiteLangDict = {
   tool_pdf_page_to_image_sizes_example_title: 'Пример',
   tool_pdf_page_to_image_sizes_export: 'Экспорт',
   tool_pdf_page_to_image_sizes_faq_a1:
-    'Нет. рендерер страниц, библиотека PDF и библиотека ZIP работают во вкладке (скрипты могут грузиться с CDN). PDF не отправляется на наши серверы.',
+    'Нет. рендерер страниц, библиотека PDF и библиотека ZIP работают во вкладке (скрипты грузятся с этого сайта). PDF не отправляется на наши серверы.',
   tool_pdf_page_to_image_sizes_faq_a2:
     'PDF в JPG экспортирует каждую страницу в исходных пропорциях. Этот инструмент берёт одну страницу и вписывает в фиксированные размеры платформ (contain, по центру, белые поля).',
   tool_pdf_page_to_image_sizes_faq_a3:
@@ -9013,7 +9035,7 @@ const ru: SiteLangDict = {
     'Образец создаёт PDF из двух страниц, конвертирует каждую и включает Скачать ZIP с page-1.jpg и page-2.jpg.',
   tool_pdf_to_jpg_example_title: 'Конвертировать страницы PDF в JPG',
   tool_pdf_to_jpg_faq_a1:
-    'Нет. рендерер страниц и библиотека ZIP работают во вкладке (скрипты могут грузиться с CDN). PDF не отправляется на наши серверы.',
+    'Нет. рендерер страниц и библиотека ZIP работают во вкладке (скрипты грузятся с этого сайта). PDF не отправляется на наши серверы.',
   tool_pdf_to_jpg_faq_a2: 'Больше одной страницы → ZIP pdf-pages.zip с page-1.jpg, page-2.jpg и т.д. Одна страница → один JPG.',
   tool_pdf_to_jpg_faq_a3:
     'Изображения в PDF объединяет фото в многостраничный PDF. Этот инструмент экспортирует каждую страницу PDF отдельным JPG.',
@@ -9068,7 +9090,7 @@ const ru: SiteLangDict = {
     'Образец создаёт одностраничный PDF Helvetica, конвертирует, показывает фразу в предпросмотре и включает Скачать .md.',
   tool_pdf_to_markdown_example_title: 'Пример',
   tool_pdf_to_markdown_faq_a1:
-    'Нет. рендерер страниц работает во вкладке (скрипты могут грузиться с CDN). PDF не отправляется на наши серверы.',
+    'Нет. рендерер страниц работает во вкладке (скрипты грузятся с этого сайта). PDF не отправляется на наши серверы.',
   tool_pdf_to_markdown_faq_a2: 'Скан обычно картинка без текстового слоя. Без OCR извлечение пустое — явная ошибка.',
   tool_pdf_to_markdown_faq_a3: 'Не восстанавливает заголовки и таблицы — простой текст по позиции.',
   tool_pdf_to_markdown_faq_a4:
@@ -9126,7 +9148,7 @@ const ru: SiteLangDict = {
     'Образец создаёт PDF из двух страниц, ставит DRAFT по центру с прозрачностью 35% и −45° на каждой странице и включает скачивание watermarked.pdf.',
   tool_pdf_watermark_example_title: 'Пример',
   tool_pdf_watermark_faq_a1:
-    'Нет. библиотека PDF работает во вкладке (скрипты могут грузиться с CDN). PDF не отправляется на наши серверы.',
+    'Нет. библиотека PDF работает во вкладке (скрипты грузятся с этого сайта). PDF не отправляется на наши серверы.',
   tool_pdf_watermark_faq_a2:
     'Водяной знак на фото накладывает текст/логотип на изображения. Этот инструмент штампует каждую страницу PDF-документа.',
   tool_pdf_watermark_faq_a3: 'Нет. После скачивания знак встроен в страницу. Убрать можно только из оригинала или тяжёлой правкой.',
@@ -9315,7 +9337,7 @@ const ru: SiteLangDict = {
   tool_print_pdf_example: 'Загрузить пример: Hello print sample.',
   tool_print_pdf_example_title: 'Пример',
   tool_print_pdf_faq_a1:
-    'Нет. Рендеринг в вашей вкладке (библиотеки могут грузиться с CDN). PDF не отправляется на наши серверы.',
+    'Нет. Рендеринг в вашей вкладке (библиотеки грузятся с этого сайта). PDF не отправляется на наши серверы.',
   tool_print_pdf_faq_a2: 'Нет. Эта операция не зависит от извлечения текстового слоя PDF.',
   tool_print_pdf_faq_a3: 'Encrypted or damaged files show a clear error instead of failing silently.',
   tool_print_pdf_faq_a4: 'Related PDF tools are listed at the bottom of the page.',
@@ -9707,7 +9729,7 @@ const ru: SiteLangDict = {
     'Образец создаёт одну страницу, шифрует паролем sample, включает скачивание protected.pdf и показывает пароль в статусе.',
   tool_protect_pdf_example_title: 'Защитить PDF паролем',
   tool_protect_pdf_faq_a1:
-    'Нет. библиотека PDF работает во вкладке (скрипты могут грузиться с CDN). PDF не отправляется на наши серверы.',
+    'Нет. библиотека PDF работает во вкладке (скрипты грузятся с этого сайта). PDF не отправляется на наши серверы.',
   tool_protect_pdf_faq_a2:
     'Стандартное PDF-шифрование с паролем пользователя — для открытия нужен пароль. Не военный уровень; выберите надёжный запоминающийся пароль.',
   tool_protect_pdf_faq_a3:
@@ -9971,7 +9993,7 @@ const ru: SiteLangDict = {
     'Образец создаёт PDF из двух страниц, поворачивает все на 90° по часовой и включает скачивание rotated.pdf.',
   tool_rotate_pdf_example_title: 'Пример',
   tool_rotate_pdf_faq_a1:
-    'Нет. библиотека PDF работает во вкладке (скрипты могут грузиться с CDN). PDF не отправляется на наши серверы.',
+    'Нет. библиотека PDF работает во вкладке (скрипты грузятся с этого сайта). PDF не отправляется на наши серверы.',
   tool_rotate_pdf_faq_a2: 'Да—скачанный файл сохраняет новую ориентацию. Откройте в просмотрщике перед отправкой.',
   tool_rotate_pdf_faq_a3: 'Страницы с 1: 1-3,5 — это 1–3 и 5. Пробелы необязательны. Пусто или вне диапазона — ошибка.',
   tool_rotate_pdf_faq_a4: 'PDF с паролем обычно не открывается здесь. Снимите пароль доверенным способом и поверните.',
@@ -10476,7 +10498,7 @@ const ru: SiteLangDict = {
   tool_sign_pdf_document_example_title: 'Пример',
   tool_sign_pdf_document_faq_a1:
     'Нет. Страница только ставит картинку. Для вида целостности с префиксом хеша используйте «Добавить цифровую подпись на PDF» — это тоже не сертификатный PKI.',
-  tool_sign_pdf_document_faq_a2: 'Нет. Штамп ставится во вкладке (библиотеки могут грузиться с CDN). Файл на наши серверы не уходит.',
+  tool_sign_pdf_document_faq_a2: 'Нет. Штамп ставится во вкладке (библиотеки грузятся с этого сайта). Файл на наши серверы не уходит.',
   tool_sign_pdf_document_faq_a3:
     'Нет. Ставьте изображение по X/Y. Для паролей см. «Защитить PDF». Для текста — «Добавить текст в PDF».',
   tool_sign_pdf_document_faq_a4: 'Этот браузерный инструмент не ставит PKCS#7 / PAdES. Используйте специализированное ПО.',
@@ -10942,7 +10964,7 @@ const ru: SiteLangDict = {
     'Пример создаёт трёхстраничный PDF, делит каждую страницу и включает «Скачать» для ZIP с page-1.pdf, page-2.pdf и page-3.pdf.',
   tool_split_pdf_example_title: 'Разделить мой PDF',
   tool_split_pdf_faq_a1:
-    'Нет. pdf-lib и fflate работают во вкладке (скрипты могут грузиться с CDN). PDF не отправляется на наши серверы.',
+    'Нет. pdf-lib и fflate работают во вкладке (скрипты грузятся с этого сайта). PDF не отправляется на наши серверы.',
   tool_split_pdf_faq_a2:
     'Страницы с 1: 1-3,5 означает страницы 1–3 и 5. Пробелы необязательны. Пустые или вне диапазона значения падают.',
   tool_split_pdf_faq_a3: 'Больше одного файла → ZIP. Ровно один результат → скачивание PDF.',
@@ -11247,7 +11269,7 @@ const ru: SiteLangDict = {
   tool_text_diff_example_title: 'Пример',
   tool_text_diff_faq_a1: 'Строки — для кода и конфигов. Слова — для фраз, писем и промптов: подсвечиваются отдельные слова.',
   tool_text_diff_faq_a2:
-    'Вставленный текст мы не загружаем и не храним — сравнение идёт в браузере. Страница может загрузить jsdiff (open source) с CDN; ваш текст при этом на наши серверы не отправляется.',
+    'Вставленный текст мы не загружаем и не храним — сравнение идёт в браузере. Страница может загрузить jsdiff (open source) с этого сайта; ваш текст при этом на наши серверы не отправляется.',
   tool_text_diff_faq_a3: 'В Windows часто CRLF, в Mac/Linux — LF. Включите «Считать CRLF и LF одинаковыми» и сравните снова.',
   tool_text_diff_faq_a4:
     'Нет. Только вставленный текст — не картинки, ZIP, Word, Excel и не структурированный JSON. Чтобы открыть .txt, .docx или таблицы, используйте страницу этого формата.',
@@ -11576,7 +11598,7 @@ const ru: SiteLangDict = {
   tool_turn_pdf_into_word_document_example: 'Загрузка образца создаёт одностраничный PDF с фразой, извлекает её и делает .docx с тем же абзацем.',
   tool_turn_pdf_into_word_document_example_title: 'Пример',
   tool_turn_pdf_into_word_document_faq_a1:
-    'Нет. Извлечение и сборка .docx идут во вкладке (библиотеки могут грузиться с CDN). Файл на наши серверы не уходит.',
+    'Нет. Извлечение и сборка .docx идут во вкладке (библиотеки грузятся с этого сайта). Файл на наши серверы не уходит.',
   tool_turn_pdf_into_word_document_faq_a2:
     'Сканы — картинки. OCR нет. Если нужен только .txt текстового слоя, используйте «Извлечь текст из PDF».',
   tool_turn_pdf_into_word_document_faq_a3: 'Нет. Вы получаете извлечённые абзацы, не пиксельную копию.',
@@ -11731,7 +11753,7 @@ const ru: SiteLangDict = {
   tool_unlock_pdf_faq_a1:
     'Нет. Снимает защиту только при правильном пароле открытия. Без взлома, перебора и восстановления неизвестных паролей.',
   tool_unlock_pdf_faq_a2:
-    'Нет. библиотека PDF работает во вкладке (скрипты могут грузиться с CDN). PDF не загружается на наши серверы.',
+    'Нет. библиотека PDF работает во вкладке (скрипты грузятся с этого сайта). PDF не загружается на наши серверы.',
   tool_unlock_pdf_faq_a3:
     'Появится явное сообщение о неверном пароле. Используйте пароль из Защитить PDF или другого приложения—мы не угадываем.',
   tool_unlock_pdf_faq_a4:
@@ -11788,7 +11810,7 @@ const ru: SiteLangDict = {
   tool_unzip_file_example_title: 'Пример',
   tool_unzip_file_exported_all: 'Файлы упакованы в новый ZIP с безопасными путями.',
   tool_unzip_file_faq_a1:
-    'Нет. ZIP читается во вкладке браузера, а извлеченные данные остаются на вашем устройстве. Скрипт ZIP движка может загружаться с CDN, но сам архив не отправляется на наши серверы.',
+    'Нет. ZIP читается во вкладке браузера, а извлеченные данные остаются на вашем устройстве. Скрипт ZIP движка может загружаться с этого сайта, но сам архив не отправляется на наши серверы.',
   tool_unzip_file_faq_a2:
     'Эта страница рассчитана на ZIP. RAR, 7Z, ISO и TAR.GZ требуют более тяжелого многоформатного движка и должны обрабатываться отдельным архивным экстрактором, когда такая поддержка будет реализована.',
   tool_unzip_file_faq_a3:
@@ -12535,7 +12557,7 @@ const ru: SiteLangDict = {
     'Загрузить пример заполняет два абзаца, нажимает «Create PDF» и показывает одностраничный предпросмотр для скачивания.',
   tool_write_pdf_document_online_example_title: 'Пример',
   tool_write_pdf_document_online_faq_a1:
-    'Нет. Рендеринг в вашей вкладке (библиотеки могут грузиться с CDN). PDF не отправляется на наши серверы.',
+    'Нет. Рендеринг в вашей вкладке (библиотеки грузятся с этого сайта). PDF не отправляется на наши серверы.',
   tool_write_pdf_document_online_faq_a2:
     'Нет. Вы вводите новый текст в поле; страница собирает PDF через pdf-lib. Существующий PDF не открывается.',
   tool_write_pdf_document_online_faq_a3: 'Нет. Для уже имеющихся файлов используйте «Редактировать текст PDF» или «Добавить текст».',
@@ -12720,7 +12742,7 @@ const ru: SiteLangDict = {
   tool_yaml_json_faq_a3:
     'При схеме js-yaml по умолчанию часто да — некавыченные yes/no/on/off могут стать boolean. Включите «Безопасные типы JSON», чтобы оставить такие скаляры строками, если тип не задан явно.',
   tool_yaml_json_faq_a4:
-    'Преобразование остаётся во вкладке. CDN может отдавать js-yaml; это загрузка кода, а не upload вашего YAML или JSON.',
+    'Преобразование остаётся во вкладке. этот сайт может отдавать js-yaml; это загрузка кода, а не upload вашего YAML или JSON.',
   tool_yaml_json_faq_a5:
     'Некорректный YAML даёт mark парсера со строкой и столбцом, если они доступны. Некорректный JSON сообщает JSON.parse без YAML-подобных mark.',
   tool_yaml_json_faq_q1: 'Можно ли круговой путь без потерь?',
@@ -12755,7 +12777,7 @@ const ru: SiteLangDict = {
   tool_yaml_json_rules_item_3:
     'Потери при круговом пути: комментарии исчезают (в JSON их нет); якоря/алиасы разворачиваются в дубликаты; порядок ключей и стиль после dump могут измениться.',
   tool_yaml_json_rules_item_4:
-    'Приватность: вставка не загружается на сервер. Запрос js-yaml с CDN скачивает только код библиотеки, не текст вашего конфига.',
+    'Приватность: вставка не загружается на сервер. Запрос js-yaml с этого сайта скачивает только код библиотеки, не текст вашего конфига.',
   tool_yaml_json_rules_title: 'Правила, которые стоит ждать',
   tool_yaml_json_sample: 'Загрузить пример',
   tool_yaml_json_sample_json: '{\n  "title": "Привет",\n  "count": 2\n}',

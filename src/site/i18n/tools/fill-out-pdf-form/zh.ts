@@ -18,7 +18,7 @@ const zh: SiteLangDict = {
   tool_fill_out_pdf_form_err_no_fields: "这份 PDF 没有可填写字段。",
   tool_fill_out_pdf_form_example: "加载样例会生成带 Name、Email 两栏的 PDF，填入 Ada Lovelace / ada@example.com，显示预览并开放下载。",
   tool_fill_out_pdf_form_example_title: "示例",
-  tool_fill_out_pdf_form_faq_a1: "不会。填写在本标签页完成。脚本可能从 CDN 加载，但你的 PDF 不会发到我们的服务器。",
+  tool_fill_out_pdf_form_faq_a1: "不会。填写在本标签页完成。脚本从本站加载，但你的 PDF 不会发到我们的服务器。",
   tool_fill_out_pdf_form_faq_a2: "多半是扫描件或只能打印的扁平文件。先到「把 PDF 做成可填写表单」加栏，再回来填。",
   tool_fill_out_pdf_form_faq_a3: "能。复选框显示为勾选；下拉和单选会在文件提供选项时显示为短列表。",
   tool_fill_out_pdf_form_faq_a4: "创建页从空白页起步。本页只往已经存在的栏位里写值。",

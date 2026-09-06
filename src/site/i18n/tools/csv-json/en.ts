@@ -36,7 +36,7 @@ const en: SiteLangDict = {
   tool_csv_json_faq_a4:
     'Objects are flattened to dot-path columns (dim.w, dim.h). Arrays are written as a JSON string in a single cell. Columns are the union of every record’s keys, and records missing a key get a blank cell.',
   tool_csv_json_faq_a5:
-    'No. Parsing stays in this tab, and files you pick are read locally. A CDN may serve Papa Parse; that request downloads code only — it is not an upload of your CSV or JSON.',
+    'No. Parsing stays in this tab, and files you pick are read locally. This site serves Papa Parse; that request downloads code only — it is not an upload of your CSV or JSON.',
   tool_csv_json_faq_q1: 'Will my numbers, leading zeros and IDs stay intact?',
   tool_csv_json_faq_q2: 'Can it handle semicolons or tabs, not just commas?',
   tool_csv_json_faq_q3: 'How are fields with commas, quotes or line breaks handled?',
@@ -68,7 +68,7 @@ const en: SiteLangDict = {
   tool_csv_json_rules_item_3:
     'JSON → CSV: objects flatten with dot paths (dim.w, dim.h); arrays are written as a JSON string in one cell; columns are the union of all keys, with missing values left blank.',
   tool_csv_json_rules_item_4:
-    'Privacy: your paste and files are not uploaded. Fetching Papa Parse from a CDN only downloads library code, not your data.',
+    'Privacy: your paste and files are not uploaded. Loading Papa Parse from this site only downloads library code, not your data.',
   tool_csv_json_rules_title: 'Rules you should expect',
   tool_csv_json_sample: 'Load sample',
   tool_csv_json_sample_csv: 'sku,title,price\nA-001,"Chair, oak",129.9\nA-002,Desk,89',

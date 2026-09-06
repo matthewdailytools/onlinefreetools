@@ -82,6 +82,7 @@ const ru: SiteLangDict = {
   tool_feedback_body:
     'Что-то неясно, сломано или отсутствует? Напишите сообщение ниже — мы читаем каждую заметку об этих инструментах.',
   tool_feedback_cta: 'Открыть в почтовом приложении',
+  tool_feedback_report_bug: 'Сообщить об ошибке на GitHub',
   tool_feedback_email_label: 'Email',
   tool_feedback_message_label: 'Сообщение',
   tool_feedback_message_placeholder: 'Опишите проблему или предложение…',

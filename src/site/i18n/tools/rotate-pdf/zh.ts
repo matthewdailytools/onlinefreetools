@@ -23,7 +23,7 @@ const zh: SiteLangDict = {
   tool_rotate_pdf_err_rotate: '旋转失败。请检查文件与范围后重试。',
   tool_rotate_pdf_example: '样例会生成两页 PDF，全部顺时针 90° 旋转，并启用下载 rotated.pdf。',
   tool_rotate_pdf_example_title: '示例',
-  tool_rotate_pdf_faq_a1: '不会。处理在当前标签页内完成（脚本可能从 CDN 加载），PDF 不会上传到我们的服务器。',
+  tool_rotate_pdf_faq_a1: '不会。处理在当前标签页内完成（脚本从本站加载），PDF 不会上传到我们的服务器。',
   tool_rotate_pdf_faq_a2: '会——下载的新文件已写入旋转后的方向。分享前可在阅读器里打开确认。',
   tool_rotate_pdf_faq_a3: '页码从 1 起：1-3,5 表示第 1–3 页和第 5 页。空格可选。空值或越界会失败。',
   tool_rotate_pdf_faq_a4: '带密码的 PDF 通常无法在此打开。请用可信方式去掉密码后再旋转。',

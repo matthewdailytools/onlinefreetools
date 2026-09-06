@@ -31,7 +31,7 @@ const id: SiteLangDict = {
 	tool_batch_checksum_release_files_export_csv: 'Ekspor CSV',
 	tool_batch_checksum_release_files_export_sums: 'Ekspor SUMS',
 	tool_batch_checksum_release_files_faq_a1:
-		'Tidak. Hash terjadi di tab ini. File tetap di perangkat dan tidak diunggah ke server. SHA-256 memakai Web Crypto. MD5 bisa memuat crypto-js dari CDN; byte Anda tidak meninggalkan tab.',
+		'Tidak. Hash terjadi di tab ini. File tetap di perangkat dan tidak diunggah ke server. SHA-256 memakai Web Crypto. MD5 bisa memuat crypto-js dari situs ini; byte Anda tidak meninggalkan tab.',
 	tool_batch_checksum_release_files_faq_a2:
 		'Tidak. Ekspor adalah tabel CSV dan SHA256SUMS. Mengemas biner adalah Buat ZIP — pekerjaan lain.',
 	tool_batch_checksum_release_files_faq_a3:
@@ -59,7 +59,7 @@ const id: SiteLangDict = {
 	tool_batch_checksum_release_files_rules_body:
 		'SHA-256 memakai Web Crypto pada byte yang dibaca irisan 4 MiB lalu digabung. Keluaran tabel, CSV, dan SUMS, bukan ZIP asli.',
 	tool_batch_checksum_release_files_rules_item_1:
-		'SHA-256 selalu jalan. MD5 opsional dan memuat crypto-js dari CDN; byte tetap di tab.',
+		'SHA-256 selalu jalan. MD5 opsional dan memuat crypto-js dari situs ini; byte tetap di tab.',
 	tool_batch_checksum_release_files_rules_item_2:
 		'Baris SUMS mengikuti sha256sum GNU: hex, dua spasi atau spasi-bintang, lalu nama. Nama ekstra di tempelan tampil hilang.',
 	tool_batch_checksum_release_files_rules_item_3:

@@ -25,7 +25,7 @@ const fr: SiteLangDict = {
   tool_pdf_page_to_image_sizes_example_title: 'Exemple',
   tool_pdf_page_to_image_sizes_export: 'Exporter',
   tool_pdf_page_to_image_sizes_faq_a1:
-    'Non. le moteur de rendu, la bibliothèque PDF et la bibliothèque ZIP s’exécutent dans votre onglet (scripts parfois depuis un CDN). Votre PDF n’est pas envoyé à nos serveurs.',
+    'Non. le moteur de rendu, la bibliothèque PDF et la bibliothèque ZIP s’exécutent dans votre onglet (scripts parfois depuis ce site). Votre PDF n’est pas envoyé à nos serveurs.',
   tool_pdf_page_to_image_sizes_faq_a2:
     'PDF vers JPG exporte chaque page à son ratio d’origine. Cet outil choisit une page et l’ajuste à des tailles plateforme fixes (contain, centré, bandes blanches).',
   tool_pdf_page_to_image_sizes_faq_a3:

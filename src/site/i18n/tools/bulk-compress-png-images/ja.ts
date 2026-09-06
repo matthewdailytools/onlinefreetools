@@ -32,7 +32,7 @@ const ja: SiteLangDict = {
 		'サンプル読込は透過の市松 PNG を 2 枚入れ、PNG として書き直し、表を埋め、ZIP をダウンロードできるようにします。同名は name (2).png になります。',
 	tool_bulk_compress_png_images_example_title: '例',
 	tool_bulk_compress_png_images_faq_a1:
-		'いいえ。読み取りと PNG 書き出しはこのタブ内です。ファイルは端末に残り、サーバーにアップロードしません。ZIP 用スクリプトが CDN から来ることはありますが、画像はタブを出ません。',
+		'いいえ。読み取りと PNG 書き出しはこのタブ内です。ファイルは端末に残り、サーバーにアップロードしません。ZIP 用スクリプトはこのサイトから読みますが、画像はタブを出ません。',
 	tool_bulk_compress_png_images_faq_a2:
 		'いいえ。出力は常に PNG です。JPEG の下地はありません。写真を小さくできて JPEG でよければ、商品写真の一括圧縮を使ってください。',
 	tool_bulk_compress_png_images_faq_a3:

@@ -44,7 +44,7 @@ const fr: SiteLangDict = {
 		'Charger un exemple pose un bloc paysage et un portrait, règle SAMPLE, aperçoit le premier, applique la même marque relative aux deux et active Télécharger le ZIP.',
 	tool_batch_watermark_product_photos_example_title: 'Exemple',
 	tool_batch_watermark_product_photos_faq_a1:
-		'Non. Lecture et tampon Canvas se font dans cet onglet. Les fichiers restent sur l\'appareil, sans envoi au serveur. L\'aide ZIP peut venir d\'un CDN ; vos photos ne quittent pas l\'onglet.',
+		'Non. Lecture et tampon Canvas se font dans cet onglet. Les fichiers restent sur l\'appareil, sans envoi au serveur. L\'aide ZIP peut venir de ce site ; vos photos ne quittent pas l\'onglet.',
 	tool_batch_watermark_product_photos_faq_a2:
 		'Non. La taille est un pourcentage du petit côté et les neuf ancres sont des fractions de cette toile. Portrait et paysage restent dans le même coin relatif.',
 	tool_batch_watermark_product_photos_faq_a3:

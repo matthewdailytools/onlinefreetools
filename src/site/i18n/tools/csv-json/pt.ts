@@ -36,7 +36,7 @@ const pt: SiteLangDict = {
   tool_csv_json_faq_a4:
     'Objetos são achatados em colunas com caminho por pontos (dim.w, dim.h). Arrays viram uma string JSON em uma única célula. As colunas são a união das chaves de todos os registros e o que falta fica em branco.',
   tool_csv_json_faq_a5:
-    'Não. A análise fica nesta aba e os arquivos escolhidos são lidos localmente. Um CDN pode servir o Papa Parse; essa requisição só baixa código, não envia seu CSV ou JSON.',
+    'Não. A análise fica nesta aba e os arquivos escolhidos são lidos localmente. Este site pode servir o Papa Parse; essa requisição só baixa código, não envia seu CSV ou JSON.',
   tool_csv_json_faq_q1: 'Meus números, zeros à esquerda e identificadores ficam intactos?',
   tool_csv_json_faq_q2: 'Ele lida com ponto e vírgula ou tabulação, não só vírgula?',
   tool_csv_json_faq_q3: 'Como campos com vírgulas, aspas ou quebras de linha são tratados?',
@@ -69,7 +69,7 @@ const pt: SiteLangDict = {
   tool_csv_json_rules_item_3:
     'JSON → CSV: objetos são achatados com caminhos por pontos (dim.w, dim.h); arrays viram uma string JSON em uma célula; as colunas são a união de todas as chaves e o que falta fica em branco.',
   tool_csv_json_rules_item_4:
-    'Privacidade: seu texto e arquivos não são enviados. Buscar o Papa Parse em um CDN só baixa o código da biblioteca, não os seus dados.',
+    'Privacidade: seu texto e arquivos não são enviados. Buscar o Papa Parse neste site só baixa o código da biblioteca, não os seus dados.',
   tool_csv_json_rules_title: 'Regras que você deve esperar',
   tool_csv_json_sample: 'Carregar exemplo',
   tool_csv_json_sample_csv: 'sku,title,price\nA-001,"Chair, oak",129.9\nA-002,Desk,89',

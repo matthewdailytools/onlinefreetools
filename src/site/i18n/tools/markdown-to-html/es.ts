@@ -4,7 +4,7 @@
 import type { SiteLangDict } from '../../../types';
 const es: SiteLangDict = {
   tool_markdown_article:
-    'Misma URL para los dos sentidos, con reglas claras de qué se limpia y qué se pierde. El pegado no viaja a un servidor nuestro; el CDN solo trae librerías.',
+    'Misma URL para los dos sentidos, con reglas claras de qué se limpia y qué se pierde. El pegado no viaja a un servidor nuestro; este sitio solo trae librerías.',
   tool_markdown_clear: 'Limpiar',
   tool_markdown_copy: 'Copiar HTML',
   tool_markdown_copy_done: 'Copiado',
@@ -22,7 +22,7 @@ const es: SiteLangDict = {
   tool_markdown_export_title: 'Exportación Markdown a HTML',
   tool_markdown_faq_a1: 'Sí, en Markdown → HTML pasa por DOMPurify antes de la vista previa y de copiar/descargar.',
   tool_markdown_faq_a2: 'Casi nunca del todo. Es un borrador legible: se prioriza el texto frente al diseño.',
-  tool_markdown_faq_a3: 'No. La conversión es local. El CDN, si aparece, solo entrega código abierto.',
+  tool_markdown_faq_a3: 'No. La conversión es local. Este sitio, si aparece, solo entrega código abierto.',
   tool_markdown_faq_a4: 'No lo prometemos. Compará con un diff si necesitás igualdad exacta.',
   tool_markdown_faq_a5: 'Lo habitual de CommonMark. Opcional: envolver un HTML completo para compartir offline.',
   tool_markdown_faq_q1: '¿El HTML sale filtrado?',
@@ -56,7 +56,7 @@ const es: SiteLangDict = {
   tool_markdown_rules_item_loss: 'Hay pérdida: estilos, scripts y tablas enrevesadas suelen aplanarse. Ida y vuelta ≠ original.',
   tool_markdown_rules_item_md_html:
     'Hacia HTML: marked interpreta el Markdown; DOMPurify quita scripts peligrosos antes de mostrar o guardar.',
-  tool_markdown_rules_privacy: 'El contenido se queda en tu pestaña. Descargar librerías por CDN no envía tu pegado.',
+  tool_markdown_rules_privacy: 'El contenido se queda en tu pestaña. Descargar librerías desde este sitio no envía tu pegado.',
   tool_markdown_rules_title: 'Reglas por sentido',
   tool_markdown_sample_html: '<h1>Título</h1>\n<p>Hola <strong>mundo</strong></p>',
   tool_markdown_sample_md:

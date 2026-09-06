@@ -21,7 +21,7 @@ const id: SiteLangDict = {
   tool_check_pdf_a_compliance_example: "Muat contoh: PDF/A check sample.",
   tool_check_pdf_a_compliance_example_title: "Contoh",
   tool_check_pdf_a_compliance_fail: "Tidak ditemukan",
-  tool_check_pdf_a_compliance_faq_a1: "Tidak. Render berjalan di tab Anda (pustaka mungkin dari CDN). PDF Anda tidak diunggah ke server kami.",
+  tool_check_pdf_a_compliance_faq_a1: "Tidak. Render berjalan di tab Anda (pustaka dari situs ini). PDF Anda tidak diunggah ke server kami.",
   tool_check_pdf_a_compliance_faq_a2: "Tidak. Halaman hanya mencari lima penanda dalam byte; gunakan veraPDF untuk validasi profil.",
   tool_check_pdf_a_compliance_faq_a3: "Encrypted or damaged files show a clear error instead of failing silently.",
   tool_check_pdf_a_compliance_faq_a4: "Related PDF tools are listed at the bottom of the page.",

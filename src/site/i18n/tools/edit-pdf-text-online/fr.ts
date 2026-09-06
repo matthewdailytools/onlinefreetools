@@ -23,7 +23,7 @@ const fr: SiteLangDict = {
   tool_edit_pdf_text_online_err_pdfjs: "Le moteur PDF n’a pas pu se charger.",
   tool_edit_pdf_text_online_example: "Charger l’exemple crée un PDF d’une page avec « Hello edit PDF text sample. », remplit l’éditeur, puis Appliquer produit un PDF téléchargeable.",
   tool_edit_pdf_text_online_example_title: "Exemple",
-  tool_edit_pdf_text_online_faq_a1: "Non. Les bibliothèques peuvent venir d’un CDN, mais votre PDF reste dans cet onglet et n’est pas envoyé à nos serveurs.",
+  tool_edit_pdf_text_online_faq_a1: "Non. Les bibliothèques viennent de ce site, mais votre PDF reste dans cet onglet et n’est pas envoyé à nos serveurs.",
   tool_edit_pdf_text_online_faq_a2: "Non. Ce n’est pas une édition de glyphes sur place. Le texte est extrait, vous le corrigez, puis les pages sont redessinées simplement. Polices et colonnes exactes ne sont pas conservées.",
   tool_edit_pdf_text_online_faq_a3: "Les PDF scannés sont des images sans couche texte. Cet outil ne fait pas d’OCR et échoue avec un message clair.",
   tool_edit_pdf_text_online_faq_a4: "Ajouter du texte tamponne une ligne en X/Y. Transformer en document modifiable priorise le .txt éditable (PDF reconstruit optionnel). Ici le téléchargement principal est le .pdf reconstruit après édition de la couche texte.",

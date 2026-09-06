@@ -22,7 +22,7 @@ const en: SiteLangDict = {
   tool_edit_pdf_form_fields_err_no_fields: "This PDF has no form fields to edit.",
   tool_edit_pdf_form_fields_example: "Load sample builds a PDF with Name and Email, lists both rows, shows the preview, and lets you rename or remove before download.",
   tool_edit_pdf_form_fields_example_title: "Example",
-  tool_edit_pdf_form_fields_faq_a1: "No. Listing and edits run in this tab. Libraries may load from a CDN; your PDF is not sent to our servers.",
+  tool_edit_pdf_form_fields_faq_a1: "No. Listing and edits run in this tab. Library scripts load from this site; your PDF is not sent to our servers.",
   tool_edit_pdf_form_fields_faq_a2: "Rename writes a new internal name. Remove deletes the widget. Values you already typed can be lost on remove.",
   tool_edit_pdf_form_fields_faq_a3: "A PDF with zero fields shows an error that links to Make a PDF fillable.",
   tool_edit_pdf_form_fields_faq_a4: "Fill out a PDF form writes answers. This page only changes names or deletes boxes.",

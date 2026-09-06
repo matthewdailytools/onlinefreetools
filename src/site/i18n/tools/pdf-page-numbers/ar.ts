@@ -22,7 +22,7 @@ const ar: SiteLangDict = {
     'العيّنة تنشئ PDF من 3 صفحات، ترقم أسفل الوسط من 1، وتفعّل تنزيل numbered.pdf.',
   tool_pdf_page_numbers_example_title: 'مثال',
   tool_pdf_page_numbers_faq_a1:
-    'لا. مكتبة PDF يعمل في تبويبك (قد تُحمَّل السكربتات من CDN). PDF لا يُرفع إلى خوادمنا.',
+    'لا. مكتبة PDF يعمل في تبويبك (قد تُحمَّل السكربتات من هذا الموقع). PDF لا يُرفع إلى خوادمنا.',
   tool_pdf_page_numbers_faq_a2:
     'نعم—«ابدأ من» هو الرقم على الصفحة 1 (مثل 0 للغلاف، أو 5 بعد حذف صفحات). كل صفحة تزيد 1.',
   tool_pdf_page_numbers_faq_a3:

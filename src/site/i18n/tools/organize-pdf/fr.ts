@@ -17,7 +17,7 @@ const fr: SiteLangDict = {
   tool_organize_pdf_err_organize: "Échec de l’organisation. Vérifiez le fichier et la liste.",
   tool_organize_pdf_example: "L’exemple charge un PDF de trois pages, retire la page 2, applique le nouvel ordre et active le téléchargement d’un organized.pdf de deux pages.",
   tool_organize_pdf_example_title: "Exemple",
-  tool_organize_pdf_faq_a1: "Non. la bibliothèque PDF s’exécute dans votre onglet (la bibliothèque peut venir d’un CDN). Votre PDF n’est pas envoyé sur nos serveurs.",
+  tool_organize_pdf_faq_a1: "Non. la bibliothèque PDF s’exécute dans votre onglet (la bibliothèque peut venir de ce site). Votre PDF n’est pas envoyé sur nos serveurs.",
   tool_organize_pdf_faq_a2: "Fusionner combine plusieurs PDF. Fractionner exporte des pages en plusieurs fichiers (ou ZIP). Organiser change l’ordre dans un seul PDF et télécharge un fichier.",
   tool_organize_pdf_faq_a3: "Oui—utilisez Haut/Bas. Appliquer copie dans l’ordre de la liste.",
   tool_organize_pdf_faq_a4: "Les PDF chiffrés échouent souvent ici. Retirez le mot de passe d’abord.",

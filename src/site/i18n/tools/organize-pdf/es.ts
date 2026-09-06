@@ -17,7 +17,7 @@ const es: SiteLangDict = {
   tool_organize_pdf_err_organize: "No se pudo organizar. Revisa el archivo y la lista de páginas.",
   tool_organize_pdf_example: "La muestra carga un PDF de tres páginas (1–3), quita la 2, aplica el nuevo orden y habilita la descarga de un organized.pdf de dos páginas.",
   tool_organize_pdf_example_title: "Ejemplo",
-  tool_organize_pdf_faq_a1: "No. la biblioteca PDF corre en tu pestaña (la librería puede cargar desde un CDN). El PDF no se sube a nuestros servidores.",
+  tool_organize_pdf_faq_a1: "No. la biblioteca PDF corre en tu pestaña (la librería puede cargar desde este sitio). El PDF no se sube a nuestros servidores.",
   tool_organize_pdf_faq_a2: "Unir combina varios PDF. Dividir exporta páginas a varios archivos (o ZIP). Organizar cambia el orden dentro de un solo PDF y descarga uno.",
   tool_organize_pdf_faq_a3: "Sí—usa Arriba/Abajo en cada fila. Aplicar copia en el orden de la lista.",
   tool_organize_pdf_faq_a4: "Los PDF con contraseña suelen fallar aquí. Quita la contraseña y vuelve a intentar.",

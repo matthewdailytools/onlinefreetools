@@ -44,7 +44,7 @@ const de: SiteLangDict = {
 		'Beispiel laden legt einen Quer- und einen Hochformatblock ab, setzt SAMPLE, zeigt das erste Bild, wendet dieselbe relative Marke auf beide an und aktiviert ZIP herunterladen.',
 	tool_batch_watermark_product_photos_example_title: 'Beispiel',
 	tool_batch_watermark_product_photos_faq_a1:
-		'Nein. Lesen und Canvas-Stempel laufen in diesem Tab. Dateien bleiben auf Ihrem Gerät, ohne Server-Upload. Die ZIP-Hilfe kann von einem CDN kommen; Ihre Fotos verlassen den Tab nicht.',
+		'Nein. Lesen und Canvas-Stempel laufen in diesem Tab. Dateien bleiben auf Ihrem Gerät, ohne Server-Upload. Die ZIP-Hilfe kommt von dieser Website; Ihre Fotos verlassen den Tab nicht.',
 	tool_batch_watermark_product_photos_faq_a2:
 		'Nein. Die Größe ist ein Prozent der kurzen Seite, die neun Anker sind Bruchteile dieser Leinwand. Hoch- und Querformat bleiben in derselben relativen Ecke.',
 	tool_batch_watermark_product_photos_faq_a3:

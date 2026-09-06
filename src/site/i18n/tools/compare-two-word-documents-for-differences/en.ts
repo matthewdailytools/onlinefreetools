@@ -21,7 +21,7 @@ const en: SiteLangDict = {
 		'Load sample builds two tiny .docx files. The second memo changes “meet at noon” to “meet at 3pm”. First paint already shows that wording diff.',
 	tool_compare_two_word_documents_for_differences_example_title: 'Example',
 	tool_compare_two_word_documents_for_differences_faq_a1:
-		'No. Files are read in this tab. mammoth and jsdiff may load from a CDN as library code; your documents are not uploaded to our servers.',
+		'No. Files are read in this tab. mammoth and jsdiff loads from this site as library code; your documents are not uploaded to our servers.',
 	tool_compare_two_word_documents_for_differences_faq_a2:
 		'No. Microsoft Word can compare formatting and tracked revisions. This page extracts visible text only, then diffs that text. Headers, footers, and styles are discarded.',
 	tool_compare_two_word_documents_for_differences_faq_a3:

@@ -28,7 +28,7 @@ const pt: SiteLangDict = {
   tool_unlock_pdf_faq_a1:
     'Não. Só remove a proteção se você informar a senha correta. Sem crackear, força bruta ou recuperar senhas desconhecidas.',
   tool_unlock_pdf_faq_a2:
-    'Não. a biblioteca PDF roda na sua aba (scripts podem vir de CDN). Seu PDF não é enviado aos nossos servidores.',
+    'Não. a biblioteca PDF roda na sua aba (scripts vêm deste site). Seu PDF não é enviado aos nossos servidores.',
   tool_unlock_pdf_faq_a3:
     'Você verá mensagem clara de senha errada. Use a mesma senha do Proteger PDF ou de outro app—não adivinhamos.',
   tool_unlock_pdf_faq_a4:

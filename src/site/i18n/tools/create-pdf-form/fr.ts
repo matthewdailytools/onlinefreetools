@@ -19,7 +19,7 @@ const fr: SiteLangDict = {
   tool_create_pdf_form_err_no_name: "Donnez d’abord un nom au champ.",
   tool_create_pdf_form_example: "Charger un exemple construit une page blanche Name + Email, liste les deux noms, affiche l’aperçu et active pdf-form.pdf.",
   tool_create_pdf_form_example_title: "Exemple",
-  tool_create_pdf_form_faq_a1: "Non. La page et les champs se construisent dans cet onglet. Des scripts CDN peuvent se charger ; le formulaire n’est pas envoyé à nos serveurs.",
+  tool_create_pdf_form_faq_a1: "Non. La page et les champs se construisent dans cet onglet. Des scripts de ce site peuvent se charger ; le formulaire n’est pas envoyé à nos serveurs.",
   tool_create_pdf_form_faq_a2: "Utilisez Rendre un PDF remplissable pour poser des champs sur un fichier déjà là. Cette page part vide.",
   tool_create_pdf_form_faq_a3: "Choisissez case dans le type, nommez, puis Ajouter un champ. La zone utilise le X/Y et la taille définis.",
   tool_create_pdf_form_faq_a4: "Ouvrez Remplir un formulaire PDF et saisissez des réponses d’essai.",

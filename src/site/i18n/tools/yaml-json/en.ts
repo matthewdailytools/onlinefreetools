@@ -24,7 +24,7 @@ const en: SiteLangDict = {
   tool_yaml_json_faq_a2:
     'Documents separated by --- are parsed with loadAll. One document becomes one JSON value; two or more become a JSON array. We do not drop documents after the first.',
   tool_yaml_json_faq_a3:
-    'Conversion stays in the tab. A CDN may serve js-yaml; that request downloads code only — it is not an upload of your YAML or JSON text.',
+    'Conversion stays in the tab. This site serves js-yaml; that request downloads code only — it is not an upload of your YAML or JSON text.',
   tool_yaml_json_faq_a4:
     'No. Comments never survive JSON. Anchors expand into repeated values. Dumping JSON back to YAML will not restore original comments or anchor names.',
   tool_yaml_json_faq_a5:
@@ -60,7 +60,7 @@ const en: SiteLangDict = {
   tool_yaml_json_rules_item_3:
     'Loss on round-trip: comments disappear (JSON has none); anchors/aliases expand into duplicated values; key order and style may change after dump.',
   tool_yaml_json_rules_item_4:
-    'Privacy: your paste is not uploaded. Fetching js-yaml from a CDN only downloads library code, not your config text.',
+    'Privacy: your paste is not uploaded. Fetching js-yaml from this site only downloads library code, not your config text.',
   tool_yaml_json_rules_title: 'Rules you should expect',
   tool_yaml_json_sample: 'Load sample',
   tool_yaml_json_sample_json: '{\n  "title": "Hello",\n  "count": 2\n}',

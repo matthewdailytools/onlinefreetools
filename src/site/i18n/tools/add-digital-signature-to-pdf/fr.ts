@@ -24,7 +24,7 @@ const fr: SiteLangDict = {
   tool_add_digital_signature_to_pdf_example: "Charger l’exemple crée un « enregistrement d’exemple », le hache et tamponne « Marqué numériquement » avec 16 hex vers X=48, Y=48.",
   tool_add_digital_signature_to_pdf_example_title: "Exemple",
   tool_add_digital_signature_to_pdf_faq_a1: "Non. La page hache le PDF et dessine un encadré. Elle n’embarque pas de PKCS#7 / PAdES. Pour un tampon de nom manuscrit, utilisez Signer un document PDF.",
-  tool_add_digital_signature_to_pdf_faq_a2: "Non. Hachage et tampon ont lieu dans votre onglet (les bibliothèques peuvent venir d’un CDN). Le PDF n’est pas envoyé à nos serveurs.",
+  tool_add_digital_signature_to_pdf_faq_a2: "Non. Hachage et tampon ont lieu dans votre onglet (les bibliothèques viennent de ce site). Le PDF n’est pas envoyé à nos serveurs.",
   tool_add_digital_signature_to_pdf_faq_a3: "Le SHA-256 affiché est celui de la source avant l’encadré. L’enregistrement ajoute des octets ; un hachage ultérieur du fichier téléchargé différera.",
   tool_add_digital_signature_to_pdf_faq_a4: "Non. Utilisez Protéger un PDF pour un mot de passe. Cette page n’ajoute qu’une marque visible.",
   tool_add_digital_signature_to_pdf_faq_a5: "Les gros PDF peuvent être lents ; testez d’abord un navigateur de bureau.",

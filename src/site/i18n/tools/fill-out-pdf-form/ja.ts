@@ -18,7 +18,7 @@ const ja: SiteLangDict = {
   tool_fill_out_pdf_form_err_no_fields: "この PDF には入力できる欄がありません。",
   tool_fill_out_pdf_form_example: "サンプルは Name と Email の PDF を作り、Ada Lovelace / ada@example.com を入れてプレビューし、ダウンロードを有効にします。",
   tool_fill_out_pdf_form_example_title: "例",
-  tool_fill_out_pdf_form_faq_a1: "いいえ。入力はこのタブ内です。ライブラリは CDN から読む場合がありますが、PDF は当社サーバーに送られません。",
+  tool_fill_out_pdf_form_faq_a1: "いいえ。入力はこのタブ内です。ライブラリはこのサイトから読みますが、PDF は当社サーバーに送られません。",
   tool_fill_out_pdf_form_faq_a2: "スキャンや印刷専用のことが多いです。先に「PDFを入力可能なフォームにする」で欄を足してから戻ってください。",
   tool_fill_out_pdf_form_faq_a3: "できます。チェックはオンオフ、ドロップダウンやラジオは PDF が選択肢を出せば短い一覧になります。",
   tool_fill_out_pdf_form_faq_a4: "作成は白紙から始めます。このページは既にある欄へ値を書くだけです。",

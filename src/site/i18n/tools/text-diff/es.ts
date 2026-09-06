@@ -19,7 +19,7 @@ const es: SiteLangDict = {
   tool_text_diff_faq_a1:
     'Línea para código y configs. Palabra para frases, correos y prompts: resalta palabras sueltas en lugar de toda la línea.',
   tool_text_diff_faq_a2:
-    'Tu texto pegado no se sube ni se guarda en nuestros servidores: la comparación corre en el navegador. La página puede cargar jsdiff (open source) desde un CDN; eso no envía tu texto a nuestros servidores.',
+    'Tu texto pegado no se sube ni se guarda en nuestros servidores: la comparación corre en el navegador. La página puede cargar jsdiff (open source) desde este sitio; eso no envía tu texto a nuestros servidores.',
   tool_text_diff_faq_a3: 'Windows usa CRLF y Unix/Mac suelen usar LF. Activa “Igualar CRLF y LF” antes de comparar.',
   tool_text_diff_faq_a4:
     'No. Esta página es solo texto pegado: ni imágenes, ZIP, Word, Excel ni JSON estructurado. Para abrir .txt, .docx o hojas, usa la página de ese formato.',

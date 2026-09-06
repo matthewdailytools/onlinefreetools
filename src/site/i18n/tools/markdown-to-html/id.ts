@@ -4,7 +4,7 @@
 import type { SiteLangDict } from '../../../types';
 const id: SiteLangDict = {
   tool_markdown_article:
-    'Satu halaman dua arah, dengan penjelasan apa yang dibersihkan dan apa yang hilang. Tempelan lokal; CDN hanya untuk pustaka.',
+    'Satu halaman dua arah, dengan penjelasan apa yang dibersihkan dan apa yang hilang. Tempelan lokal; situs ini hanya untuk pustaka.',
   tool_markdown_clear: 'Hapus',
   tool_markdown_copy: 'Salin HTML',
   tool_markdown_copy_done: 'Disalin',
@@ -21,7 +21,7 @@ const id: SiteLangDict = {
   tool_markdown_export_title: 'Ekspor Markdown ke HTML',
   tool_markdown_faq_a1: 'Pada arah Markdown → HTML, DOMPurify jalan sebelum pratinjau dan unduhan.',
   tool_markdown_faq_a2: 'Jarang. Anggap hasilnya draf yang bisa diedit.',
-  tool_markdown_faq_a3: 'Tidak. Konversi lokal; CDN hanya mengantar file pustaka.',
+  tool_markdown_faq_a3: 'Tidak. Konversi lokal; situs ini hanya mengantar file pustaka.',
   tool_markdown_faq_a4: 'Tidak dijamin. Diff jika Anda butuh sama persis.',
   tool_markdown_faq_a5: 'Dasar CommonMark; opsi dokumen HTML penuh untuk berbagi offline.',
   tool_markdown_faq_q1: 'Apakah output HTML aman dari skrip?',
@@ -53,7 +53,7 @@ const id: SiteLangDict = {
   tool_markdown_rules_item_html_md: 'Ke Markdown: bersihkan dulu, lalu Turndown (ATX + fenced).',
   tool_markdown_rules_item_loss: 'Gaya, skrip, tabel rumit sering hilang. Bolak-balik ≠ asli.',
   tool_markdown_rules_item_md_html: 'Ke HTML: parse lalu sanitasi sebelum tampil/unduh.',
-  tool_markdown_rules_privacy: 'Teks tetap di tab Anda; unduh CDN bukan unggah konten.',
+  tool_markdown_rules_privacy: 'Teks tetap di tab Anda; unduh skrip situs ini bukan unggah konten.',
   tool_markdown_rules_title: 'Aturan per arah',
   tool_markdown_sample_html: '<h1>Judul</h1>\n<p>Halo <strong>dunia</strong></p>',
   tool_markdown_sample_md:

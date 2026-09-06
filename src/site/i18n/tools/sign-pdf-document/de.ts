@@ -26,7 +26,7 @@ const de: SiteLangDict = {
   tool_sign_pdf_document_example: "Beispiel laden erzeugt eine „Sample agreement“-Seite, tippt Jane Sample und stempelt das PNG bei etwa X=72, Y=72.",
   tool_sign_pdf_document_example_title: "Beispiel",
   tool_sign_pdf_document_faq_a1: "Nein. Hier wird nur ein Bild gestempelt. Für eine Integritätsmarke mit Hash-Präfix nutzen Sie Digitale Signatur auf ein PDF setzen — das ist ebenfalls kein Zertifikats-PKI.",
-  tool_sign_pdf_document_faq_a2: "Nein. Das Stempeln läuft in Ihrem Tab (Bibliotheken können vom CDN kommen). Das PDF geht nicht auf unsere Server.",
+  tool_sign_pdf_document_faq_a2: "Nein. Das Stempeln läuft in Ihrem Tab (Bibliotheken kommen von dieser Website). Das PDF geht nicht auf unsere Server.",
   tool_sign_pdf_document_faq_a3: "Nein. Platzieren Sie das Bild mit X/Y. Für Passwörter siehe PDF schützen. Für mehr Text: Text zu einer PDF-Datei hinzufügen.",
   tool_sign_pdf_document_faq_a4: "Dieses Browser-Werkzeug setzt keine PKCS#7-/PAdES-Zertifikate. Nutzen Sie spezielle Signatursoftware.",
   tool_sign_pdf_document_faq_a5: "Große PDFs können langsam sein; zuerst einen Desktop-Browser testen.",

@@ -22,7 +22,7 @@ const de: SiteLangDict = {
   tool_edit_pdf_form_fields_err_no_fields: "Diese PDF hat keine Formularfelder zum Bearbeiten.",
   tool_edit_pdf_form_fields_example: "Beispiel erzeugt eine PDF mit Name und Email, listet beide Zeilen, zeigt die Vorschau und erlaubt Umbenennen oder Entfernen vor dem Download.",
   tool_edit_pdf_form_fields_example_title: "Beispiel",
-  tool_edit_pdf_form_fields_faq_a1: "Nein. Liste und Edits laufen in diesem Tab. CDN-Bibliotheken können laden; Ihre PDF geht nicht auf unsere Server.",
+  tool_edit_pdf_form_fields_faq_a1: "Nein. Liste und Edits laufen in diesem Tab. Bibliotheken können von dieser Website laden; Ihre PDF geht nicht auf unsere Server.",
   tool_edit_pdf_form_fields_faq_a2: "Umbenennen schreibt einen neuen internen Namen. Entfernen löscht das Widget. Schon getippte Werte können beim Entfernen verloren gehen.",
   tool_edit_pdf_form_fields_faq_a3: "Eine PDF ohne Felder zeigt einen Fehler mit Link zu PDF ausfüllbar machen.",
   tool_edit_pdf_form_fields_faq_a4: "PDF-Formular ausfüllen schreibt Antworten. Diese Seite ändert nur Namen oder löscht Kästen.",

@@ -26,7 +26,7 @@ const ja: SiteLangDict = {
     'サンプルは 1 ページ PDF を生成し四辺 36 pt で裁断、cropped.pdf のダウンロードとサイズ統計を有効化します。',
   tool_crop_pdf_example_title: '例',
   tool_crop_pdf_faq_a1:
-    'いいえ。PDF ライブラリ はタブ内で動作（スクリプトは CDN から読み込む場合あり）。PDF は当社サーバーに送られません。',
+    'いいえ。PDF ライブラリ はタブ内で動作（スクリプトは このサイトから読み込みます）。PDF は当社サーバーに送られません。',
   tool_crop_pdf_faq_a2:
     'pt 余白で PDF ボックスを狭めるツールで、画像のようにプレビュー上で矩形をドラッグできません。',
   tool_crop_pdf_faq_a3:

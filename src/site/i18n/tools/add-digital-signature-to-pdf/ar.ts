@@ -24,7 +24,7 @@ const ar: SiteLangDict = {
   tool_add_digital_signature_to_pdf_example: "تحميل العينة ينشئ «سجل نموذجي» ويحسب التجزئة ويختم «موسوم رقمياً» مع 16 خانة قرب X=48 و Y=48.",
   tool_add_digital_signature_to_pdf_example_title: "مثال",
   tool_add_digital_signature_to_pdf_faq_a1: "لا. الصفحة تجزّئ PDF وترسم مربعاً. لا تضمّن PKCS#7 / PAdES. لختم اسم يدوي استخدم توقيع مستند PDF.",
-  tool_add_digital_signature_to_pdf_faq_a2: "لا. الحساب والختم في تبويبك (قد تُحمَّل المكتبات من CDN). لا يصل الملف إلى خوادمنا.",
+  tool_add_digital_signature_to_pdf_faq_a2: "لا. الحساب والختم في تبويبك (تُحمَّل المكتبات من هذا الموقع). لا يصل الملف إلى خوادمنا.",
   tool_add_digital_signature_to_pdf_faq_a3: "SHA-256 المعروض للملف المصدر قبل رسم المربع. الحفظ يزيد بايتات، فالتجزئة اللاحقة تختلف وهذا متوقع.",
   tool_add_digital_signature_to_pdf_faq_a4: "لا. استخدم حماية PDF لكلمة مرور. هذه الصفحة تضيف علامة ظاهرة فقط.",
   tool_add_digital_signature_to_pdf_faq_a5: "قد تبطئ ملفات PDF الكبيرة؛ جرّب متصفح سطح المكتب أولاً.",

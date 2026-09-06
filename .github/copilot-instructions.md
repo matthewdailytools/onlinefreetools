@@ -60,6 +60,7 @@ Purpose: Make AI agents productive immediately in this repo. Keep changes minima
 - Tool edits: always run `npm run tool:touch -- --slug=<slug>` or manually bump `src/site/tool-catalog.d/{slug}.json` `updatedAt` to the current ISO timestamp. Git status, latest commit, and latest push do not decide build/upload incrementality.
 - Deploy: `npm run deploy` runs the default incremental build/lint/upload/verify flow and then prints the GitHub push steps. Use `npm run deploy:full` for full rebuild/reupload, `npm run deploy:worker-only` only for emergencies.
 - Configuration: root `wrangler.jsonc`; Worker serves HTML from Cache/R2, while Git-tracked Assets cover vendor, sitemap, icons, and language home files.
+- Same-origin JS: tool pages and chrome must load scripts from `/vendor/*` (`vendor:site-chrome` / `vendor:image-optimizer` / `vendor:tool-libs`). Do not use jsDelivr/cdnjs/unpkg. Exception: Cloudflare Turnstile. Run `npm run lint:vendor`. FAQ must not say libraries load from a CDN.
 
 ## Conventions
 - Directory hints:

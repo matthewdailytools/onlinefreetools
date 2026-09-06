@@ -150,7 +150,7 @@ export const renderRotatePdfPage = (opts: {
 	 * 客户端脚本：加载 PDF、解析页范围、setRotation 累加角度、样例自动跑通。
 	 */
 	const extraBodyHtml = `
-  <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/vendor/pdf-lib/pdf-lib.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     (function () {
       /** 单文件软警告阈值（字节）。 */

@@ -23,7 +23,7 @@ const fr: SiteLangDict = {
 		'Charger l’exemple crée deux tout petits .docx. Le second mémo remplace « meet at noon » par « meet at 3pm ». Dès l’ouverture, cette différence de libellé s’affiche.',
 	tool_compare_two_word_documents_for_differences_example_title: 'Exemple',
 	tool_compare_two_word_documents_for_differences_faq_a1:
-		'Non. Les fichiers sont lus dans cet onglet. mammoth et jsdiff peuvent arriver en bibliothèque via un CDN ; vos documents ne sont pas envoyés à nos serveurs.',
+		'Non. Les fichiers sont lus dans cet onglet. mammoth et jsdiff peuvent arriver en bibliothèque depuis ce site ; vos documents ne sont pas envoyés à nos serveurs.',
 	tool_compare_two_word_documents_for_differences_faq_a2:
 		'Non. Word peut comparer la mise en forme et le suivi des modifications. Ici on extrait seulement le texte visible, puis on en fait un diff. En-têtes, pieds et styles sont jetés.',
 	tool_compare_two_word_documents_for_differences_faq_a3:

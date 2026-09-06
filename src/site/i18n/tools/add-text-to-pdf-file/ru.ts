@@ -20,7 +20,7 @@ const ru: SiteLangDict = {
   tool_add_text_to_pdf_file_err_pdfjs: "PDF renderer failed to load.",
   tool_add_text_to_pdf_file_example: "Загрузить пример: CONFIDENTIAL",
   tool_add_text_to_pdf_file_example_title: "Пример",
-  tool_add_text_to_pdf_file_faq_a1: "Нет. Рендеринг в вашей вкладке (библиотеки могут грузиться с CDN). PDF не отправляется на наши серверы.",
+  tool_add_text_to_pdf_file_faq_a1: "Нет. Рендеринг в вашей вкладке (библиотеки грузятся с этого сайта). PDF не отправляется на наши серверы.",
   tool_add_text_to_pdf_file_faq_a2: "Нет. Эта операция не зависит от извлечения текстового слоя PDF.",
   tool_add_text_to_pdf_file_faq_a3: "Encrypted or damaged files show a clear error instead of failing silently.",
   tool_add_text_to_pdf_file_faq_a4: "«Редактировать текст PDF» меняет существующую формулировку. «Написать PDF» создаёт новый файл из введённого текста. Эта страница только рисует новый штамп в X/Y на каждой странице.",

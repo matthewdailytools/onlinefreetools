@@ -23,7 +23,7 @@ const ja: SiteLangDict = {
     'サンプルは 2 ページ PDF を生成し、DRAFT を中央・35% 不透明度・−45° で全ページに適用、watermarked.pdf のダウンロードを有効にします。',
   tool_pdf_watermark_example_title: '例',
   tool_pdf_watermark_faq_a1:
-    'いいえ。PDF ライブラリ はタブ内で動作（CDN から読み込む場合あり）。PDF は当社サーバーに送られません。',
+    'いいえ。PDF ライブラリ はタブ内で動作（このサイトから読み込みます）。PDF は当社サーバーに送られません。',
   tool_pdf_watermark_faq_a2:
     '画像ウォーターマークは写真に文字やロゴを重ねます。本ツールは PDF 文書の各ページにスタンプ — 用途が異なります。',
   tool_pdf_watermark_faq_a3:

@@ -24,7 +24,7 @@ const ja: SiteLangDict = {
   tool_add_digital_signature_to_pdf_example: "サンプル読み込みは「Sample record」1ページを作り、ハッシュし、X=48・Y=48 付近に先頭16桁の「デジタル標記済み」を押します。",
   tool_add_digital_signature_to_pdf_example_title: "例",
   tool_add_digital_signature_to_pdf_faq_a1: "いいえ。PDF をハッシュして見える枠を描くだけです。PKCS#7 / PAdES は埋めません。手書き氏名なら「PDF 文書に署名する」を使ってください。",
-  tool_add_digital_signature_to_pdf_faq_a2: "いいえ。ハッシュと押印はこのタブ内です（ライブラリは CDN から来る場合があります）。当社サーバーには送りません。",
+  tool_add_digital_signature_to_pdf_faq_a2: "いいえ。ハッシュと押印はこのタブ内です（ライブラリはこのサイトから読みます）。当社サーバーには送りません。",
   tool_add_digital_signature_to_pdf_faq_a3: "表示の SHA-256 は枠を描く前の元ファイルです。保存でバイトが増えるので、後からのハッシュは異なります。",
   tool_add_digital_signature_to_pdf_faq_a4: "いいえ。パスワードは PDF を保護を使ってください。このページは見える標記だけです。",
   tool_add_digital_signature_to_pdf_faq_a5: "大きな PDF は遅くなることがあります。まずデスクトップブラウザで試してください。",

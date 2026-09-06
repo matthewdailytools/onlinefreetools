@@ -35,7 +35,7 @@ const ja: SiteLangDict = {
 		'サンプル読込は画像ページ付きの短い PDF を 2 件作り、メール用でそれぞれ圧縮し、ZIP 内は 2 件のまま節約バイトを出します。',
 	tool_batch_compress_pdfs_for_email_example_title: '例',
 	tool_batch_compress_pdfs_for_email_faq_a1:
-		'しません。ラスタと再埋め込みはこのタブ内。ファイルは端末内に留まり、サーバーにアップロードしない。pdf.js、pdf-lib、ZIP 用スクリプトは CDN から来る場合がありますが、PDF 自体はタブを出ません。',
+		'しません。ラスタと再埋め込みはこのタブ内。ファイルは端末内に留まり、サーバーにアップロードしない。pdf.js、pdf-lib、ZIP 用スクリプトはこのサイトから読みますが、PDF 自体はタブを出ません。',
 	tool_batch_compress_pdfs_for_email_faq_a2:
 		'しません。手に入るのは N 件の PDF の ZIP です。1 冊にまとめるのは PDF 結合で、別作業です。',
 	tool_batch_compress_pdfs_for_email_faq_a3:

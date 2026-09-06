@@ -264,11 +264,12 @@ const main = async () => {
       runBuildSite();
     } else {
       /** Registry/i18n merge must still run so generated slugs stay fresh */
-      console.log('Skipping full build:site (--no-build); running merge:tools + site chrome vendor.');
+      console.log('Skipping full build:site (--no-build); running merge:tools + same-origin vendor copy.');
       execSync('npm run merge:tools', { cwd: projectRoot, stdio: 'inherit' });
       /** 确保本地 Bootstrap/字体存在，避免 --no-build 时仍打外网 CDN */
       execSync('node scripts/copy-site-chrome-vendor.mjs', { cwd: projectRoot, stdio: 'inherit' });
       execSync('node scripts/copy-image-optimizer-vendor.mjs', { cwd: projectRoot, stdio: 'inherit' });
+      execSync('node scripts/copy-tool-libs-vendor.mjs', { cwd: projectRoot, stdio: 'inherit' });
       console.log('Note: --no-build skips tool HTML prerender; run build:site if /tools/* 404.');
     }
 

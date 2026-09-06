@@ -22,7 +22,7 @@ const de: SiteLangDict = {
     'Muster erstellt ein Drei-Seiten-PDF, nummeriert unten Mitte ab 1 und aktiviert Download numbered.pdf.',
   tool_pdf_page_numbers_example_title: 'Beispiel',
   tool_pdf_page_numbers_faq_a1:
-    'Nein. die PDF-Bibliothek läuft in Ihrem Tab (Skripte ggf. per CDN). Ihr PDF wird nicht auf unsere Server hochgeladen.',
+    'Nein. die PDF-Bibliothek läuft in Ihrem Tab (Skripte ggf. from this site). Ihr PDF wird nicht auf unsere Server hochgeladen.',
   tool_pdf_page_numbers_faq_a2:
     'Ja—„Start bei“ ist die Zahl auf Seite 1 (z. B. 0 für Deckblatt oder 5 nach gelöschten Seiten). Jede folgende Seite +1.',
   tool_pdf_page_numbers_faq_a3:

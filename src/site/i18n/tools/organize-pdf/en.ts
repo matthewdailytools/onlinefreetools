@@ -22,7 +22,7 @@ const en: SiteLangDict = {
     'Sample loads a three-page PDF labeled 1–3, removes page 2, applies the new order, and enables Download for a two-page organized.pdf.',
   tool_organize_pdf_example_title: 'Example',
   tool_organize_pdf_faq_a1:
-    'No. The PDF library runs in your tab (the library may load from a CDN). Your PDF is not uploaded to our servers.',
+    'No. The PDF library runs in your tab (the library script loads from this site). Your PDF is not uploaded to our servers.',
   tool_organize_pdf_faq_a2:
     'Merge combines several PDFs into one. Split exports pages as separate files (or a ZIP). Organize edits page order inside a single PDF and downloads one file.',
   tool_organize_pdf_faq_a3:

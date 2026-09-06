@@ -21,7 +21,7 @@ const en: SiteLangDict = {
   tool_check_pdf_a_compliance_example: "The built-in ordinary PDF has a valid PDF header and no encryption marker, but lacks PDF/A XMP and output-intent markers. Missing indicators do not by themselves prove non-conformance.",
   tool_check_pdf_a_compliance_example_title: "Example",
   tool_check_pdf_a_compliance_fail: "Not found",
-  tool_check_pdf_a_compliance_faq_a1: "No. Rendering runs in your tab (libraries may load from a CDN). Your PDF is not uploaded to our servers.",
+  tool_check_pdf_a_compliance_faq_a1: "No. Rendering runs in your tab (library scripts load from this site). Your PDF is not uploaded to our servers.",
   tool_check_pdf_a_compliance_faq_a2: "No. It only searches raw bytes for five indicators. Use veraPDF or another standards validator for profile-specific conformance.",
   tool_check_pdf_a_compliance_faq_a3: "Yes. A scanned PDF can still be screened because this check does not depend on a selectable text layer.",
   tool_check_pdf_a_compliance_faq_a4: "An absent marker may be stored in a compressed object stream, so “Not found” is not a definitive failure.",

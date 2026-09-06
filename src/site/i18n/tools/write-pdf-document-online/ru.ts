@@ -20,7 +20,7 @@ const ru: SiteLangDict = {
   tool_write_pdf_document_online_err_pdfjs: "PDF renderer failed to load.",
   tool_write_pdf_document_online_example: "Загрузить пример заполняет два абзаца, нажимает «Create PDF» и показывает одностраничный предпросмотр для скачивания.",
   tool_write_pdf_document_online_example_title: "Пример",
-  tool_write_pdf_document_online_faq_a1: "Нет. Рендеринг в вашей вкладке (библиотеки могут грузиться с CDN). PDF не отправляется на наши серверы.",
+  tool_write_pdf_document_online_faq_a1: "Нет. Рендеринг в вашей вкладке (библиотеки грузятся с этого сайта). PDF не отправляется на наши серверы.",
   tool_write_pdf_document_online_faq_a2: "Нет. Вы вводите новый текст в поле; страница собирает PDF через pdf-lib. Существующий PDF не открывается.",
   tool_write_pdf_document_online_faq_a3: "Нет. Для уже имеющихся файлов используйте «Редактировать текст PDF» или «Добавить текст».",
   tool_write_pdf_document_online_faq_a4: "«Добавить текст» ставит штамп на существующий PDF. «Редактировать текст PDF» меняет формулировку текстового слоя. Эта страница только создаёт новый PDF из введённого текста.",

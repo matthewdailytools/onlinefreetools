@@ -19,7 +19,7 @@ const ru: SiteLangDict = {
   tool_make_pdf_fillable_err_no_name: "Сначала укажите имя поля.",
   tool_make_pdf_fillable_example: "Пример создаёт пустую страницу, добавляет FullName в 48,220 размером 220×22, показывает предпросмотр и включает скачивание.",
   tool_make_pdf_fillable_example_title: "Пример",
-  tool_make_pdf_fillable_faq_a1: "Нет. Размещение во вкладке. Скрипты CDN могут грузиться; PDF на наши серверы не уходит.",
+  tool_make_pdf_fillable_faq_a1: "Нет. Размещение во вкладке. Скрипты этого сайта могут грузиться; PDF на наши серверы не уходит.",
   tool_make_pdf_fillable_faq_a2: "Да. Когда поля есть, откройте «Заполнить PDF-форму».",
   tool_make_pdf_fillable_faq_a3: "«Добавить N полей». Они встают Field_1, Field_2… с фиксированным шагом.",
   tool_make_pdf_fillable_faq_a4: "«Создать PDF-форму» начинает с пустой страницы и называет текст или флажки. Здесь поля накладываются на уже имеющийся файл.",

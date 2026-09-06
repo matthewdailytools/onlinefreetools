@@ -44,7 +44,7 @@ const es: SiteLangDict = {
 		'Cargar ejemplo pone un bloque apaisado y uno vertical, escribe SAMPLE, previsualiza el primero, aplica la misma marca relativa a ambos y activa Descargar ZIP.',
 	tool_batch_watermark_product_photos_example_title: 'Ejemplo',
 	tool_batch_watermark_product_photos_faq_a1:
-		'No. La lectura y el sello en Canvas ocurren en esta pestaña. No salen del dispositivo y no se suben al servidor. El ayudante del ZIP puede cargarse desde un CDN; tus fotos siguen en la pestaña.',
+		'No. La lectura y el sello en Canvas ocurren en esta pestaña. No salen del dispositivo y no se suben al servidor. El ayudante del ZIP puede cargarse desde este sitio; tus fotos siguen en la pestaña.',
 	tool_batch_watermark_product_photos_faq_a2:
 		'No. El tamaño es un porcentaje del lado corto y las nueve anclas son fracciones de ese lienzo. Retrato y paisaje quedan en la misma esquina relativa.',
 	tool_batch_watermark_product_photos_faq_a3:

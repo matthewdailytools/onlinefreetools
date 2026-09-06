@@ -22,7 +22,7 @@ const zh: SiteLangDict = {
   tool_unlock_pdf_example: '样例会生成单页加密 PDF（密码 sample），自动填入密码、解锁，启用下载 unlocked.pdf，并在状态行显示样例密码。',
   tool_unlock_pdf_example_title: '解锁我的 PDF',
   tool_unlock_pdf_faq_a1: '不会。只有输入正确打开密码才能去掉保护。不提供破解、暴力猜密或找回遗忘密码。',
-  tool_unlock_pdf_faq_a2: '不会。处理在当前标签页内完成（脚本可能从 CDN 加载），PDF 不会上传到我们的服务器。',
+  tool_unlock_pdf_faq_a2: '不会。处理在当前标签页内完成（脚本从本站加载），PDF 不会上传到我们的服务器。',
   tool_unlock_pdf_faq_a3: '会显示明确的密码错误提示。请使用「保护 PDF」或其他应用里设置的同一密码——本站无法替你猜密码。',
   tool_unlock_pdf_faq_a4: '「保护 PDF」用于加打开密码；解锁后可配合「合并 PDF」。本工具只处理打开时需要密码的文件。',
   tool_unlock_pdf_faq_q1: '能破解或找回忘记的密码吗？',

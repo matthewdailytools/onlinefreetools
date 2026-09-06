@@ -22,7 +22,7 @@ const zh: SiteLangDict = {
   tool_edit_pdf_form_fields_err_no_fields: "这份 PDF 没有可编辑的表单字段。",
   tool_edit_pdf_form_fields_example: "加载样例会生成带 Name、Email 的 PDF，列出两行，显示预览，并允许改名或删除后再下载。",
   tool_edit_pdf_form_fields_example_title: "示例",
-  tool_edit_pdf_form_fields_faq_a1: "不会。列表和修改都在本标签页完成。脚本可能从 CDN 加载，PDF 不会发到我们的服务器。",
+  tool_edit_pdf_form_fields_faq_a1: "不会。列表和修改都在本标签页完成。脚本从本站加载，PDF 不会发到我们的服务器。",
   tool_edit_pdf_form_fields_faq_a2: "改名会换内部字段名。删除会去掉控件。已填的值在删除后可能丢失。",
   tool_edit_pdf_form_fields_faq_a3: "没有字段时会报错，并链到「把 PDF 做成可填写表单」。",
   tool_edit_pdf_form_fields_faq_a4: "「填写 PDF 表单」用来写答案。本页只改名或删框。",

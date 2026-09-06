@@ -24,7 +24,7 @@ const zh: SiteLangDict = {
   tool_edit_pdf_text_online_example: "加载样例会生成写有「Hello edit PDF text sample.」的一页 PDF，填入编辑器，再套用一次并给出可下载结果。",
   tool_edit_pdf_text_online_example_title: "示例",
   tool_edit_pdf_text_online_faq_a1: "扫描版通常是图片，没有文本层。本工具不做 OCR，会直接报错。",
-  tool_edit_pdf_text_online_faq_a2: "不会。库可能从 CDN 加载，但你的 PDF 留在本标签页，不会上传到我们的服务器。",
+  tool_edit_pdf_text_online_faq_a2: "不会。库从本站加载，但你的 PDF 留在本标签页，不会上传到我们的服务器。",
   tool_edit_pdf_text_online_faq_a3: "不是。这不是原地改字形。文字先抽出、你改完，再按简单版式重画。原字体、分栏和精确坐标不会保留。",
   tool_edit_pdf_text_online_faq_a4: "「添加文字」在 X/Y 盖新一行；「PDF 变成可编辑文档」主下载是可编辑 .txt（可选导出重建 PDF）。本页主下载是编辑文本层后重建的 .pdf。",
   tool_edit_pdf_text_online_faq_a5: "大文件可能较慢，建议先在桌面浏览器试用。",

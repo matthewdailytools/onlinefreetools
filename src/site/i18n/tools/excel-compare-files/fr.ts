@@ -24,7 +24,7 @@ const fr: SiteLangDict = {
 		'Charger l’exemple compare deux tableaux CSV. Les en-têtes Name/Qty coïncident ; la quantité Gadget vaut 2 contre 9, donc B3 est listée. Dès l’ouverture, cette cellule s’affiche.',
 	tool_excel_compare_files_example_title: 'Exemple',
 	tool_excel_compare_files_faq_a1:
-		'Non. Les octets sont lus dans cet onglet avec SheetJS. La bibliothèque peut arriver via un CDN ; vos fichiers ne sont pas envoyés à nos serveurs.',
+		'Non. Les octets sont lus dans cet onglet avec SheetJS. La bibliothèque peut arriver depuis ce site ; vos fichiers ne sont pas envoyés à nos serveurs.',
 	tool_excel_compare_files_faq_a2:
 		'Oui : la première feuille est sélectionnée par défaut. Utilisez les listes si vous voulez un autre onglet du même fichier. Les autres feuilles ne sont comparées que lorsqu’on les choisit.',
 	tool_excel_compare_files_faq_a3:

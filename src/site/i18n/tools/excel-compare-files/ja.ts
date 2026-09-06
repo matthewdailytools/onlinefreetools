@@ -24,7 +24,7 @@ const ja: SiteLangDict = {
 		'サンプル読込は2つの CSV を比べます。Name/Qty の見出しは同じで、Gadget の数量が 2 対 9 なので B3 が出ます。初回表示ですでにそのセルが出ます。',
 	tool_excel_compare_files_example_title: '例',
 	tool_excel_compare_files_faq_a1:
-		'いいえ。このタブで SheetJS がバイトを読みます。ライブラリは CDN から届くことがありますが、ファイルは当社サーバーに送りません。',
+		'いいえ。このタブで SheetJS がバイトを読みます。ライブラリはこのサイトから読みますが、ファイルは当社サーバーに送りません。',
 	tool_excel_compare_files_faq_a2:
 		'既定では先頭シートが選ばれます。同じファイルの別タブが要るときはシート一覧を使います。選んでいないシートは比べません。',
 	tool_excel_compare_files_faq_a3:

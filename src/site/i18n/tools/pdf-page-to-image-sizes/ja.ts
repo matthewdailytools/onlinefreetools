@@ -25,7 +25,7 @@ const ja: SiteLangDict = {
   tool_pdf_page_to_image_sizes_example_title: '例',
   tool_pdf_page_to_image_sizes_export: '書き出し',
   tool_pdf_page_to_image_sizes_faq_a1:
-    'いいえ。ページ描画・PDF ライブラリ・ZIP ライブラリ はタブ内で動作します（スクリプトは CDN から読み込まれる場合があります）。PDF は当社サーバーにアップロードされません。',
+    'いいえ。ページ描画・PDF ライブラリ・ZIP ライブラリ はタブ内で動作します（スクリプトは このサイトから読み込まれます）。PDF は当社サーバーにアップロードされません。',
   tool_pdf_page_to_image_sizes_faq_a2:
     'PDF→JPG は全ページを元のアスペクト比で出力します。本ツールは 1 ページを選び、固定プラットフォームサイズに contain（中央、必要なら白余白）で収めます。',
   tool_pdf_page_to_image_sizes_faq_a3:

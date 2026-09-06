@@ -26,7 +26,7 @@ const ar: SiteLangDict = {
   tool_sign_pdf_document_example: "تحميل العينة ينشئ «اتفاقية نموذجية» ويكتب Jane Sample ويختم PNG قرب X=72 و Y=72.",
   tool_sign_pdf_document_example_title: "مثال",
   tool_sign_pdf_document_faq_a1: "لا. الصفحة تختم صورة فقط. لعلامة سلامة ببادئة تجزئة استخدم إضافة توقيع رقمي إلى PDF — وليست أيضاً PKI بشهادة.",
-  tool_sign_pdf_document_faq_a2: "لا. الختم يتم في تبويبك (قد تُحمَّل المكتبات من CDN). لا يصل الملف إلى خوادمنا.",
+  tool_sign_pdf_document_faq_a2: "لا. الختم يتم في تبويبك (تُحمَّل المكتبات من هذا الموقع). لا يصل الملف إلى خوادمنا.",
   tool_sign_pdf_document_faq_a3: "لا. ضع الصورة بـ X/Y. لكلمات المرور راجع حماية PDF. لمزيد من النص راجع إضافة نص إلى ملف PDF.",
   tool_sign_pdf_document_faq_a4: "لا تستطيع هذه الأداة تطبيق شهادات PKCS#7 / PAdES. استخدم برنامجاً مخصصاً.",
   tool_sign_pdf_document_faq_a5: "قد تبطئ ملفات PDF الكبيرة؛ جرّب متصفح سطح المكتب أولاً.",

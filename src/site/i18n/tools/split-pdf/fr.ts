@@ -22,7 +22,7 @@ const fr: SiteLangDict = {
     'L’exemple crée un PDF de trois pages, le découpe page par page et active Télécharger pour un ZIP avec page-1.pdf, page-2.pdf et page-3.pdf.',
   tool_split_pdf_example_title: 'Découper mon PDF',
   tool_split_pdf_faq_a1:
-    'Non. pdf-lib et fflate s’exécutent dans votre onglet (les scripts peuvent venir d’un CDN). Votre PDF n’est pas envoyé sur nos serveurs.',
+    'Non. pdf-lib et fflate s’exécutent dans votre onglet (les scripts viennent de ce site). Votre PDF n’est pas envoyé sur nos serveurs.',
   tool_split_pdf_faq_a2:
     'Pages à partir de 1 : 1-3,5 signifie les pages 1–3 et la 5. Les espaces sont optionnels. Valeurs vides ou hors plage échouent.',
   tool_split_pdf_faq_a3:

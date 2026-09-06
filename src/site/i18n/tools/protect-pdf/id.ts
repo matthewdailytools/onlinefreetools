@@ -23,7 +23,7 @@ const id: SiteLangDict = {
     'Sampel membuat satu halaman, enkripsi dengan sample, aktifkan Unduh protected.pdf, dan tampilkan sandi di status.',
   tool_protect_pdf_example_title: 'Lindungi PDF dengan kata sandi',
   tool_protect_pdf_faq_a1:
-    'Tidak. pustaka PDF berjalan di tab Anda (skrip mungkin dari CDN). PDF tidak diunggah ke server kami.',
+    'Tidak. pustaka PDF berjalan di tab Anda (skrip dari situs ini). PDF tidak diunggah ke server kami.',
   tool_protect_pdf_faq_a2:
     'Enkripsi PDF umum: perlu sandi untuk membuka. Bukan tingkat militer — pilih sandi kuat yang Anda ingat.',
   tool_protect_pdf_faq_a3:

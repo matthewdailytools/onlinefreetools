@@ -23,7 +23,7 @@ const zh: SiteLangDict = {
 		'加载示例会放入 notes.txt、一张很小的 photo.png，以及 docs/readme.md，并打成 sample.zip。首屏即可点「下载 ZIP」。',
 	tool_create_zip_file_example_title: '示例',
 	tool_create_zip_file_faq_a1:
-		'不会。字节只在当前标签页读取。ZIP 引擎脚本可能从 CDN 加载，但你的文件不会上传到我们的服务器。',
+		'不会。字节只在当前标签页读取。ZIP 引擎脚本从本站加载，但你的文件不会上传到我们的服务器。',
 	tool_create_zip_file_faq_a2:
 		'若浏览器提供 webkitRelativePath（拖文件夹或选目录），这些路径会在去掉 ../ 后写入 ZIP。这就是本页「文件夹打成 zip」的做法。',
 	tool_create_zip_file_faq_a3:

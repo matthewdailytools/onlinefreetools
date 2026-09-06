@@ -24,7 +24,7 @@ const de: SiteLangDict = {
 		'Beispiel laden vergleicht zwei CSV-Tabellen. Name/Qty-Köpfe passen; die Gadget-Menge ist 2 gegen 9, daher steht B3. Schon beim ersten Anzeigen erscheint diese Zelle.',
 	tool_excel_compare_files_example_title: 'Beispiel',
 	tool_excel_compare_files_faq_a1:
-		'Nein. Die Bytes werden in diesem Tab mit SheetJS gelesen. Die Bibliothek kann über ein CDN kommen; Ihre Dateien werden nicht auf unsere Server hochgeladen.',
+		'Nein. Die Bytes werden in diesem Tab mit SheetJS gelesen. Die Bibliothek kann von dieser Website kommen; Ihre Dateien werden nicht auf unsere Server hochgeladen.',
 	tool_excel_compare_files_faq_a2:
 		'Ja: das erste Blatt ist standardmäßig gewählt. Über die Blattlisten ein anderes Register derselben Datei wählen. Andere Blätter werden erst verglichen, wenn Sie sie wählen.',
 	tool_excel_compare_files_faq_a3:

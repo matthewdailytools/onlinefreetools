@@ -23,7 +23,7 @@ const de: SiteLangDict = {
     'Muster erstellt ein Zwei-Seiten-PDF, wendet DRAFT zentriert mit 35 % Deckkraft und −45° auf jeder Seite an und aktiviert Download watermarked.pdf.',
   tool_pdf_watermark_example_title: 'Beispiel',
   tool_pdf_watermark_faq_a1:
-    'Nein. die PDF-Bibliothek läuft in Ihrem Tab (Skripte ggf. per CDN). Ihr PDF wird nicht auf unsere Server hochgeladen.',
+    'Nein. die PDF-Bibliothek läuft in Ihrem Tab (Skripte ggf. from this site). Ihr PDF wird nicht auf unsere Server hochgeladen.',
   tool_pdf_watermark_faq_a2:
     'Wasserzeichen auf Bildern legt Text/Logos auf Fotos. Dieses Tool stempelt jede Seite eines PDF-Dokuments.',
   tool_pdf_watermark_faq_a3:

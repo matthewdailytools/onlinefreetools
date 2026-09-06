@@ -18,7 +18,7 @@ const en: SiteLangDict = {
   tool_fill_out_pdf_form_err_no_fields: "This PDF has no fillable fields.",
   tool_fill_out_pdf_form_example: "Load sample builds a PDF with Name and Email fields, fills Ada Lovelace / ada@example.com, then shows the preview and enables download.",
   tool_fill_out_pdf_form_example_title: "Example",
-  tool_fill_out_pdf_form_faq_a1: "No. Filling runs in this browser tab. Libraries may load from a CDN, but your PDF is not sent to our servers.",
+  tool_fill_out_pdf_form_faq_a1: "No. Filling runs in this browser tab. Library scripts load from this site, but your PDF is not sent to our servers.",
   tool_fill_out_pdf_form_faq_a2: "It is probably a flat scan or a print-only file. Add fields first with Make a PDF fillable, then come back here.",
   tool_fill_out_pdf_form_faq_a3: "Yes. Checkboxes appear as ticks; dropdowns and radio groups appear as a short choice list when the PDF exposes options.",
   tool_fill_out_pdf_form_faq_a4: "Create a PDF form starts from a blank page. This page only writes values into fields that already exist.",

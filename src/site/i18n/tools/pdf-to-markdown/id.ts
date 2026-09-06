@@ -25,7 +25,7 @@ const id: SiteLangDict = {
     'Sampel membuat PDF satu halaman Helvetica, mengonversi, menampilkan kalimat di pratinjau, dan mengaktifkan Unduh .md.',
   tool_pdf_to_markdown_example_title: 'Contoh',
   tool_pdf_to_markdown_faq_a1:
-    'Tidak. perender halaman berjalan di tab Anda (skrip mungkin dari CDN). PDF tidak diunggah ke server kami.',
+    'Tidak. perender halaman berjalan di tab Anda (skrip dari situs ini). PDF tidak diunggah ke server kami.',
   tool_pdf_to_markdown_faq_a2:
     'Scan biasanya gambar tanpa lapisan teks. Tanpa OCR ekstraksi kosong dan gagal dengan pesan jelas.',
   tool_pdf_to_markdown_faq_a3: 'Tidak membangun ulang heading atau tabel — teks biasa per posisi.',

@@ -13,7 +13,7 @@ const fr: SiteLangDict = {
   tool_json_schema_validator_desc:
     'Validez du JSON avec un Schema et des erreurs JSON Pointer — draft-07 local.',
   tool_json_schema_validator_description:
-    'Validez du JSON contre un JSON Schema (draft-07) dans le navigateur. Étapes : collez Schema et instance, validez, puis lisez chaque échec via son JSON Pointer. Exemple : un produit sans price échoue avec missingProperty. Le texte reste dans l’onglet ; Ajv ne charge que du code depuis un CDN.',
+    'Validez du JSON contre un JSON Schema (draft-07) dans le navigateur. Étapes : collez Schema et instance, validez, puis lisez chaque échec via son JSON Pointer. Exemple : un produit sans price échoue avec missingProperty. Le texte reste dans l’onglet ; Ajv ne charge que du code depuis ce site.',
   tool_json_schema_validator_draft_note: 'Moteur : Ajv 8 · JSON Schema draft-07 (par défaut).',
   tool_json_schema_validator_empty: 'Collez d’abord le Schema et le JSON d’instance.',
   tool_json_schema_validator_example:
@@ -27,7 +27,7 @@ const fr: SiteLangDict = {
   tool_json_schema_validator_faq_a3:
     'Cette page utilise le dialecte draft-07 d’Ajv. Les drafts 2019-09 / 2020-12 demandent d’autres builds et ne sont pas choisis ici.',
   tool_json_schema_validator_faq_a4:
-    'Votre Schema et votre JSON ne sont pas envoyés. Le CDN ne télécharge que le code Ajv.',
+    'Votre Schema et votre JSON ne sont pas envoyés. Ce site ne télécharge que le code Ajv.',
   tool_json_schema_validator_faq_a5:
     'Collez Schema et JSON du modèle, validez, corrigez chaque Pointer jusqu’à la réussite — utile avant d’envoyer une sortie structurée plus loin.',
   tool_json_schema_validator_faq_q1: 'Pourquoi la validation a-t-elle échoué ?',
@@ -58,7 +58,7 @@ const fr: SiteLangDict = {
   tool_json_schema_validator_rules_item_3:
     'Draft : dialecte draft-07. Ne supposez pas les mots-clés 2020-12 ici.',
   tool_json_schema_validator_rules_item_4:
-    'Confidentialité : le collage reste dans l’onglet. Le CDN ne charge que le code Ajv.',
+    'Confidentialité : le collage reste dans l’onglet. Ce site ne charge que le code Ajv.',
   tool_json_schema_validator_rules_title: 'Règles à prévoir',
   tool_json_schema_validator_sample_fail: 'Exemple en échec',
   tool_json_schema_validator_sample_instance_fail: '{"sku":"A-1"}',

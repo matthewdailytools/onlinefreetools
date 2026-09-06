@@ -20,7 +20,7 @@ const pt: SiteLangDict = {
     'O exemplo carrega dois PDFs de uma página (A e B), junta na ordem da lista e ativa Descarregar para um merged.pdf de duas páginas.',
   tool_merge_pdf_example_title: 'Combinar arquivos PDF em um só',
   tool_merge_pdf_faq_a1:
-    'Não. O pdf-lib corre no seu separador (a biblioteca pode vir de um CDN). Os PDFs não são enviados para os nossos servidores.',
+    'Não. O pdf-lib corre no seu separador (a biblioteca pode vir deste site). Os PDFs não são enviados para os nossos servidores.',
   tool_merge_pdf_faq_a2:
     'Imagens para PDF cria um PDF a partir de fotos. Esta ferramenta junta PDFs já existentes num só documento.',
   tool_merge_pdf_faq_a3:
@@ -51,7 +51,7 @@ const pt: SiteLangDict = {
   tool_merge_pdf_rules_item_2:
     'Motor: o pdf-lib carrega cada PDF e usa copyPages num documento novo — sem envio dos seus ficheiros.',
   tool_merge_pdf_rules_item_3:
-    'Privacidade: os bytes ficam no separador. O script da biblioteca pode carregar de um CDN.',
+    'Privacidade: os bytes ficam no separador. O script da biblioteca pode carregar deste site.',
   tool_merge_pdf_rules_item_4:
     'Limites: precisa de ≥2 ficheiros; PDFs encriptados ou corruptos falham com erro legível; conjuntos muito grandes podem ser lentos.',
   tool_merge_pdf_rules_title: 'Regras a esperar',

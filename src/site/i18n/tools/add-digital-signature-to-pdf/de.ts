@@ -24,7 +24,7 @@ const de: SiteLangDict = {
   tool_add_digital_signature_to_pdf_example: "Beispiel laden erzeugt eine „Sample record“-Seite, hasht sie und stempelt „Digital markiert“ mit 16 Hex bei etwa X=48, Y=48.",
   tool_add_digital_signature_to_pdf_example_title: "Beispiel",
   tool_add_digital_signature_to_pdf_faq_a1: "Nein. Die Seite hasht das PDF und zeichnet einen Kasten. Es wird kein PKCS#7 / PAdES eingebettet. Für einen handschriftlichen Namensstempel nutzen Sie PDF-Dokument unterschreiben.",
-  tool_add_digital_signature_to_pdf_faq_a2: "Nein. Hash und Stempel laufen in Ihrem Tab (Bibliotheken können vom CDN kommen). Das PDF geht nicht auf unsere Server.",
+  tool_add_digital_signature_to_pdf_faq_a2: "Nein. Hash und Stempel laufen in Ihrem Tab (Bibliotheken kommen von dieser Website). Das PDF geht nicht auf unsere Server.",
   tool_add_digital_signature_to_pdf_faq_a3: "Das gezeigte SHA-256 gilt für die Quelle vor dem Kasten. Speichern fügt Bytes hinzu; ein späterer Hash der Download-Datei weicht ab.",
   tool_add_digital_signature_to_pdf_faq_a4: "Nein. Nutzen Sie PDF schützen für ein Passwort. Diese Seite fügt nur eine sichtbare Marke hinzu.",
   tool_add_digital_signature_to_pdf_faq_a5: "Große PDFs können langsam sein; zuerst einen Desktop-Browser testen.",

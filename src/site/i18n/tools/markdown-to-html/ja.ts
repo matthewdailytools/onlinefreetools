@@ -3,7 +3,7 @@
  */
 import type { SiteLangDict } from '../../../types';
 const ja: SiteLangDict = {
-  tool_markdown_article: '双方向を同一 URL にまとめ、除去内容と変換損失を明示。貼り付けは送信せず、CDN はライブラリ取得用です。',
+  tool_markdown_article: '双方向を同一 URL にまとめ、除去内容と変換損失を明示。貼り付けは送信せず、このサイトはライブラリ取得用です。',
   tool_markdown_clear: 'クリア',
   tool_markdown_copy: 'HTMLをコピー',
   tool_markdown_copy_done: 'コピー完了',
@@ -20,7 +20,7 @@ const ja: SiteLangDict = {
   tool_markdown_export_title: 'MarkdownからHTMLへのエクスポート',
   tool_markdown_faq_a1: 'Markdown → HTML では、プレビューやダウンロード前に DOMPurify が入ります。',
   tool_markdown_faq_a2: '多くは残りません。編集しやすい下書きと考えてください。',
-  tool_markdown_faq_a3: '変換は端末内です。CDN はライブラリの取得だけです。',
+  tool_markdown_faq_a3: '変換は端末内です。このサイトはライブラリの取得だけです。',
   tool_markdown_faq_a4: '保証しません。必要なら外部で Diff してください。',
   tool_markdown_faq_a5: '見出し・リスト・リンク・強調・コードブロックなど。オフライン共有用の完全 HTML も選べます。',
   tool_markdown_faq_q1: 'HTML から危険なスクリプトは除かれますか？',
@@ -49,7 +49,7 @@ const ja: SiteLangDict = {
   tool_markdown_rules_item_html_md: 'Markdown へ：先に整理し、Turndown（ATX・フェンス付きコード）。',
   tool_markdown_rules_item_loss: 'スタイルやスクリプト、複雑な表は残りにくい。往復一致は保証しません。',
   tool_markdown_rules_item_md_html: 'HTML へ：CommonMark を解釈し、表示・保存前に DOMPurify。',
-  tool_markdown_rules_privacy: '本文はタブ内。CDN はライブラリ配信でありアップロードではありません。',
+  tool_markdown_rules_privacy: '本文はタブ内。このサイトはライブラリ配信でありアップロードではありません。',
   tool_markdown_rules_title: '向きごとのルール',
   tool_markdown_sample_html: '<h1>見出し</h1>\n<p>こんにちは <strong>世界</strong></p>',
   tool_markdown_sample_md:

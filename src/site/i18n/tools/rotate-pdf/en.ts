@@ -26,7 +26,7 @@ const en: SiteLangDict = {
     'Sample builds a two-page PDF, rotates every page 90° clockwise, and enables Download for rotated.pdf.',
   tool_rotate_pdf_example_title: 'Example',
   tool_rotate_pdf_faq_a1:
-    'No. The PDF library runs in your tab (scripts may load from a CDN). Your PDF is not uploaded to our servers.',
+    'No. The PDF library runs in your tab (scripts load from this site). Your PDF is not uploaded to our servers.',
   tool_rotate_pdf_faq_a2:
     'Yes—the new file keeps the rotated orientation. Re-open it in a viewer to confirm before sharing.',
   tool_rotate_pdf_faq_a3:

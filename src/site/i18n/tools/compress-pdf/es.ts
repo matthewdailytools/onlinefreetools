@@ -22,7 +22,7 @@ const es: SiteLangDict = {
     'La muestra carga un PDF de dos páginas con bloques de color y JPEG incrustados, aplica compresión Media, muestra tamaño antes/después con porcentaje ahorrado y habilita la descarga de compressed.pdf.',
   tool_compress_pdf_example_title: 'Reducir el tamaño del PDF',
   tool_compress_pdf_faq_a1:
-    'No. pdf.js y la biblioteca PDF corren en tu pestaña (las librerías pueden cargar desde un CDN). El PDF no se sube a nuestros servidores.',
+    'No. pdf.js y la biblioteca PDF corren en tu pestaña (las librerías se cargan desde este sitio). El PDF no se sube a nuestros servidores.',
   tool_compress_pdf_faq_a2:
     'Esta herramienta rasteriza cada página a JPEG y reconstruye el PDF. Archivos solo texto o ya optimizados pueden apenas reducirse. No es recompresión en servidor de flujos incrustados.',
   tool_compress_pdf_faq_a3:

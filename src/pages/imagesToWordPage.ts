@@ -233,7 +233,7 @@ export const renderImagesToWordPage = (opts: {
       }
 
       /**
-       * 尝试从 CDN 加载 docx UMD；失败则动态 import ESM。
+       * 从同域 /vendor/docx 加载 UMD；失败则再尝试动态 import 同一路径。
        * @returns {Promise<{ Document: Function, Packer: object, Paragraph: Function, ImageRun: Function, PageBreak: Function }>}
        */
       function loadDocxLib() {
@@ -244,19 +244,19 @@ export const renderImagesToWordPage = (opts: {
             return;
           }
           var script = document.createElement('script');
-          script.src = 'https://cdn.jsdelivr.net/npm/docx@8.5.0/build/index.umd.js';
+          script.src = '/vendor/docx/index.umd.js';
           script.async = true;
           script.onload = function () {
             if (window.docx && window.docx.Document) {
               resolve(window.docx);
             } else {
-              import('https://cdn.jsdelivr.net/npm/docx@8.5.0/+esm')
+              import('/vendor/docx/index.umd.js')
                 .then(resolve)
                 .catch(function () { reject(new Error('lib')); });
             }
           };
           script.onerror = function () {
-            import('https://cdn.jsdelivr.net/npm/docx@8.5.0/+esm')
+            import('/vendor/docx/index.umd.js')
               .then(resolve)
               .catch(function () { reject(new Error('lib')); });
           };

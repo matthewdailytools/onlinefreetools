@@ -17,7 +17,7 @@ const de: SiteLangDict = {
   tool_organize_pdf_err_organize: "Organisieren fehlgeschlagen. Datei und Seitenliste prüfen.",
   tool_organize_pdf_example: "Das Beispiel lädt ein dreiseitiges PDF, entfernt Seite 2, wendet die neue Reihenfolge an und aktiviert den Download einer zweiseitigen organized.pdf.",
   tool_organize_pdf_example_title: "Beispiel",
-  tool_organize_pdf_faq_a1: "Nein. die PDF-Bibliothek läuft in Ihrem Tab (die Bibliothek kann von einem CDN kommen). Ihre PDF wird nicht auf unsere Server hochgeladen.",
+  tool_organize_pdf_faq_a1: "Nein. die PDF-Bibliothek läuft in Ihrem Tab (die Bibliothek kommt von dieser Website). Ihre PDF wird nicht auf unsere Server hochgeladen.",
   tool_organize_pdf_faq_a2: "Zusammenfügen kombiniert mehrere PDFs. Teilen exportiert Seiten als mehrere Dateien (oder ZIP). Organisieren ändert die Reihenfolge in einer PDF und lädt eine Datei herunter.",
   tool_organize_pdf_faq_a3: "Ja—Hoch/Runter pro Zeile. Anwenden kopiert in Listenreihenfolge.",
   tool_organize_pdf_faq_a4: "Verschlüsselte PDFs scheitern hier oft. Passwort zuerst entfernen.",

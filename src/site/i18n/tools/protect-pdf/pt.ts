@@ -23,7 +23,7 @@ const pt: SiteLangDict = {
     'A amostra cria uma página, cifra com sample, habilita Baixar protected.pdf e mostra a senha no status.',
   tool_protect_pdf_example_title: 'Proteger PDF com senha',
   tool_protect_pdf_faq_a1:
-    'Não. a biblioteca PDF roda na sua aba (scripts podem vir de CDN). Seu PDF não é enviado aos nossos servidores.',
+    'Não. a biblioteca PDF roda na sua aba (scripts vêm deste site). Seu PDF não é enviado aos nossos servidores.',
   tool_protect_pdf_faq_a2:
     'Aplica criptografia PDF comum: é preciso a senha para abrir. Não é grau militar — escolha uma senha forte que lembre.',
   tool_protect_pdf_faq_a3:

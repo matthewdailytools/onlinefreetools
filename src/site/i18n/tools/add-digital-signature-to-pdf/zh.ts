@@ -24,7 +24,7 @@ const zh: SiteLangDict = {
   tool_add_digital_signature_to_pdf_example: "加载样例会生成「示例记录」一页，计算哈希，并在约 X=48、Y=48 盖上含前 16 位十六进制的「已数字标记」。",
   tool_add_digital_signature_to_pdf_example_title: "示例",
   tool_add_digital_signature_to_pdf_faq_a1: "不是。本页只哈希 PDF 并画一个可见框，不嵌入 PKCS#7 / PAdES。若要手写姓名图章，请用「在 PDF 文档上签名」。",
-  tool_add_digital_signature_to_pdf_faq_a2: "不会。哈希和盖章在本标签页完成（库可能从 CDN 加载），PDF 不会上传到我们的服务器。",
+  tool_add_digital_signature_to_pdf_faq_a2: "不会。哈希和盖章在本标签页完成（库从本站加载），PDF 不会上传到我们的服务器。",
   tool_add_digital_signature_to_pdf_faq_a3: "展示的 SHA-256 是盖框前的源文件。保存会增加字节，所以下载后再算会不同——这是预期行为。",
   tool_add_digital_signature_to_pdf_faq_a4: "不能。密码请用「保护 PDF」。本页只加可见标记。",
   tool_add_digital_signature_to_pdf_faq_a5: "大 PDF 可能较慢，建议先在桌面浏览器试用。",

@@ -22,7 +22,7 @@ const id: SiteLangDict = {
     'Sampel membuat PDF tiga halaman, menomori tengah bawah dari 1, dan mengaktifkan Unduh numbered.pdf.',
   tool_pdf_page_numbers_example_title: 'Contoh',
   tool_pdf_page_numbers_faq_a1:
-    'Tidak. pustaka PDF berjalan di tab Anda (skrip bisa dimuat dari CDN). PDF tidak diunggah ke server kami.',
+    'Tidak. pustaka PDF berjalan di tab Anda (skrip bisa dimuat dari situs ini). PDF tidak diunggah ke server kami.',
   tool_pdf_page_numbers_faq_a2:
     'Ya—«Mulai dari» adalah angka di halaman 1 (mis. 0 untuk sampul, atau 5 setelah hapus halaman). Setiap halaman +1.',
   tool_pdf_page_numbers_faq_a3:

@@ -24,6 +24,10 @@ import {
 import { handleWebsiteHeadersApi } from "./tools/websiteHeaders";
 import { handleOnPageSeoApi } from "./tools/onPageSeo";
 import { handleOpenGraphPreviewApi } from "./tools/openGraphPreview";
+import {
+	handleConvertHtmlToPdfAssetApi,
+	handleConvertHtmlToPdfFetchApi,
+} from "./tools/convertHtmlToPdf";
 import { handleIpAddress } from "./endpoints/ipAddress";
 import { handleDnsLookup } from "./endpoints/dnsLookup";
 import { handleDomainLookup } from "./endpoints/domainLookup";
@@ -443,6 +447,8 @@ openapi.delete("/api/tasks/:taskSlug", TaskDelete);
 app.get("/api/tools/website-headers", handleWebsiteHeadersApi);
 app.get("/api/tools/on-page-seo", handleOnPageSeoApi);
 app.get("/api/tools/open-graph-preview", handleOpenGraphPreviewApi);
+app.get("/api/tools/convert-html-to-pdf/asset", handleConvertHtmlToPdfAssetApi);
+app.get("/api/tools/convert-html-to-pdf", handleConvertHtmlToPdfFetchApi);
 app.get("/api/tools/ip-address", handleIpAddress);
 app.get("/api/tools/dns-lookup", handleDnsLookup);
 app.get("/api/tools/domain-lookup", handleDomainLookup);

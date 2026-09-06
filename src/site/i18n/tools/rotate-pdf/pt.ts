@@ -26,7 +26,7 @@ const pt: SiteLangDict = {
     'A amostra cria um PDF de duas páginas, gira todas 90° horário e habilita Baixar rotated.pdf.',
   tool_rotate_pdf_example_title: 'Exemplo',
   tool_rotate_pdf_faq_a1:
-    'Não. a biblioteca PDF roda na sua aba (scripts podem vir de um CDN). Seu PDF não é enviado aos nossos servidores.',
+    'Não. a biblioteca PDF roda na sua aba (scripts vêm deste site). Seu PDF não é enviado aos nossos servidores.',
   tool_rotate_pdf_faq_a2: 'Sim—o arquivo baixado guarda a orientação nova. Abra em um leitor antes de compartilhar.',
   tool_rotate_pdf_faq_a3: 'Páginas a partir de 1: 1-3,5 são as páginas 1–3 e a 5. Espaços são opcionais. Vazio ou fora do intervalo falha.',
   tool_rotate_pdf_faq_a4: 'PDFs com senha geralmente não abrem aqui. Remova a senha com uma ferramenta confiável e gire.',

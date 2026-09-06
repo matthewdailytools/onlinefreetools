@@ -24,7 +24,7 @@ const ja: SiteLangDict = {
   tool_edit_pdf_text_online_example: "サンプル読込は「Hello edit PDF text sample.」と書いた1頁PDFを作り、編集欄に入れ、適用してダウンロード可能なPDFを出します。",
   tool_edit_pdf_text_online_example_title: "例",
   tool_edit_pdf_text_online_faq_a1: "いいえ。グリフをその場で直す処理ではありません。テキストを取り出し、直したあと単純な組みで描き直します。元のフォントや段組は残りません。",
-  tool_edit_pdf_text_online_faq_a2: "いいえ。ライブラリはCDNから読むことがありますが、PDFはこのタブ内に留まり、当サイトのサーバーには上がりません。",
+  tool_edit_pdf_text_online_faq_a2: "いいえ。ライブラリはこのサイトから読みますが、PDFはこのタブ内に留まり、当サイトのサーバーには上がりません。",
   tool_edit_pdf_text_online_faq_a3: "スキャンPDFは画像だけでテキスト層がありません。OCRしないため、わかりやすいエラーで失敗します。",
   tool_edit_pdf_text_online_faq_a4: "「テキスト追加」は X/Y に新行を重ねます。「PDF を編集可能に」は主に編集可能な .txt をダウンロード（任意で再構築 PDF）。本ページの主ダウンロードはテキスト層編集後の再構築 .pdf です。",
   tool_edit_pdf_text_online_faq_a5: "大きいファイルは遅いことがあります。まずデスクトップブラウザで試してください。",

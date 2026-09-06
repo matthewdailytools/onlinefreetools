@@ -26,7 +26,7 @@ const id: SiteLangDict = {
   tool_sign_pdf_document_example: "Muat sampel membuat “perjanjian sampel”, mengetik Jane Sample, dan menaruh PNG di sekitar X=72, Y=72.",
   tool_sign_pdf_document_example_title: "Contoh",
   tool_sign_pdf_document_faq_a1: "Bukan. Halaman ini hanya mencap gambar. Untuk tampilan integritas dengan awalan hash, gunakan Tambahkan tanda tangan digital ke PDF — itu juga bukan PKI bersertifikat.",
-  tool_sign_pdf_document_faq_a2: "Tidak. Pencapan berjalan di tab Anda (pustaka bisa dari CDN). PDF tidak dikirim ke server kami.",
+  tool_sign_pdf_document_faq_a2: "Tidak. Pencapan berjalan di tab Anda (pustaka dari situs ini). PDF tidak dikirim ke server kami.",
   tool_sign_pdf_document_faq_a3: "Tidak. Letakkan gambar dengan X/Y. Untuk kata sandi, lihat Lindungi PDF. Untuk teks tambahan, Tambahkan teks ke file PDF.",
   tool_sign_pdf_document_faq_a4: "Alat peramban ini tidak menerapkan sertifikat PKCS#7 / PAdES. Gunakan perangkat lunak penandatanganan khusus.",
   tool_sign_pdf_document_faq_a5: "PDF besar bisa lambat; coba dulu di peramban desktop.",

@@ -185,7 +185,7 @@ export const renderAppleTouchIconPage = (opts: {
 
 	/** 浏览器内 contain + 不透明 PNG；ZIP 四档；进页自动 loadSample()。 */
 	const extraBodyHtml = `
-  <script src="https://cdn.jsdelivr.net/npm/fflate@0.8.2/umd/index.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/vendor/fflate/index.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     (function () {
       /** 四档正方形边长与 ZIP 内文件名。 */

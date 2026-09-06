@@ -25,7 +25,7 @@ const en: SiteLangDict = {
     'Sample builds a one-page PDF with Helvetica text, converts it, shows the sentence in the preview, and enables Download for a .md file.',
   tool_pdf_to_markdown_example_title: 'Example',
   tool_pdf_to_markdown_faq_a1:
-    'No. the page renderer runs in your tab (scripts may load from a CDN). Your PDF is not uploaded to our servers.',
+    'No. the page renderer runs in your tab (scripts load from this site). Your PDF is not uploaded to our servers.',
   tool_pdf_to_markdown_faq_a2:
     'Scanned PDFs are usually pictures of pages with no text layer. This tool does not run OCR, so extraction returns empty and fails with a clear message.',
   tool_pdf_to_markdown_faq_a3:

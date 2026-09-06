@@ -22,7 +22,7 @@ const ja: SiteLangDict = {
     'サンプルは 3 ページ PDF を作成し、下中央から 1 で番号を付け、numbered.pdf のダウンロードを有効にします。',
   tool_pdf_page_numbers_example_title: '例',
   tool_pdf_page_numbers_faq_a1:
-    'いいえ。PDF ライブラリ はタブ内で動作（CDN から読み込む場合あり）。PDF は当社サーバーに送られません。',
+    'いいえ。PDF ライブラリ はタブ内で動作（このサイトから読み込みます）。PDF は当社サーバーに送られません。',
   tool_pdf_page_numbers_faq_a2:
     'はい—「開始番号」は 1 ページ目に表示する数字です（表紙を 0 にする、別ツールで削除後 5 から始める等）。以降は 1 ずつ増えます。',
   tool_pdf_page_numbers_faq_a3:

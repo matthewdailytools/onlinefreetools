@@ -33,7 +33,7 @@ const ja: SiteLangDict = {
 		'サンプル読込は不透明な色面と透明ロゴを白マットに載せ、二つの .jpg 名を出し、ZIP ダウンロードを有効にします。',
 	tool_bulk_convert_images_to_jpg_example_title: '例',
 	tool_bulk_convert_images_to_jpg_faq_a1:
-		'送りません。読み取りと .jpg 書き出しはこのタブ内です。ファイルは端末に留まり、サーバーにアップロードしません。ZIP 用スクリプトが CDN から来ることはありますが、画像はタブを出ません。',
+		'送りません。読み取りと .jpg 書き出しはこのタブ内です。ファイルは端末に留まり、サーバーにアップロードしません。ZIP 用スクリプトはこのサイトから読みますが、画像はタブを出ません。',
 	tool_bulk_convert_images_to_jpg_faq_a2:
 		'ここでできます。PNG を JPG にするにはファイルを選び、穴が黒くならないよう白マットのまま、すべて変換します。',
 	tool_bulk_convert_images_to_jpg_faq_a3:

@@ -32,7 +32,7 @@ const id: SiteLangDict = {
 		'Muat contoh menaruh dua PNG papan catur transparan, menulis ulang sebagai PNG, mengisi tabel, dan mengaktifkan Unduh ZIP. Nama ganda menjadi name (2).png.',
 	tool_bulk_compress_png_images_example_title: 'Contoh',
 	tool_bulk_compress_png_images_faq_a1:
-		'Tidak. Pembacaan dan penulisan PNG berjalan di tab ini. File tetap di perangkat, tanpa unggah ke server. Pembantu ZIP bisa dimuat dari CDN; gambar Anda tetap tidak meninggalkan tab.',
+		'Tidak. Pembacaan dan penulisan PNG berjalan di tab ini. File tetap di perangkat, tanpa unggah ke server. Pembantu ZIP bisa dimuat dari situs ini; gambar Anda tetap tidak meninggalkan tab.',
 	tool_bulk_compress_png_images_faq_a2:
 		'Tidak. Keluaran selalu PNG. Tidak ada alas JPEG. Jika foto produk boleh JPEG dan harus lebih kecil, pakai Kompres foto produk massal.',
 	tool_bulk_compress_png_images_faq_a3:

@@ -35,7 +35,7 @@ const pt: SiteLangDict = {
 		'Carregar exemplo cria dois PDFs curtos com uma página de imagem, aplica a predefinição de e-mail em cada um, deixa dois arquivos no ZIP e mostra os bytes economizados.',
 	tool_batch_compress_pdfs_for_email_example_title: 'Exemplo',
 	tool_batch_compress_pdfs_for_email_faq_a1:
-		'Não. A rasterização e a remontagem acontecem nesta aba. Os arquivos ficam no dispositivo e não são enviados a um servidor. pdf.js, pdf-lib e o auxiliar do ZIP podem carregar de um CDN; seus PDFs não saem da aba.',
+		'Não. A rasterização e a remontagem acontecem nesta aba. Os arquivos ficam no dispositivo e não são enviados a um servidor. pdf.js, pdf-lib e o auxiliar do ZIP podem carregar deste site; seus PDFs não saem da aba.',
 	tool_batch_compress_pdfs_for_email_faq_a2:
 		'Não. Você recebe um ZIP com N PDFs. Juntar num caderno é Mesclar PDF — outro trabalho, não esta página.',
 	tool_batch_compress_pdfs_for_email_faq_a3:

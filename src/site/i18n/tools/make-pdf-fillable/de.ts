@@ -19,7 +19,7 @@ const de: SiteLangDict = {
   tool_make_pdf_fillable_err_no_name: "Zuerst einen Feldnamen vergeben.",
   tool_make_pdf_fillable_example: "Beispiel erzeugt eine leere Seite, setzt FullName bei 48,220 (220×22), zeigt die Vorschau und aktiviert den Download.",
   tool_make_pdf_fillable_example_title: "Beispiel",
-  tool_make_pdf_fillable_faq_a1: "Nein. Das Platzieren läuft in diesem Tab. CDN-Skripte können laden; Ihre PDF geht nicht auf unsere Server.",
+  tool_make_pdf_fillable_faq_a1: "Nein. Das Platzieren läuft in diesem Tab. Skripte können von dieser Website laden; Ihre PDF geht nicht auf unsere Server.",
   tool_make_pdf_fillable_faq_a2: "Ja. Sobald Felder da sind, nutzen Sie PDF-Formular ausfüllen.",
   tool_make_pdf_fillable_faq_a3: "N Felder hinzufügen. Sie stapeln sich als Field_1, Field_2… mit festem Abstand.",
   tool_make_pdf_fillable_faq_a4: "PDF-Formular erstellen startet leer und benennt Text oder Kästchen. Hier legen Sie Felder auf eine Datei, die Sie schon haben.",

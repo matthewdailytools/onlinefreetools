@@ -22,7 +22,7 @@ const fr: SiteLangDict = {
     'L’échantillon crée un PDF de trois pages, numérote bas-centre à partir de 1 et active Télécharger numbered.pdf.',
   tool_pdf_page_numbers_example_title: 'Exemple',
   tool_pdf_page_numbers_faq_a1:
-    'Non. la bibliothèque PDF s’exécute dans votre onglet (scripts éventuellement depuis un CDN). Votre PDF n’est pas envoyé à nos serveurs.',
+    'Non. la bibliothèque PDF s’exécute dans votre onglet (scripts éventuellement depuis ce site). Votre PDF n’est pas envoyé à nos serveurs.',
   tool_pdf_page_numbers_faq_a2:
     'Oui—« Commencer à » est le numéro sur la page 1 (ex. 0 pour couverture, ou 5 après suppression de pages). Chaque page suivante +1.',
   tool_pdf_page_numbers_faq_a3:

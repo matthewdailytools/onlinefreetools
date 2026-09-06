@@ -23,7 +23,7 @@ const id: SiteLangDict = {
 		'Muat contoh membandingkan notes-a.txt (alpha / baris kedua / ketiga) dengan notes-b.txt yang tengahnya «baris diubah». Mode baris hanya menandai baris itu. Hasil ini sudah tampil sejak gambar pertama.',
 	tool_compare_two_text_files_online_example_title: 'Contoh',
 	tool_compare_two_text_files_online_faq_a1:
-		'Tidak. FileReader membaca byte di tab ini. jsdiff mungkin dimuat dari CDN sebagai pustaka; file Anda tidak dikirim ke server kami.',
+		'Tidak. FileReader membaca byte di tab ini. jsdiff mungkin dimuat dari situs ini sebagai pustaka; file Anda tidak dikirim ke server kami.',
 	tool_compare_two_text_files_online_faq_a2:
 		"File didekode sebagai UTF-8 ketat dan BOM awal dibuang. UTF-8 yang tidak valid ditolak, bukan ditampilkan sebagai karakter pengganti; konversikan encoding lama seperti Windows-1252 terlebih dahulu.",
 	tool_compare_two_text_files_online_faq_a3:

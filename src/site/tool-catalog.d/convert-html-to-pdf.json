@@ -1,7 +1,7 @@
 {
   "slug": "convert-html-to-pdf",
   "path": "/tools/convert-html-to-pdf",
-  "updatedAt": "2026-09-05T12:58:23.264Z",
+  "updatedAt": "2026-09-06T05:08:06.882Z",
   "launchedAt": "2026-09-03T14:00:00.000Z",
   "category": "pdf",
   "primaryTopic": "pdf-docs",
@@ -25,7 +25,7 @@
     "export": "renderConvertHtmlToPdfPage",
     "style": "opts"
   },
-  "localProcessing": true,
+  "localProcessing": false,
   "scenario": "documents",
   "subject": "pdf"
 }

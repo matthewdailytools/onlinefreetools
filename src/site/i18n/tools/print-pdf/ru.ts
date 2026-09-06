@@ -19,7 +19,7 @@ const ru: SiteLangDict = {
   tool_print_pdf_err_pdfjs: "PDF renderer failed to load.",
   tool_print_pdf_example: "Загрузить пример: Hello print sample.",
   tool_print_pdf_example_title: "Пример",
-  tool_print_pdf_faq_a1: "Нет. Рендеринг в вашей вкладке (библиотеки могут грузиться с CDN). PDF не отправляется на наши серверы.",
+  tool_print_pdf_faq_a1: "Нет. Рендеринг в вашей вкладке (библиотеки грузятся с этого сайта). PDF не отправляется на наши серверы.",
   tool_print_pdf_faq_a2: "Нет. Эта операция не зависит от извлечения текстового слоя PDF.",
   tool_print_pdf_faq_a3: "Encrypted or damaged files show a clear error instead of failing silently.",
   tool_print_pdf_faq_a4: "Related PDF tools are listed at the bottom of the page.",

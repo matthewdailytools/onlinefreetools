@@ -26,7 +26,7 @@ const pt: SiteLangDict = {
     'A amostra cria um PDF de uma página, corta 36 pt em todos os lados e habilita cropped.pdf com estatísticas de tamanho.',
   tool_crop_pdf_example_title: 'Exemplo',
   tool_crop_pdf_faq_a1:
-    'Não. a biblioteca PDF roda na sua aba (scripts podem vir de um CDN). Seu PDF não é enviado aos nossos servidores.',
+    'Não. a biblioteca PDF roda na sua aba (scripts vêm deste site). Seu PDF não é enviado aos nossos servidores.',
   tool_crop_pdf_faq_a2:
     'Esta ferramenta ajusta caixas PDF por margens em pontos—não arrasta um retângulo na prévia como em imagem.',
   tool_crop_pdf_faq_a3:

@@ -23,7 +23,7 @@ const ar: SiteLangDict = {
 		'تحميل المثال يضع notes.txt وصورة photo.png صغيرة وdocs/readme.md ثم يبني sample.zip. زر التنزيل جاهز من الشاشة الأولى.',
 	tool_create_zip_file_example_title: 'مثال',
 	tool_create_zip_file_faq_a1:
-		'لا. تُقرأ البايتات في هذا التبويب. قد يُحمَّل سكربت المحرك من CDN، لكن ملفاتك لا تُرفع إلى خوادمنا.',
+		'لا. تُقرأ البايتات في هذا التبويب. قد يُحمَّل سكربت المحرك من هذا الموقع، لكن ملفاتك لا تُرفع إلى خوادمنا.',
 	tool_create_zip_file_faq_a2:
 		'إن أبلغ المتصفح عن webkitRelativePath (إسقاط مجلد أو اختيار مجلد)، تُحفظ تلك المسارات كمدخلات ZIP بعد حذف ../. هذه مهمة ضغط المجلد هنا.',
 	tool_create_zip_file_faq_a3:

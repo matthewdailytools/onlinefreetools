@@ -4,7 +4,7 @@
 import type { SiteLangDict } from '../../../types';
 const ru: SiteLangDict = {
   tool_markdown_article:
-    'Оба направления на одном URL, с явными пределами очистки и потерь. Вставка локальна; CDN только для библиотек.',
+    'Оба направления на одном URL, с явными пределами очистки и потерь. Вставка локальна; скрипты только с этого сайта.',
   tool_markdown_clear: 'Очистить',
   tool_markdown_copy: 'Копировать HTML',
   tool_markdown_copy_done: 'Скопировано',
@@ -21,7 +21,7 @@ const ru: SiteLangDict = {
   tool_markdown_export_title: 'Экспорт Markdown в HTML',
   tool_markdown_faq_a1: 'В направлении Markdown → HTML — да, DOMPurify до предпросмотра и скачивания.',
   tool_markdown_faq_a2: 'Обычно нет. Это читаемый черновик, не макет.',
-  tool_markdown_faq_a3: 'Преобразование локально. CDN лишь отдаёт файлы библиотек.',
+  tool_markdown_faq_a3: 'Преобразование локально. этот сайт отдаёт файлы библиотек.',
   tool_markdown_faq_a4: 'Не обещаем — сверьте diff при необходимости.',
   tool_markdown_faq_a5: 'Базовый CommonMark; опционально полный HTML для офлайн-передачи.',
   tool_markdown_faq_q1: 'HTML очищается от скриптов?',
@@ -54,7 +54,7 @@ const ru: SiteLangDict = {
   tool_markdown_rules_item_html_md: 'В Markdown: сначала очистка, затем Turndown (ATX и fenced-код).',
   tool_markdown_rules_item_loss: 'Стили, скрипты, сложные таблицы часто пропадают. Круговой путь ≠ исходник.',
   tool_markdown_rules_item_md_html: 'В HTML: разбор CommonMark, затем DOMPurify до показа/сохранения.',
-  tool_markdown_rules_privacy: 'Текст остаётся во вкладке. CDN не означает загрузку вашего документа на наш сервер.',
+  tool_markdown_rules_privacy: 'Текст остаётся во вкладке. загрузка скриптов этого сайта не означает загрузку вашего документа на наш сервер.',
   tool_markdown_rules_title: 'Правила по направлениям',
   tool_markdown_sample_html: '<h1>Заголовок</h1>\n<p>Привет <strong>мир</strong></p>',
   tool_markdown_sample_md:

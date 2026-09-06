@@ -51,7 +51,7 @@ const es: SiteLangDict = {
   tool_image_exif_rules_item_1: 'Lectura: IFD0/EXIF/GPS; GPS en grados decimales si existe.',
   tool_image_exif_rules_item_2: 'Limpieza: decodificar → orientar → toBlob. No edita bytes in situ.',
   tool_image_exif_rules_item_3: 'JPEG usa calidad alta pero sigue siendo re-encode, no bit-perfect.',
-  tool_image_exif_rules_item_4: 'Privacidad: el archivo no se sube; el CDN solo puede servir la librería.',
+  tool_image_exif_rules_item_4: 'Privacidad: el archivo no se sube; este sitio solo puede servir la librería.',
   tool_image_exif_rules_title: 'Reglas a tener en cuenta',
   tool_image_exif_sample: 'Cargar ejemplo',
   tool_image_exif_status_analyzed: 'Listo — revisa las etiquetas abajo.',

@@ -44,7 +44,7 @@ const ja: SiteLangDict = {
 		'サンプル読込は横の色面と縦の色面を入れ、SAMPLE を設定し、先頭をプレビューし、同じ相対位置を両方に適用して ZIP ダウンロードを有効にします。',
 	tool_batch_watermark_product_photos_example_title: '例',
 	tool_batch_watermark_product_photos_faq_a1:
-		'送りません。読み取りと Canvas の透かしはこのタブ内です。ファイルは端末に留まり、サーバーにアップロードしません。ZIP 用スクリプトが CDN から来ることはありますが、写真はタブを出ません。',
+		'送りません。読み取りと Canvas の透かしはこのタブ内です。ファイルは端末に留まり、サーバーにアップロードしません。ZIP 用スクリプトはこのサイトから読みますが、写真はタブを出ません。',
 	tool_batch_watermark_product_photos_faq_a2:
 		'ずれません。字の大きさは各写真の短辺のパーセント、九つのアンカーはそのキャンバスの割合です。縦も横も同じ相対コーナーです。',
 	tool_batch_watermark_product_photos_faq_a3:

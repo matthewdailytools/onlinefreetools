@@ -26,7 +26,7 @@ const es: SiteLangDict = {
     'La muestra crea un PDF de dos páginas, gira todas 90° horario y habilita Descargar rotated.pdf.',
   tool_rotate_pdf_example_title: 'Ejemplo',
   tool_rotate_pdf_faq_a1:
-    'No. la biblioteca PDF corre en tu pestaña (los scripts pueden cargarse desde un CDN). Tu PDF no se sube a nuestros servidores.',
+    'No. la biblioteca PDF corre en tu pestaña (los scripts se cargan desde este sitio). Tu PDF no se sube a nuestros servidores.',
   tool_rotate_pdf_faq_a2:
     'Sí—el archivo descargado guarda la orientación nueva. Ábrelo en un visor antes de compartir.',
   tool_rotate_pdf_faq_a3:

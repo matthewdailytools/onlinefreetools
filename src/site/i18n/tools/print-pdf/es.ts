@@ -19,7 +19,7 @@ const es: SiteLangDict = {
   tool_print_pdf_err_pdfjs: "PDF renderer failed to load.",
   tool_print_pdf_example: "Cargar ejemplo: Hello print sample.",
   tool_print_pdf_example_title: "Ejemplo",
-  tool_print_pdf_faq_a1: "No. El renderizado ocurre en tu pestaña (las bibliotecas pueden cargarse desde un CDN). Tu PDF no se sube a nuestros servidores.",
+  tool_print_pdf_faq_a1: "No. El renderizado ocurre en tu pestaña (las bibliotecas se cargan desde este sitio). Tu PDF no se sube a nuestros servidores.",
   tool_print_pdf_faq_a2: "No. Esta operación no depende de extraer la capa de texto del PDF.",
   tool_print_pdf_faq_a3: "Encrypted or damaged files show a clear error instead of failing silently.",
   tool_print_pdf_faq_a4: "Related PDF tools are listed at the bottom of the page.",

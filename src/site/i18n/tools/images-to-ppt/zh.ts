@@ -36,7 +36,7 @@ const zh: SiteLangDict = {
   tool_images_to_ppt_rules_body: '列表每项一页；图片在 16:9 画布上 contain 居中。',
   tool_images_to_ppt_rules_item_1: '默认宽屏 16:9。',
   tool_images_to_ppt_rules_item_2: '顺序=列表序。',
-  tool_images_to_ppt_rules_item_3: 'CDN 加载库不会把文件上传到本站。',
+  tool_images_to_ppt_rules_item_3: '本站加载库不会把文件上传到本站。',
   tool_images_to_ppt_rules_item_4: '超大图会缩小。',
   tool_images_to_ppt_rules_title: '规则',
   tool_images_to_ppt_sample: '加载示例',

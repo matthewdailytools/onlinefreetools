@@ -87,6 +87,7 @@ const en: SiteLangDict = {
   tool_faq_title: 'Frequently asked questions',
   tool_feedback_body: 'Something unclear, broken, or missing? Draft a message below — we read every note about these tools.',
   tool_feedback_cta: 'Open in email app',
+  tool_feedback_report_bug: 'Report a bug to GitHub',
   tool_feedback_email_label: 'Email',
   tool_feedback_message_label: 'Message',
   tool_feedback_message_placeholder: 'Describe the issue or suggestion…',

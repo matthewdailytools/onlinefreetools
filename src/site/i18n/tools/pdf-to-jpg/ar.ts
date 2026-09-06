@@ -23,7 +23,7 @@ const ar: SiteLangDict = {
     'العيّنة تنشئ PDF من صفحتين، تحوّل كل صفحة، وتفعّل التنزيل كـ ZIP يحتوي page-1.jpg و page-2.jpg.',
   tool_pdf_to_jpg_example_title: 'تحويل صفحات PDF إلى JPG',
   tool_pdf_to_jpg_faq_a1:
-    'لا. يعمل مُصيّر الصفحات و مكتبة ZIP في تبويبك (قد تُحمَّل السكربتات من CDN). PDF لا يُرفع إلى خوادمنا.',
+    'لا. يعمل مُصيّر الصفحات و مكتبة ZIP في تبويبك (قد تُحمَّل السكربتات من هذا الموقع). PDF لا يُرفع إلى خوادمنا.',
   tool_pdf_to_jpg_faq_a2:
     'أكثر من صفحة → ZIP باسم pdf-pages.zip مع page-1.jpg و page-2.jpg… صفحة واحدة → JPG واحد.',
   tool_pdf_to_jpg_faq_a3:

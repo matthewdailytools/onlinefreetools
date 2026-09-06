@@ -20,7 +20,7 @@ const ja: SiteLangDict = {
     'サンプルは1ページのPDFを2つ（AとB）読み込み、リスト順に結合し、2ページのmerged.pdfをダウンロードできるようにします。',
   tool_merge_pdf_example_title: '複数の PDF を1つにまとめる',
   tool_merge_pdf_faq_a1:
-    'いいえ。pdf-lib はタブ内で動作します（ライブラリはCDNから読み込む場合があります）。PDFはサーバーに送られません。',
+    'いいえ。pdf-lib はタブ内で動作します（ライブラリはこのサイトから読みます）。PDFはサーバーに送られません。',
   tool_merge_pdf_faq_a2:
     '「画像からPDF」は写真からPDFを作ります。本ツールは既存のPDFファイルを1つにまとめます。',
   tool_merge_pdf_faq_a3:
@@ -47,7 +47,7 @@ const ja: SiteLangDict = {
   tool_merge_pdf_rules_body: 'リスト順・copyPages・プライバシー・失敗時の扱い。',
   tool_merge_pdf_rules_item_1: '順序：リスト上からページをコピーします。結合前に並べ替えてください。',
   tool_merge_pdf_rules_item_2: 'エンジン：pdf-lib が各PDFを読み込み copyPages で新文書へ。ファイルはサーバー経由しません。',
-  tool_merge_pdf_rules_item_3: 'プライバシー：バイトはブラウザタブ内に留まります。ライブラリはCDNから来る場合があります。',
+  tool_merge_pdf_rules_item_3: 'プライバシー：バイトはブラウザタブ内に留まります。ライブラリはこのサイトから読みます。',
   tool_merge_pdf_rules_item_4: '制限：2ファイル以上が必要。暗号化・破損はエラー表示。巨大な集合はメモリで遅くなることがあります。',
   tool_merge_pdf_rules_title: 'ルール',
   tool_merge_pdf_sample: 'サンプルを読み込む',

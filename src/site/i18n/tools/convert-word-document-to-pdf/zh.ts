@@ -21,7 +21,7 @@ const zh: SiteLangDict = {
   tool_convert_word_document_to_pdf_err_pdfjs: "PDF 渲染库加载失败。",
   tool_convert_word_document_to_pdf_example: "加载样例会生成含「用于转换的 Word 示例段落。」的 .docx，显示 HTML 预览，再导出一页 PDF。",
   tool_convert_word_document_to_pdf_example_title: "示例",
-  tool_convert_word_document_to_pdf_faq_a1: "不会。转换在本标签页完成（库可能从 CDN 加载），文档不会上传到我们的服务器。",
+  tool_convert_word_document_to_pdf_faq_a1: "不会。转换在本标签页完成（库从本站加载），文档不会上传到我们的服务器。",
   tool_convert_word_document_to_pdf_faq_a2: "路径是 .docx → HTML → PDF，页眉和浮动对象可能变平。若已有网页源码，请用「将 HTML 转换为 PDF」。",
   tool_convert_word_document_to_pdf_faq_a3: "不能。请先另存为 .docx。本页只接受 Office Open XML。",
   tool_convert_word_document_to_pdf_faq_a4: "本页从已有 Word 文件出发。在线撰写 PDF 是空白编辑器，不是转换器。",

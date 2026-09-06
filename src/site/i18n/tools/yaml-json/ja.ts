@@ -18,7 +18,7 @@ const ja: SiteLangDict = {
   tool_yaml_json_example:
     'YAML の `名前: demo` とリスト `項目: [a, b]` は JSON `{"名前":"demo","項目":["a","b"]}` になります。JSON `{"title":"こんにちは","count":2}` はインデント付き YAML に dump されます。境界：裸の `flag: yes` は DEFAULT では boolean true；JSON安全な型をオンにすると文字列 "yes" のままです。',
   tool_yaml_json_example_title: '例',
-  tool_yaml_json_faq_a1: '変換はこのタブ内です。CDN が js-yaml を配信することがありますが、それはコードのダウンロードだけで、YAML／JSON 本文のアップロードではありません。',
+  tool_yaml_json_faq_a1: '変換はこのタブ内です。このサイトが js-yaml を配信することがありますが、それはコードのダウンロードだけで、YAML／JSON 本文のアップロードではありません。',
   tool_yaml_json_faq_a2: '既定の js-yaml スキーマではよくなります。引用なしの yes/no/on/off が boolean になることがあります。「JSON安全な型」を入れると、明示型がない限り文字列のままです。',
   tool_yaml_json_faq_a3: 'いいえ。コメントは JSON 側に残りません。アンカーは繰り返し値に展開されます。JSON から YAML へ dump しても元のコメントやアンカー名は戻りません。',
   tool_yaml_json_faq_a4: '--- で区切られた文書は loadAll で解析します。1件なら1つの JSON 値、2件以上なら配列です。先頭以降を捨てることはしません。',
@@ -50,7 +50,7 @@ const ja: SiteLangDict = {
     '型付け：DEFAULT スキーマでは、引用なしの yes/no/on/off や日付っぽいスカラーが boolean などになることがあります。JSON安全スキーマは、明示型がなければ引用なしスカラーを文字列のままにします。',
   tool_yaml_json_rules_item_2: '複数ドキュメント：loadAll — 1件ならその JSON 値、2件以上なら配列。先頭だけ残して残りを黙って捨てることはしません。',
   tool_yaml_json_rules_item_3: '往復で失うもの：コメントは消えます（JSON にコメントはない）。アンカー／エイリアスは展開されて値が重複します。dump 後はキー順やスタイルが変わることがあります。',
-  tool_yaml_json_rules_item_4: 'プライバシー：貼り付けはアップロードされません。CDN から js-yaml を取るのはライブラリコードの取得だけで、設定本文は送りません。',
+  tool_yaml_json_rules_item_4: 'プライバシー：貼り付けはアップロードされません。このサイトから js-yaml を取るのはライブラリコードの取得だけで、設定本文は送りません。',
   tool_yaml_json_rules_title: '押さえておくルール',
   tool_yaml_json_sample: 'サンプルを読み込む',
   tool_yaml_json_sample_json: '{\n  "title": "こんにちは",\n  "count": 2\n}',

@@ -19,7 +19,7 @@ const fr: SiteLangDict = {
   tool_make_pdf_flipbook_err_pdfjs: "PDF renderer failed to load.",
   tool_make_pdf_flipbook_example: "Charger un exemple: Flipbook page one.",
   tool_make_pdf_flipbook_example_title: "Exemple",
-  tool_make_pdf_flipbook_faq_a1: "Non. Le rendu s’exécute dans votre onglet (bibliothèques éventuellement via CDN). Votre PDF n’est pas envoyé à nos serveurs.",
+  tool_make_pdf_flipbook_faq_a1: "Non. Le rendu s’exécute dans votre onglet (bibliothèques depuis ce site). Votre PDF n’est pas envoyé à nos serveurs.",
   tool_make_pdf_flipbook_faq_a2: "Non. Cette opération ne dépend pas de l’extraction de la couche texte du PDF.",
   tool_make_pdf_flipbook_faq_a3: "Encrypted or damaged files show a clear error instead of failing silently.",
   tool_make_pdf_flipbook_faq_a4: "Related PDF tools are listed at the bottom of the page.",

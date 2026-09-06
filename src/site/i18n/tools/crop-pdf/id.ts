@@ -26,7 +26,7 @@ const id: SiteLangDict = {
     'Sampel membuat PDF satu halaman, memotong 36 pt di semua sisi, dan mengaktifkan cropped.pdf dengan statistik ukuran.',
   tool_crop_pdf_example_title: 'Contoh',
   tool_crop_pdf_faq_a1:
-    'Tidak. pustaka PDF berjalan di tab Anda (skrip mungkin dimuat dari CDN). PDF tidak diunggah ke server kami.',
+    'Tidak. pustaka PDF berjalan di tab Anda (skrip mungkin dimuat dari situs ini). PDF tidak diunggah ke server kami.',
   tool_crop_pdf_faq_a2:
     'Alat ini mengetatkan kotak PDF dengan margin poin—bukan menyeret kotak di pratinjau seperti gambar.',
   tool_crop_pdf_faq_a3:

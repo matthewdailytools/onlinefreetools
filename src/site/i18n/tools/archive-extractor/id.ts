@@ -31,7 +31,7 @@ const id: SiteLangDict = {
   tool_archive_extractor_example_title: 'Contoh',
   tool_archive_extractor_exported_all: 'File dikemas ke ZIP baru dengan jalur aman.',
   tool_archive_extractor_faq_a1:
-    'Tidak. Arsip dibaca di tab browser dan byte hasil ekstrak tetap di perangkat Anda. Skrip pembantu dapat dimuat dari CDN, tetapi file Anda tidak diunggah ke server kami.',
+    'Tidak. Arsip dibaca di tab browser dan byte hasil ekstrak tetap di perangkat Anda. Skrip pembantu dapat dimuat dari situs ini, tetapi file Anda tidak diunggah ke server kami.',
   tool_archive_extractor_faq_a2:
     'Versi ini menjalankan ZIP, TAR, TAR.GZ, dan TGZ. RAR, 7Z, dan ISO ditampilkan sebagai format dengan catatan dukungan sampai mesin multi-format yang lebih berat diaktifkan.',
   tool_archive_extractor_faq_a3:

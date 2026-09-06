@@ -22,7 +22,7 @@ const fr: SiteLangDict = {
     'L\'échantillon charge un PDF de deux pages avec blocs colorés et JPEG intégrés, applique la compression Moyenne, affiche taille avant/après avec pourcentage économisé et active le téléchargement de compressed.pdf.',
   tool_compress_pdf_example_title: 'Réduire la taille d\'un PDF',
   tool_compress_pdf_faq_a1:
-    'Non. pdf.js et la bibliothèque PDF s\\\'exécutent dans votre onglet (bibliothèques parfois chargées depuis un CDN). Le PDF n\\\'est pas envoyé à nos serveurs.',
+    'Non. pdf.js et la bibliothèque PDF s\\\'exécutent dans votre onglet (bibliothèques parfois chargées depuis ce site). Le PDF n\\\'est pas envoyé à nos serveurs.',
   tool_compress_pdf_faq_a2:
     'L\'outil rasterise chaque page en JPEG et reconstruit le PDF. Les PDF surtout texte ou déjà optimisés peuvent à peine rétrécir. Ce n\'est pas une recompression cloud des flux intégrés.',
   tool_compress_pdf_faq_a3:

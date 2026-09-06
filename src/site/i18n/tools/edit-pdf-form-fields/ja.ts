@@ -22,7 +22,7 @@ const ja: SiteLangDict = {
   tool_edit_pdf_form_fields_err_no_fields: "この PDF には編集できるフォーム欄がありません。",
   tool_edit_pdf_form_fields_example: "サンプルは Name と Email の PDF を作り、2 行を一覧し、プレビューし、ダウンロード前に改名や削除ができます。",
   tool_edit_pdf_form_fields_example_title: "例",
-  tool_edit_pdf_form_fields_faq_a1: "いいえ。一覧と編集はこのタブ内です。CDN のライブラリは読むことがありますが、PDF は当社サーバーに行きません。",
+  tool_edit_pdf_form_fields_faq_a1: "いいえ。一覧と編集はこのタブ内です。本サイトのライブラリは読むことがありますが、PDF は当社サーバーに行きません。",
   tool_edit_pdf_form_fields_faq_a2: "改名は内部名を書き換えます。削除はウィジェットを消します。すでに書いた値は削除で失われることがあります。",
   tool_edit_pdf_form_fields_faq_a3: "欄がゼロなら「PDFを入力可能なフォームにする」へのリンク付きエラーになります。",
   tool_edit_pdf_form_fields_faq_a4: "答えは「PDFフォームに入力」です。このページは名前変更か枠の削除だけです。",

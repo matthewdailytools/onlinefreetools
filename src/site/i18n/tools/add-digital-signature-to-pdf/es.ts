@@ -24,7 +24,7 @@ const es: SiteLangDict = {
   tool_add_digital_signature_to_pdf_example: "Cargar ejemplo crea un “registro de muestra”, lo hashea y sella “Marcado digitalmente” con 16 hex cerca de X=48, Y=48.",
   tool_add_digital_signature_to_pdf_example_title: "Ejemplo",
   tool_add_digital_signature_to_pdf_faq_a1: "No. La página hashea el PDF y dibuja un recuadro. No incrusta PKCS#7 / PAdES. Para un sello de nombre a mano, usa Firmar un documento PDF.",
-  tool_add_digital_signature_to_pdf_faq_a2: "No. El hash y el sello ocurren en tu pestaña (las bibliotecas pueden venir de un CDN). El PDF no se envía a nuestros servidores.",
+  tool_add_digital_signature_to_pdf_faq_a2: "No. El hash y el sello ocurren en tu pestaña (las bibliotecas se cargan desde este sitio). El PDF no se envía a nuestros servidores.",
   tool_add_digital_signature_to_pdf_faq_a3: "El SHA-256 mostrado es del origen antes del recuadro. Guardar añade bytes; un hash posterior del descargado será distinto.",
   tool_add_digital_signature_to_pdf_faq_a4: "No. Usa Proteger PDF para una contraseña. Esta página solo añade una marca visible.",
   tool_add_digital_signature_to_pdf_faq_a5: "Los PDF grandes pueden ir lentos; prueba primero en un navegador de escritorio.",

@@ -44,7 +44,7 @@ const zh: SiteLangDict = {
 		'载入样例会放一张横图和一张竖图，写成 SAMPLE，预览第一张，再按同一相对位置套用两张，并点亮下载 ZIP。',
 	tool_batch_watermark_product_photos_example_title: '示例',
 	tool_batch_watermark_product_photos_faq_a1:
-		'不会。解码和 Canvas 盖章都在本标签页。文件留在本机，不上传服务器。打 ZIP 的脚本可能从 CDN 加载，你的照片仍不会离开这个标签页。',
+		'不会。解码和 Canvas 盖章都在本标签页。文件留在本机，不上传服务器。打 ZIP 的脚本从本站加载，你的照片仍不会离开这个标签页。',
 	tool_batch_watermark_product_photos_faq_a2:
 		'不会跑。字号是每张图短边的百分比，九个锚点是画布比例。竖图和横图落在相对同一角。',
 	tool_batch_watermark_product_photos_faq_a3:

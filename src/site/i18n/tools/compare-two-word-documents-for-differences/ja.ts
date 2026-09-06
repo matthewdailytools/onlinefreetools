@@ -23,7 +23,7 @@ const ja: SiteLangDict = {
 		'サンプル読込はごく小さい .docx を2つ作ります。2通目は “meet at noon” を “meet at 3pm” に変えています。初回表示ですでにその文言差が出ます。',
 	tool_compare_two_word_documents_for_differences_example_title: '例',
 	tool_compare_two_word_documents_for_differences_faq_a1:
-		'いいえ。このタブ内で読みます。mammoth と jsdiff は CDN からライブラリとして届くことがありますが、文書は当社サーバーに送りません。',
+		'いいえ。このタブ内で読みます。mammoth と jsdiff はこのサイトから読みますが、文書は当社サーバーに送りません。',
 	tool_compare_two_word_documents_for_differences_faq_a2:
 		'違います。Word は書式や変更履歴まで比べられます。ここは見える文字だけを取り出して差分します。ヘッダー・フッター・スタイルは捨てます。',
 	tool_compare_two_word_documents_for_differences_faq_a3:

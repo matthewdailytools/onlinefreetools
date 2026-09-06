@@ -853,18 +853,18 @@ export const renderBrandStyleGuidePage = (opts: {
         return;
       }
       var script = document.createElement('script');
-      script.src = 'https://cdn.jsdelivr.net/npm/docx@8.5.0/build/index.umd.js';
+      script.src = '/vendor/docx/index.umd.js';
       script.async = true;
       script.onload = function () {
         if (window.docx && window.docx.Document) resolve(window.docx);
         else {
-          import('https://cdn.jsdelivr.net/npm/docx@8.5.0/+esm')
+          import('/vendor/docx/index.umd.js')
             .then(function (mod) { resolve(mod); })
             .catch(function () { reject(new Error('lib')); });
         }
       };
       script.onerror = function () {
-        import('https://cdn.jsdelivr.net/npm/docx@8.5.0/+esm')
+        import('/vendor/docx/index.umd.js')
           .then(function (mod) { resolve(mod); })
           .catch(function () { reject(new Error('lib')); });
       };
@@ -883,7 +883,7 @@ export const renderBrandStyleGuidePage = (opts: {
     }
     return new Promise(function (resolve, reject) {
       var script = document.createElement('script');
-      script.src = 'https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js';
+      script.src = '/vendor/pdf-lib/pdf-lib.min.js';
       script.async = true;
       script.crossOrigin = 'anonymous';
       script.onload = function () {
@@ -903,7 +903,7 @@ export const renderBrandStyleGuidePage = (opts: {
     if (window.html2canvas) return Promise.resolve(window.html2canvas);
     return new Promise(function (resolve, reject) {
       var script = document.createElement('script');
-      script.src = 'https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js';
+      script.src = '/vendor/html2canvas/html2canvas.min.js';
       script.async = true;
       script.crossOrigin = 'anonymous';
       script.onload = function () {

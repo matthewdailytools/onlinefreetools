@@ -137,7 +137,7 @@ export const renderWritePdfDocumentOnlinePage = (opts: {
 
 	const extraBodyHtml = `
   ${pdfWorkUiClientScript()}
-  <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/vendor/pdf-lib/pdf-lib.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     (function () {
       var fileInput = null; // 该工具不依赖上传文件（仅保留变量用于与其它工具结构一致）

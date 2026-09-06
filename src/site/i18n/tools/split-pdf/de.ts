@@ -22,7 +22,7 @@ const de: SiteLangDict = {
     'Das Beispiel erzeugt ein dreiseitiges PDF, teilt jede Seite und aktiviert Download für ein ZIP mit page-1.pdf, page-2.pdf und page-3.pdf.',
   tool_split_pdf_example_title: 'Mein PDF aufteilen',
   tool_split_pdf_faq_a1:
-    'Nein. pdf-lib und fflate laufen in Ihrem Tab (Skripte können von einem CDN kommen). Ihr PDF wird nicht hochgeladen.',
+    'Nein. pdf-lib und fflate laufen in Ihrem Tab (Skripte können von dieser Website kommen). Ihr PDF wird nicht hochgeladen.',
   tool_split_pdf_faq_a2:
     'Seiten ab 1: 1-3,5 bedeutet Seiten 1–3 und 5. Leerzeichen optional. Leere oder ungültige Werte scheitern.',
   tool_split_pdf_faq_a3:

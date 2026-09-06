@@ -35,7 +35,7 @@ const zh: SiteLangDict = {
 		'载入样例会生成两份带图页的短 PDF，用邮件档各压一次，ZIP 里仍是两份，并显示合计节省。',
 	tool_batch_compress_pdfs_for_email_example_title: '示例',
 	tool_batch_compress_pdfs_for_email_faq_a1:
-		'不会。栅格和重嵌都在本标签页。文件留在本机，不上传服务器。pdf.js、pdf-lib 和打 ZIP 的脚本可能从 CDN 加载，你的 PDF 仍不会离开这个标签页。',
+		'不会。栅格和重嵌都在本标签页。文件留在本机，不上传服务器。pdf.js、pdf-lib 和打 ZIP 的脚本从本站加载，你的 PDF 仍不会离开这个标签页。',
 	tool_batch_compress_pdfs_for_email_faq_a2:
 		'不会。你拿到的是 N 份 PDF 的 ZIP。要合成一本，请用合并 PDF——那是另一件事，不是这一页。',
 	tool_batch_compress_pdfs_for_email_faq_a3:

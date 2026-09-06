@@ -47,7 +47,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const publicDir = path.join(root, 'public');
 const devLogsDir = path.join(root, 'dev-logs');
 
-/** 构建前复制同域 chrome / 图片工具 vendor（避免外网 CDN 阻塞首屏）。 */
+/** 构建前复制同域 chrome / 图片工具 / 工具页 JS 库（页面禁止外网 CDN）。 */
 try {
   await import('./copy-site-chrome-vendor.mjs');
 } catch (err) {
@@ -57,6 +57,11 @@ try {
   await import('./copy-image-optimizer-vendor.mjs');
 } catch (err) {
   console.warn('[build-site] copy-image-optimizer-vendor skipped:', err?.message || err);
+}
+try {
+  await import('./copy-tool-libs-vendor.mjs');
+} catch (err) {
+  console.warn('[build-site] copy-tool-libs-vendor skipped:', err?.message || err);
 }
 
 /**

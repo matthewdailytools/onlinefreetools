@@ -19,7 +19,7 @@ const zh: SiteLangDict = {
 	tool_excel_compare_files_example:
 		'载入样例对比两份 CSV。表头相同，Gadget 数量 2 对 9，因此列出 B3。进页就能看到这个格子。',
 	tool_excel_compare_files_example_title: '示例',
-	tool_excel_compare_files_faq_a1: '不会。用 SheetJS 在这个标签页读字节。库可能从 CDN 加载，文件不会传到我们的服务器。',
+	tool_excel_compare_files_faq_a1: '不会。用 SheetJS 在这个标签页读字节。库从本站加载，文件不会传到我们的服务器。',
 	tool_excel_compare_files_faq_a2: '默认比第一张表。要用同一文件里的其他表，请改下拉框。没选中的表不会比。',
 	tool_excel_compare_files_faq_a3: "可以。CSV 会作为单张工作表读取，可对比两个 CSV，也可把 CSV 导出与 Excel 工作表按单元格地址比较。",
 	tool_excel_compare_files_faq_a4: '缺格和空格都当成空字符串。插入一列仍按 A1、B1 地址对齐，不按「名称列」表头对齐，避免表头移动时对错。',

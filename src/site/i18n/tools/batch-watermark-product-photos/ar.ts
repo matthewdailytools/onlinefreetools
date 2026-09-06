@@ -44,7 +44,7 @@ const ar: SiteLangDict = {
 		'تحميل مثال يضع كتلة أفقية وعمودية، يضبط SAMPLE، يعاين الأولى، يطبّق العلامة النسبية نفسها على الاثنتين ويفعّل تنزيل ZIP.',
 	tool_batch_watermark_product_photos_example_title: 'مثال',
 	tool_batch_watermark_product_photos_faq_a1:
-		'لا. الفك والختم على Canvas يجريان في هذا التبويب. تبقى على جهازك دون رفع إلى خادم. قد تُحمَّل أداة ZIP من CDN؛ صورك لا تغادر التبويب.',
+		'لا. الفك والختم على Canvas يجريان في هذا التبويب. تبقى على جهازك دون رفع إلى خادم. قد تُحمَّل أداة ZIP من هذا الموقع؛ صورك لا تغادر التبويب.',
 	tool_batch_watermark_product_photos_faq_a2:
 		'لا. الحجم نسبة من الضلع القصير والمراسي التسعة كسور من تلك اللوحة. العمودية والأفقية تبقيان الركن النسبي نفسه.',
 	tool_batch_watermark_product_photos_faq_a3:

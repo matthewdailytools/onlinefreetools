@@ -19,7 +19,7 @@ const id: SiteLangDict = {
   tool_create_pdf_form_err_no_name: "Beri nama kolom dulu.",
   tool_create_pdf_form_example: "Muat contoh membuat halaman kosong berisi Name dan Email, menampilkan keduanya, menampilkan pratinjau, dan mengaktifkan pdf-form.pdf.",
   tool_create_pdf_form_example_title: "Contoh",
-  tool_create_pdf_form_faq_a1: "Tidak. Halaman dan kolom dirakit di tab ini. Skrip CDN boleh dimuat; formulir tidak ke server kami.",
+  tool_create_pdf_form_faq_a1: "Tidak. Halaman dan kolom dirakit di tab ini. Skrip situs ini boleh dimuat; formulir tidak ke server kami.",
   tool_create_pdf_form_faq_a2: "Pakai Jadikan PDF bisa diisi untuk menempel kolom pada berkas yang sudah ada. Halaman ini mulai kosong.",
   tool_create_pdf_form_faq_a3: "Pilih centang pada jenis, beri nama, lalu Tambah kolom. Kotak memakai X/Y dan ukuran yang Anda atur.",
   tool_create_pdf_form_faq_a4: "Buka Isi formulir PDF dan ketik jawaban uji.",

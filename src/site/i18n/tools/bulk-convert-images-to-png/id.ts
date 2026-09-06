@@ -30,7 +30,7 @@ const id: SiteLangDict = {
 		'Muat contoh menaruh blok JPEG dan logo transparan, menulis dua .png, dan mengaktifkan Unduh ZIP. Baris JPEG sering menunjukkan PNG yang lebih besar.',
 	tool_bulk_convert_images_to_png_example_title: 'Contoh',
 	tool_bulk_convert_images_to_png_faq_a1:
-		'Tidak. Pembacaan dan penulisan PNG terjadi di tab ini. File tetap di perangkat, tidak diunggah ke server. Pembantu ZIP bisa dimuat dari CDN; gambar Anda tetap di tab.',
+		'Tidak. Pembacaan dan penulisan PNG terjadi di tab ini. File tetap di perangkat, tidak diunggah ke server. Pembantu ZIP bisa dimuat dari situs ini; gambar Anda tetap di tab.',
 	tool_bulk_convert_images_to_png_faq_a2:
 		'Tidak. JPEG tidak pernah menyimpan lubang. jpg ke png hanya membungkus PNG; latar tetap buram. Lubang sungguhan hanya bertahan jika sumber sudah punya alfa.',
 	tool_bulk_convert_images_to_png_faq_a3:

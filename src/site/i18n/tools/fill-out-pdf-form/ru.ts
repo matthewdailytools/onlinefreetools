@@ -18,7 +18,7 @@ const ru: SiteLangDict = {
   tool_fill_out_pdf_form_err_no_fields: "В этом PDF нет заполняемых полей.",
   tool_fill_out_pdf_form_example: "Пример создаёт PDF с Name и Email, вписывает Ada Lovelace / ada@example.com, показывает предпросмотр и включает скачивание.",
   tool_fill_out_pdf_form_example_title: "Пример",
-  tool_fill_out_pdf_form_faq_a1: "Нет. Заполнение идёт во вкладке. Библиотеки могут грузиться с CDN, но файл на наши серверы не уходит.",
+  tool_fill_out_pdf_form_faq_a1: "Нет. Заполнение идёт во вкладке. Библиотеки могут грузиться с этого сайта, но файл на наши серверы не уходит.",
   tool_fill_out_pdf_form_faq_a2: "Часто это скан или файл только для печати. Добавьте поля в «Сделать PDF заполняемым» и вернитесь.",
   tool_fill_out_pdf_form_faq_a3: "Да. Флажки — галочки; списки и радио — короткий выбор, если PDF отдаёт варианты.",
   tool_fill_out_pdf_form_faq_a4: "Создание PDF-формы начинается с пустой страницы. Здесь пишутся только значения в уже существующие поля.",

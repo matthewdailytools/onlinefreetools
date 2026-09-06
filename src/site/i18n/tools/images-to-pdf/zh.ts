@@ -9,7 +9,7 @@ const zh: SiteLangDict = {
   tool_images_to_pdf_convert: '转换为 PDF',
   tool_images_to_pdf_desc: '本地多图生成多页 PDF。',
   tool_images_to_pdf_description:
-    '在浏览器把多张照片合成为多页 PDF，每张图一页，无需上传。步骤：添加并排序图片、选择页面方向与适配方式、转换后下载。示例：三个色块样图生成三页 PDF。与「拼成一张图」不同；库可能从 CDN 加载，但你的文件不会上传到本站，适合扫描归档与多图交付。',
+    '在浏览器把多张照片合成为多页 PDF，每张图一页，无需上传。步骤：添加并排序图片、选择页面方向与适配方式、转换后下载。示例：三个色块样图生成三页 PDF。与「拼成一张图」不同；库从本站加载，但你的文件不会上传到本站，适合扫描归档与多图交付。',
   tool_images_to_pdf_download: '下载',
   tool_images_to_pdf_drop_hint: '也可拖入多张图片。处理只在本标签页完成。',
   tool_images_to_pdf_empty: '请先添加至少一张图片。',
@@ -17,7 +17,7 @@ const zh: SiteLangDict = {
   tool_images_to_pdf_err_encode: '无法导出，请缩小图片或更换格式。',
   tool_images_to_pdf_example: '示例用三个色块生成三页 PDF。',
   tool_images_to_pdf_example_title: '把 JPG 合成 PDF',
-  tool_images_to_pdf_faq_a1: '不会；pdf-lib 在本地运行（库可能从 CDN 加载）。',
+  tool_images_to_pdf_faq_a1: '不会；pdf-lib 在本地运行（库从本站加载）。',
   tool_images_to_pdf_faq_a2: '拼图是一张图；本页是多页 PDF。',
   tool_images_to_pdf_faq_a3: '由方向与每页适配规则决定。',
   tool_images_to_pdf_faq_a4: '任意 PDF 阅读器即可。',

@@ -21,7 +21,7 @@ const en: SiteLangDict = {
   tool_turn_pdf_into_word_document_err_pdfjs: "PDF renderer failed to load.",
   tool_turn_pdf_into_word_document_example: "Load sample builds a one-page PDF with “Hello Word sample from PDF.”, extracts that sentence, and downloads a .docx with the same paragraph.",
   tool_turn_pdf_into_word_document_example_title: "Example",
-  tool_turn_pdf_into_word_document_faq_a1: "No. Extraction and the .docx zip run in this tab (libraries may load from a CDN). Your PDF is not uploaded to our servers.",
+  tool_turn_pdf_into_word_document_faq_a1: "No. Extraction and the .docx zip run in this tab (library scripts load from this site). Your PDF is not uploaded to our servers.",
   tool_turn_pdf_into_word_document_faq_a2: "Scanned pages are images. This tool does not OCR. Use Extract text from PDF if you only need a .txt dump of a text layer.",
   tool_turn_pdf_into_word_document_faq_a3: "No. You get paragraphs of extracted text, not a pixel-perfect rebuild.",
   tool_turn_pdf_into_word_document_faq_a4: "This page writes a .docx you can open in Word. PDF to Markdown is for notes in a text editor.",

@@ -21,7 +21,7 @@ const ru: SiteLangDict = {
   tool_check_pdf_a_compliance_example: "Загрузить пример: PDF/A check sample.",
   tool_check_pdf_a_compliance_example_title: "Пример",
   tool_check_pdf_a_compliance_fail: "Не найдено",
-  tool_check_pdf_a_compliance_faq_a1: "Нет. Рендеринг в вашей вкладке (библиотеки могут грузиться с CDN). PDF не отправляется на наши серверы.",
+  tool_check_pdf_a_compliance_faq_a1: "Нет. Рендеринг в вашей вкладке (библиотеки грузятся с этого сайта). PDF не отправляется на наши серверы.",
   tool_check_pdf_a_compliance_faq_a2: "Нет. Страница ищет только пять маркеров в байтах; для проверки профиля используйте veraPDF.",
   tool_check_pdf_a_compliance_faq_a3: "Encrypted or damaged files show a clear error instead of failing silently.",
   tool_check_pdf_a_compliance_faq_a4: "Related PDF tools are listed at the bottom of the page.",

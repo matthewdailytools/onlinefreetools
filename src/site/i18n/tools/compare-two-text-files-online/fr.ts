@@ -23,7 +23,7 @@ const fr: SiteLangDict = {
 		'Charger un exemple oppose notes-a.txt (alpha / deuxième ligne / troisième) à notes-b.txt dont le milieu dit « ligne modifiée ». Le mode ligne ne marque que celle-là. Le premier affichage montre déjà ce résultat.',
 	tool_compare_two_text_files_online_example_title: 'Exemple',
 	tool_compare_two_text_files_online_faq_a1:
-		'Non. FileReader lit les octets dans cet onglet. jsdiff peut arriver via un CDN comme bibliothèque ; vos fichiers ne partent pas vers nos serveurs.',
+		'Non. FileReader lit les octets dans cet onglet. jsdiff peut arriver depuis ce site comme bibliothèque ; vos fichiers ne partent pas vers nos serveurs.',
 	tool_compare_two_text_files_online_faq_a2:
 		"Les fichiers sont décodés en UTF-8 strict et le BOM initial est retiré. Un UTF-8 invalide est refusé plutôt qu’affiché avec des caractères de remplacement ; convertissez d’abord les anciens encodages comme Windows-1252.",
 	tool_compare_two_text_files_online_faq_a3:

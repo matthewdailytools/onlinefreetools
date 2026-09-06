@@ -23,7 +23,7 @@ const en: SiteLangDict = {
 		'Load sample packs notes.txt, a tiny photo.png, and docs/readme.md, then builds sample.zip with those three paths. Download ZIP is enabled on the first screen.',
 	tool_create_zip_file_example_title: 'Example',
 	tool_create_zip_file_faq_a1:
-		'No. Bytes are read in this browser tab. The ZIP engine script may load from a CDN, but your files are not uploaded to our servers.',
+		'No. Bytes are read in this browser tab. The ZIP engine script load from this site, but your files are not uploaded to our servers.',
 	tool_create_zip_file_faq_a2:
 		'If the browser reports webkitRelativePath (folder drop or directory picker), those paths are stored as ZIP entries after ../ is stripped. That is the zip-folder-online job on this page.',
 	tool_create_zip_file_faq_a3:

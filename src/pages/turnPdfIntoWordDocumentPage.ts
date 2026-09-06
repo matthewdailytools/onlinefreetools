@@ -159,8 +159,8 @@ export const renderTurnPdfIntoWordDocumentPage = (opts: {
 	 */
 	const extraBodyHtml = `
   ${pdfWorkUiClientScript()}
-  <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/vendor/pdf-lib/pdf-lib.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/vendor/jszip/jszip.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     (function () {
       /** 单文件软警告阈值（字节）。 */
@@ -466,6 +466,21 @@ export const renderTurnPdfIntoWordDocumentPage = (opts: {
       }
 
       /**
+       * Helvetica / WinAnsi 无法编码 CJK 等；样例 PDF 内嵌文字超出 Latin-1 时回退 ASCII。
+       * 用户上传的 PDF 抽文本走 pdf.js，不受此限制。
+       * @param {string} text
+       * @param {string} fallback
+       * @returns {string}
+       */
+      function winAnsiOrFallback(text, fallback) {
+        var s = String(text || '');
+        for (var i = 0; i < s.length; i++) {
+          if (s.charCodeAt(i) > 255) return fallback;
+        }
+        return s || fallback;
+      }
+
+      /**
        * 用 pdf-lib 造带文字的样例 PDF，再转 .docx。
        * lint:tool-page 要求字面 loadSample。
        * @returns {Promise<void>}
@@ -475,10 +490,11 @@ export const renderTurnPdfIntoWordDocumentPage = (opts: {
         setErr('');
         setStatus('');
         work.setBusy(busyBtns, true);
+        var sampleLine = winAnsiOrFallback(msg.sampleText, 'Hello Word sample from PDF.');
         return PDFLib.PDFDocument.create().then(function (doc) {
           var page = doc.addPage([420, 300]);
           return doc.embedFont(PDFLib.StandardFonts.Helvetica).then(function (font) {
-            page.drawText(msg.sampleText, { x: 48, y: 180, size: 14, font: font });
+            page.drawText(sampleLine, { x: 48, y: 180, size: 14, font: font });
             page.drawText('Load sample on entry', { x: 48, y: 150, size: 12, font: font });
             return doc.save();
           });

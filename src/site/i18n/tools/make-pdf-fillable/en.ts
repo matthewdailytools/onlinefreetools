@@ -19,7 +19,7 @@ const en: SiteLangDict = {
   tool_make_pdf_fillable_err_no_name: "Give the field a name first.",
   tool_make_pdf_fillable_example: "Load sample creates a blank page, adds a FullName text field at 48,220 size 220×22, shows the preview, and enables download.",
   tool_make_pdf_fillable_example_title: "Example",
-  tool_make_pdf_fillable_faq_a1: "No. Placement runs in this tab. CDN scripts may load; your PDF does not go to our servers.",
+  tool_make_pdf_fillable_faq_a1: "No. Placement runs in this tab. library scripts load from this site; your PDF does not go to our servers.",
   tool_make_pdf_fillable_faq_a2: "Yes. After fields exist, use Fill out a PDF form to type values.",
   tool_make_pdf_fillable_faq_a3: "Use Add N fields. They stack as Field_1, Field_2, … with a fixed gap.",
   tool_make_pdf_fillable_faq_a4: "Create a PDF form starts empty and lets you name text or checkbox fields. This page overlays fields on a file you already have.",

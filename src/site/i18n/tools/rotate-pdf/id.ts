@@ -26,7 +26,7 @@ const id: SiteLangDict = {
     'Sampel membuat PDF dua halaman, memutar semua 90° searah jarum jam, dan mengaktifkan Unduh rotated.pdf.',
   tool_rotate_pdf_example_title: 'Contoh',
   tool_rotate_pdf_faq_a1:
-    'Tidak. pustaka PDF berjalan di tab Anda (skrip mungkin dimuat dari CDN). PDF tidak diunggah ke server kami.',
+    'Tidak. pustaka PDF berjalan di tab Anda (skrip mungkin dimuat dari situs ini). PDF tidak diunggah ke server kami.',
   tool_rotate_pdf_faq_a2: 'Ya—file unduhan menyimpan orientasi baru. Buka di penampil sebelum dibagikan.',
   tool_rotate_pdf_faq_a3: 'Halaman dari 1: 1-3,5 berarti halaman 1–3 dan 5. Spasi opsional. Kosong atau di luar rentang gagal.',
   tool_rotate_pdf_faq_a4: 'PDF berpassword biasanya tidak bisa dibuka di sini. Hapus password dengan alat tepercaya lalu putar.',

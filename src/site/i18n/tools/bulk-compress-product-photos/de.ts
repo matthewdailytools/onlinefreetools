@@ -35,7 +35,7 @@ const de: SiteLangDict = {
 		'Beispiel laden legt zwei Listing-Fotos an, komprimiert sie als 200-KB-JPEG, füllt die Tabelle und aktiviert ZIP. Doppelte Namen werden name (2).jpg.',
 	tool_bulk_compress_product_photos_example_title: 'Beispiel',
 	tool_bulk_compress_product_photos_faq_a1:
-		'Nein. Alles läuft in diesem Tab. Dateien bleiben auf Ihrem Gerät, ohne Server-Upload. Das ZIP-Skript darf von einem CDN kommen; Ihre Fotos gehen nicht mit.',
+		'Nein. Alles läuft in diesem Tab. Dateien bleiben auf Ihrem Gerät, ohne Server-Upload. Das ZIP-Skript darf von dieser Website kommen; Ihre Fotos gehen nicht mit.',
 	tool_bulk_compress_product_photos_faq_a2:
 		'Nicht immer. Bleibt die Datei bei Qualität 0.5 über dem Deckel, steht Miss in der Zeile, die nächstkleinere Datei liegt trotzdem im ZIP.',
 	tool_bulk_compress_product_photos_faq_a3:

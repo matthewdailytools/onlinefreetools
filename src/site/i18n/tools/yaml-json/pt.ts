@@ -25,7 +25,7 @@ const pt: SiteLangDict = {
     'No schema padrão do js-yaml, muitas vezes sim. Marque “Tipos seguros JSON” para manter esses escalares como string, salvo tipagem explícita.',
   tool_yaml_json_faq_a3:
     'Documentos separados por --- usam loadAll. Um → um valor JSON; dois ou mais → array. Não ficamos só com o primeiro.',
-  tool_yaml_json_faq_a4: 'A conversão fica na aba. Um CDN pode servir js-yaml; isso baixa código, não envia seu YAML/JSON.',
+  tool_yaml_json_faq_a4: 'A conversão fica na aba. Este site pode servir js-yaml; isso baixa código, não envia seu YAML/JSON.',
   tool_yaml_json_faq_a5:
     'YAML inválido pode trazer mark com linha e coluna. JSON inválido vem de JSON.parse, sem marks estilo YAML.',
   tool_yaml_json_faq_q1: 'Dá para ir e voltar sem perder nada?',
@@ -59,7 +59,7 @@ const pt: SiteLangDict = {
   tool_yaml_json_rules_item_3:
     'Ida e volta: comentários somem (JSON não tem); âncoras/aliases expandem; dump de JSON para YAML pode mudar ordem e estilo.',
   tool_yaml_json_rules_item_4:
-    'Privacidade: a colagem não sobe. Se o CDN servir js-yaml, só baixa código da biblioteca — não o texto da sua config.',
+    'Privacidade: a colagem não sobe. Se este site servir js-yaml, só baixa código da biblioteca — não o texto da sua config.',
   tool_yaml_json_rules_title: 'O que esperar',
   tool_yaml_json_sample: 'Carregar exemplo',
   tool_yaml_json_sample_json: '{\n  "titulo": "Olá",\n  "count": 2\n}',

@@ -21,7 +21,7 @@ const ru: SiteLangDict = {
   tool_turn_pdf_into_word_document_err_pdfjs: "Не удалось загрузить средство просмотра PDF.",
   tool_turn_pdf_into_word_document_example: "Загрузка образца создаёт одностраничный PDF с фразой, извлекает её и делает .docx с тем же абзацем.",
   tool_turn_pdf_into_word_document_example_title: "Пример",
-  tool_turn_pdf_into_word_document_faq_a1: "Нет. Извлечение и сборка .docx идут во вкладке (библиотеки могут грузиться с CDN). Файл на наши серверы не уходит.",
+  tool_turn_pdf_into_word_document_faq_a1: "Нет. Извлечение и сборка .docx идут во вкладке (библиотеки грузятся с этого сайта). Файл на наши серверы не уходит.",
   tool_turn_pdf_into_word_document_faq_a2: "Сканы — картинки. OCR нет. Если нужен только .txt текстового слоя, используйте «Извлечь текст из PDF».",
   tool_turn_pdf_into_word_document_faq_a3: "Нет. Вы получаете извлечённые абзацы, не пиксельную копию.",
   tool_turn_pdf_into_word_document_faq_a4: "Эта страница пишет .docx для Word. PDF в Markdown — для заметок в редакторе.",

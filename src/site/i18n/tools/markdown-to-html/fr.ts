@@ -4,7 +4,7 @@
 import type { SiteLangDict } from '../../../types';
 const fr: SiteLangDict = {
   tool_markdown_article:
-    'Deux sens, une URL, avec ce que l’assainissement retire et ce que Turndown ne garde pas. Collage local ; CDN = bibliothèques seulement.',
+    'Deux sens, une URL, avec ce que l’assainissement retire et ce que Turndown ne garde pas. Collage local ; ce site = bibliothèques seulement.',
   tool_markdown_clear: 'Effacer',
   tool_markdown_copy: 'Copier HTML',
   tool_markdown_copy_done: 'Copié',
@@ -21,7 +21,7 @@ const fr: SiteLangDict = {
   tool_markdown_export_title: 'Export Markdown vers HTML',
   tool_markdown_faq_a1: 'Oui en Markdown → HTML : DOMPurify avant aperçu et téléchargement.',
   tool_markdown_faq_a2: 'Rarement. Objectif : brouillon lisible, pas maquette.',
-  tool_markdown_faq_a3: 'Conversion locale. Le CDN ne fait qu’apporter le code des libs.',
+  tool_markdown_faq_a3: 'Conversion locale. Ce site ne fait qu’apporter le code des libs.',
   tool_markdown_faq_a4: 'Non garanti — passez par un diff si besoin.',
   tool_markdown_faq_a5: 'Titres, listes, liens, emphase, code fence ; option document HTML complet hors-ligne.',
   tool_markdown_faq_q1: 'Le HTML est-il filtré ?',
@@ -54,7 +54,7 @@ const fr: SiteLangDict = {
   tool_markdown_rules_item_html_md: 'Vers Markdown : nettoyage puis Turndown (titres ATX, blocs clôturés).',
   tool_markdown_rules_item_loss: 'Styles, scripts, tableaux complexes : souvent aplatis. Aller-retour non identique.',
   tool_markdown_rules_item_md_html: 'Vers HTML : parse CommonMark puis DOMPurify avant affichage/export.',
-  tool_markdown_rules_privacy: 'Le texte collé reste ici. Charger une lib via CDN n’envoie pas votre article.',
+  tool_markdown_rules_privacy: 'Le texte collé reste ici. Charger une lib depuis ce site n’envoie pas votre article.',
   tool_markdown_rules_title: 'Règles selon le sens',
   tool_markdown_sample_html: '<h1>Titre</h1>\n<p>Bonjour <strong>le monde</strong></p>',
   tool_markdown_sample_md:

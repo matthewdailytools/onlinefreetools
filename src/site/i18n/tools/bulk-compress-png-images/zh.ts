@@ -32,7 +32,7 @@ const zh: SiteLangDict = {
 		'载入样例会放两张透明棋盘格 PNG，按 PNG 重编码，填满表格，并点亮下载 ZIP。重名会变成 name (2).png。',
 	tool_bulk_compress_png_images_example_title: '示例',
 	tool_bulk_compress_png_images_faq_a1:
-		'不会。解码和写成 PNG 都在本标签页完成。文件留在本机，不上传服务器。打 ZIP 的脚本可能从 CDN 加载，你的图片仍不会离开本页。',
+		'不会。解码和写成 PNG 都在本标签页完成。文件留在本机，不上传服务器。打 ZIP 的脚本从本站加载，你的图片仍不会离开本页。',
 	tool_bulk_compress_png_images_faq_a2:
 		'不会。导出永远是 PNG，没有 JPEG 垫底。若能接受 JPEG、只想把商品照片压得更小，去用「批量压缩商品图」。',
 	tool_bulk_compress_png_images_faq_a3:

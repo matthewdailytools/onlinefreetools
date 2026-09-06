@@ -24,7 +24,7 @@ const id: SiteLangDict = {
   tool_add_digital_signature_to_pdf_example: "Muat sampel membuat “catatan sampel”, menghitung hash, dan mencap “Ditandai secara digital” dengan 16 hex di sekitar X=48, Y=48.",
   tool_add_digital_signature_to_pdf_example_title: "Contoh",
   tool_add_digital_signature_to_pdf_faq_a1: "Bukan. Halaman meng-hash PDF dan menggambar kotak. Tidak menyematkan PKCS#7 / PAdES. Untuk cap nama tangan, gunakan Tanda tangani dokumen PDF.",
-  tool_add_digital_signature_to_pdf_faq_a2: "Tidak. Hash dan cap berjalan di tab Anda (pustaka bisa dari CDN). PDF tidak dikirim ke server kami.",
+  tool_add_digital_signature_to_pdf_faq_a2: "Tidak. Hash dan cap berjalan di tab Anda (pustaka dari situs ini). PDF tidak dikirim ke server kami.",
   tool_add_digital_signature_to_pdf_faq_a3: "SHA-256 yang ditampilkan adalah berkas sumber sebelum kotak. Menyimpan menambah byte, jadi hash kemudian berbeda — itu wajar.",
   tool_add_digital_signature_to_pdf_faq_a4: "Tidak. Gunakan Lindungi PDF untuk kata sandi. Halaman ini hanya menambah tanda terlihat.",
   tool_add_digital_signature_to_pdf_faq_a5: "PDF besar bisa lambat; coba dulu di peramban desktop.",

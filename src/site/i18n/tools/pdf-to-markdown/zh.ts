@@ -22,7 +22,7 @@ const zh: SiteLangDict = {
   tool_pdf_to_markdown_err_pdfjs: 'PDF 渲染库加载失败。请检查网络后重试。',
   tool_pdf_to_markdown_example: '样例生成一页 Helvetica 文本 PDF，转换后在预览区显示该句，并可下载 .md。',
   tool_pdf_to_markdown_example_title: '示例',
-  tool_pdf_to_markdown_faq_a1: '不会。页面渲染组件在当前标签页运行（脚本可能从 CDN 加载），PDF 不会上传到我们的服务器。',
+  tool_pdf_to_markdown_faq_a1: '不会。页面渲染组件在当前标签页运行（脚本从本站加载），PDF 不会上传到我们的服务器。',
   tool_pdf_to_markdown_faq_a2: '扫描件通常是整页图片，没有文本层。本工具不做 OCR，提取为空时会明确报错。',
   tool_pdf_to_markdown_faq_a3: '不会。只导出文本层里的字，按位置拼成行；标题、列表、表格不会自动还原成 Markdown 结构。',
   tool_pdf_to_markdown_faq_a4: '「从 PDF 提取文本」下载页间空行的 plain .txt；本工具把每页包成 ## Page N，用 --- 分隔，供 Markdown 编辑器使用。',

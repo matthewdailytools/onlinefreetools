@@ -23,7 +23,7 @@ const pt: SiteLangDict = {
 		'Carregar exemplo coloca notes.txt, um photo.png mínimo e docs/readme.md, e monta sample.zip. Baixar ZIP já aparece na primeira tela.',
 	tool_create_zip_file_example_title: 'Exemplo',
 	tool_create_zip_file_faq_a1:
-		'Não. Os bytes são lidos nesta aba. O script do motor ZIP pode vir de um CDN, mas seus arquivos não sobem aos nossos servidores.',
+		'Não. Os bytes são lidos nesta aba. O script do motor ZIP pode vir deste site, mas seus arquivos não sobem aos nossos servidores.',
 	tool_create_zip_file_faq_a2:
 		'Se o navegador informar webkitRelativePath (pasta solta ou seletor de diretório), esses caminhos viram entradas ZIP depois de tirar ../. Essa é a tarefa de zipar pasta nesta página.',
 	tool_create_zip_file_faq_a3:

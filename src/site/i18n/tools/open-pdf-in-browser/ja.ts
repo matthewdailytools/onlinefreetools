@@ -19,7 +19,7 @@ const ja: SiteLangDict = {
   tool_open_pdf_in_browser_err_pdfjs: "PDF レンダラー読み込み失敗。",
   tool_open_pdf_in_browser_example: "サンプルを読み込む: Hello browser viewer sample.",
   tool_open_pdf_in_browser_example_title: "例",
-  tool_open_pdf_in_browser_faq_a1: "いいえ。レンダリングはタブ内で行われます（ライブラリは CDN から読み込まれる場合があります）。PDF は当社サーバーに送られません。",
+  tool_open_pdf_in_browser_faq_a1: "いいえ。レンダリングはタブ内で行われます（ライブラリは このサイトから読み込まれます）。PDF は当社サーバーに送られません。",
   tool_open_pdf_in_browser_faq_a2: "いいえ。この処理は PDF のテキスト層抽出に依存しません。",
   tool_open_pdf_in_browser_faq_a3: "Encrypted or damaged files show a clear error instead of failing silently.",
   tool_open_pdf_in_browser_faq_a4: "Related PDF tools are listed at the bottom of the page.",

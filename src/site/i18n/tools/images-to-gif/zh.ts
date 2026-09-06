@@ -18,7 +18,7 @@ const zh: SiteLangDict = {
   tool_images_to_gif_err_encode: '无法导出，请缩小图片或更换格式。',
   tool_images_to_gif_example: '示例用三色块生成循环 GIF。',
   tool_images_to_gif_example_title: '示例',
-  tool_images_to_gif_faq_a1: '不会（库可能从 CDN 加载）。',
+  tool_images_to_gif_faq_a1: '不会（库从本站加载）。',
   tool_images_to_gif_faq_a2: '格式转换是单图静帧 GIF；本页是多帧动画。',
   tool_images_to_gif_faq_a3: 'GIF 调色板有限，渐变可能抖动。',
   tool_images_to_gif_faq_a4: 'GIF 无音轨。',

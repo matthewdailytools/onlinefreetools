@@ -21,7 +21,7 @@ const pt: SiteLangDict = {
   tool_unzip_file_example_title: 'Exemplo',
   tool_unzip_file_exported_all: 'Os arquivos foram empacotados em um novo ZIP com caminhos seguros.',
   tool_unzip_file_faq_a1:
-    'Não. O ZIP é lido na aba do navegador e os bytes extraídos ficam no seu dispositivo. O motor ZIP pode carregar de um CDN, mas o seu arquivo não é enviado aos nossos servidores.',
+    'Não. O ZIP é lido na aba do navegador e os bytes extraídos ficam no seu dispositivo. O motor ZIP pode carregar deste site, mas o seu arquivo não é enviado aos nossos servidores.',
   tool_unzip_file_faq_a2:
     'Esta página é focada em ZIP. RAR, 7Z, ISO e TAR.GZ precisam de um motor multi-formato mais pesado e devem ficar em um extrator de arquivos separado quando houver esse suporte.',
   tool_unzip_file_faq_a3:

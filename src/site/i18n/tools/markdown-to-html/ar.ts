@@ -3,7 +3,7 @@
  */
 import type { SiteLangDict } from '../../../types';
 const ar: SiteLangDict = {
-  tool_markdown_article: 'اتجاهان في رابط واحد، مع حدود التنظيف والفقدان. اللصق محلي؛ CDN للمكتبات فقط.',
+  tool_markdown_article: 'اتجاهان في رابط واحد، مع حدود التنظيف والفقدان. اللصق محلي؛ هذا الموقع للمكتبات فقط.',
   tool_markdown_clear: 'مسح',
   tool_markdown_copy: 'نسخ HTML',
   tool_markdown_copy_done: 'تم النسخ',
@@ -20,7 +20,7 @@ const ar: SiteLangDict = {
   tool_markdown_export_title: 'تصدير Markdown إلى HTML',
   tool_markdown_faq_a1: 'في Markdown → HTML نعم؛ DOMPurify قبل المعاينة والتنزيل.',
   tool_markdown_faq_a2: 'نادرًا. اعتبره مسودة قابلة للتحرير.',
-  tool_markdown_faq_a3: 'التحويل محلي. CDN يوصل ملفات المكتبة فقط.',
+  tool_markdown_faq_a3: 'التحويل محلي. هذا الموقع يوصل ملفات المكتبة فقط.',
   tool_markdown_faq_a4: 'غير مضمون — قارن بـ Diff إن لزم.',
   tool_markdown_faq_a5: 'أساسيات CommonMark؛ ومستند HTML كامل اختياري للمشاركة دون اتصال.',
   tool_markdown_faq_q1: 'هل يُزال السكربت من HTML؟',
@@ -51,7 +51,7 @@ const ar: SiteLangDict = {
   tool_markdown_rules_item_html_md: 'إلى Markdown: تنظيف ثم Turndown (عناوين ATX وكتل محاطة).',
   tool_markdown_rules_item_loss: 'الأنماط والسكربتات والجداول المعقدة غالبًا تُبسَّط. الذهاب والإياب ≠ الأصل.',
   tool_markdown_rules_item_md_html: 'إلى HTML: تحليل ثم تنظيف قبل العرض/الحفظ.',
-  tool_markdown_rules_privacy: 'النص يبقى في تبويبك؛ CDN لا يرفع مقالك.',
+  tool_markdown_rules_privacy: 'النص يبقى في تبويبك؛ هذا الموقع لا يرفع مقالك.',
   tool_markdown_rules_title: 'قواعد حسب الاتجاه',
   tool_markdown_sample_html: '<h1>العنوان</h1>\n<p>مرحبا <strong>بالعالم</strong></p>',
   tool_markdown_sample_md:

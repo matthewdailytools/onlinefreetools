@@ -20,7 +20,7 @@ const id: SiteLangDict = {
   tool_write_pdf_document_online_err_pdfjs: "PDF renderer failed to load.",
   tool_write_pdf_document_online_example: "Muat contoh mengisi dua paragraf, klik Buat PDF, lalu menampilkan pratinjau satu halaman siap unduh.",
   tool_write_pdf_document_online_example_title: "Contoh",
-  tool_write_pdf_document_online_faq_a1: "Tidak. Render berjalan di tab Anda (pustaka mungkin dari CDN). PDF Anda tidak diunggah ke server kami.",
+  tool_write_pdf_document_online_faq_a1: "Tidak. Render berjalan di tab Anda (pustaka dari situs ini). PDF Anda tidak diunggah ke server kami.",
   tool_write_pdf_document_online_faq_a2: "Tidak. Anda mengetik teks baru di textarea; halaman membangun PDF dengan pdf-lib. Tidak pernah membuka PDF yang sudah ada.",
   tool_write_pdf_document_online_faq_a3: "Tidak. Untuk berkas yang sudah Anda punya, gunakan Edit teks PDF atau Tambah teks.",
   tool_write_pdf_document_online_faq_a4: "Tambah teks menempelkan cap pada PDF yang ada. Edit teks PDF mengubah redaksi lapisan teks. Halaman ini hanya membuat PDF baru dari teks yang diketik.",

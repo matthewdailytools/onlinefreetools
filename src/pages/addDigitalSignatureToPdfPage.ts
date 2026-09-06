@@ -174,7 +174,7 @@ export const renderAddDigitalSignatureToPdfPage = (opts: {
 	 */
 	const extraBodyHtml = `
   ${pdfWorkUiClientScript()}
-  <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/vendor/pdf-lib/pdf-lib.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     (function () {
       /** 单文件软警告阈值（字节）。 */
@@ -296,6 +296,20 @@ export const renderAddDigitalSignatureToPdfPage = (opts: {
       }
 
       /**
+       * Helvetica / WinAnsi 无法编码 CJK、西里尔、阿拉伯文等；盖章文字超出 Latin-1 时回退 ASCII。
+       * @param {string} text 希望写进 PDF 的文案
+       * @param {string} fallback ASCII 回退
+       * @returns {string}
+       */
+      function winAnsiOrFallback(text, fallback) {
+        var s = String(text || '');
+        for (var i = 0; i < s.length; i++) {
+          if (s.charCodeAt(i) > 255) return fallback;
+        }
+        return s || fallback;
+      }
+
+      /**
        * 在指定页盖可见标记框（标题 + 时间戳 + 哈希前缀）。
        * @param {Uint8Array} pdfBytes
        * @param {string} hashHex
@@ -305,6 +319,7 @@ export const renderAddDigitalSignatureToPdfPage = (opts: {
         if (!hasPdfLib()) return Promise.reject(new Error('pdflib'));
         var prefix16 = String(hashHex || '').slice(0, 16);
         var ts = new Date().toISOString();
+        var title = winAnsiOrFallback(msg.marked, 'Digitally marked');
         return PDFLib.PDFDocument.load(pdfBytes.slice(0)).then(function (doc) {
           return doc.embedFont(PDFLib.StandardFonts.Helvetica).then(function (font) {
             var pages = doc.getPages();
@@ -323,7 +338,7 @@ export const renderAddDigitalSignatureToPdfPage = (opts: {
               borderWidth: 1.2,
               color: PDFLib.rgb(0.93, 0.96, 1)
             });
-            page.drawText(msg.marked, {
+            page.drawText(title, {
               x: x + 8,
               y: y + 38,
               size: 11,

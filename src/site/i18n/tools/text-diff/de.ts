@@ -18,7 +18,7 @@ const de: SiteLangDict = {
   tool_text_diff_faq_a1:
     'Zeilen für Code und Configs. Wörter für Sätze, Mails und Prompts — dann werden einzelne Wörter markiert, nicht ganze Zeilen.',
   tool_text_diff_faq_a2:
-    'Ihr eingefügter Text wird von uns nicht hochgeladen oder gespeichert — der Vergleich läuft im Browser. Die Seite kann jsdiff (Open Source) per CDN laden; Ihr Text geht dabei nicht an unsere Server.',
+    'Ihr eingefügter Text wird von uns nicht hochgeladen oder gespeichert — der Vergleich läuft im Browser. Die Seite kann jsdiff (Open Source) from this site laden; Ihr Text geht dabei nicht an unsere Server.',
   tool_text_diff_faq_a3:
     'Windows nutzt oft CRLF, macOS/Linux LF. „CRLF und LF gleich behandeln“ einschalten, dann erneut vergleichen.',
   tool_text_diff_faq_a4:

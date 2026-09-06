@@ -19,7 +19,7 @@ const es: SiteLangDict = {
   tool_create_pdf_form_err_no_name: "Pon primero un nombre al campo.",
   tool_create_pdf_form_example: "Cargar ejemplo crea una página en blanco con Name y Email, lista ambos nombres, muestra la vista previa y activa pdf-form.pdf.",
   tool_create_pdf_form_example_title: "Ejemplo",
-  tool_create_pdf_form_faq_a1: "No. La página y los campos se construyen en esta pestaña. Pueden cargarse scripts de un CDN; tu formulario no va a nuestros servidores.",
+  tool_create_pdf_form_faq_a1: "No. La página y los campos se construyen en esta pestaña. Pueden cargarse scripts de este sitio; tu formulario no va a nuestros servidores.",
   tool_create_pdf_form_faq_a2: "Usa Hacer un PDF rellenable para poner campos sobre un archivo que ya tienes. Esta página empieza vacía.",
   tool_create_pdf_form_faq_a3: "Elige casilla en el tipo, ponle nombre y Añadir campo. La caja usa el X/Y y el tamaño que definiste.",
   tool_create_pdf_form_faq_a4: "Abre Rellenar un formulario PDF y escribe respuestas de prueba.",

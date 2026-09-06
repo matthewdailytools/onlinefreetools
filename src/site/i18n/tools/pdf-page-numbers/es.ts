@@ -22,7 +22,7 @@ const es: SiteLangDict = {
     'La muestra crea un PDF de tres páginas, numera abajo-centro desde 1 y habilita Descargar numbered.pdf.',
   tool_pdf_page_numbers_example_title: 'Ejemplo',
   tool_pdf_page_numbers_faq_a1:
-    'No. la biblioteca PDF corre en tu pestaña (los scripts pueden cargarse desde un CDN). Tu PDF no se sube a nuestros servidores.',
+    'No. la biblioteca PDF corre en tu pestaña (los scripts se cargan desde este sitio). Tu PDF no se sube a nuestros servidores.',
   tool_pdf_page_numbers_faq_a2:
     'Sí—«Empezar en» es el número de la página 1 (p. ej. 0 para portada sin contar, o 5 si quitaste hojas antes). Cada página siguiente suma 1.',
   tool_pdf_page_numbers_faq_a3:

@@ -17,7 +17,7 @@ const zh: SiteLangDict = {
   tool_organize_pdf_err_organize: "整理失败。请检查文件与页列表后重试。",
   tool_organize_pdf_example: "样例会生成标为 1–3 的三页 PDF，去掉第 2 页并应用新顺序，然后启用下载得到两页 organized.pdf。",
   tool_organize_pdf_example_title: "示例",
-  tool_organize_pdf_faq_a1: "不会。处理在当前标签页内完成（脚本可能从 CDN 加载），PDF 不会上传到我们的服务器。",
+  tool_organize_pdf_faq_a1: "不会。处理在当前标签页内完成（脚本从本站加载），PDF 不会上传到我们的服务器。",
   tool_organize_pdf_faq_a2: "「合并」把多份合成一份；「拆分」把一页或多页导出成多个文件（或 ZIP）；「整理」在同一份 PDF 内改页序并仍下载一份。",
   tool_organize_pdf_faq_a3: "可以——用每行的上移/下移。应用时按列表从上到下复制页面。",
   tool_organize_pdf_faq_a4: "带密码的 PDF 通常无法在此打开。请先去掉密码再整理。",

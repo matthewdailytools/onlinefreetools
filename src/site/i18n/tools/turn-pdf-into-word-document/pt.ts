@@ -21,7 +21,7 @@ const pt: SiteLangDict = {
   tool_turn_pdf_into_word_document_err_pdfjs: "Falha ao carregar o visualizador PDF.",
   tool_turn_pdf_into_word_document_example: "Carregar amostra cria um PDF de uma página com uma frase, extrai e gera um .docx com o mesmo parágrafo.",
   tool_turn_pdf_into_word_document_example_title: "Exemplo",
-  tool_turn_pdf_into_word_document_faq_a1: "Não. Extração e zip .docx ocorrem nesta aba (bibliotecas podem vir de um CDN). O PDF não vai aos nossos servidores.",
+  tool_turn_pdf_into_word_document_faq_a1: "Não. Extração e zip .docx ocorrem nesta aba (bibliotecas vêm deste site). O PDF não vai aos nossos servidores.",
   tool_turn_pdf_into_word_document_faq_a2: "Páginas digitalizadas são imagens. Não há OCR. Use Extrair texto de PDF se quiser só um .txt da camada de texto.",
   tool_turn_pdf_into_word_document_faq_a3: "Não. Você recebe parágrafos extraídos, não uma reconstrução pixel a pixel.",
   tool_turn_pdf_into_word_document_faq_a4: "Esta página escreve um .docx para o Word. PDF para Markdown é para notas no editor.",

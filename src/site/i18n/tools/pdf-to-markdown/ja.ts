@@ -25,7 +25,7 @@ const ja: SiteLangDict = {
     'サンプルは Helvetica 1 ページ PDF を作り、変換してプレビューに文を表示し、.md ダウンロードを有効にします。',
   tool_pdf_to_markdown_example_title: '例',
   tool_pdf_to_markdown_faq_a1:
-    'いいえ。ページ描画 はタブ内で動作します（CDN から読み込む場合あり）。PDF は当社サーバーに送られません。',
+    'いいえ。ページ描画 はタブ内で動作します（このサイトから読み込みます）。PDF は当社サーバーに送られません。',
   tool_pdf_to_markdown_faq_a2:
     'スキャン PDF は多くが画像のみでテキスト層がありません。OCR しないため空になり、明確に失敗します。',
   tool_pdf_to_markdown_faq_a3:

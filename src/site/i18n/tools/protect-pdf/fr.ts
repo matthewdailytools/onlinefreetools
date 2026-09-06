@@ -23,7 +23,7 @@ const fr: SiteLangDict = {
     'L’exemple crée une page, la chiffre avec sample, active Télécharger protected.pdf et affiche le mot de passe.',
   tool_protect_pdf_example_title: 'Protéger un PDF par mot de passe',
   tool_protect_pdf_faq_a1:
-    'Non. la bibliothèque PDF s’exécute dans votre onglet (scripts éventuellement depuis un CDN). Votre PDF n’est pas envoyé à nos serveurs.',
+    'Non. la bibliothèque PDF s’exécute dans votre onglet (scripts éventuellement depuis ce site). Votre PDF n’est pas envoyé à nos serveurs.',
   tool_protect_pdf_faq_a2:
     'Chiffrement PDF courant : mot de passe requis à l’ouverture. Pas niveau militaire — choisissez un mot de passe fort mémorable.',
   tool_protect_pdf_faq_a3:

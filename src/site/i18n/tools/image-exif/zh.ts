@@ -47,7 +47,7 @@ const zh: SiteLangDict = {
   tool_image_exif_rules_item_1: '读取：解析 IFD0/EXIF/GPS 等；有 GPS 时显示十进制度数。',
   tool_image_exif_rules_item_2: '清除：解码 →（可选）按 Orientation 摆正 → toBlob。靠重写图像去掉元数据，不是原地改字节。',
   tool_image_exif_rules_item_3: 'JPEG 清除使用较高质量，仍属重编码，不是像素级无损。隐私优先时可接受这一折中。',
-  tool_image_exif_rules_item_4: '隐私：文件不上传。CDN 仅可能加载开源解析库代码。',
+  tool_image_exif_rules_item_4: '隐私：文件不上传。本站仅加载开源解析库代码。',
   tool_image_exif_rules_title: '需要知道的规则',
   tool_image_exif_sample: '加载示例',
   tool_image_exif_status_analyzed: '元数据已就绪，请查看下方字段。',

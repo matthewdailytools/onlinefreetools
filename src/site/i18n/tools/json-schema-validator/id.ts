@@ -13,7 +13,7 @@ const id: SiteLangDict = {
   tool_json_schema_validator_desc:
     'Validasi JSON dengan Schema dan error JSON Pointer — draft-07 lokal.',
   tool_json_schema_validator_description:
-    'Validasi JSON terhadap JSON Schema (draft-07) di peramban. Langkah: tempel Schema dan instance, validasi, lalu baca setiap kegagalan lewat JSON Pointer. Contoh: objek produk tanpa price gagal dengan missingProperty. Teks tetap di tab; Ajv hanya memuat kode dari CDN.',
+    'Validasi JSON terhadap JSON Schema (draft-07) di peramban. Langkah: tempel Schema dan instance, validasi, lalu baca setiap kegagalan lewat JSON Pointer. Contoh: objek produk tanpa price gagal dengan missingProperty. Teks tetap di tab; Ajv hanya memuat kode dari situs ini.',
   tool_json_schema_validator_draft_note: 'Mesin: Ajv 8 · JSON Schema draft-07 (default).',
   tool_json_schema_validator_empty: 'Tempel Schema dan JSON instance terlebih dahulu.',
   tool_json_schema_validator_example:
@@ -27,7 +27,7 @@ const id: SiteLangDict = {
   tool_json_schema_validator_faq_a3:
     'Halaman ini memakai dialek draft-07 Ajv. Draft 2019-09 / 2020-12 butuh build lain dan tidak dipilih di sini.',
   tool_json_schema_validator_faq_a4:
-    'Schema dan JSON Anda tidak diunggah. CDN hanya mengunduh kode Ajv.',
+    'Schema dan JSON Anda tidak diunggah. situs ini hanya mengunduh kode Ajv.',
   tool_json_schema_validator_faq_a5:
     'Tempel Schema dan JSON model, validasi, lalu perbaiki tiap Pointer sampai lulus — berguna sebelum keluaran terstruktur diteruskan.',
   tool_json_schema_validator_faq_q1: 'Mengapa validasi gagal?',
@@ -58,7 +58,7 @@ const id: SiteLangDict = {
   tool_json_schema_validator_rules_item_3:
     'Draft: dialek draft-07. Jangan anggap keyword 2020-12 tersedia di sini.',
   tool_json_schema_validator_rules_item_4:
-    'Privasi: tempelan tetap di tab. CDN hanya memuat kode Ajv.',
+    'Privasi: tempelan tetap di tab. situs ini hanya memuat kode Ajv.',
   tool_json_schema_validator_rules_title: 'Aturan yang perlu diingat',
   tool_json_schema_validator_sample_fail: 'Contoh gagal',
   tool_json_schema_validator_sample_instance_fail: '{"sku":"A-1"}',

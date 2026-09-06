@@ -34,7 +34,7 @@ const ja: SiteLangDict = {
 		'サンプル読込は出品用のダミー2枚を入れ、既定の 200 KB JPEG で圧縮し、表を埋めて ZIP を有効にします。ZIP 内の同名は name (2).jpg になります。',
 	tool_bulk_compress_product_photos_example_title: '例',
 	tool_bulk_compress_product_photos_faq_a1:
-		'いいえ。復号と再エンコードはこのタブ内です。ファイルは端末に留まり、サーバーにはアップロードしません。ZIP 用スクリプトが CDN から来ることはありますが、写真自体は送りません。',
+		'いいえ。復号と再エンコードはこのタブ内です。ファイルは端末に留まり、サーバーにはアップロードしません。ZIP 用スクリプトはこのサイトから読みますが、写真自体は送りません。',
 	tool_bulk_compress_product_photos_faq_a2:
 		'必ずではありません。画質 0.5 でも上限を超えると「未達」になりますが、いちばん近い結果は ZIP に残します。',
 	tool_bulk_compress_product_photos_faq_a3:

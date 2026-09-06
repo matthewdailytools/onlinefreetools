@@ -24,7 +24,7 @@ const en: SiteLangDict = {
   tool_add_digital_signature_to_pdf_example: "Load sample builds a one-page “Sample record”, hashes it, and stamps “Digitally marked” with the first 16 hex characters near X=48, Y=48.",
   tool_add_digital_signature_to_pdf_example_title: "Example",
   tool_add_digital_signature_to_pdf_faq_a1: "No. The page hashes the PDF and draws a visible box. It does not embed a PKCS#7 / PAdES signature. For a handwritten name stamp, use Sign a PDF document.",
-  tool_add_digital_signature_to_pdf_faq_a2: "No. Hashing and stamping run in this tab (libraries may load from a CDN). Your PDF is not uploaded to our servers.",
+  tool_add_digital_signature_to_pdf_faq_a2: "No. Hashing and stamping run in this tab (library scripts load from this site). Your PDF is not uploaded to our servers.",
   tool_add_digital_signature_to_pdf_faq_a3: "The shown SHA-256 is of the source file before the box is drawn. Saving adds bytes, so a later hash of the download will differ — that is expected.",
   tool_add_digital_signature_to_pdf_faq_a4: "No. Use Protect PDF for a password. This page only adds a visible mark.",
   tool_add_digital_signature_to_pdf_faq_a5: "Large PDFs may be slow; try a desktop browser first.",

@@ -158,7 +158,7 @@ export const renderImagesToPdfPage = (opts: {
 	 * Client script: decode images, rasterize to JPEG/PNG, embed one page per image via pdf-lib, download PDF.
 	 */
 	const extraBodyHtml = `
-  <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/vendor/pdf-lib/pdf-lib.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     (function () {
       /** Soft warn when any single file exceeds this size (bytes). */

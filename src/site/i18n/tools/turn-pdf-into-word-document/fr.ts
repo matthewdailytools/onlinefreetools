@@ -21,7 +21,7 @@ const fr: SiteLangDict = {
   tool_turn_pdf_into_word_document_err_pdfjs: "Échec du chargement du moteur PDF.",
   tool_turn_pdf_into_word_document_example: "Charger l’exemple crée un PDF d’une page avec une phrase, l’extrait et produit un .docx du même paragraphe.",
   tool_turn_pdf_into_word_document_example_title: "Exemple",
-  tool_turn_pdf_into_word_document_faq_a1: "Non. L’extraction et le zip .docx ont lieu dans votre onglet (les bibliothèques peuvent venir d’un CDN). Le PDF n’est pas envoyé à nos serveurs.",
+  tool_turn_pdf_into_word_document_faq_a1: "Non. L’extraction et le zip .docx ont lieu dans votre onglet (les bibliothèques viennent de ce site). Le PDF n’est pas envoyé à nos serveurs.",
   tool_turn_pdf_into_word_document_faq_a2: "Les pages scannées sont des images. Pas d’OCR. Utilisez Extraire le texte d’un PDF si vous voulez seulement un .txt de la couche texte.",
   tool_turn_pdf_into_word_document_faq_a3: "Non. Vous obtenez des paragraphes extraits, pas une reconstruction pixel par pixel.",
   tool_turn_pdf_into_word_document_faq_a4: "Cette page écrit un .docx pour Word. PDF vers Markdown sert aux notes dans un éditeur.",

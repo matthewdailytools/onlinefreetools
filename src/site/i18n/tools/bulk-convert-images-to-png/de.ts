@@ -30,7 +30,7 @@ const de: SiteLangDict = {
 		'Beispiel laden legt einen JPEG-Block und ein transparentes Logo ab, schreibt zwei .png und aktiviert ZIP herunterladen. Die JPEG-Zeile zeigt oft ein größeres PNG.',
 	tool_bulk_convert_images_to_png_example_title: 'Beispiel',
 	tool_bulk_convert_images_to_png_faq_a1:
-		'Nein. Lesen und PNG-Schreiben laufen in diesem Tab. Dateien bleiben auf Ihrem Gerät, ohne Server-Upload. Die ZIP-Hilfe kann von einem CDN kommen; Ihre Bilder verlassen den Tab nicht.',
+		'Nein. Lesen und PNG-Schreiben laufen in diesem Tab. Dateien bleiben auf Ihrem Gerät, ohne Server-Upload. Die ZIP-Hilfe kommt von dieser Website; Ihre Bilder verlassen den Tab nicht.',
 	tool_bulk_convert_images_to_png_faq_a2:
 		'Nein. JPEG hat nie Löcher gespeichert. JPG zu PNG gibt eine PNG-Hülle; der Hintergrund bleibt undurchsichtig. Echte Löcher überleben nur, wenn die Quelle schon Alpha hatte.',
 	tool_bulk_convert_images_to_png_faq_a3:

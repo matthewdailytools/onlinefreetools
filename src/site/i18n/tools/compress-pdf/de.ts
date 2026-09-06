@@ -22,7 +22,7 @@ const de: SiteLangDict = {
     'Muster lädt ein Zwei-Seiten-PDF mit Farbblöcken und eingebettetem JPEG, wendet Mittel-Kompression an, zeigt Größe vor/nachher mit Prozent Ersparnis und aktiviert Download von compressed.pdf.',
   tool_compress_pdf_example_title: 'PDF-Dateigröße verkleinern',
   tool_compress_pdf_faq_a1:
-    'Nein. pdf.js und die PDF-Bibliothek laufen in Ihrem Tab (Bibliotheken ggf. vom CDN). Ihr PDF wird nicht auf unsere Server hochgeladen.',
+    'Nein. pdf.js und die PDF-Bibliothek laufen in Ihrem Tab (Bibliotheken von dieser Website). Ihr PDF wird nicht auf unsere Server hochgeladen.',
   tool_compress_pdf_faq_a2:
     'Das Tool rasterisiert jede Seite zu JPEG und baut ein neues PDF. Textlastige oder bereits optimierte Dateien schrumpfen kaum. Kein Cloud-Recompress eingebetteter Streams.',
   tool_compress_pdf_faq_a3:

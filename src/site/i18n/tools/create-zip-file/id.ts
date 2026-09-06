@@ -23,7 +23,7 @@ const id: SiteLangDict = {
 		'Muat contoh menaruh notes.txt, photo.png kecil, dan docs/readme.md, lalu membuat sample.zip. Unduh ZIP siap di layar pertama.',
 	tool_create_zip_file_example_title: 'Contoh',
 	tool_create_zip_file_faq_a1:
-		'Tidak. Byte dibaca di tab ini. Skrip mesin ZIP mungkin dari CDN, tetapi file Anda tidak diunggah ke server kami.',
+		'Tidak. Byte dibaca di tab ini. Skrip mesin ZIP mungkin dari situs ini, tetapi file Anda tidak diunggah ke server kami.',
 	tool_create_zip_file_faq_a2:
 		'Jika peramban memberi webkitRelativePath (folder dijatuhkan atau pemilih direktori), path itu menjadi entri ZIP setelah ../ dibuang. Itulah tugas zip folder di halaman ini.',
 	tool_create_zip_file_faq_a3:

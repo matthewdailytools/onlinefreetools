@@ -36,7 +36,7 @@ const fr: SiteLangDict = {
   tool_csv_json_faq_a4:
     'Les objets sont aplatis en colonnes à chemin pointé (dim.w, dim.h). Les tableaux deviennent une chaîne JSON dans une seule cellule. Les colonnes sont l’union des clés de tous les enregistrements et les valeurs manquantes restent vides.',
   tool_csv_json_faq_a5:
-    'Non. L’analyse reste dans cet onglet et les fichiers choisis sont lus en local. Un CDN peut servir Papa Parse ; cette requête ne télécharge que du code, elle n’envoie pas votre CSV ni votre JSON.',
+    'Non. L’analyse reste dans cet onglet et les fichiers choisis sont lus en local. Ce site peut servir Papa Parse ; cette requête ne télécharge que du code, elle n’envoie pas votre CSV ni votre JSON.',
   tool_csv_json_faq_q1: 'Le point-virgule ou la tabulation sont-ils gérés, pas seulement la virgule ?',
   tool_csv_json_faq_q2: 'Mes nombres, zéros initiaux et identifiants restent-ils intacts ?',
   tool_csv_json_faq_q3: 'Comment sont gérés les champs avec virgules, guillemets ou sauts de ligne ?',
@@ -69,7 +69,7 @@ const fr: SiteLangDict = {
   tool_csv_json_rules_item_3:
     'JSON → CSV : les objets sont aplatis en chemins pointés (dim.w, dim.h) ; les tableaux deviennent une chaîne JSON dans une cellule ; les colonnes sont l’union de toutes les clés, les valeurs manquantes restent vides.',
   tool_csv_json_rules_item_4:
-    'Confidentialité : votre texte et vos fichiers ne sont pas envoyés. Charger Papa Parse depuis un CDN ne télécharge que le code de la bibliothèque, pas vos données.',
+    'Confidentialité : votre texte et vos fichiers ne sont pas envoyés. Charger Papa Parse depuis ce site ne télécharge que le code de la bibliothèque, pas vos données.',
   tool_csv_json_rules_title: 'Règles à prévoir',
   tool_csv_json_sample: 'Charger un exemple',
   tool_csv_json_sample_csv: 'sku,title,price\nA-001,"Chair, oak",129.9\nA-002,Desk,89',

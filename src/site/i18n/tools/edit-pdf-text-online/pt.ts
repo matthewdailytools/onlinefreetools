@@ -23,7 +23,7 @@ const pt: SiteLangDict = {
   tool_edit_pdf_text_online_err_pdfjs: "O visualizador de PDF falhou ao carregar.",
   tool_edit_pdf_text_online_example: "Carregar exemplo cria um PDF de uma página com \"Hello edit PDF text sample.\", preenche o editor e Aplicar gera um PDF para baixar.",
   tool_edit_pdf_text_online_example_title: "Exemplo",
-  tool_edit_pdf_text_online_faq_a1: "Não. Bibliotecas podem vir de um CDN, mas o PDF fica nesta aba e não é enviado aos nossos servidores.",
+  tool_edit_pdf_text_online_faq_a1: "Não. Bibliotecas vêm deste site, mas o PDF fica nesta aba e não é enviado aos nossos servidores.",
   tool_edit_pdf_text_online_faq_a2: "Não. Isto não edita glifos no lugar. O texto é extraído, você corrige e as páginas são redesenhadas de forma simples. Fontes e colunas exatas não se mantêm.",
   tool_edit_pdf_text_online_faq_a3: "PDFs digitalizados são imagens sem camada de texto. Esta ferramenta não faz OCR e falha com erro claro.",
   tool_edit_pdf_text_online_faq_a4: "Adicionar texto carimba uma linha em X/Y. Tornar PDF editável prioriza o download do .txt editável (PDF reconstruído opcional). Aqui o download principal é o .pdf reconstruído após editar a camada de texto.",

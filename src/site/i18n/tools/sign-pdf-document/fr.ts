@@ -26,7 +26,7 @@ const fr: SiteLangDict = {
   tool_sign_pdf_document_example: "Charger l’exemple crée un « accord d’exemple », saisit Jane Sample et tamponne ce PNG vers X=72, Y=72.",
   tool_sign_pdf_document_example_title: "Exemple",
   tool_sign_pdf_document_faq_a1: "Non. Cette page tamponne seulement une image. Pour une apparence d’intégrité avec préfixe de hachage, utilisez Ajouter une signature numérique à un PDF — ce n’est pas non plus du PKI à certificat.",
-  tool_sign_pdf_document_faq_a2: "Non. Le tamponnage a lieu dans votre onglet (les bibliothèques peuvent venir d’un CDN). Le PDF n’est pas envoyé à nos serveurs.",
+  tool_sign_pdf_document_faq_a2: "Non. Le tamponnage a lieu dans votre onglet (les bibliothèques viennent de ce site). Le PDF n’est pas envoyé à nos serveurs.",
   tool_sign_pdf_document_faq_a3: "Non. Placez l’image avec X/Y. Pour les mots de passe, voir Protéger un PDF. Pour plus de texte, Ajouter du texte à un PDF.",
   tool_sign_pdf_document_faq_a4: "Cet outil ne pose pas de certificats PKCS#7 / PAdES. Utilisez un logiciel de signature dédié.",
   tool_sign_pdf_document_faq_a5: "Les gros PDF peuvent être lents ; testez d’abord un navigateur de bureau.",

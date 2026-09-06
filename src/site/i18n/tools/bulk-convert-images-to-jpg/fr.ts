@@ -33,7 +33,7 @@ const fr: SiteLangDict = {
 		'Charger un exemple pose un bloc opaque et un logo transparent, les peint sur blanc, affiche deux noms .jpg et active Télécharger le ZIP.',
 	tool_bulk_convert_images_to_jpg_example_title: 'Exemple',
 	tool_bulk_convert_images_to_jpg_faq_a1:
-		'Non. Lecture et écriture .jpg se font dans cet onglet. Les fichiers restent sur l\'appareil, sans envoi au serveur. L\'aide ZIP peut venir d\'un CDN ; vos images ne quittent pas l\'onglet.',
+		'Non. Lecture et écriture .jpg se font dans cet onglet. Les fichiers restent sur l\'appareil, sans envoi au serveur. L\'aide ZIP peut venir de ce site ; vos images ne quittent pas l\'onglet.',
 	tool_bulk_convert_images_to_jpg_faq_a2:
 		'Oui. PNG vers JPG se fait ici : choisissez les fichiers, gardez le fond blanc pour que les trous ne deviennent pas noirs, convertissez tout.',
 	tool_bulk_convert_images_to_jpg_faq_a3:

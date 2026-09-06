@@ -19,7 +19,7 @@ const pt: SiteLangDict = {
   tool_make_pdf_fillable_err_no_name: "Dê um nome ao campo primeiro.",
   tool_make_pdf_fillable_example: "Carregar exemplo cria uma página em branco, adiciona FullName em 48,220 no tamanho 220×22, mostra a prévia e libera o download.",
   tool_make_pdf_fillable_example_title: "Exemplo",
-  tool_make_pdf_fillable_faq_a1: "Não. A colocação ocorre nesta aba. Scripts de CDN podem carregar; o PDF não vai aos nossos servidores.",
+  tool_make_pdf_fillable_faq_a1: "Não. A colocação ocorre nesta aba. Scripts deste site podem carregar; o PDF não vai aos nossos servidores.",
   tool_make_pdf_fillable_faq_a2: "Sim. Quando os campos existirem, use Preencher um formulário PDF.",
   tool_make_pdf_fillable_faq_a3: "Use Adicionar N campos. Eles empilham Field_1, Field_2… com um espaço fixo.",
   tool_make_pdf_fillable_faq_a4: "Criar um formulário PDF começa vazio e nomeia texto ou caixas. Esta página sobrepõe campos a um arquivo que você já tem.",

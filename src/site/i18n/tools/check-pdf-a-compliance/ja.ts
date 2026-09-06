@@ -21,7 +21,7 @@ const ja: SiteLangDict = {
   tool_check_pdf_a_compliance_example: "通常 PDF のサンプルではヘッダーと暗号化なしを検出しますが、PDF/A XMP と出力インテントは見つかりません。未検出だけで不適合とは断定できません。",
   tool_check_pdf_a_compliance_example_title: "例",
   tool_check_pdf_a_compliance_fail: "未検出",
-  tool_check_pdf_a_compliance_faq_a1: "いいえ。レンダリングはタブ内で行われます（ライブラリは CDN から読み込まれる場合があります）。PDF は当社サーバーに送られません。",
+  tool_check_pdf_a_compliance_faq_a1: "いいえ。レンダリングはタブ内で行われます（ライブラリは このサイトから読み込まれます）。PDF は当社サーバーに送られません。",
   tool_check_pdf_a_compliance_faq_a2: "いいえ。生バイト中の5指標を探すだけです。profile 別の適合確認には veraPDF などを使ってください。",
   tool_check_pdf_a_compliance_faq_a3: "はい。選択可能なテキスト層には依存しません。",
   tool_check_pdf_a_compliance_faq_a4: "メタデータやオブジェクトが圧縮されている場合、未検出でも不適合とは限りません。",

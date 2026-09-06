@@ -31,7 +31,7 @@ const fr: SiteLangDict = {
   tool_archive_extractor_example_title: 'Exemple',
   tool_archive_extractor_exported_all: 'Les fichiers ont été emballés dans un nouveau ZIP avec des chemins sûrs.',
   tool_archive_extractor_faq_a1:
-    'Non. L archive est lue dans l onglet du navigateur et les octets extraits restent sur votre appareil. Le script auxiliaire peut se charger depuis un CDN, mais vos fichiers ne sont pas envoyés à nos serveurs.',
+    'Non. L archive est lue dans l onglet du navigateur et les octets extraits restent sur votre appareil. Le script auxiliaire peut se charger depuis ce site, mais vos fichiers ne sont pas envoyés à nos serveurs.',
   tool_archive_extractor_faq_a2:
     'Cette version traite ZIP, TAR, TAR.GZ et TGZ. RAR, 7Z et ISO apparaissent comme formats avec notes de prise en charge jusqu à l activation d un moteur multiformat plus lourd.',
   tool_archive_extractor_faq_a3:

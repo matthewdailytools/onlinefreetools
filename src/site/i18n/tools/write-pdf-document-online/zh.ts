@@ -21,7 +21,7 @@ const zh: SiteLangDict = {
   tool_write_pdf_document_online_err_pdfjs: "PDF 渲染库加载失败。",
   tool_write_pdf_document_online_example: "加载样例会填入两段正文，点击「生成 PDF」后显示可下载的一页预览。",
   tool_write_pdf_document_online_example_title: "示例",
-  tool_write_pdf_document_online_faq_a1: "不会。渲染在浏览器标签页完成（库可能从 CDN 加载），PDF 不会上传到我们的服务器。",
+  tool_write_pdf_document_online_faq_a1: "不会。渲染在浏览器标签页完成（库从本站加载），PDF 不会上传到我们的服务器。",
   tool_write_pdf_document_online_faq_a2: "不需要。你在文本框输入新文字，页面用 pdf-lib 生成 PDF，从不打开已有 PDF。",
   tool_write_pdf_document_online_faq_a3: "不可以。已有文件请用「编辑 PDF 文字」或「添加文字」。",
   tool_write_pdf_document_online_faq_a4: "「添加文字」是在已有 PDF 上盖章；「编辑 PDF 文字」改文本层措辞。本页只从输入文字新建 PDF。",

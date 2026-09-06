@@ -22,7 +22,7 @@ const pt: SiteLangDict = {
   tool_edit_pdf_form_fields_err_no_fields: "Este PDF não tem campos de formulário para editar.",
   tool_edit_pdf_form_fields_example: "Carregar exemplo cria um PDF com Name e Email, lista as duas linhas, mostra a prévia e permite renomear ou remover antes do download.",
   tool_edit_pdf_form_fields_example_title: "Exemplo",
-  tool_edit_pdf_form_fields_faq_a1: "Não. A lista e as edições ocorrem nesta aba. Bibliotecas de CDN podem carregar; o PDF não vai aos nossos servidores.",
+  tool_edit_pdf_form_fields_faq_a1: "Não. A lista e as edições ocorrem nesta aba. Bibliotecas deste site podem carregar; o PDF não vai aos nossos servidores.",
   tool_edit_pdf_form_fields_faq_a2: "Renomear grava um nome interno novo. Remover apaga o controle. Valores já digitados podem se perder ao remover.",
   tool_edit_pdf_form_fields_faq_a3: "Um PDF sem campos mostra erro com link para Tornar um PDF preenchível.",
   tool_edit_pdf_form_fields_faq_a4: "Preencher um formulário PDF escreve respostas. Esta página só muda nomes ou apaga caixas.",

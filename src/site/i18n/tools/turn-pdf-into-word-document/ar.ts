@@ -21,7 +21,7 @@ const ar: SiteLangDict = {
   tool_turn_pdf_into_word_document_err_pdfjs: "فشل تحميل عارض PDF.",
   tool_turn_pdf_into_word_document_example: "تحميل العينة ينشئ PDF بصفحة واحدة وجملة، يستخرجها، ويصنع .docx بالفقرة نفسها.",
   tool_turn_pdf_into_word_document_example_title: "مثال",
-  tool_turn_pdf_into_word_document_faq_a1: "لا. الاستخراج وتعبئة .docx تتم في تبويبك (قد تُحمَّل المكتبات من CDN). لا يصل الملف إلى خوادمنا.",
+  tool_turn_pdf_into_word_document_faq_a1: "لا. الاستخراج وتعبئة .docx تتم في تبويبك (تُحمَّل المكتبات من هذا الموقع). لا يصل الملف إلى خوادمنا.",
   tool_turn_pdf_into_word_document_faq_a2: "الصفحات الممسوحة صور. لا يوجد OCR. استخدم استخراج النص من PDF إن أردت .txt من طبقة النص فقط.",
   tool_turn_pdf_into_word_document_faq_a3: "لا. تحصل على فقرات مستخرجة لا إعادة بناء بكسلية.",
   tool_turn_pdf_into_word_document_faq_a4: "هذه الصفحة تكتب .docx يفتح في وورد. التحويل إلى Markdown للملاحظات في محرّر نصوص.",

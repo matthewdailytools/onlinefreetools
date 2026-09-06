@@ -197,7 +197,7 @@ export const renderBulkConvertImagesToPngPage = (opts: {
 	 * 进页自动 loadSample()：JPEG 色块 + 透明 logo。
 	 */
 	const extraBodyHtml = `
-  <script src="https://cdn.jsdelivr.net/npm/fflate@0.8.2/umd/index.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/vendor/fflate/index.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     (function () {
       /** 单文件软体积上限（字节）。 */

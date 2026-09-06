@@ -20,7 +20,7 @@ const zh: SiteLangDict = {
   tool_split_pdf_err_split: '拆分失败。请检查文件与范围后重试。',
   tool_split_pdf_example: '样例会生成三页 PDF，按每页拆分，并启用下载得到含 page-1.pdf、page-2.pdf、page-3.pdf 的 ZIP。',
   tool_split_pdf_example_title: '拆分我的 PDF',
-  tool_split_pdf_faq_a1: '不会。pdf-lib 与 fflate 在本地运行（脚本可能从 CDN 加载），PDF 不会上传到我们的服务器。',
+  tool_split_pdf_faq_a1: '不会。pdf-lib 与 fflate 在本地运行（脚本从本站加载），PDF 不会上传到我们的服务器。',
   tool_split_pdf_faq_a2: '页码从 1 起：1-3,5 表示第 1–3 页和第 5 页。空格可选。空值或越界会失败。',
   tool_split_pdf_faq_a3: '拆出多于一个文件时下载 ZIP；只有一个输出文件时直接下载 PDF。',
   tool_split_pdf_faq_a4: '带密码的 PDF 通常无法在此打开。请用可信方式去掉密码后再拆。',

@@ -13,7 +13,7 @@ const en: SiteLangDict = {
   tool_json_schema_validator_desc:
     'Validate JSON against a Schema with JSON Pointer errors — local draft-07 checks.',
   tool_json_schema_validator_description:
-    'Validate JSON against a JSON Schema (draft-07) in your browser. Steps: paste Schema and instance, validate, then read JSON Pointer paths for each failure. Example: a product object missing price fails with a missingProperty path. Paste stays in the tab — Ajv loads from a CDN as library code only.',
+    'Validate JSON against a JSON Schema (draft-07) in your browser. Steps: paste Schema and instance, validate, then read JSON Pointer paths for each failure. Example: a product object missing price fails with a missingProperty path. Paste stays in the tab — Ajv loads from this site as library code only.',
   tool_json_schema_validator_draft_note: 'Validator engine: Ajv 8 · JSON Schema draft-07 (default).',
   tool_json_schema_validator_empty: 'Paste both a Schema and an instance JSON first.',
   tool_json_schema_validator_example:
@@ -27,7 +27,7 @@ const en: SiteLangDict = {
   tool_json_schema_validator_faq_a3:
     'This page uses Ajv’s draft-07 dialect by default. Newer drafts (2019-09 / 2020-12) need different Ajv builds and are not selected here.',
   tool_json_schema_validator_faq_a4:
-    'Your Schema and JSON text are not uploaded. Loading Ajv from a CDN only downloads library code, not your paste.',
+    'Your Schema and JSON text are not uploaded. Loading Ajv from this site only downloads library code, not your paste.',
   tool_json_schema_validator_faq_a5:
     'Paste the Schema and the model JSON, validate, then fix each Pointer path until the status shows pass — useful before sending structured output downstream.',
   tool_json_schema_validator_faq_q1: 'Why did validation fail?',
@@ -58,7 +58,7 @@ const en: SiteLangDict = {
   tool_json_schema_validator_rules_item_3:
     'Draft: default dialect is draft-07. Do not assume 2020-12 vocabulary keywords work here.',
   tool_json_schema_validator_rules_item_4:
-    'Privacy: paste stays in the tab. CDN fetch loads Ajv code only — it is not an upload of your Schema or instance.',
+    'Privacy: paste stays in the tab. This site loads Ajv code only — it is not an upload of your Schema or instance.',
   tool_json_schema_validator_rules_title: 'Rules you should expect',
   tool_json_schema_validator_sample_fail: 'Failing sample',
   tool_json_schema_validator_sample_instance_fail: '{"sku":"A-1"}',

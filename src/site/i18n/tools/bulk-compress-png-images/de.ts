@@ -32,7 +32,7 @@ const de: SiteLangDict = {
 		'Beispiel laden legt zwei transparente Schachbrett-PNG ab, kodiert sie als PNG neu, füllt die Tabelle und aktiviert ZIP herunterladen. Doppelte Namen werden name (2).png.',
 	tool_bulk_compress_png_images_example_title: 'Beispiel',
 	tool_bulk_compress_png_images_faq_a1:
-		'Nein. Dekodieren und PNG-Schreiben laufen in diesem Tab. Dateien bleiben auf Ihrem Gerät, ohne Server-Upload. Ein ZIP-Helfer kann von einem CDN kommen; Ihre Bilder verlassen den Tab nicht.',
+		'Nein. Dekodieren und PNG-Schreiben laufen in diesem Tab. Dateien bleiben auf Ihrem Gerät, ohne Server-Upload. Ein ZIP-Helfer kommt von dieser Website; Ihre Bilder verlassen den Tab nicht.',
 	tool_bulk_compress_png_images_faq_a2:
 		'Nein. Die Ausgabe ist immer PNG. Es gibt keine JPEG-Unterlage. Wenn JPEG für Produktfotos akzeptabel und kleiner sein soll, nutzen Sie Produktfotos in Masse komprimieren.',
 	tool_bulk_compress_png_images_faq_a3:

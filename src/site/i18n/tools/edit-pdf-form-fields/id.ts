@@ -22,7 +22,7 @@ const id: SiteLangDict = {
   tool_edit_pdf_form_fields_err_no_fields: "PDF ini tidak punya kolom formulir untuk diedit.",
   tool_edit_pdf_form_fields_example: "Muat contoh membuat PDF berisi Name dan Email, menampilkan dua baris, pratinjau, dan memungkinkan ganti nama atau hapus sebelum unduh.",
   tool_edit_pdf_form_fields_example_title: "Contoh",
-  tool_edit_pdf_form_fields_faq_a1: "Tidak. Daftar dan edit berjalan di tab ini. Pustaka CDN boleh dimuat; PDF tidak ke server kami.",
+  tool_edit_pdf_form_fields_faq_a1: "Tidak. Daftar dan edit berjalan di tab ini. Pustaka situs ini boleh dimuat; PDF tidak ke server kami.",
   tool_edit_pdf_form_fields_faq_a2: "Ganti nama menulis nama internal baru. Hapus menghilangkan widget. Nilai yang sudah diketik bisa hilang saat dihapus.",
   tool_edit_pdf_form_fields_faq_a3: "PDF tanpa kolom menampilkan error yang menaut ke Jadikan PDF bisa diisi.",
   tool_edit_pdf_form_fields_faq_a4: "Isi formulir PDF menulis jawaban. Halaman ini hanya mengubah nama atau menghapus kotak.",

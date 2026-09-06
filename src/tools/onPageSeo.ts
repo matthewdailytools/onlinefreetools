@@ -58,12 +58,14 @@ const MAX_REDIRECTS = 5;
  * @param startUrl 起始 URL（调用方须已校验协议与主机名）
  * @param userAgent 抓取时使用的 UA
  * @param signal 超时中断信号
+ * @param accept 请求 Accept 头；默认 HTML，拉 CSS/JS 时由调用方改写
  * @returns 最终（非重定向）响应与其对应的最终 URL
  */
 export const fetchHtmlFollowingRedirects = async (
   startUrl: URL,
   userAgent: string,
   signal: AbortSignal,
+  accept = 'text/html,application/xhtml+xml',
 ): Promise<{ res: Response; finalUrl: string }> => {
   let current = startUrl;
   for (let hop = 0; hop <= MAX_REDIRECTS; hop++) {
@@ -73,7 +75,7 @@ export const fetchHtmlFollowingRedirects = async (
       signal,
       headers: {
         'user-agent': userAgent,
-        accept: 'text/html,application/xhtml+xml',
+        accept,
       },
     });
 

@@ -246,7 +246,7 @@ export const renderFileHashPage = (opts: {
         if (!md5LibPromise) {
           md5LibPromise = new Promise(function (resolve, reject) {
             var script = document.createElement('script');
-            script.src = 'https://cdn.jsdelivr.net/npm/crypto-js@4.2.0/crypto-js.min.js';
+            script.src = '/vendor/crypto-js/crypto-js.min.js';
             script.crossOrigin = 'anonymous';
             script.referrerPolicy = 'no-referrer';
             script.onload = function () {

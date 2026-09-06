@@ -33,7 +33,7 @@ const zh: SiteLangDict = {
 		'载入样例会放一张不透明色块和一张透明标志，两者都垫白，写出两个 .jpg 文件名，并点亮下载 ZIP。',
 	tool_bulk_convert_images_to_jpg_example_title: '示例',
 	tool_bulk_convert_images_to_jpg_faq_a1:
-		'不会。解码和写成 .jpg 都在本标签页。文件留在本机，不上传服务器。打 ZIP 的脚本可能从 CDN 加载，你的图片仍不会离开这个标签页。',
+		'不会。解码和写成 .jpg 都在本标签页。文件留在本机，不上传服务器。打 ZIP 的脚本从本站加载，你的图片仍不会离开这个标签页。',
 	tool_bulk_convert_images_to_jpg_faq_a2:
 		'可以。PNG 转 JPG 就在这里：选文件，保留白色垫底以免镂空变成黑块，再点全部转换。',
 	tool_bulk_convert_images_to_jpg_faq_a3:

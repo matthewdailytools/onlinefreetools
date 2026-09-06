@@ -19,7 +19,7 @@ const pt: SiteLangDict = {
   tool_create_pdf_form_err_no_name: "Dê um nome ao campo primeiro.",
   tool_create_pdf_form_example: "Carregar exemplo cria uma página em branco com Name e Email, lista os dois nomes, mostra a prévia e libera pdf-form.pdf.",
   tool_create_pdf_form_example_title: "Exemplo",
-  tool_create_pdf_form_faq_a1: "Não. A página e os campos são montados nesta aba. Scripts de CDN podem carregar; o formulário não vai aos nossos servidores.",
+  tool_create_pdf_form_faq_a1: "Não. A página e os campos são montados nesta aba. Scripts deste site podem carregar; o formulário não vai aos nossos servidores.",
   tool_create_pdf_form_faq_a2: "Use Tornar um PDF preenchível para colocar campos num arquivo que você já tem. Esta página começa vazia.",
   tool_create_pdf_form_faq_a3: "Escolha caixa no tipo, dê um nome e Adicionar campo. A caixa usa o X/Y e o tamanho definidos.",
   tool_create_pdf_form_faq_a4: "Abra Preencher um formulário PDF e digite respostas de teste.",

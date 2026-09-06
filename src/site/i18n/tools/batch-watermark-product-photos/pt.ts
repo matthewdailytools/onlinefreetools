@@ -44,7 +44,7 @@ const pt: SiteLangDict = {
 		'Carregar exemplo coloca um bloco paisagem e um retrato, define SAMPLE, pré-visualiza o primeiro, aplica a mesma marca relativa aos dois e ativa Baixar ZIP.',
 	tool_batch_watermark_product_photos_example_title: 'Exemplo',
 	tool_batch_watermark_product_photos_faq_a1:
-		'Não. A leitura e o carimbo no Canvas acontecem nesta aba. Ficam no dispositivo, sem envio a um servidor. O auxiliar do ZIP pode vir de um CDN; suas fotos continuam na aba.',
+		'Não. A leitura e o carimbo no Canvas acontecem nesta aba. Ficam no dispositivo, sem envio a um servidor. O auxiliar do ZIP pode vir deste site; suas fotos continuam na aba.',
 	tool_batch_watermark_product_photos_faq_a2:
 		'Não. O tamanho é um percentual do lado curto e as nove âncoras são frações daquela tela. Retrato e paisagem ficam no mesmo canto relativo.',
 	tool_batch_watermark_product_photos_faq_a3:

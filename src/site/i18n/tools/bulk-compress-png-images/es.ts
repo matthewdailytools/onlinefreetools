@@ -32,7 +32,7 @@ const es: SiteLangDict = {
 		'Cargar ejemplo mete dos PNG de damero transparente, los recodifica como PNG, llena la tabla y activa Descargar ZIP. Los nombres repetidos pasan a name (2).png.',
 	tool_bulk_compress_png_images_example_title: 'Ejemplo',
 	tool_bulk_compress_png_images_faq_a1:
-		'No. La decodificación y el PNG se hacen en esta pestaña. Los archivos no salen del dispositivo y van sin subir al servidor. El ayudante ZIP puede cargarse desde un CDN; tus imágenes no salen de la pestaña.',
+		'No. La decodificación y el PNG se hacen en esta pestaña. Los archivos no salen del dispositivo y van sin subir al servidor. El ayudante ZIP puede cargarse desde este sitio; tus imágenes no salen de la pestaña.',
 	tool_bulk_compress_png_images_faq_a2:
 		'No. La salida es siempre PNG. No hay mate JPEG. Si aceptas JPEG y quieres fotos de producto más livianas, usa Comprimir fotos de producto en lote.',
 	tool_bulk_compress_png_images_faq_a3:

@@ -573,7 +573,7 @@ def page_chrome(t: dict, form: str, script: str, style: str) -> str:
         "{ label: %s, href: %s }" % (js(a), js(b)) for a, b in t["refs"]
     )
     xlsx_tag = (
-        '  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>\n'
+        '  <script src="/vendor/xlsx/xlsx.full.min.js"></script>\n'
         if t["xlsx"]
         else ""
     )

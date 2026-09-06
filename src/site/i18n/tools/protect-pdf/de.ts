@@ -23,7 +23,7 @@ const de: SiteLangDict = {
     'Muster erstellt eine Seite, verschlüsselt mit sample, aktiviert Download protected.pdf und zeigt das Passwort im Status.',
   tool_protect_pdf_example_title: 'PDF mit Passwort schützen',
   tool_protect_pdf_faq_a1:
-    'Nein. die PDF-Bibliothek läuft in Ihrem Tab (Skripte ggf. von CDN). Ihr PDF wird nicht auf unsere Server hochgeladen.',
+    'Nein. die PDF-Bibliothek läuft in Ihrem Tab (Skripte von dieser Website). Ihr PDF wird nicht auf unsere Server hochgeladen.',
   tool_protect_pdf_faq_a2:
     'Gängige PDF-Benutzerpasswort-Verschlüsselung — zum Öffnen nötig. Kein Militärniveau; starkes, merkbares Passwort wählen.',
   tool_protect_pdf_faq_a3:

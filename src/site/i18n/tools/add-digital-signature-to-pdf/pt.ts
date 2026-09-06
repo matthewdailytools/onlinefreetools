@@ -24,7 +24,7 @@ const pt: SiteLangDict = {
   tool_add_digital_signature_to_pdf_example: "Carregar amostra cria um “registro de amostra”, calcula o hash e carimba “Marcado digitalmente” com 16 hex perto de X=48, Y=48.",
   tool_add_digital_signature_to_pdf_example_title: "Exemplo",
   tool_add_digital_signature_to_pdf_faq_a1: "Não. A página faz hash do PDF e desenha um quadro. Não embute PKCS#7 / PAdES. Para um carimbo de nome à mão, use Assinar um documento PDF.",
-  tool_add_digital_signature_to_pdf_faq_a2: "Não. Hash e carimbo ocorrem nesta aba (bibliotecas podem vir de um CDN). O PDF não vai aos nossos servidores.",
+  tool_add_digital_signature_to_pdf_faq_a2: "Não. Hash e carimbo ocorrem nesta aba (bibliotecas vêm deste site). O PDF não vai aos nossos servidores.",
   tool_add_digital_signature_to_pdf_faq_a3: "O SHA-256 mostrado é da origem antes do quadro. Guardar acrescenta bytes; um hash posterior do ficheiro baixado será diferente.",
   tool_add_digital_signature_to_pdf_faq_a4: "Não. Use Proteger PDF para uma senha. Esta página só acrescenta uma marca visível.",
   tool_add_digital_signature_to_pdf_faq_a5: "PDFs grandes podem ficar lentos; teste primeiro no navegador de desktop.",

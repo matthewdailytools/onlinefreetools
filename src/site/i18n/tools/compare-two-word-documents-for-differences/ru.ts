@@ -23,7 +23,7 @@ const ru: SiteLangDict = {
 		'Загрузка примера создаёт два крошечных .docx. Во второй записке «meet at noon» меняется на «meet at 3pm». Уже при первом показе видна эта разница формулировок.',
 	tool_compare_two_word_documents_for_differences_example_title: 'Пример',
 	tool_compare_two_word_documents_for_differences_faq_a1:
-		'Нет. Файлы читаются в этой вкладке. mammoth и jsdiff могут подгружаться как библиотеки с CDN; ваши документы не загружаются на наши серверы.',
+		'Нет. Файлы читаются в этой вкладке. mammoth и jsdiff могут подгружаться как библиотеки с этого сайта; ваши документы не загружаются на наши серверы.',
 	tool_compare_two_word_documents_for_differences_faq_a2:
 		'Нет. Word умеет сравнивать оформление и исправления. Здесь извлекается только видимый текст, затем строится diff этой формулировки. Колонтитулы и стили отбрасываются.',
 	tool_compare_two_word_documents_for_differences_faq_a3:

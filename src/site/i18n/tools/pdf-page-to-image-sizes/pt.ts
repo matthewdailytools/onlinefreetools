@@ -25,7 +25,7 @@ const pt: SiteLangDict = {
   tool_pdf_page_to_image_sizes_example_title: 'Exemplo',
   tool_pdf_page_to_image_sizes_export: 'Exportar',
   tool_pdf_page_to_image_sizes_faq_a1:
-    'Não. o renderizador de páginas, a biblioteca PDF e a biblioteca ZIP rodam na sua aba (scripts podem vir de CDN). Seu PDF não é enviado aos nossos servidores.',
+    'Não. o renderizador de páginas, a biblioteca PDF e a biblioteca ZIP rodam na sua aba (scripts vêm deste site). Seu PDF não é enviado aos nossos servidores.',
   tool_pdf_page_to_image_sizes_faq_a2:
     'PDF para JPG exporta cada página na proporção original. Esta ferramenta escolhe uma página e encaixa em tamanhos fixos de plataforma (contain, centralizado, faixas brancas).',
   tool_pdf_page_to_image_sizes_faq_a3:

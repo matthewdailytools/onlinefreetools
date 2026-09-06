@@ -77,6 +77,7 @@ const ar: SiteLangDict = {
   tool_category_pdf: 'أدوات PDF',
   tool_feedback_body: 'هل هناك غموض أو خلل أو نقص؟ اكتب رسالة أدناه — نقرأ كل ملاحظة عن هذه الأدوات.',
   tool_feedback_cta: 'فتح في تطبيق البريد',
+  tool_feedback_report_bug: 'الإبلاغ عن خلل على GitHub',
   tool_feedback_email_label: 'البريد',
   tool_feedback_message_label: 'الرسالة',
   tool_feedback_message_placeholder: 'صف المشكلة أو الاقتراح…',

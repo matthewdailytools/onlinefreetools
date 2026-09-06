@@ -37,7 +37,7 @@ const zh: SiteLangDict = {
 		'载入样例会放入两张占位商品图，按默认 200 KB JPEG 压缩，填好命中/未命中表，并启用下载 ZIP。ZIP 里重名会写成 name (2).jpg。',
 	tool_bulk_compress_product_photos_example_title: '示例',
 	tool_bulk_compress_product_photos_faq_a1:
-		'不会。解码和编码都在这个标签页里完成。照片留在本机，不会上传到服务器。打包脚本可能从 CDN 加载，但你的文件不会被送走。',
+		'不会。解码和编码都在这个标签页里完成。照片留在本机，不会上传到服务器。打包脚本从本站加载，但你的文件不会被送走。',
 	tool_bulk_compress_product_photos_faq_a2:
 		'不一定。噪点大或已经很小的图会有体积地板。质量降到 0.5 仍超标会标成未命中，但仍把最接近的结果打进包，方便你再缩最长边。',
 	tool_bulk_compress_product_photos_faq_a3:

@@ -19,7 +19,7 @@ const zh: SiteLangDict = {
   tool_create_pdf_form_err_no_name: "请先填写字段名。",
   tool_create_pdf_form_example: "加载样例会生成带 Name、Email 文本框的空白页，列出两个栏名，显示预览并开放 pdf-form.pdf。",
   tool_create_pdf_form_example_title: "示例",
-  tool_create_pdf_form_faq_a1: "不会。空白页和栏位都在本标签页生成。脚本可能从 CDN 加载，表单不会发到我们的服务器。",
+  tool_create_pdf_form_faq_a1: "不会。空白页和栏位都在本标签页生成。脚本从本站加载，表单不会发到我们的服务器。",
   tool_create_pdf_form_faq_a2: "已有打印件请用「把 PDF 做成可填写表单」叠栏。本页从空白页起步。",
   tool_create_pdf_form_faq_a3: "类型选复选框，起名后点「添加字段」。方框按你设的 X/Y 与尺寸绘制。",
   tool_create_pdf_form_faq_a4: "导出后打开「填写 PDF 表单」，用示例答案检查栏位是否生效。",

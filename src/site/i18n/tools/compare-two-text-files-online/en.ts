@@ -23,7 +23,7 @@ const en: SiteLangDict = {
 		'Load sample compares notes-a.txt (“alpha / second line / third”) with notes-b.txt where the middle line is “changed line”. Line mode marks only that line. First paint already shows this result.',
 	tool_compare_two_text_files_online_example_title: 'Example',
 	tool_compare_two_text_files_online_faq_a1:
-		'No. Bytes are read in this tab with FileReader. jsdiff may load from a CDN as library code; your files are not uploaded to our servers.',
+		'No. Bytes are read in this tab with FileReader. jsdiff loads from this site as library code; your files are not uploaded to our servers.',
 	tool_compare_two_text_files_online_faq_a2:
 		"Files are decoded strictly as UTF-8. A leading BOM is removed; invalid UTF-8 is rejected instead of being shown with replacement characters. Convert legacy encodings such as Windows-1252 first.",
 	tool_compare_two_text_files_online_faq_a3:

@@ -21,7 +21,7 @@ const zh: SiteLangDict = {
   tool_pdf_to_jpg_err_pdfjs: 'PDF 渲染库加载失败。请检查网络后重试。',
   tool_pdf_to_jpg_example: '样例会生成两页 PDF，逐页转换，并启用下载得到含 page-1.jpg、page-2.jpg 的 ZIP。',
   tool_pdf_to_jpg_example_title: '把 PDF 每一页转成 JPG',
-  tool_pdf_to_jpg_faq_a1: '不会。页面渲染与 ZIP 组件在当前标签页运行（脚本可能从 CDN 加载），PDF 不会上传到我们的服务器。',
+  tool_pdf_to_jpg_faq_a1: '不会。页面渲染与 ZIP 组件在当前标签页运行（脚本从本站加载），PDF 不会上传到我们的服务器。',
   tool_pdf_to_jpg_faq_a2: '多于 1 页→下载 pdf-pages.zip，内含 page-1.jpg、page-2.jpg 等；恰好 1 页→直接下载单个 JPG。',
   tool_pdf_to_jpg_faq_a3: '「多图转 PDF」把照片合成多页 PDF；本工具把 PDF 每一页导出成单独的 JPG 图片。',
   tool_pdf_to_jpg_faq_a4: '页面按 2 倍缩放渲染，文字在屏幕和聊天里更清晰。页数很多的 PDF 可能更慢或占更多内存。',

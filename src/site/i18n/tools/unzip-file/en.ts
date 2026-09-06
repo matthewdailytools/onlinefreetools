@@ -24,7 +24,7 @@ const en: SiteLangDict = {
   tool_unzip_file_example_title: 'Example',
   tool_unzip_file_exported_all: 'Exported files are packed into a new ZIP with safe paths.',
   tool_unzip_file_faq_a1:
-    'No. The ZIP is read in your browser tab, and extracted bytes stay on your device. The ZIP engine script may load from a CDN, but your archive is not uploaded to our servers.',
+    'No. The ZIP is read in your browser tab, and extracted bytes stay on your device. The ZIP engine script load from this site, but your archive is not uploaded to our servers.',
   tool_unzip_file_faq_a2:
     'This page is ZIP-first. RAR, 7Z, ISO, and TAR.GZ need a heavier multi-format archive engine and should be handled by a separate archive extractor when that support is implemented.',
   tool_unzip_file_faq_a3:

@@ -19,7 +19,7 @@ const en: SiteLangDict = {
   tool_create_pdf_form_err_no_name: "Give the field a name first.",
   tool_create_pdf_form_example: "Load sample builds a blank page with Name and Email text fields, lists both names, shows the preview, and enables pdf-form.pdf.",
   tool_create_pdf_form_example_title: "Example",
-  tool_create_pdf_form_faq_a1: "No. The blank page and fields are built in this tab. Scripts may load from a CDN; your form is not sent to our servers.",
+  tool_create_pdf_form_faq_a1: "No. The blank page and fields are built in this tab. Scripts load from this site; your form is not sent to our servers.",
   tool_create_pdf_form_faq_a2: "Use Make a PDF fillable to drop fields onto a file you already have. This page starts empty.",
   tool_create_pdf_form_faq_a3: "Choose checkbox in the type list, name it, then Add field. The box is drawn at the X/Y size you set.",
   tool_create_pdf_form_faq_a4: "After you download, open Fill out a PDF form to type sample answers and check the result.",

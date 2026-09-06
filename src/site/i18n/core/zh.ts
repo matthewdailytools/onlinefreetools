@@ -82,6 +82,7 @@ const zh: SiteLangDict = {
   tool_faq_title: '常见问题',
   tool_feedback_body: '页面不清、功能异常或想提建议？在下方起草邮件，我们会阅读每一封关于工具的来信。',
   tool_feedback_cta: '用邮件应用发送',
+  tool_feedback_report_bug: '向 GitHub 报告缺陷',
   tool_feedback_email_label: '邮箱',
   tool_feedback_message_label: '正文',
   tool_feedback_message_placeholder: '请描述问题或建议…',

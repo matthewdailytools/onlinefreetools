@@ -24,7 +24,7 @@ const id: SiteLangDict = {
 		'Muat contoh membandingkan dua tabel CSV. Header Name/Qty cocok; jumlah Gadget 2 vs 9, jadi B3 terdaftar. Tampilan pertama sudah menunjukkan sel itu.',
 	tool_excel_compare_files_example_title: 'Contoh',
 	tool_excel_compare_files_faq_a1:
-		'Tidak. Byte dibaca di tab ini dengan SheetJS. Pustaka bisa datang dari CDN; berkas Anda tidak diunggah ke server kami.',
+		'Tidak. Byte dibaca di tab ini dengan SheetJS. Pustaka bisa datang dari situs ini; berkas Anda tidak diunggah ke server kami.',
 	tool_excel_compare_files_faq_a2:
 		'Ya: lembar pertama dipilih secara default. Gunakan daftar lembar jika butuh tab lain di berkas yang sama. Lembar lain tidak dibandingkan sampai Anda memilihnya.',
 	tool_excel_compare_files_faq_a3:

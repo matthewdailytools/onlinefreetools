@@ -21,7 +21,7 @@ const fr: SiteLangDict = {
   tool_extract_text_from_pdf_example: "Charger un exemple: Hello extract text sample.",
   tool_extract_text_from_pdf_example_title: "Exemple",
   tool_extract_text_from_pdf_extract: "Extract",
-  tool_extract_text_from_pdf_faq_a1: "Non. Le rendu s’exécute dans votre onglet (bibliothèques éventuellement via CDN). Votre PDF n’est pas envoyé à nos serveurs.",
+  tool_extract_text_from_pdf_faq_a1: "Non. Le rendu s’exécute dans votre onglet (bibliothèques depuis ce site). Votre PDF n’est pas envoyé à nos serveurs.",
   tool_extract_text_from_pdf_faq_a2: "Scanned PDFs are images without a text layer; this tool does not OCR.",
   tool_extract_text_from_pdf_faq_a3: "Encrypted or damaged files show a clear error instead of failing silently.",
   tool_extract_text_from_pdf_faq_a4: "PDF vers Markdown ajoute des titres ## Page N et séparateurs --- pour éditeurs. Cette page garde un extrait .txt brut.",

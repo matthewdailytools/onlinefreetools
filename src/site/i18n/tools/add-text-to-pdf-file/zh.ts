@@ -21,7 +21,7 @@ const zh: SiteLangDict = {
   tool_add_text_to_pdf_file_err_pdfjs: "PDF 渲染库加载失败。",
   tool_add_text_to_pdf_file_example: "加载样例会生成一页 PDF，运行主操作，并在预览中显示“CONFIDENTIAL”。",
   tool_add_text_to_pdf_file_example_title: "示例",
-  tool_add_text_to_pdf_file_faq_a1: "不会。渲染在浏览器标签页完成（库可能从 CDN 加载），PDF 不会上传到我们的服务器。",
+  tool_add_text_to_pdf_file_faq_a1: "不会。渲染在浏览器标签页完成（库从本站加载），PDF 不会上传到我们的服务器。",
   tool_add_text_to_pdf_file_faq_a2: "不需要。盖章是叠加新文字；扫描版也能盖字，不会 OCR 原有像素。",
   tool_add_text_to_pdf_file_faq_a3: "加密或损坏的文件会显示明确错误，不会静默失败。",
   tool_add_text_to_pdf_file_faq_a4: "「编辑 PDF 文字」改已有措辞；「编写 PDF」从文本新建文件。本页只在每页 X/Y 画新印章。",

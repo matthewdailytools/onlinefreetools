@@ -144,7 +144,7 @@ const de: SiteLangDict = {
   tool_add_digital_signature_to_pdf_faq_a1:
     'Nein. Die Seite hasht das PDF und zeichnet einen Kasten. Es wird kein PKCS#7 / PAdES eingebettet. Für einen handschriftlichen Namensstempel nutzen Sie PDF-Dokument unterschreiben.',
   tool_add_digital_signature_to_pdf_faq_a2:
-    'Nein. Hash und Stempel laufen in Ihrem Tab (Bibliotheken können vom CDN kommen). Das PDF geht nicht auf unsere Server.',
+    'Nein. Hash und Stempel laufen in Ihrem Tab (Bibliotheken kommen von dieser Website). Das PDF geht nicht auf unsere Server.',
   tool_add_digital_signature_to_pdf_faq_a3:
     'Das gezeigte SHA-256 gilt für die Quelle vor dem Kasten. Speichern fügt Bytes hinzu; ein späterer Hash der Download-Datei weicht ab.',
   tool_add_digital_signature_to_pdf_faq_a4: 'Nein. Nutzen Sie PDF schützen für ein Passwort. Diese Seite fügt nur eine sichtbare Marke hinzu.',
@@ -201,7 +201,7 @@ const de: SiteLangDict = {
   tool_add_text_to_pdf_file_example: 'Beispiel laden: CONFIDENTIAL',
   tool_add_text_to_pdf_file_example_title: 'Beispiel',
   tool_add_text_to_pdf_file_faq_a1:
-    'Nein. Das Rendering läuft in Ihrem Tab (Bibliotheken ggf. per CDN). Ihr PDF wird nicht auf unsere Server hochgeladen.',
+    'Nein. Das Rendering läuft in Ihrem Tab (Bibliotheken ggf. from this site). Ihr PDF wird nicht auf unsere Server hochgeladen.',
   tool_add_text_to_pdf_file_faq_a2: 'Nein. Dieser Vorgang ist nicht vom Auslesen einer PDF-Textebene abhängig.',
   tool_add_text_to_pdf_file_faq_a3: 'Encrypted or damaged files show a clear error instead of failing silently.',
   tool_add_text_to_pdf_file_faq_a4:
@@ -701,7 +701,7 @@ const de: SiteLangDict = {
   tool_archive_extractor_example_title: 'Beispiel',
   tool_archive_extractor_exported_all: 'Die Dateien wurden mit sicheren Pfaden in ein neues ZIP gepackt.',
   tool_archive_extractor_faq_a1:
-    'Nein. Das Archiv wird im Browser-Tab gelesen, und extrahierte Bytes bleiben auf Ihrem Gerät. Das Hilfsskript kann von einem CDN geladen werden, aber Ihre Dateien werden nicht an unsere Server hochgeladen.',
+    'Nein. Das Archiv wird im Browser-Tab gelesen, und extrahierte Bytes bleiben auf Ihrem Gerät. Das Hilfsskript wird von dieser Website geladen, aber Ihre Dateien werden nicht an unsere Server hochgeladen.',
   tool_archive_extractor_faq_a2:
     'In dieser Version funktionieren ZIP, TAR, TAR.GZ und TGZ. RAR, 7Z und ISO erscheinen als Formate mit Support-Hinweisen, bis eine schwerere Multi-Format-Engine aktiviert wird.',
   tool_archive_extractor_faq_a3:
@@ -954,7 +954,7 @@ const de: SiteLangDict = {
   tool_batch_checksum_release_files_export_csv: 'CSV exportieren',
   tool_batch_checksum_release_files_export_sums: 'SUMS exportieren',
   tool_batch_checksum_release_files_faq_a1:
-    'Nein. Das Hashen läuft in diesem Tab. Die Dateien bleiben auf dem Gerät und werden nicht auf einen Server hochgeladen. SHA-256 nutzt Web Crypto. MD5 kann crypto-js von einem CDN laden; Ihre Bytes verlassen den Tab nicht.',
+    'Nein. Das Hashen läuft in diesem Tab. Die Dateien bleiben auf dem Gerät und werden nicht auf einen Server hochgeladen. SHA-256 nutzt Web Crypto. MD5 kann crypto-js von dieser Website laden; Ihre Bytes verlassen den Tab nicht.',
   tool_batch_checksum_release_files_faq_a2:
     'Nein. Exporte sind eine CSV-Tabelle und ein SHA256SUMS. Binärdateien packen ist ZIP erstellen — eine andere Aufgabe.',
   tool_batch_checksum_release_files_faq_a3:
@@ -981,7 +981,8 @@ const de: SiteLangDict = {
   tool_batch_checksum_release_files_md5_label: 'Auch MD5 berechnen',
   tool_batch_checksum_release_files_rules_body:
     'SHA-256 nutzt Web Crypto auf Bytes, die in 4-MiB-Scheiben gelesen und zusammengefügt werden. Ausgabe ist Tabelle, CSV und SUMS, nie ein ZIP der Originale.',
-  tool_batch_checksum_release_files_rules_item_1: 'SHA-256 läuft immer. MD5 ist optional und lädt crypto-js von einem CDN; die Bytes bleiben im Tab.',
+  tool_batch_checksum_release_files_rules_item_1:
+    'SHA-256 läuft immer. MD5 ist optional und lädt crypto-js von dieser Website; die Bytes bleiben im Tab.',
   tool_batch_checksum_release_files_rules_item_2:
     'SUMS-Zeilen folgen GNU sha256sum: Hex, zwei Leerzeichen oder Leerzeichen-Stern, dann der Name. Extra-Namen im Paste erscheinen als fehlend.',
   tool_batch_checksum_release_files_rules_item_3:
@@ -1035,7 +1036,7 @@ const de: SiteLangDict = {
     'Beispiel laden erzeugt zwei kurze PDFs mit einer Bildseite, wendet die E-Mail-Voreinstellung auf jede an, lässt zwei Dateien im ZIP und zeigt gesparte Bytes.',
   tool_batch_compress_pdfs_for_email_example_title: 'Beispiel',
   tool_batch_compress_pdfs_for_email_faq_a1:
-    'Nein. Rasterung und Neuaufbau laufen in diesem Tab. Die Dateien bleiben auf dem Gerät und werden nicht auf einen Server hochgeladen. pdf.js, pdf-lib und die ZIP-Hilfe können von einem CDN kommen; Ihre PDFs verlassen den Tab nicht.',
+    'Nein. Rasterung und Neuaufbau laufen in diesem Tab. Die Dateien bleiben auf dem Gerät und werden nicht auf einen Server hochgeladen. pdf.js, pdf-lib und die ZIP-Hilfe können von dieser Website kommen; Ihre PDFs verlassen den Tab nicht.',
   tool_batch_compress_pdfs_for_email_faq_a2:
     'Nein. Sie erhalten ein ZIP mit N PDFs. Zu einem Heft zusammenfügen ist PDF zusammenführen — eine andere Aufgabe, nicht diese Seite.',
   tool_batch_compress_pdfs_for_email_faq_a3:
@@ -1120,7 +1121,7 @@ const de: SiteLangDict = {
     'Beispiel laden legt einen Quer- und einen Hochformatblock ab, setzt SAMPLE, zeigt das erste Bild, wendet dieselbe relative Marke auf beide an und aktiviert ZIP herunterladen.',
   tool_batch_watermark_product_photos_example_title: 'Beispiel',
   tool_batch_watermark_product_photos_faq_a1:
-    'Nein. Lesen und Canvas-Stempel laufen in diesem Tab. Dateien bleiben auf Ihrem Gerät, ohne Server-Upload. Die ZIP-Hilfe kann von einem CDN kommen; Ihre Fotos verlassen den Tab nicht.',
+    'Nein. Lesen und Canvas-Stempel laufen in diesem Tab. Dateien bleiben auf Ihrem Gerät, ohne Server-Upload. Die ZIP-Hilfe kommt von dieser Website; Ihre Fotos verlassen den Tab nicht.',
   tool_batch_watermark_product_photos_faq_a2:
     'Nein. Die Größe ist ein Prozent der kurzen Seite, die neun Anker sind Bruchteile dieser Leinwand. Hoch- und Querformat bleiben in derselben relativen Ecke.',
   tool_batch_watermark_product_photos_faq_a3:
@@ -1638,7 +1639,7 @@ const de: SiteLangDict = {
     'Beispiel laden legt zwei transparente Schachbrett-PNG ab, kodiert sie als PNG neu, füllt die Tabelle und aktiviert ZIP herunterladen. Doppelte Namen werden name (2).png.',
   tool_bulk_compress_png_images_example_title: 'Beispiel',
   tool_bulk_compress_png_images_faq_a1:
-    'Nein. Dekodieren und PNG-Schreiben laufen in diesem Tab. Dateien bleiben auf Ihrem Gerät, ohne Server-Upload. Ein ZIP-Helfer kann von einem CDN kommen; Ihre Bilder verlassen den Tab nicht.',
+    'Nein. Dekodieren und PNG-Schreiben laufen in diesem Tab. Dateien bleiben auf Ihrem Gerät, ohne Server-Upload. Ein ZIP-Helfer kommt von dieser Website; Ihre Bilder verlassen den Tab nicht.',
   tool_bulk_compress_png_images_faq_a2:
     'Nein. Die Ausgabe ist immer PNG. Es gibt keine JPEG-Unterlage. Wenn JPEG für Produktfotos akzeptabel und kleiner sein soll, nutzen Sie Produktfotos in Masse komprimieren.',
   tool_bulk_compress_png_images_faq_a3:
@@ -1724,7 +1725,7 @@ const de: SiteLangDict = {
     'Beispiel laden legt zwei Listing-Fotos an, komprimiert sie als 200-KB-JPEG, füllt die Tabelle und aktiviert ZIP. Doppelte Namen werden name (2).jpg.',
   tool_bulk_compress_product_photos_example_title: 'Beispiel',
   tool_bulk_compress_product_photos_faq_a1:
-    'Nein. Alles läuft in diesem Tab. Dateien bleiben auf Ihrem Gerät, ohne Server-Upload. Das ZIP-Skript darf von einem CDN kommen; Ihre Fotos gehen nicht mit.',
+    'Nein. Alles läuft in diesem Tab. Dateien bleiben auf Ihrem Gerät, ohne Server-Upload. Das ZIP-Skript darf von dieser Website kommen; Ihre Fotos gehen nicht mit.',
   tool_bulk_compress_product_photos_faq_a2:
     'Nicht immer. Bleibt die Datei bei Qualität 0.5 über dem Deckel, steht Miss in der Zeile, die nächstkleinere Datei liegt trotzdem im ZIP.',
   tool_bulk_compress_product_photos_faq_a3: 'Keine zweite Seite. JPEG und JPG sind dieselbe Ausgabe mit Endung .jpg.',
@@ -1825,7 +1826,7 @@ const de: SiteLangDict = {
     'Beispiel laden setzt einen opaken Block und ein transparentes Logo, malt beide auf Weiß, zeigt zwei .jpg-Namen und aktiviert ZIP herunterladen.',
   tool_bulk_convert_images_to_jpg_example_title: 'Beispiel',
   tool_bulk_convert_images_to_jpg_faq_a1:
-    'Nein. Lesen und .jpg-Schreiben laufen in diesem Tab. Dateien bleiben auf Ihrem Gerät, ohne Server-Upload. Ein ZIP-Helfer kann von einem CDN kommen; Ihre Bilder verlassen den Tab nicht.',
+    'Nein. Lesen und .jpg-Schreiben laufen in diesem Tab. Dateien bleiben auf Ihrem Gerät, ohne Server-Upload. Ein ZIP-Helfer kommt von dieser Website; Ihre Bilder verlassen den Tab nicht.',
   tool_bulk_convert_images_to_jpg_faq_a2:
     'Ja. PNG zu JPG ist hier: Dateien wählen, weißen Hintergrund lassen damit Löcher nicht schwarz werden, alles umwandeln.',
   tool_bulk_convert_images_to_jpg_faq_a3:
@@ -1900,7 +1901,7 @@ const de: SiteLangDict = {
     'Beispiel laden legt einen JPEG-Block und ein transparentes Logo ab, schreibt zwei .png und aktiviert ZIP herunterladen. Die JPEG-Zeile zeigt oft ein größeres PNG.',
   tool_bulk_convert_images_to_png_example_title: 'Beispiel',
   tool_bulk_convert_images_to_png_faq_a1:
-    'Nein. Lesen und PNG-Schreiben laufen in diesem Tab. Dateien bleiben auf Ihrem Gerät, ohne Server-Upload. Die ZIP-Hilfe kann von einem CDN kommen; Ihre Bilder verlassen den Tab nicht.',
+    'Nein. Lesen und PNG-Schreiben laufen in diesem Tab. Dateien bleiben auf Ihrem Gerät, ohne Server-Upload. Die ZIP-Hilfe kommt von dieser Website; Ihre Bilder verlassen den Tab nicht.',
   tool_bulk_convert_images_to_png_faq_a2:
     'Nein. JPEG hat nie Löcher gespeichert. JPG zu PNG gibt eine PNG-Hülle; der Hintergrund bleibt undurchsichtig. Echte Löcher überleben nur, wenn die Quelle schon Alpha hatte.',
   tool_bulk_convert_images_to_png_faq_a3:
@@ -1975,7 +1976,7 @@ const de: SiteLangDict = {
     'Beispiel laden legt einen undurchsichtigen Block und ein transparentes Logo ab, schreibt zwei .webp und aktiviert ZIP herunterladen. Das Loch im Logo bleibt.',
   tool_bulk_convert_images_to_webp_example_title: 'Beispiel',
   tool_bulk_convert_images_to_webp_faq_a1:
-    'Nein. Lesen und WebP-Schreiben laufen in diesem Tab. Dateien bleiben auf Ihrem Gerät, ohne Server-Upload. Die ZIP-Hilfe kann von einem CDN kommen; Ihre Bilder verlassen den Tab nicht.',
+    'Nein. Lesen und WebP-Schreiben laufen in diesem Tab. Dateien bleiben auf Ihrem Gerät, ohne Server-Upload. Die ZIP-Hilfe kommt von dieser Website; Ihre Bilder verlassen den Tab nicht.',
   tool_bulk_convert_images_to_webp_faq_a2:
     'Ja. PNG zu WebP ist diese Seite: Dateien wählen, Qualität bei etwa 0.8, alles umwandeln. Löcher bleiben, wenn das PNG Alpha hatte.',
   tool_bulk_convert_images_to_webp_faq_a3:
@@ -2162,7 +2163,7 @@ const de: SiteLangDict = {
   tool_check_pdf_a_compliance_example_title: 'Beispiel',
   tool_check_pdf_a_compliance_fail: 'Nicht gefunden',
   tool_check_pdf_a_compliance_faq_a1:
-    'Nein. Das Rendering läuft in Ihrem Tab (Bibliotheken ggf. per CDN). Ihr PDF wird nicht auf unsere Server hochgeladen.',
+    'Nein. Das Rendering läuft in Ihrem Tab (Bibliotheken ggf. from this site). Ihr PDF wird nicht auf unsere Server hochgeladen.',
   tool_check_pdf_a_compliance_faq_a2:
     'Nein. Es sucht nur fünf Marker in Rohdaten; für profilspezifische Konformität ist etwa veraPDF nötig.',
   tool_check_pdf_a_compliance_faq_a3: 'Encrypted or damaged files show a clear error instead of failing silently.',
@@ -2623,7 +2624,7 @@ const de: SiteLangDict = {
   tool_combine_files_into_one_pdf_example: 'Beispiel laden: Combine sample.',
   tool_combine_files_into_one_pdf_example_title: 'Beispiel',
   tool_combine_files_into_one_pdf_faq_a1:
-    'Nein. Das Rendering läuft in Ihrem Tab (Bibliotheken ggf. per CDN). Ihr PDF wird nicht auf unsere Server hochgeladen.',
+    'Nein. Das Rendering läuft in Ihrem Tab (Bibliotheken ggf. from this site). Ihr PDF wird nicht auf unsere Server hochgeladen.',
   tool_combine_files_into_one_pdf_faq_a2: 'Nein. Dieser Vorgang ist nicht vom Auslesen einer PDF-Textebene abhängig.',
   tool_combine_files_into_one_pdf_faq_a3: 'Encrypted or damaged files show a clear error instead of failing silently.',
   tool_combine_files_into_one_pdf_faq_a4: 'Related PDF tools are listed at the bottom of the page.',
@@ -2676,7 +2677,7 @@ const de: SiteLangDict = {
   tool_compare_two_pdfs_example: 'Beispiel laden: Version A text.',
   tool_compare_two_pdfs_example_title: 'Beispiel',
   tool_compare_two_pdfs_faq_a1:
-    'Nein. Das Rendering läuft in Ihrem Tab (Bibliotheken ggf. per CDN). Ihr PDF wird nicht auf unsere Server hochgeladen.',
+    'Nein. Das Rendering läuft in Ihrem Tab (Bibliotheken ggf. from this site). Ihr PDF wird nicht auf unsere Server hochgeladen.',
   tool_compare_two_pdfs_faq_a2: 'Scanned PDFs are images without a text layer; this tool does not OCR.',
   tool_compare_two_pdfs_faq_a3: 'Encrypted or damaged files show a clear error instead of failing silently.',
   tool_compare_two_pdfs_faq_a4: 'Related PDF tools are listed at the bottom of the page.',
@@ -2728,7 +2729,7 @@ const de: SiteLangDict = {
     'Beispiel laden stellt notes-a.txt (alpha / zweite Zeile / dritte) notes-b.txt gegenüber, dessen Mitte «geänderte Zeile» lautet. Der Zeilenmodus markiert nur diese. Schon beim ersten Zeichnen siehst du das Ergebnis.',
   tool_compare_two_text_files_online_example_title: 'Beispiel',
   tool_compare_two_text_files_online_faq_a1:
-    'Nein. FileReader liest die Bytes in diesem Tab. jsdiff kann als Bibliothek per CDN kommen; deine Dateien gehen nicht auf unsere Server.',
+    'Nein. FileReader liest die Bytes in diesem Tab. jsdiff kann als Bibliothek from this site kommen; deine Dateien gehen nicht auf unsere Server.',
   tool_compare_two_text_files_online_faq_a2:
     'Dateien werden strikt als UTF-8 decodiert; ein führendes BOM wird entfernt. Ungültiges UTF-8 wird abgelehnt statt mit Ersatzzeichen angezeigt. Ältere Codierungen wie Windows-1252 bitte zuerst konvertieren.',
   tool_compare_two_text_files_online_faq_a3:
@@ -2790,7 +2791,7 @@ const de: SiteLangDict = {
     'Beispiel laden erzeugt zwei winzige .docx. Das zweite Memo ändert „meet at noon“ in „meet at 3pm“. Schon beim ersten Anzeigen steht dieser Wortlaut-Diff.',
   tool_compare_two_word_documents_for_differences_example_title: 'Beispiel',
   tool_compare_two_word_documents_for_differences_faq_a1:
-    'Nein. Die Dateien werden in diesem Tab gelesen. mammoth und jsdiff können als Bibliothekscode über ein CDN kommen; Ihre Dokumente werden nicht auf unsere Server hochgeladen.',
+    'Nein. Die Dateien werden in diesem Tab gelesen. mammoth und jsdiff können als Bibliothekscode von dieser Website kommen; Ihre Dokumente werden nicht auf unsere Server hochgeladen.',
   tool_compare_two_word_documents_for_differences_faq_a2:
     'Nein. Word kann Formatierung und Änderungsnachverfolgung vergleichen. Diese Seite zieht nur sichtbaren Text und vergleicht den. Kopf-, Fußzeilen und Formatvorlagen entfallen.',
   tool_compare_two_word_documents_for_differences_faq_a3:
@@ -2918,7 +2919,7 @@ const de: SiteLangDict = {
     'Muster lädt ein Zwei-Seiten-PDF mit Farbblöcken und eingebettetem JPEG, wendet Mittel-Kompression an, zeigt Größe vor/nachher mit Prozent Ersparnis und aktiviert Download von compressed.pdf.',
   tool_compress_pdf_example_title: 'PDF-Dateigröße verkleinern',
   tool_compress_pdf_faq_a1:
-    'Nein. pdf.js und die PDF-Bibliothek laufen in Ihrem Tab (Bibliotheken ggf. vom CDN). Ihr PDF wird nicht auf unsere Server hochgeladen.',
+    'Nein. pdf.js und die PDF-Bibliothek laufen in Ihrem Tab (Bibliotheken von dieser Website). Ihr PDF wird nicht auf unsere Server hochgeladen.',
   tool_compress_pdf_faq_a2:
     'Das Tool rasterisiert jede Seite zu JPEG und baut ein neues PDF. Textlastige oder bereits optimierte Dateien schrumpfen kaum. Kein Cloud-Recompress eingebetteter Streams.',
   tool_compress_pdf_faq_a3:
@@ -3114,58 +3115,76 @@ const de: SiteLangDict = {
   tool_contribution_margin_usecases_title: 'Wann sinnvoll',
   tool_contribution_margin_vc_label: 'Variable Kosten je Stück',
   tool_contribution_margin_vc_ph: 'z. B. 30',
-  tool_convert_html_to_pdf_article: 'HTML in PDF umwandeln. Dateien bleiben auf Ihrem Gerät; ohne Server-Upload.',
+  tool_convert_html_to_pdf_article: 'HTML einfügen oder eine Seiten-URL laden, Skripte entfernen und als A4-PDF speichern.',
   tool_convert_html_to_pdf_choose_file: 'PDF wählen',
   tool_convert_html_to_pdf_choose_files: 'Dateien wählen',
   tool_convert_html_to_pdf_clear: 'Leeren',
-  tool_convert_html_to_pdf_convert: 'Convert',
-  tool_convert_html_to_pdf_desc: 'HTML in PDF umwandeln — Dateien bleiben auf Ihrem Gerät; ohne Server-Upload.',
+  tool_convert_html_to_pdf_convert: 'Umwandeln',
+  tool_convert_html_to_pdf_desc: 'HTML einfügen oder URL laden und in diesem Tab als A4-PDF exportieren.',
   tool_convert_html_to_pdf_description:
-    'HTML in PDF umwandeln. Dateien bleiben auf Ihrem Gerät; ohne Server-Upload. Das Beispiel zeigt eine reale Eingabe und Ausgabe; Schritte und Grenzen stehen auf der Seite.',
+    'HTML zu PDF: Fragment einfügen oder Seiten-URL laden, Skripte und gefährliche Attribute entfernen, Vorschau prüfen, A4 herunterladen. Beim Laden einer URL holt der Server das HTML einmal und speichert es nicht; die Umwandlung bleibt im Tab. JavaScript-lastige Seiten, Druck-CSS und fremde Bilder können von der Live-Seite abweichen.',
   tool_convert_html_to_pdf_download: 'Herunterladen',
-  tool_convert_html_to_pdf_drop_hint: 'Oder hier ablegen. Verarbeitung bleibt in diesem Tab.',
-  tool_convert_html_to_pdf_empty: 'Choose a file first.',
-  tool_convert_html_to_pdf_err_convert: 'Processing failed. Retry.',
-  tool_convert_html_to_pdf_err_encrypted: 'This PDF looks password-protected. Unlock it first.',
-  tool_convert_html_to_pdf_err_load: 'Could not read the file.',
-  tool_convert_html_to_pdf_err_notext: 'No selectable text found (no OCR).',
-  tool_convert_html_to_pdf_err_pdfjs: 'PDF renderer failed to load.',
+  tool_convert_html_to_pdf_drop_hint: 'HTML können Sie auch direkt einfügen. Die Umwandlung bleibt in diesem Tab.',
+  tool_convert_html_to_pdf_empty: 'Zuerst HTML einfügen oder eine URL laden.',
+  tool_convert_html_to_pdf_err_convert: 'Verarbeitung fehlgeschlagen. Bitte erneut versuchen.',
+  tool_convert_html_to_pdf_err_encrypted: 'Dieses PDF scheint passwortgeschützt. Zuerst entsperren.',
+  tool_convert_html_to_pdf_err_load: 'HTML-Quelle konnte nicht gelesen werden.',
+  tool_convert_html_to_pdf_err_notext: 'Kein auswählbarer Text gefunden (kein OCR).',
+  tool_convert_html_to_pdf_err_paste: 'Zwischenablage nicht lesbar. Einfügen erlauben oder das HTML selbst in das Feld legen.',
+  tool_convert_html_to_pdf_err_pdfjs: 'PDF-Renderer konnte nicht geladen werden.',
+  tool_convert_html_to_pdf_err_url: 'Diese URL ließ sich nicht laden. Adresse prüfen oder die Seite blockiert Abrufe.',
+  tool_convert_html_to_pdf_err_url_empty: 'Zuerst eine Seiten-URL eingeben.',
   tool_convert_html_to_pdf_example: 'Beispiel laden: <h1>Hello HTML</h1><p>Sample paragraph f',
   tool_convert_html_to_pdf_example_title: 'Beispiel',
   tool_convert_html_to_pdf_faq_a1:
-    'Nein. Das Rendering läuft in Ihrem Tab (Bibliotheken ggf. per CDN). Ihr PDF wird nicht auf unsere Server hochgeladen.',
-  tool_convert_html_to_pdf_faq_a2: 'Nein. Dieser Vorgang ist nicht vom Auslesen einer PDF-Textebene abhängig.',
-  tool_convert_html_to_pdf_faq_a3: 'Encrypted or damaged files show a clear error instead of failing silently.',
-  tool_convert_html_to_pdf_faq_a4: 'Related PDF tools are listed at the bottom of the page.',
-  tool_convert_html_to_pdf_faq_a5: 'Large files may be slow; try a desktop browser first.',
+    'Eingefügtes HTML bleibt in diesem Tab (Bibliotheken kommen von dieser Website). Beim URL-Laden senden wir die Adresse einmal an den Server, damit er das HTML holt; die Seite wird nicht gespeichert. Das PDF entsteht im Browser.',
+  tool_convert_html_to_pdf_faq_a2: 'Nein. Es wird keine PDF-Textebene ausgelesen.',
+  tool_convert_html_to_pdf_faq_a3: 'Verschlüsselte oder beschädigte Dateien zeigen eine klare Meldung statt still zu scheitern.',
+  tool_convert_html_to_pdf_faq_a4: 'Verwandte PDF-Werkzeuge stehen unten auf der Seite.',
+  tool_convert_html_to_pdf_faq_a5: 'Große Eingaben können langsam sein; zuerst den Desktop-Browser nutzen.',
+  tool_convert_html_to_pdf_faq_a6:
+    'Ja. Adresse eintragen und URL laden. CSS- und Bild-URLs werden absolut. Skripte entfallen vor dem PDF.',
   tool_convert_html_to_pdf_faq_q1: 'Wird meine Datei hochgeladen?',
   tool_convert_html_to_pdf_faq_q2: 'Sind OCR oder auswählbarer PDF-Text nötig?',
-  tool_convert_html_to_pdf_faq_q3: 'What about encrypted files?',
-  tool_convert_html_to_pdf_faq_q4: 'How is this different from related tools?',
-  tool_convert_html_to_pdf_faq_q5: 'Are large files supported?',
-  tool_convert_html_to_pdf_how_body: 'So funktioniert es: Dateien bleiben auf Ihrem Gerät; ohne Server-Upload.',
-  tool_convert_html_to_pdf_how_item_1: 'Choose a PDF or enter content',
-  tool_convert_html_to_pdf_how_item_2: 'Klicken Sie auf „Convert“, um den Vorgang auszuführen',
-  tool_convert_html_to_pdf_how_item_3: 'Review the output area',
-  tool_convert_html_to_pdf_how_item_4: 'Download or print when needed',
+  tool_convert_html_to_pdf_faq_q3: 'Was ist mit verschlüsselten Dateien?',
+  tool_convert_html_to_pdf_faq_q4: 'Worin unterscheidet sich das von verwandten Tools?',
+  tool_convert_html_to_pdf_faq_q5: 'Werden große Dateien unterstützt?',
+  tool_convert_html_to_pdf_faq_q6: 'Kann ich eine Webseite über ihre URL in PDF umwandeln?',
+  tool_convert_html_to_pdf_how_body:
+    'HTML einfügen oder URL laden, umwandeln, Vorschau prüfen, herunterladen. Eingefügtes bleibt auf dem Gerät; ein URL-Abruf geht einmal über den Server.',
+  tool_convert_html_to_pdf_how_item_1: 'HTML einfügen oder URL eingeben und URL laden klicken',
+  tool_convert_html_to_pdf_how_item_2: 'Auf Umwandeln klicken, um ein A4-PDF zu exportieren',
+  tool_convert_html_to_pdf_how_item_3: 'Die Ausgabe prüfen',
+  tool_convert_html_to_pdf_how_item_4: 'Bei Bedarf herunterladen oder drucken',
   tool_convert_html_to_pdf_how_title: 'So funktioniert es',
-  tool_convert_html_to_pdf_html_label: 'HTML source',
-  tool_convert_html_to_pdf_preview_label: 'Preview',
-  tool_convert_html_to_pdf_rules_body: 'Dateien bleiben auf Ihrem Gerät; ohne Server-Upload.',
-  tool_convert_html_to_pdf_rules_item_1: 'HTML in PDF umwandeln.',
-  tool_convert_html_to_pdf_rules_item_2: 'Client-side only; files are not uploaded.',
-  tool_convert_html_to_pdf_rules_item_3: 'No OCR for scanned image-only PDFs.',
-  tool_convert_html_to_pdf_rules_item_4: 'Encrypted or corrupt files fail with readable errors.',
+  tool_convert_html_to_pdf_html_label: 'HTML-Quelle',
+  tool_convert_html_to_pdf_html_paste: 'HTML einfügen',
+  tool_convert_html_to_pdf_preview_label: 'Vorschau',
+  tool_convert_html_to_pdf_rules_body:
+    'Eingefügtes HTML bleibt auf dem Gerät. Beim URL-Laden holt der Server das HTML einmal und speichert es nicht.',
+  tool_convert_html_to_pdf_rules_item_1: 'HTML einfügen oder eine öffentliche URL laden und als PDF speichern.',
+  tool_convert_html_to_pdf_rules_item_2: 'Einfügen bleibt in diesem Tab. URL-Laden sendet die Adresse einmal an den Server.',
+  tool_convert_html_to_pdf_rules_item_3: 'Kein OCR für reine Scan-PDFs.',
+  tool_convert_html_to_pdf_rules_item_4: 'Verschlüsselte oder defekte Dateien scheitern mit lesbarer Meldung.',
   tool_convert_html_to_pdf_rules_title: 'Regeln und Grenzen',
   tool_convert_html_to_pdf_sample: 'Beispiel laden',
-  tool_convert_html_to_pdf_status_done: 'Done.',
-  tool_convert_html_to_pdf_status_working: 'Working…',
+  tool_convert_html_to_pdf_status_done: 'Fertig.',
+  tool_convert_html_to_pdf_status_fetching: 'Seiten-HTML wird geholt…',
+  tool_convert_html_to_pdf_status_waiting: 'Warte, bis Bilder fertig geladen sind…',
+  tool_convert_html_to_pdf_status_working: 'Wird verarbeitet…',
   tool_convert_html_to_pdf_title: 'HTML in PDF umwandeln',
-  tool_convert_html_to_pdf_usecase_1: 'Office: quick PDF tasks without desktop software',
-  tool_convert_html_to_pdf_usecase_2: 'Students: local preview and export',
-  tool_convert_html_to_pdf_usecase_3: 'Privacy-sensitive files that must stay on device',
+  tool_convert_html_to_pdf_url_hint: 'Wir holen das HTML einmal und machen CSS- und Bild-URLs absolut. Skripte entfallen.',
+  tool_convert_html_to_pdf_url_label: 'Seiten-URL',
+  tool_convert_html_to_pdf_url_load: 'URL laden',
+  tool_convert_html_to_pdf_url_placeholder: 'https://example.com',
+  tool_convert_html_to_pdf_usecase_1: 'Öffentliche Seite ohne Druckertreiber als PDF sichern',
+  tool_convert_html_to_pdf_usecase_2: 'E-Mail- oder Kampagnen-HTML einfügen und exportieren',
+  tool_convert_html_to_pdf_usecase_3: 'Quelltext im Tab lassen und die URL nur bei Bedarf holen',
   tool_convert_html_to_pdf_usecases_title: 'Gute Einsätze',
-  tool_convert_html_to_pdf_warn_large: 'Large file — may be slow.',
+  tool_convert_html_to_pdf_wait_hint:
+    'Zusätzliche Sekunden, nachdem Bilder zu laden beginnen. Vorgabe: 3. Erhöhen, wenn im PDF leere Bildflächen bleiben.',
+  tool_convert_html_to_pdf_wait_label: 'Wartezeit (Sek.)',
+  tool_convert_html_to_pdf_warn_large: 'Große Dateien können langsam sein.',
   tool_convert_pdf_to_dwg_article:
     'PDF Richtung DWG bringen: ASCII-DXF mit TEXT und Seitenrahmen, das AutoCAD öffnet. Der Browser kann kein proprietäres DWG schreiben. Dateien bleiben auf Ihrem Gerät; ohne Server-Upload.',
   tool_convert_pdf_to_dwg_choose_file: 'PDF wählen',
@@ -3304,7 +3323,7 @@ const de: SiteLangDict = {
     'Beispiel laden erzeugt eine einabsätzige .docx, zeigt die HTML-Vorschau und exportiert eine PDF-Seite.',
   tool_convert_word_document_to_pdf_example_title: 'Beispiel',
   tool_convert_word_document_to_pdf_faq_a1:
-    'Nein. Die Umwandlung läuft in Ihrem Tab (Bibliotheken können vom CDN kommen). Die Datei geht nicht auf unsere Server.',
+    'Nein. Die Umwandlung läuft in Ihrem Tab (Bibliotheken kommen von dieser Website). Die Datei geht nicht auf unsere Server.',
   tool_convert_word_document_to_pdf_faq_a2:
     'Der Weg ist .docx → HTML → PDF. Kopfzeilen und Gleitobjekte verflachen. Haben Sie schon HTML, nutzen Sie HTML in PDF umwandeln.',
   tool_convert_word_document_to_pdf_faq_a3: 'Nein. Speichern Sie zuerst als .docx. Diese Seite akzeptiert nur das Office-Open-XML-Paket.',
@@ -3566,7 +3585,7 @@ const de: SiteLangDict = {
     'Beispiel erzeugt eine leere Seite mit Name und Email, listet beide Namen, zeigt die Vorschau und aktiviert pdf-form.pdf.',
   tool_create_pdf_form_example_title: 'Beispiel',
   tool_create_pdf_form_faq_a1:
-    'Nein. Seite und Felder entstehen in diesem Tab. CDN-Skripte können laden; Ihr Formular geht nicht auf unsere Server.',
+    'Nein. Seite und Felder entstehen in diesem Tab. Skripte können von dieser Website laden; Ihr Formular geht nicht auf unsere Server.',
   tool_create_pdf_form_faq_a2:
     'Nutzen Sie PDF ausfüllbar machen, um Felder auf eine vorhandene Datei zu legen. Diese Seite startet leer.',
   tool_create_pdf_form_faq_a3: 'Typ auf Kästchen stellen, benennen, Feld hinzufügen. Der Kasten nutzt Ihre X/Y-Größe.',
@@ -3624,7 +3643,7 @@ const de: SiteLangDict = {
     'Beispiel laden legt notes.txt, ein kleines photo.png und docs/readme.md an und baut sample.zip. ZIP herunterladen ist auf dem ersten Bildschirm bereit.',
   tool_create_zip_file_example_title: 'Beispiel',
   tool_create_zip_file_faq_a1:
-    'Nein. Bytes werden in diesem Tab gelesen. Das Engine-Skript kann von einem CDN kommen, aber Ihre Dateien werden nicht auf unsere Server hochgeladen.',
+    'Nein. Bytes werden in diesem Tab gelesen. Das Engine-Skript kommt von dieser Website, aber Ihre Dateien werden nicht auf unsere Server hochgeladen.',
   tool_create_zip_file_faq_a2:
     'Meldet der Browser webkitRelativePath (Ordner-Drop oder Verzeichniswahl), werden diese Pfade nach Entfernen von ../ zu ZIP-Einträgen. Das ist die Aufgabe „Ordner zippen“ auf dieser Seite.',
   tool_create_zip_file_faq_a3:
@@ -3690,7 +3709,7 @@ const de: SiteLangDict = {
     'Muster erstellt eine Einseiten-PDF, schneidet 36 pt auf allen Seiten ab und aktiviert cropped.pdf mit Größenstatistik.',
   tool_crop_pdf_example_title: 'Beispiel',
   tool_crop_pdf_faq_a1:
-    'Nein. die PDF-Bibliothek läuft in Ihrem Tab (Skripte ggf. von CDN). Ihre PDF wird nicht auf unsere Server hochgeladen.',
+    'Nein. die PDF-Bibliothek läuft in Ihrem Tab (Skripte von dieser Website). Ihre PDF wird nicht auf unsere Server hochgeladen.',
   tool_crop_pdf_faq_a2:
     'Dieses Tool verengt PDF-Boxen per Punkt-Rändern—kein Rechteck auf der Vorschau ziehen wie bei Bildern.',
   tool_crop_pdf_faq_a3: 'Richtig. Nur Punkteingabe; kein Freihand-Rahmen oder Pixelbearbeitung—Bild-Tool nutzen, wenn nötig.',
@@ -3766,7 +3785,7 @@ const de: SiteLangDict = {
   tool_csv_json_faq_a4:
     'Objekte werden zu Spalten mit Punktpfaden abgeflacht (dim.w, dim.h). Arrays werden als JSON-String in einer einzelnen Zelle geschrieben. Die Spalten sind die Vereinigung aller Schlüssel; fehlende Werte bleiben leer.',
   tool_csv_json_faq_a5:
-    'Nein. Das Parsen bleibt in diesem Tab und gewählte Dateien werden lokal gelesen. Ein CDN kann Papa Parse ausliefern; diese Anfrage lädt nur Code, kein Upload Ihres CSV oder JSON.',
+    'Nein. Das Parsen bleibt in diesem Tab und gewählte Dateien werden lokal gelesen. Diese Website kann Papa Parse ausliefern; diese Anfrage lädt nur Code, kein Upload Ihres CSV oder JSON.',
   tool_csv_json_faq_q1: 'Werden Semikolon oder Tab unterstützt, nicht nur Komma?',
   tool_csv_json_faq_q2: 'Bleiben Zahlen, führende Nullen und IDs erhalten?',
   tool_csv_json_faq_q3: 'Wie werden Felder mit Kommas, Anführungszeichen oder Zeilenumbrüchen behandelt?',
@@ -3799,7 +3818,7 @@ const de: SiteLangDict = {
   tool_csv_json_rules_item_3:
     'JSON → CSV: Objekte werden über Punktpfade abgeflacht (dim.w, dim.h); Arrays werden als JSON-String in einer Zelle geschrieben; Spalten sind die Vereinigung aller Schlüssel, Fehlendes bleibt leer.',
   tool_csv_json_rules_item_4:
-    'Datenschutz: Ihr Text und Ihre Dateien werden nicht hochgeladen. Das Laden von Papa Parse über ein CDN lädt nur Bibliothekscode, nicht Ihre Daten.',
+    'Datenschutz: Ihr Text und Ihre Dateien werden nicht hochgeladen. Das Laden von Papa Parse von dieser Website lädt nur Bibliothekscode, nicht Ihre Daten.',
   tool_csv_json_rules_title: 'Regeln, mit denen Sie rechnen sollten',
   tool_csv_json_sample: 'Beispiel laden',
   tool_csv_json_sample_csv: 'sku,title,price\nA-001,"Chair, oak",129.9\nA-002,Desk,89',
@@ -4207,7 +4226,7 @@ const de: SiteLangDict = {
     'Beispiel erzeugt eine PDF mit Name und Email, listet beide Zeilen, zeigt die Vorschau und erlaubt Umbenennen oder Entfernen vor dem Download.',
   tool_edit_pdf_form_fields_example_title: 'Beispiel',
   tool_edit_pdf_form_fields_faq_a1:
-    'Nein. Liste und Edits laufen in diesem Tab. CDN-Bibliotheken können laden; Ihre PDF geht nicht auf unsere Server.',
+    'Nein. Liste und Edits laufen in diesem Tab. Bibliotheken können von dieser Website laden; Ihre PDF geht nicht auf unsere Server.',
   tool_edit_pdf_form_fields_faq_a2:
     'Umbenennen schreibt einen neuen internen Namen. Entfernen löscht das Widget. Schon getippte Werte können beim Entfernen verloren gehen.',
   tool_edit_pdf_form_fields_faq_a3: 'Eine PDF ohne Felder zeigt einen Fehler mit Link zu PDF ausfüllbar machen.',
@@ -4265,7 +4284,7 @@ const de: SiteLangDict = {
     'Beispiel laden erzeugt eine Seite mit „Hello edit PDF text sample.“, füllt den Editor und Übernehmen liefert ein herunterladbares PDF.',
   tool_edit_pdf_text_online_example_title: 'Beispiel',
   tool_edit_pdf_text_online_faq_a1:
-    'Nein. Bibliotheken können per CDN kommen, Ihr PDF bleibt aber in diesem Tab und geht nicht auf unsere Server.',
+    'Nein. Bibliotheken können from this site kommen, Ihr PDF bleibt aber in diesem Tab und geht nicht auf unsere Server.',
   tool_edit_pdf_text_online_faq_a2:
     'Nein. Das ist keine Glyphenbearbeitung vor Ort. Text wird geholt, Sie ändern ihn, Seiten werden einfach neu gezeichnet. Schriften und exakte Spalten bleiben nicht.',
   tool_edit_pdf_text_online_faq_a3:
@@ -4397,7 +4416,7 @@ const de: SiteLangDict = {
     'Beispiel laden vergleicht zwei CSV-Tabellen. Name/Qty-Köpfe passen; die Gadget-Menge ist 2 gegen 9, daher steht B3. Schon beim ersten Anzeigen erscheint diese Zelle.',
   tool_excel_compare_files_example_title: 'Beispiel',
   tool_excel_compare_files_faq_a1:
-    'Nein. Die Bytes werden in diesem Tab mit SheetJS gelesen. Die Bibliothek kann über ein CDN kommen; Ihre Dateien werden nicht auf unsere Server hochgeladen.',
+    'Nein. Die Bytes werden in diesem Tab mit SheetJS gelesen. Die Bibliothek kann von dieser Website kommen; Ihre Dateien werden nicht auf unsere Server hochgeladen.',
   tool_excel_compare_files_faq_a2:
     'Ja: das erste Blatt ist standardmäßig gewählt. Über die Blattlisten ein anderes Register derselben Datei wählen. Andere Blätter werden erst verglichen, wenn Sie sie wählen.',
   tool_excel_compare_files_faq_a3:
@@ -4572,7 +4591,7 @@ const de: SiteLangDict = {
   tool_extract_text_from_pdf_example_title: 'Beispiel',
   tool_extract_text_from_pdf_extract: 'Extract',
   tool_extract_text_from_pdf_faq_a1:
-    'Nein. Das Rendering läuft in Ihrem Tab (Bibliotheken ggf. per CDN). Ihr PDF wird nicht auf unsere Server hochgeladen.',
+    'Nein. Das Rendering läuft in Ihrem Tab (Bibliotheken ggf. from this site). Ihr PDF wird nicht auf unsere Server hochgeladen.',
   tool_extract_text_from_pdf_faq_a2: 'Scanned PDFs are images without a text layer; this tool does not OCR.',
   tool_extract_text_from_pdf_faq_a3: 'Encrypted or damaged files show a clear error instead of failing silently.',
   tool_extract_text_from_pdf_faq_a4:
@@ -4614,19 +4633,20 @@ const de: SiteLangDict = {
   tool_feedback_email_label: 'E-Mail',
   tool_feedback_message_label: 'Nachricht',
   tool_feedback_message_placeholder: 'Beschreibe das Problem oder den Vorschlag…',
+  tool_feedback_report_bug: 'Fehler auf GitHub melden',
   tool_feedback_subject: 'Tool-Feedback',
   tool_feedback_subject_label: 'Betreff',
   tool_feedback_title: 'Fragen oder Feedback',
   tool_feedback_to_label: 'An',
   tool_file_hash_algo_label: 'Algorithmen',
   tool_file_hash_article:
-    'Berechne MD5- und SHA-Hex-Digests für eingefügten Text oder eine lokale Datei. Vergleiche Release-Checksums, Config-Fingerabdrücke oder prüfe Downloads — Hashing bleibt im Browser, außer einmaligem CDN-Fetch bei MD5.',
+    'Berechne MD5- und SHA-Hex-Digests für eingefügten Text oder eine lokale Datei. Vergleiche Release-Checksums, Config-Fingerabdrücke oder prüfe Downloads — Hashing bleibt im Browser, außer einmaligem Laden von dieser Website bei MD5.',
   tool_file_hash_clear: 'Leeren',
   tool_file_hash_copy: 'Alles kopieren',
   tool_file_hash_copy_done: 'Kopiert',
   tool_file_hash_desc: 'Text oder Dateien lokal hashen — MD5-, SHA-1-, SHA-256-, SHA-384-, SHA-512-Hex-Digests.',
   tool_file_hash_description:
-    'Hashe eingefügten Text oder eine lokale Datei im Browser. Schritte: Text oder Datei wählen, MD5/SHA ankreuzen, Hash klicken, Kleinbuchstaben-Hex kopieren. Beispiel: Text `hello` → SHA-256 `2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b0184`. Dateien werden lokal gelesen; MD5 lädt crypto-js nur bei Auswahl vom CDN.',
+    'Hashe eingefügten Text oder eine lokale Datei im Browser. Schritte: Text oder Datei wählen, MD5/SHA ankreuzen, Hash klicken, Kleinbuchstaben-Hex kopieren. Beispiel: Text `hello` → SHA-256 `2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b0184`. Dateien werden lokal gelesen; MD5 lädt crypto-js nur bei Auswahl von dieser Website.',
   tool_file_hash_empty: 'Zuerst Text einfügen oder Datei wählen.',
   tool_file_hash_example:
     'Text `hello` mit SHA-256 → `2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b0184`. MD5 derselben Zeichenkette → `5d41402abc4b2a76b9719d911017c592`. Text nutzt UTF-8-Bytes; Dateien rohe Bytes.',
@@ -4638,7 +4658,7 @@ const de: SiteLangDict = {
   tool_file_hash_faq_a3:
     'Text wird als UTF-8-kodierte Bytes gehasht. Eine Datei als roher Byte-Stream. Gleiche Buchstaben in einer `.txt` können vom eingefügten Text abweichen, wenn Encoding oder Zeilenenden differieren.',
   tool_file_hash_faq_a4:
-    'Kein Upload. Text und Dateien bleiben auf dem Gerät. SHA-* nutzt Web Crypto. Nur MD5 lädt crypto-js von jsDelivr — Inhalt geht nicht ans CDN.',
+    'Kein Upload. Text und Dateien bleiben auf dem Gerät. SHA-* nutzt Web Crypto. Nur MD5 lädt crypto-js von dieser Website — Inhalt geht nicht an Dritte.',
   tool_file_hash_faq_a5:
     'Ausgabe als Kleinbuchstaben-Hex ohne `0x`-Präfix, eine Zeile pro Algorithmus. Entspricht üblichen `md5sum` / `sha256sum` unter Linux und macOS.',
   tool_file_hash_faq_q1: 'Wann MD5, wann SHA-256?',
@@ -4655,7 +4675,8 @@ const de: SiteLangDict = {
   tool_file_hash_input_mode_label: 'Eingabemodus',
   tool_file_hash_large_warn:
     'Datei über 100 MB. Hashing kann langsam sein oder viel Speicher brauchen — für sehr große Archive Desktop-Tool erwägen.',
-  tool_file_hash_md5_fail: 'MD5-Bibliothek vom CDN konnte nicht geladen werden. SHA-256 versuchen oder Netzwerk prüfen.',
+  tool_file_hash_md5_fail:
+    'MD5-Bibliothek von dieser Website konnte nicht geladen werden. SHA-256 versuchen oder Netzwerk prüfen.',
   tool_file_hash_no_algo: 'Mindestens einen Algorithmus auswählen.',
   tool_file_hash_output_label: 'Hex-Digests',
   tool_file_hash_progress_label: 'Datei wird gelesen…',
@@ -4668,7 +4689,7 @@ const de: SiteLangDict = {
   tool_file_hash_rules_item_3:
     'Leerer Text oder Zero-Byte-Datei liefert den Standard-Empty-Input-Digest pro Algorithmus (gültiges Hex).',
   tool_file_hash_rules_item_4:
-    'Datenschutz: kein Upload. MD5 ist der einzige Pfad mit CDN-Fetch für crypto-js; SHA-* nur eingebautes Web Crypto.',
+    'Datenschutz: kein Upload. MD5 ist der einzige Pfad mit Laden von crypto-js von dieser Website; SHA-* nur eingebautes Web Crypto.',
   tool_file_hash_rules_title: 'Erwartete Regeln',
   tool_file_hash_sample: 'Beispiel laden',
   tool_file_hash_sample_text: 'hello',
@@ -4759,7 +4780,7 @@ const de: SiteLangDict = {
     'Beispiel erzeugt eine PDF mit Name und Email, füllt Ada Lovelace / ada@example.com, zeigt die Vorschau und aktiviert den Download.',
   tool_fill_out_pdf_form_example_title: 'Beispiel',
   tool_fill_out_pdf_form_faq_a1:
-    'Nein. Das Ausfüllen läuft in diesem Tab. Bibliotheken können von einem CDN kommen, Ihre PDF geht nicht auf unsere Server.',
+    'Nein. Das Ausfüllen läuft in diesem Tab. Bibliotheken können von dieser Website kommen, Ihre PDF geht nicht auf unsere Server.',
   tool_fill_out_pdf_form_faq_a2:
     'Oft ein Scan oder eine reine Druckdatei. Felder zuerst unter PDF ausfüllbar machen anlegen, dann zurück.',
   tool_fill_out_pdf_form_faq_a3: 'Ja. Kästchen als Häkchen; Listen und Radios als kurze Auswahl, wenn die PDF Optionen liefert.',
@@ -6190,7 +6211,7 @@ const de: SiteLangDict = {
   tool_images_to_gif_err_encode: 'Could not export. Try a smaller image or another format.',
   tool_images_to_gif_example: 'Sample creates a three-frame looping GIF from color blocks.',
   tool_images_to_gif_example_title: 'Beispiel',
-  tool_images_to_gif_faq_a1: 'No—encoding is local (library may load from CDN).',
+  tool_images_to_gif_faq_a1: 'No—encoding is local (library loads from this site).',
   tool_images_to_gif_faq_a2: 'Converter makes a still GIF from one image; this animates many frames.',
   tool_images_to_gif_faq_a3: 'GIF uses a limited palette—gradients may dither.',
   tool_images_to_gif_faq_a4: 'No audio in GIF.',
@@ -6243,7 +6264,7 @@ const de: SiteLangDict = {
   tool_images_to_pdf_err_encode: 'Could not export. Try a smaller image or another format.',
   tool_images_to_pdf_example: 'Sample builds a three-page PDF from three color blocks.',
   tool_images_to_pdf_example_title: 'JPG in PDF umwandeln',
-  tool_images_to_pdf_faq_a1: 'No—pdf-lib runs locally (library may load from CDN).',
+  tool_images_to_pdf_faq_a1: 'No—pdf-lib runs locally (library loads from this site).',
   tool_images_to_pdf_faq_a2: 'Merge makes one image; this makes multi-page PDF.',
   tool_images_to_pdf_faq_a3: 'Derived from orientation and fit rules on each image.',
   tool_images_to_pdf_faq_a4: 'Any PDF reader works.',
@@ -6316,7 +6337,7 @@ const de: SiteLangDict = {
   tool_images_to_ppt_rules_body: 'Each list item becomes one slide; images are centered with contain fit on 16:9.',
   tool_images_to_ppt_rules_item_1: 'Default layout is widescreen 16:9.',
   tool_images_to_ppt_rules_item_2: 'Order follows the list.',
-  tool_images_to_ppt_rules_item_3: 'CDN library load does not upload your files to us.',
+  tool_images_to_ppt_rules_item_3: 'Loading scripts from this site does not upload your files to us.',
   tool_images_to_ppt_rules_item_4: 'Huge images are scaled for slides.',
   tool_images_to_ppt_rules_title: 'Regeln',
   tool_images_to_ppt_sample: 'Beispiel laden',
@@ -6364,7 +6385,7 @@ const de: SiteLangDict = {
   tool_images_to_word_rules_body: 'Images are embedded as PNG runs; a page break follows each image except the last.',
   tool_images_to_word_rules_item_1: 'Width targets ~550px in the document flow.',
   tool_images_to_word_rules_item_2: 'Order follows the list.',
-  tool_images_to_word_rules_item_3: 'Libraries may load from CDN; files are not uploaded to us.',
+  tool_images_to_word_rules_item_3: 'Library scripts load from this site; files are not uploaded to us.',
   tool_images_to_word_rules_item_4: 'Very large images are scaled down for embedding.',
   tool_images_to_word_rules_title: 'Regeln',
   tool_images_to_word_sample: 'Beispiel laden',
@@ -7121,7 +7142,7 @@ const de: SiteLangDict = {
   tool_json_schema_validator_copy_errors: 'Fehler kopieren',
   tool_json_schema_validator_desc: 'JSON gegen Schema prüfen mit JSON-Pointer-Fehlern — lokal draft-07.',
   tool_json_schema_validator_description:
-    'Prüfen Sie JSON gegen ein JSON Schema (draft-07) im Browser. Schritte: Schema und Instanz einfügen, prüfen, jeden Fehler per JSON Pointer lesen. Beispiel: ein Produkt ohne price scheitert mit missingProperty. Der Text bleibt im Tab; Ajv lädt nur Bibliothekscode vom CDN.',
+    'Prüfen Sie JSON gegen ein JSON Schema (draft-07) im Browser. Schritte: Schema und Instanz einfügen, prüfen, jeden Fehler per JSON Pointer lesen. Beispiel: ein Produkt ohne price scheitert mit missingProperty. Der Text bleibt im Tab; Ajv lädt nur Bibliothekscode von dieser Website.',
   tool_json_schema_validator_draft_note: 'Engine: Ajv 8 · JSON Schema draft-07 (Standard).',
   tool_json_schema_validator_empty: 'Bitte zuerst Schema und Instanz-JSON einfügen.',
   tool_json_schema_validator_example:
@@ -7134,7 +7155,7 @@ const de: SiteLangDict = {
     'instancePath ist ein JSON Pointer in die Instanz (leer als /). Fehlt required, ergänzt Ajv missingProperty in params.',
   tool_json_schema_validator_faq_a3:
     'Diese Seite nutzt Ajvs draft-07-Dialekt. 2019-09 / 2020-12 brauchen andere Builds und sind hier nicht wählbar.',
-  tool_json_schema_validator_faq_a4: 'Schema und JSON werden nicht hochgeladen. Das CDN lädt nur Ajv-Code, nicht Ihren Paste.',
+  tool_json_schema_validator_faq_a4: 'Schema und JSON werden nicht hochgeladen. Diese Website lädt nur Ajv-Code, nicht Ihren Paste.',
   tool_json_schema_validator_faq_a5:
     'Schema und Modell-JSON einfügen, prüfen, jeden Pointer korrigieren bis es passt — sinnvoll vor strukturierter Ausgabe weiter unten in der Pipeline.',
   tool_json_schema_validator_faq_q1: 'Warum ist die Prüfung fehlgeschlagen?',
@@ -7162,7 +7183,7 @@ const de: SiteLangDict = {
   tool_json_schema_validator_rules_item_2:
     'Validierung: allErrors sammelt alle Fehler. Jede Zeile: instancePath + message (+ missingProperty falls nötig).',
   tool_json_schema_validator_rules_item_3: 'Draft: Dialekt draft-07. 2020-12-Keywords hier nicht voraussetzen.',
-  tool_json_schema_validator_rules_item_4: 'Privatsphäre: Paste bleibt im Tab. CDN lädt nur Ajv-Code.',
+  tool_json_schema_validator_rules_item_4: 'Privatsphäre: Paste bleibt im Tab. Diese Website lädt nur Ajv-Code.',
   tool_json_schema_validator_rules_title: 'Erwartete Regeln',
   tool_json_schema_validator_sample_fail: 'Fehlerbeispiel',
   tool_json_schema_validator_sample_instance_fail: '{"sku":"A-1"}',
@@ -7500,7 +7521,7 @@ const de: SiteLangDict = {
     'Beispiel erzeugt eine leere Seite, setzt FullName bei 48,220 (220×22), zeigt die Vorschau und aktiviert den Download.',
   tool_make_pdf_fillable_example_title: 'Beispiel',
   tool_make_pdf_fillable_faq_a1:
-    'Nein. Das Platzieren läuft in diesem Tab. CDN-Skripte können laden; Ihre PDF geht nicht auf unsere Server.',
+    'Nein. Das Platzieren läuft in diesem Tab. Skripte können von dieser Website laden; Ihre PDF geht nicht auf unsere Server.',
   tool_make_pdf_fillable_faq_a2: 'Ja. Sobald Felder da sind, nutzen Sie PDF-Formular ausfüllen.',
   tool_make_pdf_fillable_faq_a3: 'N Felder hinzufügen. Sie stapeln sich als Field_1, Field_2… mit festem Abstand.',
   tool_make_pdf_fillable_faq_a4:
@@ -7557,7 +7578,7 @@ const de: SiteLangDict = {
   tool_make_pdf_flipbook_example: 'Beispiel laden: Flipbook page one.',
   tool_make_pdf_flipbook_example_title: 'Beispiel',
   tool_make_pdf_flipbook_faq_a1:
-    'Nein. Das Rendering läuft in Ihrem Tab (Bibliotheken ggf. per CDN). Ihr PDF wird nicht auf unsere Server hochgeladen.',
+    'Nein. Das Rendering läuft in Ihrem Tab (Bibliotheken ggf. from this site). Ihr PDF wird nicht auf unsere Server hochgeladen.',
   tool_make_pdf_flipbook_faq_a2: 'Nein. Dieser Vorgang ist nicht vom Auslesen einer PDF-Textebene abhängig.',
   tool_make_pdf_flipbook_faq_a3: 'Encrypted or damaged files show a clear error instead of failing silently.',
   tool_make_pdf_flipbook_faq_a4: 'Related PDF tools are listed at the bottom of the page.',
@@ -7644,7 +7665,7 @@ const de: SiteLangDict = {
   tool_marginal_revenue_usecases_title: 'Wann sinnvoll',
   tool_marginal_revenue_zero_dq: 'ΔQ ist 0 — die Menge muss sich zwischen den Punkten ändern.',
   tool_markdown_article:
-    'Beide Richtungen auf einer URL, mit klaren Grenzen von Bereinigung und Verlust. Einfügen bleibt im Tab; CDN nur für Bibliotheken.',
+    'Beide Richtungen auf einer URL, mit klaren Grenzen von Bereinigung und Verlust. Einfügen bleibt im Tab; nur Bibliotheken von dieser Website.',
   tool_markdown_clear: 'Leeren',
   tool_markdown_copy: 'HTML kopieren',
   tool_markdown_copy_done: 'Kopiert',
@@ -7661,7 +7682,7 @@ const de: SiteLangDict = {
   tool_markdown_export_title: 'Markdown-zu-HTML-Export',
   tool_markdown_faq_a1: 'Bei Markdown → HTML ja — DOMPurify vor Vorschau und Download.',
   tool_markdown_faq_a2: 'Meist nein. Ziel ist ein editierbarer Entwurf.',
-  tool_markdown_faq_a3: 'Umwandlung lokal. CDN liefert nur Bibliotheksdateien.',
+  tool_markdown_faq_a3: 'Umwandlung lokal. Diese Website liefert nur Bibliotheksdateien.',
   tool_markdown_faq_a4: 'Nicht zugesichert — bei Bedarf extern diffen.',
   tool_markdown_faq_a5: 'CommonMark-Basis; optional vollständiges HTML zum Offline-Teilen.',
   tool_markdown_faq_q1: 'Wird HTML von Skripten befreit?',
@@ -7693,7 +7714,7 @@ const de: SiteLangDict = {
   tool_markdown_rules_item_html_md: 'Nach Markdown: zuerst bereinigen, dann Turndown (ATX, fenced code).',
   tool_markdown_rules_item_loss: 'Styles, Skripte, knifflige Tabellen gehen oft verloren. Roundtrip ≠ Original.',
   tool_markdown_rules_item_md_html: 'Nach HTML: CommonMark parsen, danach DOMPurify vor Anzeige/Export.',
-  tool_markdown_rules_privacy: 'Eingefügter Text bleibt clientseitig. CDN-Download ist kein Upload Ihres Dokuments.',
+  tool_markdown_rules_privacy: 'Eingefügter Text bleibt clientseitig. Download von dieser Website ist kein Upload Ihres Dokuments.',
   tool_markdown_rules_title: 'Regeln je Richtung',
   tool_markdown_sample_html: '<h1>Titel</h1>\n<p>Hallo <strong>Welt</strong></p>',
   tool_markdown_sample_md:
@@ -7949,7 +7970,7 @@ const de: SiteLangDict = {
     'Das Beispiel lädt zwei einseitige PDFs (A und B), fügt sie in Listenreihenfolge zusammen und aktiviert Download für ein zweiseitiges merged.pdf.',
   tool_merge_pdf_example_title: 'PDF-Dateien zu einer Datei kombinieren',
   tool_merge_pdf_faq_a1:
-    'Nein. pdf-lib läuft in Ihrem Tab (die Bibliothek kann von einem CDN kommen). PDFs werden nicht auf unsere Server hochgeladen.',
+    'Nein. pdf-lib läuft in Ihrem Tab (die Bibliothek kommt von dieser Website). PDFs werden nicht auf unsere Server hochgeladen.',
   tool_merge_pdf_faq_a2:
     'Bilder zu PDF erstellt ein PDF aus Fotos. Dieses Tool fügt vorhandene PDF-Dateien zu einem Dokument zusammen.',
   tool_merge_pdf_faq_a3: 'Ja — mit Hoch/Runter pro Zeile. Die Listenreihenfolge von oben nach unten ist die Seitenreihenfolge.',
@@ -7977,7 +7998,7 @@ const de: SiteLangDict = {
     'Reihenfolge: Seiten werden nach der Liste kopiert (oberste Datei zuerst). Vor dem Zusammenfügen neu ordnen.',
   tool_merge_pdf_rules_item_2:
     'Engine: pdf-lib lädt jedes PDF und nutzt copyPages in ein neues Dokument — ohne Server-Upload Ihrer Dateien.',
-  tool_merge_pdf_rules_item_3: 'Datenschutz: Bytes bleiben im Tab. Das Bibliotheksskript kann von einem CDN kommen.',
+  tool_merge_pdf_rules_item_3: 'Datenschutz: Bytes bleiben im Tab. Das Bibliotheksskript kommt von dieser Website.',
   tool_merge_pdf_rules_item_4:
     'Grenzen: ≥2 Dateien nötig; verschlüsselte/korrupte PDFs scheitern lesbar; sehr große Mengen können im Speicher langsam sein.',
   tool_merge_pdf_rules_title: 'Regeln, die Sie erwarten sollten',
@@ -8633,7 +8654,7 @@ const de: SiteLangDict = {
   tool_open_pdf_in_browser_example: 'Beispiel laden: Hello browser viewer sample.',
   tool_open_pdf_in_browser_example_title: 'Beispiel',
   tool_open_pdf_in_browser_faq_a1:
-    'Nein. Das Rendering läuft in Ihrem Tab (Bibliotheken ggf. per CDN). Ihr PDF wird nicht auf unsere Server hochgeladen.',
+    'Nein. Das Rendering läuft in Ihrem Tab (Bibliotheken ggf. from this site). Ihr PDF wird nicht auf unsere Server hochgeladen.',
   tool_open_pdf_in_browser_faq_a2: 'Nein. Dieser Vorgang ist nicht vom Auslesen einer PDF-Textebene abhängig.',
   tool_open_pdf_in_browser_faq_a3: 'Encrypted or damaged files show a clear error instead of failing silently.',
   tool_open_pdf_in_browser_faq_a4: 'Related PDF tools are listed at the bottom of the page.',
@@ -8687,7 +8708,7 @@ const de: SiteLangDict = {
     'Das Beispiel lädt ein dreiseitiges PDF, entfernt Seite 2, wendet die neue Reihenfolge an und aktiviert den Download einer zweiseitigen organized.pdf.',
   tool_organize_pdf_example_title: 'Beispiel',
   tool_organize_pdf_faq_a1:
-    'Nein. die PDF-Bibliothek läuft in Ihrem Tab (die Bibliothek kann von einem CDN kommen). Ihre PDF wird nicht auf unsere Server hochgeladen.',
+    'Nein. die PDF-Bibliothek läuft in Ihrem Tab (die Bibliothek kommt von dieser Website). Ihre PDF wird nicht auf unsere Server hochgeladen.',
   tool_organize_pdf_faq_a2:
     'Zusammenfügen kombiniert mehrere PDFs. Teilen exportiert Seiten als mehrere Dateien (oder ZIP). Organisieren ändert die Reihenfolge in einer PDF und lädt eine Datei herunter.',
   tool_organize_pdf_faq_a3: 'Ja—Hoch/Runter pro Zeile. Anwenden kopiert in Listenreihenfolge.',
@@ -8983,7 +9004,7 @@ const de: SiteLangDict = {
     'Muster erstellt ein Drei-Seiten-PDF, nummeriert unten Mitte ab 1 und aktiviert Download numbered.pdf.',
   tool_pdf_page_numbers_example_title: 'Beispiel',
   tool_pdf_page_numbers_faq_a1:
-    'Nein. die PDF-Bibliothek läuft in Ihrem Tab (Skripte ggf. per CDN). Ihr PDF wird nicht auf unsere Server hochgeladen.',
+    'Nein. die PDF-Bibliothek läuft in Ihrem Tab (Skripte ggf. from this site). Ihr PDF wird nicht auf unsere Server hochgeladen.',
   tool_pdf_page_numbers_faq_a2:
     'Ja—„Start bei“ ist die Zahl auf Seite 1 (z. B. 0 für Deckblatt oder 5 nach gelöschten Seiten). Jede folgende Seite +1.',
   tool_pdf_page_numbers_faq_a3:
@@ -9054,7 +9075,7 @@ const de: SiteLangDict = {
   tool_pdf_page_to_image_sizes_example_title: 'Beispiel',
   tool_pdf_page_to_image_sizes_export: 'Exportieren',
   tool_pdf_page_to_image_sizes_faq_a1:
-    'Nein. der Seitenrenderer, die PDF-Bibliothek und die ZIP-Bibliothek laufen in Ihrem Tab (Skripte ggf. vom CDN). Ihre PDF wird nicht auf unsere Server hochgeladen.',
+    'Nein. der Seitenrenderer, die PDF-Bibliothek und die ZIP-Bibliothek laufen in Ihrem Tab (Skripte ggf. von dieser Website). Ihre PDF wird nicht auf unsere Server hochgeladen.',
   tool_pdf_page_to_image_sizes_faq_a2:
     'PDF zu JPG exportiert jede Seite im Originalseitenverhältnis. Dieses Tool wählt eine Seite und passt sie in feste Plattformgrößen ein (contain, zentriert, weiße Ränder).',
   tool_pdf_page_to_image_sizes_faq_a3:
@@ -9112,7 +9133,7 @@ const de: SiteLangDict = {
     'Die Vorschau erstellt eine Zwei-Seiten-PDF, konvertiert jede Seite und aktiviert Download als ZIP mit page-1.jpg und page-2.jpg.',
   tool_pdf_to_jpg_example_title: 'PDF-Seiten in JPG umwandeln',
   tool_pdf_to_jpg_faq_a1:
-    'Nein. der Seitenrenderer und die ZIP-Bibliothek laufen in Ihrem Tab (Skripte ggf. vom CDN). Ihre PDF wird nicht auf unsere Server hochgeladen.',
+    'Nein. der Seitenrenderer und die ZIP-Bibliothek laufen in Ihrem Tab (Skripte ggf. von dieser Website). Ihre PDF wird nicht auf unsere Server hochgeladen.',
   tool_pdf_to_jpg_faq_a2: 'Mehr als eine Seite → ZIP pdf-pages.zip mit page-1.jpg, page-2.jpg usw. Eine Seite → ein JPG direkt.',
   tool_pdf_to_jpg_faq_a3:
     'Bilder zu PDF fügt Fotos zu einer mehrseitigen PDF zusammen. Dieses Tool exportiert jede PDF-Seite als separates JPG.',
@@ -9166,7 +9187,7 @@ const de: SiteLangDict = {
     'Beispiel erstellt einseitige Helvetica-PDF, konvertiert, zeigt den Satz in der Vorschau und aktiviert .md-Download.',
   tool_pdf_to_markdown_example_title: 'Beispiel',
   tool_pdf_to_markdown_faq_a1:
-    'Nein. der Seitenrenderer läuft in Ihrem Tab (Skripte ggf. per CDN). Ihre PDF wird nicht auf unsere Server hochgeladen.',
+    'Nein. der Seitenrenderer läuft in Ihrem Tab (Skripte ggf. from this site). Ihre PDF wird nicht auf unsere Server hochgeladen.',
   tool_pdf_to_markdown_faq_a2: 'Scans sind meist Bilder ohne Textschicht. Ohne OCR bleibt die Extraktion leer — klare Fehlermeldung.',
   tool_pdf_to_markdown_faq_a3: 'Keine Wiederherstellung von Überschriften/Tabellen — einfache Zeilen nach Position.',
   tool_pdf_to_markdown_faq_a4:
@@ -9224,7 +9245,7 @@ const de: SiteLangDict = {
     'Muster erstellt ein Zwei-Seiten-PDF, wendet DRAFT zentriert mit 35 % Deckkraft und −45° auf jeder Seite an und aktiviert Download watermarked.pdf.',
   tool_pdf_watermark_example_title: 'Beispiel',
   tool_pdf_watermark_faq_a1:
-    'Nein. die PDF-Bibliothek läuft in Ihrem Tab (Skripte ggf. per CDN). Ihr PDF wird nicht auf unsere Server hochgeladen.',
+    'Nein. die PDF-Bibliothek läuft in Ihrem Tab (Skripte ggf. from this site). Ihr PDF wird nicht auf unsere Server hochgeladen.',
   tool_pdf_watermark_faq_a2:
     'Wasserzeichen auf Bildern legt Text/Logos auf Fotos. Dieses Tool stempelt jede Seite eines PDF-Dokuments.',
   tool_pdf_watermark_faq_a3:
@@ -9415,7 +9436,7 @@ const de: SiteLangDict = {
   tool_print_pdf_example: 'Beispiel laden: Hello print sample.',
   tool_print_pdf_example_title: 'Beispiel',
   tool_print_pdf_faq_a1:
-    'Nein. Das Rendering läuft in Ihrem Tab (Bibliotheken ggf. per CDN). Ihr PDF wird nicht auf unsere Server hochgeladen.',
+    'Nein. Das Rendering läuft in Ihrem Tab (Bibliotheken ggf. from this site). Ihr PDF wird nicht auf unsere Server hochgeladen.',
   tool_print_pdf_faq_a2: 'Nein. Dieser Vorgang ist nicht vom Auslesen einer PDF-Textebene abhängig.',
   tool_print_pdf_faq_a3: 'Encrypted or damaged files show a clear error instead of failing silently.',
   tool_print_pdf_faq_a4: 'Related PDF tools are listed at the bottom of the page.',
@@ -9808,7 +9829,7 @@ const de: SiteLangDict = {
     'Muster erstellt eine Seite, verschlüsselt mit sample, aktiviert Download protected.pdf und zeigt das Passwort im Status.',
   tool_protect_pdf_example_title: 'PDF mit Passwort schützen',
   tool_protect_pdf_faq_a1:
-    'Nein. die PDF-Bibliothek läuft in Ihrem Tab (Skripte ggf. von CDN). Ihr PDF wird nicht auf unsere Server hochgeladen.',
+    'Nein. die PDF-Bibliothek läuft in Ihrem Tab (Skripte von dieser Website). Ihr PDF wird nicht auf unsere Server hochgeladen.',
   tool_protect_pdf_faq_a2:
     'Gängige PDF-Benutzerpasswort-Verschlüsselung — zum Öffnen nötig. Kein Militärniveau; starkes, merkbares Passwort wählen.',
   tool_protect_pdf_faq_a3:
@@ -10073,7 +10094,7 @@ const de: SiteLangDict = {
     'Muster erstellt ein Zwei-Seiten-PDF, dreht alle 90° im Uhrzeigersinn und aktiviert Download für rotated.pdf.',
   tool_rotate_pdf_example_title: 'Beispiel',
   tool_rotate_pdf_faq_a1:
-    'Nein. die PDF-Bibliothek läuft in Ihrem Tab (Skripte ggf. von CDN). Ihr PDF wird nicht auf unsere Server hochgeladen.',
+    'Nein. die PDF-Bibliothek läuft in Ihrem Tab (Skripte von dieser Website). Ihr PDF wird nicht auf unsere Server hochgeladen.',
   tool_rotate_pdf_faq_a2: 'Ja—die heruntergeladene Datei speichert die neue Ausrichtung. Vor dem Teilen im Viewer prüfen.',
   tool_rotate_pdf_faq_a3:
     'Seiten ab 1: 1-3,5 bedeutet Seiten 1–3 und 5. Leerzeichen optional. Leer oder außerhalb schlägt fehl.',
@@ -10586,7 +10607,7 @@ const de: SiteLangDict = {
   tool_sign_pdf_document_faq_a1:
     'Nein. Hier wird nur ein Bild gestempelt. Für eine Integritätsmarke mit Hash-Präfix nutzen Sie Digitale Signatur auf ein PDF setzen — das ist ebenfalls kein Zertifikats-PKI.',
   tool_sign_pdf_document_faq_a2:
-    'Nein. Das Stempeln läuft in Ihrem Tab (Bibliotheken können vom CDN kommen). Das PDF geht nicht auf unsere Server.',
+    'Nein. Das Stempeln läuft in Ihrem Tab (Bibliotheken kommen von dieser Website). Das PDF geht nicht auf unsere Server.',
   tool_sign_pdf_document_faq_a3:
     'Nein. Platzieren Sie das Bild mit X/Y. Für Passwörter siehe PDF schützen. Für mehr Text: Text zu einer PDF-Datei hinzufügen.',
   tool_sign_pdf_document_faq_a4:
@@ -11060,7 +11081,7 @@ const de: SiteLangDict = {
     'Das Beispiel erzeugt ein dreiseitiges PDF, teilt jede Seite und aktiviert Download für ein ZIP mit page-1.pdf, page-2.pdf und page-3.pdf.',
   tool_split_pdf_example_title: 'Mein PDF aufteilen',
   tool_split_pdf_faq_a1:
-    'Nein. pdf-lib und fflate laufen in Ihrem Tab (Skripte können von einem CDN kommen). Ihr PDF wird nicht hochgeladen.',
+    'Nein. pdf-lib und fflate laufen in Ihrem Tab (Skripte können von dieser Website kommen). Ihr PDF wird nicht hochgeladen.',
   tool_split_pdf_faq_a2:
     'Seiten ab 1: 1-3,5 bedeutet Seiten 1–3 und 5. Leerzeichen optional. Leere oder ungültige Werte scheitern.',
   tool_split_pdf_faq_a3: 'Mehr als eine Datei → ZIP. Genau eine Ausgabe → PDF-Download.',
@@ -11370,7 +11391,7 @@ const de: SiteLangDict = {
   tool_text_diff_faq_a1:
     'Zeilen für Code und Configs. Wörter für Sätze, Mails und Prompts — dann werden einzelne Wörter markiert, nicht ganze Zeilen.',
   tool_text_diff_faq_a2:
-    'Ihr eingefügter Text wird von uns nicht hochgeladen oder gespeichert — der Vergleich läuft im Browser. Die Seite kann jsdiff (Open Source) per CDN laden; Ihr Text geht dabei nicht an unsere Server.',
+    'Ihr eingefügter Text wird von uns nicht hochgeladen oder gespeichert — der Vergleich läuft im Browser. Die Seite kann jsdiff (Open Source) from this site laden; Ihr Text geht dabei nicht an unsere Server.',
   tool_text_diff_faq_a3:
     'Windows nutzt oft CRLF, macOS/Linux LF. „CRLF und LF gleich behandeln“ einschalten, dann erneut vergleichen.',
   tool_text_diff_faq_a4:
@@ -11702,7 +11723,7 @@ const de: SiteLangDict = {
     'Beispiel laden erzeugt eine PDF-Seite mit einem Satz, liest ihn aus und schreibt ein .docx mit demselben Absatz.',
   tool_turn_pdf_into_word_document_example_title: 'Beispiel',
   tool_turn_pdf_into_word_document_faq_a1:
-    'Nein. Extraktion und .docx-Zip laufen in Ihrem Tab (Bibliotheken können vom CDN kommen). Das PDF geht nicht auf unsere Server.',
+    'Nein. Extraktion und .docx-Zip laufen in Ihrem Tab (Bibliotheken kommen von dieser Website). Das PDF geht nicht auf unsere Server.',
   tool_turn_pdf_into_word_document_faq_a2:
     'Scans sind Bilder. Es gibt kein OCR. Nutzen Sie Text aus PDF extrahieren, wenn Sie nur ein .txt der Textschicht brauchen.',
   tool_turn_pdf_into_word_document_faq_a3: 'Nein. Sie erhalten extrahierte Absätze, keinen Pixel-Nachbau.',
@@ -11860,7 +11881,7 @@ const de: SiteLangDict = {
   tool_unlock_pdf_faq_a1:
     'Nein. Entfernt Schutz nur bei korrektem Öffnerpasswort. Kein Knacken, Brute Force oder Wiederherstellen unbekannter Passwörter.',
   tool_unlock_pdf_faq_a2:
-    'Nein. die PDF-Bibliothek läuft in Ihrem Tab (Skripte ggf. vom CDN). Ihr PDF wird nicht auf unsere Server hochgeladen.',
+    'Nein. die PDF-Bibliothek läuft in Ihrem Tab (Skripte ggf. von dieser Website). Ihr PDF wird nicht auf unsere Server hochgeladen.',
   tool_unlock_pdf_faq_a3:
     'Eine klare Meldung bei falschem Passwort. Nutzen Sie dasselbe Passwort wie in PDF schützen oder einer anderen App—wir raten nicht.',
   tool_unlock_pdf_faq_a4:
@@ -11918,7 +11939,7 @@ const de: SiteLangDict = {
   tool_unzip_file_example_title: 'Beispiel',
   tool_unzip_file_exported_all: 'Die Dateien wurden mit sicheren Pfaden in eine neue ZIP-Datei gepackt.',
   tool_unzip_file_faq_a1:
-    'Nein. Die ZIP-Datei wird im Browser-Tab gelesen, und extrahierte Daten bleiben auf Ihrem Gerät. Das ZIP-Skript kann von einem CDN geladen werden, aber Ihr Archiv wird nicht an unsere Server gesendet.',
+    'Nein. Die ZIP-Datei wird im Browser-Tab gelesen, und extrahierte Daten bleiben auf Ihrem Gerät. Das ZIP-Skript wird von dieser Website geladen, aber Ihr Archiv wird nicht an unsere Server gesendet.',
   tool_unzip_file_faq_a2:
     'Diese Seite ist auf ZIP ausgelegt. RAR, 7Z, ISO und TAR.GZ benötigen eine schwerere Mehrformat-Engine und sollten von einem separaten Archiv-Extractor unterstützt werden, sobald diese Funktion existiert.',
   tool_unzip_file_faq_a3:
@@ -12665,7 +12686,7 @@ const de: SiteLangDict = {
     'Beispiel laden füllt zwei Absätze, klickt PDF erstellen und zeigt eine einseitige Vorschau zum Herunterladen.',
   tool_write_pdf_document_online_example_title: 'Beispiel',
   tool_write_pdf_document_online_faq_a1:
-    'Nein. Das Rendering läuft in Ihrem Tab (Bibliotheken ggf. per CDN). Ihr PDF wird nicht auf unsere Server hochgeladen.',
+    'Nein. Das Rendering läuft in Ihrem Tab (Bibliotheken ggf. from this site). Ihr PDF wird nicht auf unsere Server hochgeladen.',
   tool_write_pdf_document_online_faq_a2:
     'Nein. Sie tippen neuen Text in ein Textfeld; die Seite baut ein PDF mit pdf-lib. Es öffnet nie ein vorhandenes PDF.',
   tool_write_pdf_document_online_faq_a3: 'Nein. Für Dateien, die Sie schon haben, nutzen Sie PDF-Text bearbeiten oder Text hinzufügen.',
@@ -12852,7 +12873,7 @@ const de: SiteLangDict = {
   tool_yaml_json_faq_a2:
     'Unter dem DEFAULT-Schema von js-yaml oft ja — nacktes yes/no/on/off kann Boolean werden. „JSON-sichere Typen“ behält diese Scalare als Strings, sofern sie nicht explizit typisiert sind.',
   tool_yaml_json_faq_a3:
-    'Die Umwandlung bleibt im Tab. Ein CDN kann js-yaml ausliefern; der Request lädt nur Code — kein Upload Ihres YAML- oder JSON-Texts.',
+    'Die Umwandlung bleibt im Tab. Diese Website kann js-yaml ausliefern; der Request lädt nur Code — kein Upload Ihres YAML- oder JSON-Texts.',
   tool_yaml_json_faq_a4:
     'Dokumente getrennt durch --- werden mit loadAll gelesen. Ein Dokument → ein JSON-Wert; zwei oder mehr → JSON-Array. Spätere Dokumente werden nicht verworfen.',
   tool_yaml_json_faq_a5:
@@ -12889,7 +12910,7 @@ const de: SiteLangDict = {
   tool_yaml_json_rules_item_3:
     'Roundtrip-Verluste: Kommentare verschwinden (JSON hat keine); Anker/Aliase expandieren zu doppelten Werten; Schlüsselreihenfolge und Stil können nach dem Dump anders sein.',
   tool_yaml_json_rules_item_4:
-    'Privatsphäre: Ihr Paste wird nicht hochgeladen. js-yaml vom CDN lädt nur Bibliothekscode, nicht Ihren Config-Text.',
+    'Privatsphäre: Ihr Paste wird nicht hochgeladen. js-yaml von dieser Website lädt nur Bibliothekscode, nicht Ihren Config-Text.',
   tool_yaml_json_rules_title: 'Feste Verhaltensregeln',
   tool_yaml_json_sample: 'Beispiel laden',
   tool_yaml_json_sample_json: '{\n  "titel": "Hallo",\n  "anzahl": 2\n}',

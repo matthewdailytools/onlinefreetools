@@ -78,6 +78,7 @@ const id: SiteLangDict = {
   tool_feedback_body:
     'Ada yang kurang jelas, rusak, atau hilang? Tulis pesan di bawah — kami membaca setiap catatan tentang alat ini.',
   tool_feedback_cta: 'Buka di aplikasi email',
+  tool_feedback_report_bug: 'Laporkan bug ke GitHub',
   tool_feedback_email_label: 'Email',
   tool_feedback_message_label: 'Pesan',
   tool_feedback_message_placeholder: 'Jelaskan masalah atau saran…',

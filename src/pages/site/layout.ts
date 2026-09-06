@@ -11,6 +11,12 @@ import {
 const SITE_BASE_URL = 'https://onlinefreetools.org';
 const DEFAULT_LANG: SiteLang = 'en';
 
+/** 本站开源仓库 URL（与页脚 `footer.ts`、`scripts/site/config.mjs` 同源）。 */
+const GITHUB_REPO_URL = 'https://github.com/matthewdailytools/onlinefreetools';
+
+/** GitHub 新建 Issue 页；title/body 由 `buildGithubIssueHref` 预填。 */
+const GITHUB_ISSUES_NEW_URL = `${GITHUB_REPO_URL}/issues/new`;
+
 export const escapeHtml = (s: string) =>
 	s
 		.replaceAll('&', '&amp;')
@@ -31,7 +37,30 @@ const withLangPrefix = (lang: SiteLang, pathname: string, defaultLang: SiteLang)
 };
 
 /**
- * 工具页可见面包屑：Home → primary topic → 工具名。
+ * 组装 GitHub 新建 Issue 链接，预填 `[bug] {工具名}` 与页面 URL。
+ * @param toolName 当前工具显示名
+ * @param pageUrl 当前工具页绝对 URL
+ */
+export const buildGithubIssueHref = (toolName: string, pageUrl: string): string => {
+	const title = `[bug] ${toolName}`;
+	const body = `${toolName}\n${pageUrl}\n\n`;
+	return `${GITHUB_ISSUES_NEW_URL}?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
+};
+
+/**
+ * 面包屑行尾的「报告缺陷」外链（新窗口打开 GitHub Issue）。
+ * 不放入 `<ol class="breadcrumb">`，以免污染可见面包屑与 BreadcrumbList JSON-LD。
+ * @param lang 当前语言
+ * @param toolName 工具显示名
+ * @param pageUrl 当前工具页绝对 URL
+ */
+export const renderReportBugLink = (lang: SiteLang, toolName: string, pageUrl: string): string => {
+	const href = buildGithubIssueHref(toolName, pageUrl);
+	return `<a class="tool-report-bug" href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">${escapeHtml(t(lang, 'tool_feedback_report_bug'))}</a>`;
+};
+
+/**
+ * 工具页可见面包屑：Home → primary topic → 工具名；行尾附 GitHub 报缺陷链接。
  * @param lang 当前语言
  * @param defaultLang 默认语言
  * @param toolSlug 工具 slug
@@ -49,6 +78,8 @@ const renderAutoToolBreadcrumb = (
 	const topicLabel = t(lang, TOPIC_I18N_KEYS[topic].labelKey as keyof typeof import('../../site/i18n/en').default);
 	const homeHref = withLangPrefix(lang, '/', defaultLang);
 	const topicHref = withLangPrefix(lang, topicLeafPath(topic), defaultLang);
+	/** 预填 Issue 正文用的本页绝对 URL（默认语无语言前缀）。 */
+	const pageUrl = `${SITE_BASE_URL}${withLangPrefix(lang, `/tools/${toolSlug}`, defaultLang)}`;
 	return `
 <nav class="mb-3 small tool-topic-breadcrumb" aria-label="breadcrumb">
   <ol class="breadcrumb mb-0">
@@ -56,6 +87,7 @@ const renderAutoToolBreadcrumb = (
     <li class="breadcrumb-item"><a href="${escapeHtml(topicHref)}">${escapeHtml(topicLabel)}</a></li>
     <li class="breadcrumb-item active" aria-current="page">${escapeHtml(toolName)}</li>
   </ol>
+  ${renderReportBugLink(lang, toolName, pageUrl)}
 </nav>`;
 };
 

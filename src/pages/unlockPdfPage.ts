@@ -128,15 +128,16 @@ export const renderUnlockPdfPage = (opts: {
 
 	const referencesHtml = renderToolReferencesSection({
 		lang: opts.lang,
-		links: [{ label: 'pdf-lib', href: 'https://pdf-lib.js.org/' }],
+		links: [{ label: 'pdf-lib (Cantoo fork)', href: 'https://github.com/cantoo-scribe/pdf-lib' }],
 	});
 
 	/**
-	 * 客户端脚本：加载加密 PDF（password + ignoreEncryption:false）→ save 得无加密副本。
-	 * 样例用 pdf-lib-with-encrypt 加密，与 protect-pdf 同源，保证端到端可测。
+	 * 客户端脚本：用已知打开密码解密后 save 成无加密 PDF。
+	 * 官方 pdf-lib@1.17.1 与 pdf-lib-with-encrypt 都不能按密码解密（后者只在 save 时加密），
+	 * 故用 Cantoo 分支 @cantoo/pdf-lib（UMD 全局仍是 PDFLib，支持 load({ password })）。
 	 */
 	const extraBodyHtml = `
-  <script src="https://cdn.jsdelivr.net/npm/pdf-lib-with-encrypt@1.2.1/dist/pdf-lib.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/vendor/cantoo-pdf-lib/pdf-lib.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     (function () {
       /** 单文件软警告阈值（字节）。 */
@@ -239,35 +240,29 @@ export const renderUnlockPdfPage = (opts: {
       }
 
       /**
-       * 探测 PDF 是否需要密码。
+       * 探测 PDF 是否需要打开密码（先忽略加密读元数据，再看 isEncrypted）。
        * @param {Uint8Array} bytes
        * @returns {Promise<{ pageCount: number, needsPassword: boolean }>}
        */
       function probePdf(bytes) {
         if (!hasPdfLib()) return Promise.reject(new Error('pdflib'));
-        return PDFLib.PDFDocument.load(bytes, { ignoreEncryption: false })
-          .then(function (doc) {
-            return { pageCount: doc.getPageCount(), needsPassword: false };
-          })
-          .catch(function (err) {
-            if (isPasswordError(err)) {
-              return PDFLib.PDFDocument.load(bytes, { ignoreEncryption: true }).then(function (doc) {
-                return { pageCount: doc.getPageCount(), needsPassword: true };
-              });
-            }
-            return Promise.reject(err);
-          });
+        return PDFLib.PDFDocument.load(bytes, { ignoreEncryption: true }).then(function (doc) {
+          return {
+            pageCount: doc.getPageCount(),
+            needsPassword: !!doc.isEncrypted
+          };
+        });
       }
 
       /**
-       * 用已知密码解锁并返回无加密字节。
+       * 用已知密码解密并返回无加密字节。
        * @param {Uint8Array} bytes
        * @param {string} password
        * @returns {Promise<Uint8Array>}
        */
       function buildUnlocked(bytes, password) {
         if (!hasPdfLib()) return Promise.reject(new Error('pdflib'));
-        return PDFLib.PDFDocument.load(bytes, { password: password, ignoreEncryption: false }).then(function (doc) {
+        return PDFLib.PDFDocument.load(bytes, { password: password }).then(function (doc) {
           return doc.save();
         });
       }

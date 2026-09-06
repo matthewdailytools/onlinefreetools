@@ -17,7 +17,7 @@ const ja: SiteLangDict = {
   tool_organize_pdf_err_organize: "整理に失敗しました。ファイルと一覧を確認して再試行してください。",
   tool_organize_pdf_example: "サンプルは 1–3 と印字した3ページ PDF を読み、2ページ目を外して適用し、2ページの organized.pdf をダウンロード可能にします。",
   tool_organize_pdf_example_title: "例",
-  tool_organize_pdf_faq_a1: "いいえ。PDF ライブラリ はこのタブで動きます（ライブラリは CDN から来る場合あり）。PDF はサーバーに上がりません。",
+  tool_organize_pdf_faq_a1: "いいえ。PDF ライブラリ はこのタブで動きます（ライブラリはこのサイトから読みます）。PDF はサーバーに上がりません。",
   tool_organize_pdf_faq_a2: "結合は複数 PDF を1つに。分割はページを別ファイル（や ZIP）に。整理は1つの PDF 内の順番を直し、1ファイルで出します。",
   tool_organize_pdf_faq_a3: "はい—各行の上へ/下へ。適用は一覧の上から順にコピーします。",
   tool_organize_pdf_faq_a4: "暗号化 PDF はここで開けないことが多いです。先にパスワードを外してください。",

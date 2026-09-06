@@ -19,7 +19,7 @@ const fr: SiteLangDict = {
   tool_open_pdf_in_browser_err_pdfjs: "PDF renderer failed to load.",
   tool_open_pdf_in_browser_example: "Charger un exemple: Hello browser viewer sample.",
   tool_open_pdf_in_browser_example_title: "Exemple",
-  tool_open_pdf_in_browser_faq_a1: "Non. Le rendu s’exécute dans votre onglet (bibliothèques éventuellement via CDN). Votre PDF n’est pas envoyé à nos serveurs.",
+  tool_open_pdf_in_browser_faq_a1: "Non. Le rendu s’exécute dans votre onglet (bibliothèques depuis ce site). Votre PDF n’est pas envoyé à nos serveurs.",
   tool_open_pdf_in_browser_faq_a2: "Non. Cette opération ne dépend pas de l’extraction de la couche texte du PDF.",
   tool_open_pdf_in_browser_faq_a3: "Encrypted or damaged files show a clear error instead of failing silently.",
   tool_open_pdf_in_browser_faq_a4: "Related PDF tools are listed at the bottom of the page.",

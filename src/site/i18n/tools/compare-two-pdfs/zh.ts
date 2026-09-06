@@ -20,7 +20,7 @@ const zh: SiteLangDict = {
   tool_compare_two_pdfs_err_pdfjs: "PDF 渲染库加载失败。",
   tool_compare_two_pdfs_example: "加载样例: Version A text.",
   tool_compare_two_pdfs_example_title: "示例",
-  tool_compare_two_pdfs_faq_a1: "不会。渲染在浏览器标签页完成（库可能从 CDN 加载），PDF 不会上传到我们的服务器。",
+  tool_compare_two_pdfs_faq_a1: "不会。渲染在浏览器标签页完成（库从本站加载），PDF 不会上传到我们的服务器。",
   tool_compare_two_pdfs_faq_a2: "扫描版 PDF 通常是图片，没有文本层，本工具不做 OCR。",
   tool_compare_two_pdfs_faq_a3: "加密或损坏的文件会显示明确错误，不会静默失败。",
   tool_compare_two_pdfs_faq_a4: "相关 PDF 工具在页面底部 Related 区列出，可跳转邻页。",

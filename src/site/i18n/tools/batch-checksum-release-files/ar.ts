@@ -31,7 +31,7 @@ const ar: SiteLangDict = {
 	tool_batch_checksum_release_files_export_csv: 'تصدير CSV',
 	tool_batch_checksum_release_files_export_sums: 'تصدير SUMS',
 	tool_batch_checksum_release_files_faq_a1:
-		'لا. الهاش يجري في هذا التبويب. الملفات تبقى على الجهاز ولا تُرفع إلى خادم. SHA-256 يستخدم Web Crypto. قد يُحمَّل crypto-js لـ MD5 من CDN؛ بايتاتك لا تغادر التبويب.',
+		'لا. الهاش يجري في هذا التبويب. الملفات تبقى على الجهاز ولا تُرفع إلى خادم. SHA-256 يستخدم Web Crypto. قد يُحمَّل crypto-js لـ MD5 من هذا الموقع؛ بايتاتك لا تغادر التبويب.',
 	tool_batch_checksum_release_files_faq_a2:
 		'لا. التصدير جدول CSV وملف SHA256SUMS. تعبئة الثنائيات هي إنشاء ZIP — مهمة أخرى.',
 	tool_batch_checksum_release_files_faq_a3:
@@ -59,7 +59,7 @@ const ar: SiteLangDict = {
 	tool_batch_checksum_release_files_rules_body:
 		'SHA-256 يستخدم Web Crypto على بايتات تُقرأ بشرائح 4 ميبيبايت ثم تُجمع. الخرج جدول وCSV وSUMS وليس ZIP للأصول.',
 	tool_batch_checksum_release_files_rules_item_1:
-		'SHA-256 يعمل دائماً. MD5 اختياري ويحمّل crypto-js من CDN؛ البايتات تبقى في التبويب.',
+		'SHA-256 يعمل دائماً. MD5 اختياري ويحمّل crypto-js من هذا الموقع؛ البايتات تبقى في التبويب.',
 	tool_batch_checksum_release_files_rules_item_2:
 		'أسطر SUMS تشبه sha256sum في GNU: ست عشري، مسافتان أو مسافة ونجمة، ثم الاسم. الأسماء الزائدة في اللصق تظهر ناقصة.',
 	tool_batch_checksum_release_files_rules_item_3:

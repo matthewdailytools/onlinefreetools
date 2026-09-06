@@ -201,7 +201,7 @@ export const renderJsonSchemaValidatorPage = (opts: {
       async function ensureAjv() {
         if (AjvCtor) return AjvCtor;
         try {
-          var mod = await import('https://cdn.jsdelivr.net/npm/ajv@8.17.1/+esm');
+          var mod = await import('/vendor/ajv/ajv.esm.js');
           AjvCtor = mod.default || mod.Ajv || mod;
           if (typeof AjvCtor !== 'function') throw new Error('no Ajv export');
           return AjvCtor;

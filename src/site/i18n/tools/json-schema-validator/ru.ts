@@ -13,7 +13,7 @@ const ru: SiteLangDict = {
   tool_json_schema_validator_desc:
     'Проверка JSON по Schema с ошибками JSON Pointer — локальный draft-07.',
   tool_json_schema_validator_description:
-    'Проверяйте JSON по JSON Schema (draft-07) в браузере. Шаги: вставьте Schema и экземпляр, проверьте, читайте каждый сбой по JSON Pointer. Пример: товар без price падает с missingProperty. Текст остаётся во вкладке; Ajv подгружается с CDN только как код библиотеки.',
+    'Проверяйте JSON по JSON Schema (draft-07) в браузере. Шаги: вставьте Schema и экземпляр, проверьте, читайте каждый сбой по JSON Pointer. Пример: товар без price падает с missingProperty. Текст остаётся во вкладке; Ajv подгружается с этого сайта только как код библиотеки.',
   tool_json_schema_validator_draft_note: 'Движок: Ajv 8 · JSON Schema draft-07 (по умолчанию).',
   tool_json_schema_validator_empty: 'Сначала вставьте Schema и JSON экземпляра.',
   tool_json_schema_validator_example:
@@ -27,7 +27,7 @@ const ru: SiteLangDict = {
   tool_json_schema_validator_faq_a3:
     'Страница использует диалект draft-07 в Ajv. Drafts 2019-09 / 2020-12 требуют других сборок и здесь не выбираются.',
   tool_json_schema_validator_faq_a4:
-    'Schema и JSON не загружаются на сервер. CDN скачивает только код Ajv.',
+    'Schema и JSON не загружаются на сервер. этот сайт отдаёт только код Ajv.',
   tool_json_schema_validator_faq_a5:
     'Вставьте Schema и JSON модели, проверьте и исправьте каждый Pointer до успеха — полезно перед передачей структурированного вывода дальше.',
   tool_json_schema_validator_faq_q1: 'Почему проверка не прошла?',
@@ -58,7 +58,7 @@ const ru: SiteLangDict = {
   tool_json_schema_validator_rules_item_3:
     'Draft: диалект draft-07. Не рассчитывайте на словарь 2020-12 здесь.',
   tool_json_schema_validator_rules_item_4:
-    'Конфиденциальность: вставка остаётся во вкладке. CDN загружает только код Ajv.',
+    'Конфиденциальность: вставка остаётся во вкладке. этот сайт загружает только код Ajv.',
   tool_json_schema_validator_rules_title: 'Ожидаемые правила',
   tool_json_schema_validator_sample_fail: 'Пример с ошибкой',
   tool_json_schema_validator_sample_instance_fail: '{"sku":"A-1"}',

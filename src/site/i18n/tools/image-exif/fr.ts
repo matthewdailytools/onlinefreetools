@@ -48,7 +48,7 @@ const fr: SiteLangDict = {
   tool_image_exif_rules_item_1: 'Lecture IFD0/EXIF/GPS en degrés décimaux.',
   tool_image_exif_rules_item_2: 'Suppression : décode → orientation → toBlob.',
   tool_image_exif_rules_item_3: 'JPEG haute qualité mais toujours un ré-encodage.',
-  tool_image_exif_rules_item_4: 'Pas d’envoi du fichier ; le CDN peut servir la bibliothèque.',
+  tool_image_exif_rules_item_4: 'Pas d’envoi du fichier ; ce site peut servir la bibliothèque.',
   tool_image_exif_rules_title: 'Règles à connaître',
   tool_image_exif_sample: 'Charger un exemple',
   tool_image_exif_status_analyzed: 'Prêt — voir les balises ci-dessous.',

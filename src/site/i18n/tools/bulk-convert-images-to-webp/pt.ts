@@ -33,7 +33,7 @@ const pt: SiteLangDict = {
 		'Carregar exemplo coloca um bloco opaco e um logo transparente, grava dois .webp e ativa Baixar ZIP. O furo do logo permanece.',
 	tool_bulk_convert_images_to_webp_example_title: 'Exemplo',
 	tool_bulk_convert_images_to_webp_faq_a1:
-		'Não. A leitura e a gravação WebP acontecem nesta aba. Ficam no dispositivo, sem envio a um servidor. O auxiliar do ZIP pode vir de um CDN; suas fotos continuam na aba.',
+		'Não. A leitura e a gravação WebP acontecem nesta aba. Ficam no dispositivo, sem envio a um servidor. O auxiliar do ZIP pode vir deste site; suas fotos continuam na aba.',
 	tool_bulk_convert_images_to_webp_faq_a2:
 		'Sim. png para webp é esta página: escolha os arquivos, deixe a qualidade perto de 0.8, converta tudo. Furos ficam se o PNG tinha alfa.',
 	tool_bulk_convert_images_to_webp_faq_a3:

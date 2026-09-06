@@ -30,7 +30,7 @@ const ar: SiteLangDict = {
 		'تحميل مثال يضع كتلة JPEG وشعارًا شفافًا، يكتب ملفين .png ويفعّل تنزيل ZIP. صف JPEG غالبًا يظهر PNG أكبر.',
 	tool_bulk_convert_images_to_png_example_title: 'مثال',
 	tool_bulk_convert_images_to_png_faq_a1:
-		'لا. الفك والكتابة إلى PNG يجريان في هذا التبويب. تبقى على جهازك دون رفع إلى خادم. قد تُحمَّل أداة ZIP من CDN؛ صورك لا تغادر التبويب.',
+		'لا. الفك والكتابة إلى PNG يجريان في هذا التبويب. تبقى على جهازك دون رفع إلى خادم. قد تُحمَّل أداة ZIP من هذا الموقع؛ صورك لا تغادر التبويب.',
 	tool_bulk_convert_images_to_png_faq_a2:
 		'لا. JPEG لم يخزّن ثقوبًا قط. jpg إلى png يعطيك غلاف PNG؛ الخلفية تبقى معتمة. الثقوب الحقيقية تبقى فقط إن كان المصدر يملك قناة شفافية.',
 	tool_bulk_convert_images_to_png_faq_a3:

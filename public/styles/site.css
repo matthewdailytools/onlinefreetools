@@ -351,6 +351,30 @@ body.is-tool-page .tool-lead {
 }
 
 /**
+ * 工具页面包屑行：左侧 Home → topic → 工具名，右侧 GitHub 报缺陷链接。
+ * 链接不进 `<ol class="breadcrumb">`，避免被当成路径节点。
+ */
+.tool-topic-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.35rem 1rem;
+}
+.tool-topic-breadcrumb .breadcrumb {
+  flex: 1 1 auto;
+  margin-bottom: 0;
+}
+.tool-report-bug {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.tool-report-bug:hover {
+  text-decoration: underline;
+}
+
+/**
  * 工具页 SERP 截图：1280×720 位图（水印已烧进文件）；页内缩成 H1 前 logo。
  */
 .tool-h1-with-logo {

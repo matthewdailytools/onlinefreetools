@@ -17,7 +17,7 @@ const pt: SiteLangDict = {
   tool_text_diff_example_title: 'Exemplo',
   tool_text_diff_faq_a1: 'Linha para código e configs. Palavra para frases, e-mails e prompts — destaca palavras isoladas.',
   tool_text_diff_faq_a2:
-    'O texto colado não é enviado nem guardado por nós — a comparação corre no browser. A página pode carregar jsdiff (open source) via CDN; isso não envia o seu texto para os nossos servidores.',
+    'O texto colado não é enviado nem guardado por nós — a comparação corre no browser. A página pode carregar jsdiff (open source) depuis ce site; isso não envia o seu texto para os nossos servidores.',
   tool_text_diff_faq_a3: 'Windows usa CRLF; Mac/Linux costumam usar LF. Ative “Tratar CRLF e LF iguais” e compare de novo.',
   tool_text_diff_faq_a4:
     'Não. Só texto colado — sem imagens, ZIP, Word, Excel ou JSON estruturado. Para abrir .txt, .docx ou planilhas, use a página desse formato.',

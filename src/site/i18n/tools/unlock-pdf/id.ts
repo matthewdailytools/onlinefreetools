@@ -28,7 +28,7 @@ const id: SiteLangDict = {
   tool_unlock_pdf_faq_a1:
     'Tidak. Hanya menghapus proteksi jika Anda memasukkan kata sandi buka yang benar. Tanpa crack, brute force, atau memulihkan sandi yang tidak diketahui.',
   tool_unlock_pdf_faq_a2:
-    'Tidak. pustaka PDF berjalan di tab Anda (skrip mungkin dari CDN). PDF tidak diunggah ke server kami.',
+    'Tidak. pustaka PDF berjalan di tab Anda (skrip dari situs ini). PDF tidak diunggah ke server kami.',
   tool_unlock_pdf_faq_a3:
     'Pesan kata sandi salah akan muncul jelas. Gunakan sandi yang sama dari Lindungi PDF atau app lain—kami tidak menebak.',
   tool_unlock_pdf_faq_a4:

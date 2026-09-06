@@ -21,7 +21,7 @@ const ja: SiteLangDict = {
   tool_extract_text_from_pdf_example: "サンプルを読み込む: Hello extract text sample.",
   tool_extract_text_from_pdf_example_title: "例",
   tool_extract_text_from_pdf_extract: "抽出",
-  tool_extract_text_from_pdf_faq_a1: "いいえ。レンダリングはタブ内で行われます（ライブラリは CDN から読み込まれる場合があります）。PDF は当社サーバーに送られません。",
+  tool_extract_text_from_pdf_faq_a1: "いいえ。レンダリングはタブ内で行われます（ライブラリは このサイトから読み込まれます）。PDF は当社サーバーに送られません。",
   tool_extract_text_from_pdf_faq_a2: "Scanned PDFs are images without a text layer; this tool does not OCR.",
   tool_extract_text_from_pdf_faq_a3: "Encrypted or damaged files show a clear error instead of failing silently.",
   tool_extract_text_from_pdf_faq_a4: "「PDF を Markdown に」は ## Page N 見出しと --- 区切りを付けます。本ページは plain .txt の抽出のみです。",

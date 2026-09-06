@@ -78,6 +78,7 @@ const pt: SiteLangDict = {
   tool_feedback_body:
     'Algo pouco claro, quebrado ou faltando? Escreva abaixo — lemos cada mensagem sobre estas ferramentas.',
   tool_feedback_cta: 'Abrir no app de e-mail',
+  tool_feedback_report_bug: 'Reportar um bug no GitHub',
   tool_feedback_email_label: 'E-mail',
   tool_feedback_message_label: 'Mensagem',
   tool_feedback_message_placeholder: 'Descreva o problema ou a sugestão…',

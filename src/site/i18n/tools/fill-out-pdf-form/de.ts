@@ -18,7 +18,7 @@ const de: SiteLangDict = {
   tool_fill_out_pdf_form_err_no_fields: "Diese PDF hat keine ausfüllbaren Felder.",
   tool_fill_out_pdf_form_example: "Beispiel erzeugt eine PDF mit Name und Email, füllt Ada Lovelace / ada@example.com, zeigt die Vorschau und aktiviert den Download.",
   tool_fill_out_pdf_form_example_title: "Beispiel",
-  tool_fill_out_pdf_form_faq_a1: "Nein. Das Ausfüllen läuft in diesem Tab. Bibliotheken können von einem CDN kommen, Ihre PDF geht nicht auf unsere Server.",
+  tool_fill_out_pdf_form_faq_a1: "Nein. Das Ausfüllen läuft in diesem Tab. Bibliotheken können von dieser Website kommen, Ihre PDF geht nicht auf unsere Server.",
   tool_fill_out_pdf_form_faq_a2: "Oft ein Scan oder eine reine Druckdatei. Felder zuerst unter PDF ausfüllbar machen anlegen, dann zurück.",
   tool_fill_out_pdf_form_faq_a3: "Ja. Kästchen als Häkchen; Listen und Radios als kurze Auswahl, wenn die PDF Optionen liefert.",
   tool_fill_out_pdf_form_faq_a4: "PDF-Formular erstellen startet leer. Hier werden nur Werte in vorhandene Felder geschrieben.",

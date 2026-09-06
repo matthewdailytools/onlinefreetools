@@ -26,7 +26,7 @@ const de: SiteLangDict = {
     'Muster erstellt eine Einseiten-PDF, schneidet 36 pt auf allen Seiten ab und aktiviert cropped.pdf mit Größenstatistik.',
   tool_crop_pdf_example_title: 'Beispiel',
   tool_crop_pdf_faq_a1:
-    'Nein. die PDF-Bibliothek läuft in Ihrem Tab (Skripte ggf. von CDN). Ihre PDF wird nicht auf unsere Server hochgeladen.',
+    'Nein. die PDF-Bibliothek läuft in Ihrem Tab (Skripte von dieser Website). Ihre PDF wird nicht auf unsere Server hochgeladen.',
   tool_crop_pdf_faq_a2:
     'Dieses Tool verengt PDF-Boxen per Punkt-Rändern—kein Rechteck auf der Vorschau ziehen wie bei Bildern.',
   tool_crop_pdf_faq_a3:

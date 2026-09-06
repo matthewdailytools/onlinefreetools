@@ -5,14 +5,14 @@ import type { SiteLangDict } from '../../../types';
 const fr: SiteLangDict = {
   tool_file_hash_algo_label: 'Algorithmes',
   tool_file_hash_article:
-    'Calculez des empreintes hex MD5 et SHA pour du texte collé ou un fichier local. Comparez checksums de release, empreintes de config ou vérifiez des téléchargements — le hash reste dans le navigateur sauf un fetch CDN ponctuel si vous cochez MD5.',
+    'Calculez des empreintes hex MD5 et SHA pour du texte collé ou un fichier local. Comparez checksums de release, empreintes de config ou vérifiez des téléchargements — le hash reste dans le navigateur sauf un chargement ponctuel depuis ce site si vous cochez MD5.',
   tool_file_hash_clear: 'Effacer',
   tool_file_hash_copy: 'Tout copier',
   tool_file_hash_copy_done: 'Copié',
   tool_file_hash_desc:
     'Hash de texte ou fichiers en local — empreintes hex MD5, SHA-1, SHA-256, SHA-384, SHA-512.',
   tool_file_hash_description:
-    'Calculez le hash d\'un texte collé ou d\'un fichier local dans votre navigateur. Étapes : choisissez Texte ou Fichier, cochez MD5/SHA, cliquez Hash, copiez l\'hex en minuscules. Exemple : texte `hello` → SHA-256 `2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b0184`. Les fichiers sont lus localement ; MD5 charge crypto-js depuis le CDN uniquement si sélectionné.',
+    'Calculez le hash d\'un texte collé ou d\'un fichier local dans votre navigateur. Étapes : choisissez Texte ou Fichier, cochez MD5/SHA, cliquez Hash, copiez l\'hex en minuscules. Exemple : texte `hello` → SHA-256 `2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b0184`. Les fichiers sont lus localement ; MD5 charge crypto-js depuis ce site uniquement si sélectionné.',
   tool_file_hash_empty: 'Collez du texte ou choisissez un fichier d\'abord.',
   tool_file_hash_example:
     'Texte `hello` avec SHA-256 → `2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b0184`. MD5 du même texte → `5d41402abc4b2a76b9719d911017c592`. Le texte utilise des octets UTF-8 ; les fichiers, des octets bruts.',
@@ -24,7 +24,7 @@ const fr: SiteLangDict = {
   tool_file_hash_faq_a3:
     'Le texte est hashé en octets UTF-8. Un fichier est hashé en flux d\'octets bruts. Les mêmes lettres dans un `.txt` peuvent différer du texte collé si l\'encodage ou les fins de ligne changent.',
   tool_file_hash_faq_a4:
-    'Pas d\'envoi. Texte et fichiers restent sur votre appareil. SHA-* utilise Web Crypto. Seul MD5 charge crypto-js depuis jsDelivr — votre contenu n\'est pas envoyé au CDN.',
+    'Pas d\'envoi. Texte et fichiers restent sur votre appareil. SHA-* utilise Web Crypto. Seul MD5 charge crypto-js depuis ce site — votre contenu n\'est pas envoyé à des tiers.',
   tool_file_hash_faq_a5:
     'Nous affichons de l\'hex en minuscules sans préfixe `0x`, une ligne par algorithme. Cela correspond aux `md5sum` / `sha256sum` courants sous Linux et macOS.',
   tool_file_hash_faq_q1: 'Quand utiliser MD5 plutôt que SHA-256 ?',
@@ -41,7 +41,7 @@ const fr: SiteLangDict = {
   tool_file_hash_input_mode_label: 'Mode d\'entrée',
   tool_file_hash_large_warn:
     'Fichier supérieur à 100 Mo. Le hash peut être lent ou gourmand en mémoire — pensez à un outil desktop pour de très grosses archives.',
-  tool_file_hash_md5_fail: 'Impossible de charger la bibliothèque MD5 depuis le CDN. Essayez SHA-256 ou vérifiez le réseau.',
+  tool_file_hash_md5_fail: 'Impossible de charger la bibliothèque MD5 depuis ce site. Essayez SHA-256 ou vérifiez le réseau.',
   tool_file_hash_no_algo: 'Sélectionnez au moins un algorithme.',
   tool_file_hash_output_label: 'Empreintes hex',
   tool_file_hash_progress_label: 'Lecture du fichier…',
@@ -54,7 +54,7 @@ const fr: SiteLangDict = {
   tool_file_hash_rules_item_3:
     'Texte vide ou fichier zéro octet produit le digest standard d\'entrée vide pour chaque algorithme (hex valide).',
   tool_file_hash_rules_item_4:
-    'Confidentialité : pas d\'envoi. MD5 est le seul chemin qui récupère crypto-js sur le CDN ; SHA-* n\'utilise que Web Crypto intégré.',
+    'Confidentialité : pas d\'envoi. MD5 est le seul chemin qui récupère crypto-js sur ce site ; SHA-* n\'utilise que Web Crypto intégré.',
   tool_file_hash_rules_title: 'Règles à connaître',
   tool_file_hash_sample: 'Charger l\'exemple',
   tool_file_hash_sample_text: 'hello',

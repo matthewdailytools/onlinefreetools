@@ -18,7 +18,7 @@ const id: SiteLangDict = {
   tool_text_diff_faq_a1:
     'Baris untuk kode dan config. Kata untuk kalimat, email, dan prompt — hanya kata yang berubah yang disorot.',
   tool_text_diff_faq_a2:
-    'Teks yang Anda tempel tidak diunggah atau disimpan oleh kami — perbandingan berjalan di browser. Halaman dapat memuat jsdiff (open source) dari CDN; itu tidak mengirim teks Anda ke server kami.',
+    'Teks yang Anda tempel tidak diunggah atau disimpan oleh kami — perbandingan berjalan di browser. Halaman dapat memuat jsdiff (open source) dari situs ini; itu tidak mengirim teks Anda ke server kami.',
   tool_text_diff_faq_a3:
     'Windows sering memakai CRLF; Mac/Linux biasanya LF. Aktifkan “Samakan CRLF dan LF” lalu bandingkan lagi.',
   tool_text_diff_faq_a4:

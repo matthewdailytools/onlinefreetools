@@ -30,7 +30,7 @@ const pt: SiteLangDict = {
 		'Carregar exemplo coloca um bloco JPEG e um logo transparente, grava dois .png e ativa Baixar ZIP. A linha JPEG costuma mostrar um PNG maior.',
 	tool_bulk_convert_images_to_png_example_title: 'Exemplo',
 	tool_bulk_convert_images_to_png_faq_a1:
-		'Não. A leitura e a gravação PNG acontecem nesta aba. Ficam no dispositivo, sem envio a um servidor. O auxiliar do ZIP pode vir de um CDN; suas fotos continuam na aba.',
+		'Não. A leitura e a gravação PNG acontecem nesta aba. Ficam no dispositivo, sem envio a um servidor. O auxiliar do ZIP pode vir deste site; suas fotos continuam na aba.',
 	tool_bulk_convert_images_to_png_faq_a2:
 		'Não. JPEG nunca guardou furos. jpg para png só troca o envelope; o fundo segue opaco. Furos de verdade só sobrevivem se a origem já tinha alfa.',
 	tool_bulk_convert_images_to_png_faq_a3:

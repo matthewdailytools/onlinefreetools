@@ -28,7 +28,7 @@ const fr: SiteLangDict = {
   tool_unlock_pdf_faq_a1:
     'Non. Retire la protection uniquement si vous fournissez le bon mot de passe. Pas de crackage, brute force ni récupération de mots inconnus.',
   tool_unlock_pdf_faq_a2:
-    'Non. la bibliothèque PDF s’exécute dans votre onglet (scripts éventuellement depuis un CDN). Votre PDF n’est pas envoyé à nos serveurs.',
+    'Non. la bibliothèque PDF s’exécute dans votre onglet (scripts éventuellement depuis ce site). Votre PDF n’est pas envoyé à nos serveurs.',
   tool_unlock_pdf_faq_a3:
     'Un message clair indique un mauvais mot de passe. Utilisez celui de Protéger un PDF ou d’une autre app—nous ne le devinons pas.',
   tool_unlock_pdf_faq_a4:

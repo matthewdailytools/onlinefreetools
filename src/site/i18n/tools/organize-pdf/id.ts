@@ -17,7 +17,7 @@ const id: SiteLangDict = {
   tool_organize_pdf_err_organize: "Gagal mengatur. Periksa file dan daftar halaman.",
   tool_organize_pdf_example: "Sampel memuat PDF tiga halaman, menghapus halaman 2, menerapkan urutan baru, dan mengaktifkan unduhan organized.pdf dua halaman.",
   tool_organize_pdf_example_title: "Contoh",
-  tool_organize_pdf_faq_a1: "Tidak. pustaka PDF berjalan di tab Anda (pustaka bisa dari CDN). PDF tidak diunggah ke server kami.",
+  tool_organize_pdf_faq_a1: "Tidak. pustaka PDF berjalan di tab Anda (pustaka dari situs ini). PDF tidak diunggah ke server kami.",
   tool_organize_pdf_faq_a2: "Gabung menyatukan beberapa PDF. Pecah mengekspor halaman ke beberapa file (atau ZIP). Atur mengubah urutan dalam satu PDF dan mengunduh satu file.",
   tool_organize_pdf_faq_a3: "Gunakan tombol Naik/Turun pada setiap baris halaman. Terapkan menyalin halaman sesuai urutan daftar dari atas ke bawah.",
   tool_organize_pdf_faq_a4: "PDF berpassword biasanya gagal di sini. Hapus kata sandi dulu.",

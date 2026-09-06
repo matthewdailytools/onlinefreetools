@@ -33,7 +33,7 @@ const id: SiteLangDict = {
 		'Muat contoh menaruh blok buram dan logo transparan, menulis dua .webp, dan mengaktifkan Unduh ZIP. Lubang logo tetap ada.',
 	tool_bulk_convert_images_to_webp_example_title: 'Contoh',
 	tool_bulk_convert_images_to_webp_faq_a1:
-		'Tidak. Pembacaan dan penulisan WebP terjadi di tab ini. File tetap di perangkat, tidak diunggah ke server. Pembantu ZIP bisa dimuat dari CDN; gambar Anda tetap di tab.',
+		'Tidak. Pembacaan dan penulisan WebP terjadi di tab ini. File tetap di perangkat, tidak diunggah ke server. Pembantu ZIP bisa dimuat dari situs ini; gambar Anda tetap di tab.',
 	tool_bulk_convert_images_to_webp_faq_a2:
 		'Ya. png ke webp adalah halaman ini: pilih berkas, biarkan kualitas dekat 0.8, ubah semua. Lubang tetap jika PNG punya alfa.',
 	tool_bulk_convert_images_to_webp_faq_a3:

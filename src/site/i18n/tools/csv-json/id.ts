@@ -36,7 +36,7 @@ const id: SiteLangDict = {
   tool_csv_json_faq_a4:
     'Objek diratakan menjadi kolom jalur titik (dim.w, dim.h). Array ditulis sebagai string JSON dalam satu sel. Kolom adalah gabungan kunci semua record, dan record tanpa kunci itu dibiarkan kosong.',
   tool_csv_json_faq_a5:
-    'Tidak. Penguraian tetap di tab ini dan file yang dipilih dibaca secara lokal. CDN mungkin menyediakan Papa Parse; permintaan itu hanya mengunduh kode, bukan mengunggah CSV atau JSON Anda.',
+    'Tidak. Penguraian tetap di tab ini dan file yang dipilih dibaca secara lokal. situs ini menyediakan Papa Parse; permintaan itu hanya mengunduh kode, bukan mengunggah CSV atau JSON Anda.',
   tool_csv_json_faq_q1: 'Apakah angka, nol di depan, dan ID tetap utuh?',
   tool_csv_json_faq_q2: 'Bisakah menangani titik koma atau tab, bukan hanya koma?',
   tool_csv_json_faq_q3: 'Bagaimana kolom berisi koma, tanda kutip, atau baris baru ditangani?',
@@ -69,7 +69,7 @@ const id: SiteLangDict = {
   tool_csv_json_rules_item_3:
     'JSON → CSV: objek diratakan dengan jalur titik (dim.w, dim.h); array ditulis sebagai string JSON dalam satu sel; kolom adalah gabungan semua kunci, yang kosong dibiarkan kosong.',
   tool_csv_json_rules_item_4:
-    'Privasi: teks dan file Anda tidak diunggah. Mengambil Papa Parse dari CDN hanya mengunduh kode pustaka, bukan data Anda.',
+    'Privasi: teks dan file Anda tidak diunggah. Mengambil Papa Parse dari situs ini hanya mengunduh kode pustaka, bukan data Anda.',
   tool_csv_json_rules_title: 'Aturan yang perlu diketahui',
   tool_csv_json_sample: 'Muat contoh',
   tool_csv_json_sample_csv: 'sku,title,price\nA-001,"Chair, oak",129.9\nA-002,Desk,89',

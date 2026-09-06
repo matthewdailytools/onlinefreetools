@@ -35,7 +35,7 @@ const fr: SiteLangDict = {
 		'Charger un exemple place deux photos, les compresse en JPEG 200 Ko, remplit le tableau et active le ZIP. Les doublons deviennent name (2).jpg.',
 	tool_bulk_compress_product_photos_example_title: 'Exemple',
 	tool_bulk_compress_product_photos_faq_a1:
-		'Non. Tout se passe dans l\'onglet. Les fichiers restent sur l\'appareil, sans envoi au serveur. Le script ZIP peut venir d\'un CDN ; vos photos ne partent pas.',
+		'Non. Tout se passe dans l\'onglet. Les fichiers restent sur l\'appareil, sans envoi au serveur. Le script ZIP peut venir de ce site ; vos photos ne partent pas.',
 	tool_bulk_compress_product_photos_faq_a2:
 		'Pas toujours. Si la qualité 0.5 dépasse encore le plafond, la ligne indique un échec mais garde le fichier le plus proche.',
 	tool_bulk_compress_product_photos_faq_a3:

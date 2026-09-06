@@ -19,7 +19,7 @@ const zh: SiteLangDict = {
   tool_pdf_page_numbers_err_number: '加页码失败。请检查文件与设置后重试。',
   tool_pdf_page_numbers_example: '样例会生成三页 PDF，底中从 1 编号，并启用下载 numbered.pdf。',
   tool_pdf_page_numbers_example_title: '示例',
-  tool_pdf_page_numbers_faq_a1: '不会。处理在当前标签页内完成（脚本可能从 CDN 加载），PDF 不会上传到我们的服务器。',
+  tool_pdf_page_numbers_faq_a1: '不会。处理在当前标签页内完成（脚本从本站加载），PDF 不会上传到我们的服务器。',
   tool_pdf_page_numbers_faq_a2:
     '可以——「起始页码」就是第 1 页显示的数字（例如封面用 0，或在别处删页后从 5 起）。之后每页加 1。',
   tool_pdf_page_numbers_faq_a3: '可选纯数字（1、2、3…）或「第 N 页」。位置、边距（pt）与字号对所有页一致。',

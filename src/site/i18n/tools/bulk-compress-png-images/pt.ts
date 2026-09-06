@@ -32,7 +32,7 @@ const pt: SiteLangDict = {
 		'Carregar exemplo coloca dois PNG de tabuleiro transparente, recodifica como PNG, preenche a tabela e libera Baixar ZIP. Nomes repetidos viram name (2).png.',
 	tool_bulk_compress_png_images_example_title: 'Exemplo',
 	tool_bulk_compress_png_images_faq_a1:
-		'Não. A decodificação e o PNG rodam nesta aba. Os arquivos ficam no dispositivo, sem enviar ao servidor. O auxiliar ZIP pode vir de um CDN; suas imagens não saem da aba.',
+		'Não. A decodificação e o PNG rodam nesta aba. Os arquivos ficam no dispositivo, sem enviar ao servidor. O auxiliar ZIP pode vir deste site; suas imagens não saem da aba.',
 	tool_bulk_compress_png_images_faq_a2:
 		'Não. A saída é sempre PNG. Não há fundo JPEG. Se aceitar JPEG para fotos de produto menores, use Compactar fotos de produto em lote.',
 	tool_bulk_compress_png_images_faq_a3:

@@ -25,7 +25,7 @@ const id: SiteLangDict = {
   tool_pdf_page_to_image_sizes_example_title: 'Contoh',
   tool_pdf_page_to_image_sizes_export: 'Ekspor',
   tool_pdf_page_to_image_sizes_faq_a1:
-    'Tidak. perender halaman, pustaka PDF, dan pustaka ZIP berjalan di tab Anda (skrip bisa dari CDN). PDF tidak diunggah ke server kami.',
+    'Tidak. perender halaman, pustaka PDF, dan pustaka ZIP berjalan di tab Anda (skrip bisa dari situs ini). PDF tidak diunggah ke server kami.',
   tool_pdf_page_to_image_sizes_faq_a2:
     'PDF ke JPG mengekspor setiap halaman dengan rasio asli. Alat ini memilih satu halaman dan menyesuaikannya ke ukuran platform tetap (contain, tengah, pinggir putih).',
   tool_pdf_page_to_image_sizes_faq_a3:

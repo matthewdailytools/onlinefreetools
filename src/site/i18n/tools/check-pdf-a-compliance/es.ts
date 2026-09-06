@@ -21,7 +21,7 @@ const es: SiteLangDict = {
   tool_check_pdf_a_compliance_example: "El PDF común de ejemplo tiene cabecera y no muestra cifrado, pero carece de marcadores XMP PDF/A e intención de salida. La ausencia no demuestra por sí sola incumplimiento.",
   tool_check_pdf_a_compliance_example_title: "Ejemplo",
   tool_check_pdf_a_compliance_fail: "No encontrado",
-  tool_check_pdf_a_compliance_faq_a1: "No. El renderizado ocurre en tu pestaña (las bibliotecas pueden cargarse desde un CDN). Tu PDF no se sube a nuestros servidores.",
+  tool_check_pdf_a_compliance_faq_a1: "No. El renderizado ocurre en tu pestaña (las bibliotecas se cargan desde este sitio). Tu PDF no se sube a nuestros servidores.",
   tool_check_pdf_a_compliance_faq_a2: "No. Solo busca cinco indicadores en los bytes; usa veraPDF para validar un perfil concreto.",
   tool_check_pdf_a_compliance_faq_a3: "Sí. La revisión no depende de una capa de texto seleccionable.",
   tool_check_pdf_a_compliance_faq_a4: "Los metadatos u objetos pueden estar comprimidos; «No encontrado» no es un fallo definitivo.",

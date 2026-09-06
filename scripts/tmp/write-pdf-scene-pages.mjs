@@ -129,8 +129,8 @@ export const ${exportFn} = (opts: {
 const PDF_HELPERS = `
       function ensurePdfJs() {
         if (window.pdfjsLib) return Promise.resolve(window.pdfjsLib);
-        return import('https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.min.mjs').then(function (mod) {
-          mod.GlobalWorkerOptions.workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.worker.min.mjs';
+        return import('/vendor/pdfjs/pdf.min.mjs').then(function (mod) {
+          mod.GlobalWorkerOptions.workerSrc = '/vendor/pdfjs/pdf.worker.min.mjs';
           window.pdfjsLib = mod;
           return mod;
         }).catch(function () { throw new Error('pdfjs'); });
@@ -197,7 +197,7 @@ const pages = {
     <canvas id="opbCanvas" class="mb-3"></canvas>
     <p class="tool-lead mb-4">\${escapeHtml(description)}</p>`,
 		`
-  <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/vendor/pdf-lib/pdf-lib.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     (function () {
       var fileInput = document.getElementById('opbFile');
@@ -311,7 +311,7 @@ export const renderOpenPdfInBrowserPage = (opts: {
   const igHtml = renderToolIgSections({ lang: opts.lang, prefix, mode: 'rules', usecaseCount: 3, ruleItemCount: 4 });
   const referencesHtml = renderToolReferencesSection({ lang: opts.lang, links: [{ label: 'PDF.js', href: 'https://mozilla.github.io/pdf.js/' }] });
   const extraBodyHtml = \`
-  <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/vendor/pdf-lib/pdf-lib.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     (function () {
       var fileInput = document.getElementById('opbFile');

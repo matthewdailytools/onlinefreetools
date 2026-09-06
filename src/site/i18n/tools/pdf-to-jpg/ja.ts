@@ -23,7 +23,7 @@ const ja: SiteLangDict = {
     'サンプルは 2 ページの PDF を作成し、各ページを変換して page-1.jpg と page-2.jpg の ZIP をダウンロード可能にします。',
   tool_pdf_to_jpg_example_title: 'PDF の各ページを JPG に変換',
   tool_pdf_to_jpg_faq_a1:
-    'いいえ。ページ描画 と ZIP ライブラリ はタブ内で動作します（スクリプトは CDN から読み込まれる場合があります）。PDF は当社サーバーに送られません。',
+    'いいえ。ページ描画 と ZIP ライブラリ はタブ内で動作します（スクリプトは このサイトから読み込まれます）。PDF は当社サーバーに送られません。',
   tool_pdf_to_jpg_faq_a2:
     '2 ページ以上 → pdf-pages.zip（page-1.jpg、page-2.jpg…）。1 ページのみ → JPG 1 ファイル。',
   tool_pdf_to_jpg_faq_a3:

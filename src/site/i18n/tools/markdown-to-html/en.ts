@@ -4,7 +4,7 @@
 import type { SiteLangDict } from '../../../types';
 const en: SiteLangDict = {
   tool_markdown_article:
-    'One page for both directions: live preview, export, and plain talk about what sanitization removes and what Turndown cannot keep. Paste never leaves the tab; libraries may still load from a CDN.',
+    'One page for both directions: live preview, export, and plain talk about what sanitization removes and what Turndown cannot keep. Paste never leaves the tab; libraries may still load from this site.',
   tool_markdown_clear: 'Clear',
   tool_markdown_copy: 'Copy HTML',
   tool_markdown_copy_done: 'Copied',
@@ -25,7 +25,7 @@ const en: SiteLangDict = {
   tool_markdown_faq_a2:
     'Usually not. Think “readable Markdown draft”: scripts and heavy styling go away; nested tables may collapse.',
   tool_markdown_faq_a3:
-    'Conversion is local. A CDN may serve the open-source libraries; that network request is not an upload of your text.',
+    'Conversion is local. This site serves the open-source libraries; that network request is not an upload of your text.',
   tool_markdown_faq_a4:
     'No guarantee. Whitespace and unsupported tags drift. If you need byte equality, diff outside this tool.',
   tool_markdown_faq_a5:
@@ -37,7 +37,7 @@ const en: SiteLangDict = {
   tool_markdown_faq_q5: 'What syntax and export options exist?',
   tool_markdown_full_doc: 'Generate full HTML document',
   tool_markdown_how_body:
-    'Pick a tab. Left side is input; right side updates in the browser. Markdown → HTML can copy a fragment or wrap a minimal full document. HTML → Markdown yields plain text for editors and LLMs. CDN loads ≠ uploading your paste.',
+    'Pick a tab. Left side is input; right side updates in the browser. Markdown → HTML can copy a fragment or wrap a minimal full document. HTML → Markdown yields plain text for editors and LLMs. Loading this site's libraries ≠ uploading your paste.',
 	tool_markdown_how_item_1: 'Pick the Markdown → HTML or HTML → Markdown tab.',
 	tool_markdown_how_item_2: 'Paste input on the left (or click Load sample).',
 	tool_markdown_how_item_3: 'For Markdown → HTML, optionally wrap a minimal full HTML document.',
@@ -63,7 +63,7 @@ const en: SiteLangDict = {
   tool_markdown_rules_item_md_html:
     'Outbound: marked reads CommonMark-style Markdown; DOMPurify strips risky scripts/attributes before you see or save HTML.',
   tool_markdown_rules_privacy:
-    'Your paste stays client-side. Fetching marked / DOMPurify / Turndown from a CDN only delivers code, not your document.',
+    'Your paste stays client-side. Fetching marked / DOMPurify / Turndown from this site only delivers code, not your document.',
   tool_markdown_rules_title: 'What each direction does',
   tool_markdown_sample_html: '<h1>Title</h1>\n<p>Hello <strong>world</strong></p>',
   tool_markdown_sample_md:

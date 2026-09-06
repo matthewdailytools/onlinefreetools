@@ -21,7 +21,7 @@ const zh: SiteLangDict = {
   tool_pdf_watermark_example:
     '样例会生成两页 PDF，以 DRAFT 居中、35% 透明度、−45° 盖在每页，并启用下载 watermarked.pdf。',
   tool_pdf_watermark_example_title: '示例',
-  tool_pdf_watermark_faq_a1: '不会。处理在当前标签页内完成（库可能从 CDN 加载），PDF 不会上传到我们的服务器。',
+  tool_pdf_watermark_faq_a1: '不会。处理在当前标签页内完成（库从本站加载），PDF 不会上传到我们的服务器。',
   tool_pdf_watermark_faq_a2: '「图片加水印」在浏览器里给照片叠字或 Logo。本工具给 PDF 文档每一页盖章——照片编辑与文档样稿各用其工具。',
   tool_pdf_watermark_faq_a3: '不能。下载后水印已写入页面。要去掉需要原文件或重度编辑——本工具不提供撤销。',
   tool_pdf_watermark_faq_a4: '带密码的 PDF 通常无法在此打开。请先用可信工具去密码再加水印。',

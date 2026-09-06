@@ -23,7 +23,7 @@ const fr: SiteLangDict = {
 		'Charger l’exemple place notes.txt, un petit photo.png et docs/readme.md, puis construit sample.zip. Télécharger le ZIP est prêt dès le premier écran.',
 	tool_create_zip_file_example_title: 'Exemple',
 	tool_create_zip_file_faq_a1:
-		'Non. Les octets sont lus dans cet onglet. Le script du moteur ZIP peut venir d’un CDN, mais vos fichiers ne sont pas envoyés sur nos serveurs.',
+		'Non. Les octets sont lus dans cet onglet. Le script du moteur ZIP peut venir de ce site, mais vos fichiers ne sont pas envoyés sur nos serveurs.',
 	tool_create_zip_file_faq_a2:
 		'Si le navigateur signale webkitRelativePath (dossier déposé ou sélecteur de répertoire), ces chemins deviennent des entrées ZIP après retrait des ../. C’est le travail « zipper un dossier » de cette page.',
 	tool_create_zip_file_faq_a3:

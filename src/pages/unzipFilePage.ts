@@ -162,7 +162,7 @@ export const renderUnzipFilePage = (opts: {
 	});
 
 	const extraBodyHtml = `
-  <script src="https://cdn.jsdelivr.net/npm/fflate@0.8.2/umd/index.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/vendor/fflate/index.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     (function () {
       var SOFT_BYTES = 80 * 1024 * 1024;

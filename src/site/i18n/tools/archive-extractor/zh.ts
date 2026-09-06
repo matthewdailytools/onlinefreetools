@@ -31,7 +31,7 @@ const zh: SiteLangDict = {
   tool_archive_extractor_example_title: '示例',
   tool_archive_extractor_exported_all: '已把文件按安全路径打包成新的 ZIP。',
   tool_archive_extractor_faq_a1:
-    '不会。压缩包在你的浏览器标签页中读取，解压出的字节留在设备上。辅助脚本可能从 CDN 加载，但你的文件不会上传到我们的服务器。',
+    '不会。压缩包在你的浏览器标签页中读取，解压出的字节留在设备上。辅助脚本从本站加载，但你的文件不会上传到我们的服务器。',
   tool_archive_extractor_faq_a2:
     '本版本的可用路径是 ZIP、TAR、TAR.GZ 和 TGZ。RAR、7Z、ISO 先作为支持说明显示，等更重的多格式引擎启用后再处理。',
   tool_archive_extractor_faq_a3:

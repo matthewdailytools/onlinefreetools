@@ -28,7 +28,7 @@ const de: SiteLangDict = {
   tool_unlock_pdf_faq_a1:
     'Nein. Entfernt Schutz nur bei korrektem Öffnerpasswort. Kein Knacken, Brute Force oder Wiederherstellen unbekannter Passwörter.',
   tool_unlock_pdf_faq_a2:
-    'Nein. die PDF-Bibliothek läuft in Ihrem Tab (Skripte ggf. vom CDN). Ihr PDF wird nicht auf unsere Server hochgeladen.',
+    'Nein. die PDF-Bibliothek läuft in Ihrem Tab (Skripte ggf. von dieser Website). Ihr PDF wird nicht auf unsere Server hochgeladen.',
   tool_unlock_pdf_faq_a3:
     'Eine klare Meldung bei falschem Passwort. Nutzen Sie dasselbe Passwort wie in PDF schützen oder einer anderen App—wir raten nicht.',
   tool_unlock_pdf_faq_a4:

@@ -21,7 +21,7 @@ const ru: SiteLangDict = {
   tool_convert_word_document_to_pdf_err_pdfjs: "Не удалось загрузить средство просмотра PDF.",
   tool_convert_word_document_to_pdf_example: "Загрузка образца создаёт .docx с одним абзацем, показывает HTML и экспортирует одностраничный PDF.",
   tool_convert_word_document_to_pdf_example_title: "Пример",
-  tool_convert_word_document_to_pdf_faq_a1: "Нет. Преобразование идёт во вкладке (библиотеки могут грузиться с CDN). Файл на наши серверы не уходит.",
+  tool_convert_word_document_to_pdf_faq_a1: "Нет. Преобразование идёт во вкладке (библиотеки грузятся с этого сайта). Файл на наши серверы не уходит.",
   tool_convert_word_document_to_pdf_faq_a2: "Цепочка .docx → HTML → PDF. Колонтитулы и плавающие объекты уплощаются. Если уже есть HTML, используйте «Преобразовать HTML в PDF».",
   tool_convert_word_document_to_pdf_faq_a3: "Нет. Сначала сохраните как .docx. Страница принимает только пакет Office Open XML.",
   tool_convert_word_document_to_pdf_faq_a4: "Здесь вы начинаете с готового Word. Онлайн-редактор PDF — это пустой лист.",

@@ -23,7 +23,7 @@ const ja: SiteLangDict = {
     'サンプルは 1 ページを作成し sample で暗号化、protected.pdf の DL を有効化し、状態行にパスワードを表示します。',
   tool_protect_pdf_example_title: 'PDF にパスワードを設定',
   tool_protect_pdf_faq_a1:
-    'いいえ。PDF ライブラリ はタブ内で動作（スクリプトは CDN から読み込む場合あり）。PDF は当社サーバーに送られません。',
+    'いいえ。PDF ライブラリ はタブ内で動作（スクリプトは このサイトから読み込みます）。PDF は当社サーバーに送られません。',
   tool_protect_pdf_faq_a2:
     'PDF の一般的なユーザーパスワード暗号化です。開くときにパスワードが必要。軍事級ではなく、覚えやすい強力なパスワードを選んでください。',
   tool_protect_pdf_faq_a3:

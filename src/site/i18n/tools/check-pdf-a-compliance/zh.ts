@@ -21,7 +21,7 @@ const zh: SiteLangDict = {
   tool_check_pdf_a_compliance_example: "内置普通 PDF 会检出有效文件头和“未发现加密”，但找不到 PDF/A XMP 与输出意图标记。缺少指标本身不能证明文件不合规。",
   tool_check_pdf_a_compliance_example_title: "示例",
   tool_check_pdf_a_compliance_fail: "未发现",
-  tool_check_pdf_a_compliance_faq_a1: "不会。渲染在浏览器标签页完成（库可能从 CDN 加载），PDF 不会上传到我们的服务器。",
+  tool_check_pdf_a_compliance_faq_a1: "不会。渲染在浏览器标签页完成（库从本站加载），PDF 不会上传到我们的服务器。",
   tool_check_pdf_a_compliance_faq_a2: "不能。本页只在原始字节中寻找五项指标；按 profile 验证请使用 veraPDF 等标准验证器。",
   tool_check_pdf_a_compliance_faq_a3: "可以。检查不依赖可选择的文本层，因此扫描版 PDF 也能筛查。",
   tool_check_pdf_a_compliance_faq_a4: "相关元数据或对象可能被压缩，所以“未发现”不等于确定不合规。",

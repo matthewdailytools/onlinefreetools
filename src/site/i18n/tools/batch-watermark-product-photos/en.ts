@@ -43,7 +43,7 @@ const en: SiteLangDict = {
 		'Load sample adds a landscape block and a portrait block, sets SAMPLE, previews the first frame, applies the same relative mark to both, and enables Download ZIP.',
 	tool_batch_watermark_product_photos_example_title: 'Example',
 	tool_batch_watermark_product_photos_faq_a1:
-		'No. Decode and Canvas stamping run in this tab. Files stay on the device and are not uploaded to a server. A ZIP helper may load from a CDN; your photos still never leave the tab.',
+		'No. Decode and Canvas stamping run in this tab. Files stay on the device and are not uploaded to a server. A ZIP helper loads from this site; your photos still never leave the tab.',
 	tool_batch_watermark_product_photos_faq_a2:
 		'No. Type size is a percent of each photo’s short edge, and the nine anchors are fractions of that canvas. A portrait and a landscape keep the same relative corner.',
 	tool_batch_watermark_product_photos_faq_a3:

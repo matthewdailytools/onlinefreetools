@@ -33,7 +33,7 @@ const fr: SiteLangDict = {
 		'Charger un exemple pose un bloc opaque et un logo transparent, écrit deux .webp et active Télécharger le ZIP. Le trou du logo reste.',
 	tool_bulk_convert_images_to_webp_example_title: 'Exemple',
 	tool_bulk_convert_images_to_webp_faq_a1:
-		'Non. Lecture et écriture WebP se font dans cet onglet. Les fichiers restent sur l\'appareil, sans envoi au serveur. L\'aide ZIP peut venir d\'un CDN ; vos images ne quittent pas l\'onglet.',
+		'Non. Lecture et écriture WebP se font dans cet onglet. Les fichiers restent sur l\'appareil, sans envoi au serveur. L\'aide ZIP peut venir de ce site ; vos images ne quittent pas l\'onglet.',
 	tool_bulk_convert_images_to_webp_faq_a2:
 		'Oui. png vers webp se fait ici : choisissez les fichiers, gardez la qualité près de 0.8, convertissez tout. Les trous restent si le PNG avait de l\'alpha.',
 	tool_bulk_convert_images_to_webp_faq_a3:

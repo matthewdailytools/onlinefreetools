@@ -33,7 +33,7 @@ const id: SiteLangDict = {
 		'Muat contoh menaruh blok buram dan logo transparan, mengecat keduanya di putih, menulis dua nama .jpg, dan mengaktifkan Unduh ZIP.',
 	tool_bulk_convert_images_to_jpg_example_title: 'Contoh',
 	tool_bulk_convert_images_to_jpg_faq_a1:
-		'Tidak. Membaca dan menulis .jpg terjadi di tab ini. Tetap di perangkat, tanpa unggah ke server. Pembantu ZIP bisa dimuat dari CDN; gambar Anda tidak keluar dari tab.',
+		'Tidak. Membaca dan menulis .jpg terjadi di tab ini. Tetap di perangkat, tanpa unggah ke server. Pembantu ZIP bisa dimuat dari situs ini; gambar Anda tidak keluar dari tab.',
 	tool_bulk_convert_images_to_jpg_faq_a2:
 		'Ya. PNG ke JPG di sini: pilih berkas, biarkan latar putih agar lubang tidak jadi hitam, ubah semua.',
 	tool_bulk_convert_images_to_jpg_faq_a3:

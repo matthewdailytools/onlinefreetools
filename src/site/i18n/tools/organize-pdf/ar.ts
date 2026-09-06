@@ -17,7 +17,7 @@ const ar: SiteLangDict = {
   tool_organize_pdf_err_organize: "فشل التنظيم. راجع الملف والقائمة.",
   tool_organize_pdf_example: "تحمّل العيّنة PDF من ثلاث صفحات، تزيل الصفحة 2، وتفعّل تنزيل organized.pdf من صفحتين.",
   tool_organize_pdf_example_title: "مثال",
-  tool_organize_pdf_faq_a1: "لا. يعمل مكتبة PDF في متصفحك وقد تُحمَّل المكتبة من CDN. لا نرفع ملفك إلى خوادمنا.",
+  tool_organize_pdf_faq_a1: "لا. يعمل مكتبة PDF في متصفحك وقد تُحمَّل المكتبة من هذا الموقع. لا نرفع ملفك إلى خوادمنا.",
   tool_organize_pdf_faq_a2: "الدمج يجمع عدة ملفات. التقسيم يُخرج صفحات كملفات منفصلة. التنظيم يعدّل الترتيب داخل ملف واحد.",
   tool_organize_pdf_faq_a3: "نعم—استخدم أعلى/أسفل. التطبيق ينسخ حسب ترتيب القائمة.",
   tool_organize_pdf_faq_a4: "غالبًا تفشل الملفات المشفّرة هنا. أزل كلمة المرور أولًا.",

@@ -31,7 +31,7 @@ const zh: SiteLangDict = {
 	tool_batch_checksum_release_files_export_csv: '导出 CSV',
 	tool_batch_checksum_release_files_export_sums: '导出 SUMS',
 	tool_batch_checksum_release_files_faq_a1:
-		'不会。哈希都在本标签页。文件留在本机，不上传服务器。SHA-256 用 Web Crypto。MD5 可能从 CDN 加载 crypto-js，你的字节仍不会离开这个标签页。',
+		'不会。哈希都在本标签页。文件留在本机，不上传服务器。SHA-256 用 Web Crypto。MD5 从本站加载 crypto-js，你的字节仍不会离开这个标签页。',
 	tool_batch_checksum_release_files_faq_a2:
 		'不会。导出的是校验和表（CSV）和 SHA256SUMS 文本。要把二进制打包，请用创建 ZIP——那是另一件事。',
 	tool_batch_checksum_release_files_faq_a3:
@@ -59,7 +59,7 @@ const zh: SiteLangDict = {
 	tool_batch_checksum_release_files_rules_body:
 		'SHA-256 用 Web Crypto，按 4 MiB 切片读入再拼起来算。产物是表、CSV 和 SUMS 文本，绝不是原文件 ZIP。',
 	tool_batch_checksum_release_files_rules_item_1:
-		'SHA-256 总会跑。MD5 可选，首次会从 CDN 懒加载 crypto-js；文件字节仍留在标签页。',
+		'SHA-256 总会跑。MD5 可选，首次会从本站 懒加载 crypto-js；文件字节仍留在标签页。',
 	tool_batch_checksum_release_files_rules_item_2:
 		'SUMS 行按 GNU sha256sum：十六进制、两个空格或空格加星号、然后是文件名。粘贴里多出来的名字标缺失。',
 	tool_batch_checksum_release_files_rules_item_3:

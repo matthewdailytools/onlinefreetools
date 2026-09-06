@@ -26,7 +26,7 @@ const ja: SiteLangDict = {
   tool_sign_pdf_document_example: "サンプル読み込みは「Sample agreement」1ページを作り、Jane Sample を入力し、X=72・Y=72 付近に PNG を押します。",
   tool_sign_pdf_document_example_title: "例",
   tool_sign_pdf_document_faq_a1: "いいえ。画像を押すだけです。ハッシュ接頭辞つきの完全性の見た目なら「PDF にデジタル署名の見た目を付ける」を使ってください。それも証明書 PKI ではありません。",
-  tool_sign_pdf_document_faq_a2: "いいえ。押印はこのタブ内です（ライブラリは CDN から来る場合があります）。当社サーバーには送りません。",
+  tool_sign_pdf_document_faq_a2: "いいえ。押印はこのタブ内です（ライブラリはこのサイトから読みます）。当社サーバーには送りません。",
   tool_sign_pdf_document_faq_a3: "いいえ。X/Y で画像を置きます。パスワードは PDF を保護、追記は PDF にテキストを追加を見てください。",
   tool_sign_pdf_document_faq_a4: "このブラウザツールは PKCS#7 / PAdES 証明書を付けられません。専用ソフトを使ってください。",
   tool_sign_pdf_document_faq_a5: "大きな PDF は遅くなることがあります。まずデスクトップブラウザで試してください。",

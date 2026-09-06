@@ -30,7 +30,7 @@ const zh: SiteLangDict = {
 		'载入样例会放一张 JPEG 色块和一张透明标志，写出两个 .png，并点亮下载 ZIP。JPEG 那一行常常显示 PNG 比原文件更大。',
 	tool_bulk_convert_images_to_png_example_title: '示例',
 	tool_bulk_convert_images_to_png_faq_a1:
-		'不会。解码和写成 PNG 都在本标签页。文件留在本机，不上传服务器。打 ZIP 的脚本可能从 CDN 加载，你的图片仍不会离开这个标签页。',
+		'不会。解码和写成 PNG 都在本标签页。文件留在本机，不上传服务器。打 ZIP 的脚本从本站加载，你的图片仍不会离开这个标签页。',
 	tool_bulk_convert_images_to_png_faq_a2:
 		'不会。JPEG 从来没存过透明孔。jpg 转 png 只是换上 PNG 外壳，底还是不透明的。真有孔，只有源文件本来就带透明通道。',
 	tool_bulk_convert_images_to_png_faq_a3:

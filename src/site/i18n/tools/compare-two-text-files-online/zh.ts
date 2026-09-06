@@ -20,7 +20,7 @@ const zh: SiteLangDict = {
 		'载入样例会对比 notes-a.txt（alpha / 第二行 / 第三）和中间行改成「changed line」的 notes-b.txt。按行只标那一行。进页就会看到这个结果。',
 	tool_compare_two_text_files_online_example_title: '示例',
 	tool_compare_two_text_files_online_faq_a1:
-		'不会。字节在这个标签页里用 FileReader 读。页面可能从 CDN 加载 jsdiff 库代码；你的文件不会传到我们的服务器。',
+		'不会。字节在这个标签页里用 FileReader 读。页面从本站加载 jsdiff 库代码；你的文件不会传到我们的服务器。',
 	tool_compare_two_text_files_online_faq_a2:
 		"文件会按严格 UTF-8 解码，并移除开头的 BOM。无效 UTF-8 会直接报错，不会用乱码替代字符掩盖；Windows-1252 等旧编码请先转换。",
 	tool_compare_two_text_files_online_faq_a3:

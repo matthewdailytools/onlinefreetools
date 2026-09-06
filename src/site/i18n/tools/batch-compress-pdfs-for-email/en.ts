@@ -34,7 +34,7 @@ const en: SiteLangDict = {
 		'Load sample builds two tiny PDFs with a picture page, runs the email preset on each, keeps two separate files in the ZIP, and shows bytes saved.',
 	tool_batch_compress_pdfs_for_email_example_title: 'Example',
 	tool_batch_compress_pdfs_for_email_faq_a1:
-		'No. Rasterize and rebuild run in this tab. Files stay on the device and are not uploaded to a server. pdf.js, pdf-lib, and a ZIP helper may load from a CDN; your PDFs still never leave the tab.',
+		'No. Rasterize and rebuild run in this tab. Files stay on the device and are not uploaded to a server. pdf.js, pdf-lib, and a ZIP helper load from this site; your PDFs still never leave the tab.',
 	tool_batch_compress_pdfs_for_email_faq_a2:
 		'No. You get a ZIP of N PDFs. Combining into one booklet is Merge PDF — a different job, not this page.',
 	tool_batch_compress_pdfs_for_email_faq_a3:

@@ -26,7 +26,7 @@ const fr: SiteLangDict = {
     'L’échantillon crée un PDF de deux pages, tourne tout à 90° horaire et active Télécharger rotated.pdf.',
   tool_rotate_pdf_example_title: 'Exemple',
   tool_rotate_pdf_faq_a1:
-    'Non. la bibliothèque PDF s’exécute dans votre onglet (scripts éventuellement depuis un CDN). Votre PDF n’est pas envoyé à nos serveurs.',
+    'Non. la bibliothèque PDF s’exécute dans votre onglet (scripts éventuellement depuis ce site). Votre PDF n’est pas envoyé à nos serveurs.',
   tool_rotate_pdf_faq_a2: 'Oui—le fichier téléchargé conserve la nouvelle orientation. Ouvrez-le dans un lecteur avant de partager.',
   tool_rotate_pdf_faq_a3: 'Pages à partir de 1 : 1-3,5 signifie les pages 1–3 et 5. Espaces optionnels. Vide ou hors plage = échec.',
   tool_rotate_pdf_faq_a4: 'Les PDF protégés par mot de passe ne s’ouvrent généralement pas ici. Retirez le mot de passe puis pivotez.',

@@ -21,7 +21,7 @@ const es: SiteLangDict = {
   tool_convert_word_document_to_pdf_err_pdfjs: "Falló la carga del visor PDF.",
   tool_convert_word_document_to_pdf_example: "Cargar ejemplo crea un .docx de un párrafo, muestra la vista HTML y exporta un PDF de una página.",
   tool_convert_word_document_to_pdf_example_title: "Ejemplo",
-  tool_convert_word_document_to_pdf_faq_a1: "No. La conversión ocurre en tu pestaña (las bibliotecas pueden venir de un CDN). El archivo no se envía a nuestros servidores.",
+  tool_convert_word_document_to_pdf_faq_a1: "No. La conversión ocurre en tu pestaña (las bibliotecas se cargan desde este sitio). El archivo no se envía a nuestros servidores.",
   tool_convert_word_document_to_pdf_faq_a2: "El flujo es .docx → HTML → PDF. Encabezados y objetos flotantes se aplanan. Si ya tienes HTML, usa Convertir HTML a PDF.",
   tool_convert_word_document_to_pdf_faq_a3: "No. Guárdalo como .docx. Esta página solo acepta el paquete Office Open XML.",
   tool_convert_word_document_to_pdf_faq_a4: "Aquí partes de un Word existente. Escribir un PDF en línea es un editor en blanco.",

@@ -21,7 +21,7 @@ const en: SiteLangDict = {
   tool_write_pdf_document_online_err_pdfjs: "PDF renderer failed to load.",
   tool_write_pdf_document_online_example: "Load sample fills two plain paragraphs, clicks Create PDF, and shows a one-page preview ready to download.",
   tool_write_pdf_document_online_example_title: "Example",
-  tool_write_pdf_document_online_faq_a1: "No. Rendering runs in your tab (libraries may load from a CDN). Your PDF is not uploaded to our servers.",
+  tool_write_pdf_document_online_faq_a1: "No. Rendering runs in your tab (library scripts load from this site). Your PDF is not uploaded to our servers.",
   tool_write_pdf_document_online_faq_a2: "No. You type new text into a textarea; the page builds a PDF with pdf-lib. It never opens an existing PDF.",
   tool_write_pdf_document_online_faq_a3: "No. Use Edit PDF text or Add text for files you already have.",
   tool_write_pdf_document_online_faq_a4: "Add text stamps labels onto an existing PDF. Edit PDF text changes wording in a text layer. This page only creates a new PDF from typed text.",

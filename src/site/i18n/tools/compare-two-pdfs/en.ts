@@ -20,7 +20,7 @@ const en: SiteLangDict = {
   tool_compare_two_pdfs_err_pdfjs: "PDF renderer failed to load.",
   tool_compare_two_pdfs_example: "Load sample builds a one-page PDF, runs the main action, and shows the expected output for \"Version A text.\".",
   tool_compare_two_pdfs_example_title: "Example",
-  tool_compare_two_pdfs_faq_a1: "No. Rendering runs in your tab (libraries may load from a CDN). Your PDF is not uploaded to our servers.",
+  tool_compare_two_pdfs_faq_a1: "No. Rendering runs in your tab (library scripts load from this site). Your PDF is not uploaded to our servers.",
   tool_compare_two_pdfs_faq_a2: "Scanned PDFs are images without a text layer; this tool does not OCR.",
   tool_compare_two_pdfs_faq_a3: "Encrypted or damaged files show a clear error instead of failing silently.",
   tool_compare_two_pdfs_faq_a4: "Related PDF tools are listed at the bottom of the page.",

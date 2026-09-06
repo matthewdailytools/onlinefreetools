@@ -38,7 +38,7 @@ const en: SiteLangDict = {
 		'Load sample adds two stand-in listing photos, compresses them with the default 200 KB JPEG settings, fills the hit/miss table, and enables Download ZIP. Duplicate names in the ZIP become name (2).jpg.',
 	tool_bulk_compress_product_photos_example_title: 'Example',
 	tool_bulk_compress_product_photos_faq_a1:
-		'No. Decode, resize, and encode run in this tab. Your photos stay on the device and are not uploaded to a server. A ZIP helper script may load from a CDN; your files still never leave the tab.',
+		'No. Decode, resize, and encode run in this tab. Your photos stay on the device and are not uploaded to a server. A ZIP helper script load from this site; your files still never leave the tab.',
 	tool_bulk_compress_product_photos_faq_a2:
 		'No. Noisy or already-small shots have a floor. Quality stops at 0.5. A miss row still packs the closest file so you can judge whether to shrink the longest edge.',
 	tool_bulk_compress_product_photos_faq_a3:

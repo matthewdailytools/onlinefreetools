@@ -23,7 +23,7 @@ const pt: SiteLangDict = {
 		'Carregar exemplo gera dois .docx minúsculos. O segundo memo troca “meet at noon” por “meet at 3pm”. Na primeira pintura já aparece essa diferença de redação.',
 	tool_compare_two_word_documents_for_differences_example_title: 'Exemplo',
 	tool_compare_two_word_documents_for_differences_faq_a1:
-		'Não. Os arquivos são lidos nesta aba. mammoth e jsdiff podem chegar como biblioteca via CDN; seus documentos não são enviados aos nossos servidores.',
+		'Não. Os arquivos são lidos nesta aba. mammoth e jsdiff podem chegar como biblioteca depuis ce site; seus documentos não são enviados aos nossos servidores.',
 	tool_compare_two_word_documents_for_differences_faq_a2:
 		'Não. O Word compara formatação e alterações controladas. Esta página só extrai o texto visível e faz o diff dessa redação. Cabeçalhos, rodapés e estilos são descartados.',
 	tool_compare_two_word_documents_for_differences_faq_a3:

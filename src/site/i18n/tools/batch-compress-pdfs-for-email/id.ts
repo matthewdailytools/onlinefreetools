@@ -35,7 +35,7 @@ const id: SiteLangDict = {
 		'Muat contoh membuat dua PDF pendek berhalaman gambar, menjalankan preset email pada masing-masing, menjaga dua berkas di ZIP, dan menampilkan byte yang dihemat.',
 	tool_batch_compress_pdfs_for_email_example_title: 'Contoh',
 	tool_batch_compress_pdfs_for_email_faq_a1:
-		'Tidak. Raster dan penyusunan ulang terjadi di tab ini. File tetap di perangkat dan tidak diunggah ke server. pdf.js, pdf-lib, dan pembantu ZIP bisa dimuat dari CDN; PDF Anda tidak meninggalkan tab.',
+		'Tidak. Raster dan penyusunan ulang terjadi di tab ini. File tetap di perangkat dan tidak diunggah ke server. pdf.js, pdf-lib, dan pembantu ZIP bisa dimuat dari situs ini; PDF Anda tidak meninggalkan tab.',
 	tool_batch_compress_pdfs_for_email_faq_a2:
 		'Tidak. Anda mendapat ZIP berisi N PDF. Menggabungkan jadi satu buku adalah Gabung PDF — pekerjaan lain, bukan halaman ini.',
 	tool_batch_compress_pdfs_for_email_faq_a3:

@@ -30,7 +30,7 @@ const es: SiteLangDict = {
 		'Cargar ejemplo pone un bloque JPEG y un logo transparente, escribe dos .png y activa Descargar ZIP. La fila JPEG suele mostrar un PNG más grande.',
 	tool_bulk_convert_images_to_png_example_title: 'Ejemplo',
 	tool_bulk_convert_images_to_png_faq_a1:
-		'No. La lectura y la escritura PNG ocurren en esta pestaña. No salen del dispositivo y no se suben al servidor. El ayudante del ZIP puede cargarse desde un CDN; tus fotos siguen en la pestaña.',
+		'No. La lectura y la escritura PNG ocurren en esta pestaña. No salen del dispositivo y no se suben al servidor. El ayudante del ZIP puede cargarse desde este sitio; tus fotos siguen en la pestaña.',
 	tool_bulk_convert_images_to_png_faq_a2:
 		'No. JPEG nunca guardó agujeros. jpg a png te da un envoltorio PNG; el fondo sigue opaco. Los huecos de verdad solo sobreviven si el origen ya tenía alfa.',
 	tool_bulk_convert_images_to_png_faq_a3:

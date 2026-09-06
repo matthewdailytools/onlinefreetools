@@ -62,7 +62,8 @@ wrangler dev                 # 本地开发
 - **构建不再增量**：`npm run build:site` 每次预渲染所有工具页。编辑任一工具仍应运行 `npm run tool:touch -- --slug=<slug>` 或手动更新 `src/site/tool-catalog.d/{slug}.json` 的 `updatedAt`，用于可见更新时间、sitemap/SEO 元数据和工具提交路径；R2 上传只比较 `.html.gz` 内容 hash。commit/push 只影响 Cloudflare 拉取 Worker/Assets，不作为 R2 上传判断依据。
 - **各语言首页**写在 **`public/index.html`** 与 **`public/{lang}/index.html`**（入库进 Assets）；`run_worker_first` 含 `/` 与各语前缀以保留语言协商。Worker：`serveHomeHtml`（Assets → R2 `_pages/...` 兜底）。改首页后须 `build:site` + **commit push**。
 - 远端通常**不跑**本地 `predeploy`。凡页面引用的 `/vendor/*` 必须**已提交进仓库**，否则线上 404（曾导致全站 Bootstrap 样式错位）。
-- `public/vendor/`（bootstrap、fonts、jsquash、gifenc、wasm-feature-detect）**禁止再写入 `.gitignore`**；由 `vendor:site-chrome` / `vendor:image-optimizer`（含在 `build:site`）生成后 **commit**。
+- `public/vendor/`（bootstrap、fonts、jsquash、gifenc、wasm-feature-detect、以及 `vendor:tool-libs` 下的工具页 JS）**禁止再写入 `.gitignore`**；由 `vendor:site-chrome` / `vendor:image-optimizer` / `vendor:tool-libs`（含在 `build:site`）生成后 **commit**。
+- **页面 JS 同域**：工具页与站点 chrome 的 `<script>` / `import()` 必须指向 `/vendor/*`（下载后离线打开的 HTML 可用 `https://onlinefreetools.org/vendor/*`）。禁止 jsDelivr / cdnjs / unpkg。唯一例外：Cloudflare Turnstile。门禁 `lint:vendor` 会扫 `src/pages` 与 `src/site`。
 - `public/_pages/` 整树 gitignore；生产靠 `upload:r2`。
 - `public/og/tools/` **入库 Git**（截图源），但 `public/.assetsignore` 排除该目录：GitHub → Cloudflare **不会**把这些图打进 Worker Assets。公开 URL 为 `https://assets.onlinefreetools.org/og/tools/{slug}.webp`；发版用 `npm run upload:r2:og`（`deploy` 已包含）。
 - 发版前跑 `npm run lint:vendor`（`predeploy` 已包含）：校验关键路径落盘、被 git 跟踪、且未被 ignore。

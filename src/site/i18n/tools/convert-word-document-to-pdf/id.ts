@@ -21,7 +21,7 @@ const id: SiteLangDict = {
   tool_convert_word_document_to_pdf_err_pdfjs: "Perender PDF gagal dimuat.",
   tool_convert_word_document_to_pdf_example: "Muat sampel membuat .docx satu paragraf, menampilkan pratinjau HTML, lalu mengekspor PDF satu halaman.",
   tool_convert_word_document_to_pdf_example_title: "Contoh",
-  tool_convert_word_document_to_pdf_faq_a1: "Tidak. Konversi berjalan di tab Anda (pustaka bisa dari CDN). Berkas tidak dikirim ke server kami.",
+  tool_convert_word_document_to_pdf_faq_a1: "Tidak. Konversi berjalan di tab Anda (pustaka dari situs ini). Berkas tidak dikirim ke server kami.",
   tool_convert_word_document_to_pdf_faq_a2: "Alurnya .docx → HTML → PDF. Kop dan objek mengambang merata. Jika sudah punya HTML, gunakan Ubah HTML menjadi PDF.",
   tool_convert_word_document_to_pdf_faq_a3: "Tidak. Simpan dulu sebagai .docx. Halaman ini hanya menerima paket Office Open XML.",
   tool_convert_word_document_to_pdf_faq_a4: "Di sini Anda mulai dari berkas Word yang ada. Menulis PDF daring adalah editor kosong.",

@@ -168,7 +168,7 @@ export const renderYamlJsonPage = (opts: {
 
 	/** 客户端：js-yaml CDN；双向转换、行号错误、JSON-safe 类型、多文档数组。 */
 	const extraBodyHtml = `
-  <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/vendor/js-yaml/js-yaml.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     (function () {
       /** 粘贴软上限（字符），超出仍可转换但提示卡顿风险 */

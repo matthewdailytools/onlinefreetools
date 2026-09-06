@@ -20,7 +20,7 @@ const en: SiteLangDict = {
   tool_add_text_to_pdf_file_err_pdfjs: "PDF renderer failed to load.",
   tool_add_text_to_pdf_file_example: "Load sample builds a one-page PDF, runs the main action, and shows the expected output for \"CONFIDENTIAL\".",
   tool_add_text_to_pdf_file_example_title: "Example",
-  tool_add_text_to_pdf_file_faq_a1: "No. Rendering runs in your tab (libraries may load from a CDN). Your PDF is not uploaded to our servers.",
+  tool_add_text_to_pdf_file_faq_a1: "No. Rendering runs in your tab (library scripts load from this site). Your PDF is not uploaded to our servers.",
   tool_add_text_to_pdf_file_faq_a2: "No. Stamping draws new text on each page; scanned image-only PDFs still work. Existing pixels are not OCR’d.",
 
   tool_add_text_to_pdf_file_faq_a3: "Encrypted or damaged files show a clear error instead of failing silently.",

@@ -24,7 +24,7 @@ const zh: SiteLangDict = {
   tool_unzip_file_example_title: '示例',
   tool_unzip_file_exported_all: '已把清理过路径的文件重新打包为 ZIP。',
   tool_unzip_file_faq_a1:
-    '不会。ZIP 在你的浏览器标签页读取，解出的字节留在设备上。ZIP 引擎脚本可能从 CDN 加载，但你的压缩包不会上传到我们的服务器。',
+    '不会。ZIP 在你的浏览器标签页读取，解出的字节留在设备上。ZIP 引擎脚本从本站加载，但你的压缩包不会上传到我们的服务器。',
   tool_unzip_file_faq_a2:
     '本页首版聚焦 ZIP。RAR、7Z、ISO、TAR.GZ 需要更重的多格式归档引擎，适合后续单独做“多格式归档解压”工具。',
   tool_unzip_file_faq_a3:

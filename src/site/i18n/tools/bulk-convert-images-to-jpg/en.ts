@@ -32,7 +32,7 @@ const en: SiteLangDict = {
 		'Load sample adds an opaque photo block and a transparent logo, paints both on white, writes two .jpg names, and enables Download ZIP.',
 	tool_bulk_convert_images_to_jpg_example_title: 'Example',
 	tool_bulk_convert_images_to_jpg_faq_a1:
-		'No. Decode and JPEG encode run in this tab. Files stay on the device and are not uploaded to a server. A ZIP helper may load from a CDN; your images still never leave the tab.',
+		'No. Decode and JPEG encode run in this tab. Files stay on the device and are not uploaded to a server. A ZIP helper loads from this site; your images still never leave the tab.',
 	tool_bulk_convert_images_to_jpg_faq_a2:
 		'Yes. PNG to JPG is this page: pick the files, keep the white matte so holes do not turn into black blocks, convert all.',
 	tool_bulk_convert_images_to_jpg_faq_a3:

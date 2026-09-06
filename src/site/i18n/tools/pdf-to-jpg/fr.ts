@@ -23,7 +23,7 @@ const fr: SiteLangDict = {
     'L’échantillon crée un PDF de deux pages, convertit chaque page et active Télécharger avec un ZIP contenant page-1.jpg et page-2.jpg.',
   tool_pdf_to_jpg_example_title: 'Convertir des pages PDF en JPG',
   tool_pdf_to_jpg_faq_a1:
-    'Non. le moteur de rendu et la bibliothèque ZIP s’exécutent dans votre onglet (scripts éventuellement depuis un CDN). Votre PDF n’est pas envoyé à nos serveurs.',
+    'Non. le moteur de rendu et la bibliothèque ZIP s’exécutent dans votre onglet (scripts éventuellement depuis ce site). Votre PDF n’est pas envoyé à nos serveurs.',
   tool_pdf_to_jpg_faq_a2:
     'Plus d’une page → ZIP pdf-pages.zip avec page-1.jpg, page-2.jpg, etc. Une seule page → un JPG direct.',
   tool_pdf_to_jpg_faq_a3:

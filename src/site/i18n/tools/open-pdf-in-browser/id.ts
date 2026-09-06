@@ -19,7 +19,7 @@ const id: SiteLangDict = {
   tool_open_pdf_in_browser_err_pdfjs: "PDF renderer failed to load.",
   tool_open_pdf_in_browser_example: "Muat contoh: Hello browser viewer sample.",
   tool_open_pdf_in_browser_example_title: "Contoh",
-  tool_open_pdf_in_browser_faq_a1: "Tidak. Render berjalan di tab Anda (pustaka mungkin dari CDN). PDF Anda tidak diunggah ke server kami.",
+  tool_open_pdf_in_browser_faq_a1: "Tidak. Render berjalan di tab Anda (pustaka dari situs ini). PDF Anda tidak diunggah ke server kami.",
   tool_open_pdf_in_browser_faq_a2: "Tidak. Operasi ini tidak bergantung pada ekstraksi lapisan teks PDF.",
   tool_open_pdf_in_browser_faq_a3: "Encrypted or damaged files show a clear error instead of failing silently.",
   tool_open_pdf_in_browser_faq_a4: "Related PDF tools are listed at the bottom of the page.",

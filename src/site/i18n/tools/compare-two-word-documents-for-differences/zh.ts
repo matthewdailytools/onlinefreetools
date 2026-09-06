@@ -18,7 +18,7 @@ const zh: SiteLangDict = {
 	tool_compare_two_word_documents_for_differences_example:
 		'载入样例会生成两份很小的 .docx。第二份把「中午见面」改成「下午三点见面」。进页就能看到这句差异。',
 	tool_compare_two_word_documents_for_differences_example_title: '示例',
-	tool_compare_two_word_documents_for_differences_faq_a1: '不会。文件在这个标签页读取。mammoth 和 jsdiff 可能从 CDN 加载库代码，文档不会传到我们的服务器。',
+	tool_compare_two_word_documents_for_differences_faq_a1: '不会。文件在这个标签页读取。mammoth 和 jsdiff 可能从本站加载库代码，文档不会传到我们的服务器。',
 	tool_compare_two_word_documents_for_differences_faq_a2: '不是。Word 可以比格式和修订。本页只抽可见文字再 diff。页眉、页脚、样式会丢。',
 	tool_compare_two_word_documents_for_differences_faq_a3: '抽取失败常见于加密、损坏或不是 OOXML。纯图片页会得到空文本。',
 	tool_compare_two_word_documents_for_differences_faq_a4: "这里只接受两份 .docx 并比较抽取出的文字。PDF 和旧版 .doc 不会解析，格式变化与 Word 修订历史也不在结果内。",

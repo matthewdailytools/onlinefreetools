@@ -22,7 +22,7 @@ const en: SiteLangDict = {
 		'Load sample compares two CSV tables. Name/Qty headers match; Gadget quantity is 2 vs 9, so B3 is listed. First paint already shows that cell.',
 	tool_excel_compare_files_example_title: 'Example',
 	tool_excel_compare_files_faq_a1:
-		'No. Bytes are read in this tab with SheetJS. The library may load from a CDN; your files are not uploaded to our servers.',
+		'No. Bytes are read in this tab with SheetJS. The library load from this site; your files are not uploaded to our servers.',
 	tool_excel_compare_files_faq_a2:
 		'Yes. The first sheet is selected by default. Use the sheet lists if you need another tab in the same file. Other sheets are not compared until you select them.',
 	tool_excel_compare_files_faq_a3:

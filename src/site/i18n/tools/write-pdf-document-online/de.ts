@@ -20,7 +20,7 @@ const de: SiteLangDict = {
   tool_write_pdf_document_online_err_pdfjs: "PDF renderer failed to load.",
   tool_write_pdf_document_online_example: "Beispiel laden füllt zwei Absätze, klickt PDF erstellen und zeigt eine einseitige Vorschau zum Herunterladen.",
   tool_write_pdf_document_online_example_title: "Beispiel",
-  tool_write_pdf_document_online_faq_a1: "Nein. Das Rendering läuft in Ihrem Tab (Bibliotheken ggf. per CDN). Ihr PDF wird nicht auf unsere Server hochgeladen.",
+  tool_write_pdf_document_online_faq_a1: "Nein. Das Rendering läuft in Ihrem Tab (Bibliotheken ggf. from this site). Ihr PDF wird nicht auf unsere Server hochgeladen.",
   tool_write_pdf_document_online_faq_a2: "Nein. Sie tippen neuen Text in ein Textfeld; die Seite baut ein PDF mit pdf-lib. Es öffnet nie ein vorhandenes PDF.",
   tool_write_pdf_document_online_faq_a3: "Nein. Für Dateien, die Sie schon haben, nutzen Sie PDF-Text bearbeiten oder Text hinzufügen.",
   tool_write_pdf_document_online_faq_a4: "Text hinzufügen stempelt auf ein vorhandenes PDF. PDF-Text bearbeiten ändert Wortlaut in der Textebene. Diese Seite erstellt nur ein neues PDF aus getipptem Text.",

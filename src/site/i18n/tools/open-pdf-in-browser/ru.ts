@@ -19,7 +19,7 @@ const ru: SiteLangDict = {
   tool_open_pdf_in_browser_err_pdfjs: "PDF renderer failed to load.",
   tool_open_pdf_in_browser_example: "Загрузить пример: Hello browser viewer sample.",
   tool_open_pdf_in_browser_example_title: "Пример",
-  tool_open_pdf_in_browser_faq_a1: "Нет. Рендеринг в вашей вкладке (библиотеки могут грузиться с CDN). PDF не отправляется на наши серверы.",
+  tool_open_pdf_in_browser_faq_a1: "Нет. Рендеринг в вашей вкладке (библиотеки грузятся с этого сайта). PDF не отправляется на наши серверы.",
   tool_open_pdf_in_browser_faq_a2: "Нет. Эта операция не зависит от извлечения текстового слоя PDF.",
   tool_open_pdf_in_browser_faq_a3: "Encrypted or damaged files show a clear error instead of failing silently.",
   tool_open_pdf_in_browser_faq_a4: "Related PDF tools are listed at the bottom of the page.",

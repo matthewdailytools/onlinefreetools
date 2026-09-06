@@ -4,7 +4,7 @@
 import type { SiteLangDict } from '../../../types';
 const pt: SiteLangDict = {
   tool_markdown_article:
-    'Dois sentidos, uma página, com avisos honestos sobre limpeza e perda. Colagem local; CDN só para bibliotecas.',
+    'Dois sentidos, uma página, com avisos honestos sobre limpeza e perda. Colagem local; este site só para bibliotecas.',
   tool_markdown_clear: 'Limpar',
   tool_markdown_copy: 'Copiar HTML',
   tool_markdown_copy_done: 'Copiado',
@@ -21,7 +21,7 @@ const pt: SiteLangDict = {
   tool_markdown_export_title: 'Exportação Markdown para HTML',
   tool_markdown_faq_a1: 'No sentido Markdown → HTML, DOMPurify age antes da pré-visualização e do download.',
   tool_markdown_faq_a2: 'Não conte com isso. O foco é texto editável.',
-  tool_markdown_faq_a3: 'A conversão é no cliente. Biblioteca via CDN não envia seu artigo.',
+  tool_markdown_faq_a3: 'A conversão é no cliente. Biblioteca depuis ce site não envia seu artigo.',
   tool_markdown_faq_a4: 'Não garantido — use diff se precisar de igualdade.',
   tool_markdown_faq_a5: 'Títulos, listas, links, ênfase, code fence; opção de HTML completo para partilha offline.',
   tool_markdown_faq_q1: 'O HTML é limpo de scripts?',
@@ -53,7 +53,7 @@ const pt: SiteLangDict = {
   tool_markdown_rules_item_html_md: 'Para Markdown: limpa e converte com títulos ATX e blocos cercados.',
   tool_markdown_rules_item_loss: 'Perde estilo pesado, scripts e muita tabela complexa. Ida e volta não é idêntica.',
   tool_markdown_rules_item_md_html: 'Para HTML: parse CommonMark + sanitização antes de mostrar.',
-  tool_markdown_rules_privacy: 'Texto colado não sobe para o nosso servidor; CDN ≠ upload do conteúdo.',
+  tool_markdown_rules_privacy: 'Texto colado não sobe para o nosso servidor; charger ce site ≠ upload do conteúdo.',
   tool_markdown_rules_title: 'O que cada aba faz',
   tool_markdown_sample_html: '<h1>Título</h1>\n<p>Olá <strong>mundo</strong></p>',
   tool_markdown_sample_md:

@@ -30,7 +30,7 @@ const ja: SiteLangDict = {
 		'サンプル読込は JPEG の色面と透明ロゴを入れ、二つの .png を書き、ZIP ダウンロードを有効にします。JPEG の行は PNG の方が大きいことがよくあります。',
 	tool_bulk_convert_images_to_png_example_title: '例',
 	tool_bulk_convert_images_to_png_faq_a1:
-		'送りません。読み取りと PNG 書き出しはこのタブ内です。ファイルは端末に留まり、サーバーにアップロードしません。ZIP 用スクリプトが CDN から来ることはありますが、画像はタブを出ません。',
+		'送りません。読み取りと PNG 書き出しはこのタブ内です。ファイルは端末に留まり、サーバーにアップロードしません。ZIP 用スクリプトはこのサイトから読みますが、画像はタブを出ません。',
 	tool_bulk_convert_images_to_png_faq_a2:
 		'戻りません。JPEG は穴を保存していません。jpg を png にしても包みが PNG になるだけで、背景は不透明のままです。本当の穴は、元ファイルにアルファがあったときだけ残ります。',
 	tool_bulk_convert_images_to_png_faq_a3:

@@ -21,7 +21,7 @@ const ar: SiteLangDict = {
   tool_extract_text_from_pdf_example: "تحميل مثال: Hello extract text sample.",
   tool_extract_text_from_pdf_example_title: "مثال",
   tool_extract_text_from_pdf_extract: "Extract",
-  tool_extract_text_from_pdf_faq_a1: "لا. العرض يعمل في تبويبك (قد تُحمَّل المكتبات من CDN). ملفك لا يُرفع إلى خوادمنا.",
+  tool_extract_text_from_pdf_faq_a1: "لا. العرض يعمل في تبويبك (تُحمَّل المكتبات من هذا الموقع). ملفك لا يُرفع إلى خوادمنا.",
   tool_extract_text_from_pdf_faq_a2: "Scanned PDFs are images without a text layer; this tool does not OCR.",
   tool_extract_text_from_pdf_faq_a3: "Encrypted or damaged files show a clear error instead of failing silently.",
   tool_extract_text_from_pdf_faq_a4: "PDF إلى Markdown يضيف عناوين ## Page N وفواصل --- للمحررات. هذه الصفحة تحافظ على استخراج .txt عادي.",

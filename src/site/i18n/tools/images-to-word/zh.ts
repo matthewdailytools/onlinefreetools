@@ -36,7 +36,7 @@ const zh: SiteLangDict = {
   tool_images_to_word_rules_body: '图片以 PNG 嵌入；除最后一张外图后分页。',
   tool_images_to_word_rules_item_1: '文档中宽度约 550px。',
   tool_images_to_word_rules_item_2: '顺序=列表序。',
-  tool_images_to_word_rules_item_3: '库可能从 CDN 加载，文件不上传到本站。',
+  tool_images_to_word_rules_item_3: '库从本站加载，文件不上传到本站。',
   tool_images_to_word_rules_item_4: '超大图会缩小嵌入。',
   tool_images_to_word_rules_title: '规则',
   tool_images_to_word_sample: '加载示例',

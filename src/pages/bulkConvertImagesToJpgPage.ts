@@ -212,7 +212,7 @@ export const renderBulkConvertImagesToJpgPage = (opts: {
 	 * 客户端：串行垫底 JPEG、失败跳过、ZIP。进页 loadSample()。
 	 */
 	const extraBodyHtml = `
-  <script src="https://cdn.jsdelivr.net/npm/fflate@0.8.2/umd/index.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/vendor/fflate/index.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     (function () {
       /** 单文件软体积上限。 */

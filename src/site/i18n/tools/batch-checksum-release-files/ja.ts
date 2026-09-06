@@ -31,7 +31,7 @@ const ja: SiteLangDict = {
 	tool_batch_checksum_release_files_export_csv: 'CSV 書き出し',
 	tool_batch_checksum_release_files_export_sums: 'SUMS 書き出し',
 	tool_batch_checksum_release_files_faq_a1:
-		'しません。ハッシュはこのタブ内。ファイルは端末内に留まり、サーバーにアップロードしない。SHA-256 は Web Crypto。MD5 は CDN から crypto-js を読むことがありますが、バイトはタブを出ません。',
+		'しません。ハッシュはこのタブ内。ファイルは端末内に留まり、サーバーにアップロードしない。SHA-256 は Web Crypto。MD5 はこのサイトから crypto-js を読みますが、バイトはタブを出ません。',
 	tool_batch_checksum_release_files_faq_a2:
 		'しません。書き出しは CSV の表と SHA256SUMS テキストです。バイナリを固めるのは ZIP 作成で、別作業です。',
 	tool_batch_checksum_release_files_faq_a3:
@@ -59,7 +59,7 @@ const ja: SiteLangDict = {
 	tool_batch_checksum_release_files_rules_body:
 		'SHA-256 は 4 MiB スライスで読んだバイトを結合して Web Crypto で計算する。出力は表と CSV と SUMS であり、原ファイルの ZIP ではない。',
 	tool_batch_checksum_release_files_rules_item_1:
-		'SHA-256 は常に走る。MD5 は任意で、CDN から crypto-js を遅延読み込みする。バイトはタブ内。',
+		'SHA-256 は常に走る。MD5 は任意で、このサイトから crypto-js を遅延読み込みする。バイトはタブ内。',
 	tool_batch_checksum_release_files_rules_item_2:
 		'SUMS 行は GNU sha256sum：16 進、空白 2 つか空白+星、その後に名前。貼り付けの余剰名は欠損。',
 	tool_batch_checksum_release_files_rules_item_3:

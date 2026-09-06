@@ -25,7 +25,7 @@ const es: SiteLangDict = {
     'El ejemplo crea un PDF de una página con Helvetica, lo convierte, muestra la frase en la vista previa y activa Descargar .md.',
   tool_pdf_to_markdown_example_title: 'Ejemplo',
   tool_pdf_to_markdown_faq_a1:
-    'No. el renderizador de páginas corre en tu pestaña (los scripts pueden cargar desde un CDN). No subimos tu PDF.',
+    'No. el renderizador de páginas corre en tu pestaña (los scripts se cargan desde este sitio). No subimos tu PDF.',
   tool_pdf_to_markdown_faq_a2:
     'Los escaneos suelen ser imágenes sin capa de texto. Sin OCR, la extracción queda vacía y falla con un mensaje claro.',
   tool_pdf_to_markdown_faq_a3:

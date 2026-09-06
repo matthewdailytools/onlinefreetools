@@ -19,7 +19,7 @@ const fr: SiteLangDict = {
   tool_make_pdf_fillable_err_no_name: "Donnez d’abord un nom au champ.",
   tool_make_pdf_fillable_example: "Charger un exemple crée une page blanche, ajoute FullName en 48,220 (220×22), affiche l’aperçu et active le téléchargement.",
   tool_make_pdf_fillable_example_title: "Exemple",
-  tool_make_pdf_fillable_faq_a1: "Non. Le placement se fait dans cet onglet. Des scripts CDN peuvent se charger ; votre PDF n’est pas envoyé à nos serveurs.",
+  tool_make_pdf_fillable_faq_a1: "Non. Le placement se fait dans cet onglet. Des scripts de ce site peuvent se charger ; votre PDF n’est pas envoyé à nos serveurs.",
   tool_make_pdf_fillable_faq_a2: "Oui. Une fois les champs présents, utilisez Remplir un formulaire PDF.",
   tool_make_pdf_fillable_faq_a3: "Utilisez Ajouter N champs. Ils s’empilent en Field_1, Field_2… avec un écart fixe.",
   tool_make_pdf_fillable_faq_a4: "Créer un formulaire PDF part vide et nomme texte ou cases. Ici on superpose des champs à un fichier déjà là.",

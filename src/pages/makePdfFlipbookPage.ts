@@ -144,7 +144,7 @@ export const renderMakePdfFlipbookPage = (opts: {
 
 	const extraBodyHtml = `
   ${pdfWorkUiClientScript()}
-  <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/vendor/pdf-lib/pdf-lib.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     (function () {
       var fileInput = document.getElementById('flipFile');
@@ -182,8 +182,8 @@ export const renderMakePdfFlipbookPage = (opts: {
 
       function ensurePdfJs() {
         if (window.pdfjsLib) return Promise.resolve(window.pdfjsLib);
-        return import('https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.min.mjs').then(function (mod) {
-          mod.GlobalWorkerOptions.workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.worker.min.mjs';
+        return import('/vendor/pdfjs/pdf.min.mjs').then(function (mod) {
+          mod.GlobalWorkerOptions.workerSrc = '/vendor/pdfjs/pdf.worker.min.mjs';
           window.pdfjsLib = mod;
           return mod;
         }).catch(function () { throw new Error('pdfjs'); });
@@ -243,7 +243,7 @@ export const renderMakePdfFlipbookPage = (opts: {
 
       /**
        * 生成可独立保存的 HTML 翻页预览。
-       * 导出文件仍需联网加载 PDF.js，但 PDF 内容直接内嵌，不会上传。
+       * 导出文件仍需联网加载本站 /vendor/pdfjs，但 PDF 内容直接内嵌，不会上传。
        * @param {Uint8Array} bytes PDF 原始字节
        * @returns {string} 完整 HTML 文档
        */
@@ -255,8 +255,8 @@ export const renderMakePdfFlipbookPage = (opts: {
           'canvas.turn{animation:turn .24s ease-out;transform-origin:left center}@keyframes turn{from{opacity:.45;transform:perspective(900px) rotateY(-13deg)}to{opacity:1;transform:none}}' +
           'button{margin:12px 4px;padding:8px 14px}</style></head><body><main><canvas id="page"></canvas><div>' +
           '<button id="prev" type="button">Previous</button><span id="info"></span><button id="next" type="button">Next</button>' +
-          '</div></main><script type="module">import * as pdfjsLib from "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.min.mjs";' +
-          'pdfjsLib.GlobalWorkerOptions.workerSrc="https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.worker.min.mjs";' +
+          '</div></main><script type="module">import * as pdfjsLib from "https://onlinefreetools.org/vendor/pdfjs/pdf.min.mjs";' +
+          'pdfjsLib.GlobalWorkerOptions.workerSrc="https://onlinefreetools.org/vendor/pdfjs/pdf.worker.min.mjs";' +
           'const raw=atob("' + encoded + '"),bytes=Uint8Array.from(raw,c=>c.charCodeAt(0)),doc=await pdfjsLib.getDocument({data:bytes}).promise;' +
           'let n=1;const c=document.getElementById("page"),info=document.getElementById("info");async function render(){const p=await doc.getPage(n),v=p.getViewport({scale:1.35});c.width=v.width;c.height=v.height;c.classList.remove("turn");void c.offsetWidth;c.classList.add("turn");await p.render({canvasContext:c.getContext("2d"),viewport:v}).promise;info.textContent=" "+n+" / "+doc.numPages+" ";}' +
           'document.getElementById("prev").onclick=()=>{if(n>1){n--;render()}};document.getElementById("next").onclick=()=>{if(n<doc.numPages){n++;render()}};render();' +

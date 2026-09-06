@@ -19,7 +19,7 @@ const id: SiteLangDict = {
   tool_make_pdf_fillable_err_no_name: "Beri nama kolom dulu.",
   tool_make_pdf_fillable_example: "Muat contoh membuat halaman kosong, menambah FullName di 48,220 ukuran 220×22, menampilkan pratinjau, dan mengaktifkan unduhan.",
   tool_make_pdf_fillable_example_title: "Contoh",
-  tool_make_pdf_fillable_faq_a1: "Tidak. Penempatan di tab ini. Skrip CDN boleh dimuat; PDF tidak ke server kami.",
+  tool_make_pdf_fillable_faq_a1: "Tidak. Penempatan di tab ini. Skrip situs ini boleh dimuat; PDF tidak ke server kami.",
   tool_make_pdf_fillable_faq_a2: "Ya. Setelah kolom ada, pakai Isi formulir PDF.",
   tool_make_pdf_fillable_faq_a3: "Pakai Tambah N kolom. Mereka menumpuk Field_1, Field_2… dengan jarak tetap.",
   tool_make_pdf_fillable_faq_a4: "Buat formulir PDF mulai kosong dan menamai teks atau centang. Halaman ini menempel kolom pada berkas yang sudah Anda punya.",

@@ -21,7 +21,7 @@ const ja: SiteLangDict = {
   tool_convert_word_document_to_pdf_err_pdfjs: "PDF レンダラーの読み込みに失敗しました。",
   tool_convert_word_document_to_pdf_example: "サンプル読み込みは1段落の .docx を作り、HTML プレビューを出し、1ページの PDF を書き出します。",
   tool_convert_word_document_to_pdf_example_title: "例",
-  tool_convert_word_document_to_pdf_faq_a1: "いいえ。変換はこのタブ内です（ライブラリは CDN から来る場合があります）。当社サーバーには送りません。",
+  tool_convert_word_document_to_pdf_faq_a1: "いいえ。変換はこのタブ内です（ライブラリはこのサイトから読みます）。当社サーバーには送りません。",
   tool_convert_word_document_to_pdf_faq_a2: "経路は .docx → HTML → PDF です。ヘッダーや回り込みは平坦化します。すでに HTML があるなら HTML を PDF に変換を使ってください。",
   tool_convert_word_document_to_pdf_faq_a3: "いいえ。先に .docx で保存してください。このページは Office Open XML のみです。",
   tool_convert_word_document_to_pdf_faq_a4: "こちらは既存の Word から始めます。オンライン執筆は白紙の編集画面です。",

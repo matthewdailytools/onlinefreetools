@@ -20,7 +20,7 @@ const ar: SiteLangDict = {
   tool_combine_files_into_one_pdf_err_pdfjs: "PDF renderer failed to load.",
   tool_combine_files_into_one_pdf_example: "تحميل مثال: Combine sample.",
   tool_combine_files_into_one_pdf_example_title: "مثال",
-  tool_combine_files_into_one_pdf_faq_a1: "لا. العرض يعمل في تبويبك (قد تُحمَّل المكتبات من CDN). ملفك لا يُرفع إلى خوادمنا.",
+  tool_combine_files_into_one_pdf_faq_a1: "لا. العرض يعمل في تبويبك (تُحمَّل المكتبات من هذا الموقع). ملفك لا يُرفع إلى خوادمنا.",
   tool_combine_files_into_one_pdf_faq_a2: "لا. لا تعتمد هذه العملية على استخراج طبقة النص من PDF.",
   tool_combine_files_into_one_pdf_faq_a3: "Encrypted or damaged files show a clear error instead of failing silently.",
   tool_combine_files_into_one_pdf_faq_a4: "Related PDF tools are listed at the bottom of the page.",

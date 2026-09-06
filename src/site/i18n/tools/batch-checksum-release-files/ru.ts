@@ -31,7 +31,7 @@ const ru: SiteLangDict = {
 	tool_batch_checksum_release_files_export_csv: 'Экспорт CSV',
 	tool_batch_checksum_release_files_export_sums: 'Экспорт SUMS',
 	tool_batch_checksum_release_files_faq_a1:
-		'Нет. Хеш считается на этой вкладке. Файлы остаются на устройстве и не загружаются на сервер. SHA-256 — Web Crypto. MD5 может грузить crypto-js с CDN; ваши байты вкладку не покидают.',
+		'Нет. Хеш считается на этой вкладке. Файлы остаются на устройстве и не загружаются на сервер. SHA-256 — Web Crypto. MD5 может грузить crypto-js с этого сайта; ваши байты вкладку не покидают.',
 	tool_batch_checksum_release_files_faq_a2:
 		'Нет. Экспорт — таблица CSV и SHA256SUMS. Упаковать бинарники — это Создать ZIP, другая задача.',
 	tool_batch_checksum_release_files_faq_a3:
@@ -59,7 +59,7 @@ const ru: SiteLangDict = {
 	tool_batch_checksum_release_files_rules_body:
 		'SHA-256 использует Web Crypto на байтах, прочитанных кусками по 4 МиБ и склеенных. На выходе таблица, CSV и SUMS, никогда ZIP оригиналов.',
 	tool_batch_checksum_release_files_rules_item_1:
-		'SHA-256 всегда идёт. MD5 по желанию и лениво грузит crypto-js с CDN; байты остаются на вкладке.',
+		'SHA-256 всегда идёт. MD5 по желанию и лениво грузит crypto-js с этого сайта; байты остаются на вкладке.',
 	tool_batch_checksum_release_files_rules_item_2:
 		'Строки SUMS как GNU sha256sum: hex, два пробела или пробел-звезда, затем имя. Лишние имена во вставке помечаются как отсутствующие.',
 	tool_batch_checksum_release_files_rules_item_3:

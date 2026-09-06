@@ -33,7 +33,7 @@ const es: SiteLangDict = {
 		'Cargar ejemplo pone un bloque opaco y un logo transparente, los pinta sobre blanco, deja dos nombres .jpg y activa Descargar ZIP.',
 	tool_bulk_convert_images_to_jpg_example_title: 'Ejemplo',
 	tool_bulk_convert_images_to_jpg_faq_a1:
-		'No. La lectura y la escritura .jpg ocurren en esta pestaña. No salen del dispositivo y no se suben al servidor. El ayudante del ZIP puede cargarse desde un CDN; tus fotos siguen en la pestaña.',
+		'No. La lectura y la escritura .jpg ocurren en esta pestaña. No salen del dispositivo y no se suben al servidor. El ayudante del ZIP puede cargarse desde este sitio; tus fotos siguen en la pestaña.',
 	tool_bulk_convert_images_to_jpg_faq_a2:
 		'Sí. PNG a JPG es esto: elige los archivos, deja el fondo blanco para que los huecos no se vuelvan negros, convierte todo.',
 	tool_bulk_convert_images_to_jpg_faq_a3:

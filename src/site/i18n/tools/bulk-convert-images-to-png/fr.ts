@@ -30,7 +30,7 @@ const fr: SiteLangDict = {
 		'Charger un exemple pose un bloc JPEG et un logo transparent, écrit deux .png et active Télécharger le ZIP. La ligne JPEG montre souvent un PNG plus gros.',
 	tool_bulk_convert_images_to_png_example_title: 'Exemple',
 	tool_bulk_convert_images_to_png_faq_a1:
-		'Non. Lecture et écriture PNG se font dans cet onglet. Les fichiers restent sur l\'appareil, sans envoi au serveur. L\'aide ZIP peut venir d\'un CDN ; vos images ne quittent pas l\'onglet.',
+		'Non. Lecture et écriture PNG se font dans cet onglet. Les fichiers restent sur l\'appareil, sans envoi au serveur. L\'aide ZIP peut venir de ce site ; vos images ne quittent pas l\'onglet.',
 	tool_bulk_convert_images_to_png_faq_a2:
 		'Non. Le JPEG n\'a jamais stocké de trous. jpg vers png ne fait qu\'envelopper en PNG ; le fond reste opaque. Les vrais trous ne survivent que si la source avait déjà de l\'alpha.',
 	tool_bulk_convert_images_to_png_faq_a3:

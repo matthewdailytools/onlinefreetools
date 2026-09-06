@@ -24,7 +24,7 @@ const es: SiteLangDict = {
     'La muestra crea una página, la cifra con sample, habilita Descargar protected.pdf y muestra la clave en el estado.',
   tool_protect_pdf_example_title: 'Proteger un PDF con contraseña',
   tool_protect_pdf_faq_a1:
-    'No. la biblioteca PDF corre en su pestaña (los scripts pueden cargarse desde una CDN). Su PDF no se sube a nuestros servidores.',
+    'No. la biblioteca PDF corre en su pestaña (los scripts se cargan desde este sitio). Su PDF no se sube a nuestros servidores.',
   tool_protect_pdf_faq_a2:
     'Aplica cifrado PDF habitual: hay que escribir la contraseña para abrir. No es grado militar; elija una clave fuerte que recuerde.',
   tool_protect_pdf_faq_a3:

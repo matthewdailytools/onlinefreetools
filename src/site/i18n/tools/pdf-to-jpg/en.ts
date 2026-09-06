@@ -23,7 +23,7 @@ const en: SiteLangDict = {
     'Sample builds a two-page PDF, converts every page, and enables Download for a ZIP with page-1.jpg and page-2.jpg.',
   tool_pdf_to_jpg_example_title: 'Convert PDF pages to JPG',
   tool_pdf_to_jpg_faq_a1:
-    'No. the page renderer and the ZIP library run in your tab (scripts may load from a CDN). Your PDF is not uploaded to our servers.',
+    'No. the page renderer and the ZIP library run in your tab (scripts load from this site). Your PDF is not uploaded to our servers.',
   tool_pdf_to_jpg_faq_a2:
     'More than one page → a ZIP named pdf-pages.zip with page-1.jpg, page-2.jpg, and so on. Exactly one page → a single JPG file.',
   tool_pdf_to_jpg_faq_a3:

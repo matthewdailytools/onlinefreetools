@@ -11,6 +11,11 @@ const languages = [
   { code: 'de', label: 'Deutsch' },
 ];
 
+/** 默认 GitHub 仓库（可用 SITE_GITHUB_REPO_URL 覆盖）。 */
+const githubRepoUrl =
+  process.env.SITE_GITHUB_REPO_URL ||
+  'https://github.com/matthewdailytools/onlinefreetools';
+
 export const siteConfig = {
   brand: 'OnlineFreeTools.org',
   baseUrl: process.env.SITE_BASE_URL || 'https://onlinefreetools.org',
@@ -25,9 +30,11 @@ export const siteConfig = {
    * 本站开源仓库（页脚 GitHub 入口）。
    * 可用环境变量 SITE_GITHUB_REPO_URL 覆盖。
    */
-  githubRepoUrl:
-    process.env.SITE_GITHUB_REPO_URL ||
-    'https://github.com/matthewdailytools/onlinefreetools',
+  githubRepoUrl,
+  /**
+   * GitHub 新建 Issue 页（工具页面包屑旁「Report a bug」）。由仓库 URL 推导。
+   */
+  githubIssuesNewUrl: `${githubRepoUrl}/issues/new`,
   /** Google Search Console 站点所有权验证码（meta 标签 content） */
   googleSiteVerification:
     process.env.SITE_GOOGLE_SITE_VERIFICATION ||

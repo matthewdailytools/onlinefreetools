@@ -35,7 +35,7 @@ const fr: SiteLangDict = {
 		'Charger un exemple crée deux petits PDF avec une page image, applique le préréglage e-mail à chacun, laisse deux fichiers dans le ZIP et affiche les octets économisés.',
 	tool_batch_compress_pdfs_for_email_example_title: 'Exemple',
 	tool_batch_compress_pdfs_for_email_faq_a1:
-		'Non. Le tramage et le remontage se font dans cet onglet. Les fichiers restent sur l\'appareil et ne sont pas envoyés vers un serveur. pdf.js, pdf-lib et l\'aide ZIP peuvent venir d\'un CDN ; vos PDF ne quittent pas l\'onglet.',
+		'Non. Le tramage et le remontage se font dans cet onglet. Les fichiers restent sur l\'appareil et ne sont pas envoyés vers un serveur. pdf.js, pdf-lib et l\'aide ZIP peuvent venir de ce site ; vos PDF ne quittent pas l\'onglet.',
 	tool_batch_compress_pdfs_for_email_faq_a2:
 		'Non. Vous obtenez un ZIP de N PDF. Les coller en un livret, c\'est Fusionner PDF — un autre travail, pas cette page.',
 	tool_batch_compress_pdfs_for_email_faq_a3:

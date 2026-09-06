@@ -151,7 +151,7 @@ export const renderTextDiffPage = (opts: {
 	});
 	/** 客户端：加载 jsdiff，本地计算增删高亮与摘要。 */
 	const extraBodyHtml = `
-  <script src="https://cdn.jsdelivr.net/npm/diff@5.2.0/dist/diff.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/vendor/diff/diff.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     (function () {
       /** 单侧粘贴软上限（字符），超出仍可对比但提示卡顿风险 */

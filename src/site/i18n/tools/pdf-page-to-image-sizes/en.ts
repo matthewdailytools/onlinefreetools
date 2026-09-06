@@ -25,7 +25,7 @@ const en: SiteLangDict = {
   tool_pdf_page_to_image_sizes_example_title: 'Example',
   tool_pdf_page_to_image_sizes_export: 'Export',
   tool_pdf_page_to_image_sizes_faq_a1:
-    'No. the page renderer, the PDF library, and the ZIP library run in your tab (scripts may load from a CDN). Your PDF is not uploaded to our servers.',
+    'No. the page renderer, the PDF library, and the ZIP library run in your tab (scripts load from this site). Your PDF is not uploaded to our servers.',
   tool_pdf_page_to_image_sizes_faq_a2:
     'PDF to JPG exports every page at its native aspect ratio. This tool picks one page and fits it into fixed platform sizes (contain, centered, white bars if needed).',
   tool_pdf_page_to_image_sizes_faq_a3:

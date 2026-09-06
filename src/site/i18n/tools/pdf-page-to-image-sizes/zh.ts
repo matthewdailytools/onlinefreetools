@@ -23,7 +23,7 @@ const zh: SiteLangDict = {
     '样例会生成单页 PDF，导出第 1 页到四个 JPEG 预设，并启用下载 page-1-sizes.zip（含 page-1-1080x1080.jpg 至 page-1-1080x1920.jpg）。',
   tool_pdf_page_to_image_sizes_example_title: '示例',
   tool_pdf_page_to_image_sizes_export: '导出',
-  tool_pdf_page_to_image_sizes_faq_a1: '不会。处理在当前标签页内完成（组件脚本可能从 CDN 加载），PDF 不会上传到我们的服务器。',
+  tool_pdf_page_to_image_sizes_faq_a1: '不会。处理在当前标签页内完成（组件脚本从本站加载），PDF 不会上传到我们的服务器。',
   tool_pdf_page_to_image_sizes_faq_a2: '「PDF 转 JPG」把每一页按原始比例导出。「本工具」只选一页，并 fit 到固定平台尺寸（contain 居中，必要时白边）。',
   tool_pdf_page_to_image_sizes_faq_a3: '1080×1080（Instagram 方图）、1200×630（Open Graph / Facebook 链接预览）、1280×720（HD 横屏）、1080×1920（竖屏故事/信息流）。',
   tool_pdf_page_to_image_sizes_faq_a4: '页面会缩放以完整放进每个框内，不裁切。空白区域填白色，保证 JPEG 输出干净。',

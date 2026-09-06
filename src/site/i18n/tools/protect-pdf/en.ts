@@ -25,7 +25,7 @@ const en: SiteLangDict = {
     'Sample builds a one-page PDF, encrypts it with password sample, enables Download for protected.pdf, and shows sample in the status line.',
   tool_protect_pdf_example_title: 'Password-protect a PDF',
   tool_protect_pdf_faq_a1:
-    'No. The PDF library runs in your tab (scripts may load from a CDN). Your PDF is not uploaded to our servers.',
+    'No. The PDF library runs in your tab (scripts load from this site). Your PDF is not uploaded to our servers.',
   tool_protect_pdf_faq_a2:
     'It applies normal PDF user-password encryption so viewers must enter the password to open. It is not marketed as military-grade—pick a strong password you will remember.',
   tool_protect_pdf_faq_a3:

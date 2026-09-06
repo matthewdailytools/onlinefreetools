@@ -21,7 +21,7 @@ const pt: SiteLangDict = {
   tool_convert_word_document_to_pdf_err_pdfjs: "Falha ao carregar o visualizador PDF.",
   tool_convert_word_document_to_pdf_example: "Carregar amostra cria um .docx de um parágrafo, mostra a prévia HTML e exporta um PDF de uma página.",
   tool_convert_word_document_to_pdf_example_title: "Exemplo",
-  tool_convert_word_document_to_pdf_faq_a1: "Não. A conversão ocorre nesta aba (bibliotecas podem vir de um CDN). O arquivo não vai aos nossos servidores.",
+  tool_convert_word_document_to_pdf_faq_a1: "Não. A conversão ocorre nesta aba (bibliotecas vêm deste site). O arquivo não vai aos nossos servidores.",
   tool_convert_word_document_to_pdf_faq_a2: "O fluxo é .docx → HTML → PDF. Cabeçalhos e objetos flutuantes achatam. Se já tem HTML, use Converter HTML em PDF.",
   tool_convert_word_document_to_pdf_faq_a3: "Não. Salve como .docx. Esta página só aceita o pacote Office Open XML.",
   tool_convert_word_document_to_pdf_faq_a4: "Aqui você parte de um Word existente. Escrever PDF online é um editor em branco.",

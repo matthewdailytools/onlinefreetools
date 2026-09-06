@@ -21,7 +21,7 @@ const id: SiteLangDict = {
   tool_extract_text_from_pdf_example: "Muat contoh: Hello extract text sample.",
   tool_extract_text_from_pdf_example_title: "Contoh",
   tool_extract_text_from_pdf_extract: "Extract",
-  tool_extract_text_from_pdf_faq_a1: "Tidak. Render berjalan di tab Anda (pustaka mungkin dari CDN). PDF Anda tidak diunggah ke server kami.",
+  tool_extract_text_from_pdf_faq_a1: "Tidak. Render berjalan di tab Anda (pustaka dari situs ini). PDF Anda tidak diunggah ke server kami.",
   tool_extract_text_from_pdf_faq_a2: "Scanned PDFs are images without a text layer; this tool does not OCR.",
   tool_extract_text_from_pdf_faq_a3: "Encrypted or damaged files show a clear error instead of failing silently.",
   tool_extract_text_from_pdf_faq_a4: "PDF ke Markdown menambah judul ## Page N dan pemisah --- untuk editor. Halaman ini mempertahankan ekstrak .txt polos.",

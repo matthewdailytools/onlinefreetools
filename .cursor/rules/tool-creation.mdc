@@ -151,6 +151,16 @@ Page 里若用 TypeScript **模板字符串**拼 `<script>`：
 
 引擎/官方样例可先用独立 `node -e` 对照，再嵌进 `extraBodyHtml`，避免 ship 后才发现算错或 fill 失效。
 
+## 同域 JS（硬性）
+
+工具页浏览器库必须进 `public/vendor/{lib}/`，页面只引用本站路径：
+
+- 新增/升级库：写入 `package.json` 精确版本 → 在 `scripts/copy-tool-libs-vendor.mjs` 登记复制（或 chrome/图片对应脚本）→ `npm run vendor:tool-libs`（或 `build:site`）→ **commit** `public/vendor/**`。
+- Page 的 `<script src>` / 动态 `import()` 只用 `/vendor/...`，禁止 `cdn.jsdelivr.net` / `cdnjs.cloudflare.com` / `unpkg.com`。
+- 下载给用户、可能在 `file://` 打开的 HTML：用绝对地址 `https://onlinefreetools.org/vendor/...`，不要再用第三方 CDN。
+- 例外：Turnstile（`challenges.cloudflare.com`）是实时挑战，不入库。
+- 交付前：`npm run lint:vendor`（缺文件、未跟踪、页面仍写 CDN 都会失败）。
+
 ## 进页样例须实际跑出结果（硬性）
 
 交互工具页除静态 H2 Example 文案外，**必须配置并可运行的样例**，且首屏进入后看到**真实处理结果**（对齐 `image-compress` / `image-crop`）：
@@ -188,6 +198,7 @@ Page 里若用 TypeScript **模板字符串**拼 `<script>`：
 - [ ] IG ≥ 3 项（§3.1），PR 写明对应章节
 - [ ] 长尾：写入 Use cases/FAQ，或满足拆页条件并附理由
 - [ ] 文件/粘贴类：本地处理 FAQ 或声明
+- [ ] 浏览器库走 `/vendor/*` 且已入库（`lint:vendor`）；FAQ 勿再写「库从 CDN 加载」
 - [ ] JSON-LD 与可见文案一致；无虚假评分
 - [ ] 推荐：`npm run verify:tool -- --slug={slug}` 一次跑完上述机械门禁
 ## 详细 SEO

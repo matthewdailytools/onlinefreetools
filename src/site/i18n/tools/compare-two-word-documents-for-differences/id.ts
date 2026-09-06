@@ -23,7 +23,7 @@ const id: SiteLangDict = {
 		'Muat contoh membuat dua .docx kecil. Memo kedua mengubah “meet at noon” menjadi “meet at 3pm”. Tampilan pertama sudah menunjukkan beda bunyi itu.',
 	tool_compare_two_word_documents_for_differences_example_title: 'Contoh',
 	tool_compare_two_word_documents_for_differences_faq_a1:
-		'Tidak. Berkas dibaca di tab ini. mammoth dan jsdiff bisa datang sebagai pustaka dari CDN; dokumen Anda tidak diunggah ke server kami.',
+		'Tidak. Berkas dibaca di tab ini. mammoth dan jsdiff bisa datang sebagai pustaka dari situs ini; dokumen Anda tidak diunggah ke server kami.',
 	tool_compare_two_word_documents_for_differences_faq_a2:
 		'Tidak. Word bisa membandingkan format dan revisi terlacak. Halaman ini hanya menarik teks terlihat lalu mem-diff bunyinya. Header, footer, dan gaya dibuang.',
 	tool_compare_two_word_documents_for_differences_faq_a3:

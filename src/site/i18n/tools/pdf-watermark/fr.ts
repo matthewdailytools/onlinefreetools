@@ -23,7 +23,7 @@ const fr: SiteLangDict = {
     'L’échantillon crée un PDF deux pages, applique DRAFT centré à 35 % d’opacité et −45° sur chaque page, active Télécharger watermarked.pdf.',
   tool_pdf_watermark_example_title: 'Exemple',
   tool_pdf_watermark_faq_a1:
-    'Non. la bibliothèque PDF s’exécute dans votre onglet (scripts éventuellement via CDN). Votre PDF n’est pas envoyé à nos serveurs.',
+    'Non. la bibliothèque PDF s’exécute dans votre onglet (scripts depuis ce site). Votre PDF n’est pas envoyé à nos serveurs.',
   tool_pdf_watermark_faq_a2:
     'Filigrane image superpose texte ou logos sur des photos. Cet outil tamponne chaque page d’un document PDF.',
   tool_pdf_watermark_faq_a3:

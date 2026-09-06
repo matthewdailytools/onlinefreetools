@@ -23,7 +23,7 @@ const ja: SiteLangDict = {
 		'サンプルを読み込むと notes-a.txt（alpha / 2行目 / 3行目）と、真ん中が「変更した行」の notes-b.txt を比べます。行モードはその1行だけ印を付けます。初回表示ですでにこの結果が出ます。',
 	tool_compare_two_text_files_online_example_title: '例',
 	tool_compare_two_text_files_online_faq_a1:
-		'送りません。バイトは FileReader でこのタブ内だけ読みます。jsdiff は CDN からライブラリとして来る場合がありますが、あなたのファイルは当サイトのサーバーへ上がりません。',
+		'送りません。バイトは FileReader でこのタブ内だけ読みます。jsdiff はこのサイトからライブラリとして読みますが、あなたのファイルは当サイトのサーバーへ上がりません。',
 	tool_compare_two_text_files_online_faq_a2:
 		"ファイルは厳密な UTF-8 として読み込み、先頭の BOM は除きます。不正な UTF-8 は代替文字でごまかさずエラーにします。Windows-1252 などの旧エンコーディングは先に変換してください。",
 	tool_compare_two_text_files_online_faq_a3:

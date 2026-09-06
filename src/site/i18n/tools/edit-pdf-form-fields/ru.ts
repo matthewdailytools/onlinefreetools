@@ -22,7 +22,7 @@ const ru: SiteLangDict = {
   tool_edit_pdf_form_fields_err_no_fields: "В этом PDF нет полей формы для правки.",
   tool_edit_pdf_form_fields_example: "Пример создаёт PDF с Name и Email, показывает обе строки, предпросмотр и позволяет переименовать или удалить перед скачиванием.",
   tool_edit_pdf_form_fields_example_title: "Пример",
-  tool_edit_pdf_form_fields_faq_a1: "Нет. Список и правки во вкладке. Библиотеки CDN могут грузиться; PDF на наши серверы не уходит.",
+  tool_edit_pdf_form_fields_faq_a1: "Нет. Список и правки во вкладке. Библиотеки этого сайта могут грузиться; PDF на наши серверы не уходит.",
   tool_edit_pdf_form_fields_faq_a2: "Переименование пишет новое внутреннее имя. Удаление снимает виджет. Уже введённые значения могут пропасть при удалении.",
   tool_edit_pdf_form_fields_faq_a3: "PDF без полей показывает ошибку со ссылкой «Сделать PDF заполняемым».",
   tool_edit_pdf_form_fields_faq_a4: "«Заполнить PDF-форму» пишет ответы. Здесь только имена или удаление рамок.",

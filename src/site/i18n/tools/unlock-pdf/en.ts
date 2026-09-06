@@ -27,7 +27,7 @@ const en: SiteLangDict = {
   tool_unlock_pdf_faq_a1:
     'No. This tool only removes protection when you supply the correct open password. It does not crack, brute force, or recover unknown passwords.',
   tool_unlock_pdf_faq_a2:
-    'No. The PDF library runs in your tab (scripts may load from a CDN). Your PDF is not uploaded to our servers.',
+    'No. The PDF library runs in your tab (scripts load from this site). Your PDF is not uploaded to our servers.',
   tool_unlock_pdf_faq_a3:
     'You see a clear wrong-password message. Try the password you used in Protect PDF or another app—this site cannot guess it for you.',
   tool_unlock_pdf_faq_a4:

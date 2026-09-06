@@ -23,7 +23,7 @@ const id: SiteLangDict = {
     'Sampel membuat PDF dua halaman, menerapkan DRAFT di tengah dengan opasitas 35% dan −45° di setiap halaman, lalu mengaktifkan Unduh watermarked.pdf.',
   tool_pdf_watermark_example_title: 'Contoh',
   tool_pdf_watermark_faq_a1:
-    'Tidak. pustaka PDF berjalan di tab Anda (skrip mungkin dari CDN). PDF tidak diunggah ke server kami.',
+    'Tidak. pustaka PDF berjalan di tab Anda (skrip dari situs ini). PDF tidak diunggah ke server kami.',
   tool_pdf_watermark_faq_a2:
     'Tambah watermark menempel teks/logo pada foto. Alat ini menstempel setiap halaman dokumen PDF.',
   tool_pdf_watermark_faq_a3:

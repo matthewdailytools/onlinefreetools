@@ -20,7 +20,7 @@ const id: SiteLangDict = {
   tool_combine_files_into_one_pdf_err_pdfjs: "PDF renderer failed to load.",
   tool_combine_files_into_one_pdf_example: "Muat contoh: Combine sample.",
   tool_combine_files_into_one_pdf_example_title: "Contoh",
-  tool_combine_files_into_one_pdf_faq_a1: "Tidak. Render berjalan di tab Anda (pustaka mungkin dari CDN). PDF Anda tidak diunggah ke server kami.",
+  tool_combine_files_into_one_pdf_faq_a1: "Tidak. Render berjalan di tab Anda (pustaka dari situs ini). PDF Anda tidak diunggah ke server kami.",
   tool_combine_files_into_one_pdf_faq_a2: "Tidak. Operasi ini tidak bergantung pada ekstraksi lapisan teks PDF.",
   tool_combine_files_into_one_pdf_faq_a3: "Encrypted or damaged files show a clear error instead of failing silently.",
   tool_combine_files_into_one_pdf_faq_a4: "Related PDF tools are listed at the bottom of the page.",

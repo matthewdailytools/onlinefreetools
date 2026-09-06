@@ -23,7 +23,7 @@ const ja: SiteLangDict = {
 		'サンプルは notes.txt、小さな photo.png、docs/readme.md を入れ、sample.zip を作ります。最初の画面で ZIP をダウンロードできます。',
 	tool_create_zip_file_example_title: '例',
 	tool_create_zip_file_faq_a1:
-		'いいえ。バイトはこのタブ内で読みます。ZIP エンジンスクリプトは CDN から来ることがありますが、ファイルは当サイトのサーバーには上がりません。',
+		'いいえ。バイトはこのタブ内で読みます。ZIP エンジンスクリプトはこのサイトから読みますが、ファイルは当サイトのサーバーには上がりません。',
 	tool_create_zip_file_faq_a2:
 		'ブラウザが webkitRelativePath を返す（フォルダドロップやディレクトリ選択）場合、../ を除いたパスを ZIP エントリにします。これがこのページの「フォルダをzipにする」作業です。',
 	tool_create_zip_file_faq_a3:

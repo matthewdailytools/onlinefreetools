@@ -32,7 +32,7 @@ const en: SiteLangDict = {
   tool_archive_extractor_exported_all:
     'Exported files are packed into a new ZIP with safe paths.',
   tool_archive_extractor_faq_a1:
-    'No. The archive is read in your browser tab, and extracted bytes stay on your device. The helper script can load from a CDN, but your files are not uploaded to our servers.',
+    'No. The archive is read in your browser tab, and extracted bytes stay on your device. The helper script can load from this site, but your files are not uploaded to our servers.',
   tool_archive_extractor_faq_a2:
     'ZIP, TAR, TAR.GZ, and TGZ are the working paths in this version. RAR, 7Z, and ISO are shown as support-note formats until a heavier multi-format engine is enabled.',
   tool_archive_extractor_faq_a3:

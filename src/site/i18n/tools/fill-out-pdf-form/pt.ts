@@ -18,7 +18,7 @@ const pt: SiteLangDict = {
   tool_fill_out_pdf_form_err_no_fields: "Este PDF não tem campos preenchíveis.",
   tool_fill_out_pdf_form_example: "Carregar exemplo cria um PDF com Name e Email, preenche Ada Lovelace / ada@example.com, mostra a prévia e libera o download.",
   tool_fill_out_pdf_form_example_title: "Exemplo",
-  tool_fill_out_pdf_form_faq_a1: "Não. O preenchimento ocorre nesta aba. Bibliotecas podem vir de um CDN, mas o PDF não vai aos nossos servidores.",
+  tool_fill_out_pdf_form_faq_a1: "Não. O preenchimento ocorre nesta aba. Bibliotecas vêm deste site, mas o PDF não vai aos nossos servidores.",
   tool_fill_out_pdf_form_faq_a2: "Costuma ser um scan ou um PDF só para impressão. Adicione campos em Tornar um PDF preenchível e volte.",
   tool_fill_out_pdf_form_faq_a3: "Sim. Caixas aparecem como marca; listas e rádios, como escolha curta se o PDF expõe opções.",
   tool_fill_out_pdf_form_faq_a4: "Criar um formulário PDF começa em página em branco. Aqui só se escrevem valores em campos que já existem.",

@@ -22,7 +22,7 @@ const ja: SiteLangDict = {
     'サンプルはグラデーション付き JPEG ページ 2 枚の PDF を読み込み、「中」画質で圧縮、前後サイズと節約率を表示し、compressed.pdf のダウンロードを有効にします。',
   tool_compress_pdf_example_title: 'PDF のファイルサイズを小さく',
   tool_compress_pdf_faq_a1:
-    'いいえ。pdf.js と PDF ライブラリ はタブ内で動作します（ライブラリは CDN から読み込む場合あり）。PDF は当社サーバーにアップロードされません。',
+    'いいえ。pdf.js と PDF ライブラリ はタブ内で動作します（ライブラリは このサイトから読み込みます）。PDF は当社サーバーにアップロードされません。',
   tool_compress_pdf_faq_a2:
     '各ページを JPEG にラスタライズして PDF を再構築します。テキスト中心や既に最適化済みの PDF はほとんど縮まない、またはわずかに大きくなることもあります。サーバー側のストリーム再圧縮とは異なります。',
   tool_compress_pdf_faq_a3:

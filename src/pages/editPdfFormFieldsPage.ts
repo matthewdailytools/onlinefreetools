@@ -164,7 +164,7 @@ export const renderEditPdfFormFieldsPage = (opts: {
 	/** 客户端脚本：列出字段、重命名/删除、预览、下载。 */
 	const extraBodyHtml = `
   ${pdfWorkUiClientScript()}
-  <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/vendor/pdf-lib/pdf-lib.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     (function () {
       /** 软限制：超过后仅警告。 */

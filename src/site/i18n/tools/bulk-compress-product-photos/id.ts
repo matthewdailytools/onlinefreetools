@@ -34,7 +34,7 @@ const id: SiteLangDict = {
 		'Muat contoh menaruh dua foto, mengompres JPEG 200 KB, mengisi tabel, dan mengaktifkan Unduh ZIP. Nama ganda menjadi name (2).jpg.',
 	tool_bulk_compress_product_photos_example_title: 'Contoh',
 	tool_bulk_compress_product_photos_faq_a1:
-		'Tidak. Decode dan encode di tab ini. File tetap di perangkat, tanpa unggah ke server. Skrip ZIP boleh dari CDN; foto Anda tidak dikirim.',
+		'Tidak. Decode dan encode di tab ini. File tetap di perangkat, tanpa unggah ke server. Skrip ZIP boleh dari situs ini; foto Anda tidak dikirim.',
 	tool_bulk_compress_product_photos_faq_a2:
 		'Tidak selalu. Jika mutu 0.5 masih di atas batas, baris ditandai gagal tetapi file terdekat tetap masuk ZIP.',
 	tool_bulk_compress_product_photos_faq_a3:

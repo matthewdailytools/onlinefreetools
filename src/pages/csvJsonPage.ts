@@ -186,7 +186,7 @@ export const renderCsvJsonPage = (opts: {
 
 	/** 客户端：papaparse CDN；双向转换、分隔符/表头/类型推断、嵌套扁平化。 */
 	const extraBodyHtml = `
-  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/vendor/papaparse/papaparse.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     (function () {
       /** 粘贴软上限（字符），超出仍可转换但提示卡顿风险 */

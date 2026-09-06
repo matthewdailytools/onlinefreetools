@@ -33,7 +33,7 @@ const de: SiteLangDict = {
 		'Beispiel laden legt einen undurchsichtigen Block und ein transparentes Logo ab, schreibt zwei .webp und aktiviert ZIP herunterladen. Das Loch im Logo bleibt.',
 	tool_bulk_convert_images_to_webp_example_title: 'Beispiel',
 	tool_bulk_convert_images_to_webp_faq_a1:
-		'Nein. Lesen und WebP-Schreiben laufen in diesem Tab. Dateien bleiben auf Ihrem Gerät, ohne Server-Upload. Die ZIP-Hilfe kann von einem CDN kommen; Ihre Bilder verlassen den Tab nicht.',
+		'Nein. Lesen und WebP-Schreiben laufen in diesem Tab. Dateien bleiben auf Ihrem Gerät, ohne Server-Upload. Die ZIP-Hilfe kommt von dieser Website; Ihre Bilder verlassen den Tab nicht.',
 	tool_bulk_convert_images_to_webp_faq_a2:
 		'Ja. PNG zu WebP ist diese Seite: Dateien wählen, Qualität bei etwa 0.8, alles umwandeln. Löcher bleiben, wenn das PNG Alpha hatte.',
 	tool_bulk_convert_images_to_webp_faq_a3:

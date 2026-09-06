@@ -20,7 +20,7 @@ const fr: SiteLangDict = {
     'YAML `nom: demo` + liste `éléments: [a, b]` → JSON `{"nom":"demo","éléments":["a","b"]}`. JSON `{"titre":"Bonjour","compte":2}` se dump en YAML indenté. Frontière : `flag: yes` nu devient true sous DEFAULT ; activez Types JSON sûrs pour garder la chaîne "yes".',
   tool_yaml_json_example_title: 'Exemple',
   tool_yaml_json_faq_a1:
-    'La conversion reste dans l’onglet. Un CDN peut servir js-yaml : cette requête ne télécharge que du code — ce n’est pas un envoi de votre texte YAML ou JSON.',
+    'La conversion reste dans l’onglet. Ce site peut servir js-yaml : cette requête ne télécharge que du code — ce n’est pas un envoi de votre texte YAML ou JSON.',
   tool_yaml_json_faq_a2:
     'Ils sont lus avec loadAll. Un seul document → une valeur JSON ; deux ou plus → un tableau JSON. On ne conserve pas uniquement le premier.',
   tool_yaml_json_faq_a3:
@@ -61,7 +61,7 @@ const fr: SiteLangDict = {
   tool_yaml_json_rules_item_3:
     'Pertes en aller-retour : les commentaires disparaissent (JSON n’en a pas) ; ancres/alias s’étendent en valeurs dupliquées ; l’ordre des clés et le style peuvent changer après dump.',
   tool_yaml_json_rules_item_4:
-    'Confidentialité : votre collage n’est pas envoyé. Charger js-yaml via un CDN ne télécharge que le code de la bibliothèque, pas le texte de config.',
+    'Confidentialité : votre collage n’est pas envoyé. Charger js-yaml depuis ce site ne télécharge que le code de la bibliothèque, pas le texte de config.',
   tool_yaml_json_rules_title: 'Règles à anticiper',
   tool_yaml_json_sample: 'Charger un exemple',
   tool_yaml_json_sample_json: '{\n  "titre": "Bonjour",\n  "compte": 2\n}',

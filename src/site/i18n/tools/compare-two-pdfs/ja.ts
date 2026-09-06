@@ -20,7 +20,7 @@ const ja: SiteLangDict = {
   tool_compare_two_pdfs_err_pdfjs: "PDF レンダラー読み込み失敗。",
   tool_compare_two_pdfs_example: "サンプルを読み込む: Version A text.",
   tool_compare_two_pdfs_example_title: "例",
-  tool_compare_two_pdfs_faq_a1: "いいえ。レンダリングはタブ内で行われます（ライブラリは CDN から読み込まれる場合があります）。PDF は当社サーバーに送られません。",
+  tool_compare_two_pdfs_faq_a1: "いいえ。レンダリングはタブ内で行われます（ライブラリは このサイトから読み込まれます）。PDF は当社サーバーに送られません。",
   tool_compare_two_pdfs_faq_a2: "Scanned PDFs are images without a text layer; this tool does not OCR.",
   tool_compare_two_pdfs_faq_a3: "Encrypted or damaged files show a clear error instead of failing silently.",
   tool_compare_two_pdfs_faq_a4: "Related PDF tools are listed at the bottom of the page.",

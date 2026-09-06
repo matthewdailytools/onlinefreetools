@@ -132,15 +132,15 @@ export const renderProtectPdfPage = (opts: {
 
 	const referencesHtml = renderToolReferencesSection({
 		lang: opts.lang,
-		links: [{ label: 'pdf-lib', href: 'https://pdf-lib.js.org/' }],
+		links: [{ label: 'pdf-lib (Cantoo fork)', href: 'https://github.com/cantoo-scribe/pdf-lib' }],
 	});
 
   /**
-   * 客户端脚本：加载 PDF → encrypt({ userPassword, ownerPassword }) → save。
-   * 注：官方 pdf-lib@1.17.1 无 PDFDocument.encrypt，故用 pdf-lib-with-encrypt（API 兼容）。
-   */
-  const extraBodyHtml = `
-  <script src="https://cdn.jsdelivr.net/npm/pdf-lib-with-encrypt@1.2.1/dist/pdf-lib.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	 * 客户端脚本：加载 PDF → encrypt({ userPassword, ownerPassword }) → save。
+	 * 官方 pdf-lib@1.17.1 无 encrypt；与 unlock-pdf 共用 Cantoo 分支，保证本站加/解密可互开。
+	 */
+	const extraBodyHtml = `
+  <script src="/vendor/cantoo-pdf-lib/pdf-lib.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     (function () {
       /** 单文件软警告阈值（字节）。 */

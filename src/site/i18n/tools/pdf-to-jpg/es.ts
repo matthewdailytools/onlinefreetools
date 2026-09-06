@@ -23,7 +23,7 @@ const es: SiteLangDict = {
     'La muestra crea un PDF de dos páginas, convierte cada una y habilita Descargar con un ZIP que incluye page-1.jpg y page-2.jpg.',
   tool_pdf_to_jpg_example_title: 'Convertir páginas PDF a JPG',
   tool_pdf_to_jpg_faq_a1:
-    'No. el renderizador de páginas y la biblioteca ZIP se ejecutan en tu pestaña (los scripts pueden cargarse desde un CDN). Tu PDF no se sube a nuestros servidores.',
+    'No. el renderizador de páginas y la biblioteca ZIP se ejecutan en tu pestaña (los scripts se cargan desde este sitio). Tu PDF no se sube a nuestros servidores.',
   tool_pdf_to_jpg_faq_a2:
     'Más de una página → ZIP pdf-pages.zip con page-1.jpg, page-2.jpg, etc. Una sola página → un JPG directo.',
   tool_pdf_to_jpg_faq_a3:

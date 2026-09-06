@@ -48,7 +48,7 @@ const pt: SiteLangDict = {
   tool_image_exif_rules_item_1: 'Leitura de IFD0/EXIF/GPS em graus decimais.',
   tool_image_exif_rules_item_2: 'Remoção: decode → orientação → toBlob.',
   tool_image_exif_rules_item_3: 'JPEG com qualidade alta, ainda assim re-encode.',
-  tool_image_exif_rules_item_4: 'Arquivo não sobe; CDN só pode trazer a biblioteca.',
+  tool_image_exif_rules_item_4: 'Arquivo não sobe; este site só pode trazer a biblioteca.',
   tool_image_exif_rules_title: 'Regras esperadas',
   tool_image_exif_sample: 'Carregar exemplo',
   tool_image_exif_status_analyzed: 'Pronto — veja as etiquetas abaixo.',

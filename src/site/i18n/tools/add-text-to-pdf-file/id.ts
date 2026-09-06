@@ -20,7 +20,7 @@ const id: SiteLangDict = {
   tool_add_text_to_pdf_file_err_pdfjs: "PDF renderer failed to load.",
   tool_add_text_to_pdf_file_example: "Muat contoh: CONFIDENTIAL",
   tool_add_text_to_pdf_file_example_title: "Contoh",
-  tool_add_text_to_pdf_file_faq_a1: "Tidak. Render berjalan di tab Anda (pustaka mungkin dari CDN). PDF Anda tidak diunggah ke server kami.",
+  tool_add_text_to_pdf_file_faq_a1: "Tidak. Render berjalan di tab Anda (pustaka dari situs ini). PDF Anda tidak diunggah ke server kami.",
   tool_add_text_to_pdf_file_faq_a2: "Tidak. Operasi ini tidak bergantung pada ekstraksi lapisan teks PDF.",
   tool_add_text_to_pdf_file_faq_a3: "Encrypted or damaged files show a clear error instead of failing silently.",
   tool_add_text_to_pdf_file_faq_a4: "Edit teks PDF mengubah redaksi yang ada. Tulis PDF membuat berkas baru dari teks yang diketik. Halaman ini hanya menggambar cap baru di X/Y di setiap halaman.",

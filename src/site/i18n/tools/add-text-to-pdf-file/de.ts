@@ -20,7 +20,7 @@ const de: SiteLangDict = {
   tool_add_text_to_pdf_file_err_pdfjs: "PDF renderer failed to load.",
   tool_add_text_to_pdf_file_example: "Beispiel laden: CONFIDENTIAL",
   tool_add_text_to_pdf_file_example_title: "Beispiel",
-  tool_add_text_to_pdf_file_faq_a1: "Nein. Das Rendering läuft in Ihrem Tab (Bibliotheken ggf. per CDN). Ihr PDF wird nicht auf unsere Server hochgeladen.",
+  tool_add_text_to_pdf_file_faq_a1: "Nein. Das Rendering läuft in Ihrem Tab (Bibliotheken ggf. from this site). Ihr PDF wird nicht auf unsere Server hochgeladen.",
   tool_add_text_to_pdf_file_faq_a2: "Nein. Dieser Vorgang ist nicht vom Auslesen einer PDF-Textebene abhängig.",
   tool_add_text_to_pdf_file_faq_a3: "Encrypted or damaged files show a clear error instead of failing silently.",
   tool_add_text_to_pdf_file_faq_a4: "PDF-Text bearbeiten ändert vorhandenen Wortlaut. PDF-Dokument online schreiben erstellt eine neue Datei aus getipptem Text. Diese Seite zeichnet nur einen neuen Stempel bei X/Y auf jeder Seite.",

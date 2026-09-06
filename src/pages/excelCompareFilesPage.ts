@@ -168,7 +168,7 @@ export const renderExcelCompareFilesPage = (opts: {
 	 * SheetJS 读表、按 A1 坐标对比；loadSample 用两份 CSV。
 	 */
 	const extraBodyHtml = `
-  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/vendor/xlsx/xlsx.full.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     (function () {
       /** 文件 A。 */

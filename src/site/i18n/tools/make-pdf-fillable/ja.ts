@@ -19,7 +19,7 @@ const ja: SiteLangDict = {
   tool_make_pdf_fillable_err_no_name: "先に欄の名前を入れてください。",
   tool_make_pdf_fillable_example: "サンプルは白紙を作り、48,220 に 220×22 の FullName を置き、プレビューしてダウンロードを有効にします。",
   tool_make_pdf_fillable_example_title: "例",
-  tool_make_pdf_fillable_faq_a1: "いいえ。配置はこのタブ内です。CDN のスクリプトは読むことがありますが、PDF は当社サーバーに行きません。",
+  tool_make_pdf_fillable_faq_a1: "いいえ。配置はこのタブ内です。本サイトのスクリプトは読むことがありますが、PDF は当社サーバーに行きません。",
   tool_make_pdf_fillable_faq_a2: "はい。欄ができたら「PDFフォームに入力」で値を書いてください。",
   tool_make_pdf_fillable_faq_a3: "「N 個追加」を使います。Field_1、Field_2… と一定間隔で並びます。",
   tool_make_pdf_fillable_faq_a4: "「PDFフォームを作成」は空から始め、テキスト／チェックを名付けます。このページは手元のファイルに欄を重ねます。",

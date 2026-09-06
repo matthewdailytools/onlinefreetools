@@ -25,7 +25,7 @@ const ar: SiteLangDict = {
   tool_pdf_page_to_image_sizes_example_title: 'مثال',
   tool_pdf_page_to_image_sizes_export: 'تصدير',
   tool_pdf_page_to_image_sizes_faq_a1:
-    'لا. مُصيّر الصفحات ومكتبة PDF ومكتبة ZIP يعملان في تبويبك (قد تُحمَّل السكربتات من CDN). PDF لا يُرفع إلى خوادمنا.',
+    'لا. مُصيّر الصفحات ومكتبة PDF ومكتبة ZIP يعملان في تبويبك (قد تُحمَّل السكربتات من هذا الموقع). PDF لا يُرفع إلى خوادمنا.',
   tool_pdf_page_to_image_sizes_faq_a2:
     'PDF إلى JPG يصدّر كل صفحة بنسبتها الأصلية. هذه الأداة تختار صفحة واحدة وتضبطها في أحجام منصات ثابتة (contain، مركز، هوامش بيضاء).',
   tool_pdf_page_to_image_sizes_faq_a3:

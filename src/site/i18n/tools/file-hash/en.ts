@@ -5,14 +5,14 @@ import type { SiteLangDict } from '../../../types';
 const en: SiteLangDict = {
   tool_file_hash_algo_label: 'Algorithms',
   tool_file_hash_article:
-    'Compute MD5 and SHA hex digests for pasted text or a local file. Compare release checksums, fingerprint configs, or verify downloads — hashing stays in your browser except a one-time CDN fetch when you pick MD5.',
+    'Compute MD5 and SHA hex digests for pasted text or a local file. Compare release checksums, fingerprint configs, or verify downloads — hashing stays in your browser except a one-time load from this site when you pick MD5.',
   tool_file_hash_clear: 'Clear',
   tool_file_hash_copy: 'Copy all',
   tool_file_hash_copy_done: 'Copied',
   tool_file_hash_desc:
     'Verify text or file digests locally in your browser — MD5 and SHA hex output.',
   tool_file_hash_description:
-    'Hash pasted text or a local file in your browser. Steps: pick Text or File, tick MD5/SHA algorithms, click Hash, copy lowercase hex. Example: text `hello` → SHA-256 `2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b0184`. Files are read locally; MD5 loads crypto-js from CDN only when selected.',
+    'Hash pasted text or a local file in your browser. Steps: pick Text or File, tick MD5/SHA algorithms, click Hash, copy lowercase hex. Example: text `hello` → SHA-256 `2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b0184`. Files are read locally; MD5 loads crypto-js from this site only when selected.',
   tool_file_hash_empty: 'Paste text or choose a file first.',
   tool_file_hash_example:
     'Text input `hello` with SHA-256 selected → `2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b0184`. MD5 of the same string → `5d41402abc4b2a76b9719d911017c592`. Text uses UTF-8 bytes; files use raw bytes.',
@@ -24,7 +24,7 @@ const en: SiteLangDict = {
   tool_file_hash_faq_a3:
     'Text is hashed as UTF-8 encoded bytes. A file is hashed as its raw byte stream. The same letters in a `.txt` file can differ from pasted text if encoding or line endings differ.',
   tool_file_hash_faq_a4:
-    'No upload. Text and files stay on your device. SHA-* uses the browser Web Crypto API. MD5 alone triggers a lazy load of crypto-js from jsDelivr — your content is not sent to the CDN.',
+    'No upload. Text and files stay on your device. SHA-* uses the browser Web Crypto API. MD5 alone triggers a lazy load of crypto-js from this site — your content is not sent off your device.',
   tool_file_hash_faq_a5:
     'We output lowercase hex without a `0x` prefix, one line per algorithm. This matches common `md5sum` / `sha256sum` tools on Linux and macOS.',
   tool_file_hash_faq_q1: 'When should I use MD5 vs SHA-256?',
@@ -41,7 +41,7 @@ const en: SiteLangDict = {
   tool_file_hash_input_mode_label: 'Input mode',
   tool_file_hash_large_warn:
     'File is over 100 MB. Hashing may be slow or use a lot of memory — consider a desktop tool for very large archives.',
-  tool_file_hash_md5_fail: 'Could not load the MD5 library from CDN. Try SHA-256 or check your network.',
+  tool_file_hash_md5_fail: 'Could not load the MD5 library from this site. Try SHA-256 or check your network.',
   tool_file_hash_no_algo: 'Select at least one algorithm.',
   tool_file_hash_output_label: 'Hex digests',
   tool_file_hash_progress_label: 'Reading file…',
@@ -54,7 +54,7 @@ const en: SiteLangDict = {
   tool_file_hash_rules_item_3:
     'Empty text or zero-byte file yields the standard empty-input digest for each algorithm (still valid hex).',
   tool_file_hash_rules_item_4:
-    'Privacy: no upload. MD5 is the only path that fetches crypto-js from CDN; SHA-* uses built-in Web Crypto only.',
+    'Privacy: no upload. MD5 is the only path that fetches crypto-js from this site; SHA-* uses built-in Web Crypto only.',
   tool_file_hash_rules_title: 'Rules you should expect',
   tool_file_hash_sample: 'Load sample',
   tool_file_hash_sample_text: 'hello',

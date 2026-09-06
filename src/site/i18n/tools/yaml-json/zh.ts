@@ -18,7 +18,7 @@ const zh: SiteLangDict = {
   tool_yaml_json_example:
     'YAML `名称: 演示` 加列表 `列表: [a, b]` → JSON `{"名称":"演示","列表":["a","b"]}`。JSON `{"标题":"你好","数量":2}` 可 dump 成缩进 YAML。边界：裸写 `flag: yes` 在默认 schema 下会变成布尔 true；勾选安全类型则保留字符串 "yes"。',
   tool_yaml_json_example_title: '示例',
-  tool_yaml_json_faq_a1: '转换在当前标签页完成。CDN 最多只用来下载 js-yaml 代码，不会把你的 YAML/JSON 正文当上传发出去。',
+  tool_yaml_json_faq_a1: '转换在当前标签页完成。本站最多只用来提供 js-yaml 代码，不会把你的 YAML/JSON 正文当上传发出去。',
   tool_yaml_json_faq_a2: '用 --- 分隔的文档走 loadAll。只有一篇时输出单个 JSON 值；两篇及以上变成 JSON 数组，不会只留第一篇。',
   tool_yaml_json_faq_a3: '默认 js-yaml schema 下经常会——未加引号的 yes/no/on/off 可能变成布尔。勾选「安全类型」后，这些标量一般保持字符串（除非写了显式类型）。',
   tool_yaml_json_faq_a4: '注释进不了 JSON；锚点会展开成重复值。把 JSON dump 回 YAML 也还原不了原来的注释和锚点名。',
@@ -49,7 +49,7 @@ const zh: SiteLangDict = {
   tool_yaml_json_rules_item_1: '类型：默认 schema 下，裸写的 yes/no/on/off 以及部分像日期的标量可能变成布尔或其他类型。勾选安全类型后，未加引号的标量一般保持字符串（除非写了显式类型）。',
   tool_yaml_json_rules_item_2: '多文档：走 loadAll——1 篇 → 对应那个 JSON 值；2 篇及以上 → JSON 数组。不会默默丢掉第一篇之后的内容。',
   tool_yaml_json_rules_item_3: '往返会丢东西：注释进不了 JSON；锚点/别名会展开成重复值；dump 回 YAML 后键顺序和写法也可能变。',
-  tool_yaml_json_rules_item_4: '隐私：粘贴不会上传。若从 CDN 拉取 js-yaml，那只是下载库代码，不会把你的配置正文送出去。',
+  tool_yaml_json_rules_item_4: '隐私：粘贴不会上传。若从本站 拉取 js-yaml，那只是下载库代码，不会把你的配置正文送出去。',
   tool_yaml_json_rules_title: '你该预期的规则',
   tool_yaml_json_sample: '载入示例',
   tool_yaml_json_sample_json: '{\n  "标题": "你好",\n  "数量": 2\n}',

@@ -22,7 +22,7 @@ const en: SiteLangDict = {
     'Sample loads a two-page PDF with gradient blocks and embedded JPEG pages, runs Medium compression, shows before/after size with percent saved, and enables Download for compressed.pdf.',
   tool_compress_pdf_example_title: 'Reduce PDF file size',
   tool_compress_pdf_faq_a1:
-    'No. pdf.js and the PDF library run in your tab (libraries may load from a CDN). Your PDF is not uploaded to our servers.',
+    'No. pdf.js and the PDF library run in your tab (library scripts load from this site). Your PDF is not uploaded to our servers.',
   tool_compress_pdf_faq_a2:
     'This tool rasterizes each page to JPEG and rebuilds a PDF. Text-heavy or already-optimized files may shrink little or grow slightly. It is not the same as server-side recompression of embedded streams.',
   tool_compress_pdf_faq_a3:

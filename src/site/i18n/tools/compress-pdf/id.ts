@@ -22,7 +22,7 @@ const id: SiteLangDict = {
     'Sampel memuat PDF dua halaman dengan blok warna dan JPEG tertanam, menjalankan kompresi Sedang, menampilkan ukuran sebelum/sesudah dengan persen hemat, dan mengaktifkan unduh compressed.pdf.',
   tool_compress_pdf_example_title: 'Perkecil ukuran file PDF',
   tool_compress_pdf_faq_a1:
-    'Tidak. pdf.js dan pustaka PDF berjalan di tab Anda (pustaka mungkin dimuat dari CDN). PDF tidak diunggah ke server kami.',
+    'Tidak. pdf.js dan pustaka PDF berjalan di tab Anda (pustaka mungkin dimuat dari situs ini). PDF tidak diunggah ke server kami.',
   tool_compress_pdf_faq_a2:
     'Alat ini meraster setiap halaman ke JPEG lalu membangun ulang PDF. PDF berisi teks atau sudah optimal mungkin hampir tidak mengecil. Bukan re-kompresi cloud untuk aliran tertanam.',
   tool_compress_pdf_faq_a3:

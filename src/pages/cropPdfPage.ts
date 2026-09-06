@@ -154,7 +154,7 @@ export const renderCropPdfPage = (opts: {
 
 	/** 客户端脚本：加载 PDF、收紧 CropBox/MediaBox、样例自动跑通。 */
 	const extraBodyHtml = `
-  <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/vendor/pdf-lib/pdf-lib.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     (function () {
       var SOFT_BYTES = 25 * 1024 * 1024;

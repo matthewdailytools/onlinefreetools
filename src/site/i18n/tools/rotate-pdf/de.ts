@@ -26,7 +26,7 @@ const de: SiteLangDict = {
     'Muster erstellt ein Zwei-Seiten-PDF, dreht alle 90° im Uhrzeigersinn und aktiviert Download für rotated.pdf.',
   tool_rotate_pdf_example_title: 'Beispiel',
   tool_rotate_pdf_faq_a1:
-    'Nein. die PDF-Bibliothek läuft in Ihrem Tab (Skripte ggf. von CDN). Ihr PDF wird nicht auf unsere Server hochgeladen.',
+    'Nein. die PDF-Bibliothek läuft in Ihrem Tab (Skripte von dieser Website). Ihr PDF wird nicht auf unsere Server hochgeladen.',
   tool_rotate_pdf_faq_a2: 'Ja—die heruntergeladene Datei speichert die neue Ausrichtung. Vor dem Teilen im Viewer prüfen.',
   tool_rotate_pdf_faq_a3: 'Seiten ab 1: 1-3,5 bedeutet Seiten 1–3 und 5. Leerzeichen optional. Leer oder außerhalb schlägt fehl.',
   tool_rotate_pdf_faq_a4: 'Passwort-PDFs lassen sich hier meist nicht öffnen. Passwort mit vertrauenswürdigem Tool entfernen, dann drehen.',

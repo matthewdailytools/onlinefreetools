@@ -18,7 +18,7 @@ const id: SiteLangDict = {
   tool_fill_out_pdf_form_err_no_fields: "PDF ini tidak punya kolom yang bisa diisi.",
   tool_fill_out_pdf_form_example: "Muat contoh membuat PDF berisi Name dan Email, mengisi Ada Lovelace / ada@example.com, menampilkan pratinjau, dan mengaktifkan unduhan.",
   tool_fill_out_pdf_form_example_title: "Contoh",
-  tool_fill_out_pdf_form_faq_a1: "Tidak. Pengisian berjalan di tab ini. Pustaka bisa dimuat dari CDN, tetapi PDF Anda tidak dikirim ke server kami.",
+  tool_fill_out_pdf_form_faq_a1: "Tidak. Pengisian berjalan di tab ini. Pustaka bisa dimuat dari situs ini, tetapi PDF Anda tidak dikirim ke server kami.",
   tool_fill_out_pdf_form_faq_a2: "Biasanya pindaian atau PDF cetak saja. Tambah kolom di Jadikan PDF bisa diisi, lalu kembali.",
   tool_fill_out_pdf_form_faq_a3: "Ya. Kotak tampil sebagai centang; daftar dan radio tampil sebagai pilihan singkat jika PDF menyediakan opsi.",
   tool_fill_out_pdf_form_faq_a4: "Buat formulir PDF mulai dari halaman kosong. Halaman ini hanya menulis nilai ke kolom yang sudah ada.",

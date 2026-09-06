@@ -184,7 +184,7 @@ Agent 提示应类似：`Write {lang} copy for users who search: …`（附该�
 | de | ohne Server-Upload; Dateien bleiben auf Ihrem Gerät |
 
 **适用键**：工具 `*_desc` / `*_description` / FAQ「是否上传」；分类导语 `home_cat_*_blurb` / `home_cat_*_desc`；页面 How/Rules 隐私句。  
-**诚实边界**：库脚本可从 CDN 加载时，FAQ 可一句说明「库可能从 CDN 加载，**你的文件**仍不上传」——勿用「100% offline」等虚假承诺。  
+**诚实边界**：库脚本从本站 `/vendor/` 加载（同域 Assets，须入库 Git）。FAQ 应写「处理在标签页完成、文件不上我们的服务器」；**禁止**再写「库从 CDN 加载」。若导出的独立 HTML 仍需联网拉本站 `/vendor`（如 PDF 翻页预览），可写「打开时需访问本站脚本、文件本身已内嵌」。勿用「100% offline」等虚假承诺。  
 **自检**：把「local/本地」划掉后，读者是否仍能判断「会上服务器吗？」不能 → 须改写。
 
 ### 首页工具卡片「不上传」标签（强制）

@@ -35,7 +35,7 @@ const es: SiteLangDict = {
 		'Cargar ejemplo mete dos fotos de ficha, las comprime a 200 KB JPEG, llena la tabla y activa Descargar ZIP. Los nombres repetidos pasan a name (2).jpg.',
 	tool_bulk_compress_product_photos_example_title: 'Ejemplo',
 	tool_bulk_compress_product_photos_faq_a1:
-		'No. Todo ocurre en la pestaña. Las fotos se quedan en el dispositivo y no se suben al servidor. El script del ZIP puede venir de un CDN; tus archivos no viajan.',
+		'No. Todo ocurre en la pestaña. Las fotos se quedan en el dispositivo y no se suben al servidor. El script del ZIP puede venir de este sitio; tus archivos no viajan.',
 	tool_bulk_compress_product_photos_faq_a2:
 		'No siempre. Si el suelo de calidad 0.5 sigue por encima del tope, la fila marca fallo pero guarda el archivo más cercano.',
 	tool_bulk_compress_product_photos_faq_a3:

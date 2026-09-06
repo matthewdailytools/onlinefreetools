@@ -23,7 +23,7 @@ const de: SiteLangDict = {
 		'Beispiel laden stellt notes-a.txt (alpha / zweite Zeile / dritte) notes-b.txt gegenüber, dessen Mitte «geänderte Zeile» lautet. Der Zeilenmodus markiert nur diese. Schon beim ersten Zeichnen siehst du das Ergebnis.',
 	tool_compare_two_text_files_online_example_title: 'Beispiel',
 	tool_compare_two_text_files_online_faq_a1:
-		'Nein. FileReader liest die Bytes in diesem Tab. jsdiff kann als Bibliothek per CDN kommen; deine Dateien gehen nicht auf unsere Server.',
+		'Nein. FileReader liest die Bytes in diesem Tab. jsdiff kann als Bibliothek from this site kommen; deine Dateien gehen nicht auf unsere Server.',
 	tool_compare_two_text_files_online_faq_a2:
 		"Dateien werden strikt als UTF-8 decodiert; ein führendes BOM wird entfernt. Ungültiges UTF-8 wird abgelehnt statt mit Ersatzzeichen angezeigt. Ältere Codierungen wie Windows-1252 bitte zuerst konvertieren.",
 	tool_compare_two_text_files_online_faq_a3:

@@ -31,7 +31,7 @@ const de: SiteLangDict = {
 	tool_batch_checksum_release_files_export_csv: 'CSV exportieren',
 	tool_batch_checksum_release_files_export_sums: 'SUMS exportieren',
 	tool_batch_checksum_release_files_faq_a1:
-		'Nein. Das Hashen läuft in diesem Tab. Die Dateien bleiben auf dem Gerät und werden nicht auf einen Server hochgeladen. SHA-256 nutzt Web Crypto. MD5 kann crypto-js von einem CDN laden; Ihre Bytes verlassen den Tab nicht.',
+		'Nein. Das Hashen läuft in diesem Tab. Die Dateien bleiben auf dem Gerät und werden nicht auf einen Server hochgeladen. SHA-256 nutzt Web Crypto. MD5 kann crypto-js von dieser Website laden; Ihre Bytes verlassen den Tab nicht.',
 	tool_batch_checksum_release_files_faq_a2:
 		'Nein. Exporte sind eine CSV-Tabelle und ein SHA256SUMS. Binärdateien packen ist ZIP erstellen — eine andere Aufgabe.',
 	tool_batch_checksum_release_files_faq_a3:
@@ -59,7 +59,7 @@ const de: SiteLangDict = {
 	tool_batch_checksum_release_files_rules_body:
 		'SHA-256 nutzt Web Crypto auf Bytes, die in 4-MiB-Scheiben gelesen und zusammengefügt werden. Ausgabe ist Tabelle, CSV und SUMS, nie ein ZIP der Originale.',
 	tool_batch_checksum_release_files_rules_item_1:
-		'SHA-256 läuft immer. MD5 ist optional und lädt crypto-js von einem CDN; die Bytes bleiben im Tab.',
+		'SHA-256 läuft immer. MD5 ist optional und lädt crypto-js von dieser Website; die Bytes bleiben im Tab.',
 	tool_batch_checksum_release_files_rules_item_2:
 		'SUMS-Zeilen folgen GNU sha256sum: Hex, zwei Leerzeichen oder Leerzeichen-Stern, dann der Name. Extra-Namen im Paste erscheinen als fehlend.',
 	tool_batch_checksum_release_files_rules_item_3:

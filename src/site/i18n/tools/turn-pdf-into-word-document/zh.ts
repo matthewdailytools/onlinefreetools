@@ -21,7 +21,7 @@ const zh: SiteLangDict = {
   tool_turn_pdf_into_word_document_err_pdfjs: "PDF 渲染库加载失败。",
   tool_turn_pdf_into_word_document_example: "加载样例会生成含「来自 PDF 的 Word 示例句。」的一页 PDF，抽出该句并做成同样段落的 .docx。",
   tool_turn_pdf_into_word_document_example_title: "示例",
-  tool_turn_pdf_into_word_document_faq_a1: "不会。抽取和打包在本标签页完成（库可能从 CDN 加载），PDF 不会上传到我们的服务器。",
+  tool_turn_pdf_into_word_document_faq_a1: "不会。抽取和打包在本标签页完成（库从本站加载），PDF 不会上传到我们的服务器。",
   tool_turn_pdf_into_word_document_faq_a2: "扫描页是图片。本工具不做 OCR。若只要文本层的 .txt，请用「从 PDF 提取文本」。",
   tool_turn_pdf_into_word_document_faq_a3: "不会。得到的是抽出的段落，不是像素级还原。",
   tool_turn_pdf_into_word_document_faq_a4: "本页写出可在 Word 打开的 .docx。PDF 转 Markdown 面向编辑器里的笔记。",

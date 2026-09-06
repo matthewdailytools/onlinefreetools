@@ -22,7 +22,7 @@ const zh: SiteLangDict = {
   tool_crop_pdf_err_margin: '边距过大——裁后宽或高将 ≤ 10 pt。请减小一侧或多侧边距。',
   tool_crop_pdf_example: '样例会生成单页 PDF，四边各裁 36 pt，并启用下载 cropped.pdf，同时显示尺寸统计。',
   tool_crop_pdf_example_title: '示例',
-  tool_crop_pdf_faq_a1: '不会。处理在当前标签页内完成（脚本可能从 CDN 加载），PDF 不会上传到我们的服务器。',
+  tool_crop_pdf_faq_a1: '不会。处理在当前标签页内完成（脚本从本站加载），PDF 不会上传到我们的服务器。',
   tool_crop_pdf_faq_a2: '本工具按 pt 收紧 PDF 页面框，不能在页面上拖拽选区——那是图片裁切的工作流。',
   tool_crop_pdf_faq_a3: '对。只能输入 pt 边距，没有自由框或像素级编辑——需要那种效果请用图片工具。',
   tool_crop_pdf_faq_a4: '带密码的 PDF 通常无法在此打开。请用可信方式去掉密码后再裁切。',

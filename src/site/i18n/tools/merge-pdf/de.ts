@@ -20,7 +20,7 @@ const de: SiteLangDict = {
     'Das Beispiel lädt zwei einseitige PDFs (A und B), fügt sie in Listenreihenfolge zusammen und aktiviert Download für ein zweiseitiges merged.pdf.',
   tool_merge_pdf_example_title: 'PDF-Dateien zu einer Datei kombinieren',
   tool_merge_pdf_faq_a1:
-    'Nein. pdf-lib läuft in Ihrem Tab (die Bibliothek kann von einem CDN kommen). PDFs werden nicht auf unsere Server hochgeladen.',
+    'Nein. pdf-lib läuft in Ihrem Tab (die Bibliothek kommt von dieser Website). PDFs werden nicht auf unsere Server hochgeladen.',
   tool_merge_pdf_faq_a2:
     'Bilder zu PDF erstellt ein PDF aus Fotos. Dieses Tool fügt vorhandene PDF-Dateien zu einem Dokument zusammen.',
   tool_merge_pdf_faq_a3:
@@ -51,7 +51,7 @@ const de: SiteLangDict = {
   tool_merge_pdf_rules_item_2:
     'Engine: pdf-lib lädt jedes PDF und nutzt copyPages in ein neues Dokument — ohne Server-Upload Ihrer Dateien.',
   tool_merge_pdf_rules_item_3:
-    'Datenschutz: Bytes bleiben im Tab. Das Bibliotheksskript kann von einem CDN kommen.',
+    'Datenschutz: Bytes bleiben im Tab. Das Bibliotheksskript kommt von dieser Website.',
   tool_merge_pdf_rules_item_4:
     'Grenzen: ≥2 Dateien nötig; verschlüsselte/korrupte PDFs scheitern lesbar; sehr große Mengen können im Speicher langsam sein.',
   tool_merge_pdf_rules_title: 'Regeln, die Sie erwarten sollten',

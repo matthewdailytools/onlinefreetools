@@ -23,7 +23,7 @@ const de: SiteLangDict = {
 		'Beispiel laden erzeugt zwei winzige .docx. Das zweite Memo ändert „meet at noon“ in „meet at 3pm“. Schon beim ersten Anzeigen steht dieser Wortlaut-Diff.',
 	tool_compare_two_word_documents_for_differences_example_title: 'Beispiel',
 	tool_compare_two_word_documents_for_differences_faq_a1:
-		'Nein. Die Dateien werden in diesem Tab gelesen. mammoth und jsdiff können als Bibliothekscode über ein CDN kommen; Ihre Dokumente werden nicht auf unsere Server hochgeladen.',
+		'Nein. Die Dateien werden in diesem Tab gelesen. mammoth und jsdiff können als Bibliothekscode von dieser Website kommen; Ihre Dokumente werden nicht auf unsere Server hochgeladen.',
 	tool_compare_two_word_documents_for_differences_faq_a2:
 		'Nein. Word kann Formatierung und Änderungsnachverfolgung vergleichen. Diese Seite zieht nur sichtbaren Text und vergleicht den. Kopf-, Fußzeilen und Formatvorlagen entfallen.',
 	tool_compare_two_word_documents_for_differences_faq_a3:

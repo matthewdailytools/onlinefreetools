@@ -22,7 +22,7 @@ const en: SiteLangDict = {
     'Sample builds a three-page PDF, splits every page, and enables Download for a ZIP with page-1.pdf, page-2.pdf, and page-3.pdf.',
   tool_split_pdf_example_title: 'Split my PDF',
   tool_split_pdf_faq_a1:
-    'No. pdf-lib and fflate run in your tab (scripts may load from a CDN). Your PDF is not uploaded to our servers.',
+    'No. pdf-lib and fflate run in your tab (scripts load from this site). Your PDF is not uploaded to our servers.',
   tool_split_pdf_faq_a2:
     'Use 1-based pages: 1-3,5 means pages 1–3 and page 5. Spaces are optional. Empty or out-of-range values fail.',
   tool_split_pdf_faq_a3:

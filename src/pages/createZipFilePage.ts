@@ -196,7 +196,7 @@ export const renderCreateZipFilePage = (opts: {
 	 * 不使用 /{(\\w+)}/ 占位正则，避免 extraBodyHtml 转义门禁。
 	 */
 	const extraBodyHtml = `
-  <script src="https://cdn.jsdelivr.net/npm/fflate@0.8.2/umd/index.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/vendor/fflate/index.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     (function () {
       /** 浏览器内软上限：超过则拒绝打包，避免标签页卡死。 */

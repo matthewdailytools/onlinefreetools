@@ -20,7 +20,7 @@ const ar: SiteLangDict = {
   tool_write_pdf_document_online_err_pdfjs: "PDF renderer failed to load.",
   tool_write_pdf_document_online_example: "تحميل مثال يملأ فقرتين، ينقر إنشاء PDF ويعرض معاينة صفحة واحدة جاهزة للتنزيل.",
   tool_write_pdf_document_online_example_title: "مثال",
-  tool_write_pdf_document_online_faq_a1: "لا. العرض يعمل في تبويبك (قد تُحمَّل المكتبات من CDN). ملفك لا يُرفع إلى خوادمنا.",
+  tool_write_pdf_document_online_faq_a1: "لا. العرض يعمل في تبويبك (تُحمَّل المكتبات من هذا الموقع). ملفك لا يُرفع إلى خوادمنا.",
   tool_write_pdf_document_online_faq_a2: "لا. تكتب نصاً جديداً في مربع؛ الصفحة تبني PDF بـ pdf-lib ولا تفتح PDF موجوداً أبداً.",
   tool_write_pdf_document_online_faq_a3: "لا. للملفات التي لديك بالفعل استخدم تحرير نص PDF أو إضافة نص.",
   tool_write_pdf_document_online_faq_a4: "إضافة نص تطبع على PDF موجود. تحرير نص PDF يغيّر صياغة طبقة النص. هذه الصفحة تنشئ PDF جديداً من النص المكتوب فقط.",

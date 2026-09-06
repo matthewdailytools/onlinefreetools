@@ -25,7 +25,7 @@ const ru: SiteLangDict = {
   tool_pdf_page_to_image_sizes_example_title: 'Пример',
   tool_pdf_page_to_image_sizes_export: 'Экспорт',
   tool_pdf_page_to_image_sizes_faq_a1:
-    'Нет. рендерер страниц, библиотека PDF и библиотека ZIP работают во вкладке (скрипты могут грузиться с CDN). PDF не отправляется на наши серверы.',
+    'Нет. рендерер страниц, библиотека PDF и библиотека ZIP работают во вкладке (скрипты грузятся с этого сайта). PDF не отправляется на наши серверы.',
   tool_pdf_page_to_image_sizes_faq_a2:
     'PDF в JPG экспортирует каждую страницу в исходных пропорциях. Этот инструмент берёт одну страницу и вписывает в фиксированные размеры платформ (contain, по центру, белые поля).',
   tool_pdf_page_to_image_sizes_faq_a3:

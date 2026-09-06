@@ -26,7 +26,7 @@ const zh: SiteLangDict = {
   tool_sign_pdf_document_example: "加载样例会生成「示例协议」一页，打出 Jane Sample，并在约 X=72、Y=72 处盖上该 PNG。",
   tool_sign_pdf_document_example_title: "示例",
   tool_sign_pdf_document_faq_a1: "不算。本页只盖姓名或笔迹的图片。若要带哈希前缀的完整性外观，请用「为 PDF 添加数字标记」——那也不是证书 PKI 签名。",
-  tool_sign_pdf_document_faq_a2: "不会。盖章在本标签页完成（库可能从 CDN 加载），PDF 不会上传到我们的服务器。",
+  tool_sign_pdf_document_faq_a2: "不会。盖章在本标签页完成（库从本站加载），PDF 不会上传到我们的服务器。",
   tool_sign_pdf_document_faq_a3: "不能。用 X/Y 放图。加密请看「保护 PDF」。加字请看「向 PDF 添加文本」。",
   tool_sign_pdf_document_faq_a4: "本浏览器工具不能施加 Adobe 式 PKCS#7 / PAdES 证书。请用专用签名软件。",
   tool_sign_pdf_document_faq_a5: "大 PDF 可能较慢，建议先在桌面浏览器试用。",

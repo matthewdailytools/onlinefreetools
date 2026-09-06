@@ -23,7 +23,7 @@ const de: SiteLangDict = {
     'Die Vorschau erstellt eine Zwei-Seiten-PDF, konvertiert jede Seite und aktiviert Download als ZIP mit page-1.jpg und page-2.jpg.',
   tool_pdf_to_jpg_example_title: 'PDF-Seiten in JPG umwandeln',
   tool_pdf_to_jpg_faq_a1:
-    'Nein. der Seitenrenderer und die ZIP-Bibliothek laufen in Ihrem Tab (Skripte ggf. vom CDN). Ihre PDF wird nicht auf unsere Server hochgeladen.',
+    'Nein. der Seitenrenderer und die ZIP-Bibliothek laufen in Ihrem Tab (Skripte ggf. von dieser Website). Ihre PDF wird nicht auf unsere Server hochgeladen.',
   tool_pdf_to_jpg_faq_a2:
     'Mehr als eine Seite → ZIP pdf-pages.zip mit page-1.jpg, page-2.jpg usw. Eine Seite → ein JPG direkt.',
   tool_pdf_to_jpg_faq_a3:

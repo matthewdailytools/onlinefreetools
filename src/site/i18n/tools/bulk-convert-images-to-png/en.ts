@@ -29,7 +29,7 @@ const en: SiteLangDict = {
 		'Load sample adds a JPEG color block and a transparent logo, writes two .png files, and enables Download ZIP. The JPEG row often shows a larger PNG.',
 	tool_bulk_convert_images_to_png_example_title: 'Example',
 	tool_bulk_convert_images_to_png_faq_a1:
-		'No. Decode and PNG encode run in this tab. Files stay on the device and are not uploaded to a server. A ZIP helper may load from a CDN; your images still never leave the tab.',
+		'No. Decode and PNG encode run in this tab. Files stay on the device and are not uploaded to a server. A ZIP helper loads from this site; your images still never leave the tab.',
 	tool_bulk_convert_images_to_png_faq_a2:
 		'No. JPEG never stored holes. jpg to png gives you a PNG wrapper; the backdrop stays opaque. True holes only survive if the source already had alpha.',
 	tool_bulk_convert_images_to_png_faq_a3:

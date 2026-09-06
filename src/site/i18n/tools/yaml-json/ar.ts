@@ -21,7 +21,7 @@ const ar: SiteLangDict = {
   tool_yaml_json_example_title: 'مثال',
   tool_yaml_json_faq_a1:
     'المستندات المفصولة بـ --- تُحلَّل بـ loadAll. مستند واحد → قيمة JSON؛ اثنان فأكثر → مصفوفة. لا نحذف ما بعد الأول.',
-  tool_yaml_json_faq_a2: 'التحويل يبقى في التبويب. قد يخدم CDN مكتبة js-yaml؛ ذلك تنزيل كود فقط — ليس رفعًا لنص YAML أو JSON.',
+  tool_yaml_json_faq_a2: 'التحويل يبقى في التبويب. قد يقدّم هذا الموقع مكتبة js-yaml؛ ذلك تنزيل كود فقط — ليس رفعًا لنص YAML أو JSON.',
   tool_yaml_json_faq_a3:
     'تحت مخطط js-yaml الافتراضي كثيرًا نعم — yes/no/on/off غير المقتبسة قد تصبح boolean. فعّل «أنواع آمنة لـ JSON» لإبقائها نصوصًا ما لم تُكتب بنوع صريح.',
   tool_yaml_json_faq_a4:
@@ -58,7 +58,7 @@ const ar: SiteLangDict = {
     'multi-doc: loadAll — مستند واحد → قيمة JSON؛ اثنان فأكثر → مصفوفة. لا نحتفظ بالمستند الأول بصمت ونتجاهل الباقي.',
   tool_yaml_json_rules_item_3:
     'فقدان عند الذهاب والإياب: التعليقات تختفي (JSON بلا تعليقات)؛ المراسي/الأسماء المستعارة تُوسَّع إلى قيم مكررة؛ ترتيب المفاتيح والأسلوب قد يتغير بعد dump.',
-  tool_yaml_json_rules_item_4: 'الخصوصية: اللصق لا يُرفع. جلب js-yaml من CDN يحمّل كود المكتبة فقط، لا نص إعدادك.',
+  tool_yaml_json_rules_item_4: 'الخصوصية: اللصق لا يُرفع. جلب js-yaml من هذا الموقع يحمّل كود المكتبة فقط، لا نص إعدادك.',
   tool_yaml_json_rules_title: 'ما تتوقعه من القواعد',
   tool_yaml_json_sample: 'تحميل مثال',
   tool_yaml_json_sample_json: '{\n  "title": "مرحبا",\n  "count": 2\n}',

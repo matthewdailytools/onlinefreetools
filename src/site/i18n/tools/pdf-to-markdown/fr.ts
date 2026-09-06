@@ -25,7 +25,7 @@ const fr: SiteLangDict = {
     'L’exemple crée un PDF d’une page Helvetica, convertit, affiche la phrase en prévisualisation et active Télécharger .md.',
   tool_pdf_to_markdown_example_title: 'Exemple',
   tool_pdf_to_markdown_faq_a1:
-    'Non. le moteur de rendu s’exécute dans votre onglet (scripts éventuellement via CDN). Votre PDF n’est pas envoyé à nos serveurs.',
+    'Non. le moteur de rendu s’exécute dans votre onglet (scripts depuis ce site). Votre PDF n’est pas envoyé à nos serveurs.',
   tool_pdf_to_markdown_faq_a2:
     'Les scans sont souvent des images sans couche texte. Sans OCR, l’extraction est vide et échoue avec un message clair.',
   tool_pdf_to_markdown_faq_a3: 'Ne reconstruit pas titres ni tableaux — lignes de texte brut par position.',

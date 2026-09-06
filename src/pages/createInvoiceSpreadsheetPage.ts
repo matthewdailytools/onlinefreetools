@@ -150,7 +150,7 @@ export const renderCreateInvoiceSpreadsheetPage = (opts: {
 	});
 	/** Client script (loadSample required). */
 	const extraBodyHtml = `
-  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/vendor/xlsx/xlsx.full.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     (function () {
       
