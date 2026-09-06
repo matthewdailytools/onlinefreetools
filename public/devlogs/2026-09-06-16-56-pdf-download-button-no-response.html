@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <script>(function(){try{var k='oft-theme',v=localStorage.getItem(k),ok={teal:1,green:1,amber:1,navy:1};document.documentElement.setAttribute('data-theme',(v&&ok[v])?v:'teal');}catch(e){document.documentElement.setAttribute('data-theme','teal');}})();</script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>PDF-to-DWG and PDF-to-PDF/A no longer enable Download before a file exists, so the click actually saves instead of returning silently. | Dev Logs</title>
-  <meta name="description" content="PDF-to-DWG and PDF-to-PDF/A no longer enable Download before a file exists, so the click actually saves instead of returning silently." />
+  <title>PDF-to-DWG and PDF-to-PDF/A Download is a real blob link, so a click saves instead of a silent programmatic a.click(). | Dev Logs</title>
+  <meta name="description" content="PDF-to-DWG and PDF-to-PDF/A Download is a real blob link, so a click saves instead of a silent programmatic a.click()." />
   
   <link rel="canonical" href="https://onlinefreetools.org/devlogs/2026-09-06-16-56-pdf-download-button-no-response.html" />
-  <meta property="og:title" content="PDF-to-DWG and PDF-to-PDF/A no longer enable Download before a file exists, so the click actually saves instead of returning silently. | Dev Logs" />
-  <meta property="og:description" content="PDF-to-DWG and PDF-to-PDF/A no longer enable Download before a file exists, so the click actually saves instead of returning silently." />
+  <meta property="og:title" content="PDF-to-DWG and PDF-to-PDF/A Download is a real blob link, so a click saves instead of a silent programmatic a.click(). | Dev Logs" />
+  <meta property="og:description" content="PDF-to-DWG and PDF-to-PDF/A Download is a real blob link, so a click saves instead of a silent programmatic a.click()." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://onlinefreetools.org/devlogs/2026-09-06-16-56-pdf-download-button-no-response.html" />
   <meta property="og:image" content="https://onlinefreetools.org/og-image.png" />
@@ -161,11 +161,11 @@
     <main id="content" class="p-4">
       <section class="mb-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">PDF-to-DWG and PDF-to-PDF/A no longer enable Download before a file exists, so the click actually saves instead of returning silently. | Dev Logs</h1>
+          <h1 class="h4 mb-0">PDF-to-DWG and PDF-to-PDF/A Download is a real blob link, so a click saves instead of a silent programmatic a.click(). | Dev Logs</h1>
           <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
         </div>
         <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-06 16:56
-Summary: PDF-to-DWG and PDF-to-PDF/A no longer enable Download before a file exists, so the click actually saves instead of returning silently.
+Summary: PDF-to-DWG and PDF-to-PDF/A Download is a real blob link, so a click saves instead of a silent programmatic a.click().
 Visibility: people</p>
 <p>[question]
 <a href="http://127.0.0.1:8788/zh/tools/convert-pdf-to-dwg">http://127.0.0.1:8788/zh/tools/convert-pdf-to-dwg</a> 点击下载.dxf没有反应
@@ -194,21 +194,26 @@ Chinese: <a href="https://onlinefreetools.org/zh/tools/convert-pdf-to-pdf-a">htt
 <ul>
 <li><code>src/pages/convertPdfToDwgPage.ts</code> and <code>src/pages/convertPdfToPdfAPage.ts</code>: Download is enabled only when the converted bytes/string exist. A click without a result shows the existing empty/convert error instead of returning quietly. Blob URLs are revoked after 2 seconds.</li>
 <li>Local check on <code>http://127.0.0.1:8788/zh/tools/convert-pdf-to-pdf-a</code> and <code>.../convert-pdf-to-dwg</code>: after sample status「完成」, click Download → <code>sample-pdf-a-pdfa.pdf</code> and <code>sample-pdf-to-dwg.dxf</code>, no <code>pageerror</code>.</li>
-<li><code>PAGES_CACHE_VERSION</code> 4.51 → 4.52.</li>
+<li><code>PAGES_CACHE_VERSION</code> 4.51 → 4.53.</li>
 </ul>
+<h2>Second pass (native <code>&lt;a download&gt;</code>)</h2>
+<p>The first pass still used a hidden <code>&lt;a&gt;</code> plus <code>a.click()</code>. That is a programmatic download: Playwright records it, but Cursor’s preview pane and some browsers swallow it with no UI. The user reported PDF/A still “did nothing” after 4.52.</p>
+<p>Download is now a real <code>&lt;a class=&quot;btn&quot;&gt;</code>. After convert, <code>setDownloadReady</code> points <code>href</code> at a live blob URL and sets <code>download=filename</code>. The user click is a normal link activation, not <code>element.click()</code> on a detached node. Blob URLs stay until the next convert/clear.</p>
+<p>Rechecked <code>http://127.0.0.1:8788/zh/tools/convert-pdf-to-pdf-a</code>: status「完成」, <code>#cpaBtnDownload</code> is an <code>A</code> with <code>blob:</code> href and <code>download=&quot;sample-pdf-a-pdfa.pdf&quot;</code>, click saves that name, no <code>pageerror</code>. Hard-refresh the local page so the 4.53 HTML replaces the old button.</p>
 <h2>Notes / boundaries</h2>
 <ul>
 <li>Other PDF tools that put Download in <code>busyBtns</code> and call <code>setBusy(false)</code> from <code>loadFile</code> can show the same fake-enabled button. They were not changed in this pass.</li>
 <li>Convert PDF to PDF/A is still a best-effort metadata/font embed, not a veraPDF-certified PDF/A.</li>
 <li>Convert PDF to DWG still writes ASCII DXF (TEXT + page-frame LINE), not proprietary DWG binary.</li>
 <li>Production still needs R2 upload of the new HTML after this cache bump.</li>
+<li>Embedded browsers that block all blob downloads will still not save a file; the control is a real link (<code>blob:</code>) so a full Chrome/Safari/Firefox window will.</li>
 </ul>
 <p>[actions]</p>
 <ul>
-<li><code>src/pages/convertPdfToDwgPage.ts</code>: Download not in busyBtns; delayed blob download</li>
-<li><code>src/pages/convertPdfToPdfAPage.ts</code>: same busy/download fix</li>
-<li><code>wrangler.jsonc</code>: <code>PAGES_CACHE_VERSION</code> 4.51 → 4.52</li>
-<li><code>npm run tool:touch -- --slug=convert-pdf-to-pdf-a</code> (DWG touched earlier in the same session)</li>
+<li><code>src/pages/convertPdfToDwgPage.ts</code>: Download not in busyBtns; native <code>&lt;a download&gt;</code> blob link</li>
+<li><code>src/pages/convertPdfToPdfAPage.ts</code>: same</li>
+<li><code>wrangler.jsonc</code>: <code>PAGES_CACHE_VERSION</code> 4.51 → 4.53</li>
+<li><code>npm run tool:touch -- --slug=convert-pdf-to-pdf-a,convert-pdf-to-dwg</code></li>
 </ul>
 </article>
       </section>

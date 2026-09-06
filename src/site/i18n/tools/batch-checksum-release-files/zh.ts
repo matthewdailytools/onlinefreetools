@@ -9,7 +9,6 @@ const zh: SiteLangDict = {
 	tool_batch_checksum_release_files_article:
 		'给一目录发版附件在这个标签页算校验和。你拿到的是表、CSV 和 SHA256SUMS 文本，不是把安装包打成 ZIP。可贴官方清单标出一致或不一致。文件留在本机，不上传服务器。',
 	tool_batch_checksum_release_files_choose_files: '选择文件',
-	tool_batch_checksum_release_files_chip_md5: '同时算 MD5',
 	tool_batch_checksum_release_files_clear: '清空',
 	tool_batch_checksum_release_files_col_compare: '对照',
 	tool_batch_checksum_release_files_col_md5: 'MD5',

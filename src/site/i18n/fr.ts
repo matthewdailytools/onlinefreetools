@@ -937,7 +937,6 @@ const fr: SiteLangDict = {
   tool_base64_usecases_title: 'Bon usage',
   tool_batch_checksum_release_files_article:
     'Hachez un dossier d\'assets de release dans cet onglet. Vous obtenez un tableau, un CSV et un SHA256SUMS — pas un ZIP des binaires. Collez une liste officielle pour marquer correspondance ou écart. Les fichiers restent sur l\'appareil et ne sont pas envoyés vers un serveur.',
-  tool_batch_checksum_release_files_chip_md5: 'Aussi MD5',
   tool_batch_checksum_release_files_choose_files: 'Choisir des fichiers',
   tool_batch_checksum_release_files_clear: 'Effacer',
   tool_batch_checksum_release_files_col_compare: 'Comparer',
@@ -10654,6 +10653,7 @@ const fr: SiteLangDict = {
   tool_sign_pdf_document_choose_files: 'Choisir des fichiers',
   tool_sign_pdf_document_clear: 'Effacer',
   tool_sign_pdf_document_clear_pad: 'Effacer le pavé',
+  tool_sign_pdf_document_color_label: 'Couleur d’encre',
   tool_sign_pdf_document_desc:
     'Signez un document PDF dans le navigateur — dessinez ou saisissez un nom, placez-le en X/Y. Les fichiers restent sur l’appareil, sans envoi au serveur.',
   tool_sign_pdf_document_description:
@@ -10671,7 +10671,7 @@ const fr: SiteLangDict = {
   tool_sign_pdf_document_err_notext: 'Aucune signature à tamponner.',
   tool_sign_pdf_document_err_pdfjs: 'Échec du chargement du moteur PDF.',
   tool_sign_pdf_document_example:
-    'Charger l’exemple crée un « accord d’exemple », saisit Jane Sample et tamponne ce PNG vers X=72, Y=72.',
+    'Charger l’exemple crée un accord d’exemple, saisit Jane Sample et tamponne le PNG en bas à droite (X/Y restent modifiables).',
   tool_sign_pdf_document_example_title: 'Exemple',
   tool_sign_pdf_document_faq_a1:
     'Non. Cette page tamponne seulement une image. Pour une apparence d’intégrité avec préfixe de hachage, utilisez Ajouter une signature numérique à un PDF — ce n’est pas non plus du PKI à certificat.',
@@ -10689,14 +10689,23 @@ const fr: SiteLangDict = {
   tool_sign_pdf_document_how_body:
     'Ouvrez le PDF, choisissez dessin ou saisie, réglez X/Y et la page, tamponnez et téléchargez. Les fichiers restent sur l’appareil, sans envoi au serveur.',
   tool_sign_pdf_document_how_item_1: 'Choisissez un PDF ou chargez l’exemple',
-  tool_sign_pdf_document_how_item_2: 'Saisissez un nom ou dessinez',
-  tool_sign_pdf_document_how_item_3: 'Réglez page, X et Y puis cliquez Tamponner et prévisualiser',
+  tool_sign_pdf_document_how_item_2: 'Saisissez un nom ou dessinez, puis choisissez la couleur d’encre',
+  tool_sign_pdf_document_how_item_3:
+    'Choisissez un coin ou le centre (ou modifiez X/Y), une page ou toutes, puis Tamponner et prévisualiser',
   tool_sign_pdf_document_how_item_4: 'Téléchargez le PDF tamponné',
   tool_sign_pdf_document_how_title: 'Fonctionnement',
   tool_sign_pdf_document_mode_draw: 'Dessiner',
   tool_sign_pdf_document_mode_type: 'Saisir un nom',
   tool_sign_pdf_document_name_label: 'Nom saisi',
+  tool_sign_pdf_document_page_all: 'Toutes les pages',
   tool_sign_pdf_document_page_label: 'Page',
+  tool_sign_pdf_document_page_option: 'Page {n}',
+  tool_sign_pdf_document_pos_bl: 'Bas gauche',
+  tool_sign_pdf_document_pos_br: 'Bas droite',
+  tool_sign_pdf_document_pos_center: 'Centre',
+  tool_sign_pdf_document_pos_label: 'Position',
+  tool_sign_pdf_document_pos_tl: 'Haut gauche',
+  tool_sign_pdf_document_pos_tr: 'Haut droite',
   tool_sign_pdf_document_rules_body: 'La marque est une image PNG. Elle ne verrouille pas les champs et ne prouve pas l’identité.',
   tool_sign_pdf_document_rules_item_1: 'Tâche : placer une image de signature sur une page PDF.',
   tool_sign_pdf_document_rules_item_2: 'Côté client uniquement ; sans envoi au serveur.',

@@ -918,7 +918,6 @@ const id: SiteLangDict = {
   tool_base64_usecases_title: 'Cocok untuk',
   tool_batch_checksum_release_files_article:
     'Hash folder aset rilis di tab ini. Anda mendapat tabel, CSV, dan SHA256SUMS — bukan ZIP biner. Tempel daftar resmi untuk menandai cocok atau beda. File tetap di perangkat dan tidak diunggah ke server.',
-  tool_batch_checksum_release_files_chip_md5: 'Juga MD5',
   tool_batch_checksum_release_files_choose_files: 'Pilih berkas',
   tool_batch_checksum_release_files_clear: 'Hapus',
   tool_batch_checksum_release_files_col_compare: 'Bandingkan',
@@ -10437,6 +10436,7 @@ const id: SiteLangDict = {
   tool_sign_pdf_document_choose_files: 'Pilih berkas',
   tool_sign_pdf_document_clear: 'Kosongkan',
   tool_sign_pdf_document_clear_pad: 'Kosongkan papan',
+  tool_sign_pdf_document_color_label: 'Warna tinta',
   tool_sign_pdf_document_desc:
     'Tanda tangani dokumen PDF di peramban — gambar atau ketik nama, cap di X/Y. File tetap di perangkat; tanpa unggah ke server.',
   tool_sign_pdf_document_description:
@@ -10454,7 +10454,7 @@ const id: SiteLangDict = {
   tool_sign_pdf_document_err_notext: 'Tidak ada tanda tangan untuk dicap.',
   tool_sign_pdf_document_err_pdfjs: 'Perender PDF gagal dimuat.',
   tool_sign_pdf_document_example:
-    'Muat sampel membuat “perjanjian sampel”, mengetik Jane Sample, dan menaruh PNG di sekitar X=72, Y=72.',
+    'Muat sampel membuat perjanjian sampel, mengetik Jane Sample, dan menaruh PNG di kanan bawah (X/Y bisa diubah).',
   tool_sign_pdf_document_example_title: 'Contoh',
   tool_sign_pdf_document_faq_a1:
     'Bukan. Halaman ini hanya mencap gambar. Untuk tampilan integritas dengan awalan hash, gunakan Tambahkan tanda tangan digital ke PDF — itu juga bukan PKI bersertifikat.',
@@ -10472,14 +10472,22 @@ const id: SiteLangDict = {
   tool_sign_pdf_document_how_body:
     'Buka PDF, pilih gambar atau ketik, atur X/Y dan halaman, cap, lalu unduh. File tetap di perangkat; tanpa unggah ke server.',
   tool_sign_pdf_document_how_item_1: 'Pilih PDF atau muat sampel',
-  tool_sign_pdf_document_how_item_2: 'Ketik nama atau gambar',
-  tool_sign_pdf_document_how_item_3: 'Atur halaman, X, Y, lalu klik Cap dan pratinjau',
+  tool_sign_pdf_document_how_item_2: 'Ketik nama atau gambar, lalu pilih warna tinta',
+  tool_sign_pdf_document_how_item_3: 'Pilih sudut atau tengah (atau ubah X/Y), pilih halaman atau semua, lalu Cap dan pratinjau',
   tool_sign_pdf_document_how_item_4: 'Unduh PDF yang sudah dicap',
   tool_sign_pdf_document_how_title: 'Cara kerja',
   tool_sign_pdf_document_mode_draw: 'Gambar',
   tool_sign_pdf_document_mode_type: 'Ketik nama',
   tool_sign_pdf_document_name_label: 'Nama ketikan',
+  tool_sign_pdf_document_page_all: 'Semua halaman',
   tool_sign_pdf_document_page_label: 'Halaman',
+  tool_sign_pdf_document_page_option: 'Halaman {n}',
+  tool_sign_pdf_document_pos_bl: 'Kiri bawah',
+  tool_sign_pdf_document_pos_br: 'Kanan bawah',
+  tool_sign_pdf_document_pos_center: 'Tengah',
+  tool_sign_pdf_document_pos_label: 'Posisi',
+  tool_sign_pdf_document_pos_tl: 'Kiri atas',
+  tool_sign_pdf_document_pos_tr: 'Kanan atas',
   tool_sign_pdf_document_rules_body: 'Tanda adalah gambar PNG. Tidak mengunci bidang atau membuktikan identitas.',
   tool_sign_pdf_document_rules_item_1: 'Tugas: menaruh gambar tanda tangan di halaman PDF.',
   tool_sign_pdf_document_rules_item_2: 'Hanya di klien; tanpa unggah ke server.',

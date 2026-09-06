@@ -951,7 +951,6 @@ const es: SiteLangDict = {
   tool_base64_usecases_title: 'Cuándo usarlo',
   tool_batch_checksum_release_files_article:
     'Hashea una carpeta de assets de publicación en esta pestaña. Obtienes una tabla, un CSV y un SHA256SUMS — no un ZIP de los binarios. Pega una lista oficial para marcar coincidencia o diferencia. No salen del dispositivo ni se suben al servidor.',
-  tool_batch_checksum_release_files_chip_md5: 'También MD5',
   tool_batch_checksum_release_files_choose_files: 'Elegir archivos',
   tool_batch_checksum_release_files_clear: 'Borrar',
   tool_batch_checksum_release_files_col_compare: 'Comparar',
@@ -10644,6 +10643,7 @@ const es: SiteLangDict = {
   tool_sign_pdf_document_choose_files: 'Elegir archivos',
   tool_sign_pdf_document_clear: 'Borrar',
   tool_sign_pdf_document_clear_pad: 'Limpiar almohadilla',
+  tool_sign_pdf_document_color_label: 'Color de tinta',
   tool_sign_pdf_document_desc:
     'Firma un documento PDF en el navegador — dibuja o escribe un nombre y colócalo en X/Y. Los archivos no salen del dispositivo; no se suben al servidor.',
   tool_sign_pdf_document_description:
@@ -10661,7 +10661,7 @@ const es: SiteLangDict = {
   tool_sign_pdf_document_err_notext: 'No hay firma que sellar.',
   tool_sign_pdf_document_err_pdfjs: 'Falló la carga del visor PDF.',
   tool_sign_pdf_document_example:
-    'Cargar ejemplo crea un “acuerdo de muestra”, escribe Jane Sample y sella ese PNG cerca de X=72, Y=72.',
+    'Cargar ejemplo crea un “acuerdo de muestra”, escribe Jane Sample y sella el PNG abajo a la derecha (X/Y se pueden editar).',
   tool_sign_pdf_document_example_title: 'Ejemplo',
   tool_sign_pdf_document_faq_a1:
     'No. Solo sella una imagen. Para una marca de integridad con prefijo hash usa Añadir una firma digital a un PDF; tampoco es PKI con certificado.',
@@ -10678,14 +10678,22 @@ const es: SiteLangDict = {
   tool_sign_pdf_document_how_body:
     'Abre el PDF, elige dibujar o escribir, fija X/Y y página, sella y descarga. Los archivos permanecen en tu dispositivo; no se suben al servidor.',
   tool_sign_pdf_document_how_item_1: 'Elige un PDF o carga el ejemplo',
-  tool_sign_pdf_document_how_item_2: 'Escribe un nombre o dibuja',
-  tool_sign_pdf_document_how_item_3: 'Fija página, X e Y y pulsa Sellar y previsualizar',
+  tool_sign_pdf_document_how_item_2: 'Escribe un nombre o dibuja y elige el color de tinta',
+  tool_sign_pdf_document_how_item_3: 'Elige esquina o centro (o edita X/Y), elige página o todas, y pulsa Sellar y previsualizar',
   tool_sign_pdf_document_how_item_4: 'Descarga el PDF sellado',
   tool_sign_pdf_document_how_title: 'Cómo funciona',
   tool_sign_pdf_document_mode_draw: 'Dibujar',
   tool_sign_pdf_document_mode_type: 'Escribir nombre',
   tool_sign_pdf_document_name_label: 'Nombre escrito',
+  tool_sign_pdf_document_page_all: 'Todas las páginas',
   tool_sign_pdf_document_page_label: 'Página',
+  tool_sign_pdf_document_page_option: 'Página {n}',
+  tool_sign_pdf_document_pos_bl: 'Abajo izquierda',
+  tool_sign_pdf_document_pos_br: 'Abajo derecha',
+  tool_sign_pdf_document_pos_center: 'Centro',
+  tool_sign_pdf_document_pos_label: 'Posición',
+  tool_sign_pdf_document_pos_tl: 'Arriba izquierda',
+  tool_sign_pdf_document_pos_tr: 'Arriba derecha',
   tool_sign_pdf_document_rules_body: 'La marca es una imagen PNG. No bloquea campos ni prueba identidad.',
   tool_sign_pdf_document_rules_item_1: 'Tarea: colocar una imagen de firma en una página PDF.',
   tool_sign_pdf_document_rules_item_2: 'Solo en el cliente; no se sube al servidor.',

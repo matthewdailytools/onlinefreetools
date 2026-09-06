@@ -9,7 +9,6 @@ const id: SiteLangDict = {
 	tool_batch_checksum_release_files_article:
 		'Hash folder aset rilis di tab ini. Anda mendapat tabel, CSV, dan SHA256SUMS — bukan ZIP biner. Tempel daftar resmi untuk menandai cocok atau beda. File tetap di perangkat dan tidak diunggah ke server.',
 	tool_batch_checksum_release_files_choose_files: 'Pilih berkas',
-	tool_batch_checksum_release_files_chip_md5: 'Juga MD5',
 	tool_batch_checksum_release_files_clear: 'Hapus',
 	tool_batch_checksum_release_files_col_compare: 'Bandingkan',
 	tool_batch_checksum_release_files_col_md5: 'MD5',

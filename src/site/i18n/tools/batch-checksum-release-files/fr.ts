@@ -9,7 +9,6 @@ const fr: SiteLangDict = {
 	tool_batch_checksum_release_files_article:
 		'Hachez un dossier d\'assets de release dans cet onglet. Vous obtenez un tableau, un CSV et un SHA256SUMS — pas un ZIP des binaires. Collez une liste officielle pour marquer correspondance ou écart. Les fichiers restent sur l\'appareil et ne sont pas envoyés vers un serveur.',
 	tool_batch_checksum_release_files_choose_files: 'Choisir des fichiers',
-	tool_batch_checksum_release_files_chip_md5: 'Aussi MD5',
 	tool_batch_checksum_release_files_clear: 'Effacer',
 	tool_batch_checksum_release_files_col_compare: 'Comparer',
 	tool_batch_checksum_release_files_col_md5: 'MD5',

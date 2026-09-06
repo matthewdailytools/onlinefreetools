@@ -922,7 +922,6 @@ const pt: SiteLangDict = {
   tool_base64_usecases_title: 'Bons casos',
   tool_batch_checksum_release_files_article:
     'Hasheie uma pasta de assets de release nesta aba. Você recebe tabela, CSV e SHA256SUMS — não um ZIP dos binários. Cole uma lista oficial para marcar coincidência ou diferença. Os arquivos ficam no dispositivo e não são enviados a um servidor.',
-  tool_batch_checksum_release_files_chip_md5: 'Também MD5',
   tool_batch_checksum_release_files_choose_files: 'Escolher arquivos',
   tool_batch_checksum_release_files_clear: 'Limpar',
   tool_batch_checksum_release_files_col_compare: 'Comparar',
@@ -10516,6 +10515,7 @@ const pt: SiteLangDict = {
   tool_sign_pdf_document_choose_files: 'Escolher arquivos',
   tool_sign_pdf_document_clear: 'Limpar',
   tool_sign_pdf_document_clear_pad: 'Limpar bloco',
+  tool_sign_pdf_document_color_label: 'Cor da tinta',
   tool_sign_pdf_document_desc:
     'Assine um documento PDF no navegador — desenhe ou digite um nome e carimbe em X/Y. Os arquivos ficam no dispositivo; sem enviar ao servidor.',
   tool_sign_pdf_document_description:
@@ -10533,7 +10533,7 @@ const pt: SiteLangDict = {
   tool_sign_pdf_document_err_notext: 'Não há assinatura para carimbar.',
   tool_sign_pdf_document_err_pdfjs: 'Falha ao carregar o visualizador PDF.',
   tool_sign_pdf_document_example:
-    'Carregar amostra cria um “acordo de amostra”, digita Jane Sample e carimba o PNG perto de X=72, Y=72.',
+    'Carregar amostra cria um acordo de amostra, digita Jane Sample e carimba o PNG no canto inferior direito (X/Y editáveis).',
   tool_sign_pdf_document_example_title: 'Exemplo',
   tool_sign_pdf_document_faq_a1:
     'Não. Só carimba uma imagem. Para uma marca de integridade com prefixo de hash use Adicionar uma assinatura digital a um PDF — também não é PKI com certificado.',
@@ -10550,14 +10550,22 @@ const pt: SiteLangDict = {
   tool_sign_pdf_document_how_body:
     'Abra o PDF, escolha desenhar ou digitar, defina X/Y e página, carimbe e baixe. Os arquivos ficam no dispositivo; sem enviar ao servidor.',
   tool_sign_pdf_document_how_item_1: 'Escolha um PDF ou carregue a amostra',
-  tool_sign_pdf_document_how_item_2: 'Digite um nome ou desenhe',
-  tool_sign_pdf_document_how_item_3: 'Defina página, X e Y e clique Carimbar e pré-visualizar',
+  tool_sign_pdf_document_how_item_2: 'Digite um nome ou desenhe e escolha a cor da tinta',
+  tool_sign_pdf_document_how_item_3: 'Escolha canto ou centro (ou edite X/Y), a página ou todas, e clique Carimbar e pré-visualizar',
   tool_sign_pdf_document_how_item_4: 'Baixe o PDF carimbado',
   tool_sign_pdf_document_how_title: 'Como funciona',
   tool_sign_pdf_document_mode_draw: 'Desenhar',
   tool_sign_pdf_document_mode_type: 'Digitar nome',
   tool_sign_pdf_document_name_label: 'Nome digitado',
+  tool_sign_pdf_document_page_all: 'Todas as páginas',
   tool_sign_pdf_document_page_label: 'Página',
+  tool_sign_pdf_document_page_option: 'Página {n}',
+  tool_sign_pdf_document_pos_bl: 'Inferior esquerdo',
+  tool_sign_pdf_document_pos_br: 'Inferior direito',
+  tool_sign_pdf_document_pos_center: 'Centro',
+  tool_sign_pdf_document_pos_label: 'Posição',
+  tool_sign_pdf_document_pos_tl: 'Superior esquerdo',
+  tool_sign_pdf_document_pos_tr: 'Superior direito',
   tool_sign_pdf_document_rules_body: 'A marca é uma imagem PNG. Não trava campos nem prova identidade.',
   tool_sign_pdf_document_rules_item_1: 'Tarefa: colocar uma imagem de assinatura numa página PDF.',
   tool_sign_pdf_document_rules_item_2: 'Só no cliente; sem enviar ao servidor.',

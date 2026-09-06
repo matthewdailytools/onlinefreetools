@@ -930,7 +930,6 @@ const de: SiteLangDict = {
   tool_base64_usecases_title: 'Gute Einsatzfälle',
   tool_batch_checksum_release_files_article:
     'Hashed Sie einen Ordner Release-Assets in diesem Tab. Sie erhalten Tabelle, CSV und SHA256SUMS — kein ZIP der Binärdateien. Fügen Sie eine offizielle Liste ein, um Treffer oder Abweichung zu markieren. Die Dateien bleiben auf dem Gerät und werden nicht auf einen Server hochgeladen.',
-  tool_batch_checksum_release_files_chip_md5: 'Auch MD5',
   tool_batch_checksum_release_files_choose_files: 'Dateien wählen',
   tool_batch_checksum_release_files_clear: 'Leeren',
   tool_batch_checksum_release_files_col_compare: 'Abgleich',
@@ -10586,6 +10585,7 @@ const de: SiteLangDict = {
   tool_sign_pdf_document_choose_files: 'Dateien wählen',
   tool_sign_pdf_document_clear: 'Leeren',
   tool_sign_pdf_document_clear_pad: 'Pad leeren',
+  tool_sign_pdf_document_color_label: 'Tintenfarbe',
   tool_sign_pdf_document_desc:
     'Unterschreiben Sie ein PDF-Dokument im Browser — zeichnen oder tippen Sie einen Namen und setzen ihn auf X/Y. Dateien bleiben auf Ihrem Gerät, ohne Server-Upload.',
   tool_sign_pdf_document_description:
@@ -10603,7 +10603,7 @@ const de: SiteLangDict = {
   tool_sign_pdf_document_err_notext: 'Keine Unterschrift zum Stempeln.',
   tool_sign_pdf_document_err_pdfjs: 'PDF-Renderer konnte nicht geladen werden.',
   tool_sign_pdf_document_example:
-    'Beispiel laden erzeugt eine „Sample agreement“-Seite, tippt Jane Sample und stempelt das PNG bei etwa X=72, Y=72.',
+    'Beispiel laden erzeugt eine „Sample agreement“-Seite, tippt Jane Sample und stempelt das PNG unten rechts (X/Y bleiben editierbar).',
   tool_sign_pdf_document_example_title: 'Beispiel',
   tool_sign_pdf_document_faq_a1:
     'Nein. Hier wird nur ein Bild gestempelt. Für eine Integritätsmarke mit Hash-Präfix nutzen Sie Digitale Signatur auf ein PDF setzen — das ist ebenfalls kein Zertifikats-PKI.',
@@ -10622,14 +10622,22 @@ const de: SiteLangDict = {
   tool_sign_pdf_document_how_body:
     'Öffnen Sie das PDF, wählen Sie Zeichnen oder Tippen, setzen Seite sowie X/Y, stempeln und laden herunter. Dateien bleiben auf Ihrem Gerät, ohne Server-Upload.',
   tool_sign_pdf_document_how_item_1: 'PDF wählen oder Beispiel laden',
-  tool_sign_pdf_document_how_item_2: 'Namen tippen oder zeichnen',
-  tool_sign_pdf_document_how_item_3: 'Seite, X und Y setzen, dann Stempeln und Vorschau',
+  tool_sign_pdf_document_how_item_2: 'Namen tippen oder zeichnen und die Tintenfarbe wählen',
+  tool_sign_pdf_document_how_item_3: 'Ecke oder Mitte wählen (oder X/Y ändern), Seite oder alle, dann Stempeln und Vorschau',
   tool_sign_pdf_document_how_item_4: 'Gestempeltes PDF herunterladen',
   tool_sign_pdf_document_how_title: 'So funktioniert es',
   tool_sign_pdf_document_mode_draw: 'Zeichnen',
   tool_sign_pdf_document_mode_type: 'Namen tippen',
   tool_sign_pdf_document_name_label: 'Getippter Name',
+  tool_sign_pdf_document_page_all: 'Alle Seiten',
   tool_sign_pdf_document_page_label: 'Seite',
+  tool_sign_pdf_document_page_option: 'Seite {n}',
+  tool_sign_pdf_document_pos_bl: 'Unten links',
+  tool_sign_pdf_document_pos_br: 'Unten rechts',
+  tool_sign_pdf_document_pos_center: 'Mitte',
+  tool_sign_pdf_document_pos_label: 'Position',
+  tool_sign_pdf_document_pos_tl: 'Oben links',
+  tool_sign_pdf_document_pos_tr: 'Oben rechts',
   tool_sign_pdf_document_rules_body: 'Die Marke ist ein PNG. Felder werden nicht gesperrt, Identität nicht bewiesen.',
   tool_sign_pdf_document_rules_item_1: 'Aufgabe: ein Unterschriftsbild auf eine PDF-Seite setzen.',
   tool_sign_pdf_document_rules_item_2: 'Nur clientseitig; ohne Server-Upload.',

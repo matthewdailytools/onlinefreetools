@@ -8,7 +8,6 @@ const en: SiteLangDict = {
 	tool_batch_checksum_release_files_article:
 		'Hash a folder of release assets in this tab. You get a table, a CSV, and a SHA256SUMS text file — not a ZIP of the binaries. Paste an official list to mark match or mismatch. Files stay on your device and are not uploaded to a server.',
 	tool_batch_checksum_release_files_choose_files: 'Choose files',
-	tool_batch_checksum_release_files_chip_md5: 'Also MD5',
 	tool_batch_checksum_release_files_clear: 'Clear',
 	tool_batch_checksum_release_files_col_compare: 'Compare',
 	tool_batch_checksum_release_files_col_md5: 'MD5',

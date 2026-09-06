@@ -9,7 +9,6 @@ const es: SiteLangDict = {
 	tool_batch_checksum_release_files_article:
 		'Hashea una carpeta de assets de publicación en esta pestaña. Obtienes una tabla, un CSV y un SHA256SUMS — no un ZIP de los binarios. Pega una lista oficial para marcar coincidencia o diferencia. No salen del dispositivo ni se suben al servidor.',
 	tool_batch_checksum_release_files_choose_files: 'Elegir archivos',
-	tool_batch_checksum_release_files_chip_md5: 'También MD5',
 	tool_batch_checksum_release_files_clear: 'Borrar',
 	tool_batch_checksum_release_files_col_compare: 'Comparar',
 	tool_batch_checksum_release_files_col_md5: 'MD5',

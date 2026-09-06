@@ -9,7 +9,6 @@ const ar: SiteLangDict = {
 	tool_batch_checksum_release_files_article:
 		'احسب هاش مجلد أصول الإصدار في هذا التبويب. تحصل على جدول وCSV وSHA256SUMS وليس ZIP للثنائيات. الصق قائمة رسمية لتعليم التطابق أو الاختلاف. الملفات تبقى على الجهاز ولا تُرفع إلى خادم.',
 	tool_batch_checksum_release_files_choose_files: 'اختر الملفات',
-	tool_batch_checksum_release_files_chip_md5: 'أيضاً MD5',
 	tool_batch_checksum_release_files_clear: 'مسح',
 	tool_batch_checksum_release_files_col_compare: 'مقارنة',
 	tool_batch_checksum_release_files_col_md5: 'MD5',

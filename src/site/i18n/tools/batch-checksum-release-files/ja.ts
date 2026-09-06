@@ -9,7 +9,6 @@ const ja: SiteLangDict = {
 	tool_batch_checksum_release_files_article:
 		'リリース資産のフォルダをこのタブでハッシュする。手に入るのは表、CSV、SHA256SUMS テキストであり、バイナリの ZIP ではない。公式リストを貼って一致・不一致を付ける。ファイルは端末内に留まり、サーバーにアップロードしない。',
 	tool_batch_checksum_release_files_choose_files: 'ファイルを選ぶ',
-	tool_batch_checksum_release_files_chip_md5: 'MD5 も計算',
 	tool_batch_checksum_release_files_clear: 'クリア',
 	tool_batch_checksum_release_files_col_compare: '照合',
 	tool_batch_checksum_release_files_col_md5: 'MD5',

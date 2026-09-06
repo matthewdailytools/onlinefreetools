@@ -128,7 +128,6 @@ export const renderBatchChecksumReleaseFilesPage = (opts: {
       </label>
 
       <div class="d-flex align-items-center tools-bar mb-2 flex-wrap gap-2">
-        <button type="button" id="bckChipMd5" class="btn btn-outline-secondary btn-sm">${escapeHtml(tx(opts.lang, 'chip_md5'))}</button>
         <button type="button" id="bckBtnHash" class="btn btn-primary btn-sm">${escapeHtml(tx(opts.lang, 'hash_all'))}</button>
         <button type="button" id="bckBtnCsv" class="btn btn-outline-primary btn-sm" disabled>${escapeHtml(tx(opts.lang, 'export_csv'))}</button>
         <button type="button" id="bckBtnSums" class="btn btn-outline-primary btn-sm" disabled>${escapeHtml(tx(opts.lang, 'export_sums'))}</button>
@@ -137,7 +136,8 @@ export const renderBatchChecksumReleaseFilesPage = (opts: {
       </div>
 
       <div class="form-check mb-3">
-        <input class="form-check-input" type="checkbox" id="bckMd5">
+        <!-- MD5 默认勾选：与 SHA-256 一并计算；用户可取消。 -->
+        <input class="form-check-input" type="checkbox" id="bckMd5" checked>
         <label class="form-check-label" for="bckMd5">${escapeHtml(tx(opts.lang, 'md5_label'))}</label>
       </div>
 
@@ -192,6 +192,7 @@ export const renderBatchChecksumReleaseFilesPage = (opts: {
       var drop = document.getElementById('bckDrop');
       var fileInput = document.getElementById('bckFile');
       var fileCountEl = document.getElementById('bckFileCount');
+      /** MD5 勾选框；默认已勾选，未勾选时只算 SHA-256。 */
       var md5Check = document.getElementById('bckMd5');
       var sumsEl = document.getElementById('bckSums');
       var btnHash = document.getElementById('bckBtnHash');
@@ -522,7 +523,6 @@ export const renderBatchChecksumReleaseFilesPage = (opts: {
         queue = [];
         rows = [];
         tbody.textContent = '';
-        md5Check.checked = false;
         var a = new File([new Uint8Array([1, 2, 3, 4])], 'release-a.bin', { type: 'application/octet-stream' });
         var b = new File([new Uint8Array([5, 6, 7, 8])], 'release-b.bin', { type: 'application/octet-stream' });
         queue.push(a, b);
@@ -545,9 +545,6 @@ export const renderBatchChecksumReleaseFilesPage = (opts: {
       });
       fileInput.addEventListener('change', function () {
         if (fileInput.files && fileInput.files.length) addFiles(fileInput.files);
-      });
-      document.getElementById('bckChipMd5').addEventListener('click', function () {
-        md5Check.checked = true;
       });
       btnHash.addEventListener('click', function () { hashAll(); });
       btnCsv.addEventListener('click', exportCsv);

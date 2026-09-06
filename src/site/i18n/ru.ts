@@ -927,7 +927,6 @@ const ru: SiteLangDict = {
   tool_base64_usecases_title: 'Подходящие случаи',
   tool_batch_checksum_release_files_article:
     'Посчитайте хеши папки релизных файлов на этой вкладке. На выходе таблица, CSV и SHA256SUMS — не ZIP бинарников. Вставьте официальный список, чтобы отметить совпадение или расхождение. Файлы остаются на устройстве и не загружаются на сервер.',
-  tool_batch_checksum_release_files_chip_md5: 'Также MD5',
   tool_batch_checksum_release_files_choose_files: 'Выбрать файлы',
   tool_batch_checksum_release_files_clear: 'Очистить',
   tool_batch_checksum_release_files_col_compare: 'Сверка',
@@ -10479,6 +10478,7 @@ const ru: SiteLangDict = {
   tool_sign_pdf_document_choose_files: 'Выбрать файлы',
   tool_sign_pdf_document_clear: 'Очистить',
   tool_sign_pdf_document_clear_pad: 'Очистить планшет',
+  tool_sign_pdf_document_color_label: 'Цвет чернил',
   tool_sign_pdf_document_desc:
     'Подпишите документ PDF в браузере — нарисуйте или введите имя и поставьте в X/Y. Файлы остаются на устройстве, без загрузки на сервер.',
   tool_sign_pdf_document_description:
@@ -10495,7 +10495,8 @@ const ru: SiteLangDict = {
   tool_sign_pdf_document_err_nosig: 'Сначала введите имя или нарисуйте подпись.',
   tool_sign_pdf_document_err_notext: 'Нет подписи для штампа.',
   tool_sign_pdf_document_err_pdfjs: 'Не удалось загрузить средство просмотра PDF.',
-  tool_sign_pdf_document_example: 'Загрузка образца создаёт «Sample agreement», вводит Jane Sample и ставит PNG около X=72, Y=72.',
+  tool_sign_pdf_document_example:
+    'Загрузка образца создаёт «Sample agreement», вводит Jane Sample и ставит PNG внизу справа (X/Y можно изменить).',
   tool_sign_pdf_document_example_title: 'Пример',
   tool_sign_pdf_document_faq_a1:
     'Нет. Страница только ставит картинку. Для вида целостности с префиксом хеша используйте «Добавить цифровую подпись на PDF» — это тоже не сертификатный PKI.',
@@ -10512,14 +10513,22 @@ const ru: SiteLangDict = {
   tool_sign_pdf_document_how_body:
     'Откройте PDF, выберите рисунок или ввод, задайте X/Y и страницу, поставьте и скачайте. Файлы остаются на устройстве, без загрузки на сервер.',
   tool_sign_pdf_document_how_item_1: 'Выберите PDF или загрузите образец',
-  tool_sign_pdf_document_how_item_2: 'Введите имя или нарисуйте',
-  tool_sign_pdf_document_how_item_3: 'Задайте страницу, X и Y и нажмите «Поставить и предпросмотр»',
+  tool_sign_pdf_document_how_item_2: 'Введите имя или нарисуйте и выберите цвет чернил',
+  tool_sign_pdf_document_how_item_3: 'Выберите угол или центр (или правьте X/Y), страницу или все, затем «Поставить и предпросмотр»',
   tool_sign_pdf_document_how_item_4: 'Скачайте помеченный PDF',
   tool_sign_pdf_document_how_title: 'Как это работает',
   tool_sign_pdf_document_mode_draw: 'Рисовать',
   tool_sign_pdf_document_mode_type: 'Ввести имя',
   tool_sign_pdf_document_name_label: 'Введённое имя',
+  tool_sign_pdf_document_page_all: 'Все страницы',
   tool_sign_pdf_document_page_label: 'Страница',
+  tool_sign_pdf_document_page_option: 'Стр. {n}',
+  tool_sign_pdf_document_pos_bl: 'Низ слева',
+  tool_sign_pdf_document_pos_br: 'Низ справа',
+  tool_sign_pdf_document_pos_center: 'Центр',
+  tool_sign_pdf_document_pos_label: 'Положение',
+  tool_sign_pdf_document_pos_tl: 'Верх слева',
+  tool_sign_pdf_document_pos_tr: 'Верх справа',
   tool_sign_pdf_document_rules_body: 'Метка — изображение PNG. Поля не блокируются, личность не доказывается.',
   tool_sign_pdf_document_rules_item_1: 'Задача: поставить изображение подписи на страницу PDF.',
   tool_sign_pdf_document_rules_item_2: 'Только на клиенте; без загрузки на сервер.',

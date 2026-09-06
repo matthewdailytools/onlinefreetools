@@ -9,7 +9,6 @@ const de: SiteLangDict = {
 	tool_batch_checksum_release_files_article:
 		'Hashed Sie einen Ordner Release-Assets in diesem Tab. Sie erhalten Tabelle, CSV und SHA256SUMS — kein ZIP der Binärdateien. Fügen Sie eine offizielle Liste ein, um Treffer oder Abweichung zu markieren. Die Dateien bleiben auf dem Gerät und werden nicht auf einen Server hochgeladen.',
 	tool_batch_checksum_release_files_choose_files: 'Dateien wählen',
-	tool_batch_checksum_release_files_chip_md5: 'Auch MD5',
 	tool_batch_checksum_release_files_clear: 'Leeren',
 	tool_batch_checksum_release_files_col_compare: 'Abgleich',
 	tool_batch_checksum_release_files_col_md5: 'MD5',

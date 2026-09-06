@@ -9,7 +9,6 @@ const pt: SiteLangDict = {
 	tool_batch_checksum_release_files_article:
 		'Hasheie uma pasta de assets de release nesta aba. Você recebe tabela, CSV e SHA256SUMS — não um ZIP dos binários. Cole uma lista oficial para marcar coincidência ou diferença. Os arquivos ficam no dispositivo e não são enviados a um servidor.',
 	tool_batch_checksum_release_files_choose_files: 'Escolher arquivos',
-	tool_batch_checksum_release_files_chip_md5: 'Também MD5',
 	tool_batch_checksum_release_files_clear: 'Limpar',
 	tool_batch_checksum_release_files_col_compare: 'Comparar',
 	tool_batch_checksum_release_files_col_md5: 'MD5',

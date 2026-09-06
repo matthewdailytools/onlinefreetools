@@ -984,7 +984,6 @@ const en: SiteLangDict = {
   tool_base64_usecases_title: 'Good fits',
   tool_batch_checksum_release_files_article:
     'Hash a folder of release assets in this tab. You get a table, a CSV, and a SHA256SUMS text file — not a ZIP of the binaries. Paste an official list to mark match or mismatch. Files stay on your device and are not uploaded to a server.',
-  tool_batch_checksum_release_files_chip_md5: 'Also MD5',
   tool_batch_checksum_release_files_choose_files: 'Choose files',
   tool_batch_checksum_release_files_clear: 'Clear',
   tool_batch_checksum_release_files_col_compare: 'Compare',
@@ -10845,6 +10844,7 @@ const en: SiteLangDict = {
   tool_sign_pdf_document_choose_files: 'Choose files',
   tool_sign_pdf_document_clear: 'Clear',
   tool_sign_pdf_document_clear_pad: 'Clear pad',
+  tool_sign_pdf_document_color_label: 'Ink color',
   tool_sign_pdf_document_desc:
     'Sign a PDF document in your browser — draw or type a name, stamp it at X/Y. Files stay on your device; not uploaded to a server.',
   tool_sign_pdf_document_description:
@@ -10862,7 +10862,7 @@ const en: SiteLangDict = {
   tool_sign_pdf_document_err_notext: 'No signature to stamp.',
   tool_sign_pdf_document_err_pdfjs: 'PDF renderer failed to load.',
   tool_sign_pdf_document_example:
-    'Load sample builds a one-page “Sample agreement”, types “Jane Sample”, and stamps that PNG near X=72, Y=72.',
+    'Load sample builds a one-page “Sample agreement”, types “Jane Sample”, and stamps that PNG at the bottom-right (X/Y stay editable).',
   tool_sign_pdf_document_example_title: 'Example',
   tool_sign_pdf_document_faq_a1:
     'No. This page only stamps a picture of a name or handwriting. For an integrity appearance with a hash prefix, use Add a digital signature to a PDF — that is still not certificate PKI signing.',
@@ -10881,14 +10881,22 @@ const en: SiteLangDict = {
   tool_sign_pdf_document_how_body:
     'Open a PDF, choose Draw or Type a name, set X/Y and page, then stamp and download. Files stay on your device; not uploaded to a server.',
   tool_sign_pdf_document_how_item_1: 'Choose a PDF or load the sample',
-  tool_sign_pdf_document_how_item_2: 'Type a name or draw on the pad',
-  tool_sign_pdf_document_how_item_3: 'Set page, X and Y, then click Stamp & preview',
+  tool_sign_pdf_document_how_item_2: 'Type a name or draw on the pad, then pick an ink color',
+  tool_sign_pdf_document_how_item_3: 'Pick a corner or center (or edit X/Y), choose a page or all pages, then click Stamp & preview',
   tool_sign_pdf_document_how_item_4: 'Download the stamped PDF',
   tool_sign_pdf_document_how_title: 'How it works',
   tool_sign_pdf_document_mode_draw: 'Draw',
   tool_sign_pdf_document_mode_type: 'Type a name',
   tool_sign_pdf_document_name_label: 'Typed name',
+  tool_sign_pdf_document_page_all: 'All pages',
   tool_sign_pdf_document_page_label: 'Page',
+  tool_sign_pdf_document_page_option: 'Page {n}',
+  tool_sign_pdf_document_pos_bl: 'Bottom left',
+  tool_sign_pdf_document_pos_br: 'Bottom right',
+  tool_sign_pdf_document_pos_center: 'Center',
+  tool_sign_pdf_document_pos_label: 'Position',
+  tool_sign_pdf_document_pos_tl: 'Top left',
+  tool_sign_pdf_document_pos_tr: 'Top right',
   tool_sign_pdf_document_rules_body: 'The mark is a PNG image on the page. It does not lock fields or prove identity.',
   tool_sign_pdf_document_rules_item_1: 'Task: place a handwritten or typed signature image on a PDF page.',
   tool_sign_pdf_document_rules_item_2: 'Client-side only; the file is not uploaded to a server.',

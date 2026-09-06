@@ -103,6 +103,17 @@ export const renderSignPdfDocumentPage = (opts: {
   <style>
     .tools-bar { gap: .5rem; }
     #signPdfPad { display: block; width: 100%; max-width: 360px; height: 110px; border: 1px dashed #adb5bd; border-radius: .25rem; background: #fff; touch-action: none; cursor: crosshair; }
+    .sign-pdf-ink-row { gap: .4rem; }
+    .sign-pdf-ink-preview { font-style: italic; font-family: "Segoe Script", "Brush Script MT", "Apple Chancery", cursive; font-size: 1.35rem; line-height: 1; color: #1a237e; min-width: 1.5rem; }
+    .sign-pdf-ink-swatch { width: 1.2rem; height: 1.2rem; border: 1px solid #ced4da; border-radius: 50%; padding: 0; cursor: pointer; flex: 0 0 auto; }
+    .sign-pdf-ink-swatch[aria-pressed="true"] { outline: 2px solid #0d6efd; outline-offset: 1px; }
+    .sign-pdf-pos-grid { display: grid; grid-template-columns: 1fr auto 1fr; grid-template-areas: "tl . tr" ". center ." "bl . br"; gap: .35rem .75rem; max-width: 22rem; align-items: center; }
+    .sign-pdf-pos-grid .pos-tl { grid-area: tl; }
+    .sign-pdf-pos-grid .pos-tr { grid-area: tr; justify-self: end; }
+    .sign-pdf-pos-grid .pos-center { grid-area: center; }
+    .sign-pdf-pos-grid .pos-bl { grid-area: bl; }
+    .sign-pdf-pos-grid .pos-br { grid-area: br; justify-self: end; }
+    .sign-pdf-pos-grid .form-check { margin: 0; }
     ${pdfWorkUiCss()}
   </style>`;
 
@@ -121,7 +132,7 @@ export const renderSignPdfDocumentPage = (opts: {
     <p id="signPdfMeta" class="small text-muted mb-2" style="display:none;"></p>
 
     <div class="row g-2 mb-2">
-      <div class="col-12 col-md-6">
+      <div class="col-12 col-md-4">
         <div class="form-check form-check-inline">
           <input class="form-check-input" type="radio" name="signPdfMode" id="signPdfModeType" value="type" checked>
           <label class="form-check-label" for="signPdfModeType">${escapeHtml(t(opts.lang, prefix + '_mode_type'))}</label>
@@ -131,26 +142,65 @@ export const renderSignPdfDocumentPage = (opts: {
           <label class="form-check-label" for="signPdfModeDraw">${escapeHtml(t(opts.lang, prefix + '_mode_draw'))}</label>
         </div>
       </div>
-      <div class="col-12 col-md-6">
+      <div class="col-12 col-md-5">
         <label class="form-label" for="signPdfName">${escapeHtml(t(opts.lang, prefix + '_name_label'))}</label>
         <input id="signPdfName" class="form-control form-control-sm" type="text" value="Jane Sample" maxlength="80">
+      </div>
+      <div class="col-12 col-md-3">
+        <label class="form-label" for="signPdfColor">${escapeHtml(t(opts.lang, prefix + '_color_label'))}</label>
+        <div class="d-flex align-items-center sign-pdf-ink-row flex-wrap">
+          <input type="color" id="signPdfColor" class="form-control form-control-color form-control-sm" value="#1a237e" aria-label="${escapeHtml(t(opts.lang, prefix + '_color_label'))}">
+          <span id="signPdfInkPreview" class="sign-pdf-ink-preview" aria-hidden="true">Aa</span>
+          <button type="button" class="sign-pdf-ink-swatch" data-ink="#111111" title="#111111" aria-label="#111111" style="background:#111111"></button>
+          <button type="button" class="sign-pdf-ink-swatch" data-ink="#1a237e" title="#1a237e" aria-label="#1a237e" style="background:#1a237e"></button>
+          <button type="button" class="sign-pdf-ink-swatch" data-ink="#1565c0" title="#1565c0" aria-label="#1565c0" style="background:#1565c0"></button>
+          <button type="button" class="sign-pdf-ink-swatch" data-ink="#c62828" title="#c62828" aria-label="#c62828" style="background:#c62828"></button>
+        </div>
       </div>
       <div class="col-12">
         <p class="small text-muted mb-1">${escapeHtml(t(opts.lang, prefix + '_draw_hint'))}</p>
         <canvas id="signPdfPad" width="360" height="110" aria-label="${escapeHtml(t(opts.lang, prefix + '_mode_draw'))}"></canvas>
         <button type="button" id="signPdfBtnClearPad" class="btn btn-outline-secondary btn-sm mt-1">${escapeHtml(t(opts.lang, prefix + '_clear_pad'))}</button>
       </div>
+      <div class="col-12">
+        <span class="form-label d-block" id="signPdfPosLabel">${escapeHtml(t(opts.lang, prefix + '_pos_label'))}</span>
+        <div class="sign-pdf-pos-grid" role="radiogroup" aria-labelledby="signPdfPosLabel">
+          <div class="form-check pos-tl">
+            <input class="form-check-input" type="radio" name="signPdfPos" id="signPdfPosTl" value="tl">
+            <label class="form-check-label" for="signPdfPosTl">${escapeHtml(t(opts.lang, prefix + '_pos_tl'))}</label>
+          </div>
+          <div class="form-check pos-tr">
+            <input class="form-check-input" type="radio" name="signPdfPos" id="signPdfPosTr" value="tr">
+            <label class="form-check-label" for="signPdfPosTr">${escapeHtml(t(opts.lang, prefix + '_pos_tr'))}</label>
+          </div>
+          <div class="form-check pos-center">
+            <input class="form-check-input" type="radio" name="signPdfPos" id="signPdfPosCenter" value="center">
+            <label class="form-check-label" for="signPdfPosCenter">${escapeHtml(t(opts.lang, prefix + '_pos_center'))}</label>
+          </div>
+          <div class="form-check pos-bl">
+            <input class="form-check-input" type="radio" name="signPdfPos" id="signPdfPosBl" value="bl">
+            <label class="form-check-label" for="signPdfPosBl">${escapeHtml(t(opts.lang, prefix + '_pos_bl'))}</label>
+          </div>
+          <div class="form-check pos-br">
+            <input class="form-check-input" type="radio" name="signPdfPos" id="signPdfPosBr" value="br" checked>
+            <label class="form-check-label" for="signPdfPosBr">${escapeHtml(t(opts.lang, prefix + '_pos_br'))}</label>
+          </div>
+        </div>
+      </div>
       <div class="col-4">
         <label class="form-label" for="signPdfX">${escapeHtml(t(opts.lang, prefix + '_x_label'))}</label>
-        <input id="signPdfX" class="form-control form-control-sm" type="number" value="72">
+        <input id="signPdfX" class="form-control form-control-sm" type="number" step="any" value="">
       </div>
       <div class="col-4">
         <label class="form-label" for="signPdfY">${escapeHtml(t(opts.lang, prefix + '_y_label'))}</label>
-        <input id="signPdfY" class="form-control form-control-sm" type="number" value="72">
+        <input id="signPdfY" class="form-control form-control-sm" type="number" step="any" value="">
       </div>
       <div class="col-4">
         <label class="form-label" for="signPdfPage">${escapeHtml(t(opts.lang, prefix + '_page_label'))}</label>
-        <input id="signPdfPage" class="form-control form-control-sm" type="number" value="1" min="1" step="1">
+        <select id="signPdfPage" class="form-select form-select-sm">
+          <option value="all">${escapeHtml(t(opts.lang, prefix + '_page_all'))}</option>
+          <option value="1" selected>${escapeHtml(t(opts.lang, prefix + '_page_option').replace('{n}', '1'))}</option>
+        </select>
       </div>
     </div>
 
@@ -203,6 +253,14 @@ export const renderSignPdfDocumentPage = (opts: {
       var metaEl = document.getElementById('signPdfMeta');
       /** 打字姓名。 */
       var nameInput = document.getElementById('signPdfName');
+      /** 签名墨水颜色选择器。 */
+      var colorInput = document.getElementById('signPdfColor');
+      /** 颜色预览字样。 */
+      var inkPreview = document.getElementById('signPdfInkPreview');
+      /** 常用墨水色块。 */
+      var inkSwatches = Array.prototype.slice.call(document.querySelectorAll('.sign-pdf-ink-swatch'));
+      /** 默认签名墨水色（与历史样例一致）。 */
+      var DEFAULT_INK = '#1a237e';
       /** 打字模式单选。 */
       var modeType = document.getElementById('signPdfModeType');
       /** 手写模式单选。 */
@@ -211,12 +269,28 @@ export const renderSignPdfDocumentPage = (opts: {
       var pad = document.getElementById('signPdfPad');
       /** 清空画布。 */
       var btnClearPad = document.getElementById('signPdfBtnClearPad');
-      /** X 坐标。 */
+      /** X 坐标（PDF 点，原点左下）。 */
       var xInput = document.getElementById('signPdfX');
-      /** Y 坐标。 */
+      /** Y 坐标（PDF 点，原点左下）。 */
       var yInput = document.getElementById('signPdfY');
-      /** 页码（从 1 起）。 */
+      /** 页码下拉（含全部页）。 */
       var pageInput = document.getElementById('signPdfPage');
+      /** 位置快捷单选。 */
+      var posRadios = Array.prototype.slice.call(document.querySelectorAll('input[name="signPdfPos"]'));
+      /** 签名图在 PDF 上的宽度（点）。 */
+      var STAMP_W = 160;
+      /** 画板高/宽，用于估算盖章高度。 */
+      var PAD_ASPECT = 110 / 360;
+      /** 四角边距（点）。 */
+      var POS_MARGIN = 36;
+      /** 无 PDF 时的回退页面尺寸（A4）。 */
+      var FALLBACK_SIZE = { width: 595, height: 842 };
+      /** 当前选中的位置预设：tl/tr/bl/br/center，空字符串表示自定义坐标。 */
+      var activePreset = 'br';
+      /** 正在由预设回写坐标，避免误清单选。 */
+      var syncingPos = false;
+      /** 各页宽高（PDF 点）。 */
+      var pageSizes = [];
       /** 盖章按钮。 */
       var btnApply = document.getElementById('signPdfBtnApply');
       /** 下载按钮。 */
@@ -252,7 +326,9 @@ export const renderSignPdfDocumentPage = (opts: {
         noSig: ${JSON.stringify(t(opts.lang, prefix + '_err_nosig'))},
         working: ${JSON.stringify(t(opts.lang, prefix + '_status_working'))},
         done: ${JSON.stringify(t(opts.lang, prefix + '_status_done'))},
-        large: ${JSON.stringify(t(opts.lang, prefix + '_warn_large'))}
+        large: ${JSON.stringify(t(opts.lang, prefix + '_warn_large'))},
+        pageAll: ${JSON.stringify(t(opts.lang, prefix + '_page_all'))},
+        pageOption: ${JSON.stringify(t(opts.lang, prefix + '_page_option'))}
       };
 
       /**
@@ -289,16 +365,172 @@ export const renderSignPdfDocumentPage = (opts: {
         return typeof PDFLib !== 'undefined' && PDFLib && typeof PDFLib.PDFDocument === 'function';
       }
 
+      /**
+       * 估算或按实际图片得到盖章宽高。
+       * @param {number} [imgW]
+       * @param {number} [imgH]
+       * @returns {{w:number,h:number}}
+       */
+      function stampSize(imgW, imgH) {
+        var w = STAMP_W;
+        var ratio = (imgW > 0 && imgH > 0) ? (imgH / imgW) : PAD_ASPECT;
+        return { w: w, h: w * ratio };
+      }
+
+      /**
+       * 按预设计算 PDF 坐标（原点左下）。
+       * @param {string} pos tl/tr/bl/br/center
+       * @param {number} pageW
+       * @param {number} pageH
+       * @param {number} stampW
+       * @param {number} stampH
+       * @returns {{x:number,y:number}}
+       */
+      function coordsForPreset(pos, pageW, pageH, stampW, stampH) {
+        var m = POS_MARGIN;
+        var x = m;
+        var y = m;
+        if (pos === 'tr' || pos === 'br') x = Math.max(m, pageW - stampW - m);
+        if (pos === 'tl' || pos === 'tr') y = Math.max(m, pageH - stampH - m);
+        if (pos === 'center') {
+          x = Math.max(0, (pageW - stampW) / 2);
+          y = Math.max(0, (pageH - stampH) / 2);
+        }
+        return { x: Math.round(x * 10) / 10, y: Math.round(y * 10) / 10 };
+      }
+
+      /**
+       * 当前下拉对应的页面尺寸（全部页用第 1 页展示坐标）。
+       * @returns {{width:number,height:number}}
+       */
+      function currentPageSize() {
+        if (!pageSizes.length) return FALLBACK_SIZE;
+        if (pageInput && pageInput.value === 'all') return pageSizes[0];
+        var idx = Math.max(0, Math.min(pageSizes.length - 1, (Number(pageInput && pageInput.value) || 1) - 1));
+        return pageSizes[idx];
+      }
+
+      /**
+       * 把预设坐标写入 X/Y 输入框。
+       * @param {string} pos
+       */
+      function applyPresetToInputs(pos) {
+        if (!xInput || !yInput) return;
+        var size = currentPageSize();
+        var sz = stampSize();
+        var xy = coordsForPreset(pos, size.width, size.height, sz.w, sz.h);
+        syncingPos = true;
+        xInput.value = String(xy.x);
+        yInput.value = String(xy.y);
+        syncingPos = false;
+      }
+
+      /**
+       * 当前勾选的位置预设，无勾选则空串。
+       * @returns {string}
+       */
+      function selectedPreset() {
+        var hit = posRadios.filter(function (r) { return r.checked; })[0];
+        return hit ? String(hit.value || '') : '';
+      }
+
+      /**
+       * 用页数重建页码下拉，并尽量保留原选项。
+       * @param {number} count
+       */
+      function fillPageSelect(count) {
+        if (!pageInput) return;
+        var prev = pageInput.value;
+        var n = Math.max(1, count || 1);
+        pageInput.innerHTML = '';
+        var allOpt = document.createElement('option');
+        allOpt.value = 'all';
+        allOpt.textContent = msg.pageAll;
+        pageInput.appendChild(allOpt);
+        for (var i = 1; i <= n; i++) {
+          var opt = document.createElement('option');
+          opt.value = String(i);
+          opt.textContent = String(msg.pageOption || '{n}').replace('{n}', String(i));
+          pageInput.appendChild(opt);
+        }
+        if (prev === 'all') pageInput.value = 'all';
+        else if (Number(prev) >= 1 && Number(prev) <= n) pageInput.value = String(Number(prev));
+        else pageInput.value = String(n);
+      }
+
+      /**
+       * 读取 PDF 各页尺寸并刷新页码列表 / 预设坐标。
+       * @param {Uint8Array} pdfBytes
+       * @returns {Promise<void>}
+       */
+      function refreshPageMeta(pdfBytes) {
+        if (!hasPdfLib() || !pdfBytes) {
+          pageSizes = [];
+          fillPageSelect(1);
+          if (activePreset) applyPresetToInputs(activePreset);
+          return Promise.resolve();
+        }
+        return PDFLib.PDFDocument.load(pdfBytes.slice(0)).then(function (doc) {
+          pageSizes = doc.getPages().map(function (p) {
+            var box = p.getSize();
+            return { width: box.width, height: box.height };
+          });
+          fillPageSelect(pageSizes.length);
+          activePreset = selectedPreset() || activePreset;
+          if (activePreset) applyPresetToInputs(activePreset);
+        });
+      }
+
+      /**
+       * 盖章目标页下标（0-based）。
+       * @param {number} pageCount
+       * @returns {number[]}
+       */
+      function targetPageIndexes(pageCount) {
+        if (pageInput && pageInput.value === 'all') {
+          var all = [];
+          for (var i = 0; i < pageCount; i++) all.push(i);
+          return all;
+        }
+        var idx = Math.max(0, Math.min(pageCount - 1, (Number(pageInput && pageInput.value) || 1) - 1));
+        return [idx];
+      }
+
       /** 当前是否打字模式。 */
       function isTypeMode() {
         return !!(modeType && modeType.checked);
+      }
+
+      /**
+       * 读取当前签名墨水颜色。
+       * @returns {string} 合法 #rrggbb，否则回退默认海军蓝
+       */
+      function getInkColor() {
+        var v = colorInput && colorInput.value ? String(colorInput.value).trim() : '';
+        return /^#[0-9a-fA-F]{6}$/.test(v) ? v.toLowerCase() : DEFAULT_INK;
+      }
+
+      /**
+       * 把当前墨水色同步到画笔、预览字样与色块选中态。
+       */
+      function applyInkColor() {
+        var ink = getInkColor();
+        if (pad) {
+          var ctx = pad.getContext('2d');
+          ctx.strokeStyle = ink;
+        }
+        if (inkPreview) inkPreview.style.color = ink;
+        inkSwatches.forEach(function (btn) {
+          var match = String(btn.getAttribute('data-ink') || '').toLowerCase() === ink;
+          btn.setAttribute('aria-pressed', match ? 'true' : 'false');
+        });
       }
 
       /** 绑定手写画布。 */
       function bindPad() {
         if (!pad) return;
         var ctx = pad.getContext('2d');
-        ctx.strokeStyle = '#1a237e';
+        ctx.strokeStyle = getInkColor();
         ctx.lineWidth = 2.2;
         ctx.lineCap = 'round';
         ctx.lineJoin = 'round';
@@ -320,6 +552,7 @@ export const renderSignPdfDocumentPage = (opts: {
           ev.preventDefault();
           drawing = true;
           padDirty = true;
+          ctx.strokeStyle = getInkColor();
           var p = pos(ev);
           ctx.beginPath();
           ctx.moveTo(p.x, p.y);
@@ -379,7 +612,7 @@ export const renderSignPdfDocumentPage = (opts: {
         c.height = 110;
         var ctx = c.getContext('2d');
         ctx.clearRect(0, 0, 360, 110);
-        ctx.fillStyle = '#1a237e';
+        ctx.fillStyle = getInkColor();
         ctx.font = 'italic 36px "Segoe Script", "Brush Script MT", "Apple Chancery", cursive';
         ctx.fillText(String(name || '').slice(0, 40), 12, 70);
         return canvasToPng(c);
@@ -400,7 +633,7 @@ export const renderSignPdfDocumentPage = (opts: {
       }
 
       /**
-       * 把 PNG 盖到指定页的 X/Y。
+       * 把 PNG 盖到所选页（或全部页）的 X/Y。
        * @param {Uint8Array} pdfBytes
        * @param {Uint8Array} pngBytes
        * @returns {Promise<Uint8Array>}
@@ -410,15 +643,27 @@ export const renderSignPdfDocumentPage = (opts: {
         return PDFLib.PDFDocument.load(pdfBytes.slice(0)).then(function (doc) {
           return doc.embedPng(pngBytes).then(function (img) {
             var pages = doc.getPages();
-            var idx = Math.max(0, Math.min(pages.length - 1, (Number(pageInput.value) || 1) - 1));
-            var page = pages[idx];
-            var x = Number(xInput.value);
-            var y = Number(yInput.value);
-            if (!isFinite(x)) x = 72;
-            if (!isFinite(y)) y = 72;
-            var w = 160;
-            var h = w * (img.height / Math.max(img.width, 1));
-            page.drawImage(img, { x: x, y: y, width: w, height: h });
+            var sz = stampSize(img.width, img.height);
+            var preset = selectedPreset() || activePreset;
+            var customX = Number(xInput && xInput.value);
+            var customY = Number(yInput && yInput.value);
+            targetPageIndexes(pages.length).forEach(function (idx) {
+              var page = pages[idx];
+              var box = page.getSize();
+              var x;
+              var y;
+              if (preset) {
+                var xy = coordsForPreset(preset, box.width, box.height, sz.w, sz.h);
+                x = xy.x;
+                y = xy.y;
+              } else {
+                x = customX;
+                y = customY;
+                if (!isFinite(x)) x = POS_MARGIN;
+                if (!isFinite(y)) y = POS_MARGIN;
+              }
+              page.drawImage(img, { x: x, y: y, width: sz.w, height: sz.h });
+            });
             return doc.save();
           });
         }).then(function (bytes) {
@@ -511,7 +756,9 @@ export const renderSignPdfDocumentPage = (opts: {
           sourceBytes = new Uint8Array(ab);
           sourceName = file.name || 'document.pdf';
           setMeta(sourceName, sourceBytes.length);
-          return work.showPreview(sourceBytes);
+          return refreshPageMeta(sourceBytes).then(function () {
+            return work.showPreview(sourceBytes);
+          });
         }).catch(function () {
           sourceBytes = null;
           setErr(msg.loadFail);
@@ -543,7 +790,9 @@ export const renderSignPdfDocumentPage = (opts: {
           sourceBytes = new Uint8Array(bytes);
           sourceName = 'sample.pdf';
           setMeta(sourceName, sourceBytes.length);
-          return runApply();
+          return refreshPageMeta(sourceBytes).then(function () {
+            return runApply();
+          });
         }).catch(function (err) {
           setErr(mapErr(err));
           work.setBusy(busyBtns, false);
@@ -552,6 +801,40 @@ export const renderSignPdfDocumentPage = (opts: {
       }
 
       bindPad();
+      applyInkColor();
+      if (colorInput) {
+        colorInput.addEventListener('input', applyInkColor);
+        colorInput.addEventListener('change', applyInkColor);
+      }
+      inkSwatches.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var ink = String(btn.getAttribute('data-ink') || '');
+          if (!/^#[0-9a-fA-F]{6}$/.test(ink)) return;
+          if (colorInput) colorInput.value = ink;
+          applyInkColor();
+        });
+      });
+      posRadios.forEach(function (radio) {
+        radio.addEventListener('change', function () {
+          if (!radio.checked) return;
+          activePreset = String(radio.value || '');
+          applyPresetToInputs(activePreset);
+        });
+      });
+      [xInput, yInput].forEach(function (el) {
+        if (!el) return;
+        el.addEventListener('input', function () {
+          if (syncingPos) return;
+          activePreset = '';
+          posRadios.forEach(function (r) { r.checked = false; });
+        });
+      });
+      if (pageInput) {
+        pageInput.addEventListener('change', function () {
+          if (activePreset) applyPresetToInputs(activePreset);
+        });
+      }
+      applyPresetToInputs(activePreset);
       fileInput.addEventListener('change', function () {
         if (fileInput.files && fileInput.files[0]) acceptFile(fileInput.files[0]);
         fileInput.value = '';
@@ -572,6 +855,11 @@ export const renderSignPdfDocumentPage = (opts: {
         sourceBytes = null;
         sourceName = '';
         resultBytes = null;
+        pageSizes = [];
+        activePreset = 'br';
+        posRadios.forEach(function (r) { r.checked = r.value === 'br'; });
+        fillPageSelect(1);
+        applyPresetToInputs('br');
         clearPad();
         setMeta('', 0);
         setErr('');

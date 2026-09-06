@@ -9,7 +9,6 @@ const ru: SiteLangDict = {
 	tool_batch_checksum_release_files_article:
 		'Посчитайте хеши папки релизных файлов на этой вкладке. На выходе таблица, CSV и SHA256SUMS — не ZIP бинарников. Вставьте официальный список, чтобы отметить совпадение или расхождение. Файлы остаются на устройстве и не загружаются на сервер.',
 	tool_batch_checksum_release_files_choose_files: 'Выбрать файлы',
-	tool_batch_checksum_release_files_chip_md5: 'Также MD5',
 	tool_batch_checksum_release_files_clear: 'Очистить',
 	tool_batch_checksum_release_files_col_compare: 'Сверка',
 	tool_batch_checksum_release_files_col_md5: 'MD5',
