@@ -1114,7 +1114,8 @@ const ru: SiteLangDict = {
   tool_batch_convert_web_pages_to_pdf_how_item_2: 'Оставьте ожидание около 1 секунды, если картинки в PDF не пустые.',
   tool_batch_convert_web_pages_to_pdf_how_item_3: 'Нажмите «Конвертировать все». Каждый публичный URL запрашивается один раз; сбои пропускаются.',
   tool_batch_convert_web_pages_to_pdf_how_item_4: 'Нужен фрагмент HTML, а не список? Используйте «HTML в PDF».',
-  tool_batch_convert_web_pages_to_pdf_how_item_5: 'Скачайте ZIP, когда хотя бы одна строка удалась. Пример уже выполнен при открытии.',
+  tool_batch_convert_web_pages_to_pdf_how_item_5:
+    'Скачайте ZIP, когда хотя бы одна строка удалась. «Загрузить пример» даёт две локальные страницы; во время конвертации видна панель хода.',
   tool_batch_convert_web_pages_to_pdf_how_title: 'Как это работает',
   tool_batch_convert_web_pages_to_pdf_hud_elapsed_tpl: 'прошло {s} с',
   tool_batch_convert_web_pages_to_pdf_hud_pct_tpl: '{pct}%',

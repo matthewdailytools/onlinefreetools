@@ -1175,7 +1175,8 @@ const en: SiteLangDict = {
   tool_batch_convert_web_pages_to_pdf_how_item_2: 'Leave Load wait near 1 second unless images stay blank in the PDF.',
   tool_batch_convert_web_pages_to_pdf_how_item_3: 'Press Convert all. Each public URL is fetched once; failed rows are skipped.',
   tool_batch_convert_web_pages_to_pdf_how_item_4: 'Need one HTML snippet instead of a list? Use Convert HTML to PDF.',
-  tool_batch_convert_web_pages_to_pdf_how_item_5: 'Download ZIP when at least one row succeeded. Load sample already ran on first paint.',
+  tool_batch_convert_web_pages_to_pdf_how_item_5:
+    'Download ZIP when at least one row succeeded. Click Load sample to try two local pages; the progress panel shows while they convert.',
   tool_batch_convert_web_pages_to_pdf_how_title: 'How it works',
   tool_batch_convert_web_pages_to_pdf_hud_elapsed_tpl: '{s}s elapsed',
   tool_batch_convert_web_pages_to_pdf_hud_pct_tpl: '{pct}%',

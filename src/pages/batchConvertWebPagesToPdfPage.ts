@@ -985,7 +985,7 @@ export const renderBatchConvertWebPagesToPdfPage = (opts: {
 
 	/**
 	 * 客户端脚本：解析 URL 列表、串行代抓、截图、ZIP。
-	 * 进页 loadSample() 用本地 HTML 占位跑出两行真实 PDF，不自动请求外网。
+	 * 「载入样例」用本地 HTML 占位跑出两行真实 PDF，不自动请求外网；进页不自动转换。
 	 */
 	const extraBodyHtml = `
   ${pdfWorkUiClientScript()}
@@ -1612,7 +1612,8 @@ export const renderBatchConvertWebPagesToPdfPage = (opts: {
       }
 
       /**
-       * 加载样例：填入两条 URL，用本地 HTML 转出两份 PDF（进页不打外网）。
+       * 加载样例：填入两条 URL，用本地 HTML 转出两份 PDF（不打外网）。
+       * 只在用户点击「载入样例」时运行，进页不自动转换。
        */
       function loadSample() {
         urlsEl.value = SAMPLE_URL_1 + '\\n' + SAMPLE_URL_2;
@@ -1628,9 +1629,6 @@ export const renderBatchConvertWebPagesToPdfPage = (opts: {
       btnZip.addEventListener('click', downloadZip);
       btnSample.addEventListener('click', loadSample);
       btnClear.addEventListener('click', clearAll);
-
-      /** 进页自动跑样例，让表和 ZIP 显示真实结果。 */
-      loadSample();
     })();
   </script>`;
 

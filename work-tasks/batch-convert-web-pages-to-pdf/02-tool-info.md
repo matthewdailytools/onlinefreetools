@@ -33,7 +33,7 @@
 - [x] 权威来源 URL：https://github.com/eKoopmans/html2pdf.js ；https://html.spec.whatwg.org/multipage/urls-and-fetching.html
 - [x] Use case：归档公开帮助页；把竞品公开定价页存档；把政策 URL 列表交给法务。
 - [x] 边界：上限 10；私网/登录墙失败；JS 应用与打印 CSS 可能不像线上；样例进页不自动打外网。
-- [x] Example：样例写入两条占位页的本地 HTML，跑出两份 PDF 并启用 ZIP。
+- [x] Example：点「载入样例」写入两条占位页的本地 HTML，跑出两份 PDF 并启用 ZIP（进页不自动跑，避免一打开就像卡死）。
 - [x] Related：`convert-html-to-pdf`、`combine-files-into-one-pdf`
 
 ### 计划勾选的 §3.1 维度（至少 3）
@@ -127,7 +127,7 @@
 > 勾选前须完成「清单前检索覆盖优化」与「用户意图审查」。
 
 - [x] H1 + 一句话摘要
-- [x] 首屏工具交互区（含进页自动样例结果）
+- [x] 首屏工具交互区（**不**进页自动跑样例：html2canvas 会卡住标签页；点「载入样例」才转换，进度面板仍显示）
 - [x] How it works
 - [x] Formula / Rules（计算与转换类）
 - [x] Example（固定文案，与默认样例一致）

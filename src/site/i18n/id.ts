@@ -1106,7 +1106,8 @@ const id: SiteLangDict = {
   tool_batch_convert_web_pages_to_pdf_how_item_2: 'Biarkan jeda muat sekitar 1 detik kecuali gambar di PDF kosong.',
   tool_batch_convert_web_pages_to_pdf_how_item_3: 'Tekan Konversi semua. Tiap URL publik diambil sekali; yang gagal dilewati.',
   tool_batch_convert_web_pages_to_pdf_how_item_4: 'Hanya cuplikan HTML, bukan daftar? Pakai Ubah HTML jadi PDF.',
-  tool_batch_convert_web_pages_to_pdf_how_item_5: 'Unduh ZIP setelah minimal satu baris berhasil. Contoh sudah jalan saat halaman dibuka.',
+  tool_batch_convert_web_pages_to_pdf_how_item_5:
+    'Unduh ZIP setelah minimal satu baris berhasil. Klik Muat contoh untuk dua halaman lokal; panel progres tampil saat konversi.',
   tool_batch_convert_web_pages_to_pdf_how_title: 'Cara kerja',
   tool_batch_convert_web_pages_to_pdf_hud_elapsed_tpl: '{s} dtk berjalan',
   tool_batch_convert_web_pages_to_pdf_hud_pct_tpl: '{pct}%',

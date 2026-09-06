@@ -50,7 +50,8 @@ const ar: SiteLangDict = {
 	tool_batch_convert_web_pages_to_pdf_how_item_2: 'اترك انتظار التحميل قرب ثانية واحدة ما لم تبق الصور فارغة في PDF.',
 	tool_batch_convert_web_pages_to_pdf_how_item_3: 'اضغط تحويل الكل. يُجلب كل رابط عام مرة؛ تُتجاوز الصفوف الفاشلة.',
 	tool_batch_convert_web_pages_to_pdf_how_item_4: 'مقتطف HTML بدل القائمة؟ استخدم تحويل HTML إلى PDF.',
-	tool_batch_convert_web_pages_to_pdf_how_item_5: 'نزّل ZIP بعد نجاح صف واحد على الأقل. مثال التحميل يعمل عند فتح الصفحة.',
+	tool_batch_convert_web_pages_to_pdf_how_item_5:
+		'نزّل ZIP بعد نجاح صف واحد على الأقل. اضغط تحميل مثال لصفحتين محليتين؛ يظهر شريط التقدم أثناء التحويل.',
 	tool_batch_convert_web_pages_to_pdf_how_title: 'طريقة العمل',
 	tool_batch_convert_web_pages_to_pdf_progress_tpl: '{i} / {total}',
 	tool_batch_convert_web_pages_to_pdf_hud_title: 'تقدم الدفعة',

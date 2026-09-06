@@ -50,7 +50,8 @@ const pt: SiteLangDict = {
 	tool_batch_convert_web_pages_to_pdf_how_item_2: 'Deixe a espera perto de 1 segundo, a menos que as imagens saiam em branco no PDF.',
 	tool_batch_convert_web_pages_to_pdf_how_item_3: 'Clique em Converter tudo. Cada URL pública é buscada uma vez; falhas são puladas.',
 	tool_batch_convert_web_pages_to_pdf_how_item_4: 'Só um trecho HTML, sem lista? Use Converter HTML em PDF.',
-	tool_batch_convert_web_pages_to_pdf_how_item_5: 'Baixe o ZIP quando pelo menos uma linha der certo. O exemplo já rodou ao abrir.',
+	tool_batch_convert_web_pages_to_pdf_how_item_5:
+		'Baixe o ZIP quando pelo menos uma linha der certo. Clique em Carregar exemplo para duas páginas locais; o painel de progresso aparece na conversão.',
 	tool_batch_convert_web_pages_to_pdf_how_title: 'Como funciona',
 	tool_batch_convert_web_pages_to_pdf_progress_tpl: '{i} / {total}',
 	tool_batch_convert_web_pages_to_pdf_hud_title: 'Progresso do lote',

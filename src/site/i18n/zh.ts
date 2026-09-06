@@ -1025,7 +1025,7 @@ const zh: SiteLangDict = {
   tool_batch_convert_web_pages_to_pdf_how_item_2: '载入等待默认约 1 秒；若 PDF 里图片是空框，再把秒数调高。',
   tool_batch_convert_web_pages_to_pdf_how_item_3: '点「全部转换」。每条公开网址代抓一次，失败行跳过。',
   tool_batch_convert_web_pages_to_pdf_how_item_4: '只要粘贴一段 HTML、不是列表？请用「HTML 转 PDF」。',
-  tool_batch_convert_web_pages_to_pdf_how_item_5: '至少一行成功后再下载 ZIP。进页时已经自动跑过载入样例。',
+  tool_batch_convert_web_pages_to_pdf_how_item_5: '至少一行成功后再下载 ZIP。点「载入样例」可试用两份本地页，转换时会显示进度。',
   tool_batch_convert_web_pages_to_pdf_how_title: '怎么用',
   tool_batch_convert_web_pages_to_pdf_hud_elapsed_tpl: '已用 {s} 秒',
   tool_batch_convert_web_pages_to_pdf_hud_pct_tpl: '{pct}%',

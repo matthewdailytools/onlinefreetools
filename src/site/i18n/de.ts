@@ -1127,7 +1127,8 @@ const de: SiteLangDict = {
   tool_batch_convert_web_pages_to_pdf_how_item_2: 'Wartezeit bei etwa 1 Sekunde lassen, außer Bilder im PDF bleiben leer.',
   tool_batch_convert_web_pages_to_pdf_how_item_3: 'Alle umwandeln drücken. Jede öffentliche URL wird einmal geholt; Fehlzeilen übersprungen.',
   tool_batch_convert_web_pages_to_pdf_how_item_4: 'Nur ein HTML-Fragment statt einer Liste? HTML in PDF umwandeln nutzen.',
-  tool_batch_convert_web_pages_to_pdf_how_item_5: 'ZIP herunterladen, sobald mindestens eine Zeile geklappt hat. Das Beispiel lief schon beim Öffnen.',
+  tool_batch_convert_web_pages_to_pdf_how_item_5:
+    'ZIP herunterladen, sobald mindestens eine Zeile geklappt hat. Beispiel laden testet zwei lokale Seiten; dabei erscheint die Fortschrittsleiste.',
   tool_batch_convert_web_pages_to_pdf_how_title: 'So funktioniert es',
   tool_batch_convert_web_pages_to_pdf_hud_elapsed_tpl: '{s} s vergangen',
   tool_batch_convert_web_pages_to_pdf_hud_pct_tpl: '{pct} %',

@@ -1026,7 +1026,7 @@ const ja: SiteLangDict = {
   tool_batch_convert_web_pages_to_pdf_how_item_2: '読み込み待ちはだいたい1秒のままで構いません。PDF の画像が空白なら秒数を上げてください。',
   tool_batch_convert_web_pages_to_pdf_how_item_3: '「すべて変換」を押します。公開 URL は一度取得し、失敗行はスキップします。',
   tool_batch_convert_web_pages_to_pdf_how_item_4: 'リストではなく HTML 断片だけなら「HTML を PDF に変換」へ。',
-  tool_batch_convert_web_pages_to_pdf_how_item_5: '1行以上成功したら ZIP をダウンロード。初回表示でサンプルは既に実行済みです。',
+  tool_batch_convert_web_pages_to_pdf_how_item_5: '1行以上成功したら ZIP をダウンロード。サンプル読込でローカル2ページを試せます。変換中は進捗パネルが出ます。',
   tool_batch_convert_web_pages_to_pdf_how_title: '使い方',
   tool_batch_convert_web_pages_to_pdf_hud_elapsed_tpl: '{s}秒経過',
   tool_batch_convert_web_pages_to_pdf_hud_pct_tpl: '{pct}%',
