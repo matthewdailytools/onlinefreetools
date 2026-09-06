@@ -192,6 +192,82 @@ Visibility: project</p>
 <ul>
 <li>Reconciled pending tools from tracker, inventory, keyword pool, and catalog (read-only)</li>
 </ul>
+<h2>Follow-up marks (2026-09-06)</h2>
+<p>Reconstruct the 2026-09-02 19:22 open queue (chat list, not stored in the original body). Mark only items <strong>modified and committed after this file existed</strong>. Snapshot time: <code>2026-09-02 19:22</code> local. First later ship: <code>36cdecbd</code> 2026-09-02 22:11.</p>
+<h3>1. web-check implement queue (was: no work-tasks)</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>2026-09-02 direction</th>
+<th>Shipped slug</th>
+<th>First commit after this log</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[x] shipped</td>
+<td><code>robots-txt-checker</code></td>
+<td><code>check-robots-txt-url-blocked</code></td>
+<td><code>36cdecbd</code> 2026-09-02 22:11 — tools: ship five web-check checkers…</td>
+</tr>
+<tr>
+<td>[x] shipped</td>
+<td><code>sitemap-checker</code></td>
+<td><code>find-and-validate-xml-sitemap</code></td>
+<td>same commit</td>
+</tr>
+<tr>
+<td>[x] shipped</td>
+<td>security.txt checker</td>
+<td><code>validate-security-txt</code></td>
+<td>same commit</td>
+</tr>
+<tr>
+<td>[x] shipped</td>
+<td>SSL certificate checker</td>
+<td><code>check-ssl-certificate-expiration</code></td>
+<td>same commit</td>
+</tr>
+<tr>
+<td>[x] shipped</td>
+<td>email auth (DMARC/SPF/DKIM)</td>
+<td><code>spf-dkim-dmarc-checker</code></td>
+<td>same commit</td>
+</tr>
+</tbody></table>
+<p>Later touch: OG upload <code>24b64ae5</code> 2026-09-04 20:09 (<code>add og r2</code>).</p>
+<p>Live (English default, no <code>/en</code>):</p>
+<ul>
+<li><a href="https://onlinefreetools.org/tools/check-robots-txt-url-blocked">https://onlinefreetools.org/tools/check-robots-txt-url-blocked</a></li>
+<li><a href="https://onlinefreetools.org/tools/find-and-validate-xml-sitemap">https://onlinefreetools.org/tools/find-and-validate-xml-sitemap</a></li>
+<li><a href="https://onlinefreetools.org/tools/validate-security-txt">https://onlinefreetools.org/tools/validate-security-txt</a></li>
+<li><a href="https://onlinefreetools.org/tools/check-ssl-certificate-expiration">https://onlinefreetools.org/tools/check-ssl-certificate-expiration</a></li>
+<li><a href="https://onlinefreetools.org/tools/spf-dkim-dmarc-checker">https://onlinefreetools.org/tools/spf-dkim-dmarc-checker</a></li>
+</ul>
+<h3>2. text-compare P2 (explicitly not this batch)</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Suggested slug</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[ ] still pending</td>
+<td><code>yaml-diff-online</code></td>
+<td>No catalog shard; no commits after this log</td>
+</tr>
+<tr>
+<td>[ ] still pending</td>
+<td><code>xml-diff-checker</code></td>
+<td>Same</td>
+</tr>
+</tbody></table>
+<h3>3. Product P2 / funnel defer (not named for build)</h3>
+<p>No <code>work-tasks/</code> and no catalog slug after this log for: <code>safe-paste-cleaner</code>, <code>ai-token-counter</code>, <code>sql-formatter</code>, <code>cron-explainer</code>, <code>qr-code-generator</code>. <code>vlsm-subnet-calculator</code> stays <strong>do not create</strong>.</p>
+<h3>Out of scope for these marks</h3>
+<p>PDF N1–N22 defer rows were written <strong>2026-09-03</strong>, after this snapshot. Do not treat them as this file’s original pending list.</p>
 </article>
       </section>
     </main>
