@@ -144,9 +144,13 @@ export function pdfWorkUiClientScript(): string {
       /**
        * 绑定一组进度条 + 可选画布预览。
        * @param {string} idPrefix 与 HTML id 前缀一致
-       * @returns {{ setProgress: Function, hideProgress: Function, setBusy: Function, showPreview: Function, clearPreview: Function }}
+       * @param {{ onPageChange?: function(number, number): void }|undefined} opts 翻页回调（页码从 1 起）
+       * @returns {{ setProgress: Function, hideProgress: Function, setBusy: Function, showPreview: Function, clearPreview: Function, setPage: Function }}
        */
-      function bind(idPrefix) {
+      function bind(idPrefix, opts) {
+        opts = opts || {};
+        /** 页码变化时通知（Word 预览与 PDF 预览同步翻页）。 */
+        var onPageChange = typeof opts.onPageChange === 'function' ? opts.onPageChange : null;
         var progressWrap = document.getElementById(idPrefix + 'ProgressWrap');
         var progressBar = document.getElementById(idPrefix + 'ProgressBar');
         var previewWrap = document.getElementById(idPrefix + 'PreviewWrap');
@@ -248,6 +252,7 @@ export function pdfWorkUiClientScript(): string {
               return page.render({ canvasContext: ctx, viewport: viewport }).promise.then(function () {
                 if (doc && doc.destroy) doc.destroy();
                 syncNav();
+                if (onPageChange) onPageChange(state.page, state.total);
               });
             });
           });
@@ -265,6 +270,19 @@ export function pdfWorkUiClientScript(): string {
           previewWrap.hidden = false;
           previewWrap.classList.add('is-on');
           return renderCurrent();
+        }
+
+        /**
+         * 跳到指定页（已有 PDF 字节时重绘）。
+         * @param {number} n 从 1 起的页码
+         * @returns {Promise<void>}
+         */
+        function setPage(n) {
+          if (!state.bytes || !state.total) return Promise.resolve();
+          var next = Math.max(1, Math.min(state.total, Math.round(Number(n) || 1)));
+          if (next === state.page) return Promise.resolve();
+          state.page = next;
+          return renderCurrent().catch(function () {});
         }
 
         /** 清空画布预览。 */
@@ -310,6 +328,7 @@ export function pdfWorkUiClientScript(): string {
           setBusy: setBusy,
           showPreview: showPreview,
           clearPreview: clearPreview,
+          setPage: setPage,
         };
       }
 
