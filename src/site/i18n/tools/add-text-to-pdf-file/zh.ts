@@ -4,7 +4,7 @@
  */
 import type { SiteLangDict } from '../../../types';
 const zh: SiteLangDict = {
-  tool_add_text_to_pdf_file_apply: "添加并下载",
+  tool_add_text_to_pdf_file_apply: "添加并预览",
   tool_add_text_to_pdf_file_article: "在每一页指定 X/Y 坐标盖上同一段文字，预览后下载新副本。",
   tool_add_text_to_pdf_file_choose_file: "选择 PDF",
   tool_add_text_to_pdf_file_choose_files: "选择文件",
@@ -35,7 +35,7 @@ const zh: SiteLangDict = {
   tool_add_text_to_pdf_file_how_body: "选择 PDF，设置印章文字与 X/Y、字号，加到每一页，预览后下载。文件留在本标签页。",
   tool_add_text_to_pdf_file_how_item_1: "选择或拖入 PDF（或点击「加载样例」）",
   tool_add_text_to_pdf_file_how_item_2: "填写印章文字、X/Y 坐标和字号",
-  tool_add_text_to_pdf_file_how_item_3: "点击「添加并下载」，再查看预览",
+  tool_add_text_to_pdf_file_how_item_3: "点击「添加并预览」，再查看结果",
   tool_add_text_to_pdf_file_how_item_4: "满意后下载盖章后的 PDF",
   tool_add_text_to_pdf_file_how_title: "使用方法",
   tool_add_text_to_pdf_file_rules_body: "文件留在本机，不上传服务器。",

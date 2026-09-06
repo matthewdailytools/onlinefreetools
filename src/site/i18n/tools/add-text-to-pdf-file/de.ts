@@ -3,7 +3,7 @@
  */
 import type { SiteLangDict } from '../../../types';
 const de: SiteLangDict = {
-  tool_add_text_to_pdf_file_apply: "Add & download",
+  tool_add_text_to_pdf_file_apply: "Hinzufügen und Vorschau",
   tool_add_text_to_pdf_file_article: "Text zu PDF hinzufügen. Dateien bleiben auf Ihrem Gerät; ohne Server-Upload.",
   tool_add_text_to_pdf_file_choose_file: "PDF wählen",
   tool_add_text_to_pdf_file_choose_files: "Dateien wählen",
@@ -34,7 +34,7 @@ const de: SiteLangDict = {
   tool_add_text_to_pdf_file_how_body: "PDF wählen, Stempeltext und X/Y plus Schriftgröße setzen, auf jede Seite hinzufügen, in der Vorschau prüfen und herunterladen. Dateien bleiben in diesem Tab.",
   tool_add_text_to_pdf_file_how_item_1: "PDF wählen oder ablegen (oder Beispiel laden)",
   tool_add_text_to_pdf_file_how_item_2: "Stempeltext, X/Y-Koordinaten und Schriftgröße eingeben",
-  tool_add_text_to_pdf_file_how_item_3: "Hinzufügen & herunterladen klicken, Vorschau prüfen",
+  tool_add_text_to_pdf_file_how_item_3: "Hinzufügen und Vorschau klicken, Ergebnis prüfen",
   tool_add_text_to_pdf_file_how_item_4: "Gestempeltes PDF herunterladen, wenn es passt",
   tool_add_text_to_pdf_file_how_title: "So funktioniert es",
   tool_add_text_to_pdf_file_rules_body: "Dateien bleiben auf Ihrem Gerät; ohne Server-Upload.",

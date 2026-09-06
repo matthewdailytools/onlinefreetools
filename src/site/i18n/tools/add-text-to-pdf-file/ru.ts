@@ -3,7 +3,7 @@
  */
 import type { SiteLangDict } from '../../../types';
 const ru: SiteLangDict = {
-  tool_add_text_to_pdf_file_apply: "Add & download",
+  tool_add_text_to_pdf_file_apply: "Добавить и предпросмотр",
   tool_add_text_to_pdf_file_article: "Добавить текст в PDF. Файлы остаются на устройстве; без загрузки на сервер.",
   tool_add_text_to_pdf_file_choose_file: "Выбрать PDF",
   tool_add_text_to_pdf_file_choose_files: "Выбрать файлы",
@@ -34,7 +34,7 @@ const ru: SiteLangDict = {
   tool_add_text_to_pdf_file_how_body: "Выберите PDF, задайте текст штампа и X/Y плюс размер шрифта, добавьте на каждую страницу, просмотрите и скачайте. Файлы остаются в этой вкладке.",
   tool_add_text_to_pdf_file_how_item_1: "Выберите или перетащите PDF (или «Загрузить пример»)",
   tool_add_text_to_pdf_file_how_item_2: "Введите текст штампа, координаты X/Y и размер шрифта",
-  tool_add_text_to_pdf_file_how_item_3: "Нажмите «Add & download», затем проверьте предпросмотр",
+  tool_add_text_to_pdf_file_how_item_3: "Нажмите «Добавить и предпросмотр», затем проверьте результат",
   tool_add_text_to_pdf_file_how_item_4: "Скачайте PDF со штампом, когда всё верно",
   tool_add_text_to_pdf_file_how_title: "Как это работает",
   tool_add_text_to_pdf_file_rules_body: "Файлы остаются на устройстве; без загрузки на сервер.",

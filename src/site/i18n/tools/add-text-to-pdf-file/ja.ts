@@ -3,7 +3,7 @@
  */
 import type { SiteLangDict } from '../../../types';
 const ja: SiteLangDict = {
-  tool_add_text_to_pdf_file_apply: "Add & download",
+  tool_add_text_to_pdf_file_apply: "追加してプレビュー",
   tool_add_text_to_pdf_file_article: "PDF にテキストを追加. ファイルは端末内に留まり、サーバーにアップロードしません。",
   tool_add_text_to_pdf_file_choose_file: "PDF を選択",
   tool_add_text_to_pdf_file_choose_files: "ファイルを選択",
@@ -34,7 +34,7 @@ const ja: SiteLangDict = {
   tool_add_text_to_pdf_file_how_body: "PDF を選び、スタンプ文字と X/Y・文字サイズを設定して全ページに追加、プレビューしてダウンロードします。ファイルはこのタブ内に留まります。",
   tool_add_text_to_pdf_file_how_item_1: "PDF を選択またはドロップ（またはサンプルを読み込む）",
   tool_add_text_to_pdf_file_how_item_2: "スタンプ文字、X/Y 座標、文字サイズを入力",
-  tool_add_text_to_pdf_file_how_item_3: "「Add & download」を押し、プレビューを確認",
+  tool_add_text_to_pdf_file_how_item_3: "「追加してプレビュー」を押し、結果を確認",
   tool_add_text_to_pdf_file_how_item_4: "問題なければスタンプ済み PDF をダウンロード",
   tool_add_text_to_pdf_file_how_title: "使い方",
   tool_add_text_to_pdf_file_rules_body: "ファイルは端末内に留まり、サーバーにアップロードしません。",

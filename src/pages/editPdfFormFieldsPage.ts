@@ -395,7 +395,11 @@ export const renderEditPdfFormFieldsPage = (opts: {
             done += 1;
             if (onProgress) onProgress(done, total);
           });
-          if (form.updateFieldAppearances) form.updateFieldAppearances();
+          try {
+            if (form.updateFieldAppearances) form.updateFieldAppearances();
+          } catch (appearErr) {
+            /* 原字段值含非 Latin-1 时 Helvetica 外观会失败，改名/删除仍应保存 */
+          }
           return doc.save();
         }).then(function (bytes) {
           return new Uint8Array(bytes);

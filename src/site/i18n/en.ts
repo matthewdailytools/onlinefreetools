@@ -185,7 +185,7 @@ const en: SiteLangDict = {
   tool_add_digital_signature_to_pdf_warn_large: 'Large file — may be slow.',
   tool_add_digital_signature_to_pdf_x_label: 'X',
   tool_add_digital_signature_to_pdf_y_label: 'Y',
-  tool_add_text_to_pdf_file_apply: 'Add & download',
+  tool_add_text_to_pdf_file_apply: 'Add & preview',
   tool_add_text_to_pdf_file_article:
     'Stamp the same text at explicit X/Y coordinates on every PDF page, preview the result, and download a new copy.',
   tool_add_text_to_pdf_file_choose_file: 'Choose a PDF',
@@ -224,7 +224,7 @@ const en: SiteLangDict = {
     'Choose a PDF, set the stamp text and X/Y plus font size, add it to every page, preview, then download. Files stay in this tab.',
   tool_add_text_to_pdf_file_how_item_1: 'Choose or drop a PDF (or click Load sample)',
   tool_add_text_to_pdf_file_how_item_2: 'Enter the stamp text, X/Y coordinates, and font size',
-  tool_add_text_to_pdf_file_how_item_3: 'Click Add & download, then review the preview',
+  tool_add_text_to_pdf_file_how_item_3: 'Click Add & preview, then review the result',
   tool_add_text_to_pdf_file_how_item_4: 'Download the stamped PDF when it looks right',
   tool_add_text_to_pdf_file_how_title: 'How it works',
   tool_add_text_to_pdf_file_rules_body: 'Files stay on your device; not uploaded to a server.',

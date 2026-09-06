@@ -296,21 +296,8 @@ export const renderAddDigitalSignatureToPdfPage = (opts: {
       }
 
       /**
-       * Helvetica / WinAnsi 无法编码 CJK、西里尔、阿拉伯文等；盖章文字超出 Latin-1 时回退 ASCII。
-       * @param {string} text 希望写进 PDF 的文案
-       * @param {string} fallback ASCII 回退
-       * @returns {string}
-       */
-      function winAnsiOrFallback(text, fallback) {
-        var s = String(text || '');
-        for (var i = 0; i < s.length; i++) {
-          if (s.charCodeAt(i) > 255) return fallback;
-        }
-        return s || fallback;
-      }
-
-      /**
        * 在指定页盖可见标记框（标题 + 时间戳 + 哈希前缀）。
+       * 标题走 drawPageText，中日韩等不再回退成英文。
        * @param {Uint8Array} pdfBytes
        * @param {string} hashHex
        * @returns {Promise<Uint8Array>}
@@ -319,7 +306,7 @@ export const renderAddDigitalSignatureToPdfPage = (opts: {
         if (!hasPdfLib()) return Promise.reject(new Error('pdflib'));
         var prefix16 = String(hashHex || '').slice(0, 16);
         var ts = new Date().toISOString();
-        var title = winAnsiOrFallback(msg.marked, 'Digitally marked');
+        var title = String(msg.marked || 'Digitally marked');
         return PDFLib.PDFDocument.load(pdfBytes.slice(0)).then(function (doc) {
           return doc.embedFont(PDFLib.StandardFonts.Helvetica).then(function (font) {
             var pages = doc.getPages();
@@ -338,22 +325,33 @@ export const renderAddDigitalSignatureToPdfPage = (opts: {
               borderWidth: 1.2,
               color: PDFLib.rgb(0.93, 0.96, 1)
             });
-            page.drawText(title, {
+            var navy = PDFLib.rgb(0.08, 0.22, 0.48);
+            var ink = PDFLib.rgb(0.15, 0.15, 0.2);
+            return window.OftPdfWork.drawPageText(doc, page, title, {
               x: x + 8,
               y: y + 38,
               size: 11,
               font: font,
-              color: PDFLib.rgb(0.08, 0.22, 0.48)
+              color: navy,
+            }).then(function () {
+              return window.OftPdfWork.drawPageText(doc, page, ts, {
+                x: x + 8,
+                y: y + 22,
+                size: 8,
+                font: font,
+                color: ink,
+              });
+            }).then(function () {
+              return window.OftPdfWork.drawPageText(doc, page, 'SHA-256 ' + prefix16 + '...', {
+                x: x + 8,
+                y: y + 10,
+                size: 8,
+                font: font,
+                color: ink,
+              });
+            }).then(function () {
+              return doc.save();
             });
-            page.drawText(ts, { x: x + 8, y: y + 22, size: 8, font: font, color: PDFLib.rgb(0.15, 0.15, 0.2) });
-            page.drawText('SHA-256 ' + prefix16 + '...', {
-              x: x + 8,
-              y: y + 10,
-              size: 8,
-              font: font,
-              color: PDFLib.rgb(0.15, 0.15, 0.2)
-            });
-            return doc.save();
           });
         }).then(function (bytes) {
           return new Uint8Array(bytes);

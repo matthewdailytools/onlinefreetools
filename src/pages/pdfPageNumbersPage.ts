@@ -17,6 +17,7 @@ import {
 	renderToolReferencesSection,
 	buildToolJsonLd,
 } from './site/toolContent';
+import { pdfWorkUiClientScript } from './site/pdfWorkUi';
 
 /** 非默认语言时为路径加语言前缀。 */
 const withLangPrefix = (lang: SiteLang, pathname: string, defaultLang: SiteLang) => {
@@ -161,6 +162,7 @@ export const renderPdfPageNumbersPage = (opts: {
 	 * 客户端脚本：pdf-lib drawText 逐页页码、样例自动跑通。
 	 */
 	const extraBodyHtml = `
+  ${pdfWorkUiClientScript()}
   <script src="/vendor/pdf-lib/pdf-lib.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     (function () {
@@ -323,22 +325,25 @@ export const renderPdfPageNumbersPage = (opts: {
             var pages = doc.getPages();
             var fontSize = params.fontSize;
             var black = PDFLib.rgb(0, 0, 0);
+            var chain = Promise.resolve();
             pages.forEach(function (page, idx) {
-              var num = params.startAt + idx;
-              var label = formatPageLabel(num, params.format);
-              var textW = font.widthOfTextAtSize(label, fontSize);
-              var textH = font.heightAtSize(fontSize);
-              var size = page.getSize();
-              var origin = calcTextOrigin(params.position, size.width, size.height, textW, textH, params.margin);
-              page.drawText(label, {
-                x: origin.x,
-                y: origin.y,
-                size: fontSize,
-                font: font,
-                color: black
+              chain = chain.then(function () {
+                var num = params.startAt + idx;
+                var label = formatPageLabel(num, params.format);
+                var textW = window.OftPdfWork.measureTextWidth(label, fontSize, font);
+                var textH = fontSize;
+                var size = page.getSize();
+                var origin = calcTextOrigin(params.position, size.width, size.height, textW, textH, params.margin);
+                return window.OftPdfWork.drawPageText(doc, page, label, {
+                  x: origin.x,
+                  y: origin.y,
+                  size: fontSize,
+                  font: font,
+                  color: black,
+                });
               });
             });
-            return doc.save();
+            return chain.then(function () { return doc.save(); });
           });
         });
       }

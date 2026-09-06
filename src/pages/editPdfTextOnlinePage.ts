@@ -363,7 +363,7 @@ export const renderEditPdfTextOnlinePage = (opts: {
       }
 
       /**
-       * 把编辑器全文按页简单重排为新 PDF（Helvetica drawText）。
+       * 把编辑器全文按页简单重排为新 PDF（系统字体，支持 CJK 等）。
        * @param {string} raw
        * @returns {Promise<Uint8Array>}
        */
@@ -387,22 +387,42 @@ export const renderEditPdfTextOnlinePage = (opts: {
           docRef = d;
           return docRef.embedFont(PDFLib.StandardFonts.Helvetica);
         }).then(function (font) {
+          var chain = Promise.resolve();
+          var usableW = pageW - marginX * 2;
           pageChunks.forEach(function (chunk) {
-            var lines = chunk.split(/\\n/).map(function (s) { return s.trimEnd(); });
-            var page = docRef.addPage([pageW, pageH]);
-            var y = pageH - marginYTop;
-            var lineCount = 0;
-            lines.forEach(function (line) {
-              if (lineCount > 0 && lineCount % maxLinesPerPage === 0) {
-                page = docRef.addPage([pageW, pageH]);
-                y = pageH - marginYTop;
-              }
-              page.drawText(line || ' ', { x: marginX, y: y, size: fontSize, font: font, maxWidth: pageW - marginX * 2 });
-              y -= lineHeight;
-              lineCount += 1;
+            chain = chain.then(function () {
+              var lines = [];
+              chunk.split(/\\n/).map(function (s) { return s.trimEnd(); }).forEach(function (line) {
+                window.OftPdfWork.wrapTextLines(line, fontSize, usableW, font).forEach(function (wline) {
+                  lines.push(wline);
+                });
+              });
+              var page = docRef.addPage([pageW, pageH]);
+              var y = pageH - marginYTop;
+              var lineCount = 0;
+              var inner = Promise.resolve();
+              lines.forEach(function (line) {
+                inner = inner.then(function () {
+                  if (lineCount > 0 && lineCount % maxLinesPerPage === 0) {
+                    page = docRef.addPage([pageW, pageH]);
+                    y = pageH - marginYTop;
+                  }
+                  var thisPage = page;
+                  var baseline = y;
+                  y -= lineHeight;
+                  lineCount += 1;
+                  return window.OftPdfWork.drawPageText(docRef, thisPage, line || ' ', {
+                    x: marginX,
+                    y: baseline,
+                    size: fontSize,
+                    font: font,
+                  });
+                });
+              });
+              return inner;
             });
           });
-          return docRef.save();
+          return chain.then(function () { return docRef.save(); });
         }).then(function (bytes) {
           return new Uint8Array(bytes);
         });

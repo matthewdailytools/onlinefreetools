@@ -3,7 +3,7 @@
  */
 import type { SiteLangDict } from '../../../types';
 const ar: SiteLangDict = {
-  tool_add_text_to_pdf_file_apply: "Add & download",
+  tool_add_text_to_pdf_file_apply: "إضافة ومعاينة",
   tool_add_text_to_pdf_file_article: "إضافة نص إلى ملف PDF. تبقى الملفات على جهازك دون رفع إلى خادم.",
   tool_add_text_to_pdf_file_choose_file: "اختر PDF",
   tool_add_text_to_pdf_file_choose_files: "اختر ملفات",
@@ -34,7 +34,7 @@ const ar: SiteLangDict = {
   tool_add_text_to_pdf_file_how_body: "اختر PDF، حدّد نص الطابع وX/Y وحجم الخط، أضفه لكل صفحة، اعرض المعاينة ثم نزّل. الملفات تبقى في هذا التبويب.",
   tool_add_text_to_pdf_file_how_item_1: "اختر أو أسقط PDF (أو تحميل مثال)",
   tool_add_text_to_pdf_file_how_item_2: "أدخل نص الطابع وإحداثيات X/Y وحجم الخط",
-  tool_add_text_to_pdf_file_how_item_3: "انقر إضافة وتنزيل، ثم راجع المعاينة",
+  tool_add_text_to_pdf_file_how_item_3: "انقر إضافة ومعاينة، ثم راجع النتيجة",
   tool_add_text_to_pdf_file_how_item_4: "نزّل PDF المختوم عندما يبدو صحيحاً",
   tool_add_text_to_pdf_file_how_title: "كيف يعمل",
   tool_add_text_to_pdf_file_rules_body: "تبقى الملفات على جهازك دون رفع إلى خادم.",

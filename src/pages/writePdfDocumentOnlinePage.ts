@@ -193,7 +193,7 @@ export const renderWritePdfDocumentOnlinePage = (opts: {
       }
 
       /**
-       * 把纯文本渲染为多页 PDF（不做复杂排版，目标是可用导出而不是排版完全一致）。
+       * 把纯文本渲染为多页 PDF（系统字体覆盖 CJK 等；不做复杂排版）。
        * @returns {Promise<Uint8Array>}
        */
       function buildPdfFromText() {
@@ -224,20 +224,38 @@ export const renderWritePdfDocumentOnlinePage = (opts: {
           doc = d;
           return doc.embedFont(PDFLib.StandardFonts.Helvetica);
         }).then(function (font) {
+          var usableW = pageW - marginX * 2;
+          var wrapped = [];
+          lines.forEach(function (line) {
+            window.OftPdfWork.wrapTextLines(line, fontSize, usableW, font).forEach(function (wline) {
+              wrapped.push(wline);
+            });
+          });
+          if (!wrapped.length) wrapped.push('');
+
           var page = doc.addPage([pageW, pageH]);
           var y = pageH - marginYTop;
-          var pageIndex = 1;
+          var lineIndex = 0;
+          var chain = Promise.resolve();
 
-          lines.forEach(function (line, idx) {
-            if (idx > 0 && idx % maxLinesPerPage === 0) {
-              page = doc.addPage([pageW, pageH]);
-              pageIndex += 1;
-              y = pageH - marginYTop;
-            }
-            page.drawText(line, { x: marginX, y: y, size: fontSize, font: font, maxWidth: pageW - marginX * 2 });
-            y -= lineHeight;
+          wrapped.forEach(function (line) {
+            chain = chain.then(function () {
+              if (lineIndex > 0 && lineIndex % maxLinesPerPage === 0) {
+                page = doc.addPage([pageW, pageH]);
+                y = pageH - marginYTop;
+              }
+              var baseline = y;
+              y -= lineHeight;
+              lineIndex += 1;
+              return window.OftPdfWork.drawPageText(doc, page, line, {
+                x: marginX,
+                y: baseline,
+                size: fontSize,
+                font: font,
+              });
+            });
           });
-          return doc.save();
+          return chain.then(function () { return doc.save(); });
         }).then(function (bytes) {
           return new Uint8Array(bytes);
         });

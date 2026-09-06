@@ -3,7 +3,7 @@
  */
 import type { SiteLangDict } from '../../../types';
 const fr: SiteLangDict = {
-  tool_add_text_to_pdf_file_apply: "Add & download",
+  tool_add_text_to_pdf_file_apply: "Ajouter et prévisualiser",
   tool_add_text_to_pdf_file_article: "Ajouter du texte à un PDF. Les fichiers restent sur l’appareil ; sans envoi au serveur.",
   tool_add_text_to_pdf_file_choose_file: "Choisir un PDF",
   tool_add_text_to_pdf_file_choose_files: "Choisir des fichiers",
@@ -34,7 +34,7 @@ const fr: SiteLangDict = {
   tool_add_text_to_pdf_file_how_body: "Choisissez un PDF, définissez le texte du tampon et X/Y plus la taille de police, ajoutez-le à chaque page, prévisualisez puis téléchargez. Les fichiers restent dans cet onglet.",
   tool_add_text_to_pdf_file_how_item_1: "Choisissez ou déposez un PDF (ou Charger un exemple)",
   tool_add_text_to_pdf_file_how_item_2: "Saisissez le texte du tampon, les coordonnées X/Y et la taille de police",
-  tool_add_text_to_pdf_file_how_item_3: "Cliquez sur Ajouter et télécharger, puis vérifiez l’aperçu",
+  tool_add_text_to_pdf_file_how_item_3: "Cliquez sur Ajouter et prévisualiser, puis vérifiez le résultat",
   tool_add_text_to_pdf_file_how_item_4: "Téléchargez le PDF tamponné quand c’est bon",
   tool_add_text_to_pdf_file_how_title: "Fonctionnement",
   tool_add_text_to_pdf_file_rules_body: "Les fichiers restent sur l’appareil ; sans envoi au serveur.",

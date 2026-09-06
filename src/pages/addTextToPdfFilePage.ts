@@ -247,11 +247,20 @@ export const renderAddTextToPdfFilePage = (opts: {
           return Promise.resolve(doc.embedFont(PDFLib.StandardFonts.Helvetica)).then(function (font) {
             var pages = doc.getPages();
             var total = pages.length || 1;
+            var chain = Promise.resolve();
             pages.forEach(function (p, idx) {
-              p.drawText(text, { x: x, y: y, size: fontSize, font: font });
-              if (onProgress) onProgress(idx + 1, total);
+              chain = chain.then(function () {
+                return window.OftPdfWork.drawPageText(doc, p, text, {
+                  x: x,
+                  y: y,
+                  size: fontSize,
+                  font: font,
+                }).then(function () {
+                  if (onProgress) onProgress(idx + 1, total);
+                });
+              });
             });
-            return doc.save();
+            return chain.then(function () { return doc.save(); });
           });
         }).then(function (bytes) {
           return new Uint8Array(bytes);

@@ -396,6 +396,7 @@ export const renderFillOutPdfFormPage = (opts: {
         return PDFLib.PDFDocument.load(sourceBytes).then(function (doc) {
           var form = doc.getForm();
           var total = values.length || 1;
+          var unicodeOverlays = [];
           values.forEach(function (v, idx) {
             try {
               if (v.kind === 'check') {
@@ -406,12 +407,53 @@ export const renderFillOutPdfFormPage = (opts: {
                 if (ch && ch.select && v.value) ch.select(v.value);
               } else {
                 form.getTextField(v.name).setText(v.value || '');
+                if (v.value && !window.OftPdfWork.canWinAnsiEncode(v.value)) {
+                  unicodeOverlays.push(v);
+                }
               }
             } catch (ignore) {}
             if (onProgress) onProgress(idx + 1, total);
           });
-          if (form.updateFieldAppearances) form.updateFieldAppearances();
-          return doc.save();
+          try {
+            if (form.updateFieldAppearances) form.updateFieldAppearances();
+          } catch (appearErr) {
+            /* Helvetica 外观流编不了 CJK；下面用系统字体盖一层 */
+          }
+          var chain = Promise.resolve();
+          unicodeOverlays.forEach(function (v) {
+            chain = chain.then(function () {
+              try {
+                var field = form.getTextField(v.name);
+                var widgets = field.acroField && field.acroField.getWidgets ? field.acroField.getWidgets() : [];
+                var inner = Promise.resolve();
+                var pages = doc.getPages();
+                widgets.forEach(function (widget) {
+                  inner = inner.then(function () {
+                    var rect = widget.getRectangle ? widget.getRectangle() : null;
+                    if (!rect) return;
+                    var page = pages[0];
+                    var pref = widget.P ? widget.P() : null;
+                    if (pref) {
+                      for (var pi = 0; pi < pages.length; pi++) {
+                        if (pages[pi].ref === pref) { page = pages[pi]; break; }
+                      }
+                    }
+                    var fontSize = Math.max(8, Math.min(12, (rect.height || 14) - 4));
+                    return window.OftPdfWork.drawPageText(doc, page, v.value, {
+                      x: (rect.x || 0) + 2,
+                      y: (rect.y || 0) + 3,
+                      size: fontSize,
+                      maxWidth: Math.max(8, (rect.width || 40) - 4),
+                    });
+                  });
+                });
+                return inner;
+              } catch (overlayErr) {
+                return null;
+              }
+            });
+          });
+          return chain.then(function () { return doc.save(); });
         }).then(function (bytes) {
           return new Uint8Array(bytes);
         });

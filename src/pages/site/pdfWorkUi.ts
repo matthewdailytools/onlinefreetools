@@ -103,7 +103,8 @@ export function pdfWorkUiBlockHtml(opts: { idPrefix: string; labels: PdfWorkUiLa
 }
 
 /**
- * 注入一次 window.OftPdfWork：ensurePdfJs / yieldUi / bind(idPrefix)。
+ * 注入一次 window.OftPdfWork：ensurePdfJs / yieldUi / bind(idPrefix) /
+ * canWinAnsiEncode / measureTextWidth / wrapTextLines / drawPageText。
  * 必须放在各工具业务脚本之前。
  */
 export function pdfWorkUiClientScript(): string {
@@ -332,10 +333,255 @@ export function pdfWorkUiClientScript(): string {
         };
       }
 
+      /**
+       * Helvetica/WinAnsi 只能编 Latin-1。用户在输入框能打出的字，系统字体就能画；
+       * 超出 WinAnsi 时改成 Canvas 栅格化再 embedPng，避免 pdf-lib 抛 WinAnsi 编码错误。
+       * 覆盖中日韩、西里尔、阿拉伯文（浏览器负责 shaping / bidi）。
+       */
+      var UNICODE_FONT_STACK = '"Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei UI","Microsoft YaHei","Noto Sans CJK SC","Noto Sans JP","Hiragino Sans","Yu Gothic","Malgun Gothic","Apple SD Gothic Neo","Noto Naskh Arabic","Segoe UI","Noto Sans",sans-serif';
+      /** 栅格倍率：2× 足够在 1.25 预览缩放下保持清晰。 */
+      var UNICODE_RASTER_SCALE = 2;
+      /** 复用的测宽 canvas，避免每次 measure 都新建。 */
+      var unicodeMeasureCanvas = null;
+
+      /**
+       * 文本是否全部落在 WinAnsi（约 Latin-1）内，可用 Helvetica drawText。
+       * @param {string} text
+       * @returns {boolean}
+       */
+      function canWinAnsiEncode(text) {
+        var s = String(text || '');
+        for (var i = 0; i < s.length; i++) {
+          if (s.charCodeAt(i) > 255) return false;
+        }
+        return true;
+      }
+
+      /**
+       * 取 2D 测宽上下文。
+       * @returns {CanvasRenderingContext2D}
+       */
+      function getUnicodeMeasureCtx() {
+        if (!unicodeMeasureCanvas) unicodeMeasureCanvas = document.createElement('canvas');
+        return unicodeMeasureCanvas.getContext('2d');
+      }
+
+      /**
+       * Canvas 用的 CSS font 字符串（px）。
+       * @param {number} sizePx
+       * @returns {string}
+       */
+      function unicodeCanvasFont(sizePx) {
+        return String(sizePx) + 'px ' + UNICODE_FONT_STACK;
+      }
+
+      /**
+       * 把 pdf-lib Color 或 {red,green,blue}/{r,g,b} 收成 0–1 RGB。
+       * @param {any} color
+       * @returns {{ r: number, g: number, b: number }}
+       */
+      function toRgb01(color) {
+        if (!color) return { r: 0, g: 0, b: 0 };
+        var r = color.red != null ? color.red : color.r;
+        var g = color.green != null ? color.green : color.g;
+        var b = color.blue != null ? color.blue : color.b;
+        return {
+          r: typeof r === 'number' ? r : 0,
+          g: typeof g === 'number' ? g : 0,
+          b: typeof b === 'number' ? b : 0,
+        };
+      }
+
+      /**
+       * 测量一行文字的 PDF 点宽度（系统字体或 Helvetica）。
+       * @param {string} text
+       * @param {number} fontSizePt
+       * @param {any} [font] pdf-lib 字体；WinAnsi 文本时优先用它
+       * @returns {number}
+       */
+      function measureTextWidth(text, fontSizePt, font) {
+        var s = String(text || '');
+        var size = Number(fontSizePt) || 12;
+        if (font && typeof font.widthOfTextAtSize === 'function' && canWinAnsiEncode(s)) {
+          return font.widthOfTextAtSize(s, size);
+        }
+        var ctx = getUnicodeMeasureCtx();
+        ctx.font = unicodeCanvasFont(size * UNICODE_RASTER_SCALE);
+        return ctx.measureText(s).width / UNICODE_RASTER_SCALE;
+      }
+
+      /**
+       * 按 maxWidth 折行；无空格的 CJK 按字切。空 maxWidth 只按换行切。
+       * @param {string} text
+       * @param {number} fontSizePt
+       * @param {number} [maxWidth]
+       * @param {any} [font]
+       * @returns {string[]}
+       */
+      function wrapTextLines(text, fontSizePt, maxWidth, font) {
+        var raw = String(text == null ? '' : text);
+        var paras = raw.split(/\\n/);
+        var out = [];
+        var limit = Number(maxWidth);
+        var hasLimit = isFinite(limit) && limit > 0;
+        paras.forEach(function (para) {
+          if (!para) {
+            out.push('');
+            return;
+          }
+          if (!hasLimit) {
+            out.push(para);
+            return;
+          }
+          var current = '';
+          for (var i = 0; i < para.length; i++) {
+            var ch = para.charAt(i);
+            var trial = current + ch;
+            if (current && measureTextWidth(trial, fontSizePt, font) > limit) {
+              out.push(current);
+              current = ch;
+            } else {
+              current = trial;
+            }
+          }
+          if (current) out.push(current);
+        });
+        return out.length ? out : [''];
+      }
+
+      /**
+       * 把一行字画成 PNG 字节（基线在 ascent 处，下方留 descent）。
+       * @param {string} text
+       * @param {number} fontSizePt
+       * @param {{ r: number, g: number, b: number }} rgb
+       * @returns {Promise<{ bytes: Uint8Array, widthPt: number, heightPt: number, descentPt: number }>}
+       */
+      function rasterizeLinePng(text, fontSizePt, rgb) {
+        var s = String(text || ' ');
+        var sizePx = Math.max(1, fontSizePt * UNICODE_RASTER_SCALE);
+        var ctx0 = getUnicodeMeasureCtx();
+        ctx0.font = unicodeCanvasFont(sizePx);
+        var m = ctx0.measureText(s);
+        var ascent = Math.ceil(Math.max(sizePx * 0.8, m.actualBoundingBoxAscent || 0));
+        var descent = Math.ceil(Math.max(sizePx * 0.2, m.actualBoundingBoxDescent || 0));
+        var pad = 2;
+        var w = Math.max(1, Math.ceil(m.width) + pad * 2);
+        var h = Math.max(1, ascent + descent + pad * 2);
+        var canvas = document.createElement('canvas');
+        canvas.width = w;
+        canvas.height = h;
+        if (/[\\u0590-\\u08FF]/.test(s)) canvas.dir = 'rtl';
+        var ctx = canvas.getContext('2d');
+        ctx.font = unicodeCanvasFont(sizePx);
+        ctx.textBaseline = 'alphabetic';
+        ctx.fillStyle = 'rgb(' + Math.round(rgb.r * 255) + ',' + Math.round(rgb.g * 255) + ',' + Math.round(rgb.b * 255) + ')';
+        if (canvas.dir === 'rtl') {
+          ctx.textAlign = 'right';
+          ctx.fillText(s, w - pad, pad + ascent);
+        } else {
+          ctx.textAlign = 'left';
+          ctx.fillText(s, pad, pad + ascent);
+        }
+        return new Promise(function (resolve, reject) {
+          canvas.toBlob(function (blob) {
+            if (!blob) {
+              reject(new Error('png'));
+              return;
+            }
+            blob.arrayBuffer().then(function (ab) {
+              resolve({
+                bytes: new Uint8Array(ab),
+                widthPt: w / UNICODE_RASTER_SCALE,
+                heightPt: h / UNICODE_RASTER_SCALE,
+                descentPt: (descent + pad) / UNICODE_RASTER_SCALE,
+              });
+            }).catch(reject);
+          }, 'image/png');
+        });
+      }
+
+      /**
+       * 在 PDF 页上画一行（或 maxWidth 折成多行）任意 Unicode 文本。
+       * WinAnsi 且传入 font 时走 pdf-lib drawText；否则栅格化。
+       * @param {any} doc pdf-lib PDFDocument
+       * @param {any} page pdf-lib PDFPage
+       * @param {string} text
+       * @param {{ x: number, y: number, size: number, font?: any, color?: any, opacity?: number, rotate?: any, maxWidth?: number, lineHeight?: number }} opts
+       * @returns {Promise<{ lineCount: number, endY: number, width: number, height: number }>}
+       */
+      function drawPageText(doc, page, text, opts) {
+        opts = opts || {};
+        var x = Number(opts.x) || 0;
+        var y = Number(opts.y) || 0;
+        var size = Number(opts.size) || 12;
+        var lineHeight = Number(opts.lineHeight) > 0 ? Number(opts.lineHeight) : size * 1.25;
+        var font = opts.font;
+        var lines = wrapTextLines(text, size, opts.maxWidth, font);
+        var rgb = toRgb01(opts.color);
+        var width = 0;
+        lines.forEach(function (ln) {
+          width = Math.max(width, measureTextWidth(ln, size, font));
+        });
+
+        function drawOne(line, baselineY) {
+          var s = line || ' ';
+          if (font && canWinAnsiEncode(s)) {
+            try {
+              page.drawText(s, {
+                x: x,
+                y: baselineY,
+                size: size,
+                font: font,
+                color: opts.color,
+                opacity: opts.opacity,
+                rotate: opts.rotate,
+              });
+              return Promise.resolve();
+            } catch (ignore) {
+              /* 个别 Latin-1 缺口仍可能失败，改走栅格 */
+            }
+          }
+          return rasterizeLinePng(s, size, rgb).then(function (img) {
+            return doc.embedPng(img.bytes).then(function (png) {
+              page.drawImage(png, {
+                x: x,
+                y: baselineY - img.descentPt,
+                width: img.widthPt,
+                height: img.heightPt,
+                opacity: opts.opacity != null ? opts.opacity : 1,
+                rotate: opts.rotate,
+              });
+            });
+          });
+        }
+
+        var chain = Promise.resolve();
+        var baseline = y;
+        lines.forEach(function (line, idx) {
+          chain = chain.then(function () {
+            return drawOne(line, baseline).then(function () {
+              if (idx < lines.length - 1) baseline -= lineHeight;
+            });
+          });
+        });
+        return chain.then(function () {
+          return {
+            lineCount: lines.length,
+            endY: baseline,
+            width: width,
+            height: Math.max(size, (lines.length - 1) * lineHeight + size),
+          };
+        });
+      }
+
       w.OftPdfWork = {
         ensurePdfJs: ensurePdfJs,
         yieldUi: yieldUi,
         bind: bind,
+        canWinAnsiEncode: canWinAnsiEncode,
+        measureTextWidth: measureTextWidth,
+        wrapTextLines: wrapTextLines,
+        drawPageText: drawPageText,
       };
     })(window);
   </script>`;

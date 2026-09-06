@@ -3,7 +3,7 @@
  */
 import type { SiteLangDict } from '../../../types';
 const id: SiteLangDict = {
-  tool_add_text_to_pdf_file_apply: "Add & download",
+  tool_add_text_to_pdf_file_apply: "Tambah & pratinjau",
   tool_add_text_to_pdf_file_article: "Tambahkan teks ke PDF. Berkas tetap di perangkat; tanpa unggah ke server.",
   tool_add_text_to_pdf_file_choose_file: "Pilih PDF",
   tool_add_text_to_pdf_file_choose_files: "Pilih berkas",
@@ -34,7 +34,7 @@ const id: SiteLangDict = {
   tool_add_text_to_pdf_file_how_body: "Pilih PDF, atur teks cap dan X/Y plus ukuran font, tambahkan ke setiap halaman, pratinjau, lalu unduh. Berkas tetap di tab ini.",
   tool_add_text_to_pdf_file_how_item_1: "Pilih atau jatuhkan PDF (atau Muat contoh)",
   tool_add_text_to_pdf_file_how_item_2: "Masukkan teks cap, koordinat X/Y, dan ukuran font",
-  tool_add_text_to_pdf_file_how_item_3: "Klik Tambah & unduh, lalu tinjau pratinjau",
+  tool_add_text_to_pdf_file_how_item_3: "Klik Tambah & pratinjau, lalu tinjau hasilnya",
   tool_add_text_to_pdf_file_how_item_4: "Unduh PDF bertanda jika sudah benar",
   tool_add_text_to_pdf_file_how_title: "Cara kerja",
   tool_add_text_to_pdf_file_rules_body: "Berkas tetap di perangkat; tanpa unggah ke server.",

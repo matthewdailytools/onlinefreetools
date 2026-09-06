@@ -17,6 +17,7 @@ import {
 	renderToolReferencesSection,
 	buildToolJsonLd,
 } from './site/toolContent';
+import { pdfWorkUiClientScript } from './site/pdfWorkUi';
 
 /** 非默认语言时为路径加语言前缀。 */
 const withLangPrefix = (lang: SiteLang, pathname: string, defaultLang: SiteLang) => {
@@ -159,6 +160,7 @@ export const renderPdfWatermarkPage = (opts: {
 	 * 客户端脚本：pdf-lib drawText/drawImage 逐页水印、样例自动跑通。
 	 */
 	const extraBodyHtml = `
+  ${pdfWorkUiClientScript()}
   <script src="/vendor/pdf-lib/pdf-lib.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     (function () {
@@ -337,8 +339,8 @@ export const renderPdfWatermarkPage = (opts: {
             var pages = doc.getPages();
             var fontSize = 48;
             var text = params.text || 'DRAFT';
-            var textW = font.widthOfTextAtSize(text, fontSize);
-            var textH = font.heightAtSize(fontSize);
+            var textW = window.OftPdfWork.measureTextWidth(text, fontSize, font);
+            var textH = fontSize;
             var gray = PDFLib.rgb(0.45, 0.45, 0.45);
             var rot = PDFLib.degrees(params.rotation);
 
@@ -351,42 +353,46 @@ export const renderPdfWatermarkPage = (opts: {
             }
 
             return embedImage.then(function (img) {
+              var chain = Promise.resolve();
               pages.forEach(function (page) {
-                var size = page.getSize();
-                var w = size.width;
-                var h = size.height;
-
-                if (text) {
-                  var origin = calcTextOrigin(params.position, w, h, textW, textH);
-                  page.drawText(text, {
-                    x: origin.x,
-                    y: origin.y,
-                    size: fontSize,
-                    font: font,
-                    color: gray,
-                    opacity: params.opacity,
-                    rotate: rot
+                chain = chain.then(function () {
+                  var size = page.getSize();
+                  var w = size.width;
+                  var h = size.height;
+                  var stamp = Promise.resolve();
+                  if (text) {
+                    var origin = calcTextOrigin(params.position, w, h, textW, textH);
+                    stamp = window.OftPdfWork.drawPageText(doc, page, text, {
+                      x: origin.x,
+                      y: origin.y,
+                      size: fontSize,
+                      font: font,
+                      color: gray,
+                      opacity: params.opacity,
+                      rotate: rot,
+                    });
+                  }
+                  return stamp.then(function () {
+                    if (img) {
+                      var maxW = w * 0.35;
+                      var maxH = h * 0.35;
+                      var scale = Math.min(maxW / img.width, maxH / img.height, 1);
+                      var imgW = img.width * scale;
+                      var imgH = img.height * scale;
+                      var imgOrigin = calcImageOrigin(params.position, w, h, imgW, imgH);
+                      page.drawImage(img, {
+                        x: imgOrigin.x,
+                        y: imgOrigin.y,
+                        width: imgW,
+                        height: imgH,
+                        opacity: params.opacity,
+                        rotate: rot
+                      });
+                    }
                   });
-                }
-
-                if (img) {
-                  var maxW = w * 0.35;
-                  var maxH = h * 0.35;
-                  var scale = Math.min(maxW / img.width, maxH / img.height, 1);
-                  var imgW = img.width * scale;
-                  var imgH = img.height * scale;
-                  var imgOrigin = calcImageOrigin(params.position, w, h, imgW, imgH);
-                  page.drawImage(img, {
-                    x: imgOrigin.x,
-                    y: imgOrigin.y,
-                    width: imgW,
-                    height: imgH,
-                    opacity: params.opacity,
-                    rotate: rot
-                  });
-                }
+                });
               });
-              return doc.save();
+              return chain.then(function () { return doc.save(); });
             });
           });
         });
