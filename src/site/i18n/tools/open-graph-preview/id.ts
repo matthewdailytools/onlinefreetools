@@ -57,7 +57,7 @@ const id: SiteLangDict = {
 	tool_og_how_title: 'Cara kerja',
 	tool_og_how_body:
 		'Pratinjau mengurai tag og:/twitter: yang Anda tempel (atau mengekstraknya dari HTML yang diambil dari URL) lalu menggambar tiga kartu. Facebook menampilkan gambar 1.91:1 di kiri dengan judul, deskripsi, dan domain di bawahnya. X mengikuti twitter:card: summary_large_image menampilkan gambar besar di atas, summary menampilkan yang kecil di samping teks. Aplikasi pesan seperti WhatsApp menampilkan satu kartu besar. Tabel kolom menandai empat kolom yang diwajibkan protokol dan mencantumkan kolom opsionalnya.',
-	tool_og_how_item_1: 'Tempel tag meta og:/twitter: atau ambil URL.',
+	tool_og_how_item_1: 'Isi URL halaman lalu klik Ambil URL, atau tempel tag meta og:/twitter:.'
 	tool_og_how_item_2: 'Klik Pratinjau (atau Contoh).',
 	tool_og_how_item_3: 'Bandingkan kartu Facebook, X, dan pesan.',
 	tool_og_how_item_4: 'Perbaiki bidang wajib yang hilang di tabel.',

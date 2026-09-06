@@ -83,7 +83,7 @@
 
 ## 交互规格（给实现用）
 
-- 输入：og:/twitter: 标签文本（textarea）或 URL；两模式互斥选择
+- 输入：首屏同时显示页面 URL 输入框 +「抓取 URL」按钮，以及 og:/twitter: 标签文本框；抓取成功后把抽出的标签填回文本框再预览
 - 输出：Facebook / X / 通用（WhatsApp 风格）三张预览卡片 + 字段状态表（必需/可选/缺失）+ 图片比例警告
 - 核心规则 / 算法：
   - 解析 `property="og:*"` / `name="twitter:*"` / `<meta property>` 两种写法

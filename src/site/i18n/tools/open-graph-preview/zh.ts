@@ -57,7 +57,7 @@ const zh: SiteLangDict = {
 	tool_og_how_title: '工作原理',
 	tool_og_how_body:
 		'预览会解析你粘贴的 og:/twitter: 标签（或从抓取的 HTML 中提取），渲染三张分享卡片。Facebook 左侧显示 1.91:1 图片，下方是标题、描述与域名。X 依 twitter:card 而定：summary_large_image 顶部显示大图，summary 在文字旁显示小图。微信等即时通讯应用显示一张大卡片。字段状态表会标出协议必填的四个字段，并列出可选字段。',
-	tool_og_how_item_1: '粘贴 og:/twitter: meta 标签，或抓取 URL。',
+	tool_og_how_item_1: '在输入框填入页面 URL 并点击「抓取 URL」，或粘贴 og:/twitter: meta 标签。'
 	tool_og_how_item_2: '点击「预览」（或「加载样例」）。',
 	tool_og_how_item_3: '对比 Facebook、X 与消息应用卡片。',
 	tool_og_how_item_4: '在表格中补齐缺失的协议必填字段。',

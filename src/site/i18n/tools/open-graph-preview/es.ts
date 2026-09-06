@@ -57,7 +57,7 @@ const es: SiteLangDict = {
 	tool_og_how_title: 'Cómo funciona',
 	tool_og_how_body:
 		'La vista previa analiza las etiquetas og:/twitter: que pegas (o las extrae del HTML cargado de una URL) y dibuja tres tarjetas. Facebook usa la imagen 1.91:1 a la izquierda con título, descripción y dominio debajo. X sigue twitter:card: summary_large_image muestra una imagen grande arriba, summary una pequeña junto al texto. Las apps de mensajería como WhatsApp muestran una tarjeta grande. La tabla señala los cuatro campos que exige el protocolo y lista los opcionales.',
-	tool_og_how_item_1: 'Pega etiquetas meta og:/twitter: o carga una URL.',
+	tool_og_how_item_1: 'Escribe la URL de la página y pulsa Obtener URL, o pega las etiquetas meta og:/twitter:.'
 	tool_og_how_item_2: 'Haz clic en Vista previa (o Ejemplo).',
 	tool_og_how_item_3: 'Compara las tarjetas de Facebook, X y mensajería.',
 	tool_og_how_item_4: 'Corrige en la tabla los campos obligatorios que falten.',

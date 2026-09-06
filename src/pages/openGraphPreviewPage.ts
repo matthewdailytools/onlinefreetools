@@ -17,6 +17,7 @@ import {
 	renderToolIgSections,
 	renderToolReferencesSection,
 } from './site/toolContent';
+import { DEFAULT_OG_IMAGE_URL } from './site/ogImage';
 
 /** 为路径加上语言前缀（默认语无前缀）。 */
 const withLangPrefix = (lang: SiteLang, pathname: string, defaultLang: SiteLang) => {
@@ -84,8 +85,8 @@ export const renderOpenGraphPreviewPage = (opts: {
     .form-label { display:block; margin-bottom:.5rem; color:#495057; font-weight:500 }
     .form-group { margin-bottom:1rem; }
     .btn-row { display:flex; flex-wrap:wrap; gap:.5rem; align-items:center; }
-    .mode-tabs { display:flex; gap:.25rem; margin-bottom:.75rem; }
-    .mode-tabs .btn { border-radius: .25rem; }
+    .og-url-row { display:flex; flex-wrap:wrap; gap:.5rem; align-items:center; }
+    .og-url-input { flex:1 1 12rem; min-width:12rem; }
     .og-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem; }
     @media (max-width: 992px) { .og-grid { grid-template-columns:1fr 1fr; } }
     @media (max-width: 576px) { .og-grid { grid-template-columns:1fr; } }
@@ -122,21 +123,20 @@ export const renderOpenGraphPreviewPage = (opts: {
 
     <div class="card tool-card">
       <div class="card-body">
-        <div class="mode-tabs">
-          <button type="button" id="ogModeTags" class="btn btn-sm btn-primary">${escapeHtml(t(opts.lang, 'tool_og_tags_tab'))}</button>
-          <button type="button" id="ogModeUrl" class="btn btn-sm btn-outline-secondary">${escapeHtml(t(opts.lang, 'tool_og_url_tab'))}</button>
+        <div class="form-group">
+          <label class="form-label" for="ogUrl">${escapeHtml(t(opts.lang, 'tool_og_url_tab'))}</label>
+          <div class="og-url-row">
+            <input id="ogUrl" class="input-lg og-url-input" type="url" maxlength="500"
+              inputmode="url" autocomplete="url"
+              placeholder="${escapeHtml(t(opts.lang, 'tool_og_url_ph'))}">
+            <button type="button" id="ogFetch" class="btn btn-outline-primary">${escapeHtml(t(opts.lang, 'tool_og_url_fetch'))}</button>
+          </div>
         </div>
 
-        <div class="form-group" id="ogTagsPane">
+        <div class="form-group">
           <label class="form-label" for="ogTags">${escapeHtml(t(opts.lang, 'tool_og_tags_tab'))}</label>
           <textarea id="ogTags" class="form-control" rows="8"
             placeholder="${escapeHtml(t(opts.lang, 'tool_og_tags_ph'))}"></textarea>
-        </div>
-
-        <div class="form-group" id="ogUrlPane" style="display:none">
-          <label class="form-label" for="ogUrl">${escapeHtml(t(opts.lang, 'tool_og_url_tab'))}</label>
-          <input id="ogUrl" class="input-lg" type="text" maxlength="500"
-            placeholder="${escapeHtml(t(opts.lang, 'tool_og_url_ph'))}">
         </div>
 
         <div class="btn-row">
@@ -169,14 +169,14 @@ export const renderOpenGraphPreviewPage = (opts: {
 	const extraBodyHtml = `
   <script>
     (function () {
-      var mode = 'tags';
-      var tagsPane = document.getElementById('ogTagsPane');
-      var urlPane = document.getElementById('ogUrlPane');
+      /** 粘贴的 og:/twitter: 标签文本框。 */
       var tagsEl = document.getElementById('ogTags');
+      /** 页面 URL 输入框（始终可见）。 */
       var urlEl = document.getElementById('ogUrl');
+      /** 预览结果容器。 */
       var resultEl = document.getElementById('ogResult');
-      var modeTagsBtn = document.getElementById('ogModeTags');
-      var modeUrlBtn = document.getElementById('ogModeUrl');
+      /** 抓取 URL 按钮。 */
+      var fetchBtn = document.getElementById('ogFetch');
 
       var I = {
         requiredLabel: ${JSON.stringify(t(opts.lang, 'tool_og_required_label'))},
@@ -431,54 +431,85 @@ export const renderOpenGraphPreviewPage = (opts: {
         }
       }
 
-      /** 模式切换：tags / url。 @param {string} m */
-      function setMode(m) {
-        mode = m;
-        var isTags = m === 'tags';
-        tagsPane.style.display = isTags ? '' : 'none';
-        urlPane.style.display = isTags ? 'none' : '';
-        modeTagsBtn.className = isTags ? 'btn btn-sm btn-primary' : 'btn btn-sm btn-outline-secondary';
-        modeUrlBtn.className = isTags ? 'btn btn-sm btn-outline-secondary' : 'btn btn-sm btn-primary';
+      /**
+       * 把解析出的 og:/twitter: 键值还原成可再编辑的 meta 标签文本。
+       * @param {Object} tags 键值对象
+       * @returns {string} 每行一条 <meta> 的文本
+       */
+      function tagsToMetaText(tags) {
+        return Object.keys(tags).map(function (key) {
+          var attr = key.indexOf('twitter:') === 0 ? 'name' : 'property';
+          var val = String(tags[key]).replace(/"/g, '&quot;');
+          return '<meta ' + attr + '="' + key + '" content="' + val + '">';
+        }).join('\\n');
       }
 
       /**
-       * 加载默认样例：完整 og + twitter:card 标签，1200×630 图片。
+       * 通过 Worker 抓取页面 HTML，抽出 og:/twitter: 标签填入文本框并预览。
+       */
+      function fetchUrlAndPreview() {
+        var u = urlEl.value.trim();
+        if (!/^https?:\\/\\//i.test(u)) {
+          resultEl.innerHTML = '<div class="text-muted">' + esc(I.urlError) + '</div>';
+          return;
+        }
+        resultEl.innerHTML = '<div class="text-muted">' + esc(I.running) + '</div>';
+        fetch('/api/tools/open-graph-preview?url=' + encodeURIComponent(u))
+          .then(function (res) { return res.json(); })
+          .then(function (data) {
+            if (data && data.error) throw new Error(data.error);
+            var tags = extractTagsFromHtml((data && data.html) || '');
+            tagsEl.value = tagsToMetaText(tags);
+            if (data && data.finalUrl) urlEl.value = data.finalUrl;
+            renderPreview(tags);
+          })
+          .catch(function (err) {
+            resultEl.innerHTML = '<div class="text-muted">' + esc(I.errorPrefix + (err && err.message ? err.message : I.fetchFailed)) + '</div>';
+          });
+      }
+
+      /**
+       * 样例 og:image 固定用生产域 1200×630 图。
+       * 不用 location.origin：本地会写成 localhost，部署后域名对不上。
+       */
+      var SAMPLE_OG_IMAGE_URL = ${JSON.stringify(DEFAULT_OG_IMAGE_URL)};
+
+      /**
+       * 加载默认样例：完整 og + twitter:card 标签，以及可加载的 1200×630 图片。
        */
       function loadSample() {
-        setMode('tags');
+        var sampleImg = SAMPLE_OG_IMAGE_URL;
         tagsEl.value =
           '<meta property="og:title" content="Open Graph Preview — Check Social Share Cards Before You Publish">\\n' +
           '<meta property="og:description" content="Paste your og: and twitter:card tags to preview the Facebook, X and WhatsApp share card, spot missing fields and fix image ratios.">\\n' +
-          '<meta property="og:image" content="https://example.com/og-1200x630.png">\\n' +
+          '<meta property="og:image" content="' + sampleImg + '">\\n' +
           '<meta property="og:url" content="https://example.com/blog/post">\\n' +
           '<meta property="og:site_name" content="Example Blog">\\n' +
           '<meta property="og:type" content="article">\\n' +
           '<meta name="twitter:card" content="summary_large_image">\\n' +
           '<meta name="twitter:title" content="Open Graph Preview — Check Social Share Cards">\\n' +
           '<meta name="twitter:description" content="Paste your og tags to preview Facebook, X and WhatsApp cards.">\\n' +
-          '<meta name="twitter:image" content="https://example.com/og-1200x630.png">';
+          '<meta name="twitter:image" content="' + sampleImg + '">';
         renderPreview(parseTags(tagsEl.value));
       }
 
       document.getElementById('ogPreview').addEventListener('click', function () {
-        if (mode === 'tags') {
+        if (tagsEl.value.trim()) {
           renderPreview(parseTags(tagsEl.value));
-        } else {
-          var u = urlEl.value.trim();
-          if (!/^https?:\\/\\//i.test(u)) {
-            resultEl.innerHTML = '<div class="text-muted">' + esc(I.urlError) + '</div>';
-            return;
-          }
-          resultEl.innerHTML = '<div class="text-muted">' + esc(I.running) + '</div>';
-          fetch('/api/tools/open-graph-preview?url=' + encodeURIComponent(u))
-            .then(function (res) { return res.json(); })
-            .then(function (data) {
-              if (data && data.error) throw new Error(data.error);
-              renderPreview(extractTagsFromHtml(data.html || ''));
-            })
-            .catch(function (err) {
-              resultEl.innerHTML = '<div class="text-muted">' + esc(I.errorPrefix + (err && err.message ? err.message : I.fetchFailed)) + '</div>';
-            });
+          return;
+        }
+        if (urlEl.value.trim()) {
+          fetchUrlAndPreview();
+          return;
+        }
+        renderPreview({});
+      });
+
+      fetchBtn.addEventListener('click', fetchUrlAndPreview);
+      urlEl.addEventListener('keydown', function (ev) {
+        if (ev.key === 'Enter') {
+          ev.preventDefault();
+          fetchUrlAndPreview();
         }
       });
 
@@ -489,9 +520,6 @@ export const renderOpenGraphPreviewPage = (opts: {
         urlEl.value = '';
         resultEl.innerHTML = '';
       });
-
-      modeTagsBtn.addEventListener('click', function () { setMode('tags'); });
-      modeUrlBtn.addEventListener('click', function () { setMode('url'); });
 
       /** 进页自动跑样例。 */
       loadSample();
@@ -523,7 +551,7 @@ export const renderOpenGraphPreviewPage = (opts: {
 		contentHtml: `${contentHtml}${toolSeoHtml}${referencesHtml}`,
 		extraHeadHtml,
 		extraBodyHtml,
-		ogImageUrl: 'https://onlinefreetools.org/og-image.png',
+		ogImageUrl: DEFAULT_OG_IMAGE_URL,
 		jsonLd: toolJsonLd,
 	});
 };

@@ -57,7 +57,7 @@ const pt: SiteLangDict = {
 	tool_og_how_title: 'Como funciona',
 	tool_og_how_body:
 		'A prévia analisa as tags og:/twitter: que você cola (ou as extrai do HTML buscado de uma URL) e desenha três cards. O Facebook usa a imagem 1.91:1 à esquerda com título, descrição e domínio abaixo. O X segue twitter:card: summary_large_image mostra uma imagem grande em cima, summary mostra uma pequena ao lado do texto. Apps de mensagem como WhatsApp mostram um card grande. A tabela aponta os quatro campos exigidos pelo protocolo e lista os opcionais.',
-	tool_og_how_item_1: 'Cole tags meta og:/twitter: ou busque uma URL.',
+	tool_og_how_item_1: 'Digite a URL da página e clique em Buscar URL, ou cole as tags meta og:/twitter:.'
 	tool_og_how_item_2: 'Clique em Prévia (ou Exemplo).',
 	tool_og_how_item_3: 'Compare os cards do Facebook, X e mensagens.',
 	tool_og_how_item_4: 'Corrija na tabela os campos obrigatórios ausentes.',

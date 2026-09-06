@@ -60,7 +60,7 @@ const en: SiteLangDict = {
 	tool_og_how_title: 'How it works',
 	tool_og_how_body:
 		'The preview parses the og:/twitter: tags you paste (or extracts them from the HTML fetched for a URL) and renders three share cards. Facebook uses the 1.91:1 image on the left with title, description and domain below. X follows twitter:card: summary_large_image shows a big image on top, summary shows a small one beside the text. Messaging apps such as WhatsApp show one large card. A field table marks the four protocol-required fields and lists the optional ones.',
-	tool_og_how_item_1: 'Paste og:/twitter: meta tags, or fetch a URL.',
+	tool_og_how_item_1: 'Enter a page URL and click Fetch URL, or paste og:/twitter: meta tags.'
 	tool_og_how_item_2: 'Click Preview (or Load sample).',
 	tool_og_how_item_3: 'Compare the Facebook, X, and messaging cards.',
 	tool_og_how_item_4: 'Fix any missing protocol-required fields in the table.',
