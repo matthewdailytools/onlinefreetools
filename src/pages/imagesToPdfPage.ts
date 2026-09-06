@@ -2,6 +2,7 @@
  * Images-to-PDF tool page: combine multiple local images into one PDF (one page per image).
  * slug: images-to-pdf (single page; orientation/fit on same URL).
  * Spec: work-tasks/images-to-pdf/02-tool-info.md
+ * 转换完成后用 OftPdfWork 画布预览结果 PDF（上一页/下一页）。
  */
 import type { SiteLang } from '../site/i18n';
 import { t, supportedLangs } from '../site/i18n';
@@ -17,6 +18,12 @@ import {
 	renderToolReferencesSection,
 	buildToolJsonLd,
 } from './site/toolContent';
+import {
+	pdfWorkUiBlockHtml,
+	pdfWorkUiClientScript,
+	pdfWorkUiCss,
+	pdfWorkUiLabels,
+} from './site/pdfWorkUi';
 
 /** Prefix pathname with lang when not default. */
 const withLangPrefix = (lang: SiteLang, pathname: string, defaultLang: SiteLang) => {
@@ -78,6 +85,8 @@ export const renderImagesToPdfPage = (opts: {
 
 	const footerHtml = renderFooter({ lang: opts.lang });
 
+	/** 进度条 / 画布预览的共用文案（core i18n，十语已有）。 */
+	const pdfWorkLabels = pdfWorkUiLabels(opts.lang);
 	const extraHeadHtml = `
   <style>
     .tools-bar { gap: .5rem; }
@@ -92,6 +101,7 @@ export const renderImagesToPdfPage = (opts: {
     }
     .img-pdf-file-name { flex: 1; font-size: .85rem; word-break: break-all; }
     .img-pdf-file-actions { display: flex; gap: .25rem; flex-shrink: 0; }
+    ${pdfWorkUiCss()}
   </style>`;
 
 	const contentHtml = `
@@ -135,6 +145,7 @@ export const renderImagesToPdfPage = (opts: {
     <p id="imgPdfError" class="small text-danger mb-2" style="display:none;" role="alert"></p>
     <p id="imgPdfStatus" class="small text-muted mb-2" role="status"></p>
     <p id="imgPdfStats" class="small text-muted mb-3" style="display:none;"></p>
+    ${pdfWorkUiBlockHtml({ idPrefix: 'imgPdf', labels: pdfWorkLabels })}
 
     <p class="tool-lead mb-4">${escapeHtml(description)}</p>`;
 
@@ -158,6 +169,7 @@ export const renderImagesToPdfPage = (opts: {
 	 * Client script: decode images, rasterize to JPEG/PNG, embed one page per image via pdf-lib, download PDF.
 	 */
 	const extraBodyHtml = `
+  ${pdfWorkUiClientScript()}
   <script src="/vendor/pdf-lib/pdf-lib.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     (function () {
@@ -182,6 +194,10 @@ export const renderImagesToPdfPage = (opts: {
       var errEl = document.getElementById('imgPdfError');
       var statusEl = document.getElementById('imgPdfStatus');
       var statsEl = document.getElementById('imgPdfStats');
+      /** 共用进度条 + 结果 PDF 画布预览（id 前缀须与 HTML 一致）。 */
+      var work = window.OftPdfWork.bind('imgPdf');
+      /** 转换期间禁用的按钮（主按钮带 spinner）。 */
+      var busyBtns = [btnConvert, btnDownload, btnSample, btnClear];
 
       var msg = {
         empty: ${JSON.stringify(t(opts.lang, 'tool_images_to_pdf_empty'))},
@@ -281,12 +297,14 @@ export const renderImagesToPdfPage = (opts: {
         if (item.bitmap && typeof item.bitmap.close === 'function') item.bitmap.close();
       }
 
-      /** Clear PDF result state. */
+      /** 清空 PDF 结果与画布预览。 */
       function clearResult() {
         resultBytes = null;
         btnDownload.disabled = true;
         statsEl.style.display = 'none';
         statsEl.textContent = '';
+        work.clearPreview();
+        work.hideProgress();
       }
 
       /** Re-render the ordered file list with reorder/remove controls. */
@@ -471,7 +489,7 @@ export const renderImagesToPdfPage = (opts: {
         });
       }
 
-      /** Run convert pipeline and enable download. */
+      /** 跑转换流水线：生成 PDF、画布预览，并启用下载。 */
       function convert() {
         setError('');
         clearResult();
@@ -484,14 +502,24 @@ export const renderImagesToPdfPage = (opts: {
           refreshWarnings();
           return;
         }
+        work.setBusy(busyBtns, true);
+        work.setProgress(null);
         setStatus(msg.converting);
-        btnConvert.disabled = true;
-        buildPdf()
+        return window.OftPdfWork.yieldUi()
+          .then(function () {
+            return buildPdf();
+          })
           .then(function (bytes) {
             resultBytes = bytes;
+            work.setProgress(90);
+            return work.showPreview(bytes).then(function () { return bytes; });
+          })
+          .then(function (bytes) {
+            work.setProgress(100);
             btnDownload.disabled = false;
             statsEl.textContent = msg.statsTpl
               .replace('{pages}', String(items.length))
+              .replace('{n}', String(items.length))
               .replace('{bytes}', formatBytes(bytes.length));
             statsEl.style.display = '';
             setStatus(msg.done);
@@ -499,9 +527,13 @@ export const renderImagesToPdfPage = (opts: {
           .catch(function () {
             setError(msg.encodeFail);
             setStatus('');
+            work.clearPreview();
           })
           .finally(function () {
+            work.setBusy(busyBtns, false);
+            work.hideProgress();
             btnConvert.disabled = false;
+            btnDownload.disabled = !resultBytes;
           });
       }
 

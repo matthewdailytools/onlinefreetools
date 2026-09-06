@@ -3082,7 +3082,7 @@
   {
     "slug": "images-to-pdf",
     "path": "/tools/images-to-pdf",
-    "updatedAt": "2026-09-03T23:45:43.415Z",
+    "updatedAt": "2026-09-06T08:01:59.395Z",
     "category": "image",
     "primaryTopic": "image-media",
     "secondaryTopics": [
@@ -3872,7 +3872,7 @@
   {
     "slug": "pdf-to-jpg",
     "path": "/tools/pdf-to-jpg",
-    "updatedAt": "2026-09-03T23:45:43.415Z",
+    "updatedAt": "2026-09-06T08:01:59.395Z",
     "category": "image",
     "primaryTopic": "pdf-docs",
     "secondaryTopics": [

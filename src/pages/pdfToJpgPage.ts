@@ -2,6 +2,7 @@
  * PDF 转 JPG 工具页：pdf.js 逐页栅格化为 JPEG；多页时 fflate 打 ZIP（纯客户端）。
  * slug: pdf-to-jpg
  * 规格：work-tasks/pdf-to-jpg/02-tool-info.md
+ * 转换完成后用画布预览各页 JPG（上一页/下一页），与下载件同一套 JPEG blob。
  */
 import type { SiteLang } from '../site/i18n';
 import { t, supportedLangs } from '../site/i18n';
@@ -17,6 +18,13 @@ import {
 	renderToolReferencesSection,
 	buildToolJsonLd,
 } from './site/toolContent';
+import {
+	pdfWorkUiClientScript,
+	pdfWorkUiCss,
+	pdfWorkUiLabels,
+	pdfWorkUiPreviewHtml,
+	pdfWorkUiProgressHtml,
+} from './site/pdfWorkUi';
 
 /** 非默认语言时为路径加语言前缀。 */
 const withLangPrefix = (lang: SiteLang, pathname: string, defaultLang: SiteLang) => {
@@ -78,10 +86,13 @@ export const renderPdfToJpgPage = (opts: {
 
 	const footerHtml = renderFooter({ lang: opts.lang });
 
+	/** 进度条 / 画布预览的共用文案（core i18n，十语已有）。 */
+	const pdfWorkLabels = pdfWorkUiLabels(opts.lang);
 	const extraHeadHtml = `
   <style>
     .tools-bar { gap: .5rem; }
     .pdf-to-jpg-meta { font-size: .85rem; color: #6c757d; }
+    ${pdfWorkUiCss()}
   </style>`;
 
 	const contentHtml = `
@@ -108,6 +119,8 @@ export const renderPdfToJpgPage = (opts: {
     <p id="pdfToJpgError" class="small text-danger mb-2" style="display:none;" role="alert"></p>
     <p id="pdfToJpgStatus" class="small text-muted mb-2" role="status"></p>
     <p id="pdfToJpgStats" class="small text-muted mb-3" style="display:none;"></p>
+    ${pdfWorkUiProgressHtml({ idPrefix: 'pdfToJpg', labels: pdfWorkLabels })}
+    ${pdfWorkUiPreviewHtml({ idPrefix: 'pdfToJpgJpg', labels: pdfWorkLabels })}
 
     <p class="tool-lead mb-4">${escapeHtml(description)}</p>`;
 
@@ -133,6 +146,7 @@ export const renderPdfToJpgPage = (opts: {
 	 * scale 默认 2；JPEG 质量 0.92；单页直出 JPG，多页 fflate ZIP。
 	 */
 	const extraBodyHtml = `
+  ${pdfWorkUiClientScript()}
   <script src="/vendor/pdf-lib/pdf-lib.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="/vendor/fflate/index.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
@@ -155,6 +169,24 @@ export const renderPdfToJpgPage = (opts: {
       var errEl = document.getElementById('pdfToJpgError');
       var statusEl = document.getElementById('pdfToJpgStatus');
       var statsEl = document.getElementById('pdfToJpgStats');
+      /** 进度条绑定（与 HTML id 前缀 pdfToJpg 一致；预览用另一套 JPG 画布）。 */
+      var work = window.OftPdfWork.bind('pdfToJpg');
+      /** 转换期间禁用的按钮（主按钮带 spinner）。 */
+      var busyBtns = [btnConvert, btnDownload, btnSample, btnClear];
+      /** JPG 预览区 DOM（id 前缀 pdfToJpgJpg，与 pdfWorkUiPreviewHtml 一致）。 */
+      var jpgWrap = document.getElementById('pdfToJpgJpgPreviewWrap');
+      var jpgCanvas = document.getElementById('pdfToJpgJpgCanvas');
+      var jpgPrev = document.getElementById('pdfToJpgJpgPrev');
+      var jpgNext = document.getElementById('pdfToJpgJpgNext');
+      var jpgPageInfo = document.getElementById('pdfToJpgJpgPageInfo');
+      /** 页码模板，含 {n} 与 {total}。 */
+      var jpgPageTpl = (jpgPageInfo && jpgPageInfo.getAttribute('data-page-tpl')) || 'Page {n} / {total}';
+      /** @type {Blob[]} 最近一次转换得到的 JPEG，供预览翻页。 */
+      var jpgBlobs = [];
+      /** 当前预览页（从 1 起）。 */
+      var jpgPage = 1;
+      /** 递增以丢弃过期的 canvas 绘制。 */
+      var jpgToken = 0;
 
       var msg = {
         empty: ${JSON.stringify(t(opts.lang, 'tool_pdf_to_jpg_empty'))},
@@ -212,12 +244,97 @@ export const renderPdfToJpgPage = (opts: {
         return typeof fflate !== 'undefined' && fflate && typeof fflate.zipSync === 'function';
       }
 
-      /** 清空转换结果。 */
+      /**
+       * 把当前 JPEG 画到预览 canvas。
+       * @returns {Promise<void>}
+       */
+      function paintJpgPreview() {
+        if (!jpgCanvas || !jpgBlobs.length) return Promise.resolve();
+        var token = ++jpgToken;
+        var blob = jpgBlobs[jpgPage - 1];
+        if (!blob) return Promise.resolve();
+        return (typeof createImageBitmap === 'function'
+          ? createImageBitmap(blob)
+          : new Promise(function (resolve, reject) {
+              var url = URL.createObjectURL(blob);
+              var img = new Image();
+              img.onload = function () {
+                URL.revokeObjectURL(url);
+                resolve(img);
+              };
+              img.onerror = function () {
+                URL.revokeObjectURL(url);
+                reject(new Error('jpeg'));
+              };
+              img.src = url;
+            })
+        ).then(function (bmp) {
+          if (token !== jpgToken) {
+            if (bmp && typeof bmp.close === 'function') bmp.close();
+            return;
+          }
+          jpgCanvas.width = bmp.width || bmp.naturalWidth;
+          jpgCanvas.height = bmp.height || bmp.naturalHeight;
+          var ctx = jpgCanvas.getContext('2d');
+          if (ctx) ctx.drawImage(bmp, 0, 0);
+          if (bmp && typeof bmp.close === 'function') bmp.close();
+        });
+      }
+
+      /** 刷新 JPG 预览页码与翻页按钮。 */
+      function syncJpgNav() {
+        var total = jpgBlobs.length;
+        if (jpgPageInfo) {
+          jpgPageInfo.textContent = jpgPageTpl.replace('{n}', String(total ? jpgPage : 0)).replace('{total}', String(total));
+        }
+        if (jpgPrev) jpgPrev.disabled = !(total > 0 && jpgPage > 1);
+        if (jpgNext) jpgNext.disabled = !(total > 0 && jpgPage < total);
+      }
+
+      /**
+       * 用转换得到的 JPEG 打开预览。
+       * @param {Blob[]} blobs
+       * @returns {Promise<void>}
+       */
+      function showJpgPreview(blobs) {
+        jpgBlobs = blobs || [];
+        jpgPage = 1;
+        if (!jpgWrap || !jpgBlobs.length) {
+          clearJpgPreview();
+          return Promise.resolve();
+        }
+        jpgWrap.hidden = false;
+        jpgWrap.classList.add('is-on');
+        syncJpgNav();
+        return paintJpgPreview();
+      }
+
+      /** 隐藏并清空 JPG 预览。 */
+      function clearJpgPreview() {
+        jpgToken += 1;
+        jpgBlobs = [];
+        jpgPage = 1;
+        if (jpgWrap) {
+          jpgWrap.hidden = true;
+          jpgWrap.classList.remove('is-on');
+        }
+        if (jpgCanvas) {
+          var ctx = jpgCanvas.getContext('2d');
+          if (ctx) ctx.clearRect(0, 0, jpgCanvas.width, jpgCanvas.height);
+          jpgCanvas.width = 0;
+          jpgCanvas.height = 0;
+        }
+        syncJpgNav();
+      }
+
+      /** 清空转换结果与 JPG 预览。 */
       function clearResult() {
         result = null;
         btnDownload.disabled = true;
         statsEl.style.display = 'none';
         statsEl.textContent = '';
+        clearJpgPreview();
+        work.hideProgress();
       }
 
       /** 刷新元信息与大文件软警告。 */
@@ -311,9 +428,10 @@ export const renderPdfToJpgPage = (opts: {
       /**
        * 逐页栅格化 PDF 为 JPG 数组。
        * @param {Uint8Array} bytes
+       * @param {function(number, number): void} [onProgress] 已完成页 / 总页
        * @returns {Promise<{ name: string, blob: Blob }[]>}
        */
-      function buildJpegs(bytes) {
+      function buildJpegs(bytes, onProgress) {
         return ensurePdfJs().then(function (pdfjsLib) {
           return pdfjsLib.getDocument({ data: bytes.slice(0) }).promise;
         }).then(function (pdfDoc) {
@@ -326,6 +444,7 @@ export const renderPdfToJpgPage = (opts: {
                 return pdfDoc.getPage(pageNum).then(function (page) {
                   return renderPageToJpeg(page).then(function (blob) {
                     parts.push({ name: 'page-' + pageNum + '.jpg', blob: blob });
+                    if (onProgress) onProgress(pageNum, numPages);
                   });
                 });
               });
@@ -335,7 +454,7 @@ export const renderPdfToJpgPage = (opts: {
         });
       }
 
-      /** 执行转换并启用下载。 */
+      /** 执行转换、打开 JPG 预览并启用下载。 */
       function convert() {
         setError('');
         clearResult();
@@ -343,34 +462,46 @@ export const renderPdfToJpgPage = (opts: {
           setError(msg.empty);
           return;
         }
+        work.setBusy(busyBtns, true);
+        work.setProgress(null);
         setStatus(msg.converting);
-        btnConvert.disabled = true;
-        buildJpegs(source.bytes)
+        return window.OftPdfWork.yieldUi()
+          .then(function () {
+            return buildJpegs(source.bytes, function (done, total) {
+              work.setProgress((done / total) * 80);
+            });
+          })
           .then(function (parts) {
             if (!parts.length) throw new Error('empty');
             if (parts.length === 1) {
               result = { blob: parts[0].blob, filename: parts[0].name };
-              return;
-            }
-            if (!hasFflate()) throw new Error('fflate');
-            var files = {};
-            return Promise.all(parts.map(function (p) {
-              return p.blob.arrayBuffer().then(function (buf) {
-                files[p.name] = new Uint8Array(buf);
+            } else {
+              if (!hasFflate()) throw new Error('fflate');
+              var files = {};
+              return Promise.all(parts.map(function (p) {
+                return p.blob.arrayBuffer().then(function (buf) {
+                  files[p.name] = new Uint8Array(buf);
+                });
+              })).then(function () {
+                var zipped = fflate.zipSync(files, { level: 1 });
+                result = { blob: new Blob([zipped], { type: 'application/zip' }), filename: 'pdf-pages.zip' };
+                return parts;
               });
-            })).then(function () {
-              var zipped = fflate.zipSync(files, { level: 1 });
-              result = { blob: new Blob([zipped], { type: 'application/zip' }), filename: 'pdf-pages.zip' };
-            });
+            }
+            return parts;
           })
-          .then(function () {
-            if (!result) return;
-            btnDownload.disabled = false;
-            statsEl.textContent = msg.statsTpl
-              .replace('{n}', String(source.pageCount))
-              .replace('{bytes}', formatBytes(result.blob.size));
-            statsEl.style.display = '';
-            setStatus(msg.done);
+          .then(function (parts) {
+            if (!result || !parts) return;
+            work.setProgress(90);
+            return showJpgPreview(parts.map(function (p) { return p.blob; })).then(function () {
+              work.setProgress(100);
+              btnDownload.disabled = false;
+              statsEl.textContent = msg.statsTpl
+                .replace('{n}', String(source.pageCount))
+                .replace('{bytes}', formatBytes(result.blob.size));
+              statsEl.style.display = '';
+              setStatus(msg.done);
+            });
           })
           .catch(function (err) {
             var s = String(err && err.message || '');
@@ -379,9 +510,13 @@ export const renderPdfToJpgPage = (opts: {
             else if (s === 'empty') setError(msg.convertFail);
             else setError(mapLoadError(err) === msg.loadFail ? msg.convertFail : mapLoadError(err));
             setStatus('');
+            clearJpgPreview();
           })
           .finally(function () {
+            work.setBusy(busyBtns, false);
+            work.hideProgress();
             btnConvert.disabled = false;
+            btnDownload.disabled = !result;
           });
       }
 
@@ -466,6 +601,22 @@ export const renderPdfToJpgPage = (opts: {
       btnDownload.addEventListener('click', downloadResult);
       btnSample.addEventListener('click', function () { loadSample(); });
       btnClear.addEventListener('click', function () { clearAll(true); });
+      if (jpgPrev) {
+        jpgPrev.addEventListener('click', function () {
+          if (jpgPage <= 1) return;
+          jpgPage -= 1;
+          syncJpgNav();
+          paintJpgPreview();
+        });
+      }
+      if (jpgNext) {
+        jpgNext.addEventListener('click', function () {
+          if (jpgPage >= jpgBlobs.length) return;
+          jpgPage += 1;
+          syncJpgNav();
+          paintJpgPreview();
+        });
+      }
 
       /** 进页自动跑样例，保证 Download 有真实 ZIP 结果。 */
       loadSample();
