@@ -44,10 +44,10 @@
 
 | 字段 | 值 |
 |---|---|
-| 最近更新 | 2026-09-04 |
-| 最近批次 | [excel Planner](./keywords/excel/2026-09-04-excel-keyword-planner.md)（软件品牌种子 1162 词；约七成 drop；0 absorb；场景 slug 现 **8** 页在 catalog：公式+发票/预算/工时；**N9–N12 已下线**；禁 online-excel 壳；**未 SERP**） |
-| 池内 `build` 候选 | Excel 公式/模板 8 slug 在 catalog；N9–N12 用户下线；YAML/XML P2 仍 defer |
-| 本周新建工具页 | Excel 场景保留 8 slug（嵌套 IF / IFS / IFNA / COUNTIF / 公式速查 / 发票·预算·工时表） |
+| 最近更新 | 2026-09-07 |
+| 最近批次 | [ocr-scan Planner](./keywords/ocr-scan/2026-09-07-ocr-scan-keyword-planner.md)（OCR+Scan **2643** 行；硬件/品牌约六七成 drop；**0 absorb 进现有无 OCR 页**；**4+1** 场景 slug defer；禁 online-ocr 壳；**未 SERP**） |
+| 池内 `build` 候选 | OCR 五条均为 `defer`+待 SERP，不占周进攻；Excel 公式/模板 8 slug 在 catalog |
+| 本周新建工具页 | 无（ocr-scan 仅分析进池） |
 | 阻塞 | 发版：`npm run deploy` / upload:r2；SSL 为 crt.sh CT 非握手 |
 
 ---
@@ -162,6 +162,7 @@
 | 2026-09-05 | PDF 工具能力复审后回写 N1–N22：19 项真实同意图作业已上线，词池由 `defer / implement_owed` 改为对应 slug 的 `absorb`；N12 证书 PKI/PAdES 签名、N17 profile-aware PDF/A 标准验证、N22 专有 DWG/矢量描图仍未实现，继续 `defer`，不得用可见哈希标记、五指标筛查或 ASCII DXF 文本导出冒充覆盖。 | PDF review-and-fix 能力边界校正 |
 | 2026-09-05 | 文本工具（subject=text）复审与修正：9 个 Prompt 工具 `localProcessing` 改为 false；Turnstile 绑定 hostname+action；html-entity/jwt/password/hreflang/SSRF 等实现边界校正；on-page-seo/robots/OG/hreflang/sitemap/meta-serp/meta-tag 纠正错误规范性结论；词池 text-compare 四行 live 工具由 `build` 回写 `absorb`；Prompt 簇十语污染清理进行中。 | Trust：工具不得教用户错误的 Google/RFC 规则；隐私标签须与可选 AI 上传一致。 |
 | 2026-09-05 | `text-compare` 五工具复审：保留既有 build/absorb 归属，不增 URL；修复 JSON 原型键与键序漏报、数组“集合”误称，Text Diff 空白选项、文本文件严格 UTF-8、Excel 公式/格式边界与 Word 后缀校验。 | SERP 对照显示竞品常见智能行匹配、公式审计、Word redline 等更强能力；本站以可验证的窄能力与失败边界提供 IG，不用文案冒充未实现功能。 |
+| 2026-09-07 | OCR/Scan Planner 三份 CSV（2643 行）归类：硬件/品牌/下载 drop；**禁止**把 OCR 词 absorb 进现有无 OCR 的抽文本/转 Word 页。独立场景 slug **defer**：`convert-a-jpg-to-text-with-ocr`、`extract-text-from-a-scanned-pdf`、`make-a-scanned-pdf-searchable`、`turn-a-scanned-pdf-into-word`；表图 CSV 后排。禁 `online-ocr` 壳。未 SERP → 0 周 build；未建 work-tasks。 | 用户要求分析 keywords/ocr-scan 并对照市场列出可做 slug 与长尾 slug |
 
 ---
 
