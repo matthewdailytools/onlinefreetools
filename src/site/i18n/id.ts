@@ -1065,7 +1065,7 @@ const id: SiteLangDict = {
   tool_batch_compress_pdfs_for_email_warn_large: 'Ada berkas lebih dari 40 MB — tab ini bisa kehabisan memori di baris itu.',
   tool_batch_convert_web_pages_to_jpg_advanced_label: 'Pengaturan lanjutan (opsional)',
   tool_batch_convert_web_pages_to_jpg_article:
-    'Tempel satu alamat halaman publik per baris, potret tiap halaman jadi JPEG pada lebar yang Anda pilih, lewati baris yang gagal, lalu unduh ZIP. Tiap URL diambil sekali lewat server dan tidak disimpan; gambar dibuat di tab ini. Ini tangkapan layar, bukan PDF A4.',
+    'Potret tiap URL publik jadi JPEG pada lebar yang Anda pilih (desktop 1280, tablet 768, atau ponsel 390). Seluruh halaman atau layar pertama, mutu JPEG, lalu ZIP. Raster untuk chat, tiket, dan tinjauan tata letak — bukan kertas A4. Tiap alamat diambil sekali dan tidak disimpan. Dokumen siap cetak: Ubah banyak halaman web jadi PDF.',
   tool_batch_convert_web_pages_to_jpg_capture_first: 'Layar pertama saja',
   tool_batch_convert_web_pages_to_jpg_capture_frame_title: 'Bingkai tangkapan tersembunyi',
   tool_batch_convert_web_pages_to_jpg_capture_full: 'Seluruh halaman',
@@ -1075,10 +1075,9 @@ const id: SiteLangDict = {
   tool_batch_convert_web_pages_to_jpg_col_status: 'Status',
   tool_batch_convert_web_pages_to_jpg_col_url: 'URL',
   tool_batch_convert_web_pages_to_jpg_convert: 'Ubah semua',
-  tool_batch_convert_web_pages_to_jpg_desc:
-    'Ubah beberapa halaman web jadi JPG dari daftar URL, lalu unduh ZIP. Tiap alamat diambil sekali dan tidak disimpan.',
+  tool_batch_convert_web_pages_to_jpg_desc: 'Tangkapan daftar URL jadi JPEG di desktop, tablet, atau ponsel — ZIP; bukan PDF A4.',
   tool_batch_convert_web_pages_to_jpg_description:
-    'Ubah beberapa halaman web jadi JPG dari daftar URL (satu baris pun cukup). Pilih lebar layar dan mutu JPEG, seluruh halaman atau layar pertama, lalu unduh ZIP. Langkah: tempel URL, Ubah semua, Unduh ZIP. Contoh: dua halaman bantuan jadi dua JPEG. Tiap URL diminta sekali dan tidak disimpan.',
+    'Ubah beberapa halaman web jadi JPG: tangkap daftar URL di lebar desktop, tablet, atau ponsel (satu baris pun cukup). Seluruh halaman atau layar pertama, mutu JPEG, Unduh ZIP. Langkah: tempel URL, Ubah semua, Unduh ZIP. Contoh: dua tiket jadi dua JPEG. Diambil sekali, tidak disimpan.',
   tool_batch_convert_web_pages_to_jpg_download_zip: 'Unduh ZIP',
   tool_batch_convert_web_pages_to_jpg_empty: 'Tempel setidaknya satu URL halaman dulu.',
   tool_batch_convert_web_pages_to_jpg_err_convert: 'Halaman ini gagal jadi JPEG. Dilewati.',
@@ -1159,8 +1158,9 @@ const id: SiteLangDict = {
   tool_batch_convert_web_pages_to_jpg_url_hint:
     'Satu URL http(s) publik per baris, paling banyak 10. Kami ambil tiap halaman sekali dan menulis ulang CSS/gambar. Skrip dibuang sebelum tangkapan.',
   tool_batch_convert_web_pages_to_jpg_url_label: 'URL halaman (satu per baris)',
-  tool_batch_convert_web_pages_to_jpg_url_placeholder: 'https://example.com/help/getting-started',
-  tool_batch_convert_web_pages_to_jpg_usecase_1: 'Jatuhkan beberapa URL bantuan atau tiket dan dapatkan JPEG untuk chat tanpa membuka tiap tab.',
+  tool_batch_convert_web_pages_to_jpg_url_placeholder: 'https://example.com/tickets/chat-layout',
+  tool_batch_convert_web_pages_to_jpg_usecase_1:
+    'Jatuhkan beberapa URL tiket atau bantuan dan dapatkan JPEG untuk chat — raster untuk dilampirkan, bukan buku saku cetak.',
   tool_batch_convert_web_pages_to_jpg_usecase_2:
     'Potret halaman publik yang sama di 390 (ponsel) dan 1280 (desktop) untuk membandingkan layar pertama sebelum tinjauan.',
   tool_batch_convert_web_pages_to_jpg_usecase_3:
@@ -1173,17 +1173,16 @@ const id: SiteLangDict = {
   tool_batch_convert_web_pages_to_jpg_wait_hint: 'Detik tambahan setelah gambar mulai dimuat. Baku 1. Naikkan jika JPEG masih kotak kosong.',
   tool_batch_convert_web_pages_to_jpg_wait_label: 'Jeda muat (detik)',
   tool_batch_convert_web_pages_to_pdf_article:
-    'Tempel satu alamat halaman publik per baris, ubah tiap halaman jadi PDF A4 di tab ini, lewati baris yang gagal, unduh ZIP. Setiap URL diambil sekali lewat server dan tidak disimpan; konversi tetap di perangkat Anda.',
+    'Tempel URL publik; tiap halaman jadi PDF A4 potret yang dipotong untuk dicetak dan dibaca per halaman — bukan JPEG tak berujung. Baris gagal dilewati; yang berhasil masuk ZIP. Tiap alamat diambil sekali dan tidak disimpan. Butuh tangkapan chat atau bandingkan ponsel vs desktop? Ubah beberapa halaman web jadi JPG.',
   tool_batch_convert_web_pages_to_pdf_capture_frame_title: 'Bingkai tangkapan halaman tersembunyi',
   tool_batch_convert_web_pages_to_pdf_clear: 'Hapus',
   tool_batch_convert_web_pages_to_pdf_col_file: 'Berkas',
   tool_batch_convert_web_pages_to_pdf_col_status: 'Status',
   tool_batch_convert_web_pages_to_pdf_col_url: 'URL',
   tool_batch_convert_web_pages_to_pdf_convert: 'Konversi semua',
-  tool_batch_convert_web_pages_to_pdf_desc:
-    'Ubah banyak halaman web jadi PDF dari daftar URL lalu unduh ZIP; tiap alamat diambil sekali dan tidak disimpan.',
+  tool_batch_convert_web_pages_to_pdf_desc: 'Simpan daftar URL sebagai PDF A4 potret siap cetak — ZIP; bukan tangkapan halaman web.',
   tool_batch_convert_web_pages_to_pdf_description:
-    'Ubah banyak halaman web jadi PDF: tempel satu URL https per baris (maksimal 10), buat PDF A4 di tab ini, lewati yang gagal, unduh ZIP. Langkah: tempel daftar, klik Konversi semua, cek tabel, unduh. Contoh: dua halaman bantuan dan kebijakan sampel jadi dua PDF dalam satu ZIP. Tiap URL diminta sekali ke server dan tidak disimpan; konversi tetap di perangkat. Kalau hanya cuplikan HTML, pakai Ubah HTML jadi PDF.',
+    'Ubah banyak halaman web jadi PDF: daftar URL keluar sebagai A4 potret untuk dicetak dan dibolak-balik — bukan JPEG tinggi. Langkah: tempel daftar, Konversi semua, Unduh ZIP. Contoh: dua kebijakan jadi dua PDF. Tiap URL diambil sekali dan tidak disimpan. Cuplikan HTML: Konversi HTML ke PDF.',
   tool_batch_convert_web_pages_to_pdf_download_zip: 'Unduh ZIP',
   tool_batch_convert_web_pages_to_pdf_empty: 'Tempel setidaknya satu URL halaman dulu.',
   tool_batch_convert_web_pages_to_pdf_err_convert: 'Halaman ini tidak bisa jadi PDF. Dilewati.',
@@ -1193,30 +1192,38 @@ const id: SiteLangDict = {
   tool_batch_convert_web_pages_to_pdf_err_url: 'URL itu gagal dimuat. Periksa alamatnya, atau situsnya memblokir pengambilan.',
   tool_batch_convert_web_pages_to_pdf_err_url_empty: 'Baris itu bukan URL http(s) yang sah. Dilewati.',
   tool_batch_convert_web_pages_to_pdf_example:
-    'Muat contoh mengisi dua URL example.com, membuat dua PDF dari HTML lokal (tanpa mengunjungi situs hidup), dan mengaktifkan Unduh ZIP. Konversi semua yang mengambil alamat yang Anda tempel.',
+    'Muat contoh mengisi bantuan dan kebijakan example.com, membuat dua PDF A4 lokal dengan putus halaman CSS (tanpa kunjungi situs hidup), lalu mengaktifkan Unduh ZIP. Konversi semua mengambil alamat yang Anda tempel. CSS cetak mengubah titik potong.',
   tool_batch_convert_web_pages_to_pdf_example_title: 'Contoh',
   tool_batch_convert_web_pages_to_pdf_faq_a1:
-    'Konversi berjalan di tab ini. Saat mengubah daftar URL, kami mengirim tiap alamat ke server sekali untuk mengambil HTML; halaman tidak disimpan. PDF dibuat di perangkat Anda dan ZIP dirakit di sini.',
+    'Kertas selalu A4 potret. Halaman panjang dipotong aturan page-break CSS (plus cadangan lama). Bukan selembar tak berujung. Tangkapan panjang: Ubah beberapa halaman web jadi JPG.',
   tool_batch_convert_web_pages_to_pdf_faq_a2:
-    'Halaman ini untuk daftar URL (banyak halaman jadi PDF lalu ZIP). Untuk satu cuplikan HTML atau satu alamat plus pratinjau, pakai Ubah HTML jadi PDF.',
+    'Saudara JPG meraster JPEG per URL di 1280 / 768 / 390, dengan mutu serta halaman penuh atau layar pertama. Di sini tiap URL diiris jadi lembar A4 untuk dicetak. Daftar sama, hasil beda.',
   tool_batch_convert_web_pages_to_pdf_faq_a3:
-    'Tidak. Skrip dihapus. Dinding login, paywall, dan aplikasi yang dirender JavaScript sering tidak cocok dengan situs hidup. CSS cetak juga bisa berbeda.',
+    'Halaman ini untuk daftar URL: banyak halaman publik → PDF A4 terpisah → ZIP. Cuplikan HTML plus pratinjau: Konversi HTML ke PDF.',
   tool_batch_convert_web_pages_to_pdf_faq_a4:
-    'Baris yang berhasil jadi PDF terpisah dalam satu ZIP. Kami tidak menggabungkannya jadi satu berkas — setelah unduh, pakai Gabungkan berkas jadi satu PDF jika perlu.',
-  tool_batch_convert_web_pages_to_pdf_faq_a5: 'Hingga 10 URL http(s). Sisanya diabaikan. Baris gagal dilewati agar batch tetap jalan.',
-  tool_batch_convert_web_pages_to_pdf_faq_q1: 'Apakah halaman saya diunggah dan disimpan di server?',
-  tool_batch_convert_web_pages_to_pdf_faq_q2: 'Apa bedanya dengan Ubah HTML jadi PDF?',
-  tool_batch_convert_web_pages_to_pdf_faq_q3: 'Apakah situs ber-login atau penuh JavaScript sama dengan yang live?',
-  tool_batch_convert_web_pages_to_pdf_faq_q4: 'Hasilnya satu PDF atau ZIP berisi banyak berkas?',
-  tool_batch_convert_web_pages_to_pdf_faq_q5: 'Berapa URL yang bisa dikonversi sekaligus?',
+    'Konversi berjalan di tab ini. Tiap alamat dikirim sekali ke server untuk HTML; halaman tidak disimpan. PDF dibuat di perangkat, ZIP dirakit di sini.',
+  tool_batch_convert_web_pages_to_pdf_faq_a5:
+    'Baris yang berhasil jadi PDF terpisah dalam satu ZIP. Kami tidak menggabungkannya — setelah unduh, pakai Gabungkan berkas jadi satu PDF.',
+  tool_batch_convert_web_pages_to_pdf_faq_a6:
+    'Tidak. Skrip dihapus. Dinding login, paywall, dan aplikasi JavaScript sering tidak cocok dengan situs hidup. CSS cetak juga bisa menggeser potongan.',
+  tool_batch_convert_web_pages_to_pdf_faq_q1: 'Ukuran kertas apa? Apakah jadi satu halaman super panjang?',
+  tool_batch_convert_web_pages_to_pdf_faq_q2: 'Apa bedanya dengan mengubah beberapa halaman web jadi JPG?',
+  tool_batch_convert_web_pages_to_pdf_faq_q3: 'Apa bedanya dengan Konversi HTML ke PDF?',
+  tool_batch_convert_web_pages_to_pdf_faq_q4: 'Apakah halaman saya diunggah dan disimpan di server?',
+  tool_batch_convert_web_pages_to_pdf_faq_q5: 'Hasilnya satu PDF atau ZIP berisi banyak berkas?',
+  tool_batch_convert_web_pages_to_pdf_faq_q6: 'Apakah situs ber-login atau penuh JavaScript sama dengan yang live?',
   tool_batch_convert_web_pages_to_pdf_file_count_tpl: '{n} URL dalam antrean',
-  tool_batch_convert_web_pages_to_pdf_how_body: 'Tempel daftar halaman publik, ubah satu per satu, lalu bawa ZIP berisi PDF yang berhasil.',
-  tool_batch_convert_web_pages_to_pdf_how_item_1: 'Tempel satu URL https per baris (halaman bantuan atau kebijakan cocok).',
-  tool_batch_convert_web_pages_to_pdf_how_item_2: 'Biarkan jeda muat sekitar 1 detik kecuali gambar di PDF kosong.',
-  tool_batch_convert_web_pages_to_pdf_how_item_3: 'Tekan Konversi semua. Tiap URL publik diambil sekali; yang gagal dilewati.',
-  tool_batch_convert_web_pages_to_pdf_how_item_4: 'Hanya cuplikan HTML, bukan daftar? Pakai Ubah HTML jadi PDF.',
+  tool_batch_convert_web_pages_to_pdf_how_body:
+    'Tempel URL publik yang ingin diarsip atau dicetak, ubah jadi PDF A4 potret, lalu bawa ZIP yang berhasil.',
+  tool_batch_convert_web_pages_to_pdf_how_item_1: 'Tempel satu URL https per baris. Kebijakan, bantuan, dan dokumen publik yang akan dicetak cocok.',
+  tool_batch_convert_web_pages_to_pdf_how_item_2: 'Biarkan jeda muat sekitar 1 detik kecuali gambar di selembar A4 kosong.',
+  tool_batch_convert_web_pages_to_pdf_how_item_3:
+    'Tekan Konversi semua. Tiap URL publik diambil sekali dan dipaginasi A4 potret (CSS page-break bisa memotong bagian). Yang gagal dilewati.',
+  tool_batch_convert_web_pages_to_pdf_how_item_4:
+    'Cuplikan HTML plus pratinjau? Konversi HTML ke PDF. Tangkapan lebar layar, bukan kertas? Ubah beberapa halaman web jadi JPG.',
   tool_batch_convert_web_pages_to_pdf_how_item_5:
-    'Unduh ZIP setelah minimal satu baris berhasil. Klik Muat contoh untuk dua halaman lokal; panel progres tampil saat konversi.',
+    'Unduh ZIP setelah minimal satu baris berhasil. Muat contoh menguji dua halaman A4 lokal dengan putus CSS.',
+  tool_batch_convert_web_pages_to_pdf_how_item_6: 'Untuk menjilid beberapa PDF jadi satu, unduh dulu lalu Gabungkan berkas jadi satu PDF.',
   tool_batch_convert_web_pages_to_pdf_how_title: 'Cara kerja',
   tool_batch_convert_web_pages_to_pdf_hud_elapsed_tpl: '{s} dtk berjalan',
   tool_batch_convert_web_pages_to_pdf_hud_pct_tpl: '{pct}%',
@@ -1225,33 +1232,41 @@ const id: SiteLangDict = {
   tool_batch_convert_web_pages_to_pdf_hud_step_wait: 'Gambar',
   tool_batch_convert_web_pages_to_pdf_hud_title: 'Progres batch',
   tool_batch_convert_web_pages_to_pdf_progress_tpl: '{i} / {total}',
-  tool_batch_convert_web_pages_to_pdf_rules_body: 'Satu URL http(s) per baris, maksimal 10. Konversi berurutan. Gagal dilewati. PDF sukses masuk ZIP.',
-  tool_batch_convert_web_pages_to_pdf_rules_item_1: 'Tiap URL dikirim sekali ke server untuk HTML dan tidak disimpan. PDF dibuat di tab ini.',
-  tool_batch_convert_web_pages_to_pdf_rules_item_2: 'Jaringan privat, login, dan halaman hilang hanya menggagalkan baris itu. Sisanya lanjut.',
-  tool_batch_convert_web_pages_to_pdf_rules_item_3: 'Nama ganda di ZIP menjadi name (2).pdf. Skrip dibuang sebelum tangkapan.',
-  tool_batch_convert_web_pages_to_pdf_rules_item_4: 'Ini bukan perayap seluruh situs. Tempel URL yang sudah Anda punya.',
+  tool_batch_convert_web_pages_to_pdf_rules_body:
+    'Satu URL http(s) per baris, maksimal 10. Keluaran A4 potret dengan putus CSS, bukan JPEG halaman penuh. Konversi berurutan. Gagal dilewati. PDF sukses masuk ZIP.',
+  tool_batch_convert_web_pages_to_pdf_rules_item_1:
+    'Tiap URL dikirim sekali ke server untuk HTML dan tidak disimpan. PDF dibuat di tab ini pada kertas A4 potret.',
+  tool_batch_convert_web_pages_to_pdf_rules_item_2:
+    'Paginasi mengikuti CSS page-break (plus cadangan lama). Gaya cetak bisa beda dari layar. Halaman sangat tinggi dibatasi agar tab tidak mogok.',
+  tool_batch_convert_web_pages_to_pdf_rules_item_3:
+    'Jaringan privat, login, dan halaman hilang hanya menggagalkan baris itu. Nama duplikat di ZIP jadi name (2).pdf. Skrip dihapus sebelum tangkapan.',
+  tool_batch_convert_web_pages_to_pdf_rules_item_4: 'Bukan crawler seluruh situs dan bukan alat screenshot. Tempel URL publik yang sudah Anda miliki.',
+  tool_batch_convert_web_pages_to_pdf_rules_item_5:
+    'Bandingkan Ubah beberapa halaman web jadi JPG: JPEG di viewport. Bandingkan Konversi HTML ke PDF: tempelan HTML. Bandingkan Gabungkan berkas jadi satu PDF: di sini tidak digabung.',
   tool_batch_convert_web_pages_to_pdf_rules_title: 'Aturan yang perlu diketahui',
   tool_batch_convert_web_pages_to_pdf_sample: 'Muat contoh',
   tool_batch_convert_web_pages_to_pdf_status_converting: 'Menyusun PDF… tab ini bisa terhenti beberapa detik',
-  tool_batch_convert_web_pages_to_pdf_status_done: 'Batch selesai — cek tabel, lalu unduh ZIP.',
+  tool_batch_convert_web_pages_to_pdf_status_done: 'Batch selesai — cek tabel lalu unduh ZIP.',
   tool_batch_convert_web_pages_to_pdf_status_fetching: 'Mengambil HTML halaman…',
   tool_batch_convert_web_pages_to_pdf_status_ok: 'PDF siap',
-  tool_batch_convert_web_pages_to_pdf_status_queued: 'Antri',
+  tool_batch_convert_web_pages_to_pdf_status_queued: 'Dalam antrean',
   tool_batch_convert_web_pages_to_pdf_status_skip: 'Dilewati',
   tool_batch_convert_web_pages_to_pdf_status_waiting: 'Menunggu gambar selesai…',
   tool_batch_convert_web_pages_to_pdf_status_working: 'Mengonversi batch…',
   tool_batch_convert_web_pages_to_pdf_summary_tpl: '{ok} siap · {skip} dilewati',
   tool_batch_convert_web_pages_to_pdf_title: 'Ubah banyak halaman web jadi PDF',
   tool_batch_convert_web_pages_to_pdf_url_hint:
-    'Satu URL http(s) publik per baris, hingga 10. Kami mengambil tiap halaman sekali dan menulis ulang URL CSS/gambar. Skrip dibuang sebelum PDF.',
+    'Satu URL http(s) publik per baris, hingga 10. Kami mengambil tiap halaman sekali dan menulis ulang CSS serta gambar. Skrip dihapus; hasilnya A4 potret dengan putus CSS.',
   tool_batch_convert_web_pages_to_pdf_url_label: 'URL halaman (satu per baris)',
   tool_batch_convert_web_pages_to_pdf_url_placeholder: 'https://example.com/help/getting-started',
-  tool_batch_convert_web_pages_to_pdf_usecase_1: 'Simpan beberapa halaman bantuan atau dokumen sebagai PDF tanpa membuka satu per satu.',
-  tool_batch_convert_web_pages_to_pdf_usecase_2: 'Arsipkan daftar URL kebijakan publik ke ZIP untuk dibaca nanti.',
-  tool_batch_convert_web_pages_to_pdf_usecase_3: 'Tempel HTML tetap di Ubah HTML jadi PDF; pakai halaman ini saat tautan sudah banyak.',
+  tool_batch_convert_web_pages_to_pdf_usecase_1:
+    'Sebelum rapat, arsipkan beberapa bantuan atau dokumen publik sebagai PDF A4 siap cetak, tanpa membuka Cetak di setiap tab.',
+  tool_batch_convert_web_pages_to_pdf_usecase_2: 'Kemas kebijakan, syarat, atau pengumuman ke ZIP untuk dibaca nanti atau dilampirkan email.',
+  tool_batch_convert_web_pages_to_pdf_usecase_3:
+    'Tempel HTML tetap di Konversi HTML ke PDF. Tangkapan chat dan banding ponsel/desktop di JPG. Di sini arsip cetak dari daftar URL.',
   tool_batch_convert_web_pages_to_pdf_usecases_title: 'Cocok untuk',
   tool_batch_convert_web_pages_to_pdf_wait_hint:
-    'Detik tambahan setelah gambar mulai dimuat. Bawaan 1. Naikkan jika PDF menampilkan kotak gambar kosong.',
+    'Detik ekstra setelah gambar mulai dimuat di tiap lembar A4. Bawaan 1. Naikkan jika PDF menampilkan kotak kosong.',
   tool_batch_convert_web_pages_to_pdf_wait_label: 'Tunggu muat (detik)',
   tool_batch_watermark_product_photos_anchor_bc: 'Bawah',
   tool_batch_watermark_product_photos_anchor_bl: 'Kiri bawah',

@@ -7,7 +7,7 @@ import type { SiteLangDict } from '../../../types';
 const fr: SiteLangDict = {
 	tool_batch_convert_web_pages_to_jpg_advanced_label: 'Paramètres avancés (facultatif)',
 	tool_batch_convert_web_pages_to_jpg_article:
-		'Collez une adresse publique par ligne, capturez chaque page en JPEG à la largeur choisie, ignorez les lignes en échec puis téléchargez un ZIP. Chaque URL est récupérée une fois via le serveur et n’est pas stockée ; l’image se construit dans cet onglet. C’est une capture, pas un PDF A4.',
+		'Capturez chaque URL publique en JPEG à la largeur choisie (bureau 1280, tablette 768 ou téléphone 390). Page entière ou premier écran, qualité JPEG, puis un ZIP. Raster pour le chat, les tickets et la relecture de maquette — pas du papier A4. Chaque adresse est demandée une fois et n’est pas stockée. Documents imprimables : Convertir plusieurs pages web en PDF.',
 	tool_batch_convert_web_pages_to_jpg_capture_first: 'Premier écran seulement',
 	tool_batch_convert_web_pages_to_jpg_capture_frame_title: 'Cadre de capture masqué',
 	tool_batch_convert_web_pages_to_jpg_capture_full: 'Page entière',
@@ -18,9 +18,9 @@ const fr: SiteLangDict = {
 	tool_batch_convert_web_pages_to_jpg_col_url: 'URL',
 	tool_batch_convert_web_pages_to_jpg_convert: 'Tout convertir',
 	tool_batch_convert_web_pages_to_jpg_desc:
-		'Convertissez plusieurs pages web en JPG depuis une liste d’URLs, puis téléchargez un ZIP. Chaque adresse est récupérée une fois et n’est pas stockée.',
+		'Capturez une liste d’URLs en JPEG bureau, tablette ou téléphone — ZIP ; ce n’est pas un PDF A4.',
 	tool_batch_convert_web_pages_to_jpg_description:
-		'Convertir plusieurs pages web en JPG depuis une liste d’URLs (une ligne suffit). Largeur et qualité JPEG, page entière ou premier écran, puis un ZIP. Étapes : coller les URLs, Tout convertir, Télécharger le ZIP. Exemple : deux pages d’aide deviennent deux JPEG. Chaque URL est demandée une fois et n’est pas enregistrée.',
+		'Convertir plusieurs pages web en JPG : capturez la liste d’URLs en largeur bureau, tablette ou téléphone (une ligne suffit). Page entière ou premier écran, qualité JPEG, Télécharger le ZIP. Étapes : coller les URLs, Tout convertir, Télécharger le ZIP. Exemple : deux tickets deviennent deux JPEG. Demandée une fois, non stockée.',
 	tool_batch_convert_web_pages_to_jpg_download_zip: 'Télécharger le ZIP',
 	tool_batch_convert_web_pages_to_jpg_empty: 'Collez d’abord au moins une URL de page.',
 	tool_batch_convert_web_pages_to_jpg_err_convert: 'Cette page n’a pas pu devenir un JPEG. Ignorée.',
@@ -101,8 +101,8 @@ const fr: SiteLangDict = {
 	tool_batch_convert_web_pages_to_jpg_url_hint:
 		'Une URL http(s) publique par ligne, jusqu’à 10. Nous récupérons chaque page une fois et réécrivons CSS et images. Les scripts sont retirés avant la capture.',
 	tool_batch_convert_web_pages_to_jpg_url_label: 'URLs de page (une par ligne)',
-	tool_batch_convert_web_pages_to_jpg_url_placeholder: 'https://example.com/help/getting-started',
-	tool_batch_convert_web_pages_to_jpg_usecase_1: 'Déposez plusieurs URLs d’aide ou de tickets et obtenez des JPEG pour le chat sans ouvrir chaque onglet.',
+	tool_batch_convert_web_pages_to_jpg_url_placeholder: 'https://example.com/tickets/chat-layout',
+	tool_batch_convert_web_pages_to_jpg_usecase_1: 'Déposez plusieurs URLs de tickets ou d’aide et obtenez des JPEG pour le chat — un raster à joindre, pas un livret à imprimer.',
 	tool_batch_convert_web_pages_to_jpg_usecase_2: 'Capturez la même page publique en 390 (téléphone) et 1280 (bureau) pour comparer le premier écran avant une relecture.',
 	tool_batch_convert_web_pages_to_jpg_usecase_3: 'Gardez les PDF A4 d’archive sur Convertir plusieurs pages web en PDF ; utilisez cette page pour des fichiers image depuis une liste d’URLs.',
 	tool_batch_convert_web_pages_to_jpg_usecases_title: 'Bons usages',

@@ -8,7 +8,7 @@ import type { SiteLangDict } from '../../../types';
 const en: SiteLangDict = {
 	tool_batch_convert_web_pages_to_jpg_advanced_label: 'Advanced settings (optional)',
 	tool_batch_convert_web_pages_to_jpg_article:
-		'Paste one public page URL per line, capture each page as a JPEG at a chosen viewport in this tab, skip rows that fail, then download a ZIP. Each address is fetched once through our server and is not stored; the JPEG is built in the tab. This is a screenshot, not an A4 PDF.',
+		'Capture each public URL as a JPEG screenshot at a width you pick (desktop 1280, tablet 768, or phone 390). Choose full-page scroll or first screen, and JPEG quality, then take a ZIP of the images. This is a raster for chat, tickets, and layout review — not A4 print pages. Each address is fetched once through our server and is not stored. Need printable documents? Use Batch convert web pages to PDF.',
 	tool_batch_convert_web_pages_to_jpg_capture_first: 'First screen',
 	tool_batch_convert_web_pages_to_jpg_capture_frame_title: 'Hidden page capture frame',
 	tool_batch_convert_web_pages_to_jpg_capture_full: 'Full page',
@@ -19,9 +19,9 @@ const en: SiteLangDict = {
 	tool_batch_convert_web_pages_to_jpg_col_url: 'URL',
 	tool_batch_convert_web_pages_to_jpg_convert: 'Convert all',
 	tool_batch_convert_web_pages_to_jpg_desc:
-		'Batch convert web pages to JPG from a URL list — ZIP download; each URL is fetched once and not stored.',
+		'Screenshot a URL list to JPEG at desktop, tablet, or phone width — ZIP; not an A4 PDF.',
 	tool_batch_convert_web_pages_to_jpg_description:
-		'Batch convert web pages to JPG from a URL list (one line = webpage to jpg). Pick viewport and JPEG quality, full page or first screen, then download a ZIP. Steps: paste URLs, Convert all, Download ZIP. Example: two help pages become two JPEGs. Each URL is fetched once and is not stored.',
+		'Batch convert web pages to JPG: screenshot a URL list at desktop, tablet, or phone width (one line = webpage to jpg). Full page or first screen, pick JPEG quality, Download ZIP. Steps: paste URLs, Convert all, Download ZIP. Example: two ticket links become two JPEGs. Fetched once, not stored.',
 	tool_batch_convert_web_pages_to_jpg_download_zip: 'Download ZIP',
 	tool_batch_convert_web_pages_to_jpg_empty: 'Paste at least one page URL first.',
 	tool_batch_convert_web_pages_to_jpg_err_convert: 'This page could not be turned into a JPEG. Skipped.',
@@ -31,7 +31,7 @@ const en: SiteLangDict = {
 	tool_batch_convert_web_pages_to_jpg_err_url: 'Could not load that URL. Check the address, or the site may block fetches.',
 	tool_batch_convert_web_pages_to_jpg_err_url_empty: 'That line is not a valid http(s) page URL. Skipped.',
 	tool_batch_convert_web_pages_to_jpg_example:
-		'Load sample fills two example.com URLs, builds two local sample pages into JPEGs without fetching the live site, and enables Download ZIP. Convert all fetches the addresses you pasted. Viewport, quality, and full page vs first screen change the pixels in those files.',
+		'Load sample fills a ticket-layout URL and a mobile-hero URL, builds two local screenshots (phone 390 turns the header blue; desktop 1280 keeps it dark) without fetching the live site, and enables Download ZIP. Convert all fetches the addresses you pasted. Viewport, quality, and full page vs first screen change the pixels.',
 	tool_batch_convert_web_pages_to_jpg_example_title: 'Example',
 	tool_batch_convert_web_pages_to_jpg_faq_a1:
 		'Conversion runs in this tab. If you convert a URL list, we send each address to our server once so it can fetch the HTML; we do not store the pages. The JPEGs are built in your browser and packed into a ZIP here.',
@@ -53,8 +53,8 @@ const en: SiteLangDict = {
 	tool_batch_convert_web_pages_to_jpg_faq_q6: 'What do viewport, JPEG quality, and first screen change?',
 	tool_batch_convert_web_pages_to_jpg_file_count_tpl: '{n} URLs in the queue',
 	tool_batch_convert_web_pages_to_jpg_how_body:
-		'Paste a URL list of public pages, press Convert all (desktop 1280, 85% JPEG, full page by default), then download a ZIP of the images that succeeded.',
-	tool_batch_convert_web_pages_to_jpg_how_item_1: 'Paste one https URL per line (help-center or ticket links work well). One line is enough for webpage to jpg / url to jpg.',
+		'Paste URLs you would screenshot for chat or a layout review, press Convert all (desktop 1280, 85% JPEG, full page by default), then download a ZIP of the images that succeeded.',
+	tool_batch_convert_web_pages_to_jpg_how_item_1: 'Paste one https URL per line (ticket links and public help heroes work well). One line is enough for webpage to jpg / url to jpg.',
 	tool_batch_convert_web_pages_to_jpg_how_item_2: 'Press Convert all. Defaults are desktop 1280, 85% JPEG, and full page. Each public URL is fetched once; failed rows skip.',
 	tool_batch_convert_web_pages_to_jpg_how_item_3: 'Need phone layout, first screen only, or more wait for blank images? Open Advanced settings for viewport, JPEG quality, capture, and Load wait.',
 	tool_batch_convert_web_pages_to_jpg_how_item_4: 'Need printable A4 files instead of screenshots? Use Batch convert web pages to PDF. Already have a PDF file? Use PDF to JPG.',
@@ -100,10 +100,10 @@ const en: SiteLangDict = {
 	tool_batch_convert_web_pages_to_jpg_summary_tpl: '{ok} ready · {skip} skipped',
 	tool_batch_convert_web_pages_to_jpg_title: 'Batch convert web pages to JPG',
 	tool_batch_convert_web_pages_to_jpg_url_hint:
-		'One public http(s) URL per line, up to 10. We fetch each page once and rewrite CSS/image URLs. Scripts are removed before the JPEG capture.',
+		'One public http(s) URL per line, up to 10. We fetch each page once and rewrite CSS/image URLs. Scripts are removed before the JPEG capture. Layout follows the viewport you pick.',
 	tool_batch_convert_web_pages_to_jpg_url_label: 'Page URLs (one per line)',
-	tool_batch_convert_web_pages_to_jpg_url_placeholder: 'https://example.com/help/getting-started',
-	tool_batch_convert_web_pages_to_jpg_usecase_1: 'Drop several help-center or ticket URLs and get JPEG screenshots to paste into chat without opening each tab.',
+	tool_batch_convert_web_pages_to_jpg_url_placeholder: 'https://example.com/tickets/chat-layout',
+	tool_batch_convert_web_pages_to_jpg_usecase_1: 'Drop several ticket or help URLs and get JPEG screenshots to paste into chat — a raster you can attach, not a printable booklet.',
 	tool_batch_convert_web_pages_to_jpg_usecase_2: 'Capture the same public page at phone 390 and desktop 1280 to compare the first screen before a review.',
 	tool_batch_convert_web_pages_to_jpg_usecase_3: 'Keep A4 archival PDFs on Batch convert web pages to PDF; use this page when you need image files from a URL list.',
 	tool_batch_convert_web_pages_to_jpg_usecases_title: 'Good fits',

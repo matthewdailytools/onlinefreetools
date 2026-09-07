@@ -7,7 +7,7 @@ import type { SiteLangDict } from '../../../types';
 const de: SiteLangDict = {
 	tool_batch_convert_web_pages_to_jpg_advanced_label: 'Erweiterte Einstellungen (optional)',
 	tool_batch_convert_web_pages_to_jpg_article:
-		'Fügen Sie pro Zeile eine öffentliche Adresse ein, erfassen Sie jede Seite als JPEG in der gewählten Breite, überspringen Sie Fehlzeilen und laden Sie ein ZIP. Jede URL wird einmal über den Server geholt und nicht gespeichert; das Bild entsteht in diesem Tab. Das ist ein Screenshot, kein A4-PDF.',
+		'Erfassen Sie jede öffentliche URL als JPEG in der Breite, die Sie wählen (Desktop 1280, Tablet 768 oder Handy 390). Ganze Seite oder erster Bildschirm, JPEG-Qualität, dann ein ZIP der Bilder. Raster für Chat, Tickets und Layout-Review — kein A4-Druck. Jede Adresse wird einmal geholt und nicht gespeichert. Druckbare Dokumente: Mehrere Webseiten als PDF speichern.',
 	tool_batch_convert_web_pages_to_jpg_capture_first: 'Nur der erste Bildschirm',
 	tool_batch_convert_web_pages_to_jpg_capture_frame_title: 'Versteckter Erfassungsrahmen',
 	tool_batch_convert_web_pages_to_jpg_capture_full: 'Ganze Seite',
@@ -18,9 +18,9 @@ const de: SiteLangDict = {
 	tool_batch_convert_web_pages_to_jpg_col_url: 'URL',
 	tool_batch_convert_web_pages_to_jpg_convert: 'Alle umwandeln',
 	tool_batch_convert_web_pages_to_jpg_desc:
-		'Speichern Sie mehrere Webseiten als JPG aus einer URL-Liste und laden Sie ein ZIP. Jede Adresse wird einmal geholt und nicht gespeichert.',
+		'Screenshot einer URL-Liste als JPEG in Desktop-, Tablet- oder Handybreite — ZIP; kein A4-PDF.',
 	tool_batch_convert_web_pages_to_jpg_description:
-		'Mehrere Webseiten als JPG speichern: URL-Liste einfügen (eine Zeile reicht). Breite und JPEG-Qualität, ganze Seite oder erster Bildschirm, dann ZIP. Schritte: URLs einfügen, Alle umwandeln, ZIP herunterladen. Beispiel: zwei Hilfeseiten werden zwei JPEGs. Jede URL wird einmal geholt und nicht gespeichert.',
+		'Mehrere Webseiten als JPG speichern: Screenshot der URL-Liste in Desktop-, Tablet- oder Handybreite (eine Zeile reicht). Ganze Seite oder erster Bildschirm, JPEG-Qualität, ZIP herunterladen. Schritte: URLs einfügen, Alle umwandeln, ZIP herunterladen. Beispiel: zwei Tickets werden zwei JPEGs. Einmal geholt, nicht gespeichert.',
 	tool_batch_convert_web_pages_to_jpg_download_zip: 'ZIP herunterladen',
 	tool_batch_convert_web_pages_to_jpg_empty: 'Fügen Sie zuerst mindestens eine Seiten-URL ein.',
 	tool_batch_convert_web_pages_to_jpg_err_convert: 'Diese Seite ließ sich nicht als JPEG speichern. Übersprungen.',
@@ -101,8 +101,8 @@ const de: SiteLangDict = {
 	tool_batch_convert_web_pages_to_jpg_url_hint:
 		'Eine öffentliche http(s)-URL pro Zeile, höchstens 10. Jede Seite wird einmal geholt, CSS- und Bild-URLs umgeschrieben. Skripte werden vor der Erfassung entfernt.',
 	tool_batch_convert_web_pages_to_jpg_url_label: 'Seiten-URLs (eine pro Zeile)',
-	tool_batch_convert_web_pages_to_jpg_url_placeholder: 'https://example.com/help/getting-started',
-	tool_batch_convert_web_pages_to_jpg_usecase_1: 'Mehrere Hilfe- oder Ticket-URLs ablegen und JPEG-Screenshots für den Chat holen, ohne jeden Tab zu öffnen.',
+	tool_batch_convert_web_pages_to_jpg_url_placeholder: 'https://example.com/tickets/chat-layout',
+	tool_batch_convert_web_pages_to_jpg_usecase_1: 'Mehrere Ticket- oder Hilfe-URLs ablegen und JPEG für den Chat holen — ein Raster zum Anhängen, kein Druckheft.',
 	tool_batch_convert_web_pages_to_jpg_usecase_2: 'Dieselbe öffentliche Seite bei 390 (Handy) und 1280 (Desktop) erfassen, um den ersten Bildschirm vor einem Review zu vergleichen.',
 	tool_batch_convert_web_pages_to_jpg_usecase_3: 'A4-Archiv-PDFs bei Mehrere Webseiten als PDF speichern lassen; diese Seite nutzen, wenn Sie Bilddateien aus einer URL-Liste brauchen.',
 	tool_batch_convert_web_pages_to_jpg_usecases_title: 'Gute Einsätze',

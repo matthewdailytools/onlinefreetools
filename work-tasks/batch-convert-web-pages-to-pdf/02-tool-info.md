@@ -27,14 +27,14 @@
 - 目标主词 / 长尾意图（1–5）：batch convert web pages to PDF；convert multiple webpages to PDF；save several web pages as PDF；URL list to PDF；multiple URLs to PDF ZIP
 - 用户真实任务：把若干公开网页地址贴进一页，一次转成多份 PDF，打包 ZIP 下载；失败行跳过、不中断整批。
 - [x] 竞品常见：单 URL 转换器循环点；少数云端「多 URL」要注册、文件过服务器。
-- [x] 缺口：① 串行失败是否整批作废；② 登录墙 / JS 渲染页与打印 CSS 是否会不像线上；③ 单条 HTML 粘贴应走哪一页；④ ZIP 命名冲突。
-- [x] 本页增益：逐行状态表；失败 skip；FAQ 划界邻页；ZIP 重名 `stem (2).pdf`；Rules 写清代抓一次、不落盘。
+- [x] 缺口：① 串行失败是否整批作废；② 登录墙 / JS 渲染页与打印 CSS 是否会不像线上；③ 单条 HTML 粘贴应走哪一页；④ ZIP 命名冲突；⑤ 与「批量网页转 JPG」是否只换后缀。
+- [x] 本页增益：A4 纵向 + CSS 分页（可验证，非长图）；FAQ 首条对比 JPG 批处理；related 含 JPG 邻页；逐行失败 skip；ZIP 重名 `stem (2).pdf`。
 - [x] 长尾：多 URL / 若干网页并进本页。不做整站爬虫、不拆「url to pdf」单页 doorway。
 - [x] 权威来源 URL：https://github.com/eKoopmans/html2pdf.js ；https://html.spec.whatwg.org/multipage/urls-and-fetching.html
 - [x] Use case：归档公开帮助页；把竞品公开定价页存档；把政策 URL 列表交给法务。
 - [x] 边界：上限 10；私网/登录墙失败；JS 应用与打印 CSS 可能不像线上；样例进页不自动打外网。
 - [x] Example：点「载入样例」写入两条占位页的本地 HTML，跑出两份 PDF 并启用 ZIP（进页不自动跑，避免一打开就像卡死）。
-- [x] Related：`convert-html-to-pdf`、`combine-files-into-one-pdf`
+- [x] Related：`convert-html-to-pdf`、`combine-files-into-one-pdf`、`batch-convert-web-pages-to-jpg`
 
 ### 计划勾选的 §3.1 维度（至少 3）
 
@@ -59,11 +59,11 @@
 | 技术 | 复用 convert-html-to-pdf 的抓取 API + html2pdf.bundle + DOMPurify + fflate；`page.style: opts`；`localProcessing: false`（URL 过边缘） |
 | Catalog `page.style` | **opts** |
 | Title (en) | **Batch convert web pages to PDF** |
-| Description 要点 | Paste one https URL per line (up to 10), convert each public page to an A4 PDF in this tab, skip rows that fail, download a ZIP. Steps: paste the list, click Convert all, review the table, download. Example: two sample pages become two PDFs in one ZIP. Each URL is fetched once through our server and is not stored; conversion stays in the tab. Need one HTML snippet? Use Convert HTML to PDF. |
+| Description 要点 | **SERP 摘要窗口**：前 160 字符写清「批量网页→A4 纵向 PDF + 打印/按页阅读 + 不是 JPEG 长图」。紧跟步骤与示例。头词 convert multiple webpages / URL list absorb。链 HTML 转 PDF 与 JPG 批处理。 |
 | Schema | WebApplication + BreadcrumbList |
-| FAQ 要点（≥3） | 会上传吗？和单页 HTML 转换有何不同？登录墙/JS 页？ZIP 还是一份 PDF？上限多少？ |
+| FAQ 要点（≥3） | 和 JPG 批处理有何不同？A4 还是长图？和 HTML 转 PDF 有何不同？会上传吗？ZIP 还是一份？登录墙/打印 CSS？ |
 | Disclaimer / References | 非 YMYL；html2pdf.js |
-| related | `convert-html-to-pdf`, `combine-files-into-one-pdf` |
+| related | `convert-html-to-pdf`, `combine-files-into-one-pdf`, `batch-convert-web-pages-to-jpg` |
 | 验收 | `coverage:gate` 0b→2→4；`verify:tool` |
 | 工期粗估 | 本 slug 一完整实现会话 |
 | 本地化核查 | 见 `03-locale-briefs.md` |

@@ -7,7 +7,7 @@ import type { SiteLangDict } from '../../../types';
 const id: SiteLangDict = {
 	tool_batch_convert_web_pages_to_jpg_advanced_label: 'Pengaturan lanjutan (opsional)',
 	tool_batch_convert_web_pages_to_jpg_article:
-		'Tempel satu alamat halaman publik per baris, potret tiap halaman jadi JPEG pada lebar yang Anda pilih, lewati baris yang gagal, lalu unduh ZIP. Tiap URL diambil sekali lewat server dan tidak disimpan; gambar dibuat di tab ini. Ini tangkapan layar, bukan PDF A4.',
+		'Potret tiap URL publik jadi JPEG pada lebar yang Anda pilih (desktop 1280, tablet 768, atau ponsel 390). Seluruh halaman atau layar pertama, mutu JPEG, lalu ZIP. Raster untuk chat, tiket, dan tinjauan tata letak — bukan kertas A4. Tiap alamat diambil sekali dan tidak disimpan. Dokumen siap cetak: Ubah banyak halaman web jadi PDF.',
 	tool_batch_convert_web_pages_to_jpg_capture_first: 'Layar pertama saja',
 	tool_batch_convert_web_pages_to_jpg_capture_frame_title: 'Bingkai tangkapan tersembunyi',
 	tool_batch_convert_web_pages_to_jpg_capture_full: 'Seluruh halaman',
@@ -18,9 +18,9 @@ const id: SiteLangDict = {
 	tool_batch_convert_web_pages_to_jpg_col_url: 'URL',
 	tool_batch_convert_web_pages_to_jpg_convert: 'Ubah semua',
 	tool_batch_convert_web_pages_to_jpg_desc:
-		'Ubah beberapa halaman web jadi JPG dari daftar URL, lalu unduh ZIP. Tiap alamat diambil sekali dan tidak disimpan.',
+		'Tangkapan daftar URL jadi JPEG di desktop, tablet, atau ponsel — ZIP; bukan PDF A4.',
 	tool_batch_convert_web_pages_to_jpg_description:
-		'Ubah beberapa halaman web jadi JPG dari daftar URL (satu baris pun cukup). Pilih lebar layar dan mutu JPEG, seluruh halaman atau layar pertama, lalu unduh ZIP. Langkah: tempel URL, Ubah semua, Unduh ZIP. Contoh: dua halaman bantuan jadi dua JPEG. Tiap URL diminta sekali dan tidak disimpan.',
+		'Ubah beberapa halaman web jadi JPG: tangkap daftar URL di lebar desktop, tablet, atau ponsel (satu baris pun cukup). Seluruh halaman atau layar pertama, mutu JPEG, Unduh ZIP. Langkah: tempel URL, Ubah semua, Unduh ZIP. Contoh: dua tiket jadi dua JPEG. Diambil sekali, tidak disimpan.',
 	tool_batch_convert_web_pages_to_jpg_download_zip: 'Unduh ZIP',
 	tool_batch_convert_web_pages_to_jpg_empty: 'Tempel setidaknya satu URL halaman dulu.',
 	tool_batch_convert_web_pages_to_jpg_err_convert: 'Halaman ini gagal jadi JPEG. Dilewati.',
@@ -101,8 +101,8 @@ const id: SiteLangDict = {
 	tool_batch_convert_web_pages_to_jpg_url_hint:
 		'Satu URL http(s) publik per baris, paling banyak 10. Kami ambil tiap halaman sekali dan menulis ulang CSS/gambar. Skrip dibuang sebelum tangkapan.',
 	tool_batch_convert_web_pages_to_jpg_url_label: 'URL halaman (satu per baris)',
-	tool_batch_convert_web_pages_to_jpg_url_placeholder: 'https://example.com/help/getting-started',
-	tool_batch_convert_web_pages_to_jpg_usecase_1: 'Jatuhkan beberapa URL bantuan atau tiket dan dapatkan JPEG untuk chat tanpa membuka tiap tab.',
+	tool_batch_convert_web_pages_to_jpg_url_placeholder: 'https://example.com/tickets/chat-layout',
+	tool_batch_convert_web_pages_to_jpg_usecase_1: 'Jatuhkan beberapa URL tiket atau bantuan dan dapatkan JPEG untuk chat — raster untuk dilampirkan, bukan buku saku cetak.',
 	tool_batch_convert_web_pages_to_jpg_usecase_2: 'Potret halaman publik yang sama di 390 (ponsel) dan 1280 (desktop) untuk membandingkan layar pertama sebelum tinjauan.',
 	tool_batch_convert_web_pages_to_jpg_usecase_3: 'Simpan arsip A4 di Ubah beberapa halaman web jadi PDF; pakai halaman ini saat butuh berkas gambar dari daftar URL.',
 	tool_batch_convert_web_pages_to_jpg_usecases_title: 'Cocok untuk',

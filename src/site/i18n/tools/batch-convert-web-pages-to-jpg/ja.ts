@@ -7,7 +7,7 @@ import type { SiteLangDict } from '../../../types';
 const ja: SiteLangDict = {
 	tool_batch_convert_web_pages_to_jpg_advanced_label: '詳細設定（任意）',
 	tool_batch_convert_web_pages_to_jpg_article:
-		'公開ページの URL を1行ずつ貼り、選んだ表示幅で JPEG にし、失敗した行は飛ばして ZIP にまとめます。各アドレスはサーバー経由で一度だけ取得し保存しません。画像化はこのタブ内です。A4 の PDF ではありません。',
+		'公開 URL を選んだ幅（デスクトップ 1280、タブレット 768、スマホ 390）で JPEG にします。全体の長尺か最初の画面か、画質も選べ、できた画像は ZIP。チャットやチケット、レイアウト確認用のラスターで、A4 の印刷物ではありません。各アドレスは一度取得して保存しません。印刷用なら「複数のウェブページをPDFにまとめて変換」。',
 	tool_batch_convert_web_pages_to_jpg_capture_first: '最初の画面だけ',
 	tool_batch_convert_web_pages_to_jpg_capture_frame_title: '非表示のページ取り込み枠',
 	tool_batch_convert_web_pages_to_jpg_capture_full: 'ページ全体',
@@ -18,9 +18,9 @@ const ja: SiteLangDict = {
 	tool_batch_convert_web_pages_to_jpg_col_url: 'URL',
 	tool_batch_convert_web_pages_to_jpg_convert: 'すべて変換',
 	tool_batch_convert_web_pages_to_jpg_desc:
-		'URL リストのウェブページをまとめて JPG にし ZIP で渡す。取得は一度きりで保存せず、変換は端末内。',
+		'URL リストをデスクトップ／タブレット／スマホ幅の JPEG にして ZIP。A4 PDF ではない。',
 	tool_batch_convert_web_pages_to_jpg_description:
-		'ウェブページをまとめてJPGに変換。URLリストを貼れば1件でも可。表示幅と画質、全体か最初の画面かを選べ、ZIPで受け取る。手順：貼る → すべて変換 → ZIPをダウンロード。例：ヘルプ2件がJPEG2枚になる。取得は一度きりで保存せず、変換はこのタブ内。',
+		'ウェブページをまとめてJPGに変換。URLリストをデスクトップ・タブレット・スマホ幅でスクリーンショット（1件でも可）。全体か最初の画面、画質を選び ZIP で受け取る。手順：貼る → すべて変換 → ZIPをダウンロード。例：チケット2件が JPEG 2枚。取得は一度きりで保存せず、変換はこのタブ内。',
 	tool_batch_convert_web_pages_to_jpg_download_zip: 'ZIPをダウンロード',
 	tool_batch_convert_web_pages_to_jpg_empty: '先にページ URL を1件以上貼ってください。',
 	tool_batch_convert_web_pages_to_jpg_err_convert: 'このページは JPEG にできませんでした。スキップしました。',
@@ -101,8 +101,8 @@ const ja: SiteLangDict = {
 	tool_batch_convert_web_pages_to_jpg_url_hint:
 		'公開の http(s) URL を1行1件、最大10件。各ページを一度取得し、CSS と画像 URL を書き換えます。取り込み前にスクリプトは外します。',
 	tool_batch_convert_web_pages_to_jpg_url_label: 'ページ URL（1行1件）',
-	tool_batch_convert_web_pages_to_jpg_url_placeholder: 'https://example.com/help/getting-started',
-	tool_batch_convert_web_pages_to_jpg_usecase_1: 'ヘルプやチケットの URL をまとめて JPEG にし、タブを一つずつ開かずにチャットへ貼る。',
+	tool_batch_convert_web_pages_to_jpg_url_placeholder: 'https://example.com/tickets/chat-layout',
+	tool_batch_convert_web_pages_to_jpg_usecase_1: 'チケットやヘルプの URL を JPEG にしてチャットへ貼る。印刷用の冊子ではなく、添付できるラスターです。',
 	tool_batch_convert_web_pages_to_jpg_usecase_2: '同じ公開ページをスマホ 390 とデスクトップ 1280 で最初の画面だけ切り、レビュー前にレイアウトを比べる。',
 	tool_batch_convert_web_pages_to_jpg_usecase_3: 'A4 の保管用 PDF はウェブページをまとめてPDFに変換へ。URL リストから画像ファイルが欲しいときだけこのページ。',
 	tool_batch_convert_web_pages_to_jpg_usecases_title: '向いている作業',

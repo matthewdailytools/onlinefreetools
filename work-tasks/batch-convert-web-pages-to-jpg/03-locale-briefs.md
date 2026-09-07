@@ -166,5 +166,6 @@ Title 方向须为当地口语检索向。H1 禁止用 `page` 当产品名。H1 
 | 1 母版+lint | 2026-09-07 | 写 en 全键、catalog、Page、html2canvas JPEG 管线；视口/质量/整页首屏进首屏；主词进 H1 | title 为 Batch convert web pages to JPG，非参数枚举 |
 | 1b 母版检索覆盖优化 | 2026-09-07 | 按 converter-serp-landing-seo 把母版 description 压到摘要窗口（前 160 字符含 Batch convert web pages to JPG、webpage to jpg、视口/ZIP）；How 改为先 Convert all，视口进 Advanced；hero 改用 desc | 主词仍在 H1；次词 webpage to jpg 落在 desc 前半与 FAQ |
 | 2 按 brief 重写 | 2026-09-07 | 十语按当地检索词独立重写 H1/按钮/FAQ；每语写清与 PDF 批处理及 PDF 转 JPG 的差异；ar/ja/ru 未勾待母语抽查 | 各语 title 为当地任务句，非英模同构 |
-| 2b 抽查语检索覆盖优化 | 2026-09-07 | 抽查 en,zh,es,ja：en 保留 Batch convert web pages to JPG；zh desc 补网址转 JPG；es 补 lista de URLs；ja 补 URLリスト；四语 meta 均改为 snippet 窗口且 How 动词对齐当地按钮 | en,zh,es,ja 主词在 H1，次词有落点 |
+| 2b 抽查语检索覆盖优化 | 2026-09-07 | 邻页 IG 拉开：抽查 en,zh,es,ja 把视口截图/工单聊天 raster 写进 desc 前半与样例；次词 webpage to jpg / 网址转 JPG 仍在 desc；样例 URL 改为 ticket/mobile-hero | en,zh,es,ja 主词在 H1；去掉 title 后正文仍明显是视口 JPEG 而非 A4 分页 |
 | 3 抽查+禁词+lint | 2026-09-07 | 禁词表全扫；H1 无 page 当产品名、无参数枚举；隐私写清代抓一次不落盘；相对 PDF 邻页写 vis 口与整页首屏 | 十语可发布，待 verify:tool |
+| 4 邻页差异 | 2026-09-07 | 十语加强截图场景（聊天/工单/首屏对照）；样例 HTML 用响应式顶栏（390 变蓝）；占位 URL 与 PDF 帮助/政策页分开 | 与 batch-convert-web-pages-to-pdf 不再共用同一套帮助页套话 |

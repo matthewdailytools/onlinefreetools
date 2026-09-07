@@ -1063,9 +1063,9 @@ export const renderBatchConvertWebPagesToJpgPage = (opts: {
       /** 等待秒数上限。 */
       var MAX_LOAD_WAIT_SEC = ${maxLoadWaitSec};
       /** 样例第一条 URL（进页填入列表；转换用本地 HTML）。 */
-      var SAMPLE_URL_1 = 'https://example.com/help/getting-started';
+      var SAMPLE_URL_1 = 'https://example.com/tickets/chat-layout';
       /** 样例第二条 URL。 */
-      var SAMPLE_URL_2 = 'https://example.com/policies/privacy';
+      var SAMPLE_URL_2 = 'https://example.com/help/mobile-hero';
 
       /** URL 列表框。 */
       var urlsEl = document.getElementById('bcwUrls');
@@ -1502,8 +1502,8 @@ export const renderBatchConvertWebPagesToJpgPage = (opts: {
        */
       function samplePageHtml(heading, body) {
         return '<!doctype html><html><head><meta charset="utf-8"><title>' + heading +
-          '</title><style>body{font-family:Georgia,serif;margin:32px;color:#222}h1{font-size:1.6rem}p{line-height:1.5}</style></head><body><h1>' +
-          heading + '</h1><p>' + body + '</p></body></html>';
+          '</title><style>body{font-family:system-ui,sans-serif;margin:0;background:#f4f6f8}header{height:56px;background:#111827;color:#fff;display:flex;align-items:center;padding:0 24px;font-weight:600}@media (max-width:500px){header{background:#0d6efd;height:48px}}main{margin:20px;padding:20px;background:#fff;border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,.12)}p{line-height:1.5;color:#374151}</style></head><body><header>' +
+          heading + '</header><main><p>' + body + '</p></main></body></html>';
       }
 
       /**
@@ -1719,8 +1719,8 @@ export const renderBatchConvertWebPagesToJpgPage = (opts: {
        */
       function loadSample() {
         urlsEl.value = SAMPLE_URL_1 + '\\n' + SAMPLE_URL_2;
-        var html1 = samplePageHtml('Getting started', 'Sample help page for batch convert web pages to JPG.');
-        var html2 = samplePageHtml('Privacy policy', 'Sample policy page archived as a second JPG in the ZIP.');
+        var html1 = samplePageHtml('Ticket layout', 'Sample chat screenshot page. Phone 390 turns the bar blue; desktop 1280 keeps it dark.');
+        var html2 = samplePageHtml('Mobile hero', 'Sample first-screen capture for a help hero. This is a JPEG raster, not an A4 PDF.');
         return runBatch([
           { href: SAMPLE_URL_1, html: html1 },
           { href: SAMPLE_URL_2, html: html2 },

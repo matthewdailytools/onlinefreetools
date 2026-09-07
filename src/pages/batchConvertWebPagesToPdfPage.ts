@@ -733,8 +733,10 @@ export const renderBatchConvertWebPagesToPdfPage = (opts: {
 	const canonicalPath = withLangPrefix(opts.lang, toolPath, opts.defaultLang);
 	/** 文档 title：H1 原句 + 品牌。 */
 	const title = `${tx(opts.lang, 'title')} | ${t(opts.lang, 'brand')}`;
-	/** meta description，与可见文案同源。 */
+	/** meta description（SERP 摘要窗口）；hero 用短 desc，避免与 JPG 邻页共用整段说明书。 */
 	const description = tx(opts.lang, 'description');
+	/** Hero 短句：A4 分页归档，不是网页长图。 */
+	const lead = tx(opts.lang, 'desc');
 	/** 顶栏导航项。 */
 	const navItems = buildToolPageNavItems(opts.lang, opts.defaultLang);
 
@@ -903,7 +905,7 @@ export const renderBatchConvertWebPagesToPdfPage = (opts: {
 	const contentHtml = `
     <div id="converter" class="tool-hero">
       <h1 class="tool-title">${escapeHtml(tx(opts.lang, 'title'))}</h1>
-      <p class="tool-lead">${escapeHtml(description)}</p>
+      <p class="tool-lead">${escapeHtml(lead)}</p>
     </div>
 
     <div class="tool-panel">
@@ -970,8 +972,8 @@ export const renderBatchConvertWebPagesToPdfPage = (opts: {
 		prefix: PREFIX,
 		mode: 'rules',
 		usecaseCount: 3,
-		ruleItemCount: 4,
-		howItemCount: 5,
+		ruleItemCount: 5,
+		howItemCount: 6,
 	});
 
 	/** 权威引用：html2pdf 与 URL 抓取规范。 */
@@ -1403,8 +1405,8 @@ export const renderBatchConvertWebPagesToPdfPage = (opts: {
        */
       function samplePageHtml(heading, body) {
         return '<!doctype html><html><head><meta charset="utf-8"><title>' + heading +
-          '</title><style>body{font-family:Georgia,serif;margin:32px;color:#222}h1{font-size:1.6rem}p{line-height:1.5}</style></head><body><h1>' +
-          heading + '</h1><p>' + body + '</p></body></html>';
+          '</title><style>@page{size:A4 portrait}body{font-family:Georgia,serif;margin:28px;color:#222}h1{font-size:1.5rem}p{line-height:1.55}section{page-break-after:always;min-height:18cm}section:last-child{page-break-after:auto}</style></head><body><section><h1>' +
+          heading + '</h1><p>' + body + '</p></section><section><h1>Print notes</h1><p>This sample is an A4 portrait document with a CSS page break, not a single tall screenshot.</p></section></body></html>';
       }
 
       /**
@@ -1617,8 +1619,8 @@ export const renderBatchConvertWebPagesToPdfPage = (opts: {
        */
       function loadSample() {
         urlsEl.value = SAMPLE_URL_1 + '\\n' + SAMPLE_URL_2;
-        var html1 = samplePageHtml('Getting started', 'Sample help page for batch convert web pages to PDF.');
-        var html2 = samplePageHtml('Privacy policy', 'Sample policy page archived as a second PDF in the ZIP.');
+        var html1 = samplePageHtml('Getting started', 'Sample help article archived as an A4 portrait PDF for print and later reading.');
+        var html2 = samplePageHtml('Privacy policy', 'Sample policy document. CSS page-break splits this sample onto a second A4 page.');
         return runBatch([
           { href: SAMPLE_URL_1, html: html1 },
           { href: SAMPLE_URL_2, html: html2 },

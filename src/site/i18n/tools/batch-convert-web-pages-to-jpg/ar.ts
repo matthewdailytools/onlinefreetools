@@ -7,7 +7,7 @@ import type { SiteLangDict } from '../../../types';
 const ar: SiteLangDict = {
 	tool_batch_convert_web_pages_to_jpg_advanced_label: 'إعدادات متقدمة (اختياري)',
 	tool_batch_convert_web_pages_to_jpg_article:
-		'الصق عنوان صفحة عامة في كل سطر، والتقطها كصورة JPEG بالعرض الذي تختاره، وتجاوز الصفوف الفاشلة ثم نزّل ZIP. يُجلب كل رابط مرة عبر الخادم ولا يُحفظ؛ تُنشأ الصورة في هذا التبويب. هذه لقطة وليست PDF مقاس A4.',
+		'التقط كل رابط عام كصورة JPEG بالعرض الذي تختاره (حاسوب 1280 أو جهاز لوحي 768 أو هاتف 390). الصفحة كاملة أو الشاشة الأولى وجودة JPEG ثم ZIP. شبكة نقطية للدردشة والتذاكر ومراجعة التخطيط — ليست أوراق A4. يُجلب كل عنوان مرة ولا يُحفظ. للمستندات القابلة للطباعة: تحويل عدة صفحات ويب إلى PDF دفعة واحدة.',
 	tool_batch_convert_web_pages_to_jpg_capture_first: 'الشاشة الأولى فقط',
 	tool_batch_convert_web_pages_to_jpg_capture_frame_title: 'إطار التقاط مخفي',
 	tool_batch_convert_web_pages_to_jpg_capture_full: 'الصفحة كاملة',
@@ -18,9 +18,9 @@ const ar: SiteLangDict = {
 	tool_batch_convert_web_pages_to_jpg_col_url: 'الرابط',
 	tool_batch_convert_web_pages_to_jpg_convert: 'تحويل الكل',
 	tool_batch_convert_web_pages_to_jpg_desc:
-		'حوّل عدة صفحات ويب إلى JPG من قائمة روابط ثم نزّل ZIP. يُجلب كل عنوان مرة ولا يُخزَّن.',
+		'التقط قائمة روابط إلى JPEG بعرض الحاسوب أو اللوحي أو الهاتف — ZIP؛ ليست PDF مقاس A4.',
 	tool_batch_convert_web_pages_to_jpg_description:
-		'تحويل عدة صفحات ويب إلى JPG من قائمة روابط (سطر واحد يكفي). اختر عرض الشاشة وجودة JPEG، الصفحة كاملة أو الشاشة الأولى، ثم نزّل ZIP. الخطوات: الصق الروابط، تحويل الكل، تنزيل ZIP. مثال: صفحتا مساعدة تصبحان صورتين JPEG. يُجلب كل رابط مرة ولا يُحفظ.',
+		'تحويل عدة صفحات ويب إلى JPG: التقط قائمة الروابط بعرض الحاسوب أو اللوحي أو الهاتف (سطر واحد يكفي). الصفحة كاملة أو الشاشة الأولى وجودة JPEG ثم تنزيل ZIP. الخطوات: الصق الروابط، تحويل الكل، تنزيل ZIP. مثال: تذكرتان تصبحان صورتين JPEG. يُجلب مرة ولا يُحفظ.',
 	tool_batch_convert_web_pages_to_jpg_download_zip: 'تنزيل ZIP',
 	tool_batch_convert_web_pages_to_jpg_empty: 'الصق عنوان صفحة واحداً على الأقل أولاً.',
 	tool_batch_convert_web_pages_to_jpg_err_convert: 'تعذّر تحويل هذه الصفحة إلى JPEG. تم التجاوز.',
@@ -101,8 +101,8 @@ const ar: SiteLangDict = {
 	tool_batch_convert_web_pages_to_jpg_url_hint:
 		'رابط http(s) عام في كل سطر، حتى 10. نجلب كل صفحة مرة ونعيد كتابة عناوين CSS والصور. تُحذف البرامج النصية قبل اللقطة.',
 	tool_batch_convert_web_pages_to_jpg_url_label: 'روابط الصفحات (واحد في كل سطر)',
-	tool_batch_convert_web_pages_to_jpg_url_placeholder: 'https://example.com/help/getting-started',
-	tool_batch_convert_web_pages_to_jpg_usecase_1: 'أسقط عدة روابط مساعدة أو تذاكر واحصل على لقطات JPEG للصقها في الدردشة دون فتح كل تبويب.',
+	tool_batch_convert_web_pages_to_jpg_url_placeholder: 'https://example.com/tickets/chat-layout',
+	tool_batch_convert_web_pages_to_jpg_usecase_1: 'أسقط عدة روابط تذاكر أو مساعدة واحصل على JPEG للدردشة: شبكة نقطية تُرفق، لا كتيّب للطباعة.',
 	tool_batch_convert_web_pages_to_jpg_usecase_2: 'التقط الصفحة العامة نفسها بعرض هاتف 390 وسطح مكتب 1280 لمقارنة الشاشة الأولى قبل المراجعة.',
 	tool_batch_convert_web_pages_to_jpg_usecase_3: 'اترك أرشيف A4 على تحويل عدة صفحات ويب إلى PDF؛ استخدم هذه الصفحة حين تحتاج ملفات صور من قائمة روابط.',
 	tool_batch_convert_web_pages_to_jpg_usecases_title: 'حالات مناسبة',

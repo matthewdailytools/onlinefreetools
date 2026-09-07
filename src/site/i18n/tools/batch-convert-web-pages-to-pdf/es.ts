@@ -1,12 +1,13 @@
 /**
  * i18n tool shard (batch-convert-web-pages-to-pdf / es).
- * H1 当地检索句：Convertir varias páginas web a PDF（不是英模 Batch convert…）。
+ * H1 当地检索句：Convertir varias páginas web a PDF.
+ * IG frente a JPG: A4 vertical paginado para imprimir, no captura de viewport.
  */
 import type { SiteLangDict } from '../../../types';
 
 const es: SiteLangDict = {
 	tool_batch_convert_web_pages_to_pdf_article:
-		'Pega una dirección pública por línea, convierte cada página a PDF A4 en esta pestaña, omite las filas que fallen y descarga un ZIP. Cada URL se recupera una vez en el servidor y no se guarda; la conversión permanece en tu dispositivo.',
+		'Pega URLs públicas y conviértelas en PDF A4 vertical, paginados para imprimir y leer página a página — no un JPEG infinito. Las filas que fallen se omiten; las que salgan van a un ZIP. Cada dirección se pide una vez al servidor y no se guarda. ¿Capturas para el chat o comparar móvil y escritorio? Usa Convertir varias páginas web a JPG.',
 	tool_batch_convert_web_pages_to_pdf_capture_frame_title: 'Marco oculto de captura',
 	tool_batch_convert_web_pages_to_pdf_clear: 'Borrar',
 	tool_batch_convert_web_pages_to_pdf_col_file: 'Archivo',
@@ -14,9 +15,9 @@ const es: SiteLangDict = {
 	tool_batch_convert_web_pages_to_pdf_col_url: 'URL',
 	tool_batch_convert_web_pages_to_pdf_convert: 'Convertir todo',
 	tool_batch_convert_web_pages_to_pdf_desc:
-		'Convierte varias páginas web a PDF desde una lista de URLs y descarga un ZIP; cada dirección se recupera una vez y no se almacena.',
+		'Guarda una lista de URLs como PDF A4 vertical para imprimir — ZIP; no es una captura de pantalla.',
 	tool_batch_convert_web_pages_to_pdf_description:
-		'Convertir varias páginas web a PDF: pega una lista de URLs (una https por línea, hasta 10), genera un PDF A4 en esta pestaña, omite errores y descarga un ZIP. Pasos: pega la lista, pulsa Convertir todo, revisa la tabla, descarga. Ejemplo: dos páginas de ayuda y política de muestra salen como dos PDF en un ZIP. Cada URL se pide una vez al servidor y no se guarda; la conversión se queda en el dispositivo. Si solo tienes un fragmento HTML, usa Convertir HTML a PDF.',
+		'Convertir varias páginas web a PDF: la lista de URLs sale en A4 vertical, lista para imprimir y leer por páginas, no un JPEG alto. Pasos: pega la lista, Convertir todo, Descargar ZIP. Ejemplo: dos políticas se vuelven dos PDF. Cada URL se pide una vez y no se guarda. HTML suelto: Convertir HTML a PDF.',
 	tool_batch_convert_web_pages_to_pdf_download_zip: 'Descargar ZIP',
 	tool_batch_convert_web_pages_to_pdf_empty: 'Pega al menos una URL de página.',
 	tool_batch_convert_web_pages_to_pdf_err_convert: 'Esta página no se pudo pasar a PDF. Omitida.',
@@ -26,32 +27,36 @@ const es: SiteLangDict = {
 	tool_batch_convert_web_pages_to_pdf_err_url: 'No se pudo cargar esa URL. Revisa la dirección o el sitio bloquea la petición.',
 	tool_batch_convert_web_pages_to_pdf_err_url_empty: 'Esa línea no es una URL http(s) válida. Omitida.',
 	tool_batch_convert_web_pages_to_pdf_example:
-		'Cargar ejemplo rellena dos URLs de example.com, arma dos PDF con HTML local (sin visitar el sitio en vivo) y activa Descargar ZIP. Convertir todo sí recupera las direcciones que pegaste.',
+		'Cargar ejemplo rellena una ayuda y una política de example.com, arma dos PDF A4 locales con salto de página CSS (sin visitar el sitio) y activa Descargar ZIP. Convertir todo sí recupera las direcciones que pegaste. El CSS de impresión cambia dónde se corta cada hoja.',
 	tool_batch_convert_web_pages_to_pdf_example_title: 'Ejemplo',
 	tool_batch_convert_web_pages_to_pdf_faq_a1:
-		'La conversión ocurre en esta pestaña. Al convertir una lista enviamos cada dirección al servidor una vez para traer el HTML; no guardamos las páginas. Los PDF se crean en tu dispositivo y aquí se empaquetan en ZIP.',
+		'El papel es siempre A4 vertical. Las páginas largas se parten con reglas CSS de salto (y un respaldo clásico). No es una hoja infinita. ¿Quieres una captura larga? Usa Convertir varias páginas web a JPG.',
 	tool_batch_convert_web_pages_to_pdf_faq_a2:
-		'Esta página sirve para una lista de URLs (varias webs a PDF y luego ZIP). Para un solo HTML o una dirección con editor de vista previa, usa Convertir HTML a PDF.',
+		'La hermana JPG recorta un JPEG por URL al ancho que elijas (1280 / 768 / 390), con calidad y página completa o primera pantalla. Aquí cada URL se parte en hojas A4 para imprimir. Misma lista, otro artefacto.',
 	tool_batch_convert_web_pages_to_pdf_faq_a3:
-		'No. Se quitan los scripts. Muros de login, paywalls y apps renderizadas con JavaScript casi nunca coinciden con el sitio en vivo. El CSS de impresión también puede diferir.',
+		'Esta página es una lista de URLs: varias webs públicas → PDF A4 sueltos → ZIP. Para un HTML o una dirección con editor, usa Convertir HTML a PDF.',
 	tool_batch_convert_web_pages_to_pdf_faq_a4:
-		'Cada fila correcta es un PDF aparte dentro de un ZIP. Aquí no se fusionan en un solo archivo: después de descargar usa Combinar archivos en un PDF si lo necesitas.',
+		'La conversión ocurre en esta pestaña. Enviamos cada dirección al servidor una vez para traer el HTML; no guardamos las páginas. El PDF se crea en tu dispositivo y aquí se empaqueta.',
 	tool_batch_convert_web_pages_to_pdf_faq_a5:
-		'Hasta 10 URLs http(s). El resto se ignora. Las filas fallidas se omiten para que el lote siga.',
-	tool_batch_convert_web_pages_to_pdf_faq_q1: '¿Se suben y guardan mis páginas en un servidor?',
-	tool_batch_convert_web_pages_to_pdf_faq_q2: '¿En qué se diferencia de Convertir HTML a PDF?',
-	tool_batch_convert_web_pages_to_pdf_faq_q3: '¿Una web con login o mucho JavaScript se verá igual?',
-	tool_batch_convert_web_pages_to_pdf_faq_q4: '¿Sale un PDF único o un ZIP con varios?',
-	tool_batch_convert_web_pages_to_pdf_faq_q5: '¿Cuántas URLs puedo convertir de una vez?',
+		'Cada fila correcta es un PDF aparte en un ZIP. No se fusionan: después de descargar usa Combinar archivos en un PDF si quieres un solo cuadernillo.',
+	tool_batch_convert_web_pages_to_pdf_faq_a6:
+		'No. Se quitan los scripts. Login, paywall y apps en JavaScript casi nunca coinciden con el sitio en vivo. El CSS de impresión también puede mover los cortes.',
+	tool_batch_convert_web_pages_to_pdf_faq_q1: '¿Qué tamaño de papel usa? ¿Sale una página kilométrica?',
+	tool_batch_convert_web_pages_to_pdf_faq_q2: '¿En qué se diferencia de Convertir varias páginas web a JPG?',
+	tool_batch_convert_web_pages_to_pdf_faq_q3: '¿En qué se diferencia de Convertir HTML a PDF?',
+	tool_batch_convert_web_pages_to_pdf_faq_q4: '¿Se suben y guardan mis páginas en un servidor?',
+	tool_batch_convert_web_pages_to_pdf_faq_q5: '¿Sale un PDF único o un ZIP con varios?',
+	tool_batch_convert_web_pages_to_pdf_faq_q6: '¿Una web con login o mucho JavaScript se verá igual?',
 	tool_batch_convert_web_pages_to_pdf_file_count_tpl: '{n} URLs en la cola',
 	tool_batch_convert_web_pages_to_pdf_how_body:
-		'Pega la lista de páginas públicas, conviértelas una tras otra y llévate un ZIP con los PDF que sí salieron.',
-	tool_batch_convert_web_pages_to_pdf_how_item_1: 'Pega una URL https por línea (centro de ayuda o políticas encajan bien).',
-	tool_batch_convert_web_pages_to_pdf_how_item_2: 'Deja la espera cerca de 1 segundo salvo que las imágenes salgan en blanco.',
-	tool_batch_convert_web_pages_to_pdf_how_item_3: 'Pulsa Convertir todo. Cada URL pública se pide una vez; las fallidas se omiten.',
-	tool_batch_convert_web_pages_to_pdf_how_item_4: '¿Solo un fragmento HTML, no una lista? Usa Convertir HTML a PDF.',
+		'Pega las URLs públicas que quieras archivar o imprimir, conviértelas a PDF A4 vertical y llévate un ZIP de las que salieron.',
+	tool_batch_convert_web_pages_to_pdf_how_item_1: 'Pega una URL https por línea. Políticas, centros de ayuda y docs que imprimirías encajan bien.',
+	tool_batch_convert_web_pages_to_pdf_how_item_2: 'Deja la espera cerca de 1 segundo salvo que en alguna hoja A4 las imágenes salgan en blanco.',
+	tool_batch_convert_web_pages_to_pdf_how_item_3: 'Pulsa Convertir todo. Cada URL pública se pide una vez y se pagina a A4 vertical (el CSS de saltos puede cortar secciones). Las fallidas se omiten.',
+	tool_batch_convert_web_pages_to_pdf_how_item_4: '¿Un HTML con vista previa? Convertir HTML a PDF. ¿Una captura al ancho de pantalla? Convertir varias páginas web a JPG.',
 	tool_batch_convert_web_pages_to_pdf_how_item_5:
-		'Descarga el ZIP cuando al menos una fila haya salido bien. Pulsa Cargar ejemplo para dos páginas locales; el panel de progreso se ve al convertir.',
+		'Descarga el ZIP cuando al menos una fila haya salido bien. Cargar ejemplo prueba dos páginas A4 locales con salto CSS.',
+	tool_batch_convert_web_pages_to_pdf_how_item_6: 'Para unir varios PDF en un cuadernillo, descarga primero y usa Combinar archivos en un PDF.',
 	tool_batch_convert_web_pages_to_pdf_how_title: 'Cómo funciona',
 	tool_batch_convert_web_pages_to_pdf_progress_tpl: '{i} / {total}',
 	tool_batch_convert_web_pages_to_pdf_hud_title: 'Progreso del lote',
@@ -61,15 +66,17 @@ const es: SiteLangDict = {
 	tool_batch_convert_web_pages_to_pdf_hud_step_wait: 'Imágenes',
 	tool_batch_convert_web_pages_to_pdf_hud_step_render: 'PDF',
 	tool_batch_convert_web_pages_to_pdf_rules_body:
-		'Una URL http(s) por línea, máximo 10. Conversión en serie. Errores omitidos. Los PDF correctos van al ZIP.',
+		'Una URL http(s) por línea, máximo 10. El resultado es A4 vertical con saltos CSS, no un JPEG de página completa. Conversión en serie. Errores omitidos. Los PDF correctos van al ZIP.',
 	tool_batch_convert_web_pages_to_pdf_rules_item_1:
-		'Cada URL se envía una vez al servidor para traer HTML y no se almacena. El PDF se arma en esta pestaña.',
+		'Cada URL se envía una vez al servidor para traer HTML y no se almacena. El PDF se arma en esta pestaña en A4 vertical.',
 	tool_batch_convert_web_pages_to_pdf_rules_item_2:
-		'Redes privadas, logins y páginas inexistentes fallan esa fila. El resto del lote sigue.',
+		'La paginación sigue CSS de saltos (con respaldo clásico). El estilo de impresión puede diferir de la pantalla. Páginas muy altas se recortan para no tumbar la pestaña.',
 	tool_batch_convert_web_pages_to_pdf_rules_item_3:
-		'Nombres repetidos en el ZIP pasan a name (2).pdf. Los scripts se quitan antes de capturar.',
+		'Redes privadas, logins y páginas inexistentes fallan esa fila. Nombres repetidos en el ZIP pasan a name (2).pdf. Los scripts se quitan antes.',
 	tool_batch_convert_web_pages_to_pdf_rules_item_4:
-		'No es un rastreador de sitios enteros. Pega las URLs que ya tienes.',
+		'No es un rastreador de sitios enteros ni una herramienta de capturas. Pega las URLs públicas que ya tienes.',
+	tool_batch_convert_web_pages_to_pdf_rules_item_5:
+		'Frente a Convertir varias páginas web a JPG: allí sale un JPEG al viewport. Frente a Convertir HTML a PDF: allí pegas HTML, no una lista. Frente a Combinar archivos en un PDF: aquí no se unen salidas.',
 	tool_batch_convert_web_pages_to_pdf_rules_title: 'Reglas que debes esperar',
 	tool_batch_convert_web_pages_to_pdf_sample: 'Cargar ejemplo',
 	tool_batch_convert_web_pages_to_pdf_status_done: 'Lote listo: revisa la tabla y descarga el ZIP.',
@@ -84,15 +91,15 @@ const es: SiteLangDict = {
 	tool_batch_convert_web_pages_to_pdf_summary_tpl: '{ok} listos · {skip} omitidos',
 	tool_batch_convert_web_pages_to_pdf_title: 'Convertir varias páginas web a PDF',
 	tool_batch_convert_web_pages_to_pdf_url_hint:
-		'Una URL http(s) pública por línea, hasta 10. Pedimos cada página una vez y reescribimos CSS e imágenes. Los scripts se quitan antes del PDF.',
+		'Una URL http(s) pública por línea, hasta 10. Pedimos cada página una vez y reescribimos CSS e imágenes. Los scripts se quitan; el resultado es A4 vertical con saltos CSS.',
 	tool_batch_convert_web_pages_to_pdf_url_label: 'URLs de página (una por línea)',
 	tool_batch_convert_web_pages_to_pdf_url_placeholder: 'https://example.com/help/getting-started',
-	tool_batch_convert_web_pages_to_pdf_usecase_1: 'Guardar varias páginas de ayuda o documentación como PDF sin abrirlas una a una.',
-	tool_batch_convert_web_pages_to_pdf_usecase_2: 'Archivar una lista de URLs de políticas públicas en un ZIP para leerlas después.',
-	tool_batch_convert_web_pages_to_pdf_usecase_3: 'El HTML suelto se queda en Convertir HTML a PDF; esta página es para cuando ya tienes muchos enlaces.',
+	tool_batch_convert_web_pages_to_pdf_usecase_1: 'Antes de una reunión, archiva varias ayudas o docs públicos como PDF A4 imprimibles, sin abrir Imprimir en cada pestaña.',
+	tool_batch_convert_web_pages_to_pdf_usecase_2: 'Empaqueta políticas, términos o avisos en un ZIP para leerlos luego o adjuntarlos al correo.',
+	tool_batch_convert_web_pages_to_pdf_usecase_3: 'El HTML suelto se queda en Convertir HTML a PDF. Las capturas de chat y el contraste móvil/escritorio, en Convertir varias páginas web a JPG. Aquí solo el archivo para imprimir.',
 	tool_batch_convert_web_pages_to_pdf_usecases_title: 'Buenos encajes',
 	tool_batch_convert_web_pages_to_pdf_wait_hint:
-		'Segundos extra después de que las imágenes empiecen a cargar. El valor por defecto es 1. Súbelo si el PDF muestra recuadros vacíos.',
+		'Segundos extra después de que las imágenes empiecen a cargar en cada hoja A4. El valor por defecto es 1. Súbelo si el PDF muestra recuadros vacíos.',
 	tool_batch_convert_web_pages_to_pdf_wait_label: 'Espera de carga (s)',
 };
 

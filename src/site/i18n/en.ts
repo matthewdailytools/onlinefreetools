@@ -1132,7 +1132,7 @@ const en: SiteLangDict = {
   tool_batch_compress_pdfs_for_email_warn_large: 'A file is larger than 40 MB — this tab may run out of memory on that row.',
   tool_batch_convert_web_pages_to_jpg_advanced_label: 'Advanced settings (optional)',
   tool_batch_convert_web_pages_to_jpg_article:
-    'Paste one public page URL per line, capture each page as a JPEG at a chosen viewport in this tab, skip rows that fail, then download a ZIP. Each address is fetched once through our server and is not stored; the JPEG is built in the tab. This is a screenshot, not an A4 PDF.',
+    'Capture each public URL as a JPEG screenshot at a width you pick (desktop 1280, tablet 768, or phone 390). Choose full-page scroll or first screen, and JPEG quality, then take a ZIP of the images. This is a raster for chat, tickets, and layout review — not A4 print pages. Each address is fetched once through our server and is not stored. Need printable documents? Use Batch convert web pages to PDF.',
   tool_batch_convert_web_pages_to_jpg_capture_first: 'First screen',
   tool_batch_convert_web_pages_to_jpg_capture_frame_title: 'Hidden page capture frame',
   tool_batch_convert_web_pages_to_jpg_capture_full: 'Full page',
@@ -1142,10 +1142,9 @@ const en: SiteLangDict = {
   tool_batch_convert_web_pages_to_jpg_col_status: 'Status',
   tool_batch_convert_web_pages_to_jpg_col_url: 'URL',
   tool_batch_convert_web_pages_to_jpg_convert: 'Convert all',
-  tool_batch_convert_web_pages_to_jpg_desc:
-    'Batch convert web pages to JPG from a URL list — ZIP download; each URL is fetched once and not stored.',
+  tool_batch_convert_web_pages_to_jpg_desc: 'Screenshot a URL list to JPEG at desktop, tablet, or phone width — ZIP; not an A4 PDF.',
   tool_batch_convert_web_pages_to_jpg_description:
-    'Batch convert web pages to JPG from a URL list (one line = webpage to jpg). Pick viewport and JPEG quality, full page or first screen, then download a ZIP. Steps: paste URLs, Convert all, Download ZIP. Example: two help pages become two JPEGs. Each URL is fetched once and is not stored.',
+    'Batch convert web pages to JPG: screenshot a URL list at desktop, tablet, or phone width (one line = webpage to jpg). Full page or first screen, pick JPEG quality, Download ZIP. Steps: paste URLs, Convert all, Download ZIP. Example: two ticket links become two JPEGs. Fetched once, not stored.',
   tool_batch_convert_web_pages_to_jpg_download_zip: 'Download ZIP',
   tool_batch_convert_web_pages_to_jpg_empty: 'Paste at least one page URL first.',
   tool_batch_convert_web_pages_to_jpg_err_convert: 'This page could not be turned into a JPEG. Skipped.',
@@ -1155,7 +1154,7 @@ const en: SiteLangDict = {
   tool_batch_convert_web_pages_to_jpg_err_url: 'Could not load that URL. Check the address, or the site may block fetches.',
   tool_batch_convert_web_pages_to_jpg_err_url_empty: 'That line is not a valid http(s) page URL. Skipped.',
   tool_batch_convert_web_pages_to_jpg_example:
-    'Load sample fills two example.com URLs, builds two local sample pages into JPEGs without fetching the live site, and enables Download ZIP. Convert all fetches the addresses you pasted. Viewport, quality, and full page vs first screen change the pixels in those files.',
+    'Load sample fills a ticket-layout URL and a mobile-hero URL, builds two local screenshots (phone 390 turns the header blue; desktop 1280 keeps it dark) without fetching the live site, and enables Download ZIP. Convert all fetches the addresses you pasted. Viewport, quality, and full page vs first screen change the pixels.',
   tool_batch_convert_web_pages_to_jpg_example_title: 'Example',
   tool_batch_convert_web_pages_to_jpg_faq_a1:
     'Conversion runs in this tab. If you convert a URL list, we send each address to our server once so it can fetch the HTML; we do not store the pages. The JPEGs are built in your browser and packed into a ZIP here.',
@@ -1177,9 +1176,9 @@ const en: SiteLangDict = {
   tool_batch_convert_web_pages_to_jpg_faq_q6: 'What do viewport, JPEG quality, and first screen change?',
   tool_batch_convert_web_pages_to_jpg_file_count_tpl: '{n} URLs in the queue',
   tool_batch_convert_web_pages_to_jpg_how_body:
-    'Paste a URL list of public pages, press Convert all (desktop 1280, 85% JPEG, full page by default), then download a ZIP of the images that succeeded.',
+    'Paste URLs you would screenshot for chat or a layout review, press Convert all (desktop 1280, 85% JPEG, full page by default), then download a ZIP of the images that succeeded.',
   tool_batch_convert_web_pages_to_jpg_how_item_1:
-    'Paste one https URL per line (help-center or ticket links work well). One line is enough for webpage to jpg / url to jpg.',
+    'Paste one https URL per line (ticket links and public help heroes work well). One line is enough for webpage to jpg / url to jpg.',
   tool_batch_convert_web_pages_to_jpg_how_item_2:
     'Press Convert all. Defaults are desktop 1280, 85% JPEG, and full page. Each public URL is fetched once; failed rows skip.',
   tool_batch_convert_web_pages_to_jpg_how_item_3:
@@ -1224,11 +1223,11 @@ const en: SiteLangDict = {
   tool_batch_convert_web_pages_to_jpg_summary_tpl: '{ok} ready · {skip} skipped',
   tool_batch_convert_web_pages_to_jpg_title: 'Batch convert web pages to JPG',
   tool_batch_convert_web_pages_to_jpg_url_hint:
-    'One public http(s) URL per line, up to 10. We fetch each page once and rewrite CSS/image URLs. Scripts are removed before the JPEG capture.',
+    'One public http(s) URL per line, up to 10. We fetch each page once and rewrite CSS/image URLs. Scripts are removed before the JPEG capture. Layout follows the viewport you pick.',
   tool_batch_convert_web_pages_to_jpg_url_label: 'Page URLs (one per line)',
-  tool_batch_convert_web_pages_to_jpg_url_placeholder: 'https://example.com/help/getting-started',
+  tool_batch_convert_web_pages_to_jpg_url_placeholder: 'https://example.com/tickets/chat-layout',
   tool_batch_convert_web_pages_to_jpg_usecase_1:
-    'Drop several help-center or ticket URLs and get JPEG screenshots to paste into chat without opening each tab.',
+    'Drop several ticket or help URLs and get JPEG screenshots to paste into chat — a raster you can attach, not a printable booklet.',
   tool_batch_convert_web_pages_to_jpg_usecase_2:
     'Capture the same public page at phone 390 and desktop 1280 to compare the first screen before a review.',
   tool_batch_convert_web_pages_to_jpg_usecase_3:
@@ -1242,17 +1241,16 @@ const en: SiteLangDict = {
     'Extra seconds after images start loading so remote pictures can finish. Default is 1. Raise it if a JPEG shows empty image boxes.',
   tool_batch_convert_web_pages_to_jpg_wait_label: 'Load wait (sec)',
   tool_batch_convert_web_pages_to_pdf_article:
-    'Paste one public page URL per line, convert each page to an A4 PDF in this tab, skip rows that fail, then download a ZIP. Each address is fetched once through our server and is not stored; conversion stays in the tab.',
+    'Paste public page URLs and turn each one into an A4 portrait PDF in this tab — pages split for print and later reading, not one tall JPEG. Failed rows skip; successful files go into a ZIP. Each address is fetched once through our server and is not stored. Need chat screenshots or phone-vs-desktop first screens? Use Batch convert web pages to JPG.',
   tool_batch_convert_web_pages_to_pdf_capture_frame_title: 'Hidden page capture frame',
   tool_batch_convert_web_pages_to_pdf_clear: 'Clear',
   tool_batch_convert_web_pages_to_pdf_col_file: 'File',
   tool_batch_convert_web_pages_to_pdf_col_status: 'Status',
   tool_batch_convert_web_pages_to_pdf_col_url: 'URL',
   tool_batch_convert_web_pages_to_pdf_convert: 'Convert all',
-  tool_batch_convert_web_pages_to_pdf_desc:
-    'Batch convert web pages to PDF from a URL list — ZIP download; each URL is fetched once and not stored.',
+  tool_batch_convert_web_pages_to_pdf_desc: 'Save a URL list as A4 portrait PDFs for print and reading — ZIP download; not a webpage screenshot.',
   tool_batch_convert_web_pages_to_pdf_description:
-    'Batch convert web pages to PDF: paste a URL list (one https address per line, up to 10) to convert multiple webpages to PDF in this tab, skip rows that fail, download a ZIP. Steps: paste the list, click Convert all, review the table, download. Example: two sample help and policy pages become two PDFs in one ZIP. Each URL is fetched once through our server and is not stored; conversion stays in the tab. For a single HTML snippet, use Convert HTML to PDF.',
+    'Batch convert web pages to PDF as A4 portrait pages for print and later reading — not one tall JPEG. Paste a URL list, click Convert all, Download ZIP. Example: two policy pages become two PDFs. Each URL is fetched once and is not stored. For pasted HTML, use Convert HTML to PDF.',
   tool_batch_convert_web_pages_to_pdf_download_zip: 'Download ZIP',
   tool_batch_convert_web_pages_to_pdf_empty: 'Paste at least one page URL first.',
   tool_batch_convert_web_pages_to_pdf_err_convert: 'This page could not be turned into a PDF. Skipped.',
@@ -1262,32 +1260,38 @@ const en: SiteLangDict = {
   tool_batch_convert_web_pages_to_pdf_err_url: 'Could not load that URL. Check the address, or the site may block fetches.',
   tool_batch_convert_web_pages_to_pdf_err_url_empty: 'That line is not a valid http(s) page URL. Skipped.',
   tool_batch_convert_web_pages_to_pdf_example:
-    'Load sample fills two example.com URLs, builds two local sample pages into PDFs without fetching the live site, and enables Download ZIP. Convert all fetches the addresses you pasted.',
+    'Load sample fills two example.com help and policy URLs, builds two local A4 portrait PDFs with a CSS page break (no live fetch), and enables Download ZIP. Convert all fetches the addresses you pasted. Print CSS can change where each A4 page splits.',
   tool_batch_convert_web_pages_to_pdf_example_title: 'Example',
   tool_batch_convert_web_pages_to_pdf_faq_a1:
-    'Conversion runs in this tab. If you convert a URL list, we send each address to our server once so it can fetch the HTML; we do not store the pages. The PDFs are built in your browser and packed into a ZIP here.',
+    'The JPG sibling captures one JPEG per URL at a viewport you pick (desktop 1280, tablet 768, or phone 390), with quality and full page or first screen. This page slices each URL into A4 portrait pages for print and page-by-page reading. Same URL list, different artifact: paginated document vs screenshot.',
   tool_batch_convert_web_pages_to_pdf_faq_a2:
-    'This page is for a URL list (convert multiple webpages to PDF, then ZIP). For one HTML snippet or a single address with a live preview editor, use Convert HTML to PDF.',
+    'This page is a URL list: several public pages become separate A4 PDFs in a ZIP. For one HTML snippet or a single address with a live preview editor, use Convert HTML to PDF.',
   tool_batch_convert_web_pages_to_pdf_faq_a3:
-    'No. Scripts are stripped. Login walls, paywalls, and JavaScript-rendered apps often will not match the live site. Print CSS may also differ.',
+    'Paper is always A4 portrait. Long pages split using CSS page-break rules (plus a legacy fallback). It is not one infinitely tall page. Want a long screenshot instead? Use Batch convert web pages to JPG.',
   tool_batch_convert_web_pages_to_pdf_faq_a4:
-    'Successful rows become separate PDFs in one ZIP. This page does not merge them into a single file — use Combine files into one PDF after you download if you need that.',
+    'Conversion runs in this tab. Each URL is sent to our server once to fetch HTML; we do not store the pages. The PDF is built on your device and packed into a ZIP here.',
   tool_batch_convert_web_pages_to_pdf_faq_a5:
-    'Up to 10 http(s) URLs. Extra lines are ignored. Failed rows are skipped so the rest of the batch can finish.',
-  tool_batch_convert_web_pages_to_pdf_faq_q1: 'Are my pages uploaded and stored?',
+    'Successful rows become separate PDFs in one ZIP. This page does not merge them — use Combine files into one PDF after you download if you need a single booklet.',
+  tool_batch_convert_web_pages_to_pdf_faq_a6:
+    'No. Scripts are stripped. Login walls, paywalls, and JavaScript-rendered apps often will not match the live site. Print CSS may also move the page breaks away from what you see on screen.',
+  tool_batch_convert_web_pages_to_pdf_faq_q1: 'How is this different from Batch convert web pages to JPG?',
   tool_batch_convert_web_pages_to_pdf_faq_q2: 'How is this different from Convert HTML to PDF?',
-  tool_batch_convert_web_pages_to_pdf_faq_q3: 'Will a logged-in or JavaScript-heavy site match the live page?',
-  tool_batch_convert_web_pages_to_pdf_faq_q4: 'Is the result one PDF or a ZIP of many?',
-  tool_batch_convert_web_pages_to_pdf_faq_q5: 'How many URLs can I convert at once?',
+  tool_batch_convert_web_pages_to_pdf_faq_q3: 'What paper size is used? Is it one long page?',
+  tool_batch_convert_web_pages_to_pdf_faq_q4: 'Are my pages uploaded and stored?',
+  tool_batch_convert_web_pages_to_pdf_faq_q5: 'Is the result one PDF or a ZIP of many?',
+  tool_batch_convert_web_pages_to_pdf_faq_q6: 'Will a logged-in or JavaScript-heavy site match the live page?',
   tool_batch_convert_web_pages_to_pdf_file_count_tpl: '{n} URLs in the queue',
   tool_batch_convert_web_pages_to_pdf_how_body:
-    'Paste a URL list of public pages, convert them here one after another, then take a ZIP of the PDFs that succeeded.',
-  tool_batch_convert_web_pages_to_pdf_how_item_1: 'Paste one https URL per line (help-center or policy pages work well).',
-  tool_batch_convert_web_pages_to_pdf_how_item_2: 'Leave Load wait near 1 second unless images stay blank in the PDF.',
-  tool_batch_convert_web_pages_to_pdf_how_item_3: 'Press Convert all. Each public URL is fetched once; failed rows are skipped.',
-  tool_batch_convert_web_pages_to_pdf_how_item_4: 'Need one HTML snippet instead of a list? Use Convert HTML to PDF.',
+    'Paste the public URLs you want to archive, convert each into an A4 portrait PDF, then take a ZIP of the files that succeeded.',
+  tool_batch_convert_web_pages_to_pdf_how_item_1: 'Paste one https URL per line. Help-center, policy, and other public docs you would print work well.',
+  tool_batch_convert_web_pages_to_pdf_how_item_2: 'Leave Load wait near 1 second unless images stay blank on an A4 page.',
+  tool_batch_convert_web_pages_to_pdf_how_item_3:
+    'Press Convert all. Each public URL is fetched once and paginated to A4 portrait (CSS page-break can split sections). Failed rows skip.',
+  tool_batch_convert_web_pages_to_pdf_how_item_4:
+    'Need one HTML snippet with a preview? Use Convert HTML to PDF. Need a viewport screenshot instead of paginated paper? Use Batch convert web pages to JPG.',
   tool_batch_convert_web_pages_to_pdf_how_item_5:
-    'Download ZIP when at least one row succeeded. Click Load sample to try two local pages; the progress panel shows while they convert.',
+    'Download ZIP when at least one row succeeded. Click Load sample to try two local A4 pages; the progress panel shows while they convert.',
+  tool_batch_convert_web_pages_to_pdf_how_item_6: 'To bind several PDFs into one booklet, download first, then use Combine files into one PDF.',
   tool_batch_convert_web_pages_to_pdf_how_title: 'How it works',
   tool_batch_convert_web_pages_to_pdf_hud_elapsed_tpl: '{s}s elapsed',
   tool_batch_convert_web_pages_to_pdf_hud_pct_tpl: '{pct}%',
@@ -1297,11 +1301,16 @@ const en: SiteLangDict = {
   tool_batch_convert_web_pages_to_pdf_hud_title: 'Batch progress',
   tool_batch_convert_web_pages_to_pdf_progress_tpl: '{i} / {total}',
   tool_batch_convert_web_pages_to_pdf_rules_body:
-    'One http(s) URL per line, up to 10. Conversion is serial. Failed rows skip. Successful PDFs go into a ZIP.',
-  tool_batch_convert_web_pages_to_pdf_rules_item_1: 'Each URL is sent to our server once to fetch HTML and is not stored. The PDF is built in this tab.',
-  tool_batch_convert_web_pages_to_pdf_rules_item_2: 'Private networks, logins, and missing pages fail that row. The rest of the batch continues.',
-  tool_batch_convert_web_pages_to_pdf_rules_item_3: 'Duplicate ZIP names become name (2).pdf. Scripts are stripped before capture.',
-  tool_batch_convert_web_pages_to_pdf_rules_item_4: 'This is not a whole-site crawler. Paste the URLs you already have.',
+    'One http(s) URL per line, up to 10. Output is A4 portrait with CSS page breaks — not a full-page JPEG. Conversion is serial. Failed rows skip. Successful PDFs go into a ZIP.',
+  tool_batch_convert_web_pages_to_pdf_rules_item_1:
+    'Each URL is sent to our server once to fetch HTML and is not stored. The PDF is built in this tab on A4 portrait paper.',
+  tool_batch_convert_web_pages_to_pdf_rules_item_2:
+    'Pagination follows CSS page-break rules (with a legacy fallback). Print styles can differ from the on-screen layout. Very tall pages are still capped so the tab does not crash.',
+  tool_batch_convert_web_pages_to_pdf_rules_item_3:
+    'Private networks, logins, and missing pages fail that row. Duplicate ZIP names become name (2).pdf. Scripts are stripped before capture.',
+  tool_batch_convert_web_pages_to_pdf_rules_item_4: 'This is not a whole-site crawler and not a screenshot tool. Paste the public URLs you already have.',
+  tool_batch_convert_web_pages_to_pdf_rules_item_5:
+    'Compared with Batch convert web pages to JPG: that page rasterizes one JPEG at a chosen viewport. Compared with Convert HTML to PDF: that page takes pasted HTML, not a URL list. Compared with Combine files into one PDF: this page does not merge outputs.',
   tool_batch_convert_web_pages_to_pdf_rules_title: 'Rules you should expect',
   tool_batch_convert_web_pages_to_pdf_sample: 'Load sample',
   tool_batch_convert_web_pages_to_pdf_status_converting: 'Rendering PDF… this tab may pause for a few seconds',
@@ -1315,15 +1324,18 @@ const en: SiteLangDict = {
   tool_batch_convert_web_pages_to_pdf_summary_tpl: '{ok} ready · {skip} skipped',
   tool_batch_convert_web_pages_to_pdf_title: 'Batch convert web pages to PDF',
   tool_batch_convert_web_pages_to_pdf_url_hint:
-    'One public http(s) URL per line, up to 10. We fetch each page once and rewrite CSS/image URLs. Scripts are removed before PDF.',
+    'One public http(s) URL per line, up to 10. We fetch each page once and rewrite CSS/image URLs. Scripts are removed; the result is A4 portrait with CSS page breaks.',
   tool_batch_convert_web_pages_to_pdf_url_label: 'Page URLs (one per line)',
   tool_batch_convert_web_pages_to_pdf_url_placeholder: 'https://example.com/help/getting-started',
-  tool_batch_convert_web_pages_to_pdf_usecase_1: 'Save several help-center or docs pages as PDF without opening each one.',
-  tool_batch_convert_web_pages_to_pdf_usecase_2: 'Archive a URL list of public policy pages into a ZIP for later reading.',
-  tool_batch_convert_web_pages_to_pdf_usecase_3: 'Keep a single HTML paste on Convert HTML to PDF; use this page when you already have many links.',
+  tool_batch_convert_web_pages_to_pdf_usecase_1:
+    'Archive several help-center or public docs as printable A4 PDFs before a meeting, without opening Print in every tab.',
+  tool_batch_convert_web_pages_to_pdf_usecase_2:
+    'Pack a URL list of policies, terms, or notices into a ZIP for later offline reading or email attachments.',
+  tool_batch_convert_web_pages_to_pdf_usecase_3:
+    'Keep a pasted HTML snippet on Convert HTML to PDF. Keep chat screenshots and phone-vs-desktop first screens on Batch convert web pages to JPG. This page is the URL-list print archive.',
   tool_batch_convert_web_pages_to_pdf_usecases_title: 'Good fits',
   tool_batch_convert_web_pages_to_pdf_wait_hint:
-    'Extra seconds after images start loading so remote pictures can finish. Default is 1. Raise it if a PDF shows empty image boxes.',
+    'Extra seconds after images start loading so remote pictures can finish on each A4 page. Default is 1. Raise it if a PDF shows empty image boxes.',
   tool_batch_convert_web_pages_to_pdf_wait_label: 'Load wait (sec)',
   tool_batch_watermark_product_photos_anchor_bc: 'Bottom',
   tool_batch_watermark_product_photos_anchor_bl: 'Bottom left',

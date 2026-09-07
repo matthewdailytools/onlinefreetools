@@ -1084,7 +1084,7 @@ const de: SiteLangDict = {
   tool_batch_compress_pdfs_for_email_warn_large: 'Eine Datei ist größer als 40 MB — dieser Tab kann in dieser Zeile den Speicher vollaufen.',
   tool_batch_convert_web_pages_to_jpg_advanced_label: 'Erweiterte Einstellungen (optional)',
   tool_batch_convert_web_pages_to_jpg_article:
-    'Fügen Sie pro Zeile eine öffentliche Adresse ein, erfassen Sie jede Seite als JPEG in der gewählten Breite, überspringen Sie Fehlzeilen und laden Sie ein ZIP. Jede URL wird einmal über den Server geholt und nicht gespeichert; das Bild entsteht in diesem Tab. Das ist ein Screenshot, kein A4-PDF.',
+    'Erfassen Sie jede öffentliche URL als JPEG in der Breite, die Sie wählen (Desktop 1280, Tablet 768 oder Handy 390). Ganze Seite oder erster Bildschirm, JPEG-Qualität, dann ein ZIP der Bilder. Raster für Chat, Tickets und Layout-Review — kein A4-Druck. Jede Adresse wird einmal geholt und nicht gespeichert. Druckbare Dokumente: Mehrere Webseiten als PDF speichern.',
   tool_batch_convert_web_pages_to_jpg_capture_first: 'Nur der erste Bildschirm',
   tool_batch_convert_web_pages_to_jpg_capture_frame_title: 'Versteckter Erfassungsrahmen',
   tool_batch_convert_web_pages_to_jpg_capture_full: 'Ganze Seite',
@@ -1094,10 +1094,9 @@ const de: SiteLangDict = {
   tool_batch_convert_web_pages_to_jpg_col_status: 'Status',
   tool_batch_convert_web_pages_to_jpg_col_url: 'URL',
   tool_batch_convert_web_pages_to_jpg_convert: 'Alle umwandeln',
-  tool_batch_convert_web_pages_to_jpg_desc:
-    'Speichern Sie mehrere Webseiten als JPG aus einer URL-Liste und laden Sie ein ZIP. Jede Adresse wird einmal geholt und nicht gespeichert.',
+  tool_batch_convert_web_pages_to_jpg_desc: 'Screenshot einer URL-Liste als JPEG in Desktop-, Tablet- oder Handybreite — ZIP; kein A4-PDF.',
   tool_batch_convert_web_pages_to_jpg_description:
-    'Mehrere Webseiten als JPG speichern: URL-Liste einfügen (eine Zeile reicht). Breite und JPEG-Qualität, ganze Seite oder erster Bildschirm, dann ZIP. Schritte: URLs einfügen, Alle umwandeln, ZIP herunterladen. Beispiel: zwei Hilfeseiten werden zwei JPEGs. Jede URL wird einmal geholt und nicht gespeichert.',
+    'Mehrere Webseiten als JPG speichern: Screenshot der URL-Liste in Desktop-, Tablet- oder Handybreite (eine Zeile reicht). Ganze Seite oder erster Bildschirm, JPEG-Qualität, ZIP herunterladen. Schritte: URLs einfügen, Alle umwandeln, ZIP herunterladen. Beispiel: zwei Tickets werden zwei JPEGs. Einmal geholt, nicht gespeichert.',
   tool_batch_convert_web_pages_to_jpg_download_zip: 'ZIP herunterladen',
   tool_batch_convert_web_pages_to_jpg_empty: 'Fügen Sie zuerst mindestens eine Seiten-URL ein.',
   tool_batch_convert_web_pages_to_jpg_err_convert: 'Diese Seite ließ sich nicht als JPEG speichern. Übersprungen.',
@@ -1180,9 +1179,9 @@ const de: SiteLangDict = {
   tool_batch_convert_web_pages_to_jpg_url_hint:
     'Eine öffentliche http(s)-URL pro Zeile, höchstens 10. Jede Seite wird einmal geholt, CSS- und Bild-URLs umgeschrieben. Skripte werden vor der Erfassung entfernt.',
   tool_batch_convert_web_pages_to_jpg_url_label: 'Seiten-URLs (eine pro Zeile)',
-  tool_batch_convert_web_pages_to_jpg_url_placeholder: 'https://example.com/help/getting-started',
+  tool_batch_convert_web_pages_to_jpg_url_placeholder: 'https://example.com/tickets/chat-layout',
   tool_batch_convert_web_pages_to_jpg_usecase_1:
-    'Mehrere Hilfe- oder Ticket-URLs ablegen und JPEG-Screenshots für den Chat holen, ohne jeden Tab zu öffnen.',
+    'Mehrere Ticket- oder Hilfe-URLs ablegen und JPEG für den Chat holen — ein Raster zum Anhängen, kein Druckheft.',
   tool_batch_convert_web_pages_to_jpg_usecase_2:
     'Dieselbe öffentliche Seite bei 390 (Handy) und 1280 (Desktop) erfassen, um den ersten Bildschirm vor einem Review zu vergleichen.',
   tool_batch_convert_web_pages_to_jpg_usecase_3:
@@ -1196,17 +1195,16 @@ const de: SiteLangDict = {
     'Zusätzliche Sekunden, nachdem Bilder zu laden beginnen. Standard ist 1. Erhöhen, wenn das JPEG leere Rahmen zeigt.',
   tool_batch_convert_web_pages_to_jpg_wait_label: 'Ladezeit (Sek.)',
   tool_batch_convert_web_pages_to_pdf_article:
-    'Fügen Sie pro Zeile eine öffentliche Adresse ein, wandeln Sie jede Seite in dieser Registerkarte in ein A4-PDF um, überspringen Sie fehlgeschlagene Zeilen und laden Sie ein ZIP herunter. Jede URL wird einmal über den Server geholt und nicht gespeichert; die Umwandlung bleibt auf Ihrem Gerät.',
+    'Öffentliche URLs werden in dieser Registerkarte zu A4-Hochformat-PDFs mit Seitenumbrüchen — zum Drucken und Blättern, nicht als endloses JPEG. Fehlzeilen überspringen, gelungene Dateien ins ZIP. Jede Adresse wird einmal geholt und nicht gespeichert. Chat-Screenshots oder Handy-gegen-Desktop? Mehrere Webseiten als JPG speichern.',
   tool_batch_convert_web_pages_to_pdf_capture_frame_title: 'Verstecktes Aufnahme-Fenster',
   tool_batch_convert_web_pages_to_pdf_clear: 'Leeren',
   tool_batch_convert_web_pages_to_pdf_col_file: 'Datei',
   tool_batch_convert_web_pages_to_pdf_col_status: 'Status',
   tool_batch_convert_web_pages_to_pdf_col_url: 'URL',
   tool_batch_convert_web_pages_to_pdf_convert: 'Alle umwandeln',
-  tool_batch_convert_web_pages_to_pdf_desc:
-    'Mehrere Webseiten als PDF aus einer URL-Liste speichern und als ZIP holen; jede Adresse wird einmal abgerufen und nicht abgelegt.',
+  tool_batch_convert_web_pages_to_pdf_desc: 'URL-Liste als druckbare A4-Hochformat-PDFs im ZIP — kein Webseiten-Screenshot.',
   tool_batch_convert_web_pages_to_pdf_description:
-    'Mehrere Webseiten als PDF speichern: Eine https-URL pro Zeile (höchstens 10), A4-PDF in dieser Registerkarte, Fehler überspringen, ZIP herunterladen. Schritte: Liste einfügen, Alle umwandeln, Tabelle prüfen, Download. Beispiel: zwei Muster-Hilfe- und Richtlinienseiten werden zwei PDFs in einem ZIP. Jede URL wird einmal vom Server geholt und nicht gespeichert; die Umwandlung bleibt auf dem Gerät. Für ein HTML-Fragment nutzen Sie HTML in PDF umwandeln.',
+    'Mehrere Webseiten als PDF speichern: Die URL-Liste wird zu A4-Hochformat mit Umbrüchen, zum Drucken und Lesen — nicht ein hohes JPEG. Schritte: Liste einfügen, Alle umwandeln, ZIP herunterladen. Beispiel: zwei Richtlinienseiten werden zwei PDFs. Jede URL einmal geholt, nicht gespeichert. HTML-Schnipsel: HTML in PDF umwandeln.',
   tool_batch_convert_web_pages_to_pdf_download_zip: 'ZIP herunterladen',
   tool_batch_convert_web_pages_to_pdf_empty: 'Fügen Sie zuerst mindestens eine Seiten-URL ein.',
   tool_batch_convert_web_pages_to_pdf_err_convert: 'Diese Seite wurde kein PDF. Übersprungen.',
@@ -1216,32 +1214,38 @@ const de: SiteLangDict = {
   tool_batch_convert_web_pages_to_pdf_err_url: 'Diese URL ließ sich nicht laden. Adresse prüfen, oder die Seite blockiert den Abruf.',
   tool_batch_convert_web_pages_to_pdf_err_url_empty: 'Diese Zeile ist keine gültige http(s)-URL. Übersprungen.',
   tool_batch_convert_web_pages_to_pdf_example:
-    'Beispiel laden füllt zwei example.com-URLs, erzeugt zwei PDFs aus lokalem HTML (ohne die Live-Seite) und schaltet ZIP herunterladen frei. Alle umwandeln holt die Adressen, die Sie eingefügt haben.',
+    'Beispiel laden füllt Hilfe- und Richtlinien-URLs, erzeugt zwei lokale A4-PDFs mit CSS-Seitenumbruch (ohne Live-Abruf) und schaltet ZIP herunterladen frei. Alle umwandeln holt die Adressen, die Sie eingefügt haben. Druck-CSS verschiebt die Schnitte.',
   tool_batch_convert_web_pages_to_pdf_example_title: 'Beispiel',
   tool_batch_convert_web_pages_to_pdf_faq_a1:
-    'Die Umwandlung läuft in dieser Registerkarte. Bei einer URL-Liste senden wir jede Adresse einmal an den Server, um HTML zu holen; Seiten werden nicht gespeichert. PDFs entstehen auf Ihrem Gerät, das ZIP hier.',
+    'Papier ist immer A4 hochkant. Lange Seiten werden per CSS-Umbruch (plus Legacy-Fallback) zerteilt — keine unendlich hohe Seite. Langes Screenshot: Mehrere Webseiten als JPG speichern.',
   tool_batch_convert_web_pages_to_pdf_faq_a2:
-    'Diese Seite ist für eine URL-Liste (mehrere Seiten als PDF, dann ZIP). Für ein HTML-Stück oder eine Adresse mit Vorschau nutzen Sie HTML in PDF umwandeln.',
+    'Die JPG-Schwester rastert ein JPEG pro URL in 1280 / 768 / 390, mit Qualität und Ganzseite oder erstem Screen. Hier wird jede URL in A4-Blätter für den Druck geschnitten. Gleiche Liste, anderes Artefakt.',
   tool_batch_convert_web_pages_to_pdf_faq_a3:
-    'Nein. Skripte werden entfernt. Login-Wände, Paywalls und JavaScript-Apps treffen die Live-Seite oft nicht. Druck-CSS kann ebenfalls abweichen.',
+    'Diese Seite ist die URL-Liste: mehrere öffentliche Seiten → einzelne A4-PDFs → ZIP. Für ein HTML-Stück mit Vorschau: HTML in PDF umwandeln.',
   tool_batch_convert_web_pages_to_pdf_faq_a4:
-    'Jede gelungene Zeile ist ein eigenes PDF in einem ZIP. Wir führen sie nicht zu einer Datei zusammen — nach dem Download ggf. Dateien zu einem PDF kombinieren.',
+    'Umwandlung in dieser Registerkarte. Jede URL geht einmal an den Server für HTML; Seiten werden nicht gespeichert. Das PDF entsteht auf Ihrem Gerät, das ZIP hier.',
   tool_batch_convert_web_pages_to_pdf_faq_a5:
-    'Bis zu 10 http(s)-URLs. Der Rest wird ignoriert. Fehlzeilen werden übersprungen, damit der Stapel weiterläuft.',
-  tool_batch_convert_web_pages_to_pdf_faq_q1: 'Werden meine Seiten hochgeladen und auf einem Server gespeichert?',
-  tool_batch_convert_web_pages_to_pdf_faq_q2: 'Worin unterscheidet sich das von HTML in PDF umwandeln?',
-  tool_batch_convert_web_pages_to_pdf_faq_q3: 'Stimmt eine Seite mit Login oder viel JavaScript mit der Live-Seite überein?',
-  tool_batch_convert_web_pages_to_pdf_faq_q4: 'Kommt ein PDF oder ein ZIP mit mehreren Dateien heraus?',
-  tool_batch_convert_web_pages_to_pdf_faq_q5: 'Wie viele URLs kann ich auf einmal umwandeln?',
+    'Jede gelungene Zeile ist ein eigenes PDF in einem ZIP. Zusammenführen tun wir nicht — nach dem Download Dateien zu einem PDF kombinieren.',
+  tool_batch_convert_web_pages_to_pdf_faq_a6:
+    'Nein. Skripte fallen weg. Login-Wände, Paywalls und JavaScript-Apps treffen die Live-Seite oft nicht. Druck-CSS kann Umbrüche verschieben.',
+  tool_batch_convert_web_pages_to_pdf_faq_q1: 'Welches Papierformat? Wird es eine endlos hohe Seite?',
+  tool_batch_convert_web_pages_to_pdf_faq_q2: 'Worin unterscheidet sich das von Mehrere Webseiten als JPG speichern?',
+  tool_batch_convert_web_pages_to_pdf_faq_q3: 'Worin unterscheidet sich das von HTML in PDF umwandeln?',
+  tool_batch_convert_web_pages_to_pdf_faq_q4: 'Werden meine Seiten hochgeladen und auf einem Server gespeichert?',
+  tool_batch_convert_web_pages_to_pdf_faq_q5: 'Kommt ein PDF oder ein ZIP mit mehreren Dateien heraus?',
+  tool_batch_convert_web_pages_to_pdf_faq_q6: 'Stimmt eine Seite mit Login oder viel JavaScript mit der Live-Seite überein?',
   tool_batch_convert_web_pages_to_pdf_file_count_tpl: '{n} URLs in der Warteschlange',
   tool_batch_convert_web_pages_to_pdf_how_body:
-    'Fügen Sie die Liste öffentlicher Seiten ein, wandeln Sie sie nacheinander um und nehmen Sie ein ZIP der gelungenen PDFs mit.',
-  tool_batch_convert_web_pages_to_pdf_how_item_1: 'Eine https-URL pro Zeile einfügen (Hilfe oder Richtlinien passen gut).',
-  tool_batch_convert_web_pages_to_pdf_how_item_2: 'Wartezeit bei etwa 1 Sekunde lassen, außer Bilder im PDF bleiben leer.',
-  tool_batch_convert_web_pages_to_pdf_how_item_3: 'Alle umwandeln drücken. Jede öffentliche URL wird einmal geholt; Fehlzeilen übersprungen.',
-  tool_batch_convert_web_pages_to_pdf_how_item_4: 'Nur ein HTML-Fragment statt einer Liste? HTML in PDF umwandeln nutzen.',
+    'Fügen Sie die öffentlichen URLs ein, die Sie archivieren oder drucken wollen, wandeln Sie sie in A4-Hochformat um und nehmen Sie ein ZIP der gelungenen Dateien mit.',
+  tool_batch_convert_web_pages_to_pdf_how_item_1: 'Eine https-URL pro Zeile. Richtlinien, Hilfe und druckwürdige öffentliche Docs passen gut.',
+  tool_batch_convert_web_pages_to_pdf_how_item_2: 'Wartezeit bei etwa 1 Sekunde lassen, außer Bilder auf einem A4-Blatt bleiben leer.',
+  tool_batch_convert_web_pages_to_pdf_how_item_3:
+    'Alle umwandeln drücken. Jede öffentliche URL wird einmal geholt und auf A4 hochkant umbrochen (CSS-page-break kann Abschnitte teilen). Fehlzeilen übersprungen.',
+  tool_batch_convert_web_pages_to_pdf_how_item_4:
+    'HTML mit Vorschau? HTML in PDF umwandeln. Viewport-Screenshot statt Papier? Mehrere Webseiten als JPG speichern.',
   tool_batch_convert_web_pages_to_pdf_how_item_5:
-    'ZIP herunterladen, sobald mindestens eine Zeile geklappt hat. Beispiel laden testet zwei lokale Seiten; dabei erscheint die Fortschrittsleiste.',
+    'ZIP herunterladen, sobald mindestens eine Zeile geklappt hat. Beispiel laden testet zwei lokale A4-Seiten mit CSS-Umbruch.',
+  tool_batch_convert_web_pages_to_pdf_how_item_6: 'Mehrere PDFs zu einem Heft binden: erst herunterladen, dann Dateien zu einem PDF kombinieren.',
   tool_batch_convert_web_pages_to_pdf_how_title: 'So funktioniert es',
   tool_batch_convert_web_pages_to_pdf_hud_elapsed_tpl: '{s} s vergangen',
   tool_batch_convert_web_pages_to_pdf_hud_pct_tpl: '{pct} %',
@@ -1251,12 +1255,17 @@ const de: SiteLangDict = {
   tool_batch_convert_web_pages_to_pdf_hud_title: 'Stapel-Fortschritt',
   tool_batch_convert_web_pages_to_pdf_progress_tpl: '{i} / {total}',
   tool_batch_convert_web_pages_to_pdf_rules_body:
-    'Eine http(s)-URL pro Zeile, höchstens 10. Der Reihe nach. Fehler überspringen. Gelungene PDFs ins ZIP.',
+    'Eine http(s)-URL pro Zeile, höchstens 10. Ausgabe ist A4 hochkant mit CSS-Umbrüchen, kein Ganzseiten-JPEG. Der Reihe nach. Fehler überspringen. Gelungene PDFs ins ZIP.',
   tool_batch_convert_web_pages_to_pdf_rules_item_1:
-    'Jede URL geht einmal an den Server für HTML und wird nicht gespeichert. Das PDF entsteht in dieser Registerkarte.',
-  tool_batch_convert_web_pages_to_pdf_rules_item_2: 'Private Netze, Logins und fehlende Seiten lassen nur diese Zeile scheitern. Der Rest läuft weiter.',
-  tool_batch_convert_web_pages_to_pdf_rules_item_3: 'Doppelte ZIP-Namen werden zu name (2).pdf. Skripte fallen vor der Aufnahme weg.',
-  tool_batch_convert_web_pages_to_pdf_rules_item_4: 'Das ist kein Crawler für ganze Websites. Fügen Sie URLs ein, die Sie schon haben.',
+    'Jede URL geht einmal an den Server für HTML und wird nicht gespeichert. Das PDF entsteht in dieser Registerkarte auf A4 hochkant.',
+  tool_batch_convert_web_pages_to_pdf_rules_item_2:
+    'Umbrüche folgen CSS (plus Legacy-Fallback). Druckstile können von der Bildschirmansicht abweichen. Sehr hohe Seiten werden gekappt, damit der Tab nicht abstürzt.',
+  tool_batch_convert_web_pages_to_pdf_rules_item_3:
+    'Private Netze, Logins und fehlende Seiten lassen nur diese Zeile scheitern. Doppelte ZIP-Namen werden zu name (2).pdf. Skripte fallen vor der Aufnahme weg.',
+  tool_batch_convert_web_pages_to_pdf_rules_item_4:
+    'Kein Crawler für ganze Websites und kein Screenshot-Werkzeug. Fügen Sie öffentliche URLs ein, die Sie schon haben.',
+  tool_batch_convert_web_pages_to_pdf_rules_item_5:
+    'Gegen Mehrere Webseiten als JPG speichern: dort ein JPEG in gewählter Breite. Gegen HTML in PDF umwandeln: dort eingefügtes HTML. Gegen Dateien zu einem PDF kombinieren: hier keine Zusammenführung.',
   tool_batch_convert_web_pages_to_pdf_rules_title: 'Regeln, mit denen Sie rechnen sollten',
   tool_batch_convert_web_pages_to_pdf_sample: 'Beispiel laden',
   tool_batch_convert_web_pages_to_pdf_status_converting: 'PDF wird gerendert… der Tab kann kurz einfrieren',
@@ -1270,15 +1279,17 @@ const de: SiteLangDict = {
   tool_batch_convert_web_pages_to_pdf_summary_tpl: '{ok} bereit · {skip} übersprungen',
   tool_batch_convert_web_pages_to_pdf_title: 'Mehrere Webseiten als PDF speichern',
   tool_batch_convert_web_pages_to_pdf_url_hint:
-    'Eine öffentliche http(s)-URL pro Zeile, bis 10. Wir holen jede Seite einmal und schreiben CSS- und Bild-URLs um. Skripte fallen vor dem PDF weg.',
+    'Eine öffentliche http(s)-URL pro Zeile, bis 10. Wir holen jede Seite einmal und schreiben CSS- und Bild-URLs um. Skripte fallen weg; Ergebnis ist A4 hochkant mit CSS-Umbrüchen.',
   tool_batch_convert_web_pages_to_pdf_url_label: 'Seiten-URLs (eine pro Zeile)',
   tool_batch_convert_web_pages_to_pdf_url_placeholder: 'https://example.com/help/getting-started',
-  tool_batch_convert_web_pages_to_pdf_usecase_1: 'Mehrere Hilfe- oder Dokumentationsseiten als PDF sichern, ohne jede einzeln zu öffnen.',
-  tool_batch_convert_web_pages_to_pdf_usecase_2: 'Eine URL-Liste öffentlicher Richtlinien als ZIP ablegen und später lesen.',
-  tool_batch_convert_web_pages_to_pdf_usecase_3: 'Eingefügtes HTML bleibt bei HTML in PDF umwandeln; diese Seite, wenn Sie schon viele Links haben.',
+  tool_batch_convert_web_pages_to_pdf_usecase_1:
+    'Vor dem Meeting Hilfe- oder öffentliche Docs als druckbare A4-PDFs sichern, ohne in jedem Tab Drucken zu öffnen.',
+  tool_batch_convert_web_pages_to_pdf_usecase_2: 'Richtlinien, AGB oder Hinweise als ZIP ablegen, später offline lesen oder per Mail anhängen.',
+  tool_batch_convert_web_pages_to_pdf_usecase_3:
+    'Eingefügtes HTML bleibt bei HTML in PDF umwandeln. Chat-Screenshots und Handy/Desktop-Vergleich bei JPG. Hier nur das Druckarchiv aus der URL-Liste.',
   tool_batch_convert_web_pages_to_pdf_usecases_title: 'Gute Einsätze',
   tool_batch_convert_web_pages_to_pdf_wait_hint:
-    'Zusätzliche Sekunden, nachdem Bilder zu laden beginnen. Standard ist 1. Erhöhen, wenn das PDF leere Bildrahmen zeigt.',
+    'Zusätzliche Sekunden, nachdem Bilder auf jedem A4-Blatt zu laden beginnen. Standard ist 1. Erhöhen, wenn das PDF leere Bildrahmen zeigt.',
   tool_batch_convert_web_pages_to_pdf_wait_label: 'Lade-Wartezeit (s)',
   tool_batch_watermark_product_photos_anchor_bc: 'Unten',
   tool_batch_watermark_product_photos_anchor_bl: 'Unten links',

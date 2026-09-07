@@ -163,5 +163,6 @@ Title 方向须为当地口语检索向。H1 禁止用 `page` 当产品名。
 | 1 母版+lint | 2026-09-06 | 写 en 全键、catalog、Page、截图客户端；主词进 H1 | title 为 Batch convert web pages to PDF，非参数枚举 |
 | 1b 母版检索覆盖优化 | 2026-09-06 | 母版 desc 补 URL list 与 convert multiple webpages to PDF；ZIP 与邻页划界留在 FAQ | 主词仍在 H1；次词落入 desc/FAQ/usecase |
 | 2 按 brief 重写 | 2026-09-06 | 十语按当地检索词独立重写 H1/按钮/FAQ，禁止英模同构；ar/ja/ru 未勾待母语抽查 | 各语 title 为当地任务句 |
-| 2b 抽查语检索覆盖优化 | 2026-09-06 | 抽查 en,zh,es,ja：en 保留 Batch convert web pages to PDF；zh desc 补网址列表；es 补 lista de URLs；ja 补 URLリスト；次词仍在 FAQ/usecase | en,zh,es,ja 主词在 H1，次词有落点 |
+| 2b 抽查语检索覆盖优化 | 2026-09-07 | 邻页 IG 拉开：抽查 en,zh,es,ja 把 A4 纵向分页与打印归档写进 desc 前半；FAQ 首条对比 JPG 批处理；Rules 写 CSS 分页；次词 URL list / 网址列表仍在 How。hero 改用短 desc | en,zh,es,ja 主词在 H1；去掉 title 后正文仍明显是分页文档而非截图 |
 | 3 抽查+禁词+lint | 2026-09-06 | 禁词表全扫；H1 无 page 当产品名、无参数枚举；隐私写清代抓一次不落盘 | 十语可发布，待 verify:tool |
+| 4 邻页差异 | 2026-09-07 | 十语独立重写 How/FAQ/Use cases：打印归档 vs 视口截图；样例 HTML 加 CSS page-break；related 加 JPG 邻页 | 与 batch-convert-web-pages-to-jpg 不再共用同一套 URL 列表套话 |

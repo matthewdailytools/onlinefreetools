@@ -7,7 +7,7 @@ import type { SiteLangDict } from '../../../types';
 const ru: SiteLangDict = {
 	tool_batch_convert_web_pages_to_jpg_advanced_label: 'Дополнительные параметры (необязательно)',
 	tool_batch_convert_web_pages_to_jpg_article:
-		'Вставьте публичный адрес по одному в строке, сделайте JPEG с выбранной шириной, пропустите сбои и скачайте ZIP. Каждый URL запрашивается один раз через сервер и не сохраняется; картинка собирается в этой вкладке. Это снимок, не PDF формата A4.',
+		'Снимите каждый публичный URL как JPEG выбранной ширины (ПК 1280, планшет 768 или телефон 390). Вся страница или первый экран, качество JPEG, затем ZIP. Растр для чата, тикетов и проверки вёрстки — не бумага A4. Каждый адрес запрашивается один раз и не хранится. Печатные документы — «Пакетно сохранить веб-страницы в PDF».',
 	tool_batch_convert_web_pages_to_jpg_capture_first: 'Только первый экран',
 	tool_batch_convert_web_pages_to_jpg_capture_frame_title: 'Скрытая рамка захвата',
 	tool_batch_convert_web_pages_to_jpg_capture_full: 'Вся страница',
@@ -18,9 +18,9 @@ const ru: SiteLangDict = {
 	tool_batch_convert_web_pages_to_jpg_col_url: 'URL',
 	tool_batch_convert_web_pages_to_jpg_convert: 'Конвертировать всё',
 	tool_batch_convert_web_pages_to_jpg_desc:
-		'Пакетно сохраните веб-страницы в JPG из списка URL и скачайте ZIP. Каждый адрес запрашивается один раз и не хранится.',
+		'Скриншот списка URL в JPEG на ПК, планшете или телефоне — ZIP; это не PDF A4.',
 	tool_batch_convert_web_pages_to_jpg_description:
-		'Пакетно сохранить веб-страницы в JPG из списка URL (одной строки хватит). Выберите ширину и качество JPEG, всю страницу или первый экран, затем ZIP. Шаги: вставьте URL, Конвертировать всё, Скачать ZIP. Пример: две страницы помощи станут двумя JPEG. Каждый URL запрашивается один раз и не сохраняется.',
+		'Пакетно сохранить веб-страницы в JPG: скриншот списка URL шириной ПК, планшета или телефона (одной строки хватит). Вся страница или первый экран, качество JPEG, Скачать ZIP. Шаги: вставьте URL, Конвертировать всё, Скачать ZIP. Пример: два тикета станут двумя JPEG. Запрошен один раз, не сохранён.',
 	tool_batch_convert_web_pages_to_jpg_download_zip: 'Скачать ZIP',
 	tool_batch_convert_web_pages_to_jpg_empty: 'Сначала вставьте хотя бы один адрес страницы.',
 	tool_batch_convert_web_pages_to_jpg_err_convert: 'Эту страницу не удалось сделать JPEG. Пропущена.',
@@ -101,8 +101,8 @@ const ru: SiteLangDict = {
 	tool_batch_convert_web_pages_to_jpg_url_hint:
 		'Один публичный http(s) URL в строке, до 10. Каждую страницу запрашиваем один раз и переписываем CSS и картинки. Скрипты снимаются до снимка.',
 	tool_batch_convert_web_pages_to_jpg_url_label: 'Адреса страниц (по одному в строке)',
-	tool_batch_convert_web_pages_to_jpg_url_placeholder: 'https://example.com/help/getting-started',
-	tool_batch_convert_web_pages_to_jpg_usecase_1: 'Сбросьте несколько ссылок справки или тикетов и получите JPEG для чата, не открывая каждую вкладку.',
+	tool_batch_convert_web_pages_to_jpg_url_placeholder: 'https://example.com/tickets/chat-layout',
+	tool_batch_convert_web_pages_to_jpg_usecase_1: 'Сбросьте несколько ссылок тикетов или справки и получите JPEG для чата — растр для вложения, не печатная брошюра.',
 	tool_batch_convert_web_pages_to_jpg_usecase_2: 'Снимите одну публичную страницу на 390 (телефон) и 1280 (ПК), чтобы сравнить первый экран перед ревью.',
 	tool_batch_convert_web_pages_to_jpg_usecase_3: 'A4-архив оставьте пакетному PDF; эту страницу берите, когда из списка URL нужны файлы картинок.',
 	tool_batch_convert_web_pages_to_jpg_usecases_title: 'Куда это подходит',

@@ -290,7 +290,7 @@
   {
     "slug": "batch-convert-web-pages-to-jpg",
     "path": "/tools/batch-convert-web-pages-to-jpg",
-    "updatedAt": "2026-09-07T00:52:46.727Z",
+    "updatedAt": "2026-09-07T05:14:25.993Z",
     "launchedAt": "2026-09-07T00:10:00.000Z",
     "category": "image",
     "primaryTopic": "image-media",
@@ -312,7 +312,7 @@
   {
     "slug": "batch-convert-web-pages-to-pdf",
     "path": "/tools/batch-convert-web-pages-to-pdf",
-    "updatedAt": "2026-09-06T16:55:23.127Z",
+    "updatedAt": "2026-09-07T05:14:25.561Z",
     "launchedAt": "2026-09-06T14:10:00.000Z",
     "category": "pdf",
     "primaryTopic": "pdf-docs",
@@ -327,7 +327,8 @@
     "faqPrefix": "tool_batch_convert_web_pages_to_pdf",
     "related": [
       "convert-html-to-pdf",
-      "combine-files-into-one-pdf"
+      "combine-files-into-one-pdf",
+      "batch-convert-web-pages-to-jpg"
     ],
     "logo": "/icons/tools/batch-convert-web-pages-to-pdf.svg",
     "localProcessing": false,
