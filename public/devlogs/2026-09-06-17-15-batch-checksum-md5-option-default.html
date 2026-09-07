@@ -50,7 +50,7 @@
   
   
 </head>
-<body class="is-home-page">
+<body class="is-info-page is-devlog-page">
   
   
   <header>
@@ -160,20 +160,19 @@
     </aside>
     <main id="content" class="p-4">
       <section class="mb-3">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Batch checksum release files keeps a default-on MD5 checkbox and drops the duplicate toolbar chip that only turned MD5 on. | Dev Logs</h1>
-          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
-        </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-06 17:15
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">Batch checksum release files keeps a default-on MD5 checkbox and drops the duplicate toolbar chip that only turned MD5 on.</h1>
+          <p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/batch-checksum-release-files"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>batch-checksum-release-files<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-06 17:15
 Summary: Batch checksum release files keeps a default-on MD5 checkbox and drops the duplicate toolbar chip that only turned MD5 on.
 Visibility: people</p>
 <p>[question]
 <a href="http://127.0.0.1:8788/zh/tools/batch-checksum-release-files">http://127.0.0.1:8788/zh/tools/batch-checksum-release-files</a> 剔除 &quot;同时算md5&quot;按钮，只保留&quot;同时算md5&quot;option，默认选中</p>
 <h2>Tool links (English)</h2>
-<ul>
-<li><a href="https://onlinefreetools.org/tools/batch-checksum-release-files">https://onlinefreetools.org/tools/batch-checksum-release-files</a>
-Chinese: <a href="https://onlinefreetools.org/zh/tools/batch-checksum-release-files">https://onlinefreetools.org/zh/tools/batch-checksum-release-files</a></li>
-</ul>
+<p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/batch-checksum-release-files"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>batch-checksum-release-files<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+
 <p>[try to solve]</p>
 <h2>Context</h2>
 <p>The Chinese page had two MD5 controls that did the same job: a toolbar chip labeled「同时算 MD5」(<code>#bckChipMd5</code>) and a checkbox labeled「同时计算 MD5」(<code>#bckMd5</code>). The chip only set <code>md5Check.checked = true</code>. The checkbox started unchecked, and Load sample forced it off, so SHA-256 ran alone unless the user clicked the chip or the box.</p>

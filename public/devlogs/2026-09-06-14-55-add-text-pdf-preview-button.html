@@ -50,7 +50,7 @@
   
   
 </head>
-<body class="is-home-page">
+<body class="is-info-page is-devlog-page">
   
   
   <header>
@@ -160,20 +160,19 @@
     </aside>
     <main id="content" class="p-4">
       <section class="mb-3">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">The Add text to PDF primary button now says preview, matching the real action; download stays a second button. | Dev Logs</h1>
-          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
-        </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-06 14:55
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">The Add text to PDF primary button now says preview, matching the real action; download stays a second button.</h1>
+          <p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/add-text-to-pdf-file"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>add-text-to-pdf-file<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-06 14:55
 Summary: The Add text to PDF primary button now says preview, matching the real action; download stays a second button.
 Visibility: people</p>
 <p>[question]
 <a href="http://127.0.0.1:8788/zh/tools/add-text-to-pdf-file">http://127.0.0.1:8788/zh/tools/add-text-to-pdf-file</a>  按钮 ”添加并下载“修改为添加并预览</p>
 <h2>Tool links (English)</h2>
-<ul>
-<li><a href="https://onlinefreetools.org/tools/add-text-to-pdf-file">https://onlinefreetools.org/tools/add-text-to-pdf-file</a>
-Chinese: <a href="https://onlinefreetools.org/zh/tools/add-text-to-pdf-file">https://onlinefreetools.org/zh/tools/add-text-to-pdf-file</a></li>
-</ul>
+<p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/add-text-to-pdf-file"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>add-text-to-pdf-file<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+
 <p>[try to solve]</p>
 <h2>Context</h2>
 <p>On the Chinese tool page, the primary control was labeled「添加并下载」even though <code>#addTextBtnApply</code> only stamps text and refreshes the in-page preview. A separate <code>#addTextBtnDownload</code> already says「下载」. The How-to step also quoted the old button name.</p>

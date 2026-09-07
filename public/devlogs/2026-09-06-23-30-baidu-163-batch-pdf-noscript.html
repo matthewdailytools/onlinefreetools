@@ -50,7 +50,7 @@
   
   
 </head>
-<body class="is-home-page">
+<body class="is-info-page is-devlog-page">
   
   
   <header>
@@ -160,21 +160,19 @@
     </aside>
     <main id="content" class="p-4">
       <section class="mb-3">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Baidu and 163.com failed in batch URL-to-PDF because the no-script capture iframe followed Baidu’s noscript refresh and because huge homepages overflow the canvas; the same fetch API already ran in URL order. | Dev Logs</h1>
-          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
-        </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-06 23:30
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">Baidu and 163.com failed in batch URL-to-PDF because the no-script capture iframe followed Baidu’s noscript refresh and because huge homepages overflow the canvas; the same fetch API already ran in URL order.</h1>
+          <p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/batch-convert-web-pages-to-pdf"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>batch-convert-web-pages-to-pdf<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/convert-html-to-pdf"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>convert-html-to-pdf<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-06 23:30
 Summary: Baidu and 163.com failed in batch URL-to-PDF because the no-script capture iframe followed Baidu’s noscript refresh and because huge homepages overflow the canvas; the same fetch API already ran in URL order.
 Visibility: people</p>
 <p>[question]
 输入：<a href="https://www.baidu.com">https://www.baidu.com</a> 和 <a href="https://www.163.com">https://www.163.com</a> ,显示不能转化为pdf，分析原因，给出解决方案。为什么不能按url顺序实现 convert-html-to-pdf ？</p>
 <h2>Tool links (English)</h2>
-<ul>
-<li><a href="https://onlinefreetools.org/tools/batch-convert-web-pages-to-pdf">https://onlinefreetools.org/tools/batch-convert-web-pages-to-pdf</a></li>
-<li><a href="https://onlinefreetools.org/tools/convert-html-to-pdf">https://onlinefreetools.org/tools/convert-html-to-pdf</a>
-Chinese: <a href="https://onlinefreetools.org/zh/tools/batch-convert-web-pages-to-pdf">https://onlinefreetools.org/zh/tools/batch-convert-web-pages-to-pdf</a></li>
-</ul>
+<p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/batch-convert-web-pages-to-pdf"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>batch-convert-web-pages-to-pdf<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/convert-html-to-pdf"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>convert-html-to-pdf<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+
 <p>[try to solve]</p>
 <h2>Context</h2>
 <p>Pasting <code>https://www.baidu.com</code> then <code>https://www.163.com</code> into Batch convert web pages to PDF marked both rows as “could not be turned into a PDF”. The question is also why the batch tool does not just call Convert HTML to PDF once per URL, in list order.</p>

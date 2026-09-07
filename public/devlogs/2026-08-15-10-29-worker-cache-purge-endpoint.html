@@ -50,7 +50,7 @@
   
   
 </head>
-<body class="is-home-page">
+<body class="is-info-page is-devlog-page">
   
   
   <header>
@@ -160,11 +160,12 @@
     </aside>
     <main id="content" class="p-4">
       <section class="mb-3">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Preserved query strings in HTML cache keys and added a token-protected Worker cache purge endpoint. | Dev Logs</h1>
-          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
-        </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-15 10:29
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">Preserved query strings in HTML cache keys and added a token-protected Worker cache purge endpoint.</h1>
+          
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-15 10:29
 Summary: Preserved query strings in HTML cache keys and added a token-protected Worker cache purge endpoint.</p>
 <p>[question]
 <strong>1、cache key 不应该清掉了 query。2、开发/运维级：加一个 admin/dev purge endpoint，按 URL 删除 caches.default 的 exact key，或者完全清除，但需要验证token</strong></p>

@@ -50,7 +50,7 @@
   
   
 </head>
-<body class="is-home-page">
+<body class="is-info-page is-devlog-page">
   
   
   <header>
@@ -160,20 +160,19 @@
     </aside>
     <main id="content" class="p-4">
       <section class="mb-3">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Full-document html2canvas capture so long pages are no longer clipped to the 28rem preview iframe. | Dev Logs</h1>
-          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
-        </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-06 12:10
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">Full-document html2canvas capture so long pages are no longer clipped to the 28rem preview iframe.</h1>
+          <p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/convert-html-to-pdf"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>convert-html-to-pdf<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-06 12:10
 Summary: Full-document html2canvas capture so long pages are no longer clipped to the 28rem preview iframe.
 Visibility: people</p>
 <p>[question]
 pdf上的页面被截断了</p>
 <h2>Tool links (English)</h2>
-<ul>
-<li><a href="https://onlinefreetools.org/tools/convert-html-to-pdf">https://onlinefreetools.org/tools/convert-html-to-pdf</a>
-Chinese: <a href="https://onlinefreetools.org/zh/tools/convert-html-to-pdf">https://onlinefreetools.org/zh/tools/convert-html-to-pdf</a></li>
-</ul>
+<p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/convert-html-to-pdf"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>convert-html-to-pdf<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+
 <p>[try to solve]</p>
 <h2>Context</h2>
 <p>Convert HTML to PDF showed a complete-looking preview (the iframe scrolls) but the downloaded A4 PDF stopped after one screen. That showed up after capture was pointed at the preview iframe and given <code>windowWidth</code>/<code>width</code> equal to the iframe’s client width, with no matching full <code>windowHeight</code>.</p>

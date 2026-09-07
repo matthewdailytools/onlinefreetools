@@ -50,7 +50,7 @@
   
   
 </head>
-<body class="is-home-page">
+<body class="is-info-page is-devlog-page">
   
   
   <header>
@@ -160,11 +160,12 @@
     </aside>
     <main id="content" class="p-4">
       <section class="mb-3">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Fixed default-English display so `/` and prefixes follow `SITE_DEFAULT_LANG=en`. | Dev Logs</h1>
-          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
-        </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-01-11 00:41
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">Fixed default-English display so `/` and prefixes follow `SITE_DEFAULT_LANG=en`.</h1>
+          
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-01-11 00:41
 Summary: Fixed default-English display so <code>/</code> and prefixes follow <code>SITE_DEFAULT_LANG=en</code>.</p>
 <p>[question]
 修改系统默认为英文展示，但目前网站默认为中文</p>

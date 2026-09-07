@@ -50,7 +50,7 @@
   
   
 </head>
-<body class="is-home-page">
+<body class="is-info-page is-devlog-page">
   
   
   <header>
@@ -160,20 +160,19 @@
     </aside>
     <main id="content" class="p-4">
       <section class="mb-3">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Batch convert web pages to PDF no longer runs Load sample on first paint; the button still fills two local pages when clicked. | Dev Logs</h1>
-          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
-        </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-07 00:45
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">Batch convert web pages to PDF no longer runs Load sample on first paint; the button still fills two local pages when clicked.</h1>
+          <p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/batch-convert-web-pages-to-pdf"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>batch-convert-web-pages-to-pdf<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-07 00:45
 Summary: Batch convert web pages to PDF no longer runs Load sample on first paint; the button still fills two local pages when clicked.
 Visibility: people</p>
 <p>[question]
 <a href="https://onlinefreetools.org/zh/tools/batch-convert-web-pages-to-pdf">https://onlinefreetools.org/zh/tools/batch-convert-web-pages-to-pdf</a>  样例删除自动运行</p>
 <h2>Tool links (English)</h2>
-<ul>
-<li><a href="https://onlinefreetools.org/tools/batch-convert-web-pages-to-pdf">https://onlinefreetools.org/tools/batch-convert-web-pages-to-pdf</a>
-Chinese: <a href="https://onlinefreetools.org/zh/tools/batch-convert-web-pages-to-pdf">https://onlinefreetools.org/zh/tools/batch-convert-web-pages-to-pdf</a></li>
-</ul>
+<p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/batch-convert-web-pages-to-pdf"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>batch-convert-web-pages-to-pdf<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+
 <p>[try to solve]</p>
 <h2>Context</h2>
 <p>Opening the batch tool immediately called <code>loadSample()</code>, which converted two local HTML stand-ins, showed the progress HUD, and froze the tab for a few seconds. The request is to stop that auto-run while keeping the Load sample button.</p>

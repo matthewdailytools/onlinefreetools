@@ -50,7 +50,7 @@
   
   
 </head>
-<body class="is-home-page">
+<body class="is-info-page is-devlog-page">
   
   
   <header>
@@ -160,11 +160,12 @@
     </aside>
     <main id="content" class="p-4">
       <section class="mb-3">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Set English as fallback default and negotiate page language from browser Accept-Language / navigator. | Dev Logs</h1>
-          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
-        </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-01-10 22:45
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">Set English as fallback default and negotiate page language from browser Accept-Language / navigator.</h1>
+          
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-01-10 22:45
 Summary: Set English as fallback default and negotiate page language from browser Accept-Language / navigator.</p>
 <p>[question]
 设置英文为默认语言，并且判断浏览器可接受语言作为页面语言，网站没有对应语言则显示英文</p>

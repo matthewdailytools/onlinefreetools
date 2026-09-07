@@ -33,7 +33,11 @@ import {
   devlogsIndexFileName,
   devlogsIndexPathname,
   devlogsTotalPages,
+  escapeDevlogHtml,
+  extractDevlogToolSlugs,
   parseDevLogMeta,
+  renderDevlogSlugTagsHtml,
+  rewriteDevlogToolLinksMarkdown,
 } from './site/devlogs.mjs';
 const require = createRequire(import.meta.url);
 let marked;
@@ -209,15 +213,18 @@ export const buildDevLogs = async () => {
   for (const { fullPath, fileName } of fileEntries) {
     const md = await fs.readFile(fullPath, 'utf-8');
     const { date, summary, visibility, robotsContent } = parseDevLogMeta(md);
-    const htmlBody = marked.parse(md);
+    const toolSlugs = extractDevlogToolSlugs(md);
+    const htmlBody = marked.parse(rewriteDevlogToolLinksMarkdown(md));
     const base = fileName.replace(/\.md$/, '');
     const htmlName = `${base}.html`;
     expectedHtmlNames.add(htmlName);
 
     const pageTitle = summary ? `${summary} | ${t(lang, 'nav_devlogs')}` : base;
+    const heading = summary || base;
     const description = summary || `${siteConfig.brand} dev logs`;
     const canonicalPath = `/devlogs/${encodeURIComponent(base)}.html`;
     const isProjectOnly = visibility === DEVLOG_VISIBILITY_PROJECT;
+    const slugTagsHtml = renderDevlogSlugTagsHtml(toolSlugs);
 
     const headerHtml = renderHeader({
       lang,
@@ -230,11 +237,12 @@ export const buildDevLogs = async () => {
 
     const contentHtml = `
       <section class="mb-3">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">${pageTitle}</h1>
-          <a class="btn btn-outline-secondary btn-sm" href="${withLangPath(lang, '/devlogs/')}">${t(lang, 'back_devlogs')}</a>
-        </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded">${htmlBody}</article>
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="${withLangPath(lang, '/devlogs/')}">${t(lang, 'back_devlogs')}</a>
+          <h1 class="devlog-title">${escapeDevlogHtml(heading)}</h1>
+          ${slugTagsHtml}
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded">${htmlBody}</article>
       </section>
     `;
 
@@ -253,6 +261,7 @@ export const buildDevLogs = async () => {
       robotsNoindex: isProjectOnly,
       robotsNofollow: isProjectOnly,
       robotsContent: isProjectOnly ? robotsContent || 'noindex, nofollow' : '',
+      bodyClass: 'is-info-page is-devlog-page',
     });
 
     await fs.writeFile(path.join(outDir, htmlName), page, 'utf-8');
@@ -319,16 +328,14 @@ export const buildDevLogs = async () => {
 
     return `
     <section>
-      <div class="d-flex justify-content-between align-items-start gap-3 mb-3">
-        <div>
-          <h1 class="h4 mb-1">${t(lang, 'devlogs_title')}</h1>
-          <p class="text-muted mb-0">
-            ${t(lang, 'devlogs_subtitle')}
-            <a class="ms-1 text-decoration-none" href="${githubRepoUrl}" target="_blank" rel="noopener noreferrer">${githubLabel}</a>
-          </p>
-        </div>
-        <a class="btn btn-outline-secondary btn-sm flex-shrink-0" href="/">${t(lang, 'back_home')}</a>
-      </div>
+      <header class="devlog-page-head mb-3">
+        <a class="btn btn-outline-secondary btn-sm devlog-back flex-shrink-0" href="/">${t(lang, 'back_home')}</a>
+        <h1 class="devlog-title">${t(lang, 'devlogs_title')}</h1>
+        <p class="devlog-lead text-muted mb-0">
+          ${t(lang, 'devlogs_subtitle')}
+          <a class="ms-1 text-decoration-none" href="${githubRepoUrl}" target="_blank" rel="noopener noreferrer">${githubLabel}</a>
+        </p>
+      </header>
       ${months
         .map((month) => {
           const monthItems = pageItems.filter((i) => i.month === month);
@@ -345,9 +352,9 @@ export const buildDevLogs = async () => {
           ${monthItems
             .map(
               (i) => `
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="${i.href}" class="text-decoration-none">${i.title}</a>
-            <span class="badge text-bg-secondary">${i.date}</span>
+          <li class="list-group-item d-flex justify-content-between align-items-center gap-3">
+            <a href="${i.href}" class="devlog-slug-tag"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>${escapeDevlogHtml(i.title)}<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>
+            <span class="badge text-bg-secondary">${escapeDevlogHtml(i.date)}</span>
           </li>`
             )
             .join('')}
@@ -437,6 +444,7 @@ export const buildDevLogs = async () => {
       sidebarHtml,
       contentHtml: renderIndexContent(page, pageItems),
       footerHtml,
+      bodyClass: 'is-info-page is-devlog-page',
     });
 
     await fs.writeFile(path.join(outDir, outName), indexPage, 'utf-8');

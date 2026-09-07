@@ -50,7 +50,7 @@
   
   
 </head>
-<body class="is-home-page">
+<body class="is-info-page is-devlog-page">
   
   
   <header>
@@ -160,23 +160,20 @@
     </aside>
     <main id="content" class="p-4">
       <section class="mb-3">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">PDF-to-DWG and PDF-to-PDF/A Download is a real blob link, so a click saves instead of a silent programmatic a.click(). | Dev Logs</h1>
-          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
-        </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-06 16:56
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">PDF-to-DWG and PDF-to-PDF/A Download is a real blob link, so a click saves instead of a silent programmatic a.click().</h1>
+          <p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/convert-pdf-to-dwg"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>convert-pdf-to-dwg<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/convert-pdf-to-pdf-a"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>convert-pdf-to-pdf-a<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-06 16:56
 Summary: PDF-to-DWG and PDF-to-PDF/A Download is a real blob link, so a click saves instead of a silent programmatic a.click().
 Visibility: people</p>
 <p>[question]
 <a href="http://127.0.0.1:8788/zh/tools/convert-pdf-to-dwg">http://127.0.0.1:8788/zh/tools/convert-pdf-to-dwg</a> 点击下载.dxf没有反应
 <a href="http://127.0.0.1:8788/zh/tools/convert-pdf-to-pdf-a">http://127.0.0.1:8788/zh/tools/convert-pdf-to-pdf-a</a> 也是一样的问题，点击下载没有反应</p>
 <h2>Tool links (English)</h2>
-<ul>
-<li><a href="https://onlinefreetools.org/tools/convert-pdf-to-dwg">https://onlinefreetools.org/tools/convert-pdf-to-dwg</a></li>
-<li><a href="https://onlinefreetools.org/tools/convert-pdf-to-pdf-a">https://onlinefreetools.org/tools/convert-pdf-to-pdf-a</a>
-Chinese: <a href="https://onlinefreetools.org/zh/tools/convert-pdf-to-dwg">https://onlinefreetools.org/zh/tools/convert-pdf-to-dwg</a>
-Chinese: <a href="https://onlinefreetools.org/zh/tools/convert-pdf-to-pdf-a">https://onlinefreetools.org/zh/tools/convert-pdf-to-pdf-a</a></li>
-</ul>
+<p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/convert-pdf-to-dwg"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>convert-pdf-to-dwg<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/convert-pdf-to-pdf-a"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>convert-pdf-to-pdf-a<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+
 <p>[try to solve]</p>
 <h2>Context</h2>
 <p>On the local Chinese tool pages, Load sample (and a user PDF) showed a preview and an enabled Download control, but clicking it did nothing: no file, no error, no status change. The same pattern appeared on Convert PDF to DWG (Download .dxf) and Convert PDF to PDF/A.</p>

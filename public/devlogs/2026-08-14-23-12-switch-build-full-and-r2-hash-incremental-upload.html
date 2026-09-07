@@ -50,7 +50,7 @@
   
   
 </head>
-<body class="is-home-page">
+<body class="is-info-page is-devlog-page">
   
   
   <header>
@@ -160,11 +160,12 @@
     </aside>
     <main id="content" class="p-4">
       <section class="mb-3">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Switched site builds to full prerendering while keeping R2 uploads hash-incremental. | Dev Logs</h1>
-          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
-        </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-14 23:12
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">Switched site builds to full prerendering while keeping R2 uploads hash-incremental.</h1>
+          
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-14 23:12
 Summary: Switched site builds to full prerendering while keeping R2 uploads hash-incremental.</p>
 <p>[question]
 build site剔除增量逻辑，统一全量build。上传保留增量上传，逻辑为：每次upload R2成功之后，保存一份最后一次上传的全量文件以及对应的hash记录。后续每次上传R2前检查文件的hash与记录表的差异，不同则上传，上传完毕后更新记录表。</p>

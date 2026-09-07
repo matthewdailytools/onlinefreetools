@@ -50,7 +50,7 @@
   
   
 </head>
-<body class="is-home-page">
+<body class="is-info-page is-devlog-page">
   
   
   <header>
@@ -160,11 +160,12 @@
     </aside>
     <main id="content" class="p-4">
       <section class="mb-3">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">GitHub push can replace bare wrangler deploy if same commit and live verify waits for CF. | Dev Logs</h1>
-          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
-        </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-13 00:39
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">GitHub push can replace bare wrangler deploy if same commit and live verify waits for CF.</h1>
+          
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-13 00:39
 Summary: GitHub push can replace bare wrangler deploy if same commit and live verify waits for CF.</p>
 <p>[question]
 如下 npx wrangler deploy 这一步是否可以用 github 的 push 来替代？ npm run build:site / lint / upload:r2 / verify:r2 / wrangler deploy / verify:r2:live</p>

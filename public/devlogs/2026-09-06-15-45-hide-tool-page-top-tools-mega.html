@@ -50,7 +50,7 @@
   
   
 </head>
-<body class="is-home-page">
+<body class="is-info-page is-devlog-page">
   
   
   <header>
@@ -160,21 +160,19 @@
     </aside>
     <main id="content" class="p-4">
       <section class="mb-3">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Individual tool pages no longer show the top “Tools” mega menu; the sidebar tool list stays. | Dev Logs</h1>
-          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
-        </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-06 15:45
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">Individual tool pages no longer show the top “Tools” mega menu; the sidebar tool list stays.</h1>
+          <p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/make-pdf-flipbook"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>make-pdf-flipbook<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-06 15:45
 Summary: Individual tool pages no longer show the top “Tools” mega menu; the sidebar tool list stays.
 Visibility: people</p>
 <p>[question]
 将单个工具顶部菜单的”工具“菜单隐藏，保留侧边的工具菜单</p>
 <h2>Tool links (English)</h2>
-<ul>
-<li><a href="https://onlinefreetools.org/tools/make-pdf-flipbook">https://onlinefreetools.org/tools/make-pdf-flipbook</a>
-Chinese: <a href="https://onlinefreetools.org/zh/tools/make-pdf-flipbook">https://onlinefreetools.org/zh/tools/make-pdf-flipbook</a>
-(Applies to every tool page; the English URL is a representative check.)</li>
-</ul>
+<p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/make-pdf-flipbook"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>make-pdf-flipbook<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+
 <p>[try to solve]</p>
 <h2>Context</h2>
 <p>On a single tool page the header already had a “Tools” mega menu (hover panel of every topic and tool), while the left sidebar listed tools for the current cluster. The two overlapping lists made the chrome heavier than needed.</p>

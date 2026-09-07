@@ -50,7 +50,7 @@
   
   
 </head>
-<body class="is-home-page">
+<body class="is-info-page is-devlog-page">
   
   
   <header>
@@ -160,11 +160,12 @@
     </aside>
     <main id="content" class="p-4">
       <section class="mb-3">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Advise against mapping /{lang} directly to R2; Worker-only R2 is possible but slower on cold path. | Dev Logs</h1>
-          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
-        </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-13 08:01
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">Advise against mapping /{lang} directly to R2; Worker-only R2 is possible but slower on cold path.</h1>
+          
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-13 08:01
 Summary: Advise against mapping /{lang} directly to R2; Worker-only R2 is possible but slower on cold path.</p>
 <p>[question]
 是否可以将<a href="https://onlinefreetools.org/%7Blang%7D">https://onlinefreetools.org/{lang}</a> 直接指向 R2</p>

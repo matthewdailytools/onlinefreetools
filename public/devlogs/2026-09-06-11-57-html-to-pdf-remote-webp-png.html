@@ -50,7 +50,7 @@
   
   
 </head>
-<body class="is-home-page">
+<body class="is-info-page is-devlog-page">
   
   
   <header>
@@ -160,20 +160,19 @@
     </aside>
     <main id="content" class="p-4">
       <section class="mb-3">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Remote WebP (and AVIF/SVG/ICO) images are same-origin proxied and rasterized to PNG before html2canvas, so the HTML preview and A4 PDF share the same pixels. | Dev Logs</h1>
-          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
-        </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-06 11:57
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">Remote WebP (and AVIF/SVG/ICO) images are same-origin proxied and rasterized to PNG before html2canvas, so the HTML preview and A4 PDF share the same pixels.</h1>
+          <p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/convert-html-to-pdf"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>convert-html-to-pdf<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-06 11:57
 Summary: Remote WebP (and AVIF/SVG/ICO) images are same-origin proxied and rasterized to PNG before html2canvas, so the HTML preview and A4 PDF share the same pixels.
 Visibility: people</p>
 <p>[question]
 需要一致，有没有办法解决远程webp</p>
 <h2>Tool links (English)</h2>
-<ul>
-<li><a href="https://onlinefreetools.org/tools/convert-html-to-pdf">https://onlinefreetools.org/tools/convert-html-to-pdf</a>
-Chinese: <a href="https://onlinefreetools.org/zh/tools/convert-html-to-pdf">https://onlinefreetools.org/zh/tools/convert-html-to-pdf</a></li>
-</ul>
+<p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/convert-html-to-pdf"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>convert-html-to-pdf<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+
 <p>[try to solve]</p>
 <h2>Context</h2>
 <p>html2canvas throws <code>Unsupported image type</code> on WebP/AVIF/SVG backgrounds, so Convert HTML to PDF used to strip those assets. The iframe preview still showed them, so 163.com and other remote pages looked different from the downloaded PDF. Direct browser <code>drawImage</code> of a cross-origin <code>&lt;img&gt;</code> also taints the canvas (no CORS on typical CDNs).</p>

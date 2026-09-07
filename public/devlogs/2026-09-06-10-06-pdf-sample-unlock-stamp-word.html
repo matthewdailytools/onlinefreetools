@@ -50,7 +50,7 @@
   
   
 </head>
-<body class="is-home-page">
+<body class="is-info-page is-devlog-page">
   
   
   <header>
@@ -160,23 +160,19 @@
     </aside>
     <main id="content" class="p-4">
       <section class="mb-3">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Fixed three remaining Chinese PDF sample crashes: unlock now decrypts with Cantoo pdf-lib, stamps fall back from CJK Helvetica, Word sample PDF uses WinAnsi-safe text. | Dev Logs</h1>
-          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
-        </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-06 10:06
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">Fixed three remaining Chinese PDF sample crashes: unlock now decrypts with Cantoo pdf-lib, stamps fall back from CJK Helvetica, Word sample PDF uses WinAnsi-safe text.</h1>
+          <p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/add-digital-signature-to-pdf"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>add-digital-signature-to-pdf<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/protect-pdf"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>protect-pdf<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/turn-pdf-into-word-document"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>turn-pdf-into-word-document<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/unlock-pdf"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>unlock-pdf<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-06 10:06
 Summary: Fixed three remaining Chinese PDF sample crashes: unlock now decrypts with Cantoo pdf-lib, stamps fall back from CJK Helvetica, Word sample PDF uses WinAnsi-safe text.
 Visibility: people</p>
 <p>[question]
 继续</p>
 <h2>Tool links (English)</h2>
-<ul>
-<li><a href="https://onlinefreetools.org/tools/add-digital-signature-to-pdf">https://onlinefreetools.org/tools/add-digital-signature-to-pdf</a></li>
-<li><a href="https://onlinefreetools.org/tools/protect-pdf">https://onlinefreetools.org/tools/protect-pdf</a></li>
-<li><a href="https://onlinefreetools.org/tools/turn-pdf-into-word-document">https://onlinefreetools.org/tools/turn-pdf-into-word-document</a></li>
-<li><a href="https://onlinefreetools.org/tools/unlock-pdf">https://onlinefreetools.org/tools/unlock-pdf</a>
-Chinese: <a href="https://onlinefreetools.org/zh/tools/unlock-pdf">https://onlinefreetools.org/zh/tools/unlock-pdf</a></li>
-</ul>
+<p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/add-digital-signature-to-pdf"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>add-digital-signature-to-pdf<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/protect-pdf"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>protect-pdf<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/turn-pdf-into-word-document"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>turn-pdf-into-word-document<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/unlock-pdf"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>unlock-pdf<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+
 <p>[try to solve]</p>
 <h2>Context</h2>
 <p>After the html2pdf.js / jsPDF wiring fix, three other Chinese PDF tools still failed on page-entry samples (2026-09-06 auto-QA): <code>unlock-pdf</code>, <code>add-digital-signature-to-pdf</code>, and <code>turn-pdf-into-word-document</code>. None of them used html2pdf. The user asked to continue those remaining failures.</p>

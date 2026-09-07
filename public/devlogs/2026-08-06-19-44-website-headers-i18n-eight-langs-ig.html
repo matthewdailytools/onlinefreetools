@@ -50,7 +50,7 @@
   
   
 </head>
-<body class="is-home-page">
+<body class="is-info-page is-devlog-page">
   
   
   <header>
@@ -160,11 +160,12 @@
     </aside>
     <main id="content" class="p-4">
       <section class="mb-3">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Added website-headers IG i18n keys for eight locales (es, pt, id, fr, de, ar, ja, ru) plus matching home cards. | Dev Logs</h1>
-          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
-        </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-06 19:44
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">Added website-headers IG i18n keys for eight locales (es, pt, id, fr, de, ar, ja, ru) plus matching home cards.</h1>
+          
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-06 19:44
 Summary: Added website-headers IG i18n keys for eight locales (es, pt, id, fr, de, ar, ja, ru) plus matching home cards.</p>
 <p>[question]
 In /Users/xuli/vscodeai/onlinefreetools, add website-headers IG i18n keys to: es, pt, id, fr, de, ar, ja, ru (files src/site/i18n/{lang}.ts). Mirror the key set now in en.ts for tool_headers_* (how/rules/example/usecases/ref labels + faq q4/q5). Also update tool_headers_title, description, article, note_1/note_2, fetch_button if present to match search intent from work-tasks/website-headers/03-locale-briefs.md. Rewrite independently per language — not isomorphic English skeletons. description ≥120 chars with process/example keywords for that lang. Also update FAQ q1-q3 if they already exist to stay consistent. Keep existing keys like url_label, result_title etc. — only improve if clearly English leftover. Update scripts/site/i18n.mjs home cards tool_website_headers_title / tool_website_headers_desc for these 8 langs to match. Return files changed.</p>

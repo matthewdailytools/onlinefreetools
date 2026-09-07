@@ -50,7 +50,7 @@
   
   
 </head>
-<body class="is-home-page">
+<body class="is-info-page is-devlog-page">
   
   
   <header>
@@ -160,11 +160,12 @@
     </aside>
     <main id="content" class="p-4">
       <section class="mb-3">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Explain current HTML cache layers (Cache API + R2 storage + Assets fallback + runtime compress) and residual risks. | Dev Logs</h1>
-          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
-        </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-12 23:59
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">Explain current HTML cache layers (Cache API + R2 storage + Assets fallback + runtime compress) and residual risks.</h1>
+          
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-12 23:59
 Summary: Explain current HTML cache layers (Cache API + R2 storage + Assets fallback + runtime compress) and residual risks.</p>
 <p>[question]
 目前缓存实现了哪几层？实现逻辑是什么，会不会产生所有的缓存的bug</p>

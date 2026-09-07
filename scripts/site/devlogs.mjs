@@ -90,6 +90,97 @@ export const parseDevLogMeta = (md) => {
 };
 
 /**
+ * 转义写入 HTML 文本/属性的字符串，避免摘要或 slug 破坏标记。
+ * @param {string} value 原文
+ * @returns {string} 转义后的文本
+ */
+export const escapeDevlogHtml = (value) =>
+  String(value || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+
+/**
+ * 英文默认语工具 URL（无语言前缀）。用于从 Tool links 小节抽出 slug。
+ * 不匹配 `/zh/tools/...` 等带语言前缀的地址。
+ */
+const EN_TOOL_PATH_RE = /https:\/\/onlinefreetools\.org\/tools\/([a-z0-9][a-z0-9-]*)\/?/gi;
+
+/**
+ * 定位 Markdown 里的 Tool links (English) 小节（到下一节或 [try to solve] 为止）。
+ * @param {string} md 源 Markdown
+ * @returns {{ heading: string, body: string, start: number, end: number } | null}
+ */
+const findToolLinksSection = (md) => {
+  const text = String(md || '');
+  const headingRe = /^## Tool links \(English\)[^\n]*\n/im;
+  const headingMatch = headingRe.exec(text);
+  if (!headingMatch) return null;
+  const bodyStart = headingMatch.index + headingMatch[0].length;
+  const rest = text.slice(bodyStart);
+  const endRel = rest.search(/^(?:\[try to solve\]|## )/m);
+  const body = endRel < 0 ? rest : rest.slice(0, endRel);
+  const end = endRel < 0 ? text.length : bodyStart + endRel;
+  return { heading: headingMatch[0], body, start: headingMatch.index, end };
+};
+
+/**
+ * 从日志 Markdown 的 Tool links (English) 小节抽出英文工具 slug（去重、保序）。
+ * @param {string} md 源 Markdown
+ * @returns {string[]} slug 列表
+ */
+export const extractDevlogToolSlugs = (md) => {
+  const section = findToolLinksSection(md);
+  if (!section) return [];
+  /** @type {string[]} */
+  const slugs = [];
+  const seen = new Set();
+  EN_TOOL_PATH_RE.lastIndex = 0;
+  let match;
+  while ((match = EN_TOOL_PATH_RE.exec(section.body))) {
+    const slug = match[1];
+    if (seen.has(slug)) continue;
+    seen.add(slug);
+    slugs.push(slug);
+  }
+  return slugs;
+};
+
+/**
+ * 把 slug 渲染成 HTML 标签外观的可点链接（跳转英文默认工具页 `/tools/{slug}`）。
+ * @param {string[]} slugs 工具 slug
+ * @returns {string} 标签行 HTML；无 slug 时为空字符串
+ */
+export const renderDevlogSlugTagsHtml = (slugs) => {
+  const list = Array.isArray(slugs) ? slugs.filter(Boolean) : [];
+  if (!list.length) return '';
+  const tags = list
+    .map((slug) => {
+      const safe = escapeDevlogHtml(slug);
+      return `<a class="devlog-slug-tag" href="/tools/${safe}"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>${safe}<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a>`;
+    })
+    .join('');
+  return `<p class="devlog-slug-row">${tags}</p>`;
+};
+
+/**
+ * 把 Tool links (English) 小节的长 URL 列表换成 slug 标签，便于扫读与点击。
+ * 无该小节或抽不出 slug 时原样返回。
+ * @param {string} md 源 Markdown
+ * @returns {string} 改写后的 Markdown
+ */
+export const rewriteDevlogToolLinksMarkdown = (md) => {
+  const text = String(md || '');
+  const section = findToolLinksSection(text);
+  if (!section) return text;
+  const slugs = extractDevlogToolSlugs(text);
+  if (!slugs.length) return text;
+  const tagsHtml = renderDevlogSlugTagsHtml(slugs);
+  return `${text.slice(0, section.start)}${section.heading}\n${tagsHtml}\n\n${text.slice(section.end)}`;
+};
+
+/**
  * 递归收集 dev-logs 下所有 Markdown 源文件（支持 dev-logs/YYYY-MM/ 分月目录）。
  * 跳过以下划线开头的目录（如 `_archive`、`_curation`），不参与公开构建。
  * @param {string} [dir] 起始目录，默认 `dev-logs/`

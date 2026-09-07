@@ -50,7 +50,7 @@
   
   
 </head>
-<body class="is-home-page">
+<body class="is-info-page is-devlog-page">
   
   
   <header>
@@ -160,11 +160,12 @@
     </aside>
     <main id="content" class="p-4">
       <section class="mb-3">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Added Japanese and Russian i18n shards for cidr-to-ip-range with search-oriented H1s (CIDR→IP range), not calculator-only titles. | Dev Logs</h1>
-          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
-        </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-28 23:35
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">Added Japanese and Russian i18n shards for cidr-to-ip-range with search-oriented H1s (CIDR→IP range), not calculator-only titles.</h1>
+          
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-28 23:35
 Summary: Added Japanese and Russian i18n shards for cidr-to-ip-range with search-oriented H1s (CIDR→IP range), not calculator-only titles.</p>
 <p>[question]
 Write two i18n shard files for tool slug <code>cidr-to-ip-range</code>: ja.ts and ru.ts. Independent rewrite; H1 CIDR→IP range; no param-enum subtitle; sample 192.168.1.0/24; privacy device + no upload; keep placeholders.</p>

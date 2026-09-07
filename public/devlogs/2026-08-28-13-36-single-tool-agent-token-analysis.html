@@ -50,7 +50,7 @@
   
   
 </head>
-<body class="is-home-page">
+<body class="is-info-page is-devlog-page">
   
   
   <header>
@@ -160,11 +160,12 @@
     </aside>
     <main id="content" class="p-4">
       <section class="mb-3">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Single-tool Agent token use grows mainly from multi-phase workflows and context accumulation, not from reading all 128 tools; mitigated by `tool-token-efficiency` Skill without dropping quality gates. | Dev Logs</h1>
-          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
-        </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-28 13:36
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">Single-tool Agent token use grows mainly from multi-phase workflows and context accumulation, not from reading all 128 tools; mitigated by `tool-token-efficiency` Skill without dropping quality gates.</h1>
+          
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-28 13:36
 Summary: Single-tool Agent token use grows mainly from multi-phase workflows and context accumulation, not from reading all 128 tools; mitigated by <code>tool-token-efficiency</code> Skill without dropping quality gates.</p>
 <p>[question]
 单个工具的生成，使用token量越来越大，分析一下原因，以及影响因素，另外还要分析是否由于项目工具越来越多导致。后续：单独一个 skill 做 token 优化约束，但绝对不要降低生成工具的质量。</p>

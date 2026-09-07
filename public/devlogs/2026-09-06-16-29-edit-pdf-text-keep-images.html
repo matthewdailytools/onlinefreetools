@@ -50,7 +50,7 @@
   
   
 </head>
-<body class="is-home-page">
+<body class="is-info-page is-devlog-page">
   
   
   <header>
@@ -160,20 +160,19 @@
     </aside>
     <main id="content" class="p-4">
       <section class="mb-3">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Edit PDF text now paints replacements onto the original pages, so photos, graphics, and unedited lines stay. | Dev Logs</h1>
-          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
-        </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-06 16:29
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">Edit PDF text now paints replacements onto the original pages, so photos, graphics, and unedited lines stay.</h1>
+          <p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/edit-pdf-text-online"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>edit-pdf-text-online<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-06 16:29
 Summary: Edit PDF text now paints replacements onto the original pages, so photos, graphics, and unedited lines stay.
 Visibility: people</p>
 <p>[question]
 <a href="http://127.0.0.1:8788/zh/tools/edit-pdf-text-online">http://127.0.0.1:8788/zh/tools/edit-pdf-text-online</a>  pdf编辑应该保留格式和图片</p>
 <h2>Tool links (English)</h2>
-<ul>
-<li><a href="https://onlinefreetools.org/tools/edit-pdf-text-online">https://onlinefreetools.org/tools/edit-pdf-text-online</a>
-Chinese: <a href="https://onlinefreetools.org/zh/tools/edit-pdf-text-online">https://onlinefreetools.org/zh/tools/edit-pdf-text-online</a></li>
-</ul>
+<p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/edit-pdf-text-online"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>edit-pdf-text-online<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+
 <p>[try to solve]</p>
 <h2>Context</h2>
 <p>The Edit PDF text online tool extracted the text layer into a textarea, then on Apply created a brand-new blank PDF and reflowed the wording with a simple Helvetica/system-font layout. Photos, graphics, page size, and original coordinates disappeared. Users who only needed to fix a word still lost the rest of the page.</p>

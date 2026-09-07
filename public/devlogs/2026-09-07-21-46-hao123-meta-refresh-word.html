@@ -50,7 +50,7 @@
   
   
 </head>
-<body class="is-home-page">
+<body class="is-info-page is-devlog-page">
   
   
   <header>
@@ -160,20 +160,19 @@
     </aside>
     <main id="content" class="p-4">
       <section class="mb-3">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Hao123.com Convert failed because the apex host only returns a meta-refresh stub; the fetch API now follows that hop to www.hao123.com. | Dev Logs</h1>
-          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
-        </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-07 21:46
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">Hao123.com Convert failed because the apex host only returns a meta-refresh stub; the fetch API now follows that hop to www.hao123.com.</h1>
+          <p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/convert-html-web-pages-to-word-document"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>convert-html-web-pages-to-word-document<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-07 21:46
 Summary: Hao123.com Convert failed because the apex host only returns a meta-refresh stub; the fetch API now follows that hop to <a href="http://www.hao123.com">www.hao123.com</a>.
 Visibility: people</p>
 <p>[question]
 本地测试：<a href="https://hao123.com">https://hao123.com</a> 点击转换还是失败</p>
 <h2>Tool links (English)</h2>
-<ul>
-<li><a href="https://onlinefreetools.org/tools/convert-html-web-pages-to-word-document">https://onlinefreetools.org/tools/convert-html-web-pages-to-word-document</a>
-Chinese: <a href="https://onlinefreetools.org/zh/tools/convert-html-web-pages-to-word-document">https://onlinefreetools.org/zh/tools/convert-html-web-pages-to-word-document</a></li>
-</ul>
+<p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/convert-html-web-pages-to-word-document"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>convert-html-web-pages-to-word-document<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+
 <p>[try to solve]</p>
 <h2>Context</h2>
 <p>Local Convert on the HTML-to-Word URL tab with <a href="https://hao123.com">https://hao123.com</a> still showed the generic convert error after the sanitize/Packer hardening. <a href="https://www.hao123.com">https://www.hao123.com</a> on the same page succeeded.</p>

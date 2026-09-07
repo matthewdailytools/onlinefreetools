@@ -50,7 +50,7 @@
   
   
 </head>
-<body class="is-home-page">
+<body class="is-info-page is-devlog-page">
   
   
   <header>
@@ -160,20 +160,19 @@
     </aside>
     <main id="content" class="p-4">
       <section class="mb-3">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Moved the GitHub “report a bug” link to the end of the tool breadcrumb and removed it from the bottom feedback form. | Dev Logs</h1>
-          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
-        </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-06 11:41
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">Moved the GitHub “report a bug” link to the end of the tool breadcrumb and removed it from the bottom feedback form.</h1>
+          <p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/convert-html-to-pdf"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>convert-html-to-pdf<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-06 11:41
 Summary: Moved the GitHub “report a bug” link to the end of the tool breadcrumb and removed it from the bottom feedback form.
 Visibility: people</p>
 <p>[question]
 将 report bug to github 放在 面包屑后面，页面下面的report bug剔除</p>
 <h2>Tool links (English)</h2>
-<ul>
-<li><a href="https://onlinefreetools.org/tools/convert-html-to-pdf">https://onlinefreetools.org/tools/convert-html-to-pdf</a>
-Chinese: <a href="https://onlinefreetools.org/zh/tools/convert-html-to-pdf">https://onlinefreetools.org/zh/tools/convert-html-to-pdf</a></li>
-</ul>
+<p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/convert-html-to-pdf"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>convert-html-to-pdf<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+
 <p>[try to solve]</p>
 <h2>Context</h2>
 <p>The GitHub Issue control had been added as a second button in the bottom “Questions or feedback” mail compose. The request was to put “report bug to GitHub” after the tool breadcrumb instead, and to drop the duplicate from the feedback section. The change applies to every tool page that uses the shared layout breadcrumb.</p>

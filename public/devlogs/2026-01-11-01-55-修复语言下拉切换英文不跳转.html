@@ -50,7 +50,7 @@
   
   
 </head>
-<body class="is-home-page">
+<body class="is-info-page is-devlog-page">
   
   
   <header>
@@ -160,11 +160,12 @@
     </aside>
     <main id="content" class="p-4">
       <section class="mb-3">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Fixed header language fallback to use explicit `/en/` so English switch works from `/zh/`. | Dev Logs</h1>
-          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
-        </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-01-11 01:55
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">Fixed header language fallback to use explicit `/en/` so English switch works from `/zh/`.</h1>
+          
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-01-11 01:55
 Summary: Fixed header language fallback to use explicit <code>/en/</code> so English switch works from <code>/zh/</code>.</p>
 <p>[question]
 <a href="http://localhost:8787/zh/">http://localhost:8787/zh/</a> 中下拉英语点击后，页面没有跳转到英语页面</p>

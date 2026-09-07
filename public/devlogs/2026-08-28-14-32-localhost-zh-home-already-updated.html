@@ -50,7 +50,7 @@
   
   
 </head>
-<body class="is-home-page">
+<body class="is-info-page is-devlog-page">
   
   
   <header>
@@ -160,11 +160,12 @@
     </aside>
     <main id="content" class="p-4">
       <section class="mb-3">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Confirmed localhost /zh/ already returns the new homepage (no sidebar + latest tools); a stale browser view was the likely cause, not missing build output. | Dev Logs</h1>
-          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
-        </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-28 14:32
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">Confirmed localhost /zh/ already returns the new homepage (no sidebar + latest tools); a stale browser view was the likely cause, not missing build output.</h1>
+          
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-28 14:32
 Summary: Confirmed localhost /zh/ already returns the new homepage (no sidebar + latest tools); a stale browser view was the likely cause, not missing build output.</p>
 <p>[question]
 <a href="http://localhost:8787/zh/">http://localhost:8787/zh/</a> 首页侧边栏和最新工具为什么没有按修改展现</p>

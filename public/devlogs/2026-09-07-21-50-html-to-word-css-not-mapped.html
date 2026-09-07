@@ -50,7 +50,7 @@
   
   
 </head>
-<body class="is-home-page">
+<body class="is-info-page is-devlog-page">
   
   
   <header>
@@ -160,21 +160,19 @@
     </aside>
     <main id="content" class="p-4">
       <section class="mb-3">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">HTML-to-Word ignores author CSS on purpose: it maps structure (headings, lists, tables, links) into editable Word styles, not a laid-out screenshot. | Dev Logs</h1>
-          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
-        </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-07 21:50
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">HTML-to-Word ignores author CSS on purpose: it maps structure (headings, lists, tables, links) into editable Word styles, not a laid-out screenshot.</h1>
+          <p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/convert-html-web-pages-to-word-document"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>convert-html-web-pages-to-word-document<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/convert-html-to-pdf"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>convert-html-to-pdf<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-07 21:50
 Summary: HTML-to-Word ignores author CSS on purpose: it maps structure (headings, lists, tables, links) into editable Word styles, not a laid-out screenshot.
 Visibility: people</p>
 <p>[question]
 为什么css样式不起作用</p>
 <h2>Tool links (English)</h2>
-<ul>
-<li><a href="https://onlinefreetools.org/tools/convert-html-web-pages-to-word-document">https://onlinefreetools.org/tools/convert-html-web-pages-to-word-document</a>
-Chinese: <a href="https://onlinefreetools.org/zh/tools/convert-html-web-pages-to-word-document">https://onlinefreetools.org/zh/tools/convert-html-web-pages-to-word-document</a>
-Related: <a href="https://onlinefreetools.org/tools/convert-html-to-pdf">https://onlinefreetools.org/tools/convert-html-to-pdf</a></li>
-</ul>
+<p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/convert-html-web-pages-to-word-document"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>convert-html-web-pages-to-word-document<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/convert-html-to-pdf"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>convert-html-to-pdf<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+
 <p>[try to solve]</p>
 <h2>Context</h2>
 <p>After a successful Convert of a live page (for example hao123.com), the downloaded .docx did not look like the website. The user asked why CSS had no effect.</p>

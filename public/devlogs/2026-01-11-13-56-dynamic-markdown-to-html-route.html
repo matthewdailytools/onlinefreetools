@@ -50,7 +50,7 @@
   
   
 </head>
-<body class="is-home-page">
+<body class="is-info-page is-devlog-page">
   
   
   <header>
@@ -160,11 +160,12 @@
     </aside>
     <main id="content" class="p-4">
       <section class="mb-3">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Migrated the Markdown-to-HTML tool from a static HTML file to dynamic Worker routes with zh/en support and the site’s sidebar/header/footer/content layout. | Dev Logs</h1>
-          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
-        </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-01-11 13:56
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">Migrated the Markdown-to-HTML tool from a static HTML file to dynamic Worker routes with zh/en support and the site’s sidebar/header/footer/content layout.</h1>
+          
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-01-11 13:56
 Summary: Migrated the Markdown-to-HTML tool from a static HTML file to dynamic Worker routes with zh/en support and the site’s sidebar/header/footer/content layout.</p>
 <p>[question]
 移除markdown to html的静态，采用动态路由；需要具备多国语言支持，符合sidebar+header+footer+content的模式</p>

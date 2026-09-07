@@ -50,7 +50,7 @@
   
   
 </head>
-<body class="is-home-page">
+<body class="is-info-page is-devlog-page">
   
   
   <header>
@@ -160,21 +160,19 @@
     </aside>
     <main id="content" class="p-4">
       <section class="mb-3">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">HTML-to-Word Convert now shows the same kind of progress HUD as batch webpage-to-PDF: large percent, step pills, striped bar, and a spinner on Convert. | Dev Logs</h1>
-          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
-        </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-07 22:25
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">HTML-to-Word Convert now shows the same kind of progress HUD as batch webpage-to-PDF: large percent, step pills, striped bar, and a spinner on Convert.</h1>
+          <p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/convert-html-web-pages-to-word-document"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>convert-html-web-pages-to-word-document<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/batch-convert-web-pages-to-pdf"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>batch-convert-web-pages-to-pdf<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-07 22:25
 Summary: HTML-to-Word Convert now shows the same kind of progress HUD as batch webpage-to-PDF: large percent, step pills, striped bar, and a spinner on Convert.
 Visibility: people</p>
 <p>[question]
 进度不够明显，仿照<a href="http://127.0.0.1:8788/zh/tools/batch-convert-web-pages-to-pdf">http://127.0.0.1:8788/zh/tools/batch-convert-web-pages-to-pdf</a></p>
 <h2>Tool links (English)</h2>
-<ul>
-<li><a href="https://onlinefreetools.org/tools/convert-html-web-pages-to-word-document">https://onlinefreetools.org/tools/convert-html-web-pages-to-word-document</a>
-Chinese: <a href="https://onlinefreetools.org/zh/tools/convert-html-web-pages-to-word-document">https://onlinefreetools.org/zh/tools/convert-html-web-pages-to-word-document</a>
-Related: <a href="https://onlinefreetools.org/tools/batch-convert-web-pages-to-pdf">https://onlinefreetools.org/tools/batch-convert-web-pages-to-pdf</a></li>
-</ul>
+<p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/convert-html-web-pages-to-word-document"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>convert-html-web-pages-to-word-document<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/batch-convert-web-pages-to-pdf"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>batch-convert-web-pages-to-pdf<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+
 <p>[try to solve]</p>
 <h2>Context</h2>
 <p>Convert on HTML-to-Word only updated a small muted <code>#chwStatus</code> line (<code>aria-live</code>). Fast jobs finished before anyone noticed. The user pointed at <strong>批量把网页转成 PDF</strong>, which uses a sticky HUD: spinning ring, large percent, elapsed seconds, striped bar, and Fetch / Images / PDF capsules.</p>

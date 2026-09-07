@@ -50,7 +50,7 @@
   
   
 </head>
-<body class="is-home-page">
+<body class="is-info-page is-devlog-page">
   
   
   <header>
@@ -160,20 +160,19 @@
     </aside>
     <main id="content" class="p-4">
       <section class="mb-3">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">The current convert-html-to-pdf split (Worker fetch HTML + per-image proxy, browser html2pdf) fits Cloudflare Workers Free, with CPU and daily-request multipliers as the real ceilings. | Dev Logs</h1>
-          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
-        </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-06 13:15
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">The current convert-html-to-pdf split (Worker fetch HTML + per-image proxy, browser html2pdf) fits Cloudflare Workers Free, with CPU and daily-request multipliers as the real ceilings.</h1>
+          <p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/convert-html-to-pdf"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>convert-html-to-pdf<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-06 13:15
 Summary: The current convert-html-to-pdf split (Worker fetch HTML + per-image proxy, browser html2pdf) fits Cloudflare Workers Free, with CPU and daily-request multipliers as the real ceilings.
 Visibility: people</p>
 <p>[question]
 分析目前这种模式，cloudflare free能否适用</p>
 <h2>Tool links (English)</h2>
-<ul>
-<li><a href="https://onlinefreetools.org/tools/convert-html-to-pdf">https://onlinefreetools.org/tools/convert-html-to-pdf</a>
-Chinese: <a href="https://onlinefreetools.org/zh/tools/convert-html-to-pdf">https://onlinefreetools.org/zh/tools/convert-html-to-pdf</a></li>
-</ul>
+<p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/convert-html-to-pdf"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>convert-html-to-pdf<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+
 <p>[try to solve]</p>
 <h2>Context</h2>
 <p>The tool loads a URL through a Worker (<code>GET /api/tools/convert-html-to-pdf?url=</code>), proxies some images (<code>/asset</code>), then runs html2pdf.js in the tab. The question is whether that design stays inside Cloudflare’s free allowances (Workers Free + R2 free tier), not whether every live site will convert.</p>

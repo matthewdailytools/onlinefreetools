@@ -50,7 +50,7 @@
   
   
 </head>
-<body class="is-home-page">
+<body class="is-info-page is-devlog-page">
   
   
   <header>
@@ -160,22 +160,19 @@
     </aside>
     <main id="content" class="p-4">
       <section class="mb-3">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Shipped two converter tools with independent artifact contracts: lossless PNG screenshots (transparent / 2×) versus an editable Word .docx mapped from HTML, not a screenshot and not A4 PDF. | Dev Logs</h1>
-          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
-        </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-07 15:59
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">Shipped two converter tools with independent artifact contracts: lossless PNG screenshots (transparent / 2×) versus an editable Word .docx mapped from HTML, not a screenshot and not A4 PDF.</h1>
+          <p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/batch-convert-web-pages-to-png"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>batch-convert-web-pages-to-png<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/convert-html-web-pages-to-word-document"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>convert-html-web-pages-to-word-document<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-07 15:59
 Summary: Shipped two converter tools with independent artifact contracts: lossless PNG screenshots (transparent / 2×) versus an editable Word .docx mapped from HTML, not a screenshot and not A4 PDF.
 Visibility: people</p>
 <p>[question]
 像上面一样立项和实现：batch convert web pages to png和convert html web pages to word document，注意不同工具的要有足够不同的info gain</p>
 <h2>Tool links (English)</h2>
-<ul>
-<li><a href="https://onlinefreetools.org/tools/batch-convert-web-pages-to-png">https://onlinefreetools.org/tools/batch-convert-web-pages-to-png</a></li>
-<li><a href="https://onlinefreetools.org/tools/convert-html-web-pages-to-word-document">https://onlinefreetools.org/tools/convert-html-web-pages-to-word-document</a>
-Chinese: <a href="https://onlinefreetools.org/zh/tools/batch-convert-web-pages-to-png">https://onlinefreetools.org/zh/tools/batch-convert-web-pages-to-png</a>
-Chinese: <a href="https://onlinefreetools.org/zh/tools/convert-html-web-pages-to-word-document">https://onlinefreetools.org/zh/tools/convert-html-web-pages-to-word-document</a></li>
-</ul>
+<p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/batch-convert-web-pages-to-png"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>batch-convert-web-pages-to-png<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/convert-html-web-pages-to-word-document"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>convert-html-web-pages-to-word-document<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+
 <p>[try to solve]</p>
 <h2>Context</h2>
 <p>The request was to brief and implement two tools the same way as the existing batch webpage-to-JPG / webpage-to-PDF pair, with enough information gain that they are not doorway pages that only swap a file extension.</p>

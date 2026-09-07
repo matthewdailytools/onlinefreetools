@@ -50,7 +50,7 @@
   
   
 </head>
-<body class="is-home-page">
+<body class="is-info-page is-devlog-page">
   
   
   <header>
@@ -160,11 +160,12 @@
     </aside>
     <main id="content" class="p-4">
       <section class="mb-3">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Confirmed per-locale `<url>` + full hreflang in one sitemap meets Google; file-split by language optional, not required at current size. | Dev Logs</h1>
-          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
-        </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-12 21:31
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">Confirmed per-locale `&lt;url&gt;` + full hreflang in one sitemap meets Google; file-split by language optional, not required at current size.</h1>
+          
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-12 21:31
 Summary: Confirmed per-locale <code>&lt;url&gt;</code> + full hreflang in one sitemap meets Google; file-split by language optional, not required at current size.</p>
 <p>[question]
 分语言生成@public/sitemap.xml 是否符合要求</p>

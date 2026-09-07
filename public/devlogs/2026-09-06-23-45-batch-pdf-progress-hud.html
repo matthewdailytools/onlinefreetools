@@ -50,7 +50,7 @@
   
   
 </head>
-<body class="is-home-page">
+<body class="is-info-page is-devlog-page">
   
   
   <header>
@@ -160,20 +160,19 @@
     </aside>
     <main id="content" class="p-4">
       <section class="mb-3">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Batch web-page-to-PDF progress is now a sticky HUD with a large percent, step chips, elapsed time, and a transform-based spinner that can keep moving while html2canvas blocks the main thread. | Dev Logs</h1>
-          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
-        </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-06 23:45
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">Batch web-page-to-PDF progress is now a sticky HUD with a large percent, step chips, elapsed time, and a transform-based spinner that can keep moving while html2canvas blocks the main thread.</h1>
+          <p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/batch-convert-web-pages-to-pdf"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>batch-convert-web-pages-to-pdf<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-06 23:45
 Summary: Batch web-page-to-PDF progress is now a sticky HUD with a large percent, step chips, elapsed time, and a transform-based spinner that can keep moving while html2canvas blocks the main thread.
 Visibility: people</p>
 <p>[question]
 进度不够明显，不够动态化</p>
 <h2>Tool links (English)</h2>
-<ul>
-<li><a href="https://onlinefreetools.org/tools/batch-convert-web-pages-to-pdf">https://onlinefreetools.org/tools/batch-convert-web-pages-to-pdf</a>
-Chinese: <a href="https://onlinefreetools.org/zh/tools/batch-convert-web-pages-to-pdf">https://onlinefreetools.org/zh/tools/batch-convert-web-pages-to-pdf</a></li>
-</ul>
+<p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/batch-convert-web-pages-to-pdf"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>batch-convert-web-pages-to-pdf<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+
 <p>[try to solve]</p>
 <h2>Context</h2>
 <p>After adding a thin shared PDF progress bar, Convert all still felt idle. html2canvas freezes the main thread, so Bootstrap’s striped bar and button spinner freeze too. People could not tell which URL was running or how far the batch had gone.</p>

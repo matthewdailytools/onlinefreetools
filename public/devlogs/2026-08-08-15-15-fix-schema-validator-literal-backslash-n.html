@@ -50,7 +50,7 @@
   
   
 </head>
-<body class="is-home-page">
+<body class="is-info-page is-devlog-page">
   
   
   <header>
@@ -160,11 +160,12 @@
     </aside>
     <main id="content" class="p-4">
       <section class="mb-3">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Fixed json-schema-validator samples: literal \\n broke JSON.parse; use compact JSON and pretty-print on load. | Dev Logs</h1>
-          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
-        </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-08 15:15
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">Fixed json-schema-validator samples: literal \\n broke JSON.parse; use compact JSON and pretty-print on load.</h1>
+          
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-08 15:15
 Summary: Fixed json-schema-validator samples: literal \n broke JSON.parse; use compact JSON and pretty-print on load.</p>
 <p>[question]
 <a href="http://localhost:8788/zh/tools/json-schema-validator">http://localhost:8788/zh/tools/json-schema-validator</a> 出错，结果输出框没有数据，另外“JSON Schema&quot;上面显示红色字&quot;Schema 不是合法 JSON（或编译失败）。 Expected property name or &#39;}&#39; in JSON at position 1 (line 1 column 2)”；最后：JSON Schema和实例 JSON 框为什么会有 &quot;\n&quot;字符</p>

@@ -50,7 +50,7 @@
   
   
 </head>
-<body class="is-home-page">
+<body class="is-info-page is-devlog-page">
   
   
   <header>
@@ -160,11 +160,12 @@
     </aside>
     <main id="content" class="p-4">
       <section class="mb-3">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Corrected the localhost homepage diagnosis to a stale Worker Cache API response. | Dev Logs</h1>
-          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
-        </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-15 09:53
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">Corrected the localhost homepage diagnosis to a stale Worker Cache API response.</h1>
+          
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-15 09:53
 Summary: Corrected the localhost homepage diagnosis to a stale Worker Cache API response.</p>
 <p>[question]
 “关键点出来了：<a href="http://localhost:8788/zh/">http://localhost:8788/zh/</a> 现在返回的是 404 Content-Length: 0，不是旧首页 HTML。所以它不是“首页里没这个工具”，而是当前 wrangler dev 服务没有把 /zh/ 这类静态首页路由接上” 这个上面的分析是错误的，<a href="http://localhost:8788/zh/">http://localhost:8788/zh/</a> 网页打开有数据</p>

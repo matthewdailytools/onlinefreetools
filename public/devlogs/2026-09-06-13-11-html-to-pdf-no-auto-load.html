@@ -50,7 +50,7 @@
   
   
 </head>
-<body class="is-home-page">
+<body class="is-info-page is-devlog-page">
   
   
   <header>
@@ -160,20 +160,19 @@
     </aside>
     <main id="content" class="p-4">
       <section class="mb-3">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">convert-html-to-pdf no longer auto-fetches or auto-converts on page entry; Load URL fills preview only, Convert runs on click. | Dev Logs</h1>
-          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
-        </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-06 13:11
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">convert-html-to-pdf no longer auto-fetches or auto-converts on page entry; Load URL fills preview only, Convert runs on click.</h1>
+          <p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/convert-html-to-pdf"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>convert-html-to-pdf<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-06 13:11
 Summary: convert-html-to-pdf no longer auto-fetches or auto-converts on page entry; Load URL fills preview only, Convert runs on click.
 Visibility: people</p>
 <p>[question]
 ”Could not load that URL. Check the address, or the site may block fetches“ 这个不再做自动load，点击才load convert</p>
 <h2>Tool links (English)</h2>
-<ul>
-<li><a href="https://onlinefreetools.org/tools/convert-html-to-pdf">https://onlinefreetools.org/tools/convert-html-to-pdf</a>
-Chinese: <a href="https://onlinefreetools.org/zh/tools/convert-html-to-pdf">https://onlinefreetools.org/zh/tools/convert-html-to-pdf</a></li>
-</ul>
+<p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/convert-html-to-pdf"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>convert-html-to-pdf<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+
 <p>[try to solve]</p>
 <h2>Context</h2>
 <p>Opening the tool showed the URL-fetch error even though the visitor had not asked to load a page. The URL field defaults to <code>https://example.com</code>. Page-entry <code>loadSample()</code> plus Load URL calling <code>runConvert()</code> made fetch/convert happen without an explicit Convert click. Sites that block the Worker fetch then painted <code>Could not load that URL…</code> immediately.</p>

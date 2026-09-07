@@ -50,7 +50,7 @@
   
   
 </head>
-<body class="is-home-page">
+<body class="is-info-page is-devlog-page">
   
   
   <header>
@@ -160,11 +160,12 @@
     </aside>
     <main id="content" class="p-4">
       <section class="mb-3">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Analyzed Google Keyword Planner magnets batch (~700 keywords) into the intent pool; primary build candidate magnet-pull-force-calculator; no work-tasks created. | Dev Logs</h1>
-          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
-        </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-13 21:00
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">Analyzed Google Keyword Planner magnets batch (~700 keywords) into the intent pool; primary build candidate magnet-pull-force-calculator; no work-tasks created.</h1>
+          
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-13 21:00
 Summary: Analyzed Google Keyword Planner magnets batch (~700 keywords) into the intent pool; primary build candidate magnet-pull-force-calculator; no work-tasks created.</p>
 <p>[question]
 按 keyword-to-tool-funnel 分析“Keyword Planner 08-13-2026 at 12-51-05.csv”这批词，写入 serp-batches + keyword-daily-pool，更新 tracker；先 absorb 优先。不要自动建 work-tasks。</p>

@@ -50,7 +50,7 @@
   
   
 </head>
-<body class="is-home-page">
+<body class="is-info-page is-devlog-page">
   
   
   <header>
@@ -160,11 +160,12 @@
     </aside>
     <main id="content" class="p-4">
       <section class="mb-3">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Added the `work-tasks/` folder with templates and a Cursor rule for new-tool briefing. | Dev Logs</h1>
-          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
-        </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-06 15:40
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">Added the `work-tasks/` folder with templates and a Cursor rule for new-tool briefing.</h1>
+          
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-06 15:40
 Summary: Added the <code>work-tasks/</code> folder with templates and a Cursor rule for new-tool briefing.</p>
 <p>[question]
 新建一个工作任务文件夹，里面根据需要建的工具创建子文件夹，子文件夹下面根据提供的工具方向进行讨论生成新工具信息文档，将这个规则创建在.cursor下</p>

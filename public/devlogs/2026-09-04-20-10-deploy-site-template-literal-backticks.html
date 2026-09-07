@@ -50,7 +50,7 @@
   
   
 </head>
-<body class="is-home-page">
+<body class="is-info-page is-devlog-page">
   
   
   <header>
@@ -160,11 +160,12 @@
     </aside>
     <main id="content" class="p-4">
       <section class="mb-3">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">`npm run deploy` failed because unescaped backticks inside a template-literal console message in `scripts/deploy-site.mjs` terminated the string early. | Dev Logs</h1>
-          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
-        </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-04 20:10
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">`npm run deploy` failed because unescaped backticks inside a template-literal console message in `scripts/deploy-site.mjs` terminated the string early.</h1>
+          
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-04 20:10
 Summary: <code>npm run deploy</code> failed because unescaped backticks inside a template-literal console message in <code>scripts/deploy-site.mjs</code> terminated the string early.
 Visibility: people</p>
 <p>[question]

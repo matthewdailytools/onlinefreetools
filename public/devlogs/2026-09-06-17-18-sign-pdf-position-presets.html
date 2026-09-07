@@ -50,7 +50,7 @@
   
   
 </head>
-<body class="is-home-page">
+<body class="is-info-page is-devlog-page">
   
   
   <header>
@@ -160,20 +160,19 @@
     </aside>
     <main id="content" class="p-4">
       <section class="mb-3">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Sign PDF Document gained corner/center position radios with editable X/Y (bottom-right default) and a page dropdown that lists every page plus all pages. | Dev Logs</h1>
-          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
-        </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-06 17:18
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">Sign PDF Document gained corner/center position radios with editable X/Y (bottom-right default) and a page dropdown that lists every page plus all pages.</h1>
+          <p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/sign-pdf-document"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>sign-pdf-document<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-06 17:18
 Summary: Sign PDF Document gained corner/center position radios with editable X/Y (bottom-right default) and a page dropdown that lists every page plus all pages.
 Visibility: people</p>
 <p>[question]
 增加中间，左上角，左下角，右上角，右下角的快捷复选和对应可编辑的坐标，默认右下角选中。页码提供所有页码的选择。</p>
 <h2>Tool links (English)</h2>
-<ul>
-<li><a href="https://onlinefreetools.org/tools/sign-pdf-document">https://onlinefreetools.org/tools/sign-pdf-document</a>
-Chinese: <a href="https://onlinefreetools.org/zh/tools/sign-pdf-document">https://onlinefreetools.org/zh/tools/sign-pdf-document</a></li>
-</ul>
+<p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/sign-pdf-document"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>sign-pdf-document<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+
 <p>[try to solve]</p>
 <h2>Context</h2>
 <p>The stamp controls were three number fields: X, Y, and page. Default X=72, Y=72 sits near the PDF origin (bottom-left in PDF points), which is easy to miss and tedious to aim at a corner. Page was a free number, so it did not list the real pages of the loaded file or offer “all pages”.</p>

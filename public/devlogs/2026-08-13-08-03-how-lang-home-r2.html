@@ -50,7 +50,7 @@
   
   
 </head>
-<body class="is-home-page">
+<body class="is-info-page is-devlog-page">
   
   
   <header>
@@ -160,11 +160,12 @@
     </aside>
     <main id="content" class="p-4">
       <section class="mb-3">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Path /{lang} cannot DNS-map to R2; implement via Worker Cache→R2 or a separate R2 host. | Dev Logs</h1>
-          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
-        </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-13 08:03
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">Path /{lang} cannot DNS-map to R2; implement via Worker Cache→R2 or a separate R2 host.</h1>
+          
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-13 08:03
 Summary: Path /{lang} cannot DNS-map to R2; implement via Worker Cache→R2 or a separate R2 host.</p>
 <p>[question]
 <a href="https://onlinefreetools.org/%7Blang%7D">https://onlinefreetools.org/{lang}</a> 能否配置指向R2，如果可以改R2，怎么实现</p>

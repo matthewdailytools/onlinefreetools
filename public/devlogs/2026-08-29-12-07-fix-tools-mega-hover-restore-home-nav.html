@@ -50,7 +50,7 @@
   
   
 </head>
-<body class="is-home-page">
+<body class="is-info-page is-devlog-page">
   
   
   <header>
@@ -160,11 +160,12 @@
     </aside>
     <main id="content" class="p-4">
       <section class="mb-3">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Restored homepage topic dropdowns; fixed tool-page Tools mega menu hover by dropping Bootstrap dropdown in favor of CSS :hover. | Dev Logs</h1>
-          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
-        </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-29 12:07
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">Restored homepage topic dropdowns; fixed tool-page Tools mega menu hover by dropping Bootstrap dropdown in favor of CSS :hover.</h1>
+          
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-29 12:07
 Summary: Restored homepage topic dropdowns; fixed tool-page Tools mega menu hover by dropping Bootstrap dropdown in favor of CSS :hover.</p>
 <p>[question]
 首页不要改，只改动slug工具页，分主题的菜单收起在工具菜单中，鼠标悬停展开这个没有实现。</p>

@@ -50,7 +50,7 @@
   
   
 </head>
-<body class="is-home-page">
+<body class="is-info-page is-devlog-page">
   
   
   <header>
@@ -160,20 +160,19 @@
     </aside>
     <main id="content" class="p-4">
       <section class="mb-3">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">URL-to-PDF dropped `<head>` stylesheets, so sites like 163.com looked unstyled; preview now uses a sandboxed iframe document and waits for CSS before capture. | Dev Logs</h1>
-          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
-        </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-06 11:35
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">URL-to-PDF dropped `&lt;head&gt;` stylesheets, so sites like 163.com looked unstyled; preview now uses a sandboxed iframe document and waits for CSS before capture.</h1>
+          <p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/convert-html-to-pdf"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>convert-html-to-pdf<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-06 11:35
 Summary: URL-to-PDF dropped <code>&lt;head&gt;</code> stylesheets, so sites like 163.com looked unstyled; preview now uses a sandboxed iframe document and waits for CSS before capture.
 Visibility: people</p>
 <p>[question]
 测试 <a href="https://www.163.com%EF%BC%8C%E9%A1%B5%E9%9D%A2%E6%8E%92%E7%89%88%E9%97%AE%E9%A2%98%EF%BC%8C%E6%98%AF%E4%B8%8D%E6%98%AFcss%E6%B2%A1%E7%94%9F%E6%95%88">https://www.163.com，页面排版问题，是不是css没生效</a></p>
 <h2>Tool links (English)</h2>
-<ul>
-<li><a href="https://onlinefreetools.org/tools/convert-html-to-pdf">https://onlinefreetools.org/tools/convert-html-to-pdf</a>
-Chinese: <a href="https://onlinefreetools.org/zh/tools/convert-html-to-pdf">https://onlinefreetools.org/zh/tools/convert-html-to-pdf</a></li>
-</ul>
+<p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/convert-html-to-pdf"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>convert-html-to-pdf<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+
 <p>[try to solve]</p>
 <h2>Context</h2>
 <p>Loading <code>https://www.163.com</code> into Convert HTML to PDF produced a broken layout. The question was whether CSS was not applying.</p>

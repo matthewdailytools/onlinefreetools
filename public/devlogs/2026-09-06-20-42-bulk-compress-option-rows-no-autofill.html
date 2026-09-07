@@ -50,7 +50,7 @@
   
   
 </head>
-<body class="is-home-page">
+<body class="is-info-page is-devlog-page">
   
   
   <header>
@@ -160,20 +160,19 @@
     </aside>
     <main id="content" class="p-4">
       <section class="mb-3">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Split Compress all onto its own highlighted row, put each option category on a separate line with a None choice (now the first-paint default), stopped auto-filling the sample, and made selected option chips a teal filled state that beats the site outline-button CSS. | Dev Logs</h1>
-          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
-        </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-06 21:35
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">Split Compress all onto its own highlighted row, put each option category on a separate line with a None choice (now the first-paint default), stopped auto-filling the sample, and made selected option chips a teal filled state that beats the site outline-button CSS.</h1>
+          <p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/bulk-compress-product-photos"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>bulk-compress-product-photos<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-06 21:35
 Summary: Split Compress all onto its own highlighted row, put each option category on a separate line with a None choice (now the first-paint default), stopped auto-filling the sample, and made selected option chips a teal filled state that beats the site outline-button CSS.
 Visibility: people</p>
 <p>[question]
 <a href="https://onlinefreetools.org/tools/bulk-compress-product-photos">https://onlinefreetools.org/tools/bulk-compress-product-photos</a>  1、Compress ALL第一行，要单独一行，突出显示。后续都是选项，要区分开来。2、不同类别选择项，要单独一行，且都提供不选择的选项。3、剔除提前填充的example</p>
 <h2>Tool links (English)</h2>
-<ul>
-<li><a href="https://onlinefreetools.org/tools/bulk-compress-product-photos">https://onlinefreetools.org/tools/bulk-compress-product-photos</a>
-Chinese: <a href="https://onlinefreetools.org/zh/tools/bulk-compress-product-photos">https://onlinefreetools.org/zh/tools/bulk-compress-product-photos</a></li>
-</ul>
+<p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/bulk-compress-product-photos"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>bulk-compress-product-photos<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+
 <p>[try to solve]</p>
 <h2>Context</h2>
 <p>The bulk product-photo compressor mixed the primary action with shortcut chips on one wrapping toolbar. Format chips (<code>.jpg</code> / JPEG / WebP / PNG) sat next to size-cap chips (200 KB / 100 KB) and the Compress all button, so the main job was easy to miss. A second flex row then piled output format, resize, size rule, pixels, and quality together. Opening the page also synthesized two sample JPEGs and ran <code>compressAll()</code> immediately, which filled the results table before the visitor had chosen any files.</p>

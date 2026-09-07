@@ -50,7 +50,7 @@
   
   
 </head>
-<body class="is-home-page">
+<body class="is-info-page is-devlog-page">
   
   
   <header>
@@ -160,11 +160,12 @@
     </aside>
     <main id="content" class="p-4">
       <section class="mb-3">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Proposed `.cursor/rules` as governance authority; listed conflicts for manual confirm before any edits. | Dev Logs</h1>
-          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
-        </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-06 16:55
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">Proposed `.cursor/rules` as governance authority; listed conflicts for manual confirm before any edits.</h1>
+          
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-06 16:55
 Summary: Proposed <code>.cursor/rules</code> as governance authority; listed conflicts for manual confirm before any edits.</p>
 <p>[question]
 以.cursor/rules为核心，所有策略需要对齐rules，如果有冲突，需要重新分析给出判断，手动确认后再修改，所有策略需要同步写入rules</p>

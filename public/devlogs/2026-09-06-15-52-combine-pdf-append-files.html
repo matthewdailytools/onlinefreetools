@@ -50,7 +50,7 @@
   
   
 </head>
-<body class="is-home-page">
+<body class="is-info-page is-devlog-page">
   
   
   <header>
@@ -160,20 +160,19 @@
     </aside>
     <main id="content" class="p-4">
       <section class="mb-3">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">Choosing more files on Combine files into one PDF now appends to the queue instead of replacing it. | Dev Logs</h1>
-          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
-        </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-06 15:52
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">Choosing more files on Combine files into one PDF now appends to the queue instead of replacing it.</h1>
+          <p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/combine-files-into-one-pdf"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>combine-files-into-one-pdf<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-06 15:52
 Summary: Choosing more files on Combine files into one PDF now appends to the queue instead of replacing it.
 Visibility: people</p>
 <p>[question]
 <a href="http://127.0.0.1:8788/zh/tools/combine-files-into-one-pdf">http://127.0.0.1:8788/zh/tools/combine-files-into-one-pdf</a> 选择文件添加后，不要清空原来的已经选择添加的文件，依赖用户主动清空或者手动删除</p>
 <h2>Tool links (English)</h2>
-<ul>
-<li><a href="https://onlinefreetools.org/tools/combine-files-into-one-pdf">https://onlinefreetools.org/tools/combine-files-into-one-pdf</a>
-Chinese: <a href="https://onlinefreetools.org/zh/tools/combine-files-into-one-pdf">https://onlinefreetools.org/zh/tools/combine-files-into-one-pdf</a></li>
-</ul>
+<p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/combine-files-into-one-pdf"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>combine-files-into-one-pdf<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+
 <p>[try to solve]</p>
 <h2>Context</h2>
 <p>The Combine files into one PDF tool already kept a client-side queue with per-item Move up / Move down / Remove and a Clear button. A second Choose files (or drop) still wiped that queue, so users who picked PDFs from different folders lost the first batch.</p>

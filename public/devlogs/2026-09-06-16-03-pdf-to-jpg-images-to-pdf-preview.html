@@ -50,7 +50,7 @@
   
   
 </head>
-<body class="is-home-page">
+<body class="is-info-page is-devlog-page">
   
   
   <header>
@@ -160,21 +160,19 @@
     </aside>
     <main id="content" class="p-4">
       <section class="mb-3">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">PDF to JPG and Images to PDF now show a paged canvas preview of the conversion result before download. | Dev Logs</h1>
-          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
-        </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-06 16:03
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">PDF to JPG and Images to PDF now show a paged canvas preview of the conversion result before download.</h1>
+          <p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/images-to-pdf"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>images-to-pdf<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/pdf-to-jpg"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>pdf-to-jpg<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-09-06 16:03
 Summary: PDF to JPG and Images to PDF now show a paged canvas preview of the conversion result before download.
 Visibility: people</p>
 <p>[question]
 <a href="http://127.0.0.1:8788/zh/tools/pdf-to-jpg">http://127.0.0.1:8788/zh/tools/pdf-to-jpg</a> <a href="http://127.0.0.1:8788/zh/tools/images-to-pdf">http://127.0.0.1:8788/zh/tools/images-to-pdf</a>  增加预览</p>
 <h2>Tool links (English)</h2>
-<ul>
-<li><a href="https://onlinefreetools.org/tools/images-to-pdf">https://onlinefreetools.org/tools/images-to-pdf</a></li>
-<li><a href="https://onlinefreetools.org/tools/pdf-to-jpg">https://onlinefreetools.org/tools/pdf-to-jpg</a>
-Chinese: <a href="https://onlinefreetools.org/zh/tools/images-to-pdf">https://onlinefreetools.org/zh/tools/images-to-pdf</a> · <a href="https://onlinefreetools.org/zh/tools/pdf-to-jpg">https://onlinefreetools.org/zh/tools/pdf-to-jpg</a></li>
-</ul>
+<p class="devlog-slug-row"><a class="devlog-slug-tag" href="/tools/images-to-pdf"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>images-to-pdf<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a><a class="devlog-slug-tag" href="/tools/pdf-to-jpg"><span class="devlog-slug-tag-mark" aria-hidden="true">&lt;</span>pdf-to-jpg<span class="devlog-slug-tag-mark" aria-hidden="true">&gt;</span></a></p>
+
 <p>[try to solve]</p>
 <h2>Context</h2>
 <p>Both tools already converted in the browser and enabled Download after the auto sample, but the interactive area only showed a status line. Users could not check page order or JPEG quality without downloading. Sibling PDF tools (combine / merge style) already use the shared <code>OftPdfWork</code> canvas with Previous / Next.</p>

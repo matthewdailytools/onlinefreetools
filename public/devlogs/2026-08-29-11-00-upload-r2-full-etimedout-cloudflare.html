@@ -50,7 +50,7 @@
   
   
 </head>
-<body class="is-home-page">
+<body class="is-info-page is-devlog-page">
   
   
   <header>
@@ -160,11 +160,12 @@
     </aside>
     <main id="content" class="p-4">
       <section class="mb-3">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h1 class="h4 mb-0">upload:r2:full failed with ETIMEDOUT to Cloudflare R2 IPs; root cause is local network reachability, not S3 credentials. | Dev Logs</h1>
-          <a class="btn btn-outline-secondary btn-sm" href="/devlogs/">Back to Logs</a>
-        </div>
-        <article class="bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-29 11:00
+        <header class="devlog-page-head">
+          <a class="btn btn-outline-secondary btn-sm devlog-back" href="/devlogs/">Back to Logs</a>
+          <h1 class="devlog-title">upload:r2:full failed with ETIMEDOUT to Cloudflare R2 IPs; root cause is local network reachability, not S3 credentials.</h1>
+          
+        </header>
+        <article class="devlog-body bg-white shadow-sm p-3 p-md-4 rounded"><p>Date: 2026-08-29 11:00
 Summary: upload:r2:full failed with ETIMEDOUT to Cloudflare R2 IPs; root cause is local network reachability, not S3 credentials.</p>
 <p>[question]
 @terminals/1.txt (npm run upload:r2:full AggregateError ETIMEDOUT to 172.64.190.1:443 / 172.64.66.1:443)</p>
