@@ -3609,7 +3609,7 @@ const ru: SiteLangDict = {
   tool_convert_html_web_pages_to_word_document_how_item_2:
     'Нажмите Конвертировать. Скрипты снимаются. Заголовки, списки, таблицы, ссылки попадают в Word. Сломанные картинки пропускаются.',
   tool_convert_html_web_pages_to_word_document_how_item_3:
-    'Нужны <img> из HTML? Откройте дополнительные настройки — «Включать изображения» включено по умолчанию; заблокированные картинки всё равно пропускаются.',
+    'Нужны <img> из HTML? Откройте дополнительные настройки — «Включать изображения» включено по умолчанию; заблокированные картинки всё равно пропускаются. Черновик без заголовков и таблиц Word — включите «Только текст» (картинки тоже выключатся).',
   tool_convert_html_web_pages_to_word_document_how_item_4:
     'Печать A4: «Конвертировать HTML в PDF». Скриншот: пакетно сохранить веб-страницы в PNG или JPG. Уже PDF: «Превратить PDF в документ Word».',
   tool_convert_html_web_pages_to_word_document_how_item_5: 'После успешного Конвертировать нажмите Скачать. Откройте .docx и правьте текст.',
@@ -3618,23 +3618,39 @@ const ru: SiteLangDict = {
     'Фрагмент или полный HTML. Скрипты снимаются до конвертации. CSS-макет не воссоздаётся пиксель в пиксель.',
   tool_convert_html_web_pages_to_word_document_html_label: 'HTML',
   tool_convert_html_web_pages_to_word_document_html_placeholder: '<h1>Заметки о выпуске</h1><p>Вставьте HTML сюда…</p>',
+  tool_convert_html_web_pages_to_word_document_hud_download: 'Скачать файл Word',
+  tool_convert_html_web_pages_to_word_document_hud_elapsed_tpl: 'прошло {s} с',
+  tool_convert_html_web_pages_to_word_document_hud_fail_hint: 'Проверьте HTML или URL и снова нажмите «Конвертировать».',
+  tool_convert_html_web_pages_to_word_document_hud_fail_title: 'Преобразование не удалось',
+  tool_convert_html_web_pages_to_word_document_hud_next: 'Готово. Дальше: скачайте .docx, откройте и правьте текст.',
+  tool_convert_html_web_pages_to_word_document_hud_pct_tpl: '{pct}%',
+  tool_convert_html_web_pages_to_word_document_hud_step_fetch: 'Загрузка',
+  tool_convert_html_web_pages_to_word_document_hud_step_map: 'Разметка',
+  tool_convert_html_web_pages_to_word_document_hud_step_pack: 'Сборка',
+  tool_convert_html_web_pages_to_word_document_hud_title: 'Ход преобразования',
   tool_convert_html_web_pages_to_word_document_imgs_hint:
     'Если включено, читаемые <img> пытаемся встроить. Битые и заблокированные пропускаем. Выключите для текстового Word.',
   tool_convert_html_web_pages_to_word_document_imgs_label: 'Включать изображения',
   tool_convert_html_web_pages_to_word_document_opts_hint:
-    '«Включать изображения» пытается встроить картинки из HTML. CSS-позиционирование не мапится. На выходе всегда один .docx.',
+    '«Включать изображения» пытается встроить картинки из HTML. «Только текст» сводит заголовки, таблицы и ссылки к абзацам. CSS-позиционирование не мапится. На выходе всегда один .docx.',
+  tool_convert_html_web_pages_to_word_document_plain_hint:
+    'Остаются правленые абзацы: без стилей заголовков Word, без объектов таблиц и без встроенных картинок. Ссылки пишутся как «подпись (URL)». Ячейки — строки через табуляцию.',
+  tool_convert_html_web_pages_to_word_document_plain_label: 'Только текст',
   tool_convert_html_web_pages_to_word_document_rules_body:
     'Одно Конвертировать — один .docx. Мапятся заголовки, абзацы, списки, таблицы, ссылки и необязательные картинки. Абсолютный CSS, фиксированные панели и скрипты — нет.',
   tool_convert_html_web_pages_to_word_document_rules_item_1:
     'Вставленный HTML остаётся во вкладке, без загрузки на сервер. URL запрашивается один раз и не сохраняется.',
-  tool_convert_html_web_pages_to_word_document_rules_item_2: 'h1–h6 становятся заголовками Word. ul/ol — списками. table — таблицей. a — гиперссылкой.',
+  tool_convert_html_web_pages_to_word_document_rules_item_2:
+    'По умолчанию h1–h6 — заголовки Word, ul/ol — списки, table — таблица, a — гиперссылка. «Только текст» в дополнительных настройках делает из них обычные абзацы.',
   tool_convert_html_web_pages_to_word_document_rules_item_3: 'Стены входа, JS-приложения и print-CSS часто расходятся с живым сайтом. Это не растр скриншота.',
   tool_convert_html_web_pages_to_word_document_rules_item_4:
     'Против HTML в PDF: редактируемый Word, не листы A4. Против PDF в Word: вход — HTML или URL, не загрузка PDF. Против «Изображения в Word»: вход — разметка, не стопка фото.',
   tool_convert_html_web_pages_to_word_document_rules_title: 'Правила, которых стоит ждать',
   tool_convert_html_web_pages_to_word_document_sample: 'Загрузить пример',
-  tool_convert_html_web_pages_to_word_document_status_done: 'Word готов — скачайте .docx и правьте.',
+  tool_convert_html_web_pages_to_word_document_status_done: 'Готово — дальше нажмите «Скачать».',
   tool_convert_html_web_pages_to_word_document_status_fetching: 'Забираем HTML по URL…',
+  tool_convert_html_web_pages_to_word_document_status_mapping: 'Раскладываем HTML по абзацам Word…',
+  tool_convert_html_web_pages_to_word_document_status_packing: 'Собираем .docx…',
   tool_convert_html_web_pages_to_word_document_status_working: 'Собираем документ Word…',
   tool_convert_html_web_pages_to_word_document_tab_html: 'Вставить HTML',
   tool_convert_html_web_pages_to_word_document_tab_url: 'URL',

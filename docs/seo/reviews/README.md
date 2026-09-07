@@ -25,3 +25,4 @@ reviews/
 |---|---|
 | [`2026-08-08/`](./2026-08-08/01-analysis-review.md) | 早期效果 + Coverage |
 | [`2026-08-12/`](./2026-08-12/01-analysis-review.md) | 含「已抓取未索引」drilldown |
+| [`2026-09-07/`](./2026-09-07/01-analysis-review.md) | 仅「已抓取未索引」92 URL；无效果/Coverage 总数 |

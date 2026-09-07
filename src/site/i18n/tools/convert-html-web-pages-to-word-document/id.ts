@@ -50,7 +50,7 @@ const id: SiteLangDict = {
 	tool_convert_html_web_pages_to_word_document_how_item_2:
 		'Tekan Ubah. Skrip dibuang. Judul, daftar, tabel, tautan masuk Word. Gambar gagal dilewati.',
 	tool_convert_html_web_pages_to_word_document_how_item_3:
-		'Butuh <img> di dalam HTML? Buka pengaturan lanjutan — Sertakan gambar default nyala; gambar diblokir tetap dilewati.',
+		'Butuh <img> di dalam HTML? Buka pengaturan lanjutan — Sertakan gambar default nyala; gambar diblokir tetap dilewati. Mau draf tanpa gaya judul dan tabel Word? Centang Teks polos (gambar ikut dimatikan).',
 	tool_convert_html_web_pages_to_word_document_how_item_4:
 		'Cetak A4: Konversi HTML ke PDF. Screenshot: Ubah banyak halaman web menjadi PNG atau JPG. Sudah PDF: Ubah PDF menjadi dokumen Word.',
 	tool_convert_html_web_pages_to_word_document_how_item_5: 'Kalau Ubah berhasil, Unduh. Buka .docx dan sunting teksnya.',
@@ -59,25 +59,40 @@ const id: SiteLangDict = {
 		'Boleh cuplikan atau dokumen HTML utuh. Skrip dibuang sebelum konversi. CSS tata letak tidak dibuat ulang per piksel.',
 	tool_convert_html_web_pages_to_word_document_html_label: 'HTML',
 	tool_convert_html_web_pages_to_word_document_html_placeholder: '<h1>Catatan rilis</h1><p>Tempel HTML di sini…</p>',
+	tool_convert_html_web_pages_to_word_document_hud_download: 'Unduh berkas Word',
+	tool_convert_html_web_pages_to_word_document_hud_elapsed_tpl: '{s} dtk berjalan',
+	tool_convert_html_web_pages_to_word_document_hud_fail_hint: 'Periksa HTML atau URL, lalu tekan Ubah lagi.',
+	tool_convert_html_web_pages_to_word_document_hud_fail_title: 'Konversi gagal',
+	tool_convert_html_web_pages_to_word_document_hud_next: 'Konversi selesai. Langkah berikutnya: unduh .docx, buka, lalu sunting teksnya.',
+	tool_convert_html_web_pages_to_word_document_hud_pct_tpl: '{pct}%',
+	tool_convert_html_web_pages_to_word_document_hud_step_fetch: 'Ambil',
+	tool_convert_html_web_pages_to_word_document_hud_step_map: 'Petakan',
+	tool_convert_html_web_pages_to_word_document_hud_step_pack: 'Kemas',
+	tool_convert_html_web_pages_to_word_document_hud_title: 'Progres konversi',
 	tool_convert_html_web_pages_to_word_document_imgs_hint:
 		'Kalau nyala, <img> yang bisa dibaca peramban dicoba disematkan. Gambar rusak atau diblokir dilewati. Matikan untuk Word teks saja.',
 	tool_convert_html_web_pages_to_word_document_imgs_label: 'Sertakan gambar',
 	tool_convert_html_web_pages_to_word_document_opts_hint:
-		'Sertakan gambar mencoba menyematkan foto dari HTML. Posisi CSS tidak dipetakan. Keluaran selalu satu .docx.',
+		'Sertakan gambar mencoba menyematkan foto dari HTML. Teks polos meratakan judul, tabel, dan tautan menjadi paragraf. Posisi CSS tidak dipetakan. Keluaran selalu satu .docx.',
+	tool_convert_html_web_pages_to_word_document_plain_hint:
+		'Hanya paragraf yang bisa disunting: tanpa gaya judul Word, tanpa objek tabel, tanpa gambar tertanam. Tautan jadi “teks (URL)”. Sel tabel jadi baris dipisah tab.',
+	tool_convert_html_web_pages_to_word_document_plain_label: 'Teks polos',
 	tool_convert_html_web_pages_to_word_document_rules_body:
 		'Satu kali Ubah menghasilkan satu .docx. Judul, paragraf, daftar, tabel, tautan, dan gambar opsional dipetakan. CSS absolut, bilah tetap, dan skrip tidak.',
 	tool_convert_html_web_pages_to_word_document_rules_item_1:
 		'HTML yang ditempel tetap di tab ini, tanpa unggah ke server. URL diambil sekali dan tidak disimpan.',
 	tool_convert_html_web_pages_to_word_document_rules_item_2:
-		'h1–h6 jadi judul Word. ul/ol jadi daftar. table jadi tabel. a jadi hyperlink.',
+		'Default: h1–h6 jadi judul Word, ul/ol daftar, table tabel, a hyperlink. Teks polos di pengaturan lanjutan mengubah semuanya jadi paragraf biasa.',
 	tool_convert_html_web_pages_to_word_document_rules_item_3:
 		'Dinding login, aplikasi JavaScript, dan CSS cetak sering tidak sama dengan situs hidup. Ini bukan raster screenshot.',
 	tool_convert_html_web_pages_to_word_document_rules_item_4:
 		'Banding Konversi HTML ke PDF: Word yang bisa diedit, bukan kertas A4. Banding Ubah PDF menjadi dokumen Word: masukan HTML atau URL, bukan unggahan PDF. Banding Gambar ke Word: masukan markup, bukan tumpukan foto.',
 	tool_convert_html_web_pages_to_word_document_rules_title: 'Aturan yang perlu diantisipasi',
 	tool_convert_html_web_pages_to_word_document_sample: 'Muat contoh',
-	tool_convert_html_web_pages_to_word_document_status_done: 'Word siap — unduh .docx lalu sunting.',
+	tool_convert_html_web_pages_to_word_document_status_done: 'Selesai — langkah berikutnya Unduh.',
 	tool_convert_html_web_pages_to_word_document_status_fetching: 'Mengambil HTML dari URL…',
+	tool_convert_html_web_pages_to_word_document_status_mapping: 'Memetakan HTML jadi paragraf Word…',
+	tool_convert_html_web_pages_to_word_document_status_packing: 'Mengemas berkas .docx…',
 	tool_convert_html_web_pages_to_word_document_status_working: 'Merakit dokumen Word…',
 	tool_convert_html_web_pages_to_word_document_tab_html: 'Tempel HTML',
 	tool_convert_html_web_pages_to_word_document_tab_url: 'URL',

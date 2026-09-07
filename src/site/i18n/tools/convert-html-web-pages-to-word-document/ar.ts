@@ -50,7 +50,7 @@ const ar: SiteLangDict = {
 	tool_convert_html_web_pages_to_word_document_how_item_2:
 		'اضغط تحويل. تُزال السكربتات. العناوين والقوائم والجداول والروابط تُنقل إلى وورد. الصور الفاشلة تُتخطى.',
 	tool_convert_html_web_pages_to_word_document_how_item_3:
-		'صور <img> داخل HTML؟ افتح الإعدادات المتقدمة — تضمين الصور مفعّل افتراضيًا والصور المحجوبة تُتخطى.',
+		'صور <img> داخل HTML؟ افتح الإعدادات المتقدمة — تضمين الصور مفعّل افتراضيًا والمحجوبة تُتخطى. لمسودة بلا عناوين أو جداول وورد فعّل «نص فقط» (يوقف الصور أيضًا).',
 	tool_convert_html_web_pages_to_word_document_how_item_4:
 		'طباعة A4: تحويل HTML إلى PDF. لقطة: تحويل عدة صفحات ويب إلى PNG أو JPG. لديك PDF: تحويل PDF إلى مستند وورد.',
 	tool_convert_html_web_pages_to_word_document_how_item_5: 'بعد نجاح التحويل اضغط تنزيل. افتح .docx وعدّل النص.',
@@ -59,25 +59,40 @@ const ar: SiteLangDict = {
 		'الصق مقطعًا أو مستند HTML كاملًا. تُزال السكربتات قبل التحويل. تخطيط CSS لا يُعاد بكسلًا بكسل.',
 	tool_convert_html_web_pages_to_word_document_html_label: 'HTML',
 	tool_convert_html_web_pages_to_word_document_html_placeholder: '<h1>ملاحظات الإصدار</h1><p>الصق HTML هنا…</p>',
+	tool_convert_html_web_pages_to_word_document_hud_download: 'تنزيل ملف وورد',
+	tool_convert_html_web_pages_to_word_document_hud_elapsed_tpl: 'مرّت {s} ث',
+	tool_convert_html_web_pages_to_word_document_hud_fail_hint: 'راجع HTML أو العنوان ثم اضغط تحويل مجددًا.',
+	tool_convert_html_web_pages_to_word_document_hud_fail_title: 'فشل التحويل',
+	tool_convert_html_web_pages_to_word_document_hud_next: 'انتهى التحويل. الخطوة التالية: نزّل .docx ثم افتحه وعدّل النص.',
+	tool_convert_html_web_pages_to_word_document_hud_pct_tpl: '{pct}٪',
+	tool_convert_html_web_pages_to_word_document_hud_step_fetch: 'جلب',
+	tool_convert_html_web_pages_to_word_document_hud_step_map: 'تخطيط',
+	tool_convert_html_web_pages_to_word_document_hud_step_pack: 'تغليف',
+	tool_convert_html_web_pages_to_word_document_hud_title: 'تقدّم التحويل',
 	tool_convert_html_web_pages_to_word_document_imgs_hint:
 		'عند التفعيل نحاول تضمين <img> التي يقرأها المتصفح. الصور المعطوبة أو المحجوبة تُتخطى. عطّله لوورد نص فقط.',
 	tool_convert_html_web_pages_to_word_document_imgs_label: 'تضمين الصور',
 	tool_convert_html_web_pages_to_word_document_opts_hint:
-		'تضمين الصور يحاول إدراج صور الـ HTML. موضع CSS لا يُنقل. الناتج دائمًا ملف .docx واحد.',
+		'تضمين الصور يحاول إدراج صور الـ HTML. «نص فقط» يحوّل العناوين والجداول والروابط إلى فقرات. موضع CSS لا يُنقل. الناتج دائمًا ملف .docx واحد.',
+	tool_convert_html_web_pages_to_word_document_plain_hint:
+		'فقرات قابلة للتعديل بلا أنماط عناوين وورد ولا جداول ولا صور مضمّنة. الروابط تُكتب «النص (الرابط)». خلايا الجدول أسطر مفصولة بعلامة جدولة.',
+	tool_convert_html_web_pages_to_word_document_plain_label: 'نص فقط',
 	tool_convert_html_web_pages_to_word_document_rules_body:
 		'تحويل واحد ينتج .docx واحدًا. تُنقل العناوين والفقرات والقوائم والجداول والروابط والصور الاختيارية. لا يُنقل CSS المطلق ولا الأشرطة الثابتة ولا السكربتات.',
 	tool_convert_html_web_pages_to_word_document_rules_item_1:
 		'الـ HTML الملصق يبقى في هذا التبويب دون رفع إلى خادم. العنوان يُجلب مرة ولا يُخزَّن.',
 	tool_convert_html_web_pages_to_word_document_rules_item_2:
-		'h1–h6 تصبح عناوين وورد. ul/ol قوائم. table جدول وورد. a رابطًا تشعبيًا.',
+		'افتراضيًا h1–h6 عناوين وورد وul/ol قوائم وtable جدول وa رابطًا. خيار «نص فقط» في الإعدادات المتقدمة يجعلها فقرات عادية.',
 	tool_convert_html_web_pages_to_word_document_rules_item_3:
 		'جدران الدخول وتطبيقات جافاسكربت وCSS الطباعة غالبًا لا تطابق الموقع الحي. هذه ليست شبكة لقطة شاشة.',
 	tool_convert_html_web_pages_to_word_document_rules_item_4:
 		'مقابل تحويل HTML إلى PDF: وورد قابل للتحرير لا أوراق A4. مقابل تحويل PDF إلى مستند وورد: الدخل HTML أو عنوان لا ملف PDF. مقابل صور إلى وورد: الدخل ترميز لا كومة صور.',
 	tool_convert_html_web_pages_to_word_document_rules_title: 'حدود متوقعة',
 	tool_convert_html_web_pages_to_word_document_sample: 'تحميل مثال',
-	tool_convert_html_web_pages_to_word_document_status_done: 'ملف وورد جاهز — نزّل .docx وعدّله.',
+	tool_convert_html_web_pages_to_word_document_status_done: 'انتهى — الخطوة التالية «تنزيل».',
 	tool_convert_html_web_pages_to_word_document_status_fetching: 'جلب HTML من العنوان…',
+	tool_convert_html_web_pages_to_word_document_status_mapping: 'نقل الـ HTML إلى فقرات وورد…',
+	tool_convert_html_web_pages_to_word_document_status_packing: 'تغليف ملف .docx…',
 	tool_convert_html_web_pages_to_word_document_status_working: 'بناء مستند وورد…',
 	tool_convert_html_web_pages_to_word_document_tab_html: 'لصق HTML',
 	tool_convert_html_web_pages_to_word_document_tab_url: 'عنوان URL',

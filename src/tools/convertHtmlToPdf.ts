@@ -14,6 +14,62 @@ const MAX_BYTES = 2_000_000;
 /** 抓取时使用的 User-Agent。 */
 const FETCH_UA = 'onlinefreetools/convert-html-to-pdf';
 
+/** meta refresh 中转最多再跟几跳（HTTP 3xx 已在 fetchHtmlFollowingRedirects 里跟）。 */
+const META_REFRESH_MAX_HOPS = 3;
+
+/** 超过该秒数的 refresh 当成正式页上的倒计时，不自动跟。 */
+const META_REFRESH_MAX_DELAY_SEC = 2;
+
+/**
+ * 去掉 noscript 后，判断当前 HTML 是否几乎只有一条立刻跳转的 refresh（hao123.com 根域那种中转页）。
+ * 正式首页即使带 noscript refresh 也不会被当成中转。
+ * @param html 抓到的 HTML
+ */
+const isLikelyMetaRefreshStub = (html: string): boolean => {
+	const s = String(html || '');
+	if (s.length > 8192) return false;
+	if (!/http-equiv\s*=\s*['"]?refresh/i.test(s)) return false;
+	const text = s
+		.replace(/<script\b[\s\S]*?<\/script>/gi, ' ')
+		.replace(/<style\b[\s\S]*?<\/style>/gi, ' ')
+		.replace(/<noscript\b[\s\S]*?<\/noscript>/gi, ' ')
+		.replace(/<[^>]+>/g, ' ')
+		.replace(/\s+/g, ' ')
+		.trim();
+	return text.length < 120;
+};
+
+/**
+ * 从中转页抽出 refresh 目标；忽略 noscript，delay 须 ≤ 2 秒，且必须是 http(s) 公网地址。
+ * @param html 当前页 HTML
+ * @param baseUrl 解析相对 URL 的基准（最终抓取地址）
+ */
+const nextMetaRefreshUrl = (html: string, baseUrl: string): URL | null => {
+	if (!isLikelyMetaRefreshStub(html)) return null;
+	const withoutNoscript = html.replace(/<noscript\b[\s\S]*?<\/noscript>/gi, '');
+	const tag = withoutNoscript.match(/<meta\b[^>]*http-equiv\s*=\s*['"]?refresh['"]?[^>]*>/i);
+	if (!tag) return null;
+	const contentMatch =
+		tag[0].match(/content\s*=\s*["']([^"']+)["']/i) || tag[0].match(/content\s*=\s*([^\s>]+)/i);
+	if (!contentMatch) return null;
+	const content = contentMatch[1];
+	const delay = Number.parseFloat(content);
+	if (!Number.isFinite(delay) || delay > META_REFRESH_MAX_DELAY_SEC) return null;
+	const urlPart = content.match(/url\s*=\s*(.*)$/i);
+	if (!urlPart) return null;
+	const raw = urlPart[1].trim().replace(/^['"]|['"]$/g, '').trim();
+	if (!raw) return null;
+	try {
+		const abs = new URL(raw, baseUrl);
+		if (abs.protocol !== 'http:' && abs.protocol !== 'https:') return null;
+		if (isBlockedHostname(abs.hostname)) return null;
+		if (abs.href === new URL(baseUrl).href) return null;
+		return abs;
+	} catch {
+		return null;
+	}
+};
+
 /**
  * 在 HTML 中插入 <base href>，给未改写到的相对路径做兜底。
  * 已有 <base> 则不重复插入。
@@ -209,23 +265,33 @@ export const handleConvertHtmlToPdfFetchApi = async (c: Context) => {
 	const controller = new AbortController();
 	const timeout = setTimeout(() => controller.abort('timeout'), 10_000);
 	try {
-		const { res, finalUrl } = await fetchHtmlFollowingRedirects(
-			parsed.url,
-			FETCH_UA,
-			controller.signal,
-		);
+		/** 当前要抓的地址；meta refresh 中转时会改写。 */
+		let current = parsed.url;
+		/** 最后一次成功抓到的 HTML。 */
+		let html = '';
+		/** 跟随 HTTP 跳转后的最终 URL。 */
+		let finalUrl = current.toString();
+		/** 上游 HTTP 状态。 */
+		let status = 0;
 
-		const buf = await res.arrayBuffer();
-		if (buf.byteLength > MAX_BYTES) {
-			return c.json({ error: 'Page is too large (limit 2 MB)' }, 413);
-		}
-
-		const html = new TextDecoder('utf-8', { fatal: false }).decode(buf);
-		const contentType = (res.headers.get('content-type') || '').toLowerCase();
-		const typeLooksHtml = contentType.includes('html') || contentType.includes('xml');
-		const bodyLooksHtml = /^\s*</.test(html);
-		if (!typeLooksHtml && !bodyLooksHtml) {
-			return c.json({ error: 'URL does not return HTML content' }, 400);
+		for (let hop = 0; hop <= META_REFRESH_MAX_HOPS; hop++) {
+			const fetched = await fetchHtmlFollowingRedirects(current, FETCH_UA, controller.signal);
+			const buf = await fetched.res.arrayBuffer();
+			if (buf.byteLength > MAX_BYTES) {
+				return c.json({ error: 'Page is too large (limit 2 MB)' }, 413);
+			}
+			html = new TextDecoder('utf-8', { fatal: false }).decode(buf);
+			finalUrl = fetched.finalUrl;
+			status = fetched.res.status;
+			const contentType = (fetched.res.headers.get('content-type') || '').toLowerCase();
+			const typeLooksHtml = contentType.includes('html') || contentType.includes('xml');
+			const bodyLooksHtml = /^\s*</.test(html);
+			if (!typeLooksHtml && !bodyLooksHtml) {
+				return c.json({ error: 'URL does not return HTML content' }, 400);
+			}
+			const next = hop < META_REFRESH_MAX_HOPS ? nextMetaRefreshUrl(html, finalUrl) : null;
+			if (!next) break;
+			current = next;
 		}
 
 		/** 带 <base> 的原文；改写失败时仍返回它。 */
@@ -239,7 +305,7 @@ export const handleConvertHtmlToPdfFetchApi = async (c: Context) => {
 		return c.json({
 			inputUrl: raw,
 			finalUrl,
-			status: res.status,
+			status,
 			html: htmlOut,
 		});
 	} catch (e: unknown) {

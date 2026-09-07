@@ -3682,7 +3682,7 @@ const es: SiteLangDict = {
   tool_convert_html_web_pages_to_word_document_how_item_2:
     'Pulsa Convertir. Se eliminan scripts. Títulos, listas, tablas y enlaces pasan a Word. Las imágenes que fallan se omiten.',
   tool_convert_html_web_pages_to_word_document_how_item_3:
-    '¿Quieres las <img> del HTML? Abre Ajustes avanzados: Incluir imágenes viene activado y sigue saltándose fotos bloqueadas.',
+    '¿Quieres las <img> del HTML? Abre Ajustes avanzados: Incluir imágenes viene activado y sigue saltándose fotos bloqueadas. Si prefieres un borrador sin títulos ni tablas de Word, marca Solo texto (también apaga las imágenes).',
   tool_convert_html_web_pages_to_word_document_how_item_4:
     '¿Hojas A4? Convertir HTML a PDF. ¿Captura? Convertir varias páginas web a PNG o JPG. ¿Ya es PDF? Convertir PDF en documento Word.',
   tool_convert_html_web_pages_to_word_document_how_item_5: 'Cuando Convertir termine, pulsa Descargar. Abre el .docx y edita el texto.',
@@ -3691,24 +3691,40 @@ const es: SiteLangDict = {
     'Pega un fragmento o un documento HTML completo. Los scripts se quitan antes. El CSS de maquetación no se recrea píxel a píxel.',
   tool_convert_html_web_pages_to_word_document_html_label: 'HTML',
   tool_convert_html_web_pages_to_word_document_html_placeholder: '<h1>Notas de versión</h1><p>Pega el HTML aquí…</p>',
+  tool_convert_html_web_pages_to_word_document_hud_download: 'Descargar el Word',
+  tool_convert_html_web_pages_to_word_document_hud_elapsed_tpl: '{s} s transcurridos',
+  tool_convert_html_web_pages_to_word_document_hud_fail_hint: 'Revisa el HTML o la URL y pulsa Convertir otra vez.',
+  tool_convert_html_web_pages_to_word_document_hud_fail_title: 'La conversión falló',
+  tool_convert_html_web_pages_to_word_document_hud_next: 'La conversión terminó. Siguiente: descarga el .docx, ábrelo y edita el texto.',
+  tool_convert_html_web_pages_to_word_document_hud_pct_tpl: '{pct}%',
+  tool_convert_html_web_pages_to_word_document_hud_step_fetch: 'Obtener',
+  tool_convert_html_web_pages_to_word_document_hud_step_map: 'Mapear',
+  tool_convert_html_web_pages_to_word_document_hud_step_pack: 'Empaquetar',
+  tool_convert_html_web_pages_to_word_document_hud_title: 'Progreso de la conversión',
   tool_convert_html_web_pages_to_word_document_imgs_hint:
     'Si está activo, se intentan incrustar las <img> que el navegador pueda leer. Las rotas o bloqueadas se omiten. Desactívalo para un Word solo de texto.',
   tool_convert_html_web_pages_to_word_document_imgs_label: 'Incluir imágenes',
   tool_convert_html_web_pages_to_word_document_opts_hint:
-    'Incluir imágenes intenta embeber las fotos del HTML. El posicionamiento CSS no se mapea. La salida es siempre un .docx.',
+    'Incluir imágenes intenta embeber las fotos del HTML. Solo texto aplana títulos, tablas y enlaces a párrafos. El posicionamiento CSS no se mapea. La salida es siempre un .docx.',
+  tool_convert_html_web_pages_to_word_document_plain_hint:
+    'Deja párrafos editables: sin estilos de título de Word, sin tablas ni fotos incrustadas. Los enlaces quedan como «texto (URL)». Las celdas se escriben en líneas separadas por tabulador.',
+  tool_convert_html_web_pages_to_word_document_plain_label: 'Solo texto',
   tool_convert_html_web_pages_to_word_document_rules_body:
     'Un Convertir genera un .docx. Se mapean títulos, párrafos, listas, tablas, enlaces e imágenes opcionales. No se mapean CSS absoluto, barras fijas ni scripts.',
   tool_convert_html_web_pages_to_word_document_rules_item_1:
     'El HTML pegado se queda en esta pestaña, sin subir al servidor. Una URL se recupera una vez y no se almacena.',
-  tool_convert_html_web_pages_to_word_document_rules_item_2: 'h1–h6 pasan a títulos de Word. ul/ol a listas. table a tabla. a a hipervínculo.',
+  tool_convert_html_web_pages_to_word_document_rules_item_2:
+    'Por defecto h1–h6 pasan a títulos de Word, ul/ol a listas, table a tabla y a a hipervínculo. «Solo texto» en Ajustes avanzados lo deja en párrafos normales.',
   tool_convert_html_web_pages_to_word_document_rules_item_3:
     'Login, apps JavaScript y CSS de impresión casi nunca coinciden con el sitio en vivo. Esto no es un raster de captura.',
   tool_convert_html_web_pages_to_word_document_rules_item_4:
     'Frente a Convertir HTML a PDF: Word editable, no hojas A4. Frente a Convertir PDF en documento Word: la entrada es HTML o URL, no un PDF. Frente a Imágenes a Word: la entrada es marcado, no un montón de fotos.',
   tool_convert_html_web_pages_to_word_document_rules_title: 'Qué debes esperar',
   tool_convert_html_web_pages_to_word_document_sample: 'Cargar ejemplo',
-  tool_convert_html_web_pages_to_word_document_status_done: 'Word listo: descarga el .docx y edítalo.',
+  tool_convert_html_web_pages_to_word_document_status_done: 'Listo — el siguiente paso es Descargar.',
   tool_convert_html_web_pages_to_word_document_status_fetching: 'Obteniendo el HTML de la URL…',
+  tool_convert_html_web_pages_to_word_document_status_mapping: 'Pasando el HTML a párrafos de Word…',
+  tool_convert_html_web_pages_to_word_document_status_packing: 'Empaquetando el .docx…',
   tool_convert_html_web_pages_to_word_document_status_working: 'Armando el documento Word…',
   tool_convert_html_web_pages_to_word_document_tab_html: 'Pegar HTML',
   tool_convert_html_web_pages_to_word_document_tab_url: 'URL',

@@ -191,11 +191,12 @@ Chinese: <a href="https://onlinefreetools.org/zh/tools/convert-html-web-pages-to
 <p>Walk <code>document.body</code> (fragments and full documents both land there). Recurse into unknown containers. Treat inline-only roots (<code>span</code>) as a paragraph. If still empty, fall back to <code>body</code> textContent. Pick the docx namespace from UMD / <code>default</code> / <code>window.docx</code> only when <code>Document</code> and <code>Packer</code> exist. Tables get explicit DXA widths.</p>
 <p>Verified in Chrome: sample, header-wrapped full document, and span-only HTML all enable Download. Uploaded the ten language HTML.gz objects to R2 (<code>upload:r2</code> changed 10 files).</p>
 <h2>Notes / boundaries</h2>
-<p>Refresh the live tool tab to pick up the new R2 HTML. CSS layout is still not mapped. Blocked images are still skipped. GitHub push is not required for the tool body; Worker/Assets vendor path was already live.</p>
+<p>R2 already has the new ten-language HTML.gz. The public URL can still serve a Cache API HIT of the old mapper for up to 24h (<code>s-maxage=86400</code>) until <code>PAGES_CACHE_VERSION</code> is 4.56 on the Worker (commit + git push of <code>wrangler.jsonc</code>) or an admin exact-key purge. CSS layout is still not mapped. Blocked images are still skipped.</p>
 <p>[actions]</p>
 <ul>
 <li>Updated <code>src/pages/convertHtmlWebPagesToWordDocumentPage.ts</code> mapper and docx loader.</li>
 <li>Bumped catalog <code>updatedAt</code>; prerendered and gzipped this slug; <code>npm run upload:r2</code>.</li>
+<li>Bumped <code>wrangler.jsonc</code> <code>PAGES_CACHE_VERSION</code> to 4.56 so Worker Cache API keys change after git push.</li>
 </ul>
 </article>
       </section>
