@@ -228,22 +228,46 @@ export const renderConvertHtmlWebPagesToWordDocumentPage = (opts: {
       }
 
       /**
+       * 从 UMD / ESM default / window.docx 里取出真正带 Document+Packer 的命名空间。
+       * import() 一个无 export 的 UMD 会 resolve 成空 Module，不能直接当 docx 用。
+       * @param {object|null|undefined} candidate 脚本回调或 import 结果
+       * @returns {object|null}
+       */
+      function pickDocx(candidate) {
+        if (candidate && candidate.Document && candidate.Packer) return candidate;
+        if (candidate && candidate.default && candidate.default.Document && candidate.default.Packer) return candidate.default;
+        if (window.docx && window.docx.Document && window.docx.Packer) return window.docx;
+        return null;
+      }
+
+      /**
        * 懒加载同域 docx UMD。
        * @returns {Promise<object>}
        */
       function loadDocxLib() {
         if (docxLibPromise) return docxLibPromise;
         docxLibPromise = new Promise(function (resolve, reject) {
-          if (window.docx && window.docx.Document) { resolve(window.docx); return; }
+          var existing = pickDocx(window.docx);
+          if (existing) { resolve(existing); return; }
+          /**
+           * import()/onload 之后必须再 pick，禁止把空 Module 当成库。
+           * @param {object} mod import 命名空间或 UMD 全局
+           */
+          function finish(mod) {
+            var lib = pickDocx(mod);
+            if (lib) resolve(lib);
+            else reject(new Error('lib'));
+          }
           var script = document.createElement('script');
           script.src = '/vendor/docx/index.umd.js';
           script.async = true;
           script.onload = function () {
-            if (window.docx && window.docx.Document) resolve(window.docx);
-            else import('/vendor/docx/index.umd.js').then(resolve).catch(function () { reject(new Error('lib')); });
+            var lib = pickDocx(window.docx);
+            if (lib) { resolve(lib); return; }
+            import('/vendor/docx/index.umd.js').then(finish).catch(function () { reject(new Error('lib')); });
           };
           script.onerror = function () {
-            import('/vendor/docx/index.umd.js').then(resolve).catch(function () { reject(new Error('lib')); });
+            import('/vendor/docx/index.umd.js').then(finish).catch(function () { reject(new Error('lib')); });
           };
           document.head.appendChild(script);
         });
@@ -324,7 +348,7 @@ export const renderConvertHtmlWebPagesToWordDocumentPage = (opts: {
           var bytes = new Uint8Array(ab);
           if (!bytes.length) return null;
           return new docx.Paragraph({
-            children: [new docx.ImageRun({ data: bytes, transformation: { width: 480, height: 240 } })],
+            children: [new docx.ImageRun({ data: bytes, transformation: { width: 480, height: 240 }, type: 'png' })],
           });
         }).catch(function () { return null; });
       }
@@ -350,11 +374,15 @@ export const renderConvertHtmlWebPagesToWordDocumentPage = (opts: {
           if (tCells.length) tRows.push(new docx.TableRow({ children: tCells }));
         }
         if (!tRows.length) return null;
-        return new docx.Table({ rows: tRows });
+        var colCount = tRows[0].CellCount || tRows[0].options && tRows[0].options.children ? tRows[0].options.children.length : 1;
+        var colW = [];
+        for (var w = 0; w < colCount; w++) colW.push(Math.max(800, Math.floor(9000 / colCount)));
+        return new docx.Table({ rows: tRows, width: { size: 9000, type: (docx.WidthType && docx.WidthType.DXA) || 'dxa' }, columnWidths: colW });
       }
 
       /**
        * 把消毒后的 HTML 映射成 docx 块（异步：可选嵌入图片）。
+       * 从 document.body 走树：完整网页、Word 导出 HTML、以及 header/nav 包裹的内容都要进 Word，不能只认少数几个标签的直接子节点。
        * @param {string} html HTML
        * @param {object} docx docx 命名空间
        * @param {boolean} includeImgs 是否尝试嵌图
@@ -362,34 +390,60 @@ export const renderConvertHtmlWebPagesToWordDocumentPage = (opts: {
        */
       function htmlToBlocks(html, docx, includeImgs) {
         var parser = new DOMParser();
-        var doc = parser.parseFromString('<div id="chwRoot">' + html + '</div>', 'text/html');
-        var root = doc.getElementById('chwRoot') || doc.body;
+        var parsed = parser.parseFromString(String(html || ''), 'text/html');
+        var root = parsed.body || parsed.documentElement;
         var HeadingLevel = docx.HeadingLevel || {};
         var blocks = [];
-        var chain = Promise.resolve();
+        /** 不映射进正文的标签（脚本/元数据/矢量）。 */
+        var SKIP = { script: 1, style: 1, noscript: 1, template: 1, svg: 1, canvas: 1, iframe: 1, form: 1, head: 1, meta: 1, link: 1, title: 1, br: 1 };
+        /** 顶层遇到时按一段处理的行内标签。 */
+        var INLINE = { span: 1, a: 1, strong: 1, b: 1, em: 1, i: 1, u: 1, code: 1, small: 1, mark: 1, time: 1, label: 1, sub: 1, sup: 1 };
 
         /**
-         * 排队处理一个元素。
-         * @param {Element} el 元素
+         * 把节点的可见文字收成一段。
+         * @param {Node} node 元素或文本
          */
-        function queueEl(el) {
-          chain = chain.then(function () {
-            var tag = String(el.tagName || '').toLowerCase();
-            if (tag === 'h1' || tag === 'h2' || tag === 'h3' || tag === 'h4' || tag === 'h5' || tag === 'h6') {
-              var level = { h1: HeadingLevel.HEADING_1, h2: HeadingLevel.HEADING_2, h3: HeadingLevel.HEADING_3, h4: HeadingLevel.HEADING_4, h5: HeadingLevel.HEADING_5, h6: HeadingLevel.HEADING_6 }[tag];
-              var runs = inlineRuns(el, docx, {});
-              if (!runs.length) runs = [new docx.TextRun({ text: String(el.textContent || '').trim() || ' ' })];
-              blocks.push(new docx.Paragraph({ heading: level, children: runs }));
+        function pushParagraphFrom(node) {
+          var runs = inlineRuns(node, docx, {});
+          if (!runs.length) {
+            var txt = String(node.textContent || '').replace(/\\s+/g, ' ').trim();
+            if (!txt) return;
+            runs = [new docx.TextRun({ text: txt })];
+          }
+          blocks.push(new docx.Paragraph({ children: runs }));
+        }
+
+        /**
+         * 处理一个 DOM 节点；子节点用独立 Promise 串行，避免和父级 Promise 互相等待。
+         * @param {Node} node 节点
+         * @returns {Promise<void>}
+         */
+        function processNode(node) {
+          return Promise.resolve().then(function () {
+            if (!node) return;
+            if (node.nodeType === 3) {
+              var t = String(node.textContent || '').replace(/\\s+/g, ' ').trim();
+              if (t) blocks.push(new docx.Paragraph({ children: [new docx.TextRun({ text: t })] }));
               return;
             }
-            if (tag === 'p') {
-              var pRuns = inlineRuns(el, docx, {});
-              if (!pRuns.length) pRuns = [new docx.TextRun({ text: ' ' })];
-              blocks.push(new docx.Paragraph({ children: pRuns }));
+            if (node.nodeType !== 1) return;
+            var tag = String(node.tagName || '').toLowerCase();
+            if (SKIP[tag]) return;
+            if (tag === 'h1' || tag === 'h2' || tag === 'h3' || tag === 'h4' || tag === 'h5' || tag === 'h6') {
+              var level = { h1: HeadingLevel.HEADING_1, h2: HeadingLevel.HEADING_2, h3: HeadingLevel.HEADING_3, h4: HeadingLevel.HEADING_4, h5: HeadingLevel.HEADING_5, h6: HeadingLevel.HEADING_6 }[tag];
+              var runs = inlineRuns(node, docx, {});
+              if (!runs.length) runs = [new docx.TextRun({ text: String(node.textContent || '').trim() || ' ' })];
+              var headingOpts = { children: runs };
+              if (level) headingOpts.heading = level;
+              blocks.push(new docx.Paragraph(headingOpts));
+              return;
+            }
+            if (tag === 'p' || tag === 'pre' || tag === 'blockquote' || tag === 'figcaption' || tag === 'li') {
+              pushParagraphFrom(node);
               return;
             }
             if (tag === 'ul' || tag === 'ol') {
-              var items = el.children;
+              var items = node.children;
               for (var i = 0; i < items.length; i++) {
                 if (String(items[i].tagName || '').toLowerCase() !== 'li') continue;
                 var prefix = tag === 'ol' ? String(i + 1) + '. ' : '• ';
@@ -399,34 +453,42 @@ export const renderConvertHtmlWebPagesToWordDocumentPage = (opts: {
               return;
             }
             if (tag === 'table') {
-              var tbl = mapTable(el, docx);
+              var tbl = mapTable(node, docx);
               if (tbl) blocks.push(tbl);
               return;
             }
-            if (tag === 'img' && includeImgs) {
-              return imageParagraph(el, docx).then(function (p) { if (p) blocks.push(p); });
+            if (tag === 'img') {
+              if (!includeImgs) return;
+              return imageParagraph(node, docx).then(function (p) { if (p) blocks.push(p); });
             }
-            if (tag === 'div' || tag === 'section' || tag === 'article' || tag === 'main' || tag === 'blockquote') {
-              var kids = Array.prototype.slice.call(el.children);
-              var inner = Promise.resolve();
-              kids.forEach(function (child) { inner = inner.then(function () { return queueEl(child); }); });
-              if (!kids.length) {
-                var dRuns = inlineRuns(el, docx, {});
-                if (dRuns.length) blocks.push(new docx.Paragraph({ children: dRuns }));
-              }
-              return inner;
+            if (INLINE[tag]) {
+              pushParagraphFrom(node);
+              return;
             }
+            var kids = Array.prototype.slice.call(node.childNodes);
+            if (!kids.length) {
+              pushParagraphFrom(node);
+              return;
+            }
+            var seq = Promise.resolve();
+            kids.forEach(function (child) {
+              seq = seq.then(function () { return processNode(child); });
+            });
+            return seq;
           });
         }
 
-        var top = Array.prototype.slice.call(root.children);
-        if (!top.length) {
-          var only = String(root.textContent || '').trim();
-          if (only) blocks.push(new docx.Paragraph({ children: [new docx.TextRun({ text: only })] }));
-          return Promise.resolve(blocks);
-        }
-        top.forEach(function (child) { queueEl(child); });
-        return chain.then(function () { return blocks; });
+        var seqTop = Promise.resolve();
+        Array.prototype.slice.call(root.childNodes).forEach(function (child) {
+          seqTop = seqTop.then(function () { return processNode(child); });
+        });
+        return seqTop.then(function () {
+          if (!blocks.length) {
+            var only = String(root.textContent || '').replace(/\\s+/g, ' ').trim();
+            if (only) blocks.push(new docx.Paragraph({ children: [new docx.TextRun({ text: only })] }));
+          }
+          return blocks;
+        });
       }
 
       /**
@@ -500,6 +562,7 @@ export const renderConvertHtmlWebPagesToWordDocumentPage = (opts: {
           .catch(function (err) {
             resultBlob = null;
             if (btnDownload) btnDownload.disabled = true;
+            try { console.error('[convert-html-web-pages-to-word-document]', err); } catch (e2) {}
             var code = err && err.message ? err.message : '';
             if (code === 'url') setErr(msg.url);
             else if (code === 'lib') setErr(msg.load);
