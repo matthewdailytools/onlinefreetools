@@ -39,7 +39,9 @@ alwaysApply: false
 
 > **生成本清单之前**：必须已完成「清单前检索覆盖优化」与「用户意图审查并优化」——覆盖表（主词→H1、次词落点）+ 意图总判（满足/超出，How 对齐搜索者任务）；见 `tool-i18n-localization.mdc` 步 0b / 0i 与 `work-tasks-tool-brief.mdc`。未完成不得按下表开工。  
 > **检索覆盖 Skill**：多工具 / 新工具实现时先读并执行 [`.cursor/skills/tool-coverage-pass/SKILL.md`](../skills/tool-coverage-pass/SKILL.md)；分阶段跑 `npm run coverage:gate`。  
-> **Token 效率 Skill（可选）**：单工具实现/ship 且关注上下文成本时，叠加 [`.cursor/skills/tool-token-efficiency/SKILL.md`](../skills/tool-token-efficiency/SKILL.md)——只优化读文件与会话拆分，**不得**跳过覆盖门禁或降低十语质量。
+> **Token 效率 Skill（可选）**：单工具实现/ship 且关注上下文成本时，叠加 [`.cursor/skills/tool-token-efficiency/SKILL.md`](../skills/tool-token-efficiency/SKILL.md)——只优化读文件与会话拆分，**不得**跳过覆盖门禁或降低十语质量。  
+> **转换器着陆页 SEO**：convert / compress / screenshot / `*-to-*` 写 title/H1/meta/How 时再读 [`.cursor/skills/converter-serp-landing-seo/SKILL.md`](../skills/converter-serp-landing-seo/SKILL.md)（snippet meta、How=按钮、设置可索引；禁止近义 URL 铺量）。  
+> **转换器输入 UI**：写 `*Page.ts` 首屏表单 / dropzone / 按钮态时再读 [`.cursor/skills/converter-input-ui/SKILL.md`](../skills/converter-input-ui/SKILL.md)（一种主输入、Convert 后才 Download、高级设置折叠；禁止云盘入口）。
 
 ```
 work-tasks/{slug}/              # 00–03 brief（含清单前覆盖表 + 03-locale-briefs）

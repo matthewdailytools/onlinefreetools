@@ -288,6 +288,28 @@
     "subject": "pdf"
   },
   {
+    "slug": "batch-convert-web-pages-to-jpg",
+    "path": "/tools/batch-convert-web-pages-to-jpg",
+    "updatedAt": "2026-09-07T00:52:46.727Z",
+    "launchedAt": "2026-09-07T00:10:00.000Z",
+    "category": "image",
+    "primaryTopic": "image-media",
+    "featured": false,
+    "ymyl": false,
+    "i18nKey": "tool_batch_convert_web_pages_to_jpg_title",
+    "homeTitleKey": "tool_batch_convert_web_pages_to_jpg_title",
+    "homeDescKey": "tool_batch_convert_web_pages_to_jpg_desc",
+    "faqPrefix": "tool_batch_convert_web_pages_to_jpg",
+    "related": [
+      "batch-convert-web-pages-to-pdf",
+      "pdf-to-jpg"
+    ],
+    "logo": "/icons/tools/batch-convert-web-pages-to-jpg.svg",
+    "localProcessing": false,
+    "scenario": "media",
+    "subject": "image"
+  },
+  {
     "slug": "batch-convert-web-pages-to-pdf",
     "path": "/tools/batch-convert-web-pages-to-pdf",
     "updatedAt": "2026-09-06T16:55:23.127Z",

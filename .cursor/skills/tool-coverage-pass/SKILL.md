@@ -79,6 +79,8 @@ TOOL_SLUG={slug} npm run lint:tool-isolation
 6. 本步是否**改了文案**还是只勾选？（只勾选 → 不合格）
 7. **意图审查**：搜主词的人打开页能否办成事？How 是否先答用户任务？有无超出（次模式抢首屏、第二工具、元叙述）？有缺口是否已回写？
 8. **Ads/Planner 长尾（若有）**：归属本 slug 的长尾是否已融入文案？交互是否覆盖长尾任务（非只出现词）？
+9. **转换类文案**（convert/compress/screenshot/`*-to-*`）：是否过 [converter-serp-landing-seo](../converter-serp-landing-seo/SKILL.md)——meta 前 160 字能当 snippet、How 用词=按钮、差异控件有可见说明；不拆 doorway、不铺近义格式列表。
+10. **转换类 UI**（写 Page 时）：是否过 [converter-input-ui](../converter-input-ui/SKILL.md)——一种主输入、主按钮行无设置、Download 无产物禁用、高级设置可折叠。
 
 硬性两条（`tool-i18n-localization.mdc`「相关关键词落地」）：① 覆盖词写入 H1/desc/FAQ/usecase；② 每语按搜索习惯重跑。  
 有 Planner 分析时再加：③ 长尾任务有对应功能（`work-tasks-tool-brief.mdc`）。
